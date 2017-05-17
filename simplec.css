@@ -1,0 +1,11 @@
+body{margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0 10px;background-color:#eee;text-align:justify;}h1,h2,h3{line-height:1.2}
+/*edited from bettermotherfuckingwebsite.com*/
+#c {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:30em;
+    margin-top: -6em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+}
