@@ -27,7 +27,7 @@ d {font-family: d, Courier New;}
 .shakeno {animation: shakeno 1s linear infinite;}
 .flag {animation: flag 2s linear infinite;}
 .slide {animation: slide 8s ease infinite;}
-.slideg {animation: slideg 32s ease infinite;}
+.slideg {animation: slideg 60s ease infinite;}
 .slideg:hover { animation: scalehuge 4800s linear 1;}
 .shift {animation: slide 8s linear infinite;}
 .intensifies {animation: intensifies .2s linear infinite;}
