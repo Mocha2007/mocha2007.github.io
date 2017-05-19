@@ -1,6 +1,6 @@
 html {background-color:#000;color:#0ff;font-family:"Courier New";background-image: url("bgtile_grey.png");}
 h1 {font-size: 48px;text-shadow: 0px 0px 20px #0ff;}
-hl {color:#f00;}
+b {color:#f00;}
 a {color:#0ff;font-family:"Courier New";text-decoration:underline;}
 a:hover { text-shadow: 0 0 10px #0ff;}
 q {color:#0cc;border: 2px solid #0ff;padding-left:3em;padding-right:.5em;border-radius:10px}
