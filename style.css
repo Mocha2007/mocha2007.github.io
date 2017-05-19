@@ -6,8 +6,6 @@ a:hover { text-shadow: 0 0 10px #0ff;}
 q {color:#0cc;border: 2px solid #0ff;padding-left:3em;padding-right:.5em;border-radius:10px}
 overline {text-decoration: overline;}
 doubleoverline {border-top: 3px double;}
-@font-face {font-family: "d"; src: url('d.ttf');}
-d {font-family: d, Courier New;}
 .f {color:#f0f}
 .m {color:#08f}
 .image-shake {
