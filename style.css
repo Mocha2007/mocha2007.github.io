@@ -8,9 +8,8 @@ overline {text-decoration: overline;}
 doubleoverline {border-top: 3px double;}
 @font-face {font-family: "d"; src: url('d.ttf');}
 d {font-family: d, Courier New;}
-.particle {border-bottom: 1px solid #f0f}
-.noun {border-bottom: 1px solid #f00}
-.verb {border-bottom: 1px solid #ff0}
+.f {color:#f0f}
+.m {color:#08f}
 .image-shake {
     display: inline-block;
     animation-name: anim-shake;
