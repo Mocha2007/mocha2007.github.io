@@ -16,7 +16,12 @@ Here I add to <a href="http://jwodder.freeshell.org/lambda.html">this page</a> i
 <h3>Mathematical Operators</h3>
 <ul>
 	<li>LCM := λab. IDIV (MULT a b) (GCD a b)</li>
+	<li>NCR := λab. IDIV (NPR a b) (FACTORIAL b)</li>
+	<li>NPR := λab. IDIV (FACTORIAL a) (FACTORIAL (SUB a b))</li>
+	<li>TRIANGULAR := λa. PLUS ((EXP a 2) a) 2</li>
+	<li>WOODALL := λa. SUB (MULT a (POW 2 a)) 1</li>
 </ul>
+The latter two aren't particularly important but I found them to be fairly simple to implement, so I did so anyways.
 <h3>Booleans</h3>
 <ul>
 	<li>NAND := λab. a (NOT b) True</li>
