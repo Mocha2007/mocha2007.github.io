@@ -3,6 +3,16 @@
 <link href="simple.css" type="text/css" rel="stylesheet">
 <title>Lambda</title>
 Here I add to the lambda functions on <a href="http://jwodder.freeshell.org/lambda.html">this page</a>:
+<h3>Brief Reminder</h3>
+<ul>
+	<li>True := λab.a</li>
+	<li>False := λab.b</li>
+	<li>0 := λab.b</li>
+	<li>1 := λab.a b</li>
+	<li>2 := λab.a (a b)</li>
+	<li>3 := λab.a (a (a b))</li>
+	<li>etc.</li>
+</ul>
 <h3>Mathematical Operators</h3>
 <ul>
 	<li>LCM := λab. IDIV (MULT a b) (GCD a b)</li>
@@ -12,5 +22,9 @@ Here I add to the lambda functions on <a href="http://jwodder.freeshell.org/lamb
 	<li>NAND := λab. a (NOT b) True</li>
 	<li>NOR := λab. a False (NOT b)</li>
 	<li>XNOR := λab. a (NOT b) b</li>
+	<li>Implication := λab. a b True</li>
+	<li>(Converse Implication) := λab. a a (NOT b)</li>
+	<li>Nonimplication := λab. a (NOT b) a</li>
+	<li>(Converse Nonimplication) := λab. a False b</li>
 </ul>
 <center><a href="index.html">Back</a></center>
