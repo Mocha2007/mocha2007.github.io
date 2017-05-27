@@ -27,4 +27,52 @@ Here I add to <a href="http://jwodder.freeshell.org/lambda.html">this page</a> i
 	<li>Nonimplication := λab. a (NOT b) a</li>
 	<li>(Converse Nonimplication) := λab. a False b</li>
 </ul>
+<table style="">
+  <tr>
+    <th>λab. a X Y<br></th>
+    <th>a</th>
+    <th>b</th>
+    <th>(NOT a)<br></th>
+    <th>(NOT b)<br></th>
+    <th>True</th>
+    <th>False</th>
+  </tr>
+  <tr>
+    <td>a</td>
+    <td>a</td>
+    <td>AND a b</td>
+    <td>C. Nonimpl. a b</td>
+    <td>Nonimpl. a b</td>
+    <td>a</td>
+    <td>False</td>
+  </tr>
+  <tr>
+    <td>b<br></td>
+    <td>OR a b</td>
+    <td>b</td>
+    <td>C. Nonimpl. a b</td>
+    <td>XOR a b</td>
+    <td>OR a b</td>
+    <td>C. Nonimpl. a b</td>
+  </tr>
+  <tr>
+    <td>(NOT a)<br></td>
+    <td>True</td>
+    <td>Impl. a b</td>
+    <td>NOT a</td>
+    <td>NAND a b</td>
+    <td>True</td>
+    <td>NOT a</td>
+  </tr>
+  <tr>
+    <td>(NOT b)<br></td>
+    <td>C. Impl. a b</td>
+    <td>XNOR a b</td>
+    <td>NOR a b</td>
+    <td>NOT b</td>
+    <td>Impl. a b</td>
+    <td>NOR a b</td>
+  </tr>
+</table>
+If Y is True then the statement is equivalent to as if Y were (NOT a). If Y is False then the statement is equivalent to as if Y were a.
 <center><a href="index.html">Back</a></center>
