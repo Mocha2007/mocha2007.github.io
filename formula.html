@@ -135,6 +135,11 @@ $$e^{2i\pi}=1$$
 <h2>Integer Sequences and Constants</h2>
 E:
 $$e=\sum_{n=0}^{\infty}{\frac 1 {n!}}$$
+Euler-Mascheroni:
+$$\begin{align}
+\gamma &= \lim_{n\to\infty}\left(-\ln n + \sum_{k=1}^n \frac1{k}\right)\\[5px]
+&=\int_1^\infty\left(\frac1{\lfloor x\rfloor}-\frac1{x}\right)\,dx.
+\end{align}$$
 Fibonacci Numbers:
 $$F_n=\frac{\phi^n-\psi^n}{\sqrt 5}$$
 Golden Ratio:
@@ -147,15 +152,40 @@ $$\pi=\sqrt{\sum_{n=1}^{\infty}{\frac 6 {n^2}}}$$
 Triangular Numbers:
 $$T_n=\frac{n^2+n}2$$
 <h1>Science</h1>
+Bi-elliptic Transfer:
+<ul>
+	<li>\(r_1\) is the SMA of the initial orbit</li>
+	<li>\(r_2\) is the SMA of the final orbit</li>
+	<li>\(r_b\) is the common apoapsis radius of the two transfer ellipses, and is a free parameter of the manoeuvre</li>
+	<li>\(a_1\) and \(a_2\) are the semimajor axes of the two elliptical transfer orbits, which are given by
+$$a_1=\frac{r_1+r_b}2$$
+$$a_2=\frac{r_2+r_b}2$$</li>
+	<li>The \(\Delta v\) requirements are:</li>
+</ul>
+$$\Delta v_1=\sqrt{\frac{2\mu}{r_1}-\frac{\mu}{a_1}}-\sqrt{\frac{\mu}{r_1}}$$
+$$\Delta v_2=\sqrt{\frac{2\mu}{r_b}-\frac{\mu}{a_2}}-\sqrt{\frac{2\mu}{r_b}-\frac{\mu}{a_1}}$$
+$$\Delta v_3=\sqrt{\frac{2\mu}{r_2}-\frac{\mu}{a_2}}-\sqrt{\frac{\mu}{r_2}}$$
+Drag:
+$$F_D=\frac 1 2\rho u^2C_DA$$
+Hohmann Transfer:
+$$\Delta v_1=\sqrt{\frac{\mu}{a_1}}(\sqrt{\frac{2a_2}{a_1+a_2}}-1)$$
+$$\Delta v_2=\sqrt{\frac{\mu}{a_2}}(1-\sqrt{\frac{2a_1}{a_1+a_2}})$$
 Kinematic Equations:
 $$d=v_it+\frac 1 2at^2$$
 $$v_f=\sqrt{v_i^2+2ad}$$
 $$v_f=v_i+at$$
 $$d=t\frac{v_i+v_f}2$$
+<a href="https://en.wikipedia.org/wiki/Orbital_inclination_change#Calculation">Orbital Inclination Change</a>:
+$$\Delta v= {2\sin(\frac{\Delta{i}}{2})\sqrt{1-e^2}\cos(\omega+f)na \over {1+e\cos(f)}}$$
 Orbit Period:
 $$P=2\pi\sqrt\frac{a^3}\mu$$
+Orbit Velocity:
+$$v=\sqrt{\frac{\mu}a}$$
 Standard Gravitational Parameter:
 $$\mu=GM$$
+Synchronous Orbit:
+$$a=\sqrt[3]{\frac{\mu t^2}{4\pi^2}}$$
 Tsiolkovsky Rocket Equation:
 $$\Delta v=v_e\ln{\frac{m_i}{m_f}}$$
+$$\Delta v=gI_{sp}\ln{\frac{m_i}{m_f}}$$
 <center><a href="index.html">&#8592; Back</a></center>
