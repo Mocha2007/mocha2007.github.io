@@ -5,9 +5,15 @@
 <h1>Function Growth</h1>
 Here, a function f(x) grows "faster" than g(x) if the limit of f(x)/g(x) as x approaches infinity approaches infinity. If the limit approaches zero, it grows more slowly, and if a constant it grows the same (roughly).
 <ul>
-	<li>x!</li>
-	<li>a<sup>x</sup></li>
-	<li>x<sup>a</sup></li>
-	<li>log<sub>a</sub>(x)</li>
+	<li>Ack(m,n) - m>3</li>
+	<li>x! - &Gamma;(x)</li>
+	<li>a<sup>x</sup> - when a>1 - 2<sup>x</sup> &asymp; Ack(3,n), e<sup>x</sup>, 3<sup>x</sup>, ...</li>
+	<li>x<sup>a</sup> - when a>0 - x &asymp; &phi;(n), x<sup>2</sup> &asymp; T<sub>n</sub>,  x<sup>3</sup>, ...</li>
+	<li>log<sub>a</sub>(x) - when a>1 - log<sub>2</sub>(x), ln<sub></sub>(x), ...</li>
+	<li>a - 1, 2, 3, ...</li>
 </ul>
+These hold true for <b>any</b> values of a, provided they are within the bounds mentioned. Coefficients and constants do not affect the result. When adding or multiplying two functions, the domination is that of the more dominating function.
+In comparing two functions with different a values, the higher a value will dominate the smaller a value, except for logarithms, where it is the other way around.
+<br/><br/>
+Additional Note: When in Ack(m,n) m is 0, 1, or 2, the function &asymp; x.
 <center><a href="index.html">&#8592; Back</a></center>
