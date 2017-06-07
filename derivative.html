@@ -4,13 +4,13 @@
 <link href="simple.css" type="text/css" rel="stylesheet">
 <title>Function Derivatives</title>
 <center><h1>Function Derivatives &amp;c</h1>
-A table for convenience.
+A table for convenience. Don't forget +c.
 <table>
   <tr>
     <th>f''(x)</th>
     <th>f'(x)</th>
     <th>f(x)</th>
-    <th>f<sup>(-1)</sup>(x)</th>
+    <th>&#643; f(x) dx</th>
   </tr>
   <tr>
     <td>0</td>
@@ -25,10 +25,91 @@ A table for convenience.
     <td>xln(x)-x</td>
   </tr>
   <tr>
+    <td>-1/(x<sup>2</sup>ln(a))</td>
+    <td>1/(xln(a))</td>
+    <td>log<sub>a</sub>(x)</td>
+    <td>xlog<sub>a</sub>(x)-x/ln(a)</td>
+  </tr>
+  <tr>
     <td>e<sup>x</sup></td>
     <td>e<sup>x</sup></td>
     <td>e<sup>x</sup></td>
     <td>e<sup>x</sup></td>
+  </tr>
+  <tr>
+    <td>ln(a)a<sup>x</sup></td>
+    <td>ln(a)a<sup>x</sup></td>
+    <td>a<sup>x</sup></td>
+    <td>a<sup>x</sup>/ln(a)</td>
+  </tr>
+  <tr>
+    <td colspan=4><center>Trig</center></td>
+  </tr>
+  <tr>
+    <td>-sin(x)</td>
+    <td>cos(x)</td>
+    <td>sin(x)</td>
+    <td>-cos(x)</td>
+  </tr>
+  <tr>
+    <td>2tan(x)sec<sup>2</sup>(x)</td>
+    <td>sec<sup>2</sup>(x)</td>
+    <td>tan(x)</td>
+    <td>-ln(cos(x))</td>
+  </tr>
+  <tr>
+    <td>2cot(x)csc<sup>2</sup>(x)</td>
+    <td>-csc<sup>2</sup>(x)</td>
+    <td>cot(x)</td>
+    <td>ln(sin(x))</td>
+  </tr>
+  <tr>
+    <td>sec(x)(tan<sup>2</sup>(x)+sec<sup>2</sup>(x))</td>
+    <td>tan(x)sec(x)</td>
+    <td>sec(x)</td>
+    <td>ln(tan(x)+sec(x))</td>
+  </tr>
+  <tr>
+    <td>csc(x)(cot<sup>2</sup>(x)+csc<sup>2</sup>(x))</td>
+    <td>-cot(x)csc(x)</td>
+    <td>csc(x)</td>
+    <td>-ln(cot(x)+csc(x))</td>
+  </tr>
+  <tr>
+    <td>x/(1-x<sup>2</sup>)<sup>3/2</sup></td>
+    <td>1/sqrt(1-x<sup>2</sup>)</td>
+    <td>arcsin(x)</td>
+    <td>sqrt(1-x<sup>2</sup>)+xarcsin(x)</td>
+  </tr>
+  <tr>
+    <td>-x/(1-x<sup>2</sup>)<sup>3/2</sup></td>
+    <td>-1/sqrt(1-x<sup>2</sup>)</td>
+    <td>arccos(x)</td>
+    <td>-sqrt(1-x<sup>2</sup>)+xarccos(x)</td>
+  </tr>
+  <tr>
+    <td>-2x/(x<sup>2</sup>+1)<sup>2</sup></td>
+    <td>1/(x<sup>2</sup>+1)</td>
+    <td>arctan(x)</td>
+    <td>xarctan(x)-1/2*ln(x<sup>2</sup>+1)</td>
+  </tr>
+  <tr>
+    <td>2x/(x<sup>2</sup>+1)<sup>2</sup></td>
+    <td>-1/(x<sup>2</sup>+1)</td>
+    <td>arccot(x)</td>
+    <td>xarccot(x)+1/2*ln(x<sup>2</sup>+1)</td>
+  </tr>
+  <tr>
+    <td><!--(-2x<sup>2</sup>+1)/(x<sup>3</sup>(x<sup>2</sup>-1)sqrt(1-x<sup>-2</sup>))--></td>
+    <td>1/(x<sup>2</sup>sqrt(1-x<sup>-2</sup>))</td>
+    <td>arcsec(x)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>-1/(x<sup>2</sup>sqrt(1-x<sup>-2</sup>))</td>
+    <td>arccsc(x)</td>
+    <td></td>
   </tr>
 </table>
 <a href="index.html">&#8592; Back</a></center>
