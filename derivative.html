@@ -15,6 +15,37 @@ A table for convenience. Don't forget +c.
     <th>&#643; f(x) dx</th>
   </tr>
   <tr>
+    <td colspan=5><center>Generic Rules</center></td>
+  </tr>
+  <tr>
+    <td>$$f^{(n)}(x) + g^{(n)}(x)$$</td>
+    <td>$$f''(x) + g''(x)$$</td>
+    <td>$$f'(x) + g'(x)$$</td>
+    <td>$$f(x) + g(x)$$</td>
+    <td>$$\int f(x) + \int g(x)$$</td>
+  </tr>
+  <tr><!--mult-->
+    <td colspan=2 rowspan=4>$$...$$</td>
+    <td>$$f'(x)g(x) + f(x)g'(x)$$</td>
+    <td>$$f(x)g(x)$$</td>
+    <td rowspan=4>$$n/a$$</td>
+  </tr>
+  <tr><!--recip-->
+    <td>$$\frac {-f'(x)} {f(x)^2}$$</td>
+    <td>$$\frac 1 {f(x)}$$</td>
+  </tr>
+  <tr><!--div-->
+    <td>$$\frac {f(x)g'(x)-g(x)f'(x)} {g(x)^2}$$</td>
+    <td>$$\frac {f(x)} {g(x)}$$</td>
+  </tr>
+  <tr><!--chain-->
+    <td>$$f'(g(x))g'(x)$$</td>
+    <td>$$f(g(x))$$</td>
+  </tr>
+  <tr>
+    <td colspan=5><center>Functions</center></td>
+  </tr>
+  <tr>
     <td>$$ax^{1-n}$$</td>
     <td>$$0$$</td>
     <td>$$a$$</td>
@@ -40,7 +71,7 @@ A table for convenience. Don't forget +c.
     <td>$$\frac {-1} {x^{2}\ln(a)}$$</td>
     <td>$$\frac 1 {x\ln(a)}$$</td>
     <td>$$\log_a (x)$$</td>
-    <td>$$x\log_a (x) - \frac x {\ln (a)}$$</td>
+    <td>$$x\log_a (\frac x e)$$</td>
   </tr>
   <tr>
     <td>$$e^x$$</td>
@@ -125,6 +156,41 @@ A table for convenience. Don't forget +c.
     <td>-1/(x<sup>2</sup>sqrt(1-x<sup>-2</sup>))</td>
     <td>arccsc(x)</td>
     <td></td>
+  </tr>
+  <tr>
+    <td colspan=5><center>Trig<sup>2</sup></center></td>
+  </tr>
+  <tr>
+    <td rowspan=6><center>$$...$$</center></td>
+    <td>2cos(2x)</td>
+    <td>sin(2x)</td>
+    <td>sin<sup>2</sup>(x)</td>
+    <td rowspan=6><center>$$...$$</center></td>
+  </tr>
+  <tr>
+    <td>-2cos(2x)</td>
+    <td>-2sin(x)cos(x)</td>
+    <td>cos<sup>2</sup>(x)</td>
+  </tr>
+  <tr>
+    <td>-2sec<sup>4</sup>(x)(cos(2x)-2)</td>
+    <td>2tan(x)sec<sup>2</sup>(x)</td>
+    <td>tan<sup>2</sup>(x)</td>
+  </tr>
+  <tr>
+    <td>2csc<sup>4</sup>(x)(cos(2x)+2)</td>
+    <td>-2cot(x)csc<sup>2</sup>(x)</td>
+    <td>cot<sup>2</sup>(x)</td>
+  </tr>
+  <tr>
+    <td>-2sec<sup>4</sup>(x)(cos(2x)-2)</td>
+    <td>2tan(x)sec<sup>2</sup>(x)</td>
+    <td>sec<sup>2</sup>(x)</td>
+  </tr>
+  <tr>
+    <td>2csc<sup>4</sup>(x)(cos(2x)+2)</td>
+    <td>-2cot(x)csc<sup>2</sup>(x)</td>
+    <td>csc<sup>2</sup>(x)</td>
   </tr>
 </table>
 <a href="index.html">&#8592; Back</a></center>
