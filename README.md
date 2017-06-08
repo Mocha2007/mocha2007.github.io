@@ -1,6 +1,8 @@
 # mocha2007.github.io
-im fixing the site so none of the links work yet pls chill tf out omg
+Hey it's me my site hah
 
-visit the damn site at https://mocha2007.github.io
+visit the site at https://mocha2007.github.io
 
-cuz logic
+no pls really it never gets visitors and it's sad :(
+
+i have useful tables and everything it'll be great
