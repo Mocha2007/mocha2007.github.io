@@ -1,8 +1,7 @@
 body{margin:40px auto;max-width:700px;line-height:1.6;font-size:18px;color:#444;padding:0 10px;background-color:#eee;text-align:justify;}
-h1,h2,h3{line-height:1.2}
-table,th,td{border: 2px solid #444;border-collapse: collapse;text-align:center;}
-code{font-family: "Courier New",monospace;font-style: italic;color:#88c;}
 /*edited from bettermotherfuckingwebsite.com*/
+table,th,td{border: 2px solid #444;border-collapse: collapse;text-align:center;}
+code{font-family: "Courier New",monospace;font-style: italic;color:#88c;}/*used in mathhtml.html only*/
 #nav{position: fixed; top: 0px; left: 0px; padding: 10px; background: #ccc; border: 2px solid #444; text-align:center;}
 #top{text-align:center;}
 #bottom{text-align:center;}
