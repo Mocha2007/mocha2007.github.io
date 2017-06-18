@@ -3,3 +3,6 @@ h1,h2,h3{line-height:1.2}
 table,th,td{border: 2px solid #444;border-collapse: collapse;}
 code{font-family: "Courier New",monospace;font-style: italic;color:#88c;}
 /*edited from bettermotherfuckingwebsite.com*/
+#nav{position: fixed; top: 0px; left: 0px; padding: 10px; background: #ccc; border: 2px solid #444; text-align:center;}
+#top{text-align:center;}
+#bottom{text-align:center;}
