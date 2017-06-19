@@ -6,6 +6,7 @@ a:hover { text-shadow: 0 0 10px #0ff;}
 .f {color:#f08}
 .m {color:#04f}
 .sub {color:#f40}
+.new {color:#fc0}
 #nav{position: fixed; top: 0px; left: 0px; padding: 10px; background: #444; border: 2px solid #ccc; text-align:center;}
 #top{text-align:center;}
 #bottom{text-align:center;}
