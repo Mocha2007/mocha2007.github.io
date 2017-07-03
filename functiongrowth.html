@@ -35,4 +35,26 @@ In comparing two functions with different a values, the higher a value will domi
 Additional Note: When in Ack(m,n) m is 0, 1, or 2, the function &asymp; x.<br/>
 *  - li(x)>x<sup>a</sup> when a&lt;1. li(x)&lt;x<sup>a</sup> when a&geq;1.<br/>
 p<sub>x</sub>>x<sup>a</sup> when a&leq;1. p<sub>x</sub>&lt;x<sup>a</sup> when a>1.
+
+<h2>Polynomials</h2>
+For polynomials, only the first term matters. For example, in
+$$\lim_{x\to\infty}{\frac{x^3-2x^2+3x+1}{2x^2+4x+2}}=?$$
+Since the leading coefficients are positive, and since the greatest power of the numerator is 3, and since the greatest denominator is 2, and since 3>2, the limit as x approaches infinity is infinity. This is true regardless of the coefficients of any of the other powers.
+<br/><br/>
+If the product of the leading coefficients were negative, the limit would tend to either negative infinity or zero, depending on the powers, and if the greatest power of the denominator were greater than the greatest power of the numerator, then the limit would instead be zero.
+<br/><br/>
+If, however, we have:
+$$\lim_{x\to\infty}{\frac{x^3-2x^2-1}{2x^3-x+2}}=?$$
+Where both greatest powers are the same, then the limit is the quotient of the leading terms:
+$$\lim_{x\to\infty}{\frac{x^3-2x^2-1}{2x^3-x+2}}=\frac{x^3}{2x^3}=\frac12$$
+An interesting example of this comes when trying to compare the Lucas numbers with the Fibonacci numbers:
+$$\lim_{n\to\infty}{\frac{L_n}{F_n}}=?$$
+Using the identities on my handy-dandy <a href='formula.html#isac'>math formula reference</a>, we know what L<sub>n</sub> and F<sub>n</sub> are:
+$$\begin{align} \lim_{n\to\infty}{\frac{L_n}{F_n}}
+&=\frac{\phi^n+\psi^n}{\frac{\phi^n-\psi^n}{\sqrt 5}} \\
+&=\sqrt5\frac{\phi^n+\psi^n}{\phi^n-\psi^n} \\
+\end{align}$$
+And the greatest powers of the functions (\(\phi\)) cancel out,
+$$\lim_{x\to\infty}{\frac{L_n}{F_n}}=\sqrt5$$
+And thus they grow at approximately the same rate.
 <div id="bottom"></div>
