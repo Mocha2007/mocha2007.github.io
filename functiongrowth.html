@@ -3,6 +3,7 @@
 <link rel="shortcut icon" href="img/favicon.ico">
 <link href="simple.css" type="text/css" rel="stylesheet">
 <title>Function Growth</title>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- http://docs.mathjax.org/en/latest/start.html -->
 <div id="nav">
 	Navigation<br/>
 	<a href="#top">&#8593; Top &#8593;</a><br/>
@@ -12,7 +13,11 @@
 </div>
 <div id="top"></div>
 <h1>Function Growth</h1>
-Here, a function f(x) grows "faster" than g(x) if the limit of f(x)/g(x) as x approaches infinity approaches infinity. If the limit approaches zero, it grows more slowly, and if a constant it grows the same (roughly).
+Here, a function f(x) grows "faster" than g(x) if
+$$\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=\infty$$
+If, however:
+$$\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=0$$
+then it grows more slowly, and if the limit is a nonzero constant, it grows (roughly) the same.
 <ul>
 	<li><abbr title="Ackermann Function">Ack</abbr>(m,n) - m>3</li><!--can't actually prove this grows faster than x↑↑a, but i strongly suspect so.-->
 	<li>x&#8593;&#8593;a</li>
