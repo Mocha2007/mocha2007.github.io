@@ -1,0 +1,9 @@
+body{margin:40px auto;max-width:700px;line-height:1.6;font-size:18px;color:#ccc;padding:0 10px;background-color:#111;text-align:justify;}
+/*edited from bettermotherfuckingwebsite.com*/
+a{color:#08f}
+table,th,td{border: 2px solid #ccc;border-collapse: collapse;text-align:center;margin: 0px auto;}
+code{font-family: "Courier New",monospace;font-style: italic;color:#88c;}/*used in mathhtml.html only*/
+.cw{-webkit-transform:rotate(90deg);text-align:center;}/*used in logchrono.html only*/
+#nav{position: fixed; top: 0px; left: 0px; padding: 10px; background: #444; border: 2px solid #ccc; text-align:center;}
+#top{text-align:center;}
+#bottom{text-align:center;}
