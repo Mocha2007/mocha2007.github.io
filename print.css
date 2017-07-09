@@ -1,7 +1,5 @@
 body{line-height:1.6;font-size:12pt;text-align:justify;}
 /*edited from bettermotherfuckingwebsite.com*/
 table,th,td{border: 2px solid #000;border-collapse:collapse;text-align:center;}
-code{font-family:"Courier New",monospace;font-style: italic;}
-.cw{-webkit-transform:rotate(90deg);text-align:center;}
 #nav{display:none;}
 #top,#bottom{text-align:center;}

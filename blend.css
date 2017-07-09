@@ -4,7 +4,5 @@ h1 {text-shadow: 0px 0px 20px #0ff;}
 a {color:#0ff;text-decoration:underline;}
 a:hover { text-shadow: 0 0 10px #0ff;}
 table,th,td{border: 2px solid #ccc;border-collapse: collapse;text-align:center;margin: 0px auto;}
-code{font-family: "Courier New",monospace;font-style: italic;color:#88c;}/*used in mathhtml.html only*/
-.cw{-webkit-transform:rotate(90deg);text-align:center;}/*used in logchrono.html only*/
 #nav{position: fixed; top: 0px; left: 0px; padding: 10px; background: #444; border: 2px solid #ccc; text-align:center;}
 #top,#bottom{text-align:center;}
