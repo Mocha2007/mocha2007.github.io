@@ -1,8 +1,7 @@
-body{margin:40px auto;max-width:700px;line-height:1.6;font-size:12pt;padding:0 10px;text-align:justify;font-family:"Times New Roman", Times, serif;}
+body{line-height:1.6;font-size:12pt;text-align:justify;}
 /*edited from bettermotherfuckingwebsite.com*/
-table,th,td{border: 2px solid #000;border-collapse: collapse;text-align:center;margin: 0px auto;}
-code{font-family: "Courier New",monospace;font-style: italic;}/*used in mathhtml.html only*/
-.cw{-webkit-transform:rotate(90deg);text-align:center;}/*used in logchrono.html only*/
+table,th,td{border: 2px solid #000;border-collapse:collapse;text-align:center;}
+code{font-family:"Courier New",monospace;font-style: italic;}
+.cw{-webkit-transform:rotate(90deg);text-align:center;}
 #nav{display:none;}
-#top{text-align:center;}
-#bottom{text-align:center;}
+#top,#bottom{text-align:center;}
