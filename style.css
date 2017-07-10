@@ -1,5 +1,5 @@
-html {background-color:#000;color:#0ff;font-family:"Courier New";background-image: url("img/bgtile_grey.png");margin:40px auto;max-width:800px;padding:0 10px;}
-h1 {font-size: 36px;text-shadow: 0px 0px 20px #0ff;}
+html {background-color:#000;color:#0ff;font-family:"Courier New";background-image: url("img/bgtile_grey.png");margin:40px auto;max-width:700px;padding:0 10px;}
+h1 {font-size: 36px;text-shadow: 0px 0px 20px #0ff;margin:10px;}
 b {color:#f00;}
 a {color:#0ff;font-family:"Courier New";text-decoration:underline;}
 a:hover { text-shadow: 0 0 10px #0ff;}
