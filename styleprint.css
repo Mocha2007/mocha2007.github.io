@@ -9,4 +9,4 @@ a {color:#000;font-family:"Courier New";text-decoration:underline;}
 #nav,#mb{display:none;}
 #top{text-align:center;}
 #bottom{text-align:center;}
-#m{position:relative;left:0px;}
+#m{position:relative;left:0px;filter:brightness(0)}
