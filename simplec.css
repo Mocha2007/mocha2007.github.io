@@ -13,3 +13,7 @@ body{
     margin-top:-6em;
     margin-left:-15em;
 }
+#result{
+	text-align:justify;
+	font-family:serif;
+}

@@ -1,21 +1,11 @@
 function doit(){
-var s=document.getElementsByTagName("input")[0].value
-document.write(`<!DOCTYPE html>
-<html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="simple.css" type="text/css" rel="stylesheet">
-<link href=dark.css type="text/css" rel="alternate stylesheet" title="Dark"> 
-<link href=blend.css type="text/css" rel="alternate stylesheet" title="Blend">
-<link href=print.css type="text/css" rel="stylesheet" media="print">
-<link rel="shortcut icon" href=molsico.png>
-<link rel="apple-touch-icon" href="img/mols_57.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="img/mols_72.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="img/mols_114.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="img/mols_144.png" />
-<title>MOLS Results for "`+s+`"</title>
+var element=document.getElementById("result");
+var s=document.getElementsByTagName("input")[0].value;
+if (element) {
+	element.innerHTML=`
+<hr/>
+<div id="bottom"></div>
 You searched for: "`+s+`".<br/>
-<a href="search.html">Go Back</a><br/>
 <b>DICTIONARIES:</b><br/>
 <a href="http://en.wiktionary.org/wiki/`+s+`#English">Wiktionary - English</a><br/>
 <a href="http://ahdictionary.com/word/search.html?q=`+s+`">American Heritage Dictionary</a><br/>
@@ -52,5 +42,8 @@ You searched for: "`+s+`".<br/>
 <a href="http://reddit.com/u/`+s+`">Reddit - User</a><br/>
 <a href="http://wolframalpha.com/input/?i=`+s+`">Wolfram Alpha</a><br/>
 <a href="http://youtube.com/results?search_query=`+s+`">Youtube</a>
-</html>
-`);}
+`
+}
+document.getElementById('bottom').scrollIntoView();
+throw new Error('Thank you for choosing MOLS!');
+}
