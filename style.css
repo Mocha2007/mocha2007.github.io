@@ -10,3 +10,5 @@ a:hover { text-shadow: 0 0 10px #0ff;}
 #nav{position: fixed; top: 0px; left: 0px; padding: 10px; background: #444; border: 2px solid #ccc; text-align:center;}
 #top{text-align:center;}
 #bottom{text-align:center;}
+#mb{filter: blur(5px);position:relative;left:110px;}
+#m{position:relative;left:-100px;}
