@@ -26,6 +26,9 @@ You searched for: "`+s+`".<br/>
 <a href="http://ldoceonline.com/dictionary/`+s+`">Longman</a><br/>
 <a href="http://merriam-webster.com/dictionary/`+s+`">Merriam-Webster</a><br/>
 <a href="http://en.oxforddictionaries.com/definition/`+s+`">Oxford - English</a><br/>
+<b>JARGON / SLANG DICTIONARIES:</b><br/>
+<a href="http://www.abbreviations.com/`+s+`">abbreviations.com</a><br/>
+<a href="https://techterms.com/definition/`+s+`">TechTerms</a><br/>
 <a href="http://www.urbandictionary.com/define.php?term=`+s+`">Urban Dictionary</a><br/>
 <b>THESAURI:</b><br/>
 <a href="http://en.wiktionary.org/wiki/Wikisaurus:`+s+`">Wikisaurus</a><br/>
