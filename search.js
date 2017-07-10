@@ -56,6 +56,5 @@ You searched for: "`+s+`".<br/>
 <a href="http://youtube.com/results?search_query=`+s+`">Youtube</a><br/><div id="foot">
 `+foot+'</div>'
 }
-document.getElementById('top').scrollIntoView();
 throw new Error('Thank you for choosing MOLS!');
 }
