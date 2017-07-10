@@ -1,7 +1,7 @@
-html {color:#000;font-family:"Courier New";margin:40px auto;padding:0 10px;}
-h1 {font-size: 36px;text-shadow: 0px 0px 0px #000;margin:10px;}
-a {color:#000;font-family:"Courier New";text-decoration:underline;}
-b,.f,.m,.sub,.new {color:#000}
+html{color:#000;font-family:"Courier New";margin:40px auto;padding:0 10px;}
+h1{font-size:36px;text-shadow:0px 0px 0px #000;margin:10px;}
+a{color:#000;font-family:"Courier New";text-decoration:underline;}
+b,.f,.m,.sub,.new{color:#000}
 #nav,#mb{display:none;}
 #top,#bottom{text-align:center;}
 #m{position:relative;left:0px;filter:brightness(0)}
