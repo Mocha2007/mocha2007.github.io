@@ -3,11 +3,16 @@ var s=document.getElementsByTagName("input")[0].value
 document.write(`<!DOCTYPE html>
 <html lang="en">
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="simple.css" type="text/css" rel="stylesheet">
 <link href=dark.css type="text/css" rel="alternate stylesheet" title="Dark"> 
 <link href=blend.css type="text/css" rel="alternate stylesheet" title="Blend">
 <link href=print.css type="text/css" rel="stylesheet" media="print">
 <link rel="shortcut icon" href=molsico.png>
+<link rel="apple-touch-icon" href="img/mols_57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="img/mols_72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="img/mols_114.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="img/mols_144.png" />
 <title>MOLS Results for "`+s+`"</title>
 You searched for: "`+s+`".<br/>
 <a href="search.html">Go Back</a><br/>
