@@ -22,17 +22,13 @@ You searched for: "`+s+`".<br/>
 <a href="http://en.wiktionary.org/wiki/`+s+`#English">Wiktionary - English</a><br/>
 <a href="http://ahdictionary.com/word/search.html?q=`+s+`">American Heritage Dictionary</a><br/>
 <a href="http://dictionary.cambridge.org/us/dictionary/english/`+s+`">Cambridge - English</a><br/>
-<a href="http://collinsdictionary.com/dictionary/english/`+s+`">Collins - English</a><br/>
 <a href="http://dictionary.com/browse/`+s+`">dictionary.com</a><br/>
 <a href="http://ldoceonline.com/dictionary/`+s+`">Longman</a><br/>
-<a href="http://macmillandictionary.com/search/british/?q=`+s+`">Macmillan</a><br/>
 <a href="http://merriam-webster.com/dictionary/`+s+`">Merriam-Webster</a><br/>
 <a href="http://en.oxforddictionaries.com/definition/`+s+`">Oxford - English</a><br/>
-<a href="http://oxfordlearnersdictionaries.com/us/definition/english/`+s+`_1">Oxford Advanced Learner\'s Dictionary</a><br/>
 <a href="http://www.urbandictionary.com/define.php?term=`+s+`">Urban Dictionary</a><br/>
 <b>THESAURI:</b><br/>
 <a href="http://en.wiktionary.org/wiki/Wikisaurus:`+s+`">Wikisaurus</a><br/>
-<a href="http://collinsdictionary.com/dictionary/english-thesaurus/`+s+`">Collins</a><br/>
 <a href="http://merriam-webster.com/thesaurus/`+s+`">Merriam-Webster</a><br/>
 <a href="http://thesaurus.com/browse/`+s+`">thesaurus.com</a><br/><b>ENCYCLOPEDIAE:</b><br/>
 <a href="http://en.wikipedia.org/wiki/`+s+`">Wikipedia</a><br/><b>GAME ENCYCLOPEDIAE:</b><br/>
