@@ -6,6 +6,7 @@ a {color:#000;font-family:"Courier New";text-decoration:underline;}
 .m {color:#000}
 .sub {color:#000}
 .new {color:#000}
-#nav{display:none;}
+#nav,#mb{display:none;}
 #top{text-align:center;}
 #bottom{text-align:center;}
+#m{position:relative;left:0px;}
