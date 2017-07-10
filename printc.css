@@ -11,6 +11,5 @@ body{
     margin-top:-6em;
     margin-left:-15em;
 }
-img{
-	filter:brightness(0)
-}
+img{filter:brightness(0)}
+a{color:#000;}

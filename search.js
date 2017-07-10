@@ -1,6 +1,18 @@
 function doit(){
 var element=document.getElementById("result");
 var s=document.getElementsByTagName("input")[0].value;
+/* Modified from https://stackoverflow.com/a/1643468/2579798 */
+var monthNames=["January","February","March","April","May","June","July","August","September","October","November","December"];
+var d = new Date();
+/* Modified from https://stackoverflow.com/a/10211214/2579798 */
+var currentdate=new Date(); 
+var foot="Results generated "
+	+ currentdate.getDate() + " "
+	+ monthNames[d.getMonth()]  + " " 
+	+ currentdate.getFullYear() + " @ "  
+	+ currentdate.getHours() + ":"  
+	+ currentdate.getMinutes() + ":" 
+	+ currentdate.getSeconds() + " by MOLS (<a href='search.html'>mocha2007.github.io/search.html</a>)";
 if (element) {
 	element.innerHTML=`
 <hr/>
@@ -41,8 +53,8 @@ You searched for: "`+s+`".<br/>
 <a href="http://reddit.com/r/`+s+`">Reddit - Subreddit</a><br/>
 <a href="http://reddit.com/u/`+s+`">Reddit - User</a><br/>
 <a href="http://wolframalpha.com/input/?i=`+s+`">Wolfram Alpha</a><br/>
-<a href="http://youtube.com/results?search_query=`+s+`">Youtube</a>
-`
+<a href="http://youtube.com/results?search_query=`+s+`">Youtube</a><br/><div id="foot">
+`+foot+'</div>'
 }
 document.getElementById('bottom').scrollIntoView();
 throw new Error('Thank you for choosing MOLS!');
