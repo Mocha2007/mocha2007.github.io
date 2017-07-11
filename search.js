@@ -38,7 +38,7 @@ You searched for: "`+s+`".<br/>
 <a href="http://dwarffortresswiki.org/index.php/DF2014:`+s+`">DFWiki</a><br/>
 <a href="http://minecraft.gamepedia.com/`+s+`">MCWiki</a><br/>
 <a href="http://terraria.gamepedia.com/`+s+`">Terraria Wiki</a><br/>
-<img src="http://upload.wikimedia.org/wikipedia/commons/f/f5/Flag_of_Esperanto.svg" width="18" height="12"><b>RESURSOJ ESPERANTAJ:</b><br/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Flag_of_Esperanto.svg" width="18" height="12"><b>RESURSOJ ESPERANTAJ:</b><br/>
 <a href="http://vortaro.net/#`+s+`">vortaro.net</a><br/>
 <a href="http://eo.wikipedia.org/wiki/`+s+`">Vikipedio</a><br/>
 <a href="http://eo.wiktionary.org/wiki/`+s+`#Esperanto">Vikivortaro</a><br/>
