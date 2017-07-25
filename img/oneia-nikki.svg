@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="no"?>
+<svg width="59180" height="13974" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<desc>Oneia-Nikki System</desc>
+	<rect x="0" y="0" width="59180" height="13974" fill="black"/>
+	
+	<circle cx="6987" cy="6987" r="50957" fill="black" stroke="white" stroke-width="100"/>
+	<circle cx="6987" cy="6987" r="13692" fill="tan"/>
+	<circle cx="6987" cy="6987" r="11220" fill="black"/>
+	
+	<circle cx="6987" cy="6987" r="6987" fill="blue"/>
+	<circle cx="57944" cy="6987" r="1236" fill="green"/>
+	
+	<text x="15000" y="7500" font-family="Verdana" font-size="2000" fill="white" >
+		Oneia
+	</text>
+	<text x="51000" y="7500" font-family="Verdana" font-size="2000" fill="white" >
+		Nikki
+	</text>
+</svg>
