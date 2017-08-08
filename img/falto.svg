@@ -6,7 +6,7 @@
 
 	<circle cx="26" cy="26" r="82" stroke="white" stroke-width=".1"/><!--moon orbit-->
 	
-	<circle cx="26" cy="26" r="26" fill="rgb(220,172,128)"/><!--Falto-->
+	<circle cx="26" cy="26" r="26" fill="rgb(200,182,148)"/><!--Falto-->
 
 	<circle cx="108" cy="26" r="0.50732" fill="silver"/><!--moon-->
 	
