@@ -1,0 +1,34 @@
+<?xml version="1.0" standalone="no"?>
+<!--Scale: 1 Pixel = 1 Mm-->
+<svg width="1885" height="154" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<desc>Oneia-Nikki System</desc>
+	<rect x="0" y="0" width="1885" height="154" fill="black"/>
+
+	<circle cx="77" cy="77" r="1800" stroke="white" stroke-width="1"/><!--maia orbit-->
+	<circle cx="77" cy="77" r="1295" stroke="white" stroke-width="1"/><!--seter orbit-->
+	<circle cx="77" cy="77" r="816" stroke="white" stroke-width="1"/><!--bolt orbit-->
+	<circle cx="77" cy="77" r="514" stroke="white" stroke-width="1"/><!--uto orbit-->
+
+	<circle cx="77" cy="77" r="277" stroke="silver" stroke-width="1"/><!--277 orbit-->
+	<circle cx="77" cy="77" r="256" stroke="silver" stroke-width="1"/><!--256 orbit-->
+	<circle cx="77" cy="77" r="236" stroke="silver" stroke-width="1"/><!--236 orbit-->
+	<circle cx="77" cy="77" r="212" stroke="silver" stroke-width="1"/><!--212 orbit-->
+
+	<circle cx="77" cy="77" r="193" stroke="grey" stroke-width="4"/><!--outer ring-->
+	<circle cx="77" cy="77" r="164" stroke="grey" stroke-width="11"/><!--middle ring-->
+	<circle cx="77" cy="77" r="125" stroke="grey" stroke-width="5"/><!--inner ring-->
+	
+	<circle cx="77" cy="77" r="77" fill="rgb(184,172,103)"/><!--Eisen-->
+
+	<circle cx="591" cy="77" r="6.3109" fill="rgb(201,147,87)"/><!--Uto-->
+	<circle cx="893" cy="77" r="6.195" fill="rgb(208,131,54)"/><!--Bolt-->
+	<circle cx="1372" cy="77" r="16.676" fill="rgb(184,172,103)"/><!--Seter-->
+	<circle cx="1877" cy="77" r="7.12" fill="rgb(208,131,54)"/><!--Maia-->
+	
+	<text x="50" y="77" font-family="Verdana" font-size="25" fill="black">Eisen</text>
+	<text x="370" y="130" font-family="Verdana" font-size="10" fill="white">Inner Minor Moons</text>
+	<text x="600" y="77" font-family="Verdana" font-size="25" fill="white">Uto</text>
+	<text x="900" y="77" font-family="Verdana" font-size="25" fill="white">Bolt</text>
+	<text x="1400" y="77" font-family="Verdana" font-size="25" fill="white">Seter</text>
+	<text x="1800" y="77" font-family="Verdana" font-size="25" fill="white">Maia</text>
+</svg>

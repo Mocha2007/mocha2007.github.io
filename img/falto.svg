@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!--Scale: 1 Pixel = 1 Mm-->
+<svg width="109" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<desc>Oneia-Nikki System</desc>
+	<rect x="0" y="0" width="109" height="52" fill="black"/>
+
+	<circle cx="26" cy="26" r="82" stroke="white" stroke-width=".1"/><!--moon orbit-->
+	
+	<circle cx="26" cy="26" r="26" fill="rgb(220,172,128)"/><!--Falto-->
+
+	<circle cx="108" cy="26" r="0.50732" fill="silver"/><!--moon-->
+	
+	<text x="55" y="26" font-family="Verdana" font-size="3" fill="white">Falto</text>
+</svg>
