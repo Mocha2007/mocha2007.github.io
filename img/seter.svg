@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="no"?>
+<svg width="100" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<desc>Seter</desc>
+	<!--Cloud bands-->
+	<rect x="0" y="0" width="100" height="100" fill="#cfb964"/>
+	<rect x="0" y="34" width="100" height="11" fill="#797960"/>
+	<rect x="0" y="64" width="100" height="14" fill="#797960"/>
+	<!--circular crop-->
+	<circle cx="50" cy="50" r="100" fill="none" stroke="black" stroke-width="100"/>
+</svg>
