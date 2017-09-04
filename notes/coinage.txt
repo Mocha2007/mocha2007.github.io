@@ -1,0 +1,11 @@
+Metals:
+	Copper
+	Tin
+	Silver
+
+Name		Composition	Radius	Height	Value	(Appx. USD)
+Copper		100% Cu		10mm	1.25mm	1c	1/4
+Small Tin	100% Sn		13mm	1.25mm	1t=4c	1
+Large Tin	100% Sn		18.4mm	2.5mm	4t	4
+Small Silver	100% Ag		9.3mm	1mm	1s=16t	16
+Large Silver	100% Ag		13.1mm	2mm	4s	64
