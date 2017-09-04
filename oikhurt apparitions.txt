@@ -1,0 +1,14 @@
+2035 Apr 04	Not Visible
+1856 Jun 20	Not Visible
+1677 Sep 26	Not Visible
+1498 Dec 15	Not Visible
+1320 Mar 14	Visible (Ora and Laxei)
+1141 Jun 11	Visible (Ora, Pankair, and Laxei)
+0962 Sep 09	Visible (Ora, Pankair, and Laxei)
+0783 Dec 08	Visible (Pankair and Laxei)
+0605 Mar 07	Visible (Pankair, Nizhind, and Laxei)
+0426 Jun 05	Visible (Nizhind)
+0247 Sep 02	Visible (Nizhind)
+0068 Nov 30	Visible (South Sea)
+-110 Feb 28	Visible (South Sea)
+-289 May 28	Visible (South Sea)
