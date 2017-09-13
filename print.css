@@ -3,3 +3,5 @@ a{color:#000}
 table,th,td{border:2px solid #000;border-collapse:collapse;text-align:center;}
 #nav{display:none;}
 #top,#bottom{text-align:center;}
+h1,h2,.desc{text-align:center;}
+.desc{font-style:italic;}
