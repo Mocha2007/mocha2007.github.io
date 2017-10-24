@@ -4,4 +4,5 @@ table,th,td{border:2px solid #333;border-collapse:collapse;text-align:center;mar
 #nav{position:fixed;top:0px;left:0px;padding:10px;background:#999;border:2px solid #444;text-align:center;}
 #top,#bottom{text-align:center;}
 h1,h2,.desc{text-align:center;}
-.desc{font-style:italic;}
+q,.desc{font-style:italic;}
+q{display:inline-block;margin:0em 3em;}
