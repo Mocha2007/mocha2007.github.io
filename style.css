@@ -8,6 +8,7 @@ a:hover{text-shadow:0 0 10px #0ff;}
 .m{color:#03f}
 .sub{color:#f30}
 .new{color:#fc0}
+.up{color:green}
 #nav{position:fixed;top:0px;left:0px;padding:10px;background:#333;border:2px solid #ccc;text-align:center;}
 #top,#bottom{text-align:center;}
 #mb{filter:blur(5px);position:relative;left:110px;}
