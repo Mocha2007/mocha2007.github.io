@@ -14,5 +14,5 @@ a:hover{text-shadow:0 0 10px #0ff;}
 #mb{filter:blur(5px);position:relative;left:110px;}
 #m{position:relative;left:-100px;}
 /* Targets Safari 7.1+ */
-_::-webkit-full-page-media,_:future,:root #mb{display:none;}
-_::-webkit-full-page-media,_:future,:root #m{position:static;}
+_::-webkit-full-page-media,:root #mb{display:none;}
+_::-webkit-full-page-media,:root #m{position:static;}
