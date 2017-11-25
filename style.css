@@ -16,3 +16,7 @@ a:hover{text-shadow:0 0 10px #0ff;}
 /* Targets Safari 7.1+ */
 _::-webkit-full-page-media,:root #mb{display:none;}
 _::-webkit-full-page-media,:root #m{position:static;}
+/* 25 Nov 2017 */
+.y{color:#0f0}
+.y::before{content:"(20"}
+.y::after{content:")"}
