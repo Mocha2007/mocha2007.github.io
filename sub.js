@@ -13,6 +13,7 @@ var subtitles =	[
 				'Poorly-transed Japanese for <i>also tea</i>? You decide.',
 				'The med curse is real',
 				'I have discovered a truly marvelous proof of this theorem, which this randomly-generated subtitle is too small to contain.',
+				'<a href="https://en.wikipedia.org/wiki/Bet_(letter)">Bet</a>, <a href="https://en.wikipedia.org/wiki/Click_consonant">clicks</a>, and <a href="https://en.wikipedia.org/wiki/Trill_consonant">trills</a>?',
 				'Mocha &isin; Fags',
 				'&lambda;x.x is Mocha',
 				'/me huggu',
@@ -22,7 +23,11 @@ var subtitles =	[
 				'<i>Real</i> News.',
 				'The Senate and the Poplar of Rome',
 				'Mentula Culusque Moechi',
-				'<a href="https://en.wikipedia.org/wiki/Bet_(letter)">Bet</a>, <a href="https://en.wikipedia.org/wiki/Click_consonant">clicks</a>, and <a href="https://en.wikipedia.org/wiki/Trill_consonant">trills</a>?',
+				'Certified Elf-Kosher',
+				'/mo(ch|k|hx|\\u0125)[aeiou]r?/gi',
+				'Perihelion * Date of perihelion passage * 3.14',
+				'...baka!',
+				'/d&#658;&#618;f/ not /g&#618;f/',
 				'Culus Invictus'
 				]
 window.onload = function Sub() {
