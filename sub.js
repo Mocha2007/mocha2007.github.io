@@ -55,7 +55,7 @@ var subtitles =	[
 				'I can hear them breaching the defenses of my RigFives ship.',
 				'Culus Invictus'
 				]
-window.onload = function Sub() {
+function Sub() {
 	var index = Math.floor(Math.random()*(subtitles.length));
 	document.getElementById('subtitle').innerHTML = subtitles[index];
 	console.info('C3692 6510 QT4420');
