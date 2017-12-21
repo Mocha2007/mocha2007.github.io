@@ -2,6 +2,7 @@ body{margin:40px auto;max-width:700px;line-height:1.6;font-size:18px;color:#444;
 p{text-indent:45px;}
 table{border-collapse:collapse;margin:auto;}
 th,td{border:2px solid #333;text-align:center;}
+th{font-style:bold;}
 #nav{position:fixed;top:0px;left:0px;padding:10px;background:#999;border:2px solid #444;text-align:center;color:#222;}
 #top,#bottom{text-align:center;}
 h1,h2,.desc{text-align:center;}
