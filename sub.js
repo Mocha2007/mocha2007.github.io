@@ -35,7 +35,7 @@ var subtitles =	[
 				'/d&#658;&#618;f/ not /g&#618;f/',
 				'The coneconomy, stupid!',
 				'Make Namei Great Again',
-				'I don\'t spell incorrectly or use bad grammar, I just use a different style guide.',
+				'I neither misspell nor use bad grammar; I just use a different style guide.',
 				'Hey man, at least <i>my</i> conlangs don\'t use words like <i>boato</i> and <i>farmo</i>',
 				'Je transforme les plan&egrave;tes en mondes.',
 				'Construo ergo sum.',
@@ -48,6 +48,9 @@ var subtitles =	[
 				'Looks like we got ourselves a li\'l Mike-Oscar-Charlie-Hotel-Alfa!',
 				'49206a757374207761737465642061206d696e757465206f6620796f75722074696d652e203b33',
 				'.... .- ...- . / -.-- --- ..- / -. --- / .-.. .. ..-. .',
+				'Enkl&aacute;r\'s Stead, by Enkl&aacute;r\'s Head',
+				'I did <i>not</i> have sexual relations with that map.',
+				'<i>"No"</i>',
 				'Culus Invictus'
 				]
 window.onload = function Sub() {
