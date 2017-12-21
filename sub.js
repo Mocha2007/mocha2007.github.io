@@ -1,4 +1,4 @@
-/* 'Welcome!','Bonvenon!','Bienvenue!','Salve!','Geti!','Bienvenido!','ようこそ!', */
+// 'Welcome!','Bonvenon!','Bienvenue!','Salve!','Geti!','Bienvenido!','ようこそ!',
 /*
 				'It\' a "hash" not a "hashtag", unless it\'s followed by a tag.',
 */
