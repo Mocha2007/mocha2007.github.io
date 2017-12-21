@@ -51,6 +51,8 @@ var subtitles =	[
 				'Enkl&aacute;r\'s Stead, by Enkl&aacute;r\'s Head',
 				'I did <i>not</i> have sexual relations with that map.',
 				'<i>"No"</i>',
+				'We can finally invade the heart of Eremor. Unfortunately for you, your adventure ends here.',
+				'I can hear them breaching the defenses of my RigFives ship.',
 				'Culus Invictus'
 				]
 window.onload = function Sub() {
