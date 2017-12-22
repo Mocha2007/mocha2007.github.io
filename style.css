@@ -4,5 +4,6 @@ b{color:#f00;}
 a{color:#0ff;font-family:"Courier New";text-decoration:underline;}
 a:hover{text-shadow:0 0 10px #0ff;}
 #top,#bottom{text-align:center;}
-.new{color:#fc0}
-.up{color:#0c0}
+.new{list-style-image:url('img/new.png');}
+.up{list-style-image:url('img/up.png');}
+p{text-indent:45px;}
