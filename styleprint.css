@@ -7,4 +7,5 @@ b,.f,.m,.sub{color:#000}
 #m{filter:brightness(0);}
 .new{list-style-image:url('img/newprint.png');}
 .up{list-style-image:url('img/upprint.png');}
-p{text-indent:45px;}
+h3,p{text-indent:45px;}
+h3::before,h3::after{content:'~~~';}
