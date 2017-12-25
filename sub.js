@@ -54,7 +54,8 @@ var subtitles =	[
 				'<i>"No"</i>',
 				'We can finally invade the heart of Eremor.<br/>Unfortunately for you, your adventure ends here.',
 				'I can hear them breaching the defenses of my RigFives ship.',
-				'Culus Invictus'
+				'Culus Invictus',
+				'/ɑ\'wu/'
 				]
 function Sub() {
 	var index = Math.floor(Math.random()*(subtitles.length));
