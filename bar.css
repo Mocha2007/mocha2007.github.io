@@ -1,0 +1,40 @@
+/* All HTML5 progress enabled browsers */
+progress {
+	/* Dimensions */
+	width: 300px;
+	height: 20px;
+}
+
+/* Polyfill */
+progress[role]:after {
+	background-image: none; /* removes default background from polyfill */
+}
+/*
+ * Progress bar background
+ */
+
+/* Firefox and Polyfill */
+progress {
+	background: url("img/progress0.png") !important; /* !important only needed in polyfill */
+}
+/* Chrome */
+progress::-webkit-progress-bar {
+	background: url("img/progress0.png");
+}
+
+/*
+ * Progress bar value
+ */
+
+/* Firefox */
+progress::-moz-progress-bar {
+	background: url("img/progress1.png");
+}
+/* Chrome */
+progress::-webkit-progress-value {
+	background: url("img/progress1.png");
+}
+/* Polyfill */
+progress[aria-valuenow]:before {
+	background: url("img/progress1.png");
+}
