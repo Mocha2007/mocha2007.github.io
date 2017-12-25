@@ -3,7 +3,7 @@ function OneiaTime() {
 	var year =	6477407.605917404;
 	var day =	104148;
 
-	var currenttime = Math.floor((Date.now())/1000)
+	var currenttime = Date.now()/1000
 
 	var remainder = currenttime-epoch;
 	var years = 950+Math.floor(remainder/year);
