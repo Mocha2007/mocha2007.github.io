@@ -1,3 +1,10 @@
+/* Thanks to https://stackoverflow.com/questions/4467539/javascript-modulo-gives-a-negative-result-for-negative-numbers/17323608#17323608
+Fixes a bug in javascript where the entire fucking language is retarded and should burn in hell for all eternity.
+*/
+function mod(n, m){
+	return ((n % m) + m) % m;
+}
+
 function OneiaTime() {
 	var epoch =	1497151176;/*SUN 2017 JUN 11 03:19:36 UTC*/
 	var year =	6477407.605917404;
@@ -24,7 +31,7 @@ function OneiaTime() {
 	var currentTimeString = years + " AT, Day " + days + ", " + first + ":" + second + ":" + third + ":" + fourth + ":" + fifth;
 	
 	var utc1 = new Date().toJSON().slice(0,10);
-	var utc2 = (new Date().toJSON().slice(11,13)-5)%24;
+	var utc2 = mod(new Date().toJSON().slice(11,13)-5,24);
 	
 	var medidiem = ' AM'
 	if (utc2>12){
