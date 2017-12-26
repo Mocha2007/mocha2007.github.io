@@ -20,6 +20,55 @@ function getDateWithUTCOffset(inputTzOffset){
 	return outputDate;
 }
 
+// https://stackoverflow.com/questions/14926306/javascript-play-sound-on-hover-stop-and-reset-on-hoveroff/14926552#14926552
+
+function PlaySound(soundobj) {
+	var thissound=document.getElementById(soundobj);
+	thissound.play();
+}
+
+function StopSound(soundobj) {
+	var thissound=document.getElementById(soundobj);
+	thissound.pause();
+	thissound.currentTime = 0;
+}
+
+function HolidayCSS(){
+	monthmonth = new Date().getMonth() + 1;
+	dayday = (new Date().getDate())==(monthmonth*7-1);
+	console.log(monthmonth,new Date().getDate());
+	
+	ReplacementImage = 'Steve'
+	
+	if (monthmonth==1){
+		ReplacementImage = 'Steve'
+	}
+	
+	else if (monthmonth==2){
+		ReplacementImage = '<img id="m" src="img/mochentines.png" width="200" title="Fuck merrily!" alt="Mochadian Valentines\' Squiggles">'
+	}
+	
+	else if (monthmonth==3){
+		ReplacementImage = '<img id="m" src="img/mochricks.png" width="200" title="Drink, ye bastard!" alt="Mochadian St. Patrick\'s day Squiggle">'
+	}
+	
+	else if (dayday){
+		ReplacementImage = '<img id="m" src="img/mopril.png" width="200" alt="Mochadian Birthday Squiggle" onmouseover="PlaySound(\'sfx\')" onmouseout="StopSound(\'sfx\')"> <audio id="sfx" src="snd/partyhorn.mp3"/>'
+	}
+	
+	else if (monthmonth==10){
+		ReplacementImage = '<img id="m" src="img/mochaween.png" width="200" title="Boo, motherfucker!" alt="Mochadian Halloween Squiggle">'
+	}
+	
+	else if (monthmonth==12){
+		ReplacementImage = '<img id="m" src="img/mochristmas.png" width="200" title="Have a joyous Saturnalia!" alt="Mochadian Christmas Squiggle">'
+	}
+	
+	if (ReplacementImage!='Steve'){
+		document.getElementById("m").outerHTML = ReplacementImage
+	}
+}
+
 function OneiaTime() {
 	var epoch =	1497151176;/*SUN 2017 JUN 11 03:19:36 UTC*/
 	var year =	6477407.605917404;
@@ -61,5 +110,4 @@ function OneiaTime() {
 	var vernal =	6884100000;/*20 Mar 16:15 (2018)*/
 
 	document.getElementById("clock").innerHTML = 'Eremoran Time:<br/>'+currentTimeString+'<br/>\n<progress value="'+yearprogress+'"></progress><br/>\nEarth Time:<br/>'+utc1+utc2+utc3+medidiem+' EST<br/>\n<progress value="'+((Date.now()-vernal)%yy)/yy+'"></progress>';
-	/*console.log(Date.now());*/
 }
