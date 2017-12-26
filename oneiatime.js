@@ -30,13 +30,17 @@ function OneiaTime() {
 
 	var currentTimeString = years + " AT, Day " + days + ", " + first + ":" + second + ":" + third + ":" + fourth + ":" + fifth;
 	
-	var utc1 = new Date().toJSON().slice(0,10);
+	var utc1a = new Date().toJSON().slice(0,8);
+	var utc1b = new Date().toJSON().slice(8,10);
 	var utc2 = mod(new Date().toJSON().slice(11,13)-5,24);
 	
 	var medidiem = ' AM'
 	if (utc2>12){
 		medidiem = ' PM'
 		utc2 -= 12
+		if (utc2>6){
+			utc1b -= 1
+		}
 	}
 	
 	var utc3 = new Date().toJSON().slice(13,19);
@@ -44,6 +48,6 @@ function OneiaTime() {
 	var yy =		31556952000;
 	var vernal =	6884100000;/*20 Mar 16:15 (2018)*/
 
-	document.getElementById("clock").innerHTML = 'Eremoran Time:<br/>'+currentTimeString+'<br/>\n<progress value="'+yearprogress+'"></progress><br/>\nEarth Time:<br/>'+utc1+' '+utc2+utc3+medidiem+' EST<br/>\n<progress value="'+((Date.now()-vernal)%yy)/yy+'"></progress>';
+	document.getElementById("clock").innerHTML = 'Eremoran Time:<br/>'+currentTimeString+'<br/>\n<progress value="'+yearprogress+'"></progress><br/>\nEarth Time:<br/>'+utc1a+utc1b+' '+utc2+utc3+medidiem+' EST<br/>\n<progress value="'+((Date.now()-vernal)%yy)/yy+'"></progress>';
 	/*console.log(Date.now());*/
 }
