@@ -12,7 +12,7 @@
 <div id="nav"></div>
 <div id="top"><h1 id="Lambda">Lambda</h1></div>
 Here I add to <a href="http://jwodder.freeshell.org/lambda.html">this page</a> important <a href="https://en.wikipedia.org/wiki/Lambda_calculus">lambda functions</a> I felt needed:
-<h3 id="Reminder">Reminder</h3>
+<h2 id="Reminder">Reminder</h2>
 <ul>
 	<li>True := λab.a</li>
 	<li>False := λab.b</li>
@@ -22,7 +22,7 @@ Here I add to <a href="http://jwodder.freeshell.org/lambda.html">this page</a> i
 	<li>3 := λab.a (a (a b))</li>
 	<li><a href="https://en.wikipedia.org/wiki/Church_encoding">etc.</a></li>
 </ul>
-<h3 id="Math_Ops">Mathematical Operators</h3>
+<h2 id="Math_Ops">Mathematical Operators</h2>
 <ul>
 	<li>LCM := λab. IDIV (MULT a b) (GCD a b)</li>
 	<li>NCR := λab. IDIV (NPR a b) (FACTORIAL b)</li>
@@ -31,7 +31,7 @@ Here I add to <a href="http://jwodder.freeshell.org/lambda.html">this page</a> i
 	<li>WOODALL := λa. PRED (MULT a (POW 2 a))</li>
 </ul>
 The latter two aren't particularly important but I found them to be fairly simple to implement, so I did so anyways.
-<h3 id="Booleans">Booleans</h3>
+<h2 id="Booleans">Booleans</h2>
 <ul>
 	<li>NAND := λab. a (NOT b) True</li>
 	<li>NOR := λab. a False (NOT b)</li>
