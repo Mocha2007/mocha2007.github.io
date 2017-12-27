@@ -6,18 +6,13 @@
 <link href=simple.css type="text/css" rel="stylesheet" title="Light">
 <link href=dark.css type="text/css" rel="alternate stylesheet" title="Dark"> 
 <link href=blend.css type="text/css" rel="alternate stylesheet" title="Blend">
-<link href=print.css type="text/css" rel="stylesheet" media="print"> 
+<link href=print.css type="text/css" rel="stylesheet" media="print">
+<script src="toc.js"></script>
 <title>Lambda</title>
-<div id="nav">
-	Navigation<br/>
-	<a href="#top">&#8593; Top &#8593;</a><br/>
-	<a href="index.html">&#8592; Home &#8592;</a><br/>
-	<a href="search.html">&#8594; MOLS &#8594;</a><br/>
-	<a href="#bottom">&#8595; Bottom &#8595;</a>
-</div>
-<div id="top"></div>
+<div id="nav"></div>
+<div id="top"><h1 id="Lambda">Lambda</h1></div>
 Here I add to <a href="http://jwodder.freeshell.org/lambda.html">this page</a> important <a href="https://en.wikipedia.org/wiki/Lambda_calculus">lambda functions</a> I felt needed:
-<h3>Brief Reminder</h3>
+<h3 id="Reminder">Reminder</h3>
 <ul>
 	<li>True := λab.a</li>
 	<li>False := λab.b</li>
@@ -27,7 +22,7 @@ Here I add to <a href="http://jwodder.freeshell.org/lambda.html">this page</a> i
 	<li>3 := λab.a (a (a b))</li>
 	<li><a href="https://en.wikipedia.org/wiki/Church_encoding">etc.</a></li>
 </ul>
-<h3>Mathematical Operators</h3>
+<h3 id="Math_Ops">Mathematical Operators</h3>
 <ul>
 	<li>LCM := λab. IDIV (MULT a b) (GCD a b)</li>
 	<li>NCR := λab. IDIV (NPR a b) (FACTORIAL b)</li>
@@ -36,7 +31,7 @@ Here I add to <a href="http://jwodder.freeshell.org/lambda.html">this page</a> i
 	<li>WOODALL := λa. PRED (MULT a (POW 2 a))</li>
 </ul>
 The latter two aren't particularly important but I found them to be fairly simple to implement, so I did so anyways.
-<h3>Booleans</h3>
+<h3 id="Booleans">Booleans</h3>
 <ul>
 	<li>NAND := λab. a (NOT b) True</li>
 	<li>NOR := λab. a False (NOT b)</li>
