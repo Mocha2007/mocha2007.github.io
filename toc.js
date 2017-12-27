@@ -9,7 +9,10 @@ window.onload = function MakeTOC() {
 
 	for (i=0;i<namedheaders.length;i++) {
 		var formattedname = namedheaders[i].id.replace(/_/g,' ');
-		text+='<a href=#'+namedheaders[i].id+'>'+formattedname+'</a><br>';
+		var depth = namedheaders[i].tagName.slice(-1);
+		console.log(formattedname,depth);
+		text+='<span class="nav'+depth+'"><a href="#'+namedheaders[i].id+'">'+formattedname+'</a></span><br>';
+		//
 	}
 	text+='</details>';
 	

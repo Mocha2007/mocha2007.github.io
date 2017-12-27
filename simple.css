@@ -4,6 +4,13 @@ table{border-collapse:collapse;margin:auto;}
 th,td{border:2px solid #333;text-align:center;}
 th{font-style:bold;}
 #nav{position:fixed;top:0px;left:0px;padding:10px;background:#999;border:2px solid #444;color:#222;overflow-y:auto;max-height:940px;}
+.nav2::before{content:'┕';}
+.nav3::before{content:'┃┕';}
+.nav4::before{content:'┃┃┕';}
+.nav5::before{content:'┃┃┃┕';}
+.nav6::before{content:'┃┃┃┃┕';}
+details{line-height:17px;}
+details a{font-size:16px;}
 #top,#bottom{text-align:center;}
 h1,h2,.desc{text-align:center;}
 q,.desc{font-style:italic;}
