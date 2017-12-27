@@ -8,6 +8,8 @@ th{font-style:bold;}
 h1,h2,.desc{text-align:center;}
 q,.desc{font-style:italic;}
 q{display:inline-block;margin:0em 3em;}
+q::before{content:'“';}
+q::after{content:'”';}
 abbr{text-decoration:none;animation:strobe 1s linear alternate infinite;cursor: help;}
 @keyframes strobe{
 	0% {border-bottom:1px solid transparent;}
