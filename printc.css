@@ -7,5 +7,5 @@ body{
     width:24em;
     margin-left:-12em;
 }
-#mols{filter:brightness(0)}
+img{filter:brightness(0)}
 a{color:#000;}

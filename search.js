@@ -39,7 +39,7 @@ function doit(){
 	<a href="https://dwarffortresswiki.org/index.php/DF2014:`+s+`">DFWiki</a><br/>
 	<a href="https://minecraft.gamepedia.com/`+s+`">MCWiki</a><br/>
 	<a href="https://terraria.gamepedia.com/`+s+`">Terraria Wiki</a><br/>
-	<img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Flag_of_Esperanto.svg" width="18" height="12" alt="Esperanto Flag"><b>RESURSOJ ESPERANTAJ:</b><br/>
+	<b>RESURSOJ ESPERANTAJ:</b><br/>
 	<a href="http://vortaro.net/#`+s+`">vortaro.net</a><br/>
 	<a href="https://eo.wikipedia.org/wiki/`+s+`">Vikipedio</a><br/>
 	<a href="https://eo.wiktionary.org/wiki/`+s+`#Esperanto">Vikivortaro</a><br/>
