@@ -8,3 +8,8 @@ a:hover{text-shadow:0 0 10px #0ff;}
 .up{list-style-image:url('img/up.png');}
 h3,p{text-indent:45px;}
 h3::before,h3::after{content:'~~~';}
+abbr{text-decoration:none;animation:strobe 1s linear alternate infinite;cursor: help;}
+@keyframes strobe{
+	0% {border-bottom:1px solid transparent;}
+	100% {border-bottom:1px solid cyan;}
+}
