@@ -1,4 +1,4 @@
-//Seed
+// Seed
 
 function OneiaMonth() {
 	var epoch =			1497151176;/*SUN 2017 JUN 11 03:19:36 UTC*/
@@ -29,6 +29,7 @@ function C2F(t) {
 }
 
 function Weather() {
+	// Modelled on Bhavnagar, India
 	highs = [27.7,30.2,34.7,37.6,39.4,34.5,33,32.2,33,34.2,31.7,28.6];
 	lows = [11.2,14.7,19.5,23.8,25.9,27.1,26,24.8,24.1,22.4,17.9,14.1];
 	rains = [0,0,0,0,1/31,6/30,10/31,8/31,5/30,1/31,0,0];
