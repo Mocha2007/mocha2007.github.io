@@ -5,7 +5,7 @@ function OneiaMonth() {
 	var month =			6477407.605917404/12;
 	var currenttime = 	Date.now()/1000;
 
-	return Math.floor((currenttime-epoch)/month)%12;
+	return Math.floor((currenttime-epoch)/month+3)%12;
 }
 
 function OneiaDay() {
