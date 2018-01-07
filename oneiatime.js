@@ -73,7 +73,7 @@ function OneiaTime() {
 	phases = ['New','Waxing Crescent','First Quarter','Waxing Gibbous','Full','Waning Gibbous','Third Quarter','Waning Crescent'];
 	var epoch =	1497151176;/*SUN 2017 JUN 11 03:19:36 UTC*/
 	var year =	6477407.605917404;
-	var day =	104148;
+	var day =	105850.25205028882; //104148
 
 	var currenttime = Date.now()/1000
 
@@ -83,8 +83,8 @@ function OneiaTime() {
 	var yearprogress = remainder/year;
 	var days = Math.floor(remainder/day);
 	var remainder = remainder%day;
-	var nikkiphase = Math.round(8*(remainder/day+.09)%8)
-	//console.log((remainder/day+.09)%8);
+	var nikkiphase = Math.round(8*(remainder/day-.1)%8)
+	//console.log((remainder/day-.1)%8);
 	var first = Math.floor(remainder/(day/10));
 	var remainder = remainder%(day/10);
 	var second = Math.floor(remainder/(day/100));
