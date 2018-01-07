@@ -70,6 +70,7 @@ function HolidayCSS(){
 }
 
 function OneiaTime() {
+	phases = ['New','Waxing Crescent','First Quarter','Waxing Gibbous','Full','Waning Gibbous','Third Quarter','Waning Crescent'];
 	var epoch =	1497151176;/*SUN 2017 JUN 11 03:19:36 UTC*/
 	var year =	6477407.605917404;
 	var day =	104148;
@@ -82,6 +83,7 @@ function OneiaTime() {
 	var yearprogress = remainder/year;
 	var days = Math.floor(remainder/day);
 	var remainder = remainder%day;
+	var nikkiphase = Math.round(8*remainder/day)
 	var first = Math.floor(remainder/(day/10));
 	var remainder = remainder%(day/10);
 	var second = Math.floor(remainder/(day/100));
@@ -105,9 +107,11 @@ function OneiaTime() {
 		utc2 -= 12
 	}
 
-
 	var yy =		31556952000;
 	var vernal =	6884100000;/*20 Mar 16:15 (2018)*/
+	// 642900 = 7 Jan 1970 10:35:00 UTC
+	// 2551442.9 = Lunar Synodic Period
+	var moonphase = Math.round(8*((currenttime-642900)%2551442.9)/2551442.9)
 
-	document.getElementById("clock").innerHTML = 'Eremoran Time:<br/>'+currentTimeString+'<br/>\n<progress value="'+yearprogress+'"></progress><br/>\nEarth Time:<br/>'+utc1+utc2+utc3+medidiem+' EST<br/>\n<progress value="'+((Date.now()-vernal)%yy)/yy+'"></progress>';
+	document.getElementById("clock").innerHTML = '<img src="img/phase/'+nikkiphase+'.png" height=9 alt="Nikki Phase: '+phases[nikkiphase]+'" title="Nikki Phase: '+phases[nikkiphase]+'"> Eremoran Time:<br/>'+currentTimeString+'<br/>\n<progress value="'+yearprogress+'"></progress><br/>\n<img src="img/phase/'+moonphase+'.png" height=9 alt="Moon Phase: '+phases[moonphase]+'" title="Moon Phase: '+phases[moonphase]+'"> Earth Time:<br/>'+utc1+utc2+utc3+medidiem+' EST<br/>\n<progress value="'+((Date.now()-vernal)%yy)/yy+'"></progress>';
 }
