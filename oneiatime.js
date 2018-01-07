@@ -76,7 +76,7 @@ function OneiaTime() {
 	var day =	105850.25205028882; //104148
 
 	var currenttime = Date.now()/1000
-
+	// 00:00 is at roughly local noon
 	var remainder = currenttime-epoch;
 	var years = 950+Math.floor(remainder/year);
 	var remainder = remainder%year;
