@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="description" content="Turing Machine">
+<link rel="shortcut icon" href="img/favicon.ico">
+<link href=simple.css type="text/css" rel="stylesheet" title="Light">
+<link href=dark.css type="text/css" rel="alternate stylesheet" title="Dark"> 
+<link href=blend.css type="text/css" rel="alternate stylesheet" title="Blend">
+<link href=print.css type="text/css" rel="stylesheet" media="print">
+<script src="toc.js"></script>
+<script src="turing.js"></script>
+<title>Turing Machine</title>
+<div id="nav"></div>
+<div id="top"><h1 id="Turing Machine">Turing Machine</h1></div>
+<p>
+	Turing Machine.
+</p>
+<ul>
+	<li>ADD - add value to pointer</li>
+	<li>DEC - decrement value at pointer</li>
+	<li>DIV - divide value from pointer</li>
+	<li>INC - increment value at pointer</li>
+	<li>JIZ - jump to line if value at pointer is zero</li>
+	<li>JMP - jump to line</li>
+	<li>JNZ - jump to line if value at pointer is not zero</li>
+	<li>MUL - multiply value to pointer</li>
+	<li>NOP - does nothing</li>
+	<li>OUT - output target of pointer</li>
+	<li>PNT - change target of pointer</li>
+	<li>SAY - output text</li>
+	<li>STO - store value to address</li>
+	<li>SUB - substract value from pointer</li>
+</ul>
+
+<textarea id="code" rows="16" cols="64"></textarea><br/>
+<input type="submit" value="Load" onclick="run();">
+<input type="submit" value="Step" onclick="fstep();">
+<input type="submit" value="Reset" onclick="reset();">
+Line <span id="line">0</span>
+ | Output: <span id="output">[PRESS RESET]</span>
+
+<div id="memory"></div>
+
+<div id="bottom"></div>
+</html>
