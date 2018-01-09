@@ -17,19 +17,24 @@
 </p>
 <ul>
 	<li>ADD - add value to pointer</li>
+	<li>AND - returns argument if value at pointer is 0, otherwise, returns value at pointer.</li>
 	<li>DEC - decrement value at pointer</li>
 	<li>DIV - divide value from pointer</li>
 	<li>GOT - move pointer to value at pointer</li>
 	<li>INC - increment value at pointer</li>
-	<li>JIF - jump to line if value at pointer is same as output</li>
+	<li>INP - change value at pointer to state</li>
+	<li>IOR - returns argument if value at pointer is 1, otherwise, returns value at pointer.</li>
+	<li>JIF - jump to line if value at pointer is same as argument</li>
 	<li>JIZ - jump to line if value at pointer is zero</li>
 	<li>JMP - jump to line</li>
 	<li>JNZ - jump to line if value at pointer is not zero</li>
+	<li>MOD - modulo of value to pointer by argument</li>
 	<li>MUL - multiply value to pointer</li>
+	<li>NEG - negates value at pointer</li>
 	<li>NOP - does nothing</li>
-	<li>OUT - output target of pointer</li>
+	<li>OUT - change state to target of pointer</li>
 	<li>PNT - change target of pointer</li>
-	<li>SAY - output text</li>
+	<li>SET - change state to argument</li>
 	<li>STO - store value to address</li>
 	<li>SUB - substract value from pointer</li>
 </ul>
@@ -40,7 +45,7 @@
 <input type="submit" value="Reset" onclick="reset();">
 Line <span id="line">0</span>
  | Pointer: <span id="pointing">0</span>
- | Output: <span id="output">[PRESS RESET]</span>
+ | State: <span id="machinestate">[PRESS RESET]</span>
 
 <div id="memory"></div>
 
