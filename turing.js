@@ -130,7 +130,7 @@ function fstep(){
 		}
 	}
 	else if (command.substring(0,3)=='GOT'){
-		pointer = Number(document.getElementById('x'+pointer).innerHTML);
+		pointer = Number(document.getElementById('machinestate').innerHTML);
 	}
 	else if (command.substring(0,3)=='AND'){
 		if (document.getElementById('x'+pointer).innerHTML==0){

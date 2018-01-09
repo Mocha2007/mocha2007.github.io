@@ -31,15 +31,15 @@
 <div id="memory"></div>
 
 <ul>
-	<li>ADD - add value to pointer</li>
-	<li>AND - returns argument if value at pointer is 0, otherwise, returns value at pointer.</li>
+	<li>ADD - set value at pointer to itself plus argument</li>
+	<li>AND - set value at pointer to argument if itself is 0, otherwise, return itself.</li>
 	<li>DEC - decrement value at pointer</li>
-	<li>DIV - divide value at pointer by argument</li>
-	<li>EXP - raise value at pointer to argument</li>
-	<li>GOT - move pointer to value at pointer</li>
+	<li>DIV - set value at pointer to itself divided by argument</li>
+	<li>EXP - set value at pointer to itself raised to argument</li>
+	<li>GOT - set pointer to state</li>
 	<li>INC - increment value at pointer</li>
-	<li>INP - change value at pointer to state</li>
-	<li>IOR - returns argument if value at pointer is 1, otherwise, returns value at pointer.</li>
+	<li>INP - set value at pointer to state</li>
+	<li>IOR - set value at pointer to argument if itself is 1, otherwise, return itself.</li>
 	<li>JIF - jump to line if value at pointer is same as machine state</li>
 	<li>JIG - jump to line if value at pointer is greater than machine state</li>
 	<li>JIL - jump to line if value at pointer is less than machine state</li>
@@ -47,16 +47,16 @@
 	<li>JMP - jump to line</li>
 	<li>JNZ - jump to line if value at pointer is not zero</li>
 	<li>LLL - increment pointer</li>
-	<li>MOD - modulo of value at pointer by argument</li>
-	<li>MUL - multiply value at pointer by argyment</li>
-	<li>NEG - negates value at pointer</li>
-	<li>NOP - does nothing</li>
-	<li>OUT - change state to target of pointer</li>
-	<li>PNT - change target of pointer</li>
+	<li>MOD - set value to value at pointer modulo argument</li>
+	<li>MUL - set value at pointer to itself multiplied by argument</li>
+	<li>NEG - negate value at pointer</li>
+	<li>NOP - do nothing</li>
+	<li>OUT - set state to target of pointer</li>
+	<li>PNT - set target of pointer to argument</li>
 	<li>RRR - decrement pointer</li>
-	<li>SET - change state to argument</li>
-	<li>STO - store value to address</li>
-	<li>SUB - substract argument from value at pointer</li>
+	<li>SET - set state to argument</li>
+	<li>STO - set state to value at pointer</li>
+	<li>SUB - set value at pointer to argument subtracted from itself</li>
 </ul>
 
 <div id="bottom"></div>
