@@ -50,8 +50,10 @@
 	<li>LLL - increment pointer</li>
 	<li>MOD - set value to value at pointer modulo argument</li>
 	<li>MUL - set value at pointer to itself multiplied by argument</li>
+	<li>NAN - set value at pointer to 0 if argument and itself are 1, else 1</li>
 	<li>NEG - negate value at pointer</li>
 	<li>NOP - do nothing</li>
+	<li>NOR - set value at pointer to 1 if argument and itself are 0, else 0</li>
 	<li>NOT - set value at pointer to 1 if 0, else 0</li>
 	<li>NRT - set value at pointer to the argument-th root of itself</li>
 	<li>OUT - set state to value at pointer</li>
@@ -137,6 +139,14 @@
 	<tr>
 		<td>and</td>
 		<td>AND ?</td>
+	</tr>
+	<tr>
+		<td>nand</td>
+		<td>NAND ?</td>
+	</tr>
+	<tr>
+		<td>nor</td>
+		<td>NOR ?</td>
 	</tr>
 	<tr>
 		<td>not</td>

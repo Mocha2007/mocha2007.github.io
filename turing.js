@@ -181,12 +181,27 @@ function fstep(){
 		}
 	}
 	else if (command.substring(0,3)=='XNR'){
-		// Find center value (1 if argument is 1, else itself)
 		if (document.getElementById('x'+pointer).innerHTML==command.substring(4)){
 			document.getElementById('x'+pointer).innerHTML = 1;
 		}
 		else {
 			document.getElementById('x'+pointer).innerHTML = 0;
+		}
+	}
+	else if (command.substring(0,3)=='NOR'){
+		if (document.getElementById('x'+pointer).innerHTML==command.substring(4) && command.substring(4)==0){
+			document.getElementById('x'+pointer).innerHTML = 1;
+		}
+		else {
+			document.getElementById('x'+pointer).innerHTML = 0;
+		}
+	}
+	else if (command.substring(0,3)=='NAN'){
+		if (document.getElementById('x'+pointer).innerHTML==command.substring(4) && command.substring(4)==1){
+			document.getElementById('x'+pointer).innerHTML = 0;
+		}
+		else {
+			document.getElementById('x'+pointer).innerHTML = 1;
 		}
 	}
 	else {
