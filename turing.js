@@ -168,16 +168,11 @@ function fstep(){
 		document.getElementById('machinestate').innerHTML = pointer;
 	}
 	else if (command.substring(0,3)=='XOR'){
-		// Find center value (1 if argument is 1, else itself)
-		if (command.substring(4)){
-			var centervalue = 1;
+		if (document.getElementById('x'+pointer).innerHTML==command.substring(4)){
+			document.getElementById('x'+pointer).innerHTML = 0;
 		}
 		else {
-			var centervalue = document.getElementById('x'+pointer).innerHTML;
-		}
-		//logthicc
-		if (centervalue){
-			document.getElementById('x'+pointer).innerHTML = 1-Number(document.getElementById('x'+pointer).innerHTML);
+			document.getElementById('x'+pointer).innerHTML = 1;
 		}
 	}
 	else if (command.substring(0,3)=='XNR'){
