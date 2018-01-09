@@ -9,12 +9,25 @@
 <link href=print.css type="text/css" rel="stylesheet" media="print">
 <script src="toc.js"></script>
 <script src="turing.js"></script>
+<style>
+#program{text-align:center;}
+</style>
 <title>Turing Machine</title>
 <div id="nav"></div>
 <div id="top"><h1 id="Turing Machine">Turing Machine</h1></div>
-<p>
-	Turing Machine.
-</p>
+
+<div id="memory"></div>
+
+<div id="program">
+	<textarea id="code" rows="16" cols="64"></textarea><br/>
+	<input type="submit" value="Load" onclick="run();">
+	<input type="submit" value="Step" onclick="fstep();">
+	<input type="submit" value="Reset" onclick="reset();">
+	Line <span id="line">0</span>
+	 | Pointer: <span id="pointing">0</span>
+	 | State: <span id="machinestate">[PRESS RESET]</span>
+</div>
+
 <ul>
 	<li>ADD - add value to pointer</li>
 	<li>AND - returns argument if value at pointer is 0, otherwise, returns value at pointer.</li>
@@ -38,18 +51,6 @@
 	<li>STO - store value to address</li>
 	<li>SUB - substract value from pointer</li>
 </ul>
-
-<textarea id="code" rows="16" cols="64"></textarea><br/>
-<input type="submit" value="Load" onclick="run();">
-<input type="submit" value="Step" onclick="fstep();">
-<input type="submit" value="Reset" onclick="reset();">
-Line <span id="line">0</span>
- | Pointer: <span id="pointing">0</span>
- | State: <span id="machinestate">[PRESS RESET]</span>
-
-<div id="memory"></div>
-
-<div id="loaded"></div>
 
 <div id="bottom"></div>
 </html>

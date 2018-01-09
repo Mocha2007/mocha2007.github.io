@@ -6,14 +6,12 @@ var tapesize = xsize*ysize;
 
 function run(){
 	program = document.getElementById('code').value.split("\n");
-	document.getElementById('loaded').innerHTML = 'Program:<br>'+document.getElementById('code').value.replace(new RegExp('\n','g'),'<br>');;
 	console.log(program);
 	console.log('Run');
 }
 
 function reset(){
 	program = [];
-	document.getElementById('loaded').innerHTML = '';
 	document.getElementById('machinestate').innerHTML = '0';
 	document.getElementById('line').innerHTML = '0';
 
