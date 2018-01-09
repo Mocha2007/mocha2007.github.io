@@ -92,7 +92,17 @@ function fstep(){
 		}
 	}
 	else if (command.substring(0,3)=='JIF'){
-		if (document.getElementById('x'+pointer).innerHTML!=0){
+		if (document.getElementById('x'+pointer).innerHTML==document.getElementById('machinestate').innerHTML){
+			document.getElementById('line').innerHTML = command.substring(4);
+		}
+	}
+	else if (command.substring(0,3)=='JIG'){
+		if (document.getElementById('x'+pointer).innerHTML>document.getElementById('machinestate').innerHTML){
+			document.getElementById('line').innerHTML = command.substring(4);
+		}
+	}
+	else if (command.substring(0,3)=='JIL'){
+		if (document.getElementById('x'+pointer).innerHTML<document.getElementById('machinestate').innerHTML){
 			document.getElementById('line').innerHTML = command.substring(4);
 		}
 	}
