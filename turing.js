@@ -100,6 +100,9 @@ function fstep(){
 	else if (command.substring(0,3)=='EXP'){
 		document.getElementById('x'+pointer).innerHTML = Math.pow(Number(document.getElementById('x'+pointer).innerHTML),Number(command.substring(4)));
 	}
+	else if (command.substring(0,3)=='NRT'){
+		document.getElementById('x'+pointer).innerHTML = Math.pow(Number(document.getElementById('x'+pointer).innerHTML),1/Number(command.substring(4)));
+	}
 	else if (command.substring(0,3)=='DIV'){
 		document.getElementById('x'+pointer).innerHTML = Number(document.getElementById('x'+pointer).innerHTML)/Number(command.substring(4));
 	}
@@ -136,18 +139,12 @@ function fstep(){
 	}
 	else if (command.substring(0,3)=='AND'){
 		if (document.getElementById('x'+pointer).innerHTML==1){
-			document.getElementById('x'+pointer).innerHTML = Number(command.substring(4));
-		}
-		else {
-			document.getElementById('x'+pointer).innerHTML = Number(document.getElementById('x'+pointer).innerHTML);
+			document.getElementById('x'+pointer).innerHTML = command.substring(4);
 		}
 	}
 	else if (command.substring(0,3)=='IOR'){
 		if (document.getElementById('x'+pointer).innerHTML==0){
-			document.getElementById('x'+pointer).innerHTML = Number(command.substring(4));
-		}
-		else {
-			document.getElementById('x'+pointer).innerHTML = Number(document.getElementById('x'+pointer).innerHTML);
+			document.getElementById('x'+pointer).innerHTML = command.substring(4);
 		}
 	}
 	else if (command.substring(0,3)=='NEG'){
@@ -158,6 +155,30 @@ function fstep(){
 	}
 	else if (command.substring(0,3)=='RRR'){
 		pointer=mod(pointer+1,tapesize);
+	}
+	else if (command.substring(0,3)=='NOT'){
+		if (document.getElementById('x'+pointer).innerHTML==0){
+			document.getElementById('x'+pointer).innerHTML = '1';
+		}
+		else {
+			document.getElementById('x'+pointer).innerHTML = '0';
+		}
+	}
+	else if (command.substring(0,3)=='SSP'){
+		document.getElementById('machinestate').innerHTML = pointer;
+	}
+	else if (command.substring(0,3)=='XOR'){
+		// Find center value (1 if argument is 1, else itself)
+		if (command.substring(4)){
+			var centervalue = 1;
+		}
+		else {
+			var centervalue = document.getElementById('x'+pointer).innerHTML;
+		}
+		//logthicc
+		if (centervalue){
+			document.getElementById('x'+pointer).innerHTML = 1-Number(document.getElementById('x'+pointer).innerHTML);
+		}
 	}
 	else {
 		console.warn('Operation not in dictionary: ',command);

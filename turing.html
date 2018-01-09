@@ -11,7 +11,7 @@
 <script src="turing.js"></script>
 <style>
 #program{text-align:center;}
-.pointed{color:#080;background-color: #CEC;}
+.pointed{color:#008;background-color: #CCE;text-style:bold;}
 </style>
 <title>Turing Machine</title>
 <div id="nav"></div>
@@ -52,13 +52,104 @@
 	<li>MUL - set value at pointer to itself multiplied by argument</li>
 	<li>NEG - negate value at pointer</li>
 	<li>NOP - do nothing</li>
+	<li>NOT - set value at pointer to 1 if 0, else 0</li>
+	<li>NRT - set value at pointer to the argument-th root of itself</li>
 	<li>OUT - set state to value at pointer</li>
-	<li>PNT - set target of pointer to argument</li>
+	<li>PNT - set pointer to argument</li>
 	<li>RRR - decrement pointer</li>
 	<li>SET - set state to argument</li>
-	<li>STO - set state to value at pointer</li>
+	<li>SSP - set state to pointer</li>
+	<li>STO - set value at pointer to argument</li>
 	<li>SUB - set value at pointer to argument subtracted from itself</li>
+	<li>XOR - <abbr title="set value at pointer to not-itself if (1 if argument is 1, else itself) is 1, else itself">"XOR"</abbr></li>
 </ul>
+
+<h3 id='Tables'>Tables</h3>
+
+<!--Excluded: Jumps, MOD-->
+
+<table>
+	<tr>
+		<th></th>
+		<th>Pointer</th>
+		<th>Value</th>
+	</tr>
+	<tr>
+		<td>Set</td>
+		<td>PNT #</td>
+		<td>STO ?</td>
+	</tr>
+	<tr>
+		<td>Increment</td>
+		<td>RRR</td>
+		<td>INC</td>
+	</tr>
+	<tr>
+		<td>Decrement</td>
+		<td>LLL</td>
+		<td>DEC</td>
+	</tr>
+	<tr>
+		<td>Copy from State</td>
+		<td>GOT</td>
+		<td>INP</td>
+	</tr>
+	<tr>
+		<td>Copy to State</td>
+		<td>SSP</td>
+		<td>OUT</td>
+	</tr>
+</table>
+<br/>
+<table>
+	<tr>
+		<th>+</th>
+		<th>-</th>
+	</tr>
+	<tr>
+		<td>NOP</td>
+		<td>NEG</td>
+	</tr>
+	<tr>
+		<td>INC</td>
+		<td>DEC</td>
+	</tr>
+	<tr>
+		<td>ADD #</td>
+		<td>SUB #</td>
+	</tr>
+	<tr>
+		<td>MUL #</td>
+		<td>DIV #</td>
+	</tr>
+	<tr>
+		<td>EXP #</td>
+		<td>NRT #</td>
+	</tr>
+</table>
+<br/>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Command</th>
+	</tr>
+	<tr>
+		<td>and</td>
+		<td>AND ?</td>
+	</tr>
+	<tr>
+		<td>not</td>
+		<td>NOT #</td>
+	</tr>
+	<tr>
+		<td>or</td>
+		<td>IOR ?</td>
+	</tr>
+	<tr>
+		<td>xor</td>
+		<td>XOR #</td>
+	</tr>
+</table>
 
 <div id="bottom"></div>
 </html>
