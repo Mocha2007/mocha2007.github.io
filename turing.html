@@ -33,14 +33,14 @@
 <h2 id='Dictionary'>Dictionary</h2>
 <ul>
 	<li>ADD - set value at pointer to itself plus argument</li>
-	<li>AND - set value at pointer to argument if itself is 0, otherwise, return itself.</li>
+	<li>AND - set value at pointer to argument if itself is 1, otherwise, return itself.</li>
 	<li>DEC - decrement value at pointer</li>
 	<li>DIV - set value at pointer to itself divided by argument</li>
 	<li>EXP - set value at pointer to itself raised to argument</li>
 	<li>GOT - set pointer to state</li>
 	<li>INC - increment value at pointer</li>
 	<li>INP - set value at pointer to state</li>
-	<li>IOR - set value at pointer to argument if itself is 1, otherwise, return itself.</li>
+	<li>IOR - set value at pointer to argument if itself is 0, otherwise, return itself.</li>
 	<li>JIF - jump to line if value at pointer is same as machine state</li>
 	<li>JIG - jump to line if value at pointer is greater than machine state</li>
 	<li>JIL - jump to line if value at pointer is less than machine state</li>
@@ -52,7 +52,7 @@
 	<li>MUL - set value at pointer to itself multiplied by argument</li>
 	<li>NEG - negate value at pointer</li>
 	<li>NOP - do nothing</li>
-	<li>OUT - set state to target of pointer</li>
+	<li>OUT - set state to value at pointer</li>
 	<li>PNT - set target of pointer to argument</li>
 	<li>RRR - decrement pointer</li>
 	<li>SET - set state to argument</li>

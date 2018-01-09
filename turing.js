@@ -9,7 +9,7 @@ var ysize = 32;
 var tapesize = xsize*ysize;
 
 function run(){
-	document.getElementById('machinestate').innerHTML = '[PRESS STEP]';
+	document.getElementById('machinestate').innerHTML = '0';
 	program = document.getElementById('code').value.split("\n");
 	console.log(program);
 	console.log('Load');
@@ -20,13 +20,7 @@ function reset(){
 	document.getElementById('machinestate').innerHTML = '[PRESS LOAD]';
 	document.getElementById('line').innerHTML = '0';
 	
-	//pointer
-	if (document.getElementById('x'+pointer)!=null){
-		document.getElementById('x'+pointer).classList.remove("pointed");
-	}
-	pointer = 0;
-	document.getElementById('pointing').innerHTML=pointer;
-
+	//table construction
 	var tabularasa = '<table>';
 	for (i=0;i<xsize;i++) {
 		tabularasa+='<tr>';
@@ -37,6 +31,14 @@ function reset(){
 	}
 	tabularasa+='</table>';
 	document.getElementById('memory').innerHTML = tabularasa;
+	
+	//pointer
+	if (document.getElementById('x'+pointer)!=null){
+		document.getElementById('x'+pointer).classList.remove("pointed");
+	}
+	pointer = 0;
+	document.getElementById('pointing').innerHTML=pointer;
+	document.getElementById('x0').classList.add("pointed");
 
 	console.log('Reset');
 }
@@ -44,8 +46,6 @@ function reset(){
 // Main
 
 function fstep(){
-	document.getElementById('machinestate').innerHTML = '0';
-	document.getElementById('x'+pointer).classList.remove("pointed");
 	// INC
 	var linenumber = Number(document.getElementById('line').innerHTML);
 	document.getElementById('line').innerHTML=linenumber+1
@@ -55,9 +55,11 @@ function fstep(){
 	console.log(linenumber+' '+command);
 	// Reject
 	if (command==undefined){
-		console.warn('NOP');
-		return 1;
+		document.getElementById('line').innerHTML = linenumber;
+		document.getElementById('machinestate').innerHTML = '[HALTED]';
+		return true;
 	}
+	document.getElementById('x'+pointer).classList.remove("pointed");
 	// Commands
 	if (command.substring(0,3)=='NOP'){
 		// 2 + 2 = 4 - 1 = 3
@@ -133,7 +135,7 @@ function fstep(){
 		pointer = Number(document.getElementById('machinestate').innerHTML);
 	}
 	else if (command.substring(0,3)=='AND'){
-		if (document.getElementById('x'+pointer).innerHTML==0){
+		if (document.getElementById('x'+pointer).innerHTML==1){
 			document.getElementById('x'+pointer).innerHTML = Number(command.substring(4));
 		}
 		else {
@@ -141,7 +143,7 @@ function fstep(){
 		}
 	}
 	else if (command.substring(0,3)=='IOR'){
-		if (document.getElementById('x'+pointer).innerHTML==1){
+		if (document.getElementById('x'+pointer).innerHTML==0){
 			document.getElementById('x'+pointer).innerHTML = Number(command.substring(4));
 		}
 		else {
