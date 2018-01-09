@@ -60,8 +60,7 @@ function fstep(){
 	}
 	// Commands
 	if (command.substring(0,3)=='NOP'){
-		// Quick Mafs
-		2+2-1;
+		// 2 + 2 = 4 - 1 = 3
 	}
 	else if (command.substring(0,3)=='SET'){
 		document.getElementById('machinestate').innerHTML = command.substring(4);
