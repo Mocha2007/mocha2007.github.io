@@ -1,7 +1,7 @@
 var program;
 var pointer = 0;
 var xsize = 4;
-var ysize = 16;
+var ysize = 32;
 var tapesize = xsize*ysize;
 
 function run(){
@@ -19,7 +19,7 @@ function reset(){
 	for (i=0;i<xsize;i++) {
 		tabularasa+='<tr>';
 		for (j=0;j<ysize;j++) {
-			tabularasa+='<td id="x'+Number(i*16+j)+'">0</td>';
+			tabularasa+='<td id="x'+Number(i*ysize+j)+'">0</td>';
 		}
 		tabularasa+='</tr>';
 	}
