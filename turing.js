@@ -44,6 +44,7 @@ function reset(){
 // Main
 
 function fstep(){
+	document.getElementById('machinestate').innerHTML = '0';
 	document.getElementById('x'+pointer).classList.remove("pointed");
 	// INC
 	var linenumber = Number(document.getElementById('line').innerHTML);
