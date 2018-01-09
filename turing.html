@@ -19,7 +19,9 @@
 	<li>ADD - add value to pointer</li>
 	<li>DEC - decrement value at pointer</li>
 	<li>DIV - divide value from pointer</li>
+	<li>GOT - move pointer to value at pointer</li>
 	<li>INC - increment value at pointer</li>
+	<li>JIF - jump to line if value at pointer is same as output</li>
 	<li>JIZ - jump to line if value at pointer is zero</li>
 	<li>JMP - jump to line</li>
 	<li>JNZ - jump to line if value at pointer is not zero</li>
@@ -37,6 +39,7 @@
 <input type="submit" value="Step" onclick="fstep();">
 <input type="submit" value="Reset" onclick="reset();">
 Line <span id="line">0</span>
+ | Pointer: <span id="pointing">0</span>
  | Output: <span id="output">[PRESS RESET]</span>
 
 <div id="memory"></div>

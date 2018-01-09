@@ -1,5 +1,8 @@
 var program;
 var pointer = 0;
+var xsize = 4;
+var ysize = 16;
+var tapesize = xsize*ysize;
 
 function run(){
 	program = document.getElementById('code').value.split("\n");
@@ -13,9 +16,9 @@ function reset(){
 	document.getElementById('line').innerHTML = '0';
 
 	var tabularasa = '<table>';
-	for (i=0;i<4;i++) {
+	for (i=0;i<xsize;i++) {
 		tabularasa+='<tr>';
-		for (j=0;j<16;j++) {
+		for (j=0;j<ysize;j++) {
 			tabularasa+='<td id="x'+Number(i*16+j)+'">0</td>';
 		}
 		tabularasa+='</tr>';
@@ -46,7 +49,7 @@ function fstep(){
 		document.getElementById('line').innerHTML = Number(command.substring(4));
 	}
 	else if (command.substring(0,3)=='PNT'){
-		pointer = Number(command.substring(4));
+		pointer = Number(command.substring(4))%tapesize;
 	}
 	else if (command.substring(0,3)=='STO'){
 		document.getElementById('x'+pointer).innerHTML = command.substring(4);
@@ -82,8 +85,17 @@ function fstep(){
 			document.getElementById('line').innerHTML = Number(command.substring(4));
 		}
 	}
+	else if (command.substring(0,3)=='JIF'){
+		if (document.getElementById('x'+pointer).innerHTML!=0){
+			document.getElementById('line').innerHTML = document.getElementById('output').innerHTML;
+		}
+	}
+	else if (command.substring(0,3)=='GOT'){
+		pointer = Number(document.getElementById('x'+pointer).innerHTML);
+	}
 	else {
 		document.getElementById('output').innerHTML = '[ERR CHECK CONSOLE]';
 		console.warn('Operation not in dictionary: ',command);
 	}
+	document.getElementById('pointing').innerHTML=pointer;
 }
