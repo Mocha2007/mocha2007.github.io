@@ -118,6 +118,12 @@ function fstep(){
 	else if (command.substring(0,3)=='NEG'){
 		document.getElementById('x'+pointer).innerHTML = Number('-'+document.getElementById('x'+pointer).innerHTML);
 	}
+	else if (command.substring(0,3)=='LLL'){
+		pointer=(pointer-1)%tapesize;
+	}
+	else if (command.substring(0,3)=='RRR'){
+		pointer=(pointer+1)%tapesize;
+	}
 	else {
 		document.getElementById('machinestate').innerHTML = '[ERR CHECK CONSOLE]';
 		console.warn('Operation not in dictionary: ',command);
