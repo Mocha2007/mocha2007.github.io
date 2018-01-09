@@ -1,19 +1,31 @@
+function mod(n,m){
+	return ((n%m)+m)%m;
+}
+
 var program;
-var pointer = 0;
+var pointer;
 var xsize = 4;
 var ysize = 32;
 var tapesize = xsize*ysize;
 
 function run(){
+	document.getElementById('machinestate').innerHTML = '[PRESS STEP]';
 	program = document.getElementById('code').value.split("\n");
 	console.log(program);
-	console.log('Run');
+	console.log('Load');
 }
 
 function reset(){
 	program = [];
-	document.getElementById('machinestate').innerHTML = '0';
+	document.getElementById('machinestate').innerHTML = '[PRESS LOAD]';
 	document.getElementById('line').innerHTML = '0';
+	
+	//pointer
+	if (document.getElementById('x'+pointer)!=null){
+		document.getElementById('x'+pointer).classList.remove("pointed");
+	}
+	pointer = 0;
+	document.getElementById('pointing').innerHTML=pointer;
 
 	var tabularasa = '<table>';
 	for (i=0;i<xsize;i++) {
@@ -32,6 +44,7 @@ function reset(){
 // Main
 
 function fstep(){
+	document.getElementById('x'+pointer).classList.remove("pointed");
 	// INC
 	var linenumber = Number(document.getElementById('line').innerHTML);
 	document.getElementById('line').innerHTML=linenumber+1
@@ -39,8 +52,15 @@ function fstep(){
 	var command = program[linenumber];
 	// DEBUG
 	console.log(linenumber+' '+command);
+	// Reject
+	if (command==undefined){
+		console.warn('NOP');
+		return 1;
+	}
+	// Commands
 	if (command.substring(0,3)=='NOP'){
-		console.log('NOP');
+		// Quick Mafs
+		2+2-1;
 	}
 	else if (command.substring(0,3)=='SET'){
 		document.getElementById('machinestate').innerHTML = command.substring(4);
@@ -49,7 +69,7 @@ function fstep(){
 		document.getElementById('line').innerHTML = Number(command.substring(4));
 	}
 	else if (command.substring(0,3)=='PNT'){
-		pointer = Number(command.substring(4))%tapesize;
+		pointer = mod(Number(command.substring(4)),tapesize);
 	}
 	else if (command.substring(0,3)=='STO'){
 		document.getElementById('x'+pointer).innerHTML = command.substring(4);
@@ -75,11 +95,14 @@ function fstep(){
 	else if (command.substring(0,3)=='MUL'){
 		document.getElementById('x'+pointer).innerHTML = Number(document.getElementById('x'+pointer).innerHTML)*Number(command.substring(4));
 	}
+	else if (command.substring(0,3)=='EXP'){
+		document.getElementById('x'+pointer).innerHTML = Math.pow(Number(document.getElementById('x'+pointer).innerHTML),Number(command.substring(4)));
+	}
 	else if (command.substring(0,3)=='DIV'){
 		document.getElementById('x'+pointer).innerHTML = Number(document.getElementById('x'+pointer).innerHTML)/Number(command.substring(4));
 	}
 	else if (command.substring(0,3)=='MOD'){
-		document.getElementById('x'+pointer).innerHTML = Number(document.getElementById('x'+pointer).innerHTML)%Number(command.substring(4));
+		document.getElementById('x'+pointer).innerHTML = Mod(Number(document.getElementById('x'+pointer).innerHTML),Number(command.substring(4)));
 	}
 	else if (command.substring(0,3)=='JIZ'){
 		if (document.getElementById('x'+pointer).innerHTML==0){
@@ -129,14 +152,14 @@ function fstep(){
 		document.getElementById('x'+pointer).innerHTML = Number('-'+document.getElementById('x'+pointer).innerHTML);
 	}
 	else if (command.substring(0,3)=='LLL'){
-		pointer=(pointer-1)%tapesize;
+		pointer=mod(pointer-1,tapesize);
 	}
 	else if (command.substring(0,3)=='RRR'){
-		pointer=(pointer+1)%tapesize;
+		pointer=mod(pointer+1,tapesize);
 	}
 	else {
-		document.getElementById('machinestate').innerHTML = '[ERR CHECK CONSOLE]';
 		console.warn('Operation not in dictionary: ',command);
 	}
 	document.getElementById('pointing').innerHTML=pointer;
+	document.getElementById('x'+pointer).classList.add("pointed");
 }
