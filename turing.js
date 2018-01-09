@@ -180,6 +180,15 @@ function fstep(){
 			document.getElementById('x'+pointer).innerHTML = 1-Number(document.getElementById('x'+pointer).innerHTML);
 		}
 	}
+	else if (command.substring(0,3)=='XNR'){
+		// Find center value (1 if argument is 1, else itself)
+		if (document.getElementById('x'+pointer).innerHTML==command.substring(4)){
+			document.getElementById('x'+pointer).innerHTML = 1;
+		}
+		else {
+			document.getElementById('x'+pointer).innerHTML = 0;
+		}
+	}
 	else {
 		console.warn('Operation not in dictionary: ',command);
 	}
