@@ -64,6 +64,12 @@ function fstep(){
 	if (command.substring(4)==='*'){
 		arg = document.getElementById('machinestate').innerHTML;
 	}
+	else if (command.substring(4)==='$'){
+		arg = pointer;
+	}
+	else if (command.substring(4)==='@'){
+		arg = document.getElementById('x'+pointer).innerHTML;
+	}
 	else{
 		arg = command.substring(4);
 	}
@@ -88,13 +94,13 @@ function fstep(){
 	}
 	else if (command.substring(0,3)==='DEC'){
 		document.getElementById('x'+pointer).innerHTML = Number(document.getElementById('x'+pointer).innerHTML)-1;
-	}*/
+	}
 	else if (command.substring(0,3)==='OUT'){
 		document.getElementById('machinestate').innerHTML = document.getElementById('x'+pointer).innerHTML;
 	}
 	else if (command.substring(0,3)==='INP'){
 		document.getElementById('x'+pointer).innerHTML = document.getElementById('machinestate').innerHTML;
-	}
+	}*/
 	else if (command.substring(0,3)==='ADD'){
 		document.getElementById('x'+pointer).innerHTML = Number(document.getElementById('x'+pointer).innerHTML)+Number(arg);
 	}/*
@@ -161,10 +167,10 @@ function fstep(){
 		else {
 			console.warn('Jump not in dictionary: ',command);
 		}
-	}
+	}/*
 	else if (command.substring(0,3)==='GOT'){
 		pointer = Number(document.getElementById('machinestate').innerHTML);
-	}
+	}*/
 	else if (command.substring(0,3)==='AND'){
 		if (document.getElementById('x'+pointer).innerHTML==='1'){
 			document.getElementById('x'+pointer).innerHTML = arg;
@@ -191,10 +197,10 @@ function fstep(){
 		else {
 			document.getElementById('x'+pointer).innerHTML = '0';
 		}
-	}
+	}/*
 	else if (command.substring(0,3)==='SSP'){
 		document.getElementById('machinestate').innerHTML = pointer;
-	}
+	}*/
 	else if (command.substring(0,3)==='XOR'){
 		if (document.getElementById('x'+pointer).innerHTML===arg){
 			document.getElementById('x'+pointer).innerHTML = 0;

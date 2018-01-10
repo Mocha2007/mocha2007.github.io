@@ -33,10 +33,11 @@ pre{font-family:Monospace;background-color:#000;color:#ccc;}
 
 <h2 id='Dictionary'>Dictionary</h2>
 <pre>
-A = string
 # = number
 ? = string or number
 All support use of * for machine state
+All support use of $ for pointer
+All support use of @ for value at pointer
 
 :X : label X
 ADD # : set value at pointer to itself plus argument
@@ -63,38 +64,16 @@ NEG   : negate value at pointer
 NOP   : do nothing
 NOR ? : set value at pointer to 1 if argument and itself are 0, else 0
 NOT   : set value at pointer to 1 if 0, else 0
-NRT # : set value at pointer to the argument:th root of itself
-OUT   : set state to value at pointer
+NRT # : set value at pointer to the argument-th root of itself<!--OUT   : set state to value at pointer-->
 PNT # : set pointer to argument<!--RRR   : increment pointer-->
-SET ? : set state to argument
-SSP   : set state to pointer
+SET ? : set state to argument<!--SSP   : set state to pointer-->
 STO ? : set value at pointer to argument<!--SUB # : set value at pointer to argument subtracted from itself-->
 XNR ? : set value at pointer to 1 if argument same as itself, else 0
 XOR ? : set value at pointer to 0 if argument same as itself, else 1
 </pre>
 
 <h3 id='Tables'>Tables</h3>
-
-<!--Excluded: Jumps, MOD, MMS-->
-
-<table>
-	<tr>
-		<th></th>
-		<th>Pointer</th>
-		<th>Value</th>
-	</tr>
-	<tr>
-		<td>Set</td>
-		<td>PNT #</td>
-		<td>STO ?</td>
-	</tr>
-	<tr>
-		<td>Copy to State</td>
-		<td>SSP</td>
-		<td>OUT</td>
-	</tr>
-</table>
-<br/>
+<!--Excluded: Jumps, MOD, MMS, SET, STO-->
 <table>
 	<tr>
 		<th>+</th>
@@ -178,7 +157,7 @@ MM can also emulate BF programs easily, with the following substitutions:
 	</tr>
 	<tr>
 		<td>.</td>
-		<td>OUT</td>
+		<td>SET @</td>
 	</tr>
 	<tr>
 		<td>,</td>
@@ -241,7 +220,7 @@ STO *
 </p>
 <pre>
 STO 10
-OUT
+SET @
 MOV 1
 STO *
 ADD -1
@@ -261,7 +240,7 @@ JMP A
 </pre>
 <pre>
 STO 10
-OUT
+SET @
 MOV 1
 STO *
 ADD -1
@@ -279,7 +258,7 @@ JNZ 7
 </pre>
 <pre>
 STO 10
-OUT
+SET @
 EXP 2
 MOV 1
 STO *
@@ -298,7 +277,7 @@ DIV 2
 </p>
 <pre>
 STO 2018
-OUT
+SET @
 MOD 400
 JIZ T
 STO *
@@ -320,11 +299,11 @@ STO 0
 	Finds the largest entry and prints it in the first square. 
 </p>
 <pre>
-OUT
+SET @
 MOV 1
 JIZ 6
 JIL 1
-OUT
+SET @
 JMP 0
 PNT 0
 STO *
