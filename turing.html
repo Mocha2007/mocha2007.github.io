@@ -12,6 +12,7 @@
 <style>
 #program{text-align:center;}
 .pointed{color:#008;background-color: #CCE;text-style:bold;}
+pre{font-family:Monospace;background-color:#000;color:#ccc;}
 </style>
 <title>Mocha's Machine</title>
 <div id="nav"></div>
@@ -43,6 +44,7 @@
 	<li>INC - increment value at pointer</li>
 	<li>INP - set value at pointer to state</li>
 	<li>IOR - set value at pointer to argument if itself is 0, otherwise, return itself.</li>
+	<li>JFN - jump to line if value at pointer is not same as machine state</li>
 	<li>JIF - jump to line if value at pointer is same as machine state</li>
 	<li>JIG - jump to line if value at pointer is greater than machine state</li>
 	<li>JIL - jump to line if value at pointer is less than machine state</li>
@@ -168,6 +170,86 @@
 		<td>XNR ?</td>
 	</tr>
 </table>
+<br/>
+MM can also emulate BF programs easily, with the following substitutions:
+<br/>
+<table>
+	<tr>
+		<th>BF Command</th>
+		<th>MM Equivalent</th>
+	</tr>
+	<tr>
+		<td>></td>
+		<td>RRR</td>
+	</tr>
+	<tr>
+		<td>&lt;</td>
+		<td>LLL</td>
+	</tr>
+	<tr>
+		<td>+</td>
+		<td>INC</td>
+	</tr>
+	<tr>
+		<td>-</td>
+		<td>DEC</td>
+	</tr>
+	<tr>
+		<td>.</td>
+		<td>OUT</td>
+	</tr>
+	<tr>
+		<td>,</td>
+		<td>INP</td>
+	</tr>
+	<tr>
+		<td>[</td>
+		<td>:X</td>
+	</tr>
+	<tr>
+		<td>]</td>
+		<td>JNZ X</td>
+	</tr>
+</table>
+
+<h2 id='Programs'>Programs</h2>
+
+<p>
+	A 'Hello, World!' program. 
+</p>
+<pre>
+STO Hello, World!
+</pre>
+
+<p>
+	Adds the numbers 5 and 8 without the ADD operator.
+</p>
+<pre>
+STO 5
+RRR
+STO 8
+LLL
+INC
+RRR
+DEC
+JNZ 3
+</pre>
+
+<p>
+	Checks to see if Chuck is Alice or Bob, and, if so, Greet them.
+</p>
+<pre>
+STO Chuck
+SET Alice
+JIF 6
+SET Bob
+JIF 6
+JMP X
+STO Welcome, 
+RRR
+INP
+:X
+</pre>
 
 <div id="bottom"></div>
 </html>

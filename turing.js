@@ -111,7 +111,6 @@ function fstep(){
 	}
 	else if (command.charAt(0)==='J'){
 		// Determining Argument Type
-		console.log(Number(command.substring(4)));
 		if (isNaN(command.substring(4))){
 			var target = program.indexOf(':'+command.substring(4));
 		}
@@ -123,17 +122,22 @@ function fstep(){
 			document.getElementById('line').innerHTML = target;
 		}
 		else if (command.substring(0,3)==='JIZ'){
-			if (document.getElementById('x'+pointer).innerHTML==0){
+			if (document.getElementById('x'+pointer).innerHTML==='0'){
 				document.getElementById('line').innerHTML = target;
 			}
 		}
 		else if (command.substring(0,3)==='JNZ'){
-			if (document.getElementById('x'+pointer).innerHTML!=0){
+			if (document.getElementById('x'+pointer).innerHTML!=='0'){
 				document.getElementById('line').innerHTML = target;
 			}
 		}
 		else if (command.substring(0,3)==='JIF'){
-			if (document.getElementById('x'+pointer).innerHTML==document.getElementById('machinestate').innerHTML){
+			if (document.getElementById('x'+pointer).innerHTML===document.getElementById('machinestate').innerHTML){
+				document.getElementById('line').innerHTML = target;
+			}
+		}
+		else if (command.substring(0,3)==='JFN'){
+			if (document.getElementById('x'+pointer).innerHTML!==document.getElementById('machinestate').innerHTML){
 				document.getElementById('line').innerHTML = target;
 			}
 		}
