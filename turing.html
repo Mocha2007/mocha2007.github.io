@@ -250,5 +250,29 @@ INP
 :X
 </pre>
 
+<p>
+	Finds the nth triangular number, using only the increment and decrement operators. 
+</p>
+<pre>
+STO 10
+OUT
+RRR
+INP
+DEC
+JNZ 1
+LLL
+:A
+LLL
+INC
+RRR
+DEC
+JNZ A
+MOV -2
+JIZ X
+RRR
+JMP A
+:X
+</pre>
+
 <div id="bottom"></div>
 </html>
