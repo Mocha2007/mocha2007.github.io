@@ -75,10 +75,7 @@ function fstep(){
 	}
 	var operation = command.substring(0,3);
 	// OPERATIONS
-	if (operation==='NOP'){
-		// 2 + 2 = 4 - 1 = 3
-	}
-	else if (command.substring(0,1)===':'){
+	if (command.substring(0,1)===':'){
 		console.log(command.substring(1));
 	}
 	else if (operation==='SET'){

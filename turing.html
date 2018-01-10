@@ -40,14 +40,17 @@ All support use of * for machine state
 All support use of $ for pointer
 All support use of @ for value at pointer
 
+0 Arguments
+NEG : negate value at pointer
+NOT : set value at pointer to 1 if 0, else 0
+
+1 Argument
 :X : label X
 ADD # : set value at pointer to itself plus argument
 AND ? : set value at pointer to argument if itself is 1, otherwise, return itself.
-APP ? : append string to value at pointer<!--DEC   : decrement value at pointer-->
+APP ? : append string to value at pointer
 DIV # : set value at pointer to itself divided by argument
-EXP # : set value at pointer to itself raised to argument<!--GOT   : set pointer to state
-INC   : increment value at pointer
-INP   : set value at pointer to state-->
+EXP # : set value at pointer to itself raised to argument
 IOR ? : set value at pointer to argument if itself is 0, otherwise, return itself.
 JFN ? : jump to line if value at pointer is not same as machine state
 JIF ? : jump to line if value at pointer is same as machine state
@@ -55,27 +58,20 @@ JIG ? : jump to line if value at pointer is greater than machine state
 JIL ? : jump to line if value at pointer is less than machine state
 JIZ ? : jump to line if value at pointer is zero
 JMP ? : jump to line
-JNZ ? : jump to line if value at pointer is not zero<!--LLL   : decrement pointer-->
-LET ! ? : set * or $ or @ to argument
+JNZ ? : jump to line if value at pointer is not zero
 MMS # : add argument to machine state
 MOD # : set value to value at pointer modulo argument
 MOV # : increment pointer by argument
 MUL # : set value at pointer to itself multiplied by argument
 NAN ? : set value at pointer to 0 if argument and itself are 1, else 1
-NEG   : negate value at pointer
-NOP   : do nothing
 NOR ? : set value at pointer to 1 if argument and itself are 0, else 0
-NOT   : set value at pointer to 1 if 0, else 0
-NRT # : set value at pointer to the argument-th root of itself<!--OUT   : set state to value at pointer
-PNT # : set pointer to argument
-RRR   : increment pointer
-SET ? : set state to argument
-SSP   : set state to pointer
-STO ? : set value at pointer to argument
-SUB # : set value at pointer to argument subtracted from itself-->
-SWP ! ! : swaps two specials
+NRT # : set value at pointer to the argument-th root of itself
 XNR ? : set value at pointer to 1 if argument same as itself, else 0
 XOR ? : set value at pointer to 0 if argument same as itself, else 1
+
+2 Arguments
+LET ! ? : set * or $ or @ to argument
+SWP ! ! : swaps two specials
 </pre>
 
 <h3 id='Tables'>Tables</h3>
@@ -86,7 +82,7 @@ XOR ? : set value at pointer to 0 if argument same as itself, else 1
 		<th>-</th>
 	</tr>
 	<tr>
-		<td>NOP</td>
+		<td></td>
 		<td>NEG</td>
 	</tr>
 	<tr>
