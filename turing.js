@@ -61,52 +61,52 @@ function fstep(){
 	}
 	document.getElementById('x'+pointer).classList.remove("pointed");
 	// Commands
-	if (command.substring(0,3)=='NOP'){
+	if (command.substring(0,3)==='NOP'){
 		// 2 + 2 = 4 - 1 = 3
 	}
-	else if (command.substring(0,1)==':'){
+	else if (command.substring(0,1)===':'){
 		console.log(command.substring(1));
 	}
-	else if (command.substring(0,3)=='SET'){
+	else if (command.substring(0,3)==='SET'){
 		document.getElementById('machinestate').innerHTML = command.substring(4);
 	}
-	else if (command.substring(0,3)=='PNT'){
+	else if (command.substring(0,3)==='PNT'){
 		pointer = mod(Number(command.substring(4)),tapesize);
 	}
-	else if (command.substring(0,3)=='STO'){
+	else if (command.substring(0,3)==='STO'){
 		document.getElementById('x'+pointer).innerHTML = command.substring(4);
 	}
-	else if (command.substring(0,3)=='INC'){
+	else if (command.substring(0,3)==='INC'){
 		document.getElementById('x'+pointer).innerHTML = Number(document.getElementById('x'+pointer).innerHTML)+1;
 	}
-	else if (command.substring(0,3)=='DEC'){
+	else if (command.substring(0,3)==='DEC'){
 		document.getElementById('x'+pointer).innerHTML = Number(document.getElementById('x'+pointer).innerHTML)-1;
 	}
-	else if (command.substring(0,3)=='OUT'){
+	else if (command.substring(0,3)==='OUT'){
 		document.getElementById('machinestate').innerHTML = document.getElementById('x'+pointer).innerHTML;
 	}
-	else if (command.substring(0,3)=='INP'){
+	else if (command.substring(0,3)==='INP'){
 		document.getElementById('x'+pointer).innerHTML = document.getElementById('machinestate').innerHTML;
 	}
-	else if (command.substring(0,3)=='ADD'){
+	else if (command.substring(0,3)==='ADD'){
 		document.getElementById('x'+pointer).innerHTML = Number(document.getElementById('x'+pointer).innerHTML)+Number(command.substring(4));
 	}
-	else if (command.substring(0,3)=='SUB'){
+	else if (command.substring(0,3)==='SUB'){
 		document.getElementById('x'+pointer).innerHTML = Number(document.getElementById('x'+pointer).innerHTML)-Number(command.substring(4));
 	}
-	else if (command.substring(0,3)=='MUL'){
+	else if (command.substring(0,3)==='MUL'){
 		document.getElementById('x'+pointer).innerHTML = Number(document.getElementById('x'+pointer).innerHTML)*Number(command.substring(4));
 	}
-	else if (command.substring(0,3)=='EXP'){
+	else if (command.substring(0,3)==='EXP'){
 		document.getElementById('x'+pointer).innerHTML = Math.pow(Number(document.getElementById('x'+pointer).innerHTML),Number(command.substring(4)));
 	}
-	else if (command.substring(0,3)=='NRT'){
+	else if (command.substring(0,3)==='NRT'){
 		document.getElementById('x'+pointer).innerHTML = Math.pow(Number(document.getElementById('x'+pointer).innerHTML),1/Number(command.substring(4)));
 	}
-	else if (command.substring(0,3)=='DIV'){
+	else if (command.substring(0,3)==='DIV'){
 		document.getElementById('x'+pointer).innerHTML = Number(document.getElementById('x'+pointer).innerHTML)/Number(command.substring(4));
 	}
-	else if (command.substring(0,3)=='MOD'){
+	else if (command.substring(0,3)==='MOD'){
 		document.getElementById('x'+pointer).innerHTML = Mod(Number(document.getElementById('x'+pointer).innerHTML),Number(command.substring(4)));
 	}
 	else if (command.charAt(0)==='J'){
@@ -151,75 +151,75 @@ function fstep(){
 			console.warn('Jump not in dictionary: ',command);
 		}
 	}
-	else if (command.substring(0,3)=='GOT'){
+	else if (command.substring(0,3)==='GOT'){
 		pointer = Number(document.getElementById('machinestate').innerHTML);
 	}
-	else if (command.substring(0,3)=='AND'){
-		if (document.getElementById('x'+pointer).innerHTML==1){
+	else if (command.substring(0,3)==='AND'){
+		if (document.getElementById('x'+pointer).innerHTML==='1'){
 			document.getElementById('x'+pointer).innerHTML = command.substring(4);
 		}
 	}
-	else if (command.substring(0,3)=='IOR'){
-		if (document.getElementById('x'+pointer).innerHTML==0){
+	else if (command.substring(0,3)==='IOR'){
+		if (document.getElementById('x'+pointer).innerHTML==='0'){
 			document.getElementById('x'+pointer).innerHTML = command.substring(4);
 		}
 	}
-	else if (command.substring(0,3)=='NEG'){
+	else if (command.substring(0,3)==='NEG'){
 		document.getElementById('x'+pointer).innerHTML = Number('-'+document.getElementById('x'+pointer).innerHTML);
 	}
-	else if (command.substring(0,3)=='LLL'){
+	else if (command.substring(0,3)==='LLL'){
 		pointer=mod(pointer-1,tapesize);
 	}
-	else if (command.substring(0,3)=='RRR'){
+	else if (command.substring(0,3)==='RRR'){
 		pointer=mod(pointer+1,tapesize);
 	}
-	else if (command.substring(0,3)=='NOT'){
-		if (document.getElementById('x'+pointer).innerHTML==0){
+	else if (command.substring(0,3)==='NOT'){
+		if (document.getElementById('x'+pointer).innerHTML==='0'){
 			document.getElementById('x'+pointer).innerHTML = '1';
 		}
 		else {
 			document.getElementById('x'+pointer).innerHTML = '0';
 		}
 	}
-	else if (command.substring(0,3)=='SSP'){
+	else if (command.substring(0,3)==='SSP'){
 		document.getElementById('machinestate').innerHTML = pointer;
 	}
-	else if (command.substring(0,3)=='XOR'){
+	else if (command.substring(0,3)==='XOR'){
+		if (document.getElementById('x'+pointer).innerHTML===command.substring(4)){
+			document.getElementById('x'+pointer).innerHTML = 0;
+		}
+		else {
+			document.getElementById('x'+pointer).innerHTML = 1;
+		}
+	}
+	else if (command.substring(0,3)==='XNR'){
 		if (document.getElementById('x'+pointer).innerHTML==command.substring(4)){
-			document.getElementById('x'+pointer).innerHTML = 0;
-		}
-		else {
-			document.getElementById('x'+pointer).innerHTML = 1;
-		}
-	}
-	else if (command.substring(0,3)=='XNR'){
-		if (document.getElementById('x'+pointer).innerHTML==command.substring(4)){
 			document.getElementById('x'+pointer).innerHTML = 1;
 		}
 		else {
 			document.getElementById('x'+pointer).innerHTML = 0;
 		}
 	}
-	else if (command.substring(0,3)=='NOR'){
-		if (document.getElementById('x'+pointer).innerHTML==command.substring(4) && command.substring(4)==0){
+	else if (command.substring(0,3)==='NOR'){
+		if (document.getElementById('x'+pointer).innerHTML===command.substring(4) && command.substring(4)==='0'){
 			document.getElementById('x'+pointer).innerHTML = 1;
 		}
 		else {
 			document.getElementById('x'+pointer).innerHTML = 0;
 		}
 	}
-	else if (command.substring(0,3)=='NAN'){
-		if (document.getElementById('x'+pointer).innerHTML==command.substring(4) && command.substring(4)==1){
+	else if (command.substring(0,3)==='NAN'){
+		if (document.getElementById('x'+pointer).innerHTML===command.substring(4) && command.substring(4)==='1'){
 			document.getElementById('x'+pointer).innerHTML = 0;
 		}
 		else {
 			document.getElementById('x'+pointer).innerHTML = 1;
 		}
 	}
-	else if (command.substring(0,3)=='MOV'){
+	else if (command.substring(0,3)==='MOV'){
 		pointer = mod(pointer+Number(command.substring(4)),tapesize);
 	}
-	else if (command.substring(0,3)=='APP'){
+	else if (command.substring(0,3)==='APP'){
 		document.getElementById('x'+pointer).innerHTML += command.substring(4);
 	}
 	else {
