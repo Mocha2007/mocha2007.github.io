@@ -154,7 +154,10 @@ function fstep(){
 		}
 	}
 	else if (operation==='NEG'){
-		document.getElementById('x'+pointer).innerHTML = Number('-'+specialtarget);
+		document.getElementById('x'+pointer).innerHTML = -Number(specialtarget);
+	}
+	else if (operation==='INV'){
+		document.getElementById('x'+pointer).innerHTML = 1/Number(specialtarget);
 	}
 	else if (operation==='NOT'){
 		if (specialtarget==='0'){
