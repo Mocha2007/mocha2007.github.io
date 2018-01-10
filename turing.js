@@ -199,6 +199,12 @@ function fstep(){
 			document.getElementById('x'+pointer).innerHTML = 1;
 		}
 	}
+	else if (command.substring(0,3)=='MOV'){
+		pointer = mod(pointer+Number(command.substring(4)),tapesize);
+	}
+	else if (command.substring(0,3)=='APP'){
+		document.getElementById('x'+pointer).innerHTML += command.substring(4);
+	}
 	else {
 		console.warn('Operation not in dictionary: ',command);
 	}
