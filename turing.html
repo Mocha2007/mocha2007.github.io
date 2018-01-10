@@ -63,6 +63,7 @@ JIZ ? : jump to line if value at pointer is zero
 JMP ? : jump to line
 JNE ? : jump to line if value at pointer is not same as machine state
 JNZ ? : jump to line if value at pointer is not zero
+LEN ? : set value at pointer to the length of its argument as a string
 MMS # : set machine state to itself plus argument
 MOD # : set value at pointer to itself modulo argument
 MOV # : set pointer to itself plus argument
@@ -238,6 +239,123 @@ LET @ FizzBuzz
 :X
 MOV 1
 JMP 0
+</pre>
+
+<h3 id='Currentyear'>Currentyear</h3>
+<p>
+	Prints 2018 without using any numbers. Clears clutter, too.
+</p>
+<pre>
+LEN ~~written by mocha~~
+MOV 1
+LEN ~~~~~~enjoy~~~~~~~
+LET * @
+LET @ 0
+MOV -1
+APP *
+</pre>
+
+<h3 id='99_Bottles_of_FizzBuzz'>99 Bottles of FizzBuzz</h3>
+<p>
+	Broken... dunno why. Terminates. Not pretty. 977 bytes.
+</p>
+<pre>
+LET * 99
+LET @ *
+APP  bottles of 
+JMP NAME1
+APP  on the wall, 
+APP *
+APP  bottles of 
+JMP NAME2
+APP ! Take one down, pass it around, 
+MMS -1
+APP *
+APP  bottles of 
+JMP NAME3
+APP on the wall!
+MOV 1
+LET @ 1
+JNE 1
+LET @ 1 bottle of beer on the wall, 1 bottle of beer! 
+APP Go to the store and buy some more, 99 bottles of beer on the wall!
+JMP X
+:NAME1
+MOV 1
+LET @ *
+MOD 15
+JIZ XV
+MOD 5
+JIZ V
+LET @ *
+MOD 3
+JNZ BEER
+MOV -1
+APP Fizz
+JMP 4
+:V1
+MOV -1
+APP Buzz
+JMP 4
+:XV1
+MOV -1
+APP FizzBuzz
+JMP 4
+:BEER1
+MOV -1
+APP Beer
+JMP 4
+:NAME2
+MOV 1
+LET @ *
+MOD 15
+JIZ XV
+MOD 5
+JIZ V
+LET @ *
+MOD 3
+JNZ BEER
+MOV -1
+APP Fizz
+JMP 8
+:V2
+MOV -1
+APP Buzz
+JMP 8
+:XV2
+MOV -1
+APP FizzBuzz
+JMP 8
+:BEER2
+MOV -1
+APP Beer
+JMP 4
+:NAME3
+MOV 1
+LET @ *
+MOD 15
+JIZ XV
+MOD 5
+JIZ V
+LET @ *
+MOD 3
+JNZ BEER
+MOV -1
+APP Fizz
+JMP 13
+:V3
+MOV -1
+APP Buzz
+JMP 13
+:XV3
+MOV -1
+APP FizzBuzz
+JMP 13
+:BEER3
+MOV -1
+APP Beer
+JMP 4
+:X
 </pre>
 
 <h3 id='Addition'>Addition</h3>

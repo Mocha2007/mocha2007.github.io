@@ -344,6 +344,9 @@ function fstep(){
 	
 		console.log(program);
 	}
+	else if (operation==='LEN'){
+		document.getElementById('x'+pointer).innerHTML = arg.length;
+	}
 	else {
 		console.warn('Operation not in dictionary: '+command);
 	}
