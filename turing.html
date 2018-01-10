@@ -196,6 +196,50 @@ MM can also emulate BF programs easily, with the following substitutions:
 LET @ Hello, World!
 </pre>
 
+<h3 id='99_Bottles_of_Beer'>99 Bottles of Beer</h3>
+<p>
+	Imperfect, but acceptable. Terminates.
+</p>
+<pre>
+LET * 99
+LET @ *
+APP  bottles of beer on the wall, 
+APP *
+APP  bottles of beer! Take one down, pass it around, 
+MMS -1
+APP *
+APP  bottles of beer on the wall!
+MOV 1
+JNE 1
+LET @ No more bottles of beer on the wall, no more bottles of beer! 
+APP Go to the store and buy some more, 99 bottles of beer on the wall! 
+</pre>
+
+<h3 id='FizzBuzz'>FizzBuzz</h3>
+<p>
+	Does not terminate. 
+</p>
+<pre>
+LET @ $
+MOD 15
+JIZ XV
+MOD 5
+JIZ V
+LET @ $
+MOD 3
+JNZ X
+LET @ Fizz
+JMP X
+:V
+LET @ Buzz
+JMP X
+:XV
+LET @ FizzBuzz
+:X
+MOV 1
+JMP 0
+</pre>
+
 <h3 id='Addition'>Addition</h3>
 <p>
 	Adds the numbers 5 and 8
