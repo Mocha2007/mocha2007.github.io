@@ -47,12 +47,14 @@ NOT : set value at pointer to 1 if 0, else 0
 1 Argument
 :X : Label 'X'. Can also be used as comments and empty lines.
 ADD # : set value at pointer to itself plus argument
-AND ? : set value at pointer to argument if itself is 1, otherwise, return itself.
+AND ? : set value at pointer to argument if itself is 1, otherwise,
+        return itself.
 APP ? : append string to value at pointer
 DIV # : set value at pointer to itself divided by argument
 EXP # : set value at pointer to itself raised to argument
 FUN # : swap this line of code with the #-th line after this.
-IOR ? : set value at pointer to argument if itself is 0, otherwise, return itself.
+IOR ? : set value at pointer to argument if itself is 0, otherwise,
+        return itself.
 JFN ? : jump to line if value at pointer is not same as machine state
 JIF ? : jump to line if value at pointer is same as machine state
 JIG ? : jump to line if value at pointer is greater than machine state
@@ -75,6 +77,11 @@ FRG #,? : replace the argument(s) in the code at line # with ?
 FSW #,# : swap the code at lines # and #
 LET ! ? : set * or $ or @ to argument
 SWP ! ! : swaps two specials
+
+4 Arguments
+
+FAA #,#,#,# : replace the code from char #<sub>1</sub> to char #<sub>2</sub> with the code
+              from char #<sub>3</sub> to char #<sub>4</sub>.
 </pre>
 
 <h3 id='Tables'>Tables</h3>

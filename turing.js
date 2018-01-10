@@ -330,6 +330,26 @@ function fstep(){
 		program[onelinenumber] = program[onelinenumber].substring(0,4)+oneargs;
 		console.log(program);
 	}
+	else if (operation==='FAA'){
+		// Specials replacement
+		var args = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget).split(',');
+		var oldcode = program.join('\n');
+		var code1 = oldcode.substring(0,Number(args[0]));
+		var code2 = oldcode.substring(Number(args[2]),Number(args[3]));
+		var code3 = oldcode.substring(Number(args[1]),oldcode.length-1);/*
+		// undef bugfix
+		if (code3===undefined){
+			code3='';
+		}*/
+
+		console.log([code1,code2,code3]);
+		var newcode = code1+code2+code3
+		
+		console.log(newcode);
+		program = newcode.split('\n');
+	
+		console.log(program);
+	}
 	else {
 		console.warn('Operation not in dictionary: '+command);
 	}
