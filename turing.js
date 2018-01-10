@@ -60,18 +60,19 @@ function fstep(){
 		return true;
 	}
 	document.getElementById('x'+pointer).classList.remove("pointed");
+	// Grabbing specials beforehand
+	var specialstate = document.getElementById('machinestate').innerHTML;
+	var specialtarget = document.getElementById('x'+pointer).innerHTML;
 	// Determining arguments
-	if (command.substring(4)==='*'){
-		arg = document.getElementById('machinestate').innerHTML;
+	arg = command.substring(4);
+	if (arg==='*'){
+		arg = specialstate;
 	}
-	else if (command.substring(4)==='$'){
+	else if (arg==='$'){
 		arg = pointer;
 	}
-	else if (command.substring(4)==='@'){
-		arg = document.getElementById('x'+pointer).innerHTML;
-	}
-	else{
-		arg = command.substring(4);
+	else if (arg==='@'){
+		arg = specialtarget;
 	}
 	var operation = command.substring(0,3);
 	// OPERATIONS
@@ -88,22 +89,22 @@ function fstep(){
 		document.getElementById('x'+pointer).innerHTML = arg;
 	}
 	else if (operation==='ADD'){
-		document.getElementById('x'+pointer).innerHTML = Number(document.getElementById('x'+pointer).innerHTML)+Number(arg);
+		document.getElementById('x'+pointer).innerHTML = Number(specialtarget)+Number(arg);
 	}
 	else if (operation==='MUL'){
-		document.getElementById('x'+pointer).innerHTML = Number(document.getElementById('x'+pointer).innerHTML)*Number(arg);
+		document.getElementById('x'+pointer).innerHTML = Number(specialtarget)*Number(arg);
 	}
 	else if (operation==='EXP'){
-		document.getElementById('x'+pointer).innerHTML = Math.pow(Number(document.getElementById('x'+pointer).innerHTML),Number(arg));
+		document.getElementById('x'+pointer).innerHTML = Math.pow(Number(specialtarget),Number(arg));
 	}
 	else if (operation==='NRT'){
-		document.getElementById('x'+pointer).innerHTML = Math.pow(Number(document.getElementById('x'+pointer).innerHTML),1/Number(arg));
+		document.getElementById('x'+pointer).innerHTML = Math.pow(Number(specialtarget),1/Number(arg));
 	}
 	else if (operation==='DIV'){
-		document.getElementById('x'+pointer).innerHTML = Number(document.getElementById('x'+pointer).innerHTML)/Number(arg);
+		document.getElementById('x'+pointer).innerHTML = Number(specialtarget)/Number(arg);
 	}
 	else if (operation==='MOD'){
-		document.getElementById('x'+pointer).innerHTML = mod(Number(document.getElementById('x'+pointer).innerHTML),Number(arg));
+		document.getElementById('x'+pointer).innerHTML = mod(Number(specialtarget),Number(arg));
 	}
 	else if (command[0]==='J'){
 		// Determining Argument Type
@@ -118,32 +119,32 @@ function fstep(){
 			document.getElementById('line').innerHTML = target;
 		}
 		else if (operation==='JIZ'){
-			if (document.getElementById('x'+pointer).innerHTML==='0'){
+			if (specialtarget==='0'){
 				document.getElementById('line').innerHTML = target;
 			}
 		}
 		else if (operation==='JNZ'){
-			if (document.getElementById('x'+pointer).innerHTML!=='0'){
+			if (specialtarget!=='0'){
 				document.getElementById('line').innerHTML = target;
 			}
 		}
 		else if (operation==='JIF'){
-			if (document.getElementById('x'+pointer).innerHTML===document.getElementById('machinestate').innerHTML){
+			if (specialtarget===specialstate){
 				document.getElementById('line').innerHTML = target;
 			}
 		}
 		else if (operation==='JFN'){
-			if (document.getElementById('x'+pointer).innerHTML!==document.getElementById('machinestate').innerHTML){
+			if (specialtarget!==specialstate){
 				document.getElementById('line').innerHTML = target;
 			}
 		}
 		else if (operation==='JIG'){
-			if (document.getElementById('x'+pointer).innerHTML>document.getElementById('machinestate').innerHTML){
+			if (specialtarget>specialstate){
 				document.getElementById('line').innerHTML = target;
 			}
 		}
 		else if (operation==='JIL'){
-			if (document.getElementById('x'+pointer).innerHTML<document.getElementById('machinestate').innerHTML){
+			if (specialtarget<specialstate){
 				document.getElementById('line').innerHTML = target;
 			}
 		}
@@ -152,20 +153,20 @@ function fstep(){
 		}
 	}
 	else if (operation==='AND'){
-		if (document.getElementById('x'+pointer).innerHTML==='1'){
+		if (specialtarget==='1'){
 			document.getElementById('x'+pointer).innerHTML = arg;
 		}
 	}
 	else if (operation==='IOR'){
-		if (document.getElementById('x'+pointer).innerHTML==='0'){
+		if (specialtarget==='0'){
 			document.getElementById('x'+pointer).innerHTML = arg;
 		}
 	}
 	else if (operation==='NEG'){
-		document.getElementById('x'+pointer).innerHTML = Number('-'+document.getElementById('x'+pointer).innerHTML);
+		document.getElementById('x'+pointer).innerHTML = Number('-'+specialtarget);
 	}
 	else if (operation==='NOT'){
-		if (document.getElementById('x'+pointer).innerHTML==='0'){
+		if (specialtarget==='0'){
 			document.getElementById('x'+pointer).innerHTML = '1';
 		}
 		else {
@@ -173,7 +174,7 @@ function fstep(){
 		}
 	}
 	else if (operation==='XOR'){
-		if (document.getElementById('x'+pointer).innerHTML===arg){
+		if (specialtarget===arg){
 			document.getElementById('x'+pointer).innerHTML = 0;
 		}
 		else {
@@ -181,7 +182,7 @@ function fstep(){
 		}
 	}
 	else if (operation==='XNR'){
-		if (document.getElementById('x'+pointer).innerHTML==arg){
+		if (specialtarget==arg){
 			document.getElementById('x'+pointer).innerHTML = 1;
 		}
 		else {
@@ -189,7 +190,7 @@ function fstep(){
 		}
 	}
 	else if (operation==='NOR'){
-		if (document.getElementById('x'+pointer).innerHTML===arg && arg==='0'){
+		if (specialtarget===arg && arg==='0'){
 			document.getElementById('x'+pointer).innerHTML = 1;
 		}
 		else {
@@ -197,7 +198,7 @@ function fstep(){
 		}
 	}
 	else if (operation==='NAN'){
-		if (document.getElementById('x'+pointer).innerHTML===arg && arg==='1'){
+		if (specialtarget===arg && arg==='1'){
 			document.getElementById('x'+pointer).innerHTML = 0;
 		}
 		else {
@@ -208,7 +209,7 @@ function fstep(){
 		pointer = mod(pointer+Number(arg),tapesize);
 	}
 	else if (operation==='MMS'){
-		document.getElementById('machinestate').innerHTML = Number(document.getElementById('machinestate').innerHTML)+Number(arg);
+		document.getElementById('machinestate').innerHTML = Number(specialstate)+Number(arg);
 	}
 	else if (operation==='APP'){
 		document.getElementById('x'+pointer).innerHTML += arg;
@@ -219,7 +220,7 @@ function fstep(){
 		// Figure out if arg2 is a specialchar
 		// Machinestate
 		if (arg2==='*'){
-			arg2 = document.getElementById('machinestate').innerHTML;
+			arg2 = specialstate;
 		}
 		// Pointer
 		else if (arg2==='$'){
@@ -227,7 +228,7 @@ function fstep(){
 		}
 		// Value
 		else if (arg2==='@'){
-			arg2 = document.getElementById('x'+pointer).innerHTML;
+			arg2 = specialtarget;
 		}
 		// Do shit
 		// Machinestate
@@ -254,7 +255,7 @@ function fstep(){
 		// Figure out if arg2 is a specialchar
 		// Machinestate
 		if (arg2==='*'){
-			arg2 = document.getElementById('machinestate').innerHTML;
+			arg2 = specialstate;
 		}
 		// Pointer
 		else if (arg2==='$'){
@@ -262,7 +263,7 @@ function fstep(){
 		}
 		// Value
 		else if (arg2==='@'){
-			arg2 = document.getElementById('x'+pointer).innerHTML;
+			arg2 = specialtarget;
 		}
 		// Error
 		else {
@@ -271,7 +272,7 @@ function fstep(){
 		// Do shit
 		// Machinestate
 		if (arg1==='*'){
-			arg1 = document.getElementById('machinestate').innerHTML
+			arg1 = specialstate
 			document.getElementById('machinestate').innerHTML = arg2;
 		}
 		// Pointer
@@ -281,7 +282,7 @@ function fstep(){
 		}
 		// Value
 		else if (arg1==='@'){
-			arg1 = document.getElementById('x'+pointer).innerHTML;
+			arg1 = specialtarget;
 			document.getElementById('x'+pointer).innerHTML = arg2;
 		}
 		// Error
@@ -303,10 +304,27 @@ function fstep(){
 		}
 	}
 	else if (operation==='FUN'){
+		// Specials replacement
+		arg = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget);
+		
 		var otherlinenumber = linenumber+Number(arg);
 		var temp = program[linenumber];
 		program[linenumber] = program[otherlinenumber];
 		program[otherlinenumber] = temp;
+		console.log(program);
+	}
+	else if (operation==='FSW'){
+		var onelinenumber = Number(arg.split(",")[0]);
+		var anotherlinenumber = Number(arg.split(",")[1]);
+		var temp = program[onelinenumber];
+		program[onelinenumber] = program[anotherlinenumber];
+		program[anotherlinenumber] = temp;
+		console.log(program);
+	}
+	else if (operation==='FRG'){
+		var onelinenumber = Number(arg.split(/,(.+)/)[0]);
+		var oneargs = arg.split(/,(.+)/)[1];
+		program[onelinenumber] = program[onelinenumber].substring(0,4)+oneargs;
 		console.log(program);
 	}
 	else {
