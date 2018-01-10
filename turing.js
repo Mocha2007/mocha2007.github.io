@@ -79,15 +79,6 @@ function fstep(){
 	if (command.substring(0,1)===':'){
 		console.log(command.substring(1));
 	}
-	else if (operation==='SET'){
-		document.getElementById('machinestate').innerHTML = arg;
-	}
-	else if (operation==='PNT'){
-		pointer = mod(Number(arg),tapesize);
-	}
-	else if (operation==='STO'){
-		document.getElementById('x'+pointer).innerHTML = arg;
-	}
 	else if (operation==='ADD'){
 		document.getElementById('x'+pointer).innerHTML = Number(specialtarget)+Number(arg);
 	}

@@ -45,16 +45,16 @@ NEG : negate value at pointer
 NOT : set value at pointer to 1 if 0, else 0
 
 1 Argument
-:X : Label 'X'. Can also be used as comments and empty lines.
+:X : Label 'X'. Can also be used as comments and empty lines
 ADD # : set value at pointer to itself plus argument
 AND ? : set value at pointer to argument if itself is 1, otherwise,
-        return itself.
+        return itself
 APP ? : append string to value at pointer
 DIV # : set value at pointer to itself divided by argument
 EXP # : set value at pointer to itself raised to argument
-FUN # : swap this line of code with the #-th line after this.
+FUN # : swap this line of code with the #-th line after this
 IOR ? : set value at pointer to argument if itself is 0, otherwise,
-        return itself.
+        return itself
 JFN ? : jump to line if value at pointer is not same as machine state
 JIF ? : jump to line if value at pointer is same as machine state
 JIG ? : jump to line if value at pointer is greater than machine state
@@ -62,9 +62,9 @@ JIL ? : jump to line if value at pointer is less than machine state
 JIZ ? : jump to line if value at pointer is zero
 JMP ? : jump to line
 JNZ ? : jump to line if value at pointer is not zero
-MMS # : add argument to machine state
-MOD # : set value to value at pointer modulo argument
-MOV # : increment pointer by argument
+MMS # : set machine state to itself plus argument
+MOD # : set value at pointer to itself modulo argument
+MOV # : set pointer to itself plus argument
 MUL # : set value at pointer to itself multiplied by argument
 NAN ? : set value at pointer to 0 if argument and itself are 1, else 1
 NOR ? : set value at pointer to 1 if argument and itself are 0, else 0
@@ -319,6 +319,15 @@ LET * @
 JMP 0
 LET $ 0
 LET @ *
+</pre>
+
+<h3 id='Almost-Quine'>Almost-Quine</h3>
+<p>
+	This code outputs its first line.
+</p>
+<pre>
+FAA 21,21,0,14
+LET @ X
 </pre>
 
 <div id="bottom"></div>
