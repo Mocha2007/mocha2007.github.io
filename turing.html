@@ -74,7 +74,7 @@ XOR ? : set value at pointer to 0 if argument same as itself, else 1
 
 2 Arguments
 FRG #,? : replace the argument(s) in the code at line # with ?
-FSW #,# : swap the code at lines # and #
+FSW #,# : swap the code at the specified lines
 LET ! ? : set * or $ or @ to argument
 SWP ! ! : swaps two specials
 
@@ -197,17 +197,12 @@ LET @ Hello, World!
 
 <h3 id='Addition'>Addition</h3>
 <p>
-	Adds the numbers 5 and 8 without the ADD operator.
+	Adds the numbers 5 and 8
 </p>
 <pre>
 LET @ 5
-MOV 1
-LET @ 8
-MOV -1
-ADD 1
-MOV 1
-ADD -1
-JNZ 3
+LET * 8
+ADD *
 </pre>
 
 <h3 id='Identification'>Identification</h3>
@@ -272,20 +267,13 @@ JNZ 7
 LET @ 10
 LET * @
 EXP 2
-MOV 1
-LET @ *
-MOV -1
-ADD 1
-MOV 1
-ADD -1
-JNZ 5
-MOV -1
+ADD *
 DIV 2
 </pre>
 
 <h3 id='Leap_Year'>Leap Year</h3>
 <p>
-	Checks whether 2018 is a leap year or not.
+	Checks whether 2018 is a leap year or not. Includes compressed version. 
 </p>
 <pre>
 LET @ 2018
@@ -302,6 +290,22 @@ JNZ F
 LET @ 1
 JMP X
 :F
+LET @ 0
+:X
+</pre>
+<pre>
+LET @ 2018
+LET * @
+MOD 400
+JIZ 10
+LET @ *
+MOD 100
+JIZ 12
+LET @ *
+MOD 4
+JNZ 12
+LET @ 1
+JMP X
 LET @ 0
 :X
 </pre>
