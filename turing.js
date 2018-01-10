@@ -304,9 +304,6 @@ function fstep(){
 		}
 	}
 	else if (operation==='FUN'){
-		// Specials replacement
-		arg = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget);
-		
 		var otherlinenumber = linenumber+Number(arg);
 		var temp = program[linenumber];
 		program[linenumber] = program[otherlinenumber];
@@ -314,6 +311,9 @@ function fstep(){
 		console.log(program);
 	}
 	else if (operation==='FSW'){
+		// Specials replacement
+		arg = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget);
+		
 		var onelinenumber = Number(arg.split(",")[0]);
 		var anotherlinenumber = Number(arg.split(",")[1]);
 		var temp = program[onelinenumber];
@@ -322,6 +322,9 @@ function fstep(){
 		console.log(program);
 	}
 	else if (operation==='FRG'){
+		// Specials replacement
+		arg = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget);
+		
 		var onelinenumber = Number(arg.split(/,(.+)/)[0]);
 		var oneargs = arg.split(/,(.+)/)[1];
 		program[onelinenumber] = program[onelinenumber].substring(0,4)+oneargs;
