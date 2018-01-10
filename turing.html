@@ -251,7 +251,7 @@ INP
 </pre>
 
 <p>
-	Finds the nth triangular number, using only the increment and decrement operators. 
+	Finds the nth triangular number, using only the increment and decrement operators. Also, I have included a compressed version of the same program. 
 </p>
 <pre>
 STO 10
@@ -271,6 +271,46 @@ MOV -2
 JIZ X
 RRR
 JMP A
+:X
+</pre>
+<pre>
+STO 10
+OUT
+RRR
+INP
+DEC
+JNZ 1
+LLL
+LLL
+INC
+RRR
+DEC
+JNZ 7
+MOV -2
+JIZ 15
+RRR
+JNZ 7
+</pre>
+
+<p>
+	Checks whether 2018 is a leap year or not.
+</p>
+<pre>
+STO 2018
+OUT
+MOD 400
+JIZ T
+INP
+MOD 100
+JIZ F
+INP
+MOD 4
+JNZ F
+:T
+STO 1
+JMP X
+:F
+STO 0
 :X
 </pre>
 

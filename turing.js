@@ -107,7 +107,7 @@ function fstep(){
 		document.getElementById('x'+pointer).innerHTML = Number(document.getElementById('x'+pointer).innerHTML)/Number(command.substring(4));
 	}
 	else if (command.substring(0,3)==='MOD'){
-		document.getElementById('x'+pointer).innerHTML = Mod(Number(document.getElementById('x'+pointer).innerHTML),Number(command.substring(4)));
+		document.getElementById('x'+pointer).innerHTML = mod(Number(document.getElementById('x'+pointer).innerHTML),Number(command.substring(4)));
 	}
 	else if (command.charAt(0)==='J'){
 		// Determining Argument Type
