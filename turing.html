@@ -41,7 +41,7 @@ All support use of $ for pointer
 All support use of @ for value at pointer
 
 0 Arguments
-NEG : negate value at pointer
+NEG : set value at pointer to its negative
 NOT : set value at pointer to 1 if 0, else 0
 
 1 Argument
@@ -55,12 +55,12 @@ EXP # : set value at pointer to itself raised to argument
 FUN # : swap this line of code with the #-th line after this
 IOR ? : set value at pointer to argument if itself is 0, otherwise,
         return itself
-JFN ? : jump to line if value at pointer is not same as machine state
 JIF ? : jump to line if value at pointer is same as machine state
 JIG ? : jump to line if value at pointer is greater than machine state
 JIL ? : jump to line if value at pointer is less than machine state
 JIZ ? : jump to line if value at pointer is zero
 JMP ? : jump to line
+JNE ? : jump to line if value at pointer is not same as machine state
 JNZ ? : jump to line if value at pointer is not zero
 MMS # : set machine state to itself plus argument
 MOD # : set value at pointer to itself modulo argument

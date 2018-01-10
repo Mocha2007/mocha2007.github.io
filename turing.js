@@ -124,7 +124,7 @@ function fstep(){
 				document.getElementById('line').innerHTML = target;
 			}
 		}
-		else if (operation==='JFN'){
+		else if (operation==='JNE'){
 			if (specialtarget!==specialstate){
 				document.getElementById('line').innerHTML = target;
 			}
