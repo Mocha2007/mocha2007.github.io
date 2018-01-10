@@ -11,7 +11,7 @@
 <script src="turing.js"></script>
 <style>
 #program{text-align:center;}
-.pointed{color:#008;background-color: #CCE;text-style:bold;}
+.pointed{color:#080;background-color: #CEC;text-style:bold;}
 pre{font-family:Monospace;background-color:#000;color:#ccc;}
 </style>
 <title>Mocha's Machine</title>
@@ -32,49 +32,50 @@ pre{font-family:Monospace;background-color:#000;color:#ccc;}
 <div id="memory"></div>
 
 <h2 id='Dictionary'>Dictionary</h2>
-<ul>
-	<li>:X - label X</li>
-	<li>ADD - set value at pointer to itself plus argument</li>
-	<li>AND - set value at pointer to argument if itself is 1, otherwise, return itself.</li>
-	<li>APP - append string to value at pointer</li>
-	<li>DEC - decrement value at pointer</li>
-	<li>DIV - set value at pointer to itself divided by argument</li>
-	<li>EXP - set value at pointer to itself raised to argument</li>
-	<li>GOT - set pointer to state</li>
-	<li>INC - increment value at pointer</li>
-	<li>INP - set value at pointer to state</li>
-	<li>IOR - set value at pointer to argument if itself is 0, otherwise, return itself.</li>
-	<li>JFN - jump to line if value at pointer is not same as machine state</li>
-	<li>JIF - jump to line if value at pointer is same as machine state</li>
-	<li>JIG - jump to line if value at pointer is greater than machine state</li>
-	<li>JIL - jump to line if value at pointer is less than machine state</li>
-	<li>JIZ - jump to line if value at pointer is zero</li>
-	<li>JMP - jump to line</li>
-	<li>JNZ - jump to line if value at pointer is not zero</li>
-	<li>LLL - increment pointer</li>
-	<li>MOD - set value to value at pointer modulo argument</li>
-	<li>MOV - increment pointer by argument</li>
-	<li>MUL - set value at pointer to itself multiplied by argument</li>
-	<li>NAN - set value at pointer to 0 if argument and itself are 1, else 1</li>
-	<li>NEG - negate value at pointer</li>
-	<li>NOP - do nothing</li>
-	<li>NOR - set value at pointer to 1 if argument and itself are 0, else 0</li>
-	<li>NOT - set value at pointer to 1 if 0, else 0</li>
-	<li>NRT - set value at pointer to the argument-th root of itself</li>
-	<li>OUT - set state to value at pointer</li>
-	<li>PNT - set pointer to argument</li>
-	<li>RRR - decrement pointer</li>
-	<li>SET - set state to argument</li>
-	<li>SSP - set state to pointer</li>
-	<li>STO - set value at pointer to argument</li>
-	<li>SUB - set value at pointer to argument subtracted from itself</li>
-	<li>XNR - set value at pointer to 1 if argument same as itself, else 0</li>
-	<li>XOR - set value at pointer to 0 if argument same as itself, else 1</li>
-</ul>
+<pre>
+A = string
+# = number
+? = string or number
+All support use of * for machine state
+
+:X : label X
+ADD # : set value at pointer to itself plus argument
+AND ? : set value at pointer to argument if itself is 1, otherwise, return itself.
+APP ? : append string to value at pointer<!--DEC   : decrement value at pointer-->
+DIV # : set value at pointer to itself divided by argument
+EXP # : set value at pointer to itself raised to argument<!--GOT   : set pointer to state
+INC   : increment value at pointer
+INP   : set value at pointer to state-->
+IOR ? : set value at pointer to argument if itself is 0, otherwise, return itself.
+JFN ? : jump to line if value at pointer is not same as machine state
+JIF ? : jump to line if value at pointer is same as machine state
+JIG ? : jump to line if value at pointer is greater than machine state
+JIL ? : jump to line if value at pointer is less than machine state
+JIZ ? : jump to line if value at pointer is zero
+JMP ? : jump to line
+JNZ ? : jump to line if value at pointer is not zero<!--LLL   : decrement pointer-->
+MMS # : add argument to machine state
+MOD # : set value to value at pointer modulo argument
+MOV # : increment pointer by argument
+MUL # : set value at pointer to itself multiplied by argument
+NAN ? : set value at pointer to 0 if argument and itself are 1, else 1
+NEG   : negate value at pointer
+NOP   : do nothing
+NOR ? : set value at pointer to 1 if argument and itself are 0, else 0
+NOT   : set value at pointer to 1 if 0, else 0
+NRT # : set value at pointer to the argument:th root of itself
+OUT   : set state to value at pointer
+PNT # : set pointer to argument<!--RRR   : increment pointer-->
+SET ? : set state to argument
+SSP   : set state to pointer
+STO ? : set value at pointer to argument<!--SUB # : set value at pointer to argument subtracted from itself-->
+XNR ? : set value at pointer to 1 if argument same as itself, else 0
+XOR ? : set value at pointer to 0 if argument same as itself, else 1
+</pre>
 
 <h3 id='Tables'>Tables</h3>
 
-<!--Excluded: Jumps, MOD-->
+<!--Excluded: Jumps, MOD, MMS-->
 
 <table>
 	<tr>
@@ -86,21 +87,6 @@ pre{font-family:Monospace;background-color:#000;color:#ccc;}
 		<td>Set</td>
 		<td>PNT #</td>
 		<td>STO ?</td>
-	</tr>
-	<tr>
-		<td>Increment</td>
-		<td>RRR</td>
-		<td>INC</td>
-	</tr>
-	<tr>
-		<td>Decrement</td>
-		<td>LLL</td>
-		<td>DEC</td>
-	</tr>
-	<tr>
-		<td>Copy from State</td>
-		<td>GOT</td>
-		<td>INP</td>
 	</tr>
 	<tr>
 		<td>Copy to State</td>
@@ -119,12 +105,8 @@ pre{font-family:Monospace;background-color:#000;color:#ccc;}
 		<td>NEG</td>
 	</tr>
 	<tr>
-		<td>INC</td>
-		<td>DEC</td>
-	</tr>
-	<tr>
-		<td>ADD #</td>
-		<td>SUB #</td>
+		<td>ADD #*</td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>MUL #</td>
@@ -180,19 +162,19 @@ MM can also emulate BF programs easily, with the following substitutions:
 	</tr>
 	<tr>
 		<td>></td>
-		<td>RRR</td>
+		<td>MOV 1</td>
 	</tr>
 	<tr>
 		<td>&lt;</td>
-		<td>LLL</td>
+		<td>MOV -1</td>
 	</tr>
 	<tr>
 		<td>+</td>
-		<td>INC</td>
+		<td>ADD 1</td>
 	</tr>
 	<tr>
 		<td>-</td>
-		<td>DEC</td>
+		<td>ADD -1</td>
 	</tr>
 	<tr>
 		<td>.</td>
@@ -200,7 +182,7 @@ MM can also emulate BF programs easily, with the following substitutions:
 	</tr>
 	<tr>
 		<td>,</td>
-		<td>INP</td>
+		<td>STO *</td>
 	</tr>
 	<tr>
 		<td>[</td>
@@ -228,12 +210,12 @@ STO Hello, World!
 </p>
 <pre>
 STO 5
-RRR
+MOV 1
 STO 8
-LLL
-INC
-RRR
-DEC
+MOV -1
+ADD 1
+MOV 1
+ADD -1
 JNZ 3
 </pre>
 
@@ -248,52 +230,66 @@ JIF 5
 SET Bob
 JNF X
 STO Welcome, 
-RRR
-INP
+MOV 1
+STO *
 :X
 </pre>
 
 <h3 id='Triangular_Number'>Triangular Number</h3>
 <p>
-	Finds the nth triangular number, using only the increment and decrement operators. Also, I have included a compressed version of the same program. 
+	Finds the nth triangular number, using only the addition operator. Also, I have ADD included a compressed version of the same program, and a version using exponentiation and division. 
 </p>
 <pre>
 STO 10
 OUT
-RRR
-INP
-DEC
+MOV 1
+STO *
+ADD -1
 JNZ 1
-LLL
+MOV -1
 :A
-LLL
-INC
-RRR
-DEC
+MOV -1
+ADD 1
+MOV 1
+ADD -1
 JNZ A
 MOV -2
 JIZ X
-RRR
+MOV 1
 JMP A
 :X
 </pre>
 <pre>
 STO 10
 OUT
-RRR
-INP
-DEC
+MOV 1
+STO *
+ADD -1
 JNZ 1
-LLL
-LLL
-INC
-RRR
-DEC
+MOV -1
+MOV -1
+ADD 1
+MOV 1
+ADD -1
 JNZ 7
 MOV -2
 JIZ 15
-RRR
+MOV 1
 JNZ 7
+</pre>
+<pre>
+STO 10
+OUT
+EXP 2
+MOV 1
+STO *
+MOV -1
+ADD 1
+MOV 1
+ADD -1
+JNZ 5
+MOV -1
+DIV 2
 </pre>
 
 <h3 id='Leap_Year'>Leap Year</h3>
@@ -305,10 +301,10 @@ STO 2018
 OUT
 MOD 400
 JIZ T
-INP
+STO *
 MOD 100
 JIZ F
-INP
+STO *
 MOD 4
 JNZ F
 :T
@@ -317,6 +313,21 @@ JMP X
 :F
 STO 0
 :X
+</pre>
+
+<h3 id='Sorting'>Sorting</h3>
+<p>
+	Finds the largest entry and prints it in the first square. 
+</p>
+<pre>
+OUT
+MOV 1
+JIZ 6
+JIL 1
+OUT
+JMP 0
+PNT 0
+STO *
 </pre>
 
 <div id="bottom"></div>
