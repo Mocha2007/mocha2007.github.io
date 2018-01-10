@@ -64,11 +64,11 @@ function fstep(){
 	if (command.substring(0,3)=='NOP'){
 		// 2 + 2 = 4 - 1 = 3
 	}
+	else if (command.substring(0,1)==':'){
+		console.log(command.substring(1));
+	}
 	else if (command.substring(0,3)=='SET'){
 		document.getElementById('machinestate').innerHTML = command.substring(4);
-	}
-	else if (command.substring(0,3)=='JMP'){
-		document.getElementById('line').innerHTML = Number(command.substring(4));
 	}
 	else if (command.substring(0,3)=='PNT'){
 		pointer = mod(Number(command.substring(4)),tapesize);
@@ -109,29 +109,46 @@ function fstep(){
 	else if (command.substring(0,3)=='MOD'){
 		document.getElementById('x'+pointer).innerHTML = Mod(Number(document.getElementById('x'+pointer).innerHTML),Number(command.substring(4)));
 	}
-	else if (command.substring(0,3)=='JIZ'){
-		if (document.getElementById('x'+pointer).innerHTML==0){
-			document.getElementById('line').innerHTML = Number(command.substring(4));
+	else if (command.charAt(0)==='J'){
+		// Determining Argument Type
+		console.log(Number(command.substring(4)));
+		if (isNaN(command.substring(4))){
+			var target = program.indexOf(':'+command.substring(4));
 		}
-	}
-	else if (command.substring(0,3)=='JNZ'){
-		if (document.getElementById('x'+pointer).innerHTML!=0){
-			document.getElementById('line').innerHTML = Number(command.substring(4));
+		else {
+			var target = command.substring(4);
 		}
-	}
-	else if (command.substring(0,3)=='JIF'){
-		if (document.getElementById('x'+pointer).innerHTML==document.getElementById('machinestate').innerHTML){
-			document.getElementById('line').innerHTML = command.substring(4);
+		// Jump Determination
+		if (command.substring(0,3)==='JMP'){
+			document.getElementById('line').innerHTML = target;
 		}
-	}
-	else if (command.substring(0,3)=='JIG'){
-		if (document.getElementById('x'+pointer).innerHTML>document.getElementById('machinestate').innerHTML){
-			document.getElementById('line').innerHTML = command.substring(4);
+		else if (command.substring(0,3)==='JIZ'){
+			if (document.getElementById('x'+pointer).innerHTML==0){
+				document.getElementById('line').innerHTML = target;
+			}
 		}
-	}
-	else if (command.substring(0,3)=='JIL'){
-		if (document.getElementById('x'+pointer).innerHTML<document.getElementById('machinestate').innerHTML){
-			document.getElementById('line').innerHTML = command.substring(4);
+		else if (command.substring(0,3)==='JNZ'){
+			if (document.getElementById('x'+pointer).innerHTML!=0){
+				document.getElementById('line').innerHTML = target;
+			}
+		}
+		else if (command.substring(0,3)==='JIF'){
+			if (document.getElementById('x'+pointer).innerHTML==document.getElementById('machinestate').innerHTML){
+				document.getElementById('line').innerHTML = target;
+			}
+		}
+		else if (command.substring(0,3)==='JIG'){
+			if (document.getElementById('x'+pointer).innerHTML>document.getElementById('machinestate').innerHTML){
+				document.getElementById('line').innerHTML = target;
+			}
+		}
+		else if (command.substring(0,3)==='JIL'){
+			if (document.getElementById('x'+pointer).innerHTML<document.getElementById('machinestate').innerHTML){
+				document.getElementById('line').innerHTML = target;
+			}
+		}
+		else {
+			console.warn('Jump not in dictionary: ',command);
 		}
 	}
 	else if (command.substring(0,3)=='GOT'){
