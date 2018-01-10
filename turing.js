@@ -302,6 +302,13 @@ function fstep(){
 			document.getElementById('x'+pointer).innerHTML = arg1;
 		}
 	}
+	else if (operation==='FUN'){
+		var otherlinenumber = linenumber+Number(arg);
+		var temp = program[linenumber];
+		program[linenumber] = program[otherlinenumber];
+		program[otherlinenumber] = temp;
+		console.log(program);
+	}
 	else {
 		console.warn('Operation not in dictionary: '+command);
 	}
