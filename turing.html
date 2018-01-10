@@ -35,6 +35,7 @@ pre{font-family:Monospace;background-color:#000;color:#ccc;}
 <pre>
 # = number
 ? = string or number
+! = specialchar
 All support use of * for machine state
 All support use of $ for pointer
 All support use of @ for value at pointer
@@ -55,6 +56,7 @@ JIL ? : jump to line if value at pointer is less than machine state
 JIZ ? : jump to line if value at pointer is zero
 JMP ? : jump to line
 JNZ ? : jump to line if value at pointer is not zero<!--LLL   : decrement pointer-->
+LET ! ? : set * or $ or @ to argument
 MMS # : add argument to machine state
 MOD # : set value to value at pointer modulo argument
 MOV # : increment pointer by argument
@@ -64,10 +66,14 @@ NEG   : negate value at pointer
 NOP   : do nothing
 NOR ? : set value at pointer to 1 if argument and itself are 0, else 0
 NOT   : set value at pointer to 1 if 0, else 0
-NRT # : set value at pointer to the argument-th root of itself<!--OUT   : set state to value at pointer-->
-PNT # : set pointer to argument<!--RRR   : increment pointer-->
-SET ? : set state to argument<!--SSP   : set state to pointer-->
-STO ? : set value at pointer to argument<!--SUB # : set value at pointer to argument subtracted from itself-->
+NRT # : set value at pointer to the argument-th root of itself<!--OUT   : set state to value at pointer
+PNT # : set pointer to argument
+RRR   : increment pointer
+SET ? : set state to argument
+SSP   : set state to pointer
+STO ? : set value at pointer to argument
+SUB # : set value at pointer to argument subtracted from itself-->
+SWP ! ! : swaps two specials
 XNR ? : set value at pointer to 1 if argument same as itself, else 0
 XOR ? : set value at pointer to 0 if argument same as itself, else 1
 </pre>
@@ -84,7 +90,7 @@ XOR ? : set value at pointer to 0 if argument same as itself, else 1
 		<td>NEG</td>
 	</tr>
 	<tr>
-		<td>ADD #*</td>
+		<td>ADD #</td>
 		<td></td>
 	</tr>
 	<tr>
@@ -157,11 +163,11 @@ MM can also emulate BF programs easily, with the following substitutions:
 	</tr>
 	<tr>
 		<td>.</td>
-		<td>SET @</td>
+		<td>LET * @</td>
 	</tr>
 	<tr>
 		<td>,</td>
-		<td>STO *</td>
+		<td>LET @ *</td>
 	</tr>
 	<tr>
 		<td>[</td>
@@ -180,7 +186,7 @@ MM can also emulate BF programs easily, with the following substitutions:
 	A 'Hello, World!' program. 
 </p>
 <pre>
-STO Hello, World!
+LET @ Hello, World!
 </pre>
 
 <h3 id='Addition'>Addition</h3>
@@ -188,9 +194,9 @@ STO Hello, World!
 	Adds the numbers 5 and 8 without the ADD operator.
 </p>
 <pre>
-STO 5
+LET @ 5
 MOV 1
-STO 8
+LET @ 8
 MOV -1
 ADD 1
 MOV 1
@@ -203,14 +209,14 @@ JNZ 3
 	Checks to see if Chuck is Alice or Bob, and, if so, Greet them.
 </p>
 <pre>
-STO Chuck
-SET Alice
+LET @ Chuck
+LET * Alice
 JIF 5
-SET Bob
+LET * Bob
 JNF X
-STO Welcome, 
+LET @ Welcome, 
 MOV 1
-STO *
+LET @ *
 :X
 </pre>
 
@@ -219,10 +225,10 @@ STO *
 	Finds the nth triangular number, using only the addition operator. Also, I have ADD included a compressed version of the same program, and a version using exponentiation and division. 
 </p>
 <pre>
-STO 10
-SET @
+LET @ 10
+LET * @
 MOV 1
-STO *
+LET @ *
 ADD -1
 JNZ 1
 MOV -1
@@ -239,10 +245,10 @@ JMP A
 :X
 </pre>
 <pre>
-STO 10
-SET @
+LET @ 10
+LET * @
 MOV 1
-STO *
+LET @ *
 ADD -1
 JNZ 1
 MOV -1
@@ -257,11 +263,11 @@ MOV 1
 JNZ 7
 </pre>
 <pre>
-STO 10
-SET @
+LET @ 10
+LET * @
 EXP 2
 MOV 1
-STO *
+LET @ *
 MOV -1
 ADD 1
 MOV 1
@@ -276,21 +282,21 @@ DIV 2
 	Checks whether 2018 is a leap year or not.
 </p>
 <pre>
-STO 2018
-SET @
+LET @ 2018
+LET * @
 MOD 400
 JIZ T
-STO *
+LET @ *
 MOD 100
 JIZ F
-STO *
+LET @ *
 MOD 4
 JNZ F
 :T
-STO 1
+LET @ 1
 JMP X
 :F
-STO 0
+LET @ 0
 :X
 </pre>
 
@@ -299,14 +305,14 @@ STO 0
 	Finds the largest entry and prints it in the first square. 
 </p>
 <pre>
-SET @
+LET * @
 MOV 1
 JIZ 6
 JIL 1
-SET @
+LET * @
 JMP 0
-PNT 0
-STO *
+LET $ 0
+LET @ *
 </pre>
 
 <div id="bottom"></div>
