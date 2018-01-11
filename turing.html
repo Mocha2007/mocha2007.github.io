@@ -53,7 +53,6 @@ AND ? : set value at pointer to argument if itself is 1, otherwise,
 APP ? : append string to value at pointer
 DIV # : set value at pointer to itself divided by argument
 EXP # : set value at pointer to itself raised to argument
-FUN # : swap this line of code with the #-th line after this
 IOR ? : set value at pointer to argument if itself is 0, otherwise,
         return itself
 JIF ? : jump to line if value at pointer is same as machine state
@@ -75,10 +74,19 @@ XNR ? : set value at pointer to 1 if argument same as itself, else 0
 XOR ? : set value at pointer to 0 if argument same as itself, else 1
 
 2 Arguments
-FRG #,? : replace the argument(s) in the code at line # with ?
-FSW #,# : swap the code at the specified lines
 LET ! ? : set * or $ or @ to argument
 SWP ! ! : swaps two specials
+
+~~Pretty useless commands that also exist~~
+
+1 Argument
+FUN # : swap this line of code with the #-th line after this
+I2W # : set value at pointer to the English transcription of the
+        argument
+
+2 Arguments
+FRG #,? : replace the argument(s) in the code at line # with ?
+FSW #,# : swap the code at the specified lines
 
 4 Arguments
 

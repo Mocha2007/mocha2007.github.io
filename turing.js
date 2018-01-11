@@ -2,6 +2,97 @@ function mod(n,m){
 	return ((n%m)+m)%m;
 }
 
+function EnglishNumber(integer){
+	var words = ['zero','one','two','three','four','five','six','seven','eight','nine'];
+	var teens = ['ten','eleven','twelve','thir','four','fif','six','seven','eigh','nine'];
+	var illions = [';)','thousand','m','b','tr'];
+	var string = '';
+	// Zero & Negatives
+	if (integer===0){
+		return words[0];
+	}
+	else if (integer<0){
+		string+='negative ';
+	}
+	integer = Math.abs(integer);
+	// Digits
+	if (integer<10){
+		return string+words[integer];
+	}
+	//Teens
+	else if (integer===10){
+		return string+teens[0];
+	}
+	else if (integer<13){
+		return string+teens[integer-10];
+	}
+	else if (integer<20){
+		return string+teens[integer-10]+'teen';
+	}
+	//twenties
+	else if (integer===20){
+		return string+'twenty';
+	}
+	else if (integer<30){
+		return string+'twenty-'+words[integer%10];
+	}
+	// X0
+	else if (integer<100 && integer%10===0){
+		return string+teens[+(integer+[])[0]]+'ty';
+	}
+	// XX
+	else if (integer<100){
+		return string+teens[+(integer+[])[0]]+'ty-'+words[integer%10];
+	}
+	// 100
+	else if (integer===100){
+		return string+'a hundred';
+	}
+	// 1XX
+	else if (integer<200){
+		return string+'a hundred '+EnglishNumber(integer-100);
+	}
+	// XXX
+	else if (integer<1e3){
+		return string+words[+(integer+[])[0]]+' hundred '+EnglishNumber(integer%100);
+	}
+	// 1,XXX
+	else if (integer<2e3){
+		return string+'a '+illions[1]+' '+EnglishNumber(integer-1e3);
+	}
+	// XXX,XXX
+	else if (integer<1e6){
+		return string+EnglishNumber(Math.floor(integer/1e3))+' '+illions[1]+' '+EnglishNumber(integer%1e3);
+	}
+	// 1,XXX,XXX
+	else if (integer<2e6){
+		return string+'a '+illions[2]+'illion '+EnglishNumber(integer-1e6);
+	}
+	// XXX,XXX,XXX
+	else if (integer<1e9){
+		return string+EnglishNumber(Math.floor(integer/1e6))+' '+illions[2]+'illion '+EnglishNumber(integer%1e6);
+	}
+	// 1,XXX,XXX,XXX
+	else if (integer<2e9){
+		return string+'a '+illions[3]+'illion '+EnglishNumber(integer-1e9);
+	}
+	// XXX,XXX,XXX,XXX
+	else if (integer<1e12){
+		return string+EnglishNumber(Math.floor(integer/1e9))+' '+illions[3]+'illion '+EnglishNumber(integer%1e9);
+	}
+	// 1,XXX,XXX,XXX,XXX
+	else if (integer<2e12){
+		return string+'a '+illions[4]+'illion '+EnglishNumber(integer-1e12);
+	}
+	// XXX,XXX,XXX,XXX,XXX
+	else if (integer<1e15){
+		return string+EnglishNumber(Math.floor(integer/1e12))+' '+illions[4]+'illion '+EnglishNumber(integer%1e12);
+	}
+	else {
+		return 'a really, really big number'
+	}
+}
+
 var program;
 var pointer;
 var xsize = 4;
@@ -297,6 +388,10 @@ function fstep(){
 			document.getElementById('x'+pointer).innerHTML = arg1;
 		}
 	}
+	else if (operation==='LEN'){
+		document.getElementById('x'+pointer).innerHTML = arg.length;
+	}
+	// WEIRD AND HARDLY USEFUL COMMANDS
 	else if (operation==='FUN'){
 		var otherlinenumber = linenumber+Number(arg);
 		var temp = program[linenumber];
@@ -344,8 +439,8 @@ function fstep(){
 	
 		console.log(program);
 	}
-	else if (operation==='LEN'){
-		document.getElementById('x'+pointer).innerHTML = arg.length;
+	else if (operation==='I2W'){
+		document.getElementById('x'+pointer).innerHTML = EnglishNumber(arg);
 	}
 	else {
 		console.warn('Operation not in dictionary: '+command);
