@@ -1,3 +1,99 @@
+// Myinstants
+var quos = [];
+quos['ALH'] = 'boom_9';
+quos['ANG'] = 'aint-nobody-got-time-for-that_1';
+quos['BAT'] = 'im-batman';
+quos['BFL'] = 'das-war-ein-befehl';
+quos['BHS'] = 'boomheadshot.swf';
+quos['BOS'] = 'ballsofsteel.swf';
+quos['BRL'] = 'barrelroll.swf';
+quos['BTS'] = 'wilford-brimley-diabetes';
+quos['BTW'] = 'birdtheword.swf';
+quos['BZG'] = 'bazinga.swf';
+quos['CMB'] = 'combobreaker';
+quos['CTT'] = 'mc-hammer-u-cant-touch-this';
+quos['DOH'] = 'doh.swf';
+quos['DOI'] = 'senator-palpatine-do-it_1';
+quos['DRK'] = 'hellodarknessmyoldfriend';
+quos['DUL'] = 'its-time-to-duel';
+quos['EAG'] = 'ea_games';
+quos['FNH'] = 'finishhim.swf';
+quos['FRD'] = 'fus-ro-dah';
+quos['GAY'] = 'ha-gay';
+quos['HHA'] = 'haha.swf';
+quos['HHH'] = 'hahahahihihihehehe';
+quos['HLJ'] = 'hallelujahshort.swf';
+quos['IKU'] = 'ahmed-the-dead-terrorist-silence-i-kill-you_';
+quos['ILT'] = 'i-like-turtles';
+quos['JCN'] = 'john-cena_5';
+quos['JDI'] = 'real_1';
+quos['KHN'] = 'khaaan.swf';
+quos['LDL'] = 'lee-leedle';
+quos['LEG'] = 'my-leg_2';
+quos['LRJ'] = 'leroy.swf';
+quos['LSN'] = 'hey_listen';
+quos['LYN'] = 'why-you-always-lying-original';
+quos['LZR'] = 'sound-9___';
+quos['MGY'] = 'idubbbz-im-gay-free-download';
+quos['MSF'] = 'dank-meme-compilation-volume-17_cutted';
+quos['MSK'] = 'im-mr';
+quos['NGP'] = 'no-god-please-no-noooooooooo';
+quos['NOM'] = 'sound-8';
+quos['NOO'] = 'nooo.swf';
+quos['NOT'] = 'noot-noot';
+quos['O66'] = 'order66';
+quos['OMY'] = 'oh_my';
+quos['PKL'] = 'pickle_rick';
+quos['PNG'] = 'pingas-richard-89282878';
+quos['PUS'] = 'grab-them-by-the-p__y';
+quos['RDN'] = 'chamillionaire-ridin-ft-krayzie-bone';
+quos['RRL'] = 'epic.swf_1';
+quos['SFU'] = 'shut-the-fuck-up';
+quos['SHU'] = 'shutup.swf';
+quos['SKR'] = 'the-ting-go-skra';
+quos['SMF'] = 'surprise-motherfucker';
+quos['STP'] = 'its-time-to-stop-button';
+quos['SWE'] = 'snoop-dogg-smoke-weed-everyday';
+quos['TIS'] = 'thisissparta.swf';
+quos['TPL'] = 'oh-baby-a-triple';
+quos['TRL'] = 'trollolol.swf';
+quos['TRP'] = 'itsatrap.swf';
+quos['TTR'] = 'tuturu_1';
+quos['TWE'] = 'that_was_easy';
+quos['UTN'] = 'utini';
+quos['WLL'] = 'sound-9';
+quos['YAA'] = 'sound-9______';
+quos['YEE'] = 'yee';
+quos['YES'] = 'm_1';
+var sfxs = [];
+sfxs['5NF'] = 'five-nights-at-freddys-full-scream-sound_2';
+sfxs['APP'] = 'applause-4';
+sfxs['BEL'] = 'correct.swf';
+sfxs['CRK'] = 'crickets.swf';
+sfxs['DNG'] = 'ding-sound-effect_2';
+sfxs['DPH'] = 'dolphin';
+sfxs['DRM'] = 'drumroll.swf';
+sfxs['JPD'] = 'jeopardy';
+sfxs['LNO'] = 'dun_dun_1';
+sfxs['LOS'] = 'the-price-is-right-losing-horn';
+sfxs['MLG'] = 'mlg-airhorn';
+sfxs['NCP'] = 'inceptionbutton';
+sfxs['QAK'] = 'cuek.swf';
+sfxs['RBX'] = 'roblox-death-sound_1';
+sfxs['SAX'] = 'george-micael-wham-careless-whisper-1';
+sfxs['SFL'] = 'seinfeld-theme_1';
+sfxs['SHY'] = 'grin';
+sfxs['SWX'] = 'switch-sound';
+sfxs['TDA'] = 'tada.swf';
+sfxs['VLN'] = 'tf_nemesis';
+sfxs['VVZ'] = 'vuvuzela';
+sfxs['WHP'] = 'crack_the_whip';
+sfxs['WKA'] = 'wakawaka.swf';
+quos['WLH'] = 'wilhelmscream';
+sfxs['WSL'] = 'goodbadugly-whistle-long';
+sfxs['XFL'] = 'x-files-theme-song-copy';
+sfxs['XPE'] = 'erro';
+
 function mod(n,m){
 	return ((n%m)+m)%m;
 }
@@ -441,6 +537,37 @@ function fstep(){
 	}
 	else if (operation==='I2W'){
 		document.getElementById('x'+pointer).innerHTML = EnglishNumber(arg);
+	}
+	else if (operation==='SFX'){
+		// Unique
+		if (arg==='PTY'){
+			new Audio('snd/partyhorn.mp3').play();
+		}
+		else if (arg==='SAD'){
+			new Audio('http://www.orangefreesounds.com/wp-content/uploads/2015/07/Sad-trombone.mp3').play();
+		}
+		else {
+			try {
+				new Audio('https://www.myinstants.com/media/sounds/'+sfxs[arg]+'.mp3').play();
+			}
+			catch (e) {
+				console.warn('SFX may not be in dictionary: '+arg+'\n\tGave error: '+e);
+			}
+		}
+	}
+	else if (operation==='QUO'){
+		// Unique
+		if (arg==='PYT'){
+			new Audio('https://www.intriguing.com/mp/_sounds/hg/hamster.wav').play();
+		}
+		else {
+			try {
+				new Audio('https://www.myinstants.com/media/sounds/'+quos[arg]+'.mp3').play();
+			}
+			catch (e) {
+				console.warn('QUO may not be in dictionary: '+arg+'\n\tGave error: '+e);
+			}
+		}
 	}
 	else {
 		console.warn('Operation not in dictionary: '+command);
