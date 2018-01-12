@@ -87,10 +87,13 @@ sfxs['SWX'] = 'switch-sound';
 sfxs['TDA'] = 'tada.swf';
 sfxs['VLN'] = 'tf_nemesis';
 sfxs['VVZ'] = 'vuvuzela';
+sfxs['WED'] = 'it-is-wednesday-my-dudes-vine';
 sfxs['WHP'] = 'crack_the_whip';
 sfxs['WKA'] = 'wakawaka.swf';
-quos['WLH'] = 'wilhelmscream';
+sfxs['WLD'] = 'wubalubadubdubs-rick-and-morty';
+sfxs['WLH'] = 'wilhelmscream';
 sfxs['WSL'] = 'goodbadugly-whistle-long';
+sfxs['WYP'] = 'watch-your-profanity_1';
 sfxs['XFL'] = 'x-files-theme-song-copy';
 sfxs['XPE'] = 'erro';
 
