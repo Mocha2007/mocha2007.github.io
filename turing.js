@@ -202,6 +202,9 @@ function mconsole(MessageClass,Message){
 	else if (MessageClass==='e'){
 		document.getElementById('console').innerHTML += '\n<span class="ce">error</span>:\n'+Message;
 	}
+	else if (MessageClass==='o'){
+		document.getElementById('console').innerHTML += '\n<span class="co">&rdca;</span> '+Message;
+	}
 	else {
 		document.getElementById('console').innerHTML += '\n> '+Message;
 	}
@@ -269,7 +272,7 @@ function fstep(){
 	var command = program[linenumber];
 	// Reject
 	if (command==undefined || command===''){
-		mconsole('i','End of Program');
+		//mconsole('i','End of Program');
 		return true;
 	}
 	// INC
@@ -295,23 +298,23 @@ function fstep(){
 	var badop = 'Useless operation written by a useless coder\n@ Line ';
 	if ('ADD DIV EXP MMS MOD MOV MUL NRT FUN I2W'.indexOf(operation)!==-1 && isNaN(Number(arg))){
 			console.error('"'+arg+'" not number\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','"'+arg+'" not number\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','"'+arg+'" not number\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 			return true
 	}
 	// Generating warning for specialchar-duped ops
 	else if ('LET SWP'.indexOf(operation)!==-1 && ['* *','$ $','@ @'].indexOf(arg)!==-1){
 			console.warn(badop+linenumber+'\n\t'+command);
-			mconsole('w',badop+linenumber+'\n\t'+command);
+			mconsole('w',badop+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 	}
 	// Generating warning for other NOPs arg===0
 	else if ('ADD IOR MMS MOV'.indexOf(operation)!==-1 && Number(arg)===0){
 			console.warn(badop+linenumber+'\n\t'+command);
-			mconsole('w',badop+linenumber+'\n\t'+command);
+			mconsole('w',badop+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 	}
 	// Generating warning for other NOPs arg===1
 	else if ('DIV EXP MUL NRT'.indexOf(operation)!==-1 && Number(arg)===1){
 			console.warn(badop+linenumber+'\n\t'+command);
-			mconsole('w',badop+linenumber+'\n\t'+command);
+			mconsole('w',badop+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 	}
 	// OPERATIONS
 	if (command.substring(0,1)===':'){
@@ -333,7 +336,7 @@ function fstep(){
 		document.getElementById('x'+pointer).innerHTML = Number(specialtarget)/Number(arg);
 		if (arg==='0'){
 			console.error('Zero divisor\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Zero divisor\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','Zero divisor\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 			return true
 		}
 	}
@@ -341,7 +344,7 @@ function fstep(){
 		document.getElementById('x'+pointer).innerHTML = mod(Number(specialtarget),Number(arg));
 		if (arg==='0'){
 			console.error('Zero divisor\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Zero divisor\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','Zero divisor\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 			return true
 		}
 	}
@@ -389,7 +392,7 @@ function fstep(){
 		}
 		else {
 			console.error('Jump not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Jump not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','Jump not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 			return true
 		}
 	}
@@ -490,7 +493,7 @@ function fstep(){
 		// Error
 		else {
 			console.error('Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 			return true
 		}
 	}
@@ -514,7 +517,7 @@ function fstep(){
 		// Error
 		else {
 			console.error('Special not in dictionary: '+arg2+'\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Special not in dictionary: '+arg2+'\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','Special not in dictionary: '+arg2+'\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 			return true
 		}
 		// Do shit
@@ -536,7 +539,7 @@ function fstep(){
 		// Error
 		else {
 			console.error('Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 			return true
 		}
 		// Do shit some more
@@ -639,6 +642,9 @@ function fstep(){
 				mconsole('w','QUO may not be in dictionary: '+arg+'\n\tGave error: '+e);
 			}
 		}
+	}
+	else if (operation==='OUT'){
+		mconsole('o',arg);
 	}
 	else {
 		console.error('Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);

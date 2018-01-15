@@ -13,10 +13,13 @@
 #program{text-align:center;}
 .pointed{color:#080;background-color: #CEC;text-style:bold;}
 pre{font-family:Monospace;background-color:#000;color:#ccc;}
-#console{text-align:left;}
-.ci{color:#08F;}
+#console{text-align:left;padding-left:9px;padding-right:9px;}
+.ci{color:#48F;}
 .cw{color:#FC0;}
 .ce{color:#F44;}
+.co{color:#8E8;}
+.cf{color:#F8F;}
+.invisible{display:none;}
 </style>
 <title>Mocha's Machine</title>
 <div id="nav"></div>
@@ -31,10 +34,10 @@ pre{font-family:Monospace;background-color:#000;color:#ccc;}
 	Line <span id="line">0</span>
 	 | Pointer: <span id="pointing">0</span>
 	 | State: <span id="machinestate">[PRESS RESET]</span>
-	<pre id='console'><i>MOCHINE Console rev 180115a</i></pre>
-	 &downarrow; MEMORY &downarrow;
+	<pre id='console'><i>MOCHINE Console rev 180115b</i></pre>
+	<span class='invisible'>&downarrow; MEMORY &downarrow;</span>
 </div>
-<div id="memory"></div>
+<div class='invisible' id="memory"></div>
 
 <h2 id='Dictionary'>Dictionary</h2>
 
@@ -80,6 +83,7 @@ MUL # : set value at pointer to itself multiplied by argument
 NAN ? : set value at pointer to 0 if argument and itself are 1, else 1
 NOR ? : set value at pointer to 1 if argument and itself are 0, else 0
 NRT # : set value at pointer to the argument-th root of itself
+OUT ? : output value to console
 XNR ? : set value at pointer to 1 if argument same as itself, else 0
 XOR ? : set value at pointer to 0 if argument same as itself, else 1
 
