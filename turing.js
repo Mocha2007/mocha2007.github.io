@@ -206,6 +206,10 @@ function run(){
 	console.log(program);
 	console.log('Load');
 	// Bad Practices
+	// blank
+	if (program==''){
+			console.warn('No Program\n@ Line 0\n ');
+	}
 	// Last line is a label but not :X
 	if (program[program.length-1][0]===':' && program[program.length-1]!==':X'){
 			console.warn('Last line is label but not ":X"\n@ Line '+(program.length-1)+'\n\t'+program[program.length-1]);
@@ -243,19 +247,18 @@ function reset(){
 // Main
 
 function fstep(){
-	// INC
 	var linenumber = Number(document.getElementById('line').innerHTML);
-	document.getElementById('line').innerHTML=linenumber+1
 	// Determining the command
 	var command = program[linenumber];
-	// DEBUG
-	// console.log(linenumber+' '+command);
 	// Reject
-	if (command==undefined){
-		document.getElementById('line').innerHTML = linenumber;
+	if (command==undefined || command===''){
 		document.getElementById('machinestate').innerHTML = '[HALTED]';
+		console.log('The End.');
 		return true;
 	}
+	// INC
+	document.getElementById('line').innerHTML=linenumber+1
+	// Remove color
 	document.getElementById('x'+pointer).classList.remove("pointed");
 	// Grabbing specials beforehand
 	var specialstate = document.getElementById('machinestate').innerHTML;
@@ -277,6 +280,7 @@ function fstep(){
 	if ('ADD DIV EXP MMS MOD MOV MUL NRT FUN I2W'.indexOf(operation)!==-1 && isNaN(Number(arg))){
 			console.error('"'+arg+'" not number\n@ Line '+linenumber+'\n\t'+command);
 			document.getElementById('machinestate').innerHTML = '[ERR CHECK CONSOLE]';
+			return true
 	}
 	// Generating warning for specialchar-duped ops
 	else if ('LET SWP'.indexOf(operation)!==-1 && ['* *','$ $','@ @'].indexOf(arg)!==-1){
@@ -310,12 +314,14 @@ function fstep(){
 		document.getElementById('x'+pointer).innerHTML = Number(specialtarget)/Number(arg);
 		if (arg==='0'){
 			console.error('Zero divisor\n@ Line '+linenumber+'\n\t'+command);
+			return true
 		}
 	}
 	else if (operation==='MOD'){
 		document.getElementById('x'+pointer).innerHTML = mod(Number(specialtarget),Number(arg));
 		if (arg==='0'){
 			console.error('Zero divisor\n@ Line '+linenumber+'\n\t'+command);
+			return true
 		}
 	}
 	else if (command[0]==='J'){
@@ -363,6 +369,7 @@ function fstep(){
 		else {
 			console.error('Jump not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
 			document.getElementById('machinestate').innerHTML = '[ERR CHECK CONSOLE]';
+			return true
 		}
 	}
 	else if (operation==='AND'){
@@ -463,6 +470,7 @@ function fstep(){
 		else {
 			console.error('Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t'+command);
 			document.getElementById('machinestate').innerHTML = '[ERR CHECK CONSOLE]';
+			return true
 		}
 	}
 	else if (operation==='SWP'){
@@ -486,6 +494,7 @@ function fstep(){
 		else {
 			console.error('Special not in dictionary: '+arg2+'\n@ Line '+linenumber+'\n\t'+command);
 			document.getElementById('machinestate').innerHTML = '[ERR CHECK CONSOLE]';
+			return true
 		}
 		// Do shit
 		// Machinestate
@@ -507,6 +516,7 @@ function fstep(){
 		else {
 			console.error('Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t'+command);
 			document.getElementById('machinestate').innerHTML = '[ERR CHECK CONSOLE]';
+			return true
 		}
 		// Do shit some more
 		// Machinestate
@@ -610,6 +620,7 @@ function fstep(){
 	else {
 		console.error('Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
 		document.getElementById('machinestate').innerHTML = '[ERR CHECK CONSOLE]';
+		return true
 	}
 	document.getElementById('pointing').innerHTML=pointer;
 	document.getElementById('x'+pointer).classList.add("pointed");
