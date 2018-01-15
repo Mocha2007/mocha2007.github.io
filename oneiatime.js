@@ -112,7 +112,7 @@ function OneiaTime() {
 	var vernal =	6884100000;/*20 Mar 16:15 (2018)*/
 	// 642900 = 7 Jan 1970 10:35:00 UTC
 	// 2551442.9 = Lunar Synodic Period
-	var moonphase = Math.round(8*((currenttime-642900)%2551442.9)/2551442.9)
+	var moonphase = Math.round(8*((currenttime-642900)%2551442.9)/2551442.9)%8
 
 	document.getElementById("clock").innerHTML = '<img src="img/phase/'+nikkiphase+'.png" height=9 alt="Nikki Phase: '+phases[nikkiphase]+'" title="Nikki Phase: '+phases[nikkiphase]+'"> Eremoran Time:<br/>'+currentTimeString+'<br/>\n<progress value="'+yearprogress+'"></progress><br/>\n<img src="img/phase/'+moonphase+'.png" height=9 alt="Moon Phase: '+phases[moonphase]+'" title="Moon Phase: '+phases[moonphase]+'"> Earth Time:<br/>'+utc1+utc2+utc3+medidiem+' EST<br/>\n<progress value="'+((Date.now()-vernal)%yy)/yy+'"></progress>';
 }
