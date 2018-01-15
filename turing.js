@@ -223,8 +223,8 @@ function run(){
 	// Bad Practices
 	// blank
 	if (program==''){
-			console.warn('No Program\n@ Line 0\n ');
-			mconsole('w','No Program\n@ Line 0\n ');
+			console.warn('No Program\n@ Line 0');
+			mconsole('w','No Program\n@ Line 0');
 	}
 	// Last line is a label but not :X
 	if (program[program.length-1][0]===':' && program[program.length-1]!==':X'){
