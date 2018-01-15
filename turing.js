@@ -192,6 +192,8 @@ function EnglishNumber(integer){
 	}
 }
 
+// MAIN
+
 var program;
 var pointer;
 var xsize = 4;
@@ -203,6 +205,11 @@ function run(){
 	program = document.getElementById('code').value.split("\n");
 	console.log(program);
 	console.log('Load');
+	// Bad Practices
+	// Last line is a label but not :X
+	if (program[program.length-1][0]===':' && program[program.length-1]!==':X'){
+			console.warn('Last line is label but not ":X"\n@ Line '+(program.length-1)+'\n\t'+program[program.length-1]);
+	}
 }
 
 function reset(){
@@ -242,7 +249,7 @@ function fstep(){
 	// Determining the command
 	var command = program[linenumber];
 	// DEBUG
-	console.log(linenumber+' '+command);
+	// console.log(linenumber+' '+command);
 	// Reject
 	if (command==undefined){
 		document.getElementById('line').innerHTML = linenumber;
@@ -265,6 +272,24 @@ function fstep(){
 		arg = specialtarget;
 	}
 	var operation = command.substring(0,3);
+	// Generating errors for number-only ops
+	var badop = 'Useless operation written by a useless coder\n@ Line ';
+	if ('ADD DIV EXP MMS MOD MOV MUL NRT FUN I2W'.indexOf(operation)!==-1 && isNaN(Number(arg))){
+			console.error('"'+arg+'" not number\n@ Line '+linenumber+'\n\t'+command);
+			document.getElementById('machinestate').innerHTML = '[ERR CHECK CONSOLE]';
+	}
+	// Generating warning for specialchar-duped ops
+	else if ('LET SWP'.indexOf(operation)!==-1 && ['* *','$ $','@ @'].indexOf(arg)!==-1){
+			console.warn(badop+linenumber+'\n\t'+command);
+	}
+	// Generating warning for other NOPs arg===0
+	else if ('ADD IOR MMS MOV'.indexOf(operation)!==-1 && Number(arg)===0){
+			console.warn(badop+linenumber+'\n\t'+command);
+	}
+	// Generating warning for other NOPs arg===1
+	else if ('DIV EXP MUL NRT'.indexOf(operation)!==-1 && Number(arg)===1){
+			console.warn(badop+linenumber+'\n\t'+command);
+	}
 	// OPERATIONS
 	if (command.substring(0,1)===':'){
 		console.log(command.substring(1));
@@ -283,9 +308,15 @@ function fstep(){
 	}
 	else if (operation==='DIV'){
 		document.getElementById('x'+pointer).innerHTML = Number(specialtarget)/Number(arg);
+		if (arg==='0'){
+			console.error('Zero divisor\n@ Line '+linenumber+'\n\t'+command);
+		}
 	}
 	else if (operation==='MOD'){
 		document.getElementById('x'+pointer).innerHTML = mod(Number(specialtarget),Number(arg));
+		if (arg==='0'){
+			console.error('Zero divisor\n@ Line '+linenumber+'\n\t'+command);
+		}
 	}
 	else if (command[0]==='J'){
 		// Determining Argument Type
@@ -330,7 +361,8 @@ function fstep(){
 			}
 		}
 		else {
-			console.warn('Jump not in dictionary: '+command);
+			console.error('Jump not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
+			document.getElementById('machinestate').innerHTML = '[ERR CHECK CONSOLE]';
 		}
 	}
 	else if (operation==='AND'){
@@ -429,7 +461,8 @@ function fstep(){
 		}
 		// Error
 		else {
-			console.warn('Special not in dictionary: '+arg1);
+			console.error('Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t'+command);
+			document.getElementById('machinestate').innerHTML = '[ERR CHECK CONSOLE]';
 		}
 	}
 	else if (operation==='SWP'){
@@ -451,7 +484,8 @@ function fstep(){
 		}
 		// Error
 		else {
-			console.warn('Special not in dictionary: '+arg2);
+			console.error('Special not in dictionary: '+arg2+'\n@ Line '+linenumber+'\n\t'+command);
+			document.getElementById('machinestate').innerHTML = '[ERR CHECK CONSOLE]';
 		}
 		// Do shit
 		// Machinestate
@@ -471,7 +505,8 @@ function fstep(){
 		}
 		// Error
 		else {
-			console.warn('Special not in dictionary: '+arg1);
+			console.error('Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t'+command);
+			document.getElementById('machinestate').innerHTML = '[ERR CHECK CONSOLE]';
 		}
 		// Do shit some more
 		// Machinestate
@@ -573,7 +608,8 @@ function fstep(){
 		}
 	}
 	else {
-		console.warn('Operation not in dictionary: '+command);
+		console.error('Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
+		document.getElementById('machinestate').innerHTML = '[ERR CHECK CONSOLE]';
 	}
 	document.getElementById('pointing').innerHTML=pointer;
 	document.getElementById('x'+pointer).classList.add("pointed");
