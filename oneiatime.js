@@ -83,8 +83,9 @@ function OneiaTime() {
 	var yearprogress = remainder/year;
 	var days = Math.floor(remainder/day);
 	var remainder = remainder%day;
-	var nikkiphase = Math.round(8*(remainder/day-.1)%8)
-	//console.log((remainder/day-.1)%8);
+	var cnikkiphase = mod(remainder/day-.078,1)
+	// console.log(cnikkiphase);
+	var nikkiphase = Math.round(8*cnikkiphase)
 	var first = Math.floor(remainder/(day/10));
 	var remainder = remainder%(day/10);
 	var second = Math.floor(remainder/(day/100));
