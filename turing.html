@@ -13,6 +13,10 @@
 #program{text-align:center;}
 .pointed{color:#080;background-color: #CEC;text-style:bold;}
 pre{font-family:Monospace;background-color:#000;color:#ccc;}
+#console{text-align:left;}
+.ci{color:#08F;}
+.cw{color:#FC0;}
+.ce{color:#F44;}
 </style>
 <title>Mocha's Machine</title>
 <div id="nav"></div>
@@ -23,10 +27,11 @@ pre{font-family:Monospace;background-color:#000;color:#ccc;}
 	<input type="submit" value="Load" onclick="run();">
 	<input type="submit" value="Step" onclick="fstep();">
 	<input type="submit" value="Reset" onclick="reset();">
+	<br/>
 	Line <span id="line">0</span>
 	 | Pointer: <span id="pointing">0</span>
 	 | State: <span id="machinestate">[PRESS RESET]</span>
-	 <br/>
+	<pre id='console'><i>MOCHINE Console rev 180115a</i></pre>
 	 &downarrow; MEMORY &downarrow;
 </div>
 <div id="memory"></div>
