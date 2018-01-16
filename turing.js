@@ -366,7 +366,7 @@ async function mochsic(song){
 			else if (frequency==='A#4'){fuckjavascript=466.16;}
 			else if (frequency==='C5'){fuckjavascript=523.25;}
 
-			beep(fuckjavascript,duration,'sine');
+			beep(fuckjavascript,duration,'triangle');
 		}
 		await sleep(1000*fullnote*song[0]);
 	}
