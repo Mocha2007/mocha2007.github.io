@@ -232,7 +232,7 @@ function run(){
 	// Last line is a label but not :X
 	if (program[program.length-1][0]===':' && program[program.length-1]!==':X'){
 			console.warn('Last line is label but not ":X"\n@ Line '+(program.length-1)+'\n\t'+program[program.length-1]);
-			mconsole('w','Last line is label but not ":X"\n@ Line '+(program.length-1)+'\n\t'+program[program.length-1]);
+			mconsole('w','Last line is label but not "<span class="cf">:</span>X"\n@ Line '+(program.length-1)+'\n\t<span class="cf">:</span>'+program[program.length-1].substring(1));
 	}
 }
 
