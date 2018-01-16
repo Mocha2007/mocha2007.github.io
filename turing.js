@@ -245,7 +245,7 @@ function run(){
 	console.log('Load');
 	// Bad Practices
 	// blank
-	if (program===''){
+	if (program==''){
 			console.warn('No Program');
 			mconsole('w','No Program');
 	}
