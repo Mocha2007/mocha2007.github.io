@@ -1333,6 +1333,9 @@ function fstep(){
 			return true;
 		}
 	}
+	else if (operation==='IMG'){
+		mconsole('o','<img src="'+arg+'" class="cimg">');
+	}
 	else {
 		console.error('Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
 		mconsole('e','Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
