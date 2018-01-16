@@ -342,7 +342,7 @@ function fstep(){
 		document.getElementById('x'+pointer).innerHTML = Number(specialtarget)/Number(arg);
 		if (arg==='0'){
 			console.error('Zero divisor\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Zero divisor\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+			mconsole('e','Zero divisor\n@ Line '+linenumber+'\n\t<span class="cf">DIV</span> '+arg);
 			return true
 		}
 	}
@@ -350,7 +350,7 @@ function fstep(){
 		document.getElementById('x'+pointer).innerHTML = mod(Number(specialtarget),Number(arg));
 		if (arg==='0'){
 			console.error('Zero divisor\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Zero divisor\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+			mconsole('e','Zero divisor\n@ Line '+linenumber+'\n\t<span class="cf">MOD</span> '+arg);
 			return true
 		}
 	}
@@ -499,7 +499,7 @@ function fstep(){
 		// Error
 		else {
 			console.error('Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+			mconsole('e','Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t<span class="cf">LET</span> '+arg);
 			return true
 		}
 	}
@@ -523,7 +523,7 @@ function fstep(){
 		// Error
 		else {
 			console.error('Special not in dictionary: '+arg2+'\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Special not in dictionary: '+arg2+'\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+			mconsole('e','Special not in dictionary: '+arg2+'\n@ Line '+linenumber+'\n\t<span class="cf">SWP</span> '+arg);
 			return true
 		}
 		// Do shit
@@ -545,7 +545,7 @@ function fstep(){
 		// Error
 		else {
 			console.error('Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+			mconsole('e','Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t<span class="cf">SWP</span> '+arg);
 			return true
 		}
 		// Do shit some more
@@ -624,14 +624,12 @@ function fstep(){
 		else if (arg==='SAD'){
 			new Audio('http://www.orangefreesounds.com/wp-content/uploads/2015/07/Sad-trombone.mp3').play();
 		}
+		else if (sfxs[arg]!==undefined){
+			new Audio('https://www.myinstants.com/media/sounds/'+sfxs[arg]+'.mp3').play();
+		}
 		else {
-			try {
-				new Audio('https://www.myinstants.com/media/sounds/'+sfxs[arg]+'.mp3').play();
-			}
-			catch (e) {
-				console.warn('SFX may not be in dictionary: '+arg+'\n\tGave error: '+e);
-				mconsole('w','SFX may not be in dictionary: '+arg+'\n\tGave error: '+e);
-			}
+			console.error('SFX not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','SFX not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t<span class="cf">SFX</span> '+arg);
 		}
 	}
 	else if (operation==='QUO'){
@@ -639,14 +637,12 @@ function fstep(){
 		if (arg==='PYT'){
 			new Audio('https://www.intriguing.com/mp/_sounds/hg/hamster.wav').play();
 		}
+		else if (quos[arg]!==undefined){
+			new Audio('https://www.myinstants.com/media/sounds/'+quos[arg]+'.mp3').play();
+		}
 		else {
-			try {
-				new Audio('https://www.myinstants.com/media/sounds/'+quos[arg]+'.mp3').play();
-			}
-			catch (e) {
-				console.warn('QUO may not be in dictionary: '+arg+'\n\tGave error: '+e);
-				mconsole('w','QUO may not be in dictionary: '+arg+'\n\tGave error: '+e);
-			}
+			console.error('QUO not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','QUO not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t<span class="cf">QUO</span> '+arg);
 		}
 	}
 	else if (operation==='OUT'){
