@@ -273,6 +273,13 @@ function reset(){
 	console.log('Reset');
 }
 
+function fstep100(){
+	for (i=0;i<100;i+=1){
+		fstep();
+	}
+	return false;
+}
+
 // Main
 
 function fstep(){
