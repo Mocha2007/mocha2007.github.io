@@ -1,4 +1,4 @@
-var versionno = '180116c';
+var versionno = '180116d';
 // Myinstants
 var quos = [];
 quos.ALH = 'boom_9';
@@ -238,7 +238,7 @@ function mconsole(MessageClass,Message){
 
 var program;
 var pointer;
-var xsize = 4;
+var xsize = 32;
 var ysize = 32;
 var tapesize = xsize*ysize;
 
@@ -332,6 +332,11 @@ function fstep(){
 	}
 	var operation = command.substring(0,3);
 	var badop = 'Useless operation written by a useless coder\n@ Line ';
+	// Generating warning for deprecated ops
+	if ('ADD DIV EXP INV MOD MUL NEG NRT'.indexOf(operation)!==-1){
+			console.warn(operation+' is deprecated, use RPN instad.\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('w','<span class="cf">'+operation+'</span> is deprecated, use <span class="cf">RPN</span> instad.\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+	}
 	// Generating warning for specialchar-duped ops
 	if ('LET SWP'.indexOf(operation)!==-1 && ['* *','$ $','@ @'].indexOf(arg)!==-1){
 			console.warn(badop+linenumber+'\n\t'+command);

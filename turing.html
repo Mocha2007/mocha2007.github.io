@@ -36,7 +36,7 @@ pre{font-family:Monospace;background-color:#000;color:#ccc;}
 	Line <span id="line">0</span>
 	 | Pointer: <span id="pointing">0</span>
 	 | State: <span id="machinestate">[PRESS RESET]</span>
-	<pre id='console'><i>MOCHINE rev 180116c</i></pre>
+	<pre id='console'><i>MOCHINE rev 180116d</i></pre>
 	<span class='invisible'>&downarrow; MEMORY &downarrow;</span>
 </div>
 <div class='invisible' id="memory"></div>
@@ -55,19 +55,16 @@ All support use of * for machine state
 All support use of $ for pointer
 All support use of @ for value at pointer
 
-0 Arguments
-INV : set value at pointer to its reciporical
-NEG : set value at pointer to its negative
+0 Arguments<!--INV : set value at pointer to its reciporical
+NEG : set value at pointer to its negative-->
 NOT : set value at pointer to 1 if 0, else 0
 
 1 Argument
-:X : Label 'X'. Can also be used as comments and empty lines
-ADD # : set value at pointer to itself plus argument
+:X : Label 'X'. Can also be used as comments and empty lines<!--ADD # : set value at pointer to itself plus argument-->
 AND ? : set value at pointer to argument if itself is 1, otherwise,
         return itself
-APP ? : append string to value at pointer
-DIV # : set value at pointer to itself divided by argument
-EXP # : set value at pointer to itself raised to argument
+APP ? : append string to value at pointer<!--DIV # : set value at pointer to itself divided by argument
+EXP # : set value at pointer to itself raised to argument-->
 IOR ? : set value at pointer to argument if itself is 0, otherwise,
         return itself
 JIF ? : jump to line if value at pointer is same as machine state
@@ -78,13 +75,10 @@ JMP ? : jump to line
 JNE ? : jump to line if value at pointer is not same as machine state
 JNZ ? : jump to line if value at pointer is not zero
 LEN ? : set value at pointer to the length of its argument as a string
-MMS # : set machine state to itself plus argument
-MOD # : set value at pointer to itself modulo argument
-MOV # : set pointer to itself plus argument
-MUL # : set value at pointer to itself multiplied by argument
+MMS # : set machine state to itself plus argument<!--MOD # : set value at pointer to itself modulo argument-->
+MOV # : set pointer to itself plus argument<!--MUL # : set value at pointer to itself multiplied by argument-->
 NAN ? : set value at pointer to 0 if argument and itself are 1, else 1
-NOR ? : set value at pointer to 1 if argument and itself are 0, else 0
-NRT # : set value at pointer to the argument-th root of itself
+NOR ? : set value at pointer to 1 if argument and itself are 0, else 0<!--NRT # : set value at pointer to the argument-th root of itself-->
 OUT ? : output value to console
 RPN ? : set value at pointer to itself plus the evaluation of the
 	argument as RPN, comma pushes #s onto stack. Spaces ignored. 
