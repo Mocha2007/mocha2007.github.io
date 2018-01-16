@@ -194,7 +194,7 @@ function EnglishNumber(integer){
 // Console
 function mconsole(MessageClass,Message){
 	if (MessageClass==='i'){
-		document.getElementById('console').innerHTML += '\n<span class="ci">info</span>:\n'+Message;
+		document.getElementById('console').innerHTML += '\n<span class="ci">info</span>: '+Message;
 	}
 	else if (MessageClass==='w'){
 		document.getElementById('console').innerHTML += '\n<span class="cw">warning</span>:\n'+Message;
@@ -218,6 +218,10 @@ var xsize = 4;
 var ysize = 32;
 var tapesize = xsize*ysize;
 
+function cclr(){
+	document.getElementById('console').innerHTML = '<i>MOCHINE rev 180115b</i>';
+}
+
 function run(){
 	document.getElementById('machinestate').innerHTML = '0';
 	program = document.getElementById('code').value.split("\n");
@@ -226,8 +230,8 @@ function run(){
 	// Bad Practices
 	// blank
 	if (program==''){
-			console.warn('No Program\n@ Line 0');
-			mconsole('w','No Program\n@ Line 0');
+			console.warn('No Program');
+			mconsole('w','No Program');
 	}
 	// Last line is a label but not :X
 	if (program[program.length-1][0]===':' && program[program.length-1]!==':X'){
@@ -272,7 +276,9 @@ function fstep(){
 	var command = program[linenumber];
 	// Reject
 	if (command==undefined || command===''){
-		//mconsole('i','End of Program');
+		if (document.getElementById('console').innerHTML.slice(-44)!=='<span class="ci">info</span>: End of Program'){
+			mconsole('i','End of Program');
+		}
 		return true;
 	}
 	// INC

@@ -30,6 +30,7 @@ pre{font-family:Monospace;background-color:#000;color:#ccc;}
 	<input type="submit" value="Load" onclick="run();">
 	<input type="submit" value="Step" onclick="fstep();">
 	<input type="submit" value="Reset" onclick="reset();">
+	<input type="submit" value="Clear Output" onclick="cclr();">
 	<br/>
 	Line <span id="line">0</span>
 	 | Pointer: <span id="pointing">0</span>
@@ -619,13 +620,22 @@ LET $ 0
 OUT *
 </pre>
 
-<h3 id='Almost-Quine'>Almost-Quine</h3>
+<h3 id='Almost-Quines'>Almost-Quines</h3>
 <p>
 	This code outputs its first line.
 </p>
 <pre>
 FAA 19,19,0,14
 OUT X
+</pre>
+<p>
+	This code outputs itself, but as an error: 
+</p>
+<pre>
+error:
+Operation not in dictionary: error:
+@ Line 0
+	error:
 </pre>
 
 <div id="bottom"></div>
