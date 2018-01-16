@@ -101,7 +101,7 @@ sfxs.XPE = 'erro';
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
 function factorial(n){
-	if (n == 0 || n == 1){
+	if (n === 0 || n === 1){
 		return 1;
 	}
 	if (f[n] > 0){
@@ -162,43 +162,43 @@ function EnglishNumber(integer){
 	}
 	// 1XX
 	if (integer<200){
-		return string+'a hundred '+EnglishNumber(integer-100);
+		return string+'a hundred '+new EnglishNumber(integer-100);
 	}
 	// XXX
 	if (integer<1e3){
-		return string+words[+(integer+[])[0]]+' hundred '+EnglishNumber(integer%100);
+		return string+words[+(integer+[])[0]]+' hundred '+new EnglishNumber(integer%100);
 	}
 	// 1,XXX
 	if (integer<2e3){
-		return string+'a '+illions[1]+' '+EnglishNumber(integer-1e3);
+		return string+'a '+illions[1]+' '+new EnglishNumber(integer-1e3);
 	}
 	// XXX,XXX
 	if (integer<1e6){
-		return string+EnglishNumber(Math.floor(integer/1e3))+' '+illions[1]+' '+EnglishNumber(integer%1e3);
+		return string+new EnglishNumber(Math.floor(integer/1e3))+' '+illions[1]+' '+new EnglishNumber(integer%1e3);
 	}
 	// 1,XXX,XXX
 	if (integer<2e6){
-		return string+'a '+illions[2]+'illion '+EnglishNumber(integer-1e6);
+		return string+'a '+illions[2]+'illion '+new EnglishNumber(integer-1e6);
 	}
 	// XXX,XXX,XXX
 	if (integer<1e9){
-		return string+EnglishNumber(Math.floor(integer/1e6))+' '+illions[2]+'illion '+EnglishNumber(integer%1e6);
+		return string+new EnglishNumber(Math.floor(integer/1e6))+' '+illions[2]+'illion '+new EnglishNumber(integer%1e6);
 	}
 	// 1,XXX,XXX,XXX
 	if (integer<2e9){
-		return string+'a '+illions[3]+'illion '+EnglishNumber(integer-1e9);
+		return string+'a '+illions[3]+'illion '+new EnglishNumber(integer-1e9);
 	}
 	// XXX,XXX,XXX,XXX
 	if (integer<1e12){
-		return string+EnglishNumber(Math.floor(integer/1e9))+' '+illions[3]+'illion '+EnglishNumber(integer%1e9);
+		return string+new EnglishNumber(Math.floor(integer/1e9))+' '+illions[3]+'illion '+new EnglishNumber(integer%1e9);
 	}
 	// 1,XXX,XXX,XXX,XXX
 	if (integer<2e12){
-		return string+'a '+illions[4]+'illion '+EnglishNumber(integer-1e12);
+		return string+'a '+illions[4]+'illion '+new EnglishNumber(integer-1e12);
 	}
 	// XXX,XXX,XXX,XXX,XXX
 	if (integer<1e15){
-		return string+EnglishNumber(Math.floor(integer/1e12))+' '+illions[4]+'illion '+EnglishNumber(integer%1e12);
+		return string+new EnglishNumber(Math.floor(integer/1e12))+' '+illions[4]+'illion '+new EnglishNumber(integer%1e12);
 	}
 	return 'a really, really big number';
 }
@@ -245,7 +245,7 @@ function run(){
 	console.log('Load');
 	// Bad Practices
 	// blank
-	if (program==''){
+	if (program===''){
 			console.warn('No Program');
 			mconsole('w','No Program');
 	}
@@ -274,7 +274,7 @@ function reset(){
 	document.getElementById('memory').innerHTML = tabularasa;
 	
 	//pointer
-	if (document.getElementById('x'+pointer)!=null){
+	if (document.getElementById('x'+pointer)!==null){
 		document.getElementById('x'+pointer).classList.remove("pointed");
 	}
 	pointer = 0;
@@ -298,7 +298,7 @@ function fstep(){
 	// Determining the command
 	var command = program[linenumber];
 	// Reject
-	if (command==undefined || command===''){
+	if (command===undefined || command===''){
 		if (document.getElementById('console').innerHTML.slice(-44)!=='<span class="ci">info</span>: End of Program'){
 			mconsole('i','End of Program');
 		}
@@ -484,7 +484,7 @@ function fstep(){
 		}
 	}
 	else if (operation==='XNR'){
-		if (specialtarget==arg){
+		if (specialtarget===arg){
 			document.getElementById('x'+pointer).innerHTML = 1;
 		}
 		else {
@@ -663,7 +663,7 @@ function fstep(){
 		console.log(program);
 	}
 	else if (operation==='I2W'){
-		document.getElementById('x'+pointer).innerHTML = EnglishNumber(arg);
+		document.getElementById('x'+pointer).innerHTML = new EnglishNumber(arg);
 	}
 	else if (operation==='SFX'){
 		// Unique
