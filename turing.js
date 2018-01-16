@@ -1,4 +1,4 @@
-var versionno = '180116a';
+var versionno = '180116b';
 // Myinstants
 var quos = [];
 quos['ALH'] = 'boom_9';
@@ -712,6 +712,10 @@ function fstep(){
 				currentstring+=arg[i]
 			}
 			else if (arg[i]===' '){
+				console.warn('NOP in RPN\n@ Line '+linenumber+'\n\t'+command);
+				mconsole('w','NOP in RPN\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg);
+			}
+			else if (arg[i]===','){
 				rpnstack.push(Number(currentstring));
 				var currentstring = '';
 			}
@@ -750,12 +754,28 @@ function fstep(){
 					currentstring = Math.E*Number(currentstring)+"";
 				}
 			}
+			else if (arg[i]==='g'){
+				if (currentstring===''){
+					currentstring = 0.5772156649015329+"";
+				}
+				else {
+					currentstring = 0.5772156649015329*Number(currentstring)+"";
+				}
+			}
 			else if (arg[i]==='p'){
 				if (currentstring===''){
 					currentstring = Math.PI+"";
 				}
 				else {
 					currentstring = Math.PI*Number(currentstring)+"";
+				}
+			}
+			else if (arg[i]==='r'){
+				if (currentstring===''){
+					currentstring = Math.random()+"";
+				}
+				else {
+					currentstring = Math.random()*Number(currentstring)+"";
 				}
 			}
 			else if (arg[i]==='l'){
@@ -782,6 +802,70 @@ function fstep(){
 			}
 			else if (arg[i]==='T'){
 				rpnstack[rpnstack.length-1] = Math.atan(rpnstack[rpnstack.length-1]);
+			}
+			else if (arg[i]==='='){
+				if (rpnstack[rpnstack.length-1]===rpnstack[rpnstack.length-2]){
+					rpnstack[rpnstack.length-2] = 1;
+					rpnstack.pop();
+				}
+				else {
+					rpnstack[rpnstack.length-2] = 0;
+					rpnstack.pop();
+				}
+			}
+			else if (arg[i]==='?'){
+				if (rpnstack[rpnstack.length-1]!==rpnstack[rpnstack.length-2]){
+					rpnstack[rpnstack.length-2] = 1;
+					rpnstack.pop();
+				}
+				else {
+					rpnstack[rpnstack.length-2] = 0;
+					rpnstack.pop();
+				}
+			}
+			else if (arg[i]==='>'){
+				if (rpnstack[rpnstack.length-1]>rpnstack[rpnstack.length-2]){
+					rpnstack[rpnstack.length-2] = 1;
+					rpnstack.pop();
+				}
+				else {
+					rpnstack[rpnstack.length-2] = 0;
+					rpnstack.pop();
+				}
+			}
+			else if (arg[i]==='<'){
+				if (rpnstack[rpnstack.length-1]<rpnstack[rpnstack.length-2]){
+					rpnstack[rpnstack.length-2] = 1;
+					rpnstack.pop();
+				}
+				else {
+					rpnstack[rpnstack.length-2] = 0;
+					rpnstack.pop();
+				}
+			}
+			else if (arg[i]==='~'){
+				rpnstack[rpnstack.length-1] = Math.round(rpnstack[rpnstack.length-1]);
+			}
+			else if (arg[i]==='|'){
+				rpnstack[rpnstack.length-1] = Math.abs(rpnstack[rpnstack.length-1]);
+			}
+			// Shamelessly stolen from GolfScript
+			else if (arg[i]==='\\'){
+				var temp = rpnstack[rpnstack.length-1];
+				var rpnstack[rpnstack.length-1] = rpnstack[rpnstack.length-2];
+				var rpnstack[rpnstack.length-2] = temp;
+			}
+			else if (arg[i]===';'){
+				rpnstack.pop();
+			}
+			else if (arg[i]==='.'){
+				rpnstack.push(rpnstack[rpnstack.length-1]);
+			}
+			else if (arg[i]==='('){
+				rpnstack[rpnstack.length-1] -= 1;
+			}
+			else if (arg[i]===')'){
+				rpnstack[rpnstack.length-1] += 1;
 			}
 			else {
 				console.error('RPN error performing '+arg[i]+':\n@ Line '+linenumber+'\n\t'+command);

@@ -36,7 +36,7 @@ pre{font-family:Monospace;background-color:#000;color:#ccc;}
 	Line <span id="line">0</span>
 	 | Pointer: <span id="pointing">0</span>
 	 | State: <span id="machinestate">[PRESS RESET]</span>
-	<pre id='console'><i>MOCHINE rev 180116a</i></pre>
+	<pre id='console'><i>MOCHINE rev 180116b</i></pre>
 	<span class='invisible'>&downarrow; MEMORY &downarrow;</span>
 </div>
 <div class='invisible' id="memory"></div>
@@ -87,9 +87,11 @@ NOR ? : set value at pointer to 1 if argument and itself are 0, else 0
 NRT # : set value at pointer to the argument-th root of itself
 OUT ? : output value to console
 RPN ? : set value at pointer to itself plus the evaluation of the
-	argument as RPN, space pushes #s onto the stack.
-	Valid operators: + - x / % ^ ! <abbr title='logy(x)'>l</abbr> <abbr title='ln(x)'>L</abbr> <abbr title='sin(x)'>s</abbr> <abbr title='asin(x)'>S</abbr> <abbr title='cos(x)'>c</abbr> <abbr title='acos(x)'>C</abbr> <abbr title='tan(x)'>t</abbr> <abbr title='atan(x)'>T</abbr>
-	Valid constants: <abbr title='e'>e</abbr> <abbr title='pi'>p</abbr>
+	argument as RPN, comma pushes #s onto stack. Spaces ignored. 
+	Valid operators: + - x / % ^ ! <abbr title='round(x)'>~</abbr> <abbr title='|x|'>|</abbr> <abbr title='logy(x)'>l</abbr> <abbr title='ln(x)'>L</abbr> <abbr title='sin(x)'>s</abbr> <abbr title='asin(x)'>S</abbr> <abbr title='cos(x)'>c</abbr> <abbr title='acos(x)'>C</abbr> <abbr title='tan(x)'>t</abbr> <abbr title='atan(x)'>T</abbr>
+	Valid truth operators: <abbr title='x==y ? 1 : 0'>=</abbr> <abbr title='x!=y ? 1 : 0'>?</abbr> <abbr title='x>y ? 1 : 0'>&lt;</abbr> <abbr title='x<y ? 1 : 0'>></abbr>
+	Valid constants: <abbr title='e'>e</abbr> <abbr title='&gamma;'>g</abbr> <abbr title='&pi;'>p</abbr> <abbr title='random x on [0,1]'>r</abbr>
+	Valid <a href="http://www.golfscript.com/golfscript/builtin.html">GolfScript</a> stack manipulation ops: <abbr title='Swap top two elements of the stack'>\</abbr> <abbr title='Pop and discard top of stack'>;</abbr> <abbr title='Duplicate top of stack'>.</abbr> <abbr title='Decrement top of stack'>(</abbr> <abbr title='Increment top of stack'>)</abbr>
 XNR ? : set value at pointer to 1 if argument same as itself, else 0
 XOR ? : set value at pointer to 0 if argument same as itself, else 1
 
@@ -216,66 +218,7 @@ FAA #,#,#,# : replace the code from char #<sub>1</sub> to char #<sub>2</sub> wit
 </pre>
 
 <h3 id='Tables'>Tables</h3>
-<!--Excluded: Jumps, MOD, MMS, SET, STO-->
-<table>
-	<tr>
-		<th>+</th>
-		<th>-</th>
-	</tr>
-	<tr>
-		<td></td>
-		<td>NEG</td>
-	</tr>
-	<tr>
-		<td>ADD #</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>MUL #</td>
-		<td>DIV #</td>
-	</tr>
-	<tr>
-		<td>EXP #</td>
-		<td>NRT #</td>
-	</tr>
-</table>
-<br/>
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Command</th>
-	</tr>
-	<tr>
-		<td>and</td>
-		<td>AND ?</td>
-	</tr>
-	<tr>
-		<td>nand</td>
-		<td>NAND ?</td>
-	</tr>
-	<tr>
-		<td>nor</td>
-		<td>NOR ?</td>
-	</tr>
-	<tr>
-		<td>not</td>
-		<td>NOT #</td>
-	</tr>
-	<tr>
-		<td>or</td>
-		<td>IOR ?</td>
-	</tr>
-	<tr>
-		<td>xor</td>
-		<td>XOR ?</td>
-	</tr>
-	<tr>
-		<td>xnor</td>
-		<td>XNR ?</td>
-	</tr>
-</table>
-<br/>
-MM can also emulate BF programs easily, with the following substitutions:
+MM can emulate BF programs easily, with the following substitutions:
 <br/>
 <table>
 	<tr>
