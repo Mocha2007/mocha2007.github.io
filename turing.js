@@ -844,10 +844,39 @@ function fstep(){
 				}
 			}
 			else if (arg[i]==='~'){
-				rpnstack[rpnstack.length-1] = Math.round(rpnstack[rpnstack.length-1]);
+				rpnstack[rpnstack.length-1] = -rpnstack[rpnstack.length-1];
 			}
 			else if (arg[i]==='|'){
 				rpnstack[rpnstack.length-1] = Math.abs(rpnstack[rpnstack.length-1]);
+			}
+			else if (arg[i]==='q'){
+				var c = rpnstack.pop();
+				var b = rpnstack.pop();
+				var a = rpnstack.pop();
+				rpnstack.push((-b+Math.pow(b*b-4*a*c,.5))/2/a);
+			}
+			else if (arg[i]==='Q'){
+				var c = rpnstack.pop();
+				var b = rpnstack.pop();
+				var a = rpnstack.pop();
+				rpnstack.push((-b-Math.pow(b*b-4*a*c,.5))/2/a);
+			}
+			else if (arg[i]==='\''){
+				for (j=0;j<rpnstack.length;j+=1){
+					rpnstack[j] = rpnstack[j]*(rpnstack.length-1-j);
+					rpnstack.pop();
+				}
+			}
+			else if (arg[i]==='"'){
+				for (k=0;k<2;k+=1){
+					for (j=0;j<rpnstack.length;j+=1){
+						rpnstack[j] = rpnstack[j]*(rpnstack.length-1-j);
+						rpnstack.pop();
+					}
+				}
+			}
+			else if (arg[i]==='#'){
+				rpnstack[rpnstack.length-1] = Math.round(rpnstack[rpnstack.length-1]);
 			}
 			// Shamelessly stolen from GolfScript
 			else if (arg[i]==='\\'){
