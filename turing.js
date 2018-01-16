@@ -110,6 +110,14 @@ function factorial(n){
 	return f[n] = factorial(n-1) * n;
 }
 
+function nPr(n,k){
+	return factorial(n)/factorial(n-k);
+}
+
+function nCr(n,k){
+	return nPr(n,k)/factorial(k);
+}
+
 function mod(n,m){
 	return ((n%m)+m)%m;
 }
@@ -903,6 +911,16 @@ function fstep(){
 			}
 			else if (arg[i]==='M'){
 				rpnstack = [Math.max.apply(null,rpnstack)];
+			}
+			else if (arg[i]==='n'){
+				var b = rpnstack.pop();
+				var a = rpnstack.pop();
+				rpnstack.push(nCr(a,b));
+			}
+			else if (arg[i]==='N'){
+				var b = rpnstack.pop();
+				var a = rpnstack.pop();
+				rpnstack.push(nPr(a,b));
 			}
 			// Shamelessly stolen from GolfScript
 			else if (arg[i]==='\\'){
