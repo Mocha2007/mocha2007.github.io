@@ -36,7 +36,7 @@ pre{font-family:Monospace;background-color:#000;color:#ccc;}
 	Line <span id="line">0</span>
 	 | Pointer: <span id="pointing">0</span>
 	 | State: <span id="machinestate">[PRESS RESET]</span>
-	<pre id='console'><i>MOCHINE rev 180115c</i></pre>
+	<pre id='console'><i>MOCHINE rev 180116a</i></pre>
 	<span class='invisible'>&downarrow; MEMORY &downarrow;</span>
 </div>
 <div class='invisible' id="memory"></div>
@@ -88,7 +88,8 @@ NRT # : set value at pointer to the argument-th root of itself
 OUT ? : output value to console
 RPN ? : set value at pointer to itself plus the evaluation of the
 	argument as RPN, space pushes #s onto the stack.
-	Valid operators: + - x / % ^ <abbr title='ln(x)'>L</abbr><!--s = sine S = arcsin, etc-->
+	Valid operators: + - x / % ^ ! <abbr title='logy(x)'>l</abbr> <abbr title='ln(x)'>L</abbr> <abbr title='sin(x)'>s</abbr> <abbr title='asin(x)'>S</abbr> <abbr title='cos(x)'>c</abbr> <abbr title='acos(x)'>C</abbr> <abbr title='tan(x)'>t</abbr> <abbr title='atan(x)'>T</abbr>
+	Valid constants: <abbr title='e'>e</abbr> <abbr title='pi'>p</abbr>
 XNR ? : set value at pointer to 1 if argument same as itself, else 0
 XOR ? : set value at pointer to 0 if argument same as itself, else 1
 

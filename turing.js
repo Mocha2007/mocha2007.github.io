@@ -1,3 +1,4 @@
+var versionno = '180116a';
 // Myinstants
 var quos = [];
 quos['ALH'] = 'boom_9';
@@ -96,6 +97,16 @@ sfxs['WSL'] = 'goodbadugly-whistle-long';
 sfxs['WYP'] = 'watch-your-profanity_1';
 sfxs['XFL'] = 'x-files-theme-song-copy';
 sfxs['XPE'] = 'erro';
+
+// https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
+var f = [];
+function factorial(n){
+	if (n == 0 || n == 1)
+		return 1;
+	if (f[n] > 0)
+		return f[n];
+	return f[n] = factorial(n-1) * n;
+} ​
 
 function mod(n,m){
 	return ((n%m)+m)%m;
@@ -224,7 +235,7 @@ var ysize = 32;
 var tapesize = xsize*ysize;
 
 function cclr(){
-	document.getElementById('console').innerHTML = '<i>MOCHINE rev 180115c</i>';
+	document.getElementById('console').innerHTML = '<i>MOCHINE rev '+versionno+'</i>';
 }
 
 function run(){
@@ -728,8 +739,49 @@ function fstep(){
 				rpnstack[rpnstack.length-2] = mod(rpnstack[rpnstack.length-2],rpnstack[rpnstack.length-1]);
 				rpnstack.pop();
 			}
+			else if (arg[i]==='!'){
+				rpnstack[rpnstack.length-1] = factorial(rpnstack[rpnstack.length-1]);
+			}
+			else if (arg[i]==='e'){
+				if (currentstring===''){
+					currentstring = Math.E+"";
+				}
+				else {
+					currentstring = Math.E*Number(currentstring)+"";
+				}
+			}
+			else if (arg[i]==='p'){
+				if (currentstring===''){
+					currentstring = Math.PI+"";
+				}
+				else {
+					currentstring = Math.PI*Number(currentstring)+"";
+				}
+			}
+			else if (arg[i]==='l'){
+				rpnstack[rpnstack.length-2] = Math.log(rpnstack[rpnstack.length-2])/Math.log(rpnstack[rpnstack.length-1]);
+				rpnstack.pop();
+			}
 			else if (arg[i]==='L'){
 				rpnstack[rpnstack.length-1] = Math.log(rpnstack[rpnstack.length-1]);
+			}
+			else if (arg[i]==='s'){
+				rpnstack[rpnstack.length-1] = Math.sin(rpnstack[rpnstack.length-1]);
+			}
+			else if (arg[i]==='S'){
+				rpnstack[rpnstack.length-1] = Math.asin(rpnstack[rpnstack.length-1]);
+			}
+			else if (arg[i]==='c'){
+				rpnstack[rpnstack.length-1] = Math.cos(rpnstack[rpnstack.length-1]);
+			}
+			else if (arg[i]==='C'){
+				rpnstack[rpnstack.length-1] = Math.acos(rpnstack[rpnstack.length-1]);
+			}
+			else if (arg[i]==='t'){
+				rpnstack[rpnstack.length-1] = Math.tan(rpnstack[rpnstack.length-1]);
+			}
+			else if (arg[i]==='T'){
+				rpnstack[rpnstack.length-1] = Math.atan(rpnstack[rpnstack.length-1]);
 			}
 			else {
 				console.error('RPN error performing '+arg[i]+':\n@ Line '+linenumber+'\n\t'+command);
@@ -738,11 +790,11 @@ function fstep(){
 			}
 			console.log(i,arg[i],rpnstack);
 		}
-		// See if numbers left
+		/* See if numbers left
 		if (currentstring!==''){
 			rpnstack.push(Number(currentstring));
 			var currentstring = '';
-		}
+		}*/
 		// Return
 		if (rpnstack.length===1){
 			document.getElementById('x'+pointer).innerHTML = Number(specialtarget)+Number(rpnstack[0]);
