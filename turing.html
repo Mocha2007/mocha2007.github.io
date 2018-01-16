@@ -347,25 +347,26 @@ OUT @
 	Does not terminate. 
 </p>
 <pre>
-LET @ $
+LET @ *
 MOD 15
 JIZ XV
 MOD 5
 JIZ V
-LET @ $
+LET @ *
 MOD 3
-JNZ X
-LET @ Fizz
-JMP X
-:V
-LET @ Buzz
-JMP X
-:XV
-LET @ FizzBuzz
-:X
-OUT @
-MOV 1
+JIZ III
+OUT *
+MMS 1
 JMP 0
+:III
+OUT Fizz
+JMP 9
+:V
+OUT Buzz
+JMP 9
+:XV
+OUT FizzBuzz
+JMP 9
 </pre>
 
 <h3 id='Currentyear'>Currentyear</h3>
