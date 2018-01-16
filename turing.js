@@ -898,6 +898,12 @@ function fstep(){
 				var s = (a+b+c)/2;
 				rpnstack.push(Math.pow(s*(s-a)*(s-b)*(s-c),.5));
 			}
+			else if (arg[i]==='m'){
+				rpnstack = [Math.min.apply(null,rpnstack)];
+			}
+			else if (arg[i]==='M'){
+				rpnstack = [Math.max.apply(null,rpnstack)];
+			}
 			// Shamelessly stolen from GolfScript
 			else if (arg[i]==='\\'){
 				var temp = rpnstack[rpnstack.length-1];
