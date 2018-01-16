@@ -22,6 +22,7 @@ pre{font-family:Monospace;background-color:#000;color:#ccc;}
 .invisible{display:none;}
 .cimg{max-width:642px;}
 summary{text-indent:64px;}
+td{font-family: Monospace;background-color:#000;color:#ccc;text-align:justify;}
 </style>
 <title>Mocha's Machine</title>
 <div id="nav"></div>
@@ -229,40 +230,40 @@ MM can emulate BF programs easily, with the following substitutions:
 <br/>
 <table>
 	<tr>
-		<th>BF Command</th>
-		<th>MM Equivalent</th>
+		<th>Brainfuck</th>
+		<th>Mochine</th>
 	</tr>
 	<tr>
 		<td>></td>
-		<td>MOV 1</td>
+		<td><span class="cf">MOV</span> 1</td>
 	</tr>
 	<tr>
 		<td>&lt;</td>
-		<td>MOV -1</td>
+		<td><span class="cf">MOV</span> -1</td>
 	</tr>
 	<tr>
 		<td>+</td>
-		<td>ADD 1</td>
+		<td><span class="cf">RPN</span> 1,</td>
 	</tr>
 	<tr>
 		<td>-</td>
-		<td>ADD -1</td>
+		<td><span class="cf">RPN</span> 1,~</td>
 	</tr>
 	<tr>
 		<td>.</td>
-		<td>LET * @</td>
+		<td>(n/a)</td>
 	</tr>
 	<tr>
 		<td>,</td>
-		<td>LET @ *</td>
+		<td><span class="cf">OUT</span> ?</td>
 	</tr>
 	<tr>
 		<td>[</td>
-		<td>:X</td>
+		<td><span class="cf">:</span>?</td>
 	</tr>
 	<tr>
 		<td>]</td>
-		<td>JNZ X</td>
+		<td><span class="cf">JJJ</span> @!=0 ?</td>
 	</tr>
 </table>
 
@@ -273,7 +274,7 @@ MM can emulate BF programs easily, with the following substitutions:
 	A 'Hello, World!' program. 
 </p>
 <pre>
-LET @ Hello, World!
+OUT Hello, World!
 </pre>
 
 <h3 id='99_Bottles_of_Beer'>99 Bottles of Beer</h3>
