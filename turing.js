@@ -346,6 +346,12 @@ function fstep(){
 			mconsole('e','First argument not a nonnegative integer\n@ Line '+linenumber+'\n\t<span class="cf">FRG</span> '+arg);
 			return true
 	}
+	// Generating ZeroDivisionError
+	else if ('DIV MOD NRT'.indexOf(operation)!==-1 && arg==='0'){
+			console.error('Zero divisor\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','Zero divisor\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+			return true
+	}
 	// OPERATIONS
 	if (command.substring(0,1)===':'){
 		console.log(command.substring(1));
@@ -364,19 +370,9 @@ function fstep(){
 	}
 	else if (operation==='DIV'){
 		document.getElementById('x'+pointer).innerHTML = Number(specialtarget)/Number(arg);
-		if (arg==='0'){
-			console.error('Zero divisor\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Zero divisor\n@ Line '+linenumber+'\n\t<span class="cf">DIV</span> '+arg);
-			return true
-		}
 	}
 	else if (operation==='MOD'){
 		document.getElementById('x'+pointer).innerHTML = mod(Number(specialtarget),Number(arg));
-		if (arg==='0'){
-			console.error('Zero divisor\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Zero divisor\n@ Line '+linenumber+'\n\t<span class="cf">MOD</span> '+arg);
-			return true
-		}
 	}
 	else if (command[0]==='J'){
 		// Determining Argument Type
