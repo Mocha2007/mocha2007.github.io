@@ -1,112 +1,114 @@
 var versionno = '180116b';
 // Myinstants
 var quos = [];
-quos['ALH'] = 'boom_9';
-quos['ANG'] = 'aint-nobody-got-time-for-that_1';
-quos['BAT'] = 'im-batman';
-quos['BFL'] = 'das-war-ein-befehl';
-quos['BHS'] = 'boomheadshot.swf';
-quos['BOS'] = 'ballsofsteel.swf';
-quos['BRL'] = 'barrelroll.swf';
-quos['BTS'] = 'wilford-brimley-diabetes';
-quos['BTW'] = 'birdtheword.swf';
-quos['BZG'] = 'bazinga.swf';
-quos['CMB'] = 'combobreaker';
-quos['CTT'] = 'mc-hammer-u-cant-touch-this';
-quos['DOH'] = 'doh.swf';
-quos['DOI'] = 'senator-palpatine-do-it_1';
-quos['DRK'] = 'hellodarknessmyoldfriend';
-quos['DUL'] = 'its-time-to-duel';
-quos['EAG'] = 'ea_games';
-quos['FNH'] = 'finishhim.swf';
-quos['FRD'] = 'fus-ro-dah';
-quos['GAY'] = 'ha-gay';
-quos['HHA'] = 'haha.swf';
-quos['HHH'] = 'hahahahihihihehehe';
-quos['HLJ'] = 'hallelujahshort.swf';
-quos['IKU'] = 'ahmed-the-dead-terrorist-silence-i-kill-you_';
-quos['ILT'] = 'i-like-turtles';
-quos['JCN'] = 'john-cena_5';
-quos['JDI'] = 'real_1';
-quos['KHN'] = 'khaaan.swf';
-quos['LDL'] = 'lee-leedle';
-quos['LEG'] = 'my-leg_2';
-quos['LRJ'] = 'leroy.swf';
-quos['LSN'] = 'hey_listen';
-quos['LYN'] = 'why-you-always-lying-original';
-quos['LZR'] = 'sound-9___';
-quos['MGY'] = 'idubbbz-im-gay-free-download';
-quos['MSF'] = 'dank-meme-compilation-volume-17_cutted';
-quos['MSK'] = 'im-mr';
-quos['NGP'] = 'no-god-please-no-noooooooooo';
-quos['NOM'] = 'sound-8';
-quos['NOO'] = 'nooo.swf';
-quos['NOT'] = 'noot-noot';
-quos['O66'] = 'order66';
-quos['OMY'] = 'oh_my';
-quos['PKL'] = 'pickle_rick';
-quos['PNG'] = 'pingas-richard-89282878';
-quos['PUS'] = 'grab-them-by-the-p__y';
-quos['RDN'] = 'chamillionaire-ridin-ft-krayzie-bone';
-quos['RRL'] = 'epic.swf_1';
-quos['SFU'] = 'shut-the-fuck-up';
-quos['SHU'] = 'shutup.swf';
-quos['SKR'] = 'the-ting-go-skra';
-quos['SMF'] = 'surprise-motherfucker';
-quos['STP'] = 'its-time-to-stop-button';
-quos['SWE'] = 'snoop-dogg-smoke-weed-everyday';
-quos['TIS'] = 'thisissparta.swf';
-quos['TPL'] = 'oh-baby-a-triple';
-quos['TRL'] = 'trollolol.swf';
-quos['TRP'] = 'itsatrap.swf';
-quos['TTR'] = 'tuturu_1';
-quos['TWE'] = 'that_was_easy';
-quos['UTN'] = 'utini';
-quos['WLL'] = 'sound-9';
-quos['YAA'] = 'sound-9______';
-quos['YEE'] = 'yee';
-quos['YES'] = 'm_1';
+quos.ALH = 'boom_9';
+quos.ANG = 'aint-nobody-got-time-for-that_1';
+quos.BAT = 'im-batman';
+quos.BFL = 'das-war-ein-befehl';
+quos.BHS = 'boomheadshot.swf';
+quos.BOS = 'ballsofsteel.swf';
+quos.BRL = 'barrelroll.swf';
+quos.BTS = 'wilford-brimley-diabetes';
+quos.BTW = 'birdtheword.swf';
+quos.BZG = 'bazinga.swf';
+quos.CMB = 'combobreaker';
+quos.CTT = 'mc-hammer-u-cant-touch-this';
+quos.DOH = 'doh.swf';
+quos.DOI = 'senator-palpatine-do-it_1';
+quos.DRK = 'hellodarknessmyoldfriend';
+quos.DUL = 'its-time-to-duel';
+quos.EAG = 'ea_games';
+quos.FNH = 'finishhim.swf';
+quos.FRD = 'fus-ro-dah';
+quos.GAY = 'ha-gay';
+quos.HHA = 'haha.swf';
+quos.HHH = 'hahahahihihihehehe';
+quos.HLJ = 'hallelujahshort.swf';
+quos.IKU = 'ahmed-the-dead-terrorist-silence-i-kill-you_';
+quos.ILT = 'i-like-turtles';
+quos.JCN = 'john-cena_5';
+quos.JDI = 'real_1';
+quos.KHN = 'khaaan.swf';
+quos.LDL = 'lee-leedle';
+quos.LEG = 'my-leg_2';
+quos.LRJ = 'leroy.swf';
+quos.LSN = 'hey_listen';
+quos.LYN = 'why-you-always-lying-original';
+quos.LZR = 'sound-9___';
+quos.MGY = 'idubbbz-im-gay-free-download';
+quos.MSF = 'dank-meme-compilation-volume-17_cutted';
+quos.MSK = 'im-mr';
+quos.NGP = 'no-god-please-no-noooooooooo';
+quos.NOM = 'sound-8';
+quos.NOO = 'nooo.swf';
+quos.NOT = 'noot-noot';
+quos.O66 = 'order66';
+quos.OMY = 'oh_my';
+quos.PKL = 'pickle_rick';
+quos.PNG = 'pingas-richard-89282878';
+quos.PUS = 'grab-them-by-the-p__y';
+quos.RDN = 'chamillionaire-ridin-ft-krayzie-bone';
+quos.RRL = 'epic.swf_1';
+quos.SFU = 'shut-the-fuck-up';
+quos.SHU = 'shutup.swf';
+quos.SKR = 'the-ting-go-skra';
+quos.SMF = 'surprise-motherfucker';
+quos.STP = 'its-time-to-stop-button';
+quos.SWE = 'snoop-dogg-smoke-weed-everyday';
+quos.TIS = 'thisissparta.swf';
+quos.TPL = 'oh-baby-a-triple';
+quos.TRL = 'trollolol.swf';
+quos.TRP = 'itsatrap.swf';
+quos.TTR = 'tuturu_1';
+quos.TWE = 'that_was_easy';
+quos.UTN = 'utini';
+quos.WLL = 'sound-9';
+quos.YAA = 'sound-9______';
+quos.YEE = 'yee';
+quos.YES = 'm_1';
 var sfxs = [];
 sfxs['5NF'] = 'five-nights-at-freddys-full-scream-sound_2';
-sfxs['APP'] = 'applause-4';
-sfxs['BEL'] = 'correct.swf';
-sfxs['CRK'] = 'crickets.swf';
-sfxs['DNG'] = 'ding-sound-effect_2';
-sfxs['DPH'] = 'dolphin';
-sfxs['DRM'] = 'drumroll.swf';
-sfxs['JPD'] = 'jeopardy';
-sfxs['LNO'] = 'dun_dun_1';
-sfxs['LOS'] = 'the-price-is-right-losing-horn';
-sfxs['MLG'] = 'mlg-airhorn';
-sfxs['NCP'] = 'inceptionbutton';
-sfxs['QAK'] = 'cuek.swf';
-sfxs['RBX'] = 'roblox-death-sound_1';
-sfxs['SAX'] = 'george-micael-wham-careless-whisper-1';
-sfxs['SFL'] = 'seinfeld-theme_1';
-sfxs['SHY'] = 'grin';
-sfxs['SWX'] = 'switch-sound';
-sfxs['TDA'] = 'tada.swf';
-sfxs['VLN'] = 'tf_nemesis';
-sfxs['VVZ'] = 'vuvuzela';
-sfxs['WED'] = 'it-is-wednesday-my-dudes-vine';
-sfxs['WHP'] = 'crack_the_whip';
-sfxs['WKA'] = 'wakawaka.swf';
-sfxs['WLD'] = 'wubalubadubdubs-rick-and-morty';
-sfxs['WLH'] = 'wilhelmscream';
-sfxs['WSL'] = 'goodbadugly-whistle-long';
-sfxs['WYP'] = 'watch-your-profanity_1';
-sfxs['XFL'] = 'x-files-theme-song-copy';
-sfxs['XPE'] = 'erro';
+sfxs.APP = 'applause-4';
+sfxs.BEL = 'correct.swf';
+sfxs.CRK = 'crickets.swf';
+sfxs.DNG = 'ding-sound-effect_2';
+sfxs.DPH = 'dolphin';
+sfxs.DRM = 'drumroll.swf';
+sfxs.JPD = 'jeopardy';
+sfxs.LNO = 'dun_dun_1';
+sfxs.LOS = 'the-price-is-right-losing-horn';
+sfxs.MLG = 'mlg-airhorn';
+sfxs.NCP = 'inceptionbutton';
+sfxs.QAK = 'cuek.swf';
+sfxs.RBX = 'roblox-death-sound_1';
+sfxs.SAX = 'george-micael-wham-careless-whisper-1';
+sfxs.SFL = 'seinfeld-theme_1';
+sfxs.SHY = 'grin';
+sfxs.SWX = 'switch-sound';
+sfxs.TDA = 'tada.swf';
+sfxs.VLN = 'tf_nemesis';
+sfxs.VVZ = 'vuvuzela';
+sfxs.WED = 'it-is-wednesday-my-dudes-vine';
+sfxs.WHP = 'crack_the_whip';
+sfxs.WKA = 'wakawaka.swf';
+sfxs.WLD = 'wubalubadubdubs-rick-and-morty';
+sfxs.WLH = 'wilhelmscream';
+sfxs.WSL = 'goodbadugly-whistle-long';
+sfxs.WYP = 'watch-your-profanity_1';
+sfxs.XFL = 'x-files-theme-song-copy';
+sfxs.XPE = 'erro';
 
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
 function factorial(n){
-	if (n == 0 || n == 1)
+	if (n == 0 || n == 1){
 		return 1;
-	if (f[n] > 0)
+	}
+	if (f[n] > 0){
 		return f[n];
+	}
 	return f[n] = factorial(n-1) * n;
-} ​
+}
 
 function mod(n,m){
 	return ((n%m)+m)%m;
@@ -121,7 +123,7 @@ function EnglishNumber(integer){
 	if (integer===0){
 		return words[0];
 	}
-	else if (integer<0){
+	if (integer<0){
 		string+='negative ';
 	}
 	integer = Math.abs(integer);
@@ -130,77 +132,75 @@ function EnglishNumber(integer){
 		return string+words[integer];
 	}
 	//Teens
-	else if (integer===10){
+	if (integer===10){
 		return string+teens[0];
 	}
-	else if (integer<13){
+	if (integer<13){
 		return string+teens[integer-10];
 	}
-	else if (integer<20){
+	if (integer<20){
 		return string+teens[integer-10]+'teen';
 	}
 	//twenties
-	else if (integer===20){
+	if (integer===20){
 		return string+'twenty';
 	}
-	else if (integer<30){
+	if (integer<30){
 		return string+'twenty-'+words[integer%10];
 	}
 	// X0
-	else if (integer<100 && integer%10===0){
+	if (integer<100 && integer%10===0){
 		return string+teens[+(integer+[])[0]]+'ty';
 	}
 	// XX
-	else if (integer<100){
+	if (integer<100){
 		return string+teens[+(integer+[])[0]]+'ty-'+words[integer%10];
 	}
 	// 100
-	else if (integer===100){
+	if (integer===100){
 		return string+'a hundred';
 	}
 	// 1XX
-	else if (integer<200){
+	if (integer<200){
 		return string+'a hundred '+EnglishNumber(integer-100);
 	}
 	// XXX
-	else if (integer<1e3){
+	if (integer<1e3){
 		return string+words[+(integer+[])[0]]+' hundred '+EnglishNumber(integer%100);
 	}
 	// 1,XXX
-	else if (integer<2e3){
+	if (integer<2e3){
 		return string+'a '+illions[1]+' '+EnglishNumber(integer-1e3);
 	}
 	// XXX,XXX
-	else if (integer<1e6){
+	if (integer<1e6){
 		return string+EnglishNumber(Math.floor(integer/1e3))+' '+illions[1]+' '+EnglishNumber(integer%1e3);
 	}
 	// 1,XXX,XXX
-	else if (integer<2e6){
+	if (integer<2e6){
 		return string+'a '+illions[2]+'illion '+EnglishNumber(integer-1e6);
 	}
 	// XXX,XXX,XXX
-	else if (integer<1e9){
+	if (integer<1e9){
 		return string+EnglishNumber(Math.floor(integer/1e6))+' '+illions[2]+'illion '+EnglishNumber(integer%1e6);
 	}
 	// 1,XXX,XXX,XXX
-	else if (integer<2e9){
+	if (integer<2e9){
 		return string+'a '+illions[3]+'illion '+EnglishNumber(integer-1e9);
 	}
 	// XXX,XXX,XXX,XXX
-	else if (integer<1e12){
+	if (integer<1e12){
 		return string+EnglishNumber(Math.floor(integer/1e9))+' '+illions[3]+'illion '+EnglishNumber(integer%1e9);
 	}
 	// 1,XXX,XXX,XXX,XXX
-	else if (integer<2e12){
+	if (integer<2e12){
 		return string+'a '+illions[4]+'illion '+EnglishNumber(integer-1e12);
 	}
 	// XXX,XXX,XXX,XXX,XXX
-	else if (integer<1e15){
+	if (integer<1e15){
 		return string+EnglishNumber(Math.floor(integer/1e12))+' '+illions[4]+'illion '+EnglishNumber(integer%1e12);
 	}
-	else {
-		return 'a really, really big number'
-	}
+	return 'a really, really big number';
 }
 // Console
 function mconsole(MessageClass,Message){
@@ -263,9 +263,9 @@ function reset(){
 	
 	//table construction
 	var tabularasa = '<table>';
-	for (i=0;i<xsize;i++) {
+	for (i=0;i<xsize;i+=1) {
 		tabularasa+='<tr>';
-		for (j=0;j<ysize;j++) {
+		for (j=0;j<ysize;j+=1) {
 			tabularasa+='<td id="x'+Number(i*ysize+j)+'">0</td>';
 		}
 		tabularasa+='</tr>';
@@ -305,7 +305,7 @@ function fstep(){
 		return true;
 	}
 	// INC
-	document.getElementById('line').innerHTML=linenumber+1
+	document.getElementById('line').innerHTML=linenumber+1;
 	// Remove color
 	document.getElementById('x'+pointer).classList.remove("pointed");
 	// Grabbing specials beforehand
@@ -323,15 +323,9 @@ function fstep(){
 		arg = specialtarget;
 	}
 	var operation = command.substring(0,3);
-	// Generating errors for number-only ops
 	var badop = 'Useless operation written by a useless coder\n@ Line ';
-	if ('ADD DIV EXP MMS MOD MOV MUL NRT FUN I2W'.indexOf(operation)!==-1 && isNaN(Number(arg))){
-			console.error('"'+arg+'" not number\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','"'+arg+'" not number\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
-			return true
-	}
 	// Generating warning for specialchar-duped ops
-	else if ('LET SWP'.indexOf(operation)!==-1 && ['* *','$ $','@ @'].indexOf(arg)!==-1){
+	if ('LET SWP'.indexOf(operation)!==-1 && ['* *','$ $','@ @'].indexOf(arg)!==-1){
 			console.warn(badop+linenumber+'\n\t'+command);
 			mconsole('w',badop+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 	}
@@ -345,41 +339,47 @@ function fstep(){
 			console.warn(badop+linenumber+'\n\t'+command);
 			mconsole('w',badop+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 	}
+	// Generating errors for number-only ops
+	else if ('ADD DIV EXP MMS MOD MOV MUL NRT FUN I2W'.indexOf(operation)!==-1 && Number.isNaN(Number(arg))){
+			console.error('"'+arg+'" not number\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','"'+arg+'" not number\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+			return true;
+	}
 	// Generating err for insufficient commas (FRG/FSW)
-	else if ('FRG FSW'.indexOf(operation)!==-1 && (arg.match(/,/g) || []).length<1){
+	if ('FRG FSW'.indexOf(operation)!==-1 && (arg.match(/,/g) || []).length<1){
 			console.error('Insufficient arguments\n@ Line '+linenumber+'\n\t'+command);
 			mconsole('e','Insufficient arguments\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
-			return true
+			return true;
 	}
 	// Generating err for insufficient commas (FAA)
-	else if (operation==='FAA' && (arg.match(/,/g) || []).length<3){
+	if (operation==='FAA' && (arg.match(/,/g) || []).length<3){
 			console.error('Insufficient arguments\n@ Line '+linenumber+'\n\t'+command);
 			mconsole('e','Insufficient arguments\n@ Line '+linenumber+'\n\t<span class="cf">FAA</span> '+arg);
-			return true
+			return true;
 	}
 	// Generating err for non-nonnegative integer args
-	else if ('FAA FSW'.indexOf(operation)!==-1 && (arg.match(/[^,0-9]/g) || []).length!==0){
+	if ('FAA FSW'.indexOf(operation)!==-1 && (arg.match(/[^,0-9]/g) || []).length!==0){
 			console.error('Arguments not nonnegative integers\n@ Line '+linenumber+'\n\t'+command);
 			mconsole('e','Arguments not nonnegative integers\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
-			return true
+			return true;
 	}
 	// Generating err for non-numeral first arg
-	else if (operation==='FRG' && (arg.match(/^[0-9]+,/g) || []).length===0){
+	if (operation==='FRG' && (arg.match(/^[0-9]+,/g) || []).length===0){
 			console.error('First argument not a nonnegative integer\n@ Line '+linenumber+'\n\t'+command);
 			mconsole('e','First argument not a nonnegative integer\n@ Line '+linenumber+'\n\t<span class="cf">FRG</span> '+arg);
-			return true
+			return true;
 	}
 	// Generating ZeroDivisionError
-	else if ('DIV MOD NRT'.indexOf(operation)!==-1 && arg==='0'){
+	if ('DIV MOD NRT'.indexOf(operation)!==-1 && arg==='0'){
 			console.error('Zero divisor\n@ Line '+linenumber+'\n\t'+command);
 			mconsole('e','Zero divisor\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
-			return true
+			return true;
 	}
 	// Generating ZeroDivisionError for INV on 0
-	else if (operation==='INV' && specialtarget==='0'){
+	if (operation==='INV' && specialtarget==='0'){
 			console.error('Zero divisor\n@ Line '+linenumber+'\n\tINV');
 			mconsole('e','Zero divisor\n@ Line '+linenumber+'\n\t<span class="cf">INV</span>');
-			return true
+			return true;
 	}
 	// OPERATIONS
 	if (command.substring(0,1)===':'){
@@ -405,7 +405,7 @@ function fstep(){
 	}
 	else if (command[0]==='J'){
 		// Determining Argument Type
-		if (isNaN(arg)){
+		if (Number.isNaN(arg)){
 			var target = program.indexOf(':'+arg);
 		}
 		else {
@@ -448,7 +448,7 @@ function fstep(){
 		else {
 			console.error('Jump not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
 			mconsole('e','Jump not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
-			return true
+			return true;
 		}
 	}
 	else if (operation==='AND'){
@@ -549,7 +549,7 @@ function fstep(){
 		else {
 			console.error('Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t'+command);
 			mconsole('e','Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t<span class="cf">LET</span> '+arg);
-			return true
+			return true;
 		}
 	}
 	else if (operation==='SWP'){
@@ -573,12 +573,12 @@ function fstep(){
 		else {
 			console.error('Special not in dictionary: '+arg2+'\n@ Line '+linenumber+'\n\t'+command);
 			mconsole('e','Special not in dictionary: '+arg2+'\n@ Line '+linenumber+'\n\t<span class="cf">SWP</span> '+arg);
-			return true
+			return true;
 		}
 		// Do shit
 		// Machinestate
 		if (arg1==='*'){
-			arg1 = specialstate
+			arg1 = specialstate;
 			document.getElementById('machinestate').innerHTML = arg2;
 		}
 		// Pointer
@@ -595,7 +595,7 @@ function fstep(){
 		else {
 			console.error('Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t'+command);
 			mconsole('e','Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t<span class="cf">SWP</span> '+arg);
-			return true
+			return true;
 		}
 		// Do shit some more
 		// Machinestate
@@ -655,7 +655,7 @@ function fstep(){
 		}*/
 
 		console.log([code1,code2,code3]);
-		var newcode = code1+code2+code3
+		var newcode = code1+code2+code3;
 		
 		console.log(newcode);
 		program = newcode.split('\n');
@@ -707,9 +707,9 @@ function fstep(){
 		var currentstring = '';
 		var arg = arg.replace("*",specialstate).replace("$",pointer).replace("@",specialtarget);
 		// Go through vals
-		for (var i=0;i<arg.length;i+=1){
+		for (i=0;i<arg.length;i+=1){
 			if ('1234567890'.indexOf(arg[i])!==-1){
-				currentstring+=arg[i]
+				currentstring+=arg[i];
 			}
 			else if (arg[i]===' '){
 				console.warn('NOP in RPN\n@ Line '+linenumber+'\n\t'+command);
@@ -717,7 +717,7 @@ function fstep(){
 			}
 			else if (arg[i]===','){
 				rpnstack.push(Number(currentstring));
-				var currentstring = '';
+				currentstring = '';
 			}
 			else if (arg[i]==='+'){
 				rpnstack[rpnstack.length-2] += rpnstack[rpnstack.length-1];
@@ -852,8 +852,8 @@ function fstep(){
 			// Shamelessly stolen from GolfScript
 			else if (arg[i]==='\\'){
 				var temp = rpnstack[rpnstack.length-1];
-				var rpnstack[rpnstack.length-1] = rpnstack[rpnstack.length-2];
-				var rpnstack[rpnstack.length-2] = temp;
+				rpnstack[rpnstack.length-1] = rpnstack[rpnstack.length-2];
+				rpnstack[rpnstack.length-2] = temp;
 			}
 			else if (arg[i]===';'){
 				rpnstack.pop();
@@ -870,7 +870,7 @@ function fstep(){
 			else {
 				console.error('RPN error performing '+arg[i]+':\n@ Line '+linenumber+'\n\t'+command);
 				mconsole('e','RPN error performing '+arg[i]+':\n@ Line '+linenumber+'\n\t'+command);
-				return true
+				return true;
 			}
 			console.log(i,arg[i],rpnstack);
 		}
@@ -886,13 +886,13 @@ function fstep(){
 		else {
 			console.error('RPN error, numbers still in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t'+command);
 			mconsole('e','RPN error, numbers still in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t'+command);
-			return true
+			return true;
 		}
 	}
 	else {
 		console.error('Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
 		mconsole('e','Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
-		return true
+		return true;
 	}
 	document.getElementById('pointing').innerHTML=pointer;
 	document.getElementById('x'+pointer).classList.add("pointed");
