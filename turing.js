@@ -98,6 +98,11 @@ sfxs.WYP = 'watch-your-profanity_1';
 sfxs.XFL = 'x-files-theme-song-copy';
 sfxs.XPE = 'erro';
 
+// https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep/39914235#39914235
+function sleep(ms){
+	return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
 function factorial(n){
@@ -108,6 +113,263 @@ function factorial(n){
 		return f[n];
 	}
 	return f[n] = factorial(n-1) * n;
+}
+
+// http://marcgg.com/blog/2016/11/01/javascript-audio
+var context = new AudioContext();
+function beep(hz,s,wave){
+	var o = context.createOscillator();
+	var g = context.createGain();
+	o.connect(g);
+	g.connect(context.destination);
+	o.frequency.value = hz;
+	o.type = wave; //sine square triangle sawtooth
+	o.start(0);
+	g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + s);
+	return true;
+}
+
+//song
+var birthday =	[1/16,[
+				[['C4',1/8*1.5]],
+
+				[],
+
+				[],
+				
+				[['C4',1/16]],
+				
+				//
+				
+				[['F3',1/2*1.5],
+				['A3',1/2*1.5],
+				['D4',1/4]],
+
+				[],
+
+				[],
+
+				[],
+				
+				[['C4',1/4]],
+
+				[],
+				
+				[],
+
+				[],
+				
+				[['F4',1/4]],
+
+				[],
+				
+				[],
+
+				[],
+				
+				//
+				
+				[['C3',1/2*1.5],
+				['B3',1/2*1.5],
+				['E4',1/2]],
+
+				[],
+				
+				[],
+
+				[],
+				
+				[],
+
+				[],
+				
+				[],
+
+				[],
+				
+				[['C4',1/8*1.5]],
+
+				[],
+
+				[],
+				
+				[['C4',1/16]],
+				
+				//
+				
+				[['C3',1/2*1.5],
+				['B3',1/2*1.5],
+				['D4',1/2]],
+
+				[],
+
+				[],
+
+				[],
+				
+				[['C4',1/4]],
+
+				[],
+				
+				[],
+
+				[],
+				
+				[['G4',1/4]],
+
+				[],
+				
+				[],
+
+				[],
+				
+				//
+				
+				[['F3',1/2*1.5],
+				['A3',1/2*1.5],
+				['F4',1/2]],
+
+				[],
+				
+				[],
+
+				[],
+				
+				[],
+
+				[],
+				
+				[],
+
+				[],
+				
+				[['C4',1/8*1.5]],
+
+				[],
+
+				[],
+				
+				[['C4',1/16]],
+				
+				//
+				
+				[['F3',1/2*1.5],
+				['A3',1/2*1.5],
+				['C5',1/4]],
+
+				[],
+
+				[],
+
+				[],
+				
+				[['A4',1/4]],
+
+				[],
+				
+				[],
+
+				[],
+				
+				[['F4',1/4]],
+
+				[],
+				
+				[],
+
+				[],
+				
+				//
+				
+				[['F3',1/2*1.5],
+				['B3',1/2*1.5],
+				['E4',1/4]],
+
+				[],
+
+				[],
+
+				[],
+				
+				[['D4',1/4]],
+
+				[],
+				
+				[],
+
+				[],
+				
+				[['A#4',1/8*1.5]],
+
+				[],
+
+				[],
+				
+				[['A#4',1/16]],
+				
+				//
+				
+				[['F3',1/2],
+				['A3',1/2],
+				['A4',1/4]],
+
+				[],
+
+				[],
+
+				[],
+				
+				[['F4',1/4]],
+
+				[],
+				
+				[],
+
+				[],
+				
+				[['C3',1/4],
+				['B3',1/4],
+				['G4',1/4]],
+
+				[],
+				
+				[],
+
+				[],
+				
+				//
+				
+				[['F3',1/2],
+				['A3',1/2],
+				['F4',1/2]],
+				]];
+
+async function mochsic(song){
+	var fullnote = 2;
+	var frequency,duration,startafter,fuckjavascript;
+
+	for (i=0;i<song[1].length;i+=1){
+		for (j=0;j<song[1][i].length;j+=1){
+			frequency = song[1][i][j][0];
+			duration = fullnote*song[1][i][j][1];
+			console.log(frequency,duration);
+			// FUCK javascript, i would've rather done this beforehand, but Nooooooo couldn't be that easy now could we? this is the ONLY way this works. No words express my confusion and rage.
+			if (frequency==='C3'){fuckjavascript=130.81;}
+			else if (frequency==='F3'){fuckjavascript=174.61;}
+			else if (frequency==='A3'){fuckjavascript=220;}
+			else if (frequency==='B3'){fuckjavascript=246.94;}
+			else if (frequency==='C4'){fuckjavascript=261.63;}
+			else if (frequency==='E4'){fuckjavascript=329.63;}
+			else if (frequency==='F4'){fuckjavascript=349.23;}
+			else if (frequency==='G4'){fuckjavascript=392;}
+			else if (frequency==='A4'){fuckjavascript=440;}
+			else if (frequency==='A#4'){fuckjavascript=466.16;}
+			else if (frequency==='C5'){fuckjavascript=523.25;}
+
+			beep(fuckjavascript,duration,'sine');
+		}
+		await sleep(1000*fullnote*song[0]);
+	}
 }
 
 function nPr(n,k){
@@ -1036,6 +1298,41 @@ function fstep(){
 	else if (operation==='RER'){
 		document.getElementById('x'+pointer).innerHTML = document.getElementById('x'+pointer).innerHTML.replace( new RegExp(arg1,"gm"),arg2);
 	}*/
+	else if (operation==='WAV'){
+		arg = arg.replace("*",specialstate).replace("$",pointer).replace("@",specialtarget);
+		var arg1 = Number(arg.split(",")[0]);
+		var arg2 = Number(arg.split(",")[1]);
+		var arg3 = arg.split(",")[2];
+		// Fixing problems
+		if (!isFinite(arg1)){
+			console.warn('invalid frequency\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('w','invalid frequency\n@ Line '+linenumber+'\n\t<span class="cf">WAV</span> '+arg);
+			arg1 = 440;
+		}
+		if (!isFinite(arg2)){
+			console.warn('invalid duration\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('w','invalid duration\n@ Line '+linenumber+'\n\t<span class="cf">WAV</span> '+arg);
+			arg2 = 1;
+		}
+		if ('square sine triangle sawtooth'.indexOf(arg3)===-1){
+			console.warn('invalid waveform "'+arg3+'"\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('w','invalid waveform "'+arg3+'"\n@ Line '+linenumber+'\n\t<span class="cf">WAV</span> '+arg);
+			arg3 = 'sine';
+		}
+		// Out
+		beep(arg1,arg2,arg3);
+	}
+	else if (operation==='MID'){
+		if (arg==='BRT'){
+			mochsic(birthday);
+			mconsole('o','sfx');
+		}
+		else {
+			console.error('Song "'+arg3+'" not in dictionary\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','Song "'+arg3+'" not in dictionary\n@ Line '+linenumber+'\n\t<span class="cf">MID</span> '+arg);
+			return true;
+		}
+	}
 	else {
 		console.error('Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
 		mconsole('e','Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
