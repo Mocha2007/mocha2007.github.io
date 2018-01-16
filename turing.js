@@ -491,6 +491,9 @@ function mconsole(MessageClass,Message){
 			document.getElementById('console').innerHTML += '\n<span class="co">&rdca;</span> '+Message;
 		}
 	}
+	else if (MessageClass==='I'){
+		// document.getElementById('console').innerHTML += '\n<span class="ci">&ldca;</span> '+Message;
+	}
 	else {
 		document.getElementById('console').innerHTML += '\n> '+Message;
 	}
@@ -503,6 +506,7 @@ var pointer;
 var xsize = 32;
 var ysize = 32;
 var tapesize = xsize*ysize;
+var inputline = 0;
 
 function cclr(){
 	document.getElementById('console').innerHTML = '<i>MOCHINE rev '+versionno+'</i>';
@@ -524,6 +528,8 @@ function run(){
 			console.warn('Last line is label but not ":X"\n@ Line '+(program.length-1)+'\n\t'+program[program.length-1]);
 			mconsole('w','Last line is label but not "<span class="cf">:</span>X"\n@ Line '+(program.length-1)+'\n\t<span class="cf">:</span>'+program[program.length-1].substring(1));
 	}
+	//inputline
+	inputline = 0;
 }
 
 function reset(){
@@ -1037,6 +1043,9 @@ function fstep(){
 	else if (operation==='OUT'){
 		mconsole('o',arg);
 	}
+	else if (operation==='OUT'){
+		mconsole('o',arg);
+	}
 	else if (operation==='RPN'){
 		console.log(arg);
 		var rpnstack = [];
@@ -1335,6 +1344,12 @@ function fstep(){
 	}
 	else if (operation==='IMG'){
 		mconsole('o','<img src="'+arg+'" class="cimg">');
+	}
+	else if (operation==='INP'){
+		programinput = document.getElementById('input').value.split("\n")[inputline];
+		mconsole('I',programinput);
+		document.getElementById('x'+pointer).innerHTML = programinput;
+		inputline+=1;
 	}
 	else {
 		console.error('Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
