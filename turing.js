@@ -322,6 +322,30 @@ function fstep(){
 			console.warn(badop+linenumber+'\n\t'+command);
 			mconsole('w',badop+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 	}
+	// Generating err for insufficient commas (FRG/FSW)
+	else if ('FRG FSW'.indexOf(operation)!==-1 && (arg.match(/,/g) || []).length<1){
+			console.error('Insufficient arguments\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','Insufficient arguments\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+			return true
+	}
+	// Generating err for insufficient commas (FAA)
+	else if (operation==='FAA' && (arg.match(/,/g) || []).length<3){
+			console.error('Insufficient arguments\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','Insufficient arguments\n@ Line '+linenumber+'\n\t<span class="cf">FAA</span> '+arg);
+			return true
+	}
+	// Generating err for non-nonnegative integer args
+	else if ('FAA FSW'.indexOf(operation)!==-1 && (arg.match(/[^,0-9]/g) || []).length!==0){
+			console.error('Arguments not nonnegative integers\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','Arguments not nonnegative integers\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+			return true
+	}
+	// Generating err for non-numeral first arg
+	else if (operation==='FRG' && (arg.match(/^[0-9]+,/g) || []).length===0){
+			console.error('First argument not a nonnegative integer\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','First argument not a nonnegative integer\n@ Line '+linenumber+'\n\t<span class="cf">FRG</span> '+arg);
+			return true
+	}
 	// OPERATIONS
 	if (command.substring(0,1)===':'){
 		console.log(command.substring(1));
