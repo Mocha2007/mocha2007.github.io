@@ -203,7 +203,12 @@ function mconsole(MessageClass,Message){
 		document.getElementById('console').innerHTML += '\n<span class="ce">error</span>:\n'+Message;
 	}
 	else if (MessageClass==='o'){
-		document.getElementById('console').innerHTML += '\n<span class="co">&rdca;</span> '+Message;
+		if (Message==='sfx'){
+			document.getElementById('console').innerHTML += '\n<span class="co">&rdca; &#x266B;</span>';
+		}
+		else {
+			document.getElementById('console').innerHTML += '\n<span class="co">&rdca;</span> '+Message;
+		}
 	}
 	else {
 		document.getElementById('console').innerHTML += '\n> '+Message;
@@ -350,6 +355,12 @@ function fstep(){
 	else if ('DIV MOD NRT'.indexOf(operation)!==-1 && arg==='0'){
 			console.error('Zero divisor\n@ Line '+linenumber+'\n\t'+command);
 			mconsole('e','Zero divisor\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+			return true
+	}
+	// Generating ZeroDivisionError for INV on 0
+	else if (operation==='INV' && specialtarget==='0'){
+			console.error('Zero divisor\n@ Line '+linenumber+'\n\tINV');
+			mconsole('e','Zero divisor\n@ Line '+linenumber+'\n\t<span class="cf">INV</span>');
 			return true
 	}
 	// OPERATIONS
@@ -650,7 +661,9 @@ function fstep(){
 		else {
 			console.error('SFX not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t'+command);
 			mconsole('e','SFX not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t<span class="cf">SFX</span> '+arg);
+			return true;
 		}
+		mconsole('o','sfx');
 	}
 	else if (operation==='QUO'){
 		// Unique
@@ -663,7 +676,9 @@ function fstep(){
 		else {
 			console.error('QUO not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t'+command);
 			mconsole('e','QUO not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t<span class="cf">QUO</span> '+arg);
+			return true;
 		}
+		mconsole('o','sfx');
 	}
 	else if (operation==='OUT'){
 		mconsole('o',arg);
