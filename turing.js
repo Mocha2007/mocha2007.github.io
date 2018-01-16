@@ -150,11 +150,11 @@ function EnglishNumber(integer){
 	}
 	// X0
 	if (integer<100 && integer%10===0){
-		return string+teens[+(integer+[])[0]]+'ty';
+		return string+teens[Number(integer+[])[0]]+'ty';
 	}
 	// XX
 	if (integer<100){
-		return string+teens[+(integer+[])[0]]+'ty-'+words[integer%10];
+		return string+teens[Number(integer+[])[0]]+'ty-'+words[integer%10];
 	}
 	// 100
 	if (integer===100){
@@ -166,7 +166,7 @@ function EnglishNumber(integer){
 	}
 	// XXX
 	if (integer<1e3){
-		return string+words[+(integer+[])[0]]+' hundred '+new EnglishNumber(integer%100);
+		return string+words[Number(integer+[])[0]]+' hundred '+new EnglishNumber(integer%100);
 	}
 	// 1,XXX
 	if (integer<2e3){
@@ -748,34 +748,34 @@ function fstep(){
 			}
 			else if (arg[i]==='e'){
 				if (currentstring===''){
-					currentstring = Math.E+"";
+					currentstring = String(Math.E);
 				}
 				else {
-					currentstring = Math.E*Number(currentstring)+"";
+					currentstring = String(Math.E*Number(currentstring));
 				}
 			}
 			else if (arg[i]==='g'){
 				if (currentstring===''){
-					currentstring = 0.5772156649015329+"";
+					currentstring = "0.5772156649015329";
 				}
 				else {
-					currentstring = 0.5772156649015329*Number(currentstring)+"";
+					currentstring = String(0.5772156649015329*Number(currentstring));
 				}
 			}
 			else if (arg[i]==='p'){
 				if (currentstring===''){
-					currentstring = Math.PI+"";
+					currentstring = String(Math.PI);
 				}
 				else {
-					currentstring = Math.PI*Number(currentstring)+"";
+					currentstring = String(Math.PI*Number(currentstring));
 				}
 			}
 			else if (arg[i]==='r'){
 				if (currentstring===''){
-					currentstring = Math.random()+"";
+					currentstring = String(Math.random());
 				}
 				else {
-					currentstring = Math.random()*Number(currentstring)+"";
+					currentstring = String(Math.random()*Number(currentstring));
 				}
 			}
 			else if (arg[i]==='l'){
