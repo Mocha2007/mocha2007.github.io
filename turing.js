@@ -891,6 +891,13 @@ function fstep(){
 			else if (arg[i]===']'){
 				rpnstack[rpnstack.length-1] = Math.ceil(rpnstack[rpnstack.length-1]);
 			}
+			else if (arg[i]==='h'){
+				var c = rpnstack.pop();
+				var b = rpnstack.pop();
+				var a = rpnstack.pop();
+				var s = (a+b+c)/2;
+				rpnstack.push(Math.pow(s*(s-a)*(s-b)*(s-c),.5));
+			}
 			// Shamelessly stolen from GolfScript
 			else if (arg[i]==='\\'){
 				var temp = rpnstack[rpnstack.length-1];
