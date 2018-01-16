@@ -711,7 +711,7 @@ function fstep(){
 			// Check if NaN
 			if (rpnstack.length>0 && !Number.isFinite(rpnstack[rpnstack.length-1])){
 				console.error('RPN error performing '+arg[i-1]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(i).join(" ")+'^');
-				mconsole('e','RPN error performing '+arg[i-1]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(i).join(" ")+'^');
+				mconsole('e','RPN error performing '+arg[i-1]+':\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg+'\n\t    '+Array(i).join(" ")+'^');
 				return true;
 			}
 			// Work
@@ -911,7 +911,7 @@ function fstep(){
 			}
 			else {
 				console.error('RPN error performing unindexed operation '+arg[i]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(i).join(" ")+'^');
-				mconsole('e','RPN error performing unindexed operation '+arg[i]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(i).join(" ")+'^');
+				mconsole('e','RPN error performing unindexed operation '+arg[i]+':\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg+'\n\t    '+Array(i).join(" ")+'^');
 				return true;
 			}
 			console.log(i,arg[i],rpnstack);
@@ -920,22 +920,25 @@ function fstep(){
 		if (rpnstack.length===1){
 			if (!Number.isFinite(rpnstack[0])){
 				console.error('RPN error performing '+arg[arg.length-1]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(arg.length).join(" ")+'^');
-				mconsole('e','RPN error performing '+arg[arg.length-1]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(arg.length).join(" ")+'^');
+				mconsole('e','RPN error performing '+arg[arg.length-1]+':\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg+'\n\t    '+Array(arg.length).join(" ")+'^');
 				return true;
 			}
 			document.getElementById('x'+pointer).innerHTML = Number(specialtarget)+Number(rpnstack[0]);
 		}
 		else if (rpnstack.length>1){
 			console.error('RPN error, numbers still in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','RPN error, numbers still in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','RPN error, numbers still in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg);
 			return true;
 		}
 		else {
 			console.error('RPN error, not enough numbers in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','RPN error, not enough numbers in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','RPN error, not enough numbers in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg);
 			return true;
 		}
-	}
+	}/*
+	else if (operation==='RER'){
+		document.getElementById('x'+pointer).innerHTML = document.getElementById('x'+pointer).innerHTML.replace( new RegExp(arg1,"gm"),arg2);
+	}*/
 	else {
 		console.error('Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
 		mconsole('e','Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
