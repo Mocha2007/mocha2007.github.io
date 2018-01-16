@@ -333,10 +333,12 @@ APP  bottles of beer! Take one down, pass it around,
 MMS -1
 APP *
 APP  bottles of beer on the wall!
+OUT @
 MOV 1
 JNE 1
 LET @ No more bottles of beer on the wall, no more bottles of beer! 
 APP Go to the store and buy some more, 99 bottles of beer on the wall! 
+OUT @
 </pre>
 
 <h3 id='FizzBuzz'>FizzBuzz</h3>
@@ -360,6 +362,7 @@ JMP X
 :XV
 LET @ FizzBuzz
 :X
+OUT @
 MOV 1
 JMP 0
 </pre>
@@ -369,10 +372,11 @@ JMP 0
 	Prints 2018 without using any numbers.
 </p>
 <pre>
-LEN Written by Mocha
+LEN Written by Mocha~!
 LET * @
 LEN I love using MOCHINE
 APP *
+OUT @
 </pre>
 
 <h3 id='99_Bottles_of_FizzBuzz'>99 Bottles of FizzBuzz</h3>
@@ -486,6 +490,7 @@ JMP 4
 LET @ 5
 LET * 8
 ADD *
+OUT @
 </pre>
 
 <h3 id='Identification'>Identification</h3>
@@ -497,10 +502,10 @@ LET @ Chuck
 LET * Alice
 JIF 5
 LET * Bob
-JNF X
+JNE X
 LET @ Welcome, 
-MOV 1
-LET @ *
+APP *
+OUT @
 :X
 </pre>
 
@@ -527,6 +532,8 @@ JIZ X
 MOV 1
 JMP A
 :X
+MOV 1
+OUT @
 </pre>
 <pre>
 LET @ 10
@@ -545,6 +552,8 @@ MOV -2
 JIZ 15
 MOV 1
 JNZ 7
+MOV 1
+OUT @
 </pre>
 <pre>
 LET @ 10
@@ -552,6 +561,7 @@ LET * @
 EXP 2
 ADD *
 DIV 2
+OUT @
 </pre>
 
 <h3 id='Leap_Year'>Leap Year</h3>
@@ -575,6 +585,7 @@ JMP X
 :F
 LET @ 0
 :X
+OUT @
 </pre>
 <pre>
 LET @ 2018
@@ -588,9 +599,9 @@ LET @ *
 MOD 4
 JNZ 12
 LET @ 1
-JMP X
+JMP 13
 LET @ 0
-:X
+OUT @
 </pre>
 
 <h3 id='Sorting'>Sorting</h3>
@@ -605,7 +616,7 @@ JIL 1
 LET * @
 JMP 0
 LET $ 0
-LET @ *
+OUT *
 </pre>
 
 <h3 id='Almost-Quine'>Almost-Quine</h3>
@@ -613,8 +624,8 @@ LET @ *
 	This code outputs its first line.
 </p>
 <pre>
-FAA 21,21,0,14
-LET @ X
+FAA 19,19,0,14
+OUT X
 </pre>
 
 <div id="bottom"></div>
