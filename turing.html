@@ -66,14 +66,13 @@ AND ? : set value at pointer to argument if itself is 1, otherwise,
 APP ? : append string to value at pointer<!--DIV # : set value at pointer to itself divided by argument
 EXP # : set value at pointer to itself raised to argument-->
 IOR ? : set value at pointer to argument if itself is 0, otherwise,
-        return itself
-JIF ? : jump to line if value at pointer is same as machine state
+        return itself<!--JIF ? : jump to line if value at pointer is same as machine state
 JIG ? : jump to line if value at pointer is greater than machine state
 JIL ? : jump to line if value at pointer is less than machine state
 JIZ ? : jump to line if value at pointer is zero
 JMP ? : jump to line
 JNE ? : jump to line if value at pointer is not same as machine state
-JNZ ? : jump to line if value at pointer is not zero
+JNZ ? : jump to line if value at pointer is not zero-->
 LEN ? : set value at pointer to the length of its argument as a string
 MMS # : set machine state to itself plus argument<!--MOD # : set value at pointer to itself modulo argument-->
 MOV # : set pointer to itself plus argument<!--MUL # : set value at pointer to itself multiplied by argument-->
@@ -91,6 +90,8 @@ XNR ? : set value at pointer to 1 if argument same as itself, else 0
 XOR ? : set value at pointer to 0 if argument same as itself, else 1
 
 2 Arguments
+JJJ condition ? : jump to line if condition is true.
+	Valid conditionals: = != &lt; > &lt;= >= 
 LET ! ? : set * or $ or @ to argument
 SWP ! ! : swaps two specials
 

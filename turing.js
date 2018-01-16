@@ -337,6 +337,11 @@ function fstep(){
 			console.warn(operation+' is deprecated, use RPN instad.\n@ Line '+linenumber+'\n\t'+command);
 			mconsole('w','<span class="cf">'+operation+'</span> is deprecated, use <span class="cf">RPN</span> instad.\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 	}
+	// Generating warning for deprecated ops
+	if ('JIF JIG JIL JIZ JMP JNE JNZ'.indexOf(operation)!==-1){
+			console.warn(operation+' is deprecated, use JJJ instad.\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('w','<span class="cf">'+operation+'</span> is deprecated, use <span class="cf">JJJ</span> instad.\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+	}
 	// Generating warning for specialchar-duped ops
 	if ('LET SWP'.indexOf(operation)!==-1 && ['* *','$ $','@ @'].indexOf(arg)!==-1){
 			console.warn(badop+linenumber+'\n\t'+command);
@@ -417,51 +422,107 @@ function fstep(){
 		document.getElementById('x'+pointer).innerHTML = mod(Number(specialtarget),Number(arg));
 	}
 	else if (command[0]==='J'){
-		// Determining Argument Type
-		if (Number.isNaN(arg)){
-			var target = program.indexOf(':'+arg);
+		if (operation==='JJJ'){
+			arg = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget);
+			var arg1 = arg.split(" ")[0];
+			var arg2 = arg.split(" ")[1];
+			var arg1a = arg1.match(/[^<>!=]+(?=[<>!=])/g)[0];
+			var arg1b = arg1.match(/([<>!]?=)|<|>/g)[0];
+			var arg1c = arg1.match(/(?<=[<>!=])[^<>!=]+/g)[0];
+
+			// Determining Target Type
+			if (Number.isNaN(arg2)){
+				var target = program.indexOf(':'+arg2);
+			}
+			else {
+				var target = arg2;
+			}
+			
+			// Determination!
+			if (arg1b==='='){
+				if (arg1a===arg1c){
+					document.getElementById('line').innerHTML = target;
+				}
+			}
+			else if (arg1b==='>'){
+				if (arg1a>arg1c){
+					document.getElementById('line').innerHTML = target;
+				}
+			}
+			else if (arg1b==='<'){
+				if (arg1a<arg1c){
+					document.getElementById('line').innerHTML = target;
+				}
+			}
+			else if (arg1b==='>='){
+				if (arg1a>=arg1c){
+					document.getElementById('line').innerHTML = target;
+				}
+			}
+			else if (arg1b==='<='){
+				if (arg1a<=arg1c){
+					document.getElementById('line').innerHTML = target;
+				}
+			}
+			else if (arg1b==='!='){
+				if (arg1a!==arg1c){
+					document.getElementById('line').innerHTML = target;
+				}
+			}
+			else {
+				console.error('Misformed comparison "'+arg1b+'"\n@ Line '+linenumber+'\n\t'+command);
+				mconsole('e','Misformed comparison "'+arg1b+'"\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+				return true;
+			}
 		}
+		// other jumps
 		else {
-			var target = arg;
-		}
-		// Jump Determination
-		if (operation==='JMP'){
-			document.getElementById('line').innerHTML = target;
-		}
-		else if (operation==='JIZ'){
-			if (specialtarget==='0'){
+			// Determining Argument Type
+			if (Number.isNaN(arg)){
+				var target = program.indexOf(':'+arg);
+			}
+			else {
+				var target = arg;
+			}
+			// Jump Determination
+			if (operation==='JMP'){
 				document.getElementById('line').innerHTML = target;
 			}
-		}
-		else if (operation==='JNZ'){
-			if (specialtarget!=='0'){
-				document.getElementById('line').innerHTML = target;
+			else if (operation==='JIZ'){
+				if (specialtarget==='0'){
+					document.getElementById('line').innerHTML = target;
+				}
 			}
-		}
-		else if (operation==='JIF'){
-			if (specialtarget===specialstate){
-				document.getElementById('line').innerHTML = target;
+			else if (operation==='JNZ'){
+				if (specialtarget!=='0'){
+					document.getElementById('line').innerHTML = target;
+				}
 			}
-		}
-		else if (operation==='JNE'){
-			if (specialtarget!==specialstate){
-				document.getElementById('line').innerHTML = target;
+			else if (operation==='JIF'){
+				if (specialtarget===specialstate){
+					document.getElementById('line').innerHTML = target;
+				}
 			}
-		}
-		else if (operation==='JIG'){
-			if (specialtarget>specialstate){
-				document.getElementById('line').innerHTML = target;
+			else if (operation==='JNE'){
+				if (specialtarget!==specialstate){
+					document.getElementById('line').innerHTML = target;
+				}
 			}
-		}
-		else if (operation==='JIL'){
-			if (specialtarget<specialstate){
-				document.getElementById('line').innerHTML = target;
+			else if (operation==='JIG'){
+				if (specialtarget>specialstate){
+					document.getElementById('line').innerHTML = target;
+				}
 			}
-		}
-		else {
-			console.error('Jump not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Jump not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
-			return true;
+			else if (operation==='JIL'){
+				if (specialtarget<specialstate){
+					document.getElementById('line').innerHTML = target;
+				}
+			}
+			else {
+				console.error('Jump not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
+				mconsole('e','Jump not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+				return true;
+			}
 		}
 	}
 	else if (operation==='AND'){
