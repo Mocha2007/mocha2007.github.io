@@ -1,4 +1,4 @@
-var versionno = '180116b';
+var versionno = '180116c';
 // Myinstants
 var quos = [];
 quos.ALH = 'boom_9';
@@ -708,6 +708,13 @@ function fstep(){
 		var arg = arg.replace("*",specialstate).replace("$",pointer).replace("@",specialtarget);
 		// Go through vals
 		for (i=0;i<arg.length;i+=1){
+			// Check if NaN
+			if (rpnstack.length>0 && !Number.isFinite(rpnstack[rpnstack.length-1])){
+				console.error('RPN error performing '+arg[i-1]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(i).join(" ")+'^');
+				mconsole('e','RPN error performing '+arg[i-1]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(i).join(" ")+'^');
+				return true;
+			}
+			// Work
 			if ('1234567890'.indexOf(arg[i])!==-1){
 				currentstring+=arg[i];
 			}
@@ -878,6 +885,12 @@ function fstep(){
 			else if (arg[i]==='#'){
 				rpnstack[rpnstack.length-1] = Math.round(rpnstack[rpnstack.length-1]);
 			}
+			else if (arg[i]==='['){
+				rpnstack[rpnstack.length-1] = Math.floor(rpnstack[rpnstack.length-1]);
+			}
+			else if (arg[i]===']'){
+				rpnstack[rpnstack.length-1] = Math.ceil(rpnstack[rpnstack.length-1]);
+			}
 			// Shamelessly stolen from GolfScript
 			else if (arg[i]==='\\'){
 				var temp = rpnstack[rpnstack.length-1];
@@ -897,24 +910,29 @@ function fstep(){
 				rpnstack[rpnstack.length-1] += 1;
 			}
 			else {
-				console.error('RPN error performing '+arg[i]+':\n@ Line '+linenumber+'\n\t'+command);
-				mconsole('e','RPN error performing '+arg[i]+':\n@ Line '+linenumber+'\n\t'+command);
+				console.error('RPN error performing unindexed operation '+arg[i]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(i).join(" ")+'^');
+				mconsole('e','RPN error performing unindexed operation '+arg[i]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(i).join(" ")+'^');
 				return true;
 			}
 			console.log(i,arg[i],rpnstack);
 		}
-		/* See if numbers left
-		if (currentstring!==''){
-			rpnstack.push(Number(currentstring));
-			var currentstring = '';
-		}*/
 		// Return
 		if (rpnstack.length===1){
+			if (!Number.isFinite(rpnstack[0])){
+				console.error('RPN error performing '+arg[arg.length-1]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(arg.length).join(" ")+'^');
+				mconsole('e','RPN error performing '+arg[arg.length-1]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(arg.length).join(" ")+'^');
+				return true;
+			}
 			document.getElementById('x'+pointer).innerHTML = Number(specialtarget)+Number(rpnstack[0]);
 		}
-		else {
+		else if (rpnstack.length>1){
 			console.error('RPN error, numbers still in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t'+command);
 			mconsole('e','RPN error, numbers still in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t'+command);
+			return true;
+		}
+		else {
+			console.error('RPN error, not enough numbers in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','RPN error, not enough numbers in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t'+command);
 			return true;
 		}
 	}
@@ -925,4 +943,5 @@ function fstep(){
 	}
 	document.getElementById('pointing').innerHTML=pointer;
 	document.getElementById('x'+pointer).classList.add("pointed");
+	return false;
 }
