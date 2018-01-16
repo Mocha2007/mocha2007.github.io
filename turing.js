@@ -715,7 +715,7 @@ function fstep(){
 				return true;
 			}
 			// Work
-			if ('1234567890'.indexOf(arg[i])!==-1){
+			if ('1234567890.'.indexOf(arg[i])!==-1){
 				currentstring+=arg[i];
 			}
 			else if (arg[i]===' '){
@@ -871,15 +871,15 @@ function fstep(){
 			else if (arg[i]==='\''){
 				for (j=0;j<rpnstack.length;j+=1){
 					rpnstack[j] = rpnstack[j]*(rpnstack.length-1-j);
-					rpnstack.pop();
 				}
+				rpnstack.pop();
 			}
 			else if (arg[i]==='"'){
 				for (k=0;k<2;k+=1){
 					for (j=0;j<rpnstack.length;j+=1){
 						rpnstack[j] = rpnstack[j]*(rpnstack.length-1-j);
-						rpnstack.pop();
 					}
+					rpnstack.pop();
 				}
 			}
 			else if (arg[i]==='#'){
@@ -899,10 +899,10 @@ function fstep(){
 			}
 			else if (arg[i]===';'){
 				rpnstack.pop();
-			}
+			}/*
 			else if (arg[i]==='.'){
 				rpnstack.push(rpnstack[rpnstack.length-1]);
-			}
+			}*/
 			else if (arg[i]==='('){
 				rpnstack[rpnstack.length-1] -= 1;
 			}
