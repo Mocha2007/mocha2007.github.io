@@ -224,7 +224,7 @@ var ysize = 32;
 var tapesize = xsize*ysize;
 
 function cclr(){
-	document.getElementById('console').innerHTML = '<i>MOCHINE rev 180115b</i>';
+	document.getElementById('console').innerHTML = '<i>MOCHINE rev 180115c</i>';
 }
 
 function run(){
@@ -689,6 +689,69 @@ function fstep(){
 	}
 	else if (operation==='OUT'){
 		mconsole('o',arg);
+	}
+	else if (operation==='RPN'){
+		console.log(arg);
+		var rpnstack = [];
+		var currentstring = '';
+		var arg = arg.replace("*",specialstate).replace("$",pointer).replace("@",specialtarget);
+		// Go through vals
+		for (var i=0;i<arg.length;i+=1){
+			if ('1234567890'.indexOf(arg[i])!==-1){
+				currentstring+=arg[i]
+			}
+			else if (arg[i]===' '){
+				rpnstack.push(Number(currentstring));
+				var currentstring = '';
+			}
+			else if (arg[i]==='+'){
+				rpnstack[rpnstack.length-2] += rpnstack[rpnstack.length-1];
+				rpnstack.pop();
+			}
+			else if (arg[i]==='-'){
+				rpnstack[rpnstack.length-2] -= rpnstack[rpnstack.length-1];
+				rpnstack.pop();
+			}
+			else if (arg[i]==='x'){
+				rpnstack[rpnstack.length-2] = rpnstack[rpnstack.length-2]*rpnstack[rpnstack.length-1];
+				rpnstack.pop();
+			}
+			else if (arg[i]==='/'){
+				rpnstack[rpnstack.length-2] = rpnstack[rpnstack.length-2]/rpnstack[rpnstack.length-1];
+				rpnstack.pop();
+			}
+			else if (arg[i]==='^'){
+				rpnstack[rpnstack.length-2] = Math.pow(rpnstack[rpnstack.length-2],rpnstack[rpnstack.length-1]);
+				rpnstack.pop();
+			}
+			else if (arg[i]==='%'){
+				rpnstack[rpnstack.length-2] = mod(rpnstack[rpnstack.length-2],rpnstack[rpnstack.length-1]);
+				rpnstack.pop();
+			}
+			else if (arg[i]==='L'){
+				rpnstack[rpnstack.length-1] = Math.log(rpnstack[rpnstack.length-1]);
+			}
+			else {
+				console.error('RPN error performing '+arg[i]+':\n@ Line '+linenumber+'\n\t'+command);
+				mconsole('e','RPN error performing '+arg[i]+':\n@ Line '+linenumber+'\n\t'+command);
+				return true
+			}
+			console.log(i,arg[i],rpnstack);
+		}
+		// See if numbers left
+		if (currentstring!==''){
+			rpnstack.push(Number(currentstring));
+			var currentstring = '';
+		}
+		// Return
+		if (rpnstack.length===1){
+			document.getElementById('x'+pointer).innerHTML = Number(specialtarget)+Number(rpnstack[0]);
+		}
+		else {
+			console.error('RPN error, numbers still in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','RPN error, numbers still in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t'+command);
+			return true
+		}
 	}
 	else {
 		console.error('Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);

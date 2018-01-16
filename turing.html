@@ -36,7 +36,7 @@ pre{font-family:Monospace;background-color:#000;color:#ccc;}
 	Line <span id="line">0</span>
 	 | Pointer: <span id="pointing">0</span>
 	 | State: <span id="machinestate">[PRESS RESET]</span>
-	<pre id='console'><i>MOCHINE rev 180115b</i></pre>
+	<pre id='console'><i>MOCHINE rev 180115c</i></pre>
 	<span class='invisible'>&downarrow; MEMORY &downarrow;</span>
 </div>
 <div class='invisible' id="memory"></div>
@@ -86,6 +86,9 @@ NAN ? : set value at pointer to 0 if argument and itself are 1, else 1
 NOR ? : set value at pointer to 1 if argument and itself are 0, else 0
 NRT # : set value at pointer to the argument-th root of itself
 OUT ? : output value to console
+RPN ? : set value at pointer to itself plus the evaluation of the
+	argument as RPN, space pushes #s onto the stack.
+	Valid operators: + - x / % ^ <abbr title='ln(x)'>L</abbr><!--s = sine S = arcsin, etc-->
 XNR ? : set value at pointer to 1 if argument same as itself, else 0
 XOR ? : set value at pointer to 0 if argument same as itself, else 1
 
@@ -491,8 +494,7 @@ JMP 4
 </p>
 <pre>
 LET @ 5
-LET * 8
-ADD *
+ADD 8
 OUT @
 </pre>
 
