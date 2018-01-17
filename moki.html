@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Moki Interpreter">
+	<meta name="keywords" content="mocha,mocha2007,dangak,namei,oneia,conworld,conlang">
+	<meta name="author" content="Mocha2007">
+	<meta name="owner" content="Mocha2007">
+	<!-- http://ogp.me/ -->
+	<meta name="og:title" content="Moki Interpreter">
+	<meta name="og:description" content="Moki Interpreter">
+	<meta name="og:type" content="website">
+	<meta name="og:image" content="img/icons/m_512.png">
+	<meta name="og:image:type" content="image/png">
+	<meta name="og:image:alt" content="Mocha's Squiggle">
+	<meta name="og:url" content="https://mocha2007.github.io/turing">
+	<meta name="viewport" content="width=700,initial-scale=1">
+	<meta name="theme-color" content="#00FFFF">
+	<meta name="msapplication-config" content="IEconfig.xml">
+	<link rel="alternate" type="application/atom+xml" title="Mocha's Site Feed" href="https://github.com/Mocha2007/mocha2007.github.io/commits/master.atom"/>
+	<link href=simple.css type="text/css" rel="stylesheet" title="Light">
+	<link href=dark.css type="text/css" rel="alternate stylesheet" title="Dark"> 
+	<link href=blend.css type="text/css" rel="alternate stylesheet" title="Blend">
+	<link href=print.css type="text/css" rel="stylesheet" media="print">
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon.png">
+	<link rel="manifest" href="manifest.json">
+	<link rel="mask-icon" href="img/icons/safari-pinned-tab.svg" color="#00cccc">
+	<title>Moki Interpreter</title>
+	<script src="toc.js"></script>
+	<script src="moki.js"></script>
+	<style>
+		#program{text-align:center;}
+		.pointed{color:#080;background-color: #CEC;text-style:bold;}
+		pre{font-family:Monospace;background-color:#000;color:#ccc;}
+		#console{text-align:left;padding-left:9px;padding-right:9px;}
+		.ci{color:#48F;}
+		.cw{color:#FC0;}
+		.ce{color:#F44;}
+		.co{color:#8E8;}
+		.cf{color:#F8F;}
+		.invisible{display:none;}
+		.cimg{max-width:642px;}
+		pre summary{text-indent:64px;}
+		td{font-family:monospace;background-color:#000;color:#ccc;text-align:justify;}
+	</style>
+</head>
+
+<div id="nav"></div>
+<div id="top"><h1 id="Moki">Moki</h1></div>
+
+<div id="program">
+	<div>
+		<pre>		Code				Input</pre>
+		<textarea id="code" rows="16" cols="64"></textarea>
+		<textarea id="input" rows="16" cols="24"></textarea>
+	</div>
+	<input type="submit" value="Reset" onclick="reset();"> &rarr;
+	<input type="submit" value="Step" onclick="fstep();"> |
+	<input type="submit" value="100 Steps" onclick="fstep100();"> |
+	<input type="submit" value="Clear Output" onclick="cclr();">
+	<br/>
+	<i>Reading Char <span id="line">0</span></i>
+	<pre id='console'><i>Moki rev 1</i></pre>
+</div>
+
+<h2 id='Dictionary'>Dictionary</h2>
+
+<p>
+	<b>Moki</b> is a computationally universal programming language. 
+</p>
+
+<pre>
+(Dictionary coming soon!)
+</pre>
+
+<h2 id='Programs'>Programs</h2>
+
+<h3 id='moki'>moki (14 bytes)</h3>
+<p>
+	Prints moki without any characters.
+</p>
+<pre>
+109".)).,4-.((
+</pre>
+
+<h3 id='Hello World'>Hello World (16 bytes)</h3>
+<p>
+	Prints "Hello, World!".
+</p>
+<pre>
+;'Hello, World!'
+</pre>
+<p>
+<div id="bottom"></div>
+</html>
