@@ -419,6 +419,36 @@ r*,2,/
 o@
 </pre>
 
+<h3 id='Currentyear'>Currentyear (30 bytes)</h3>
+<p>
+	Prints the current year.
+</p>
+<pre>
+TIM
+SWP @ *
+RPN *,31556952,/1970,+#
+OUT @
+</pre>
+<p>
+	Compressed: 30 bytes.
+</p>
+<pre>
+t
+x@ *
+r*,31556952,/1970,+#
+o@
+</pre>
+<p>
+	Bonus: prints 2018 without using any numbers.
+</p>
+<pre>
+LEN Written by Mocha~!
+LET * @
+LEN I love using MOCHINE
+APP *
+OUT @
+</pre>
+
 <h3 id='Fibonacci_Numbers'>Fibonacci Numbers (54 bytes)</h3>
 <p>
 	Prints the fibonacci numbers. <i>All</i> of them. 
@@ -458,6 +488,76 @@ o@
 m1
 r*,
 j1 5
+</pre>
+
+<h3 id='Identification'>Identification (54 bytes)</h3>
+<p>
+	Checks to see if input is Alice or Bob, and, if so, Greet them.
+</p>
+<pre>
+INP
+LET * Alice
+JJJ @=* 5
+LET * Bob
+JJJ @!=* X
+LET @ Welcome, 
+APP *
+OUT @
+:X
+</pre>
+<p>
+	Compressed: 54 bytes.
+</p>
+<pre>
+i
+=* Alice
+j@=* 5
+=* Bob
+j@!=* X
+=@ Welcome, 
+a*
+o@
+:X
+</pre>
+
+<h3 id='Leap_Year'>Leap Year (82 bytes)</h3>
+<p>
+	Checks whether input is a leap year or not. Includes compressed version (82 bytes). 
+</p>
+<pre>
+INP
+LET * @
+MOD 400
+JJJ @=0 T
+LET @ *
+MOD 100
+JJJ @=0 F
+LET @ *
+MOD 4
+JJJ @!=0 F
+:T
+LET @ 1
+JJJ 1 X
+:F
+LET @ 0
+:X
+OUT @
+</pre>
+<pre>
+i
+=* @
+MOD 400
+j@=0 10
+=@ *
+MOD 100
+j@=0 12
+=@ *
+MOD 4
+j@!=0 12
+=@ 1
+j1 13
+=@ 0
+o@
 </pre>
 
 <h3 id='FizzBuzz'>FizzBuzz (111 bytes)</h3>
@@ -512,9 +612,41 @@ oFizzBuzz
 j1 10
 </pre>
 
-<h3 id='99_Bottles_of_Beer'>99 Bottles of Beer (279 bytes)</h3>
+<h3 id='99_Bottles_of_Beer'>99 Bottles of Beer (271 bytes)</h3>
 <p>
 	Imperfect, but acceptable. Terminates.
+</p>
+<pre>
+LET @ 99
+OUT @
+OUT bottles of beer on the wall, 
+OUT @
+OUT bottles of beer! Take one down, pass it around, 
+RPN 1,~
+OUT @
+OUT bottles of beer on the wall!
+JJJ @!=0 1
+OUT No more bottles of beer on the wall, no more bottles of beer! 
+OUT Go to the store and buy some more, 99 bottles of beer on the wall! 
+</pre>
+<p>
+	Compressed: 271 bytes.
+</p>
+<pre>
+=@ 99
+o@
+obottles of beer on the wall, 
+o@
+obottles of beer! Take one down, pass it around, 
+r1,~
+o@
+obottles of beer on the wall!
+j@!=0 1
+oNo more bottles of beer on the wall, no more bottles of beer! 
+oGo to the store and buy some more, 99 bottles of beer on the wall! 
+</pre>
+<p>
+	Alternate.
 </p>
 <pre>
 LET * 99
@@ -548,27 +680,6 @@ o@
 m1
 j@!=* 1
 oNo more bottles of beer on the wall, no more bottles of beer! Go to the store and buy some more, 99 bottles of beer on the wall! 
-</pre>
-
-<h3 id='Currentyear'>Currentyear</h3>
-<p>
-	Prints 2018 without using any numbers.
-</p>
-<pre>
-LEN Written by Mocha~!
-LET * @
-LEN I love using MOCHINE
-APP *
-OUT @
-</pre>
-<p>
-	Prints the current year.
-</p>
-<pre>
-TIM
-SWP @ *
-RPN *,31556952,/1970,+#
-OUT @
 </pre>
 
 <!--<h3 id='99_Bottles_of_FizzBuzz'>99 Bottles of FizzBuzz</h3>
@@ -673,63 +784,6 @@ APP Beer
 JMP 4
 :X
 </pre>-->
-
-<h3 id='Identification'>Identification</h3>
-<p>
-	Checks to see if input is Alice or Bob, and, if so, Greet them.
-</p>
-<pre>
-INP
-LET * Alice
-JJJ @=* 5
-LET * Bob
-JJJ @!=* X
-LET @ Welcome, 
-APP *
-OUT @
-:X
-</pre>
-
-<h3 id='Leap_Year'>Leap Year</h3>
-<p>
-	Checks whether input is a leap year or not. Includes compressed version (95 bytes). 
-</p>
-<pre>
-INP
-LET * @
-MOD 400
-JJJ @=0 T
-LET @ *
-MOD 100
-JJJ @=0 F
-LET @ *
-MOD 4
-JJJ @!=0 F
-:T
-LET @ 1
-JJJ 1 X
-:F
-LET @ 0
-:X
-OUT @
-</pre>
-<pre>
-i
-=* @
-MOD 400
-j@=0 10
-=@ *
-MOD 100
-j@=0 12
-=@ *
-MOD 4
-j@!=0 12
-=@ 1
-j1 13
-=@ 0
-o@
-</pre>
-
 <!--<h3 id='Sorting'>Sorting</h3>
 <p>
 	Finds the largest entry and prints it in the first square. 
@@ -767,7 +821,7 @@ OUT &lt;br>
 </p>
 <pre>
 error:
-Operation not in dictionary: error:
+"e" not valid shortcut
 @ Line 0
 	error:
 </pre>
