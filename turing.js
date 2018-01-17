@@ -1,4 +1,4 @@
-var versionno = '180116f';
+var versionno = '180117a';
 // Myinstants
 var quos = [];
 quos.ALH = 'boom_9';
@@ -590,7 +590,6 @@ function fstep(){
 	// replacing shorthand operation mode
 	if ('i!t&a|lsmor^j=x'.indexOf(command[0])!==-1){
 		command = command.split('');
-		console.warn(command);
 		command[0] = command[0].replace('i','INP');
 		command[0] = command[0].replace('!','NOT');
 		command[0] = command[0].replace('t','TIM');
@@ -606,23 +605,23 @@ function fstep(){
 		command[0] = command[0].replace('j','JJJ');
 		command[0] = command[0].replace('=','LET');
 		command[0] = command[0].replace('x','SWP');
-		console.warn(command);
 		command[0] += ' ';
-		console.warn(command);
 		command = command.join('');
-		console.warn(command);
 	}
 	// Determining arguments
-	arg = command.substring(4);
-	if (arg==='*'){
-		arg = specialstate;
+	var arg = command.substring(4);
+	switch (arg){
+		case '*':
+			arg = specialstate;
+			break;
+		case '$':
+			arg = pointer;
+			break;
+		case '@':
+			arg = specialtarget;
+			break;
 	}
-	else if (arg==='$'){
-		arg = pointer;
-	}
-	else if (arg==='@'){
-		arg = specialtarget;
-	}
+	//
 	var operation = command.substring(0,3);
 	
 	var badop = 'Useless operation written by a useless coder\n@ Line ';
@@ -699,231 +698,9 @@ function fstep(){
 			return true;
 	}
 	// OPERATIONS
+	console.log(command);
 	if (command.substring(0,1)===':'){
 		console.log(command.substring(1));
-	}
-	else if (operation==='ADD'){
-		document.getElementById('x'+pointer).innerHTML = Number(specialtarget)+Number(arg);
-	}
-	else if (operation==='MUL'){
-		document.getElementById('x'+pointer).innerHTML = Number(specialtarget)*Number(arg);
-	}
-	else if (operation==='EXP'){
-		document.getElementById('x'+pointer).innerHTML = Math.pow(Number(specialtarget),Number(arg));
-	}
-	else if (operation==='NRT'){
-		document.getElementById('x'+pointer).innerHTML = Math.pow(Number(specialtarget),1/Number(arg));
-	}
-	else if (operation==='DIV'){
-		document.getElementById('x'+pointer).innerHTML = Number(specialtarget)/Number(arg);
-	}
-	else if (operation==='MOD'){
-		document.getElementById('x'+pointer).innerHTML = mod(Number(specialtarget),Number(arg));
-	}
-	else if (command[0]==='J'){
-		if (operation==='JJJ'){
-			arg = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget);
-			var arg1 = arg.split(" ")[0];
-			var arg2 = arg.split(" ")[1];
-			var arg1a = arg1.match(/[^<>!=]+(?=[<>!=])/g)[0];
-			var arg1b = arg1.match(/([<>!]?=)|<|>/g)[0];
-			var arg1c = arg1.substring((arg1a+arg1b).length);// no lookbehind
-
-			// Determining Target Type
-			if (Number.isNaN(arg2)){
-				var target = program.indexOf(':'+arg2);
-			}
-			else {
-				var target = arg2;
-			}
-			
-			// Determination!
-			if (arg1b==='='){
-				if (arg1a===arg1c){
-					document.getElementById('line').innerHTML = target;
-				}
-			}
-			else if (arg1b==='>'){
-				if (arg1a>arg1c){
-					document.getElementById('line').innerHTML = target;
-				}
-			}
-			else if (arg1b==='<'){
-				if (arg1a<arg1c){
-					document.getElementById('line').innerHTML = target;
-				}
-			}
-			else if (arg1b==='>='){
-				if (arg1a>=arg1c){
-					document.getElementById('line').innerHTML = target;
-				}
-			}
-			else if (arg1b==='<='){
-				if (arg1a<=arg1c){
-					document.getElementById('line').innerHTML = target;
-				}
-			}
-			else if (arg1b==='!='){
-				if (arg1a!==arg1c){
-					document.getElementById('line').innerHTML = target;
-				}
-			}
-			else {
-				console.error('Misformed comparison "'+arg1b+'"\n@ Line '+linenumber+'\n\t'+command);
-				mconsole('e','Misformed comparison "'+arg1b+'"\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
-				return true;
-			}
-		}
-		// other jumps
-		else {
-			// Determining Argument Type
-			if (Number.isNaN(arg)){
-				var target = program.indexOf(':'+arg);
-			}
-			else {
-				var target = arg;
-			}
-			// Jump Determination
-			if (operation==='JMP'){
-				document.getElementById('line').innerHTML = target;
-			}
-			else if (operation==='JIZ'){
-				if (specialtarget==='0'){
-					document.getElementById('line').innerHTML = target;
-				}
-			}
-			else if (operation==='JNZ'){
-				if (specialtarget!=='0'){
-					document.getElementById('line').innerHTML = target;
-				}
-			}
-			else if (operation==='JIF'){
-				if (specialtarget===specialstate){
-					document.getElementById('line').innerHTML = target;
-				}
-			}
-			else if (operation==='JNE'){
-				if (specialtarget!==specialstate){
-					document.getElementById('line').innerHTML = target;
-				}
-			}
-			else if (operation==='JIG'){
-				if (specialtarget>specialstate){
-					document.getElementById('line').innerHTML = target;
-				}
-			}
-			else if (operation==='JIL'){
-				if (specialtarget<specialstate){
-					document.getElementById('line').innerHTML = target;
-				}
-			}
-			else {
-				console.error('Jump not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
-				mconsole('e','Jump not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
-				return true;
-			}
-		}
-	}
-	else if (operation==='AND'){
-		if (specialtarget==='1'){
-			document.getElementById('x'+pointer).innerHTML = arg;
-		}
-	}
-	else if (operation==='IOR'){
-		if (specialtarget==='0'){
-			document.getElementById('x'+pointer).innerHTML = arg;
-		}
-	}
-	else if (operation==='NEG'){
-		document.getElementById('x'+pointer).innerHTML = -Number(specialtarget);
-	}
-	else if (operation==='INV'){
-		document.getElementById('x'+pointer).innerHTML = 1/Number(specialtarget);
-	}
-	else if (operation==='NOT'){
-		if (specialtarget==='0'){
-			document.getElementById('x'+pointer).innerHTML = '1';
-		}
-		else {
-			document.getElementById('x'+pointer).innerHTML = '0';
-		}
-	}
-	else if (operation==='XOR'){
-		if (specialtarget===arg){
-			document.getElementById('x'+pointer).innerHTML = 0;
-		}
-		else {
-			document.getElementById('x'+pointer).innerHTML = 1;
-		}
-	}
-	else if (operation==='XNR'){
-		if (specialtarget===arg){
-			document.getElementById('x'+pointer).innerHTML = 1;
-		}
-		else {
-			document.getElementById('x'+pointer).innerHTML = 0;
-		}
-	}
-	else if (operation==='NOR'){
-		if (specialtarget===arg && arg==='0'){
-			document.getElementById('x'+pointer).innerHTML = 1;
-		}
-		else {
-			document.getElementById('x'+pointer).innerHTML = 0;
-		}
-	}
-	else if (operation==='NAN'){
-		if (specialtarget===arg && arg==='1'){
-			document.getElementById('x'+pointer).innerHTML = 0;
-		}
-		else {
-			document.getElementById('x'+pointer).innerHTML = 1;
-		}
-	}
-	else if (operation==='MOV'){
-		pointer = mod(pointer+Number(arg),tapesize);
-	}
-	else if (operation==='MMS'){
-		document.getElementById('machinestate').innerHTML = Number(specialstate)+Number(arg);
-	}
-	else if (operation==='APP'){
-		document.getElementById('x'+pointer).innerHTML += arg;
-	}
-	else if (operation==='LET'){
-		var arg1 = arg[0];
-		var arg2 = arg.substring(2);
-		// Figure out if arg2 is a specialchar
-		// Machinestate
-		if (arg2==='*'){
-			arg2 = specialstate;
-		}
-		// Pointer
-		else if (arg2==='$'){
-			arg2 = pointer;
-		}
-		// Value
-		else if (arg2==='@'){
-			arg2 = specialtarget;
-		}
-		// Do shit
-		// Machinestate
-		if (arg1==='*'){
-			document.getElementById('machinestate').innerHTML = arg2;
-		}
-		// Pointer
-		else if (arg1==='$'){
-			pointer = arg2;
-		}
-		// Value
-		else if (arg1==='@'){
-			document.getElementById('x'+pointer).innerHTML = arg2;
-		}
-		// Error
-		else {
-			console.error('Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t<span class="cf">LET</span> '+arg);
-			return true;
-		}
 	}
 	else if (operation==='SWP'){
 		var arg1 = arg[0];
@@ -948,7 +725,7 @@ function fstep(){
 			mconsole('e','Special not in dictionary: '+arg2+'\n@ Line '+linenumber+'\n\t<span class="cf">SWP</span> '+arg);
 			return true;
 		}
-		// Do shit
+		// replacements
 		// Machinestate
 		if (arg1==='*'){
 			arg1 = specialstate;
@@ -983,99 +760,6 @@ function fstep(){
 		else if (oldarg2==='@'){
 			document.getElementById('x'+pointer).innerHTML = arg1;
 		}
-	}
-	else if (operation==='LEN'){
-		document.getElementById('x'+pointer).innerHTML = arg.length;
-	}
-	// WEIRD AND HARDLY USEFUL COMMANDS
-	else if (operation==='FUN'){
-		var otherlinenumber = linenumber+Number(arg);
-		var temp = program[linenumber];
-		program[linenumber] = program[otherlinenumber];
-		program[otherlinenumber] = temp;
-		console.log(program);
-	}
-	else if (operation==='FSW'){
-		// Specials replacement
-		arg = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget);
-		
-		var onelinenumber = Number(arg.split(",")[0]);
-		var anotherlinenumber = Number(arg.split(",")[1]);
-		var temp = program[onelinenumber];
-		program[onelinenumber] = program[anotherlinenumber];
-		program[anotherlinenumber] = temp;
-		console.log(program);
-	}
-	else if (operation==='FRG'){
-		// Specials replacement
-		arg = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget);
-		
-		var onelinenumber = Number(arg.split(/,(.+)/)[0]);
-		var oneargs = arg.split(/,(.+)/)[1];
-		program[onelinenumber] = program[onelinenumber].substring(0,4)+oneargs;
-		console.log(program);
-	}
-	else if (operation==='FAA'){
-		// Specials replacement
-		var args = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget).split(',');
-		var oldcode = program.join('\n');
-		var code1 = oldcode.substring(0,Number(args[0]));
-		var code2 = oldcode.substring(Number(args[2]),Number(args[3]));
-		var code3 = oldcode.substring(Number(args[1]),oldcode.length-1);/*
-		// undef bugfix
-		if (code3===undefined){
-			code3='';
-		}*/
-
-		console.log([code1,code2,code3]);
-		var newcode = code1+code2+code3;
-		
-		console.log(newcode);
-		program = newcode.split('\n');
-	
-		console.log(program);
-	}
-	else if (operation==='I2W'){
-		document.getElementById('x'+pointer).innerHTML = new EnglishNumber(arg);
-	}
-	else if (operation==='SFX'){
-		// Unique
-		if (arg==='PTY'){
-			new Audio('snd/partyhorn.mp3').play();
-		}
-		else if (arg==='SAD'){
-			new Audio('http://www.orangefreesounds.com/wp-content/uploads/2015/07/Sad-trombone.mp3').play();
-		}
-		else if (sfxs[arg]!==undefined){
-			new Audio('https://www.myinstants.com/media/sounds/'+sfxs[arg]+'.mp3').play();
-		}
-		else {
-			console.error('SFX not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','SFX not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t<span class="cf">SFX</span> '+arg);
-			return true;
-		}
-		mconsole('o','sfx');
-	}
-	else if (operation==='QUO'){
-		// Unique
-		if (arg==='PYT'){
-			new Audio('https://www.intriguing.com/mp/_sounds/hg/hamster.wav').play();
-		}
-		else if (quos[arg]!==undefined){
-			new Audio('https://www.myinstants.com/media/sounds/'+quos[arg]+'.mp3').play();
-		}
-		else {
-			console.error('QUO not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','QUO not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t<span class="cf">QUO</span> '+arg);
-			return true;
-		}
-		mconsole('o','sfx');
-	}
-	else if (operation==='OUT'){
-		mconsole('o',arg);
-	}
-	else if (operation==='OUT'){
-		mconsole('o',arg);
 	}
 	else if (operation==='RPN'){
 		console.log(arg);
@@ -1339,11 +1023,8 @@ function fstep(){
 			mconsole('e','RPN error, not enough numbers in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg);
 			return true;
 		}
-	}/*
-	else if (operation==='RER'){
-		document.getElementById('x'+pointer).innerHTML = document.getElementById('x'+pointer).innerHTML.replace( new RegExp(arg1,"gm"),arg2);
-	}*/
-	else if (operation==='WAV'){
+	}
+	/*else if (operation==='WAV'){
 		arg = arg.replace("*",specialstate).replace("$",pointer).replace("@",specialtarget);
 		var arg1 = Number(arg.split(",")[0]);
 		var arg2 = Number(arg.split(",")[1]);
@@ -1377,24 +1058,287 @@ function fstep(){
 			mconsole('e','Song "'+arg3+'" not in dictionary\n@ Line '+linenumber+'\n\t<span class="cf">MID</span> '+arg);
 			return true;
 		}
-	}
-	else if (operation==='IMG'){
-		mconsole('o','<img src="'+arg+'" class="cimg">');
-	}
-	else if (operation==='INP'){
-		var programinput = document.getElementById('input').value.split("\n")[inputline];
-		mconsole('I',programinput);
-		document.getElementById('x'+pointer).innerHTML = programinput;
-		inputline+=1;
-	}
-	else if (operation==='TIM'){
-		document.getElementById('x'+pointer).innerHTML = (new Date).getTime()/1000;
-	}
+	}*/
 	else {
-		console.error('Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
-		mconsole('e','Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
-		return true;
-	}
+	switch (operation){
+		// let
+		case 'LET':
+			var arg1 = arg[0];
+			var arg2 = arg.substring(2);
+			// Figure out if arg2 is a specialchar
+			switch (arg2){
+				case '*':
+					arg2 = specialstate;
+					break;
+				case '$':
+					arg2 = pointer;
+					break;
+				case '@':
+					arg2 = specialtarget;
+					break;
+			}
+			// Do shit
+			switch (arg1){
+				case '*':
+					document.getElementById('machinestate').innerHTML = arg2;
+					break;
+				case '$':
+					pointer = arg2;
+					break;
+				case '@':
+					document.getElementById('x'+pointer).innerHTML = arg2;
+					break;
+				// Error
+				default:
+					console.error('Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t'+command);
+					mconsole('e','Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t<span class="cf">LET</span> '+arg);
+					return true;
+			}
+			break;
+		// jumps
+		case 'JJJ':
+				arg = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget);
+				var arg1 = arg.split(" ")[0];
+				var arg2 = arg.split(" ")[1];
+				var arg1a = arg1.match(/[^<>!=]+(?=[<>!=])/g)[0];
+				var arg1b = arg1.match(/([<>!]?=)|<|>/g)[0];
+				var arg1c = arg1.substring((arg1a+arg1b).length);// no lookbehind
+
+				// Determining Target Type
+				var target = arg2;
+				if (Number.isNaN(Number(arg2))){
+					target = program.indexOf(':'+arg2);
+				}
+				console.log('tgt ->',target);
+				// Determination!
+				switch (arg1b){
+					case '=':
+						if (arg1a===arg1c){
+							document.getElementById('line').innerHTML = target;
+						}
+						break;
+					case '>':
+						if (arg1a>arg1c){
+							document.getElementById('line').innerHTML = target;
+						}
+						break;
+					case '<':
+						if (arg1a<arg1c){
+							document.getElementById('line').innerHTML = target;
+						}
+						break;
+					case '>=':
+						if (arg1a>=arg1c){
+							document.getElementById('line').innerHTML = target;
+						}
+						break;
+					case '<=':
+						if (arg1a<=arg1c){
+							document.getElementById('line').innerHTML = target;
+						}
+						break;
+					case '!=':
+						if (arg1a!==arg1c){
+							document.getElementById('line').innerHTML = target;
+						}
+						break;
+					default:
+						console.error('Misformed comparison "'+arg1b+'"\n@ Line '+linenumber+'\n\t'+command);
+						mconsole('e','Misformed comparison "'+arg1b+'"\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+						return true;
+				}
+			break;
+		// deprecated
+		case 'ADD':
+			document.getElementById('x'+pointer).innerHTML = Number(specialtarget)+Number(arg);
+			break;
+		case 'MUL':
+			document.getElementById('x'+pointer).innerHTML = Number(specialtarget)*Number(arg);
+			break;
+		case 'EXP':
+			document.getElementById('x'+pointer).innerHTML = Math.pow(Number(specialtarget),Number(arg));
+			break;
+		case 'NRT':
+			document.getElementById('x'+pointer).innerHTML = Math.pow(Number(specialtarget),1/Number(arg));
+			break;
+		case 'DIV':
+			document.getElementById('x'+pointer).innerHTML = Number(specialtarget)/Number(arg);
+			break;
+		case 'MOD':
+			document.getElementById('x'+pointer).innerHTML = mod(Number(specialtarget),Number(arg));
+			break;	
+		case 'AND':
+			if (specialtarget==='1'){
+				document.getElementById('x'+pointer).innerHTML = arg;
+			}
+			break;
+		case 'IOR':
+			if (specialtarget==='0'){
+				document.getElementById('x'+pointer).innerHTML = arg;
+			}
+			break;
+		case 'NEG':
+			document.getElementById('x'+pointer).innerHTML = -Number(specialtarget);
+			break;
+		case 'INV':
+			document.getElementById('x'+pointer).innerHTML = 1/Number(specialtarget);
+			break;
+		case 'XOR':
+			if (specialtarget===arg){
+				document.getElementById('x'+pointer).innerHTML = 0;
+			}
+			else {
+				document.getElementById('x'+pointer).innerHTML = 1;
+			}
+			break;
+		case 'XNR':
+			if (specialtarget===arg){
+				document.getElementById('x'+pointer).innerHTML = 1;
+			}
+			else {
+				document.getElementById('x'+pointer).innerHTML = 0;
+			}
+			break;
+		case 'NOR':
+			if (specialtarget===arg && arg==='0'){
+				document.getElementById('x'+pointer).innerHTML = 1;
+			}
+			else {
+				document.getElementById('x'+pointer).innerHTML = 0;
+			}
+			break;
+		case 'NAN':
+			if (specialtarget===arg && arg==='1'){
+				document.getElementById('x'+pointer).innerHTML = 0;
+			}
+			else {
+				document.getElementById('x'+pointer).innerHTML = 1;
+			}
+			break;
+		// NOT deprecated
+		case 'APP':
+			document.getElementById('x'+pointer).innerHTML += arg;
+			break;
+		case 'I2W':
+			document.getElementById('x'+pointer).innerHTML = new EnglishNumber(arg);
+			break;
+		case 'IMG':
+			mconsole('o','<img src="'+arg+'" class="cimg">');
+			break;
+		case 'INP':
+			var programinput = document.getElementById('input').value.split("\n")[inputline];
+			mconsole('I',programinput);
+			document.getElementById('x'+pointer).innerHTML = programinput;
+			inputline+=1;
+			break;
+		case 'LEN':
+			document.getElementById('x'+pointer).innerHTML = arg.length;
+			break;
+		case 'MMS':
+			document.getElementById('machinestate').innerHTML = Number(specialstate)+Number(arg);
+			break;
+		case 'MOV':
+			pointer = mod(pointer+Number(arg),tapesize);
+			break;
+		case 'NOT':
+			if (specialtarget==='0'){
+				document.getElementById('x'+pointer).innerHTML = '1';
+			}
+			else {
+				document.getElementById('x'+pointer).innerHTML = '0';
+			}
+			break;
+		case 'OUT':
+			mconsole('o',arg);
+			break;
+		case 'QUO':
+			// Unique
+			if (arg==='PYT'){
+				new Audio('https://www.intriguing.com/mp/_sounds/hg/hamster.wav').play();
+			}
+			else if (quos[arg]!==undefined){
+				new Audio('https://www.myinstants.com/media/sounds/'+quos[arg]+'.mp3').play();
+			}
+			else {
+				console.error('QUO not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t'+command);
+				mconsole('e','QUO not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t<span class="cf">QUO</span> '+arg);
+				return true;
+			}
+			mconsole('o','sfx');
+			break;
+		/*case 'RER':
+			document.getElementById('x'+pointer).innerHTML = document.getElementById('x'+pointer).innerHTML.replace( new RegExp(arg1,"gm"),arg2);
+			break;*/
+		case 'SFX':
+			// Unique
+			if (arg==='PTY'){
+				new Audio('snd/partyhorn.mp3').play();
+			}
+			else if (arg==='SAD'){
+				new Audio('http://www.orangefreesounds.com/wp-content/uploads/2015/07/Sad-trombone.mp3').play();
+			}
+			else if (sfxs[arg]!==undefined){
+				new Audio('https://www.myinstants.com/media/sounds/'+sfxs[arg]+'.mp3').play();
+			}
+			else {
+				console.error('SFX not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t'+command);
+				mconsole('e','SFX not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t<span class="cf">SFX</span> '+arg);
+				return true;
+			}
+			mconsole('o','sfx');
+			break;
+		case 'TIM':
+			document.getElementById('x'+pointer).innerHTML = (new Date).getTime()/1000;
+			break;
+		// WEIRD AND HARDLY USEFUL COMMANDS
+		case 'FUN':
+			var otherlinenumber = linenumber+Number(arg);
+			var temp = program[linenumber];
+			program[linenumber] = program[otherlinenumber];
+			program[otherlinenumber] = temp;
+			console.log(program);
+			break;
+		case 'FSW':
+			// Specials replacement
+			arg = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget);
+			
+			var onelinenumber = Number(arg.split(",")[0]);
+			var anotherlinenumber = Number(arg.split(",")[1]);
+			var temp = program[onelinenumber];
+			program[onelinenumber] = program[anotherlinenumber];
+			program[anotherlinenumber] = temp;
+			console.log(program);
+			break;
+		case 'FRG':
+			// Specials replacement
+			arg = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget);
+			
+			var onelinenumber = Number(arg.split(/,(.+)/)[0]);
+			var oneargs = arg.split(/,(.+)/)[1];
+			program[onelinenumber] = program[onelinenumber].substring(0,4)+oneargs;
+			console.log(program);
+			break;
+		case 'FAA':
+			// Specials replacement
+			var args = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget).split(',');
+			var oldcode = program.join('\n');
+			var code1 = oldcode.substring(0,Number(args[0]));
+			var code2 = oldcode.substring(Number(args[2]),Number(args[3]));
+			var code3 = oldcode.substring(Number(args[1]),oldcode.length-1);
+
+			console.log([code1,code2,code3]);
+			var newcode = code1+code2+code3;
+			
+			console.log(newcode);
+			program = newcode.split('\n');
+		
+			console.log(program);
+			break;
+		default:
+			console.error('Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('e','Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
+			return true;
+	}}
 	document.getElementById('pointing').innerHTML=pointer;
 	document.getElementById('x'+pointer).classList.add("pointed");
 	return false;

@@ -63,7 +63,7 @@
 	Line <span id="line">0</span>
 	 | Pointer: <span id="pointing">0</span>
 	 | State: <span id="machinestate">[PRESS RESET]</span>
-	<pre id='console'><i>MOCHINE rev 180116f</i></pre>
+	<pre id='console'><i>MOCHINE rev 180117a</i></pre>
 	<span class='invisible'>&downarrow; MEMORY &downarrow;</span>
 </div>
 <div class='invisible' id="memory"></div>
@@ -368,7 +368,7 @@ APP *
 APP  bottles of beer on the wall!
 OUT @
 MOV 1
-JNE 1
+JJJ @!=* 1
 LET @ No more bottles of beer on the wall, no more bottles of beer! 
 APP Go to the store and buy some more, 99 bottles of beer on the wall! 
 OUT @
@@ -379,26 +379,28 @@ OUT @
 	Does not terminate. 
 </p>
 <pre>
-LET @ *
-MOD 15
-JIZ XV
-MOD 5
-JIZ V
-LET @ *
-MOD 3
-JIZ III
+LET @ 0
+RPN *,15,%
+JJJ @=0 XV
+LET @ 0
+RPN *,5,%
+JJJ @=0 V
+LET @ 0
+RPN *,3,%
+JJJ @=0 III
 OUT *
+:Z
 MMS 1
-JMP 0
+JJJ 1=1 0
 :III
 OUT Fizz
-JMP 9
+JJJ 1=1 Z
 :V
 OUT Buzz
-JMP 9
+JJJ 1=1 Z
 :XV
 OUT FizzBuzz
-JMP 9
+JJJ 1=1 Z
 </pre>
 
 <h3 id='Currentyear'>Currentyear</h3>
@@ -422,7 +424,7 @@ RPN *,31556952,/1970,+#
 OUT @
 </pre>
 
-<h3 id='99_Bottles_of_FizzBuzz'>99 Bottles of FizzBuzz</h3>
+<!--<h3 id='99_Bottles_of_FizzBuzz'>99 Bottles of FizzBuzz</h3>
 <p>
 	Broken... dunno why. Terminates. Not pretty. 977 bytes.
 </p>
@@ -523,7 +525,7 @@ MOV -1
 APP Beer
 JMP 4
 :X
-</pre>
+</pre>-->
 
 <h3 id='Addition'>Addition</h3>
 <p>
@@ -550,9 +552,9 @@ OUT @
 <pre>
 INP
 LET * Alice
-JIF 5
+JJJ @=* 5
 LET * Bob
-JNE X
+JJJ @!=* X
 LET @ Welcome, 
 APP *
 OUT @
@@ -579,16 +581,16 @@ OUT @
 INP
 LET * @
 MOD 400
-JIZ T
+JJJ @=0 T
 LET @ *
 MOD 100
-JIZ F
+JJJ @=0 F
 LET @ *
 MOD 4
-JNZ F
+JJJ @!=0 F
 :T
 LET @ 1
-JMP X
+JJJ 1=1 X
 :F
 LET @ 0
 :X
@@ -598,15 +600,15 @@ OUT @
 INP
 LET * @
 MOD 400
-JIZ 10
+JJJ @=0 10
 LET @ *
 MOD 100
-JIZ 12
+JJJ @=0 12
 LET @ *
 MOD 4
-JNZ 12
+JJJ @!=0 12
 LET @ 1
-JMP 13
+JJJ 1=1 13
 LET @ 0
 OUT @
 </pre>
