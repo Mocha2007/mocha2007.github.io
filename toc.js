@@ -1,12 +1,11 @@
 window.onload = function MakeTOC() {
 	//.getElementsByTagName('h1,h2,h3,h4,h5,h6')
 	namedheaders = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id],b.sub,b.super');
-
+	/*details open*/
 	var text = `
-	<div class="desc">Navigation<br>
-	<a href="index.html">Home</a></div>
-	<details open>
-		<summary>On This Page</summary>`;
+	<details><summary>Navigation</summary>
+	<div class="desc"><a href="index.html">Home</a></div>
+	On This Page<br/>`;
 
 	for (i=0;i<namedheaders.length;i++) {
 		if (namedheaders[i].tagName == 'B') {
