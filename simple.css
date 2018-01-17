@@ -1,4 +1,4 @@
-body{margin:40px auto;max-width:700px;line-height:1.6;font-size:18px;color:#444;padding:0 10px;background-color:#ccc;text-align:justify;}
+body{font-family:Open Sans,sans-serif;margin:40px auto;max-width:700px;line-height:1.6;font-size:18px;color:#444;padding:0 10px;background-color:#ccc;text-align:justify;}
 p{text-indent:45px;}
 table{border-collapse:collapse;margin:auto;}
 th,td{border:2px solid #333;text-align:center;}
