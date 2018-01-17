@@ -1,4 +1,4 @@
-var versionno = '1';
+var versionno = '1.1';
 /* Introduce l8r
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -180,8 +180,8 @@ function fstep(){
 				}
 				// StringModuloError
 				if (typeof a+b === 'string'){
-					console.error('string division\n@ Char '+line+'\n\t'+command);
-					mconsole('e','string division\n@ Char '+line+'\n\t'+command);
+					console.error('string modulo\n@ Char '+line+'\n\t'+command);
+					mconsole('e','string modulo\n@ Char '+line+'\n\t'+command);
 					return true;
 				}
 				stack.push(mod(a,b));
@@ -243,7 +243,6 @@ function fstep(){
 				// duplicate string if a is string
 				if (typeof a === 'string'){
 					stack.push((new Array(b+1)).join(a));
-					console.log((new Array(b+1)).join(a))
 				}
 				else {
 					stack.push(a*b);
@@ -283,19 +282,29 @@ function fstep(){
 			case '/':
 				b = stack.pop();
 				a = stack.pop();
+				// use charcode if b is string
+				if (typeof b === 'string'){
+					b = b.charCodeAt(0);
+				}
 				// ZeroDivisionError
 				if (b===0){
 					console.error('zero divisor\n@ Char '+line+'\n\t'+command);
 					mconsole('e','zero divisor\n@ Char '+line+'\n\t'+command);
 					return true;
 				}
-				// bitch and whine if either var is a string
-				if (typeof a+b === 'string'){
-					console.error('string division\n@ Char '+line+'\n\t'+command);
-					mconsole('e','string division\n@ Char '+line+'\n\t'+command);
-					return true;
+				// yes, strings can be divided too!
+				if (typeof a === 'string'){
+					c = a.slice(0,Math.floor(a.length/b));
+					if (c!==''){
+						stack.push(c);
+					}
+					else {
+						stack.push(0);
+					}
 				}
-				stack.push(a/b);
+				else {
+					stack.push(a/b);
+				}
 				break;
 			// #s
 			case '0':
@@ -459,19 +468,42 @@ function fstep(){
 			case '^':
 				b = stack.pop();
 				a = stack.pop();
-				// 0^0Error
-				if (a===0 && b===0){
+				// use charcode if b is string
+				if (typeof b === 'string'){
+					b = b.charCodeAt(0);
+				}
+				// 0^0 Error
+				if (a===0 && b<=0){
 					console.error('zero power\n@ Char '+line+'\n\t'+command);
 					mconsole('e','zero power\n@ Char '+line+'\n\t'+command);
 					return true;
 				}
-				// string error
-				if (typeof a+b === 'string'){
-					console.error('string exponentiation\n@ Char '+line+'\n\t'+command);
-					mconsole('e','string exponentiation\n@ Char '+line+'\n\t'+command);
+				// -x^R Error
+				if (a<0 && b%1!==0){
+					console.error('complex exponentiation\n@ Char '+line+'\n\t'+command);
+					mconsole('e','complex exponentiation\n@ Char '+line+'\n\t'+command);
 					return true;
 				}
-				stack.push(Math.pow(a,b));
+				// string
+				if (typeof a === 'string'){
+					if (b===0){
+						stack.push(1);
+					}
+					if (b===1){
+						stack.push(a);
+					}
+					else {
+						c = a.charCodeAt(0);
+						var newa = '';
+						for (i=1;i<b;i+=1){ // multiply a by itself b times
+							newa+=(new Array(c+1)).join(a);
+						}
+						stack.push(newa);
+					}
+				}
+				else {
+					stack.push(Math.pow(a,b));
+				}
 				break;
 			// _ undefined
 			// ` undefined
@@ -510,7 +542,16 @@ function fstep(){
 					}
 				}
 				break;
-			// ~ undefined
+			// ~ negate top of stack, or reverse it if string
+			case '~':
+				a = stack.pop();
+				if (typeof a === 'string'){
+					stack.push(a.split("").reverse().join("")); // todo: https://github.com/mathiasbynens/esrever ?
+				}
+				else {
+					stack.push(-a);
+				}
+				break;
 			// error
 			default:
 				console.error('Operation not in dictionary: '+command+'\n@ Char '+line+'\n\t'+command);
