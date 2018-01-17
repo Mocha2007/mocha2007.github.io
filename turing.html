@@ -43,7 +43,7 @@ td{font-family: Monospace;background-color:#000;color:#ccc;text-align:justify;}
 	Line <span id="line">0</span>
 	 | Pointer: <span id="pointing">0</span>
 	 | State: <span id="machinestate">[PRESS RESET]</span>
-	<pre id='console'><i>MOCHINE rev 180116d</i></pre>
+	<pre id='console'><i>MOCHINE rev 180116e</i></pre>
 	<span class='invisible'>&downarrow; MEMORY &downarrow;</span>
 </div>
 <div class='invisible' id="memory"></div>
@@ -450,17 +450,16 @@ JMP 4
 	Adds the numbers 5 and 8
 </p>
 <pre>
-LET @ 5
-ADD 8
+RPN 5,8,+
 OUT @
 </pre>
 
 <h3 id='Identification'>Identification</h3>
 <p>
-	Checks to see if Chuck is Alice or Bob, and, if so, Greet them.
+	Checks to see if input is Alice or Bob, and, if so, Greet them.
 </p>
 <pre>
-LET @ Chuck
+INP
 LET * Alice
 JIF 5
 LET * Bob
@@ -473,65 +472,22 @@ OUT @
 
 <h3 id='Triangular_Number'>Triangular Number</h3>
 <p>
-	Finds the nth triangular number, using only the addition operator. Also, I have ADD included a compressed version of the same program, and a version using exponentiation and division. 
+	Finds the nth triangular number.
 </p>
 <pre>
-LET @ 10
-LET * @
-MOV 1
-LET @ *
-ADD -1
-JNZ 1
-MOV -1
-:A
-MOV -1
-ADD 1
-MOV 1
-ADD -1
-JNZ A
-MOV -2
-JIZ X
-MOV 1
-JMP A
-:X
-MOV 1
-OUT @
-</pre>
-<pre>
-LET @ 10
-LET * @
-MOV 1
-LET @ *
-ADD -1
-JNZ 1
-MOV -1
-MOV -1
-ADD 1
-MOV 1
-ADD -1
-JNZ 7
-MOV -2
-JIZ 15
-MOV 1
-JNZ 7
-MOV 1
-OUT @
-</pre>
-<pre>
-LET @ 10
-LET * @
-EXP 2
-ADD *
-DIV 2
+INP
+RPN @,2,^2
+SWP @ *
+RPN *,2,/
 OUT @
 </pre>
 
 <h3 id='Leap_Year'>Leap Year</h3>
 <p>
-	Checks whether 2018 is a leap year or not. Includes compressed version. 
+	Checks whether input is a leap year or not. Includes compressed version. 
 </p>
 <pre>
-LET @ 2018
+INP
 LET * @
 MOD 400
 JIZ T
@@ -550,7 +506,7 @@ LET @ 0
 OUT @
 </pre>
 <pre>
-LET @ 2018
+INP
 LET * @
 MOD 400
 JIZ 10
@@ -566,7 +522,7 @@ LET @ 0
 OUT @
 </pre>
 
-<h3 id='Sorting'>Sorting</h3>
+<!--<h3 id='Sorting'>Sorting</h3>
 <p>
 	Finds the largest entry and prints it in the first square. 
 </p>
@@ -579,7 +535,7 @@ LET * @
 JMP 0
 LET $ 0
 OUT *
-</pre>
+</pre>-->
 
 <h3 id='Almost-Quines'>Almost-Quines</h3>
 <p>
