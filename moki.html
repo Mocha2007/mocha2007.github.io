@@ -31,8 +31,7 @@
 	<script src="moki.js"></script>
 	<style>
 		#program{text-align:center;}
-		.pointed{color:#080;background-color: #CEC;text-style:bold;}
-		pre{font-family:Monospace;background-color:#000;color:#ccc;}
+		dl,pre,td{font-family:monospace;background-color:#000;color:#ccc;text-align:left;}
 		#console{text-align:left;padding-left:9px;padding-right:9px;}
 		.ci{color:#48F;}
 		.cw{color:#FC0;}
@@ -41,8 +40,6 @@
 		.cf{color:#F8F;}
 		.invisible{display:none;}
 		.cimg{max-width:642px;}
-		pre summary{text-indent:64px;}
-		td{font-family:monospace;background-color:#000;color:#ccc;text-align:justify;}
 	</style>
 </head>
 
@@ -64,15 +61,81 @@
 	<pre id='console'><i>Moki rev 1</i></pre>
 </div>
 
-<h2 id='Dictionary'>Dictionary</h2>
+<h2 id='Introduction'>Introduction</h2>
 
 <p>
 	<b>Moki</b> is a computationally universal programming language. 
+	After dissatisfaction with my first language, <a href='turing.html'>Mochine</a>, I've since turned to more <i>golfy</i> methods of representation. 
+	In this aspect I've made as many functions as string-compatible as possible. 
+	Multiplication even works between strings, and I hope to someday get division and exponentiation running too. 
+	Instead of erroring out I try and think of alternative uses until the logic simply breaks down and I have to issue an error. 
 </p>
 
-<pre>
-(Dictionary coming soon!)
-</pre>
+<h2 id='Dictionary'>Dictionary</h2>
+
+<p>
+	Let S<sub>n</sub> = the nth item in the stack (looking down, eg., top of stack = 0). 
+</p>
+
+<dl>
+	<dt>(Whitespace)</dt>
+		<dd>
+		Does nothing.
+		</dd>
+	<dt>!</dt>
+		<dd>
+		! := S<sub>0</sub>(&lambda;x.x==0 ? 1 : 0)
+		</dd>
+	<dt>"</dt>
+		<dd>
+		if S<sub>0</sub> is a Real &rarr; converts S<sub>0</sub> from decimal to unicode<br/>
+		if S<sub>0</sub> is a String &rarr; do nothing
+		</dd>
+	<dt>#</dt>
+		<dd>
+		Delimits comments.
+		</dd>
+	<dt>$</dt>
+		<dd>
+		Push next line of input to stack. 
+		</dd>
+	<dt>%</dt>
+		<dd>
+		S<sub>1</sub> = S<sub>1</sub> mod S<sub>0</sub>, pop S<sub>0</sub>
+		</dd>
+	<dt>&amp;</dt>
+		<dd>
+		&amp; := (S<sub>0</sub>,S<sub>1</sub>)(&lambda;(y,x).(x!=0 &amp; y!=0) ? x : 0) 
+		</dd>
+	<dt>'</dt>
+		<dd>
+		Delimits strings.
+		</dd>
+	<dt>(</dt>
+		<dd>
+		if S<sub>0</sub> is a Real &rarr; decrement<br/>
+		if S<sub>0</sub> is a String &rarr; decrement its decimal value, but keep it a string
+		</dd>
+	<dt>)</dt>
+		<dd>
+		if S<sub>0</sub> is a Real &rarr; increment<br/>
+		if S<sub>0</sub> is a String &rarr; increment its decimal value, but keep it a string
+		</dd>
+	<dt>*</dt>
+		<dd>
+		if S<sub>0</sub> is a String, return as if it were S<sub>0</sub>.charCodeAt(0)<br/>
+		if S<sub>1</sub> is a Real &rarr; S<sub>1</sub> = S<sub>0</sub>S<sub>1</sub><br/>
+		if S<sub>1</sub> is a String &rarr; concatenate it S<sub>0</sub> times<br/>
+		don't forget to pop S<sub>0</sub>
+		</dd>
+	<dt>+</dt>
+		<dd>
+		if both are reals, return their sum<br/>
+		else return their concatenation<br/>
+		don't forget to pop S<sub>0</sub>
+		</dd>
+	Todo: Finish Dictionary
+</dl>
 
 <h2 id='Programs'>Programs</h2>
 
