@@ -114,7 +114,7 @@ function factorial(n){
 	}
 	return f[n] = factorial(n-1) * n;
 }
-/* possibly breaks mobile
+
 // http://marcgg.com/blog/2016/11/01/javascript-audio
 var context = new AudioContext();
 function beep(hz,s,wave){
@@ -370,7 +370,7 @@ async function mochsic(song){
 		}
 		await sleep(1000*fullnote*song[0]);
 	}
-}*/
+}
 
 function nPr(n,k){
 	return factorial(n)/factorial(n-k);
