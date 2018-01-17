@@ -608,6 +608,12 @@ function fstep(){
 		command[0] += ' ';
 		command = command.join('');
 	}
+	// If still nonalphanumeric characters in first slot, then invalid shortcut error
+	if ('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.indexOf(command[0])===-1){
+		console.error('"'+command[0]+'" not valid shortcut\n@ Line '+linenumber+'\n\t'+command);
+		mconsole('e','"'+command[0]+'" not valid shortcut\n@ Line '+linenumber+'\n\t'+command);
+		return true;
+	}
 	// Determining arguments
 	var arg = command.substring(4);
 	switch (arg){
