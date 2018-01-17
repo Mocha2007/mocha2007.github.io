@@ -391,16 +391,16 @@ JJJ @=0 III
 OUT *
 :Z
 MMS 1
-JJJ 1=1 0
+JJJ 1 0
 :III
 OUT Fizz
-JJJ 1=1 Z
+JJJ 1 Z
 :V
 OUT Buzz
-JJJ 1=1 Z
+JJJ 1 Z
 :XV
 OUT FizzBuzz
-JJJ 1=1 Z
+JJJ 1 Z
 </pre>
 
 <h3 id='Currentyear'>Currentyear</h3>
@@ -573,9 +573,50 @@ RPN *,2,/
 OUT @
 </pre>
 
+<h3 id='Fibonacci_Numbers'>Fibonacci Numbers</h3>
+<p>
+	Prints the fibonacci numbers. <i>All</i> of them. 
+</p>
+<pre>
+OUT 0
+LET @ 1
+OUT @
+MOV 1
+LET @ 1
+:MAIN
+OUT @
+LET * @
+MOV -1
+RPN *,
+OUT @
+LET * @
+MOV 1
+RPN *,
+JJJ 1 MAIN
+</pre>
+<p>
+	Compressed version. 67 bytes.
+</p>
+<pre>
+o0
+=@ 1
+o@
+m1
+=@ 1
+o@
+=* @
+m-1
+r*,
+o@
+=* @
+m1
+r*,
+j1 5
+</pre>
+
 <h3 id='Leap_Year'>Leap Year</h3>
 <p>
-	Checks whether input is a leap year or not. Includes compressed version. 
+	Checks whether input is a leap year or not. Includes compressed version (95 bytes). 
 </p>
 <pre>
 INP
@@ -590,27 +631,27 @@ MOD 4
 JJJ @!=0 F
 :T
 LET @ 1
-JJJ 1=1 X
+JJJ 1 X
 :F
 LET @ 0
 :X
 OUT @
 </pre>
 <pre>
-INP
-LET * @
+i
+=* @
 MOD 400
-JJJ @=0 10
-LET @ *
+j@=0 10
+=@ *
 MOD 100
-JJJ @=0 12
-LET @ *
+j@=0 12
+=@ *
 MOD 4
-JJJ @!=0 12
-LET @ 1
-JJJ 1=1 13
-LET @ 0
-OUT @
+j@!=0 12
+=@ 1
+j1 13
+=@ 0
+o@
 </pre>
 
 <!--<h3 id='Sorting'>Sorting</h3>

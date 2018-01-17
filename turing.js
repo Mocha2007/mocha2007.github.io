@@ -1100,52 +1100,56 @@ function fstep(){
 				arg = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget);
 				var arg1 = arg.split(" ")[0];
 				var arg2 = arg.split(" ")[1];
-				var arg1a = arg1.match(/[^<>!=]+(?=[<>!=])/g)[0];
-				var arg1b = arg1.match(/([<>!]?=)|<|>/g)[0];
-				var arg1c = arg1.substring((arg1a+arg1b).length);// no lookbehind
-
 				// Determining Target Type
 				var target = arg2;
 				if (Number.isNaN(Number(arg2))){
 					target = program.indexOf(':'+arg2);
 				}
-				console.log('tgt ->',target);
-				// Determination!
-				switch (arg1b){
-					case '=':
-						if (arg1a===arg1c){
-							document.getElementById('line').innerHTML = target;
-						}
-						break;
-					case '>':
-						if (arg1a>arg1c){
-							document.getElementById('line').innerHTML = target;
-						}
-						break;
-					case '<':
-						if (arg1a<arg1c){
-							document.getElementById('line').innerHTML = target;
-						}
-						break;
-					case '>=':
-						if (arg1a>=arg1c){
-							document.getElementById('line').innerHTML = target;
-						}
-						break;
-					case '<=':
-						if (arg1a<=arg1c){
-							document.getElementById('line').innerHTML = target;
-						}
-						break;
-					case '!=':
-						if (arg1a!==arg1c){
-							document.getElementById('line').innerHTML = target;
-						}
-						break;
-					default:
-						console.error('Misformed comparison "'+arg1b+'"\n@ Line '+linenumber+'\n\t'+command);
-						mconsole('e','Misformed comparison "'+arg1b+'"\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
-						return true;
+				// Main
+				if (arg1==='1'){
+					document.getElementById('line').innerHTML = target;
+				}
+				else {
+					var arg1a = arg1.match(/[^<>!=]+(?=[<>!=])/g)[0];
+					var arg1b = arg1.match(/([<>!]?=)|<|>/g)[0];
+					var arg1c = arg1.substring((arg1a+arg1b).length);// no lookbehind
+					// Determination!
+					switch (arg1b){
+						case '=':
+							if (arg1a===arg1c){
+								document.getElementById('line').innerHTML = target;
+							}
+							break;
+						case '>':
+							if (arg1a>arg1c){
+								document.getElementById('line').innerHTML = target;
+							}
+							break;
+						case '<':
+							if (arg1a<arg1c){
+								document.getElementById('line').innerHTML = target;
+							}
+							break;
+						case '>=':
+							if (arg1a>=arg1c){
+								document.getElementById('line').innerHTML = target;
+							}
+							break;
+						case '<=':
+							if (arg1a<=arg1c){
+								document.getElementById('line').innerHTML = target;
+							}
+							break;
+						case '!=':
+							if (arg1a!==arg1c){
+								document.getElementById('line').innerHTML = target;
+							}
+							break;
+						default:
+							console.error('Misformed comparison "'+arg1b+'"\n@ Line '+linenumber+'\n\t'+command);
+							mconsole('e','Misformed comparison "'+arg1b+'"\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+							return true;
+					}
 				}
 			break;
 		// deprecated
