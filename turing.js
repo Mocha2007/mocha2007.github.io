@@ -1351,6 +1351,9 @@ function fstep(){
 		document.getElementById('x'+pointer).innerHTML = programinput;
 		inputline+=1;
 	}
+	else if (operation==='TIM'){
+		document.getElementById('x'+pointer).innerHTML = (new Date).getTime()/1000;
+	}
 	else {
 		console.error('Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
 		mconsole('e','Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
