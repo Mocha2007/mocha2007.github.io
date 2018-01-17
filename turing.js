@@ -1130,6 +1130,11 @@ function fstep(){
 					currentstring = String(Math.random()*Number(currentstring));
 				}
 			}
+			else if (arg[i]==='R'){
+				var b = rpnstack.pop();
+				var a = rpnstack.pop();
+				rpnstack.push(Math.random()*(b-a)-a);
+			}
 			else if (arg[i]==='l'){
 				rpnstack[rpnstack.length-2] = Math.log(rpnstack[rpnstack.length-2])/Math.log(rpnstack[rpnstack.length-1]);
 				rpnstack.pop();

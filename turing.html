@@ -54,6 +54,10 @@ td{font-family: Monospace;background-color:#000;color:#ccc;text-align:justify;}
 </p>
 
 <pre>
+<!--
+TODO
+regex
+-->
 # = number
 ? = string or number
 ! = specialchar
@@ -93,7 +97,7 @@ RPN ? : set value at pointer to itself plus the evaluation of the
 	Valid operators: + - x / % ^ ! <abbr title='-x'>~</abbr> <abbr title='rnd(x)'>#</abbr> <abbr title='floor(x)'>[</abbr> <abbr title='ceil(x)'>]</abbr> <abbr title='|x|'>|</abbr> <abbr title='logy(x)'>l</abbr> <abbr title='ln(x)'>L</abbr> <abbr title='sin(x)'>s</abbr> <abbr title='asin(x)'>S</abbr> <abbr title='cos(x)'>c</abbr> <abbr title='acos(x)'>C</abbr> <abbr title='tan(x)'>t</abbr> <abbr title='atan(x)'>T</abbr>
 	Valid truth operators: <abbr title='x==y ? 1 : 0'>=</abbr> <abbr title='x!=y ? 1 : 0'>?</abbr> <abbr title='x>y ? 1 : 0'>&lt;</abbr> <abbr title='x<y ? 1 : 0'>></abbr>
 	Valid advanced operators: <abbr title='Minimum of stack'>m</abbr> <abbr title='Maximum of stack'>M</abbr> <abbr title='x nCr y'>n</abbr> <abbr title='x nPr y'>N</abbr> <abbr title='Principal zero of the quadratic'>q</abbr> <abbr title='Other zero of the quadratic'>Q</abbr> <abbr title='Treats stack as constants of a polynomial and finds the first derivative'>'</abbr> <abbr title='Same as last, but second derivative'>"</abbr> <abbr title="Applies Heron's formula to top three on stack">h</abbr>
-	Valid constants: <abbr title='e'>e</abbr> <abbr title='&gamma;'>g</abbr> <abbr title='&pi;'>p</abbr> <abbr title='random x on [0,1]'>r</abbr>
+	Valid constants: <abbr title='e'>e</abbr> <abbr title='&gamma;'>g</abbr> <abbr title='&pi;'>p</abbr> <abbr title='random # on [0,1]'>r</abbr> <abbr title='random # on [x,y] &rarr; x'>R</abbr>
 	Valid <a href="http://www.golfscript.com/golfscript/builtin.html">GolfScript</a> stack manipulation ops: <abbr title='Swap top two elements of the stack'>\</abbr> <abbr title='Pop and discard top of stack'>;</abbr> <abbr title='Duplicate top of stack'>.</abbr> <abbr title='Decrement top of stack'>(</abbr> <abbr title='Increment top of stack'>)</abbr>
 XNR ? : set value at pointer to 1 if argument same as itself, else 0
 XOR ? : set value at pointer to 0 if argument same as itself, else 1
