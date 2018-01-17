@@ -1,4 +1,4 @@
-var versionno = '180116e';
+var versionno = '180116f';
 // Myinstants
 var quos = [];
 quos.ALH = 'boom_9';
@@ -587,6 +587,31 @@ function fstep(){
 	// Grabbing specials beforehand
 	var specialstate = document.getElementById('machinestate').innerHTML;
 	var specialtarget = document.getElementById('x'+pointer).innerHTML;
+	// replacing shorthand operation mode
+	if ('i!t&a|lsmor^j=x'.indexOf(command[0])!==-1){
+		command = command.split('');
+		console.warn(command);
+		command[0] = command[0].replace('i','INP');
+		command[0] = command[0].replace('!','NOT');
+		command[0] = command[0].replace('t','TIM');
+		command[0] = command[0].replace('&','AND');
+		command[0] = command[0].replace('a','APP');
+		command[0] = command[0].replace('|','IOR');
+		command[0] = command[0].replace('l','LEN');
+		command[0] = command[0].replace('s','MMS');
+		command[0] = command[0].replace('m','MOV');
+		command[0] = command[0].replace('o','OUT');
+		command[0] = command[0].replace('r','RPN');
+		command[0] = command[0].replace('^','XOR');
+		command[0] = command[0].replace('j','JJJ');
+		command[0] = command[0].replace('=','LET');
+		command[0] = command[0].replace('x','SWP');
+		console.warn(command);
+		command[0] += ' ';
+		console.warn(command);
+		command = command.join('');
+		console.warn(command);
+	}
 	// Determining arguments
 	arg = command.substring(4);
 	if (arg==='*'){
@@ -599,6 +624,7 @@ function fstep(){
 		arg = specialtarget;
 	}
 	var operation = command.substring(0,3);
+	
 	var badop = 'Useless operation written by a useless coder\n@ Line ';
 	// Generating warning for deprecated ops
 	if ('ADD DIV EXP INV MOD MUL NEG NRT'.indexOf(operation)!==-1){
@@ -609,6 +635,11 @@ function fstep(){
 	if ('JIF JIG JIL JIZ JMP JNE JNZ'.indexOf(operation)!==-1){
 			console.warn(operation+' is deprecated, use JJJ instad.\n@ Line '+linenumber+'\n\t'+command);
 			mconsole('w','<span class="cf">'+operation+'</span> is deprecated, use <span class="cf">JJJ</span> instad.\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+	}
+	// Generating warning for deprecated ops
+	if ('NAN NOR XNR'.indexOf(operation)!==-1){
+			console.warn(operation+' is deprecated, use INV + its opposite instad.\n@ Line '+linenumber+'\n\t'+command);
+			mconsole('w','<span class="cf">'+operation+'</span> is deprecated, use <span class="cf">INV</span>  + its opposite instad.\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 	}
 	// Generating warning for specialchar-duped ops
 	if ('LET SWP'.indexOf(operation)!==-1 && ['* *','$ $','@ @'].indexOf(arg)!==-1){
