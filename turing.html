@@ -345,36 +345,122 @@ MM can emulate Brainflak programs, if I understand it correctly, with some more 
 
 <h2 id='Programs'>Programs</h2>
 
-<h3 id='Hello,_World!'>Hello, World!</h3>
+<h3 id='egg'>egg (7 bytes)</h3>
+<p>
+	Prints 1 without using any numbers. 
+</p>
+<pre>
+RPN egg,]
+OUT @
+</pre>
+<p>
+	Compressed: 7 bytes.
+</p>
+<pre>
+rg,]
+o@
+</pre>
+
+<h3 id='Hello,_World!'>Hello, World! (14 bytes)</h3>
 <p>
 	A 'Hello, World!' program. 
 </p>
 <pre>
-OUT Hello, World!
+OUT Hello, world!
 </pre>
-
-<h3 id='99_Bottles_of_Beer'>99 Bottles of Beer</h3>
 <p>
-	Imperfect, but acceptable. Terminates.
+	Compressed: 14 bytes.
 </p>
 <pre>
-LET * 99
-LET @ *
-APP  bottles of beer on the wall, 
-APP *
-APP  bottles of beer! Take one down, pass it around, 
-MMS -1
-APP *
-APP  bottles of beer on the wall!
-OUT @
-MOV 1
-JJJ @!=* 1
-LET @ No more bottles of beer on the wall, no more bottles of beer! 
-APP Go to the store and buy some more, 99 bottles of beer on the wall! 
-OUT @
+oHello, world!
 </pre>
 
-<h3 id='FizzBuzz'>FizzBuzz</h3>
+<h3 id='Addition'>Addition (15 bytes)</h3>
+<p>
+	Adds the inputs
+</p>
+<pre>
+INP 
+SWP @ *
+INP
+RPN *,
+OUT @
+</pre>
+<p>
+	Compressed: 15 bytes. 
+</p>
+<pre>
+i
+x@ *
+i
+r*,
+o@
+</pre>
+
+<h3 id='Triangular_Number'>Triangular Number (24 bytes)</h3>
+<p>
+	Finds the nth triangular number.
+</p>
+<pre>
+INP
+RPN @,2,^2
+SWP @ *
+RPN *,2,/
+OUT @
+</pre>
+<p>
+	Compressed: 24 bytes.
+</p>
+<pre>
+i
+r@,2,^2
+x@ *
+r*,2,/
+o@
+</pre>
+
+<h3 id='Fibonacci_Numbers'>Fibonacci Numbers (54 bytes)</h3>
+<p>
+	Prints the fibonacci numbers. <i>All</i> of them. 
+</p>
+<pre>
+OUT 0
+LET @ 1
+OUT @
+MOV 1
+LET @ 1
+:MAIN
+OUT @
+LET * @
+MOV -1
+RPN *,
+OUT @
+LET * @
+MOV 1
+RPN *,
+JJJ 1 MAIN
+</pre>
+<p>
+	Compressed version. 54 bytes.
+</p>
+<pre>
+o0
+=@ 1
+o@
+m1
+=@ 1
+o@
+=* @
+m-1
+r*,
+o@
+=* @
+m1
+r*,
+j1 5
+</pre>
+
+<h3 id='FizzBuzz'>FizzBuzz (111 bytes)</h3>
 <p>
 	Does not terminate. 
 </p>
@@ -401,6 +487,67 @@ JJJ 1 Z
 :XV
 OUT FizzBuzz
 JJJ 1 Z
+</pre>
+<p>
+	Compressed: 111 bytes.
+</p>
+<pre>
+=@ 0
+r*,15,%
+j@=0 16
+=@ 0
+r*,5,%
+j@=0 14
+=@ 0
+r*,3,%
+j@=0 12
+o*
+s1
+j1 0
+oFizz
+j1 10
+oBuzz
+j1 10
+oFizzBuzz
+j1 10
+</pre>
+
+<h3 id='99_Bottles_of_Beer'>99 Bottles of Beer (279 bytes)</h3>
+<p>
+	Imperfect, but acceptable. Terminates.
+</p>
+<pre>
+LET * 99
+LET @ *
+APP  bottles of beer on the wall, 
+APP *
+APP  bottles of beer! Take one down, pass it around, 
+MMS -1
+APP *
+APP  bottles of beer on the wall!
+OUT @
+MOV 1
+JJJ @!=* 1
+LET @ No more bottles of beer on the wall, no more bottles of beer! 
+APP Go to the store and buy some more, 99 bottles of beer on the wall! 
+OUT @
+</pre>
+<p>
+	Compressed: 279 bytes.
+</p>
+<pre>
+=* 99
+=@ *
+a bottles of beer on the wall, 
+a*
+a bottles of beer! Take one down, pass it around, 
+s-1
+a*
+a bottles of beer on the wall!
+o@
+m1
+j@!=* 1
+oNo more bottles of beer on the wall, no more bottles of beer! Go to the store and buy some more, 99 bottles of beer on the wall! 
 </pre>
 
 <h3 id='Currentyear'>Currentyear</h3>
@@ -527,24 +674,6 @@ JMP 4
 :X
 </pre>-->
 
-<h3 id='Addition'>Addition</h3>
-<p>
-	Adds the numbers 5 and 8
-</p>
-<pre>
-RPN 5,8,+
-OUT @
-</pre>
-
-<h3 id='egg'>egg</h3>
-<p>
-	egg
-</p>
-<pre>
-RPN egg,]
-OUT @
-</pre>
-
 <h3 id='Identification'>Identification</h3>
 <p>
 	Checks to see if input is Alice or Bob, and, if so, Greet them.
@@ -559,59 +688,6 @@ LET @ Welcome,
 APP *
 OUT @
 :X
-</pre>
-
-<h3 id='Triangular_Number'>Triangular Number</h3>
-<p>
-	Finds the nth triangular number.
-</p>
-<pre>
-INP
-RPN @,2,^2
-SWP @ *
-RPN *,2,/
-OUT @
-</pre>
-
-<h3 id='Fibonacci_Numbers'>Fibonacci Numbers</h3>
-<p>
-	Prints the fibonacci numbers. <i>All</i> of them. 
-</p>
-<pre>
-OUT 0
-LET @ 1
-OUT @
-MOV 1
-LET @ 1
-:MAIN
-OUT @
-LET * @
-MOV -1
-RPN *,
-OUT @
-LET * @
-MOV 1
-RPN *,
-JJJ 1 MAIN
-</pre>
-<p>
-	Compressed version. 67 bytes.
-</p>
-<pre>
-o0
-=@ 1
-o@
-m1
-=@ 1
-o@
-=* @
-m-1
-r*,
-o@
-=* @
-m1
-r*,
-j1 5
 </pre>
 
 <h3 id='Leap_Year'>Leap Year</h3>
@@ -687,7 +763,7 @@ FAA 36,36,00,32
 OUT &lt;br>
 </pre>
 <p>
-	This code outputs itself, but as an error: 
+	This code outputs itself, but as an error, along with other errors: 
 </p>
 <pre>
 error:
