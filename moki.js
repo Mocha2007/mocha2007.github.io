@@ -120,6 +120,14 @@ function fstep(){
 	else {
 		switch (command){
 			// ignore whitespace
+			case '\t':
+				console.warn('whitespace\n@ Char '+line);
+				mconsole('w','whitespace\n@ Char '+line);
+				break;
+			case '\n':
+				console.warn('whitespace\n@ Char '+line);
+				mconsole('w','whitespace\n@ Char '+line);
+				break;
 			case ' ':
 				console.warn('whitespace\n@ Char '+line);
 				mconsole('w','whitespace\n@ Char '+line);
