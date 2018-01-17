@@ -98,11 +98,6 @@ sfxs.WYP = 'watch-your-profanity_1';
 sfxs.XFL = 'x-files-theme-song-copy';
 sfxs.XPE = 'erro';
 
-// https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep/39914235#39914235
-function sleep(ms){
-	return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
 function factorial(n){
@@ -113,6 +108,11 @@ function factorial(n){
 		return f[n];
 	}
 	return f[n] = factorial(n-1) * n;
+}
+/* Temp disable; mobile issues
+// https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep/39914235#39914235
+function sleep(ms){
+	return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 // http://marcgg.com/blog/2016/11/01/javascript-audio
@@ -370,7 +370,7 @@ async function mochsic(song){
 		}
 		await sleep(1000*fullnote*song[0]);
 	}
-}
+}*/
 
 function nPr(n,k){
 	return factorial(n)/factorial(n-k);
@@ -727,7 +727,7 @@ function fstep(){
 			var arg2 = arg.split(" ")[1];
 			var arg1a = arg1.match(/[^<>!=]+(?=[<>!=])/g)[0];
 			var arg1b = arg1.match(/([<>!]?=)|<|>/g)[0];
-			var arg1c = arg1.match(/(?<=[<>!=])[^<>!=]+/g)[0];
+			var arg1c = arg1.substring((arg1a+arg1b).length);// no lookbehind
 
 			// Determining Target Type
 			if (Number.isNaN(arg2)){
@@ -1241,13 +1241,13 @@ function fstep(){
 				var c = rpnstack.pop();
 				var b = rpnstack.pop();
 				var a = rpnstack.pop();
-				rpnstack.push((-b+Math.pow(b*b-4*a*c,.5))/2/a);
+				rpnstack.push((-b+Math.pow(b*b-4*a*c,0.5))/2/a);
 			}
 			else if (arg[i]==='Q'){
 				var c = rpnstack.pop();
 				var b = rpnstack.pop();
 				var a = rpnstack.pop();
-				rpnstack.push((-b-Math.pow(b*b-4*a*c,.5))/2/a);
+				rpnstack.push((-b-Math.pow(b*b-4*a*c,0.5))/2/a);
 			}
 			else if (arg[i]==='\''){
 				for (j=0;j<rpnstack.length;j+=1){
@@ -1277,7 +1277,7 @@ function fstep(){
 				var b = rpnstack.pop();
 				var a = rpnstack.pop();
 				var s = (a+b+c)/2;
-				rpnstack.push(Math.pow(s*(s-a)*(s-b)*(s-c),.5));
+				rpnstack.push(Math.pow(s*(s-a)*(s-b)*(s-c),0.5));
 			}
 			else if (arg[i]==='m'){
 				rpnstack = [Math.min.apply(null,rpnstack)];
@@ -1349,12 +1349,12 @@ function fstep(){
 		var arg2 = Number(arg.split(",")[1]);
 		var arg3 = arg.split(",")[2];
 		// Fixing problems
-		if (!isFinite(arg1)){
+		if (!Number.isFinite(arg1)){
 			console.warn('invalid frequency\n@ Line '+linenumber+'\n\t'+command);
 			mconsole('w','invalid frequency\n@ Line '+linenumber+'\n\t<span class="cf">WAV</span> '+arg);
 			arg1 = 440;
 		}
-		if (!isFinite(arg2)){
+		if (!Number.isFinite(arg2)){
 			console.warn('invalid duration\n@ Line '+linenumber+'\n\t'+command);
 			mconsole('w','invalid duration\n@ Line '+linenumber+'\n\t<span class="cf">WAV</span> '+arg);
 			arg2 = 1;
@@ -1382,7 +1382,7 @@ function fstep(){
 		mconsole('o','<img src="'+arg+'" class="cimg">');
 	}
 	else if (operation==='INP'){
-		programinput = document.getElementById('input').value.split("\n")[inputline];
+		var programinput = document.getElementById('input').value.split("\n")[inputline];
 		mconsole('I',programinput);
 		document.getElementById('x'+pointer).innerHTML = programinput;
 		inputline+=1;
