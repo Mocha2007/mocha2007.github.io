@@ -3,6 +3,7 @@ var versionno = '1.4.1';
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
 function factorial(n){
+	"use strict";
 	if (n === 0 || n === 1){
 		return 1;
 	}
@@ -22,12 +23,14 @@ function nCr(n,k){
 }
 */
 function mod(n,m){
+	"use strict";
 	return ((n%m)+m)%m;
 }
 // MAIN
 
 // Console
 function mconsole(MessageClass,Message){
+	"use strict";
 	if (MessageClass==='i'){
 		document.getElementById('console').innerHTML += '\n<span class="ci">info</span>: '+Message;
 	}
@@ -71,14 +74,16 @@ var timelibrary = 0;
 // escapes
 var escaped = 0;
 // temps
-var a,b,c;
+var a,b,c,d,i;
 
 function cclr(){
+	"use strict";
 	document.getElementById('console').innerHTML = '<i>Moki rev '+versionno+'</i>';
 	return false;
 }
 
 function reset(){
+	"use strict";
 	// Reset line
 	line = 0;
 	document.getElementById('line').innerHTML = line;
@@ -101,6 +106,7 @@ function reset(){
 
 // Main
 function fstep(){
+	"use strict";
 	// Determining the command
 	var command = commandlist[line];
 	// Reject
@@ -178,25 +184,25 @@ function fstep(){
 				break;*/
 			// P multiply entire stack
 			case 'P':
-				var supposedproduct = 1;
+				a = 1;
 				for (i=0;i<stack.length;i+=1){
-					supposedproduct = supposedproduct*stack[i];
+					a = a*stack[i];
 				}
-				if (Number.isNaN(supposedproduct)){
+				if (Number.isNaN(a)){
 					console.error('Attempted product of a mixed stack\n@ Char '+line+'\n\t'+command);
 					mconsole('e','Attempted product of a mixed stack\n@ Char '+line+'\n\t'+command);
 					return true;
 				}
-				stack = [supposedproduct];
+				stack = [a];
 				break;
 			// S sum entire stack, or concatenate if ANY item is a string
 			case 'S':
-				var supposedsum = 0;
+				a = 0;
 				for (i=0;i<stack.length;i+=1){
-					supposedsum+=stack[i];
+					a+=stack[i];
 				}
-				if (typeof supposedsum === 'number'){
-					stack = [supposedsum];
+				if (typeof a === 'number'){
+					stack = [a];
 				}
 				else {
 					stack = [stack.join('')];
@@ -238,7 +244,7 @@ function fstep(){
 				return true;
 		}
 	}
-	else if (timelibrary){
+	else if (timelibrary){// TODO
 		switch (command){
 			// ignore whitespace
 			case '\t':
@@ -252,7 +258,7 @@ function fstep(){
 				break;
 			// t seconds since epoch
 			case 't':
-				stack.push(new Date().getTime()/1000);// DO NOT USE .now()
+				stack.push(Date.now()/1000);
 				break;
 			// error
 			default:
@@ -573,12 +579,12 @@ function fstep(){
 			// RESERVING C D S S{'test'C{}D{}}
 			// A arithmetic mean ~ average
 			case 'A':
-				var sum = 0;
+				a = 0;
 				for (i=0;i<stack.length;i+=1){
-					sum+=stack[i];
+					a+=stack[i];
 				}
-				if (typeof sum === 'number'){
-					stack = [sum/stack.length];
+				if (typeof a === 'number'){
+					stack = [a/stack.length];
 				}
 				else {
 					console.error('Attempted mean of a mixed stack\n@ Char '+line+'\n\t'+command);
@@ -591,12 +597,12 @@ function fstep(){
 			// TODO F{x} array.forEach(x)
 			// G geometric mean
 			case 'G':
-				var product = 0;
+				a = 0;
 				for (i=0;i<stack.length;i+=1){
-					product = product*stack[i];
+					a = a*stack[i];
 				}
-				if (typeof product === 'number'){
-					stack = [Math.pow(product,1/stack.length)];
+				if (typeof a === 'number'){
+					stack = [Math.pow(a,1/stack.length)];
 				}
 				else {
 					console.error('Attempted mean of a mixed stack\n@ Char '+line+'\n\t'+command);
@@ -744,11 +750,11 @@ function fstep(){
 					}
 					else {
 						c = a.charCodeAt(0);
-						var newa = '';
+						d = '';
 						for (i=1;i<b;i+=1){ // multiply a by itself b times
-							newa+=(new Array(c+1)).join(a);
+							d+=(new Array(c+1)).join(a);
 						}
-						stack.push(newa);
+						stack.push(d);
 					}
 				}
 				else {
@@ -896,6 +902,7 @@ function fstep(){
 }
 
 function fstep100(){
+	"use strict";
 	for (i=0;i<100;i+=1){
 		fstep();
 	}
