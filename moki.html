@@ -58,7 +58,7 @@
 	<input type="submit" value="Clear Output" onclick="cclr();">
 	<br/>
 	<i>Reading Char <span id="line">0</span></i>
-	<pre id='console'><i>Moki rev 1.2</i></pre>
+	<pre id='console'><i>Moki rev 1.2.1</i></pre>
 </div>
 
 <h2 id='Introduction'>Introduction</h2>
@@ -75,6 +75,9 @@
 <h2 id='Changelog'>Changelog</h2>
 
 <dl>
+	<dt>1.2.1</dt>
+		<dd>Added more errors... :(<br/>
+		The stack now starts with 0 again... :(</dd>
 	<dt>1.2</dt>
 		<dd>Added A, G, L, M, P, S, V, e, l, m, s, t, γ, and π.<br/>
 		The stack now starts empty.</dd>
@@ -153,21 +156,48 @@
 
 <h2 id='Programs'>Programs</h2>
 
-<h3 id='Hello World'>Hello World (15 bytes)</h3>
+<h3 id='Program_Shorter_than_Output'>Program Shorter than Output (0 bytes)</h3>
 <p>
-	Prints "Hello, World!".
+	Outputs "0".
 </p>
 <pre>
-'Hello, World!'
+ 
 </pre>
 
-<h3 id='moki'>moki (15 bytes)</h3>
+<h3 id='Program_Shorter_than_Positive_Output'>Program Shorter than Positive Output (4 bytes)</h3>
+<p>
+	My best solution, so far, to <a href="https://codegolf.stackexchange.com/questions/67921/what-is-the-smallest-positive-base-10-integer-that-can-be-printed-by-a-program-s">this codegolf challenge</a>. Score: 15,625.
+</p>
+<pre>
+5,6^
+</pre>
+
+<h3 id='moki'>moki (14 bytes)</h3>
 <p>
 	Prints "moki" without the use of any characters.
 </p>
 <pre>
-,109".)).,4-.((
+109".)).,4-.((
 </pre>
+
+<h3 id='Hello World'>Hello World (16 bytes)</h3>
 <p>
+	Prints "Hello, World!".
+</p>
+<pre>
+;'Hello, World!'
+</pre>
+
+<h3 id='Largest_Number_Printable'>Largest Number Printable (Score >10<sup>7122</sup>)</h3>
+<p>
+	My best solutions, sorted by size, so far, to <a href="https://codegolf.stackexchange.com/questions/18028/largest-number-printable">this codegolf challenge</a>.
+</p>
+<p>
+	8 &rarr; 9.999...&times;10<sup>7124</sup> | Score: 1.953...&times;10<sup>7122</sup>
+</p>
+<pre>
+':'('~'^
+</pre>
+
 <div id="bottom"></div>
 </html>

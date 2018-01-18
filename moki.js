@@ -1,4 +1,4 @@
-var versionno = '1.2';
+var versionno = '1.2.1';
 /* Introduce l8r
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -54,7 +54,7 @@ function mconsole(MessageClass,Message){
 }
 
 var commandlist = '';
-var stack = [];
+var stack = [0];
 var inputline = 0;
 var line = 0;
 var iscommented = 0;
@@ -65,7 +65,7 @@ var bracebalance = 0;
 var a,b,c;
 
 function cclr(){
-	document.getElementById('console').innerHTML = '<i>MOKI rev '+versionno+'</i>';
+	document.getElementById('console').innerHTML = '<i>Moki rev '+versionno+'</i>';
 	return false;
 }
 
@@ -74,19 +74,16 @@ function reset(){
 	line = 0;
 	document.getElementById('line').innerHTML = line;
 	// Stack
-	stack = [];
+	stack = [0];
 	// tempstring
 	tempstring = '';
 	stringcreation = 0;
 	// Load Program
 	commandlist = document.getElementById('code').value;
 	console.log(commandlist);
-	// blank warn
-	if (commandlist===''){
-			console.warn('Empty Program');
-			mconsole('w','Empty Program');
-	}
+	// input
 	inputline = 0;
+	// finishing touches
 	console.log('Reset');
 	return false;
 }
@@ -121,31 +118,24 @@ function fstep(){
 		switch (command){
 			// ignore whitespace
 			case '\t':
-				console.warn('whitespace\n@ Char '+line);
-				mconsole('w','whitespace\n@ Char '+line);
 				break;
 			case '\n':
-				console.warn('whitespace\n@ Char '+line);
-				mconsole('w','whitespace\n@ Char '+line);
 				break;
 			case ' ':
-				console.warn('whitespace\n@ Char '+line);
-				mconsole('w','whitespace\n@ Char '+line);
 				break;
 			// ! NOT
 			case '!':
 				a = stack.pop();
 				stack.push(!a+0);
 				break;
-			// " turn top of stack into a char, ignore if already
+			// " turn top of stack into a char, or to a number if already that
 			case '"':
 				a = stack.pop();
 				if (Number.isFinite(a)){
 					stack.push(String.fromCharCode(a));
 				}
 				else {
-					console.warn('superfluous charconverter\n@ Char '+line);
-					mconsole('w','superfluous charconverter\n@ Char '+line);
+					stack.push(a.charCodeAt(0));
 				}
 				break;
 			// # comment toggle
@@ -197,13 +187,7 @@ function fstep(){
 			// ' toggle stringcreation
 			case "'":
 				if (stringcreation===1){
-					// if tempstring is equivalent to a #
-					if (Number.isFinite(Number(tempstring))){
-						stack.push(Number(tempstring));
-					}
-					else {
-						stack.push(tempstring);
-					}
+					stack.push(tempstring);
 					tempstring = '';
 				}
 				stringcreation = 1-stringcreation; // toggle
@@ -597,11 +581,12 @@ function fstep(){
 			// e
 			case 'e':
 				a = stack.pop();
-				if (typeof a === 'string'){
-					stack.push(a+'e');
+				if (typeof a === 'number'){
+					stack.push(a*Math.E);
 				}
 				else {
-					stack.push(a*Math.E);
+					console.error('Erroneous Euler\n@ Char '+line+'\n\t'+command);
+					mconsole('e','Erroneous Euler\n@ Char '+line+'\n\t'+command);
 				}
 				break;
 			// l ln of a
@@ -710,21 +695,21 @@ function fstep(){
 			// γ 947
 			case 'γ':
 				a = stack.pop();
-				if (typeof a === 'string'){
-					stack.push(a+'γ');
+				if (typeof a === 'number'){
+					stack.push(a*0.5772156649015329);
 				}
 				else {
-					stack.push(a*0.5772156649015329);
 				}
 				break;
 			// π 960
 			case 'π':
 				a = stack.pop();
-				if (typeof a === 'string'){
-					stack.push(a+'π');
+				if (typeof a === 'number'){
+					stack.push(a*Math.PI);
 				}
 				else {
-					stack.push(a*Math.PI);
+					console.error('Erroneous Pi\n@ Char '+line+'\n\t'+command);
+					mconsole('e','Erroneous Pi\n@ Char '+line+'\n\t'+command);
 				}
 				break;
 			//.charCodeAt(0)
