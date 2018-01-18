@@ -1,4 +1,5 @@
 function doit(){
+	"use strict";
 	var element=document.getElementById("result");
 	var s=document.getElementsByTagName("input")[0].value;
 	/* Modified from https://stackoverflow.com/a/1643468/2579798 */
@@ -55,5 +56,5 @@ function doit(){
 	<a href="https://reddit.com/u/`+s+`">Reddit - User</a><br/>
 	<a href="https://wolframalpha.com/input/?i=`+s+`">Wolfram Alpha</a><br/>
 	<a href="https://youtube.com/results?search_query=`+s+`">Youtube</a><br/><div id="foot">
-	`+foot+'</div>'
+	`+foot+'</div>';
 }

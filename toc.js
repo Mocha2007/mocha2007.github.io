@@ -1,24 +1,26 @@
 window.onload = function MakeTOC() {
+	"use strict";
 	//.getElementsByTagName('h1,h2,h3,h4,h5,h6')
-	namedheaders = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id],b.sub,b.super');
+	var namedheaders = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id],b.sub,b.super');
 	/*details open*/
 	var text = '<details><summary>Navigation</summary><div class="desc"><a href="index.html">Home</a></div>On This Page<br/>';
 
+	var depth,formattedname,i;
 	for (i=0;i<namedheaders.length;i+=1) {
-		if (namedheaders[i].tagName == 'B') {
+		if (namedheaders[i].tagName === 'B') {
 			namedheaders[i].id = namedheaders[i].innerHTML.replace(/\s/g,'_');/*Maybe I can just use this?!*/
-			var formattedname = namedheaders[i].innerHTML;
+			formattedname = namedheaders[i].innerHTML;
 
-			if (namedheaders[i].className == 'super') {
-				var depth = '2';
+			if (namedheaders[i].className === 'super') {
+				depth = '2';
 			}
 			else {
-				var depth = '3';
+				depth = '3';
 			}
 		}
 		else {
-			var formattedname = namedheaders[i].id.replace(/_/g,' ');
-			var depth = namedheaders[i].tagName.slice(-1);
+			formattedname = namedheaders[i].id.replace(/_/g,' ');
+			depth = namedheaders[i].tagName.slice(-1);
 		}
 		text+='<span class="nav'+depth+'"><a href="#'+namedheaders[i].id+'">'+formattedname+'</a></span><br>';
 		console.log(formattedname,depth);
@@ -26,4 +28,4 @@ window.onload = function MakeTOC() {
 	text+='</details>';
 	
 	document.getElementById("nav").innerHTML = text;
-}
+};

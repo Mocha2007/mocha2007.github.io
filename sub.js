@@ -1,8 +1,3 @@
-// 'Welcome!','Bonvenon!','Bienvenue!','Salve!','Geti!','Bienvenido!','ようこそ!',
-/*
-				'It\' a "hash" not a "hashtag", unless it\'s followed by a tag.',
-																						| Anything to the left of this line fits (71 char)
-*/
 var subtitles =	[
 				'Math, &#x1F44F; Cities, &#x1F44F; Math &#x1F44F; \'n Cities! &#x1F44F;',
 				'Gluten-free Mocha: now with real sugar!',
@@ -57,8 +52,9 @@ var subtitles =	[
 				'Culus Invictus',
 				'/ɑ\'wu/',
 				'⬇ 🌀 🆘'
-				]
-function Sub() {
+				];
+function Sub(){
+	"use strict";
 	var index = Math.floor(Math.random()*(subtitles.length));
 	document.getElementById('subtitle').innerHTML = subtitles[index];
 	console.info('C3692 6510 QT4420');
