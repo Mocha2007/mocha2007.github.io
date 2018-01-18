@@ -75,6 +75,8 @@ var timelibrary = 0;
 var escaped = 0;
 // temps
 var a,b,c,d,i;
+// ascii
+var ascii = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
 
 function cclr(){
 	"use strict";
@@ -103,6 +105,22 @@ function reset(){
 	console.log('Reset');
 	return false;
 }
+
+function rchoice(x){
+	"use strict";
+	return x[Math.floor(Math.random()*x.length)];
+}
+
+function rprog(n){
+	"use strict";
+	var randomProgram = '';
+	for (i=0;i<n;i+=1){
+		randomProgram+=rchoice(ascii);
+	}
+	document.getElementById('code').value = randomProgram;
+	return false;
+}
+
 
 // Main
 function fstep(){
@@ -747,7 +765,7 @@ function fstep(){
 						mconsole('e','bad string exponentiation\n@ Char '+line+'\n\t'+command);
 						return true;
 					}
-					else if (b===0){ // anything^0 = 1 mostly
+					if (b===0){ // anything^0 = 1 mostly
 						stack.push(1);
 					}
 					else if (b===1){ // anything^1 = itself mostly
