@@ -1,4 +1,4 @@
-var versionno = '1.4';
+var versionno = '1.4.1';
 
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -63,6 +63,7 @@ var stringcreation = 0;
 var bracebalance = 0;
 var mathlibrary = 0;
 var timelibrary = 0;
+var escaped = 0;
 // temps
 var a,b,c;
 
@@ -77,6 +78,7 @@ function reset(){
 	document.getElementById('line').innerHTML = line;
 	// Stack
 	stack = [0];
+	document.getElementById('stack').innerHTML = stack;
 	// tempstring
 	tempstring = '';
 	stringcreation = 0;
@@ -86,6 +88,7 @@ function reset(){
 	// input
 	inputline = 0;
 	// finishing touches
+	cclr();
 	console.log('Reset');
 	return false;
 }
@@ -112,8 +115,17 @@ function fstep(){
 		console.log('comment'+command);
 	}
 	// stringcreation?
-	else if (stringcreation && command!=="'"){
-		tempstring+=command;
+	else if (stringcreation && !(command==="'" && !escaped)){ // stringcreation enabled AND NOT unescaped '
+		if (escaped){
+			tempstring+=command;
+			escaped = 0;
+		}
+		else if (command!=="\\"){
+			tempstring+=command;
+		}
+		else {
+			escaped = 1;
+		}
 	}
 	// libs
 	else if (mathlibrary){
@@ -870,6 +882,7 @@ function fstep(){
 		}
 	}
 	// final touches
+	document.getElementById('stack').innerHTML = stack;
 	return false;
 }
 
