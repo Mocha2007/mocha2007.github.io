@@ -9,7 +9,8 @@ function factorial(n){
 	if (f[n] > 0){
 		return f[n];
 	}
-	return f[n] = factorial(n-1) * n;
+	f[n] = factorial(n-1)*n;
+	return f[n];
 }
 
 /*function nPr(n,k){
@@ -60,9 +61,14 @@ var line = 0;
 var iscommented = 0;
 var tempstring = '';
 var stringcreation = 0;
+// braces
 var bracebalance = 0;
+var templine = 0;
+var tempcommand = '';
+// libs
 var mathlibrary = 0;
 var timelibrary = 0;
+// escapes
 var escaped = 0;
 // temps
 var a,b,c;
@@ -287,13 +293,13 @@ function fstep(){
 				break;
 			// $ accept next line of input. if no input, then zero.
 			case '$':
-				if (0==document.getElementById('input').value.split("\n")[inputline]){// must be ==
+				a = document.getElementById('input').value.split("\n")[inputline];
+				if (a===''){
 					stack.push(0);
 					console.warn('superfluous input\n@ Char '+line);
 					mconsole('w','superfluous input\n@ Char '+line);
 				}
 				else {
-					a = document.getElementById('input').value.split("\n")[inputline];
 					if (!Number.isNaN(Number(a))){ // number
 						a = Number(a);
 					}
@@ -601,9 +607,9 @@ function fstep(){
 			// I if - if TOS false, skip to next }
 			case 'I':
 				if (stack[stack.length-1]===0){
-					var templine = line;
-					var tempcommand = command;
-					var bracebalance = 1;
+					templine = line;
+					tempcommand = command;
+					bracebalance = 1;
 					while (bracebalance!==0) {
 						templine+=1;//look next character over
 						// immediately error out if past end
@@ -655,9 +661,9 @@ function fstep(){
 			// W while - if TOS false, skip to next }
 			case 'W':
 				if (stack[stack.length-1]===0){//if false, skip past block
-					var templine = line;
-					var tempcommand = command;
-					var bracebalance = 1;
+					templine = line;
+					tempcommand = command;
+					bracebalance = 1;
 					while (bracebalance!==0) {
 						templine+=1;//look next character over
 						// immediately error out if past end
@@ -811,10 +817,9 @@ function fstep(){
 			// } end loop iff top of stack === 0 W{} I{}
 			case '}':
 				// WHO initiated this?
-				var templine = line;
-				var tempcommand = command;
-				templine-=1; // undoes change near beginning
-				var bracebalance = -1;
+				templine = line-1; // undoes change near beginning
+				tempcommand = command;
+				bracebalance = -1;
 				while (bracebalance!==0) {
 					templine-=1;//look next character over
 					// immediately error out if past beginning
@@ -860,6 +865,9 @@ function fstep(){
 					stack.push(a*0.5772156649015329);
 				}
 				else {
+					console.error('Erroneous Euler-Mascheroni\n@ Char '+line+'\n\t'+command);
+					mconsole('e','Erroneous Euler-Mascheroni\n@ Char '+line+'\n\t'+command);
+					return true;
 				}
 				break;
 			// π 960
@@ -871,6 +879,7 @@ function fstep(){
 				else {
 					console.error('Erroneous Pi\n@ Char '+line+'\n\t'+command);
 					mconsole('e','Erroneous Pi\n@ Char '+line+'\n\t'+command);
+					return true;
 				}
 				break;
 			//.charCodeAt(0)
