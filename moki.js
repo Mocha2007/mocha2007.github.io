@@ -1,5 +1,5 @@
-var versionno = '1.2.1';
-/* Introduce l8r
+var versionno = '1.3';
+
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
 function factorial(n){
@@ -12,7 +12,7 @@ function factorial(n){
 	return f[n] = factorial(n-1) * n;
 }
 
-function nPr(n,k){
+/*function nPr(n,k){
 	return factorial(n)/factorial(n-k);
 }
 
@@ -61,6 +61,8 @@ var iscommented = 0;
 var tempstring = '';
 var stringcreation = 0;
 var bracebalance = 0;
+var mathlibrary = 0;
+var timelibrary = 0;
 // temps
 var a,b,c;
 
@@ -113,6 +115,109 @@ function fstep(){
 	else if (stringcreation && command!=="'"){
 		tempstring+=command;
 	}
+	// libs
+	else if (mathlibrary){
+		mathlibrary = 0;
+		switch (command){
+			// ignore whitespace
+			case '\t':
+				mathlibrary = 1; // still on
+				break;
+			case '\n':
+				mathlibrary = 1; // still on
+				break;
+			case ' ':
+				mathlibrary = 1; // still on
+				break;
+			// ! factorial
+			case '!':
+				a = stack.pop();
+				stack.push(factorial(a));
+				break;
+			// M Max, ignores strings unless there are only strings
+			/*case 'M':
+				var anynumbers = 0;
+				for (i=0;i<stack.length;i+=1){
+					if (typeof stack[i] ==='number'){
+						anynumbers = 1;
+						break;
+					}
+				}
+				if (anynumbers){
+					// delete strings
+					for (i=0;i<stack.length;i+=1){
+						if (typeof stack[i] ==='string'){
+							stack.splice(i,i+1);
+						}
+					}
+					// https://stackoverflow.com/a/6102340/2579798
+					stack = [Math.max.apply(Math,stack)];
+				}
+				else {
+					// https://stackoverflow.com/a/6521513/2579798
+					stack = [stack.sort(function (a, b) { return b.length - a.length; })[0]];
+				}
+				break;*/
+			// m Min, ignores strings unless there are only strings
+			/*case 'm':
+				var anynumbers = 0;
+				for (i=0;i<stack.length;i+=1){
+					if (typeof stack[i] ==='number'){
+						anynumbers = 1;
+						break;
+					}
+				}
+				if (anynumbers){
+					// delete strings
+					for (i=0;i<stack.length;i+=1){
+						if (typeof stack[i] ==='string'){
+							stack.splice(i,i+1);
+						}
+					}
+					// https://stackoverflow.com/a/6102340/2579798
+					stack = [Math.min.apply(Math,stack)];
+				}
+				else {
+					var minimum = stack[0];
+					for (i=1;i<stack.length;i+=1) {
+						if (stack[i].length>minimum.length){
+							minimum = stack[i];
+						}
+					}
+					stack = [minimum]
+				}
+				break;*/
+			// error
+			default:
+				console.error('Operation not in Math dictionary: '+command+'\n@ Char '+line+'\n\t'+command);
+				mconsole('e','Operation not in Math dictionary: '+command+'\n@ Char '+line+'\n\t'+command);
+				return true;
+		}
+	}
+	// libs
+	else if (timelibrary){
+		switch (command){
+			// ignore whitespace
+			case '\t':
+				timelibrary = 1; // still on
+				break;
+			case '\n':
+				timelibrary = 1; // still on
+				break;
+			case ' ':
+				timelibrary = 1; // still on
+				break;
+			// t seconds since epoch
+			case 't':
+				stack.push(new Date().getTime()/1000);// DO NOT USE .now()
+				break;
+			// error
+			default:
+				console.error('Operation not in Time dictionary: '+command+'\n@ Char '+line+'\n\t'+command);
+				mconsole('e','Operation not in Time dictionary: '+command+'\n@ Char '+line+'\n\t'+command);
+				return true;
+		}
+	}
 	// do
 	else {
 		switch (command){
@@ -153,7 +258,7 @@ function fstep(){
 				else {
 					stack.push(document.getElementById('input').value.split("\n")[inputline]);
 				}
-				inputline+=1
+				inputline+=1;
 				break;
 			// % mod
 			case '%':
@@ -387,19 +492,19 @@ function fstep(){
 			case '<':
 				b = stack.pop();
 				a = stack.pop();
-				stack.push((a<b)+0);
+				stack.push(Number(a<b));
 				break;
 			// = equal to
 			case '=':
 				b = stack.pop();
 				a = stack.pop();
-				stack.push((a===b)+0);
+				stack.push(Number(a===b));
 				break;
 			// > greater than; javascript's handling of it with strings is already perfect
 			case '>':
 				b = stack.pop();
 				a = stack.pop();
-				stack.push((a>b)+0);
+				stack.push(Number(a>b));
 				break;
 			// ? = [condition, val if true, val if false]?
 			case '?':
@@ -432,6 +537,7 @@ function fstep(){
 					mconsole('e','Attempted mean of a mixed stack\n@ Char '+line+'\n\t'+command);
 					return true;
 				}
+				break;
 			// G geometric mean
 			case 'G':
 				var product = 0;
@@ -446,35 +552,45 @@ function fstep(){
 					mconsole('e','Attempted mean of a mixed stack\n@ Char '+line+'\n\t'+command);
 					return true;
 				}
+				break;
+			// I if - if TOS false, skip to next }
+			case 'I':
+				if (stack[stack.length-1]===0){
+					var templine = line;
+					var tempcommand = command;
+					var bracebalance = 1;
+					while (bracebalance!==0) {
+						templine+=1;//look next character over
+						// immediately error out if past end
+						if (templine>=commandlist.length){
+							console.error('Mismatched braces\n@ Char '+line+'\n\t'+command);
+							mconsole('e','Mismatched braces\n@ Char '+line+'\n\t'+command);
+							return true;
+						}
+						//otherwise
+						tempcommand = commandlist[templine];//get command
+						if (tempcommand==='{'){
+							bracebalance+=1;
+						}
+						else if (tempcommand==='}'){
+							bracebalance-=1;
+						}
+					}
+					line = templine+1;//skip to next character over
+				}
+				else {
+					line+=1;
+				}
+				break;
 			// L length
 			case 'L':
 				a = stack.pop();
-				stack.push((a+"").length);
+				stack.push(String(a).length);
 				break;
-			// M Max, ignores strings unless there are only strings
-			/*case 'M':
-				var anynumbers = 0;
-				for (i=0;i<stack.length;i+=1){
-					if (typeof stack[i] ==='number'){
-						anynumbers = 1;
-						break;
-					}
-				}
-				if (anynumbers){
-					// delete strings
-					for (i=0;i<stack.length;i+=1){
-						if (typeof stack[i] ==='string'){
-							stack.splice(i,i+1);
-						}
-					}
-					// https://stackoverflow.com/a/6102340/2579798
-					stack = [Math.max.apply(Math,stack)];
-				}
-				else {
-					// https://stackoverflow.com/a/6521513/2579798
-					stack = [stack.sort(function (a, b) { return b.length - a.length; })[0]];
-				}
-				break;*/
+			// M Mathfunctions
+			case 'M':
+				mathlibrary = 1;
+				break;
 			// P multiply entire stack
 			case 'P':
 				var supposedproduct = 1;
@@ -486,9 +602,7 @@ function fstep(){
 					mconsole('e','Attempted product of a mixed stack\n@ Char '+line+'\n\t'+command);
 					return true;
 				}
-				else {
-					stack = [supposedproduct];
-				}
+				stack = [supposedproduct];
 				break;
 			// S sum entire stack, or concatenate if ANY item is a string
 			case 'S':
@@ -503,9 +617,42 @@ function fstep(){
 					stack = [stack.join('')];
 				}
 				break;
+			// T Timefunctions
+			case 'T':
+				timelibrary = 1;
+				break;
 			// V push current version to stack
 			case 'V':
 				stack.push(versionno);
+				break;
+			// W while - if TOS false, skip to next }
+			case 'W':
+				if (stack[stack.length-1]===0){//if false, skip past block
+					var templine = line;
+					var tempcommand = command;
+					var bracebalance = 1;
+					while (bracebalance!==0) {
+						templine+=1;//look next character over
+						// immediately error out if past end
+						if (templine>=commandlist.length){
+							console.error('Mismatched braces\n@ Char '+line+'\n\t'+command);
+							mconsole('e','Mismatched braces\n@ Char '+line+'\n\t'+command);
+							return true;
+						}
+						//otherwise
+						tempcommand = commandlist[templine];//get command
+						if (tempcommand==='{'){
+							bracebalance+=1;
+						}
+						else if (tempcommand==='}'){
+							bracebalance-=1;
+						}
+					}
+					line = templine+1;//skip to next character over
+				}
+				else {
+					line+=1;
+				}
 				break;
 			// [ floor
 			case '[':
@@ -598,37 +745,8 @@ function fstep(){
 				}
 				stack.push(Math.log(a));
 				break;
-			// m Min, ignores strings unless there are only strings
-			/*case 'm':
-				var anynumbers = 0;
-				for (i=0;i<stack.length;i+=1){
-					if (typeof stack[i] ==='number'){
-						anynumbers = 1;
-						break;
-					}
-				}
-				if (anynumbers){
-					// delete strings
-					for (i=0;i<stack.length;i+=1){
-						if (typeof stack[i] ==='string'){
-							stack.splice(i,i+1);
-						}
-					}
-					// https://stackoverflow.com/a/6102340/2579798
-					stack = [Math.min.apply(Math,stack)];
-				}
-				else {
-					var minimum = stack[0];
-					for (i=1;i<stack.length;i+=1) {
-						if (stack[i].length>minimum.length){
-							minimum = stack[i];
-						}
-					}
-					stack = [minimum]
-				}
-				break;
 			// s sort: if only numbers, L->G else alphabetically
-			case 's':
+			/*case 's':
 				var anystrings = 0;
 				for (i=0;i<stack.length;i+=1){
 					if (typeof stack[i] ==='number'){
@@ -644,49 +762,54 @@ function fstep(){
 					stack.sort((a,b)=>a-b);
 				}
 				break;*/
-			// t seconds since epoch
-			case 't':
-				stack.push(new Date().getTime()/1000);
-				break;
 			// { begin loop
 			case '{':
 				break;
 			// | absolute value
 			case '|':
-				stack[stack.length-1] = Math.abs(stack[stack.length-1]);
+				a = stack.pop();
+				stack.push(Math.abs(stack[stack.length-1]));
 				break;
-			// } end loop iff top of stack === 0
+			// } end loop iff top of stack === 0 W{} I{}
 			case '}':
-				if (stack[stack.length-1] !== 0){
-					console.log('Loop check at '+line+' failed; val='+stack[stack.length-1]);
-					var backupline = line;
-					var backupcommand = command;
-					line-=1; // undoes change near beginning
-					bracebalance = -1;
-					while (bracebalance!==0) {
-						line-=1;//look next character over
-						// immediately error out if past beginning
-						if (line<0){
-							console.error('Mismatched braces\n@ Char '+backupline+'\n\t'+backupcommand);
-							mconsole('e','Mismatched braces\n@ Char '+backupline+'\n\t'+backupcommand);
-							return true;
-						}
-						//otherwise
-						command = commandlist[line];//get command
-						if (command==='{'){
-							bracebalance+=1;
-						}
-						else if (command==='}'){
-							bracebalance-=1;
-						}
+				// WHO initiated this?
+				var templine = line;
+				var tempcommand = command;
+				templine-=1; // undoes change near beginning
+				var bracebalance = -1;
+				while (bracebalance!==0) {
+					templine-=1;//look next character over
+					// immediately error out if past beginning
+					if (templine<0){
+						console.error('Mismatched braces\n@ Char '+line+'\n\t'+command);
+						mconsole('e','Mismatched braces\n@ Char '+line+'\n\t'+command);
+						return true;
 					}
+					//otherwise
+					tempcommand = commandlist[templine];//get command
+					console.log('checking'+tempcommand);
+					if (tempcommand==='{'){
+						bracebalance+=1;
+					}
+					else if (tempcommand==='}'){
+						bracebalance-=1;
+					}
+					console.log(bracebalance);
 				}
+				// Now check the character to the LEFT
+				templine-=1;//look next character over
+				tempcommand = commandlist[templine];//get command
+				// now we know WHO!
+				if (tempcommand==='W' && stack[stack.length-1]!==0){
+					line = templine+2;
+				}
+				// Otherwise, we don't care.
 				break;
 			// ~ negate top of stack, or reverse it if string
 			case '~':
 				a = stack.pop();
 				if (typeof a === 'string'){
-					stack.push(a.split("").reverse().join("")); // todo: https://github.com/mathiasbynens/esrever ?
+					stack.push(a.split("").reverse().join("")); // future: https://github.com/mathiasbynens/esrever ?
 				}
 				else {
 					stack.push(-a);
