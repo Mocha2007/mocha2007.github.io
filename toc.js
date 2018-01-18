@@ -2,12 +2,9 @@ window.onload = function MakeTOC() {
 	//.getElementsByTagName('h1,h2,h3,h4,h5,h6')
 	namedheaders = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id],b.sub,b.super');
 	/*details open*/
-	var text = `
-	<details><summary>Navigation</summary>
-	<div class="desc"><a href="index.html">Home</a></div>
-	On This Page<br/>`;
+	var text = '<details><summary>Navigation</summary><div class="desc"><a href="index.html">Home</a></div>On This Page<br/>';
 
-	for (i=0;i<namedheaders.length;i++) {
+	for (i=0;i<namedheaders.length;i+=1) {
 		if (namedheaders[i].tagName == 'B') {
 			namedheaders[i].id = namedheaders[i].innerHTML.replace(/\s/g,'_');/*Maybe I can just use this?!*/
 			var formattedname = namedheaders[i].innerHTML;
