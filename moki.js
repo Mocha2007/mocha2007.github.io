@@ -1,4 +1,4 @@
-var versionno = '1.1';
+var versionno = '1.2';
 /* Introduce l8r
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -54,7 +54,7 @@ function mconsole(MessageClass,Message){
 }
 
 var commandlist = '';
-var stack = [0];
+var stack = [];
 var inputline = 0;
 var line = 0;
 var iscommented = 0;
@@ -74,7 +74,7 @@ function reset(){
 	line = 0;
 	document.getElementById('line').innerHTML = line;
 	// Stack
-	stack = [0];
+	stack = [];
 	// tempstring
 	tempstring = '';
 	stringcreation = 0;
@@ -134,17 +134,14 @@ function fstep(){
 				break;
 			// ! NOT
 			case '!':
-				if (stack[stack.length-1]===0){
-					stack[stack.length-1] = 1;
-				}
-				else {
-					stack[stack.length-1] = 0;
-				}
+				a = stack.pop();
+				stack.push(!a+0);
 				break;
 			// " turn top of stack into a char, ignore if already
 			case '"':
-				if (Number.isFinite(stack[stack.length-1])){
-					stack[stack.length-1] = String.fromCharCode(stack[stack.length-1]);
+				a = stack.pop();
+				if (Number.isFinite(a)){
+					stack.push(String.fromCharCode(a));
 				}
 				else {
 					console.warn('superfluous charconverter\n@ Char '+line);
@@ -437,9 +434,98 @@ function fstep(){
 				stack.unshift(stack.pop());
 				break;
 			// ABC
+			// A arithmetic mean ~ average
+			case 'A':
+				var sum = 0;
+				for (i=0;i<stack.length;i+=1){
+					sum+=stack[i];
+				}
+				if (typeof sum === 'number'){
+					stack = [sum/stack.length];
+				}
+				else {
+					console.error('Attempted mean of a mixed stack\n@ Char '+line+'\n\t'+command);
+					mconsole('e','Attempted mean of a mixed stack\n@ Char '+line+'\n\t'+command);
+					return true;
+				}
+			// G geometric mean
+			case 'G':
+				var product = 0;
+				for (i=0;i<stack.length;i+=1){
+					product = product*stack[i];
+				}
+				if (typeof product === 'number'){
+					stack = [Math.pow(product,1/stack.length)];
+				}
+				else {
+					console.error('Attempted mean of a mixed stack\n@ Char '+line+'\n\t'+command);
+					mconsole('e','Attempted mean of a mixed stack\n@ Char '+line+'\n\t'+command);
+					return true;
+				}
+			// L length
+			case 'L':
+				a = stack.pop();
+				stack.push((a+"").length);
+				break;
+			// M Max, ignores strings unless there are only strings
+			case 'M':
+				var anynumbers = 0;
+				for (i=0;i<stack.length;i+=1){
+					if (typeof stack[i] ==='number'){
+						anynumbers = 1;
+						break;
+					}
+				}
+				if (anynumbers){
+					// delete strings
+					for (i=0;i<stack.length;i+=1){
+						if (typeof stack[i] ==='string'){
+							stack.splice(i,i+1);
+						}
+					}
+					// https://stackoverflow.com/a/6102340/2579798
+					stack = [Math.max.apply(Math,stack)];
+				}
+				else {
+					// https://stackoverflow.com/a/6521513/2579798
+					stack = [stack.sort(function (a, b) { return b.length - a.length; })[0]];
+				}
+				break;
+			// P multiply entire stack
+			case 'P':
+				var supposedsum = 0;
+				for (i=0;i<stack.length;i+=1){
+					supposedsum+=stack[i];
+				}
+				if (typeof supposedsum === 'number'){
+					stack = [stack.reduce((a,b)=>a*b)];
+				}
+				else {
+					console.error('Attempted product of a mixed stack\n@ Char '+line+'\n\t'+command);
+					mconsole('e','Attempted product of a mixed stack\n@ Char '+line+'\n\t'+command);
+					return true;
+				}
+				break;
+			// S sum entire stack, or concatenate if ANY item is a string
+			case 'S':
+				var supposedsum = 0;
+				for (i=0;i<stack.length;i+=1){
+					supposedsum+=stack[i];
+				}
+				if (typeof supposedsum === 'number'){
+					stack = [supposedsum];
+				}
+				else {
+					stack = [stack.join('')];
+				}
+				break;
+			// V push current version to stack
+			case 'V':
+				stack.push(versionno);
+				break;
 			// [ floor
 			case '[':
-				a = stack[stack.length-1];
+				a = stack.pop();
 				if (typeof a === 'string'){//lowecase
 					stack.push(a.toLowerCase());
 				}
@@ -456,7 +542,7 @@ function fstep(){
 				break;
 			// ] ceil
 			case ']':
-				a = stack[stack.length-1];
+				a = stack.pop();
 				if (typeof a === 'string'){//capitalize
 					stack.push(a.toUpperCase());
 				}
@@ -508,6 +594,75 @@ function fstep(){
 			// _ undefined
 			// ` undefined
 			// abc
+			// e
+			case 'e':
+				a = stack.pop();
+				if (typeof a === 'string'){
+					stack.push(a+'e');
+				}
+				else {
+					stack.push(a*Math.E);
+				}
+				break;
+			// l ln of a
+			case 'l':
+				a = stack.pop();
+				if (typeof a !== 'number'){
+					console.error('Attempted log of a string\n@ Char '+line+'\n\t'+command);
+					mconsole('e','Attempted log of a string\n@ Char '+line+'\n\t'+command);
+				}
+				stack.push(Math.log(a));
+				break;
+			// m Min, ignores strings unless there are only strings
+			case 'm':
+				var anynumbers = 0;
+				for (i=0;i<stack.length;i+=1){
+					if (typeof stack[i] ==='number'){
+						anynumbers = 1;
+						break;
+					}
+				}
+				if (anynumbers){
+					// delete strings
+					for (i=0;i<stack.length;i+=1){
+						if (typeof stack[i] ==='string'){
+							stack.splice(i,i+1);
+						}
+					}
+					// https://stackoverflow.com/a/6102340/2579798
+					stack = [Math.min.apply(Math,stack)];
+				}
+				else {
+					var minimum = stack[0];
+					for (i=1;i<stack.length;i+=1) {
+						if (stack[i].length>minimum.length){
+							minimum = stack[i];
+						}
+					}
+					stack = [minimum]
+				}
+				break;
+			// s sort: if only numbers, L->G else alphabetically
+			case 's':
+				var anystrings = 0;
+				for (i=0;i<stack.length;i+=1){
+					if (typeof stack[i] ==='number'){
+						anystrings = 1;
+						break;
+					}
+				}
+				if (anystrings){
+					stack.sort();
+				}
+				else {
+					// https://stackoverflow.com/a/1063027/2579798
+					stack.sort((a,b)=>a-b);
+				}
+				break;
+			// t seconds since epoch
+			case 't':
+				stack.push(new Date().getTime()/1000);
+				break;
 			// { begin loop
 			case '{':
 				break;
@@ -552,6 +707,27 @@ function fstep(){
 					stack.push(-a);
 				}
 				break;
+			// γ 947
+			case 'γ':
+				a = stack.pop();
+				if (typeof a === 'string'){
+					stack.push(a+'γ');
+				}
+				else {
+					stack.push(a*0.5772156649015329);
+				}
+				break;
+			// π 960
+			case 'π':
+				a = stack.pop();
+				if (typeof a === 'string'){
+					stack.push(a+'π');
+				}
+				else {
+					stack.push(a*Math.PI);
+				}
+				break;
+			//.charCodeAt(0)
 			// error
 			default:
 				console.error('Operation not in dictionary: '+command+'\n@ Char '+line+'\n\t'+command);

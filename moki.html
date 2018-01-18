@@ -58,7 +58,7 @@
 	<input type="submit" value="Clear Output" onclick="cclr();">
 	<br/>
 	<i>Reading Char <span id="line">0</span></i>
-	<pre id='console'><i>Moki rev 1.1</i></pre>
+	<pre id='console'><i>Moki rev 1.2</i></pre>
 </div>
 
 <h2 id='Introduction'>Introduction</h2>
@@ -71,6 +71,19 @@
 	Instead of erroring out I try and think of alternative uses until the logic simply breaks down and I have to issue an error. 
 	The only errors, currently, are dividing by zero, raising zero to a non-positive number, raising a negative to a noninteger (I'll add complex math soon!~), mismatching braces, and using unindexed operations. 
 </p>
+
+<h2 id='Changelog'>Changelog</h2>
+
+<dl>
+	<dt>1.2</dt>
+		<dd>Added A, G, L, M, P, S, V, e, l, m, s, t, γ, and π.<br/>
+		The stack now starts empty.</dd>
+	<dt>1.1</dt>
+		<dd>Added ~.<br/>
+		Fewer errors</dd>
+	<dt>1.0</dt>
+		<dd>Initial Release.</dd>
+</dl>
 
 <h2 id='Dictionary'>Dictionary</h2>
 
@@ -140,20 +153,20 @@
 
 <h2 id='Programs'>Programs</h2>
 
-<h3 id='moki'>moki (14 bytes)</h3>
-<p>
-	Prints moki without any characters.
-</p>
-<pre>
-109".)).,4-.((
-</pre>
-
-<h3 id='Hello World'>Hello World (16 bytes)</h3>
+<h3 id='Hello World'>Hello World (15 bytes)</h3>
 <p>
 	Prints "Hello, World!".
 </p>
 <pre>
-;'Hello, World!'
+'Hello, World!'
+</pre>
+
+<h3 id='moki'>moki (15 bytes)</h3>
+<p>
+	Prints "moki" without the use of any characters.
+</p>
+<pre>
+,109".)).,4-.((
 </pre>
 <p>
 <div id="bottom"></div>
