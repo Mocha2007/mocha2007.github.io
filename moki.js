@@ -452,7 +452,7 @@ function fstep(){
 				stack.push((a+"").length);
 				break;
 			// M Max, ignores strings unless there are only strings
-			case 'M':
+			/*case 'M':
 				var anynumbers = 0;
 				for (i=0;i<stack.length;i+=1){
 					if (typeof stack[i] ==='number'){
@@ -474,7 +474,7 @@ function fstep(){
 					// https://stackoverflow.com/a/6521513/2579798
 					stack = [stack.sort(function (a, b) { return b.length - a.length; })[0]];
 				}
-				break;
+				break;*/
 			// P multiply entire stack
 			case 'P':
 				var supposedsum = 0;
@@ -599,7 +599,7 @@ function fstep(){
 				stack.push(Math.log(a));
 				break;
 			// m Min, ignores strings unless there are only strings
-			case 'm':
+			/*case 'm':
 				var anynumbers = 0;
 				for (i=0;i<stack.length;i+=1){
 					if (typeof stack[i] ==='number'){
@@ -626,7 +626,7 @@ function fstep(){
 					}
 					stack = [minimum]
 				}
-				break;
+				break;*/
 			// s sort: if only numbers, L->G else alphabetically
 			case 's':
 				var anystrings = 0;
