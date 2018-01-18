@@ -1,4 +1,4 @@
-var versionno = '1.3';
+var versionno = '1.4';
 
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -158,6 +158,32 @@ function fstep(){
 					stack = [stack.sort(function (a, b) { return b.length - a.length; })[0]];
 				}
 				break;*/
+			// P multiply entire stack
+			case 'P':
+				var supposedproduct = 1;
+				for (i=0;i<stack.length;i+=1){
+					supposedproduct = supposedproduct*stack[i];
+				}
+				if (Number.isNaN(supposedproduct)){
+					console.error('Attempted product of a mixed stack\n@ Char '+line+'\n\t'+command);
+					mconsole('e','Attempted product of a mixed stack\n@ Char '+line+'\n\t'+command);
+					return true;
+				}
+				stack = [supposedproduct];
+				break;
+			// S sum entire stack, or concatenate if ANY item is a string
+			case 'S':
+				var supposedsum = 0;
+				for (i=0;i<stack.length;i+=1){
+					supposedsum+=stack[i];
+				}
+				if (typeof supposedsum === 'number'){
+					stack = [supposedsum];
+				}
+				else {
+					stack = [stack.join('')];
+				}
+				break;
 			// m Min, ignores strings unless there are only strings
 			/*case 'm':
 				var anynumbers = 0;
@@ -194,7 +220,6 @@ function fstep(){
 				return true;
 		}
 	}
-	// libs
 	else if (timelibrary){
 		switch (command){
 			// ignore whitespace
@@ -256,7 +281,11 @@ function fstep(){
 					mconsole('w','superfluous input\n@ Char '+line);
 				}
 				else {
-					stack.push(document.getElementById('input').value.split("\n")[inputline]);
+					a = document.getElementById('input').value.split("\n")[inputline];
+					if (!Number.isNaN(Number(a))){ // number
+						a = Number(a);
+					}
+					stack.push(a);
 				}
 				inputline+=1;
 				break;
@@ -523,6 +552,7 @@ function fstep(){
 				stack.unshift(stack.pop());
 				break;
 			// ABC
+			// RESERVING C D S S{'test'C{}D{}}
 			// A arithmetic mean ~ average
 			case 'A':
 				var sum = 0;
@@ -538,6 +568,9 @@ function fstep(){
 					return true;
 				}
 				break;
+			// TODO C
+			// TODO D
+			// TODO F{x} array.forEach(x)
 			// G geometric mean
 			case 'G':
 				var product = 0;
@@ -591,32 +624,14 @@ function fstep(){
 			case 'M':
 				mathlibrary = 1;
 				break;
-			// P multiply entire stack
+			// P push to array
 			case 'P':
-				var supposedproduct = 1;
-				for (i=0;i<stack.length;i+=1){
-					supposedproduct = supposedproduct*stack[i];
-				}
-				if (Number.isNaN(supposedproduct)){
-					console.error('Attempted product of a mixed stack\n@ Char '+line+'\n\t'+command);
-					mconsole('e','Attempted product of a mixed stack\n@ Char '+line+'\n\t'+command);
-					return true;
-				}
-				stack = [supposedproduct];
+				b = stack.pop();
+				a = stack.pop();
+				a.push(b);
+				stack.push(a);
 				break;
-			// S sum entire stack, or concatenate if ANY item is a string
-			case 'S':
-				var supposedsum = 0;
-				for (i=0;i<stack.length;i+=1){
-					supposedsum+=stack[i];
-				}
-				if (typeof supposedsum === 'number'){
-					stack = [supposedsum];
-				}
-				else {
-					stack = [stack.join('')];
-				}
-				break;
+			// TODO S
 			// T Timefunctions
 			case 'T':
 				timelibrary = 1;
@@ -725,6 +740,10 @@ function fstep(){
 			// _ undefined
 			// ` undefined
 			// abc
+			// a new array
+			case 'a':
+				stack.push([]);
+				break;
 			// e
 			case 'e':
 				a = stack.pop();
@@ -744,6 +763,13 @@ function fstep(){
 					mconsole('e','Attempted log of a string\n@ Char '+line+'\n\t'+command);
 				}
 				stack.push(Math.log(a));
+				break;
+			// p pop from array
+			case 'p':
+				a = stack.pop();
+				b = a.pop();
+				stack.push(a);
+				stack.push(b);
 				break;
 			// s sort: if only numbers, L->G else alphabetically
 			/*case 's':
