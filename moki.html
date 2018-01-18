@@ -160,6 +160,31 @@
 		else return their concatenation<br/>
 		don't forget to pop S<sub>0</sub>
 		</dd>
+	<dt>,</dt>
+		<dd>
+		push 0 onto the stack
+		</dd>
+	<dt>-</dt>
+		<dd>
+		subtraction - treat characters like their charcodes
+		</dd>
+	<dt>.</dt>
+		<dd>
+		duplicate top of stack
+		</dd>
+	<dt>/</dt>
+		<dd>
+		division - treat string divisors as their charcodes, split dividend strings into n parts
+		</dd>
+	<dt>0-9</dt>
+		<dd>
+		if S<sub>0</sub> is a Real &rarr; multiply top of stack by 10, add n<br/>
+		if S<sub>0</sub> is a String &rarr; concatenate
+		</dd>
+	<dt>;</dt>
+		<dd>
+		pop top of stack
+		</dd>
 	Todo: Finish Dictionary
 </dl>
 

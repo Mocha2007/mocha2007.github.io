@@ -397,7 +397,7 @@ function fstep(){
 			case ',':
 				stack.push(0);
 				break;
-			// - sub
+			// - sub TODO - allow string-string instead of just string-char
 			case '-':
 				b = stack.pop();
 				a = stack.pop();
