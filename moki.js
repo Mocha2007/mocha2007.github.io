@@ -474,7 +474,7 @@ function fstep(){
 					// https://stackoverflow.com/a/6521513/2579798
 					stack = [stack.sort(function (a, b) { return b.length - a.length; })[0]];
 				}
-				break;*/
+				break;
 			// P multiply entire stack
 			case 'P':
 				var supposedsum = 0;
@@ -489,7 +489,7 @@ function fstep(){
 					mconsole('e','Attempted product of a mixed stack\n@ Char '+line+'\n\t'+command);
 					return true;
 				}
-				break;
+				break;*/
 			// S sum entire stack, or concatenate if ANY item is a string
 			case 'S':
 				var supposedsum = 0;
