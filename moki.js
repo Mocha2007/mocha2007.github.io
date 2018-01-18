@@ -626,7 +626,7 @@ function fstep(){
 					}
 					stack = [minimum]
 				}
-				break;*/
+				break;
 			// s sort: if only numbers, L->G else alphabetically
 			case 's':
 				var anystrings = 0;
@@ -643,7 +643,7 @@ function fstep(){
 					// https://stackoverflow.com/a/1063027/2579798
 					stack.sort((a,b)=>a-b);
 				}
-				break;
+				break;*/
 			// t seconds since epoch
 			case 't':
 				stack.push(new Date().getTime()/1000);
