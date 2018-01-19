@@ -1,4 +1,4 @@
-var versionno = '1.4.1';
+var versionno = '1.4.2';
 
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -31,14 +31,19 @@ function mod(n,m){
 // Console
 function mconsole(MessageClass,Message){
 	"use strict";
+	var showErrors = !document.getElementById('suppress').checked;
 	if (MessageClass==='i'){
 		document.getElementById('console').innerHTML += '\n<span class="ci">info</span>: '+Message;
 	}
 	else if (MessageClass==='w'){
-		document.getElementById('console').innerHTML += '\n<span class="cw">warning</span>:\n'+Message;
+		if (showErrors){
+			document.getElementById('console').innerHTML += '\n<span class="cw">warning</span>:\n'+Message;
+		}
 	}
 	else if (MessageClass==='e'){
-		document.getElementById('console').innerHTML += '\n<span class="ce">error</span>:\n'+Message;
+		if (showErrors){
+			document.getElementById('console').innerHTML += '\n<span class="ce">error</span>:\n'+Message;
+		}
 	}
 	else if (MessageClass==='o'){
 		if (Message==='sfx'){
@@ -58,6 +63,7 @@ function mconsole(MessageClass,Message){
 }
 
 var commandlist = '';
+var command = '';
 var stack = [0];
 var inputline = 0;
 var line = 0;
@@ -76,7 +82,9 @@ var escaped = 0;
 // temps
 var a,b,c,d,i;
 // ascii
-var ascii = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
+// var ascii = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
+var validascii = '!"$%&\'()*+,-./0123456789;<=>?@AGILMPSTVW[\\]^aelpt{|}~'; // excludes whitespace & comments
+var binaryops = '%&*+-/<=>?P\\^'; // binary and larger; excludes whitespace & comments
 
 function cclr(){
 	"use strict";
@@ -111,22 +119,34 @@ function rchoice(x){
 	return x[Math.floor(Math.random()*x.length)];
 }
 
-function rprog(n){
+function rprog(){
 	"use strict";
+	var n = Number(document.getElementById('rlen').value);
+	if (Number.isNaN(n) || n<=0 || n%1!==0){
+		n = 10;
+	}
 	var randomProgram = '';
 	for (i=0;i<n;i+=1){
-		randomProgram+=rchoice(ascii);
+		randomProgram+=rchoice(validascii);
 	}
 	document.getElementById('code').value = randomProgram;
+	console.log('rprog');
+	reset();
 	return false;
 }
 
+function err(errMsg){
+	"use strict";
+	console.error(errMsg+'\n@ Char '+line+'\n\t'+command);
+	mconsole('e',errMsg+'\n@ Char '+line+'\n\t'+command);
+	return true;
+}
 
 // Main
 function fstep(){
 	"use strict";
 	// Determining the command
-	var command = commandlist[line];
+	command = commandlist[line];
 	// Reject
 	if (command===undefined || command===''){
 		if (document.getElementById('console').innerHTML.slice(-44)!=='<span class="ci">info</span>: End of Program'){
@@ -207,9 +227,7 @@ function fstep(){
 					a = a*stack[i];
 				}
 				if (Number.isNaN(a)){
-					console.error('Attempted product of a mixed stack\n@ Char '+line+'\n\t'+command);
-					mconsole('e','Attempted product of a mixed stack\n@ Char '+line+'\n\t'+command);
-					return true;
+					return err('Attempted product of a mixed stack');
 				}
 				stack = [a];
 				break;
@@ -257,9 +275,7 @@ function fstep(){
 				break;*/
 			// error
 			default:
-				console.error('Operation not in Math dictionary: '+command+'\n@ Char '+line+'\n\t'+command);
-				mconsole('e','Operation not in Math dictionary: '+command+'\n@ Char '+line+'\n\t'+command);
-				return true;
+				return err('Operation not in Math dictionary');
 		}
 	}
 	else if (timelibrary){// TODO
@@ -287,6 +303,9 @@ function fstep(){
 	}
 	// do
 	else {
+		if (binaryops.indexOf(command)!==-1 && stack.length<2){ // insufficient stacksize
+			return err('stack too small');
+		}
 		switch (command){
 			// ignore whitespace
 			case '\t':
@@ -337,15 +356,11 @@ function fstep(){
 				a = stack.pop();
 				// ZeroDivisionError
 				if (b===0){
-					console.error('zero divisor\n@ Char '+line+'\n\t'+command);
-					mconsole('e','zero divisor\n@ Char '+line+'\n\t'+command);
-					return true;
+					return err('zero divisor');
 				}
 				// StringModuloError
 				if (typeof a+b === 'string'){
-					console.error('string modulo\n@ Char '+line+'\n\t'+command);
-					mconsole('e','string modulo\n@ Char '+line+'\n\t'+command);
-					return true;
+					return err('string modulo');
 				}
 				stack.push(mod(a,b));
 				break;
@@ -367,7 +382,7 @@ function fstep(){
 					tempstring = '';
 				}
 				stringcreation = 1-stringcreation; // toggle
-				console.log('stringcreation toggle');
+				console.log('string toggle');
 				break;
 			// ( decrement
 			case '(':
@@ -445,9 +460,7 @@ function fstep(){
 				}
 				// ZeroDivisionError
 				if (b===0){
-					console.error('zero divisor\n@ Char '+line+'\n\t'+command);
-					mconsole('e','zero divisor\n@ Char '+line+'\n\t'+command);
-					return true;
+					return err('zero divisor');
 				}
 				// yes, strings can be divided too!
 				if (typeof a === 'string'){
@@ -605,9 +618,7 @@ function fstep(){
 					stack = [a/stack.length];
 				}
 				else {
-					console.error('Attempted mean of a mixed stack\n@ Char '+line+'\n\t'+command);
-					mconsole('e','Attempted mean of a mixed stack\n@ Char '+line+'\n\t'+command);
-					return true;
+					return err('arithmetic mean of mixed stack');
 				}
 				break;
 			// TODO C
@@ -615,7 +626,7 @@ function fstep(){
 			// TODO F{x} array.forEach(x)
 			// G geometric mean
 			case 'G':
-				a = 0;
+				a = 1;
 				for (i=0;i<stack.length;i+=1){
 					a = a*stack[i];
 				}
@@ -623,9 +634,7 @@ function fstep(){
 					stack = [Math.pow(a,1/stack.length)];
 				}
 				else {
-					console.error('Attempted mean of a mixed stack\n@ Char '+line+'\n\t'+command);
-					mconsole('e','Attempted mean of a mixed stack\n@ Char '+line+'\n\t'+command);
-					return true;
+					return err('geometric mean of mixed stack');
 				}
 				break;
 			// I if - if TOS false, skip to next }
@@ -638,9 +647,7 @@ function fstep(){
 						templine+=1;//look next character over
 						// immediately error out if past end
 						if (templine>=commandlist.length){
-							console.error('Mismatched braces\n@ Char '+line+'\n\t'+command);
-							mconsole('e','Mismatched braces\n@ Char '+line+'\n\t'+command);
-							return true;
+							return err('mismatched braces');
 						}
 						//otherwise
 						tempcommand = commandlist[templine];//get command
@@ -666,12 +673,21 @@ function fstep(){
 			case 'M':
 				mathlibrary = 1;
 				break;
-			// P push to array
+			// P push to array. prefers the array to be FIRST.
 			case 'P':
 				b = stack.pop();
 				a = stack.pop();
-				a.push(b);
-				stack.push(a);
+				if (typeof a === 'object'){
+					a.push(b);
+					stack.push(a);
+				}
+				else if (typeof b === 'object'){
+					b.push(a);
+					stack.push(b);
+				}
+				else {
+					stack.push([a,b]);
+				}
 				break;
 			// TODO S
 			// T Timefunctions
@@ -692,9 +708,7 @@ function fstep(){
 						templine+=1;//look next character over
 						// immediately error out if past end
 						if (templine>=commandlist.length){
-							console.error('Mismatched braces\n@ Char '+line+'\n\t'+command);
-							mconsole('e','Mismatched braces\n@ Char '+line+'\n\t'+command);
-							return true;
+							return err('mismatched braces');
 						}
 						//otherwise
 						tempcommand = commandlist[templine];//get command
@@ -748,22 +762,16 @@ function fstep(){
 				}
 				// 0^0 Error
 				if (a===0 && b<=0){
-					console.error('zero power\n@ Char '+line+'\n\t'+command);
-					mconsole('e','zero power\n@ Char '+line+'\n\t'+command);
-					return true;
+					return err('zero to the zero');
 				}
 				// -x^R Error
 				if (a<0 && b%1!==0){
-					console.error('complex exponentiation\n@ Char '+line+'\n\t'+command);
-					mconsole('e','complex exponentiation\n@ Char '+line+'\n\t'+command);
-					return true;
+					return err('complex exponentiation');
 				}
 				// string
 				if (typeof a === 'string'){
 					if (b<0 || b%1!==0){ // uh oh
-						console.error('bad string exponentiation\n@ Char '+line+'\n\t'+command);
-						mconsole('e','bad string exponentiation\n@ Char '+line+'\n\t'+command);
-						return true;
+						return err('bad string exponentiation');
 					}
 					if (b===0){ // anything^0 = 1 mostly
 						stack.push(1);
@@ -798,25 +806,31 @@ function fstep(){
 					stack.push(a*Math.E);
 				}
 				else {
-					console.error('Erroneous Euler\n@ Char '+line+'\n\t'+command);
-					mconsole('e','Erroneous Euler\n@ Char '+line+'\n\t'+command);
+					return err('erroneous euler');
 				}
 				break;
 			// l ln of a
 			case 'l':
 				a = stack.pop();
 				if (typeof a !== 'number'){
-					console.error('Attempted log of a string\n@ Char '+line+'\n\t'+command);
-					mconsole('e','Attempted log of a string\n@ Char '+line+'\n\t'+command);
+					return err('log of string');
+				}
+				if (a<=0){
+					return err('nonpositive log');
 				}
 				stack.push(Math.log(a));
 				break;
 			// p pop from array
 			case 'p':
 				a = stack.pop();
-				b = a.pop();
-				stack.push(a);
-				stack.push(b);
+				if (typeof a === 'object'){
+					b = a.pop();
+					stack.push(a);
+					stack.push(b);
+				}
+				else {
+					return err('pop from nonarray');
+				}
 				break;
 			// s sort: if only numbers, L->G else alphabetically
 			/*case 's':
@@ -838,10 +852,15 @@ function fstep(){
 			// { begin loop
 			case '{':
 				break;
-			// | absolute value
+			// | absolute value ; does nothing to strings
 			case '|':
 				a = stack.pop();
-				stack.push(Math.abs(stack[stack.length-1]));
+				if (typeof a === 'number'){
+					stack.push(Math.abs(a));
+				}
+				else {
+					stack.push(a);
+				}
 				break;
 			// } end loop iff top of stack === 0 W{} I{}
 			case '}':
@@ -853,9 +872,7 @@ function fstep(){
 					templine-=1;//look next character over
 					// immediately error out if past beginning
 					if (templine<0){
-						console.error('Mismatched braces\n@ Char '+line+'\n\t'+command);
-						mconsole('e','Mismatched braces\n@ Char '+line+'\n\t'+command);
-						return true;
+						return err('mismatched braces');
 					}
 					//otherwise
 					tempcommand = commandlist[templine];//get command
@@ -894,9 +911,7 @@ function fstep(){
 					stack.push(a*0.5772156649015329);
 				}
 				else {
-					console.error('Erroneous Euler-Mascheroni\n@ Char '+line+'\n\t'+command);
-					mconsole('e','Erroneous Euler-Mascheroni\n@ Char '+line+'\n\t'+command);
-					return true;
+					return err('erroneous euler-mascheroni');
 				}
 				break;
 			// π 960
@@ -906,17 +921,13 @@ function fstep(){
 					stack.push(a*Math.PI);
 				}
 				else {
-					console.error('Erroneous Pi\n@ Char '+line+'\n\t'+command);
-					mconsole('e','Erroneous Pi\n@ Char '+line+'\n\t'+command);
-					return true;
+					return err('erroneous pi');
 				}
 				break;
 			//.charCodeAt(0)
 			// error
 			default:
-				console.error('Operation not in dictionary: '+command+'\n@ Char '+line+'\n\t'+command);
-				mconsole('e','Operation not in dictionary: '+command+'\n@ Char '+line+'\n\t'+command);
-				return true;
+					return err('operation not in dictionary');
 		}
 	}
 	// final touches

@@ -55,11 +55,13 @@
 	<input type="submit" value="Reset" onclick="reset();"> &rarr;
 	<input type="submit" value="Step" onclick="fstep();"> |
 	<input type="submit" value="100 Steps" onclick="fstep100();"> |
-	<input type="submit" value="Random" onclick="rprog(10);">
+	<input type="submit" value="Random Program" onclick="rprog();fstep100();"> <!--the fstep here is only TEMPORARY, pls remove-->
+	Len = <input type="text" id="rlen" size=1></textarea>
+	<input type="checkbox" id="suppress"><label for="suppress">Suppress Errors</label>
 	<br/>
 	<i>Reading Char <span id="line">0</span></i><br/>
 	<i>Stack: [<span id="stack">0</span>]</i>
-	<pre id='console'><i>Moki rev 1.4.1</i></pre>
+	<pre id='console'><i>Moki rev 1.4.2</i></pre>
 </div>
 
 <h2 id='Introduction'>Introduction</h2>
@@ -76,6 +78,9 @@
 <h2 id='Changelog'>Changelog</h2>
 
 <dl>
+	<dt>1.4.2</dt>
+		<dd>Added random program and error suppression.<br/>
+		Various minor bugfixes.</dd>
 	<dt>1.4.1</dt>
 		<dd>Added escape character \' \\.<br/>
 		Added stack visualization.</dd>
