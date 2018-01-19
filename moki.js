@@ -85,7 +85,7 @@ var a,b,c,d,i;
 // ascii
 // var ascii = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
 var validascii = '!"$%&\'()*+,-./0123456789;<=>?@AGILMPTVW[\\]^aelp{|}~γπ'; // excludes whitespace & comments includes γπ
-var validgolfascii = '!"%&\'()+,-.;<=>?@AGILMPSTVW[\\]adehlmptwy{|}~γπ'; // for that codegolf challenge
+//var validgolfascii = '!"%&\'()+,-.;<=>?@AGILMPSTVW[\\]adehlmptwy{|}~γπ'; // for that codegolf challenge
 var unaryops = '"(),?AGLP[]elp|~'; // require at least 1 in stack; excludes whitespace, comments, digits, and ;
 var binaryops = '&^'; // require at least 2 in stack; excludes whitespace & comments
 var digits = '0123456789';
@@ -170,11 +170,6 @@ function fstep(){
 	if (command===undefined || command===''){
 		if (document.getElementById('console').innerHTML.slice(-44)!=='<span class="ci">info</span>: End of Program'){
 			a = stack.join('');
-			/* is greatest output?
-			if (Number.isFinite(Number(a)) && a > Number(document.getElementById('input').value)){ //  && !commandlist.match(/[$0123456789*^]/g)
-				document.getElementById('Moki').innerHTML=commandlist;
-				document.getElementById('input').value=Number(a);
-			}*/
 			mconsole('o',a);
 			mconsole('i','End of Program');
 		}
@@ -401,7 +396,7 @@ function fstep(){
 				if (Number.isFinite(a)){
 					stack.push(String.fromCharCode(a));
 				}
-				if (typeof a === 'object'){ // concat into string
+				else if (typeof a === 'object'){ // concat into string
 					stack.push(a.join(''));
 				}
 				else {
@@ -1285,10 +1280,10 @@ function fstep(){
 				return err('operation '+command+' not in dictionary');
 		}}
 	}
-	// Stack unchanged?
+	/* Stack unchanged?
 	if (oldstack === stack && !(stringcreation || iscommented || mathlibrary || timelibrary || escaped)){
 		warn('meaningless '+command);
-	}
+	}*/
 	// final touches
 	document.getElementById('stack').innerHTML = stack;/*
 	// shows me erroneous programs DELETE PLS DONT PUSH
