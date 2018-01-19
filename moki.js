@@ -84,6 +84,7 @@ var a,b,c,d,i;
 // ascii
 // var ascii = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
 var validascii = '!"$%&\'()*+,-./0123456789;<=>?@AGILMPTVW[\\]^aelp{|}~γπ'; // excludes whitespace & comments includes γπ
+var validgolfascii = '!"%&\'()+,-.;<=>?@AGILMPSTVW[\\]adehlmptwy{|}~γπ'; // for that codegolf challenge
 var unaryops = '"$(),@AGL[]elp|~'; // unary; excludes whitespace, comments, digits, and ;
 var binaryops = '%&*+-/<=>?P\\^'; // binary and larger; excludes whitespace & comments
 var digits = '0123456789';
@@ -110,6 +111,13 @@ function reset(){
 	console.log(commandlist);
 	// input
 	inputline = 0;
+	// specials
+	mathlibrary = 0;
+	timelibrary = 0;
+	escaped = 0;
+	stringcreation = 0;
+	tempstring = '';
+	iscommented = 0;
 	// finishing touches
 	cclr();
 	console.log('Reset');
@@ -129,7 +137,7 @@ function rprog(){
 	}
 	var randomProgram = '';
 	for (i=0;i<n;i+=1){
-		randomProgram+=rchoice(validascii);
+		randomProgram+=rchoice(validgolfascii);
 	}
 	document.getElementById('code').value = randomProgram;
 	console.log('rprog');
@@ -153,12 +161,20 @@ function warn(warnMsg){
 // Main
 function fstep(){
 	"use strict";
+	// noting initial stack state (see end for reason)
+	var oldstack = stack;
 	// Determining the command
 	command = commandlist[line];
 	// Reject
 	if (command===undefined || command===''){
 		if (document.getElementById('console').innerHTML.slice(-44)!=='<span class="ci">info</span>: End of Program'){
-			mconsole('o',stack.join(''));
+			a = stack.join('');
+			/* is greatest output?
+			if (Number.isFinite(Number(a)) && a > Number(document.getElementById('input').value)){ //  && !commandlist.match(/[$0123456789*^]/g)
+				document.getElementById('Moki').innerHTML=commandlist;
+				document.getElementById('input').value=Number(a);
+			}*/
+			mconsole('o',a);
 			mconsole('i','End of Program');
 		}
 		return true;
@@ -1166,17 +1182,16 @@ function fstep(){
 				return err('operation not in dictionary');
 		}}
 	}
-	/* if stack is just an array with undefined in it, make it blank ffs
-	if (stack.length<2 && stack[0] === undefined){
-		stack = [0];
-		alert(commandlist);
+	/* Stack unchanged?
+	if (oldstack === stack){
+		warn('potentially superfluous '+command);
 	}*/
 	// final touches
-	document.getElementById('stack').innerHTML = stack;
+	document.getElementById('stack').innerHTML = stack;/*
 	// shows me erroneous programs DELETE PLS DONT PUSH
 	if (Number.isNaN(stack[0]) || stack[0]===Infinity){
 		document.getElementById('Moki').innerHTML=commandlist;
-	}
+	}*/
 	return false;
 }
 
