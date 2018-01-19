@@ -1,4 +1,4 @@
-var versionno = '1.5';
+var versionno = '1.5.1';
 
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -86,7 +86,7 @@ var a,b,c,d,i;
 // var ascii = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
 var validascii = '!"$%&\'()*+,-./0123456789;<=>?@AGILMPTVW[\\]^aelp{|}~γπ'; // excludes whitespace & comments includes γπ
 //var validgolfascii = '!"%&\'()+,-.;<=>?@AGILMPSTVW[\\]adehlmptwy{|}~γπ'; // for that codegolf challenge
-var unaryops = '"(),?AGLP[]elp|~'; // require at least 1 in stack; excludes whitespace, comments, digits, and ;
+var unaryops = '"(),?AGLMP[]elp|~'; // require at least 1 in stack; excludes whitespace, comments, digits, and ;
 var binaryops = '&^'; // require at least 2 in stack; excludes whitespace & comments
 var digits = '0123456789';
 
@@ -163,7 +163,7 @@ function warn(warnMsg){
 function fstep(){
 	"use strict";
 	// noting initial stack state (see end for reason)
-	var oldstack = stack;
+	//var oldstack = stack;
 	// Determining the command
 	command = commandlist[line];
 	// Reject
@@ -214,18 +214,30 @@ function fstep(){
 				break;
 			// ! factorial
 			case '!':
-				if (stack.length){
-					a = stack.pop();
-					if (typeof a === 'number'){
-						stack.push(factorial(a));
+				a = stack.pop();
+				if (typeof a === 'number'){
+					stack.push(factorial(a));
+				}
+				else {
+					stack.push(a);
+					return err('factorial of a string');
+				}
+				break;
+			// / inverse
+			case '/':
+				a = stack.pop();
+				if (typeof a === 'number'){
+					if (a){
+						stack.push(1/a);
 					}
 					else {
-						stack.push(a);
-						return err('factorial of a string');
+						stack.push(0);
+						return err('zero divisor');
 					}
 				}
 				else {
-					return err('factorial of empty stack');
+					stack.push(a);
+					return err('inverse of string/array');
 				}
 				break;
 			// M Max, ignores strings unless there are only strings
@@ -276,6 +288,11 @@ function fstep(){
 					stack = [stack.join('')];
 				}
 				break;
+			// T nth Triangular #
+			case 'T':
+				a = stack.pop();
+				stack.push((a+a*a)/2);
+				break;
 			// m Min, ignores strings unless there are only strings
 			/*case 'm':
 				var anynumbers = 0;
@@ -305,6 +322,91 @@ function fstep(){
 					stack = [minimum]
 				}
 				break;*/
+			// c cosine
+			case 'c':
+				a = stack.pop();
+				if (typeof a === 'number'){
+					stack.push(Math.cos(a));
+				}
+				else {
+					stack.push(a);
+					return err('cosine of string/array');
+				}
+				break;
+			// l log base a of b
+			case 'l':
+				if (stack.length>1){
+					b = stack.pop();
+					a = stack.pop();
+					if (typeof (a+b) !== 'number'){
+						stack.push(a);
+						return err('log of string/array');
+					}
+					if (a<=0 || b<=0){
+						stack.push(a);
+						return err('nonpositive log');
+					}
+					stack.push(Math.log(b)/Math.log(a));
+				}
+				else {
+					return err('stack too small');
+				}
+				break;
+			// s sine
+			case 's':
+				a = stack.pop();
+				if (typeof a === 'number'){
+					stack.push(Math.sin(a));
+				}
+				else {
+					stack.push(a);
+					return err('sine of string/array');
+				}
+				break;
+			// t tangent
+			case 't':
+				a = stack.pop();
+				if (typeof a === 'number'){
+					stack.push(Math.tan(a));
+				}
+				else {
+					stack.push(a);
+					return err('tangent of string/array');
+				}
+				break;
+			// x secant
+			case 'x':
+				a = stack.pop();
+				if (typeof a === 'number'){
+					stack.push(Math.sec(a));
+				}
+				else {
+					stack.push(a);
+					return err('secant of string/array');
+				}
+				break;
+			// 265 ĉ arccosine
+			case 'ĉ':
+				a = stack.pop();
+				if (typeof a === 'number'){
+					stack.push(Math.acos(a));
+				}
+				else {
+					stack.push(a);
+					return err('arccosine of string/array');
+				}
+				break;
+			// 349 ŝ arcsine
+			case 'ŝ':
+				a = stack.pop();
+				if (typeof a === 'number'){
+					stack.push(Math.asin(a));
+				}
+				else {
+					stack.push(a);
+					return err('arccosine of string/array');
+				}
+				break;
 			// error
 			default:
 				return err('operation not in Math dictionary');
