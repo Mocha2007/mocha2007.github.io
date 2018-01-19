@@ -1,4 +1,4 @@
-var versionno = '1.4.3';
+var versionno = '1.4.4';
 
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -143,6 +143,12 @@ function err(errMsg){
 	mconsole('e',errMsg+'\n@ Char '+line+'\n\t'+command);
 	return true;
 }
+function warn(warnMsg){
+	"use strict";
+	console.warn(warnMsg+'\n@ Char '+line+'\n\t'+command);
+	mconsole('w',warnMsg+'\n@ Char '+line+'\n\t'+command);
+	return false;
+}
 
 // Main
 function fstep(){
@@ -196,13 +202,18 @@ function fstep(){
 				break;
 			// ! factorial
 			case '!':
-				a = stack.pop();
-				if (typeof a === 'number'){
-					stack.push(factorial(a));
+				if (stack.length){
+					a = stack.pop();
+					if (typeof a === 'number'){
+						stack.push(factorial(a));
+					}
+					else {
+						stack.push(a);
+						return err('factorial of a string');
+					}
 				}
 				else {
-					stack.push(a);
-					return err('factorial of a string');
+					return err('factorial of empty stack');
 				}
 				break;
 			// M Max, ignores strings unless there are only strings
@@ -397,8 +408,7 @@ function fstep(){
 				a = document.getElementById('input').value.split("\n")[inputline];
 				if (a==='' || a===undefined){
 					stack.push(0);
-					console.warn('superfluous input\n@ Char '+line);
-					mconsole('w','superfluous input\n@ Char '+line);
+					warn('superfluous $');
 				}
 				else {
 					if (!Number.isNaN(Number(a))){ // number
@@ -501,6 +511,16 @@ function fstep(){
 				b = stack.pop();
 				a = stack.pop();
 				// use charcode if b is string
+				if (typeof b === 'object'){
+					c = a;//swap
+					a = b;
+					b = c;
+				}
+				if (typeof b === 'object'){
+					stack.push(b);
+					stack.push(a);
+					return err('both multiplicands are arrays');
+				}
 				if (typeof b === 'string'){
 					if (b.length){ // empty string catch
 						b = b.charCodeAt(0);
@@ -573,8 +593,7 @@ function fstep(){
 					stack.push(stack[stack.length-1]);
 				}
 				else {
-					console.warn('superfluous .\n@ Char '+line);
-					mconsole('w','superfluous .\n@ Char '+line);
+					warn('superfluous .');
 				}
 				break;
 			// / div
@@ -716,8 +735,7 @@ function fstep(){
 					stack.pop();
 				}
 				else {
-					console.warn('superfluous ;\n@ Char '+line);
-					mconsole('w','superfluous ;\n@ Char '+line);
+					warn('superfluous ;');
 				}
 				break;
 			// < less than; javascript's handling of it with strings is already perfect
@@ -1103,8 +1121,11 @@ function fstep(){
 				else if (typeof a === 'object'){
 					stack.push(a.reverse());
 				}
-				else {
+				else if (a){
 					stack.push(-a);
+				}
+				else {
+					stack.push(0);
 				}
 				break;
 			// γ 947
@@ -1153,7 +1174,7 @@ function fstep(){
 	// final touches
 	document.getElementById('stack').innerHTML = stack;
 	// shows me erroneous programs DELETE PLS DONT PUSH
-	if (Number.isNaN(stack[0])){
+	if (Number.isNaN(stack[0]) || stack[0]===Infinity){
 		document.getElementById('Moki').innerHTML=commandlist;
 	}
 	return false;
