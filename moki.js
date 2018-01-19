@@ -1,4 +1,4 @@
-var versionno = '1.4.4';
+var versionno = '1.5';
 
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -31,12 +31,13 @@ function mod(n,m){
 // Console
 function mconsole(MessageClass,Message){
 	"use strict";
-	var showErrors = !document.getElementById('suppress').checked;
+	var showErrors = !document.getElementById('suppresse').checked;
+	var showWarns = !document.getElementById('suppressw').checked;
 	if (MessageClass==='i'){
 		document.getElementById('console').innerHTML += '\n<span class="ci">info</span>: '+Message;
 	}
 	else if (MessageClass==='w'){
-		if (showErrors){
+		if (showWarns){
 			document.getElementById('console').innerHTML += '\n<span class="cw">warning</span>:\n'+Message;
 		}
 	}
@@ -85,8 +86,8 @@ var a,b,c,d,i;
 // var ascii = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
 var validascii = '!"$%&\'()*+,-./0123456789;<=>?@AGILMPTVW[\\]^aelp{|}~γπ'; // excludes whitespace & comments includes γπ
 var validgolfascii = '!"%&\'()+,-.;<=>?@AGILMPSTVW[\\]adehlmptwy{|}~γπ'; // for that codegolf challenge
-var unaryops = '"$(),@AGL[]elp|~'; // unary; excludes whitespace, comments, digits, and ;
-var binaryops = '%&*+-/<=>?P\\^'; // binary and larger; excludes whitespace & comments
+var unaryops = '"(),?AGLP[]elp|~'; // require at least 1 in stack; excludes whitespace, comments, digits, and ;
+var binaryops = '&^'; // require at least 2 in stack; excludes whitespace & comments
 var digits = '0123456789';
 
 function cclr(){
@@ -137,7 +138,7 @@ function rprog(){
 	}
 	var randomProgram = '';
 	for (i=0;i<n;i+=1){
-		randomProgram+=rchoice(validgolfascii);
+		randomProgram+=rchoice(validascii);
 	}
 	document.getElementById('code').value = randomProgram;
 	console.log('rprog');
@@ -311,7 +312,7 @@ function fstep(){
 				break;*/
 			// error
 			default:
-				return err('Operation not in Math dictionary');
+				return err('operation not in Math dictionary');
 		}
 	}
 	else if (timelibrary){// TODO
@@ -357,9 +358,7 @@ function fstep(){
 				break;
 			// error
 			default:
-				console.error('Operation not in Time dictionary: '+command+'\n@ Char '+line+'\n\t'+command);
-				mconsole('e','Operation not in Time dictionary: '+command+'\n@ Char '+line+'\n\t'+command);
-				return true;
+				return err('operation not in Time dictionary');
 		}
 	}
 	// do
@@ -436,27 +435,41 @@ function fstep(){
 				break;
 			// % mod
 			case '%':
-				b = stack.pop();
-				a = stack.pop();
-				// ZeroDivisionError
-				if (b===0){
-					stack.push(a);
-					stack.push(b);
+				if (stack.length>1){
+					b = stack.pop();
+					a = stack.pop();
+					// ZeroDivisionError
+					if (b===0){
+						stack.push(a);
+						stack.push(b);
+						return err('zero divisor');
+					}
+					// StringModuloError
+					if (typeof a === 'string' || typeof b === 'string'){
+						stack.push(a);
+						stack.push(b);
+						return err('string modulo');
+					}
+					// ArrayModuloError
+					if (typeof a !== 'number' || typeof b !== 'number'){
+						stack.push(a);
+						stack.push(b);
+						return err('array modulo');
+					}
+					stack.push(mod(a,b));
+				}
+				else if (stack.length){
+					a = stack.pop();
+					// ZeroDivisionError
+					if (a===0){
+						stack.push(a);
+						return err('zero divisor');
+					}
+					stack.push(0);
+				}
+				else {
 					return err('zero divisor');
 				}
-				// StringModuloError
-				if (typeof a === 'string' || typeof b === 'string'){
-					stack.push(a);
-					stack.push(b);
-					return err('string modulo');
-				}
-				// ArrayModuloError
-				if (typeof a !== 'number' || typeof b !== 'number'){
-					stack.push(a);
-					stack.push(b);
-					return err('string modulo');
-				}
-				stack.push(mod(a,b));
 				break;
 			// & returns a if a and b aren't 0, else 0
 			case "&":
@@ -524,48 +537,58 @@ function fstep(){
 				break;
 			// * mul
 			case '*':
-				b = stack.pop();
-				a = stack.pop();
-				// use charcode if b is string
-				if (typeof b === 'object'){
-					c = a;//swap
-					a = b;
-					b = c;
-				}
-				if (typeof b === 'object'){
-					stack.push(b);
-					stack.push(a);
-					return err('both multiplicands are arrays');
-				}
-				if (typeof b === 'string'){
-					if (b.length){ // empty string catch
-						b = b.charCodeAt(0);
+				if (stack.length>1){
+					b = stack.pop();
+					a = stack.pop();
+					// use charcode if b is string
+					if (typeof b === 'object'){
+						c = a;//swap
+						a = b;
+						b = c;
+					}
+					if (typeof b === 'object'){
+						stack.push(b);
+						stack.push(a);
+						return err('both multiplicands are arrays');
+					}
+					if (typeof b === 'string'){
+						if (b.length){ // empty string catch
+							b = b.charCodeAt(0);
+						}
+						else {
+							b = 0;
+						}
+					}
+					// duplicate string if a is string
+					if (typeof a === 'string'){
+						stack.push((new Array(b+1)).join(a));
+					}
+					// duplicate array if a is array
+					else if (typeof a === 'object'){
+						c = a;
+						for (i=1;i<b;i+=1){
+							a = a.concat(c); // concat
+						}
+						stack.push(a);
 					}
 					else {
-						b = 0;
+						stack.push(a*b);
 					}
-				}
-				// duplicate string if a is string
-				if (typeof a === 'string'){
-					stack.push((new Array(b+1)).join(a));
-				}
-				// duplicate array if a is array
-				else if (typeof a === 'object'){
-					c = a;
-					for (i=1;i<b;i+=1){
-						a = a.concat(c); // concat
-					}
-					stack.push(a);
 				}
 				else {
-					stack.push(a*b);
+					if (stack.length){
+						stack.pop();
+					}
+					stack.push(0);
 				}
 				break;
 			// + add
 			case '+':
-				b = stack.pop();
-				a = stack.pop();
-				stack.push(a+b);
+				if (stack.length>1){
+					b = stack.pop();
+					a = stack.pop();
+					stack.push(a+b);
+				} // else leave unchanged
 				break;
 			// , push 0 onto stack
 			case ',':
@@ -573,34 +596,43 @@ function fstep(){
 				break;
 			// - sub TODO - allow string-string instead of just string-char
 			case '-':
-				b = stack.pop();
-				a = stack.pop();
-				// use charcode if b is string
-				if (typeof b === 'string'){
-					b = b.charCodeAt(0);
-				}
-				// err if b is array
-				if (typeof b === 'object'){
-					return err('array subtrahend');
-				}
-				// use charcode if a is string
-				if (typeof a === 'string'){
-					stack.push(String.fromCharCode(a.charCodeAt(0)-b));
-				}
-				// iterate over whole array
-				else if (typeof a === 'object'){
-					for (i=0;i<a.length;i+=1){
-						if (typeof a[i] === 'string'){
-							a[i] = String.fromCharCode(a[i].charCodeAt(0)-b);
-						}
-						else {
-							a[i] -= b;
-						}
+				if (stack.length>1){
+					b = stack.pop();
+					a = stack.pop();
+					// use charcode if b is string
+					if (typeof b === 'string'){
+						b = b.charCodeAt(0);
 					}
-					stack.push(a);
+					// err if b is array
+					if (typeof b === 'object'){
+						return err('array subtrahend');
+					}
+					// use charcode if a is string
+					if (typeof a === 'string'){
+						stack.push(String.fromCharCode(a.charCodeAt(0)-b));
+					}
+					// iterate over whole array
+					else if (typeof a === 'object'){
+						for (i=0;i<a.length;i+=1){
+							if (typeof a[i] === 'string'){
+								a[i] = String.fromCharCode(a[i].charCodeAt(0)-b);
+							}
+							else {
+								a[i] -= b;
+							}
+						}
+						stack.push(a);
+					}
+					else {
+						stack.push(a-b);
+					}
+				}
+				else if (stack.length && typeof stack[0] === 'number'){ // change only if number
+					a = stack.pop();
+					stack.push(-a);
 				}
 				else {
-					stack.push(a-b);
+					stack.push(0);
 				}
 				break;
 			// . dupe top of stack
@@ -614,43 +646,66 @@ function fstep(){
 				break;
 			// / div
 			case '/':
-				b = stack.pop();
-				a = stack.pop();
-				// use charcode if b is string
-				if (typeof b === 'string'){
-					if (b.length){
-						b = b.charCodeAt(0);
+				if (stack.length>1){
+					b = stack.pop();
+					a = stack.pop();
+					// use charcode if b is string
+					if (typeof b === 'string'){
+						if (b.length){
+							b = b.charCodeAt(0);
+						}
+						else {
+							stack.push(a);
+							stack.push(b);
+							return err('zero divisor');
+						}
 					}
-					else {
+					// err b is array
+					if (typeof b !== 'number'){
+						stack.push(a);
+						stack.push(b);
+						return err('array divisor');
+					}
+					// ZeroDivisionError
+					if (b===0){
 						stack.push(a);
 						stack.push(b);
 						return err('zero divisor');
 					}
-				}
-				// err b is array
-				if (typeof b !== 'number'){
-					stack.push(a);
-					stack.push(b);
-					return err('array divisor');
-				}
-				// ZeroDivisionError
-				if (b===0){
-					stack.push(a);
-					stack.push(b);
-					return err('zero divisor');
-				}
-				// yes, strings / arrays can be divided too!
-				if (typeof a !== 'number'){
-					c = a.slice(0,Math.floor(a.length/b));
-					if (c!==''){
-						stack.push(c);
+					// yes, strings / arrays can be divided too!
+					if (typeof a !== 'number'){
+						c = a.slice(0,Math.floor(a.length/b));
+						if (c!==''){
+							stack.push(c);
+						}
+						else {
+							stack.push(0);
+						}
 					}
 					else {
-						stack.push(0);
+						stack.push(a/b);
 					}
 				}
+				else if (stack.length){
+					a = stack.pop();
+					if (typeof a === 'string'){
+						if (a.length){
+							a = a.charCodeAt(0);
+						}
+						else {
+							stack.push(a);
+							return err('zero divisor');
+						}
+					}
+					// ZeroDivisionError
+					if (a===0){
+						stack.push(a);
+						return err('zero divisor');
+					}
+					stack.push(0);
+				}
 				else {
-					stack.push(a/b);
+					return err('zero divisor');
 				}
 				break;
 			// #s
@@ -756,37 +811,73 @@ function fstep(){
 				break;
 			// < less than; javascript's handling of it with strings is already perfect
 			case '<':
-				b = stack.pop();
-				a = stack.pop();
-				stack.push(Number(a<b));
+				if (stack.length>1){
+					b = stack.pop();
+					a = stack.pop();
+					stack.push(Number(a<b));
+				}
+				else if (stack.length){
+					a = stack.pop();
+					stack.push(Number(0<b));
+				}
+				else {
+					stack.push(0);
+				}
 				break;
 			// = equal to
 			case '=':
-				b = stack.pop();
-				a = stack.pop();
-				stack.push(Number(a===b));
+				if (stack.length>1){
+					b = stack.pop();
+					a = stack.pop();
+					stack.push(Number(a===b));
+				}
+				else {
+					if (stack.length){
+						stack.pop();
+					}
+					stack.push(1);
+				}
 				break;
 			// > greater than; javascript's handling of it with strings is already perfect
 			case '>':
-				b = stack.pop();
-				a = stack.pop();
-				stack.push(Number(a>b));
+				if (stack.length>1){
+					b = stack.pop();
+					a = stack.pop();
+					stack.push(Number(a>b));
+				}
+				else if (stack.length){
+					a = stack.pop();
+					stack.push(Number(0>b));
+				}
+				else {
+					stack.push(0);
+				}
 				break;
 			// ? = [condition, val if true, val if false]?
 			case '?':
-				c = stack.pop();
-				b = stack.pop();
-				a = stack.pop();
-				if (a===0){
+				if (stack.length>2){
+					c = stack.pop();
+					b = stack.pop();
+					a = stack.pop();
+					if (a===0){
+						stack.push(b);
+					}
+					else {
+						stack.push(c);
+					}
+				}
+				else if (stack.length>1){
+					b = stack.pop();
+					a = stack.pop();
 					stack.push(b);
 				}
-				else {
-					stack.push(c);
-				}
+				// if len = 1, pass
 				break;
 			// @ rotate entire array
 			case '@':
-				stack.unshift(stack.pop());
+				if (stack.length>1){
+					stack.unshift(stack.pop());
+				}
 				break;
 			// ABC
 			// RESERVING C D S S{'test'C{}D{}}
@@ -857,18 +948,24 @@ function fstep(){
 				break;
 			// P push to array. prefers the array to be FIRST.
 			case 'P':
-				b = stack.pop();
-				a = stack.pop();
-				if (typeof a === 'object'){
-					a.push(b);
-					stack.push(a);
-				}
-				else if (typeof b === 'object'){
-					b.push(a);
-					stack.push(b);
+				if (stack.length>1){
+					b = stack.pop();
+					a = stack.pop();
+					if (typeof a === 'object'){
+						a.push(b);
+						stack.push(a);
+					}
+					else if (typeof b === 'object'){
+						b.push(a);
+						stack.push(b);
+					}
+					else {
+						stack.push([a,b]);
+					}
 				}
 				else {
-					stack.push([a,b]);
+					a = stack.pop();
+					stack.push([a]);
 				}
 				break;
 			// TODO S
@@ -930,10 +1027,12 @@ function fstep(){
 				break;
 			// [blackslash symbol] swap top two of stack
 			case '\\':
-				b = stack.pop();
-				a = stack.pop();
-				stack.push(b);
-				stack.push(a);
+				if (stack.length>1){
+					b = stack.pop();
+					a = stack.pop();
+					stack.push(b);
+					stack.push(a);
+				} // else no change
 				break;
 			// ] ceil
 			case ']':
@@ -1061,9 +1160,13 @@ function fstep(){
 					stack.push(a);
 					stack.push(b);
 				}
-				else {
-					stack.push(a);
-					return err('pop from nonarray');
+				else if (typeof a === 'string'){ // pop off last char
+					stack.push(a.slice(0,-1));
+					stack.push(a.slice(-1));
+				}
+				else { // pop off a 1
+					stack.push(a-1);
+					stack.push(1);
 				}
 				break;
 			// s sort: if only numbers, L->G else alphabetically
@@ -1179,13 +1282,13 @@ function fstep(){
 			//.charCodeAt(0)
 			// error
 			default:
-				return err('operation not in dictionary');
+				return err('operation '+command+' not in dictionary');
 		}}
 	}
-	/* Stack unchanged?
-	if (oldstack === stack){
-		warn('potentially superfluous '+command);
-	}*/
+	// Stack unchanged?
+	if (oldstack === stack && !(stringcreation || iscommented || mathlibrary || timelibrary || escaped)){
+		warn('meaningless '+command);
+	}
 	// final touches
 	document.getElementById('stack').innerHTML = stack;/*
 	// shows me erroneous programs DELETE PLS DONT PUSH
