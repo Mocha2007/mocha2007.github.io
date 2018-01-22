@@ -80,6 +80,7 @@ function mconsole(MessageClass,Message){
 
 var commandlist = [];
 commandlist.zero = 0;
+commandlist.quarter = 0;
 commandlist.half = 0;
 commandlist.one = 0;
 commandlist.two = 0;
@@ -91,6 +92,16 @@ commandlist.seven = 0;
 commandlist.eight = 0;
 commandlist.nine = 0;
 commandlist.ten = 0;
+commandlist.eleven = 0;
+commandlist.twelve = 0;
+commandlist.thirteen = 0;
+commandlist.fourteen = 0;
+commandlist.fifteen = 0;
+commandlist.sixteen = 0;
+commandlist.seventeen = 0;
+commandlist.eighteen = 0;
+commandlist.nineteen = 0;
+commandlist.twenty = 0;
 commandlist.hundred = 0;
 commandlist.thousand = 0;
 // non-numerals
@@ -107,6 +118,7 @@ commandlist.not = 1;
 commandlist.over = 2;
 commandlist.plus = 2;
 commandlist.pop = 1;
+commandlist.quartered = 1;
 commandlist.sum = 1;
 commandlist.times = 2;
 var program = '';
@@ -212,6 +224,9 @@ function fstep(){
 			case 'zero':
 				stack.push(0);
 				break;
+			case 'quarter':
+				stack.push(1/4);
+				break;
 			case 'half':
 				stack.push(1/2);
 				break;
@@ -244,6 +259,36 @@ function fstep(){
 				break;
 			case 'ten':
 				stack.push(10);
+				break;
+			case 'eleven':
+				stack.push(11);
+				break;
+			case 'twelve':
+				stack.push(12);
+				break;
+			case 'thirteen':
+				stack.push(13);
+				break;
+			case 'fourteen':
+				stack.push(14);
+				break;
+			case 'fiveteen':
+				stack.push(15);
+				break;
+			case 'sixteen':
+				stack.push(16);
+				break;
+			case 'seventeen':
+				stack.push(17);
+				break;
+			case 'eighteen':
+				stack.push(18);
+				break;
+			case 'nineteen':
+				stack.push(19);
+				break;
+			case 'twenty':
+				stack.push(20);
 				break;
 			case 'hundred':
 				stack.push(100);
@@ -315,6 +360,10 @@ function fstep(){
 				break;
 			case 'pop':
 				stack.pop();
+				break;
+			case 'quartered':
+				a = stack.pop();
+				stack.push(a/4);
 				break;
 			case 'summed':
 				stack = [sum(stack)];
