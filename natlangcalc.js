@@ -1,3 +1,5 @@
+// temps
+var a,b,i; // add b c d etc as needed
 var versionno = '1.1';
 /* Introduce l8r
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
@@ -24,6 +26,16 @@ function mod(n,m){
 	'use strict';
 	return ((n%m)+m)%m;
 }
+
+function sum(x){
+	'use strict';
+	var s=0;
+	for (i=0;i<x.length;i+=1){
+		s+=x[i];
+	}
+	return s;
+}
+
 // MAIN
 
 // Console
@@ -57,6 +69,7 @@ function mconsole(MessageClass,Message){
 
 var commandlist = [];
 commandlist.zero = 0;
+commandlist.half = 0;
 commandlist.one = 0;
 commandlist.two = 0;
 commandlist.three = 0;
@@ -68,14 +81,17 @@ commandlist.eight = 0;
 commandlist.nine = 0;
 commandlist.ten = 0;
 commandlist.hundred = 0;
+commandlist.thousand = 0;
 // non-numerals
 commandlist.divides = 2;
 commandlist.equals = 2;
 commandlist.from = 2;
+commandlist.halved = 1;
 commandlist.minus = 2;
 commandlist.mod = 2;
 commandlist.over = 2;
 commandlist.plus = 2;
+commandlist.sum = 1;
 commandlist.times = 2;
 commandlist["isn't"] = 2;
 var program = '';
@@ -84,8 +100,6 @@ var opwaitlist = [];
 var stack = [];
 var pointer = 0;
 var command = '';
-// temps
-var a,b,i; // add b c d etc as needed
 
 function err(errMsg){
 	"use strict";
@@ -117,7 +131,7 @@ function reset(){
 	stack = [];
 	opwaitlist = [];
 	// Load Program
-	program = document.getElementById('code').value.replace('\n',' ').replace('\t',' ');
+	program = document.getElementById('code').value.replace('\n',' ').replace('\t',' ').toLowerCase();
 	oplist = program.split(' ').reverse(); // split by the word
 	console.log(program);
 	// blank warn
@@ -165,6 +179,7 @@ function fstep(){
 				break;
 			default:
 				command.replace('false','zero');
+				command.replace('halve','halved');
 				command.replace('modulo','mod');
 				command.replace('true','one');
 		}
@@ -177,6 +192,9 @@ function fstep(){
 		switch (command) {
 			case 'zero':
 				stack.push(0);
+				break;
+			case 'half':
+				stack.push(1/2);
 				break;
 			case 'one':
 				stack.push(1);
@@ -211,26 +229,33 @@ function fstep(){
 			case 'hundred':
 				stack.push(100);
 				break;
+			case 'thousand':
+				stack.push(1000);
+				break;
 			// non-numerals
 			case 'divides':
 				b = stack.pop();
 				a = stack.pop();
-				stack.push(mod(a,b)==0);
+				stack.push(mod(a,b)===0);
 				break;
 			case 'equals':
 				b = stack.pop();
 				a = stack.pop();
-				stack.push(a==b);
+				stack.push(a===b);
 				break;
 			case 'from':
 				b = stack.pop();
 				a = stack.pop();
 				stack.push(b-a);
 				break;
+			case 'halved':
+				a = stack.pop();
+				stack.push(a/2);
+				break;
 			case 'isn\'t':
 				b = stack.pop();
 				a = stack.pop();
-				stack.push(a!=b);
+				stack.push(a!==b);
 				break;
 			case 'minus':
 				b = stack.pop();
@@ -251,6 +276,9 @@ function fstep(){
 				b = stack.pop();
 				a = stack.pop();
 				stack.push(a+b);
+				break;
+			case 'summed':
+				stack = [sum(stack)];
 				break;
 			case 'times':
 				b = stack.pop();

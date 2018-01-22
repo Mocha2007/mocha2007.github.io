@@ -38,11 +38,18 @@
 		.cw{color:#FC0;}
 		.ce{color:#F44;}
 		.co{color:#8E8;}
-		.cf{color:#F8F;}
+		th,.cf{color:#F8F;}
+		th:hover,.cf:hover{animation:glow 0.5s linear alternate infinite;}
 		.invisible{display:none;}
 		.cimg{max-width:642px;}
 		pre summary{text-indent:64px;}
-		td{font-family:monospace;background-color:#000;color:#ccc;text-align:justify;}
+		th,td{text-align:left;font-family:monospace;background-color:#000;}
+		td{color:#ccc;}
+		.see{color:#888;font-style:italic;}
+		@keyframes glow{
+			0% {text-shadow:0 0 7px #000;}
+			100% {text-shadow:0 0 7px #F8F;}
+		}
 	</style>
 </head>
 
@@ -67,34 +74,132 @@
 
 <h2 id='Dictionary'>Dictionary</h2>
 
-<pre>
-by		<i>see times</i>
-divides		equivalent to (mod x y)==0
-eight		push 8 to stack
-equals		equivalent to x==y
-false		<i>see zero</i>
-five		push 5 to stack
-four		push 4 to stack
-from		pop top two values; push their difference
-			(in reverse order of minus)
-hundred		push 100 to stack
-is		<i>see equals</i>
-isn't		equivalent to x!=y
-minus		pop top two values; push their difference
-mod		pop top two values; push their modulus
-modulo		<i>see mod</i>
-nine		push 9 to stack
-one		push 1 to stack
-over		pop top two values; push their quotient
-plus		pop top two values; push their sum
-seven		push 7 to stack
-six		push 6 to stack
-ten		push 10 to stack
-that's		<i>see equals</i>
-three		push 3 to stack
-times		pop top two values; push their product
-true		<i>see one</i>
-two		push 2 to stack
-</pre>
+<table>
+	<tr>
+		<th>by</th>
+		<td class='see'>see times</td>
+	</tr>
+	<tr>
+		<th>divides</th>
+		<td>equivalent to (mod x y)==0</td>
+	</tr>
+	<tr>
+		<th>eight</th>
+		<td>push 8 to stack</td>
+	</tr>
+	<tr>
+		<th>equals</th>
+		<td>equivalent to x==y</td>
+	</tr>
+	<tr>
+		<th>false</th>
+		<td class='see'>see zero</td>
+	</tr>
+	<tr>
+		<th>five</th>
+		<td>push 5 to stack</td>
+	</tr>
+	<tr>
+		<th>four</th>
+		<td>push 4 to stack</td>
+	</tr>
+	<tr>
+		<th>from</th>
+		<td>pop top two values; push their difference<br/>
+		(in reverse order of minus)</td>
+	</tr>
+	<tr>
+		<th>half</th>
+		<td>push 1/2 to stack</td>
+	</tr>
+	<tr>
+		<th>halve</th>
+		<td class='see'>see halve</td>
+	</tr>
+	<tr>
+		<th>halved</th>
+		<td>halve top of stack</td>
+	</tr>
+	<tr>
+		<th>hundred</th>
+		<td>push 100 to stack</td>
+	</tr>
+	<tr>
+		<th>is</th>
+		<td class='see'>see equals</td>
+	</tr>
+	<tr>
+		<th>isn't</th>
+		<td>equivalent to x!=y</td>
+	</tr>
+	<tr>
+		<th>minus</th>
+		<td>pop top two values; push their difference</td>
+	</tr>
+	<tr>
+		<th>mod</th>
+		<td>pop top two values; push their modulo</td>
+	</tr>
+	<tr>
+		<th>modulo</th>
+		<td class='see'>see mod</td>
+	</tr>
+	<tr>
+		<th>nine</th>
+		<td>push 9 to stack</td>
+	</tr>
+	<tr>
+		<th>one</th>
+		<td>push 1 to stack</td>
+	</tr>
+	<tr>
+		<th>over</th>
+		<td>pop top two values; push their quotient</td>
+	</tr>
+	<tr>
+		<th>plus</th>
+		<td>pop top two values; push their sum</td>
+	</tr>
+	<tr>
+		<th>seven</th>
+		<td>push 7 to stack</td>
+	</tr>
+	<tr>
+		<th>six</th>
+		<td>push 6 to stack</td>
+	</tr>
+	<tr>
+		<th>summed</th>
+		<td>sum stack</td>
+	</tr>
+	<tr>
+		<th>ten</th>
+		<td>push 10 to stack</td>
+	</tr>
+	<tr>
+		<th>that's</th>
+		<td class='see'>see equals</td>
+	</tr>
+	<tr>
+		<th>thousand</th>
+		<td>push 1000 to stack</td>
+	</tr>
+	<tr>
+		<th>three</th>
+		<td>push 3 to stack</td>
+	</tr>
+	<tr>
+		<th>times</th>
+		<td>pop top two values; push their product</td>
+	</tr>
+	<tr>
+		<th>true</th>
+		<td class='see'>see one</td>
+	</tr>
+	<tr>
+		<th>two</th>
+		<td>push 2 to stack</td>
+	</tr>
+</table>
 <div id="bottom"></div>
 </html>
