@@ -27,6 +27,17 @@ function mod(n,m){
 	return ((n%m)+m)%m;
 }
 
+function drop(x,a){
+	'use strict';
+	var s=[];
+	for (i=0;i<a.length;i+=1){
+		if (a[i]!==x){
+			s.push(a[i]);
+		}
+	}
+	return s;
+}
+
 function sum(x){
 	'use strict';
 	var s=0;
@@ -84,16 +95,19 @@ commandlist.hundred = 0;
 commandlist.thousand = 0;
 // non-numerals
 commandlist.divides = 2;
+commandlist.drop = 1;
 commandlist.equals = 2;
 commandlist.from = 2;
 commandlist.halved = 1;
+commandlist["isn't"] = 2;
 commandlist.minus = 2;
 commandlist.mod = 2;
+commandlist.not = 1;
 commandlist.over = 2;
 commandlist.plus = 2;
+commandlist['pop'] = 1;
 commandlist.sum = 1;
 commandlist.times = 2;
-commandlist["isn't"] = 2;
 var program = '';
 var oplist = []; // split by the word
 var opwaitlist = [];
@@ -171,6 +185,9 @@ function fstep(){
 		command = oplist.pop(); // add next op to opwaitlist
 		// replacements
 		switch (command){
+			case 'and':
+				command = 'equals';
+				break;
 			case 'is':
 				command = 'equals';
 				break;
@@ -236,12 +253,16 @@ function fstep(){
 			case 'divides':
 				b = stack.pop();
 				a = stack.pop();
-				stack.push(mod(a,b)===0);
+				stack.push(Number(mod(a,b)===0));
+				break;
+			case 'drop':
+				a = stack.pop();
+				stack = drop(a,stack);
 				break;
 			case 'equals':
 				b = stack.pop();
 				a = stack.pop();
-				stack.push(a===b);
+				stack.push(Number(a===b));
 				break;
 			case 'from':
 				b = stack.pop();
@@ -255,7 +276,7 @@ function fstep(){
 			case 'isn\'t':
 				b = stack.pop();
 				a = stack.pop();
-				stack.push(a!==b);
+				stack.push(Number(a!==b));
 				break;
 			case 'minus':
 				b = stack.pop();
@@ -267,6 +288,15 @@ function fstep(){
 				a = stack.pop();
 				stack.push(mod(a,b));
 				break;
+			case 'not':
+				a = stack.pop();
+				if (a===0){	
+					stack.push(1);
+				}
+				else {	
+					stack.push(0);
+				}
+				break;
 			case 'over':
 				b = stack.pop();
 				a = stack.pop();
@@ -276,6 +306,9 @@ function fstep(){
 				b = stack.pop();
 				a = stack.pop();
 				stack.push(a+b);
+				break;
+			case 'pop':
+				stack.pop();
 				break;
 			case 'summed':
 				stack = [sum(stack)];
