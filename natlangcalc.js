@@ -1,4 +1,4 @@
-var versionno = '1';
+var versionno = '1.1';
 /* Introduce l8r
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -69,8 +69,15 @@ commandlist.nine = 0;
 commandlist.ten = 0;
 commandlist.hundred = 0;
 // non-numerals
+commandlist.divides = 2;
+commandlist.equals = 2;
+commandlist.from = 2;
+commandlist.minus = 2;
 commandlist.mod = 2;
+commandlist.over = 2;
 commandlist.plus = 2;
+commandlist.times = 2;
+commandlist["isn't"] = 2;
 var program = '';
 var oplist = []; // split by the word
 var opwaitlist = [];
@@ -148,6 +155,20 @@ function fstep(){
 			console.log('no operation to perform');
 		}
 		command = oplist.pop(); // add next op to opwaitlist
+		// replacements
+		switch (command){
+			case 'is':
+				command = 'equals';
+				break;
+			case "that's":
+				command = 'equals';
+				break;
+			default:
+				command.replace('false','zero');
+				command.replace('modulo','mod');
+				command.replace('true','one');
+		}
+		// end replace
 		opwaitlist.push([command,commandlist[command]]);
 	}
 	else { // else perform next word
@@ -191,15 +212,50 @@ function fstep(){
 				stack.push(100);
 				break;
 			// non-numerals
+			case 'divides':
+				b = stack.pop();
+				a = stack.pop();
+				stack.push(mod(a,b)==0);
+				break;
+			case 'equals':
+				b = stack.pop();
+				a = stack.pop();
+				stack.push(a==b);
+				break;
+			case 'from':
+				b = stack.pop();
+				a = stack.pop();
+				stack.push(b-a);
+				break;
+			case 'isn\'t':
+				b = stack.pop();
+				a = stack.pop();
+				stack.push(a!=b);
+				break;
+			case 'minus':
+				b = stack.pop();
+				a = stack.pop();
+				stack.push(a-b);
+				break;
 			case 'mod':
 				b = stack.pop();
 				a = stack.pop();
 				stack.push(mod(a,b));
 				break;
+			case 'over':
+				b = stack.pop();
+				a = stack.pop();
+				stack.push(a/b);
+				break;
 			case 'plus':
 				b = stack.pop();
 				a = stack.pop();
 				stack.push(a+b);
+				break;
+			case 'times':
+				b = stack.pop();
+				a = stack.pop();
+				stack.push(a*b);
 				break;
 			case undefined:
 				if (document.getElementById('console').innerHTML.slice(-9)!=='undefined'){
