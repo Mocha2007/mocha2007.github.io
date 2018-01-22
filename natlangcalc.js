@@ -102,10 +102,11 @@ commandlist.halved = 1;
 commandlist["isn't"] = 2;
 commandlist.minus = 2;
 commandlist.mod = 2;
+commandlist.negated = 1;
 commandlist.not = 1;
 commandlist.over = 2;
 commandlist.plus = 2;
-commandlist['pop'] = 1;
+commandlist.pop = 1;
 commandlist.sum = 1;
 commandlist.times = 2;
 var program = '';
@@ -145,7 +146,7 @@ function reset(){
 	stack = [];
 	opwaitlist = [];
 	// Load Program
-	program = document.getElementById('code').value.replace('\n',' ').replace('\t',' ').toLowerCase();
+	program = document.getElementById('code').value.replace(/[^A-Za-z]/g,' ').toLowerCase();
 	oplist = program.split(' ').reverse(); // split by the word
 	console.log(program);
 	// blank warn
@@ -287,6 +288,10 @@ function fstep(){
 				b = stack.pop();
 				a = stack.pop();
 				stack.push(mod(a,b));
+				break;
+			case 'negated':
+				a = stack.pop();
+				stack.push(-a);
 				break;
 			case 'not':
 				a = stack.pop();
