@@ -199,6 +199,7 @@ function fstep(){
 				command.replace('false','zero');
 				command.replace('halve','halved');
 				command.replace('modulo','mod');
+				command.replace('negative','negated');
 				command.replace('true','one');
 		}
 		// end replace

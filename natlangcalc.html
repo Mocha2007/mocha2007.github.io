@@ -46,6 +46,7 @@
 		th,td{text-align:left;font-family:monospace;background-color:#000;}
 		td{color:#ccc;}
 		.see{color:#888;font-style:italic;}
+		.see::before{content:'see ';}
 		@keyframes glow{
 			0% {text-shadow:0 0 7px #000;}
 			100% {text-shadow:0 0 7px #F8F;}
@@ -77,11 +78,11 @@
 <table>
 	<tr>
 		<th>and</th>
-		<td class='see'>see equals</td>
+		<td><span class='see'>equals</span></td>
 	</tr>
 	<tr>
 		<th>by</th>
-		<td class='see'>see times</td>
+		<td><span class='see'>times</span></td>
 	</tr>
 	<tr>
 		<th>divides</th>
@@ -101,7 +102,7 @@
 	</tr>
 	<tr>
 		<th>false</th>
-		<td class='see'>see zero</td>
+		<td><span class='see'>zero</span></td>
 	</tr>
 	<tr>
 		<th>five</th>
@@ -122,7 +123,7 @@
 	</tr>
 	<tr>
 		<th>halve</th>
-		<td class='see'>see halve</td>
+		<td><span class='see'>halve</span></td>
 	</tr>
 	<tr>
 		<th>halved</th>
@@ -134,7 +135,7 @@
 	</tr>
 	<tr>
 		<th>is</th>
-		<td class='see'>see equals</td>
+		<td><span class='see'>equals</span></td>
 	</tr>
 	<tr>
 		<th>isn't</th>
@@ -150,11 +151,15 @@
 	</tr>
 	<tr>
 		<th>modulo</th>
-		<td class='see'>see mod</td>
+		<td><span class='see'>mod</span></td>
 	</tr>
 	<tr>
 		<th>negated</th>
 		<td>negate top of stack</td>
+	</tr>
+	<tr>
+		<th>negative</th>
+		<td><span class='see'>negated</span></td>
 	</tr>
 	<tr>
 		<th>nine</th>
@@ -198,7 +203,7 @@
 	</tr>
 	<tr>
 		<th>that's</th>
-		<td class='see'>see equals</td>
+		<td><span class='see'>equals</span></td>
 	</tr>
 	<tr>
 		<th>thousand</th>
@@ -214,7 +219,7 @@
 	</tr>
 	<tr>
 		<th>true</th>
-		<td class='see'>see one</td>
+		<td><span class='see'>one</span></td>
 	</tr>
 	<tr>
 		<th>two</th>
