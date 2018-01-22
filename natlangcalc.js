@@ -105,22 +105,33 @@ commandlist.twenty = 0;
 commandlist.hundred = 0;
 commandlist.thousand = 0;
 // non-numerals
+commandlist.decimated = 1;
 commandlist.divides = 2;
+commandlist.doubled = 1;
+commandlist.dozen = 1;
 commandlist.drop = 1;
 commandlist.equals = 2;
 commandlist.from = 2;
+commandlist.gross = 1;
 commandlist.halved = 1;
 commandlist["isn't"] = 2;
 commandlist.minus = 2;
 commandlist.mod = 2;
 commandlist.negated = 1;
 commandlist.not = 1;
+commandlist.once = 1;
 commandlist.over = 2;
 commandlist.plus = 2;
 commandlist.pop = 1;
 commandlist.quartered = 1;
+commandlist.root = 2;
+commandlist.score = 1;
+commandlist.squared = 1;
 commandlist.sum = 1;
+commandlist.thrice = 1;
 commandlist.times = 2;
+commandlist.tripled = 1;
+commandlist.twice = 1;
 var program = '';
 var oplist = []; // split by the word
 var opwaitlist = [];
@@ -158,7 +169,7 @@ function reset(){
 	stack = [];
 	opwaitlist = [];
 	// Load Program
-	program = document.getElementById('code').value.replace(/[^A-Za-z]/g,' ').toLowerCase();
+	program = document.getElementById('code').value.replace(/[^A-Za-z]+/g,' ').toLowerCase();
 	oplist = program.split(' ').reverse(); // split by the word
 	console.log(program);
 	// blank warn
@@ -197,25 +208,52 @@ function fstep(){
 		}
 		command = oplist.pop(); // add next op to opwaitlist
 		// replacements
-		switch (command){
-			case 'and':
-				command = 'equals';
-				break;
-			case 'is':
-				command = 'equals';
-				break;
-			case "that's":
-				command = 'equals';
-				break;
-			default:
-				command.replace('false','zero');
-				command.replace('halve','halved');
-				command.replace('modulo','mod');
-				command.replace('negative','negated');
-				command.replace('true','one');
+		if (command.slice(-4)==='fold'){ // n-fold
+			// end replace
+			opwaitlist.push(['times',2]);
+			opwaitlist.push([command.slice(0,-4),0]);
 		}
-		// end replace
-		opwaitlist.push([command,commandlist[command]]);
+		else {
+			switch (command){
+				case 'a':
+					command = 'one';
+					break;
+				case 'an':
+					command = 'one';
+					break;
+				case 'and':
+					command = 'plus';
+					break;
+				case 'by':
+					command = 'times';
+					break;
+				case 'is':
+					command = 'equals';
+					break;
+				case "that's":
+					command = 'equals';
+					break;
+				case "to":
+					command = 'over';
+					break;
+				case "too":
+					command = 'plus';
+					break;
+				default:
+					command = command.replace('also','plus');
+					command = command.replace('false','zero');
+					command = command.replace('halve','halved');
+					command = command.replace('less','minus');
+					command = command.replace('modulo','mod');
+					command = command.replace('more','plus');
+					command = command.replace('negative','negated');
+					command = command.replace('thrice','tripled');
+					command = command.replace('true','one');
+					command = command.replace('twice','doubled');
+			}
+			// end replace
+			opwaitlist.push([command,commandlist[command]]);
+		}
 	}
 	else { // else perform next word
 		command = opwaitlist.pop()[0];
@@ -297,10 +335,22 @@ function fstep(){
 				stack.push(1000);
 				break;
 			// non-numerals
+			case 'decimated':
+				a = stack.pop();
+				stack.push(9/10*a);
+				break;
 			case 'divides':
 				b = stack.pop();
 				a = stack.pop();
 				stack.push(Number(mod(a,b)===0));
+				break;
+			case 'doubled':
+				a = stack.pop();
+				stack.push(2*a);
+				break;
+			case 'dozen':
+				a = stack.pop();
+				stack.push(12*a);
 				break;
 			case 'drop':
 				a = stack.pop();
@@ -315,6 +365,10 @@ function fstep(){
 				b = stack.pop();
 				a = stack.pop();
 				stack.push(b-a);
+				break;
+			case 'gross':
+				a = stack.pop();
+				stack.push(144*a);
 				break;
 			case 'halved':
 				a = stack.pop();
@@ -348,6 +402,8 @@ function fstep(){
 					stack.push(0);
 				}
 				break;
+			case 'once':
+				break;
 			case 'over':
 				b = stack.pop();
 				a = stack.pop();
@@ -365,6 +421,19 @@ function fstep(){
 				a = stack.pop();
 				stack.push(a/4);
 				break;
+			case 'root':
+				b = stack.pop();
+				a = stack.pop();
+				stack.push(Math.pow(b,1/a));
+				break;
+			case 'score':
+				a = stack.pop();
+				stack.push(20*a);
+				break;
+			case 'squared':
+				a = stack.pop();
+				stack.push(a*a);
+				break;
 			case 'summed':
 				stack = [sum(stack)];
 				break;
@@ -372,6 +441,10 @@ function fstep(){
 				b = stack.pop();
 				a = stack.pop();
 				stack.push(a*b);
+				break;
+			case 'tripled':
+				a = stack.pop();
+				stack.push(3*a);
 				break;
 			case undefined:
 				if (document.getElementById('console').innerHTML.slice(-9)!=='undefined'){
