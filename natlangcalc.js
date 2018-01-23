@@ -289,6 +289,7 @@ function fstep(){
 					command = command.replace('modulo','mod');
 					command = command.replace('more','plus');
 					command = command.replace('negative','negated');
+					command = command.replace('niner','nine');
 					command = command.replace('nothing','zero');
 					command = command.replace('pairs','doubled');
 					command = command.replace('pair','doubled');
