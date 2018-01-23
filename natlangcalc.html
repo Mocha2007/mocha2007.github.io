@@ -70,7 +70,7 @@
 	<br/>
 	<i>Reading Word <span id="line">0</span></i><br/>
 	<i>Stack: [<span id="stack"></span>]</i>
-	<pre id='console'><i>MoCalc rev 1.1</i></pre>
+	<pre id='console'><i>MoCalc rev 1.2</i></pre>
 </div>
 
 <h2 id='Dictionary'>Dictionary</h2>
@@ -85,6 +85,14 @@
 		<td><span class='see'>one</span></td>
 	</tr>
 	<tr>
+		<th>ace</th>
+		<td><span class='see'>one</span></td>
+	</tr>
+	<tr>
+		<th>all</th>
+		<td><span class='see'>sum</span></td>
+	</tr>
+	<tr>
 		<th>also</th>
 		<td><span class='see'>plus</span></td>
 	</tr>
@@ -97,12 +105,32 @@
 		<td><span class='see'>plus</span></td>
 	</tr>
 	<tr>
+		<th>baker's</th>
+		<td>multiply top of stack by 13/12</td>
+	</tr>
+	<tr>
+		<th>banker's</th>
+		<td>multiply top of stack by 11/12</td>
+	</tr>
+	<tr>
 		<th>by</th>
 		<td><span class='see'>times</span></td>
 	</tr>
 	<tr>
+		<th>cent</th>
+		<td>divide top of stack by 100</td>
+	</tr>
+	<tr>
+		<th>couple</th>
+		<td><span class='see'>doubled</span></td>
+	</tr>
+	<tr>
 		<th>decimated</th>
 		<td>decimate top of stack</td>
+	</tr>
+	<tr>
+		<th>deuce</th>
+		<td><span class='see'>two</span></td>
 	</tr>
 	<tr>
 		<th>divides</th>
@@ -121,6 +149,14 @@
 		<td>delete any instance of the last element from the stack</td>
 	</tr>
 	<tr>
+		<th>dust</th>
+		<td><span class='see'>zero</span></td>
+	</tr>
+	<tr>
+		<th>e</th>
+		<td>push e to stack</td>
+	</tr>
+	<tr>
 		<th>eight</th>
 		<td>push 8 to stack</td>
 	</tr>
@@ -133,12 +169,20 @@
 		<td>push 11 to stack</td>
 	</tr>
 	<tr>
+		<th>eleventy</th>
+		<td>push 110 to stack</td>
+	</tr>
+	<tr>
 		<th>equals</th>
 		<td>equivalent to x==y</td>
 	</tr>
 	<tr>
 		<th>false</th>
 		<td><span class='see'>zero</span></td>
+	</tr>
+	<tr>
+		<th>fewer</th>
+		<td><span class='see'>minus</span></td>
 	</tr>
 	<tr>
 		<th>fifteen</th>
@@ -162,6 +206,10 @@
 		(in reverse order of minus)</td>
 	</tr>
 	<tr>
+		<th>great</th>
+		<td><span class='see'>dozen</span></td>
+	</tr>
+	<tr>
 		<th>gross</th>
 		<td>multiply top of stack by 144</td>
 	</tr>
@@ -182,6 +230,14 @@
 		<td>push 100 to stack</td>
 	</tr>
 	<tr>
+		<th>in</th>
+		<td><span class='see'>over</span></td>
+	</tr>
+	<tr>
+		<th>into</th>
+		<td><span class='see'>over</span></td>
+	</tr>
+	<tr>
 		<th>is</th>
 		<td><span class='see'>equals</span></td>
 	</tr>
@@ -192,6 +248,18 @@
 	<tr>
 		<th>less</th>
 		<td><span class='see'>minus</span></td>
+	</tr>
+	<tr>
+		<th>long</th>
+		<td>multiply top of stack by 6/5,<br/>or by 13/12 if divisible by twelve</td>
+	</tr>
+	<tr>
+		<th>mil</th>
+		<td>divide top of stack by 1000</td>
+	</tr>
+	<tr>
+		<th>million</th>
+		<td>push 1,000,000 to stack</td>
 	</tr>
 	<tr>
 		<th>minus</th>
@@ -208,6 +276,10 @@
 	<tr>
 		<th>more</th>
 		<td><span class='see'>plus</span></td>
+	</tr>
+	<tr>
+		<th>myriad</th>
+		<td>push 10,000 to stack</td>
 	</tr>
 	<tr>
 		<th>negated</th>
@@ -230,6 +302,18 @@
 		<td>pop top value; push 1 if 0, and 0 otherwise</td>
 	</tr>
 	<tr>
+		<th>nothing</th>
+		<td><span class='see'>zero</span></td>
+	</tr>
+	<tr>
+		<th>of</th>
+		<td><span class='see'>times</span></td>
+	</tr>
+	<tr>
+		<th>on</th>
+		<td><span class='see'>plus</span></td>
+	</tr>
+	<tr>
 		<th>once</th>
 		<td>multiply top of stack by one</td>
 	</tr>
@@ -238,8 +322,20 @@
 		<td>push 1 to stack</td>
 	</tr>
 	<tr>
+		<th>onto</th>
+		<td><span class='see'>plus</span></td>
+	</tr>
+	<tr>
 		<th>over</th>
 		<td>pop top two values; push their quotient</td>
+	</tr>
+	<tr>
+		<th>pair</th>
+		<td><span class='see'>doubled</span></td>
+	</tr>
+	<tr>
+		<th>pi</th>
+		<td>push pi to stack</td>
 	</tr>
 	<tr>
 		<th>plus</th>
@@ -274,6 +370,10 @@
 		<td>push 17 to stack</td>
 	</tr>
 	<tr>
+		<th>short</th>
+		<td>multiply top of stack by 5/6</td>
+	</tr>
+	<tr>
 		<th>six</th>
 		<td>push 6 to stack</td>
 	</tr>
@@ -282,12 +382,20 @@
 		<td>push 16 to stack</td>
 	</tr>
 	<tr>
+		<th>small</th>
+		<td><span class='see'>short</span></td>
+	</tr>
+	<tr>
 		<th>squared</th>
 		<td>square top of stack</td>
 	</tr>
 	<tr>
 		<th>summed</th>
 		<td>sum stack</td>
+	</tr>
+	<tr>
+		<th>surd</th>
+		<td><span class='see'>root</span></td>
 	</tr>
 	<tr>
 		<th>ten</th>
@@ -299,7 +407,7 @@
 	</tr>
 	<tr>
 		<th>thousand</th>
-		<td>push 1000 to stack</td>
+		<td>push 1,000 to stack</td>
 	</tr>
 	<tr>
 		<th>three</th>
@@ -334,6 +442,14 @@
 		<td><span class='see'>one</span></td>
 	</tr>
 	<tr>
+		<th>twain</th>
+		<td><span class='see'>two</span></td>
+	</tr>
+	<tr>
+		<th>twelfty</th>
+		<td>push 120 to stack</td>
+	</tr>
+	<tr>
 		<th>twelve</th>
 		<td>push 12 to stack</td>
 	</tr>
@@ -346,9 +462,27 @@
 		<td>multiply top of stack by two</td>
 	</tr>
 	<tr>
+		<th>unity</th>
+		<td><span class='see'>one</span></td>
+	</tr>
+	<tr>
 		<th>two</th>
 		<td>push 2 to stack</td>
 	</tr>
 </table>
+<h2 id='Programs'>Programs</h2>
+<h3 id='2'>... is zero!</h3>
+<pre>
+half of twain dozen,
+a couple pairs less,
+quartered, less two
+</pre>
+<h3 id='81'>... is nine squared, and not a bit more!</h3>
+<pre>
+a dozen, a gross, a score,
+two thrice more,
+summed over seven,
+eleven fivefold more
+</pre>
 <div id="bottom"></div>
 </html>

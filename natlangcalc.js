@@ -1,6 +1,6 @@
 // temps
 var a,b,i; // add b c d etc as needed
-var versionno = '1.1';
+var versionno = '1.2';
 /* Introduce l8r
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -84,7 +84,9 @@ commandlist.quarter = 0;
 commandlist.half = 0;
 commandlist.one = 0;
 commandlist.two = 0;
+commandlist.e = 0;
 commandlist.three = 0;
+commandlist.pi = 0;
 commandlist.four = 0;
 commandlist.five = 0;
 commandlist.six = 0;
@@ -103,11 +105,18 @@ commandlist.eighteen = 0;
 commandlist.nineteen = 0;
 commandlist.twenty = 0;
 commandlist.hundred = 0;
+commandlist.eleventy = 0;
+commandlist.twelfty = 0;
 commandlist.thousand = 0;
+commandlist.myriad = 0;
+commandlist.million = 0;
 // non-numerals
+commandlist["baker's"] = 1;
+commandlist["banker's"] = 1;
 commandlist.decimated = 1;
 commandlist.divides = 2;
 commandlist.doubled = 1;
+commandlist.cent = 1;
 commandlist.dozen = 1;
 commandlist.drop = 1;
 commandlist.equals = 2;
@@ -115,6 +124,8 @@ commandlist.from = 2;
 commandlist.gross = 1;
 commandlist.halved = 1;
 commandlist["isn't"] = 2;
+commandlist['long'] = 1;
+commandlist.mil = 1;
 commandlist.minus = 2;
 commandlist.mod = 2;
 commandlist.negated = 1;
@@ -126,6 +137,7 @@ commandlist.pop = 1;
 commandlist.quartered = 1;
 commandlist.root = 2;
 commandlist.score = 1;
+commandlist['short'] = 1;
 commandlist.squared = 1;
 commandlist.sum = 1;
 commandlist.thrice = 1;
@@ -169,7 +181,7 @@ function reset(){
 	stack = [];
 	opwaitlist = [];
 	// Load Program
-	program = document.getElementById('code').value.replace(/[^A-Za-z]+/g,' ').toLowerCase();
+	program = document.getElementById('code').value.replace(/[^A-Za-z']+/g,' ').toLowerCase();
 	oplist = program.split(' ').reverse(); // split by the word
 	console.log(program);
 	// blank warn
@@ -218,6 +230,9 @@ function fstep(){
 				case 'a':
 					command = 'one';
 					break;
+				case 'ace':
+					command = 'one';
+					break;
 				case 'an':
 					command = 'one';
 					break;
@@ -227,8 +242,26 @@ function fstep(){
 				case 'by':
 					command = 'times';
 					break;
+				case 'halve':
+					command = 'halved';
+					break;
+				case 'in':
+					command = 'over';
+					break;
+				case 'into':
+					command = 'over';
+					break;
 				case 'is':
 					command = 'equals';
+					break;
+				case "of":
+					command = 'times';
+					break;
+				case "on":
+					command = 'plus';
+					break;
+				case "onto":
+					command = 'plus';
 					break;
 				case "that's":
 					command = 'equals';
@@ -240,16 +273,32 @@ function fstep(){
 					command = 'plus';
 					break;
 				default:
+					command = command.replace('all','sum');
 					command = command.replace('also','plus');
+					command = command.replace('cents','cent');
+					command = command.replace('couples','doubled'); // keep before
+					command = command.replace('couple','doubled');
+					command = command.replace('deuce','two');
+					command = command.replace('dozens','dozen');
+					command = command.replace('dust','zero');
 					command = command.replace('false','zero');
-					command = command.replace('halve','halved');
+					command = command.replace('fewer','minus');
+					command = command.replace('great','dozen');
+					command = command.replace('grosses','gross');
 					command = command.replace('less','minus');
 					command = command.replace('modulo','mod');
 					command = command.replace('more','plus');
 					command = command.replace('negative','negated');
+					command = command.replace('nothing','zero');
+					command = command.replace('pairs','doubled');
+					command = command.replace('pair','doubled');
+					command = command.replace('small','short');
+					command = command.replace('surd','root');
 					command = command.replace('thrice','tripled');
 					command = command.replace('true','one');
+					command = command.replace('twain','two');
 					command = command.replace('twice','doubled');
+					command = command.replace('unity','one');
 			}
 			// end replace
 			opwaitlist.push([command,commandlist[command]]);
@@ -274,8 +323,14 @@ function fstep(){
 			case 'two':
 				stack.push(2);
 				break;
+			case 'e':
+				stack.push(Math.E);
+				break;
 			case 'three':
 				stack.push(3);
+				break;
+			case 'pi':
+				stack.push(Math.PI);
 				break;
 			case 'four':
 				stack.push(4);
@@ -331,13 +386,37 @@ function fstep(){
 			case 'hundred':
 				stack.push(100);
 				break;
+			case 'eleventy':
+				stack.push(110);
+				break;
+			case 'twelfty':
+				stack.push(120);
+				break;
 			case 'thousand':
 				stack.push(1000);
 				break;
+			case 'myriad':
+				stack.push(10000);
+				break;
+			case 'million':
+				stack.push(1000000);
+				break;
 			// non-numerals
+			case "baker's":
+				a = stack.pop();
+				stack.push(13/12*a);
+				break;
+			case "banker's":
+				a = stack.pop();
+				stack.push(11/12*a);
+				break;
 			case 'decimated':
 				a = stack.pop();
 				stack.push(9/10*a);
+				break;
+			case 'cent':
+				a = stack.pop();
+				stack.push(a/100);
 				break;
 			case 'divides':
 				b = stack.pop();
@@ -378,6 +457,19 @@ function fstep(){
 				b = stack.pop();
 				a = stack.pop();
 				stack.push(Number(a!==b));
+				break;
+			case 'long':
+				a = stack.pop();
+				if (a%12===0){
+					stack.push(13/12*a);
+				}
+				else {
+					stack.push(6/5*a);
+				}
+				break;
+			case 'mil':
+				a = stack.pop();
+				stack.push(a/1000);
 				break;
 			case 'minus':
 				b = stack.pop();
@@ -429,6 +521,10 @@ function fstep(){
 			case 'score':
 				a = stack.pop();
 				stack.push(20*a);
+				break;
+			case 'short':
+				a = stack.pop();
+				stack.push(5/6*a);
 				break;
 			case 'squared':
 				a = stack.pop();
