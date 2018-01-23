@@ -110,6 +110,8 @@ commandlist.twelfty = 0;
 commandlist.thousand = 0;
 commandlist.myriad = 0;
 commandlist.million = 0;
+commandlist.billion = 0;
+commandlist.trillion = 0;
 // non-numerals
 commandlist["baker's"] = 1;
 commandlist["banker's"] = 1;
@@ -121,6 +123,7 @@ commandlist.dozen = 1;
 commandlist.drop = 1;
 commandlist.equals = 2;
 commandlist.from = 2;
+commandlist.grand = 1;
 commandlist.gross = 1;
 commandlist.halved = 1;
 commandlist["isn't"] = 2;
@@ -402,6 +405,12 @@ function fstep(){
 			case 'million':
 				stack.push(1000000);
 				break;
+			case 'billion':
+				stack.push(1000000000);
+				break;
+			case 'trillion':
+				stack.push(1000000000000);
+				break;
 			// non-numerals
 			case "baker's":
 				a = stack.pop();
@@ -445,6 +454,10 @@ function fstep(){
 				b = stack.pop();
 				a = stack.pop();
 				stack.push(b-a);
+				break;
+			case 'grand':
+				a = stack.pop();
+				stack.push(1000*a);
 				break;
 			case 'gross':
 				a = stack.pop();
