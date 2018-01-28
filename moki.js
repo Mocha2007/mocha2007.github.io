@@ -1,4 +1,4 @@
-var versionno = '1.5.1';
+var versionno = '1.5.2';
 
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -14,14 +14,17 @@ function factorial(n){
 	return f[n];
 }
 
-/*function nPr(n,k){
+function nPr(n,k){
+	"use strict";
 	return factorial(n)/factorial(n-k);
 }
 
 function nCr(n,k){
+	"use strict";
 	return nPr(n,k)/factorial(k);
 }
-*/
+
+
 function mod(n,m){
 	"use strict";
 	return ((n%m)+m)%m;
@@ -1344,6 +1347,19 @@ function fstep(){
 					stack.push(0);
 				}
 				break;
+			// 262 Ć nCr
+			case 'Ć':
+				b = stack.pop();
+				a = stack.pop();
+				if (typeof (a+b) === 'number'){
+					stack.push(nCr(a,b));
+				}
+				else {
+					stack.push(b);
+					stack.push(a);
+					return err('nPr of string/array');
+				}
+				break;
 			// γ 947
 			case 'γ':
 				if (stack.length){
@@ -1374,6 +1390,19 @@ function fstep(){
 				}
 				else {
 					stack.push(Math.PI);
+				}
+				break;
+			// 7764 Ṕ nPr
+			case 'Ṕ':
+				b = stack.pop();
+				a = stack.pop();
+				if (typeof (a+b) === 'number'){
+					stack.push(nPr(a,b));
+				}
+				else {
+					stack.push(b);
+					stack.push(a);
+					return err('nPr of string/array');
 				}
 				break;
 			//.charCodeAt(0)
