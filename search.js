@@ -60,7 +60,7 @@ function doit(){
 	// Namei Dictionary
 	$("#temp").load("https://mocha2007.github.io/namei.xml");
 	try {
-		document.getElementById("namei").innerHTML = '<h3>Nameipedia</h3><p>'+document.getElementById(s.toLowerCase()).getAttribute('content')+'</p>';
+		document.getElementById("namei").innerHTML = '<h3>Nameipedia</h3><p>'+document.getElementById(s.toLowerCase()).getAttribute('content')+'</p><a href="namei#'+s+'">Read More...</a>';
 	}
 	catch(err) {
 		console.log(s+' not in Nameipedia')
