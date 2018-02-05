@@ -58,11 +58,13 @@ function doit(){
 	<a href="https://youtube.com/results?search_query=`+s+`">Youtube</a><br/><div id="foot">
 	`+foot+'</div>';
 	// Namei Dictionary
-	$("#temp").load("https://mocha2007.github.io/namei.xml");
-	try {
-		document.getElementById("nameipedia").innerHTML = '<h3>Nameipedia</h3><p>'+document.getElementById(s.toLowerCase()).getAttribute('content')+'</p><a href="https://mocha2007.github.io/namei#'+s+'">Read More...</a>';
-	}
-	catch(err) {
-		document.getElementById("nameipedia").innerHTML = '';
+	if (s.toLowerCase()!='nameipedia' && s.toLowerCase()!='result' && s.toLowerCase()!='temp'){
+		$("#temp").load("https://mocha2007.github.io/namei.xml");
+		try {
+			document.getElementById("nameipedia").innerHTML = '<h3>Nameipedia</h3><p>'+document.getElementById(s.toLowerCase()).getAttribute('content')+'</p><a href="https://mocha2007.github.io/namei#'+s+'">Read More...</a>';
+		}
+		catch(err) {
+			document.getElementById("nameipedia").innerHTML = '';
+		}
 	}
 }
