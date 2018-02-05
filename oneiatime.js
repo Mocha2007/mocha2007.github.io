@@ -90,8 +90,8 @@ function OneiaTime() {
 	var days = Math.floor(remainder/day);
 	remainder = remainder%day;
 	var cnikkiphase = mod(remainder/day-0.078,1);
-	// console.log(cnikkiphase);
-	var nikkiphase = Math.round(8*cnikkiphase);
+	var nikkiphase = mod(Math.round(8*cnikkiphase),8); // idk why it needs another mod, but the code breaks without it
+	//console.log(nikkiphase);
 	var first = Math.floor(remainder/(day/10));
 	remainder = remainder%(day/10);
 	var second = Math.floor(remainder/(day/100));
