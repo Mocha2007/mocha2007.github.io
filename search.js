@@ -60,9 +60,9 @@ function doit(){
 	// Namei Dictionary
 	$("#temp").load("https://mocha2007.github.io/namei.xml");
 	try {
-		document.getElementById("namei").innerHTML = '<h3>Nameipedia</h3><p>'+document.getElementById(s.toLowerCase()).getAttribute('content')+'</p><a href="https://mocha2007.github.io/namei#'+s+'">Read More...</a>';
+		document.getElementById("nameipedia").innerHTML = '<h3>Nameipedia</h3><p>'+document.getElementById(s.toLowerCase()).getAttribute('content')+'</p><a href="https://mocha2007.github.io/namei#'+s+'">Read More...</a>';
 	}
 	catch(err) {
-		document.getElementById("namei").innerHTML = '';
+		document.getElementById("nameipedia").innerHTML = '';
 	}
 }
