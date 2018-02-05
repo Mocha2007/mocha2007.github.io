@@ -51,7 +51,9 @@ var subtitles =	[
 				'I can hear them breaching the defenses of my RigFives ship.',
 				'Culus Invictus',
 				'/ɑ\'wu/',
-				'⬇ 🌀 🆘'
+				'⬇ 🌀 🆘',
+				'This is Mocha\'s Site<br>I discuss everything here<br>just one haiku though',
+				'So does the text contain just iambs there?<br>Then does it have five iambs total, too?'
 				];
 function Sub(){
 	"use strict";
