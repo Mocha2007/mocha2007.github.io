@@ -57,4 +57,12 @@ function doit(){
 	<a href="https://wolframalpha.com/input/?i=`+s+`">Wolfram Alpha</a><br/>
 	<a href="https://youtube.com/results?search_query=`+s+`">Youtube</a><br/><div id="foot">
 	`+foot+'</div>';
+	// Namei Dictionary
+	$("#temp").load("https://mocha2007.github.io/namei.xml");
+	try {
+		document.getElementById("namei").innerHTML = '<h3>Nameipedia</h3><p>'+document.getElementById(s.toLowerCase()).getAttribute('content')+'</p>';
+	}
+	catch(err) {
+		console.log(s+' not in Nameipedia')
+	}
 }
