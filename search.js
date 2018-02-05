@@ -63,6 +63,6 @@ function doit(){
 		document.getElementById("namei").innerHTML = '<h3>Nameipedia</h3><p>'+document.getElementById(s.toLowerCase()).getAttribute('content')+'</p><a href="namei#'+s+'">Read More...</a>';
 	}
 	catch(err) {
-		console.log(s+' not in Nameipedia')
+		document.getElementById("namei").innerHTML = '';
 	}
 }
