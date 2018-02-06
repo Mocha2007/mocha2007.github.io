@@ -49,6 +49,7 @@ var subtitles =	[
 				'I did <i>not</i> have sexual relations with that map.',
 				'⬇ 🌀 🆘',
 				'Pay no attention to that Mocha in the closet!',
+				'Namei crawling through my windowpane',
 				// mochisms
 				'slash-me huggu',
 				'Enkl&aacute;r\'s Stead, by Enkl&aacute;r\'s Head',
