@@ -1,4 +1,4 @@
-var versionno = '1.6.2';
+var versionno = '1.6.3';
 
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -36,6 +36,38 @@ function gcd(a,b){
 	}
 	return gcd(b,mod(a,b));
 }
+
+function union(a,b){
+	"use strict";
+	return a.concat(b.filter(function(n){return a.indexOf(n)<0;}));
+}
+
+function intersection(a,b){
+	"use strict";
+	return a.filter(function(n){return b.indexOf(n)!==-1;});
+}
+
+function uniq(a){ // https://stackoverflow.com/a/9229821/2579798
+	"use strict";
+	var seen = {};
+	return a.filter(function(item) {
+		return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+	});
+}
+
+function isArrayOfCharacters(x){
+	"use strict";
+	if (x.length===0){
+		return false;
+	}
+	for (i=0;i<x.length;i+=1){
+		if (typeof x[i] !== 'string' || x[i].length !==1){
+			return false;
+		}
+	}
+	return true;
+}
+
 // MAIN
 
 // Console
@@ -1113,6 +1145,32 @@ function fstep(){
 			case 'T':
 				timelibrary = 1;
 				break;
+			// U union
+			case 'U':
+				b = stack.pop();
+				a = stack.pop();
+				// a is number
+				if (typeof a === 'number'){
+					a = [a];
+				}
+				// b is number
+				if (typeof b === 'number'){
+					b = [b];
+				}
+				// a is string
+				if (typeof a === 'string'){
+					a = a.split('');
+				}
+				// b is string
+				if (typeof b === 'string'){
+					b = b.split('');
+				}
+				c = uniq(union(a,b)).sort();
+				if (isArrayOfCharacters(c)){
+					c = c.join('');
+				}
+				stack.push(c);
+				break;
 			// V push current version to stack
 			case 'V':
 				stack.push(versionno);
@@ -1195,31 +1253,49 @@ function fstep(){
 					stack.push(Math.ceil(a));
 				}
 				break;
-			// ^ power
+			// ^ power; set intersection
 			case '^':
 				b = stack.pop();
 				a = stack.pop();
-				// string/array error
+				// string/array intersection
 				if (typeof a !== 'number' || typeof b !== 'number'){
-					stack.push(a);
-					stack.push(b);
-					return err('string/array exponentiation');
-				}
-				// 0^0 Error
-				if (a===0 && b<=0){
-					stack.push(a);
-					stack.push(b);
-					return err('zero to the zero');
-				}
-				// -x^R Error
-				if (a<0 && b%1!==0){
-					stack.push(a);
-					stack.push(b);
-					return err('complex exponentiation');
+					// a is number
+					if (typeof a === 'number'){
+						a = [a];
+					}
+					// b is number
+					if (typeof b === 'number'){
+						b = [b];
+					}
+					// a is string
+					if (typeof a === 'string'){
+						a = a.split('');
+					}
+					// b is string
+					if (typeof b === 'string'){
+						b = b.split('');
+					}
+					c = uniq(intersection(a,b)).sort();
+					if (isArrayOfCharacters(c)){
+						c = c.join('');
+					}
 				}
 				else {
-					stack.push(Math.pow(a,b));
+					// 0^0 Error
+					if (a===0 && b<=0){
+						stack.push(a);
+						stack.push(b);
+						return err('zero to the zero');
+					}
+					// -x^R Error
+					if (a<0 && b%1!==0){
+						stack.push(a);
+						stack.push(b);
+						return err('complex exponentiation');
+					}
+					c = Math.pow(a,b);
 				}
+				stack.push(c);
 				break;
 			// _ undefined
 			// ` function execution
