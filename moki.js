@@ -1331,6 +1331,7 @@ function fstep(){
 					stack.push(Math.E);
 				}
 				break;
+			// f RESERVED for filter()
 			// l ln of a
 			case 'l':
 				a = stack.pop();
@@ -1344,6 +1345,7 @@ function fstep(){
 				}
 				stack.push(Math.log(a));
 				break;
+			// m RESERVED for map()
 			// p pop from array
 			case 'p':
 				a = stack.pop();
