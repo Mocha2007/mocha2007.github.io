@@ -61,7 +61,7 @@
 	<br/>
 	<i>Reading Char <span id="line">0</span></i><br/>
 	<i>Stack: [<span id="stack">0</span>]</i>
-	<pre id='console'><i>Moki rev 1.6.1</i></pre>
+	<pre id='console'><i>Moki rev 1.6.2</i></pre>
 </div>
 
 <h2 id='Introduction'>Introduction</h2>
@@ -78,6 +78,8 @@
 <h2 id='Changelog'>Changelog</h2>
 
 <dl>
+	<dt>1.6.2</dt>
+		<dd>Baleeted string exponentiation. Soon, it will be replaced as the INTERSECTION operator.</dd>
 	<dt>1.6.1</dt>
 		<dd>Any data type can now be the name of a function.</dd>
 	<dt>1.6</dt>
@@ -121,6 +123,14 @@
 		Fewer errors</dd>
 	<dt>1.0</dt>
 		<dd>Initial Release.</dd>
+</dl>
+
+<h2 id='Upcoming'>Upcoming Features</h2>
+<dl>
+	<dt>U</dt>
+		<dd>U will soon act as the union operator between two arrays or strings.</dd>
+	<dt>^</dt>
+		<dd>^ will soon act as the intersection operator between two arrays or strings.</dd>
 </dl>
 
 <h2 id='Dictionary'>Dictionary</h2>
@@ -211,7 +221,141 @@
 		<dd>
 		pop top of stack
 		</dd>
-	Todo: Finish Dictionary
+	<dt>&lt;</dt>
+		<dd>
+		push 1 if a&lt;b else push 0
+		</dd>
+	<dt>=</dt>
+		<dd>
+		push 1 if a=b else push 0
+		</dd>
+	<dt>></dt>
+		<dd>
+		push 1 if a>b else push 0
+		</dd>
+	<dt>?</dt>
+		<dd>
+		a b c -> b if a else c<br/>
+		a b -> b
+		</dd>
+	<dt>@</dt>
+		<dd>
+		move top of stack to the bottom
+		</dd>
+	<dt>A</dt>
+		<dd>
+		arithmetic mean of stack
+		</dd>
+	<dt>G</dt>
+		<dd>
+		geometric mean of stack
+		</dd>
+	<dt>I</dt>
+		<dd>
+		If top of stack false, skip to next }
+		</dd>
+	<dt>L</dt>
+		<dd>
+		replace top of stack with push its length
+		</dd>
+	<dt>M</dt>
+		<dd>
+		mathlibrary prefix
+		</dd>
+	<dt>P</dt>
+		<dd>
+		push to array:<br/>
+		[...] # -> [...#] else<br/>
+		# [...] -> [#...] else<br/>
+		# $ -> [#,$]
+		</dd>
+	<dt>T</dt>
+		<dd>
+		timelibrary prefix
+		</dd>
+	<dt>V</dt>
+		<dd>
+		push moki version string to stack
+		</dd>
+	<dt>W</dt>
+		<dd>
+		W{} = while top of stack is true, loop contents
+		</dd>
+	<dt>[</dt>
+		<dd>
+		### -> floor(###)<br/>
+		'ABC' -> 'abc'
+		</dd>
+	<dt>\</dt>
+		<dd>
+		swap top two stack items
+		</dd>
+	<dt>]</dt>
+		<dd>
+		### -> ceil(###)<br/>
+		'abc' -> 'ABC'
+		</dd>
+	<dt>^</dt>
+		<dd>
+		exponentiation.
+		</dd>
+	<dt>`</dt>
+		<dd>
+		X` -> call function X
+		</dd>
+	<dt>a</dt>
+		<dd>
+		push empty array to stack
+		</dd>
+	<dt>e</dt>
+		<dd>
+		empty stack -> push e<br/>
+		TOS is number -> TOS*=e
+		</dd>
+	<dt>l</dt>
+		<dd>
+		# -> ln(#)
+		</dd>
+	<dt>p</dt>
+		<dd>
+		[...#] -> [...] #
+		</dd>
+	<dt>{</dt>
+		<dd>
+		begin loops
+		</dd>
+	<dt>|</dt>
+		<dd>
+		# -> abs(#)
+		</dd>
+	<dt>}</dt>
+		<dd>
+		end loops
+		</dd>
+	<dt>~</dt>
+		<dd>
+		# -> -#<br/>
+		'abc' -> 'cba'
+		</dd>
+	<dt>Ć</dt>
+		<dd>
+		A B -> A nCr B
+		</dd>
+	<dt>γ</dt>
+		<dd>
+		empty stack -> push γ<br/>
+		TOS is number -> TOS*=γ
+		</dd>
+	<dt>π</dt>
+		<dd>
+		empty stack -> push π<br/>
+		TOS is number -> TOS*=π
+		</dd>
+	<dt>Ṕ</dt>
+		<dd>
+		A B -> A nPr B
+		</dd>
+	Todo: Add Libraries to Dictionary
 </dl>
 
 <h2 id='Programs'>Programs</h2>

@@ -1,4 +1,4 @@
-var versionno = '1.6.1';
+var versionno = '1.6.2';
 
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -1096,7 +1096,7 @@ function fstep(){
 						stack.push(a);
 					}
 					else if (typeof b === 'object'){
-						b.push(a);
+						b.unshift(a);
 						stack.push(b);
 					}
 					else {
@@ -1199,14 +1199,11 @@ function fstep(){
 			case '^':
 				b = stack.pop();
 				a = stack.pop();
-				// use charcode if b is string
-				if (typeof b === 'string'){
-					if (b.length){
-						b = b.charCodeAt(0);
-					}
-					else {
-						b = 0; // i sure hope i never get a 0^0 error from this...
-					}
+				// string/array error
+				if (typeof a !== 'number' || typeof b !== 'number'){
+					stack.push(a);
+					stack.push(b);
+					return err('string/array exponentiation');
 				}
 				// 0^0 Error
 				if (a===0 && b<=0){
@@ -1219,33 +1216,6 @@ function fstep(){
 					stack.push(a);
 					stack.push(b);
 					return err('complex exponentiation');
-				}
-				// string
-				if (typeof a === 'object' || typeof b === 'object'){
-					stack.push(a);
-					stack.push(b);
-					return err('array exponentiation');
-				}
-				if (typeof a === 'string'){
-					if (b<0 || b%1!==0){ // uh oh
-						stack.push(a);
-						stack.push(b);
-						return err('bad string exponentiation');
-					}
-					if (b===0){ // anything^0 = 1 mostly
-						stack.push(1);
-					}
-					else if (b===1){ // anything^1 = itself mostly
-						stack.push(a);
-					}
-					else {
-						c = a.charCodeAt(0);
-						d = '';
-						for (i=1;i<b;i+=1){ // multiply a by itself b times
-							d+=(new Array(c+1)).join(a);
-						}
-						stack.push(d);
-					}
 				}
 				else {
 					stack.push(Math.pow(a,b));
