@@ -1,4 +1,4 @@
-var versionno = '1.6';
+var versionno = '1.6.1';
 
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -92,7 +92,7 @@ var timelibrary = 0;
 // escapes
 var escaped = 0;
 // temps
-var a,b,c,d,i;
+var a,b,c,d,i;//note that f is already used. e should be reserved for the constant. if you have to add another, add "g"
 // ascii
 // var ascii = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
 var validascii = '!"$%&\'()*+,-./0123456789:;<=>?@AGILMPTVW[\\]^`aelp{|}~γπ'; // excludes whitespace & comments includes γπ
@@ -937,11 +937,6 @@ function fstep(){
 			case ':':
 				b = stack.pop();//function name
 				a = stack.pop();//function content
-				if (typeof a !== 'string' || typeof b !== 'string'){
-					stack.push(a);
-					stack.push(b);
-					return err('error defining function');
-				}
 				definedfunctions[a]=b;
 				mconsole('i','Function "'+a+'" defined as "'+b+'"');
 				break;

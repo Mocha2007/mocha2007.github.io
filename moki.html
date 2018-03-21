@@ -61,7 +61,7 @@
 	<br/>
 	<i>Reading Char <span id="line">0</span></i><br/>
 	<i>Stack: [<span id="stack">0</span>]</i>
-	<pre id='console'><i>Moki rev 1.6</i></pre>
+	<pre id='console'><i>Moki rev 1.6.1</i></pre>
 </div>
 
 <h2 id='Introduction'>Introduction</h2>
@@ -72,12 +72,14 @@
 	In this aspect I've made as many functions as string-compatible as possible. 
 	Multiplication, division, and even exponentiation work with strings. 
 	Instead of erroring out I try and think of alternative uses until the logic simply breaks down and I have to issue an error. 
-	The only errors, currently, are dividing by zero, raising zero to a non-positive number, raising a negative to a noninteger (I'll add complex math soon!~), mismatching braces, and using unindexed operations. 
+	<!--The only errors, currently, are dividing by zero, raising zero to a non-positive number, raising a negative to a noninteger (I'll add complex math soon!~), mismatching braces, and using unindexed operations.-->
 </p>
 
 <h2 id='Changelog'>Changelog</h2>
 
 <dl>
+	<dt>1.6.1</dt>
+		<dd>Function names can now also be ints, floats, or arrays.</dd>
 	<dt>1.6</dt>
 		<dd>Define functions and constants using the following syntax:<br/>
 		'quintuple',',5*'<abbr title='Function Definition'>:</abbr><br/>
