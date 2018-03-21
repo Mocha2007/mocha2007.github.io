@@ -74,6 +74,7 @@ function mconsole(MessageClass,Message){
 }
 
 var commandlist = '';
+var definedfunctions = [];
 var command = '';
 var stack = [0];
 var inputline = 0;
@@ -117,6 +118,8 @@ function reset(){
 	// tempstring
 	tempstring = '';
 	stringcreation = 0;
+	// reset function defs
+	definedfunctions = [];
 	// Load Program
 	commandlist = document.getElementById('code').value;
 	console.log(commandlist);
@@ -932,7 +935,20 @@ function fstep(){
 					stack.push(a*10+9);
 				}
 				break;
-			// : undefined
+			// : function definition
+			case ':':
+				a = stack.pop();//function name
+				b = stack.pop();//function content
+				if (typeof a !== 'string' || typeof b !== 'string'){
+					stack.push(b);
+					stack.push(a);
+					return err('error defining function');
+				}
+				else {
+					definedfunctions[a]=b;
+					mconsole(i,'Function "'+a+'" defined as "'+b+'"')
+				}
+				break;
 			// ; pop top of stack
 			case ';':
 				if (stack.length){
