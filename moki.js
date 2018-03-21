@@ -942,10 +942,8 @@ function fstep(){
 					stack.push(b);
 					return err('error defining function');
 				}
-				else {
-					definedfunctions[a]=b;
-					mconsole('i','Function "'+a+'" defined as "'+b+'"')
-				}
+				definedfunctions[a]=b;
+				mconsole('i','Function "'+a+'" defined as "'+b+'"');
 				break;
 			// ; pop top of stack
 			case ';':
@@ -1266,12 +1264,11 @@ function fstep(){
 					stack.push(a);
 					return err('error calling function');
 				}
-				else {// insert a(x) at current location! [HOLY SHIT WORKED FIRST TRY HYPE!]
-					console.log(commandlist);
-					commandlist = commandlist.slice(0,line)+definedfunctions[a]+commandlist.slice(line);
-					console.log(commandlist);
-					mconsole('i','Function "'+a+'" called as "'+b+'"')
-				}
+				// insert a(x) at current location! [HOLY SHIT WORKED FIRST TRY HYPE!]
+				console.log(commandlist);
+				commandlist = commandlist.slice(0,line)+definedfunctions[a]+commandlist.slice(line);
+				console.log(commandlist);
+				mconsole('i','Function "'+a+'" called as "'+b+'"');
 				break;
 			// abc
 			// a new array
