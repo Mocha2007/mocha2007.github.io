@@ -1,4 +1,4 @@
-var versionno = '1.5.3';
+var versionno = '1.6';
 
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -115,9 +115,6 @@ function reset(){
 	// Stack
 	stack = [0];
 	document.getElementById('stack').innerHTML = stack;
-	// tempstring
-	tempstring = '';
-	stringcreation = 0;
 	// reset function defs
 	definedfunctions = [];
 	// Load Program
@@ -129,9 +126,10 @@ function reset(){
 	mathlibrary = 0;
 	timelibrary = 0;
 	escaped = 0;
-	stringcreation = 0;
-	tempstring = '';
 	iscommented = 0;
+	// tempstring
+	tempstring = '';
+	stringcreation = 0;
 	// finishing touches
 	cclr();
 	console.log('Reset');
@@ -937,16 +935,16 @@ function fstep(){
 				break;
 			// : function definition
 			case ':':
-				a = stack.pop();//function name
-				b = stack.pop();//function content
+				b = stack.pop();//function name
+				a = stack.pop();//function content
 				if (typeof a !== 'string' || typeof b !== 'string'){
-					stack.push(b);
 					stack.push(a);
+					stack.push(b);
 					return err('error defining function');
 				}
 				else {
 					definedfunctions[a]=b;
-					mconsole(i,'Function "'+a+'" defined as "'+b+'"')
+					mconsole('i','Function "'+a+'" defined as "'+b+'"')
 				}
 				break;
 			// ; pop top of stack
@@ -1261,7 +1259,20 @@ function fstep(){
 				}
 				break;
 			// _ undefined
-			// ` undefined
+			// ` function execution
+			case '`':
+				a = stack.pop();//function name
+				if (typeof a !== 'string'){
+					stack.push(a);
+					return err('error calling function');
+				}
+				else {// insert a(x) at current location! [HOLY SHIT WORKED FIRST TRY HYPE!]
+					console.log(commandlist);
+					commandlist = commandlist.slice(0,line)+definedfunctions[a]+commandlist.slice(line);
+					console.log(commandlist);
+					mconsole('i','Function "'+a+'" called as "'+b+'"')
+				}
+				break;
 			// abc
 			// a new array
 			case 'a':
