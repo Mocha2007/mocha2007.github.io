@@ -1,5 +1,5 @@
 var versionno = '1.6.3';
-
+var i;
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
 function factorial(n){
@@ -47,11 +47,10 @@ function intersection(a,b){
 	return a.filter(function(n){return b.indexOf(n)!==-1;});
 }
 
-function uniq(a){ // https://stackoverflow.com/a/9229821/2579798
+function uniq(a){// https://stackoverflow.com/a/9229821/2579798
 	"use strict";
-	var seen = {};
-	return a.filter(function(item) {
-		return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+	return a.sort().filter(function(item, pos, ary){
+		return !pos || item !== ary[pos - 1];
 	});
 }
 
@@ -124,7 +123,7 @@ var timelibrary = 0;
 // escapes
 var escaped = 0;
 // temps
-var a,b,c,d,i;//note that f is already used. e should be reserved for the constant. if you have to add another, add "g"
+var a,b,c,d;//note that f is already used. e should be reserved for the constant. if you have to add another, add "g"
 // ascii
 // var ascii = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
 var validascii = '!"$%&\'()*+,-./0123456789:;<=>?@AGILMPTVW[\\]^`aelp{|}~γπ'; // excludes whitespace & comments includes γπ
@@ -1165,7 +1164,7 @@ function fstep(){
 				if (typeof b === 'string'){
 					b = b.split('');
 				}
-				c = uniq(union(a,b)).sort();
+				c = uniq(union(a,b));
 				if (isArrayOfCharacters(c)){
 					c = c.join('');
 				}
@@ -1275,7 +1274,7 @@ function fstep(){
 					if (typeof b === 'string'){
 						b = b.split('');
 					}
-					c = uniq(intersection(a,b)).sort();
+					c = uniq(intersection(a,b));
 					if (isArrayOfCharacters(c)){
 						c = c.join('');
 					}
