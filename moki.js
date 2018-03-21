@@ -1,4 +1,4 @@
-var versionno = '1.5.2';
+var versionno = '1.5.3';
 
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -24,10 +24,17 @@ function nCr(n,k){
 	return nPr(n,k)/factorial(k);
 }
 
-
 function mod(n,m){
 	"use strict";
 	return ((n%m)+m)%m;
+}
+
+function gcd(a,b){
+	"use strict";
+	if (b===0){
+		return a;
+	}
+	return gcd(b,mod(a,b));
 }
 // MAIN
 
@@ -243,6 +250,16 @@ function fstep(){
 					return err('inverse of string/array');
 				}
 				break;
+			// G gcd
+			case 'G':
+				b = stack.pop();
+				a = stack.pop();
+				if (typeof (a+b) !== 'number'){
+					stack.push(a);
+					return err('log of string/array');
+				}
+				stack.push(gcd(a,b));
+				break;
 			// M Max, ignores strings unless there are only strings
 			/*case 'M':
 				var anynumbers = 0;
@@ -350,6 +367,22 @@ function fstep(){
 						return err('nonpositive log');
 					}
 					stack.push(Math.log(b)/Math.log(a));
+				}
+				else {
+					return err('stack too small');
+				}
+				break;
+			// q principal root of quadratic abc
+			case 'q':
+				if (stack.length>2){
+					c = stack.pop();
+					b = stack.pop();
+					a = stack.pop();
+					if (typeof (a+b+c) !== 'number'){
+						stack.push(a);
+						return err('log of string/array');
+					}
+					stack.push((Math.sqrt(b*b-4*a*c)-b)/2/a);
 				}
 				else {
 					return err('stack too small');
