@@ -1,4 +1,4 @@
-var versionno = '1.6.3';
+var versionno = '1.6.4';
 var i;
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -103,7 +103,6 @@ function mconsole(MessageClass,Message){
 	}
 	return false;
 }
-
 var commandlist = '';
 var definedfunctions = [];
 var command = '';
@@ -113,6 +112,7 @@ var line = 0;
 var iscommented = 0;
 var tempstring = '';
 var stringcreation = 0;
+var errortype = 0;
 // braces
 var bracebalance = 0;
 var templine = 0;
@@ -128,7 +128,7 @@ var a,b,c,d;//note that f is already used. e should be reserved for the constant
 // var ascii = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
 var validascii = '!"$%&\'()*+,-./0123456789:;<=>?@AGILMPTVW[\\]^`aelp{|}~γπ'; // excludes whitespace & comments includes γπ
 //var validgolfascii = '!"%&\'()+,-.:;<=>?@AGILMPSTVW[\\]adehlmptwy{|}~γπ'; // for that codegolf challenge
-var unaryops = '"(),?AGLMP[]`elp|~'; // require at least 1 in stack; excludes whitespace, comments, digits, and ;
+var unaryops = '"()?AGLMP[]`elp|~'; // require at least 1 in stack; excludes whitespace, comments, digits, and ;
 var binaryops = '&:^'; // require at least 2 in stack; excludes whitespace & comments
 var digits = '0123456789';
 
@@ -1305,9 +1305,7 @@ function fstep(){
 					return err('error calling function');
 				}
 				// insert a(x) at current location! [HOLY SHIT WORKED FIRST TRY HYPE!]
-				console.log(commandlist);
 				commandlist = commandlist.slice(0,line)+definedfunctions[a]+commandlist.slice(line);
-				console.log(commandlist);
 				mconsole('i','Function "'+a+'" called as "'+b+'"');
 				break;
 			// abc
@@ -1345,7 +1343,22 @@ function fstep(){
 				}
 				stack.push(Math.log(a));
 				break;
-			// m RESERVED for map()
+			// m -> [array] 'function' map()
+			case 'm':
+				b = stack.pop();
+				a = stack.pop();
+				errortype = (typeof a !== 'object')*2+(typeof b !== 'string');
+				if (errortype){
+					stack.push(a);
+					stack.push(b);
+					return err('Invalid use of m ; errortype = '+errortype);
+				}
+				// for each list item, add 'f' ¡ [apply f] À [rotate list]
+				for (i=0;i<a.length;i+=1){
+					commandlist = commandlist.slice(0,line)+'\''+b+'\'¡À'+commandlist.slice(line);
+				}
+				stack.push(a);
+				break;
 			// p pop from array
 			case 'p':
 				a = stack.pop();
@@ -1445,6 +1458,49 @@ function fstep(){
 				else {
 					stack.push(0);
 				}
+				break;
+			// ¡ -> [array] 'function' -> apply function to last item in array
+			case '¡':
+				b = stack.pop();
+				a = stack.pop();
+				errortype = (typeof a !== 'object')*2+(typeof b !== 'string');
+				if (errortype){
+					stack.push(a);
+					stack.push(b);
+					return err('Invalid use of ¡ ; errortype = '+errortype);
+				}
+				// pop from list
+				c = a.pop();
+				// insert function + P
+				commandlist = commandlist.slice(0,line)+definedfunctions[b]+'P'+commandlist.slice(line);
+				stack.push(a);
+				stack.push(c);
+				break;
+			// 192 À -> move end of array to beginning
+			case 'À':
+				a = stack.pop();
+				errortype = (typeof a !== 'object')*2+!(a.length>=1);
+				if (errortype){
+					stack.push(a);
+					return err('Invalid use of À ; errortype = '+errortype);
+				}
+				// do
+				b = a.pop();
+				a.unshift(b);
+				stack.push(a);
+				break;
+			// 193 Á -> move beginning of array to end
+			case 'Á':
+				a = stack.pop();
+				errortype = (typeof a !== 'object')*2+!(a.length>=1);
+				if (errortype){
+					stack.push(a);
+					return err('Invalid use of À ; errortype = '+errortype);
+				}
+				// do
+				b = a.shift();
+				a.push(b);
+				stack.push(a);
 				break;
 			// 262 Ć nCr
 			case 'Ć':

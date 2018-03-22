@@ -61,7 +61,7 @@
 	<br/>
 	<i>Reading Char <span id="line">0</span></i><br/>
 	<i>Stack: [<span id="stack">0</span>]</i>
-	<pre id='console'><i>Moki rev 1.6.3</i></pre>
+	<pre id='console'><i>Moki rev 1.6.4</i></pre>
 </div>
 
 <h2 id='Introduction'>Introduction</h2>
@@ -77,6 +77,8 @@
 <h2 id='Changelog'>Changelog</h2>
 
 <dl>
+	<dt>1.6.4</dt>
+		<dd>Added m, the map function, along with ¡, which applies a function to the last element of an array, À, which rotates the last item to the beginning of the array, and Á, which does the opposite.</dd>
 	<dt>1.6.3</dt>
 		<dd>Added U. Using ^ with a string or array invokes intersection instead.</dd>
 	<dt>1.6.2</dt>
@@ -131,10 +133,6 @@
 	<dt>filter()</dt>
 		<dd>the upcoming filter() function will probably take the following form:<br/>
 		[...] 'function' f -> filter('function',[...])
-		</dd>
-	<dt>map()</dt>
-		<dd>the upcoming map() function will probably take the following form:<br/>
-		[...] 'function' m -> map('function',[...])
 		</dd>
 </dl>
 
@@ -326,6 +324,11 @@
 		<dd>
 		# -> ln(#)
 		</dd>
+	<dt>m</dt>
+		<dd>
+		map:<br/>
+		[array] 'function' -> map(function,array)
+		</dd>
 	<dt>p</dt>
 		<dd>
 		[...#] -> [...] #
@@ -347,6 +350,15 @@
 		# -> -#<br/>
 		'abc' -> 'cba'
 		</dd>
+	<dt>¡</dt>
+		<dd>
+		maps to last array item:<br/>
+		[array] 'function' -> [array]+[function(array[array.length-1])]
+		</dd>
+	<dt>À</dt>
+		<dd>rotate last array item to beginning</dd>
+	<dt>Á</dt>
+		<dd>rotate first array item to end</dd>
 	<dt>Ć</dt>
 		<dd>
 		A B -> A nCr B
