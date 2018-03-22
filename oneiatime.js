@@ -90,8 +90,8 @@ function OneiaTime() {
 	var utc2 = timetime.slice(16,18);
 	var utc3 = timetime.slice(18,24);
 
-	var medidiem = utc2>12?' PM':' AM';
-	utc2 = mod(utc2,12);
+	var medidiem = utc2>11?' PM':' AM';
+	utc2 = utc2>12?utc2-12:utc2;
 
 	var yy =		31556952000;
 	var vernal =	6884100000;/*20 Mar 16:15 (2018)*/
