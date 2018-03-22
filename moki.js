@@ -1364,7 +1364,7 @@ function fstep(){
 			case 'm':
 				b = stack.pop();
 				a = stack.pop();
-				errortype = (typeof a !== 'object')*2+(typeof b !== 'string');
+				errortype = (typeof a !== 'object')?2:((typeof b !== 'string')?1:0);
 				if (errortype){
 					stack.push(a);
 					stack.push(b);
@@ -1423,7 +1423,7 @@ function fstep(){
 					return err('use of z on non-array');
 				}
 				// for each list item, delete if falsey
-				a = a.filter(i=>i);
+				a = a.filter((i)=>i);
 				stack.push(a);
 				break;
 			// { begin loop
@@ -1491,7 +1491,7 @@ function fstep(){
 			case '¡':
 				b = stack.pop();
 				a = stack.pop();
-				errortype = (typeof a !== 'object')*2+(typeof b !== 'string');
+				errortype = (typeof a !== 'object')?2:((typeof b !== 'string')?1:0);
 				if (errortype){
 					stack.push(a);
 					stack.push(b);
@@ -1507,7 +1507,7 @@ function fstep(){
 			// 192 À -> move end of array to beginning
 			case 'À':
 				a = stack.pop();
-				errortype = (typeof a !== 'object')*2+!(a.length>=1);
+				errortype = (typeof a !== 'object')?2:0+!(a.length>=1)?1:0;
 				if (errortype){
 					stack.push(a);
 					return err('Invalid use of À ; errortype = '+errortype);
@@ -1520,7 +1520,7 @@ function fstep(){
 			// 193 Á -> move beginning of array to end
 			case 'Á':
 				a = stack.pop();
-				errortype = (typeof a !== 'object')*2+!(a.length>=1);
+				errortype = (typeof a !== 'object')?2:0+!(a.length>=1)?1:0;
 				if (errortype){
 					stack.push(a);
 					return err('Invalid use of À ; errortype = '+errortype);
