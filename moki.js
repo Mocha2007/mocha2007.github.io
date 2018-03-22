@@ -1089,7 +1089,7 @@ function fstep(){
 					stack.push(a);
 					return err('N takes a number, not a '+(typeof a));
 				}
-				stack.push(Array.from(Array(a).keys()));
+				stack.push([...new Array(10).keys()]);
 				break;
 			// P push to array. prefers the array to be FIRST.
 			case 'P':
@@ -1193,7 +1193,7 @@ function fstep(){
 				c = [];
 				for (i=0;i<a.length;i+=1){
 					if (b[i]){
-						c=c.concat(a[i])
+						c=c.concat(a[i]);
 					}
 				}
 				stack.push(c);
