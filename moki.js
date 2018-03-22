@@ -1317,9 +1317,12 @@ function fstep(){
 					if (typeof a === 'number'){
 						stack.push(a*Math.E);
 					}
-					else {
+					else if (typeof a === 'string'){
+						stack.push(a+'e');
+					}
+					else { // must be array
+						a.push(Math.E);
 						stack.push(a);
-						return err('erroneous euler');
 					}
 				}
 				else {
@@ -1507,7 +1510,7 @@ function fstep(){
 				errortype = (typeof a !== 'object')?2:0+!(a.length>=1)?1:0;
 				if (errortype){
 					stack.push(a);
-					return err('Invalid use of À ; errortype = '+errortype);
+					return err('Invalid use of Á ; errortype = '+errortype);
 				}
 				// do
 				b = a.shift();
