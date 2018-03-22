@@ -8,16 +8,12 @@ function mod(n, m){
 
 // https://stackoverflow.com/questions/37398871/javascript-get-current-date-using-utc-offset/37399351#37399351
 
-function getDateWithUTCOffset(inputTzOffset){
+function getDateW(){
 	"use strict";
 	var now = new Date(); // get the current time
 
-	var currentTzOffset = -now.getTimezoneOffset() / 60; // in hours, i.e. -4 in NY
-	var deltaTzOffset = inputTzOffset - currentTzOffset; // timezone diff
-
 	var nowTimestamp = now.getTime(); // get the number of milliseconds since unix epoch 
-	var deltaTzOffsetMilli = deltaTzOffset * 1000 * 60 * 60; // convert hours to milliseconds (tzOffsetMilli*1000*60*60)
-	var outputDate = new Date(nowTimestamp + deltaTzOffsetMilli); // your new Date object with the timezone offset applied.
+	var outputDate = new Date(nowTimestamp); // your new Date object with the timezone offset applied.
 
 	return outputDate;
 }
@@ -104,7 +100,7 @@ function OneiaTime() {
 
 	var currentTimeString = years + " AT, Day " + days + ", " + first + ":" + second + ":" + third + ":" + fourth + ":" + fifth;
 	
-	var timetime = getDateWithUTCOffset(-5).toString();
+	var timetime = getDateW().toString();
 	var utc1 = timetime.slice(0,16);
 	var utc2 = timetime.slice(16,18);
 	var utc3 = timetime.slice(18,24);
@@ -121,5 +117,5 @@ function OneiaTime() {
 	// 2551442.9 = Lunar Synodic Period
 	var moonphase = Math.round(8*((currenttime-642900)%2551442.9)/2551442.9)%8;
 
-	document.getElementById("clock").innerHTML = '<img src="img/phase/'+nikkiphase+'.png" height=9 alt="Nikki Phase: '+phases[nikkiphase]+'" title="Nikki Phase: '+phases[nikkiphase]+'"> Eremoran Time:<br/>'+currentTimeString+'<br/>\n<progress value="'+yearprogress+'"></progress><br/>\n<img src="img/phase/'+moonphase+'.png" height=9 alt="Moon Phase: '+phases[moonphase]+'" title="Moon Phase: '+phases[moonphase]+'"> Earth Time:<br/>'+utc1+utc2+utc3+medidiem+' EST<br/>\n<progress value="'+((Date.now()-vernal)%yy)/yy+'"></progress>';
+	document.getElementById("clock").innerHTML = '<img src="img/phase/'+nikkiphase+'.png" height=9 alt="Nikki Phase: '+phases[nikkiphase]+'" title="Nikki Phase: '+phases[nikkiphase]+'"> Eremoran Time:<br/>'+currentTimeString+'<br/>\n<progress value="'+yearprogress+'"></progress><br/>\n<img src="img/phase/'+moonphase+'.png" height=9 alt="Moon Phase: '+phases[moonphase]+'" title="Moon Phase: '+phases[moonphase]+'"> Earth Time:<br/>'+utc1+utc2+utc3+medidiem+'<br/>\n<progress value="'+((Date.now()-vernal)%yy)/yy+'"></progress>';
 }
