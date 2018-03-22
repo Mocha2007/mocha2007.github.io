@@ -3,19 +3,7 @@ Fixes a bug in javascript where the entire fucking language is retarded and shou
 */
 function mod(n, m){
 	"use strict";
-	return ((n % m) + m) % m;
-}
-
-// https://stackoverflow.com/questions/37398871/javascript-get-current-date-using-utc-offset/37399351#37399351
-
-function getDateW(){
-	"use strict";
-	var now = new Date(); // get the current time
-
-	var nowTimestamp = now.getTime(); // get the number of milliseconds since unix epoch 
-	var outputDate = new Date(nowTimestamp); // your new Date object with the timezone offset applied.
-
-	return outputDate;
+	return ((n%m)+m)%m;
 }
 
 // https://stackoverflow.com/questions/14926306/javascript-play-sound-on-hover-stop-and-reset-on-hoveroff/14926552#14926552
@@ -100,7 +88,7 @@ function OneiaTime() {
 
 	var currentTimeString = years + " AT, Day " + days + ", " + first + ":" + second + ":" + third + ":" + fourth + ":" + fifth;
 	
-	var timetime = getDateW().toString();
+	var timetime = new Date().toString();
 	var utc1 = timetime.slice(0,16);
 	var utc2 = timetime.slice(16,18);
 	var utc3 = timetime.slice(18,24);
