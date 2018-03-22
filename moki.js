@@ -126,10 +126,10 @@ var escaped = 0;
 var a,b,c,d;//note that f is already used. e should be reserved for the constant. if you have to add another, add "g"
 // ascii
 // var ascii = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
-var validascii = '!"$%&\'()*+,-./0123456789:;<=>?@AGILMPTVW[\\]^`aelp{|}~γπ'; // excludes whitespace & comments includes γπ
+var validascii = '!"$%&\'()*+,-./0123456789:;<=>?@AGILMPTUVW[\\]^`aelmpz{|}~¡ÀÁγπ'; // excludes whitespace & comments includes γπ
 //var validgolfascii = '!"%&\'()+,-.:;<=>?@AGILMPSTVW[\\]adehlmptwy{|}~γπ'; // for that codegolf challenge
-var unaryops = '"()?AGLMP[]`elp|~'; // require at least 1 in stack; excludes whitespace, comments, digits, and ;
-var binaryops = '&:^'; // require at least 2 in stack; excludes whitespace & comments
+var unaryops = '"()?AGLMP[]`elpz|~ÀÁ'; // require at least 1 in stack; excludes whitespace, comments, digits, and ;
+var binaryops = '&:U^m¡'; // require at least 2 in stack; excludes whitespace & comments
 var digits = '0123456789';
 
 function cclr(){
