@@ -61,7 +61,7 @@
 	<br/>
 	<i>Reading Char <span id="line">0</span></i><br/>
 	<i>Stack: [<span id="stack">0</span>]</i>
-	<pre id='console'><i>Moki rev 1.6.5</i></pre>
+	<pre id='console'><i>Moki rev 1.6.6</i></pre>
 </div>
 
 <h2 id='Introduction'>Introduction</h2>
@@ -77,6 +77,8 @@
 <h2 id='Changelog'>Changelog</h2>
 
 <dl>
+	<dt>1.6.6</dt>
+		<dd>Added Z, which filters array using a premade filter, in preparation for my addition of f [filter function].</dd>
 	<dt>1.6.5</dt>
 		<dd>Added z, which deletes falsey values from array, in preparation for my addition of f [filter function].</dd>
 	<dt>1.6.4</dt>
@@ -289,6 +291,10 @@
 	<dt>W</dt>
 		<dd>
 		W{} = while top of stack is true, loop contents
+		</dd>
+	<dt>Z</dt>
+		<dd>
+		[array1] [array2] Z -> filters array1 using truthiness of corresponding indices of array2
 		</dd>
 	<dt>[</dt>
 		<dd>

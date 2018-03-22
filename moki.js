@@ -1,4 +1,4 @@
-var versionno = '1.6.5';
+var versionno = '1.6.6';
 var i;
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -1201,6 +1201,29 @@ function fstep(){
 					line+=1;
 				}
 				break;
+			// Z -> [array] [trutharray] -> deletes falsey values from trutharray in array
+			case 'Z':
+				b = stack.pop();
+				a = stack.pop();
+				if (typeof a !== 'object' || typeof b !== 'object'){
+					stack.push(a);
+					stack.push(b);
+					return err('use of Z on non-array(s)');
+				}
+				if (a.length!==b.length){
+					stack.push(a);
+					stack.push(b);
+					return err('invalid trutharray length for Z');
+				}
+				// for each list item, delete if falsey
+				c = [];
+				for (i=0;i<a.length;i+=1){
+					if (b[i]){
+						c=c.concat(a[i])
+					}
+				}
+				stack.push(c);
+				break;
 			// [ floor
 			case '[':
 				a = stack.pop();
@@ -1330,22 +1353,9 @@ function fstep(){
 				}
 				break;
 			// f -> [array] 'function' filter(), unfortunately currently returns something like [1,1,1,1] for [0,1,0,2,3,4]
-			/*case 'f':
-				b = stack.pop();
+			/*case 'f': currently getting weird 'undefined' error
 				a = stack.pop();
-				errortype = (typeof a !== 'object')*2+(typeof b !== 'string');
-				if (errortype){
-					stack.push(a);
-					stack.push(b);
-					return err('Invalid use of f ; errortype = '+errortype);
-				}
-				// z [delete all falsey values in array]
-				commandlist = commandlist.slice(0,line)+'z'+commandlist.slice(line);
-				// for each list item, add 'f' ¡ [apply f] À [rotate list] 
-				for (i=0;i<a.length;i+=1){
-					commandlist = commandlist.slice(0,line)+'\''+b+'\'¡À'+commandlist.slice(line);
-				}
-				stack.push(a);
+				commandlist = commandlist.slice(0,line)+'.\''+definedfunctions[a]+'\'mZ'+commandlist.slice(line); // f is equivalent to .'function'mZ
 				break;*/
 			// l ln of a
 			case 'l':
