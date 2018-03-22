@@ -61,7 +61,7 @@
 	<br/>
 	<i>Reading Char <span id="line">0</span></i><br/>
 	<i>Stack: [<span id="stack">0</span>]</i>
-	<pre id='console'><i>Moki rev 1.6.4</i></pre>
+	<pre id='console'><i>Moki rev 1.6.5</i></pre>
 </div>
 
 <h2 id='Introduction'>Introduction</h2>
@@ -77,6 +77,8 @@
 <h2 id='Changelog'>Changelog</h2>
 
 <dl>
+	<dt>1.6.5</dt>
+		<dd>Added z, which deletes falsey values from array, in preparation for my addition of f [filter function].</dd>
 	<dt>1.6.4</dt>
 		<dd>Added m, the map function, along with ¡, which applies a function to the last element of an array, À, which rotates the last item to the beginning of the array, and Á, which does the opposite.</dd>
 	<dt>1.6.3</dt>
@@ -332,6 +334,10 @@
 	<dt>p</dt>
 		<dd>
 		[...#] -> [...] #
+		</dd>
+	<dt>z</dt>
+		<dd>
+		filters falsey values from an array
 		</dd>
 	<dt>{</dt>
 		<dd>
