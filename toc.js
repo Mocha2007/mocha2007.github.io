@@ -23,7 +23,7 @@ function MainMakeTOC() {
 			depth = namedheaders[i].tagName.slice(-1);
 		}
 		text+='<span class="nav'+depth+'"><a href="#'+namedheaders[i].id+'">'+formattedname+'</a></span><br>';
-		console.log(formattedname,depth);
+		console.log('\t'.repeat(parseInt(depth)-1),formattedname);
 	}
 	text+='</details>';
 	
