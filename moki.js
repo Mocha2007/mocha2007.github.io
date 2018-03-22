@@ -1,4 +1,4 @@
-var versionno = '1.6.6';
+var versionno = '1.6.7';
 var i;
 // https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
 var f = [];
@@ -125,11 +125,11 @@ var escaped = 0;
 // temps
 var a,b,c,d;//note that f is already used. e should be reserved for the constant. if you have to add another, add "g"
 // ascii
-// var ascii = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
-var validascii = '!"$%&\'()*+,-./0123456789:;<=>?@AGILMPTUVW[\\]^`aelmpz{|}~¡ÀÁγπ'; // excludes whitespace & comments includes γπ
-//var validgolfascii = '!"%&\'()+,-.:;<=>?@AGILMPSTVW[\\]adehlmptwy{|}~γπ'; // for that codegolf challenge
-var unaryops = '"()?AGLMP[]`elpz|~ÀÁ'; // require at least 1 in stack; excludes whitespace, comments, digits, and ;
-var binaryops = '&:U^m¡'; // require at least 2 in stack; excludes whitespace & comments
+// var ascii =	   ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
+var validascii =	'!"$%&\'()*+,-./0123456789:;<=>?@AGILMNPTUVWZ[\\]^`aelmpz{|}~¡ÀÁγπ'; // excludes whitespace & comments includes γπ
+var zeroops =		'! $  \'()*+,-. 0123456789 ;    @       T V   \\   ae    { }    γπ'; // require none, this variable is just for reference
+var unaryops =		' " %                       < >? AGILMNP   W [  ] `  l pz | ~ ÀÁ'; // require at least 1 in stack; excludes whitespace, comments, digits, and ;
+var binaryops =		'    &         /          :  =           U  Z    ^    m      ¡'; // require at least 2 in stack; excludes whitespace & comments
 var digits = '0123456789';
 
 function cclr(){
@@ -623,17 +623,9 @@ function fstep(){
 					}
 					stack.push(mod(a,b));
 				}
-				else if (stack.length){
-					a = stack.pop();
-					// ZeroDivisionError
-					if (a===0){
-						stack.push(a);
-						return err('zero divisor');
-					}
-					stack.push(0);
-				}
 				else {
-					return err('zero divisor');
+					stack.pop();
+					stack.push(0);
 				}
 				break;
 			// & returns a if a and b aren't 0, else 0
@@ -658,46 +650,56 @@ function fstep(){
 				break;
 			// ( decrement
 			case '(':
-				a = stack.pop();
-				if (typeof a === 'string'){
-					stack.push(String.fromCharCode(a.charCodeAt(0)-1));
-				}
-				// iterate over whole array
-				else if (typeof a === 'object'){
-					for (i=0;i<a.length;i+=1){
-						if (typeof a[i] === 'string'){
-							a[i] = String.fromCharCode(a[i].charCodeAt(0)-1);
-						}
-						else {
-							a[i] -= 1;
-						}
+				if (stack.length){
+					a = stack.pop();
+					if (typeof a === 'string'){
+						stack.push(String.fromCharCode(a.charCodeAt(0)-1));
 					}
-					stack.push(a);
+					// iterate over whole array
+					else if (typeof a === 'object'){
+						for (i=0;i<a.length;i+=1){
+							if (typeof a[i] === 'string'){
+								a[i] = String.fromCharCode(a[i].charCodeAt(0)-1);
+							}
+							else {
+								a[i] -= 1;
+							}
+						}
+						stack.push(a);
+					}
+					else {
+						stack.push(a-1);
+					}
 				}
 				else {
-					stack.push(a-1);
+					stack.push(-1);
 				}
 				break;
 			// ) increment
 			case ')':
-				a = stack.pop();
-				if (typeof a === 'string'){
-					stack.push(String.fromCharCode(a.charCodeAt(0)+1));
-				}
-				// iterate over whole array
-				else if (typeof a === 'object'){
-					for (i=0;i<a.length;i+=1){
-						if (typeof a[i] === 'string'){
-							a[i] = String.fromCharCode(a[i].charCodeAt(0)+1);
-						}
-						else {
-							a[i] += 1;
-						}
+				if (stack.length){
+					a = stack.pop();
+					if (typeof a === 'string'){
+						stack.push(String.fromCharCode(a.charCodeAt(0)+1));
 					}
-					stack.push(a);
+					// iterate over whole array
+					else if (typeof a === 'object'){
+						for (i=0;i<a.length;i+=1){
+							if (typeof a[i] === 'string'){
+								a[i] = String.fromCharCode(a[i].charCodeAt(0)+1);
+							}
+							else {
+								a[i] += 1;
+							}
+						}
+						stack.push(a);
+					}
+					else {
+						stack.push(a+1);
+					}
 				}
 				else {
-					stack.push(a+1);
+					stack.push(1);
 				}
 				break;
 			// * mul
@@ -811,66 +813,43 @@ function fstep(){
 				break;
 			// / div
 			case '/':
-				if (stack.length>1){
-					b = stack.pop();
-					a = stack.pop();
-					// use charcode if b is string
-					if (typeof b === 'string'){
-						if (b.length){
-							b = b.charCodeAt(0);
-						}
-						else {
-							stack.push(a);
-							stack.push(b);
-							return err('zero divisor');
-						}
-					}
-					// err b is array
-					if (typeof b !== 'number'){
-						stack.push(a);
-						stack.push(b);
-						return err('array divisor');
-					}
-					// ZeroDivisionError
-					if (b===0){
-						stack.push(a);
-						stack.push(b);
-						return err('zero divisor');
-					}
-					// yes, strings / arrays can be divided too!
-					if (typeof a !== 'number'){
-						c = a.slice(0,Math.floor(a.length/b));
-						if (c!==''){
-							stack.push(c);
-						}
-						else {
-							stack.push(0);
-						}
+				b = stack.pop();
+				a = stack.pop();
+				// use charcode if b is string
+				if (typeof b === 'string'){
+					if (b.length){
+						b = b.charCodeAt(0);
 					}
 					else {
-						stack.push(a/b);
-					}
-				}
-				else if (stack.length){
-					a = stack.pop();
-					if (typeof a === 'string'){
-						if (a.length){
-							a = a.charCodeAt(0);
-						}
-						else {
-							stack.push(a);
-							return err('zero divisor');
-						}
-					}
-					// ZeroDivisionError
-					if (a===0){
 						stack.push(a);
+						stack.push(b);
 						return err('zero divisor');
 					}
-					stack.push(0);
+				}
+				// err b is array
+				if (typeof b !== 'number'){
+					stack.push(a);
+					stack.push(b);
+					return err('array divisor');
+				}
+				// ZeroDivisionError
+				if (b===0){
+					stack.push(a);
+					stack.push(b);
+					return err('zero divisor');
+				}
+				// yes, strings / arrays can be divided too!
+				if (typeof a !== 'number'){
+					c = a.slice(0,Math.floor(a.length/b));
+					if (c!==''){
+						stack.push(c);
+					}
+					else {
+						stack.push(0);
+					}
 				}
 				else {
-					return err('zero divisor');
+					stack.push(a/b);
 				}
 				break;
 			// #s
@@ -987,27 +966,16 @@ function fstep(){
 					a = stack.pop();
 					stack.push(Number(a<b));
 				}
-				else if (stack.length){
+				else{
 					a = stack.pop();
 					stack.push(Number(0<b));
-				}
-				else {
-					stack.push(0);
 				}
 				break;
 			// = equal to
 			case '=':
-				if (stack.length>1){
-					b = stack.pop();
-					a = stack.pop();
-					stack.push(Number(a===b));
-				}
-				else {
-					if (stack.length){
-						stack.pop();
-					}
-					stack.push(1);
-				}
+				b = stack.pop();
+				a = stack.pop();
+				stack.push(Number(a===b));
 				break;
 			// > greater than; javascript's handling of it with strings is already perfect
 			case '>':
@@ -1016,12 +984,9 @@ function fstep(){
 					a = stack.pop();
 					stack.push(Number(a>b));
 				}
-				else if (stack.length){
+				else {
 					a = stack.pop();
 					stack.push(Number(0>b));
-				}
-				else {
-					stack.push(0);
 				}
 				break;
 			// ? = [condition, val if true, val if false]?
@@ -1116,6 +1081,15 @@ function fstep(){
 			// M Mathfunctions
 			case 'M':
 				mathlibrary = 1;
+				break;
+			// N create array of naturals up to and including N
+			case 'N':
+				a = stack.pop();
+				if (typeof a !== 'number'){
+					stack.push(a);
+					return err('N takes a number, not a '+(typeof a));
+				}
+				stack.push(Array.from(Array(a).keys()));
 				break;
 			// P push to array. prefers the array to be FIRST.
 			case 'P':
