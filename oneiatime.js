@@ -1,3 +1,4 @@
+var i;
 /* Thanks to https://stackoverflow.com/questions/4467539/javascript-modulo-gives-a-negative-result-for-negative-numbers/17323608#17323608
 Fixes a bug in javascript where the entire fucking language is retarded and should burn in hell for all eternity.
 */
@@ -26,33 +27,33 @@ function HolidayCSS(){
 	var monthmonth = new Date().getMonth() + 1;
 	var dayday = (new Date().getDate())===(monthmonth*7-1);
 	console.log(monthmonth,new Date().getDate());
-	
-	var ReplacementImage = 'Steve';
-	
-	if (monthmonth===1){
-		ReplacementImage = 'Steve';
-	}
-	
-	else if (monthmonth===2){
-		ReplacementImage = '<img id="m" src="img/mochentines.png" width="200" title="Fuck merrily!" alt="Mochadian Valentines\' Squiggles">';
-	}
-	
-	else if (monthmonth===3){
-		ReplacementImage = '<img id="m" src="img/mochricks.png" width="200" title="Drink, ye bastard!" alt="Mochadian St. Patrick\'s day Squiggle">';
-	}
-	
-	else if (dayday){
+
+	var ReplacementImage;
+
+	if (dayday){
 		ReplacementImage = '<img id="m" src="img/mopril.png" width="200" alt="Mochadian Birthday Squiggle" onmouseover="PlaySound(\'sfx\')" onmouseout="StopSound(\'sfx\')"> <audio id="sfx" src="snd/partyhorn.mp3"/>';
 	}
-	
-	else if (monthmonth===10){
-		ReplacementImage = '<img id="m" src="img/mochaween.png" width="200" title="Boo, motherfucker!" alt="Mochadian Halloween Squiggle">';
+
+	switch (monthmonth){
+		case 1:
+			ReplacementImage = 'Steve'; // Trust me, this is indeed necessary...
+			break;
+		case 2:
+			ReplacementImage = '<img id="m" src="img/mochentines.png" width="200" title="Fuck merrily!" alt="Mochadian Valentines\' Squiggles">';
+			break;
+		case 3:
+			ReplacementImage = '<img id="m" src="img/mochricks.png" width="200" title="Drink, ye bastard!" alt="Mochadian St. Patrick\'s day Squiggle">';
+			break;
+		case 10:
+			ReplacementImage = '<img id="m" src="img/mochaween.png" width="200" title="Boo, motherfucker!" alt="Mochadian Halloween Squiggle">';
+			break;
+		case 12:
+			ReplacementImage = '<img id="m" src="img/mochristmas.png" width="200" title="Have a joyous Saturnalia!" alt="Mochadian Christmas Squiggle">';
+			break;
+		default:
+			ReplacementImage = 'Steve';
 	}
-	
-	else if (monthmonth===12){
-		ReplacementImage = '<img id="m" src="img/mochristmas.png" width="200" title="Have a joyous Saturnalia!" alt="Mochadian Christmas Squiggle">';
-	}
-	
+
 	if (ReplacementImage!=='Steve'){
 		document.getElementById("m").outerHTML = ReplacementImage;
 	}
@@ -76,28 +77,21 @@ function OneiaTime() {
 	var cnikkiphase = mod(remainder/day-0.078,1);
 	var nikkiphase = mod(Math.round(8*cnikkiphase),8); // idk why it needs another mod, but the code breaks without it
 	//console.log(nikkiphase);
-	var first = Math.floor(remainder/(day/10));
-	remainder = remainder%(day/10);
-	var second = Math.floor(remainder/(day/100));
-	remainder = remainder%(day/100);
-	var third = Math.floor(remainder/(day/1000));
-	remainder = remainder%(day/1000);
-	var fourth = Math.floor(remainder/(day/10000));
-	remainder = remainder%(day/10000);
-	var fifth = Math.floor(remainder/(day/100000));
 
-	var currentTimeString = years + " AT, Day " + days + ", " + first + ":" + second + ":" + third + ":" + fourth + ":" + fifth;
+	var currentTimeString = years + " AT, Day " + days + ", ";
+	
+	for (i=1;i<6;i+=1){ // oneian clock is conveniently decimal... :^)
+		currentTimeString+=Math.floor(remainder/(day/Math.pow(10,i)))+(i!==5?':':'');
+		remainder = remainder%(day/Math.pow(10,i));
+	}
 	
 	var timetime = new Date().toString();
 	var utc1 = timetime.slice(0,16);
 	var utc2 = timetime.slice(16,18);
 	var utc3 = timetime.slice(18,24);
 
-	var medidiem = ' AM';
-	if (utc2>12){
-		medidiem = ' PM';
-		utc2 -= 12;
-	}
+	var medidiem = utc2>12?' PM':' AM';
+	utc2 = mod(utc2,12);
 
 	var yy =		31556952000;
 	var vernal =	6884100000;/*20 Mar 16:15 (2018)*/
