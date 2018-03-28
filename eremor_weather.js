@@ -20,7 +20,7 @@ function oneiaDay() {
 
 function seededRandom(n) {
 	"use strict";
-	return (9*Math.pow(n,2)%97)/97;
+	return ((Math.pow(n,15)+Math.pow(n,14+1))%65521)/65521;
 }
 
 function seededRandomRange(x,y,n) {
