@@ -3,8 +3,8 @@ var vernal = 6884100000; // ms after first vernal equinox 20 Mar 16:15 (2018)
 
 var egyptmonths = ['Thoth','Paopi','Hathor','Koiak','Tobi','Meshir','Paremhat','Paremoude','Pashons','Paoni','Epip','Mesori'];
 var egyptseasons = ['Akhet','Peret','Shemu'];
-var chineseelements = ['Wood">木','Fire">火','Earth">土','Metal">金','Water">水'];
-var chinesesigns = ['Rat">鼠','Ox">牛','Tiger">虎','Rabbit">兔','Dragon">龍','Snake">蛇','Horse">馬','Goat">羊','Monkey">猴','Rooster">雞','Dog">狗','Pig">豬'];
+var chineseelements = ['Wood"><ruby>木<rt>き</rt></ruby>','Fire"><ruby>火<rt>ひ</rt></ruby>','Earth"><ruby>土<rt>つち</rt></ruby>','Metal"><ruby>金<rt>か</rt></ruby>','Water"><ruby>水<rt>みず</rt></ruby>'];
+var chinesesigns = ['Rat"><ruby>子<rt>ね</rt></ruby>','Ox"><ruby>丑<rt>うし</rt></ruby>','Tiger"><ruby>寅<rt>とら</rt></ruby>','Rabbit"><ruby>卯<rt>う</rt></ruby>','Dragon"><ruby>辰<rt>たつ</rt></ruby>','Snake"><ruby>巳<rt>み</rt></ruby>','Horse"><ruby>午<rt>うま</rt></ruby>','Goat"><ruby>未<rt>ひつじ</rt></ruby>','Monkey"><ruby>申<rt>さる</rt></ruby>','Rooster"><ruby>酉<rt>とり</rt></ruby>','Dog"><ruby>戌<rt>いぬ</rt></ruby>','Pig"><ruby>亥<rt>い</rt></ruby>'];
 var signs = ['Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'];
 
 /* Thanks to https://stackoverflow.com/questions/4467539/javascript-modulo-gives-a-negative-result-for-negative-numbers/17323608#17323608
@@ -65,10 +65,10 @@ function china(){ // naive; does not account for time between new year's and chi
 	"use strict";
 	var epoch = 444440000; // appx 1 FEB 1984
 	var y = Math.floor(((new Date()/1000)-epoch)/31556952); // years since epoch
-	var yy = '<abbr title="'+(mod(y,2)?'Yin">陰':'Yang">陽')+'</abbr>';
-	var element = '<abbr title="'+chineseelements[mod(Math.floor(y/2),5)]+'</abbr>';
+	var yy = '<abbr title="'+(mod(y,2)?'Yin"><ruby>兄<rt>え</rt></ruby>':'Yang"><ruby>弟<rt>と</rt></ruby>')+'</abbr>';
+	var element = '<abbr title="'+chineseelements[mod(Math.floor(y/2),5)]+'</abbr>の'+yy;
 	var animal = '<abbr title="'+chinesesigns[mod(y,12)]+'</abbr>';
-	return [yy,element,animal].join('');
+	return [element,animal].join(' - ');
 }
 
 function zodiac(){
