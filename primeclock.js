@@ -1,9 +1,12 @@
 var i;
-var year = 31556952;
+var currentyear = ((new Date()).getFullYear());
+var year = 31556952;//currentyear%400===0?31622400:(currentyear%100===0?31536000:(currentyear%4===0?31622400:31536000))
 var yy = 365.2425;
 var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [14e9,'<a href="https://en.wikipedia.org/wiki/Big_Bang">Big Bang</a>'],
 [12.7e9,'Formation of the Milky Way'],
+[1e10,'Formation of <a href="https://en.wikipedia.org/wiki/Barnard\'s_Star">Barnard\'s Star</a>'],
+[4.85e9,'Formation of the <a href="https://en.wikipedia.org/wiki/Alpha_Centauri">Alpha Centauri</a> System'],
 [4.6e9,'Formation of the Solar System'],
 [4.57e9,'Formation of <a href="https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)">Ceres</a>'],
 [4.55e9,'<a href="https://en.wikipedia.org/wiki/Giant-impact_hypothesis">Formation</a> of the <a href="https://en.wikipedia.org/wiki/Earth">Earth</a>'],
@@ -22,6 +25,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [367.5e6,'Late Devonian Extinction Event'],
 [335e6,'Pangaea Forms'],
 [252e6,'Permian-Triassic Extinction Event'],
+[242e6,'Formation of <a href="https://en.wikipedia.org/wiki/Sirius">Sirius</a>'],
 [231.4e6,'Earliest <a href="https://en.wikipedia.org/wiki/Dinosaur">Dinosaurs</a>'],
 [225e6,'Earliest <a href="https://en.wikipedia.org/wiki/Mammal">Mammals</a>'],
 [201.3e6,'Triassic-Jurassic Extinction Event'],
@@ -34,6 +38,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [94e6,'Cenomanian-Turonian Boundary Event'],
 [90e6,'Beginning of the <a href="https://en.wikipedia.org/wiki/Andean_orogeny">Andean Orogeny</a>'],
 [80e6,'Beginning of the <a href="https://en.wikipedia.org/wiki/Laramide_orogeny">Laramide Orogeny</a>'],
+[7e7,'Formation of <a href="https://en.wikipedia.org/wiki/Polaris">Polaris</a>'],
 [68e6,'Earliest <a href="https://en.wikipedia.org/wiki/Tyrannosaurus">Tyrannosaurs</a>'],
 [66e6,'Cretaceous-Tertiary Extinction Event'],
 [65.17e6,'<a href="https://en.wikipedia.org/wiki/Boltysh_crater">Boltysh Impact</a>'],
@@ -156,11 +161,11 @@ function commaconvert(s){
 x is seconds since 1 Jan
 y is seconds before 2018
 
-ae^-(x/year) = y
+ae^-(bx/year) = y
 
-ae^-(x/year) = 14e9 * year
+ae^-(bx/year) = 14e9 * year
 
-a = 14e9 * year
+a = 14e9
 */
 
 function ialc(y){
@@ -182,7 +187,7 @@ function alc(){
 	var str = '<div id="alc">';
 	for (i=0;i<events.length;i+=1){
 		if (events[i][0]>y){
-			str+='<br>'+(i===0?'Jan 01 '+((new Date()).getFullYear())+' 00:00:00':ialc(events[i][0]))+' - '+events[i][1];
+			str+='<br>'+(i===0?'Jan 01 '+currentyear+' 00:00:00':ialc(events[i][0]))+' - '+events[i][1];
 		}
 		else {
 			break;
