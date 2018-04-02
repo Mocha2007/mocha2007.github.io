@@ -27,6 +27,17 @@ function factorize(n){
 	return pf;
 }
 
+function issemiprime(factorization){
+	"use strict";
+	if (factorization.length === 2 && factorization[0][1]+factorization[1][1] === 2){
+		return true;
+	}
+	if (factorization.length === 1 && factorization[0][1] === 2){
+		return true;
+	}
+	return false;
+}
+
 function commaconvert(s){
 	"use strict";
 	s = s.split('');
@@ -52,5 +63,5 @@ function primeclock(){
 	var factorization = commaconvert(String(str)).replace(/\^1/g,'').replace(/\^/g,'<sup>').replace(/\s&times;/g,'</sup> &times;');
 	var isprime = factorization.length === String(sec).length;
 
-	document.getElementById("clock").innerHTML = '<span class="'+(isprime?'prime':'composite')+'">' + sec + '</span><br>' + factorization;
+	document.getElementById("clock").innerHTML = '<span class="'+(isprime?'prime':(issemiprime(str)?'semiprime':'composite'))+'">' + sec + '</span><br>' + factorization;
 }
