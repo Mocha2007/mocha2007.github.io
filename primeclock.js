@@ -211,7 +211,10 @@ function primeclock(){
 	var factorization = commaconvert(String(str)).replace(/\^1/g,'').replace(/\^/g,'<sup>').replace(/\s&times;/g,'</sup> &times;');
 	var isprime = factorization.length === String(sec).length;
 
-	document.getElementById("clock").innerHTML = '<span class="'+(isprime?'prime':(ispower(str)?'ppower':(issemiprime(str)?'semiprime':'composite')))+'">' + sec + '</span><div id="c2">' + factorization + '</div>';
+	var title = document.getElementById("c1");
+	title.innerHTML = sec;
+	title.classList = [isprime?'prime':(ispower(str)?'ppower':(issemiprime(str)?'semiprime':'composite'))];
+	document.getElementById("c2").innerHTML = factorization;
 
 	var x = Math.floor(new Date()/1000)%year; // seconds since year beginning
 	var y = a*Math.exp(-b*x/year);

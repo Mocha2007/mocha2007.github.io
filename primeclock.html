@@ -10,30 +10,21 @@
 <style>
 body{
 	font-family:monospace;
-	text-align: center;
+}
+#c1,#c2{
 	font-size: xx-large;
 	font-weight: bold;
-}
-#clock{
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	margin: auto;
-	margin-top: 50px;
-	width: 700px;
+	margin: 0px;
 }
 #c2{
-	display:block;
-	height: 40px;
+	position: relative;
+	height: 20px;
 }
 #alc{
 	text-align: left;
-	margin-top: 120px;
+	margin-top: 0px;
 
 	font-size: large;
-	font-weight: normal;
 }
 .prime{
 	color:green;
@@ -51,7 +42,8 @@ body{
 <script src="primeclock.js"></script>
 <title>The Great Clock</title>
 <body onload="alc(); primeclock(); setInterval('primeclock()',1000);">
-	<div id="clock"></div>
+	<h1 id="c1"></h1>
+	<h2 id="c2"></h2>
 	<div id="alc"></div>
 </body>
 </html>
