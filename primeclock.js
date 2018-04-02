@@ -5,8 +5,10 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [14e9,'<a href="https://en.wikipedia.org/wiki/Big_Bang">Big Bang</a>'],
 [12.7e9,'Formation of the Milky Way'],
 [4.6e9,'Formation of the Solar System'],
-[4.55e9,'Formation of the Earth'],
-[4e9,'End of the Late Heavy Bombardment'],
+[4.57e9,'Formation of <a href="https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)">Ceres</a>'],
+[4.55e9,'<a href="https://en.wikipedia.org/wiki/Giant-impact_hypothesis">Formation</a> of the <a href="https://en.wikipedia.org/wiki/Earth">Earth</a>'],
+[4.1e9,'Beginning of the <a href="https://en.wikipedia.org/wiki/Late_Heavy_Bombardment">Late Heavy Bombardment</a>'],
+[3.8e9,'End of the Late Heavy Bombardment'],
 [3.465e9,'Life forms on Earth'],
 [3.2e9,'Earliest Photosynthesis'],
 [2.4e9,'Huronian Glaciation'],
@@ -47,7 +49,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [63,'Beginning of the Vietnam War'],
 // Precise number of days for events before 2000 unnecessary.
 [5956/yy,'<a href="https://en.wikipedia.org/wiki/September_11_attacks">September 11 Attacks</a>'],
-[5949/yy,'<a href="https://en.wikipedia.org/wiki/2001_anthrax_attacks">2001 Anthrax Attacks</a>']
+[5949/yy,'<a href="https://en.wikipedia.org/wiki/2001_anthrax_attacks">2001 Anthrax Attacks</a>'],
 [419/yy,'Trump Elected!']
 ];
 
@@ -122,8 +124,8 @@ function ialc(y){
 	var a = 14e9;
 	var b = 21;
 	var otherx = Math.floor(new Date()/1000)%year; // seconds since year beginning
-	var x = Math.floor(Math.log(a/y)*year/b)
-	var wannadate = new Date(new Date().getTime() - 1000*(otherx - x));
+	var x = Math.floor(Math.log(a/y)*year/b);
+	var wannadate = new Date(Date.now()-1000*(otherx-x));
 	return String(wannadate).slice(4,24);
 }
 
