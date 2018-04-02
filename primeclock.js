@@ -214,7 +214,8 @@ function primeclock(){
 	var title = document.getElementById("c1");
 	title.innerHTML = sec;
 	title.classList = [isprime?'prime':(ispower(str)?'ppower':(issemiprime(str)?'semiprime':'composite'))];
-	document.getElementById("c2").innerHTML = factorization;
+	var buffer = '<sup class="invisible">1</sup>'; // necessary to prevent text from jumping up and down; sadly, no css solution possible
+	document.getElementById("c2").innerHTML = buffer+factorization+buffer;
 
 	var x = Math.floor(new Date()/1000)%year; // seconds since year beginning
 	var y = a*Math.exp(-b*x/year);
