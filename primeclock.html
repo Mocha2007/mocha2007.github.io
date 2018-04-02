@@ -31,6 +31,7 @@ body{
 #alc{
 	text-align: left;
 	font-size: large;
+	margin-top: 120px;
 }
 .prime{
 	color:green;
@@ -47,7 +48,8 @@ body{
 </style>
 <script src="primeclock.js"></script>
 <title>The Great Clock</title>
-<body onload="primeclock(); setInterval('primeclock()',1000);">
+<body onload="alc(); primeclock(); setInterval('primeclock()',1000);">
 	<div id="clock"></div>
+	<div id="alc"></div>
 </body>
 </html>

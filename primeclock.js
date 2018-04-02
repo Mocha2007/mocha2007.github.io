@@ -1,10 +1,22 @@
+var a = 14e9;
+var b = 21;
 var i;
 var currentyear = ((new Date()).getFullYear());
-var year = 31556952;//currentyear%400===0?31622400:(currentyear%100===0?31536000:(currentyear%4===0?31622400:31536000))
+var year = 31557600;//31556952;//currentyear%400===0?31622400:(currentyear%100===0?31536000:(currentyear%4===0?31622400:31536000))
 var yy = 365.2425;
 var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [14e9,'<a href="https://en.wikipedia.org/wiki/Big_Bang">Big Bang</a>'],
-[12.7e9,'Formation of the Milky Way'],
+[14e9-600e6,'Depth of the <a href="https://en.wikipedia.org/wiki/Hubble_Ultra-Deep_Field#Hubble_eXtreme_Deep_Field">Hubble Extreme Deep Field</a>'],
+[14e9-630e6,'<a href="https://en.wikipedia.org/wiki/GRB_090423">GRB 090423</a>, one of the oldest supernovae'],
+[14e9-670e6,'Formation of <a href="https://en.wikipedia.org/wiki/EGS-zs8-1">EGS-zs8-1</a>, one of the oldest known galaxies'],
+[12.8e9,'Formation of <a href="https://en.wikipedia.org/wiki/HCM-6A">HCM-6A</a>, the oldest known regular galaxy'],
+[12.7e9,'Formation of the <a href="https://en.wikipedia.org/wiki/Milky_Way">Milky Way</a>'],
+[12.67e9,'Formation of <a href="https://en.wikipedia.org/wiki/Messier_12">Messier 12</a>'],
+[12.54e9,'Formation of <a href="https://en.wikipedia.org/wiki/Messier_80">Messier 80</a>'],
+[12.3e9,'Formation of <a href="https://en.wikipedia.org/wiki/Messier_55">Messier 55</a>'],
+[11.78e9,'Formation of <a href="https://en.wikipedia.org/wiki/Messier_62">Messier 62</a>'],
+[11.52e9,'Formation of <a href="https://en.wikipedia.org/wiki/Omega_Centauri">Omega Centauri</a>'],
+[11.39e9,'Formation of <a href="https://en.wikipedia.org/wiki/Messier_10">Messier 10</a>'],
 [1e10,'Formation of <a href="https://en.wikipedia.org/wiki/Barnard\'s_Star">Barnard\'s Star</a>'],
 [4.85e9,'Formation of the <a href="https://en.wikipedia.org/wiki/Alpha_Centauri">Alpha Centauri</a> System'],
 [4.6e9,'Formation of the Solar System'],
@@ -170,8 +182,6 @@ a = 14e9
 
 function ialc(y){
 	"use strict";
-	var a = 14e9;
-	var b = 21;
 	var otherx = Math.floor(new Date()/1000)%year; // seconds since year beginning
 	var x = Math.floor(Math.log(a/y)*year/b);
 	var wannadate = new Date(Date.now()-1000*(otherx-x));
@@ -180,11 +190,9 @@ function ialc(y){
 
 function alc(){
 	"use strict";
-	var a = 14e9;
-	var b = 21;
 	var x = Math.floor(new Date()/1000)%year; // seconds since year beginning
 	var y = a*Math.exp(-b*x/year);
-	var str = '<div id="alc">';
+	var str = '';
 	for (i=0;i<events.length;i+=1){
 		if (events[i][0]>y){
 			str+='<br>'+(i===0?'Jan 01 '+currentyear+' 00:00:00':ialc(events[i][0]))+' - '+events[i][1];
@@ -193,7 +201,7 @@ function alc(){
 			break;
 		}
 	}
-	return str+'<br>'+(String(new Date()).slice(4,24))+' - Now ('+Math.round(y).toLocaleString()+') Years Ago</div>';
+	document.getElementById("alc").innerHTML = str+'<br><span id="nowtime"></span>';
 }
 
 function primeclock(){
@@ -203,5 +211,10 @@ function primeclock(){
 	var factorization = commaconvert(String(str)).replace(/\^1/g,'').replace(/\^/g,'<sup>').replace(/\s&times;/g,'</sup> &times;');
 	var isprime = factorization.length === String(sec).length;
 
-	document.getElementById("clock").innerHTML = '<span class="'+(isprime?'prime':(ispower(str)?'ppower':(issemiprime(str)?'semiprime':'composite')))+'">' + sec + '</span><div id="c2">' + factorization + '</div>' + alc();
+	document.getElementById("clock").innerHTML = '<span class="'+(isprime?'prime':(ispower(str)?'ppower':(issemiprime(str)?'semiprime':'composite')))+'">' + sec + '</span><div id="c2">' + factorization + '</div>';
+
+	var x = Math.floor(new Date()/1000)%year; // seconds since year beginning
+	var y = a*Math.exp(-b*x/year);
+
+	document.getElementById("nowtime").innerHTML = (String(new Date()).slice(4,24))+' - Now ('+Math.round(y).toLocaleString()+') Years Ago';
 }
