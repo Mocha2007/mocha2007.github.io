@@ -110,7 +110,7 @@ function factorize(n){
 			t+=t===2?1:2;
 		}
 		// check to break early
-		if (t**2>n){
+		if (t*t>n){
 			if (pf.length && pf[pf.length-1][0]===n){
 				pf[pf.length-1][1]+=1;
 			}
