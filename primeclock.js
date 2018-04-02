@@ -5,7 +5,7 @@ function factorize(n){
 	// only works for natual numbers greater than one
 	var pf = [];
 	var t = 2;
-	while (n>1){
+	while (true){
 		if (n%t===0){
 			if (pf.length && pf[pf.length-1][0]===t){
 				pf[pf.length-1][1]+=1;
