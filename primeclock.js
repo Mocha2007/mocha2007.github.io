@@ -2,11 +2,19 @@ var i;
 var year = 31556952;
 var events = [ // MUST BE REVERSE CHRONO ORDER!!!
 [14e9,'Big Bang'],
+[4.6e9,'Formation of the Solar System'],
 [4.55e9,'Formation of the Earth'],
 [4e9,'End of the Late Heavy Bombardment'],
 [3.2e9,'Earliest Photosynthesis'],
 [2.4e9,'Huronian Glaciation'],
 [541e6,'Cambrian Explosion'],
+[485.4e6,'Cambrian-Ordovician Extinction Event'],
+[430e6,'Final Ordovician–Silurian Extinction Event'],
+[367.5e6,'Late Devonian Extinction Event'],
+[252e6,'Permian-Triassic Extinction Event'],
+[201.3e6,'Triassic-Jurassic Extinction Event'],
+[145e6,'Beginning of the Cretaceous Period'],
+[66e6,'Cretaceous-Tertiary Extinction Event'],
 [1,'Trump Elected!']
 ];
 
