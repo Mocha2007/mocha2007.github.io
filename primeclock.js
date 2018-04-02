@@ -28,6 +28,7 @@ function factorize(n){
 }
 
 function commaconvert(s){
+	"use strict";
 	s = s.split('');
 	var n = 0;
 	for (i=0;i<s.length;i+=1){
@@ -48,5 +49,5 @@ function primeclock(){
 	"use strict";
 	var str = factorize(Math.floor(new Date()/1000));
 	//console.log(str);
-	document.getElementById("clock").innerHTML = Math.floor(new Date/1000) + '<br>' + commaconvert(String(str)).replace(/\^1/g,'').replace(/\^/g,'<sup>').replace(/ &times;/g,'</sup> &times;');
+	document.getElementById("clock").innerHTML = Math.floor(new Date()/1000) + '<br>' + commaconvert(String(str)).replace(/\^1/g,'').replace(/\^/g,'<sup>').replace(/\s&times;/g,'</sup> &times;');
 }
