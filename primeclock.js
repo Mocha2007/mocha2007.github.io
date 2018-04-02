@@ -75,7 +75,7 @@ function arraysEqual(arr1,arr2){
 	if (arr1.length !== arr2.length){
 		return false;
 	}
-	for (i=arr1.length;i-=1;){
+	for (i=0;i<arr1.length;i+=1){
 		if (arr1[i] !== arr2[i]){
 			return false;
 		}
@@ -138,7 +138,7 @@ function ispower(factorization){
 			return false;
 		}
 	}
-	return arraysEqual(Array(factorization.length).fill(factorization[0][1]),powertable);
+	return arraysEqual(new Array(factorization.length).fill(factorization[0][1]),powertable);
 }
 
 function issemiprime(factorization){
