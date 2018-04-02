@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="description" content="Template">
+<link rel="shortcut icon" href="img/favicon.ico">
+<link href=simple.css type="text/css" rel="stylesheet" title="Light">
+<link href=dark.css type="text/css" rel="alternate stylesheet" title="Dark"> 
+<link href=blend.css type="text/css" rel="alternate stylesheet" title="Blend">
+<link href=print.css type="text/css" rel="stylesheet" media="print">
+<style>
+#clock{
+	text-align: center;
+	font-size: xx-large;
+	font-weight: bold;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	width: 600px;
+	height: 200px;
+}
+</style>
+<script src="primeclock.js"></script>
+<title>Template</title>
+<body onload="primeclock(); setInterval('primeclock()',1000);">
+	<div id="clock"></div>
+</body>
+</html>

@@ -6,6 +6,9 @@ var egyptseasons = ['Akhet','Peret','Shemu'];
 var chineseelements = ['Wood"><ruby>木<rt>き</rt></ruby>','Fire"><ruby>火<rt>ひ</rt></ruby>','Earth"><ruby>土<rt>つち</rt></ruby>','Metal"><ruby>金<rt>か</rt></ruby>','Water"><ruby>水<rt>みず</rt></ruby>'];
 var chinesesigns = ['Rat"><ruby>子<rt>ね</rt></ruby>','Ox"><ruby>丑<rt>うし</rt></ruby>','Tiger"><ruby>寅<rt>とら</rt></ruby>','Rabbit"><ruby>卯<rt>う</rt></ruby>','Dragon"><ruby>辰<rt>たつ</rt></ruby>','Snake"><ruby>巳<rt>み</rt></ruby>','Horse"><ruby>午<rt>うま</rt></ruby>','Goat"><ruby>未<rt>ひつじ</rt></ruby>','Monkey"><ruby>申<rt>さる</rt></ruby>','Rooster"><ruby>酉<rt>とり</rt></ruby>','Dog"><ruby>戌<rt>いぬ</rt></ruby>','Pig"><ruby>亥<rt>い</rt></ruby>'];
 var signs = ['Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'];
+var signelements = ['Fire (Enthusiasm; drive to express self; faith)','Earth (Practicality; caution; material world)','Air (Communication; socialization; conceptualization	)','Water (Emotion; empathy; sensitivity)'];
+var signqualities= ['Cardinal (active; self-motivated; insightful; ambitious)','Fixed (stabilization; determination; depth; persistence)','Mutable (adaptability; flexibility; sympathy)'];
+var signrulers= ['Mars','Venus','Mercury','Moon','Sun','Mercury','Venus','Mars','Jupiter','Saturn','Saturn','Jupiter'];
 var marsmonths = ['Sagittarius','Dhanus','Capricornus','Makara','Aquarius','Kumbha','Pisces','Mina','Aries','Mesha','Taurus','Rishabha','Gemini','Mithuna','Cancer','Karka','Leo','Simha','Virgo','Kanya','Libra','Tula','Scorpius','Vrishika'];
 
 /* Thanks to https://stackoverflow.com/questions/4467539/javascript-modulo-gives-a-negative-result-for-negative-numbers/17323608#17323608
@@ -34,10 +37,11 @@ function StopSound(soundobj) {
 function egypt(){
 	"use strict";
 	var epoch =	21852000;// 1970 SEP 11 00:00:00 UTC+2; first akhet after epoch
-	var reltime = mod((new Date()/1000)-epoch,31556952); // time since beginning of akhet
+	var reltime = mod((new Date()/1000)-epoch,31556952); // time (s) since beginning of akhet
 	var wutwut = Math.floor(reltime/10518984); // season number
 	var wutmonth = Math.floor(reltime/2629746); // month number
-	return egyptmonths[wutmonth]+' ('+egyptseasons[wutwut]+')';
+	var wutday = Math.floor(reltime/86400)-wutmonth*30; // day number
+	return wutday+' '+egyptmonths[wutmonth]+' ('+egyptseasons[wutwut]+')';
 }
 
 function maya(){
@@ -75,7 +79,7 @@ function china(){ // naive; does not account for time between new year's and chi
 function zodiac(){
 	"use strict";
 	var n = Math.floor(mod(new Date()-vernal,31556952000)/2629746000); // sign number 0-11
-	return signs[n];
+	return '<abbr title="Element: '+signelements[mod(n,4)]+'&#013;Quality: '+signqualities[mod(n,3)]+'&#013;Ruler: '+signrulers[n]+' (this planet\'s influence heightens when inside this constellation)&#013;Detriment: '+signrulers[mod(n+6,12)]+' (this planet\'s influence weakens when inside this constellation)">'+signs[n]+'</abbr>';
 }
 
 function jd(){
