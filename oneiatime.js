@@ -113,7 +113,7 @@ function dhelp3(day){
 		day-=dhelp2(m);
 		m+=1;
 	}
-	return [m,Math.floor(day)];
+	return [m,Math.floor(day),Math.floor(mod(day,1)*1000)];
 }
 
 function darian(){
@@ -132,7 +132,8 @@ function darian(){
 	}
 	var marsmonth = marsmonths[dhelp3(marsd)[0]];
 	var marsday = dhelp3(marsd)[1];
-	return [marsday,marsmonth,marsy].join(' ');
+	var marshour = dhelp3(marsd)[2];
+	return [marsday,marsmonth,marsy,marshour].join(' ');
 }
 
 function HolidayCSS(){
