@@ -53,6 +53,27 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [419/yy,'Trump Elected!']
 ];
 
+function arraysEqual(arr1,arr2){
+	"use strict";
+	if (arr1.length !== arr2.length){
+		return false;
+	}
+	for (i=arr1.length;i-=1;){
+		if (arr1[i] !== arr2[i]){
+			return false;
+		}
+	}
+	return true;
+}
+
+function gcd(a,b){
+	"use strict";
+	if (b===0){
+		return a;
+	}
+	return gcd(b,a%b);
+}
+
 function factorize(n){
 	"use strict";
 	// only works for natual numbers greater than one
@@ -73,11 +94,34 @@ function factorize(n){
 		}
 		// check to break early
 		if (t**2>n){
-			pf.push([n,1]);
+			if (pf.length && pf[pf.length-1][0]===n){
+				pf[pf.length-1][1]+=1;
+			}
+			else {
+				pf.push([n,1]);
+			}
 			break;
 		}
 	}
 	return pf;
+}
+
+function ispower(factorization){
+	"use strict";
+	var powertable = factorization.map(function f(x){return x[1];});
+	var gggcd = 0;
+	for (i=0;i<powertable.length;i+=1){
+		if (gggcd){
+			gggcd = gcd(gggcd,powertable[i]);
+		}
+		else {
+			gggcd = powertable[i];
+		}
+		if (gggcd===1){
+			return false;
+		}
+	}
+	return arraysEqual(Array(factorization.length).fill(factorization[0][1]),powertable);
 }
 
 function issemiprime(factorization){
@@ -154,5 +198,5 @@ function primeclock(){
 	var factorization = commaconvert(String(str)).replace(/\^1/g,'').replace(/\^/g,'<sup>').replace(/\s&times;/g,'</sup> &times;');
 	var isprime = factorization.length === String(sec).length;
 
-	document.getElementById("clock").innerHTML = '<span class="'+(isprime?'prime':(issemiprime(str)?'semiprime':'composite'))+'">' + sec + '</span><div id="c2">' + factorization + '</div>' + alc();
+	document.getElementById("clock").innerHTML = '<span class="'+(isprime?'prime':(ispower(str)?'ppower':(issemiprime(str)?'semiprime':'composite')))+'">' + sec + '</span><div id="c2">' + factorization + '</div>' + alc();
 }
