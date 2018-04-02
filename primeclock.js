@@ -47,7 +47,10 @@ function commaconvert(s){
 
 function primeclock(){
 	"use strict";
-	var str = factorize(Math.floor(new Date()/1000));
-	//console.log(str);
-	document.getElementById("clock").innerHTML = Math.floor(new Date()/1000) + '<br>' + commaconvert(String(str)).replace(/\^1/g,'').replace(/\^/g,'<sup>').replace(/\s&times;/g,'</sup> &times;');
+	var sec = Math.floor(new Date()/1000);
+	var str = factorize(sec);
+	var factorization = commaconvert(String(str)).replace(/\^1/g,'').replace(/\^/g,'<sup>').replace(/\s&times;/g,'</sup> &times;');
+	var isprime = factorization.length === String(sec).length;
+
+	document.getElementById("clock").innerHTML = '<span class="'+(isprime?'prime':'composite')+'">' + sec + '</span><br>' + factorization;
 }
