@@ -1,5 +1,5 @@
 var a = 14e9;
-var b = 21;
+var b = Math.log(a);
 var i;
 var currentyear = ((new Date()).getFullYear());
 var year = 31557600;//31556952; will be irrelevant to this program until 2100
@@ -97,7 +97,10 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [68e6,'Earliest <a href="https://en.wikipedia.org/wiki/Tyrannosaurus">Tyrannosaurs</a>'],
 [66e6,'Cretaceous-Tertiary Extinction Event'],
 [65.17e6,'<a href="https://en.wikipedia.org/wiki/Boltysh_crater">Boltysh Impact</a>'],
-[42e6,'Earliest <i><a href="https://en.wikipedia.org/wiki/Carnivora">Carnivoran</a></i> Fossils'],
+[56e6,'Beginning of the <a href="https://en.wikipedia.org/wiki/Eocene">Eocene</a>'],
+[55e6,'Earliest <a href="https://en.wikipedia.org/wiki/Primate">Primates</a>'],
+[52e6,'Earliest <a href="https://en.wikipedia.org/wiki/Bat">Bats</a>'],
+[42e6,'Earliest <a href="https://en.wikipedia.org/wiki/Carnivora">Carnivorans</a>'],
 [33.9e6,'Eocene-Oligocene Extinction Event'],
 [14.5e6,'Middle Miocene Disruption'],
 [7e6,'Earliest <i><a href="https://en.wikipedia.org/wiki/Vulpes">Vupes</a></i> Fossils'],
@@ -111,7 +114,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 // Precise number of days for events before 2000 unnecessary.
 [diff(1000212360000),'<a href="https://en.wikipedia.org/wiki/September_11_attacks">September 11 Attacks</a>'],
 [diff(1000771200000),'<a href="https://en.wikipedia.org/wiki/2001_anthrax_attacks">2001 Anthrax Attacks</a>'],
-[diff(1478667600000),'Trump Elected!'] // roughly when it became certain
+[diff(1478667600000),'Donald Trump Elected President of the US'] // roughly when it became certain; 00:00 EST 9 NOV 2016 
 // https://en.wikipedia.org/wiki/Timelines_of_world_history
 ];
 
