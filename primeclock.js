@@ -98,7 +98,10 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [66e6,'Cretaceous-Tertiary Extinction Event'],
 [65.17e6,'<a href="https://en.wikipedia.org/wiki/Boltysh_crater">Boltysh Impact</a>'],
 [56e6,'Beginning of the <a href="https://en.wikipedia.org/wiki/Eocene">Eocene</a>'],
+[55.5e6,'<a href="https://en.wikipedia.org/wiki/Paleocene–Eocene_Thermal_Maximum">Paleocene-Eocene Thermal Maximum</a>'],
 [55e6,'Earliest <a href="https://en.wikipedia.org/wiki/Primate">Primates</a>'],
+[54.65e6,'<a href="https://en.wikipedia.org/wiki/Fur_Formation">Fur Formation</a>'],
+[52.5e6,'<a href="https://en.wikipedia.org/wiki/London_Clay">London Clay</a>'],
 [52e6,'Earliest <a href="https://en.wikipedia.org/wiki/Bat">Bats</a>'],
 [45e6,'Australia Splits from Antarctica'],
 [42e6,'Earliest <a href="https://en.wikipedia.org/wiki/Carnivora">Carnivorans</a>'],
@@ -114,6 +117,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [currentyear+4500,'Dawn of <a href="https://en.wikipedia.org/wiki/Sumer">Sumer</a>'],
 [currentyear+3500,'Approximate age of <a href="https://en.wikipedia.org/wiki/Proto-Indo-European_language">Proto-Indo-European</a>'],
 [currentyear+1312,'<a href="https://en.wikipedia.org/wiki/Mursili\'s_eclipse">Mursili\'s Eclipse</a>'],
+// Individual days do not matter before 1680 BCE (ty calculus)
 [currentyear+753,'<a href="https://en.wikipedia.org/wiki/Ab_urbe_condita">Founding of Rome</a>'],
 [currentyear+218,'Hannibal <a href="https://en.wikipedia.org/wiki/Hannibal\'s_crossing_of_the_Alps">Crosses the Alps</a>'],
 [currentyear+44,'<a href="https://en.wikipedia.org/wiki/Assassination_of_Julius_Caesar">Assassination of Julius Caesar</a>'],
@@ -294,6 +298,7 @@ function primeclock(){ // can't use strict mode because of IE
 
 	var x = Math.floor(new Date()/1000)%year; // seconds since year beginning
 	var y = Math.pow(a,1-x/year);
+	var yprime = Math.round(y*Math.log(a)*24*60*60);
 
-	document.getElementById("nowtime").innerHTML = (String(new Date()).slice(4,24))+' - Now ('+Math.round(y).toLocaleString()+') Years Ago';
+	document.getElementById("nowtime").innerHTML = (String(new Date()).slice(4,24))+' - Now ('+Math.round(y).toLocaleString()+') Years Ago';// ('+yprime.toLocaleString()+'x Speed)';
 }
