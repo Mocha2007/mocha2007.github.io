@@ -2,8 +2,19 @@ var a = 14e9;
 var b = 21;
 var i;
 var currentyear = ((new Date()).getFullYear());
-var year = 31557600;//31556952;//currentyear%400===0?31622400:(currentyear%100===0?31536000:(currentyear%4===0?31622400:31536000))
+var year = 31557600;//31556952; will be irrelevant to this program until 2100
 var yy = 365.2425;
+
+function toYear(ms){
+	"use strict";
+	return ms/1000/60/60/24/365.25; // ditto
+}
+
+function diff(epoch){
+	"use strict";
+	return toYear(Date.now()-epoch);
+}
+
 var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [14e9,'<a href="https://en.wikipedia.org/wiki/Big_Bang">Big Bang</a>'],
 [14e9-600e6,'Depth of the <a href="https://en.wikipedia.org/wiki/Hubble_Ultra-Deep_Field#Hubble_eXtreme_Deep_Field">Hubble Extreme Deep Field</a>'],
@@ -90,16 +101,17 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [33.9e6,'Eocene-Oligocene Extinction Event'],
 [14.5e6,'Middle Miocene Disruption'],
 [7e6,'Earliest <i><a href="https://en.wikipedia.org/wiki/Vulpes">Vupes</a></i> Fossils'],
-[3330,'<a href="https://en.wikipedia.org/wiki/Mursili\'s_eclipse">Mursili\'s Eclipse'],
-[242,'Formation of the United States'],
-[104,'Beginning of the Great War'],
-[79,'Beginning of the Second World War'],
-[68,'Beginning of the Korean War'],
-[63,'Beginning of the Vietnam War'],
+// Above events should be forever static
+[currentyear+1312,'<a href="https://en.wikipedia.org/wiki/Mursili\'s_eclipse">Mursili\'s Eclipse'],
+[currentyear-1776,'Formation of the United States'],
+[currentyear-1914,'Beginning of the Great War'],
+[currentyear-1939,'Beginning of the Second World War'],
+[currentyear-1950,'Beginning of the Korean War'],
+[currentyear-1955,'Beginning of the Vietnam War'],
 // Precise number of days for events before 2000 unnecessary.
-[5956/yy,'<a href="https://en.wikipedia.org/wiki/September_11_attacks">September 11 Attacks</a>'],
-[5949/yy,'<a href="https://en.wikipedia.org/wiki/2001_anthrax_attacks">2001 Anthrax Attacks</a>'],
-[419/yy,'Trump Elected!']
+[diff(1000212360000),'<a href="https://en.wikipedia.org/wiki/September_11_attacks">September 11 Attacks</a>'],
+[diff(1000771200000),'<a href="https://en.wikipedia.org/wiki/2001_anthrax_attacks">2001 Anthrax Attacks</a>'],
+[diff(1478667600000),'Trump Elected!'] // roughly when it became certain
 // https://en.wikipedia.org/wiki/Timelines_of_world_history
 ];
 
