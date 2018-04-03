@@ -230,7 +230,7 @@ a = 14e9
 function ialc(y){
 	"use strict";
 	var otherx = Math.floor(new Date()/1000)%year; // seconds since year beginning
-	var x = Math.floor(year*(1-Math.log(y,a)));
+	var x = Math.floor(year*(1-Math.log(y)/Math.log(a)));
 	var wannadate = new Date(Date.now()-1000*(otherx-x));
 	return String(wannadate).slice(4,24);
 }
