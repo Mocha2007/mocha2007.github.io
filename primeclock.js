@@ -1,5 +1,4 @@
 var a = 14e9;
-var b = Math.log(a);
 var i;
 var currentyear = ((new Date()).getFullYear());
 var year = 31557600;//31556952; will be irrelevant to this program until 2100
@@ -231,7 +230,7 @@ a = 14e9
 function ialc(y){
 	"use strict";
 	var otherx = Math.floor(new Date()/1000)%year; // seconds since year beginning
-	var x = Math.floor(Math.log(a/y)*year/b);
+	var x = Math.floor(year*(1-Math.log(y,a)));
 	var wannadate = new Date(Date.now()-1000*(otherx-x));
 	return String(wannadate).slice(4,24);
 }
@@ -239,7 +238,7 @@ function ialc(y){
 function alc(){
 	"use strict";
 	var x = Math.floor(new Date()/1000)%year; // seconds since year beginning
-	var y = a*Math.exp(-b*x/year);
+	var y = Math.pow(a,1-x/year);
 	var str = '';
 	for (i=0;i<events.length;i+=1){
 		if (events[i][0]>y){
@@ -265,7 +264,7 @@ function primeclock(){ // can't use strict mode because of IE
 	document.getElementById("c2").innerHTML = buffer+factorization+buffer;
 
 	var x = Math.floor(new Date()/1000)%year; // seconds since year beginning
-	var y = a*Math.exp(-b*x/year);
+	var y = Math.pow(a,1-x/year);
 
 	document.getElementById("nowtime").innerHTML = (String(new Date()).slice(4,24))+' - Now ('+Math.round(y).toLocaleString()+') Years Ago';
 }
