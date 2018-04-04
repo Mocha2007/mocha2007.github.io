@@ -33,6 +33,9 @@ function click(x){
 				break;
 		}
 	}
+	else {
+		window.alert('Nice try, but you can\'t fight while the game is paused!!!! >:3');
+	}
 }
 
 function main(){
