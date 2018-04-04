@@ -1,4 +1,5 @@
 var fps = 20;
+var att = 1;
 var atttime = 2;
 var clock = 0;
 var lastkilltime = 0;
@@ -18,19 +19,37 @@ var llamaElement = document.getElementById("llama");
 var enemyNameElement = document.getElementById("enemyname");
 var readyElement = document.getElementById("ready");
 
+// do this initially regardless
 enemyNameElement.innerHTML = 'Demonic Llama';
+
+function attack(x){
+	"use strict";
+	llamahp -= x;
+}
+
+function killllama(){
+	"use strict";
+	score += Math.floor(fps*1000/(clock-lastkilltime));
+	lastkilltime = clock;
+	enemyAttacking = false;
+	new Audio('https://www.myinstants.com/media/sounds/wilhelmscream.mp3').play();
+}
 
 function click(x){
 	"use strict";
 	if (!paused){
 		switch (x){
 			case 'llama':
-				llamahp -= 1;
+				attack(att);
+				if (!llamahp){
+					killllama();
+				}
 				break;
 			case 'dodge':
 				enemyAttacking = false;
-				console.log('DODGED');
 				break;
+			default:
+				console.warn('ERR1',x);
 		}
 	}
 	else {
@@ -49,14 +68,6 @@ function damage(x){
 	else {
 		new Audio('https://www.myinstants.com/media/sounds/minecraft_hit_soundmp3converter.mp3').play();
 	}
-}
-
-function killllama(){
-	"use strict";
-	score += Math.floor(fps*1000/(clock-lastkilltime));
-	lastkilltime = clock;
-	enemyAttacking = false;
-	new Audio('https://www.myinstants.com/media/sounds/wilhelmscream.mp3').play();
 }
 
 function newllama(x){
@@ -80,7 +91,6 @@ function main(){
 
 		// make new llama
 		if (!llamahp){
-			killllama();
 			newllama(10);
 		}
 
