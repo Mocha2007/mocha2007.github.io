@@ -20,6 +20,7 @@ body{
 	bottom: 0px;
 
 	border: 4px dotted black;
+	background-color: #DDD;
 }
 #left,#right,#center{
 	width: 150px;
@@ -46,6 +47,9 @@ td{
 }
 #hp{
 	font-size: 60px;
+}
+.action{
+	font-size: 20px;
 }
 .red{
 	color:#C00;
@@ -74,7 +78,7 @@ td{
 				</td>
 			</tr>
 			<tr>
-				<td><i>Enemy Hitpoints</i><br/><span id="hp"></span></td>
+				<td><i>Enemy Hitpoints</i><br/><span id="hp"></span><br/><i><span id="ready"></span>% to Next Attack</i></td>
 			</tr>
 			<tr>
 				<td>hurry pls kill lam soopr evil bad bad</td>
@@ -86,11 +90,12 @@ td{
 		<div id="left">
 			Time: <span id="time">0</span><br/>
 			Score: <span id="score"></span><br/>
-			<span class="invisible">Health: <span id="health"></span></span>
+			Health: <span id="health"></span>
 		</div>
 		<div id="right">
 			<input id="pause" type="submit" value="Pause" onclick="paused = !paused;">
 		</div>
+		<a class="action" href="javascript:click('dodge');">Dodge</a>
 	</div>
 </body>
 <script src="farmsim2019.js"></script>
