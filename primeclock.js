@@ -1,9 +1,19 @@
 var a = 14e9;
 var i;
 var currentyear = ((new Date()).getFullYear());
-var year = 31557600;//31556952; will be irrelevant to this program until 2100
-var yy = 365.2425;
+var year = 86400*(currentyear%400?(currentyear%100?(currentyear%4?365:366):365):366);
+var cye = new Date(currentyear+"-01-01T00:00:00"+String(new Date()).slice(28,33))/1000; // current year epoch - jan 1 XXXX 00:00 utc
 var debug = false; // enable to see all events at any time
+
+function yearLength(y){
+	"use strict";
+	return y%400?(y%100?(y%4?365:366):365):366;
+}
+
+function timeSinceYear(){
+	"use strict";
+	return (new Date()/1000)-cye;
+}
 
 function toYear(ms){
 	"use strict";
@@ -307,7 +317,7 @@ a = 14e9
 
 function ialc(y){
 	"use strict";
-	var otherx = Math.floor(new Date()/1000)%year; // seconds since year beginning
+	var otherx = timeSinceYear(); // seconds since year beginning
 	var x = Math.floor(year*(1-Math.log(y)/Math.log(a)));
 	var wannadate = new Date(Date.now()-1000*(otherx-x));
 	return String(wannadate).slice(4,24);
@@ -315,7 +325,7 @@ function ialc(y){
 
 function alc(){
 	"use strict";
-	var x = Math.floor(new Date()/1000)%year; // seconds since year beginning
+	var x = timeSinceYear(); // seconds since year beginning
 	var y = Math.pow(a,1-x/year);
 	var str = '';
 	for (i=0;i<events.length;i+=1){
@@ -341,7 +351,7 @@ function primeclock(){ // can't use strict mode because of IE
 	var buffer = '<sup class="invisible">1</sup>'; // necessary to prevent text from jumping up and down; sadly, no css solution possible
 	document.getElementById("c2").innerHTML = buffer+factorization+buffer;
 
-	var x = Math.floor(new Date()/1000)%year; // seconds since year beginning
+	var x = timeSinceYear(); // seconds since year beginning
 	var y = Math.pow(a,1-x/year);
 	var yprime = Math.round(y*Math.log(a)*24*60*60);
 
