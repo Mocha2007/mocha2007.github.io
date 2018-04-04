@@ -1,5 +1,6 @@
 var fps = 20;
 var clock = 0;
+var lastkilltime = 0;
 var score = 0;
 var health = 100;
 var paused = false;
@@ -30,9 +31,11 @@ function main(){
 		// make cones
 		
 		if (llamahp===0){
-			llamaElement.classList = ["invisible"];
-			score += Math.floor(fps*1000/clock);
-			llamahp -= 1;
+			//llamaElement.classList = ["invisible"];
+			score += Math.floor(fps*1000/(clock-lastkilltime));
+			llamahp = 10;
+			lastkilltime = clock;
+			new Audio('https://www.myinstants.com/media/sounds/wilhelmscream.mp3').play();
 		}
 
 		// ONLY update if absolutely necessary!
