@@ -75,7 +75,7 @@ function attack(){
 
 function kill(){
 	"use strict";
-	score += Math.floor(fps*Math.exp(maxenemyhp,3)/(clock-lastkilltime));
+	score += Math.floor(10*fps*maxenemyhp*maxenemyhp/(clock-lastkilltime));
 	lastkilltime = clock;
 	enemyAttacking = false;
 	new Audio('https://www.myinstants.com/media/sounds/wilhelmscream.mp3').play();
