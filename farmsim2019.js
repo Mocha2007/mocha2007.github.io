@@ -35,10 +35,17 @@ function click(x){
 function main(){
 	"use strict";
 	if (health<=0){
-		document.getElementById("mid").innerHTML = '<h1 class="red">YOU LOSE!</h1>';
+		document.getElementById("mid").innerHTML = '<h1 class="red">YOU LOSE!</h1><h1>Score: '+score+'</h1>';
 	}
 	else if (!paused){
 		clock+=1;
+		// hp flash when recently damaged
+		if (clock-lastatttime < fps*atttime/10){
+			healthElement.classList = ["red"];
+		}
+		else {
+			healthElement.classList = [];
+		}
 		// if no dodge, deal damage to player
 		if (enemyAttacking && (clock-lastatttime)/fps > atttime){
 			enemyAttacking = false;
