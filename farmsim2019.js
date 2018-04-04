@@ -18,9 +18,22 @@ var enemyhealthElement = document.getElementById("hp");
 var llamaElement = document.getElementById("llama");
 var enemyNameElement = document.getElementById("enemyname");
 var readyElement = document.getElementById("ready");
+var pauseElement = document.getElementById("pause");
 
 // do this initially regardless
 enemyNameElement.innerHTML = 'Demonic Llama';
+
+function reset(){
+	"use strict";
+	clock = 0;
+	lastkilltime = 0;
+	lastatttime = 0;
+	score = 0;
+	health = 100;
+	paused = false;
+	enemyAttacking = false;
+	llamahp = 10;
+}
 
 function attack(x){
 	"use strict";
@@ -110,6 +123,9 @@ function main(){
 		enemyhealthElement.classList = [(llamahp>6?"gre":(llamahp>3?"yel":"red"))];
 
 		// ONLY update if absolutely necessary!
+		if (pauseElement.value !== 'Pause'){
+			pauseElement.value = 'Pause';
+		}
 		if (llamahp>0 && timeElement.innerHTML !== String(Math.floor(clock/fps))){
 			timeElement.innerHTML = clock/fps;
 		}
@@ -125,5 +141,8 @@ function main(){
 
 		// this fine to update constantly
 		readyElement.innerHTML = '<progress value="'+(clock-lastatttime)/fps/atttime+'"></progress>';
+	}
+	else {
+		pauseElement.value = 'Play';
 	}
 }
