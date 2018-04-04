@@ -11,6 +11,9 @@ var scoreElement = document.getElementById("score");
 var healthElement = document.getElementById("health");
 var enemyhealthElement = document.getElementById("hp");
 var llamaElement = document.getElementById("llama");
+var enemyNameElement = document.getElementById("enemyname");
+
+enemyNameElement.innerHTML = 'Llama Demon';
 
 function click(x){
 	"use strict";
