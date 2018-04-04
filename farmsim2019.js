@@ -22,13 +22,16 @@ enemyNameElement.innerHTML = 'Demonic Llama (soopr evil)';
 
 function click(x){
 	"use strict";
-	if (x==='llama'){
-		llamahp -= 1;
-		console.log('LLAMA SHOT');
-	}
-	if (x==='dodge'){
-		enemyAttacking = false;
-		console.log('DODGED');
+	if (!paused){
+		switch (x){
+			case 'llama':
+				llamahp -= 1;
+				break;
+			case 'dodge':
+				enemyAttacking = false;
+				console.log('DODGED');
+				break;
+		}
 	}
 }
 
