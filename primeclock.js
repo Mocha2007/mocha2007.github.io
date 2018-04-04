@@ -5,11 +5,6 @@ var year = 86400*(currentyear%400?(currentyear%100?(currentyear%4?365:366):365):
 var cye = new Date(currentyear+"-01-01T00:00:00"+String(new Date()).slice(28,33))/1000; // current year epoch - jan 1 XXXX 00:00 utc
 var debug = false; // enable to see all events at any time
 
-function yearLength(y){
-	"use strict";
-	return y%400?(y%100?(y%4?365:366):365):366;
-}
-
 function timeSinceYear(){
 	"use strict";
 	return (new Date()/1000)-cye;
