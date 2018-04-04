@@ -13,32 +13,41 @@ var scoreElement = document.getElementById("score");
 var healthElement = document.getElementById("health");
 var enemyhealthElement = document.getElementById("hp");
 var enemyNameElement = document.getElementById("enemyname");
-var enemyImgElement = document.getElementById("img");
 var enemyDescElement = document.getElementById("desc");
+var enemyAttNameElement = document.getElementById("attname");
+var enemyImgElement = document.getElementById("img");
 var readyElement = document.getElementById("ready");
 var pauseElement = document.getElementById("pause");
 
-// do this initially regardless
+// enemy code
+var maxenemyhp,enemyhp,enemyatt,atttime;
+
 var llama = [];
 llama.name = 'Demonic Llama';
 llama.img = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Llama_lying_down.jpg/1200px-Llama_lying_down.jpg';
 llama.desc = 'soopr evil bad bad pls kill';
+llama.attname = 'Spit';
 llama.att = 5;
 llama.speed = 2;
 llama.hp = 10;
 
-var enemy = [];
-enemy.llama = llama;
+var yuri = [];
+yuri.name = 'Yuri!!!';
+yuri.img = 'http://images.goodsmile.info/cgm/images/product/20170201/6231/43651/large/42f61413f2fec50155107225e94e4b20.jpg';
+yuri.desc = '... on ice!';
+yuri.attname = 'Skate Slash';
+yuri.att = 7;
+yuri.speed = 3;
+yuri.hp = 25;
 
-var idlist = ['llama'];
-
-var maxenemyhp,enemyhp,enemyatt,atttime;
+var enemy = [llama,yuri];
 
 function newenemy(){
 	"use strict";
-	var ce = enemy[idlist[Math.floor(Math.random()*idlist.length)]];
+	var ce = enemy[Math.floor(Math.random()*enemy.length)];
 	enemyNameElement.innerHTML = ce.name;
-	enemyDescElement.InnerHTML = ce.desc;
+	enemyDescElement.innerHTML = ce.desc;
+	enemyAttNameElement.innerHTML = ce.attname;
 	enemyImgElement.src = ce.img;
 	maxenemyhp = ce.hp;
 	enemyhp = ce.hp;
@@ -66,8 +75,7 @@ function attack(){
 
 function kill(){
 	"use strict";
-	console.warn('OwO');
-	score += Math.floor(100*fps*maxenemyhp/(clock-lastkilltime));
+	score += Math.floor(fps*Math.exp(maxenemyhp,3)/(clock-lastkilltime));
 	lastkilltime = clock;
 	enemyAttacking = false;
 	new Audio('https://www.myinstants.com/media/sounds/wilhelmscream.mp3').play();
@@ -140,7 +148,7 @@ function main(){
 		}
 		
 		// set enemy hp color
-		enemyhealthElement.classList = [(enemyhp>6?"gre":(enemyhp>3?"yel":"red"))];
+		enemyhealthElement.classList = [(3*enemyhp>2*maxenemyhp?"gre":(3*enemyhp>maxenemyhp?"yel":"red"))];
 
 		// ONLY update if absolutely necessary!
 		if (pauseElement.value !== 'Pause'){
