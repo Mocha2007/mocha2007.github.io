@@ -45,17 +45,25 @@ function main(){
 	}
 	else if (!paused){
 		clock+=1;
-		// hp flash when recently damaged
-		if (clock-lastatttime < fps*atttime/10){
-			healthElement.classList = ["red"];
-		}
-		else {
+
+		// hp flash disable
+		if (clock-lastatttime > fps*atttime/10){
 			healthElement.classList = [];
 		}
+
 		// if no dodge, deal damage to player
+
 		if (enemyAttacking && (clock-lastatttime)/fps > atttime){
 			enemyAttacking = false;
 			health -= 5;
+			healthElement.classList = ["red"];
+			if (health<=0){
+				new Audio('https://www.myinstants.com/media/sounds/roblox-death-sound_1.mp3').play();
+				new Audio('https://www.myinstants.com/media/sounds/export_4.mp3').play();
+			}
+			else {
+				new Audio('https://www.myinstants.com/media/sounds/minecraft_hit_soundmp3converter.mp3').play();
+			}
 		}
 
 		// make cones
