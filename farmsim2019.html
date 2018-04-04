@@ -44,6 +44,18 @@ body{
 td{
 	border:none;
 }
+#hp{
+	font-size: 60px;
+}
+.red{
+	color:#C00;
+}
+.yel{
+	color:#AA0;
+}
+.gre{
+	color:#0C0;
+}
 </style>
 <title>Farm Simulator 2019</title>
 <body onload="main(); setInterval('main()',1000/fps);">
@@ -62,7 +74,7 @@ td{
 				</td>
 			</tr>
 			<tr>
-				<td><i>Enemy Hitpoints: </i><span id="hp"></span></td>
+				<td><i>Enemy Hitpoints</i><br/><span id="hp"></span></td>
 			</tr>
 		</table>
 	</div>
@@ -71,7 +83,7 @@ td{
 		<div id="left">
 			Time: <span id="time">0</span><br/>
 			Score: <span id="score"></span><br/>
-			Health: <span id="health"></span>
+			<span class="invisible">Health: <span id="health"></span></span>
 		</div>
 		<div id="right">
 			<input id="pause" type="submit" value="Pause" onclick="paused = !paused;">

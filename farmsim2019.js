@@ -14,7 +14,7 @@ var enemyhealthElement = document.getElementById("hp");
 var llamaElement = document.getElementById("llama");
 var enemyNameElement = document.getElementById("enemyname");
 
-enemyNameElement.innerHTML = 'Llama Demon';
+enemyNameElement.innerHTML = 'Demonic Llama (soopr evil)';
 
 function click(x){
 	"use strict";
@@ -28,6 +28,7 @@ function main(){
 	"use strict";
 	if (!paused){
 		clock+=1;
+
 		// make cones
 		
 		if (llamahp===0){
@@ -37,6 +38,7 @@ function main(){
 			lastkilltime = clock;
 			new Audio('https://www.myinstants.com/media/sounds/wilhelmscream.mp3').play();
 		}
+		enemyhealthElement.classList = [(llamahp>6?"gre":(llamahp>3?"yel":"red"))];
 
 		// ONLY update if absolutely necessary!
 		if (llamahp>0 && timeElement.innerHTML !== String(Math.floor(clock/fps))){
