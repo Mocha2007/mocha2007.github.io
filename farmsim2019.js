@@ -1,6 +1,5 @@
 var fps = 20;
 var att = 1;
-var atttime = 2;
 var clock = 0;
 var lastkilltime = 0;
 var lastatttime = 0;
@@ -9,19 +8,44 @@ var health = 100;
 var paused = false;
 var enemyAttacking = false;
 
-var llamahp = 10;
-
 var timeElement = document.getElementById("time");
 var scoreElement = document.getElementById("score");
 var healthElement = document.getElementById("health");
 var enemyhealthElement = document.getElementById("hp");
-var llamaElement = document.getElementById("llama");
 var enemyNameElement = document.getElementById("enemyname");
+var enemyImgElement = document.getElementById("img");
+var enemyDescElement = document.getElementById("desc");
 var readyElement = document.getElementById("ready");
 var pauseElement = document.getElementById("pause");
 
 // do this initially regardless
-enemyNameElement.innerHTML = 'Demonic Llama';
+var llama = [];
+llama.name = 'Demonic Llama';
+llama.img = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Llama_lying_down.jpg/1200px-Llama_lying_down.jpg';
+llama.desc = 'soopr evil bad bad pls kill';
+llama.att = 5;
+llama.speed = 2;
+llama.hp = 10;
+
+var enemy = [];
+enemy.llama = llama;
+
+var idlist = ['llama'];
+
+var maxenemyhp,enemyhp,enemyatt,atttime;
+
+function newenemy(){
+	"use strict";
+	var ce = enemy[idlist[Math.floor(Math.random()*idlist.length)]];
+	enemyNameElement.innerHTML = ce.name;
+	enemyDescElement.InnerHTML = ce.desc;
+	enemyImgElement.src = ce.img;
+	maxenemyhp = ce.hp;
+	enemyhp = ce.hp;
+	atttime = ce.speed;
+	enemyatt = ce.att;
+	console.log('Spawned '+ce.name);
+}
 
 function reset(){
 	"use strict";
@@ -32,17 +56,18 @@ function reset(){
 	health = 100;
 	paused = false;
 	enemyAttacking = false;
-	llamahp = 10;
+	newenemy();
 }
 
-function attack(x){
+function attack(){
 	"use strict";
-	llamahp -= x;
+	enemyhp -= att;
 }
 
-function killllama(){
+function kill(){
 	"use strict";
-	score += Math.floor(fps*1000/(clock-lastkilltime));
+	console.warn('OwO');
+	score += Math.floor(100*fps*maxenemyhp/(clock-lastkilltime));
 	lastkilltime = clock;
 	enemyAttacking = false;
 	new Audio('https://www.myinstants.com/media/sounds/wilhelmscream.mp3').play();
@@ -52,10 +77,10 @@ function click(x){
 	"use strict";
 	if (!paused){
 		switch (x){
-			case 'llama':
-				attack(att);
-				if (!llamahp){
-					killllama();
+			case 'att':
+				attack();
+				if (enemyhp<=0){
+					kill();
 				}
 				break;
 			case 'dodge':
@@ -70,9 +95,9 @@ function click(x){
 	}
 }
 
-function damage(x){
+function damage(){
 	"use strict";
-	health -= x;
+	health -= enemyatt;
 	healthElement.classList = ["red"];
 	if (health<=0){
 		new Audio('https://www.myinstants.com/media/sounds/roblox-death-sound_1.mp3').play();
@@ -81,11 +106,6 @@ function damage(x){
 	else {
 		new Audio('https://www.myinstants.com/media/sounds/minecraft_hit_soundmp3converter.mp3').play();
 	}
-}
-
-function newllama(x){
-	"use strict";
-	llamahp = x;
 }
 
 function main(){
@@ -102,15 +122,15 @@ function main(){
 			healthElement.classList = [];
 		}
 
-		// make new llama
-		if (!llamahp){
-			newllama(10);
+		// make new enemy
+		if (!enemyhp){
+			newenemy();
 		}
 
 		// if no dodge, deal damage to player
 		else if (enemyAttacking && (clock-lastatttime)/fps > atttime){
 			enemyAttacking = false;
-			damage(5);
+			damage();
 		}
 
 		// launches an attack if not already
@@ -120,13 +140,13 @@ function main(){
 		}
 		
 		// set enemy hp color
-		enemyhealthElement.classList = [(llamahp>6?"gre":(llamahp>3?"yel":"red"))];
+		enemyhealthElement.classList = [(enemyhp>6?"gre":(enemyhp>3?"yel":"red"))];
 
 		// ONLY update if absolutely necessary!
 		if (pauseElement.value !== 'Pause'){
 			pauseElement.value = 'Pause';
 		}
-		if (llamahp>0 && timeElement.innerHTML !== String(Math.floor(clock/fps))){
+		if (enemyhp>0 && timeElement.innerHTML !== String(Math.floor(clock/fps))){
 			timeElement.innerHTML = clock/fps;
 		}
 		if (scoreElement.innerHTML !== String(score)){
@@ -135,8 +155,8 @@ function main(){
 		if (healthElement.innerHTML !== String(health)){
 			healthElement.innerHTML = health;
 		}
-		if (enemyhealthElement.innerHTML !== String(Math.max(0,llamahp))){
-			enemyhealthElement.innerHTML = Math.max(0,llamahp);
+		if (enemyhealthElement.innerHTML !== String(Math.max(0,enemyhp))){
+			enemyhealthElement.innerHTML = Math.max(0,enemyhp);
 		}
 
 		// this fine to update constantly
