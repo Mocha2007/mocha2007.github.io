@@ -95,8 +95,7 @@ function main(){
 		if (enemyhealthElement.innerHTML !== String(Math.max(0,llamahp))){
 			enemyhealthElement.innerHTML = Math.max(0,llamahp);
 		}
-		if (readyElement.innerHTML !== String(Math.round(100*(clock-lastatttime)/fps/atttime))){
-			readyElement.innerHTML = Math.round(100*(clock-lastatttime)/fps/atttime);
-		}
+
+		readyElement.innerHTML = '<progress value="'+(clock-lastatttime)/fps/atttime+'"></progress>';
 	}
 }
