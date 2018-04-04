@@ -7,7 +7,6 @@
 <link href=dark.css type="text/css" rel="alternate stylesheet" title="Dark"> 
 <link href=blend.css type="text/css" rel="alternate stylesheet" title="Blend">
 <link href=print.css type="text/css" rel="stylesheet" media="print">
-<script src="farmsim2019.js"></script>
 <style>
 body{
 	font-family:monospace;
@@ -39,6 +38,12 @@ body{
 	padding-left: 4px;
 	text-align: right;
 }
+.invisible{
+	visibility: hidden;
+}
+td{
+	border:none;
+}
 </style>
 <title>Farm Simulator 2019</title>
 <body onload="main(); setInterval('main()',1000/fps);">
@@ -46,11 +51,24 @@ body{
 		<h1 id="Farm Simulator 2019">Farm Simulator 2019</h1>
 	</div>
 
-	<div id="mid"></div>
+	<div id="mid">
+		<table>
+			<tr>
+				<td>
+					<a href="javascript:click('llama');"><img id="llama" height="400px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Llama_lying_down.jpg/1200px-Llama_lying_down.jpg"/></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<i>Enemy Hitpoints: </i><span id="hp"></span>
+				</td>
+			</tr>
+		</table>
+	</div>
 
 	<div id="bottom">
 		<div id="left">
-			Time: <span id="time"></span><br/>
+			Time: <span id="time">0</span><br/>
 			Score: <span id="score"></span><br/>
 			Health: <span id="health"></span>
 		</div>
@@ -59,4 +77,5 @@ body{
 		</div>
 	</div>
 </body>
+<script src="farmsim2019.js"></script>
 </html>
