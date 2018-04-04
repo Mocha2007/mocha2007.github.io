@@ -73,6 +73,7 @@ function main(){
 			score += Math.floor(fps*1000/(clock-lastkilltime));
 			llamahp = 10;
 			lastkilltime = clock;
+			enemyAttacking = false;
 			new Audio('https://www.myinstants.com/media/sounds/wilhelmscream.mp3').play();
 		}
 		else if (!enemyAttacking){ // launches an attack
