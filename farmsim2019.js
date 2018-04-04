@@ -18,7 +18,7 @@ var llamaElement = document.getElementById("llama");
 var enemyNameElement = document.getElementById("enemyname");
 var readyElement = document.getElementById("ready");
 
-enemyNameElement.innerHTML = 'Demonic Llama (soopr evil)';
+enemyNameElement.innerHTML = 'Demonic Llama';
 
 function click(x){
 	"use strict";
@@ -38,12 +38,26 @@ function click(x){
 	}
 }
 
+function damage(x){
+	"use strict";
+	health -= x;
+	healthElement.classList = ["red"];
+	if (health<=0){
+		new Audio('https://www.myinstants.com/media/sounds/roblox-death-sound_1.mp3').play();
+		new Audio('https://www.myinstants.com/media/sounds/export_4.mp3').play();
+	}
+	else {
+		new Audio('https://www.myinstants.com/media/sounds/minecraft_hit_soundmp3converter.mp3').play();
+	}
+}
+
 function main(){
 	"use strict";
 	if (health<=0){
 		document.getElementById("mid").innerHTML = '<h1 class="red">YOU LOSE!</h1><h1>Score: '+score+'</h1>';
 	}
 	else if (!paused){
+		// increment the clock
 		clock+=1;
 
 		// hp flash disable
@@ -52,34 +66,26 @@ function main(){
 		}
 
 		// if no dodge, deal damage to player
-
 		if (enemyAttacking && (clock-lastatttime)/fps > atttime){
 			enemyAttacking = false;
-			health -= 5;
-			healthElement.classList = ["red"];
-			if (health<=0){
-				new Audio('https://www.myinstants.com/media/sounds/roblox-death-sound_1.mp3').play();
-				new Audio('https://www.myinstants.com/media/sounds/export_4.mp3').play();
-			}
-			else {
-				new Audio('https://www.myinstants.com/media/sounds/minecraft_hit_soundmp3converter.mp3').play();
-			}
+			damage(5);
 		}
 
-		// make cones
-		
+		// make new llama
 		if (llamahp===0){
-			//llamaElement.classList = ["invisible"];
 			score += Math.floor(fps*1000/(clock-lastkilltime));
-			llamahp = 10;
 			lastkilltime = clock;
 			enemyAttacking = false;
 			new Audio('https://www.myinstants.com/media/sounds/wilhelmscream.mp3').play();
+			llamahp = 10;
 		}
-		else if (!enemyAttacking){ // launches an attack
+		// launches an attack if not already
+		else if (!enemyAttacking){ 
 			enemyAttacking = true;
 			lastatttime = clock;
 		}
+		
+		// set enemy hp color
 		enemyhealthElement.classList = [(llamahp>6?"gre":(llamahp>3?"yel":"red"))];
 
 		// ONLY update if absolutely necessary!
@@ -96,6 +102,7 @@ function main(){
 			enemyhealthElement.innerHTML = Math.max(0,llamahp);
 		}
 
+		// this fine to update constantly
 		readyElement.innerHTML = '<progress value="'+(clock-lastatttime)/fps/atttime+'"></progress>';
 	}
 }
