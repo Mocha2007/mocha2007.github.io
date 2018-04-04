@@ -51,6 +51,19 @@ function damage(x){
 	}
 }
 
+function killllama(){
+	"use strict";
+	score += Math.floor(fps*1000/(clock-lastkilltime));
+	lastkilltime = clock;
+	enemyAttacking = false;
+	new Audio('https://www.myinstants.com/media/sounds/wilhelmscream.mp3').play();
+}
+
+function newllama(x){
+	"use strict";
+	llamahp = x;
+}
+
 function main(){
 	"use strict";
 	if (health<=0){
@@ -65,20 +78,18 @@ function main(){
 			healthElement.classList = [];
 		}
 
+		// make new llama
+		if (!llamahp){
+			killllama();
+			newllama(10);
+		}
+
 		// if no dodge, deal damage to player
-		if (enemyAttacking && (clock-lastatttime)/fps > atttime){
+		else if (enemyAttacking && (clock-lastatttime)/fps > atttime){
 			enemyAttacking = false;
 			damage(5);
 		}
 
-		// make new llama
-		if (llamahp===0){
-			score += Math.floor(fps*1000/(clock-lastkilltime));
-			lastkilltime = clock;
-			enemyAttacking = false;
-			new Audio('https://www.myinstants.com/media/sounds/wilhelmscream.mp3').play();
-			llamahp = 10;
-		}
 		// launches an attack if not already
 		else if (!enemyAttacking){ 
 			enemyAttacking = true;
