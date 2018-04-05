@@ -49,7 +49,16 @@ moon.att = 10;
 moon.speed = 3.5;
 moon.hp = 30;
 
-var enemy = [llama,yuri,moon];
+var cone = [];
+cone.name = 'Alien Traffic Cone';
+cone.img = 'https://4.imimg.com/data4/HP/BP/MY-5351222/traffic-cone-500x500.png';
+cone.desc = '...from planet nine!!!';
+cone.attname = 'Trip';
+cone.att = 6;
+cone.speed = 2;
+cone.hp = 12;
+
+var enemy = [llama,yuri,moon,cone];
 
 function newenemy(){
 	"use strict";
