@@ -186,8 +186,8 @@ function main(){
 		if (pauseElement.value !== 'Pause'){
 			pauseElement.value = 'Pause';
 		}
-		if (enemyhp>0 && timeElement.innerHTML !== String(Math.floor(clock/fps))){
-			timeElement.innerHTML = clock/fps;
+		if (targetHealth>0 && timeElement.innerHTML !== String(Math.floor(clock/fps))){
+			timeElement.innerHTML = Math.floor(clock/fps);
 		}
 		if (scoreElement.innerHTML !== String(score)){
 			scoreElement.innerHTML = score;
