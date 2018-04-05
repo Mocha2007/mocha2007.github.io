@@ -67,6 +67,7 @@ function newenemy(){
 	enemyDescElement.innerHTML = ce.desc;
 	enemyAttNameElement.innerHTML = ce.attname;
 	enemyImgElement.src = ce.img;
+	enemyImgElement.alt = ce.name;
 	maxenemyhp = ce.hp;
 	enemyhp = ce.hp;
 	atttime = ce.speed;
