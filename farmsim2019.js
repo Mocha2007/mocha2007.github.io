@@ -28,7 +28,7 @@ llama.img = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Llama_lyi
 llama.desc = 'soopr evil bad bad pls kill';
 llama.attname = 'Spit';
 llama.att = 5;
-llama.speed = 2;
+llama.speed = 1.5;
 llama.hp = 10;
 
 var yuri = [];
@@ -40,7 +40,16 @@ yuri.att = 7;
 yuri.speed = 3;
 yuri.hp = 25;
 
-var enemy = [llama,yuri];
+var moon = [];
+moon.name = 'Moon';
+moon.img = 'https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg';
+moon.desc = 'no awoo';
+moon.attname = 'Eclipse';
+moon.att = 10;
+moon.speed = 3.5;
+moon.hp = 30;
+
+var enemy = [llama,yuri,moon];
 
 function newenemy(){
 	"use strict";
