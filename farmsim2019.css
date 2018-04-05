@@ -24,7 +24,7 @@ input{
 	position: fixed;
 	bottom: 0px;
 
-	border: 4px dotted black;
+	border: 4px solid black;
 	background-color: #DDD;
 }
 #left,#right{
@@ -34,12 +34,12 @@ input{
 }
 #left{
 	left: 5px;
-	border-right: 4px dotted black;
+	border-right: 4px solid black;
 	padding-right: 4px;
 }
 #right{
 	right: 5px;
-	border-left: 4px dotted black;
+	border-left: 4px solid black;
 }
 #hp{
 	font-size: 60px;
@@ -51,12 +51,12 @@ input{
 	visibility: hidden;
 }
 .action{
-	height:100px;
-    width:180px;
+	height:100%;
+    width:36%;
 }
 .action2{
-	height:50px;
-    width:150px;
+	height:50%;
+    width:100%;
 }
 .red{
 	color:#C00;
