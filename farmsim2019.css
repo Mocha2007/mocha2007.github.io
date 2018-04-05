@@ -1,6 +1,9 @@
 body{
 	font-family:monospace;
 }
+td{
+	border:none;
+}
 #bottom{
 	width: 500px;
 	height: 100px;
@@ -29,14 +32,14 @@ body{
 	padding-left: 4px;
 	text-align: center;
 }
-.invisible{
-	visibility: hidden;
-}
-td{
-	border:none;
-}
 #hp{
 	font-size: 60px;
+}
+#mid{
+	text-align: center;
+}
+.invisible{
+	visibility: hidden;
 }
 .action{
 	font-size: 40px;
