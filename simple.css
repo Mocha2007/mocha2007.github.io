@@ -2,7 +2,6 @@ body{font-family:Open Sans,sans-serif;margin:40px auto;max-width:700px;line-heig
 p{text-indent:45px;}
 table{border-collapse:collapse;margin:auto;}
 th,td{border:2px solid #333;text-align:center;}
-th{font-style:bold;}
 #nav{position:fixed;top:0px;left:0px;padding:10px;background:#999;border:2px solid #444;color:#222;overflow-y:auto;max-height:940px;}
 .nav2::before{content:'┕';}
 .nav3::before{content:'┃┕';}
