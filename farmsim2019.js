@@ -126,6 +126,11 @@ function click(x){
 	}
 }
 
+function dodge(){
+	"use strict";
+	click('dodge');
+}
+
 function damage(){
 	"use strict";
 	targetHealth -= enemyatt;
