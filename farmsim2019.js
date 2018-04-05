@@ -5,6 +5,7 @@ var lastkilltime = 0;
 var lastatttime = 0;
 var score = 0;
 var health = 100;
+var targetHealth = 100;
 var paused = false;
 var enemyAttacking = false;
 
@@ -84,7 +85,7 @@ function reset(){
 	lastkilltime = 0;
 	lastatttime = 0;
 	score = 0;
-	health = 100;
+	targetHealth = 100;
 	paused = false;
 	enemyAttacking = false;
 	newenemy();
@@ -127,9 +128,9 @@ function click(x){
 
 function damage(){
 	"use strict";
-	health -= enemyatt;
+	targetHealth -= enemyatt;
 	healthElement.classList = ["red"];
-	if (health<=0){
+	if (targetHealth<=0){
 		new Audio('https://www.myinstants.com/media/sounds/roblox-death-sound_1.mp3').play();
 		new Audio('https://www.myinstants.com/media/sounds/export_4.mp3').play();
 	}
@@ -148,7 +149,16 @@ function main(){
 		clock+=1;
 
 		// hp flash disable
-		if (clock-lastatttime > fps*atttime/10){
+		if (targetHealth!==health && Math.abs(targetHealth-health)<1){
+			health = targetHealth;
+		}
+		else if (targetHealth<health){
+			health -= 1;
+		}
+		else if (targetHealth>health){
+			health += 1;
+		}
+		else {
 			healthElement.classList = [];
 		}
 
