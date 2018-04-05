@@ -23,15 +23,26 @@
 
 	<div id="bottom">
 		<div id="left">
-			Time: <span id="time">0</span><br/>
-			Score: <span id="score"></span><br/>
-			Health: <span id="health"></span>
+			<table>
+				<tr>
+					<th>Time</th>
+					<td><span id="time">0</span></td>
+				</tr>
+				<tr>
+					<th>Score</th>
+					<td><span id="score">0</span></td>
+				</tr>
+				<tr>
+					<th>Health</th>
+					<td><span id="health">100</span></td>
+				</tr>
+			</table>
 		</div>
 		<div id="right">
-			<input id="pause" type="submit" value="Pause" onclick="paused = !paused;">
-			<input type="button" value="New Game" onclick="reset();"> 
+			<input class="action2" id="pause" type="submit" value="Pause" onclick="paused = !paused;">
+			<input class="action2" type="button" value="New Game" onclick="reset();"> 
 		</div>
-		<a class="action" href="javascript:click('dodge');">Dodge</a>
+		<input class="action" type="button" value="Dodge" onclick="javascript:click('dodge');">
 	</div>
 </body>
 <script src="farmsim2019.js"></script>
