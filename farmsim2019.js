@@ -8,6 +8,9 @@ var health = 100;
 var paused = false;
 var enemyAttacking = false;
 
+var defaultTop = '<h1 id="Farm Simulator 2019">Farm Simulator 2019</h1>';
+
+var topElement = document.getElementById("top");
 var timeElement = document.getElementById("time");
 var scoreElement = document.getElementById("score");
 var healthElement = document.getElementById("health");
@@ -138,11 +141,9 @@ function damage(){
 function main(){
 	"use strict";
 	if (health<=0){
-		document.getElementById("top").innerHTML = '<h1 class="red">YOU LOSE!</h1><h1>Score: '+score+'</h1>';
+		topElement.innerHTML = '<h1 class="red">YOU LOSE!</h1><h1>Score: '+score+'</h1>';
 	}
-	else if (!paused){
-		document.getElementById("top").innerHTML = '<h1 id="Farm Simulator 2019">Farm Simulator 2019</h1>';
-	
+	else if (!paused){	
 		// increment the clock
 		clock+=1;
 
@@ -186,6 +187,9 @@ function main(){
 		}
 		if (enemyhealthElement.innerHTML !== String(Math.max(0,enemyhp))){
 			enemyhealthElement.innerHTML = Math.max(0,enemyhp);
+		}
+		if (topElement.innerHTML !== defaultTop){
+			topElement.innerHTML = defaultTop;
 		}
 
 		// this fine to update constantly
