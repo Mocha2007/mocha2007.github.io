@@ -138,9 +138,11 @@ function damage(){
 function main(){
 	"use strict";
 	if (health<=0){
-		document.getElementById("mid").innerHTML = '<h1 class="red">YOU LOSE!</h1><h1>Score: '+score+'</h1>';
+		document.getElementById("top").innerHTML = '<h1 class="red">YOU LOSE!</h1><h1>Score: '+score+'</h1>';
 	}
 	else if (!paused){
+		document.getElementById("top").innerHTML = '<h1 id="Farm Simulator 2019">Farm Simulator 2019</h1>';
+	
 		// increment the clock
 		clock+=1;
 
