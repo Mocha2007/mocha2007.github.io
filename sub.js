@@ -36,6 +36,8 @@ var subtitles =	[
 				'More struts and boosters than the leading brand!',
 				'We can finally invade the heart of Eremor.<br/>Unfortunately for you, your adventure ends here.',
 				'I can hear them breaching the defenses of my RigFives ship.',
+				// quotations
+				'In theory, theory and practice are the same. In practice, they are not.',
 				// media allusion
 				'Gluten-free Mocha: now with real sugar!',
 				'The fruitiest of all fruity-ass fruitbowls!',
