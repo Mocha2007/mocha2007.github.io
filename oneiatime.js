@@ -162,6 +162,8 @@ function HolidayCSS(){
 		case 3:
 			ReplacementImage = '<img id="m" src="img/mochricks.png" width="200" title="Drink, ye bastard!" alt="Mochadian St. Patrick\'s day Squiggle">';
 			break;
+		case 4:// Trust me, this is indeed necessary...
+			break;
 		case 10:
 			ReplacementImage = '<img id="m" src="img/mochaween.png" width="200" title="Boo, motherfucker!" alt="Mochadian Halloween Squiggle">';
 			break;
