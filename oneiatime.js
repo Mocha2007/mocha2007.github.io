@@ -146,7 +146,7 @@ function HolidayCSS(){
 	var dayday = (new Date().getDate())===(monthmonth*7-1);
 	console.log(monthmonth,new Date().getDate());
 
-	var ReplacementImage;
+	var ReplacementImage = 'Steve';
 
 	if (dayday){
 		ReplacementImage = '<img id="m" src="img/mopril.png" width="200" alt="Mochadian Birthday Squiggle" onmouseover="PlaySound(\'sfx\')" onmouseout="StopSound(\'sfx\')"> <audio id="sfx" src="snd/partyhorn.mp3"/>';
@@ -162,16 +162,12 @@ function HolidayCSS(){
 		case 3:
 			ReplacementImage = '<img id="m" src="img/mochricks.png" width="200" title="Drink, ye bastard!" alt="Mochadian St. Patrick\'s day Squiggle">';
 			break;
-		case 4:// Trust me, this is indeed necessary...
-			break;
 		case 10:
 			ReplacementImage = '<img id="m" src="img/mochaween.png" width="200" title="Boo, motherfucker!" alt="Mochadian Halloween Squiggle">';
 			break;
 		case 12:
 			ReplacementImage = '<img id="m" src="img/mochristmas.png" width="200" title="Have a joyous Saturnalia!" alt="Mochadian Christmas Squiggle">';
 			break;
-		default:
-			ReplacementImage = 'Steve';
 	}
 
 	if (ReplacementImage!=='Steve'){
