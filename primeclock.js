@@ -218,6 +218,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [currentyear-1066,'<a href="https://en.wikipedia.org/wiki/Battle_of_Hastings">Battle of Hastings</a>'],
 [currentyear-1387,'Publication of <i><a href="https://en.wikipedia.org/wiki/The_Canterbury_Tales">The Canterbury Tales</a></i>'],
 [currentyear-1453,'Fall of <a href="https://en.wikipedia.org/wiki/Byzantine_Empire">Byzantium</a>'],
+[currentyear-1492,'Columbus lands on the Americas'],
 [currentyear-1532,'Publication of <i><a href="https://en.wikipedia.org/wiki/The_Prince">The Prince</a></i>'],
 [currentyear-1610,'Discovery of the <a href="https://en.wikipedia.org/wiki/Galilean_moons">Galilean Moons</a>'],
 [currentyear-1655,'Discovery of <a href="https://en.wikipedia.org/wiki/Titan_(moon)">Titan</a>'],
