@@ -36,6 +36,14 @@ var subtitles =	[
 				'More struts and boosters than the leading brand!',
 				'We can finally invade the heart of Eremor.<br/>Unfortunately for you, your adventure ends here.',
 				'I can hear them breaching the defenses of my RigFives ship.',
+				'You require more Mochas',
+				'You must construct additional Mochas',
+				'Plura pyla debes construere',
+				'Plura mineralia requirimus',
+				'Plus gasem vespinum requiris',
+				'Non satis energiam',
+				'Nos aggrediuntur',
+				'Iactans nucleare detegitur',
 				// quotations
 				'In theory, theory and practice are the same. In practice, they are not.',
 				// media allusion
