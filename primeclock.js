@@ -148,6 +148,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [781e3,'<a href="https://en.wikipedia.org/wiki/Brunhes–Matuyama_reversal">Brunhes-Matuyama Reversal</a> - most recent geomagnetic reversal'],
 [360e3,'<a href="https://en.wikipedia.org/wiki/Elster_glaciation">Elster Glaciation</a>'],
 [315e3,'Modern Humans Evolve'],
+[275e3,'Age of <a href="https://en.wikipedia.org/wiki/Y-chromosomal_Adam">Y-Chromosomal Adam</a>'],
 [220e3,'<a href="https://en.wikipedia.org/wiki/Tswaing_crater">Tswaing Impact</a>'],
 // https://en.wikipedia.org/wiki/Timeline_of_human_prehistory
 [195e3,'Oldest Discovered Human Fossil'],
@@ -156,6 +157,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [110e3,'<a href="https://en.wikipedia.org/wiki/Last_glacial_period">Last Glacial Period</a> Begins'],
 [90e3,'Abbassia Pluvial Ends'],
 [75e3,'<a href="https://en.wikipedia.org/wiki/Toba_catastrophe_theory">Toba Catastrophe</a>'],
+[70e3,'Age of <a href="https://en.wikipedia.org/wiki/Haplogroup_CT">Haplogroup CT</a>\'s common ancestor'],
 [65e3,'<a href="https://en.wikipedia.org/wiki/Southern_Dispersal">Southern Dispersal</a>'],
 [64e3,'Archery Invented'],
 [52e3,'<a href="https://en.wikipedia.org/wiki/Lonar_Lake">Lonar Impact</a>'],
@@ -166,6 +168,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [40e3,'<a href="https://en.wikipedia.org/wiki/Neanderthal_extinction">Neanderthals go Extinct</a>'],
 [30e3,'Mousterian Pluvial Ends'],
 [28.5e3,'Settlement of New Guinea'],
+[27e3,'Age of <a href="https://en.wikipedia.org/wiki/Haplogroup_R_(Y-DNA)">Haplogroup R</a>\'s common ancestor'],
 [24e3,'Extinction of the <a href="https://en.wikipedia.org/wiki/Cave_bear">Cave Bear</a>'],
 [21.4e3,'<a href="https://en.wikipedia.org/wiki/Tenoumer_crater">Tenoumer Impact</a>'],
 [14.85e3,'Pigs Domesticated'],
