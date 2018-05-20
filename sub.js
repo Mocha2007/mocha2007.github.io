@@ -44,6 +44,7 @@ var subtitles =	[
 				'Non satis energiam',
 				'Nos aggrediuntur',
 				'Iactans nucleare detegitur',
+				'I have seen the river.',
 				// quotations
 				'In theory, theory and practice are the same. In practice, they are not.',
 				// media allusion
