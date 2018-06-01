@@ -255,6 +255,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [diff(93221677),'<a href="https://en.wikipedia.org/wiki/Apollo_17">Apollo 17</a> leaves the Moon'],
 [diff(495432000),'<a href="https://en.wikipedia.org/wiki/Super_Mario_Bros.">Super Mario Bros.</a> Released'],
 [diff(682056000),'<a href="https://en.wikipedia.org/wiki/Super_Mario_World">Super Mario World</a> Released in NA'],
+[diff(973627200),'<a href="https://en.wikipedia.org/wiki/United_States_presidential_election,_2000">Election Night 2000</a>'],
 [diff(1000212360),'<a href="https://en.wikipedia.org/wiki/September_11_attacks">September 11 Attacks</a>'],
 [diff(1000771200),'<a href="https://en.wikipedia.org/wiki/2001_anthrax_attacks">2001 Anthrax Attacks</a>'],
 [diff(1059710400),'<a href="https://en.wikipedia.org/wiki/Myspace">Myspace</a> Launched'],
