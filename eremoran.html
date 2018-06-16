@@ -14,6 +14,14 @@ img{display:block;margin:0 auto;}
 dt{border-top: 2px solid #444;}
 .illustration{float:right;}
 #samples td{text-align:left;}
+
+/* for wals */
+#walstable td:nth-of-type(2n+1){text-align:left;}
+.wals{width:28px;}
+.blu{background:#00d;}
+.pur{background:#909;}
+.red{background:#d00;}
+.whi{background:#fff;}
 </style>
 <div id="nav"></div>
 <div id="top">
@@ -3422,16 +3430,100 @@ The truth is usually just an excuse for a lack of imagination.
 
 <h2 id="Statistics">Misc. Statistics</h2>
 
-<pre>
-https://typo.uni-konstanz.de/archive/nav/browse.php
+<p><a href="http://wals.info">WALS</a></p>
 
+<table id='walstable'>
+	<tr>
+		<th>ID</th>
+		<th class='wals'></th>
+		<th>State</th>
+		<th>Reason</th>
+		<th>Notes</th>
+	</tr>
+	<tr>
+		<td><a href="http://wals.info/feature/1A">1A</a></td>
+		<td class='blu'></td>
+		<td>Small</td>
+		<td>11 &lt; 15</td>
+		<td>as few as 9 and as many as 13</td>
+	</tr>
+	<tr>
+		<td><a href="http://wals.info/feature/2A">2A</a></td>
+		<td class='red'></td>
+		<td>Large</td>
+		<td>7 > 6</td>
+		<td>as few as 5</td>
+	</tr>
+	<tr>
+		<td><a href="http://wals.info/feature/3A">3A</a></td>
+		<td class='blu'></td>
+		<td>Low</td>
+		<td>1.57 &lt; 2</td>
+		<td>as low as 1.29 and as high as 2.4</td>
+	</tr>
+	<tr>
+		<td><a href="http://wals.info/feature/4A">4A</a></td>
+		<td class='pur'></td>
+		<td>In both plosives and fricatives</td>
+		<td>t-d and s-z</td>
+	</tr>
+	<tr>
+		<td><a href="http://wals.info/feature/5A">5A</a></td>
+		<td class='pur'></td>
+		<td>Both missing</td>
+		<td>/p g/</td>
+		<td>for some dialects, <i>other</i></td>
+	</tr>
+	<tr>
+		<td><a href="http://wals.info/feature/6A">6A</a></td>
+		<td class='blu'></td>
+		<td>Uvular continuants only</td>
+		<td>/ʀ/</td>
+		<td>for some dialects, <i>none</i></td>
+	</tr>
+	<tr>
+		<td><a href="http://wals.info/feature/7A">7A</a></td>
+		<td class='whi'></td>
+		<td>No glottalized consonants</td>
+		<td>n/a</td>
+	</tr>
+	<tr>
+		<td><a href="http://wals.info/feature/8A">8A</a></td>
+		<td class='blu'></td>
+		<td>/l/, no obstruent laterals</td>
+		<td>/l/</td>
+	</tr>
+	<tr>
+		<td><a href="http://wals.info/feature/9A">9A</a></td>
+		<td class='whi'></td>
+		<td>No velar nasal</td>
+		<td>n/a</td>
+	</tr>
+	<tr>
+		<td><a href="http://wals.info/feature/10A">10A</a></td>
+		<td class='whi'></td>
+		<td>Contrast absent</td>
+		<td>n/a</td>
+		<td>for some dialects, <i>contrast present</i></td>
+	</tr>
+	<tr>
+		<td><a href="http://wals.info/feature/11A">11A</a></td>
+		<td class='whi'></td>
+		<td>None</td>
+		<td>n/a</td>
+	</tr>
+</table>
+
+<p><a href="https://typo.uni-konstanz.de/archive/nav/browse.php">The Universals Archive</a></p>
+
+<pre>
 Universals not Violated:
 
-1-6; 8-101
+1-6; 8-110; 113-123; 125-133
 
 Universals Violated:
 
-7
+7; 111-112; 124<abbr title="Not true in younger speech">*</abbr>
 </pre>
 
 <div id="bottom"></div>
