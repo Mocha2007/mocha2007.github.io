@@ -23,6 +23,7 @@ var subtitles =	[
 				'/ɑ\'wu/',
 				'This is Mocha\'s Site<br>I discuss everything here<br>just one haiku though',
 				'So does the text contain just iambs there?<br>Then does it have five iambs total, too?',
+				'Roll for consonant mutation save.',
 				// mat
 				'I have created a truly marvelous conworld,<br/>which this randomly generated subtitle is too small to contain.',
 				'Mocha &isin; Fags',
