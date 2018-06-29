@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="description" content="Englang.">
+<link rel="shortcut icon" href="img/favicon.ico">
+<link href=simple.css type="text/css" rel="stylesheet" title="Light">
+<link href=dark.css type="text/css" rel="alternate stylesheet" title="Dark"> 
+<link href=blend.css type="text/css" rel="alternate stylesheet" title="Blend">
+<link href=print.css type="text/css" rel="stylesheet" media="print">
+<script src="toc.js"></script>
+<script src="englang.js"></script>
+<title>Englang</title>
+<style>
+h2{text-align:center;}
+.also{font-style:italic;}
+
+.v0{color:#800;}
+.v1{color:#008;}
+.v2{color:#088;}
+.v3{color:#080;}
+.v0::after{content:"₀"}
+.v1::after{content:"₁"}
+.v2::after{content:"₂"}
+.v3::after{content:"₃"}
+</style>
+<div id="nav"></div>
+<div id="top"><h1 id="Englang">Englang</h1></div>
+<p>
+	<b>Englang</b> is OwO. 
+	Every word is a verb. 
+	<i>ba</i> increases the valency of the previous verb. 
+	Verbs start with a valency of zero. 
+	Word order is XOSV. 
+</p>
+
+<h2 id="Parser">Parser</h2>
+
+<textarea id="text" rows="16" cols="64" onkeyup="parse();"></textarea>
+
+<div id="translation"></div>
+
+<div id="bottom"></div>
+</html>
