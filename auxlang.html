@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="description" content="Pata">
+<link rel="shortcut icon" href="img/favicon.ico">
+<link href=simple.css type="text/css" rel="stylesheet" title="Light">
+<link href=dark.css type="text/css" rel="alternate stylesheet" title="Dark"> 
+<link href=blend.css type="text/css" rel="alternate stylesheet" title="Blend">
+<link href=print.css type="text/css" rel="stylesheet" media="print">
+<script src="toc.js"></script>
+<title>Pata</title>
+<div id="nav"></div>
+<div id="top"><h1 id="Pata">Pata</h1></div>
+<p>
+	A fun Art/Auxlang.
+</p>
+
+<h2 id="Motivation">Motivation</h2>
+
+<p>
+	<i>Toki Pona</i> is a very good example of what a "simple" auxlang should look like. 
+	However, I feel like several core structural features could've been better, and, additionally, 
+	a larger vocabulary was totally necessary. 
+	After all, while <i>Toki Pona</i> may only have 125-ish words, it has <i>far</i> more lemmata, 
+	since you have to remember all of the word combinations for more complex items. 
+	I attempt to eliminate that need here. 
+	My biggest gripe with <i>Toki Pona</i>, overall, is that it's easy to learn, but hard to use. 
+</p>
+
+<p>
+	I also used small elements of <i>Lojban</i> as an inspiration, particularly with the grammar philosophy. 
+</p>
+
+<p>
+	In terms of differences from most auxlangs, I've decided to use VSO word order. 
+	This way, the head is always on the leftmost part of a phrase. 
+	Additionally, I <i>call</i> the different word classes "nouns", and "(in)transitive verbs", but logically, 
+	they more act all like verbs, with valencies of zero, one, and two, respectively. 
+	In the dictionary, only the noun forms are listed; the verb forms are simply derived from the nouns via replacing the final vowel. 
+	Furthermore, verbs can take verb phrases as arguments! 
+	So you can have a sentence which is structured vaguely like so:
+</p>
+
+<pre>
+"The man who is walking has a dog named Brian."
+has(walk(man) as(name(&Oslash; dog) Brian))
+</pre>
+
+<p>
+	And each of the constituents can act as their own sentences themselves:
+</p>
+
+<pre>
+walk(man) &rarr; The man is walking.
+as(name(&Oslash; dog) Brian) &rarr; The dog is named Brian.
+name(&Oslash; dog) &rarr; The dog is named.
+</pre>
+
+<p>
+	This way, <b>even if you know none of the words in the sentence, you will always be able to draw a syntax tree</b>. 
+	Always. No exceptions. 
+</p>
+
+<h2 id="Phonology">Phonology</h2>
+
+<p>
+	There are 10 consonants, and 5 vowels. 
+	Vowel qualities match that of the IPA. 
+	The voiced plosives should, ideally, be pronounced nasally in the coda, and plosively in the onset. 
+	However, since this is an auxlang... I mean, whatever works for you, man. 
+	The syllable structure is, of course... (C)V(N)! 
+</p>
+
+<table>
+	<tr>
+		<th>Labial</th>
+		<th>Alveolar</th>
+		<th>Velar</th>
+		<th>Glottal</th>
+	</tr>
+	<tr>
+		<td>m ~ b</td>
+		<td>n ~ d</td>
+		<td>ŋ ~ g</td>
+		<td rowspan=2></td>
+	</tr>
+	<tr>
+		<td>p</td>
+		<td>t</td>
+		<td>k</td>
+	</tr>
+	<tr>
+		<td>w</td>
+		<td>s</td>
+		<td>j</td>
+		<td>h</td>
+	</tr>
+</table>
+
+<h2 id="Morphology">Morphology</h2>
+<ul>
+	<li>There are "two" types of words: nouns (-a), and verbs (-i, -u, -e, -o; for 1-4 argument verbs respectively).</li>
+	<li>The adpositions of other languages correspond, typically, to transitive verbs here, and adjectives as intransitive.</li>
+</ul>
+
+<h3 id="Affixes">Affixes</h3>
+
+<ul>
+	<!-- noun-forming -->
+</ul>
+
+<h2 id="Grammar">Grammar</h2>
+<ul>
+	<li>VSO</li>
+</ul>
+
+<h2 id="Special">Special Stems</h2>
+<p>
+	These stems do not act grammatically different from others, but serve very important roles and are kept here fore safekeeping. 
+	Often times, these do not have a "simple" gloss. 
+</p>
+
+<dl>
+	<dt>d-</dt>
+		<dd>Etymology: en. <i>this, that, the</i></dd>
+		<dd>null pronoun, used to ignore verb slots</dd>
+</dl>
+
+<h2 id="Main">Main List</h2>
+
+<dl>
+	<dt>as-</dt>
+		<dd>Etymology: en. <i>as</i></dd>
+		<dd>
+			<ol>
+				<li>like, likeness</li>
+				<li>x<sub>1</sub> is like x<sub>2</sub></li>
+			</ol>
+		</dd>
+	<dt>dad-</dt>
+		<dd>Etymology: en. <i>nose, nostril, schnoz</i> and <i>snot</i></dd>
+		<dd>
+			<ol>
+				<li>nose, smell, nasal</li>
+				<li>x<sub>1</sub> smells x<sub>2</sub></li>
+			</ol>
+		</dd>
+	<dt>gib-</dt>
+		<dd>Etymology: en. <i>gib</i> and <i>give</i></dd>
+		<dd>
+			<ol>
+				<li>gift, give</li>
+				<li>x<sub>1</sub> gives x<sub>2</sub> to x<sub>3</sub></li>
+			</ol>
+		</dd>
+	<dt>kas-</dt>
+		<dd>Etymology: en. <i>cash</i></dd>
+		<dd>
+			<ol>
+				<li>money, cash</li>
+				<li>x<sub>1</sub> is monetary</li>
+			</ol>
+		</dd>
+	<dt>pat-</dt>
+		<dd>Etymology: nl. <i>praat</i>, fr. <i>patois</i></dd>
+		<dd>
+			<ol>
+				<li>tongue, speech, language, say, tell, speak</li>
+				<li>x<sub>1</sub> speaks with x<sub>2</sub> about x<sub>3</sub> in x<sub>4</sub></li>
+			</ol>
+		</dd>
+	<dt>tit-</dt>
+		<dd>Etymology: From the position of the tongue, influenced by en. <i>teeth</i></dd>
+		<dd>
+			<ol>
+				<li>teeth, dental, bite</li>
+				<li>x<sub>1</sub> bites x<sub>2</sub></li>
+			</ol>
+		</dd>
+</dl>
+
+<div id="bottom"></div>
+</html>
