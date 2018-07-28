@@ -54,7 +54,7 @@
 </p>
 
 <p>
-	In terms of differences from most auxlangs, I've decided to use VSO word order. 
+	In terms of differences from most auxlangs, I've decided to use VOS word order. 
 	This way, the head is always on the leftmost part of a phrase. 
 	Additionally, I <i>call</i> the different word classes "nouns", and "(in)transitive verbs", but logically, 
 	they more act all like verbs, with valencies of zero, one, and two, respectively. 
@@ -65,7 +65,7 @@
 
 <pre>
 "The man who is walking has a dog named Brian."
-has(walk(man) as(name(&Oslash; dog) Brian))
+has(as(Brian name(dog)) walk(man))
 </pre>
 
 <p>
@@ -74,8 +74,8 @@ has(walk(man) as(name(&Oslash; dog) Brian))
 
 <pre>
 walk(man) &rarr; The man is walking.
-as(name(&Oslash; dog) Brian) &rarr; The dog is named Brian.
-name(&Oslash; dog) &rarr; The dog is named.
+as(Brian name(dog)) &rarr; The dog is named Brian.
+name(dog) &rarr; The dog is named.
 </pre>
 
 <p>
@@ -133,7 +133,7 @@ name(&Oslash; dog) &rarr; The dog is named.
 
 <h2 id="Grammar">Grammar</h2>
 <ul>
-	<li>VSO</li>
+	<li>VOS</li>
 </ul>
 
 <h2 id="Special">Special Stems</h2>
@@ -145,13 +145,23 @@ name(&Oslash; dog) &rarr; The dog is named.
 <dl>
 	<dt>b-</dt>
 		<dd>Etymology: tpi. <i>mi</i></dd>
-		<dd>first person pronoun</dd>
+		<dd>
+			<ol>
+				<li>I, we</li>
+				<li>my/our x<sub>1</sub></li>
+			</ol>
+		</dd>
 	<dt>d-</dt>
 		<dd>Etymology: en. <i>this, that, the</i></dd>
 		<dd>null pronoun, used to ignore verb slots</dd>
 	<dt>j-</dt>
 		<dd>Etymology: en. <i>ya, ye, yo</i>, and <i>you</i></dd>
-		<dd>second person pronoun</dd>
+		<dd>
+			<ol>
+				<li>you</li>
+				<li>your x<sub>1</sub></li>
+			</ol>
+		</dd>
 	<dt>k-</dt>
 		<dd>Etymology: haw. <i>kēia</i>, jp. <i>これ</i></dd>
 		<dd>
@@ -194,7 +204,7 @@ name(&Oslash; dog) &rarr; The dog is named.
 		<dd>
 			<ol>
 				<li>in, inside</li>
-				<li>x<sub>1</sub> (is) in x<sub>2</sub></li>
+				<li>in x<sub>1</sub> is x<sub>2</sub></li>
 			</ol>
 		</dd>
 	<dt>adabb-</dt>
@@ -210,6 +220,7 @@ name(&Oslash; dog) &rarr; The dog is named.
 			<ol>
 				<li>like, likeness</li>
 				<li>x<sub>1</sub> is like x<sub>2</sub></li>
+				<li>x<sub>2</sub> as x<sub>1</sub></li>
 			</ol>
 		</dd>
 	<dt>boad-</dt>
@@ -224,7 +235,7 @@ name(&Oslash; dog) &rarr; The dog is named.
 		<dd>
 			<ol>
 				<li>nose, smell, nasal</li>
-				<li>x<sub>1</sub> smells x<sub>2</sub></li>
+				<li>x<sub>1</sub> is smelled by x<sub>2</sub></li>
 			</ol>
 		</dd>
 	<dt>gib-</dt>
@@ -232,7 +243,7 @@ name(&Oslash; dog) &rarr; The dog is named.
 		<dd>
 			<ol>
 				<li>gift, give</li>
-				<li>x<sub>1</sub> gives x<sub>2</sub> to x<sub>3</sub></li>
+				<li>x<sub>1</sub> is given by x<sub>2</sub> to x<sub>3</sub></li>
 			</ol>
 		</dd>
 	<dt>hap-</dt>
@@ -274,12 +285,21 @@ name(&Oslash; dog) &rarr; The dog is named.
 				<li>x<sub>1</sub> is black because of x<sub>2</sub></li>
 			</ol>
 		</dd>
+	<dt>kum-</dt>
+		<dd>Etymology: fi. <i>kylmä</i></dd>
+		<dd>
+			<ol>
+				<li>cold, cool</li>
+				<li>x<sub>1</sub> is cold</li>
+				<li>x<sub>1</sub> is cooled by x<sub>2</sub></li>
+			</ol>
+		</dd>
 	<dt>pat-</dt>
 		<dd>Etymology: nl. <i>praat</i>, fr. <i>patois</i></dd>
 		<dd>
 			<ol>
 				<li>tongue, speech, language, say, tell, speak</li>
-				<li>x<sub>1</sub> speaks with x<sub>2</sub> about x<sub>3</sub> in x<sub>4</sub></li>
+				<li>x<sub>1</sub> is spoken about by x<sub>2</sub> in x<sub>3</sub></li>
 			</ol>
 		</dd>
 	<dt>te-</dt>
@@ -302,7 +322,7 @@ name(&Oslash; dog) &rarr; The dog is named.
 		<dd>
 			<ol>
 				<li>teeth, dental, bite</li>
-				<li>x<sub>1</sub> bites x<sub>2</sub></li>
+				<li>x<sub>1</sub> is bitten by x<sub>2</sub></li>
 			</ol>
 		</dd>
 	<dt>wad-</dt>
@@ -310,7 +330,7 @@ name(&Oslash; dog) &rarr; The dog is named.
 		<dd>
 			<ol>
 				<li>loves</li>
-				<li>x<sub>1</sub> loves x<sub>2</sub></li>
+				<li>x<sub>1</sub> is loved by x<sub>2</sub></li>
 			</ol>
 		</dd>
 	<dt>wagk-</dt>
@@ -812,7 +832,7 @@ name(&Oslash; dog) &rarr; The dog is named.
 	<tr>
 		<td><a href="http://wals.info/feature/81A">81A</a></td>
 		<td class='yel'></td>
-		<td>VSO</td>
+		<td>VOS</td>
 	</tr>
 	<tr>
 		<td><a href="http://wals.info/feature/83A">83A</a></td>
@@ -978,7 +998,7 @@ name(&Oslash; dog) &rarr; The dog is named.
 		<td><a href="http://wals.info/feature/112A">112A</a></td>
 		<td class='sky'></td>
 		<td>Negative auxiliary verb</td>
-		<td>???</td>
+		<td>siti</td>
 	</tr>
 	<tr>
 		<td><a href="http://wals.info/feature/113A">113A</a></td>
@@ -1144,7 +1164,7 @@ name(&Oslash; dog) &rarr; The dog is named.
 	<tr>
 		<td><a href="http://wals.info/feature/144A">144A</a></td>
 		<td class='red'></td>
-		<td>NegVSO</td>
+		<td>NegVOS</td>
 	</tr>
 	<tr>
 		<td><a href="http://wals.info/feature/144B">144B</a></td>
@@ -1154,7 +1174,7 @@ name(&Oslash; dog) &rarr; The dog is named.
 	<tr>
 		<td><a href="http://wals.info/feature/144T">144T</a></td>
 		<td class='red'></td>
-		<td>NegVSO</td>
+		<td>NegVOS</td>
 	</tr>
 	<tr>
 		<td><a href="http://wals.info/feature/144V">144V</a></td>
