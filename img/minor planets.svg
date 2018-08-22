@@ -12,9 +12,27 @@
 
 	<a href='https://en.wikipedia.org/wiki/Asteroid_belt'>
 		<circle cx="0" cy="100" r="225" stroke="rgb(64,96,128)" stroke-width="50" fill="none"/><!-- inner belt -->
-		<circle cx="0" cy="100" r="267.5" stroke="rgb(128,112,64)" stroke-width="35" fill="none"/><!-- middle belt -->
-		<circle cx="0" cy="100" r="317.5" stroke="rgb(64,128,64)" stroke-width="65" fill="none"/><!-- outer belt -->
+		<circle cx="0" cy="100" r="266" stroke="rgb(128,112,64)" stroke-width="35" fill="none"/><!-- middle belt -->
+		<circle cx="0" cy="100" r="316" stroke="rgb(64,128,64)" stroke-width="68" fill="none"/><!-- outer belt -->
 		<text x="190" y="190" font-family="Verdana" font-size="10" fill="white">Asteroid Belt</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Frost_line_(astrophysics)'><!-- Kirkwood Gaps -->
+		<circle cx="0" cy="100" r="206" stroke="pink" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="250" stroke="pink" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="282" stroke="pink" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="295" stroke="pink" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="327" stroke="pink" stroke-width="1" fill="none"/>
+		<!-- minors -->
+		<circle cx="0" cy="100" r="190" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="225" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="233" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="271" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="303" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="307.5" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="347" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="370" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+		<text x="200" y="10" font-family="Verdana" font-size="10" fill="pink">Kirkwood Gaps</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Frost_line_(astrophysics)'><!-- Frost Line -->
