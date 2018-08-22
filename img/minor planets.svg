@@ -5,11 +5,21 @@
 	<desc>Oneia-Nikki System</desc>
 	<rect x="0" y="0" width="8000" height="200" fill="black"/>
 
+	<a href='https://en.wikipedia.org/wiki/Solar_System#Inner_Solar_System'><!-- inner solar system -->
+		<circle cx="0" cy="100" r="350" fill="rgb(128,64,64)"/>
+		<text x="10" y="190" font-family="Verdana" font-size="10" fill="white">Inner Solar System</text>
+	</a>
+
 	<a href='https://en.wikipedia.org/wiki/Asteroid_belt'>
 		<circle cx="0" cy="100" r="225" stroke="rgb(64,96,128)" stroke-width="50" fill="none"/><!-- inner belt -->
 		<circle cx="0" cy="100" r="267.5" stroke="rgb(128,112,64)" stroke-width="35" fill="none"/><!-- middle belt -->
 		<circle cx="0" cy="100" r="317.5" stroke="rgb(64,128,64)" stroke-width="65" fill="none"/><!-- outer belt -->
 		<text x="190" y="190" font-family="Verdana" font-size="10" fill="white">Asteroid Belt</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Frost_line_(astrophysics)'><!-- Frost Line -->
+		<circle cx="0" cy="100" r="500" stroke="cyan" stroke-width="1" fill="none"/>
+		<text x="430" y="10" font-family="Verdana" font-size="10" fill="cyan">Frost Line</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Centaur_(minor_planet)'><!-- centaurs -->
