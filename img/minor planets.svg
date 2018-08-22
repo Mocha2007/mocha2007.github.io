@@ -5,17 +5,35 @@
 	<desc>Oneia-Nikki System</desc>
 	<rect x="0" y="0" width="8000" height="200" fill="black"/>
 
-	<circle cx="0" cy="100" r="225" stroke="rgb(64,96,128)" stroke-width="50" fill="none"/><!-- inner belt -->
-	<circle cx="0" cy="100" r="267.5" stroke="rgb(128,112,64)" stroke-width="35" fill="none"/><!-- middle belt -->
-	<circle cx="0" cy="100" r="317.5" stroke="rgb(64,128,64)" stroke-width="65" fill="none"/><!-- outer belt -->
+	<a href='https://en.wikipedia.org/wiki/Asteroid_belt'>
+		<circle cx="0" cy="100" r="225" stroke="rgb(64,96,128)" stroke-width="50" fill="none"/><!-- inner belt -->
+		<circle cx="0" cy="100" r="267.5" stroke="rgb(128,112,64)" stroke-width="35" fill="none"/><!-- middle belt -->
+		<circle cx="0" cy="100" r="317.5" stroke="rgb(64,128,64)" stroke-width="65" fill="none"/><!-- outer belt -->
+		<text x="190" y="190" font-family="Verdana" font-size="10" fill="white">Asteroid Belt</text>
+	</a>
 
-	<circle cx="0" cy="100" r="1765.5" stroke="rgb(128,96,64)" stroke-width="2491" fill="none"/><!-- centaurs -->
+	<a href='https://en.wikipedia.org/wiki/Centaur_(minor_planet)'><!-- centaurs -->
+		<circle cx="0" cy="100" r="1765.5" stroke="rgb(128,96,64)" stroke-width="2491" fill="none"/>
+		<text x="550" y="190" font-family="Verdana" font-size="10" fill="white">Centaurs</text>
+	</a>
 
-	<circle cx="0" cy="100" r="6505.5" stroke="rgb(64,128,128)" stroke-width="6989" fill="none"/><!-- TNOs -->
-	<circle cx="0" cy="100" r="7500" stroke="rgb(64,96,128)" stroke-width="5000" fill="none"/><!-- SDOs -->
+	<a href='https://en.wikipedia.org/wiki/Trans-Neptunian_object'><!-- TNOs -->
+		<circle cx="0" cy="100" r="6505.5" stroke="rgb(64,128,128)" stroke-width="6989" fill="none"/>
+		<text x="3050" y="190" font-family="Verdana" font-size="10" fill="white">Trans-Neptunian Objects</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Plutino'><!-- Plutinos -->
+		<circle cx="0" cy="100" r="3975" stroke="rgb(64,128,64)" stroke-width="150" fill="none"/>
+		<text x="3950" y="190" font-family="Verdana" font-size="10" fill="white">Plutinos (2:3)</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Scattered_disc'><!-- SDOs -->
+		<circle cx="0" cy="100" r="7500" stroke="rgb(64,96,128)" stroke-width="5000" fill="none"/>
+		<text x="5010" y="190" font-family="Verdana" font-size="10" fill="white">Scattered Disc Objects</text>
+	</a>
+
 	<circle cx="0" cy="100" r="3496.5" stroke="rgb(64,128,64)" stroke-width="55" fill="none"/><!-- 4:5 -->
 	<circle cx="0" cy="100" r="3644.5" stroke="rgb(64,128,64)" stroke-width="55" fill="none"/><!-- 3:4 -->
-	<circle cx="0" cy="100" r="3975" stroke="rgb(64,128,64)" stroke-width="150" fill="none"/><!-- Plutinos -->
 	<circle cx="0" cy="100" r="4126" stroke="rgb(64,128,64)" stroke-width="36" fill="none"/><!-- 5:8 -->
 	<circle cx="0" cy="100" r="4224" stroke="rgb(64,128,64)" stroke-width="70" fill="none"/><!-- 3:5 -->
 	<circle cx="0" cy="100" r="4377.5" stroke="rgb(64,128,64)" stroke-width="69" fill="none"/><!-- 4:7 -->
@@ -25,23 +43,20 @@
 	<circle cx="0" cy="100" r="5167.5" stroke="rgb(64,128,64)" stroke-width="65" fill="none"/><!-- 4:9 -->
 	<circle cx="0" cy="100" r="5553" stroke="rgb(64,128,64)" stroke-width="176" fill="none"/><!-- 2:5 -->
 	
-	<text x="190" y="190" font-family="Verdana" font-size="10" fill="white">Asteroid Belt</text>
-	<text x="550" y="190" font-family="Verdana" font-size="10" fill="white">Centaurs</text>
-	<text x="3050" y="190" font-family="Verdana" font-size="10" fill="white">Trans-Neptunian Objects</text>
 	<text x="3485" y="190" font-family="Verdana" font-size="10" fill="white">4:5</text>
 	<text x="3635" y="190" font-family="Verdana" font-size="10" fill="white">3:4</text>
-	<text x="3950" y="190" font-family="Verdana" font-size="10" fill="white">Plutinos (2:3)</text>
 	<text x="4115" y="190" font-family="Verdana" font-size="10" fill="white">5:8</text>
 	<text x="4215" y="190" font-family="Verdana" font-size="10" fill="white">3:5</text>
 	<text x="4370" y="190" font-family="Verdana" font-size="10" fill="white">4:7</text>
 	<text x="4445" y="190" font-family="Verdana" font-size="10" fill="white">5:9</text>
 	<text x="4500" y="190" font-family="Verdana" font-size="10" fill="white">6:11</text>
 	<text x="4750" y="190" font-family="Verdana" font-size="10" fill="white">Twotinos (1:2)</text>
-	<text x="5010" y="190" font-family="Verdana" font-size="10" fill="white">Scattered Disc Objects</text>
 	<text x="5160" y="190" font-family="Verdana" font-size="10" fill="white">4:9</text>
 	<text x="5545" y="190" font-family="Verdana" font-size="10" fill="white">2:5</text>
 	
-	<circle cx="0" cy="100" r="20.360429090893869764496599309054" fill="rgb(255,224,128)"/><!-- Sun -->
+	<a href='https://en.wikipedia.org/wiki/Sun'><!-- Sun -->
+		<circle cx="0" cy="100" r="20.360429090893869764496599309054" fill="rgb(255,224,128)"/>
+	</a>
 
 	<circle cx="0" cy="100" r="39" stroke="white" stroke-width="1" fill="none"/><!-- Mercury orbit -->
 	<a href='https://en.wikipedia.org/wiki/Mercury_(planet)'><!-- Mercury -->
