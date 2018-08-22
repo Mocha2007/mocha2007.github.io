@@ -25,7 +25,7 @@
 		<text x="190" y="190" font-family="Verdana" font-size="10" fill="white">Asteroid Belt</text>
 	</a>
 
-	<a href='https://en.wikipedia.org/wiki/Frost_line_(astrophysics)'><!-- Kirkwood Gaps -->
+	<a href='https://en.wikipedia.org/wiki/Kirkwood_gap'><!-- Kirkwood Gaps -->
 		<circle cx="0" cy="100" r="206" stroke="pink" stroke-width="1" fill="none"/>
 		<circle cx="0" cy="100" r="250" stroke="pink" stroke-width="1" fill="none"/>
 		<circle cx="0" cy="100" r="282" stroke="pink" stroke-width="1" fill="none"/>
@@ -41,6 +41,11 @@
 		<circle cx="0" cy="100" r="347" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
 		<circle cx="0" cy="100" r="370" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
 		<text x="222" y="10" font-family="Verdana" font-size="8" fill="pink">Kirkwood Gaps</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Hilda_asteroid'><!-- Hildas -->
+		<circle cx="0" cy="100" r="395" stroke="rgb(211,147,0)" stroke-opacity="0.5" stroke-width="50" fill="none"/><!-- inner belt -->
+		<text x="370" y="10" font-family="Verdana" font-size="8" fill="orange">Hildas</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Frost_line_(astrophysics)'><!-- Frost Line -->
