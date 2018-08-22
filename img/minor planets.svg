@@ -1,0 +1,96 @@
+<?xml version="1.0" standalone="no"?>
+<!--Distance Scale: 100 Pixels = 1 Au-->
+<!--Size Scale: Pixels = ln(radius in meters) -->
+<svg width="10000" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<desc>Oneia-Nikki System</desc>
+	<rect x="0" y="0" width="10000" height="200" fill="black"/>
+
+	<circle cx="0" cy="100" r="225" stroke="rgb(64,96,128)" stroke-width="50" fill="none"/><!-- inner belt -->
+	<circle cx="0" cy="100" r="267.5" stroke="rgb(128,112,64)" stroke-width="35" fill="none"/><!-- middle belt -->
+	<circle cx="0" cy="100" r="317.5" stroke="rgb(64,128,64)" stroke-width="65" fill="none"/><!-- outer belt -->
+
+	<circle cx="0" cy="100" r="1765.5" stroke="rgb(128,96,64)" stroke-width="2491" fill="none"/><!-- centaurs -->
+
+	<circle cx="0" cy="100" r="6505.5" stroke="rgb(64,128,128)" stroke-width="6989" fill="none"/><!-- TNOs -->
+	<circle cx="0" cy="100" r="7500" stroke="rgb(64,96,128)" stroke-width="5000" fill="none"/><!-- SDOs -->
+	<circle cx="0" cy="100" r="3496.5" stroke="rgb(64,128,64)" stroke-width="55" fill="none"/><!-- 4:5 -->
+	<circle cx="0" cy="100" r="3644.5" stroke="rgb(64,128,64)" stroke-width="55" fill="none"/><!-- 3:4 -->
+	<circle cx="0" cy="100" r="3975" stroke="rgb(64,128,64)" stroke-width="150" fill="none"/><!-- Plutinos -->
+	<circle cx="0" cy="100" r="4126" stroke="rgb(64,128,64)" stroke-width="36" fill="none"/><!-- 5:8 -->
+	<circle cx="0" cy="100" r="4224" stroke="rgb(64,128,64)" stroke-width="70" fill="none"/><!-- 3:5 -->
+	<circle cx="0" cy="100" r="4377.5" stroke="rgb(64,128,64)" stroke-width="69" fill="none"/><!-- 4:7 -->
+	<circle cx="0" cy="100" r="4456" stroke="rgb(64,128,64)" stroke-width="54" fill="none"/><!-- 5:9 -->
+	<circle cx="0" cy="100" r="4514.5" stroke="rgb(64,128,64)" stroke-width="53" fill="none"/><!-- 6:11 -->
+	<circle cx="0" cy="100" r="4789" stroke="rgb(64,128,64)" stroke-width="124" fill="none"/><!-- Twotinos -->
+	<circle cx="0" cy="100" r="5167.5" stroke="rgb(64,128,64)" stroke-width="65" fill="none"/><!-- 4:9 -->
+	<circle cx="0" cy="100" r="5553" stroke="rgb(64,128,64)" stroke-width="176" fill="none"/><!-- 2:5 -->
+	
+	<text x="190" y="190" font-family="Verdana" font-size="10" fill="white">Asteroid Belt</text>
+	<text x="550" y="100" font-family="Verdana" font-size="25" fill="white">Jupiter</text>
+	<text x="550" y="190" font-family="Verdana" font-size="10" fill="white">Centaurs</text>
+	<text x="1000" y="100" font-family="Verdana" font-size="25" fill="white">Saturn</text>
+	<text x="1950" y="100" font-family="Verdana" font-size="25" fill="white">Uranus</text>
+	<text x="3050" y="100" font-family="Verdana" font-size="25" fill="white">Neptune</text>
+	<text x="3050" y="190" font-family="Verdana" font-size="10" fill="white">Trans-Neptunian Objects</text>
+	<text x="3485" y="190" font-family="Verdana" font-size="10" fill="white">4:5</text>
+	<text x="3635" y="190" font-family="Verdana" font-size="10" fill="white">3:4</text>
+	<text x="3950" y="150" font-family="Verdana" font-size="10" fill="white">Pluto</text>
+	<text x="3950" y="190" font-family="Verdana" font-size="10" fill="white">Plutinos (2:3)</text>
+	<text x="4115" y="190" font-family="Verdana" font-size="10" fill="white">5:8</text>
+	<text x="4215" y="190" font-family="Verdana" font-size="10" fill="white">3:5</text>
+	<text x="4330" y="150" font-family="Verdana" font-size="10" fill="white">Haumea</text>
+	<text x="4370" y="190" font-family="Verdana" font-size="10" fill="white">4:7</text>
+	<text x="4445" y="190" font-family="Verdana" font-size="10" fill="white">5:9</text>
+	<text x="4500" y="190" font-family="Verdana" font-size="10" fill="white">6:11</text>
+	<text x="4580" y="150" font-family="Verdana" font-size="10" fill="white">Makemake</text>
+	<text x="4750" y="190" font-family="Verdana" font-size="10" fill="white">Twotinos (1:2)</text>
+	<text x="5010" y="190" font-family="Verdana" font-size="10" fill="white">Scattered Disc Objects</text>
+	<text x="5160" y="190" font-family="Verdana" font-size="10" fill="white">4:9</text>
+	<text x="5545" y="190" font-family="Verdana" font-size="10" fill="white">2:5</text>
+	<text x="6790" y="150" font-family="Verdana" font-size="10" fill="white">Eris</text>
+	<text x="7620" y="150" font-family="Verdana" font-size="10" fill="white">Sedna</text>
+	
+	<circle cx="0" cy="100" r="20.360429090893869764496599309054" fill="rgb(184,172,103)"/><!-- Sun -->
+
+	<circle cx="0" cy="100" r="39" stroke="white" stroke-width="1" fill="none"/><!-- Mercury orbit -->
+	<image href="https://upload.wikimedia.org/wikipedia/commons/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg" x="31" y="92" height="16" width="16" transform="rotate(180 39 100)"/><!-- Mercury -->
+
+	<circle cx="0" cy="100" r="72" stroke="white" stroke-width="1" fill="none"/><!-- Venus orbit -->
+	<image href="https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg" x="64" y="92" height="16" width="16"/><!-- Venus -->
+
+	<circle cx="0" cy="100" r="100" stroke="white" stroke-width="1" fill="none"/><!-- Earth orbit -->
+	<image href="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" x="92" y="92" height="16" width="16"/><!-- Mars -->
+
+	<circle cx="0" cy="100" r="152" stroke="white" stroke-width="1" fill="none"/><!-- Mars orbit -->
+	<image href="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" x="144" y="92" height="16" width="16"/><!-- Mars -->
+
+	<circle cx="0" cy="100" r="277" stroke="silver" stroke-width="1" fill="none"/><!-- Ceres orbit -->
+	<image href="https://upload.wikimedia.org/wikipedia/commons/5/58/Ceres_-_RC3_-_Haulani_Crater_(22381131691).jpg" x="270" y="92" height="14" width="14" transform="rotate(180 277 100)"/><!-- Ceres -->
+
+	<circle cx="0" cy="100" r="520" stroke="white" stroke-width="1" fill="none"/><!-- Jupiter orbit -->
+	<image href="https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg" x="511" y="92" height="18" width="18"/><!-- Jupiter -->
+
+	<circle cx="0" cy="100" r="958" stroke="white" stroke-width="1" fill="none"/><!-- Saturn orbit -->
+	<image href="https://upload.wikimedia.org/wikipedia/commons/2/29/Saturn_Storm.jpg" x="949" y="92" height="18" width="18"/><!-- Saturn -->
+
+	<circle cx="0" cy="100" r="1922" stroke="white" stroke-width="1" fill="none"/><!-- Uranus orbit -->
+	<image href="https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg" x="1913" y="92" height="18" width="18"/><!-- Uranus -->
+
+	<circle cx="0" cy="100" r="3011" stroke="white" stroke-width="1" fill="none"/><!-- Neptune orbit -->
+	<image href="https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg" x="3002" y="92" height="18" width="18"/><!-- Neptune -->
+
+	<circle cx="0" cy="100" r="3948" stroke="silver" stroke-width="1" fill="none"/><!-- Pluto orbit -->
+	<image href="https://upload.wikimedia.org/wikipedia/commons/e/ef/Pluto_in_True_Color_-_High-Res.jpg" x="3941" y="92" height="14" width="14"/><!-- Pluto -->
+
+	<circle cx="0" cy="100" r="4322" stroke="silver" stroke-width="1" fill="none"/><!-- Haumea orbit -->
+	<circle cx="4322" cy="100" r="7" fill="grey"/><!-- Haumea -->
+
+	<circle cx="0" cy="100" r="4572" stroke="silver" stroke-width="1" fill="none"/><!-- Makemake orbit -->
+	<circle cx="4572" cy="100" r="7" fill="grey"/><!-- Makemake -->
+
+	<circle cx="0" cy="100" r="6778" stroke="silver" stroke-width="1" fill="none"/><!-- Eris orbit -->
+	<circle cx="6778" cy="100" r="7" fill="grey"/><!-- Eris -->
+
+	<circle cx="0" cy="100" r="7609" stroke="silver" stroke-width="1" fill="none"/><!-- Sedna orbit -->
+	<circle cx="7609" cy="100" r="7" fill="grey"/><!-- Sedna -->
+</svg>
