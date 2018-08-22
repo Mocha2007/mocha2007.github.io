@@ -5,8 +5,16 @@
 	<desc>Oneia-Nikki System</desc>
 	<rect x="0" y="0" width="8000" height="200" fill="black"/>
 
-	<a href='https://en.wikipedia.org/wiki/Solar_System#Inner_Solar_System'><!-- inner solar system -->
+	<a href='https://en.wikipedia.org/wiki/Solar_System#Inner_Solar_System'><!-- inner solar system part 1 -->
 		<circle cx="0" cy="100" r="350" fill="rgb(128,64,64)"/>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Circumstellar_habitable_zone'><!-- Kasting et al. 1993 -->
+		<circle cx="0" cy="100" r="116" stroke="rgb(64,128,64)" stroke-width="42" fill="none"/>
+		<text x="50" y="10" font-family="Verdana" font-size="8" fill="lime">Habitable Zone</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Solar_System#Inner_Solar_System'><!-- inner solar system part 2 -->
 		<text x="10" y="190" font-family="Verdana" font-size="10" fill="white">Inner Solar System</text>
 	</a>
 
@@ -32,12 +40,12 @@
 		<circle cx="0" cy="100" r="307.5" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
 		<circle cx="0" cy="100" r="347" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
 		<circle cx="0" cy="100" r="370" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
-		<text x="200" y="10" font-family="Verdana" font-size="10" fill="pink">Kirkwood Gaps</text>
+		<text x="222" y="10" font-family="Verdana" font-size="8" fill="pink">Kirkwood Gaps</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Frost_line_(astrophysics)'><!-- Frost Line -->
 		<circle cx="0" cy="100" r="500" stroke="cyan" stroke-width="1" fill="none"/>
-		<text x="430" y="10" font-family="Verdana" font-size="10" fill="cyan">Frost Line</text>
+		<text x="440" y="10" font-family="Verdana" font-size="8" fill="cyan">Frost Line</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Centaur_(minor_planet)'><!-- centaurs -->
