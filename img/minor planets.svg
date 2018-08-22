@@ -58,6 +58,12 @@
 		<text x="550" y="190" font-family="Verdana" font-size="10" fill="white">Centaurs</text>
 	</a>
 
+	<a href='https://en.wikipedia.org/wiki/Jupiter_trojan'><!-- Trojans -->
+		<circle cx="0" cy="100" r="522.5" stroke="rgb(106,215,104)" stroke-opacity="0.5" stroke-width="35" fill="none"/><!-- inner belt -->
+		<text x="500" y="10" font-family="Verdana" font-size="8" fill="rgb(128,255,128)">Greeks</text>
+		<text x="500" y="190" font-family="Verdana" font-size="8" fill="rgb(128,255,128)">Trojans</text>
+	</a>
+
 	<a href='https://en.wikipedia.org/wiki/Trans-Neptunian_object'><!-- TNOs -->
 		<circle cx="0" cy="100" r="6505.5" stroke="rgb(64,128,128)" stroke-width="6989" fill="none"/>
 		<text x="3050" y="190" font-family="Verdana" font-size="10" fill="white">Trans-Neptunian Objects</text>
@@ -146,6 +152,11 @@
 	<a href='https://en.wikipedia.org/wiki/Neptune'><!-- Neptune -->
 		<text x="3050" y="100" font-family="Verdana" font-size="25" fill="white">Neptune</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg" x="3002" y="92" height="18" width="18"/>
+	</a>
+
+	<a href="https://en.wikipedia.org/wiki/Halley's_Comet"><!-- Halley's Comet Epoch 2018-08-22 -->
+		<text x="3510" y="103" font-family="Verdana" font-size="10" fill="white">Halley's Comet</text>
+		<image href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Lspn_comet_halley.jpg" x="3467" y="88" height="24"/>
 	</a>
 
 	<circle cx="0" cy="100" r="3948" stroke="silver" stroke-width="1" fill="none"/><!-- Pluto orbit -->
