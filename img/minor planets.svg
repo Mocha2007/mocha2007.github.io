@@ -50,7 +50,7 @@
 	<text x="6790" y="150" font-family="Verdana" font-size="10" fill="white">Eris</text>
 	<text x="7620" y="150" font-family="Verdana" font-size="10" fill="white">Sedna</text>
 	
-	<circle cx="0" cy="100" r="20.360429090893869764496599309054" fill="rgb(184,172,103)"/><!-- Sun -->
+	<circle cx="0" cy="100" r="20.360429090893869764496599309054" fill="rgb(255,224,128)"/><!-- Sun -->
 
 	<circle cx="0" cy="100" r="39" stroke="white" stroke-width="1" fill="none"/><!-- Mercury orbit -->
 	<image href="https://upload.wikimedia.org/wikipedia/commons/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg" x="31" y="92" height="16" width="16" transform="rotate(180 39 100)"/><!-- Mercury -->
