@@ -1,9 +1,9 @@
 <?xml version="1.0" standalone="no"?>
 <!--Distance Scale: 100 Pixels = 1 Au-->
 <!--Size Scale: Pixels = ln(radius in meters) -->
-<svg width="10000" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<svg width="8000" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
 	<desc>Oneia-Nikki System</desc>
-	<rect x="0" y="0" width="10000" height="200" fill="black"/>
+	<rect x="0" y="0" width="8000" height="200" fill="black"/>
 
 	<circle cx="0" cy="100" r="225" stroke="rgb(64,96,128)" stroke-width="50" fill="none"/><!-- inner belt -->
 	<circle cx="0" cy="100" r="267.5" stroke="rgb(128,112,64)" stroke-width="35" fill="none"/><!-- middle belt -->
