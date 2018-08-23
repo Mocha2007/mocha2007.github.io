@@ -441,6 +441,15 @@
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
+	<a href='https://en.wikipedia.org/wiki/Triton_(moon)'><!-- Triton -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/a/a6/Triton_moon_mosaic_Voyager_2_(large).jpg" x="3020" y="92" height="9" width="9"/>
+			<text x="3011" y="120" font-family="Verdana" font-size="8" fill="white">Triton</text>
+		</g>
+		<animateMotion dur="8.62s" repeatCount="indefinite">
+			<mpath href="#OuterPath"/>
+		</animateMotion>
+	</a>
 
 	<a href="https://en.wikipedia.org/wiki/Halley's_Comet"><!-- Halley's Comet Epoch 2018-08-22 -->
 		<text x="3510" y="103" font-family="Verdana" font-size="8" fill="white">Halley's Comet</text>
