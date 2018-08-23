@@ -9,8 +9,10 @@
 	</defs>
 	
 	<style>
-		.visible { display: inline; }
-		.invisible { display: none; }
+		.visible{display:inline;}
+		.invisible{display:none;}
+		.hovertext text{display:none;}
+		.hovertext:hover text{display:block;}
 	</style>
 	
 	<script type="text/javascript">
@@ -24,14 +26,37 @@
 				document.getElementById('t2').classList.remove('invisible');
 				document.getElementById('t3').classList.remove('invisible');
 				document.getElementById('t4').classList.remove('invisible');
+				document.getElementById('s1').setAttribute("href", "#NoPath");
+				document.getElementById('s2').setAttribute("href", "#NoPath");
+				document.getElementById('s3').setAttribute("href", "#NoPath");
+				document.getElementById('s3.1').setAttribute("href", "#NoPath");
+				document.getElementById('s4').setAttribute("href", "#NoPath");
+				document.getElementById('s4.1').setAttribute("href", "#NoPath");
+				document.getElementById('s4.2').setAttribute("href", "#NoPath");
+				document.getElementById('sm1').setAttribute("href", "#NoPath");
 			}
 			else {
 				document.getElementById('t1').classList.add('invisible');
 				document.getElementById('t2').classList.add('invisible');
 				document.getElementById('t3').classList.add('invisible');
 				document.getElementById('t4').classList.add('invisible');
+				document.getElementById('s1').setAttribute("href", "#MercuryPath");
+				document.getElementById('s2').setAttribute("href", "#VenusPath");
+				document.getElementById('s3').setAttribute("href", "#EarthPath");
+				document.getElementById('s3.1').setAttribute("href", "#EarthPath");
+				document.getElementById('s4').setAttribute("href", "#MarsPath");
+				document.getElementById('s4.1').setAttribute("href", "#MarsPath");
+				document.getElementById('s4.2').setAttribute("href", "#MarsPath");
+				document.getElementById('sm1').setAttribute("href", "#CeresPath");
 			}
 			enabled = !enabled;
+		}
+		function freeze(){
+			var elements = document.getElementsByTagName('mpath');
+			for (var i in elements){
+				console.log(elements[i]);
+				elements[i].setAttribute("href", "#NoPath");
+			}
 		}
 	</script>
 
@@ -137,58 +162,102 @@
 		<circle cx="0" cy="100" r="20.360429090893869764496599309054" fill="rgb(255,224,128)"/>
 	</a>
 
+	<path d="M 0 0" fill="none" id="NoPath"/>
+
 	<circle cx="0" cy="100" r="39" stroke="white" stroke-width="1" fill="none"/><!-- Mercury orbit -->
 	<a href='https://en.wikipedia.org/wiki/Mercury_(planet)'><!-- Mercury -->
 		<path d="M -39 39 L -21 35 L -11 27 L -4 18 L 0 0 L -4 -18 L -11 -27 L -21 -35 L -39 -39" fill="none" id="MercuryPath"/>
-		<image href="https://upload.wikimedia.org/wikipedia/commons/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg" x="31" y="92" height="16" width="16" transform="rotate(180 39 100)"/>
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg" x="31" y="92" height="16" width="16" transform="rotate(180 39 100)"/>
+			<text x="47" y="102" font-family="Verdana" font-size="8" fill="white">Mercury</text>
+		</g>
 		<animateMotion dur="1.20423s" repeatCount="indefinite">
-			<mpath href="#MercuryPath"/>
+			<mpath id='s1' href="#MercuryPath"/>
 		</animateMotion>
 	</a>
 
 	<circle cx="0" cy="100" r="72" stroke="white" stroke-width="1" fill="none"/><!-- Venus orbit -->
 	<a href='https://en.wikipedia.org/wiki/Venus'><!-- Venus -->
 		<path d="M -72 72 L -39 64 L -20 51 L -7 32 L 0 0 L -7 -32 L -20 -51 L -39 -64 L -72 -72" fill="none" id="VenusPath"/>
-		<image href="https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg" x="64" y="92" height="16" width="16"/>
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg" x="64" y="92" height="16" width="16"/>
+			<text x="80" y="102" font-family="Verdana" font-size="8" fill="white">Venus</text>
+		</g>
 		<animateMotion dur="3.07599s" repeatCount="indefinite">
-			<mpath href="#VenusPath"/>
+			<mpath id='s2' href="#VenusPath"/>
 		</animateMotion>
 	</a>
 
 	<circle cx="0" cy="100" r="100" stroke="white" stroke-width="1" fill="none"/><!-- Earth orbit -->
 	<a href='https://en.wikipedia.org/wiki/Earth'><!-- Earth -->
 		<path d="M -100 100 L -55 90 L -29 71 L -10 47 L 0 0 L -10 -47 L -29 -71 L -55 -90 L -100 -100" fill="none" id="EarthPath"/>
-		<image href="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" x="92" y="92" height="16" width="16"/>
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" x="92" y="92" height="16" width="16"/>
+			<text x="116" y="102" font-family="Verdana" font-size="8" fill="white">Earth</text>
+		</g>
 		<use class='invisible' id='t1' x="100" y="100" href="#arrow"/>
 		<text class='invisible' id='t2' x="125" y="75" font-family="Verdana" font-size="8" fill="red">You are here</text>
 		<animateMotion dur="5s" repeatCount="indefinite">
-			<mpath href="#EarthPath"/>
+			<mpath id='s3' href="#EarthPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Moon'><!-- Moon -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg" x="108" y="92" height="8" width="8"/>
+			<text x="116" y="102" font-family="Verdana" font-size="8" fill="white">Moon</text>
+		</g>
+		<animateMotion dur="5s" repeatCount="indefinite">
+			<mpath id='s3.1' href="#EarthPath"/>
 		</animateMotion>
 	</a>
 
 	<circle cx="0" cy="100" r="152" stroke="white" stroke-width="1" fill="none"/><!-- Mars orbit -->
 	<a href='https://en.wikipedia.org/wiki/Mars'><!-- Mars -->
 		<path d="M -37 100 L -8 51 L 0 0 L -8 -51 L -37 -100" fill="none" id="MarsPath"/>
-		<image href="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" x="144" y="92" height="16" width="16"/><!-- Mars -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" x="144" y="92" height="16" width="16"/>
+			<text x="168" y="102" font-family="Verdana" font-size="8" fill="white">Mars</text>
+		</g>
 		<use class='invisible' id='t3' x="152" y="100" href="#arrow"/>
 		<text class='invisible' id='t4' x="177" y="75" font-family="Verdana" font-size="8" fill="red">Elon Musk's Homeworld</text>
 		<animateMotion dur="2.5061292s" repeatCount="indefinite"> <!-- 0.23472222222222222222222222222222 of orbit visible -->
-			<mpath href="#MarsPath"/>
+			<mpath id='s4' href="#MarsPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Phobos_(moon)'><!-- Phobos -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/5/5c/Phobos_colour_2008.jpg" x="160" y="92" height="8" width="8"/>
+			<text x="168" y="102" font-family="Verdana" font-size="8" fill="white">Phobos</text>
+		</g>
+		<animateMotion dur="2.5061292s" repeatCount="indefinite">
+			<mpath id='s4.1' href="#MarsPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Deimos_(moon)'><!-- Deimos -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/8/8d/Deimos-MRO.jpg" x="160" y="100" height="8" width="8"/>
+			<text x="168" y="102" font-family="Verdana" font-size="8" fill="white">Deimos</text>
+		</g>
+		<animateMotion dur="2.5061292s" repeatCount="indefinite">
+			<mpath id='s4.2' href="#MarsPath"/>
 		</animateMotion>
 	</a>
 
 	<circle cx="0" cy="100" r="277" stroke="silver" stroke-width="1" fill="none"/><!-- Ceres orbit -->
 	<a href='https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)'><!-- Ceres -->
 		<path d="M -18 100 L 0 0 L -18 -100" fill="none" id="CeresPath"/>
-		<image href="https://upload.wikimedia.org/wikipedia/commons/5/58/Ceres_-_RC3_-_Haulani_Crater_(22381131691).jpg" x="270" y="92" height="14" width="14" transform="rotate(180 277 100)"/>
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/5/58/Ceres_-_RC3_-_Haulani_Crater_(22381131691).jpg" x="270" y="92" height="14" width="14" transform="rotate(180 277 100)"/>
+			<text x="285" y="103" font-family="Verdana" font-size="8" fill="white">Ceres</text>
+		</g>
 		<animateMotion dur="2.683s" repeatCount="indefinite"> <!-- 0.11666666666666666666666666666667 of orbit visible -->
-			<mpath href="#CeresPath"/>
+			<mpath id='sm1' href="#CeresPath"/>
 		</animateMotion>
 	</a>
 
 	<circle cx="0" cy="100" r="520" stroke="white" stroke-width="1" fill="none"/><!-- Jupiter orbit -->
 	<a href='https://en.wikipedia.org/wiki/Jupiter'><!-- Jupiter -->
-		<text x="540" y="110" font-family="Verdana" font-size="25" fill="white">Jupiter</text>
+		<text x="550" y="110" font-family="Verdana" font-size="25" fill="white">Jupiter</text>
 		<path d="M -9 100 L 0 0 L -9 -100" fill="none" id="JupiterPath"/>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg" x="511" y="92" height="18" width="18"/>
 		<animateMotion dur="3.61132s" repeatCount="indefinite"> <!-- 0.06088888888888888888888888888889 of orbit visible -->
@@ -302,6 +371,15 @@
 	</a>
 	
 	<!-- fun toggle -->
-	<circle cx="0" cy="0" r="20" fill="black" stroke="cyan" stroke-width="1" onclick='toggle();'/>
+	<g class='hovertext'>
+		<circle cx="0" cy="0" r="20" fill="black" stroke="cyan" stroke-width="1" onclick='toggle();'/>
+		<text x="0" y="30" font-family="Verdana" font-size="8" fill="red">Pause Inner Solar System for Info</text>
+	</g>
 	<text x="4" y="14" font-family="Times New Roman" font-size="18" fill="cyan" font-style="italic" onclick='toggle();'>i</text>
+	
+	<!-- permafrost -->
+	<g class='hovertext'>
+		<image href="https://cdn3.iconfinder.com/data/icons/chubby-weather/404/Snow-512.png" x="25" y="0" height="16" onclick='freeze();'/>
+		<text x="25" y="25" font-family="Verdana" font-size="8" fill="cyan">Permafrost</text>
+	</g>
 </svg>
