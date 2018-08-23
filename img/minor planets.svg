@@ -458,9 +458,18 @@
 
 	<circle cx="0" cy="100" r="3948" stroke="silver" stroke-width="1" fill="none"/><!-- Pluto orbit -->
 	<a href='https://en.wikipedia.org/wiki/Pluto'><!-- Pluto -->
-		<text x="3960" y="102" font-family="Verdana" font-size="10" fill="white">Pluto</text>
+		<text x="3970" y="102" font-family="Verdana" font-size="10" fill="white">Pluto</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/e/ef/Pluto_in_True_Color_-_High-Res.jpg" x="3941" y="92" height="14" width="14"/>
 		<animateMotion dur="10.03s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+			<mpath href="#OuterPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Charon_(moon)'><!-- Charon -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2b/Charon_in_Color_(HQ).jpg" x="3955" y="92" height="9" width="9"/>
+			<text x="3955" y="120" font-family="Verdana" font-size="8" fill="white">Charon</text>
+		</g>
+		<animateMotion dur="10.03s" repeatCount="indefinite">
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
