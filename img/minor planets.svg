@@ -159,7 +159,10 @@
 	<text x="5545" y="190" font-family="Verdana" font-size="10" fill="white">2:5</text>
 	
 	<a href='https://en.wikipedia.org/wiki/Sun'><!-- Sun -->
-		<circle cx="0" cy="100" r="20.360429090893869764496599309054" fill="rgb(255,224,128)"/>
+		<g class='hovertext'>
+			<circle cx="0" cy="100" r="20.360429090893869764496599309054" fill="rgb(255,224,128)"/>
+			<text x="0" y="102" font-family="Verdana" font-size="8" fill="black">Sun</text>
+		</g>
 	</a>
 
 	<path d="M 0 0" fill="none" id="NoPath"/>
