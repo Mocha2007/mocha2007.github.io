@@ -247,32 +247,47 @@
 
 	<circle cx="0" cy="100" r="4322" stroke="silver" stroke-width="1" fill="none"/><!-- Haumea orbit -->
 	<a href='https://en.wikipedia.org/wiki/Haumea'><!-- Haumea -->
-		<text x="4330" y="150" font-family="Verdana" font-size="10" fill="white">Haumea</text>
+		<text x="4330" y="105" font-family="Verdana" font-size="10" fill="white">Haumea</text>
 		<circle cx="4322" cy="100" r="7" fill="grey"/>
+		<animateMotion dur="10.33s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+			<mpath href="#OuterPath"/>
+		</animateMotion>
 	</a>
 
 	<circle cx="0" cy="100" r="4446" stroke="silver" stroke-width="1" fill="none"/><!-- 2014 MU69 orbit -->
 	<a href='https://en.wikipedia.org/wiki/(486958)_2014_MU69'><!-- 2014 MU69 -->
-		<text x="4450" y="150" font-family="Verdana" font-size="10" fill="white">2014 MU69</text>
+		<text x="4455" y="105" font-family="Verdana" font-size="10" fill="white">2014 MU69</text>
 		<circle cx="4446" cy="100" r="5" fill="grey"/>
+		<animateMotion dur="10.47s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+			<mpath href="#OuterPath"/>
+		</animateMotion>
 	</a>
 
 	<circle cx="0" cy="100" r="4572" stroke="silver" stroke-width="1" fill="none"/><!-- Makemake orbit -->
 	<a href='https://en.wikipedia.org/wiki/Makemake'><!-- Makemake -->
-		<text x="4580" y="150" font-family="Verdana" font-size="10" fill="white">Makemake</text>
+		<text x="4580" y="105" font-family="Verdana" font-size="10" fill="white">Makemake</text>
 		<circle cx="4572" cy="100" r="7" fill="grey"/>
+		<animateMotion dur="10.59s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+			<mpath href="#OuterPath"/>
+		</animateMotion>
 	</a>
 
 	<circle cx="0" cy="100" r="6778" stroke="silver" stroke-width="1" fill="none"/><!-- Eris orbit -->
 	<a href='https://en.wikipedia.org/wiki/Eris_(dwarf_planet)'><!-- Eris -->
-		<text x="6790" y="150" font-family="Verdana" font-size="10" fill="white">Eris</text>
+		<text x="6790" y="105" font-family="Verdana" font-size="10" fill="white">Eris</text>
 		<circle cx="6778" cy="100" r="7" fill="grey"/>
+		<animateMotion dur="13.63s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+			<mpath href="#OuterPath"/>
+		</animateMotion>
 	</a>
 
 	<circle cx="0" cy="100" r="7609" stroke="silver" stroke-width="1" fill="none"/><!-- Sedna orbit -->
 	<a href='https://en.wikipedia.org/wiki/90377_Sedna'><!-- Sedna -->
-		<text x="7620" y="150" font-family="Verdana" font-size="10" fill="white">Sedna</text>
+		<text x="7620" y="105" font-family="Verdana" font-size="10" fill="white">Sedna</text>
 		<circle cx="7609" cy="100" r="7" fill="grey"/>
+		<animateMotion dur="45.02s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+			<mpath href="#OuterPath"/>
+		</animateMotion>
 	</a>
 	
 	<a href='https://en.wikipedia.org/wiki/Elon_Musk'><!-- Sedna -->
