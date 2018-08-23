@@ -381,9 +381,54 @@
 
 	<circle cx="0" cy="100" r="1922" stroke="white" stroke-width="1" fill="none"/><!-- Uranus orbit -->
 	<a href='https://en.wikipedia.org/wiki/Uranus'><!-- Uranus -->
-		<text x="1940" y="110" font-family="Verdana" font-size="25" fill="white">Uranus</text>
+		<text x="1960" y="110" font-family="Verdana" font-size="25" fill="white">Uranus</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg" x="1913" y="92" height="18" width="18"/>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite"> <!-- 0.016389 of orbit visible -->
+			<mpath href="#OuterPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Miranda_(moon)'><!-- Miranda -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e1/PIA18185_Miranda's_Icy_Face.jpg" x="1931" y="92" height="9" width="9"/>
+			<text x="1931" y="120" font-family="Verdana" font-size="8" fill="white">Miranda</text>
+		</g>
+		<animateMotion dur="6.885013194s" repeatCount="indefinite">
+			<mpath href="#OuterPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Ariel_(moon)'><!-- Ariel -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/5/59/Ariel_(moon).jpg" x="1931" y="101" height="9" width="9"/>
+			<text x="1931" y="120" font-family="Verdana" font-size="8" fill="white">Ariel</text>
+		</g>
+		<animateMotion dur="6.885013194s" repeatCount="indefinite">
+			<mpath href="#OuterPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Umbriel_(moon)'><!-- Umbriel -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2f/PIA00040_Umbrielx2.47.jpg" x="1940" y="92" height="9" width="9"/>
+			<text x="1931" y="120" font-family="Verdana" font-size="8" fill="white">Umbriel</text>
+		</g>
+		<animateMotion dur="6.885013194s" repeatCount="indefinite">
+			<mpath href="#OuterPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Titania_(moon)'><!-- Titania -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2e/Titania_(moon)_color%2C_edited.jpg" x="1940" y="101" height="9" width="9"/>
+			<text x="1931" y="120" font-family="Verdana" font-size="8" fill="white">Titania</text>
+		</g>
+		<animateMotion dur="6.885013194s" repeatCount="indefinite">
+			<mpath href="#OuterPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Oberon_(moon)'><!-- Oberon -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/0/09/Voyager_2_picture_of_Oberon.jpg" x="1949" y="96" height="9" width="9"/>
+			<text x="1931" y="120" font-family="Verdana" font-size="8" fill="white">Oberon</text>
+		</g>
+		<animateMotion dur="6.885013194s" repeatCount="indefinite">
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
