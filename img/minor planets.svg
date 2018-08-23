@@ -264,6 +264,42 @@
 			<mpath href="#JupiterPath"/>
 		</animateMotion>
 	</a>
+	<a href='https://en.wikipedia.org/wiki/Io_(moon)'><!-- Io -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/7/7b/Io_highest_resolution_true_color.jpg" x="529" y="92" height="9" width="9"/>
+			<text x="529" y="120" font-family="Verdana" font-size="8" fill="white">Io</text>
+		</g>
+		<animateMotion dur="3.61132s" repeatCount="indefinite">
+			<mpath href="#JupiterPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Europa_(moon)'><!-- Europa -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/5/54/Europa-moon.jpg" x="529" y="101" height="9" width="9"/>
+			<text x="529" y="120" font-family="Verdana" font-size="8" fill="white">Europa</text>
+		</g>
+		<animateMotion dur="3.61132s" repeatCount="indefinite">
+			<mpath href="#JupiterPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Ganymede_(moon)'><!-- Ganymede -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/f/f2/Ganymede_g1_true-edit1.jpg" x="538" y="92" height="9" width="9"/>
+			<text x="529" y="120" font-family="Verdana" font-size="8" fill="white">Ganymede</text>
+		</g>
+		<animateMotion dur="3.61132s" repeatCount="indefinite">
+			<mpath href="#JupiterPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Callisto_(moon)'><!-- Callisto -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e9/Callisto.jpg" x="538" y="101" height="9" width="9"/>
+			<text x="529" y="120" font-family="Verdana" font-size="8" fill="white">Callisto</text>
+		</g>
+		<animateMotion dur="3.61132s" repeatCount="indefinite">
+			<mpath href="#JupiterPath"/>
+		</animateMotion>
+	</a>
 
 	<circle cx="0" cy="100" r="958" stroke="white" stroke-width="1" fill="none"/><!-- Saturn orbit -->
 	<a href='https://en.wikipedia.org/wiki/Saturn'><!-- Saturn -->
