@@ -127,6 +127,8 @@
 	<a href='https://en.wikipedia.org/wiki/Earth'><!-- Earth -->
 		<path d="M -100 100 L -55 90 L -29 71 L -10 47 L 0 0 L -10 -47 L -29 -71 L -55 -90 L -100 -100" fill="none" id="EarthPath"/>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" x="92" y="92" height="16" width="16"/>
+		<polygon points="100 100 107 79 112 85 147 50 149 52 114 87 120 92" fill="red"  transform="scale(.5) translate(100,100)"/>
+		<text x="125" y="75" font-family="Verdana" font-size="8" fill="red">You are here</text>
 		<animateMotion dur="5s" repeatCount="indefinite">
 			<mpath href="#EarthPath"/>
 		</animateMotion>
