@@ -15,7 +15,7 @@
 	
 	<script type="text/javascript">
 		var i;
-		var enabled = false;
+		var enabled = true;
 		function toggle(){
 			console.log('OwO');
 			// I tried for hours to use a for loop but it flat-out refued to work and SO was zero help
@@ -159,8 +159,8 @@
 	<a href='https://en.wikipedia.org/wiki/Earth'><!-- Earth -->
 		<path d="M -100 100 L -55 90 L -29 71 L -10 47 L 0 0 L -10 -47 L -29 -71 L -55 -90 L -100 -100" fill="none" id="EarthPath"/>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" x="92" y="92" height="16" width="16"/>
-		<use id='t1' x="100" y="100" href="#arrow"/>
-		<text id='t2' x="125" y="75" font-family="Verdana" font-size="8" fill="red">You are here</text>
+		<use class='invisible' id='t1' x="100" y="100" href="#arrow"/>
+		<text class='invisible' id='t2' x="125" y="75" font-family="Verdana" font-size="8" fill="red">You are here</text>
 		<animateMotion dur="5s" repeatCount="indefinite">
 			<mpath href="#EarthPath"/>
 		</animateMotion>
@@ -170,8 +170,8 @@
 	<a href='https://en.wikipedia.org/wiki/Mars'><!-- Mars -->
 		<path d="M -37 100 L -8 51 L 0 0 L -8 -51 L -37 -100" fill="none" id="MarsPath"/>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" x="144" y="92" height="16" width="16"/><!-- Mars -->
-		<use id='t3' x="152" y="100" href="#arrow"/>
-		<text id='t4' x="177" y="75" font-family="Verdana" font-size="8" fill="red">Elon Musk's Homeworld</text>
+		<use class='invisible' id='t3' x="152" y="100" href="#arrow"/>
+		<text class='invisible' id='t4' x="177" y="75" font-family="Verdana" font-size="8" fill="red">Elon Musk's Homeworld</text>
 		<animateMotion dur="2.5061292s" repeatCount="indefinite"> <!-- 0.23472222222222222222222222222222 of orbit visible -->
 			<mpath href="#MarsPath"/>
 		</animateMotion>
