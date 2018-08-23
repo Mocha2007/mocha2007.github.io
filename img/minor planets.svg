@@ -305,6 +305,11 @@
 		</animateMotion>
 	</a>
 
+	<a href="https://en.wikipedia.org/wiki/ʻOumuamua"><!-- ʻOumuamua Epoch 2018-08-22 -->
+		<text x="745" y="97" font-family="Verdana" font-size="8" fill="white">ʻOumuamua</text>
+		<image href="https://upload.wikimedia.org/wikipedia/commons/1/1c/Artist's_impression_of_ʻOumuamua.jpg" x="722" y="88" height="12"/>
+	</a>
+
 	<circle cx="0" cy="100" r="958" stroke="white" stroke-width="1" fill="none"/><!-- Saturn orbit -->
 	<a href='https://en.wikipedia.org/wiki/Saturn'><!-- Saturn -->
 		<text x="1010" y="110" font-family="Verdana" font-size="25" fill="white">Saturn</text>
