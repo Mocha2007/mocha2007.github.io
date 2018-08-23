@@ -13,6 +13,7 @@
 		.invisible{display:none;}
 		.hovertext text{display:none;}
 		.hovertext:hover text{display:block;}
+		.nothovertext{display:block!important;}
 	</style>
 	
 	<script type="text/javascript">
@@ -544,7 +545,7 @@
 	
 	<!-- permafrost -->
 	<g class='hovertext'>
-		<image href="https://cdn3.iconfinder.com/data/icons/chubby-weather/404/Snow-512.png" x="25" y="0" height="16" onclick='freeze();'/>
+		<text class='nothovertext' x="25" y="18" font-family="Verdana" font-size="24" fill="cyan" onclick='freeze();'>❄</text>
 		<text x="25" y="25" font-family="Verdana" font-size="8" fill="cyan">Permafrost</text>
 	</g>
 </svg>
