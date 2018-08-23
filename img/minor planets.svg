@@ -306,10 +306,73 @@
 
 	<circle cx="0" cy="100" r="958" stroke="white" stroke-width="1" fill="none"/><!-- Saturn orbit -->
 	<a href='https://en.wikipedia.org/wiki/Saturn'><!-- Saturn -->
-		<text x="980" y="110" font-family="Verdana" font-size="25" fill="white">Saturn</text>
+		<text x="1010" y="110" font-family="Verdana" font-size="25" fill="white">Saturn</text>
 		<path d="M -5 100 L 0 0 L -5 -100" fill="none" id="SaturnPath"/>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/2/29/Saturn_Storm.jpg" x="949" y="92" height="18" width="18"/>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite"> <!-- 0.033 of orbit visible -->
+			<mpath href="#SaturnPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Mimas_(moon)'><!-- Mimas -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/b/bc/Mimas_Cassini.jpg" x="967" y="92" height="9" width="9"/>
+			<text x="967" y="120" font-family="Verdana" font-size="8" fill="white">Mimas</text>
+		</g>
+		<animateMotion dur="4.8604215s" repeatCount="indefinite">
+			<mpath href="#SaturnPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Enceladus'><!-- Enceladus -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/9/95/Enceladus_from_Voyager.jpg" x="967" y="101" height="9" width="9"/>
+			<text x="967" y="120" font-family="Verdana" font-size="8" fill="white">Enceladus</text>
+		</g>
+		<animateMotion dur="4.8604215s" repeatCount="indefinite">
+			<mpath href="#SaturnPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Tethys_(moon)'><!-- Tethys -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/b/bc/PIA18317-SaturnMoon-Tethys-Cassini-20150411.jpg" x="976" y="92" height="9" width="9"/>
+			<text x="967" y="120" font-family="Verdana" font-size="8" fill="white">Tethys</text>
+		</g>
+		<animateMotion dur="4.8604215s" repeatCount="indefinite">
+			<mpath href="#SaturnPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Dione_(moon)'><!-- Dione -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/4/42/Dione_in_natural_light.jpg" x="976" y="101" height="9" width="9"/>
+			<text x="967" y="120" font-family="Verdana" font-size="8" fill="white">Dione</text>
+		</g>
+		<animateMotion dur="4.8604215s" repeatCount="indefinite">
+			<mpath href="#SaturnPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Rhea_(moon)'><!-- Rhea -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/a/ab/PIA07763_Rhea_full_globe5.jpg" x="985" y="92" height="9" width="9"/>
+			<text x="967" y="120" font-family="Verdana" font-size="8" fill="white">Rhea</text>
+		</g>
+		<animateMotion dur="4.8604215s" repeatCount="indefinite">
+			<mpath href="#SaturnPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Titan_(moon)'><!-- Titan -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/4/45/Titan_in_true_color.jpg" x="985" y="101" height="9" width="9"/>
+			<text x="967" y="120" font-family="Verdana" font-size="8" fill="white">Titan</text>
+		</g>
+		<animateMotion dur="4.8604215s" repeatCount="indefinite">
+			<mpath href="#SaturnPath"/>
+		</animateMotion>
+	</a>
+	<a href='https://en.wikipedia.org/wiki/Iaptus_(moon)'><!-- Iaptus -->
+		<g class='hovertext'>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/b/b7/Iapetus_706_1419_1.jpg" x="994" y="96" height="9" width="9"/>
+			<text x="967" y="120" font-family="Verdana" font-size="8" fill="white">Iaptus</text>
+		</g>
+		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
 		</animateMotion>
 	</a>
