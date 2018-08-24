@@ -137,27 +137,29 @@
 		<text x="5010" y="190" font-family="Verdana" font-size="10" fill="white">Scattered Disc Objects</text>
 	</a>
 
-	<circle cx="0" cy="100" r="3496.5" stroke="rgb(64,128,64)" stroke-width="55" fill="none"/><!-- 4:5 -->
-	<circle cx="0" cy="100" r="3644.5" stroke="rgb(64,128,64)" stroke-width="55" fill="none"/><!-- 3:4 -->
-	<circle cx="0" cy="100" r="4126" stroke="rgb(64,128,64)" stroke-width="36" fill="none"/><!-- 5:8 -->
-	<circle cx="0" cy="100" r="4224" stroke="rgb(64,128,64)" stroke-width="70" fill="none"/><!-- 3:5 -->
-	<circle cx="0" cy="100" r="4377.5" stroke="rgb(64,128,64)" stroke-width="69" fill="none"/><!-- 4:7 -->
-	<circle cx="0" cy="100" r="4456" stroke="rgb(64,128,64)" stroke-width="54" fill="none"/><!-- 5:9 -->
-	<circle cx="0" cy="100" r="4514.5" stroke="rgb(64,128,64)" stroke-width="53" fill="none"/><!-- 6:11 -->
-	<circle cx="0" cy="100" r="4789" stroke="rgb(64,128,64)" stroke-width="124" fill="none"/><!-- Twotinos -->
-	<circle cx="0" cy="100" r="5167.5" stroke="rgb(64,128,64)" stroke-width="65" fill="none"/><!-- 4:9 -->
-	<circle cx="0" cy="100" r="5553" stroke="rgb(64,128,64)" stroke-width="176" fill="none"/><!-- 2:5 -->
-	
-	<text x="3485" y="190" font-family="Verdana" font-size="10" fill="white">4:5</text>
-	<text x="3635" y="190" font-family="Verdana" font-size="10" fill="white">3:4</text>
-	<text x="4115" y="190" font-family="Verdana" font-size="10" fill="white">5:8</text>
-	<text x="4215" y="190" font-family="Verdana" font-size="10" fill="white">3:5</text>
-	<text x="4370" y="190" font-family="Verdana" font-size="10" fill="white">4:7</text>
-	<text x="4445" y="190" font-family="Verdana" font-size="10" fill="white">5:9</text>
-	<text x="4500" y="190" font-family="Verdana" font-size="10" fill="white">6:11</text>
-	<text x="4750" y="190" font-family="Verdana" font-size="10" fill="white">Twotinos (1:2)</text>
-	<text x="5160" y="190" font-family="Verdana" font-size="10" fill="white">4:9</text>
-	<text x="5545" y="190" font-family="Verdana" font-size="10" fill="white">2:5</text>
+	<a href='https://en.wikipedia.org/wiki/Resonant_trans-Neptunian_object'><!-- Resonant TNOs -->
+		<circle cx="0" cy="100" r="3496.5" stroke="rgb(64,128,64)" stroke-width="55" fill="none"/><!-- 4:5 -->
+		<circle cx="0" cy="100" r="3644.5" stroke="rgb(64,128,64)" stroke-width="55" fill="none"/><!-- 3:4 -->
+		<circle cx="0" cy="100" r="4126" stroke="rgb(64,128,64)" stroke-width="36" fill="none"/><!-- 5:8 -->
+		<circle cx="0" cy="100" r="4224" stroke="rgb(64,128,64)" stroke-width="70" fill="none"/><!-- 3:5 -->
+		<circle cx="0" cy="100" r="4377.5" stroke="rgb(64,128,64)" stroke-width="69" fill="none"/><!-- 4:7 -->
+		<circle cx="0" cy="100" r="4456" stroke="rgb(64,128,64)" stroke-width="54" fill="none"/><!-- 5:9 -->
+		<circle cx="0" cy="100" r="4514.5" stroke="rgb(64,128,64)" stroke-width="53" fill="none"/><!-- 6:11 -->
+		<circle cx="0" cy="100" r="4789" stroke="rgb(64,128,64)" stroke-width="124" fill="none"/><!-- Twotinos -->
+		<circle cx="0" cy="100" r="5167.5" stroke="rgb(64,128,64)" stroke-width="65" fill="none"/><!-- 4:9 -->
+		<circle cx="0" cy="100" r="5553" stroke="rgb(64,128,64)" stroke-width="176" fill="none"/><!-- 2:5 -->
+		
+		<text x="3485" y="190" font-family="Verdana" font-size="10" fill="white">4:5</text>
+		<text x="3635" y="190" font-family="Verdana" font-size="10" fill="white">3:4</text>
+		<text x="4115" y="190" font-family="Verdana" font-size="10" fill="white">5:8</text>
+		<text x="4215" y="190" font-family="Verdana" font-size="10" fill="white">3:5</text>
+		<text x="4370" y="190" font-family="Verdana" font-size="10" fill="white">4:7</text>
+		<text x="4445" y="190" font-family="Verdana" font-size="10" fill="white">5:9</text>
+		<text x="4500" y="190" font-family="Verdana" font-size="10" fill="white">6:11</text>
+		<text x="4750" y="190" font-family="Verdana" font-size="10" fill="white">Twotinos (1:2)</text>
+		<text x="5160" y="190" font-family="Verdana" font-size="10" fill="white">4:9</text>
+		<text x="5545" y="190" font-family="Verdana" font-size="10" fill="white">2:5</text>
+	</a>
 	
 	<a href='https://en.wikipedia.org/wiki/Sun'><!-- Sun -->
 		<g class='hovertext'>
