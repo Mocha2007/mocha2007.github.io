@@ -82,11 +82,15 @@
 		<circle cx="0" cy="100" r="228" stroke="rgb(64,96,128)" stroke-width="44" fill="none"/><!-- inner belt -->
 		<circle cx="0" cy="100" r="266" stroke="rgb(128,112,64)" stroke-width="32" fill="none"/><!-- middle belt -->
 		<circle cx="0" cy="100" r="305" stroke="rgb(64,128,64)" stroke-width="46" fill="none"/><!-- outer belt -->
-		<text x="190" y="190" font-family="Verdana" font-size="10" fill="white">Asteroid Belt</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Nysa_family'><!-- Nysa Family -->
+		<circle cx="0" cy="100" r="245.5" stroke="blue" stroke-opacity="0.2" stroke-width="9" fill="none"/>
+		<text x="246" y="50" font-family="Verdana" font-size="4" fill="blue">Nysa Family</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Hilda_asteroid'><!-- Hildas -->
-		<circle cx="0" cy="100" r="395" stroke="rgb(211,147,0)" stroke-opacity="0.5" stroke-width="50" fill="none"/><!-- inner belt -->
+		<circle cx="0" cy="100" r="395" stroke="rgb(211,147,0)" stroke-opacity="0.5" stroke-width="50" fill="none"/>
 		<text x="370" y="10" font-family="Verdana" font-size="8" fill="orange">Hildas</text>
 	</a>
 
@@ -106,6 +110,10 @@
 		<circle cx="0" cy="100" r="347" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
 		<circle cx="0" cy="100" r="370" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
 		<text x="222" y="10" font-family="Verdana" font-size="8" fill="pink">Kirkwood Gaps</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Asteroid_belt'><!-- asteroid belt part 2 -->
+		<text x="190" y="190" font-family="Verdana" font-size="10" fill="white">Asteroid Belt</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Frost_line_(astrophysics)'><!-- Frost Line -->
