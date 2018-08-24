@@ -6,7 +6,7 @@
 	<defs>
 		<polygon id='arrow' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="red" transform="scale(.5)"/>
 		<polygon id='arrowai' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="darkblue" transform="scale(.25)"/>
-		<polygon id='arrowam' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="rgb(16,16,0)" transform="scale(.25)"/>
+		<polygon id='arrowam' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="rgb(48,48,0)" transform="scale(.25)"/>
 		<polygon id='arrowao' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="rgb(0,96,0)" transform="scale(.25)"/>
 	</defs>
 	
