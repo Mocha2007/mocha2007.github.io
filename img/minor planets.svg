@@ -256,6 +256,12 @@
 		<text x="550" y="190" font-family="Verdana" font-size="10" fill="white">Centaurs</text>
 	</a>
 
+	<a class='hoverrange' href='https://en.wikipedia.org/wiki/1911_Schubart'><!-- Schubart Family -->
+		<circle cx="0" cy="100" r="396.5" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="3" fill="none"/>
+		<use x="395" y="63" href="#arrowam"/>
+		<text x="405" y="50" font-family="Verdana" font-size="4" fill="olive">Schubart</text>
+	</a>
+
 	<a href='https://en.wikipedia.org/wiki/Jupiter_trojan'><!-- Trojans -->
 		<circle cx="0" cy="100" r="522.5" stroke="rgb(106,215,104)" stroke-opacity="0.5" stroke-width="35" fill="none"/><!-- inner belt -->
 		<text x="500" y="10" font-family="Verdana" font-size="8" fill="rgb(128,255,128)">Greeks</text>
