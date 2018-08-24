@@ -266,7 +266,7 @@
 
 	<circle cx="0" cy="100" r="39" stroke="white" stroke-width="1" fill="none"/><!-- Mercury orbit -->
 	<a href='https://en.wikipedia.org/wiki/Mercury_(planet)'><!-- Mercury -->
-		<path d="M -39 39 L -21 35 L -11 27 L -4 18 L 0 0 L -4 -18 L -11 -27 L -21 -35 L -39 -39" fill="none" id="MercuryPath"/>
+		<path d="M -39 39 A 1 1 0 0 0 -39 -39" fill="none" id="MercuryPath"/>
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg" x="31" y="92" height="16" width="16" transform="rotate(180 39 100)"/>
 			<text x="47" y="102" font-family="Verdana" font-size="8" fill="white">Mercury</text>
@@ -278,7 +278,7 @@
 
 	<circle cx="0" cy="100" r="72" stroke="white" stroke-width="1" fill="none"/><!-- Venus orbit -->
 	<a href='https://en.wikipedia.org/wiki/Venus'><!-- Venus -->
-		<path d="M -72 72 L -39 64 L -20 51 L -7 32 L 0 0 L -7 -32 L -20 -51 L -39 -64 L -72 -72" fill="none" id="VenusPath"/>
+		<path d="M -72 72 A 1 1 0 0 0 -72 -72" fill="none" id="VenusPath"/>
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg" x="64" y="92" height="16" width="16"/>
 			<text x="80" y="102" font-family="Verdana" font-size="8" fill="white">Venus</text>
@@ -290,7 +290,7 @@
 
 	<circle cx="0" cy="100" r="100" stroke="white" stroke-width="1" fill="none"/><!-- Earth orbit -->
 	<a href='https://en.wikipedia.org/wiki/Earth'><!-- Earth -->
-		<path d="M -100 100 L -55 90 L -29 71 L -10 47 L 0 0 L -10 -47 L -29 -71 L -55 -90 L -100 -100" fill="none" id="EarthPath"/>
+		<path d="M -100 100 A 1 1 0 0 0 -100 -100" fill="none" id="EarthPath"/>
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" x="92" y="92" height="16" width="16"/>
 			<text x="116" y="102" font-family="Verdana" font-size="8" fill="white">Earth</text>
@@ -313,7 +313,7 @@
 
 	<circle cx="0" cy="100" r="152" stroke="white" stroke-width="1" fill="none"/><!-- Mars orbit -->
 	<a href='https://en.wikipedia.org/wiki/Mars'><!-- Mars -->
-		<path d="M -37 100 L -8 51 L 0 0 L -8 -51 L -37 -100" fill="none" id="MarsPath"/>
+		<path d="M -37 100 A 152 152 0 0 0 -37 -100" fill="none" id="MarsPath"/>
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" x="144" y="92" height="16" width="16"/>
 			<text x="168" y="102" font-family="Verdana" font-size="8" fill="white">Mars</text>
@@ -345,7 +345,7 @@
 
 	<circle cx="0" cy="100" r="277" stroke="silver" stroke-width="1" fill="none"/><!-- Ceres orbit -->
 	<a href='https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)'><!-- Ceres -->
-		<path d="M -18 100 L 0 0 L -18 -100" fill="none" id="CeresPath"/>
+		<path d="M -18 100 A 277 277 0 0 0 -18 -100" fill="none" id="CeresPath"/>
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/5/58/Ceres_-_RC3_-_Haulani_Crater_(22381131691).jpg" x="270" y="92" height="14" width="14" transform="rotate(180 277 100)"/>
 			<text x="285" y="103" font-family="Verdana" font-size="8" fill="white">Ceres</text>
@@ -358,7 +358,7 @@
 	<circle cx="0" cy="100" r="520" stroke="white" stroke-width="1" fill="none"/><!-- Jupiter orbit -->
 	<a href='https://en.wikipedia.org/wiki/Jupiter'><!-- Jupiter -->
 		<text x="550" y="110" font-family="Verdana" font-size="25" fill="white">Jupiter</text>
-		<path d="M -9 100 L 0 0 L -9 -100" fill="none" id="JupiterPath"/>
+		<path d="M -9 100 A 520 520 0 0 0 -9 -100" fill="none" id="JupiterPath"/>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg" x="511" y="92" height="18" width="18"/>
 		<animateMotion dur="3.61132s" repeatCount="indefinite"> <!-- 0.06088888888888888888888888888889 of orbit visible -->
 			<mpath href="#JupiterPath"/>
@@ -409,7 +409,7 @@
 	<circle cx="0" cy="100" r="958" stroke="white" stroke-width="1" fill="none"/><!-- Saturn orbit -->
 	<a href='https://en.wikipedia.org/wiki/Saturn'><!-- Saturn -->
 		<text x="1010" y="110" font-family="Verdana" font-size="25" fill="white">Saturn</text>
-		<path d="M -5 100 L 0 0 L -5 -100" fill="none" id="SaturnPath"/>
+		<path d="M -5 100 A 958 958 0 0 0 -5 -100" fill="none" id="SaturnPath"/>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/2/29/Saturn_Storm.jpg" x="949" y="92" height="18" width="18"/>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite"> <!-- 0.033 of orbit visible -->
 			<mpath href="#SaturnPath"/>
@@ -483,15 +483,14 @@
 		<text x="1605" y="97" font-family="Verdana" font-size="8" fill="white">Chariklo</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/5/51/Chariklo_with_rings_eso1410b.jpg" x="1582" y="88" height="12"/>
 	</a>
-	
-	<path d="M 0 100 L 0 -100" fill="none" id="OuterPath"/>
 
 	<circle cx="0" cy="100" r="1922" stroke="white" stroke-width="1" fill="none"/><!-- Uranus orbit -->
 	<a href='https://en.wikipedia.org/wiki/Uranus'><!-- Uranus -->
 		<text x="1960" y="110" font-family="Verdana" font-size="25" fill="white">Uranus</text>
+		<path d="M -3 100 A 1922 1922 0 0 0 -3 -100" fill="none" id="UranusPath"/>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg" x="1913" y="92" height="18" width="18"/>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite"> <!-- 0.016389 of orbit visible -->
-			<mpath href="#OuterPath"/>
+			<mpath href="#UranusPath"/>
 		</animateMotion>
 	</a>
 	<a href='https://en.wikipedia.org/wiki/Miranda_(moon)'><!-- Miranda -->
@@ -500,7 +499,7 @@
 			<text x="1931" y="120" font-family="Verdana" font-size="8" fill="white">Miranda</text>
 		</g>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite">
-			<mpath href="#OuterPath"/>
+			<mpath href="#UranusPath"/>
 		</animateMotion>
 	</a>
 	<a href='https://en.wikipedia.org/wiki/Ariel_(moon)'><!-- Ariel -->
@@ -509,7 +508,7 @@
 			<text x="1931" y="120" font-family="Verdana" font-size="8" fill="white">Ariel</text>
 		</g>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite">
-			<mpath href="#OuterPath"/>
+			<mpath href="#UranusPath"/>
 		</animateMotion>
 	</a>
 	<a href='https://en.wikipedia.org/wiki/Umbriel_(moon)'><!-- Umbriel -->
@@ -518,7 +517,7 @@
 			<text x="1931" y="120" font-family="Verdana" font-size="8" fill="white">Umbriel</text>
 		</g>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite">
-			<mpath href="#OuterPath"/>
+			<mpath href="#UranusPath"/>
 		</animateMotion>
 	</a>
 	<a href='https://en.wikipedia.org/wiki/Titania_(moon)'><!-- Titania -->
@@ -527,7 +526,7 @@
 			<text x="1931" y="120" font-family="Verdana" font-size="8" fill="white">Titania</text>
 		</g>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite">
-			<mpath href="#OuterPath"/>
+			<mpath href="#UranusPath"/>
 		</animateMotion>
 	</a>
 	<a href='https://en.wikipedia.org/wiki/Oberon_(moon)'><!-- Oberon -->
@@ -536,9 +535,11 @@
 			<text x="1931" y="120" font-family="Verdana" font-size="8" fill="white">Oberon</text>
 		</g>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite">
-			<mpath href="#OuterPath"/>
+			<mpath href="#UranusPath"/>
 		</animateMotion>
 	</a>
+	
+	<path d="M 0 100 L 0 -100" fill="none" id="OuterPath"/>
 
 	<circle cx="0" cy="100" r="3011" stroke="white" stroke-width="1" fill="none"/><!-- Neptune orbit -->
 	<a href='https://en.wikipedia.org/wiki/Neptune'><!-- Neptune -->
