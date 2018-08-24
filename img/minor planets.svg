@@ -155,7 +155,7 @@
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Themis_family'><!-- Themis Family -->
-		<circle cx="0" cy="100" r="316" stroke="darkblue" stroke-opacity="0.2" stroke-width="18" fill="none"/>
+		<circle cx="0" cy="100" r="316" stroke="darkblue" stroke-opacity="0.2" stroke-width="16" fill="none"/>
 		<use x="315" y="73" href="#arrow2"/>
 		<text x="325" y="60" font-family="Verdana" font-size="4" fill="darkblue">Themis Family</text>
 	</a>
