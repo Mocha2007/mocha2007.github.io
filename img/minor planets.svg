@@ -19,7 +19,7 @@
 		.hoverrange circle,.hoverrange use{display:none;}
 		.hoverrange:hover circle,.hoverrange:hover use{display:block;}
 		.hoverrange text{text-shadow:#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px;}
-		#af{font-style:italic;}
+		.i{font-style:italic;}
 	</style>
 	
 	<script type="text/javascript">
@@ -81,7 +81,7 @@
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Solar_System#Inner_Solar_System'><!-- inner solar system part 2 -->
-		<text x="10" y="190" font-family="Verdana" font-size="10" fill="white">Inner Solar System</text>
+		<text x="10" y="195" font-family="Verdana" font-size="10" fill="white">Inner Solar System</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Asteroid_belt'>
@@ -236,11 +236,14 @@
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Asteroid_family'><!-- asteroid families label -->
-		<text id='af' x="247" y="20" font-family="Verdana" font-size="6" fill="white">Asteroid Families</text>
+		<text class='i' x="247" y="20" font-family="Verdana" font-size="6" fill="white">Asteroid Families</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Asteroid_belt'><!-- asteroid belt part 2 -->
-		<text x="190" y="190" font-family="Verdana" font-size="10" fill="white">Asteroid Belt</text>
+		<text x="215" y="195" font-family="Verdana" font-size="10" fill="white">Asteroid Belt</text>
+		<text class='i' x="204" y="180" font-family="Verdana" font-size="8" fill="darkblue">Inner</text>
+		<text class='i' x="242" y="180" font-family="Verdana" font-size="8" fill="rgb(64,64,0)">Middle</text>
+		<text class='i' x="284" y="180" font-family="Verdana" font-size="8" fill="darkgreen">Outer</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Frost_line_(astrophysics)'><!-- Frost Line -->
@@ -714,7 +717,7 @@
 		<circle cx="0" cy="0" r="20" fill="black" stroke="cyan" stroke-width="1" onclick='toggle();'/>
 		<text x="0" y="30" font-family="Verdana" font-size="8" fill="red">Pause Inner Solar System for Info</text>
 	</g>
-	<text x="4" y="14" font-family="Times New Roman" font-size="18" fill="cyan" font-style="italic" onclick='toggle();'>i</text>
+	<text class='i' x="4" y="14" font-family="Times New Roman" font-size="18" fill="cyan" onclick='toggle();'>i</text>
 	
 	<!-- permafrost -->
 	<g class='hovertext'>
