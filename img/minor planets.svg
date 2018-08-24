@@ -129,14 +129,20 @@
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Vesta_family'><!-- Vesta Family -->
 		<circle cx="0" cy="100" r="237" stroke="darkblue" stroke-opacity="0.2" stroke-width="22" fill="none"/>
-		<use x="229" y="43" href="#arrowai"/>
-		<text x="239" y="30" font-family="Verdana" font-size="4" fill="darkblue">Vesta</text>
+		<use x="235" y="73" href="#arrowai"/>
+		<text x="245" y="60" font-family="Verdana" font-size="4" fill="darkblue">Vesta</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Phocaea_family'><!-- Phocaea Family -->
 		<circle cx="0" cy="100" r="237.5" stroke="darkblue" stroke-opacity="0.2" stroke-width="25" fill="none"/>
-		<use x="232" y="53" href="#arrowai"/>
-		<text x="242" y="40" font-family="Verdana" font-size="4" fill="darkblue">Phocaea</text>
+		<use x="232" y="43" href="#arrowai"/>
+		<text x="242" y="30" font-family="Verdana" font-size="4" fill="darkblue">Phocaea</text>
+	</a>
+
+	<a class='hoverrange' href='https://en.wikipedia.org/wiki/163_Erigone'><!-- Erigone Family -->
+		<circle cx="0" cy="100" r="238.5" stroke="darkblue" stroke-opacity="0.2" stroke-width="3" fill="none"/>
+		<use x="236" y="63" href="#arrowai"/>
+		<text x="246" y="40" font-family="Verdana" font-size="4" fill="darkblue">Erigone</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Massalia_family'><!-- Massalia Family -->
@@ -147,14 +153,14 @@
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Nysa_family'><!-- Nysa Family -->
 		<circle cx="0" cy="100" r="245.5" stroke="darkblue" stroke-opacity="0.2" stroke-width="9" fill="none"/>
-		<use x="244" y="73" href="#arrowai"/>
-		<text x="254" y="60" font-family="Verdana" font-size="4" fill="darkblue">Nysa</text>
+		<use x="244" y="83" href="#arrowai"/>
+		<text x="254" y="70" font-family="Verdana" font-size="4" fill="darkblue">Nysa</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Maria_family'><!-- Maria Family -->
 		<circle cx="0" cy="100" r="255.5" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="9" fill="none"/>
-		<use x="255" y="83" href="#arrowam"/>
-		<text x="265" y="70" font-family="Verdana" font-size="4" fill="olive">Maria</text>
+		<use x="255" y="93" href="#arrowam"/>
+		<text x="265" y="80" font-family="Verdana" font-size="4" fill="olive">Maria</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Eunomia_family'><!-- Eunomia Family -->
