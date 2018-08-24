@@ -92,7 +92,7 @@
 
 	<a href='https://en.wikipedia.org/wiki/Hilda_asteroid'><!-- Hildas -->
 		<circle cx="0" cy="100" r="395" stroke="rgb(211,147,0)" stroke-opacity="0.5" stroke-width="50" fill="none"/>
-		<text x="370" y="10" font-family="Verdana" font-size="8" fill="orange">Hildas</text>
+		<text class='i' x="375" y="180" font-family="Verdana" font-size="8" fill="orange">Hildas</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Kirkwood_gap'><!-- Kirkwood Gaps -->
