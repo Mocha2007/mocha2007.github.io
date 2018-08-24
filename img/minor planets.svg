@@ -165,8 +165,14 @@
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Eunomia_family'><!-- Eunomia Family -->
 		<circle cx="0" cy="100" r="262.5" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="19" fill="none"/>
-		<use x="257" y="43" href="#arrowam"/>
-		<text x="267" y="30" font-family="Verdana" font-size="4" fill="olive">Eunomia</text>
+		<use x="259" y="83" href="#arrowam"/>
+		<text x="269" y="70" font-family="Verdana" font-size="4" fill="olive">Eunomia</text>
+	</a>
+
+	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Juno_clump'><!-- Juno Family -->
+		<circle cx="0" cy="100" r="266" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="4" fill="none"/>
+		<use x="260" y="43" href="#arrowam"/>
+		<text x="270" y="30" font-family="Verdana" font-size="4" fill="olive">Juno</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Adeona_family'><!-- Adeona Family -->
