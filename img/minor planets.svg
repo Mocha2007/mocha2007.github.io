@@ -195,14 +195,14 @@
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Koronis_family'><!-- Koronis Family -->
 		<circle cx="0" cy="100" r="288" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="4" fill="none"/>
-		<use x="282" y="43" href="#arrowao"/>
-		<text x="292" y="30" font-family="Verdana" font-size="4" fill="darkgreen">Koronis</text>
+		<use x="284" y="53" href="#arrowao"/>
+		<text x="294" y="40" font-family="Verdana" font-size="4" fill="darkgreen">Koronis</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Eos_family'><!-- Eos Family -->
 		<circle cx="0" cy="100" r="301" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="4" fill="none"/>
-		<use x="297" y="53" href="#arrowao"/>
-		<text x="307" y="40" font-family="Verdana" font-size="4" fill="darkgreen">Eos</text>
+		<use x="299" y="63" href="#arrowao"/>
+		<text x="309" y="50" font-family="Verdana" font-size="4" fill="darkgreen">Eos</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Hygiea_family'><!-- Hygiea Family -->
