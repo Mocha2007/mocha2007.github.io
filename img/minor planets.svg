@@ -86,6 +86,29 @@
 		<circle cx="0" cy="100" r="305" stroke="rgb(64,128,64)" stroke-width="46" fill="none"/><!-- outer belt -->
 	</a>
 
+	<a href='https://en.wikipedia.org/wiki/Hilda_asteroid'><!-- Hildas -->
+		<circle cx="0" cy="100" r="395" stroke="rgb(211,147,0)" stroke-opacity="0.5" stroke-width="50" fill="none"/>
+		<text x="370" y="10" font-family="Verdana" font-size="8" fill="orange">Hildas</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Kirkwood_gap'><!-- Kirkwood Gaps -->
+		<circle cx="0" cy="100" r="206" stroke="pink" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="250" stroke="pink" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="282" stroke="pink" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="295" stroke="pink" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="328" stroke="pink" stroke-width="1" fill="none"/>
+		<!-- minors -->
+		<circle cx="0" cy="100" r="190" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="225" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="233" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="271" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="303" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="307.5" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="347" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="370" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+		<text x="222" y="10" font-family="Verdana" font-size="8" fill="pink">Kirkwood Gaps</text>
+	</a>
+
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Flora_family'><!-- Flora Family -->
 		<circle cx="0" cy="100" r="225" stroke="darkblue" stroke-opacity="0.2" stroke-width="16" fill="none"/>
 		<use x="217" y="43" href="#arrow2"/>
@@ -108,29 +131,6 @@
 		<circle cx="0" cy="100" r="301" stroke="darkblue" stroke-opacity="0.2" stroke-width="4" fill="none"/>
 		<use x="298" y="63" href="#arrow2"/>
 		<text x="308" y="50" font-family="Verdana" font-size="4" fill="darkblue">Eos Family</text>
-	</a>
-
-	<a href='https://en.wikipedia.org/wiki/Hilda_asteroid'><!-- Hildas -->
-		<circle cx="0" cy="100" r="395" stroke="rgb(211,147,0)" stroke-opacity="0.5" stroke-width="50" fill="none"/>
-		<text x="370" y="10" font-family="Verdana" font-size="8" fill="orange">Hildas</text>
-	</a>
-
-	<a href='https://en.wikipedia.org/wiki/Kirkwood_gap'><!-- Kirkwood Gaps -->
-		<circle cx="0" cy="100" r="206" stroke="pink" stroke-width="1" fill="none"/>
-		<circle cx="0" cy="100" r="250" stroke="pink" stroke-width="1" fill="none"/>
-		<circle cx="0" cy="100" r="282" stroke="pink" stroke-width="1" fill="none"/>
-		<circle cx="0" cy="100" r="295" stroke="pink" stroke-width="1" fill="none"/>
-		<circle cx="0" cy="100" r="328" stroke="pink" stroke-width="1" fill="none"/>
-		<!-- minors -->
-		<circle cx="0" cy="100" r="190" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
-		<circle cx="0" cy="100" r="225" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
-		<circle cx="0" cy="100" r="233" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
-		<circle cx="0" cy="100" r="271" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
-		<circle cx="0" cy="100" r="303" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
-		<circle cx="0" cy="100" r="307.5" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
-		<circle cx="0" cy="100" r="347" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
-		<circle cx="0" cy="100" r="370" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
-		<text x="222" y="10" font-family="Verdana" font-size="8" fill="pink">Kirkwood Gaps</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Asteroid_belt'><!-- asteroid belt part 2 -->
