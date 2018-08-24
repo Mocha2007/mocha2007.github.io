@@ -20,7 +20,7 @@
 		.hoverrange:hover circle,.hoverrange:hover use{display:block;}
 		.hoverrange text{text-shadow:#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px;}
 		.i{font-style:italic;}
-		svg{font-family="Verdana"}
+		svg{font-family:"Verdana";}
 	</style>
 	
 	<script type="text/javascript">
@@ -78,11 +78,11 @@
 
 	<a href='https://en.wikipedia.org/wiki/Circumstellar_habitable_zone'><!-- Kasting et al. 1993 -->
 		<circle cx="0" cy="100" r="116" stroke="rgb(64,128,64)" stroke-width="42" fill="none"/>
-		<text x="50" y="10" font-family="Verdana" font-size="8" fill="lime">Habitable Zone</text>
+		<text x="50" y="10" font-size="8" fill="lime">Habitable Zone</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Solar_System#Inner_Solar_System'><!-- inner solar system part 2 -->
-		<text x="10" y="195" font-family="Verdana" font-size="10" fill="white">Inner Solar System</text>
+		<text x="10" y="195" font-size="10" fill="white">Inner Solar System</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Asteroid_belt'>
@@ -93,7 +93,7 @@
 
 	<a href='https://en.wikipedia.org/wiki/Hilda_asteroid'><!-- Hildas -->
 		<circle cx="0" cy="100" r="395" stroke="rgb(211,147,0)" stroke-opacity="0.5" stroke-width="50" fill="none"/>
-		<text class='i' x="375" y="180" font-family="Verdana" font-size="8" fill="orange">Hildas</text>
+		<text class='i' x="375" y="180" font-size="8" fill="orange">Hildas</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Kirkwood_gap'><!-- Kirkwood Gaps -->
@@ -111,7 +111,7 @@
 		<circle cx="0" cy="100" r="307.5" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
 		<circle cx="0" cy="100" r="347" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
 		<circle cx="0" cy="100" r="370" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
-		<text x="222" y="10" font-family="Verdana" font-size="8" fill="pink">Kirkwood Gaps</text>
+		<text x="222" y="10" font-size="8" fill="pink">Kirkwood Gaps</text>
 	</a>
 	
 	<!-- asteroid families -->
@@ -119,181 +119,181 @@
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Hungaria_asteroid'><!-- Hungaria Family -->
 		<circle cx="0" cy="100" r="189" stroke="darkblue" stroke-opacity="0.2" stroke-width="22" fill="none"/>
 		<use x="185" y="63" href="#arrowai"/>
-		<text x="195" y="50" font-family="Verdana" font-size="4" fill="darkblue">Hungaria</text>
+		<text x="195" y="50" font-size="4" fill="darkblue">Hungaria</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Flora_family'><!-- Flora Family -->
 		<circle cx="0" cy="100" r="225" stroke="darkblue" stroke-opacity="0.2" stroke-width="16" fill="none"/>
 		<use x="222" y="63" href="#arrowai"/>
-		<text x="232" y="50" font-family="Verdana" font-size="4" fill="darkblue">Flora</text>
+		<text x="232" y="50" font-size="4" fill="darkblue">Flora</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Vesta_family'><!-- Vesta Family -->
 		<circle cx="0" cy="100" r="237" stroke="darkblue" stroke-opacity="0.2" stroke-width="22" fill="none"/>
 		<use x="235" y="73" href="#arrowai"/>
-		<text x="245" y="60" font-family="Verdana" font-size="4" fill="darkblue">Vesta</text>
+		<text x="245" y="60" font-size="4" fill="darkblue">Vesta</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Phocaea_family'><!-- Phocaea Family -->
 		<circle cx="0" cy="100" r="237.5" stroke="darkblue" stroke-opacity="0.2" stroke-width="25" fill="none"/>
 		<use x="232" y="43" href="#arrowai"/>
-		<text x="242" y="30" font-family="Verdana" font-size="4" fill="darkblue">Phocaea</text>
+		<text x="242" y="30" font-size="4" fill="darkblue">Phocaea</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/163_Erigone'><!-- Erigone Family -->
 		<circle cx="0" cy="100" r="238.5" stroke="darkblue" stroke-opacity="0.2" stroke-width="3" fill="none"/>
 		<use x="236" y="63" href="#arrowai"/>
-		<text x="246" y="40" font-family="Verdana" font-size="4" fill="darkblue">Erigone</text>
+		<text x="246" y="40" font-size="4" fill="darkblue">Erigone</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Massalia_family'><!-- Massalia Family -->
 		<circle cx="0" cy="100" r="241" stroke="darkblue" stroke-opacity="0.2" stroke-width="8" fill="none"/>
 		<use x="239" y="63" href="#arrowai"/>
-		<text x="249" y="50" font-family="Verdana" font-size="4" fill="darkblue">Massalia</text>
+		<text x="249" y="50" font-size="4" fill="darkblue">Massalia</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Nysa_family'><!-- Nysa Family -->
 		<circle cx="0" cy="100" r="245.5" stroke="darkblue" stroke-opacity="0.2" stroke-width="9" fill="none"/>
 		<use x="244" y="83" href="#arrowai"/>
-		<text x="254" y="70" font-family="Verdana" font-size="4" fill="darkblue">Nysa</text>
+		<text x="254" y="70" font-size="4" fill="darkblue">Nysa</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Maria_family'><!-- Maria Family -->
 		<circle cx="0" cy="100" r="255.5" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="9" fill="none"/>
 		<use x="255" y="73" href="#arrowam"/>
-		<text x="265" y="60" font-family="Verdana" font-size="4" fill="olive">Maria</text>
+		<text x="265" y="60" font-size="4" fill="olive">Maria</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Eunomia_family'><!-- Eunomia Family -->
 		<circle cx="0" cy="100" r="262.5" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="19" fill="none"/>
 		<use x="259" y="83" href="#arrowam"/>
-		<text x="269" y="70" font-family="Verdana" font-size="4" fill="olive">Eunomia</text>
+		<text x="269" y="70" font-size="4" fill="olive">Eunomia</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Juno_clump'><!-- Juno Family -->
 		<circle cx="0" cy="100" r="266" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="4" fill="none"/>
 		<use x="260" y="43" href="#arrowam"/>
-		<text x="270" y="30" font-family="Verdana" font-size="4" fill="olive">Juno</text>
+		<text x="270" y="30" font-size="4" fill="olive">Juno</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Adeona_family'><!-- Adeona Family -->
 		<circle cx="0" cy="100" r="267" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="2" fill="none"/>
 		<use x="263" y="53" href="#arrowam"/>
-		<text x="273" y="40" font-family="Verdana" font-size="4" fill="olive">Adeona</text>
+		<text x="273" y="40" font-size="4" fill="olive">Adeona</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/2085_Henan'><!-- Henan Family -->
 		<circle cx="0" cy="100" r="272.5" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="3" fill="none"/>
 		<use x="270" y="63" href="#arrowam"/>
-		<text x="280" y="50" font-family="Verdana" font-size="4" fill="olive">Henan</text>
+		<text x="280" y="50" font-size="4" fill="olive">Henan</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/847_Agnia'><!-- Agnia Family -->
 		<circle cx="0" cy="100" r="277.5" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="3" fill="none"/>
 		<use x="277" y="73" href="#arrowam"/>
-		<text x="287" y="60" font-family="Verdana" font-size="4" fill="olive">Agnia</text>
+		<text x="287" y="60" font-size="4" fill="olive">Agnia</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Gefion_family'><!-- Gefion Family -->
 		<circle cx="0" cy="100" r="278" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="8" fill="none"/>
 		<use x="278" y="83" href="#arrowam"/>
-		<text x="288" y="70" font-family="Verdana" font-size="4" fill="olive">Gefion</text>
+		<text x="288" y="70" font-size="4" fill="olive">Gefion</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/1726_Hoffmeister'><!-- Hoffmeister Family -->
 		<circle cx="0" cy="100" r="278.5" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="1" fill="none"/>
 		<use x="278.5" y="93" href="#arrowam"/>
-		<text x="288.5" y="80" font-family="Verdana" font-size="4" fill="olive">Hoffmeister</text>
+		<text x="288.5" y="80" font-size="4" fill="olive">Hoffmeister</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Koronis_family'><!-- Koronis Family -->
 		<circle cx="0" cy="100" r="288" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="4" fill="none"/>
 		<use x="284" y="53" href="#arrowao"/>
-		<text x="294" y="40" font-family="Verdana" font-size="4" fill="darkgreen">Koronis</text>
+		<text x="294" y="40" font-size="4" fill="darkgreen">Koronis</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Eos_family'><!-- Eos Family -->
 		<circle cx="0" cy="100" r="301" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="4" fill="none"/>
 		<use x="299" y="63" href="#arrowao"/>
-		<text x="309" y="50" font-family="Verdana" font-size="4" fill="darkgreen">Eos</text>
+		<text x="309" y="50" font-size="4" fill="darkgreen">Eos</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Hygiea_family'><!-- Hygiea Family -->
 		<circle cx="0" cy="100" r="315" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="18" fill="none"/>
 		<use x="312" y="53" href="#arrowao"/>
-		<text x="322" y="40" font-family="Verdana" font-size="4" fill="darkgreen">Hygiea</text>
+		<text x="322" y="40" font-size="4" fill="darkgreen">Hygiea</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Themis_family'><!-- Themis Family -->
 		<circle cx="0" cy="100" r="316" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="16" fill="none"/>
 		<use x="315" y="63" href="#arrowao"/>
-		<text x="325" y="50" font-family="Verdana" font-size="4" fill="darkgreen">Themis</text>
+		<text x="325" y="50" font-size="4" fill="darkgreen">Themis</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/31_Euphrosyne'><!-- Euphrosyne Family -->
 		<circle cx="0" cy="100" r="317.5" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="5" fill="none"/>
 		<use x="317" y="73" href="#arrowao"/>
-		<text x="327" y="60" font-family="Verdana" font-size="4" fill="darkgreen">Euphrosyne</text>
+		<text x="327" y="60" font-size="4" fill="darkgreen">Euphrosyne</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Asteroid_family'><!-- asteroid families label -->
-		<text class='i' x="247" y="20" font-family="Verdana" font-size="6" fill="white">Asteroid Families</text>
+		<text class='i' x="247" y="20" font-size="6" fill="white">Asteroid Families</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Asteroid_belt'><!-- asteroid belt part 2 -->
-		<text x="215" y="195" font-family="Verdana" font-size="10" fill="white">Asteroid Belt</text>
-		<text class='i' x="204" y="180" font-family="Verdana" font-size="8" fill="darkblue">Inner</text>
-		<text class='i' x="242" y="180" font-family="Verdana" font-size="8" fill="rgb(64,64,0)">Middle</text>
-		<text class='i' x="284" y="180" font-family="Verdana" font-size="8" fill="darkgreen">Outer</text>
+		<text x="215" y="195" font-size="10" fill="white">Asteroid Belt</text>
+		<text class='i' x="204" y="180" font-size="8" fill="darkblue">Inner</text>
+		<text class='i' x="242" y="180" font-size="8" fill="rgb(64,64,0)">Middle</text>
+		<text class='i' x="284" y="180" font-size="8" fill="darkgreen">Outer</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Frost_line_(astrophysics)'><!-- Frost Line -->
 		<circle cx="0" cy="100" r="500" stroke="cyan" stroke-width="1" fill="none"/>
-		<text x="440" y="10" font-family="Verdana" font-size="8" fill="cyan">Frost Line</text>
+		<text x="440" y="10" font-size="8" fill="cyan">Frost Line</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Centaur_(minor_planet)'><!-- centaurs -->
 		<circle cx="0" cy="100" r="1765.5" stroke="rgb(128,96,64)" stroke-width="2491" fill="none"/>
-		<text x="550" y="190" font-family="Verdana" font-size="10" fill="white">Centaurs</text>
+		<text x="550" y="190" font-size="10" fill="white">Centaurs</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/1911_Schubart'><!-- Schubart Family -->
 		<circle cx="0" cy="100" r="396.5" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="3" fill="none"/>
 		<use x="395" y="63" href="#arrowam"/>
-		<text x="405" y="50" font-family="Verdana" font-size="4" fill="olive">Schubart</text>
+		<text x="405" y="50" font-size="4" fill="olive">Schubart</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Jupiter_trojan'><!-- Trojans -->
 		<circle cx="0" cy="100" r="522.5" stroke="rgb(106,215,104)" stroke-opacity="0.5" stroke-width="35" fill="none"/><!-- inner belt -->
-		<text x="500" y="10" font-family="Verdana" font-size="8" fill="rgb(128,255,128)">Greeks</text>
-		<text x="500" y="190" font-family="Verdana" font-size="8" fill="rgb(128,255,128)">Trojans</text>
+		<text x="500" y="10" font-size="8" fill="rgb(128,255,128)">Greeks</text>
+		<text x="500" y="190" font-size="8" fill="rgb(128,255,128)">Trojans</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/3548_Eurybates'><!-- Eurybates Family -->
 		<circle cx="0" cy="100" r="518.5" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="1" fill="none"/>
 		<use x="517.5" y="63" href="#arrowao"/>
-		<text x="527.5" y="50" font-family="Verdana" font-size="4" fill="darkgreen">Eurybates</text>
+		<text x="527.5" y="50" font-size="4" fill="darkgreen">Eurybates</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/4709_Ennomos'><!-- Ennomos Family -->
 		<circle cx="0" cy="100" r="518.5" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="11" fill="none"/>
 		<use x="518" y="73" href="#arrowao"/>
-		<text x="528" y="60" font-family="Verdana" font-size="4" fill="darkgreen">Ennomos</text>
+		<text x="528" y="60" font-size="4" fill="darkgreen">Ennomos</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Trans-Neptunian_object'><!-- TNOs -->
 		<circle cx="0" cy="100" r="6505.5" stroke="rgb(64,128,128)" stroke-width="6989" fill="none"/>
-		<text x="3050" y="190" font-family="Verdana" font-size="10" fill="white">Trans-Neptunian Objects</text>
+		<text x="3050" y="190" font-size="10" fill="white">Trans-Neptunian Objects</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Plutino'><!-- Plutinos -->
 		<circle cx="0" cy="100" r="3975" stroke="rgb(64,128,64)" stroke-width="150" fill="none"/>
-		<text x="3950" y="190" font-family="Verdana" font-size="10" fill="white">Plutinos (2:3)</text>
+		<text x="3950" y="190" font-size="10" fill="white">Plutinos (2:3)</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Scattered_disc'><!-- SDOs -->
 		<circle cx="0" cy="100" r="7500" stroke="rgb(64,96,128)" stroke-width="5000" fill="none"/>
-		<text x="5010" y="190" font-family="Verdana" font-size="10" fill="white">Scattered Disc Objects</text>
+		<text x="5010" y="190" font-size="10" fill="white">Scattered Disc Objects</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Resonant_trans-Neptunian_object'><!-- Resonant TNOs -->
@@ -308,27 +308,27 @@
 		<circle cx="0" cy="100" r="5167.5" stroke="rgb(64,128,64)" stroke-width="65" fill="none"/><!-- 4:9 -->
 		<circle cx="0" cy="100" r="5553" stroke="rgb(64,128,64)" stroke-width="176" fill="none"/><!-- 2:5 -->
 		
-		<text x="3485" y="190" font-family="Verdana" font-size="10" fill="white">4:5</text>
-		<text x="3635" y="190" font-family="Verdana" font-size="10" fill="white">3:4</text>
-		<text x="4115" y="190" font-family="Verdana" font-size="10" fill="white">5:8</text>
-		<text x="4215" y="190" font-family="Verdana" font-size="10" fill="white">3:5</text>
-		<text x="4370" y="190" font-family="Verdana" font-size="10" fill="white">4:7</text>
-		<text x="4445" y="190" font-family="Verdana" font-size="10" fill="white">5:9</text>
-		<text x="4500" y="190" font-family="Verdana" font-size="10" fill="white">6:11</text>
-		<text x="4750" y="190" font-family="Verdana" font-size="10" fill="white">Twotinos (1:2)</text>
-		<text x="5160" y="190" font-family="Verdana" font-size="10" fill="white">4:9</text>
-		<text x="5545" y="190" font-family="Verdana" font-size="10" fill="white">2:5</text>
+		<text x="3485" y="190" font-size="10" fill="white">4:5</text>
+		<text x="3635" y="190" font-size="10" fill="white">3:4</text>
+		<text x="4115" y="190" font-size="10" fill="white">5:8</text>
+		<text x="4215" y="190" font-size="10" fill="white">3:5</text>
+		<text x="4370" y="190" font-size="10" fill="white">4:7</text>
+		<text x="4445" y="190" font-size="10" fill="white">5:9</text>
+		<text x="4500" y="190" font-size="10" fill="white">6:11</text>
+		<text x="4750" y="190" font-size="10" fill="white">Twotinos (1:2)</text>
+		<text x="5160" y="190" font-size="10" fill="white">4:9</text>
+		<text x="5545" y="190" font-size="10" fill="white">2:5</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Kuiper_belt#Kuiper_cliff'><!-- Kuiper Cliff -->
 		<circle cx="0" cy="100" r="4771" stroke="pink" stroke-width="1" fill="none"/>
-		<text x="4771" y="10" font-family="Verdana" font-size="8" fill="pink">Kuiper Cliff</text>
+		<text x="4771" y="10" font-size="8" fill="pink">Kuiper Cliff</text>
 	</a>
 	
 	<a href='https://en.wikipedia.org/wiki/Sun'><!-- Sun -->
 		<g class='hovertext'>
 			<circle cx="0" cy="100" r="20.360429090893869764496599309054" fill="rgb(255,224,128)"/>
-			<text x="0" y="102" font-family="Verdana" font-size="8" fill="black">Sun</text>
+			<text x="0" y="102" font-size="8" fill="black">Sun</text>
 		</g>
 	</a>
 
@@ -339,7 +339,7 @@
 		<path d="M -39 39 A 1 1 0 0 0 -39 -39" fill="none" id="MercuryPath"/>
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg" x="31" y="92" height="16" width="16" transform="rotate(180 39 100)"/>
-			<text x="47" y="102" font-family="Verdana" font-size="8" fill="white">Mercury</text>
+			<text x="47" y="102" font-size="8" fill="white">Mercury</text>
 		</g>
 		<animateMotion dur="0.602115s" repeatCount="indefinite">
 			<mpath id='s1' href="#MercuryPath"/>
@@ -351,7 +351,7 @@
 		<path d="M -72 72 A 1 1 0 0 0 -72 -72" fill="none" id="VenusPath"/>
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg" x="64" y="92" height="16" width="16"/>
-			<text x="80" y="102" font-family="Verdana" font-size="8" fill="white">Venus</text>
+			<text x="80" y="102" font-size="8" fill="white">Venus</text>
 		</g>
 		<animateMotion dur="1.537995s" repeatCount="indefinite">
 			<mpath id='s2' href="#VenusPath"/>
@@ -363,10 +363,10 @@
 		<path d="M -100 100 A 1 1 0 0 0 -100 -100" fill="none" id="EarthPath"/>
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" x="92" y="92" height="16" width="16"/>
-			<text x="116" y="102" font-family="Verdana" font-size="8" fill="white">Earth</text>
+			<text x="116" y="102" font-size="8" fill="white">Earth</text>
 		</g>
 		<use class='invisible' id='t1' x="100" y="100" href="#arrow"/>
-		<text class='invisible' id='t2' x="125" y="75" font-family="Verdana" font-size="8" fill="red">You are here</text>
+		<text class='invisible' id='t2' x="125" y="75" font-size="8" fill="red">You are here</text>
 		<animateMotion dur="2.5s" repeatCount="indefinite">
 			<mpath id='s3' href="#EarthPath"/>
 		</animateMotion>
@@ -374,7 +374,7 @@
 	<a href='https://en.wikipedia.org/wiki/Moon'><!-- Moon -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg" x="108" y="92" height="8" width="8"/>
-			<text x="116" y="102" font-family="Verdana" font-size="8" fill="white">Moon</text>
+			<text x="116" y="102" font-size="8" fill="white">Moon</text>
 		</g>
 		<animateMotion dur="2.5s" repeatCount="indefinite">
 			<mpath id='s3.1' href="#EarthPath"/>
@@ -386,10 +386,10 @@
 		<path d="M -37 100 A 152 152 0 0 0 -37 -100" fill="none" id="MarsPath"/>
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" x="144" y="92" height="16" width="16"/>
-			<text x="168" y="102" font-family="Verdana" font-size="8" fill="white">Mars</text>
+			<text x="168" y="102" font-size="8" fill="white">Mars</text>
 		</g>
 		<use class='invisible' id='t3' x="152" y="100" href="#arrow"/>
-		<text class='invisible' id='t4' x="177" y="75" font-family="Verdana" font-size="8" fill="red">Elon Musk's Homeworld</text>
+		<text class='invisible' id='t4' x="177" y="75" font-size="8" fill="red">Elon Musk's Homeworld</text>
 		<animateMotion dur="2.5061292s" repeatCount="indefinite"> <!-- 0.23472222222222222222222222222222 of orbit visible -->
 			<mpath id='s4' href="#MarsPath"/>
 		</animateMotion>
@@ -397,7 +397,7 @@
 	<a href='https://en.wikipedia.org/wiki/Phobos_(moon)'><!-- Phobos -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/5/5c/Phobos_colour_2008.jpg" x="160" y="92" height="8" width="8"/>
-			<text x="168" y="102" font-family="Verdana" font-size="8" fill="white">Phobos</text>
+			<text x="168" y="102" font-size="8" fill="white">Phobos</text>
 		</g>
 		<animateMotion dur="2.5061292s" repeatCount="indefinite">
 			<mpath id='s4.1' href="#MarsPath"/>
@@ -406,7 +406,7 @@
 	<a href='https://en.wikipedia.org/wiki/Deimos_(moon)'><!-- Deimos -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/8/8d/Deimos-MRO.jpg" x="160" y="100" height="8" width="8"/>
-			<text x="168" y="102" font-family="Verdana" font-size="8" fill="white">Deimos</text>
+			<text x="168" y="102" font-size="8" fill="white">Deimos</text>
 		</g>
 		<animateMotion dur="2.5061292s" repeatCount="indefinite">
 			<mpath id='s4.2' href="#MarsPath"/>
@@ -418,7 +418,7 @@
 		<path d="M -18 100 A 277 277 0 0 0 -18 -100" fill="none" id="CeresPath"/>
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/5/58/Ceres_-_RC3_-_Haulani_Crater_(22381131691).jpg" x="270" y="92" height="14" width="14" transform="rotate(180 277 100)"/>
-			<text x="285" y="103" font-family="Verdana" font-size="8" fill="white">Ceres</text>
+			<text x="285" y="103" font-size="8" fill="white">Ceres</text>
 		</g>
 		<animateMotion dur="2.683s" repeatCount="indefinite"> <!-- 0.11666666666666666666666666666667 of orbit visible -->
 			<mpath id='sm1' href="#CeresPath"/>
@@ -427,7 +427,7 @@
 
 	<circle cx="0" cy="100" r="520" stroke="white" stroke-width="1" fill="none"/><!-- Jupiter orbit -->
 	<a href='https://en.wikipedia.org/wiki/Jupiter'><!-- Jupiter -->
-		<text x="550" y="110" font-family="Verdana" font-size="25" fill="white">Jupiter</text>
+		<text x="550" y="110" font-size="25" fill="white">Jupiter</text>
 		<path d="M -9 100 A 520 520 0 0 0 -9 -100" fill="none" id="JupiterPath"/>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg" x="511" y="92" height="18" width="18"/>
 		<animateMotion dur="3.61132s" repeatCount="indefinite"> <!-- 0.06088888888888888888888888888889 of orbit visible -->
@@ -437,7 +437,7 @@
 	<a href='https://en.wikipedia.org/wiki/Io_(moon)'><!-- Io -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/7/7b/Io_highest_resolution_true_color.jpg" x="529" y="92" height="9" width="9"/>
-			<text x="529" y="120" font-family="Verdana" font-size="8" fill="white">Io</text>
+			<text x="529" y="120" font-size="8" fill="white">Io</text>
 		</g>
 		<animateMotion dur="3.61132s" repeatCount="indefinite">
 			<mpath href="#JupiterPath"/>
@@ -446,7 +446,7 @@
 	<a href='https://en.wikipedia.org/wiki/Europa_(moon)'><!-- Europa -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/5/54/Europa-moon.jpg" x="529" y="101" height="9" width="9"/>
-			<text x="529" y="120" font-family="Verdana" font-size="8" fill="white">Europa</text>
+			<text x="529" y="120" font-size="8" fill="white">Europa</text>
 		</g>
 		<animateMotion dur="3.61132s" repeatCount="indefinite">
 			<mpath href="#JupiterPath"/>
@@ -455,7 +455,7 @@
 	<a href='https://en.wikipedia.org/wiki/Ganymede_(moon)'><!-- Ganymede -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/f/f2/Ganymede_g1_true-edit1.jpg" x="538" y="92" height="9" width="9"/>
-			<text x="529" y="120" font-family="Verdana" font-size="8" fill="white">Ganymede</text>
+			<text x="529" y="120" font-size="8" fill="white">Ganymede</text>
 		</g>
 		<animateMotion dur="3.61132s" repeatCount="indefinite">
 			<mpath href="#JupiterPath"/>
@@ -464,7 +464,7 @@
 	<a href='https://en.wikipedia.org/wiki/Callisto_(moon)'><!-- Callisto -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e9/Callisto.jpg" x="538" y="101" height="9" width="9"/>
-			<text x="529" y="120" font-family="Verdana" font-size="8" fill="white">Callisto</text>
+			<text x="529" y="120" font-size="8" fill="white">Callisto</text>
 		</g>
 		<animateMotion dur="3.61132s" repeatCount="indefinite">
 			<mpath href="#JupiterPath"/>
@@ -472,13 +472,13 @@
 	</a>
 
 	<a href="https://en.wikipedia.org/wiki/ʻOumuamua"><!-- ʻOumuamua Epoch 2018-08-22 -->
-		<text x="745" y="97" font-family="Verdana" font-size="8" fill="white">ʻOumuamua</text>
+		<text x="745" y="97" font-size="8" fill="white">ʻOumuamua</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/1/1c/Artist's_impression_of_ʻOumuamua.jpg" x="722" y="88" height="12"/>
 	</a>
 
 	<circle cx="0" cy="100" r="958" stroke="white" stroke-width="1" fill="none"/><!-- Saturn orbit -->
 	<a href='https://en.wikipedia.org/wiki/Saturn'><!-- Saturn -->
-		<text x="1010" y="110" font-family="Verdana" font-size="25" fill="white">Saturn</text>
+		<text x="1010" y="110" font-size="25" fill="white">Saturn</text>
 		<path d="M -5 100 A 958 958 0 0 0 -5 -100" fill="none" id="SaturnPath"/>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/2/29/Saturn_Storm.jpg" x="949" y="92" height="18" width="18"/>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite"> <!-- 0.033 of orbit visible -->
@@ -488,7 +488,7 @@
 	<a href='https://en.wikipedia.org/wiki/Mimas_(moon)'><!-- Mimas -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/b/bc/Mimas_Cassini.jpg" x="967" y="92" height="9" width="9"/>
-			<text x="967" y="120" font-family="Verdana" font-size="8" fill="white">Mimas</text>
+			<text x="967" y="120" font-size="8" fill="white">Mimas</text>
 		</g>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
@@ -497,7 +497,7 @@
 	<a href='https://en.wikipedia.org/wiki/Enceladus'><!-- Enceladus -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/9/95/Enceladus_from_Voyager.jpg" x="967" y="101" height="9" width="9"/>
-			<text x="967" y="120" font-family="Verdana" font-size="8" fill="white">Enceladus</text>
+			<text x="967" y="120" font-size="8" fill="white">Enceladus</text>
 		</g>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
@@ -506,7 +506,7 @@
 	<a href='https://en.wikipedia.org/wiki/Tethys_(moon)'><!-- Tethys -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/b/bc/PIA18317-SaturnMoon-Tethys-Cassini-20150411.jpg" x="976" y="92" height="9" width="9"/>
-			<text x="967" y="120" font-family="Verdana" font-size="8" fill="white">Tethys</text>
+			<text x="967" y="120" font-size="8" fill="white">Tethys</text>
 		</g>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
@@ -515,7 +515,7 @@
 	<a href='https://en.wikipedia.org/wiki/Dione_(moon)'><!-- Dione -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/4/42/Dione_in_natural_light.jpg" x="976" y="101" height="9" width="9"/>
-			<text x="967" y="120" font-family="Verdana" font-size="8" fill="white">Dione</text>
+			<text x="967" y="120" font-size="8" fill="white">Dione</text>
 		</g>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
@@ -524,7 +524,7 @@
 	<a href='https://en.wikipedia.org/wiki/Rhea_(moon)'><!-- Rhea -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/a/ab/PIA07763_Rhea_full_globe5.jpg" x="985" y="92" height="9" width="9"/>
-			<text x="967" y="120" font-family="Verdana" font-size="8" fill="white">Rhea</text>
+			<text x="967" y="120" font-size="8" fill="white">Rhea</text>
 		</g>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
@@ -533,7 +533,7 @@
 	<a href='https://en.wikipedia.org/wiki/Titan_(moon)'><!-- Titan -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/4/45/Titan_in_true_color.jpg" x="985" y="101" height="9" width="9"/>
-			<text x="967" y="120" font-family="Verdana" font-size="8" fill="white">Titan</text>
+			<text x="967" y="120" font-size="8" fill="white">Titan</text>
 		</g>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
@@ -542,7 +542,7 @@
 	<a href='https://en.wikipedia.org/wiki/Iaptus_(moon)'><!-- Iaptus -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/b/b7/Iapetus_706_1419_1.jpg" x="994" y="96" height="9" width="9"/>
-			<text x="967" y="120" font-family="Verdana" font-size="8" fill="white">Iaptus</text>
+			<text x="967" y="120" font-size="8" fill="white">Iaptus</text>
 		</g>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
@@ -550,7 +550,7 @@
 	</a>
 
 	<a href="https://en.wikipedia.org/wiki/10199_Chariklo"><!-- Chariklo -->
-		<text x="1605" y="97" font-family="Verdana" font-size="8" fill="white">Chariklo</text>
+		<text x="1605" y="97" font-size="8" fill="white">Chariklo</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/5/51/Chariklo_with_rings_eso1410b.jpg" x="1582" y="88" height="12"/>
 	</a>
 	
@@ -558,7 +558,7 @@
 
 	<circle cx="0" cy="100" r="1922" stroke="white" stroke-width="1" fill="none"/><!-- Uranus orbit -->
 	<a href='https://en.wikipedia.org/wiki/Uranus'><!-- Uranus -->
-		<text x="1960" y="110" font-family="Verdana" font-size="25" fill="white">Uranus</text>
+		<text x="1960" y="110" font-size="25" fill="white">Uranus</text>
 		<path d="M -3 100 A 1922 1922 0 0 0 -3 -100" fill="none" id="UranusPath"/>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg" x="1913" y="92" height="18" width="18"/>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite"> <!-- 0.016389 of orbit visible -->
@@ -568,7 +568,7 @@
 	<a href='https://en.wikipedia.org/wiki/Miranda_(moon)'><!-- Miranda -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e1/PIA18185_Miranda's_Icy_Face.jpg" x="1931" y="92" height="9" width="9"/>
-			<text x="1931" y="120" font-family="Verdana" font-size="8" fill="white">Miranda</text>
+			<text x="1931" y="120" font-size="8" fill="white">Miranda</text>
 		</g>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite">
 			<mpath href="#UranusPath"/>
@@ -577,7 +577,7 @@
 	<a href='https://en.wikipedia.org/wiki/Ariel_(moon)'><!-- Ariel -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/5/59/Ariel_(moon).jpg" x="1931" y="101" height="9" width="9"/>
-			<text x="1931" y="120" font-family="Verdana" font-size="8" fill="white">Ariel</text>
+			<text x="1931" y="120" font-size="8" fill="white">Ariel</text>
 		</g>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite">
 			<mpath href="#UranusPath"/>
@@ -586,7 +586,7 @@
 	<a href='https://en.wikipedia.org/wiki/Umbriel_(moon)'><!-- Umbriel -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2f/PIA00040_Umbrielx2.47.jpg" x="1940" y="92" height="9" width="9"/>
-			<text x="1931" y="120" font-family="Verdana" font-size="8" fill="white">Umbriel</text>
+			<text x="1931" y="120" font-size="8" fill="white">Umbriel</text>
 		</g>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite">
 			<mpath href="#UranusPath"/>
@@ -595,7 +595,7 @@
 	<a href='https://en.wikipedia.org/wiki/Titania_(moon)'><!-- Titania -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2e/Titania_(moon)_color%2C_edited.jpg" x="1940" y="101" height="9" width="9"/>
-			<text x="1931" y="120" font-family="Verdana" font-size="8" fill="white">Titania</text>
+			<text x="1931" y="120" font-size="8" fill="white">Titania</text>
 		</g>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite">
 			<mpath href="#UranusPath"/>
@@ -604,7 +604,7 @@
 	<a href='https://en.wikipedia.org/wiki/Oberon_(moon)'><!-- Oberon -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/0/09/Voyager_2_picture_of_Oberon.jpg" x="1949" y="96" height="9" width="9"/>
-			<text x="1931" y="120" font-family="Verdana" font-size="8" fill="white">Oberon</text>
+			<text x="1931" y="120" font-size="8" fill="white">Oberon</text>
 		</g>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite">
 			<mpath href="#UranusPath"/>
@@ -615,7 +615,7 @@
 
 	<circle cx="0" cy="100" r="3011" stroke="white" stroke-width="1" fill="none"/><!-- Neptune orbit -->
 	<a href='https://en.wikipedia.org/wiki/Neptune'><!-- Neptune -->
-		<text x="3030" y="110" font-family="Verdana" font-size="25" fill="white">Neptune</text>
+		<text x="3030" y="110" font-size="25" fill="white">Neptune</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg" x="3002" y="92" height="18" width="18"/>
 		<animateMotion dur="8.62s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
@@ -624,7 +624,7 @@
 	<a href='https://en.wikipedia.org/wiki/Triton_(moon)'><!-- Triton -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/a/a6/Triton_moon_mosaic_Voyager_2_(large).jpg" x="3020" y="92" height="9" width="9"/>
-			<text x="3011" y="120" font-family="Verdana" font-size="8" fill="white">Triton</text>
+			<text x="3011" y="120" font-size="8" fill="white">Triton</text>
 		</g>
 		<animateMotion dur="8.62s" repeatCount="indefinite">
 			<mpath href="#OuterPath"/>
@@ -632,13 +632,13 @@
 	</a>
 
 	<a href="https://en.wikipedia.org/wiki/Halley's_Comet"><!-- Halley's Comet Epoch 2018-08-22 -->
-		<text x="3510" y="103" font-family="Verdana" font-size="8" fill="white">Halley's Comet</text>
+		<text x="3510" y="103" font-size="8" fill="white">Halley's Comet</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Lspn_comet_halley.jpg" x="3467" y="88" height="24"/>
 	</a>
 
 	<circle cx="0" cy="100" r="3940" stroke="silver" stroke-width="1" fill="none"/><!-- Orcus orbit -->
 	<a href='https://en.wikipedia.org/wiki/90482_Orcus'><!-- Orcus -->
-		<text x="3962" y="103" font-family="Verdana" font-size="10" fill="white">Orcus</text>
+		<text x="3962" y="103" font-size="10" fill="white">Orcus</text>
 		<circle cx="3940" cy="100" r="7" fill="grey"/>
 		<animateMotion dur="9.859s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
@@ -647,7 +647,7 @@
 
 	<circle cx="0" cy="100" r="3948" stroke="silver" stroke-width="1" fill="none"/><!-- Pluto orbit -->
 	<a href='https://en.wikipedia.org/wiki/Pluto'><!-- Pluto -->
-		<text x="3970" y="103" font-family="Verdana" font-size="10" fill="white">Pluto</text>
+		<text x="3970" y="103" font-size="10" fill="white">Pluto</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/c/cd/Nh-pluto-in-true-color_2x_JPEG-edit.jpg" x="3941" y="92" height="14" width="14"/>
 		<animateMotion dur="10.03s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
@@ -656,7 +656,7 @@
 	<a href='https://en.wikipedia.org/wiki/Charon_(moon)'><!-- Charon -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2b/Charon_in_Color_(HQ).jpg" x="3955" y="92" height="9" width="9"/>
-			<text x="3955" y="120" font-family="Verdana" font-size="8" fill="white">Charon</text>
+			<text x="3955" y="120" font-size="8" fill="white">Charon</text>
 		</g>
 		<animateMotion dur="10.03s" repeatCount="indefinite">
 			<mpath href="#OuterPath"/>
@@ -665,7 +665,7 @@
 
 	<circle cx="0" cy="100" r="4195" stroke="silver" stroke-width="1" fill="none"/><!-- Salacia orbit -->
 	<a href='https://en.wikipedia.org/wiki/120347_Salacia'><!-- Salacia -->
-		<text x="4217" y="103" font-family="Verdana" font-size="10" fill="white">Salacia</text>
+		<text x="4217" y="103" font-size="10" fill="white">Salacia</text>
 		<circle cx="4195" cy="100" r="7" fill="grey"/>
 		<animateMotion dur="10.17s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
@@ -673,13 +673,13 @@
 	</a>
 
 	<a href="https://en.wikipedia.org/wiki/New_Horizons"><!-- New Horizons Epoch 2018-08-22 -->
-		<text x="4222" y="120" font-family="Verdana" font-size="8" fill="white">New Horizons</text>
+		<text x="4222" y="120" font-size="8" fill="white">New Horizons</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/4/4f/New_Horizons_Transparent.png" x="4222" y="88" height="24"/>
 	</a>
 
 	<circle cx="0" cy="100" r="4322" stroke="silver" stroke-width="1" fill="none"/><!-- Haumea orbit -->
 	<a href='https://en.wikipedia.org/wiki/Haumea'><!-- Haumea -->
-		<text x="4330" y="103" font-family="Verdana" font-size="10" fill="white">Haumea</text>
+		<text x="4330" y="103" font-size="10" fill="white">Haumea</text>
 		<circle cx="4322" cy="100" r="7" fill="grey"/>
 		<animateMotion dur="10.33s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
@@ -688,7 +688,7 @@
 
 	<circle cx="0" cy="100" r="4362" stroke="silver" stroke-width="1" fill="none"/><!-- Quaoar orbit -->
 	<a href='https://en.wikipedia.org/wiki/50000_Quaoar'><!-- Quaoar -->
-		<text x="4372" y="103" font-family="Verdana" font-size="10" fill="white">Quaoar</text>
+		<text x="4372" y="103" font-size="10" fill="white">Quaoar</text>
 		<circle cx="4362" cy="100" r="7" fill="grey"/>
 		<animateMotion dur="10.37s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
@@ -697,7 +697,7 @@
 
 	<circle cx="0" cy="100" r="4446" stroke="silver" stroke-width="1" fill="none"/><!-- 2014 MU69 orbit -->
 	<a href='https://en.wikipedia.org/wiki/(486958)_2014_MU69'><!-- 2014 MU69 -->
-		<text x="4455" y="103" font-family="Verdana" font-size="10" fill="white">2014 MU69</text>
+		<text x="4455" y="103" font-size="10" fill="white">2014 MU69</text>
 		<circle cx="4446" cy="100" r="5" fill="grey"/>
 		<animateMotion dur="10.47s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
@@ -706,7 +706,7 @@
 
 	<circle cx="0" cy="100" r="4572" stroke="silver" stroke-width="1" fill="none"/><!-- Makemake orbit -->
 	<a href='https://en.wikipedia.org/wiki/Makemake'><!-- Makemake -->
-		<text x="4580" y="105" font-family="Verdana" font-size="10" fill="white">Makemake</text>
+		<text x="4580" y="105" font-size="10" fill="white">Makemake</text>
 		<circle cx="4572" cy="100" r="7" fill="grey"/>
 		<animateMotion dur="10.59s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
@@ -715,7 +715,7 @@
 
 	<circle cx="0" cy="100" r="6706" stroke="silver" stroke-width="1" fill="none"/><!-- 2007 OR10 orbit -->
 	<a href='https://en.wikipedia.org/wiki/(225088)_2007_OR10'><!-- 2007 OR10 -->
-		<text x="6716" y="103" font-family="Verdana" font-size="10" fill="white">2007 OR10</text>
+		<text x="6716" y="103" font-size="10" fill="white">2007 OR10</text>
 		<circle cx="6706" cy="100" r="7" fill="grey"/>
 		<animateMotion dur="12.86s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
@@ -724,7 +724,7 @@
 
 	<circle cx="0" cy="100" r="6778" stroke="silver" stroke-width="1" fill="none"/><!-- Eris orbit -->
 	<a href='https://en.wikipedia.org/wiki/Eris_(dwarf_planet)'><!-- Eris -->
-		<text x="6790" y="103" font-family="Verdana" font-size="10" fill="white">Eris</text>
+		<text x="6790" y="103" font-size="10" fill="white">Eris</text>
 		<circle cx="6778" cy="100" r="7" fill="grey"/>
 		<animateMotion dur="13.63s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
@@ -733,7 +733,7 @@
 
 	<circle cx="0" cy="100" r="7609" stroke="silver" stroke-width="1" fill="none"/><!-- Sedna orbit -->
 	<a href='https://en.wikipedia.org/wiki/90377_Sedna'><!-- Sedna -->
-		<text x="7620" y="103" font-family="Verdana" font-size="10" fill="white">Sedna</text>
+		<text x="7620" y="103" font-size="10" fill="white">Sedna</text>
 		<circle cx="7609" cy="100" r="7" fill="grey"/>
 		<animateMotion dur="45.02s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
@@ -741,26 +741,26 @@
 	</a>
 	
 	<a href='https://en.wikipedia.org/wiki/Elon_Musk'>
-		<text x="7865" y="45" font-family="Verdana" font-size="8" fill="white">*Notices ur uncolonized planets*</text>
+		<text x="7865" y="45" font-size="8" fill="white">*Notices ur uncolonized planets*</text>
 		<image href="https://static.businessinsider.com/image/5202d38a6bb3f7f61e000004-750.jpg" x="7870" y="50" height="100"/>
-		<text x="7890" y="160" font-family="Verdana" font-size="8" fill="white">OwO What's this???</text>
+		<text x="7890" y="160" font-size="8" fill="white">OwO What's this???</text>
 	</a>
 	
 	<a href='https://mocha2007.github.io'>
 		<image href="https://mocha2007.github.io/img/mo.png" x="7875" y="170" height="24"/>
-		<text x="7910" y="185" font-family="Verdana" font-size="12" fill="cyan">mocha2007</text>
+		<text x="7910" y="185" font-size="12" fill="cyan">mocha2007</text>
 	</a>
 	
 	<!-- fun toggle -->
 	<g class='hovertext'>
 		<circle cx="0" cy="0" r="20" fill="black" stroke="cyan" stroke-width="1" onclick='toggle();'/>
-		<text x="0" y="30" font-family="Verdana" font-size="8" fill="red">Pause Inner Solar System for Info</text>
+		<text x="0" y="30" font-size="8" fill="red">Pause Inner Solar System for Info</text>
 	</g>
 	<text class='i' x="4" y="14" font-family="Times New Roman" font-size="18" fill="cyan" onclick='toggle();'>i</text>
 	
 	<!-- permafrost -->
 	<g class='hovertext'>
-		<text class='nothovertext' x="25" y="18" font-family="Verdana" font-size="24" fill="cyan" onclick='freeze();'>❄</text>
-		<text x="25" y="25" font-family="Verdana" font-size="8" fill="cyan">Permafrost</text>
+		<text class='nothovertext' x="25" y="18" font-size="24" fill="cyan" onclick='freeze();'>❄</text>
+		<text x="25" y="25" font-size="8" fill="cyan">Permafrost</text>
 	</g>
 </svg>
