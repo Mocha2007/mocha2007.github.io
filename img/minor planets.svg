@@ -157,16 +157,22 @@
 		<text x="266" y="30" font-family="Verdana" font-size="4" fill="olive">Eunomia Family</text>
 	</a>
 
+	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Adeona_family'><!-- Adeona Family -->
+		<circle cx="0" cy="100" r="267" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="2" fill="none"/>
+		<use x="263" y="53" href="#arrowam"/>
+		<text x="273" y="40" font-family="Verdana" font-size="4" fill="olive">Adeona Family</text>
+	</a>
+
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Gefion_family'><!-- Gefion Family -->
 		<circle cx="0" cy="100" r="278" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="8" fill="none"/>
-		<use x="275" y="53" href="#arrowam"/>
-		<text x="285" y="40" font-family="Verdana" font-size="4" fill="olive">Gefion Family</text>
+		<use x="275" y="63" href="#arrowam"/>
+		<text x="285" y="50" font-family="Verdana" font-size="4" fill="olive">Gefion Family</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Koronis_family'><!-- Koronis Family -->
 		<circle cx="0" cy="100" r="288" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="4" fill="none"/>
-		<use x="285" y="63" href="#arrowao"/>
-		<text x="295" y="50" font-family="Verdana" font-size="4" fill="darkgreen">Koronis Family</text>
+		<use x="286" y="73" href="#arrowao"/>
+		<text x="296" y="60" font-family="Verdana" font-size="4" fill="darkgreen">Koronis Family</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Eos_family'><!-- Eos Family -->
@@ -183,8 +189,8 @@
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Themis_family'><!-- Themis Family -->
 		<circle cx="0" cy="100" r="316" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="16" fill="none"/>
-		<use x="315" y="73" href="#arrowao"/>
-		<text x="325" y="60" font-family="Verdana" font-size="4" fill="darkgreen">Themis Family</text>
+		<use x="315" y="63" href="#arrowao"/>
+		<text x="325" y="50" font-family="Verdana" font-size="4" fill="darkgreen">Themis Family</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Asteroid_family'><!-- asteroid families label -->
