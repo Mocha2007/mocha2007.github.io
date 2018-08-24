@@ -469,7 +469,7 @@
 
 	<circle cx="0" cy="100" r="3948" stroke="silver" stroke-width="1" fill="none"/><!-- Pluto orbit -->
 	<a href='https://en.wikipedia.org/wiki/Pluto'><!-- Pluto -->
-		<text x="3970" y="102" font-family="Verdana" font-size="10" fill="white">Pluto</text>
+		<text x="3970" y="103" font-family="Verdana" font-size="10" fill="white">Pluto</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/c/cd/Nh-pluto-in-true-color_2x_JPEG-edit.jpg" x="3941" y="92" height="14" width="14"/>
 		<animateMotion dur="10.03s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
@@ -492,16 +492,25 @@
 
 	<circle cx="0" cy="100" r="4322" stroke="silver" stroke-width="1" fill="none"/><!-- Haumea orbit -->
 	<a href='https://en.wikipedia.org/wiki/Haumea'><!-- Haumea -->
-		<text x="4330" y="105" font-family="Verdana" font-size="10" fill="white">Haumea</text>
+		<text x="4330" y="103" font-family="Verdana" font-size="10" fill="white">Haumea</text>
 		<circle cx="4322" cy="100" r="7" fill="grey"/>
 		<animateMotion dur="10.33s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
 
+	<circle cx="0" cy="100" r="4362" stroke="silver" stroke-width="1" fill="none"/><!-- Quaoar orbit -->
+	<a href='https://en.wikipedia.org/wiki/50000_Quaoar'><!-- Quaoar -->
+		<text x="4372" y="103" font-family="Verdana" font-size="10" fill="white">Quaoar</text>
+		<circle cx="4362" cy="100" r="7" fill="grey"/>
+		<animateMotion dur="10.37s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+			<mpath href="#OuterPath"/>
+		</animateMotion>
+	</a>
+
 	<circle cx="0" cy="100" r="4446" stroke="silver" stroke-width="1" fill="none"/><!-- 2014 MU69 orbit -->
 	<a href='https://en.wikipedia.org/wiki/(486958)_2014_MU69'><!-- 2014 MU69 -->
-		<text x="4455" y="105" font-family="Verdana" font-size="10" fill="white">2014 MU69</text>
+		<text x="4455" y="103" font-family="Verdana" font-size="10" fill="white">2014 MU69</text>
 		<circle cx="4446" cy="100" r="5" fill="grey"/>
 		<animateMotion dur="10.47s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
@@ -517,9 +526,18 @@
 		</animateMotion>
 	</a>
 
+	<circle cx="0" cy="100" r="6706" stroke="silver" stroke-width="1" fill="none"/><!-- 2007 OR10 orbit -->
+	<a href='https://en.wikipedia.org/wiki/(225088)_2007_OR10'><!-- 2007 OR10 -->
+		<text x="6716" y="103" font-family="Verdana" font-size="10" fill="white">2007 OR10</text>
+		<circle cx="6706" cy="100" r="7" fill="grey"/>
+		<animateMotion dur="12.86s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+			<mpath href="#OuterPath"/>
+		</animateMotion>
+	</a>
+
 	<circle cx="0" cy="100" r="6778" stroke="silver" stroke-width="1" fill="none"/><!-- Eris orbit -->
 	<a href='https://en.wikipedia.org/wiki/Eris_(dwarf_planet)'><!-- Eris -->
-		<text x="6790" y="105" font-family="Verdana" font-size="10" fill="white">Eris</text>
+		<text x="6790" y="103" font-family="Verdana" font-size="10" fill="white">Eris</text>
 		<circle cx="6778" cy="100" r="7" fill="grey"/>
 		<animateMotion dur="13.63s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
@@ -528,7 +546,7 @@
 
 	<circle cx="0" cy="100" r="7609" stroke="silver" stroke-width="1" fill="none"/><!-- Sedna orbit -->
 	<a href='https://en.wikipedia.org/wiki/90377_Sedna'><!-- Sedna -->
-		<text x="7620" y="105" font-family="Verdana" font-size="10" fill="white">Sedna</text>
+		<text x="7620" y="103" font-family="Verdana" font-size="10" fill="white">Sedna</text>
 		<circle cx="7609" cy="100" r="7" fill="grey"/>
 		<animateMotion dur="45.02s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
