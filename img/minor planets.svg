@@ -108,6 +108,8 @@
 		<circle cx="0" cy="100" r="370" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
 		<text x="222" y="10" font-family="Verdana" font-size="8" fill="pink">Kirkwood Gaps</text>
 	</a>
+	
+	<!-- asteroid families -->
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Flora_family'><!-- Flora Family -->
 		<circle cx="0" cy="100" r="225" stroke="darkblue" stroke-opacity="0.2" stroke-width="16" fill="none"/>
@@ -125,6 +127,12 @@
 		<circle cx="0" cy="100" r="245.5" stroke="darkblue" stroke-opacity="0.2" stroke-width="9" fill="none"/>
 		<use x="242.5" y="63" href="#arrow2"/>
 		<text x="252.5" y="50" font-family="Verdana" font-size="4" fill="darkblue">Nysa Family</text>
+	</a>
+
+	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Koronis_family'><!-- Koronis Family -->
+		<circle cx="0" cy="100" r="288" stroke="darkblue" stroke-opacity="0.2" stroke-width="4" fill="none"/>
+		<use x="285" y="53" href="#arrow2"/>
+		<text x="295" y="40" font-family="Verdana" font-size="4" fill="darkblue">Koronis Family</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Eos_family'><!-- Eos Family -->
