@@ -115,7 +115,7 @@
 	
 	<!-- asteroid families -->
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Hungaria_family'><!-- Hungaria Family -->
+	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Hungaria_asteroid'><!-- Hungaria Family -->
 		<circle cx="0" cy="100" r="189" stroke="darkblue" stroke-opacity="0.2" stroke-width="22" fill="none"/>
 		<use x="185" y="63" href="#arrowai"/>
 		<text x="195" y="50" font-family="Verdana" font-size="4" fill="darkblue">Hungaria Family</text>
