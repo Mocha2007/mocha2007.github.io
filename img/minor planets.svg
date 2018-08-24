@@ -268,6 +268,18 @@
 		<text x="500" y="190" font-family="Verdana" font-size="8" fill="rgb(128,255,128)">Trojans</text>
 	</a>
 
+	<a class='hoverrange' href='https://en.wikipedia.org/wiki/3548_Eurybates'><!-- Eurybates Family -->
+		<circle cx="0" cy="100" r="518.5" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+		<use x="517.5" y="63" href="#arrowao"/>
+		<text x="527.5" y="50" font-family="Verdana" font-size="4" fill="darkgreen">Eurybates</text>
+	</a>
+
+	<a class='hoverrange' href='https://en.wikipedia.org/wiki/4709_Ennomos'><!-- Ennomos Family -->
+		<circle cx="0" cy="100" r="518.5" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="11" fill="none"/>
+		<use x="518" y="73" href="#arrowao"/>
+		<text x="528" y="60" font-family="Verdana" font-size="4" fill="darkgreen">Ennomos</text>
+	</a>
+
 	<a href='https://en.wikipedia.org/wiki/Trans-Neptunian_object'><!-- TNOs -->
 		<circle cx="0" cy="100" r="6505.5" stroke="rgb(64,128,128)" stroke-width="6989" fill="none"/>
 		<text x="3050" y="190" font-family="Verdana" font-size="10" fill="white">Trans-Neptunian Objects</text>
