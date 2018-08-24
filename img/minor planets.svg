@@ -61,10 +61,12 @@
 		}
 	</script>
 
-	<rect x="0" y="0" width="8000" height="200" fill="black"/>
+	<a href='https://en.wikipedia.org/wiki/Interplanetary_medium'><!-- fallback -->
+		<rect x="0" y="0" width="8000" height="200" fill="black"/>
+	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Solar_System#Inner_Solar_System'><!-- inner solar system part 1 -->
-		<circle cx="0" cy="100" r="350" fill="rgb(128,64,64)"/>
+		<circle cx="0" cy="100" r="328" fill="rgb(128,64,64)"/>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Circumstellar_habitable_zone'><!-- Kasting et al. 1993 -->
@@ -77,9 +79,9 @@
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Asteroid_belt'>
-		<circle cx="0" cy="100" r="225" stroke="rgb(64,96,128)" stroke-width="50" fill="none"/><!-- inner belt -->
-		<circle cx="0" cy="100" r="266" stroke="rgb(128,112,64)" stroke-width="35" fill="none"/><!-- middle belt -->
-		<circle cx="0" cy="100" r="316" stroke="rgb(64,128,64)" stroke-width="68" fill="none"/><!-- outer belt -->
+		<circle cx="0" cy="100" r="228" stroke="rgb(64,96,128)" stroke-width="44" fill="none"/><!-- inner belt -->
+		<circle cx="0" cy="100" r="266" stroke="rgb(128,112,64)" stroke-width="32" fill="none"/><!-- middle belt -->
+		<circle cx="0" cy="100" r="305" stroke="rgb(64,128,64)" stroke-width="46" fill="none"/><!-- outer belt -->
 		<text x="190" y="190" font-family="Verdana" font-size="10" fill="white">Asteroid Belt</text>
 	</a>
 
@@ -88,7 +90,7 @@
 		<circle cx="0" cy="100" r="250" stroke="pink" stroke-width="1" fill="none"/>
 		<circle cx="0" cy="100" r="282" stroke="pink" stroke-width="1" fill="none"/>
 		<circle cx="0" cy="100" r="295" stroke="pink" stroke-width="1" fill="none"/>
-		<circle cx="0" cy="100" r="327" stroke="pink" stroke-width="1" fill="none"/>
+		<circle cx="0" cy="100" r="328" stroke="pink" stroke-width="1" fill="none"/>
 		<!-- minors -->
 		<circle cx="0" cy="100" r="190" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
 		<circle cx="0" cy="100" r="225" stroke="pink" stroke-opacity="0.2" stroke-width="1" fill="none"/>
@@ -159,6 +161,11 @@
 		<text x="4750" y="190" font-family="Verdana" font-size="10" fill="white">Twotinos (1:2)</text>
 		<text x="5160" y="190" font-family="Verdana" font-size="10" fill="white">4:9</text>
 		<text x="5545" y="190" font-family="Verdana" font-size="10" fill="white">2:5</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Kuiper_belt#Kuiper_cliff'><!-- Kuiper Cliff -->
+		<circle cx="0" cy="100" r="4771" stroke="pink" stroke-width="1" fill="none"/>
+		<text x="4771" y="10" font-family="Verdana" font-size="8" fill="pink">Kuiper Cliff</text>
 	</a>
 	
 	<a href='https://en.wikipedia.org/wiki/Sun'><!-- Sun -->
