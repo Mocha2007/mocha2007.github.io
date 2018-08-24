@@ -271,7 +271,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg" x="31" y="92" height="16" width="16" transform="rotate(180 39 100)"/>
 			<text x="47" y="102" font-family="Verdana" font-size="8" fill="white">Mercury</text>
 		</g>
-		<animateMotion dur="1.20423s" repeatCount="indefinite">
+		<animateMotion dur="0.602115s" repeatCount="indefinite">
 			<mpath id='s1' href="#MercuryPath"/>
 		</animateMotion>
 	</a>
@@ -283,7 +283,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg" x="64" y="92" height="16" width="16"/>
 			<text x="80" y="102" font-family="Verdana" font-size="8" fill="white">Venus</text>
 		</g>
-		<animateMotion dur="3.07599s" repeatCount="indefinite">
+		<animateMotion dur="1.537995s" repeatCount="indefinite">
 			<mpath id='s2' href="#VenusPath"/>
 		</animateMotion>
 	</a>
@@ -297,7 +297,7 @@
 		</g>
 		<use class='invisible' id='t1' x="100" y="100" href="#arrow"/>
 		<text class='invisible' id='t2' x="125" y="75" font-family="Verdana" font-size="8" fill="red">You are here</text>
-		<animateMotion dur="5s" repeatCount="indefinite">
+		<animateMotion dur="2.5s" repeatCount="indefinite">
 			<mpath id='s3' href="#EarthPath"/>
 		</animateMotion>
 	</a>
@@ -306,7 +306,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg" x="108" y="92" height="8" width="8"/>
 			<text x="116" y="102" font-family="Verdana" font-size="8" fill="white">Moon</text>
 		</g>
-		<animateMotion dur="5s" repeatCount="indefinite">
+		<animateMotion dur="2.5s" repeatCount="indefinite">
 			<mpath id='s3.1' href="#EarthPath"/>
 		</animateMotion>
 	</a>
