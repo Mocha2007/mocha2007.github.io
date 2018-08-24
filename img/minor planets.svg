@@ -20,6 +20,7 @@
 		.hoverrange:hover circle,.hoverrange:hover use{display:block;}
 		.hoverrange text{text-shadow:#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px;}
 		.i{font-style:italic;}
+		svg{font-family="Verdana"}
 	</style>
 	
 	<script type="text/javascript">
@@ -552,6 +553,8 @@
 		<text x="1605" y="97" font-family="Verdana" font-size="8" fill="white">Chariklo</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/5/51/Chariklo_with_rings_eso1410b.jpg" x="1582" y="88" height="12"/>
 	</a>
+	
+	<!-- 6.885013194 s * (6.8000km/s)/(2*pi*41.947 AU/(271.68 yr)) -->
 
 	<circle cx="0" cy="100" r="1922" stroke="white" stroke-width="1" fill="none"/><!-- Uranus orbit -->
 	<a href='https://en.wikipedia.org/wiki/Uranus'><!-- Uranus -->
@@ -633,6 +636,15 @@
 		<image href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Lspn_comet_halley.jpg" x="3467" y="88" height="24"/>
 	</a>
 
+	<circle cx="0" cy="100" r="3940" stroke="silver" stroke-width="1" fill="none"/><!-- Orcus orbit -->
+	<a href='https://en.wikipedia.org/wiki/90482_Orcus'><!-- Orcus -->
+		<text x="3962" y="103" font-family="Verdana" font-size="10" fill="white">Orcus</text>
+		<circle cx="3940" cy="100" r="7" fill="grey"/>
+		<animateMotion dur="9.859s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+			<mpath href="#OuterPath"/>
+		</animateMotion>
+	</a>
+
 	<circle cx="0" cy="100" r="3948" stroke="silver" stroke-width="1" fill="none"/><!-- Pluto orbit -->
 	<a href='https://en.wikipedia.org/wiki/Pluto'><!-- Pluto -->
 		<text x="3970" y="103" font-family="Verdana" font-size="10" fill="white">Pluto</text>
@@ -647,6 +659,15 @@
 			<text x="3955" y="120" font-family="Verdana" font-size="8" fill="white">Charon</text>
 		</g>
 		<animateMotion dur="10.03s" repeatCount="indefinite">
+			<mpath href="#OuterPath"/>
+		</animateMotion>
+	</a>
+
+	<circle cx="0" cy="100" r="4195" stroke="silver" stroke-width="1" fill="none"/><!-- Salacia orbit -->
+	<a href='https://en.wikipedia.org/wiki/120347_Salacia'><!-- Salacia -->
+		<text x="4217" y="103" font-family="Verdana" font-size="10" fill="white">Salacia</text>
+		<circle cx="4195" cy="100" r="7" fill="grey"/>
+		<animateMotion dur="10.17s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
@@ -719,13 +740,13 @@
 		</animateMotion>
 	</a>
 	
-	<a href='https://en.wikipedia.org/wiki/Elon_Musk'><!-- Sedna -->
+	<a href='https://en.wikipedia.org/wiki/Elon_Musk'>
 		<text x="7865" y="45" font-family="Verdana" font-size="8" fill="white">*Notices ur uncolonized planets*</text>
 		<image href="https://static.businessinsider.com/image/5202d38a6bb3f7f61e000004-750.jpg" x="7870" y="50" height="100"/>
 		<text x="7890" y="160" font-family="Verdana" font-size="8" fill="white">OwO What's this???</text>
 	</a>
 	
-	<a href='https://mocha2007.github.io'><!-- Sedna -->
+	<a href='https://mocha2007.github.io'>
 		<image href="https://mocha2007.github.io/img/mo.png" x="7875" y="170" height="24"/>
 		<text x="7910" y="185" font-family="Verdana" font-size="12" fill="cyan">mocha2007</text>
 	</a>
