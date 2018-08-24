@@ -84,10 +84,16 @@
 		<circle cx="0" cy="100" r="305" stroke="rgb(64,128,64)" stroke-width="46" fill="none"/><!-- outer belt -->
 	</a>
 
+	<a href='https://en.wikipedia.org/wiki/Vesta_family'><!-- Vesta Family -->
+		<circle cx="0" cy="100" r="237" stroke="darkblue" stroke-opacity="0.2" stroke-width="22" fill="none"/>
+		<use x="232" y="43" href="#arrow2"/>
+		<text x="242" y="30" font-family="Verdana" font-size="4" fill="darkblue">Vesta Family</text>
+	</a>
+
 	<a href='https://en.wikipedia.org/wiki/Nysa_family'><!-- Nysa Family -->
-		<circle cx="0" cy="100" r="245.5" stroke="blue" stroke-opacity="0.2" stroke-width="9" fill="none"/>
-		<use x="245.5" y="63" href="#arrow2"/>
-		<text x="246" y="50" font-family="Verdana" font-size="4" fill="darkblue">Nysa Family</text>
+		<circle cx="0" cy="100" r="245.5" stroke="darkblue" stroke-opacity="0.2" stroke-width="9" fill="none"/>
+		<use x="240.5" y="63" href="#arrow2"/>
+		<text x="250.5" y="50" font-family="Verdana" font-size="4" fill="darkblue">Nysa Family</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Hilda_asteroid'><!-- Hildas -->
