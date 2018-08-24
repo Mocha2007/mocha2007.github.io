@@ -18,7 +18,7 @@
 		.nothovertext{display:block!important;}
 		.hoverrange circle,.hoverrange use{display:none;}
 		.hoverrange:hover circle,.hoverrange:hover use{display:block;}
-		.hoverrange text{text-shadow:#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px;}
+		.hoverrange text{text-shadow:#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px;}
 	</style>
 	
 	<script type="text/javascript">
