@@ -123,14 +123,20 @@
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Flora_family'><!-- Flora Family -->
 		<circle cx="0" cy="100" r="225" stroke="darkblue" stroke-opacity="0.2" stroke-width="16" fill="none"/>
-		<use x="217" y="43" href="#arrowai"/>
-		<text x="227" y="30" font-family="Verdana" font-size="4" fill="darkblue">Flora Family</text>
+		<use x="224" y="83" href="#arrowai"/>
+		<text x="234" y="70" font-family="Verdana" font-size="4" fill="darkblue">Flora Family</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Vesta_family'><!-- Vesta Family -->
 		<circle cx="0" cy="100" r="237" stroke="darkblue" stroke-opacity="0.2" stroke-width="22" fill="none"/>
-		<use x="232" y="53" href="#arrowai"/>
-		<text x="242" y="40" font-family="Verdana" font-size="4" fill="darkblue">Vesta Family</text>
+		<use x="229" y="43" href="#arrowai"/>
+		<text x="239" y="30" font-family="Verdana" font-size="4" fill="darkblue">Vesta Family</text>
+	</a>
+
+	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Phocaea_family'><!-- Phocaea Family -->
+		<circle cx="0" cy="100" r="237.5" stroke="darkblue" stroke-opacity="0.2" stroke-width="25" fill="none"/>
+		<use x="231" y="53" href="#arrowai"/>
+		<text x="241" y="40" font-family="Verdana" font-size="4" fill="darkblue">Phocaea Family</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Massalia_family'><!-- Massalia Family -->
