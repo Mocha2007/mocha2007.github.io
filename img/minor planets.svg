@@ -27,6 +27,8 @@
 				document.getElementById('t2').classList.remove('invisible');
 				document.getElementById('t3').classList.remove('invisible');
 				document.getElementById('t4').classList.remove('invisible');
+				document.getElementById('t5').classList.remove('invisible');
+				document.getElementById('t6').classList.remove('invisible');
 				document.getElementById('s1').setAttribute("href", "#NoPath");
 				document.getElementById('s2').setAttribute("href", "#NoPath");
 				document.getElementById('s3').setAttribute("href", "#NoPath");
@@ -41,6 +43,8 @@
 				document.getElementById('t2').classList.add('invisible');
 				document.getElementById('t3').classList.add('invisible');
 				document.getElementById('t4').classList.add('invisible');
+				document.getElementById('t5').classList.add('invisible');
+				document.getElementById('t6').classList.add('invisible');
 				document.getElementById('s1').setAttribute("href", "#MercuryPath");
 				document.getElementById('s2').setAttribute("href", "#VenusPath");
 				document.getElementById('s3').setAttribute("href", "#EarthPath");
@@ -84,13 +88,13 @@
 		<circle cx="0" cy="100" r="305" stroke="rgb(64,128,64)" stroke-width="46" fill="none"/><!-- outer belt -->
 	</a>
 
-	<a href='https://en.wikipedia.org/wiki/Vesta_family'><!-- Vesta Family -->
+	<a class='invisible' id='t5' href='https://en.wikipedia.org/wiki/Vesta_family'><!-- Vesta Family -->
 		<circle cx="0" cy="100" r="237" stroke="darkblue" stroke-opacity="0.2" stroke-width="22" fill="none"/>
 		<use x="232" y="43" href="#arrow2"/>
 		<text x="242" y="30" font-family="Verdana" font-size="4" fill="darkblue">Vesta Family</text>
 	</a>
 
-	<a href='https://en.wikipedia.org/wiki/Nysa_family'><!-- Nysa Family -->
+	<a class='invisible' id='t6' href='https://en.wikipedia.org/wiki/Nysa_family'><!-- Nysa Family -->
 		<circle cx="0" cy="100" r="245.5" stroke="darkblue" stroke-opacity="0.2" stroke-width="9" fill="none"/>
 		<use x="240.5" y="63" href="#arrow2"/>
 		<text x="250.5" y="50" font-family="Verdana" font-size="4" fill="darkblue">Nysa Family</text>
