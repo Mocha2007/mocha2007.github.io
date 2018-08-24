@@ -159,8 +159,8 @@
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Maria_family'><!-- Maria Family -->
 		<circle cx="0" cy="100" r="255.5" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="9" fill="none"/>
-		<use x="255" y="93" href="#arrowam"/>
-		<text x="265" y="80" font-family="Verdana" font-size="4" fill="olive">Maria</text>
+		<use x="255" y="73" href="#arrowam"/>
+		<text x="265" y="60" font-family="Verdana" font-size="4" fill="olive">Maria</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Eunomia_family'><!-- Eunomia Family -->
