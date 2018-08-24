@@ -19,6 +19,7 @@
 		.hoverrange circle,.hoverrange use{display:none;}
 		.hoverrange:hover circle,.hoverrange:hover use{display:block;}
 		.hoverrange text{text-shadow:#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px;}
+		#af{font-style:italic;}
 	</style>
 	
 	<script type="text/javascript">
@@ -184,6 +185,10 @@
 		<circle cx="0" cy="100" r="316" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="16" fill="none"/>
 		<use x="315" y="73" href="#arrowao"/>
 		<text x="325" y="60" font-family="Verdana" font-size="4" fill="darkgreen">Themis Family</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Asteroid_family'><!-- asteroid families label -->
+		<text id='af' x="249" y="20" font-family="Verdana" font-size="6" fill="white">Asteroid Families</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Asteroid_belt'><!-- asteroid belt part 2 -->
