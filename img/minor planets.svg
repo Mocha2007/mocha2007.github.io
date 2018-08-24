@@ -88,8 +88,8 @@
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Flora_family'><!-- Flora Family -->
 		<circle cx="0" cy="100" r="225" stroke="darkblue" stroke-opacity="0.2" stroke-width="16" fill="none"/>
-		<use x="220" y="43" href="#arrow2"/>
-		<text x="230" y="30" font-family="Verdana" font-size="4" fill="darkblue">Flora Family</text>
+		<use x="217" y="43" href="#arrow2"/>
+		<text x="227" y="30" font-family="Verdana" font-size="4" fill="darkblue">Flora Family</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Vesta_family'><!-- Vesta Family -->
@@ -100,8 +100,14 @@
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Nysa_family'><!-- Nysa Family -->
 		<circle cx="0" cy="100" r="245.5" stroke="darkblue" stroke-opacity="0.2" stroke-width="9" fill="none"/>
-		<use x="240.5" y="63" href="#arrow2"/>
-		<text x="250.5" y="50" font-family="Verdana" font-size="4" fill="darkblue">Nysa Family</text>
+		<use x="242.5" y="63" href="#arrow2"/>
+		<text x="252.5" y="50" font-family="Verdana" font-size="4" fill="darkblue">Nysa Family</text>
+	</a>
+
+	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Eos_family'><!-- Eos Family -->
+		<circle cx="0" cy="100" r="301" stroke="darkblue" stroke-opacity="0.2" stroke-width="4" fill="none"/>
+		<use x="298" y="63" href="#arrow2"/>
+		<text x="308" y="50" font-family="Verdana" font-size="4" fill="darkblue">Eos Family</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Hilda_asteroid'><!-- Hildas -->
