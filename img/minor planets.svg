@@ -382,6 +382,11 @@
 			<mpath href="#SaturnPath"/>
 		</animateMotion>
 	</a>
+
+	<a href="https://en.wikipedia.org/wiki/10199_Chariklo"><!-- Chariklo -->
+		<text x="1605" y="97" font-family="Verdana" font-size="8" fill="white">Chariklo</text>
+		<image href="https://upload.wikimedia.org/wikipedia/commons/5/51/Chariklo_with_rings_eso1410b.jpg" x="1582" y="88" height="12"/>
+	</a>
 	
 	<path d="M 0 100 L 0 -100" fill="none" id="OuterPath"/>
 
