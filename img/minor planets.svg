@@ -39,7 +39,7 @@
 		.po{stroke:white;}
 		.mo{stroke:silver;}
 		.moc{cy:100px;r:7px;fill:grey;}
-		.body g text{font-size:8px;fill:white;}
+		.body g text,#tnos a text{font-size:8px;fill:white;}
 		.gas text{font-size:25px;fill:white;}
 	</style>
 	
@@ -661,115 +661,119 @@
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
+	
+	<!-- TNOs -->
+	
+	<g id='tnos'>
+		<a href="https://en.wikipedia.org/wiki/Halley's_Comet"><!-- Halley's Comet Epoch 2018-08-22 -->
+			<text x="3510" y="103">Halley's Comet</text>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Lspn_comet_halley.jpg" x="3467" y="88" height="24"/>
+		</a>
 
-	<a class='body' href="https://en.wikipedia.org/wiki/Halley's_Comet"><!-- Halley's Comet Epoch 2018-08-22 -->
-		<text x="3510" y="103">Halley's Comet</text>
-		<image href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Lspn_comet_halley.jpg" x="3467" y="88" height="24"/>
-	</a>
+		<circle class='mo' r="3940"/><!-- Orcus orbit -->
+		<a href='https://en.wikipedia.org/wiki/90482_Orcus'><!-- Orcus -->
+			<text x="3962" y="103">Orcus</text>
+			<circle cx="3940" class='moc'/>
+			<animateMotion dur="9.859s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+				<mpath href="#OuterPath"/>
+			</animateMotion>
+		</a>
 
-	<circle class='mo' r="3940"/><!-- Orcus orbit -->
-	<a href='https://en.wikipedia.org/wiki/90482_Orcus'><!-- Orcus -->
-		<text x="3962" y="103" font-size="10" fill="white">Orcus</text>
-		<circle cx="3940" class='moc'/>
-		<animateMotion dur="9.859s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
-			<mpath href="#OuterPath"/>
-		</animateMotion>
-	</a>
+		<circle class='mo' r="3948"/><!-- Pluto orbit -->
+		<a href='https://en.wikipedia.org/wiki/Pluto'><!-- Pluto -->
+			<text x="3970" y="103">Pluto</text>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/c/cd/Nh-pluto-in-true-color_2x_JPEG-edit.jpg" x="3941" y="92" height="14" width="14"/>
+			<animateMotion dur="10.03s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+				<mpath href="#OuterPath"/>
+			</animateMotion>
+		</a>
+		<a class='body' href='https://en.wikipedia.org/wiki/Charon_(moon)'><!-- Charon -->
+			<g class='hovertext'>
+				<image href="https://upload.wikimedia.org/wikipedia/commons/2/2b/Charon_in_Color_(HQ).jpg" x="3955" y="92" height="9" width="9"/>
+				<text x="3955" y="120">Charon</text>
+			</g>
+			<animateMotion dur="10.03s" repeatCount="indefinite">
+				<mpath href="#OuterPath"/>
+			</animateMotion>
+		</a>
 
-	<circle class='mo' r="3948"/><!-- Pluto orbit -->
-	<a href='https://en.wikipedia.org/wiki/Pluto'><!-- Pluto -->
-		<text x="3970" y="103" font-size="10" fill="white">Pluto</text>
-		<image href="https://upload.wikimedia.org/wikipedia/commons/c/cd/Nh-pluto-in-true-color_2x_JPEG-edit.jpg" x="3941" y="92" height="14" width="14"/>
-		<animateMotion dur="10.03s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
-			<mpath href="#OuterPath"/>
-		</animateMotion>
-	</a>
-	<a class='body' href='https://en.wikipedia.org/wiki/Charon_(moon)'><!-- Charon -->
-		<g class='hovertext'>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2b/Charon_in_Color_(HQ).jpg" x="3955" y="92" height="9" width="9"/>
-			<text x="3955" y="120">Charon</text>
-		</g>
-		<animateMotion dur="10.03s" repeatCount="indefinite">
-			<mpath href="#OuterPath"/>
-		</animateMotion>
-	</a>
+		<circle class='mo' r="4195"/><!-- Salacia orbit -->
+		<a href='https://en.wikipedia.org/wiki/120347_Salacia'><!-- Salacia -->
+			<text x="4205" y="103">Salacia</text>
+			<circle cx="4195" class='moc'/>
+			<animateMotion dur="10.17s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+				<mpath href="#OuterPath"/>
+			</animateMotion>
+		</a>
 
-	<circle class='mo' r="4195"/><!-- Salacia orbit -->
-	<a href='https://en.wikipedia.org/wiki/120347_Salacia'><!-- Salacia -->
-		<text x="4217" y="103" font-size="10" fill="white">Salacia</text>
-		<circle cx="4195" class='moc'/>
-		<animateMotion dur="10.17s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
-			<mpath href="#OuterPath"/>
-		</animateMotion>
-	</a>
+		<a href="https://en.wikipedia.org/wiki/New_Horizons"><!-- New Horizons Epoch 2018-08-22 -->
+			<text x="4222" y="120" font-size="8" fill="white">New Horizons</text>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/4/4f/New_Horizons_Transparent.png" x="4222" y="88" height="24"/>
+		</a>
 
-	<a href="https://en.wikipedia.org/wiki/New_Horizons"><!-- New Horizons Epoch 2018-08-22 -->
-		<text x="4222" y="120" font-size="8" fill="white">New Horizons</text>
-		<image href="https://upload.wikimedia.org/wikipedia/commons/4/4f/New_Horizons_Transparent.png" x="4222" y="88" height="24"/>
-	</a>
+		<circle class='mo' r="4322"/><!-- Haumea orbit -->
+		<a href='https://en.wikipedia.org/wiki/Haumea'><!-- Haumea -->
+			<text x="4330" y="103">Haumea</text>
+			<circle cx="4322" class='moc'/>
+			<animateMotion dur="10.33s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+				<mpath href="#OuterPath"/>
+			</animateMotion>
+		</a>
 
-	<circle class='mo' r="4322"/><!-- Haumea orbit -->
-	<a href='https://en.wikipedia.org/wiki/Haumea'><!-- Haumea -->
-		<text x="4330" y="103" font-size="10" fill="white">Haumea</text>
-		<circle cx="4322" class='moc'/>
-		<animateMotion dur="10.33s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
-			<mpath href="#OuterPath"/>
-		</animateMotion>
-	</a>
+		<circle class='mo' r="4362"/><!-- Quaoar orbit -->
+		<a href='https://en.wikipedia.org/wiki/50000_Quaoar'><!-- Quaoar -->
+			<text x="4372" y="103">Quaoar</text>
+			<circle cx="4362" class='moc'/>
+			<animateMotion dur="10.37s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+				<mpath href="#OuterPath"/>
+			</animateMotion>
+		</a>
 
-	<circle class='mo' r="4362"/><!-- Quaoar orbit -->
-	<a href='https://en.wikipedia.org/wiki/50000_Quaoar'><!-- Quaoar -->
-		<text x="4372" y="103" font-size="10" fill="white">Quaoar</text>
-		<circle cx="4362" class='moc'/>
-		<animateMotion dur="10.37s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
-			<mpath href="#OuterPath"/>
-		</animateMotion>
-	</a>
+		<circle class='mo' r="4446"/><!-- 2014 MU69 orbit -->
+		<a href='https://en.wikipedia.org/wiki/(486958)_2014_MU69'><!-- 2014 MU69 -->
+			<text x="4455" y="103">2014 MU69</text>
+			<circle cx="4446" cy="100" r="5" fill="grey"/>
+			<animateMotion dur="10.47s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+				<mpath href="#OuterPath"/>
+			</animateMotion>
+		</a>
 
-	<circle class='mo' r="4446"/><!-- 2014 MU69 orbit -->
-	<a href='https://en.wikipedia.org/wiki/(486958)_2014_MU69'><!-- 2014 MU69 -->
-		<text x="4455" y="103" font-size="10" fill="white">2014 MU69</text>
-		<circle cx="4446" cy="100" r="5" fill="grey"/>
-		<animateMotion dur="10.47s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
-			<mpath href="#OuterPath"/>
-		</animateMotion>
-	</a>
+		<circle class='mo' r="4572"/><!-- Makemake orbit -->
+		<a href='https://en.wikipedia.org/wiki/Makemake'><!-- Makemake -->
+			<text x="4580" y="105">Makemake</text>
+			<circle cx="4572" class='moc'/>
+			<animateMotion dur="10.59s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+				<mpath href="#OuterPath"/>
+			</animateMotion>
+		</a>
 
-	<circle class='mo' r="4572"/><!-- Makemake orbit -->
-	<a href='https://en.wikipedia.org/wiki/Makemake'><!-- Makemake -->
-		<text x="4580" y="105" font-size="10" fill="white">Makemake</text>
-		<circle cx="4572" class='moc'/>
-		<animateMotion dur="10.59s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
-			<mpath href="#OuterPath"/>
-		</animateMotion>
-	</a>
+		<circle class='mo' r="6706"/><!-- 2007 OR10 orbit -->
+		<a href='https://en.wikipedia.org/wiki/(225088)_2007_OR10'><!-- 2007 OR10 -->
+			<text x="6716" y="103">2007 OR10</text>
+			<circle cx="6706" class='moc'/>
+			<animateMotion dur="12.86s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+				<mpath href="#OuterPath"/>
+			</animateMotion>
+		</a>
 
-	<circle class='mo' r="6706"/><!-- 2007 OR10 orbit -->
-	<a href='https://en.wikipedia.org/wiki/(225088)_2007_OR10'><!-- 2007 OR10 -->
-		<text x="6716" y="103" font-size="10" fill="white">2007 OR10</text>
-		<circle cx="6706" class='moc'/>
-		<animateMotion dur="12.86s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
-			<mpath href="#OuterPath"/>
-		</animateMotion>
-	</a>
+		<circle class='mo' r="6778"/><!-- Eris orbit -->
+		<a href='https://en.wikipedia.org/wiki/Eris_(dwarf_planet)'><!-- Eris -->
+			<text x="6790" y="103">Eris</text>
+			<circle cx="6778" class='moc'/>
+			<animateMotion dur="13.63s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+				<mpath href="#OuterPath"/>
+			</animateMotion>
+		</a>
 
-	<circle class='mo' r="6778"/><!-- Eris orbit -->
-	<a href='https://en.wikipedia.org/wiki/Eris_(dwarf_planet)'><!-- Eris -->
-		<text x="6790" y="103" font-size="10" fill="white">Eris</text>
-		<circle cx="6778" class='moc'/>
-		<animateMotion dur="13.63s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
-			<mpath href="#OuterPath"/>
-		</animateMotion>
-	</a>
-
-	<circle class='mo' r="7609"/><!-- Sedna orbit -->
-	<a href='https://en.wikipedia.org/wiki/90377_Sedna'><!-- Sedna -->
-		<text x="7620" y="103" font-size="10" fill="white">Sedna</text>
-		<circle cx="7609" class='moc'/>
-		<animateMotion dur="45.02s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
-			<mpath href="#OuterPath"/>
-		</animateMotion>
-	</a>
+		<circle class='mo' r="7609"/><!-- Sedna orbit -->
+		<a href='https://en.wikipedia.org/wiki/90377_Sedna'><!-- Sedna -->
+			<text x="7620" y="103">Sedna</text>
+			<circle cx="7609" class='moc'/>
+			<animateMotion dur="45.02s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
+				<mpath href="#OuterPath"/>
+			</animateMotion>
+		</a>
+	</g>
 	
 	<a href='https://en.wikipedia.org/wiki/Elon_Musk'>
 		<text x="7865" y="45" font-size="8" fill="white">*Notices ur uncolonized planets*</text>
