@@ -35,7 +35,6 @@
 		#rtno circle{cx:0;cy:100;stroke:rgb(64,128,64);fill:none;}
 		#rtno text{font-size:10px;fill:white;}
 		.po{cx:0;cy:100;stroke:white;stroke-width:1px;fill:none;}
-		animateMotion{repeatCount:indefinite;}
 	</style>
 	
 	<script type="text/javascript">
@@ -367,7 +366,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg" x="31" y="92" height="16" width="16" transform="rotate(180 39 100)"/>
 			<text x="47" y="102" font-size="8" fill="white">Mercury</text>
 		</g>
-		<animateMotion dur="0.602115s">
+		<animateMotion dur="0.602115s" repeatCount="indefinite">
 			<mpath id='s1' href="#MercuryPath"/>
 		</animateMotion>
 	</a>
@@ -379,7 +378,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg" x="64" y="92" height="16" width="16"/>
 			<text x="80" y="102" font-size="8" fill="white">Venus</text>
 		</g>
-		<animateMotion dur="1.537995s">
+		<animateMotion dur="1.537995s" repeatCount="indefinite">
 			<mpath id='s2' href="#VenusPath"/>
 		</animateMotion>
 	</a>
@@ -393,7 +392,7 @@
 		</g>
 		<use class='invisible' id='t1' x="100" y="100" href="#arrow"/>
 		<text class='invisible' id='t2' x="125" y="75" font-size="8" fill="red">You are here</text>
-		<animateMotion dur="2.5s">
+		<animateMotion dur="2.5s" repeatCount="indefinite">
 			<mpath id='s3' href="#EarthPath"/>
 		</animateMotion>
 	</a>
@@ -402,7 +401,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg" x="108" y="92" height="8" width="8"/>
 			<text x="116" y="102" font-size="8" fill="white">Moon</text>
 		</g>
-		<animateMotion dur="2.5s">
+		<animateMotion dur="2.5s" repeatCount="indefinite">
 			<mpath id='s3.1' href="#EarthPath"/>
 		</animateMotion>
 	</a>
@@ -416,7 +415,7 @@
 		</g>
 		<use class='invisible' id='t3' x="152" y="100" href="#arrow"/>
 		<text class='invisible' id='t4' x="177" y="75" font-size="8" fill="red">Elon Musk's Homeworld</text>
-		<animateMotion dur="2.5061292s"> <!-- 0.23472222222222222222222222222222 of orbit visible -->
+		<animateMotion dur="2.5061292s" repeatCount="indefinite"> <!-- 0.23472222222222222222222222222222 of orbit visible -->
 			<mpath id='s4' href="#MarsPath"/>
 		</animateMotion>
 	</a>
@@ -425,7 +424,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/5/5c/Phobos_colour_2008.jpg" x="160" y="92" height="8" width="8"/>
 			<text x="168" y="102" font-size="8" fill="white">Phobos</text>
 		</g>
-		<animateMotion dur="2.5061292s">
+		<animateMotion dur="2.5061292s" repeatCount="indefinite">
 			<mpath id='s4.1' href="#MarsPath"/>
 		</animateMotion>
 	</a>
@@ -434,7 +433,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/8/8d/Deimos-MRO.jpg" x="160" y="100" height="8" width="8"/>
 			<text x="168" y="102" font-size="8" fill="white">Deimos</text>
 		</g>
-		<animateMotion dur="2.5061292s">
+		<animateMotion dur="2.5061292s" repeatCount="indefinite">
 			<mpath id='s4.2' href="#MarsPath"/>
 		</animateMotion>
 	</a>
@@ -446,7 +445,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/5/58/Ceres_-_RC3_-_Haulani_Crater_(22381131691).jpg" x="270" y="92" height="14" width="14" transform="rotate(180 277 100)"/>
 			<text x="285" y="103" font-size="8" fill="white">Ceres</text>
 		</g>
-		<animateMotion dur="2.683s"> <!-- 0.11666666666666666666666666666667 of orbit visible -->
+		<animateMotion dur="2.683s" repeatCount="indefinite"> <!-- 0.11666666666666666666666666666667 of orbit visible -->
 			<mpath id='sm1' href="#CeresPath"/>
 		</animateMotion>
 	</a>
@@ -456,7 +455,7 @@
 		<text x="550" y="110" font-size="25" fill="white">Jupiter</text>
 		<path d="M -9 100 A 520 520 0 0 0 -9 -100" fill="none" id="JupiterPath"/>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg" x="511" y="92" height="18" width="18"/>
-		<animateMotion dur="3.61132s"> <!-- 0.06088888888888888888888888888889 of orbit visible -->
+		<animateMotion dur="3.61132s" repeatCount="indefinite"> <!-- 0.06088888888888888888888888888889 of orbit visible -->
 			<mpath href="#JupiterPath"/>
 		</animateMotion>
 	</a>
@@ -465,7 +464,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/7/7b/Io_highest_resolution_true_color.jpg" x="529" y="92" height="9" width="9"/>
 			<text x="529" y="120" font-size="8" fill="white">Io</text>
 		</g>
-		<animateMotion dur="3.61132s">
+		<animateMotion dur="3.61132s" repeatCount="indefinite">
 			<mpath href="#JupiterPath"/>
 		</animateMotion>
 	</a>
@@ -474,7 +473,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/5/54/Europa-moon.jpg" x="529" y="101" height="9" width="9"/>
 			<text x="529" y="120" font-size="8" fill="white">Europa</text>
 		</g>
-		<animateMotion dur="3.61132s">
+		<animateMotion dur="3.61132s" repeatCount="indefinite">
 			<mpath href="#JupiterPath"/>
 		</animateMotion>
 	</a>
@@ -483,7 +482,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/f/f2/Ganymede_g1_true-edit1.jpg" x="538" y="92" height="9" width="9"/>
 			<text x="529" y="120" font-size="8" fill="white">Ganymede</text>
 		</g>
-		<animateMotion dur="3.61132s">
+		<animateMotion dur="3.61132s" repeatCount="indefinite">
 			<mpath href="#JupiterPath"/>
 		</animateMotion>
 	</a>
@@ -492,7 +491,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e9/Callisto.jpg" x="538" y="101" height="9" width="9"/>
 			<text x="529" y="120" font-size="8" fill="white">Callisto</text>
 		</g>
-		<animateMotion dur="3.61132s">
+		<animateMotion dur="3.61132s" repeatCount="indefinite">
 			<mpath href="#JupiterPath"/>
 		</animateMotion>
 	</a>
@@ -507,7 +506,7 @@
 		<text x="1010" y="110" font-size="25" fill="white">Saturn</text>
 		<path d="M -5 100 A 958 958 0 0 0 -5 -100" fill="none" id="SaturnPath"/>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/2/29/Saturn_Storm.jpg" x="949" y="92" height="18" width="18"/>
-		<animateMotion dur="4.8604215s"> <!-- 0.033 of orbit visible -->
+		<animateMotion dur="4.8604215s" repeatCount="indefinite"> <!-- 0.033 of orbit visible -->
 			<mpath href="#SaturnPath"/>
 		</animateMotion>
 	</a>
@@ -516,7 +515,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/b/bc/Mimas_Cassini.jpg" x="967" y="92" height="9" width="9"/>
 			<text x="967" y="120" font-size="8" fill="white">Mimas</text>
 		</g>
-		<animateMotion dur="4.8604215s">
+		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
 		</animateMotion>
 	</a>
@@ -525,7 +524,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/9/95/Enceladus_from_Voyager.jpg" x="967" y="101" height="9" width="9"/>
 			<text x="967" y="120" font-size="8" fill="white">Enceladus</text>
 		</g>
-		<animateMotion dur="4.8604215s">
+		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
 		</animateMotion>
 	</a>
@@ -534,7 +533,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/b/bc/PIA18317-SaturnMoon-Tethys-Cassini-20150411.jpg" x="976" y="92" height="9" width="9"/>
 			<text x="967" y="120" font-size="8" fill="white">Tethys</text>
 		</g>
-		<animateMotion dur="4.8604215s">
+		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
 		</animateMotion>
 	</a>
@@ -543,7 +542,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/4/42/Dione_in_natural_light.jpg" x="976" y="101" height="9" width="9"/>
 			<text x="967" y="120" font-size="8" fill="white">Dione</text>
 		</g>
-		<animateMotion dur="4.8604215s">
+		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
 		</animateMotion>
 	</a>
@@ -552,7 +551,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/a/ab/PIA07763_Rhea_full_globe5.jpg" x="985" y="92" height="9" width="9"/>
 			<text x="967" y="120" font-size="8" fill="white">Rhea</text>
 		</g>
-		<animateMotion dur="4.8604215s">
+		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
 		</animateMotion>
 	</a>
@@ -561,7 +560,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/4/45/Titan_in_true_color.jpg" x="985" y="101" height="9" width="9"/>
 			<text x="967" y="120" font-size="8" fill="white">Titan</text>
 		</g>
-		<animateMotion dur="4.8604215s">
+		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
 		</animateMotion>
 	</a>
@@ -570,7 +569,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/b/b7/Iapetus_706_1419_1.jpg" x="994" y="96" height="9" width="9"/>
 			<text x="967" y="120" font-size="8" fill="white">Iaptus</text>
 		</g>
-		<animateMotion dur="4.8604215s">
+		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
 		</animateMotion>
 	</a>
@@ -587,7 +586,7 @@
 		<text x="1960" y="110" font-size="25" fill="white">Uranus</text>
 		<path d="M -3 100 A 1922 1922 0 0 0 -3 -100" fill="none" id="UranusPath"/>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg" x="1913" y="92" height="18" width="18"/>
-		<animateMotion dur="6.885013194s"> <!-- 0.016389 of orbit visible -->
+		<animateMotion dur="6.885013194s" repeatCount="indefinite"> <!-- 0.016389 of orbit visible -->
 			<mpath href="#UranusPath"/>
 		</animateMotion>
 	</a>
@@ -596,7 +595,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e1/PIA18185_Miranda's_Icy_Face.jpg" x="1931" y="92" height="9" width="9"/>
 			<text x="1931" y="120" font-size="8" fill="white">Miranda</text>
 		</g>
-		<animateMotion dur="6.885013194s">
+		<animateMotion dur="6.885013194s" repeatCount="indefinite">
 			<mpath href="#UranusPath"/>
 		</animateMotion>
 	</a>
@@ -605,7 +604,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/5/59/Ariel_(moon).jpg" x="1931" y="101" height="9" width="9"/>
 			<text x="1931" y="120" font-size="8" fill="white">Ariel</text>
 		</g>
-		<animateMotion dur="6.885013194s">
+		<animateMotion dur="6.885013194s" repeatCount="indefinite">
 			<mpath href="#UranusPath"/>
 		</animateMotion>
 	</a>
@@ -614,7 +613,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2f/PIA00040_Umbrielx2.47.jpg" x="1940" y="92" height="9" width="9"/>
 			<text x="1931" y="120" font-size="8" fill="white">Umbriel</text>
 		</g>
-		<animateMotion dur="6.885013194s">
+		<animateMotion dur="6.885013194s" repeatCount="indefinite">
 			<mpath href="#UranusPath"/>
 		</animateMotion>
 	</a>
@@ -623,7 +622,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2e/Titania_(moon)_color%2C_edited.jpg" x="1940" y="101" height="9" width="9"/>
 			<text x="1931" y="120" font-size="8" fill="white">Titania</text>
 		</g>
-		<animateMotion dur="6.885013194s">
+		<animateMotion dur="6.885013194s" repeatCount="indefinite">
 			<mpath href="#UranusPath"/>
 		</animateMotion>
 	</a>
@@ -632,7 +631,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/0/09/Voyager_2_picture_of_Oberon.jpg" x="1949" y="96" height="9" width="9"/>
 			<text x="1931" y="120" font-size="8" fill="white">Oberon</text>
 		</g>
-		<animateMotion dur="6.885013194s">
+		<animateMotion dur="6.885013194s" repeatCount="indefinite">
 			<mpath href="#UranusPath"/>
 		</animateMotion>
 	</a>
@@ -643,7 +642,7 @@
 	<a href='https://en.wikipedia.org/wiki/Neptune'><!-- Neptune -->
 		<text x="3030" y="110" font-size="25" fill="white">Neptune</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg" x="3002" y="92" height="18" width="18"/>
-		<animateMotion dur="8.62s"> <!-- appx. based on orbital velocity -->
+		<animateMotion dur="8.62s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
@@ -652,7 +651,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/a/a6/Triton_moon_mosaic_Voyager_2_(large).jpg" x="3020" y="92" height="9" width="9"/>
 			<text x="3011" y="120" font-size="8" fill="white">Triton</text>
 		</g>
-		<animateMotion dur="8.62s">
+		<animateMotion dur="8.62s" repeatCount="indefinite">
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
@@ -666,7 +665,7 @@
 	<a href='https://en.wikipedia.org/wiki/90482_Orcus'><!-- Orcus -->
 		<text x="3962" y="103" font-size="10" fill="white">Orcus</text>
 		<circle cx="3940" cy="100" r="7" fill="grey"/>
-		<animateMotion dur="9.859s"> <!-- appx. based on orbital velocity -->
+		<animateMotion dur="9.859s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
@@ -675,7 +674,7 @@
 	<a href='https://en.wikipedia.org/wiki/Pluto'><!-- Pluto -->
 		<text x="3970" y="103" font-size="10" fill="white">Pluto</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/c/cd/Nh-pluto-in-true-color_2x_JPEG-edit.jpg" x="3941" y="92" height="14" width="14"/>
-		<animateMotion dur="10.03s"> <!-- appx. based on orbital velocity -->
+		<animateMotion dur="10.03s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
@@ -684,7 +683,7 @@
 			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2b/Charon_in_Color_(HQ).jpg" x="3955" y="92" height="9" width="9"/>
 			<text x="3955" y="120" font-size="8" fill="white">Charon</text>
 		</g>
-		<animateMotion dur="10.03s">
+		<animateMotion dur="10.03s" repeatCount="indefinite">
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
@@ -693,7 +692,7 @@
 	<a href='https://en.wikipedia.org/wiki/120347_Salacia'><!-- Salacia -->
 		<text x="4217" y="103" font-size="10" fill="white">Salacia</text>
 		<circle cx="4195" cy="100" r="7" fill="grey"/>
-		<animateMotion dur="10.17s"> <!-- appx. based on orbital velocity -->
+		<animateMotion dur="10.17s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
@@ -707,7 +706,7 @@
 	<a href='https://en.wikipedia.org/wiki/Haumea'><!-- Haumea -->
 		<text x="4330" y="103" font-size="10" fill="white">Haumea</text>
 		<circle cx="4322" cy="100" r="7" fill="grey"/>
-		<animateMotion dur="10.33s"> <!-- appx. based on orbital velocity -->
+		<animateMotion dur="10.33s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
@@ -716,7 +715,7 @@
 	<a href='https://en.wikipedia.org/wiki/50000_Quaoar'><!-- Quaoar -->
 		<text x="4372" y="103" font-size="10" fill="white">Quaoar</text>
 		<circle cx="4362" cy="100" r="7" fill="grey"/>
-		<animateMotion dur="10.37s"> <!-- appx. based on orbital velocity -->
+		<animateMotion dur="10.37s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
@@ -725,7 +724,7 @@
 	<a href='https://en.wikipedia.org/wiki/(486958)_2014_MU69'><!-- 2014 MU69 -->
 		<text x="4455" y="103" font-size="10" fill="white">2014 MU69</text>
 		<circle cx="4446" cy="100" r="5" fill="grey"/>
-		<animateMotion dur="10.47s"> <!-- appx. based on orbital velocity -->
+		<animateMotion dur="10.47s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
@@ -734,7 +733,7 @@
 	<a href='https://en.wikipedia.org/wiki/Makemake'><!-- Makemake -->
 		<text x="4580" y="105" font-size="10" fill="white">Makemake</text>
 		<circle cx="4572" cy="100" r="7" fill="grey"/>
-		<animateMotion dur="10.59s"> <!-- appx. based on orbital velocity -->
+		<animateMotion dur="10.59s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
@@ -743,7 +742,7 @@
 	<a href='https://en.wikipedia.org/wiki/(225088)_2007_OR10'><!-- 2007 OR10 -->
 		<text x="6716" y="103" font-size="10" fill="white">2007 OR10</text>
 		<circle cx="6706" cy="100" r="7" fill="grey"/>
-		<animateMotion dur="12.86s"> <!-- appx. based on orbital velocity -->
+		<animateMotion dur="12.86s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
@@ -752,7 +751,7 @@
 	<a href='https://en.wikipedia.org/wiki/Eris_(dwarf_planet)'><!-- Eris -->
 		<text x="6790" y="103" font-size="10" fill="white">Eris</text>
 		<circle cx="6778" cy="100" r="7" fill="grey"/>
-		<animateMotion dur="13.63s"> <!-- appx. based on orbital velocity -->
+		<animateMotion dur="13.63s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
@@ -761,7 +760,7 @@
 	<a href='https://en.wikipedia.org/wiki/90377_Sedna'><!-- Sedna -->
 		<text x="7620" y="103" font-size="10" fill="white">Sedna</text>
 		<circle cx="7609" cy="100" r="7" fill="grey"/>
-		<animateMotion dur="45.02s"> <!-- appx. based on orbital velocity -->
+		<animateMotion dur="45.02s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
