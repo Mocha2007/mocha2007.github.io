@@ -503,7 +503,7 @@
 	</a>
 	<a class='body gm' href='https://en.wikipedia.org/wiki/Ganymede_(moon)'><!-- Ganymede -->
 		<g class='hovertext'>
-			<image class='rm' href="https://upload.wikimedia.org/wikipedia/commons/f/f2/Ganymede_g1_true-edit1.jpg" transform="translate(538 92)"/>
+			<image class='rm' href="https://upload.wikimedia.org/wikipedia/commons/f/f2/Ganymede_g1_true-edit1.jpg" transform="rotate(180 542 96) translate(538 92)"/>
 			<text x="529" y="120">Ganymede</text>
 		</g>
 		<animateMotion dur="3.61132s" repeatCount="indefinite">
