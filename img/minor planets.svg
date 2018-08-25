@@ -545,7 +545,7 @@
 	</a>
 	<a class='body gm' href='https://en.wikipedia.org/wiki/Enceladus'><!-- Enceladus -->
 		<g class='hovertext'>
-			<image class='rm' href="https://upload.wikimedia.org/wikipedia/commons/9/95/Enceladus_from_Voyager.jpg" transform="translate(967 101)"/>
+			<image class='rm' href="https://upload.wikimedia.org/wikipedia/commons/9/95/Enceladus_from_Voyager.jpg" transform="rotate(135 971 105) translate(967 101)"/>
 			<text x="967" y="120">Enceladus</text>
 		</g>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite">
@@ -554,7 +554,7 @@
 	</a>
 	<a class='body gm' href='https://en.wikipedia.org/wiki/Tethys_(moon)'><!-- Tethys -->
 		<g class='hovertext'>
-			<image class='rm' href="https://upload.wikimedia.org/wikipedia/commons/b/bc/PIA18317-SaturnMoon-Tethys-Cassini-20150411.jpg" transform="translate(976 92)"/>
+			<image class='rm' href="https://upload.wikimedia.org/wikipedia/commons/b/bc/PIA18317-SaturnMoon-Tethys-Cassini-20150411.jpg" transform="rotate(180 980 96) translate(976 92)"/>
 			<text x="967" y="120">Tethys</text>
 		</g>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite">
@@ -672,7 +672,7 @@
 	</a>
 	<a class='body gm' href='https://en.wikipedia.org/wiki/Triton_(moon)'><!-- Triton -->
 		<g class='hovertext'>
-			<image class='rm' href="https://upload.wikimedia.org/wikipedia/commons/a/a6/Triton_moon_mosaic_Voyager_2_(large).jpg" transform="translate(3020 92)"/>
+			<image class='rm' href="https://upload.wikimedia.org/wikipedia/commons/a/a6/Triton_moon_mosaic_Voyager_2_(large).jpg" transform="rotate(65 3024 96) translate(3020 92)"/>
 			<text x="3011" y="120">Triton</text>
 		</g>
 		<animateMotion dur="8.62s" repeatCount="indefinite">
