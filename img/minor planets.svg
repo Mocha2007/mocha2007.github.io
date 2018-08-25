@@ -22,9 +22,9 @@
 		.hoverrange:hover circle,.hoverrange:hover use{display:block;}
 		.hoverrange text{text-shadow:#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px;}
 		.i{font-style:italic;}
-		#kirkwood circle{stroke:pink;stroke-width:1;fill:none;cx:0;cy:100;}
+		#kirkwood circle{stroke:pink;stroke-width:1;fill:none;cx:0px;cy:100px;}
 		#kirkwoodminor circle{stroke-opacity:0.2;}
-		#af circle{cx:0;cy:100;stroke-opacity:0.2;fill:none;}
+		#af circle{cx:0px;cy:100px;stroke-opacity:0.2;fill:none;}
 		#af text{font-size:4px;}
 		#iaf circle{stroke:darkblue;}
 		#iaf text{fill:darkblue;}
@@ -33,9 +33,9 @@
 		#oaf circle{stroke:rgb(0,48,0);}
 		#oaf text{fill:darkgreen;}
 		#beltsections text{font-style:italic;font-size:8px;}
-		#rtno circle{cx:0;cy:100;stroke:rgb(64,128,64);fill:none;}
+		#rtno circle{cx:0px;cy:100px;stroke:rgb(64,128,64);fill:none;}
 		#rtno text{font-size:10px;fill:white;}
-		.po,.mo{cx:0;cy:100;stroke-width:1px;fill:none;}
+		.po,.mo{cx:0px;cy:100px;stroke-width:1px;fill:none;}
 		.po{stroke:white;}
 		.mo{stroke:silver;}
 		.moc{cy:100px;r:7px;fill:grey;}
