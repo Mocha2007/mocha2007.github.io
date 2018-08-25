@@ -7,7 +7,7 @@
 		<polygon id='arrow' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="red" transform="scale(.5)"/>
 		<polygon id='arrowai' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="darkblue" transform="scale(.25)"/>
 		<polygon id='arrowam' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="rgb(48,48,0)" transform="scale(.25)"/>
-		<polygon id='arrowao' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="rgb(0,96,0)" transform="scale(.25)"/>
+		<polygon id='arrowao' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="darkgreen" transform="scale(.25)"/>
 	</defs>
 	
 	<style>
@@ -34,7 +34,7 @@
 		#oaf circle{stroke:rgb(0,48,0);}
 		#oaf text{fill:darkgreen;}
 		#beltsections text{font-style:italic;font-size:8px;}
-		#rtno circle{cx:0px;cy:100px;stroke:rgb(64,128,64);fill:none;}
+		#rtno circle{cx:0px;cy:100px;stroke:seagreen;fill:none;}
 		#rtno text,.desc text{font-size:10px;fill:white;}
 		.po,.mo{cx:0px;cy:100px;stroke-width:1px;fill:none;}
 		.po{stroke:white;}
@@ -101,7 +101,7 @@
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Circumstellar_habitable_zone'><!-- Kasting et al. 1993 -->
-		<circle class='range' r="116" stroke="rgb(64,128,64)" stroke-width="42"/>
+		<circle class='range' r="116" stroke="seagreen" stroke-width="42"/>
 		<text x="50" y="10" font-size="8" fill="lime">Habitable Zone</text>
 	</a>
 
@@ -112,11 +112,11 @@
 	<a href='https://en.wikipedia.org/wiki/Asteroid_belt'>
 		<circle class='range' r="228" stroke="rgb(64,96,128)" stroke-width="44"/><!-- inner belt -->
 		<circle class='range' r="266" stroke="rgb(128,112,64)" stroke-width="32"/><!-- middle belt -->
-		<circle class='range' r="305" stroke="rgb(64,128,64)" stroke-width="46"/><!-- outer belt -->
+		<circle class='range' r="305" stroke="seagreen" stroke-width="46"/><!-- outer belt -->
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Hilda_asteroid'><!-- Hildas -->
-		<circle class='range' r="395" stroke="rgb(211,147,0)" stroke-opacity="0.5" stroke-width="50"/>
+		<circle class='range' r="395" stroke="orange" stroke-opacity="0.5" stroke-width="50"/>
 		<text class='i' x="375" y="180" font-size="8" fill="orange">Hildas</text>
 	</a>
 
@@ -301,9 +301,9 @@
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Jupiter_trojan'><!-- Trojans -->
-		<circle class='range' r="522.5" stroke="rgb(106,215,104)" stroke-opacity="0.5" stroke-width="35"/><!-- inner belt -->
-		<text x="500" y="10" font-size="8" fill="rgb(128,255,128)">Greeks</text>
-		<text x="500" y="190" font-size="8" fill="rgb(128,255,128)">Trojans</text>
+		<circle class='range' r="522.5" stroke="lightgreen" stroke-opacity="0.5" stroke-width="35"/><!-- inner belt -->
+		<text x="500" y="10" font-size="8" fill="lightgreen">Greeks</text>
+		<text x="500" y="190" font-size="8" fill="lightgreen">Trojans</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/3548_Eurybates'><!-- Eurybates Family -->
@@ -319,12 +319,12 @@
 	</a>
 
 	<a class='desc' href='https://en.wikipedia.org/wiki/Trans-Neptunian_object'><!-- TNOs -->
-		<circle class='range' r="6505.5" stroke="rgb(64,128,128)" stroke-width="6989"/>
+		<circle class='range' r="6505.5" stroke="teal" stroke-width="6989"/>
 		<text x="3050" y="190">Trans-Neptunian Objects</text>
 	</a>
 
 	<a class='desc' href='https://en.wikipedia.org/wiki/Plutino'><!-- Plutinos -->
-		<circle class='range' r="3975" stroke="rgb(64,128,64)" stroke-width="150"/>
+		<circle class='range' r="3975" stroke="seagreen" stroke-width="150"/>
 		<text x="3950" y="190">Plutinos (2:3)</text>
 	</a>
 
@@ -364,7 +364,7 @@
 	
 	<a href='https://en.wikipedia.org/wiki/Sun'><!-- Sun -->
 		<g class='hovertext'>
-			<circle cx="0" cy="100" r="20.360429090893869764496599309054" fill="rgb(255,224,128)"/>
+			<circle cx="0" cy="100" r="20.360429090893869764496599309054" fill="khaki"/>
 			<text x="0" y="102" font-size="8" fill="black">Sun</text>
 		</g>
 	</a>
