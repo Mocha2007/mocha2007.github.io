@@ -31,6 +31,9 @@
 		#maf text{fill:olive;}
 		#oaf circle{stroke:rgb(0,48,0);}
 		#oaf text{fill:darkgreen;}
+		#beltsections text{font-style:italic;font-size:8px;}
+		#rtno circle{cx:0;cy:100;stroke:rgb(64,128,64);fill:none;}
+		#rtno text{font-size:10px;fill:white;}
 	</style>
 	
 	<script type="text/javascript">
@@ -261,9 +264,11 @@
 
 	<a href='https://en.wikipedia.org/wiki/Asteroid_belt'><!-- asteroid belt part 2 -->
 		<text x="215" y="195" font-size="10" fill="white">Asteroid Belt</text>
-		<text class='i' x="204" y="180" font-size="8" fill="darkblue">Inner</text>
-		<text class='i' x="242" y="180" font-size="8" fill="rgb(64,64,0)">Middle</text>
-		<text class='i' x="284" y="180" font-size="8" fill="darkgreen">Outer</text>
+		<g id='beltsections'>
+			<text x="204" y="180" fill="darkblue">Inner</text>
+			<text x="242" y="180" fill="rgb(64,64,0)">Middle</text>
+			<text x="284" y="180" fill="darkgreen">Outer</text>
+		</g>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Frost_line_(astrophysics)'><!-- Frost Line -->
@@ -315,28 +320,28 @@
 		<text x="5010" y="190" font-size="10" fill="white">Scattered Disc Objects</text>
 	</a>
 
-	<a href='https://en.wikipedia.org/wiki/Resonant_trans-Neptunian_object'><!-- Resonant TNOs -->
-		<circle cx="0" cy="100" r="3496.5" stroke="rgb(64,128,64)" stroke-width="55" fill="none"/><!-- 4:5 -->
-		<circle cx="0" cy="100" r="3644.5" stroke="rgb(64,128,64)" stroke-width="55" fill="none"/><!-- 3:4 -->
-		<circle cx="0" cy="100" r="4126" stroke="rgb(64,128,64)" stroke-width="36" fill="none"/><!-- 5:8 -->
-		<circle cx="0" cy="100" r="4224" stroke="rgb(64,128,64)" stroke-width="70" fill="none"/><!-- 3:5 -->
-		<circle cx="0" cy="100" r="4377.5" stroke="rgb(64,128,64)" stroke-width="69" fill="none"/><!-- 4:7 -->
-		<circle cx="0" cy="100" r="4456" stroke="rgb(64,128,64)" stroke-width="54" fill="none"/><!-- 5:9 -->
-		<circle cx="0" cy="100" r="4514.5" stroke="rgb(64,128,64)" stroke-width="53" fill="none"/><!-- 6:11 -->
-		<circle cx="0" cy="100" r="4789" stroke="rgb(64,128,64)" stroke-width="124" fill="none"/><!-- Twotinos -->
-		<circle cx="0" cy="100" r="5167.5" stroke="rgb(64,128,64)" stroke-width="65" fill="none"/><!-- 4:9 -->
-		<circle cx="0" cy="100" r="5553" stroke="rgb(64,128,64)" stroke-width="176" fill="none"/><!-- 2:5 -->
+	<a id='rtno' href='https://en.wikipedia.org/wiki/Resonant_trans-Neptunian_object'><!-- Resonant TNOs -->
+		<circle r="3496.5" stroke-width="55"/><!-- 4:5 -->
+		<circle r="3644.5" stroke-width="55"/><!-- 3:4 -->
+		<circle r="4126" stroke-width="36"/><!-- 5:8 -->
+		<circle r="4224" stroke-width="70"/><!-- 3:5 -->
+		<circle r="4377.5" stroke-width="69"/><!-- 4:7 -->
+		<circle r="4456" stroke-width="54"/><!-- 5:9 -->
+		<circle r="4514.5" stroke-width="53"/><!-- 6:11 -->
+		<circle r="4789" stroke-width="124"/><!-- Twotinos -->
+		<circle r="5167.5" stroke-width="65"/><!-- 4:9 -->
+		<circle r="5553" stroke-width="176"/><!-- 2:5 -->
 		
-		<text x="3485" y="190" font-size="10" fill="white">4:5</text>
-		<text x="3635" y="190" font-size="10" fill="white">3:4</text>
-		<text x="4115" y="190" font-size="10" fill="white">5:8</text>
-		<text x="4215" y="190" font-size="10" fill="white">3:5</text>
-		<text x="4370" y="190" font-size="10" fill="white">4:7</text>
-		<text x="4445" y="190" font-size="10" fill="white">5:9</text>
-		<text x="4500" y="190" font-size="10" fill="white">6:11</text>
-		<text x="4750" y="190" font-size="10" fill="white">Twotinos (1:2)</text>
-		<text x="5160" y="190" font-size="10" fill="white">4:9</text>
-		<text x="5545" y="190" font-size="10" fill="white">2:5</text>
+		<text x="3485" y="190">4:5</text>
+		<text x="3635" y="190">3:4</text>
+		<text x="4115" y="190">5:8</text>
+		<text x="4215" y="190">3:5</text>
+		<text x="4370" y="190">4:7</text>
+		<text x="4445" y="190">5:9</text>
+		<text x="4500" y="190">6:11</text>
+		<text x="4750" y="190">Twotinos (1:2)</text>
+		<text x="5160" y="190">4:9</text>
+		<text x="5545" y="190">2:5</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Kuiper_belt#Kuiper_cliff'><!-- Kuiper Cliff -->
