@@ -275,7 +275,7 @@
 
 	<a href='https://en.wikipedia.org/wiki/Asteroid_belt'><!-- asteroid belt part 2 -->
 		<g class='desc'>
-			<text x="215" y="195" font-size="10" fill="white">Asteroid Belt</text>
+			<text x="215" y="195">Asteroid Belt</text>
 		</g>
 		<g id='beltsections'>
 			<text x="204" y="180" fill="darkblue">Inner</text>
