@@ -34,6 +34,7 @@
 		#beltsections text{font-style:italic;font-size:8px;}
 		#rtno circle{cx:0;cy:100;stroke:rgb(64,128,64);fill:none;}
 		#rtno text{font-size:10px;fill:white;}
+		.po{cx:0;cy:100;stroke:white;stroke-width:1px;fill:none;}
 	</style>
 	
 	<script type="text/javascript">
@@ -358,7 +359,7 @@
 
 	<path d="M 0 0" fill="none" id="NoPath"/>
 
-	<circle cx="0" cy="100" r="39" stroke="white" stroke-width="1" fill="none"/><!-- Mercury orbit -->
+	<circle class='po' r="39"/><!-- Mercury orbit -->
 	<a href='https://en.wikipedia.org/wiki/Mercury_(planet)'><!-- Mercury -->
 		<path d="M -39 39 A 1 1 0 0 0 -39 -39" fill="none" id="MercuryPath"/>
 		<g class='hovertext'>
@@ -370,7 +371,7 @@
 		</animateMotion>
 	</a>
 
-	<circle cx="0" cy="100" r="72" stroke="white" stroke-width="1" fill="none"/><!-- Venus orbit -->
+	<circle class='po' r="72"/><!-- Venus orbit -->
 	<a href='https://en.wikipedia.org/wiki/Venus'><!-- Venus -->
 		<path d="M -72 72 A 1 1 0 0 0 -72 -72" fill="none" id="VenusPath"/>
 		<g class='hovertext'>
@@ -382,7 +383,7 @@
 		</animateMotion>
 	</a>
 
-	<circle cx="0" cy="100" r="100" stroke="white" stroke-width="1" fill="none"/><!-- Earth orbit -->
+	<circle class='po' r="100"/><!-- Earth orbit -->
 	<a href='https://en.wikipedia.org/wiki/Earth'><!-- Earth -->
 		<path d="M -100 100 A 1 1 0 0 0 -100 -100" fill="none" id="EarthPath"/>
 		<g class='hovertext'>
@@ -405,7 +406,7 @@
 		</animateMotion>
 	</a>
 
-	<circle cx="0" cy="100" r="152" stroke="white" stroke-width="1" fill="none"/><!-- Mars orbit -->
+	<circle class='po' r="152"/><!-- Mars orbit -->
 	<a href='https://en.wikipedia.org/wiki/Mars'><!-- Mars -->
 		<path d="M -37 100 A 152 152 0 0 0 -37 -100" fill="none" id="MarsPath"/>
 		<g class='hovertext'>
@@ -449,7 +450,7 @@
 		</animateMotion>
 	</a>
 
-	<circle cx="0" cy="100" r="520" stroke="white" stroke-width="1" fill="none"/><!-- Jupiter orbit -->
+	<circle class='po' r="520"/><!-- Jupiter orbit -->
 	<a href='https://en.wikipedia.org/wiki/Jupiter'><!-- Jupiter -->
 		<text x="550" y="110" font-size="25" fill="white">Jupiter</text>
 		<path d="M -9 100 A 520 520 0 0 0 -9 -100" fill="none" id="JupiterPath"/>
@@ -500,7 +501,7 @@
 		<image href="https://upload.wikimedia.org/wikipedia/commons/1/1c/Artist's_impression_of_ʻOumuamua.jpg" x="722" y="88" height="12"/>
 	</a>
 
-	<circle cx="0" cy="100" r="958" stroke="white" stroke-width="1" fill="none"/><!-- Saturn orbit -->
+	<circle class='po' r="958"/><!-- Saturn orbit -->
 	<a href='https://en.wikipedia.org/wiki/Saturn'><!-- Saturn -->
 		<text x="1010" y="110" font-size="25" fill="white">Saturn</text>
 		<path d="M -5 100 A 958 958 0 0 0 -5 -100" fill="none" id="SaturnPath"/>
@@ -580,7 +581,7 @@
 	
 	<!-- 6.885013194 s * (6.8000km/s)/(2*pi*41.947 AU/(271.68 yr)) -->
 
-	<circle cx="0" cy="100" r="1922" stroke="white" stroke-width="1" fill="none"/><!-- Uranus orbit -->
+	<circle class='po' r="1922"/><!-- Uranus orbit -->
 	<a href='https://en.wikipedia.org/wiki/Uranus'><!-- Uranus -->
 		<text x="1960" y="110" font-size="25" fill="white">Uranus</text>
 		<path d="M -3 100 A 1922 1922 0 0 0 -3 -100" fill="none" id="UranusPath"/>
@@ -637,7 +638,7 @@
 	
 	<path d="M 0 100 L 0 -100" fill="none" id="OuterPath"/>
 
-	<circle cx="0" cy="100" r="3011" stroke="white" stroke-width="1" fill="none"/><!-- Neptune orbit -->
+	<circle class='po' r="3011"/><!-- Neptune orbit -->
 	<a href='https://en.wikipedia.org/wiki/Neptune'><!-- Neptune -->
 		<text x="3030" y="110" font-size="25" fill="white">Neptune</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg" x="3002" y="92" height="18" width="18"/>
