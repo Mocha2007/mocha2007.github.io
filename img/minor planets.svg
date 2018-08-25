@@ -8,6 +8,12 @@
 		<polygon id='arrowai' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="darkblue" transform="scale(.25)"/>
 		<polygon id='arrowam' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="rgb(48,48,0)" transform="scale(.25)"/>
 		<polygon id='arrowao' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="darkgreen" transform="scale(.25)"/>
+		<clipPath id="round">
+			<circle r="8" cx="8" cy="8"/>
+		</clipPath>
+		<clipPath id="roundm">
+			<circle r="4" cx="4" cy="4"/>
+		</clipPath>
 	</defs>
 	
 	<style>
@@ -48,7 +54,9 @@
 		.gas text{font-size:25px;fill:white;}
 		.gas image{height:18px;width:18px;}
 		.gm g image{height:9px;width:9px;}
-		/* main labels on the bottom */
+		/* rounded pix */
+		.rp{height:16px;width:16px;clip-path:url(#round);}
+		.rm{height:8px;width:8px;clip-path:url(#roundm);}
 	</style>
 	
 	<script type="text/javascript">
@@ -381,7 +389,7 @@
 	<a class='body' href='https://en.wikipedia.org/wiki/Mercury_(planet)'><!-- Mercury -->
 		<path d="M -39 39 A 1 1 0 0 0 -39 -39" id="MercuryPath"/>
 		<g class='hovertext'>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg" x="31" y="92" height="16" width="16" transform="rotate(180 39 100)"/>
+			<image class='rp' href="https://upload.wikimedia.org/wikipedia/commons/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg" transform="rotate(180 39 100) translate(31 92)"/>
 			<text x="47" y="102">Mercury</text>
 		</g>
 		<animateMotion dur="0.602115s" repeatCount="indefinite">
@@ -393,7 +401,7 @@
 	<a class='body' href='https://en.wikipedia.org/wiki/Venus'><!-- Venus -->
 		<path d="M -72 72 A 1 1 0 0 0 -72 -72" id="VenusPath"/>
 		<g class='hovertext'>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg" x="64" y="92" height="16" width="16"/>
+			<image class='rp' href="https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg" transform="translate(64 92)"/>
 			<text x="80" y="102">Venus</text>
 		</g>
 		<animateMotion dur="1.537995s" repeatCount="indefinite">
@@ -405,7 +413,7 @@
 	<a class='body' href='https://en.wikipedia.org/wiki/Earth'><!-- Earth -->
 		<path d="M -100 100 A 1 1 0 0 0 -100 -100" id="EarthPath"/>
 		<g class='hovertext'>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" x="92" y="92" height="16" width="16"/>
+			<image class='rp' href="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" transform="translate(92 92)"/>
 			<text x="116" y="102">Earth</text>
 		</g>
 		<use class='invisible' id='t1' x="100" y="100" href="#arrow"/>
@@ -416,7 +424,7 @@
 	</a>
 	<a class='body' href='https://en.wikipedia.org/wiki/Moon'><!-- Moon -->
 		<g class='hovertext'>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg" x="108" y="92" height="8" width="8"/>
+			<image class='rm' href="https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg" transform="translate(108 92)"/>
 			<text x="116" y="102">Moon</text>
 		</g>
 		<animateMotion dur="2.5s" repeatCount="indefinite">
@@ -428,7 +436,7 @@
 	<a class='body' href='https://en.wikipedia.org/wiki/Mars'><!-- Mars -->
 		<path d="M -37 100 A 152 152 0 0 0 -37 -100" id="MarsPath"/>
 		<g class='hovertext'>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" x="144" y="92" height="16" width="16"/>
+			<image class='rp' href="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" transform="translate(144 92)"/>
 			<text x="168" y="102">Mars</text>
 		</g>
 		<use class='invisible' id='t3' x="152" y="100" href="#arrow"/>
@@ -460,7 +468,7 @@
 	<a class='body' href='https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)'><!-- Ceres -->
 		<path d="M -18 100 A 277 277 0 0 0 -18 -100" id="CeresPath"/>
 		<g class='hovertext'>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/5/58/Ceres_-_RC3_-_Haulani_Crater_(22381131691).jpg" x="270" y="92" height="14" width="14" transform="rotate(180 277 100)"/>
+			<image class='rp' href="https://upload.wikimedia.org/wikipedia/commons/5/58/Ceres_-_RC3_-_Haulani_Crater_(22381131691).jpg" transform="rotate(180 277 100) translate(270 92)"/>
 			<text x="285" y="103">Ceres</text>
 		</g>
 		<animateMotion dur="2.683s" repeatCount="indefinite"> <!-- 0.11666666666666666666666666666667 of orbit visible -->
