@@ -22,7 +22,8 @@
 		.hoverrange:hover circle,.hoverrange:hover use{display:block;}
 		.hoverrange text{text-shadow:#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px;}
 		.i{font-style:italic;}
-		#kirkwood circle{stroke:pink;stroke-width:1;fill:none;cx:0px;cy:100px;}
+		.range,#kirkwood circle{fill:none;cx:0px;cy:100px;}
+		#kirkwood circle{stroke:pink;stroke-width:1;}
 		#kirkwoodminor circle{stroke-opacity:0.2;}
 		#af circle{cx:0px;cy:100px;stroke-opacity:0.2;fill:none;}
 		#af text{font-size:4px;}
@@ -100,7 +101,7 @@
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Circumstellar_habitable_zone'><!-- Kasting et al. 1993 -->
-		<circle cx="0" cy="100" r="116" stroke="rgb(64,128,64)" stroke-width="42" fill="none"/>
+		<circle class='range' r="116" stroke="rgb(64,128,64)" stroke-width="42"/>
 		<text x="50" y="10" font-size="8" fill="lime">Habitable Zone</text>
 	</a>
 
@@ -109,13 +110,13 @@
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Asteroid_belt'>
-		<circle cx="0" cy="100" r="228" stroke="rgb(64,96,128)" stroke-width="44" fill="none"/><!-- inner belt -->
-		<circle cx="0" cy="100" r="266" stroke="rgb(128,112,64)" stroke-width="32" fill="none"/><!-- middle belt -->
-		<circle cx="0" cy="100" r="305" stroke="rgb(64,128,64)" stroke-width="46" fill="none"/><!-- outer belt -->
+		<circle class='range' r="228" stroke="rgb(64,96,128)" stroke-width="44"/><!-- inner belt -->
+		<circle class='range' r="266" stroke="rgb(128,112,64)" stroke-width="32"/><!-- middle belt -->
+		<circle class='range' r="305" stroke="rgb(64,128,64)" stroke-width="46"/><!-- outer belt -->
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Hilda_asteroid'><!-- Hildas -->
-		<circle cx="0" cy="100" r="395" stroke="rgb(211,147,0)" stroke-opacity="0.5" stroke-width="50" fill="none"/>
+		<circle class='range' r="395" stroke="rgb(211,147,0)" stroke-opacity="0.5" stroke-width="50"/>
 		<text class='i' x="375" y="180" font-size="8" fill="orange">Hildas</text>
 	</a>
 
@@ -284,51 +285,51 @@
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Frost_line_(astrophysics)'><!-- Frost Line -->
-		<circle cx="0" cy="100" r="500" stroke="cyan" stroke-width="1" fill="none"/>
+		<circle class='range' r="500" stroke="cyan" stroke-width="1"/>
 		<text x="440" y="10" font-size="8" fill="cyan">Frost Line</text>
 	</a>
 
 	<a class='desc' href='https://en.wikipedia.org/wiki/Centaur_(minor_planet)'><!-- centaurs -->
-		<circle cx="0" cy="100" r="1765.5" stroke="rgb(128,96,64)" stroke-width="2491" fill="none"/>
+		<circle class='range' r="1765.5" stroke="rgb(128,96,64)" stroke-width="2491"/>
 		<text x="550" y="190">Centaurs</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/1911_Schubart'><!-- Schubart Family -->
-		<circle cx="0" cy="100" r="396.5" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="3" fill="none"/>
+		<circle class='range' r="396.5" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="3"/>
 		<use x="395" y="63" href="#arrowam"/>
 		<text x="405" y="50" font-size="4" fill="olive">Schubart</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Jupiter_trojan'><!-- Trojans -->
-		<circle cx="0" cy="100" r="522.5" stroke="rgb(106,215,104)" stroke-opacity="0.5" stroke-width="35" fill="none"/><!-- inner belt -->
+		<circle class='range' r="522.5" stroke="rgb(106,215,104)" stroke-opacity="0.5" stroke-width="35"/><!-- inner belt -->
 		<text x="500" y="10" font-size="8" fill="rgb(128,255,128)">Greeks</text>
 		<text x="500" y="190" font-size="8" fill="rgb(128,255,128)">Trojans</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/3548_Eurybates'><!-- Eurybates Family -->
-		<circle cx="0" cy="100" r="518.5" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+		<circle class='range' r="518.5" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="1"/>
 		<use x="517.5" y="63" href="#arrowao"/>
 		<text x="527.5" y="50" font-size="4" fill="darkgreen">Eurybates</text>
 	</a>
 
 	<a class='hoverrange' href='https://en.wikipedia.org/wiki/4709_Ennomos'><!-- Ennomos Family -->
-		<circle cx="0" cy="100" r="518.5" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="11" fill="none"/>
+		<circle class='range' r="518.5" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="11"/>
 		<use x="518" y="73" href="#arrowao"/>
 		<text x="528" y="60" font-size="4" fill="darkgreen">Ennomos</text>
 	</a>
 
 	<a class='desc' href='https://en.wikipedia.org/wiki/Trans-Neptunian_object'><!-- TNOs -->
-		<circle cx="0" cy="100" r="6505.5" stroke="rgb(64,128,128)" stroke-width="6989" fill="none"/>
+		<circle class='range' r="6505.5" stroke="rgb(64,128,128)" stroke-width="6989"/>
 		<text x="3050" y="190">Trans-Neptunian Objects</text>
 	</a>
 
 	<a class='desc' href='https://en.wikipedia.org/wiki/Plutino'><!-- Plutinos -->
-		<circle cx="0" cy="100" r="3975" stroke="rgb(64,128,64)" stroke-width="150" fill="none"/>
+		<circle class='range' r="3975" stroke="rgb(64,128,64)" stroke-width="150"/>
 		<text x="3950" y="190">Plutinos (2:3)</text>
 	</a>
 
 	<a class='desc' href='https://en.wikipedia.org/wiki/Scattered_disc'><!-- SDOs -->
-		<circle cx="0" cy="100" r="7500" stroke="rgb(64,96,128)" stroke-width="5000" fill="none"/>
+		<circle class='range' r="7500" stroke="rgb(64,96,128)" stroke-width="5000"/>
 		<text x="5010" y="190">Scattered Disc Objects</text>
 	</a>
 
@@ -357,7 +358,7 @@
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Kuiper_belt#Kuiper_cliff'><!-- Kuiper Cliff -->
-		<circle cx="0" cy="100" r="4771" stroke="pink" stroke-width="1" fill="none"/>
+		<circle class='range' r="4771" stroke="pink" stroke-width="1"/>
 		<text x="4771" y="10" font-size="8" fill="pink">Kuiper Cliff</text>
 	</a>
 	
