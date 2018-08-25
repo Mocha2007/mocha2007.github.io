@@ -773,13 +773,13 @@
 				<mpath href="#OuterPath"/>
 			</animateMotion>
 		</a>
-	</g>
 	
-	<a href='https://en.wikipedia.org/wiki/Elon_Musk'>
-		<text x="7865" y="45" font-size="8" fill="white">*Notices ur uncolonized planets*</text>
-		<image href="https://static.businessinsider.com/image/5202d38a6bb3f7f61e000004-750.jpg" x="7870" y="50" height="100"/>
-		<text x="7890" y="160" font-size="8" fill="white">OwO What's this???</text>
-	</a>
+		<a href='https://en.wikipedia.org/wiki/Elon_Musk'>
+			<text x="7865" y="45">*Notices ur uncolonized planets*</text>
+			<image href="https://static.businessinsider.com/image/5202d38a6bb3f7f61e000004-750.jpg" x="7870" y="50" height="100"/>
+			<text x="7890" y="160">OwO What's this???</text>
+		</a>
+	</g>
 	
 	<a href='https://mocha2007.github.io'>
 		<image href="https://mocha2007.github.io/img/mo.png" x="7875" y="170" height="24"/>
