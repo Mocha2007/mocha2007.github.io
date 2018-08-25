@@ -23,6 +23,7 @@
 		svg{font-family:"Verdana";}
 		#kirkwood circle{stroke:pink;stroke-width:1;fill:none;cx:0;cy:100;}
 		#kirkwoodminor circle{stroke-opacity:0.2;}
+		#af circle{cx:0;cy:100;stroke-opacity:0.2;fill:none;}
 	</style>
 	
 	<script type="text/javascript">
@@ -119,126 +120,127 @@
 	</a>
 	
 	<!-- asteroid families -->
+	<g id='af'>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/Hungaria_asteroid'><!-- Hungaria Family -->
+			<circle r="189" stroke="darkblue" stroke-width="22"/>
+			<use x="185" y="63" href="#arrowai"/>
+			<text x="195" y="50" font-size="4" fill="darkblue">Hungaria</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Hungaria_asteroid'><!-- Hungaria Family -->
-		<circle cx="0" cy="100" r="189" stroke="darkblue" stroke-opacity="0.2" stroke-width="22" fill="none"/>
-		<use x="185" y="63" href="#arrowai"/>
-		<text x="195" y="50" font-size="4" fill="darkblue">Hungaria</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/Flora_family'><!-- Flora Family -->
+			<circle r="225" stroke="darkblue" stroke-width="16"/>
+			<use x="222" y="63" href="#arrowai"/>
+			<text x="232" y="50" font-size="4" fill="darkblue">Flora</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Flora_family'><!-- Flora Family -->
-		<circle cx="0" cy="100" r="225" stroke="darkblue" stroke-opacity="0.2" stroke-width="16" fill="none"/>
-		<use x="222" y="63" href="#arrowai"/>
-		<text x="232" y="50" font-size="4" fill="darkblue">Flora</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/Vesta_family'><!-- Vesta Family -->
+			<circle r="237" stroke="darkblue" stroke-width="22"/>
+			<use x="235" y="73" href="#arrowai"/>
+			<text x="245" y="60" font-size="4" fill="darkblue">Vesta</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Vesta_family'><!-- Vesta Family -->
-		<circle cx="0" cy="100" r="237" stroke="darkblue" stroke-opacity="0.2" stroke-width="22" fill="none"/>
-		<use x="235" y="73" href="#arrowai"/>
-		<text x="245" y="60" font-size="4" fill="darkblue">Vesta</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/Phocaea_family'><!-- Phocaea Family -->
+			<circle r="237.5" stroke="darkblue" stroke-width="25"/>
+			<use x="232" y="43" href="#arrowai"/>
+			<text x="242" y="30" font-size="4" fill="darkblue">Phocaea</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Phocaea_family'><!-- Phocaea Family -->
-		<circle cx="0" cy="100" r="237.5" stroke="darkblue" stroke-opacity="0.2" stroke-width="25" fill="none"/>
-		<use x="232" y="43" href="#arrowai"/>
-		<text x="242" y="30" font-size="4" fill="darkblue">Phocaea</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/163_Erigone'><!-- Erigone Family -->
+			<circle r="238.5" stroke="darkblue" stroke-width="3"/>
+			<use x="236" y="53" href="#arrowai"/>
+			<text x="246" y="40" font-size="4" fill="darkblue">Erigone</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/163_Erigone'><!-- Erigone Family -->
-		<circle cx="0" cy="100" r="238.5" stroke="darkblue" stroke-opacity="0.2" stroke-width="3" fill="none"/>
-		<use x="236" y="63" href="#arrowai"/>
-		<text x="246" y="40" font-size="4" fill="darkblue">Erigone</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/Massalia_family'><!-- Massalia Family -->
+			<circle r="241" stroke="darkblue" stroke-width="8"/>
+			<use x="239" y="63" href="#arrowai"/>
+			<text x="249" y="50" font-size="4" fill="darkblue">Massalia</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Massalia_family'><!-- Massalia Family -->
-		<circle cx="0" cy="100" r="241" stroke="darkblue" stroke-opacity="0.2" stroke-width="8" fill="none"/>
-		<use x="239" y="63" href="#arrowai"/>
-		<text x="249" y="50" font-size="4" fill="darkblue">Massalia</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/Nysa_family'><!-- Nysa Family -->
+			<circle r="245.5" stroke="darkblue" stroke-width="9"/>
+			<use x="244" y="83" href="#arrowai"/>
+			<text x="254" y="70" font-size="4" fill="darkblue">Nysa</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Nysa_family'><!-- Nysa Family -->
-		<circle cx="0" cy="100" r="245.5" stroke="darkblue" stroke-opacity="0.2" stroke-width="9" fill="none"/>
-		<use x="244" y="83" href="#arrowai"/>
-		<text x="254" y="70" font-size="4" fill="darkblue">Nysa</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/Maria_family'><!-- Maria Family -->
+			<circle r="255.5" stroke="rgb(32,32,0)" stroke-width="9"/>
+			<use x="255" y="73" href="#arrowam"/>
+			<text x="265" y="60" font-size="4" fill="olive">Maria</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Maria_family'><!-- Maria Family -->
-		<circle cx="0" cy="100" r="255.5" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="9" fill="none"/>
-		<use x="255" y="73" href="#arrowam"/>
-		<text x="265" y="60" font-size="4" fill="olive">Maria</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/Eunomia_family'><!-- Eunomia Family -->
+			<circle r="262.5" stroke="rgb(32,32,0)" stroke-width="19"/>
+			<use x="259" y="83" href="#arrowam"/>
+			<text x="269" y="70" font-size="4" fill="olive">Eunomia</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Eunomia_family'><!-- Eunomia Family -->
-		<circle cx="0" cy="100" r="262.5" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="19" fill="none"/>
-		<use x="259" y="83" href="#arrowam"/>
-		<text x="269" y="70" font-size="4" fill="olive">Eunomia</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/Juno_clump'><!-- Juno Family -->
+			<circle r="266" stroke="rgb(32,32,0)" stroke-width="4"/>
+			<use x="260" y="43" href="#arrowam"/>
+			<text x="270" y="30" font-size="4" fill="olive">Juno</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Juno_clump'><!-- Juno Family -->
-		<circle cx="0" cy="100" r="266" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="4" fill="none"/>
-		<use x="260" y="43" href="#arrowam"/>
-		<text x="270" y="30" font-size="4" fill="olive">Juno</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/Adeona_family'><!-- Adeona Family -->
+			<circle r="267" stroke="rgb(32,32,0)" stroke-width="2"/>
+			<use x="263" y="53" href="#arrowam"/>
+			<text x="273" y="40" font-size="4" fill="olive">Adeona</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Adeona_family'><!-- Adeona Family -->
-		<circle cx="0" cy="100" r="267" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="2" fill="none"/>
-		<use x="263" y="53" href="#arrowam"/>
-		<text x="273" y="40" font-size="4" fill="olive">Adeona</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/2085_Henan'><!-- Henan Family -->
+			<circle r="272.5" stroke="rgb(32,32,0)" stroke-width="3"/>
+			<use x="270" y="63" href="#arrowam"/>
+			<text x="280" y="50" font-size="4" fill="olive">Henan</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/2085_Henan'><!-- Henan Family -->
-		<circle cx="0" cy="100" r="272.5" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="3" fill="none"/>
-		<use x="270" y="63" href="#arrowam"/>
-		<text x="280" y="50" font-size="4" fill="olive">Henan</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/847_Agnia'><!-- Agnia Family -->
+			<circle r="277.5" stroke="rgb(32,32,0)" stroke-width="3"/>
+			<use x="277" y="73" href="#arrowam"/>
+			<text x="287" y="60" font-size="4" fill="olive">Agnia</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/847_Agnia'><!-- Agnia Family -->
-		<circle cx="0" cy="100" r="277.5" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="3" fill="none"/>
-		<use x="277" y="73" href="#arrowam"/>
-		<text x="287" y="60" font-size="4" fill="olive">Agnia</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/Gefion_family'><!-- Gefion Family -->
+			<circle r="278" stroke="rgb(32,32,0)" stroke-width="8"/>
+			<use x="278" y="83" href="#arrowam"/>
+			<text x="288" y="70" font-size="4" fill="olive">Gefion</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Gefion_family'><!-- Gefion Family -->
-		<circle cx="0" cy="100" r="278" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="8" fill="none"/>
-		<use x="278" y="83" href="#arrowam"/>
-		<text x="288" y="70" font-size="4" fill="olive">Gefion</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/1726_Hoffmeister'><!-- Hoffmeister Family -->
+			<circle r="278.5" stroke="rgb(32,32,0)" stroke-width="1"/>
+			<use x="278.5" y="93" href="#arrowam"/>
+			<text x="288.5" y="80" font-size="4" fill="olive">Hoffmeister</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/1726_Hoffmeister'><!-- Hoffmeister Family -->
-		<circle cx="0" cy="100" r="278.5" stroke="rgb(32,32,0)" stroke-opacity="0.2" stroke-width="1" fill="none"/>
-		<use x="278.5" y="93" href="#arrowam"/>
-		<text x="288.5" y="80" font-size="4" fill="olive">Hoffmeister</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/Koronis_family'><!-- Koronis Family -->
+			<circle r="288" stroke="rgb(48,48,0)" stroke-width="4"/>
+			<use x="284" y="53" href="#arrowao"/>
+			<text x="294" y="40" font-size="4" fill="darkgreen">Koronis</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Koronis_family'><!-- Koronis Family -->
-		<circle cx="0" cy="100" r="288" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="4" fill="none"/>
-		<use x="284" y="53" href="#arrowao"/>
-		<text x="294" y="40" font-size="4" fill="darkgreen">Koronis</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/Eos_family'><!-- Eos Family -->
+			<circle r="301" stroke="rgb(48,48,0)" stroke-width="4"/>
+			<use x="299" y="63" href="#arrowao"/>
+			<text x="309" y="50" font-size="4" fill="darkgreen">Eos</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Eos_family'><!-- Eos Family -->
-		<circle cx="0" cy="100" r="301" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="4" fill="none"/>
-		<use x="299" y="63" href="#arrowao"/>
-		<text x="309" y="50" font-size="4" fill="darkgreen">Eos</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/Hygiea_family'><!-- Hygiea Family -->
+			<circle r="315" stroke="rgb(48,48,0)" stroke-width="18"/>
+			<use x="312" y="53" href="#arrowao"/>
+			<text x="322" y="40" font-size="4" fill="darkgreen">Hygiea</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Hygiea_family'><!-- Hygiea Family -->
-		<circle cx="0" cy="100" r="315" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="18" fill="none"/>
-		<use x="312" y="53" href="#arrowao"/>
-		<text x="322" y="40" font-size="4" fill="darkgreen">Hygiea</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/Themis_family'><!-- Themis Family -->
+			<circle r="316" stroke="rgb(48,48,0)" stroke-width="16"/>
+			<use x="315" y="63" href="#arrowao"/>
+			<text x="325" y="50" font-size="4" fill="darkgreen">Themis</text>
+		</a>
 
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/Themis_family'><!-- Themis Family -->
-		<circle cx="0" cy="100" r="316" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="16" fill="none"/>
-		<use x="315" y="63" href="#arrowao"/>
-		<text x="325" y="50" font-size="4" fill="darkgreen">Themis</text>
-	</a>
-
-	<a class='hoverrange' href='https://en.wikipedia.org/wiki/31_Euphrosyne'><!-- Euphrosyne Family -->
-		<circle cx="0" cy="100" r="317.5" stroke="rgb(48,48,0)" stroke-opacity="0.2" stroke-width="5" fill="none"/>
-		<use x="317" y="73" href="#arrowao"/>
-		<text x="327" y="60" font-size="4" fill="darkgreen">Euphrosyne</text>
-	</a>
+		<a class='hoverrange' href='https://en.wikipedia.org/wiki/31_Euphrosyne'><!-- Euphrosyne Family -->
+			<circle r="317.5" stroke="rgb(48,48,0)" stroke-width="5"/>
+			<use x="317" y="73" href="#arrowao"/>
+			<text x="327" y="60" font-size="4" fill="darkgreen">Euphrosyne</text>
+		</a>
+	</g>
 
 	<a href='https://en.wikipedia.org/wiki/Asteroid_family'><!-- asteroid families label -->
 		<text class='i' x="247" y="20" font-size="6" fill="white">Asteroid Families</text>
