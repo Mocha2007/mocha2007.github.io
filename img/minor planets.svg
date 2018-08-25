@@ -34,7 +34,9 @@
 		#beltsections text{font-style:italic;font-size:8px;}
 		#rtno circle{cx:0;cy:100;stroke:rgb(64,128,64);fill:none;}
 		#rtno text{font-size:10px;fill:white;}
-		.po{cx:0;cy:100;stroke:white;stroke-width:1px;fill:none;}
+		.po,.mo{cx:0;cy:100;stroke-width:1px;fill:none;}
+		.po{stroke:white;}
+		.mo{stroke:silver;}
 	</style>
 	
 	<script type="text/javascript">
@@ -438,7 +440,7 @@
 		</animateMotion>
 	</a>
 
-	<circle cx="0" cy="100" r="277" stroke="silver" stroke-width="1" fill="none"/><!-- Ceres orbit -->
+	<circle class='mo' r="277"/><!-- Ceres orbit -->
 	<a href='https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)'><!-- Ceres -->
 		<path d="M -18 100 A 277 277 0 0 0 -18 -100" fill="none" id="CeresPath"/>
 		<g class='hovertext'>
@@ -661,7 +663,7 @@
 		<image href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Lspn_comet_halley.jpg" x="3467" y="88" height="24"/>
 	</a>
 
-	<circle cx="0" cy="100" r="3940" stroke="silver" stroke-width="1" fill="none"/><!-- Orcus orbit -->
+	<circle class='mo' r="3940"/><!-- Orcus orbit -->
 	<a href='https://en.wikipedia.org/wiki/90482_Orcus'><!-- Orcus -->
 		<text x="3962" y="103" font-size="10" fill="white">Orcus</text>
 		<circle cx="3940" cy="100" r="7" fill="grey"/>
@@ -670,7 +672,7 @@
 		</animateMotion>
 	</a>
 
-	<circle cx="0" cy="100" r="3948" stroke="silver" stroke-width="1" fill="none"/><!-- Pluto orbit -->
+	<circle class='mo' r="3948"/><!-- Pluto orbit -->
 	<a href='https://en.wikipedia.org/wiki/Pluto'><!-- Pluto -->
 		<text x="3970" y="103" font-size="10" fill="white">Pluto</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/c/cd/Nh-pluto-in-true-color_2x_JPEG-edit.jpg" x="3941" y="92" height="14" width="14"/>
@@ -688,7 +690,7 @@
 		</animateMotion>
 	</a>
 
-	<circle cx="0" cy="100" r="4195" stroke="silver" stroke-width="1" fill="none"/><!-- Salacia orbit -->
+	<circle class='mo' r="4195"/><!-- Salacia orbit -->
 	<a href='https://en.wikipedia.org/wiki/120347_Salacia'><!-- Salacia -->
 		<text x="4217" y="103" font-size="10" fill="white">Salacia</text>
 		<circle cx="4195" cy="100" r="7" fill="grey"/>
@@ -702,7 +704,7 @@
 		<image href="https://upload.wikimedia.org/wikipedia/commons/4/4f/New_Horizons_Transparent.png" x="4222" y="88" height="24"/>
 	</a>
 
-	<circle cx="0" cy="100" r="4322" stroke="silver" stroke-width="1" fill="none"/><!-- Haumea orbit -->
+	<circle class='mo' r="4322"/><!-- Haumea orbit -->
 	<a href='https://en.wikipedia.org/wiki/Haumea'><!-- Haumea -->
 		<text x="4330" y="103" font-size="10" fill="white">Haumea</text>
 		<circle cx="4322" cy="100" r="7" fill="grey"/>
@@ -711,7 +713,7 @@
 		</animateMotion>
 	</a>
 
-	<circle cx="0" cy="100" r="4362" stroke="silver" stroke-width="1" fill="none"/><!-- Quaoar orbit -->
+	<circle class='mo' r="4362"/><!-- Quaoar orbit -->
 	<a href='https://en.wikipedia.org/wiki/50000_Quaoar'><!-- Quaoar -->
 		<text x="4372" y="103" font-size="10" fill="white">Quaoar</text>
 		<circle cx="4362" cy="100" r="7" fill="grey"/>
@@ -720,7 +722,7 @@
 		</animateMotion>
 	</a>
 
-	<circle cx="0" cy="100" r="4446" stroke="silver" stroke-width="1" fill="none"/><!-- 2014 MU69 orbit -->
+	<circle class='mo' r="4446"/><!-- 2014 MU69 orbit -->
 	<a href='https://en.wikipedia.org/wiki/(486958)_2014_MU69'><!-- 2014 MU69 -->
 		<text x="4455" y="103" font-size="10" fill="white">2014 MU69</text>
 		<circle cx="4446" cy="100" r="5" fill="grey"/>
@@ -729,7 +731,7 @@
 		</animateMotion>
 	</a>
 
-	<circle cx="0" cy="100" r="4572" stroke="silver" stroke-width="1" fill="none"/><!-- Makemake orbit -->
+	<circle class='mo' r="4572"/><!-- Makemake orbit -->
 	<a href='https://en.wikipedia.org/wiki/Makemake'><!-- Makemake -->
 		<text x="4580" y="105" font-size="10" fill="white">Makemake</text>
 		<circle cx="4572" cy="100" r="7" fill="grey"/>
@@ -738,7 +740,7 @@
 		</animateMotion>
 	</a>
 
-	<circle cx="0" cy="100" r="6706" stroke="silver" stroke-width="1" fill="none"/><!-- 2007 OR10 orbit -->
+	<circle class='mo' r="6706"/><!-- 2007 OR10 orbit -->
 	<a href='https://en.wikipedia.org/wiki/(225088)_2007_OR10'><!-- 2007 OR10 -->
 		<text x="6716" y="103" font-size="10" fill="white">2007 OR10</text>
 		<circle cx="6706" cy="100" r="7" fill="grey"/>
@@ -747,7 +749,7 @@
 		</animateMotion>
 	</a>
 
-	<circle cx="0" cy="100" r="6778" stroke="silver" stroke-width="1" fill="none"/><!-- Eris orbit -->
+	<circle class='mo' r="6778"/><!-- Eris orbit -->
 	<a href='https://en.wikipedia.org/wiki/Eris_(dwarf_planet)'><!-- Eris -->
 		<text x="6790" y="103" font-size="10" fill="white">Eris</text>
 		<circle cx="6778" cy="100" r="7" fill="grey"/>
@@ -756,7 +758,7 @@
 		</animateMotion>
 	</a>
 
-	<circle cx="0" cy="100" r="7609" stroke="silver" stroke-width="1" fill="none"/><!-- Sedna orbit -->
+	<circle class='mo' r="7609"/><!-- Sedna orbit -->
 	<a href='https://en.wikipedia.org/wiki/90377_Sedna'><!-- Sedna -->
 		<text x="7620" y="103" font-size="10" fill="white">Sedna</text>
 		<circle cx="7609" cy="100" r="7" fill="grey"/>
