@@ -754,9 +754,9 @@
 	<!-- fun toggle -->
 	<g class='hovertext'>
 		<circle cx="0" cy="0" r="20" fill="black" stroke="cyan" stroke-width="1" onclick='toggle();'/>
+		<text class='nothovertext i' x="4" y="14" font-family="Times New Roman" font-size="18" fill="cyan" onclick='toggle();'>i</text>
 		<text x="0" y="30" font-size="8" fill="red">Pause Inner Solar System for Info</text>
 	</g>
-	<text class='i' x="4" y="14" font-family="Times New Roman" font-size="18" fill="cyan" onclick='toggle();'>i</text>
 	
 	<!-- permafrost -->
 	<g class='hovertext'>
