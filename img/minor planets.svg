@@ -22,6 +22,7 @@
 		.i{font-style:italic;}
 		svg{font-family:"Verdana";}
 		#kirkwood circle{stroke:pink;stroke-width:1;fill:none;cx:0;cy:100;}
+		#kirkwoodminor circle{stroke-opacity:0.2;}
 	</style>
 	
 	<script type="text/javascript">
@@ -104,14 +105,16 @@
 		<circle r="295"/>
 		<circle r="328"/>
 		<!-- minors -->
-		<circle r="190" stroke-opacity="0.2"/>
-		<circle r="225" stroke-opacity="0.2"/>
-		<circle r="233" stroke-opacity="0.2"/>
-		<circle r="271" stroke-opacity="0.2"/>
-		<circle r="303" stroke-opacity="0.2"/>
-		<circle r="307.5" stroke-opacity="0.2"/>
-		<circle r="347" stroke-opacity="0.2"/>
-		<circle r="370" stroke-opacity="0.2"/>
+		<g id='kirkwoodminor'>
+			<circle r="190"/>
+			<circle r="225"/>
+			<circle r="233"/>
+			<circle r="271"/>
+			<circle r="303"/>
+			<circle r="307.5"/>
+			<circle r="347"/>
+			<circle r="370"/>
+		</g>
 		<text x="222" y="10" font-size="8" fill="pink">Kirkwood Gaps</text>
 	</a>
 	
