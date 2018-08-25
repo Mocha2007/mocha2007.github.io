@@ -37,6 +37,7 @@
 		.po,.mo{cx:0;cy:100;stroke-width:1px;fill:none;}
 		.po{stroke:white;}
 		.mo{stroke:silver;}
+		.moc{cy:100px;r:7px;fill:grey;}
 	</style>
 	
 	<script type="text/javascript">
@@ -666,7 +667,7 @@
 	<circle class='mo' r="3940"/><!-- Orcus orbit -->
 	<a href='https://en.wikipedia.org/wiki/90482_Orcus'><!-- Orcus -->
 		<text x="3962" y="103" font-size="10" fill="white">Orcus</text>
-		<circle cx="3940" cy="100" r="7" fill="grey"/>
+		<circle cx="3940" class='moc'/>
 		<animateMotion dur="9.859s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
@@ -693,7 +694,7 @@
 	<circle class='mo' r="4195"/><!-- Salacia orbit -->
 	<a href='https://en.wikipedia.org/wiki/120347_Salacia'><!-- Salacia -->
 		<text x="4217" y="103" font-size="10" fill="white">Salacia</text>
-		<circle cx="4195" cy="100" r="7" fill="grey"/>
+		<circle cx="4195" class='moc'/>
 		<animateMotion dur="10.17s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
@@ -707,7 +708,7 @@
 	<circle class='mo' r="4322"/><!-- Haumea orbit -->
 	<a href='https://en.wikipedia.org/wiki/Haumea'><!-- Haumea -->
 		<text x="4330" y="103" font-size="10" fill="white">Haumea</text>
-		<circle cx="4322" cy="100" r="7" fill="grey"/>
+		<circle cx="4322" class='moc'/>
 		<animateMotion dur="10.33s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
@@ -716,7 +717,7 @@
 	<circle class='mo' r="4362"/><!-- Quaoar orbit -->
 	<a href='https://en.wikipedia.org/wiki/50000_Quaoar'><!-- Quaoar -->
 		<text x="4372" y="103" font-size="10" fill="white">Quaoar</text>
-		<circle cx="4362" cy="100" r="7" fill="grey"/>
+		<circle cx="4362" class='moc'/>
 		<animateMotion dur="10.37s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
@@ -734,7 +735,7 @@
 	<circle class='mo' r="4572"/><!-- Makemake orbit -->
 	<a href='https://en.wikipedia.org/wiki/Makemake'><!-- Makemake -->
 		<text x="4580" y="105" font-size="10" fill="white">Makemake</text>
-		<circle cx="4572" cy="100" r="7" fill="grey"/>
+		<circle cx="4572" class='moc'/>
 		<animateMotion dur="10.59s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
@@ -743,7 +744,7 @@
 	<circle class='mo' r="6706"/><!-- 2007 OR10 orbit -->
 	<a href='https://en.wikipedia.org/wiki/(225088)_2007_OR10'><!-- 2007 OR10 -->
 		<text x="6716" y="103" font-size="10" fill="white">2007 OR10</text>
-		<circle cx="6706" cy="100" r="7" fill="grey"/>
+		<circle cx="6706" class='moc'/>
 		<animateMotion dur="12.86s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
@@ -752,7 +753,7 @@
 	<circle class='mo' r="6778"/><!-- Eris orbit -->
 	<a href='https://en.wikipedia.org/wiki/Eris_(dwarf_planet)'><!-- Eris -->
 		<text x="6790" y="103" font-size="10" fill="white">Eris</text>
-		<circle cx="6778" cy="100" r="7" fill="grey"/>
+		<circle cx="6778" class='moc'/>
 		<animateMotion dur="13.63s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
@@ -761,7 +762,7 @@
 	<circle class='mo' r="7609"/><!-- Sedna orbit -->
 	<a href='https://en.wikipedia.org/wiki/90377_Sedna'><!-- Sedna -->
 		<text x="7620" y="103" font-size="10" fill="white">Sedna</text>
-		<circle cx="7609" cy="100" r="7" fill="grey"/>
+		<circle cx="7609" class='moc'/>
 		<animateMotion dur="45.02s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
 		</animateMotion>
