@@ -40,6 +40,7 @@
 		.mo{stroke:silver;}
 		.moc{cy:100px;r:7px;fill:grey;}
 		.body g text{font-size:8px;fill:white;}
+		.gas text{font-size:25px;fill:white;}
 	</style>
 	
 	<script type="text/javascript">
@@ -456,8 +457,8 @@
 	</a>
 
 	<circle class='po' r="520"/><!-- Jupiter orbit -->
-	<a href='https://en.wikipedia.org/wiki/Jupiter'><!-- Jupiter -->
-		<text x="550" y="110" font-size="25" fill="white">Jupiter</text>
+	<a class='gas' href='https://en.wikipedia.org/wiki/Jupiter'><!-- Jupiter -->
+		<text x="550" y="110">Jupiter</text>
 		<path d="M -9 100 A 520 520 0 0 0 -9 -100" id="JupiterPath"/>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg" x="511" y="92" height="18" width="18"/>
 		<animateMotion dur="3.61132s" repeatCount="indefinite"> <!-- 0.06088888888888888888888888888889 of orbit visible -->
@@ -507,8 +508,8 @@
 	</a>
 
 	<circle class='po' r="958"/><!-- Saturn orbit -->
-	<a href='https://en.wikipedia.org/wiki/Saturn'><!-- Saturn -->
-		<text x="1010" y="110" font-size="25" fill="white">Saturn</text>
+	<a class='gas' href='https://en.wikipedia.org/wiki/Saturn'><!-- Saturn -->
+		<text x="1010" y="110">Saturn</text>
 		<path d="M -5 100 A 958 958 0 0 0 -5 -100" id="SaturnPath"/>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/2/29/Saturn_Storm.jpg" x="949" y="92" height="18" width="18"/>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite"> <!-- 0.033 of orbit visible -->
@@ -587,8 +588,8 @@
 	<!-- 6.885013194 s * (6.8000km/s)/(2*pi*41.947 AU/(271.68 yr)) -->
 
 	<circle class='po' r="1922"/><!-- Uranus orbit -->
-	<a href='https://en.wikipedia.org/wiki/Uranus'><!-- Uranus -->
-		<text x="1960" y="110" font-size="25" fill="white">Uranus</text>
+	<a class='gas' href='https://en.wikipedia.org/wiki/Uranus'><!-- Uranus -->
+		<text x="1960" y="110">Uranus</text>
 		<path d="M -3 100 A 1922 1922 0 0 0 -3 -100" id="UranusPath"/>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg" x="1913" y="92" height="18" width="18"/>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite"> <!-- 0.016389 of orbit visible -->
@@ -644,8 +645,8 @@
 	<path d="M 0 100 L 0 -100" id="OuterPath"/>
 
 	<circle class='po' r="3011"/><!-- Neptune orbit -->
-	<a href='https://en.wikipedia.org/wiki/Neptune'><!-- Neptune -->
-		<text x="3030" y="110" font-size="25" fill="white">Neptune</text>
+	<a class='gas' href='https://en.wikipedia.org/wiki/Neptune'><!-- Neptune -->
+		<text x="3030" y="110">Neptune</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg" x="3002" y="92" height="18" width="18"/>
 		<animateMotion dur="8.62s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 			<mpath href="#OuterPath"/>
