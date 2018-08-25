@@ -39,6 +39,7 @@
 		.po{stroke:white;}
 		.mo{stroke:silver;}
 		.moc{cy:100px;r:7px;fill:grey;}
+		.body g text{font-size:8px;fill:white;}
 	</style>
 	
 	<script type="text/javascript">
@@ -364,11 +365,11 @@
 	<path d="M 0 0" id="NoPath"/>
 
 	<circle class='po' r="39"/><!-- Mercury orbit -->
-	<a href='https://en.wikipedia.org/wiki/Mercury_(planet)'><!-- Mercury -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Mercury_(planet)'><!-- Mercury -->
 		<path d="M -39 39 A 1 1 0 0 0 -39 -39" id="MercuryPath"/>
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg" x="31" y="92" height="16" width="16" transform="rotate(180 39 100)"/>
-			<text x="47" y="102" font-size="8" fill="white">Mercury</text>
+			<text x="47" y="102">Mercury</text>
 		</g>
 		<animateMotion dur="0.602115s" repeatCount="indefinite">
 			<mpath id='s1' href="#MercuryPath"/>
@@ -376,11 +377,11 @@
 	</a>
 
 	<circle class='po' r="72"/><!-- Venus orbit -->
-	<a href='https://en.wikipedia.org/wiki/Venus'><!-- Venus -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Venus'><!-- Venus -->
 		<path d="M -72 72 A 1 1 0 0 0 -72 -72" id="VenusPath"/>
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg" x="64" y="92" height="16" width="16"/>
-			<text x="80" y="102" font-size="8" fill="white">Venus</text>
+			<text x="80" y="102">Venus</text>
 		</g>
 		<animateMotion dur="1.537995s" repeatCount="indefinite">
 			<mpath id='s2' href="#VenusPath"/>
@@ -388,11 +389,11 @@
 	</a>
 
 	<circle class='po' r="100"/><!-- Earth orbit -->
-	<a href='https://en.wikipedia.org/wiki/Earth'><!-- Earth -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Earth'><!-- Earth -->
 		<path d="M -100 100 A 1 1 0 0 0 -100 -100" id="EarthPath"/>
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" x="92" y="92" height="16" width="16"/>
-			<text x="116" y="102" font-size="8" fill="white">Earth</text>
+			<text x="116" y="102">Earth</text>
 		</g>
 		<use class='invisible' id='t1' x="100" y="100" href="#arrow"/>
 		<text class='invisible' id='t2' x="125" y="75" font-size="8" fill="red">You are here</text>
@@ -400,10 +401,10 @@
 			<mpath id='s3' href="#EarthPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Moon'><!-- Moon -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Moon'><!-- Moon -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg" x="108" y="92" height="8" width="8"/>
-			<text x="116" y="102" font-size="8" fill="white">Moon</text>
+			<text x="116" y="102">Moon</text>
 		</g>
 		<animateMotion dur="2.5s" repeatCount="indefinite">
 			<mpath id='s3.1' href="#EarthPath"/>
@@ -411,11 +412,11 @@
 	</a>
 
 	<circle class='po' r="152"/><!-- Mars orbit -->
-	<a href='https://en.wikipedia.org/wiki/Mars'><!-- Mars -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Mars'><!-- Mars -->
 		<path d="M -37 100 A 152 152 0 0 0 -37 -100" id="MarsPath"/>
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" x="144" y="92" height="16" width="16"/>
-			<text x="168" y="102" font-size="8" fill="white">Mars</text>
+			<text x="168" y="102">Mars</text>
 		</g>
 		<use class='invisible' id='t3' x="152" y="100" href="#arrow"/>
 		<text class='invisible' id='t4' x="177" y="75" font-size="8" fill="red">Elon Musk's Homeworld</text>
@@ -423,19 +424,19 @@
 			<mpath id='s4' href="#MarsPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Phobos_(moon)'><!-- Phobos -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Phobos_(moon)'><!-- Phobos -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/5/5c/Phobos_colour_2008.jpg" x="160" y="92" height="8" width="8"/>
-			<text x="168" y="102" font-size="8" fill="white">Phobos</text>
+			<text x="168" y="102">Phobos</text>
 		</g>
 		<animateMotion dur="2.5061292s" repeatCount="indefinite">
 			<mpath id='s4.1' href="#MarsPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Deimos_(moon)'><!-- Deimos -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Deimos_(moon)'><!-- Deimos -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/8/8d/Deimos-MRO.jpg" x="160" y="100" height="8" width="8"/>
-			<text x="168" y="102" font-size="8" fill="white">Deimos</text>
+			<text x="168" y="102">Deimos</text>
 		</g>
 		<animateMotion dur="2.5061292s" repeatCount="indefinite">
 			<mpath id='s4.2' href="#MarsPath"/>
@@ -443,11 +444,11 @@
 	</a>
 
 	<circle class='mo' r="277"/><!-- Ceres orbit -->
-	<a href='https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)'><!-- Ceres -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)'><!-- Ceres -->
 		<path d="M -18 100 A 277 277 0 0 0 -18 -100" id="CeresPath"/>
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/5/58/Ceres_-_RC3_-_Haulani_Crater_(22381131691).jpg" x="270" y="92" height="14" width="14" transform="rotate(180 277 100)"/>
-			<text x="285" y="103" font-size="8" fill="white">Ceres</text>
+			<text x="285" y="103">Ceres</text>
 		</g>
 		<animateMotion dur="2.683s" repeatCount="indefinite"> <!-- 0.11666666666666666666666666666667 of orbit visible -->
 			<mpath id='sm1' href="#CeresPath"/>
@@ -463,37 +464,37 @@
 			<mpath href="#JupiterPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Io_(moon)'><!-- Io -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Io_(moon)'><!-- Io -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/7/7b/Io_highest_resolution_true_color.jpg" x="529" y="92" height="9" width="9"/>
-			<text x="529" y="120" font-size="8" fill="white">Io</text>
+			<text x="529" y="120">Io</text>
 		</g>
 		<animateMotion dur="3.61132s" repeatCount="indefinite">
 			<mpath href="#JupiterPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Europa_(moon)'><!-- Europa -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Europa_(moon)'><!-- Europa -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/5/54/Europa-moon.jpg" x="529" y="101" height="9" width="9"/>
-			<text x="529" y="120" font-size="8" fill="white">Europa</text>
+			<text x="529" y="120">Europa</text>
 		</g>
 		<animateMotion dur="3.61132s" repeatCount="indefinite">
 			<mpath href="#JupiterPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Ganymede_(moon)'><!-- Ganymede -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Ganymede_(moon)'><!-- Ganymede -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/f/f2/Ganymede_g1_true-edit1.jpg" x="538" y="92" height="9" width="9"/>
-			<text x="529" y="120" font-size="8" fill="white">Ganymede</text>
+			<text x="529" y="120">Ganymede</text>
 		</g>
 		<animateMotion dur="3.61132s" repeatCount="indefinite">
 			<mpath href="#JupiterPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Callisto_(moon)'><!-- Callisto -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Callisto_(moon)'><!-- Callisto -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e9/Callisto.jpg" x="538" y="101" height="9" width="9"/>
-			<text x="529" y="120" font-size="8" fill="white">Callisto</text>
+			<text x="529" y="120">Callisto</text>
 		</g>
 		<animateMotion dur="3.61132s" repeatCount="indefinite">
 			<mpath href="#JupiterPath"/>
@@ -514,64 +515,64 @@
 			<mpath href="#SaturnPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Mimas_(moon)'><!-- Mimas -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Mimas_(moon)'><!-- Mimas -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/b/bc/Mimas_Cassini.jpg" x="967" y="92" height="9" width="9"/>
-			<text x="967" y="120" font-size="8" fill="white">Mimas</text>
+			<text x="967" y="120">Mimas</text>
 		</g>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Enceladus'><!-- Enceladus -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Enceladus'><!-- Enceladus -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/9/95/Enceladus_from_Voyager.jpg" x="967" y="101" height="9" width="9"/>
-			<text x="967" y="120" font-size="8" fill="white">Enceladus</text>
+			<text x="967" y="120">Enceladus</text>
 		</g>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Tethys_(moon)'><!-- Tethys -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Tethys_(moon)'><!-- Tethys -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/b/bc/PIA18317-SaturnMoon-Tethys-Cassini-20150411.jpg" x="976" y="92" height="9" width="9"/>
-			<text x="967" y="120" font-size="8" fill="white">Tethys</text>
+			<text x="967" y="120">Tethys</text>
 		</g>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Dione_(moon)'><!-- Dione -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Dione_(moon)'><!-- Dione -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/4/42/Dione_in_natural_light.jpg" x="976" y="101" height="9" width="9"/>
-			<text x="967" y="120" font-size="8" fill="white">Dione</text>
+			<text x="967" y="120">Dione</text>
 		</g>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Rhea_(moon)'><!-- Rhea -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Rhea_(moon)'><!-- Rhea -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/a/ab/PIA07763_Rhea_full_globe5.jpg" x="985" y="92" height="9" width="9"/>
-			<text x="967" y="120" font-size="8" fill="white">Rhea</text>
+			<text x="967" y="120">Rhea</text>
 		</g>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Titan_(moon)'><!-- Titan -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Titan_(moon)'><!-- Titan -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/4/45/Titan_in_true_color.jpg" x="985" y="101" height="9" width="9"/>
-			<text x="967" y="120" font-size="8" fill="white">Titan</text>
+			<text x="967" y="120">Titan</text>
 		</g>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Iaptus_(moon)'><!-- Iaptus -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Iaptus_(moon)'><!-- Iaptus -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/b/b7/Iapetus_706_1419_1.jpg" x="994" y="96" height="9" width="9"/>
-			<text x="967" y="120" font-size="8" fill="white">Iaptus</text>
+			<text x="967" y="120">Iaptus</text>
 		</g>
 		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
@@ -594,46 +595,46 @@
 			<mpath href="#UranusPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Miranda_(moon)'><!-- Miranda -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Miranda_(moon)'><!-- Miranda -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/e/e1/PIA18185_Miranda's_Icy_Face.jpg" x="1931" y="92" height="9" width="9"/>
-			<text x="1931" y="120" font-size="8" fill="white">Miranda</text>
+			<text x="1931" y="120">Miranda</text>
 		</g>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite">
 			<mpath href="#UranusPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Ariel_(moon)'><!-- Ariel -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Ariel_(moon)'><!-- Ariel -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/5/59/Ariel_(moon).jpg" x="1931" y="101" height="9" width="9"/>
-			<text x="1931" y="120" font-size="8" fill="white">Ariel</text>
+			<text x="1931" y="120">Ariel</text>
 		</g>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite">
 			<mpath href="#UranusPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Umbriel_(moon)'><!-- Umbriel -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Umbriel_(moon)'><!-- Umbriel -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2f/PIA00040_Umbrielx2.47.jpg" x="1940" y="92" height="9" width="9"/>
-			<text x="1931" y="120" font-size="8" fill="white">Umbriel</text>
+			<text x="1931" y="120">Umbriel</text>
 		</g>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite">
 			<mpath href="#UranusPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Titania_(moon)'><!-- Titania -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Titania_(moon)'><!-- Titania -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2e/Titania_(moon)_color%2C_edited.jpg" x="1940" y="101" height="9" width="9"/>
-			<text x="1931" y="120" font-size="8" fill="white">Titania</text>
+			<text x="1931" y="120">Titania</text>
 		</g>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite">
 			<mpath href="#UranusPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Oberon_(moon)'><!-- Oberon -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Oberon_(moon)'><!-- Oberon -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/0/09/Voyager_2_picture_of_Oberon.jpg" x="1949" y="96" height="9" width="9"/>
-			<text x="1931" y="120" font-size="8" fill="white">Oberon</text>
+			<text x="1931" y="120">Oberon</text>
 		</g>
 		<animateMotion dur="6.885013194s" repeatCount="indefinite">
 			<mpath href="#UranusPath"/>
@@ -650,18 +651,18 @@
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Triton_(moon)'><!-- Triton -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Triton_(moon)'><!-- Triton -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/a/a6/Triton_moon_mosaic_Voyager_2_(large).jpg" x="3020" y="92" height="9" width="9"/>
-			<text x="3011" y="120" font-size="8" fill="white">Triton</text>
+			<text x="3011" y="120">Triton</text>
 		</g>
 		<animateMotion dur="8.62s" repeatCount="indefinite">
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
 
-	<a href="https://en.wikipedia.org/wiki/Halley's_Comet"><!-- Halley's Comet Epoch 2018-08-22 -->
-		<text x="3510" y="103" font-size="8" fill="white">Halley's Comet</text>
+	<a class='body' href="https://en.wikipedia.org/wiki/Halley's_Comet"><!-- Halley's Comet Epoch 2018-08-22 -->
+		<text x="3510" y="103">Halley's Comet</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Lspn_comet_halley.jpg" x="3467" y="88" height="24"/>
 	</a>
 
@@ -682,10 +683,10 @@
 			<mpath href="#OuterPath"/>
 		</animateMotion>
 	</a>
-	<a href='https://en.wikipedia.org/wiki/Charon_(moon)'><!-- Charon -->
+	<a class='body' href='https://en.wikipedia.org/wiki/Charon_(moon)'><!-- Charon -->
 		<g class='hovertext'>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2b/Charon_in_Color_(HQ).jpg" x="3955" y="92" height="9" width="9"/>
-			<text x="3955" y="120" font-size="8" fill="white">Charon</text>
+			<text x="3955" y="120">Charon</text>
 		</g>
 		<animateMotion dur="10.03s" repeatCount="indefinite">
 			<mpath href="#OuterPath"/>
