@@ -319,7 +319,7 @@
 	</a>
 
 	<a class='desc' href='https://en.wikipedia.org/wiki/Trans-Neptunian_object'><!-- TNOs -->
-		<circle class='range' r="6505.5" stroke="teal" stroke-width="6989"/>
+		<circle class='range' r="4005.5" stroke="teal" stroke-width="1989"/>
 		<text x="3050" y="190">Trans-Neptunian Objects</text>
 	</a>
 
@@ -329,7 +329,7 @@
 	</a>
 
 	<a class='desc' href='https://en.wikipedia.org/wiki/Scattered_disc'><!-- SDOs -->
-		<circle class='range' r="7500" stroke="rgb(64,96,128)" stroke-width="5000"/>
+		<circle class='range' r="7500" stroke="darkslateblue" stroke-width="5000"/>
 		<text x="5010" y="190">Scattered Disc Objects</text>
 	</a>
 
