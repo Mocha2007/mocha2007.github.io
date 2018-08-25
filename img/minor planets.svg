@@ -466,7 +466,7 @@
 	<a class='body' href='https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)'><!-- Ceres -->
 		<path d="M -18 100 A 277 277 0 0 0 -18 -100" id="CeresPath"/>
 		<g class='hovertext'>
-			<image class='rp' href="https://upload.wikimedia.org/wikipedia/commons/7/76/Ceres_-_RC3_-_Haulani_Crater_(22381131691)_(cropped).jpg" transform="rotate(180 277 100) translate(270 92) scale(.8)"/>
+			<image class='rp' href="https://upload.wikimedia.org/wikipedia/commons/7/76/Ceres_-_RC3_-_Haulani_Crater_(22381131691)_(cropped).jpg" transform="rotate(180 277 100) translate(271 92) scale(.8)"/>
 			<text x="285" y="103">Ceres</text>
 		</g>
 		<animateMotion dur="2.683s" repeatCount="indefinite"> <!-- 0.11666666666666666666666666666667 of orbit visible -->
