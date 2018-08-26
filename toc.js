@@ -1,4 +1,4 @@
-function MainMakeTOC() {
+function MakeTOC() {
 	"use strict";
 	//.getElementsByTagName('h1,h2,h3,h4,h5,h6')
 	var namedheaders = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id],b.sub,b.super');
@@ -30,7 +30,4 @@ function MainMakeTOC() {
 	document.getElementById("nav").innerHTML = text;
 };
 
-window.onload = function MakeTOC() {
-	"use strict";
-	MainMakeTOC();
-};
+window.onload = MakeTOC;
