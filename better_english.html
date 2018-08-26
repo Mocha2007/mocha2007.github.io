@@ -204,6 +204,11 @@
 	1:33 Som starz burn aut un dai. 
 	1:34 Bigur starz burn aut un dai with pacun, un meek sum brand nuu, we kreezi-ur cit. 
 	1:39 Spees dost!. 
+	1:40 Witc ulauz nuuur, mor intrusting starz tu bi meed un dai un uksplood un'iivun kreezi-ur spees dost. 
+	1:45 So nau starz hav kuul stof uraun dhum, laik raaks, ais, un foni klaudz, witc kun meek sum veri intrusting thingz, 
+	1:51 Laik dhus baal u fleemun raaks fur ugzampul. 
+	1:52 Holi cit wi djus gaat hit wuth unodhur baal u fleemun raaks. 
+	1:55 Un ut kaindu meed u mes. 
 </p>
 <h3 id='Genesis'>Genesis</h2>
 <p class='corpus'>
@@ -223,7 +228,7 @@
 		<th>&Delta;</th>
 		<th>en_m%</th>
 	</tr>
-	<tr class='green'>
+	<tr class='red'>
 		<td>a</td>
 		<td>8.169</td>
 		<td></td>
@@ -241,7 +246,7 @@
 		<td></td>
 		<td></td>
 	</tr>
-	<tr class='green'>
+	<tr class='red'>
 		<td>d</td>
 		<td>4.253</td>
 		<td></td>
@@ -259,7 +264,7 @@
 		<td></td>
 		<td></td>
 	</tr>
-	<tr class='green'>
+	<tr class='red'>
 		<td>g</td>
 		<td>2.015</td>
 		<td></td>
@@ -271,19 +276,19 @@
 		<td></td>
 		<td></td>
 	</tr>
-	<tr class='green'>
+	<tr class='red'>
 		<td>i</td>
 		<td>6.966</td>
 		<td></td>
 		<td></td>
 	</tr>
-	<tr class='green'>
+	<tr class='red'>
 		<td>j</td>
 		<td>0.153</td>
 		<td></td>
 		<td></td>
 	</tr>
-	<tr class='green'>
+	<tr class='red'>
 		<td>k</td>
 		<td>0.772</td>
 		<td></td>
@@ -301,7 +306,7 @@
 		<td></td>
 		<td></td>
 	</tr>
-	<tr class='green'>
+	<tr class='red'>
 		<td>n</td>
 		<td>6.749</td>
 		<td></td>
@@ -319,13 +324,13 @@
 		<td></td>
 		<td></td>
 	</tr>
-	<tr class='green'>
+	<tr class='red'>
 		<td>q</td>
 		<td>0.095</td>
 		<td></td>
 		<td></td>
 	</tr>
-	<tr class='green'>
+	<tr class='red'>
 		<td>r</td>
 		<td>5.987</td>
 		<td></td>
@@ -343,13 +348,13 @@
 		<td></td>
 		<td></td>
 	</tr>
-	<tr class='green'>
+	<tr class='red'>
 		<td>u</td>
 		<td>2.758</td>
 		<td></td>
 		<td></td>
 	</tr>
-	<tr class='green'>
+	<tr class='red'>
 		<td>v</td>
 		<td>0.978</td>
 		<td></td>
@@ -373,7 +378,7 @@
 		<td></td>
 		<td></td>
 	</tr>
-	<tr class='green'>
+	<tr class='red'>
 		<td>z</td>
 		<td>0.978</td>
 		<td></td>
@@ -432,6 +437,9 @@ function tabledelta(){
 				bef = Number(child.children[1].innerHTML)/100;
 				aft = Number(child.children[3].innerHTML)/100;
 				child.children[2].innerHTML = delta(bef,aft);
+				if (aft > bef){
+					child.className = "green";
+				}
 			}
 		}
 		catch (TypeError){
