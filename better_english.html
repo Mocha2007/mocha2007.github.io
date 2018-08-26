@@ -30,6 +30,18 @@
 	background-color:#cec;
 	color:green;
 }
+.percenttable td::after{
+	content:"%";
+}
+.percenttable td:nth-of-type(1)::after{
+	content:"";
+}
+.percenttable .green td:nth-of-type(3)::before{
+	content:"▲";
+}
+.percenttable .red td:nth-of-type(3)::before{
+	content:"▼";
+}
 </style>
 <title>Better English</title>
 <div id="nav"></div>
@@ -141,7 +153,7 @@
 <h2 id='Samples'>Samples</h2>
 <h3 id='History'><a href='https://www.youtube.com/watch?v=xuCn8ux2gbs'>History of the Entire World, I Guess</a></h2>
 <img src='img/be_hotewig.png' width=700>
-<p>
+<p class='corpus'>
 	0:00 Hai! 
 	0:01 Yur aan u raak, flooting un spees. 
 	0:02 Pridi kuul, honh? 
@@ -194,7 +206,7 @@
 	1:39 Spees dost!. 
 </p>
 <h3 id='Genesis'>Genesis</h2>
-<p>
+<p class='corpus'>
 	1 Un dhu bugining, gaad kriieetud dhu hevunz un dh'urth. 
 	2 Nau dh'urth wuz formlus un empti, darknus wuz oovur dhu surfus u dhu diip, 
 	un dhu spirut u gaad wuz hovurun oovur dhu waadurz.
@@ -204,7 +216,7 @@
 	Un dher wuz iivnun, un dher wuz mornun - dhu furst de.
 </p>
 <h2 id='Stats'>Stats</h2>
-<table>
+<table id='letterstats' class='percenttable' onload='tabledelta();'>
 	<tr>
 		<th>Letter</th>
 		<th>en_us%</th>
@@ -213,160 +225,222 @@
 	</tr>
 	<tr class='green'>
 		<td>a</td>
-		<td>8.169%</td>
-		<td>&#x25B2;4%</td>
-		<td>8.5%</td>
+		<td>8.169</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='red'>
 		<td>b</td>
-		<td>1.492%</td>
-		<td>&#x25BC;20%</td>
-		<td>1.2%</td>
+		<td>1.492</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='red'>
 		<td>c</td>
-		<td>2.782%</td>
-		<td>&#x25BC;82%</td>
-		<td>0.5%</td>
+		<td>2.782</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='green'>
 		<td>d</td>
-		<td>4.253%</td>
-		<td>&#x25B2;53%</td>
-		<td>6.5%</td>
+		<td>4.253</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='red'>
 		<td>e</td>
-		<td>12.702%</td>
-		<td>&#x25BC;54%</td>
-		<td>5.8%</td>
+		<td>12.702</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='red'>
 		<td>f</td>
-		<td>2.228%</td>
-		<td>&#x25BC;69%</td>
-		<td>0.7%</td>
+		<td>2.228</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='green'>
 		<td>g</td>
-		<td>2.015%</td>
-		<td>&#x25B2;39%</td>
-		<td>2.8%</td>
+		<td>2.015</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='red'>
 		<td>h</td>
-		<td>6.094%</td>
-		<td>&#x25BC;29%</td>
-		<td>4.3%</td>
+		<td>6.094</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='green'>
 		<td>i</td>
-		<td>6.966%</td>
-		<td>&#x25B2;9%</td>
-		<td>7.6%</td>
+		<td>6.966</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='green'>
 		<td>j</td>
-		<td>0.153%</td>
-		<td>&#x25B2;161%</td>
-		<td>0.4%</td>
+		<td>0.153</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='green'>
 		<td>k</td>
-		<td>0.772%</td>
-		<td>&#x25B2;172%</td>
-		<td>2.1%</td>
+		<td>0.772</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='red'>
 		<td>l</td>
-		<td>4.025%</td>
-		<td>&#x25BC;43%</td>
-		<td>2.3%</td>
+		<td>4.025</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='red'>
 		<td>m</td>
-		<td>2.406%</td>
-		<td>&#x25BC;29%</td>
-		<td>1.7%</td>
+		<td>2.406</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='green'>
 		<td>n</td>
-		<td>6.749%</td>
-		<td>&#x25B2;21%</td>
-		<td>8.2%</td>
+		<td>6.749</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='red'>
 		<td>o</td>
-		<td>7.507%</td>
-		<td>&#x25BC;49%</td>
-		<td>3.8%</td>
+		<td>7.507</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='red'>
 		<td>p</td>
-		<td>1.929%</td>
-		<td>&#x25BC;17%</td>
-		<td>1.6%</td>
+		<td>1.929</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='green'>
 		<td>q</td>
-		<td>0.095%</td>
-		<td>&#x25B2;5%</td>
-		<td>0.1%</td>
+		<td>0.095</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='green'>
 		<td>r</td>
-		<td>5.987%</td>
-		<td>&#x25B2;4%</td>
-		<td>6.2%</td>
+		<td>5.987</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='red'>
 		<td>s</td>
-		<td>6.327%</td>
-		<td>&#x25BC;18%</td>
-		<td>5.2%</td>
+		<td>6.327</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='red'>
 		<td>t</td>
-		<td>9.056%</td>
-		<td>&#x25BC;20%</td>
-		<td>7.2%</td>
+		<td>9.056</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='green'>
 		<td>u</td>
-		<td>2.758%</td>
-		<td>&#x25B2;480%</td>
-		<td>16.0%</td>
+		<td>2.758</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='green'>
 		<td>v</td>
-		<td>0.978%</td>
-		<td>&#x25B2;43%</td>
-		<td>1.4%</td>
+		<td>0.978</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='red'>
 		<td>w</td>
-		<td>2.360%</td>
-		<td>&#x25BC;11%</td>
-		<td>2.1%</td>
+		<td>2.360</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='red'>
 		<td>x</td>
-		<td>0.978%</td>
-		<td>&#x25BC;100%</td>
-		<td>0.0%</td>
+		<td>0.978</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='red'>
 		<td>y</td>
-		<td>0.978%</td>
-		<td>&#x25BC;59%</td>
-		<td>0.4%</td>
+		<td>0.978</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr class='green'>
 		<td>z</td>
-		<td>0.978%</td>
-		<td>&#x25B2;115%</td>
-		<td>2.1%</td>
+		<td>0.978</td>
+		<td></td>
+		<td></td>
 	</tr>
 </table>
 <div id="bottom"></div>
+<script>
+var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+function freqcalc(){
+	var letterindex = [];
+	var count,i,letter;
+	var bigdick = '';
+	var corpora = document.getElementsByClassName('corpus');
+	for (i in corpora){
+		corpus = corpora[i];
+		try {
+			bigdick += corpus.innerHTML.toLowerCase();
+		}
+		catch (TypeError){
+			break;
+		}
+	}
+	var s = 0;
+	for (i in alphabet){
+		letter = alphabet[i];
+		count = (bigdick.match(new RegExp(letter,'g')) || []).length;
+		letterindex[letter] = count;
+		s += count;
+	}
+	for (i in letterindex){
+		letterindex[i] = letterindex[i]/s;
+		letterindex[i] = Math.round(letterindex[i]*100000)/1000;
+	}
+	return letterindex;
+}
+
+oof = freqcalc();
+
+function delta(a,b){
+	return (b>a)?Math.round(100*(b/a-1)):Math.round(100*(1-b/a));
+}
+
+function tabledelta(){
+	var child,bef,aft;
+	var t = document.getElementById('letterstats');
+	for (var i in t.children[0].children){
+		child = t.children[0].children[i];
+		try {
+			if (child.className !== ""){
+				// work on col 3
+				console.log(i,alphabet[i-1],oof[alphabet[i-1]]);
+				child.children[3].innerHTML = oof[alphabet[i-1]];
+				// work on col 2
+				bef = Number(child.children[1].innerHTML)/100;
+				aft = Number(child.children[3].innerHTML)/100;
+				child.children[2].innerHTML = delta(bef,aft);
+			}
+		}
+		catch (TypeError){
+			break;
+		}
+	}
+	return false;
+}
+
+window.onload = function buttsex(){tabledelta();MakeTOC();}
+</script>
 </html>
