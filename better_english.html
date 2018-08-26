@@ -233,6 +233,9 @@
 	5 No-wun cal bi subdjektud tu tortcur ur tu kruul, inhyuumun ur dugreeding triitmunt ur ponucmunt. 
 </p>
 <h2 id='Stats'>Stats</h2>
+<p>
+	Corpus size is <span id='wordcount'></span> words containing <span id='lettercount'></span> letters. 
+</p>
 <table id='letterstats' class='percenttable' onload='tabledelta();'>
 	<tr>
 		<th>Letter</th>
@@ -422,6 +425,8 @@ function freqcalc(){
 		letterindex[letter] = count;
 		s += count;
 	}
+	document.getElementById('lettercount').innerHTML = s;
+	document.getElementById('wordcount').innerHTML = (bigdick.match(/ /g)).length;
 	for (i in letterindex){
 		letterindex[i] = letterindex[i]/s;
 		letterindex[i] = Math.round(letterindex[i]*100000)/1000;
