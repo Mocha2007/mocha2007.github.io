@@ -292,7 +292,7 @@ function fstep(){
 				}
 				stack.push(gcd(a,b));
 				break;
-			// M Max, ignores strings unless there are only strings
+			// todo M Max, ignores strings unless there are only strings
 			/*case 'M':
 				var anynumbers = 0;
 				for (i=0;i<stack.length;i+=1){
@@ -345,7 +345,7 @@ function fstep(){
 				a = stack.pop();
 				stack.push((a+a*a)/2);
 				break;
-			// m Min, ignores strings unless there are only strings
+			// todo m Min, ignores strings unless there are only strings
 			/*case 'm':
 				var anynumbers = 0;
 				for (i=0;i<stack.length;i+=1){
@@ -480,7 +480,7 @@ function fstep(){
 				return err('operation not in Math dictionary');
 		}
 	}
-	else if (timelibrary){// TODO
+	else if (timelibrary){
 		timelibrary = 0;
 		switch (command){
 			// ignore whitespace
@@ -761,14 +761,19 @@ function fstep(){
 			case ',':
 				stack.push(0);
 				break;
-			// - sub TODO - allow string-string instead of just string-char
+			// - sub
 			case '-':
 				if (stack.length>1){
 					b = stack.pop();
 					a = stack.pop();
 					// use charcode if b is string
 					if (typeof b === 'string'){
-						b = b.charCodeAt(0);
+					    if (b.length > 1){ // strings use length
+						    b = b.length;
+						}
+					    else { // chars use value
+						    b = b.charCodeAt(0);
+						}
 					}
 					// err if b is array
 					if (typeof b === 'object'){
@@ -1030,7 +1035,7 @@ function fstep(){
 					return err('arithmetic mean of mixed stack');
 				}
 				break;
-			// TODO C
+			// TODO C - case
 			// TODO D
 			// TODO F{x} array.forEach(x)
 			// G geometric mean
@@ -1113,7 +1118,7 @@ function fstep(){
 					stack.push([a]);
 				}
 				break;
-			// TODO S
+			// TODO S - switch
 			// T Timefunctions
 			case 'T':
 				timelibrary = 1;
@@ -1329,7 +1334,7 @@ function fstep(){
 					stack.push(Math.E);
 				}
 				break;
-			// f -> [array] 'function' filter(), unfortunately currently returns something like [1,1,1,1] for [0,1,0,2,3,4]
+			// todo f -> [array] 'function' filter(), unfortunately currently returns something like [1,1,1,1] for [0,1,0,2,3,4]
 			/*case 'f': currently getting weird 'undefined' error
 				a = stack.pop();
 				commandlist = commandlist.slice(0,line)+'.\''+definedfunctions[a]+'\'mZ'+commandlist.slice(line); // f is equivalent to .'function'mZ
@@ -1385,7 +1390,7 @@ function fstep(){
 					stack.push(1);
 				}
 				break;
-			// s sort: if only numbers, L->G else alphabetically
+			// todo s sort: if only numbers, L->G else alphabetically
 			/*case 's':
 				var anystrings = 0;
 				for (i=0;i<stack.length;i+=1){
