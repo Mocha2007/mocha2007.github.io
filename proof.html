@@ -8,6 +8,10 @@
 <link href=blend.css type="text/css" rel="alternate stylesheet" title="Blend">
 <link href=print.css type="text/css" rel="stylesheet" media="print">
 <script src="toc.js"></script>
+<style>
+	.theorems{font-weight:bold;}
+	.theorems ol{font-weight:normal;}
+</style>
 <title>Proofs</title>
 <div id="nav"></div>
 <div id="top"><h1 id="Proofs">Proofs</h1></div>
@@ -26,5 +30,98 @@ All are PDFs.
 <ul>
 	<li><a href="https://www.math.wisc.edu/~boston/869.pdf">Fermat's Last Theorem</a></li>
 </ul>
+<h2 id="Onsite">Onsite</h2>
+<h3 id="Even">Even/Odd Number Properties</h3>
+Axioms:
+<ol>
+	<li>The sum, difference, and product of two integers is also an integer</li>
+</ol>
+Definitions:
+<ol>
+	<li>An even integer n is an integer that can be expressed as n = 2k where k is an integer.</li>
+	<li>An odd integer n is an integer that can be expressed as n = 2k+1 where k is an integer.</li>
+</ol>
+Theorems:
+<ol class="theorems">
+	<!-- sums -->
+	<li>Theorem: the sum of two even integers is even
+		<ol>
+			<li>let m, n be even integers of the form m = 2a and n = 2b</li>
+			<li>m+n = 2a+2b</li>
+			<li>m+n = 2(a+b)</li>
+			<li>a+b is an integer by axiom 1</li>
+			<li>since m+n can be expressed as the product of 2 and an integer, m+n is also even</li>
+		</ol>
+	</li>
+	<li>Theorem: the sum of two odd integers is even
+		<ol>
+			<li>let m, n be odd integers of the form m = 2a+1 and n = 2b+1</li>
+			<li>m+n = 2a+1+2b+1</li>
+			<li>m+n = 2(a+b+1)</li>
+			<li>a+b+1 is an integer by axiom 1</li>
+			<li>since m+n can be expressed as the product of 2 and an integer, mn is even</li>
+		</ol>
+	</li>
+	<li>Theorem: the sum of an odd and even integer is odd
+		<ol>
+			<li>let m, n be odd and even integers of the form m = 2a+1 and n = 2b</li>
+			<li>m+n = 2a+1+2b</li>
+			<li>mn = 2(a+b)+1</li>
+			<li>a+b is an integer by axiom 1</li>
+			<li>since m+n can be expressed as the product of 2 and an integer plus 1, mn is odd</li>
+		</ol>
+	</li>
+	<!-- products -->
+	<li>Theorem: the product of two even integers is even
+		<ol>
+			<li>let m, n be even integers of the form m = 2a and n = 2b</li>
+			<li>mn = (2a)(2b)</li>
+			<li>mn = 2(2ab)</li>
+			<li>2ab is an integer by axiom 1</li>
+			<li>since mn can be expressed as the product of 2 and an integer, mn is also even</li>
+		</ol>
+	</li>
+	<li>Theorem: the product of two odd integers is odd
+		<ol>
+			<li>let m, n be odd integers of the form m = 2a+1 and n = 2b+1</li>
+			<li>mn = (2a+1)(2b+1)</li>
+			<li>mn = 4ab + 2a + 2b + 1</li>
+			<li>mn = 2(2ab + a + b) + 1</li>
+			<li>2ab + a + b is an integer by axiom 1</li>
+			<li>since mn can be expressed as the product of 2 and an integer plus 1, mn is also odd</li>
+		</ol>
+	</li>
+	<li>Theorem: the product of an odd and even integer is even
+		<ol>
+			<li>let m, n be odd and even integers of the form m = 2a+1 and n = 2b</li>
+			<li>mn = (2a+1)(2b)</li>
+			<li>mn = 4ab + 2b</li>
+			<li>mn = 2(2ab + b)</li>
+			<li>2ab + b is an integer by axiom 1</li>
+			<li>since mn can be expressed as the product of 2 and an integer, mn is even</li>
+		</ol>
+	</li>
+	<!-- squares -->
+	<li>Theorem: the square of an even integer is even
+		<ol>
+			<li>n = 2a</li>
+			<li>n<sup>2</sup> = (2a)<sup>2</sup></li>
+			<li>n<sup>2</sup> = 4a<sup>2</sup></li>
+			<li>n<sup>2</sup> = 2(2a<sup>2</sup>)</li>
+			<li>2a<sup>2</sup> is an integer by axiom 1</li>
+			<li>since n<sup>2</sup> can be expressed as the product of 2 and an integer, n<sup>2</sup> is even</li>
+		</ol>
+	</li>
+	<li>Theorem: the square of an odd integer is odd
+		<ol>
+			<li>n = 2a+1</li>
+			<li>n<sup>2</sup> = (2a+1)<sup>2</sup></li>
+			<li>n<sup>2</sup> = 4a<sup>2</sup> + 4a + 1</li>
+			<li>n<sup>2</sup> = 2(2a<sup>2</sup> + 2a) + 1</li>
+			<li>2a<sup>2</sup> + 2a is an integer by axiom 1</li>
+			<li>since n<sup>2</sup> can be expressed as the product of 2 and an integer plus 1, n<sup>2</sup> is odd</li>
+		</ol>
+	</li>
+</ol>
 <div id="bottom"></div>
 </html>
