@@ -10,6 +10,28 @@
 <script src="toc.js"></script>
 <style>
 .title{font-style:italic;}
+span{font-family: monospace;border-radius:8px;padding:2px}
+/* A stronomy */
+.taga::before{content:"A";}
+.taga{background-color:black;color:white;}
+.taga:hover::after{content:"stronomy";}
+/* C onlangs */
+.tagc::before{content:"C";}
+.tagc{background-color:green;color:lime;}
+.tagc:hover::after{content:"onlangs/worlds";}
+/* F un */
+.tagf::before{content:"F";}
+.tagf{background-color:purple;color:magenta;}
+.tagf:hover::after{content:"un";}
+/* L anguage */
+.tagl::before{content:"L";}
+.tagl{background-color:olive;color:yellow;}
+.tagl:hover::after{content:"anguage";}
+/* M ath */
+.tagm::before{content:"M";}
+.tagm{background-color:blue;color:skyblue;}
+.tagm:hover::after{content:"ath";}
+}
 </style>
 <title>Others' Cool Homepages</title>
 <div id="nav"></div>
@@ -17,54 +39,68 @@
 <p>
 	These people have papers, calculators, or other tools that have aided me at some point. 
 	People with degrees have asterisks for noticability.
+	I also have tags to help search; hover over them to display their full name:
 </p>
+<ul>
+	<li><span class="taga"></span></li>
+	<li><span class="tagc"></span></li>
+	<li><span class="tagf"></span></li>
+	<li><span class="tagl"></span></li>
+	<li><span class="tagm"></span></li>
+</ul>
 <h2 id="good_boi">good boi</h2>
 (Simple/Low Bandwidth)
 <ul>
 	<li><a href="http://www.alpsroads.net/">Alpert, Steve</a> - lots of cool road photos and drawings</li>
-	<li><a href="http://u.arizona.edu/~aversa/">Aversa, Alan</a> - <a class='title' href='http://u.arizona.edu/~aversa/latin/'>Latin Inflector</a>, but also many other sciences</li>
-	<li><a href="http://www.projectrho.com/">Chung, Winchell D.</a> - lots of useful tools and info relating to scifi shit</li>
-	<li><a href="http://www.tkcs-collins.com/truman/index.shtml">Collins, Truman</a> - some interesting analyses on board games</li>
-	<li><a href="https://donjon.bin.sh/">Drow</a> - RPG/Conworlding tools</li>
-	<li><a href="http://www.iwriteiam.nl/index.html">Faase, Frans</a> - a programmish and mathish of the Netherlands. Site contains a blog, as well as numerous useful pages about oddly specific math problems.</li>
-	<li><abbr title="PhD, Linguistics, Unknown">*</abbr> <a href="http://home.cc.umanitoba.ca/~robh/index.html">Hagiwara, Rob</a> - home of the incredibly useful <a class='title' href='http://home.cc.umanitoba.ca/~robh/hdrs/nav2how.gif'>How to Read a Spectrogram</a> page</li>
-	<li><abbr title="PhD, Applied Physics, Cornell">*</abbr> <a href="http://www.astro.umd.edu/~hamilton/">Hamilton, Douglas P.</a> - author of the immeasurably useful <a class='title' href='http://janus.astro.umd.edu/'>Astronomy Workshop</a></li>
-	<li><a href="https://isoraqathedh.github.io/">Isoraqedh</a> - conlangs, conworlds</li>
-	<li><a href="http://chaoticshiny.com/index.php">Lipsky, Hannah</a> - RPG/Conworlding tools</li>
-	<li><abbr title="PhD, Computer Science, University of Southwestern Louisiana">*</abbr> <a href="http://www.pmichaud.com/">Michaud, Patrick R.</a> - home of the <a class='title' href='http://pmichaud.com/toast/'>Strawberry Pop-Tart Blow-Torches</a></li>
-	<li><abbr title="MA, English, Cal Poly State University, San Luis Obispo">*</abbr> <a href="http://www.rocketpunk-observatory.com/home.htm">Robinson, Rick</a> - space stuff</li>
-	<li><a href="http://www.zompist.com/">Rosenfelder, Mark</a> - Conlangs, conworld, conlanging tools</li>
-	<li><a href="http://stjarnhimlen.se/english.html">Schlyter, Paul</a> - looks really cool and useful</li>
-	<li><abbr title="PhD, Linguistics, University of Groningen">*</abbr> <a href="http://ext-web.edu.sgu.ac.jp/hidetos/">Shiraishi, Hidetoshi</a> - a linguisticsish of Japan. TONS of info on the Nivkh language.</li>
-	<li><a href="http://www.astro.indiana.edu/gsimonel/">Simonelli, Glenn</a> - an astronomyish with cool tools, including the great <a class='title' href='http://www.astro.indiana.edu/~gsimonel/temperature1.html'>Planet Temperature Calculation</a>.</li>
-	<li><a href="http://steen.free.fr/">van Steenbergen, Jan</a> - conworlds, conlangs.</li>
-	<li><a href="http://users.rcn.com/mwhite28/">White, Matthew</a> - Home of <a class='title' href='http://users.rcn.com/mwhite28/hiero/index.htm'>White-o-glyphics</a>, among other things</li>
-	<li><a href="http://www.billwurtz.com/">Wurtz, Bill</a> - odd</li>
+	<li><span class="tagl"></span> <a href="http://u.arizona.edu/~aversa/">Aversa, Alan</a> - <a class='title' href='http://u.arizona.edu/~aversa/latin/'>Latin Inflector</a>, but also many other sciences</li>
+	<li><span class="tagm"></span> <abbr title="PhD, Mathematical Sciences, Southern Methodist University">*</abbr> <a href="http://www.math.odu.edu/~bogacki/">Bogacki, Przemyslaw</a> - home of the <a class='title' href='http://www.math.odu.edu/~bogacki/cgi-bin/lat.cgi'>Linear Algebra Toolkit</a></li>
+	<li><span class="taga"></span> <a href="http://www.projectrho.com/">Chung, Winchell D.</a> - lots of useful tools and info relating to scifi shit</li>
+	<li><span class="tagm"></span> <a href="http://www.tkcs-collins.com/truman/index.shtml">Collins, Truman</a> - some interesting analyses on board games</li>
+	<li><span class="tagc"></span> <a href="https://donjon.bin.sh/">Drow</a> - RPG/Conworlding tools</li>
+	<li><span class="tagm"></span> <a href="http://www.iwriteiam.nl/index.html">Faase, Frans</a> - a programmish and mathish of the Netherlands. Site contains a blog, as well as numerous useful pages about oddly specific math problems.</li>
+	<li><span class="tagl"></span> <abbr title="PhD, Linguistics, Unknown">*</abbr> <a href="http://home.cc.umanitoba.ca/~robh/index.html">Hagiwara, Rob</a> - home of the incredibly useful <a class='title' href='http://home.cc.umanitoba.ca/~robh/hdrs/nav2how.gif'>How to Read a Spectrogram</a> page</li>
+	<li><span class="taga"></span> <abbr title="ArchD, University of Michigan">*</abbr> <a href="http://www.twhall.com/">Hall, Theodore W.</a> - made <a class='title' href='https://www.artificial-gravity.com/sw/SpinCalc/SpinCalc.htm'>SpinCalc</a>, an artificial gravity calculator</li>
+	<li><span class="taga"></span> <abbr title="PhD, Applied Physics, Cornell">*</abbr> <a href="http://www.astro.umd.edu/~hamilton/">Hamilton, Douglas P.</a> - author of the immeasurably useful <a class='title' href='http://janus.astro.umd.edu/'>Astronomy Workshop</a></li>
+	<li><span class="tagc"></span> <a href="https://isoraqathedh.github.io/">Isoraqedh</a> - conlangs, conworlds</li>
+	<li><span class="tagc"></span> <a href="http://chaoticshiny.com/index.php">Lipsky, Hannah</a> - RPG/Conworlding tools</li>
+	<li><span class="tagf"></span> <abbr title="PhD, Computer Science, University of Southwestern Louisiana">*</abbr> <a href="http://www.pmichaud.com/">Michaud, Patrick R.</a> - home of the <a class='title' href='http://pmichaud.com/toast/'>Strawberry Pop-Tart Blow-Torches</a></li>
+	<li><a href="http://people.physik.hu-berlin.de/~palloks/">Palloks, Daniel</a> - creator of <a href="http://people.physik.hu-berlin.de/~palloks/js/enigma/enigma-u_v20_en.html">Universal Enigma</a></li>
+	<li><span class="taga"></span> <abbr title="MA, English, Cal Poly State University, San Luis Obispo">*</abbr> <a href="http://www.rocketpunk-observatory.com/home.htm">Robinson, Rick</a> - space stuff</li>
+	<li><span class="tagc"></span><span class="tagl"></span> <a href="http://www.zompist.com/">Rosenfelder, Mark</a> - Conlangs, conworld, conlanging tools</li>
+	<li><span class="taga"></span> <a href="http://stjarnhimlen.se/english.html">Schlyter, Paul</a> - looks really cool and useful</li>
+	<li><span class="tagl"></span> <abbr title="PhD, Linguistics, University of Groningen">*</abbr> <a href="http://ext-web.edu.sgu.ac.jp/hidetos/">Shiraishi, Hidetoshi</a> - a linguisticsish of Japan. TONS of info on the Nivkh language.</li>
+	<li><span class="taga"></span> <a href="http://www.astro.indiana.edu/gsimonel/">Simonelli, Glenn</a> - an astronomyish with cool tools, including the great <a class='title' href='http://www.astro.indiana.edu/~gsimonel/temperature1.html'>Planet Temperature Calculation</a>.</li>
+	<li><span class="tagc"></span> <a href="http://steen.free.fr/">van Steenbergen, Jan</a> - conworlds, conlangs.</li>
+	<li><span class="tagc"></span> <a href="http://users.rcn.com/mwhite28/">White, Matthew</a> - Home of <a class='title' href='http://users.rcn.com/mwhite28/hiero/index.htm'>White-o-glyphics</a>, among other things</li>
+	<li><span class="tagf"></span> <a href="http://www.billwurtz.com/">Wurtz, Bill</a> - odd</li>
 </ul>
 <h2 id="bad_boi">bad boi</h2>
 (More taxing homepages)
 <ul>
-	<li><abbr title="PhD, Astronomy, UC Berkeley">*</abbr> <a href="http://web.gps.caltech.edu/~mbrown/">Brown, Mike</a> - an astronomyish.</li>
+	<li><span class="taga"></span> <abbr title="PhD, Astronomy, UC Berkeley">*</abbr> <a href="http://web.gps.caltech.edu/~mbrown/">Brown, Mike</a> - an astronomyish.</li>
 </ul>
 <h2 id="not_a_boi">not a boi</h2>
 (ie. Not a person's homepage but cool nonetheless)<br/>
 Sorted by <b>author</b>
+<h3 id="Homepageless">~~~ Homepageless ~~~</h3><!-- pages with authors without homepages -->
 <ul>
-	<li><a href="http://www.math.odu.edu/~bogacki/cgi-bin/lat.cgi">Bogacki, Przemyslaw</a> - Linear Algebra Toolkit</li>
-	<li><a href="http://www.braeunig.us/space/orbmech.htm">Braeunig, Robert A.</a> - ORBITAL MECHANICS</li>
-	<li><abbr title="ArchD, University of Michigan">*</abbr> <a href="https://www.artificial-gravity.com/sw/SpinCalc/SpinCalc.htm">Hall, Theodore W.</a> - SpinCalc - an artificial-gravity calculator in JavaScript</li>
-	<li><a href="http://people.physik.hu-berlin.de/~palloks/js/enigma/enigma-u_v20_en.html">Palloks, Daniel</a> - Universal Enigma</li>
+	<li><span class="taga"></span> <a href="http://www.braeunig.us/space/orbmech.htm">Braeunig, Robert A.</a> - ORBITAL MECHANICS</li>
 	<li><a href="https://web.archive.org/web/20170331020714/https://www.domitable.com/static/wadsworth/calculator.php">Parker, Alexander</a> - The Wadsworth Constant Calculator</li>
-	<li><abbr title="PhD, Geophysics and Space Physics, UCLA">*</abbr> <a href="https://nssdc.gsfc.nasa.gov/planetary/planetfact.html">Williams, David R.</a> - Planetary Fact Sheets</li>
-	<li>~~~ Calculus ~~~</li>
-	<li><a href="http://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx">Paul's Online Math Notes</a> - More comprehensive of these two</li>
-	<li><a href="http://www-math.mit.edu/%7Edjk/calculus_beginners/">Calculus for Beginners and Artists</a></li>
-	<li>~~~ Other Shit ~~~</li>
-	<li><a href="http://www.mrao.cam.ac.uk/~steve/astrophysics/webpages/barometer_story.htm">The Barometer Story</a></li>
-	<li><a href="http://www.rinkworks.com/bookaminute/">Book-a-Minute</a> - humorous brief summaries of books</li>
-	<li><a href="http://www.neofuel.com/optimum/">Physics of Rocket Systems with Separated Energy and Propellant</a></li>
+	<li><span class="taga"></span> <abbr title="PhD, Geophysics and Space Physics, UCLA">*</abbr> <a href="https://nssdc.gsfc.nasa.gov/planetary/planetfact.html">Williams, David R.</a> - Planetary Fact Sheets</li>
+</ul>
+<h3 id="Calculus">~~~ Calculus ~~~</h3>
+<ul>
+	<li><span class="tagm"></span> <a href="http://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx">Paul's Online Math Notes</a> - More comprehensive of these two</li>
+	<li><span class="tagm"></span> <a href="http://www-math.mit.edu/%7Edjk/calculus_beginners/">Calculus for Beginners and Artists</a></li>
+</ul>
+<h3 id="Other">~~~ Other Shit ~~~</h3>
+<ul>
+	<li><span class="tagf"></span> <a href="http://www.mrao.cam.ac.uk/~steve/astrophysics/webpages/barometer_story.htm">The Barometer Story</a></li>
+	<li><span class="tagf"></span> <a href="http://www.rinkworks.com/bookaminute/">Book-a-Minute</a> - humorous brief summaries of books</li>
+	<li><span class="taga"></span> <a href="http://www.neofuel.com/optimum/">Physics of Rocket Systems with Separated Energy and Propellant</a></li>
+	<li><span class="tagf"></span> <a href="http://www.pointlesssites.com/">Pointlesssites</a> - list of hundreds of cool sites</li>
 	<li><a href="http://www.stardestroyer.net/Empire/">Star Wars v. Star Trek</a></li>
-	<li><a href="http://linguistics.berkeley.edu/~saphon/en/phonemes.php">South American Phonological Inventory Database</a></li>
+	<li><span class="tagl"></span> <a href="http://linguistics.berkeley.edu/~saphon/en/phonemes.php">South American Phonological Inventory Database</a></li>
 	<li><a href="http://tilde.club/">tilde.club</a> - a bunch of random, weird, and cool webpages</li>
 </ul>
 <div id="bottom"></div>
