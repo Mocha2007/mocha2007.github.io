@@ -1,0 +1,19 @@
+body, .back a {
+	font-family: monospace;
+	background-color: black;
+	color: white;
+}
+a {
+	color: cyan;
+}
+a:visited {
+	color: magenta;
+}
+.back {
+    margin: auto;
+    text-align: center;
+}
+.back a {
+    padding: 2px 8px;
+    border-radius: 8px;
+}
