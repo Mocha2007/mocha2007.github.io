@@ -30,14 +30,12 @@ function tilde(){
 	// visual
 	settilde("❄️");
 	// initialize
-	var currentsize = defaultsize;
-	setsize(currentsize * 0.62); // minimize jumping
+	setsize(defaultsize * 0.62); // minimize jumping
 	// main
 	for (i = 0; i < duration; i += 1 ){
 		// https://stackoverflow.com/a/16873849/2579798
 		setTimeout(function(){
-			currentsize = tildesize();
-			setsize(currentsize * ratio);
+			setsize(tildesize() * ratio);
 		}, i*4);
 	}
 	// reset
