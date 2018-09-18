@@ -3,26 +3,10 @@ function play(name){
 	(new Audio('https://www.myinstants.com/media/sounds/'+name+'.mp3')).play();
 }
 
-function melt(){
-    "use strict";
-	var ratio = 0.99; // must be .99 < r < 1
-    var currentsize = window.getComputedStyle(document.querySelector('#tilde')).fontSize;
-    currentsize = parseFloat(currentsize.slice(0,-2));
-    var newsize = currentsize * ratio;
-    // console.log(currentsize,"->",newsize);
-    newsize = String(newsize) + 'px';
-    document.getElementById("tilde").style["font-size"] = newsize;
-}
-
-function refreeze(size){
-    "use strict";
-    document.getElementById('tilde').innerHTML = "~️";
-    document.getElementById("tilde").style["font-size"] = size;
-}
-
 function tilde(){
     "use strict";
 	var i;
+	var ratio = 0.99; // must be .99 < r < 1
 	var duration = 600;
 	// audio
 	play('yandere-dev-woah-technology');
@@ -38,8 +22,18 @@ function tilde(){
 	// main
 	for (i = 0; i < duration; i += 1 ){
 		// https://stackoverflow.com/a/16873849/2579798
-		setTimeout(melt(defaultsize), i*4);
+		setTimeout(function(){
+			currentsize = window.getComputedStyle(document.querySelector('#tilde')).fontSize;
+			currentsize = parseFloat(currentsize.slice(0,-2));
+			newsize = currentsize * ratio;
+			// console.log(currentsize,"->",newsize);
+			newsize = String(newsize) + 'px';
+			document.getElementById("tilde").style["font-size"] = newsize;
+		}, i*4);
 	}
 	// reset
-	setTimeout(refreeze(), duration*4);
+	setTimeout(function(){
+		document.getElementById('tilde').innerHTML = "~️";
+		document.getElementById("tilde").style["font-size"] = defaultsize;
+	}, duration*4);
 }
