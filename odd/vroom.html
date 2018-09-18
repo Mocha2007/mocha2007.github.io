@@ -4,14 +4,32 @@
 <meta name="description" content="vroom">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href=odd.css type="text/css" rel="stylesheet">
+<script src="vroom.js"></script>
 <style>
-h1 {
+td {
 	font-size: 9em;
+	font-weight: bold;
+	padding: 0px 30px;
+}
+.tcenter {
+	text-align: center;
+}
+#tilde {
+	display: inline-block;
+	vertical-align: middle;
 }
 </style>
 <title>vroom</title>
-<h1 class="center notouch">
-	<span class='altlink' onclick="(new Audio('https://www.myinstants.com/media/sounds/lulu_4.mp3')).play()">v</span>&nbsp;r&nbsp;<a class="altlink" href="odd.html">o</a><br>
-	<a class="altlink" href="1.html">o</a>&nbsp;<a class="altlink" href="cv.html">m</a>&nbsp;~
-</h1>
+<table class="center notouch" role="presentation">
+	<tr>
+		<td><span class='altlink' onclick="v();">v</span></td>
+		<td><span class='altlink'>r</span></td>
+		<td><a class="altlink" href="odd.html">o</a></td>
+	</tr>
+	<tr>
+		<td><a class="altlink" href="1.html">o</a></td>
+		<td><a class="altlink" href="cv.html">m</a></td>
+		<td class="tcenter"><span id="tilde" class='altlink' onclick="tilde();">~</span></td>
+	</tr>
+</table>
 </html>
