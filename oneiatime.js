@@ -137,7 +137,7 @@ function darian(){
 	var marsmonth = marsmonths[dhelp3(marsd)[0]];
 	var marsday = dhelp3(marsd)[1];
 	var marshour = dhelp3(marsd)[2];
-	return [marsday,marsmonth,marsy,marshour,'UMST'].join(' ');
+	return [marsday,marsmonth,marsy,marshour,'<a href="https://en.wikipedia.org/wiki/Darian_calendar">UMST</abbr>'].join(' ');
 }
 
 function HolidayCSS(){
