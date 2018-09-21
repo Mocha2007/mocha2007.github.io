@@ -20,21 +20,530 @@ td{
 .c3{background-color: #fb4;}
 .c4{background-color: #f82;}
 .c5{background-color: #f66;}
+.names{font-size:10px;}
 </style>
 <title>Hurricane</title>
 <div id="nav"></div>
 <div id="top"><h1 id="Hurricane">Hurricane</h1></div>
 <p>
-	Hurricane data 2006-2018.
+	Hurricane data 2005-2018.
 	Click on the header below to load.
 </p>
-<h1 id="Date" onclick="avgyear();">Avg. by Date</h1>
+<h2 id="Date" onclick="avgyear();">Avg. by Date</h2>
 <table id="avgByDate">
 	<tr>
 		<th>Date</th>
 		<th>Quantity</th>
 		<th>Visual</th>
 		<th>Maximum</th>
+	</tr>
+</table>
+<h1 id="Names">Names</h1>
+<!-- todo tell which years the current names come from & what the past ones were -->
+<p>
+	Sorted by year modulo six.
+	Years before the standardization of the current system (1979) are not shown.
+</p>
+<h2 id="zero">Remainder 0</h2>
+<p>
+	... 2016, <b>2022</b>, 2028, ...
+</p>
+<table class="names">
+	<tr>
+		<th>Year</th>
+		<th>A</th>
+		<th>B</th>
+		<th>C</th>
+		<th>D</th>
+		<th>E</th>
+		<th>F</th>
+		<th>G</th>
+		<th>H</th>
+		<th>I</th>
+		<th>J</th>
+		<th>K</th>
+		<th>L</th>
+		<th>M</th>
+		<th>N</th>
+		<th>O</th>
+		<th>P</th>
+		<th>R</th>
+		<th>S</th>
+		<th>T</th>
+		<th>V</th>
+		<th>W</th>
+	</tr>
+	<tr>
+		<td>2022</td>
+		<td rowspan="5">Alex</td>
+		<td rowspan="8">Bonnie</td>
+		<td rowspan="3">Colin</td>
+		<td rowspan="8">Danielle</td>
+		<td rowspan="8">Earl</td>
+		<td rowspan="3">Fiona</td>
+		<td rowspan="4">Gaston</td>
+		<td rowspan="8">Hermine</td>
+		<td rowspan="2">Ian</td>
+		<td rowspan="3">Julia</td>
+		<td rowspan="8">Karl</td>
+		<td rowspan="8">Lisa</td>
+		<td>Martin</td>
+		<td rowspan="8">Nicole</td>
+		<td>Owen</td>
+		<td rowspan="8">Paula</td>
+		<td rowspan="8">Richard</td>
+		<td rowspan="8">Shary</td>
+		<td rowspan="2">Tobias</td>
+		<td rowspan="8">Virginie</td>
+		<td rowspan="8">Walter</td>
+	</tr>
+	<tr>
+		<td>2016</td>
+		<td rowspan="3">Matthew</td>
+		<td rowspan="7">Otto</td>
+	</tr>
+	<tr>
+		<td>2010</td>
+		<td>Igor</td>
+		<td rowspan="6">Tomas</td>
+	</tr>
+	<tr>
+		<td>2004</td>
+		<td rowspan="5">Charley</td>
+		<td rowspan="5">Frances</td>
+		<td rowspan="5">Ivan</td>
+		<td rowspan="5">Jeanne</td>
+	</tr>
+	<tr>
+		<td>1998</td>
+		<td rowspan="4">Georges</td>
+		<td rowspan="4">Mitch</td>
+	</tr>
+	<tr>
+		<td>1992</td>
+		<td rowspan="2">Andrew</td>
+	</tr>
+	<tr>
+		<td>1986</td>
+	</tr>
+	<tr>
+		<td>1980</td>
+		<td>Allen</td>
+	</tr>
+</table>
+<h2 id="one">Remainder 1</h2>
+<p>
+	... 2017, <b>2023</b>, 2029, ...
+</p>
+<table class="names">
+	<tr>
+		<th>Year</th>
+		<th>A</th>
+		<th>B</th>
+		<th>C</th>
+		<th>D</th>
+		<th>E</th>
+		<th>F</th>
+		<th>G</th>
+		<th>H</th>
+		<th>I</th>
+		<th>J</th>
+		<th>K</th>
+		<th>L</th>
+		<th>M</th>
+		<th>N</th>
+		<th>O</th>
+		<th>P</th>
+		<th>R</th>
+		<th>S</th>
+		<th>T</th>
+		<th>V</th>
+		<th>W</th>
+	</tr>
+	<tr>
+		<td>2023</td>
+		<td rowspan="8">Arlene</td>
+		<td rowspan="8">Bret</td>
+		<td rowspan="8">Cindy</td>
+		<td rowspan="3">Don</td>
+		<td rowspan="8">Emily</td>
+		<td rowspan="4">Franklin</td>
+		<td rowspan="8">Gert</td>
+		<td>Harold</td>
+		<td>Idalia</td>
+		<td rowspan="8">Jose</td>
+		<td rowspan="3">Katia</td>
+		<td rowspan="4">Lee</td>
+		<td>Margot</td>
+		<td>Nigel</td>
+		<td rowspan="8">Ophelia</td>
+		<td rowspan="8">Philippe</td>
+		<td rowspan="3">Rina</td>
+		<td rowspan="3">Sean</td>
+		<td rowspan="8">Tammy</td>
+		<td rowspan="8">Vince</td>
+		<td rowspan="3">Whitney</td>
+	</tr>
+	<tr>
+		<td>2017</td>
+		<td rowspan="7">Harvey</td>
+		<td>Irma</td>
+		<td rowspan="7">Maria</td>
+		<td rowspan="7">Nate</td>
+	</tr>
+	<tr>
+		<td>2011</td>
+		<td rowspan="6">Irene</td>
+	</tr>
+	<tr>
+		<td>2005</td>
+		<td rowspan="5">Dennis</td>
+		<td rowspan="5">Katrina</td>
+		<td rowspan="5">Rita</td>
+		<td rowspan="5">Stan</td>
+		<td rowspan="5">Wilma</td>
+	</tr>
+	<tr>
+		<td>1999</td>
+		<td rowspan="4">Floyd</td>
+		<td rowspan="4">Lenny</td>
+	</tr>
+	<tr>
+		<td>1993</td>
+	</tr>
+	<tr>
+		<td>1987</td>
+	</tr>
+	<tr>
+		<td>1981</td>
+	</tr>
+</table>
+<h2 id="two">Remainder 2</h2>
+<p>
+	... 2012, <b>2018</b>, 2024, ...
+</p>
+<table class="names">
+	<tr>
+		<th>Year</th>
+		<th>A</th>
+		<th>B</th>
+		<th>C</th>
+		<th>D</th>
+		<th>E</th>
+		<th>F</th>
+		<th>G</th>
+		<th>H</th>
+		<th>I</th>
+		<th>J</th>
+		<th>K</th>
+		<th>L</th>
+		<th>M</th>
+		<th>N</th>
+		<th>O</th>
+		<th>P</th>
+		<th>R</th>
+		<th>S</th>
+		<th>T</th>
+		<th>V</th>
+		<th>W</th>
+	</tr>
+	<tr>
+		<td>2018</td>
+		<td rowspan="7">Alberto</td>
+		<td rowspan="7">Beryl</td>
+		<td rowspan="7">Chris</td>
+		<td rowspan="7">Debby</td>
+		<td rowspan="7">Ernesto</td>
+		<td rowspan="7">Florence</td>
+		<td rowspan="5">Gordon</td>
+		<td rowspan="7">Helene</td>
+		<td rowspan="7">Isaac</td>
+		<td rowspan="5">Joyce</td>
+		<td rowspan="3">Kirk</td>
+		<td rowspan="7">Leslie</td>
+		<td rowspan="7">Michael</td>
+		<td rowspan="7">Nadine</td>
+		<td rowspan="7">Oscar</td>
+		<td rowspan="7">Patty</td>
+		<td rowspan="7">Rafael</td>
+		<td>Sara</td>
+		<td rowspan="7">Tony</td>
+		<td rowspan="7">Valerie</td>
+		<td rowspan="7">William</td>
+	</tr>
+	<tr>
+		<td>2012</td>
+		<td rowspan="6">Sandy</td>
+	</tr>
+	<tr>
+		<td>2006</td>
+	</tr>
+	<tr>
+		<td>2000</td>
+		<td rowspan="4">Keith</td>
+	</tr>
+	<tr>
+		<td>1994</td>
+	</tr>
+	<tr>
+		<td>1988</td>
+		<td rowspan="2">Gilbert</td>
+		<td rowspan="2">Joan</td>
+	</tr>
+	<tr>
+		<td>1982</td>
+	</tr>
+</table>
+<h2 id="three">Remainder 3</h2>
+<p>
+	... 2013, <b>2019</b>, 2025, ...
+</p>
+<table class="names">
+	<tr>
+		<th>Year</th>
+		<th>A</th>
+		<th>B</th>
+		<th>C</th>
+		<th>D</th>
+		<th>E</th>
+		<th>F</th>
+		<th>G</th>
+		<th>H</th>
+		<th>I</th>
+		<th>J</th>
+		<th>K</th>
+		<th>L</th>
+		<th>M</th>
+		<th>N</th>
+		<th>O</th>
+		<th>P</th>
+		<th>R</th>
+		<th>S</th>
+		<th>T</th>
+		<th>V</th>
+		<th>W</th>
+	</tr>
+	<tr>
+		<td>2019</td>
+		<td rowspan="3">Andrea</td>
+		<td rowspan="7">Barry</td>
+		<td rowspan="7">Chantal</td>
+		<td rowspan="2">Dorian</td>
+		<td rowspan="7">Erin</td>
+		<td rowspan="2">Fernand</td>
+		<td rowspan="7">Gabrielle</td>
+		<td rowspan="5">Humberto</td>
+		<td>Imelda</td>
+		<td rowspan="7">Jerry</td>
+		<td rowspan="7">Karen</td>
+		<td rowspan="4">Lorenzo</td>
+		<td rowspan="3">Melissa</td>
+		<td rowspan="2">Nestor</td>
+		<td rowspan="4">Olga</td>
+		<td rowspan="7">Pablo</td>
+		<td rowspan="4">Rebekah</td>
+		<td rowspan="7">Sebastien</td>
+		<td rowspan="7">Tanya</td>
+		<td rowspan="7">Van</td>
+		<td rowspan="7">Wendy</td>
+	</tr>
+	<tr>
+		<td>2013</td>
+		<td rowspan="2">Ingrid</td>
+	</tr>
+	<tr>
+		<td>2007</td>
+		<td rowspan="5">Dean</td>
+		<td rowspan="5">Felix</td>
+		<td rowspan="5">Noel</td>
+	</tr>
+	<tr>
+		<td>2001</td>
+		<td rowspan="3">Allison</td>
+		<td rowspan="4">Iris</td>
+		<td>Michelle</td>
+	</tr>
+	<tr>
+		<td>1995</td>
+		<td rowspan="3">Luis</td>
+		<td rowspan="3">Marilyn</td>
+		<td rowspan="3">Opal</td>
+		<td rowspan="3">Roxanne</td>
+	</tr>
+	<tr>
+		<td>1989</td>
+		<td rowspan="2">Hugo</td>
+	</tr>
+	<tr>
+		<td>1983</td>
+		<td>Alicia</td>
+	</tr>
+</table>
+<h2 id="four">Remainder 4</h2>
+<p>
+	... 2014, <b>2020</b>, 2026, ...
+</p>
+<table class="names">
+	<tr>
+		<th>Year</th>
+		<th>A</th>
+		<th>B</th>
+		<th>C</th>
+		<th>D</th>
+		<th>E</th>
+		<th>F</th>
+		<th>G</th>
+		<th>H</th>
+		<th>I</th>
+		<th>J</th>
+		<th>K</th>
+		<th>L</th>
+		<th>M</th>
+		<th>N</th>
+		<th>O</th>
+		<th>P</th>
+		<th>R</th>
+		<th>S</th>
+		<th>T</th>
+		<th>V</th>
+		<th>W</th>
+	</tr>
+	<tr>
+		<td>2020</td>
+		<td rowspan="7">Arthur</td>
+		<td rowspan="7">Bertha</td>
+		<td rowspan="4">Cristobal</td>
+		<td rowspan="5">Dolly</td>
+		<td rowspan="7">Edouard</td>
+		<td rowspan="4">Fay</td>
+		<td rowspan="2">Gonzalo</td>
+		<td rowspan="4">Hanna</td>
+		<td rowspan="2">Isaias</td>
+		<td rowspan="7">Josephine</td>
+		<td rowspan="5">Kyle</td>
+		<td rowspan="3">Laura</td>
+		<td rowspan="7">Marco</td>
+		<td rowspan="7">Nana</td>
+		<td rowspan="7">Omar</td>
+		<td rowspan="2">Paulette</td>
+		<td rowspan="7">Rene</td>
+		<td rowspan="7">Sally</td>
+		<td rowspan="7">Teddy</td>
+		<td rowspan="7">Vicky</td>
+		<td rowspan="7">Wilfred</td>
+	</tr>
+	<tr>
+		<td>2014</td>
+	</tr>
+	<tr>
+		<td>2008</td>
+		<td rowspan="5">Gustav</td>
+		<td>Ike</td>
+		<td rowspan="5">Paloma</td>
+	</tr>
+	<tr>
+		<td>2002</td>
+		<td rowspan="4">Isidore</td>
+		<td rowspan="4">Lili</td>
+	</tr>
+	<tr>
+		<td>1996</td>
+		<td rowspan="3">Cesar</td>
+		<td rowspan="3">Fran</td>
+		<td rowspan="3">Hortense</td>
+	</tr>
+	<tr>
+		<td>1990</td>
+		<td rowspan="2">Diana</td>
+		<td rowspan="2">Klaus</td>
+	</tr>
+	<tr>
+		<td>1984</td>
+	</tr>
+</table>
+<h2 id="five">Remainder 5</h2>
+<p>
+	... 2015, <b>2021</b>, 2027, ...
+</p>
+<table class="names">
+	<tr>
+		<th>Year</th>
+		<th>A</th>
+		<th>B</th>
+		<th>C</th>
+		<th>D</th>
+		<th>E</th>
+		<th>F</th>
+		<th>G</th>
+		<th>H</th>
+		<th>I</th>
+		<th>J</th>
+		<th>K</th>
+		<th>L</th>
+		<th>M</th>
+		<th>N</th>
+		<th>O</th>
+		<th>P</th>
+		<th>R</th>
+		<th>S</th>
+		<th>T</th>
+		<th>V</th>
+		<th>W</th>
+	</tr>
+	<tr>
+		<td>2021</td>
+		<td rowspan="8">Ana</td>
+		<td rowspan="5">Bill</td>
+		<td rowspan="8">Claudette</td>
+		<td rowspan="7">Danny</td>
+		<td>Elsa</td>
+		<td rowspan="3">Fred</td>
+		<td rowspan="6">Grace</td>
+		<td rowspan="8">Henri</td>
+		<td rowspan="3">Ida</td>
+		<td>Julian</td>
+		<td rowspan="8">Kate</td>
+		<td rowspan="8">Larry</td>
+		<td rowspan="8">Mindy</td>
+		<td rowspan="8">Nicholas</td>
+		<td rowspan="8">Odette</td>
+		<td rowspan="8">Peter</td>
+		<td rowspan="8">Rose</td>
+		<td rowspan="8">Sam</td>
+		<td rowspan="8">Teresa</td>
+		<td rowspan="8">Victor</td>
+		<td rowspan="8">Wanda</td>
+	</tr>
+	<tr>
+		<td>2015</td>
+		<td rowspan="5">Erika</td>
+		<td rowspan="2">Joaquin</td>
+	</tr>
+	<tr>
+		<td>2009</td>
+	</tr>
+	<tr>
+		<td>2003</td>
+		<td rowspan="4">Fabian</td>
+		<td rowspan="5">Isabel</td>
+		<td rowspan="5">Juan</td>
+	</tr>
+	<tr>
+		<td>1997</td>
+	</tr>
+	<tr>
+		<td>1991</td>
+		<td rowspan="3">Bob</td>
+	</tr>
+	<tr>
+		<td>1985</td>
+		<td rowspan="2">Elena</td>
+		<td rowspan="2">Gloria</td>
+	</tr>
+	<tr>
+		<td>1979</td>
+		<td>David</td>
+		<td>Frederic</td>
 	</tr>
 </table>
 <div id="bottom"></div>

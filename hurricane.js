@@ -26,7 +26,41 @@ function n2n(name){ // name to number
 }
 
 var hurricanelist = [];
+hurricanelist[2005] = [
+	[n2n("8 jun"),n2n("13 jun"),0,"Arlene"],
+	[n2n("28 jun"),n2n("30 jun"),0,"Bret"],
+	[n2n("3 jul"),n2n("7 jul"),1,"Cindy"],
+	[n2n("4 jul"),n2n("13 jul"),4,"Dennis"],
+	[n2n("11 jul"),n2n("21 jul"),5,"Emily"],
+	[n2n("21 jul"),n2n("29 jul"),0,"Franklin"],
+	[n2n("23 jul"),n2n("25 jul"),0,"Gert"],
+	[n2n("2 aug"),n2n("8 aug"),0,"Harvey"],
+	[n2n("4 aug"),n2n("18 aug"),2,"Irene"],
+	[n2n("13 aug"),n2n("14 aug"),-1,"Ten"],
+	[n2n("22 aug"),n2n("23 aug"),0,"Jose"],
+	[n2n("23 aug"),n2n("30 aug"),5,"Katrina"],
+	[n2n("28 aug"),n2n("2 sep"),0,"Lee"],
+	[n2n("1 sep"),n2n("10 sep"),3,"Maria"],
+	[n2n("5 sep"),n2n("10 sep"),1,"Nate"],
+	[n2n("6 sep"),n2n("17 sep"),1,"Ophelia"],
+	[n2n("17 sep"),n2n("23 sep"),1,"Philippe"],
+	[n2n("18 sep"),n2n("26 sep"),5,"Rita"],
+	[n2n("30 sep"),n2n("2 oct"),-1,"Nineteen"],
+	[n2n("1 oct"),n2n("5 oct"),1,"Stan"],
+	[n2n("4 oct"),n2n("5 oct"),0,"Unnamed"],
+	[n2n("5 oct"),n2n("6 oct"),0,"Tammy"],
+	[n2n("8 oct"),n2n("10 oct"),-1,"Twenty-Two"],
+	[n2n("8 oct"),n2n("11 oct"),1,"Vince"],
+	[n2n("15 oct"),n2n("26 oct"),5,"Wilma"],
+	[n2n("22 oct"),n2n("24 oct"),0,"Alpha"],
+	[n2n("26 oct"),n2n("31 oct"),3,"Beta"],
+	[n2n("14 nov"),n2n("21 nov"),0,"Gamma"],
+	[n2n("22 nov"),n2n("28 nov"),0,"Delta"],
+	[n2n("29 nov"),n2n("8 dec"),1,"Epsilon"],
+	[n2n("30 dec"),n2n("31 dec"),0,"Zeta"] // cont'd next year
+];
 hurricanelist[2006] = [
+	[n2n("1 jan"),n2n("6 jan"),0,"Zeta"], // cont'd from last year
 	[n2n("10 jun"),n2n("14 jun"),0,"Alberto"],
 	[n2n("17 jul"),n2n("18 jul"),0,"Unnamed"],
 	[n2n("18 jul"),n2n("21 jul"),0,"Beryl"],
