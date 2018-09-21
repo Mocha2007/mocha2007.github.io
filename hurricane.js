@@ -26,6 +26,56 @@ function n2n(name){ // name to number
 }
 
 var hurricanelist = [];
+hurricanelist[2006] = [
+	[n2n("10 jun"),n2n("14 jun"),0,"Alberto"],
+	[n2n("17 jul"),n2n("18 jul"),0,"Unnamed"],
+	[n2n("18 jul"),n2n("21 jul"),0,"Beryl"],
+	[n2n("1 aug"),n2n("4 aug"),0,"Chris"],
+	[n2n("21 aug"),n2n("26 aug"),0,"Debby"],
+	[n2n("24 aug"),n2n("1 sep"),1,"Ernesto"],
+	[n2n("3 sep"),n2n("13 sep"),1,"Florence"],
+	[n2n("11 sep"),n2n("20 sep"),3,"Gordon"],
+	[n2n("12 sep"),n2n("24 sep"),3,"Helene"],
+	[n2n("27 sep"),n2n("2 oct"),1,"Isaac"]
+];
+hurricanelist[2007] = [
+	[n2n("9 may"),n2n("11 may"),0,"Andrea"],
+	[n2n("1 jun"),n2n("5 jun"),0,"Barry"],
+	[n2n("31 jul"),n2n("1 aug"),0,"Chantal"],
+	[n2n("13 aug"),n2n("23 aug"),5,"Dean"],
+	[n2n("15 aug"),n2n("17 aug"),0,"Erin"],
+	[n2n("31 aug"),n2n("5 sep"),5,"Felix"],
+	[n2n("8 sep"),n2n("11 sep"),0,"Gabrielle"],
+	[n2n("12 sep"),n2n("17 sep"),0,"Ingrid"],
+	[n2n("12 sep"),n2n("14 sep"),1,"Humberto"],
+	[n2n("21 sep"),n2n("22 sep"),-1,"Ten"],
+	[n2n("23 sep"),n2n("24 sep"),0,"Jerry"],
+	[n2n("25 sep"),n2n("29 sep"),1,"Karen"],
+	[n2n("25 sep"),n2n("28 sep"),1,"Lorenzo"],
+	[n2n("28 sep"),n2n("30 sep"),0,"Melissa"],
+	[n2n("11 oct"),n2n("12 oct"),0,"Fifteen"],
+	[n2n("28 oct"),n2n("2 nov"),1,"Noel"],
+	[n2n("11 dec"),n2n("13 dec"),0,"Olga"]
+];
+hurricanelist[2008] = [
+	[n2n("31 may"),n2n("2 jun"),0,"Arthur"],
+	[n2n("3 jul"),n2n("20 jul"),3,"Bertha"],
+	[n2n("19 jul"),n2n("23 jul"),0,"Cristobal"],
+	[n2n("20 jul"),n2n("25 jul"),2,"Dolly"],
+	[n2n("3 aug"),n2n("6 aug"),0,"Edouard"],
+	[n2n("15 aug"),n2n("27 aug"),0,"Fay"],
+	[n2n("25 aug"),n2n("4 sep"),4,"Gustav"],
+	[n2n("28 aug"),n2n("7 sep"),1,"Hanna"],
+	[n2n("1 sep"),n2n("14 sep"),4,"Ike"],
+	[n2n("2 sep"),n2n("6 sep"),0,"Josephine"],
+	[n2n("25 sep"),n2n("29 sep"),1,"Kyle"],
+	[n2n("29 sep"),n2n("1 oct"),0,"Laura"],
+	[n2n("6 oct"),n2n("7 oct"),0,"Marco"],
+	[n2n("12 oct"),n2n("14 oct"),0,"Nana"],
+	[n2n("13 oct"),n2n("18 oct"),4,"Omar"],
+	[n2n("14 oct"),n2n("15 oct"),-1,"Sixteen"],
+	[n2n("5 nov"),n2n("10 nov"),4,"Paloma"]
+];
 hurricanelist[2009] = [
 	[n2n("28 may"),n2n("29 may"),-1,"One"],
 	[n2n("11 aug"),n2n("16 aug"),0,"Ana"],
