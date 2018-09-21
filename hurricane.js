@@ -1,3 +1,5 @@
+var months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+var offset = [-1,30,59,90,120,151,181,212,243,273,304,334];
 // I assume the season starts 1 Mar and ends 28 Feb
 // var firstday = 60;
 /*
@@ -17,12 +19,24 @@
 
 function n2n(name){ // name to number
 	"use strict";
-	var months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
-	var offset = [-1,30,59,90,120,151,181,212,243,273,304,334];
 	var date = name.split(' ');
 	var day = Number(date[0]);
 	var month = months.indexOf(date[1].toLowerCase());
 	return offset[month] + day;
+}
+
+function n2n2(n){ // number to name
+	"use strict";
+	var day, i;
+	var month = 1;
+	for (i = 12; i > 0; i -= 1){
+		if (n > offset[i]){
+			month = i;
+			day = n - offset[i];
+			return day+' '+months[month];
+		}
+	}
+	return (n+1)+' jan';
 }
 
 var hurricanelist = [];
@@ -411,14 +425,15 @@ function maxyear(){
 }
 
 function avgyear(){
-	var newrow, newval;
+	var datstring, newrow, newval;
 	var wholeyear = [];
 	var maxinyear = maxyear();
 	range1(356).forEach(function(x){
 		newrow = document.createElement("tr")
 		newval = avgduring(x);
 		wholeyear.push(newval);
-		newrow.innerHTML = "<td>"+x+"</td><td>"+Math.round(newval*100)/100+"</td><td><progress value="+newval+" max="+maxinyear+"></progress></td>"+maxcathtml(x);
+		datestring = n2n2(x-1).toUpperCase();
+		newrow.innerHTML = "<td>"+datestring+"</td><td>"+Math.round(newval*100)/100+"</td><td><progress value="+newval+" max="+maxinyear+"></progress></td>"+maxcathtml(x);
 		document.getElementById("avgByDate").appendChild(newrow);
 	});
 	return wholeyear;
