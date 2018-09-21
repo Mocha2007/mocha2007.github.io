@@ -26,6 +26,22 @@ function n2n(name){ // name to number
 }
 
 var hurricanelist = [];
+hurricanelist[2002] = [
+	[n2n("14 jul"),n2n("16 jul"),0,"Arthur"],
+	[n2n("4 aug"),n2n("9 aug"),0,"Bertha"],
+	[n2n("5 aug"),n2n("8 aug"),0,"Cristobal"],
+	[n2n("29 aug"),n2n("4 sep"),0,"Dolly"],
+	[n2n("1 sep"),n2n("6 sep"),0,"Edouard"],
+	[n2n("5 sep"),n2n("8 sep"),0,"Fay"],
+	[n2n("7 sep"),n2n("8 sep"),-1,"Seven"],
+	[n2n("8 sep"),n2n("12 sep"),2,"Gustav"],
+	[n2n("12 sep"),n2n("15 sep"),2,"Hanna"],
+	[n2n("14 sep"),n2n("27 sep"),3,"Isidore"],
+	[n2n("17 sep"),n2n("19 sep"),0,"Josephine"],
+	[n2n("20 sep"),n2n("12 oct"),1,"Kyle"],
+	[n2n("21 sep"),n2n("4 oct"),4,"Lili"],
+	[n2n("14 oct"),n2n("16 oct"),4,"Fourteen"]
+];
 hurricanelist[2003] = [
 	[n2n("20 apr"),n2n("24 apr"),0,"Ana"],
 	[n2n("11 jun"),n2n("11 jun"),-1,"Two"],
