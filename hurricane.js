@@ -115,10 +115,11 @@ function avgyear(){
 	// reset
 	document.getElementById("avgByDate").innerHTML = "";
 	range1(366).forEach(function(x){
+		x = x-1;
 		newrow = document.createElement("tr")
 		newval = avgduring(x);
 		wholeyear.push(newval);
-		datestring = n2n2(x-1).toUpperCase();
+		datestring = n2n2(x).toUpperCase();
 		newrow.innerHTML = "<td>"+datestring+"</td><td>"+Math.round(newval*100)/100+"</td><td><progress value="+newval+" max="+maxinyear+"></progress></td>"+maxcathtml(x);
 		document.getElementById("avgByDate").appendChild(newrow);
 	});
@@ -167,6 +168,40 @@ function seasonstats(year){
 // hurricanelist[year][number] = [start,end,cat,name];
 
 var hurricanelist = [];
+hurricanelist[1998] = [
+	[n2n("27 jul"),n2n("2 aug"),0,"Alex"],
+	[n2n("19 jul"),n2n("30 aug"),3,"Bonnie"],
+	[n2n("21 aug"),n2n("24 aug"),0,"Charlie"],
+	[n2n("24 aug"),n2n("3 sep"),2,"Danielle"],
+	[n2n("31 aug"),n2n("3 sep"),2,"Earl"],
+	[n2n("8 sep"),n2n("13 sep"),0,"Frances"],
+	[n2n("15 sep"),n2n("1 oct"),4,"Georges"],
+	[n2n("17 sep"),n2n("20 sep"),0,"Hermine"],
+	[n2n("19 sep"),n2n("27 sep"),1,"Ivan"],
+	[n2n("21 sep"),n2n("1 oct"),2,"Jeanne"],
+	[n2n("23 sep"),n2n("28 sep"),2,"Karl"],
+	[n2n("5 oct"),n2n("9 oct"),1,"Lisa"],
+	[n2n("22 oct"),n2n("5 nov"),5,"Mitch"],
+	[n2n("24 oct"),n2n("1 dec"),1,"Nicole"]
+];
+hurricanelist[1999] = [
+	[n2n("11 jun"),n2n("18 jun"),0,"Arlene"],
+	[n2n("2 jul"),n2n("3 jul"),-1,"Two"],
+	[n2n("18 aug"),n2n("25 aug"),4,"Bret"],
+	[n2n("19 aug"),n2n("31 aug"),4,"Cindy"],
+	[n2n("24 aug"),n2n("9 sep"),2,"Dennis"],
+	[n2n("24 aug"),n2n("28 aug"),0,"Emily"],
+	[n2n("5 sep"),n2n("7 sep"),-1,"Seven"],
+	[n2n("7 sep"),n2n("17 sep"),4,"Floyd"],
+	[n2n("11 sep"),n2n("23 sep"),4,"Gert"],
+	[n2n("19 sep"),n2n("22 sep"),0,"Harvey"],
+	[n2n("4 oct"),n2n("6 oct"),-1,"Eleven"],
+	[n2n("6 oct"),n2n("8 oct"),-1,"Twelve"],
+	[n2n("12 oct"),n2n("19 oct"),2,"Irene"],
+	[n2n("17 oct"),n2n("25 oct"),2,"Jose"],
+	[n2n("27 oct"),n2n("1 nov"),0,"Katrina"],
+	[n2n("13 nov"),n2n("23 nov"),4,"Lenny"]
+];
 hurricanelist[2000] = [
 	[n2n("7 jun"),n2n("8 jun"),-1,"One"],
 	[n2n("23 jun"),n2n("25 jun"),-1,"Two"],
