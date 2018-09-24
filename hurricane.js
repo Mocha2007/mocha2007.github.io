@@ -39,7 +39,155 @@ function n2n2(n){ // number to name
 	return (n+1)+' jan';
 }
 
+// https://stackoverflow.com/a/9902282/2579798
+function realsize(x){
+	"use strict";
+	return x.filter(function(value){
+		return value !== undefined;
+	}).length;
+}
+
+function avgduring(date){
+	"use strict";
+	var n = 0;
+	var years = realsize(hurricanelist);
+	// date is an integer between 0 and 365
+	hurricanelist.forEach(function(x){ // for each year
+		x.forEach(function(y){ // for each hurricane
+			if (y[1] >= date && date >= y[0]){
+				n += 1;
+			}
+		});
+	});
+	return n/years;
+}
+
+function maxcatduring(date){
+	"use strict";
+	var maxcat = -1;
+	// date is an integer between 0 and 365
+	hurricanelist.forEach(function(x){ // for each year
+		x.forEach(function(y){ // for each hurricane
+			if (y[2] > maxcat && y[1] >= date && date >= y[0]){
+				maxcat = y[2];
+			}
+		});
+	});
+	return maxcat;
+}
+
+function maxcathtml(date){
+	"use strict";
+	var maxcat = maxcatduring(date);
+	var style = (maxcat > 0) ? ("c"+maxcat) : ((maxcat === 0) ? "ts" : "td");
+	var maxcatname = style.toUpperCase();
+	var html = "<td class="+style+">"+maxcatname+"</td>";
+	return html;
+}
+
+function range1(n){
+	return n?range1(n-1).concat(n):[]; // Array(n).fill().map((x,i)=>i);
+}
+
+function avgprint(){
+	range1(356).forEach(function(x){
+		console.log(x,avgduring(x));
+	});
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
+function getMaxOfArray(numArray) {
+	return Math.max.apply(null, numArray);
+}
+
+function maxyear(){
+	var wholeyear = [];
+	range1(356).forEach(function(x){
+		wholeyear.push(avgduring(x));
+	});
+	return getMaxOfArray(wholeyear);
+}
+
+function avgyear(){
+	var datstring, newrow, newval;
+	var wholeyear = [];
+	var maxinyear = maxyear();
+	// reset
+	document.getElementById("avgByDate").innerHTML = "";
+	range1(366).forEach(function(x){
+		newrow = document.createElement("tr")
+		newval = avgduring(x);
+		wholeyear.push(newval);
+		datestring = n2n2(x-1).toUpperCase();
+		newrow.innerHTML = "<td>"+datestring+"</td><td>"+Math.round(newval*100)/100+"</td><td><progress value="+newval+" max="+maxinyear+"></progress></td>"+maxcathtml(x);
+		document.getElementById("avgByDate").appendChild(newrow);
+	});
+	return wholeyear;
+}
+
+function seasonstats(year){
+	var y = hurricanelist[year]
+	console.log(y); // fixme debug
+	// maj. hurricanes (3+)
+	var majors = 0;
+	// hurricanes
+	var hurricanes = 0;
+	// storms
+	var storms = 0;
+	y.forEach(function(x){ // for each depression
+		switch (x[2]){
+			case 0:
+				storms += 1;
+			case 1:
+				storms += 1;
+				hurricanes += 1;
+			case 2:
+				storms += 1;
+				hurricanes += 1;
+			case 3:
+				storms += 1;
+				hurricanes += 1;
+				majors += 1;
+			case 4:
+				storms += 1;
+				hurricanes += 1;
+				majors += 1;
+			case 5:
+				storms += 1;
+				hurricanes += 1;
+				majors += 1;
+		}
+	});
+	// depressions
+	depressions = y.length
+	return [depressions,storms,hurricanes,majors];
+}
+
+// data follows
+// hurricanelist[year][number] = [start,end,cat,name];
+
 var hurricanelist = [];
+hurricanelist[2000] = [
+	[n2n("7 jun"),n2n("8 jun"),-1,"One"],
+	[n2n("23 jun"),n2n("25 jun"),-1,"Two"],
+	[n2n("3 aug"),n2n("23 aug"),3,"Alberto"],
+	[n2n("8 aug"),n2n("11 aug"),-1,"Four"],
+	[n2n("13 aug"),n2n("15 aug"),0,"Beryl"],
+	[n2n("17 aug"),n2n("19 aug"),0,"Chris"],
+	[n2n("19 aug"),n2n("24 aug"),1,"Debby"],
+	[n2n("1 sep"),n2n("3 sep"),0,"Ernesto"],
+	[n2n("8 sep"),n2n("9 sep"),-1,"Nine"],
+	[n2n("10 sep"),n2n("17 sep"),1,"Florence"],
+	[n2n("14 sep"),n2n("21 sep"),1,"Gordon"],
+	[n2n("15 sep"),n2n("25 sep"),0,"Helene"],
+	[n2n("21 sep"),n2n("1 oct"),4,"Isaac"],
+	[n2n("25 sep"),n2n("2 oct"),1,"Joyce"],
+	[n2n("28 sep"),n2n("6 oct"),4,"Keith"],
+	[n2n("4 oct"),n2n("7 oct"),0,"Leslie"],
+	[n2n("15 oct"),n2n("20 oct"),2,"Michael"],
+	[n2n("19 oct"),n2n("21 oct"),0,"Nadine"],
+	[n2n("25 oct"),n2n("29 oct"),0,"Unnamed"]
+];
 hurricanelist[2001] = [
 	[n2n("4 jun"),n2n("18 jun"),0,"Allison"],
 	[n2n("11 jul"),n2n("12 jul"),-1,"Two"],
@@ -58,7 +206,7 @@ hurricanelist[2001] = [
 	[n2n("29 oct"),n2n("5 nov"),4,"Michelle"],
 	[n2n("4 nov"),n2n("6 nov"),1,"Noel"],
 	[n2n("24 nov"),n2n("4 dec"),1,"Olga"]
-]
+];
 hurricanelist[2002] = [
 	[n2n("14 jul"),n2n("16 jul"),0,"Arthur"],
 	[n2n("4 aug"),n2n("9 aug"),0,"Bertha"],
@@ -375,128 +523,3 @@ hurricanelist[2018] = [
 	[265,267,0,"Kirk"],
 	[266,267,0,"Leslie"] // active
 ];
-// hurricanelist[year][number] = [start,end,cat,name];
-
-// https://stackoverflow.com/a/9902282/2579798
-function realsize(x){
-	"use strict";
-	return x.filter(function(value){
-		return value !== undefined;
-	}).length;
-}
-
-function avgduring(date){
-	"use strict";
-	var n = 0;
-	var years = realsize(hurricanelist);
-	// date is an integer between 0 and 365
-	hurricanelist.forEach(function(x){ // for each year
-		x.forEach(function(y){ // for each hurricane
-			if (y[1] >= date && date >= y[0]){
-				n += 1;
-			}
-		});
-	});
-	return n/years;
-}
-
-function maxcatduring(date){
-	"use strict";
-	var maxcat = -1;
-	// date is an integer between 0 and 365
-	hurricanelist.forEach(function(x){ // for each year
-		x.forEach(function(y){ // for each hurricane
-			if (y[2] > maxcat && y[1] >= date && date >= y[0]){
-				maxcat = y[2];
-			}
-		});
-	});
-	return maxcat;
-}
-
-function maxcathtml(date){
-	"use strict";
-	var maxcat = maxcatduring(date);
-	var style = (maxcat > 0) ? ("c"+maxcat) : ((maxcat === 0) ? "ts" : "td");
-	var maxcatname = style.toUpperCase();
-	var html = "<td class="+style+">"+maxcatname+"</td>";
-	return html;
-}
-
-function range1(n){
-	return n?range1(n-1).concat(n):[]; // Array(n).fill().map((x,i)=>i);
-}
-
-function avgprint(){
-	range1(356).forEach(function(x){
-		console.log(x,avgduring(x));
-	});
-}
-
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
-function getMaxOfArray(numArray) {
-	return Math.max.apply(null, numArray);
-}
-
-function maxyear(){
-	var wholeyear = [];
-	range1(356).forEach(function(x){
-		wholeyear.push(avgduring(x));
-	});
-	return getMaxOfArray(wholeyear);
-}
-
-function avgyear(){
-	var datstring, newrow, newval;
-	var wholeyear = [];
-	var maxinyear = maxyear();
-	// reset
-	document.getElementById("avgByDate").innerHTML = "";
-	range1(366).forEach(function(x){
-		newrow = document.createElement("tr")
-		newval = avgduring(x);
-		wholeyear.push(newval);
-		datestring = n2n2(x-1).toUpperCase();
-		newrow.innerHTML = "<td>"+datestring+"</td><td>"+Math.round(newval*100)/100+"</td><td><progress value="+newval+" max="+maxinyear+"></progress></td>"+maxcathtml(x);
-		document.getElementById("avgByDate").appendChild(newrow);
-	});
-	return wholeyear;
-}
-
-function seasonstats(year){
-	var y = hurricanelist[year]
-	console.log(y); // fixme debug
-	// maj. hurricanes (3+)
-	var majors = 0;
-	// hurricanes
-	var hurricanes = 0;
-	// storms
-	var storms = 0;
-	y.forEach(function(x){ // for each depression
-		switch (x[2]){
-			case 0:
-				storms += 1;
-			case 1:
-				storms += 1;
-				hurricanes += 1;
-			case 2:
-				storms += 1;
-				hurricanes += 1;
-			case 3:
-				storms += 1;
-				hurricanes += 1;
-				majors += 1;
-			case 4:
-				storms += 1;
-				hurricanes += 1;
-				majors += 1;
-			case 5:
-				storms += 1;
-				hurricanes += 1;
-				majors += 1;
-		}
-	});
-	// depressions
-	depressions = y.length
-	return [depressions,storms,hurricanes,majors];
-}
