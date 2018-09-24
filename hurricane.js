@@ -351,7 +351,10 @@ hurricanelist[2018] = [
 	[246,251,0,"Gordon"],
 	[250,259,2,"Helene"],
 	[250,258,1,"Isaac"],
-	[255,262,0,"Joyce"]
+	[255,262,0,"Joyce"],
+	[265,266,-1,"Eleven"],
+	[265,267,0,"Kirk"],
+	[266,267,0,"Leslie"] // active
 ];
 // hurricanelist[year][number] = [start,end,cat,name];
 
