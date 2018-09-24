@@ -168,6 +168,21 @@ function seasonstats(year){
 // hurricanelist[year][number] = [start,end,cat,name];
 
 var hurricanelist = [];
+hurricanelist[1996] = [
+	[n2n("17 jun"),n2n("21 jun"),0,"Arthur"],
+	[n2n("5 jul"),n2n("14 jul"),3,"Bertha"],
+	[n2n("24 jul"),n2n("29 jul"),1,"Cesar"],
+	[n2n("19 aug"),n2n("26 aug"),1,"Dolly"],
+	[n2n("19 aug"),n2n("3 sep"),4,"Edouard"],
+	[n2n("23 aug"),n2n("8 sep"),3,"Fran"],
+	[n2n("26 aug"),n2n("2 sep"),0,"Gustav"],
+	[n2n("3 sep"),n2n("16 sep"),4,"Hortense"],
+	[n2n("24 sep"),n2n("1 oct"),3,"Isidore"],
+	[n2n("4 oct"),n2n("8 oct"),0,"Josephine"],
+	[n2n("11 oct"),n2n("13 oct"),0,"Kyle"],
+	[n2n("14 oct"),n2n("27 oct"),3,"Lili"],
+	[n2n("16 nov"),n2n("26 nov"),1,"Marco"]
+];
 hurricanelist[1997] = [
 	[n2n("1 jun"),n2n("2 jun"),0,"Unnamed"],
 	[n2n("30 jun"),n2n("4 jul"),0,"Ana"],
