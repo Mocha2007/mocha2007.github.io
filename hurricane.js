@@ -40,6 +40,25 @@ function n2n2(n){ // number to name
 }
 
 var hurricanelist = [];
+hurricanelist[2001] = [
+	[n2n("4 jun"),n2n("18 jun"),0,"Allison"],
+	[n2n("11 jul"),n2n("12 jul"),-1,"Two"],
+	[n2n("2 aug"),n2n("8 aug"),0,"Barry"],
+	[n2n("14 aug"),n2n("22 aug"),0,"Chantal"],
+	[n2n("22 aug"),n2n("28 aug"),0,"Dean"],
+	[n2n("1 sep"),n2n("5 sep"),3,"Erin"],
+	[n2n("7 sep"),n2n("19 sep"),3,"Felix"],
+	[n2n("11 sep"),n2n("19 sep"),1,"Gabrielle"],
+	[n2n("19 sep"),n2n("20 sep"),-1,"Nine"],
+	[n2n("21 sep"),n2n("27 sep"),2,"Humberto"],
+	[n2n("4 oct"),n2n("9 oct"),4,"Iris"],
+	[n2n("6 oct"),n2n("8 oct"),0,"Jerry"],
+	[n2n("12 oct"),n2n("15 oct"),1,"Karen"],
+	[n2n("27 oct"),n2n("31 oct"),0,"Lorenzo"],
+	[n2n("29 oct"),n2n("5 nov"),4,"Michelle"],
+	[n2n("4 nov"),n2n("6 nov"),1,"Noel"],
+	[n2n("24 nov"),n2n("4 dec"),1,"Olga"]
+]
 hurricanelist[2002] = [
 	[n2n("14 jul"),n2n("16 jul"),0,"Arthur"],
 	[n2n("4 aug"),n2n("9 aug"),0,"Bertha"],
@@ -431,7 +450,9 @@ function avgyear(){
 	var datstring, newrow, newval;
 	var wholeyear = [];
 	var maxinyear = maxyear();
-	range1(356).forEach(function(x){
+	// reset
+	document.getElementById("avgByDate").innerHTML = "";
+	range1(366).forEach(function(x){
 		newrow = document.createElement("tr")
 		newval = avgduring(x);
 		wholeyear.push(newval);
