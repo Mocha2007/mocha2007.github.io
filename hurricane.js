@@ -792,35 +792,40 @@ function volumes(){
 var averagePerYear = mean(volumes());
 var sdPerYear = sd(volumes());
 
-function randomVolume(){ // I couldn't find any way to do a TRUE normal distr., so this is my close approximation.
+function pseudoNormal(mean, sd){ // I couldn't find any way to do a TRUE normal distr., so this is my close approximation.
 	"use strict";
 	var r = Math.random();
 	var lower, upper;
 	if (r < 0.022){
-		lower = averagePerYear-3*sdPerYear;
-		upper = averagePerYear-2*sdPerYear;
+		lower = mean-3*sd;
+		upper = mean-2*sd;
 	}
 	else if (r < 0.158){
-		lower = averagePerYear-2*sdPerYear;
-		upper = averagePerYear-sdPerYear;
+		lower = mean-2*sd;
+		upper = mean-sd;
 	}
 	else if (r < 0.5){
-		lower = averagePerYear-sdPerYear;
-		upper = averagePerYear;
+		lower = mean-sd;
+		upper = mean;
 	}
 	else if (r < 0.841){
-		lower = averagePerYear;
-		upper = averagePerYear+sdPerYear;
+		lower = mean;
+		upper = mean+sd;
 	}
 	else if (r < 0.977){
-		lower = averagePerYear+sdPerYear;
-		upper = averagePerYear+2*sdPerYear;
+		lower = mean+sd;
+		upper = mean+2*sd;
 	}
 	else {
-		lower = averagePerYear+2*sdPerYear;
-		upper = averagePerYear+3*sdPerYear;
+		lower = mean+2*sd;
+		upper = mean+3*sd;
 	}
-	return Math.round(randomRange(lower, upper));
+	return randomRange(lower, upper);
+}
+
+function randomVolume(){ // I couldn't find any way to do a TRUE normal distr., so this is my close approximation.
+	"use strict";
+	return Math.round(pseudoNormal(averagePerYear, sdPerYear));
 }
 
 function randomSeason(){
