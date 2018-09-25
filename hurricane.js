@@ -85,10 +85,10 @@ function maxcathtml(date){
 	return html;
 }
 
-function fractionhurricane(date){
+function fractionhurricane(date){ // % of tds that turn into hurricanes
 	"use strict";
 	var maxcat = maxcatduring(date);
-	var maxcatname = maxcat < 1 ? '0' : 1; // todo
+	var maxcatname = maxcat < 1 ? '0' : 1;
 	var stormsondate = 0;
 	var hurricanesondate = 0;
 	if (maxcatname === 1){
@@ -133,14 +133,14 @@ function maxyear(){
 }
 
 function avgyear(){
-	var datstring, newrow, newval;
+	var datestring, newrow, newval;
 	var wholeyear = [];
 	var maxinyear = maxyear();
 	// reset
 	document.getElementById("avgByDate").innerHTML = "<tr><th>Date</th><th>Quantity</th><th>Visual</th><th>Max</th><th>% Hurricane</th></tr>";
 	range1(366).forEach(function(x){
 		x = x-1;
-		newrow = document.createElement("tr")
+		newrow = document.createElement("tr");
 		newval = avgduring(x);
 		wholeyear.push(newval);
 		datestring = n2n2(x).toUpperCase();
@@ -151,7 +151,7 @@ function avgyear(){
 }
 
 function seasonstats(year){
-	var y = hurricanelist[year]
+	var y = hurricanelist[year];
 	console.log(y); // fixme debug
 	// maj. hurricanes (3+)
 	var majors = 0;
@@ -163,28 +163,34 @@ function seasonstats(year){
 		switch (x[2]){
 			case 0:
 				storms += 1;
+				break;
 			case 1:
 				storms += 1;
 				hurricanes += 1;
+				break;
 			case 2:
 				storms += 1;
 				hurricanes += 1;
+				break;
 			case 3:
 				storms += 1;
 				hurricanes += 1;
 				majors += 1;
+				break;
 			case 4:
 				storms += 1;
 				hurricanes += 1;
 				majors += 1;
+				break;
 			case 5:
 				storms += 1;
 				hurricanes += 1;
 				majors += 1;
+				break;
 		}
 	});
 	// depressions
-	depressions = y.length
+	var depressions = y.length;
 	return [depressions,storms,hurricanes,majors];
 }
 
@@ -613,8 +619,7 @@ hurricanelist[2017] = [
 	[277,282,1,"Nate"],
 	[282,289,3,"Ophelia"],
 	[301,302,0,"Philippe"],
-	[309,313,0,"Rina"],
-
+	[309,313,0,"Rina"]
 ];
 hurricanelist[2018] = [
 	[117,123,0,"Alberto"],
