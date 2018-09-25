@@ -864,7 +864,7 @@ function randomSeason(){
 		}
 		currentDepression += 1;
 		// print
-		newrow.innerHTML = "<td>"+proper(name)+"</td><td>"+n2n2(x).toUpperCase()+"</td><td>"+n2n2(end).toUpperCase()+"</td>"+catStyle(category);
+		newrow.innerHTML = "<td>"+proper(name)+"</td><td>"+n2n2(x)+"</td><td>"+n2n2(end)+"</td>"+catStyle(category);
 		document.getElementById("randomSeason").appendChild(newrow);
 	});
 }
