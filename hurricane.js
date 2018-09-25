@@ -17,6 +17,39 @@ var offset = [-1,30,59,90,120,151,181,212,243,273,304,334];
 335 1 Dec
 */
 
+// begin math block
+
+function sum(x){ // find the sum of an array
+	var s = 0;
+	x.forEach(function(y){ // for each year
+		s += y;
+	});
+	return s;
+}
+
+function mean(x){ // find the mean of an array
+	return sum(x)/x.length;
+}
+
+function variance(x){ // find the variance of an array
+	var meanOfArray = mean(x);
+	var variance = x.map(function(y){
+		var z = y - meanOfArray
+		return z * z;
+	});
+	return sum(variance) / (x.length - 1);
+}
+
+function sd(x){ // find the standard deviation of an array
+	return Math.sqrt(variance(x));
+}
+
+function randomRange(min, max){ // random real in range
+	return Math.random() * (max-min) + min;
+}
+
+// end math block
+
 function n2n(name){ // name to number
 	"use strict";
 	var date = name.split(' ');
@@ -109,6 +142,25 @@ function fractionhurricane(date, m, n){ // % of cat m hurricanes that turn into 
 	return html;
 }
 
+function yearsContaining(date){ // % of years where ANY storm exists on a date
+	"use strict";
+	var yearCount = 0;
+	var stormsondate = 0;
+	hurricanelist.forEach(function(x){ // for each year
+		yearCount += 1;
+		x.some(function(y){ // for each hurricane
+			if (y[1] >= date && date >= y[0]){
+				stormsondate += 1;
+				return true;
+			}
+		});
+	});
+	var ratio = Math.floor(stormsondate / yearCount*100);
+	var style = Math.floor(ratio/10);
+	var html = "<td class='p"+style+"'>"+ratio+"%</td>";
+	return html;
+}
+
 function range1(n){
 	return n?range1(n-1).concat(n):[]; // Array(n).fill().map((x,i)=>i);
 }
@@ -137,14 +189,14 @@ function avgyear(){
 	var wholeyear = [];
 	var maxinyear = maxyear();
 	// reset
-	document.getElementById("avgByDate").innerHTML = "<tr><th>Date</th><th>Quantity</th><th>Visual</th><th>Max</th><th>%H</th><th>%M</th></tr>";
+	document.getElementById("avgByDate").innerHTML = "<tr><th>Date</th><th>Quantity</th><th>Visual</th><th>Max</th><th>%D</th><th>%H</th><th>%M</th></tr>";
 	range1(366).forEach(function(x){
 		x = x-1;
 		newrow = document.createElement("tr");
 		newval = avgduring(x);
 		wholeyear.push(newval);
 		datestring = n2n2(x).toUpperCase();
-		newrow.innerHTML = "<td>"+datestring+"</td><td>"+Math.round(newval*100)/100+"</td><td><progress value="+newval+" max="+maxinyear+"></progress></td>"+maxcathtml(x)+fractionhurricane(x,-1,1)+fractionhurricane(x,1,3);
+		newrow.innerHTML = "<td>"+datestring+"</td><td>"+Math.round(newval*100)/100+"</td><td><progress value="+newval+" max="+maxinyear+"></progress></td>"+maxcathtml(x)+yearsContaining(x)+fractionhurricane(x,-1,1)+fractionhurricane(x,1,3);
 		document.getElementById("avgByDate").appendChild(newrow);
 	});
 	return wholeyear;
@@ -152,7 +204,6 @@ function avgyear(){
 
 function seasonstats(year){
 	var y = hurricanelist[year];
-	console.log(y); // fixme debug
 	// maj. hurricanes (3+)
 	var majors = 0;
 	// hurricanes
@@ -634,5 +685,64 @@ hurricanelist[2018] = [
 	[255,262,0,"Joyce"],
 	[265,266,-1,"Eleven"],
 	[265,267,0,"Kirk"],
-	[266,267,0,"Leslie"] // active
+	[266,268,0,"Leslie"]
 ];
+
+// for the random generator
+
+function volumes(){
+	var v = [];
+	hurricanelist.forEach(function(x){ // for each year
+		v.push(x.length);
+	});
+	return v;
+}
+
+var averagePerYear = mean(volumes());
+var sdPerYear = sd(volumes());
+
+function randomVolume(){ // I couldn't find any way to do a TRUE normal distr., so this is my close approximation.
+	var r = Math.random();
+	var lower, upper;
+	if (r < .022){
+		lower = averagePerYear-3*sdPerYear;
+		upper = averagePerYear-2*sdPerYear;
+	}
+	else if (r < .158){
+		lower = averagePerYear-2*sdPerYear;
+		upper = averagePerYear-sdPerYear;
+	}
+	else if (r < .5){
+		lower = averagePerYear-sdPerYear;
+		upper = averagePerYear;
+	}
+	else if (r < .841){
+		lower = averagePerYear;
+		upper = averagePerYear+sdPerYear;
+	}
+	else if (r < .977){
+		lower = averagePerYear+sdPerYear;
+		upper = averagePerYear+2*sdPerYear;
+	}
+	else {
+		lower = averagePerYear+2*sdPerYear;
+		upper = averagePerYear+3*sdPerYear;
+	}
+	return Math.round(randomRange(lower, upper));
+}
+
+function randomSeason(){
+	// setup
+	var volume = randomVolume();
+	document.getElementById("randomSeason").innerHTML = "<tr><th>Name</th><th>From</th><th>Until</th><th>Category</th></tr>";
+	var starts = [];
+	// main
+	range1(volume).forEach(function(x){
+		var randomYear = randomRange(1995,2018);
+		var randomStorm = randomRange(0,hurricanelist[randomYear].length-1);
+		var randomStart = hurricanelist[randomYear][randomStorm][0];
+		starts.append(randomStart);
+	});
+	starts.sort();
+	// for each date, use the date to generate a random END and CATEGORY
+}
