@@ -55,6 +55,16 @@ function randomRange(min, max){ // random real in range
 
 // end math block
 
+function proper(word){
+	"use strict";
+	if (word === ""){
+		return "";
+	}
+	word = word.split("");
+	word[0] = word[0].toUpperCase();
+	return word.join("");
+}
+
 function n2n(name){ // name to number
 	"use strict";
 	var date = name.split(' ');
@@ -71,10 +81,10 @@ function n2n2(n){ // number to name
 		if (n > offset[i]){
 			month = i;
 			day = n - offset[i];
-			return day+' '+months[month];
+			return day+' '+proper(months[month]);
 		}
 	}
-	return (n+1)+' jan';
+	return (n+1)+' Jan';
 }
 
 // https://stackoverflow.com/a/9902282/2579798
@@ -169,6 +179,21 @@ function yearsContaining(date){ // % of years where ANY storm exists on a date
 	return html;
 }
 
+function avgDuration(category){ // average category duration
+	"use strict";
+	var d = 0;
+	var n = 0;
+	hurricanelist.forEach(function(x){ // for each year
+		x.forEach(function(y){ // for each hurricane
+			if (y[2] === category){
+				d += y[1]-y[0];
+				n += 1;
+			}
+		});
+	});
+	return d/n;
+}
+
 function range1(n){
 	"use strict";
 	return n?range1(n-1).concat(n):[]; // Array(n).fill().map((x,i)=>i);
@@ -208,7 +233,7 @@ function avgyear(){
 		newrow = document.createElement("tr");
 		newval = avgduring(x);
 		wholeyear.push(newval);
-		datestring = n2n2(x).toUpperCase();
+		datestring = n2n2(x);
 		newrow.innerHTML = "<td>"+datestring+"</td><td>"+Math.round(newval*100)/100+"</td><td><progress value="+newval+" max="+maxinyear+"></progress></td>"+maxcathtml(x)+yearsContaining(x)+fractionhurricane(x,-1,1)+fractionhurricane(x,1,3);
 		document.getElementById("avgByDate").appendChild(newrow);
 	});
@@ -702,6 +727,57 @@ hurricanelist[2018] = [
 	[266,268,0,"Leslie"]
 ];
 
+var alphabet = "abcdefghijklmnoprstvw".split("");
+var greek = [
+	"alpha",
+	"beta",
+	"gamma",
+	"delta",
+	"epsilon",
+	"zeta",
+	"eta",
+	"theta",
+	"iota",
+	"kappa",
+	"lambda",
+	"mu",
+	"nu",
+	"xi",
+	"omicron",
+	"pi",
+	"rho",
+	"sigma",
+	"tau",
+	"tau",
+	"upsilon",
+	"phi",
+	"chi",
+	"psi",
+	"omega"
+];
+var numbers = [
+	"one",
+	"two",
+	"three",
+	"four",
+	"five",
+	"six",
+	"seven",
+	"eight",
+	"nine",
+	"ten",
+	"eleven",
+	"twelve",
+	"thirteen",
+	"fourteen",
+	"fifteen",
+	"sixteen",
+	"seventeen",
+	"eighteen",
+	"nineteen",
+	"twenty"
+];
+
 // for the random generator
 
 function volumes(){
@@ -749,6 +825,7 @@ function randomVolume(){ // I couldn't find any way to do a TRUE normal distr., 
 
 function randomSeason(){
 	"use strict";
+	var name;
 	// setup
 	var volume = randomVolume();
 	document.getElementById("randomSeason").innerHTML = "<tr><th>Name</th><th>From</th><th>Until</th><th>Category</th></tr>";
@@ -762,11 +839,32 @@ function randomSeason(){
 	});
 	starts.sort();
 	// for each date, use the date to generate a random END and CATEGORY
+	var currentDepression = 0;
+	var currentStorm = 0;
 	starts.forEach(function(x){
-		var end = x + Math.round(randomRange(1,10)); // fixme
-		var category = Math.round(randomRange(-1,5)); // fixme
+		var category = Math.round(randomRange(-1,maxcatduring(x)));
+		var end = x + Math.round(avgDuration(category)); // fixme - better, but still suboptimal
 		var newrow = document.createElement("tr");
-		newrow.innerHTML = "<td>"+x+"</td><td>"+n2n2(x).toUpperCase()+"</td><td>"+n2n2(end).toUpperCase()+"</td>"+catStyle(category);
+		if (category > -1){
+			if (currentStorm < alphabet.length){ // names
+				name = alphabet[currentStorm];
+			}
+			else { // greek
+				name = greek[currentStorm - alphabet.length];
+			}
+			currentStorm += 1;
+		}
+		else { // numbers
+			if (currentDepression < 20){
+				name = numbers[currentDepression];
+			}
+			else {
+				name = "twenty-" + numbers[currentDepression-20];
+			}
+		}
+		currentDepression += 1;
+		// print
+		newrow.innerHTML = "<td>"+proper(name)+"</td><td>"+n2n2(x).toUpperCase()+"</td><td>"+n2n2(end).toUpperCase()+"</td>"+catStyle(category);
 		document.getElementById("randomSeason").appendChild(newrow);
 	});
 }
