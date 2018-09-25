@@ -85,18 +85,18 @@ function maxcathtml(date){
 	return html;
 }
 
-function fractionhurricane(date){ // % of tds that turn into hurricanes
+function fractionhurricane(date, m, n){ // % of cat m hurricanes that turn into cat n hurricanes
 	"use strict";
 	var maxcat = maxcatduring(date);
-	var maxcatname = maxcat < 1 ? '0' : 1;
+	var maxcatname = maxcat < n ? '0' : 1;
 	var stormsondate = 0;
 	var hurricanesondate = 0;
 	if (maxcatname === 1){
 		hurricanelist.forEach(function(x){ // for each year
 			x.forEach(function(y){ // for each hurricane
-				if (y[1] >= date && date >= y[0]){
+				if (y[2] >= m && y[1] >= date && date >= y[0]){
 					stormsondate += 1;
-					if (y[2] > 0){
+					if (y[2] >= n){
 						hurricanesondate += 1;
 					}
 				}
@@ -137,14 +137,14 @@ function avgyear(){
 	var wholeyear = [];
 	var maxinyear = maxyear();
 	// reset
-	document.getElementById("avgByDate").innerHTML = "<tr><th>Date</th><th>Quantity</th><th>Visual</th><th>Max</th><th>% Hurricane</th></tr>";
+	document.getElementById("avgByDate").innerHTML = "<tr><th>Date</th><th>Quantity</th><th>Visual</th><th>Max</th><th>%H</th><th>%M</th></tr>";
 	range1(366).forEach(function(x){
 		x = x-1;
 		newrow = document.createElement("tr");
 		newval = avgduring(x);
 		wholeyear.push(newval);
 		datestring = n2n2(x).toUpperCase();
-		newrow.innerHTML = "<td>"+datestring+"</td><td>"+Math.round(newval*100)/100+"</td><td><progress value="+newval+" max="+maxinyear+"></progress></td>"+maxcathtml(x)+fractionhurricane(x);
+		newrow.innerHTML = "<td>"+datestring+"</td><td>"+Math.round(newval*100)/100+"</td><td><progress value="+newval+" max="+maxinyear+"></progress></td>"+maxcathtml(x)+fractionhurricane(x,-1,1)+fractionhurricane(x,1,3);
 		document.getElementById("avgByDate").appendChild(newrow);
 	});
 	return wholeyear;
