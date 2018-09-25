@@ -20,6 +20,7 @@ var offset = [-1,30,59,90,120,151,181,212,243,273,304,334];
 // begin math block
 
 function sum(x){ // find the sum of an array
+	"use strict";
 	var s = 0;
 	x.forEach(function(y){ // for each year
 		s += y;
@@ -28,23 +29,27 @@ function sum(x){ // find the sum of an array
 }
 
 function mean(x){ // find the mean of an array
+	"use strict";
 	return sum(x)/x.length;
 }
 
 function variance(x){ // find the variance of an array
+	"use strict";
 	var meanOfArray = mean(x);
-	var variance = x.map(function(y){
-		var z = y - meanOfArray
+	var v = x.map(function(y){
+		var z = y - meanOfArray;
 		return z * z;
 	});
-	return sum(variance) / (x.length - 1);
+	return sum(v) / (x.length - 1);
 }
 
 function sd(x){ // find the standard deviation of an array
+	"use strict";
 	return Math.sqrt(variance(x));
 }
 
 function randomRange(min, max){ // random real in range
+	"use strict";
 	return Math.random() * (max-min) + min;
 }
 
@@ -109,13 +114,16 @@ function maxcatduring(date){
 	return maxcat;
 }
 
+function catStyle(category){
+	"use strict";
+	var style = (category > 0) ? ("c"+category) : ((category === 0) ? "ts" : "td");
+	return "<td class="+style+">"+style.toUpperCase()+"</td>";
+}
+
 function maxcathtml(date){
 	"use strict";
 	var maxcat = maxcatduring(date);
-	var style = (maxcat > 0) ? ("c"+maxcat) : ((maxcat === 0) ? "ts" : "td");
-	var maxcatname = style.toUpperCase();
-	var html = "<td class="+style+">"+maxcatname+"</td>";
-	return html;
+	return catStyle(maxcat);
 }
 
 function fractionhurricane(date, m, n){ // % of cat m hurricanes that turn into cat n hurricanes
@@ -162,10 +170,12 @@ function yearsContaining(date){ // % of years where ANY storm exists on a date
 }
 
 function range1(n){
+	"use strict";
 	return n?range1(n-1).concat(n):[]; // Array(n).fill().map((x,i)=>i);
 }
 
 function avgprint(){
+	"use strict";
 	range1(356).forEach(function(x){
 		console.log(x,avgduring(x));
 	});
@@ -173,10 +183,12 @@ function avgprint(){
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
 function getMaxOfArray(numArray) {
+	"use strict";
 	return Math.max.apply(null, numArray);
 }
 
 function maxyear(){
+	"use strict";
 	var wholeyear = [];
 	range1(356).forEach(function(x){
 		wholeyear.push(avgduring(x));
@@ -185,6 +197,7 @@ function maxyear(){
 }
 
 function avgyear(){
+	"use strict";
 	var datestring, newrow, newval;
 	var wholeyear = [];
 	var maxinyear = maxyear();
@@ -203,6 +216,7 @@ function avgyear(){
 }
 
 function seasonstats(year){
+	"use strict";
 	var y = hurricanelist[year];
 	// maj. hurricanes (3+)
 	var majors = 0;
@@ -691,6 +705,7 @@ hurricanelist[2018] = [
 // for the random generator
 
 function volumes(){
+	"use strict";
 	var v = [];
 	hurricanelist.forEach(function(x){ // for each year
 		v.push(x.length);
@@ -702,25 +717,26 @@ var averagePerYear = mean(volumes());
 var sdPerYear = sd(volumes());
 
 function randomVolume(){ // I couldn't find any way to do a TRUE normal distr., so this is my close approximation.
+	"use strict";
 	var r = Math.random();
 	var lower, upper;
-	if (r < .022){
+	if (r < 0.022){
 		lower = averagePerYear-3*sdPerYear;
 		upper = averagePerYear-2*sdPerYear;
 	}
-	else if (r < .158){
+	else if (r < 0.158){
 		lower = averagePerYear-2*sdPerYear;
 		upper = averagePerYear-sdPerYear;
 	}
-	else if (r < .5){
+	else if (r < 0.5){
 		lower = averagePerYear-sdPerYear;
 		upper = averagePerYear;
 	}
-	else if (r < .841){
+	else if (r < 0.841){
 		lower = averagePerYear;
 		upper = averagePerYear+sdPerYear;
 	}
-	else if (r < .977){
+	else if (r < 0.977){
 		lower = averagePerYear+sdPerYear;
 		upper = averagePerYear+2*sdPerYear;
 	}
@@ -732,17 +748,25 @@ function randomVolume(){ // I couldn't find any way to do a TRUE normal distr., 
 }
 
 function randomSeason(){
+	"use strict";
 	// setup
 	var volume = randomVolume();
 	document.getElementById("randomSeason").innerHTML = "<tr><th>Name</th><th>From</th><th>Until</th><th>Category</th></tr>";
 	var starts = [];
 	// main
 	range1(volume).forEach(function(x){
-		var randomYear = randomRange(1995,2018);
-		var randomStorm = randomRange(0,hurricanelist[randomYear].length-1);
+		var randomYear = Math.round(randomRange(1995,2018));
+		var randomStorm = Math.round(randomRange(0,hurricanelist[randomYear].length-1));
 		var randomStart = hurricanelist[randomYear][randomStorm][0];
-		starts.append(randomStart);
+		starts.push(randomStart);
 	});
 	starts.sort();
 	// for each date, use the date to generate a random END and CATEGORY
+	starts.forEach(function(x){
+		var end = x + Math.round(randomRange(1,10)); // fixme
+		var category = Math.round(randomRange(-1,5)); // fixme
+		var newrow = document.createElement("tr");
+		newrow.innerHTML = "<td>"+x+"</td><td>"+n2n2(x).toUpperCase()+"</td><td>"+n2n2(end).toUpperCase()+"</td>"+catStyle(category);
+		document.getElementById("randomSeason").appendChild(newrow);
+	});
 }
