@@ -13,6 +13,7 @@
 td{
 	padding: none;
 }
+/* categories */
 .td{background-color: #5bf;}
 .ts{background-color: #0ff;}
 .c1{background-color: #ffc;}
@@ -21,6 +22,17 @@ td{
 .c4{background-color: #f82;}
 .c5{background-color: #f66;}
 .names{font-size:10px;}
+/* percentages */
+.p9,.p10{background-color: #ff8080;}
+.p8{background-color: #ff8e8e;}
+.p7{background-color: #ff9c9c;}
+.p6{background-color: #ffaaaa;}
+.p5{background-color: #ffb8b8;}
+.p4{background-color: #ffc7c7;}
+.p3{background-color: #ffd5d5;}
+.p2{background-color: #ffe3e3;}
+.p1{background-color: #fff1f1;}
+.p0{background-color: #fff;}
 </style>
 <title>Hurricane</title>
 <div id="nav"></div>
@@ -30,14 +42,7 @@ td{
 	Click on the header below to load.
 </p>
 <h2 id="Date" onclick="avgyear();">Avg. by Date</h2>
-<table id="avgByDate">
-	<tr>
-		<th>Date</th>
-		<th>Quantity</th>
-		<th>Visual</th>
-		<th>Maximum</th>
-	</tr>
-</table>
+<table id="avgByDate"></table>
 <h1 id="Names">Names</h1>
 <p>
 	Sorted by year modulo six.
