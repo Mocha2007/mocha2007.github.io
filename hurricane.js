@@ -194,6 +194,19 @@ function avgDuration(category){ // average category duration
 	return d/n;
 }
 
+function avgDurationSD(category){ // average category duration standard deviation
+	"use strict";
+	var durations = [];
+	hurricanelist.forEach(function(x){ // for each year
+		x.forEach(function(y){ // for each hurricane
+			if (y[2] === category){
+				durations.push(y[1]-y[0]);
+			}
+		});
+	});
+	return sd(durations);
+}
+
 function range1(n){
 	"use strict";
 	return n?range1(n-1).concat(n):[]; // Array(n).fill().map((x,i)=>i);
@@ -848,7 +861,7 @@ function randomSeason(){
 	var currentStorm = 0;
 	starts.forEach(function(x){
 		var category = Math.round(randomRange(-1,maxcatduring(x)));
-		var end = x + Math.round(avgDuration(category)); // fixme - better, but still suboptimal
+		var end = x + Math.max(1, Math.round(pseudoNormal(avgDuration(category), avgDurationSD(category))));
 		var newrow = document.createElement("tr");
 		if (category > -1){
 			if (currentStorm < alphabet.length){ // names
