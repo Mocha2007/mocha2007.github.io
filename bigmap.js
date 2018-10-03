@@ -15,6 +15,8 @@ function bigmap(){
 	var anyc, conditional, coords, hastag, newpoint, newrow, soundset, wants;
 	document.getElementById("mapinfo").innerHTML = '<tr><th>Language</th><th>Feature</th><th>C</th><th>V</th></tr>';
 	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" width="700">';
+	var yes = 0;
+	var yn = 0;
 	lang.forEach(function(x){
 		// test for conditions
 		anyc = false;
@@ -104,8 +106,14 @@ function bigmap(){
 		newrow = document.createElement("tr");
 		newrow.innerHTML = "<td><a href='"+x.source+"'>"+x.name+"</a></td><td class='"+conditional+"'>"+conditional+"</td><td>"+(conditional ? x.consonants : "-")+"</td><td>"+(conditional ? x.monophthongs+' '+x.diphthongs : "-")+"</td>";
 		document.getElementById("mapinfo").appendChild(newrow);
+		//
+		yes += conditional;
+		yn +=1;
 	});
-	// console.log("Success!");
+	// sum
+	newrow = document.createElement("tr");
+	newrow.innerHTML = "<th>All</th><th>"+Math.floor(10000*yes/yn)/100+"%</th><th colspan=2></th>";
+	document.getElementById("mapinfo").appendChild(newrow);
 }
 
 var lang = [
