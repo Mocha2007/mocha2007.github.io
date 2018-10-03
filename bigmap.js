@@ -1,5 +1,6 @@
 var point0 = 'img/dots/red.png';
 var point1 = 'img/dots/green.png';
+var point2 = 'img/dots/yellow.png';
 var pointsize = 8;
 
 function coord2px(coords){
@@ -11,24 +12,28 @@ function coord2px(coords){
 
 function bigmap(){
 	"use strict";
-	var conditional, coords, hastag, newpoint, newrow, soundset, wants;
+	var anyc, conditional, coords, hastag, newpoint, newrow, soundset, wants;
 	document.getElementById("mapinfo").innerHTML = '<tr><th>Language</th><th>Feature</th><th>C</th><th>V</th></tr>';
 	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" width="700">';
 	lang.forEach(function(x){
 		// test for conditions
+		anyc = false;
 		conditional = true;
 
 		if (document.getElementById("b_contain").checked){
 			wants = document.getElementById("b_contain_text").value;
 			conditional = conditional && (x.consonants + x.monophthongs + x.diphthongs).split(" ").includes(wants);
+			anyc = anyc || (x.consonants + x.monophthongs + x.diphthongs).split(" ").includes(wants);
 		}
 		if (document.getElementById("b_fam").checked){
 			wants = document.getElementById("b_fam_text").value.toLowerCase();
 			conditional = conditional && x.families.includes(wants);
+			anyc = anyc || x.families.includes(wants);
 		}
 		if (document.getElementById("b_area").checked){
 			wants = document.getElementById("b_area_text").value.toLowerCase();
 			conditional = conditional && x.areas.includes(wants);
+			anyc = anyc || x.areas.includes(wants);
 		}
 		if (document.getElementById("b_quantity").checked){
 			wants = Number(document.getElementById("b_quantity_text").value);
@@ -57,12 +62,15 @@ function bigmap(){
 			switch (document.getElementById("b_quantity_select").value){
 				case "more":
 					conditional = conditional && (soundset.length > wants);
+					anyc = anyc || (soundset.length > wants);
 					break;
 				case "fewer":
 					conditional = conditional && (soundset.length < wants);
+					anyc = anyc || (soundset.length < wants);
 					break;
 				case "exact":
 					conditional = conditional && (soundset.length === wants);
+					anyc = anyc || (soundset.length === wants);
 					break;
 			}
 		}
@@ -73,9 +81,11 @@ function bigmap(){
 			switch (document.getElementById("b_tag_select").value){
 				case "w":
 					conditional = conditional && hastag;
+					anyc = anyc || hastag;
 					break;
 				case "wo":
 					conditional = conditional && !hastag;
+					anyc = anyc || !hastag;
 					break;
 			}
 		}
@@ -84,7 +94,7 @@ function bigmap(){
 		newpoint = document.createElement("img");
 		newpoint.alt = x.name;
 		newpoint.title = x.name;
-		newpoint.src = conditional ? point1 : point0;
+		newpoint.src = conditional ? point1 : (anyc ? point2 : point0);
 		newpoint.width = pointsize;
 		newpoint.style.position = "absolute";
 		newpoint.style.top = coords[0] + "px";
@@ -253,6 +263,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Greek_language"
 	},
 	{
+		name: "Greenlandic",
+		coords: [64, -51],
+		families: ["eskimo-aleut", "eskimo", "inuit"],
+		areas: ["north america"],
+		consonants: "p t k q v s G R m n N l j",
+		monophthongs: "i u a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Greenlandic_language"
+	},
+	{
 		name: "Hawaiian",
 		coords: [21, -158],
 		families: ["austronesian", "malayo-polynesian", "oceanic", "polynesian"],
@@ -416,6 +436,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Punjabi_language"
 	},
 	{
+		name: "Quechua",
+		coords: [-13, -72],
+		families: [],
+		areas: ["south america"],
+		consonants: "m n J p t tS k q p_h t_h tS_h k_h q_h p_> t_> tS_> k_> q_> s S h j w l L 4",
+		monophthongs: "i u a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Quechuan_languages"
+	},
+	{
 		name: "Rotokas",
 		coords: [-6, 155],
 		families: ["north bougainville"],
@@ -465,6 +495,16 @@ var lang = [
 		monophthongs: "a e i u",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Sumerian_language"
+	},
+	{
+		name: "Swahili",
+		coords: [-5, 39],
+		families: ["niger-congo", "bantu"],
+		areas: ["africa"],
+		consonants: "m n J N b_n d_n dZ_n g_n b_< d_< dZ_< g_< p t tS k v_n z_n v z f s S h r l j w",
+		monophthongs: "i u e o a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Swahili_language"
 	},
 	{
 		name: "Tagalog",
