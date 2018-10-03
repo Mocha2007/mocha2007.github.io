@@ -147,6 +147,26 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Hindi"
 	},
 	{
+		name: "Japanese",
+		coords: [36, 140],
+		families: ["japonic"],
+		areas: ["asia"],
+		consonants: "m n p b t d k g s z h r j w",
+		monophthongs: "i u e o a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Japanese_language"
+	},
+	{
+		name: "Latin",
+		coords: [42, 12],
+		families: ["indo-european", "italic"],
+		areas: ["europe"],
+		consonants: "b d g g_w p t k k_w z f s h m n r l j w",
+		monophthongs: "i: I U u: e: E O o: a a:",
+		diphthongs: "ui ei eu oe ou ae au",
+		source: "https://en.wikipedia.org/wiki/Latin"
+	},
+	{
 		name: "Navajo",
 		coords: [36, -109],
 		families: ["dene–yeniseian", "na-dene", "athabaskan"],
@@ -173,8 +193,28 @@ var lang = [
 		areas: ["brazil", "europe", "south america"],
 		consonants: "m n J p t k k_w b d g g_w f s S v z Z j w l L R 4",
 		monophthongs: "i i~ u u~ M e e~ 6 6~ E O a",
-		diphthongs: "", // too scary
+		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Portuguese_language"
+	},
+	{
+		name: "Proto-Indo-European",
+		coords: [50, 45],
+		families: ["indo-european"],
+		areas: ["europe"],
+		consonants: "m n p t k q q_w d g G\\ G\\_w b_h d_h g_h G\\_h g\\_w_h s r l j w ? X\\ G_w",
+		monophthongs: "e o e: o:",
+		diphthongs: "ei oi eu ou",
+		source: "https://en.wikipedia.org/wiki/Proto-Indo-European"
+	},
+	{
+		name: "Punjab",
+		coords: [31, 75],
+		families: ["indo-european", "indo-iranian", "indo-aryan"],
+		areas: ["asia", "india"],
+		consonants: "m n n` J N p t t` tS k p_h t_h t`_h tS_h k_h b d d` dZ g f s S z 4 r` P l r\\` j h\\",
+		monophthongs: "i i: i~: u u: u~: I U e e: e~: o o: o~: @ E E: E~: O O: O~: a a: a~:",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Punjabi_language"
 	},
 	{
 		name: "Russian",
@@ -191,9 +231,9 @@ var lang = [
 		coords: [40, -4],
 		families: ["indo-european", "italic", "romance"],
 		areas: ["europe"],
-		consonants: "m n J p b t d tS j\\ k g f T s x l L 4 r",
+		consonants: "m n J p b t d tS j\\ k g f T s x l L 4 r w j",
 		monophthongs: "a e i o u",
-		diphthongs: "", // too scary
+		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Spanish_language"
 	}
 ];
