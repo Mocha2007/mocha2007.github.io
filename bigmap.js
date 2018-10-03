@@ -333,6 +333,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Korean_language"
 	},
 	{
+		name: "Kumeyaay",
+		coords: [33, -116],
+		families: ["yuman"],
+		areas: ["north america"],
+		consonants: "p t t_- k k_w q ? B s s_- K K' x x_w tS m n n_- J L r r_0 w l j",
+		monophthongs: "i u @ o a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Kumeyaay_language"
+	},
+	{
 		name: "Latin",
 		coords: [42, 12],
 		families: ["indo-european", "italic"],
