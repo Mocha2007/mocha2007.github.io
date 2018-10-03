@@ -112,7 +112,7 @@ function bigmap(){
 	});
 	// sum
 	newrow = document.createElement("tr");
-	newrow.innerHTML = "<th>All</th><th>"+Math.floor(10000*yes/yn)/100+"%</th><th colspan=2></th>";
+	newrow.innerHTML = "<th>All "+yn+"</th><th>"+Math.floor(10000*yes/yn)/100+"%</th><th colspan=2></th>";
 	document.getElementById("mapinfo").appendChild(newrow);
 }
 
