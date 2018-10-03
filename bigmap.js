@@ -92,13 +92,35 @@ function bigmap(){
 		document.getElementById("bigmap").appendChild(newpoint);
 		// mapinfo
 		newrow = document.createElement("tr");
-		newrow.innerHTML = "<td>"+x.name+"</td><td class='"+conditional+"'>"+conditional+"</td><td>"+(conditional ? x.consonants : "-")+"</td><td>"+(conditional ? x.monophthongs : "-")+"</td>";
+		newrow.innerHTML = "<td><a href='"+x.source+"'>"+x.name+"</a></td><td class='"+conditional+"'>"+conditional+"</td><td>"+(conditional ? x.consonants : "-")+"</td><td>"+(conditional ? x.monophthongs+' '+x.diphthongs : "-")+"</td>";
 		document.getElementById("mapinfo").appendChild(newrow);
 	});
 	// console.log("Success!");
 }
 
 var lang = [
+	{
+		name: "Akkadian",
+		coords: [34, 44],
+		families: ["afro-asiatic", "semitic"],
+		areas: ["asia"],
+		tags: ["dead"],
+		consonants: "m n p t k ? b d g t_?\\ k_?\\ s x G ts dz ts_?\\ l j w",
+		monophthongs: "i u e a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Akkadian_language"
+	},
+	{
+		name: "Ancient Greek",
+		coords: [38, 24],
+		families: ["indo-european", "hellenic"],
+		areas: ["europe"],
+		tags: ["dead"],
+		consonants: "p_h t_h k_h p t k b d g m n s h r l_0 W l j w",
+		monophthongs: "i y u e o a i: y: u: e: E: O: a:",
+		diphthongs: "yi ei eu oi ou ai au E:i O:i E:u O:u a:i a:u",
+		source: "https://en.wikipedia.org/wiki/Ancient_Greek"
+	},
 	{
 		name: "Arabic",
 		coords: [25, 47],
@@ -160,6 +182,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Dutch_language"
 	},
 	{
+		name: "Dyirbal",
+		coords: [-18, 146],
+		families: ["pama-nyungan", "dyirbalic"],
+		areas: ["australia"],
+		consonants: "p k c t_d t t` m N J n_d n n` r r` w j l",
+		monophthongs: "i u a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Dyirbal_language"
+	},
+	{
 		name: "English",
 		coords: [51, 0],
 		families: ["indo-european", "germanic"],
@@ -179,6 +211,16 @@ var lang = [
 		monophthongs: "i e a u",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Etruscan_language"
+	},
+	{
+		name: "Finnish",
+		coords: [60, 25],
+		families: ["uralic", "finnic"],
+		areas: ["europe"],
+		consonants: "m n p t k ? s h P l j r",
+		monophthongs: "i i: y y: u u: e e: 2 2: o o: { {: A A:",
+		diphthongs: "ai au {i {y oi ou ei eu ey 2i 2y ui uo iu iy ie yi y2",
+		source: "https://en.wikipedia.org/wiki/Finnish_language"
 	},
 	{
 		name: "French",
@@ -201,6 +243,26 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/German_language"
 	},
 	{
+		name: "Greek",
+		coords: [38, 24],
+		families: ["indo-european", "hellenic"],
+		areas: ["europe"],
+		consonants: "m n p t k b d g f T s x v D z G r l",
+		monophthongs: "i u e o a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Greek_language"
+	},
+	{
+		name: "Hawaiian",
+		coords: [21, -158],
+		families: ["austronesian", "malayo-polynesian", "oceanic", "polynesian"],
+		areas: ["oceania"],
+		consonants: "m n p t ? h w l",
+		monophthongs: "i u i: u: E o e: o: 6 a:",
+		diphthongs: "iu ou oi eu ei au ai ao ae o:u e:i a:u a:i a:o a:e",
+		source: "https://en.wikipedia.org/wiki/Hawaiian_language"
+	},
+	{
 		name: "Hindi",
 		coords: [29, 77],
 		families: ["indo-european", "indo-iranian", "indo-aryan"],
@@ -211,6 +273,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Hindi"
 	},
 	{
+		name: "Hungarian",
+		coords: [47, 19],
+		families: ["uralic", "ugric"],
+		areas: ["europe"],
+		consonants: "m n J p b t d k g ts dz tS dZ c_C J\\_j\\ f v s z S Z h r l j",
+		monophthongs: "i: i y: y u: u 2: 2 o: o e: E a: Q",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Hungarian_language"
+	},
+	{
 		name: "Japanese",
 		coords: [36, 140],
 		families: ["japonic"],
@@ -219,6 +291,26 @@ var lang = [
 		monophthongs: "i u e o a",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Japanese_language"
+	},
+	{
+		name: "Ket",
+		coords: [63, 87],
+		families: ["dene-yeniseian", "yeniseian"],
+		areas: ["asia"],
+		consonants: "m n N t k q b d s C h K\\",
+		monophthongs: "i 1 u e @ o a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Ket_language"
+	},
+	{
+		name: "Korean",
+		coords: [38, 127],
+		families: ["koreanic"],
+		areas: ["asia"],
+		consonants: "m n N b d dz\\ g p t ts\\ k p_h t_h ts\\_h k_h s_h h s w l j",
+		monophthongs: "i M u e 2 E o V a i: M: u: e: 2: E: V: o: a:",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Korean_language"
 	},
 	{
 		name: "Latin",
@@ -232,6 +324,26 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Latin"
 	},
 	{
+		name: "Mandarin",
+		coords: [40, 116],
+		families: ["sino-tibetan", "sinitic"],
+		areas: ["asia"],
+		consonants: "p t k p_h t_h k_h m n N ts ts` ts\\ ts_h ts`_h ts\\_h f s s` s\\ x w l r\\` j",
+		monophthongs: "i y u 7 @ a",
+		diphthongs: "ye u@ uo ie ua ia iu ei ou au ai",
+		source: "https://en.wikipedia.org/wiki/Mandarin_Chinese"
+	},
+	{
+		name: "Maori",
+		coords: [-41, 175],
+		families: ["austronesian", "malayo-polynesian", "oceanic", "polynesian"],
+		areas: ["oceania"],
+		consonants: "p t k f h m n N 4 w",
+		monophthongs: "i } e o a",
+		diphthongs: "ae ai ao au oi oe ou",
+		source: "https://en.wikipedia.org/wiki/Maori_language"
+	},
+	{
 		name: "Navajo",
 		coords: [36, -109],
 		families: ["dene–yeniseian", "na-dene", "athabaskan"],
@@ -242,7 +354,7 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Navajo_language"
 	},
 	{
-		name: "Pirahã",
+		name: "Piraha",
 		coords: [-7, -62],
 		families: ["mura"],
 		areas: ["amazon", "brazil", "south america"],
@@ -266,10 +378,22 @@ var lang = [
 		coords: [50, 45],
 		families: ["indo-european"],
 		areas: ["europe"],
+		tags: ["dead", "proto"],
 		consonants: "m n p t k q q_w d g G\\ G\\_w b_h d_h g_h G\\_h g\\_w_h s r l j w ? X\\ G_w",
 		monophthongs: "e o e: o:",
 		diphthongs: "ei oi eu ou",
 		source: "https://en.wikipedia.org/wiki/Proto-Indo-European"
+	},
+	{
+		name: "Punic",
+		coords: [37, 10],
+		families: ["afro-asiatic", "semitic"],
+		areas: ["africa"],
+		tags: ["dead"],
+		consonants: "? b g d h w z X\\ t_?\\ j k l m n s ?\\ p s_q k_?\\ r S t",
+		monophthongs: "a i u a: i: u: e: o:",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Punic_language"
 	},
 	{
 		name: "Punjab",
@@ -280,6 +404,26 @@ var lang = [
 		monophthongs: "i i: i~: u u: u~: I U e e: e~: o o: o~: @ E E: E~: O O: O~: a a: a~:",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Punjabi_language"
+	},
+	{
+		name: "Rotokas",
+		coords: [-6, 155],
+		families: ["north bougainville"],
+		areas: ["oceania"],
+		consonants: "p t k b d g",
+		monophthongs: "i i: u u: e e: o o: a a:",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Rotokas_language"
+	},
+	{
+		name: "Rukai",
+		coords: [23, 121],
+		families: ["austronesian"],
+		areas: ["asia"],
+		consonants: "m n N p t d` k b d g ts v T s D r w l l` j",
+		monophthongs: "i e o a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Rukai_language"
 	},
 	{
 		name: "Russian",
@@ -300,5 +444,46 @@ var lang = [
 		monophthongs: "a e i o u",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Spanish_language"
-	}
+	},
+	{
+		name: "Sumerian",
+		coords: [31, 46],
+		families: [],
+		areas: ["asia"],
+		tags: ["dead"],
+		consonants: "m n N p t k ? p_h t_h k_h s S x h ts ts_h 4 l j",
+		monophthongs: "a e i u",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Sumerian_language"
+	},
+	{
+		name: "Tagalog",
+		coords: [15, 121],
+		families: ["austronesian", "malayo-polynesian", "philippine"],
+		areas: ["oceania"],
+		consonants: "m n J N p b t d k g ? ts tS dZ s S x h l j w 4",
+		monophthongs: "i u e o a",
+		diphthongs: "ai ui au iu",
+		source: "https://en.wikipedia.org/wiki/Tagalog_language"
+	},
+	{
+		name: "Tok Pisin",
+		coords: [-9, 147],
+		families: ["creole"],
+		areas: ["oceania"],
+		consonants: "p b t d k g v s h m n N l w j r",
+		monophthongs: "i u e o a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Tok_Pisin"
+	},
+	{
+		name: "Turkish",
+		coords: [41, 29],
+		families: ["turkic", "oghuz"],
+		areas: ["asia", "europe"],
+		consonants: "m n p b t d k g tS dZ f v s z S Z h l j 4",
+		monophthongs: "i y M u e 9 o a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Turkish_language"
+	},
 ];
