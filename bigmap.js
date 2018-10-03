@@ -97,6 +97,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Arabic"
 	},
 	{
+		name: "Bengali",
+		coords: [24, 90],
+		families: ["indo-european", "indo-iranian", "indo-aryan"],
+		areas: ["asia", "india"],
+		consonants: "m n N p t t` tS k p_h t_h t`_h tS_h k_h b d d` dZ g b_h d_h d`_h dZ_h g_h s S h w l j r r`",
+		monophthongs: "i u e o E O a i~ u~ e~ o~ {~ O~ a~",
+		diphthongs: "ae ai ao au {e {o ei eu ii iu oe oi oo ou ui",
+		source: "https://en.wikipedia.org/wiki/Bengali_language"
+	},
+	{
 		name: "English",
 		coords: [51, 0],
 		families: ["indo-european", "germanic"],
@@ -144,7 +154,7 @@ var lang = [
 		consonants: "m n J p t k k_w b d g g_w f s S v z Z j w l L R 4",
 		monophthongs: "i i~ u u~ M e e~ 6 6~ E O a",
 		diphthongs: "", // too scary
-		source: "https://en.wikipedia.org/wiki/Pirahã_language"
+		source: "https://en.wikipedia.org/wiki/Portuguese_language"
 	},
 	{
 		name: "Spanish",
