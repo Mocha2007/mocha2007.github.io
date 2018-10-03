@@ -3,13 +3,14 @@ var point1 = 'img/dots/green.png';
 var pointsize = 8;
 
 function coord2px(coords){
+	"use strict";
 	var x = coords[1] * 35/18 + 350 - pointsize/2;
 	var y = coords[0] * -35/18 + 175 - pointsize/2;
 	return [y,x];
 }
 
 function bigmap(){
-	// "use strict";
+	"use strict";
 	var conditional, coords, newpoint, newrow, wants;
 	document.getElementById("mapinfo").innerHTML = '<tr><th>Language</th><th>Feature</th></tr>';
 	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" width="700">';
@@ -46,10 +47,10 @@ function bigmap(){
 		newrow.innerHTML = "<td>"+x.name+"</td><td class='"+conditional+"'>"+conditional+"</td>";
 		document.getElementById("mapinfo").appendChild(newrow);
 	});
-	console.log("Success!");
+	// console.log("Success!");
 }
 
-lang = [
+var lang = [
 	{
 		name: "English",
 		coords: [51, 0],
@@ -79,5 +80,5 @@ lang = [
 		monophthongs: "i o a",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Pirahã_language"
-	},
+	}
 ];
