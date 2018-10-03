@@ -231,6 +231,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Etruscan_language"
 	},
 	{
+		name: "Faroese",
+		coords: [62, -7],
+		families: ["indo-european", "germanic"],
+		areas: ["europe"],
+		consonants: "m m_0 n n_0 J J_0 N N_0 p t tS k p_h t_h tS_h k_h f s s` S h K v r\\ j w l",
+		monophthongs: "I i: Y y: U u: E e: 9 2: O o: a a:",
+		diphthongs: "Ui Ei ai Oi Ea Oa }u Ou",
+		source: "https://en.wikipedia.org/wiki/Faroese_language"
+	},
+	{
 		name: "Finnish",
 		coords: [60, 25],
 		families: ["uralic", "finnic"],
@@ -319,6 +329,16 @@ var lang = [
 		monophthongs: "i: i y: y u: u 2: 2 o: o e: E a: Q",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Hungarian_language"
+	},
+	{
+		name: "Iceland",
+		coords: [64, -22],
+		families: ["indo-european", "germanic"],
+		areas: ["europe"],
+		consonants: "m n p_h p t_h t k_h k s f v T j h l r",
+		monophthongs: "i u I Y E 9 O a",
+		diphthongs: "ei 2i ou ai au",
+		source: "https://en.wikipedia.org/wiki/Icelandic_language"
 	},
 	{
 		name: "Indonesian",
