@@ -97,6 +97,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Arabic"
 	},
 	{
+		name: "Basque",
+		coords: [43, -2],
+		families: ["vasconic"],
+		areas: ["europe"],
+		consonants: "m n J p t c k b d J\\ g ts_m ts_a tS f s_m s_a S h j l L r 4",
+		monophthongs: "a e i o u",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Basque_language"
+	},
+	{
 		name: "Bengali",
 		coords: [24, 90],
 		families: ["indo-european", "indo-iranian", "indo-aryan"],
