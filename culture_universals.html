@@ -8,6 +8,7 @@
 <link href=blend.css type="text/css" rel="alternate stylesheet" title="Blend">
 <link href=print.css type="text/css" rel="stylesheet" media="print">
 <script src="toc.js"></script>
+<script src="bigmap.js"></script>
 <title>List of Cultural Universals</title>
 <style>
 .s{color:#c00}
@@ -27,6 +28,28 @@ th ul {
 }
 .vowel td {
 	border: none;
+}
+#bigmap {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+#mapimg {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+input {
+	font-family: monospace;
+}
+.true, .false {
+	font-weight: bold;
+}
+.true {
+	color: green;
+}
+.false {
+	color: red;
 }
 </style>
 <div id="nav"></div>
@@ -939,6 +962,23 @@ th ul {
 <ul>
 	<li><span class="s">&#x26AB;</span> <a href="https://en.wikipedia.org/wiki/Personal_name">Personal Names</a></li>
 </ul>
+
+<h2 id="Map">The Big Map</h2>
+<p>
+	<a href="javascript:bigmap();">Reload Map</a>
+</p>
+
+<div id="bigmap">
+	<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" width="700">
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<form>
+	<input id="b_all" type="radio" name="b"> All<br>
+	<input id="b_contain" type="radio" name="b"> Containing <input id="b_contain_text" type="text" size="4"><br>
+	<input id="b_fam" type="radio" name="b"> In Family <input id="b_fam_text" type="text"><br>
+	<input id="b_area" type="radio" name="b"> In Area <input id="b_area_text" type="text"><br>
+</form>
+<table id="mapinfo"></table>
 
 <div id="bottom"></div>
 </html>
