@@ -52,7 +52,7 @@ function bigmap(){
 
 			soundset = soundset.split(' ');
 
-			console.log(soundset.length, wants,soundset. length > wants); // fixme debug
+			soundset = soundset[0].length ? soundset : []; // remove lists that are [""]
 
 			switch (document.getElementById("b_quantity_select").value){
 				case "more":
@@ -145,6 +145,16 @@ var lang = [
 		monophthongs: "i: I U u: e: @ o: E: O: A:",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Hindi"
+	},
+	{
+		name: "Navajo",
+		coords: [36, -109],
+		families: ["dene–yeniseian", "na-dene", "athabaskan"],
+		areas: ["north america"],
+		consonants: "p t t_l ts tS k ? t_h tK_h ts_h tS_h k_h t_> tK_> ts_> tS_> k_> K s S x l z Z G m n j",
+		monophthongs: "i i~ e e~ o o~ A A~",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Navajo_language"
 	},
 	{
 		name: "Pirahã",
