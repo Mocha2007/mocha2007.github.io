@@ -117,6 +117,26 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Cherokee_language"
 	},
 	{
+		name: "Danish",
+		coords: [56, 13],
+		families: ["indo-european", "germanic"],
+		areas: ["europe"],
+		consonants: "m n N p b t d k g f s h v l j R",
+		monophthongs: "i i: y y: u u: e e: E E: 2 2: o o: 9 9: @ O O: { {: 9_o 9_o: Q Q: a & &: 6 V A A:",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Danish_language"
+	},
+	{
+		name: "Dutch",
+		coords: [52, 5],
+		families: ["indo-european", "germanic"],
+		areas: ["europe"],
+		consonants: "m n N p b t d k g f v s z S Z x G h\\ r P l j",
+		monophthongs: "I Y E @ O A i: y: u: e: 2: o: a:",
+		diphthongs: "Ei 9y Au iu yu ui e:u o:i a:i",
+		source: "https://en.wikipedia.org/wiki/Dutch_language"
+	},
+	{
 		name: "English",
 		coords: [51, 0],
 		families: ["indo-european", "germanic"],
@@ -135,6 +155,16 @@ var lang = [
 		monophthongs: "i y u e 2 @ o E E: 9 O a A E~ 9~ O~ A~",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/French_language"
+	},
+	{
+		name: "German",
+		coords: [53, 13],
+		families: ["indo-european", "germanic"],
+		areas: ["europe"],
+		consonants: "m n N p t k b d g pf ts tS s S z f C x h v j l r",
+		monophthongs: "I i: Y y: U u: e: 2: o: E 9 O a a:",
+		diphthongs: "OY aI aU",
+		source: "https://en.wikipedia.org/wiki/German_language"
 	},
 	{
 		name: "Hindi",
