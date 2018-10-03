@@ -226,7 +226,7 @@ var lang = [
 		name: "French",
 		coords: [49, 2],
 		families: ["indo-european", "italic", "romance"],
-		areas: ["europe"],
+		areas: ["europe", "north america", "south america", "africa"],
 		consonants: "m n J p t k b d g f s S v z Z R l j H w",
 		monophthongs: "i y u e 2 @ o E E: 9 O a A E~ 9~ O~ A~",
 		diphthongs: "",
@@ -344,6 +344,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Maori_language"
 	},
 	{
+		name: "Nahuatl",
+		coords: [19, -99],
+		families: ["uto-aztecan", "nahuan"],
+		areas: ["north america", "mesoamerica"],
+		consonants: "m n p t k k_w ? ts tK tS s l S j w",
+		monophthongs: "i: i o: o e: e a: a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Nahuatl"
+	},
+	{
 		name: "Navajo",
 		coords: [36, -109],
 		families: ["dene–yeniseian", "na-dene", "athabaskan"],
@@ -439,7 +449,7 @@ var lang = [
 		name: "Spanish",
 		coords: [40, -4],
 		families: ["indo-european", "italic", "romance"],
-		areas: ["europe"],
+		areas: ["europe", "north america", "south america"],
 		consonants: "m n J p b t d tS j\\ k g f T s x l L 4 r w j",
 		monophthongs: "a e i o u",
 		diphthongs: "",
@@ -485,5 +495,15 @@ var lang = [
 		monophthongs: "i y M u e 9 o a",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Turkish_language"
+	},
+	{
+		name: "Yucatec Maya",
+		coords: [20, -89],
+		families: ["mayan"],
+		areas: ["north america", "mesoamerica"],
+		consonants: "m n b_< p_h t_h k_h ? p_> t_> k_> ts_h tS_h ts_> tS_> s S x h w l j 4",
+		monophthongs: "i u e o a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Yucatec_Maya_language"
 	},
 ];
