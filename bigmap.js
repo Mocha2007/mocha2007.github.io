@@ -12,7 +12,7 @@ function coord2px(coords){
 function bigmap(){
 	"use strict";
 	var conditional, coords, hastag, newpoint, newrow, soundset, wants;
-	document.getElementById("mapinfo").innerHTML = '<tr><th>Language</th><th>Feature</th></tr>';
+	document.getElementById("mapinfo").innerHTML = '<tr><th>Language</th><th>Feature</th><th>C</th><th>V</th></tr>';
 	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" width="700">';
 	lang.forEach(function(x){
 		// test for conditions
@@ -92,7 +92,7 @@ function bigmap(){
 		document.getElementById("bigmap").appendChild(newpoint);
 		// mapinfo
 		newrow = document.createElement("tr");
-		newrow.innerHTML = "<td>"+x.name+"</td><td class='"+conditional+"'>"+conditional+"</td>";
+		newrow.innerHTML = "<td>"+x.name+"</td><td class='"+conditional+"'>"+conditional+"</td><td>"+(conditional ? x.consonants : "-")+"</td><td>"+(conditional ? x.monophthongs : "-")+"</td>";
 		document.getElementById("mapinfo").appendChild(newrow);
 	});
 	// console.log("Success!");
