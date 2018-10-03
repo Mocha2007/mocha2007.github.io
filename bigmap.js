@@ -273,6 +273,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Greenlandic_language"
 	},
 	{
+		name: "Guarani",
+		coords: [-25, -58],
+		families: ["tupi-guarani"],
+		areas: ["south america"],
+		consonants: "p t k k_w ? b d dZ g g_w s s\\ h P M\\ w 4",
+		monophthongs: "i i~ 1 1~ u u~ e e~ o o~ a a~",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Guarani_language"
+	},
+	{
 		name: "Hawaiian",
 		coords: [21, -158],
 		families: ["austronesian", "malayo-polynesian", "oceanic", "polynesian"],
@@ -303,6 +313,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Hungarian_language"
 	},
 	{
+		name: "Indonesian",
+		coords: [-6, 106],
+		families: ["austronesian", "malayo-polynesian", "malayic"],
+		areas: ["oceania"],
+		consonants: "m n J N p t tS k b d dZ g s h w l j r",
+		monophthongs: "i u e @ o a",
+		diphthongs: "ai au oi",
+		source: "https://en.wikipedia.org/wiki/Indonesian_language"
+	},
+	{
 		name: "Japanese",
 		coords: [36, 140],
 		families: ["japonic"],
@@ -321,6 +341,16 @@ var lang = [
 		monophthongs: "i 1 u e @ o a",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Ket_language"
+	},
+	{
+		name: "Khmer",
+		coords: [11, 105],
+		families: ["austroasiatic"],
+		areas: ["asia"],
+		consonants: "p t c k ? b_< d_< m n J N r l s h P j",
+		monophthongs: "i i: 1 1: u u: e e: @ @: o o: E: O: a a: A A:",
+		diphthongs: "i@ ei ae 1@ @1 a@ u@ ou ao O@ e@ u@ o@",
+		source: "https://en.wikipedia.org/wiki/Khmer_language"
 	},
 	{
 		name: "Korean",
@@ -545,6 +575,16 @@ var lang = [
 		monophthongs: "i y M u e 9 o a",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Turkish_language"
+	},
+	{
+		name: "Vietnamese",
+		coords: [21, 106],
+		families: ["austroasiatic", "vietic"],
+		areas: ["asia"],
+		consonants: "m n J N p t t` c k t_h b_< d_< f s s` x h v z z` j G l j w",
+		monophthongs: "i 1 u e @ @: o E a a: O",
+		diphthongs: "i@ 1@ u@ i@u 1@u u@i iu 1u 1i ui eu @u @:i @i oi Eu a:u au a:i ai Oi",
+		source: "https://en.wikipedia.org/wiki/Vietnamese_language"
 	},
 	{
 		name: "Yucatec Maya",
