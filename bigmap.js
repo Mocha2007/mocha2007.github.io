@@ -107,6 +107,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Bengali_language"
 	},
 	{
+		name: "Cherokee",
+		coords: [36, -82],
+		families: ["iroquoian"],
+		areas: ["north america"],
+		consonants: "t k ? ts s h m n l j M\\",
+		monophthongs: "i i: u u: e e: @~ @~: o o: a a:",
+		diphthongs: "ai",
+		source: "https://en.wikipedia.org/wiki/Cherokee_language"
+	},
+	{
 		name: "English",
 		coords: [51, 0],
 		families: ["indo-european", "germanic"],
@@ -155,6 +165,16 @@ var lang = [
 		monophthongs: "i i~ u u~ M e e~ 6 6~ E O a",
 		diphthongs: "", // too scary
 		source: "https://en.wikipedia.org/wiki/Portuguese_language"
+	},
+	{
+		name: "Russian",
+		coords: [56, 38],
+		families: ["indo-european", "balto-slavic", "slavic"],
+		areas: ["asia", "europe"],
+		consonants: "m m' n n' p p' t t' k k' b b' d d' g ts t_s\\ f f' s s' s` s\\: x v v' z z' z` s\\: l l' j r r'",
+		monophthongs: "i u e o a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Russian_language"
 	},
 	{
 		name: "Spanish",
