@@ -11,7 +11,7 @@ function coord2px(coords){
 
 function bigmap(){
 	"use strict";
-	var conditional, coords, newpoint, newrow, soundset, wants;
+	var conditional, coords, hastag, newpoint, newrow, soundset, wants;
 	document.getElementById("mapinfo").innerHTML = '<tr><th>Language</th><th>Feature</th></tr>';
 	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" width="700">';
 	lang.forEach(function(x){
@@ -63,6 +63,19 @@ function bigmap(){
 					break;
 				case "exact":
 					conditional = conditional && (soundset.length === wants);
+					break;
+			}
+		}
+		if (document.getElementById("b_tag").checked){
+			wants = document.getElementById("b_tag_text").value.toLowerCase();
+			hastag = (x.tags !== undefined) && x.tags.includes(wants);
+
+			switch (document.getElementById("b_tag_select").value){
+				case "w":
+					conditional = conditional && hastag;
+					break;
+				case "wo":
+					conditional = conditional && !hastag;
 					break;
 			}
 		}
@@ -150,11 +163,22 @@ var lang = [
 		name: "English",
 		coords: [51, 0],
 		families: ["indo-european", "germanic"],
-		areas: ["europe"],
+		areas: ["europe", "britain", "north america", "australia", "africa", "asia", "india"],
 		consonants: "m n N p b t d tS dZ k g f v T D s z S Z h l r\\ j w",
 		monophthongs: "i I e E { A o U u @",
 		diphthongs: "{u oe Ai",
 		source: "#bigmap"
+	},
+	{
+		name: "Etruscan",
+		coords: [44, 11],
+		families: ["tyrsenian"],
+		areas: ["europe"],
+		tags: ["dead"],
+		consonants: "m n p p_h t t_h k k_h ts p\\ s S h l j w r",
+		monophthongs: "i e a u",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Etruscan_language"
 	},
 	{
 		name: "French",
@@ -201,6 +225,7 @@ var lang = [
 		coords: [42, 12],
 		families: ["indo-european", "italic"],
 		areas: ["europe"],
+		tags: ["dead"],
 		consonants: "b d g g_w p t k k_w z f s h m n r l j w",
 		monophthongs: "i: I U u: e: E O o: a a:",
 		diphthongs: "ui ei eu oe ou ae au",
