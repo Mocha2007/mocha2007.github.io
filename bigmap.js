@@ -16,19 +16,21 @@ function bigmap(){
 	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" width="700">';
 	lang.forEach(function(x){
 		// test for conditions
+		conditional = true;
+
 		if (document.getElementById("b_contain").checked){
 			wants = document.getElementById("b_contain_text").value;
-			conditional = (x.consonants + x.monophthongs + x.diphthongs).split(" ").includes(wants);
+			conditional = conditional && (x.consonants + x.monophthongs + x.diphthongs).split(" ").includes(wants);
 		}
-		else if (document.getElementById("b_fam").checked){
+		if (document.getElementById("b_fam").checked){
 			wants = document.getElementById("b_fam_text").value.toLowerCase();
-			conditional = x.families.includes(wants);
+			conditional = conditional && x.families.includes(wants);
 		}
-		else if (document.getElementById("b_area").checked){
+		if (document.getElementById("b_area").checked){
 			wants = document.getElementById("b_area_text").value.toLowerCase();
-			conditional = x.areas.includes(wants);
+			conditional = conditional && x.areas.includes(wants);
 		}
-		else if (document.getElementById("b_quantity").checked){
+		if (document.getElementById("b_quantity").checked){
 			wants = Number(document.getElementById("b_quantity_text").value);
 
 			switch (document.getElementById("b_quantity_select2").value){
@@ -54,18 +56,15 @@ function bigmap(){
 
 			switch (document.getElementById("b_quantity_select").value){
 				case "more":
-					conditional = soundset.length > wants;
+					conditional = conditional && (soundset.length > wants);
 					break;
 				case "fewer":
-					conditional = soundset.length < wants;
+					conditional = conditional && (soundset.length < wants);
 					break;
 				case "exact":
-					conditional = soundset.length === wants;
+					conditional = conditional && (soundset.length === wants);
 					break;
 			}
-		}
-		else { // document.getElementById("b_all").value
-			conditional = true;
 		}
 		// bigmap
 		coords = coord2px(x.coords);
