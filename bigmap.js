@@ -134,7 +134,7 @@ function bigmap(){
 		newlink.href = '#row_'+x.name.replace(" ","_");
 		newpoint = document.createElement("img");
 		newpoint.classList.value = "dot";
-		newpoint.id = "dot_"+x.name.replace(" ","_");
+		// newpoint.id = "dot_"+x.name.replace(" ","_");
 		newpoint.alt = x.name;
 		familylist = x.families.length ? x.families.map(proper).join(', ') : 'Isolate';
 		newpoint.title = x.name + ' (' + familylist + ')';
@@ -148,7 +148,7 @@ function bigmap(){
 		// mapinfo
 		newrow = document.createElement("tr");
 		newrow.id = "row_"+x.name.replace(" ","_");
-		newrow.innerHTML = "<td><a href='#dot_"+x.name.replace(" ","_")+"'>"+x.name+"</a><sup><a href='"+x.source+"'>i</a></sup></td><td class='"+conditional+"'>"+conditional+"</td><td>"+(conditional ? x.consonants : "-")+"</td><td>"+(conditional ? x.monophthongs+' '+x.diphthongs : "-")+"</td>";
+		newrow.innerHTML = "<td><a href='#top'>"+x.name+"</a><sup><a href='"+x.source+"'>i</a></sup></td><td class='"+conditional+"'>"+conditional+"</td><td>"+(conditional ? x.consonants : "-")+"</td><td>"+(conditional ? x.monophthongs+' '+x.diphthongs : "-")+"</td>";
 		document.getElementById("mapinfo").appendChild(newrow);
 		//
 		yes += conditional;
