@@ -169,6 +169,19 @@ function bigmap(){
 
 var lang = [
 	{
+		name: "Ainu",
+		coords: [43, 142],
+		families: [],
+		areas: ["asia"],
+		consonants: "p t k ts s h m n j w 4",
+		monophthongs: "a e i o u",
+		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
+		source: "https://en.wikipedia.org/wiki/Ainu_language"
+	},
+	{
 		name: "Akkadian",
 		coords: [34, 44],
 		families: ["afro-asiatic", "semitic"],
@@ -209,7 +222,7 @@ var lang = [
 		name: "Ancient Greek",
 		coords: [40, 22],
 		families: ["indo-european", "hellenic"],
-		areas: ["europe"],
+		areas: ["europe", "balkans"],
 		tags: ["dead"],
 		consonants: "p_h t_h k_h p t k b d g m n s h r l_0 W l j w",
 		monophthongs: "i y u e o a i: y: u: e: E: O: a:",
@@ -472,7 +485,7 @@ var lang = [
 		name: "Greek",
 		coords: [38, 24],
 		families: ["indo-european", "hellenic"],
-		areas: ["europe"],
+		areas: ["europe", "balkans"],
 		consonants: "m n p t k b d g f T s x v D z G r l",
 		monophthongs: "i u e o a",
 		diphthongs: "",
@@ -747,6 +760,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Miskito_language"
 	},
 	{
+		name: "Naasioi",
+		coords: [-6, 156],
+		families: ["south bougainville", "nasioi"],
+		areas: ["oceania"],
+		consonants: "p t k ? b d m n",
+		monophthongs: "i i: u u: e e: o o: a a:",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Naasioi_Language"
+	},
+	{
 		name: "Nahuatl",
 		coords: [19, -99],
 		families: ["uto-aztecan", "nahuan"],
@@ -754,6 +777,9 @@ var lang = [
 		consonants: "m n p t k k_w ? ts tK tS s l S j w",
 		monophthongs: "i: i o: o e: e a: a",
 		diphthongs: "",
+		features: {
+			sov: "free"
+		},
 		source: "https://en.wikipedia.org/wiki/Nahuatl"
 	},
 	{
@@ -768,6 +794,19 @@ var lang = [
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Navajo_language"
+	},
+	{
+		name: "Nivkh",
+		coords: [51, 143],
+		families: [],
+		areas: ["asia"],
+		consonants: "m n J N p t c k q p_h t_h c_h k_h q_h f s x X h v z G R l j w r_0 r",
+		monophthongs: "I u 7 o {",
+		diphthongs: "Ie",
+		features: {
+			sov: "sov"
+		},
+		source: "https://en.wikipedia.org/wiki/Nivkh_language"
 	},
 	{
 		name: "Nogai",
@@ -879,7 +918,7 @@ var lang = [
 		name: "Romanian",
 		coords: [44, 26],
 		families: ["indo-european", "italic", "romance"],
-		areas: ["europe"],
+		areas: ["europe", "balkans"],
 		consonants: "m n p b t d k g ts tS dZ f v s z S Z h r l",
 		monophthongs: "i 1 u e @ o a",
 		diphthongs: "ea oa",
@@ -1055,6 +1094,20 @@ var lang = [
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Vietnamese_language"
+	},
+	{
+		name: "Wichita",
+		coords: [35, -98],
+		families: ["caddoan"],
+		areas: ["north america"],
+		tags: ["dead"],
+		consonants: "t k k_w ? ts s 4 j w h",
+		monophthongs: "i E a",
+		diphthongs: "",
+		features: {
+			sov: "free"
+		},
+		source: "https://en.wikipedia.org/wiki/Wichita_language"
 	},
 	{
 		name: "Yahgan",
