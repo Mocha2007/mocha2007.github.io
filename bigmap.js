@@ -154,6 +154,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Akkadian_language"
 	},
 	{
+		name: "Altai",
+		coords: [51, 87],
+		families: ["turkic", "siberian turkic"],
+		areas: ["asia"],
+		consonants: "m n N p b t d c J\\ k g s z C j\\ x G l j 4",
+		monophthongs: "i i: e e: y y: 2 2: M M: a a: u u: o o:",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Altai_language"
+	},
+	{
 		name: "Ancient Greek",
 		coords: [38, 24],
 		families: ["indo-european", "hellenic"],
@@ -195,6 +205,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Azerbaijani_language"
 	},
 	{
+		name: "Bashkir",
+		coords: [54, 56],
+		families: ["turkic", "kipchak"],
+		areas: ["asia"],
+		consonants: "m n N p t c q b d J\\ T X h D R s S z Z r w l j",
+		monophthongs: "i y u e 2 7 o { A",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Bashkir_language"
+	},
+	{
 		name: "Basque",
 		coords: [43, -2],
 		families: ["vasconic"],
@@ -233,6 +253,26 @@ var lang = [
 		monophthongs: "i i: u u: e e: @~ @~: o o: a a:",
 		diphthongs: "ai",
 		source: "https://en.wikipedia.org/wiki/Cherokee_language"
+	},
+	{
+		name: "Chuvash",
+		coords: [56, 47],
+		families: ["turkic", "oghur"],
+		areas: ["europe"],
+		consonants: "p t k ts\\ s s` s\\ X m n P l j r",
+		monophthongs: "i y M u e 2 a o",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Chuvash_language"
+	},
+	{
+		name: "Crimean Tatar",
+		coords: [45, 34],
+		families: ["turkic", "kipchak"],
+		areas: ["europe"],
+		consonants: "m n N p t tS k q b d dZ g f s S x v z G r l j",
+		monophthongs: "i y M u e 2 A o",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Crimean_Tatar_language"
 	},
 	{
 		name: "Danish",
