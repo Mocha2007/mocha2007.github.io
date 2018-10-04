@@ -150,6 +150,26 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Arabic"
 	},
 	{
+		name: "Armenian",
+		coords: [40, 45],
+		families: ["indo-european"],
+		areas: ["europe", "asia", "caucasus"],
+		consonants: "m n p t k b d g p_h t_h k_h ts tS dz dZ ts_h tS_h f s S x h v z Z G l j r 4",
+		monophthongs: "i u E @ O A",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Armenian_language"
+	},
+	{
+		name: "Azerbaijani",
+		coords: [40, 50],
+		families: ["turkic", "oghuz"],
+		areas: ["asia", "caucasus"],
+		consonants: "m n p b t d tS dZ c J\\ g f v s z S Z x G h l j 4",
+		monophthongs: "i y M u e 9 o { A",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Azerbaijani_language"
+	},
+	{
 		name: "Basque",
 		coords: [43, -2],
 		families: ["vasconic"],
@@ -259,6 +279,16 @@ var lang = [
 		monophthongs: "i y u e 2 @ o E E: 9 O a A E~ 9~ O~ A~",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/French_language"
+	},
+	{
+		name: "Georgian",
+		coords: [42, 45],
+		families: ["kartvelian"],
+		areas: ["europe", "asia", "caucasus"],
+		consonants: "m n p_h t_h k_h b d g p_> t_> k_> q_> ts_h tS_h dz dZ ts_> tS_> s S x h v z Z G r l",
+		monophthongs: "i u e o a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Georgian_language"
 	},
 	{
 		name: "German",
