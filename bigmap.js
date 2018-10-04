@@ -174,6 +174,9 @@ var lang = [
 		consonants: "m n p t k ? b d g t_?\\ k_?\\ s x G ts dz ts_?\\ l j w",
 		monophthongs: "i u e a",
 		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Akkadian_language"
 	},
 	{
@@ -208,6 +211,9 @@ var lang = [
 		consonants: "p_h t_h k_h p t k b d g m n s h r l_0 W l j w",
 		monophthongs: "i y u e o a i: y: u: e: E: O: a:",
 		diphthongs: "yi ei eu oi ou ai au E:i O:i E:u O:u a:i a:u",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Ancient_Greek"
 	},
 	{
@@ -218,6 +224,9 @@ var lang = [
 		consonants: "m n t t_?\\ k q ? b d d_?\\ f T s s_?\\ S x X\\ D z D_?\\ G ?\\ h dZ r l j w",
 		monophthongs: "i u a i: u: a:",
 		diphthongs: "aj aw",
+		features: {
+			sov: "vso"
+		},
 		source: "https://en.wikipedia.org/wiki/Arabic"
 	},
 	{
@@ -404,6 +413,9 @@ var lang = [
 		consonants: "m n J p t k b d g f s S v z Z R l j H w",
 		monophthongs: "i y u e 2 @ o E E: 9 O a A E~ 9~ O~ A~",
 		diphthongs: "",
+		features: {
+			sov: "svo"
+		},
 		source: "https://en.wikipedia.org/wiki/French_language"
 	},
 	{
@@ -474,6 +486,9 @@ var lang = [
 		consonants: "m n p t t` tS k p_h t_h t`_h tS_h k_h b d d` dZ g b_h d_h d`_h dZ_h g_h f s S v z h\\ 4 P l j",
 		monophthongs: "i: I U u: e: @ o: E: O: A:",
 		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Hindi"
 	},
 	{
@@ -524,6 +539,9 @@ var lang = [
 		consonants: "m n p b t d k g s z h r j w",
 		monophthongs: "i u e o a",
 		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Japanese_language"
 	},
 	{
@@ -604,6 +622,9 @@ var lang = [
 		consonants: "m n N b d dz\\ g p t ts\\ k p_h t_h ts\\_h k_h s_h h s w l j",
 		monophthongs: "i M u e 2 E o V a i: M: u: e: 2: E: V: o: a:",
 		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Korean_language"
 	},
 	{
@@ -635,6 +656,9 @@ var lang = [
 		consonants: "b d g g_w p t k k_w z f s h m n r l j w",
 		monophthongs: "i: I U u: e: E O o: a a:",
 		diphthongs: "ui ei eu oe ou ae au",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Latin"
 	},
 	{
@@ -645,6 +669,9 @@ var lang = [
 		consonants: "p t k p_h t_h k_h m n N ts ts` ts\\ ts_h ts`_h ts\\_h f s s` s\\ x w l r\\` j",
 		monophthongs: "i y u 7 @ a",
 		diphthongs: "ye u@ uo ie ua ia iu ei ou au ai",
+		features: {
+			sov: "svo"
+		},
 		source: "https://en.wikipedia.org/wiki/Mandarin_Chinese"
 	},
 	{
@@ -751,6 +778,9 @@ var lang = [
 		consonants: "m n p t k q q_w d g G\\ G\\_w b_h d_h g_h G\\_h g\\_w_h s r l j w ? X\\ G_w",
 		monophthongs: "e o e: o:",
 		diphthongs: "ei oi eu ou",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Proto-Indo-European"
 	},
 	{
