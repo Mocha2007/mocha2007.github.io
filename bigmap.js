@@ -492,6 +492,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Maori_language"
 	},
 	{
+		name: "Mapuche",
+		coords: [-38, -73],
+		families: ["araucanian"],
+		areas: ["south america"],
+		consonants: "m n_d n J N p t_d t tS ts` k f T s S r\\` j m\\ w l_d l L",
+		monophthongs: "I U e @ o 6",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Mapuche_language"
+	},
+	{
 		name: "Nahuatl",
 		coords: [19, -99],
 		families: ["uto-aztecan", "nahuan"],
@@ -693,6 +703,16 @@ var lang = [
 		monophthongs: "i 1 u e @ @: o E a a: O",
 		diphthongs: "i@ 1@ u@ i@u 1@u u@i iu 1u 1i ui eu @u @:i @i oi Eu a:u au a:i ai Oi",
 		source: "https://en.wikipedia.org/wiki/Vietnamese_language"
+	},
+	{
+		name: "Yahgan",
+		coords: [-54, -70],
+		families: [],
+		areas: ["south america"],
+		consonants: "m n p t tS k ? f s S x h 4 l r\\` j w",
+		monophthongs: "i u e @ o { a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Yahgan_language"
 	},
 	{
 		name: "Yucatec Maya",
