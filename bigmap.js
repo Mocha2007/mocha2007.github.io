@@ -177,6 +177,19 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Akkadian_language"
 	},
 	{
+		name: "Aleut",
+		coords: [57, -159],
+		families: ["eskimo-aleut"],
+		areas: ["north america"],
+		consonants: "t tS k q D s x G X R m_0 m n_0 n N_0 N K l W w C j h",
+		monophthongs: "i i: u u: a a:",
+		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
+		source: "https://en.wikipedia.org/wiki/Aleut_language"
+	},
+	{
 		name: "Altai",
 		coords: [51, 87],
 		families: ["turkic", "siberian"],
