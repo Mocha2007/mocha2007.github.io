@@ -904,6 +904,20 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Yahgan_language"
 	},
 	{
+		name: "Yakut",
+		coords: [66, 129],
+		families: ["turkic", "siberian"],
+		areas: ["asia"],
+		consonants: "m n J N p t c k b d J\\ g s x h G l j j~ 4",
+		monophthongs: "i y M u i: y: M: u: e 2 a o e: 2: a: o:",
+		diphthongs: "ie y2 Ma uo",
+		features: {
+			an: "na",
+			sov: "sov"
+		},
+		source: "https://en.wikipedia.org/wiki/Yakut_language"
+	},
+	{
 		name: "Yucatec Maya",
 		coords: [20, -89],
 		families: ["mayan"],
