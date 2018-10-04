@@ -196,7 +196,7 @@ var lang = [
 		name: "Armenian",
 		coords: [40, 45],
 		families: ["indo-european"],
-		areas: ["europe", "asia", "caucasus"],
+		areas: ["asia", "caucasus"],
 		consonants: "m n p t k b d g p_h t_h k_h ts tS dz dZ ts_h tS_h f s S x h v z Z G l j r 4",
 		monophthongs: "i u E @ O A",
 		diphthongs: "",
@@ -216,7 +216,7 @@ var lang = [
 		name: "Bashkir",
 		coords: [54, 56],
 		families: ["turkic", "kipchak"],
-		areas: ["asia"],
+		areas: ["europe"],
 		consonants: "m n N p t c q b d J\\ T X h D R s S z Z r w l j",
 		monophthongs: "i y u e 2 7 o { A",
 		diphthongs: "",
@@ -382,7 +382,7 @@ var lang = [
 		name: "Georgian",
 		coords: [42, 45],
 		families: ["kartvelian"],
-		areas: ["europe", "asia", "caucasus"],
+		areas: ["asia", "caucasus"],
 		consonants: "m n p_h t_h k_h b d g p_> t_> k_> q_> ts_h tS_h dz dZ ts_> tS_> s S x h v z Z G r l",
 		monophthongs: "i u e o a",
 		diphthongs: "",
@@ -856,6 +856,32 @@ var lang = [
 		monophthongs: "i y M u e 9 o a",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Turkish_language"
+	},
+	{
+		name: "Tuvan",
+		coords: [52, 95],
+		families: ["turkic", "siberian"],
+		areas: ["asia"],
+		consonants: "m n N p t g p_h t_h k tS s S x z Z 4 P l j",
+		monophthongs: "i e i: e: y 2 y: 2: M a M: a: u o u: o:",
+		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
+		source: "https://en.wikipedia.org/wiki/Tuvan_language"
+	},
+	{
+		name: "Udmurt",
+		coords: [57, 53],
+		families: ["uralic", "permic"],
+		areas: ["europe"],
+		consonants: "p t k b d g tS ts\\ dZ dz\\ s S s\\ v z Z z\\ m n J N l j L r",
+		monophthongs: "i 1 u e @ o a",
+		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
+		source: "https://en.wikipedia.org/wiki/Udmurt_language"
 	},
 	{
 		name: "Vietnamese",
