@@ -24,7 +24,7 @@ function bigmap(){
 
 		if (document.getElementById("b_contain").checked){
 			wants = document.getElementById("b_contain_text").value;
-			conditional = conditional && (x.consonants + x.monophthongs + x.diphthongs).split(" ").includes(wants);
+			conditional = conditional && (x.consonants + ' ' + x.monophthongs + ' ' + x.diphthongs).split(" ").includes(wants);
 			anyc = anyc || (x.consonants + x.monophthongs + x.diphthongs).split(" ").includes(wants);
 		}
 		if (document.getElementById("b_fam").checked){
@@ -235,7 +235,7 @@ var lang = [
 		families: ["indo-european", "germanic"],
 		areas: ["europe", "britain", "north america", "australia", "africa", "asia", "india"],
 		consonants: "m n N p b t d tS dZ k g f v T D s z S Z h l r\\ j w",
-		monophthongs: "i I e E { A o U u @",
+		monophthongs: "i I e E { A V o U u @",
 		diphthongs: "{u oe Ai",
 		source: "#bigmap"
 	},
@@ -544,6 +544,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Quechuan_languages"
 	},
 	{
+		name: "Romanian",
+		coords: [44, 26],
+		families: ["indo-european", "italic", "romance"],
+		areas: ["europe"],
+		consonants: "m n p b t d k g ts tS dZ f v s z S Z h r l",
+		monophthongs: "i 1 u e @ o a",
+		diphthongs: "ea oa",
+		source: "https://en.wikipedia.org/wiki/Romanian_language"
+	},
+	{
 		name: "Rotokas",
 		coords: [-6, 155],
 		families: ["north bougainville"],
@@ -582,6 +592,16 @@ var lang = [
 		monophthongs: "a e i o u",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Spanish_language"
+	},
+	{
+		name: "Sranan Tongo",
+		coords: [6, -55],
+		families: ["creole"],
+		areas: ["south america"],
+		consonants: "b d dZ f g h k l m n N J p 4 s S t tS w z",
+		monophthongs: "a e i o u E O",
+		diphthongs: "au ou ei ai oi",
+		source: "https://omniglot.com/writing/sranan.htm"
 	},
 	{
 		name: "Sumerian",
