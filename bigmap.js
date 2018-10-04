@@ -506,6 +506,9 @@ var lang = [
 		consonants: "m n p t ? h w l",
 		monophthongs: "i u i: u: E o e: o: 6 a:",
 		diphthongs: "iu ou oi eu ei au ai ao ae o:u e:i a:u a:i a:o a:e",
+		features: {
+			sov: "vso"
+		},
 		source: "https://en.wikipedia.org/wiki/Hawaiian_language"
 	},
 	{
@@ -552,6 +555,9 @@ var lang = [
 		consonants: "m n J N p t tS k b d dZ g s h w l j r",
 		monophthongs: "i u e @ o a",
 		diphthongs: "ai au oi",
+		features: {
+			sov: "svo"
+		},
 		source: "https://en.wikipedia.org/wiki/Indonesian_language"
 	},
 	{
@@ -625,6 +631,9 @@ var lang = [
 		consonants: "p t c k ? b_< d_< m n J N r l s h P j",
 		monophthongs: "i i: 1 1: u u: e e: @ @: o o: E: O: a a: A A:",
 		diphthongs: "i@ ei ae 1@ @1 a@ u@ ou ao O@ e@ u@ o@",
+		features: {
+			sov: "svo"
+		},
 		source: "https://en.wikipedia.org/wiki/Khmer_language"
 	},
 	{
@@ -755,6 +764,9 @@ var lang = [
 		consonants: "p t t_l ts tS k ? t_h tK_h ts_h tS_h k_h t_> tK_> ts_> tS_> k_> K s S x l z Z G m n j",
 		monophthongs: "i i~ e e~ o o~ A A~",
 		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Navajo_language"
 	},
 	{
@@ -790,6 +802,9 @@ var lang = [
 		consonants: "p t ? b g s h",
 		monophthongs: "i o a",
 		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Pirahã_language"
 	},
 	{
@@ -800,6 +815,9 @@ var lang = [
 		consonants: "m n J p t k k_w b d g g_w f s S v z Z j w l L R 4",
 		monophthongs: "i i~ u u~ M e e~ 6 6~ E O a",
 		diphthongs: "",
+		features: {
+			sov: "svo"
+		},
 		source: "https://en.wikipedia.org/wiki/Portuguese_language"
 	},
 	{
@@ -839,6 +857,9 @@ var lang = [
 		consonants: "m n n` J N p t t` tS k p_h t_h t`_h tS_h k_h b d d` dZ g f s S z 4 r` P l r\\` j h\\",
 		monophthongs: "i i: i~: u u: u~: I U e e: e~: o o: o~: @ E E: E~: O O: O~: a a: a~:",
 		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Punjabi_language"
 	},
 	{
@@ -849,6 +870,9 @@ var lang = [
 		consonants: "m n J p t tS k q p_h t_h tS_h k_h q_h p_> t_> tS_> k_> q_> s S h j w l L 4",
 		monophthongs: "i u a",
 		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Quechuan_languages"
 	},
 	{
@@ -859,6 +883,9 @@ var lang = [
 		consonants: "m n p b t d k g ts tS dZ f v s z S Z h r l",
 		monophthongs: "i 1 u e @ o a",
 		diphthongs: "ea oa",
+		features: {
+			sov: "svo"
+		},
 		source: "https://en.wikipedia.org/wiki/Romanian_language"
 	},
 	{
@@ -889,6 +916,9 @@ var lang = [
 		consonants: "m m' n n' p p' t t' k k' b b' d d' g ts t_s\\ f f' s s' s` s\\: x v v' z z' z` s\\: l l' j r r'",
 		monophthongs: "i u e o a",
 		diphthongs: "",
+		features: {
+			sov: "svo"
+		},
 		source: "https://en.wikipedia.org/wiki/Russian_language"
 	},
 	{
@@ -899,6 +929,9 @@ var lang = [
 		consonants: "m n J p b t d tS j\\ k g f T s x l L 4 r w j",
 		monophthongs: "a e i o u",
 		diphthongs: "",
+		features: {
+			sov: "svo"
+		},
 		source: "https://en.wikipedia.org/wiki/Spanish_language"
 	},
 	{
@@ -979,6 +1012,9 @@ var lang = [
 		consonants: "m n p b t d k g tS dZ f v s z S Z h l j 4",
 		monophthongs: "i y M u e 9 o a",
 		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Turkish_language"
 	},
 	{
@@ -1015,6 +1051,9 @@ var lang = [
 		consonants: "m n J N p t t` c k t_h b_< d_< f s s` x h v z z` j G l j w",
 		monophthongs: "i 1 u e @ @: o E a a: O",
 		diphthongs: "i@ 1@ u@ i@u 1@u u@i iu 1u 1i ui eu @u @:i @i oi Eu a:u au a:i ai Oi",
+		features: {
+			sov: "svo"
+		},
 		source: "https://en.wikipedia.org/wiki/Vietnamese_language"
 	},
 	{
