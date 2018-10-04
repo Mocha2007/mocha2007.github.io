@@ -23,7 +23,7 @@ function coord2px(coords){
 
 function bigmap(){
 	"use strict";
-	var anyc, conditional, coords, hastag, newpoint, newrow, soundset, wants;
+	var anyc, conditional, coords, hastag, newpoint, newrow, soundset, wants, wants2;
 	document.getElementById("mapinfo").innerHTML = '<tr><th>Language</th><th>Feature</th><th>C</th><th>V</th></tr>';
 	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" width="700">';
 	var yes = 0;
@@ -104,6 +104,14 @@ function bigmap(){
 					break;
 			}
 		}
+		if (document.getElementById("b_feature").checked){
+			wants = document.getElementById("b_feature_text").value.toLowerCase();
+			wants2 = document.getElementById("b_feature_text2").value.toLowerCase();
+			hastag = (x.features !== undefined) && (x.features[wants] !== undefined);
+
+			conditional = conditional && (hastag && x.features[wants] === wants2);
+			anyc = anyc || (x.features === undefined);
+		}
 		// check to see if c/v needs replacing
 		if (conditional){
 			if (commonc === true){
@@ -113,7 +121,7 @@ function bigmap(){
 			// intersect
 			commonc = intersect(commonc, x.consonants.split(" "))
 			commonv = intersect(commonv, (x.monophthongs + " " + x.diphthongs).split(" ").filter(Boolean))
-			console.log(x.name, commonc, commonv);
+			// console.log(x.name, commonc, commonv);
 		}
 		// bigmap
 		coords = coord2px(x.coords);
@@ -136,7 +144,7 @@ function bigmap(){
 	});
 	// sum
 	newrow = document.createElement("tr");
-	console.log(commonc, commonv);
+	// console.log(commonc, commonv);
 	newrow.innerHTML = "<th>All "+yn+"</th><th>"+Math.floor(10000*yes/yn)/100+"%</th><td>"+commonc.join(" ")+"</td><td>"+commonv.join(" ")+"</td>";
 	document.getElementById("mapinfo").appendChild(newrow);
 }
@@ -308,10 +316,13 @@ var lang = [
 		name: "English",
 		coords: [51, 0],
 		families: ["indo-european", "germanic"],
-		areas: ["europe", "britain", "north america", "australia", "africa", "asia", "india"],
+		areas: ["europe", "britain"],
 		consonants: "m n N p b t d tS dZ k g f v T D s z S Z h l r\\ j w",
 		monophthongs: "i I e E { A V o U u @",
 		diphthongs: "{u oe Ai",
+		features: {
+			sov: "svo"
+		},
 		source: "#bigmap"
 	},
 	{
@@ -359,7 +370,7 @@ var lang = [
 		name: "French",
 		coords: [49, 2],
 		families: ["indo-european", "italic", "romance"],
-		areas: ["europe", "north america", "south america", "africa"],
+		areas: ["europe"],
 		consonants: "m n J p t k b d g f s S v z Z R l j H w",
 		monophthongs: "i y u e 2 @ o E E: 9 O a A E~ 9~ O~ A~",
 		diphthongs: "",
@@ -647,6 +658,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Navajo_language"
 	},
 	{
+		name: "Nogai",
+		coords: [43, 47],
+		families: ["turkic", "kipchak"],
+		areas: ["europe", "caucasus"],
+		consonants: "p b t d k g q s z S Z dZ m n N l r w j",
+		monophthongs: "i y 1 u e o { a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Nogai_language"
+	},
+	{
 		name: "Piraha",
 		coords: [-7, -62],
 		families: ["mura"],
@@ -660,7 +681,7 @@ var lang = [
 		name: "Portuguese",
 		coords: [39, -9],
 		families: ["indo-european", "italic", "romance"],
-		areas: ["brazil", "europe", "south america"],
+		areas: ["europe"],
 		consonants: "m n J p t k k_w b d g g_w f s S v z Z j w l L R 4",
 		monophthongs: "i i~ u u~ M e e~ 6 6~ E O a",
 		diphthongs: "",
@@ -742,7 +763,7 @@ var lang = [
 		name: "Russian",
 		coords: [56, 38],
 		families: ["indo-european", "balto-slavic", "slavic"],
-		areas: ["asia", "europe"],
+		areas: ["europe"],
 		consonants: "m m' n n' p p' t t' k k' b b' d d' g ts t_s\\ f f' s s' s` s\\: x v v' z z' z` s\\: l l' j r r'",
 		monophthongs: "i u e o a",
 		diphthongs: "",
@@ -752,7 +773,7 @@ var lang = [
 		name: "Spanish",
 		coords: [40, -4],
 		families: ["indo-european", "italic", "romance"],
-		areas: ["europe", "north america", "south america"],
+		areas: ["europe"],
 		consonants: "m n J p b t d tS j\\ k g f T s x l L 4 r w j",
 		monophthongs: "a e i o u",
 		diphthongs: "",
