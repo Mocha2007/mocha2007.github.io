@@ -28,7 +28,7 @@ function coord2px(coords){
 
 function bigmap(){
 	"use strict";
-	var anyc, conditional, coords, hastag, newlink, newpoint, newrow, soundset, wants, wants2;
+	var anyc, conditional, coords, familylist, hastag, newlink, newpoint, newrow, soundset, wants, wants2;
 	document.getElementById("mapinfo").innerHTML = '<tr><th>Language</th><th>Feature</th><th>C</th><th>V</th></tr>';
 	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" width="700">';
 	var yes = 0;
@@ -136,7 +136,8 @@ function bigmap(){
 		newpoint.classList.value = "dot";
 		newpoint.id = "dot_"+x.name.replace(" ","_");
 		newpoint.alt = x.name;
-		newpoint.title = x.name + ' (' + x.families.map(proper).join(', ') + ')';
+		familylist = x.families.length ? x.families.map(proper).join(', ') : 'Isolate';
+		newpoint.title = x.name + ' (' + familylist + ')';
 		newpoint.src = conditional ? point1 : (anyc ? point2 : point0);
 		newpoint.width = pointsize;
 		newpoint.style.position = "absolute";
