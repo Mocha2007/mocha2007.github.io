@@ -338,6 +338,29 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Cameroonian_Pidgin_English"
 	},
 	{
+		name: "Cantonese",
+		coords: [24, 114],
+		families: ["sino-tibetan", "sinitic"],
+		areas: ["asia"],
+		consonants: "m n N p t ts k k_w p_h t_h ts_h k_h k_w_h f s h l j w",
+		monophthongs: "i: y: u: e E: 8 9: o O: 6 a:",
+		diphthongs: "uy iu 8y ei Eu 6i 6u ou Oy ai au",
+		features: {
+			sov: "svo"
+		},
+		source: "https://en.wikipedia.org/wiki/Cantonese"
+	},
+	{
+		name: "Central Atlas Tamazight",
+		coords: [33, -5],
+		families: ["afro-asiatic", "berber"],
+		areas: ["africa"],
+		consonants: "m n n_?\\ b t_h t_?\\ k q q_w d d_?\\ g f s s_?\\ S x_w X z z_?\\ Z G_w R l l_?\\ j w r r_?\\",
+		monophthongs: "i u a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Central_Atlas_Tamazight"
+	},
+	{
 		name: "Cherokee",
 		coords: [36, -82],
 		families: ["iroquoian"],
@@ -875,6 +898,19 @@ var lang = [
 		monophthongs: "a i u a: i: u:",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Miskito_language"
+	},
+	{
+		name: "Miyako",
+		coords: [25, 125],
+		families: ["japonic", "ryukyuan"],
+		areas: ["asia"],
+		consonants: "m n p t k 4 f s P", // ogami
+		monophthongs: "i 1 u E A",
+		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
+		source: "https://en.wikipedia.org/wiki/Miyako_language"
 	},
 	{
 		name: "Naasioi",
