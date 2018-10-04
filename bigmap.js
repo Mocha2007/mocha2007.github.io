@@ -3,6 +3,17 @@ var point1 = 'img/dots/green.png';
 var point2 = 'img/dots/yellow.png';
 var pointsize = 8;
 
+// https://stackoverflow.com/a/16227294/2579798
+function intersect(a, b){
+	var t;
+	if (b.length > a.length) t = b, b = a, a = t; // indexOf to loop over shorter
+	return a.filter(function (e) {
+		return b.indexOf(e) > -1;
+	}).filter(function (e, i, c) { // extra step to remove duplicates
+		return c.indexOf(e) === i;
+	});
+}
+
 function coord2px(coords){
 	"use strict";
 	var x = coords[1] * 35/18 + 350 - pointsize/2;
@@ -17,6 +28,8 @@ function bigmap(){
 	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" width="700">';
 	var yes = 0;
 	var yn = 0;
+	var commonc = true;
+	var commonv = true;
 	lang.forEach(function(x){
 		// test for conditions
 		anyc = false;
@@ -91,6 +104,17 @@ function bigmap(){
 					break;
 			}
 		}
+		// check to see if c/v needs replacing
+		if (conditional){
+			if (commonc === true){
+				commonc = x.consonants.split(" ");
+				commonv = (x.monophthongs + " " + x.diphthongs).split(" ").filter(Boolean);
+			}
+			// intersect
+			commonc = intersect(commonc, x.consonants.split(" "))
+			commonv = intersect(commonv, (x.monophthongs + " " + x.diphthongs).split(" ").filter(Boolean))
+			console.log(x.name, commonc, commonv);
+		}
 		// bigmap
 		coords = coord2px(x.coords);
 		newpoint = document.createElement("img");
@@ -112,7 +136,8 @@ function bigmap(){
 	});
 	// sum
 	newrow = document.createElement("tr");
-	newrow.innerHTML = "<th>All "+yn+"</th><th>"+Math.floor(10000*yes/yn)/100+"%</th><th colspan=2></th>";
+	console.log(commonc, commonv);
+	newrow.innerHTML = "<th>All "+yn+"</th><th>"+Math.floor(10000*yes/yn)/100+"%</th><td>"+commonc.join(" ")+"</td><td>"+commonv.join(" ")+"</td>";
 	document.getElementById("mapinfo").appendChild(newrow);
 }
 
