@@ -2,6 +2,7 @@ var point0 = 'img/dots/red.png';
 var point1 = 'img/dots/green.png';
 var point2 = 'img/dots/yellow.png';
 var pointsize = 8;
+var mapsize = 700;
 
 // https://stackoverflow.com/a/16227294/2579798
 function intersect(a, b){
@@ -21,8 +22,8 @@ function proper(string){
 
 function coord2px(coords){
 	"use strict";
-	var x = coords[1] * 35/18 + 350 - pointsize/2;
-	var y = coords[0] * -35/18 + 175 - pointsize/2;
+	var x = coords[1] * mapsize/360 + mapsize/2 - pointsize/2;
+	var y = coords[0] * -mapsize/360 + mapsize/4 - pointsize/2;
 	return [y,x];
 }
 
@@ -30,7 +31,7 @@ function bigmap(){
 	"use strict";
 	var anyc, conditional, coords, familylist, hastag, newlink, newpoint, newrow, soundset, wants, wants2;
 	document.getElementById("mapinfo").innerHTML = '<tr><th>Language</th><th>Feature</th><th>C</th><th>V</th></tr>';
-	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" width="700">';
+	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" width="'+mapsize+'">';
 	var yes = 0;
 	var yn = 0;
 	var commonc = true;
