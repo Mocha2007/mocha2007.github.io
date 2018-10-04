@@ -779,6 +779,7 @@ var lang = [
 		monophthongs: "e o e: o:",
 		diphthongs: "ei oi eu ou",
 		features: {
+			adpositions: "prepositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Proto-Indo-European"
@@ -792,6 +793,9 @@ var lang = [
 		consonants: "? b g d h w z X\\ t_?\\ j k l m n s ?\\ p s_q k_?\\ r S t",
 		monophthongs: "a i u a: i: u: e: o:",
 		diphthongs: "",
+		features: {
+			adpositions: "prepositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Punic_language"
 	},
 	{
@@ -883,6 +887,11 @@ var lang = [
 		consonants: "m n N p t k ? p_h t_h k_h s S x h ts ts_h 4 l j",
 		monophthongs: "a e i u",
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions",
+			an: "na",
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Sumerian_language"
 	},
 	{
