@@ -259,6 +259,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Armenian_language"
 	},
 	{
+		name: "Aymara",
+		coords: [-17, -69],
+		families: ["aymaran"],
+		areas: ["south america"],
+		consonants: "m n J N p t tS k q p_h t_h tS_h k_h q_h p_> t_> tS_> k_> q_> s S x X v j w l L r",
+		monophthongs: "a i u",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Aymaran_language"
+	},
+	{
 		name: "Azerbaijani",
 		coords: [40, 50],
 		families: ["turkic", "oghuz"],
@@ -1339,5 +1349,18 @@ var lang = [
 		monophthongs: "i u e o a",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Yucatec_Maya_language"
+	},
+	{
+		name: "Zuni",
+		coords: [35, -109],
+		families: [],
+		areas: ["north america"],
+		consonants: "p t k k_w ? ts tS s K S h m n l j w",
+		monophthongs: "i u e o a",
+		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
+		source: "https://en.wikipedia.org/wiki/Zuni_language"
 	},
 ];
