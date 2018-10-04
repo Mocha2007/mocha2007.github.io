@@ -190,6 +190,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Bengali_language"
 	},
 	{
+		name: "Cameroonian Pidgin English",
+		coords: [4, 12],
+		families: ["creole"],
+		areas: ["africa"],
+		consonants: "p b t d tS dZ k g f s S h m n J N l w j r",
+		monophthongs: "i u e o E O a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Cameroonian_Pidgin_English"
+	},
+	{
 		name: "Cherokee",
 		coords: [36, -82],
 		families: ["iroquoian"],
@@ -411,6 +421,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Khmer_language"
 	},
 	{
+		name: "Khoekhoe",
+		coords: [-23, 17],
+		families: ["khoe"],
+		areas: ["africa"],
+		consonants: "m n p t k ? ts_h kx_h s x h |\\ |\\_h |\\_n |\\_0_h_n |\\_?_n |\\|\\ |\\|\\_h |\\|\\_n |\\|\\_0_h_n |\\|\\_?_n !\\ !\\_h !\\_n !\\_0_h_n !\\_?_n =\\ =\\_h =\\_n =\\_0_h_n =\\_?_n",
+		monophthongs: "i e a o u i~ a~ u~",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Khoekhoe_language"
+	},
+	{
 		name: "Korean",
 		coords: [38, 127],
 		families: ["koreanic"],
@@ -419,6 +439,16 @@ var lang = [
 		monophthongs: "i M u e 2 E o V a i: M: u: e: 2: E: V: o: a:",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Korean_language"
+	},
+	{
+		name: "Kpelle",
+		coords: [7, -10],
+		families: ["niger-congo", "mande"],
+		areas: ["africa"],
+		consonants: "p t k b d g b_< f s v z G kp gb r l m n N w j",
+		monophthongs: "i u e o E O a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Kpelle_language"
 	},
 	{
 		name: "Kumeyaay",
