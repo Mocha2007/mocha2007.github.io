@@ -156,7 +156,7 @@ var lang = [
 	{
 		name: "Altai",
 		coords: [51, 87],
-		families: ["turkic", "siberian turkic"],
+		families: ["turkic", "siberian"],
 		areas: ["asia"],
 		consonants: "m n N p b t d c J\\ k g s z C j\\ x G l j 4",
 		monophthongs: "i i: e e: y y: 2 2: M M: a a: u u: o o:",
@@ -315,6 +315,16 @@ var lang = [
 		source: "#bigmap"
 	},
 	{
+		name: "Erzya",
+		coords: [54, 44],
+		families: ["uralic", "mordvinic"],
+		areas: ["europe"],
+		consonants: "m n n' N p t t' k b d d' g ts ts' tS f s s' S x v z z' Z r r' l l' j",
+		monophthongs: "i u e o a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Erzya_language"
+	},
+	{
 		name: "Etruscan",
 		coords: [44, 11],
 		families: ["tyrsenian"],
@@ -456,6 +466,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Indonesian_language"
 	},
 	{
+		name: "Ingush",
+		coords: [43, 45],
+		families: ["northeast caucasian", "nakh", "vainakh"],
+		areas: ["europa", "caucasus"],
+		consonants: "m n p t k' k q >\\ ? b d g' g p_> t_> k'_> k_> q_> ts tS ts_> tS_> f s S X H\\ h v z Z R l j r_0 r",
+		monophthongs: "i u e @ o { A",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Ingush_language"
+	},
+	{
 		name: "Japanese",
 		coords: [36, 140],
 		families: ["japonic"],
@@ -466,6 +486,26 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Japanese_language"
 	},
 	{
+		name: "Kalmyk",
+		coords: [47, 45],
+		families: ["mongolic", "oirat"],
+		areas: ["europe"],
+		consonants: "p t t' k b d d' g ts tS dZ s S x z G m n J N r l L w j",
+		monophthongs: "i y u e 2 o { a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Kalmyk_language"
+	},
+	{
+		name: "Karachay-Balkar",
+		coords: [44, 43],
+		families: ["turkic", "kipchak"],
+		areas: ["europe", "caucasus"],
+		consonants: "p b t d k g s z S x h tS dZ m n N l r q j",
+		monophthongs: "i y M u e 2 o a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Karachay-Balkar_language"
+	},
+	{
 		name: "Ket",
 		coords: [63, 87],
 		families: ["dene-yeniseian", "yeniseian"],
@@ -474,6 +514,16 @@ var lang = [
 		monophthongs: "i 1 u e @ o a",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Ket_language"
+	},
+	{
+		name: "Khakas",
+		coords: [54, 90],
+		families: ["turkic", "siberian"],
+		areas: ["asia"],
+		consonants: "p t k b d g f s S x v z Z G tS dZ m n N r l j",
+		monophthongs: "i i: y y: 1 1: u u: e e: 2 2: o o: a a:",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Khakas_language"
 	},
 	{
 		name: "Khmer",
@@ -494,6 +544,16 @@ var lang = [
 		monophthongs: "i e a o u i~ a~ u~",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Khoekhoe_language"
+	},
+	{
+		name: "Komi",
+		coords: [64, 54],
+		families: ["uralic", "permic"],
+		areas: ["europe"],
+		consonants: "b v g d dZ dz\\ Z z j k 5 m n p r s t tS f x ts ts\\ S s\\",
+		monophthongs: "A e o i @ u 1",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Komi_language"
 	},
 	{
 		name: "Korean",
