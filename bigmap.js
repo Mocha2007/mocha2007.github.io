@@ -119,6 +119,9 @@ function bigmap(){
 
 			conditional = conditional && (hastag && x.features[wants] === wants2);
 			anyc = anyc || (x.features === undefined);
+			if (x.features === undefined){
+				yn -= 1; // only consider knowns
+			}
 		}
 		// check to see if c/v needs replacing
 		if (conditional){
@@ -155,7 +158,7 @@ function bigmap(){
 		document.getElementById("mapinfo").appendChild(newrow);
 		//
 		yes += conditional;
-		yn +=1;
+		yn += 1;
 	});
 	// sum
 	newrow = document.createElement("tr");
