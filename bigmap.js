@@ -14,6 +14,11 @@ function intersect(a, b){
 	});
 }
 
+// https://stackoverflow.com/a/1026087/2579798
+function proper(string){
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function coord2px(coords){
 	"use strict";
 	var x = coords[1] * 35/18 + 350 - pointsize/2;
@@ -131,7 +136,7 @@ function bigmap(){
 		newpoint.classList.value = "dot";
 		newpoint.id = "dot_"+x.name.replace(" ","_");
 		newpoint.alt = x.name;
-		newpoint.title = x.name;
+		newpoint.title = x.name + ' (' + x.families.map(proper).join(', ') + ')';
 		newpoint.src = conditional ? point1 : (anyc ? point2 : point0);
 		newpoint.width = pointsize;
 		newpoint.style.position = "absolute";
