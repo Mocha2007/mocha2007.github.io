@@ -237,6 +237,9 @@ var lang = [
 		consonants: "m n p t k b d g p_h t_h k_h ts tS dz dZ ts_h tS_h f s S x h v z Z G l j r 4",
 		monophthongs: "i u E @ O A",
 		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Armenian_language"
 	},
 	{
@@ -247,6 +250,9 @@ var lang = [
 		consonants: "m n p b t d tS dZ c J\\ g f v s z S Z x G h l j 4",
 		monophthongs: "i y M u e 9 o { A",
 		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Azerbaijani_language"
 	},
 	{
@@ -257,6 +263,9 @@ var lang = [
 		consonants: "m n N p t c q b d J\\ T X h D R s S z Z r w l j",
 		monophthongs: "i y u e 2 7 o { A",
 		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Bashkir_language"
 	},
 	{
@@ -267,6 +276,9 @@ var lang = [
 		consonants: "m n J p t c k b d J\\ g ts_m ts_a tS f s_m s_a S h j l L r 4",
 		monophthongs: "a e i o u",
 		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Basque_language"
 	},
 	{
@@ -307,6 +319,9 @@ var lang = [
 		consonants: "p t k ts\\ s s` s\\ X m n P l j r",
 		monophthongs: "i y M u e 2 a o",
 		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Chuvash_language"
 	},
 	{
@@ -327,6 +342,9 @@ var lang = [
 		consonants: "m n N p b t d k g f s h v l j R",
 		monophthongs: "i i: y y: u u: e e: E E: 2 2: o o: 9 9: @ O O: { {: 9_o 9_o: Q Q: a & &: 6 V A A:",
 		diphthongs: "",
+		features: {
+			sov: "svo"
+		},
 		source: "https://en.wikipedia.org/wiki/Danish_language"
 	},
 	{
@@ -383,6 +401,9 @@ var lang = [
 		consonants: "m n p p_h t t_h k k_h ts p\\ s S h l j w r",
 		monophthongs: "i e a u",
 		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Etruscan_language"
 	},
 	{
@@ -403,6 +424,9 @@ var lang = [
 		consonants: "m n p t k ? s h P l j r",
 		monophthongs: "i i: y y: u u: e e: 2 2: o o: { {: A A:",
 		diphthongs: "ai au {i {y oi ou ei eu ey 2i 2y ui uo iu iy ie yi y2",
+		features: {
+			sov: "svo"
+		},
 		source: "https://en.wikipedia.org/wiki/Finnish_language"
 	},
 	{
@@ -426,6 +450,9 @@ var lang = [
 		consonants: "m n p_h t_h k_h b d g p_> t_> k_> q_> ts_h tS_h dz dZ ts_> tS_> s S x h v z Z G r l",
 		monophthongs: "i u e o a",
 		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Georgian_language"
 	},
 	{
@@ -509,6 +536,9 @@ var lang = [
 		consonants: "m n p_h p t_h t k_h k s f v T j h l r",
 		monophthongs: "i u I Y E 9 O a",
 		diphthongs: "ei 2i ou ai au",
+		features: {
+			sov: "svo"
+		},
 		source: "https://en.wikipedia.org/wiki/Icelandic_language"
 	},
 	{
