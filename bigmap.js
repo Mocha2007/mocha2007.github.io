@@ -204,7 +204,7 @@ var lang = [
 	},
 	{
 		name: "Ancient Greek",
-		coords: [38, 24],
+		coords: [40, 22],
 		families: ["indo-european", "hellenic"],
 		areas: ["europe"],
 		tags: ["dead"],
