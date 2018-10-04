@@ -321,6 +321,7 @@ var lang = [
 		monophthongs: "i I e E { A V o U u @",
 		diphthongs: "{u oe Ai",
 		features: {
+			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
 		},
@@ -667,6 +668,21 @@ var lang = [
 		monophthongs: "i y 1 u e o { a",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Nogai_language"
+	},
+	{
+		name: "Ossetian",
+		coords: [43, 44],
+		families: ["indo-european", "indo-iranian", "iranian"],
+		areas: ["europe", "caucasus"],
+		consonants: "b d g g_w p_h t_h k_h k_w_h q q_w p_> t_> k_> k_w_> dz dZ ts tS ts_> tS_> v z R f s X X_w m n l r j w",
+		monophthongs: "i u I e o @ a",
+		diphthongs: "",
+		features: {
+			adpositions: "postpositions",
+			an: "an",
+			sov: "sov"
+		},
+		source: "https://en.wikipedia.org/wiki/Ossetian_language"
 	},
 	{
 		name: "Piraha",
