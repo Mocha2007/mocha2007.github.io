@@ -126,6 +126,7 @@ function bigmap(){
 		// bigmap
 		coords = coord2px(x.coords);
 		newpoint = document.createElement("img");
+		newpoint.classList.value = "dot";
 		newpoint.alt = x.name;
 		newpoint.title = x.name;
 		newpoint.src = conditional ? point1 : (anyc ? point2 : point0);

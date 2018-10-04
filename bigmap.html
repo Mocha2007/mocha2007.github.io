@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="description" content="Bigmap">
+<link rel="shortcut icon" href="img/favicon.ico">
+<link href=simple.css type="text/css" rel="stylesheet" title="Light">
+<link href=dark.css type="text/css" rel="alternate stylesheet" title="Dark"> 
+<link href=blend.css type="text/css" rel="alternate stylesheet" title="Blend">
+<link href=print.css type="text/css" rel="stylesheet" media="print">
+<script src="bigmap.js"></script>
+<title>Bigmap</title>
+<style>
+#bigmap {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+#mapimg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: white;
+}
+.dot:hover {
+	cursor: pointer;
+}
+input {
+	font-family: monospace;
+}
+.true, .false {
+	font-weight: bold;
+}
+.true {
+	color: green;
+}
+.false {
+	color: red;
+}
+#mapinfo tr td:nth-child(3), #mapinfo tr td:nth-child(4){
+	font-family: monospace;
+	color: black;
+	background-color: AliceBlue;
+}
+</style>
+<h1>Bigmap</h1>
+<div id="bigmap">
+	<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" width="700">
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<form>
+	<fieldset>
+		<b>Filters:</b><br>
+		<input id="b_contain" type="checkbox" name="b"> Containing <input id="b_contain_text" type="text" size="4"><br>
+		<input id="b_fam" type="checkbox" name="b"> In Family <input id="b_fam_text" type="text"><br>
+		<input id="b_area" type="checkbox" name="b"> In Area <input id="b_area_text" type="text"><br>
+		<input id="b_quantity" type="checkbox" name="b"> Containing
+		<select id="b_quantity_select">
+		 	<option value="more">more than</option>
+		 	<option value="fewer">fewer than</option>
+		 	<option value="exact">exactly</option>
+		</select>
+		<input id="b_quantity_text" type="text" size="3">
+		<select id="b_quantity_select2">
+		 	<option value="p">phonemes</option>
+		 	<option value="c">consonants</option>
+		 	<option value="v">vowels</option>
+		 	<option value="m">monophthongs</option>
+		 	<option value="d">diphthongs</option>
+		</select><br>
+		<input id="b_tag" type="checkbox" name="b">
+		<select id="b_tag_select">
+		 	<option value="w">With</option>
+		 	<option value="wo">Without</option>
+		</select> the
+		<input id="b_tag_text" type="text"> tag<br>
+		<input id="b_feature" type="checkbox" name="b"> <abbr title="undefineds show up yellow">With feature</abbr>
+		<select id="b_feature_text">
+		 	<option value="adpositions">Order of adpositions</option>
+		 	<option value="an">Order of A, N</option>
+		 	<option value="sov">Order of S, O, V</option>
+		</select> as
+		<input id="b_feature_text2" type="text"><br>
+		<a href="javascript:bigmap();">Search</a>
+	</fieldset>
+</form>
+<table id="mapinfo"></table>
+
+<script type="text/javascript">bigmap();</script>
+</html>
