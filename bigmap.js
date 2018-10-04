@@ -463,6 +463,19 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Faroese_language"
 	},
 	{
+		name: "Fijian",
+		coords: [-18, 179],
+		families: ["austronesian", "malayo-polynesian", "oceanic"],
+		areas: ["oceania"],
+		consonants: "m n N t k b_n d_n g_n s B D r d`_n l j w",
+		monophthongs: "i i: u u: e e: o o: a a:",
+		diphthongs: "ei eu oi ou ai au",
+		features: {
+			sov: "vos"
+		},
+		source: "https://en.wikipedia.org/wiki/Fijian_language"
+	},
+	{
 		name: "Finnish",
 		coords: [60, 25],
 		families: ["uralic", "finnic"],
@@ -553,6 +566,16 @@ var lang = [
 			sov: "vso"
 		},
 		source: "https://en.wikipedia.org/wiki/Hadza_language"
+	},
+	{
+		name: "Hamtai",
+		coords: [-7, 147],
+		families: ["trans–new guinea", "angan"],
+		areas: ["oceania"],
+		consonants: "m n N p t k q ? j w W v f h",
+		monophthongs: "i 1 u V e o a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Hamtai_language"
 	},
 	{
 		name: "Hawaiian",
@@ -861,6 +884,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Nahuatl"
 	},
 	{
+		name: "Nauruan",
+		coords: [-1, 167],
+		families: ["austronesian", "malayo-polynesian", "oceanic", "micronesian"],
+		areas: ["oceania"],
+		consonants: "m' m n N p' p t k k_w b' b d g g_w j\\ G_w r r'",
+		monophthongs: "i: I e: E {: { 1: 1 o: V A: A",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Nauruan_language"
+	},
+	{
 		name: "Navajo",
 		coords: [36, -109],
 		families: ["dene–yeniseian", "na-dene", "athabaskan"],
@@ -873,6 +906,16 @@ var lang = [
 		},
 		source: "https://en.wikipedia.org/wiki/Navajo_language"
 	},
+	/*{ need consonant data
+		name: "Nihali",
+		coords: [20, 78],
+		families: [],
+		areas: ["asia", "india"],
+		consonants: "",
+		monophthongs: "i i: u u: e e: o o: a a:",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Nihali_language"
+	},*/
 	{
 		name: "Nivkh",
 		coords: [51, 143],
