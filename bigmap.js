@@ -2,7 +2,8 @@ var point0 = 'img/dots/red.png';
 var point1 = 'img/dots/green.png';
 var point2 = 'img/dots/yellow.png';
 var pointsize = 8;
-var mapsize = 700;
+var mapsize = window.innerWidth - 32;
+var brcount = mapsize / 34;
 
 // https://stackoverflow.com/a/16227294/2579798
 function intersect(a, b){
@@ -32,6 +33,7 @@ function bigmap(){
 	var anyc, conditional, coords, familylist, hastag, newlink, newpoint, newrow, soundset, wants, wants2;
 	document.getElementById("mapinfo").innerHTML = '<tr><th>Language</th><th>Feature</th><th>C</th><th>V</th></tr>';
 	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" width="'+mapsize+'">';
+	document.getElementById("brs").innerHTML = Array(Math.floor(brcount)).join('<br>');
 	var yes = 0;
 	var yn = 0;
 	var commonc = true;
@@ -327,7 +329,7 @@ var lang = [
 	},
 	{
 		name: "English",
-		coords: [51, 0],
+		coords: [52, 0],
 		families: ["indo-european", "germanic"],
 		areas: ["europe", "britain"],
 		consonants: "m n N p b t d tS dZ k g f v T D s z S Z h l r\\ j w",
@@ -653,6 +655,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Mapuche_language"
 	},
 	{
+		name: "Miskito",
+		coords: [14, -83],
+		families: ["misumalpan"],
+		areas: ["north america", "mesoamerica"],
+		consonants: "p t k b d s h m n N l r j w",
+		monophthongs: "a i u a: i: u:",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Miskito_language"
+	},
+	{
 		name: "Nahuatl",
 		coords: [19, -99],
 		families: ["uto-aztecan", "nahuan"],
@@ -849,6 +861,20 @@ var lang = [
 		monophthongs: "i u e o a",
 		diphthongs: "ai ui au iu",
 		source: "https://en.wikipedia.org/wiki/Tagalog_language"
+	},
+	{
+		name: "Taino",
+		coords: [19, -71],
+		families: ["arawakan"],
+		areas: ["north america", "caribbean"],
+		tags: ["dead"],
+		consonants: "p t k b d s h m n w l j",
+		monophthongs: "i e E o a",
+		diphthongs: "",
+		features: {
+			sov: "svo"
+		},
+		source: "https://en.wikipedia.org/wiki/Taino_language"
 	},
 	{
 		name: "Tok Pisin",
