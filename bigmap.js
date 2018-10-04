@@ -272,6 +272,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Azerbaijani_language"
 	},
 	{
+		name: "Bangime",
+		coords: [14, -3],
+		families: [],
+		areas: ["africa"],
+		consonants: "p p_n t t_n k k_n b b_n d d_n g g_n s s\\ Z h m n J N l j H w r",
+		monophthongs: "i u e o E O a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Bangime_language"
+	},
+	{
 		name: "Bashkir",
 		coords: [54, 56],
 		families: ["turkic", "kipchak"],
@@ -306,6 +316,16 @@ var lang = [
 		monophthongs: "i u e o E O a i~ u~ e~ o~ {~ O~ a~",
 		diphthongs: "ae ai ao au {e {o ei eu ii iu oe oi oo ou ui",
 		source: "https://en.wikipedia.org/wiki/Bengali_language"
+	},
+	{
+		name: "Burushaski",
+		coords: [36, 74],
+		families: [],
+		areas: ["asia", "india"],
+		consonants: "m n N p p_h t t_h t` t`_h k k_h q q_h b d d` g ts ts_h ts\\ ts\\_h ts` ts`_h dz\\ dz` s s\\ s` h z R r l j r\\` w",
+		monophthongs: "i e a o u",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Burushaski_language"
 	},
 	{
 		name: "Cameroonian Pidgin English",
@@ -382,6 +402,16 @@ var lang = [
 		monophthongs: "i u a",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Dyirbal_language"
+	},
+	{
+		name: "Enggano",
+		coords: [-5, 102],
+		families: [],
+		areas: ["asia"],
+		consonants: "p t k ? b d s h r j w",
+		monophthongs: "i i~ 1 1~ u u~ e e~ @ @~ o o~ a a~",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Enggano_language"
 	},
 	{
 		name: "English",
@@ -512,6 +542,19 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Guarani_language"
 	},
 	{
+		name: "Hadza",
+		coords: [-7, 34],
+		families: [],
+		areas: ["africa"],
+		consonants: "|\\_h !\\_h |\\|\\_h |\\ !\\ |\\|\\ O\\_n |\\_n !\\_n |\\|\\_n  O\\_n_? |\\_n_? !\\_n_? |\\|\\_n_? p_h t_h k_h k_w_h p t k k_w ? b d g g_w p_> p_n_h t_n_h k_n_h p_n t_n k_n k_w_n m n J N N_w ts_h tS_h cL_h ts tS cL dz dZ ts_> tS_> cL_> kx_> kx_w_> ts_n_h ts_n tS_n f_w s K S 4 j w h\\",
+		monophthongs: "i e a o u",
+		diphthongs: "",
+		features: {
+			sov: "vso"
+		},
+		source: "https://en.wikipedia.org/wiki/Hadza_language"
+	},
+	{
 		name: "Hawaiian",
 		coords: [21, -158],
 		families: ["austronesian", "malayo-polynesian", "oceanic", "polynesian"],
@@ -582,6 +625,16 @@ var lang = [
 		monophthongs: "i u e @ o { A",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Ingush_language"
+	},
+	{
+		name: "Jalaa",
+		coords: [11, 10],
+		families: [],
+		areas: ["africa"],
+		consonants: "p t k kp b d g tS dZ f s h m n J N l j w r",
+		monophthongs: "i u I U e @ o E O a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Jalaa_language"
 	},
 	{
 		name: "Japanese",
@@ -701,6 +754,31 @@ var lang = [
 		monophthongs: "i u @ o a",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Kumeyaay_language"
+	},
+	{
+		name: "Kusunda",
+		coords: [28, 85],
+		families: [],
+		areas: ["asia", "india"],
+		consonants: "m n N N\\ p t k q ? b d g ts dz s R h w l j 4",
+		monophthongs: "i u e @ o a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Kusunda_language"
+	},
+	{
+		name: "Laal",
+		coords: [10, 18],
+		families: [],
+		areas: ["africa"],
+		consonants: "m n J N p t c k ? b b_n b_< d d_n d_< J\\ J\\_< g g_n s h l j w r",
+		monophthongs: "i 1 e @ o a",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			an: "na",
+			sov: "svo"
+		},
+		source: "https://en.wikipedia.org/wiki/Laal_language"
 	},
 	{
 		name: "Latin",
@@ -959,6 +1037,20 @@ var lang = [
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Russian_language"
+	},
+	{
+		name: "Shabo",
+		coords: [6, 36],
+		families: [],
+		areas: ["africa"],
+		consonants: "b t d k g ? b_< d_< p_> t_> tS_> k_> f s_> w l j m n N r",
+		monophthongs: "i 1 u e @ o E a O i: u: e: o: a:",
+		diphthongs: "",
+		features: {
+			adpositions: "postpositions",
+			sov: "sov"
+		},
+		source: "https://en.wikipedia.org/wiki/Shabo_language"
 	},
 	{
 		name: "Spanish",
