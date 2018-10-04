@@ -23,7 +23,7 @@ function coord2px(coords){
 
 function bigmap(){
 	"use strict";
-	var anyc, conditional, coords, hastag, newpoint, newrow, soundset, wants, wants2;
+	var anyc, conditional, coords, hastag, newlink, newpoint, newrow, soundset, wants, wants2;
 	document.getElementById("mapinfo").innerHTML = '<tr><th>Language</th><th>Feature</th><th>C</th><th>V</th></tr>';
 	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" width="700">';
 	var yes = 0;
@@ -125,8 +125,11 @@ function bigmap(){
 		}
 		// bigmap
 		coords = coord2px(x.coords);
+		newlink = document.createElement("a");
+		newlink.href = '#row_'+x.name.replace(" ","_");
 		newpoint = document.createElement("img");
 		newpoint.classList.value = "dot";
+		newpoint.id = "dot_"+x.name.replace(" ","_");
 		newpoint.alt = x.name;
 		newpoint.title = x.name;
 		newpoint.src = conditional ? point1 : (anyc ? point2 : point0);
@@ -134,10 +137,12 @@ function bigmap(){
 		newpoint.style.position = "absolute";
 		newpoint.style.top = coords[0] + "px";
 		newpoint.style.left = coords[1] + "px";
-		document.getElementById("bigmap").appendChild(newpoint);
+		newlink.appendChild(newpoint);
+		document.getElementById("bigmap").appendChild(newlink);
 		// mapinfo
 		newrow = document.createElement("tr");
-		newrow.innerHTML = "<td><a href='"+x.source+"'>"+x.name+"</a></td><td class='"+conditional+"'>"+conditional+"</td><td>"+(conditional ? x.consonants : "-")+"</td><td>"+(conditional ? x.monophthongs+' '+x.diphthongs : "-")+"</td>";
+		newrow.id = "row_"+x.name.replace(" ","_");
+		newrow.innerHTML = "<td><a href='#dot_"+x.name.replace(" ","_")+"'>"+x.name+"</a><sup><a href='"+x.source+"'>i</a></sup></td><td class='"+conditional+"'>"+conditional+"</td><td>"+(conditional ? x.consonants : "-")+"</td><td>"+(conditional ? x.monophthongs+' '+x.diphthongs : "-")+"</td>";
 		document.getElementById("mapinfo").appendChild(newrow);
 		//
 		yes += conditional;
