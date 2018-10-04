@@ -59,7 +59,7 @@ function bigmap(){
 
 			soundset = soundset.split(' ');
 
-			soundset = soundset[0].length ? soundset : []; // remove lists that are [""]
+			soundset = soundset.filter(Boolean); // remove empty strings
 
 			switch (document.getElementById("b_quantity_select").value){
 				case "more":
