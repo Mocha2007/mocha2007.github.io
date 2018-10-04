@@ -404,6 +404,22 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Dyirbal_language"
 	},
 	{
+		name: "Egyptian",
+		coords: [30, 31],
+		families: ["afro-asiatic"],
+		areas: ["africa"],
+		tags: ["dead"],
+		consonants: "m n p t c k q ? b d J\\ g f s S C X X\\ h z R ?\\ w l j r",
+		monophthongs: "i i: u u: a a:",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			an: "na",
+			sov: "vso",
+		},
+		source: "https://en.wikipedia.org/wiki/Egyptian_language"
+	},
+	{
 		name: "Enggano",
 		coords: [-5, 102],
 		families: [],
@@ -1094,6 +1110,16 @@ var lang = [
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Shabo_language"
+	},
+	{
+		name: "Socotra",
+		coords: [13, 54],
+		families: ["afro-asiatic", "semitic"],
+		areas: ["asia"],
+		consonants: "m n t k ? b d g t_?\\ k_?\\ f T s K S x X\\ h D z G ?\\ s_?\\ K_?\\ S_?\\ r l j w",
+		monophthongs: "i u e o A",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Soqotri_language"
 	},
 	{
 		name: "Spanish",
