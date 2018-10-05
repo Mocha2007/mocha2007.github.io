@@ -841,7 +841,7 @@ var lang = [
 		name: "Kuna",
 		coords: [10, -79],
 		families: ["chibchan"],
-		areas: ["south america"], // todo double check
+		areas: ["north america"],
 		consonants: "p t k p_> t_> k_> m n S_n m_> n_> tS v s l l_> 4 w j",
 		monophthongs: "i u e o a",
 		diphthongs: "",
