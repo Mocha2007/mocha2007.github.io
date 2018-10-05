@@ -355,6 +355,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Bengali_language"
 	},
 	{
+		name: "Brahui",
+		coords: [29, 67],
+		families: ["dravidian"],
+		areas: ["asia", "india"],
+		consonants: "p t_d t` k ? b d_d d` g tS dZ f s K S x h z Z G m n_d n` l j w 4 r`",
+		monophthongs: "a i u a: e: i: o: u:",
+		diphthongs: "aI aU",
+		source: "https://en.wikipedia.org/wiki/Dravidian_language"
+	},
+	{
 		name: "Bulgarian",
 		coords: [43, 26],
 		families: ["indo-european", "balto-slavic", "slavic", "south slavic"],
