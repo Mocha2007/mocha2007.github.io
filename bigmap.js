@@ -1186,7 +1186,7 @@ var lang = [
 	{
 		name: "Russian",
 		coords: [56, 38],
-		families: ["indo-european", "balto-slavic", "slavic"],
+		families: ["indo-european", "balto-slavic", "slavic", "east slavic"],
 		areas: ["europe"],
 		consonants: "m m' n n' p p' t t' k k' b b' d d' g ts t_s\\ f f' s s' s` s\\: x v v' z z' z` s\\: l l' j r r'",
 		monophthongs: "i u e o a",
@@ -1307,7 +1307,7 @@ var lang = [
 		name: "Turkish",
 		coords: [41, 29],
 		families: ["turkic", "oghuz"],
-		areas: ["asia", "europe"],
+		areas: ["asia", "europe", "balkans"],
 		consonants: "m n p b t d k g tS dZ f v s z S Z h l j 4",
 		monophthongs: "i y M u e 9 o a",
 		diphthongs: "",
