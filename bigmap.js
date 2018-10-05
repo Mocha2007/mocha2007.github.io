@@ -369,6 +369,7 @@ var lang = [
 		coords: [32, 35],
 		families: ["afro-asiatic", "semitic"],
 		areas: ["asia"],
+		tags: ["dead"],
 		consonants: "m n p t k ? b d g t_> k_> s K S X X\\ h z R ?\\ s_> ts_> w l j r",
 		monophthongs: "i i: u u: o: a a:",
 		diphthongs: "",
@@ -1150,6 +1151,17 @@ var lang = [
 		monophthongs: "i y 1 u e o { a",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Nogai_language"
+	},
+	{
+		name: "Old Chinese",
+		coords: [34, 109],
+		families: ["sino-tibetan", "sinitic"],
+		areas: ["asia"],
+		tags: ["dead"],
+		consonants: "p t ts k k_w ? ?_w p_h t_h ts_h k_h k_w_h b d dz g g_w m_0 n_0 N_0 N_w_0 m n N N_w l_0 l s h h_w r",
+		monophthongs: "i @ u e a o",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Old_Chinese"
 	},
 	{
 		name: "Onge",
