@@ -1165,7 +1165,7 @@ var lang = [
 	},
 	{
 		name: "Romanian",
-		coords: [44, 26],
+		coords: [46, 25],
 		families: ["indo-european", "italic", "romance"],
 		areas: ["europe", "balkans"],
 		consonants: "m n p b t d k g ts tS dZ f v s z S Z h r l",
