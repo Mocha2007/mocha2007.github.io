@@ -361,6 +361,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Cantonese"
 	},
 	{
+		name: "Catio",
+		coords: [6, -77],
+		families: ["chocoan", "embera"],
+		areas: ["south america"],
+		consonants: "p_h t_h k_h p_> t_> k_> b d s_h h s_> tS_h tS_> dZ m n 4 w",
+		monophthongs: "i i~ M M~ u u~ e e~ o o~ a a~",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Catio_Language"
+	},
+	{
 		name: "Central Atlas Tamazight",
 		coords: [33, -5],
 		families: ["afro-asiatic", "berber"],
