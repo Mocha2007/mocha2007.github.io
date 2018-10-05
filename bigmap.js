@@ -341,6 +341,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Bengali_language"
 	},
 	{
+		name: "Bulgarian",
+		coords: [43, 26],
+		families: ["indo-european", "balto-slavic", "slavic", "south slavic"],
+		areas: ["europe", "balkans"],
+		consonants: "m n m' J p b t d k g p' b' t' d' c J\\ ts tS ts' dZ f v s z S Z x f' v' s' z' r r' j 5 L",
+		monophthongs: "i u o 7 E O a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Bulgarian_language"
+	},
+	{
 		name: "Burushaski",
 		coords: [36, 74],
 		families: [],
@@ -1235,6 +1245,19 @@ var lang = [
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Shabo_language"
+	},
+	{
+		name: "Slovene",
+		coords: [46, 15],
+		families: ["indo-european", "balto-slavic", "slavic", "south slavic"],
+		areas: ["europe", "balkans"],
+		consonants: "m n p t k b d g ts tS dZ f s S x z Z P l j r",
+		monophthongs: "i u e @ o E O a",
+		diphthongs: "",
+		features: {
+			sov: "svo"
+		},
+		source: "https://en.wikipedia.org/wiki/Slovene_language"
 	},
 	{
 		name: "Socotra",
