@@ -920,6 +920,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Mapuche_language"
 	},
 	{
+		name: "Meriam",
+		coords: [-10, 144],
+		families: ["trans–fly"],
+		areas: ["oceania", "australia"],
+		consonants: "p t_d k b d g m n_d s z l r w j",
+		monophthongs: "i u I U e o a O",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Meriam_language"
+	},
+	{
 		name: "Miskito",
 		coords: [14, -83],
 		families: ["misumalpan"],
@@ -1320,6 +1330,19 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Udmurt_language"
 	},
 	{
+		name: "Upper Arrernte",
+		coords: [-23, 135],
+		families: ["pama–nyungan", "arandic"],
+		areas: ["oceania", "australia"],
+		consonants: "p p_w k_w c c_w t_d t_d_w t t_w t` t`_w m m_w N N_w J J_w n_d n_d_w n n_w n` n`_w m_? m_?_w N_? N_?_w J_? J_?_w n_d_? n_d_?_w n_? n_?_w n`_? n`_?_w b_n b_n_w g_n g_n_w J_n J_n_w d_d_n d_d_n_w d_n d_n_w d`_n d`_n_w L L_w l_d l_d_w l l_w l` l`_w M\\ w j j_w r\\` r\\`_w 4 4_w",
+		monophthongs: "@ a",
+		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
+		source: "https://en.wikipedia.org/wiki/Upper_Arrernte_language"
+	},
+	{
 		name: "Vietnamese",
 		coords: [21, 106],
 		families: ["austroasiatic", "vietic"],
@@ -1355,6 +1378,19 @@ var lang = [
 			sov: "free"
 		},
 		source: "https://en.wikipedia.org/wiki/Wichita_language"
+	},
+	{
+		name: "Xavante",
+		coords: [-14, -53],
+		families: ["macro-ge", "ge"],
+		areas: ["south america", "amazon"],
+		consonants: "p_h t_h s ? b d z w 4 h",
+		monophthongs: "i i~ 1 u e @ o E E~ a a~ O O~",
+		diphthongs: "",
+		features: {
+			sov: "osv"
+		},
+		source: "https://en.wikipedia.org/wiki/Xavante_language"
 	},
 	{
 		name: "Yahgan",
