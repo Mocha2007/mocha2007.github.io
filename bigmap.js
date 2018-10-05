@@ -1288,6 +1288,19 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Russian_language"
 	},
 	{
+		name: "Sardinian",
+		coords: [40, 9],
+		families: ["indo-european", "italic", "romance"],
+		areas: ["europe"],
+		consonants: "m n J N p b t d d` k g ? ts dz tS dZ B f v T D s z S Z G x 4 r l j",
+		monophthongs: "i u e o a",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions"
+		},
+		source: "https://en.wikipedia.org/wiki/Sardinian_language"
+	},
+	{
 		name: "Serbo-Croatian",
 		coords: [44, 19],
 		families: ["indo-european", "balto-slavic", "slavic", "south slavic"],
@@ -1491,6 +1504,20 @@ var lang = [
 		monophthongs: "i u e o E O",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Upper_Sorbian_language"
+	},
+	{
+		name: "Venetian",
+		coords: [45, 12],
+		families: ["indo-european", "italic", "romance"],
+		areas: ["europe"],
+		consonants: "m n J p t tS k b d dZ g f s v z j l r",
+		monophthongs: "i u e o a", // seemingly
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			sov: "svo"
+		},
+		source: "https://en.wikipedia.org/wiki/Venetian_language"
 	},
 	{
 		name: "Vietnamese",
