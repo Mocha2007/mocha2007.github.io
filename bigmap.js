@@ -838,6 +838,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Kumeyaay_language"
 	},
 	{
+		name: "Kuna",
+		coords: [10, -79],
+		families: ["chibchan"],
+		areas: ["south america"],
+		consonants: "p t k p_> t_> k_> m n S_n m_> n_> tS v s l l_> 4 w j",
+		monophthongs: "i u e o a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Kuna_Language"
+	},
+	{
 		name: "Kusunda",
 		coords: [28, 85],
 		families: [],
