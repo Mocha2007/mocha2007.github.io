@@ -451,6 +451,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Crimean_Tatar_language"
 	},
 	{
+		name: "Czech",
+		coords: [50, 16],
+		families: ["indo-european", "balto-slavic", "slavic", "west slavic"],
+		areas: ["europe"],
+		consonants: "m n J p t c k b d J\\ ts tS s S x v z Z h\\ r r_r l j",
+		monophthongs: "i: I u u: E E: o o: a a:",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Czech_language"
+	},
+	{
 		name: "Danish",
 		coords: [56, 11],
 		families: ["indo-european", "germanic"],
@@ -924,6 +934,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Latin"
 	},
 	{
+		name: "Lower Sorbian",
+		coords: [51, 14],
+		families: ["indo-european", "balto-slavic", "slavic", "west slavic"],
+		areas: ["europe"],
+		consonants: "m m' n n' p p' t k b b' d g ts tS ts\\ f s S s\\ x h v z Z z\\ r r' w w' l j",
+		monophthongs: "i u e o E O a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Lower_Sorbian_language"
+	},
+	{
 		name: "Macedonian",
 		coords: [42, 22],
 		families: ["indo-european", "balto-slavic", "slavic", "south slavic"],
@@ -1120,6 +1140,17 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Pirahã_language"
 	},
 	{
+		name: "Polabian",
+		coords: [53, 11],
+		families: ["indo-european", "balto-slavic", "slavic", "west slavic"],
+		areas: ["europe"],
+		tags: ["dead"],
+		consonants: "p p' t t' k b b' d d' g ts ts' dz dz' f s S s' x' x v v' z z' m m' n n' l l' r r' j",
+		monophthongs: "i y e E 9 O a Q @ 6 a~ O~",
+		diphthongs: "ai Qi oi au Qu",
+		source: "https://en.wikipedia.org/wiki/Polabian_language"
+	},
+	{
 		name: "Portuguese",
 		coords: [39, -9],
 		families: ["indo-european", "italic", "romance"],
@@ -1259,6 +1290,16 @@ var lang = [
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Shabo_language"
+	},
+	{
+		name: "Slovak",
+		coords: [49, 20],
+		families: ["indo-european", "balto-slavic", "slavic", "west slavic"],
+		areas: ["europe"],
+		consonants: "m n J p t c k b d J\\ g ts tS dz dZ f s S x v z Z j h\\ l L l: 4 r",
+		monophthongs: "i i: u u: E E: O a a:",
+		diphthongs: "IE Ia Iu UO",
+		source: "https://en.wikipedia.org/wiki/Slovak_language"
 	},
 	{
 		name: "Slovene",
@@ -1417,6 +1458,16 @@ var lang = [
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Upper_Arrernte_language"
+	},
+	{
+		name: "Upper Sorbian",
+		coords: [52, 14],
+		families: ["indo-european", "balto-slavic", "slavic", "west slavic"],
+		areas: ["europe"],
+		consonants: "m m' n J p p' t k b b' d g ts tS dZ f s S x z z' Z h\\ R\\ R\\' B H l j",
+		monophthongs: "i u e o E O",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Upper_Sorbian_language"
 	},
 	{
 		name: "Vietnamese",
