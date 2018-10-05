@@ -799,6 +799,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Karachay-Balkar_language"
 	},
 	{
+		name: "Kashubian",
+		coords: [54, 18],
+		families: ["indo-european", "balto-slavic", "slavic", "west slavic"],
+		areas: ["europe"],
+		consonants: "m n J p t k b d g ts tS dz dZ f s S x v z Z l j w r",
+		monophthongs: "i u e @ o E 3\\ O a E~ a~",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Kashubian_language"
+	},
+	{
 		name: "Ket",
 		coords: [63, 87],
 		families: ["dene-yeniseian", "yeniseian"],
@@ -1149,6 +1159,19 @@ var lang = [
 		monophthongs: "i y e E 9 O a Q @ 6 a~ O~",
 		diphthongs: "ai Qi oi au Qu",
 		source: "https://en.wikipedia.org/wiki/Polabian_language"
+	},
+	{
+		name: "Polish",
+		coords: [52, 20],
+		families: ["indo-european", "balto-slavic", "slavic", "west slavic"],
+		areas: ["europe"],
+		consonants: "m n J p t k k' b d g g' ts ts` ts\\ dz dz` dz\\ f s s` s\\ x x' v z z` z\\ r l j w",
+		monophthongs: "i 1 u E O a",
+		diphthongs: "",
+		features: {
+			sov: "svo"
+		},
+		source: "https://en.wikipedia.org/wiki/Polish_language"
 	},
 	{
 		name: "Portuguese",
