@@ -793,7 +793,7 @@ var lang = [
 		coords: [12, 93],
 		families: ["ongan"],
 		areas: ["asia"],
-		consonants: "m n_d J N p t_d t` c k b d_d d` J\\ g p_h t_d_h t`_h c_h k_h k_h_w P S X\\ X\\_w r r` w l j",
+		consonants: "m n_d J N p t_d t` c k b d_d d` J\\ g p_h t_d_h t`_h c_h k_h k_h_w p\\ S X\\ X\\_w r r` w l j",
 		monophthongs: "i u e @\\ o @ a",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Jarawa_language"
@@ -1161,7 +1161,7 @@ var lang = [
 		coords: [2, -77],
 		families: ["paezan"],
 		areas: ["south america"],
-		consonants: "p p' t t' k k' p p_h t t_h t'_h k_h p_n p'_n t_n t'_n k_n ts ts' ts_h tS_h P' s s' x x' P_n P'_n s_n s'_n n n' n_h l l' j w",
+		consonants: "p p' t t' k k' p p_h t t_h t'_h k_h p_n p'_n t_n t'_n k_n ts ts' ts_h tS_h p\\' s s' x x' p\\_n p\\'_n s_n s'_n n n' n_h l l' j w",
 		monophthongs: "a e o u", // source probably mistaken for this
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Paez_Language"
@@ -1462,6 +1462,16 @@ var lang = [
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Taino_language"
+	},
+	{
+		name: "Tamil",
+		coords: [11, 79],
+		families: ["dravidian"],
+		areas: ["asia", "india"],
+		consonants: "p t_d t t` ts\\ k m n_d n n` J N r` P r\\` j l_d l`",
+		monophthongs: "i u i: u: e o e: o: a a:",
+		diphthongs: "aI aU",
+		source: "https://en.wikipedia.org/wiki/Tamil_language"
 	},
 	{
 		name: "Tok Pisin",
