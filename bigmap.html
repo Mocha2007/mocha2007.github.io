@@ -56,8 +56,16 @@ input {
 	<fieldset>
 		<b>Filters:</b><br>
 		<input id="b_contain" type="checkbox" name="b"> Containing <input id="b_contain_text" type="text" size="4"><br>
-		<input id="b_fam" type="checkbox" name="b"> In Family <input id="b_fam_text" type="text"><br>
-		<input id="b_area" type="checkbox" name="b"> In Area <input id="b_area_text" type="text"><br>
+		<input id="b_fam" type="checkbox" name="b">
+		<select id="b_fam_select">
+		 	<option value="i">Is</option>
+		 	<option value="ni">Is not</option>
+		</select> member of <input id="b_fam_text" type="text"> family<br>
+		<input id="b_area" type="checkbox" name="b">
+		<select id="b_area_select">
+		 	<option value="i">Inside</option>
+		 	<option value="ni">Outside</option>
+		</select> <input id="b_area_text" type="text"> area<br>
 		<input id="b_quantity" type="checkbox" name="b"> Containing
 		<select id="b_quantity_select">
 		 	<option value="more">more than</option>

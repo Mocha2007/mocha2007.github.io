@@ -50,13 +50,27 @@ function bigmap(){
 		}
 		if (document.getElementById("b_fam").checked){
 			wants = document.getElementById("b_fam_text").value.toLowerCase();
-			conditional = conditional && x.families.includes(wants);
-			anyc = anyc || x.families.includes(wants);
+			switch (document.getElementById("b_fam_select").value){
+				case "i":
+					conditional = conditional && x.families.includes(wants);
+					anyc = anyc || x.families.includes(wants);
+					break;
+				default:
+					conditional = conditional && !x.families.includes(wants);
+					anyc = anyc || !x.families.includes(wants);
+			}
 		}
 		if (document.getElementById("b_area").checked){
 			wants = document.getElementById("b_area_text").value.toLowerCase();
-			conditional = conditional && x.areas.includes(wants);
-			anyc = anyc || x.areas.includes(wants);
+			switch (document.getElementById("b_area_select").value){
+				case "i":
+					conditional = conditional && x.areas.includes(wants);
+					anyc = anyc || x.areas.includes(wants);
+					break;
+				default:
+					conditional = conditional && !x.areas.includes(wants);
+					anyc = anyc || !x.areas.includes(wants);
+			}
 		}
 		if (document.getElementById("b_quantity").checked){
 			wants = Number(document.getElementById("b_quantity_text").value);
