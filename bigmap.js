@@ -1210,6 +1210,19 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Russian_language"
 	},
 	{
+		name: "Serbo-Croatian",
+		coords: [44, 19],
+		families: ["indo-european", "balto-slavic", "slavic", "south slavic"],
+		areas: ["europe", "balkans"],
+		consonants: "m n J p t k b d g ts ts` ts\\ dz` dz\\ f s s` x v z z` j L r",
+		monophthongs: "i i: u u: e e: o o: a a:",
+		diphthongs: "ie",
+		features: {
+			sov: "svo"
+		},
+		source: "https://en.wikipedia.org/wiki/Serbo-Croatian"
+	},
+	{
 		name: "Shabo",
 		coords: [6, 36],
 		families: [],
