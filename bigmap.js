@@ -428,7 +428,7 @@ var lang = [
 	},
 	{
 		name: "Danish",
-		coords: [56, 13],
+		coords: [56, 11],
 		families: ["indo-european", "germanic"],
 		areas: ["europe"],
 		consonants: "m n N p b t d k g f s h v l j R",
@@ -549,7 +549,7 @@ var lang = [
 	},
 	{
 		name: "Finnish",
-		coords: [60, 25],
+		coords: [61, 25],
 		families: ["uralic", "finnic"],
 		areas: ["europe"],
 		consonants: "m n p t k ? s h P l j r",
@@ -562,7 +562,7 @@ var lang = [
 	},
 	{
 		name: "French",
-		coords: [49, 2],
+		coords: [47, 2],
 		families: ["indo-european", "italic", "romance"],
 		areas: ["europe"],
 		consonants: "m n J p t k b d g f s S v z Z R l j H w",
@@ -588,7 +588,7 @@ var lang = [
 	},
 	{
 		name: "German",
-		coords: [53, 13],
+		coords: [51, 10],
 		families: ["indo-european", "germanic"],
 		areas: ["europe"],
 		consonants: "m n N p t k b d g pf ts tS s S z f C x h v j l r",
@@ -686,8 +686,8 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Hungarian_language"
 	},
 	{
-		name: "Iceland",
-		coords: [64, -22],
+		name: "Icelandic",
+		coords: [65, -19],
 		families: ["indo-european", "germanic"],
 		areas: ["europe"],
 		consonants: "m n p_h p t_h t k_h k s f v T j h l r",
