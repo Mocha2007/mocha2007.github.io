@@ -273,6 +273,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Arabic"
 	},
 	{
+		name: "Aramaic",
+		coords: [36, 43],
+		families: ["afro-asiatic", "semitic"],
+		areas: ["asia"],
+		consonants: "m n p t t_?\\ k q ? b d g f T s s_?\\ S x X\\ h v D z G ?\\ l j w r",
+		monophthongs: "i u e o E a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Aramaic_language"
+	},
+	{
 		name: "Armenian",
 		coords: [40, 45],
 		families: ["indo-european"],
@@ -353,6 +363,16 @@ var lang = [
 		monophthongs: "i u e o E O a i~ u~ e~ o~ {~ O~ a~",
 		diphthongs: "ae ai ao au {e {o ei eu ii iu oe oi oo ou ui",
 		source: "https://en.wikipedia.org/wiki/Bengali_language"
+	},
+	{
+		name: "Biblical Hebrew", // oldest form
+		coords: [32, 35],
+		families: ["afro-asiatic", "semitic"],
+		areas: ["asia"],
+		consonants: "m n p t k ? b d g t_> k_> s K S X X\\ h z R ?\\ s_> ts_> w l j r",
+		monophthongs: "i i: u u: o: a a:",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Biblical_Hebrew"
 	},
 	{
 		name: "Brahui",
