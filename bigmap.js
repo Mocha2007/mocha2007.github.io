@@ -1313,6 +1313,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Vietnamese_language"
 	},
 	{
+		name: "Wayuu",
+		coords: [12, -73],
+		families: ["arawakan"],
+		areas: ["south america"],
+		consonants: "m n p t_d tS k ? s S h 4 r w j",
+		monophthongs: "i 1 u E O a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Wayuu_Language"
+	},
+	{
 		name: "Wichita",
 		coords: [35, -98],
 		families: ["caddoan"],
