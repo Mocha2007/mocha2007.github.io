@@ -841,7 +841,7 @@ var lang = [
 		name: "Kuna",
 		coords: [10, -79],
 		families: ["chibchan"],
-		areas: ["south america"],
+		areas: ["south america"], // todo double check
 		consonants: "p t k p_> t_> k_> m n S_n m_> n_> tS v s l l_> 4 w j",
 		monophthongs: "i u e o a",
 		diphthongs: "",
@@ -1035,6 +1035,16 @@ var lang = [
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Ossetian_language"
+	},
+	{
+		name: "Paez",
+		coords: [2, -77],
+		families: ["paezan"],
+		areas: ["south america"],
+		consonants: "p p' t t' k k' p p_h t t_h t'_h k_h p_n p'_n t_n t'_n k_n ts ts' ts_h tS_h P' s s' x x' P_n P'_n s_n s'_n n n' n_h l l' j w",
+		monophthongs: "a e o u", // source probably mistaken for this
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Paez_Language"
 	},
 	{
 		name: "Piraha",
