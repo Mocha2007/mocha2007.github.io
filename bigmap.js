@@ -887,6 +887,19 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Latin"
 	},
 	{
+		name: "Macedonian",
+		coords: [42, 22],
+		families: ["indo-european", "balto-slavic", "slavic", "south slavic"],
+		areas: ["europe", "balkans"],
+		consonants: "m n_d J p t_d c k b d_d J\\ g ts_d tS dz_d dZ f s_d S x v z_d Z 5 l' j r",
+		monophthongs: "i u E O a",
+		diphthongs: "",
+		features: {
+			sov: "svo"
+		},
+		source: "https://en.wikipedia.org/wiki/Macedonian_language"
+	},
+	{
 		name: "Mandarin",
 		coords: [40, 116],
 		families: ["sino-tibetan", "sinitic"],
