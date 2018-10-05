@@ -196,6 +196,19 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Akkadian_language"
 	},
 	{
+		name: "Albanian",
+		coords: [41, 20],
+		families: ["indo-european"],
+		areas: ["europe", "balkans"],
+		consonants: "m n J p t k b d g ts tS cC dz dZ J\\j\\ f T s S h v D z Z l 5 j 4 r",
+		monophthongs: "i E a @ O y u",
+		diphthongs: "",
+		features: {
+			sov: "svo"
+		},
+		source: "https://en.wikipedia.org/wiki/Albanian_language"
+	},
+	{
 		name: "Aleut",
 		coords: [57, -159],
 		families: ["eskimo-aleut"],
