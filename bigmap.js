@@ -779,6 +779,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Japanese_language"
 	},
 	{
+		name: "Jarawa",
+		coords: [12, 93],
+		families: ["ongan"],
+		areas: ["asia"],
+		consonants: "m n_d J N p t_d t` c k b d_d d` J\\ g p_h t_d_h t`_h c_h k_h k_h_w P S X\\ X\\_w r r` w l j",
+		monophthongs: "i u e @\\ o @ a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Jarawa_language"
+	},
+	{
 		name: "Kalmyk",
 		coords: [47, 45],
 		families: ["mongolic", "oirat"],
@@ -1110,6 +1120,16 @@ var lang = [
 		monophthongs: "i y 1 u e o { a",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Nogai_language"
+	},
+	{
+		name: "Onge",
+		coords: [11, 92],
+		families: ["ongan"],
+		areas: ["asia"],
+		consonants: "k_w b t d c J\\ k g m n J N w l j",
+		monophthongs: "i u e @ o a",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Onge_language"
 	},
 	{
 		name: "Ossetian",
