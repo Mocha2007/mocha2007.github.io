@@ -737,7 +737,9 @@ hurricanelist[2018] = [
 	[255,262,0,"Joyce"],
 	[265,266,-1,"Eleven"],
 	[265,272,0,"Kirk"],
-	[266,278,0,"Leslie"] // active
+	[266,283,1,"Leslie"], // active
+	[280,283,4,"Michael"], // active
+	[282,283,0,"Nadine"], // active
 ];
 
 var alphabet = "abcdefghijklmnoprstvw".split("");
