@@ -1,21 +1,5 @@
 var months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
 var offset = [-1,30,59,90,120,151,181,212,243,273,304,334];
-// I assume the season starts 1 Mar and ends 28 Feb
-// var firstday = 60;
-/*
-0	1 Jan
-31	1 Feb (So leap years are incl.)
-60	1 Mar
-91	1 Apr
-121	1 May
-152	1 Jun
-182	1 Jul
-213	1 Aug
-244	1 Sep
-274	1 Oct
-305 1 Nov
-335 1 Dec
-*/
 
 // begin math block
 
@@ -737,10 +721,24 @@ hurricanelist[2018] = [
 	[255,262,0,"Joyce"],
 	[265,266,-1,"Eleven"],
 	[265,272,0,"Kirk"],
-	[266,283,1,"Leslie"], // active
-	[280,283,4,"Michael"], // active
-	[282,283,0,"Nadine"], // active
+	[266,286,1,"Leslie"],
+	[280,285,4,"Michael"],
+	[282,286,0,"Nadine"],
 ];
+/*
+0	1 Jan
+31	1 Feb (So leap years are incl.)
+60	1 Mar
+91	1 Apr
+121	1 May
+152	1 Jun
+182	1 Jul
+213	1 Aug
+244	1 Sep
+274	1 Oct
+305 1 Nov
+335 1 Dec
+*/
 
 var alphabet = "abcdefghijklmnoprstvw".split("");
 var greek = [
