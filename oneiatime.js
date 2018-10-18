@@ -126,13 +126,14 @@ function darian(){
 	var n = (Number(new Date())+11392059672000)/sol; // sols past epoch
 	var tn = n;
 	var marsy = 0;
+	var marsd;
 	while (true){
 		if (tn<dhelp(marsy+1)){
-			var marsd = tn;
+			marsd = tn;
 			break;
 		}
-		tn-=dhelp(marsy+1);
-		marsy+=1;
+		tn -= dhelp(marsy+1);
+		marsy += 1;
 	}
 	var marsmonth = marsmonths[dhelp3(marsd)[0]];
 	var marsday = dhelp3(marsd)[1]+1;
@@ -152,6 +153,7 @@ function HolidayCSS(){
 		ReplacementImage = '<img id="m" src="img/mopril.png" width="200" alt="Mochadian Birthday Squiggle" onmouseover="PlaySound(\'sfx\')" onmouseout="StopSound(\'sfx\')"> <audio id="sfx" src="snd/partyhorn.mp3"/>';
 	}
 
+	var day, title;
 	switch (monthmonth){
 		case 1:
 			ReplacementImage = 'Steve'; // Trust me, this is indeed necessary...
@@ -166,22 +168,21 @@ function HolidayCSS(){
 			ReplacementImage = '<img id="m" src="img/mochaween.png" width="200" title="Boo, motherfucker!" alt="Mochadian Halloween Squiggle">';
 			break;
 		case 12:
-			var day = new Date().getDate()
-			var title;
-			if (day == 4){
-				title = 'Today is Yuletide! Roast marshmallows and listen to spooky ghost stories in Seaside Town!'
+			day = new Date().getDate();
+			if (day === 4){
+				title = 'Today is Yuletide! Roast marshmallows and listen to spooky ghost stories in Seaside Town!';
 			}
 			else if (17 <= day && day < 23){
-				title = 'Have a joyous Saturnalia!'
+				title = 'Have a joyous Saturnalia!';
 			}
-			else if (day == 23){
-				title = 'Happy Festivus!'
+			else if (day === 23){
+				title = 'Happy Festivus!';
 			}
-			else if (day == 31){
-				title = 'Party Time!'
+			else if (day === 31){
+				title = 'Party Time!';
 			}
 			else {
-				title = 'Have a frosty winter solstice!'
+				title = 'Have a frosty winter solstice!';
 			}
 			ReplacementImage = '<img id="m" src="img/mochristmas.png" width="200" title="'+title+'" alt="Mochadian Christmas Squiggle">';
 			break;
