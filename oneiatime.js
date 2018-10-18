@@ -166,7 +166,24 @@ function HolidayCSS(){
 			ReplacementImage = '<img id="m" src="img/mochaween.png" width="200" title="Boo, motherfucker!" alt="Mochadian Halloween Squiggle">';
 			break;
 		case 12:
-			ReplacementImage = '<img id="m" src="img/mochristmas.png" width="200" title="Have a joyous Saturnalia!" alt="Mochadian Christmas Squiggle">';
+			var day = new Date().getDate()
+			var title;
+			if (day == 4){
+				title = 'Today is Yuletide! Roast marshmallows and listen to spooky ghost stories in Seaside Town!'
+			}
+			else if (17 <= day && day < 23){
+				title = 'Have a joyous Saturnalia!'
+			}
+			else if (day == 23){
+				title = 'Happy Festivus!'
+			}
+			else if (day == 31){
+				title = 'Party Time!'
+			}
+			else {
+				title = 'Have a frosty winter solstice!'
+			}
+			ReplacementImage = '<img id="m" src="img/mochristmas.png" width="200" title="'+title+'" alt="Mochadian Christmas Squiggle">';
 			break;
 	}
 
