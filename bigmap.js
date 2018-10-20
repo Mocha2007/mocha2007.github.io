@@ -358,7 +358,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
-			sov: "sov"
+			sov: "sov",
+			tea: "other"
 		},
 		source: "https://en.wikipedia.org/wiki/Aymaran_language"
 	},
@@ -551,7 +552,8 @@ var lang = [
 		diphthongs: "ai",
 		features: {
 			adpositions: "postpositions",
-			an: "an"
+			an: "an",
+			tea: "other"
 		},
 		source: "https://en.wikipedia.org/wiki/Cherokee_language"
 	},
@@ -1073,7 +1075,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
-			sov: "sov"
+			sov: "sov",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Karachay-Balkar_language"
 	},
@@ -1481,6 +1484,9 @@ var lang = [
 		consonants: "p t ts k k_w ? ?_w p_h t_h ts_h k_h k_w_h b d dz g g_w m_0 n_0 N_0 N_w_0 m n N N_w l_0 l s h h_w r",
 		monophthongs: "i @ u e a o",
 		diphthongs: "",
+		features: {
+			tea: "other"
+		},
 		source: "https://en.wikipedia.org/wiki/Old_Chinese"
 	},
 	{
@@ -1507,7 +1513,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
-			sov: "sov"
+			sov: "sov",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Ossetian_language"
 	},
@@ -1724,7 +1731,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
-			sov: "svo"
+			sov: "svo",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Scotland"
 	},
@@ -1837,6 +1845,9 @@ var lang = [
 		consonants: "b d dZ f g h k l m n N J p 4 s S t tS w z",
 		monophthongs: "a e i o u E O",
 		diphthongs: "au ou ei ai oi",
+		features: {
+			tea: "te"
+		},
 		source: "https://omniglot.com/writing/sranan.htm"
 	},
 	{
@@ -1923,6 +1934,9 @@ var lang = [
 		consonants: "p b t d k g v s h m n N l w j r",
 		monophthongs: "i u e o a",
 		diphthongs: "",
+		features: {
+			tea: "te"
+		},
 		source: "https://en.wikipedia.org/wiki/Tok_Pisin"
 	},
 	{
@@ -2013,7 +2027,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "svo"
+			sov: "svo",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Venetian_language"
 	},
