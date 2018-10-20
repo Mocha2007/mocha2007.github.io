@@ -2128,6 +2128,7 @@ var lang = [
 		diphthongs: "au ou ei ai oi",
 		features: {
 			adpositions: "prepositions",
+			an: "na", // seemingly...? eg. http://www.suriname-languages.sil.org/Sranan/STEng.pdf
 			sov: "svo",
 			ginger: "ginger",
 			sugar: "sugar",
