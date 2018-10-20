@@ -406,6 +406,7 @@ var lang = [
 		monophthongs: "i u e o E O a",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			an: "na",
 			sov: "sov"
 		},
