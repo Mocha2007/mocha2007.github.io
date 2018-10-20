@@ -427,6 +427,9 @@ var lang = [
 		consonants: "m n m' J p b t d k g p' b' t' d' c J\\ ts tS ts' dZ f v s z S Z x f' v' s' z' r r' j 5 L",
 		monophthongs: "i u o 7 E O a",
 		diphthongs: "",
+		features: {
+			adpositions: "prepositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Bulgarian_language"
 	},
 	{
@@ -523,6 +526,9 @@ var lang = [
 		consonants: "m n J p t c k b d J\\ ts tS s S x v z Z h\\ r r_r l j",
 		monophthongs: "i: I u u: E E: o o: a a:",
 		diphthongs: "",
+		features: {
+			adpositions: "prepositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Czech_language"
 	},
 	{
@@ -546,6 +552,9 @@ var lang = [
 		consonants: "m n N p b t d k g f v s z S Z x G h\\ r P l j",
 		monophthongs: "I Y E @ O A i: y: u: e: 2: o: a:",
 		diphthongs: "Ei 9y Au iu yu ui e:u o:i a:i",
+		features: {
+			adpositions: "prepositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Dutch_language"
 	},
 	{
@@ -607,6 +616,9 @@ var lang = [
 		consonants: "m n n' N p t t' k b d d' g ts ts' tS f s s' S x v z z' Z r r' l l' j",
 		monophthongs: "i u e o a",
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Erzya_language"
 	},
 	{
@@ -695,6 +707,9 @@ var lang = [
 		consonants: "m n N p t k b d g pf ts tS s S z f C x h v j l r",
 		monophthongs: "I i: Y y: U u: e: 2: o: E 9 O a a:",
 		diphthongs: "OY aI aU",
+		features: {
+			adpositions: "prepositions"
+		},
 		source: "https://en.wikipedia.org/wiki/German_language"
 	},
 	{
@@ -705,6 +720,9 @@ var lang = [
 		consonants: "m n p t k b d g f T s x v D z G r l",
 		monophthongs: "i u e o a",
 		diphthongs: "",
+		features: {
+			adpositions: "prepositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Greek_language"
 	},
 	{
@@ -784,6 +802,9 @@ var lang = [
 		consonants: "m n J p b t d k g ts dz tS dZ c_C J\\_j\\ f v s z S Z h r l j",
 		monophthongs: "i: i y: y u: u 2: 2 o: o e: E a: Q",
 		diphthongs: "",
+		features: {
+			adpositions: "prepositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Hungarian_language"
 	},
 	{
@@ -936,6 +957,9 @@ var lang = [
 		consonants: "b v g d dZ dz\\ Z z j k 5 m n p r s t tS f x ts ts\\ S s\\",
 		monophthongs: "A e o i @ u 1",
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Komi_language"
 	},
 	{
@@ -1016,6 +1040,7 @@ var lang = [
 		monophthongs: "i: I U u: e: E O o: a a:",
 		diphthongs: "ui ei eu oe ou ae au",
 		features: {
+			adpositions: "prepositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Latin"
@@ -1028,6 +1053,9 @@ var lang = [
 		consonants: "m m' n n' p p' t k b b' d g ts tS ts\\ f s S s\\ x h v z Z z\\ r r' w w' l j",
 		monophthongs: "i u e o E O a",
 		diphthongs: "",
+		features: {
+			adpositions: "prepositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Lower_Sorbian_language"
 	},
 	{
@@ -1280,6 +1308,8 @@ var lang = [
 		monophthongs: "i i~ u u~ M e e~ 6 6~ E O a",
 		diphthongs: "",
 		features: {
+			adpositions: "prepositions",
+			an: "na",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Portuguese_language"
@@ -1444,6 +1474,7 @@ var lang = [
 		monophthongs: "i u e @ o E O a",
 		diphthongs: "",
 		features: {
+			adpositions: "prepositions",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Slovene_language"
@@ -1613,6 +1644,9 @@ var lang = [
 		consonants: "m m' n J p p' t k b b' d g ts tS dZ f s S x z z' Z h\\ R\\ R\\' B H l j",
 		monophthongs: "i u e o E O",
 		diphthongs: "",
+		features: {
+			adpositions: "prepositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Upper_Sorbian_language"
 	},
 	{
