@@ -229,6 +229,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			an: "an",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Ainu_language"
@@ -257,6 +258,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
+			an: "na",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Albanian_language"
