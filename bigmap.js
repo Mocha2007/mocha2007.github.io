@@ -2127,6 +2127,10 @@ var lang = [
 		monophthongs: "a e i o u E O",
 		diphthongs: "au ou ei ai oi",
 		features: {
+			adpositions: "prepositions",
+			sov: "svo",
+			ginger: "ginger",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://omniglot.com/writing/sranan.htm"
