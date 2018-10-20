@@ -260,6 +260,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Albanian_language"
@@ -313,6 +314,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "vso",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Arabic"
@@ -343,6 +345,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Armenian_language"
@@ -374,6 +377,7 @@ var lang = [
 		features: {
 			an: "an",
 			sov: "sov",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Azerbaijani_language"
@@ -404,6 +408,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Bashkir_language"
@@ -420,6 +425,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "na",
 			sov: "sov",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Basque_language"
@@ -434,6 +440,7 @@ var lang = [
 		diphthongs: "ae ai ao au {e {o ei eu ii iu oe oi oo ou ui",
 		features: {
 			sov: "sov",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Bengali_language"
@@ -474,6 +481,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Bulgarian_language"
@@ -515,6 +523,7 @@ var lang = [
 		features: {
 			an: "an",
 			sov: "svo",
+			sugar: "other",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Cantonese"
@@ -553,6 +562,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			sugar: "other",
 			tea: "other"
 		},
 		source: "https://en.wikipedia.org/wiki/Cherokee_language"
@@ -569,6 +579,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Chuvash_language"
@@ -584,6 +595,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			sugar: "sugar",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Cornish_Language"
@@ -596,6 +608,9 @@ var lang = [
 		consonants: "m n N p t tS k q b d dZ g f s S x v z G r l j",
 		monophthongs: "i y M u e 2 A o",
 		diphthongs: "",
+		features: {
+			sugar: "sugar"
+		},
 		source: "https://en.wikipedia.org/wiki/Crimean_Tatar_language"
 	},
 	{
@@ -610,6 +625,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Czech_language"
@@ -626,6 +642,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Danish_language"
@@ -641,6 +658,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Dutch_language"
@@ -701,6 +719,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "#bigmap"
@@ -745,6 +764,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Faroese_language"
@@ -760,7 +780,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "vos"
+			sov: "vos",
+			sugar: "sugar"
 		},
 		source: "https://en.wikipedia.org/wiki/Fijian_language"
 	},
@@ -776,6 +797,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Finnish_language"
@@ -792,6 +814,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/French_language"
@@ -808,6 +831,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Georgian_language"
@@ -823,6 +847,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/German_language"
@@ -838,6 +863,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Greek_language"
@@ -868,6 +894,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "na",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Guarani_language"
@@ -911,7 +938,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "vso"
+			sov: "vso",
+			sugar: "other"
 		},
 		source: "https://en.wikipedia.org/wiki/Hawaiian_language"
 	},
@@ -927,6 +955,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Hindi"
@@ -942,6 +971,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Hungarian_language"
@@ -958,6 +988,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Icelandic_language"
@@ -974,6 +1005,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Indonesian_language"
@@ -1005,6 +1037,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "vso",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Irish_language"
@@ -1031,6 +1064,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			sugar: "other",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Japanese_language"
@@ -1060,6 +1094,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Kalmyk_language"
@@ -1076,6 +1111,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Karachay-Balkar_language"
@@ -1113,6 +1149,9 @@ var lang = [
 		consonants: "p t k b d g f s S x v z Z G tS dZ m n N r l j",
 		monophthongs: "i i: y y: 1 1: u u: e e: 2 2: o o: a a:",
 		diphthongs: "",
+		features: {
+			sugar: "sugar"
+		},
 		source: "https://en.wikipedia.org/wiki/Khakas_language"
 	},
 	{
@@ -1127,6 +1166,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Khmer_language"
@@ -1173,6 +1213,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			sugar: "other",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Korean_language"
@@ -1258,6 +1299,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			sov: "sov",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Latin"
@@ -1288,6 +1330,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Macedonian_language"
@@ -1303,6 +1346,7 @@ var lang = [
 		features: {
 			an: "an",
 			sov: "svo",
+			sugar: "other",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Mandarin_Chinese"
@@ -1319,6 +1363,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "vso",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Maori_language"
@@ -1415,7 +1460,8 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
-			an: "na"
+			an: "na",
+			sugar: "sugar"
 		},
 		source: "https://en.wikipedia.org/wiki/Nauruan_language"
 	},
@@ -1431,6 +1477,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "na",
 			sov: "sov",
+			sugar: "other",
 			tea: "other"
 		},
 		source: "https://en.wikipedia.org/wiki/Navajo_language"
@@ -1485,6 +1532,7 @@ var lang = [
 		monophthongs: "i @ u e a o",
 		diphthongs: "",
 		features: {
+			sugar: "other",
 			tea: "other"
 		},
 		source: "https://en.wikipedia.org/wiki/Old_Chinese"
@@ -1514,6 +1562,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Ossetian_language"
@@ -1571,6 +1620,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Polish_language"
@@ -1587,6 +1637,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Portuguese_language"
@@ -1631,6 +1682,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			sov: "sov",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Punjabi_language"
@@ -1646,6 +1698,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			sov: "sov",
+			sugar: "other",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Quechuan_languages"
@@ -1662,6 +1715,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Romanian_language"
@@ -1701,6 +1755,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Russian_language"
@@ -1732,6 +1787,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Scotland"
@@ -1747,7 +1803,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "vso"
+			sov: "vso",
+			sugar: "sugar"
 		},
 		source: "https://en.wikipedia.org/wiki/Scottish_Gaelic"
 	},
@@ -1763,6 +1820,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Serbo-Croatian"
@@ -1791,6 +1849,7 @@ var lang = [
 		monophthongs: "i i: u u: E E: O a a:",
 		diphthongs: "IE Ia Iu UO",
 		features: {
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Slovak_language"
@@ -1807,6 +1866,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Slovene_language"
@@ -1833,6 +1893,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Spanish_language"
@@ -1878,6 +1939,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Swahili_language"
@@ -1892,6 +1954,7 @@ var lang = [
 		diphthongs: "ai ui au iu",
 		features: {
 			sov: "vso",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Tagalog_language"
@@ -1922,6 +1985,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Tamil_language"
@@ -1935,6 +1999,7 @@ var lang = [
 		monophthongs: "i u e o a",
 		diphthongs: "",
 		features: {
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Tok_Pisin"
@@ -1951,6 +2016,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Turkish_language"
@@ -1967,6 +2033,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Tuvan_language"
@@ -2028,6 +2095,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Venetian_language"
@@ -2044,6 +2112,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			sugar: "other",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Vietnamese_language"
@@ -2070,6 +2139,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "vso",
+			sugar: "sugar",
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Welsh_Language"
@@ -2131,6 +2201,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "na",
 			sov: "sov",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Yakut_language"
