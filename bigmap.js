@@ -1637,6 +1637,21 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Sardinian_language"
 	},
 	{
+		name: "Scots",
+		coords: [56, -3],
+		families: ["indo-european", "germanic"],
+		areas: ["europe", "britain"],
+		consonants: "m n N p b t d k g ? tS dZ f v T D s z S Z C x h r\\ j W w l r",
+		monophthongs: "i e o u 2 e: i: A: O: I E A a O V",
+		diphthongs: "@i aI ei oe Vu iu",
+		features: {
+			adpositions: "prepositions",
+			an: "an",
+			sov: "svo"
+		},
+		source: "https://en.wikipedia.org/wiki/Scotland"
+	},
+	{
 		name: "Serbo-Croatian",
 		coords: [44, 19],
 		families: ["indo-european", "balto-slavic", "slavic", "south slavic"],
@@ -1921,6 +1936,21 @@ var lang = [
 		monophthongs: "i 1 u E O a",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Wayuu_Language"
+	},
+	{
+		name: "Welsh",
+		coords: [52, -4],
+		families: ["indo-european", "celtic", "brittonic"],
+		areas: ["europe", "britain"],
+		consonants: "m_0 n_0 N_0 m n N p t k b d g f T s K S X h v D r_0 r W l j w",
+		monophthongs: "I i: 1 1: U u: E e: @ O o: a a:",
+		diphthongs: "Ui U1 Iu 1u @i Oi @1 @u Ou ai a1 au",
+		features: {
+			adpositions: "prepositions",
+			an: "na",
+			sov: "vso"
+		},
+		source: "https://en.wikipedia.org/wiki/Welsh_Language"
 	},
 	{
 		name: "Wichita",
