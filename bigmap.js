@@ -594,6 +594,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			orange: "orange",
 			sugar: "other",
 			tea: "other"
 		},
@@ -611,6 +612,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			orange: "apple",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -867,6 +869,7 @@ var lang = [
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -1631,6 +1634,7 @@ var lang = [
 		monophthongs: "i @ u e a o",
 		diphthongs: "",
 		features: {
+			orange: "other",
 			sugar: "other",
 			tea: "other"
 		},
@@ -1789,6 +1793,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			sov: "sov",
+			orange: "other",
 			sugar: "sugar",
 			tea: "cha"
 		},
