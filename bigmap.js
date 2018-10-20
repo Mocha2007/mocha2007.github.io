@@ -170,7 +170,7 @@ function bigmap(){
 						if (x.features.hasOwnProperty(property)){
 							if (commonf.hasOwnProperty(property)){
 								if (commonf[property] !== x.features[property]){
-									commonf[property] = "None";
+									commonf[property] = "&Oslash;";
 								}
 							}
 							else {
