@@ -306,6 +306,7 @@ var lang = [
 		monophthongs: "i u a i: u: a:",
 		diphthongs: "aj aw",
 		features: {
+			adpositions: "prepositions",
 			sov: "vso"
 		},
 		source: "https://en.wikipedia.org/wiki/Arabic"
@@ -318,6 +319,9 @@ var lang = [
 		consonants: "m n p t t_?\\ k q ? b d g f T s s_?\\ S x X\\ h v D z G ?\\ l j w r",
 		monophthongs: "i u e o E a",
 		diphthongs: "",
+		features: {
+			adpositions: "prepositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Aramaic_language"
 	},
 	{
@@ -329,6 +333,7 @@ var lang = [
 		monophthongs: "i u E @ O A",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Armenian_language"
@@ -375,6 +380,7 @@ var lang = [
 		monophthongs: "i y u e 2 7 o { A",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Bashkir_language"
@@ -488,6 +494,9 @@ var lang = [
 		consonants: "m n n_?\\ b t_h t_?\\ k q q_w d d_?\\ g f s s_?\\ S x_w X z z_?\\ Z G_w R l l_?\\ j w r r_?\\",
 		monophthongs: "i u a",
 		diphthongs: "",
+		features: {
+			adpositions: "prepositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Central_Atlas_Tamazight"
 	},
 	{
@@ -509,6 +518,7 @@ var lang = [
 		monophthongs: "i y M u e 2 a o",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Chuvash_language"
@@ -705,6 +715,7 @@ var lang = [
 		monophthongs: "i u e o a",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Georgian_language"
@@ -905,6 +916,9 @@ var lang = [
 		consonants: "p b t d k g s z S x h tS dZ m n N l r q j",
 		monophthongs: "i y M u e 2 o a",
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Karachay-Balkar_language"
 	},
 	{
@@ -958,6 +972,9 @@ var lang = [
 		consonants: "m n p t k ? ts_h kx_h s x h |\\ |\\_h |\\_n |\\_0_h_n |\\_?_n |\\|\\ |\\|\\_h |\\|\\_n |\\|\\_0_h_n |\\|\\_?_n !\\ !\\_h !\\_n !\\_0_h_n !\\_?_n =\\ =\\_h =\\_n =\\_0_h_n =\\_?_n",
 		monophthongs: "i e a o u i~ a~ u~",
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Khoekhoe_language"
 	},
 	{
@@ -1425,6 +1442,7 @@ var lang = [
 		monophthongs: "i u e o a",
 		diphthongs: "",
 		features: {
+			adpositions: "prepositions",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Russian_language"
@@ -1553,6 +1571,9 @@ var lang = [
 		consonants: "m n J N b_n d_n dZ_n g_n b_< d_< dZ_< g_< p t tS k v_n z_n v z f s S h r l j w",
 		monophthongs: "i u e o a",
 		diphthongs: "",
+		features: {
+			adpositions: "prepositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Swahili_language"
 	},
 	{
@@ -1608,6 +1629,7 @@ var lang = [
 		monophthongs: "i y M u e 9 o a",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Turkish_language"
@@ -1634,6 +1656,7 @@ var lang = [
 		monophthongs: "i 1 u e @ o a",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Udmurt_language"
