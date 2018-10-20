@@ -28,16 +28,30 @@ function coord2px(coords){
 	return [y,x];
 }
 
+function obj2string(obj){
+	if (obj === undefined){
+		return "";
+	}
+	obj = JSON.stringify(obj);
+	obj = obj.replace(/{/g, "");
+	obj = obj.replace(/}/g, "");
+	obj = obj.replace(/"/g, "");
+	obj = obj.replace(/,/g, "<br>");
+	obj = obj.replace(/:/g, ": ");
+	return obj;
+}
+
 function bigmap(){
 	"use strict";
 	var anyc, conditional, coords, familylist, hastag, newlink, newpoint, newrow, soundset, wants, wants2;
-	document.getElementById("mapinfo").innerHTML = '<tr><th>Language</th><th>Feature</th><th>C</th><th>V</th></tr>';
+	document.getElementById("mapinfo").innerHTML = '<tr><th>Language</th><th>Feature</th><th>C</th><th>V</th><th>Features</th></tr>';
 	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" width="'+mapsize+'">';
 	document.getElementById("brs").innerHTML = Array(Math.floor(brcount)).join('<br>');
 	var yes = 0;
 	var yn = 0;
 	var commonc = true;
 	var commonv = true;
+	var commonf = true;
 	lang.forEach(function(x){
 		// test for conditions
 		anyc = false;
@@ -143,6 +157,26 @@ function bigmap(){
 				commonc = x.consonants.split(" ");
 				commonv = (x.monophthongs + " " + x.diphthongs).split(" ").filter(Boolean);
 			}
+			if (x.features){
+				if (commonf === true){
+					commonf = x.features;
+				}
+				else {
+					// https://stackoverflow.com/a/16735184/2579798
+					for (var property in x.features){
+						if (x.features.hasOwnProperty(property)){
+							if (commonf.hasOwnProperty(property)){
+								if (commonf[property] !== x.features[property]){
+									commonf[property] = "None";
+								}
+							}
+							else {
+								commonf[property] = x.features[property];
+							}
+						}
+					}
+				}
+			}
 			// intersect
 			commonc = intersect(commonc, x.consonants.split(" "))
 			commonv = intersect(commonv, (x.monophthongs + " " + x.diphthongs).split(" ").filter(Boolean))
@@ -168,7 +202,7 @@ function bigmap(){
 		// mapinfo
 		newrow = document.createElement("tr");
 		newrow.id = "row_"+x.name.replace(" ","_");
-		newrow.innerHTML = "<td><a href='#top'>"+x.name+"</a><sup><a href='"+x.source+"'>i</a></sup></td><td class='"+conditional+"'>"+conditional+"</td><td>"+(conditional ? x.consonants : "-")+"</td><td>"+(conditional ? x.monophthongs+' '+x.diphthongs : "-")+"</td>";
+		newrow.innerHTML = "<td><a href='#top'>"+x.name+"</a><sup><a href='"+x.source+"'>i</a></sup></td><td class='"+conditional+"'>"+conditional+"</td><td>"+(conditional ? x.consonants : "-")+"</td><td>"+(conditional ? x.monophthongs+' '+x.diphthongs : "-")+"</td><td>"+(conditional ? obj2string(x.features) : "-")+"</td>";
 		document.getElementById("mapinfo").appendChild(newrow);
 		//
 		yes += conditional;
@@ -177,7 +211,7 @@ function bigmap(){
 	// sum
 	newrow = document.createElement("tr");
 	// console.log(commonc, commonv);
-	newrow.innerHTML = "<th>All "+yn+"</th><th>"+Math.floor(10000*yes/yn)/100+"%</th><td>"+commonc.join(" ")+"</td><td>"+commonv.join(" ")+"</td>";
+	newrow.innerHTML = "<th>All "+yn+"</th><th>"+Math.floor(10000*yes/yn)/100+"%</th><td>"+commonc.join(" ")+"</td><td>"+commonv.join(" ")+"</td><td>"+obj2string(commonf)+"</td>";
 	document.getElementById("mapinfo").appendChild(newrow);
 }
 
