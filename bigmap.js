@@ -255,6 +255,7 @@ var lang = [
 		monophthongs: "i E a @ O y u",
 		diphthongs: "",
 		features: {
+			adpositions: "prepositions",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Albanian_language"
@@ -387,6 +388,7 @@ var lang = [
 		monophthongs: "a e i o u",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Basque_language"
@@ -674,6 +676,7 @@ var lang = [
 		monophthongs: "i i: y y: u u: e e: 2 2: o o: { {: A A:",
 		diphthongs: "ai au {i {y oi ou ei eu ey 2i 2y ui uo iu iy ie yi y2",
 		features: {
+			adpositions: "postpositions",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Finnish_language"
@@ -1075,6 +1078,7 @@ var lang = [
 		monophthongs: "i u E O a",
 		diphthongs: "",
 		features: {
+			adpositions: "prepositions",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Macedonian_language"
@@ -1387,6 +1391,7 @@ var lang = [
 		monophthongs: "i 1 u e @ o a",
 		diphthongs: "ea oa",
 		features: {
+			adpositions: "prepositions",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Romanian_language"
@@ -1446,6 +1451,7 @@ var lang = [
 		monophthongs: "i i: u u: e e: o o: a a:",
 		diphthongs: "ie",
 		features: {
+			adpositions: "prepositions",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Serbo-Croatian"
