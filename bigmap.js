@@ -1334,6 +1334,21 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Komi_language"
 	},
 	{
+		name: "Kongo",
+		coords: [-3, 24],
+		families: ["niger-congo", "bantu"],
+		areas: ["africa"],
+		consonants: "m n N p_n b_n t_n d_n k_n p b t d k f_n v_n s_n z_n f v s z w l j",
+		monophthongs: "i u e o a",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			an: "na",
+			sov: "svo"
+		},
+		source: "https://en.wikipedia.org/wiki/Kongo_language"
+	},
+	{
 		name: "Korean",
 		coords: [38, 127],
 		families: ["koreanic"],
