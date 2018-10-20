@@ -347,6 +347,9 @@ var lang = [
 		consonants: "m n J N p t tS k q p_h t_h tS_h k_h q_h p_> t_> tS_> k_> q_> s S x X v j w l L r",
 		monophthongs: "a i u",
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Aymaran_language"
 	},
 	{
@@ -514,6 +517,9 @@ var lang = [
 		consonants: "t k ? ts s h m n l j M\\",
 		monophthongs: "i i: u u: e e: @~ @~: o o: a a:",
 		diphthongs: "ai",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Cherokee_language"
 	},
 	{
@@ -683,6 +689,7 @@ var lang = [
 		monophthongs: "i i: u u: e e: o o: a a:",
 		diphthongs: "ei eu oi ou ai au",
 		features: {
+			adpositions: "prepositions",
 			sov: "vos"
 		},
 		source: "https://en.wikipedia.org/wiki/Fijian_language"
@@ -764,6 +771,9 @@ var lang = [
 		consonants: "p t k q v s G R m n N l j",
 		monophthongs: "i u a",
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Greenlandic_language"
 	},
 	{
@@ -774,6 +784,9 @@ var lang = [
 		consonants: "p t k k_w ? b d dZ g g_w s s\\ h P M\\ w 4",
 		monophthongs: "i i~ 1 1~ u u~ e e~ o o~ a a~",
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Guarani_language"
 	},
 	{
@@ -808,6 +821,7 @@ var lang = [
 		monophthongs: "i u i: u: E o e: o: 6 a:",
 		diphthongs: "iu ou oi eu ei au ai ao ae o:u e:i a:u a:i a:o a:e",
 		features: {
+			adpositions: "prepositions",
 			sov: "vso"
 		},
 		source: "https://en.wikipedia.org/wiki/Hawaiian_language"
@@ -1045,6 +1059,9 @@ var lang = [
 		consonants: "p t t_- k k_w q ? B s s_- K K' x x_w tS m n n_- J L r r_0 w l j",
 		monophthongs: "i u @ o a",
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Kumeyaay_language"
 	},
 	{
@@ -1055,6 +1072,9 @@ var lang = [
 		consonants: "p t k p_> t_> k_> m n S_n m_> n_> tS v s l l_> 4 w j",
 		monophthongs: "i u e o a",
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Kuna_Language"
 	},
 	{
@@ -1148,6 +1168,9 @@ var lang = [
 		consonants: "p t k f h m n N 4 w",
 		monophthongs: "i } e o a",
 		diphthongs: "ae ai ao au oi oe ou",
+		features: {
+			adpositions: "prepositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Maori_language"
 	},
 	{
@@ -1178,6 +1201,9 @@ var lang = [
 		consonants: "p t k b d s h m n N l r j w",
 		monophthongs: "a i u a: i: u:",
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Miskito_language"
 	},
 	{
@@ -1213,6 +1239,7 @@ var lang = [
 		monophthongs: "i: i o: o e: e a: a",
 		diphthongs: "",
 		features: {
+			adpositions: "prepositions",
 			sov: "free"
 		},
 		source: "https://en.wikipedia.org/wiki/Nahuatl"
@@ -1225,6 +1252,9 @@ var lang = [
 		consonants: "m' m n N p' p t k k_w b' b d g g_w j\\ G_w r r'",
 		monophthongs: "i: I e: E {: { 1: 1 o: V A: A",
 		diphthongs: "",
+		features: {
+			adpositions: "prepositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Nauruan_language"
 	},
 	{
@@ -1236,6 +1266,7 @@ var lang = [
 		monophthongs: "i i~ e e~ o o~ A A~",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Navajo_language"
@@ -1318,6 +1349,9 @@ var lang = [
 		consonants: "p p' t t' k k' p p_h t t_h t'_h k_h p_n p'_n t_n t'_n k_n ts ts' ts_h tS_h p\\' s s' x x' p\\_n p\\'_n s_n s'_n n n' n_h l l' j w",
 		monophthongs: "a e o u", // source probably mistaken for this
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Paez_Language"
 	},
 	{
@@ -1329,6 +1363,7 @@ var lang = [
 		monophthongs: "i o a",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Pirahã_language"
@@ -1425,6 +1460,7 @@ var lang = [
 		monophthongs: "i u a",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Quechuan_languages"
@@ -1707,6 +1743,7 @@ var lang = [
 		monophthongs: "@ a",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Upper_Arrernte_language"
@@ -1785,6 +1822,7 @@ var lang = [
 		monophthongs: "i i~ 1 u e @ o E E~ a a~ O O~",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "osv"
 		},
 		source: "https://en.wikipedia.org/wiki/Xavante_language"
@@ -1797,6 +1835,9 @@ var lang = [
 		consonants: "m n p t tS k ? f s S x h 4 l r\\` j w",
 		monophthongs: "i u e @ o { a",
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Yahgan_language"
 	},
 	{
@@ -1833,6 +1874,7 @@ var lang = [
 		monophthongs: "i u e o a",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Zuni_language"
