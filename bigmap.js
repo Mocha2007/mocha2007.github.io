@@ -228,6 +228,7 @@ var lang = [
 		monophthongs: "a e i o u",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Ainu_language"
@@ -454,6 +455,9 @@ var lang = [
 		consonants: "m n N p p_h t t_h t` t`_h k k_h q q_h b d d` g ts ts_h ts\\ ts\\_h ts` ts`_h dz\\ dz` s s\\ s` h z R r l j r\\` w",
 		monophthongs: "i e a o u",
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Burushaski_language"
 	},
 	{
@@ -610,6 +614,9 @@ var lang = [
 		consonants: "p t k ? b d s h r j w",
 		monophthongs: "i i~ 1 1~ u u~ e e~ @ @~ o o~ a a~",
 		diphthongs: "",
+		features: {
+			adpositions: "prepositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Enggano_language"
 	},
 	{
@@ -814,6 +821,7 @@ var lang = [
 		monophthongs: "i: I U u: e: @ o: E: O: A:",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Hindi"
@@ -854,6 +862,7 @@ var lang = [
 		monophthongs: "i u e @ o a",
 		diphthongs: "ai au oi",
 		features: {
+			adpositions: "pretpositions",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Indonesian_language"
@@ -890,6 +899,7 @@ var lang = [
 		monophthongs: "i u e o a",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Japanese_language"
@@ -948,6 +958,9 @@ var lang = [
 		consonants: "m n N t k q b d s C h K\\",
 		monophthongs: "i 1 u e @ o a",
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Ket_language"
 	},
 	{
@@ -969,6 +982,7 @@ var lang = [
 		monophthongs: "i i: 1 1: u u: e e: @ @: o o: E: O: a a: A A:",
 		diphthongs: "i@ ei ae 1@ @1 a@ u@ ou ao O@ e@ u@ o@",
 		features: {
+			adpositions: "prepositions",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Khmer_language"
@@ -1008,6 +1022,7 @@ var lang = [
 		monophthongs: "i M u e 2 E o V a i: M: u: e: 2: E: V: o: a:",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Korean_language"
@@ -1050,6 +1065,9 @@ var lang = [
 		consonants: "m n N N\\ p t k q ? b d g ts dz s R h w l j 4",
 		monophthongs: "i u e @ o a",
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Kusunda_language"
 	},
 	{
@@ -1171,6 +1189,7 @@ var lang = [
 		monophthongs: "i 1 u E A",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Miyako_language"
@@ -1240,6 +1259,7 @@ var lang = [
 		monophthongs: "I u 7 o {",
 		diphthongs: "Ie",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Nivkh_language"
@@ -1391,6 +1411,7 @@ var lang = [
 		monophthongs: "i i: i~: u u: u~: I U e e: e~: o o: o~: @ E E: E~: O O: O~: a a: a~:",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Punjabi_language"
@@ -1440,6 +1461,9 @@ var lang = [
 		consonants: "m n N p t d` k b d g ts v T s D r w l l` j",
 		monophthongs: "i e o a",
 		diphthongs: "",
+		features: {
+			adpositions: "prepositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Rukai_language"
 	},
 	{
@@ -1617,6 +1641,9 @@ var lang = [
 		consonants: "p t_d t t` ts\\ k m n_d n n` J N r` P r\\` j l_d l`",
 		monophthongs: "i u i: u: e o e: o: a a:",
 		diphthongs: "aI aU",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Tamil_language"
 	},
 	{
@@ -1652,6 +1679,7 @@ var lang = [
 		monophthongs: "i e i: e: y 2 y: 2: M a M: a: u o u: o:",
 		diphthongs: "",
 		features: {
+			adpositions: "postpositions",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Tuvan_language"
@@ -1719,6 +1747,7 @@ var lang = [
 		monophthongs: "i 1 u e @ @: o E a a: O",
 		diphthongs: "i@ 1@ u@ i@u 1@u u@i iu 1u 1i ui eu @u @:i @i oi Eu a:u au a:i ai Oi",
 		features: {
+			adpositions: "prepositions",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Vietnamese_language"
@@ -1779,6 +1808,7 @@ var lang = [
 		monophthongs: "i y M u i: y: M: u: e 2 a o e: 2: a: o:",
 		diphthongs: "ie y2 Ma uo",
 		features: {
+			adpositions: "postpositions",
 			an: "na",
 			sov: "sov"
 		},
