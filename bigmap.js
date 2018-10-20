@@ -1342,7 +1342,8 @@ var lang = [
 		monophthongs: "i: I e: E {: { 1: 1 o: V A: A",
 		diphthongs: "",
 		features: {
-			adpositions: "prepositions"
+			adpositions: "prepositions",
+			an: "na"
 		},
 		source: "https://en.wikipedia.org/wiki/Nauruan_language"
 	},
@@ -1356,6 +1357,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			an: "na",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Navajo_language"
@@ -1380,6 +1382,7 @@ var lang = [
 		diphthongs: "Ie",
 		features: {
 			adpositions: "postpositions",
+			an: "an",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Nivkh_language"
@@ -1392,6 +1395,10 @@ var lang = [
 		consonants: "p b t d k g q s z S Z dZ m n N l r w j",
 		monophthongs: "i y 1 u e o { a",
 		diphthongs: "",
+		features: {
+			an: "an",
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Nogai_language"
 	},
 	{
@@ -1413,6 +1420,9 @@ var lang = [
 		consonants: "k_w b t d c J\\ k g m n J N w l j",
 		monophthongs: "i u e @ o a",
 		diphthongs: "",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Onge_language"
 	},
 	{
