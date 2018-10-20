@@ -560,6 +560,21 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Chuvash_language"
 	},
 	{
+		name: "Cornish",
+		coords: [50, -5],
+		families: ["indo-european", "celtic", "brittonic"],
+		areas: ["europe", "britain"],
+		consonants: "m n N p b t d tS dZ k g f v T D s z S Z x h 4 j W w l",
+		monophthongs: "I Y i: y: 1 } U u: E 9 e: 2: @ 7 o: a {: Q Q:",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			an: "na",
+			sov: "svo"
+		},
+		source: "https://en.wikipedia.org/wiki/Cornish_Language"
+	},
+	{
 		name: "Crimean Tatar",
 		coords: [45, 34],
 		families: ["turkic", "kipchak"],
@@ -945,6 +960,21 @@ var lang = [
 			an: "an"
 		},
 		source: "https://en.wikipedia.org/wiki/Ingush_language"
+	},
+	{
+		name: "Irish",
+		coords: [53, -8],
+		families: ["indo-european", "celtic", "goidelic"],
+		areas: ["europe", "britain"],
+		consonants: "p_e p' t_d_e t' k c b_e b' d_d_e d' g J\\ f_e f' s_e S x X h w v' G j m_e m' n_d_e n' N J 4_e 4' 5_d l'",
+		monophthongs: "I i: U u: E e: @ O o: a A:",
+		diphthongs: "i@ u@ @i @u",
+		features: {
+			adpositions: "prepositions",
+			an: "na",
+			sov: "vso"
+		},
+		source: "https://en.wikipedia.org/wiki/Irish_language"
 	},
 	{
 		name: "Jalaa",
@@ -1650,6 +1680,21 @@ var lang = [
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Scotland"
+	},
+	{
+		name: "Scottish Gaelic",
+		coords: [57, -5],
+		families: ["indo-european", "celtic", "goidelic"],
+		areas: ["europe", "britain"],
+		consonants: "p_h p t_d_h t_d t'_h t' k'_h k' k_h k f v s_d S C j\\ x G h m n_d_e n J 5_d l L j 4 4' r_e",
+		monophthongs: "i M u I e @ 7 o E O a",
+		diphthongs: "ei 7i ai ui i@ u@ Eu Ou au ia",
+		features: {
+			adpositions: "prepositions",
+			an: "na",
+			sov: "vso"
+		},
+		source: "https://en.wikipedia.org/wiki/Scottish_Gaelic"
 	},
 	{
 		name: "Serbo-Croatian",
