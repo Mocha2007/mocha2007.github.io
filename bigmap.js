@@ -851,6 +851,11 @@ var lang = [
 		consonants: "m n N p t k q ? j w W v f h",
 		monophthongs: "i 1 u V e o a",
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions",
+			an: "na",
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Hamtai_language"
 	},
 	{
@@ -863,6 +868,7 @@ var lang = [
 		diphthongs: "iu ou oi eu ei au ai ao ae o:u e:i a:u a:i a:o a:e",
 		features: {
 			adpositions: "prepositions",
+			an: "na",
 			sov: "vso"
 		},
 		source: "https://en.wikipedia.org/wiki/Hawaiian_language"
@@ -877,6 +883,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			an: "an",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Hindi"
@@ -890,7 +897,8 @@ var lang = [
 		monophthongs: "i: i y: y u: u 2: 2 o: o e: E a: Q",
 		diphthongs: "",
 		features: {
-			adpositions: "prepositions"
+			adpositions: "prepositions",
+			an: "an"
 		},
 		source: "https://en.wikipedia.org/wiki/Hungarian_language"
 	},
@@ -919,6 +927,7 @@ var lang = [
 		diphthongs: "ai au oi",
 		features: {
 			adpositions: "prepositions",
+			an: "na",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Indonesian_language"
@@ -932,7 +941,8 @@ var lang = [
 		monophthongs: "i u e @ o { A",
 		diphthongs: "",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			an: "an"
 		},
 		source: "https://en.wikipedia.org/wiki/Ingush_language"
 	},
@@ -956,6 +966,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			an: "an",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Japanese_language"
@@ -968,6 +979,10 @@ var lang = [
 		consonants: "m n_d J N p t_d t` c k b d_d d` J\\ g p_h t_d_h t`_h c_h k_h k_h_w p\\ S X\\ X\\_w r r` w l j",
 		monophthongs: "i u e @\\ o @ a",
 		diphthongs: "",
+		features: {
+			an: "na",
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Jarawa_language"
 	},
 	{
@@ -979,7 +994,8 @@ var lang = [
 		monophthongs: "i y u e 2 o { a",
 		diphthongs: "",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			an: "an"
 		},
 		source: "https://en.wikipedia.org/wiki/Kalmyk_language"
 	},
@@ -992,7 +1008,9 @@ var lang = [
 		monophthongs: "i y M u e 2 o a",
 		diphthongs: "",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			an: "an",
+			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Karachay-Balkar_language"
 	},
@@ -1015,7 +1033,9 @@ var lang = [
 		monophthongs: "i 1 u e @ o a",
 		diphthongs: "",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			an: "an",
+			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Ket_language"
 	},
@@ -1039,6 +1059,7 @@ var lang = [
 		diphthongs: "i@ ei ae 1@ @1 a@ u@ ou ao O@ e@ u@ o@",
 		features: {
 			adpositions: "prepositions",
+			an: "na",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Khmer_language"
@@ -1052,7 +1073,9 @@ var lang = [
 		monophthongs: "i e a o u i~ a~ u~",
 		diphthongs: "",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			an: "an",
+			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Khoekhoe_language"
 	},
@@ -1065,7 +1088,9 @@ var lang = [
 		monophthongs: "A e o i @ u 1",
 		diphthongs: "",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			an: "an",
+			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Komi_language"
 	},
@@ -1079,6 +1104,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			an: "an",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Korean_language"
@@ -1091,6 +1117,9 @@ var lang = [
 		consonants: "p t k b d g b_< f s v z G kp gb r l m n N w j",
 		monophthongs: "i u e o E O a",
 		diphthongs: "",
+		features: {
+			an: "na"
+		},
 		source: "https://en.wikipedia.org/wiki/Kpelle_language"
 	},
 	{
@@ -1115,7 +1144,8 @@ var lang = [
 		monophthongs: "i u e o a",
 		diphthongs: "",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Kuna_Language"
 	},
@@ -1128,7 +1158,8 @@ var lang = [
 		monophthongs: "i u e @ o a",
 		diphthongs: "",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Kusunda_language"
 	},
@@ -1186,6 +1217,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
+			an: "an",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Macedonian_language"
@@ -1199,6 +1231,7 @@ var lang = [
 		monophthongs: "i y u 7 @ a",
 		diphthongs: "ye u@ uo ie ua ia iu ei ou au ai",
 		features: {
+			an: "an",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Mandarin_Chinese"
@@ -1212,7 +1245,9 @@ var lang = [
 		monophthongs: "i } e o a",
 		diphthongs: "ae ai ao au oi oe ou",
 		features: {
-			adpositions: "prepositions"
+			adpositions: "prepositions",
+			an: "na",
+			sov: "vso"
 		},
 		source: "https://en.wikipedia.org/wiki/Maori_language"
 	},
@@ -1224,6 +1259,10 @@ var lang = [
 		consonants: "m n_d n J N p t_d t tS ts` k f T s S r\\` j m\\ w l_d l L",
 		monophthongs: "I U e @ o 6",
 		diphthongs: "",
+		features: {
+			an: "an",
+			sov: "svo"
+		},
 		source: "https://en.wikipedia.org/wiki/Mapuche_language"
 	},
 	{
@@ -1234,6 +1273,10 @@ var lang = [
 		consonants: "p t_d k b d g m n_d s z l r w j",
 		monophthongs: "i u I U e o a O",
 		diphthongs: "",
+		features: {
+			an: "an",
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Meriam_language"
 	},
 	{
@@ -1245,7 +1288,9 @@ var lang = [
 		monophthongs: "a i u a: i: u:",
 		diphthongs: "",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			an: "na",
+			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Miskito_language"
 	},
@@ -1259,6 +1304,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			an: "an",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Miyako_language"
