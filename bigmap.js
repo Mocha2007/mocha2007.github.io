@@ -310,6 +310,7 @@ var lang = [
 		diphthongs: "aj aw",
 		features: {
 			adpositions: "prepositions",
+			an: "na",
 			sov: "vso"
 		},
 		source: "https://en.wikipedia.org/wiki/Arabic"
@@ -337,6 +338,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			an: "an",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Armenian_language"
@@ -350,7 +352,9 @@ var lang = [
 		monophthongs: "a i u",
 		diphthongs: "",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			an: "an",
+			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Aymaran_language"
 	},
@@ -363,6 +367,7 @@ var lang = [
 		monophthongs: "i y M u e 9 o { A",
 		diphthongs: "",
 		features: {
+			an: "an",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Azerbaijani_language"
@@ -375,6 +380,10 @@ var lang = [
 		consonants: "p p_n t t_n k k_n b b_n d d_n g g_n s s\\ Z h m n J N l j H w r",
 		monophthongs: "i u e o E O a",
 		diphthongs: "",
+		features: {
+			an: "na",
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Bangime_language"
 	},
 	{
@@ -387,6 +396,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			an: "an",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Bashkir_language"
@@ -414,6 +424,9 @@ var lang = [
 		consonants: "m n N p t t` tS k p_h t_h t`_h tS_h k_h b d d` dZ g b_h d_h d`_h dZ_h g_h s S h w l j r r`",
 		monophthongs: "i u e o E O a i~ u~ e~ o~ {~ O~ a~",
 		diphthongs: "ae ai ao au {e {o ei eu ii iu oe oi oo ou ui",
+		features: {
+			sov: "sov"
+		},
 		source: "https://en.wikipedia.org/wiki/Bengali_language"
 	},
 	{
@@ -449,7 +462,9 @@ var lang = [
 		monophthongs: "i u o 7 E O a",
 		diphthongs: "",
 		features: {
-			adpositions: "prepositions"
+			adpositions: "prepositions",
+			an: "an",
+			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Bulgarian_language"
 	},
@@ -462,7 +477,9 @@ var lang = [
 		monophthongs: "i e a o u",
 		diphthongs: "",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			an: "an",
+			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Burushaski_language"
 	},
@@ -485,6 +502,7 @@ var lang = [
 		monophthongs: "i: y: u: e E: 8 9: o O: 6 a:",
 		diphthongs: "uy iu 8y ei Eu 6i 6u ou Oy ai au",
 		features: {
+			an: "an",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Cantonese"
@@ -521,7 +539,8 @@ var lang = [
 		monophthongs: "i i: u u: e e: @~ @~: o o: a a:",
 		diphthongs: "ai",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			an: "an"
 		},
 		source: "https://en.wikipedia.org/wiki/Cherokee_language"
 	},
@@ -535,6 +554,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			an: "an",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Chuvash_language"
@@ -558,7 +578,9 @@ var lang = [
 		monophthongs: "i: I u u: E E: o o: a a:",
 		diphthongs: "",
 		features: {
-			adpositions: "prepositions"
+			adpositions: "prepositions",
+			an: "an",
+			svo: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Czech_language"
 	},
@@ -599,6 +621,9 @@ var lang = [
 		consonants: "p k c t_d t t` m N J n_d n n` r r` w j l",
 		monophthongs: "i u a",
 		diphthongs: "",
+		features: {
+			an: "na"
+		},
 		source: "https://en.wikipedia.org/wiki/Dyirbal_language"
 	},
 	{
@@ -626,7 +651,9 @@ var lang = [
 		monophthongs: "i i~ 1 1~ u u~ e e~ @ @~ o o~ a a~",
 		diphthongs: "",
 		features: {
-			adpositions: "prepositions"
+			adpositions: "prepositions",
+			an: "na",
+			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Enggano_language"
 	},
@@ -641,7 +668,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
-			sov: "svo",
+			sov: "svo"
 		},
 		source: "#bigmap"
 	},
@@ -682,7 +709,8 @@ var lang = [
 		diphthongs: "Ui Ei ai Oi Ea Oa }u Ou",
 		features: {
 			adpositions: "prepositions",
-			an: "an"
+			an: "an",
+			svo: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Faroese_language"
 	},
@@ -696,6 +724,7 @@ var lang = [
 		diphthongs: "ei eu oi ou ai au",
 		features: {
 			adpositions: "prepositions",
+			an: "na",
 			sov: "vos"
 		},
 		source: "https://en.wikipedia.org/wiki/Fijian_language"
