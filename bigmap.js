@@ -262,6 +262,7 @@ var lang = [
 			an: "na",
 			sov: "svo",
 			ginger: "ginger",
+			orange: "portugal",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -321,6 +322,7 @@ var lang = [
 			cumin: "cumin",
 			farang: "farang",
 			ginger: "ginger",
+			orange: "portugal",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -355,6 +357,7 @@ var lang = [
 			sov: "sov",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -388,6 +391,7 @@ var lang = [
 			an: "an",
 			sov: "sov",
 			cumin: "other",
+			orange: "portugal",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -419,6 +423,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			orange: "other",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -438,6 +443,7 @@ var lang = [
 			sov: "sov",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -455,6 +461,7 @@ var lang = [
 			sov: "sov",
 			cumin: "other",
 			ginger: "other",
+			orange: "other",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -502,6 +509,7 @@ var lang = [
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "portugal",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -546,6 +554,7 @@ var lang = [
 			sov: "svo",
 			cumin: "other",
 			ginger: "other",
+			orange: "other",
 			sugar: "other",
 			tea: "cha"
 		},
@@ -618,8 +627,9 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sugar: "sugar",
-			sov: "svo"
+			sov: "svo",
+			orange: "apple",
+			sugar: "sugar"
 		},
 		source: "https://en.wikipedia.org/wiki/Cornish_Language"
 	},
@@ -632,6 +642,7 @@ var lang = [
 		monophthongs: "i y M u e 2 A o",
 		diphthongs: "",
 		features: {
+			orange: "portugal",
 			sugar: "sugar"
 		},
 		source: "https://en.wikipedia.org/wiki/Crimean_Tatar_language"
@@ -650,6 +661,7 @@ var lang = [
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -669,6 +681,7 @@ var lang = [
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "apple",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -687,6 +700,7 @@ var lang = [
 			an: "an",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "apple",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -796,6 +810,7 @@ var lang = [
 			an: "an",
 			sov: "svo",
 			ginger: "ginger",
+			orange: "apple",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -831,6 +846,7 @@ var lang = [
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "apple",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -869,6 +885,7 @@ var lang = [
 			sov: "sov",
 			cumin: "other",
 			ginger: "ginger",
+			orange: "portugal",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -887,6 +904,7 @@ var lang = [
 			an: "an",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -905,6 +923,7 @@ var lang = [
 			an: "an",
 			cumin: "cumin",
 			ginger: "ginger", // two words; but one is the wanderwort
+			orange: "portugal",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -936,6 +955,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "na",
 			sov: "svo",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -981,6 +1001,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "vso",
+			orange: "orange",
 			sugar: "other"
 		},
 		source: "https://en.wikipedia.org/wiki/Hawaiian_language"
@@ -1000,6 +1021,7 @@ var lang = [
 			cumin: "other",
 			farang: "farang",
 			ginger: "other",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1018,6 +1040,7 @@ var lang = [
 			an: "an",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -1036,6 +1059,7 @@ var lang = [
 			an: "an",
 			sov: "svo",
 			ginger: "ginger",
+			orange: "apple",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -1054,6 +1078,7 @@ var lang = [
 			an: "na",
 			sov: "svo",
 			ginger: "other",
+			orange: "other",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -1088,6 +1113,7 @@ var lang = [
 			sov: "vso",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "other",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -1117,6 +1143,7 @@ var lang = [
 			sov: "sov",
 			cumin: "cumin",
 			ginger: "other",
+			orange: "orange",
 			sugar: "other",
 			tea: "cha"
 		},
@@ -1147,6 +1174,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			orange: "other",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1221,6 +1249,7 @@ var lang = [
 			sov: "svo",
 			farang: "farang",
 			ginger: "other",
+			orange: "other",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -1270,6 +1299,7 @@ var lang = [
 			sov: "sov",
 			cumin: "cumin",
 			ginger: "other",
+			orange: "orange",
 			sugar: "other",
 			tea: "cha"
 		},
@@ -1358,6 +1388,7 @@ var lang = [
 			sov: "sov",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -1390,6 +1421,7 @@ var lang = [
 			an: "an",
 			sov: "svo",
 			ginger: "ginger",
+			orange: "portugal",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1408,6 +1440,7 @@ var lang = [
 			sov: "svo",
 			cumin: "other",
 			ginger: "other",
+			orange: "other",
 			sugar: "other",
 			tea: "cha"
 		},
@@ -1425,6 +1458,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "vso",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -1508,7 +1542,8 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
-			sov: "free"
+			sov: "free",
+			orange: "orange"
 		},
 		source: "https://en.wikipedia.org/wiki/Nahuatl"
 	},
@@ -1538,6 +1573,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "na",
+			orange: "other",
 			sov: "sov",
 			sugar: "other",
 			tea: "other"
@@ -1625,6 +1661,7 @@ var lang = [
 			an: "an",
 			sov: "sov",
 			cumin: "other",
+			orange: "apple",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1685,6 +1722,7 @@ var lang = [
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -1704,6 +1742,7 @@ var lang = [
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1784,6 +1823,7 @@ var lang = [
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "portugal",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1826,6 +1866,7 @@ var lang = [
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "apple",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1842,6 +1883,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			orange: "orange",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Sardinian_language"
@@ -1875,6 +1917,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "vso",
+			orange: "other",
 			sugar: "sugar"
 		},
 		source: "https://en.wikipedia.org/wiki/Scottish_Gaelic"
@@ -1893,6 +1936,7 @@ var lang = [
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1923,6 +1967,7 @@ var lang = [
 		diphthongs: "IE Ia Iu UO",
 		features: {
 			ginger: "ginger",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1941,6 +1986,7 @@ var lang = [
 			an: "an",
 			sov: "svo",
 			ginger: "ginger",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1970,6 +2016,7 @@ var lang = [
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -2018,6 +2065,7 @@ var lang = [
 			sov: "svo",
 			cumin: "other",
 			ginger: "ginger",
+			orange: "other",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -2035,6 +2083,7 @@ var lang = [
 			sov: "vso",
 			cumin: "cumin",
 			ginger: "other",
+			orange: "other",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -2068,6 +2117,7 @@ var lang = [
 			sov: "sov",
 			cumin: "other",
 			ginger: "other",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -2103,6 +2153,7 @@ var lang = [
 			cumin: "cumin",
 			farang: "farang",
 			ginger: "ginger",
+			orange: "portugal",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -2202,6 +2253,7 @@ var lang = [
 			sov: "svo",
 			cumin: "other",
 			ginger: "other",
+			orange: "other",
 			sugar: "other",
 			tea: "cha"
 		},
@@ -2231,6 +2283,7 @@ var lang = [
 			sov: "vso",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "te"
 		},
