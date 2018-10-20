@@ -739,6 +739,7 @@ var lang = [
 		diphthongs: "ai au {i {y oi ou ei eu ey 2i 2y ui uo iu iy ie yi y2",
 		features: {
 			adpositions: "postpositions",
+			an: "an",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Finnish_language"
@@ -768,6 +769,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			an: "an",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Georgian_language"
@@ -795,7 +797,8 @@ var lang = [
 		monophthongs: "i u e o a",
 		diphthongs: "",
 		features: {
-			adpositions: "prepositions"
+			adpositions: "prepositions",
+			an: "an"
 		},
 		source: "https://en.wikipedia.org/wiki/Greek_language"
 	},
@@ -821,7 +824,9 @@ var lang = [
 		monophthongs: "i i~ 1 1~ u u~ e e~ o o~ a a~",
 		diphthongs: "",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			an: "na",
+			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Guarani_language"
 	},
