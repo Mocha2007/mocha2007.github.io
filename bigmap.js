@@ -580,7 +580,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
-			svo: "svo"
+			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Czech_language"
 	},
@@ -710,7 +710,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
-			svo: "svo"
+			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Faroese_language"
 	},
