@@ -159,7 +159,7 @@ function bigmap(){
 			}
 			if (x.features){
 				if (commonf === true){
-					commonf = x.features;
+					commonf = JSON.parse(JSON.stringify(x.features));
 				}
 				else {
 					// https://stackoverflow.com/a/16735184/2579798
