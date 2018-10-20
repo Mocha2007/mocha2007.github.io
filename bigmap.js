@@ -543,6 +543,7 @@ var lang = [
 		monophthongs: "i i: y y: u u: e e: E E: 2 2: o o: 9 9: @ O O: { {: 9_o 9_o: Q Q: a & &: 6 V A A:",
 		diphthongs: "",
 		features: {
+			adpositions: "prepositions",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Danish_language"
@@ -646,6 +647,9 @@ var lang = [
 		consonants: "m m_0 n n_0 J J_0 N N_0 p t tS k p_h t_h tS_h k_h f s s` S h K v r\\ j w l",
 		monophthongs: "I i: Y y: U u: E e: 9 2: O o: a a:",
 		diphthongs: "Ui Ei ai Oi Ea Oa }u Ou",
+		features: {
+			adpositions: "prepositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Faroese_language"
 	},
 	{
@@ -819,6 +823,7 @@ var lang = [
 		monophthongs: "i u I Y E 9 O a",
 		diphthongs: "ei 2i ou ai au",
 		features: {
+			adpositions: "prepositions",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Icelandic_language"
@@ -1298,6 +1303,7 @@ var lang = [
 		monophthongs: "i 1 u E O a",
 		diphthongs: "",
 		features: {
+			adpositions: "prepositions",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Polish_language"
