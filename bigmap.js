@@ -308,6 +308,19 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Ancient_Greek"
 	},
 	{
+		name: "Apurina",
+		coords: [-4, -61],
+		families: ["arawakan"],
+		areas: ["south america", "amazon"],
+		consonants: "m n J p t k ts tS s S h 4 j M\\",
+		monophthongs: "i i~ 1 1~ i: i:~ e e~ o o~ e: e:~ o o:~ a a~ a: a:~",
+		diphthongs: "",
+		features: {
+			sov: "osv"
+		},
+		source: "https://en.wikipedia.org/wiki/Apurinã_language"
+	},
+	{
 		name: "Arabic",
 		coords: [25, 47],
 		families: ["afro-asiatic", "semitic"],
@@ -1448,6 +1461,19 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Macedonian_language"
 	},
 	{
+		name: "Madi",
+		coords: [-3, -66],
+		families: ["arawan"],
+		areas: ["south america", "amazon"],
+		consonants: "b t d J\\ k m n p\\ s h~ r w",
+		monophthongs: "i i: e e: o o: a a:",
+		diphthongs: "",
+		features: {
+			sov: "osv"
+		},
+		source: "https://en.wikipedia.org/wiki/Madí_language"
+	},
+	{
 		name: "Mandarin",
 		coords: [40, 116],
 		families: ["sino-tibetan", "sinitic"],
@@ -1569,6 +1595,19 @@ var lang = [
 		monophthongs: "i i: u u: e e: o o: a a:",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Naasioi_Language"
+	},
+	{
+		name: "Nadeb",
+		coords: [-1, -65],
+		families: ["nadahup"],
+		areas: ["south america", "amazon"],
+		consonants: "p t k ? b d J\\ g S h m n J\\ N j w 4",
+		monophthongs: "i~ M~ u~ e 7 o E~ V~ O~ a~",
+		diphthongs: "",
+		features: {
+			sov: "osv"
+		},
+		source: "https://en.wikipedia.org/wiki/Nadëb_language"
 	},
 	{
 		name: "Nahuatl",
