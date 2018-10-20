@@ -319,6 +319,7 @@ var lang = [
 			an: "na",
 			sov: "vso",
 			cumin: "cumin",
+			farang: "farang",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
@@ -997,6 +998,7 @@ var lang = [
 			an: "an",
 			sov: "sov",
 			cumin: "other",
+			farang: "farang",
 			ginger: "other",
 			sugar: "sugar",
 			tea: "cha"
@@ -1217,6 +1219,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			farang: "farang",
 			ginger: "other",
 			sugar: "sugar",
 			tea: "te"
@@ -2098,6 +2101,7 @@ var lang = [
 			an: "an",
 			sov: "sov",
 			cumin: "cumin",
+			farang: "farang",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
