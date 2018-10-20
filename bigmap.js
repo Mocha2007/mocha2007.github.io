@@ -259,7 +259,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "svo"
+			sov: "svo",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Albanian_language"
 	},
@@ -311,7 +312,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "vso"
+			sov: "vso",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Arabic"
 	},
@@ -324,7 +326,8 @@ var lang = [
 		monophthongs: "i u e o E a",
 		diphthongs: "",
 		features: {
-			adpositions: "prepositions"
+			adpositions: "prepositions",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Aramaic_language"
 	},
@@ -339,7 +342,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
-			sov: "sov"
+			sov: "sov",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Armenian_language"
 	},
@@ -368,7 +372,8 @@ var lang = [
 		diphthongs: "",
 		features: {
 			an: "an",
-			sov: "sov"
+			sov: "sov",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Azerbaijani_language"
 	},
@@ -397,7 +402,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
-			sov: "sov"
+			sov: "sov",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Bashkir_language"
 	},
@@ -412,7 +418,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "na",
-			sov: "sov"
+			sov: "sov",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Basque_language"
 	},
@@ -425,7 +432,8 @@ var lang = [
 		monophthongs: "i u e o E O a i~ u~ e~ o~ {~ O~ a~",
 		diphthongs: "ae ai ao au {e {o ei eu ii iu oe oi oo ou ui",
 		features: {
-			sov: "sov"
+			sov: "sov",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Bengali_language"
 	},
@@ -464,7 +472,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
-			sov: "svo"
+			sov: "svo",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Bulgarian_language"
 	},
@@ -479,7 +488,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
-			sov: "sov"
+			sov: "sov",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Burushaski_language"
 	},
@@ -503,7 +513,8 @@ var lang = [
 		diphthongs: "uy iu 8y ei Eu 6i 6u ou Oy ai au",
 		features: {
 			an: "an",
-			sov: "svo"
+			sov: "svo",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Cantonese"
 	},
@@ -555,7 +566,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
-			sov: "sov"
+			sov: "sov",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Chuvash_language"
 	},
@@ -595,7 +607,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
-			sov: "svo"
+			sov: "svo",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Czech_language"
 	},
@@ -610,7 +623,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
-			sov: "svo"
+			sov: "svo",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Danish_language"
 	},
@@ -624,7 +638,8 @@ var lang = [
 		diphthongs: "Ei 9y Au iu yu ui e:u o:i a:i",
 		features: {
 			adpositions: "prepositions",
-			an: "an"
+			an: "an",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Dutch_language"
 	},
@@ -683,7 +698,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
-			sov: "svo"
+			sov: "svo",
+			tea: "te"
 		},
 		source: "#bigmap"
 	},
@@ -725,7 +741,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
-			sov: "svo"
+			sov: "svo",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Faroese_language"
 	},
@@ -755,7 +772,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
-			sov: "svo"
+			sov: "svo",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Finnish_language"
 	},
@@ -770,7 +788,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "svo"
+			sov: "svo",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/French_language"
 	},
@@ -785,7 +804,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
-			sov: "sov"
+			sov: "sov",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Georgian_language"
 	},
@@ -799,7 +819,8 @@ var lang = [
 		diphthongs: "OY aI aU",
 		features: {
 			adpositions: "prepositions",
-			an: "an"
+			an: "an",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/German_language"
 	},
@@ -813,7 +834,8 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
-			an: "an"
+			an: "an",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Greek_language"
 	},
@@ -826,7 +848,8 @@ var lang = [
 		monophthongs: "i u a",
 		diphthongs: "",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Greenlandic_language"
 	},
@@ -841,7 +864,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "na",
-			sov: "svo"
+			sov: "svo",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Guarani_language"
 	},
@@ -899,7 +923,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
-			sov: "sov"
+			sov: "sov",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Hindi"
 	},
@@ -913,7 +938,8 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
-			an: "an"
+			an: "an",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Hungarian_language"
 	},
@@ -928,7 +954,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
-			sov: "svo"
+			sov: "svo",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Icelandic_language"
 	},
@@ -943,7 +970,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "svo"
+			sov: "svo",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Indonesian_language"
 	},
@@ -957,7 +985,8 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
-			an: "an"
+			an: "an",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Ingush_language"
 	},
@@ -972,7 +1001,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "vso"
+			sov: "vso",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Irish_language"
 	},
@@ -997,7 +1027,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
-			sov: "sov"
+			sov: "sov",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Japanese_language"
 	},
@@ -1025,7 +1056,8 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
-			an: "an"
+			an: "an",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Kalmyk_language"
 	},
@@ -1090,7 +1122,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "svo"
+			sov: "svo",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Khmer_language"
 	},
@@ -1135,7 +1168,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
-			sov: "sov"
+			sov: "sov",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Korean_language"
 	},
@@ -1219,7 +1253,8 @@ var lang = [
 		diphthongs: "ui ei eu oe ou ae au",
 		features: {
 			adpositions: "prepositions",
-			sov: "sov"
+			sov: "sov",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Latin"
 	},
@@ -1248,7 +1283,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
-			sov: "svo"
+			sov: "svo",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Macedonian_language"
 	},
@@ -1262,7 +1298,8 @@ var lang = [
 		diphthongs: "ye u@ uo ie ua ia iu ei ou au ai",
 		features: {
 			an: "an",
-			sov: "svo"
+			sov: "svo",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Mandarin_Chinese"
 	},
@@ -1277,7 +1314,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "vso"
+			sov: "vso",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Maori_language"
 	},
@@ -1388,7 +1426,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "na",
-			sov: "sov"
+			sov: "sov",
+			tea: "other"
 		},
 		source: "https://en.wikipedia.org/wiki/Navajo_language"
 	},
@@ -1427,7 +1466,8 @@ var lang = [
 		diphthongs: "",
 		features: {
 			an: "an",
-			sov: "sov"
+			sov: "sov",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Nogai_language"
 	},
@@ -1522,7 +1562,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
-			sov: "svo"
+			sov: "svo",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Polish_language"
 	},
@@ -1537,7 +1578,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "svo"
+			sov: "svo",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Portuguese_language"
 	},
@@ -1580,7 +1622,8 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
-			sov: "sov"
+			sov: "sov",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Punjabi_language"
 	},
@@ -1594,7 +1637,8 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
-			sov: "sov"
+			sov: "sov",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Quechuan_languages"
 	},
@@ -1609,7 +1653,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "svo"
+			sov: "svo",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Romanian_language"
 	},
@@ -1647,7 +1692,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
-			sov: "svo"
+			sov: "svo",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Russian_language"
 	},
@@ -1707,7 +1753,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
-			sov: "svo"
+			sov: "svo",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Serbo-Croatian"
 	},
@@ -1734,6 +1781,9 @@ var lang = [
 		consonants: "m n J p t c k b d J\\ g ts tS dz dZ f s S x v z Z j h\\ l L l: 4 r",
 		monophthongs: "i i: u u: E E: O a a:",
 		diphthongs: "IE Ia Iu UO",
+		features: {
+			tea: "cha"
+		},
 		source: "https://en.wikipedia.org/wiki/Slovak_language"
 	},
 	{
@@ -1747,7 +1797,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
-			sov: "svo"
+			sov: "svo",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Slovene_language"
 	},
@@ -1772,7 +1823,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "svo"
+			sov: "svo",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Spanish_language"
 	},
@@ -1813,7 +1865,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "svo"
+			sov: "svo",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Swahili_language"
 	},
@@ -1826,7 +1879,8 @@ var lang = [
 		monophthongs: "i u e o a",
 		diphthongs: "ai ui au iu",
 		features: {
-			sov: "vso"
+			sov: "vso",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Tagalog_language"
 	},
@@ -1855,7 +1909,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
-			sov: "sov"
+			sov: "sov",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Tamil_language"
 	},
@@ -1880,7 +1935,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
-			sov: "sov"
+			sov: "sov",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Turkish_language"
 	},
@@ -1895,7 +1951,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
-			sov: "sov"
+			sov: "sov",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Tuvan_language"
 	},
@@ -1910,7 +1967,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
-			sov: "sov"
+			sov: "sov",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Udmurt_language"
 	},
@@ -1968,7 +2026,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "svo"
+			sov: "svo",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Vietnamese_language"
 	},
@@ -1993,7 +2052,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "vso"
+			sov: "vso",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Welsh_Language"
 	},
@@ -2053,7 +2113,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "na",
-			sov: "sov"
+			sov: "sov",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Yakut_language"
 	},
