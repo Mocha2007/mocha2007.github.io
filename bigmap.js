@@ -37,7 +37,7 @@ function obj2string(obj){
 	obj = obj.replace(/}/g, "");
 	obj = obj.replace(/"/g, "");
 	obj = obj.replace(/,/g, "<br>");
-	obj = obj.replace(/:/g, ": ");
+	obj = obj.replace(/:/g, "&rarr;");
 	return obj;
 }
 
