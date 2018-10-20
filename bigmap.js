@@ -862,7 +862,7 @@ var lang = [
 		monophthongs: "i u e @ o a",
 		diphthongs: "ai au oi",
 		features: {
-			adpositions: "pretpositions",
+			adpositions: "prepositions",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Indonesian_language"
