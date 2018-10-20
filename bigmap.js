@@ -668,6 +668,7 @@ var lang = [
 		monophthongs: "i y u e 2 @ o E E: 9 O a A E~ 9~ O~ A~",
 		diphthongs: "",
 		features: {
+			adpositions: "prepositions",
 			an: "na",
 			sov: "svo"
 		},
@@ -1466,6 +1467,7 @@ var lang = [
 		monophthongs: "a e i o u",
 		diphthongs: "",
 		features: {
+			adpositions: "prepositions",
 			an: "na",
 			sov: "svo"
 		},
