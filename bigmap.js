@@ -668,6 +668,7 @@ var lang = [
 		monophthongs: "i y u e 2 @ o E E: 9 O a A E~ 9~ O~ A~",
 		diphthongs: "",
 		features: {
+			an: "na",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/French_language"
@@ -1465,6 +1466,7 @@ var lang = [
 		monophthongs: "a e i o u",
 		diphthongs: "",
 		features: {
+			an: "na",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Spanish_language"
