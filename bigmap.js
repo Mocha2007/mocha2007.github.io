@@ -1453,6 +1453,24 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Mandarin_Chinese"
 	},
 	{
+		name: "Malagasy",
+		coords: [-20, 47],
+		families: ["austronesian", "malayo-polynesian"],
+		areas: ["africa"],
+		consonants: "m n N p t ts t` k p_n t_n ts_n t`_n k_n b d dz d` g b_n d_n dz_n d`_n g_n f s h v z l r",
+		monophthongs: "i u e o a",
+		diphthongs: "ai au",
+		features: {
+			adpositions: "prepositions",
+			an: "na",
+			sov: "vos",
+			ginger: "other",
+			orange: "orange",
+			sugar: "other"
+		},
+		source: "https://en.wikipedia.org/wiki/Malagasy_language"
+	},
+	{
 		name: "Maori",
 		coords: [-41, 175],
 		families: ["austronesian", "malayo-polynesian", "oceanic", "polynesian"],
