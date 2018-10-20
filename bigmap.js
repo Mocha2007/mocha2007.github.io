@@ -244,6 +244,7 @@ var lang = [
 		monophthongs: "i u e a",
 		diphthongs: "",
 		features: {
+			cumin: "cumin", // source of the wanderwort
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Akkadian_language"
@@ -299,6 +300,7 @@ var lang = [
 		monophthongs: "i y u e o a i: y: u: e: E: O: a:",
 		diphthongs: "yi ei eu oi ou ai au E:i O:i E:u O:u a:i a:u",
 		features: {
+			cumin: "cumin",
 			ginger: "ginger",
 			sov: "sov"
 		},
@@ -316,6 +318,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "vso",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
@@ -332,6 +335,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
+			cumin: "cumin",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Aramaic_language"
@@ -348,6 +352,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
@@ -381,6 +386,7 @@ var lang = [
 		features: {
 			an: "an",
 			sov: "sov",
+			cumin: "other",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -429,6 +435,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "na",
 			sov: "sov",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
@@ -445,6 +452,7 @@ var lang = [
 		diphthongs: "ae ai ao au {e {o ei eu ii iu oe oi oo ou ui",
 		features: {
 			sov: "sov",
+			cumin: "other",
 			ginger: "other",
 			sugar: "sugar",
 			tea: "cha"
@@ -461,6 +469,7 @@ var lang = [
 		monophthongs: "i i: u u: o: a a:",
 		diphthongs: "",
 		features: {
+			cumin: "cumin",
 			ginger: "ginger"
 		},
 		source: "https://en.wikipedia.org/wiki/Biblical_Hebrew"
@@ -490,6 +499,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
@@ -533,6 +543,7 @@ var lang = [
 		features: {
 			an: "an",
 			sov: "svo",
+			cumin: "other",
 			ginger: "other",
 			sugar: "other",
 			tea: "cha"
@@ -636,6 +647,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
@@ -654,6 +666,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
@@ -671,6 +684,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
@@ -733,6 +747,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
@@ -813,6 +828,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "svo",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
@@ -831,6 +847,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
@@ -849,6 +866,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			cumin: "other",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
@@ -866,6 +884,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
@@ -883,6 +902,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			cumin: "cumin",
 			ginger: "ginger", // two words; but one is the wanderwort
 			sugar: "sugar",
 			tea: "cha"
@@ -976,6 +996,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			cumin: "other",
 			ginger: "other",
 			sugar: "sugar",
 			tea: "cha"
@@ -993,6 +1014,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
@@ -1062,6 +1084,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "vso",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
@@ -1090,6 +1113,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			cumin: "cumin",
 			ginger: "other",
 			sugar: "other",
 			tea: "cha"
@@ -1241,6 +1265,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			cumin: "cumin",
 			ginger: "other",
 			sugar: "other",
 			tea: "cha"
@@ -1328,6 +1353,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			sov: "sov",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
@@ -1377,6 +1403,7 @@ var lang = [
 		features: {
 			an: "an",
 			sov: "svo",
+			cumin: "other",
 			ginger: "other",
 			sugar: "other",
 			tea: "cha"
@@ -1594,6 +1621,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			cumin: "other",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1652,6 +1680,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
@@ -1670,6 +1699,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
@@ -1749,6 +1779,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
@@ -1790,6 +1821,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
@@ -1856,6 +1888,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
@@ -1932,6 +1965,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
@@ -1979,6 +2013,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			cumin: "other",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
@@ -1995,6 +2030,7 @@ var lang = [
 		diphthongs: "ai ui au iu",
 		features: {
 			sov: "vso",
+			cumin: "cumin",
 			ginger: "other",
 			sugar: "sugar",
 			tea: "cha"
@@ -2027,6 +2063,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			cumin: "other",
 			ginger: "other",
 			sugar: "sugar",
 			tea: "te"
@@ -2060,6 +2097,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
@@ -2158,6 +2196,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			cumin: "other",
 			ginger: "other",
 			sugar: "other",
 			tea: "cha"
@@ -2186,6 +2225,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "vso",
+			cumin: "cumin",
 			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
