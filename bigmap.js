@@ -145,9 +145,12 @@ function bigmap(){
 			wants2 = document.getElementById("b_feature_text2").value.toLowerCase();
 			hastag = (x.features !== undefined) && (x.features[wants] !== undefined);
 
-			conditional = conditional && (hastag && x.features[wants] === wants2);
-			anyc = anyc || (x.features === undefined);
-			if (x.features === undefined){
+			if (hastag){
+				conditional = conditional && (x.features[wants] === wants2);
+			}
+			else {
+				anyc = true;
+				conditional = false;
 				yn -= 1; // only consider knowns
 			}
 		}
