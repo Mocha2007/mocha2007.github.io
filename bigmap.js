@@ -260,6 +260,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -298,6 +299,7 @@ var lang = [
 		monophthongs: "i y u e o a i: y: u: e: E: O: a:",
 		diphthongs: "yi ei eu oi ou ai au E:i O:i E:u O:u a:i a:u",
 		features: {
+			ginger: "ginger",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Ancient_Greek"
@@ -314,6 +316,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "vso",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -345,6 +348,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -425,6 +429,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "na",
 			sov: "sov",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -440,6 +445,7 @@ var lang = [
 		diphthongs: "ae ai ao au {e {o ei eu ii iu oe oi oo ou ui",
 		features: {
 			sov: "sov",
+			ginger: "other",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -454,6 +460,9 @@ var lang = [
 		consonants: "m n p t k ? b d g t_> k_> s K S X X\\ h z R ?\\ s_> ts_> w l j r",
 		monophthongs: "i i: u u: o: a a:",
 		diphthongs: "",
+		features: {
+			ginger: "ginger"
+		},
 		source: "https://en.wikipedia.org/wiki/Biblical_Hebrew"
 	},
 	{
@@ -481,6 +490,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -523,6 +533,7 @@ var lang = [
 		features: {
 			an: "an",
 			sov: "svo",
+			ginger: "other",
 			sugar: "other",
 			tea: "cha"
 		},
@@ -625,6 +636,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -642,6 +654,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -658,6 +671,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -719,6 +733,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -764,6 +779,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -797,6 +813,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -814,6 +831,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -831,6 +849,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -847,6 +866,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -863,6 +883,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			ginger: "ginger", // two words; but one is the wanderwort
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -955,6 +976,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			ginger: "other",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -971,6 +993,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -988,6 +1011,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -1005,6 +1029,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			ginger: "other",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -1037,6 +1062,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "vso",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -1064,6 +1090,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			ginger: "other",
 			sugar: "other",
 			tea: "cha"
 		},
@@ -1166,6 +1193,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			ginger: "other",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -1213,6 +1241,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			ginger: "other",
 			sugar: "other",
 			tea: "cha"
 		},
@@ -1299,6 +1328,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			sov: "sov",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -1330,6 +1360,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1346,6 +1377,7 @@ var lang = [
 		features: {
 			an: "an",
 			sov: "svo",
+			ginger: "other",
 			sugar: "other",
 			tea: "cha"
 		},
@@ -1620,6 +1652,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -1637,6 +1670,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1715,6 +1749,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1755,6 +1790,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1820,6 +1856,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1849,6 +1886,7 @@ var lang = [
 		monophthongs: "i i: u u: E E: O a a:",
 		diphthongs: "IE Ia Iu UO",
 		features: {
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1866,6 +1904,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1893,6 +1932,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -1939,6 +1979,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1954,6 +1995,7 @@ var lang = [
 		diphthongs: "ai ui au iu",
 		features: {
 			sov: "vso",
+			ginger: "other",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1985,6 +2027,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			ginger: "other",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -1999,6 +2042,7 @@ var lang = [
 		monophthongs: "i u e o a",
 		diphthongs: "",
 		features: {
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -2016,6 +2060,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -2095,6 +2140,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -2112,6 +2158,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			ginger: "other",
 			sugar: "other",
 			tea: "cha"
 		},
@@ -2139,6 +2186,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "vso",
+			ginger: "ginger",
 			sugar: "sugar",
 			tea: "te"
 		},
