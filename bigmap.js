@@ -1449,7 +1449,9 @@ var lang = [
 		monophthongs: "a e o u", // source probably mistaken for this
 		diphthongs: "",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			an: "na",
+			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Paez_Language"
 	},
@@ -1463,6 +1465,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			an: "na",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Pirahã_language"
@@ -1488,6 +1491,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
+			an: "an",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Polish_language"
@@ -1574,6 +1578,7 @@ var lang = [
 		diphthongs: "ea oa",
 		features: {
 			adpositions: "prepositions",
+			an: "na",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Romanian_language"
@@ -1611,6 +1616,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
+			an: "an",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Russian_language"
@@ -1625,7 +1631,8 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
-			an: "na"
+			an: "na",
+			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Sardinian_language"
 	},
@@ -1639,6 +1646,7 @@ var lang = [
 		diphthongs: "ie",
 		features: {
 			adpositions: "prepositions",
+			an: "an",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Serbo-Croatian"
@@ -1653,6 +1661,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			an: "an",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Shabo_language"
@@ -1677,6 +1686,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
+			an: "an",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Slovene_language"
@@ -1741,7 +1751,9 @@ var lang = [
 		monophthongs: "i u e o a",
 		diphthongs: "",
 		features: {
-			adpositions: "prepositions"
+			adpositions: "prepositions",
+			an: "na",
+			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Swahili_language"
 	},
@@ -1753,6 +1765,9 @@ var lang = [
 		consonants: "m n J N p b t d k g ? ts tS dZ s S x h l j w 4",
 		monophthongs: "i u e o a",
 		diphthongs: "ai ui au iu",
+		features: {
+			sov: "vso"
+		},
 		source: "https://en.wikipedia.org/wiki/Tagalog_language"
 	},
 	{
@@ -1778,7 +1793,9 @@ var lang = [
 		monophthongs: "i u i: u: e o e: o: a a:",
 		diphthongs: "aI aU",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			an: "an",
+			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Tamil_language"
 	},
@@ -1802,6 +1819,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			an: "an",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Turkish_language"
@@ -1816,6 +1834,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			an: "an",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Tuvan_language"
@@ -1830,6 +1849,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			an: "an",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Udmurt_language"
@@ -1887,6 +1907,7 @@ var lang = [
 		diphthongs: "i@ 1@ u@ i@u 1@u u@i iu 1u 1i ui eu @u @:i @i oi Eu a:u au a:i ai Oi",
 		features: {
 			adpositions: "prepositions",
+			an: "na",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Vietnamese_language"
@@ -1911,6 +1932,8 @@ var lang = [
 		monophthongs: "i E a",
 		diphthongs: "",
 		features: {
+			adpositions: "none",
+			an: "na",
 			sov: "free"
 		},
 		source: "https://en.wikipedia.org/wiki/Wichita_language"
@@ -1938,7 +1961,9 @@ var lang = [
 		monophthongs: "i u e @ o { a",
 		diphthongs: "",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			an: "an",
+			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Yahgan_language"
 	},
@@ -1977,6 +2002,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			an: "na",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Zuni_language"
