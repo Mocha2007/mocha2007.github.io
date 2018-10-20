@@ -664,6 +664,21 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Crimean_Tatar_language"
 	},
 	{
+		name: "Cubeo",
+		coords: [1, -70],
+		families: ["tucanoan"],
+		areas: ["south america", "amazon"],
+		consonants: "b d p t tS k w r j x",
+		monophthongs: "i i~ 1 1~ u u~ E E~ a a~ o o~",
+		diphthongs: "",
+		features: {
+			adpositions: "postpositions",
+			an: "an",
+			sov: "ovs"
+		},
+		source: "https://en.wikipedia.org/wiki/Cubeo_language"
+	},
+	{
 		name: "Czech",
 		coords: [50, 16],
 		families: ["indo-european", "balto-slavic", "slavic", "west slavic"],
@@ -1055,6 +1070,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			an: "na",
 			sov: "ovs"
 		},
 		source: "https://en.wikipedia.org/wiki/Hixkaryana_language"
