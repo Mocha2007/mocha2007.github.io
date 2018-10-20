@@ -1135,7 +1135,8 @@ var lang = [
 		monophthongs: "i u e o E O a",
 		diphthongs: "",
 		features: {
-			adpositions: "prepositions"
+			adpositions: "prepositions",
+			an: "an"
 		},
 		source: "https://en.wikipedia.org/wiki/Lower_Sorbian_language"
 	},
@@ -1764,7 +1765,8 @@ var lang = [
 		monophthongs: "i u e o E O",
 		diphthongs: "",
 		features: {
-			adpositions: "prepositions"
+			adpositions: "prepositions",
+			an: "an"
 		},
 		source: "https://en.wikipedia.org/wiki/Upper_Sorbian_language"
 	},
@@ -1778,6 +1780,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
+			an: "na",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Venetian_language"
