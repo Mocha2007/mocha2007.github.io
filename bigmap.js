@@ -764,6 +764,7 @@ var lang = [
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "te"
 		},
@@ -1900,6 +1901,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "an",
 			sov: "svo",
+			orange: "orange",
 			sugar: "sugar",
 			tea: "te"
 		},
