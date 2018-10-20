@@ -1033,6 +1033,20 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Hindi"
 	},
 	{
+		name: "Hixkaryana",
+		coords: [-2, -57],
+		families: ["carib"],
+		areas: ["south america", "amazon"],
+		consonants: "m n J p b t d tS J\\ k p\\ s S h 4 r`_l j w",
+		monophthongs: "M u e O {",
+		diphthongs: "",
+		features: {
+			adpositions: "postpositions",
+			sov: "ovs"
+		},
+		source: "https://en.wikipedia.org/wiki/Hixkaryana_language"
+	},
+	{
 		name: "Hungarian",
 		coords: [47, 19],
 		families: ["uralic", "ugric"],
