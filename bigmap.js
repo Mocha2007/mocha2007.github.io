@@ -399,6 +399,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			an: "na",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Basque_language"
@@ -569,6 +570,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
+			an: "an",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Danish_language"
@@ -582,7 +584,8 @@ var lang = [
 		monophthongs: "I Y E @ O A i: y: u: e: 2: o: a:",
 		diphthongs: "Ei 9y Au iu yu ui e:u o:i a:i",
 		features: {
-			adpositions: "prepositions"
+			adpositions: "prepositions",
+			an: "an"
 		},
 		source: "https://en.wikipedia.org/wiki/Dutch_language"
 	},
@@ -676,7 +679,8 @@ var lang = [
 		monophthongs: "I i: Y y: U u: E e: 9 2: O o: a a:",
 		diphthongs: "Ui Ei ai Oi Ea Oa }u Ou",
 		features: {
-			adpositions: "prepositions"
+			adpositions: "prepositions",
+			an: "an"
 		},
 		source: "https://en.wikipedia.org/wiki/Faroese_language"
 	},
@@ -746,7 +750,8 @@ var lang = [
 		monophthongs: "I i: Y y: U u: e: 2: o: E 9 O a a:",
 		diphthongs: "OY aI aU",
 		features: {
-			adpositions: "prepositions"
+			adpositions: "prepositions",
+			an: "an"
 		},
 		source: "https://en.wikipedia.org/wiki/German_language"
 	},
@@ -863,6 +868,7 @@ var lang = [
 		diphthongs: "ei 2i ou ai au",
 		features: {
 			adpositions: "prepositions",
+			an: "an",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Icelandic_language"
@@ -1525,7 +1531,8 @@ var lang = [
 		monophthongs: "i u e o a",
 		diphthongs: "",
 		features: {
-			adpositions: "prepositions"
+			adpositions: "prepositions",
+			an: "na"
 		},
 		source: "https://en.wikipedia.org/wiki/Sardinian_language"
 	},
