@@ -428,6 +428,9 @@ var lang = [
 		consonants: "p t_d t` k ? b d_d d` g tS dZ f s K S x h z Z G m n_d n` l j w 4 r`",
 		monophthongs: "a i u a: e: i: o: u:",
 		diphthongs: "aI aU",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Dravidian_language"
 	},
 	{
@@ -863,6 +866,9 @@ var lang = [
 		consonants: "m n p t k' k q >\\ ? b d g' g p_> t_> k'_> k_> q_> ts tS ts_> tS_> f s S X H\\ h v z Z R l j r_0 r",
 		monophthongs: "i u e @ o { A",
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Ingush_language"
 	},
 	{
@@ -906,6 +912,9 @@ var lang = [
 		consonants: "p t t' k b d d' g ts tS dZ s S x z G m n J N r l L w j",
 		monophthongs: "i y u e 2 o { a",
 		diphthongs: "",
+		features: {
+			adpositions: "postpositions"
+		},
 		source: "https://en.wikipedia.org/wiki/Kalmyk_language"
 	},
 	{
