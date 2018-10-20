@@ -712,7 +712,8 @@ var lang = [
 		monophthongs: "i u e o a",
 		diphthongs: "",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Erzya_language"
 	},
@@ -1996,7 +1997,8 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
-			an: "an"
+			an: "an",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Upper_Sorbian_language"
 	},
