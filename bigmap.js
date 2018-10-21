@@ -38,7 +38,9 @@ function obj2string(obj){
 	obj = obj.replace(/"/g, "");
 	obj = obj.replace(/,/g, "<br>");
 	obj = obj.replace(/:/g, "&rarr;");
-	return obj.replace(/.+&Oslash;/g, "");
+	obj = obj.replace(/[^>]+&Oslash;/g, ""); // clear matchlesses
+	obj = obj.replace(/(<br>\n)+/g, "<br>\n"); // collapse multiple breaks
+	return obj;
 }
 
 function bigmap(){
@@ -167,7 +169,7 @@ function bigmap(){
 				else {
 					// https://stackoverflow.com/a/16735184/2579798
 					for (var property in x.features){
-						if (x.features.hasOwnProperty(property)){
+						if (x.features.hasOwnProperty(property)){ // just in case
 							if (commonf.hasOwnProperty(property)){
 								if (commonf[property] !== x.features[property]){
 									commonf[property] = "&Oslash;";
