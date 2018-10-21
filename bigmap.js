@@ -471,6 +471,25 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Basque_language"
 	},
 	{
+		name: "Bench",
+		coords: [6.25, 35.16],
+		families: ["afro-asiatic", "omotic"],
+		areas: ["africa"],
+		consonants: "m n p t k ? b d g p_> t_> k_> ts tS ts` ts_> tS_> ts`_> s S s` h z Z z` r l j",
+		monophthongs: "i e a o u",
+		diphthongs: "",
+		features: {
+			//adpositions: "postpositions",
+			//an: "na",
+			//sov: "sov",
+			//ginger: "ginger",
+			//orange: "other",
+			//sugar: "sugar",
+			//tea: "cha"
+		},
+		source: "https://en.wikipedia.org/wiki/Bench_language"
+	},
+	{
 		name: "Bengali",
 		coords: [24, 90],
 		families: ["indo-european", "indo-iranian", "indo-aryan"],
@@ -2215,7 +2234,7 @@ var lang = [
 	{
 		name: "Shabo",
 		coords: [6, 36],
-		families: [],
+		families: ["nilo-saharan", "komuz"],
 		areas: ["africa"],
 		consonants: "b t d k g ? b_< d_< p_> t_> tS_> k_> f s_> w l j m n N r",
 		monophthongs: "i 1 u e @ o E a O i: u: e: o: a:",
