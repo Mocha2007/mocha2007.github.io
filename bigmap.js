@@ -1820,6 +1820,26 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Nogai_language"
 	},
 	{
+		name: "Norwegian",
+		coords: [60, 11],
+		families: ["indo-european", "germanic"],
+		areas: ["europe"],
+		consonants: "m n n` N p b t d t` d` k g f s S s` h P l l` j 4",
+		monophthongs: "A E { e @ I i u o O Y y 2",
+		diphthongs: "AI {} EI OY 2y",
+		features: {
+			adpositions: "prepositions",
+			an: "an",
+			sov: "svo",
+			cumin: "cumin",
+			ginger: "ginger",
+			orange: "apple",
+			sugar: "sugar",
+			tea: "te"
+		},
+		source: "https://en.wikipedia.org/wiki/Norwegian_language"
+	},
+	{
 		name: "Old Chinese",
 		coords: [34, 109],
 		families: ["sino-tibetan", "sinitic"],
