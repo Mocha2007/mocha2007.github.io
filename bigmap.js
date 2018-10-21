@@ -39,7 +39,7 @@ function obj2string(obj){
 	obj = obj.replace(/,/g, "<br>");
 	obj = obj.replace(/:/g, "&rarr;");
 	obj = obj.replace(/[^>]+&Oslash;/g, ""); // clear matchlesses
-	obj = obj.replace(/(<br>\n)+/g, "<br>\n"); // collapse multiple breaks
+	obj = obj.replace(/(<br>\n*)+/g, "<br>"); // collapse multiple breaks
 	return obj;
 }
 
