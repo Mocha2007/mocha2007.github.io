@@ -29,6 +29,7 @@ function coord2px(coords){
 }
 
 function obj2string(obj){
+	"use strict";
 	if (obj === undefined){
 		return "";
 	}
@@ -43,10 +44,17 @@ function obj2string(obj){
 	return obj;
 }
 
+function arr2string(obj){
+	"use strict";
+	obj = String(obj);
+	obj = obj.replace(/,/g, "<br>");
+	return obj;
+}
+
 function bigmap(){
 	"use strict";
 	var anyc, conditional, coords, familylist, hastag, newlink, newpoint, newrow, soundset, wants, wants2;
-	document.getElementById("mapinfo").innerHTML = '<tr><th>Language</th><th>Feature</th><th>C</th><th>V</th><th>Features</th></tr>';
+	document.getElementById("mapinfo").innerHTML = '<tr><th>Language</th><th>Feature</th><th>C</th><th>V</th><th>Features</th><th>Regions</th></tr>';
 	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" width="'+mapsize+'">';
 	document.getElementById("brs").innerHTML = Array(Math.floor(brcount)).join('<br>');
 	var yes = 0;
@@ -54,6 +62,7 @@ function bigmap(){
 	var commonc = true;
 	var commonv = true;
 	var commonf = true;
+	var commonr = true;
 	lang.forEach(function(x){
 		// test for conditions
 		anyc = false;
@@ -161,6 +170,7 @@ function bigmap(){
 			if (commonc === true){
 				commonc = x.consonants.split(" ");
 				commonv = (x.monophthongs + " " + x.diphthongs).split(" ").filter(Boolean);
+				commonr = x.areas;
 			}
 			if (x.features){
 				if (commonf === true){
@@ -185,7 +195,7 @@ function bigmap(){
 			// intersect
 			commonc = intersect(commonc, x.consonants.split(" "))
 			commonv = intersect(commonv, (x.monophthongs + " " + x.diphthongs).split(" ").filter(Boolean))
-			// console.log(x.name, commonc, commonv);
+			commonr = intersect(commonr, x.areas)
 		}
 		// bigmap
 		coords = coord2px(x.coords);
@@ -207,7 +217,7 @@ function bigmap(){
 		// mapinfo
 		newrow = document.createElement("tr");
 		newrow.id = "row_"+x.name.replace(" ","_");
-		newrow.innerHTML = "<td><a href='#top'>"+x.name+"</a><sup><a href='"+x.source+"'>i</a></sup></td><td class='"+conditional+"'>"+conditional+"</td><td>"+(conditional ? x.consonants : "-")+"</td><td>"+(conditional ? x.monophthongs+' '+x.diphthongs : "-")+"</td><td>"+(conditional ? obj2string(x.features) : "-")+"</td>";
+		newrow.innerHTML = "<td><a href='#top'>"+x.name+"</a><sup><a href='"+x.source+"'>i</a></sup></td><td class='"+conditional+"'>"+conditional+"</td><td>"+(conditional ? x.consonants : "-")+"</td><td>"+(conditional ? x.monophthongs+' '+x.diphthongs : "-")+"</td><td>"+(conditional ? obj2string(x.features) : "-")+"</td><td>"+(conditional ? arr2string(x.areas) : "-")+"</td>";
 		document.getElementById("mapinfo").appendChild(newrow);
 		//
 		yes += conditional;
@@ -216,7 +226,7 @@ function bigmap(){
 	// sum
 	newrow = document.createElement("tr");
 	// console.log(commonc, commonv);
-	newrow.innerHTML = "<th>All "+yn+"</th><th>"+Math.floor(10000*yes/yn)/100+"%</th><td>"+commonc.join(" ")+"</td><td>"+commonv.join(" ")+"</td><td>"+obj2string(commonf)+"</td>";
+	newrow.innerHTML = "<th>All "+yn+"</th><th>"+Math.floor(10000*yes/yn)/100+"%</th><td>"+commonc.join(" ")+"</td><td>"+commonv.join(" ")+"</td><td>"+obj2string(commonf)+"</td><td>"+arr2string(commonr)+"</td>";
 	document.getElementById("mapinfo").appendChild(newrow);
 }
 
