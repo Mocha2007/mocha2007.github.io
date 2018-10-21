@@ -944,6 +944,21 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/German_language"
 	},
 	{
+		name: "Gilbertese",
+		coords: [1, 173],
+		families: ["austronesian", "malayo-polynesian", "oceanic", "micronesian"],
+		areas: ["oceania"],
+		consonants: "m m: m_e n n: N N: p p_e t k B_e 4",
+		monophthongs: "i i: u u: e e: o o: a a:",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			an: "na",
+			sov: "vos"
+		},
+		source: "https://en.wikipedia.org/wiki/Gilbertese_language"
+	},
+	{
 		name: "Greek",
 		coords: [38, 24],
 		families: ["indo-european", "hellenic"],
@@ -1574,6 +1589,20 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Mapuche_language"
 	},
 	{
+		name: "Marshallese",
+		coords: [9, 168],
+		families: ["austronesian", "malayo-polynesian", "oceanic", "micronesian"],
+		areas: ["oceania"],
+		consonants: "p' p_e t' t_e k k_w m' m_e n' n_e n_w N N_w r' r_e r_w l' l_e l_w j w",
+		monophthongs: "1 @\\ 3 a",
+		diphthongs: "",
+		features: {
+			sov: "svo",
+			tea: "te"
+		},
+		source: "https://en.wikipedia.org/wiki/Marshallese_language"
+	},
+	{
 		name: "Meriam",
 		coords: [-10, 144],
 		families: ["trans–fly"],
@@ -1775,6 +1804,21 @@ var lang = [
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Ossetian_language"
+	},
+	{
+		name: "Palauan",
+		coords: [8, 135],
+		families: ["austronesian", "malayo-polynesian"],
+		areas: ["oceania"],
+		consonants: "m N b t d k ? s l 4",
+		monophthongs: "i u E @ o a",
+		diphthongs: "iE Ei iu ui io oi ia ai Eu uE Eo oE Ea aE uo ou ua au oa ao",
+		features: {
+			adpositions: "prepositions",
+			an: "an",
+			sov: "vos"
+		},
+		source: "https://en.wikipedia.org/wiki/Palauan_language"
 	},
 	{
 		name: "Paez",
@@ -1981,6 +2025,21 @@ var lang = [
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Russian_language"
+	},
+	{
+		name: "Samoan",
+		coords: [-14, -172],
+		families: ["austronesian", "malayo-polynesian", "oceanic", "polynesian"],
+		areas: ["oceania"],
+		consonants: "f N l m n p s t v ?",
+		monophthongs: "a e i o u a: e: i: o: u:",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			an: "na",
+			sov: "vso"
+		},
+		source: "https://en.wikipedia.org/wiki/Samoan_language"
 	},
 	{
 		name: "Sardinian",
@@ -2255,6 +2314,21 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Tok_Pisin"
 	},
 	{
+		name: "Tongan",
+		coords: [-20, -175],
+		families: ["austronesian", "malayo-polynesian", "oceanic", "polynesian"],
+		areas: ["oceania"],
+		consonants: "f h k l m n N p s t v ?",
+		monophthongs: "a e i o u",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			an: "na",
+			sov: "vso"
+		},
+		source: "https://en.wikipedia.org/wiki/Tongan_language"
+	},
+	{
 		name: "Turkish",
 		coords: [41, 29],
 		families: ["turkic", "oghuz"],
@@ -2274,6 +2348,21 @@ var lang = [
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Turkish_language"
+	},
+	{
+		name: "Tuvaluan",
+		coords: [-9, -179],
+		families: ["austronesian", "malayo-polynesian", "oceanic", "polynesian"],
+		areas: ["oceania"],
+		consonants: "p t k m n N f v s h l",
+		monophthongs: "i e a o u",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			an: "na",
+			sov: "vso"
+		},
+		source: "https://en.wikipedia.org/wiki/Tuvaluan_language"
 	},
 	{
 		name: "Tuvan",
