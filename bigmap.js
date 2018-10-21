@@ -263,6 +263,7 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "svo",
+			cumin: "cumin",
 			ginger: "ginger",
 			orange: "portugal",
 			sugar: "sugar",
@@ -392,6 +393,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			orange: "other",
 			tea: "other"
 		},
 		source: "https://en.wikipedia.org/wiki/Aymaran_language"
@@ -408,6 +410,7 @@ var lang = [
 			an: "an",
 			sov: "sov",
 			cumin: "other",
+			ginger: "ginger",
 			orange: "portugal",
 			sugar: "sugar",
 			tea: "cha"
@@ -649,7 +652,8 @@ var lang = [
 			an: "na",
 			sov: "svo",
 			orange: "apple",
-			sugar: "sugar"
+			sugar: "sugar",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Cornish_Language"
 	},
@@ -662,8 +666,10 @@ var lang = [
 		monophthongs: "i y M u e 2 A o",
 		diphthongs: "",
 		features: {
+			ginger: "ginger",
 			orange: "portugal",
-			sugar: "sugar"
+			sugar: "sugar",
+			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Crimean_Tatar_language"
 	},
@@ -815,6 +821,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			orange: "other", // сырнемарь
 			sugar: "sugar",
 			tea: "cha"
 		},
@@ -1054,8 +1061,10 @@ var lang = [
 			adpositions: "prepositions",
 			an: "na",
 			sov: "vso",
+			cumin: "cumin",
 			orange: "orange",
-			sugar: "other"
+			sugar: "other",
+			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Hawaiian_language"
 	},
