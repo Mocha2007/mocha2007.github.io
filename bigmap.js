@@ -38,7 +38,7 @@ function obj2string(obj){
 	obj = obj.replace(/"/g, "");
 	obj = obj.replace(/,/g, "<br>");
 	obj = obj.replace(/:/g, "&rarr;");
-	return obj;
+	return obj.replace(/.+&Oslash;/g, "");
 }
 
 function bigmap(){
@@ -2583,3 +2583,13 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Zuni_language"
 	},
 ];
+
+// generate OSV - OS OV SV
+lang.forEach(function(x){
+	if ((x.features !== undefined) && (x.features.sov !== undefined) && (x.features.sov.length === 3)){
+		// OwO
+		x.features.os = x.features.sov.replace("v", "");
+		x.features.ov = x.features.sov.replace("s", "");
+		x.features.sv = x.features.sov.replace("o", "");
+	}
+});
