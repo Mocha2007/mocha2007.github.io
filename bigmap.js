@@ -1218,6 +1218,26 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Irish_language"
 	},
 	{
+		name: "Italian",
+		coords: [43, 12],
+		families: ["indo-european", "italic", "romance", "italo-western"],
+		areas: ["europe"],
+		consonants: "m n J p b t d k g ts dz tS dZ f v s z S j w l L r",
+		monophthongs: "i u e o E O a",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			an: "na",
+			sov: "svo",
+			cumin: "cumin",
+			ginger: "ginger",
+			orange: "orange",
+			sugar: "sugar",
+			tea: "te"
+		},
+		source: "https://en.wikipedia.org/wiki/Italian_language"
+	},
+	{
 		name: "Jalaa",
 		coords: [11, 10],
 		families: [],
@@ -1820,6 +1840,7 @@ var lang = [
 		coords: [53, -1],
 		families: ["indo-european", "germanic"],
 		areas: ["europe", "britain"],
+		tags: ["dead"],
 		consonants: "m n p b t d k g tS f T s S h l j w r",
 		monophthongs: "i i: y y: u u: e e: o o: { {: A A:",
 		diphthongs: "iy ie i:y i:e eo e:o {A {:A",
