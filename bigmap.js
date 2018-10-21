@@ -303,9 +303,10 @@ var lang = [
 		monophthongs: "i y u e o a i: y: u: e: E: O: a:",
 		diphthongs: "yi ei eu oi ou ai au E:i O:i E:u O:u a:i a:u",
 		features: {
+			sov: "sov",
 			cumin: "cumin",
 			ginger: "ginger",
-			sov: "sov"
+			sugar: "sugar"
 		},
 		source: "https://en.wikipedia.org/wiki/Ancient_Greek"
 	},
@@ -354,6 +355,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			cumin: "cumin",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Aramaic_language"
@@ -813,6 +815,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Erzya_language"
@@ -1270,6 +1273,9 @@ var lang = [
 		consonants: "m n J p t k b d g ts tS dz dZ f s S x v z Z l j w r",
 		monophthongs: "i u e @ o E 3\\ O a E~ a~",
 		diphthongs: "",
+		features: {
+			sugar: "sugar"
+		},
 		source: "https://en.wikipedia.org/wiki/Kashubian_language"
 	},
 	{
@@ -1283,7 +1289,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
-			sov: "sov"
+			sov: "sov",
+			sugar: "sugar"
 		},
 		source: "https://en.wikipedia.org/wiki/Ket_language"
 	},
@@ -1484,7 +1491,8 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
-			an: "an"
+			an: "an",
+			sugar: "sugar"
 		},
 		source: "https://en.wikipedia.org/wiki/Lower_Sorbian_language"
 	},
@@ -1682,7 +1690,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			sov: "free",
-			orange: "orange"
+			orange: "orange",
+			sugar: "other"
 		},
 		source: "https://en.wikipedia.org/wiki/Nahuatl"
 	},
@@ -2039,7 +2048,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "vso"
+			sov: "vso",
+			sugar: "sugar"
 		},
 		source: "https://en.wikipedia.org/wiki/Samoan_language"
 	},
@@ -2165,7 +2175,7 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Slovene_language"
 	},
 	{
-		name: "Socotra",
+		name: "Soqotri",
 		coords: [13, 54],
 		families: ["afro-asiatic", "semitic"],
 		areas: ["asia"],
@@ -2346,7 +2356,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
-			sov: "vso"
+			sov: "vso",
+			sugar: "sugar"
 		},
 		source: "https://en.wikipedia.org/wiki/Tongan_language"
 	},
@@ -2415,6 +2426,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			sov: "sov",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Udmurt_language"
@@ -2444,6 +2456,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			sugar: "sugar",
 			tea: "cha"
 		},
 		source: "https://en.wikipedia.org/wiki/Upper_Sorbian_language"
@@ -2580,13 +2593,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Yakut_language"
 	},
 	{
-		name: "Yucatec Maya",
+		name: "Yucatec",
 		coords: [20, -89],
 		families: ["mayan"],
 		areas: ["north america", "mesoamerica"],
 		consonants: "m n b_< p_h t_h k_h ? p_> t_> k_> ts_h tS_h ts_> tS_> s S x h w l j 4",
 		monophthongs: "i u e o a",
 		diphthongs: "",
+		features: {
+			sugar: "sugar"
+		},
 		source: "https://en.wikipedia.org/wiki/Yucatec_Maya_language"
 	},
 	{
