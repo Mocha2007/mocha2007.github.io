@@ -2263,6 +2263,25 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Slovene_language"
 	},
 	{
+		name: "Somali",
+		coords: [10, 49],
+		families: ["afro-asiatic", "cushitic"],
+		areas: ["africa"],
+		consonants: "m n b t_d d_d d` k g q ? dZ f s S x X\\ ?\\ h r l j w",
+		monophthongs: "i I } u e E 3\\ O { A",
+		diphthongs: "{i {:i AI A:I {} {:} Au A:u ei 3\\:i EI E:I OI O:I 3\\} 3\\:} Ou O:u",
+		features: {
+			adpositions: "postpositions",
+			an: "na",
+			sov: "sov",
+			ginger: "ginger",
+			orange: "other",
+			sugar: "sugar",
+			tea: "cha"
+		},
+		source: "https://en.wikipedia.org/wiki/Somali_language"
+	},
+	{
 		name: "Soqotri",
 		coords: [13, 54],
 		families: ["afro-asiatic", "semitic"],
