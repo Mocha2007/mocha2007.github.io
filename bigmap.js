@@ -762,7 +762,7 @@ var lang = [
 	},
 	{
 		name: "Egyptian",
-		coords: [30, 31],
+		coords: [29, 31], // so doesn't conflict w/ arabic
 		families: ["afro-asiatic"],
 		areas: ["africa"],
 		tags: ["dead"],
@@ -775,6 +775,27 @@ var lang = [
 			sov: "vso",
 		},
 		source: "https://en.wikipedia.org/wiki/Egyptian_language"
+	},
+	{
+		name: "Egyptian Arabic",
+		coords: [30, 31],
+		families: ["afro-asiatic", "semitic"],
+		areas: ["africa"],
+		tags: ["farang"],
+		consonants: "m n t t_?\\ k ? b d g f s s_?\\ S x X\\ h z z_?\\ G ?\\ 4 l j w",
+		monophthongs: "a i u a: i: u: e: o:",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			an: "na",
+			sov: "svo",
+			cumin: "cumin",
+			ginger: "ginger",
+			orange: "portugal",
+			sugar: "sugar",
+			tea: "cha"
+		},
+		source: "https://en.wikipedia.org/wiki/Egyptian_Arabic"
 	},
 	{
 		name: "Enggano",
@@ -1543,6 +1564,7 @@ var lang = [
 		coords: [40, 116],
 		families: ["sino-tibetan", "sinitic"],
 		areas: ["asia"],
+		tags: ["farang"],
 		consonants: "p t k p_h t_h k_h m n N ts ts` ts\\ ts_h ts`_h ts\\_h f s s` s\\ x w l r\\` j",
 		monophthongs: "i y u 7 @ a",
 		diphthongs: "ye u@ uo ie ua ia iu ei ou au ai",
@@ -1792,6 +1814,22 @@ var lang = [
 			tea: "other"
 		},
 		source: "https://en.wikipedia.org/wiki/Old_Chinese"
+	},
+	{
+		name: "Old English",
+		coords: [53, -1],
+		families: ["indo-european", "germanic"],
+		areas: ["europe", "britain"],
+		consonants: "m n p b t d k g tS f T s S h l j w r",
+		monophthongs: "i i: y y: u u: e e: o o: { {: A A:",
+		diphthongs: "iy ie i:y i:e eo e:o {A {:A",
+		features: {
+			adpositions: "prepositions",
+			an: "an",
+			cumin: "cumin",
+			ginger: "ginger"
+		},
+		source: "https://en.wikipedia.org/wiki/Old_English"
 	},
 	{
 		name: "Onge",
