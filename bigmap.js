@@ -1967,7 +1967,7 @@ var lang = [
 		name: "Piraha",
 		coords: [-7, -62],
 		families: ["mura"],
-		areas: ["amazon", "brazil", "south america"],
+		areas: ["amazon", "south america"],
 		consonants: "p t ? b g s h",
 		monophthongs: "i o a",
 		diphthongs: "",
