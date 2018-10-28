@@ -162,7 +162,7 @@ function bigmap(){
 			hastag = (x.features !== undefined) && (x.features[wants] !== undefined);
 
 			if (hastag){
-				conditional = conditional && (x.features[wants] === wants2);
+				conditional = conditional && (x.features[wants].toString() === wants2);
 			}
 			else {
 				anyc = true;
@@ -247,6 +247,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 0,
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Ainu_language"
@@ -261,8 +262,10 @@ var lang = [
 		monophthongs: "i u e a",
 		diphthongs: "",
 		features: {
-			cumin: "cumin", // source of the wanderwort
-			sov: "sov"
+			gender: 2,
+			genders: "fm",
+			sov: "sov",
+			cumin: "cumin" // source of the wanderwort
 		},
 		source: "https://en.wikipedia.org/wiki/Akkadian_language"
 	},
@@ -277,6 +280,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 3,
+			genders: "fmn",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -295,6 +300,7 @@ var lang = [
 		monophthongs: "i i: u u: a a:",
 		diphthongs: "",
 		features: {
+			gender: 0,
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Aleut_language"
@@ -319,6 +325,8 @@ var lang = [
 		monophthongs: "i y u e o a i: y: u: e: E: O: a:",
 		diphthongs: "yi ei eu oi ou ai au E:i O:i E:u O:u a:i a:u",
 		features: {
+			gender: 3,
+			genders: "fmn",
 			sov: "sov",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -335,6 +343,8 @@ var lang = [
 		monophthongs: "i i~ 1 1~ i: i:~ e e~ o o~ e: e:~ o o:~ a a~ a: a:~",
 		diphthongs: "",
 		features: {
+			gender: 2,
+			genders: "fm",
 			sov: "osv"
 		},
 		source: "https://en.wikipedia.org/wiki/Apurinã_language"
@@ -351,6 +361,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 3,
+			genders: "fmn",
 			sov: "vso",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -370,6 +382,8 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
+			gender: 2,
+			genders: "fm",
 			cumin: "cumin",
 			sugar: "sugar",
 			tea: "cha"
@@ -387,6 +401,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 0,
 			sov: "sov",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -476,6 +491,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "na",
+			gender: 2,
+			genders: "ai",
 			sov: "sov",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -513,6 +530,7 @@ var lang = [
 		monophthongs: "i u e o E O a i~ u~ e~ o~ {~ O~ a~",
 		diphthongs: "ae ai ao au {e {o ei eu ii iu oe oi oo ou ui",
 		features: {
+			gender: 0,
 			sov: "sov",
 			cumin: "other",
 			ginger: "other",
@@ -532,6 +550,8 @@ var lang = [
 		monophthongs: "i i: u u: o: a a:",
 		diphthongs: "",
 		features: {
+			gender: 2,
+			genders: "fm",
 			cumin: "cumin",
 			ginger: "ginger"
 		},
@@ -546,7 +566,8 @@ var lang = [
 		monophthongs: "a i u a: e: i: o: u:",
 		diphthongs: "aI aU",
 		features: {
-			adpositions: "postpositions"
+			adpositions: "postpositions",
+			gender: 0
 		},
 		source: "https://en.wikipedia.org/wiki/Dravidian_language"
 	},
@@ -561,6 +582,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 3,
+			genders: "fmn",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -581,6 +604,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 4,
+			genders: "cfmu",
 			sov: "sov",
 			tea: "cha"
 		},
@@ -606,6 +631,7 @@ var lang = [
 		diphthongs: "uy iu 8y ei Eu 6i 6u ou Oy ai au",
 		features: {
 			an: "an",
+			gender: 0,
 			sov: "svo",
 			cumin: "other",
 			ginger: "other",
@@ -634,7 +660,9 @@ var lang = [
 		monophthongs: "i u a",
 		diphthongs: "",
 		features: {
-			adpositions: "prepositions"
+			adpositions: "prepositions",
+			gender: 2,
+			genders: "fm"
 		},
 		source: "https://en.wikipedia.org/wiki/Central_Atlas_Tamazight"
 	},
@@ -649,6 +677,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 0,
 			orange: "orange",
 			sugar: "other",
 			tea: "other"
@@ -666,6 +695,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 0,
 			sov: "sov",
 			orange: "apple",
 			sugar: "sugar",
@@ -684,6 +714,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 2,
+			genders: "fm",
 			sov: "svo",
 			orange: "apple",
 			sugar: "sugar",
@@ -733,6 +765,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 3,
+			genders: "fmn",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -753,6 +787,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 2,
+			genders: "cn",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -773,6 +809,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 3,
+			genders: "fmn",
 			cumin: "cumin",
 			ginger: "ginger",
 			orange: "apple",
@@ -790,7 +828,9 @@ var lang = [
 		monophthongs: "i u a",
 		diphthongs: "",
 		features: {
-			an: "na"
+			an: "na",
+			gender: 4,
+			genders: "fmop",
 		},
 		source: "https://en.wikipedia.org/wiki/Dyirbal_language"
 	},
@@ -806,6 +846,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 2,
+			genders: "fm",
 			sov: "vso",
 		},
 		source: "https://en.wikipedia.org/wiki/Egyptian_language"
@@ -822,6 +864,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 2,
+			genders: "fm",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -857,6 +901,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 3,
+			genders: "fmn",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -893,6 +939,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 0,
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -912,6 +959,8 @@ var lang = [
 		monophthongs: "i e a u",
 		diphthongs: "",
 		features: {
+			gender: 2,
+			genders: "fm",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Etruscan_language"
@@ -927,6 +976,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 3,
+			genders: "fmn",
 			sov: "svo",
 			ginger: "ginger",
 			orange: "apple",
@@ -946,6 +997,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 0,
 			sov: "vos",
 			sugar: "sugar"
 		},
@@ -962,6 +1014,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 0,
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -982,6 +1035,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 2,
+			genders: "fm",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -1002,6 +1057,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 0,
 			sov: "sov",
 			cumin: "other",
 			ginger: "ginger",
@@ -1022,6 +1078,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 3,
+			genders: "fmn",
 			cumin: "cumin",
 			ginger: "ginger",
 			orange: "orange",
@@ -1056,6 +1114,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 3,
+			genders: "fmn",
 			cumin: "cumin",
 			ginger: "ginger", // two words; but one is the wanderwort
 			orange: "portugal",
@@ -1074,6 +1134,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			gender: 0,
 			tea: "te"
 		},
 		source: "https://en.wikipedia.org/wiki/Greenlandic_language"
@@ -1089,6 +1150,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "na",
+			gender: 0,
 			sov: "svo",
 			orange: "orange",
 			sugar: "sugar",
@@ -1105,6 +1167,8 @@ var lang = [
 		monophthongs: "i e a o u",
 		diphthongs: "",
 		features: {
+			gender: 2,
+			genders: "fm",
 			sov: "vso"
 		},
 		source: "https://en.wikipedia.org/wiki/Hadza_language"
@@ -1135,6 +1199,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 0,
 			sov: "vso",
 			cumin: "cumin",
 			orange: "orange",
@@ -1155,6 +1220,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 2,
+			genders: "fm",
 			sov: "sov",
 			cumin: "other",
 			ginger: "other",
@@ -1175,6 +1242,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "na",
+			gender: 2,
 			sov: "ovs"
 		},
 		source: "https://en.wikipedia.org/wiki/Hixkaryana_language"
@@ -1190,6 +1258,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 0,
 			cumin: "cumin",
 			ginger: "ginger",
 			orange: "orange",
@@ -1209,6 +1278,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 3,
+			genders: "fmn",
 			sov: "svo",
 			ginger: "ginger",
 			orange: "apple",
@@ -1228,6 +1299,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 0,
 			sov: "svo",
 			ginger: "other",
 			orange: "other",
@@ -1262,6 +1334,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 2,
+			genders: "fm",
 			sov: "vso",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -1282,6 +1356,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 2,
+			genders: "fm",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -1312,6 +1388,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 0,
 			sov: "sov",
 			cumin: "cumin",
 			ginger: "other",
@@ -1346,6 +1423,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 0,
 			orange: "other",
 			sugar: "sugar",
 			tea: "cha"
@@ -1393,6 +1471,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 3,
 			sov: "sov",
 			sugar: "sugar"
 		},
@@ -1423,6 +1502,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 0,
 			sov: "svo",
 			ginger: "other",
 			orange: "other",
@@ -1442,6 +1522,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 3,
+			genders: "fmn",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Khoekhoe_language"
@@ -1457,6 +1539,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 0,
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Komi_language"
@@ -1487,6 +1570,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 0,
 			sov: "sov",
 			cumin: "cumin",
 			ginger: "other",
@@ -1561,6 +1645,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 3,
+			genders: "imf",
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Laal_language"
@@ -1576,6 +1662,8 @@ var lang = [
 		diphthongs: "ui ei eu oe ou ae au",
 		features: {
 			adpositions: "prepositions",
+			gender: 3,
+			genders: "fmn",
 			sov: "sov",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -1596,6 +1684,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 2,
+			genders: "fm",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -1616,6 +1706,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 3,
+			genders: "fmn",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -1651,6 +1743,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 3,
+			genders: "fmn",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -1669,6 +1763,8 @@ var lang = [
 		monophthongs: "i i: e e: o o: a a:",
 		diphthongs: "",
 		features: {
+			gender: 2,
+			genders: "fm",
 			sov: "osv"
 		},
 		source: "https://en.wikipedia.org/wiki/Madí_language"
@@ -1684,6 +1780,7 @@ var lang = [
 		diphthongs: "ye u@ uo ie ua ia iu ei ou au ai",
 		features: {
 			an: "an",
+			gender: 0,
 			sov: "svo",
 			cumin: "other",
 			ginger: "other",
@@ -1704,6 +1801,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 0,
 			sov: "vos",
 			ginger: "other",
 			orange: "orange",
@@ -1722,6 +1820,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 0,
 			sov: "vso",
 			orange: "orange",
 			sugar: "sugar",
@@ -1739,6 +1838,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			an: "an",
+			gender: 0,
 			sov: "svo"
 		},
 		source: "https://en.wikipedia.org/wiki/Mapuche_language"
@@ -1752,6 +1852,7 @@ var lang = [
 		monophthongs: "1 @\\ 3 a",
 		diphthongs: "",
 		features: {
+			gender: 0,
 			sov: "svo",
 			tea: "te"
 		},
@@ -1834,6 +1935,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
+			gender: 0,
 			sov: "free",
 			orange: "orange",
 			sugar: "other"
@@ -1894,6 +1996,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 0,
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Nivkh_language"
@@ -1924,6 +2027,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 3,
+			genders: "fmn",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -1961,6 +2066,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 3,
+			genders: "fmn",
 			cumin: "cumin",
 			ginger: "ginger"
 		},
@@ -1990,6 +2097,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 0,
 			sov: "sov",
 			cumin: "other",
 			orange: "apple",
@@ -2009,6 +2117,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 0,
 			sov: "vos"
 		},
 		source: "https://en.wikipedia.org/wiki/Palauan_language"
@@ -2065,6 +2174,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 3,
+			genders: "fmn",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -2085,6 +2196,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 2,
+			genders: "fm",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -2105,6 +2218,8 @@ var lang = [
 		diphthongs: "ei oi eu ou",
 		features: {
 			adpositions: "prepositions",
+			gender: 3,
+			genders: "fmn",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Proto-Indo-European"
@@ -2124,7 +2239,7 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Punic_language"
 	},
 	{
-		name: "Punjab",
+		name: "Punjabi",
 		coords: [31, 75],
 		families: ["indo-european", "indo-iranian", "indo-aryan"],
 		areas: ["india"],
@@ -2150,6 +2265,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			gender: 0,
 			sov: "sov",
 			sugar: "other",
 			tea: "te"
@@ -2167,6 +2283,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 3,
+			genders: "fmn",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -2210,6 +2328,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 3,
+			genders: "fmn",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -2230,6 +2350,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 0,
 			sov: "vso",
 			sugar: "sugar"
 		},
@@ -2246,6 +2367,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 2,
+			genders: "fm",
 			orange: "orange",
 			sov: "svo"
 		},
@@ -2280,6 +2403,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 2,
+			genders: "fm",
 			sov: "vso",
 			orange: "other",
 			sugar: "sugar"
@@ -2297,6 +2422,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 3,
+			genders: "fmn",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -2317,6 +2444,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 2,
+			genders: "fm",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Shabo_language"
@@ -2330,6 +2459,8 @@ var lang = [
 		monophthongs: "i i: u u: E E: O a a:",
 		diphthongs: "IE Ia Iu UO",
 		features: {
+			gender: 3,
+			genders: "fmn",
 			ginger: "ginger",
 			orange: "orange",
 			sugar: "sugar",
@@ -2348,6 +2479,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 3,
+			genders: "fmn",
 			sov: "svo",
 			ginger: "ginger",
 			orange: "orange",
@@ -2367,6 +2500,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "na",
+			gender: 2,
+			genders: "fm",
 			sov: "sov",
 			ginger: "ginger",
 			orange: "other",
@@ -2396,6 +2531,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 2,
+			genders: "fm",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -2435,6 +2572,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "na",
+			gender: 2,
+			genders: "ai",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Sumerian_language"
@@ -2450,6 +2589,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 18,
+			genders: "18",
 			sov: "svo",
 			cumin: "other",
 			ginger: "ginger",
@@ -2470,6 +2611,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			gender: 2,
+			genders: "cn",
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -2488,6 +2631,7 @@ var lang = [
 		monophthongs: "i u e o a",
 		diphthongs: "ai ui au iu",
 		features: {
+			gender: 2,
 			sov: "vso",
 			cumin: "cumin",
 			ginger: "other",
@@ -2522,6 +2666,8 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 3,
+			genders: "cfm",
 			sov: "sov",
 			cumin: "other",
 			ginger: "other",
@@ -2574,6 +2720,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			gender: 0,
 			sov: "sov",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -2594,6 +2741,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 0,
 			sov: "vso"
 		},
 		source: "https://en.wikipedia.org/wiki/Tuvaluan_language"
@@ -2673,6 +2821,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 2,
+			genders: "fm",
 			sov: "svo",
 			ginger: "ginger",
 			orange: "portugal",
@@ -2692,6 +2842,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 0,
 			sov: "svo",
 			cumin: "other",
 			ginger: "other",
@@ -2709,6 +2860,10 @@ var lang = [
 		consonants: "m n p t_d tS k ? s S h 4 r w j",
 		monophthongs: "i 1 u E O a",
 		diphthongs: "",
+		features: {
+			gender: 2,
+			genders: "fm"
+		},
 		source: "https://en.wikipedia.org/wiki/Wayuu_Language"
 	},
 	{
@@ -2722,6 +2877,8 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			gender: 2,
+			genders: "fm",
 			sov: "vso",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -2743,6 +2900,7 @@ var lang = [
 		features: {
 			adpositions: "none",
 			an: "na",
+			gender: 0,
 			sov: "free"
 		},
 		source: "https://en.wikipedia.org/wiki/Wichita_language"
@@ -2787,6 +2945,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "na",
+			gender: 0,
 			sov: "sov",
 			sugar: "sugar",
 			tea: "cha"
@@ -2817,6 +2976,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "na",
+			gender: 0,
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Zuni_language"
