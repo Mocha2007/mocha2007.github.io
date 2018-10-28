@@ -1586,6 +1586,46 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Latin"
 	},
 	{
+		name: "Latvian",
+		coords: [57, 25],
+		families: ["indo-european", "balto-slavic", "baltic"],
+		areas: ["baltic"],
+		consonants: "m n J p b t d c J\\ k g ts dz tS dZ v s z S Z r j l L",
+		monophthongs: "i i: u u: e e: { {: a a:",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			an: "an",
+			sov: "svo",
+			cumin: "cumin",
+			ginger: "ginger",
+			orange: "apple",
+			sugar: "sugar",
+			tea: "te"
+		},
+		source: "https://en.wikipedia.org/wiki/Latvian_language"
+	},
+	{
+		name: "Lithuanian",
+		coords: [55, 25],
+		families: ["indo-european", "balto-slavic", "baltic"],
+		areas: ["baltic"],
+		consonants: "m m' n n' p p' t t' k' k b b' d d' g' g ts ts' tS ts\\ dz dz' dZ dz\\ s s' S s\\ v v' z z' Z z\\ 5 l' j r r'",
+		monophthongs: "i: I U u: e: E o: {: 6 a:",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			an: "an",
+			sov: "svo",
+			cumin: "cumin",
+			ginger: "ginger",
+			orange: "apple",
+			sugar: "sugar",
+			tea: "te"
+		},
+		source: "https://en.wikipedia.org/wiki/Lithuanian_language"
+	},
+	{
 		name: "Lower Sorbian",
 		coords: [51, 14],
 		families: ["indo-european", "balto-slavic", "slavic", "west slavic"],
