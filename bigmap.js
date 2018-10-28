@@ -262,6 +262,7 @@ var lang = [
 		monophthongs: "i u e a",
 		diphthongs: "",
 		features: {
+			cases: "acc gen nom",
 			gender: 2,
 			genders: "fm",
 			sov: "sov",
@@ -280,6 +281,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "na",
+			cases: "abl acc dat gen nom",
 			gender: 3,
 			genders: "fmn",
 			sov: "svo",
@@ -300,6 +302,7 @@ var lang = [
 		monophthongs: "i i: u u: a a:",
 		diphthongs: "",
 		features: {
+			cases: "abs rel",
 			gender: 0,
 			sov: "sov"
 		},
@@ -325,6 +328,7 @@ var lang = [
 		monophthongs: "i y u e o a i: y: u: e: E: O: a:",
 		diphthongs: "yi ei eu oi ou ai au E:i O:i E:u O:u a:i a:u",
 		features: {
+			cases: "acc dat gen nom voc",
 			gender: 3,
 			genders: "fmn",
 			sov: "sov",
@@ -382,6 +386,7 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
+			cases: "abs const det",
 			gender: 2,
 			genders: "fm",
 			cumin: "cumin",
@@ -401,6 +406,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			cases: "abl acc dat gen ins loc nom",
 			gender: 0,
 			sov: "sov",
 			cumin: "cumin",
@@ -901,6 +907,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			cases: "obj subj",
 			gender: 3,
 			genders: "fmn",
 			sov: "svo",
@@ -2983,13 +2990,18 @@ var lang = [
 	},
 ];
 
-// generate OSV - OS OV SV
 lang.forEach(function(x){
+	// generate OSV - OS OV SV
 	if ((x.features !== undefined) && (x.features.sov !== undefined) && (x.features.sov.length === 3)){
 		// OwO
 		x.features.os = x.features.sov.replace("v", "");
 		x.features.ov = x.features.sov.replace("s", "");
 		x.features.sv = x.features.sov.replace("o", "");
+	}
+	// generate case count
+	if ((x.features !== undefined) && (x.features.cases !== undefined)){
+		// https://stackoverflow.com/a/4009768/2579798
+		x.features.casen = (x.features.cases.match(/ /g) || []).length + 1;
 	}
 });
 
