@@ -883,6 +883,26 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Erzya_language"
 	},
 	{
+		name: "Estonian",
+		coords: [59, 26],
+		families: ["uralic", "finnic"],
+		areas: ["baltic"],
+		consonants: "m n n' p t t' k p: t: t': k: f s s' S h v f: s: s': S: h: l l' j r",
+		monophthongs: "i y 7 u e 2 o { A",
+		diphthongs: "Ae Ai Ao Au eA ei eo eu iu oA oe oi ou ui uo 7a 7e 7i 7o 7u {e {i {o {u 2A 2e 2i yA yi",
+		features: {
+			adpositions: "postpositions",
+			an: "an",
+			sov: "svo",
+			cumin: "cumin",
+			ginger: "ginger",
+			orange: "orange",
+			sugar: "sugar",
+			tea: "te"
+		},
+		source: "https://en.wikipedia.org/wiki/Estonian_language"
+	},
+	{
 		name: "Etruscan",
 		coords: [44, 11],
 		families: ["tyrsenian"],
@@ -2820,6 +2840,10 @@ implications = [
 	// Europe
 	[
 		"balkans",
+		["east europe"]
+	],
+	[
+		"baltic",
 		["east europe"]
 	],
 	[
