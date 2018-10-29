@@ -2347,6 +2347,20 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Russian_language"
 	},
 	{
+		name: "Rusyn",
+		coords: [49, 23],
+		families: ["indo-european", "balto-slavic", "slavic", "east slavic"],
+		areas: ["east europe"],
+		consonants: "b v h\\ g d Z z j k l m n p r s t f x ts tS S",
+		monophthongs: "a e i I 1 o u",
+		diphthongs: "",
+		features: {
+			sugar: "sugar",
+			tea: "cha"
+		},
+		source: "https://en.wikipedia.org/wiki/Rusyn_language"
+	},
+	{
 		name: "Samoan",
 		coords: [-14, -172],
 		families: ["austronesian", "malayo-polynesian", "oceanic", "polynesian"],
