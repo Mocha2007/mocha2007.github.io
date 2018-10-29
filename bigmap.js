@@ -659,7 +659,7 @@ var lang = [
 		consonants: "p_h t_h k_h p_> t_> k_> b d s_h h s_> tS_h tS_> dZ m n 4 w",
 		monophthongs: "i i~ M M~ u u~ e e~ o o~ a a~",
 		diphthongs: "",
-		source: "https://en.wikipedia.org/wiki/Catio_Language"
+		source: "https://en.wikipedia.org/wiki/Catio_language"
 	},
 	{
 		name: "Central Atlas Tamazight",
@@ -671,8 +671,10 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "prepositions",
+			cases: "obj subj",
 			gender: 2,
-			genders: "fm"
+			genders: "fm",
+			sov: "vso"
 		},
 		source: "https://en.wikipedia.org/wiki/Central_Atlas_Tamazight"
 	},
@@ -688,6 +690,7 @@ var lang = [
 			adpositions: "postpositions",
 			an: "an",
 			gender: 0,
+			sov: "sov",
 			orange: "orange",
 			sugar: "other",
 			tea: "other"
@@ -705,6 +708,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			cases: "abe abl acc caus distr ins loc nom poss sembl term",
 			gender: 0,
 			sov: "sov",
 			orange: "apple",
@@ -726,7 +730,7 @@ var lang = [
 			an: "na",
 			gender: 2,
 			genders: "fm",
-			sov: "svo",
+			sov: "vso",
 			orange: "apple",
 			sugar: "sugar",
 			tea: "te"
@@ -775,6 +779,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			cases: "acc dat gen ins loc nom voc",
 			gender: 3,
 			genders: "fmn",
 			sov: "svo",
