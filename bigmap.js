@@ -511,6 +511,29 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Basque_language"
 	},
 	{
+		name: "Belarusian",
+		coords: [54, 28],
+		families: ["indo-european", "balto-slavic", "slavic", "east slavic"],
+		areas: ["east europe"],
+		consonants: "m m' n_d n_d' p p' t_d k k' b b' d_d ts_d ts_d' ts` dz_d dz_d' dz` f f' s s' s` x x' v v' z z' z` G G' l_d l_d' j r",
+		monophthongs: "i e a u o",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			an: "an",
+			cases: "acc dat gen ins loc nom prep",
+			gender: 3,
+			genders: "fmn",
+			//sov: "svo", no dom
+			cumin: "cumin",
+			ginger: "ginger",
+			orange: "apple",
+			sugar: "sugar",
+			tea: "cha"
+		},
+		source: "https://en.wikipedia.org/wiki/Belarusian_language"
+	},
+	{
 		name: "Bench",
 		coords: [6.25, 35.16],
 		families: ["afro-asiatic", "omotic"],
