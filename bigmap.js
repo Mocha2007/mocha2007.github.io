@@ -479,6 +479,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			cases: "abl acc dat gen loc nom",
 			sov: "sov",
 			orange: "other",
 			sugar: "sugar",
@@ -497,6 +498,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "na",
+			cases: "abl abs all ben caus com dat erg gen ine ins poss",
 			gender: 2,
 			genders: "ai",
 			sov: "sov",
@@ -518,6 +520,9 @@ var lang = [
 		diphthongs: "",
 		features: {
 			adpositions: "postpositions",
+			cases: "loc obl subj voc",
+			gender: 2,
+			genders: "fm",
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Bench_language"
@@ -531,6 +536,7 @@ var lang = [
 		monophthongs: "i u e o E O a i~ u~ e~ o~ {~ O~ a~",
 		diphthongs: "ae ai ao au {e {o ei eu ii iu oe oi oo ou ui",
 		features: {
+		    cases: "gen loc nom obj",
 			gender: 0,
 			sov: "sov",
 			cumin: "other",
@@ -551,6 +557,7 @@ var lang = [
 		monophthongs: "i i: u u: o: a a:",
 		diphthongs: "",
 		features: {
+		    cases: "acc gen nom",
 			gender: 2,
 			genders: "fm",
 			cumin: "cumin",
@@ -570,7 +577,7 @@ var lang = [
 			adpositions: "postpositions",
 			gender: 0
 		},
-		source: "https://en.wikipedia.org/wiki/Dravidian_language"
+		source: "https://en.wikipedia.org/wiki/Brahui_language"
 	},
 	{
 		name: "Bulgarian",
@@ -583,6 +590,7 @@ var lang = [
 		features: {
 			adpositions: "prepositions",
 			an: "an",
+			cases: "acc dat nom",
 			gender: 3,
 			genders: "fmn",
 			sov: "svo",
@@ -605,6 +613,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "an",
+			cases: "abl abs dat erg obl",
 			gender: 4,
 			genders: "cfmu",
 			sov: "sov",
