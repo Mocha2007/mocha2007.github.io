@@ -2802,6 +2802,28 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Udmurt_language"
 	},
 	{
+		name: "Ukrainian",
+		coords: [49, 32],
+		families: ["indo-european", "balto-slavic", "slavic", "east slavic"],
+		areas: ["east europe"],
+		consonants: "m n n' p b t d t' d' k g ts dz ts' dz' tS dZ f s z s' z' S Z x h\\ w l l' j r r'",
+		monophthongs: "i I u E O A",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			an: "an",
+			gender: 3,
+			genders: "fmn",
+			sov: "svo",
+			cumin: "cumin",
+			ginger: "ginger",
+			orange: "apple",
+			sugar: "sugar",
+			tea: "cha"
+		},
+		source: "https://en.wikipedia.org/wiki/Ukrainian_language"
+	},
+	{
 		name: "Upper Arrernte",
 		coords: [-23, 135],
 		families: ["pama–nyungan", "arandic"],
