@@ -517,13 +517,8 @@ var lang = [
 		monophthongs: "i e a o u",
 		diphthongs: "",
 		features: {
-			//adpositions: "postpositions",
-			//an: "na",
-			//sov: "sov",
-			//ginger: "ginger",
-			//orange: "other",
-			//sugar: "sugar",
-			//tea: "cha"
+			adpositions: "postpositions",
+			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Bench_language"
 	},
