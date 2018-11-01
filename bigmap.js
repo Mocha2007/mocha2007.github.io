@@ -675,6 +675,28 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Cantonese"
 	},
 	{
+		name: "Catalan",
+		coords: [42, 2],
+		families: ["indo-european", "italic", "romance"],
+		areas: ["west europe"],
+		consonants: "m n J N p t k b d g ts tS dz dZ f s S z Z j w l L 4 r",
+		monophthongs: "i u e o @ E O a",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			an: "na",
+			gender: 2,
+			genders: "fm",
+			sov: "svo",
+			cumin: "cumin",
+			ginger: "ginger",
+			orange: "orange",
+			sugar: "sugar",
+			tea: "te"
+		},
+		source: "https://en.wikipedia.org/wiki/Catalan_language"
+	},
+	{
 		name: "Catio",
 		coords: [6, -77],
 		families: ["chocoan", "embera"],

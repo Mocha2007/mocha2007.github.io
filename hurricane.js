@@ -724,7 +724,7 @@ hurricanelist[2018] = [
 	[266,286,1,"Leslie"],
 	[280,285,4,"Michael"],
 	[282,286,0,"Nadine"],
-	[300,300,0,"Oscar"], // active
+	[300,304,0,"Oscar"],
 ];
 /*
 0	1 Jan
