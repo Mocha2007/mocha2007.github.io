@@ -8,7 +8,7 @@ var brcount = mapsize / 34;
 // https://stackoverflow.com/a/16227294/2579798
 function intersect(a, b){
 	var t;
-	if (b.length > a.length) t = b, b = a, a = t; // indexOf to loop over shorter
+	if (b.length > a.length){t = b; b = a; a = t;} // indexOf to loop over shorter
 	return a.filter(function (e) {
 		return b.indexOf(e) > -1;
 	}).filter(function (e, i, c) { // extra step to remove duplicates
@@ -183,7 +183,8 @@ function bigmap(){
 				}
 				else {
 					// https://stackoverflow.com/a/16735184/2579798
-					for (var property in x.features){
+					var property;
+					for (property in x.features){
 						if (x.features.hasOwnProperty(property)){ // just in case
 							if (commonf.hasOwnProperty(property)){
 								if (commonf[property] !== x.features[property]){
@@ -909,7 +910,7 @@ var lang = [
 		features: {
 			an: "na",
 			gender: 4,
-			genders: "fmop",
+			genders: "fmop"
 		},
 		source: "https://en.wikipedia.org/wiki/Dyirbal_language"
 	},
@@ -927,7 +928,7 @@ var lang = [
 			an: "na",
 			gender: 2,
 			genders: "fm",
-			sov: "vso",
+			sov: "vso"
 		},
 		source: "https://en.wikipedia.org/wiki/Egyptian_language"
 	},
@@ -3112,7 +3113,7 @@ var lang = [
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Zuni_language"
-	},
+	}
 ];
 
 lang.forEach(function(x){
@@ -3126,13 +3127,13 @@ lang.forEach(function(x){
 	// generate case count
 	if ((x.features !== undefined) && (x.features.cases !== undefined)){
 		// https://stackoverflow.com/a/4009768/2579798
-		x.features.casen = (x.features.cases.match(/ /g) || []).length + 1;
+		x.features.casen = (x.features.cases.match(/\s/g) || []).length + 1;
 	}
 });
 
 // region implications, eg. india -> asia
 
-implications = [
+var implications = [
 	// africa
 	[
 		"sub-sahara",
@@ -3199,7 +3200,7 @@ implications = [
 	[
 		"australia",
 		["oceania"]
-	],
+	]
 ];
 
 implications.forEach(function(x){
