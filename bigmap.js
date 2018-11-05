@@ -2044,7 +2044,7 @@ var lang = [
 		name: "Nihali",
 		coords: [20, 78],
 		families: [],
-		areas: ["asia", "india"],
+		areas: ["india"],
 		consonants: "",
 		monophthongs: "i i: u u: e e: o o: a a:",
 		diphthongs: "",
