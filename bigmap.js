@@ -198,9 +198,13 @@ function bigmap(){
 				}
 			}
 			// intersect
-			commonc = intersect(commonc, x.consonants.split(" "))
-			commonv = intersect(commonv, (x.monophthongs + " " + x.diphthongs).split(" ").filter(Boolean))
-			commonr = intersect(commonr, x.areas)
+			if (x.consonants !== ''){
+				commonc = intersect(commonc, x.consonants.split(" "));
+			}
+			if (x.monophthongs+x.diphthongs !== ''){
+				commonv = intersect(commonv, (x.monophthongs + " " + x.diphthongs).split(" ").filter(Boolean));
+			}
+			commonr = intersect(commonr, x.areas);
 		}
 		// bigmap
 		coords = coord2px(x.coords);
@@ -2036,7 +2040,7 @@ var lang = [
 		},
 		source: "https://en.wikipedia.org/wiki/Navajo_language"
 	},
-	/*{ need consonant data
+	{
 		name: "Nihali",
 		coords: [20, 78],
 		families: [],
@@ -2045,7 +2049,7 @@ var lang = [
 		monophthongs: "i i: u u: e e: o o: a a:",
 		diphthongs: "",
 		source: "https://en.wikipedia.org/wiki/Nihali_language"
-	},*/
+	},
 	{
 		name: "Nivkh",
 		coords: [51, 143],
