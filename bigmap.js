@@ -2432,6 +2432,22 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Samoan_language"
 	},
 	{
+		name: "Santali",
+		coords: [24, 87],
+		families: ["austroasiatic", "munda"],
+		areas: ["india"],
+		consonants: "m n J N p t t` c k b d d` J\\ g s h r r` l w j",
+		monophthongs: "i i~ u u~ e @ @~ o E E~ O O~ a a~",
+		diphthongs: "",
+		features: {
+			cases: "abl all com gen ins loc nom soc",
+			gender: 2,
+			genders: "ai",
+			sov: "sov"
+		},
+		source: "https://en.wikipedia.org/wiki/Santali_language"
+	},
+	{
 		name: "Sardinian",
 		coords: [40, 9],
 		families: ["indo-european", "italic", "romance"],
