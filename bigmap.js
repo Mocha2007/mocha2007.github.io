@@ -787,6 +787,21 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Cornish_Language"
 	},
 	{
+		name: "Cree",
+		coords: [50, -85],
+		families: ["algic", "algonquian"],
+		areas: ["north america"],
+		consonants: "p t ts tS k D s S h m n r\\ j w l",
+		monophthongs: "i: I e: a: @ o o:",
+		diphthongs: "",
+		features: {
+			adpositions: "none",
+			gender: 2,
+			genders: "ai"
+		},
+		source: "https://en.wikipedia.org/wiki/Cree_Language"
+	},
+	{
 		name: "Crimean Tatar",
 		coords: [45, 34],
 		families: ["turkic", "kipchak"],
