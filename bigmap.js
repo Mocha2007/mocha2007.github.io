@@ -1851,6 +1851,20 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Madí_language"
 	},
 	{
+		name: "Malak-Malak",
+		coords: [-13, 131],
+		families: [],
+		areas: ["australia"],
+		consonants: "p t c k b d g m n J N w l r\\` j r",
+		monophthongs: "i 1 u E 3 6",
+		diphthongs: "",
+		features: {
+			adpositions: "postpositions",
+			an: "na"
+		},
+		source: "https://en.wikipedia.org/wiki/Malak-Malak_language"
+	},
+	{
 		name: "Mandarin",
 		coords: [40, 116],
 		families: ["sino-tibetan", "sinitic"],
