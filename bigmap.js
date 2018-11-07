@@ -2426,6 +2426,19 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Quechuan_languages"
 	},
 	{
+		name: "Rapa Nui",
+		coords: [-27, -109],
+		families: ["austronesian", "malayo-polynesian", "oceanic", "polynesian"],
+		areas: ["oceania"],
+		consonants: "m n N p t k ? v h 4",
+		monophthongs: "i u e o a",
+		diphthongs: "",
+		features: {
+			sov: "vso"
+		},
+		source: "https://en.wikipedia.org/wiki/Rapa_Nui_language"
+	},
+	{
 		name: "Romanian",
 		coords: [46, 25],
 		families: ["indo-european", "italic", "romance"],
