@@ -26,6 +26,10 @@ function proper(string){
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+function range(n){
+	return [...Array(n).keys()];
+}
+
 function coord2px(coords){
 	"use strict";
 	var x = coords[1] * mapsize/360 + mapsize/2 - pointsize/2;
@@ -68,6 +72,7 @@ function bigmap(){
 	var commonv = true;
 	var commonf = true;
 	var commonr = true;
+	var sources = "";
 	lang.forEach(function(x){
 		// test for conditions
 		anyc = false;
@@ -227,7 +232,17 @@ function bigmap(){
 		// mapinfo
 		newrow = document.createElement("tr");
 		newrow.id = "row_"+x.name.replace(" ","_");
-		newrow.innerHTML = "<td><a href='#top'>"+x.name+"</a><sup><a href='"+x.source+"'>i</a></sup></td><td class='"+conditional+"'>"+conditional+"</td><td>"+(conditional ? x.consonants : "-")+"</td><td>"+(conditional ? x.monophthongs+' '+x.diphthongs : "-")+"</td><td>"+(conditional ? obj2string(x.features) : "-")+"</td><td>"+(conditional ? arr2string(x.areas) : "-")+"</td>";
+		// determine whether there is a single or multiple source
+		if (x.sources !== undefined){
+			sources = "";
+			for (var sourcen in range(x.sources)){
+				sources += "<a href='"+x.sources[sourcen]+"'>"+sourcen+"</a>";
+			}
+		}
+		else {
+			sources = "<a href='"+x.source+"'>1</a>";
+		}
+		newrow.innerHTML = "<td><a href='#top'>"+x.name+"</a><sup>"+sources+"</sup></td><td class='"+conditional+"'>"+conditional+"</td><td>"+(conditional ? x.consonants : "-")+"</td><td>"+(conditional ? x.monophthongs+' '+x.diphthongs : "-")+"</td><td>"+(conditional ? obj2string(x.features) : "-")+"</td><td>"+(conditional ? arr2string(x.areas) : "-")+"</td>";
 		document.getElementById("mapinfo").appendChild(newrow);
 		//
 		yes += conditional;
