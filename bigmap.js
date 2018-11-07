@@ -2396,6 +2396,53 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Proto-Indo-European"
 	},
 	{
+		name: "Proto-Italic",
+		coords: [44, 11],
+		families: ["indo-european", "italic"],
+		areas: ["west europe"],
+		tags: ["dead"],
+		consonants: "m n p b t d k g k_w g_w p\\ s x r j w l",
+		monophthongs: "i i: u u: e e: o o: a a:",
+		diphthongs: "ai ei oi au ou a:i e:i o:i",
+		features: {
+			adpositions: "prepositions",
+			an: "na", // ...maybe
+			cases: "abl acc dat gen loc nom voc",
+			gender: 3,
+			genders: "fmn"
+		},
+		source: "https://en.wikipedia.org/wiki/Proto-Italic_language"
+	},
+	{
+		name: "Proto-Turkic",
+		coords: [49, 88],
+		families: ["uralic"],
+		areas: ["siberia"],
+		tags: ["dead"],
+		consonants: "p t c k b d g s h m n J N l L r r' j",
+		monophthongs: "i i: y y: 1 1: u u: e e: 2 2: @ @: o o: a a:",
+		diphthongs: "",
+		features: {
+			gender: 0
+		},
+		source: "https://en.wikipedia.org/wiki/Proto-Turkic_language"
+	},
+	{
+		name: "Proto-Uralic",
+		coords: [62, 59],
+		families: ["uralic"],
+		areas: ["west europe"],
+		tags: ["dead"],
+		consonants: "p t ts' tS k m n n' N s s' S D D' l l' r w j x",
+		monophthongs: "i y M u e o { A",
+		diphthongs: "",
+		features: {
+			cases: "abl acc dat lat loc nom",
+			gender: 0
+		},
+		source: "https://en.wikipedia.org/wiki/Proto-Uralic_language"
+	},
+	{
 		name: "Punic",
 		coords: [37, 10],
 		families: ["afro-asiatic", "semitic"],
