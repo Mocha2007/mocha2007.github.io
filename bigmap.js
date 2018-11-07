@@ -2361,6 +2361,24 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Portuguese_language"
 	},
 	{
+		name: "Proto-Germanic",
+		coords: [54, 10],
+		families: ["indo-european", "germanic"],
+		areas: ["west europe"],
+		tags: ["dead"],
+		consonants: "m n p b t d k g k_w g_w p\\ T s z x x_w j w l r",
+		monophthongs: "i i: u u: e e: E: E:: O: O:: A A: i~ i~: u~ u~: O~: O~:: A~ A~:",
+		diphthongs: "Au Ai eu iu O:u O:i",
+		features: {
+			adpositions: "prepositions",
+			an: "an",
+			cases: "acc dat gen ins nom voc",
+			gender: 3,
+			genders: "fmn"
+		},
+		source: "https://en.wikipedia.org/wiki/Proto-Germanic_language"
+	},
+	{
 		name: "Proto-Indo-European",
 		coords: [50, 45],
 		families: ["indo-european"],
