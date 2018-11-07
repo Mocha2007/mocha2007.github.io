@@ -336,7 +336,7 @@ var lang = [
 		name: "Altai",
 		coords: [51, 87],
 		families: ["turkic", "siberian"],
-		areas: ["asia"],
+		areas: ["siberia"],
 		consonants: "m n N p b t d c J\\ k g s z C j\\ x G l j 4",
 		monophthongs: "i i: e e: y y: 2 2: M M: a a: u u: o o:",
 		diphthongs: "",
@@ -1603,7 +1603,7 @@ var lang = [
 		name: "Ket",
 		coords: [63, 87],
 		families: ["dene-yeniseian", "yeniseian"],
-		areas: ["asia"],
+		areas: ["siberia"],
 		consonants: "m n N t k q b d s C h K\\",
 		monophthongs: "i 1 u e @ o a",
 		diphthongs: "",
@@ -1620,7 +1620,7 @@ var lang = [
 		name: "Khakas",
 		coords: [54, 90],
 		families: ["turkic", "siberian"],
-		areas: ["asia"],
+		areas: ["siberia"],
 		consonants: "p t k b d g f s S x v z Z G tS dZ m n N r l j",
 		monophthongs: "i i: y y: 1 1: u u: e e: 2 2: o o: a a:",
 		diphthongs: "",
@@ -2142,7 +2142,7 @@ var lang = [
 		name: "Nivkh",
 		coords: [51, 143],
 		families: [],
-		areas: ["asia"],
+		areas: ["siberia"],
 		consonants: "m n J N p t c k q p_h t_h c_h k_h q_h f s x X h v z G R l j w r_0 r",
 		monophthongs: "I u 7 o {",
 		diphthongs: "Ie",
@@ -2933,7 +2933,7 @@ var lang = [
 		name: "Tuvan",
 		coords: [52, 95],
 		families: ["turkic", "siberian"],
-		areas: ["asia"],
+		areas: ["siberia"],
 		consonants: "m n N p t g p_h t_h k tS s S x z Z 4 P l j",
 		monophthongs: "i e i: e: y 2 y: 2: M a M: a: u o u: o:",
 		diphthongs: "",
@@ -3143,7 +3143,7 @@ var lang = [
 		name: "Yakut",
 		coords: [66, 129],
 		families: ["turkic", "siberian"],
-		areas: ["asia"],
+		areas: ["siberia"],
 		consonants: "m n J N p t c k b d J\\ g s x h G l j j~ 4",
 		monophthongs: "i y M u i: y: M: u: e 2 a o e: 2: a: o:",
 		diphthongs: "ie y2 Ma uo",
@@ -3245,6 +3245,10 @@ var implications = [
 	],
 	[
 		"middle east", // explicitly excluding africa
+		["asia"]
+	],
+	[
+		"siberia", // Russia extending eastward from the Urals
 		["asia"]
 	],
 	// Europe
