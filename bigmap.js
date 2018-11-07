@@ -1263,6 +1263,7 @@ var lang = [
 		monophthongs: "i i: u u: a a:",
 		diphthongs: "",
 		features: {
+			cases: "agent obj",
 			gender: 2,
 			genders: "ai",
 			sov: "sov"
