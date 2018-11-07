@@ -235,8 +235,9 @@ function bigmap(){
 		// determine whether there is a single or multiple source
 		if (x.sources !== undefined){
 			sources = "";
-			for (var sourcen in range(x.sources)){
-				sources += "<a href='"+x.sources[sourcen]+"'>"+sourcen+"</a>";
+			for (var sourcen in range(x.sources.length)){
+				console.log(sourcen);
+				sources += " <a href='"+x.sources[sourcen]+"'>"+String(Number(sourcen)+1)+"</a>";
 			}
 		}
 		else {
@@ -288,7 +289,10 @@ var lang = [
 			sov: "sov",
 			cumin: "cumin" // source of the wanderwort
 		},
-		source: "https://en.wikipedia.org/wiki/Akkadian_language"
+		sources: [
+			"https://en.wikipedia.org/wiki/Akkadian_language",
+			"https://en.wiktionary.org/wiki/cumin#Etymology"
+		]
 	},
 	{
 		name: "Albanian",
