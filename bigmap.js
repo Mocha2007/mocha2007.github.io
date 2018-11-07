@@ -1255,6 +1255,21 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Hadza_language"
 	},
 	{
+		name: "Haida",
+		coords: [53, -132],
+		families: [],
+		areas: ["north america"],
+		consonants: "b d g G ?\\ ? t_h k_h q_h t_> k_> q_> dK\\ dZ tK_> tS ts_> tK_> s K x X h m n N m_? n_? l j w l_?",
+		monophthongs: "i i: u u: a a:",
+		diphthongs: "",
+		features: {
+			gender: 2,
+			genders: "ai",
+			sov: "sov"
+		},
+		source: "https://en.wikipedia.org/wiki/Haida_language"
+	},
+	{
 		name: "Hamtai",
 		coords: [-7, 147],
 		families: ["trans–new guinea", "angan"],
