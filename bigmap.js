@@ -1344,6 +1344,19 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Hixkaryana_language"
 	},
 	{
+		name: "Huave",
+		coords: [17, -95],
+		families: [],
+		areas: ["mesoamerica"],
+		consonants: "p t k k_w b_n d_n g_n g_w_n ts ts_n s h m n l j r 4",
+		monophthongs: "i e u o A",
+		diphthongs: "",
+		features: {
+			sov: "svo"
+		},
+		source: "https://en.wikipedia.org/wiki/Huave_language"
+	},
+	{
 		name: "Hungarian",
 		coords: [47, 19],
 		families: ["uralic", "ugric"],
