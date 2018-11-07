@@ -1557,6 +1557,16 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Karachay-Balkar_language"
 	},
 	{
+		name: "Karuk",
+		coords: [41, -123],
+		families: [],
+		areas: ["north america"],
+		consonants: "m n p t tS k ? B f T s x h 4 j",
+		monophthongs: "i i: u u: e: o: a a:",
+		diphthongs: "",
+		source: "https://en.wikipedia.org/wiki/Karuk_language"
+	},
+	{
 		name: "Kashubian",
 		coords: [54, 18],
 		families: ["indo-european", "balto-slavic", "slavic", "west slavic"],
