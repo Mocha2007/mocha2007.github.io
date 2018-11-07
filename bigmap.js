@@ -2415,7 +2415,7 @@ var lang = [
 	},
 	{
 		name: "Proto-Turkic",
-		coords: [49, 88],
+		coords: [49, 86],
 		families: ["uralic"],
 		areas: ["siberia"],
 		tags: ["dead"],
