@@ -183,6 +183,7 @@ function vowelstats(){
 			document.getElementById('%'+v).innerHTML = Number(document.getElementById('%'+v).innerHTML) + 1;
 		}
 	}
+	document.getElementById('vcount').innerHTML = summation;
 	var colstring, element, fraction, percentage;
 	for (i in document.getElementById("vowelstats").getElementsByTagName("tr")){
 		element = document.getElementById("vowelstats").getElementsByTagName("tr")[i];
