@@ -789,71 +789,18 @@ Yu kiip yuuzun dhat wurd. Ai doont think ut miinyz wut yu think ut miinyz. (Iiny
 		<td></td>
 	</tr>
 </table>
+
+<h3 id="Vowel_Frequencies">Vowel Frequencies</h3>
+<table id='vowelstats' class='percenttable' onload='tabledelta();'>
+	<tr>
+		<th>Vowel</th>
+		<th>%</th>
+	</tr>
+</table>
+
 <div id="bottom"></div>
+<script src="be.js"></script>
 <script>
-var alphabet = 'abcdefghijklmnopqrstuvwxyz';
-
-function freqcalc(){
-	var letterindex = [];
-	var count,i,letter;
-	var bigdick = '';
-	var corpora = document.getElementsByClassName('corpus');
-	for (i in corpora){
-		corpus = corpora[i];
-		try {
-			bigdick += corpus.innerHTML.toLowerCase();
-		}
-		catch (TypeError){
-			break;
-		}
-	}
-	var s = 0;
-	for (i in alphabet){
-		letter = alphabet[i];
-		count = (bigdick.match(new RegExp(letter,'g')) || []).length;
-		letterindex[letter] = count;
-		s += count;
-	}
-	document.getElementById('lettercount').innerHTML = s;
-	document.getElementById('wordcount').innerHTML = (bigdick.match(/ /g)).length;
-	for (i in letterindex){
-		letterindex[i] = letterindex[i]/s;
-		letterindex[i] = Math.round(letterindex[i]*100000)/1000;
-	}
-	return letterindex;
-}
-
-oof = freqcalc();
-
-function delta(a,b){
-	return (b>a)?Math.round(100*(b/a-1)):Math.round(100*(1-b/a));
-}
-
-function tabledelta(){
-	var child,bef,aft;
-	var t = document.getElementById('letterstats');
-	for (var i in t.children[0].children){
-		child = t.children[0].children[i];
-		try {
-			if (child.className !== ""){
-				// work on col 3
-				child.children[3].innerHTML = oof[alphabet[i-1]];
-				// work on col 2
-				bef = Number(child.children[1].innerHTML)/100;
-				aft = Number(child.children[3].innerHTML)/100;
-				child.children[2].innerHTML = delta(bef,aft);
-				if (aft > bef){
-					child.className = "green";
-				}
-			}
-		}
-		catch (TypeError){
-			break;
-		}
-	}
-	return false;
-}
-
-window.onload = function buttsex(){tabledelta();MakeTOC();}
+window.onload = function buttsex(){tabledelta();vowelstats();MakeTOC();}
 </script>
 </html>
