@@ -253,6 +253,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 // Precise number of days for events before 1970 unnecessary.
 [diff(8709180),'<a href="https://en.wikipedia.org/wiki/Apollo_13">Apollo 13</a> launched'],
 [diff(93221677),'<a href="https://en.wikipedia.org/wiki/Apollo_17">Apollo 17</a> leaves the Moon'],
+[diff(293414400),'<a href="https://en.wikipedia.org/wiki/Jimmy_Carter_rabbit_incident">Jimmy Carter Rabbit Incident</a>'],
 [diff(495432000),'<a href="https://en.wikipedia.org/wiki/Super_Mario_Bros.">Super Mario Bros.</a> Released'],
 [diff(682056000),'<a href="https://en.wikipedia.org/wiki/Super_Mario_World">Super Mario World</a> Released in NA'],
 [diff(725846400),'<a href="https://en.wikipedia.org/wiki/Dissolution_of_Czechoslovakia">Velvet Divorce</a>'],
