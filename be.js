@@ -187,16 +187,18 @@ function vowelstats(){
 	var colstring, element, fraction, percentage;
 	for (i in document.getElementById("vowelstats").getElementsByTagName("tr")){
 		element = document.getElementById("vowelstats").getElementsByTagName("tr")[i];
-		percentage = element.childNodes[1];
-		if (percentage.innerHTML !== 'Vowel'){
-			fraction = Number(percentage.innerHTML) / summation;
-			colstring = Math.round(Math.min(fraction*2550, 255)).toString(16);
-			colstring = colstring.length === 2 ? colstring : '0'+colstring;
-			element.bgColor = '#ff' + colstring + colstring;
-			percentage.innerHTML = Math.round(fraction * 100000) / 1000;
-		}
-		else {
-			element.bgColor = '#fff';
+		if (element.childNodes !== undefined){
+			percentage = element.childNodes[1];
+			if (percentage.innerHTML !== 'Vowel'){
+				fraction = Number(percentage.innerHTML) / summation;
+				colstring = Math.round(Math.min(fraction*2550, 255)).toString(16);
+				colstring = colstring.length === 2 ? colstring : '0'+colstring;
+				element.bgColor = '#ff' + colstring + colstring;
+				percentage.innerHTML = Math.round(fraction * 100000) / 1000;
+			}
+			else {
+				element.bgColor = '#fff';
+			}
 		}
 	}
 }
