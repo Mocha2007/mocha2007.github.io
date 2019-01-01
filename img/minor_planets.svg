@@ -723,11 +723,6 @@
 			</animateMotion>
 		</a>
 
-		<a href="https://en.wikipedia.org/wiki/New_Horizons"><!-- New Horizons Epoch 2018-08-22 -->
-			<text x="4222" y="120" font-size="8" fill="white">New Horizons</text>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/4/4f/New_Horizons_Transparent.png" x="4222" y="88" height="24"/>
-		</a>
-
 		<circle class='mo' r="4322"/><!-- Haumea orbit -->
 		<a href='https://en.wikipedia.org/wiki/Haumea'><!-- Haumea -->
 			<text x="4330" y="103">Haumea</text>
@@ -748,11 +743,16 @@
 
 		<circle class='mo' r="4446"/><!-- 2014 MU69 orbit -->
 		<a href='https://en.wikipedia.org/wiki/(486958)_2014_MU69'><!-- 2014 MU69 -->
-			<text x="4455" y="103">2014 MU69</text>
-			<circle cx="4446" cy="100" r="5" fill="grey"/>
+			<text x="4450" y="103">2014 MU69</text>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/a/a3/Detecting_Ultima_Thule's_Size_and_Shape_on_Approach_(cropped).png" x="4426" y="92" height="16"/>
 			<animateMotion dur="10.47s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 				<mpath href="#OuterPath"/>
 			</animateMotion>
+		</a>
+
+		<a href="https://en.wikipedia.org/wiki/New_Horizons"><!-- New Horizons Epoch 2018-08-22 http://pluto.jhuapl.edu/Mission/Where-is-New-Horizons.php -->
+			<text x="4426" y="120" font-size="8" fill="white">New Horizons</text>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/4/4f/New_Horizons_Transparent.png" x="4426" y="88" height="24"/>
 		</a>
 
 		<circle class='mo' r="4572"/><!-- Makemake orbit -->
