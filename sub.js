@@ -62,6 +62,7 @@ var subtitles =	[
 				'⬇ 🌀 🆘',
 				'Pay no attention to that Mocha in the closet!',
 				'Namei crawling through my windowpane',
+				'Splunge is for Splunge',
 				// mochisms
 				'slash-me huggu',
 				'Enkl&aacute;r\'s Stead, by Enkl&aacute;r\'s Head',
