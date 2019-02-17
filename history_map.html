@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="description" content="Bigmap">
+<link rel="shortcut icon" href="img/favicon.ico">
+<script src="history_map.js"></script>
+<title>Bigmap</title>
+<style>
+#top {
+	text-align: center;
+}
+#bigmap {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+#mapimg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: white;
+}
+.box {
+	background-color: black;
+	opacity: 0.2;
+}
+.point {
+	background-color: black;
+	opacity: 1;
+}
+.dot:hover, .box:hover {
+	animation:dothover 0.5s linear alternate infinite;
+}
+@keyframes dothover{
+	0% {opacity: 0.2;}
+	100% {opacity: 0.4;}
+}
+input {
+	font-family: monospace;
+}
+.true, .false {
+	font-weight: bold;
+}
+.true {
+	color: green!important;
+}
+.false {
+	color: red!important;
+}
+#mapinfo tr td{
+	font-family: monospace;
+	color: black;
+	background-color: AliceBlue;
+}
+#mapinfo tr td:nth-child(1), #mapinfo tr td:nth-child(2){
+	font-family: serif;
+	background-color: White;
+}
+</style>
+<div id="top">
+	<h1>The History Map</h1>
+</div>
+<form>
+	<fieldset>
+		Date: <input id="date" type="number" value="2019" onclick="javascript:bigmap();">
+		<a href="javascript:bigmap();">Go &rarr;</a>
+	</fieldset>
+</form>
+<div id="bigmap">
+	<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" alt="Map">
+</div>
+<script type="text/javascript">bigmap();</script>
+</html>
