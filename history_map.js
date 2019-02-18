@@ -442,6 +442,34 @@ var features = [
 	},
 	// POINTS
 	{
+		name: "Assur",
+		type: "point",
+		periods: [
+			{
+				year_range: [-2500, 1400],
+				coords: [35, 43],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Assur"
+	},
+	{
+		name: "Babylon",
+		type: "point",
+		periods: [
+			{
+				year_range: [-1894, 1000],
+				coords: [33, 44],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Babylon"
+	},
+	{
 		name: "Ganweriwal",
 		type: "point",
 		periods: [
@@ -468,6 +496,20 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Harappa"
+	},
+	{
+		name: "Hattusa",
+		type: "point",
+		periods: [
+			{
+				year_range: [-6000, -1200],
+				coords: [40, 35],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Hattusa"
 	},
 	{
 		name: "Mehrgarh",
@@ -563,6 +605,34 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Troy"
+	},
+	{
+		name: "Ur",
+		type: "point",
+		periods: [
+			{
+				year_range: [-3800, -500],
+				coords: [31, 46],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Ur"
+	},
+	{
+		name: "Uruk",
+		type: "point",
+		periods: [
+			{
+				year_range: [-4000, 700],
+				coords: [31, 46],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Uruk"
 	},
 	{
 		name: "Yaz Culture",
