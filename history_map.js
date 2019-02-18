@@ -271,6 +271,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Hamangia_culture"
 	},
 	{
+		name: "Indus Valley Civilization",
+		type: "box",
+		periods: [
+			{
+				year_range: [-3300, -1300],
+				coords: [32, 64],
+				bottom_right: [20, 78],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "brown",
+		source: "https://en.wikipedia.org/wiki/Indus_Valley_Civilisation"
+	},
+	{
 		name: "Swiderian Culture",
 		type: "box",
 		periods: [
@@ -351,6 +366,87 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Yamnaya_culture"
 	},
 	// POINTS
+	{
+		name: "Mehrgarh",
+		type: "point",
+		periods: [
+			{
+				year_range: [-7000, -2600],
+				coords: [29, 67],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Mehrgarh"
+	},
+	{
+		name: "Troy",
+		type: "point",
+		periods: [
+			{
+				year_range: [-3000, 500],
+				coords: [40, 26],
+			},
+		],
+		period_info: [
+			{
+				year_range: [-3000, -2600],
+				desc: 'Troy I',
+			},
+			{
+				year_range: [-2600, -2250],
+				desc: 'Troy II',
+			},
+			{
+				year_range: [-2250, -2100],
+				desc: 'Troy III',
+			},
+			{
+				year_range: [-2100, -1950],
+				desc: 'Troy IV',
+			},
+			{
+				year_range: [-1950, -1800],
+				desc: 'Troy V',
+			},
+			{
+				year_range: [-1800, -1500],
+				desc: 'Troy VI',
+			},
+			{
+				year_range: [-1500, -1400],
+				desc: 'Troy VIh',
+			},
+			{
+				year_range: [-1300, -1190],
+				desc: 'Troy VIIa',
+			},
+			{
+				year_range: [-1190, -1100],
+				desc: 'Troy VIIb1',
+			},
+			{
+				year_range: [-1100, -1000],
+				desc: 'Troy VIIb2',
+			},
+			{
+				year_range: [-1000, -950],
+				desc: 'Troy VIIb3',
+			},
+			{
+				year_range: [-950, -85],
+				desc: 'Troy VIII',
+			},
+			{
+				year_range: [-85, 500],
+				desc: 'Troy IX',
+			},
+		],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Troy"
+	},
 	{
 		name: "Yaz Culture",
 		type: "point",
