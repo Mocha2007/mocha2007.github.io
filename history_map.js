@@ -161,6 +161,36 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Ahrensburg_culture"
 	},
 	{
+		name: "Akkadian Empire",
+		type: "box",
+		periods: [
+			{
+				year_range: [-2334, -2154],
+				coords: [38, 38],
+				bottom_right: [30, 48],
+			},
+		],
+		period_info: [],
+		desc: "Mesopotamian Civilization",
+		color: "brown",
+		source: "https://en.wikipedia.org/wiki/Akkadian_Empire"
+	},
+	{
+		name: "Aurignacian Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-41000, -26000],
+				coords: [52, -10],
+				bottom_right: [36, 37],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Aurignacian"
+	},
+	{
 		name: "Baden Culture",
 		type: "box",
 		periods: [
@@ -266,6 +296,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Catacomb_culture"
 	},
 	{
+		name: "Clovis Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-11200, -10900],
+				coords: [49, -126],
+				bottom_right: [7, -78],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Clovis_culture"
+	},
+	{
 		name: "Comb Ceramic Culture",
 		type: "box",
 		periods: [
@@ -311,6 +356,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Dimini#History"
 	},
 	{
+		name: "Elam",
+		type: "box",
+		periods: [
+			{
+				year_range: [-2700, -539],
+				coords: [34, 48],
+				bottom_right: [27, 55],
+			},
+		],
+		period_info: [],
+		desc: "Pre-Iranian Civilization",
+		color: "orange",
+		source: "https://en.wikipedia.org/wiki/Elam"
+	},
+	{
 		name: "Erlitou Culture",
 		type: "box",
 		periods: [
@@ -341,7 +401,7 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Fatyanovo–Balanovo_culture"
 	},
 	{
-		name: "Funnelbeaker Culture",
+		name: "Ertebølle Culture",
 		type: "box",
 		periods: [
 			{
@@ -353,7 +413,37 @@ var features = [
 		period_info: [],
 		desc: "",
 		color: "red",
-		source: "https://en.wikipedia.org/wiki/Funnelbeaker_culture"
+		source: "https://en.wikipedia.org/wiki/Ertebølle_culture"
+	},
+	{
+		name: "Folsom Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-9000, -8000],
+				coords: [43, -107],
+				bottom_right: [36, -103],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "orange",
+		source: "https://en.wikipedia.org/wiki/Folsom_tradition"
+	},
+	{
+		name: "Glacial Kame Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-8000, -1000],
+				coords: [46, -87],
+				bottom_right: [39, -80],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Glacial_Kame_Culture"
 	},
 	{
 		name: "Globular Amphora Culture",
@@ -368,7 +458,7 @@ var features = [
 		period_info: [],
 		desc: "",
 		color: "#FDBAAF",
-		source: "https://en.wikipedia.org/wiki/Globular_Amphroa_culture"
+		source: "https://en.wikipedia.org/wiki/Globular_Amphora_culture"
 	},
 	{
 		name: "Gojoseon",
@@ -384,6 +474,21 @@ var features = [
 		desc: "",
 		color: "blue",
 		source: "https://en.wikipedia.org/wiki/Gojoseon"
+	},
+	{
+		name: "Gravettian Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-31000, -20000],
+				coords: [52, -10],
+				bottom_right: [36, 37],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "tan",
+		source: "https://en.wikipedia.org/wiki/Gravettian"
 	},
 	{
 		name: "Halaf Culture",
@@ -467,6 +572,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Jōmon_period"
 	},
 	{
+		name: "Kongemose Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-6000, -5200],
+				coords: [59, 8],
+				bottom_right: [53, 15],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Kongemose_culture"
+	},
+	{
 		name: "Longshan Culture",
 		type: "box",
 		periods: [
@@ -480,6 +600,36 @@ var features = [
 		desc: "",
 		color: "green",
 		source: "https://en.wikipedia.org/wiki/Longshan_culture"
+	},
+	{
+		name: "Magdalenian Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-15000, -10000],
+				coords: [52, -10],
+				bottom_right: [36, 19],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "pink",
+		source: "https://en.wikipedia.org/wiki/Magdalenian"
+	},
+	{
+		name: "Maglemosian Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-9000, -6000],
+				coords: [59, 8],
+				bottom_right: [53, 15],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Maglemosian"
 	},
 	{
 		name: "Natufian Culture",
@@ -497,6 +647,36 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Natufian_culture"
 	},
 	{
+		name: "Old Copper Complex",
+		type: "box",
+		periods: [
+			{
+				year_range: [-4000, -1000],
+				coords: [49, -93],
+				bottom_right: [44, -84],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "orange",
+		source: "https://en.wikipedia.org/wiki/Old_Copper_Complex"
+	},
+	{
+		name: "Plano Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-9000, -6000],
+				coords: [45, -110],
+				bottom_right: [41, -104],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "pink",
+		source: "https://en.wikipedia.org/wiki/Plano_cultures"
+	},
+	{
 		name: "Poltavka Culture",
 		type: "box",
 		periods: [
@@ -510,6 +690,21 @@ var features = [
 		desc: "",
 		color: "purple",
 		source: "https://en.wikipedia.org/wiki/Poltavka_culture"
+	},
+	{
+		name: "Post Pattern Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-11000, -7000],
+				coords: [42, -125],
+				bottom_right: [37, -121],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "purple",
+		source: "https://en.wikipedia.org/wiki/Post_Pattern"
 	},
 	{
 		name: "Proto-Villanovan Culture",
@@ -555,6 +750,21 @@ var features = [
 		desc: "",
 		color: "magenta",
 		source: "https://en.wikipedia.org/wiki/Sintasha_culture"
+	},
+	{
+		name: "Solutrean Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-20000, -15000],
+				coords: [49, -10],
+				bottom_right: [36, 5],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "pink",
+		source: "https://en.wikipedia.org/wiki/Solutrean"
 	},
 	{
 		name: "Srubnaya Culture",
@@ -887,6 +1097,34 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Carthage"
 	},
 	{
+		name: "Cliff Palace",
+		type: "point",
+		periods: [
+			{
+				year_range: [1190, 1300],
+				coords: [37, -108],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Cliff_Palace"
+	},
+	{
+		name: "Devil's Lair",
+		type: "point",
+		periods: [
+			{
+				year_range: [-46000, -10700],
+				coords: [-34, 115],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Devil's_Lair"
+	},
+	{
 		name: "Franchthi Cave",
 		type: "point",
 		periods: [
@@ -1055,6 +1293,20 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Osaka"
 	},
 	{
+		name: "Poverty Point",
+		type: "point",
+		periods: [
+			{
+				year_range: [-1800, -1200],
+				coords: [33, -91],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Poverty_Point"
+	},
+	{
 		name: "Rome",
 		type: "point",
 		periods: [
@@ -1067,6 +1319,20 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Rome"
+	},
+	{
+		name: "Sechin Bajo",
+		type: "point",
+		periods: [
+			{
+				year_range: [-3500, -1500],
+				coords: [-9, -78],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Sechin_Bajo"
 	},
 	{
 		name: "Tell Qaramel",
@@ -1218,5 +1484,62 @@ var features = [
 		desc: "",
 		color: "black",
 		source: "https://en.wikipedia.org/wiki/Yaz_culture"
+	},
+	{
+		name: "Watson Brake",
+		type: "point",
+		periods: [
+			{
+				year_range: [-3500, -3000],
+				coords: [32, -92],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Watson_Brake"
+	},
+	// beyond cities and nations and cultures...
+	{
+		name: "Koelbjerg Man",
+		type: "point",
+		periods: [
+			{
+				year_range: [-8025, -8000],
+				coords: [55, 10],
+			},
+		],
+		period_info: [],
+		desc: "Bog body",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Koelbjerg_Man"
+	},
+	{
+		name: "Ötzi",
+		type: "point",
+		periods: [
+			{
+				year_range: [-3345, -3300],
+				coords: [47, 11],
+			},
+		],
+		period_info: [],
+		desc: "Natural mummy",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Ötzi"
+	},
+	{
+		name: "Tollund Man",
+		type: "point",
+		periods: [
+			{
+				year_range: [-415, -375],
+				coords: [56, 9],
+			},
+		],
+		period_info: [],
+		desc: "Bog body",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Tollund_Man"
 	},
 ];
