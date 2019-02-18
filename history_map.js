@@ -470,6 +470,20 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Mehrgarh"
 	},
 	{
+		name: "Mohenjo-daro",
+		type: "point",
+		periods: [
+			{
+				year_range: [-2500, -1900],
+				coords: [27, 68],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Mohenjo-daro"
+	},
+	{
 		name: "Troy",
 		type: "point",
 		periods: [
