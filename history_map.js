@@ -83,6 +83,53 @@ function bigmap(){
 }
 // years start at 1 jan - so for america, since it didn't exist 1 jan 1776, it has to wait until 1 jan 1777
 var features = [
+	// these need to be out of order because they block other regions
+	{
+		name: "Urnfield Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-1300, -750],
+				coords: [55, -1],
+				bottom_right: [40, 22],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "yellow",
+		source: "https://en.wikipedia.org/wiki/Urnfield_culture"
+	},
+	// alphabetical order
+	{
+		name: "A-Group Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-3800, -3100],
+				coords: [24, 31],
+				bottom_right: [21, 33],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "pink",
+		source: "https://en.wikipedia.org/wiki/A-Group_culture"
+	},
+	{
+		name: "Abashevo Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-2500, -1900],
+				coords: [59, 48],
+				bottom_right: [53, 57],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "green",
+		source: "https://en.wikipedia.org/wiki/Abashevo_culture"
+	},
 	{
 		name: "Afanasievo Culture",
 		type: "box",
@@ -172,6 +219,21 @@ var features = [
 		desc: "",
 		color: "yellow",
 		source: "https://en.wikipedia.org/wiki/Boian_culture"
+	},
+	{
+		name: "C-Group Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-2400, -1550],
+				coords: [20, 30],
+				bottom_right: [18, 34],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "pink",
+		source: "https://en.wikipedia.org/wiki/C-Group_culture"
 	},
 	{
 		name: "Cardium Pottery Culture",
@@ -264,6 +326,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Erlitou_culture"
 	},
 	{
+		name: "Fatyanovo-Balanovo Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-3200, -2300],
+				coords: [58, 31],
+				bottom_right: [52, 53],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "pink",
+		source: "https://en.wikipedia.org/wiki/Fatyanovo–Balanovo_culture"
+	},
+	{
 		name: "Funnelbeaker Culture",
 		type: "box",
 		periods: [
@@ -294,6 +371,36 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Globular_Amphroa_culture"
 	},
 	{
+		name: "Gojoseon",
+		type: "box",
+		periods: [
+			{
+				year_range: [-700, -108],
+				coords: [41, 124],
+				bottom_right: [38, 128],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "blue",
+		source: "https://en.wikipedia.org/wiki/Gojoseon"
+	},
+	{
+		name: "Halaf Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-6100, -5100],
+				coords: [39, 36],
+				bottom_right: [35, 44],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "purple",
+		source: "https://en.wikipedia.org/wiki/Halaf_culture"
+	},
+	{
 		name: "Hamangia Culture",
 		type: "box",
 		periods: [
@@ -318,10 +425,76 @@ var features = [
 				bottom_right: [20, 78],
 			},
 		],
-		period_info: [],
+		period_info: [
+			{
+				year_range: [-3500, -2800],
+				desc: 'Early Phase',
+			},
+			{
+				year_range: [-2800, -2600],
+				desc: 'Period of Transition',
+			},
+			{
+				year_range: [-2600, -1900],
+				desc: 'Mature Phase',
+			},
+			{
+				year_range: [-1900, -1600],
+				desc: 'Late Phase',
+			},
+			{
+				year_range: [-1600, -1500],
+				desc: 'Final Phase',
+			},
+		],
 		desc: "",
 		color: "brown",
 		source: "https://en.wikipedia.org/wiki/Indus_Valley_Civilisation"
+	},
+	{
+		name: "Jōmon Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-14000, -300],
+				coords: [46, 130],
+				bottom_right: [31, 145],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Jōmon_period"
+	},
+	{
+		name: "Longshan Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-3000, -1900],
+				coords: [39, 105],
+				bottom_right: [33, 123],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "green",
+		source: "https://en.wikipedia.org/wiki/Longshan_culture"
+	},
+	{
+		name: "Natufian Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-13050, -7550],
+				coords: [37, 33],
+				bottom_right: [30, 39],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "orange",
+		source: "https://en.wikipedia.org/wiki/Natufian_culture"
 	},
 	{
 		name: "Poltavka Culture",
@@ -339,6 +512,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Poltavka_culture"
 	},
 	{
+		name: "Proto-Villanovan Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-1200, -900],
+				coords: [45, 10],
+				bottom_right: [42, 13],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "brown",
+		source: "https://en.wikipedia.org/wiki/Proto-Villanovan_culture"
+	},
+	{
 		name: "Samarra Culture",
 		type: "box",
 		periods: [
@@ -352,6 +540,21 @@ var features = [
 		desc: "",
 		color: "green",
 		source: "https://en.wikipedia.org/wiki/Samarra_culture"
+	},
+	{
+		name: "Sintasha Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-2100, -1800],
+				coords: [57, 58],
+				bottom_right: [51, 70],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "magenta",
+		source: "https://en.wikipedia.org/wiki/Sintasha_culture"
 	},
 	{
 		name: "Srubnaya Culture",
@@ -399,6 +602,66 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Swiderian_culture"
 	},
 	{
+		name: "Terramare Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-1700, -1150],
+				coords: [46, 8],
+				bottom_right: [44, 12],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "pink",
+		source: "https://en.wikipedia.org/wiki/Terramare_culture"
+	},
+	{
+		name: "Tumulus Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-1600, -1200],
+				coords: [52, 11],
+				bottom_right: [48, 20],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "yellow",
+		source: "https://en.wikipedia.org/wiki/Tumulus_culture"
+	},
+	{
+		name: "Ubaid Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-6500, -3800],
+				coords: [34, 43],
+				bottom_right: [31, 46],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "brown",
+		source: "https://en.wikipedia.org/wiki/Ubaid_culture"
+	},
+	{
+		name: "Únětice Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-2300, -1600],
+				coords: [52, 11],
+				bottom_right: [48, 20],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "yellow",
+		source: "https://en.wikipedia.org/wiki/Unetice_culture"
+	},
+	{
 		name: "United States",
 		type: "box",
 		periods: [
@@ -434,6 +697,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/United_States"
 	},
 	{
+		name: "Villanovan Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-900, -700],
+				coords: [45, 10],
+				bottom_right: [42, 13],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "brown",
+		source: "https://en.wikipedia.org/wiki/Villanovan_culture"
+	},
+	{
 		name: "Vinča Culture",
 		type: "box",
 		periods: [
@@ -465,6 +743,20 @@ var features = [
 	},
 	// POINTS
 	{
+		name: "Annaba",
+		type: "point",
+		periods: [
+			{
+				year_range: [-1200, 9999],
+				coords: [37, 8],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Annaba"
+	},
+	{
 		name: "Assur",
 		type: "point",
 		periods: [
@@ -493,6 +785,20 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Athens"
 	},
 	{
+		name: "Axum",
+		type: "point",
+		periods: [
+			{
+				year_range: [-400, 9999],
+				coords: [14, 39],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Axum"
+	},
+	{
 		name: "Babylon",
 		type: "point",
 		periods: [
@@ -507,6 +813,94 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Babylon"
 	},
 	{
+		name: "Benin City",
+		type: "point",
+		periods: [
+			{
+				year_range: [-400, 9999],
+				coords: [6, 6],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Benin_City"
+	},
+	{
+		name: "Berbera",
+		type: "point",
+		periods: [
+			{
+				year_range: [-400, 9999],
+				coords: [10, 45],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Berbera"
+	},
+	{
+		name: "Bhirrana",
+		type: "point",
+		periods: [
+			{
+				year_range: [-7570, -2600],
+				coords: [30, 76],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Bhirrana"
+	},
+	{
+		name: "Byblos",
+		type: "point",
+		periods: [
+			{
+				year_range: [-8800, -7000],
+				coords: [34, 36],
+			},
+			{
+				year_range: [-5000, 9999],
+				coords: [34, 36],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Byblos"
+	},
+	{
+		name: "Carthage",
+		type: "point",
+		periods: [
+			{
+				year_range: [-814, -146],
+				coords: [37, 10],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Carthage"
+	},
+	{
+		name: "Franchthi Cave",
+		type: "point",
+		periods: [
+			{
+				year_range: [-38000, -3000],
+				coords: [37, 23],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Franchthi_Cave"
+	},
+	{
 		name: "Ganweriwal",
 		type: "point",
 		periods: [
@@ -519,6 +913,20 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Ganweriwal"
+	},
+	{
+		name: "Göbekli Tepe",
+		type: "point",
+		periods: [
+			{
+				year_range: [-10000, -8000],
+				coords: [37, 39],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Göbekli_Tepe"
 	},
 	{
 		name: "Harappa",
@@ -549,6 +957,20 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Hattusa"
 	},
 	{
+		name: "Kerma",
+		type: "point",
+		periods: [
+			{
+				year_range: [-3500, -1100],
+				coords: [20, 30],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Kerma"
+	},
+	{
 		name: "Luxor",
 		type: "point",
 		periods: [
@@ -577,6 +999,20 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Mehrgarh"
 	},
 	{
+		name: "Mogadishu",
+		type: "point",
+		periods: [
+			{
+				year_range: [-200, 9999],
+				coords: [2, 45],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Mogadishu"
+	},
+	{
 		name: "Mohenjo-daro",
 		type: "point",
 		periods: [
@@ -589,6 +1025,76 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Mohenjo-daro"
+	},
+	{
+		name: "Nanzhuangtou",
+		type: "point",
+		periods: [
+			{
+				year_range: [-9500, -9000],
+				coords: [39, 116],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Nanzhuangtou"
+	},
+	{
+		name: "Osaka",
+		type: "point",
+		periods: [
+			{
+				year_range: [400, 9999],
+				coords: [35, 135],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Osaka"
+	},
+	{
+		name: "Rome",
+		type: "point",
+		periods: [
+			{
+				year_range: [-753, 9999],
+				coords: [42, 13],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Rome"
+	},
+	{
+		name: "Tell Qaramel",
+		type: "point",
+		periods: [
+			{
+				year_range: [-10700, -9400],
+				coords: [36, 37],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Tell_Qaramel"
+	},
+	{
+		name: "Tripoli",
+		type: "point",
+		periods: [
+			{
+				year_range: [-700, 9999],
+				coords: [33, 13],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Tripoli"
 	},
 	{
 		name: "Troy",
