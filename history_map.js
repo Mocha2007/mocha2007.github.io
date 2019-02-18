@@ -442,6 +442,20 @@ var features = [
 	},
 	// POINTS
 	{
+		name: "Harappa",
+		type: "point",
+		periods: [
+			{
+				year_range: [-2600, -1300],
+				coords: [31, 73],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Harappa"
+	},
+	{
 		name: "Mehrgarh",
 		type: "point",
 		periods: [
