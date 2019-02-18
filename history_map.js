@@ -75,15 +75,67 @@ function bigmap(){
 }
 // years start at 1 jan - so for america, since it didn't exist 1 jan 1776, it has to wait until 1 jan 1777
 var features = [
-	/*{
-		name: "Ainu",
-		type: "point",
-		color: "red",
-		coords: [43, 142],
-		year_range: [0, 9999], // lower bound total guess
-		source: "https://en.wikipedia.org/wiki/Ainu_language"
-	},*/
-	{ // Original Territory
+	{
+		name: "Baden Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-3600, -2800],
+				coords: [51, 12],
+				bottom_right: [44, 24],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "#CFA7F8",
+		source: "https://en.wikipedia.org/wiki/Baden_culture"
+	},
+	{
+		name: "Beaker Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-2800, -1800],
+				coords: [58, -9],
+				bottom_right: [35, 19],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "#FF7F27",
+		source: "https://en.wikipedia.org/wiki/Beaker_culture"
+	},
+	{
+		name: "Corded Ware Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-2900, -2350],
+				coords: [59, 4],
+				bottom_right: [47, 31],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "#F97474",
+		source: "https://en.wikipedia.org/wiki/Corded_Ware_culture"
+	},
+	{
+		name: "Globular Amphora Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-3400, -2800],
+				coords: [55, 8],
+				bottom_right: [47, 30],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "#FDBAAF",
+		source: "https://en.wikipedia.org/wiki/Globular_Amphroa_culture"
+	},
+	{
 		name: "United States",
 		type: "box",
 		periods: [
@@ -117,5 +169,35 @@ var features = [
 		desc: "Country",
 		color: "blue",
 		source: "https://en.wikipedia.org/wiki/United_States"
+	},
+	{
+		name: "Yamna Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-3300, -2600],
+				coords: [52, 30],
+				bottom_right: [43, 51],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "#F8F885",
+		source: "https://en.wikipedia.org/wiki/Yamnaya_culture"
+	},
+	// POINTS
+	{
+		name: "Funnelbeaker Culture",
+		type: "point",
+		periods: [
+			{
+				year_range: [-4300, -2800],
+				coords: [55, 12],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "black",
+		source: "https://en.wikipedia.org/wiki/Funnelbeaker_culture"
 	},
 ];
