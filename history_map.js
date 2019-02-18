@@ -1,5 +1,5 @@
 var map_src = 'https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg';
-var pointsize = 8;
+var pointsize = 6;
 var mapsize = window.innerWidth - 32;
 
 function range(n){
@@ -981,6 +981,20 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Annaba"
 	},
 	{
+		name: "Areni-1 winery",
+		type: "point",
+		periods: [
+			{
+				year_range: [-4100, 4000],
+				coords: [40, 45],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Areni-1_winery"
+	},
+	{
 		name: "Assur",
 		type: "point",
 		periods: [
@@ -1125,6 +1139,38 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Çatalhöyük"
 	},
 	{
+		name: "Çukuriçi Höyük",
+		type: "point",
+		periods: [
+			{
+				year_range: [-6700, -6000],
+				coords: [38, 27],
+			},
+			{
+				year_range: [-3500, -2750],
+				coords: [38, 27],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Çukuriçi_Höyük"
+	},
+	{
+		name: "Chalcolithic Temple of Ein Gedi",
+		type: "point",
+		periods: [
+			{
+				year_range: [-3500, -3500],
+				coords: [31, 35],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Chalcolithic_Temple_of_Ein_Gedi"
+	},
+	{
 		name: "Cliff Palace",
 		type: "point",
 		periods: [
@@ -1151,6 +1197,20 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Devil's_Lair"
+	},
+	{
+		name: "Domuztepe",
+		type: "point",
+		periods: [
+			{
+				year_range: [-6200, -5450],
+				coords: [37, 37],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Domuztepe"
 	},
 	{
 		name: "Franchthi Cave",
@@ -1237,6 +1297,20 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Kerma"
 	},
 	{
+		name: "Kültəpə",
+		type: "point",
+		periods: [
+			{
+				year_range: [-4500, 9999],
+				coords: [39.3, 45.5],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Kültəpə"
+	},
+	{
 		name: "Luxor",
 		type: "point",
 		periods: [
@@ -1291,6 +1365,20 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Mohenjo-daro"
+	},
+	{
+		name: "Nakhchivan Tepe",
+		type: "point",
+		periods: [
+			{
+				year_range: [-5000, 9999],
+				coords: [39.2, 45.4],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Nakhchivan_Tepe"
 	},
 	{
 		name: "Nanzhuangtou",
@@ -1375,6 +1463,20 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Sechin_Bajo"
+	},
+	{
+		name: "Teleilat el Ghassul",
+		type: "point",
+		periods: [
+			{
+				year_range: [-4400, -3500],
+				coords: [32, 36],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Teleilat_el_Ghassul"
 	},
 	{
 		name: "Tell Qaramel",
