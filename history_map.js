@@ -442,6 +442,20 @@ var features = [
 	},
 	// POINTS
 	{
+		name: "Ganweriwal",
+		type: "point",
+		periods: [
+			{
+				year_range: [-2500, -1900], // latter is an estimate
+				coords: [29, 71],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Ganweriwal"
+	},
+	{
 		name: "Harappa",
 		type: "point",
 		periods: [
