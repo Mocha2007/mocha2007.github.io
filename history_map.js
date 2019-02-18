@@ -251,6 +251,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Boian_culture"
 	},
 	{
+		name: "Babylonia",
+		type: "box",
+		periods: [
+			{
+				year_range: [-1895, -539],
+				coords: [38, 38],
+				bottom_right: [30, 48],
+			},
+		],
+		period_info: [],
+		desc: "Mesopotamian Civilization",
+		color: "gold",
+		source: "https://en.wikipedia.org/wiki/Babylonia"
+	},
+	{
 		name: "C-Group Culture",
 		type: "box",
 		periods: [
@@ -371,6 +386,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Elam"
 	},
 	{
+		name: "Erligang Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-1510, -1460],
+				coords: [39, 108],
+				bottom_right: [30, 118],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "teal",
+		source: "https://en.wikipedia.org/wiki/Erligang_culture"
+	},
+	{
 		name: "Erlitou Culture",
 		type: "box",
 		periods: [
@@ -399,6 +429,76 @@ var features = [
 		desc: "",
 		color: "pink",
 		source: "https://en.wikipedia.org/wiki/Fatyanovo–Balanovo_culture"
+	},
+	{
+		name: "Egypt",
+		type: "box",
+		periods: [
+			{
+				year_range: [-3150, -30],
+				coords: [32, 25],
+				bottom_right: [22, 36],
+			},
+			{
+				year_range: [868, 905],
+				coords: [37, 23],
+				bottom_right: [23, 39],
+			},
+			{
+				year_range: [935, 969],
+				coords: [37, 20],
+				bottom_right: [12, 39],
+			},
+		],
+		period_info: [
+			{
+				year_range: [-3150, -2686],
+				desc: "Early Dynastic Period",
+			},
+			{
+				year_range: [-2686, -2181],
+				desc: "Old Kingdom",
+			},
+			{
+				year_range: [-2181, -2055],
+				desc: "First Intermediate Period of Egypt",
+			},
+			{
+				year_range: [-2055, -1650],
+				desc: "Middle Kingdom",
+			},
+			{
+				year_range: [-1650, -1550],
+				desc: "Second Intermediate Period of Egypt",
+			},
+			{
+				year_range: [-1550, -1069],
+				desc: "New Kingdom",
+			},
+			{
+				year_range: [-1069, -664],
+				desc: "Third Intermediate Period of Egypt",
+			},
+			{
+				year_range: [-664, -332],
+				desc: "Late Period",
+			},
+			{
+				year_range: [-305, -30],
+				desc: "Ptolemaic Kingdom",
+			},
+			{
+				year_range: [868, 905],
+				desc: "Ṭūlūnid",
+			},
+			{
+				year_range: [935, 969],
+				desc: "Ikhshidid",
+			},
+		],
+		desc: "North African Civilization",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Egypt"
 	},
 	{
 		name: "Ertebølle Culture",
@@ -737,6 +837,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Samarra_culture"
 	},
 	{
+		name: "Shang",
+		type: "box",
+		periods: [
+			{
+				year_range: [-1600, -1046],
+				coords: [39, 108],
+				bottom_right: [30, 118],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "green",
+		source: "https://en.wikipedia.org/wiki/Shang_dynasty"
+	},
+	{
 		name: "Sintasha Culture",
 		type: "box",
 		periods: [
@@ -950,6 +1065,21 @@ var features = [
 		desc: "",
 		color: "#F8F885",
 		source: "https://en.wikipedia.org/wiki/Yamnaya_culture"
+	},
+	{
+		name: "Zhou",
+		type: "box",
+		periods: [
+			{
+				year_range: [-1046, -249],
+				coords: [41, 105],
+				bottom_right: [28, 119],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Zhou_dynasty"
 	},
 	// POINTS
 	{
@@ -1283,6 +1413,20 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Domuztepe"
 	},
 	{
+		name: "Fox Farm Site",
+		type: "point",
+		periods: [
+			{
+				year_range: [1200, 1400],
+				coords: [39, -84],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Fox_Farm_Site_(Mays_Lick,_Kentucky)"
+	},
+	{
 		name: "Franchthi Cave",
 		type: "point",
 		periods: [
@@ -1407,6 +1551,20 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Kültəpə"
+	},
+	{
+		name: "Las Cogotas",
+		type: "point",
+		periods: [
+			{
+				year_range: [-1700, -1000],
+				coords: [41, -5],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Las_Cogotas"
 	},
 	{
 		name: "Luxor",
