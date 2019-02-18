@@ -31,10 +31,17 @@ function range2dates(r){
 
 function bigmap(){
 	"use strict";
-	var bottom_right_coords, coords, newlink, newpoint, wants;
+	var bottom_right_coords, coords, newlink, newpoint, period_specific_info, wants;
 	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="'+map_src+'" width="'+mapsize+'">';
 	wants = document.getElementById("date").value;
 	features.forEach(function(x){
+		period_specific_info = '';
+		x.period_info.forEach(function(y){
+			if ((wants < y.year_range[0]) || (y.year_range[1] < wants)){
+				return false;
+			}
+			period_specific_info += '\n' + y.desc;
+		});
 		x.periods.forEach(function(y){
 			if ((wants < y.year_range[0]) || (y.year_range[1] < wants)){
 				return false;
@@ -57,7 +64,7 @@ function bigmap(){
 			}
 			newpoint.style.backgroundColor = x.color;
 			newpoint.alt = x.name;
-			newpoint.title = x.name + '\n' + x.desc; // + ' (' + range2dates(x.year_range) +
+			newpoint.title = x.name + '\n' + x.desc + period_specific_info; // + ' (' + range2dates(x.year_range) +
 			newpoint.style.position = "absolute";
 			newpoint.style.top = coords[0] + "px";
 			newpoint.style.left = coords[1] + "px";
@@ -99,6 +106,12 @@ var features = [
 				year_range: [1822, 9999],
 				coords: [48, -124],
 				bottom_right: [24, -65],
+			},
+		],
+		period_info: [
+			{ // Trump
+				year_range: [2018, 2026],
+				desc: 'President: Donald Trump',
 			},
 		],
 		desc: "Country",
