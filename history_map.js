@@ -121,6 +121,51 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Beaker_culture"
 	},
 	{
+		name: "Boian Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-4300, -3500],
+				coords: [45, 23],
+				bottom_right: [40, 28],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "yellow",
+		source: "https://en.wikipedia.org/wiki/Boian_culture"
+	},
+	{
+		name: "Cardium Pottery Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-6400, -5500],
+				coords: [46, -2],
+				bottom_right: [38, 22],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "green",
+		source: "https://en.wikipedia.org/wiki/Cardium_pottery"
+	},
+	{
+		name: "Comb Ceramic Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-4200, -2000],
+				coords: [62, 21],
+				bottom_right: [54, 35],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "purple",
+		source: "https://en.wikipedia.org/wiki/Pit–Comb_Ware_culture"
+	},
+	{
 		name: "Corded Ware Culture",
 		type: "box",
 		periods: [
@@ -134,6 +179,21 @@ var features = [
 		desc: "",
 		color: "#F97474",
 		source: "https://en.wikipedia.org/wiki/Corded_Ware_culture"
+	},
+	{
+		name: "Dimini Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-5000, -4400],
+				coords: [40, 21],
+				bottom_right: [34, 27],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "teal",
+		source: "https://en.wikipedia.org/wiki/Dimini#History"
 	},
 	{
 		name: "Funnelbeaker Culture",
@@ -164,6 +224,36 @@ var features = [
 		desc: "",
 		color: "#FDBAAF",
 		source: "https://en.wikipedia.org/wiki/Globular_Amphroa_culture"
+	},
+	{
+		name: "Hamangia Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-5250, -4500],
+				coords: [45, 27],
+				bottom_right: [40, 30],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "yellow",
+		source: "https://en.wikipedia.org/wiki/Hamangia_culture"
+	},
+	{
+		name: "Swiderian Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-9000, -6200],
+				coords: [56, 15],
+				bottom_right: [48, 31],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "black",
+		source: "https://en.wikipedia.org/wiki/Swiderian_culture"
 	},
 	{
 		name: "United States",
@@ -199,6 +289,21 @@ var features = [
 		desc: "Country",
 		color: "blue",
 		source: "https://en.wikipedia.org/wiki/United_States"
+	},
+	{
+		name: "Vinča Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-5700, -4500],
+				coords: [47, 18],
+				bottom_right: [41, 26],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "lavender",
+		source: "https://en.wikipedia.org/wiki/Vinča_culture"
 	},
 	{
 		name: "Yamna Culture",
