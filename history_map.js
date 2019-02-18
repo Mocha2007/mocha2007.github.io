@@ -6,6 +6,13 @@ function range(n){
 	return [...Array(n).keys()];
 }
 
+function uncorrected_coord2px(coords){
+	"use strict";
+	var x = coords[1] * mapsize/360 + mapsize/2;
+	var y = coords[0] * -mapsize/360 + mapsize/4;
+	return [y,x];
+}
+
 function coord2px(coords){
 	"use strict";
 	var x = coords[1] * mapsize/360 + mapsize/2 - pointsize/2;
@@ -47,18 +54,19 @@ function bigmap(){
 				return false;
 			}
 			// bigmap
-			coords = coord2px(y.coords);
 			newlink = document.createElement("a");
 			newlink.href = x.source;
 			newpoint = document.createElement("div");
 			if (x.type == 'point'){
 				newpoint.classList.value = "point";
+				coords = coord2px(y.coords);
 				newpoint.style.height = pointsize+'px';
 				newpoint.style.width = pointsize+'px';
 			}
 			else {
 				newpoint.classList.value = "box";
-				bottom_right_coords = coord2px(y.bottom_right);
+				coords = uncorrected_coord2px(y.coords);
+				bottom_right_coords = uncorrected_coord2px(y.bottom_right);
 				newpoint.style.height = bottom_right_coords[0] - coords[0]+'px';
 				newpoint.style.width = bottom_right_coords[1] - coords[1]+'px';
 			}
@@ -239,6 +247,21 @@ var features = [
 		desc: "",
 		color: "teal",
 		source: "https://en.wikipedia.org/wiki/Dimini#History"
+	},
+	{
+		name: "Erlitou Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-1900, -1500],
+				coords: [36, 108],
+				bottom_right: [33, 116],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "teal",
+		source: "https://en.wikipedia.org/wiki/Erlitou_culture"
 	},
 	{
 		name: "Funnelbeaker Culture",
@@ -456,6 +479,20 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Assur"
 	},
 	{
+		name: "Athens",
+		type: "point",
+		periods: [
+			{
+				year_range: [-5000, 9999],
+				coords: [38, 24],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Athens"
+	},
+	{
 		name: "Babylon",
 		type: "point",
 		periods: [
@@ -510,6 +547,20 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Hattusa"
+	},
+	{
+		name: "Luxor",
+		type: "point",
+		periods: [
+			{
+				year_range: [-3200, 9999],
+				coords: [26, 33],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Luxor"
 	},
 	{
 		name: "Mehrgarh",
@@ -633,6 +684,20 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Uruk"
+	},
+	{
+		name: "Yanshi",
+		type: "point",
+		periods: [
+			{
+				year_range: [-1900, 0],
+				coords: [35, 113],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Yanshi"
 	},
 	{
 		name: "Yaz Culture",
