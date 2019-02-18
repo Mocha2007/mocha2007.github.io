@@ -461,7 +461,7 @@ var features = [
 			},
 			{
 				year_range: [-2181, -2055],
-				desc: "First Intermediate Period of Egypt",
+				desc: "First Intermediate Period",
 			},
 			{
 				year_range: [-2055, -1650],
@@ -469,7 +469,7 @@ var features = [
 			},
 			{
 				year_range: [-1650, -1550],
-				desc: "Second Intermediate Period of Egypt",
+				desc: "Second Intermediate Period",
 			},
 			{
 				year_range: [-1550, -1069],
@@ -477,7 +477,7 @@ var features = [
 			},
 			{
 				year_range: [-1069, -664],
-				desc: "Third Intermediate Period of Egypt",
+				desc: "Third Intermediate Period",
 			},
 			{
 				year_range: [-664, -332],
@@ -619,6 +619,21 @@ var features = [
 		desc: "",
 		color: "yellow",
 		source: "https://en.wikipedia.org/wiki/Hamangia_culture"
+	},
+	{
+		name: "Hittites",
+		type: "box",
+		periods: [
+			{
+				year_range: [-1600, -1178],
+				coords: [43, 27],
+				bottom_right: [36, 43],
+			},
+		],
+		period_info: [],
+		desc: "Anatolian Civilization",
+		color: "blue",
+		source: "https://en.wikipedia.org/wiki/Hittites"
 	},
 	{
 		name: "Indus Valley Civilization",
