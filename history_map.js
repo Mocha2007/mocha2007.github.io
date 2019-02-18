@@ -76,6 +76,21 @@ function bigmap(){
 // years start at 1 jan - so for america, since it didn't exist 1 jan 1776, it has to wait until 1 jan 1777
 var features = [
 	{
+		name: "Afanasievo Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-3300, -2500],
+				coords: [54, 73],
+				bottom_right: [46, 94],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Afanasievo_culture"
+	},
+	{
 		name: "Ahrensburg Culture",
 		type: "box",
 		periods: [
@@ -119,6 +134,21 @@ var features = [
 		desc: "",
 		color: "#FF7F27",
 		source: "https://en.wikipedia.org/wiki/Beaker_culture"
+	},
+	{
+		name: "Bactria-Margiana Archaeological Complex",
+		type: "box",
+		periods: [
+			{
+				year_range: [-2300, -1700],
+				coords: [40, 59],
+				bottom_right: [36, 68],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "orange",
+		source: "https://en.wikipedia.org/wiki/Bactria–Margiana_Archaeological_Complex"
 	},
 	{
 		name: "Boian Culture",
@@ -321,18 +351,18 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Yamnaya_culture"
 	},
 	// POINTS
-	/*{
-		name: "Funnelbeaker Culture",
+	{
+		name: "Yaz Culture",
 		type: "point",
 		periods: [
 			{
-				year_range: [-4300, -2800],
-				coords: [55, 12],
+				year_range: [-1500, -500],
+				coords: [38, 58],
 			},
 		],
 		period_info: [],
 		desc: "",
 		color: "black",
-		source: "https://en.wikipedia.org/wiki/Funnelbeaker_culture"
-	},*/
+		source: "https://en.wikipedia.org/wiki/Yaz_culture"
+	},
 ];
