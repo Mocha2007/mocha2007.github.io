@@ -33,38 +33,40 @@ function bigmap(){
 	"use strict";
 	var bottom_right_coords, coords, newlink, newpoint, wants;
 	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="'+map_src+'" width="'+mapsize+'">';
+	wants = document.getElementById("date").value;
 	features.forEach(function(x){
-		wants = document.getElementById("date").value;
-		if ((wants < x.year_range[0]) || (x.year_range[1] < wants)){
-			return false;
-		}
-		// bigmap
-		coords = coord2px(x.coords);
-		newlink = document.createElement("a");
-		newlink.href = x.source;
-		newpoint = document.createElement("div");
-		if (x.type == 'point'){
-			newpoint.classList.value = "point";
-			newpoint.style.height = pointsize+'px';
-			newpoint.style.width = pointsize+'px';
-		}
-		else {
-			newpoint.classList.value = "box";
-			bottom_right_coords = coord2px(x.bottom_right);
-			newpoint.style.height = bottom_right_coords[0] - coords[0]+'px';
-			newpoint.style.width = bottom_right_coords[1] - coords[1]+'px';
-		}
-		newpoint.style.backgroundColor = x.color;
-		newpoint.alt = x.name;
-		newpoint.title = x.name + '\n' + x.desc; // + ' (' + range2dates(x.year_range) +
-		newpoint.style.position = "absolute";
-		newpoint.style.top = coords[0] + "px";
-		newpoint.style.left = coords[1] + "px";
-		newlink.appendChild(newpoint);
-		document.getElementById("bigmap").appendChild(newlink);
+		x.periods.forEach(function(y){
+			if ((wants < y.year_range[0]) || (y.year_range[1] < wants)){
+				return false;
+			}
+			// bigmap
+			coords = coord2px(y.coords);
+			newlink = document.createElement("a");
+			newlink.href = x.source;
+			newpoint = document.createElement("div");
+			if (x.type == 'point'){
+				newpoint.classList.value = "point";
+				newpoint.style.height = pointsize+'px';
+				newpoint.style.width = pointsize+'px';
+			}
+			else {
+				newpoint.classList.value = "box";
+				bottom_right_coords = coord2px(y.bottom_right);
+				newpoint.style.height = bottom_right_coords[0] - coords[0]+'px';
+				newpoint.style.width = bottom_right_coords[1] - coords[1]+'px';
+			}
+			newpoint.style.backgroundColor = x.color;
+			newpoint.alt = x.name;
+			newpoint.title = x.name + '\n' + x.desc; // + ' (' + range2dates(x.year_range) +
+			newpoint.style.position = "absolute";
+			newpoint.style.top = coords[0] + "px";
+			newpoint.style.left = coords[1] + "px";
+			newlink.appendChild(newpoint);
+			document.getElementById("bigmap").appendChild(newlink);
+		});
 	});
 }
-
+// years start at 1 jan - so for america, since it didn't exist 1 jan 1776, it has to wait until 1 jan 1777
 var features = [
 	/*{
 		name: "Ainu",
@@ -77,41 +79,30 @@ var features = [
 	{ // Original Territory
 		name: "United States",
 		type: "box",
-		coords: [48, -95],
-		bottom_right: [30, -65],
-		year_range: [1776, 1803],
+		periods: [
+			{
+				year_range: [1777, 1803],
+				coords: [48, -95],
+				bottom_right: [30, -65],
+			}, // + louisiana
+			{
+				year_range: [1804, 1819],
+				coords: [48, -114],
+				bottom_right: [29, -65],
+			}, // + oregon
+			{
+				year_range: [1820, 1821],
+				coords: [48, -124],
+				bottom_right: [29, -65],
+			}, // + florida
+			{
+				year_range: [1822, 9999],
+				coords: [48, -124],
+				bottom_right: [24, -65],
+			},
+		],
 		desc: "Country",
 		color: "blue",
 		source: "https://en.wikipedia.org/wiki/United_States"
 	},
-	{ // + Louisiana
-		name: "United States",
-		type: "box",
-		coords: [48, -114],
-		bottom_right: [29, -65],
-		year_range: [1804, 1818],
-		desc: "Country",
-		color: "blue",
-		source: "https://en.wikipedia.org/wiki/United_States"
-	},
-	{ // + Oregon
-		name: "United States",
-		type: "box",
-		coords: [48, -124],
-		bottom_right: [29, -65],
-		year_range: [1819, 1820],
-		desc: "Country",
-		color: "blue",
-		source: "https://en.wikipedia.org/wiki/United_States"
-	},
-	{ // + Florida
-		name: "United States",
-		type: "box",
-		coords: [48, -124],
-		bottom_right: [24, -65],
-		year_range: [1821, 9999],
-		desc: "Country",
-		color: "blue",
-		source: "https://en.wikipedia.org/wiki/United_States"
-	}
 ];
