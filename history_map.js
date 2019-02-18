@@ -953,6 +953,20 @@ var features = [
 	},
 	// POINTS
 	{
+		name: "Ahar-Banas culture",
+		type: "point",
+		periods: [
+			{
+				year_range: [-3000, -1500],
+				coords: [25, 74],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "black",
+		source: "https://en.wikipedia.org/wiki/Ahar–Banas_culture"
+	},
+	{
 		name: "Annaba",
 		type: "point",
 		periods: [
@@ -1095,6 +1109,20 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Carthage"
+	},
+	{
+		name: "Çatalhöyük",
+		type: "point",
+		periods: [
+			{
+				year_range: [-7500, -5700],
+				coords: [38, 33],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Çatalhöyük"
 	},
 	{
 		name: "Cliff Palace",
@@ -1277,6 +1305,20 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Nanzhuangtou"
+	},
+	{
+		name: "Nevalı Çori",
+		type: "point",
+		periods: [
+			{
+				year_range: [-8400, -8100],
+				coords: [38, 39],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Nevalı_Çori"
 	},
 	{
 		name: "Osaka",

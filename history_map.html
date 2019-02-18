@@ -63,7 +63,9 @@ input {
 <form>
 	<fieldset>
 		Date: 1 Jan, <input id="date" type="number" value="2019" max="2019" onclick="javascript:bigmap();">
-		<a href="javascript:bigmap();">Go &rarr;</a>
+		<a href="javascript:bigmap();">Go &rarr;</a><br/>
+		<input type="range" min="-3000" max="2019" value="2019" class="slider" id="date2"
+			   onclick="javascript:document.getElementById('date').value = document.getElementById('date2').value; bigmap();">
 	</fieldset>
 </form>
 <div id="bigmap">
