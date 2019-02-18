@@ -76,6 +76,21 @@ function bigmap(){
 // years start at 1 jan - so for america, since it didn't exist 1 jan 1776, it has to wait until 1 jan 1777
 var features = [
 	{
+		name: "Ahrensburg Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-10900, -9700],
+				coords: [54, -2],
+				bottom_right: [50, 17],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "black",
+		source: "https://en.wikipedia.org/wiki/Ahrensburg_culture"
+	},
+	{
 		name: "Baden Culture",
 		type: "box",
 		periods: [
@@ -119,6 +134,21 @@ var features = [
 		desc: "",
 		color: "#F97474",
 		source: "https://en.wikipedia.org/wiki/Corded_Ware_culture"
+	},
+	{
+		name: "Funnelbeaker Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-5300, -3950],
+				coords: [59, 8],
+				bottom_right: [53, 15],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Funnelbeaker_culture"
 	},
 	{
 		name: "Globular Amphora Culture",
@@ -186,7 +216,7 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Yamnaya_culture"
 	},
 	// POINTS
-	{
+	/*{
 		name: "Funnelbeaker Culture",
 		type: "point",
 		periods: [
@@ -199,5 +229,5 @@ var features = [
 		desc: "",
 		color: "black",
 		source: "https://en.wikipedia.org/wiki/Funnelbeaker_culture"
-	},
+	},*/
 ];
