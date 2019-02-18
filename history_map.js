@@ -1051,6 +1051,20 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Babylon"
 	},
 	{
+		name: "Beersheba Culture",
+		type: "point",
+		periods: [
+			{
+				year_range: [-4200, 4000],
+				coords: [31, 35],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "black",
+		source: "https://en.wikipedia.org/wiki/Beersheba_culture"
+	},
+	{
 		name: "Benin City",
 		type: "point",
 		periods: [
@@ -1091,6 +1105,62 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Bhirrana"
+	},
+	{
+		name: "Biniai Nou hypogea",
+		type: "point",
+		periods: [
+			{
+				year_range: [-2290, -2030],
+				coords: [40, 4],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Biniai_Nou_hypogea"
+	},
+	{
+		name: "Bonstorf Barrows",
+		type: "point",
+		periods: [
+			{
+				year_range: [-1500, -1200],
+				coords: [53, 10],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Bonstorf_Barrows"
+	},
+	{
+		name: "Borġ in-Nadur",
+		type: "point",
+		periods: [
+			{
+				year_range: [-2500, -500],
+				coords: [36, 15],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Borġ_in-Nadur"
+	},
+	{
+		name: "Brú na Bóinne",
+		type: "point",
+		periods: [
+			{
+				year_range: [-4000, -2900],
+				coords: [54, -6],
+			},
+		],
+		period_info: [],
+		desc: "Passage Graves",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Brú_na_Bóinne"
 	},
 	{
 		name: "Byblos",
@@ -1227,6 +1297,20 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Franchthi_Cave"
 	},
 	{
+		name: "Frankleben Hoard",
+		type: "point",
+		periods: [
+			{
+				year_range: [-1500, -1250],
+				coords: [51, 12],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Frankleben_hoard"
+	},
+	{
 		name: "Ganweriwal",
 		type: "point",
 		periods: [
@@ -1297,6 +1381,20 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Kerma"
 	},
 	{
+		name: "Krzemionki",
+		type: "point",
+		periods: [
+			{
+				year_range: [-3900, -1600],
+				coords: [51, 21],
+			},
+		],
+		period_info: [],
+		desc: "Neolithic-Bronze Age flint mine complex",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Krzemionki"
+	},
+	{
 		name: "Kültəpə",
 		type: "point",
 		periods: [
@@ -1337,6 +1435,20 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Mehrgarh"
+	},
+	{
+		name: "Merheleva Ridge",
+		type: "point",
+		periods: [
+			{
+				year_range: [-4000, -3000],
+				coords: [48, 39],
+			},
+		],
+		period_info: [],
+		desc: "Chalcolithic temple and burial complex",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Merheleva_Ridge"
 	},
 	{
 		name: "Mogadishu",
@@ -1491,6 +1603,20 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Tell_Qaramel"
+	},
+	{
+		name: "Tholos de El Romeral",
+		type: "point",
+		periods: [
+			{
+				year_range: [-1800, -1800],
+				coords: [37, 5],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Tholos_de_El_Romeral"
 	},
 	{
 		name: "Tripoli",
