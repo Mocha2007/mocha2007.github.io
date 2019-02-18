@@ -181,6 +181,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Cardium_pottery"
 	},
 	{
+		name: "Catacomb Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-2800, -2200],
+				coords: [52, 31],
+				bottom_right: [43, 42],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "black",
+		source: "https://en.wikipedia.org/wiki/Catacomb_culture"
+	},
+	{
 		name: "Comb Ceramic Culture",
 		type: "box",
 		periods: [
@@ -284,6 +299,66 @@ var features = [
 		desc: "",
 		color: "brown",
 		source: "https://en.wikipedia.org/wiki/Indus_Valley_Civilisation"
+	},
+	{
+		name: "Poltavka Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-2700, -2100],
+				coords: [53, 44],
+				bottom_right: [46, 50],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "purple",
+		source: "https://en.wikipedia.org/wiki/Poltavka_culture"
+	},
+	{
+		name: "Samarra Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-5500, -4800],
+				coords: [36, 41],
+				bottom_right: [31, 48],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "green",
+		source: "https://en.wikipedia.org/wiki/Samarra_culture"
+	},
+	{
+		name: "Srubnaya Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-1800, -1200],
+				coords: [52, 33],
+				bottom_right: [43, 50],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "brown",
+		source: "https://en.wikipedia.org/wiki/Srubnaya_culture"
+	},
+	{
+		name: "Sumer",
+		type: "box",
+		periods: [
+			{
+				year_range: [-4500, -1900],
+				coords: [34, 41],
+				bottom_right: [30, 48],
+			},
+		],
+		period_info: [],
+		desc: "Mesopotamian Civilization",
+		color: "teal",
+		source: "https://en.wikipedia.org/wiki/Sumer"
 	},
 	{
 		name: "Swiderian Culture",
