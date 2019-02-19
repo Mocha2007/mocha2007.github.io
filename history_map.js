@@ -176,6 +176,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Akkadian_Empire"
 	},
 	{
+		name: "Anarta Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-3950, -1900],
+				coords: [25, 68],
+				bottom_right: [20, 74],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "green",
+		source: "https://en.wikipedia.org/wiki/Anarta_tradition"
+	},
+	{
 		name: "Aurignacian Culture",
 		type: "box",
 		periods: [
@@ -221,6 +236,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Beaker_culture"
 	},
 	{
+		name: "Babylonia",
+		type: "box",
+		periods: [
+			{
+				year_range: [-1895, -539],
+				coords: [38, 38],
+				bottom_right: [30, 48],
+			},
+		],
+		period_info: [],
+		desc: "Mesopotamian Civilization",
+		color: "gold",
+		source: "https://en.wikipedia.org/wiki/Babylonia"
+	},
+	{
 		name: "Bactria-Margiana Archaeological Complex",
 		type: "box",
 		periods: [
@@ -251,19 +281,19 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Boian_culture"
 	},
 	{
-		name: "Babylonia",
+		name: "Bolshemys Culture",
 		type: "box",
 		periods: [
 			{
-				year_range: [-1895, -539],
-				coords: [38, 38],
-				bottom_right: [30, 48],
+				year_range: [-4000, -3000],
+				coords: [50, 80],
+				bottom_right: [43, 98],
 			},
 		],
 		period_info: [],
-		desc: "Mesopotamian Civilization",
-		color: "gold",
-		source: "https://en.wikipedia.org/wiki/Babylonia"
+		desc: "",
+		color: "blue",
+		source: "https://en.wikipedia.org/wiki/Bolshemys_culture"
 	},
 	{
 		name: "C-Group Culture",
@@ -672,6 +702,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Indus_Valley_Civilisation"
 	},
 	{
+		name: "Jeulmun Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-8000, -1500],
+				coords: [38, 126],
+				bottom_right: [34, 130],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "blue",
+		source: "https://en.wikipedia.org/wiki/Jeulmun_pottery_period"
+	},
+	{
 		name: "Jōmon Culture",
 		type: "box",
 		periods: [
@@ -685,6 +730,21 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Jōmon_period"
+	},
+	{
+		name: "Khvalynsk Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-5000, -4500],
+				coords: [52, 37],
+				bottom_right: [43, 52],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "magenta",
+		source: "https://en.wikipedia.org/wiki/Khvalynsk_culture"
 	},
 	{
 		name: "Kongemose Culture",
@@ -745,6 +805,51 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Maglemosian"
+	},
+	{
+		name: "Majiayao Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-3300, -2000],
+				coords: [38, 102],
+				bottom_right: [34, 107],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Majiayao_culture"
+	},
+	{
+		name: "Maykop Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-3700, -3000],
+				coords: [47, 37],
+				bottom_right: [43, 46],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "brown",
+		source: "https://en.wikipedia.org/wiki/Maykop_culture"
+	},
+	{
+		name: "Mumun Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-1500, -300],
+				coords: [38, 126],
+				bottom_right: [34, 130],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Mumun_pottery_period"
 	},
 	{
 		name: "Natufian Culture",
@@ -1067,6 +1172,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Vinča_culture"
 	},
 	{
+		name: "Xindian Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-1500, -1000],
+				coords: [42, 92],
+				bottom_right: [32, 105],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "tan",
+		source: "https://en.wikipedia.org/wiki/Xindian_culture"
+	},
+	{
 		name: "Yamna Culture",
 		type: "box",
 		periods: [
@@ -1080,6 +1200,21 @@ var features = [
 		desc: "",
 		color: "#F8F885",
 		source: "https://en.wikipedia.org/wiki/Yamnaya_culture"
+	},
+	{
+		name: "Yueshi Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-1900, -1500],
+				coords: [39, 116],
+				bottom_right: [34, 123],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "tan",
+		source: "https://en.wikipedia.org/wiki/Yueshi_culture"
 	},
 	{
 		name: "Zhou",
