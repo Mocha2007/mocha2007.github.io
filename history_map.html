@@ -60,12 +60,12 @@ input {
 <div id="top">
 	<h1>The History Map</h1>
 </div>
-<form>
+<form onclick="bigmap();">
 	<fieldset>
-		Date: 1 Jan, <input id="date" type="number" value="2019" max="2019" onclick="javascript:bigmap();">
-		<a href="javascript:bigmap();">Go &rarr;</a><br/>
+		Date: 1 Jan, <input id="date" type="number" value="2019" max="2019">
+		<a href="javascript:console.log('this does nothing');">Go &rarr;</a><br/>
 		<input type="range" min="-3000" max="2019" value="2019" class="slider" id="date2"
-			   onclick="javascript:document.getElementById('date').value = document.getElementById('date2').value; bigmap();">
+			   onclick="javascript:document.getElementById('date').value = document.getElementById('date2').value; ">
 	</fieldset>
 </form>
 <div id="bigmap">
