@@ -882,6 +882,36 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Old_Copper_Complex"
 	},
 	{
+		name: "Paiján Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-8700, -5900],
+				coords: [-4, -82],
+				bottom_right: [-11, -76],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Paiján_culture"
+	},
+	{
+		name: "Paleo-Arctic Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-8000, -5000],
+				coords: [72, -168],
+				bottom_right: [54, -135],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Paleo-Arctic_Tradition"
+	},
+	{
 		name: "Plano Culture",
 		type: "box",
 		periods: [
@@ -1913,6 +1943,20 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Osaka"
 	},
 	{
+		name: "Piedra Museo",
+		type: "point",
+		periods: [
+			{
+				year_range: [-9000, -9000],
+				coords: [-49, -70],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Piedra_Museo"
+	},
+	{
 		name: "Poverty Point",
 		type: "point",
 		periods: [
@@ -2106,6 +2150,20 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Troy"
 	},
 	{
+		name: "Upward Sun River Site",
+		type: "point",
+		periods: [
+			{
+				year_range: [-9500, -7000],
+				coords: [64.4, -147.0],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Upward_Sun_River_site"
+	},
+	{
 		name: "Ur",
 		type: "point",
 		periods: [
@@ -2191,6 +2249,90 @@ var features = [
 	},
 	// beyond cities and nations and cultures...
 	{
+		name: "Cheddar Man",
+		type: "point",
+		periods: [
+			{
+				year_range: [-7150, -7100], // age guess
+				coords: [51, -3],
+			},
+		],
+		period_info: [],
+		desc: "Fossil",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Cheddar_Man"
+	},
+	{
+		name: "Anzick-1",
+		type: "point",
+		periods: [
+			{
+				year_range: [-10630, -10630],
+				coords: [46, -111],
+			},
+		],
+		period_info: [],
+		desc: "Skeleton",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Anzick-1"
+	},
+	{
+		name: "Arlington Springs Man",
+		type: "point",
+		periods: [
+			{
+				year_range: [-11050, -11000], // age is guess
+				coords: [34, -120],
+			},
+		],
+		period_info: [],
+		desc: "Skeleton",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Arlington_Springs_Man"
+	},
+	{
+		name: "Buhl Woman",
+		type: "point",
+		periods: [
+			{
+				year_range: [-8725, -8675], // age is guess
+				coords: [34, -120],
+			},
+		],
+		period_info: [],
+		desc: "Skeleton",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Buhl_Woman"
+	},
+	{
+		name: "Eve of Naharon",
+		type: "point",
+		periods: [
+			{
+				year_range: [-11650, -11600], // age is guess
+				coords: [20, -87],
+			},
+		],
+		period_info: [],
+		desc: "Skeleton",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Eve_of_Naharon"
+	},
+	{
+		name: "Kennewick Man",
+		type: "point",
+		periods: [
+			{
+				year_range: [-7000, -6950],
+				coords: [46, -119],
+			},
+		],
+		period_info: [],
+		desc: "Skeleton",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Kennewick_Man"
+	},
+	{
 		name: "Koelbjerg Man",
 		type: "point",
 		periods: [
@@ -2203,6 +2345,76 @@ var features = [
 		desc: "Bog body",
 		color: "cyan",
 		source: "https://en.wikipedia.org/wiki/Koelbjerg_Man"
+	},
+	{
+		name: "La Brea Woman",
+		type: "point",
+		periods: [
+			{
+				year_range: [-8285, -8235], // age is guess
+				coords: [34, -118],
+			},
+		],
+		period_info: [],
+		desc: "Skeleton",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/La_Brea_Woman"
+	},
+	{
+		name: "Lansing Man",
+		type: "point",
+		periods: [
+			{
+				year_range: [-3629, -3579], // age is guess
+				coords: [35, -95],
+			},
+		],
+		period_info: [],
+		desc: "Skeleton",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Lansing_Man"
+	},
+	{
+		name: "Luzia Woman",
+		type: "point",
+		periods: [
+			{
+				year_range: [-9527, -9477], // age is guess
+				coords: [-20, -44],
+			},
+		],
+		period_info: [],
+		desc: "Skeleton",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Luzia_Woman"
+	},
+	{
+		name: "Minnesota Woman",
+		type: "point",
+		periods: [
+			{
+				year_range: [-5940, -5890], // age is guess
+				coords: [47, -96],
+			},
+		],
+		period_info: [],
+		desc: "Skeleton",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Minnesota_Woman"
+	},
+	{
+		name: "Naia",
+		type: "point",
+		periods: [
+			{
+				year_range: [-10050, -10000], // age is guess
+				coords: [20, -87],
+			},
+		],
+		period_info: [],
+		desc: "Skeleton",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Naia_(skeleton)"
 	},
 	{
 		name: "Ötzi",
@@ -2219,6 +2431,34 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Ötzi"
 	},
 	{
+		name: "Peñon Woman",
+		type: "point",
+		periods: [
+			{
+				year_range: [-10750, -10700], // age is guess
+				coords: [19, -99],
+			},
+		],
+		period_info: [],
+		desc: "Skeleton",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Peñon_woman"
+	},
+	{
+		name: "Spirit Cave Mummy",
+		type: "point",
+		periods: [
+			{
+				year_range: [-9550, -9500], // age is guess
+				coords: [39, -119],
+			},
+		],
+		period_info: [],
+		desc: "Mummy",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Spirit_Cave_mummy"
+	},
+	{
 		name: "Tollund Man",
 		type: "point",
 		periods: [
@@ -2231,5 +2471,19 @@ var features = [
 		desc: "Bog body",
 		color: "cyan",
 		source: "https://en.wikipedia.org/wiki/Tollund_Man"
+	},
+	{
+		name: "Tuqan Man",
+		type: "point",
+		periods: [
+			{
+				year_range: [-10050, -10000], // age is guess
+				coords: [39, -119],
+			},
+		],
+		period_info: [],
+		desc: "Skeleton",
+		color: "cyan",
+		source: "https://en.wikipedia.org/wiki/Tuqan_man"
 	},
 ];
