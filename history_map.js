@@ -1112,6 +1112,20 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Ahar–Banas_culture"
 	},
 	{
+		name: "Alepotrypa cave",
+		type: "point",
+		periods: [
+			{
+				year_range: [-4000, -1200],
+				coords: [36.6, 22.4],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Alepotrypa_cave"
+	},
+	{
 		name: "Annaba",
 		type: "point",
 		periods: [
@@ -1299,7 +1313,7 @@ var features = [
 		periods: [
 			{
 				year_range: [-4000, -2900],
-				coords: [54, -6],
+				coords: [53.7, -6.4],
 			},
 		],
 		period_info: [],
@@ -1414,6 +1428,20 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Devil's_Lair"
 	},
 	{
+		name: "Dispilio",
+		type: "point",
+		periods: [
+			{
+				year_range: [-5600, -3000],
+				coords: [40.5, 21.3],
+			},
+		],
+		period_info: [],
+		desc: "Settlement",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Dispilio"
+	},
+	{
 		name: "Domuztepe",
 		type: "point",
 		periods: [
@@ -1498,6 +1526,34 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Göbekli_Tepe"
 	},
 	{
+		name: "Gortyn",
+		type: "point",
+		periods: [
+			{
+				year_range: [-3200, 9999],
+				coords: [35.0, 24.9],
+			},
+		],
+		period_info: [],
+		desc: "Settlement",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Gortyn"
+	},
+	{
+		name: "Ħal-Saflieni Hypogeum",
+		type: "point",
+		periods: [
+			{
+				year_range: [-4000, -2500],
+				coords: [35.9, 14.5],
+			},
+		],
+		period_info: [],
+		desc: "Sanctuary and Necropolis",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Ħal-Saflieni_Hypogeum"
+	},
+	{
 		name: "Harappa",
 		type: "point",
 		periods: [
@@ -1524,6 +1580,20 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Hattusa"
+	},
+	{
+		name: "Hohlenstein-Stadel",
+		type: "point",
+		periods: [
+			{
+				year_range: [-39000, -33000],
+				coords: [49, 10],
+			},
+		],
+		period_info: [],
+		desc: "Cave",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Hohlenstein-Stadel"
 	},
 	{
 		name: "Kerma",
@@ -1722,6 +1792,20 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Poverty_Point"
 	},
 	{
+		name: "Priniatikos Pyrgos",
+		type: "point",
+		periods: [
+			{
+				year_range: [-3000, -1000],
+				coords: [35.1, 25.7],
+			},
+		],
+		period_info: [],
+		desc: "",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Priniatikos_Pyrgos"
+	},
+	{
 		name: "Rome",
 		type: "point",
 		periods: [
@@ -1734,6 +1818,20 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Rome"
+	},
+	{
+		name: "Schnidejoch",
+		type: "point",
+		periods: [
+			{
+				year_range: [-5000, 1500], // roughly
+				coords: [46, 7],
+			},
+		],
+		period_info: [],
+		desc: "Mountain Pass",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Schnidejoch"
 	},
 	{
 		name: "Sechin Bajo",
@@ -1899,6 +1997,20 @@ var features = [
 		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Uruk"
+	},
+	{
+		name: "Xagħra Stone Circle",
+		type: "point",
+		periods: [
+			{
+				year_range: [-4100, -2000],
+				coords: [36.0, 14.3],
+			},
+		],
+		period_info: [],
+		desc: "Funerary Complex",
+		color: "red",
+		source: "https://en.wikipedia.org/wiki/Xagħra_Stone_Circle"
 	},
 	{
 		name: "Yanshi",
