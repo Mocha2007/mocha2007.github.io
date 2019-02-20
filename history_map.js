@@ -54,7 +54,7 @@ function tooltip(id){
 	if (id.hasOwnProperty('img')){
 		newpoint.innerHTML += '<br/><center><img src="'+id.img+'" height="100px"></center>';
 	}
-	if (id.desc != ''){
+	if (id.hasOwnProperty('desc')){
 		newpoint.innerHTML += '<br/>' + id.desc;
 	}
 	// final
@@ -98,7 +98,7 @@ function bigmap(){
 				newpoint.style.width = bottom_right_coords[1] - coords[1]+'px';
 			}
 			newpoint.style.backgroundColor = x.color;
-			newpoint.title = x.name + '\n' + x.desc + period_specific_info; // + ' (' + range2dates(x.year_range) +
+			// newpoint.title = x.name + '\n' + x.desc + period_specific_info; // + ' (' + range2dates(x.year_range) +
 			newpoint.style.position = "absolute";
 			newpoint.style.top = coords[0] + "px";
 			newpoint.style.left = coords[1] + "px";
@@ -125,7 +125,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "yellow",
 		source: "https://en.wikipedia.org/wiki/Urnfield_culture"
 	},
@@ -141,7 +140,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "pink",
 		source: "https://en.wikipedia.org/wiki/A-Group_culture"
 	},
@@ -156,7 +154,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "green",
 		source: "https://en.wikipedia.org/wiki/Abashevo_culture"
 	},
@@ -171,7 +168,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Afanasievo_culture"
 	},
@@ -186,7 +182,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "black",
 		source: "https://en.wikipedia.org/wiki/Ahrensburg_culture"
 	},
@@ -216,7 +211,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "green",
 		source: "https://en.wikipedia.org/wiki/Anarta_tradition"
 	},
@@ -231,7 +225,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Aurignacian"
 	},
@@ -246,7 +239,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "#CFA7F8",
 		source: "https://en.wikipedia.org/wiki/Baden_culture"
 	},
@@ -261,7 +253,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "#FF7F27",
 		source: "https://en.wikipedia.org/wiki/Beaker_culture"
 	},
@@ -291,7 +282,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "orange",
 		source: "https://en.wikipedia.org/wiki/Bactria–Margiana_Archaeological_Complex"
 	},
@@ -306,7 +296,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "yellow",
 		source: "https://en.wikipedia.org/wiki/Boian_culture"
 	},
@@ -321,7 +310,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "blue",
 		source: "https://en.wikipedia.org/wiki/Bolshemys_culture"
 	},
@@ -336,7 +324,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "pink",
 		source: "https://en.wikipedia.org/wiki/C-Group_culture"
 	},
@@ -351,7 +338,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "green",
 		source: "https://en.wikipedia.org/wiki/Cardium_pottery"
 	},
@@ -366,7 +352,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "black",
 		source: "https://en.wikipedia.org/wiki/Catacomb_culture"
 	},
@@ -381,7 +366,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "cyan",
 		source: "https://en.wikipedia.org/wiki/Clovis_culture"
 	},
@@ -396,7 +380,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "purple",
 		source: "https://en.wikipedia.org/wiki/Pit–Comb_Ware_culture"
 	},
@@ -411,7 +394,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "#F97474",
 		source: "https://en.wikipedia.org/wiki/Corded_Ware_culture"
 	},
@@ -426,7 +408,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "teal",
 		source: "https://en.wikipedia.org/wiki/Dimini#History"
 	},
@@ -456,7 +437,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "teal",
 		source: "https://en.wikipedia.org/wiki/Erligang_culture"
 	},
@@ -471,7 +451,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "teal",
 		source: "https://en.wikipedia.org/wiki/Erlitou_culture"
 	},
@@ -486,7 +465,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "pink",
 		source: "https://en.wikipedia.org/wiki/Fatyanovo–Balanovo_culture"
 	},
@@ -571,7 +549,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Ertebølle_culture"
 	},
@@ -586,7 +563,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "orange",
 		source: "https://en.wikipedia.org/wiki/Folsom_tradition"
 	},
@@ -601,7 +577,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "cyan",
 		img: "https://upload.wikimedia.org/wikipedia/commons/9/98/Zimmerman_Kame.jpg",
 		source: "https://en.wikipedia.org/wiki/Glacial_Kame_Culture"
@@ -617,7 +592,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "#FDBAAF",
 		source: "https://en.wikipedia.org/wiki/Globular_Amphora_culture"
 	},
@@ -632,7 +606,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "blue",
 		source: "https://en.wikipedia.org/wiki/Gojoseon"
 	},
@@ -647,7 +620,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "tan",
 		source: "https://en.wikipedia.org/wiki/Gravettian"
 	},
@@ -662,7 +634,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "purple",
 		source: "https://en.wikipedia.org/wiki/Halaf_culture"
 	},
@@ -677,7 +648,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "yellow",
 		source: "https://en.wikipedia.org/wiki/Hamangia_culture"
 	},
@@ -728,7 +698,6 @@ var features = [
 				desc: 'Final Phase',
 			},
 		],
-		desc: "",
 		color: "brown",
 		source: "https://en.wikipedia.org/wiki/Indus_Valley_Civilisation"
 	},
@@ -743,7 +712,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "blue",
 		source: "https://en.wikipedia.org/wiki/Jeulmun_pottery_period"
 	},
@@ -758,7 +726,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Jōmon_period"
 	},
@@ -773,7 +740,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "magenta",
 		source: "https://en.wikipedia.org/wiki/Khvalynsk_culture"
 	},
@@ -788,7 +754,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Kongemose_culture"
 	},
@@ -803,7 +768,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "green",
 		source: "https://en.wikipedia.org/wiki/Longshan_culture"
 	},
@@ -818,7 +782,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "pink",
 		source: "https://en.wikipedia.org/wiki/Magdalenian"
 	},
@@ -833,7 +796,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Maglemosian"
 	},
@@ -848,7 +810,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Majiayao_culture"
 	},
@@ -863,7 +824,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "brown",
 		source: "https://en.wikipedia.org/wiki/Maykop_culture"
 	},
@@ -878,7 +838,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "cyan",
 		source: "https://en.wikipedia.org/wiki/Mumun_pottery_period"
 	},
@@ -893,7 +852,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "orange",
 		source: "https://en.wikipedia.org/wiki/Natufian_culture"
 	},
@@ -908,7 +866,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "orange",
 		source: "https://en.wikipedia.org/wiki/Old_Copper_Complex"
 	},
@@ -923,7 +880,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Paiján_culture"
 	},
@@ -938,7 +894,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "cyan",
 		source: "https://en.wikipedia.org/wiki/Paleo-Arctic_Tradition"
 	},
@@ -953,7 +908,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "pink",
 		source: "https://en.wikipedia.org/wiki/Plano_cultures"
 	},
@@ -968,7 +922,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "purple",
 		source: "https://en.wikipedia.org/wiki/Poltavka_culture"
 	},
@@ -983,7 +936,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "purple",
 		source: "https://en.wikipedia.org/wiki/Post_Pattern"
 	},
@@ -998,7 +950,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "brown",
 		source: "https://en.wikipedia.org/wiki/Proto-Villanovan_culture"
 	},
@@ -1013,7 +964,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "green",
 		source: "https://en.wikipedia.org/wiki/Samarra_culture"
 	},
@@ -1028,7 +978,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "green",
 		source: "https://en.wikipedia.org/wiki/Shang_dynasty"
 	},
@@ -1043,7 +992,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "magenta",
 		source: "https://en.wikipedia.org/wiki/Sintasha_culture"
 	},
@@ -1058,7 +1006,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "pink",
 		source: "https://en.wikipedia.org/wiki/Solutrean"
 	},
@@ -1073,7 +1020,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "brown",
 		source: "https://en.wikipedia.org/wiki/Srubnaya_culture"
 	},
@@ -1103,7 +1049,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "black",
 		source: "https://en.wikipedia.org/wiki/Swiderian_culture"
 	},
@@ -1118,7 +1063,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "pink",
 		source: "https://en.wikipedia.org/wiki/Terramare_culture"
 	},
@@ -1133,7 +1077,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "yellow",
 		source: "https://en.wikipedia.org/wiki/Tumulus_culture"
 	},
@@ -1148,7 +1091,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "brown",
 		source: "https://en.wikipedia.org/wiki/Ubaid_culture"
 	},
@@ -1163,7 +1105,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "yellow",
 		source: "https://en.wikipedia.org/wiki/Unetice_culture"
 	},
@@ -1213,7 +1154,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "brown",
 		source: "https://en.wikipedia.org/wiki/Villanovan_culture"
 	},
@@ -1228,7 +1168,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "lavender",
 		source: "https://en.wikipedia.org/wiki/Vinča_culture"
 	},
@@ -1243,7 +1182,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "tan",
 		source: "https://en.wikipedia.org/wiki/Xindian_culture"
 	},
@@ -1258,7 +1196,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "#F8F885",
 		source: "https://en.wikipedia.org/wiki/Yamnaya_culture"
 	},
@@ -1273,7 +1210,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "tan",
 		source: "https://en.wikipedia.org/wiki/Yueshi_culture"
 	},
@@ -1288,7 +1224,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Zhou_dynasty"
 	},
@@ -1303,7 +1238,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "black",
 		source: "https://en.wikipedia.org/wiki/Ahar–Banas_culture"
 	},
@@ -1317,7 +1251,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Alepotrypa_cave"
 	},
@@ -1331,7 +1264,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Annaba"
 	},
@@ -1345,7 +1277,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Areni-1_winery"
 	},
@@ -1359,7 +1290,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Assur"
 	},
@@ -1373,7 +1303,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Athens"
 	},
@@ -1387,7 +1316,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Axum"
 	},
@@ -1401,7 +1329,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Babylon"
 	},
@@ -1415,7 +1342,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "black",
 		source: "https://en.wikipedia.org/wiki/Beersheba_culture"
 	},
@@ -1429,7 +1355,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Benin_City"
 	},
@@ -1443,7 +1368,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Berbera"
 	},
@@ -1457,7 +1381,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Bhirrana"
 	},
@@ -1471,7 +1394,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Biniai_Nou_hypogea"
 	},
@@ -1485,7 +1407,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Bonstorf_Barrows"
 	},
@@ -1499,7 +1420,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Borġ_in-Nadur"
 	},
@@ -1531,7 +1451,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Byblos"
 	},
@@ -1545,7 +1464,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Carthage"
 	},
@@ -1559,7 +1477,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Çatalhöyük"
 	},
@@ -1577,7 +1494,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Çukuriçi_Höyük"
 	},
@@ -1591,7 +1507,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Chalcolithic_Temple_of_Ein_Gedi"
 	},
@@ -1605,7 +1520,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Cliff_Palace"
 	},
@@ -1619,7 +1533,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Devil's_Lair"
 	},
@@ -1647,7 +1560,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Domuztepe"
 	},
@@ -1661,7 +1573,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Fox_Farm_Site_(Mays_Lick,_Kentucky)"
 	},
@@ -1675,7 +1586,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Franchthi_Cave"
 	},
@@ -1689,7 +1599,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Frankleben_hoard"
 	},
@@ -1703,7 +1612,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Ganweriwal"
 	},
@@ -1717,7 +1625,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Göbekli_Tepe"
 	},
@@ -1759,7 +1666,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Harappa"
 	},
@@ -1773,7 +1679,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Hattusa"
 	},
@@ -1801,7 +1706,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Kerma"
 	},
@@ -1829,7 +1733,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Kültəpə"
 	},
@@ -1843,7 +1746,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Las_Cogotas"
 	},
@@ -1857,7 +1759,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Luxor"
 	},
@@ -1871,7 +1772,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Mehrgarh"
 	},
@@ -1899,7 +1799,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Mogadishu"
 	},
@@ -1913,7 +1812,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Mohenjo-daro"
 	},
@@ -1927,7 +1825,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Nakhchivan_Tepe"
 	},
@@ -1941,7 +1838,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Nanzhuangtou"
 	},
@@ -1955,7 +1851,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Nevalı_Çori"
 	},
@@ -1969,7 +1864,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Osaka"
 	},
@@ -1983,7 +1877,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Piedra_Museo"
 	},
@@ -1997,7 +1890,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Poverty_Point"
 	},
@@ -2011,7 +1903,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Priniatikos_Pyrgos"
 	},
@@ -2025,7 +1916,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Rome"
 	},
@@ -2053,7 +1943,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Sechin_Bajo"
 	},
@@ -2067,7 +1956,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Teleilat_el_Ghassul"
 	},
@@ -2081,7 +1969,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Tell_Qaramel"
 	},
@@ -2095,7 +1982,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Tholos_de_El_Romeral"
 	},
@@ -2109,7 +1995,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Tripoli"
 	},
@@ -2176,7 +2061,6 @@ var features = [
 				desc: 'Troy IX',
 			},
 		],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Troy"
 	},
@@ -2190,7 +2074,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Upward_Sun_River_site"
 	},
@@ -2204,7 +2087,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Ur"
 	},
@@ -2218,7 +2100,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Uruk"
 	},
@@ -2246,7 +2127,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Yanshi"
 	},
@@ -2260,7 +2140,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "black",
 		source: "https://en.wikipedia.org/wiki/Yaz_culture"
 	},
@@ -2274,7 +2153,6 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Watson_Brake"
 	},
