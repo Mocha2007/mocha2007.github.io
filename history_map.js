@@ -51,7 +51,9 @@ function tooltip(id){
 	newpoint.style.border = '1px solid black';
 	newpoint.innerHTML = '<b>' + id.name + '</b>';
 	newpoint.style.padding = '2px';
-	// todo newpoint.innerHTML = '<br/><img src="">';
+	if (id.hasOwnProperty('img')){
+		newpoint.innerHTML = '<br/><img src="'+id.img+'">';
+	}
 	newpoint.innerHTML += '<br/>' + id.desc;
 	// final
 	newpoint.id = "current_tooltip";
