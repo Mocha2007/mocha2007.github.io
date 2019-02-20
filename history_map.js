@@ -37,6 +37,25 @@ function range2dates(r){
 }
 
 function tooltip(id){
+	// "use strict";
+	console.log(id);
+	// bigmap
+	newpoint = document.createElement("div");
+	// newpoint.classList.value = "box";
+	y = id.periods[0];
+	coords = uncorrected_coord2px(y.coords);
+	newpoint.style.backgroundColor = "white";
+	newpoint.style.position = "absolute";
+	newpoint.style.top = coords[0]+25 + "px";
+	newpoint.style.left = coords[1]+25 + "px";
+	newpoint.style.border = '1px solid black';
+	newpoint.innerHTML = '<b>' + id.name + '</b>';
+	newpoint.style.padding = '2px';
+	//newpoint.innerHTML = '<br/><img src="">';
+	newpoint.innerHTML += '<br/>' + id.desc;
+	// final
+	newpoint.id = "current_tooltip";
+	document.getElementById("bigmap").appendChild(newpoint);
 	return console.log(id);
 }
 
@@ -75,13 +94,13 @@ function bigmap(){
 				newpoint.style.width = bottom_right_coords[1] - coords[1]+'px';
 			}
 			newpoint.style.backgroundColor = x.color;
-			newpoint.alt = x.name;
 			newpoint.title = x.name + '\n' + x.desc + period_specific_info; // + ' (' + range2dates(x.year_range) +
 			newpoint.style.position = "absolute";
 			newpoint.style.top = coords[0] + "px";
 			newpoint.style.left = coords[1] + "px";
 			// tooltip
-			newpoint.onmouseover = unused => tooltip(x.name);
+			newpoint.onmouseover = unused => tooltip(x);
+			newpoint.onmouseout = unused => document.getElementById("current_tooltip").outerHTML = "";
 			// final
 			newlink.appendChild(newpoint);
 			document.getElementById("bigmap").appendChild(newlink);
