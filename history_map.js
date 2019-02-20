@@ -98,8 +98,8 @@ function bigmap(){
 			newpoint.style.top = coords[0] + "px";
 			newpoint.style.left = coords[1] + "px";
 			// tooltip
-			newpoint.onmouseover = unused => tooltip(x);
-			newpoint.onmouseout = unused => document.getElementById("current_tooltip").outerHTML = "";
+			newpoint.onmouseover = () => tooltip(x);
+			newpoint.onmouseout = () => document.getElementById("current_tooltip").outerHTML = "";
 			// final
 			newlink.appendChild(newpoint);
 			document.getElementById("bigmap").appendChild(newlink);
