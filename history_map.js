@@ -52,9 +52,11 @@ function tooltip(id){
 	newpoint.innerHTML = '<b>' + id.name + '</b>';
 	newpoint.style.padding = '2px';
 	if (id.hasOwnProperty('img')){
-		newpoint.innerHTML = '<br/><img src="'+id.img+'">';
+		newpoint.innerHTML += '<br/><center><img src="'+id.img+'" height="100px"></center>';
 	}
-	newpoint.innerHTML += '<br/>' + id.desc;
+	if (id.desc != ''){
+		newpoint.innerHTML += '<br/>' + id.desc;
+	}
 	// final
 	newpoint.id = "current_tooltip";
 	document.getElementById("bigmap").appendChild(newpoint);
@@ -601,6 +603,7 @@ var features = [
 		period_info: [],
 		desc: "",
 		color: "cyan",
+		img: "https://upload.wikimedia.org/wikipedia/commons/9/98/Zimmerman_Kame.jpg",
 		source: "https://en.wikipedia.org/wiki/Glacial_Kame_Culture"
 	},
 	{
