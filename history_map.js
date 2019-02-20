@@ -41,16 +41,13 @@ function tooltip(id){
 	// console.log(id);
 	// bigmap
 	var newpoint = document.createElement("div");
-	// newpoint.classList.value = "box";
 	var y = id.periods[0];
 	var coords = uncorrected_coord2px(y.coords);
-	newpoint.style.backgroundColor = "white";
-	newpoint.style.position = "absolute";
+	newpoint.id = "current_tooltip";
 	newpoint.style.top = coords[0]+25 + "px";
 	newpoint.style.left = coords[1]+25 + "px";
-	newpoint.style.border = '1px solid black';
+	// text
 	newpoint.innerHTML = '<center><b>' + id.name + '</b></center>';
-	newpoint.style.padding = '2px';
 	if (id.hasOwnProperty('img')){
 		newpoint.innerHTML += '<center><img src="'+id.img+'" height="100px"></center>';
 	}
@@ -58,7 +55,6 @@ function tooltip(id){
 		newpoint.innerHTML += id.desc;
 	}
 	// final
-	newpoint.id = "current_tooltip";
 	document.getElementById("bigmap").appendChild(newpoint);
 	return console.log(id);
 }
