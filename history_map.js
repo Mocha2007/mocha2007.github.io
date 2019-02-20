@@ -37,13 +37,13 @@ function range2dates(r){
 }
 
 function tooltip(id){
-	// "use strict";
-	console.log(id);
+	"use strict";
+	// console.log(id);
 	// bigmap
-	newpoint = document.createElement("div");
+	var newpoint = document.createElement("div");
 	// newpoint.classList.value = "box";
-	y = id.periods[0];
-	coords = uncorrected_coord2px(y.coords);
+	var y = id.periods[0];
+	var coords = uncorrected_coord2px(y.coords);
 	newpoint.style.backgroundColor = "white";
 	newpoint.style.position = "absolute";
 	newpoint.style.top = coords[0]+25 + "px";
@@ -51,7 +51,7 @@ function tooltip(id){
 	newpoint.style.border = '1px solid black';
 	newpoint.innerHTML = '<b>' + id.name + '</b>';
 	newpoint.style.padding = '2px';
-	//newpoint.innerHTML = '<br/><img src="">';
+	// todo newpoint.innerHTML = '<br/><img src="">';
 	newpoint.innerHTML += '<br/>' + id.desc;
 	// final
 	newpoint.id = "current_tooltip";
