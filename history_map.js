@@ -36,6 +36,10 @@ function range2dates(r){
 	return begin + '-' +end;
 }
 
+function tooltip(id){
+	return console.log(id);
+}
+
 function bigmap(){
 	"use strict";
 	var bottom_right_coords, coords, newlink, newpoint, period_specific_info, wants;
@@ -76,6 +80,9 @@ function bigmap(){
 			newpoint.style.position = "absolute";
 			newpoint.style.top = coords[0] + "px";
 			newpoint.style.left = coords[1] + "px";
+			// tooltip
+			newpoint.onmouseover = unused => tooltip(x.name);
+			// final
 			newlink.appendChild(newpoint);
 			document.getElementById("bigmap").appendChild(newlink);
 		});
