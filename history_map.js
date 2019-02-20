@@ -60,9 +60,9 @@ function tooltip(id){
 
 function bigmap(){
 	"use strict";
-	var bottom_right_coords, coords, newlink, newpoint, period_specific_info, wants;
+	var bottom_right_coords, coords, newlink, newpoint, period_specific_info;
+	var wants = document.getElementById("date").value;
 	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="'+map_src+'" width="'+mapsize+'">';
-	wants = document.getElementById("date").value;
 	features.forEach(function(x){
 		period_specific_info = '';
 		x.period_info.forEach(function(y){
