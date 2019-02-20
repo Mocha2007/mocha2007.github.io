@@ -54,8 +54,11 @@ function tooltip(id){
 	if (id.hasOwnProperty('img')){
 		newpoint.innerHTML += '<br/><center><img src="'+id.img+'" height="100px"></center>';
 	}
+	else if (id.hasOwnProperty('desc')){
+		newpoint.innerHTML += '<br/>';
+	}
 	if (id.hasOwnProperty('desc')){
-		newpoint.innerHTML += '<br/>' + id.desc;
+		newpoint.innerHTML += id.desc;
 	}
 	// final
 	newpoint.id = "current_tooltip";
@@ -867,6 +870,7 @@ var features = [
 		],
 		period_info: [],
 		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Copper_knife%2C_spearpoints%2C_awls%2C_and_spud%2C_Late_Archaic_period%2C_Wisconsin%2C_3000_BC-1000_BC_-_Wisconsin_Historical_Museum_-_DSC03436.JPG",
 		source: "https://en.wikipedia.org/wiki/Old_Copper_Complex"
 	},
 	{
@@ -1944,6 +1948,7 @@ var features = [
 		],
 		period_info: [],
 		color: "red",
+		img: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Sechin_casma_valley.JPG",
 		source: "https://en.wikipedia.org/wiki/Sechin_Bajo"
 	},
 	{
@@ -2154,6 +2159,7 @@ var features = [
 		],
 		period_info: [],
 		color: "red",
+		img: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Watson_Brake_Aerial_Illustration_HRoe_2014.jpg",
 		source: "https://en.wikipedia.org/wiki/Watson_Brake"
 	},
 	// beyond cities and nations and cultures...
@@ -2337,6 +2343,7 @@ var features = [
 		period_info: [],
 		desc: "Natural mummy",
 		color: "cyan",
+		img: "https://upload.wikimedia.org/wikipedia/en/1/1d/OetzitheIceman02.jpg",
 		source: "https://en.wikipedia.org/wiki/Ötzi"
 	},
 	{
