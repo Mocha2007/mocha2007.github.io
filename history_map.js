@@ -236,6 +236,7 @@ var features = [
 		],
 		period_info: [],
 		color: "#CFA7F8",
+		img: "https://upload.wikimedia.org/wikipedia/commons/c/c7/Museum_für_Vor-_und_Frühgeschichte_Berlin_034.jpg",
 		source: "https://en.wikipedia.org/wiki/Baden_culture"
 	},
 	{
@@ -377,6 +378,7 @@ var features = [
 		],
 		period_info: [],
 		color: "purple",
+		img: "https://upload.wikimedia.org/wikipedia/commons/d/d6/CombCeramicPottery.jpg",
 		source: "https://en.wikipedia.org/wiki/Pit–Comb_Ware_culture"
 	},
 	{
@@ -589,6 +591,7 @@ var features = [
 		],
 		period_info: [],
 		color: "#FDBAAF",
+		img: "https://upload.wikimedia.org/wikipedia/commons/6/67/GlobularAmphoraPiatraNeamt.JPG",
 		source: "https://en.wikipedia.org/wiki/Globular_Amphora_culture"
 	},
 	{
@@ -1194,6 +1197,7 @@ var features = [
 		],
 		period_info: [],
 		color: "#F8F885",
+		img: "https://upload.wikimedia.org/wikipedia/commons/1/18/Yamna01.jpg",
 		source: "https://en.wikipedia.org/wiki/Yamnaya_culture"
 	},
 	{
@@ -1249,6 +1253,7 @@ var features = [
 		],
 		period_info: [],
 		color: "red",
+		img: "https://upload.wikimedia.org/wikipedia/commons/1/1c/Diros-cave-greece_16269357444_o.jpg",
 		source: "https://en.wikipedia.org/wiki/Alepotrypa_cave"
 	},
 	{
@@ -1301,6 +1306,7 @@ var features = [
 		],
 		period_info: [],
 		color: "red",
+		img: "https://upload.wikimedia.org/wikipedia/commons/a/a7/The_Acropolis_of_Athens_viewed_from_the_Hill_of_the_Muses_(14220794964).jpg",
 		source: "https://en.wikipedia.org/wiki/Athens"
 	},
 	{
@@ -1430,8 +1436,9 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "Passage Graves",
+		desc: "Neolithic archaeological complex including monuments and passage graves",
 		color: "red",
+		img: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Newgrange.JPG",
 		source: "https://en.wikipedia.org/wiki/Brú_na_Bóinne"
 	},
 	{
@@ -1492,6 +1499,8 @@ var features = [
 		],
 		period_info: [],
 		color: "red",
+		desc: "Settlement",
+		img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/01_Cukurici_Höyük.tif/lossy-page1-800px-01_Cukurici_Höyük.tif.jpg",
 		source: "https://en.wikipedia.org/wiki/Çukuriçi_Höyük"
 	},
 	{
@@ -1584,6 +1593,7 @@ var features = [
 		],
 		period_info: [],
 		color: "red",
+		img: "https://upload.wikimedia.org/wikipedia/commons/5/57/Franchthi_Cave_from_Koilada_Argolidas.jpg",
 		source: "https://en.wikipedia.org/wiki/Franchthi_Cave"
 	},
 	{
@@ -1651,6 +1661,7 @@ var features = [
 		period_info: [],
 		desc: "Sanctuary and Necropolis",
 		color: "red",
+		img: "https://upload.wikimedia.org/wikipedia/commons/0/06/Photo_Ellis_Hal_Salflieni.jpg",
 		source: "https://en.wikipedia.org/wiki/Ħal-Saflieni_Hypogeum"
 	},
 	{
@@ -1716,8 +1727,9 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "Neolithic-Bronze Age flint mine complex",
+		desc: "Neolithic to Bronze Age flint mine complex",
 		color: "red",
+		img: "https://upload.wikimedia.org/wikipedia/commons/4/41/Krzemionki.JPG",
 		source: "https://en.wikipedia.org/wiki/Krzemionki"
 	},
 	{
@@ -1784,6 +1796,7 @@ var features = [
 		period_info: [],
 		desc: "Chalcolithic temple and burial complex",
 		color: "red",
+		img: "http://photos.wikimapia.org/p/00/03/70/35/44_big.jpg",
 		source: "https://en.wikipedia.org/wiki/Merheleva_Ridge"
 	},
 	{
@@ -1928,6 +1941,7 @@ var features = [
 		period_info: [],
 		desc: "Mountain Pass",
 		color: "red",
+		img: "https://upload.wikimedia.org/wikipedia/commons/5/51/Aufstieg_wildhornhuette.jpg",
 		source: "https://en.wikipedia.org/wiki/Schnidejoch"
 	},
 	{
@@ -2113,6 +2127,7 @@ var features = [
 		period_info: [],
 		desc: "Funerary Complex",
 		color: "red",
+		img: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Hypogée_de_Xaghra.jpg",
 		source: "https://en.wikipedia.org/wiki/Xagħra_Stone_Circle"
 	},
 	{
