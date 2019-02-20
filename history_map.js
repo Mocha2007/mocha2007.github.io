@@ -49,13 +49,10 @@ function tooltip(id){
 	newpoint.style.top = coords[0]+25 + "px";
 	newpoint.style.left = coords[1]+25 + "px";
 	newpoint.style.border = '1px solid black';
-	newpoint.innerHTML = '<b>' + id.name + '</b>';
+	newpoint.innerHTML = '<center><b>' + id.name + '</b></center>';
 	newpoint.style.padding = '2px';
 	if (id.hasOwnProperty('img')){
-		newpoint.innerHTML += '<br/><center><img src="'+id.img+'" height="100px"></center>';
-	}
-	else if (id.hasOwnProperty('desc')){
-		newpoint.innerHTML += '<br/>';
+		newpoint.innerHTML += '<center><img src="'+id.img+'" height="100px"></center>';
 	}
 	if (id.hasOwnProperty('desc')){
 		newpoint.innerHTML += id.desc;
