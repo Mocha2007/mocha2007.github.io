@@ -56,7 +56,6 @@ function tooltip(id){
 	}
 	// final
 	document.getElementById("bigmap").appendChild(newpoint);
-	return console.log(id);
 }
 
 function bigmap(){
