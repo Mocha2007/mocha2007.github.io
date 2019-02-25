@@ -16,17 +16,17 @@ function freqcalc(){
 		}
 	}
 	var s = 0;
-	for (var i in alphabet){
-		letter = alphabet[i];
+	for (var j in alphabet){
+		letter = alphabet[j];
 		count = (bigdick.match(new RegExp(letter,'g')) || []).length;
 		letterindex[letter] = count;
 		s += count;
 	}
 	document.getElementById('lettercount').innerHTML = s;
 	document.getElementById('wordcount').innerHTML = (bigdick.match(/\s/g)).length;
-	for (var i in letterindex){
-		letterindex[i] = letterindex[i]/s;
-		letterindex[i] = Math.round(letterindex[i]*100000)/1000;
+	for (var k in letterindex){
+		letterindex[k] = letterindex[k]/s;
+		letterindex[k] = Math.round(letterindex[k]*100000)/1000;
 	}
 	return letterindex;
 }
@@ -169,9 +169,9 @@ function vowelstats(){
 	var vowels = getvowels(bigdick).map(getIPA); // array of all vowels used
 	var newrow, v;
 	var summation = 0;
-	for (var i in vowels){
+	for (var j in vowels){
 		summation += 1;
-		v = vowels[i];
+		v = vowels[j];
 		if (document.getElementById(v) === null){
 			newrow = document.createElement("tr");
 			newrow.id = v;
@@ -184,8 +184,8 @@ function vowelstats(){
 	}
 	document.getElementById('vcount').innerHTML = summation;
 	var colstring, element, fraction, percentage;
-	for (var i in document.getElementById("vowelstats").getElementsByTagName("tr")){
-		element = document.getElementById("vowelstats").getElementsByTagName("tr")[i];
+	for (var k in document.getElementById("vowelstats").getElementsByTagName("tr")){
+		element = document.getElementById("vowelstats").getElementsByTagName("tr")[k];
 		if (element.childNodes !== undefined){
 			percentage = element.childNodes[1];
 			if (percentage.innerHTML !== 'Vowel'){
