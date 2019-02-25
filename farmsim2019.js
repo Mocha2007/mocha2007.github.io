@@ -146,10 +146,10 @@ function damage(){
 
 function main(){
 	"use strict";
-	if (targetHealth<=0){
+	if (targetHealth <= 0){
 		topElement.innerHTML = '<h1 class="red">YOU LOSE!</h1><h1>Score: '+score+'</h1>';
 	}
-	else if (!paused){	
+	else if (!paused){
 		// increment the clock
 		clock+=1;
 

@@ -23,11 +23,11 @@ function MakeTOC() {
 			depth = namedheaders[i].tagName.slice(-1);
 		}
 		text+='<span class="nav'+depth+'"><a href="#'+namedheaders[i].id+'">'+formattedname+'</a></span><br>';
-		console.log('\t'.repeat(parseInt(depth)-1),formattedname);
+		console.log('\t'.repeat(parseInt(depth, 10)-1),formattedname);
 	}
 	text+='</details>';
 	
 	document.getElementById("nav").innerHTML = text;
-};
+}
 
 window.onload = MakeTOC;

@@ -127,14 +127,11 @@ function darian(){
 	var tn = n;
 	var marsy = 0;
 	var marsd;
-	while (true){
-		if (tn<dhelp(marsy+1)){
-			marsd = tn;
-			break;
-		}
+	while (dhelp(marsy+1) <= tn){
 		tn -= dhelp(marsy+1);
 		marsy += 1;
 	}
+	marsd = tn;
 	var marsmonth = marsmonths[dhelp3(marsd)[0]];
 	var marsday = dhelp3(marsd)[1]+1;
 	var marshour = dhelp3(marsd)[2];

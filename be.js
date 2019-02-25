@@ -1,5 +1,4 @@
 var alphabet = 'abcdefghijklmnopqrstuvwxyz';
-var i;
 
 function freqcalc(){
 	"use strict";
@@ -7,7 +6,7 @@ function freqcalc(){
 	var corpus, count, letter;
 	var bigdick = '';
 	var corpora = document.getElementsByClassName('corpus');
-	for (i in corpora){
+	for (var i in corpora){
 		corpus = corpora[i];
 		try {
 			bigdick += corpus.innerHTML.toLowerCase();
@@ -17,7 +16,7 @@ function freqcalc(){
 		}
 	}
 	var s = 0;
-	for (i in alphabet){
+	for (var i in alphabet){
 		letter = alphabet[i];
 		count = (bigdick.match(new RegExp(letter,'g')) || []).length;
 		letterindex[letter] = count;
@@ -25,7 +24,7 @@ function freqcalc(){
 	}
 	document.getElementById('lettercount').innerHTML = s;
 	document.getElementById('wordcount').innerHTML = (bigdick.match(/\s/g)).length;
-	for (i in letterindex){
+	for (var i in letterindex){
 		letterindex[i] = letterindex[i]/s;
 		letterindex[i] = Math.round(letterindex[i]*100000)/1000;
 	}
@@ -43,7 +42,7 @@ function tabledelta(){
 	"use strict";
 	var child,bef,aft;
 	var t = document.getElementById('letterstats');
-	for (i in t.children[0].children){
+	for (var i in t.children[0].children){
 		child = t.children[0].children[i];
 		try {
 			if (child.className !== ""){
@@ -158,7 +157,7 @@ function vowelstats(){
 	var corpus, count, letter;
 	var bigdick = '';
 	var corpora = document.getElementsByClassName('corpus');
-	for (i in corpora){
+	for (var i in corpora){
 		corpus = corpora[i];
 		try {
 			bigdick += corpus.innerHTML.toLowerCase();
@@ -170,7 +169,7 @@ function vowelstats(){
 	var vowels = getvowels(bigdick).map(getIPA); // array of all vowels used
 	var newrow, v;
 	var summation = 0;
-	for (i in vowels){
+	for (var i in vowels){
 		summation += 1;
 		v = vowels[i];
 		if (document.getElementById(v) === null){
@@ -185,7 +184,7 @@ function vowelstats(){
 	}
 	document.getElementById('vcount').innerHTML = summation;
 	var colstring, element, fraction, percentage;
-	for (i in document.getElementById("vowelstats").getElementsByTagName("tr")){
+	for (var i in document.getElementById("vowelstats").getElementsByTagName("tr")){
 		element = document.getElementById("vowelstats").getElementsByTagName("tr")[i];
 		if (element.childNodes !== undefined){
 			percentage = element.childNodes[1];

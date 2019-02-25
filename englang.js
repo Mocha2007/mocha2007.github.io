@@ -13,14 +13,9 @@ function parse(){
 		x = input.pop();
 		if (x !== ''){
 			valency = 0;
-			while (true){
-				if (input[input.length-1] === 'ba'){
-					input.pop();
-					valency += 1;
-				}
-				else {
-					break;
-				}
+			while (input[input.length-1] === 'ba'){
+				input.pop();
+				valency += 1;
 			}
 			stack.push('<span class="v'+valency+'">'+x+'</span>');
 		}

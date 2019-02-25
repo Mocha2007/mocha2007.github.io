@@ -31,8 +31,8 @@ function int2date(int){
 
 function range2dates(r){
 	"use strict";
-	var begin = int2date(r[0]) == '9999 BCE' ? '' : int2date(r[0]);
-	var end = int2date(r[1]) == 9999 ? '' : int2date(r[1]);
+	var begin = int2date(r[0]) === '9999 BCE' ? '' : int2date(r[0]);
+	var end = int2date(r[1]) === 9999 ? '' : int2date(r[1]);
 	return begin + '-' +end;
 }
 
@@ -79,7 +79,7 @@ function bigmap(){
 			newlink = document.createElement("a");
 			newlink.href = x.source;
 			newpoint = document.createElement("div");
-			if (x.type == 'point'){
+			if (x.type === 'point'){
 				newpoint.classList.value = "point";
 				coords = coord2px(y.coords);
 				newpoint.style.height = pointsize+'px';

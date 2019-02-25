@@ -39,7 +39,7 @@ function coord2px(coords){
 
 function obj2string(obj){
 	"use strict";
-	if (obj === undefined){
+	if (typeof obj === 'undefined'){
 		return "";
 	}
 	obj = JSON.stringify(obj);
@@ -148,7 +148,7 @@ function bigmap(){
 		}
 		if (document.getElementById("b_tag").checked){
 			wants = document.getElementById("b_tag_text").value.toLowerCase();
-			hastag = (x.tags !== undefined) && x.tags.includes(wants);
+			hastag = (typeof x.tags !== 'undefined') && x.tags.includes(wants);
 
 			switch (document.getElementById("b_tag_select").value){
 				case "w":
@@ -164,7 +164,7 @@ function bigmap(){
 		if (document.getElementById("b_feature").checked){
 			wants = document.getElementById("b_feature_text").value.toLowerCase();
 			wants2 = document.getElementById("b_feature_text2").value.toLowerCase();
-			hastag = (x.features !== undefined) && (x.features[wants] !== undefined);
+			hastag = (typeof x.features !== 'undefined') && (typeof x.features[wants] !== 'undefined');
 
 			if (hastag){
 				conditional = conditional && (x.features[wants].toString() === wants2);
@@ -188,8 +188,7 @@ function bigmap(){
 				}
 				else {
 					// https://stackoverflow.com/a/16735184/2579798
-					var property;
-					for (property in x.features){
+					for (var property in x.features){
 						if (x.features.hasOwnProperty(property)){ // just in case
 							if (commonf.hasOwnProperty(property)){
 								if (commonf[property] !== x.features[property]){
@@ -233,7 +232,7 @@ function bigmap(){
 		newrow = document.createElement("tr");
 		newrow.id = "row_"+x.name.replace(" ","_");
 		// determine whether there is a single or multiple source
-		if (x.sources !== undefined){
+		if (typeof x.sources !== 'undefined'){
 			sources = "";
 			for (var sourcen in range(x.sources.length)){
 				console.log(sourcen);
@@ -3268,14 +3267,14 @@ var lang = [
 
 lang.forEach(function(x){
 	// generate OSV - OS OV SV
-	if ((x.features !== undefined) && (x.features.sov !== undefined) && (x.features.sov.length === 3)){
+	if ((typeof x.features !== 'undefined') && (typeof x.features.sov !== 'undefined') && (x.features.sov.length === 3)){
 		// OwO
 		x.features.os = x.features.sov.replace("v", "");
 		x.features.ov = x.features.sov.replace("s", "");
 		x.features.sv = x.features.sov.replace("o", "");
 	}
 	// generate case count
-	if ((x.features !== undefined) && (x.features.cases !== undefined)){
+	if ((typeof x.features !== 'undefined') && (typeof x.features.cases !== 'undefined')){
 		// https://stackoverflow.com/a/4009768/2579798
 		x.features.casen = (x.features.cases.match(/\s/g) || []).length + 1;
 	}

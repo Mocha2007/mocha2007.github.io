@@ -60,12 +60,10 @@ function n2n(name){ // name to number
 function n2n2(n){ // number to name
 	"use strict";
 	var day, i;
-	var month = 1;
 	for (i = 12; i > 0; i -= 1){
 		if (n > offset[i]){
-			month = i;
 			day = n - offset[i];
-			return day+' '+proper(months[month]);
+			return day+' '+proper(months[i]);
 		}
 	}
 	return (n+1)+' Jan';
@@ -75,7 +73,7 @@ function n2n2(n){ // number to name
 function realsize(x){
 	"use strict";
 	return x.filter(function(value){
-		return value !== undefined;
+		return typeof value !== 'undefined';
 	}).length;
 }
 
