@@ -519,7 +519,7 @@ function run(){
 	console.log('Load');
 	// Bad Practices
 	// blank
-	if (program==''){
+	if (program === ''){
 			console.warn('No Program');
 			mconsole('w','No Program');
 	}
@@ -539,9 +539,9 @@ function reset(){
 	
 	//table construction
 	var tabularasa = '<table>';
-	for (i=0;i<xsize;i+=1) {
+	for (var i=0;i<xsize;i+=1) {
 		tabularasa+='<tr>';
-		for (j=0;j<ysize;j+=1) {
+		for (var j=0;j<ysize;j+=1) {
 			tabularasa+='<td id="x'+Number(i*ysize+j)+'">0</td>';
 		}
 		tabularasa+='</tr>';
@@ -561,7 +561,7 @@ function reset(){
 }
 
 function fstep100(){
-	for (i=0;i<100;i+=1){
+	for (var i=0;i<100;i+=1){
 		fstep();
 	}
 	return false;
@@ -574,7 +574,7 @@ function fstep(){
 	// Determining the command
 	var command = program[linenumber];
 	// Reject
-	if (command===undefined || command===''){
+	if (typeof command === 'undefined' || command===''){
 		if (document.getElementById('console').innerHTML.slice(-44)!=='<span class="ci">info</span>: End of Program'){
 			mconsole('i','End of Program');
 		}
@@ -771,7 +771,7 @@ function fstep(){
 		console.log(arg);
 		var rpnstack = [];
 		var currentstring = '';
-		var arg = arg.replace("*",specialstate).replace("$",pointer).replace("@",specialtarget);
+		arg = arg.replace("*",specialstate).replace("$",pointer).replace("@",specialtarget);
 		// Go through vals
 		for (i=0;i<arg.length;i+=1){
 			// Check if NaN
