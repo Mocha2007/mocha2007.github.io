@@ -560,13 +560,6 @@ function reset(){
 	console.log('Reset');
 }
 
-function fstep100(){
-	for (var i=0;i<100;i+=1){
-		fstep();
-	}
-	return false;
-}
-
 // Main
 
 function fstep(){
@@ -773,7 +766,7 @@ function fstep(){
 		var currentstring = '';
 		arg = arg.replace("*",specialstate).replace("$",pointer).replace("@",specialtarget);
 		// Go through vals
-		for (i=0;i<arg.length;i+=1){
+		for (var i=0;i<arg.length;i+=1){
 			// Check if NaN
 			if (rpnstack.length>0 && !Number.isFinite(rpnstack[rpnstack.length-1])){
 				console.error('RPN error performing '+arg[i-1]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(i).join(" ")+'^');
@@ -1351,5 +1344,12 @@ function fstep(){
 	}}
 	document.getElementById('pointing').innerHTML=pointer;
 	document.getElementById('x'+pointer).classList.add("pointed");
+	return false;
+}
+
+function fstep100(){
+	for (var i=0;i<100;i+=1){
+		fstep();
+	}
 	return false;
 }
