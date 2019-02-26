@@ -209,7 +209,7 @@ function fstep(){
 	// Determining the command
 	command = commandlist[line];
 	// Reject
-	if (command===undefined || command===''){
+	if (typeof command === 'undefined' || command===''){
 		if (document.getElementById('console').innerHTML.slice(-44)!=='<span class="ci">info</span>: End of Program'){
 			a = stack.join('');
 			mconsole('o',a);
