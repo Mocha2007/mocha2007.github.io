@@ -186,7 +186,7 @@ function vowelstats(){
 	var colstring, element, fraction, percentage;
 	for (var k in document.getElementById("vowelstats").getElementsByTagName("tr")){
 		element = document.getElementById("vowelstats").getElementsByTagName("tr")[k];
-		if (element.childNodes !== undefined){
+		if (typeof element.childNodes !== 'undefined'){
 			percentage = element.childNodes[1];
 			if (percentage.innerHTML !== 'Vowel'){
 				fraction = Number(percentage.innerHTML) / summation;

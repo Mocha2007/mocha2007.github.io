@@ -23,7 +23,7 @@ function union(a, b){
 
 // https://stackoverflow.com/a/1026087/2579798
 function proper(string){
-    return string.charAt(0).toUpperCase() + string.slice(1);
+	return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function range(n){
@@ -603,7 +603,7 @@ var lang = [
 		monophthongs: "i i: u u: o: a a:",
 		diphthongs: "",
 		features: {
-		    cases: "acc gen nom",
+			cases: "acc gen nom",
 			gender: 2,
 			genders: "fm",
 			cumin: "cumin",
