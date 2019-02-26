@@ -939,8 +939,8 @@ function fstep(){
 				rpnstack.pop();
 			}
 			else if (arg[i]==='"'){
-				for (k=0;k<2;k+=1){
-					for (j=0;j<rpnstack.length;j+=1){
+				for (var k=0;k<2;k+=1){
+					for (var j=0;j<rpnstack.length;j+=1){
 						rpnstack[j] = rpnstack[j]*(rpnstack.length-1-j);
 					}
 					rpnstack.pop();
