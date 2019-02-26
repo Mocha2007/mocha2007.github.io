@@ -586,7 +586,7 @@ function fstep(){
 			// $ accept next line of input. if no input, then zero.
 			case '$':
 				a = document.getElementById('input').value.split("\n")[inputline];
-				if (a==='' || a===undefined){
+				if (a==='' || typeof a==='undefined'){
 					stack.push(0);
 					warn('superfluous $');
 				}
@@ -768,8 +768,8 @@ function fstep(){
 					a = stack.pop();
 					// use charcode if b is string
 					if (typeof b === 'string'){
-					    if (b.length > 1){ // strings use length
-						    b = b.length;
+						if (b.length > 1){ // strings use length
+							b = b.length;
 						}
 					    else { // chars use value
 						    b = b.charCodeAt(0);
@@ -1415,7 +1415,7 @@ function fstep(){
 					return err('use of z on non-array');
 				}
 				// for each list item, delete if falsey
-				a = a.filter((i)=>i);
+				a = a.filter((i)=> i);
 				stack.push(a);
 				break;
 			// { begin loop

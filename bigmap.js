@@ -582,7 +582,7 @@ var lang = [
 		monophthongs: "i u e o E O a i~ u~ e~ o~ {~ O~ a~",
 		diphthongs: "ae ai ao au {e {o ei eu ii iu oe oi oo ou ui",
 		features: {
-		    cases: "gen loc nom obj",
+			cases: "gen loc nom obj",
 			gender: 0,
 			sov: "sov",
 			cumin: "other",
