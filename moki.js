@@ -771,8 +771,8 @@ function fstep(){
 						if (b.length > 1){ // strings use length
 							b = b.length;
 						}
-					    else { // chars use value
-						    b = b.charCodeAt(0);
+						else { // chars use value
+							b = b.charCodeAt(0);
 						}
 					}
 					// err if b is array
@@ -1415,7 +1415,7 @@ function fstep(){
 					return err('use of z on non-array');
 				}
 				// for each list item, delete if falsey
-				a = a.filter((i)=> i);
+				a = a.filter((i) => i);
 				stack.push(a);
 				break;
 			// { begin loop
