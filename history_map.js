@@ -2169,6 +2169,20 @@ var features = [
 		img: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Watson_Brake_Aerial_Illustration_HRoe_2014.jpg",
 		source: "https://en.wikipedia.org/wiki/Watson_Brake"
 	},
+	{
+		name: "Wieliczka Salt Mine",
+		type: "point",
+		periods: [
+			{
+				year_range: [1200, 2007],
+				coords: [50, 20],
+			},
+		],
+		period_info: [],
+		color: "red",
+		img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Wieliczka_salt_mine.jpg/260px-Wieliczka_salt_mine.jpg",
+		source: "https://en.wikipedia.org/wiki/Wieliczka_Salt_Mine"
+	},
 	// beyond cities and nations and cultures...
 	{
 		name: "Cheddar Man",
