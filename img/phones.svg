@@ -66,12 +66,12 @@
 	<!-- todo rhotic -->
 
 	<a href='https://en.wikipedia.org/wiki/Flap_consonant'>
-		<rect x="660" y="440" width="220" height="100" fill="blue"/>
+		<rect x="660" y="440" width="220" height="120" fill="blue"/>
 		<text class="light" x="660" y="460">Tap</text>
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Trill_consonant'>
-		<rect x="900" y="440" width="220" height="100" fill="blue"/>
+		<rect x="900" y="440" width="220" height="120" fill="blue"/>
 		<text class="light" x="900" y="460">Trill</text>
 	</a>
 
