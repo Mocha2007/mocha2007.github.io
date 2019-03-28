@@ -1,0 +1,171 @@
+<?xml version="1.0" standalone="no"?>
+<!--Distance Scale: 100 Pixels = 1 Au-->
+<!--Size Scale: Pixels = ln(radius in meters) -->
+<svg width="1200" height="800" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<desc>Phones</desc>
+	
+	<style>
+		svg{font-family:"Verdana";}
+		text{fill:black;font-size:24px;opacity:0.6;}
+		rect{opacity:0.8;}
+		.light{fill:white!important;}
+		.phone text{fill:black;opacity:1;}
+	</style>
+
+	<a href='https://en.wikipedia.org/wiki/Phone_(phonetics)'>
+		<rect x="0" y="0" width="1200" height="800" fill="black"/>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Obstruent'>
+		<rect x="0" y="0" width="600" height="800" fill="orange"/>
+		<text x="0" y="20">Obstruent</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Sonorant'>
+		<rect x="600" y="0" width="600" height="800" fill="blue"/>
+		<text class="light" x="600" y="20">Sonorant</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Consonant'>
+		<rect x="20" y="20" width="1160" height="580" fill="green"/>
+		<rect x="20" y="600" width="560" height="180" fill="green"/>
+		<text x="20" y="40">Consonant</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Vowel'>
+		<rect x="620" y="620" width="560" height="160" fill="red"/>
+		<text x="620" y="640">Vowel</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Nasal_consonant'>
+		<rect x="620" y="40" width="540" height="160" fill="yellow"/>
+		<text x="620" y="60">Nasal</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Approximant_consonant'>
+		<rect x="620" y="220" width="540" height="160" fill="purple"/>
+		<text x="620" y="240">Approximant</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Semivowel'>
+		<rect x="900" y="240" width="240" height="120" fill="red"/>
+		<text x="900" y="260">Semivowel</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Vibrant_consonant'>
+		<rect x="620" y="400" width="540" height="180" fill="cyan"/>
+		<text x="620" y="420">Vibrant</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Liquid_consonant'>
+		<rect x="750" y="240" width="140" height="180" fill="red"/>
+		<rect x="640" y="420" width="500" height="140" fill="red"/>
+		<text x="750" y="260">Liquid</text>
+	</a>
+	
+	<!-- todo rhotic -->
+
+	<a href='https://en.wikipedia.org/wiki/Flap_consonant'>
+		<rect x="660" y="440" width="220" height="100" fill="blue"/>
+		<text class="light" x="660" y="460">Tap</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Trill_consonant'>
+		<rect x="900" y="440" width="220" height="100" fill="blue"/>
+		<text class="light" x="900" y="460">Trill</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Stop_consonant'>
+		<rect x="40" y="40" width="540" height="160" fill="yellow"/>
+		<text x="40" y="60">Stop</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Affricate_consonant'>
+		<rect x="40" y="220" width="540" height="160" fill="purple"/>
+		<text x="40" y="240">Affricate</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Fricative_consonant'>
+		<rect x="40" y="400" width="520" height="360" fill="cyan"/>
+		<text x="40" y="420">Fricative</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Silibant'>
+		<rect x="60" y="600" width="480" height="140" fill="red"/>
+		<text x="60" y="620">Silibant</text>
+	</a>
+	
+	<g class="phone">
+		<a href='https://en.wikipedia.org/wiki/Open_front_unrounded_vowel'>
+			<text x="880" y="700">a</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Voiced_bilabial_stop'>
+			<text x="390" y="140">b</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Voiceless_palatal_stop'>
+			<text x="150" y="150">c</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Voiced_alveolar_stop'>
+			<text x="310" y="80">d</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Close-mid_front_unrounded_vowel'>
+			<text x="660" y="740">e</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Voiceless_labiodental_fricative'>
+			<text x="210" y="500">f</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Voiced_velar_stop'>
+			<text x="520" y="70">g</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Voiceless_glottal_fricative'>
+			<text x="680" y="310">h</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Close_front_unrounded_vowel'>
+			<text x="1104" y="720">i</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Palatal_approximant'>
+			<text x="960" y="320">j</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Voiceless_velar_stop'>
+			<text x="260" y="160">k</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Alveolar_lateral_approximant'>
+			<text x="820" y="320">l</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Bilabial_nasal'>
+			<text x="750" y="110">m</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Alveolar_nasal'>
+			<text x="1000" y="150">n</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Alveolar_trill'>
+			<text class="light" x="1050" y="480">r</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Alveolar_flap'>
+			<text class="light" x="720" y="500">ɾ</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Voiceless_alveolar_sibilant'>
+			<text x="220" y="680">s</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Voiceless_palato-alveolar_affricate'>
+			<text x="320" y="310">tʃ</text>
+		</a>
+	</g>
+</svg>
