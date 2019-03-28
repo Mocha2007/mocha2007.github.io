@@ -59,7 +59,7 @@
 
 	<a href='https://en.wikipedia.org/wiki/Liquid_consonant'>
 		<rect x="750" y="240" width="140" height="180" fill="red"/>
-		<rect x="640" y="420" width="500" height="140" fill="red"/>
+		<rect x="640" y="420" width="500" height="70" fill="red"/>
 		<text x="750" y="260">Liquid</text>
 	</a>
 	
@@ -157,7 +157,7 @@
 		</a>
 
 		<a href='https://en.wikipedia.org/wiki/Alveolar_flap'>
-			<text class="light" x="720" y="500">ɾ</text>
+			<text class="light" x="720" y="480">ɾ</text>
 		</a>
 
 		<a href='https://en.wikipedia.org/wiki/Voiceless_alveolar_sibilant'>
@@ -166,6 +166,14 @@
 
 		<a href='https://en.wikipedia.org/wiki/Voiceless_palato-alveolar_affricate'>
 			<text x="320" y="310">tʃ</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Labiodental_flap'>
+			<text class="light" x="810" y="510">ⱱ</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Voiced_epiglottal_trill'>
+			<text class="light" x="1000" y="520">ʢ</text>
 		</a>
 	</g>
 </svg>
