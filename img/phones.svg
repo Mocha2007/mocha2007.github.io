@@ -90,9 +90,9 @@
 		<text x="40" y="420">Fricative</text>
 	</a>
 
-	<a href='https://en.wikipedia.org/wiki/Silibant'>
-		<rect x="60" y="600" width="480" height="140" fill="red"/>
-		<text x="60" y="620">Silibant</text>
+	<a href='https://en.wikipedia.org/wiki/Sibilant'>
+		<rect x="380" y="240" width="160" height="500" fill="red"/>
+		<text x="380" y="260">Sibilant</text>
 	</a>
 	
 	<g class="phone">
@@ -161,11 +161,11 @@
 		</a>
 
 		<a href='https://en.wikipedia.org/wiki/Voiceless_alveolar_sibilant'>
-			<text x="220" y="680">s</text>
+			<text x="430" y="680">s</text>
 		</a>
 
 		<a href='https://en.wikipedia.org/wiki/Voiceless_palato-alveolar_affricate'>
-			<text x="320" y="310">tʃ</text>
+			<text x="420" y="310">tʃ</text>
 		</a>
 
 		<a href='https://en.wikipedia.org/wiki/Labiodental_flap'>
