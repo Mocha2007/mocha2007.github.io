@@ -48,6 +48,7 @@ var subtitles =	[
 				'I have seen the river.',
 				// quotations
 				'In theory, theory and practice are the same. In practice, they are not.',
+				'Sail Hatan!',
 				// media allusion
 				'Gluten-free Mocha: now with real sugar!',
 				'The fruitiest of all fruity-ass fruitbowls!',
