@@ -586,6 +586,22 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Ertebølle_culture"
 	},
 	{
+		name: "Etruria",
+		type: "box",
+		periods: [
+			{
+				year_range: [-750, -290],
+				coords: [43.7, 10.3],
+				bottom_right: [42.0, 12.4],
+			},
+		],
+		period_info: [],
+		desc: "Pre-Indo-European tribe",
+		color: "#CDCD65",
+		img: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Danseur_avec_une_coupe_de_vin_Tombe_oes_Leopards%2C_Tarquinia.jpg",
+		source: "https://en.wikipedia.org/wiki/Etruria"
+	},
+	{
 		name: "Folsom Culture",
 		type: "box",
 		periods: [
@@ -598,6 +614,22 @@ var features = [
 		period_info: [],
 		color: "orange",
 		source: "https://en.wikipedia.org/wiki/Folsom_tradition"
+	},
+	{
+		name: "Frentani",
+		type: "box",
+		periods: [
+			{
+				year_range: [-750, -49],
+				coords: [42.4, 14.1],
+				bottom_right: [41.8, 15.0],
+			},
+		],
+		period_info: [],
+		desc: "Italic tribe",
+		color: "yellow",
+		img: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Frentrum_Æ_sg0540.jpg",
+		source: "https://en.wikipedia.org/wiki/Sabines"
 	},
 	{
 		name: "Glacial Kame Culture",
@@ -792,6 +824,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Kongemose_culture"
 	},
 	{
+		name: "Ligures",
+		type: "box",
+		periods: [
+			{
+				year_range: [-750, -100],
+				coords: [44.7, 6.9],
+				bottom_right: [43.6, 10.1],
+			},
+		],
+		period_info: [],
+		desc: "Italic tribe",
+		color: "green",
+		source: "https://en.wikipedia.org/wiki/Ligures"
+	},
+	{
 		name: "Longshan Culture",
 		type: "box",
 		periods: [
@@ -804,6 +851,22 @@ var features = [
 		period_info: [],
 		color: "green",
 		source: "https://en.wikipedia.org/wiki/Longshan_culture"
+	},
+	{
+		name: "Lucani",
+		type: "box",
+		periods: [
+			{
+				year_range: [-750, -88],
+				coords: [40.8, 14.9],
+				bottom_right: [39.8, 16.7],
+			},
+		],
+		period_info: [],
+		desc: "Italic tribe",
+		color: "darkcyan",
+		img: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Grab_der_Granatäpfel_heimkehrender_Ritter.jpg",
+		source: "https://en.wikipedia.org/wiki/Lucanians"
 	},
 	{
 		name: "Magdalenian Culture",
@@ -973,6 +1036,21 @@ var features = [
 		period_info: [],
 		color: "brown",
 		source: "https://en.wikipedia.org/wiki/Proto-Villanovan_culture"
+	},
+	{
+		name: "Sabines",
+		type: "box",
+		periods: [
+			{
+				year_range: [-750, -468],
+				coords: [42.8, 12.4],
+				bottom_right: [41.9, 13.5],
+			},
+		],
+		period_info: [],
+		desc: "Italic tribe",
+		color: "green",
+		source: "https://en.wikipedia.org/wiki/Sabines"
 	},
 	{
 		name: "Samarra Culture",
@@ -1179,6 +1257,21 @@ var features = [
 		desc: "Country",
 		color: "blue",
 		source: "https://en.wikipedia.org/wiki/United_States"
+	},
+	{
+		name: "Veneti",
+		type: "box",
+		periods: [
+			{
+				year_range: [-750, -49],
+				coords: [46.3, 11.3],
+				bottom_right: [45.2, 13.6],
+			},
+		],
+		period_info: [],
+		desc: "Italic tribe",
+		color: "blue",
+		source: "https://en.wikipedia.org/wiki/Adriatic_Veneti"
 	},
 	{
 		name: "Villanovan Culture",
