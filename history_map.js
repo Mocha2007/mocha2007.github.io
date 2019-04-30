@@ -431,6 +431,22 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Corded_Ware_culture"
 	},
 	{
+		name: "Dacians",
+		type: "box",
+		periods: [
+			{
+				year_range: [-1000, 106], // estimate
+				coords: [48.4, 19.7],
+				bottom_right: [43.2, 30.8],
+			},
+		],
+		period_info: [],
+		desc: "Indo-European tribe",
+		color: "slateblue",
+		img: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Costantino_Dacia.JPG",
+		source: "https://en.wikipedia.org/wiki/Dacians"
+	},
+	{
 		name: "Dimini Culture",
 		type: "box",
 		periods: [
@@ -1180,6 +1196,22 @@ var features = [
 		period_info: [],
 		color: "pink",
 		source: "https://en.wikipedia.org/wiki/Terramare_culture"
+	},
+	{
+		name: "Thracians",
+		type: "box",
+		periods: [
+			{
+				year_range: [-1000, -168], // estimate
+				coords: [43.2, 23.2],
+				bottom_right: [40.6, 29.1],
+			},
+		],
+		period_info: [],
+		desc: "Indo-European tribe",
+		color: "brown",
+		img: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Xerxes_I_tomb_Skudrian_soldier_circa_470_BCE_cleaned_up.jpg",
+		source: "https://en.wikipedia.org/wiki/Thracians"
 	},
 	{
 		name: "Tumulus Culture",
