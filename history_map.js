@@ -999,7 +999,9 @@ var features = [
 			},
 		],
 		period_info: [],
+		desc: "Italic tribe",
 		color: "pink",
+		img: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Samnite_soldiers_from_a_tomb_frieze_in_Nola_4th_century_BCE.jpg",
 		source: "https://en.wikipedia.org/wiki/Samnites"
 	},
 	{
