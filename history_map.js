@@ -1,6 +1,15 @@
 var map_src = 'https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg';
+var euromap_src = 'https://upload.wikimedia.org/wikipedia/commons/9/90/Europe_satellite_image_location_map.jpg';
 var pointsize = 6;
 var mapsize = window.innerWidth - 32;
+var euromapcoords = [
+	[72, -25], // ULHC
+	[34,  60]  // BRHC
+];
+var maps = [
+	['bigmap'],
+	['bigeuromap', euromapcoords, 1.5, 2335],
+]
 
 function range(n){
 	return [...Array(n).keys()];
@@ -10,6 +19,16 @@ function uncorrected_coord2px(coords){
 	"use strict";
 	var x = coords[1] * mapsize/360 + mapsize/2;
 	var y = coords[0] * -mapsize/360 + mapsize/4;
+	return [y,x];
+}
+
+function inset_coord2px(coords, selected_map){
+	"use strict";
+	var inset_coords = selected_map[1];
+	var longitudes = inset_coords[1][1] - inset_coords[0][1]
+	var latitudes = inset_coords[0][0] - inset_coords[1][0]
+	var x = (coords[1] - inset_coords[0][1]) * mapsize/longitudes;
+	var y = (inset_coords[0][1] - coords[0]) * mapsize/latitudes/selected_map[2] + selected_map[3];
 	return [y,x];
 }
 
@@ -63,6 +82,7 @@ function bigmap(){
 	var bottom_right_coords, coords, newlink, newpoint, period_specific_info;
 	var wants = document.getElementById("date").value;
 	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="'+map_src+'" width="'+mapsize+'">';
+	document.getElementById("bigeuromap").innerHTML = '<img id="euromapimg" src="'+euromap_src+'" width="'+mapsize+'">';
 	features.forEach(function(x){
 		period_specific_info = '';
 		x.period_info.forEach(function(y){
@@ -72,37 +92,50 @@ function bigmap(){
 			period_specific_info += '\n' + y.desc;
 		});
 		x.periods.forEach(function(y){
-			if ((wants < y.year_range[0]) || (y.year_range[1] < wants)){
-				return false;
-			}
-			// bigmap
-			newlink = document.createElement("a");
-			newlink.href = x.source;
-			newpoint = document.createElement("div");
-			if (x.type === 'point'){
-				newpoint.classList.value = "point";
-				coords = coord2px(y.coords);
-				newpoint.style.height = pointsize+'px';
-				newpoint.style.width = pointsize+'px';
-			}
-			else {
-				newpoint.classList.value = "box";
-				coords = uncorrected_coord2px(y.coords);
-				bottom_right_coords = uncorrected_coord2px(y.bottom_right);
-				newpoint.style.height = bottom_right_coords[0] - coords[0]+'px';
-				newpoint.style.width = bottom_right_coords[1] - coords[1]+'px';
-			}
-			newpoint.style.backgroundColor = x.color;
-			// newpoint.title = x.name + '\n' + x.desc + period_specific_info; // + ' (' + range2dates(x.year_range) +
-			newpoint.style.position = "absolute";
-			newpoint.style.top = coords[0] + "px";
-			newpoint.style.left = coords[1] + "px";
-			// tooltip
-			newpoint.onmouseover = () => tooltip(x);
-			newpoint.onmouseout = () => document.getElementById("current_tooltip").outerHTML = "";
-			// final
-			newlink.appendChild(newpoint);
-			document.getElementById("bigmap").appendChild(newlink);
+			maps.forEach(function(selected_map){
+				if ((wants < y.year_range[0]) || (y.year_range[1] < wants)){
+					return false;
+				}
+				// bigmap
+				newlink = document.createElement("a");
+				newlink.href = x.source;
+				newpoint = document.createElement("div");
+				if (x.type === 'point'){
+					newpoint.classList.value = "point";
+					if (selected_map[1] === undefined){
+						coords = coord2px(y.coords);
+					}
+					else {
+						coords = inset_coord2px(y.coords, selected_map);
+					}
+					newpoint.style.height = pointsize+'px';
+					newpoint.style.width = pointsize+'px';
+				}
+				else {
+					newpoint.classList.value = "box";
+					if (selected_map[1] === undefined){
+						coords = uncorrected_coord2px(y.coords);
+						bottom_right_coords = uncorrected_coord2px(y.bottom_right);
+					}
+					else {
+						coords = inset_coord2px(y.coords, selected_map);
+						bottom_right_coords = inset_coord2px(y.bottom_right, selected_map);
+					}
+					newpoint.style.height = bottom_right_coords[0] - coords[0]+'px';
+					newpoint.style.width = bottom_right_coords[1] - coords[1]+'px';
+				}
+				newpoint.style.backgroundColor = x.color;
+				// newpoint.title = x.name + '\n' + x.desc + period_specific_info; // + ' (' + range2dates(x.year_range) +
+				newpoint.style.position = "absolute";
+				newpoint.style.top = coords[0] + "px";
+				newpoint.style.left = coords[1] + "px";
+				// tooltip
+				newpoint.onmouseover = () => tooltip(x); // todo fix for inset
+				newpoint.onmouseout = () => document.getElementById("current_tooltip").outerHTML = "";
+				// final
+				newlink.appendChild(newpoint);
+				document.getElementById(selected_map[0]).appendChild(newlink);
+			});
 		});
 	});
 }
@@ -812,20 +845,6 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Majiayao_culture"
 	},
 	{
-		name: "Maykop Culture",
-		type: "box",
-		periods: [
-			{
-				year_range: [-3700, -3000],
-				coords: [47, 37],
-				bottom_right: [43, 46],
-			},
-		],
-		period_info: [],
-		color: "brown",
-		source: "https://en.wikipedia.org/wiki/Maykop_culture"
-	},
-	{
 		name: "Mumun Culture",
 		type: "box",
 		periods: [
@@ -1226,6 +1245,21 @@ var features = [
 		period_info: [],
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Zhou_dynasty"
+	},
+	// PRIORITY BOXES
+	{
+		name: "Maykop Culture",
+		type: "box",
+		periods: [
+			{
+				year_range: [-3700, -3000],
+				coords: [47, 37],
+				bottom_right: [43, 46],
+			},
+		],
+		period_info: [],
+		color: "brown",
+		source: "https://en.wikipedia.org/wiki/Maykop_culture"
 	},
 	// POINTS
 	{

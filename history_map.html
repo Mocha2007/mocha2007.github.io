@@ -9,12 +9,15 @@
 #top {
 	text-align: center;
 }
-#bigmap {
+#bigmap, #bigeuromap {
 	position: relative;
 	top: 0;
 	left: 0;
 }
-#mapimg {
+#bigeuromap {
+	margin-top: 700px;
+}
+#mapimg, #euromapimg {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -69,14 +72,19 @@ input {
 </div>
 <form onclick="bigmap();">
 	<fieldset>
-		Date: 1 Jan, <input id="date" type="number" value="2019" max="2019">
+		Date: 1 Jan, <input id="date" type="number" value="-3300" max="2019">
 		<a href="javascript:console.log('this does nothing');">Go &rarr;</a><br/>
 		<input type="range" min="-3000" max="2019" value="2019" class="slider" id="date2"
 			   onclick="javascript:document.getElementById('date').value = document.getElementById('date2').value; ">
 	</fieldset>
 </form>
+
 <div id="bigmap">
 	<img id="mapimg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg" alt="Map">
+</div>
+
+<div id="bigeuromap">
+	<img id="euromapimg" src="https://upload.wikimedia.org/wikipedia/commons/9/90/Europe_satellite_image_location_map.jpg" alt="Map">
 </div>
 <script type="text/javascript">bigmap();</script>
 </html>
