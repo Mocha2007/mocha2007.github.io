@@ -55,16 +55,18 @@ function range2dates(r){
 	return begin + '-' +end;
 }
 
-function tooltip(id){
+function tooltip(id){ // todo fix for inset
 	"use strict";
 	// console.log(id);
 	// bigmap
 	var newpoint = document.createElement("div");
 	var y = id.periods[0];
-	var coords = uncorrected_coord2px(y.coords);
+	var coords = [window.event.clientY, window.event.clientX];
+	console.log(coords);
 	newpoint.id = "current_tooltip";
 	newpoint.style.top = coords[0]+25 + "px";
 	newpoint.style.left = coords[1]+25 + "px";
+	newpoint.style.position = "fixed";
 	// text
 	newpoint.innerHTML = '<center><b>' + id.name + '</b></center>';
 	if (id.hasOwnProperty('img')){
@@ -74,7 +76,7 @@ function tooltip(id){
 		newpoint.innerHTML += id.desc;
 	}
 	// final
-	document.getElementById("bigmap").appendChild(newpoint);
+	document.getElementById('tooltip').appendChild(newpoint);
 }
 
 function bigmap(){
@@ -130,7 +132,8 @@ function bigmap(){
 				newpoint.style.top = coords[0] + "px";
 				newpoint.style.left = coords[1] + "px";
 				// tooltip
-				newpoint.onmouseover = () => tooltip(x); // todo fix for inset
+				console.log(coords);
+				newpoint.onmouseover = () => tooltip(x);
 				newpoint.onmouseout = () => document.getElementById("current_tooltip").outerHTML = "";
 				// final
 				newlink.appendChild(newpoint);
@@ -984,6 +987,20 @@ var features = [
 		period_info: [],
 		color: "green",
 		source: "https://en.wikipedia.org/wiki/Samarra_culture"
+	},
+	{
+		name: "Samnites",
+		type: "box",
+		periods: [
+			{
+				year_range: [-750, -290],
+				coords: [41.9, 13.9],
+				bottom_right: [40.8, 15.6],
+			},
+		],
+		period_info: [],
+		color: "pink",
+		source: "https://en.wikipedia.org/wiki/Samnites"
 	},
 	{
 		name: "Shang",
