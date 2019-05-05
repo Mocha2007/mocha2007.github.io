@@ -2106,7 +2106,7 @@ var features = [
 		periods: [
 			{
 				year_range: [-753, 9999],
-				coords: [42, 13],
+				coords: [41.9, 12.5],
 			},
 		],
 		period_info: [],
@@ -2370,6 +2370,21 @@ var features = [
 	},
 	// well-known buildings
 	{
+		name: "Colosseum",
+		type: "point",
+		periods: [
+			{
+				year_range: [80, 9999],
+				coords: [41.890361, 12.4896418],
+			},
+		],
+		period_info: [],
+		desc: "Classical Roman amphitheater",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/5/53/Colosseum_in_Rome%2C_Italy_-_April_2007.jpg",
+		source: "https://en.wikipedia.org/wiki/Colosseum"
+	},
+	{
 		name: "Colossus of Rhodes",
 		type: "point",
 		periods: [
@@ -2397,6 +2412,21 @@ var features = [
 		color: "orange",
 		img: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Kheops-Pyramid.jpg",
 		source: "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"
+	},
+	{
+		name: "Haia Sophia",
+		type: "point",
+		periods: [
+			{
+				year_range: [532, 9999],
+				coords: [41.0086111, 28.98],
+			},
+		],
+		period_info: [],
+		desc: "Former Greek Orthodox Christian patriarchal cathedral, later an Ottoman imperial mosque, now a museum",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/2/22/Hagia_Sophia_Mars_2013.jpg",
+		source: "https://en.wikipedia.org/wiki/Hagia_Sophia"
 	},
 	{
 		name: "Mausoleum at Halicarnassus",
@@ -2444,6 +2474,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Parthenon"
 	},
 	{
+		name: "St. Peter's Basilica",
+		type: "point",
+		periods: [
+			{
+				year_range: [1626, 9999],
+				coords: [41.90222, 12.45333],
+			},
+		],
+		period_info: [],
+		desc: "Italian Renaissance church in Vatican City",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Rome_San_Pietro.jpg",
+		source: "https://en.wikipedia.org/wiki/St._Peter's_Basilica"
+	},
+	{
 		name: "Statue of Zeus",
 		type: "point",
 		periods: [
@@ -2456,6 +2501,20 @@ var features = [
 		desc: "One of the seven wonders of the ancient world",
 		color: "orange",
 		source: "https://en.wikipedia.org/wiki/Statue_of_Zeus_at_Olympia"
+	},
+	{
+		name: "Stonehenge",
+		type: "point",
+		periods: [
+			{
+				year_range: [-3000, 9999], // rough estimate
+				coords: [51.17889, -1.826111],
+			},
+		],
+		period_info: [],
+		desc: "Ring of standing stones",
+		color: "orange",
+		source: "https://en.wikipedia.org/wiki/Stonehenge"
 	},
 	{
 		name: "Temple of Artemis",
