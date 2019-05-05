@@ -2385,6 +2385,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"
 	},
 	{
+		name: "Mausoleum at Halicarnassus",
+		type: "point",
+		periods: [
+			{
+				year_range: [-351, 1494],
+				coords: [37.03778, 27.4241667],
+			},
+		],
+		period_info: [],
+		desc: "Tomb of Mausolus",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Mausoleum_at_Halicarnassus_at_the_Bodrum_Museum_of_Underwater_Archaeology.jpg",
+		source: "https://en.wikipedia.org/wiki/Mausoleum_at_Halicarnassus"
+	},
+	{
 		name: "Parthenon",
 		type: "point",
 		periods: [

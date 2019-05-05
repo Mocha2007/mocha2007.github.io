@@ -17,6 +17,9 @@
 #bigeuromap {
 	margin-top: 700px;
 }
+#whitespace {
+	margin-top: 1750px;
+}
 #mapimg, #euromapimg {
 	position: absolute;
 	top: 0;
@@ -72,7 +75,7 @@ input {
 </div>
 <form onclick="bigmap();">
 	<fieldset>
-		Date: 1 Jan, <input id="date" type="number" value="-500" max="2019">
+		Date: 1 Jan, <input id="date" type="number" value="0" max="2019">
 		<a href="javascript:console.log('this does nothing');">Go &rarr;</a><br/>
 		<input type="range" min="-3000" max="2019" value="2019" class="slider" id="date2"
 			   onclick="javascript:document.getElementById('date').value = document.getElementById('date2').value; ">
@@ -85,6 +88,10 @@ input {
 
 <div id="bigeuromap">
 	<img id="euromapimg" src="https://upload.wikimedia.org/wikipedia/commons/9/90/Europe_satellite_image_location_map.jpg" alt="Map">
+</div>
+
+<div id="whitespace">
+	<!-- So some tooltips can get visible-->
 </div>
 
 <div id="tooltip"></div>
