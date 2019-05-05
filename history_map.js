@@ -64,7 +64,7 @@ function tooltip(id){ // todo fix for inset
 	var coords = [window.event.clientY, window.event.clientX];
 	console.log(coords);
 	newpoint.id = "current_tooltip";
-	newpoint.style.top = coords[0]+25 + "px";
+	newpoint.style.top = coords[0]-25 + "px";
 	newpoint.style.left = coords[1]+25 + "px";
 	newpoint.style.position = "fixed";
 	// text
