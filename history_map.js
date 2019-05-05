@@ -2370,6 +2370,20 @@ var features = [
 	},
 	// well-known buildings
 	{
+		name: "Colossus of Rhodes",
+		type: "point",
+		periods: [
+			{
+				year_range: [-280, -226],
+				coords: [36.45111, 28.22778],
+			},
+		],
+		period_info: [],
+		desc: "One of the seven wonders of the ancient world",
+		color: "orange",
+		source: "https://en.wikipedia.org/wiki/Colossus_of_Rhodes"
+	},
+	{
 		name: "Great Pyramid of Giza",
 		type: "point",
 		periods: [
@@ -2394,10 +2408,25 @@ var features = [
 			},
 		],
 		period_info: [],
-		desc: "Tomb of Mausolus",
+		desc: "Tomb of Mausolus and one of the wonders of the ancient world",
 		color: "orange",
 		img: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Mausoleum_at_Halicarnassus_at_the_Bodrum_Museum_of_Underwater_Archaeology.jpg",
 		source: "https://en.wikipedia.org/wiki/Mausoleum_at_Halicarnassus"
+	},
+	{
+		name: "Lighthouse of Alexandria",
+		type: "point",
+		periods: [
+			{
+				year_range: [-246, 1307],
+				coords: [31.213889, 29.88556],
+			},
+		],
+		period_info: [],
+		desc: "One of the wonders of the ancient world",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/3/33/PHAROS2013-3000x2250.jpg",
+		source: "https://en.wikipedia.org/wiki/Lighthouse_of_Alexandria"
 	},
 	{
 		name: "Parthenon",
