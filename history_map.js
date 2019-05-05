@@ -98,6 +98,13 @@ function bigmap(){
 				if ((wants < y.year_range[0]) || (y.year_range[1] < wants)){
 					return false;
 				}
+				// bottom of minimap cutoff
+				if (selected_map[1] !== undefined){
+					// console.log(y.coords[0], selected_map[1][1][0]);
+					if ((y.coords[0] < selected_map[1][1][0]) || (selected_map[1][1][1] < y.coords[1])){
+						return false;
+					}
+				}
 				// bigmap
 				newlink = document.createElement("a");
 				newlink.href = x.source;
@@ -132,7 +139,7 @@ function bigmap(){
 				newpoint.style.top = coords[0] + "px";
 				newpoint.style.left = coords[1] + "px";
 				// tooltip
-				console.log(coords);
+				// console.log(coords);
 				newpoint.onmouseover = () => tooltip(x);
 				newpoint.onmouseout = () => document.getElementById("current_tooltip").outerHTML = "";
 				// final
@@ -2360,6 +2367,22 @@ var features = [
 		color: "red",
 		img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Wieliczka_salt_mine.jpg/260px-Wieliczka_salt_mine.jpg",
 		source: "https://en.wikipedia.org/wiki/Wieliczka_Salt_Mine"
+	},
+	// well-known buildings
+	{
+		name: "Parthenon",
+		type: "point",
+		periods: [
+			{
+				year_range: [-432, 1687],
+				coords: [37.9713889, 23.7263889],
+			},
+		],
+		period_info: [],
+		desc: "Temple to Athena",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/d/da/The_Parthenon_in_Athens.jpg",
+		source: "https://en.wikipedia.org/wiki/Parthenon"
 	},
 	// beyond cities and nations and cultures...
 	{
