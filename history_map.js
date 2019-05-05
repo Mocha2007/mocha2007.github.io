@@ -8,7 +8,7 @@ var euromapcoords = [
 ];
 var maps = [
 	['bigmap'],
-	['bigeuromap', euromapcoords, 1.5, 2335],
+	['bigeuromap', euromapcoords, 1.5, 2390],
 ]
 
 function range(n){
@@ -2370,6 +2370,21 @@ var features = [
 	},
 	// well-known buildings
 	{
+		name: "Great Pyramid of Giza",
+		type: "point",
+		periods: [
+			{
+				year_range: [-2560, 9999],
+				coords: [29.9791667, 31.13444],
+			},
+		],
+		period_info: [],
+		desc: "Tomb of Khufu and one of the seven wonders of the ancient world",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Kheops-Pyramid.jpg",
+		source: "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"
+	},
+	{
 		name: "Parthenon",
 		type: "point",
 		periods: [
@@ -2383,6 +2398,35 @@ var features = [
 		color: "orange",
 		img: "https://upload.wikimedia.org/wikipedia/commons/d/da/The_Parthenon_in_Athens.jpg",
 		source: "https://en.wikipedia.org/wiki/Parthenon"
+	},
+	{
+		name: "Statue of Zeus",
+		type: "point",
+		periods: [
+			{
+				year_range: [-435, 475], // rough estimate
+				coords: [37.63786111, 21.63],
+			},
+		],
+		period_info: [],
+		desc: "One of the seven wonders of the ancient world",
+		color: "orange",
+		source: "https://en.wikipedia.org/wiki/Statue_of_Zeus_at_Olympia"
+	},
+	{
+		name: "Temple of Artemis",
+		type: "point",
+		periods: [
+			{
+				year_range: [-432, 262],
+				coords: [37.9497222, 27.363889],
+			},
+		],
+		period_info: [],
+		desc: "Temple to Artemis and one of the seven wonders of the ancient world",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Miniaturk_009.jpg",
+		source: "https://en.wikipedia.org/wiki/Temple_of_Artemis"
 	},
 	// beyond cities and nations and cultures...
 	{
