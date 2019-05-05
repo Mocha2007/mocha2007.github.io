@@ -2370,6 +2370,36 @@ var features = [
 	},
 	// well-known buildings
 	{
+		name: "Alcántara Bridge",
+		type: "point",
+		periods: [
+			{
+				year_range: [106, 9999],
+				coords: [39.7224, -6.8924],
+			},
+		],
+		period_info: [],
+		desc: "Roman bridge",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Bridge_Alcantara.JPG",
+		source: "https://en.wikipedia.org/wiki/Alcántara_Bridge"
+	},
+	{
+		name: "Alhambra",
+		type: "point",
+		periods: [
+			{
+				year_range: [889, 9999],
+				coords: [37.17695, -3.59001],
+			},
+		],
+		period_info: [],
+		desc: "Palace and fortress complex",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/d/de/Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg",
+		source: "https://en.wikipedia.org/wiki/Alhambra"
+	},
+	{
 		name: "Colosseum",
 		type: "point",
 		periods: [
@@ -2429,6 +2459,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Hagia_Sophia"
 	},
 	{
+		name: "Maison Carrée",
+		type: "point",
+		periods: [
+			{
+				year_range: [2, 9999],
+				coords: [43.838333, 4.356111],
+			},
+		],
+		period_info: [],
+		desc: "Roman temple",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/1/10/MaisonCarrée.jpeg",
+		source: "https://en.wikipedia.org/wiki/Maison_Carrée"
+	},
+	{
 		name: "Mausoleum at Halicarnassus",
 		type: "point",
 		periods: [
@@ -2442,6 +2487,21 @@ var features = [
 		color: "orange",
 		img: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Mausoleum_at_Halicarnassus_at_the_Bodrum_Museum_of_Underwater_Archaeology.jpg",
 		source: "https://en.wikipedia.org/wiki/Mausoleum_at_Halicarnassus"
+	},
+	{
+		name: "Mont Saint-Michel",
+		type: "point",
+		periods: [
+			{
+				year_range: [460, 9999],
+				coords: [48.636111, -1.5113889],
+			},
+		],
+		period_info: [],
+		desc: "Fortified island commune",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/2/29/Mont-Saint-Michel_Drone.jpg",
+		source: "https://en.wikipedia.org/wiki/Mont-Saint-Michel"
 	},
 	{
 		name: "Lighthouse of Alexandria",
@@ -2514,6 +2574,7 @@ var features = [
 		period_info: [],
 		desc: "Ring of standing stones",
 		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Stonehenge2007_07_30.jpg",
 		source: "https://en.wikipedia.org/wiki/Stonehenge"
 	},
 	{
@@ -2530,6 +2591,21 @@ var features = [
 		color: "orange",
 		img: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Miniaturk_009.jpg",
 		source: "https://en.wikipedia.org/wiki/Temple_of_Artemis"
+	},
+	{
+		name: "Tower of Hercules",
+		type: "point",
+		periods: [
+			{
+				year_range: [100, 9999],
+				coords: [43.3858333, -8.4063889],
+			},
+		],
+		period_info: [],
+		desc: "Ancient Roman lighthouse",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/e/eb/A_coruna_torre_de_hercules_sunset_edit.jpg",
+		source: "https://en.wikipedia.org/wiki/Tower_of_Hercules"
 	},
 	// beyond cities and nations and cultures...
 	{
