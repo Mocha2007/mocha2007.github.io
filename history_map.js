@@ -1454,19 +1454,6 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Annaba"
 	},
 	{
-		name: "Areni-1 winery",
-		type: "point",
-		periods: [
-			{
-				year_range: [-4100, 4000],
-				coords: [40, 45],
-			},
-		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Areni-1_winery"
-	},
-	{
 		name: "Assur",
 		type: "point",
 		periods: [
@@ -1572,19 +1559,6 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Bhirrana"
 	},
 	{
-		name: "Biniai Nou hypogea",
-		type: "point",
-		periods: [
-			{
-				year_range: [-2290, -2030],
-				coords: [40, 4],
-			},
-		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Biniai_Nou_hypogea"
-	},
-	{
 		name: "Bonstorf Barrows",
 		type: "point",
 		periods: [
@@ -1596,19 +1570,6 @@ var features = [
 		period_info: [],
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Bonstorf_Barrows"
-	},
-	{
-		name: "Borġ in-Nadur",
-		type: "point",
-		periods: [
-			{
-				year_range: [-2500, -500],
-				coords: [36, 15],
-			},
-		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Borġ_in-Nadur"
 	},
 	{
 		name: "Brú na Bóinne",
@@ -1686,19 +1647,6 @@ var features = [
 		desc: "Settlement",
 		img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/01_Cukurici_Höyük.tif/lossy-page1-800px-01_Cukurici_Höyük.tif.jpg",
 		source: "https://en.wikipedia.org/wiki/Çukuriçi_Höyük"
-	},
-	{
-		name: "Chalcolithic Temple of Ein Gedi",
-		type: "point",
-		periods: [
-			{
-				year_range: [-3500, -3500],
-				coords: [31, 35],
-			},
-		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Chalcolithic_Temple_of_Ein_Gedi"
 	},
 	{
 		name: "Cliff Palace",
@@ -1832,21 +1780,6 @@ var features = [
 		desc: "Settlement",
 		color: "red",
 		source: "https://en.wikipedia.org/wiki/Gortyn"
-	},
-	{
-		name: "Ħal-Saflieni Hypogeum",
-		type: "point",
-		periods: [
-			{
-				year_range: [-4000, -2500],
-				coords: [35.9, 14.5],
-			},
-		],
-		period_info: [],
-		desc: "Sanctuary and Necropolis",
-		color: "red",
-		img: "https://upload.wikimedia.org/wikipedia/commons/0/06/Photo_Ellis_Hal_Salflieni.jpg",
-		source: "https://en.wikipedia.org/wiki/Ħal-Saflieni_Hypogeum"
 	},
 	{
 		name: "Harappa",
@@ -2300,21 +2233,6 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Uruk"
 	},
 	{
-		name: "Xagħra Stone Circle",
-		type: "point",
-		periods: [
-			{
-				year_range: [-4100, -2000],
-				coords: [36.0, 14.3],
-			},
-		],
-		period_info: [],
-		desc: "Funerary Complex",
-		color: "red",
-		img: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Hypogée_de_Xaghra.jpg",
-		source: "https://en.wikipedia.org/wiki/Xagħra_Stone_Circle"
-	},
-	{
 		name: "Yanshi",
 		type: "point",
 		periods: [
@@ -2400,6 +2318,19 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Alhambra"
 	},
 	{
+		name: "Areni-1 winery",
+		type: "point",
+		periods: [
+			{
+				year_range: [-4100, 4000],
+				coords: [40, 45],
+			},
+		],
+		period_info: [],
+		color: "orange",
+		source: "https://en.wikipedia.org/wiki/Areni-1_winery"
+	},
+	{
 		name: "Bent Pyramid",
 		type: "point",
 		periods: [
@@ -2413,6 +2344,45 @@ var features = [
 		color: "orange",
 		img: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Snefru's_Bent_Pyramid_in_Dahshur.jpg",
 		source: "https://en.wikipedia.org/wiki/Bent_Pyramid"
+	},
+	{
+		name: "Biniai Nou hypogea",
+		type: "point",
+		periods: [
+			{
+				year_range: [-2290, -2030],
+				coords: [40, 4],
+			},
+		],
+		period_info: [],
+		color: "orange",
+		source: "https://en.wikipedia.org/wiki/Biniai_Nou_hypogea"
+	},
+	{
+		name: "Borġ in-Nadur",
+		type: "point",
+		periods: [
+			{
+				year_range: [-2500, -500],
+				coords: [36, 15],
+			},
+		],
+		period_info: [],
+		color: "orange",
+		source: "https://en.wikipedia.org/wiki/Borġ_in-Nadur"
+	},
+	{
+		name: "Chalcolithic Temple of Ein Gedi",
+		type: "point",
+		periods: [
+			{
+				year_range: [-3500, -3500],
+				coords: [31, 35],
+			},
+		],
+		period_info: [],
+		color: "orange",
+		source: "https://en.wikipedia.org/wiki/Chalcolithic_Temple_of_Ein_Gedi"
 	},
 	{
 		name: "Colosseum",
@@ -2472,6 +2442,21 @@ var features = [
 		color: "orange",
 		img: "https://upload.wikimedia.org/wikipedia/commons/2/22/Hagia_Sophia_Mars_2013.jpg",
 		source: "https://en.wikipedia.org/wiki/Hagia_Sophia"
+	},
+	{
+		name: "Ħal-Saflieni Hypogeum",
+		type: "point",
+		periods: [
+			{
+				year_range: [-4000, -2500],
+				coords: [35.9, 14.5],
+			},
+		],
+		period_info: [],
+		desc: "Sanctuary and Necropolis",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/0/06/Photo_Ellis_Hal_Salflieni.jpg",
+		source: "https://en.wikipedia.org/wiki/Ħal-Saflieni_Hypogeum"
 	},
 	{
 		name: "Maison Carrée",
@@ -2681,6 +2666,21 @@ var features = [
 		color: "orange",
 		img: "https://upload.wikimedia.org/wikipedia/commons/e/eb/A_coruna_torre_de_hercules_sunset_edit.jpg",
 		source: "https://en.wikipedia.org/wiki/Tower_of_Hercules"
+	},
+	{
+		name: "Xagħra Stone Circle",
+		type: "point",
+		periods: [
+			{
+				year_range: [-4100, -2000],
+				coords: [36.0, 14.3],
+			},
+		],
+		period_info: [],
+		desc: "Funerary Complex",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Hypogée_de_Xaghra.jpg",
+		source: "https://en.wikipedia.org/wiki/Xagħra_Stone_Circle"
 	},
 	// beyond cities and nations and cultures...
 	{
