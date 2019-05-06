@@ -9,7 +9,7 @@ var euromapcoords = [
 var maps = [
 	['bigmap'],
 	['bigeuromap', euromapcoords, 1.5, 1.704],
-]
+];
 
 function range(n){
 	return [...Array(n).keys()];
@@ -25,8 +25,8 @@ function uncorrected_coord2px(coords){
 function inset_coord2px(coords, selected_map){
 	"use strict";
 	var inset_coords = selected_map[1];
-	var longitudes = inset_coords[1][1] - inset_coords[0][1]
-	var latitudes = inset_coords[0][0] - inset_coords[1][0]
+	var longitudes = inset_coords[1][1] - inset_coords[0][1];
+	var latitudes = inset_coords[0][0] - inset_coords[1][0];
 	var x = (coords[1] - inset_coords[0][1]) * mapsize/longitudes;
 	var y = (inset_coords[0][1] - coords[0]) * mapsize/latitudes/selected_map[2] + mapsize*selected_map[3];
 	return [y,x];
