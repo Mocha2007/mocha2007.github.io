@@ -8,7 +8,7 @@ var euromapcoords = [
 ];
 var maps = [
 	['bigmap'],
-	['bigeuromap', euromapcoords, 1.5, 2390],
+	['bigeuromap', euromapcoords, 1.5, 1.704],
 ]
 
 function range(n){
@@ -28,7 +28,7 @@ function inset_coord2px(coords, selected_map){
 	var longitudes = inset_coords[1][1] - inset_coords[0][1]
 	var latitudes = inset_coords[0][0] - inset_coords[1][0]
 	var x = (coords[1] - inset_coords[0][1]) * mapsize/longitudes;
-	var y = (inset_coords[0][1] - coords[0]) * mapsize/latitudes/selected_map[2] + selected_map[3];
+	var y = (inset_coords[0][1] - coords[0]) * mapsize/latitudes/selected_map[2] + mapsize*selected_map[3];
 	return [y,x];
 }
 
@@ -2400,6 +2400,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Alhambra"
 	},
 	{
+		name: "Bent Pyramid",
+		type: "point",
+		periods: [
+			{
+				year_range: [-2580, 9999],
+				coords: [29.388056, 31.156944],
+			},
+		],
+		period_info: [],
+		desc: "Tomb",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Snefru's_Bent_Pyramid_in_Dahshur.jpg",
+		source: "https://en.wikipedia.org/wiki/Bent_Pyramid"
+	},
+	{
 		name: "Colosseum",
 		type: "point",
 		periods: [
@@ -2532,6 +2547,51 @@ var features = [
 		color: "orange",
 		img: "https://upload.wikimedia.org/wikipedia/commons/d/da/The_Parthenon_in_Athens.jpg",
 		source: "https://en.wikipedia.org/wiki/Parthenon"
+	},
+	{
+		name: "Pyramid of Djoser",
+		type: "point",
+		periods: [
+			{
+				year_range: [-2648, 9999],
+				coords: [29.871267, 31.216394],
+			},
+		],
+		period_info: [],
+		desc: "Tomb and oldest pyramid",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Saqqara_pyramid_ver_2.jpg",
+		source: "https://en.wikipedia.org/wiki/Pyramid_of_Djoser"
+	},
+	{
+		name: "Pyramid of Khafre",
+		type: "point",
+		periods: [
+			{
+				year_range: [-2570, 9999],
+				coords: [29.976111, 31.130833],
+			},
+		],
+		period_info: [],
+		desc: "Tomb",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/7/71/Pyramid_of_Khafre_Giza_Egypt_in_2015_2.jpg",
+		source: "https://en.wikipedia.org/wiki/Pyramid_of_Khafre"
+	},
+	{
+		name: "Pyramid of Meidum",
+		type: "point",
+		periods: [
+			{
+				year_range: [-2580, 9999],
+				coords: [29.388056, 31.156944],
+			},
+		],
+		period_info: [],
+		desc: "Tomb",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Meidoum_pyramide_003.JPG",
+		source: "https://en.wikipedia.org/wiki/Meidum"
 	},
 	{
 		name: "St. Peter's Basilica",
