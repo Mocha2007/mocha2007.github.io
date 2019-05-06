@@ -2504,6 +2504,21 @@ var features = [
 		source: "https://en.wikipedia.org/wiki/Mausoleum_at_Halicarnassus"
 	},
 	{
+		name: "Mausoleum of Pozo Moro",
+		type: "point",
+		periods: [
+			{
+				year_range: [-600, 9999],
+				coords: [38.836389, -1.696667],
+			},
+		],
+		period_info: [],
+		desc: "Iberian Mausoleum",
+		color: "orange",
+		img: "https://upload.wikimedia.org/wikipedia/commons/6/65/Monumento_de_Pozo_Moro_(M.A.N._Inv.1999-76-A)_01.jpg",
+		source: "https://en.wikipedia.org/wiki/Mausoleum_of_Pozo_Moro"
+	},
+	{
 		name: "Mont Saint-Michel",
 		type: "point",
 		periods: [
