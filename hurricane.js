@@ -724,6 +724,9 @@ hurricanelist[2018] = [
 	[282,286,0,"Nadine"],
 	[300,304,0,"Oscar"],
 ];
+hurricanelist[2019] = [
+	[140,141,0,"Andrea"],
+];
 /*
 0	1 Jan
 31	1 Feb (So leap years are incl.)
