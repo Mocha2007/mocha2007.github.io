@@ -24,12 +24,15 @@ var subtitles =	[
 				'This is Mocha\'s Site<br>I discuss everything here<br>just one haiku though',
 				'So does the text contain just iambs there?<br>Then does it have five iambs total, too?',
 				'Roll for consonant mutation save.',
+				'Are noun countability stuffs that hard?',
 				// mat
 				'I have created a truly marvelous conworld,<br/>which this randomly generated subtitle is too small to contain.',
 				'Mocha &isin; Fags',
 				'&lambda;x.x is Mocha',
 				// his
 				'<b>aragoscope</b> <i>n</i>. : the act of <a href="https://en.wikipedia.org/wiki/Kingdom_of_Castile#Union_of_the_Crowns_of_Castile_and_Aragon">noscoping Aragon</a>',
+				// sci
+				'If eyes are round, then why is the image we see flat?',
 				// etc gaming
 				'The med curse is real',
 				'contown retarded; gg maf',
@@ -67,6 +70,7 @@ var subtitles =	[
 				// mochisms
 				'slash-me huggu',
 				'Enkl&aacute;r\'s Stead, by Enkl&aacute;r\'s Head',
+				'Why many, when few?',
 				// etc allusion
 				'The pizza doesn’t scream when you put it in the oven.',
 				'/mo(ch|k|hx|\\u0125)[aeiou]r?/gi',
