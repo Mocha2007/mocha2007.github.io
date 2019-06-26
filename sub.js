@@ -71,6 +71,7 @@ var subtitles =	[
 				'slash-me huggu',
 				'Enkl&aacute;r\'s Stead, by Enkl&aacute;r\'s Head',
 				'Why many, when few?',
+				'Thanks to Isoraķatheð for getting me into conworlding',
 				// etc allusion
 				'The pizza doesn’t scream when you put it in the oven.',
 				'/mo(ch|k|hx|\\u0125)[aeiou]r?/gi',
