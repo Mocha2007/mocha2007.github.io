@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="description" content="Worldbuilding Guide">
+<link rel="shortcut icon" href="img/favicon.ico">
+<link href=simple.css type="text/css" rel="stylesheet" title="Light">
+<link href=dark.css type="text/css" rel="alternate stylesheet" title="Dark"> 
+<link href=blend.css type="text/css" rel="alternate stylesheet" title="Blend">
+<link href=print.css type="text/css" rel="stylesheet" media="print">
+<script src="toc.js"></script>
+<title>Worldbuilding Guide</title>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<div id="nav"></div>
+<div id="top"><h1 id="Worldbuilding Guide">Worldbuilding Guide</h1></div>
+<p>
+	Worldbuilding Guide.
+</p>
+
+<h2 id="Plan">Plan</h2>
+<ol>
+	<li>Planning</li>
+	<li>Star</li>
+</ol>
+<p>
+	This guide is specifically directed towards habitable worlds, but the same concepts apply to any world.
+</p>
+
+<h2 id="Star">Star</h2>
+<p>
+	Unless you want a dead, dark rock for a planet, you're gonna need a star.
+</p>
+<h3 id="Brown_Dwarf">Brown Dwarf</h3>
+<p>
+	Since we want to make a habitable world, we need a star <i>at least</i> as hot as the Earth.
+	Otherwise, how is the planet supposed to get hotter than the star?
+	Thankfully, even brown dwarfs can generate this kind of relatively low heat.
+	The only other feature we'll have to look out for is the roche limit.
+	Even if our star generates enough heat, the planet'll get torn to shreds if we place it too close.
+	So, for our rough "bare minimum" mass, the temperature <i>at</i> the roche limit has to be at least that of Earth.
+	At this point, we just set the roche and heat equations equal to each other...
+</p>
+$$a = R_M \sqrt[3]{2 \frac {\rho_M} {\rho_m}}$$
+$$T_{eq} = T_{star} \sqrt{\frac {R_M}{2a}} \sqrt[4]{1-A}$$
+<p>
+	Unfortunately, since the heat equation is solved for \({ T }_{ eq }\), we need to solve for \(a\):
+</p>
+$$a = \frac {T_{star}^2 R_M}{2T_{eq}^2} \sqrt { 1-A }$$
+<p>
+	Now we're in business.
+</p>
+$$R_M \sqrt[3]{2 \frac {\rho_M} {\rho_m}} = \frac {T_{star}^2 R_M}{2T_{eq}^2} \sqrt { 1-A }$$
+<p>
+	We can cancel out the star's radii for starters:
+</p>
+$$ \sqrt[3]{2 \frac {\rho_M} {\rho_m}} = \frac {T_{star}^2}{2T_{eq}^2} \sqrt { 1-A }$$
+<p>
+	It might look like we can't cancel out anything else, but actually, we <i>can</i>.
+	Since we're finding the bare minimum, we can assume the planetary albedo is zero, since that's as efficient a planet can get at absorbing light.
+</p>
+$$ \sqrt[3]{2 \frac {\rho_M} {\rho_m}} = \frac {T_{star}^2}{2T_{eq}^2}$$
+<p>
+	There's a very handy rule of thumb when it comes to stellar temperatures, and it ends up being rather accurate:
+</p>
+$$ T_{star} = T_\odot \sqrt{\frac {M_{star}} {M_\odot}}$$
+<p>
+	This alone won't help us though.
+	We'll also need a formula to get density.
+	Thankfully, there's also <i>another</i> helpful approximation!
+</p>
+$$ R_{star} = R_\odot \frac {M_{star}} {M_\odot}$$
+<p>
+	Let's plug this into the density equation:
+</p>
+$$ \rho = \frac {m} {\frac {4} {3} \pi r^3}$$
+$$ \rho_{star} = \frac {M_{star}} {\frac {4} {3} \pi \left( R_\odot \frac {M_{star}} {M_\odot} \right) ^3}$$
+$$ \rho_{star} = \frac {3 M_\odot^3} {4 \pi R_\odot^3 M_{star}^2}$$
+<p>
+	Let's chuck it all back into the big equation, simplify, and isolate \(M_M\):
+</p>
+$$ \sqrt[3]{2 \frac {\frac {3 M_\odot^3} {4 \pi R_\odot^3 M_M^2}} {\rho_m}} = \frac {T_\odot^2 \frac {M_M} {M_\odot}}{2T_{eq}^2}$$
+$$ \frac {12 M_\odot^5} {\pi R_\odot^3 \rho_m} = \frac {T_\odot^6 M_M^4}{T_{eq}^6}$$
+$$ M_M^4 = \frac {12 M_\odot^5 T_{eq}^6} {\pi R_\odot^3 \rho_m T_\odot^6}$$
+<p>
+	This is great!
+	Don't let all the symbols fool you, the only unknowns at this point are \(\rho_m\) and \(M_M\).
+	The equilibrium temperature is going to be Earth's (~255K).
+	Since it's clear that higher densities will allow for a smaller minimum, we can assume the density is equivalent to the densest planet in the solar system - Earth!
+	Now, we just have to plug this formula into a calculator!
+</p>
+$$ M_M = \sqrt[4] {\frac {12 M_\odot^5 T_{eq\oplus}^6} {\pi R_\odot^3 \rho_\oplus T_\odot^6}}$$
+$$ M_M = 2.523 \cdot 10^{28} \mathrm{kg} = 13.29M_J$$
+<p>
+	So it seems all but the smallest brown dwarfs can safely hold a planet with similar temperature to Earth.
+	In practice though, our planet's gonna have albedo.
+	With an earthlike albedo, this actually becomes:
+</p>
+$$ M_M = 5.009 \cdot 10^{28} \mathrm{kg} = 26.39M_J$$
+<p>
+	And if our planet didsn't have a greenhouse effect, that would increase even more to:
+</p>
+$$ M_M = 6.249 \cdot 10^{28} \mathrm{kg} = 32.92M_J$$
+<p>
+	As long as we're above these values, we're safe, at least in terms of temperature.
+	A problem with this brown dwarf world arises when you calculate the peak emission wavelength:
+	(via Wien's displacement law, \(b\) is a constant which has <a href='https://physics.nist.gov/cgi-bin/cuu/Value?bwien'>a page on NIST</a> detailing its value)
+</p>
+$$ \lambda = \frac {b} {T}$$
+$$ \lambda = 3.254 \mathrm{\mu m}$$
+<p>
+	This is in the infrared range, and so our brown dwarf would appear very dim to our eyes, as the upper limit of human vision is about \(740 \mathrm{nm}\).
+	Perhaps though, this world has evolved critters with IR vision - who knows!
+	There are other hypothetical issues with brown dwarfs, including tidal locking, but nothing explicitly procluding the appearance of life.
+</p>
+
+<h3 id="Red_Dwarf">Red/Orange Dwarf</h3>
+<p>
+	Red dwarfs are the most common type of main sequence star in the universe, acounting for three-quarters of all main sequence stars.
+	Only one potential issue exists: tidal locking.
+	Life can certainly exist on a tidally locked world, but it may be very difficult.
+	The timeframe for tidal locking to occur is roughly:
+</p>
+$$ t_{lock} \approx \frac {a^6 r} {mM^2} \cdot 5\cdot10^{28} \mathrm{\frac {kg^3 s} {m^7}}$$
+<p>
+	For an earthlike world, this simplifies to:
+</p>
+$$ t_{lock} \approx \frac {a^6} {M^2} \cdot 5\cdot10^{10} \mathrm{\frac {kg^2 s} {m^6}}$$
+<p>
+	If we want enough time for life to evolve, we're gonna need \(t_{lock}\) to equal the age of the earth:
+</p>
+$$ 1.43\cdot10^{17} \mathrm{s} \approx \frac {a^6} {M^2} \cdot 5\cdot10^{10} \mathrm{\frac {kg^2 s} {m^6}}$$
+$$ a^6 \approx M^2 \cdot 2.69\cdot10^{6} \mathrm{\frac {m^6} {kg^2}}$$
+$$ a \approx 11.8 \sqrt[3]{M} \mathrm{\frac {m} {kg^{\frac{1}{3}}}}$$
+<p>
+	For the smallest red dwarfs \(M=0.08M_\odot\), this distance is about \(a=0.427\mathrm{au}\).
+	However, given the star property approximations mentioned in the last section, a planet orbiting at this distance would have a temperature of just \(T_{eq}=29\mathrm{K}\).
+	So clearly, if we care about tidal locking, we're gonna have to figure out the minimum mass which allows a world to exist safely.
+	Again, since this is a minimum, we can assume albedo is optimal:
+</p>
+$$ 11.8 \sqrt[3]{M} \mathrm{\frac {m} {kg^{\frac{1}{3}}}} = \frac {T_{star}^2 R}{2T_{eq}^2}$$
+<p>
+	Using the approximation for \(R\) and \(T_{star}\), and simplifying:
+</p>
+$$ 11.8 \sqrt[3]{M} \mathrm{\frac {m} {kg^{\frac{1}{3}}}} = \frac {T_\odot^2 R_\odot M^2}{2T_{eq}^2 M_\odot^2}$$
+$$ 23.6 \mathrm{\frac {m} {kg^{\frac{1}{3}}}} = \frac {T_\odot^2 R_\odot M^{\frac{5}{3}}}{T_{eq}^2 M_\odot^2}$$
+<p>
+	Isolate M, and solve:
+</p>
+$$ M^{\frac{5}{3}} = \frac {T_{eq}^2 M_\odot^2}{T_\odot^2 R_\odot } \cdot 23.6 \mathrm{\frac {m} {kg^{\frac{1}{3}}}}$$
+$$ M = 1.779 \cdot 10^{30} \mathrm{kg} = 0.8948M_\odot$$
+<p>
+	A star of this mass would be of type G7V.
+	But wait, don't put your red and orange dwarfs down yet!
+	If our world is a moon orbiting a gas giant, none of this even matters!
+	And if you don't care about tidal locking, or have a shorter timeframe, you can also ignore this.
+</p>
+
+<h3 id="Yellow_Dwarf">Yellow Dwarf</h3>
+<p>
+	Having a yellow dwarf is definitely the most conservative way to go.
+	After all, if we sprung from a rock orbiting one yellow dwarf, surely there must be others!
+	Indeed, that is the case.
+	You	don't need to worry about anything with this class, so let's move on to the next.
+</p>
+
+<h3 id="Big_Bois">Big Bois</h3>
+<p>
+	Now we get into the big stars.
+	The big issue here is, again, the timeframe.
+	But this time, instead of worrying about tidal locking, we have to worry about the lifespan of the star.
+	A good approximation for lifespan is given by:
+</p>
+$$ t_{star} = t_\odot \sqrt{\frac {M_\odot^5}{M_{star}^5}}$$
+<p>
+	Since we want the lifespan to be at least the age of the Earth, we just have to rearrange this equation and solve:
+</p>
+$$ M_{star} = M_\odot \sqrt[5] {\frac {t_\odot^2}{t_{\oplus}^2}}$$
+$$ M_{star} = 2.727 \cdot 10^{30} \mathrm{kg} = 1.371M_\odot$$
+<p>
+	You can see how much impact adding just a little mass makes.
+	In fact, if we were to just throw Jupiter into the sun, it'd reduce the sun's lifespan by almost twenty-three million years!
+	The earliest known life appeared on earth about 4.28 Bya, which means simple life could arise in just 260 million years.
+	If we plug this value in instead, we get this:
+</p>
+$$ M_{star} = 8.561 \cdot 10^{30} \mathrm{kg} = 4.305M_\odot$$
+<p>
+	Consider the first value to be the most conservative upper limit, and the second value to be the most liberal upper limit.
+	A star of the former mass would be of type F4V and the latter mass would be of type B7V.
+</p>
+
+<h3 id="Summary">Summary</h3>
+<ul>
+	<li>For moons:
+	<ul>
+		<li>Most liberal upper/lower bounds on star mass: \(13.29M_J\) to \(4.305M_\odot\)</li>
+		<li>Most conservative upper/lower bounds on star mass: \(32.92M_J\) to \(1.371M_\odot\)</li>
+	</ul>
+	</li>
+	<li>For planets:
+	<ul>
+		<li>Most liberal upper/lower bounds on star mass: \(13.29M_J\) to \(4.305M_\odot\)</li>
+		<li>Most conservative upper/lower bounds on star mass: \(0.8948M_\odot\) to \(1.371M_\odot\)</li>
+	</ul>
+	</li>
+</ul>
+
+<div id="bottom"></div>
+</html>
