@@ -339,8 +339,8 @@ $$ M > 6.41 \cdot 10^{20} \mathrm{kg} = 107 \mu M_\oplus$$
 	There's a very good metric for estimating whether or not something is a planet, called Margot's planetary discriminant (&Pi;).
 	Values of &Pi; over 1 indicate a planet.
 </p>
-$$ 1 &lt; \frac {807m} {M^{\frac{5}{2}} a^{\frac{9}{8}}} $$
-$$ M^{\frac{5}{2}} a^{\frac{9}{8}} &lt; 807m $$
+$$ 1 &lt; \frac {807\frac{m}{M_\oplus}} {\left(\frac{M}{M_\odot}\right)^{\frac{5}{2}} \left(\frac{a}{\mathrm{au}}\right)^{\frac{9}{8}}} $$
+$$ \left(\frac{M}{M_\odot}\right)^{\frac{5}{2}} \left(\frac{a}{\mathrm{au}}\right)^{\frac{9}{8}} &lt; 807\frac{m}{M_\oplus} $$
 <p>
 	We know we can derive semimajor axis from the distance since we're concerned with worlds in the habitable zone.
 	There's a very clean formula for this:
@@ -351,21 +351,38 @@ $$ a = \sqrt{\frac {L_{star}} {L_\odot}} \mathrm{au}$$
 </p>
 $$ L_{star} = L_\odot \left( \frac {M_{star}}{M_\odot} \right)^{\frac{7}{2}} $$
 <p>
+	Combine these two:
+</p>
+$$ a = \left( \frac {M_{star}}{M_\odot} \right)^{\frac{7}{4}} \mathrm{au}$$
+<p>
 	Plug it in:
 </p>
-$$ M^{\frac{5}{2}} \left( \sqrt{\frac {L_\odot \left( \frac {M}{M_\odot} \right)^{\frac{7}{2}}} {L_\odot}} \mathrm{au} \right)^{\frac{9}{8}} &lt; 807m $$
-$$ M^{\frac{5}{2}} \left( \left( \frac {M}{M_\odot} \right)^{\frac{7}{4}} \mathrm{au} \right)^{\frac{9}{8}} &lt; 807m $$
-$$ M^{\frac{143}{32}} \left( M_\odot^{\frac{-7}{4}} \mathrm{au} \right)^{\frac{9}{8}} &lt; 807m $$
-$$ M^{\frac{143}{32}} \mathrm{au}^{\frac{9}{8}} M_\odot^{\frac{-5}{8}} &lt; 807m $$
-
+$$ \left(\frac{M}{M_\odot}\right)^{\frac{5}{2}} \left(\frac{\left( \frac {M}{M_\odot} \right)^{\frac{7}{4}} \mathrm{au}}{\mathrm{au}}\right)^{\frac{9}{8}} &lt; 807\frac{m}{M_\oplus} $$
+$$ \left(\frac{M}{M_\odot}\right)^{\frac{5}{2}} \left(\left( \frac {M}{M_\odot} \right)^{\frac{7}{4}}\right)^{\frac{9}{8}} &lt; 807\frac{m}{M_\oplus} $$
+$$ \left(\frac{M}{M_\odot}\right)^{\frac{143}{32}} &lt; 807\frac{m}{M_\oplus} $$
+$$ 2.970 \cdot 10^{-114}\mathrm{kg^{\frac{-111}{32}}} \cdot M^{\frac{143}{32}}&lt; m $$
+<p>
+	We can now find the lowest stellar mass where this constraint even matters to us:
+</p>
+$$ 2.970 \cdot 10^{-114}\mathrm{kg^{\frac{-111}{32}}} \cdot M^{\frac{143}{32}}&lt; 0.02682M_\oplus $$
+$$ M &lt; 3.957 \cdot 10^{30} \mathrm{kg} = 1.990M_\odot$$
+<p>
+	We can also find the lowest stellar mass where even the largest rocky planets can't form in the habitable zone:
+</p>
+$$ 2.970 \cdot 10^{-114}\mathrm{kg^{\frac{-111}{32}}} \cdot M^{\frac{143}{32}}&lt; 10M_\oplus $$
+$$ M &lt; 1.488 \cdot 10^{31} \mathrm{kg} = 7.486M_\odot$$
+<p>
+	So earthlike planets orbiting stars under 2 solar masses don't really need to worry about formation difficulties.
+	These same planets between 2 and 7 solar masses might have to worry, depending on their mass.
+	Above 7 solar masses, there's no hope of an earthlike planet.
+	You'd have to have an earthlike moon orbiting a gas giant, or something.
+	Overall though, this criterion doesn't really place any kind of constraint on mass.
+</p>
 
 <h3 id="Planet_Summary">Planet Summary</h3>
 <ul>
-	<li>For all Planets:
-	<ul>
-		<li>...</li>
-	</ul>
-	</li>
+	<li>Mass has to be between \(0.02682M_\oplus\) and \(10M_\oplus\) for any chance of human comfort.</li>
+	<li>Mass has to be between \(0.01179M_\oplus\) and \(10M_\oplus\) for any hope of multicellular life.</li>
 </ul>
 
 <div id="bottom"></div>
