@@ -188,7 +188,7 @@ $$ M_{star} = 8.561 \cdot 10^{30} \mathrm{kg} = 4.305M_\odot$$
 	A star of the former mass would be of type F4V and the latter mass would be of type B7V.
 </p>
 
-<h3 id="Summary">Summary</h3>
+<h3 id="Star_Summary">Summary</h3>
 <ul>
 	<li>For moons:
 	<ul>
@@ -319,6 +319,54 @@ $$ v_e = 4250 \mathrm{\frac {m} {s}}$$
 	So can't retain molecular oxygen like Venus and Earth can - it only has a very tenuous atmosphere, with a surface pressure of a mere 0.5 nPa!
 	This means the mass of the entire atmosphere is only about 10 t.
 </p>
+<h3 id="Dwarf_Planets">Dwarf Planets</h3>
+<p>
+	Dwarf planets are unable to contain life (at least, any simpler than bacteria), so knowing the limit here between a planet and dwarf planet may be good.
+	There are three criteria for a body to be a planet:
+</p>
+<ul>
+	<li>Must orbit the sun (or, in our case, a star)</li>
+	<li>Has sufficient mass to assume hydrostatic equilibrium ("be round")</li>
+	<li>Has "cleared the neighborhood" around its orbit</li>
+</ul>
+<p>
+	The first easy to check.
+	The other two... not so much.
+	The least massive known gravitationally-rounded object in the solar system is Orcus, so we can let that be our minimum:
+</p>
+$$ M > 6.41 \cdot 10^{20} \mathrm{kg} = 107 \mu M_\oplus$$
+<p>
+	There's a very good metric for estimating whether or not something is a planet, called Margot's planetary discriminant (&Pi;).
+	Values of &Pi; over 1 indicate a planet.
+</p>
+$$ 1 &lt; \frac {807m} {M^{\frac{5}{2}} a^{\frac{9}{8}}} $$
+$$ M^{\frac{5}{2}} a^{\frac{9}{8}} &lt; 807m $$
+<p>
+	We know we can derive semimajor axis from the distance since we're concerned with worlds in the habitable zone.
+	There's a very clean formula for this:
+</p>
+$$ a = \sqrt{\frac {L_{star}} {L_\odot}} \mathrm{au}$$
+<p>
+	There's also a good approximation for luminosity for main-sequence stars:
+</p>
+$$ L_{star} = L_\odot \left( \frac {M_{star}}{M_\odot} \right)^{\frac{7}{2}} $$
+<p>
+	Plug it in:
+</p>
+$$ M^{\frac{5}{2}} \left( \sqrt{\frac {L_\odot \left( \frac {M}{M_\odot} \right)^{\frac{7}{2}}} {L_\odot}} \mathrm{au} \right)^{\frac{9}{8}} &lt; 807m $$
+$$ M^{\frac{5}{2}} \left( \left( \frac {M}{M_\odot} \right)^{\frac{7}{4}} \mathrm{au} \right)^{\frac{9}{8}} &lt; 807m $$
+$$ M^{\frac{143}{32}} \left( M_\odot^{\frac{-7}{4}} \mathrm{au} \right)^{\frac{9}{8}} &lt; 807m $$
+$$ M^{\frac{143}{32}} \mathrm{au}^{\frac{9}{8}} M_\odot^{\frac{-5}{8}} &lt; 807m $$
+
+
+<h3 id="Planet_Summary">Planet Summary</h3>
+<ul>
+	<li>For all Planets:
+	<ul>
+		<li>...</li>
+	</ul>
+	</li>
+</ul>
 
 <div id="bottom"></div>
 </html>
