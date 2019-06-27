@@ -20,6 +20,7 @@
 <ol>
 	<li>Planning</li>
 	<li>Star</li>
+	<li>World</li>
 </ol>
 <p>
 	This guide is specifically directed towards habitable worlds, but the same concepts apply to any world.
@@ -202,6 +203,122 @@ $$ M_{star} = 8.561 \cdot 10^{30} \mathrm{kg} = 4.305M_\odot$$
 	</ul>
 	</li>
 </ul>
+
+<h2 id="World">World</h2>
+<p>
+	Now we get into the meat of worldbuilding.
+	If you don't care about scientific plausibility (why are you even reading this, then?), skip ahead to the summary.
+	Otherwise...
+</p>
+
+<h3 id="Physical_Features">Physical Features</h3>
+<p>
+	The first thing we need to get into is the physical features, because there is <i>one</i> thing specifically many authors cite as problematic: surface gravity.
+	If it's too high, or too low, us frail little humans are gonna either go splat, or get atrophied muscles.
+	I once read somewhere that the safe minimum for long duration is 0.3g, and GLOC (blackout) occurs as low as 4g.
+	I have no idea where these numbers come from.
+	As far as I can tell, these numbers have been passed down from generation to generation since the dawn of time.
+	So far, we have this:
+</p>
+$$ 0.3g_\oplus &lt; g_p &lt; 4g_\oplus $$
+<p>
+	This is good, but unfortunately useless unless we get some way to relate mass to radius.
+	Oh wait, that's right!
+	If we know the density, we can relate the mass to the radius!
+	Note that for the rocky planets of our solar system, the density varies between:
+</p>
+$$ 3934 \mathrm{\frac {kg}{m^3}} &lt; \rho &lt; 5514 \mathrm{\frac {kg}{m^3}} $$
+<p>
+	Recall the density and surface gravity formulas:
+</p>
+$$ \rho = \frac {M}{\frac{4}{3} \pi r^3} $$
+$$ g = \frac {GM}{r^2}$$
+$$ 3934 \mathrm{\frac {kg}{m^3}} &lt; \frac {M}{\frac{4}{3} \pi r^3} &lt; 5514 \mathrm{\frac {kg}{m^3}} $$
+<p>
+	Let's solve for the lower bound on mass:
+</p>
+$$ \frac {M}{\frac{4}{3} \pi r^3} &lt; 5514 \mathrm{\frac {kg}{m^3}} $$
+$$ \frac {M}{r^3} &lt; 2.310 \cdot 10^4 \mathrm{\frac {kg}{m^3}} $$
+$$ r^3 > M \cdot 4.330 \cdot 10^{-5} \mathrm{\frac {m^3}{kg}} $$
+$$ r > \sqrt[3] {M} \cdot 3.511 \cdot 10^{-2} \mathrm{\frac {m}{\sqrt[3]{kg}}} $$
+$$ g &lt; \frac {GM}{\sqrt[3] {M^2} \cdot 1.233 \cdot 10^{-3} \mathrm{\frac {m^2}{\sqrt[3]{kg^2}}}}$$
+$$ g &lt; \frac {G \sqrt[3]{M}}{1.233 \cdot 10^{-3} \mathrm{\frac {m^2}{\sqrt[3]{kg^2}}}}$$
+$$ g &lt; \sqrt[3]{M} \cdot 5.413 \cdot 10^{-8} \mathrm{\frac {m}{s^2 \sqrt[3]{kg}}}$$
+$$ 0.3g_\oplus &lt; \sqrt[3]{M} \cdot 5.413 \cdot 10^{-8} \mathrm{\frac {m}{s^2 \sqrt[3]{kg}}}$$
+$$ 5.431 \cdot 10^7 &lt; \sqrt[3]{M} \mathrm{\frac {1}{\sqrt[3]{kg}}}$$
+$$ M > 1.602 \cdot 10^{23} \mathrm{kg} = 0.02682 M_\oplus$$
+<p>
+	And the upper bound:
+</p>
+$$ 3934 \mathrm{\frac {kg}{m^3}} &lt; \frac {M}{\frac{4}{3} \pi r^3} $$
+$$ 1.648 \cdot 10^4 \mathrm{\frac {kg}{m^3}} &lt; \frac {M}{r^3} $$
+$$ r^3 &lt; M \cdot 6.068 \cdot 10^{-5} \mathrm{\frac {m^3}{kg}} $$
+$$ r &lt; \sqrt[3]{M} \cdot 3.930 \cdot 10^{-2} \mathrm{\frac {m}{\sqrt[3]{kg}}} $$
+$$ g > \frac {GM}{\sqrt[3]{M^2} \cdot 1.544 \cdot 10^{-3} \mathrm{\frac {m^2}{\sqrt[3]{kg^2}}}}$$
+$$ g > \frac {G \sqrt[3]{M}}{1.544 \cdot 10^{-3} \mathrm{\frac {m^2}{\sqrt[3]{kg^2}}}}$$
+$$ g > \sqrt[3]{M} \cdot 4.322 \cdot 10^{-8} \mathrm{\frac {m}{s^2 \sqrt[3]{kg}}}$$
+$$ 4g_\oplus > \sqrt[3]{M} \cdot 4.322 \cdot 10^{-8} \mathrm{\frac {m}{s^2 \sqrt[3]{kg}}}$$
+$$ 9.089 \cdot 10^8 > \sqrt[3]{M} \mathrm{\frac {1}{\sqrt[3]{kg}}}$$
+$$ M &lt; 7.057 \cdot 10^{26} \mathrm{kg} = 125.7 M_\oplus$$
+<p>
+	However, the lower limit for gas giants is about \(10M_\oplus\), so you hit a different (atmospheric!) roadblock long before having to worry about surface gravity.
+	Note that the lower bound is about half Mercury's mass.
+	Indeed, Mercury's surface gravity is only about 0.4g, just over our lower limit on surface gravity.
+	Aside from surface gravity, there is the issue of having a thick enough atmosphere to retain an atmosphere.
+	If the life is under a subterranean ocean a la Europa, this won't be an issue.
+	For most worlds, however, this will be significant.
+	Atmosphere loss is caused by the excitation of individual air molecules, ie., their velocity.
+	This is determined primarily by temperature and molar mass.
+	As long as this excitation is less than the escape velocity, the molecules will be retained.
+	This is why the rocky planets don't have hydrogen and helium in their atmospheres in significant quantities.
+	Earth would need to be either more massive (~3x) or colder (~100K).
+	I've never been able to find an actual formula from a decent source,
+	but through trial and error I've developed this equation which gives a good approximation of the minimum escape velocity needed to contain a molecule:
+</p>
+$$ v_e = \frac {T} {\sqrt {M}} \cdot 50 \mathrm{\frac {m} {s}}$$
+<p>
+	Where T is given in Kelvins and M is given in g/mol.
+	Most if not all life on Earth needs either oxygen or carbon dioxide to live.
+	Since oxygen has a lower molar mass, it would escape first, and so using O<sub>2</sub> yields a harder limit than using CO<sub>2</sub>:
+</p>
+$$ v_e = T \cdot 8.839 \mathrm{\frac {m} {sK}}$$
+<p>
+	Since the surface temperature is presumably analogous to Earth's, that's another variable taken care of:
+</p>
+$$ v_e = 2546 \mathrm{\frac {m} {s}}$$
+<p>
+	So our planet needs an escape velocity greater than this.
+	We need to find the smallest mass such that, even with the maximum density, our escape velocity is just barely this.
+	Recall from before:
+</p>
+$$ r = \sqrt[3] {M} \cdot 3.511 \cdot 10^{-2} \mathrm{\frac {m}{\sqrt[3]{kg}}} $$
+<p>
+	Now, to solve the escape velocity formula for r:
+</p>
+$$ v_e = \sqrt {\frac {2GM} {r}} $$
+$$ r = \frac {2GM} {v_e^2} $$
+<p>
+	Set them equal, and solve:
+</p>
+$$ \frac {2GM} {v_e^2} = \sqrt[3] {M} \cdot 3.511 \cdot 10^{-2} \mathrm{\frac {m}{\sqrt[3]{kg}}} $$
+$$ G \sqrt[3] {M^2} = 1.138 \cdot 10^5 \mathrm{\frac {m^3}{s^2\sqrt[3]{kg}}} $$
+$$ \sqrt[3] {M^2} = 1.705 \cdot 10^{15} \mathrm{\sqrt[3]{kg^2}} $$
+$$ M = 7.040 \cdot 10^{22} \mathrm{kg} = 0.01179M_\oplus$$
+<p>
+	Hah! Note that this is even lower than our previous lower bound.
+	In fact, this is only about one-fifth the mass of Mercury.
+	So whe doesn't Mercury have an atmosphere, you may ask?
+	Because it's must hotter than the Earth, so the escape velocity requirement for O<sub>2</sub> would be:
+</p>
+$$ v_e = 6187 \mathrm{\frac {m} {s}}$$
+<p>
+	However, Mercury's escape velocity is only:
+</p>
+$$ v_e = 4250 \mathrm{\frac {m} {s}}$$
+<p>
+	So can't retain molecular oxygen like Venus and Earth can - it only has a very tenuous atmosphere, with a surface pressure of a mere 0.5 nPa!
+	This means the mass of the entire atmosphere is only about 10 t.
+</p>
 
 <div id="bottom"></div>
 </html>
