@@ -417,6 +417,17 @@ $$ &rarr; (1.5 \cdot 10^{29} \mathrm{kg}, 180000 \mathrm{\frac {kg} {m^3}})$$
 	And finally decreases again, forever, as mass continues to pile on:
 </p>
 $$ &rarr; (1.4 \cdot 10^{32} \mathrm{kg}, 0.49 \mathrm{\frac {kg} {m^3}})$$
+<p>
+	We can do a linear regression on the log-log plot to get the following piecewise function:
+</p>
+$$
+\rho(M) \approx \begin{cases}
+  4.2M^{0.13} &amp; \mbox{if } M \lt 1 \cdot 10^{25} \mathrm{kg} \\
+  4.1 \cdot 10^{19} M^{-0.63} &amp; \mbox{if } 1 \cdot 10^{25} \mathrm{kg} \le M \lt 4.4 \cdot 10^{26} \mathrm{kg} \\
+  1.8 \cdot 10^{-23} M^{0.96} &amp; \mbox{if } 4.4 \cdot 10^{26} \mathrm{kg} \le M \lt 1.5 \cdot 10^{29} \mathrm{kg} \\
+  5.9 \cdot 10^{60} M^{-1.9}  &amp; \mbox{if } 1.5 \cdot 10^{29} \mathrm{kg} \le M
+\end{cases}
+$$
 
 <div id="bottom"></div>
 </html>
