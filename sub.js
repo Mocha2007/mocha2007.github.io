@@ -81,7 +81,8 @@ var subtitles =	[
 				'.... .- ...- . / -.-- --- ..- / -. --- / .-.. .. ..-. .',
 				'<i>"No"</i>',
 				'...baka!',
-				'Update Furrygram'
+				'Update Furrygram',
+				'HAAAAAAAAAAAA YOUR CAMERA IS TRAAAAASH'
 				];
 function Sub(){
 	"use strict";
