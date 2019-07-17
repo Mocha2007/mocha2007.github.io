@@ -82,7 +82,8 @@ var subtitles =	[
 				'<i>"No"</i>',
 				'...baka!',
 				'Update Furrygram',
-				'HAAAAAAAAAAAA YOUR CAMERA IS TRAAAAASH'
+				'HAAAAAAAAAAAA YOUR CAMERA IS TRAAAAASH',
+				'My thesis was on the rind of Zayo Dadong'
 				];
 function Sub(){
 	"use strict";
