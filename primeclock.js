@@ -20,6 +20,18 @@ function diff(epoch){
 	return toYear(Date.now()-epoch*1000);
 }
 
+// Jan	~ until Paleoproterozoic
+// Feb	~ until Permian
+// Mar	~ until Eocene
+// Apr	~ until Pliocene
+// May	~ until Chibanian
+// Jun	~ until Tarantian
+// Jul	~ until 20 kya
+// Aug	~ until Iron Age
+// Sep	~ until Enlightenment
+// Oct	~ until 50 years ago
+// Nov	~ until 5 years ago
+// Dec	~ until 1 month ago
 var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [a,'<a href="https://en.wikipedia.org/wiki/Big_Bang">Big Bang</a>'],
 [a-380e3,'<a href="https://en.wikipedia.org/wiki/Chronology_of_the_universe#Dark_Ages">Cosmic Dark Ages</a>'],
@@ -182,8 +194,10 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [990e3,'<a href="https://en.wikipedia.org/wiki/Jaramillo_reversal">Jaramillo Reversal</a>'],
 [975e3,'<a href="https://en.wikipedia.org/wiki/Danube_glaciation">Danube Glaciation</a>'],
 [900e3,'<a href="https://en.wikipedia.org/wiki/Zhamanshin_crater">Zhamanshin Impact</a>'],
+[790e3,'<a href="https://en.wikipedia.org/wiki/Gunz_(geology)">Gunz Glaciation</a>'],
 [781e3,'<a href="https://en.wikipedia.org/wiki/Brunhes–Matuyama_reversal">Brunhes-Matuyama Reversal</a> - most recent geomagnetic reversal'],
 [700e3,'<i><a href="https://en.wikipedia.org/wiki/Homo_heidelbergensis">Homo heidelbergensis</a></i>'],
+[474e3,'<a href="https://en.wikipedia.org/wiki/Haslach_glaciation">Haslach Glaciation</a>'],
 [430e3,'<a href="https://en.wikipedia.org/wiki/Neanderthal">Neanderthals</a>'],
 [360e3,'<a href="https://en.wikipedia.org/wiki/Elster_glaciation">Elster Glaciation</a>'],
 [315e3,'Modern Humans Evolve'],
