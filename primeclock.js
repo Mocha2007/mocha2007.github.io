@@ -1,8 +1,8 @@
-var a = 14e9;
+var a = 13.799e9;
 var i;
 var currentyear = ((new Date()).getFullYear());
 var year = 86400*(currentyear%400?(currentyear%100?(currentyear%4?365:366):365):366);
-var cye = new Date(currentyear+"-01-01T00:00:00"+String(new Date()).slice(28,33))/1000; // current year epoch - jan 1 XXXX 00:00 utc
+var cye = new Date(currentyear+"-01-01T01:00:00"+String(new Date()).slice(28,33))/1000; // current year epoch - jan 1 XXXX 00:00 utc
 var debug = false; // enable to see all events at any time
 
 function timeSinceYear(){
@@ -21,12 +21,12 @@ function diff(epoch){
 }
 
 var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
-[14e9,'<a href="https://en.wikipedia.org/wiki/Big_Bang">Big Bang</a>'],
-//[14e9-380e3,'<a href="https://en.wikipedia.org/wiki/Chronology_of_the_universe#Dark_Ages">Cosmic Dark Ages</a>'],
-//[14e9-1e7,'<a href="https://en.wikipedia.org/wiki/Chronology_of_the_universe#Habitable_epoch">Habitable Epoch</a>'],
-[14e9-15e7,'<a href="https://en.wikipedia.org/wiki/Reionization">Reionization</a>'],
-[14e9-630e6,'<a href="https://en.wikipedia.org/wiki/GRB_090423">GRB 090423</a>, one of the oldest supernovae'],
-[14e9-670e6,'Formation of <a href="https://en.wikipedia.org/wiki/EGS-zs8-1">EGS-zs8-1</a>, one of the oldest known galaxies'],
+[a,'<a href="https://en.wikipedia.org/wiki/Big_Bang">Big Bang</a>'],
+[a-380e3,'<a href="https://en.wikipedia.org/wiki/Chronology_of_the_universe#Dark_Ages">Cosmic Dark Ages</a>'],
+[a-1e7,'<a href="https://en.wikipedia.org/wiki/Chronology_of_the_universe#Habitable_epoch">Habitable Epoch</a>'],
+[a-15e7,'<a href="https://en.wikipedia.org/wiki/Reionization">Reionization</a>'],
+[a-630e6,'<a href="https://en.wikipedia.org/wiki/GRB_090423">GRB 090423</a>, one of the oldest supernovae'],
+[a-670e6,'Formation of <a href="https://en.wikipedia.org/wiki/EGS-zs8-1">EGS-zs8-1</a>, one of the oldest known galaxies'],
 [13.2e9,'Depth of the <a href="https://en.wikipedia.org/wiki/Hubble_Ultra-Deep_Field#Hubble_eXtreme_Deep_Field">Hubble Extreme Deep Field</a>'],
 [12.8e9,'Formation of <a href="https://en.wikipedia.org/wiki/HCM-6A">HCM-6A</a>, the oldest known regular galaxy'],
 [12.7e9,'Formation of the <a href="https://en.wikipedia.org/wiki/Milky_Way">Milky Way</a>'],
@@ -413,9 +413,9 @@ a = 14e9
 
 function ialc(y){
 	"use strict";
-	var otherx = timeSinceYear(); // seconds since year beginning
-	var x = Math.floor(year*(1-Math.log(y)/Math.log(a)));
-	var wannadate = new Date(Date.now()-1000*(otherx-x));
+	var otherx = timeSinceYear(); // REAL seconds since year beginning
+	var x = Math.floor(year*(1-Math.log(y)/Math.log(a))); // FAKE seconds after beginning of year
+	var wannadate = new Date(Date.now()-1000*(otherx-x)); // convert FAKE 2 DATE
 	return String(wannadate).slice(4,24);
 }
 
