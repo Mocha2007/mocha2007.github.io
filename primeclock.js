@@ -222,6 +222,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [41.4e3,'<a href="https://en.wikipedia.org/wiki/Laschamp_event">Laschamp Event</a>'],
 [40e3,'<a href="https://en.wikipedia.org/wiki/Neanderthal_extinction">Neanderthals go Extinct</a>'],
 [30e3,'Mousterian Pluvial Ends'],
+[29e3,'Wolf-Dog <a href="https://en.wikipedia.org/wiki/Origin_of_the_domestic_dog#Timespan">common ancestor</a>'],
 [28.5e3,'Settlement of New Guinea'],
 [27e3,'Age of <a href="https://en.wikipedia.org/wiki/Haplogroup_R_(Y-DNA)">Haplogroup R</a>\'s common ancestor'],
 [24e3,'Extinction of the <a href="https://en.wikipedia.org/wiki/Cave_bear">Cave Bear</a>'],
