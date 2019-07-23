@@ -67,13 +67,17 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [4.404e9,'Water Appears on Earth'],
 [4.3e9,'Impact creates the <a href="https://en.wikipedia.org/wiki/Aitken_Basin">Aitken Basin</a> on the Moon'],
 [4.1e9,'Beginning of the <a href="https://en.wikipedia.org/wiki/Late_Heavy_Bombardment">Late Heavy Bombardment</a>'],
+[4.1e9,'Impact creates <a href="https://en.wikipedia.org/wiki/Herschel_(Mimantean_crater)">Herscel Crater</a> on Mimas'],
 [4e9,'Beginning of the <a href="https://en.wikipedia.org/wiki/Archean">Archean</a>'],
 [3.938e9,'Formation of <a href="https://en.wikipedia.org/wiki/Mare_Imbrium">Mare Imbrium</a>'],
 [3.92e9,'Impact creates the <a href="https://en.wikipedia.org/wiki/Nectaris_Basin">Nectaris Basin</a> on the Moon'],
+[3.9e9,'Impact creates <a href="https://en.wikipedia.org/wiki/Rembrandt_(crater)">Rembrandt Crater</a> on Mercury, the second-largest crater on Mercury'],
+[3.85e9,'Impact creates <a href="https://en.wikipedia.org/wiki/Caloris_Planitia">Caloris Planitia</a> on Mercury, the largest crater on Mercury'],
 [3.84e9,'Impact creates the <a href="https://en.wikipedia.org/wiki/Orientale_Basin">Orientale Basin</a> on the Moon'],
 [3.8e9,'End of the Late Heavy Bombardment'],
 [3.465e9,'Life forms on Earth'],
 [3.2e9,'Earliest Photosynthesis'],
+[3.2e9,'Impact creates the <a href="https://en.wikipedia.org/wiki/Eratosthenes_(crater)">Eratosthenes Crater</a> on the Moon'],
 [2.5e9,'Beginning of the <a href="https://en.wikipedia.org/wiki/Proterozoic">Proterozoic</a>'],
 [2.45e9,'<a href="https://en.wikipedia.org/wiki/Great_Oxygenation_Event">Great Oxygenation Event</a>'],
 [2.4e9,'<a href="https://en.wikipedia.org/wiki/Huronian_glaciation">Huronian Glaciation</a>'],
@@ -206,6 +210,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 // https://en.wikipedia.org/wiki/Timeline_of_human_prehistory
 [195e3,'Oldest Discovered Human Fossil'],
 [190e3,'<i><a href="https://en.wikipedia.org/wiki/Homo_floresiensis">Homo floresiensis</a></i>'],
+[180e3,'Impact creates <a href="https://en.wikipedia.org/wiki/Sputnik_Planitia">Sputnik Planitia</a> on Pluto'],
 [170e3,'First Clothing'],
 [161.3e3,'Origin of <a href="https://en.wikipedia.org/wiki/Haplogroup_A-P305">Haplogroup A1</a>'],
 [120e3,'<a href="https://en.wikipedia.org/wiki/Abbassia_Pluvial">Abbassia Pluvial</a> Begins'],
@@ -505,7 +510,7 @@ function primeclock(){ // can't use strict mode because of IE
 
 	var x = timeSinceYear(); // seconds since year beginning
 	var y = Math.pow(a,1-x/year);
-	var yprime = Math.round(y*Math.log(a)*24*60*60);
+	var yprime = Math.round(y*Math.log(a)*24*60*60).toLocaleString();
 
-	document.getElementById("nowtime").innerHTML = (String(new Date()).slice(4,24))+' - Now ('+Math.round(y).toLocaleString()+') Years Ago';// ('+yprime.toLocaleString()+'x Speed)';
+	document.getElementById("nowtime").innerHTML = (String(new Date()).slice(4,24))+' - Now ('+Math.round(y).toLocaleString()+') Years Ago ('+yprime+'x Speed)';
 }
