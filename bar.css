@@ -15,7 +15,7 @@ progress[role]:after {
 
 /* Firefox and Polyfill */
 progress {
-	background: url("img/progress0.png") !important; /* !important only needed in polyfill */
+	background: url("img/progress0.png"); /* !important */
 }
 /* Chrome */
 progress::-webkit-progress-bar {
