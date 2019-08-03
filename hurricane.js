@@ -727,6 +727,7 @@ hurricanelist[2018] = [
 hurricanelist[2019] = [
 	[140,141,0,"Andrea"],
 	[192,196,1,"Barry"],
+	[203,204,-1,"Three"],
 ];
 /*
 0	1 Jan
