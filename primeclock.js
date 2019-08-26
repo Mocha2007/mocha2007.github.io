@@ -158,6 +158,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [52.5e6,'<a href="https://en.wikipedia.org/wiki/London_Clay">London Clay</a>'],
 [52e6,'Earliest <a href="https://en.wikipedia.org/wiki/Bat">Bats</a>'],
 [45e6,'Australia Splits from Antarctica'],
+[45e6,'<a href="https://en.wikipedia.org/wiki/Azolla_event">Azolla Event</a>'],
 [42e6,'Earliest <a href="https://en.wikipedia.org/wiki/Carnivora">Carnivorans</a>'],
 [40e6,'Earliest <a href="https://en.wikipedia.org/wiki/Simian">Simians</a>'],
 [39.75e6,'Earliest <a href="https://en.wikipedia.org/wiki/Canidae">Canids</a>'],
