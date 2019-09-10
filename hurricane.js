@@ -729,6 +729,9 @@ hurricanelist[2019] = [
 	[192,196,1,"Barry"],
 	[203,204,-1,"Three"],
 	[233,236,0,"Chantal"],
+	[236,250,5,"Dorian"],
+	[238,241,0,"Erin"],
+	[246,248,0,"Fernand"], // todo Gabrielle (when it dissipates)
 ];
 /*
 0	1 Jan
