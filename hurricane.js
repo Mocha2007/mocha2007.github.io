@@ -734,7 +734,8 @@ hurricanelist[2019] = [
 	[246,248,0,"Fernand"],
 	[246,253,0,"Gabrielle"],
 	[256,263,3,"Humberto"],
-	[260,262,0,"Imelda"], // cont. Hurricane Jerry
+	[260,262,0,"Imelda"],
+	[260,268,2,"Jerry"], // cont. Hurricane Karen
 ];
 /*
 0	1 Jan
