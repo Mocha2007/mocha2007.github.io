@@ -260,7 +260,7 @@ var lang = [
 		name: "Ainu",
 		coords: [43, 142],
 		families: [],
-		areas: ["asia"],
+		areas: ["east asia"],
 		consonants: "p t k ts s h m n j w 4",
 		monophthongs: "a e i o u",
 		diphthongs: "",
@@ -691,7 +691,7 @@ var lang = [
 		name: "Cantonese",
 		coords: [24, 114],
 		families: ["sino-tibetan", "sinitic"],
-		areas: ["asia"],
+		areas: ["east asia"],
 		consonants: "m n N p t ts k k_w p_h t_h ts_h k_h k_w_h f s h l j w",
 		monophthongs: "i: y: u: e E: 8 9: o O: 6 a:",
 		diphthongs: "uy iu 8y ei Eu 6i 6u ou Oy ai au",
@@ -1537,7 +1537,7 @@ var lang = [
 		name: "Japanese",
 		coords: [36, 140],
 		families: ["japonic"],
-		areas: ["asia"],
+		areas: ["east asia"],
 		consonants: "m n p b t d k g s z h r j w",
 		monophthongs: "i u e o a",
 		diphthongs: "",
@@ -1731,7 +1731,7 @@ var lang = [
 		name: "Korean",
 		coords: [38, 127],
 		families: ["koreanic"],
-		areas: ["asia"],
+		areas: ["east asia"],
 		consonants: "m n N b d dz\\ g p t ts\\ k p_h t_h ts\\_h k_h s_h h s w l j",
 		monophthongs: "i M u e 2 E o V a i: M: u: e: 2: E: V: o: a:",
 		diphthongs: "",
@@ -1957,7 +1957,7 @@ var lang = [
 		name: "Mandarin",
 		coords: [40, 116],
 		families: ["sino-tibetan", "sinitic"],
-		areas: ["asia"],
+		areas: ["east asia"],
 		tags: ["farang"],
 		consonants: "p t k p_h t_h k_h m n N ts ts` ts\\ ts_h ts`_h ts\\_h f s s` s\\ x w l r\\` j",
 		monophthongs: "i y u 7 @ a",
@@ -2077,7 +2077,7 @@ var lang = [
 		name: "Miyako",
 		coords: [25, 125],
 		families: ["japonic", "ryukyuan"],
-		areas: ["asia"],
+		areas: ["east asia"],
 		consonants: "m n p t k 4 f s P", // ogami
 		monophthongs: "i 1 u E A",
 		diphthongs: "",
@@ -2229,7 +2229,7 @@ var lang = [
 		name: "Old Chinese",
 		coords: [34, 109],
 		families: ["sino-tibetan", "sinitic"],
-		areas: ["asia"],
+		areas: ["east asia"],
 		tags: ["dead"],
 		consonants: "p t ts k k_w ? ?_w p_h t_h ts_h k_h k_w_h b d dz g g_w m_0 n_0 N_0 N_w_0 m n N N_w l_0 l s h h_w r",
 		monophthongs: "i @ u e a o",
@@ -2577,7 +2577,7 @@ var lang = [
 		name: "Rukai",
 		coords: [23, 121],
 		families: ["austronesian"],
-		areas: ["asia"],
+		areas: ["east asia"],
 		consonants: "m n N p t d` k b d g ts v T s D r w l l` j",
 		monophthongs: "i e o a",
 		diphthongs: "",
@@ -3361,6 +3361,10 @@ var implications = [
 		["americas"]
 	],
 	// Asia
+	[
+		"east asia",
+		["asia"]
+	],
 	[
 		"india",
 		["asia"]
