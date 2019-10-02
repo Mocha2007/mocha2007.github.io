@@ -2216,7 +2216,6 @@ var lang = [
 			an: "an",
 			gender: 3,
 			genders: "fmn",
-			novsnot: true,
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
