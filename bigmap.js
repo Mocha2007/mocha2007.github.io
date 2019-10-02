@@ -2089,6 +2089,27 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Miyako_language"
 	},
 	{
+		name: "Mongolian",
+		coords: [47, 104],
+		families: ["mongolic"],
+		areas: ["east asia"],
+		consonants: "m m' n n' N p p' t t' g g' G\\ ts tS ts_h tS_h s S x x' K\\ K\\' r r' w w' j",
+		monophthongs: "i i: e e: 8 a a: u u: U U: o: O O:",
+		diphthongs: "ui Ui Oi ai",
+		features: {
+			adpositions: "postpositions",
+			cases: "nom acc gen obl",
+			gender: 0,
+			sov: "sov",
+			cumin: "other",
+			ginger: "other",
+			orange: "other",
+			sugar: "sugar",
+			tea: "cha"
+		},
+		source: "https://en.wikipedia.org/wiki/Mongolian_language"
+	},
+	{
 		name: "Naasioi",
 		coords: [-6, 156],
 		families: ["south bougainville", "nasioi"],
