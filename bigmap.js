@@ -1914,6 +1914,7 @@ var lang = [
 			an: "an",
 			gender: 3,
 			genders: "fmn",
+			novsnot: true,
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -1964,6 +1965,7 @@ var lang = [
 		features: {
 			an: "an",
 			gender: 0,
+			novsnot: true,
 			sov: "svo",
 			cumin: "other",
 			ginger: "other",
@@ -2066,6 +2068,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "na",
+			novsnot: true,
 			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Miskito_language"
@@ -2151,6 +2154,7 @@ var lang = [
 		features: {
 			adpositions: "postpositions",
 			an: "na",
+			novsnot: true,
 			orange: "other",
 			sov: "sov",
 			sugar: "other",
@@ -2212,6 +2216,7 @@ var lang = [
 			an: "an",
 			gender: 3,
 			genders: "fmn",
+			novsnot: true,
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
@@ -2359,6 +2364,7 @@ var lang = [
 			an: "an",
 			gender: 3,
 			genders: "fmn",
+			novsnot: true,
 			sov: "svo",
 			cumin: "cumin",
 			ginger: "ginger",
