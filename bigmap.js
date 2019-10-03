@@ -2330,6 +2330,19 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Ossetian_language"
 	},
 	{
+		name: "Otomi",
+		coords: [20, -99],
+		families: ["oto-manguean", "oto-pamean", "otomian"],
+		areas: ["mesoamerica"],
+		consonants: "t_> ts_> tS_> k_> p t ts tS k ? b d g p\\ T s S x h z m n J r l w j",
+		monophthongs: "i i~ 1 u u~ e @ o o~ E E~ O a a~",
+		diphthongs: "",
+		features: {
+			sov: "svo"
+		},
+		source: "https://en.wikipedia.org/wiki/Otomi_language"
+	},
+	{
 		name: "Palauan",
 		coords: [8, 135],
 		families: ["austronesian", "malayo-polynesian"],
