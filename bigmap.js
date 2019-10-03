@@ -2461,6 +2461,28 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Portuguese_language"
 	},
 	{
+		name: "Proto-Celtic",
+		coords: [47, 9],
+		families: ["indo-european", "celtic"],
+		areas: ["west europe"],
+		tags: ["dead"],
+		consonants: "b t d k g k_w g_w m n p\\ s l j w r",
+		monophthongs: "i: i u: u e o a: a",
+		diphthongs: "ei ai au oi ou",
+		features: {
+			adpositions: "prepositions",
+			an: "na", // likely
+			cases: "abl acc dat gen loc nom voc ins",
+			gender: 3,
+			genders: "fmn",
+			sov: "vso" // likely
+		},
+		sources: [
+			"https://en.wikipedia.org/wiki/Proto-Celtic_language",
+			"https://wals.info/languoid/genus/celtic"
+		]
+	},
+	{
 		name: "Proto-Germanic",
 		coords: [54, 10],
 		families: ["indo-european", "germanic"],
