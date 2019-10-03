@@ -3333,6 +3333,24 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Yucatec_Maya_language"
 	},
 	{
+		name: "Zapotec",
+		coords: [18, -96],
+		families: ["oto-manguean", "zapotecan"],
+		areas: ["mesoamerica"],
+		consonants: "b tS k_w d dZ g w h l m n n' p k 4 s t ts S j z ?",
+		monophthongs: "a e i o u",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			an: "na",
+			sov: "vso"
+		},
+		sources: [
+			"https://en.wikipedia.org/wiki/Zapotec_languages",
+			"http://www.native-languages.org/zapotec_guide.htm"
+		]
+	},
+	{
 		name: "Zuni",
 		coords: [35, -109],
 		families: [],
