@@ -2509,7 +2509,8 @@ var lang = [
 			an: "na", // ...maybe
 			cases: "abl acc dat gen loc nom voc",
 			gender: 3,
-			genders: "fmn"
+			genders: "fmn",
+			sov: "sov"
 		},
 		source: "https://en.wikipedia.org/wiki/Proto-Italic_language"
 	},
