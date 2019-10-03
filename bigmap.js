@@ -1844,6 +1844,7 @@ var lang = [
 		diphthongs: "ui ei eu oe ou ae au",
 		features: {
 			adpositions: "prepositions",
+			cases: "nom acc gen dat abl voc loc",
 			gender: 3,
 			genders: "fmn",
 			novsnot: true,
