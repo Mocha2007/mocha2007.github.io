@@ -1283,7 +1283,7 @@ var lang = [
 		name: "Guaymí",
 		coords: [9, -84],
 		families: ["chibchan"],
-		areas: ["north america"],
+		areas: ["central america"],
 		consonants: "t tS k k_w b d dZ g g_w s h r m n J N N_w w l",
 		monophthongs: "i M u e 7 o O a",
 		diphthongs: "",
@@ -1792,7 +1792,7 @@ var lang = [
 		name: "Kuna",
 		coords: [10, -79],
 		families: ["chibchan"],
-		areas: ["north america"],
+		areas: ["central america"],
 		consonants: "p t k p_> t_> k_> m n S_n m_> n_> tS v s l l_> 4 w j",
 		monophthongs: "i u e o a",
 		diphthongs: "",
@@ -2075,7 +2075,7 @@ var lang = [
 		name: "Miskito",
 		coords: [14, -83],
 		families: ["misumalpan"],
-		areas: ["mesoamerica"],
+		areas: ["mesoamerica", "central america"],
 		consonants: "p t k b d s h m n N l r j w",
 		monophthongs: "a i u a: i: u:",
 		diphthongs: "",
@@ -3422,6 +3422,10 @@ var implications = [
 	// NA
 	[
 		"caribbean",
+		["north america"]
+	],
+	[
+		"central america",
 		["north america"]
 	],
 	[
