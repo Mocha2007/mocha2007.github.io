@@ -2074,6 +2074,21 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Miskito_language"
 	},
 	{
+		name: "Mixtec",
+		coords: [17, -96],
+		families: ["oto-manguean", "mixtecan"],
+		areas: ["mesoamerica"],
+		consonants: "b t k k_w tS s S Z x m n n_d J w l 4",
+		monophthongs: "i 1 u e o a",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			an: "na",
+			sov: "vso"
+		},
+		source: "https://en.wikipedia.org/wiki/Mixtec_language"
+	},
+	{
 		name: "Miyako",
 		coords: [25, 125],
 		families: ["japonic", "ryukyuan"],
