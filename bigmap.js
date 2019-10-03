@@ -1280,6 +1280,20 @@ var lang = [
 		source: "https://en.wikipedia.org/wiki/Guarani_language"
 	},
 	{
+		name: "Guaymí",
+		coords: [9, -84],
+		families: ["chibchan"],
+		areas: ["north america"],
+		consonants: "t tS k k_w b d dZ g g_w s h r m n J N N_w w l",
+		monophthongs: "i M u e 7 o O a",
+		diphthongs: "",
+		features: {
+			adpositions: "prepositions",
+			sov: "sov"
+		},
+		source: "https://en.wikipedia.org/wiki/Guaymí_language"
+	},
+	{
 		name: "Hadza",
 		coords: [-7, 34],
 		families: [],
