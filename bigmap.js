@@ -355,7 +355,7 @@ var lang = [
 			cases: "acc dat gen nom voc",
 			gender: 3,
 			genders: "fmn",
-			novsnot: false,
+			novsnot: true, // ty Aeluroides for the correction
 			sov: "sov",
 			cumin: "cumin",
 			ginger: "ginger",
