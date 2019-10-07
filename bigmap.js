@@ -2849,6 +2849,7 @@ var lang = [
 		features: {
 			gender: 3,
 			genders: "fmn",
+			sov: "svo",
 			ginger: "ginger",
 			orange: "orange",
 			sugar: "sugar",
