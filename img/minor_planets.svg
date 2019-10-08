@@ -520,11 +520,6 @@
 		</animateMotion>
 	</a>
 
-	<a href="https://en.wikipedia.org/wiki/ʻOumuamua"><!-- ʻOumuamua Epoch 2018-08-22 -->
-		<text x="745" y="97" font-size="8" fill="white">ʻOumuamua</text>
-		<image href="https://upload.wikimedia.org/wikipedia/commons/1/1c/Artist's_impression_of_ʻOumuamua.jpg" x="722" y="88" height="12"/>
-	</a>
-
 	<circle class='po' r="958"/><!-- Saturn orbit -->
 	<a class='gas' href='https://en.wikipedia.org/wiki/Saturn'><!-- Saturn -->
 		<text x="1010" y="110">Saturn</text>
@@ -596,6 +591,11 @@
 		<animateMotion dur="4.8604215s" repeatCount="indefinite">
 			<mpath href="#SaturnPath"/>
 		</animateMotion>
+	</a>
+
+	<a href="https://en.wikipedia.org/wiki/ʻOumuamua"><!-- ʻOumuamua Epoch 2019 --> <!-- https://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3788040;old=0;orb=1;cov=0;log=0;cad=0#orb -->
+		<text x="1440" y="97" font-size="8" fill="white">ʻOumuamua</text>
+		<image href="https://upload.wikimedia.org/wikipedia/commons/1/1c/Artist's_impression_of_ʻOumuamua.jpg" x="1420" y="88" height="12"/>
 	</a>
 
 	<a href="https://en.wikipedia.org/wiki/10199_Chariklo"><!-- Chariklo -->
