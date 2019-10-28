@@ -741,6 +741,7 @@ hurricanelist[2019] = [
 	[284,287,0,"Melissa"],
 	[287,289,-1,"Fifteen"],
 	[291,292,0,"Nestor"],
+	[298,299,0,"Olga"],
 ];
 /*
 0	1 Jan
