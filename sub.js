@@ -72,6 +72,7 @@ var subtitles =	[
 				'Namei crawling through my windowpane',
 				'Splunge is for Splunge',
 				'Patterns are traps.',
+				'Kiss me under the kissing fern!~',
 				// mochisms
 				'slash-me huggu',
 				'Enkl&aacute;r&rsquo;s Stead, by Enkl&aacute;r&rsquo;s Head',
