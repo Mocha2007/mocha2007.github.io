@@ -25,6 +25,7 @@ var subtitles =	[
 				'So does the text contain just iambs there?<br>Then does it have five iambs total, too?',
 				'Roll for consonant mutation save.',
 				'Are noun countability stuffs that hard?',
+				'English sucks, and then you die.', // https://meta.stackexchange.com/questions/336005/neopronouns-or-trolling?newreg=7d69c4a9e87042df92f32d4bf2487f37#comment1109688_336011
 				// mat
 				'I have created a truly marvelous conworld,<br/>which this randomly generated subtitle is too small to contain.',
 				'Mocha &isin; Fags',
