@@ -140,9 +140,10 @@ function darian(){
 
 function HolidayCSS(){
 	"use strict";
-	var monthmonth = new Date().getMonth() + 1;
-	var dayday = (new Date().getDate())===(monthmonth*7-1);
-	console.log(monthmonth,new Date().getDate());
+	var month = new Date().getMonth() + 1;
+	var day = new Date().getDate();
+	var dayday = day === month*7-1;
+	console.log(month, day);
 
 	var ReplacementImage = 'Steve';
 
@@ -150,8 +151,8 @@ function HolidayCSS(){
 		ReplacementImage = '<img id="m" src="img/mopril.png" width="200" alt="Mochadian Birthday Squiggle" onmouseover="PlaySound(\'sfx\')" onmouseout="StopSound(\'sfx\')"> <audio id="sfx" src="snd/partyhorn.mp3"/>';
 	}
 
-	var day, title;
-	switch (monthmonth){
+	var title;
+	switch (month){
 		case 1:
 			ReplacementImage = 'Steve'; // Trust me, this is indeed necessary...
 			break;
@@ -164,8 +165,16 @@ function HolidayCSS(){
 		case 10:
 			ReplacementImage = '<img id="m" src="img/mochaween.png" width="200" title="Boo, motherfucker!" alt="Mochadian Halloween Squiggle">';
 			break;
+		case 11:
+			if (day === 7){
+				title = 'The Feast of Boris is today! \'Tis the season to be gorging!';
+			}
+			else {
+				title = '';
+			}
+			document.getElementById('m').title = title;
+			break;
 		case 12:
-			day = new Date().getDate();
 			if (day === 4){
 				title = 'Today is Yuletide! Roast marshmallows and listen to spooky ghost stories in Seaside Town!';
 			}
