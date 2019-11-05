@@ -150,11 +150,21 @@ function HolidayCSS(){
 	switch (month){
 		case 2:
 			src = 'mochentines';
-			title = 'Fuck merrily!';
+			if (day === 4) {
+				title = 'Day of the Republic: long live the Republic of the two Crowns!';
+			}
+			else {
+				title = 'Fuck merrily!';
+			}
 			break;
 		case 3:
 			src = 'mochricks';
 			title = 'Drink, ye bastard!';
+			break;
+		case 7:
+			if (day === 12){
+				title = 'King Witold\'s Birthday';
+			}
 			break;
 		case 10:
 			src = 'mochaween';
