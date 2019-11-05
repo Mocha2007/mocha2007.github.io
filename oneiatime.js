@@ -142,28 +142,28 @@ function HolidayCSS(){
 	"use strict";
 	var month = new Date().getMonth() + 1;
 	var day = new Date().getDate();
-	var dayday = day === month*7-1;
 	console.log(month, day);
 
-	var ReplacementImage = 'Steve';
-
-	if (dayday){
-		ReplacementImage = '<img id="m" src="img/mopril.png" width="200" alt="Mochadian Birthday Squiggle" onmouseover="PlaySound(\'sfx\')" onmouseout="StopSound(\'sfx\')"> <audio id="sfx" src="snd/partyhorn.mp3"/>';
-	}
-
-	var title;
+	var title = '';
+	var default_src = 'mo';
+	var src = default_src;
 	switch (month){
-		case 1:
-			ReplacementImage = 'Steve'; // Trust me, this is indeed necessary...
-			break;
 		case 2:
-			ReplacementImage = '<img id="m" src="img/mochentines.png" width="200" title="Fuck merrily!" alt="Mochadian Valentines\' Squiggles">';
+			src = 'mochentines';
+			title = 'Fuck merrily!';
 			break;
 		case 3:
-			ReplacementImage = '<img id="m" src="img/mochricks.png" width="200" title="Drink, ye bastard!" alt="Mochadian St. Patrick\'s day Squiggle">';
+			src = 'mochricks';
+			title = 'Drink, ye bastard!';
 			break;
 		case 10:
-			ReplacementImage = '<img id="m" src="img/mochaween.png" width="200" title="Boo, motherfucker!" alt="Mochadian Halloween Squiggle">';
+			src = 'mochaween';
+			if (day === 18){
+				title = 'Memorial Day for the Victims of the Bombing of Łódź';
+			}
+			else {
+				title = 'Boo, motherfucker!';
+			}
 			break;
 		case 11:
 			if (day === 7){
@@ -172,12 +172,9 @@ function HolidayCSS(){
 			else if (day === 14){
 				title = '<3';
 			}
-			else {
-				title = '';
-			}
-			document.getElementById('m').title = title;
 			break;
 		case 12:
+			src = 'mochristmas';
 			if (day === 4){
 				title = 'Today is Yuletide! Roast marshmallows and listen to spooky ghost stories in Seaside Town!';
 			}
@@ -193,12 +190,16 @@ function HolidayCSS(){
 			else {
 				title = 'Have a frosty winter solstice!';
 			}
-			ReplacementImage = '<img id="m" src="img/mochristmas.png" width="200" title="'+title+'" alt="Mochadian Christmas Squiggle">';
 			break;
 	}
 
-	if (ReplacementImage!=='Steve'){
-		document.getElementById("m").outerHTML = ReplacementImage;
+	document.getElementById('m').title = title;
+	if (src !== default_src){
+		document.getElementById("m").src = 'img/'+src+'.png';
+	}
+
+	if (day === 11*month-17 && day === month*month + 3*month - 1){
+		document.getElementById("m").outerHTML = '<img id="m" src="img/mopril.png" width="200" alt="Mochadian Birthday Squiggle" onmouseover="PlaySound(\'sfx\')" onmouseout="StopSound(\'sfx\')"> <audio id="sfx" src="snd/partyhorn.mp3"/>';
 	}
 }
 
