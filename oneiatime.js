@@ -166,6 +166,11 @@ function HolidayCSS(){
 				title = 'King Witold\'s Birthday';
 			}
 			break;
+		case 9:
+			if (day === 19){
+				title = 'Yarrrr!';
+			}
+			break;
 		case 10:
 			src = 'mochaween';
 			if (day === 18){
