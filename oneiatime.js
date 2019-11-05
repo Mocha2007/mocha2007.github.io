@@ -151,7 +151,7 @@ function HolidayCSS(){
 		case 2:
 			src = 'mochentines';
 			if (day === 4) {
-				title = 'Day of the Republic: long live the Republic of the two Crowns!';
+				title = 'Day of the Republic. Wiwie Erdeka! Long live the RTC!';
 			}
 			else {
 				title = 'Fuck merrily!';
