@@ -161,6 +161,11 @@ function HolidayCSS(){
 			src = 'mochricks';
 			title = 'Drink, ye bastard!';
 			break;
+		case 4:
+			if (day === 1){
+				document.getElementById('title').innerHTML = 'Schmocha&rsquo;s Site';
+			}
+			break;
 		case 7:
 			if (day === 12){
 				title = 'King Witold\'s Birthday';
