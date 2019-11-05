@@ -169,6 +169,9 @@ function HolidayCSS(){
 			if (day === 7){
 				title = 'The Feast of Boris is today! \'Tis the season to be gorging!';
 			}
+			else if (day === 14){
+				title = '<3';
+			}
 			else {
 				title = '';
 			}
