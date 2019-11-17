@@ -1,0 +1,17 @@
+html{
+	color: #0ff;
+	font-family: Consolas, "Courier New", monospace;
+	background-color: #000;
+}
+p{
+	text-indent: 45px;
+}
+abbr{
+	text-decoration: none;
+	animation: strobe 1s linear alternate infinite;
+	cursor: help;
+}
+@keyframes strobe{
+	0% {border-bottom:1px solid transparent;}
+	100% {border-bottom:1px solid cyan;}
+}
