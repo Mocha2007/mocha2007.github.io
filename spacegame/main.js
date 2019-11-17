@@ -1,8 +1,15 @@
 // begin math block
 
+var pi = Math.PI;
+
 function mod(n,m){
 	"use strict";
 	return ((n%m)+m)%m;
+}
+
+function randint(min, max){ // random integer in range
+	"use strict";
+	return Math.floor(uniform(min, max+1));
 }
 
 function sd(x){ // find the standard deviation of an array
@@ -34,16 +41,18 @@ function variance(x){ // find the variance of an array
 	return sum(v) / (x.length - 1);
 }
 
+function zeros(n){
+	zeroArray = [];
+	for (i=0;i<n;i++){
+		zeroArray.push(0);
+	}
+	return zeroArray;
+}
+
 // end math block
 // begin astro block
 
-sample_orbit = {
-	'parent': 'sun',
-	'sma': 1.49598023e11,
-	'ecc': .0167086,
-	'aop': 0,
-	'man': .1249,
-};
+var au = 149597870700;
 
 function keplerToCartesian(x){
 	"use strict";
@@ -70,7 +79,43 @@ function keplerToCartesian(t, orbit){
 // end astro block
 // begin main program
 
+var width = window.innerWidth;
+var height = window.innerHeight;
+
+function generateBody(){
+	var body = {};
+	body.mass = 2*Math.pow(10, uniform(17, 27));
+	var density = uniform(687, 5514);
+	body.radius = Math.pow(body.mass/(density*4/3*pi), 1/3);
+	body.albedo = uniform(0, 1);
+	return body;
+}
+
+function generateOrbit(){
+	var orbit = {};
+	orbit.sma = uniform(.3, 3)*au;
+	orbit.ecc = uniform(0, .25);
+	orbit.aop = uniform(0, 2*pi);
+	orbit.man = uniform(0, 2*pi);
+	return orbit;
+}
+
+function generatePlanet(){
+	var planet = {};
+	planet.orbit = generateOrbit();
+	planet.body = generateBody();
+	return planet;
+}
+
+function generateInner(){
+	var numberOfPlanets = randint(3, 5);
+	return (zeros(numberOfPlanets)).map(generatePlanet);
+}
+
 function main(){
 	"use strict";
-	console.log("test");
+	console.log("Mocha's weird-ass space game test");
+	console.log(generateInner());
 }
+
+document.onload = function(){main();};
