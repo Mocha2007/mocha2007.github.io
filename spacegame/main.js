@@ -12,6 +12,14 @@ function randint(min, max){ // random integer in range
 	return Math.floor(uniform(min, max+1));
 }
 
+function remap(value, range1, range2){
+	"use strict";
+	var range1range = range1[1] - range1[0];
+	var range2range = range2[1] - range2[0];
+	var fraction = (value - range1[0]) / range1range;
+	return fraction * range2range + range2[0];
+}
+
 function sd(x){ // find the standard deviation of an array
 	"use strict";
 	return Math.sqrt(variance(x));
@@ -54,33 +62,47 @@ function zeros(n){
 
 var au = 149597870700;
 
-function keplerToCartesian(x){
-	"use strict";
-	var tol = 1e-10;
-	var M = mod(self.man + 2*pi*t/p, 2*pi);
-	var E = M;
-	var E_;
-	while (true){
-		E_ = M + e*sin(E);
-		if (abs(E-E_) < tol){
-			return E;
-		}
-		E = E_;
+class Orbit{
+	constructor(parent, sma, ecc, aop, man){
+		this.parent = parent;
+		this.sma = sma;
+		this.ecc = ecc;
+		this.aop = aop;
+		this.man = man;
 	}
 }
 
-function keplerToCartesian(t, orbit){
-	"use strict";
-	var E = eccentric_anomaly(t);
-	var nu = true_anomaly(t);
-	var r_c = orbit.a*(1-orbit.e*cos(E));
-	return [r_c*cos(nu), r_c*sin(nu)];
-}
 // end astro block
+// begin interface block
+
+function drawPlanet(planet){
+	var planetIcon = document.createElement("div");
+	planetIcon.class = "planet";
+	planetIcon.id = planet.name;
+	planetIcon.innerHTML = "benis";
+	planetIcon.style.position = "absolute";
+	var planetCoords = getPlanetCoods(planet);
+	planetIcon.style.left = planetCoords[0];
+	planetIcon.style.top = planetCoords[1];
+}
+
+function getPlanetCoods(planet){
+	var absCoords = planet.orbit.cartesian(0);
+	var x = remap(absCoords[0], [-systemWidth, systemWidth], [0, width])
+	var y = remap(absCoords[1], [-systemHeight, systemHeight], [0, height])
+	return [x, y];
+}
+
+// end interface block
 // begin main program
 
 var width = window.innerWidth;
 var height = window.innerHeight;
+var systemHeight = 4*au;
+var systemWidth = width/height * systemHeight;
+var Game = {};
+var sun = {};
+sun.mu = 1.3271249e20;
 
 function generateBody(){
 	var body = {};
@@ -93,10 +115,43 @@ function generateBody(){
 
 function generateOrbit(){
 	var orbit = {};
+	orbit.parent = sun;
 	orbit.sma = uniform(.3, 3)*au;
 	orbit.ecc = uniform(0, .25);
 	orbit.aop = uniform(0, 2*pi);
 	orbit.man = uniform(0, 2*pi);
+	// functions
+	orbit.cartesian = function(t){
+		"use strict";
+		var E = this.eccentric_anomaly(t);
+		var nu = this.true_anomaly(t);
+		var r_c = this.a*(1-this.e*Math.cos(E));
+		return [r_c*Math.cos(nu), r_c*Math.sin(nu)];
+	}
+	orbit.eccentric_anomaly = function(t){
+		"use strict";
+		var tol = 1e-10;
+		var M = mod(this.man + 2*pi*t/this.period(), 2*pi);
+		var E = M;
+		var E_;
+		while (true){
+			E_ = M + this.e*Math.sin(E);
+			if (Math.abs(E-E_) > tol){
+				return E;
+			}
+			E = E_;
+			return E; // fixme
+		}
+	}
+	orbit.period = function(){
+		"use strict";
+		return 2*pi*(this.a**3/this.parent.mu)**.5;
+	}
+	orbit.true_anomaly = function(t){
+		var E = this.eccentric_anomaly(t);
+		var e = this.ecc;
+		return 2 * Math.atan2((1+e)**.5 * Math.sin(E/2), (1-e)**.5 * Math.cos(E/2));
+	}
 	return orbit;
 }
 
@@ -104,6 +159,7 @@ function generatePlanet(){
 	var planet = {};
 	planet.orbit = generateOrbit();
 	planet.body = generateBody();
+	planet.name = "Sol-" + randint(100000, 999999);
 	return planet;
 }
 
@@ -115,7 +171,10 @@ function generateInner(){
 function main(){
 	"use strict";
 	console.log("Mocha's weird-ass space game test");
-	console.log(generateInner());
+	Game.system = generateInner();
+	console.log(Game.system);
+	Game.system.map(drawPlanet);
 }
 
 document.onload = function(){main();};
+//setInterval('main()',100);
