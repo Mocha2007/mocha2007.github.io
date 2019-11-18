@@ -380,7 +380,8 @@ function generateSystem(){
 	for (i=1; i<SMAList.length; i++){
 		SMAList[i] = nextSMA(SMAList[i-1]);
 	}
-	return SMAList.map(generatePlanet);
+	var systemAttempt = SMAList.map(generatePlanet);
+	return systemAttempt.some(function(x){return x.isPHW();}) ? systemAttempt : generateSystem();
 }
 
 function main(){
