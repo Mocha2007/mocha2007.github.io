@@ -64,6 +64,10 @@ function zeros(n){
 
 // end math block
 // begin astro block
+var minute = 60;
+var hour = 60*minute;
+var day = 24*hour;
+var year = 365.2425 * day;
 
 var au = 149597870700;
 var gravConstant = 6.674e-11;
@@ -82,7 +86,7 @@ var specialUnits = {
 		"name": "Earths"
 	},
 	"period": {
-		"constant": 60*60*24*365.2425,
+		"constant": year,
 		"name": "yr"
 	},
 	"radius": {
@@ -305,6 +309,14 @@ function getPlanetCoods(planet){
 	return [x, y];
 }
 
+function selectTab(id){
+	var children = document.getElementById('rightdocs').children;
+	for (i=0; i<children.length; i++){
+		children[i].style.display = "none";
+	}
+	document.getElementById(id).style.display = "";
+}
+
 // end interface block
 // begin main program
 var Game = {};
@@ -345,11 +357,14 @@ function main(){
 	Game.system = new System(sun, generateInner());
 	console.log(Game.system);
 	// set variables up
-	Game.speed = 50000;
+	Game.speed = 21600; // 6h
 	Game.time = 0;
 	Game.systemHeight = 3*au;
+	Game.fps = 10;
 	// set up ticks
-	setInterval(gameTick, 50);
+	setInterval(gameTick, 1000/Game.fps);
+	// select welcome tab
+	selectTab("welcome");
 	// store cookie
 	// document.cookie = ...;
 }
@@ -372,8 +387,8 @@ function redraw(){
 	document.getElementById("leftinfo").innerHTML = "";
 	document.getElementById("leftinfo").appendChild(Game.system.secondaries[selectionId].info());
 	// update time
-	document.getElementById("time").innerHTML = "t = " + Game.time;
-	document.getElementById("timerate").innerHTML = "dt = " + Game.speed;
+	document.getElementById("time").innerHTML = "t = " + Game.time/hour + " h";
+	document.getElementById("timerate").innerHTML = "dt = " + Game.speed/hour + " h";
 	// update zoom
 	document.getElementById("zoom").innerHTML = Game.systemHeight/au;
 }

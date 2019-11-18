@@ -26,11 +26,25 @@ th{
 }
 #timecontrols{
 	background-color: #422;
-    float: right;
-    text-align: right;
+    float: left;
+    margin-left: 10px;
 }
 #map{
 	font-size: 200%;
+}
+#rightinfo{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+	overflow-y: scroll;
+	height: 100%;
+	background-color: #224;
+	width: 20%;
+}
+#righttabs span{
+	border: 2px solid cyan;
+	border-radius: 6px;
+	cursor: pointer;
 }
 .planet{
 	color: silver;
