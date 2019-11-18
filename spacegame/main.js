@@ -337,7 +337,7 @@ var questList = [
 			function(){return Game.player.colonyID >= 0;}
 		],
 		'requirements': [
-			function(){return true;}
+			// function(){return true;}
 		],
 		'results': [
 			function(){
