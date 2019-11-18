@@ -64,10 +64,12 @@ var au = 149597870700;
 var gravConstant = 6.674e-11;
 
 class Body{
-	constructor(mass, radius, albedo){
+	constructor(mass, radius, albedo, orbit, name){
 		this.mass = mass;
 		this.radius = radius;
 		this.albedo = albedo;
+		this.orbit = orbit;
+		this.name = name;
 	}
 	density = function(){
 		return this.mass / this.volume();
@@ -152,7 +154,7 @@ var systemHeight = 4*au;
 var systemWidth = width/height * systemHeight;
 var Game = {};
 var sun = new Body(1.9885e30, 6.957e8);
-sun.mu = 1.3271249e20;
+sun.name = "Sun";
 
 function generateBody(){
 	var mass = 2*Math.pow(10, uniform(17, 27));
@@ -172,9 +174,8 @@ function generateOrbit(){
 }
 
 function generatePlanet(){
-	var planet = {};
+	var planet = generateBody();
 	planet.orbit = generateOrbit();
-	planet.body = generateBody();
 	planet.name = "Sol-" + randint(100000, 999999);
 	return planet;
 }
