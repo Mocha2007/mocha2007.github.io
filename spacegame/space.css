@@ -11,6 +11,9 @@ abbr{
 	animation: strobe 1s linear alternate infinite;
 	cursor: help;
 }
+th{
+	text-align: right;
+}
 #leftinfo{
 	background-color: #444;
     float: left;
@@ -33,17 +36,29 @@ abbr{
 	color: silver;
 	cursor: pointer;
 }
+.gasGiant{
+	color: tan;
+}
+.iceGiant{
+	color: cyan;
+}
+.terra{
+	color: pine;
+}
+.desert{
+	color: orange;
+}
 .star{
 	color: yellow;
 	cursor: default;
 }
 .selected{
-	animation: selectionstrobe 1s linear alternate infinite;
+	animation: selectionstrobe 0.5s linear alternate infinite;
 }
 
 @keyframes selectionstrobe{
 	0% {color: red;}
-	100% {color: silver;}
+	100% {color: black;}
 }
 @keyframes strobe{
 	0% {border-bottom:1px solid transparent;}

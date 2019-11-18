@@ -67,6 +67,10 @@ function zeros(n){
 
 var au = 149597870700;
 var gravConstant = 6.674e-11;
+var dataExceptions = [
+	"classification",
+	"density",
+];
 
 class Body{
 	constructor(mass, radius, albedo, orbit, name){
@@ -75,6 +79,21 @@ class Body{
 		this.albedo = albedo;
 		this.orbit = orbit;
 		this.name = name;
+	}
+	classification = function(){
+		if (2e26 < this.mass){
+			return "gasGiant";
+		}
+		if (6e25 < this.mass){
+			return "iceGiant";
+		}
+		if (2e24 < this.mass){
+			return "terra";
+		}
+		if (5e23 < this.mass){
+			return "desert";
+		}
+		return "rock";
 	}
 	density = function(){
 		return this.mass / this.volume();
@@ -86,8 +105,12 @@ class Body{
 		var table = document.createElement("table");
 		var row, cell;
 		for (var property in this){
-			if (isFunction(this[property])){
-				continue;
+			var value = this[property]
+			if (isFunction(value)){
+				if (dataExceptions.indexOf(property) === -1){
+					continue;
+				}
+				value = this[property]();
 			}
 			row = document.createElement("tr");
 			cell = document.createElement("th");
@@ -98,7 +121,7 @@ class Body{
 				cell.appendChild(this.orbit.info());
 			}
 			else{
-				cell.innerHTML = this[property];
+				cell.innerHTML = value;
 			}
 			row.appendChild(cell);
 			table.appendChild(row);
@@ -215,7 +238,7 @@ function drawPlanet(planet){
 		planetIcon.innerHTML = "&middot;";
 		planetIcon.style.position = "absolute";
 	}
-	planetIcon.classList.value = "planet";
+	planetIcon.classList.value = "planet " + planet.classification();
 	var planetCoords = getPlanetCoods(planet);
 	planetIcon.style.left = planetCoords[0]+"px";
 	planetIcon.style.top = planetCoords[1]+"px";
