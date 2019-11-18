@@ -434,6 +434,13 @@ function main(){
 	"use strict";
 	console.log("Mocha's weird-ass space game test");
 	Game.debug = {}
+	if (read_cookie("settings")){
+		Game.settings = read_cookie("settings");
+	}
+	else{
+		Game.settings = {};
+		Game.settings.autosaveInterval = 1;
+	}
 	// set up RNG
 	Game.debug.loaded = seededRandomSetup();
 	document.getElementById("seed").innerHTML = Game.rng.seed;
@@ -499,6 +506,7 @@ function redraw(){
 function saveGame(isManual){
 	// store cookie https://www.w3schools.com/js/js_cookies.asp
 	write_cookie("resources", Game.resources);
+	write_cookie("settings", Game.settings);
 	Game.debug.lastSave = new Date();
 	if (isManual){
 		console.log("Successfully manually saved game!");
