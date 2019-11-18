@@ -74,6 +74,21 @@ class Body{
 	density = function(){
 		return this.mass / this.volume();
 	}
+	info = function(){
+		var table = document.createElement("table");
+		var row, cell;
+		for (var property in this){
+			row = document.createElement("tr");
+			cell = document.createElement("th");
+			cell.innerHTML = property;
+			row.appendChild(cell);
+			cell = document.createElement("td");
+			cell.innerHTML = this[property];
+			row.appendChild(cell);
+			table.appendChild(row);
+		}
+		return table;
+	}
 	mu = function(){
 		return this.mass * gravConstant;
 	}
@@ -231,9 +246,14 @@ function gameTick(){
 }
 
 function redraw(){
+	// update map
 	document.getElementById("map").innerHTML = "";
 	Game.system.secondaries.map(drawPlanet);
 	drawStar();
+	// update infobox
+	var selectionId = Number(document.getElementById("input_id").value);
+	document.getElementById("leftinfo").innerHTML = "";
+	document.getElementById("leftinfo").appendChild(Game.system.secondaries[selectionId].info());
 }
 
 document.onload = function(){main();};

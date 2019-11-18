@@ -15,3 +15,15 @@ abbr{
 	0% {border-bottom:1px solid transparent;}
 	100% {border-bottom:1px solid cyan;}
 }
+#leftinfo{
+	background-color: #444;
+    float: left;
+    width: 25%;
+    position: absolute;
+    bottom: 0px;
+}
+#selector{
+	background-color: #422;
+    float: left;
+    width: 25%;
+}
