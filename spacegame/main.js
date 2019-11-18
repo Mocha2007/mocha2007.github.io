@@ -124,6 +124,14 @@ class Orbit{
 	}
 }
 
+class Star extends Body{
+	constructor(mass, radius, name, luminosity, temperature) {
+		super(mass, radius, undefined, undefined, name);
+		this.luminosity = luminosity;
+		this.temperature = temperature;
+	}
+}
+
 // end astro block
 // begin interface block
 
@@ -153,8 +161,7 @@ var height = window.innerHeight;
 var systemHeight = 4*au;
 var systemWidth = width/height * systemHeight;
 var Game = {};
-var sun = new Body(1.9885e30, 6.957e8);
-sun.name = "Sun";
+var sun = new Star(1.9885e30, 6.957e8, "Sun", 3.828e26, 5778);
 
 function generateBody(){
 	var mass = 2*Math.pow(10, uniform(17, 27));
