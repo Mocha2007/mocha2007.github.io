@@ -95,7 +95,7 @@ class Orbit{
 		"use strict";
 		var E = this.eccentricAnomaly(t);
 		var nu = this.trueAnomaly(t);
-		var r_c = this.a*(1-this.e*Math.cos(E));
+		var r_c = this.sma*(1-this.ecc*Math.cos(E));
 		return [r_c*Math.cos(nu), r_c*Math.sin(nu)];
 	}
 	eccentricAnomaly = function(t){
@@ -149,8 +149,10 @@ function drawPlanet(planet){
 	planetIcon.innerHTML = "benis";
 	planetIcon.style.position = "absolute";
 	var planetCoords = getPlanetCoods(planet);
+	console.warn(planetIcon);
 	planetIcon.style.left = planetCoords[0];
 	planetIcon.style.top = planetCoords[1];
+	document.getElementById("map").appendChild(planetIcon);
 }
 
 function getPlanetCoods(planet){
