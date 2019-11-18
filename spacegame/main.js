@@ -146,17 +146,16 @@ function drawPlanet(planet){
 	var planetIcon = document.createElement("div");
 	planetIcon.class = "planet";
 	planetIcon.id = planet.name;
-	planetIcon.innerHTML = "benis";
+	planetIcon.innerHTML = "O";
 	planetIcon.style.position = "absolute";
 	var planetCoords = getPlanetCoods(planet);
-	console.warn(planetIcon);
 	planetIcon.style.left = planetCoords[0]+"px";
 	planetIcon.style.top = planetCoords[1]+"px";
 	document.getElementById("map").appendChild(planetIcon);
 }
 
 function getPlanetCoods(planet){
-	var absCoords = planet.orbit.cartesian(0);
+	var absCoords = planet.orbit.cartesian(Game.time);
 	var x = remap(absCoords[0], [-systemWidth, systemWidth], [0, width])
 	var y = remap(absCoords[1], [-systemHeight, systemHeight], [0, height])
 	return [x, y];
@@ -206,8 +205,22 @@ function main(){
 	console.log("Mocha's weird-ass space game test");
 	Game.system = new System(sun, generateInner());
 	console.log(Game.system);
+	// set variables up
+	Game.speed = 100000;
+	Game.time = 0;
+	// set up ticks
+	setInterval(gameTick, 100);
+}
+
+function gameTick(){
+	Game.time = Game.time + Game.speed;
+	// finally, update interface
+	redraw();
+}
+
+function redraw(){
+	document.getElementById("map").innerHTML = "";
 	Game.system.secondaries.map(drawPlanet);
 }
 
 document.onload = function(){main();};
-//setInterval('main()',100);
