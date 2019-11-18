@@ -94,6 +94,7 @@ class Orbit{
 	cartesian = function(t){
 		"use strict";
 		var E = this.eccentricAnomaly(t);
+		console.log('E', E)
 		var nu = this.trueAnomaly(t);
 		var r_c = this.a*(1-this.e*Math.cos(E));
 		return [r_c*Math.cos(nu), r_c*Math.sin(nu)];
@@ -115,7 +116,7 @@ class Orbit{
 	}
 	period = function(){
 		"use strict";
-		return 2*pi*(this.a**3/this.parent.mu)**.5;
+		return 2*pi*Math.pow((Math.pow(this.sma, 3)/this.parent.mu()), .5);
 	}
 	trueAnomaly = function(t){
 		var E = this.eccentricAnomaly(t);
@@ -129,6 +130,13 @@ class Star extends Body{
 		super(mass, radius, undefined, undefined, name);
 		this.luminosity = luminosity;
 		this.temperature = temperature;
+	}
+}
+
+class System{
+	constructor(primary, secondaries){
+		this.primary = primary;
+		this.secondaries = secondaries;
 	}
 }
 
@@ -195,9 +203,9 @@ function generateInner(){
 function main(){
 	"use strict";
 	console.log("Mocha's weird-ass space game test");
-	Game.system = generateInner();
+	Game.system = new System(sun, generateInner());
 	console.log(Game.system);
-	Game.system.map(drawPlanet);
+	Game.system.secondaries.map(drawPlanet);
 }
 
 document.onload = function(){main();};
