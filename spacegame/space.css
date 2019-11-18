@@ -14,10 +14,6 @@ abbr{
 	animation: strobe 1s linear alternate infinite;
 	cursor: help;
 }
-@keyframes strobe{
-	0% {border-bottom:1px solid transparent;}
-	100% {border-bottom:1px solid cyan;}
-}
 #leftinfo{
 	background-color: #444;
     float: left;
@@ -33,6 +29,9 @@ abbr{
     float: right;
     text-align: right;
 }
+#map{
+	font-size: 200%;
+}
 .planet{
 	color: silver;
 }
@@ -40,5 +39,14 @@ abbr{
 	color: yellow;
 }
 .selected{
-	color: red;
+	animation: selectionstrobe 1s linear alternate infinite;
+}
+
+@keyframes selectionstrobe{
+	0% {color: red;}
+	100% {color: silver;}
+}
+@keyframes strobe{
+	0% {border-bottom:1px solid transparent;}
+	100% {border-bottom:1px solid cyan;}
 }

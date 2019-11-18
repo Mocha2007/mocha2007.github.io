@@ -202,7 +202,7 @@ function drawPlanet(planet){
 		var planetIcon = document.createElement("div");
 		document.getElementById("map").appendChild(planetIcon);
 		planetIcon.id = planet.name;
-		planetIcon.innerHTML = ".";
+		planetIcon.innerHTML = "&middot;";
 		planetIcon.style.position = "absolute";
 	}
 	planetIcon.classList.value = "planet";
@@ -287,7 +287,7 @@ function gameTick(){
 	Game.time = Game.time + Game.speed;
 	Game.width = window.innerWidth;
 	Game.height = window.innerHeight;
-	Game.systemHeight = 4*au;
+	Game.systemHeight = 3*au;
 	Game.systemWidth = Game.width/Game.height * Game.systemHeight;
 	// finally, update interface
 	redraw();
