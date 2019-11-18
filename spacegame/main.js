@@ -14,15 +14,18 @@ function seededRandom(){
 	return (Game.rng.value+max31Bit)/max32Bit;
 }
 function seededRandomSetup(){
-	if (read_cookie("rng")){
-		Game.rng = read_cookie("rng");
-		return true;
-	}
 	Game.rng = {};
-	Game.rng.seed = Number(new Date());
+	if (read_cookie("seed")){
+		Game.rng = read_cookie("seed");
+		var loaded = true;
+	}
+	else{
+		Game.rng.seed = Number(new Date());
+		var loaded = false;
+	}
 	Game.rng.value = Game.rng.seed;
 	Game.rng.i = 0;
-	return false;
+	return loaded;
 }
 function read_cookie(name){ // https://stackoverflow.com/a/11344672/2579798
 	var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
@@ -423,7 +426,7 @@ function main(){
 	document.getElementById("seed").innerHTML = Game.rng.seed;
 	// set up system
 	Game.system = new System(sun, generateSystem());
-	console.log(Game.system);
+	// console.log(Game.system);
 	// set variables up
 	Game.speed = 21600; // 6h
 	Game.time = 0;
@@ -435,9 +438,9 @@ function main(){
 	// select welcome tab
 	selectTab("welcome");
 	// store cookie https://www.w3schools.com/js/js_cookies.asp
-	write_cookie("rng", Game.rng);
+	write_cookie("seed", Game.rng.seed);
 	write_cookie("resources", Game.resources);
-	console.log(document.cookie);
+	// console.log(document.cookie);
 }
 
 function gameTick(){
