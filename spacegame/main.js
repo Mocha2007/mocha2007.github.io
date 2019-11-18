@@ -201,14 +201,18 @@ function drawPlanet(planet){
 	if (planetIcon === null){
 		var planetIcon = document.createElement("div");
 		document.getElementById("map").appendChild(planetIcon);
-		planetIcon.classList.value = "planet";
 		planetIcon.id = planet.name;
 		planetIcon.innerHTML = ".";
 		planetIcon.style.position = "absolute";
 	}
+	planetIcon.classList.value = "planet";
 	var planetCoords = getPlanetCoods(planet);
 	planetIcon.style.left = planetCoords[0]+"px";
 	planetIcon.style.top = planetCoords[1]+"px";
+	// check if selection...
+	if (Number(document.getElementById("input_id").value) === Game.system.secondaries.indexOf(planet)){
+		planetIcon.classList.value += " selected";
+	}
 }
 
 function drawStar(){

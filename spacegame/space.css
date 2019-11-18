@@ -3,6 +3,9 @@ html{
 	font-family: Consolas, "Courier New", monospace;
 	background-color: #000;
 }
+form{
+	border: none;
+}
 p{
 	text-indent: 45px;
 }
@@ -35,4 +38,7 @@ abbr{
 }
 .star{
 	color: yellow;
+}
+.selected{
+	color: red;
 }
