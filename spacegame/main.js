@@ -1,3 +1,8 @@
+// begin basic block
+function isFunction(functionToCheck) { // https://stackoverflow.com/a/7356528/2579798
+	return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
+}
+// end basic block
 // begin math block
 
 var pi = Math.PI;
@@ -78,6 +83,9 @@ class Body{
 		var table = document.createElement("table");
 		var row, cell;
 		for (var property in this){
+			if (isFunction(this[property])){
+				continue;
+			}
 			row = document.createElement("tr");
 			cell = document.createElement("th");
 			cell.innerHTML = property;
