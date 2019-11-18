@@ -72,6 +72,28 @@ var dataExceptions = [
 	"density",
 	"period",
 ];
+var specialUnits = {
+	"density": {
+		"constant": 1000,
+		"name": "g/cm&sup3;"
+	},
+	"mass": {
+		"constant": 5.97237e24,
+		"name": "Earths"
+	},
+	"period": {
+		"constant": 60*60*24*365.2425,
+		"name": "yr"
+	},
+	"radius": {
+		"constant": 1000,
+		"name": "km"
+	},
+	"sma": {
+		"constant": au,
+		"name": "au"
+	}
+};
 
 class Body{
 	constructor(mass, radius, albedo, orbit, name){
@@ -120,6 +142,9 @@ class Body{
 			cell = document.createElement("td");
 			if (property === "orbit"){
 				cell.appendChild(this.orbit.info());
+			}
+			else if (specialUnits.hasOwnProperty(property)){
+				cell.innerHTML = value/specialUnits[property].constant + " " + specialUnits[property].name;
 			}
 			else{
 				cell.innerHTML = value;
@@ -186,6 +211,9 @@ class Orbit{
 			cell = document.createElement("td");
 			if (property === "parent"){
 				cell.innerHTML = this.parent.name;
+			}
+			else if (specialUnits.hasOwnProperty(property)){
+				cell.innerHTML = value/specialUnits[property].constant + " " + specialUnits[property].name;
 			}
 			else{
 				cell.innerHTML = value;
