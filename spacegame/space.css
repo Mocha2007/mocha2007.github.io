@@ -36,6 +36,7 @@ h2{
 }
 #map{
 	font-size: 200%;
+	z-index: -2;
 }
 #rightinfo{
     position: absolute;
@@ -54,9 +55,18 @@ h2{
 #danger{
 	color: red;
 }
+#resourcebar{
+	background-color: #224;
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	width: 25%;
+	margin-left: -12.5%;
+}
 .planet{
 	color: silver;
 	cursor: pointer;
+	z-index: -1;
 }
 .gasGiant{
 	color: tan;
