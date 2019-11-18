@@ -418,6 +418,7 @@ function generateSystem(){
 		SMAList[i] = nextSMA(SMAList[i-1]);
 	}
 	var systemAttempt = SMAList.map(generatePlanet);
+	console.log(systemAttempt);
 	return systemAttempt.some(function(x){return x.isPHW();}) ? systemAttempt : generateSystem();
 }
 
