@@ -4,6 +4,10 @@ var max32Bit = Math.pow(2, 32) - 1;
 function isFunction(functionToCheck) { // https://stackoverflow.com/a/7356528/2579798
 	return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
 }
+function nop(){
+	"use strict";
+	return;
+}
 function seededRandom(){
 	x = Game.rng.value;
 	x ^= x << 13;
@@ -320,6 +324,45 @@ function nextSMA(previousSMA){
 }
 
 // end astro block
+// begin gameplay block
+var questList = [
+	{
+		'title': "Select World",
+		'desc': "Select a world to colonize",
+		'conditions': [
+			function(){return Game.player.colonyID >= 0;}
+		],
+		'requirements': [
+			function(){return true;}
+		],
+		'results': [
+			nop
+		]
+	}
+];
+
+function drawQuests(quest){
+	var id = questList.indexOf(quest);
+	if (document.getElementById("quest"+id)){
+		// todo update
+	}
+	else{ // create
+		questElement = document.createElement("div");
+		questElement.classList = "quest";
+		questElement.id = "quest"+id;
+		// title
+		questTitle = document.createElement("h2");
+		questTitle.innerHTML = quest.title;
+		questElement.appendChild(questTitle)
+		// desc
+		questDesc = document.createElement("p");
+		questDesc.innerHTML = quest.desc;
+		questElement.appendChild(questDesc);
+		// append to main
+		document.getElementById("quests").appendChild(questElement);
+	}
+}
+// end gameplay block
 // begin interface block
 
 function drawPlanet(planet){
@@ -453,15 +496,28 @@ function main(){
 	Game.speed = 21600; // 6h
 	Game.time = 0;
 	Game.systemHeight = 3*au;
-	Game.resources = {};
-	Game.resources.water = 0;
-	Game.resources.fuel = 0;
-	Game.resources.steel = 0;
 	// set up ticks
 	updateFPS();
 	setInterval(gameTick, 1000/Game.settings.fps);
 	// select welcome tab
 	selectTab("welcome");
+	// load?
+	if (read_cookie("resources")){
+		Game.resources = read_cookie("resources");
+	}
+	else{
+		Game.resources = {};
+		Game.resources.water = 0;
+		Game.resources.fuel = 0;
+		Game.resources.steel = 0;
+	}
+	if (read_cookie("player")){
+		Game.player = read_cookie("player");
+	}
+	else{
+		Game.player = {};
+		Game.player.quests = [];
+	}
 	// save
 	saveGame();
 }
@@ -499,6 +555,8 @@ function redraw(){
 	document.getElementById("water").innerHTML = Game.resources.water;
 	document.getElementById("fuel").innerHTML = Game.resources.fuel;
 	document.getElementById("steel").innerHTML = Game.resources.steel;
+	// update quests
+	updateQuests();
 	// save
 	if (minute < new Date() - Game.debug.lastSave){
 		saveGame(false);
@@ -509,6 +567,7 @@ function saveGame(isManual){
 	// store cookie https://www.w3schools.com/js/js_cookies.asp
 	write_cookie("resources", Game.resources);
 	write_cookie("settings", Game.settings);
+	write_cookie("player", Game.player);
 	Game.debug.lastSave = new Date();
 	if (isManual){
 		console.log("Successfully manually saved game!");
@@ -518,6 +577,28 @@ function saveGame(isManual){
 function updateFPS(){
 	Game.settings.fps = Number(document.getElementById('input_fps').value);
 	saveGame();
+}
+
+function updateQuests(){
+	// display/update current quests
+	Game.player.quests.map(drawQuests);
+	// see if new quests apply
+	for (i=0; i<questList.length; i++){
+		quest = questList[i];
+		if (Game.player.quests.indexOf(quest) >= 0){
+			continue;
+		}
+		success = true;
+		for (i=0; i<quest.requirements.length; i++){
+			if (!quest.requirements[i]()){
+				success = false;
+				break;
+			}
+		}
+		if (success){
+			Game.player.quests.push(quest);
+		}
+	}
 }
 
 document.onload = function(){main();};
