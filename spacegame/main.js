@@ -511,7 +511,7 @@ function main(){
 	else{
 		Game.settings = {};
 		Game.settings.autosaveInterval = 1;
-		Game.settings.fps = 10;
+		Game.settings.fps = 20;
 	}
 	// set up RNG
 	Game.debug.loaded = seededRandomSetup();
