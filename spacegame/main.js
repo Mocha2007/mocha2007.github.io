@@ -303,6 +303,7 @@ function redraw(){
 	document.getElementById("leftinfo").appendChild(Game.system.secondaries[selectionId].info());
 	// update time
 	document.getElementById("time").innerHTML = "t = " + Game.time;
+	document.getElementById("timerate").innerHTML = "dt = " + Game.speed;
 }
 
 document.onload = function(){main();};
