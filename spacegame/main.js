@@ -282,6 +282,8 @@ function main(){
 	Game.systemHeight = 3*au;
 	// set up ticks
 	setInterval(gameTick, 50);
+	// store cookie
+	// document.cookie = ...;
 }
 
 function gameTick(){
