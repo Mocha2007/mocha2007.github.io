@@ -8,6 +8,10 @@ function nop(){
 	"use strict";
 	return;
 }
+function ping(){
+	"use strict";
+	console.log("ping");
+}
 function seededRandom(){
 	x = Game.rng.value;
 	x ^= x << 13;
@@ -328,7 +332,7 @@ function nextSMA(previousSMA){
 var questList = [
 	{
 		'title': "Select World",
-		'desc': "Select a world to colonize",
+		'desc': "Select a world to colonize (WARNING: cannot be undone!)<br><input id='world_selector' type='submit' value='Confirm Selection' onclick='Game.player.colonyID=getID();'>",
 		'conditions': [
 			function(){return Game.player.colonyID >= 0;}
 		],
@@ -336,7 +340,10 @@ var questList = [
 			function(){return true;}
 		],
 		'results': [
-			nop
+			function(){
+					var node = document.getElementById("world_selector");
+					node.parentNode.removeChild(node);
+			}
 		]
 	}
 ];
@@ -345,6 +352,12 @@ function drawQuests(quest){
 	var id = questList.indexOf(quest);
 	if (document.getElementById("quest"+id)){
 		// todo update
+		if (quest.complete && !quest.elementUpdated){
+			document.getElementById("quest"+id+"completion").classList = "complete";
+			document.getElementById("quest"+id+"completion").innerHTML = "complete";
+			quest.elementUpdated = true;
+			quest.results.map(function(x){x();});
+		}
 	}
 	else{ // create
 		questElement = document.createElement("div");
@@ -358,6 +371,12 @@ function drawQuests(quest){
 		questDesc = document.createElement("p");
 		questDesc.innerHTML = quest.desc;
 		questElement.appendChild(questDesc);
+		// quest status
+		questStatus = document.createElement("span");
+		questStatus.innerHTML = "incomplete";
+		questStatus.classList = "incomplete";
+		questStatus.id = "quest"+id+"completion";
+		questElement.appendChild(questStatus);
 		// append to main
 		document.getElementById("quests").appendChild(questElement);
 	}
@@ -384,7 +403,7 @@ function drawPlanet(planet){
 	var index = Game.system.secondaries.indexOf(planet);
 	planetIcon.onclick = function(){document.getElementById("input_id").value = index;};
 	// check if selection...
-	if (Number(document.getElementById("input_id").value) === index){
+	if (getID() === index){
 		planetIcon.classList.value += " selected";
 	}
 }
@@ -402,6 +421,10 @@ function drawStar(){
 	var planetCoords = [Game.width/2, Game.height/2];
 	planetIcon.style.left = planetCoords[0]+"px";
 	planetIcon.style.top = planetCoords[1]+"px";
+}
+
+function getID(){
+	return Number(document.getElementById("input_id").value);
 }
 
 function getPlanetCoods(planet){
@@ -598,6 +621,16 @@ function updateQuests(){
 		if (success){
 			Game.player.quests.push(quest);
 		}
+	}
+	Game.player.quests.map(updateQuestCompletion);
+}
+
+function updateQuestCompletion(quest){
+	if (quest.complete){
+		return;
+	}
+	if (quest.conditions.every(function(x){return x();})){
+		quest.complete = true;
 	}
 }
 

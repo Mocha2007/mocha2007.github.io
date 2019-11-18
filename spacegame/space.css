@@ -91,7 +91,12 @@ h2{
 .quest{
 	border: 1px dashed cyan;
 }
-
+.complete{
+	color: lime;
+}
+.incomplete{
+	color: red;
+}
 @keyframes selectionstrobe{
 	0% {color: red;}
 	100% {color: black;}
