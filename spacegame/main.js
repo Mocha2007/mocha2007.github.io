@@ -62,6 +62,20 @@ function zeros(n){
 
 var au = 149597870700;
 
+class Body{
+	constructor(mass, radius, albedo){
+		this.mass = mass;
+		this.radius = radius;
+		this.albedo = albedo;
+	}
+	density = function(){
+		return this.mass / this.volume();
+	}
+	volume = function(){
+		return 4/3 * pi * Math.pow(this.radius, 3);
+	}
+}
+
 class Orbit{
 	constructor(parent, sma, ecc, aop, man){
 		this.parent = parent;
@@ -137,12 +151,11 @@ var sun = {};
 sun.mu = 1.3271249e20;
 
 function generateBody(){
-	var body = {};
-	body.mass = 2*Math.pow(10, uniform(17, 27));
+	var mass = 2*Math.pow(10, uniform(17, 27));
 	var density = uniform(687, 5514);
-	body.radius = Math.pow(body.mass/(density*4/3*pi), 1/3);
-	body.albedo = uniform(0, 1);
-	return body;
+	var radius = Math.pow(mass/(density*4/3*pi), 1/3);
+	var albedo = uniform(0, 1);
+	return new Body(mass, radius, albedo);
 }
 
 function generateOrbit(){
