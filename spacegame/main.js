@@ -146,9 +146,21 @@ function drawPlanet(planet){
 	var planetIcon = document.createElement("div");
 	planetIcon.class = "planet";
 	planetIcon.id = planet.name;
-	planetIcon.innerHTML = "O";
+	planetIcon.innerHTML = ".";
 	planetIcon.style.position = "absolute";
 	var planetCoords = getPlanetCoods(planet);
+	planetIcon.style.left = planetCoords[0]+"px";
+	planetIcon.style.top = planetCoords[1]+"px";
+	document.getElementById("map").appendChild(planetIcon);
+}
+
+function drawStar(){
+	var planetIcon = document.createElement("div");
+	planetIcon.class = "star";
+	planetIcon.id = sun.name;
+	planetIcon.innerHTML = "*";
+	planetIcon.style.position = "absolute";
+	var planetCoords = [width/2, height/2];
 	planetIcon.style.left = planetCoords[0]+"px";
 	planetIcon.style.top = planetCoords[1]+"px";
 	document.getElementById("map").appendChild(planetIcon);
@@ -206,10 +218,10 @@ function main(){
 	Game.system = new System(sun, generateInner());
 	console.log(Game.system);
 	// set variables up
-	Game.speed = 100000;
+	Game.speed = 50000;
 	Game.time = 0;
 	// set up ticks
-	setInterval(gameTick, 100);
+	setInterval(gameTick, 50);
 }
 
 function gameTick(){
@@ -221,6 +233,7 @@ function gameTick(){
 function redraw(){
 	document.getElementById("map").innerHTML = "";
 	Game.system.secondaries.map(drawPlanet);
+	drawStar();
 }
 
 document.onload = function(){main();};
