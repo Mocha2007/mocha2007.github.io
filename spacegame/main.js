@@ -79,6 +79,9 @@ class Body{
 	density = function(){
 		return this.mass / this.volume();
 	}
+	getElement = function(){
+		return document.getElementById(this.name);
+	}
 	info = function(){
 		var table = document.createElement("table");
 		var row, cell;
@@ -195,7 +198,7 @@ class System{
 
 function drawPlanet(planet){
 	var planetIcon = document.createElement("div");
-	planetIcon.class = "planet";
+	planetIcon.classList.value = "planet";
 	planetIcon.id = planet.name;
 	planetIcon.innerHTML = ".";
 	planetIcon.style.position = "absolute";
@@ -207,7 +210,7 @@ function drawPlanet(planet){
 
 function drawStar(){
 	var planetIcon = document.createElement("div");
-	planetIcon.class = "star";
+	planetIcon.classList.value = "star";
 	planetIcon.id = sun.name;
 	planetIcon.innerHTML = "*";
 	planetIcon.style.position = "absolute";

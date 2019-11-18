@@ -30,3 +30,9 @@ abbr{
     float: right;
     text-align: right;
 }
+.planet{
+	color: silver;
+}
+.star{
+	color: yellow;
+}
