@@ -70,6 +70,7 @@ var gravConstant = 6.674e-11;
 var dataExceptions = [
 	"classification",
 	"density",
+	"period",
 ];
 
 class Body{
@@ -171,8 +172,12 @@ class Orbit{
 		var table = document.createElement("table");
 		var row, cell;
 		for (var property in this){
-			if (isFunction(this[property])){
-				continue;
+			var value = this[property]
+			if (isFunction(value)){
+				if (dataExceptions.indexOf(property) === -1){
+					continue;
+				}
+				value = this[property]();
 			}
 			row = document.createElement("tr");
 			cell = document.createElement("th");
@@ -183,7 +188,7 @@ class Orbit{
 				cell.innerHTML = this.parent.name;
 			}
 			else{
-				cell.innerHTML = this[property];
+				cell.innerHTML = value;
 			}
 			row.appendChild(cell);
 			table.appendChild(row);
