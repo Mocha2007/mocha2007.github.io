@@ -197,27 +197,33 @@ class System{
 // begin interface block
 
 function drawPlanet(planet){
-	var planetIcon = document.createElement("div");
-	planetIcon.classList.value = "planet";
-	planetIcon.id = planet.name;
-	planetIcon.innerHTML = ".";
-	planetIcon.style.position = "absolute";
+	var planetIcon = document.getElementById(planet.name);
+	if (planetIcon === null){
+		var planetIcon = document.createElement("div");
+		document.getElementById("map").appendChild(planetIcon);
+		planetIcon.classList.value = "planet";
+		planetIcon.id = planet.name;
+		planetIcon.innerHTML = ".";
+		planetIcon.style.position = "absolute";
+	}
 	var planetCoords = getPlanetCoods(planet);
 	planetIcon.style.left = planetCoords[0]+"px";
 	planetIcon.style.top = planetCoords[1]+"px";
-	document.getElementById("map").appendChild(planetIcon);
 }
 
 function drawStar(){
-	var planetIcon = document.createElement("div");
-	planetIcon.classList.value = "star";
-	planetIcon.id = sun.name;
-	planetIcon.innerHTML = "*";
-	planetIcon.style.position = "absolute";
+	var planetIcon = document.getElementById(sun.name);
+	if (planetIcon === null){
+		var planetIcon = document.createElement("div");
+		document.getElementById("map").appendChild(planetIcon);
+		planetIcon.classList.value = "star";
+		planetIcon.id = sun.name;
+		planetIcon.innerHTML = "*";
+		planetIcon.style.position = "absolute";
+	}
 	var planetCoords = [Game.width/2, Game.height/2];
 	planetIcon.style.left = planetCoords[0]+"px";
 	planetIcon.style.top = planetCoords[1]+"px";
-	document.getElementById("map").appendChild(planetIcon);
 }
 
 function getPlanetCoods(planet){
@@ -285,7 +291,6 @@ function gameTick(){
 
 function redraw(){
 	// update map
-	document.getElementById("map").innerHTML = "";
 	Game.system.secondaries.map(drawPlanet);
 	drawStar();
 	// update infobox
