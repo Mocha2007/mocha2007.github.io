@@ -441,6 +441,7 @@ function main(){
 		Game.settings = {};
 		Game.settings.autosaveInterval = 1;
 		Game.settings.fps = 10;
+		document.getElementById("input_fps").value = Game.settings.fps;
 	}
 	// set up RNG
 	Game.debug.loaded = seededRandomSetup();
@@ -458,6 +459,7 @@ function main(){
 	Game.resources.steel = 0;
 	// set up ticks
 	updateFPS();
+	setInterval(gameTick, 1000/Game.settings.fps);
 	// select welcome tab
 	selectTab("welcome");
 	// save
@@ -515,7 +517,7 @@ function saveGame(isManual){
 
 function updateFPS(){
 	Game.settings.fps = Number(document.getElementById('input_fps').value);
-	setInterval(gameTick, 1000/Game.settings.fps);
+	saveGame();
 }
 
 document.onload = function(){main();};
