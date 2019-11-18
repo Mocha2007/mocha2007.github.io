@@ -440,6 +440,7 @@ function main(){
 	else{
 		Game.settings = {};
 		Game.settings.autosaveInterval = 1;
+		Game.settings.fps = 10;
 	}
 	// set up RNG
 	Game.debug.loaded = seededRandomSetup();
@@ -451,13 +452,12 @@ function main(){
 	Game.speed = 21600; // 6h
 	Game.time = 0;
 	Game.systemHeight = 3*au;
-	Game.fps = 10;
 	Game.resources = {};
 	Game.resources.water = 0;
 	Game.resources.fuel = 0;
 	Game.resources.steel = 0;
 	// set up ticks
-	setInterval(gameTick, 1000/Game.fps);
+	updateFPS();
 	// select welcome tab
 	selectTab("welcome");
 	// save
@@ -511,6 +511,11 @@ function saveGame(isManual){
 	if (isManual){
 		console.log("Successfully manually saved game!");
 	}
+}
+
+function updateFPS(){
+	Game.settings.fps = Number(document.getElementById('input_fps').value);
+	setInterval(gameTick, 1000/Game.settings.fps);
 }
 
 document.onload = function(){main();};
