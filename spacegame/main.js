@@ -16,7 +16,7 @@ function seededRandom(){
 function seededRandomSetup(){
 	Game.rng = {};
 	if (read_cookie("seed")){
-		Game.rng = read_cookie("seed");
+		Game.rng.seed = read_cookie("seed");
 		var loaded = true;
 	}
 	else{
