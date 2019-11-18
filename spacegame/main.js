@@ -567,8 +567,10 @@ function hardReset(){
 
 function redraw(){
 	// update map
-	Game.system.secondaries.map(drawPlanet);
-	drawStar();
+	if (!Game.paused){
+		Game.system.secondaries.map(drawPlanet);
+		drawStar();
+	}
 	// update infobox
 	var selectionId = Number(document.getElementById("input_id").value);
 	document.getElementById("leftinfo").innerHTML = "";
