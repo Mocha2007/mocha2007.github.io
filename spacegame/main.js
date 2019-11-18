@@ -332,7 +332,7 @@ function nextSMA(previousSMA){
 var questList = [
 	{
 		'title': "Select World",
-		'desc': "Select a world to colonize (WARNING: cannot be undone!)<br><input id='world_selector' type='submit' value='Confirm Selection' onclick='Game.player.colonyID=getID();'>",
+		'desc': "Select a world to colonize (WARNING: cannot be undone!)<br><input id='world_selector' type='submit' value='Confirm Selection' onclick='Game.player.colonyID=getID();'><br>Reward: 1 Constructor",
 		'conditions': [
 			function(){return Game.player.colonyID >= 0;}
 		],
@@ -341,8 +341,11 @@ var questList = [
 		],
 		'results': [
 			function(){
+					// remove button
 					var node = document.getElementById("world_selector");
 					node.parentNode.removeChild(node);
+					// add constructor
+					modifyNavy("constructor", 1);
 			}
 		]
 	}
@@ -432,6 +435,15 @@ function getPlanetCoods(planet){
 	var x = remap(absCoords[0], [-Game.systemWidth, Game.systemWidth], [0, Game.width])
 	var y = remap(absCoords[1], [-Game.systemHeight, Game.systemHeight], [0, Game.height])
 	return [x, y];
+}
+
+function modifyNavy(shipClass, count){
+	if (!Game.player.navy.hasOwnProperty(shipClass)){
+		Game.player.navy[shipClass] = count;
+	}
+	else{
+		Game.player.navy[shipClass] += count;
+	}
 }
 
 function selectTab(id){
@@ -544,6 +556,8 @@ function main(){
 	else{
 		Game.player = {};
 		Game.player.quests = [];
+		Game.player.navy = {};
+		Game.player.navy.surveyor = 1;
 	}
 	// save
 	saveGame();
@@ -586,6 +600,8 @@ function redraw(){
 	document.getElementById("steel").innerHTML = Game.resources.steel;
 	// update quests
 	updateQuests();
+	// update navy
+	updateNavy();
 	// save
 	if (minute < new Date() - Game.debug.lastSave){
 		saveGame(false);
@@ -606,6 +622,34 @@ function saveGame(isManual){
 function updateFPS(){
 	Game.settings.fps = Number(document.getElementById('input_fps').value);
 	saveGame();
+}
+
+function updateNavy(){
+	// display/update current quests
+	navyTable = document.getElementById("navy");
+	for (var shipClass in Game.player.navy){
+		if (document.getElementById("col2_"+shipClass)){
+			// just update count
+			document.getElementById("col2_"+shipClass).innerHTML = Game.player.navy[shipClass];
+		}
+		else{
+			// row
+			row = document.createElement("tr");
+			row.id = "row_"+shipClass;
+			// col 1
+			nameCell = document.createElement("th");
+			nameCell.innerHTML = shipClass;
+			nameCell.id = "col1_"+shipClass;
+			row.appendChild(nameCell);
+			// col 2
+			countCell = document.createElement("td");
+			countCell.innerHTML = Game.player.navy[shipClass];
+			countCell.id = "col2_"+shipClass;
+			row.appendChild(countCell);
+			// finish
+			navyTable.appendChild(row);
+		}
+	}
 }
 
 function updateQuests(){
