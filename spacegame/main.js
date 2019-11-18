@@ -436,12 +436,12 @@ function main(){
 	Game.debug = {}
 	if (read_cookie("settings")){
 		Game.settings = read_cookie("settings");
+		document.getElementById("input_fps").value = Game.settings.fps;
 	}
 	else{
 		Game.settings = {};
 		Game.settings.autosaveInterval = 1;
 		Game.settings.fps = 10;
-		document.getElementById("input_fps").value = Game.settings.fps;
 	}
 	// set up RNG
 	Game.debug.loaded = seededRandomSetup();
