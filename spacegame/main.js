@@ -214,7 +214,7 @@ function drawStar(){
 	planetIcon.id = sun.name;
 	planetIcon.innerHTML = "*";
 	planetIcon.style.position = "absolute";
-	var planetCoords = [width/2, height/2];
+	var planetCoords = [Game.width/2, Game.height/2];
 	planetIcon.style.left = planetCoords[0]+"px";
 	planetIcon.style.top = planetCoords[1]+"px";
 	document.getElementById("map").appendChild(planetIcon);
@@ -222,18 +222,13 @@ function drawStar(){
 
 function getPlanetCoods(planet){
 	var absCoords = planet.orbit.cartesian(Game.time);
-	var x = remap(absCoords[0], [-systemWidth, systemWidth], [0, width])
-	var y = remap(absCoords[1], [-systemHeight, systemHeight], [0, height])
+	var x = remap(absCoords[0], [-Game.systemWidth, Game.systemWidth], [0, Game.width])
+	var y = remap(absCoords[1], [-Game.systemHeight, Game.systemHeight], [0, Game.height])
 	return [x, y];
 }
 
 // end interface block
 // begin main program
-
-var width = window.innerWidth;
-var height = window.innerHeight;
-var systemHeight = 4*au;
-var systemWidth = width/height * systemHeight;
 var Game = {};
 var sun = new Star(1.9885e30, 6.957e8, "Sun", 3.828e26, 5778);
 
@@ -280,6 +275,10 @@ function main(){
 
 function gameTick(){
 	Game.time = Game.time + Game.speed;
+	Game.width = window.innerWidth;
+	Game.height = window.innerHeight;
+	Game.systemHeight = 4*au;
+	Game.systemWidth = Game.width/Game.height * Game.systemHeight;
 	// finally, update interface
 	redraw();
 }
