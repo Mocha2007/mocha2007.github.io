@@ -279,6 +279,7 @@ function main(){
 	// set variables up
 	Game.speed = 50000;
 	Game.time = 0;
+	Game.systemHeight = 3*au;
 	// set up ticks
 	setInterval(gameTick, 50);
 }
@@ -287,7 +288,6 @@ function gameTick(){
 	Game.time = Game.time + Game.speed;
 	Game.width = window.innerWidth;
 	Game.height = window.innerHeight;
-	Game.systemHeight = 3*au;
 	Game.systemWidth = Game.width/Game.height * Game.systemHeight;
 	// finally, update interface
 	redraw();
@@ -304,6 +304,8 @@ function redraw(){
 	// update time
 	document.getElementById("time").innerHTML = "t = " + Game.time;
 	document.getElementById("timerate").innerHTML = "dt = " + Game.speed;
+	// update zoom
+	document.getElementById("zoom").innerHTML = Game.systemHeight/au;
 }
 
 document.onload = function(){main();};

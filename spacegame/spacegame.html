@@ -7,12 +7,16 @@
 <title>The Space Game</title>
 <div id="map"></div>
 <div id="selector">
-<form>
-	<fieldset>
-		Selection ID:
-		<input id="input_id" type="number" min="0" max="4" value="0">
-	</fieldset>
-</form>
+	<table>
+		<tr>
+			<td>Selection ID:</td>
+			<td><input id="input_id" type="number" min="0" max="4" value="0"></td>
+		</tr>
+		<tr>
+			<td>Zoom: <span id="zoom">Zoom</span> au</td>
+			<td><input type="submit" value="+" onclick="Game.systemHeight /= 2;"><input type="submit" value="-" onclick="Game.systemHeight *= 2;"></td>
+		</tr>
+	</table>
 </div>
 <div id="timecontrols">
 	<div id="time">Time</div>
