@@ -1,10 +1,26 @@
 // begin basic block
+var max31Bit = Math.pow(2, 31) - 1;
+var max32Bit = Math.pow(2, 32) - 1;
 function isFunction(functionToCheck) { // https://stackoverflow.com/a/7356528/2579798
 	return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
 }
+function seededRandom(){
+	x = Game.rng.value;
+	x ^= x << 13;
+	x ^= x >> 17;
+	x ^= x << 5;
+	Game.rng.value = x;
+	Game.rng.i += 1;
+	return (Game.rng.value+max31Bit)/max32Bit;
+}
+function seededRandomSetup(){
+	Game.rng = {};
+	Game.rng.seed = Number(new Date());
+	Game.rng.value = Game.rng.seed;
+	Game.rng.i = 0;
+}
 // end basic block
 // begin math block
-
 var pi = Math.PI;
 
 function mod(n,m){
@@ -41,7 +57,7 @@ function sum(x){ // find the sum of an array
 
 function uniform(min, max){ // random real in range
 	"use strict";
-	return Math.random() * (max-min) + min;
+	return seededRandom() * (max-min) + min;
 }
 
 function variance(x){ // find the variance of an array
@@ -387,6 +403,10 @@ function generateSystem(){
 function main(){
 	"use strict";
 	console.log("Mocha's weird-ass space game test");
+	// set up RNG
+	seededRandomSetup();
+	document.getElementById("seed").innerHTML = Game.rng.seed;
+	// set up system
 	Game.system = new System(sun, generateSystem());
 	console.log(Game.system);
 	// set variables up
@@ -398,8 +418,9 @@ function main(){
 	setInterval(gameTick, 1000/Game.fps);
 	// select welcome tab
 	selectTab("welcome");
-	// store cookie
-	// document.cookie = ...;
+	// store cookie https://www.w3schools.com/js/js_cookies.asp
+	document.cookie = "seed="+Game.rng.seed+"; expires=Fri, 31 Dec 9999 23:59:59 UTC";
+	console.log(document.cookie);
 }
 
 function gameTick(){
