@@ -15,6 +15,9 @@ abbr{
 th{
 	text-align: right;
 }
+h2{
+	text-align: center;
+}
 #leftinfo{
 	background-color: #444;
     float: left;
@@ -47,6 +50,9 @@ th{
 	border: 2px solid cyan;
 	border-radius: 6px;
 	cursor: pointer;
+}
+#danger{
+	color: red;
 }
 .planet{
 	color: silver;
