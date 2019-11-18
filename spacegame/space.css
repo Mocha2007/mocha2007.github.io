@@ -88,6 +88,9 @@ h2{
 .selected{
 	animation: selectionstrobe 0.5s linear alternate infinite;
 }
+.quest{
+	border: 1px dashed cyan;
+}
 
 @keyframes selectionstrobe{
 	0% {color: red;}
