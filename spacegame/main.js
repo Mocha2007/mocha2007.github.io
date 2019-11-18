@@ -409,7 +409,11 @@ function generatePlanet(sma){
 	return planet;
 }
 
-function generateSystem(){
+function generateSystem(attempt){
+	if (attempt >= 100){
+		console.error("too many failed attempts... something is broken :(");
+		return;
+	}
 	var numberOfPlanets = randint(7, 9);
 	var startSMA = .39*au;
 	var SMAList = zeros(numberOfPlanets);
@@ -419,7 +423,7 @@ function generateSystem(){
 	}
 	var systemAttempt = SMAList.map(generatePlanet);
 	console.log(systemAttempt);
-	return systemAttempt.some(function(x){return x.isPHW();}) ? systemAttempt : generateSystem();
+	return systemAttempt.some(function(x){return x.isPHW();}) ? systemAttempt : generateSystem(attempt+1);
 }
 
 function main(){
@@ -430,7 +434,7 @@ function main(){
 	Game.debug.loaded = seededRandomSetup();
 	document.getElementById("seed").innerHTML = Game.rng.seed;
 	// set up system
-	Game.system = new System(sun, generateSystem());
+	Game.system = new System(sun, generateSystem(0));
 	// console.log(Game.system);
 	// set variables up
 	Game.speed = 21600; // 6h
