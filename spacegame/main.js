@@ -496,6 +496,10 @@ function generateSystem(attempt){
 	return systemAttempt.some(function(x){return x.isPHW();}) ? systemAttempt : generateSystem(attempt+1);
 }
 
+function getQuestsFromIds(){
+	return Game.player.quests.map(function(x){return questList[x];});
+}
+
 function main(){
 	"use strict";
 	console.log("Mocha's weird-ass space game test");
@@ -604,25 +608,25 @@ function updateFPS(){
 
 function updateQuests(){
 	// display/update current quests
-	Game.player.quests.map(drawQuests);
+	getQuestsFromIds(Game.player.quests).map(drawQuests);
 	// see if new quests apply
 	for (i=0; i<questList.length; i++){
 		quest = questList[i];
-		if (Game.player.quests.indexOf(quest) >= 0){
+		if (Game.player.quests.indexOf(i) >= 0){
 			continue;
 		}
 		success = true;
-		for (i=0; i<quest.requirements.length; i++){
-			if (!quest.requirements[i]()){
+		for (j=0; j<quest.requirements.length; j++){
+			if (!quest.requirements[j]()){
 				success = false;
 				break;
 			}
 		}
 		if (success){
-			Game.player.quests.push(quest);
+			Game.player.quests.push(i);
 		}
 	}
-	Game.player.quests.map(updateQuestCompletion);
+	getQuestsFromIds(Game.player.quests).map(updateQuestCompletion);
 }
 
 function updateQuestCompletion(quest){
