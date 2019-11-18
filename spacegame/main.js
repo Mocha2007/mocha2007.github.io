@@ -550,7 +550,7 @@ function main(){
 }
 
 function gameTick(){
-	Game.time = Game.time + Game.speed;
+	Game.time = Game.paused ? Game.time : Game.time + Game.speed;
 	Game.width = window.innerWidth;
 	Game.height = window.innerHeight;
 	Game.systemWidth = Game.width/Game.height * Game.systemHeight;

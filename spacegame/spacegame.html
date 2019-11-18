@@ -14,7 +14,8 @@
 		</tr>
 		<tr>
 			<td><abbr title="Screen height">Zoom</abbr>: <span id="zoom">Zoom</span> au</td>
-			<td><input type="submit" value="+" onclick="Game.systemHeight /= 2;"><input type="submit" value="-" onclick="Game.systemHeight *= 2;"></td>
+			<td><input type="submit" value="+" onclick="Game.systemHeight /= 2;"><input type="submit" value="-" onclick="Game.systemHeight *= 2;">
+			</td>
 		</tr>
 	</table>
 </div>
@@ -22,7 +23,9 @@
 	<div id="time">Time</div>
 	<div id="timerate">Timerate</div>
 	<div>
-		<input type="submit" value="+" onclick="Game.speed *= 2;"><input type="submit" value="-" onclick="Game.speed /= 2;">
+		<input type="submit" value="+" onclick="Game.speed *= 2;">
+		<input type="submit" value="-" onclick="Game.speed /= 2;">
+		<input type="submit" value="P" onclick="Game.paused = !Game.paused;">
 	</div>
 </div>
 <div id="resourcebar">
