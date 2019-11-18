@@ -381,9 +381,13 @@ function selectTab(id){
 var Game = {};
 var sun = new Star(1.9885e30, 6.957e8, "Sun", 3.828e26, 5778);
 
-function generateBody(forceHabitable){
-	if (forceHabitable){
+function generateBody(sma){
+	sma /= au;
+	if (0.8 < sma && sma < 1.5){
 		var mass = Math.pow(10, uniform(23.8, 25.2));
+	}
+	else if (5 < sma && sma < 31){
+		var mass = Math.pow(10, uniform(25.9, 28.3));
 	}
 	else{
 		var mass = 2*Math.pow(10, uniform(17, 27));
@@ -403,7 +407,7 @@ function generateOrbit(sma){
 }
 
 function generatePlanet(sma){
-	var planet = generateBody(0.8 < sma && sma < 1.5);
+	var planet = generateBody(sma);
 	planet.orbit = generateOrbit(sma);
 	planet.name = "Sol-" + randint(100000, 999999);
 	return planet;
