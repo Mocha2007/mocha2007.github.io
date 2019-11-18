@@ -61,6 +61,7 @@ function zeros(n){
 // begin astro block
 
 var au = 149597870700;
+var gravConstant = 6.674e-11;
 
 class Body{
 	constructor(mass, radius, albedo){
@@ -70,6 +71,9 @@ class Body{
 	}
 	density = function(){
 		return this.mass / this.volume();
+	}
+	mu = function(){
+		return this.mass * gravConstant;
 	}
 	volume = function(){
 		return 4/3 * pi * Math.pow(this.radius, 3);
@@ -147,7 +151,7 @@ var height = window.innerHeight;
 var systemHeight = 4*au;
 var systemWidth = width/height * systemHeight;
 var Game = {};
-var sun = {};
+var sun = new Body(1.9885e30, 6.957e8);
 sun.mu = 1.3271249e20;
 
 function generateBody(){
