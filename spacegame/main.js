@@ -94,7 +94,6 @@ class Orbit{
 	cartesian = function(t){
 		"use strict";
 		var E = this.eccentricAnomaly(t);
-		console.log('E', E)
 		var nu = this.trueAnomaly(t);
 		var r_c = this.a*(1-this.e*Math.cos(E));
 		return [r_c*Math.cos(nu), r_c*Math.sin(nu)];
@@ -106,7 +105,7 @@ class Orbit{
 		var E = M;
 		var E_;
 		while (true){
-			E_ = M + this.e*Math.sin(E);
+			E_ = M + this.ecc*Math.sin(E);
 			if (Math.abs(E-E_) > tol){
 				return E;
 			}
