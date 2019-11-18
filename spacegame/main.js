@@ -165,7 +165,7 @@ class Body{
 		return table;
 	}
 	isPHW = function(){
-		return 6e23 < this.mass && this.mass < 6e25 && 250 < this.temp() && this.temp() < 373;
+		return 6e23 < this.mass && this.mass < 6e25 && 205 < this.temp() && this.temp() < 305;
 	}
 	mu = function(){
 		return this.mass * gravConstant;
