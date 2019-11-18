@@ -219,8 +219,10 @@ function drawPlanet(planet){
 	var planetCoords = getPlanetCoods(planet);
 	planetIcon.style.left = planetCoords[0]+"px";
 	planetIcon.style.top = planetCoords[1]+"px";
+	var index = Game.system.secondaries.indexOf(planet);
+	planetIcon.onclick = function(){document.getElementById("input_id").value = index;};
 	// check if selection...
-	if (Number(document.getElementById("input_id").value) === Game.system.secondaries.indexOf(planet)){
+	if (Number(document.getElementById("input_id").value) === index){
 		planetIcon.classList.value += " selected";
 	}
 }
