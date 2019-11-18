@@ -91,7 +91,12 @@ class Body{
 			cell.innerHTML = property;
 			row.appendChild(cell);
 			cell = document.createElement("td");
-			cell.innerHTML = this[property];
+			if (property === "orbit"){
+				cell.appendChild(this.orbit.info());
+			}
+			else{
+				cell.innerHTML = this[property];
+			}
 			row.appendChild(cell);
 			table.appendChild(row);
 		}
@@ -135,6 +140,29 @@ class Orbit{
 			E = E_;
 			return E; // fixme
 		}
+	}
+	info = function(){
+		var table = document.createElement("table");
+		var row, cell;
+		for (var property in this){
+			if (isFunction(this[property])){
+				continue;
+			}
+			row = document.createElement("tr");
+			cell = document.createElement("th");
+			cell.innerHTML = property;
+			row.appendChild(cell);
+			cell = document.createElement("td");
+			if (property === "parent"){
+				cell.innerHTML = this.parent.name;
+			}
+			else{
+				cell.innerHTML = this[property];
+			}
+			row.appendChild(cell);
+			table.appendChild(row);
+		}
+		return table;
 	}
 	period = function(){
 		"use strict";
