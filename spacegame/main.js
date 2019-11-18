@@ -150,8 +150,8 @@ function drawPlanet(planet){
 	planetIcon.style.position = "absolute";
 	var planetCoords = getPlanetCoods(planet);
 	console.warn(planetIcon);
-	planetIcon.style.left = planetCoords[0];
-	planetIcon.style.top = planetCoords[1];
+	planetIcon.style.left = planetCoords[0]+"px";
+	planetIcon.style.top = planetCoords[1]+"px";
 	document.getElementById("map").appendChild(planetIcon);
 }
 
