@@ -75,6 +75,8 @@ var dataExceptions = [
 	"classification",
 	"density",
 	"period",
+	"surfaceGravity",
+	"temp",
 ];
 var specialUnits = {
 	"density": {
@@ -96,6 +98,10 @@ var specialUnits = {
 	"sma": {
 		"constant": au,
 		"name": "au"
+	},
+	"surfaceGravity": {
+		"constant": 9.7,
+		"name": "g"
 	}
 };
 
@@ -160,6 +166,12 @@ class Body{
 	}
 	mu = function(){
 		return this.mass * gravConstant;
+	}
+	surfaceGravity = function(){
+		return this.mu()/Math.pow(this.radius, 2);
+	}
+	temp = function(){
+		return this.orbit.parent.temperature * Math.pow(1-this.albedo, 0.25) * Math.pow(this.orbit.parent.radius/2/this.orbit.sma, 0.5);
 	}
 	volume = function(){
 		return 4/3 * pi * Math.pow(this.radius, 3);

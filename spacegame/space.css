@@ -19,6 +19,7 @@ th{
     float: left;
     position: absolute;
     bottom: 0px;
+    font-size: 75%;
 }
 #selector{
 	background-color: #422;
