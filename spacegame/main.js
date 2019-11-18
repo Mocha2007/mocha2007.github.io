@@ -193,6 +193,16 @@ class System{
 	}
 }
 
+function densityFromMass(mass){
+	if (2e26 < mass){
+		return uniform(600, 1400);
+	}
+	if (6e25 < mass){
+		return uniform(1200, 1700);
+	}
+	return uniform(3900, 5600);
+}
+
 // end astro block
 // begin interface block
 
@@ -244,7 +254,7 @@ var sun = new Star(1.9885e30, 6.957e8, "Sun", 3.828e26, 5778);
 
 function generateBody(){
 	var mass = 2*Math.pow(10, uniform(17, 27));
-	var density = uniform(687, 5514);
+	var density = densityFromMass(mass);
 	var radius = Math.pow(mass/(density*4/3*pi), 1/3);
 	var albedo = uniform(0, 1);
 	return new Body(mass, radius, albedo);
