@@ -57,11 +57,11 @@ th{
 .iceGiant{
 	color: cyan;
 }
-.terra{
-	color: pine;
-}
-.desert{
+.desert, .terra{
 	color: orange;
+}
+.phw{
+	color: seaGreen;
 }
 .star{
 	color: yellow;

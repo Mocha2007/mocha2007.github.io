@@ -164,6 +164,9 @@ class Body{
 		}
 		return table;
 	}
+	isPHW = function(){
+		return 6e23 < this.mass && this.mass < 6e25 && 250 < this.temp() && this.temp() < 373;
+	}
 	mu = function(){
 		return this.mass * gravConstant;
 	}
@@ -292,6 +295,9 @@ function drawPlanet(planet){
 		planetIcon.style.position = "absolute";
 	}
 	planetIcon.classList.value = "planet " + planet.classification();
+	if (planet.isPHW()){
+		planetIcon.classList.value += ' phw';
+	}
 	var planetCoords = getPlanetCoods(planet);
 	planetIcon.style.left = planetCoords[0]+"px";
 	planetIcon.style.top = planetCoords[1]+"px";
@@ -338,11 +344,16 @@ function selectTab(id){
 var Game = {};
 var sun = new Star(1.9885e30, 6.957e8, "Sun", 3.828e26, 5778);
 
-function generateBody(){
-	var mass = 2*Math.pow(10, uniform(17, 27));
+function generateBody(forceHabitable){
+	if (forceHabitable){
+		var mass = Math.pow(10, uniform(23.8, 25.2));
+	}
+	else{
+		var mass = 2*Math.pow(10, uniform(17, 27));
+	}
 	var density = densityFromMass(mass);
 	var radius = Math.pow(mass/(density*4/3*pi), 1/3);
-	var albedo = uniform(0, 1);
+	var albedo = uniform(.1, .7);
 	return new Body(mass, radius, albedo);
 }
 
@@ -355,7 +366,7 @@ function generateOrbit(sma){
 }
 
 function generatePlanet(sma){
-	var planet = generateBody();
+	var planet = generateBody(0.8 < sma < 1.5);
 	planet.orbit = generateOrbit(sma);
 	planet.name = "Sol-" + randint(100000, 999999);
 	return planet;
