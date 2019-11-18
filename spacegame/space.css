@@ -51,6 +51,7 @@ h2{
 	border: 2px solid cyan;
 	border-radius: 6px;
 	cursor: pointer;
+	line-height: 25px;
 }
 #danger{
 	color: red;
