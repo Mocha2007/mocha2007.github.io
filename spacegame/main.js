@@ -263,6 +263,10 @@ function densityFromMass(mass){
 	return uniform(3900, 5600);
 }
 
+function nextSMA(previousSMA){
+	return previousSMA * uniform(1.38, 2.01);
+}
+
 // end astro block
 // begin interface block
 
@@ -330,31 +334,36 @@ function generateBody(){
 	return new Body(mass, radius, albedo);
 }
 
-function generateOrbit(){
+function generateOrbit(sma){
 	var parent = sun;
-	var sma = uniform(.3, 3)*au;
 	var ecc = uniform(0, .25);
 	var aop = uniform(0, 2*pi);
 	var man = uniform(0, 2*pi);
 	return new Orbit(parent, sma, ecc, aop, man);
 }
 
-function generatePlanet(){
+function generatePlanet(sma){
 	var planet = generateBody();
-	planet.orbit = generateOrbit();
+	planet.orbit = generateOrbit(sma);
 	planet.name = "Sol-" + randint(100000, 999999);
 	return planet;
 }
 
-function generateInner(){
-	var numberOfPlanets = randint(3, 5);
-	return (zeros(numberOfPlanets)).map(generatePlanet);
+function generateSystem(){
+	var numberOfPlanets = randint(7, 9);
+	var startSMA = .39*au;
+	var SMAList = zeros(numberOfPlanets);
+	SMAList[0] = startSMA;
+	for (i=1; i<SMAList.length; i++){
+		SMAList[i] = nextSMA(SMAList[i-1]);
+	}
+	return SMAList.map(generatePlanet);
 }
 
 function main(){
 	"use strict";
 	console.log("Mocha's weird-ass space game test");
-	Game.system = new System(sun, generateInner());
+	Game.system = new System(sun, generateSystem());
 	console.log(Game.system);
 	// set variables up
 	Game.speed = 21600; // 6h
