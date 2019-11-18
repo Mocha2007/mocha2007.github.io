@@ -70,6 +70,38 @@ class Orbit{
 		this.aop = aop;
 		this.man = man;
 	}
+	// functions
+	cartesian = function(t){
+		"use strict";
+		var E = this.eccentricAnomaly(t);
+		var nu = this.trueAnomaly(t);
+		var r_c = this.a*(1-this.e*Math.cos(E));
+		return [r_c*Math.cos(nu), r_c*Math.sin(nu)];
+	}
+	eccentricAnomaly = function(t){
+		"use strict";
+		var tol = 1e-10;
+		var M = mod(this.man + 2*pi*t/this.period(), 2*pi);
+		var E = M;
+		var E_;
+		while (true){
+			E_ = M + this.e*Math.sin(E);
+			if (Math.abs(E-E_) > tol){
+				return E;
+			}
+			E = E_;
+			return E; // fixme
+		}
+	}
+	period = function(){
+		"use strict";
+		return 2*pi*(this.a**3/this.parent.mu)**.5;
+	}
+	trueAnomaly = function(t){
+		var E = this.eccentricAnomaly(t);
+		var e = this.ecc;
+		return 2 * Math.atan2((1+e)**.5 * Math.sin(E/2), (1-e)**.5 * Math.cos(E/2));
+	}
 }
 
 // end astro block
@@ -114,45 +146,12 @@ function generateBody(){
 }
 
 function generateOrbit(){
-	var orbit = {};
-	orbit.parent = sun;
-	orbit.sma = uniform(.3, 3)*au;
-	orbit.ecc = uniform(0, .25);
-	orbit.aop = uniform(0, 2*pi);
-	orbit.man = uniform(0, 2*pi);
-	// functions
-	orbit.cartesian = function(t){
-		"use strict";
-		var E = this.eccentric_anomaly(t);
-		var nu = this.true_anomaly(t);
-		var r_c = this.a*(1-this.e*Math.cos(E));
-		return [r_c*Math.cos(nu), r_c*Math.sin(nu)];
-	}
-	orbit.eccentric_anomaly = function(t){
-		"use strict";
-		var tol = 1e-10;
-		var M = mod(this.man + 2*pi*t/this.period(), 2*pi);
-		var E = M;
-		var E_;
-		while (true){
-			E_ = M + this.e*Math.sin(E);
-			if (Math.abs(E-E_) > tol){
-				return E;
-			}
-			E = E_;
-			return E; // fixme
-		}
-	}
-	orbit.period = function(){
-		"use strict";
-		return 2*pi*(this.a**3/this.parent.mu)**.5;
-	}
-	orbit.true_anomaly = function(t){
-		var E = this.eccentric_anomaly(t);
-		var e = this.ecc;
-		return 2 * Math.atan2((1+e)**.5 * Math.sin(E/2), (1-e)**.5 * Math.cos(E/2));
-	}
-	return orbit;
+	var parent = sun;
+	var sma = uniform(.3, 3)*au;
+	var ecc = uniform(0, .25);
+	var aop = uniform(0, 2*pi);
+	var man = uniform(0, 2*pi);
+	return new Orbit(parent, sma, ecc, aop, man);
 }
 
 function generatePlanet(){
