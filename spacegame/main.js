@@ -403,7 +403,7 @@ function generateOrbit(sma){
 }
 
 function generatePlanet(sma){
-	var planet = generateBody(0.8 < sma < 1.5);
+	var planet = generateBody(0.8 < sma && sma < 1.5);
 	planet.orbit = generateOrbit(sma);
 	planet.name = "Sol-" + randint(100000, 999999);
 	return planet;
