@@ -18,12 +18,15 @@ abbr{
 #leftinfo{
 	background-color: #444;
     float: left;
-    width: 25%;
     position: absolute;
     bottom: 0px;
 }
 #selector{
 	background-color: #422;
     float: left;
-    width: 25%;
+}
+#time{
+	background-color: #422;
+    float: right;
+    text-align: right;
 }

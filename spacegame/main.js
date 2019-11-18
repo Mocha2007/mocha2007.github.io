@@ -290,6 +290,8 @@ function redraw(){
 	var selectionId = Number(document.getElementById("input_id").value);
 	document.getElementById("leftinfo").innerHTML = "";
 	document.getElementById("leftinfo").appendChild(Game.system.secondaries[selectionId].info());
+	// update time
+	document.getElementById("time").innerHTML = "t = " + Game.time;
 }
 
 document.onload = function(){main();};
