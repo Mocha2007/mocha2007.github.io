@@ -14,10 +14,24 @@ function seededRandom(){
 	return (Game.rng.value+max31Bit)/max32Bit;
 }
 function seededRandomSetup(){
+	if (read_cookie("rng")){
+		Game.rng = read_cookie("rng");
+		return true;
+	}
 	Game.rng = {};
 	Game.rng.seed = Number(new Date());
 	Game.rng.value = Game.rng.seed;
 	Game.rng.i = 0;
+	return false;
+}
+function read_cookie(name){ // https://stackoverflow.com/a/11344672/2579798
+	var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
+	result && (result = JSON.parse(result[1]));
+	return result;
+}
+function write_cookie(name, value){ // https://stackoverflow.com/a/11344672/2579798
+	var cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; expires=Fri, 31 Dec 9999 23:59:59 UTC; path=/;'].join('');
+	document.cookie = cookie;
 }
 // end basic block
 // begin math block
@@ -403,8 +417,9 @@ function generateSystem(){
 function main(){
 	"use strict";
 	console.log("Mocha's weird-ass space game test");
+	Game.debug = {}
 	// set up RNG
-	seededRandomSetup();
+	Game.debug.loaded = seededRandomSetup();
 	document.getElementById("seed").innerHTML = Game.rng.seed;
 	// set up system
 	Game.system = new System(sun, generateSystem());
@@ -414,12 +429,14 @@ function main(){
 	Game.time = 0;
 	Game.systemHeight = 3*au;
 	Game.fps = 10;
+	Game.resources = {};
 	// set up ticks
 	setInterval(gameTick, 1000/Game.fps);
 	// select welcome tab
 	selectTab("welcome");
 	// store cookie https://www.w3schools.com/js/js_cookies.asp
-	document.cookie = "seed="+Game.rng.seed+"; expires=Fri, 31 Dec 9999 23:59:59 UTC";
+	write_cookie("rng", Game.rng);
+	write_cookie("resources", Game.resources);
 	console.log(document.cookie);
 }
 
