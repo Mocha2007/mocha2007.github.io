@@ -31,9 +31,11 @@ abbr{
 }
 .planet{
 	color: silver;
+	cursor: pointer;
 }
 .star{
 	color: yellow;
+	cursor: default;
 }
 .selected{
 	animation: selectionstrobe 1s linear alternate infinite;
