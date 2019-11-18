@@ -60,8 +60,9 @@ h2{
 	position: absolute;
 	top: 0px;
 	left: 50%;
-	width: 25%;
-	margin-left: -12.5%;
+	width: 30%;
+	margin-left: -15%;
+	text-align: center;
 }
 .planet{
 	color: silver;

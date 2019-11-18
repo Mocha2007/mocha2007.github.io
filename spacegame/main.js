@@ -446,13 +446,15 @@ function main(){
 	Game.systemHeight = 3*au;
 	Game.fps = 10;
 	Game.resources = {};
+	Game.resources.water = 0;
+	Game.resources.fuel = 0;
+	Game.resources.steel = 0;
 	// set up ticks
 	setInterval(gameTick, 1000/Game.fps);
 	// select welcome tab
 	selectTab("welcome");
-	// store cookie https://www.w3schools.com/js/js_cookies.asp
-	write_cookie("resources", Game.resources);
-	// console.log(document.cookie);
+	// save
+	saveGame();
 }
 
 function gameTick(){
@@ -484,6 +486,23 @@ function redraw(){
 	document.getElementById("timerate").innerHTML = "dt = " + Game.speed/hour + " h";
 	// update zoom
 	document.getElementById("zoom").innerHTML = Game.systemHeight/au;
+	// update resource count
+	document.getElementById("water").innerHTML = Game.resources.water;
+	document.getElementById("fuel").innerHTML = Game.resources.fuel;
+	document.getElementById("steel").innerHTML = Game.resources.steel;
+	// save
+	if (minute < new Date() - Game.debug.lastSave){
+		saveGame(false);
+	}
+}
+
+function saveGame(isManual){
+	// store cookie https://www.w3schools.com/js/js_cookies.asp
+	write_cookie("resources", Game.resources);
+	Game.debug.lastSave = new Date();
+	if (isManual){
+		console.log("Successfully manually saved game!");
+	}
 }
 
 document.onload = function(){main();};

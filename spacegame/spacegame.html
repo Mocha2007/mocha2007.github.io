@@ -25,6 +25,11 @@
 		<input type="submit" value="+" onclick="Game.speed *= 2;"><input type="submit" value="-" onclick="Game.speed /= 2;">
 	</div>
 </div>
+<div id="resourcebar">
+	Water: <span id="water"></span> |
+	Fuel: <span id="fuel"></span> |
+	Steel: <span id="steel"></span>
+</div>
 <div id="rightinfo">
 	<div id="righttabs">
 		<span onclick="selectTab('welcome');">Welcome</span>
@@ -54,13 +59,16 @@
 			Made by moki :3
 		</p>
 		<ol id="todo">
-			<li>resources</li>
 			<li>ships</li>
+			<li>purchasing</li>
 			<li>events</li>
 			<li>politics</li>
 			<li>dynasties</li>
 		</ol>
 		<div id="options">
+			<ul>
+				<li onclick="saveGame(true);">Save Game</li>
+			</ul>
 			<div id="danger">
 				<h2 id="dangerzone">Danger Zone</h2>
 				<ul>
