@@ -22,10 +22,14 @@ function seededRandomSetup(){
 	else{
 		Game.rng.seed = Number(new Date());
 		var loaded = false;
+		write_cookie("seed", Game.rng.seed);
 	}
 	Game.rng.value = Game.rng.seed;
 	Game.rng.i = 0;
 	return loaded;
+}
+function delete_cookie(name) {
+	document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
 }
 function read_cookie(name){ // https://stackoverflow.com/a/11344672/2579798
 	var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
@@ -438,7 +442,6 @@ function main(){
 	// select welcome tab
 	selectTab("welcome");
 	// store cookie https://www.w3schools.com/js/js_cookies.asp
-	write_cookie("seed", Game.rng.seed);
 	write_cookie("resources", Game.resources);
 	// console.log(document.cookie);
 }
@@ -450,6 +453,13 @@ function gameTick(){
 	Game.systemWidth = Game.width/Game.height * Game.systemHeight;
 	// finally, update interface
 	redraw();
+}
+
+function hardReset(){
+	console.warn("Hard Reset!");
+	delete_cookie("seed");
+	delete_cookie("resources");
+	location.reload();
 }
 
 function redraw(){
