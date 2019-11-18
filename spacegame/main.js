@@ -412,6 +412,7 @@ function generatePlanet(sma){
 function generateSystem(attempt){
 	if (attempt >= 100){
 		console.error("too many failed attempts... something is broken :(");
+		console.log(systemAttempt);
 		return;
 	}
 	var numberOfPlanets = randint(7, 9);
@@ -422,7 +423,6 @@ function generateSystem(attempt){
 		SMAList[i] = nextSMA(SMAList[i-1]);
 	}
 	var systemAttempt = SMAList.map(generatePlanet);
-	console.log(systemAttempt);
 	return systemAttempt.some(function(x){return x.isPHW();}) ? systemAttempt : generateSystem(attempt+1);
 }
 
