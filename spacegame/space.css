@@ -115,6 +115,14 @@ h2{
 .colony{
 	border: 2px solid blue;
 }
+.supsub{
+	position: absolute;
+}
+.subscript, .superscript{
+	display: block;
+	position: relative;
+	top: -11px;
+}
 @keyframes selectionstrobe{
 	0% {border: 2px solid red;}
 	100% {border: 2px solid transparent;}

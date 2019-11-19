@@ -156,6 +156,7 @@ var visibleProperties = [
 	"density",
 	"surfaceGravity",
 	"temp",
+	"tempDelta",
 	"v_e",
 	// orbit
 	"orbit",
@@ -269,7 +270,26 @@ class Body{
 		return this.mu/Math.pow(this.radius, 2);
 	}
 	get temp(){
-		return this.orbit.parent.temperature * Math.pow(1-this.albedo, 0.25) * Math.pow(this.orbit.parent.radius/2/this.orbit.sma, 0.5);
+		return this.tempAt(this.orbit.sma);
+	}
+	tempAt = function(dist){
+		return this.orbit.parent.temperature * Math.pow(1-this.albedo, 0.25) * Math.pow(this.orbit.parent.radius/2/dist, 0.5);
+	}
+	get tempDelta(){
+		var mean = this.temp;
+		var plus = round(this.tempAt(this.orbit.periapsis) - mean, 2);
+		var minus = round(mean - this.tempAt(this.orbit.apoapsis), 2);
+		var elem = document.createElement("span");
+		elem.classList = "supsub";
+		var plusElement = document.createElement("sup");
+		plusElement.classList = "superscript";
+		plusElement.innerHTML = "+" + plus;
+		elem.appendChild(plusElement);
+		var minusElement = document.createElement("sub");
+		minusElement.classList = "subscript";
+		minusElement.innerHTML = "-" + minus;
+		elem.appendChild(minusElement);
+		return elem.outerHTML;
 	}
 	get volume(){
 		return 4/3 * pi * Math.pow(this.radius, 3);
@@ -288,6 +308,10 @@ class Orbit{
 		this.man = man;
 	}
 	// functions
+	get apoapsis(){
+		"use strict";
+		return (1+this.ecc)*this.sma;
+	}
 	cartesian = function(t){
 		"use strict";
 		var E = this.eccentricAnomaly(t);
@@ -337,6 +361,10 @@ class Orbit{
 			table.appendChild(row);
 		}
 		return table;
+	}
+	get periapsis(){
+		"use strict";
+		return (1-this.ecc)*this.sma;
 	}
 	get period(){
 		"use strict";
