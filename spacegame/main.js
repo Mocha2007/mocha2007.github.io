@@ -516,6 +516,16 @@ function enoughResourcesToSupportOrder(order){
 // end gameplay block
 // begin interface block
 
+function createOrderTypeList(){
+	var selector = document.getElementById("input_order_type");
+	for (i=0; i<orderList.length; i++){
+		option = document.createElement("option");
+		option.value = i;
+		option.innerHTML = orderList[i].type;
+		selector.appendChild(option);
+	}
+}
+
 function drawPlanet(planet){
 	var planetIcon = document.getElementById(planet.name);
 	if (planetIcon === null){
@@ -686,6 +696,8 @@ function main(){
 	}
 	// save
 	saveGame();
+	// set up order type list
+	createOrderTypeList();
 }
 
 function gameTick(){
