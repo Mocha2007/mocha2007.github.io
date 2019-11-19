@@ -1,27 +1,24 @@
 /* jshint esversion: 6 */
 /* jshint strict: true */
+/* exported importSave, downloadSave, createOrder, wipeMap, hardReset */
 // begin basic block
+"use strict";
 function alwaysTrue(){
-	"use strict";
 	return true;
 }
 function clone(object){
-	"use strict";
 	return JSON.parse(JSON.stringify(object));
 }
 function nop(){
-	"use strict";
 	return;
 }
 function round(number, digits){
-	"use strict";
 	number *= Math.pow(10, digits);
 	number = Math.round(number);
 	number /= Math.pow(10, digits);
 	return number;
 }
 function seededRandom(){
-	"use strict";
 	var max31Bit = Math.pow(2, 31) - 1;
 	var max32Bit = Math.pow(2, 32) - 1;
 	var x = Game.rng.value;
@@ -33,7 +30,6 @@ function seededRandom(){
 	return (Game.rng.value+max31Bit)/max32Bit;
 }
 function seededRandomSetup(){
-	"use strict";
 	Game.rng = {};
 	var loaded = false;
 	if (read_cookie("seed")){
@@ -49,11 +45,9 @@ function seededRandomSetup(){
 	return loaded;
 }
 function delete_cookie(name) {
-	"use strict";
 	document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
 }
 function read_cookie(name){ // https://stackoverflow.com/a/11344672/2579798
-	"use strict";
 	var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
 	if (result){
 		result = JSON.parse(result[1]);
@@ -61,12 +55,10 @@ function read_cookie(name){ // https://stackoverflow.com/a/11344672/2579798
 	return result;
 }
 function write_cookie(name, value){ // https://stackoverflow.com/a/11344672/2579798
-	"use strict";
 	var cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
 	document.cookie = cookie;
 }
 function download(content, fileName, contentType){ // https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file/34156339#34156339
-	"use strict";
 	var a = document.createElement("a");
 	var file = new Blob([content], {type: contentType});
 	a.href = URL.createObjectURL(file);
@@ -74,20 +66,17 @@ function download(content, fileName, contentType){ // https://stackoverflow.com/
 	a.click();
 }
 function importSave(){
-	"use strict";
 	var saveData = document.getElementById("saveData").value;
 	document.cookie = atob(saveData);
 	location.reload();
 }
 function exportSave(){
-	"use strict";
 	var data = btoa(document.cookie);
 	document.getElementById("saveData").value = data;
 	console.log("Exported Save.");
 	return data;
 }
 function downloadSave(){
-	"use strict";
 	download(exportSave(), 'mochaSpaceGameSave.txt', 'text/plain');
 }
 // end basic block
@@ -95,17 +84,14 @@ function downloadSave(){
 var pi = Math.PI;
 
 function mod(n,m){
-	"use strict";
 	return ((n%m)+m)%m;
 }
 
 function randint(min, max){ // random integer in range
-	"use strict";
 	return Math.floor(uniform(min, max+1));
 }
 
 function remap(value, range1, range2){
-	"use strict";
 	var range1range = range1[1] - range1[0];
 	var range2range = range2[1] - range2[0];
 	var fraction = (value - range1[0]) / range1range;
@@ -113,12 +99,10 @@ function remap(value, range1, range2){
 }
 
 function uniform(min, max){ // random real in range
-	"use strict";
 	return seededRandom() * (max-min) + min;
 }
 
 function zeros(n){
-	"use strict";
 	var zeroArray = [];
 	for (var i=0;i<n;i+=1){
 		zeroArray.push(0);
@@ -181,7 +165,6 @@ var specialUnits = {
 	"temp": {
 		"constant": 1,
 		"f": function(x){
-			"use strict";
 			return x-273.2;
 		},
 		"name": "&deg;C"
@@ -315,18 +298,15 @@ class Orbit{
 	}
 	// functions
 	get apoapsis(){
-		"use strict";
 		return (1+this.ecc)*this.sma;
 	}
 	cartesian(t){
-		"use strict";
 		var E = this.eccentricAnomaly(t);
 		var nu = this.trueAnomaly(t);
 		var r_c = this.sma*(1-this.ecc*Math.cos(E));
 		return [r_c*Math.cos(nu), r_c*Math.sin(nu)];
 	}
 	eccentricAnomaly(t){
-		"use strict";
 		var tol = 1e-10;
 		var M = mod(this.man + 2*pi*t/this.period, 2*pi);
 		var E = M;
@@ -366,15 +346,12 @@ class Orbit{
 		return table;
 	}
 	get periapsis(){
-		"use strict";
 		return (1-this.ecc)*this.sma;
 	}
 	get period(){
-		"use strict";
 		return 2*pi*Math.pow((Math.pow(this.sma, 3)/this.parent.mu), 0.5);
 	}
 	trueAnomaly(t){
-		"use strict";
 		var E = this.eccentricAnomaly(t);
 		var e = this.ecc;
 		return 2 * Math.atan2(Math.pow(1+e, 0.5) * Math.sin(E/2), Math.pow(1-e, 0.5) * Math.cos(E/2));
@@ -397,7 +374,6 @@ class System{
 }
 
 function densityFromMass(mass){
-	"use strict";
 	if (2e26 < mass){
 		return uniform(600, 1400);
 	}
@@ -408,7 +384,6 @@ function densityFromMass(mass){
 }
 
 function nextSMA(previousSMA){
-	"use strict";
 	return previousSMA * uniform(1.38, 2.01);
 }
 
@@ -441,7 +416,6 @@ var questList = [
 		'desc': "Select a world to colonize. An ideal world is one with (in order of importance):<ol><li>temperature around -18&deg;C</li><li>mass within a factor of two of Earth's</li><li>near bodies which could be exploited in the future</li></ol><center class='incomplete'>(WARNING: cannot be undone!)<br><input id='world_selector' type='submit' value='Confirm Selection' onclick='Game.player.colonyID=getID();'></center><br>Reward: 1 Constructor",
 		'conditions': [
 			function(){
-				"use strict";
 				return Game.player.colonyID >= 0;
 			}
 		],
@@ -450,7 +424,6 @@ var questList = [
 		],
 		'results': [
 			function(){
-				"use strict";
 				// remove button
 				var node = document.getElementById("world_selector");
 				node.parentNode.removeChild(node);
@@ -474,7 +447,6 @@ var orderList = [
 			'water': 1
 		},
 		'onComplete': function(){
-			"use strict";
 			Game.player.resources.steel += 100;
 		}
 	},
@@ -520,7 +492,6 @@ var sampleOrder = {
 */
 
 function drawQuests(quest){
-	"use strict";
 	var id = questList.indexOf(quest);
 	if (document.getElementById("quest"+id)){
 		// update
@@ -554,7 +525,6 @@ function drawQuests(quest){
 	}
 }
 function canAffordOrder(order){
-	"use strict";
 	// check resource costs
 	for (var resource in order.cost){
 		if (Game.player.resources[resource] < order.cost[resource]){
@@ -570,7 +540,6 @@ function canAffordOrder(order){
 	return true;
 }
 function createOrder(){
-	"use strict";
 	var orderID = getOrderID();
 	var order = orderList[orderID];
 	if (!canAffordOrder(order)){
@@ -592,7 +561,6 @@ function createOrder(){
 	Game.player.orders.push(newOrder);
 }
 function deleteOrderById(id){
-	"use strict";
 	// console.log("Deleting order", id);
 	var order;
 	for (var i=0; i<Game.player.orders.length; i+=1){
@@ -607,7 +575,6 @@ function deleteOrderById(id){
 	}
 }
 function drawOrder(order){
-	"use strict";
 	var orderElement = document.createElement("table");
 	for (var property in order){
 		if (0 <= ["progressNeeded", "consumption", "onComplete", "cost", "shipCost"].indexOf(property)){
@@ -641,7 +608,6 @@ function drawOrder(order){
 	return orderElement;
 }
 function drawEvent(event){
-	"use strict";
 	var eventElement = document.createElement("div");
 	// title
 	var title = document.createElement("h2");
@@ -672,7 +638,6 @@ function drawEvent(event){
 	return eventElement;
 }
 function getEventID(event){
-	"use strict";
 	for (var i=0; i<eventList.length; i+=1){
 		if (event === eventList[i]){
 			return i;
@@ -680,7 +645,6 @@ function getEventID(event){
 	}
 }
 function removeEvent(id){
-	"use strict";
 	for (var i=0; i<Game.player.events.length; i+=1){
 		if (id === Game.player.events[i]){
 			return Game.player.events.pop(i);
@@ -688,7 +652,6 @@ function removeEvent(id){
 	}
 }
 function enoughResourcesToSupportOrder(order){
-	"use strict";
 	for (var resource in order.consumption){
 		if (Game.player.resources[resource] < order.consumption[resource]){
 			return false;
@@ -712,7 +675,6 @@ var selectionStyle = {
 };
 
 function createOrderTypeList(){
-	"use strict";
 	var selector = document.getElementById("input_order_type");
 	for (var i=0; i<orderList.length; i+=1){
 		var option = document.createElement("option");
@@ -723,7 +685,6 @@ function createOrderTypeList(){
 }
 
 function drawPlanet(planet){
-	"use strict";
 	var planetIcon = document.getElementById(planet.name);
 	if (planetIcon === null){
 		planetIcon = document.createElement("div");
@@ -752,7 +713,6 @@ function drawPlanet(planet){
 }
 
 function drawStar(){
-	"use strict";
 	var planetIcon = document.getElementById(sun.name);
 	if (planetIcon === null){
 		planetIcon = document.createElement("div");
@@ -768,17 +728,14 @@ function drawStar(){
 }
 
 function getID(){
-	"use strict";
 	return Number(document.getElementById("input_id").value);
 }
 
 function getOrderID(){
-	"use strict";
 	return Number(document.getElementById("input_order_type").value);
 }
 
 function getPlanetCoods(planet){
-	"use strict";
 	var absCoords = planet.orbit.cartesian(Game.time);
 	var x = remap(absCoords[0], [-Game.systemWidth, Game.systemWidth], [0, Game.width]);
 	var y = remap(absCoords[1], [-Game.systemHeight, Game.systemHeight], [0, Game.height]);
@@ -786,7 +743,6 @@ function getPlanetCoods(planet){
 }
 
 function modifyNavy(shipClass, count){
-	"use strict";
 	if (!Game.player.navy.hasOwnProperty(shipClass)){
 		Game.player.navy[shipClass] = count;
 	}
@@ -796,7 +752,6 @@ function modifyNavy(shipClass, count){
 }
 
 function selectTab(id){
-	"use strict";
 	var children = document.getElementById('rightdocs').children;
 	for (var i=0; i<children.length; i+=1){
 		children[i].style.display = "none";
@@ -805,7 +760,6 @@ function selectTab(id){
 }
 
 function wipeMap(){
-	"use strict";
 	document.getElementById("map").innerHTML = "";
 }
 
@@ -814,7 +768,6 @@ function wipeMap(){
 var Game = {};
 
 function generateBody(sma){
-	"use strict";
 	sma /= au;
 	var mass;
 	if (0.8 < sma && sma < 1.5){
@@ -833,7 +786,6 @@ function generateBody(sma){
 }
 
 function generateOrbit(sma){
-	"use strict";
 	var parent = sun;
 	var ecc = uniform(0, 0.25);
 	var aop = uniform(0, 2*pi);
@@ -842,7 +794,6 @@ function generateOrbit(sma){
 }
 
 function generatePlanet(sma){
-	"use strict";
 	var planet = generateBody(sma);
 	planet.orbit = generateOrbit(sma);
 	planet.name = "Sol-" + randint(100000, 999999);
@@ -850,7 +801,6 @@ function generatePlanet(sma){
 }
 
 function generateSystem(attempt){
-	"use strict";
 	if (attempt >= 100){
 		console.error("too many failed attempts... something is broken :(");
 		console.log(systemAttempt);
@@ -868,12 +818,10 @@ function generateSystem(attempt){
 }
 
 function getQuestsFromIds(){
-	"use strict";
 	return Game.player.quests.map(function(x){return questList[x];});
 }
 
 function main(){
-	"use strict";
 	console.log("Mocha's weird-ass space game test");
 	Game.debug = {};
 	if (read_cookie("settings")){
@@ -927,7 +875,6 @@ function main(){
 }
 
 function gameTick(){
-	"use strict";
 	Game.time = Game.paused ? Game.time : Game.time + Game.speed;
 	Game.width = window.innerWidth;
 	Game.height = window.innerHeight;
@@ -935,14 +882,12 @@ function gameTick(){
 }
 
 function hardReset(){
-	"use strict";
 	console.warn("Hard Reset!");
 	delete_cookie("seed");
 	delete_cookie("player");
 	location.reload();
 }
 function redrawInterface(){
-	"use strict";
 	// update quests
 	updateQuests();
 	// update navy
@@ -958,7 +903,6 @@ function redrawInterface(){
 }
 
 function redrawMap(){
-	"use strict";
 	// update infobox
 	var selectionId = Number(document.getElementById("input_id").value);
 	var infoboxElement = document.getElementById("leftinfo");
@@ -982,7 +926,6 @@ function redrawMap(){
 }
 
 function saveGame(isManual){
-	"use strict";
 	// store cookie https://www.w3schools.com/js/js_cookies.asp
 	write_cookie("settings", Game.settings);
 	write_cookie("player", Game.player);
@@ -993,13 +936,11 @@ function saveGame(isManual){
 }
 
 function updateFPS(){
-	"use strict";
 	Game.settings.fps = Number(document.getElementById('input_fps').value);
 	saveGame();
 }
 
 function updateNavy(){
-	"use strict";
 	// display/update current quests
 	var navyTable = document.getElementById("navy");
 	for (var shipClass in Game.player.navy){
@@ -1028,7 +969,6 @@ function updateNavy(){
 }
 
 function updateEvents(){
-	"use strict";
 	// relist events
 	var eventListElement = document.getElementById("eventlist");
 	for (var i=0; i<Game.player.events.length; i+=1){
@@ -1056,7 +996,6 @@ function updateEvents(){
 }
 
 function updateOrders(){
-	"use strict";
 	// if changed, update
 	var orderListElement = document.getElementById("orderlist");
 	orderListElement.innerHTML = '';
@@ -1103,7 +1042,6 @@ function updateOrders(){
 }
 
 function updateQuests(){
-	"use strict";
 	// display/update current quests
 	getQuestsFromIds(Game.player.quests).map(drawQuests);
 	// see if new quests apply
@@ -1127,7 +1065,6 @@ function updateQuests(){
 }
 
 function updateQuestCompletion(quest){
-	"use strict";
 	if (quest.complete){
 		return;
 	}
@@ -1137,7 +1074,6 @@ function updateQuestCompletion(quest){
 }
 
 function updateResources(){
-	"use strict";
 	document.getElementById("water").innerHTML = Game.player.resources.water;
 	document.getElementById("fuel").innerHTML = Game.player.resources.fuel;
 	document.getElementById("steel").innerHTML = Game.player.resources.steel;
@@ -1146,4 +1082,4 @@ function updateResources(){
 	document.getElementById("steellabel").innerHTML = asciiEmoji.steel[Game.settings.asciiEmoji];
 }
 
-document.onload = function(){"use strict"; main();};
+document.onload = function(){main();};
