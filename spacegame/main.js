@@ -1015,11 +1015,11 @@ function updateEvents(){
 		return;
 	}
 	for (i=0; i<eventList.length; i++){
-		event = eventList[i];
-		if (0 <= Game.player.events.indexOf(i) || !event.condition()){
+		e = eventList[i];
+		if (0 <= Game.player.events.indexOf(i) || !e.condition()){
 			continue;
 		}
-		if (seededRandom() < Game.speed/event.mtth){
+		if (seededRandom() < Game.speed/e.mtth){
 			Game.player.events.push(i);
 		}
 	}
@@ -1045,7 +1045,7 @@ function updateOrders(){
 		}
 		// if enough resources to continue, continue
 		else if (enoughResourcesToSupportOrder(thisOrder)){
-			for (resource in thisOrder.consumption){
+			for (var resource in thisOrder.consumption){
 				Game.player.resources[resource] -= thisOrder.consumption[resource];
 			}
 			thisOrder.progress += 1;
@@ -1056,7 +1056,7 @@ function updateOrders(){
 	var order = orderList[getOrderID()];
 	var shipTable = document.getElementById("shipTable");
 	shipTable.innerHTML = "";
-	for (shipClass in order.shipCost){
+	for (var shipClass in order.shipCost){
 		row = document.createElement("tr");
 		col1 = document.createElement("th");
 		col1.innerHTML = shipClass;
