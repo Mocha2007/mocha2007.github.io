@@ -1,5 +1,4 @@
-/* jshint esversion: 6 */
-/* jshint strict: true */
+/* jshint esversion: 6, strict: true, forin: true, loopfunc: false, strict: global */
 /* exported importSave, downloadSave, createOrder, wipeMap, hardReset */
 // begin basic block
 "use strict";
@@ -19,6 +18,7 @@ function round(number, digits){
 	return number;
 }
 function seededRandom(){
+	/* jshint bitwise: false */
 	var max31Bit = Math.pow(2, 31) - 1;
 	var max32Bit = Math.pow(2, 32) - 1;
 	var x = Game.rng.value;
@@ -667,7 +667,7 @@ var asciiEmoji = {
 	'planet': ['&middot;', '🌑'],
 	'water': ['water', '💧'],
 	'fuel': ['fuel', '⛽'],
-	'steel': ['steel', '🔩'],
+	'steel': ['steel', '🔩']
 };
 var selectionStyle = {
 	"new": "selected",
