@@ -205,7 +205,7 @@ class Body{
 		var T = this.temp;
 		var r_e = earth.radius;
 		var rho_e = earth.density;
-		var T_e = 255; // todo
+		var T_e = earth.temp;
 		var esi1 = 1-Math.abs((r-r_e)/(r+r_e));
 		var esi2 = 1-Math.abs((rho-rho_e)/(rho+rho_e));
 		var esi3 = 1-Math.abs((this.v_e-earth.v_e)/(this.v_e+earth.v_e));
@@ -767,7 +767,7 @@ function wipeMap(){
 // begin main program
 var Game = {};
 var sun = new Star(1.9885e30, 6.957e8, "Sun", 3.828e26, 5778);
-var earth = new Body(5.97237e24, 6371000, undefined, undefined, "Earth"); // orbit, albedo = undef for now
+var earth = new Body(5.97237e24, 6371000, 0.306, new Orbit(sun, 1.49598023e11, 0.0167086, 1.9933027, 6.25905), "Earth");
 
 function generateBody(sma){
 	sma /= au;
