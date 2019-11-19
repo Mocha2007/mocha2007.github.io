@@ -58,7 +58,7 @@ function write_cookie(name, value){ // https://stackoverflow.com/a/11344672/2579
 	var cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; expires=Fri, 31 Dec 9999 23:59:59 UTC; path=/;'].join('');
 	document.cookie = cookie;
 }
-function download(content, fileName, contentType) {
+function download(content, fileName, contentType){ // https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file/34156339#34156339
 	var a = document.createElement("a");
 	var file = new Blob([content], {type: contentType});
 	a.href = URL.createObjectURL(file);
