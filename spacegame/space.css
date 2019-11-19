@@ -75,6 +75,9 @@ h2{
 	color: silver;
 	cursor: pointer;
 	line-height: 17px;
+	padding-bottom: 3px;
+	padding-left: 1px;
+	padding-right: 1px;
 	z-index: -1;
 }
 .gasGiant{
