@@ -422,7 +422,7 @@ function createOrder(){
 	Game.player.orders.push(newOrder);
 }
 function deleteOrderById(id){
-	console.log("Deleting order", id);
+	// console.log("Deleting order", id);
 	for (i=0; i<Game.player.orders.length; i++){
 		if (Game.player.orders[i].id === id){
 			return Game.player.orders.pop(i);
@@ -749,7 +749,6 @@ function updateOrders(){
 		thisOrder = Game.player.orders[i];
 		if (thisOrder.progress >= thisOrder.progressNeeded){
 			// give bonus
-			console.log(thisOrder);
 			thisOrder.onComplete();
 			// delete it
 			deleteOrderById(thisOrder.id);
