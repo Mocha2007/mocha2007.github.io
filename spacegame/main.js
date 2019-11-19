@@ -156,9 +156,17 @@ var dataExceptions = [
 	"temp",
 ];
 var specialUnits = {
+	"aop": {
+		"constant": pi/180,
+		"name": "&deg;"
+	},
 	"density": {
 		"constant": 1000,
 		"name": "g/cm&sup3;"
+	},
+	"man": {
+		"constant": pi/180,
+		"name": "&deg;"
 	},
 	"mass": {
 		"constant": 5.97237e24,
@@ -179,6 +187,10 @@ var specialUnits = {
 	"surfaceGravity": {
 		"constant": 9.7,
 		"name": "g"
+	},
+	"temp": {
+		"constant": 1,
+		"name": "K"
 	}
 };
 
