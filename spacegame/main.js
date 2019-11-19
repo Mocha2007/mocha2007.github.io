@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 // begin basic block
 var max31Bit = Math.pow(2, 31) - 1;
 var max32Bit = Math.pow(2, 32) - 1;
@@ -71,7 +72,7 @@ function importSave(){
 	location.reload();
 }
 function exportSave(){
-	var data = btoa(document.cookie)
+	var data = btoa(document.cookie);
 	document.getElementById("saveData").value = data;
 	console.log("Exported Save.");
 	return data;
@@ -252,7 +253,7 @@ class Body{
 			if (this[property] === undefined){
 				continue;
 			}
-			var value = this[property]
+			var value = this[property];
 			row = document.createElement("tr");
 			cell = document.createElement("th");
 			cell.innerHTML = property;
@@ -287,7 +288,7 @@ class Body{
 	get temp(){
 		return this.tempAt(this.orbit.sma);
 	}
-	tempAt = function(dist){
+	tempAt(dist){
 		return this.orbit.parent.temperature * Math.pow(1-this.albedo, 0.25) * Math.pow(this.orbit.parent.radius/2/dist, 0.5);
 	}
 	get tempDelta(){
@@ -327,14 +328,14 @@ class Orbit{
 		"use strict";
 		return (1+this.ecc)*this.sma;
 	}
-	cartesian = function(t){
+	cartesian(t){
 		"use strict";
 		var E = this.eccentricAnomaly(t);
 		var nu = this.trueAnomaly(t);
 		var r_c = this.sma*(1-this.ecc*Math.cos(E));
 		return [r_c*Math.cos(nu), r_c*Math.sin(nu)];
 	}
-	eccentricAnomaly = function(t){
+	eccentricAnomaly(t){
 		"use strict";
 		var tol = 1e-10;
 		var M = mod(this.man + 2*pi*t/this.period, 2*pi);
@@ -357,7 +358,7 @@ class Orbit{
 			if (this[property] === undefined){
 				continue;
 			}
-			var value = this[property]
+			var value = this[property];
 			row = document.createElement("tr");
 			cell = document.createElement("th");
 			cell.innerHTML = property;
@@ -385,10 +386,10 @@ class Orbit{
 		"use strict";
 		return 2*pi*Math.pow((Math.pow(this.sma, 3)/this.parent.mu), 0.5);
 	}
-	trueAnomaly = function(t){
+	trueAnomaly(t){
 		var E = this.eccentricAnomaly(t);
 		var e = this.ecc;
-		return 2 * Math.atan2((1+e)**0.5 * Math.sin(E/2), (1-e)**0.5 * Math.cos(E/2));
+		return 2 * Math.atan2(Math.pow(1+e, 0.5) * Math.sin(E/2), Math.pow(1-e, 0.5) * Math.cos(E/2));
 	}
 }
 
@@ -534,7 +535,7 @@ function drawQuests(quest){
 		// title
 		questTitle = document.createElement("h2");
 		questTitle.innerHTML = quest.title;
-		questElement.appendChild(questTitle)
+		questElement.appendChild(questTitle);
 		// desc
 		questDesc = document.createElement("div");
 		questDesc.innerHTML = quest.desc;
@@ -551,13 +552,13 @@ function drawQuests(quest){
 }
 function canAffordOrder(order){
 	// check resource costs
-	for (resource in order.cost){
+	for (var resource in order.cost){
 		if (Game.player.resources[resource] < order.cost[resource]){
 			return false;
 		}
 	}
 	// check ship costs
-	for (shipClass in order.shipCost){
+	for (var shipClass in order.shipCost){
 		if (!Game.player.navy.hasOwnProperty(shipClass) || Game.player.navy[shipClass] < order.shipCost[shipClass]){
 			return false;
 		}
@@ -567,15 +568,15 @@ function canAffordOrder(order){
 function createOrder(){
 	// todo cost
 	var orderID = getOrderID();
-	var order = orderList[orderID]
+	var order = orderList[orderID];
 	if (!canAffordOrder(order)){
 		return;
 	}
 	// else, pay cost
-	for (resource in order.cost){
+	for (var resource in order.cost){
 		Game.player.resources[resource] -= order.cost[resource];
 	}
-	for (shipClass in order.shipCost){
+	for (var shipClass in order.shipCost){
 		Game.player.navy[shipClass] -= order.shipCost[shipClass];
 	}
 	var newOrder = clone(orderList[orderID]);
@@ -596,7 +597,7 @@ function deleteOrderById(id){
 		}
 	}
 	// return ships
-	for (shipClass in order.shipCost){
+	for (var shipClass in order.shipCost){
 		Game.player.navy[shipClass] += order.shipCost[shipClass];
 	}
 }
@@ -627,7 +628,7 @@ function drawOrder(order){
 		else{
 			col2.innerHTML = order[property];
 		}
-		row.appendChild(col2)
+		row.appendChild(col2);
 		// append row
 		orderElement.appendChild(row);
 	}
@@ -678,7 +679,7 @@ function removeEvent(id){
 	}
 }
 function enoughResourcesToSupportOrder(order){
-	for (resource in order.consumption){
+	for (var resource in order.consumption){
 		if (Game.player.resources[resource] < order.consumption[resource]){
 			return false;
 		}
@@ -713,7 +714,7 @@ function createOrderTypeList(){
 function drawPlanet(planet){
 	var planetIcon = document.getElementById(planet.name);
 	if (planetIcon === null){
-		var planetIcon = document.createElement("div");
+		planetIcon = document.createElement("div");
 		document.getElementById("map").appendChild(planetIcon);
 		planetIcon.id = planet.name;
 		planetIcon.innerHTML = asciiEmoji.planet[Game.settings.asciiEmoji];
@@ -741,7 +742,7 @@ function drawPlanet(planet){
 function drawStar(){
 	var planetIcon = document.getElementById(sun.name);
 	if (planetIcon === null){
-		var planetIcon = document.createElement("div");
+		planetIcon = document.createElement("div");
 		document.getElementById("map").appendChild(planetIcon);
 		planetIcon.classList.value = "star";
 		planetIcon.id = sun.name;
@@ -763,8 +764,8 @@ function getOrderID(){
 
 function getPlanetCoods(planet){
 	var absCoords = planet.orbit.cartesian(Game.time);
-	var x = remap(absCoords[0], [-Game.systemWidth, Game.systemWidth], [0, Game.width])
-	var y = remap(absCoords[1], [-Game.systemHeight, Game.systemHeight], [0, Game.height])
+	var x = remap(absCoords[0], [-Game.systemWidth, Game.systemWidth], [0, Game.width]);
+	var y = remap(absCoords[1], [-Game.systemHeight, Game.systemHeight], [0, Game.height]);
 	return [x, y];
 }
 
@@ -797,14 +798,15 @@ var earth = new Body(5.97237e24, 6371000, undefined, undefined, "Earth"); // orb
 
 function generateBody(sma){
 	sma /= au;
+	var mass;
 	if (0.8 < sma && sma < 1.5){
-		var mass = Math.pow(10, uniform(23.8, 25.2));
+		mass = Math.pow(10, uniform(23.8, 25.2));
 	}
 	else if (5 < sma && sma < 31){
-		var mass = Math.pow(10, uniform(25.9, 28.3));
+		mass = Math.pow(10, uniform(25.9, 28.3));
 	}
 	else{
-		var mass = 2*Math.pow(10, uniform(17, 27));
+		mass = 2*Math.pow(10, uniform(17, 27));
 	}
 	var density = densityFromMass(mass);
 	var radius = Math.pow(mass/(density*4/3*pi), 1/3);
@@ -851,7 +853,7 @@ function getQuestsFromIds(){
 function main(){
 	"use strict";
 	console.log("Mocha's weird-ass space game test");
-	Game.debug = {}
+	Game.debug = {};
 	if (read_cookie("settings")){
 		Game.settings = read_cookie("settings");
 		document.getElementById("input_fps").value = Game.settings.fps;
