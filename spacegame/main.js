@@ -5,16 +5,9 @@ var max32Bit = Math.pow(2, 32) - 1;
 function clone(object){
 	return JSON.parse(JSON.stringify(object));
 }
-function isFunction(functionToCheck) { // https://stackoverflow.com/a/7356528/2579798
-	return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
-}
 function nop(){
 	"use strict";
 	return;
-}
-function ping(){
-	"use strict";
-	console.log("ping");
 }
 function round(number, digits){
 	"use strict";
@@ -24,7 +17,7 @@ function round(number, digits){
 	return number;
 }
 function seededRandom(){
-	x = Game.rng.value;
+	var x = Game.rng.value;
 	x ^= x << 13;
 	x ^= x >> 17;
 	x ^= x << 5;
@@ -102,37 +95,13 @@ function remap(value, range1, range2){
 	return fraction * range2range + range2[0];
 }
 
-function sd(x){ // find the standard deviation of an array
-	"use strict";
-	return Math.sqrt(variance(x));
-}
-
-function sum(x){ // find the sum of an array
-	"use strict";
-	var s = 0;
-	x.forEach(function(y){
-		s += y;
-	});
-	return s;
-}
-
 function uniform(min, max){ // random real in range
 	"use strict";
 	return seededRandom() * (max-min) + min;
 }
 
-function variance(x){ // find the variance of an array
-	"use strict";
-	var meanOfArray = mean(x);
-	var v = x.map(function(y){
-		var z = y - meanOfArray;
-		return z * z;
-	});
-	return sum(v) / (x.length - 1);
-}
-
 function zeros(n){
-	zeroArray = [];
+	var zeroArray = [];
 	for (i=0;i<n;i++){
 		zeroArray.push(0);
 	}
@@ -145,7 +114,7 @@ var minute = 60;
 var hour = 60*minute;
 var day = 24*hour;
 var year = 365.2425 * day;
-var month = year/12;
+// var month = year/12;
 
 var au = 149597870700;
 var gravConstant = 6.674e-11;
@@ -506,6 +475,7 @@ var orderList = [
 		'onComplete': nop
 	}
 ];
+/*
 var sampleOrder = {
 	'type': 'survey',
 	'target': 2,
@@ -516,6 +486,7 @@ var sampleOrder = {
 	},
 	'onComplete': function(){console.log("benis");}
 };
+*/
 
 function drawQuests(quest){
 	var id = questList.indexOf(quest);
@@ -529,19 +500,19 @@ function drawQuests(quest){
 		}
 	}
 	else{ // create
-		questElement = document.createElement("div");
+		var questElement = document.createElement("div");
 		questElement.classList = "quest";
 		questElement.id = "quest"+id;
 		// title
-		questTitle = document.createElement("h2");
+		var questTitle = document.createElement("h2");
 		questTitle.innerHTML = quest.title;
 		questElement.appendChild(questTitle);
 		// desc
-		questDesc = document.createElement("div");
+		var questDesc = document.createElement("div");
 		questDesc.innerHTML = quest.desc;
 		questElement.appendChild(questDesc);
 		// quest status
-		questStatus = document.createElement("span");
+		var questStatus = document.createElement("span");
 		questStatus.innerHTML = "incomplete";
 		questStatus.classList = "incomplete";
 		questStatus.id = "quest"+id+"completion";
@@ -608,20 +579,20 @@ function drawOrder(order){
 			continue;
 		}
 		// create new row
-		row = document.createElement("tr");
+		var row = document.createElement("tr");
 		// create header col
-		col1 = document.createElement("th");
+		var col1 = document.createElement("th");
 		col1.innerHTML = property;
 		row.appendChild(col1);
 		// create value col
-		col2 = document.createElement("td");
+		var col2 = document.createElement("td");
 		if (property === "progress"){
 			// create progress element
-			progressBar = document.createElement("progress");
+			var progressBar = document.createElement("progress");
 			progressBar.value = order.progress / order.progressNeeded;
 			col2.appendChild(progressBar);
 			// annotation
-			progressSpan = document.createElement("span");
+			var progressSpan = document.createElement("span");
 			progressSpan.innerHTML = order.progress + "/" + order.progressNeeded;
 			col2.appendChild(progressSpan);
 		}
@@ -647,8 +618,8 @@ function drawEvent(event){
 	// options
 	var optionList = document.createElement("ul");
 	for (i=0; i<event.options.length; i++){
-		option = document.createElement("li");
-		optionButton = document.createElement("input");
+		var option = document.createElement("li");
+		var optionButton = document.createElement("input");
 		optionButton.type = "submit";
 		optionButton.value = event.options[i].text;
 		optionButton.onclick = function(){
@@ -704,7 +675,7 @@ var selectionStyle = {
 function createOrderTypeList(){
 	var selector = document.getElementById("input_order_type");
 	for (i=0; i<orderList.length; i++){
-		option = document.createElement("option");
+		var option = document.createElement("option");
 		option.value = i;
 		option.innerHTML = orderList[i].type;
 		selector.appendChild(option);
@@ -972,7 +943,7 @@ function updateFPS(){
 
 function updateNavy(){
 	// display/update current quests
-	navyTable = document.getElementById("navy");
+	var navyTable = document.getElementById("navy");
 	for (var shipClass in Game.player.navy){
 		if (document.getElementById("col2_"+shipClass)){
 			// just update count
@@ -980,15 +951,15 @@ function updateNavy(){
 		}
 		else{
 			// row
-			row = document.createElement("tr");
+			var row = document.createElement("tr");
 			row.id = "row_"+shipClass;
 			// col 1
-			nameCell = document.createElement("th");
+			var nameCell = document.createElement("th");
 			nameCell.innerHTML = shipClass;
 			nameCell.id = "col1_"+shipClass;
 			row.appendChild(nameCell);
 			// col 2
-			countCell = document.createElement("td");
+			var countCell = document.createElement("td");
 			countCell.innerHTML = Game.player.navy[shipClass];
 			countCell.id = "col2_"+shipClass;
 			row.appendChild(countCell);
@@ -1000,11 +971,11 @@ function updateNavy(){
 
 function updateEvents(){
 	// relist events
-	eventListElement = document.getElementById("eventlist");
+	var eventListElement = document.getElementById("eventlist");
 	for (i=0; i<Game.player.events.length; i++){
-		id = 'event'+Game.player.events[i];
+		var id = 'event'+Game.player.events[i];
 		if (!document.getElementById(id)){
-			itemElement = document.createElement("li");
+			var itemElement = document.createElement("li");
 			itemElement.appendChild(drawEvent(eventList[Game.player.events[i]]));
 			itemElement.id = id;
 			eventListElement.appendChild(itemElement);
@@ -1015,7 +986,7 @@ function updateEvents(){
 		return;
 	}
 	for (i=0; i<eventList.length; i++){
-		e = eventList[i];
+		var e = eventList[i];
 		if (0 <= Game.player.events.indexOf(i) || !e.condition()){
 			continue;
 		}
@@ -1027,15 +998,15 @@ function updateEvents(){
 
 function updateOrders(){
 	// if changed, update
-	orderListElement = document.getElementById("orderlist");
+	var orderListElement = document.getElementById("orderlist");
 	orderListElement.innerHTML = '';
 	for (i=0; i<Game.player.orders.length; i++){
-		itemElement = document.createElement("li");
+		var itemElement = document.createElement("li");
 		itemElement.appendChild(drawOrder(Game.player.orders[i]));
 		orderListElement.appendChild(itemElement);
 		// check if conditions are fulfilled
 		// if done, finish order and delete it
-		thisOrder = Game.player.orders[i];
+		var thisOrder = Game.player.orders[i];
 		if (thisOrder.progress >= thisOrder.progressNeeded){
 			// give bonus
 			thisOrder.onComplete();
@@ -1057,11 +1028,11 @@ function updateOrders(){
 	var shipTable = document.getElementById("shipTable");
 	shipTable.innerHTML = "";
 	for (var shipClass in order.shipCost){
-		row = document.createElement("tr");
-		col1 = document.createElement("th");
+		var row = document.createElement("tr");
+		var col1 = document.createElement("th");
 		col1.innerHTML = shipClass;
 		row.appendChild(col1);
-		col2 = document.createElement("td");
+		var col2 = document.createElement("td");
 		col2.innerHTML = order.shipCost[shipClass];
 		row.appendChild(col2);
 		shipTable.appendChild(row);
@@ -1076,11 +1047,12 @@ function updateQuests(){
 	getQuestsFromIds(Game.player.quests).map(drawQuests);
 	// see if new quests apply
 	for (i=0; i<questList.length; i++){
-		quest = questList[i];
+		var quest = questList[i];
 		if (Game.player.quests.indexOf(i) >= 0){
 			continue;
 		}
-		success = true;
+		var success = true;
+		var j;
 		for (j=0; j<quest.requirements.length; j++){
 			if (!quest.requirements[j]()){
 				success = false;
