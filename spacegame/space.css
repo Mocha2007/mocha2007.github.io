@@ -1,16 +1,16 @@
 html{
+	background-color: #000;
 	color: #0ff;
 	font-family: Consolas, "Courier New", monospace;
-	background-color: #000;
 	overflow: hidden;
 }
 p{
 	text-indent: 45px;
 }
 abbr{
-	text-decoration: none;
 	animation: strobe 1s linear alternate infinite;
 	cursor: help;
+	text-decoration: none;
 }
 th{
 	text-align: right;
@@ -20,10 +20,10 @@ h2{
 }
 #leftinfo{
 	background-color: #444;
+    bottom: 0;
     float: left;
-    position: absolute;
-    bottom: 0px;
     font-size: 75%;
+    position: absolute;
 }
 #selector{
 	background-color: #422;
@@ -39,12 +39,12 @@ h2{
 	z-index: -2;
 }
 #rightinfo{
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-	overflow-y: scroll;
-	height: 100%;
 	background-color: #224;
+    bottom: 0;
+	height: 100%;
+	overflow-y: scroll;
+    position: absolute;
+    right: 0;
 	width: 25%;
 }
 #righttabs span{
@@ -58,25 +58,24 @@ h2{
 }
 #resourcebar{
 	background-color: #224;
-	position: absolute;
-	top: 0px;
 	left: 50%;
-	width: 30%;
 	margin-left: -15%;
+	position: absolute;
 	text-align: center;
+	top: 0;
+	width: 30%;
 }
 #eventlist, #orderlist{
 	font-size: 75%;
 	list-style-type: none;
 }
 .planet{
+	border: 2px solid transparent;
+	border-radius: 90px;
 	color: silver;
 	cursor: pointer;
+	line-height: 17px;
 	z-index: -1;
-	height: 17.6px;
-	line-height: 17.6px;
-	border: 2px solid transparent;
-	border-radius: 8.8px;
 }
 .gasGiant{
 	color: tan;
