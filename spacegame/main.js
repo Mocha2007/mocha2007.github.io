@@ -490,7 +490,7 @@ var sampleOrder = {
 function drawQuests(quest){
 	var id = questList.indexOf(quest);
 	if (document.getElementById("quest"+id)){
-		// todo update
+		// update
 		if (quest.complete && !quest.elementUpdated){
 			document.getElementById("quest"+id+"completion").classList = "complete";
 			document.getElementById("quest"+id+"completion").innerHTML = "complete";
@@ -536,7 +536,6 @@ function canAffordOrder(order){
 	return true;
 }
 function createOrder(){
-	// todo cost
 	var orderID = getOrderID();
 	var order = orderList[orderID];
 	if (!canAffordOrder(order)){
