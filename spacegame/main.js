@@ -374,6 +374,33 @@ var orderList = [
 			'water': 1
 		},
 		'onComplete': function(){Game.player.resources.steel += 100;}
+	},
+	{
+		'type': 'Convert Water to Fuel',
+		'progressNeeded': 100,
+		'cost': {},
+		'shipCost': {
+			'constructor': 1
+		},
+		'consumption': {
+			'fuel': -1,
+			'water': 1
+		},
+		'onComplete': nop
+	},
+	{
+		'type': 'Mine Ice',
+		'progressNeeded': 100,
+		'cost': {
+			'fuel': 10
+		},
+		'shipCost': {
+			'constructor': 1
+		},
+		'consumption': {
+			'water': -1
+		},
+		'onComplete': nop
 	}
 ];
 var sampleOrder = {
@@ -437,7 +464,7 @@ function canAffordOrder(order){
 }
 function createOrder(){
 	// todo cost
-	var orderID = Number(document.getElementById("input_order_type").value);
+	var orderID = getOrderID();
 	var order = orderList[orderID]
 	if (!canAffordOrder(order)){
 		return;
@@ -567,6 +594,10 @@ function drawStar(){
 
 function getID(){
 	return Number(document.getElementById("input_id").value);
+}
+
+function getOrderID(){
+	return Number(document.getElementById("input_order_type").value);
 }
 
 function getPlanetCoods(planet){
@@ -818,6 +849,19 @@ function updateOrders(){
 	}
 	// update selection
 	document.getElementById("orderSelectionID").innerHTML = getID();
+	var order = orderList[getOrderID()];
+	var shipTable = document.getElementById("shipTable");
+	shipTable.innerHTML = "";
+	for (shipClass in order.shipCost){
+		row = document.createElement("tr");
+		col1 = document.createElement("th");
+		col1.innerHTML = shipClass;
+		row.appendChild(col1);
+		col2 = document.createElement("td");
+		col2.innerHTML = order.shipCost[shipClass];
+		row.appendChild(col2);
+		shipTable.appendChild(row);
+	}
 }
 
 function updateQuests(){

@@ -67,7 +67,8 @@
 		<div id="orders">
 			Action:
 			<select id="input_order_type"></select><br>
-			Target: <span id="orderSelectionID">...</span><br>
+			Target: <span id="orderSelectionID"></span><br>
+			Ships Required: <table id="shipTable"></table><br>
 			<input type="submit" value="Create Order" onclick="createOrder();">
 			<hr>
 			<input type="submit" value="Cancel" onclick="Game.player.orders.pop(Number(document.getElementById('input_order_id')));">
