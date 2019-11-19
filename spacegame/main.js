@@ -148,18 +148,20 @@ var month = year/12;
 
 var au = 149597870700;
 var gravConstant = 6.674e-11;
-var dataExceptions = [
+var visibleProperties = [
+	"name",
 	"classification",
+	"mass",
+	"radius",
 	"density",
-	"period",
 	"surfaceGravity",
 	"temp",
 	"v_e",
-];
-var hiddenProperties = [
-	"albedo",
-	"aop",
-	"man"
+	// orbit
+	"orbit",
+	"period",
+	"sma",
+	"ecc",
 ];
 var specialUnits = {
 	"density": {
@@ -204,7 +206,7 @@ class Body{
 		this.orbit = orbit;
 		this.name = name;
 	}
-	classification = function(){
+	get classification(){
 		if (2e26 < this.mass){
 			return "gasGiant";
 		}
@@ -219,33 +221,28 @@ class Body{
 		}
 		return "rock";
 	}
-	density = function(){
-		return this.mass / this.volume();
+	get density(){
+		return this.mass / this.volume;
 	}
-	getElement = function(){
+	get getElement(){
 		return document.getElementById(this.name);
 	}
-	info = function(){
+	get info(){
 		var table = document.createElement("table");
-		var row, cell;
-		for (var property in this){
-			if (0 <= hiddenProperties.indexOf(property)){
+		var row, cell, property;
+		for (var i in visibleProperties){
+			property = visibleProperties[i];
+			if (this[property] === undefined){
 				continue;
 			}
 			var value = this[property]
-			if (isFunction(value)){
-				if (dataExceptions.indexOf(property) === -1){
-					continue;
-				}
-				value = this[property]();
-			}
 			row = document.createElement("tr");
 			cell = document.createElement("th");
 			cell.innerHTML = property;
 			row.appendChild(cell);
 			cell = document.createElement("td");
 			if (property === "orbit"){
-				cell.appendChild(this.orbit.info());
+				cell.appendChild(this.orbit.info);
 			}
 			else if (specialUnits.hasOwnProperty(property)){
 				cell.innerHTML = round(value/specialUnits[property].constant, 2) + " " + specialUnits[property].name;
@@ -258,23 +255,23 @@ class Body{
 		}
 		return table;
 	}
-	isPHW = function(){
-		return 6e23 < this.mass && this.mass < 6e25 && 205 < this.temp() && this.temp() < 305;
+	get isPHW(){
+		return 6e23 < this.mass && this.mass < 6e25 && 205 < this.temp && this.temp < 305;
 	}
-	mu = function(){
+	get mu(){
 		return this.mass * gravConstant;
 	}
-	surfaceGravity = function(){
-		return this.mu()/Math.pow(this.radius, 2);
+	get surfaceGravity(){
+		return this.mu/Math.pow(this.radius, 2);
 	}
-	temp = function(){
+	get temp(){
 		return this.orbit.parent.temperature * Math.pow(1-this.albedo, 0.25) * Math.pow(this.orbit.parent.radius/2/this.orbit.sma, 0.5);
 	}
-	volume = function(){
+	get volume(){
 		return 4/3 * pi * Math.pow(this.radius, 3);
 	}
-	v_e = function(){
-		return Math.pow(2*this.mu()/this.radius, 0.5);
+	get v_e(){
+		return Math.pow(2*this.mu/this.radius, 0.5);
 	}
 }
 
@@ -297,7 +294,7 @@ class Orbit{
 	eccentricAnomaly = function(t){
 		"use strict";
 		var tol = 1e-10;
-		var M = mod(this.man + 2*pi*t/this.period(), 2*pi);
+		var M = mod(this.man + 2*pi*t/this.period, 2*pi);
 		var E = M;
 		var E_;
 		while (true){
@@ -309,20 +306,15 @@ class Orbit{
 			return E; // fixme
 		}
 	}
-	info = function(){
+	get info(){
 		var table = document.createElement("table");
-		var row, cell;
-		for (var property in this){
-			if (0 <= hiddenProperties.indexOf(property)){
+		var row, cell, property;
+		for (var i in visibleProperties){
+			property = visibleProperties[i];
+			if (this[property] === undefined){
 				continue;
 			}
 			var value = this[property]
-			if (isFunction(value)){
-				if (dataExceptions.indexOf(property) === -1){
-					continue;
-				}
-				value = this[property]();
-			}
 			row = document.createElement("tr");
 			cell = document.createElement("th");
 			cell.innerHTML = property;
@@ -342,9 +334,9 @@ class Orbit{
 		}
 		return table;
 	}
-	period = function(){
+	get period(){
 		"use strict";
-		return 2*pi*Math.pow((Math.pow(this.sma, 3)/this.parent.mu()), 0.5);
+		return 2*pi*Math.pow((Math.pow(this.sma, 3)/this.parent.mu), 0.5);
 	}
 	trueAnomaly = function(t){
 		var E = this.eccentricAnomaly(t);
@@ -680,8 +672,8 @@ function drawPlanet(planet){
 		planetIcon.innerHTML = asciiEmoji.planet[Game.settings.asciiEmoji];
 		planetIcon.style.position = "absolute";
 	}
-	planetIcon.classList.value = "planet " + planet.classification();
-	if (planet.isPHW()){
+	planetIcon.classList.value = "planet " + planet.classification;
+	if (planet.isPHW){
 		planetIcon.classList.value += ' phw';
 	}
 	var planetCoords = getPlanetCoods(planet);
@@ -801,7 +793,7 @@ function generateSystem(attempt){
 		SMAList[i] = nextSMA(SMAList[i-1]);
 	}
 	var systemAttempt = SMAList.map(generatePlanet);
-	return systemAttempt.some(function(x){return x.isPHW();}) ? systemAttempt : generateSystem(attempt+1);
+	return systemAttempt.some(function(x){return x.isPHW;}) ? systemAttempt : generateSystem(attempt+1);
 }
 
 function getQuestsFromIds(){
@@ -896,7 +888,7 @@ function redrawMap(){
 	var infoboxElement = document.getElementById("leftinfo");
 	if (infoboxElement.benisData !== selectionId){
 		infoboxElement.innerHTML = "";
-		infoboxElement.appendChild(Game.system.secondaries[selectionId].info());
+		infoboxElement.appendChild(Game.system.secondaries[selectionId].info);
 		infoboxElement.benisData = selectionId;
 	}
 	// update time
