@@ -100,6 +100,9 @@ h2{
 .selected{
 	animation: selectionstrobe 0.5s linear alternate infinite;
 }
+.selectedOld{
+	animation: selectionStrobeOld 0.5s linear alternate infinite;
+}
 .quest{
 	border: 1px dashed cyan;
 }
@@ -115,6 +118,10 @@ h2{
 @keyframes selectionstrobe{
 	0% {border: 2px solid red;}
 	100% {border: 2px solid transparent;}
+}
+@keyframes selectionStrobeOld{
+	0% {color: red;}
+	100% {color: transparent;}
 }
 @keyframes strobe{
 	0% {border-bottom:1px solid transparent;}

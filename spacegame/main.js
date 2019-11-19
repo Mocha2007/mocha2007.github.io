@@ -612,6 +612,10 @@ var asciiEmoji = {
 	'fuel': ['fuel', '⛽'],
 	'steel': ['steel', '🔩'],
 };
+var selectionStyle = {
+	"new": "selected",
+	"old": "selectedOld"
+};
 
 function createOrderTypeList(){
 	var selector = document.getElementById("input_order_type");
@@ -643,7 +647,7 @@ function drawPlanet(planet){
 	planetIcon.onclick = function(){document.getElementById("input_id").value = index;};
 	// check if selection...
 	if (getID() === index){
-		planetIcon.classList.value += " selected";
+		planetIcon.classList.value += " " + selectionStyle[Game.settings.selectionStyle];
 	}
 	// check if colony
 	if (Game.player.colonyID === index){
@@ -773,6 +777,7 @@ function main(){
 		Game.settings.autosaveInterval = 1;
 		Game.settings.fps = 20;
 		Game.settings.asciiEmoji = 0;
+		Game.settings.selectionStyle = "new";
 	}
 	// set up RNG
 	Game.debug.loaded = seededRandomSetup();
