@@ -36,12 +36,13 @@
 <div id="rightinfo">
 	<div id="righttabs">
 		<span onclick="selectTab('welcome');">Welcome</span>
+		<span onclick="selectTab('events');">Events</span>
 		<span onclick="selectTab('quests');">Quests</span>
 		<span onclick="selectTab('navy');">Navy</span>
 		<span onclick="selectTab('orders');">Orders</span>
-		<span onclick="selectTab('about');">About</span>
 		<span onclick="selectTab('todo');">Todo</span>
 		<span onclick="selectTab('options');">Options</span>
+		<span onclick="selectTab('about');">About</span>
 	</div>
 	<hr>
 	<div id="rightdocs">
@@ -62,6 +63,9 @@
 				Instructions will follow...
 			</p>
 		</div>
+		<div id="events">
+			<ul id="eventlist"></ul>
+		</div>
 		<div id="quests"></div>
 		<table id="navy"></table>
 		<div id="orders">
@@ -77,12 +81,9 @@
 			<hr>
 			<ul id="orderlist"></ul>
 		</div>
-		<p id="about">
-			Made by moki :3
-		</p>
 		<ol id="todo">
 			<li>more quests</li>
-			<li>events</li>
+			<li>more events</li>
 			<li>buildings</li>
 			<li>import/export save</li>
 			<li>politics</li>
@@ -106,6 +107,9 @@
 				</ul>
 			</div>
 		</div>
+		<p id="about">
+			Made by moki :3
+		</p>
 	</div>
 </div>
 <div id="leftinfo">Infobox</div>

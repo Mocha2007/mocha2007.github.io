@@ -123,6 +123,7 @@ var minute = 60;
 var hour = 60*minute;
 var day = 24*hour;
 var year = 365.2425 * day;
+var month = year/12;
 
 var au = 149597870700;
 var gravConstant = 6.674e-11;
@@ -339,6 +340,24 @@ function nextSMA(previousSMA){
 
 // end astro block
 // begin gameplay block
+var eventList = [
+	{
+		'title': 'Comet Sighted',
+		'desc': 'A comet was sighted. Ouf. Prepare for revolts...?',
+		'condition': function(){return true;},
+		'mtth': year,
+		'options': [
+			{
+				'text': 'Neat.',
+				'onClick': nop
+			},
+			{
+				'text': 'Meh.',
+				'onClick': nop
+			}
+		]
+	}
+];
 var questList = [
 	{
 		'title': "Select World",
@@ -531,6 +550,50 @@ function drawOrder(order){
 	}
 	return orderElement;
 }
+function drawEvent(event){
+	var eventElement = document.createElement("div");
+	// title
+	var title = document.createElement("h2");
+	title.innerHTML = event.title;
+	eventElement.appendChild(title);
+	// desc
+	var desc = document.createElement("p");
+	desc.innerHTML = event.desc;
+	eventElement.appendChild(desc);
+	// options
+	var optionList = document.createElement("ul");
+	for (i=0; i<event.options.length; i++){
+		option = document.createElement("li");
+		optionButton = document.createElement("input");
+		optionButton.type = "submit";
+		optionButton.value = event.options[i].text;
+		optionButton.onclick = function(){
+			event.options[i].onClick();
+			removeEvent(getEventID(event));
+			var eventNode = document.getElementById('event'+getEventID(event));
+			eventNode.parentNode.removeChild(eventNode);
+		};
+		// console.log(event.options[i].onClick);
+		option.appendChild(optionButton);
+		optionList.appendChild(option);
+	}
+	eventElement.appendChild(optionList);
+	return eventElement;
+}
+function getEventID(event){
+	for (i=0; i<eventList.length; i++){
+		if (event === eventList[i]){
+			return i;
+		}
+	}
+}
+function removeEvent(id){
+	for (i=0; i<Game.player.events.length; i++){
+		if (id === Game.player.events[i]){
+			return Game.player.events.pop(i);
+		}
+	}
+}
 function enoughResourcesToSupportOrder(order){
 	for (resource in order.consumption){
 		if (Game.player.resources[resource] < order.consumption[resource]){
@@ -717,6 +780,7 @@ function main(){
 	else{
 		Game.player = {};
 		Game.player.quests = [];
+		Game.player.events = [];
 		Game.player.resources = {};
 		Game.player.resources.water = 1000;
 		Game.player.resources.fuel = 1000;
@@ -772,6 +836,8 @@ function redraw(){
 	updateNavy();
 	// update orders
 	updateOrders();
+	// update events
+	updateEvents();
 	// save
 	if (minute < new Date() - Game.debug.lastSave){
 		saveGame(false);
@@ -817,6 +883,33 @@ function updateNavy(){
 			row.appendChild(countCell);
 			// finish
 			navyTable.appendChild(row);
+		}
+	}
+}
+
+function updateEvents(){
+	// relist events
+	eventListElement = document.getElementById("eventlist");
+	for (i=0; i<Game.player.events.length; i++){
+		id = 'event'+Game.player.events[i];
+		if (!document.getElementById(id)){
+			itemElement = document.createElement("li");
+			itemElement.appendChild(drawEvent(eventList[Game.player.events[i]]));
+			itemElement.id = id;
+			eventListElement.appendChild(itemElement);
+		}
+	}
+	// check if new events apply
+	if (Game.paused){
+		return;
+	}
+	for (i=0; i<eventList.length; i++){
+		event = eventList[i];
+		if (0 <= Game.player.events.indexOf(i) || !event.condition()){
+			continue;
+		}
+		if (seededRandom() < Game.speed/event.mtth){
+			Game.player.events.push(i);
 		}
 	}
 }
