@@ -382,7 +382,7 @@ var questList = [
 var orderList = [
 	{
 		'type': 'Assay',
-		'progressNeeded': 100,
+		'progressNeeded': 50,
 		'cost': {
 			'fuel': 10
 		},
@@ -396,7 +396,7 @@ var orderList = [
 	},
 	{
 		'type': 'Convert Water to Fuel',
-		'progressNeeded': 100,
+		'progressNeeded': 50,
 		'cost': {},
 		'shipCost': {
 			'constructor': 1
@@ -409,7 +409,7 @@ var orderList = [
 	},
 	{
 		'type': 'Mine Ice',
-		'progressNeeded': 100,
+		'progressNeeded': 50,
 		'cost': {
 			'fuel': 10
 		},
