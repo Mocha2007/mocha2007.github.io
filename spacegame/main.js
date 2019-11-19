@@ -190,7 +190,8 @@ var specialUnits = {
 	},
 	"temp": {
 		"constant": 1,
-		"name": "K"
+		"f": function(x){return x-273.2;},
+		"name": "&deg;C"
 	},
 	"v_e": {
 		"constant": 1000,
@@ -245,6 +246,9 @@ class Body{
 				cell.appendChild(this.orbit.info);
 			}
 			else if (specialUnits.hasOwnProperty(property)){
+				if (specialUnits[property].hasOwnProperty("f")){
+					value = specialUnits[property].f(value);
+				}
 				cell.innerHTML = round(value/specialUnits[property].constant, 2) + " " + specialUnits[property].name;
 			}
 			else{
@@ -397,7 +401,7 @@ var eventList = [
 var questList = [
 	{
 		'title': "Select World",
-		'desc': "Select a world to colonize. An ideal world is one with (in order of importance):<ol><li>temperature around 255K</li><li>mass within a factor of two of Earth's</li><li>near bodies which could be exploited in the future</li></ol><center class='incomplete'>(WARNING: cannot be undone!)<br><input id='world_selector' type='submit' value='Confirm Selection' onclick='Game.player.colonyID=getID();'></center><br>Reward: 1 Constructor",
+		'desc': "Select a world to colonize. An ideal world is one with (in order of importance):<ol><li>temperature around -18&deg;C</li><li>mass within a factor of two of Earth's</li><li>near bodies which could be exploited in the future</li></ol><center class='incomplete'>(WARNING: cannot be undone!)<br><input id='world_selector' type='submit' value='Confirm Selection' onclick='Game.player.colonyID=getID();'></center><br>Reward: 1 Constructor",
 		'conditions': [
 			function(){return Game.player.colonyID >= 0;}
 		],
