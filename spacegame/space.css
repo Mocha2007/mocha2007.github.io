@@ -65,6 +65,10 @@ h2{
 	margin-left: -15%;
 	text-align: center;
 }
+#orderlist{
+	font-size: 75%;
+	list-style-type: none;
+}
 .planet{
 	color: silver;
 	cursor: pointer;

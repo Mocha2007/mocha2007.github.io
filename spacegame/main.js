@@ -1,6 +1,9 @@
 // begin basic block
 var max31Bit = Math.pow(2, 31) - 1;
 var max32Bit = Math.pow(2, 32) - 1;
+function clone(object){
+	return JSON.parse(JSON.stringify(object));
+}
 function isFunction(functionToCheck) { // https://stackoverflow.com/a/7356528/2579798
 	return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
 }
@@ -350,6 +353,29 @@ var questList = [
 		]
 	}
 ];
+var orderList = [
+	{
+		'type': 'Assay',
+		'progressNeeded': 100,
+		'cost': {
+			'fuel': 10
+		},
+		'consumption': { // per day
+			'water': 1
+		},
+		'onComplete': function(){Game.player.resources.steel += 100;}
+	}
+];
+var sampleOrder = {
+	'type': 'survey',
+	'target': 2,
+	'progress': 12,
+	'progressNeeded': 46,
+	'consumption': { // per day
+		'water': 1
+	},
+	'onComplete': function(){console.log("benis");}
+};
 
 function drawQuests(quest){
 	var id = questList.indexOf(quest);
@@ -384,6 +410,57 @@ function drawQuests(quest){
 		document.getElementById("quests").appendChild(questElement);
 	}
 }
+function createOrder(){
+	var orderID = Number(document.getElementById("input_order_type").value);
+	var newOrder = clone(orderList[orderID]);
+	newOrder.progress = 0;
+	newOrder.target = getID();
+	newOrder.id = Number(new Date());
+	newOrder[""] = '<input type="submit" value="Cancel" onclick="deleteOrderById('+newOrder.id+')">';
+	Game.player.orders.push(newOrder);
+}
+function deleteOrderById(id){
+	console.log("Deleting order", id);
+	for (i=0; i<Game.player.orders.length; i++){
+		if (Game.player.orders[i].id === id){
+			return Game.player.orders.pop(i);
+		}
+	}
+}
+function drawOrder(order){
+	var orderElement = document.createElement("table");
+	for (var property in order){
+		if (0 <= ["progressNeeded", "consumption", "onComplete", "cost"].indexOf(property)){
+			continue;
+		}
+		// create new row
+		row = document.createElement("tr");
+		// create header col
+		col1 = document.createElement("th");
+		col1.innerHTML = property;
+		row.appendChild(col1);
+		// create value col
+		col2 = document.createElement("td");
+		if (property === "progress"){
+			// create progress element
+			progressBar = document.createElement("progress");
+			progressBar.value = order.progress / order.progressNeeded;
+			col2.appendChild(progressBar);
+			// annotation
+			progressSpan = document.createElement("span");
+			progressSpan.innerHTML = order.progress + "/" + order.progressNeeded;
+			col2.appendChild(progressSpan);
+		}
+		else{
+			col2.innerHTML = order[property];
+		}
+		row.appendChild(col2)
+		// append row
+		orderElement.appendChild(row);
+	}
+	return orderElement;
+}
+
 // end gameplay block
 // begin interface block
 
@@ -541,23 +618,19 @@ function main(){
 	// select welcome tab
 	selectTab("welcome");
 	// load?
-	if (read_cookie("resources")){
-		Game.resources = read_cookie("resources");
-	}
-	else{
-		Game.resources = {};
-		Game.resources.water = 0;
-		Game.resources.fuel = 0;
-		Game.resources.steel = 0;
-	}
 	if (read_cookie("player")){
 		Game.player = read_cookie("player");
 	}
 	else{
 		Game.player = {};
 		Game.player.quests = [];
+		Game.player.resources = {};
+		Game.player.resources.water = 100;
+		Game.player.resources.fuel = 100;
+		Game.player.resources.steel = 100;
 		Game.player.navy = {};
 		Game.player.navy.surveyor = 1;
+		Game.player.orders = [];
 	}
 	// save
 	saveGame();
@@ -575,7 +648,7 @@ function gameTick(){
 function hardReset(){
 	console.warn("Hard Reset!");
 	delete_cookie("seed");
-	delete_cookie("resources");
+	delete_cookie("player");
 	location.reload();
 }
 
@@ -595,13 +668,15 @@ function redraw(){
 	// update zoom
 	document.getElementById("zoom").innerHTML = Game.systemHeight/au;
 	// update resource count
-	document.getElementById("water").innerHTML = Game.resources.water;
-	document.getElementById("fuel").innerHTML = Game.resources.fuel;
-	document.getElementById("steel").innerHTML = Game.resources.steel;
+	document.getElementById("water").innerHTML = Game.player.resources.water;
+	document.getElementById("fuel").innerHTML = Game.player.resources.fuel;
+	document.getElementById("steel").innerHTML = Game.player.resources.steel;
 	// update quests
 	updateQuests();
 	// update navy
 	updateNavy();
+	// update orders
+	updateOrders();
 	// save
 	if (minute < new Date() - Game.debug.lastSave){
 		saveGame(false);
@@ -610,7 +685,6 @@ function redraw(){
 
 function saveGame(isManual){
 	// store cookie https://www.w3schools.com/js/js_cookies.asp
-	write_cookie("resources", Game.resources);
 	write_cookie("settings", Game.settings);
 	write_cookie("player", Game.player);
 	Game.debug.lastSave = new Date();
@@ -650,6 +724,19 @@ function updateNavy(){
 			navyTable.appendChild(row);
 		}
 	}
+}
+
+function updateOrders(){
+	// if changed, update
+	orderListElement = document.getElementById("orderlist");
+	orderListElement.innerHTML = '';
+	for (i=0; i<Game.player.orders.length; i++){
+		itemElement = document.createElement("li");
+		itemElement.appendChild(drawOrder(Game.player.orders[i]));
+		orderListElement.appendChild(itemElement);
+	}
+	// update selection
+	document.getElementById("orderSelectionID").innerHTML = getID();
 }
 
 function updateQuests(){

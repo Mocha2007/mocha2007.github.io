@@ -38,6 +38,7 @@
 		<span onclick="selectTab('welcome');">Welcome</span>
 		<span onclick="selectTab('quests');">Quests</span>
 		<span onclick="selectTab('navy');">Navy</span>
+		<span onclick="selectTab('orders');">Orders</span>
 		<span onclick="selectTab('about');">About</span>
 		<span onclick="selectTab('todo');">Todo</span>
 		<span onclick="selectTab('options');">Options</span>
@@ -63,10 +64,27 @@
 		</div>
 		<div id="quests"></div>
 		<table id="navy"></table>
+		<div id="orders">
+			Action:
+			<select id="input_order_type">
+		 		<option value="0">Assay</option>
+			</select><br>
+			Target: <span id="orderSelectionID">...</span><br>
+			<input type="submit" value="Create Order" onclick="createOrder();">
+			<hr>
+			<input type="submit" value="Cancel" onclick="Game.player.orders.pop(Number(document.getElementById('input_order_id')));">
+			<input id="input_order_id" type="number" min="0" value="0">
+			<hr><!-- todo
+			[Ships on assignment: #]
+			[unused applicable ships: #]
+			<hr>-->
+			<ul id="orderlist"></ul>
+		</div>
 		<p id="about">
 			Made by moki :3
 		</p>
 		<ol id="todo">
+			<li>orders do shit</li>
 			<li>ships do shit</li>
 			<li>more quests</li>
 			<li>purchasing</li>
