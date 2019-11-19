@@ -828,8 +828,12 @@ function redrawInterface(){
 function redrawMap(){
 	// update infobox
 	var selectionId = Number(document.getElementById("input_id").value);
-	document.getElementById("leftinfo").innerHTML = "";
-	document.getElementById("leftinfo").appendChild(Game.system.secondaries[selectionId].info());
+	var infoboxElement = document.getElementById("leftinfo");
+	if (infoboxElement.benisData !== selectionId){
+		infoboxElement.innerHTML = "";
+		infoboxElement.appendChild(Game.system.secondaries[selectionId].info());
+		infoboxElement.benisData = selectionId;
+	}
 	// update time
 	document.getElementById("time").innerHTML = "t = " + Game.time/hour + " h";
 	document.getElementById("timerate").innerHTML = "dt = " + Game.speed/hour + " h";
