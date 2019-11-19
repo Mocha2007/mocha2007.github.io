@@ -58,6 +58,15 @@ function write_cookie(name, value){ // https://stackoverflow.com/a/11344672/2579
 	var cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; expires=Fri, 31 Dec 9999 23:59:59 UTC; path=/;'].join('');
 	document.cookie = cookie;
 }
+function importSave(){
+	var saveData = document.getElementById("saveData").value;
+	document.cookie = atob(saveData);
+	location.reload();
+}
+function exportSave(){
+	document.getElementById("saveData").value = btoa(document.cookie);
+	console.log("Exported Save.");
+}
 // end basic block
 // begin math block
 var pi = Math.PI;

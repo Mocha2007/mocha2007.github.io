@@ -86,7 +86,6 @@
 			<li>more quests</li>
 			<li>more events</li>
 			<li>buildings</li>
-			<li>import/export save</li>
 			<li>politics</li>
 			<li>dynasties</li>
 		</ol>
@@ -113,6 +112,12 @@
 						<option value="old">old</option>
 					</select>
 					selection style.
+				</li>
+				<li>
+					<input type="submit" value="Import" onclick="importSave();">
+					<input type="submit" value="Export" onclick="exportSave();">
+					<br>
+					<textarea id="saveData" rows="8" cols="40"></textarea>
 				</li>
 			</ul>
 			<div id="danger">
