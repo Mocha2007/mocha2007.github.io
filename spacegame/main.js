@@ -360,6 +360,9 @@ var orderList = [
 		'cost': {
 			'fuel': 10
 		},
+		'shipCost': {
+			'surveyor': 1
+		},
 		'consumption': { // per day
 			'water': 1
 		},
@@ -410,9 +413,35 @@ function drawQuests(quest){
 		document.getElementById("quests").appendChild(questElement);
 	}
 }
+function canAffordOrder(order){
+	// check resource costs
+	for (resource in order.cost){
+		if (Game.player.resources[resource] < order.cost[resource]){
+			return false;
+		}
+	}
+	// check ship costs
+	for (shipClass in order.shipCost){
+		if (Game.player.navy[shipClass] < order.shipCost[shipClass]){
+			return false;
+		}
+	}
+	return true;
+}
 function createOrder(){
 	// todo cost
 	var orderID = Number(document.getElementById("input_order_type").value);
+	var order = orderList[orderID]
+	if (!canAffordOrder(order)){
+		return;
+	}
+	// else, pay cost
+	for (resource in order.cost){
+		Game.player.resources[resource] -= order.cost[resource];
+	}
+	for (shipClass in order.shipCost){
+		Game.player.navy[shipClass] -= order.shipCost[shipClass];
+	}
 	var newOrder = clone(orderList[orderID]);
 	newOrder.onComplete = orderList[orderID].onComplete; // trust me, this is indeed necessary
 	newOrder.progress = 0;
@@ -423,16 +452,22 @@ function createOrder(){
 }
 function deleteOrderById(id){
 	// console.log("Deleting order", id);
+	var order;
 	for (i=0; i<Game.player.orders.length; i++){
 		if (Game.player.orders[i].id === id){
-			return Game.player.orders.pop(i);
+			order = Game.player.orders.pop(i);
+			break;
 		}
+	}
+	// return ships
+	for (shipClass in order.shipCost){
+		Game.player.navy[shipClass] += order.shipCost[shipClass];
 	}
 }
 function drawOrder(order){
 	var orderElement = document.createElement("table");
 	for (var property in order){
-		if (0 <= ["progressNeeded", "consumption", "onComplete", "cost"].indexOf(property)){
+		if (0 <= ["progressNeeded", "consumption", "onComplete", "cost", "shipCost"].indexOf(property)){
 			continue;
 		}
 		// create new row
@@ -750,6 +785,7 @@ function updateOrders(){
 		if (thisOrder.progress >= thisOrder.progressNeeded){
 			// give bonus
 			thisOrder.onComplete();
+			// return ships
 			// delete it
 			deleteOrderById(thisOrder.id);
 		}
