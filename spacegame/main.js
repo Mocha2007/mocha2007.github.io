@@ -45,11 +45,13 @@ function delete_cookie(name) {
 }
 function read_cookie(name){ // https://stackoverflow.com/a/11344672/2579798
 	var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
-	result && (result = JSON.parse(result[1]));
+	if (result){
+		result = JSON.parse(result[1]);
+	}
 	return result;
 }
 function write_cookie(name, value){ // https://stackoverflow.com/a/11344672/2579798
-	var cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; expires=Fri, 31 Dec 9999 23:59:59 UTC; path=/;'].join('');
+	var cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
 	document.cookie = cookie;
 }
 function download(content, fileName, contentType){ // https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file/34156339#34156339
@@ -102,7 +104,7 @@ function uniform(min, max){ // random real in range
 
 function zeros(n){
 	var zeroArray = [];
-	for (i=0;i<n;i++){
+	for (var i=0;i<n;i+=1){
 		zeroArray.push(0);
 	}
 	return zeroArray;
@@ -133,7 +135,7 @@ var visibleProperties = [
 	"orbit",
 	"period",
 	"sma",
-	"ecc",
+	"ecc"
 ];
 var specialUnits = {
 	"density": {
@@ -561,7 +563,7 @@ function createOrder(){
 function deleteOrderById(id){
 	// console.log("Deleting order", id);
 	var order;
-	for (i=0; i<Game.player.orders.length; i++){
+	for (var i=0; i<Game.player.orders.length; i+=1){
 		if (Game.player.orders[i].id === id){
 			order = Game.player.orders.pop(i);
 			break;
@@ -617,7 +619,7 @@ function drawEvent(event){
 	eventElement.appendChild(desc);
 	// options
 	var optionList = document.createElement("ul");
-	for (i=0; i<event.options.length; i++){
+	for (var i=0; i<event.options.length; i+=1){
 		var option = document.createElement("li");
 		var optionButton = document.createElement("input");
 		optionButton.type = "submit";
@@ -636,14 +638,14 @@ function drawEvent(event){
 	return eventElement;
 }
 function getEventID(event){
-	for (i=0; i<eventList.length; i++){
+	for (var i=0; i<eventList.length; i+=1){
 		if (event === eventList[i]){
 			return i;
 		}
 	}
 }
 function removeEvent(id){
-	for (i=0; i<Game.player.events.length; i++){
+	for (var i=0; i<Game.player.events.length; i+=1){
 		if (id === Game.player.events[i]){
 			return Game.player.events.pop(i);
 		}
@@ -674,7 +676,7 @@ var selectionStyle = {
 
 function createOrderTypeList(){
 	var selector = document.getElementById("input_order_type");
-	for (i=0; i<orderList.length; i++){
+	for (var i=0; i<orderList.length; i+=1){
 		var option = document.createElement("option");
 		option.value = i;
 		option.innerHTML = orderList[i].type;
@@ -751,7 +753,7 @@ function modifyNavy(shipClass, count){
 
 function selectTab(id){
 	var children = document.getElementById('rightdocs').children;
-	for (i=0; i<children.length; i++){
+	for (var i=0; i<children.length; i+=1){
 		children[i].style.display = "none";
 	}
 	document.getElementById(id).style.display = "";
@@ -810,7 +812,7 @@ function generateSystem(attempt){
 	var startSMA = 0.39*au;
 	var SMAList = zeros(numberOfPlanets);
 	SMAList[0] = startSMA;
-	for (i=1; i<SMAList.length; i++){
+	for (var i=1; i<SMAList.length; i+=1){
 		SMAList[i] = nextSMA(SMAList[i-1]);
 	}
 	var systemAttempt = SMAList.map(generatePlanet);
@@ -972,7 +974,7 @@ function updateNavy(){
 function updateEvents(){
 	// relist events
 	var eventListElement = document.getElementById("eventlist");
-	for (i=0; i<Game.player.events.length; i++){
+	for (var i=0; i<Game.player.events.length; i+=1){
 		var id = 'event'+Game.player.events[i];
 		if (!document.getElementById(id)){
 			var itemElement = document.createElement("li");
@@ -985,7 +987,7 @@ function updateEvents(){
 	if (Game.paused){
 		return;
 	}
-	for (i=0; i<eventList.length; i++){
+	for (i=0; i<eventList.length; i+=1){
 		var e = eventList[i];
 		if (0 <= Game.player.events.indexOf(i) || !e.condition()){
 			continue;
@@ -1000,7 +1002,7 @@ function updateOrders(){
 	// if changed, update
 	var orderListElement = document.getElementById("orderlist");
 	orderListElement.innerHTML = '';
-	for (i=0; i<Game.player.orders.length; i++){
+	for (var i=0; i<Game.player.orders.length; i+=1){
 		var itemElement = document.createElement("li");
 		itemElement.appendChild(drawOrder(Game.player.orders[i]));
 		orderListElement.appendChild(itemElement);
@@ -1046,14 +1048,13 @@ function updateQuests(){
 	// display/update current quests
 	getQuestsFromIds(Game.player.quests).map(drawQuests);
 	// see if new quests apply
-	for (i=0; i<questList.length; i++){
+	for (var i=0; i<questList.length; i+=1){
 		var quest = questList[i];
 		if (Game.player.quests.indexOf(i) >= 0){
 			continue;
 		}
 		var success = true;
-		var j;
-		for (j=0; j<quest.requirements.length; j++){
+		for (var j=0; j<quest.requirements.length; j++){
 			if (!quest.requirements[j]()){
 				success = false;
 				break;
