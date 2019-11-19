@@ -154,19 +154,17 @@ var dataExceptions = [
 	"period",
 	"surfaceGravity",
 	"temp",
+	"v_e",
+];
+var hiddenProperties = [
+	"albedo",
+	"aop",
+	"man"
 ];
 var specialUnits = {
-	"aop": {
-		"constant": pi/180,
-		"name": "&deg;"
-	},
 	"density": {
 		"constant": 1000,
 		"name": "g/cm&sup3;"
-	},
-	"man": {
-		"constant": pi/180,
-		"name": "&deg;"
 	},
 	"mass": {
 		"constant": 5.97237e24,
@@ -191,6 +189,10 @@ var specialUnits = {
 	"temp": {
 		"constant": 1,
 		"name": "K"
+	},
+	"v_e": {
+		"constant": 1000,
+		"name": "km/s"
 	}
 };
 
@@ -227,6 +229,9 @@ class Body{
 		var table = document.createElement("table");
 		var row, cell;
 		for (var property in this){
+			if (0 <= hiddenProperties.indexOf(property)){
+				continue;
+			}
 			var value = this[property]
 			if (isFunction(value)){
 				if (dataExceptions.indexOf(property) === -1){
@@ -268,6 +273,9 @@ class Body{
 	volume = function(){
 		return 4/3 * pi * Math.pow(this.radius, 3);
 	}
+	v_e = function(){
+		return Math.pow(2*this.mu()/this.radius, 0.5);
+	}
 }
 
 class Orbit{
@@ -305,6 +313,9 @@ class Orbit{
 		var table = document.createElement("table");
 		var row, cell;
 		for (var property in this){
+			if (0 <= hiddenProperties.indexOf(property)){
+				continue;
+			}
 			var value = this[property]
 			if (isFunction(value)){
 				if (dataExceptions.indexOf(property) === -1){
