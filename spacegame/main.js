@@ -411,8 +411,10 @@ function drawQuests(quest){
 	}
 }
 function createOrder(){
+	// todo cost
 	var orderID = Number(document.getElementById("input_order_type").value);
 	var newOrder = clone(orderList[orderID]);
+	newOrder.onComplete = orderList[orderID].onComplete; // trust me, this is indeed necessary
 	newOrder.progress = 0;
 	newOrder.target = getID();
 	newOrder.id = Number(new Date());
@@ -459,6 +461,14 @@ function drawOrder(order){
 		orderElement.appendChild(row);
 	}
 	return orderElement;
+}
+function enoughResourcesToSupportOrder(order){
+	for (resource in order.consumption){
+		if (Game.player.resources[resource] < order.consumption[resource]){
+			return false;
+		}
+	}
+	return true;
 }
 
 // end gameplay block
@@ -734,6 +744,23 @@ function updateOrders(){
 		itemElement = document.createElement("li");
 		itemElement.appendChild(drawOrder(Game.player.orders[i]));
 		orderListElement.appendChild(itemElement);
+		// check if conditions are fulfilled
+		// if done, finish order and delete it
+		thisOrder = Game.player.orders[i];
+		if (thisOrder.progress >= thisOrder.progressNeeded){
+			// give bonus
+			console.log(thisOrder);
+			thisOrder.onComplete();
+			// delete it
+			deleteOrderById(thisOrder.id);
+		}
+		// if enough resources to continue, continue
+		else if (enoughResourcesToSupportOrder(thisOrder)){
+			for (resource in thisOrder.consumption){
+				Game.player.resources[resource] -= thisOrder.consumption[resource];
+			}
+			thisOrder.progress += 1;
+		}
 	}
 	// update selection
 	document.getElementById("orderSelectionID").innerHTML = getID();
