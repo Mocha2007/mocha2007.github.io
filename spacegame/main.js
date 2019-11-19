@@ -58,14 +58,26 @@ function write_cookie(name, value){ // https://stackoverflow.com/a/11344672/2579
 	var cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; expires=Fri, 31 Dec 9999 23:59:59 UTC; path=/;'].join('');
 	document.cookie = cookie;
 }
+function download(content, fileName, contentType) {
+	var a = document.createElement("a");
+	var file = new Blob([content], {type: contentType});
+	a.href = URL.createObjectURL(file);
+	a.download = fileName;
+	a.click();
+}
 function importSave(){
 	var saveData = document.getElementById("saveData").value;
 	document.cookie = atob(saveData);
 	location.reload();
 }
 function exportSave(){
-	document.getElementById("saveData").value = btoa(document.cookie);
+	var data = btoa(document.cookie)
+	document.getElementById("saveData").value = data;
 	console.log("Exported Save.");
+	return data;
+}
+function downloadSave(){
+	download(exportSave(), 'mochaSpaceGameSave.txt', 'text/plain');
 }
 // end basic block
 // begin math block
