@@ -619,7 +619,7 @@ function main(){
 	Game.system = new System(sun, generateSystem(0));
 	// console.log(Game.system);
 	// set variables up
-	Game.speed = 21600; // 6h
+	Game.speed = hour;
 	Game.time = 0;
 	Game.systemHeight = 3*au;
 	// set up ticks
