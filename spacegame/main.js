@@ -311,15 +311,12 @@ class Orbit{
 		var tol = 1e-10;
 		var M = mod(this.man + 2*pi*t/this.period, 2*pi);
 		var E = M;
-		var E_;
-		while (true){
-			E_ = M + this.ecc*Math.sin(E);
-			if (Math.abs(E-E_) > tol){
-				return E;
-			}
-			E = E_;
-			return E; // fixme
+		var oldE = E + 2*tol;
+		while (tol < Math.abs(E-oldE)){
+			oldE = E;
+			E = M + this.ecc*Math.sin(E);
 		}
+		return E;
 	}
 	get info(){
 		var table = document.createElement("table");
