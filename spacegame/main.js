@@ -862,6 +862,9 @@ function updateOrders(){
 		row.appendChild(col2);
 		shipTable.appendChild(row);
 	}
+	// update "can afford?"
+	document.getElementById("orderAffordable").innerHTML = "Can" + (canAffordOrder(order) ? "": "'t") + " afford";
+	document.getElementById("orderAffordable").classList = canAffordOrder(order) ? "complete" : "incomplete";
 }
 
 function updateQuests(){
