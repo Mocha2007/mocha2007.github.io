@@ -635,9 +635,9 @@ function main(){
 		Game.player = {};
 		Game.player.quests = [];
 		Game.player.resources = {};
-		Game.player.resources.water = 100;
-		Game.player.resources.fuel = 100;
-		Game.player.resources.steel = 100;
+		Game.player.resources.water = 1000;
+		Game.player.resources.fuel = 1000;
+		Game.player.resources.steel = 1000;
 		Game.player.navy = {};
 		Game.player.navy.surveyor = 1;
 		Game.player.orders = [];
