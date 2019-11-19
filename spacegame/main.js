@@ -151,6 +151,7 @@ var gravConstant = 6.674e-11;
 var visibleProperties = [
 	"name",
 	"classification",
+	"esi",
 	"mass",
 	"radius",
 	"density",
@@ -225,6 +226,20 @@ class Body{
 	}
 	get density(){
 		return this.mass / this.volume;
+	}
+	get esi(){
+		var r = this.radius;
+		var rho = this.density;
+		var T = this.temp;
+		var r_e = earth.radius;
+		var rho_e = earth.density;
+		var T_e = 255; // todo
+		var esi1 = 1-Math.abs((r-r_e)/(r+r_e));
+		var esi2 = 1-Math.abs((rho-rho_e)/(rho+rho_e));
+		var esi3 = 1-Math.abs((this.v_e-earth.v_e)/(this.v_e+earth.v_e));
+		var esi4 = 1-Math.abs((T-T_e)/(T+T_e));
+		// console.log(esi1, esi2, esi3, esi4);
+		return Math.pow(esi1, 0.57/4) * Math.pow(esi2, 1.07/4) * Math.pow(esi3, 0.7/4) * Math.pow(esi4, 5.58/4);
 	}
 	get getElement(){
 		return document.getElementById(this.name);
@@ -778,6 +793,7 @@ function wipeMap(){
 // begin main program
 var Game = {};
 var sun = new Star(1.9885e30, 6.957e8, "Sun", 3.828e26, 5778);
+var earth = new Body(5.97237e24, 6371000, undefined, undefined, "Earth"); // orbit, albedo = undef for now
 
 function generateBody(sma){
 	sma /= au;
