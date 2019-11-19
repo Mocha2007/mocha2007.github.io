@@ -770,7 +770,9 @@ function main(){
 	Game.systemHeight = 3*au;
 	// set up ticks
 	updateFPS();
+	setInterval(redrawInterface, 1000);
 	setInterval(gameTick, 1000/Game.settings.fps);
+	setInterval(redrawMap, 1000/Game.settings.fps);
 	// select welcome tab
 	selectTab("welcome");
 	// load?
@@ -800,8 +802,6 @@ function gameTick(){
 	Game.width = window.innerWidth;
 	Game.height = window.innerHeight;
 	Game.systemWidth = Game.width/Game.height * Game.systemHeight;
-	// finally, update interface
-	redraw();
 }
 
 function hardReset(){
@@ -810,13 +810,22 @@ function hardReset(){
 	delete_cookie("player");
 	location.reload();
 }
-
-function redraw(){
-	// update map
-	if (!Game.paused){
-		Game.system.secondaries.map(drawPlanet);
-		drawStar();
+function redrawInterface(){
+	// update quests
+	updateQuests();
+	// update navy
+	updateNavy();
+	// update orders
+	updateOrders();
+	// update events
+	updateEvents();
+	// save
+	if (minute < new Date() - Game.debug.lastSave){
+		saveGame(false);
 	}
+}
+
+function redrawMap(){
 	// update infobox
 	var selectionId = Number(document.getElementById("input_id").value);
 	document.getElementById("leftinfo").innerHTML = "";
@@ -830,17 +839,10 @@ function redraw(){
 	document.getElementById("water").innerHTML = Game.player.resources.water;
 	document.getElementById("fuel").innerHTML = Game.player.resources.fuel;
 	document.getElementById("steel").innerHTML = Game.player.resources.steel;
-	// update quests
-	updateQuests();
-	// update navy
-	updateNavy();
-	// update orders
-	updateOrders();
-	// update events
-	updateEvents();
-	// save
-	if (minute < new Date() - Game.debug.lastSave){
-		saveGame(false);
+	// update map
+	if (!Game.paused){
+		Game.system.secondaries.map(drawPlanet);
+		drawStar();
 	}
 }
 
