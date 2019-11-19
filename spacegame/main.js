@@ -605,6 +605,10 @@ function enoughResourcesToSupportOrder(order){
 
 // end gameplay block
 // begin interface block
+var asciiEmoji = {
+	'star': ['*', '🔆'],
+	'planet': ['&middot;', '🌑'],
+};
 
 function createOrderTypeList(){
 	var selector = document.getElementById("input_order_type");
@@ -622,7 +626,7 @@ function drawPlanet(planet){
 		var planetIcon = document.createElement("div");
 		document.getElementById("map").appendChild(planetIcon);
 		planetIcon.id = planet.name;
-		planetIcon.innerHTML = "&middot;";
+		planetIcon.innerHTML = asciiEmoji.planet[Game.settings.asciiEmoji];
 		planetIcon.style.position = "absolute";
 	}
 	planetIcon.classList.value = "planet " + planet.classification();
@@ -651,7 +655,7 @@ function drawStar(){
 		document.getElementById("map").appendChild(planetIcon);
 		planetIcon.classList.value = "star";
 		planetIcon.id = sun.name;
-		planetIcon.innerHTML = "*";
+		planetIcon.innerHTML = asciiEmoji.star[Game.settings.asciiEmoji];
 		planetIcon.style.position = "absolute";
 	}
 	var planetCoords = [Game.width/2, Game.height/2];
@@ -689,6 +693,10 @@ function selectTab(id){
 		children[i].style.display = "none";
 	}
 	document.getElementById(id).style.display = "";
+}
+
+function wipeMap(){
+	document.getElementById("map").innerHTML = "";
 }
 
 // end interface block
@@ -761,6 +769,7 @@ function main(){
 		Game.settings = {};
 		Game.settings.autosaveInterval = 1;
 		Game.settings.fps = 20;
+		Game.settings.asciiEmoji = 0;
 	}
 	// set up RNG
 	Game.debug.loaded = seededRandomSetup();

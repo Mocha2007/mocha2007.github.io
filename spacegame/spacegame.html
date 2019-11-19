@@ -100,6 +100,13 @@
 				<li><abbr title="You'll need to refresh the page for this to have any effect.">FPS</abbr>
 					<input id="input_fps" type="number" min="1" max="30" value="20" onclick="updateFPS();">
 				</li>
+				<li>Use
+					<select id="input_asciiemoji" onclick="Game.settings.asciiEmoji = Number(document.getElementById('input_asciiemoji').value);wipeMap();">
+						<option value="0">ascii</option>
+						<option value="1">emoji</option>
+					</select>
+					for icons.
+				</li>
 			</ul>
 			<div id="danger">
 				<h2 id="dangerzone">Danger Zone</h2>
