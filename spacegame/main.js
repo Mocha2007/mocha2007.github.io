@@ -456,7 +456,7 @@ function canAffordOrder(order){
 	}
 	// check ship costs
 	for (shipClass in order.shipCost){
-		if (Game.player.navy[shipClass] < order.shipCost[shipClass]){
+		if (!Game.player.navy.hasOwnProperty(shipClass) || Game.player.navy[shipClass] < order.shipCost[shipClass]){
 			return false;
 		}
 	}
