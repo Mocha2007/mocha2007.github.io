@@ -361,7 +361,7 @@ var eventList = [
 var questList = [
 	{
 		'title': "Select World",
-		'desc': "Select a world to colonize (WARNING: cannot be undone!)<br><input id='world_selector' type='submit' value='Confirm Selection' onclick='Game.player.colonyID=getID();'><br>Reward: 1 Constructor",
+		'desc': "Select a world to colonize. An ideal world is one with (in order of importance):<ol><li>temperature around 255K</li><li>mass within a factor of two of Earth's</li><li>near bodies which could be exploited in the future</li></ol><center class='incomplete'>(WARNING: cannot be undone!)<br><input id='world_selector' type='submit' value='Confirm Selection' onclick='Game.player.colonyID=getID();'></center><br>Reward: 1 Constructor",
 		'conditions': [
 			function(){return Game.player.colonyID >= 0;}
 		],
@@ -453,7 +453,7 @@ function drawQuests(quest){
 		questTitle.innerHTML = quest.title;
 		questElement.appendChild(questTitle)
 		// desc
-		questDesc = document.createElement("p");
+		questDesc = document.createElement("div");
 		questDesc.innerHTML = quest.desc;
 		questElement.appendChild(questDesc);
 		// quest status
