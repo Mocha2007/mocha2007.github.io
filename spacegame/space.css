@@ -73,6 +73,10 @@ h2{
 	color: silver;
 	cursor: pointer;
 	z-index: -1;
+	height: 17.6px;
+	line-height: 17.6px;
+	border: 2px solid transparent;
+	border-radius: 8.8px;
 }
 .gasGiant{
 	color: tan;
@@ -80,11 +84,14 @@ h2{
 .iceGiant{
 	color: cyan;
 }
-.desert, .terra{
+.desert{
 	color: orange;
 }
-.phw{
+.terra{
 	color: seaGreen;
+}
+.phw{
+	color: lime;
 }
 .star{
 	color: yellow;
@@ -102,9 +109,12 @@ h2{
 .incomplete{
 	color: red;
 }
+.colony{
+	border: 2px solid blue;
+}
 @keyframes selectionstrobe{
-	0% {color: red;}
-	100% {color: black;}
+	0% {border: 2px solid red;}
+	100% {border: 2px solid transparent;}
 }
 @keyframes strobe{
 	0% {border-bottom:1px solid transparent;}

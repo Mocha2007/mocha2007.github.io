@@ -638,6 +638,10 @@ function drawPlanet(planet){
 	if (getID() === index){
 		planetIcon.classList.value += " selected";
 	}
+	// check if colony
+	if (Game.player.colonyID === index){
+		planetIcon.classList.value += " colony";
+	}
 }
 
 function drawStar(){
