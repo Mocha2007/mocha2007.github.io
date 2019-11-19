@@ -863,7 +863,7 @@ function updateOrders(){
 		shipTable.appendChild(row);
 	}
 	// update "can afford?"
-	document.getElementById("orderAffordable").innerHTML = "Can" + (canAffordOrder(order) ? "": "'t") + " afford";
+	document.getElementById("orderAffordable").innerHTML = "Can" + (canAffordOrder(order) ? "": "&rsquo;t") + " afford";
 	document.getElementById("orderAffordable").classList = canAffordOrder(order) ? "complete" : "incomplete";
 }
 
