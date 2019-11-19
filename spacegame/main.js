@@ -608,6 +608,9 @@ function enoughResourcesToSupportOrder(order){
 var asciiEmoji = {
 	'star': ['*', '🔆'],
 	'planet': ['&middot;', '🌑'],
+	'water': ['water', '💧'],
+	'fuel': ['fuel', '⛽'],
+	'steel': ['steel', '🔩'],
 };
 
 function createOrderTypeList(){
@@ -853,9 +856,7 @@ function redrawMap(){
 	// update zoom
 	document.getElementById("zoom").innerHTML = Game.systemHeight/au;
 	// update resource count
-	document.getElementById("water").innerHTML = Game.player.resources.water;
-	document.getElementById("fuel").innerHTML = Game.player.resources.fuel;
-	document.getElementById("steel").innerHTML = Game.player.resources.steel;
+	updateResources();
 	// update map
 	if (!Game.paused){
 		Game.system.secondaries.map(drawPlanet);
@@ -1009,6 +1010,15 @@ function updateQuestCompletion(quest){
 	if (quest.conditions.every(function(x){return x();})){
 		quest.complete = true;
 	}
+}
+
+function updateResources(){
+	document.getElementById("water").innerHTML = Game.player.resources.water;
+	document.getElementById("fuel").innerHTML = Game.player.resources.fuel;
+	document.getElementById("steel").innerHTML = Game.player.resources.steel;
+	document.getElementById("waterlabel").innerHTML = asciiEmoji.water[Game.settings.asciiEmoji];
+	document.getElementById("fuellabel").innerHTML = asciiEmoji.fuel[Game.settings.asciiEmoji];
+	document.getElementById("steellabel").innerHTML = asciiEmoji.steel[Game.settings.asciiEmoji];
 }
 
 document.onload = function(){main();};
