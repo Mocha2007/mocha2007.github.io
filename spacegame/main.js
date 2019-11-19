@@ -15,6 +15,13 @@ function ping(){
 	"use strict";
 	console.log("ping");
 }
+function round(number, digits){
+	"use strict";
+	number *= Math.pow(10, digits);
+	number = Math.round(number);
+	number /= Math.pow(10, digits);
+	return number;
+}
 function seededRandom(){
 	x = Game.rng.value;
 	x ^= x << 13;
@@ -202,10 +209,10 @@ class Body{
 				cell.appendChild(this.orbit.info());
 			}
 			else if (specialUnits.hasOwnProperty(property)){
-				cell.innerHTML = value/specialUnits[property].constant + " " + specialUnits[property].name;
+				cell.innerHTML = round(value/specialUnits[property].constant, 2) + " " + specialUnits[property].name;
 			}
 			else{
-				cell.innerHTML = value;
+				cell.innerHTML = typeof value === "number"? round(value, 2) : value;
 			}
 			row.appendChild(cell);
 			table.appendChild(row);
@@ -280,10 +287,10 @@ class Orbit{
 				cell.innerHTML = this.parent.name;
 			}
 			else if (specialUnits.hasOwnProperty(property)){
-				cell.innerHTML = value/specialUnits[property].constant + " " + specialUnits[property].name;
+				cell.innerHTML = round(value/specialUnits[property].constant, 2) + " " + specialUnits[property].name;
 			}
 			else{
-				cell.innerHTML = value;
+				cell.innerHTML = round(value, 2);
 			}
 			row.appendChild(cell);
 			table.appendChild(row);
