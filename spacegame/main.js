@@ -1,7 +1,5 @@
 /* jshint esversion: 6 */
 // begin basic block
-var max31Bit = Math.pow(2, 31) - 1;
-var max32Bit = Math.pow(2, 32) - 1;
 function clone(object){
 	return JSON.parse(JSON.stringify(object));
 }
@@ -17,6 +15,8 @@ function round(number, digits){
 	return number;
 }
 function seededRandom(){
+	var max31Bit = Math.pow(2, 31) - 1;
+	var max32Bit = Math.pow(2, 32) - 1;
 	var x = Game.rng.value;
 	x ^= x << 13;
 	x ^= x >> 17;
@@ -390,6 +390,9 @@ function nextSMA(previousSMA){
 	return previousSMA * uniform(1.38, 2.01);
 }
 
+var sun = new Star(1.9885e30, 6.957e8, "Sun", 3.828e26, 5778);
+var earth = new Body(5.97237e24, 6371000, 0.306, new Orbit(sun, 1.49598023e11, 0.0167086, 1.9933027, 6.25905), "Earth");
+
 // end astro block
 // begin gameplay block
 var eventList = [
@@ -762,8 +765,6 @@ function wipeMap(){
 // end interface block
 // begin main program
 var Game = {};
-var sun = new Star(1.9885e30, 6.957e8, "Sun", 3.828e26, 5778);
-var earth = new Body(5.97237e24, 6371000, 0.306, new Orbit(sun, 1.49598023e11, 0.0167086, 1.9933027, 6.25905), "Earth");
 
 function generateBody(sma){
 	sma /= au;
