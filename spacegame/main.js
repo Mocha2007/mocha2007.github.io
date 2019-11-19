@@ -33,13 +33,13 @@ function seededRandom(){
 }
 function seededRandomSetup(){
 	Game.rng = {};
+	var loaded = false;
 	if (read_cookie("seed")){
 		Game.rng.seed = read_cookie("seed");
-		var loaded = true;
+		loaded = true;
 	}
 	else{
 		Game.rng.seed = Number(new Date());
-		var loaded = false;
 		write_cookie("seed", Game.rng.seed);
 	}
 	Game.rng.value = Game.rng.seed;
@@ -300,12 +300,12 @@ class Orbit{
 	}
 	period = function(){
 		"use strict";
-		return 2*pi*Math.pow((Math.pow(this.sma, 3)/this.parent.mu()), .5);
+		return 2*pi*Math.pow((Math.pow(this.sma, 3)/this.parent.mu()), 0.5);
 	}
 	trueAnomaly = function(t){
 		var E = this.eccentricAnomaly(t);
 		var e = this.ecc;
-		return 2 * Math.atan2((1+e)**.5 * Math.sin(E/2), (1-e)**.5 * Math.cos(E/2));
+		return 2 * Math.atan2((1+e)**0.5 * Math.sin(E/2), (1-e)**0.5 * Math.cos(E/2));
 	}
 }
 
@@ -705,13 +705,13 @@ function generateBody(sma){
 	}
 	var density = densityFromMass(mass);
 	var radius = Math.pow(mass/(density*4/3*pi), 1/3);
-	var albedo = uniform(.1, .7);
+	var albedo = uniform(0.1, 0.7);
 	return new Body(mass, radius, albedo);
 }
 
 function generateOrbit(sma){
 	var parent = sun;
-	var ecc = uniform(0, .25);
+	var ecc = uniform(0, 0.25);
 	var aop = uniform(0, 2*pi);
 	var man = uniform(0, 2*pi);
 	return new Orbit(parent, sma, ecc, aop, man);
@@ -731,7 +731,7 @@ function generateSystem(attempt){
 		return;
 	}
 	var numberOfPlanets = randint(7, 9);
-	var startSMA = .39*au;
+	var startSMA = 0.39*au;
 	var SMAList = zeros(numberOfPlanets);
 	SMAList[0] = startSMA;
 	for (i=1; i<SMAList.length; i++){
