@@ -1,4 +1,5 @@
-var versionno = '180117a';
+"use strict";
+var versionno = '191119a';
 // Myinstants
 var quos = [];
 quos.ALH = 'boom_9';
@@ -698,12 +699,13 @@ function fstep(){
 	}
 	// OPERATIONS
 	console.log(command);
+	var arg1, arg2;
 	if (command.substring(0,1)===':'){
 		console.log(command.substring(1));
 	}
 	else if (operation==='SWP'){
-		var arg1 = arg[0];
-		var arg2 = arg[2];
+		arg1 = arg[0];
+		arg2 = arg[2];
 		var oldarg2 = arg2;
 		// Figure out if arg2 is a specialchar
 		// Machinestate
@@ -766,6 +768,7 @@ function fstep(){
 		var currentstring = '';
 		arg = arg.replace("*",specialstate).replace("$",pointer).replace("@",specialtarget);
 		// Go through vals
+		var a, b, c;
 		for (var i=0;i<arg.length;i+=1){
 			// Check if NaN
 			if (rpnstack.length>0 && !Number.isFinite(rpnstack[rpnstack.length-1])){
@@ -845,8 +848,8 @@ function fstep(){
 				}
 			}
 			else if (arg[i]==='R'){
-				var b = rpnstack.pop();
-				var a = rpnstack.pop();
+				b = rpnstack.pop();
+				a = rpnstack.pop();
 				rpnstack.push(Math.random()*(b-a)-a);
 			}
 			else if (arg[i]==='l'){
@@ -921,27 +924,27 @@ function fstep(){
 				rpnstack[rpnstack.length-1] = Math.abs(rpnstack[rpnstack.length-1]);
 			}
 			else if (arg[i]==='q'){
-				var c = rpnstack.pop();
-				var b = rpnstack.pop();
-				var a = rpnstack.pop();
+				c = rpnstack.pop();
+				b = rpnstack.pop();
+				a = rpnstack.pop();
 				rpnstack.push((-b+Math.pow(b*b-4*a*c,0.5))/2/a);
 			}
 			else if (arg[i]==='Q'){
-				var c = rpnstack.pop();
-				var b = rpnstack.pop();
-				var a = rpnstack.pop();
+				c = rpnstack.pop();
+				b = rpnstack.pop();
+				a = rpnstack.pop();
 				rpnstack.push((-b-Math.pow(b*b-4*a*c,0.5))/2/a);
 			}
 			else if (arg[i]==='\''){
-				for (j=0;j<rpnstack.length;j+=1){
+				for (var j=0;j<rpnstack.length;j+=1){
 					rpnstack[j] = rpnstack[j]*(rpnstack.length-1-j);
 				}
 				rpnstack.pop();
 			}
 			else if (arg[i]==='"'){
 				for (var k=0;k<2;k+=1){
-					for (var j=0;j<rpnstack.length;j+=1){
-						rpnstack[j] = rpnstack[j]*(rpnstack.length-1-j);
+					for (var jk=0;jk<rpnstack.length;jk+=1){
+						rpnstack[jk] = rpnstack[jk]*(rpnstack.length-1-jk);
 					}
 					rpnstack.pop();
 				}
@@ -956,9 +959,9 @@ function fstep(){
 				rpnstack[rpnstack.length-1] = Math.ceil(rpnstack[rpnstack.length-1]);
 			}
 			else if (arg[i]==='h'){
-				var c = rpnstack.pop();
-				var b = rpnstack.pop();
-				var a = rpnstack.pop();
+				c = rpnstack.pop();
+				b = rpnstack.pop();
+				a = rpnstack.pop();
 				var s = (a+b+c)/2;
 				rpnstack.push(Math.pow(s*(s-a)*(s-b)*(s-c),0.5));
 			}
@@ -969,13 +972,13 @@ function fstep(){
 				rpnstack = [Math.max.apply(null,rpnstack)];
 			}
 			else if (arg[i]==='n'){
-				var b = rpnstack.pop();
-				var a = rpnstack.pop();
+				b = rpnstack.pop();
+				a = rpnstack.pop();
 				rpnstack.push(nCr(a,b));
 			}
 			else if (arg[i]==='N'){
-				var b = rpnstack.pop();
-				var a = rpnstack.pop();
+				b = rpnstack.pop();
+				a = rpnstack.pop();
 				rpnstack.push(nPr(a,b));
 			}
 			// Shamelessly stolen from GolfScript
@@ -1025,8 +1028,8 @@ function fstep(){
 	}
 	/*else if (operation==='WAV'){
 		arg = arg.replace("*",specialstate).replace("$",pointer).replace("@",specialtarget);
-		var arg1 = Number(arg.split(",")[0]);
-		var arg2 = Number(arg.split(",")[1]);
+		arg1 = Number(arg.split(",")[0]);
+		arg2 = Number(arg.split(",")[1]);
 		var arg3 = arg.split(",")[2];
 		// Fixing problems
 		if (!Number.isFinite(arg1)){
@@ -1062,8 +1065,8 @@ function fstep(){
 	switch (operation){
 		// let
 		case 'LET':
-			var arg1 = arg[0];
-			var arg2 = arg.substring(2);
+			arg1 = arg[0];
+			arg2 = arg.substring(2);
 			// Figure out if arg2 is a specialchar
 			switch (arg2){
 				case '*':
@@ -1097,8 +1100,8 @@ function fstep(){
 		// jumps
 		case 'JJJ':
 				arg = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget);
-				var arg1 = arg.split(" ")[0];
-				var arg2 = arg.split(" ")[1];
+				arg1 = arg.split(" ")[0];
+				arg2 = arg.split(" ")[1];
 				// Determining Target Type
 				var target = arg2;
 				if (Number.isNaN(Number(arg2))){
@@ -1291,34 +1294,34 @@ function fstep(){
 			mconsole('o','sfx');
 			break;
 		case 'TIM':
-			document.getElementById('x'+pointer).innerHTML = (new Date).getTime()/1000;
+			document.getElementById('x'+pointer).innerHTML = (new Date()).getTime()/1000;
 			break;
 		// WEIRD AND HARDLY USEFUL COMMANDS
 		case 'FUN':
 			var otherlinenumber = linenumber+Number(arg);
-			var temp = program[linenumber];
+			var funtemp = program[linenumber];
 			program[linenumber] = program[otherlinenumber];
-			program[otherlinenumber] = temp;
+			program[otherlinenumber] = funtemp;
 			console.log(program);
 			break;
 		case 'FSW':
 			// Specials replacement
 			arg = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget);
 			
-			var onelinenumber = Number(arg.split(",")[0]);
+			var fswonelinenumber = Number(arg.split(",")[0]);
 			var anotherlinenumber = Number(arg.split(",")[1]);
-			var temp = program[onelinenumber];
-			program[onelinenumber] = program[anotherlinenumber];
-			program[anotherlinenumber] = temp;
+			var fswtemp = program[fswonelinenumber];
+			program[fswonelinenumber] = program[anotherlinenumber];
+			program[anotherlinenumber] = fswtemp;
 			console.log(program);
 			break;
 		case 'FRG':
 			// Specials replacement
 			arg = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget);
 			
-			var onelinenumber = Number(arg.split(/,(.+)/)[0]);
+			var frgonelinenumber = Number(arg.split(/,(.+)/)[0]);
 			var oneargs = arg.split(/,(.+)/)[1];
-			program[onelinenumber] = program[onelinenumber].substring(0,4)+oneargs;
+			program[frgonelinenumber] = program[frgonelinenumber].substring(0,4)+oneargs;
 			console.log(program);
 			break;
 		case 'FAA':
