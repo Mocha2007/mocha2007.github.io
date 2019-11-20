@@ -8,12 +8,7 @@ function makeTOC() {
 		if (namedheaders[i].tagName === 'B'){
 			namedheaders[i].id = namedheaders[i].innerHTML.replace(/\s/g,'_');
 			formattedname = namedheaders[i].innerHTML;
-			if (namedheaders[i].className === 'super'){
-				depth = '2';
-			}
-			else{
-				depth = '3';
-			}
+			depth = (namedheaders[i].className === 'super') ? '2' : '3';
 		}
 		else{
 			formattedname = namedheaders[i].id.replace(/_/g,' ');
