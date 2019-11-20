@@ -988,13 +988,13 @@ function updateEvents(){
 	if (Game.paused){
 		return;
 	}
-	for (i=0; i<eventList.length; i+=1){
-		var e = eventList[i];
-		if (0 <= Game.player.events.indexOf(i) || !e.condition()){
+	for (var j=0; j<eventList.length; j+=1){
+		var e = eventList[j];
+		if (0 <= Game.player.events.indexOf(j) || !e.condition()){
 			continue;
 		}
 		if (seededRandom() < Game.speed/e.mtth){
-			Game.player.events.push(i);
+			Game.player.events.push(j);
 		}
 	}
 }
