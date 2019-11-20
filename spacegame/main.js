@@ -1,4 +1,4 @@
-/* jshint esversion: 6, strict: true, forin: true, loopfunc: false, strict: global */
+/* jshint esversion: 6, strict: true, forin: false, loopfunc: true, strict: global */
 /* exported importSave, downloadSave, createOrder, wipeMap, hardReset */
 // begin basic block
 "use strict";
