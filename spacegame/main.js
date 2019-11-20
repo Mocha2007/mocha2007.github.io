@@ -721,7 +721,8 @@ function drawStar(){
 		planetIcon.innerHTML = asciiEmoji.star[Game.settings.asciiEmoji];
 		planetIcon.style.position = "absolute";
 	}
-	var planetCoords = [Game.width/2, Game.height/2];
+
+	var planetCoords = [window.innerWidth/2, window.innerHeight/2];
 	planetIcon.style.left = planetCoords[0]+"px";
 	planetIcon.style.top = planetCoords[1]+"px";
 }
@@ -736,8 +737,8 @@ function getOrderID(){
 
 function getPlanetCoods(planet){
 	var absCoords = planet.orbit.cartesian(Game.time);
-	var x = remap(absCoords[0], [-Game.systemWidth, Game.systemWidth], [0, Game.width]);
-	var y = remap(absCoords[1], [-Game.systemHeight, Game.systemHeight], [0, Game.height]);
+	var x = remap(absCoords[0], [-Game.systemWidth, Game.systemWidth], [0, window.innerWidth]);
+	var y = remap(absCoords[1], [-Game.systemHeight, Game.systemHeight], [0, window.innerHeight]);
 	return [x, y];
 }
 
@@ -879,9 +880,7 @@ function main(){
 
 function gameTick(){
 	Game.time = Game.paused ? Game.time : Game.time + Game.speed;
-	Game.width = window.innerWidth;
-	Game.height = window.innerHeight;
-	Game.systemWidth = Game.width/Game.height * Game.systemHeight;
+	Game.systemWidth = window.innerWidth/window.innerHeight * Game.systemHeight;
 }
 
 function hardReset(){
