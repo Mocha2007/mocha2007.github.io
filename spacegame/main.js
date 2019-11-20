@@ -164,7 +164,7 @@ var specialUnits = {
 	},
 	"temp": {
 		"constant": 1,
-		"f": function(x){
+		f(x){
 			return x-273.2;
 		},
 		"name": "&deg;C"
@@ -445,7 +445,7 @@ var orderList = [
 		'consumption': { // per day
 			'water': 1
 		},
-		'onComplete': function(){
+		onComplete(){
 			Game.player.resources.steel += 100;
 		}
 	},
@@ -801,9 +801,8 @@ function generatePlanet(sma){
 
 function generateSystem(attempt){
 	if (attempt >= 100){
-		console.error("too many failed attempts... something is broken :(");
 		console.log(systemAttempt);
-		return;
+		throw "too many failed attempts... something is broken :(";
 	}
 	var numberOfPlanets = randint(7, 9);
 	var startSMA = 0.39*au;
