@@ -842,7 +842,6 @@ function main(){
 	// console.log(Game.system);
 	// set variables up
 	Game.speed = hour;
-	Game.time = 0;
 	Game.systemHeight = 3*au;
 	// set up ticks
 	updateFPS();
@@ -866,6 +865,12 @@ function main(){
 		Game.player.navy = {};
 		Game.player.navy.surveyor = 1;
 		Game.player.orders = [];
+	}
+	if (read_cookie("time")){
+		Game.time = read_cookie("time");
+	}
+	else{
+		Game.time = 0;
 	}
 	// save
 	saveGame();
@@ -928,6 +933,7 @@ function saveGame(isManual){
 	// store cookie https://www.w3schools.com/js/js_cookies.asp
 	write_cookie("settings", Game.settings);
 	write_cookie("player", Game.player);
+	write_cookie("time", Game.time);
 	Game.debug.lastSave = new Date();
 	if (isManual){
 		console.log("Successfully manually saved game!");
