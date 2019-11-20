@@ -57,7 +57,7 @@ function doit(){
 	<a href="https://wolframalpha.com/input/?i=`+s+`">Wolfram Alpha</a><br/>
 	<a href="https://youtube.com/results?search_query=`+s+`">Youtube</a><br/><div id="foot">
 	`+foot+'</div>';
-	// Namei Dictionary
+	/* Namei Dictionary
 	if (s.toLowerCase() !== 'nameipedia' && s.toLowerCase() !== 'result' && s.toLowerCase() !== 'temp'){
 		$("#temp").load("https://mocha2007.github.io/namei.xml");
 		try {
@@ -67,4 +67,5 @@ function doit(){
 			document.getElementById("nameipedia").innerHTML = '';
 		}
 	}
+	*/
 }
