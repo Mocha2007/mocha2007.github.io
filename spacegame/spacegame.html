@@ -13,15 +13,15 @@
 			<td><input id="input_id" type="number" min="0" max="8" value="0"></td>
 		</tr>
 		<tr>
-			<td><abbr title="Screen height">Zoom</abbr>: <span id="zoom">Zoom</span> au</td>
+			<td><abbr title="Screen height">Zoom</abbr>: <span id="zoom"></span> au</td>
 			<td><input type="submit" value="+" onclick="Game.systemHeight /= 2;"><input type="submit" value="-" onclick="Game.systemHeight *= 2;">
 			</td>
 		</tr>
 	</table>
 </div>
 <div id="timecontrols">
-	<div id="time">Time</div>
-	<div id="timerate">Timerate</div>
+	<div id="time"></div>
+	<div id="timerate"></div>
 	<div>
 		<input type="submit" value="+" onclick="Game.speed *= 2;">
 		<input type="submit" value="-" onclick="Game.speed /= 2;">
@@ -29,9 +29,9 @@
 	</div>
 </div>
 <div id="resourcebar">
-	<abbr id="waterlabel" title="Water">water</abbr>: <span id="water"></span> |
-	<abbr id="fuellabel" title="fuel">fuel</abbr>: <span id="fuel"></span> |
-	<abbr id="steellabel" title="steel">steel</abbr>: <span id="steel"></span>
+	<abbr id="waterlabel" title="Water"></abbr>: <span id="water"></span> |
+	<abbr id="fuellabel" title="fuel"></abbr>: <span id="fuel"></span> |
+	<abbr id="steellabel" title="steel"></abbr>: <span id="steel"></span>
 </div>
 <div id="rightinfo">
 	<div id="righttabs">
@@ -134,7 +134,7 @@
 		</p>
 	</div>
 </div>
-<div id="leftinfo">Infobox</div>
+<div id="leftinfo"></div>
 <script src="main.js"></script>
 <script>main();</script>
 </html>
