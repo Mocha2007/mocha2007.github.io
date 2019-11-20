@@ -668,10 +668,7 @@ var asciiEmoji = {
 	'fuel': ['fuel', '⛽'],
 	'steel': ['steel', '🔩']
 };
-var selectionStyle = {
-	"new": "selected",
-	"old": "selectedOld"
-};
+var selectionStyle = ["selected", "selectedOld"];
 
 function createOrderTypeList(){
 	var selector = document.getElementById("input_order_type");
@@ -832,7 +829,7 @@ function main(){
 		Game.settings.autosaveInterval = 1;
 		Game.settings.fps = 20;
 		Game.settings.asciiEmoji = 0;
-		Game.settings.selectionStyle = "new";
+		Game.settings.selectionStyle = 0;
 	}
 	// set up RNG
 	Game.debug.loaded = seededRandomSetup();

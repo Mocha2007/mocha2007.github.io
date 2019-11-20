@@ -109,9 +109,9 @@
 					for icons.
 				</li>
 				<li>Use
-					<select id="input_selectionStyle" onclick="Game.settings.selectionStyle = document.getElementById('input_selectionStyle').value;wipeMap();">
-						<option value="new">new</option>
-						<option value="old">old</option>
+					<select id="input_selectionStyle" onclick="Game.settings.selectionStyle = Number(document.getElementById('input_selectionStyle').value);wipeMap();">
+						<option value="0">new</option>
+						<option value="1">old</option>
 					</select>
 					selection style.
 				</li>
