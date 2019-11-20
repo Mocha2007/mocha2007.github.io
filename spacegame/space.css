@@ -1,6 +1,6 @@
 html{
-	background-color: #000;
-	color: #0ff;
+	background-color: black;
+	color: cyan;
 	font-family: Consolas, "Courier New", monospace;
 	overflow: hidden;
 }
@@ -18,56 +18,14 @@ th{
 h2{
 	text-align: center;
 }
-#leftinfo{
-	background-color: #444;
-    bottom: 0;
-    float: left;
-    font-size: 75%;
-    position: absolute;
+ul{
+	list-style-type: none;
 }
-#selector{
-	background-color: #422;
-    float: left;
-}
-#timecontrols{
-	background-color: #422;
-    float: left;
-    margin-left: 10px;
-}
-#map{
-	font-size: 200%;
-	z-index: -2;
-}
-#rightinfo{
-	background-color: #224;
-    bottom: 0;
-	height: 100%;
-	overflow-y: scroll;
-    position: absolute;
-    right: 0;
-	width: 25%;
-}
-#righttabs span{
-	border: 2px solid cyan;
-	border-radius: 6px;
-	cursor: pointer;
-	line-height: 25px;
-}
-#danger{
+.red{
 	color: red;
 }
-#resourcebar{
-	background-color: #224;
-	left: 50%;
-	margin-left: -15%;
-	position: absolute;
-	text-align: center;
-	top: 0;
-	width: 30%;
-}
-#eventlist, #orderlist{
-	font-size: 75%;
-	list-style-type: none;
+.green{
+	color: lime;
 }
 .planet{
 	border: 2px solid transparent;
@@ -108,22 +66,55 @@ h2{
 .quest{
 	border: 1px dashed cyan;
 }
-.complete{
-	color: lime;
-}
-.incomplete{
-	color: red;
-}
 .colony{
 	border: 2px solid blue;
 }
 .supsub{
-	position: absolute;
-}
-.subscript, .superscript{
 	display: block;
-	position: relative;
-	top: -11px;
+}
+#leftinfo{
+	background-color: #444;
+    bottom: 0;
+    font-size: 75%;
+    left: 0;
+    position: absolute;
+}
+#selector{
+	background-color: #422;
+    float: left;
+}
+#timecontrols{
+	background-color: #422;
+    float: left;
+    margin-left: 10px;
+}
+#map{
+	font-size: 200%;
+	z-index: -2;
+}
+#rightinfo{
+	background-color: #224;
+	overflow-x: hidden;
+	overflow-y: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+	width: 25%;
+}
+#righttabs span{
+	border: 2px solid cyan;
+	border-radius: 6px;
+	cursor: pointer;
+	line-height: 25px;
+}
+#resourcebar{
+	background-color: #224;
+	left: 50%;
+	margin-left: -15%;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	width: 30%;
 }
 @keyframes selectionstrobe{
 	0% {border: 2px solid red;}

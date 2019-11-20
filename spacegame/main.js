@@ -269,16 +269,15 @@ class Body{
 		var plus = round(this.tempAt(this.orbit.periapsis) - mean, 2);
 		var minus = round(mean - this.tempAt(this.orbit.apoapsis), 2);
 		var elem = document.createElement("span");
-		elem.classList = "supsub";
 		var plusElement = document.createElement("sup");
-		plusElement.classList = "superscript";
+		plusElement.classList = "supsub";
 		plusElement.innerHTML = "+" + plus;
 		elem.appendChild(plusElement);
 		var minusElement = document.createElement("sub");
-		minusElement.classList = "subscript";
+		minusElement.classList = "supsub";
 		minusElement.innerHTML = "-" + minus;
 		elem.appendChild(minusElement);
-		return elem.outerHTML;
+		return elem.innerHTML;
 	}
 	get volume(){
 		return 4/3 * pi * Math.pow(this.radius, 3);
@@ -413,7 +412,7 @@ var eventList = [
 var questList = [
 	{
 		'title': "Select World",
-		'desc': "Select a world to colonize. An ideal world is one with (in order of importance):<ol><li>temperature around -18&deg;C</li><li>mass within a factor of two of Earth's</li><li>near bodies which could be exploited in the future</li></ol><center class='incomplete'>(WARNING: cannot be undone!)<br><input id='world_selector' type='submit' value='Confirm Selection' onclick='Game.player.colonyID=getID();'></center><br>Reward: 1 Constructor",
+		'desc': "Select a world to colonize. An ideal world is one with (in order of importance):<ol><li>temperature around -18&deg;C</li><li>mass within a factor of two of Earth's</li><li>near bodies which could be exploited in the future</li></ol><center class='red'>(WARNING: cannot be undone!)<br><input id='world_selector' type='submit' value='Confirm Selection' onclick='Game.player.colonyID=getID();'></center><br>Reward: 1 Constructor",
 		'conditions': [
 			function(){
 				return Game.player.colonyID >= 0;
@@ -496,7 +495,7 @@ function drawQuests(quest){
 	if (document.getElementById("quest"+id)){
 		// update
 		if (quest.complete && !quest.elementUpdated){
-			document.getElementById("quest"+id+"completion").classList = "complete";
+			document.getElementById("quest"+id+"completion").classList = "green";
 			document.getElementById("quest"+id+"completion").innerHTML = "complete";
 			quest.elementUpdated = true;
 			quest.results.map(function(x){x();});
@@ -517,7 +516,7 @@ function drawQuests(quest){
 		// quest status
 		var questStatus = document.createElement("span");
 		questStatus.innerHTML = "incomplete";
-		questStatus.classList = "incomplete";
+		questStatus.classList = "red";
 		questStatus.id = "quest"+id+"completion";
 		questElement.appendChild(questStatus);
 		// append to main
@@ -1038,7 +1037,7 @@ function updateOrders(){
 	}
 	// update "can afford?"
 	document.getElementById("orderAffordable").innerHTML = "Can" + (canAffordOrder(order) ? "": "&rsquo;t") + " afford";
-	document.getElementById("orderAffordable").classList = canAffordOrder(order) ? "complete" : "incomplete";
+	document.getElementById("orderAffordable").classList = canAffordOrder(order) ? "green" : "red";
 }
 
 function updateQuests(){
