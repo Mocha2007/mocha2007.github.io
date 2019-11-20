@@ -393,7 +393,7 @@ function factorize(n){
 	// only works for natual numbers greater than one
 	var pf = [];
 	var t = 2;
-	while (true){
+	while (t*t <= n){
 		if (n%t===0){
 			if (pf.length && pf[pf.length-1][0]===t){
 				pf[pf.length-1][1]+=1;
@@ -406,16 +406,12 @@ function factorize(n){
 		else {
 			t+=t===2?1:2;
 		}
-		// check to break early
-		if (t*t>n){
-			if (pf.length && pf[pf.length-1][0]===n){
-				pf[pf.length-1][1]+=1;
-			}
-			else {
-				pf.push([n,1]);
-			}
-			break;
-		}
+	}
+	if (pf.length && pf[pf.length-1][0]===n){
+		pf[pf.length-1][1]+=1;
+	}
+	else {
+		pf.push([n,1]);
 	}
 	return pf;
 }
