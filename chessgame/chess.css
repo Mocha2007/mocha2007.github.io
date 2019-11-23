@@ -2,7 +2,7 @@ html{
 	font-family: Consolas, "Courier New", monospace;
 	overflow: hidden;
 }
-.blackSquare, .dataSquare, .whiteSquare{
+.attackSquare, .blackSquare, .dataSquare, .whiteSquare{
 	align-items: center;
 	display: flex;
 	height: 11.1111%;
@@ -10,6 +10,9 @@ html{
 	position: absolute;
 	text-align: center;
 	width: 11.1111%;
+}
+.attackSquare{
+	background-color: rgba(255, 0, 0, 0.3);
 }
 .blackSquare{
 	background-color: #000;
@@ -19,15 +22,21 @@ html{
 	background-color: #fff;
 	color: #000;
 }
-#board{
-	background-color: #444;
-	color: #ccc;
+#attackBoard, #board{
 	font-size: 200%;
 	height: 100%;
 	position: absolute;
 	right: 0;
 	top: 0;
 	width: 75%;
+}
+#attackBoard{
+	background-color: transparent;
+	color: red;
+}
+#board{
+	background-color: #444;
+	color: #ccc;
 }
 #left{
 	background-color: #888;

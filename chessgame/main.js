@@ -150,7 +150,7 @@ function resetPieces(){
 	placePiece(new Piece("rook", 0), "h8");
 	// pawns
 	var letter;
-	for (var i=1; 1<colString.length; i+=1){
+	for (var i=1; i<colString.length; i+=1){
 		letter = colString[i];
 		placePiece(new Piece("pawn", 1), letter+2);
 		placePiece(new Piece("pawn", 0), letter+7);
