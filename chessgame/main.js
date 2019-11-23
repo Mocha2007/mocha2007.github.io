@@ -104,7 +104,7 @@ function getAttacks(type, pos, color){
 		attacks.push([pos[0]-1, pos[1]-2]);
 	}
 	else if (aType === 'P'){
-		var dir = color ? 1 : -1; // fixme
+		var dir = color ? 1 : -1;
 		attacks.push([pos[0]-1, pos[1]+dir]);
 		attacks.push([pos[0]+1, pos[1]+dir]);
 	}
