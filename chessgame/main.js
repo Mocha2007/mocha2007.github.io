@@ -31,6 +31,16 @@ var pieceData = {
 			}
 		]
 	},
+	'knight': {
+		'abbr': 'N',
+		'leaper': true,
+		'moves': [
+			{
+				'dir': 'L',
+				'dist': 1
+			}
+		]
+	},
 	'queen': {
 		'abbr': 'Q',
 		'moves': [
@@ -112,17 +122,21 @@ function reloadNotes(){
 function resetPieces(){
 	// white
 	placePiece(new Piece("rook", 1), "a1");
+	placePiece(new Piece("knight", 1), "b1");
 	placePiece(new Piece("bishop", 1), "c1");
 	placePiece(new Piece("queen", 1), "d1");
 	placePiece(new Piece("king", 1), "e1");
 	placePiece(new Piece("bishop", 1), "f1");
+	placePiece(new Piece("knight", 1), "g1");
 	placePiece(new Piece("rook", 1), "h1");
 	// black
 	placePiece(new Piece("rook", 0), "a8");
+	placePiece(new Piece("knight", 0), "b8");
 	placePiece(new Piece("bishop", 0), "c8");
 	placePiece(new Piece("queen", 0), "d8");
 	placePiece(new Piece("king", 0), "e8");
 	placePiece(new Piece("bishop", 0), "f8");
+	placePiece(new Piece("knight", 0), "g8");
 	placePiece(new Piece("rook", 0), "h8");
 }
 
