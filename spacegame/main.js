@@ -710,6 +710,7 @@ function drawPlanet(planet){
 		planetIcon.id = planet.name;
 		planetIcon.innerHTML = asciiEmoji.planet[Game.settings.asciiEmoji];
 		planetIcon.style.position = "absolute";
+		planetIcon.title = planet.name;
 	}
 	planetIcon.classList.value = "planet " + planet.classification;
 	if (planet.isPHW){
@@ -734,6 +735,7 @@ function drawPlanet(planet){
 		orbitBarRect.id = "orbitBar" + planet.name;
 		orbitBarRect.style["background-color"] = document.defaultView.getComputedStyle(planetIcon).color;
 		orbitBarRect.onclick = function(){setBody(index);};
+		orbitBarRect.title = planet.name;
 		document.getElementById("orbitbar").appendChild(orbitBarRect);
 	}
 }
