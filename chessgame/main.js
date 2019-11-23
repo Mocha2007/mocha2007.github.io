@@ -1,6 +1,7 @@
 /* jshint esversion: 6, strict: true, forin: false, loopfunc: true, strict: global */
 /* exported importSave, downloadSave, createOrder, wipeMap, hardReset */
 "use strict";
+var board = {};
 var colString = " abcdefgh";
 var colorData = [
 	{
@@ -182,6 +183,8 @@ function makeSquare(row, col){
 }
 
 function movePiece(from, to){
+	board[to] = board[from];
+	board[from] = null;
 	var temp = document.getElementById(from).innerHTML
 	document.getElementById(from).innerHTML = "";
 	document.getElementById(to).innerHTML = temp;
@@ -200,6 +203,7 @@ function placeNote(n, tileID, type){
 
 function placePiece(piece, tileID){
 	document.getElementById(tileID).appendChild(piece.getElement);
+	board[tileID] = piece;
 }
 
 function reloadNotes(){
