@@ -86,6 +86,17 @@ class Piece{
 
 // functions
 
+function placeNote(n, tileID, type){
+	var elem = document.createElement("div");
+	elem.classList = type+"Square";
+	elem.innerHTML = n;
+	elem.id = tileID + type;
+	var under = document.getElementById(tileID);
+	elem.style.left = under.style.left;
+	elem.style.top = under.style.top;
+	document.getElementById(type+"Board").appendChild(elem);
+}
+
 function placePiece(piece, tileID){
 	document.getElementById(tileID).appendChild(piece.getElement);
 }
@@ -95,6 +106,10 @@ function main(){
 	console.info("Mocha's weird-ass chess test");
 	makeBoard();
 	resetPieces();
+	// fixme debug
+	placeNote(3, "c6", "attack");
+	placeNote(3, "c3", "defense");
+
 }
 
 function makeBoard(){

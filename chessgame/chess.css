@@ -2,7 +2,7 @@ html{
 	font-family: Consolas, "Courier New", monospace;
 	overflow: hidden;
 }
-.attackSquare, .blackSquare, .dataSquare, .whiteSquare{
+.attackSquare, .blackSquare, .dataSquare, .defenseSquare, .whiteSquare{
 	align-items: center;
 	display: flex;
 	height: 11.1111%;
@@ -18,11 +18,14 @@ html{
 	background-color: #000;
 	color: #fff;
 }
+.defenseSquare{
+	background-color: rgba(0, 0, 255, 0.3);
+}
 .whiteSquare{
 	background-color: #fff;
 	color: #000;
 }
-#attackBoard, #board{
+#attackBoard, #board, #defenseBoard{
 	font-size: 200%;
 	height: 100%;
 	position: absolute;
@@ -33,6 +36,10 @@ html{
 #attackBoard{
 	background-color: transparent;
 	color: red;
+}
+#defenseBoard{
+	background-color: transparent;
+	color: blue;
 }
 #board{
 	background-color: #444;
