@@ -14,6 +14,13 @@
 		<li>From: <input id="input_from" type="text" value="a1"></li>
 		<li>To: <input id="input_to" type="text" value="a1"></li>
 		<li><a href="javascript:movePiece(getFrom(), getTo());">Move&rarr;</a></li>
+		<li>
+			<input type="submit" value="Import FEN" onclick="importSave();">
+			<input type="submit" value="Export FEN" onclick="exportSave();">
+			<input type="submit" value="Download FEN" onclick="downloadSave();">
+			<br>
+			<textarea id="saveData" rows="8" cols="36"></textarea>
+		</li>
 	</ul>
 </div>
 <div id="board"></div>
