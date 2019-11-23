@@ -88,7 +88,6 @@ class Piece{
 // functions
 
 function getAttacks(type, pos, color){
-	console.warn("this function doesnt account for blocking pieces!!!");
 	var attacks = [];
 	var piece = pieceData[type];
 	var aType = piece.moves[0].dir;
@@ -124,11 +123,28 @@ function getAttacks(type, pos, color){
 			}
 		}
 	}
-	// remove off-board moves
+	// remove invalid moves
 	var finalAttacks = [];
+	var desiredDistance, intermediateCoords, success;
 	for (i=0; i<attacks.length; i+=1){
+		// remove off-board moves
 		if (attacks[i][0] < 0 || 7 < attacks[i][0] || attacks[i][1] < 0 || 7 < attacks[i][1]){
 			continue;
+		}
+		// if has inf range, check for intervening pieces
+		if (1 < piece.moves[0].dist){
+			desiredDistance = attacks[i][0] ? attacks[i][0] : attacks[i][1];
+			success = true;
+			for (var j=0; j<desiredDistance; j+=1){
+				intermediateCoords = [attacks[i][0]*j/desiredDistance, attacks[i][1]*j/desiredDistance];
+				if (board[getIdFromCoords(intermediateCoords)]){
+					success = false;
+					break;
+				}
+			}
+			if (!success){
+				continue;
+			}
 		}
 		finalAttacks.push(attacks[i]);
 	}
@@ -137,6 +153,13 @@ function getAttacks(type, pos, color){
 
 function getFrom(){
 	return document.getElementById("input_from").value;
+}
+
+function getIdFromCoords(coords){
+	// 0, 0 -> a1; 7, 7 -> h8
+	var char = colString[coords[0]+1];
+	var num = coords[1]+1;
+	return char+num;
 }
 
 function getTo(){
