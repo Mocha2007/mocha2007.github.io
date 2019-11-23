@@ -116,6 +116,15 @@ ul{
 	top: 0;
 	width: 30%;
 }
+#orbitbar{
+	background-color: #222;
+	bottom: 0;
+	left: 50%;
+	margin-left: -25%;
+	position: absolute;
+	text-align: center;
+	width: 50%;
+}
 @keyframes selectionstrobe{
 	0% {border: 2px solid red;}
 	100% {border: 2px solid transparent;}

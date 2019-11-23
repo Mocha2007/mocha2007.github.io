@@ -344,6 +344,18 @@ class Orbit{
 		}
 		return table;
 	}
+	get orbitBarRect(){
+		var rect = document.createElement("span");
+		var barWidth = window.innerWidth / 2;
+		var p = remap(this.periapsis, [0, Game.system.maxOrbitRadius], [0, barWidth]);
+		var width = remap(this.apoapsis - this.periapsis, [0, Game.system.maxOrbitRadius], [0, barWidth]);
+		rect.style.width = width + "px";
+		rect.style.position = "absolute";
+		rect.style.left = p + "px";
+		rect.style.cursor = "pointer";
+		rect.innerHTML = "&nbsp;"
+		return rect;
+	}
 	get periapsis(){
 		return (1-this.ecc)*this.sma;
 	}
@@ -369,6 +381,16 @@ class System{
 	constructor(primary, secondaries){
 		this.primary = primary;
 		this.secondaries = secondaries;
+	}
+	get maxOrbitRadius(){
+		var maximum = 0;
+		var currentApoapsis;
+		for (var i=0; i<this.secondaries.length; i+=1){
+			if (maximum < (currentApoapsis = this.secondaries[i].orbit.apoapsis)){
+				maximum = currentApoapsis;
+			}
+		}
+		return maximum;
 	}
 }
 
@@ -697,7 +719,7 @@ function drawPlanet(planet){
 	planetIcon.style.left = planetCoords[0]+"px";
 	planetIcon.style.top = planetCoords[1]+"px";
 	var index = Game.system.secondaries.indexOf(planet);
-	planetIcon.onclick = function(){document.getElementById("input_id").value = index;};
+	planetIcon.onclick = function(){setBody(index);};
 	// check if selection...
 	if (getID() === index){
 		planetIcon.classList.value += " " + selectionStyle[Game.settings.selectionStyle];
@@ -705,6 +727,14 @@ function drawPlanet(planet){
 	// check if colony
 	if (Game.player.colonyID === index){
 		planetIcon.classList.value += " colony";
+	}
+	// orbit bar
+	if (!document.getElementById("orbitBar" + planet.name)){
+		var orbitBarRect = planet.orbit.orbitBarRect;
+		orbitBarRect.id = "orbitBar" + planet.name;
+		orbitBarRect.style["background-color"] = document.defaultView.getComputedStyle(planetIcon).color;
+		orbitBarRect.onclick = function(){setBody(index);};
+		document.getElementById("orbitbar").appendChild(orbitBarRect);
 	}
 }
 
@@ -903,7 +933,7 @@ function redrawInterface(){
 
 function redrawMap(){
 	// update infobox
-	var selectionId = Number(document.getElementById("input_id").value);
+	var selectionId = getID();
 	var infoboxElement = document.getElementById("leftinfo");
 	if (infoboxElement.benisData !== selectionId){
 		infoboxElement.innerHTML = "";
@@ -933,6 +963,10 @@ function saveGame(isManual){
 	if (isManual){
 		console.log("Successfully manually saved game!");
 	}
+}
+
+function setBody(id){
+	document.getElementById("input_id").value = id;
 }
 
 function updateFPS(){
