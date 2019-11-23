@@ -11,6 +11,15 @@ var colorData = [
 	}
 ];
 var pieceData = {
+	'bishop': {
+		'abbr': 'B',
+		'moves': [
+			{
+				'dir': 'diagonal',
+				'dist': Infinity
+			}
+		]
+	},
 	'king': {
 		'abbr': 'K',
 		'castling': "king",
@@ -19,6 +28,24 @@ var pieceData = {
 			{
 				'dir': 'any',
 				'dist': 1
+			}
+		]
+	},
+	'queen': {
+		'abbr': 'Q',
+		'moves': [
+			{
+				'dir': 'any',
+				'dist': Infinity
+			}
+		]
+	},
+	'rook': {
+		'abbr': 'R',
+		'moves': [
+			{
+				'dir': 'orthogonal',
+				'dist': Infinity
 			}
 		]
 	}
@@ -84,9 +111,19 @@ function reloadNotes(){
 
 function resetPieces(){
 	// white
+	placePiece(new Piece("rook", 1), "a1");
+	placePiece(new Piece("bishop", 1), "c1");
+	placePiece(new Piece("queen", 1), "d1");
 	placePiece(new Piece("king", 1), "e1");
+	placePiece(new Piece("bishop", 1), "f1");
+	placePiece(new Piece("rook", 1), "h1");
 	// black
+	placePiece(new Piece("rook", 0), "a8");
+	placePiece(new Piece("bishop", 0), "c8");
+	placePiece(new Piece("queen", 0), "d8");
 	placePiece(new Piece("king", 0), "e8");
+	placePiece(new Piece("bishop", 0), "f8");
+	placePiece(new Piece("rook", 0), "h8");
 }
 
 document.onload = function(){main();};
