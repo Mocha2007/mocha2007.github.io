@@ -816,7 +816,7 @@ function generateBody(sma){
 
 function generateOrbit(sma){
 	var parent = sun;
-	var ecc = uniform(0, 0.25);
+	var ecc = uniform(0, 0.21);
 	var aop = uniform(0, 2*pi);
 	var man = uniform(0, 2*pi);
 	return new Orbit(parent, sma, ecc, aop, man);
