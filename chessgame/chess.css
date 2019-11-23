@@ -2,9 +2,14 @@ html{
 	font-family: Consolas, "Courier New", monospace;
 	overflow: hidden;
 }
-.blackSquare, .whiteSquare{
-	width: 11.1%;
-	height: 11.1%;
+.blackSquare, .dataSquare, .whiteSquare{
+	align-items: center;
+	display: flex;
+	height: 11.1111%;
+	justify-content: center;
+	position: absolute;
+	text-align: center;
+	width: 11.1111%;
 }
 .blackSquare{
 	background-color: #000;
