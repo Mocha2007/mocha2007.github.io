@@ -86,6 +86,54 @@ class Piece{
 
 // functions
 
+function getAttacks(type, pos, color){
+	console.warn("this function doesnt account for blocking pieces!!!");
+	var attacks = [];
+	var piece = pieceData[type];
+	var aType = piece.moves[0].dir;
+	var maxDist = 8 < piece.moves[0].dist? 8 : piece.moves[0].dist;
+	if (aType === 'L'){
+		attacks.push([pos[0]-2, pos[1]-1]);
+		attacks.push([pos[0]-2, pos[1]+1]);
+		attacks.push([pos[0]-1, pos[1]+2]);
+		attacks.push([pos[0]+1, pos[1]+2]);
+		attacks.push([pos[0]+2, pos[1]+1]);
+		attacks.push([pos[0]+2, pos[1]-1]);
+		attacks.push([pos[0]+1, pos[1]-2]);
+		attacks.push([pos[0]-1, pos[1]-2]);
+	}
+	else if (aType === 'P'){
+		var dir = color ? 1 : -1; // fixme
+		attacks.push([pos[0]-1, pos[1]+dir]);
+		attacks.push([pos[0]+1, pos[1]+dir]);
+	}
+	else{
+		for (var i=1; i<=maxDist; i+=1){
+			if (aType === 'diagonal' || aType === 'any'){
+				attacks.push([pos[0]-i, pos[1]-i]);
+				attacks.push([pos[0]-i, pos[1]+i]);
+				attacks.push([pos[0]+i, pos[1]-i]);
+				attacks.push([pos[0]+i, pos[1]+i]);
+			}
+			if (aType === 'orthogonal' || aType === 'any'){
+				attacks.push([pos[0], pos[1]-i]);
+				attacks.push([pos[0], pos[1]+i]);
+				attacks.push([pos[0]-i, pos[1]]);
+				attacks.push([pos[0]+i, pos[1]]);
+			}
+		}
+	}
+	// remove off-board moves
+	var finalAttacks = [];
+	for (i=0; i<attacks.length; i+=1){
+		if (attacks[i][0] < 0 || 7 < attacks[i][0] || attacks[i][1] < 0 || 7 < attacks[i][1]){
+			continue;
+		}
+		finalAttacks.push(attacks[i]);
+	}
+	return finalAttacks;
+}
+
 function placeNote(n, tileID, type){
 	var elem = document.createElement("div");
 	elem.classList = type+"Square";
