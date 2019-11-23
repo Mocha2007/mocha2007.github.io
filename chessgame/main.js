@@ -41,6 +41,16 @@ var pieceData = {
 			}
 		]
 	},
+	'pawn': {
+		'abbr': 'P',
+		'pawnMoves': true,
+		'moves': [
+			{
+				'dir': 'P',
+				'dist': 1
+			}
+		]
+	},
 	'queen': {
 		'abbr': 'Q',
 		'moves': [
@@ -138,6 +148,13 @@ function resetPieces(){
 	placePiece(new Piece("bishop", 0), "f8");
 	placePiece(new Piece("knight", 0), "g8");
 	placePiece(new Piece("rook", 0), "h8");
+	// pawns
+	var letter;
+	for (var i=1; 1<colString.length; i+=1){
+		letter = colString[i];
+		placePiece(new Piece("pawn", 1), letter+2);
+		placePiece(new Piece("pawn", 0), letter+7);
+	}
 }
 
 document.onload = function(){main();};
