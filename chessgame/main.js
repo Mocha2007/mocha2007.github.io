@@ -87,6 +87,14 @@ class Piece{
 
 // functions
 
+function displayAttacks(){
+	// fixme debug
+	var attacks = getAttacksByColor(1);
+	for (var square in attacks){
+		placeNote(attacks[square], square, "attack");
+	}
+}
+
 function getAttacks(type, pos, color){
 	var attacks = [];
 	var piece = pieceData[type];
@@ -151,6 +159,35 @@ function getAttacks(type, pos, color){
 	return finalAttacks;
 }
 
+function getAttacksByColor(colorID){
+	var attacks = {};
+	var currentAttacks, id, piece;
+	for (var square in board){
+		piece = board[square];
+		if (piece.color !== colorID){
+			continue;
+		}
+		currentAttacks = getAttacks(piece.type, getCoordsFromId(square), piece.color);
+		for (var i=0; i<currentAttacks.length; i+=1){
+			id = getIdFromCoords(currentAttacks[i]);
+			if (attacks.hasOwnProperty(id)){
+				attacks[id] += 1;
+			}
+			else{
+				attacks[id] = 1;
+			}
+		}
+	}
+	return attacks;
+}
+
+function getCoordsFromId(id){
+	// a1 -> 0, 0; h8 -> 7, 7
+	var x = colString.indexOf(id[0])-1;
+	var y = Number(id[1])-1;
+	return [x, y];
+}
+
 function getFrom(){
 	return document.getElementById("input_from").value;
 }
@@ -170,9 +207,9 @@ function main(){
 	console.info("Mocha's weird-ass chess test");
 	makeBoard();
 	resetPieces();
-	// fixme debug
-	placeNote(3, "c6", "attack");
-	placeNote(3, "c3", "defense");
+	// placeNote(3, "c6", "attack");
+	// placeNote(3, "c3", "defense");
+	displayAttacks();
 
 }
 
