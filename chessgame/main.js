@@ -134,21 +134,13 @@ function getAttacks(type, pos, color){
 	return finalAttacks;
 }
 
-function placeNote(n, tileID, type){
-	var elem = document.createElement("div");
-	elem.classList = type+"Square";
-	elem.innerHTML = n;
-	elem.id = tileID + type;
-	var under = document.getElementById(tileID);
-	elem.style.left = under.style.left;
-	elem.style.top = under.style.top;
-	document.getElementById(type+"Board").appendChild(elem);
+function getFrom(){
+	return document.getElementById("input_from").value;
 }
 
-function placePiece(piece, tileID){
-	document.getElementById(tileID).appendChild(piece.getElement);
+function getTo(){
+	return document.getElementById("input_to").value;
 }
-
 
 function main(){
 	console.info("Mocha's weird-ass chess test");
@@ -189,6 +181,27 @@ function makeSquare(row, col){
 	// console.log(color);
 }
 
+function movePiece(from, to){
+	var temp = document.getElementById(from).innerHTML
+	document.getElementById(from).innerHTML = "";
+	document.getElementById(to).innerHTML = temp;
+}
+
+function placeNote(n, tileID, type){
+	var elem = document.createElement("div");
+	elem.classList = type+"Square";
+	elem.innerHTML = n;
+	elem.id = tileID + type;
+	var under = document.getElementById(tileID);
+	elem.style.left = under.style.left;
+	elem.style.top = under.style.top;
+	document.getElementById(type+"Board").appendChild(elem);
+}
+
+function placePiece(piece, tileID){
+	document.getElementById(tileID).appendChild(piece.getElement);
+}
+
 function reloadNotes(){
 }
 
@@ -219,5 +232,3 @@ function resetPieces(){
 		placePiece(new Piece("pawn", 0), letter+7);
 	}
 }
-
-document.onload = function(){main();};

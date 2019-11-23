@@ -5,7 +5,13 @@
 <link rel="shortcut icon" href="../img/favicon.ico">
 <link href=chess.css type="text/css" rel="stylesheet" title="Light">
 <title>Chess Tool</title>
-<div id="left"></div>
+<div id="left">
+	<ul id="editor">
+		<li>From: <input id="input_from" type="text" value="a1"></li>
+		<li>To: <input id="input_to" type="text" value="a1"></li>
+		<li><a href="javascript:movePiece(getFrom(), getTo());">Move&rarr;</a></li>
+	</ul>
+</div>
 <div id="board"></div>
 <div id="attackBoard"></div>
 <div id="defenseBoard"></div>

@@ -2,6 +2,9 @@ html{
 	font-family: Consolas, "Courier New", monospace;
 	overflow: hidden;
 }
+ul{
+	list-style: none;
+}
 .attackSquare, .blackSquare, .dataSquare, .defenseSquare, .whiteSquare{
 	align-items: center;
 	display: flex;
