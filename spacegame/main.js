@@ -850,7 +850,7 @@ function getQuestsFromIds(){
 }
 
 function main(){
-	console.log("Mocha's weird-ass space game test");
+	console.info("Mocha's weird-ass space game test");
 	Game.debug = {};
 	if (read_cookie("settings")){
 		Game.settings = read_cookie("settings");
