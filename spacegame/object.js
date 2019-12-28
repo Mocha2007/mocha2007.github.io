@@ -9,31 +9,24 @@ function main(){
 
 // abstract
 
-class Thing{
+class Instance{
 	constructor(name, children){
 		this.name = name;
-	}
-}
-
-class Instance extends Thing{
-	constructor(name, children){
-		super(name);
 		this.children = children;
 	}
 }
 
 // units
 
-class Value extends Thing{
-	constructor(name, value) {
-		super(name);
+class Value{
+	constructor(value) {
 		this.value = value;
 	}
 }
 
 class Length extends Value{
 	constructor(value) {
-		super("Length", value);
+		super(value);
 	}
 	get toFeet(){
 		return this.value / .3048;
@@ -42,19 +35,19 @@ class Length extends Value{
 
 class Area extends Value{
 	constructor(value) {
-		super("Area", value);
+		super(value);
 	}
 }
 
 class Volume extends Value{
 	constructor(value) {
-		super("Volume", value);
+		super(value);
 	}
 }
 
 class Mass extends Value{
 	constructor(value) {
-		super("Mass", value);
+		super(value);
 	}
 	get toPounds(){
 		return this.value / .45359237;
@@ -63,15 +56,20 @@ class Mass extends Value{
 
 class Density extends Value{
 	constructor(value) {
-		super("Density", value);
+		super(value);
+	}
+}
+
+class Time extends Value{
+	constructor(value) {
+		super(value);
 	}
 }
 
 // math
 
-class Sphere extends Thing{
+class Sphere{
 	constructor(radius) {
-		super("Sphere");
 		this.radius = radius;
 	}
 	get circumference(){
@@ -98,12 +96,52 @@ class CelestialBody extends Instance{
 	}
 }
 
+// peepl
+
+class PersonalName{
+	constructor(given, family) {
+		this.given = given;
+		this.family = family;
+	}
+}
+
+class Vital{
+	constructor(birth, death) {
+		this.birth = birth;
+		this.death = death;
+	}
+	get ageAtDeath(){
+		return new Time((death - birth)/1000);
+	}
+}
+
+class Person{
+	constructor(name, mother, father, vital) {
+		this.name = name;
+		this.mother = mother;
+		this.father = father;
+		this.vital = vital;
+	}
+	get parents(){
+		return [this.father, this.mother];
+	}
+	generation(n){
+		if (n === 0){
+			return [this];
+		}
+		return this.father.generation(n-1).concat(this.mother.generation(n-1));
+	}
+}
+
 // Things
 var universe = new Instance("universe");
 var earth = new CelestialBody("earth", 
 	new Mass(5.97237e24),
 	new Sphere(new Length(6371000))
 );
+var phoenix = new Person(new PersonalName("Phoenix"));
+phoenix.mother = phoenix.father = phoenix;
+
 universe.children = [earth];
 
 console.log(universe);
