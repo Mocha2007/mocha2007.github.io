@@ -3,7 +3,7 @@ var currentyear = ((new Date()).getFullYear());
 var year = 86400*(currentyear%400?(currentyear%100?(currentyear%4?365:366):365):366);
 var cye = new Date(currentyear+"-01-01T01:00:00"+String(new Date()).slice(28,33))/1000; // current year epoch - jan 1 XXXX 00:00 utc
 var debug = false; // enable to see all events at any time
-var color = false; // enable to have lines color-coded
+var color = true; // enable to have lines color-coded
 
 function timeSinceYear(){
 	"use strict";
@@ -35,7 +35,41 @@ function diff(epoch){
 var geoera = [
 [a,'cosmological'],
 [4.6e9,'hadean'],
-[4e9,'none']
+[4e9,'eoarchean'],
+[3.6e9,'paleoarchean'],
+[3.2e9,'mesoarchean'],
+[2.8e9,'neoarchean'],
+[2.5e9,'paleoproterozoic'],
+[1.6e9,'mesoproterozoic'],
+[1e9,'neoproterozoic'],
+[541e6,'cambrian'],
+[485.4e6,'ordovician'],
+[443.8e6,'silurian'],
+[419.2e6,'devonian'],
+[358.9e6,'carboniferous'],
+[298.9e6,'permian'],
+[251.902e6,'triassic'],
+[201.3e6,'jurassic'],
+[145e6,'cretaceous'],
+[66e6,'paleogene'],
+[23.03e6,'neogene'],
+[2.588e6,'gelasian'],
+[1.8e6,'calabrian'],
+[773e3,'chibanian'],
+[126e3,'tarantian'],
+[11.7e3,'holocene'], // early holocene only
+[currentyear+5000,'copper'],
+[currentyear+3300,'bronze'],
+[currentyear+1300,'classical'],
+[currentyear-476,'medieval'],
+[currentyear-1453,'renaissance'],
+[currentyear-1760,'industrial'],
+[currentyear-1876,'modern'], // internal combustion engine
+[diff(-771984000),'atomic'], // atom bomb
+[diff(631152000),'information'], // ~1990 expansion of the internet
+[0,'future']
+
+// currentyear = 1 CE
 ]
 var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [a,'<a href="https://en.wikipedia.org/wiki/Big_Bang">Big Bang</a>'],
@@ -129,7 +163,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [428e6,'Earliest Land Animals'],
 [427e6,'<a href="https://en.wikipedia.org/wiki/Mulde_event">Mulde Event</a>'],
 [424e6,'<a href="https://en.wikipedia.org/wiki/Lau_event">Lau Event</a>'],
-[420e6,'Beginning of the <a href="https://en.wikipedia.org/wiki/Devonian">Devonian</a> period'],
+[419.2e6,'Beginning of the <a href="https://en.wikipedia.org/wiki/Devonian">Devonian</a> period'],
 [410e6,'<a href="https://en.wikipedia.org/wiki/Rhynie_chert">Rhynie Chert</a>'],
 [404e6,'<a href="https://en.wikipedia.org/wiki/Hunsrück_Slate">Hunsrück Slate</a>'],
 [400e6,'Venus experiences a <a href="https://en.wikipedia.org/wiki/Geology_of_Venus#Global_resurfacing_event">global resurfacing event</a>'],
@@ -342,14 +376,16 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [currentyear-1846-4/12-25/365,'Beginning of the <a href="https://en.wikipedia.org/wiki/Mexican–American_War">Mexican-American War</a>'],
 [currentyear-1846-9/12-23/365,'<a href="https://en.wikipedia.org/wiki/Neptune">Neptune</a> discovered'],
 [currentyear-1861-4/12-12/365,'Beginning of the <a href="https://en.wikipedia.org/wiki/American_Civil_War">American Civil War</a>'],
+[currentyear-1876,'First modern <a href="https://en.wikipedia.org/wiki/Internal_combustion_engine">internal combustion engine</a>'],
 [currentyear-1898-4/12-21/365,'Beginning of the <a href="https://en.wikipedia.org/wiki/Spanish–American_War">Spanish-American War</a>'],
-// Pushing back epoch precision to 1900
+// Pushing back epoch precision to 1900 https://www.epochconverter.com/
 [diff(-2084140800),'First Powered Heavier-than-Air Flight'],
 [diff(-1940976000),'<a href="https://en.wikipedia.org/wiki/Tunguska_event">Tunguska Event</a>'],
 [diff(-1749254400),'Beginning of the Great War'],
 [diff(-1613865600),'End of the Great War'],
 [diff(-1258156800),'<a href="https://en.wikipedia.org/wiki/Pluto">Pluto</a> discovered'],
 [diff(-957312000),'Beginning of the Second World War'],
+[diff(-771984000),'<a href="https://en.wikipedia.org/wiki/Trinity_(nuclear_test)">Trinity nuclear test</a>'],
 [diff(-767836800),'End of the Second World War'],
 [diff(-616032000),'Beginning of the Korean War'],
 [diff(-447120000),'Beginning of the Vietnam War'],
