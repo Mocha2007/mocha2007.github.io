@@ -1,9 +1,9 @@
 var a = 13.799e9;
-var i;
 var currentyear = ((new Date()).getFullYear());
 var year = 86400*(currentyear%400?(currentyear%100?(currentyear%4?365:366):365):366);
 var cye = new Date(currentyear+"-01-01T01:00:00"+String(new Date()).slice(28,33))/1000; // current year epoch - jan 1 XXXX 00:00 utc
 var debug = false; // enable to see all events at any time
+var color = false; // enable to have lines color-coded
 
 function timeSinceYear(){
 	"use strict";
@@ -32,6 +32,11 @@ function diff(epoch){
 // Oct	~ until 50 years ago
 // Nov	~ until 5 years ago
 // Dec	~ until 1 month ago
+var geoera = [
+[a,'cosmological'],
+[4.6e9,'hadean'],
+[4e9,'none']
+]
 var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [a,'<a href="https://en.wikipedia.org/wiki/Big_Bang">Big Bang</a>'],
 [a-380e3,'<a href="https://en.wikipedia.org/wiki/Chronology_of_the_universe#Dark_Ages">Cosmic Dark Ages</a>'],
@@ -127,6 +132,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [420e6,'Beginning of the <a href="https://en.wikipedia.org/wiki/Devonian">Devonian</a> period'],
 [410e6,'<a href="https://en.wikipedia.org/wiki/Rhynie_chert">Rhynie Chert</a>'],
 [404e6,'<a href="https://en.wikipedia.org/wiki/Hunsrück_Slate">Hunsrück Slate</a>'],
+[400e6,'Venus experiences a <a href="https://en.wikipedia.org/wiki/Geology_of_Venus#Global_resurfacing_event">global resurfacing event</a>'],
 [396e6,'Earliest <a href="https://en.wikipedia.org/wiki/Insect">Insects</a>'],
 [377.2e6,'<a href="https://en.wikipedia.org/wiki/Late_Devonian_extinction#The_Kellwasser_event">Kelwasser Event</a>'],
 [367.5e6,'Late Devonian Extinction Event'],
@@ -381,7 +387,7 @@ function arraysEqual(arr1,arr2){
 	if (arr1.length !== arr2.length){
 		return false;
 	}
-	for (i=0;i<arr1.length;i+=1){
+	for (var i=0;i<arr1.length;i+=1){
 		if (arr1[i] !== arr2[i]){
 			return false;
 		}
@@ -429,7 +435,7 @@ function ispower(factorization){
 	"use strict";
 	var powertable = factorization.map(function f(x){return x[1];});
 	var gggcd = 0;
-	for (i=0;i<powertable.length;i+=1){
+	for (var i=0;i<powertable.length;i+=1){
 		if (gggcd){
 			gggcd = gcd(gggcd,powertable[i]);
 		}
@@ -458,7 +464,7 @@ function commaconvert(s){
 	"use strict";
 	s = s.split('');
 	var n = 0;
-	for (i=0;i<s.length;i+=1){
+	for (var i=0;i<s.length;i+=1){
 		if (s[i]===','){
 			if (n%2===0){
 				s[i]='^';
@@ -495,15 +501,27 @@ function alc(){
 	var x = timeSinceYear(); // seconds since year beginning
 	var y = Math.pow(a,1-x/year);
 	var str = '';
-	for (i=0;i<events.length;i+=1){
+	for (var i=0;i<events.length;i+=1){
 		if (debug || events[i][0]>y){
-			str+='<br>'+(i===0?'Jan 01 '+currentyear+' 00:00:00':ialc(events[i][0]))+' - '+events[i][1];
+			str+='<div class="' + getClass(events[i][0]) + '">'+(i===0?'Jan 01 '+currentyear+' 00:00:00':ialc(events[i][0]))+' - '+events[i][1] + '<br></div>';
 		}
 		else {
 			break;
 		}
 	}
-	document.getElementById("alc").innerHTML = str+'<br><span id="nowtime"></span>';
+	document.getElementById("alc").innerHTML = str+'<span id="nowtime"></span>';
+}
+
+function getClass(age){
+	if (color){
+		for (var i=0; i<geoera.length; i+=1){
+			if (geoera[i][0] < age){
+				console.log(age, i, geoera[i-1][1]);
+				return geoera[i-1][1];
+			}
+		}
+	}
+	return 'none';
 }
 
 function primeclock(){ // can't use strict mode because of IE
