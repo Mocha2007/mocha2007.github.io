@@ -539,20 +539,34 @@ function alc(){
 	var str = '';
 	for (var i=0;i<events.length;i+=1){
 		if (debug || events[i][0]>y){
-			str+='<div class="' + getClass(events[i][0]) + '">'+(i===0?'Jan 01 '+currentyear+' 00:00:00':ialc(events[i][0]))+' - '+events[i][1] + '<br></div>';
+			str+='<div class="' + getClass(events[i][0]) + '">'+(i===0?'Jan 01 '+currentyear+' 00:00:00':ialc(events[i][0]))+' - '+events[i][1] + '</div>';
 		}
 		else {
 			break;
 		}
 	}
 	document.getElementById("alc").innerHTML = str+'<span id="nowtime"></span>';
+	// now create key
+	for (var i=0; i<geoera.length-1; i+=1){
+		// create div
+		var elem = document.createElement("div");
+		// add class
+		var name = geoera[i][1];
+		elem.classList += name;
+		// create link
+		var link = document.createElement("a");
+		link.href = "https://en.wikipedia.org/wiki/" + name;
+		link.innerHTML = name;
+		elem.appendChild(link);
+		// add as child to #key
+		document.getElementById("key").appendChild(elem);
+	}
 }
 
 function getClass(age){
 	if (color){
 		for (var i=0; i<geoera.length; i+=1){
 			if (geoera[i][0] < age){
-				console.log(age, i, geoera[i-1][1]);
 				return geoera[i-1][1];
 			}
 		}
