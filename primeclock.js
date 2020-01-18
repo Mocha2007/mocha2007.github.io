@@ -556,6 +556,9 @@ function alc(){
 		// create link
 		var link = document.createElement("a");
 		link.href = "https://en.wikipedia.org/wiki/" + name;
+		if (i === 0 || 24 < i){
+			link.href += '_era';
+		}
 		link.innerHTML = name;
 		elem.appendChild(link);
 		// add as child to #key
