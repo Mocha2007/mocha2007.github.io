@@ -3,19 +3,25 @@ body{
 	max-width: 750px;
 	background-color: black;
 	color: white;
+	text-shadow: 0px 0px 5px black, 0px 0px 5px black;
+	font-size: large;
+}
+a{
+	color: skyblue;
+}
+a:visited{
+	color: pink;
 }
 #c1,#c2{
-	font-size: xxx-large;
 	font-weight: bold;
 	margin: -10px;
 }
 #c1{
-	font-size: 60px!important;
+	font-size: 60px;
 	margin-top: -30px;
 }
-#alc{
-	font-size: large;
-	text-align: left;
+#c2{
+	font-size: xxx-large;
 }
 .prime{
 	color:green;
@@ -35,142 +41,107 @@ body{
 /* Eras */
 .cosmological{
 	background-color: black;
-	color: white;
 }
 .hadean{
 	background-color: #CB0381;
-	color: white;
 }
 .eoarchean{
 	background-color: #EE007D;
-	color: white;
 }
 .paleoarchean{
 	background-color: #FE5B97;
-	color: white;
 }
 .mesoarchean{
 	background-color: #FE7CA3;
-	color: white;
 }
 .neoarchean{
 	background-color: #FEA6BA;
-	color: white;
 }
 .paleoproterozoic{
 	background-color: #FE5B71;
-	color: white;
 }
 .mesoproterozoic{
 	background-color: #FEB872;
-	color: #444;
 }
 .neoproterozoic{
 	background-color: #FEB757;
-	color: #444;
 }
 .cambrian{
 	background-color: #81AA72;
-	color: #444;
 }
 .ordovician{
 	background-color: #00A98A;
-	color: #444;
 }
 .silurian{
 	background-color: #A6DFC5;
-	color: #444;
 }
 .devonian{
 	background-color: #DD9651;
-	color: #444;
 }
 .carboniferous{
 	background-color: #3FAEAD;
-	color: #444;
 }
 .permian{
 	background-color: #F7583C;
-	color: #444;
 }
 .triassic{
 	background-color: #994E96;
-	color: #444;
 }
 .jurassic{
 	background-color: #00BBE7;
-	color: #444;
 }
 .cretaceous{
 	background-color: #6FC86B;
-	color: #444;
 }
 .paleogene{
 	background-color: #FEA163;
-	color: #444;
 }
 .neogene{
 	background-color: #FEDD2D;
-	color: #444;
 }
 .gelasian{
 	background-color: #FEEEAD;
-	color: #444;
 }
 .calabrian{
 	background-color: #FEEFC1;
-	color: #444;
 }
 .chibanian{
 	background-color: #FEF0CC;
-	color: #444;
 }
 .tarantian{
 	background-color: #FEF1D6;
-	color: #444;
 }
 .holocene{
 	background-color: #FEF1E0;
-	color: #444;
 }
 .copper{
 	background-color: #FFDAB9;
-	color: #444;
 }
 .bronze{
 	background-color: #FFBF00;
-	color: #444;
 }
 /* end of wikipedia infobox colors; begin custom colors */
 .classical{
 	background-color: #eee;
-	color: #444;
 }
 .medieval{
 	background-color: #444;
-	color: #ccc;
 }
 .renaissance{
 	background-color: #EF7EBE;
-	color: #444;
 }
 .industrial{
 	background-color: #C67537;
-	color: #444;
 }
 .modern{
 	background-color: #4ABDDA;
-	color: #444;
 }
 .atomic{
 	background-color: #CEBA47;
-	color: #444;
 }
 .information{
 	background-color: #91CAD8;
-	color: #444;
 }
 .none{
-	background-color: #ccc;
-	color: #444;
+	background-color: magenta;
 }
