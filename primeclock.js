@@ -1,11 +1,11 @@
-var a = 13.799e9;
-var currentyear = ((new Date()).getFullYear());
-var year = 86400*(currentyear%400?(currentyear%100?(currentyear%4?365:366):365):366);
-var cye = new Date(currentyear+"-01-01T01:00:00"+String(new Date()).slice(28,33))/1000; // current year epoch - jan 1 XXXX 00:00 utc
+var a = 13.799e9; // age of the universe
+var currentyear = (new Date()).getFullYear(); // current year, eg. 2020
+var year = 86400*(currentyear%400?(currentyear%100?(currentyear%4?365:366):365):366); // number of seconds in this year, eg. 31622400 = 366 * 86400
+var cye = new Date(currentyear+"-01-01T00:00:00"+String(new Date()).slice(28,33))/1000; // current year epoch - jan 1 XXXX 00:00 utc
 var debug = false; // enable to see all events at any time
 var color = true; // enable to have lines color-coded
 
-function timeSinceYear(){
+function timeSinceYear(){ // seconds since year start
 	"use strict";
 	return (new Date()/1000)-cye;
 }
@@ -387,33 +387,50 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 // include months and days aft. 1800
 [currentyear-1801,'<a href="https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)">Ceres</a> discovered'], // 1 jan
 [currentyear-1803-7/12-4/365,'<a href="https://en.wikipedia.org/wiki/Louisiana_Purchase">Louisiana Purchase</a>'],
+[currentyear-1808-11/12,'<a href="https://en.wikipedia.org/wiki/1808_mystery_eruption">1808 Mystery Eruption</a>'],
 [currentyear-1812-6/12-18/365,'Beginning of the <a href="https://en.wikipedia.org/wiki/War_of_1812">War of 1812</a>'],
 [currentyear-1846-4/12-25/365,'Beginning of the <a href="https://en.wikipedia.org/wiki/Mexican–American_War">Mexican-American War</a>'],
 [currentyear-1846-9/12-23/365,'<a href="https://en.wikipedia.org/wiki/Neptune">Neptune</a> discovered'],
 [currentyear-1861-4/12-12/365,'Beginning of the <a href="https://en.wikipedia.org/wiki/American_Civil_War">American Civil War</a>'],
 [currentyear-1876,'First modern <a href="https://en.wikipedia.org/wiki/Internal_combustion_engine">internal combustion engine</a>'],
-[currentyear-1898-4/12-21/365,'Beginning of the <a href="https://en.wikipedia.org/wiki/Spanish–American_War">Spanish-American War</a>'],
-// Pushing back epoch precision to 1900 https://www.epochconverter.com/
+// Pushing back epoch precision to 1877 https://www.epochconverter.com/
+// 1880
+[diff(-2724969600),'<a href="https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa">1883 eruption of Krakatoa</a>'],
+// 1890
+[diff(-2262556800),'Beginning of the <a href="https://en.wikipedia.org/wiki/Spanish–American_War">Spanish-American War</a>'],
+// 1900
 [diff(-2084140800),'First Powered Heavier-than-Air Flight'],
 [diff(-1940976000),'<a href="https://en.wikipedia.org/wiki/Tunguska_event">Tunguska Event</a>'],
+// 1910
 [diff(-1749254400),'Beginning of the Great War'],
 [diff(-1613865600),'End of the Great War'],
+// 1920
+[diff(-1268265600),'The <a href="https://en.wikipedia.org/wiki/Wall_Street_Crash_of_1929">Wall Street Crash of 1929</a>'],
+// 1930
 [diff(-1258156800),'<a href="https://en.wikipedia.org/wiki/Pluto">Pluto</a> discovered'],
 [diff(-957312000),'Beginning of the Second World War'],
+// 1940
 [diff(-771984000),'<a href="https://en.wikipedia.org/wiki/Trinity_(nuclear_test)">Trinity nuclear test</a>'],
 [diff(-767836800),'End of the Second World War'],
 [diff(-616032000),'Beginning of the Korean War'],
+// 1950
 [diff(-447120000),'Beginning of the Vietnam War'],
+// 1960
 [diff(-386310686),'<a href="https://en.wikipedia.org/wiki/Sputnik_1">Sputnik</a> launched'],
 [diff(-275248380),'<a href="https://en.wikipedia.org/wiki/Vostok_1">Vostok 1</a> launched'],
 [diff(-14182916),'<a href="https://en.wikipedia.org/wiki/Apollo_11">Apollo 11</a> lands on the Moon'],
-// Precise number of days for events before 1970 unnecessary.
+// 1970
 [diff(8709180),'<a href="https://en.wikipedia.org/wiki/Apollo_13">Apollo 13</a> launched'],
 [diff(93221677),'<a href="https://en.wikipedia.org/wiki/Apollo_17">Apollo 17</a> leaves the Moon'],
+[diff(247190400),'Discovery of <a href="https://en.wikipedia.org/wiki/2060_Chiron">2060 Chiron</a>, the first centaur.'],
 [diff(293414400),'<a href="https://en.wikipedia.org/wiki/Jimmy_Carter_rabbit_incident">Jimmy Carter Rabbit Incident</a>'],
+// 1980
 [diff(495432000),'<a href="https://en.wikipedia.org/wiki/Super_Mario_Bros.">Super Mario Bros.</a> Released'],
+// 1990
 [diff(682056000),'<a href="https://en.wikipedia.org/wiki/Super_Mario_World">Super Mario World</a> Released in NA'],
+[diff(715132800),'Discovery of <a href="https://en.wikipedia.org/wiki/2060_Chiron">15760 Albion</a>, the second KBO.'],
 [diff(725846400),'<a href="https://en.wikipedia.org/wiki/Dissolution_of_Czechoslovakia">Velvet Divorce</a>'],
+// 2000
 [diff(973627200),'<a href="https://en.wikipedia.org/wiki/United_States_presidential_election,_2000">Election Night 2000</a>'],
 [diff(1000212360),'<a href="https://en.wikipedia.org/wiki/September_11_attacks">September 11 Attacks</a>'],
 [diff(1000771200),'<a href="https://en.wikipedia.org/wiki/2001_anthrax_attacks">2001 Anthrax Attacks</a>'],
@@ -422,6 +439,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [diff(1108357200),'<a href="https://en.wikipedia.org/wiki/YouTube">YouTube</a> Launched'],
 [diff(1154390400),'<a href="https://en.wikipedia.org/wiki/Pluto">Pluto</a> no longer considered a planet'],
 [diff(1242532800),'<a href="https://en.wikipedia.org/wiki/Minecraft">Minecraft Classic</a> Released'],
+// 2010
 [diff(1305172800),'<a href="https://en.wikipedia.org/wiki/Death_of_Osama_bin_Laden">Death of Osama bin Laden</a>'],
 [diff(1307332800),'<a href="https://en.wikipedia.org/wiki/Twitch.tv">Twitch</a> Launched'],
 [diff(1359003600),'<a href="https://en.wikipedia.org/wiki/Vine_(service)">Vine</a> Launched'],
@@ -429,7 +447,9 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [diff(1494907200),'<a href="https://mocha2007.github.io">Mocha\'s Site</a> Launched'],
 [diff(1503705600),'<a href="https://en.wikipedia.org/wiki/Hurricane_Harvey">Hurricane Harvey</a> makes landfall in Texas'],
 [diff(1508371200),'<abbr title="The first known insterstellar object to enter the solar system"><a href="https://en.wikipedia.org/wiki/ʻOumuamua">ʻOumuamua</a></abbr> discovered'],
-[diff(1522687500),'PrimeClock <a href="https://github.com/Mocha2007/mocha2007.github.io/commit/0f4ac911c48e82779748c4629b57ec72503ba45d">launched</a>']
+[diff(1522687500),'PrimeClock <a href="https://github.com/Mocha2007/mocha2007.github.io/commit/0f4ac911c48e82779748c4629b57ec72503ba45d">launched</a>'],
+[diff(1554854400),'First <a href="https://en.wikipedia.org/wiki/Event_Horizon_Telescope">direct image of a black hole</a>']
+// 2020
 // https://en.wikipedia.org/wiki/Timelines_of_world_history
 ];
 
@@ -541,6 +561,7 @@ a = 14e9
 
 function ialc(y){
 	"use strict";
+	// logarithmically maps time from the beginning (1 Jan) to 1 yr ago (31 Dec)
 	var otherx = timeSinceYear(); // REAL seconds since year beginning
 	var x = Math.floor(year*(1-Math.log(y)/Math.log(a))); // FAKE seconds after beginning of year
 	var wannadate = new Date(Date.now()-1000*(otherx-x)); // convert FAKE 2 DATE
