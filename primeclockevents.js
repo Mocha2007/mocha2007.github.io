@@ -434,6 +434,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [diff(293414400),'<a href="https://en.wikipedia.org/wiki/Jimmy_Carter_rabbit_incident">Jimmy Carter Rabbit Incident</a>'],
 // 1980
 [diff(348901200),'First <a href="https://en.wikipedia.org/wiki/DMC_DeLorean">DeLorean</a> manufactured'],
+[diff(386553600),'Beginning of the <a href="https://en.wikipedia.org/wiki/Falklands_War">Falklands War</a>'],
 [diff(418280400),'Maiden voyage of the <a href="https://en.wikipedia.org/wiki/Space_Shuttle_Challenger">Challenger</a>'],
 [diff(495432000),'<a href="https://en.wikipedia.org/wiki/Super_Mario_Bros.">Super Mario Bros.</a> Released'],
 [diff(560059200),'Michael Jackson\'s album <a href="https://en.wikipedia.org/wiki/Bad_(album)">Bad</a> is released'],
