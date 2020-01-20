@@ -377,9 +377,9 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [currentyear-1846-9/12-23/365,'<a href="https://en.wikipedia.org/wiki/Neptune">Neptune</a> discovered'],
 [currentyear-1861-4/12-12/365,'Beginning of the <a href="https://en.wikipedia.org/wiki/American_Civil_War">American Civil War</a>'],
 [currentyear-1865-4/12-14/365,'The <a href="https://en.wikipedia.org/wiki/Assassination_of_Abraham Lincoln">Assassination of Abraham Lincoln</a>'],
+// Pushing back epoch precision to 1870 https://www.epochconverter.com/
 // 1870
-[currentyear-1870,'Start of the <a href="https://en.wikipedia.org/wiki/Franco-Prussian_War">Franco-Prussian War</a>'],
-// Pushing back epoch precision to 1875 https://www.epochconverter.com/
+[diff(-3138480000),'Start of the <a href="https://en.wikipedia.org/wiki/Franco-Prussian_War">Franco-Prussian War</a>'],
 [diff(-2955225600),'First modern <a href="https://en.wikipedia.org/wiki/Internal_combustion_engine">internal combustion engine</a>'],
 // 1880
 [diff(-2724969600),'<a href="https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa">1883 eruption of Krakatoa</a>'],
