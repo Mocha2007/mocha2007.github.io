@@ -459,6 +459,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [diff(1263333180),'<a href="https://en.wikipedia.org/wiki/2010_Haiti_earthquake">2010 Haiti Earthquake</a>'],
 [diff(1305172800),'<a href="https://en.wikipedia.org/wiki/Death_of_Osama_bin_Laden">Death of Osama bin Laden</a>'],
 [diff(1307332800),'<a href="https://en.wikipedia.org/wiki/Twitch.tv">Twitch</a> Launched'],
+[diff(1328486400),'The <a href="https://en.wikipedia.org/wiki/Diamond_Jubilee_of_Elizabeth_II">Diamond Jubilee of Elizabeth II</a>'],
 [diff(1338934140),'<a href="https://en.wikipedia.org/wiki/2012_transit_of_Venus">2012 Transit of Venus</a>'],
 [diff(1359003600),'<a href="https://en.wikipedia.org/wiki/Vine_(service)">Vine</a> Launched'],
 [diff(1394236800),'Flight <a href="https://en.wikipedia.org/wiki/Malaysia_Airlines_Flight_370">MH370</a> goes missing'],
