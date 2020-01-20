@@ -13,7 +13,7 @@ Jul	~ until 20 kya
 Aug	~ until Iron Age
 Sep	~ until Enlightenment
 Oct	~ until 50 years ago
-Nov	~ until 5 years ago
+Nov	~ until 7 years ago
 Dec	~ until 1 year ago
 */
 var geoera = [
