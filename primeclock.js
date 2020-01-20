@@ -411,7 +411,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [currentyear-1387,'Publication of <i><a href="https://en.wikipedia.org/wiki/The_Canterbury_Tales">The Canterbury Tales</a></i>'],
 [currentyear-1421,'<a href="https://en.wikipedia.org/wiki/St._Elizabeth\'s_flood_(1421)">St. Elizabeth\'s flood</a>'],
 [currentyear-1453,'Fall of <a href="https://en.wikipedia.org/wiki/Byzantine_Empire">Byzantium</a>'],
-[currentyear-1492,'Columbus lands on the Americas'],
+[currentyear-1492,'Columbus <a href="https://en.wikipedia.org/wiki/Christopher_Columbus#First_voyage">lands</a> on the Americas'],
 [currentyear-1518,'The <i><a href="https://en.wikipedia.org/wiki/Dancing_plague_of_1518">Dancing plague of 1518</a></i>'],
 [currentyear-1532,'Publication of <i><a href="https://en.wikipedia.org/wiki/The_Prince">The Prince</a></i>'],
 [currentyear-1565,'The <a href="https://en.wikipedia.org/wiki/Great_Siege_of_Malta">Great Siege of Malta</a>'],
@@ -424,7 +424,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [currentyear-1715,'Beginning of the <a href="https://en.wikipedia.org/wiki/Age_of_Enlightenment">Age of Enlightenment</a>'],
 [currentyear-1733,'The <a href="https://en.wikipedia.org/wiki/War_of_the_Polish_Succession">War of the Polish Succession</a> breaks out'],
 [currentyear-1752,'The British Empire <a href="https://en.wikipedia.org/wiki/Calendar_(New_Style)_Act_1750">switches to the Gregorian calendar</a>'],
-[currentyear-1776-7/12-4/365,'Formation of the United States'],
+[currentyear-1776-7/12-4/365,'<a href="https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence">Declaration of independence of the United States</a>'],
 [currentyear-1781-3/12-13/365,'<a href="https://en.wikipedia.org/wiki/Uranus">Uranus</a> discovered'],
 // include months and days aft. 1800
 [currentyear-1801,'<a href="https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)">Ceres</a> discovered'], // 1 jan
@@ -436,39 +436,45 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [currentyear-1846-4/12-25/365,'Beginning of the <a href="https://en.wikipedia.org/wiki/Mexican–American_War">Mexican-American War</a>'],
 [currentyear-1846-9/12-23/365,'<a href="https://en.wikipedia.org/wiki/Neptune">Neptune</a> discovered'],
 [currentyear-1861-4/12-12/365,'Beginning of the <a href="https://en.wikipedia.org/wiki/American_Civil_War">American Civil War</a>'],
+[currentyear-1865-4/12-14/365,'The <a href="https://en.wikipedia.org/wiki/Assassination_of_Abraham Lincoln">Assassination of Abraham Lincoln</a>'],
 [currentyear-1870,'Start of the <a href="https://en.wikipedia.org/wiki/Franco-Prussian_War">Franco-Prussian War</a>'],
 [currentyear-1876,'First modern <a href="https://en.wikipedia.org/wiki/Internal_combustion_engine">internal combustion engine</a>'],
-// Pushing back epoch precision to 1877 https://www.epochconverter.com/
+// Pushing back epoch precision to 1880 https://www.epochconverter.com/
 // 1880
-[diff(-2634922800),'The <a href="https://en.wikipedia.org/wiki/Benz_Patent-Motorwagen">first automobile</a> is unveiled by Karl Benz'],
 [diff(-2724969600),'<a href="https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa">1883 eruption of Krakatoa</a>'],
+[diff(-2634922800),'The <a href="https://en.wikipedia.org/wiki/Benz_Patent-Motorwagen">first automobile</a> is unveiled by Karl Benz'],
 // 1890
+[diff(-2323296000),'<a href="https://en.wikipedia.org/wiki/Plessy_v._Ferguson">Plessy v. Ferguson</a>'],
 [diff(-2262556800),'Beginning of the <a href="https://en.wikipedia.org/wiki/Spanish–American_War">Spanish-American War</a>'],
 // 1900
 [diff(-2084140800),'First Powered Heavier-than-Air Flight'],
-[diff(-1940976000),'<a href="https://en.wikipedia.org/wiki/Tunguska_event">Tunguska Event</a>'],
+[diff(-1960675200),'The <a href="https://en.wikipedia.org/wiki/Panic_of_1907">Panic of 1907</a>'],
+[diff(-1940976000),'The <a href="https://en.wikipedia.org/wiki/Tunguska_event">Tunguska Event</a>'],
 [diff(-1906675200),'<a href="https://en.wikipedia.org/wiki/Pluto">Pluto</a> unwittingly captured in a photograph, the earliest known'],
 // 1910
 [diff(-1821268800),'The <a href="https://en.wikipedia.org/wiki/Sinking_of_the_RMS_Titanic">Sinking of the Titanic</a>'],
-[diff(-1749254400),'Beginning of the Great War'],
+[diff(-1749254400),'Beginning of the <a href="https://en.wikipedia.org/wiki/World_War_I">Great War</a>'],
+[diff(-1724803200),'The <a href="https://en.wikipedia.org/wiki/Sinking_of_the_RMS_Lusitania">Sinking of the Lusitania</a>'],
 [diff(-1645729200),'The <a href="https://en.wikipedia.org/wiki/October_Revolution">October Revolution</a>'],
-[diff(-1613865600),'End of the Great War'],
+[diff(-1613865600),'End of the <a href="https://en.wikipedia.org/wiki/World_War_I">Great War</a>'],
 // 1920
 [diff(-1402689600),'The <a href="https://en.wikipedia.org/wiki/Scopes_Trial">Scopes Trial</a>'],
 [diff(-1268265600),'The <a href="https://en.wikipedia.org/wiki/Wall_Street_Crash_of_1929">Wall Street Crash of 1929</a>'],
 // 1930
 [diff(-1258156800),'<a href="https://en.wikipedia.org/wiki/Pluto">Pluto</a> discovered'],
 [diff(-1030494900),'The <a href="https://en.wikipedia.org/wiki/Hindenburg_disaster">Hindenburg Disaster</a>'],
-[diff(-957312000),'Beginning of the Second World War'],
+[diff(-957312000),'Beginning of the <a href="https://en.wikipedia.org/wiki/World_War_II">Second World War</a>'],
 // 1940
 [diff(-771984000),'<a href="https://en.wikipedia.org/wiki/Trinity_(nuclear_test)">Trinity nuclear test</a>'],
-[diff(-767836800),'End of the Second World War'],
-[diff(-616032000),'Beginning of the Korean War'],
+[diff(-767836800),'End of the <a href="https://en.wikipedia.org/wiki/World_War_II">Second World War</a>'],
+[diff(-616032000),'Beginning of the <a href="https://en.wikipedia.org/wiki/Korean_War">Korean War</a>'],
 // 1950
-[diff(-447120000),'Beginning of the Vietnam War'],
-// 1960
+[diff(-447120000),'Beginning of the <a href="https://en.wikipedia.org/wiki/Vietnam_War">Vietnam War</a>'],
 [diff(-386310686),'<a href="https://en.wikipedia.org/wiki/Sputnik_1">Sputnik</a> launched'],
+// 1960
 [diff(-275248380),'<a href="https://en.wikipedia.org/wiki/Vostok_1">Vostok 1</a> launched'],
+[diff(-192844800),'The <a href="https://en.wikipedia.org/wiki/Assassination_of_John_F._Kennedy">Assassination of John F. Kennedy</a>'],
+[diff(-58924800),'<a href="https://en.wikipedia.org/wiki/Mister_Rogers\'_Neighborhood">Mr. Rogers\' Neighborhood</a> premieres'],
 [diff(-14182916),'<a href="https://en.wikipedia.org/wiki/Apollo_11">Apollo 11</a> lands on the Moon'],
 // 1970
 [diff(8709180),'<a href="https://en.wikipedia.org/wiki/Apollo_13">Apollo 13</a> launched'],
@@ -517,12 +523,13 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [diff(1359003600),'<a href="https://en.wikipedia.org/wiki/Vine_(service)">Vine</a> Launched'],
 [diff(1394236800),'Flight <a href="https://en.wikipedia.org/wiki/Malaysia_Airlines_Flight_370">MH370</a> goes missing'],
 [diff(1425600000),'NASA\'s <a href="https://en.wikipedia.org/wiki/Dawn_(spacecraft)">Dawn</a> spacecraft enters orbits of Ceres'],
-[diff(1478667600),'Donald Trump Elected President of the US'], // roughly when it became certain; 00:00 EST 9 NOV 2016 
+[diff(1478667600),'Donald Trump <a href="https://en.wikipedia.org/wiki/2016_United_States_presidential_election">elected</a> president of the US'], // roughly when it became certain; 00:00 EST 9 NOV 2016 
 [diff(1494907200),'<a href="https://mocha2007.github.io">Mocha\'s Site</a> Launched'],
 [diff(1503705600),'<a href="https://en.wikipedia.org/wiki/Hurricane_Harvey">Hurricane Harvey</a> makes landfall in Texas'],
 [diff(1508371200),'<abbr title="The first known insterstellar object to enter the solar system"><a href="https://en.wikipedia.org/wiki/ʻOumuamua">ʻOumuamua</a></abbr> discovered'],
 [diff(1522687500),'PrimeClock <a href="https://github.com/Mocha2007/mocha2007.github.io/commit/0f4ac911c48e82779748c4629b57ec72503ba45d">launched</a>'],
-[diff(1554854400),'First <a href="https://en.wikipedia.org/wiki/Event_Horizon_Telescope">direct image of a black hole</a>']
+[diff(1554854400),'First <a href="https://en.wikipedia.org/wiki/Event_Horizon_Telescope">direct image of a black hole</a>'],
+[diff(1567123200),'<abbr title="The second known insterstellar object to enter the solar system"><a href="https://en.wikipedia.org/wiki/2I/Borisov">2I/Borisov</a></abbr> discovered']
 // 2020
 // https://en.wikipedia.org/wiki/Timelines_of_world_history
 // years with events included: 1985, 1987-2019
