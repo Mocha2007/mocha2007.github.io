@@ -409,6 +409,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 // 1940
 [diff(-926640000),'The <a href="https://en.wikipedia.org/wiki/Leon_Trotsky#Assassination">Assassination of Trotsky</a>'],
 [diff(-904003200),'The <a href="https://en.wikipedia.org/wiki/Rudolf_Hess#Attempted_peace_mission">Flight of Hess</a>'],
+[diff(-777945600),'<a href="https://en.wikipedia.org/wiki/Victory_in_Europe_Day">VE Day</a>'],
 [diff(-771984000),'<a href="https://en.wikipedia.org/wiki/Trinity_(nuclear_test)">Trinity nuclear test</a>'],
 [diff(-767836800),'End of the <a href="https://en.wikipedia.org/wiki/World_War_II">Second World War</a>'],
 [diff(-616032000),'Beginning of the <a href="https://en.wikipedia.org/wiki/Korean_War">Korean War</a>'],
@@ -418,6 +419,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [diff(-386310686),'<a href="https://en.wikipedia.org/wiki/Sputnik_1">Sputnik</a> launched'],
 // 1960
 [diff(-275248380),'<a href="https://en.wikipedia.org/wiki/Vostok_1">Vostok 1</a> launched'],
+[diff(-257904000),'<a href="https://en.wikipedia.org/wiki/Tsar_Bomba">Tsar Bomba</a>, the most powerful nuclear bomb ever, is detonated'],
 [diff(-192844800),'The <a href="https://en.wikipedia.org/wiki/Assassination_of_John_F._Kennedy">Assassination of John F. Kennedy</a>'],
 [diff(-58924800),'<a href="https://en.wikipedia.org/wiki/Mister_Rogers\'_Neighborhood">Mr. Rogers\' Neighborhood</a> premieres'],
 [diff(-14182916),'<a href="https://en.wikipedia.org/wiki/Apollo_11">Apollo 11</a> lands on the Moon'],
