@@ -403,12 +403,17 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 // 1930
 [diff(-1258156800),'<a href="https://en.wikipedia.org/wiki/Pluto">Pluto</a> discovered'],
 [diff(-1030494900),'The <a href="https://en.wikipedia.org/wiki/Hindenburg_disaster">Hindenburg Disaster</a>'],
+[diff(-1025654400),'The disappearance of <a href="https://en.wikipedia.org/wiki/Amelia_Earhart">Amelia Earhart</a>'],
+[diff(-1025222400),'The <a href="https://en.wikipedia.org/wiki/Marco_Polo_Bridge_Incident">Marco Polo Bridge Incident</a>'],
 [diff(-957312000),'Beginning of the <a href="https://en.wikipedia.org/wiki/World_War_II">Second World War</a>'],
 // 1940
+[diff(-926640000),'The <a href="https://en.wikipedia.org/wiki/Leon_Trotsky#Assassination">Assassination of Trotsky</a>'],
+[diff(-904003200),'The <a href="https://en.wikipedia.org/wiki/Rudolf_Hess#Attempted_peace_mission">Flight of Hess</a>'],
 [diff(-771984000),'<a href="https://en.wikipedia.org/wiki/Trinity_(nuclear_test)">Trinity nuclear test</a>'],
 [diff(-767836800),'End of the <a href="https://en.wikipedia.org/wiki/World_War_II">Second World War</a>'],
 [diff(-616032000),'Beginning of the <a href="https://en.wikipedia.org/wiki/Korean_War">Korean War</a>'],
 // 1950
+[diff(-523285200),'The <a href="https://en.wikipedia.org/wiki/Coronation_of_Elizabeth_II">Coronation of Queen Elizabeth II</a>'],
 [diff(-447120000),'Beginning of the <a href="https://en.wikipedia.org/wiki/Vietnam_War">Vietnam War</a>'],
 [diff(-386310686),'<a href="https://en.wikipedia.org/wiki/Sputnik_1">Sputnik</a> launched'],
 // 1960
@@ -462,15 +467,19 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 [diff(1328486400),'The <a href="https://en.wikipedia.org/wiki/Diamond_Jubilee_of_Elizabeth_II">Diamond Jubilee of Elizabeth II</a>'],
 [diff(1338934140),'<a href="https://en.wikipedia.org/wiki/2012_transit_of_Venus">2012 Transit of Venus</a>'],
 [diff(1359003600),'<a href="https://en.wikipedia.org/wiki/Vine_(service)">Vine</a> Launched'],
+[diff(1365878940),'The <a href="https://en.wikipedia.org/wiki/Boston_Marathon_bombing">Boston Marathon Bombing</a>'],
 [diff(1394236800),'Flight <a href="https://en.wikipedia.org/wiki/Malaysia_Airlines_Flight_370">MH370</a> goes missing'],
 [diff(1425600000),'NASA\'s <a href="https://en.wikipedia.org/wiki/Dawn_(spacecraft)">Dawn</a> spacecraft enters orbits of Ceres'],
 [diff(1478667600),'Donald Trump <a href="https://en.wikipedia.org/wiki/2016_United_States_presidential_election">elected</a> president of the US'], // roughly when it became certain; 00:00 EST 9 NOV 2016 
 [diff(1494907200),'<a href="https://mocha2007.github.io">Mocha\'s Site</a> Launched'],
 [diff(1503705600),'<a href="https://en.wikipedia.org/wiki/Hurricane_Harvey">Hurricane Harvey</a> makes landfall in Texas'],
+[diff(1506920400),'The <a href="https://en.wikipedia.org/wiki/2017_Las_Vegas_shooting">2017 Las Vegas Shooting</a>, the deadliest mass shooting committed by a single person in American history'],
 [diff(1508371200),'<abbr title="The first known insterstellar object to enter the solar system"><a href="https://en.wikipedia.org/wiki/ʻOumuamua">ʻOumuamua</a></abbr> discovered'],
+[diff(1519992000),'The <a href="https://en.wikipedia.org/wiki/Austin_serial_bombings">Austin Serial Bombings</a>'],
 [diff(1522687500),'PrimeClock <a href="https://github.com/Mocha2007/mocha2007.github.io/commit/0f4ac911c48e82779748c4629b57ec72503ba45d">launched</a>'],
 [diff(1554854400),'First <a href="https://en.wikipedia.org/wiki/Event_Horizon_Telescope">direct image of a black hole</a>'],
-[diff(1567123200),'<abbr title="The second known insterstellar object to enter the solar system"><a href="https://en.wikipedia.org/wiki/2I/Borisov">2I/Borisov</a></abbr> discovered']
+[diff(1567123200),'<abbr title="The second known insterstellar object to enter the solar system"><a href="https://en.wikipedia.org/wiki/2I/Borisov">2I/Borisov</a></abbr> discovered'],
+[diff(1578024000),'The <a href="https://en.wikipedia.org/wiki/2020_Baghdad_International_Airport_airstrike">2020 Baghdad International Airport airstrike</a> kills <a href="https://en.wikipedia.org/wiki/Qasem_Soleimani">Qasem Soleimani</a>']
 // 2020
 // https://en.wikipedia.org/wiki/Timelines_of_world_history
 // years with events included: 1985, 1987-2019
