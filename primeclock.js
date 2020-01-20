@@ -49,7 +49,7 @@ var geoera = [
 [currentyear-476,'medieval'],
 [currentyear-1453,'renaissance'],
 [currentyear-1760,'industrial'],
-[currentyear-1876,'modern'], // internal combustion engine
+[diff(-2955224520),'modern'], // internal combustion engine
 [diff(-771984000),'atomic'], // atom bomb
 [diff(831873600),'information'], // archive.org
 [0,'future']
