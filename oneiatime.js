@@ -168,7 +168,12 @@ function HolidayCSS(){
 			break;
 		case 6:
 			src = 'mogay';
-			title = 'Everyone gets a nice big hug!';
+			if (day === 23) {
+				title = 'Happy birthday, MochaFiction Wiki!';
+			}
+			else {
+				title = 'Everyone gets a nice big hug!';
+			}
 			break;
 		case 7:
 			if (day === 12){
