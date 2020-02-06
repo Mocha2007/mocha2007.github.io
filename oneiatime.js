@@ -169,7 +169,7 @@ function HolidayCSS(){
 		case 6:
 			src = 'mogay';
 			if (day === 23) {
-				title = 'Happy birthday, MochaFiction Wiki!';
+				title = 'Happy birthday, MochaFiction Wiki! 2011-' + (new Date()).getFullYear();
 			}
 			else {
 				title = 'Everyone gets a nice big hug!';
