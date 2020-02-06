@@ -166,6 +166,10 @@ function HolidayCSS(){
 				document.getElementById('title').innerHTML = 'Schmocha&rsquo;s Site';
 			}
 			break;
+		case 6:
+			src = 'mogay';
+			title = 'Everyone gets a nice big hug!';
+			break;
 		case 7:
 			if (day === 12){
 				title = 'King Witold\'s Birthday';
