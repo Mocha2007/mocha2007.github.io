@@ -38,7 +38,7 @@
 	The only other feature we'll have to look out for is the roche limit.
 	Even if our star generates enough heat, the planet'll get torn to shreds if we place it too close.
 	So, for our rough "bare minimum" mass, the temperature <i>at</i> the roche limit has to be at least that of Earth.
-	At this point, we just set the roche and heat equations equal to each other...
+	At this point, we just set the <a href="#roche">Roche</a> and <a href="pet">heat</a> equations equal to each other...
 </p>
 $$a = R_M \sqrt[3]{2 \frac {\rho_M} {\rho_m}}$$
 $$T_{eq} = T_{star} \sqrt{\frac {R_M}{2a}} \sqrt[4]{1-A}$$
@@ -508,6 +508,22 @@ $$
 <p>
 	Which is slightly off (I might've made a mistake somewhere), but you get the idea...
 </p>
+
+<h2 id="Equations">Equations</h2>
+
+<ul>
+	<li id="density">DENSITY $$ \rho = \frac {M}{\frac{4}{3} \pi r^3} $$</li>
+	<li id="surfacegravity">SURFACE GRAVITY $$ g = \frac {GM}{r^2}$$</li>
+	<li id="roche">ROCHE $$a = R_M \sqrt[3]{2 \frac {\rho_M} {\rho_m}}$$</li>
+	<li id="pet">PLANETARY EQUILIBRIUM TEMPERATURE $$T_{eq} = T_{star} \sqrt{\frac {R_M}{2a}} \sqrt[4]{1-A}$$</li>
+	<li id="wien">WIEN'S DISPLACEMENT LAW $$ \lambda_{peak} = \frac{b}{T}$$</li>
+	<li id="startemperature">STAR TEMPERATURE APPX $$ T_{star} = T_\odot \sqrt{\frac {M_{star}} {M_\odot}}$$</li>
+	<li id="starradius">STAR RADIUS APPX $$ R_{star} = R_\odot \frac {M_{star}} {M_\odot}$$</li>
+	<li id="starlifespan">STAR LIFESPAN APPX $$ t_{star} = t_\odot \sqrt{\frac {M_\odot^5}{M_{star}^5}}$$</li>
+	<li id="tidallock">TIDAL LOCKING TIMEFRAME $$ t_{lock} \approx \frac {a^6 r} {mM^2} \cdot 5\cdot10^{28} \mathrm{\frac {kg^3 s} {m^7}}$$</li>
+	<li id="moleculeescape">MINIMUM ESCAPE VELOCITY TO CONTAIN MOLECULE $$ v_e = \frac {T} {\sqrt {M}} \cdot 50 \mathrm{\frac {m} {s}}$$</li>
+	<li id="margot">MARGOT'S PLANETARY DISCRIMINANT $$ &Pi; = \frac {807\frac{m}{M_\oplus}} {\left(\frac{M}{M_\odot}\right)^{\frac{5}{2}} \left(\frac{a}{\mathrm{au}}\right)^{\frac{9}{8}}} $$</li>
+</ul>
 
 <div id="bottom"></div>
 </html>
