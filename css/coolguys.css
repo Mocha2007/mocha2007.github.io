@@ -1,0 +1,31 @@
+span[class^=tag]{font-family: monospace;border-radius:8px;padding:2px}
+/* A stronomy */
+.taga::before{content:"A";}
+.taga{background-color:black;color:white;}
+.taga:hover::after{content:"stronomy";}
+/* C onlangs */
+.tagc::before{content:"C";}
+.tagc{background-color:green;color:lime;}
+.tagc:hover::after{content:"onlangs/worlds";}
+/* F un */
+.tagf::before{content:"F";}
+.tagf{background-color:purple;color:magenta;}
+.tagf:hover::after{content:"un";}
+/* L inguistics */
+/* H istory */
+.tagh::before{content:"H";}
+.tagh{background-color:#840;color:orange;}
+.tagh:hover::after{content:"istory";}
+/* L inguistics */
+.tagl::before{content:"L";}
+.tagl{background-color:olive;color:yellow;}
+.tagl:hover::after{content:"inguistics";}
+/* M ath */
+.tagm::before{content:"M";}
+.tagm{background-color:blue;color:skyblue;}
+.tagm:hover::after{content:"ath";}
+/* T ech */
+.tagt::before{content:"T";}
+.tagt{background-color:black;color:lime;}
+.tagt:hover::after{content:"ech";}
+}
