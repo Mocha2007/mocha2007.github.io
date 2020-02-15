@@ -1,11 +1,7 @@
-html{color:#000;font-family:Consolas, "Courier New", monospace;margin:40px auto;}
-h1{font-size:36px;text-shadow:0px 0px 0px #000;margin:10px;}
-a{color:#000;text-decoration:underline;}
-b,.f,.m,.sub{color:#000}
-#nav{display:none;}
-#top,#bottom{text-align:center;}
-#m{filter:brightness(0);}
+a,html,.highlight,.f,.m,.sub,.super,.y,.y2{color:#000;}
+h1,h2{text-shadow:none;}
 .new{list-style-image:url('img/newprint.png');}
 .up{list-style-image:url('img/upprint.png');}
-h3,p{text-indent:45px;}
-h3::before,h3::after{content:'~~~';}
+abbr{animation:none;border-bottom:1px solid black;}
+#m{filter:brightness(0);}
+#nav{display:none;}
