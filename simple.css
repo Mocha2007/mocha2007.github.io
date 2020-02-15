@@ -1,33 +1,84 @@
-body{font-family:Open Sans,sans-serif;margin:40px auto;max-width:700px;line-height:1.6;font-size:18px;color:#444;padding:0 10px;background-color:#ccc;text-align:justify;}
-p{text-indent:45px;}
-table{border-collapse:collapse;margin:auto;}
-th,td{border:2px solid #333;text-align:center;}
-#nav{position:fixed;top:0px;left:0px;padding:10px;background:#999;border:2px solid #444;color:#222;overflow-y:auto;max-height:940px;}
+body{
+	font-family: Open Sans, sans-serif;
+	margin: 40px auto;
+	max-width: 700px;
+	line-height: 1.6;
+	font-size: 18px;
+	color: #444;
+	padding: 0 10px;
+	background-color: #ccc;
+	text-align: justify;
+}
+p{
+	text-indent: 45px;
+}
+table{
+	border-collapse: collapse;
+	margin: auto;
+}
+th, td{
+	border: 2px solid #333;
+	text-align: center;
+}
+details{
+	line-height: 17px;
+}
+details a{
+	font-size: 16px;
+}
+h1, h2{
+	text-align: center;
+}
+q{
+	font-style: italic;
+	display: inline-block;
+	margin: 0em 3em;
+}
+q::before{
+	content: '“';
+}
+q::after{
+	content: '”';
+}
+abbr{
+	text-decoration: none;
+	animation: strobe 1s linear alternate infinite;
+	cursor: help;
+}
+.desc{
+	text-align: center;
+	font-style: italic;
+}
 .nav2::before{content:'┕';}
 .nav3::before{content:'┃┕';}
 .nav4::before{content:'┃┃┕';}
 .nav5::before{content:'┃┃┃┕';}
 .nav6::before{content:'┃┃┃┃┕';}
-details{line-height:17px;}
-details a{font-size:16px;}
-#top,#bottom{text-align:center;}
-h1,h2,.desc{text-align:center;}
-q,.desc{font-style:italic;}
-q{display:inline-block;margin:0em 3em;}
-q::before{content:'“';}
-q::after{content:'”';}
-abbr{text-decoration:none;animation:strobe 1s linear alternate infinite;cursor: help;}
+.fire{
+	animation:flame .3s linear infinite,smoke 3s ease-in-out infinite;
+	/*bg*/
+	background-color:#000;
+	box-shadow:0px 0px 2px 2px #000000;
+	border-radius:6px;
+}
+#nav{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	padding: 10px;
+	background: #999;
+	border: 2px solid #444;
+	color: #222;
+	overflow-y: auto;
+	max-height: 940px;
+}
+#top, #bottom{
+	text-align:center;
+}
+/* Text Animations */
 @keyframes strobe{
 	0% {border-bottom:1px solid transparent;}
 	100% {border-bottom:1px solid black;}
-}
-/* Text Animations */
-.fire{
-		animation:flame .3s linear infinite,smoke 3s ease-in-out infinite;
-		/*bg*/
-		background-color:#000;
-		box-shadow:0px 0px 2px 2px #000000;
-		border-radius:6px;
 }
 @keyframes flame{
 	25% {color:#f00;}
