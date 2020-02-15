@@ -1,0 +1,14 @@
+li.current{
+	font-style: normal;
+	font-weight: bold;
+}
+li.former{
+	font-style: italic;
+}
+li.heir{
+	font-weight: normal;
+}
+ul.succession, ul.succession * ul{
+	list-style-type: none;
+	padding-left:20px;
+}
