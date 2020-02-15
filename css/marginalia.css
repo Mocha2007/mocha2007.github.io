@@ -1,0 +1,44 @@
+/* https://stackoverflow.com/questions/6385293/simple-two-column-html-layout-without-using-tables/6385310#6385310 */
+.wrap {
+	width:700px;
+	margin:0 auto;
+}
+.text {
+	float:left;
+	width:70%;
+}
+.note,.compare,.spacing {
+	float:right;
+	width:25%;
+}
+/* Me */
+p{margin:0px;}
+.spacing pre{margin:0px;}
+.term{
+	font-weight:bold;
+	color:#08F;
+}
+.compare a{
+	font-weight:bold;
+	color:#0C0;
+}
+.note,.compare,.spacing{
+	font-family:Serif;
+	padding-left: 6px;
+	padding-right: 6px;
+	font-size:14px;
+}
+.note{
+    background-color: #DEF;
+	border-left: 6px solid #08F;
+}
+.compare{
+    background-color: #DFD;
+	border-left: 6px solid #0C0;
+}
+.spacing{
+	border-left: 6px dotted #888;
+}
+.spacing pre{
+	background-color: #ccc;
+}

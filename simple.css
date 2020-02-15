@@ -120,6 +120,31 @@ table.lefttable td{
 	/* rotate something 90 degrees clockwise */
 	transform:rotate(90deg);
 }
+.tintblue{
+	background-color: #ccf;
+	color: #006;
+	border: 2px solid #006;
+}
+.tintsky{
+	background-color: #cef;
+	color: #08f;
+	border: 2px solid #08f;
+}
+.tintgreen{
+	background-color: #cfc;
+	color: #060;
+	border: 2px solid #060;
+}
+.tintred{
+	background-color: #fcc;
+	color: #c00;
+	border: 2px solid #600;
+}
+.tintyellow{
+	background-color: #ffc;
+	color: #660;
+	border: 2px solid #660;
+}
 .title{
 	/* titles of books, films, etc. */
 	font-style: italic;
