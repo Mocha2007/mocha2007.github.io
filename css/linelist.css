@@ -32,3 +32,7 @@ ul.linelist li:last-child:before {
     /* last li's line */
    height: 6px; /* shorten the line so it goes only up to the bullet. Is equal to first-child:before's top */
 }
+
+ul.linelist li img {
+	vertical-align: middle;
+}
