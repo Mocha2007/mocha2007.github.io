@@ -1,0 +1,42 @@
+#top {
+	text-align: center;
+}
+#bigmap {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+#mapimg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: white;
+}
+.dot:hover {
+	animation:dothover 0.5s linear alternate infinite;
+}
+@keyframes dothover{
+	0% {opacity: 1;}
+	100% {opacity: 0.2;}
+}
+input {
+	font-family: monospace;
+}
+.true, .false {
+	font-weight: bold;
+}
+.true {
+	color: green!important;
+}
+.false {
+	color: red!important;
+}
+#mapinfo tr td{
+	font-family: monospace;
+	color: black;
+	background-color: AliceBlue;
+}
+#mapinfo tr td:nth-child(1), #mapinfo tr td:nth-child(2){
+	font-family: serif;
+	background-color: White;
+}
