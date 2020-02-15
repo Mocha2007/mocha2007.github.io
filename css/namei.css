@@ -1,0 +1,70 @@
+body{max-width:none;}
+div.main{max-width:700px;margin:0 auto;}
+img{display:block;margin:0 auto;}
+.fire{
+	animation:flame .3s linear infinite,smoke 3s ease-in-out infinite;
+	/*bg*/
+	background-color:#000;
+	box-shadow:0px 0px 2px 2px #000000;
+	border-radius:6px;
+}
+.info{float:right;margin-left:10px;}
+table.mid{margin-left:auto;margin-right: auto;}
+.navchart{
+	font-family: Consolas, "Courier New", monospace;
+	line-height: 1;
+	background: black;
+	color: silver;
+}
+.navchart a{
+	color: white;
+}
+.navchart font{
+	font-size: 24px;
+	letter-spacing: -3px;
+}
+.navchart td, .navchart th{
+	border: none;
+}
+.navchart td{
+	padding: 5px;
+}
+.wider{
+	display: inline-block;
+}
+.navchart_star{
+	transform: scale(2.25,1);
+	margin-left: 33px;
+	margin-right: 35px;
+}
+.navchart_gg{
+	transform: scale(1.25,1);
+	margin-left: 22px;
+}
+.navchart_ig{
+	padding-bottom: 5px;
+}
+.navchart_tiny{
+	padding-bottom: 10px;
+}
+#eclipse tr:nth-child(odd){
+  background-color: #ccf;
+}
+#eclipse tr:nth-child(even){
+  background-color: #fcc;
+}
+#eclipse tr:nth-child(1){
+  background-color: #aaa;
+}
+/* fire animation */
+@keyframes flame{
+	25% {color:#f00;}
+	50% {color:#fc0;}
+	75% {color:#f40;}
+	100% {color:#f80;}
+}
+@keyframes smoke{
+	0% {text-shadow:0px 0px 0px #888;}
+	50% {text-shadow:5px -20px 1px rgba(8,8,8,.9);}
+	100% {text-shadow:40px -40px 10px transparent;}
+}
