@@ -123,27 +123,30 @@ table.lefttable td{
 .tintblue{
 	background-color: #ccf;
 	color: #006;
-	border: 2px solid #006;
-}
-.tintsky{
-	background-color: #cef;
-	color: #08f;
-	border: 2px solid #08f;
+	border: 1px solid #006;
 }
 .tintgreen{
 	background-color: #cfc;
 	color: #060;
-	border: 2px solid #060;
+	border: 1px solid #060;
 }
 .tintred{
 	background-color: #fcc;
 	color: #c00;
-	border: 2px solid #600;
+	border: 1px solid #600;
+}
+.tintsky{
+	background-color: #cef;
+	color: #08f;
+	border: 1px solid #08f;
 }
 .tintyellow{
 	background-color: #ffc;
 	color: #660;
-	border: 2px solid #660;
+	border: 1px solid #660;
+}
+td.tintblue, td.tintgreen, td.tintred, td.tintsky, td.tintyellow{
+	border-width: 2px;
 }
 .title{
 	/* titles of books, films, etc. */

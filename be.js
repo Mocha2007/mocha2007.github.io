@@ -53,7 +53,7 @@ function tabledelta(){
 				aft = Number(child.children[3].innerHTML)/100;
 				child.children[2].innerHTML = delta(bef,aft);
 				if (aft > bef){
-					child.className = "green";
+					child.className = "tintgreen";
 				}
 			}
 		}
