@@ -46,6 +46,7 @@ abbr{
 	cursor: help;
 }
 .desc{
+	/* descriptions below images, charts, etc. */
 	text-align: center;
 	font-style: italic;
 }
