@@ -15,11 +15,11 @@ progress[role]:after {
 
 /* Firefox and Polyfill */
 progress {
-	background: url("img/progress0.png"); /* !important */
+	background: url("../img/progress0.png"); /* !important */
 }
 /* Chrome */
 progress::-webkit-progress-bar {
-	background: url("img/progress0.png");
+	background: url("../img/progress0.png");
 }
 
 /*
@@ -28,13 +28,13 @@ progress::-webkit-progress-bar {
 
 /* Firefox */
 progress::-moz-progress-bar {
-	background: url("img/progress1.png");
+	background: url("../img/progress1.png");
 }
 /* Chrome */
 progress::-webkit-progress-value {
-	background: url("img/progress1.png");
+	background: url("../img/progress1.png");
 }
 /* Polyfill */
 progress[aria-valuenow]:before {
-	background: url("img/progress1.png");
+	background: url("../img/progress1.png");
 }
