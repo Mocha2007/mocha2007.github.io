@@ -79,6 +79,12 @@ img.center{
 	display: block;
 	margin: 0 auto;
 }
+div.colorbar{
+	/* used to create a bar (to be colored by other tags) across a div */
+	color: white;
+	text-shadow: 1px 1px 2px black;
+	padding: 10px;
+}
 .dead::after{
 	content:'†';
 }
