@@ -1,0 +1,16 @@
+/* for wals */
+#walstable td:nth-of-type(2n+1){text-align:left;}
+.wals{width:28px;}
+.bla{background:#000;}
+.blu{background:#00d;}
+.bri{background:#a00;}
+.gre{background:#0f0;}
+.gry{background:#ccc;}
+.ora{background:#f60;}
+.pin{background:#f6f;}
+.pur{background:#909;}
+.red{background:#d00;}
+.sky{background:#99f;}
+.tan{background:#ffc;}
+.whi{background:#fff;}
+.yel{background:#ff0;}

@@ -19,6 +19,7 @@
 	<meta name="msapplication-config" content="IEconfig.xml">
 	<link rel="alternate" type="application/atom+xml" title="Mocha's Site Feed" href="https://github.com/Mocha2007/mocha2007.github.io/commits/master.atom"/>
 	<link href=simple.css type="text/css" rel="stylesheet" title="Light">
+	<link href="css/interpreter.css" type="text/css" rel="stylesheet">
 	<link href=dark.css type="text/css" rel="alternate stylesheet" title="Dark"> 
 	<link href=blend.css type="text/css" rel="alternate stylesheet" title="Blend">
 	<link href=print.css type="text/css" rel="stylesheet" media="print">
@@ -29,27 +30,6 @@
 	<title>Natural Language Calculator</title>
 	<script src="toc.js"></script>
 	<script src="natlangcalc.js"></script>
-	<style>
-		#program{text-align:center;}
-		.pointed{color:#080;background-color: #CEC;font-weight:bold;}
-		#console{padding-left:9px;padding-right:9px;}
-		.ci{color:#48F;}
-		.cw{color:#FC0;}
-		.ce{color:#F44;}
-		.co{color:#8E8;}
-		th,.cf{color:#F8F;}
-		th:hover,.cf:hover{animation:glow 0.5s linear alternate infinite;}
-		.cimg{max-width:642px;}
-		pre summary{text-indent:64px;}
-		th,td{text-align:left;font-family:monospace;background-color:#000;}
-		td{color:#ccc;}
-		.see{color:#888;font-style:italic;}
-		.see::before{content:'see ';}
-		@keyframes glow{
-			0% {text-shadow:0 0 7px #000;}
-			100% {text-shadow:0 0 7px #F8F;}
-		}
-	</style>
 </head>
 
 <div id="nav"></div>
@@ -73,34 +53,34 @@
 
 <h2 id='Dictionary'>Dictionary</h2>
 
-<table>
+<table class="code pink">
 	<tr>
 		<th>-fold</th>
 		<td>multiply top of stack by n</td>
 	</tr>
 	<tr>
 		<th>a</th>
-		<td><span class='see'>one</span></td>
+		<td class='see'>one</td>
 	</tr>
 	<tr>
 		<th>ace</th>
-		<td><span class='see'>one</span></td>
+		<td class='see'>one</td>
 	</tr>
 	<tr>
 		<th>all</th>
-		<td><span class='see'>sum</span></td>
+		<td class='see'>sum</td>
 	</tr>
 	<tr>
 		<th>also</th>
-		<td><span class='see'>plus</span></td>
+		<td class='see'>plus</td>
 	</tr>
 	<tr>
 		<th>an</th>
-		<td><span class='see'>one</span></td>
+		<td class='see'>one</td>
 	</tr>
 	<tr>
 		<th>and</th>
-		<td><span class='see'>plus</span></td>
+		<td class='see'>plus</td>
 	</tr>
 	<tr>
 		<th>baker's</th>
@@ -116,7 +96,7 @@
 	</tr>
 	<tr>
 		<th>by</th>
-		<td><span class='see'>times</span></td>
+		<td class='see'>times</td>
 	</tr>
 	<tr>
 		<th>cent</th>
@@ -124,7 +104,7 @@
 	</tr>
 	<tr>
 		<th>couple</th>
-		<td><span class='see'>doubled</span></td>
+		<td class='see'>doubled</td>
 	</tr>
 	<tr>
 		<th>decimated</th>
@@ -132,7 +112,7 @@
 	</tr>
 	<tr>
 		<th>deuce</th>
-		<td><span class='see'>two</span></td>
+		<td class='see'>two</td>
 	</tr>
 	<tr>
 		<th>divides</th>
@@ -152,7 +132,7 @@
 	</tr>
 	<tr>
 		<th>dust</th>
-		<td><span class='see'>zero</span></td>
+		<td class='see'>zero</td>
 	</tr>
 	<tr>
 		<th>e</th>
@@ -180,11 +160,11 @@
 	</tr>
 	<tr>
 		<th>false</th>
-		<td><span class='see'>zero</span></td>
+		<td class='see'>zero</td>
 	</tr>
 	<tr>
 		<th>fewer</th>
-		<td><span class='see'>minus</span></td>
+		<td class='see'>minus</td>
 	</tr>
 	<tr>
 		<th>fifteen</th>
@@ -213,7 +193,7 @@
 	</tr>
 	<tr>
 		<th>great</th>
-		<td><span class='see'>dozen</span></td>
+		<td class='see'>dozen</td>
 	</tr>
 	<tr>
 		<th>gross</th>
@@ -225,7 +205,7 @@
 	</tr>
 	<tr>
 		<th>halve</th>
-		<td><span class='see'>halved</span></td>
+		<td class='see'>halved</td>
 	</tr>
 	<tr>
 		<th>halved</th>
@@ -237,15 +217,15 @@
 	</tr>
 	<tr>
 		<th>in</th>
-		<td><span class='see'>over</span></td>
+		<td class='see'>over</td>
 	</tr>
 	<tr>
 		<th>into</th>
-		<td><span class='see'>over</span></td>
+		<td class='see'>over</td>
 	</tr>
 	<tr>
 		<th>is</th>
-		<td><span class='see'>equals</span></td>
+		<td class='see'>equals</td>
 	</tr>
 	<tr>
 		<th>isn't</th>
@@ -253,7 +233,7 @@
 	</tr>
 	<tr>
 		<th>less</th>
-		<td><span class='see'>minus</span></td>
+		<td class='see'>minus</td>
 	</tr>
 	<tr>
 		<th>long</th>
@@ -277,11 +257,11 @@
 	</tr>
 	<tr>
 		<th>modulo</th>
-		<td><span class='see'>mod</span></td>
+		<td class='see'>mod</td>
 	</tr>
 	<tr>
 		<th>more</th>
-		<td><span class='see'>plus</span></td>
+		<td class='see'>plus</td>
 	</tr>
 	<tr>
 		<th>myriad</th>
@@ -293,7 +273,7 @@
 	</tr>
 	<tr>
 		<th>negative</th>
-		<td><span class='see'>negated</span></td>
+		<td class='see'>negated</td>
 	</tr>
 	<tr>
 		<th>nine</th>
@@ -301,7 +281,7 @@
 	</tr>
 	<tr>
 		<th>niner</th>
-		<td><span class='see'>nine</span></td>
+		<td class='see'>nine</td>
 	</tr>
 	<tr>
 		<th>nineteen</th>
@@ -313,15 +293,15 @@
 	</tr>
 	<tr>
 		<th>nothing</th>
-		<td><span class='see'>zero</span></td>
+		<td class='see'>zero</td>
 	</tr>
 	<tr>
 		<th>of</th>
-		<td><span class='see'>times</span></td>
+		<td class='see'>times</td>
 	</tr>
 	<tr>
 		<th>on</th>
-		<td><span class='see'>plus</span></td>
+		<td class='see'>plus</td>
 	</tr>
 	<tr>
 		<th>once</th>
@@ -333,7 +313,7 @@
 	</tr>
 	<tr>
 		<th>onto</th>
-		<td><span class='see'>plus</span></td>
+		<td class='see'>plus</td>
 	</tr>
 	<tr>
 		<th>over</th>
@@ -341,7 +321,7 @@
 	</tr>
 	<tr>
 		<th>pair</th>
-		<td><span class='see'>doubled</span></td>
+		<td class='see'>doubled</td>
 	</tr>
 	<tr>
 		<th>pi</th>
@@ -393,7 +373,7 @@
 	</tr>
 	<tr>
 		<th>small</th>
-		<td><span class='see'>short</span></td>
+		<td class='see'>short</td>
 	</tr>
 	<tr>
 		<th>squared</th>
@@ -405,7 +385,7 @@
 	</tr>
 	<tr>
 		<th>surd</th>
-		<td><span class='see'>root</span></td>
+		<td class='see'>root</td>
 	</tr>
 	<tr>
 		<th>ten</th>
@@ -413,7 +393,7 @@
 	</tr>
 	<tr>
 		<th>that's</th>
-		<td><span class='see'>equals</span></td>
+		<td class='see'>equals</td>
 	</tr>
 	<tr>
 		<th>thousand</th>
@@ -437,11 +417,11 @@
 	</tr>
 	<tr>
 		<th>to</th>
-		<td><span class='see'>over</span></td>
+		<td class='see'>over</td>
 	</tr>
 	<tr>
 		<th>too</th>
-		<td><span class='see'>plus</span></td>
+		<td class='see'>plus</td>
 	</tr>
 	<tr>
 		<th>trillion</th>
@@ -453,11 +433,11 @@
 	</tr>
 	<tr>
 		<th>true</th>
-		<td><span class='see'>one</span></td>
+		<td class='see'>one</td>
 	</tr>
 	<tr>
 		<th>twain</th>
-		<td><span class='see'>two</span></td>
+		<td class='see'>two</td>
 	</tr>
 	<tr>
 		<th>twelfty</th>
@@ -477,7 +457,7 @@
 	</tr>
 	<tr>
 		<th>unity</th>
-		<td><span class='see'>one</span></td>
+		<td class='see'>one</td>
 	</tr>
 	<tr>
 		<th>two</th>

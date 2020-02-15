@@ -1,0 +1,52 @@
+/* for the various online interpreters of languages I have */
+.ce{
+	color: #F44;
+}
+.cf{
+	color: #F8F;
+}
+.ci{
+	color: #48F;
+}
+.cimg{
+	max-width: 642px;
+}
+.co{
+	color: #8E8;
+}
+.cw{
+	color: #FC0;
+}
+table.pink th, table.pink td{
+	text-align: left;
+}
+table.pink th{
+	color:#F8F;
+}
+table.pink th:hover{
+	animation: glow 0.5s linear alternate infinite;
+}
+table.pink td.see{
+	color: #888;
+	font-style: italic;
+}
+table.pink td.see::before{
+	content: 'see ';
+}
+.pointed{
+	color: #080;
+	background-color: #CEC;
+	font-weight: bold;
+}
+#console{
+	padding-left: 9px;
+	padding-right: 9px;
+	text-align: left;
+}
+#program{
+	text-align: center;
+}
+@keyframes glow{
+	0% {text-shadow:0 0 7px #000;}
+	100% {text-shadow:0 0 7px #F8F;}
+}

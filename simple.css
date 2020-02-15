@@ -87,6 +87,12 @@ img.center{
 	text-align: center;
 	font-style: italic;
 }
+dl.dictionary dt{
+	border-top: 2px solid #444;
+}
+dl.dictionary img{
+	float: right;
+}
 .fliph{
 	transform:scale(-1, 1);
 }
@@ -95,6 +101,9 @@ img.center{
 }
 table.imagetable tr td{
 	border: none;
+}
+table.lefttable td{
+	text-align: left;
 }
 .invisible{
 	display: none;
