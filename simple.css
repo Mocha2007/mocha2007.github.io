@@ -12,6 +12,13 @@ body{
 p{
 	text-indent: 45px;
 }
+pre, .code{
+	/* code snippets */
+	font-family: monospace;
+	background-color: #000;
+	color: #ccc;
+	text-align: left;
+}
 table{
 	border-collapse: collapse;
 	margin: auto;
@@ -19,6 +26,10 @@ table{
 th, td{
 	border: 2px solid #333;
 	text-align: center;
+}
+td ul, th ul{
+	text-align: left;
+	padding-right: 20px;
 }
 details{
 	line-height: 17px;
@@ -45,9 +56,72 @@ abbr{
 	animation: strobe 1s linear alternate infinite;
 	cursor: help;
 }
+/* special link images */
+a[href^="http://tvt"] {
+	background: transparent url('img/tvt.png') no-repeat right center;
+	padding-right: 20px;
+	white-space: nowrap;
+}
+a[href^="https://en.wiki"] {
+	background: transparent url('img/wp.png') no-repeat right center;
+	padding-right: 20px;
+	white-space: nowrap;
+}
+/* classes */
+.also, .note{
+	/* see also: this
+	used for notes */
+	font-style: italic;
+	color: #666;
+}
+img.center{
+	/* used to center images horizontally */
+	display: block;
+	margin: 0 auto;
+}
+.dead::after{
+	content:'†';
+}
 .desc{
 	/* descriptions below images, charts, etc. */
 	text-align: center;
+	font-style: italic;
+}
+.fliph{
+	transform:scale(-1, 1);
+}
+.flipv{
+	transform:scale(1, -1);
+}
+table.imagetable tr td{
+	border: none;
+}
+.invisible{
+	display: none;
+}
+.rotaround{
+	/* rotate something 180 degrees */
+	transform:rotate(180deg);
+}
+.rotccw{
+	/* rotate something 270 degrees clockwise */
+	transform:rotate(270deg);
+}
+.rotcw{
+	/* rotate something 90 degrees clockwise */
+	transform:rotate(90deg);
+}
+.title{
+	/* titles of books, films, etc. */
+	font-style: italic;
+}
+div.titlelinks a{
+	/* div class where ALL links are titles;
+	easier than using .title over and over*/
+	font-style:italic;
+}
+.trans{
+	/* translation/gloss */
 	font-style: italic;
 }
 .nav2::before{content:'┕';}
