@@ -8,7 +8,7 @@ var life_data = [
 		'name': 'aves',
 		'rank': 'class',
 		'parent': 'chordata',
-		'desc': 'Birds',
+		'desc': 'Bird',
 	},
 	{
 		'name': 'chordata',
@@ -30,13 +30,14 @@ var life_data = [
 		'name': 'gallus gallus',
 		'rank': 'species',
 		'parent': 'gallus',
+		'desc': 'Red Junglefowl',
 	},
 	{
 		'name': 'gallus gallus domesticus',
 		'rank': 'subspecies',
 		'parent': 'gallus gallus',
 		'important': true,
-		'desc': 'Chickens',
+		'desc': 'Chicken',
 	},
 	{
 		'name': 'hominidae',
@@ -53,7 +54,7 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'homo',
 		'important': true,
-		'desc': 'Humans',
+		'desc': 'Human',
 	},
 	{
 		'name': 'life',
