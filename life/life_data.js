@@ -447,6 +447,18 @@ var life_data = [
 		'parent': 'angiosperms',
 	},
 	{
+		'name': 'malus',
+		'rank': 'genus',
+		'parent': 'rosaceae',
+	},
+	{
+		'name': 'malus domestica',
+		'rank': 'species',
+		'parent': 'malus',
+		'important': true,
+		'desc': 'Apple',
+	},
+	{
 		'name': 'mammalia',
 		'rank': 'class',
 		'parent': 'chordata',
@@ -684,6 +696,16 @@ var life_data = [
 		'name': 'rodentia',
 		'rank': 'order',
 		'parent': 'glires',
+	},
+	{
+		'name': 'rosaceae',
+		'rank': 'family',
+		'parent': 'rosales',
+	},
+	{
+		'name': 'rosales',
+		'rank': 'order',
+		'parent': 'eudicots',
 	},
 	{
 		'name': 'serpentes',
