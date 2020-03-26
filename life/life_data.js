@@ -114,6 +114,17 @@ var life_data = [
 		'desc': 'Bamboo',
 	},
 	{
+		'name': 'betula',
+		'rank': 'genus',
+		'parent': 'betulaceae',
+		'desc': 'Birch',
+	},
+	{
+		'name': 'betulaceae',
+		'rank': 'family',
+		'parent': 'fagales',
+	},
+	{
 		'name': 'bos',
 		'rank': 'genus',
 		'parent': 'bovidae',
@@ -342,6 +353,22 @@ var life_data = [
 		'name': 'eukaryota',
 		'rank': 'domain',
 		'parent': 'life',
+	},
+	{
+		'name': 'fagaceae',
+		'rank': 'family',
+		'parent': 'fagales',
+	},
+	{
+		'name': 'fagales',
+		'rank': 'order',
+		'parent': 'eudicots',
+	},
+	{
+		'name': 'fagus',
+		'rank': 'genus',
+		'parent': 'fagaceae',
+		'desc': 'Beech',
 	},
 	{
 		'name': 'felidae',
@@ -720,6 +747,12 @@ var life_data = [
 		'desc': 'Parrot',
 	},
 	{
+		'name': 'quercus',
+		'rank': 'genus',
+		'parent': 'fagaceae',
+		'desc': 'Oak',
+	},
+	{
 		'name': 'reptilia',
 		'rank': 'class',
 		'parent': 'chordata',
@@ -798,6 +831,12 @@ var life_data = [
 		'name': 'theropoda',
 		'rank': 'clade',
 		'parent': 'archosauria',
+	},
+	{
+		'name': 'triticum',
+		'rank': 'genus',
+		'parent': 'poaceae',
+		'desc': 'Wheat',
 	},
 	{
 		'name': 'tyrannosauridae',
