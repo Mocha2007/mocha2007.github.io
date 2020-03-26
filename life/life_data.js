@@ -66,6 +66,12 @@ var life_data = [
 		'desc': 'Bird',
 	},
 	{
+		'name': 'bambusoideae',
+		'rank': 'subfamily',
+		'parent': 'poaceae',
+		'desc': 'Bamboo',
+	},
+	{
 		'name': 'bos',
 		'rank': 'genus',
 		'parent': 'bovidae',
@@ -149,6 +155,22 @@ var life_data = [
 		'rank': 'order',
 		'parent': 'aves',
 		'desc': 'Pigeon',
+	},
+	{
+		'name': 'commelinids',
+		'rank': 'clade',
+		'parent': 'plantae',
+	},
+	{
+		'name': 'curcuma',
+		'rank': 'genus',
+		'parent': 'zingiberaceae',
+	},
+	{
+		'name': 'curcuma longa',
+		'rank': 'species',
+		'parent': 'curcuma',
+		'desc': 'Turmeric',
 	},
 	{
 		'name': 'cygnus',
@@ -330,6 +352,17 @@ var life_data = [
 		'parent': 'theropoda',
 	},
 	{
+		'name': 'oryza',
+		'rank': 'genus',
+		'parent': 'poaceae',
+	},
+	{
+		'name': 'oryza sativa',
+		'rank': 'species',
+		'parent': 'oryza',
+		'desc': 'Asian Rice',
+	},
+	{
 		'name': 'ovis',
 		'rank': 'genus',
 		'parent': 'caprinae',
@@ -438,7 +471,7 @@ var life_data = [
 	{
 		'name': 'poales',
 		'rank': 'order',
-		'parent': 'plantae',
+		'parent': 'commelinids',
 	},
 	{
 		'name': 'poaceae',
@@ -530,5 +563,15 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'vulpes',
 		'desc': 'Red Fox',
+	},
+	{
+		'name': 'zingiberaceae',
+		'rank': 'family',
+		'parent': 'zingiberales',
+	},
+	{
+		'name': 'zingiberales',
+		'rank': 'order',
+		'parent': 'commelinids',
 	},
 ];
