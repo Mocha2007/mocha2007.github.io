@@ -11,17 +11,29 @@ var objects = {};
 
 function main(){
 	// first, add everything in life_data to objects
-	for (var key of Object.keys(life_data)){
+	for (var i = 0; i < life_data.length; i++){
+		// create DOM object
 		var details = document.createElement("details");
-		objects[key] = details;
+		var rank = life_data[i].rank;
+		details.classList.add(rank);
+		var name = life_data[i].name;
+		objects[name] = details;
+		// title
 		var title = document.createElement("summary");
+		title.innerHTML = name.title();
 		details.appendChild(title);
-		title.innerHTML = key.title();
+		// desc
+		if (life_data[i].hasOwnProperty('desc')){
+			var desc = document.createElement("p");
+			desc.innerHTML = life_data[i].desc;
+			details.appendChild(desc);
+		}
 	}
 	// next, nest everything accordingly. add * to root.
-	for (var key of Object.keys(life_data)){
-		var parent_id = life_data[key];
-		var child = objects[key];
+	for (var i = 0; i < life_data.length; i++){
+		var name = life_data[i].name;
+		var parent_id = life_data[i].parent;
+		var child = objects[name];
 		if (parent_id === '*'){
 			var parent = document.getElementById('root');
 		}
