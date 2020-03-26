@@ -60,6 +60,16 @@ var life_data = [
 		'parent': 'aves',
 	},
 	{
+		'name': 'apiaceae',
+		'rank': 'family',
+		'parent': 'apiales',
+	},
+	{
+		'name': 'apiales',
+		'rank': 'order',
+		'parent': 'eudicots',
+	},
+	{
 		'name': 'apidae',
 		'rank': 'family',
 		'parent': 'hymenoptera',
@@ -160,6 +170,17 @@ var life_data = [
 		'parent': 'bovidae',
 	},
 	{
+		'name': 'capsicum',
+		'rank': 'genus',
+		'parent': 'solanaceae',
+	},
+	{
+		'name': 'capsicum annuum',
+		'rank': 'species',
+		'parent': 'capsicum',
+		'desc': 'Peppers, incl. Bell and Jalape&ntilde;os',
+	},
+	{
 		'name': 'carnivora',
 		'rank': 'order',
 		'parent': 'laurasiatheria',
@@ -183,6 +204,12 @@ var life_data = [
 		'desc': 'During some period of their life cycle, chordates possess a notochord, a dorsal nerve cord, pharyngeal slits, an endostyle, and a post-anal tail: these five anatomical features define this phylum.'
 	},
 	{
+		'name': 'cinnamomum',
+		'rank': 'genus',
+		'parent': 'lauraceae',
+		'desc': 'Cinnamon',
+	},
+	{
 		'name': 'columbiformes',
 		'rank': 'order',
 		'parent': 'aves',
@@ -192,6 +219,17 @@ var life_data = [
 		'name': 'commelinids',
 		'rank': 'clade',
 		'parent': 'monocots',
+	},
+	{
+		'name': 'cuminum',
+		'rank': 'genus',
+		'parent': 'apiaceae',
+	},
+	{
+		'name': 'cuminum cyminum',
+		'rank': 'species',
+		'parent': 'cuminum',
+		'desc': 'Cumin',
 	},
 	{
 		'name': 'curcuma',
@@ -357,6 +395,16 @@ var life_data = [
 		'parent': 'eudicots',
 	},
 	{
+		'name': 'lauraceae',
+		'rank': 'family',
+		'parent': 'laurales',
+	},
+	{
+		'name': 'laurales',
+		'rank': 'order',
+		'parent': 'magnoliids',
+	},
+	{
 		'name': 'laurasiatheria',
 		'rank': 'clade',
 		'parent': 'mammalia',
@@ -371,6 +419,16 @@ var life_data = [
 		'name': 'life',
 		'rank': 'life',
 		'parent': '*',
+	},
+	{
+		'name': 'magnoliales',
+		'rank': 'order',
+		'parent': 'magnoliids',
+	},
+	{
+		'name': 'magnoliids',
+		'rank': 'clade',
+		'parent': 'angiosperms',
 	},
 	{
 		'name': 'mammalia',
@@ -399,6 +457,22 @@ var life_data = [
 		'desc': 'House Mouse',
 	},
 	{
+		'name': 'myristica',
+		'rank': 'genus',
+		'parent': 'myristicaceae',
+	},
+	{
+		'name': 'myristica fragrans',
+		'rank': 'species',
+		'parent': 'myristica',
+		'desc': 'Nutmeg',
+	},
+	{
+		'name': 'myristicaceae',
+		'rank': 'family',
+		'parent': 'magnoliales',
+	},
+	{
 		'name': 'ocimum',
 		'rank': 'genus',
 		'parent': 'lamiaceae',
@@ -408,6 +482,17 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'ocimum',
 		'desc': 'Basil',
+	},
+	{
+		'name': 'origanum',
+		'rank': 'genus',
+		'parent': 'lamiaceae',
+	},
+	{
+		'name': 'origanum vulgare',
+		'rank': 'species',
+		'parent': 'origanum',
+		'desc': 'Oregano',
 	},
 	{
 		'name': 'ornithurae',
@@ -527,6 +612,27 @@ var life_data = [
 		'desc': 'Pine',
 	},
 	{
+		'name': 'piper',
+		'rank': 'genus',
+		'parent': 'piperaceae',
+	},
+	{
+		'name': 'piper nigrum',
+		'rank': 'species',
+		'parent': 'piper',
+		'desc': 'Black Pepper',
+	},
+	{
+		'name': 'piperaceae',
+		'rank': 'family',
+		'parent': 'piperales',
+	},
+	{
+		'name': 'piperales',
+		'rank': 'order',
+		'parent': 'magnoliids',
+	},
+	{
 		'name': 'plantae',
 		'rank': 'kingdom',
 		'parent': 'eukaryota',
@@ -568,6 +674,16 @@ var life_data = [
 		'rank': 'suborder',
 		'parent': 'squamata',
 		'desc': 'Snake'
+	},
+	{
+		'name': 'solanaceae',
+		'rank': 'family',
+		'parent': 'solanales',
+	},
+	{
+		'name': 'solanales',
+		'rank': 'order',
+		'parent': 'eudicots',
 	},
 	{
 		'name': 'squamata',
@@ -626,6 +742,17 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'vulpes',
 		'desc': 'Red Fox',
+	},
+	{
+		'name': 'zingiber',
+		'rank': 'genus',
+		'parent': 'zingiberaceae',
+	},
+	{
+		'name': 'zingiber officinale',
+		'rank': 'species',
+		'parent': 'zingiber',
+		'desc': 'Ginger',
 	},
 	{
 		'name': 'zingiberaceae',
