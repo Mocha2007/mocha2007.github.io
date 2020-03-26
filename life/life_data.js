@@ -170,6 +170,17 @@ var life_data = [
 		'parent': 'chordata',
 	},
 	{
+		'name': 'serpentes',
+		'rank': 'suborder',
+		'parent': 'squamata',
+		'desc': 'Snake'
+	},
+	{
+		'name': 'squamata',
+		'rank': 'order',
+		'parent': 'reptilia',
+	},
+	{
 		'name': 'strigiformes',
 		'rank': 'order',
 		'parent': 'aves',
