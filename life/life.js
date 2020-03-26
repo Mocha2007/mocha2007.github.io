@@ -20,6 +20,7 @@ function main(){
 		details.classList.add(rank);
 		var name = life_data[i].name;
 		objects[name] = details;
+		details.id = name;
 		// title
 		var title = document.createElement("summary");
 		// important
