@@ -21,15 +21,15 @@ function main(){
 		objects[name] = details;
 		// title
 		var title = document.createElement("summary");
-		title.innerHTML = '<b>' + rank.title() + '</b> ' + name.title();
-		details.appendChild(title);
 		// important
-		if (life_data[i].hasOwnProperty('important')){
+		if (life_data[i].hasOwnProperty('important') && life_data[i].important){
 			var important = document.createElement("span");
 			important.classList.add('important');
-			important.innerHTML = '(!!!)';
-			details.appendChild(important);
+			important.innerHTML = '(!) ';
+			title.appendChild(important);
 		}
+		title.innerHTML += '<b>' + rank.title() + '</b> ' + name.title();
+		details.appendChild(title);
 		// desc
 		if (life_data[i].hasOwnProperty('desc')){
 			var desc = document.createElement("p");
