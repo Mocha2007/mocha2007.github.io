@@ -27,10 +27,37 @@ var life_data = [
 		'parent': 'animalia',
 	},
 	{
+		'name': 'artiodactyla',
+		'rank': 'order',
+		'parent': 'mammalia',
+	},
+	{
 		'name': 'aves',
 		'rank': 'class',
 		'parent': 'ornithurae',
 		'desc': 'Bird',
+	},
+	{
+		'name': 'bos',
+		'rank': 'genus',
+		'parent': 'bovidae',
+	},
+	{
+		'name': 'bos grunniens',
+		'rank': 'species',
+		'parent': 'bos',
+		'desc': 'Yak',
+	},
+	{
+		'name': 'bos taurus',
+		'rank': 'species',
+		'parent': 'bos',
+		'desc': 'Cattle',
+	},
+	{
+		'name': 'bovidae',
+		'rank': 'family',
+		'parent': 'artiodactyla',
 	},
 	{
 		'name': 'canidae',
@@ -56,9 +83,26 @@ var life_data = [
 		'desc': 'Dog',
 	},
 	{
+		'name': 'capra',
+		'rank': 'genus',
+		'parent': 'caprinae',
+		'desc': 'Goat',
+	},
+	{
+		'name': 'caprinae',
+		'rank': 'subfamily',
+		'parent': 'bovidae',
+	},
+	{
 		'name': 'carnivora',
 		'rank': 'order',
 		'parent': 'mammalia',
+	},
+	{
+		'name': 'cervidae',
+		'rank': 'family',
+		'parent': 'artiodactyla',
+		'desc': 'Deer',
 	},
 	{
 		'name': 'chordata',
@@ -155,6 +199,17 @@ var life_data = [
 		'parent': 'theropoda',
 	},
 	{
+		'name': 'ovis',
+		'rank': 'genus',
+		'parent': 'caprinae',
+	},
+	{
+		'name': 'ovis aries',
+		'rank': 'species',
+		'parent': 'ovis',
+		'desc': 'Sheep',
+	},
+	{
 		'name': 'phasianidae',
 		'rank': 'family',
 		'parent': 'galliformes',
@@ -163,6 +218,12 @@ var life_data = [
 		'name': 'primates',
 		'rank': 'order',
 		'parent': 'mammalia',
+	},
+	{
+		'name': 'psittaciformes',
+		'rank': 'order',
+		'parent': 'aves',
+		'desc': 'Parrot',
 	},
 	{
 		'name': 'reptilia',
@@ -187,6 +248,17 @@ var life_data = [
 		'desc': 'Owl',
 	},
 	{
+		'name': 'suidae',
+		'rank': 'family',
+		'parent': 'artiodactyla',
+	},
+	{
+		'name': 'sus',
+		'rank': 'genus',
+		'parent': 'suidae',
+		'desc': 'Pig',
+	},
+	{
 		'name': 'theropoda',
 		'rank': 'clade',
 		'parent': 'archosauria',
@@ -205,5 +277,16 @@ var life_data = [
 		'name': 'tyrannosaurus rex',
 		'rank': 'species',
 		'parent': 'tyrannosaurus',
+	},
+	{
+		'name': 'vulpes',
+		'rank': 'genus',
+		'parent': 'canidae',
+	},
+	{
+		'name': 'vulpes vulpes',
+		'rank': 'species',
+		'parent': 'vulpes',
+		'desc': 'Red Fox',
 	},
 ];

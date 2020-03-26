@@ -46,6 +46,7 @@ function main(){
 	// next, nest everything accordingly. add * to root.
 	for (var i = 0; i < life_data.length; i++){
 		var name = life_data[i].name;
+		console.log("Loading " + name + "...");
 		var parent_id = life_data[i].parent;
 		var child = objects[name];
 		if (parent_id === '*'){
@@ -56,5 +57,5 @@ function main(){
 		}
 		parent.appendChild(child);
 	}
-	console.log("Loaded.")
+	console.log("Loaded.");
 }
