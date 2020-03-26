@@ -36,7 +36,7 @@ var life_data = [
 		'rank': 'subspecies',
 		'parent': 'gallus gallus',
 		'important': true,
-		'desc': 'Chicken',
+		'desc': 'Chickens',
 	},
 	{
 		'name': 'hominidae',
@@ -53,7 +53,7 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'homo',
 		'important': true,
-		'desc': 'Human',
+		'desc': 'Humans',
 	},
 	{
 		'name': 'life',
