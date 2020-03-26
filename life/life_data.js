@@ -202,6 +202,33 @@ var life_data = [
 		'parent': 'laurasiatheria',
 	},
 	{
+		'name': 'castor',
+		'rank': 'genus',
+		'parent': 'castoridae',
+		'desc': 'Beaver'
+	},
+	{
+		'name': 'castoridae',
+		'rank': 'family',
+		'parent': 'rodentia',
+	},
+	{
+		'name': 'cavia',
+		'rank': 'genus',
+		'parent': 'caviidae',
+	},
+	{
+		'name': 'cavia porcellus',
+		'rank': 'species',
+		'parent': 'cavia',
+		'desc': 'Guinea Pig',
+	},
+	{
+		'name': 'caviidae',
+		'rank': 'family',
+		'parent': 'rodentia',
+	},
+	{
 		'name': 'cedrus',
 		'rank': 'genus',
 		'parent': 'pinaceae',
@@ -251,6 +278,17 @@ var life_data = [
 		'name': 'commelinids',
 		'rank': 'clade',
 		'parent': 'monocots',
+	},
+	{
+		'name': 'cricetidae',
+		'rank': 'family',
+		'parent': 'muroidea',
+	},
+	{
+		'name': 'cricetinae',
+		'rank': 'subfamily',
+		'parent': 'cricetidae',
+		'desc': 'Hamster',
 	},
 	{
 		'name': 'cucurbita',
@@ -496,7 +534,7 @@ var life_data = [
 	},
 	{
 		'name': 'laurasiatheria',
-		'rank': 'clade',
+		'rank': 'superorder',
 		'parent': 'mammalia',
 	},
 	{
@@ -551,6 +589,11 @@ var life_data = [
 	{
 		'name': 'muridae',
 		'rank': 'family',
+		'parent': 'muroidea',
+	},
+	{
+		'name': 'muroidea',
+		'rank': 'superfamily',
 		'parent': 'rodentia',
 	},
 	{
