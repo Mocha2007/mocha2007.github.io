@@ -232,6 +232,17 @@ var life_data = [
 		'parent': 'monocots',
 	},
 	{
+		'name': 'cucurbita',
+		'rank': 'genus',
+		'parent': 'cucurbitaceae',
+	},
+	{
+		'name': 'cucurbita pepo',
+		'rank': 'species',
+		'parent': 'cucurbita',
+		'desc': 'Pumpkin, Winter Squash',
+	},
+	{
 		'name': 'cucurbitaceae',
 		'rank': 'family',
 		'parent': 'cucurbitales',
