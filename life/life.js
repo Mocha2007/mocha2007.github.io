@@ -28,7 +28,13 @@ function main(){
 			important.innerHTML = '(!) ';
 			title.appendChild(important);
 		}
-		title.innerHTML += '<b>' + rank.title() + '</b> ' + name.title();
+		var b = document.createElement('b');
+		b.innerHTML = rank.title() + ' ';
+		title.appendChild(b)
+		var a = document.createElement('a');
+		a.innerHTML = name.title();
+		a.href = 'https://en.wikipedia.org/wiki/' + name.title();
+		title.appendChild(a)
 		details.appendChild(title);
 		// desc
 		if (life_data[i].hasOwnProperty('desc')){
