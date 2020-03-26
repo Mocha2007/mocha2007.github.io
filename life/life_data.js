@@ -51,7 +51,7 @@ var life_data = [
 	{
 		'name': 'artiodactyla',
 		'rank': 'order',
-		'parent': 'mammalia',
+		'parent': 'ungulata',
 	},
 	{
 		'name': 'aves',
@@ -133,10 +133,48 @@ var life_data = [
 		'desc': 'During some period of their life cycle, chordates possess a notochord, a dorsal nerve cord, pharyngeal slits, an endostyle, and a post-anal tail: these five anatomical features define this phylum.'
 	},
 	{
+		'name': 'columbiformes',
+		'rank': 'order',
+		'parent': 'aves',
+		'desc': 'Pigeon',
+	},
+	{
 		'name': 'cygnus',
 		'rank': 'genus',
 		'parent': 'anatidae',
 		'desc': 'Swan',
+	},
+	{
+		'name': 'equidae',
+		'rank': 'family',
+		'parent': 'perissodactyla',
+	},
+	{
+		'name': 'equus',
+		'rank': 'genus',
+		'parent': 'equidae',
+	},
+	{
+		'name': 'equus africanus',
+		'rank': 'species',
+		'parent': 'equus',
+	},
+	{
+		'name': 'equus africanus asinus',
+		'rank': 'subspecies',
+		'parent': 'equus africanus',
+		'desc': 'Donkey',
+	},
+	{
+		'name': 'equus ferus',
+		'rank': 'species',
+		'parent': 'equus',
+	},
+	{
+		'name': 'equus ferus caballus',
+		'rank': 'subspecies',
+		'parent': 'equus ferus',
+		'desc': 'Horse',
 	},
 	{
 		'name': 'felidae',
@@ -183,6 +221,12 @@ var life_data = [
 		'parent': 'gallus gallus',
 		'important': true,
 		'desc': 'Chicken',
+	},
+	{
+		'name': 'hippotigris',
+		'rank': 'subgenus',
+		'parent': 'equus',
+		'desc': 'Zebra',
 	},
 	{
 		'name': 'hominidae',
@@ -279,6 +323,11 @@ var life_data = [
 		'desc': 'Peafowl',
 	},
 	{
+		'name': 'perissodactyla',
+		'rank': 'order',
+		'parent': 'ungulata',
+	},
+	{
 		'name': 'phasianidae',
 		'rank': 'family',
 		'parent': 'galliformes',
@@ -351,6 +400,11 @@ var life_data = [
 		'name': 'tyrannosaurus rex',
 		'rank': 'species',
 		'parent': 'tyrannosaurus',
+	},
+	{
+		'name': 'ungulata',
+		'rank': 'clade',
+		'parent': 'mammalia',
 	},
 	{
 		'name': 'vulpes',
