@@ -89,7 +89,7 @@ var life_data = [
 	{
 		'name': 'arthropoda',
 		'rank': 'phylum',
-		'parent': 'animalia',
+		'parent': 'protostomia',
 	},
 	{
 		'name': 'artiodactyla',
@@ -123,6 +123,11 @@ var life_data = [
 		'name': 'betulaceae',
 		'rank': 'family',
 		'parent': 'fagales',
+	},
+	{
+		'name': 'bilateria',
+		'rank': 'clade',
+		'parent': 'eumetazoa',
 	},
 	{
 		'name': 'bos',
@@ -211,7 +216,7 @@ var life_data = [
 	{
 		'name': 'chordata',
 		'rank': 'phylum',
-		'parent': 'animalia',
+		'parent': 'bilateria',
 		'desc': 'During some period of their life cycle, chordates possess a notochord, a dorsal nerve cord, pharyngeal slits, an endostyle, and a post-anal tail: these five anatomical features define this phylum.'
 	},
 	{
@@ -230,6 +235,11 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'citrullus',
 		'desc': 'Watermelon',
+	},
+	{
+		'name': 'cnidaria',
+		'rank': 'phylum',
+		'parent': 'eumetazoa',
 	},
 	{
 		'name': 'columbiformes',
@@ -353,6 +363,11 @@ var life_data = [
 		'name': 'eukaryota',
 		'rank': 'domain',
 		'parent': 'life',
+	},
+	{
+		'name': 'eumetazoa',
+		'rank': 'subkingdom',
+		'parent': 'animalia',
 	},
 	{
 		'name': 'fagaceae',
@@ -523,6 +538,12 @@ var life_data = [
 		'parent': 'chordata',
 	},
 	{
+		'name': 'medusazoa',
+		'rank': 'subphylum',
+		'parent': 'cnidaria',
+		'desc': 'Jellyfish',
+	},
+	{
 		'name': 'monocots',
 		'rank': 'clade',
 		'parent': 'angiosperms',
@@ -607,6 +628,17 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'ovis',
 		'desc': 'Sheep',
+	},
+	{
+		'name': 'pan',
+		'rank': 'genus',
+		'parent': 'hominidae',
+	},
+	{
+		'name': 'pan troglodytes',
+		'rank': 'species',
+		'parent': 'pan',
+		'desc': 'Chimpanzee',
 	},
 	{
 		'name': 'panthera',
@@ -725,6 +757,12 @@ var life_data = [
 		'parent': 'eukaryota',
 	},
 	{
+		'name': 'platyhelminthes',
+		'rank': 'phylum',
+		'parent': 'protostomia',
+		'desc': 'Flatworm',
+	},
+	{
 		'name': 'poales',
 		'rank': 'order',
 		'parent': 'commelinids',
@@ -736,9 +774,20 @@ var life_data = [
 		'desc': 'Grass',
 	},
 	{
+		'name': 'porifera',
+		'rank': 'phylum',
+		'parent': 'animalia',
+		'desc': 'Sponge',
+	},
+	{
 		'name': 'primates',
 		'rank': 'order',
 		'parent': 'euarchontoglires',
+	},
+	{
+		'name': 'protostomia',
+		'rank': 'clade',
+		'parent': 'bilateria',
 	},
 	{
 		'name': 'psittaciformes',
@@ -777,6 +826,12 @@ var life_data = [
 		'rank': 'genus',
 		'parent': 'poaceae',
 		'desc': 'Sugarcane'
+	},
+	{
+		'name': 'sciuridae',
+		'rank': 'family',
+		'parent': 'rodentia',
+		'desc': 'Squirrel'
 	},
 	{
 		'name': 'serpentes',
