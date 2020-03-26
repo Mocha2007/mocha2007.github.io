@@ -141,7 +141,7 @@ var life_data = [
 	{
 		'name': 'gallus',
 		'rank': 'genus',
-		'parent': 'phasianidae',
+		'parent': 'phasianinae',
 	},
 	{
 		'name': 'gallus gallus',
@@ -210,9 +210,20 @@ var life_data = [
 		'desc': 'Sheep',
 	},
 	{
+		'name': 'pavo',
+		'rank': 'genus',
+		'parent': 'phasianinae',
+		'desc': 'Peafowl',
+	},
+	{
 		'name': 'phasianidae',
 		'rank': 'family',
 		'parent': 'galliformes',
+	},
+	{
+		'name': 'phasianinae',
+		'rank': 'subfamily',
+		'parent': 'phasianidae',
 	},
 	{
 		'name': 'primates',
