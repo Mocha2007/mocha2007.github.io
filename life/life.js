@@ -21,8 +21,15 @@ function main(){
 		objects[name] = details;
 		// title
 		var title = document.createElement("summary");
-		title.innerHTML = name.title();
+		title.innerHTML = '<b>' + rank.title() + '</b> ' + name.title();
 		details.appendChild(title);
+		// important
+		if (life_data[i].hasOwnProperty('important')){
+			var important = document.createElement("span");
+			important.classList.add('important');
+			important.innerHTML = '(!!!)';
+			details.appendChild(important);
+		}
 		// desc
 		if (life_data[i].hasOwnProperty('desc')){
 			var desc = document.createElement("p");

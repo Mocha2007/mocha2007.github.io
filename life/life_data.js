@@ -24,6 +24,7 @@ var life_data = [
 		'name': 'homo sapiens',
 		'rank': 'species',
 		'parent': 'homo',
+		'important': true,
 		'desc': 'you',
 	},
 	{
