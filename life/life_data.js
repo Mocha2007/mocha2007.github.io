@@ -5,10 +5,38 @@ var life_data = [
 		'parent': 'life',
 	},
 	{
+		'name': 'aves',
+		'rank': 'class',
+		'parent': 'chordata',
+		'desc': 'Birds',
+	},
+	{
 		'name': 'chordata',
 		'rank': 'phylum',
 		'parent': 'animalia',
 		'desc': 'During some period of their life cycle, chordates possess a notochord, a dorsal nerve cord, pharyngeal slits, an endostyle, and a post-anal tail: these five anatomical features define this phylum.'
+	},
+	{
+		'name': 'galliformes',
+		'rank': 'genus',
+		'parent': 'aves',
+	},
+	{
+		'name': 'gallus',
+		'rank': 'genus',
+		'parent': 'phasianidae',
+	},
+	{
+		'name': 'gallus gallus',
+		'rank': 'species',
+		'parent': 'gallus',
+	},
+	{
+		'name': 'gallus gallus domesticus',
+		'rank': 'subspecies',
+		'parent': 'gallus gallus',
+		'important': true,
+		'desc': 'Chicken',
 	},
 	{
 		'name': 'hominidae',
@@ -25,7 +53,7 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'homo',
 		'important': true,
-		'desc': 'you',
+		'desc': 'Human',
 	},
 	{
 		'name': 'life',
@@ -36,6 +64,11 @@ var life_data = [
 		'name': 'mammalia',
 		'rank': 'class',
 		'parent': 'chordata',
+	},
+	{
+		'name': 'phasianidae',
+		'rank': 'family',
+		'parent': 'galliformes',
 	},
 	{
 		'name': 'primates',
