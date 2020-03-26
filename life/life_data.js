@@ -18,7 +18,7 @@ var life_data = [
 	},
 	{
 		'name': 'galliformes',
-		'rank': 'genus',
+		'rank': 'order',
 		'parent': 'aves',
 	},
 	{
