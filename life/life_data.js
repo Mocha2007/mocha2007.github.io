@@ -11,6 +11,12 @@ var life_data = [
 		'parent': 'amaryllidaceae',
 	},
 	{
+		'name': 'allium cepa',
+		'rank': 'species',
+		'parent': 'allium',
+		'desc': 'Onion',
+	},
+	{
 		'name': 'allium sativum',
 		'rank': 'species',
 		'parent': 'allium',
@@ -37,6 +43,11 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'anas',
 		'desc': 'Mallard',
+	},
+	{
+		'name': 'angiosperms',
+		'rank': 'clade',
+		'parent': 'plantae',
 	},
 	{
 		'name': 'animalia',
@@ -237,6 +248,11 @@ var life_data = [
 		'parent': 'mammalia',
 	},
 	{
+		'name': 'eudicots',
+		'rank': 'clade',
+		'parent': 'angiosperms',
+	},
+	{
 		'name': 'eukaryota',
 		'rank': 'domain',
 		'parent': 'life',
@@ -331,6 +347,16 @@ var life_data = [
 		'parent': 'glires',
 	},
 	{
+		'name': 'lamiaceae',
+		'rank': 'family',
+		'parent': 'lamiales',
+	},
+	{
+		'name': 'lamiales',
+		'rank': 'order',
+		'parent': 'eudicots',
+	},
+	{
 		'name': 'laurasiatheria',
 		'rank': 'clade',
 		'parent': 'mammalia',
@@ -354,7 +380,7 @@ var life_data = [
 	{
 		'name': 'monocots',
 		'rank': 'clade',
-		'parent': 'plantae',
+		'parent': 'angiosperms',
 	},
 	{
 		'name': 'muridae',
@@ -371,6 +397,17 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'mus',
 		'desc': 'House Mouse',
+	},
+	{
+		'name': 'ocimum',
+		'rank': 'genus',
+		'parent': 'lamiaceae',
+	},
+	{
+		'name': 'ocimum basilicum',
+		'rank': 'species',
+		'parent': 'ocimum',
+		'desc': 'Basil',
 	},
 	{
 		'name': 'ornithurae',
