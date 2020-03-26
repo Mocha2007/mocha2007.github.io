@@ -17,6 +17,11 @@ var life_data = [
 		'desc': 'Honey Bee',
 	},
 	{
+		'name': 'archosauria',
+		'rank': 'clade',
+		'parent': 'reptilia',
+	},
+	{
 		'name': 'arthropoda',
 		'rank': 'phylum',
 		'parent': 'animalia',
@@ -77,6 +82,12 @@ var life_data = [
 		'parent': 'felis',
 		'important': true,
 		'desc': 'Cat',
+	},
+	{
+		'name': 'formicidae',
+		'rank': 'family',
+		'parent': 'hymenoptera',
+		'desc': 'Ant',
 	},
 	{
 		'name': 'galliformes',
@@ -154,9 +165,20 @@ var life_data = [
 		'parent': 'mammalia',
 	},
 	{
+		'name': 'reptilia',
+		'rank': 'class',
+		'parent': 'chordata',
+	},
+	{
+		'name': 'strigiformes',
+		'rank': 'order',
+		'parent': 'aves',
+		'desc': 'Owl',
+	},
+	{
 		'name': 'theropoda',
 		'rank': 'clade',
-		'parent': 'chordata',
+		'parent': 'archosauria',
 	},
 	{
 		'name': 'tyrannosauridae',
