@@ -1,8 +1,30 @@
 var life_data = [
 	{
+		'name': 'anatidae',
+		'rank': 'family',
+		'parent': 'anseriformes',
+		'desc': 'Waterfowl',
+	},
+	{
+		'name': 'anas',
+		'rank': 'genus',
+		'parent': 'anatidae',
+	},
+	{
+		'name': 'anas platyrhynchos',
+		'rank': 'species',
+		'parent': 'anas',
+		'desc': 'Mallard',
+	},
+	{
 		'name': 'animalia',
 		'rank': 'kingdom',
 		'parent': 'life',
+	},
+	{
+		'name': 'anseriformes',
+		'rank': 'order',
+		'parent': 'aves',
 	},
 	{
 		'name': 'apidae',
@@ -111,6 +133,12 @@ var life_data = [
 		'desc': 'During some period of their life cycle, chordates possess a notochord, a dorsal nerve cord, pharyngeal slits, an endostyle, and a post-anal tail: these five anatomical features define this phylum.'
 	},
 	{
+		'name': 'cygnus',
+		'rank': 'genus',
+		'parent': 'anatidae',
+		'desc': 'Swan',
+	},
+	{
 		'name': 'felidae',
 		'rank': 'family',
 		'parent': 'carnivora',
@@ -208,6 +236,41 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'ovis',
 		'desc': 'Sheep',
+	},
+	{
+		'name': 'panthera',
+		'rank': 'genus',
+		'parent': 'felidae',
+	},
+	{
+		'name': 'panthera leo',
+		'rank': 'species',
+		'parent': 'panthera',
+		'desc': 'Lion',
+	},
+	{
+		'name': 'panthera onca',
+		'rank': 'species',
+		'parent': 'panthera',
+		'desc': 'Jaguar',
+	},
+	{
+		'name': 'panthera pardus',
+		'rank': 'species',
+		'parent': 'panthera',
+		'desc': 'Leopard',
+	},
+	{
+		'name': 'panthera tigris',
+		'rank': 'species',
+		'parent': 'panthera',
+		'desc': 'Tiger',
+	},
+	{
+		'name': 'panthera uncia',
+		'rank': 'species',
+		'parent': 'panthera',
+		'desc': 'Snow Leopard',
 	},
 	{
 		'name': 'pavo',
