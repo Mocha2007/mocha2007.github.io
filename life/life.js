@@ -8,7 +8,7 @@ String.prototype.title = function () {
 };
 
 var objects = {};
-var open = false;
+var open = true;
 
 function main(){
 	// first, add everything in life_data to objects

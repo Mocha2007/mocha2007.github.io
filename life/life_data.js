@@ -1,5 +1,11 @@
 var life_data = [
 	{
+		'name': 'abies',
+		'rank': 'genus',
+		'parent': 'pinaceae',
+		'desc': 'Fir',
+	},
+	{
 		'name': 'anatidae',
 		'rank': 'family',
 		'parent': 'anseriformes',
@@ -119,6 +125,12 @@ var life_data = [
 		'name': 'carnivora',
 		'rank': 'order',
 		'parent': 'laurasiatheria',
+	},
+	{
+		'name': 'cedrus',
+		'rank': 'genus',
+		'parent': 'pinaceae',
+		'desc': 'Cedar',
 	},
 	{
 		'name': 'cervidae',
@@ -385,6 +397,12 @@ var life_data = [
 		'parent': 'phasianidae',
 	},
 	{
+		'name': 'picea',
+		'rank': 'genus',
+		'parent': 'pinaceae',
+		'desc': 'Spruce',
+	},
+	{
 		'name': 'pinaceae',
 		'rank': 'family',
 		'parent': 'pinales',
@@ -398,6 +416,7 @@ var life_data = [
 		'name': 'pinophyta',
 		'rank': 'division',
 		'parent': 'plantae',
+		'desc': 'Conifer',
 	},
 	{
 		'name': 'pinopsida',
@@ -415,6 +434,17 @@ var life_data = [
 		'name': 'plantae',
 		'rank': 'kingdom',
 		'parent': 'eukaryota',
+	},
+	{
+		'name': 'poales',
+		'rank': 'order',
+		'parent': 'plantae',
+	},
+	{
+		'name': 'poaceae',
+		'rank': 'family',
+		'parent': 'poales',
+		'desc': 'Grass',
 	},
 	{
 		'name': 'primates',
