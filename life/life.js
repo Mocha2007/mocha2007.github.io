@@ -14,6 +14,7 @@ function main(){
 	for (var i = 0; i < life_data.length; i++){
 		// create DOM object
 		var details = document.createElement("details");
+		details.open = true;
 		var rank = life_data[i].rank;
 		details.classList.add(rank);
 		var name = life_data[i].name;
