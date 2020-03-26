@@ -11,10 +11,55 @@ var life_data = [
 		'desc': 'Bird',
 	},
 	{
+		'name': 'canidae',
+		'rank': 'family',
+		'parent': 'carnivora',
+	},
+	{
+		'name': 'canis',
+		'rank': 'genus',
+		'parent': 'canidae',
+	},
+	{
+		'name': 'canis lupus',
+		'rank': 'species',
+		'parent': 'canis',
+		'desc': 'Wolf',
+	},
+	{
+		'name': 'canis lupus familiaris',
+		'rank': 'subspecies',
+		'parent': 'canis lupus',
+		'important': true,
+		'desc': 'Dog',
+	},
+	{
+		'name': 'carnivora',
+		'rank': 'order',
+		'parent': 'mammalia',
+	},
+	{
 		'name': 'chordata',
 		'rank': 'phylum',
 		'parent': 'animalia',
 		'desc': 'During some period of their life cycle, chordates possess a notochord, a dorsal nerve cord, pharyngeal slits, an endostyle, and a post-anal tail: these five anatomical features define this phylum.'
+	},
+	{
+		'name': 'felidae',
+		'rank': 'family',
+		'parent': 'carnivora',
+	},
+	{
+		'name': 'felis',
+		'rank': 'genus',
+		'parent': 'felidae',
+	},
+	{
+		'name': 'felis catus',
+		'rank': 'species',
+		'parent': 'felis',
+		'important': true,
+		'desc': 'Cat',
 	},
 	{
 		'name': 'galliformes',
