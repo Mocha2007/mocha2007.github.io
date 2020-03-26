@@ -249,6 +249,22 @@ var life_data = [
 		'desc': 'Swan',
 	},
 	{
+		'name': 'daucus',
+		'rank': 'genus',
+		'parent': 'apiaceae',
+	},
+	{
+		'name': 'daucus carota',
+		'rank': 'species',
+		'parent': 'daucus',
+	},
+	{
+		'name': 'daucus carota sativa',
+		'rank': 'subspecies',
+		'parent': 'daucus carota',
+		'desc': 'Carrot'
+	},
+	{
 		'name': 'equidae',
 		'rank': 'family',
 		'parent': 'perissodactyla',
@@ -684,6 +700,17 @@ var life_data = [
 		'name': 'solanales',
 		'rank': 'order',
 		'parent': 'eudicots',
+	},
+	{
+		'name': 'solanum',
+		'rank': 'genus',
+		'parent': 'solanaceae',
+	},
+	{
+		'name': 'solanum tuberosum',
+		'rank': 'species',
+		'parent': 'solanum',
+		'desc': 'Potato',
 	},
 	{
 		'name': 'squamata',
