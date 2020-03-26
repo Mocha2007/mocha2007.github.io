@@ -1,7 +1,6 @@
 details {
 	background-color: #ccc; /* default clade */
-	padding-left: 10px;
-	padding-bottom: 10px;
+	padding: 0px 10px 10px 10px;
 }
 p {
 	font-style: italic;
