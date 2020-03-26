@@ -740,6 +740,12 @@ var life_data = [
 		'parent': 'eudicots',
 	},
 	{
+		'name': 'saccharum',
+		'rank': 'genus',
+		'parent': 'poaceae',
+		'desc': 'Sugarcane'
+	},
+	{
 		'name': 'serpentes',
 		'rank': 'suborder',
 		'parent': 'squamata',
