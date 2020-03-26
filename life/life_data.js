@@ -7,7 +7,7 @@ var life_data = [
 	{
 		'name': 'aves',
 		'rank': 'class',
-		'parent': 'chordata',
+		'parent': 'ornithurae',
 		'desc': 'Bird',
 	},
 	{
@@ -112,6 +112,11 @@ var life_data = [
 		'parent': 'chordata',
 	},
 	{
+		'name': 'ornithurae',
+		'rank': 'clade',
+		'parent': 'theropoda',
+	},
+	{
 		'name': 'phasianidae',
 		'rank': 'family',
 		'parent': 'galliformes',
@@ -120,5 +125,25 @@ var life_data = [
 		'name': 'primates',
 		'rank': 'order',
 		'parent': 'mammalia',
+	},
+	{
+		'name': 'theropoda',
+		'rank': 'clade',
+		'parent': 'chordata',
+	},
+	{
+		'name': 'tyrannosauridae',
+		'rank': 'family',
+		'parent': 'theropoda',
+	},
+	{
+		'name': 'tyrannosaurus',
+		'rank': 'genus',
+		'parent': 'tyrannosauridae',
+	},
+	{
+		'name': 'tyrannosaurus rex',
+		'rank': 'species',
+		'parent': 'tyrannosaurus',
 	},
 ];
