@@ -210,6 +210,17 @@ var life_data = [
 		'desc': 'Cinnamon',
 	},
 	{
+		'name': 'citrullus',
+		'rank': 'genus',
+		'parent': 'cucurbitaceae',
+	},
+	{
+		'name': 'citrullus lanatus',
+		'rank': 'species',
+		'parent': 'citrullus',
+		'desc': 'Watermelon',
+	},
+	{
 		'name': 'columbiformes',
 		'rank': 'order',
 		'parent': 'aves',
@@ -219,6 +230,16 @@ var life_data = [
 		'name': 'commelinids',
 		'rank': 'clade',
 		'parent': 'monocots',
+	},
+	{
+		'name': 'cucurbitaceae',
+		'rank': 'family',
+		'parent': 'cucurbitales',
+	},
+	{
+		'name': 'cucurbitales',
+		'rank': 'order',
+		'parent': 'eudicots',
 	},
 	{
 		'name': 'cuminum',
