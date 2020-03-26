@@ -1,3 +1,9 @@
-details {
+details * {
 	padding-left: 10px;
+}
+p {
+	font-style: italic;
+	margin: 0px;
+	max-width: 700px;
+	text-indent: 45px;
 }
