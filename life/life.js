@@ -8,13 +8,14 @@ String.prototype.title = function () {
 };
 
 var objects = {};
+var open = false;
 
 function main(){
 	// first, add everything in life_data to objects
 	for (var i = 0; i < life_data.length; i++){
 		// create DOM object
 		var details = document.createElement("details");
-		details.open = true;
+		details.open = open;
 		var rank = life_data[i].rank;
 		details.classList.add(rank);
 		var name = life_data[i].name;

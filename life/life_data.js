@@ -118,7 +118,7 @@ var life_data = [
 	{
 		'name': 'carnivora',
 		'rank': 'order',
-		'parent': 'mammalia',
+		'parent': 'laurasiatheria',
 	},
 	{
 		'name': 'cervidae',
@@ -177,6 +177,11 @@ var life_data = [
 		'desc': 'Horse',
 	},
 	{
+		'name': 'euarchontoglires',
+		'rank': 'superorder',
+		'parent': 'mammalia',
+	},
+	{
 		'name': 'felidae',
 		'rank': 'family',
 		'parent': 'carnivora',
@@ -223,6 +228,11 @@ var life_data = [
 		'desc': 'Chicken',
 	},
 	{
+		'name': 'glires',
+		'rank': 'clade',
+		'parent': 'euarchontoglires',
+	},
+	{
 		'name': 'hippotigris',
 		'rank': 'subgenus',
 		'parent': 'equus',
@@ -256,6 +266,22 @@ var life_data = [
 		'parent': 'arthropoda',
 	},
 	{
+		'name': 'lagomorpha',
+		'rank': 'order',
+		'parent': 'glires',
+	},
+	{
+		'name': 'laurasiatheria',
+		'rank': 'clade',
+		'parent': 'mammalia',
+	},
+	{
+		'name': 'leporidae',
+		'rank': 'family',
+		'parent': 'lagomorpha',
+		'desc': 'Rabbit, Hare',
+	},
+	{
 		'name': 'life',
 		'rank': 'life',
 		'parent': '*',
@@ -264,6 +290,22 @@ var life_data = [
 		'name': 'mammalia',
 		'rank': 'class',
 		'parent': 'chordata',
+	},
+	{
+		'name': 'muridae',
+		'rank': 'family',
+		'parent': 'rodentia',
+	},
+	{
+		'name': 'mus',
+		'rank': 'genus',
+		'parent': 'muridae',
+	},
+	{
+		'name': 'mus musculus',
+		'rank': 'species',
+		'parent': 'mus',
+		'desc': 'House Mouse',
 	},
 	{
 		'name': 'ornithurae',
@@ -340,7 +382,7 @@ var life_data = [
 	{
 		'name': 'primates',
 		'rank': 'order',
-		'parent': 'mammalia',
+		'parent': 'euarchontoglires',
 	},
 	{
 		'name': 'psittaciformes',
@@ -352,6 +394,11 @@ var life_data = [
 		'name': 'reptilia',
 		'rank': 'class',
 		'parent': 'chordata',
+	},
+	{
+		'name': 'rodentia',
+		'rank': 'order',
+		'parent': 'glires',
 	},
 	{
 		'name': 'serpentes',
@@ -404,7 +451,7 @@ var life_data = [
 	{
 		'name': 'ungulata',
 		'rank': 'clade',
-		'parent': 'mammalia',
+		'parent': 'laurasiatheria',
 	},
 	{
 		'name': 'vulpes',
