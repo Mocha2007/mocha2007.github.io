@@ -19,7 +19,7 @@ var life_data = [
 	{
 		'name': 'animalia',
 		'rank': 'kingdom',
-		'parent': 'life',
+		'parent': 'eukaryota',
 	},
 	{
 		'name': 'anseriformes',
@@ -180,6 +180,11 @@ var life_data = [
 		'name': 'euarchontoglires',
 		'rank': 'superorder',
 		'parent': 'mammalia',
+	},
+	{
+		'name': 'eukaryota',
+		'rank': 'domain',
+		'parent': 'life',
 	},
 	{
 		'name': 'felidae',
@@ -378,6 +383,38 @@ var life_data = [
 		'name': 'phasianinae',
 		'rank': 'subfamily',
 		'parent': 'phasianidae',
+	},
+	{
+		'name': 'pinaceae',
+		'rank': 'family',
+		'parent': 'pinales',
+	},
+	{
+		'name': 'pinales',
+		'rank': 'order',
+		'parent': 'pinopsida',
+	},
+	{
+		'name': 'pinophyta',
+		'rank': 'division',
+		'parent': 'plantae',
+	},
+	{
+		'name': 'pinopsida',
+		'rank': 'class',
+		'parent': 'pinophyta',
+	},
+	{
+		'name': 'pinus',
+		'rank': 'genus',
+		'parent': 'pinaceae',
+		'important': true,
+		'desc': 'Pine',
+	},
+	{
+		'name': 'plantae',
+		'rank': 'kingdom',
+		'parent': 'eukaryota',
 	},
 	{
 		'name': 'primates',

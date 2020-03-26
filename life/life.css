@@ -21,7 +21,7 @@ p {
 .kingdom {
 	background-color: #fc8;
 }
-.phylum {
+.phylum, .division {
 	background-color: #ff8;
 }
 .class {
