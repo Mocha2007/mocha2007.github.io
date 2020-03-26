@@ -5,6 +5,23 @@ var life_data = [
 		'parent': 'life',
 	},
 	{
+		'name': 'apidae',
+		'rank': 'family',
+		'parent': 'hymenoptera',
+	},
+	{
+		'name': 'apis',
+		'rank': 'genus',
+		'parent': 'apidae',
+		'important': true,
+		'desc': 'Honey Bee',
+	},
+	{
+		'name': 'arthropoda',
+		'rank': 'phylum',
+		'parent': 'animalia',
+	},
+	{
 		'name': 'aves',
 		'rank': 'class',
 		'parent': 'ornithurae',
@@ -100,6 +117,16 @@ var life_data = [
 		'parent': 'homo',
 		'important': true,
 		'desc': 'Human',
+	},
+	{
+		'name': 'hymenoptera',
+		'rank': 'order',
+		'parent': 'insecta',
+	},
+	{
+		'name': 'insecta',
+		'rank': 'class',
+		'parent': 'arthropoda',
 	},
 	{
 		'name': 'life',
