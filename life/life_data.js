@@ -6,6 +6,22 @@ var life_data = [
 		'desc': 'Fir',
 	},
 	{
+		'name': 'allium',
+		'rank': 'genus',
+		'parent': 'amaryllidaceae',
+	},
+	{
+		'name': 'allium sativum',
+		'rank': 'species',
+		'parent': 'allium',
+		'desc': 'Garlic',
+	},
+	{
+		'name': 'amaryllidaceae',
+		'rank': 'family',
+		'parent': 'asparagales',
+	},
+	{
 		'name': 'anatidae',
 		'rank': 'family',
 		'parent': 'anseriformes',
@@ -58,6 +74,11 @@ var life_data = [
 		'name': 'artiodactyla',
 		'rank': 'order',
 		'parent': 'ungulata',
+	},
+	{
+		'name': 'asparagales',
+		'rank': 'order',
+		'parent': 'monocots',
 	},
 	{
 		'name': 'aves',
@@ -159,7 +180,7 @@ var life_data = [
 	{
 		'name': 'commelinids',
 		'rank': 'clade',
-		'parent': 'plantae',
+		'parent': 'monocots',
 	},
 	{
 		'name': 'curcuma',
@@ -329,6 +350,11 @@ var life_data = [
 		'name': 'mammalia',
 		'rank': 'class',
 		'parent': 'chordata',
+	},
+	{
+		'name': 'monocots',
+		'rank': 'clade',
+		'parent': 'plantae',
 	},
 	{
 		'name': 'muridae',
