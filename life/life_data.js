@@ -1032,7 +1032,7 @@ var life_data = [
 	{
 		'name': 'hominidae',
 		'rank': 'family',
-		'parent': 'primates',
+		'parent': 'hominoidea',
 		'range': 'ow',
 		'desc': 'Great Apes',
 	},
@@ -1047,6 +1047,13 @@ var life_data = [
 		'rank': 'tribe',
 		'parent': 'homininae',
 		'range': 'af',
+	},
+	{
+		'name': 'hominoidea',
+		'rank': 'superfamily',
+		'parent': 'primates',
+		'range': 'ow',
+		'desc': 'Ape',
 	},
 	{
 		'name': 'homo',
@@ -1085,6 +1092,13 @@ var life_data = [
 		'important': true,
 		'range': 'af',
 		'desc': 'Human',
+	},
+	{
+		'name': 'hylobatidae',
+		'rank': 'family',
+		'parent': 'hominoidea',
+		'range': 'as',
+		'desc': 'Gibbon',
 	},
 	{
 		'name': 'hymenoptera',
