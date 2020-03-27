@@ -117,6 +117,12 @@ var life_data = [
 		'parent': 'eudicots',
 	},
 	{
+		'name': 'asteroidea',
+		'rank': 'class',
+		'parent': 'echinodermata',
+		'desc': 'Starfish',
+	},
+	{
 		'name': 'aves',
 		'rank': 'class',
 		'parent': 'ornithurae',
@@ -419,6 +425,11 @@ var life_data = [
 		'rank': 'superphylum',
 		'parent': 'bilateria',
 		'desc': 'In deuterostomes, the first opening, the blastopore, becomes the anus, while in protostomes, it becomes the mouth.'
+	},
+	{
+		'name': 'echinodermata',
+		'rank': 'phylum',
+		'parent': 'deuterostomia',
 	},
 	{
 		'name': 'equidae',
