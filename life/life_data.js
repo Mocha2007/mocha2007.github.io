@@ -119,6 +119,20 @@ var life_data = [
 		'range': 'ww',
 	},
 	{
+		'name': 'ankylosauridae',
+		'rank': 'family',
+		'parent': 'ornithischia',
+		'extinct': true,
+		'range': 'nh',
+	},
+	{
+		'name': 'ankylosaurus',
+		'rank': 'genus',
+		'parent': 'ankylosauridae',
+		'extinct': true,
+		'range': 'na',
+	},
+	{
 		'name': 'anseriformes',
 		'rank': 'order',
 		'parent': 'galloanserae',
