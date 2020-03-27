@@ -1428,6 +1428,13 @@ var life_data = [
 		'range': 'ow',
 	},
 	{
+		'name': 'phragmites',
+		'rank': 'genus',
+		'parent': 'poaceae',
+		'range': 'ww',
+		'desc': 'Common Reed',
+	},
+	{
 		'name': 'physalis',
 		'rank': 'genus',
 		'parent': 'solanaceae',
