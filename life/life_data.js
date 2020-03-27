@@ -498,6 +498,13 @@ var life_data = [
 		'desc': 'Cedar',
 	},
 	{
+		'name': 'cerasus',
+		'rank': 'subgenus',
+		'parent': 'prunus',
+		'range': 'ea',
+		'desc': 'Cherry',
+	},
+	{
 		'name': 'cervidae',
 		'rank': 'family',
 		'parent': 'cetruminantia',
@@ -1534,6 +1541,40 @@ var life_data = [
 		'rank': 'superphylum',
 		'parent': 'bilateria',
 		'range': 'ww',
+	},
+	{
+		'name': 'prunus',
+		'rank': 'genus',
+		'parent': 'rosaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'subg. prunus', // alphabetically treated as if subg. weren't there
+		'rank': 'subgenus',
+		'parent': 'prunus',
+		'range': 'as',
+		'desc': 'Plum',
+	},
+	{
+		'name': 'prunus armeniaca',
+		'rank': 'species',
+		'parent': 'prunus',
+		'range': 'as',
+		'desc': 'Apricot',
+	},
+	{
+		'name': 'prunus dulcis',
+		'rank': 'species',
+		'parent': 'prunus',
+		'range': 'as',
+		'desc': 'Almond',
+	},
+	{
+		'name': 'prunus persica',
+		'rank': 'species',
+		'parent': 'prunus',
+		'range': 'as',
+		'desc': 'Peach',
 	},
 	{
 		'name': 'psittaciformes',
