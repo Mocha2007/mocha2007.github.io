@@ -48,6 +48,17 @@ var life_data = [
 		'parent': 'tetrapoda',
 	},
 	{
+		'name': 'ananas',
+		'rank': 'genus',
+		'parent': 'bromeliaceae',
+	},
+	{
+		'name': 'ananas comosus',
+		'rank': 'species',
+		'parent': 'ananas',
+		'desc': 'Pineapple',
+	},
+	{
 		'name': 'anatidae',
 		'rank': 'family',
 		'parent': 'anseriformes',
@@ -122,6 +133,16 @@ var life_data = [
 		'name': 'archosauria',
 		'rank': 'clade',
 		'parent': 'reptilia',
+	},
+	{
+		'name': 'arecaceae',
+		'rank': 'family',
+		'parent': 'arecales',
+	},
+	{
+		'name': 'arecales',
+		'rank': 'order',
+		'parent': 'commelinids',
 	},
 	{
 		'name': 'arthropoda',
@@ -265,6 +286,11 @@ var life_data = [
 		'parent': 'malvids',
 	},
 	{
+		'name': 'bromeliaceae',
+		'rank': 'family',
+		'parent': 'poales',
+	},
+	{
 		'name': 'camelidae',
 		'rank': 'family',
 		'parent': 'tylopoda',
@@ -339,6 +365,17 @@ var life_data = [
 		'name': 'carnivora',
 		'rank': 'order',
 		'parent': 'laurasiatheria',
+	},
+	{
+		'name': 'carya',
+		'rank': 'genus',
+		'parent': 'juglandaceae',
+	},
+	{
+		'name': 'carya illinoinensis',
+		'rank': 'species',
+		'parent': 'carya',
+		'desc': 'Pecan',
 	},
 	{
 		'name': 'castor',
@@ -418,9 +455,55 @@ var life_data = [
 		'desc': 'Watermelon',
 	},
 	{
+		'name': 'citrus',
+		'rank': 'genus',
+		'parent': 'rutaceae',
+	},
+	{
+		'name': 'citrus latifola',
+		'rank': 'species',
+		'parent': 'citrus',
+		'desc': 'Persian Lime',
+	},
+	{
+		'name': 'citrus limon',
+		'rank': 'species',
+		'parent': 'citrus',
+		'desc': 'Lemon',
+	},
+	{
+		'name': 'citrus paradisi',
+		'rank': 'species',
+		'parent': 'citrus',
+		'desc': 'Grapefruit',
+	},
+	{
+		'name': 'citrus sinensis',
+		'rank': 'species',
+		'parent': 'citrus',
+		'desc': 'Orange',
+	},
+	{
+		'name': 'citrus tangerina',
+		'rank': 'species',
+		'parent': 'citrus',
+		'desc': 'Tangerine',
+	},
+	{
 		'name': 'cnidaria',
 		'rank': 'phylum',
 		'parent': 'eumetazoa',
+	},
+	{
+		'name': 'cocos',
+		'rank': 'genus',
+		'parent': 'arecaceae',
+	},
+	{
+		'name': 'cocos nucifera',
+		'rank': 'species',
+		'parent': 'cocos',
+		'desc': 'Coconut',
 	},
 	{
 		'name': 'columbiformes',
@@ -735,6 +818,7 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'homo',
 		'important': true,
+		'range': 'ww',
 		'desc': 'Human',
 	},
 	{
@@ -746,6 +830,17 @@ var life_data = [
 		'name': 'insecta',
 		'rank': 'class',
 		'parent': 'arthropoda',
+	},
+	{
+		'name': 'juglandaceae',
+		'rank': 'family',
+		'parent': 'fagales',
+	},
+	{
+		'name': 'juglans',
+		'rank': 'genus',
+		'parent': 'juglandaceae',
+		'desc': 'Walnut',
 	},
 	{
 		'name': 'lactuca',
@@ -878,6 +973,17 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'mus',
 		'desc': 'House Mouse',
+	},
+	{
+		'name': 'musa',
+		'rank': 'genus',
+		'parent': 'musaceae',
+		'desc': 'Banana',
+	},
+	{
+		'name': 'musaceae',
+		'rank': 'family',
+		'parent': 'zingiberales',
 	},
 	{
 		'name': 'myristica',
@@ -1186,6 +1292,12 @@ var life_data = [
 		'parent': 'telluraves',
 	},
 	{
+		'name': 'pyrus',
+		'rank': 'genus',
+		'parent': 'rosaceae',
+		'desc': 'Pear',
+	},
+	{
 		'name': 'quercus',
 		'rank': 'genus',
 		'parent': 'fagaceae',
@@ -1228,6 +1340,11 @@ var life_data = [
 		'parent': 'eudicots',
 	},
 	{
+		'name': 'rutaceae',
+		'rank': 'family',
+		'parent': 'sapindales',
+	},
+	{
 		'name': 'saccharum',
 		'rank': 'genus',
 		'parent': 'poaceae',
@@ -1248,6 +1365,11 @@ var life_data = [
 		'rank': 'subfamily',
 		'parent': 'salmonidae',
 		'desc': 'Salmon',
+	},
+	{
+		'name': 'sapindales',
+		'rank': 'order',
+		'parent': 'malvids',
 	},
 	{
 		'name': 'sciuridae',

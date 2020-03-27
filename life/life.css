@@ -12,9 +12,17 @@ p {
 	max-width: 700px;
 	text-indent: 45px;
 }
+abbr{
+	text-decoration: underline;
+	cursor: help;
+}
 .important {
 	color: red;
 	font-size: large;
+	font-weight: bold;
+}
+.range {
+	font-size: x-small;
 	font-weight: bold;
 }
 /* taxonomic ranks */

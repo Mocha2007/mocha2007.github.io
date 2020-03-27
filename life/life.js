@@ -9,6 +9,20 @@ String.prototype.title = function () {
 
 var objects = {}; // string -> DOM object map
 var open = false; // default setting
+var regions = {
+	'WW': 'Worldwide',
+		'AN': 'Antarctica',
+		'NW': 'New World',
+			'NA': 'North America',
+			'SA': 'South America',
+		'OC': 'Oceania',
+		'OW': 'Old World',
+			'AF': 'Africa',
+			'EA': 'Eurasia',
+				'AS': 'Asia',
+				'EU': 'Europe',
+	'XX': 'Extinct',
+};
 
 // helper functions
 
@@ -75,6 +89,16 @@ function main(){
 		a.innerHTML = name.title();
 		a.href = 'https://en.wikipedia.org/wiki/' + name.title();
 		title.appendChild(a)
+		// range
+		if (life_data[i].hasOwnProperty('range')){
+			var range_abbr = life_data[i].range.toUpperCase();
+			title.innerHTML += ' ';
+			var range = document.createElement('abbr');
+			range.classList.add('range');
+			range.title = regions[range_abbr];
+			range.innerHTML = range_abbr;
+			title.appendChild(range);
+		}
 		details.appendChild(title);
 		// desc
 		if (life_data[i].hasOwnProperty('desc')){
