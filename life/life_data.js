@@ -609,7 +609,7 @@ var life_data = [
 	{
 		'name': 'gadiformes',
 		'rank': 'order',
-		'parent': 'actinopterygii',
+		'parent': 'teleostei',
 	},
 	{
 		'name': 'gadus',
@@ -941,7 +941,7 @@ var life_data = [
 	{
 		'name': 'percomorpha',
 		'rank': 'clade',
-		'parent': 'actinopterygii',
+		'parent': 'teleostei',
 	},
 	{
 		'name': 'perissodactyla',
