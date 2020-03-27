@@ -29,9 +29,25 @@ function open_parents(object){
 	}
 }
 
+function refresh_buttons(){
+	document.getElementById('toggle_button_inner').innerHTML = open ? 'Close' : 'Open';
+}
+
+function toggle(){
+	// make everything closed or open (toggle)
+	open = !open;
+	refresh_buttons();
+	var elements = document.getElementsByTagName("DETAILS");
+	for (var i = 0; i < elements.length; i++){
+		elements[i].open = open;
+	}
+}
+
 // main program
 
 function main(){
+	// print appropriate text to toggle button
+	refresh_buttons();
 	// first, add everything in life_data to objects
 	for (var i = 0; i < life_data.length; i++){
 		// create DOM object
