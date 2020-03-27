@@ -42,3 +42,7 @@ p {
 .species {
 	background-color: #f8f;
 }
+#controls {
+	padding: 10px;
+	text-align: center;
+}

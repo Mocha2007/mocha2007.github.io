@@ -7,6 +7,8 @@
 <title>Life</title>
 <div id="controls">
 	<button type="button" onclick="toggle();"><span id="toggle_button_inner"></span> all</button>
+	| <input type="text" id="contol_clade">
+	&larr; <input type="submit" value="Open This" onclick="open_parents(objects[document.getElementById('contol_clade').value]);">
 </div>
 <div id="root"></div>
 <script src="life.js"></script>
