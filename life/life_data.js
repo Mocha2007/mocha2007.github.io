@@ -22,11 +22,13 @@ var life_data = [
 		'name': 'allium',
 		'rank': 'genus',
 		'parent': 'amaryllidaceae',
+		'range': 'ww',
 	},
 	{
 		'name': 'allium cepa',
 		'rank': 'species',
 		'parent': 'allium',
+		'range': 'as',
 		'desc': 'Onion',
 	},
 	{
@@ -40,6 +42,7 @@ var life_data = [
 		'name': 'amaryllidaceae',
 		'rank': 'family',
 		'parent': 'asparagales',
+		'range': 'ww',
 	},
 	{
 		'name': 'amniota',
@@ -57,6 +60,7 @@ var life_data = [
 		'name': 'ananas',
 		'rank': 'genus',
 		'parent': 'bromeliaceae',
+		'range': 'sa',
 	},
 	{
 		'name': 'ananas comosus',
@@ -158,11 +162,13 @@ var life_data = [
 		'name': 'arecaceae',
 		'rank': 'family',
 		'parent': 'arecales',
+		'range': 'eq',
 	},
 	{
 		'name': 'arecales',
 		'rank': 'order',
 		'parent': 'commelinids',
+		'range': 'eq',
 	},
 	{
 		'name': 'arthropoda',
@@ -186,6 +192,7 @@ var life_data = [
 		'name': 'asparagales',
 		'rank': 'order',
 		'parent': 'monocots',
+		'range': 'ww',
 	},
 	{
 		'name': 'asteraceae',
@@ -334,6 +341,7 @@ var life_data = [
 		'name': 'bromeliaceae',
 		'rank': 'family',
 		'parent': 'poales',
+		'range': 'nw',
 	},
 	{
 		'name': 'camelidae',
@@ -577,6 +585,7 @@ var life_data = [
 		'name': 'cocos',
 		'rank': 'genus',
 		'parent': 'arecaceae',
+		'range': 'eq',
 	},
 	{
 		'name': 'cocos nucifera',
@@ -596,6 +605,7 @@ var life_data = [
 		'name': 'commelinids',
 		'rank': 'clade',
 		'parent': 'monocots',
+		'range': 'ww',
 	},
 	{
 		'name': 'corvidae',
@@ -678,6 +688,7 @@ var life_data = [
 		'name': 'curcuma',
 		'rank': 'genus',
 		'parent': 'zingiberaceae',
+		'range': 'as',
 	},
 	{
 		'name': 'curcuma longa',
@@ -1079,6 +1090,7 @@ var life_data = [
 		'name': 'magnoliales',
 		'rank': 'order',
 		'parent': 'magnoliids',
+		'range': 'ww',
 	},
 	{
 		'name': 'magnoliids',
@@ -1123,6 +1135,7 @@ var life_data = [
 		'name': 'monocots',
 		'rank': 'clade',
 		'parent': 'angiosperms',
+		'range': 'ww',
 	},
 	{
 		'name': 'muridae',
@@ -1152,17 +1165,20 @@ var life_data = [
 		'name': 'musa',
 		'rank': 'genus',
 		'parent': 'musaceae',
+		'range': 'as',
 		'desc': 'Banana',
 	},
 	{
 		'name': 'musaceae',
 		'rank': 'family',
 		'parent': 'zingiberales',
+		'range': 'ow',
 	},
 	{
 		'name': 'myristica',
 		'rank': 'genus',
 		'parent': 'myristicaceae',
+		'range': 'as',
 	},
 	{
 		'name': 'myristica fragrans',
@@ -1175,6 +1191,7 @@ var life_data = [
 		'name': 'myristicaceae',
 		'rank': 'family',
 		'parent': 'magnoliales',
+		'range': 'ww',
 	},
 	{
 		'name': 'neoaves',
@@ -1212,6 +1229,7 @@ var life_data = [
 		'name': 'oryza',
 		'rank': 'genus',
 		'parent': 'poaceae',
+		'range': 'ww',
 	},
 	{
 		'name': 'oryza sativa',
@@ -1432,6 +1450,7 @@ var life_data = [
 		'name': 'piper',
 		'rank': 'genus',
 		'parent': 'piperaceae',
+		'range': 'eq',
 	},
 	{
 		'name': 'piper nigrum',
@@ -1444,11 +1463,13 @@ var life_data = [
 		'name': 'piperaceae',
 		'rank': 'family',
 		'parent': 'piperales',
+		'range': 'eq',
 	},
 	{
 		'name': 'piperales',
 		'rank': 'order',
 		'parent': 'magnoliids',
+		'range': 'eq',
 	},
 	{
 		'name': 'plantae',
@@ -1466,11 +1487,13 @@ var life_data = [
 		'name': 'poales',
 		'rank': 'order',
 		'parent': 'commelinids',
+		'range': 'ww',
 	},
 	{
 		'name': 'poaceae',
 		'rank': 'family',
 		'parent': 'poales',
+		'range': 'ww',
 		'desc': 'Grass',
 	},
 	{
@@ -1579,6 +1602,7 @@ var life_data = [
 		'name': 'saccharum',
 		'rank': 'genus',
 		'parent': 'poaceae',
+		'range': 'ww',
 		'desc': 'Sugarcane'
 	},
 	{
@@ -1772,6 +1796,7 @@ var life_data = [
 		'name': 'triticum',
 		'rank': 'genus',
 		'parent': 'poaceae',
+		'range': 'as',
 		'desc': 'Wheat',
 	},
 	{
@@ -1850,33 +1875,38 @@ var life_data = [
 		'name': 'zea',
 		'rank': 'genus',
 		'parent': 'poaceae',
+		'range': 'na',
 	},
 	{
 		'name': 'zea mays',
 		'rank': 'species',
 		'parent': 'zea',
-		'range': 'nw',
+		'range': 'na',
 		'desc': 'Maize',
 	},
 	{
 		'name': 'zingiber',
 		'rank': 'genus',
 		'parent': 'zingiberaceae',
+		'range': 'as',
 	},
 	{
 		'name': 'zingiber officinale',
 		'rank': 'species',
 		'parent': 'zingiber',
+		'range': 'as',
 		'desc': 'Ginger',
 	},
 	{
 		'name': 'zingiberaceae',
 		'rank': 'family',
 		'parent': 'zingiberales',
+		'range': 'eq',
 	},
 	{
 		'name': 'zingiberales',
 		'rank': 'order',
 		'parent': 'commelinids',
+		'range': 'eq',
 	},
 ];
