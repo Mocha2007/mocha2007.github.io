@@ -261,7 +261,7 @@ var life_data = [
 	{
 		'name': 'bambusoideae',
 		'rank': 'subfamily',
-		'parent': 'poaceae',
+		'parent': 'bop clade',
 		'range': 'eq',
 		'desc': 'Bamboo',
 	},
@@ -291,6 +291,12 @@ var life_data = [
 		'parent': 'eumetazoa',
 		'range': 'ww',
 		'desc': 'Bilaterians are animals with bilateral symmetry as an embryo.',
+	},
+	{
+		'name': 'bop clade',
+		'rank': 'clade',
+		'range': 'ww',
+		'parent': 'poaceae',
 	},
 	{
 		'name': 'bos',
@@ -1274,7 +1280,7 @@ var life_data = [
 	{
 		'name': 'oryza',
 		'rank': 'genus',
-		'parent': 'poaceae',
+		'parent': 'bop clade',
 		'range': 'ww',
 	},
 	{
@@ -1304,6 +1310,12 @@ var life_data = [
 		'desc': 'Sheep',
 	},
 	{
+		'name': 'pacmad clade',
+		'rank': 'clade',
+		'range': 'ww',
+		'parent': 'poaceae',
+	},
+	{
 		'name': 'pan',
 		'rank': 'genus',
 		'range': 'af',
@@ -1315,6 +1327,12 @@ var life_data = [
 		'parent': 'pan',
 		'range': 'af',
 		'desc': 'Chimpanzee',
+	},
+	{
+		'name': 'panicoideae',
+		'rank': 'subfamily',
+		'parent': 'pacmad clade',
+		'range': 'ww',
 	},
 	{
 		'name': 'panthera',
@@ -1430,7 +1448,7 @@ var life_data = [
 	{
 		'name': 'phragmites',
 		'rank': 'genus',
-		'parent': 'poaceae',
+		'parent': 'pacmad clade',
 		'range': 'ww',
 		'desc': 'Common Reed',
 	},
@@ -1688,7 +1706,7 @@ var life_data = [
 	{
 		'name': 'saccharum',
 		'rank': 'genus',
-		'parent': 'poaceae',
+		'parent': 'panicoideae',
 		'range': 'ww',
 		'desc': 'Sugarcane'
 	},
@@ -1895,7 +1913,7 @@ var life_data = [
 	{
 		'name': 'triticum',
 		'rank': 'genus',
-		'parent': 'poaceae',
+		'parent': 'bop clade',
 		'range': 'as',
 		'desc': 'Wheat',
 	},
@@ -1987,7 +2005,7 @@ var life_data = [
 	{
 		'name': 'zea',
 		'rank': 'genus',
-		'parent': 'poaceae',
+		'parent': 'panicoideae',
 		'range': 'na',
 	},
 	{
