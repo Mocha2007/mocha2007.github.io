@@ -210,6 +210,20 @@ var life_data = [
 		'desc': 'Spider',
 	},
 	{
+		'name': 'archaeopterygidae',
+		'rank': 'family',
+		'parent': 'avialae',
+		'extinct': true,
+		'range': 'eu',
+	},
+	{
+		'name': 'archaeopteryx',
+		'rank': 'genus',
+		'parent': 'archaeopterygidae',
+		'extinct': true,
+		'range': 'eu',
+	},
+	{
 		'name': 'archosauria',
 		'rank': 'clade',
 		'parent': 'reptilia',
@@ -330,9 +344,15 @@ var life_data = [
 	{
 		'name': 'aves',
 		'rank': 'class',
-		'parent': 'paraves',
+		'parent': 'avialae',
 		'range': 'ww',
 		'desc': 'Bird',
+	},
+	{
+		'name': 'avialae',
+		'rank': 'clade',
+		'parent': 'paraves',
+		'range': 'ww',
 	},
 	{
 		'name': 'balaenoptera',
@@ -418,6 +438,20 @@ var life_data = [
 		'rank': 'family',
 		'parent': 'cetruminantia',
 		'range': 'ww',
+	},
+	{
+		'name': 'brachiosauridae',
+		'rank': 'family',
+		'parent': 'saurischia',
+		'extinct': true,
+		'range': 'ww',
+	},
+	{
+		'name': 'brachiosaurus',
+		'rank': 'genus',
+		'parent': 'brachiosauridae',
+		'extinct': true,
+		'range': 'na',
 	},
 	{
 		'name': 'brachyura',
@@ -1260,6 +1294,28 @@ var life_data = [
 		'range': 'nh',
 	},
 	{
+		'name': 'ichthyosauria',
+		'rank': 'order',
+		'parent': 'reptilia',
+		'extinct': true,
+		'range': 'ww',
+		'desc': 'Ichthyosaur',
+	},
+	{
+		'name': 'iguanodon',
+		'rank': 'genus',
+		'parent': 'iguanodontidae',
+		'extinct': true,
+		'range': 'eu',
+	},
+	{
+		'name': 'iguanodontidae',
+		'rank': 'family',
+		'parent': 'ornithischia',
+		'extinct': true,
+		'range': 'ow',
+	},
+	{
 		'name': 'insecta',
 		'rank': 'class',
 		'parent': 'hexapoda',
@@ -1867,6 +1923,14 @@ var life_data = [
 		'desc': 'Flatworm',
 	},
 	{
+		'name': 'plesiosauria',
+		'rank': 'order',
+		'parent': 'sauropterygia',
+		'extinct': true,
+		'range': 'ww',
+		'desc': 'Plesiosaur',
+	},
+	{
 		'name': 'poales',
 		'rank': 'order',
 		'parent': 'commelinids',
@@ -2073,6 +2137,13 @@ var life_data = [
 		'name': 'saurischia',
 		'rank': 'clade',
 		'parent': 'archosauria',
+		'range': 'ww',
+	},
+	{
+		'name': 'sauropterygia',
+		'rank': 'superorder',
+		'parent': 'reptilia',
+		'extinct': true,
 		'range': 'ww',
 	},
 	{
@@ -2337,6 +2408,13 @@ var life_data = [
 		'parent': 'vanilla',
 		'range': 'nw',
 		'desc': 'Vanilla',
+	},
+	{
+		'name': 'velociraptor',
+		'rank': 'genus',
+		'parent': 'dromaeosauridae',
+		'extinct': true,
+		'range': 'as',
 	},
 	{
 		'name': 'vitaceae',
