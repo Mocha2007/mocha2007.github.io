@@ -1133,6 +1133,18 @@ var life_data = [
 		'desc': 'Apple',
 	},
 	{
+		'name': 'malvaceae',
+		'rank': 'family',
+		'parent': 'malvales',
+		'range': 'eq',
+	},
+	{
+		'name': 'malvales',
+		'rank': 'order',
+		'parent': 'malvids',
+		'range': 'eq',
+	},
+	{
 		'name': 'malvids',
 		'rank': 'clade',
 		'parent': 'rosids',
@@ -1838,6 +1850,19 @@ var life_data = [
 		'rank': 'superclass',
 		'parent': 'osteichthyes',
 		'range': 'ww',
+	},
+	{
+		'name': 'theobroma',
+		'rank': 'genus',
+		'parent': 'malvaceae',
+		'range': 'nw',
+	},
+	{
+		'name': 'theobroma cacao',
+		'rank': 'species',
+		'parent': 'theobroma',
+		'range': 'nw',
+		'desc': 'Cocoa',
 	},
 	{
 		'name': 'theropoda',
