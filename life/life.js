@@ -8,7 +8,7 @@ String.prototype.title = function () {
 };
 
 var objects = {}; // string -> DOM object map
-var open = false; // default setting
+var open = true; // default setting
 var regions = {
 	'WW': 'Worldwide',
 		'AN': 'Antarctica',
@@ -21,6 +21,12 @@ var regions = {
 			'EA': 'Eurasia',
 				'AS': 'Asia',
 				'EU': 'Europe',
+		// alternatively
+		'NH': 'Northern Hemisphere',
+		'EQ': 'Equatorial Regions',
+		'SH': 'Southern Hemisphere',
+		// oceans
+		'AL': 'Atlantic',
 	'XX': 'Extinct',
 };
 
@@ -82,9 +88,15 @@ function main(){
 			title.appendChild(important);
 		}
 		*/
+		// rank
 		var b = document.createElement('b');
 		b.innerHTML = rank.title() + ' ';
 		title.appendChild(b)
+		// extinct?
+		if (life_data[i].hasOwnProperty('extinct') && life_data[i].hasOwnProperty('extinct')){
+			title.innerHTML += '&dagger; ';
+		}
+		// name
 		var a = document.createElement('a');
 		a.innerHTML = name.title();
 		a.href = 'https://en.wikipedia.org/wiki/' + name.title();
