@@ -125,7 +125,7 @@ var life_data = [
 	{
 		'name': 'aves',
 		'rank': 'class',
-		'parent': 'ornithurae',
+		'parent': 'theropoda',
 		'desc': 'Bird',
 	},
 	{
@@ -772,11 +772,6 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'origanum',
 		'desc': 'Oregano',
-	},
-	{
-		'name': 'ornithurae',
-		'rank': 'clade',
-		'parent': 'theropoda',
 	},
 	{
 		'name': 'oryza',
