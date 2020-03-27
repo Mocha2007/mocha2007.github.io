@@ -102,6 +102,16 @@ var life_data = [
 		'parent': 'monocots',
 	},
 	{
+		'name': 'asteraceae',
+		'rank': 'family',
+		'parent': 'asterales',
+	},
+	{
+		'name': 'asterales',
+		'rank': 'order',
+		'parent': 'eudicots',
+	},
+	{
 		'name': 'aves',
 		'rank': 'class',
 		'parent': 'ornithurae',
@@ -150,6 +160,27 @@ var life_data = [
 		'name': 'bovidae',
 		'rank': 'family',
 		'parent': 'artiodactyla',
+	},
+	{
+		'name': 'brassica',
+		'rank': 'genus',
+		'parent': 'brassicaceae',
+	},
+	{
+		'name': 'brassica oleracea',
+		'rank': 'species',
+		'parent': 'brassica',
+		'desc': 'Broccoli, Brussel Sprout, Cabbage, Cauliflower, Collard Greens, Kale, among others',
+	},
+	{
+		'name': 'brassicaceae',
+		'rank': 'family',
+		'parent': 'brassicales',
+	},
+	{
+		'name': 'brassicales',
+		'rank': 'order',
+		'parent': 'eudicots',
 	},
 	{
 		'name': 'canidae',
@@ -289,6 +320,17 @@ var life_data = [
 		'rank': 'subfamily',
 		'parent': 'cricetidae',
 		'desc': 'Hamster',
+	},
+	{
+		'name': 'cucumis',
+		'rank': 'genus',
+		'parent': 'cucurbitaceae',
+	},
+	{
+		'name': 'cucumis sativus',
+		'rank': 'species',
+		'parent': 'cucumis',
+		'desc': 'Cucumber',
 	},
 	{
 		'name': 'cucurbita',
@@ -484,6 +526,7 @@ var life_data = [
 		'name': 'hominidae',
 		'rank': 'family',
 		'parent': 'primates',
+		'desc': 'Great Apes',
 	},
 	{
 		'name': 'homo',
@@ -506,6 +549,17 @@ var life_data = [
 		'name': 'insecta',
 		'rank': 'class',
 		'parent': 'arthropoda',
+	},
+	{
+		'name': 'lactuca',
+		'rank': 'genus',
+		'parent': 'asteraceae',
+	},
+	{
+		'name': 'lactuca sativa',
+		'rank': 'species',
+		'parent': 'lactuca',
+		'desc': 'Lettuce',
 	},
 	{
 		'name': 'lagomorpha',
@@ -898,6 +952,12 @@ var life_data = [
 		'parent': 'solanaceae',
 	},
 	{
+		'name': 'solanum lycopersicum',
+		'rank': 'species',
+		'parent': 'solanum',
+		'desc': 'Tomato',
+	},
+	{
 		'name': 'solanum tuberosum',
 		'rank': 'species',
 		'parent': 'solanum',
@@ -966,6 +1026,17 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'vulpes',
 		'desc': 'Red Fox',
+	},
+	{
+		'name': 'zea',
+		'rank': 'genus',
+		'parent': 'poaceae',
+	},
+	{
+		'name': 'zea mays',
+		'rank': 'species',
+		'parent': 'zea',
+		'desc': 'Maize',
 	},
 	{
 		'name': 'zingiber',
