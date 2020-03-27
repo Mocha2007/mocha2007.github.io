@@ -6,6 +6,11 @@ var life_data = [
 		'desc': 'Fir',
 	},
 	{
+		'name': 'actinopterygii',
+		'rank': 'class',
+		'parent': 'osteichthyes',
+	},
+	{
 		'name': 'allium',
 		'rank': 'genus',
 		'parent': 'amaryllidaceae',
@@ -581,6 +586,16 @@ var life_data = [
 		'desc': 'Ant',
 	},
 	{
+		'name': 'gadidae',
+		'rank': 'family',
+		'parent': 'gadiformes',
+	},
+	{
+		'name': 'gadiformes',
+		'rank': 'order',
+		'parent': 'actinopterygii',
+	},
+	{
 		'name': 'galliformes',
 		'rank': 'order',
 		'parent': 'galloanserae',
@@ -824,6 +839,11 @@ var life_data = [
 		'desc': 'Asian Rice',
 	},
 	{
+		'name': 'osteichthyes',
+		'rank': 'superclass',
+		'parent': 'chordata',
+	},
+	{
 		'name': 'ovis',
 		'rank': 'genus',
 		'parent': 'caprinae',
@@ -896,6 +916,11 @@ var life_data = [
 		'rank': 'genus',
 		'parent': 'phasianinae',
 		'desc': 'Peafowl',
+	},
+	{
+		'name': 'percomorpha',
+		'rank': 'clade',
+		'parent': 'actinopterygii',
 	},
 	{
 		'name': 'perissodactyla',
@@ -1023,6 +1048,12 @@ var life_data = [
 		'desc': 'Grass',
 	},
 	{
+		'name': 'pollachius',
+		'rank': 'genus',
+		'parent': 'gadidae',
+		'desc': 'Pollock',
+	},
+	{
 		'name': 'porifera',
 		'rank': 'phylum',
 		'parent': 'animalia',
@@ -1098,10 +1129,36 @@ var life_data = [
 		'desc': 'Sugarcane'
 	},
 	{
+		'name': 'salmonidae',
+		'rank': 'family',
+		'parent': 'salmoniformes',
+	},
+	{
+		'name': 'salmoniformes',
+		'rank': 'order',
+		'parent': 'actinopterygii',
+	},
+	{
+		'name': 'salmoninae',
+		'rank': 'subfamily',
+		'parent': 'salmonidae',
+		'desc': 'Salmon',
+	},
+	{
 		'name': 'sciuridae',
 		'rank': 'family',
 		'parent': 'rodentia',
 		'desc': 'Squirrel'
+	},
+	{
+		'name': 'scombridae',
+		'rank': 'family',
+		'parent': 'scombriformes',
+	},
+	{
+		'name': 'scombriformes',
+		'rank': 'order',
+		'parent': 'percomorpha',
 	},
 	{
 		'name': 'selachimorpha',
@@ -1182,14 +1239,31 @@ var life_data = [
 		'parent': 'neoaves',
 	},
 	{
+		'name': 'tetraodontidae',
+		'rank': 'family',
+		'parent': 'tetraodontiformes',
+		'desc': 'Pufferfish',
+	},
+	{
+		'name': 'tetraodontiformes',
+		'rank': 'order',
+		'parent': 'percomorpha',
+	},
+	{
 		'name': 'tetrapoda',
 		'rank': 'superclass',
-		'parent': 'chordata',
+		'parent': 'osteichthyes',
 	},
 	{
 		'name': 'theropoda',
 		'rank': 'clade',
 		'parent': 'archosauria',
+	},
+	{
+		'name': 'thunni',
+		'rank': 'tribe',
+		'parent': 'scombridae',
+		'desc': 'Tuna',
 	},
 	{
 		'name': 'triticum',
