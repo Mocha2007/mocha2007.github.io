@@ -1009,6 +1009,13 @@ var life_data = [
 		'range': 'ww',
 	},
 	{
+		'name': 'gorilla',
+		'rank': 'genus',
+		'parent': 'homininae',
+		'range': 'af',
+		'desc': 'Gorilla',
+	},
+	{
 		'name': 'gossypium',
 		'rank': 'genus',
 		'parent': 'malvaceae',
@@ -1030,9 +1037,15 @@ var life_data = [
 		'desc': 'Great Apes',
 	},
 	{
+		'name': 'homininae',
+		'rank': 'subfamily',
+		'parent': 'hominidae',
+		'range': 'af',
+	},
+	{
 		'name': 'hominini',
 		'rank': 'tribe',
-		'parent': 'hominidae',
+		'parent': 'homininae',
 		'range': 'af',
 	},
 	{
@@ -1646,6 +1659,13 @@ var life_data = [
 		'parent': 'gadidae',
 		'range': 'al',
 		'desc': 'Pollock',
+	},
+	{
+		'name': 'pongo',
+		'rank': 'genus',
+		'parent': 'hominidae',
+		'range': 'as',
+		'desc': 'Orangutan',
 	},
 	{
 		'name': 'porifera',
