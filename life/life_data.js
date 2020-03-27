@@ -67,7 +67,7 @@ var life_data = [
 	{
 		'name': 'apiales',
 		'rank': 'order',
-		'parent': 'eudicots',
+		'parent': 'asterids',
 	},
 	{
 		'name': 'apidae',
@@ -109,6 +109,11 @@ var life_data = [
 	{
 		'name': 'asterales',
 		'rank': 'order',
+		'parent': 'asterids',
+	},
+	{
+		'name': 'asterids',
+		'rank': 'clade',
 		'parent': 'eudicots',
 	},
 	{
@@ -180,7 +185,7 @@ var life_data = [
 	{
 		'name': 'brassicales',
 		'rank': 'order',
-		'parent': 'eudicots',
+		'parent': 'rosids',
 	},
 	{
 		'name': 'canidae',
@@ -351,7 +356,7 @@ var life_data = [
 	{
 		'name': 'cucurbitales',
 		'rank': 'order',
-		'parent': 'eudicots',
+		'parent': 'rosids',
 	},
 	{
 		'name': 'cuminum',
@@ -457,7 +462,7 @@ var life_data = [
 	{
 		'name': 'fagales',
 		'rank': 'order',
-		'parent': 'eudicots',
+		'parent': 'rosids',
 	},
 	{
 		'name': 'fagus',
@@ -574,7 +579,7 @@ var life_data = [
 	{
 		'name': 'lamiales',
 		'rank': 'order',
-		'parent': 'eudicots',
+		'parent': 'asterids',
 	},
 	{
 		'name': 'lauraceae',
@@ -916,6 +921,11 @@ var life_data = [
 	{
 		'name': 'rosales',
 		'rank': 'order',
+		'parent': 'rosids',
+	},
+	{
+		'name': 'rosids',
+		'rank': 'clade',
 		'parent': 'eudicots',
 	},
 	{
@@ -944,7 +954,7 @@ var life_data = [
 	{
 		'name': 'solanales',
 		'rank': 'order',
-		'parent': 'eudicots',
+		'parent': 'asterids',
 	},
 	{
 		'name': 'solanum',
