@@ -1946,6 +1946,14 @@ var life_data = [
 		'range': 'ww',
 	},
 	{
+		'name': 'pterosauria',
+		'rank': 'order',
+		'parent': 'archosauria',
+		'extinct': true,
+		'range': 'ww',
+		'desc': 'Pterosaur',
+	},
+	{
 		'name': 'pyrus',
 		'rank': 'genus',
 		'parent': 'rosaceae',
