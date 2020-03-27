@@ -355,6 +355,17 @@ var life_data = [
 		'parent': 'monocots',
 	},
 	{
+		'name': 'corvidae',
+		'rank': 'family',
+		'parent': 'passeriformes',
+	},
+	{
+		'name': 'corvus',
+		'rank': 'genus',
+		'parent': 'corvidae',
+		'desc': 'Crow',
+	},
+	{
 		'name': 'cricetidae',
 		'rank': 'family',
 		'parent': 'muroidea',
@@ -418,6 +429,17 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'curcuma',
 		'desc': 'Turmeric',
+	},
+	{
+		'name': 'cyanocitta',
+		'rank': 'genus',
+		'parent': 'corvidae',
+	},
+	{
+		'name': 'cyanocitta crisata',
+		'rank': 'species',
+		'parent': 'cyanocitta',
+		'desc': 'Blue Jay',
 	},
 	{
 		'name': 'cygnus',
@@ -857,6 +879,12 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'panthera',
 		'desc': 'Snow Leopard',
+	},
+	{
+		'name': 'paridae',
+		'rank': 'family',
+		'parent': 'passeriformes',
+		'desc': 'Tit',
 	},
 	{
 		'name': 'passeriformes',
