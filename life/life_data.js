@@ -153,6 +153,19 @@ var life_data = [
 		'desc': 'Celery',
 	},
 	{
+		'name': 'arachis',
+		'rank': 'genus',
+		'parent': 'fabaceae',
+		'range': 'sa',
+	},
+	{
+		'name': 'arachis hypogaea',
+		'rank': 'species',
+		'parent': 'arachis',
+		'range': 'sa',
+		'desc': 'Peanut',
+	},
+	{
 		'name': 'archosauria',
 		'rank': 'clade',
 		'parent': 'reptilia',
