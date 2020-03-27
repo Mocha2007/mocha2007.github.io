@@ -67,7 +67,7 @@ var life_data = [
 	{
 		'name': 'apiales',
 		'rank': 'order',
-		'parent': 'asterids',
+		'parent': 'campanulids',
 	},
 	{
 		'name': 'apidae',
@@ -109,7 +109,7 @@ var life_data = [
 	{
 		'name': 'asterales',
 		'rank': 'order',
-		'parent': 'asterids',
+		'parent': 'campanulids',
 	},
 	{
 		'name': 'asterids',
@@ -178,6 +178,12 @@ var life_data = [
 		'desc': 'Broccoli, Brussel Sprout, Cabbage, Cauliflower, Collard Greens, Kale, among others',
 	},
 	{
+		'name': 'brassica rapa',
+		'rank': 'species',
+		'parent': 'brassica',
+		'desc': 'Turnip',
+	},
+	{
 		'name': 'brassicaceae',
 		'rank': 'family',
 		'parent': 'brassicales',
@@ -185,7 +191,12 @@ var life_data = [
 	{
 		'name': 'brassicales',
 		'rank': 'order',
-		'parent': 'rosids',
+		'parent': 'malvids',
+	},
+	{
+		'name': 'campanulids',
+		'rank': 'clade',
+		'parent': 'asterids',
 	},
 	{
 		'name': 'canidae',
@@ -356,7 +367,7 @@ var life_data = [
 	{
 		'name': 'cucurbitales',
 		'rank': 'order',
-		'parent': 'rosids',
+		'parent': 'fabids',
 	},
 	{
 		'name': 'cuminum',
@@ -455,6 +466,21 @@ var life_data = [
 		'parent': 'animalia',
 	},
 	{
+		'name': 'fabaceae',
+		'rank': 'family',
+		'parent': 'fabales',
+	},
+	{
+		'name': 'fabales',
+		'rank': 'order',
+		'parent': 'fabids',
+	},
+	{
+		'name': 'fabids',
+		'rank': 'clade',
+		'parent': 'rosids',
+	},
+	{
 		'name': 'fagaceae',
 		'rank': 'family',
 		'parent': 'fagales',
@@ -462,7 +488,7 @@ var life_data = [
 	{
 		'name': 'fagales',
 		'rank': 'order',
-		'parent': 'rosids',
+		'parent': 'fabids',
 	},
 	{
 		'name': 'fagus',
@@ -579,6 +605,11 @@ var life_data = [
 	{
 		'name': 'lamiales',
 		'rank': 'order',
+		'parent': 'lamiids',
+	},
+	{
+		'name': 'lamiids',
+		'rank': 'clade',
 		'parent': 'asterids',
 	},
 	{
@@ -628,6 +659,11 @@ var life_data = [
 		'parent': 'malus',
 		'important': true,
 		'desc': 'Apple',
+	},
+	{
+		'name': 'malvids',
+		'rank': 'clade',
+		'parent': 'rosids',
 	},
 	{
 		'name': 'mammalia',
@@ -789,6 +825,17 @@ var life_data = [
 		'parent': 'ungulata',
 	},
 	{
+		'name': 'phaseolus',
+		'rank': 'genus',
+		'parent': 'fabaceae',
+	},
+	{
+		'name': 'phaseolus vulgaris',
+		'rank': 'species',
+		'parent': 'phaseolus',
+		'desc': 'Common Bean',
+	},
+	{
 		'name': 'phasianidae',
 		'rank': 'family',
 		'parent': 'galliformes',
@@ -803,6 +850,17 @@ var life_data = [
 		'rank': 'genus',
 		'parent': 'pinaceae',
 		'desc': 'Spruce',
+	},
+	{
+		'name': 'pisum',
+		'rank': 'genus',
+		'parent': 'fabaceae',
+	},
+	{
+		'name': 'pisum sativum',
+		'rank': 'species',
+		'parent': 'pisum',
+		'desc': 'Pea',
 	},
 	{
 		'name': 'pinaceae',
@@ -904,6 +962,17 @@ var life_data = [
 		'desc': 'Oak',
 	},
 	{
+		'name': 'raphanus',
+		'rank': 'genus',
+		'parent': 'brassicaceae',
+	},
+	{
+		'name': 'raphanus raphanistrum',
+		'rank': 'species',
+		'parent': 'raphanus',
+		'desc': 'Radish',
+	},
+	{
 		'name': 'reptilia',
 		'rank': 'class',
 		'parent': 'chordata',
@@ -921,7 +990,7 @@ var life_data = [
 	{
 		'name': 'rosales',
 		'rank': 'order',
-		'parent': 'rosids',
+		'parent': 'fabids',
 	},
 	{
 		'name': 'rosids',
@@ -954,7 +1023,7 @@ var life_data = [
 	{
 		'name': 'solanales',
 		'rank': 'order',
-		'parent': 'asterids',
+		'parent': 'lamiids',
 	},
 	{
 		'name': 'solanum',
@@ -966,6 +1035,12 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'solanum',
 		'desc': 'Tomato',
+	},
+	{
+		'name': 'solanum melongena',
+		'rank': 'species',
+		'parent': 'solanum',
+		'desc': 'Eggplant',
 	},
 	{
 		'name': 'solanum tuberosum',
@@ -1025,6 +1100,22 @@ var life_data = [
 		'name': 'ungulata',
 		'rank': 'clade',
 		'parent': 'laurasiatheria',
+	},
+	{
+		'name': 'vitaceae',
+		'rank': 'family',
+		'parent': 'vitales',
+	},
+	{
+		'name': 'vitales',
+		'rank': 'order',
+		'parent': 'rosids',
+	},
+	{
+		'name': 'vitis',
+		'rank': 'genus',
+		'parent': 'vitaceae',
+		'desc': 'Grape',
 	},
 	{
 		'name': 'vulpes',
