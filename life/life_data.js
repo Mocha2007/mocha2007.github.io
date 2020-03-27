@@ -226,7 +226,7 @@ var life_data = [
 	{
 		'name': 'archosauria',
 		'rank': 'clade',
-		'parent': 'reptilia',
+		'parent': 'sauria',
 		'range': 'ww',
 	},
 	{
@@ -1296,7 +1296,7 @@ var life_data = [
 	{
 		'name': 'ichthyosauria',
 		'rank': 'order',
-		'parent': 'reptilia',
+		'parent': 'diapsida',
 		'extinct': true,
 		'range': 'ww',
 		'desc': 'Ichthyosaur',
@@ -1571,6 +1571,12 @@ var life_data = [
 		'name': 'neoaves',
 		'rank': 'clade',
 		'parent': 'aves',
+		'range': 'ww',
+	},
+	{
+		'name': 'diapsida',
+		'rank': 'clade',
+		'parent': 'reptilia',
 		'range': 'ww',
 	},
 	{
@@ -2134,6 +2140,12 @@ var life_data = [
 		'range': 'ww',
 	},
 	{
+		'name': 'sauria',
+		'rank': 'clade',
+		'parent': 'diapsida',
+		'range': 'ww',
+	},
+	{
 		'name': 'saurischia',
 		'rank': 'clade',
 		'parent': 'archosauria',
@@ -2142,7 +2154,7 @@ var life_data = [
 	{
 		'name': 'sauropterygia',
 		'rank': 'superorder',
-		'parent': 'reptilia',
+		'parent': 'sauria',
 		'extinct': true,
 		'range': 'ww',
 	},
@@ -2235,7 +2247,7 @@ var life_data = [
 	{
 		'name': 'squamata',
 		'rank': 'order',
-		'parent': 'reptilia',
+		'parent': 'sauria',
 		'range': 'ww',
 	},
 	{
