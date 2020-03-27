@@ -543,7 +543,7 @@ var life_data = [
 	{
 		'name': 'carnivora',
 		'rank': 'order',
-		'parent': 'laurasiatheria',
+		'parent': 'ferae',
 		'range': 'ww',
 	},
 	{
@@ -1027,6 +1027,12 @@ var life_data = [
 		// 'important': true,
 		'range': 'af',
 		'desc': 'Cat',
+	},
+	{
+		'name': 'ferae',
+		'rank': 'clade',
+		'parent': 'laurasiatheria',
+		'range': 'ww',
 	},
 	{
 		'name': 'formicidae',
@@ -1667,6 +1673,13 @@ var life_data = [
 		'rank': 'subfamily',
 		'parent': 'phasianidae',
 		'range': 'ow',
+	},
+	{
+		'name': 'pholiodota',
+		'rank': 'order',
+		'parent': 'ferae',
+		'range': 'ow',
+		'desc': 'Pangolin',
 	},
 	{
 		'name': 'phragmites',
