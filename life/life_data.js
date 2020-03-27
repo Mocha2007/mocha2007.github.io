@@ -89,6 +89,7 @@ var life_data = [
 		'name': 'angiosperms',
 		'rank': 'clade',
 		'parent': 'plantae',
+		'range': 'ww',
 	},
 	{
 		'name': 'animalia',
@@ -113,11 +114,13 @@ var life_data = [
 		'name': 'apiaceae',
 		'rank': 'family',
 		'parent': 'apiales',
+		'range': 'ww',
 	},
 	{
 		'name': 'apiales',
 		'rank': 'order',
 		'parent': 'campanulids',
+		'range': 'ww',
 	},
 	{
 		'name': 'apidae',
@@ -137,6 +140,7 @@ var life_data = [
 		'name': 'apium',
 		'rank': 'genus',
 		'parent': 'apiaceae',
+		'range': 'ww',
 	},
 	{
 		'name': 'apium graveolens',
@@ -187,16 +191,19 @@ var life_data = [
 		'name': 'asteraceae',
 		'rank': 'family',
 		'parent': 'asterales',
+		'range': 'ww',
 	},
 	{
 		'name': 'asterales',
 		'rank': 'order',
 		'parent': 'campanulids',
+		'range': 'ww',
 	},
 	{
 		'name': 'asterids',
 		'rank': 'clade',
 		'parent': 'eudicots',
+		'range': 'ww',
 	},
 	{
 		'name': 'asteroidea',
@@ -256,6 +263,7 @@ var life_data = [
 		'name': 'betulaceae',
 		'rank': 'family',
 		'parent': 'fagales',
+		'range': 'ww',
 	},
 	{
 		'name': 'bilateria',
@@ -300,23 +308,27 @@ var life_data = [
 		'name': 'brassica oleracea',
 		'rank': 'species',
 		'parent': 'brassica',
+		'range': 'eu',
 		'desc': 'Broccoli, Brussel Sprout, Cabbage, Cauliflower, Collard Greens, Kale, among others',
 	},
 	{
 		'name': 'brassica rapa',
 		'rank': 'species',
 		'parent': 'brassica',
+		'range': 'ea',
 		'desc': 'Turnip',
 	},
 	{
 		'name': 'brassicaceae',
 		'rank': 'family',
 		'parent': 'brassicales',
+		'range': 'ww',
 	},
 	{
 		'name': 'brassicales',
 		'rank': 'order',
 		'parent': 'malvids',
+		'range': 'ww',
 	},
 	{
 		'name': 'bromeliaceae',
@@ -333,6 +345,7 @@ var life_data = [
 		'name': 'campanulids',
 		'rank': 'clade',
 		'parent': 'asterids',
+		'range': 'ww',
 	},
 	{
 		'name': 'canidae',
@@ -377,6 +390,7 @@ var life_data = [
 		'name': 'capsicum',
 		'rank': 'genus',
 		'parent': 'solanaceae',
+		'range': 'nw',
 	},
 	{
 		'name': 'capsicum annuum',
@@ -414,6 +428,7 @@ var life_data = [
 		'name': 'carya',
 		'rank': 'genus',
 		'parent': 'juglandaceae',
+		'range': 'nh',
 	},
 	{
 		'name': 'carya illinoinensis',
@@ -504,6 +519,7 @@ var life_data = [
 		'name': 'citrullus',
 		'rank': 'genus',
 		'parent': 'cucurbitaceae',
+		'range': 'ow',
 	},
 	{
 		'name': 'citrullus lanatus',
@@ -516,6 +532,7 @@ var life_data = [
 		'name': 'citrus',
 		'rank': 'genus',
 		'parent': 'rutaceae',
+		'range': 'as',
 	},
 	{
 		'name': 'citrus latifola',
@@ -610,6 +627,7 @@ var life_data = [
 		'name': 'cucumis',
 		'rank': 'genus',
 		'parent': 'cucurbitaceae',
+		'range': 'ow',
 	},
 	{
 		'name': 'cucumis sativus',
@@ -622,6 +640,7 @@ var life_data = [
 		'name': 'cucurbita',
 		'rank': 'genus',
 		'parent': 'cucurbitaceae',
+		'range': 'nw',
 	},
 	{
 		'name': 'cucurbita pepo',
@@ -634,16 +653,19 @@ var life_data = [
 		'name': 'cucurbitaceae',
 		'rank': 'family',
 		'parent': 'cucurbitales',
+		'range': 'ww',
 	},
 	{
 		'name': 'cucurbitales',
 		'rank': 'order',
 		'parent': 'fabids',
+		'range': 'ww',
 	},
 	{
 		'name': 'cuminum',
 		'rank': 'genus',
 		'parent': 'apiaceae',
+		'range': 'as',
 	},
 	{
 		'name': 'cuminum cyminum',
@@ -688,6 +710,7 @@ var life_data = [
 		'name': 'daucus',
 		'rank': 'genus',
 		'parent': 'apiaceae',
+		'range': 'ww',
 	},
 	{
 		'name': 'daucus carota',
@@ -769,6 +792,7 @@ var life_data = [
 		'name': 'eudicots',
 		'rank': 'clade',
 		'parent': 'angiosperms',
+		'range': 'ww',
 	},
 	{
 		'name': 'eukaryota',
@@ -786,26 +810,31 @@ var life_data = [
 		'name': 'fabaceae',
 		'rank': 'family',
 		'parent': 'fabales',
+		'range': 'ww',
 	},
 	{
 		'name': 'fabales',
 		'rank': 'order',
 		'parent': 'fabids',
+		'range': 'ww',
 	},
 	{
 		'name': 'fabids',
 		'rank': 'clade',
 		'parent': 'rosids',
+		'range': 'ww',
 	},
 	{
 		'name': 'fagaceae',
 		'rank': 'family',
 		'parent': 'fagales',
+		'range': 'nh',
 	},
 	{
 		'name': 'fagales',
 		'rank': 'order',
 		'parent': 'fabids',
+		'range': 'ww',
 	},
 	{
 		'name': 'fagus',
@@ -943,6 +972,7 @@ var life_data = [
 		'name': 'juglandaceae',
 		'rank': 'family',
 		'parent': 'fagales',
+		'range': 'ww',
 	},
 	{
 		'name': 'juglans',
@@ -955,11 +985,13 @@ var life_data = [
 		'name': 'lactuca',
 		'rank': 'genus',
 		'parent': 'asteraceae',
+		'range': 'ww',
 	},
 	{
 		'name': 'lactuca sativa',
 		'rank': 'species',
 		'parent': 'lactuca',
+		'range': 'ow',
 		'desc': 'Lettuce',
 	},
 	{
@@ -985,32 +1017,50 @@ var life_data = [
 		'name': 'lamiaceae',
 		'rank': 'family',
 		'parent': 'lamiales',
+		'range': 'ww',
 	},
 	{
 		'name': 'lamiales',
 		'rank': 'order',
 		'parent': 'lamiids',
+		'range': 'ww',
 	},
 	{
 		'name': 'lamiids',
 		'rank': 'clade',
 		'parent': 'asterids',
+		'range': 'ww',
 	},
 	{
 		'name': 'lauraceae',
 		'rank': 'family',
 		'parent': 'laurales',
+		'range': 'ww',
 	},
 	{
 		'name': 'laurales',
 		'rank': 'order',
 		'parent': 'magnoliids',
+		'range': 'ww',
 	},
 	{
 		'name': 'laurasiatheria',
 		'rank': 'superorder',
 		'parent': 'mammalia',
 		'range': 'ww',
+	},
+	{
+		'name': 'laurus',
+		'rank': 'genus',
+		'parent': 'lauraceae',
+		'range': 'ow',
+	},
+	{
+		'name': 'laurus nobilis',
+		'rank': 'species',
+		'parent': 'laurus',
+		'range': 'ow',
+		'desc': 'Bay Laurel',
 	},
 	{
 		'name': 'leporidae',
@@ -1034,11 +1084,13 @@ var life_data = [
 		'name': 'magnoliids',
 		'rank': 'clade',
 		'parent': 'angiosperms',
+		'range': 'ww',
 	},
 	{
 		'name': 'malus',
 		'rank': 'genus',
 		'parent': 'rosaceae',
+		'range': 'nh',
 	},
 	{
 		'name': 'malus domestica',
@@ -1052,6 +1104,7 @@ var life_data = [
 		'name': 'malvids',
 		'rank': 'clade',
 		'parent': 'rosids',
+		'range': 'ww',
 	},
 	{
 		'name': 'mammalia',
@@ -1133,6 +1186,7 @@ var life_data = [
 		'name': 'ocimum',
 		'rank': 'genus',
 		'parent': 'lamiaceae',
+		'range': 'ww',
 	},
 	{
 		'name': 'ocimum basilicum',
@@ -1145,6 +1199,7 @@ var life_data = [
 		'name': 'origanum',
 		'rank': 'genus',
 		'parent': 'lamiaceae',
+		'range': 'ow',
 	},
 	{
 		'name': 'origanum vulgare',
@@ -1274,17 +1329,20 @@ var life_data = [
 		'name': 'petroselinum',
 		'rank': 'genus',
 		'parent': 'apiaceae',
+		'range': 'ow',
 	},
 	{
 		'name': 'petroselinum crispum',
 		'rank': 'species',
 		'parent': 'petroselinum',
+		'range': 'ow',
 		'desc': 'Parsley',
 	},
 	{
 		'name': 'phaseolus',
 		'rank': 'genus',
 		'parent': 'fabaceae',
+		'range': 'nw',
 	},
 	{
 		'name': 'phaseolus vulgaris',
@@ -1309,6 +1367,7 @@ var life_data = [
 		'name': 'physalis',
 		'rank': 'genus',
 		'parent': 'solanaceae',
+		'range': 'ww',
 	},
 	{
 		'name': 'physalis philadelphica',
@@ -1328,6 +1387,7 @@ var life_data = [
 		'name': 'pisum',
 		'rank': 'genus',
 		'parent': 'fabaceae',
+		'range': 'ow',
 	},
 	{
 		'name': 'pisum sativum',
@@ -1340,22 +1400,26 @@ var life_data = [
 		'name': 'pinaceae',
 		'rank': 'family',
 		'parent': 'pinales',
+		'range': 'nh',
 	},
 	{
 		'name': 'pinales',
 		'rank': 'order',
 		'parent': 'pinopsida',
+		'range': 'ww',
 	},
 	{
 		'name': 'pinophyta',
 		'rank': 'division',
 		'parent': 'plantae',
+		'range': 'ww',
 		'desc': 'Conifer',
 	},
 	{
 		'name': 'pinopsida',
 		'rank': 'class',
 		'parent': 'pinophyta',
+		'range': 'ww',
 	},
 	{
 		'name': 'pinus',
@@ -1390,6 +1454,7 @@ var life_data = [
 		'name': 'plantae',
 		'rank': 'kingdom',
 		'parent': 'eukaryota',
+		'range': 'ww',
 	},
 	{
 		'name': 'platyhelminthes',
@@ -1458,15 +1523,17 @@ var life_data = [
 		'name': 'quercus',
 		'rank': 'genus',
 		'parent': 'fagaceae',
+		'range': 'nh',
 		'desc': 'Oak',
 	},
 	{
 		'name': 'raphanus',
 		'rank': 'genus',
 		'parent': 'brassicaceae',
+		'range': 'ow',
 	},
 	{
-		'name': 'raphanus raphanistrum',
+		'name': 'raphanus sativus',
 		'rank': 'species',
 		'parent': 'raphanus',
 		'range': 'ow',
@@ -1488,21 +1555,25 @@ var life_data = [
 		'name': 'rosaceae',
 		'rank': 'family',
 		'parent': 'rosales',
+		'range': 'ww',
 	},
 	{
 		'name': 'rosales',
 		'rank': 'order',
 		'parent': 'fabids',
+		'range': 'ww',
 	},
 	{
 		'name': 'rosids',
 		'rank': 'clade',
 		'parent': 'eudicots',
+		'range': 'ww',
 	},
 	{
 		'name': 'rutaceae',
 		'rank': 'family',
 		'parent': 'sapindales',
+		'range': 'ww',
 	},
 	{
 		'name': 'saccharum',
@@ -1533,6 +1604,7 @@ var life_data = [
 		'name': 'sapindales',
 		'rank': 'order',
 		'parent': 'malvids',
+		'range': 'ww',
 	},
 	{
 		'name': 'sciuridae',
@@ -1578,16 +1650,19 @@ var life_data = [
 		'name': 'solanaceae',
 		'rank': 'family',
 		'parent': 'solanales',
+		'range': 'ww',
 	},
 	{
 		'name': 'solanales',
 		'rank': 'order',
 		'parent': 'lamiids',
+		'range': 'ww',
 	},
 	{
 		'name': 'solanum',
 		'rank': 'genus',
 		'parent': 'solanaceae',
+		'range': 'ww',
 	},
 	{
 		'name': 'solanum lycopersicum',
@@ -1743,11 +1818,13 @@ var life_data = [
 		'name': 'vitaceae',
 		'rank': 'family',
 		'parent': 'vitales',
+		'range': 'ww',
 	},
 	{
 		'name': 'vitales',
 		'rank': 'order',
 		'parent': 'rosids',
+		'range': 'ww',
 	},
 	{
 		'name': 'vitis',
