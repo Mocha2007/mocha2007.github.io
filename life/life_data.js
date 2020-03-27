@@ -1233,6 +1233,12 @@ var life_data = [
 		'desc': 'Basil',
 	},
 	{
+		'name': 'orchidaceae',
+		'rank': 'family',
+		'parent': 'asparagales',
+		'range': 'ww',
+	},
+	{
 		'name': 'origanum',
 		'rank': 'genus',
 		'parent': 'lamiaceae',
@@ -1892,6 +1898,19 @@ var life_data = [
 		'rank': 'clade',
 		'parent': 'laurasiatheria',
 		'range': 'ww',
+	},
+	{
+		'name': 'vanilla',
+		'rank': 'genus',
+		'parent': 'orchidaceae',
+		'range': 'eq',
+	},
+	{
+		'name': 'vanilla planifolia',
+		'rank': 'species',
+		'parent': 'vanilla',
+		'range': 'nw',
+		'desc': 'Vanilla',
 	},
 	{
 		'name': 'vitaceae',
