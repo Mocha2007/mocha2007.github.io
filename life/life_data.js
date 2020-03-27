@@ -256,7 +256,7 @@ var life_data = [
 	{
 		'name': 'australopithecina',
 		'rank': 'subtribe',
-		'parent': 'hominidae',
+		'parent': 'hominini',
 		'extinct': true,
 		'range': 'af',
 	},
@@ -1030,10 +1030,16 @@ var life_data = [
 		'desc': 'Great Apes',
 	},
 	{
+		'name': 'hominini',
+		'rank': 'tribe',
+		'parent': 'hominidae',
+		'range': 'af',
+	},
+	{
 		'name': 'homo',
 		'rank': 'genus',
 		'range': 'af',
-		'parent': 'hominidae',
+		'parent': 'hominini',
 	},
 	{
 		'name': 'homo erectus',
@@ -1386,7 +1392,7 @@ var life_data = [
 		'name': 'pan',
 		'rank': 'genus',
 		'range': 'af',
-		'parent': 'hominidae',
+		'parent': 'hominini',
 	},
 	{
 		'name': 'pan troglodytes',
