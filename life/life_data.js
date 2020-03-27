@@ -295,10 +295,15 @@ var life_data = [
 		'desc': 'Deer',
 	},
 	{
+		'name': 'chondrichthyes',
+		'rank': 'class',
+		'parent': 'chordata',
+	},
+	{
 		'name': 'chordata',
 		'rank': 'phylum',
 		'parent': 'deuterostomia',
-		'desc': 'During some period of their life cycle, chordates possess a notochord, a dorsal nerve cord, pharyngeal slits, an endostyle, and a post-anal tail: these five anatomical features define this phylum.'
+		'desc': 'During some period of their life cycle, chordates possess a notochord, a dorsal nerve cord, pharyngeal slits, an endostyle, and a post-anal tail. These five anatomical features define this phylum.'
 	},
 	{
 		'name': 'cinnamomum',
@@ -686,7 +691,7 @@ var life_data = [
 	{
 		'name': 'mammalia',
 		'rank': 'class',
-		'parent': 'chordata',
+		'parent': 'tetrapoda',
 	},
 	{
 		'name': 'medusazoa',
@@ -993,7 +998,7 @@ var life_data = [
 	{
 		'name': 'reptilia',
 		'rank': 'class',
-		'parent': 'chordata',
+		'parent': 'tetrapoda',
 	},
 	{
 		'name': 'rodentia',
@@ -1026,6 +1031,12 @@ var life_data = [
 		'rank': 'family',
 		'parent': 'rodentia',
 		'desc': 'Squirrel'
+	},
+	{
+		'name': 'selachimorpha',
+		'rank': 'superorder',
+		'parent': 'chondrichthyes',
+		'desc': 'Shark',
 	},
 	{
 		'name': 'serpentes',
@@ -1087,6 +1098,11 @@ var life_data = [
 		'rank': 'genus',
 		'parent': 'suidae',
 		'desc': 'Pig',
+	},
+	{
+		'name': 'tetrapoda',
+		'rank': 'superclass',
+		'parent': 'chordata',
 	},
 	{
 		'name': 'theropoda',
