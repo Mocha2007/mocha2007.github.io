@@ -8,7 +8,7 @@ String.prototype.title = function () {
 };
 
 var objects = {}; // string -> DOM object map
-var open = true; // default setting
+var open = false; // default setting
 var regions = {
 	'WW': 'Worldwide',
 		'AN': 'Antarctica',
