@@ -33,6 +33,16 @@ var life_data = [
 		'parent': 'asparagales',
 	},
 	{
+		'name': 'amniota',
+		'rank': 'clade',
+		'parent': 'tetrapoda',
+	},
+	{
+		'name': 'amphibia',
+		'rank': 'class',
+		'parent': 'tetrapoda',
+	},
+	{
 		'name': 'anatidae',
 		'rank': 'family',
 		'parent': 'anseriformes',
@@ -63,6 +73,12 @@ var life_data = [
 		'name': 'anseriformes',
 		'rank': 'order',
 		'parent': 'galloanserae',
+	},
+	{
+		'name': 'anura',
+		'rank': 'order',
+		'parent': 'amphibia',
+		'desc': 'Frog',
 	},
 	{
 		'name': 'apiaceae',
@@ -750,7 +766,7 @@ var life_data = [
 	{
 		'name': 'mammalia',
 		'rank': 'class',
-		'parent': 'tetrapoda',
+		'parent': 'amniota',
 	},
 	{
 		'name': 'medusazoa',
@@ -1100,7 +1116,7 @@ var life_data = [
 	{
 		'name': 'reptilia',
 		'rank': 'class',
-		'parent': 'tetrapoda',
+		'parent': 'amniota',
 	},
 	{
 		'name': 'rodentia',
