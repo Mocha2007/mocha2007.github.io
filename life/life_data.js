@@ -1,4 +1,15 @@
 var life_data = [
+	// EXAMPLE FORMAT
+	{
+		'name': 'example',
+		'rank': 'rank',
+		'parent': '*',
+		'important': true,
+		'extinct': true,
+		'range': 'ww',
+		'desc': 'This is an example of the format used on this page. The dagger indicates this clade is extinct. The two letters beside the name indicate the approximate native range.',
+	},
+	// BEGIN ALPHABETICAL ORDERING
 	{
 		'name': 'abies',
 		'rank': 'genus',
