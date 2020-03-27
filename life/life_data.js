@@ -172,6 +172,19 @@ var life_data = [
 		'desc': 'Peanut',
 	},
 	{
+		'name': 'arachnida',
+		'rank': 'class',
+		'parent': 'arthropoda',
+		'range': 'ww',
+	},
+	{
+		'name': 'araneae',
+		'rank': 'order',
+		'parent': 'arachnida',
+		'range': 'ww',
+		'desc': 'Spider',
+	},
+	{
 		'name': 'archosauria',
 		'rank': 'clade',
 		'parent': 'reptilia',
@@ -227,6 +240,13 @@ var life_data = [
 		'rank': 'order',
 		'parent': 'monocots',
 		'range': 'ww',
+	},
+	{
+		'name': 'astacoidea',
+		'rank': 'superfamily',
+		'parent': 'decapoda',
+		'range': 'ww',
+		'desc': 'Crayfish',
 	},
 	{
 		'name': 'asteraceae',
@@ -368,6 +388,13 @@ var life_data = [
 		'range': 'ww',
 	},
 	{
+		'name': 'brachyura',
+		'rank': 'infraorder',
+		'parent': 'decapoda',
+		'range': 'ww',
+		'desc': 'Crab',
+	},
+	{
 		'name': 'brassica',
 		'rank': 'genus',
 		'range': 'ww',
@@ -487,6 +514,13 @@ var life_data = [
 		'parent': 'cardinalis',
 		'range': 'na',
 		'desc': 'Cardinal',
+	},
+	{
+		'name': 'caridea',
+		'rank': 'infraorder',
+		'parent': 'decapoda',
+		'range': 'ww',
+		'desc': 'Shrimp',
 	},
 	{
 		'name': 'carnivora',
@@ -717,6 +751,12 @@ var life_data = [
 		'desc': 'Hamster',
 	},
 	{
+		'name': 'crustacea',
+		'rank': 'subphylum',
+		'parent': 'pancrustacea',
+		'range': 'ww',
+	},
+	{
 		'name': 'cucumis',
 		'rank': 'genus',
 		'parent': 'cucurbitaceae',
@@ -820,6 +860,12 @@ var life_data = [
 		'desc': 'Carrot'
 	},
 	{
+		'name': 'decapoda',
+		'rank': 'order',
+		'parent': 'malacostraca',
+		'range': 'ww',
+	},
+	{
 		'name': 'delphinidae',
 		'rank': 'family',
 		'parent': 'cetacea',
@@ -899,6 +945,13 @@ var life_data = [
 		'rank': 'subkingdom',
 		'parent': 'animalia',
 		'range': 'ww',
+	},
+	{
+		'name': 'euphausiacea',
+		'rank': 'order',
+		'parent': 'malacostraca',
+		'range': 'ww',
+		'desc': 'Krill',
 	},
 	{
 		'name': 'fabaceae',
@@ -1037,6 +1090,12 @@ var life_data = [
 		'desc': 'Cotton',
 	},
 	{
+		'name': 'hexapoda',
+		'rank': 'subphylum',
+		'parent': 'pancrustacea',
+		'range': 'ww',
+	},
+	{
 		'name': 'hippotigris',
 		'rank': 'subgenus',
 		'parent': 'equus',
@@ -1123,7 +1182,7 @@ var life_data = [
 	{
 		'name': 'insecta',
 		'rank': 'class',
-		'parent': 'arthropoda',
+		'parent': 'hexapoda',
 		'range': 'ww',
 		'desc': 'Insects have a chitinous exoskeleton, a three-part body (head, thorax and abdomen), three pairs of jointed legs, compound eyes, and one pair of antennae.'
 	},
@@ -1253,6 +1312,12 @@ var life_data = [
 		'range': 'ww',
 	},
 	{
+		'name': 'malacostraca',
+		'rank': 'class',
+		'parent': 'crustacea',
+		'range': 'ww',
+	},
+	{
 		'name': 'malus',
 		'rank': 'genus',
 		'parent': 'rosaceae',
@@ -1367,6 +1432,13 @@ var life_data = [
 		'range': 'ww',
 	},
 	{
+		'name': 'nephropidae',
+		'rank': 'family',
+		'parent': 'decapoda',
+		'range': 'ww',
+		'desc': 'Lobster',
+	},
+	{
 		'name': 'ocimum',
 		'rank': 'genus',
 		'parent': 'lamiaceae',
@@ -1448,6 +1520,12 @@ var life_data = [
 		'parent': 'pan',
 		'range': 'af',
 		'desc': 'Chimpanzee',
+	},
+	{
+		'name': 'pancrustacea',
+		'rank': 'clade',
+		'parent': 'arthropoda',
+		'range': 'ww',
 	},
 	{
 		'name': 'panicoideae',
