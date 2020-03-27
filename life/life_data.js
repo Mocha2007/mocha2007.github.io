@@ -651,6 +651,13 @@ var life_data = [
 		'range': 'ww',
 	},
 	{
+		'name': 'coccinellidae',
+		'rank': 'family',
+		'parent': 'coleoptera',
+		'range': 'ww',
+		'desc': 'Ladybug',
+	},
+	{
 		'name': 'cocos',
 		'rank': 'genus',
 		'parent': 'arecaceae',
@@ -662,6 +669,13 @@ var life_data = [
 		'parent': 'cocos',
 		'range': 'eq',
 		'desc': 'Coconut',
+	},
+	{
+		'name': 'coleoptera',
+		'rank': 'order',
+		'parent': 'insecta',
+		'range': 'ww',
+		'desc': 'Beetle',
 	},
 	{
 		'name': 'columbiformes',
@@ -1111,6 +1125,7 @@ var life_data = [
 		'rank': 'class',
 		'parent': 'arthropoda',
 		'range': 'ww',
+		'desc': 'Insects have a chitinous exoskeleton, a three-part body (head, thorax and abdomen), three pairs of jointed legs, compound eyes, and one pair of antennae.'
 	},
 	{
 		'name': 'juglandaceae',
@@ -1205,6 +1220,12 @@ var life_data = [
 		'parent': 'laurus',
 		'range': 'ow',
 		'desc': 'Bay Laurel',
+	},
+	{
+		'name': 'lepidoptera',
+		'rank': 'order',
+		'parent': 'insecta',
+		'range': 'ww',
 	},
 	{
 		'name': 'leporidae',
@@ -1779,6 +1800,13 @@ var life_data = [
 		'rank': 'class',
 		'parent': 'amniota',
 		'range': 'ww',
+	},
+	{
+		'name': 'rhopalocera',
+		'rank': 'suborder',
+		'parent': 'lepidoptera',
+		'range': 'ww',
+		'desc': 'Butterfly',
 	},
 	{
 		'name': 'rodentia',
