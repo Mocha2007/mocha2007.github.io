@@ -7,7 +7,7 @@ var life_data = [
 		'important': true,
 		'extinct': true,
 		'range': 'ww',
-		'desc': 'This is an example of the format used on this page. The dagger indicates this clade is extinct. The two letters beside the name indicate the approximate native range.',
+		'desc': 'This is an example of the format used on this page. The dagger indicates this clade is extinct. The two letters beside the name indicate the approximate native range. You can hover your cursor over the abbreviation to see a more detailed description.',
 	},
 	// BEGIN ALPHABETICAL ORDERING
 	{
