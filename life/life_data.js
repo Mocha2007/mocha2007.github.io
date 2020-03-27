@@ -143,6 +143,7 @@ var life_data = [
 		'name': 'bilateria',
 		'rank': 'clade',
 		'parent': 'eumetazoa',
+		'desc': 'Bilaterians are animals with bilateral symmetry as an embryo.',
 	},
 	{
 		'name': 'bos',
@@ -290,7 +291,7 @@ var life_data = [
 	{
 		'name': 'chordata',
 		'rank': 'phylum',
-		'parent': 'bilateria',
+		'parent': 'deuterostomia',
 		'desc': 'During some period of their life cycle, chordates possess a notochord, a dorsal nerve cord, pharyngeal slits, an endostyle, and a post-anal tail: these five anatomical features define this phylum.'
 	},
 	{
@@ -412,6 +413,12 @@ var life_data = [
 		'rank': 'subspecies',
 		'parent': 'daucus carota',
 		'desc': 'Carrot'
+	},
+	{
+		'name': 'deuterostomia',
+		'rank': 'superphylum',
+		'parent': 'bilateria',
+		'desc': 'In deuterostomes, the first opening, the blastopore, becomes the anus, while in protostomes, it becomes the mouth.'
 	},
 	{
 		'name': 'equidae',
@@ -946,7 +953,7 @@ var life_data = [
 	},
 	{
 		'name': 'protostomia',
-		'rank': 'clade',
+		'rank': 'superphylum',
 		'parent': 'bilateria',
 	},
 	{
