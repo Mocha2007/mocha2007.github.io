@@ -612,6 +612,12 @@ var life_data = [
 		'parent': 'actinopterygii',
 	},
 	{
+		'name': 'gadus',
+		'rank': 'genus',
+		'parent': 'gadidae',
+		'desc': 'Cod',
+	},
+	{
 		'name': 'galliformes',
 		'rank': 'order',
 		'parent': 'galloanserae',
@@ -1150,7 +1156,7 @@ var life_data = [
 	{
 		'name': 'salmoniformes',
 		'rank': 'order',
-		'parent': 'actinopterygii',
+		'parent': 'teleostei',
 	},
 	{
 		'name': 'salmoninae',
@@ -1185,6 +1191,12 @@ var life_data = [
 		'rank': 'suborder',
 		'parent': 'squamata',
 		'desc': 'Snake'
+	},
+	{
+		'name': 'siluriformes',
+		'rank': 'order',
+		'parent': 'teleostei',
+		'desc': 'Catfish',
 	},
 	{
 		'name': 'solanaceae',
@@ -1246,6 +1258,11 @@ var life_data = [
 		'rank': 'genus',
 		'parent': 'suidae',
 		'desc': 'Pig',
+	},
+	{
+		'name': 'teleostei',
+		'rank': 'infraclass',
+		'parent': 'actinopterygii',
 	},
 	{
 		'name': 'telluraves',
