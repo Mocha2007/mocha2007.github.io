@@ -960,6 +960,13 @@ var life_data = [
 		'range': 'ww',
 	},
 	{
+		'name': 'gossypium',
+		'rank': 'genus',
+		'parent': 'malvaceae',
+		'range': 'eq',
+		'desc': 'Cotton',
+	},
+	{
 		'name': 'hippotigris',
 		'rank': 'subgenus',
 		'parent': 'equus',
@@ -1137,6 +1144,7 @@ var life_data = [
 		'rank': 'family',
 		'parent': 'malvales',
 		'range': 'eq',
+		'desc': 'Mallow',
 	},
 	{
 		'name': 'malvales',
