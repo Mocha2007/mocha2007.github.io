@@ -57,7 +57,7 @@ var life_data = [
 	{
 		'name': 'anseriformes',
 		'rank': 'order',
-		'parent': 'aves',
+		'parent': 'galloanserae',
 	},
 	{
 		'name': 'apiaceae',
@@ -330,7 +330,7 @@ var life_data = [
 	{
 		'name': 'columbiformes',
 		'rank': 'order',
-		'parent': 'aves',
+		'parent': 'neoaves',
 		'desc': 'Pigeon',
 	},
 	{
@@ -545,6 +545,11 @@ var life_data = [
 	{
 		'name': 'galliformes',
 		'rank': 'order',
+		'parent': 'galloanserae',
+	},
+	{
+		'name': 'galloanserae',
+		'rank': 'superorder',
 		'parent': 'aves',
 	},
 	{
@@ -740,6 +745,11 @@ var life_data = [
 		'name': 'myristicaceae',
 		'rank': 'family',
 		'parent': 'magnoliales',
+	},
+	{
+		'name': 'neoaves',
+		'rank': 'clade',
+		'parent': 'aves',
 	},
 	{
 		'name': 'ocimum',
@@ -975,7 +985,7 @@ var life_data = [
 	{
 		'name': 'psittaciformes',
 		'rank': 'order',
-		'parent': 'aves',
+		'parent': 'telluraves',
 		'desc': 'Parrot',
 	},
 	{
@@ -1085,7 +1095,7 @@ var life_data = [
 	{
 		'name': 'strigiformes',
 		'rank': 'order',
-		'parent': 'aves',
+		'parent': 'telluraves',
 		'desc': 'Owl',
 	},
 	{
@@ -1098,6 +1108,11 @@ var life_data = [
 		'rank': 'genus',
 		'parent': 'suidae',
 		'desc': 'Pig',
+	},
+	{
+		'name': 'telluraves',
+		'rank': 'clade',
+		'parent': 'neoaves',
 	},
 	{
 		'name': 'tetrapoda',
