@@ -99,7 +99,7 @@ var life_data = [
 		'name': 'apis',
 		'rank': 'genus',
 		'parent': 'apidae',
-		'important': true,
+		// 'important': true,
 		'desc': 'Honey Bee',
 	},
 	{
@@ -246,7 +246,7 @@ var life_data = [
 		'name': 'canis lupus familiaris',
 		'rank': 'subspecies',
 		'parent': 'canis lupus',
-		'important': true,
+		// 'important': true,
 		'desc': 'Dog',
 	},
 	{
@@ -592,7 +592,7 @@ var life_data = [
 		'name': 'felis catus',
 		'rank': 'species',
 		'parent': 'felis',
-		'important': true,
+		// 'important': true,
 		'desc': 'Cat',
 	},
 	{
@@ -637,7 +637,6 @@ var life_data = [
 		'name': 'gallus gallus domesticus',
 		'rank': 'subspecies',
 		'parent': 'gallus gallus',
-		'important': true,
 		'desc': 'Chicken',
 	},
 	{
@@ -755,7 +754,7 @@ var life_data = [
 		'name': 'malus domestica',
 		'rank': 'species',
 		'parent': 'malus',
-		'important': true,
+		// 'important': true,
 		'desc': 'Apple',
 	},
 	{
@@ -1017,7 +1016,6 @@ var life_data = [
 		'name': 'pinus',
 		'rank': 'genus',
 		'parent': 'pinaceae',
-		'important': true,
 		'desc': 'Pine',
 	},
 	{

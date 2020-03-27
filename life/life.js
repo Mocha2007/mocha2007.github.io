@@ -7,8 +7,29 @@ String.prototype.title = function () {
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 };
 
-var objects = {};
-var open = true;
+var objects = {}; // string -> DOM object map
+var open = false; // default setting
+
+// helper functions
+
+function is_important(i){
+	// console.log('is_important', i, life_data[i]);
+	return life_data[i].hasOwnProperty('important') && life_data[i].important;
+}
+
+function open_parents(object){
+	console.log('open_parents', object);
+	// open object
+	object.open = true;
+	// get parent
+	var parent = object.parentElement;
+	// if parent === details then call for parent
+	if (parent.tagName === 'DETAILS'){
+		open_parents(parent);
+	}
+}
+
+// main program
 
 function main(){
 	// first, add everything in life_data to objects
@@ -24,7 +45,7 @@ function main(){
 		// title
 		var title = document.createElement("summary");
 		/* important
-		if (life_data[i].hasOwnProperty('important') && life_data[i].important){
+		if (is_important(i)){
 			var important = document.createElement("span");
 			important.classList.add('important');
 			important.innerHTML = '(!) ';
@@ -59,6 +80,12 @@ function main(){
 			var parent = objects[parent_id];
 		}
 		parent.appendChild(child);
+	}
+	// next, if important, open every parent
+	for (var i = 0; i < life_data.length; i++){
+		if (is_important(i)){
+			open_parents(objects[life_data[i].name]);
+		}
 	}
 	console.log("Loaded.");
 }
