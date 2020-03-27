@@ -1296,7 +1296,7 @@ var life_data = [
 	{
 		'name': 'ichthyosauria',
 		'rank': 'order',
-		'parent': 'diapsida',
+		'parent': 'reptilia',
 		'extinct': true,
 		'range': 'ww',
 		'desc': 'Ichthyosaur',
@@ -1571,12 +1571,6 @@ var life_data = [
 		'name': 'neoaves',
 		'rank': 'clade',
 		'parent': 'aves',
-		'range': 'ww',
-	},
-	{
-		'name': 'diapsida',
-		'rank': 'clade',
-		'parent': 'reptilia',
 		'range': 'ww',
 	},
 	{
@@ -2142,7 +2136,7 @@ var life_data = [
 	{
 		'name': 'sauria',
 		'rank': 'clade',
-		'parent': 'diapsida',
+		'parent': 'reptilia',
 		'range': 'ww',
 	},
 	{
