@@ -23,13 +23,14 @@ function main(){
 		details.id = name;
 		// title
 		var title = document.createElement("summary");
-		// important
+		/* important
 		if (life_data[i].hasOwnProperty('important') && life_data[i].important){
 			var important = document.createElement("span");
 			important.classList.add('important');
 			important.innerHTML = '(!) ';
 			title.appendChild(important);
 		}
+		*/
 		var b = document.createElement('b');
 		b.innerHTML = rank.title() + ' ';
 		title.appendChild(b)
