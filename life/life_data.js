@@ -316,7 +316,7 @@ var life_data = [
 	{
 		'name': 'aves',
 		'rank': 'class',
-		'parent': 'theropoda',
+		'parent': 'paraves',
 		'range': 'ww',
 		'desc': 'Bird',
 	},
@@ -606,6 +606,13 @@ var life_data = [
 		'desc': 'Cherry',
 	},
 	{
+		'name': 'ceratopsidae',
+		'rank': 'family',
+		'parent': 'ornithischia',
+		'extinct': true,
+		'range': 'na',
+	},
+	{
 		'name': 'cervidae',
 		'rank': 'family',
 		'parent': 'cetruminantia',
@@ -884,6 +891,13 @@ var life_data = [
 		'range': 'ww',
 	},
 	{
+		'name': 'deinonychus',
+		'rank': 'genus',
+		'parent': 'dromaeosauridae',
+		'extinct': true,
+		'range': 'na',
+	},
+	{
 		'name': 'delphinidae',
 		'rank': 'family',
 		'parent': 'cetacea',
@@ -895,6 +909,27 @@ var life_data = [
 		'parent': 'bilateria',
 		'range': 'ww',
 		'desc': 'In deuterostomes, the first opening, the blastopore, becomes the anus, while in protostomes, it becomes the mouth.'
+	},
+	{
+		'name': 'diplodocidae',
+		'rank': 'family',
+		'parent': 'saurischia',
+		'extinct': true,
+		'range': 'ww',
+	},
+	{
+		'name': 'diplodocus',
+		'rank': 'genus',
+		'parent': 'diplodocidae',
+		'extinct': true,
+		'range': 'na',
+	},
+	{
+		'name': 'dromaeosauridae',
+		'rank': 'family',
+		'parent': 'paraves',
+		'extinct': true,
+		'range': 'ww',
 	},
 	{
 		'name': 'echinodermata',
@@ -1204,6 +1239,13 @@ var life_data = [
 		'range': 'ww',
 	},
 	{
+		'name': 'hyracodontidae',
+		'rank': 'family',
+		'parent': 'perissodactyla',
+		'extinct': true,
+		'range': 'nh',
+	},
+	{
 		'name': 'insecta',
 		'rank': 'class',
 		'parent': 'hexapoda',
@@ -1501,6 +1543,13 @@ var life_data = [
 		'desc': 'Oregano',
 	},
 	{
+		'name': 'ornithischia',
+		'rank': 'order',
+		'parent': 'archosauria',
+		'extinct': true,
+		'range': 'ww',
+	},
+	{
 		'name': 'oryza',
 		'rank': 'genus',
 		'parent': 'bop clade',
@@ -1603,6 +1652,19 @@ var life_data = [
 		'parent': 'panthera',
 		'range': 'as',
 		'desc': 'Snow Leopard',
+	},
+	{
+		'name': 'paraceratherium',
+		'rank': 'genus',
+		'parent': 'hyracodontidae',
+		'extinct': true,
+		'range': 'ea',
+	},
+	{
+		'name': 'paraves',
+		'rank': 'clade',
+		'parent': 'theropoda',
+		'range': 'ww',
 	},
 	{
 		'name': 'paridae',
@@ -1986,6 +2048,12 @@ var life_data = [
 		'range': 'ww',
 	},
 	{
+		'name': 'saurischia',
+		'rank': 'clade',
+		'parent': 'archosauria',
+		'range': 'ww',
+	},
+	{
 		'name': 'sciuridae',
 		'rank': 'family',
 		'parent': 'rodentia',
@@ -2078,6 +2146,20 @@ var life_data = [
 		'range': 'ww',
 	},
 	{
+		'name': 'stegosauridae',
+		'rank': 'family',
+		'parent': 'ornithischia',
+		'extinct': true,
+		'range': 'ww',
+	},
+	{
+		'name': 'stegosaurus',
+		'rank': 'genus',
+		'parent': 'stegosauridae',
+		'extinct': true,
+		'range': 'nh',
+	},
+	{
 		'name': 'strigiformes',
 		'rank': 'order',
 		'parent': 'telluraves',
@@ -2150,7 +2232,7 @@ var life_data = [
 	{
 		'name': 'theropoda',
 		'rank': 'clade',
-		'parent': 'archosauria',
+		'parent': 'saurischia',
 		'range': 'ww',
 	},
 	{
@@ -2159,6 +2241,13 @@ var life_data = [
 		'parent': 'scombridae',
 		'range': 'ww',
 		'desc': 'Tuna',
+	},
+	{
+		'name': 'triceratops',
+		'rank': 'genus',
+		'parent': 'ceratopsidae',
+		'extinct': true,
+		'range': 'na',
 	},
 	{
 		'name': 'triticum',
@@ -2206,6 +2295,13 @@ var life_data = [
 		'rank': 'clade',
 		'parent': 'laurasiatheria',
 		'range': 'ww',
+	},
+	{
+		'name': 'utahraptor',
+		'rank': 'genus',
+		'parent': 'dromaeosauridae',
+		'extinct': true,
+		'range': 'na',
 	},
 	{
 		'name': 'vanilla',
