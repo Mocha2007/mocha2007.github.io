@@ -218,6 +218,13 @@ var life_data = [
 		'range': 'eq',
 	},
 	{
+		'name': 'armadillidiidae',
+		'rank': 'family',
+		'parent': 'isopoda',
+		'range': 'ow',
+		'desc': 'Rolly Polly'
+	},
+	{
 		'name': 'arthropoda',
 		'rank': 'phylum',
 		'parent': 'protostomia',
@@ -1185,6 +1192,12 @@ var life_data = [
 		'parent': 'hexapoda',
 		'range': 'ww',
 		'desc': 'Insects have a chitinous exoskeleton, a three-part body (head, thorax and abdomen), three pairs of jointed legs, compound eyes, and one pair of antennae.'
+	},
+	{
+		'name': 'isopoda',
+		'rank': 'order',
+		'parent': 'malacostraca',
+		'range': 'ww',
 	},
 	{
 		'name': 'juglandaceae',
