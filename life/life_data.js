@@ -123,6 +123,11 @@ var life_data = [
 		'parent': 'ungulata',
 	},
 	{
+		'name': 'artiofabula',
+		'rank': 'clade',
+		'parent': 'artiodactyla',
+	},
+	{
 		'name': 'asparagales',
 		'rank': 'order',
 		'parent': 'monocots',
@@ -155,10 +160,32 @@ var life_data = [
 		'desc': 'Bird',
 	},
 	{
+		'name': 'balaenoptera',
+		'rank': 'genus',
+		'parent': 'balaenopteridae',
+	},
+	{
+		'name': 'balaenoptera musculus',
+		'rank': 'species',
+		'parent': 'balaenoptera',
+		'desc': 'Blue Whale',
+	},
+	{
+		'name': 'balaenopteridae',
+		'rank': 'family',
+		'parent': 'cetacea',
+	},
+	{
 		'name': 'bambusoideae',
 		'rank': 'subfamily',
 		'parent': 'poaceae',
 		'desc': 'Bamboo',
+	},
+	{
+		'name': 'batoidea',
+		'rank': 'superorder',
+		'parent': 'chondrichthyes',
+		'desc': 'Ray',
 	},
 	{
 		'name': 'betula',
@@ -197,7 +224,7 @@ var life_data = [
 	{
 		'name': 'bovidae',
 		'rank': 'family',
-		'parent': 'artiodactyla',
+		'parent': 'cetruminantia',
 	},
 	{
 		'name': 'brassica',
@@ -225,6 +252,11 @@ var life_data = [
 		'name': 'brassicales',
 		'rank': 'order',
 		'parent': 'malvids',
+	},
+	{
+		'name': 'camelidae',
+		'rank': 'family',
+		'parent': 'tylopoda',
 	},
 	{
 		'name': 'campanulids',
@@ -333,8 +365,18 @@ var life_data = [
 	{
 		'name': 'cervidae',
 		'rank': 'family',
-		'parent': 'artiodactyla',
+		'parent': 'cetruminantia',
 		'desc': 'Deer',
+	},
+	{
+		'name': 'cetacea',
+		'rank': 'infraorder',
+		'parent': 'cetruminantia',
+	},
+	{
+		'name': 'cetruminantia',
+		'rank': 'clade',
+		'parent': 'artiofabula',
 	},
 	{
 		'name': 'chondrichthyes',
@@ -488,6 +530,11 @@ var life_data = [
 		'rank': 'subspecies',
 		'parent': 'daucus carota',
 		'desc': 'Carrot'
+	},
+	{
+		'name': 'delphinidae',
+		'rank': 'family',
+		'parent': 'cetacea',
 	},
 	{
 		'name': 'deuterostomia',
@@ -704,6 +751,17 @@ var life_data = [
 		'name': 'lagomorpha',
 		'rank': 'order',
 		'parent': 'glires',
+	},
+	{
+		'name': 'lama',
+		'rank': 'genus',
+		'parent': 'camelidae',
+	},
+	{
+		'name': 'lama glama',
+		'rank': 'species',
+		'parent': 'lama',
+		'desc': 'Llama',
 	},
 	{
 		'name': 'lamiaceae',
@@ -1256,7 +1314,12 @@ var life_data = [
 	{
 		'name': 'suidae',
 		'rank': 'family',
-		'parent': 'artiodactyla',
+		'parent': 'suina',
+	},
+	{
+		'name': 'suina',
+		'rank': 'suborder',
+		'parent': 'artiofabula',
 	},
 	{
 		'name': 'sus',
@@ -1306,6 +1369,17 @@ var life_data = [
 		'rank': 'genus',
 		'parent': 'poaceae',
 		'desc': 'Wheat',
+	},
+	{
+		'name': 'tursiops',
+		'rank': 'genus',
+		'parent': 'delphinidae',
+		'desc': 'Bottlenose Dolphin',
+	},
+	{
+		'name': 'tylopoda',
+		'rank': 'suborder',
+		'parent': 'artiodactyla',
 	},
 	{
 		'name': 'tyrannosauridae',
