@@ -2,9 +2,15 @@ var life_data = [
 	{
 		'name': 'abies',
 		'rank': 'genus',
-		'parent': 'pinaceae',
+		'parent': 'abietoideae',
 		'range': 'nh',
 		'desc': 'Fir',
+	},
+	{
+		'name': 'abietoideae',
+		'rank': 'subfamily',
+		'parent': 'pinaceae',
+		'range': 'nh',
 	},
 	{
 		'name': 'acanthomorpha',
@@ -499,7 +505,7 @@ var life_data = [
 	{
 		'name': 'cedrus',
 		'rank': 'genus',
-		'parent': 'pinaceae',
+		'parent': 'abietoideae',
 		'range': 'ea',
 		'desc': 'Cedar',
 	},
