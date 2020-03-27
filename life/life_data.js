@@ -924,6 +924,17 @@ var life_data = [
 		'parent': 'phasianidae',
 	},
 	{
+		'name': 'physalis',
+		'rank': 'genus',
+		'parent': 'solanaceae',
+	},
+	{
+		'name': 'physalis philadelphica',
+		'rank': 'species',
+		'parent': 'physalis',
+		'desc': 'Tomatillo',
+	},
+	{
 		'name': 'picea',
 		'rank': 'genus',
 		'parent': 'pinaceae',
