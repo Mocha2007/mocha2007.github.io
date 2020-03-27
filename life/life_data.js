@@ -6,6 +6,11 @@ var life_data = [
 		'desc': 'Fir',
 	},
 	{
+		'name': 'acanthomorpha',
+		'rank': 'clade',
+		'parent': 'teleostei',
+	},
+	{
 		'name': 'actinopterygii',
 		'rank': 'class',
 		'parent': 'osteichthyes',
@@ -609,7 +614,7 @@ var life_data = [
 	{
 		'name': 'gadiformes',
 		'rank': 'order',
-		'parent': 'teleostei',
+		'parent': 'acanthomorpha',
 	},
 	{
 		'name': 'gadus',
@@ -941,7 +946,7 @@ var life_data = [
 	{
 		'name': 'percomorpha',
 		'rank': 'clade',
-		'parent': 'teleostei',
+		'parent': 'acanthomorpha',
 	},
 	{
 		'name': 'perissodactyla',
