@@ -108,6 +108,17 @@ var life_data = [
 		'desc': 'Honey Bee',
 	},
 	{
+		'name': 'apium',
+		'rank': 'genus',
+		'parent': 'apiaceae',
+	},
+	{
+		'name': 'apium graveolens',
+		'rank': 'species',
+		'parent': 'apium',
+		'desc': 'Celery',
+	},
+	{
 		'name': 'archosauria',
 		'rank': 'clade',
 		'parent': 'reptilia',
@@ -1010,6 +1021,17 @@ var life_data = [
 		'name': 'perissodactyla',
 		'rank': 'order',
 		'parent': 'ungulata',
+	},
+	{
+		'name': 'petroselinum',
+		'rank': 'genus',
+		'parent': 'apiaceae',
+	},
+	{
+		'name': 'petroselinum crispum',
+		'rank': 'species',
+		'parent': 'petroselinum',
+		'desc': 'Parsley',
 	},
 	{
 		'name': 'phaseolus',
