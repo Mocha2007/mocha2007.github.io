@@ -551,6 +551,7 @@ var life_data = [
 		'name': 'galloanserae',
 		'rank': 'superorder',
 		'parent': 'aves',
+		'desc': 'Fowl',
 	},
 	{
 		'name': 'gallus',
@@ -1081,6 +1082,12 @@ var life_data = [
 		'rank': 'species',
 		'parent': 'solanum',
 		'desc': 'Potato',
+	},
+	{
+		'name': 'sphenisciformes',
+		'rank': 'order',
+		'parent': 'neoaves',
+		'desc': 'Penguin',
 	},
 	{
 		'name': 'squamata',
