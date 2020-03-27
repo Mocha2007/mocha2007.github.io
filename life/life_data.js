@@ -251,6 +251,22 @@ var life_data = [
 		'desc': 'Peppers, incl. Bell and Jalape&ntilde;os',
 	},
 	{
+		'name': 'cardinalidae',
+		'rank': 'family',
+		'parent': 'passeriformes',
+	},
+	{
+		'name': 'cardinalis',
+		'rank': 'genus',
+		'parent': 'cardinalidae',
+	},
+	{
+		'name': 'cardinalis cardinalis',
+		'rank': 'species',
+		'parent': 'cardinalis',
+		'desc': 'Cardinal',
+	},
+	{
 		'name': 'carnivora',
 		'rank': 'order',
 		'parent': 'laurasiatheria',
@@ -843,6 +859,11 @@ var life_data = [
 		'desc': 'Snow Leopard',
 	},
 	{
+		'name': 'passeriformes',
+		'rank': 'order',
+		'parent': 'psittacopasserae',
+	},
+	{
 		'name': 'pavo',
 		'rank': 'genus',
 		'parent': 'phasianinae',
@@ -981,8 +1002,13 @@ var life_data = [
 	{
 		'name': 'psittaciformes',
 		'rank': 'order',
-		'parent': 'telluraves',
+		'parent': 'psittacopasserae',
 		'desc': 'Parrot',
+	},
+	{
+		'name': 'psittacopasserae',
+		'rank': 'clade',
+		'parent': 'telluraves',
 	},
 	{
 		'name': 'quercus',
