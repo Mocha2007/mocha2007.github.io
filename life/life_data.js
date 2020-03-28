@@ -1512,6 +1512,14 @@ var life_data = [
 		'range': 'ww',
 	},
 	{
+		'name': 'mosasauroidea',
+		'rank': 'superfamily',
+		'parent': 'squamata',
+		'extinct': true,
+		'range': 'ww',
+		'desc': 'Mosasaur',
+	},
+	{
 		'name': 'muridae',
 		'rank': 'family',
 		'parent': 'muroidea',
