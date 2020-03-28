@@ -9,6 +9,10 @@ String.prototype.title = function () {
 
 var ages = [
 	{
+		'start': 4600,
+		'name': 'Hadean',
+	},
+	{
 		'start': 4000,
 		'name': 'Archean',
 	},
