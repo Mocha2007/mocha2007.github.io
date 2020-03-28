@@ -330,7 +330,6 @@ var life_data = [
 		'rank': 'class',
 		'parent': 'echinodermata',
 		'range': 'ww',
-		'age': 540,
 		'desc': 'Starfish',
 	},
 	{
@@ -1012,6 +1011,7 @@ var life_data = [
 		'rank': 'phylum',
 		'parent': 'deuterostomia',
 		'range': 'ww',
+		'age': 540,
 	},
 	{
 		'name': 'equidae',
