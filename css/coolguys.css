@@ -28,4 +28,3 @@ span[class^=tag]{font-family: monospace;border-radius:8px;padding:2px}
 .tagt::before{content:"T";}
 .tagt{background-color:black;color:lime;}
 .tagt:hover::after{content:"ech";}
-}
