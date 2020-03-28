@@ -46,13 +46,14 @@ function get_age(age){
 }
 
 function get_era(age, age_list = ages, depth = 0){
+	var i;
 	var names = ['eon', 'era', 'period', 'epoch', 'age'];
 	/* console.log(
 		age,
 		age_list,
 		depth
 	); */
-	for (var i = 1; i < age_list.length; i++){
+	for (i = 1; i < age_list.length; i++){
 		if (age_list[i].start < age){
 			break;
 		}
@@ -145,11 +146,11 @@ function toggle(){
 // main program
 
 function main(){
-	var name;
+	var i, name;
 	// print appropriate text to toggle button
 	refresh_buttons();
 	// first, add everything in life_data to objects
-	for (var i = 0; i < life_data.length; i++){
+	for (i = 0; i < life_data.length; i++){
 		// create DOM object
 		var details = document.createElement("details");
 		details.open = open_setting;
