@@ -529,6 +529,7 @@ var life_data = [
 		'name': 'canidae',
 		'rank': 'family',
 		'range': 'ww',
+		'age': 39.75,
 		'parent': 'carnivora',
 	},
 	{
@@ -608,6 +609,7 @@ var life_data = [
 		'rank': 'order',
 		'parent': 'ferae',
 		'range': 'ww',
+		'age': 42,
 	},
 	{
 		'name': 'carya',
@@ -1145,12 +1147,21 @@ var life_data = [
 		'name': 'felidae',
 		'rank': 'family',
 		'range': 'ww',
+		'age': 25,
+		'parent': 'feliformia',
+	},
+	{
+		'name': 'feliformia',
+		'rank': 'suborder',
+		'range': 'ww',
+		'age': 40,
 		'parent': 'carnivora',
 	},
 	{
 		'name': 'felis',
 		'rank': 'genus',
 		'range': 'ow',
+		'age': 6.2,
 		'parent': 'felidae',
 	},
 	{
@@ -1166,6 +1177,7 @@ var life_data = [
 		'rank': 'clade',
 		'parent': 'laurasiatheria',
 		'range': 'ww',
+		'age': 78.9,
 	},
 	{
 		'name': 'formicidae',
@@ -1334,6 +1346,14 @@ var life_data = [
 		'desc': 'Human',
 	},
 	{
+		'name': 'hyaenidae',
+		'rank': 'family',
+		'parent': 'feliformia',
+		'range': 'ow',
+		'age': 26,
+		'desc': 'Hyena',
+	},
+	{
 		'name': 'hylobatidae',
 		'rank': 'family',
 		'parent': 'hominoidea',
@@ -1469,7 +1489,7 @@ var life_data = [
 		'rank': 'superorder',
 		'parent': 'mammalia',
 		'range': 'ww',
-		'age': 76,
+		'age': 91,
 	},
 	{
 		'name': 'laurus',
@@ -1762,6 +1782,7 @@ var life_data = [
 		'rank': 'genus',
 		'parent': 'felidae',
 		'range': 'ww',
+		'age': 5.95,
 	},
 	{
 		'name': 'panthera leo',
@@ -1897,7 +1918,7 @@ var life_data = [
 		'range': 'ow',
 	},
 	{
-		'name': 'pholiodota',
+		'name': 'pholidota',
 		'rank': 'order',
 		'parent': 'ferae',
 		'range': 'ow',
