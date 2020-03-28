@@ -139,14 +139,52 @@ var ages = [
 					{
 						'name': 'Triassic',
 						'start': 251.902,
+						'divisions': [
+							{
+								'name': 'Early Triassic',
+								'start': 251.902,
+							},
+							{
+								'name': 'Middle Triassic',
+								'start': 247.2,
+							},
+							{
+								'name': 'Late Triassic',
+								'start': 237,
+							},
+						],
 					},
 					{
 						'name': 'Jurassic',
 						'start': 201.3,
+						'divisions': [
+							{
+								'name': 'Early Jurassic',
+								'start': 201.3,
+							},
+							{
+								'name': 'Middle Jurassic',
+								'start': 174.1,
+							},
+							{
+								'name': 'Late Jurassic',
+								'start': 163.5,
+							},
+						],
 					},
 					{
 						'name': 'Cretaceous',
 						'start': 145,
+						'divisions': [
+							{
+								'name': 'Early Cretaceous',
+								'start': 145,
+							},
+							{
+								'name': 'Late Cretaceous',
+								'start': 100.5,
+							},
+						],
 					},
 				],
 			},
