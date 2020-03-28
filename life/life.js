@@ -7,84 +7,6 @@ String.prototype.title = function () {
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 };
 
-var ages = [
-	{
-		'start': 4600,
-		'name': 'Hadean',
-	},
-	{
-		'start': 4000,
-		'name': 'Archean',
-	},
-	{
-		'start': 2500,
-		'name': 'Paleoproterozoic',
-	},
-	{
-		'start': 1600,
-		'name': 'Mesoproterozoic',
-	},
-	{
-		'start': 1000,
-		'name': 'Tonian',
-	},
-	{
-		'start': 720,
-		'name': 'Cryogenian',
-	},
-	{
-		'start': 635,
-		'name': 'Ediacrian',
-	},
-	{
-		'start': 541,
-		'name': 'Cambrian',
-	},
-	{
-		'start': 485.4,
-		'name': 'Ordovician',
-	},
-	{
-		'start': 443.8,
-		'name': 'Silurian',
-	},
-	{
-		'start': 419.2,
-		'name': 'Devonian',
-	},
-	{
-		'start': 358.9,
-		'name': 'Carboniferous',
-	},
-	{
-		'start': 298.9,
-		'name': 'Permian',
-	},
-	{
-		'start': 251.902,
-		'name': 'Triassic',
-	},
-	{
-		'start': 201.3,
-		'name': 'Jurassic',
-	},
-	{
-		'start': 145,
-		'name': 'Cretaceous',
-	},
-	{
-		'start': 66,
-		'name': 'Paleogene',
-	},
-	{
-		'start': 23.03,
-		'name': 'Neogene',
-	},
-	{
-		'start': 2.58,
-		'name': 'Quaternary',
-	},
-];
 var objects = {}; // string -> DOM object map
 var open = false; // default setting
 var regions = {
@@ -117,14 +39,26 @@ function get_age(age){
 		return age*1000 + ' kya';
 }
 
-function get_era(age){
-	// console.log('get_era', age);
-	for (var i = 0; i < ages.length; i++){
-		if (ages[i].start < age){
-			return ages[i-1].name;
+function get_era(age, age_list = ages, depth = 0){
+	var names = ['eon', 'era', 'period', 'epoch', 'age'];
+	/* console.log(
+		age,
+		age_list,
+		depth
+	); */
+	for (var i = 1; i < age_list.length; i++){
+		if (age_list[i].start < age){
+			break;
 		}
 	}
-	return ages[ages.length-1].name;
+	/* console.log(
+		' =>',
+		age_list[i-1].name,
+		age_list[i-1].type,
+		age_list[i-1].hasOwnProperty('divisions')
+	); */
+	return (age_list[i-1].hasOwnProperty('divisions') ?  get_era(age, age_list[i-1].divisions, depth+1) + ', ' : '')
+	+ age_list[i-1].name + ' ' + names[depth];
 }
 
 function is_important(i){

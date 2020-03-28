@@ -1,5 +1,5 @@
 var life_data = [
-	// EXAMPLE FORMAT
+	/* EXAMPLE FORMAT
 	{
 		'name': 'example',
 		'rank': 'rank',
@@ -10,6 +10,7 @@ var life_data = [
 		'age': 800,
 		'desc': 'This is an example of the format used on this page. The dagger indicates this clade is extinct. The two letters beside the name indicate the approximate native range. You can hover your cursor over the abbreviation to see a more detailed description. This clade diversified 800 mya.',
 	},
+	*/
 	// BEGIN ALPHABETICAL ORDERING
 	{
 		'name': 'abies',
