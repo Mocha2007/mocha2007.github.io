@@ -139,6 +139,12 @@ var life_data = [
 		'range': 'ww',
 	},
 	{
+		'name': 'anthozoa',
+		'rank': 'class',
+		'parent': 'cnidaria',
+		'range': 'ww',
+	},
+	{
 		'name': 'anura',
 		'rank': 'order',
 		'parent': 'amphibia',
@@ -403,7 +409,7 @@ var life_data = [
 	{
 		'name': 'bilateria',
 		'rank': 'clade',
-		'parent': 'eumetazoa',
+		'parent': 'parahoxozoa',
 		'range': 'ww',
 		'desc': 'Bilaterians are animals with bilateral symmetry as an embryo.',
 	},
@@ -754,7 +760,7 @@ var life_data = [
 	{
 		'name': 'cnidaria',
 		'rank': 'phylum',
-		'parent': 'eumetazoa',
+		'parent': 'parahoxozoa',
 		'range': 'ww',
 	},
 	{
@@ -828,6 +834,13 @@ var life_data = [
 		'rank': 'subphylum',
 		'parent': 'pancrustacea',
 		'range': 'ww',
+	},
+	{
+		'name': 'ctenophora',
+		'rank': 'phylum',
+		'parent': 'eumetazoa',
+		'range': 'ww',
+		'desc': 'Comb Jellies',
 	},
 	{
 		'name': 'cucumis',
@@ -1758,6 +1771,12 @@ var life_data = [
 		'range': 'ea',
 	},
 	{
+		'name': 'parahoxozoa',
+		'rank': 'clade',
+		'parent': 'eumetazoa',
+		'range': 'ww',
+	},
+	{
 		'name': 'paraves',
 		'rank': 'clade',
 		'parent': 'theropoda',
@@ -1782,6 +1801,13 @@ var life_data = [
 		'parent': 'phasianinae',
 		'range': 'as',
 		'desc': 'Peafowl',
+	},
+	{
+		'name': 'pennatulacea',
+		'rank': 'order',
+		'parent': 'anthozoa',
+		'range': 'ww',
+		'desc': 'Sea Pen',
 	},
 	{
 		'name': 'percomorpha',
@@ -2185,6 +2211,13 @@ var life_data = [
 		'parent': 'rodentia',
 		'range': 'ww',
 		'desc': 'Squirrel'
+	},
+	{
+		'name': 'scleractinia',
+		'rank': 'order',
+		'parent': 'anthozoa',
+		'range': 'ww',
+		'desc': 'Hard Coral',
 	},
 	{
 		'name': 'scombridae',
