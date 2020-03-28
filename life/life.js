@@ -2,10 +2,15 @@
 /* exported importSave, downloadSave, createOrder, wipeMap, hardReset */
 "use strict";
 
-// https://stackoverflow.com/a/5574446/2579798
-String.prototype.title = function () {
-    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-};
+// https://stackoverflow.com/a/196991/2579798
+function toTitleCase(str) {
+	return str.replace(
+		/\w\S*/g,
+		function(txt) {
+			return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+		}
+	);
+}
 
 var objects = {}; // string -> DOM object map
 var open = false; // default setting
@@ -163,7 +168,7 @@ function main(){
 		*/
 		// rank
 		var b = document.createElement('b');
-		b.innerHTML = rank.title() + ' ';
+		b.innerHTML = toTitleCase(rank) + ' ';
 		title.appendChild(b)
 		// extinct?
 		if (life_data[i].hasOwnProperty('extinct') && life_data[i].hasOwnProperty('extinct')){
@@ -171,8 +176,8 @@ function main(){
 		}
 		// name
 		var a = document.createElement('a');
-		a.innerHTML = name.title();
-		a.href = 'https://en.wikipedia.org/wiki/' + name.title();
+		a.innerHTML = toTitleCase(name);
+		a.href = 'https://en.wikipedia.org/wiki/' + toTitleCase(name);
 		title.appendChild(a)
 		// range
 		if (life_data[i].hasOwnProperty('range')){
