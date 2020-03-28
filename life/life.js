@@ -1,5 +1,6 @@
-/* jshint esversion: 6, strict: true, forin: false, loopfunc: true, strict: global */
-/* exported importSave, downloadSave, createOrder, wipeMap, hardReset */
+/* jshint esversion: 6, strict: true, strict: global */
+/* globals ages, life_data */
+/* exported open_age, search_button, toggle, main */
 "use strict";
 
 // https://stackoverflow.com/a/196991/2579798
@@ -13,7 +14,7 @@ function toTitleCase(str) {
 }
 
 var objects = {}; // string -> DOM object map
-var open = false; // default setting
+var open_setting = false; // default setting
 var regions = {
 	'WW': 'Worldwide',
 		'AN': 'Antarctica',
@@ -62,8 +63,8 @@ function get_era(age, age_list = ages, depth = 0){
 		age_list[i-1].type,
 		age_list[i-1].hasOwnProperty('divisions')
 	); */
-	return (age_list[i-1].hasOwnProperty('divisions') ?  get_era(age, age_list[i-1].divisions, depth+1) + ', ' : '')
-	+ age_list[i-1].name + ' ' + names[depth];
+	return (age_list[i-1].hasOwnProperty('divisions') ?  get_era(age, age_list[i-1].divisions, depth+1) + ', ' : '') +
+	age_list[i-1].name + ' ' + names[depth];
 }
 
 function is_important(i){
@@ -74,7 +75,7 @@ function is_important(i){
 function open_age(age){
 	// open all clades older than age mya
 	for (var i = 0; i < life_data.length; i++){
-		var clade = life_data[i]
+		var clade = life_data[i];
 		if (clade.hasOwnProperty('age') && age < clade.age){
 			open_parents(objects[clade.name]);
 		}
@@ -94,7 +95,7 @@ function open_parents(object){
 }
 
 function refresh_buttons(){
-	document.getElementById('toggle_button_inner').innerHTML = open ? 'Close' : 'Open';
+	document.getElementById('toggle_button_inner').innerHTML = open_setting ? 'Close' : 'Open';
 }
 
 function search(string){
@@ -133,27 +134,28 @@ function search_button(){
 
 function toggle(){
 	// make everything closed or open (toggle)
-	open = !open;
+	open_setting = !open_setting;
 	refresh_buttons();
 	var elements = document.getElementsByTagName("DETAILS");
 	for (var i = 0; i < elements.length; i++){
-		elements[i].open = open;
+		elements[i].open = open_setting;
 	}
 }
 
 // main program
 
 function main(){
+	var name;
 	// print appropriate text to toggle button
 	refresh_buttons();
 	// first, add everything in life_data to objects
 	for (var i = 0; i < life_data.length; i++){
 		// create DOM object
 		var details = document.createElement("details");
-		details.open = open;
+		details.open = open_setting;
 		var rank = life_data[i].rank;
 		details.classList.add(rank);
-		var name = life_data[i].name;
+		name = life_data[i].name;
 		objects[name] = details;
 		details.id = name;
 		// title
@@ -169,7 +171,7 @@ function main(){
 		// rank
 		var b = document.createElement('b');
 		b.innerHTML = toTitleCase(rank) + ' ';
-		title.appendChild(b)
+		title.appendChild(b);
 		// extinct?
 		if (life_data[i].hasOwnProperty('extinct') && life_data[i].hasOwnProperty('extinct')){
 			title.innerHTML += '&dagger; ';
@@ -178,7 +180,7 @@ function main(){
 		var a = document.createElement('a');
 		a.innerHTML = toTitleCase(name);
 		a.href = 'https://en.wikipedia.org/wiki/' + toTitleCase(name);
-		title.appendChild(a)
+		title.appendChild(a);
 		// range
 		if (life_data[i].hasOwnProperty('range')){
 			var range_abbr = life_data[i].range.toUpperCase();
@@ -191,7 +193,7 @@ function main(){
 		}
 		// age
 		if (life_data[i].hasOwnProperty('age')){
-			var a = life_data[i].age; // mya
+			a = life_data[i].age; // mya
 			title.innerHTML += ' ';
 			var age = document.createElement('abbr');
 			age.classList.add('age');
@@ -208,21 +210,19 @@ function main(){
 		}
 	}
 	// next, nest everything accordingly. add * to root.
-	for (var i = 0; i < life_data.length; i++){
-		var name = life_data[i].name;
+	for (i = 0; i < life_data.length; i++){
+		name = life_data[i].name;
 		console.log("Loading " + name + "...");
 		var parent_id = life_data[i].parent;
 		var child = objects[name];
-		if (parent_id === '*'){
-			var parent = document.getElementById('root');
-		}
-		else {
-			var parent = objects[parent_id];
+		var parent = document.getElementById('root');
+		if (parent_id !== '*'){
+			parent = objects[parent_id];
 		}
 		parent.appendChild(child);
 	}
 	// next, if important, open every parent
-	for (var i = 0; i < life_data.length; i++){
+	for (i = 0; i < life_data.length; i++){
 		if (is_important(i)){
 			open_parents(objects[life_data[i].name]);
 		}
