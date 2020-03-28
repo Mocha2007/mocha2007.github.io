@@ -157,14 +157,48 @@ var ages = [
 					{
 						'name': 'Paleogene',
 						'start': 66,
+						'divisions': [
+							{
+								'name': 'Paleocene',
+								'start': 66,
+							},
+							{
+								'name': 'Eocene',
+								'start': 56,
+							},
+							{
+								'name': 'Oligocene',
+								'start': 33.9,
+							},
+						],
 					},
 					{
 						'name': 'Neogene',
 						'start': 23.03,
+						'divisions': [
+							{
+								'name': 'Miocene',
+								'start': 23.03,
+							},
+							{
+								'name': 'Pliocene',
+								'start': 5.333,
+							},
+						],
 					},
 					{
 						'name': 'Quaternary',
 						'start': 2.58,
+						'divisions': [
+							{
+								'name': 'Pleistocene',
+								'start': 2.58,
+							},
+							{
+								'name': 'Holocene',
+								'start': 0.0117,
+							},
+						],
 					},
 				],
 			},
