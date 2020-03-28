@@ -7,6 +7,80 @@ String.prototype.title = function () {
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 };
 
+var ages = [
+	{
+		'start': 4000,
+		'name': 'Archean',
+	},
+	{
+		'start': 2500,
+		'name': 'Paleoproterozoic',
+	},
+	{
+		'start': 1600,
+		'name': 'Mesoproterozoic',
+	},
+	{
+		'start': 1000,
+		'name': 'Tonian',
+	},
+	{
+		'start': 720,
+		'name': 'Cryogenian',
+	},
+	{
+		'start': 635,
+		'name': 'Ediacrian',
+	},
+	{
+		'start': 541,
+		'name': 'Cambrian',
+	},
+	{
+		'start': 485.4,
+		'name': 'Ordovician',
+	},
+	{
+		'start': 443.8,
+		'name': 'Silurian',
+	},
+	{
+		'start': 419.2,
+		'name': 'Devonian',
+	},
+	{
+		'start': 358.9,
+		'name': 'Carboniferous',
+	},
+	{
+		'start': 298.9,
+		'name': 'Permian',
+	},
+	{
+		'start': 251.902,
+		'name': 'Triassic',
+	},
+	{
+		'start': 201.3,
+		'name': 'Jurassic',
+	},
+	{
+		'start': 145,
+		'name': 'Cretaceous',
+	},
+	{
+		'start': 66,
+		'name': 'Paleogene',
+	},
+	{
+		'start': 23.03,
+		'name': 'Neogene',
+	},
+	{
+		'start': 2.58,
+		'name': 'Quaternary',
+	},
+];
 var objects = {}; // string -> DOM object map
 var open = false; // default setting
 var regions = {
@@ -32,13 +106,23 @@ var regions = {
 
 // helper functions
 
+function get_era(age){
+	// console.log('get_era', age);
+	for (var i = 0; i < ages.length; i++){
+		if (ages[i].start < age){
+			return ages[i-1].name;
+		}
+	}
+	return ages[ages.length-1].name;
+}
+
 function is_important(i){
 	// console.log('is_important', i, life_data[i]);
 	return life_data[i].hasOwnProperty('important') && life_data[i].important;
 }
 
 function open_parents(object){
-	console.log('open_parents', object);
+	// console.log('open_parents', object);
 	// open object
 	object.open = true;
 	// get parent
@@ -110,6 +194,16 @@ function main(){
 			range.title = regions[range_abbr];
 			range.innerHTML = range_abbr;
 			title.appendChild(range);
+		}
+		// age
+		if (life_data[i].hasOwnProperty('age')){
+			var a = life_data[i].age; // mya
+			title.innerHTML += ' ';
+			var age = document.createElement('abbr');
+			age.classList.add('age');
+			age.title = get_era(a);
+			age.innerHTML = a + ' mya';
+			title.appendChild(age);
 		}
 		details.appendChild(title);
 		// desc

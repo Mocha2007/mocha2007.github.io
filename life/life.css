@@ -21,6 +21,10 @@ abbr{
 	font-size: large;
 	font-weight: bold;
 }
+.age {
+	font-size: small;
+	font-weight: bold;
+}
 .range {
 	font-size: x-small;
 	font-weight: bold;
