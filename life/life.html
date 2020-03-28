@@ -11,6 +11,9 @@
 	&larr; <input type="submit" value="Open this" onclick="open_parents(objects[document.getElementById('control_clade').value]);">
 	| <input id="control_age" type="number" min="0" max="4600" value="540"> mya
 	&larr; <input type="submit" value="Open everything older than this" onclick="open_age(document.getElementById('control_age').value);">
+	<br> <input type="text" id="search_clade">
+	&larr; <input type="submit" value="Search" onclick="search_button();">
+	<br><div id="search_div"><ol id="results"></ol></div>
 </div>
 <div id="root"></div>
 <script src="life.js"></script>

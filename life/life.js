@@ -158,6 +158,40 @@ function refresh_buttons(){
 	document.getElementById('toggle_button_inner').innerHTML = open ? 'Close' : 'Open';
 }
 
+function search(string){
+	var indices = [];
+	// return all life_data indices matching search string
+	for (var i = 0; i < life_data.length; i++){
+		// if name or desc contains string
+		if ((life_data[i].hasOwnProperty('name') && life_data[i].name.includes(string)) ||
+			(life_data[i].hasOwnProperty('desc') && life_data[i].desc.includes(string))){
+			indices.push(i);
+		}
+	}
+	return indices;
+}
+
+function search_button(){
+	var search_string = document.getElementById('search_clade').value;
+	// clear results
+	document.getElementById("results").innerHTML = "";
+	search(search_string).forEach((i) => {
+		var name = life_data[i].name;
+		// open element
+		open_parents(objects[name]);
+		// show result
+		var li = document.createElement("li");
+		li.value = i;
+		if (name.includes(search_string)){
+			li.innerHTML = name.replace(new RegExp(search_string, "g"), "<b>" + search_string + "</b>");
+		}
+		else {
+			li.innerHTML = name + " (matched description)";
+		}
+		document.getElementById('results').appendChild(li);
+	});
+}
+
 function toggle(){
 	// make everything closed or open (toggle)
 	open = !open;

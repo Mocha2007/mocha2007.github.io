@@ -55,6 +55,11 @@ abbr{
 	background-color: #f8f;
 }
 #controls {
+	line-height: 150%;
 	padding: 10px;
 	text-align: center;
+}
+#search_div{
+	display: inline-block; /* make div no larger than ol */
+	text-align: left;
 }
