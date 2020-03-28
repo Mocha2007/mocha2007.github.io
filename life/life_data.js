@@ -1024,6 +1024,19 @@ var life_data = [
 		'desc': 'Horse',
 	},
 	{
+		'name': 'erinaceidae',
+		'rank': 'family',
+		'parent': 'eulipotyphla',
+		'range': 'ow',
+	},
+	{
+		'name': 'erinaceinae',
+		'rank': 'subfamily',
+		'parent': 'erinaceidae',
+		'range': 'ow',
+		'desc': 'Hedgehog',
+	},
+	{
 		'name': 'euarchontoglires',
 		'rank': 'superorder',
 		'parent': 'mammalia',
@@ -1039,6 +1052,12 @@ var life_data = [
 		'name': 'eukaryota',
 		'rank': 'domain',
 		'parent': 'life',
+		'range': 'ww',
+	},
+	{
+		'name': 'eulipotyphla',
+		'rank': 'order',
+		'parent': 'laurasiatheria',
 		'range': 'ww',
 	},
 	{
