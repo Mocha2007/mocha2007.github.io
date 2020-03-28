@@ -193,10 +193,42 @@ var ages = [
 							{
 								'name': 'Pleistocene',
 								'start': 2.58,
+								'divisions': [
+									{
+										'name': 'Gelasian',
+										'start': 2.58,
+									},
+									{
+										'name': 'Calabrian',
+										'start': 1.8,
+									},
+									{
+										'name': 'Chibanian',
+										'start': 0.774,
+									},
+									{
+										'name': 'Tarantian',
+										'start': 0.129,
+									},
+								],
 							},
 							{
 								'name': 'Holocene',
 								'start': 0.0117,
+								'divisions': [
+									{
+										'name': 'Greenlandian',
+										'start': 0.0117,
+									},
+									{
+										'name': 'Northgrippian',
+										'start': 0.0082,
+									},
+									{
+										'name': 'Meghalayan',
+										'start': 0.0042,
+									},
+								],
 							},
 						],
 					},
