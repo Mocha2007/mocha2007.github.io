@@ -110,6 +110,13 @@ var regions = {
 
 // helper functions
 
+function get_age(age){
+	if (1 < age){
+		return age + ' mya';
+	}
+		return age*1000 + ' kya';
+}
+
 function get_era(age){
 	// console.log('get_era', age);
 	for (var i = 0; i < ages.length; i++){
@@ -206,7 +213,7 @@ function main(){
 			var age = document.createElement('abbr');
 			age.classList.add('age');
 			age.title = get_era(a);
-			age.innerHTML = a + ' mya';
+			age.innerHTML = get_age(a);
 			title.appendChild(age);
 		}
 		details.appendChild(title);

@@ -67,6 +67,7 @@ var life_data = [
 		'rank': 'clade',
 		'parent': 'tetrapoda',
 		'range': 'ww',
+		'age': 320,
 	},
 	{
 		'name': 'amphibia',
@@ -118,6 +119,7 @@ var life_data = [
 		'rank': 'kingdom',
 		'parent': 'eukaryota',
 		'range': 'ww',
+		'age': 760,
 	},
 	{
 		'name': 'ankylosauridae',
@@ -332,6 +334,7 @@ var life_data = [
 		'parent': 'hominini',
 		'extinct': true,
 		'range': 'af',
+		'age': 5.6,
 	},
 	{
 		'name': 'australopithecus',
@@ -412,6 +415,7 @@ var life_data = [
 		'rank': 'clade',
 		'parent': 'parahoxozoa',
 		'range': 'ww',
+		'age': 560,
 		'desc': 'Bilaterians are animals with bilateral symmetry as an embryo.',
 	},
 	{
@@ -697,6 +701,7 @@ var life_data = [
 		'rank': 'phylum',
 		'parent': 'deuterostomia',
 		'range': 'ww',
+		'age': 535,
 		'desc': 'During some period of their life cycle, chordates possess a notochord, a dorsal nerve cord, pharyngeal slits, an endostyle, and a post-anal tail. These five anatomical features define this phylum.'
 	},
 	{
@@ -841,6 +846,7 @@ var life_data = [
 		'rank': 'phylum',
 		'parent': 'eumetazoa',
 		'range': 'ww',
+		'age': 540,
 		'desc': 'Comb Jellies',
 	},
 	{
@@ -970,6 +976,7 @@ var life_data = [
 		'rank': 'superphylum',
 		'parent': 'bilateria',
 		'range': 'ww',
+		'age': 540,
 		'desc': 'In deuterostomes, the first opening, the blastopore, becomes the anus, while in protostomes, it becomes the mouth.'
 	},
 	{
@@ -1055,6 +1062,7 @@ var life_data = [
 		'rank': 'superorder',
 		'parent': 'mammalia',
 		'range': 'ww',
+		'age': 65,
 	},
 	{
 		'name': 'eudicots',
@@ -1067,6 +1075,7 @@ var life_data = [
 		'rank': 'domain',
 		'parent': 'life',
 		'range': 'ww',
+		'age': 1850,
 	},
 	{
 		'name': 'eulipotyphla',
@@ -1079,6 +1088,7 @@ var life_data = [
 		'rank': 'subkingdom',
 		'parent': 'animalia',
 		'range': 'ww',
+		'age': 635,
 	},
 	{
 		'name': 'euphausiacea',
@@ -1247,6 +1257,7 @@ var life_data = [
 		'rank': 'family',
 		'parent': 'hominoidea',
 		'range': 'ow',
+		'age': 15.7,
 		'desc': 'Great Apes',
 	},
 	{
@@ -1254,18 +1265,21 @@ var life_data = [
 		'rank': 'subfamily',
 		'parent': 'hominidae',
 		'range': 'af',
+		'age': 8.8,
 	},
 	{
 		'name': 'hominini',
 		'rank': 'tribe',
 		'parent': 'homininae',
 		'range': 'af',
+		'age': 6.3,
 	},
 	{
 		'name': 'hominoidea',
 		'rank': 'superfamily',
 		'parent': 'primates',
 		'range': 'ow',
+		'age': 20.4,
 		'desc': 'Ape',
 	},
 	{
@@ -1273,6 +1287,7 @@ var life_data = [
 		'rank': 'genus',
 		'range': 'af',
 		'parent': 'hominini',
+		'age': 2.8,
 	},
 	{
 		'name': 'homo erectus',
@@ -1280,6 +1295,7 @@ var life_data = [
 		'parent': 'homo',
 		'extinct': true,
 		'range': 'ow',
+		'age': 2,
 		'desc': 'Ancestor of H. Heidelbergensis, descended from H. Habilis.',
 	},
 	{
@@ -1288,6 +1304,7 @@ var life_data = [
 		'parent': 'homo',
 		'extinct': true,
 		'range': 'af',
+		'age': 2.3,
 		'desc': 'Ancestor of H. Erectus, descended from A. Afarensis.',
 	},
 	{
@@ -1296,6 +1313,7 @@ var life_data = [
 		'parent': 'homo',
 		'extinct': true,
 		'range': 'ow',
+		'age': 0.7,
 		'desc': 'Ancestor of H. Sapiens, descended from H. Erectus.',
 	},
 	{
@@ -1304,6 +1322,7 @@ var life_data = [
 		'parent': 'homo',
 		'important': true,
 		'range': 'af',
+		'age': 0.35,
 		'desc': 'Human',
 	},
 	{
@@ -1473,6 +1492,7 @@ var life_data = [
 		'rank': 'life',
 		'parent': '*',
 		'range': 'ww',
+		'age': 4280,
 	},
 	{
 		'name': 'magnoliales',
@@ -1530,6 +1550,7 @@ var life_data = [
 		'rank': 'class',
 		'parent': 'amniota',
 		'range': 'ww',
+		'age': 225,
 	},
 	{
 		'name': 'medusozoa',
@@ -1678,6 +1699,7 @@ var life_data = [
 		'rank': 'superclass',
 		'parent': 'chordata',
 		'range': 'ww',
+		'age': 420,
 	},
 	{
 		'name': 'ovis',
@@ -1776,6 +1798,7 @@ var life_data = [
 		'rank': 'clade',
 		'parent': 'eumetazoa',
 		'range': 'ww',
+		'age': 605.2,
 	},
 	{
 		'name': 'paraves',
@@ -2023,6 +2046,7 @@ var life_data = [
 		'rank': 'order',
 		'parent': 'euarchontoglires',
 		'range': 'eq',
+		'age': 55,
 	},
 	{
 		'name': 'protostomia',
@@ -2375,6 +2399,7 @@ var life_data = [
 		'rank': 'superclass',
 		'parent': 'osteichthyes',
 		'range': 'ww',
+		'age': 370,
 	},
 	{
 		'name': 'theobroma',
