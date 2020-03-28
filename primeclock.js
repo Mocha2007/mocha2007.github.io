@@ -1,3 +1,7 @@
+/* jshint esversion: 6, strict: true, strict: global */
+/* globals a, currentyear, diff, events */
+/* exported primeclock, enableDebug */
+"use strict";
 var year = 86400*(currentyear%400?(currentyear%100?(currentyear%4?365:366):365):366); // number of seconds in this year, eg. 31622400 = 366 * 86400
 var cye = new Date(currentyear+"-01-01T00:00:00"+String(new Date()).slice(28,33))/1000; // current year epoch - jan 1 XXXX 00:00 utc
 var debug = false; // enable to see all events at any time
@@ -53,10 +57,9 @@ var geoera = [
 [diff(-771984000),'atomic'], // atom bomb
 [diff(831873600),'information'], // archive.org
 [0,'future']
-]
+];
 
 function arraysEqual(arr1,arr2){
-	"use strict";
 	if (arr1.length !== arr2.length){
 		return false;
 	}
@@ -69,7 +72,6 @@ function arraysEqual(arr1,arr2){
 }
 
 function gcd(a,b){
-	"use strict";
 	if (b===0){
 		return a;
 	}
@@ -77,7 +79,6 @@ function gcd(a,b){
 }
 
 function factorize(n){
-	"use strict";
 	// only works for natual numbers greater than one
 	var pf = [];
 	var t = 2;
@@ -105,7 +106,6 @@ function factorize(n){
 }
 
 function ispower(factorization){
-	"use strict";
 	var powertable = factorization.map(function f(x){return x[1];});
 	var gggcd = 0;
 	for (var i=0;i<powertable.length;i+=1){
@@ -123,7 +123,6 @@ function ispower(factorization){
 }
 
 function issemiprime(factorization){
-	"use strict";
 	if (factorization.length === 2 && factorization[0][1]+factorization[1][1] === 2){
 		return true;
 	}
@@ -134,7 +133,6 @@ function issemiprime(factorization){
 }
 
 function commaconvert(s){
-	"use strict";
 	s = s.split('');
 	var n = 0;
 	for (var i=0;i<s.length;i+=1){
@@ -162,12 +160,10 @@ a = 14e9
 */
 
 function timeSinceYear(){ // seconds since year start
-	"use strict";
 	return (new Date()/1000)-cye;
 }
 
 function ialc(y){
-	"use strict";
 	// logarithmically maps time from the beginning (1 Jan) to 1 yr ago (31 Dec)
 	var otherx = timeSinceYear(); // REAL seconds since year beginning
 	var x = Math.floor(year*(1-Math.log(y)/Math.log(a))); // FAKE seconds after beginning of year
@@ -187,7 +183,6 @@ function getClass(age){
 }
 
 function alc(){
-	"use strict";
 	var x = timeSinceYear(); // seconds since year beginning
 	var y = Math.pow(a,1-x/year);
 	var str = '';
@@ -201,16 +196,16 @@ function alc(){
 	}
 	document.getElementById("alc").innerHTML = str+'<span id="nowtime"></span>';
 	// now create key
-	for (var i=0; i<geoera.length-1; i+=1){
+	for (var j=0; j<geoera.length-1; j+=1){
 		// create div
 		var elem = document.createElement("div");
 		// add class
-		var name = geoera[i][1];
+		var name = geoera[j][1];
 		elem.classList += name;
 		// create link
 		var link = document.createElement("a");
 		link.href = "https://en.wikipedia.org/wiki/" + name;
-		if (i === 0 || 24 < i){
+		if (j === 0 || 24 < i){
 			link.href += '_era';
 		}
 		link.innerHTML = name;
