@@ -115,6 +115,7 @@ var life_data = [
 		'rank': 'clade',
 		'parent': 'plantae',
 		'range': 'ww',
+		'age': 130,
 	},
 	{
 		'name': 'animalia',
@@ -1957,6 +1958,7 @@ var life_data = [
 		'rank': 'division',
 		'parent': 'plantae',
 		'range': 'ww',
+		'age': 300,
 		'desc': 'Conifer',
 	},
 	{
