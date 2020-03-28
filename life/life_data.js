@@ -149,6 +149,7 @@ var life_data = [
 		'rank': 'class',
 		'parent': 'cnidaria',
 		'range': 'ww',
+		'age': 570,
 	},
 	{
 		'name': 'anura',
@@ -1567,6 +1568,7 @@ var life_data = [
 		'rank': 'subphylum',
 		'parent': 'cnidaria',
 		'range': 'ww',
+		'age': 540,
 		'desc': 'Jellyfish',
 	},
 	{
@@ -1842,6 +1844,7 @@ var life_data = [
 		'rank': 'order',
 		'parent': 'anthozoa',
 		'range': 'ww',
+		'age': 540,
 		'desc': 'Sea Pen',
 	},
 	{
@@ -2260,6 +2263,7 @@ var life_data = [
 		'rank': 'order',
 		'parent': 'anthozoa',
 		'range': 'ww',
+		'age': 240,
 		'desc': 'Hard Coral',
 	},
 	{

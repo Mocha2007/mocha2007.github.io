@@ -132,6 +132,16 @@ function is_important(i){
 	return life_data[i].hasOwnProperty('important') && life_data[i].important;
 }
 
+function open_age(age){
+	// open all clades older than age mya
+	for (var i = 0; i < life_data.length; i++){
+		var clade = life_data[i]
+		if (clade.hasOwnProperty('age') && age < clade.age){
+			open_parents(objects[clade.name]);
+		}
+	}
+}
+
 function open_parents(object){
 	// console.log('open_parents', object);
 	// open object
