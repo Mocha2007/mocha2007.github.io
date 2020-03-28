@@ -353,7 +353,7 @@ class Orbit{
 		rect.style.position = "absolute";
 		rect.style.left = p + "px";
 		rect.style.cursor = "pointer";
-		rect.innerHTML = "&nbsp;"
+		rect.innerHTML = "&nbsp;";
 		return rect;
 	}
 	get periapsis(){
