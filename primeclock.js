@@ -205,7 +205,7 @@ function alc(){
 		// create link
 		var link = document.createElement("a");
 		link.href = "https://en.wikipedia.org/wiki/" + name;
-		if (j === 0 || 24 < i){
+		if (j === 0 || 24 < j){
 			link.href += '_era';
 		}
 		link.innerHTML = name;
