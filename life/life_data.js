@@ -35,6 +35,7 @@ var life_data = [
 		'rank': 'class',
 		'parent': 'osteichthyes',
 		'range': 'ww',
+		'age': 420,
 	},
 	{
 		'name': 'allium',
@@ -74,6 +75,7 @@ var life_data = [
 		'rank': 'class',
 		'parent': 'tetrapoda',
 		'range': 'ww',
+		'age': 370,
 	},
 	{
 		'name': 'ananas',
@@ -277,6 +279,7 @@ var life_data = [
 		'rank': 'phylum',
 		'parent': 'protostomia',
 		'range': 'ww',
+		'age': 540,
 	},
 	{
 		'name': 'artiodactyla',
@@ -326,6 +329,7 @@ var life_data = [
 		'rank': 'class',
 		'parent': 'echinodermata',
 		'range': 'ww',
+		'age': 540,
 		'desc': 'Starfish',
 	},
 	{
@@ -695,6 +699,7 @@ var life_data = [
 		'rank': 'class',
 		'parent': 'chordata',
 		'range': 'ww',
+		'age': 430,
 	},
 	{
 		'name': 'chordata',
@@ -768,6 +773,7 @@ var life_data = [
 		'rank': 'phylum',
 		'parent': 'parahoxozoa',
 		'range': 'ww',
+		'age': 580,
 	},
 	{
 		'name': 'coccinellidae',
@@ -1224,6 +1230,7 @@ var life_data = [
 		'rank': 'clade',
 		'parent': 'euarchontoglires',
 		'range': 'ww',
+		'age': 60,
 	},
 	{
 		'name': 'gorilla',
@@ -1330,6 +1337,7 @@ var life_data = [
 		'rank': 'family',
 		'parent': 'hominoidea',
 		'range': 'as',
+		'age': 8,
 		'desc': 'Gibbon',
 	},
 	{
@@ -1460,6 +1468,7 @@ var life_data = [
 		'rank': 'superorder',
 		'parent': 'mammalia',
 		'range': 'ww',
+		'age': 76,
 	},
 	{
 		'name': 'laurus',
@@ -1724,6 +1733,7 @@ var life_data = [
 		'name': 'pan',
 		'rank': 'genus',
 		'range': 'af',
+		'age': 4,
 		'parent': 'hominini',
 	},
 	{
@@ -1992,11 +2002,13 @@ var life_data = [
 		'rank': 'kingdom',
 		'parent': 'eukaryota',
 		'range': 'ww',
+		'age': 1200,
 	},
 	{
 		'name': 'platyhelminthes',
 		'rank': 'phylum',
 		'parent': 'protostomia',
+		'age': 580,
 		'desc': 'Flatworm',
 	},
 	{
@@ -2032,6 +2044,7 @@ var life_data = [
 		'rank': 'genus',
 		'parent': 'hominidae',
 		'range': 'as',
+		'age': 2,
 		'desc': 'Orangutan',
 	},
 	{
@@ -2039,6 +2052,7 @@ var life_data = [
 		'rank': 'phylum',
 		'parent': 'animalia',
 		'range': 'ww',
+		'age': 580,
 		'desc': 'Sponge',
 	},
 	{
@@ -2053,6 +2067,7 @@ var life_data = [
 		'rank': 'superphylum',
 		'parent': 'bilateria',
 		'range': 'ww',
+		'age': 610,
 	},
 	{
 		'name': 'prunus',
@@ -2141,6 +2156,7 @@ var life_data = [
 		'rank': 'class',
 		'parent': 'amniota',
 		'range': 'ww',
+		'age': 312,
 	},
 	{
 		'name': 'rhopalocera',
