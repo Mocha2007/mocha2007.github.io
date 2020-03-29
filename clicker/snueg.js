@@ -10,7 +10,7 @@ class Building{
 		this.name = name;
 		this.base_price = base_price;
 		this.production = production;
-		this.storage = 0; // excess snueg storage eg 10.1 production -> 10 snueg and 0.1 storage
+		// this.storage = 0; // excess snueg storage eg 10.1 production -> 10 snueg and 0.1 storage
 	}
 	// getters
 	get amount(){
@@ -77,10 +77,10 @@ class Building{
 		return round(this.base_price * Math.pow(1.15, level));
 	}
 	produce(time){
-		var snueg = this.totalProduction*time + this.storage;
-		var output = Math.floor(snueg);
-		addSnueg(output);
-		this.storage = snueg - output;
+		// var snueg = this.totalProduction*time + this.storage;
+		// var output = Math.floor(snueg);
+		addSnueg(this.totalProduction*time);
+		// this.storage = snueg - output;
 	}
 	updateElement(){
 		document.getElementById(this.elementId).innerHTML = this.createElement.innerHTML;
@@ -204,7 +204,7 @@ function snuegButton(){
 }
 
 function updateSnuegCount(){
-	document.getElementById("snueg_counter").innerHTML = game.player.snueg;
+	document.getElementById("snueg_counter").innerHTML = round(game.player.snueg);
 	document.getElementById("snueg_production_counter").innerHTML = "Production: " + round(game.production, 1) + "/s";
 }
 
