@@ -217,10 +217,46 @@ var ages = [
 							{
 								'name': 'Miocene',
 								'start': 23.03,
+								'divisions': [
+									{
+										'name': 'Aquitanian',
+										'start': 23.03,
+									},
+									{
+										'name': 'Burdigalian',
+										'start': 20.44,
+									},
+									{
+										'name': 'Langhian',
+										'start': 15.97,
+									},
+									{
+										'name': 'Serravallian',
+										'start': 13.82,
+									},
+									{
+										'name': 'Tortonian',
+										'start': 11.63,
+									},
+									{
+										'name': 'Messinian',
+										'start': 7.246,
+									},
+								],
 							},
 							{
 								'name': 'Pliocene',
 								'start': 5.333,
+								'divisions': [
+									{
+										'name': 'Zanclean',
+										'start': 5.333,
+									},
+									{
+										'name': 'Piacenzian',
+										'start': 3.6,
+									},
+								],
 							},
 						],
 					},
