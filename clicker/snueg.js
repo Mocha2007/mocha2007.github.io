@@ -176,6 +176,9 @@ function news(){
 }
 
 function redrawInterface(){
+	// autosave notification
+	var autosaveCountdown = round((+game.debug.lastSave + game.settings.autosaveInterval - new Date())/1000);
+	document.getElementById('autosave').innerHTML = "autosave in " + autosaveCountdown + "s";
 }
 
 function round(number, digits = 0){
@@ -218,6 +221,8 @@ function main(){
 	game.debug.log = [];
 	game.debug.version = "a200329";
 	game.debug.newsTime = new Date();
+	// update version div
+	document.getElementById("version").innerHTML = "v. " + game.debug.version;
 	// load save
 	if (read_cookie("snueg")){
 		var saveFile = read_cookie("snueg");
