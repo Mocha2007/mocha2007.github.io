@@ -110,6 +110,10 @@ game.buildings = [
 ];
 game.news = [
 	"I like snueg.",
+	"licc",
+	"Must... forevrially... snueg...",
+	"Snueg is love, snueg is life.",
+	"That's the power of snueg.",
 	"UwU",
 ];
 
