@@ -157,8 +157,16 @@ function choice(array){
 }
 
 function gameTick(){
+	// was the player away?
+	if (2*game.settings.autosaveInterval < new Date() - game.player.lastSave){
+		// offline rewards
+		var t = new Date() - game.player.lastSave;
+		saveGame();
+	}
+	else {
+		var t = 1/game.settings.fps;
+	}
 	// production
-	var t = 1/game.settings.fps;
 	for (var i=0; i < game.buildings.length; i++){
 		var building = game.buildings[i];
 		building.produce(t);
@@ -191,6 +199,7 @@ function round(number, digits = 0){
 function saveGame(isManual = false){
 	var saveFile = {};
 	saveFile.settings = game.settings;
+	game.player.lastSave = +new Date();
 	saveFile.player = game.player;
 	write_cookie("snueg", saveFile);
 	game.debug.lastSave = new Date();
@@ -240,6 +249,8 @@ function main(){
 		game.settings.autosaveInterval = 30 * 1000;
 		game.settings.fps = 20;
 		game.settings.newsUpdateInterval = 30 * 1000;
+		// save!!!
+		saveGame();
 	}
 	// set up ticks
 	setInterval(redrawInterface, 1000/game.settings.fps);
@@ -252,6 +263,4 @@ function main(){
 		var building = game.buildings[i];
 		building.addToDocument();
 	}
-	// save!!!
-	saveGame();
 }
