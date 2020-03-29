@@ -1,6 +1,15 @@
 html, body {
+	background: repeating-linear-gradient(
+	  90deg,
+	  #1E506C,
+	  #1E506C 32px,
+	  #1B4862 32px,
+	  #1B4862 64px
+	);
+	color: white;
 	height: 100%;
 	margin: 0px;
+	overflow: hidden;
 }
 .buy_button {
 	background-color: #a99;
@@ -28,11 +37,33 @@ html, body {
 	float: bottom;
 	font-size: small;
 }
-#buy_panel {
-	background-color: black;
-	color: white;
-	float: right;
+#left, #center, #right {
+	float: left;
 	height: 100%;
+}
+#center {
+	width: 50%;
+}
+#center_interior {
+	border-left: 14px solid #532;
+	border-right: 14px solid #532;
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
+}
+#building_panel {
+	height: 80%;
+	width: 100%;
+}
+#left {
+	width: 30%;
+}
+#menu {
+	border-bottom: 14px solid #532;
+	height: 10%;
+	width: 100%;
+}
+#right {
 	width: 20%;
 }
 #snueg_counter {
@@ -41,9 +72,6 @@ html, body {
 	text-align: center;
 }
 #stats {
-	background-color: #145;
-	color: white;
-	float: left;
 	height: 100%;
-	width: 30%;
+	width: 100%;
 }
