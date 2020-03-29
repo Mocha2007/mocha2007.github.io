@@ -91,7 +91,8 @@ class Building{
 
 var game = {};
 game.buildings = [
-	new Building('Snueg', 1, 0.1),
+	new Building('Snueg', 10, 0.1),
+	new Building('Megasnueg', 100, 0.5),
 ];
 game.news = [
 	"I like snueg.",
