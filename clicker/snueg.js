@@ -22,7 +22,8 @@ class Building{
 		var buy_button = document.createElement('div');
 		buy_button.classList.add('buy_button');
 		buy_button.id = this.elementId;
-		buy_button.innerHTML = name;
+		buy_button.innerHTML = this.name;
+		buy_button.onclick = () => this.buy();
 		// amount
 		var item_amount = document.createElement('div');
 		item_amount.classList.add('item_amount');
@@ -39,12 +40,15 @@ class Building{
 		return this.name + "_button";
 	}
 	get id(){
-		return game.upgrades.indexOf(this);
+		return game.buildings.indexOf(this);
 	}
 	get next_price(){
 		return this.price_at(this.amount);
 	}
 	// functions
+	addToDocument(){
+		document.getElementById("building_panel").appendChild(this.createElement);
+	}
 	addToPlayer(n){
 		if (game.player.buildings[this.id] !== undefined){
 			game.player.buildings[this.id] += n;
@@ -58,7 +62,10 @@ class Building{
 			game.player.snueg -= this.next_price;
 			this.addToPlayer(1);
 			log("Player bought 1 " + this.name);
+			return;
 		}
+		log("Player tried to buy 1 " + this.name + ", but did not have enough snueg. (" +
+			game.player.snueg + " < " + this.next_price + ")");
 	}
 	price_at(level){
 		return Math.round(this.base_price * Math.pow(1.15, level));
@@ -71,7 +78,7 @@ class Building{
 // constants
 
 var game = {};
-game.upgrades = [
+game.buildings = [
 	new Building('Snueg', 1),
 ];
 
@@ -121,6 +128,7 @@ function gameTick(){
 
 function log(string){
 	game.debug.log.push(string);
+	console.log(string);
 }
 
 function redrawInterface(){
@@ -165,6 +173,12 @@ function main(){
 	setInterval(redrawInterface, 1000/game.settings.fps);
 	setInterval(gameTick, 1000/game.settings.fps);
 	setInterval(saveGame, game.settings.autosaveInterval);
+	// set up buildings
+	document.getElementById("building_panel").innerHTML = "";
+	for (var i = 0; i < game.buildings.length; i++){
+		var building = game.buildings[i];
+		building.addToDocument();
+	}
 	// save!!!
 	saveGame();
 }
