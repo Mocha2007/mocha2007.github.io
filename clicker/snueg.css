@@ -12,6 +12,10 @@ html, body {
 	overflow: hidden;
 	user-select: none;
 }
+abbr{
+	cursor: help;
+	text-decoration: none;
+}
 .buy_button {
 	background-color: #a99;
 	border: 6px solid #444;
@@ -30,6 +34,9 @@ html, body {
 }
 .buy_button:active {
 	opacity: 50%;
+}
+.danger {
+	color: red;
 }
 .item_amount {
 	color: #432;
@@ -83,6 +90,19 @@ html, body {
 }
 #right {
 	width: 20%;
+}
+#save_manager {
+	position: absolute;
+	left: 29%;
+	bottom: 10px;
+}
+#save_manager abbr{
+	font-size: large;
+	cursor: pointer;
+}
+#save_manager abbr:hover{
+	font-size: x-large;
+	text-shadow: 0px 0px 3px white;
 }
 #snueg_button {
 	border: 6px solid #d6f;

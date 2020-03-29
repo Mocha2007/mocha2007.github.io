@@ -1,6 +1,5 @@
 /* jshint esversion: 6, strict: true, strict: global */
-/* globals ages, life_data */
-/* exported open_age, search_button, toggle, main */
+/* exported delete_cookie, downloadSave, importSave, main, snuegButton */
 "use strict";
 
 // classes
@@ -142,18 +141,17 @@ function download(content, fileName, contentType){ // https://stackoverflow.com/
 	a.click();
 }
 function importSave(){
-	var saveData = document.getElementById("saveData").value;
+	var saveData = navigator.clipboard.readText();
 	document.cookie = atob(saveData);
 	location.reload();
 }
 function exportSave(){
 	var data = btoa(document.cookie);
-	document.getElementById("saveData").value = data;
 	log("Exported Save.");
 	return data;
 }
 function downloadSave(){
-	download(exportSave(), 'mochaSpaceGameSave.txt', 'text/plain');
+	download(exportSave(), 'snuegClickerBackup.txt', 'text/plain');
 }
 
 // other
@@ -241,8 +239,11 @@ function snuegButton(){
 }
 
 function updateSnuegCount(){
-	document.getElementById("snueg_counter").innerHTML = bigNumber(round(game.player.snueg));
+	var n = bigNumber(round(game.player.snueg));
+	document.getElementById("snueg_counter").innerHTML = n;
 	document.getElementById("snueg_production_counter").innerHTML = "Production: " + bigNumber(game.production) + "/s";
+	// update webpage title
+	document.title = n + " snuegs - Snueg Clicker";
 }
 
 // main only beyond here
