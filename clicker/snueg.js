@@ -143,6 +143,19 @@ function saveGame(isManual = false){
 	}
 }
 
+function snuegButton(){
+	// add snueg
+	game.player.snueg += 1;
+	// update snueg amount
+	updateSnuegCount();
+	// log action
+	log("Clicked snueg button");
+}
+
+function updateSnuegCount(){
+	document.getElementById("snueg_counter").innerHTML = game.player.snueg;
+}
+
 // main only beyond here
 
 function main(){
