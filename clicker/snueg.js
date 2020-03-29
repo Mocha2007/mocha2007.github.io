@@ -100,7 +100,9 @@ var game = {
 };
 game.buildings = [
 	new Building('Snueg', 10, 0.1),
-	new Building('Megasnueg', 100, 0.5),
+	new Building('Megasnueg', 60, 0.5),
+	new Building('Snueggr', 400, 4),
+	new Building('Snuegtron', 2000, 10),
 ];
 game.news = [
 	"I like snueg.",
