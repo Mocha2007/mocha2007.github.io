@@ -139,7 +139,7 @@ function importSave(){
 function exportSave(){
 	var data = btoa(document.cookie);
 	document.getElementById("saveData").value = data;
-	console.log("Exported Save.");
+	log("Exported Save.");
 	return data;
 }
 function downloadSave(){
@@ -192,7 +192,7 @@ function saveGame(isManual = false){
 	write_cookie("snueg", saveFile);
 	game.debug.lastSave = new Date();
 	if (isManual){
-		console.log("Successfully manually saved game!");
+		log("Successfully manually saved game!");
 	}
 }
 
