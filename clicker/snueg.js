@@ -74,7 +74,7 @@ class Building{
 			game.player.snueg + " < " + this.next_price + ")");
 	}
 	price_at(level){
-		return Math.round(this.base_price * Math.pow(1.15, level));
+		return round(this.base_price * Math.pow(1.15, level));
 	}
 	produce(time){
 		var snueg = this.totalProduction*time + this.storage;
@@ -89,7 +89,15 @@ class Building{
 
 // constants
 
-var game = {};
+var game = {
+	get production(){
+		var sum = 0;
+		for (var i=0; i < this.buildings.length; i++){
+			sum += this.buildings[i].totalProduction;
+		}
+		return sum;
+	}
+};
 game.buildings = [
 	new Building('Snueg', 10, 0.1),
 	new Building('Megasnueg', 100, 0.5),
@@ -170,6 +178,13 @@ function news(){
 function redrawInterface(){
 }
 
+function round(number, digits = 0){
+	number *= Math.pow(10, digits);
+	number = Math.round(number);
+	number /= Math.pow(10, digits);
+	return number;
+}
+
 function saveGame(isManual = false){
 	write_cookie("settings", game.settings);
 	write_cookie("player", game.player);
@@ -190,6 +205,7 @@ function snuegButton(){
 
 function updateSnuegCount(){
 	document.getElementById("snueg_counter").innerHTML = game.player.snueg;
+	document.getElementById("snueg_production_counter").innerHTML = "Production: " + round(game.production, 1) + "/s";
 }
 
 // main only beyond here

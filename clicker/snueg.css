@@ -56,6 +56,7 @@ html, body {
 	width: 100%;
 }
 #left {
+	text-align: center;
 	width: 30%;
 }
 #menu {
@@ -81,7 +82,6 @@ html, body {
 	left: 20%;
 	line-height: 100px;
 	position: relative;
-	text-align: center;
 	width: 60%;
 }
 #snueg_button:hover {
@@ -90,7 +90,6 @@ html, body {
 #snueg_counter {
 	font-size: xxx-large;
 	margin-top: 50px;
-	text-align: center;
 }
 #stats {
 	height: 50%;
