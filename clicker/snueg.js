@@ -38,7 +38,7 @@ class Building{
 		// price
 		var item_price = document.createElement('span');
 		item_price.classList.add('item_price');
-		item_price.innerHTML = this.next_price;
+		item_price.innerHTML = bigNumber(this.next_price);
 		buy_button.appendChild(item_price)
 		return buy_button;
 	}
@@ -162,6 +162,19 @@ function addSnueg(amount){
 	game.player.snueg += amount;
 }
 
+function bigNumber(amount){
+	// 245 -> 245
+	// 3245 -> 3.245 k
+	// 3950847 -> 3.950 M
+	if (amount < 1000){
+		return "" + amount;
+	}
+	var prefixes = " k M B T Qa Qi Sx Sp Oc No Dc".split(" "); // todo add more varieties for settings: SI, 1.0e10, ...
+	var i = Math.floor(Math.log(amount)/Math.log(1000));
+	var factor = Math.pow(1000, i);
+	return round(amount/factor, 3).toFixed(3) + " " + prefixes[i];
+}
+
 function choice(array){
 	return array[Math.floor(Math.random() * array.length)];
 }
@@ -228,8 +241,8 @@ function snuegButton(){
 }
 
 function updateSnuegCount(){
-	document.getElementById("snueg_counter").innerHTML = round(game.player.snueg);
-	document.getElementById("snueg_production_counter").innerHTML = "Production: " + round(game.production, 1) + "/s";
+	document.getElementById("snueg_counter").innerHTML = bigNumber(round(game.player.snueg));
+	document.getElementById("snueg_production_counter").innerHTML = "Production: " + bigNumber(game.production) + "/s";
 }
 
 // main only beyond here
