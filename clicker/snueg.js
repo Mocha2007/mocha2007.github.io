@@ -9,7 +9,6 @@ class Building{
 		this.name = name;
 		this.base_price = base_price;
 		this.production = production;
-		// this.storage = 0; // excess snueg storage eg 10.1 production -> 10 snueg and 0.1 storage
 	}
 	// getters
 	get amount(){
@@ -17,6 +16,9 @@ class Building{
 			return game.player.buildings[this.id];
 		}
 		return 0;
+	}
+	get bonus(){
+		return globalBonus(); // for now...
 	}
 	get createElement(){
 		// button
@@ -51,7 +53,7 @@ class Building{
 		return this.price_at(this.amount);
 	}
 	get totalProduction(){
-		return this.production * this.amount;
+		return this.production * this.amount * this.bonus;
 	}
 	// functions
 	addToDocument(){
@@ -80,10 +82,7 @@ class Building{
 		return round(this.base_price * Math.pow(1.15, level));
 	}
 	produce(time){
-		// var snueg = this.totalProduction*time + this.storage;
-		// var output = Math.floor(snueg);
 		addSnueg(this.totalProduction*time);
-		// this.storage = snueg - output;
 	}
 	updateElement(){
 		document.getElementById(this.elementId).innerHTML = this.createElement.innerHTML;
@@ -105,7 +104,7 @@ game.buildings = [
 	new Building('Snueg', 10, 0.1),
 	new Building('Megasnueg', 60, 0.5),
 	new Building('Snueggr', 400, 4),
-	new Building('Snuegtron', 2000, 10),
+	new Building('Snueggotron', 2000, 10),
 ];
 game.news = [
 	"I like snueg.",
@@ -195,6 +194,10 @@ function gameTick(){
 	updateSnuegCount();
 }
 
+function globalBonus(){
+	return 1 + 0.01 * game.player.prestige;
+}
+
 function log(string){
 	game.debug.log.push(string);
 	console.log(string);
@@ -202,6 +205,55 @@ function log(string){
 
 function news(){
 	document.getElementById('news').innerHTML = choice(game.news);
+}
+
+function nextPrestige(){
+	// return number of snuegs for next prestige level
+	if (game.player.snueg <= 0){
+		return 1e9;
+	}
+	var nextNumber = thisPrestigeNumber() + 1;
+	return Math.pow(nextNumber, 5) * 1e9
+}
+
+function thisPrestigeNumber(){
+	// return prestige gain if prestiged now
+	return Math.floor(Math.pow(game.player.snueg/1e9, 1/5));
+}
+
+function play(filename){
+	(new Audio(filename)).play();
+}
+
+function prestige(){
+	// confirm
+	var pp = thisPrestigeNumber();
+	if (!confirm("Are you sure you want to prestige up? You will lose all your snueg and buildings, but will gain a permanent " +
+		pp + "% boost to your snueg production from all sources.")){
+		return;
+	}
+	// follow through
+	if (game.player.prestige === undefined){
+		game.player.prestige = pp;
+	}
+	else {
+		game.player.prestige += pp;
+	}
+	// DELETE
+	game.player.snueg = 0;
+	game.player.buildings = [];
+	// play sound
+	play('prestige.mp3');
+}
+
+function progressBar(progress){
+	var progressBarContainer = document.createElement("div");
+	progressBarContainer.classList.add('progressBarContainer');
+	var progressBar = document.createElement("div");
+	progressBar.classList.add('progressBar');
+	progressBar.style.width = 100 * progress + "%";
+	progressBarContainer.appendChild(progressBar);
+	return progressBarContainer;
 }
 
 function redrawInterface(){
@@ -231,11 +283,19 @@ function saveGame(isManual = false){
 
 function snuegButton(){
 	// add snueg
-	game.player.snueg += 1;
+	game.player.snueg += globalBonus();
 	// update snueg amount
 	updateSnuegCount();
 	// log action
 	log("Clicked snueg button");
+}
+
+function updatePrestige(){
+	document.getElementById('prestigeNumber').innerHTML = thisPrestigeNumber();
+	document.getElementById('prestigeProgress').innerHTML = '';
+	var progress = game.player.snueg / nextPrestige();
+	document.getElementById('prestigeProgress').appendChild(progressBar(progress));
+	return progress;
 }
 
 function updateSnuegCount(){
@@ -244,6 +304,8 @@ function updateSnuegCount(){
 	document.getElementById("snueg_production_counter").innerHTML = "Production: " + bigNumber(game.production) + "/s";
 	// update webpage title
 	document.title = n + " snuegs - Snueg Clicker";
+	// update prestige progress
+	updatePrestige();
 }
 
 // main only beyond here
@@ -268,6 +330,7 @@ function main(){
 		game.player.buildings = [];
 		game.player.snueg = 0;
 		game.player.startTime = +new Date();
+		game.player.prestige = 0;
 		// settings
 		game.settings = {};
 		game.settings.autosaveInterval = 30 * 1000;

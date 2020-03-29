@@ -48,6 +48,17 @@ abbr{
 	bottom: 10%;
 	font-size: small;
 }
+.progressBarContainer {
+	background-color: black;
+	border: 1px solid gold;
+	height: 8px;
+	opacity: 50%;
+	width: 100px;
+}
+.progressBar {
+	background-color: blue;
+	height: 100%;
+}
 #left, #center, #right {
 	float: left;
 	height: 100%;
@@ -80,6 +91,7 @@ abbr{
 #menu {
 	border-bottom: 14px solid #532;
 	height: 10%;
+	position: relative;
 	text-align: center;
 	width: 100%;
 }
@@ -87,6 +99,16 @@ abbr{
 	font-size: large;
 	font-weight: bold;
 	padding: 16px;
+}
+#prestige {
+	background-color: #643;
+	bottom: 0px;
+	color: #ccc;
+	line-height: 100%;
+	height: 50%;
+	position: absolute;
+	right: 0px;
+	width: 100px;
 }
 #right {
 	width: 20%;
