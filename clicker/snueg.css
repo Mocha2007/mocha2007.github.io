@@ -28,6 +28,9 @@ html, body {
 	background-color: #ccb;
 	border: 6px solid #aa9;
 }
+.buy_button:active {
+	opacity: 50%;
+}
 .item_amount {
 	color: #432;
 	font-size: xxx-large;
@@ -91,6 +94,9 @@ html, body {
 	line-height: 100px;
 	position: relative;
 	width: 60%;
+}
+#snueg_button:active {
+	opacity: 50%;
 }
 #snueg_button:hover {
 	font-size: 60px;;
