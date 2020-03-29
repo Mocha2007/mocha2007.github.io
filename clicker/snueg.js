@@ -9,14 +9,62 @@ class Building{
 	constructor(name, base_price){
 		this.name = name;
 		this.base_price = base_price;
-		this.amount = 0;
+	}
+	// getters
+	get amount(){
+		if (game.player.buildings[this.id] !== undefined){
+			return game.player.buildings[this.id];
+		}
+		return 0;
+	}
+	get createElement(){
+		// button
+		var buy_button = document.createElement('div');
+		buy_button.classList.add('buy_button');
+		buy_button.id = this.elementId;
+		buy_button.innerHTML = name;
+		// amount
+		var item_amount = document.createElement('div');
+		item_amount.classList.add('item_amount');
+		item_amount.innerHTML = this.amount;
+		buy_button.appendChild(item_amount)
+		// price
+		var item_price = document.createElement('div');
+		item_price.classList.add('item_price');
+		item_price.innerHTML = this.next_price;
+		buy_button.appendChild(item_price)
+		return buy_button;
+	}
+	get elementId(){
+		return this.name + "_button";
+	}
+	get id(){
+		return game.upgrades.indexOf(this);
+	}
+	get next_price(){
+		return this.price_at(this.amount);
 	}
 	// functions
-	get next_price(){
-		return;
+	addToPlayer(n){
+		if (game.player.buildings[this.id] !== undefined){
+			game.player.buildings[this.id] += n;
+		}
+		else {
+			game.player.buildings[this.id] = n;
+		}
+	}
+	buy(){
+		if (this.next_price <= game.player.snueg){
+			game.player.snueg -= this.next_price;
+			this.addToPlayer(1);
+			log("Player bought 1 " + this.name);
+		}
 	}
 	price_at(level){
-		return Math.round(base_price * Math.pow(1.15, level));
+		return Math.round(this.base_price * Math.pow(1.15, level));
+	}
+	updateElement(){
+		document.getElementById(this.elementId) = createElement();
 	}
 }
 
@@ -71,6 +119,10 @@ function downloadSave(){
 function gameTick(){
 }
 
+function log(string){
+	game.debug.log.push(string);
+}
+
 function redrawInterface(){
 }
 
@@ -88,6 +140,7 @@ function saveGame(isManual = false){
 function main(){
 	game.debug = {};
 	game.debug.loadTime = new Date();
+	game.debug.log = [];
 	game.debug.version = "a200329";
 	// load settings
 	if (read_cookie("settings")){
@@ -105,6 +158,7 @@ function main(){
 	else{
 		game.player = {};
 		game.player.buildings = [];
+		game.player.snueg = 0;
 		game.player.startTime = +new Date();
 	}
 	// set up ticks
