@@ -141,8 +141,8 @@ function download(content, fileName, contentType){ // https://stackoverflow.com/
 	a.click();
 }
 function importSave(){
-	var saveData = navigator.clipboard.readText();
-	document.cookie = atob(saveData);
+	navigator.clipboard.readText().then(
+  		clipText => document.cookie = atob(saveData));
 	location.reload();
 }
 function exportSave(){
