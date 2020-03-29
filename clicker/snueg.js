@@ -1,5 +1,5 @@
 /* jshint esversion: 6, strict: true, strict: global */
-/* exported delete_cookie, downloadSave, importSave, main, snuegButton */
+/* exported delete_cookie, downloadSave, importSave, main, prestige, snuegButton */
 "use strict";
 
 // classes
@@ -30,17 +30,17 @@ class Building{
 		var item_name = document.createElement('span');
 		item_name.classList.add('item_name');
 		item_name.innerHTML = this.name;
-		buy_button.appendChild(item_name)
+		buy_button.appendChild(item_name);
 		// amount
 		var item_amount = document.createElement('span');
 		item_amount.classList.add('item_amount');
 		item_amount.innerHTML = this.amount;
-		buy_button.appendChild(item_amount)
+		buy_button.appendChild(item_amount);
 		// price
 		var item_price = document.createElement('span');
 		item_price.classList.add('item_price');
 		item_price.innerHTML = bigNumber(this.next_price);
-		buy_button.appendChild(item_price)
+		buy_button.appendChild(item_price);
 		return buy_button;
 	}
 	get elementId(){
@@ -141,7 +141,7 @@ function download(content, fileName, contentType){ // https://stackoverflow.com/
 }
 function importSave(){
 	navigator.clipboard.readText().then(
-  		clipText => document.cookie = atob(saveData));
+  		clipText => document.cookie = atob(clipText));
 	location.reload();
 }
 function exportSave(){
@@ -177,14 +177,12 @@ function choice(array){
 }
 
 function gameTick(){
+	var t = 1/game.settings.fps;
 	// was the player away?
 	if (2*game.settings.autosaveInterval < new Date() - game.player.lastSave){
 		// offline rewards
-		var t = (new Date() - game.player.lastSave)/1000;
+		t = (new Date() - game.player.lastSave)/1000;
 		saveGame();
-	}
-	else {
-		var t = 1/game.settings.fps;
 	}
 	// production
 	for (var i=0; i < game.buildings.length; i++){
@@ -213,7 +211,7 @@ function nextPrestige(){
 		return 1e9;
 	}
 	var nextNumber = thisPrestigeNumber() + 1;
-	return Math.pow(nextNumber, 5) * 1e9
+	return Math.pow(nextNumber, 5) * 1e9;
 }
 
 function thisPrestigeNumber(){
