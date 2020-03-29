@@ -2,16 +2,6 @@ html, body {
 	height: 100%;
 	margin: 0px;
 }
-p {
-	font-style: italic;
-	margin: 0px;
-	max-width: 700px;
-	text-indent: 45px;
-}
-abbr {
-	text-decoration: underline;
-	cursor: help;
-}
 .buy_button {
 	background-color: #a99;
 	border: 6px solid #444;
@@ -44,4 +34,16 @@ abbr {
 	float: right;
 	height: 100%;
 	width: 20%;
+}
+#snueg_counter {
+	font-size: xxx-large;
+	margin-top: 50px;
+	text-align: center;
+}
+#stats {
+	background-color: #145;
+	color: white;
+	float: left;
+	height: 100%;
+	width: 30%;
 }

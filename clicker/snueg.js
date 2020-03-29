@@ -23,7 +23,6 @@ class Building{
 // constants
 
 var game = {};
-game.debug = {};
 game.upgrades = [
 	new Building('Snueg', 1),
 ];
@@ -87,6 +86,9 @@ function saveGame(isManual = false){
 // main only beyond here
 
 function main(){
+	game.debug = {};
+	game.debug.loadTime = new Date();
+	game.debug.version = "a200329";
 	// load settings
 	if (read_cookie("settings")){
 		game.settings = read_cookie("settings");
