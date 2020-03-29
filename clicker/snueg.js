@@ -24,15 +24,19 @@ class Building{
 		var buy_button = document.createElement('div');
 		buy_button.classList.add('buy_button');
 		buy_button.id = this.elementId;
-		buy_button.innerHTML = this.name;
 		buy_button.onclick = () => this.buy();
+		// name
+		var item_name = document.createElement('span');
+		item_name.classList.add('item_name');
+		item_name.innerHTML = this.name;
+		buy_button.appendChild(item_name)
 		// amount
-		var item_amount = document.createElement('div');
+		var item_amount = document.createElement('span');
 		item_amount.classList.add('item_amount');
 		item_amount.innerHTML = this.amount;
 		buy_button.appendChild(item_amount)
 		// price
-		var item_price = document.createElement('div');
+		var item_price = document.createElement('span');
 		item_price.classList.add('item_price');
 		item_price.innerHTML = this.next_price;
 		buy_button.appendChild(item_price)

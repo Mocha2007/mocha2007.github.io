@@ -19,6 +19,10 @@ html, body {
 	cursor: pointer;
 	height: 64px;
 	padding-left: 20%;
+	position: relative;
+}
+.buy_button span {
+	position: absolute;
 }
 .buy_button:hover {
 	background-color: #ccb;
@@ -26,15 +30,12 @@ html, body {
 }
 .item_amount {
 	color: #432;
-	float: right;
 	font-size: xxx-large;
-	height: 100%;
 	opacity: 30%;
-	padding-right: 5%;
-	text-align: right;
+	right: 5%;
 }
 .item_price {
-	float: bottom;
+	bottom: 10%;
 	font-size: small;
 }
 #left, #center, #right {
