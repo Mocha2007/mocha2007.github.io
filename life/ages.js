@@ -199,14 +199,56 @@ var ages = [
 							{
 								'name': 'Paleocene',
 								'start': 66,
+								'divisions': [
+									{
+										'name': 'Danian',
+										'start': 66,
+									},
+									{
+										'name': 'Selandian',
+										'start': 61.6,
+									},
+									{
+										'name': 'Thanetian',
+										'start': 59.2,
+									},
+								],
 							},
 							{
 								'name': 'Eocene',
 								'start': 56,
+								'divisions': [
+									{
+										'name': 'Ypresian',
+										'start': 56,
+									},
+									{
+										'name': 'Lutetian',
+										'start': 47.8,
+									},
+									{
+										'name': 'Bartonian',
+										'start': 41.2,
+									},
+									{
+										'name': 'Priabonian',
+										'start': 37.8,
+									},
+								],
 							},
 							{
 								'name': 'Oligocene',
 								'start': 33.9,
+								'divisions': [
+									{
+										'name': 'Rupelian',
+										'start': 33.9,
+									},
+									{
+										'name': 'Chattian',
+										'start': 27.8,
+									},
+								],
 							},
 						],
 					},
