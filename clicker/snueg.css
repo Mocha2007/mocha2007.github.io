@@ -66,12 +66,27 @@ html, body {
 #right {
 	width: 20%;
 }
+#snueg_button {
+	border: 6px solid #d6f;
+	background: #e7b;
+	cursor: pointer;
+	font-size: xxx-large;
+	height: 100px;
+	left: 20%;
+	line-height: 100px;
+	position: relative;
+	text-align: center;
+	width: 60%;
+}
+#snueg_button:hover {
+	font-size: 60px;;
+}
 #snueg_counter {
 	font-size: xxx-large;
 	margin-top: 50px;
 	text-align: center;
 }
 #stats {
-	height: 100%;
+	height: 50%;
 	width: 100%;
 }
