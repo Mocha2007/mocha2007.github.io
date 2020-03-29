@@ -1,0 +1,47 @@
+html, body {
+	height: 100%;
+	margin: 0px;
+}
+p {
+	font-style: italic;
+	margin: 0px;
+	max-width: 700px;
+	text-indent: 45px;
+}
+abbr {
+	text-decoration: underline;
+	cursor: help;
+}
+.buy_button {
+	background-color: #a99;
+	border: 6px solid #444;
+	font-size: xx-large;
+	cursor: pointer;
+	height: 64px;
+	padding-left: 20%;
+}
+.buy_button:hover {
+	background-color: #ccb;
+	border: 6px solid #aa9;
+}
+.item_amount {
+	color: #432;
+	float: right;
+	font-size: xxx-large;
+	height: 100%;
+	opacity: 30%;
+	padding-right: 5%;
+	text-align: right;
+	width: 30%;
+}
+.item_price {
+	float: bottom;
+	font-size: small;
+}
+#buy_panel {
+	background-color: black;
+	color: white;
+	float: right;
+	height: 100%;
+	width: 20%;
+}
