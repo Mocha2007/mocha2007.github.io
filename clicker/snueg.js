@@ -61,6 +61,7 @@ class Building{
 		if (this.next_price <= game.player.snueg){
 			game.player.snueg -= this.next_price;
 			this.addToPlayer(1);
+			this.updateElement();
 			log("Player bought 1 " + this.name);
 			return;
 		}
@@ -71,7 +72,7 @@ class Building{
 		return Math.round(this.base_price * Math.pow(1.15, level));
 	}
 	updateElement(){
-		document.getElementById(this.elementId) = createElement();
+		document.getElementById(this.elementId).innerHTML = this.createElement.innerHTML;
 	}
 }
 
