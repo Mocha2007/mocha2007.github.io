@@ -93,6 +93,10 @@ var game = {};
 game.buildings = [
 	new Building('Snueg', 1, 0.1),
 ];
+game.news = [
+	"I like snueg.",
+	"UwU",
+];
 
 // functions
 
@@ -139,7 +143,12 @@ function addSnueg(amount){
 	game.player.snueg += amount;
 }
 
+function choice(array){
+	return array[Math.floor(Math.random() * array.length)];
+}
+
 function gameTick(){
+	// production
 	var t = 1/game.settings.fps;
 	for (var i=0; i < game.buildings.length; i++){
 		var building = game.buildings[i];
@@ -151,6 +160,10 @@ function gameTick(){
 function log(string){
 	game.debug.log.push(string);
 	console.log(string);
+}
+
+function news(){
+	document.getElementById('news').innerHTML = choice(game.news);
 }
 
 function redrawInterface(){
@@ -185,6 +198,7 @@ function main(){
 	game.debug.loadTime = new Date();
 	game.debug.log = [];
 	game.debug.version = "a200329";
+	game.debug.newsTime = new Date();
 	// load settings
 	if (read_cookie("settings")){
 		game.settings = read_cookie("settings");
@@ -193,6 +207,7 @@ function main(){
 		game.settings = {};
 		game.settings.autosaveInterval = 30 * 1000;
 		game.settings.fps = 20;
+		game.settings.newsUpdateInterval = 30 * 1000;
 	}
 	// load player
 	if (read_cookie("player")){
@@ -208,6 +223,7 @@ function main(){
 	setInterval(redrawInterface, 1000/game.settings.fps);
 	setInterval(gameTick, 1000/game.settings.fps);
 	setInterval(saveGame, game.settings.autosaveInterval);
+	setInterval(news, game.settings.newsUpdateInterval);
 	// set up buildings
 	document.getElementById("building_panel").innerHTML = "";
 	for (var i = 0; i < game.buildings.length; i++){

@@ -61,7 +61,13 @@ html, body {
 #menu {
 	border-bottom: 14px solid #532;
 	height: 10%;
+	text-align: center;
 	width: 100%;
+}
+#news {
+	font-size: large;
+	font-weight: bold;
+	padding: 16px;
 }
 #right {
 	width: 20%;
