@@ -164,7 +164,7 @@ function bigNumber(amount){
 	// 3245 -> 3.245 k
 	// 3950847 -> 3.950 M
 	if (amount < 1000){
-		return "" + amount;
+		return "" + round(amount);
 	}
 	var prefixes = " k M B T Qa Qi Sx Sp Oc No Dc".split(" "); // todo add more varieties for settings: SI, 1.0e10, ...
 	var i = Math.floor(Math.log(amount)/Math.log(1000));
