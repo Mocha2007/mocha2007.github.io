@@ -208,7 +208,7 @@ function news(){
 
 function redrawInterface(){
 	// autosave notification
-	var autosaveCountdown = round((+game.debug.lastSave + game.settings.autosaveInterval - new Date())/1000);
+	var autosaveCountdown = Math.floor((+game.player.lastSave + game.settings.autosaveInterval - new Date())/1000);
 	document.getElementById('autosave').innerHTML = "autosave in " + autosaveCountdown + "s";
 }
 
