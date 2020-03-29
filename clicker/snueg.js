@@ -226,8 +226,8 @@ function main(){
 	// load save
 	if (read_cookie("snueg")){
 		var saveFile = read_cookie("snueg");
-		game.player = savefile.player;
-		game.settings = savefile.settings;
+		game.player = saveFile.player;
+		game.settings = saveFile.settings;
 	}
 	else{
 		// player
