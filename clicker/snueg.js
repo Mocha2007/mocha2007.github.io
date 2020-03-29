@@ -186,8 +186,10 @@ function round(number, digits = 0){
 }
 
 function saveGame(isManual = false){
-	write_cookie("settings", game.settings);
-	write_cookie("player", game.player);
+	var saveFile = {};
+	saveFile.settings = game.settings;
+	saveFile.player = game.player;
+	write_cookie("snueg", saveFile);
 	game.debug.lastSave = new Date();
 	if (isManual){
 		console.log("Successfully manually saved game!");
@@ -216,25 +218,23 @@ function main(){
 	game.debug.log = [];
 	game.debug.version = "a200329";
 	game.debug.newsTime = new Date();
-	// load settings
-	if (read_cookie("settings")){
-		game.settings = read_cookie("settings");
+	// load save
+	if (read_cookie("snueg")){
+		var saveFile = read_cookie("snueg");
+		game.player = savefile.player;
+		game.settings = savefile.settings;
 	}
 	else{
-		game.settings = {};
-		game.settings.autosaveInterval = 30 * 1000;
-		game.settings.fps = 20;
-		game.settings.newsUpdateInterval = 30 * 1000;
-	}
-	// load player
-	if (read_cookie("player")){
-		game.player = read_cookie("player");
-	}
-	else{
+		// player
 		game.player = {};
 		game.player.buildings = [];
 		game.player.snueg = 0;
 		game.player.startTime = +new Date();
+		// settings
+		game.settings = {};
+		game.settings.autosaveInterval = 30 * 1000;
+		game.settings.fps = 20;
+		game.settings.newsUpdateInterval = 30 * 1000;
 	}
 	// set up ticks
 	setInterval(redrawInterface, 1000/game.settings.fps);
