@@ -6,9 +6,11 @@
 // classes
 
 class Building{
-	constructor(name, base_price){
+	constructor(name, base_price, production){
 		this.name = name;
 		this.base_price = base_price;
+		this.production = production;
+		this.storage = 0; // excess snueg storage eg 10.1 production -> 10 snueg and 0.1 storage
 	}
 	// getters
 	get amount(){
@@ -45,6 +47,9 @@ class Building{
 	get next_price(){
 		return this.price_at(this.amount);
 	}
+	get totalProduction(){
+		return this.production * this.amount;
+	}
 	// functions
 	addToDocument(){
 		document.getElementById("building_panel").appendChild(this.createElement);
@@ -71,6 +76,12 @@ class Building{
 	price_at(level){
 		return Math.round(this.base_price * Math.pow(1.15, level));
 	}
+	produce(time){
+		var snueg = this.totalProduction*time + this.storage;
+		var output = Math.floor(snueg);
+		addSnueg(output);
+		this.storage = snueg - output;
+	}
 	updateElement(){
 		document.getElementById(this.elementId).innerHTML = this.createElement.innerHTML;
 	}
@@ -80,7 +91,7 @@ class Building{
 
 var game = {};
 game.buildings = [
-	new Building('Snueg', 1),
+	new Building('Snueg', 1, 0.1),
 ];
 
 // functions
@@ -124,7 +135,17 @@ function downloadSave(){
 
 // other
 
+function addSnueg(amount){
+	game.player.snueg += amount;
+}
+
 function gameTick(){
+	var t = 1/game.settings.fps;
+	for (var i=0; i < game.buildings.length; i++){
+		var building = game.buildings[i];
+		building.produce(t);
+	}
+	updateSnuegCount();
 }
 
 function log(string){
