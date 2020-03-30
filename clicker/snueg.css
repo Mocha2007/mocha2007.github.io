@@ -19,6 +19,10 @@ abbr{
 h2 {
 	text-align: center;
 }
+h3 {
+	margin: 0;
+	background-color: #532;
+}
 .buy_button {
 	background-color: #a99;
 	border: 6px solid #444;
