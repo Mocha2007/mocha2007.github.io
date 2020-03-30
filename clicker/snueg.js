@@ -213,6 +213,15 @@ class Upgrade extends Purchase{
 	get icon(){ // todo
 		return this.name[0];
 	}
+	/** @param {number} n number of this to add to player */
+	addToPlayer(n){
+		if (game.player.upgrades[this.id] !== undefined){
+			game.player.upgrades[this.id] += n;
+		}
+		else {
+			game.player.upgrades[this.id] = n;
+		}
+	}
 }
 
 // constants
@@ -267,6 +276,8 @@ var game = {
 		prestige: 0,
 		snueg: 0,
 		startTime: +new Date(),
+		/** @type {number[]} */
+		upgrades: [],
 	},
 	settings: {
 		autosaveInterval: 30 * 1000,
@@ -279,6 +290,7 @@ var game = {
 	softReset(){
 		this.player.buildings = [];
 		this.player.snueg = 0;
+		this.player.upgrades = [];
 	},
 };
 
