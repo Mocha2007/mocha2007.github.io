@@ -1,10 +1,18 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true */
 /* exported delete_cookie, downloadSave, importSave, main, prestige, snuegButton */
 "use strict";
+var version = "a200330";
 
 // classes
 
 class Building{
+	/**
+	 * Buildings to improve snueg production
+	 * @param {string} name - Name of the building
+	 * @param {number} base_price - Base price of the building, increases 15% each purchase
+	 * @param {number} production - In snueg
+	 * @param {string} desc - Description of the building, given in the tooltip
+	*/
 	constructor(name, base_price, production, desc = ""){
 		this.name = name;
 		this.base_price = base_price;
@@ -12,18 +20,22 @@ class Building{
 		this.desc = desc;
 	}
 	// getters
+	/** @returns {number} Amount of this building current purchased */
 	get amount(){
 		if (game.player.buildings[this.id] !== undefined){
 			return game.player.buildings[this.id];
 		}
 		return 0;
 	}
+	/** @returns {number} Bonus to production */
 	get bonus(){
-		return globalBonus(); // for now...
+		return game.globalBonus; // for now...
 	}
+	/** @returns {boolean} true if the player can afford to purchase another of this building */
 	get canAfford(){
 		return this.next_price <= game.player.snueg;
 	}
+	/** @returns {HTMLDivElement} buy button */
 	get createElement(){
 		// button
 		var buy_button = document.createElement('div');
@@ -50,21 +62,27 @@ class Building{
 		buy_button.appendChild(item_price);
 		return buy_button;
 	}
+	/** @returns {string} id of buy button */
 	get elementId(){
 		return this.name + "_button";
 	}
+	/** @returns {number} index of this in game.buildings */
 	get id(){
 		return game.buildings.indexOf(this);
 	}
+	/** @returns {number} production of one of these buildings */
 	get individualProduction(){
 		return this.production * this.bonus;
 	}
+	/** @returns {number} cost to buy another of these buildings */
 	get next_price(){
 		return this.price_at(this.amount);
 	}
+	/** @returns {number} fraction of total production provided by these buildings */
 	get productionFraction(){
 		return game.production ? this.totalProduction / game.production : 0;
 	}
+	/** @returns {number} total production provided by all buildings of this type */
 	get totalProduction(){
 		return this.production * this.amount * this.bonus;
 	}
@@ -72,6 +90,7 @@ class Building{
 	addToDocument(){
 		document.getElementById("building_panel").appendChild(this.createElement);
 	}
+	/** @param {number} n number of this to add to player */
 	addToPlayer(n){
 		if (game.player.buildings[this.id] !== undefined){
 			game.player.buildings[this.id] += n;
@@ -91,9 +110,14 @@ class Building{
 		log("Player tried to buy 1 " + this.name + ", but did not have enough snueg. (" +
 			game.player.snueg + " < " + this.next_price + ")");
 	}
-	price_at(level){
-		return round(this.base_price * Math.pow(1.15, level));
+	/**
+	 * @param {number} n number of buildings already purchased
+	 * @return {number} price after already having n buildings
+	*/
+	price_at(n){
+		return round(this.base_price * Math.pow(1.15, n));
 	}
+	/** @param {number} time simulate the production of these buildings over time */
 	produce(time){
 		addSnueg(this.totalProduction*time);
 	}
@@ -115,23 +139,55 @@ class Building{
 		li = document.createElement('li');
 		li.innerHTML = this.amount + " " + this.name + " producing <b>" + bigNumber(this.totalProduction) + "</b> snueg per second (<b>" + (100*this.productionFraction).toFixed(1)+ "%</b> of total SpS)";
 		ul.appendChild(li);
-		
 	}
 	updateElement(){
 		document.getElementById(this.elementId).innerHTML = this.createElement.innerHTML;
 	}
 }
 
+class Upgrade{
+	/**
+	 * Upgrades to improve snueg production
+	 * @param {string} name - Name of the upgrade
+	 * @param {number} price - Price of the upgrade
+	 * @param {number} bonus - Bonus (1 = normal, 0.5 = halved, 2 = doubled)
+	 * @param {number[]} targets - IDs of targetted buildings
+	 * @param {string} desc - Description of the upgrade, given in the tooltip
+	*/
+	constructor(name, price, bonus, targets, desc = ""){
+		this.name = name;
+		this.price = price;
+		this.bonus = bonus;
+		this.targets = targets;
+		this.desc = desc;
+	}
+}
+
 // constants
 
 var game = {
+	get globalBonus(){
+		return 1 + 0.01 * game.player.prestige;
+	},
+	/** @return {number} number of snuegs for next prestige level */
+	get nextPrestige(){
+		if (game.player.snueg <= 0){
+			return 1e9;
+		}
+		var nextNumber = game.thisPrestigeNumber + 1;
+		return Math.pow(nextNumber, 5) * 1e9;
+	},
 	get production(){
 		var sum = 0;
 		for (var i=0; i < this.buildings.length; i++){
 			sum += this.buildings[i].totalProduction;
 		}
 		return sum;
-	}
+	},
+	/** @return {number} prestige gain if prestiged now */
+	get thisPrestigeNumber(){
+		return Math.floor(Math.pow(game.player.snueg/1e9, 1/5));
+	},
 };
 game.buildings = [
 	new Building('Snueg', 10, 0.1, "A warm snueg."),
@@ -152,6 +208,9 @@ game.news = [
 	"That's the power of snueg.",
 	"UwU",
 	"Wow, snueg is great.",
+];
+game.upgrades = [
+	new Upgrade('Kilosnueg', 100, 1.1, [0], "A <i>really</i> warm snueg."),
 ];
 
 // functions
@@ -194,10 +253,16 @@ function downloadSave(){
 
 // other
 
+/** @param {number} amount amount of snueg to add to player */
 function addSnueg(amount){
 	game.player.snueg += amount;
 }
 
+/**
+ * @param {number} amount number
+ * @param {boolean} integer should the output be rounded?
+ * @return {string} prettified number
+*/
 function bigNumber(amount, integer = false){
 	// 245 -> 245
 	// 3245 -> 3.245 k
@@ -211,11 +276,15 @@ function bigNumber(amount, integer = false){
 	return round(amount/factor, 3).toFixed(3) + " " + prefixes[i];
 }
 
+/**
+ * @param {any[]} array
+ * @return {any} random item from array
+*/
 function choice(array){
 	return array[Math.floor(Math.random() * array.length)];
 }
 
-function clearTooltip(array){
+function clearTooltip(){
 	// erase current tooltip
 	var tooltip = document.getElementById("tooltip");
 	tooltip.innerHTML = "";
@@ -239,10 +308,6 @@ function gameTick(){
 	updateSnuegCount();
 }
 
-function globalBonus(){
-	return 1 + 0.01 * game.player.prestige;
-}
-
 function log(string){
 	game.debug.log.push(string);
 	console.log(string);
@@ -252,27 +317,13 @@ function news(){
 	document.getElementById('news').innerHTML = choice(game.news);
 }
 
-function nextPrestige(){
-	// return number of snuegs for next prestige level
-	if (game.player.snueg <= 0){
-		return 1e9;
-	}
-	var nextNumber = thisPrestigeNumber() + 1;
-	return Math.pow(nextNumber, 5) * 1e9;
-}
-
-function thisPrestigeNumber(){
-	// return prestige gain if prestiged now
-	return Math.floor(Math.pow(game.player.snueg/1e9, 1/5));
-}
-
 function play(filename){
 	(new Audio(filename)).play();
 }
 
 function prestige(){
 	// confirm
-	var pp = thisPrestigeNumber();
+	var pp = game.thisPrestigeNumber;
 	if (!confirm("Are you sure you want to prestige up? You will lose all your snueg and buildings, but will gain a permanent " +
 		pp + "% boost to your snueg production from all sources.")){
 		return;
@@ -328,7 +379,7 @@ function saveGame(isManual = false){
 
 function snuegButton(){
 	// add snueg
-	game.player.snueg += globalBonus();
+	game.player.snueg += game.globalBonus;
 	// update snueg amount
 	updateSnuegCount();
 	// log action
@@ -336,9 +387,9 @@ function snuegButton(){
 }
 
 function updatePrestige(){
-	document.getElementById('prestigeNumber').innerHTML = thisPrestigeNumber();
+	document.getElementById('prestigeNumber').innerHTML = game.thisPrestigeNumber;
 	document.getElementById('prestigeProgress').innerHTML = '';
-	var progress = game.player.snueg / nextPrestige();
+	var progress = game.player.snueg / game.nextPrestige;
 	document.getElementById('prestigeProgress').appendChild(progressBar(progress));
 	return progress;
 }
@@ -359,7 +410,7 @@ function main(){
 	game.debug = {};
 	game.debug.loadTime = new Date();
 	game.debug.log = [];
-	game.debug.version = "a200329";
+	game.debug.version = version;
 	game.debug.newsTime = new Date();
 	// update version div
 	document.getElementById("version").innerHTML = "v. " + game.debug.version;
