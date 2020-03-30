@@ -5,10 +5,11 @@
 // classes
 
 class Building{
-	constructor(name, base_price, production){
+	constructor(name, base_price, production, desc = ""){
 		this.name = name;
 		this.base_price = base_price;
 		this.production = production;
+		this.desc = desc;
 	}
 	// getters
 	get amount(){
@@ -26,6 +27,8 @@ class Building{
 		buy_button.classList.add('buy_button');
 		buy_button.id = this.elementId;
 		buy_button.onclick = () => this.buy();
+		buy_button.onmousemove = () => this.tooltip();
+		buy_button.onmouseout = () => clearTooltip();
 		// name
 		var item_name = document.createElement('span');
 		item_name.classList.add('item_name');
@@ -49,8 +52,14 @@ class Building{
 	get id(){
 		return game.buildings.indexOf(this);
 	}
+	get individualProduction(){
+		return this.production * this.bonus;
+	}
 	get next_price(){
 		return this.price_at(this.amount);
+	}
+	get productionFraction(){
+		return game.production ? this.totalProduction / game.production : 0;
 	}
 	get totalProduction(){
 		return this.production * this.amount * this.bonus;
@@ -84,6 +93,26 @@ class Building{
 	produce(time){
 		addSnueg(this.totalProduction*time);
 	}
+	tooltip(){
+		// function to update the tooltip
+		var div = document.getElementById("tooltip");
+		div.style.top = window.event.clientY - 25 + "px";
+		div.style.left = window.event.clientX + 25 + "px";
+		// text
+		div.innerHTML = '<b>' + this.name + '</b>';
+		div.innerHTML += '<b style="float: right;">' + bigNumber(this.next_price) + '</b><br>';
+		div.innerHTML += this.desc;
+		// item stats
+		var ul = document.createElement('ul');
+		div.appendChild(ul);
+		var li = document.createElement('li');
+		li.innerHTML = "each " + this.name + " produces <b>" + bigNumber(this.individualProduction) + "</b> snueg per second";
+		ul.appendChild(li);
+		li = document.createElement('li');
+		li.innerHTML = this.amount + " " + this.name + " producing <b>" + bigNumber(this.totalProduction) + "</b> snueg per second (<b>" + (100*this.productionFraction).toFixed(1)+ "%</b> of total SpS)";
+		ul.appendChild(li);
+		
+	}
 	updateElement(){
 		document.getElementById(this.elementId).innerHTML = this.createElement.innerHTML;
 	}
@@ -101,7 +130,7 @@ var game = {
 	}
 };
 game.buildings = [
-	new Building('Snueg', 10, 0.1),
+	new Building('Snueg', 10, 0.1, "A warm snueg."),
 	new Building('Megasnueg', 60, 0.5),
 	new Building('Snueggr', 400, 4),
 	new Building('Snueggotron', 2000, 10),
@@ -174,6 +203,14 @@ function bigNumber(amount){
 
 function choice(array){
 	return array[Math.floor(Math.random() * array.length)];
+}
+
+function clearTooltip(array){
+	// erase current tooltip
+	var tooltip = document.getElementById("tooltip")
+	tooltip.innerHTML = "";
+	tooltip.style.top = "-5%";
+	tooltip.style.left = "0px";
 }
 
 function gameTick(){
@@ -348,4 +385,6 @@ function main(){
 		var building = game.buildings[i];
 		building.addToDocument();
 	}
+	// clear tooltip
+	clearTooltip();
 }

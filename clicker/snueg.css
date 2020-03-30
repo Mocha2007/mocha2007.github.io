@@ -46,6 +46,7 @@ abbr{
 }
 .item_price {
 	bottom: 10%;
+	/* todo color: #6f6; */
 	font-size: small;
 }
 .progressBarContainer {
@@ -151,6 +152,19 @@ abbr{
 #stats {
 	height: 40%;
 	width: 100%;
+}
+#tooltip {
+	background-color: #111;
+	border: 2px solid gold;
+	color: #ccc;
+	padding: 8px;
+	position: fixed;
+}
+#tooltip b {
+	color: white;
+}
+#tooltip ul {
+	font-size: small;
 }
 #version {
 	bottom: 10px;
