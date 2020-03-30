@@ -97,7 +97,7 @@ class Building{
 		// function to update the tooltip
 		var div = document.getElementById("tooltip");
 		div.style.top = window.event.clientY - 25 + "px";
-		div.style.left = window.event.clientX + 25 + "px";
+		div.style.left = window.event.clientX - 450 + "px";
 		// text
 		div.innerHTML = '<b>' + this.name + '</b>';
 		div.innerHTML += '<b style="float: right;">' + bigNumber(this.next_price) + '</b><br>';

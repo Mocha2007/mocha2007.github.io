@@ -159,6 +159,7 @@ abbr{
 	color: #ccc;
 	padding: 8px;
 	position: fixed;
+	width: 400px;
 }
 #tooltip b {
 	color: white;
