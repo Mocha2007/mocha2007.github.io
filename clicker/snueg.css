@@ -26,8 +26,8 @@ h3 {
 .buy_button {
 	background-color: #a99;
 	border: 6px solid #444;
-	font-size: xx-large;
 	cursor: pointer;
+	font-size: xx-large;
 	height: 64px;
 	padding-left: 20%;
 	position: relative;
@@ -70,8 +70,9 @@ h3 {
 .upgrade_buy_button {
 	background-color: #a99;
 	border: 6px solid #444;
-	font-size: xx-large;
 	cursor: pointer;
+	font-size: xx-large;
+	display: inline-block;
 	height: 64px;
 	line-height: 64px;
 	position: relative;

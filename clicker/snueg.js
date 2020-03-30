@@ -356,6 +356,9 @@ var game = {
 	},
 	upgrades: [
 		new Upgrade('Kilosnueg', 100, 1.1, [0], "A <i>really</i> warm snueg."),
+		new Upgrade('Floofy Megasnuegs', 600, 1.1, [1], "Makes the megasnuegs even floofier!"),
+		new Upgrade('Minimum Wage Snueggrs', 4000, 1.1, [2], "Pays the unpaid interns to motivate them more."),
+		new Upgrade('Beyond Minimum Wage Snueggrs', 40000, 1.1, [2], "Pays the slightly paid interns even more."),
 	],
 	softReset(){
 		this.player.buildings = [];
