@@ -220,11 +220,13 @@ class Upgrade extends Purchase{
 	 * @param {number} bonus - Bonus (1 = normal, 0.5 = halved, 2 = doubled)
 	 * @param {number[]} targets - IDs of targetted buildings
 	 * @param {string} desc - Description of the upgrade, given in the tooltip
+	 * @param {string[]} special - Special effect(s) of the upgrade. Currently only "mouse" is supported.
 	*/
-	constructor(name, price, bonus, targets, desc = ""){
+	constructor(name, price, bonus, targets, desc = "", special = []){
 		super(name, price, desc);
 		this.bonus = bonus;
 		this.targets = targets;
+		this.special = special;
 	}
 	/** @returns {HTMLDivElement} buy button */
 	get createElement(){
@@ -255,6 +257,14 @@ class Upgrade extends Purchase{
 	/** @returns {boolean} is this upgrade purchased? */
 	get purchased(){
 		return game.player.upgrades.includes(this.id);
+	}
+	/** @returns {string} desc string for special abilities */
+	get specialString(){
+		var specials = "";
+		if (this.special.includes("mouse")){
+			specials += "<li>Also increases production from clicking by this much.</li>";
+		}
+		return specials;
 	}
 	/** @returns {string[]} the names of its targets */
 	get targetNames(){
@@ -291,6 +301,7 @@ class Upgrade extends Purchase{
 		var li = document.createElement('li');
 		li.innerHTML = "improves production of each " + this.targetNames.join(" and ") + " by " + bigNumber((this.bonus-1)*100, true) + "%";
 		ul.appendChild(li);
+		ul.innerHTML += this.specialString;
 	}
 }
 
@@ -328,6 +339,20 @@ var game = {
 		new Building('SNG 69000', 25e3, 100, "A fully sentient robot designed to snueg you with maximum simulated affection."),
 		new Building('It&apos;s newegg', 125e3, 400, "For a nominal fee you too can own your own snueg-themed website."),
 	],
+	mouse: {
+		base: 1,
+		/** @returns {number} bonus from relevant upgrades */
+		get bonus(){
+			var b = 1;
+			for (var i = 0; i < game.upgrades.length; i++){
+				var upgrade = game.upgrades[i];
+				if (upgrade.special.includes("mouse") && upgrade.purchased){
+					b *= upgrade.bonus;
+				}
+			}
+			return b * game.globalBonus;
+		},
+	},
 	news: [
 		"I like snueg.",
 		"I love to snueg.",
@@ -357,6 +382,7 @@ var game = {
 	upgrades: [
 		new Upgrade('Kilosnueg', 100, 1.1, [0], "A <i>really</i> warm snueg."),
 		new Upgrade('Floofy Megasnuegs', 600, 1.1, [1], "Makes the megasnuegs even floofier!"),
+		new Upgrade('Clickysnueg', 600, 2, [], "Makes the cursor floofier so the clicks are nice and soft UwU", "mouse"),
 		new Upgrade('Minimum Wage Snueggrs', 4000, 1.1, [2], "Pays the unpaid interns to motivate them more."),
 		new Upgrade('Beyond Minimum Wage Snueggrs', 40000, 1.1, [2], "Pays the slightly paid interns even more."),
 	],
@@ -546,7 +572,7 @@ function saveGame(isManual = false){
 
 function snuegButton(){
 	// add snueg
-	game.player.snueg += game.globalBonus;
+	game.player.snueg += game.mouse.base * game.mouse.bonus;
 	// update snueg amount
 	updateSnuegCount();
 	// log action
