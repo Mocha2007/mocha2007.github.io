@@ -189,30 +189,47 @@ var game = {
 	get thisPrestigeNumber(){
 		return Math.floor(Math.pow(game.player.snueg/1e9, 1/5));
 	},
+	buildings: [
+		new Building('Snueg', 10, 0.1, "A warm snueg."),
+		new Building('Megasnueg', 60, 0.5, "A really big snueg, more efficiently transferring warmth and affection."),
+		new Building('Snueggr', 400, 4, "An unpaid intern to snueg you cheaply."),
+		new Building('Snueggotron', 2e3, 10, "A simple robot designed to automatically snueg you."),
+		new Building('SNG 9000', 6e3, 40, "A half-sentient robot designed to automatically snueg you."),
+		new Building('SNG 69000', 25e3, 100, "A fully sentient robot designed to snueg you with maximum simulated affection."),
+		new Building('It&apos;s newegg', 125e3, 400, "For a nominal fee you too can own your own snueg-themed website."),
+	],
+	news: [
+		"I like snueg.",
+		"I love to snueg.",
+		"licc",
+		"Must... forevrially... snueg...",
+		"Snueg is love, snueg is life.",
+		"Snuegging is the best!",
+		"That's the power of snueg.",
+		"UwU",
+		"Wow, snueg is great.",
+	],
+	player: {
+		/** @type {number[]} */
+		buildings: [],
+		lastSave: 0,
+		prestige: 0,
+		snueg: 0,
+		startTime: +new Date(),
+	},
+	settings: {
+		autosaveInterval: 30 * 1000,
+		fps: 20,
+		newsUpdateInterval: 30 * 1000,
+	},
+	upgrades: [
+		new Upgrade('Kilosnueg', 100, 1.1, [0], "A <i>really</i> warm snueg."),
+	],
+	softReset(){
+		this.player.buildings = [];
+		this.player.snueg = 0;
+	},
 };
-game.buildings = [
-	new Building('Snueg', 10, 0.1, "A warm snueg."),
-	new Building('Megasnueg', 60, 0.5, "A really big snueg, more efficiently transferring warmth and affection."),
-	new Building('Snueggr', 400, 4, "An unpaid intern to snueg you cheaply."),
-	new Building('Snueggotron', 2e3, 10, "A simple robot designed to automatically snueg you."),
-	new Building('SNG 9000', 6e3, 40, "A half-sentient robot designed to automatically snueg you."),
-	new Building('SNG 69000', 25e3, 100, "A fully sentient robot designed to snueg you with maximum simulated affection."),
-	new Building('It&apos;s newegg', 125e3, 400, "For a nominal fee you too can own your own snueg-themed website."),
-];
-game.news = [
-	"I like snueg.",
-	"I love to snueg.",
-	"licc",
-	"Must... forevrially... snueg...",
-	"Snueg is love, snueg is life.",
-	"Snuegging is the best!",
-	"That's the power of snueg.",
-	"UwU",
-	"Wow, snueg is great.",
-];
-game.upgrades = [
-	new Upgrade('Kilosnueg', 100, 1.1, [0], "A <i>really</i> warm snueg."),
-];
 
 // functions
 
@@ -303,7 +320,6 @@ function gameTick(){
 	}
 	// production
 	for (var i=0; i < game.buildings.length; i++){
-		/** @type {Building} */
 		var building = game.buildings[i];
 		building.produce(t);
 	}
@@ -340,8 +356,7 @@ function prestige(){
 		game.player.prestige += pp;
 	}
 	// DELETE
-	game.player.snueg = 0;
-	game.player.buildings = [];
+	game.softReset();
 	// play sound
 	play('prestige.mp3');
 }
@@ -441,18 +456,6 @@ function main(){
 		game.settings = saveFile.settings;
 	}
 	else{
-		// player
-		game.player = {};
-		game.player.buildings = [];
-		game.player.snueg = 0;
-		game.player.startTime = +new Date();
-		game.player.prestige = 0;
-		// settings
-		game.settings = {};
-		game.settings.autosaveInterval = 30 * 1000;
-		game.settings.fps = 20;
-		game.settings.newsUpdateInterval = 30 * 1000;
-		// save!!!
 		saveGame();
 	}
 	// set up ticks
@@ -463,7 +466,6 @@ function main(){
 	// set up buildings
 	document.getElementById("building_panel").innerHTML = "";
 	for (var i = 0; i < game.buildings.length; i++){
-		/** @type {Building} */
 		var building = game.buildings[i];
 		building.addToDocument();
 	}
