@@ -101,6 +101,7 @@ h3 {
 }
 #building_panel {
 	height: 80%;
+	/* overflow-y: scroll; */
 	width: 100%;
 }
 #left {
@@ -186,6 +187,8 @@ h3 {
 	font-size: small;
 }
 #upgrade_panel {
+	max-height: 76px;
+	overflow-y: scroll;
 	width: 100%;
 }
 #version {
