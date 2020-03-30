@@ -308,6 +308,7 @@ function gameTick(){
 	updateSnuegCount();
 }
 
+/** @param {string} string string to log */
 function log(string){
 	game.debug.log.push(string);
 	console.log(string);
@@ -317,6 +318,7 @@ function news(){
 	document.getElementById('news').innerHTML = choice(game.news);
 }
 
+/** @param {string} filename to play */
 function play(filename){
 	(new Audio(filename)).play();
 }
@@ -342,6 +344,10 @@ function prestige(){
 	play('prestige.mp3');
 }
 
+/**
+ * @param {number} progress fraction in [0, 1]
+ * @return {HTMLDivElement} progress bar element
+*/
 function progressBar(progress){
 	var progressBarContainer = document.createElement("div");
 	progressBarContainer.classList.add('progressBarContainer');
@@ -358,6 +364,11 @@ function redrawInterface(){
 	document.getElementById('autosave').innerHTML = "autosave in " + autosaveCountdown + "s";
 }
 
+/**
+ * @param {number} number to round
+ * @param {number} digits to round to (default 0)
+ * @return {number} rounded number
+*/
 function round(number, digits = 0){
 	number *= Math.pow(10, digits);
 	number = Math.round(number);
@@ -365,6 +376,9 @@ function round(number, digits = 0){
 	return number;
 }
 
+/**
+ * @param {boolean} isManual is this save manually triggered, or automatic?
+*/
 function saveGame(isManual = false){
 	var saveFile = {};
 	saveFile.settings = game.settings;
@@ -386,6 +400,10 @@ function snuegButton(){
 	log("Clicked snueg button");
 }
 
+/**
+ * updates the prestige bar
+ * @return {number} progress to next level
+*/
 function updatePrestige(){
 	document.getElementById('prestigeNumber').innerHTML = game.thisPrestigeNumber;
 	document.getElementById('prestigeProgress').innerHTML = '';
