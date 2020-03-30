@@ -125,13 +125,13 @@ class Building extends Purchase{
 	get productionFraction(){
 		return game.production ? this.totalProduction / game.production : 0;
 	}
-	/** @returns {number[]} ids of upgrades affecting this building */
+	/** @returns {Upgrade[]} upgrades affecting this building */
 	get relevantUpgrades(){
 		var upgrades = [];
 		for (var i = 0; i < game.upgrades.length; i++){
 			var upgrade = game.upgrades[i];
 			if (upgrade.targets.includes(this.id)){
-				upgrades.push(i);
+				upgrades.push(upgrade);
 			}
 		}
 		return upgrades;
@@ -145,7 +145,7 @@ class Building extends Purchase{
 		var bonus = 1;
 		var us = this.relevantUpgrades;
 		for (var i = 0; i < us.length; i++){
-			var upgrade = game.upgrades[i];
+			var upgrade = us[i];
 			if (upgrade.purchased){
 				bonus *= upgrade.bonus;
 			}
