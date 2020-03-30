@@ -69,6 +69,7 @@ h2 {
 	font-size: xx-large;
 	cursor: pointer;
 	height: 64px;
+	line-height: 64px;
 	position: relative;
 	text-align: center;
 	width: 64px;

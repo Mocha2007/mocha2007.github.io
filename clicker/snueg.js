@@ -26,16 +26,24 @@ class Purchase{
 	get elementId(){
 		return this.name + "_button";
 	}
+	// functions
+	/** @returns {boolean} success */
 	buy(){
 		if (this.canAfford){
 			game.player.snueg -= this.next_price;
 			this.addToPlayer(1);
 			this.updateElement();
 			log("Player bought 1 " + this.name);
-			return;
+			return true;
 		}
 		log("Player tried to buy 1 " + this.name + ", but did not have enough snueg. (" +
 			game.player.snueg + " < " + this.next_price + ")");
+		return false;
+	}
+	buyBye(){
+		if (this.buy()){
+			document.getElementById(this.elementId).remove();
+		}
 	}
 	updateElement(){
 		document.getElementById(this.elementId).innerHTML = this.createElement.innerHTML;
@@ -64,7 +72,7 @@ class Building extends Purchase{
 	}
 	/** @returns {number} Bonus to production */
 	get bonus(){
-		return game.globalBonus; // for now...
+		return game.globalBonus * this.upgradeBonus;
 	}
 	/** @returns {boolean} true if the player can afford to purchase another of this building */
 	get canAfford(){
@@ -117,9 +125,32 @@ class Building extends Purchase{
 	get productionFraction(){
 		return game.production ? this.totalProduction / game.production : 0;
 	}
+	/** @returns {number[]} ids of upgrades affecting this building */
+	get relevantUpgrades(){
+		var upgrades = [];
+		for (var i = 0; i < game.upgrades.length; i++){
+			var upgrade = game.upgrades[i];
+			if (upgrade.targets.includes(this.id)){
+				upgrades.push(i);
+			}
+		}
+		return upgrades;
+	}
 	/** @returns {number} total production provided by all buildings of this type */
 	get totalProduction(){
 		return this.production * this.amount * this.bonus;
+	}
+	/** @returns {number} bonus from relevant upgrades */
+	get upgradeBonus(){
+		var bonus = 1;
+		var us = this.relevantUpgrades;
+		for (var i = 0; i < us.length; i++){
+			var upgrade = game.upgrades[i];
+			if (upgrade.purchased){
+				bonus *= upgrade.bonus;
+			}
+		}
+		return bonus;
 	}
 	// functions
 	addToDocument(){
@@ -201,7 +232,7 @@ class Upgrade extends Purchase{
 		var buy_button = document.createElement('div');
 		buy_button.classList.add('upgrade_buy_button');
 		buy_button.id = this.elementId;
-		buy_button.onclick = () => this.buy();
+		buy_button.onclick = () => this.buyBye();
 		buy_button.onmousemove = () => this.tooltip();
 		buy_button.onmouseout = () => clearTooltip();
 		// todo buy_button.style.opacity = this.canAfford ? "100%" : "50%";
@@ -213,14 +244,38 @@ class Upgrade extends Purchase{
 	get icon(){ // todo
 		return this.name[0];
 	}
-	/** @param {number} n number of this to add to player */
-	addToPlayer(n){
-		if (game.player.upgrades[this.id] !== undefined){
-			game.player.upgrades[this.id] += n;
+	/** @returns {number} index of this in game.upgrades */
+	get id(){
+		return game.upgrades.indexOf(this);
+	}
+	/** @returns {number} upgrade price */
+	get next_price(){
+		return this.price;
+	}
+	/** @returns {boolean} is this upgrade purchased? */
+	get purchased(){
+		return game.player.upgrades.includes(this.id);
+	}
+	// functions
+	addToDocument(){
+		if (0 < game.player.upgrades[this.id]){
+			return;
 		}
-		else {
-			game.player.upgrades[this.id] = n;
-		}
+		document.getElementById("upgrade_panel").appendChild(this.createElement);
+	}
+	addToPlayer(){
+		game.player.upgrades.push(this.id);
+	}
+	tooltip(){
+		// function to update the tooltip
+		/** @type {HTMLDivElement} */
+		var div = document.getElementById("tooltip");
+		div.style.top = window.event.clientY - 25 + "px";
+		div.style.left = window.event.clientX - 450 + "px";
+		// text
+		div.innerHTML = '<b>' + this.name + '</b>';
+		div.innerHTML += '<b style="float: right;">' + bigNumber(this.price, true) + '</b><br>';
+		div.innerHTML += this.desc;
 	}
 }
 
@@ -531,6 +586,12 @@ function main(){
 	for (var i = 0; i < game.buildings.length; i++){
 		var building = game.buildings[i];
 		building.addToDocument();
+	}
+	// set up upgrades
+	document.getElementById("upgrade_panel").innerHTML = "";
+	for (var j = 0; j < game.upgrades.length; j++){
+		var upgrade = game.upgrades[j];
+		upgrade.addToDocument();
 	}
 	// clear tooltip
 	clearTooltip();
