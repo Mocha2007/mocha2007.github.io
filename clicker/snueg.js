@@ -144,11 +144,14 @@ game.buildings = [
 ];
 game.news = [
 	"I like snueg.",
+	"I love to snueg.",
 	"licc",
 	"Must... forevrially... snueg...",
 	"Snueg is love, snueg is life.",
+	"Snuegging is the best!",
 	"That's the power of snueg.",
 	"UwU",
+	"Wow, snueg is great.",
 ];
 
 // functions
