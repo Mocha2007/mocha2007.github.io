@@ -117,6 +117,10 @@ class Building extends Purchase{
 	get individualProduction(){
 		return this.production * this.bonus;
 	}
+	/** @returns {number} total production produced by all buildings of this class on this playthrough */
+	get lifetimeProduction(){
+		return game.player.buildingClicks[this.id];
+	}
 	/** @returns {number} cost to buy another of these buildings */
 	get next_price(){
 		return this.price_at(this.amount);
@@ -185,7 +189,23 @@ class Building extends Purchase{
 	}
 	/** @param {number} time simulate the production of these buildings over time */
 	produce(time){
-		addSnueg(this.totalProduction*time);
+		var snueg = this.totalProduction*time;
+		addSnueg(snueg);
+		// add to records
+		this.record(snueg);
+	}
+	/** @param {number} snueg amount of snuegs to record this building as having produced */
+	record(snueg){
+		if (!game.player.hasOwnProperty("buildingClicks")){
+			game.player.buildingClicks = [];
+		}
+		var id = this.id;
+		if (game.player.buildingClicks[id] === undefined){
+			game.player.buildingClicks[id] = snueg;
+		}
+		else {
+			game.player.buildingClicks[id] += snueg;
+		}
 	}
 	tooltip(){
 		// function to update the tooltip
@@ -205,6 +225,9 @@ class Building extends Purchase{
 		ul.appendChild(li);
 		li = document.createElement('li');
 		li.innerHTML = this.amount + " " + this.name + " producing <b>" + bigNumber(this.totalProduction) + "</b> snueg per second (<b>" + (100*this.productionFraction).toFixed(1)+ "%</b> of total SpS)";
+		ul.appendChild(li);
+		li = document.createElement('li');
+		li.innerHTML = bigNumber(this.lifetimeProduction, true) + " snuegs so far";
 		ul.appendChild(li);
 	}
 	updateElement(){
@@ -366,6 +389,8 @@ var game = {
 	],
 	player: {
 		/** @type {number[]} */
+		buildingClicks: [],
+		/** @type {number[]} */
 		buildings: [],
 		lastSave: 0,
 		prestige: 0,
@@ -387,6 +412,7 @@ var game = {
 		new Upgrade('Beyond Minimum Wage Snueggrs', 40000, 1.1, [2], "Pays the slightly paid interns even more."),
 	],
 	softReset(){
+		this.player.buildingClicks = [];
 		this.player.buildings = [];
 		this.player.snueg = 0;
 		this.player.upgrades = [];
@@ -440,7 +466,7 @@ function addSnueg(amount){
 
 /**
  * @param {number} amount number
- * @param {boolean} integer should the output be rounded?
+ * @param {boolean} integer should the output be rounded? (default = false)
  * @return {string} prettified number
 */
 function bigNumber(amount, integer = false){
