@@ -1,4 +1,4 @@
-/* jshint esversion: 6, strict: true, strict: global */
+/* jshint esversion: 6, strict: true, strict: global, eqeqeq: true */
 /* exported delete_cookie, downloadSave, importSave, main, prestige, snuegButton */
 "use strict";
 
