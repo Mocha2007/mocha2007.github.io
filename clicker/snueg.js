@@ -256,6 +256,15 @@ class Upgrade extends Purchase{
 	get purchased(){
 		return game.player.upgrades.includes(this.id);
 	}
+	/** @returns {string[]} the names of its targets */
+	get targetNames(){
+		var names = [];
+		for (var i = 0; i < this.targets.length; i++){
+			var building = game.buildings[this.targets[i]];
+			names.push(building.name);
+		}
+		return names;
+	}
 	// functions
 	addToDocument(){
 		if (0 < game.player.upgrades[this.id]){
@@ -276,6 +285,12 @@ class Upgrade extends Purchase{
 		div.innerHTML = '<b>' + this.name + '</b>';
 		div.innerHTML += '<b style="float: right;">' + bigNumber(this.price, true) + '</b><br>';
 		div.innerHTML += this.desc;
+		// item stats
+		var ul = document.createElement('ul');
+		div.appendChild(ul);
+		var li = document.createElement('li');
+		li.innerHTML = "improves production of each " + this.targetNames.join(" and ") + " by " + bigNumber((this.bonus-1)*100, true) + "%";
+		ul.appendChild(li);
 	}
 }
 
