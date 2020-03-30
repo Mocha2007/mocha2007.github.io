@@ -135,9 +135,9 @@ var game = {
 };
 game.buildings = [
 	new Building('Snueg', 10, 0.1, "A warm snueg."),
-	new Building('Megasnueg', 60, 0.5),
-	new Building('Snueggr', 400, 4),
-	new Building('Snueggotron', 2000, 10),
+	new Building('Megasnueg', 60, 0.5, "A really big snueg, more efficiently transferring warmth and affection."),
+	new Building('Snueggr', 400, 4, "An unpaid intern to snueg you cheaply."),
+	new Building('Snueggotron', 2000, 10, "A simple robot designed to automatically snueg you."),
 ];
 game.news = [
 	"I like snueg.",
