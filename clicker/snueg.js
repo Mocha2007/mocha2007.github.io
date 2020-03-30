@@ -21,6 +21,9 @@ class Building{
 	get bonus(){
 		return globalBonus(); // for now...
 	}
+	get canAfford(){
+		return this.next_price <= game.player.snueg;
+	}
 	get createElement(){
 		// button
 		var buy_button = document.createElement('div');
@@ -29,6 +32,7 @@ class Building{
 		buy_button.onclick = () => this.buy();
 		buy_button.onmousemove = () => this.tooltip();
 		buy_button.onmouseout = () => clearTooltip();
+		// todo buy_button.style.opacity = this.canAfford ? "100%" : "50%";
 		// name
 		var item_name = document.createElement('span');
 		item_name.classList.add('item_name');
@@ -77,7 +81,7 @@ class Building{
 		}
 	}
 	buy(){
-		if (this.next_price <= game.player.snueg){
+		if (this.canAfford){
 			game.player.snueg -= this.next_price;
 			this.addToPlayer(1);
 			this.updateElement();
