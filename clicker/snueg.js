@@ -217,7 +217,7 @@ function choice(array){
 
 function clearTooltip(array){
 	// erase current tooltip
-	var tooltip = document.getElementById("tooltip")
+	var tooltip = document.getElementById("tooltip");
 	tooltip.innerHTML = "";
 	tooltip.style.top = "-5%";
 	tooltip.style.left = "0px";
