@@ -5,7 +5,44 @@ var version = "a200330";
 
 // classes
 
-class Building{
+class Purchase{
+	/**
+	 * Buildings to improve snueg production
+	 * @param {string} name - Name of the building
+	 * @param {number} price - Base price of the building, increases 15% each purchase
+	 * @param {string} desc - Description of the building, given in the tooltip
+	*/
+	constructor(name, price, desc = ""){
+		this.name = name;
+		this.price = price;
+		this.desc = desc;
+	}
+	// getters
+	/** @returns {boolean} true if the player can afford to purchase another of this building */
+	get canAfford(){
+		return this.next_price <= game.player.snueg;
+	}
+	/** @returns {string} id of buy button */
+	get elementId(){
+		return this.name + "_button";
+	}
+	buy(){
+		if (this.canAfford){
+			game.player.snueg -= this.next_price;
+			this.addToPlayer(1);
+			this.updateElement();
+			log("Player bought 1 " + this.name);
+			return;
+		}
+		log("Player tried to buy 1 " + this.name + ", but did not have enough snueg. (" +
+			game.player.snueg + " < " + this.next_price + ")");
+	}
+	updateElement(){
+		document.getElementById(this.elementId).innerHTML = this.createElement.innerHTML;
+	}
+}
+
+class Building extends Purchase{
 	/**
 	 * Buildings to improve snueg production
 	 * @param {string} name - Name of the building
@@ -14,10 +51,8 @@ class Building{
 	 * @param {string} desc - Description of the building, given in the tooltip
 	*/
 	constructor(name, base_price, production, desc = ""){
-		this.name = name;
-		this.base_price = base_price;
+		super(name, base_price, desc);
 		this.production = production;
-		this.desc = desc;
 	}
 	// getters
 	/** @returns {number} Amount of this building current purchased */
@@ -115,7 +150,7 @@ class Building{
 	 * @return {number} price after already having n buildings
 	*/
 	price_at(n){
-		return round(this.base_price * Math.pow(1.15, n));
+		return round(this.price * Math.pow(1.15, n));
 	}
 	/** @param {number} time simulate the production of these buildings over time */
 	produce(time){
@@ -146,7 +181,7 @@ class Building{
 	}
 }
 
-class Upgrade{
+class Upgrade extends Purchase{
 	/**
 	 * Upgrades to improve snueg production
 	 * @param {string} name - Name of the upgrade
@@ -156,11 +191,27 @@ class Upgrade{
 	 * @param {string} desc - Description of the upgrade, given in the tooltip
 	*/
 	constructor(name, price, bonus, targets, desc = ""){
-		this.name = name;
-		this.price = price;
+		super(name, price, desc);
 		this.bonus = bonus;
 		this.targets = targets;
-		this.desc = desc;
+	}
+	/** @returns {HTMLDivElement} buy button */
+	get createElement(){
+		// button
+		var buy_button = document.createElement('div');
+		buy_button.classList.add('upgrade_buy_button');
+		buy_button.id = this.elementId;
+		buy_button.onclick = () => this.buy();
+		buy_button.onmousemove = () => this.tooltip();
+		buy_button.onmouseout = () => clearTooltip();
+		// todo buy_button.style.opacity = this.canAfford ? "100%" : "50%";
+		// name
+		buy_button.innerHTML = this.icon;
+		return buy_button;
+	}
+	/** @returns {string} icon of buy button */
+	get icon(){ // todo
+		return this.name[0];
 	}
 }
 

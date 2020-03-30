@@ -16,6 +16,9 @@ abbr{
 	cursor: help;
 	text-decoration: none;
 }
+h2 {
+	text-align: center;
+}
 .buy_button {
 	background-color: #a99;
 	border: 6px solid #444;
@@ -28,11 +31,11 @@ abbr{
 .buy_button span {
 	position: absolute;
 }
-.buy_button:hover {
+.buy_button:hover, .upgrade_buy_button:hover {
 	background-color: #ccb;
 	border: 6px solid #aa9;
 }
-.buy_button:active {
+.buy_button:active, .upgrade_buy_button:active {
 	opacity: 50%;
 }
 .danger {
@@ -59,6 +62,16 @@ abbr{
 .progressBar {
 	background-color: blue;
 	height: 100%;
+}
+.upgrade_buy_button {
+	background-color: #a99;
+	border: 6px solid #444;
+	font-size: xx-large;
+	cursor: pointer;
+	height: 64px;
+	position: relative;
+	text-align: center;
+	width: 64px;
 }
 #left, #center, #right {
 	float: left;
@@ -166,6 +179,9 @@ abbr{
 }
 #tooltip ul {
 	font-size: small;
+}
+#upgrade_panel {
+	width: 100%;
 }
 #version {
 	bottom: 10px;
