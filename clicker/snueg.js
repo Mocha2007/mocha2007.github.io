@@ -42,7 +42,7 @@ class Building{
 		// price
 		var item_price = document.createElement('span');
 		item_price.classList.add('item_price');
-		item_price.innerHTML = bigNumber(this.next_price);
+		item_price.innerHTML = bigNumber(this.next_price, true);
 		buy_button.appendChild(item_price);
 		return buy_button;
 	}
@@ -100,7 +100,7 @@ class Building{
 		div.style.left = window.event.clientX - 450 + "px";
 		// text
 		div.innerHTML = '<b>' + this.name + '</b>';
-		div.innerHTML += '<b style="float: right;">' + bigNumber(this.next_price) + '</b><br>';
+		div.innerHTML += '<b style="float: right;">' + bigNumber(this.next_price, true) + '</b><br>';
 		div.innerHTML += this.desc;
 		// item stats
 		var ul = document.createElement('ul');
@@ -188,12 +188,12 @@ function addSnueg(amount){
 	game.player.snueg += amount;
 }
 
-function bigNumber(amount){
+function bigNumber(amount, integer = false){
 	// 245 -> 245
 	// 3245 -> 3.245 k
 	// 3950847 -> 3.950 M
 	if (amount < 1000){
-		return "" + round(amount);
+		return integer ? "" + round(amount) : amount.toFixed(3);
 	}
 	var prefixes = " k M B T Qa Qi Sx Sp Oc No Dc".split(" "); // todo add more varieties for settings: SI, 1.0e10, ...
 	var i = Math.floor(Math.log(amount)/Math.log(1000));
@@ -334,7 +334,7 @@ function updatePrestige(){
 }
 
 function updateSnuegCount(){
-	var n = bigNumber(round(game.player.snueg));
+	var n = bigNumber(game.player.snueg, true);
 	document.getElementById("snueg_counter").innerHTML = n;
 	document.getElementById("snueg_production_counter").innerHTML = "Production: " + bigNumber(game.production) + "/s";
 	// update webpage title
