@@ -137,7 +137,10 @@ game.buildings = [
 	new Building('Snueg', 10, 0.1, "A warm snueg."),
 	new Building('Megasnueg', 60, 0.5, "A really big snueg, more efficiently transferring warmth and affection."),
 	new Building('Snueggr', 400, 4, "An unpaid intern to snueg you cheaply."),
-	new Building('Snueggotron', 2000, 10, "A simple robot designed to automatically snueg you."),
+	new Building('Snueggotron', 2e3, 10, "A simple robot designed to automatically snueg you."),
+	new Building('SNG 9000', 6e3, 40, "A half-sentient robot designed to automatically snueg you."),
+	new Building('SNG 69000', 25e3, 100, "A fully sentient robot designed to snueg you with maximum simulated affection."),
+	new Building('It&apos;s newegg', 125e3, 400, "For a nominal fee you too can own your own snueg-themed website."),
 ];
 game.news = [
 	"I like snueg.",
