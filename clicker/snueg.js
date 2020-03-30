@@ -123,6 +123,7 @@ class Building{
 	}
 	tooltip(){
 		// function to update the tooltip
+		/** @type {HTMLDivElement} */
 		var div = document.getElementById("tooltip");
 		div.style.top = window.event.clientY - 25 + "px";
 		div.style.left = window.event.clientX - 450 + "px";
@@ -302,6 +303,7 @@ function gameTick(){
 	}
 	// production
 	for (var i=0; i < game.buildings.length; i++){
+		/** @type {Building} */
 		var building = game.buildings[i];
 		building.produce(t);
 	}
@@ -461,6 +463,7 @@ function main(){
 	// set up buildings
 	document.getElementById("building_panel").innerHTML = "";
 	for (var i = 0; i < game.buildings.length; i++){
+		/** @type {Building} */
 		var building = game.buildings[i];
 		building.addToDocument();
 	}
