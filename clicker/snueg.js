@@ -211,7 +211,7 @@ class Building extends Purchase{
 		// function to update the tooltip
 		/** @type {HTMLDivElement} */
 		var div = document.getElementById("tooltip");
-		div.style.top = window.event.clientY - 25 + "px";
+		div.style.top = Math.min(window.event.clientY, window.innerHeight*0.85) - 25 + "px";
 		div.style.left = window.event.clientX - 450 + "px";
 		// text
 		div.innerHTML = '<b>' + this.name + '</b>';
@@ -374,6 +374,9 @@ var game = {
 		new Building('SNG 9000', 6e3, 40, "A half-sentient robot designed to automatically snueg you."),
 		new Building('SNG 69000', 25e3, 100, "A fully sentient robot designed to snueg you with maximum simulated affection."),
 		new Building('It&apos;s newegg', 125e3, 400, "For a nominal fee you too can own your own snueg-themed website."),
+		new Building('G&eacute;&ucirc;&ntilde;s', 666666, 1666, "An unholy abomination, you can use particle colliders to smash two of them together to get their antiparticle, the snueg."),
+		new Building('Snuegland', 3e6, 7e3, "A magical kingdom teeming with snuegs, ripe for the snatching!"),
+		new Building('Snoo', 20050623, 20000, "These strange little critters only need a G added to them to make them snuegs. Seems simple enough..."),
 	],
 	mouse: {
 		base: 1,
@@ -420,11 +423,31 @@ var game = {
 		nonEssentialUpdateInterval: 2 * 1000,
 	},
 	upgrades: [
-		new Upgrade('Kilosnueg', 100, 1.1, [0], "A <i>really</i> warm snueg."),
+		// snueg
+		new Upgrade('Decasnueg', 1e2, 1.1, [0], "A <i>really</i> warm snueg."),
+		new Upgrade('Hectosnueg', 1e3, 1.1, [0], "A <i>really really</i> warm snueg."),
+		new Upgrade('Kilosnueg', 1e4, 1.1, [0], "A <i>really, really, really</i> warm snueg."),
+		// megasnueg
 		new Upgrade('Floofy Megasnuegs', 600, 1.1, [1], "Makes the megasnuegs even floofier!"),
-		new Upgrade('Clickysnueg', 750, 2, [], "Makes the cursor floofier so the clicks are nice and soft UwU", "mouse"),
+		// Snueggr
 		new Upgrade('Minimum Wage Snueggrs', 4000, 1.1, [2], "Pays the unpaid interns to motivate them more."),
 		new Upgrade('Beyond Minimum Wage Snueggrs', 40000, 1.1, [2], "Pays the slightly paid interns even more."),
+		// Snuegotron
+		new Upgrade('Oiling', 2e4, 1.1, [3], "Oil helps the snuegotron move faster, providing more snuegs."),
+		new Upgrade('Coolant', 2e5, 1.1, [3], "Coolant allows the snuegotron to operate faster without overheating."),
+		// Gneus
+		new Upgrade('Parallel G&eacute;&ucirc;&ntilde;s Collisions', 6666666, 1.1, [7], "Parallel colliders make for more snueg."),
+		new Upgrade('G&eacute;&ucirc;&ntilde;s Colliders in Series', 66666666, 1.1, [7], "Colliders in series make for more even more snueg."),
+		// Snuegland
+		new Upgrade('Duchies', 3e7, 1.1, [8], "Snueg duchies will enhance the administration of Snuegland."),
+		new Upgrade('Counties', 3e8, 1.1, [8], "Snueg counties will enhance the administration of Snuegland even further."),
+		// Snoo
+		new Upgrade('Baronies', 3e9, 1.1, [8], "Snueg baronies will enhance the administration of Snuegland yet further."),
+		new Upgrade('Subreddits', 2e8, 1.1, [9], "Subreddits will help corral the snoos, allowing for more efficient reaping."),
+		new Upgrade('Admins', 2e9, 1.1, [9], "Admins will frighten the snoos, allowing for faster culling."),
+		new Upgrade('Spezzing Protocols', 2e10, 1.1, [9], "Permit admins to spez unflattering snoos, allowing for more optimal harvest."),
+		// etc
+		new Upgrade('Clickysnueg', 750, 2, [], "Makes the cursor floofier so the clicks are nice and soft UwU", "mouse"),
 	],
 	softReset(){
 		this.player.buildingClicks = [];
@@ -728,8 +751,10 @@ function main(){
 	}
 	// set up upgrades
 	document.getElementById("upgrade_panel").innerHTML = "";
-	for (var j = 0; j < game.upgrades.length; j++){
-		var upgrade = game.upgrades[j];
+	var upgrades = game.upgrades.slice(); // clone
+	upgrades.sort((a, b) => a.price - b.price);
+	for (var j = 0; j < upgrades.length; j++){
+		var upgrade = upgrades[j];
 		upgrade.addToDocument();
 	}
 	// clear tooltip
