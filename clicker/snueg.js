@@ -565,9 +565,8 @@ function guide(){
 	log("Guide string " + n);
 	switch (n){
 		case 0: // upgrade advice
-			var bestBuilding = 0;
 			for (var i = 1; i < game.upgrades.length; i++){
-				var upgrade = game.upgrades[i]
+				var upgrade = game.upgrades[i];
 				// most upgrades are worth 10s of production...
 				if (!upgrade.purchased && upgrade.price < 10*game.production){
 					helpstring = "The <b>" + upgrade.name + "</b> upgrade is looking pretty cheap right now... only " + bigNumber(upgrade.price, true) + " snueg!";
@@ -577,11 +576,12 @@ function guide(){
 			if (helpstring){
 				break;
 			}
+			/* falls through */
 		case 1: // building advice
 			var bestBuilding = 0;
-			for (var i = 1; i < game.buildings.length; i++){
-				if (game.buildings[i].roiWaitTime < game.buildings[bestBuilding].roiWaitTime){
-					bestBuilding = i;
+			for (var j = 1; j < game.buildings.length; j++){
+				if (game.buildings[j].roiWaitTime < game.buildings[bestBuilding].roiWaitTime){
+					bestBuilding = j;
 				}
 			}
 			helpstring = "I recommend purchasing the <b>" + game.buildings[bestBuilding].name + "</b>! It's the best deal right now!";
