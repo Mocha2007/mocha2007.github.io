@@ -106,7 +106,6 @@ h3 {
 	border-right: 14px solid #532;
 	box-sizing: border-box;
 	height: 100%;
-	width: 100%;
 }
 #building_panel {
 	height: 80%;
@@ -158,7 +157,6 @@ h3 {
 	height: 10%;
 	position: relative;
 	text-align: center;
-	width: 100%;
 }
 #news {
 	font-size: large;
@@ -178,6 +176,19 @@ h3 {
 }
 #right {
 	width: 20%;
+}
+#rpg {
+	border-bottom: 14px solid #532;
+	display: none;
+	height: 50%;
+}
+#rpgdisp {
+	background-color: black;
+	height: 67%;
+}
+#rpghud {
+	background-color: grey;
+	height: 33%;
 }
 #save_manager {
 	position: absolute;
@@ -215,7 +226,6 @@ h3 {
 }
 #stats {
 	height: 40%;
-	width: 100%;
 }
 #tooltip {
 	background-color: #111;
@@ -235,7 +245,6 @@ h3 {
 #upgrade_panel {
 	max-height: 76px;
 	overflow-y: scroll;
-	width: 100%;
 }
 #version {
 	bottom: 10px;

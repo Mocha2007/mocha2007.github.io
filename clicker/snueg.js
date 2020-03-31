@@ -431,6 +431,9 @@ var game = {
 		this.player.snueg = 0;
 		this.player.upgrades = [];
 	},
+	toggleRPG(){
+		document.getElementById('rpg').style.display = document.getElementById('rpg').style.display === "block" ? "none" : "block";
+	},
 };
 
 // functions
