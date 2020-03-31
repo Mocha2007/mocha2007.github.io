@@ -313,7 +313,7 @@ class Upgrade extends Purchase{
 	}
 	// functions
 	addToDocument(){
-		if (0 < game.player.upgrades[this.id]){
+		if (game.player.upgrades.includes(this.id)){
 			return;
 		}
 		document.getElementById("upgrade_panel").appendChild(this.createElement);
