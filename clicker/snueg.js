@@ -532,10 +532,10 @@ function guide(){
 	/** @type {HTMLDivElement} */
 	var speechBubble = document.getElementById("guideSpeechBubble");
 	/** @type {number} */
-	var n = choice([...Array(2).keys()]);
+	var n = choice([...Array(4).keys()]);
 	log("Guide string " + n);
 	switch (n){
-		case 1:
+		case 1: // building advice
 			var bestBuilding = 0;
 			for (var i = 1; i < game.buildings.length; i++){
 				if (game.buildings[i].roiWaitTime < game.buildings[bestBuilding].roiWaitTime){
@@ -543,6 +543,20 @@ function guide(){
 				}
 			}
 			helpstring = "I recommend purchasing the <b>" + game.buildings[bestBuilding].name + "</b>! It's the best deal right now!";
+			break;
+		case 2: // nonsense
+			helpstring = choice([
+				"Do you liek snueg too, hoomon?",
+				"I liek snueg",
+				"Pls gib guide snueg",
+			]);
+			helpstring += " UwU";
+			break;
+		case 3: // gameplay advice
+			helpstring = choice([
+				"Don&apos;t forget to purchase upgrades! They can help your SPS (Snuegs per second) immensely!",
+				"If the game is going slow, it might be time to prestige up! Click the prestige button in the upper left once you get a couple dozen points or so!",
+			]);
 			break;
 		default:
 			helpstring = "Hiya! I'm the guide! Click me to get some advice! :D";
