@@ -417,6 +417,7 @@ var game = {
 		autosaveInterval: 30 * 1000,
 		fps: 20,
 		newsUpdateInterval: 30 * 1000,
+		nonEssentialUpdateInterval: 2 * 1000,
 	},
 	upgrades: [
 		new Upgrade('Kilosnueg', 100, 1.1, [0], "A <i>really</i> warm snueg."),
@@ -585,6 +586,12 @@ function news(){
 	document.getElementById('news').innerHTML = choice(game.news);
 }
 
+function nonEssentialUpdate(){
+	if (1e6 <= game.player.lifetimeSnueg){
+		// todo add rpg
+	}
+}
+
 /** @param {string} filename to play */
 function play(filename){
 	(new Audio(filename)).play();
@@ -710,6 +717,7 @@ function main(){
 	// set up ticks
 	setInterval(redrawInterface, 1000/game.settings.fps);
 	setInterval(gameTick, 1000/game.settings.fps);
+	setInterval(nonEssentialUpdate, game.settings.nonEssentialUpdateInterval);
 	setInterval(saveGame, game.settings.autosaveInterval);
 	setInterval(news, game.settings.newsUpdateInterval);
 	// set up buildings
