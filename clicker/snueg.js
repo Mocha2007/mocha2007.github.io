@@ -349,7 +349,7 @@ var game = {
 	},
 	/** @return {number} number of snuegs for next prestige level */
 	get nextPrestige(){
-		if (game.player.snueg <= 0){
+		if (game.player.lifetimeSnueg <= 0){
 			return 1e9;
 		}
 		var nextNumber = game.thisPrestigeNumber + 1;
@@ -364,7 +364,7 @@ var game = {
 	},
 	/** @return {number} prestige gain if prestiged now */
 	get thisPrestigeNumber(){
-		return Math.floor(Math.pow(game.player.snueg/1e9, 1/5));
+		return Math.floor(Math.pow(game.player.lifetimeSnueg/1e9, 1/5));
 	},
 	buildings: [
 		new Building('Snueg', 10, 0.1, "A warm snueg."),
@@ -406,6 +406,7 @@ var game = {
 		/** @type {number[]} */
 		buildings: [],
 		lastSave: 0,
+		lifetimeSnueg: 0,
 		prestige: 0,
 		snueg: 0,
 		startTime: +new Date(),
@@ -475,6 +476,7 @@ function downloadSave(){
 /** @param {number} amount amount of snueg to add to player */
 function addSnueg(amount){
 	game.player.snueg += amount;
+	game.player.lifetimeSnueg += amount;
 }
 
 /**
@@ -654,7 +656,7 @@ function saveGame(isManual = false){
 
 function snuegButton(){
 	// add snueg
-	game.player.snueg += game.mouse.base * game.mouse.bonus;
+	addSnueg(game.mouse.base * game.mouse.bonus);
 	// update snueg amount
 	updateSnuegCount();
 	// log action
@@ -668,7 +670,7 @@ function snuegButton(){
 function updatePrestige(){
 	document.getElementById('prestigeNumber').innerHTML = game.thisPrestigeNumber;
 	document.getElementById('prestigeProgress').innerHTML = '';
-	var progress = game.player.snueg / game.nextPrestige;
+	var progress = game.player.lifetimeSnueg / game.nextPrestige;
 	document.getElementById('prestigeProgress').appendChild(progressBar(progress));
 	return progress;
 }
