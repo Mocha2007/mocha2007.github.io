@@ -88,16 +88,16 @@ class Building extends Purchase{
 		buy_button.onmousemove = () => this.tooltip();
 		buy_button.onmouseout = () => clearTooltip();
 		// todo buy_button.style.opacity = this.canAfford ? "100%" : "50%";
-		// name
-		var item_name = document.createElement('span');
-		item_name.classList.add('item_name');
-		item_name.innerHTML = this.name;
-		buy_button.appendChild(item_name);
 		// amount
 		var item_amount = document.createElement('span');
 		item_amount.classList.add('item_amount');
 		item_amount.innerHTML = this.amount;
 		buy_button.appendChild(item_amount);
+		// name
+		var item_name = document.createElement('span');
+		item_name.classList.add('item_name');
+		item_name.innerHTML = this.name;
+		buy_button.appendChild(item_name);
 		// price
 		var item_price = document.createElement('span');
 		item_price.classList.add('item_price');

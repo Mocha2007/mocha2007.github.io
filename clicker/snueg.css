@@ -52,6 +52,9 @@ h3 {
 	opacity: 30%;
 	right: 5%;
 }
+.item_name, .item_price {
+	text-shadow: 0 0 3px black;
+}
 .item_price {
 	bottom: 10%;
 	/* todo color: #6f6; */
