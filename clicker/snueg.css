@@ -7,6 +7,7 @@ html, body {
 	  #1B4862 64px
 	);
 	color: white;
+	font-family: Georgia, serif;
 	height: 100%;
 	margin: 0px;
 	overflow: hidden;
@@ -120,7 +121,7 @@ h3 {
 	bottom: 90px;
 	color: black;
 	display: none;
-	font-family: sans-serif;
+	font-family: Tahoma, Arial, sans-serif;
 	left: 45px;
 	max-width: 20%;
 	padding: 10px;
@@ -213,6 +214,7 @@ h3 {
 	background-color: #111;
 	border: 2px solid gold;
 	color: #ccc;
+	font-family: Tahoma, Arial, sans-serif;
 	padding: 8px;
 	position: fixed;
 	width: 400px;
