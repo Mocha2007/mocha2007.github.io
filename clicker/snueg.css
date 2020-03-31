@@ -39,7 +39,7 @@ h3 {
 	background-color: #ccb;
 	border: 6px solid #aa9;
 }
-.buy_button:active, .upgrade_buy_button:active {
+.buy_button:active, .upgrade_buy_button:active, #guide:active {
 	opacity: 50%;
 }
 .danger {
@@ -104,6 +104,28 @@ h3 {
 	height: 80%;
 	/* overflow-y: scroll; */
 	width: 100%;
+}
+#guide {
+	animation: float 2s linear alternate infinite;
+	bottom: 25px;
+	cursor: pointer;
+	font-size: xxx-large;
+	left: 20px;
+	position: absolute;
+}
+#guideSpeechBubble {
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 10px;
+	bottom: 80px;
+	color: black;
+    display: none;
+	left: 60px;
+	padding: 10px;
+	position: absolute;
+} 
+#guide:hover + #guideSpeechBubble {
+    display: block;
 }
 #left {
 	text-align: center;
@@ -196,4 +218,9 @@ h3 {
 	bottom: 10px;
 	left: 10px;
 	position: absolute;
+}
+@keyframes float{
+	0% {transform: rotate(-10deg) translateX(5px);}
+	50% {transform: scale(0.8) translateY(-5px);}
+	100% {transform: rotate(10deg) translateX(-5px);}
 }

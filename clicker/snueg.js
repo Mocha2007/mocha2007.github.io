@@ -1,5 +1,5 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true */
-/* exported delete_cookie, downloadSave, importSave, main, prestige, snuegButton */
+/* exported delete_cookie, downloadSave, guide, importSave, main, prestige, snuegButton */
 "use strict";
 var version = "a200330";
 
@@ -232,6 +232,19 @@ class Building extends Purchase{
 	}
 	updateElement(){
 		document.getElementById(this.elementId).innerHTML = this.createElement.innerHTML;
+	}
+	// debug statistics
+	/** @returns {number} if purchased now, the time it takes to pay itself off */
+	get roiTime(){
+		return this.next_price / this.individualProduction;
+	}
+	/** @returns {number} total seconds, from now, needed to pay itself off */
+	get roiWaitTime(){
+		return this.roiTime + this.waitTime;
+	}
+	/** @returns {number} seconds needed to afford */
+	get waitTime(){
+		return Math.max(0, (this.next_price - game.player.snueg) / game.production);
 	}
 }
 
@@ -512,6 +525,35 @@ function gameTick(){
 		building.produce(t);
 	}
 	updateSnuegCount();
+}
+
+function guide(){
+	var helpstring;
+	/** @type {HTMLDivElement} */
+	var speechBubble = document.getElementById("guideSpeechBubble");
+	/** @type {number} */
+	var n = choice([...Array(2).keys()]);
+	log("Guide string " + n);
+	switch (n){
+		case 1:
+			var bestBuilding = 0;
+			for (var i = 1; i < game.buildings.length; i++){
+				if (game.buildings[i].roiWaitTime < game.buildings[bestBuilding].roiWaitTime){
+					bestBuilding = i;
+				}
+			}
+			helpstring = "I recommend purchasing the <b>" + game.buildings[bestBuilding].name + "</b>! It's the best deal right now!";
+			break;
+		default:
+			helpstring = "Hiya! I'm the guide! Click me to get some advice! :D";
+	}
+	// no duplicates
+	if (helpstring === speechBubble.innerHTML){
+		guide();
+	}
+	else {
+		speechBubble.innerHTML = helpstring;
+	}
 }
 
 /** @param {string} string string to log */
