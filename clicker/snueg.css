@@ -30,7 +30,7 @@ h3 {
 	cursor: pointer;
 	font-size: 28px;
 	font-weight: bold;
-	height: 64px;
+	height: 52px;
 	padding-left: 15%;
 	position: relative;
 }
@@ -52,9 +52,7 @@ h3 {
 	font-size: xxx-large;
 	opacity: 30%;
 	right: 5%;
-}
-.item_name {
-	margin-top: 5px;
+	top: -10%;
 }
 .item_name, .item_price {
 	text-shadow: 0 0 3px black;
@@ -99,7 +97,7 @@ h3 {
 	text-decoration: none;
 }
 #center {
-	width: 50%;
+	width: 48%;
 }
 #center_interior {
 	border-left: 14px solid #532;
@@ -175,7 +173,7 @@ h3 {
 	width: 100px;
 }
 #right {
-	width: 20%;
+	width: 22%;
 }
 #rpg {
 	border-bottom: 14px solid #532;
