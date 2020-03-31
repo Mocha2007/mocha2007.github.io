@@ -114,16 +114,30 @@ h3 {
 	position: absolute;
 }
 #guideSpeechBubble {
-	background-color: white;
+	background: linear-gradient(white, silver);
 	border: 1px solid black;
 	border-radius: 10px;
-	bottom: 80px;
+	bottom: 90px;
 	color: black;
-    display: none;
-	left: 60px;
+	display: none;
+	font-family: sans-serif;
+	left: 45px;
+	max-width: 20%;
 	padding: 10px;
 	position: absolute;
-} 
+	text-align: left;
+}
+#guideSpeechBubble:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    border-width: 20px 20px 0 0;
+    border-style: solid;
+    border-color: silver transparent;
+    display: block;
+    width: 0;
+}
 #guide:hover + #guideSpeechBubble {
     display: block;
 }
