@@ -488,7 +488,9 @@ class RPGTile{
 		return span;
 	}
 	tooltip(){
-		// todo
+		// function to update the tooltip
+		var innerHTML = this.object.name + ', ' + this.floor.name;
+		tooltip(innerHTML);
 	}
 }
 // constants
@@ -1016,6 +1018,21 @@ function snuegButton(){
 
 function sum(array){
 	return array.reduce((a, b) => a + b, 0);
+}
+
+/**
+ * function to update the tooltip
+ * @param {string} innerHTML
+ * @return {HTMLDivElement} tooltip
+*/
+function tooltip(innerHTML = ''){
+	/** @type {HTMLDivElement} */
+	var div = document.getElementById("tooltip");
+	div.style.top = window.event.clientY - 25 + "px";
+	div.style.left = window.event.clientX - 450 + "px";
+	// text
+	div.innerHTML = innerHTML;
+	return div;
 }
 
 /**
