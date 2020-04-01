@@ -83,11 +83,11 @@ h3 {
 	cursor: pointer;
 	font-size: xx-large;
 	display: inline-block;
-	height: 64px;
-	line-height: 64px;
+	height: 62px;
+	line-height: 62px;
 	position: relative;
 	text-align: center;
-	width: 64px;
+	width: 62px;
 }
 #left, #center, #right {
 	float: left;
@@ -246,7 +246,10 @@ h3 {
 }
 #upgrade_panel {
 	max-height: 76px;
-	overflow-y: scroll;
+	overflow-y: hidden;
+}
+#upgrade_panel:hover{
+	max-height: none;
 }
 #version {
 	bottom: 10px;
