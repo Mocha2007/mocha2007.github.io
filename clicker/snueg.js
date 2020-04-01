@@ -588,8 +588,9 @@ var game = {
 			new Video('b9EqoWzTKRY', 23, 'Cupcakes', 'Pinkie Pie', ['music']),
 			new Video('ncN8JeG-dZ0', 95, 'DDU-DU DDU-DU', 'Bongo Cat', ['music'], 0, 92),
 			new Video('zoAQfKb42ig', 140, 'See You Again', 'Bongo Cat', ['music'], 5, 130),
-			new Video('4atH_Km4KaQ', 25, 'Golden Ticket', 'Cartman', ['music']),
-			new Video('s-DQM-1atK0', 80, 'Kyle\'s Mom\'s a Bitch', 'Cartman', ['music']),
+			new Video('4atH_Km4KaQ', 25, 'Golden Ticket', 'South Park', ['music']),
+			new Video('s-DQM-1atK0', 80, 'Kyle\'s Mom\'s a Bitch', 'South Park', ['music']),
+			new Video('bOR38552MJA', 124, 'Blame Canada', 'South Park', ['music']),
 		],
 		/** @return {number} total soundtrack length, in seconds */
 		get soundtrackDuration(){
