@@ -1,4 +1,4 @@
-/* jshint esversion: 6, strict: true, strict: global, eqeqeq: true */
+/* jshint esversion: 6, strict: true, strict: global, eqeqeq: true, nonew: false */
 /* exported delete_cookie, downloadSave, guide, importSave, main, prestige, snuegButton */
 "use strict";
 var version = "a200331";
@@ -369,7 +369,7 @@ class FlyingText extends Particle {
 		super(particleElement,
 			(element) => {
 				element.style.top = (parseInt(element.style.top.replace('px', '')) - 10) + 'px';
-				element.style.left = (parseInt(element.style.left.replace('px', '')) + game.random.uniform(-8, 8)) + 'px'
+				element.style.left = (parseInt(element.style.left.replace('px', '')) + game.random.uniform(-8, 8)) + 'px';
 				element.style.opacity = parseFloat(element.style.opacity) * 0.9;
 			},
 		1);
