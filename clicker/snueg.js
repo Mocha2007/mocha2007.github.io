@@ -599,6 +599,8 @@ var game = {
 		objects: [
 			new RPGObject('&nbsp;', 'transparent', 'Air'),
 			new RPGObject('.,\'`', 'lime darkgreen', 'Grass'),
+			new RPGObject('"', 'lime darkgreen', 'Shrub'),
+			new RPGObject('.', 'grey darkgrey silver', 'Pebble'),
 			new RPGObject('O', 'brown', 'Tree'),
 		],
 		toggle(){
