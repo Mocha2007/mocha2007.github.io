@@ -187,11 +187,19 @@ h3 {
 #rpg {
 	border-bottom: 14px solid #532;
 	display: none;
+	font-family: Consolas, "Courier New", monospace;
 	height: 50%;
 }
 #rpgdisp {
 	background-color: black;
+	font-size: 2.1vh;
 	height: 67%;
+	text-align: center;
+}
+#rpgdisp div{
+	line-height: 1;
+	padding-top: 2px;
+	transform: scale(2.04, 1);
 }
 #rpghud {
 	background-color: grey;

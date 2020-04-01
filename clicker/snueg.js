@@ -415,6 +415,73 @@ class Video {
 	}
 }
 
+// rpg classes
+
+class RPGFloor{
+	/**
+	 * @param {string} color - color used for the background
+	 * @param {string} name
+	 * @param {string} desc
+	*/
+	constructor(color, name = "", desc = ""){
+		this.color = color;
+		this.name = name;
+		this.desc = desc;
+	}
+	get element(){
+		var span = document.createElement('span');
+		span.style.backgroundColor = this.color;
+		return span;
+	}
+}
+
+class RPGObject{
+	/**
+	 * @param {string} icon - character to use (should be ONE character!)
+	 * @param {string} color
+	 * @param {string} name
+	 * @param {string} desc
+	 * @param {number} hp
+	*/
+	constructor(icon, color = "white", name = "", desc = "", hp = Infinity){
+		this.icon = icon;
+		this.color = color;
+		this.name = name;
+		this.desc = desc;
+		this.hp = hp;
+	}
+}
+
+class RPGEntity extends RPGObject{
+	/**
+	 * @param {string} icon - emoji to use (should be ONE character!)
+	 * @param {string} name
+	 * @param {string} desc
+	 * @param {number} hp
+	 * @param {number} attack
+	*/
+	constructor(icon, name = "", desc = "", hp = 1, attack = 0){
+		super(icon, name, desc, hp);
+		this.attack = attack;
+	}
+}
+
+class RPGTile{
+	/**
+	 * @param {RPGFloor} floor - floor of tile
+	 * @param {RPGObject} object - object/creature standing on tile
+	*/
+	constructor(floor, object = undefined){
+		this.floor = floor;
+		this.object = object;
+	}
+	get element(){
+		var span = this.floor.element;
+		span.innerHTML = this.object.icon;
+		span.style.color = this.object.color;
+		return span;
+	}
+}
 // constants
 
 var game = {
@@ -514,6 +581,39 @@ var game = {
 		uniform(min, max){
 			return Math.random() * (max-min) + min;
 		},
+	},
+	rpg : {
+		worldSize: 16,
+		floors: [
+			new RPGFloor('green', 'Grass'),
+		],
+		objects: [
+			new RPGObject('&nbsp;', 'transparent', 'Air'),
+			new RPGObject('O', 'brown', 'Tree'),
+		],
+		toggle(){
+			document.getElementById('rpg').style.display = document.getElementById('rpg').style.display === "block" ? "none" : "block";
+		},
+		unlock(){
+			if (document.getElementById('rpg').style.display !== 'block'){
+				document.getElementById('rpg').style.display = 'block';
+			}
+		},
+		worldGen(){
+			var world = document.createElement('div');
+			range(this.worldSize).map(row => {
+				range(this.worldSize).map(col => {
+					var floor = game.random.choice(this.floors);
+					var object = game.random.choice(this.objects);
+					var element = (new RPGTile(floor, object)).element;
+					element.id = "rpgTile" + row + "-" + col;
+					world.appendChild(element);
+				});
+				world.appendChild(document.createElement('br'));
+			});
+			document.getElementById('rpgdisp').innerHTML = '';
+			document.getElementById('rpgdisp').appendChild(world);
+		}
 	},
 	settings: {
 		autosaveInterval: 30 * 1000,
@@ -638,9 +738,6 @@ var game = {
 		this.player.buildings = [];
 		this.player.snueg = 0;
 		this.player.upgrades = [];
-	},
-	toggleRPG(){
-		document.getElementById('rpg').style.display = document.getElementById('rpg').style.display === "block" ? "none" : "block";
 	},
 };
 
@@ -796,8 +893,8 @@ function news(){
 }
 
 function nonEssentialUpdate(){
-	if (1e6 <= game.player.lifetimeSnueg){
-		// todo add rpg
+	if (1e6 * Infinity <= game.player.lifetimeSnueg){
+		game.rpg.unlock();
 	}
 }
 
@@ -842,6 +939,11 @@ function progressBar(progress){
 	progressBar.style.width = 100 * progress + "%";
 	progressBarContainer.appendChild(progressBar);
 	return progressBarContainer;
+}
+
+/** @param {number} n */
+function range(n){
+	return [...Array(n).keys()];
 }
 
 function redrawInterface(){
