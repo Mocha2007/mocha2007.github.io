@@ -507,7 +507,10 @@ var game = {
 		new Upgrade('Spezzing Protocols', 2e10, 1.1, [9], "Permit admins to spez unflattering snoos, allowing for more optimal harvest."),
 		// etc
 		new Upgrade('Clickysnueg', 750, 2, [], "Makes the cursor floofier so the clicks are nice and soft UwU", "mouse"),
-		new Upgrade('Snueg Siphon', 1000, 0.01, [], "Siphons SPS from your buildings, giving your mouse an extra 1% of your production.", "fromProduction"),
+		new Upgrade('Snueg Siphon', 1e3, 0.01, [], "Siphons SPS from your buildings, giving your mouse an extra 1% of your production.", "fromProduction"),
+		new Upgrade('Snueg Straw', 1e6, 0.01, [], "Siphons SPS from your buildings, giving your mouse an extra 1% of your production.", "fromProduction"),
+		new Upgrade('Snueg Vacuum', 1e9, 0.01, [], "Siphons SPS from your buildings, giving your mouse an extra 1% of your production.", "fromProduction"),
+		new Upgrade('Snueg Towhook', 1e12, 0.01, [], "Siphons SPS from your buildings, giving your mouse an extra 1% of your production.", "fromProduction"),
 	],
 	softReset(){
 		this.player.buildingClicks = [];
