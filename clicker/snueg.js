@@ -193,9 +193,6 @@ class Building extends Purchase{
 	}
 	/** @param {number} snueg amount of snuegs to record this building as having produced */
 	record(snueg){
-		if (!game.player.hasOwnProperty("buildingClicks")){
-			game.player.buildingClicks = [];
-		}
 		var id = this.id;
 		if (game.player.buildingClicks[id] === undefined){
 			game.player.buildingClicks[id] = snueg;
