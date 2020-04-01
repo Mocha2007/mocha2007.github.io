@@ -588,7 +588,12 @@ var game = {
 			new Video('b9EqoWzTKRY', 23, 'Cupcakes', 'Pinkie Pie', ['music']),
 			new Video('ncN8JeG-dZ0', 95, 'DDU-DU DDU-DU', 'Bongo Cat', ['music'], 0, 92),
 			new Video('zoAQfKb42ig', 140, 'See You Again', 'Bongo Cat', ['music'], 5, 130),
+			new Video('4atH_Km4KaQ', 25, 'Golden Ticket', 'Cartman', ['music']),
 		],
+		/** @return {number} total soundtrack length, in seconds */
+		get soundtrackDuration(){
+			return sum(game.youtube.category('music').map(song => song.duration));
+		},
 		/**
 		 * get all videos of a category
 		 * @param {string} categoryName
