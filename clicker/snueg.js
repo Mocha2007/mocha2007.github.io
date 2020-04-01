@@ -341,6 +341,49 @@ class Upgrade extends Purchase{
 	}
 }
 
+class Particle {
+	/**
+	 * Aesthetic Particles
+	 * @param {HTMLElement} element - element to animate
+	 * @param {Function} tick - animation function (runs every tick, takes element as argument)
+	 * @param {number} lifespan - animation time (s)
+	*/
+	constructor(element, tick, lifespan){
+		element.id = +new Date();
+		element.classList.add('particle');
+		document.getElementById('left').appendChild(element);
+		this.element = element;
+		this.tick = tick;
+		this.lifespan = lifespan;
+		setIntervalX(() => tick(element), 1000/game.settings.fps, lifespan*game.settings.fps);
+		setTimeout(() => document.getElementById(element.id).remove(), lifespan*1000);
+		game.particles.push(this);
+	}
+}
+
+class FlyingText extends Particle {
+	/**
+	 * Flying text particle
+	 * @param {string} text - text
+	 * @param {number} x - x coord of location
+	 * @param {number} y - y coord of location
+	*/
+	constructor(text, x, y){
+		var particleElement = document.createElement('div');
+		particleElement.style.left = x + "px";
+		particleElement.style.top = y + "px";
+		particleElement.style.opacity = "1";
+		particleElement.innerHTML = text;
+		super(particleElement,
+			(element) => {
+				element.style.top = (parseInt(element.style.top.replace('px', '')) - 10) + 'px';
+				element.style.left = (parseInt(element.style.left.replace('px', '')) + game.random.uniform(-8, 8)) + 'px'
+				element.style.opacity = parseFloat(element.style.opacity) * 0.9;
+			},
+		1);
+	}
+}
+
 // constants
 
 var game = {
@@ -403,6 +446,8 @@ var game = {
 		"UwU",
 		"Wow, snueg is great.",
 	],
+	/** @type {Particle[]} */
+	particles: [],
 	player: {
 		/** @type {number[]} */
 		buildingClicks: [],
@@ -415,6 +460,17 @@ var game = {
 		startTime: +new Date(),
 		/** @type {number[]} */
 		upgrades: [],
+	},
+	random: {
+		/**
+		 * Uniform random number between min and max
+		 * @param {number} min
+		 * @param {number} max
+		 * @return {number}
+		*/
+		uniform(min, max){
+			return Math.random() * (max-min) + min;
+		}
 	},
 	settings: {
 		autosaveInterval: 30 * 1000,
@@ -700,11 +756,25 @@ function saveGame(isManual = false){
 	}
 }
 
+// https://stackoverflow.com/a/2956980/2579798
+function setIntervalX(callback, delay, repetitions) {
+    var x = 0;
+    var intervalID = window.setInterval(function () {
+       callback();
+       if (++x === repetitions) {
+           window.clearInterval(intervalID);
+       }
+    }, delay);
+}
+
 function snuegButton(){
 	// add snueg
-	addSnueg(game.mouse.base * game.mouse.bonus);
+	var amount = game.mouse.base * game.mouse.bonus;
+	addSnueg(amount);
 	// update snueg amount
 	updateSnuegCount();
+	// flying numbers
+	new FlyingText(bigNumber(amount, true), window.event.clientX, window.event.clientY);
 	// log action
 	log("Clicked snueg button");
 }
