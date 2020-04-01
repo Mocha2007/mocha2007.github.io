@@ -463,6 +463,13 @@ var game = {
 	},
 	random: {
 		/**
+		 * @param {any[]} array
+		 * @return {any} random item from array
+		*/
+		choice(array){
+			return array[Math.floor(Math.random() * array.length)];
+		},
+		/**
 		 * Uniform random number between min and max
 		 * @param {number} min
 		 * @param {number} max
@@ -470,7 +477,7 @@ var game = {
 		*/
 		uniform(min, max){
 			return Math.random() * (max-min) + min;
-		}
+		},
 	},
 	settings: {
 		autosaveInterval: 30 * 1000,
@@ -580,14 +587,6 @@ function bigNumber(amount, integer = false){
 	return round(amount/factor, 3).toFixed(3) + " " + prefixes[i];
 }
 
-/**
- * @param {any[]} array
- * @return {any} random item from array
-*/
-function choice(array){
-	return array[Math.floor(Math.random() * array.length)];
-}
-
 function clearTooltip(){
 	// erase current tooltip
 	var tooltip = document.getElementById("tooltip");
@@ -617,7 +616,7 @@ function guide(){
 	/** @type {HTMLDivElement} */
 	var speechBubble = document.getElementById("guideSpeechBubble");
 	/** @type {number} */
-	var n = choice([...Array(5).keys()]);
+	var n = game.random.choice([...Array(5).keys()]);
 	log("Guide string " + n);
 	switch (n){
 		case 0: // upgrade advice
@@ -643,7 +642,7 @@ function guide(){
 			helpstring = "I recommend purchasing the <b>" + game.buildings[bestBuilding].name + "</b>! It's the best deal right now!";
 			break;
 		case 2: // nonsense
-			helpstring = choice([
+			helpstring = game.random.choice([
 				"Do you liek snueg too, hoomon?",
 				"I liek snueg",
 				"Pls gib guide snueg",
@@ -651,7 +650,7 @@ function guide(){
 			helpstring += " UwU";
 			break;
 		case 3: // gameplay advice
-			helpstring = choice([
+			helpstring = game.random.choice([
 				"Don&apos;t forget to purchase upgrades! They can help your SPS (Snuegs per second) immensely!",
 				"If the game is going slow, it might be time to prestige up! Click the prestige button in the upper left once you get a couple dozen points or so!",
 			]);
@@ -675,7 +674,7 @@ function log(string){
 }
 
 function news(){
-	document.getElementById('news').innerHTML = choice(game.news);
+	document.getElementById('news').innerHTML = game.random.choice(game.news);
 }
 
 function nonEssentialUpdate(){
