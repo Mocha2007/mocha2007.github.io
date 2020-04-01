@@ -568,7 +568,7 @@ var game = {
 		new Upgrade('Snueg Towhook', 1e12, 0.01, [], "Siphons SPS from your buildings, giving your mouse an extra 1% of your production.", "fromProduction"),
 	],
 	youtube: {
-		bufferTime: 1, // s
+		bufferTime: 2, // s
 		/** @type {number} */
 		timeout: -1,
 		videos: [
