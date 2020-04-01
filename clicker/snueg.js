@@ -297,6 +297,9 @@ class Upgrade extends Purchase{
 		if (this.special.includes("mouse")){
 			specials += "<li>Also increases production from clicking by this much.</li>";
 		}
+		if (this.special.includes("fromProduction")){
+			specials += "<li>Also adds this much of your production to your clicks.</li>";
+		}
 		return specials;
 	}
 	/** @returns {string[]} the names of its targets */
@@ -410,7 +413,12 @@ var game = {
 		new Building('Snoo', 20050623, 20000, "These strange little critters only need a G added to them to make them snuegs. Seems simple enough..."),
 	],
 	mouse: {
-		base: 1,
+		/** @returns {number} base clicks from relevant upgrades */
+		get base(){
+			var fromProduction = game.production * 
+				sum(game.upgrades.map(upgrade => upgrade.special.includes("fromProduction") && upgrade.purchased ? upgrade.bonus : 0))
+			return 1 + fromProduction;
+		},
 		/** @returns {number} bonus from relevant upgrades */
 		get bonus(){
 			return product(game.upgrades.map(upgrade => upgrade.special.includes("mouse") && upgrade.purchased ? upgrade.bonus : 1));
@@ -501,6 +509,7 @@ var game = {
 		new Upgrade('Spezzing Protocols', 2e10, 1.1, [9], "Permit admins to spez unflattering snoos, allowing for more optimal harvest."),
 		// etc
 		new Upgrade('Clickysnueg', 750, 2, [], "Makes the cursor floofier so the clicks are nice and soft UwU", "mouse"),
+		new Upgrade('Snueg Siphon', 1000, 0.01, [], "Siphons SPS from your buildings, giving your mouse an extra 1% of your production.", "fromProduction"),
 	],
 	softReset(){
 		this.player.buildingClicks = [];
@@ -825,9 +834,8 @@ function main(){
 	game.buildings.forEach(building => building.addToDocument());
 	// set up upgrades
 	document.getElementById("upgrade_panel").innerHTML = "";
-	var upgrades = game.upgrades.slice(); // clone
-	upgrades.sort((a, b) => a.price - b.price);
-	game.upgrades.forEach(upgrade => upgrade.addToDocument());
+	// clones upgrade array, sorts, then adds each to document
+	game.upgrades.slice().sort((a, b) => a.price - b.price).forEach(upgrade => upgrade.addToDocument());
 	// clear tooltip
 	clearTooltip();
 }
