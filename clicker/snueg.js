@@ -451,6 +451,15 @@ var game = {
 			return array[Math.floor(Math.random() * array.length)];
 		},
 		/**
+		 * Uniform random integer between min and max
+		 * @param {number} min
+		 * @param {number} max
+		 * @return {number} - number in [min, max)
+		*/
+		randint(min, max){
+			return Math.floor(this.uniform(min, max));
+		},
+		/**
 		 * Uniform random number between min and max
 		 * @param {number} min
 		 * @param {number} max
@@ -594,7 +603,7 @@ function guide(){
 	/** @type {HTMLDivElement} */
 	var speechBubble = document.getElementById("guideSpeechBubble");
 	/** @type {number} */
-	var n = game.random.choice([...Array(5).keys()]);
+	var n = game.random.randint(0, 5);
 	log("Guide string " + n);
 	switch (n){
 		case 0: // upgrade advice
