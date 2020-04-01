@@ -165,6 +165,10 @@ h3 {
 	font-weight: bold;
 	padding: 16px;
 }
+#playerSkip {
+	height: 20px;
+	filter: invert(1);
+}
 #prestige {
 	background-color: #643;
 	bottom: 0px;
@@ -259,7 +263,8 @@ h3 {
 }
 #youtube {
 	border: none;
-	border-bottom: 14px solid #532;
+	/* border-bottom: 14px solid #532; */
+	margin-bottom: -4px;
 }
 @keyframes float{
 	0% {transform: rotate(-10deg) translateX(5px);}

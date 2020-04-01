@@ -521,6 +521,8 @@ var game = {
 			return this.videos.filter(video => video.type === 'music');
 		},
 		bufferTime: 1, // s
+		/** @type {number} */
+		timeout: -1,
 		videos: [
 			{ // gneurshk
 				id: 'Ekg7fH2t40U',
@@ -538,9 +540,10 @@ var game = {
 		 * @param {number} id of video to play (in game.youtube.videos, eg. 0)
 		*/
 		play(id = -1){
+			clearTimeout(this.timeout);
 			var video = id === -1 ? game.random.choice(this.music) : this.videos[id];
 			this.set(video.id);
-			setTimeout(() => this.play(), (video.length + this.bufferTime)*1000);
+			this.timeout = setTimeout(() => this.play(), (video.length + this.bufferTime)*1000);
 		},
 		/**
 		 * updates the youtube video
