@@ -132,7 +132,7 @@ class Building extends Purchase{
 	/** @returns {Upgrade[]} upgrades affecting this building */
 	get relevantUpgrades(){
 		var upgrades = [];
-		game.upgrades.forEach((upgrade) => {
+		game.upgrades.forEach(upgrade => {
 			if (upgrade.targets.includes(this.id)){
 				upgrades.push(upgrade);
 			}
@@ -146,7 +146,7 @@ class Building extends Purchase{
 	/** @returns {number} bonus from relevant upgrades */
 	get upgradeBonus(){
 		var bonus = 1;
-		this.relevantUpgrades.forEach((upgrade) => {
+		this.relevantUpgrades.forEach(upgrade => {
 			if (upgrade.purchased){
 				bonus *= upgrade.bonus;
 			}
@@ -370,7 +370,7 @@ class FlyingText extends Particle {
 		particleElement.style.opacity = "1";
 		particleElement.innerHTML = text;
 		super(particleElement,
-			(element) => {
+			element => {
 				element.style.top = (parseInt(element.style.top.replace('px', '')) - 10) + 'px';
 				element.style.left = (parseInt(element.style.left.replace('px', '')) + game.random.uniform(-8, 8)) + 'px';
 				element.style.opacity = parseFloat(element.style.opacity) * 0.9;
@@ -416,7 +416,7 @@ var game = {
 		/** @returns {number} base clicks from relevant upgrades */
 		get base(){
 			var fromProduction = game.production * 
-				sum(game.upgrades.map(upgrade => upgrade.special.includes("fromProduction") && upgrade.purchased ? upgrade.bonus : 0))
+				sum(game.upgrades.map(upgrade => upgrade.special.includes("fromProduction") && upgrade.purchased ? upgrade.bonus : 0));
 			return 1 + fromProduction;
 		},
 		/** @returns {number} bonus from relevant upgrades */
