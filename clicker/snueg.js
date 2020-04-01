@@ -274,7 +274,8 @@ class Upgrade extends Purchase{
 	}
 	/** @returns {string} icon of buy button */
 	get icon(){ // todo
-		return this.name[0];
+		// take the first letter of the first one or two words
+		return this.name.split(' ').map(word => word[0]).join('').substring(0, 2);
 	}
 	/** @returns {number} index of this in game.upgrades */
 	get id(){
