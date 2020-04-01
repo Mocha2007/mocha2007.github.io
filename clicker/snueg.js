@@ -437,7 +437,7 @@ class RPGFloor{
 
 class RPGObject{
 	/**
-	 * @param {string} icon - character to use (should be ONE character!)
+	 * @param {string} icon - character(s) to use (will be ONE character, randomly chosen)
 	 * @param {string} color
 	 * @param {string} name
 	 * @param {string} desc
@@ -449,6 +449,12 @@ class RPGObject{
 		this.name = name;
 		this.desc = desc;
 		this.hp = hp;
+	}
+	get element(){
+		var span = document.createElement('span');
+		span.innerHTML = game.random.choice(this.icon);
+		span.style.color = game.random.choice(this.color.split(' '));
+		return span;
 	}
 }
 
@@ -477,9 +483,12 @@ class RPGTile{
 	}
 	get element(){
 		var span = this.floor.element;
-		span.innerHTML = this.object.icon;
-		span.style.color = this.object.color;
+		span.appendChild(this.object.element);
+		span.onmousemove = () => this.tooltip();
 		return span;
+	}
+	tooltip(){
+		// todo
 	}
 }
 // constants
@@ -589,6 +598,7 @@ var game = {
 		],
 		objects: [
 			new RPGObject('&nbsp;', 'transparent', 'Air'),
+			new RPGObject('.,\'`', 'lime darkgreen', 'Grass'),
 			new RPGObject('O', 'brown', 'Tree'),
 		],
 		toggle(){
