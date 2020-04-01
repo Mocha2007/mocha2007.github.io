@@ -572,9 +572,9 @@ var game = {
 		/** @type {number} */
 		timeout: -1,
 		videos: [
-			new Video('Ekg7fH2t40U', 1, 'gneurshk'),
-			/* new Video('AKkl1z-yIts', 3895, 'relaxing rpg music', '', ['music']), */
 			// cute music only pls
+			// 0
+			new Video('Ekg7fH2t40U', 1, 'gneurshk'),
 			new Video('rXMB5WSCVks', 87, 'bad moew', 'Bongo Cat', ['cat', 'music'], 0, 80),
 			new Video('AeENh1TqsKY', 88, 'ＭａｙｕｒｉＷａｖｅ', 'Stost', ['music']),
 			new Video('9wnNW4HyDtg', 56, 'Ayaya! Ayaya! Intensifies', 'No. 8', ['music']),
@@ -582,6 +582,10 @@ var game = {
 			new Video('yQm4CnHMwxc', 14, 'Snow leopard purr', '', ['cat']),
 			new Video('dAUpL62-FLM', 44, 'Cougar Talk...', '', ['cat']),
 			new Video('W461djpQl2s', 19, 'Purring Cougar Kneading & Sucking', '', ['cat']),
+			new Video('mNrXMOSkBas', 202, 'Smile', 'Pinkie Pie', ['music']),
+			new Video('fZ2f6lFH5cg', 70, 'Laughter', 'Pinkie Pie', ['music']),
+			// 10
+			new Video('b9EqoWzTKRY', 23, 'Cupcakes', 'Pinkie Pie', ['music']),
 		],
 		/**
 		 * get all videos of a category
