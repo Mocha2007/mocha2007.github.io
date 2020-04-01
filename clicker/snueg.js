@@ -579,6 +579,9 @@ var game = {
 			new Video('AeENh1TqsKY', 88, 'ＭａｙｕｒｉＷａｖｅ', 'Stost', ['music']),
 			new Video('9wnNW4HyDtg', 56, 'Ayaya! Ayaya! Intensifies', 'No. 8', ['music']),
 			new Video('9Gj47G2e1Jc', 476, 'Plastic Love', 'Mariya Takeuchi', ['music']), // exempt from music rules
+			new Video('yQm4CnHMwxc', 14, 'Snow leopard purr', '', ['cat']),
+			new Video('dAUpL62-FLM', 44, 'Cougar Talk...', '', ['cat']),
+			new Video('W461djpQl2s', 19, 'Purring Cougar Kneading & Sucking', '', ['cat']),
 		],
 		/**
 		 * get all videos of a category
