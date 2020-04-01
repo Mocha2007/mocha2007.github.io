@@ -177,6 +177,7 @@ h3 {
 	width: 100px;
 }
 #right {
+	overflow-y: auto;
 	width: 22%;
 }
 #rpg {
