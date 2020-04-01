@@ -483,17 +483,28 @@ var game = {
 	},
 	upgrades: [
 		// snueg
-		new Upgrade('Decasnueg', 1e2, 1.1, [0], "A <i>really</i> warm snueg."),
-		new Upgrade('Hectosnueg', 1e3, 1.1, [0], "A <i>really really</i> warm snueg."),
-		new Upgrade('Kilosnueg', 1e4, 1.1, [0], "A <i>really, really, really</i> warm snueg."),
+		new Upgrade('Decasnueg', 1e2, 1.5, [0], "A <i>really</i> warm snueg."),
+		new Upgrade('Hectosnueg', 1e3, 1.5, [0], "A <i>really really</i> warm snueg."),
+		new Upgrade('Kilosnueg', 1e4, 1.5, [0], "A <i>really, really, really</i> warm snueg."),
+		new Upgrade('Myriasnueg', 1e5, 1.5, [0], "A <i>really, r-</i>... dude, it's just a warm-ass snueg."),
+		new Upgrade('Hebdosnueg', 1e6, 1.5, [0], "Did you even know this used to be a metric prefix? I didn't. Must be a warm fuckin&apos; snueg."),
 		// megasnueg
-		new Upgrade('Floofy Megasnuegs', 600, 1.1, [1], "Makes the megasnuegs even floofier!"),
+		new Upgrade('Floofy Megasnuegs', 6e2, 1.2, [1], "Makes the megasnuegs even floofier!"),
+		new Upgrade('Woolen Megasnuegs', 6e3, 1.2, [1], "Makes the megasnuegs soopr soff!"),
+		new Upgrade('Cloud Megasnuegs', 6e4, 1.2, [1], "Clouds are like super soft, right? Let&apos;s just use those!"),
+		new Upgrade('Kitten Megasnuegs', 6e5, 1.2, [1], "The only thing softer than clouds is kittens!"),
+		new Upgrade('Genetically Engineered Kitten Megasnuegs', 6e6, 1.1, [1], "Genetically engineer the kittens to give even fluffier megasnuegs."),
 		// Snueggr
-		new Upgrade('Minimum Wage Snueggrs', 4000, 1.1, [2], "Pays the unpaid interns to motivate them more."),
-		new Upgrade('Beyond Minimum Wage Snueggrs', 40000, 1.1, [2], "Pays the slightly paid interns even more."),
+		new Upgrade('Minimum Wage Snueggrs', 4e3, 1.1, [2], "Pays the unpaid interns to motivate them more."),
+		new Upgrade('Beyond Minimum Wage Snueggrs', 4e4, 1.1, [2], "Pays the slightly paid interns even more."),
+		new Upgrade('Almost Livable Wage Snueggrs', 4e5, 1.1, [2], "Pays the interns almost a living wage. Almost."),
+		new Upgrade('Livable Wage Snueggrs', 4e6, 1.1, [2], "Pays the interns a living wage."),
+		new Upgrade('Decent Wage Snueggrs', 4e7, 1.1, [2], "Pays the interns a decent wage, allowing for extra free time to snueg."),
 		// Snuegotron
 		new Upgrade('Oiling', 2e4, 1.1, [3], "Oil helps the snuegotron move faster, providing more snuegs."),
 		new Upgrade('Coolant', 2e5, 1.1, [3], "Coolant allows the snuegotron to operate faster without overheating."),
+		new Upgrade('Snueg Processing Unit', 2e6, 1.1, [3], "An SPU will allow snueggotrons to snueg with greater care."),
+		new Upgrade('Snueg Nexus Unit Extended Graphics', 2e7, 1.1, [3], "A snueg nexus unit graphics chip (SNUEG chip) will allow better processing of snuegs."),
 		// Gneus
 		new Upgrade('Parallel G&eacute;&ucirc;&ntilde;s Collisions', 6666666, 1.1, [7], "Parallel colliders make for more snueg."),
 		new Upgrade('G&eacute;&ucirc;&ntilde;s Colliders in Series', 66666666, 1.1, [7], "Colliders in series make for more even more snueg."),
