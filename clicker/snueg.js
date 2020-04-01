@@ -197,9 +197,7 @@ class Building extends Purchase{
 	tooltip(){
 		// function to update the tooltip
 		/** @type {HTMLDivElement} */
-		var div = document.getElementById("tooltip");
-		div.style.top = Math.min(window.event.clientY, window.innerHeight*0.85) - 25 + "px";
-		div.style.left = window.event.clientX - 450 + "px";
+		var div = tooltip();
 		// text
 		div.innerHTML = '<b>' + this.name + '</b>';
 		div.innerHTML += '<b style="float: right;">' + bigNumber(this.next_price, true) + '</b><br>';
@@ -307,10 +305,7 @@ class Upgrade extends Purchase{
 	}
 	tooltip(){
 		// function to update the tooltip
-		/** @type {HTMLDivElement} */
-		var div = document.getElementById("tooltip");
-		div.style.top = window.event.clientY - 25 + "px";
-		div.style.left = window.event.clientX - 450 + "px";
+		var div = tooltip();
 		// text
 		div.innerHTML = '<b>' + this.name + '</b>';
 		div.innerHTML += '<b style="float: right;">' + bigNumber(this.price, true) + '</b><br>';
@@ -1028,7 +1023,7 @@ function sum(array){
 function tooltip(innerHTML = ''){
 	/** @type {HTMLDivElement} */
 	var div = document.getElementById("tooltip");
-	div.style.top = window.event.clientY - 25 + "px";
+	div.style.top = Math.min(window.event.clientY, window.innerHeight*0.85) - 25 + "px";
 	div.style.left = window.event.clientX - 450 + "px";
 	// text
 	div.innerHTML = innerHTML;
