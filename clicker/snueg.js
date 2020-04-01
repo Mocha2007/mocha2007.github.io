@@ -132,12 +132,11 @@ class Building extends Purchase{
 	/** @returns {Upgrade[]} upgrades affecting this building */
 	get relevantUpgrades(){
 		var upgrades = [];
-		for (var i = 0; i < game.upgrades.length; i++){
-			var upgrade = game.upgrades[i];
+		game.upgrades.forEach((upgrade) => {
 			if (upgrade.targets.includes(this.id)){
 				upgrades.push(upgrade);
 			}
-		}
+		});
 		return upgrades;
 	}
 	/** @returns {number} total production provided by all buildings of this type */
@@ -147,13 +146,11 @@ class Building extends Purchase{
 	/** @returns {number} bonus from relevant upgrades */
 	get upgradeBonus(){
 		var bonus = 1;
-		var us = this.relevantUpgrades;
-		for (var i = 0; i < us.length; i++){
-			var upgrade = us[i];
+		this.relevantUpgrades.forEach((upgrade) => {
 			if (upgrade.purchased){
 				bonus *= upgrade.bonus;
 			}
-		}
+		});
 		return bonus;
 	}
 	// functions
@@ -304,12 +301,7 @@ class Upgrade extends Purchase{
 	}
 	/** @returns {string[]} the names of its targets */
 	get targetNames(){
-		var names = [];
-		for (var i = 0; i < this.targets.length; i++){
-			var building = game.buildings[this.targets[i]];
-			names.push(building.name);
-		}
-		return names;
+		return this.targets.map(buildingId => game.buildings[buildingId].name);
 	}
 	// functions
 	addToDocument(){
@@ -399,11 +391,7 @@ var game = {
 		return Math.pow(nextNumber, 5) * 1e9;
 	},
 	get production(){
-		var sum = 0;
-		for (var i=0; i < this.buildings.length; i++){
-			sum += this.buildings[i].totalProduction;
-		}
-		return sum;
+		return sum(this.buildings.map(building => building.totalProduction));
 	},
 	/** @return {number} prestige gain if prestiged now */
 	get thisPrestigeNumber(){
@@ -425,14 +413,7 @@ var game = {
 		base: 1,
 		/** @returns {number} bonus from relevant upgrades */
 		get bonus(){
-			var b = 1;
-			for (var i = 0; i < game.upgrades.length; i++){
-				var upgrade = game.upgrades[i];
-				if (upgrade.special.includes("mouse") && upgrade.purchased){
-					b *= upgrade.bonus;
-				}
-			}
-			return b * game.globalBonus;
+			return product(game.upgrades.map(upgrade => upgrade.special.includes("mouse") && upgrade.purchased ? upgrade.bonus : 1));
 		},
 	},
 	news: [
@@ -604,10 +585,7 @@ function gameTick(){
 		saveGame();
 	}
 	// production
-	for (var i=0; i < game.buildings.length; i++){
-		var building = game.buildings[i];
-		building.produce(t);
-	}
+	game.buildings.forEach(building => building.produce(t));
 	updateSnuegCount();
 }
 
@@ -633,13 +611,13 @@ function guide(){
 			}
 			/* falls through */
 		case 1: // building advice
-			var bestBuilding = 0;
-			for (var j = 1; j < game.buildings.length; j++){
-				if (game.buildings[j].roiWaitTime < game.buildings[bestBuilding].roiWaitTime){
-					bestBuilding = j;
+			var bestBuilding = game.buildings[0];
+			game.buildings.forEach(building => {
+				if (building.roiWaitTime < game.buildings[bestBuilding].roiWaitTime){
+					bestBuilding = building;
 				}
-			}
-			helpstring = "I recommend purchasing the <b>" + game.buildings[bestBuilding].name + "</b>! It's the best deal right now!";
+			});
+			helpstring = "I recommend purchasing the <b>" + bestBuilding.name + "</b>! It's the best deal right now!";
 			break;
 		case 2: // nonsense
 			helpstring = game.random.choice([
@@ -706,6 +684,10 @@ function prestige(){
 	game.softReset();
 	// play sound
 	play('prestige.mp3');
+}
+
+function product(array){
+	return array.reduce((a, b) => a * b, 1);
 }
 
 /**
@@ -778,6 +760,10 @@ function snuegButton(){
 	log("Clicked snueg button");
 }
 
+function sum(array){
+	return array.reduce((a, b) => a + b, 0);
+}
+
 /**
  * updates the prestige bar
  * @return {number} progress to next level
@@ -827,18 +813,12 @@ function main(){
 	setInterval(news, game.settings.newsUpdateInterval);
 	// set up buildings
 	document.getElementById("building_panel").innerHTML = "";
-	for (var i = 0; i < game.buildings.length; i++){
-		var building = game.buildings[i];
-		building.addToDocument();
-	}
+	game.buildings.forEach(building => building.addToDocument());
 	// set up upgrades
 	document.getElementById("upgrade_panel").innerHTML = "";
 	var upgrades = game.upgrades.slice(); // clone
 	upgrades.sort((a, b) => a.price - b.price);
-	for (var j = 0; j < upgrades.length; j++){
-		var upgrade = upgrades[j];
-		upgrade.addToDocument();
-	}
+	game.upgrades.forEach(upgrade => upgrade.addToDocument());
 	// clear tooltip
 	clearTooltip();
 }
