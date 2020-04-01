@@ -613,7 +613,7 @@ function guide(){
 		case 1: // building advice
 			var bestBuilding = game.buildings[0];
 			game.buildings.forEach(building => {
-				if (building.roiWaitTime < game.buildings[bestBuilding].roiWaitTime){
+				if (building.roiWaitTime < bestBuilding.roiWaitTime){
 					bestBuilding = building;
 				}
 			});
