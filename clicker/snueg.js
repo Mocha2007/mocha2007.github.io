@@ -586,6 +586,7 @@ var game = {
 			new Video('fZ2f6lFH5cg', 70, 'Laughter', 'Pinkie Pie', ['music']),
 			// 10
 			new Video('b9EqoWzTKRY', 23, 'Cupcakes', 'Pinkie Pie', ['music']),
+			new Video('ncN8JeG-dZ0', 95, 'DDU-DU DDU-DU', 'Bongo Cat', ['cat', 'music'], 0, 92),
 		],
 		/**
 		 * get all videos of a category
