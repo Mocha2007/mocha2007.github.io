@@ -244,7 +244,7 @@ class Upgrade extends Purchase{
 	 * @param {function} onPurchase - Function to play on purchase
 	*/
 	constructor(name, price, bonus, targets, desc = "", special = [], onPurchase = () => {}){
-		super(name, price, desc);
+		super(name, price, desc, onPurchase);
 		this.bonus = bonus;
 		this.targets = targets;
 		this.special = special;
@@ -368,6 +368,47 @@ class FlyingText extends Particle {
 	}
 }
 
+class Video {
+	/**
+	 * Video storage
+	 * @param {string} id - eg. Ekg7fH2t40U
+	 * @param {number} length - duration in seconds
+	 * @param {string} title
+	 * @param {string} artist
+	 * @param {string[]} categories - (default: [])
+	 * @param {number} startTime - in seconds (default: 0)
+	 * @param {number} endTime - in seconds (default: -1)
+	*/
+	constructor(id, length, title = '', artist = '', categories = [], startTime = 0, endTime = -1){
+		this.id = id;
+		this.length = length;
+		this.title = title;
+		this.artist = artist;
+		this.categories = categories;
+		this.startTime = startTime;
+		this.endTime = endTime;
+	}
+	/**
+	 * @return {string} - title/artist info (if possible)
+	*/
+	get desc(){
+		return this.title + ' - ' + this.artist;
+	}
+	/**
+	 * @return {string} - video url
+	*/
+	get url(){
+		var u = 'https://www.youtube.com/embed/' + this.id + '?autoplay=1';
+		if (this.startTime !== 0){
+			u += '&start=' + this.startTime;
+		}
+		if (this.endTime !== -1){
+			u += '&end=' + this.endTime;
+		}
+		return u;
+	}
+}
+
 // constants
 
 var game = {
@@ -485,8 +526,12 @@ var game = {
 		new Upgrade('Floofy Megasnuegs', 6e2, 1.2, [1], "Makes the megasnuegs even floofier!"),
 		new Upgrade('Woolen Megasnuegs', 6e3, 1.2, [1], "Makes the megasnuegs soopr soff!"),
 		new Upgrade('Cloud Megasnuegs', 6e4, 1.2, [1], "Clouds are like super soft, right? Let&apos;s just use those!"),
-		new Upgrade('Kitten Megasnuegs', 6e5, 1.2, [1], "The only thing softer than clouds is kittens!"),
-		new Upgrade('Genetically Engineered Kitten Megasnuegs', 6e6, 1.1, [1], "Genetically engineer the kittens to give even fluffier megasnuegs."),
+		new Upgrade('Kitten Megasnuegs', 6e5, 1.2, [1],
+			"The only thing softer than clouds is kittens!", [],
+			() => game.youtube.playCategory('cat')),
+		new Upgrade('Genetically Engineered Kitten Megasnuegs', 6e6, 1.1, [1],
+			"Genetically engineer the kittens to give even fluffier megasnuegs.", [],
+			() => game.youtube.playCategory('cat')),
 		// Snueggr
 		new Upgrade('Minimum Wage Snueggrs', 4e3, 1.1, [2], "Pays the unpaid interns to motivate them more."),
 		new Upgrade('Beyond Minimum Wage Snueggrs', 4e4, 1.1, [2], "Pays the slightly paid interns even more."),
@@ -517,40 +562,48 @@ var game = {
 		new Upgrade('Snueg Towhook', 1e12, 0.01, [], "Siphons SPS from your buildings, giving your mouse an extra 1% of your production.", "fromProduction"),
 	],
 	youtube: {
-		get music(){
-			return this.videos.filter(video => video.type === 'music');
-		},
 		bufferTime: 1, // s
 		/** @type {number} */
 		timeout: -1,
 		videos: [
-			{ // gneurshk
-				id: 'Ekg7fH2t40U',
-				length: 1,
-				type: 'sfx',
-			},
-			{
-				id: 'AKkl1z-yIts',
-				length: 3895, // 1:04:55
-				type: 'music',
-			},
+			new Video('Ekg7fH2t40U', 1, 'gneurshk'),
+			new Video('AKkl1z-yIts', 3895, 'relaxing rpg music', '', ['music']),
+			new Video('rXMB5WSCVks', 87, 'bad moew', 'bongo cat', ['cat', 'music']),
 		],
 		/**
-		 * play something, then queue music
-		 * @param {number} id of video to play (in game.youtube.videos, eg. 0)
+		 * get all videos of a category
+		 * @param {string} categoryName
 		*/
-		play(id = -1){
+		category(categoryName){
+			return this.videos.filter(video => video.categories.includes(categoryName));
+		},
+		/**
+		 * play something, then queue music
+		 * @param {Video|number} video - video object or id to play (in game.youtube.videos, eg. 0)
+		*/
+		play(video = undefined){
 			clearTimeout(this.timeout);
-			var video = id === -1 ? game.random.choice(this.music) : this.videos[id];
-			this.set(video.id);
+			// get video
+			if (video === undefined){
+				this.playCategory('music');
+				return;
+			}
+			if (typeof video === 'number'){
+				video = this.videos[video];
+			}
+			log('playing ' + video.id);
+			// set video
+			document.getElementById('youtube').src = video.url;
+			document.getElementById('youtubeDesc').innerHTML = video.desc;
+			// set timeout (to queue next video)
 			this.timeout = setTimeout(() => this.play(), (video.length + this.bufferTime)*1000);
 		},
 		/**
-		 * updates the youtube video
-		 * @param {string} id of video to play (eg. Ekg7fH2t40U)
+		 * play something in a category
+		 * @param {string} categoryName
 		*/
-		set(id){
-			document.getElementById('youtube').src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+		playCategory(categoryName){
+			this.play(game.random.choice(this.category(categoryName)));
 		},
 	},
 	softReset(){
