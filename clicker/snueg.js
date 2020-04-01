@@ -741,7 +741,7 @@ function guide(){
 			for (var i = 1; i < game.upgrades.length; i++){
 				var upgrade = game.upgrades[i];
 				// most upgrades are worth 10s of production...
-				if (!upgrade.purchased && upgrade.price < 10*game.production){
+				if (!upgrade.purchased && upgrade.price < Math.max(10*game.production, game.player.snueg)){
 					helpstring = "The <b>" + upgrade.name + "</b> upgrade is looking pretty cheap right now... only " + bigNumber(upgrade.price, true) + " snueg!";
 					break;
 				}
