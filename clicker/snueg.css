@@ -228,7 +228,7 @@ h3 {
 	margin-top: 50px;
 }
 #stats {
-	height: 40%;
+	height: 20%;
 }
 #tooltip {
 	background-color: #111;
@@ -256,6 +256,10 @@ h3 {
 	bottom: 10px;
 	left: 10px;
 	position: absolute;
+}
+#youtube {
+	border: none;
+	border-bottom: 14px solid #532;
 }
 @keyframes float{
 	0% {transform: rotate(-10deg) translateX(5px);}

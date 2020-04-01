@@ -11,11 +11,13 @@ class Purchase{
 	 * @param {string} name - Name of the building
 	 * @param {number} price - Base price of the building, increases 15% each purchase
 	 * @param {string} desc - Description of the building, given in the tooltip
+	 * @param {function} onPurchase - Function to play on purchase
 	*/
-	constructor(name, price, desc = ""){
+	constructor(name, price, desc = "", onPurchase = () => {}){
 		this.name = name;
 		this.price = price;
 		this.desc = desc;
+		this.onPurchase = onPurchase;
 	}
 	// getters
 	/** @returns {boolean} true if the player can afford to purchase another of this building */
@@ -33,6 +35,7 @@ class Purchase{
 			game.player.snueg -= this.next_price;
 			this.addToPlayer(1);
 			this.updateElement();
+			this.onPurchase();
 			log("Player bought 1 " + this.name);
 			return true;
 		}
@@ -57,9 +60,10 @@ class Building extends Purchase{
 	 * @param {number} base_price - Base price of the building, increases 15% each purchase
 	 * @param {number} production - In snueg
 	 * @param {string} desc - Description of the building, given in the tooltip
+	 * @param {function} onPurchase - Function to play on purchase
 	*/
-	constructor(name, base_price, production, desc = ""){
-		super(name, base_price, desc);
+	constructor(name, base_price, production, desc = "", onPurchase = () => {}){
+		super(name, base_price, desc, onPurchase);
 		this.production = production;
 	}
 	// getters
@@ -166,17 +170,6 @@ class Building extends Purchase{
 			game.player.buildings[this.id] = n;
 		}
 	}
-	buy(){
-		if (this.canAfford){
-			game.player.snueg -= this.next_price;
-			this.addToPlayer(1);
-			this.updateElement();
-			log("Player bought 1 " + this.name);
-			return;
-		}
-		log("Player tried to buy 1 " + this.name + ", but did not have enough snueg. (" +
-			game.player.snueg + " < " + this.next_price + ")");
-	}
 	/**
 	 * @param {number} n number of buildings already purchased
 	 * @return {number} price after already having n buildings
@@ -224,9 +217,6 @@ class Building extends Purchase{
 		li.innerHTML = bigNumber(this.lifetimeProduction, true) + " snuegs so far";
 		ul.appendChild(li);
 	}
-	updateElement(){
-		document.getElementById(this.elementId).innerHTML = this.createElement.innerHTML;
-	}
 	// debug statistics
 	/** @returns {number} if purchased now, the time it takes to pay itself off */
 	get roiTime(){
@@ -251,8 +241,9 @@ class Upgrade extends Purchase{
 	 * @param {number[]} targets - IDs of targetted buildings
 	 * @param {string} desc - Description of the upgrade, given in the tooltip
 	 * @param {string[]} special - Special effect(s) of the upgrade. Currently only "mouse" is supported.
+	 * @param {function} onPurchase - Function to play on purchase
 	*/
-	constructor(name, price, bonus, targets, desc = "", special = []){
+	constructor(name, price, bonus, targets, desc = "", special = [], onPurchase = () => {}){
 		super(name, price, desc);
 		this.bonus = bonus;
 		this.targets = targets;
@@ -406,7 +397,9 @@ var game = {
 		new Building('SNG 9000', 6e3, 40, "A half-sentient robot designed to automatically snueg you."),
 		new Building('SNG 69000', 25e3, 100, "A fully sentient robot designed to snueg you with maximum simulated affection."),
 		new Building('It&apos;s newegg', 125e3, 400, "For a nominal fee you too can own your own snueg-themed website."),
-		new Building('G&eacute;&ucirc;&ntilde;s', 666666, 1666, "An unholy abomination, you can use particle colliders to smash two of them together to get their antiparticle, the snueg."),
+		new Building('G&eacute;&ucirc;&ntilde;s', 666666, 1666,
+			"An unholy abomination, you can use particle colliders to smash two of them together to get their antiparticle, the snueg.",
+			() => game.youtube.play(0)),
 		new Building('Snuegland', 3e6, 7e3, "A magical kingdom teeming with snuegs, ripe for the snatching!"),
 		new Building('Snoo', 20050623, 20000, "These strange little critters only need a G added to them to make them snuegs. Seems simple enough..."),
 	],
@@ -523,6 +516,40 @@ var game = {
 		new Upgrade('Snueg Vacuum', 1e9, 0.01, [], "Siphons SPS from your buildings, giving your mouse an extra 1% of your production.", "fromProduction"),
 		new Upgrade('Snueg Towhook', 1e12, 0.01, [], "Siphons SPS from your buildings, giving your mouse an extra 1% of your production.", "fromProduction"),
 	],
+	youtube: {
+		get music(){
+			return this.videos.filter(video => video.type === 'music');
+		},
+		bufferTime: 1, // s
+		videos: [
+			{ // gneurshk
+				id: 'Ekg7fH2t40U',
+				length: 1,
+				type: 'sfx',
+			},
+			{
+				id: 'AKkl1z-yIts',
+				length: 3895, // 1:04:55
+				type: 'music',
+			},
+		],
+		/**
+		 * play something, then queue music
+		 * @param {number} id of video to play (in game.youtube.videos, eg. 0)
+		*/
+		play(id = -1){
+			var video = id === -1 ? game.random.choice(this.music) : this.videos[id];
+			this.set(video.id);
+			setTimeout(() => this.play(), (video.length + this.bufferTime)*1000);
+		},
+		/**
+		 * updates the youtube video
+		 * @param {string} id of video to play (eg. Ekg7fH2t40U)
+		*/
+		set(id){
+			document.getElementById('youtube').src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+		},
+	},
 	softReset(){
 		this.player.buildingClicks = [];
 		this.player.buildings = [];
@@ -850,4 +877,6 @@ function main(){
 	game.upgrades.slice().sort((a, b) => a.price - b.price).forEach(upgrade => upgrade.addToDocument());
 	// clear tooltip
 	clearTooltip();
+	// music
+	game.youtube.play();
 }
