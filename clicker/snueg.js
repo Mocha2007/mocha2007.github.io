@@ -589,6 +589,7 @@ var game = {
 			new Video('ncN8JeG-dZ0', 95, 'DDU-DU DDU-DU', 'Bongo Cat', ['music'], 0, 92),
 			new Video('zoAQfKb42ig', 140, 'See You Again', 'Bongo Cat', ['music'], 5, 130),
 			new Video('4atH_Km4KaQ', 25, 'Golden Ticket', 'Cartman', ['music']),
+			new Video('s-DQM-1atK0', 80, 'Kyle\'s Mom\'s a Bitch', 'Cartman', ['music']),
 		],
 		/** @return {number} total soundtrack length, in seconds */
 		get soundtrackDuration(){
