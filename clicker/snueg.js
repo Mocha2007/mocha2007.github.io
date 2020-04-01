@@ -372,7 +372,7 @@ class Video {
 	/**
 	 * Video storage
 	 * @param {string} id - eg. Ekg7fH2t40U
-	 * @param {number} length - duration in seconds
+	 * @param {number} length - duration in seconds of entire video
 	 * @param {string} title
 	 * @param {string} artist
 	 * @param {string[]} categories - (default: [])
@@ -389,13 +389,19 @@ class Video {
 		this.endTime = endTime;
 	}
 	/**
-	 * @return {string} - title/artist info (if possible)
+	 * @return {string} title/artist info (if possible)
 	*/
 	get desc(){
 		return this.title + ' - ' + this.artist;
 	}
 	/**
-	 * @return {string} - video url
+	 * @return {number} duration in seconds
+	*/
+	get duration(){
+		return (this.endTime !== -1 ? this.endTime : this.length) - this.startTime;
+	}
+	/**
+	 * @return {string} video url
 	*/
 	get url(){
 		var u = 'https://www.youtube.com/embed/' + this.id + '?autoplay=1';
@@ -567,8 +573,12 @@ var game = {
 		timeout: -1,
 		videos: [
 			new Video('Ekg7fH2t40U', 1, 'gneurshk'),
-			new Video('AKkl1z-yIts', 3895, 'relaxing rpg music', '', ['music']),
-			new Video('rXMB5WSCVks', 87, 'bad moew', 'bongo cat', ['cat', 'music']),
+			/* new Video('AKkl1z-yIts', 3895, 'relaxing rpg music', '', ['music']), */
+			// cute music only pls
+			new Video('rXMB5WSCVks', 87, 'bad moew', 'Bongo Cat', ['cat', 'music'], 0, 80),
+			new Video('AeENh1TqsKY', 88, 'ＭａｙｕｒｉＷａｖｅ', 'Stost', ['music']),
+			new Video('9wnNW4HyDtg', 56, 'Ayaya! Ayaya! Intensifies', 'No. 8', ['music']),
+			new Video('9Gj47G2e1Jc', 476, 'Plastic Love', 'Mariya Takeuchi', ['music']), // exempt from music rules
 		],
 		/**
 		 * get all videos of a category
@@ -596,7 +606,7 @@ var game = {
 			document.getElementById('youtube').src = video.url;
 			document.getElementById('youtubeDesc').innerHTML = video.desc;
 			// set timeout (to queue next video)
-			this.timeout = setTimeout(() => this.play(), (video.length + this.bufferTime)*1000);
+			this.timeout = setTimeout(() => this.play(), (video.duration + this.bufferTime)*1000);
 		},
 		/**
 		 * play something in a category
@@ -934,5 +944,5 @@ function main(){
 	// clear tooltip
 	clearTooltip();
 	// music
-	game.youtube.play();
+	game.youtube.play(1);
 }
