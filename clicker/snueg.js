@@ -548,7 +548,7 @@ function download(content, fileName, contentType){ // https://stackoverflow.com/
 }
 function importSave(){
 	navigator.clipboard.readText().then(
-  		clipText => document.cookie = atob(clipText));
+		clipText => document.cookie = atob(clipText));
 	location.reload();
 }
 function exportSave(){
