@@ -575,6 +575,9 @@ var game = {
 		new Achievement("Picky", "Skip twenty songs in one session", () => 20 <= game.youtube.skips),
 		new Achievement("Well-Informed", "Ask the guide for advice 50 times in one session", () => 50 <= game.debug.guideClicks),
 		new Achievement("Prepared", "Back your save up", () => false), // DO NOT CHANGE THE ID OF THIS - SHOULD REMAIN 3
+		new Achievement("6 9", "Have exactly 69 SNG 69000s", () => game.buildings[5].amount === 69),
+		new Achievement("m o w mow mow mow", "mow mow mow mow mow mow mow mow mow mow mow mow mow mow", () => false), // DO NOT CHANGE THE ID OF THIS - SHOULD REMAIN 5
+		new Achievement("Closure", "Earn every achievement - you win! :D", () => game.player.achievements.length === game.achievements.length),
 	],
 	/** @type {AchievementSeries[]} */
 	achievementSeries: [],
@@ -818,6 +821,9 @@ var game = {
 		 * @param {string} categoryName
 		*/
 		playCategory(categoryName){
+			if (categoryName === 'cat'){
+				game.achievements[5].earn();
+			}
 			this.play(game.random.choice(this.category(categoryName)));
 		},
 		skip(){
