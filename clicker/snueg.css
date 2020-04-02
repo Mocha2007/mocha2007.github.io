@@ -244,6 +244,7 @@ h3 {
 	display: none;
 	height: 100%;
 	margin-top: -10px;
+	overflow-y: auto;
 	padding: 40px;
 }
 #statPageButton {

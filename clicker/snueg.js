@@ -808,6 +808,16 @@ var game = {
 			this.play(game.random.choice(this.category(categoryName)));
 		},
 	},
+	powerOverwhelming(){
+		// unlock all achievements
+		this.achievements.forEach(achievement => achievement.earn());
+		// unlock all upgrades
+		this.upgrades.forEach(upgrade => upgrade.addToPlayer());
+		// give insane money
+		this.player.snueg += 1e33;
+		// unlock rpg
+		this.rpg.unlock();
+	},
 	softReset(){
 		this.player.buildingClicks = [];
 		this.player.buildings = [];
@@ -846,22 +856,22 @@ game.achievementSeries = [
 	),
 	// 10^n income
 	new AchievementSeries(
-		n => Math.pow(10, n) + " snueg/s income",
-		n => "Get " + Math.pow(10, n) + " snueg/s income",
+		n => bigNumber(Math.pow(10, n), true) + " snueg/s income",
+		n => "Get " + bigNumber(Math.pow(10, n), true) + " snueg/s income",
 		n => () => Math.pow(10, n) <= game.production,
 		10
 	),
 	// 10^n lifetime snueg
 	new AchievementSeries(
-		n => Math.pow(10, n) + " snueg lifetime earnings",
-		n => "Get " + Math.pow(10, n) + " snueg lifetime earnings",
+		n => bigNumber(Math.pow(10, n), true) + " snueg lifetime earnings",
+		n => "Get " + bigNumber(Math.pow(10, n), true) + " snueg lifetime earnings",
 		n => () => Math.pow(10, n) <= game.player.lifetimeSnueg,
 		16
 	),
 	// 10^n minutes played
 	new AchievementSeries(
-		n => Math.pow(10, n) + " minute" + (n ? 's': '') + " played",
-		n => "Play snueg clicker for " + Math.pow(10, n) + " minutes",
+		n => bigNumber(Math.pow(10, n), true) + " minute" + (n ? 's': '') + " played",
+		n => "Play snueg clicker for " + bigNumber(Math.pow(10, n), true) + " minutes",
 		n => () => Math.pow(10, n) <= (new Date() - game.player.startTime)/(60000),
 		6
 	),
