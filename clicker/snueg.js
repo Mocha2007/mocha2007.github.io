@@ -828,7 +828,7 @@ var game = {
 		},
 		skip(){
 			this.skips += 1;
-			play();
+			this.play();
 		}
 	},
 	powerOverwhelming(){
