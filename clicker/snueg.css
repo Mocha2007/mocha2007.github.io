@@ -9,7 +9,7 @@ html, body {
 	color: white;
 	font-family: Georgia, serif;
 	height: 100%;
-	margin: 0px;
+	margin: 0;
 	overflow: hidden;
 	user-select: none;
 }
@@ -42,7 +42,7 @@ h3 {
 	border: 6px solid #aa9;
 }
 .buy_button:active, .upgrade_buy_button:active, #guide:active {
-	opacity: 50%;
+	opacity: 0.5;
 }
 .danger {
 	color: red;
@@ -50,7 +50,7 @@ h3 {
 .item_amount {
 	color: #432;
 	font-size: xxx-large;
-	opacity: 30%;
+	opacity: 0.3;
 	right: 5%;
 	top: -10%;
 }
@@ -78,7 +78,7 @@ h3 {
 	background-color: black;
 	border: 1px solid gold;
 	height: 8px;
-	opacity: 50%;
+	opacity: 0.5;
 	width: 100px;
 }
 .progressBar {
@@ -123,7 +123,6 @@ h3 {
 #center_interior {
 	border-left: 14px solid #532;
 	border-right: 14px solid #532;
-	box-sizing: border-box;
 	height: 100%;
 }
 #building_panel {
@@ -184,13 +183,13 @@ h3 {
 }
 #prestige {
 	background-color: #643;
-	bottom: 0px;
+	bottom: 0;
 	color: silver;
 	cursor: pointer;
 	line-height: 100%;
 	height: 50%;
 	position: absolute;
-	right: 0px;
+	right: 0;
 	width: 100px;
 }
 #right {
@@ -229,7 +228,7 @@ h3 {
 }
 #save_manager abbr:hover{
 	font-size: x-large;
-	text-shadow: 0px 0px 3px white;
+	text-shadow: 0 0 3px white;
 }
 #snueg_button {
 	border: 6px solid #d6f;
@@ -243,7 +242,7 @@ h3 {
 	width: 60%;
 }
 #snueg_button:active {
-	opacity: 50%;
+	opacity: 0.5;
 }
 #snueg_button:hover {
 	font-size: 60px;;
@@ -264,10 +263,10 @@ h3 {
 }
 #statPageButton {
 	background-color: #643;
-	bottom: 0px;
+	bottom: 0;
 	color: silver;
 	cursor: pointer;
-	left: 0px;
+	left: 0;
 	line-height: 100%;
 	height: 50%;
 	position: absolute;
