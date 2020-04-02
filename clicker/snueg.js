@@ -898,6 +898,7 @@ game.achievementSeries = [
 		n => () => Math.pow(10, n) <= (new Date() - game.player.startTime)/(60000),
 		6
 	),
+	// todo prestigeing achievement series
 ];
 
 // functions
