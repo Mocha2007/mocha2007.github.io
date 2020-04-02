@@ -599,7 +599,7 @@ var game = {
 			() => game.youtube.play(0)),
 		new Building('Snuegland', 3e6, 7e3, "A magical kingdom teeming with snuegs, ripe for the snatching!"),
 		new Building('Snoo', 20050623, 2e4, "These strange little critters only need a G added to them to make them snuegs. Seems simple enough..."),
-		new Building('Snuegworld', 1.69e8, 6.9e4, "An entire world filled with snueg! :D"),
+		new Building('Snuegworld', 1.69e8, 6.9e4, "An entire world filled with snueg! :D"), // todo unlock slipworld-style minigame
 	],
 	debug: {
 		guideClicks: 0,
@@ -758,9 +758,9 @@ var game = {
 		new Upgrade('Admins', 2e9, 1.1, [9], "Admins will frighten the snoos, allowing for faster culling."),
 		new Upgrade('Spezzing Protocols', 2e10, 1.1, [9], "Permit admins to spez unflattering snoos, allowing for more optimal harvest."),
 		// Snuegworld
-		new Upgrade('Snuegmoon', 1.69e9, 6.9e5, [10], "A snuegmoon will allow snuegtides on snuegworld."),
-		new Upgrade('Snuegstar', 1.69e10, 6.9e10, [10], "A snuegstar will allow snuegphotosynthesis in snuegplants on snuegworld."),
-		new Upgrade('Snueggalaxy', 1.69e11, 6.9e11, [10], "A snueggalaxy will allow sn-... well, you get the idea."),
+		new Upgrade('Snuegmoon', 1.69e9, 1.1, [10], "A snuegmoon will allow snuegtides on snuegworld."),
+		new Upgrade('Snuegstar', 1.69e10, 1.1, [10], "A snuegstar will allow snuegphotosynthesis in snuegplants on snuegworld."),
+		new Upgrade('Snueggalaxy', 1.69e11, 1.1, [10], "A snueggalaxy will allow sn-... well, you get the idea."),
 		// etc
 		new Upgrade('Clickysnueg', 750, 2, [], "Makes the cursor floofier so the clicks are nice and soft UwU", "mouse"),
 		new Upgrade('Snueg Siphon', 1e3, 0.01, [], "Siphons SPS from your buildings, giving your mouse an extra 1% of your production.", "fromProduction"),
