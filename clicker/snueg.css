@@ -72,7 +72,7 @@ h3 {
 	filter: invert(1);
 }
 .playerControls img:active{
-	opacity: 50%;
+	opacity: 0.5;
 }
 .progressBarContainer {
 	background-color: black;
