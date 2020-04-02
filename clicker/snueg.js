@@ -1,7 +1,7 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true, nonew: false */
 /* exported delete_cookie, downloadSave, guide, importSave, main, prestige, snuegButton */
 "use strict";
-var version = "a200401";
+var version = "a200402";
 
 // classes
 
@@ -598,7 +598,8 @@ var game = {
 			"An unholy abomination, you can use particle colliders to smash two of them together to get their antiparticle, the snueg.",
 			() => game.youtube.play(0)),
 		new Building('Snuegland', 3e6, 7e3, "A magical kingdom teeming with snuegs, ripe for the snatching!"),
-		new Building('Snoo', 20050623, 20000, "These strange little critters only need a G added to them to make them snuegs. Seems simple enough..."),
+		new Building('Snoo', 20050623, 2e4, "These strange little critters only need a G added to them to make them snuegs. Seems simple enough..."),
+		new Building('Snuegworld', 1.69e8, 6.9e4, "An entire world filled with snueg! :D"),
 	],
 	debug: {
 		guideClicks: 0,
@@ -643,6 +644,7 @@ var game = {
 		lifetimeSnueg: 0,
 		prestige: 0,
 		snueg: 0,
+		snugBugClicks: 0,
 		startTime: +new Date(),
 		/** @type {number[]} */
 		upgrades: [],
@@ -755,6 +757,10 @@ var game = {
 		new Upgrade('Subreddits', 2e8, 1.1, [9], "Subreddits will help corral the snoos, allowing for more efficient reaping."),
 		new Upgrade('Admins', 2e9, 1.1, [9], "Admins will frighten the snoos, allowing for faster culling."),
 		new Upgrade('Spezzing Protocols', 2e10, 1.1, [9], "Permit admins to spez unflattering snoos, allowing for more optimal harvest."),
+		// Snuegworld
+		new Upgrade('Snuegmoon', 1.69e9, 6.9e5, [10], "A snuegmoon will allow snuegtides on snuegworld."),
+		new Upgrade('Snuegstar', 1.69e10, 6.9e10, [10], "A snuegstar will allow snuegphotosynthesis in snuegplants on snuegworld."),
+		new Upgrade('Snueggalaxy', 1.69e11, 6.9e11, [10], "A snueggalaxy will allow sn-... well, you get the idea."),
 		// etc
 		new Upgrade('Clickysnueg', 750, 2, [], "Makes the cursor floofier so the clicks are nice and soft UwU", "mouse"),
 		new Upgrade('Snueg Siphon', 1e3, 0.01, [], "Siphons SPS from your buildings, giving your mouse an extra 1% of your production.", "fromProduction"),
@@ -875,6 +881,7 @@ var game = {
 		element.classList.add('snugBug');
 		element.onclick = () => {
 			log('player clicked snugbug');
+			this.player.snugBugClicks += 1;
 			addSnueg(this.secondsOfProduction(600));
 			setTimeout(() => this.spawnSnugBug(), 600*1000);
 			element.remove();
@@ -940,8 +947,20 @@ game.achievementSeries = [
 		n => () => Math.pow(10, n) <= (new Date() - game.player.startTime)/(60000),
 		6
 	),
-	// todo prestigeing achievement series
-	// todo snugbug achievement series
+	// 10^n prestigeing achievement series
+	new AchievementSeries(
+		n => bigNumber(Math.pow(10, n), true) + " prestige earned",
+		n => "Earn " + bigNumber(Math.pow(10, n), true) + " prestige",
+		n => () => Math.pow(10, n) <= game.player.prestige,
+		7
+	),
+	// 10^n snugbug achievement series
+	new AchievementSeries(
+		n => bigNumber(Math.pow(10, n), true) + " snugbugs clicked",
+		n => "Click " + bigNumber(Math.pow(10, n), true) + " snugbugs",
+		n => () => Math.pow(10, n) <= game.player.snugBugClicks,
+		4
+	),
 ];
 
 // functions
