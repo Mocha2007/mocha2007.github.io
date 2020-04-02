@@ -570,7 +570,9 @@ var game = {
 		return Math.floor(Math.pow(game.player.lifetimeSnueg/1e9, 1/5));
 	},
 	/** @type {Achievement[]} */
-	achievements: [],
+	achievements: [
+		new Achievement("Lucky", "Every 2 seconds this achievement has a one in a million chance of unlocking. Should take you about two weeks...", () => Math.random() < 1e-6),
+	],
 	/** @type {AchievementSeries[]} */
 	achievementSeries: [],
 	buildings: [
