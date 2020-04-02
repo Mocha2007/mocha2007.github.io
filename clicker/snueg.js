@@ -572,6 +572,8 @@ var game = {
 	/** @type {Achievement[]} */
 	achievements: [
 		new Achievement("Lucky", "Every 2 seconds this achievement has a one in a million chance of unlocking. Should take you about two weeks...", () => Math.random() < 1e-6),
+		new Achievement("Picky", "Skip twenty songs in one session", () => 20 <= game.youtube.skips),
+		new Achievement("Well-Informed", "Ask the guide for advice 50 times in one session", () => 50 <= game.debug.guideClicks),
 	],
 	/** @type {AchievementSeries[]} */
 	achievementSeries: [],
@@ -589,6 +591,13 @@ var game = {
 		new Building('Snuegland', 3e6, 7e3, "A magical kingdom teeming with snuegs, ripe for the snatching!"),
 		new Building('Snoo', 20050623, 20000, "These strange little critters only need a G added to them to make them snuegs. Seems simple enough..."),
 	],
+	debug: {
+		guideClicks: 0,
+		loadTime: new Date(),
+		log: [],
+		version: version,
+		newsTime: new Date(),
+	},
 	mouse: {
 		/** @returns {number} base clicks from relevant upgrades */
 		get base(){
@@ -746,6 +755,7 @@ var game = {
 	],
 	youtube: {
 		bufferTime: 2, // s
+		skips: 0,
 		/** @type {number} */
 		timeout: -1,
 		videos: [
@@ -809,6 +819,10 @@ var game = {
 		playCategory(categoryName){
 			this.play(game.random.choice(this.category(categoryName)));
 		},
+		skip(){
+			this.skips += 1;
+			play();
+		}
 	},
 	powerOverwhelming(){
 		// unlock all achievements
@@ -965,6 +979,7 @@ function gameTick(){
 }
 
 function guide(){
+	game.debug.guideClicks += 1;
 	var helpstring;
 	/** @type {HTMLDivElement} */
 	var speechBubble = document.getElementById("guideSpeechBubble");
@@ -1218,11 +1233,6 @@ function updateSnuegCount(){
 // main only beyond here
 
 function main(){
-	game.debug = {};
-	game.debug.loadTime = new Date();
-	game.debug.log = [];
-	game.debug.version = version;
-	game.debug.newsTime = new Date();
 	// update version div
 	document.getElementById("version").innerHTML = "v. " + game.debug.version;
 	// load save
