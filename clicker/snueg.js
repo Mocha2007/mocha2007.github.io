@@ -583,6 +583,7 @@ var game = {
 		new Achievement("6 9", "Have exactly 69 SNG 69000s", () => game.buildings[5].amount === 69),
 		new Achievement("m o w mow mow mow", "mow mow mow mow mow mow mow mow mow mow mow mow mow mow", () => false), // DO NOT CHANGE THE ID OF THIS - SHOULD REMAIN 5
 		new Achievement("Closure", "Earn every achievement - you win! :D", () => game.player.achievements.length === game.achievements.length),
+		new Achievement("Efficient", "Buy every upgrade", () => game.player.upgrades.length === game.upgrades.length),
 	],
 	/** @type {AchievementSeries[]} */
 	achievementSeries: [],
@@ -600,6 +601,7 @@ var game = {
 		new Building('Snuegland', 3e6, 7e3, "A magical kingdom teeming with snuegs, ripe for the snatching!"),
 		new Building('Snoo', 20050623, 2e4, "These strange little critters only need a G added to them to make them snuegs. Seems simple enough..."),
 		new Building('Snuegworld', 1.69e8, 6.9e4, "An entire world filled with snueg! :D"), // todo unlock slipworld-style minigame
+		new Building('I. D. T. S.', 1.23456789e9, 222222, "The <i>Interdimensional Transsnuegginator</i> is a device to harness snueggery from other dimensions."),
 	],
 	debug: {
 		guideClicks: 0,
@@ -761,6 +763,13 @@ var game = {
 		new Upgrade('Snuegmoon', 1.69e9, 1.1, [10], "A snuegmoon will allow snuegtides on snuegworld."),
 		new Upgrade('Snuegstar', 1.69e10, 1.1, [10], "A snuegstar will allow snuegphotosynthesis in snuegplants on snuegworld."),
 		new Upgrade('Snueggalaxy', 1.69e11, 1.1, [10], "A snueggalaxy will allow sn-... well, you get the idea."),
+		// Snuegworld
+		new Upgrade('5th Dimension', 1.23456789e10, 6/5, [11], "A fifth dimension will improve the IDTS by a whopping 20%!"),
+		new Upgrade('6th Dimension', 1.23456789e11, 7/6, [11], "A sixth dimension will improve the IDTS by a whopping 17%!"),
+		new Upgrade('7th Dimension', 1.23456789e12, 8/7, [11], "A seventh dimension will improve the IDTS by a whopping 14%!"),
+		new Upgrade('8th Dimension', 1.23456789e13, 9/8, [11], "A eighth dimension will improve the IDTS by a whopping 13%!"),
+		new Upgrade('9th Dimension', 1.23456789e14, 10/9, [11], "A ninth dimension will improve the IDTS by a whopping 11%!"),
+		new Upgrade('10th Dimension', 1.23456789e15, 11/10, [11], "A tenth dimension will improve the IDTS by a whopping 10%!"),
 		// etc
 		new Upgrade('Clickysnueg', 750, 2, [], "Makes the cursor floofier so the clicks are nice and soft UwU", "mouse"),
 		new Upgrade('Snueg Siphon', 1e3, 0.01, [], "Siphons SPS from your buildings, giving your mouse an extra 1% of your production.", "fromProduction"),
@@ -960,6 +969,13 @@ game.achievementSeries = [
 		n => "Click " + bigNumber(Math.pow(10, n), true) + " snugbugs",
 		n => () => Math.pow(10, n) <= game.player.snugBugClicks,
 		4
+	),
+	// 25n upgrade series
+	new AchievementSeries(
+		n => (25*n + 25) + " upgrades bought",
+		n => "Buy " + (25*n + 25) + " upgrades",
+		n => () => (25*n + 25) <= game.player.upgrades.length,
+		1
 	),
 ];
 
