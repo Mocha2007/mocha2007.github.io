@@ -28,6 +28,11 @@ class Purchase{
 	get elementId(){
 		return this.name + "_button";
 	}
+	/** @returns {string} icon of button */
+	get textIcon(){
+		// take the first letter of the first one or two words
+		return this.name.split(' ').map(word => word[0]).join('').substring(0, 2);
+	}
 	// functions
 	/** @returns {boolean} success */
 	buy(){
@@ -108,10 +113,6 @@ class Building extends Purchase{
 		item_price.innerHTML = bigNumber(this.next_price, true);
 		buy_button.appendChild(item_price);
 		return buy_button;
-	}
-	/** @returns {string} id of buy button */
-	get elementId(){
-		return this.name + "_button";
 	}
 	/** @returns {number} index of this in game.buildings */
 	get id(){
@@ -258,13 +259,8 @@ class Upgrade extends Purchase{
 		buy_button.onmouseout = () => clearTooltip();
 		// todo buy_button.style.opacity = this.canAfford ? "100%" : "50%";
 		// name
-		buy_button.innerHTML = this.icon;
+		buy_button.innerHTML = this.textIcon;
 		return buy_button;
-	}
-	/** @returns {string} icon of buy button */
-	get icon(){ // todo
-		// take the first letter of the first one or two words
-		return this.name.split(' ').map(word => word[0]).join('').substring(0, 2);
 	}
 	/** @returns {number} index of this in game.upgrades */
 	get id(){
@@ -410,6 +406,69 @@ class Video {
 	}
 }
 
+class Achievement{
+	/**
+	 * @param {string} name
+	 * @param {string} desc
+	 * @param {function} criteriaFunction - function to determine whether the criteria are satisfied
+	*/
+	constructor(name, desc, criteriaFunction){
+		this.name = name;
+		this.desc = desc;
+		this.criteriaFunction = criteriaFunction;
+	}
+	get earned(){
+		return game.player.achievements.includes(this.id);
+	}
+	/** @returns {HTMLDivElement} achievement button */
+	get element(){
+		// button
+		var div = document.createElement('div');
+		div.classList.add('upgrade_buy_button');
+		div.id = "achievement_" + this.name;
+		div.onmousemove = () => this.tooltip();
+		div.onmouseout = () => clearTooltip();
+		// name
+		div.innerHTML = this.icon;
+		return div;
+	}
+	/** @returns {string} icon of achievement button */
+	get icon(){
+		// take the first letter of the first one or two words
+		return this.name.split(' ').map(word => word[0]).join('').substring(0, 2);
+	}
+	get id(){
+		return game.achievements.indexOf(this);
+	}
+	earn(){
+		game.player.achievements.push(this.id);
+	}
+	tooltip(){
+		// function to update the tooltip
+		tooltip('<b>' + this.name + '</b><br>' + this.desc);
+	}
+}
+
+class AchievementSeries{
+	/**
+	 * @param {string} nameFunction
+	 * @param {string} descFunction
+	 * @param {function} criteriaFunctionFunction
+	 * @param {number} max
+	*/
+	constructor(nameFunction, descFunction, criteriaFunctionFunction, max){
+		this.nameFunction = nameFunction;
+		this.descFunction = descFunction;
+		this.criteriaFunctionFunction = criteriaFunctionFunction;
+		this.max = max;
+	}
+	get array(){
+		return range(this.max).map(
+			i => new Achievement(this.nameFunction(i), this.descFunction(i), this.criteriaFunctionFunction(i))
+		);
+	}
+}
+
 // rpg classes
 
 class RPGFloor{
@@ -510,6 +569,10 @@ var game = {
 	get thisPrestigeNumber(){
 		return Math.floor(Math.pow(game.player.lifetimeSnueg/1e9, 1/5));
 	},
+	/** @type {Achievement[]} */
+	achievements: [],
+	/** @type {AchievementSeries[]} */
+	achievementSeries: [],
 	buildings: [
 		new Building('Snueg', 10, 0.1, "A warm snueg."),
 		new Building('Megasnueg', 60, 0.5, "A really big snueg, more efficiently transferring warmth and affection."),
@@ -550,6 +613,8 @@ var game = {
 	/** @type {Particle[]} */
 	particles: [],
 	player: {
+		/** @type {number[]} */
+		achievements: [],
 		/** @type {number[]} */
 		buildingClicks: [],
 		/** @type {number[]} */
@@ -750,6 +815,15 @@ var game = {
 		this.player.upgrades = [];
 	},
 };
+// must be defined after game is defined since game.buildings isn't defined yet
+game.achievementSeries = [
+	new AchievementSeries(
+		n => "First " + game.buildings[n].name,
+		n => "Purchase one " + game.buildings[n].name,
+		n => () => 0 < game.player.buildings[n],
+		game.buildings.length
+	),
+];
 
 // functions
 
@@ -903,9 +977,18 @@ function news(){
 }
 
 function nonEssentialUpdate(){
+	// check if rpg unlicked
 	if (1e6 * Infinity <= game.player.lifetimeSnueg){
 		game.rpg.unlock();
 	}
+	// check if a new achievement is unlocked
+	game.achievements.forEach(
+		achievement => {
+			if (!achievement.earned && achievement.criteriaFunction()){
+				achievement.earn();
+			}
+		}
+	);
 }
 
 /** @param {string} filename to play */
@@ -1083,6 +1166,10 @@ function main(){
 	game.buildings.forEach(building => building.addToDocument());
 	// set up upgrades
 	document.getElementById("upgrade_panel").innerHTML = "";
+	// set up achievements
+	game.achievementSeries.forEach(
+		achievementSeries => game.achievements.push(...achievementSeries.array)
+	);
 	// clones upgrade array, sorts, then adds each to document
 	game.upgrades.slice().sort((a, b) => a.price - b.price).forEach(upgrade => upgrade.addToDocument());
 	// clear tooltip
