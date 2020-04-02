@@ -574,6 +574,7 @@ var game = {
 		new Achievement("Lucky", "Every 2 seconds this achievement has a one in a million chance of unlocking. Should take you about two weeks...", () => Math.random() < 1e-6),
 		new Achievement("Picky", "Skip twenty songs in one session", () => 20 <= game.youtube.skips),
 		new Achievement("Well-Informed", "Ask the guide for advice 50 times in one session", () => 50 <= game.debug.guideClicks),
+		new Achievement("Prepared", "Back your save up", () => false), // DO NOT CHANGE THE ID OF THIS - SHOULD REMAIN 3
 	],
 	/** @type {AchievementSeries[]} */
 	achievementSeries: [],
@@ -928,6 +929,7 @@ function exportSave(){
 	return data;
 }
 function downloadSave(){
+	game.achievements[3].earn();
 	download(exportSave(), 'snuegClickerBackup.txt', 'text/plain');
 }
 
