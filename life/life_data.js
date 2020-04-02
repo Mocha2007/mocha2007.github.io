@@ -81,6 +81,7 @@ var life_data = [
 		'parent': 'tetrapoda',
 		'range': 'ww',
 		'age': 320,
+		'desc': 'Amniotes lay their eggs on land or retain the fertilized egg within the mother, and are distinguished from anamniotes, which typically lay their eggs in water.',
 	},
 	{
 		'name': 'amphibia',
@@ -135,6 +136,7 @@ var life_data = [
 		'parent': 'opisthokonta',
 		'range': 'ww',
 		'age': 760,
+		'desc': 'Animals consume organic material, breathe oxygen, are able to move, can reproduce sexually, and grow from a blastula during embryonic development.',
 	},
 	{
 		'name': 'ankylosauridae',
@@ -1227,6 +1229,7 @@ var life_data = [
 		'parent': 'animalia',
 		'range': 'ww',
 		'age': 635,
+		'desc': 'Characteristics of eumetazoans include true tissues organized into germ layers, neurons, and an embryo that goes through a gastrula stage.',
 	},
 	{
 		'name': 'euphausiacea',
@@ -1455,6 +1458,7 @@ var life_data = [
 		'parent': 'hominidae',
 		'range': 'af',
 		'age': 8.8,
+		'desc': 'African Apes',
 	},
 	{
 		'name': 'hominini',
@@ -1762,6 +1766,7 @@ var life_data = [
 		'parent': 'amniota',
 		'range': 'ww',
 		'age': 225,
+		'desc': 'Mammals are characterized by the presence of mammary glands, a neocortex, fur or hair, and three middle ear bones.',
 	},
 	{
 		'name': 'medusozoa',
@@ -1946,6 +1951,7 @@ var life_data = [
 		'parent': 'chordata',
 		'range': 'ww',
 		'age': 420,
+		'desc': 'Bony Fish',
 	},
 	{
 		'name': 'ovis',
@@ -2317,6 +2323,7 @@ var life_data = [
 		'parent': 'euarchontoglires',
 		'range': 'eq',
 		'age': 55,
+		'desc': 'Primate characteristics include large brains, visual acuity, color vision, altered shoulder girdle, and dextrous hands.',
 	},
 	{
 		'name': 'proteobacteria',
@@ -2709,6 +2716,7 @@ var life_data = [
 		'parent': 'osteichthyes',
 		'range': 'ww',
 		'age': 370,
+		'desc': 'Tetrapods are four-limbed animals.',
 	},
 	{
 		'name': 'theobroma',
