@@ -66,6 +66,10 @@ h3 {
 	pointer-events: none;
 	position: absolute;
 }
+.playerControls img{
+	height: 20px;
+	filter: invert(1);
+}
 .progressBarContainer {
 	background-color: black;
 	border: 1px solid gold;
@@ -164,10 +168,6 @@ h3 {
 	font-size: large;
 	font-weight: bold;
 	padding: 16px;
-}
-#playerBack, #playerSkip {
-	height: 20px;
-	filter: invert(1);
 }
 #prestige {
 	background-color: #643;
