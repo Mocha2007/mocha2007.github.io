@@ -369,6 +369,13 @@ var life_data = [
 		'range': 'ww',
 	},
 	{
+		'name': 'bacteria',
+		'rank': 'domain',
+		'parent': 'life',
+		'range': 'ww',
+		'age': 3800,
+	},
+	{
 		'name': 'balaenoptera',
 		'rank': 'genus',
 		'parent': 'balaenopteridae',
@@ -946,6 +953,13 @@ var life_data = [
 		'desc': 'Turmeric',
 	},
 	{
+		'name': 'cyanobacteria',
+		'rank': 'phylum',
+		'parent': 'bacteria',
+		'range': 'ww',
+		'age': 2100,
+	},
+	{
 		'name': 'cyanocitta',
 		'rank': 'genus',
 		'parent': 'corvidae',
@@ -1046,6 +1060,18 @@ var life_data = [
 		'age': 540,
 	},
 	{
+		'name': 'enterobacteriaceae',
+		'rank': 'family',
+		'parent': 'enterobacteriales',
+		'range': 'ww',
+	},
+	{
+		'name': 'enterobacteriales',
+		'rank': 'order',
+		'parent': 'gammaproteobacteria',
+		'range': 'ww',
+	},
+	{
 		'name': 'equidae',
 		'rank': 'family',
 		'range': 'ow',
@@ -1095,6 +1121,19 @@ var life_data = [
 		'parent': 'erinaceidae',
 		'range': 'ow',
 		'desc': 'Hedgehog',
+	},
+	{
+		'name': 'escherichia',
+		'rank': 'genus',
+		'parent': 'enterobacteriaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'escherichia coli',
+		'rank': 'species',
+		'parent': 'escherichia',
+		'range': 'ww',
+		'desc': 'E. Coli',
 	},
 	{
 		'name': 'euarchontoglires',
@@ -1267,6 +1306,12 @@ var life_data = [
 		'parent': 'gallus gallus',
 		'range': 'as',
 		'desc': 'Chicken',
+	},
+	{
+		'name': 'gammaproteobacteria',
+		'rank': 'class',
+		'parent': 'proteobacteria',
+		'range': 'ww',
 	},
 	{
 		'name': 'glires',
@@ -2080,6 +2125,7 @@ var life_data = [
 		'parent': 'diaphoretickes',
 		'range': 'ww',
 		'age': 1200,
+		'desc': 'Plant',
 	},
 	{
 		'name': 'platyhelminthes',
@@ -2138,6 +2184,12 @@ var life_data = [
 		'parent': 'euarchontoglires',
 		'range': 'eq',
 		'age': 55,
+	},
+	{
+		'name': 'proteobacteria',
+		'rank': 'phylum',
+		'parent': 'bacteria',
+		'range': 'ww',
 	},
 	{
 		'name': 'protostomia',
