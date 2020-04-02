@@ -331,7 +331,12 @@ class Particle {
 		this.tick = tick;
 		this.lifespan = lifespan;
 		setIntervalX(() => tick(element), 1000/game.settings.fps, lifespan*game.settings.fps);
-		setTimeout(() => document.getElementById(element.id).remove(), lifespan*1000);
+		setTimeout(() => {
+			try{
+				document.getElementById(element.id).remove();
+			}
+			catch (TypeError){}
+		}, lifespan*1000);
 		game.particles.push(this);
 	}
 }
@@ -853,11 +858,34 @@ var game = {
 		// unlock rpg
 		this.rpg.unlock();
 	},
+	secondsOfProduction(t){
+		return this.production * t;
+	},
 	softReset(){
 		this.player.buildingClicks = [];
 		this.player.buildings = [];
 		this.player.snueg = 0;
 		this.player.upgrades = [];
+	},
+	spawnSnugBug(){
+		var element = document.createElement('span');
+		element.innerHTML = '🐞';
+		element.classList.add('snugBug');
+		element.onclick = () => {
+			log('player clicked snugbug');
+			addSnueg(this.secondsOfProduction(600));
+			setTimeout(() => this.spawnSnugBug(), 600*1000);
+			element.remove();
+		};
+		element.style.left = this.random.randint(window.screen.width*0.1, window.screen.width*0.7) + "px";
+		element.style.top = this.random.randint(window.screen.height*0.1, window.screen.height*0.9) + "px";
+		element.style.opacity = 1;
+		var tick = e => {
+			e.style.top = (parseInt(e.style.top.replace('px', '')) + this.random.uniform(-20, 20)) + 'px';
+			e.style.left = (parseInt(e.style.left.replace('px', '')) + this.random.uniform(-20, 20)) + 'px';
+			e.style.opacity = parseFloat(e.style.opacity) * 0.99;
+		};
+		new Particle(element, tick, 10);
 	},
 	toggleStats(){
 		/** @type {HTMLDivElement} */
@@ -911,6 +939,7 @@ game.achievementSeries = [
 		6
 	),
 	// todo prestigeing achievement series
+	// todo snugbug achievement series
 ];
 
 // functions
@@ -1286,6 +1315,8 @@ function main(){
 	clearTooltip();
 	// music
 	game.youtube.play(1);
+	// snugbug delay
+	setTimeout(() => game.spawnSnugBug(), 600*1000);
 	// notification
 	console.info('Snueg Clicker v. ' + version + ' loaded successfully.');
 }

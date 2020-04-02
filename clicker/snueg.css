@@ -85,6 +85,12 @@ h3 {
 	background-color: blue;
 	height: 100%;
 }
+.snugBug{
+	cursor: pointer;
+	font-size: 80px;
+	pointer-events: all;
+	z-index: 1;
+}
 .upgrade_buy_button {
 	background-color: #a99;
 	border: 6px solid #444;
