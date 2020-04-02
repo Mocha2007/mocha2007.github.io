@@ -528,14 +528,15 @@ class RPGObject{
 
 class RPGEntity extends RPGObject{
 	/**
-	 * @param {string} icon - emoji to use (should be ONE character!)
+	 * @param {string} icon - character(s) to use (will be ONE character, randomly chosen)
+	 * @param {string} color
 	 * @param {string} name
 	 * @param {string} desc
 	 * @param {number} hp
 	 * @param {number} attack
 	*/
-	constructor(icon, name = "", desc = "", hp = 1, attack = 0){
-		super(icon, name, desc, hp);
+	constructor(icon, color = "white", name = "", desc = "", hp = 1, attack = 0){
+		super(icon, color, name, desc, hp);
 		this.attack = attack;
 	}
 }
@@ -689,6 +690,9 @@ var game = {
 	},
 	rpg : {
 		worldSize: 16,
+		entities: [
+			new RPGEntity('f', 'maroon', 'Fox', 10, 2),
+		],
 		floors: [
 			new RPGFloor('green', 'Grass'),
 		],
@@ -1273,7 +1277,7 @@ function statUpdate(){
 	var stats = [
 		'Lifetime Snueg: ' + game.player.lifetimeSnueg,
 		'Snugbug Clicks: ' + game.player.snugBugClicks,
-	]
+	];
 	stats.forEach(
 		stat => {
 			var li = document.createElement('li');
