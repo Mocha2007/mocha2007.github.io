@@ -793,7 +793,7 @@ var game = {
 			new Video('bOR38552MJA', 124, 'Blame Canada', 'South Park', ['music'], 0, 95),
 			new Video('E1UEDulwWkY', 131, 'Minorities in my Waterpark', 'South Park', ['music']),
 			new Video('MtN1YnoL46Q', 191, 'The Duck Song', 'Bryant Oden', ['music'], 3, 190),
-			new Video('Dc-RRLKeilk', 145, 'Fresh Prince Of Dickbutt Bel Air', 'A.COE', ['music']),
+			new Video('Dc-RRLKeilk', 139, 'Fresh Prince Of Dickbutt Bel Air', 'A.COE', ['music']),
 		],
 		/** @return {number} total soundtrack length, in seconds */
 		get soundtrackDuration(){
