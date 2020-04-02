@@ -787,7 +787,6 @@ var game = {
 			new Video('s-DQM-1atK0', 80, 'Kyle\'s Mom\'s a Bitch', 'South Park', ['music']),
 			new Video('bOR38552MJA', 124, 'Blame Canada', 'South Park', ['music'], 0, 95),
 			new Video('E1UEDulwWkY', 131, 'Minorities in my Waterpark', 'South Park', ['music']),
-			new Video('Qg_lWcB_DWU', 351, 'Banana Brain', 'Leo Moracchioli', ['music'], 5, 346),
 		],
 		/** @return {number} total soundtrack length, in seconds */
 		get soundtrackDuration(){
