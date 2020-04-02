@@ -1109,7 +1109,7 @@ function nonEssentialUpdate(){
 		}
 	);
 	// clean up achievements
-	game.player.achievements = [...new Set(game.player.achievements)]
+	game.player.achievements = [...new Set(game.player.achievements)];
 	game.player.achievements.sort();
 	// update statistics page
 	statUpdate();
@@ -1222,7 +1222,7 @@ function snuegButton(){
 function statUpdate(){
 	// blank achievements
 	/** @type {HTMLDivElement} */
-	var achievementElement = document.getElementById('statPageAchievements')
+	var achievementElement = document.getElementById('statPageAchievements');
 	achievementElement.innerHTML = '';
 	// add all achievements earned
 	game.achievements.forEach(
