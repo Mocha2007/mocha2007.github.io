@@ -814,6 +814,12 @@ var game = {
 		this.player.snueg = 0;
 		this.player.upgrades = [];
 	},
+	toggleStats(){
+		/** @type {HTMLDivElement} */
+		var element = document.getElementById('statPage');
+		element.style.display = element.style.display === 'block' ? 'none' : 'block';
+		log('stat page toggled');
+	}
 };
 // must be defined after game is defined since game.buildings isn't defined yet
 game.achievementSeries = [
@@ -989,6 +995,8 @@ function nonEssentialUpdate(){
 			}
 		}
 	);
+	// update statistics page
+	statUpdate();
 }
 
 /** @param {string} filename to play */
@@ -1093,6 +1101,26 @@ function snuegButton(){
 	new FlyingText(bigNumber(amount, true), window.event.clientX, window.event.clientY);
 	// log action
 	log("Clicked snueg button");
+}
+
+function statUpdate(){
+	// blank achievements
+	/** @type {HTMLDivElement} */
+	var achievementElement = document.getElementById('statPageAchievements')
+	achievementElement.innerHTML = '';
+	// add all achievements earned
+	game.achievements.forEach(
+		achievement => {
+			if (achievement.earned){
+				achievementElement.appendChild(achievement.element);
+			}
+		}
+	);
+	// update achievement progress
+	/** @type {HTMLSpanElement} */
+	var achievementProgress = document.getElementById('statAchievementProgress');
+	var percent = Math.round(100 * game.player.achievements.length / game.achievements.length);
+	achievementProgress.innerHTML = game.player.achievements.length + '/' + game.achievements.length + ' achievements earned (' + percent + '%)';
 }
 
 function sum(array){
