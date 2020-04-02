@@ -132,7 +132,7 @@ var life_data = [
 	{
 		'name': 'animalia',
 		'rank': 'kingdom',
-		'parent': 'eukaryota',
+		'parent': 'opisthokonta',
 		'range': 'ww',
 		'age': 760,
 	},
@@ -1329,7 +1329,7 @@ var life_data = [
 	{
 		'name': 'fungi',
 		'rank': 'kingdom',
-		'parent': 'eukaryota',
+		'parent': 'opisthokonta',
 		'range': 'ww',
 		'age': 410,
 	},
@@ -1866,6 +1866,7 @@ var life_data = [
 		'range': 'ww',
 		'desc': 'Lobster',
 	},
+	// O
 	{
 		'name': 'ochrophyta',
 		'rank': 'phylum',
@@ -1884,6 +1885,13 @@ var life_data = [
 		'parent': 'ocimum',
 		'range': 'ow',
 		'desc': 'Basil',
+	},
+	{
+		'name': 'opisthokonta',
+		'rank': 'clade',
+		'parent': 'eukaryota',
+		'range': 'ww',
+		'age': 1010,
 	},
 	{
 		'name': 'orchidaceae',
