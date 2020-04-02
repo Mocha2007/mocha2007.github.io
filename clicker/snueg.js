@@ -759,6 +759,10 @@ var game = {
 	],
 	youtube: {
 		bufferTime: 2, // s
+		/** @type {Video} */
+		current: undefined,
+		/** @type {Video} */
+		last: undefined,
 		skips: 0,
 		/** @type {number} */
 		timeout: -1,
@@ -801,6 +805,7 @@ var game = {
 		 * @param {Video|number} video - video object or id to play (in game.youtube.videos, eg. 0)
 		*/
 		play(video = undefined){
+			this.last = this.current;
 			clearTimeout(this.timeout);
 			// get video
 			if (video === undefined){
@@ -816,6 +821,8 @@ var game = {
 			document.getElementById('youtubeDesc').innerHTML = video.desc;
 			// set timeout (to queue next video)
 			this.timeout = setTimeout(() => this.play(), (video.duration + this.bufferTime)*1000);
+			// save as new last
+			this.current = video;
 		},
 		/**
 		 * play something in a category
@@ -826,6 +833,11 @@ var game = {
 				game.achievements[5].earn();
 			}
 			this.play(game.random.choice(this.category(categoryName)));
+		},
+		playLast(){
+			if (this.last){
+				this.play(this.last);
+			}
 		},
 		skip(){
 			this.skips += 1;
