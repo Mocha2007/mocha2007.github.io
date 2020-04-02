@@ -480,6 +480,7 @@ class RPGTile{
 		var span = this.floor.element;
 		span.appendChild(this.object.element);
 		span.onmousemove = () => this.tooltip();
+		span.onmouseout = () => clearTooltip();
 		return span;
 	}
 	tooltip(){
