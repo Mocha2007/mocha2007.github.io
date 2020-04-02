@@ -1216,6 +1216,7 @@ var life_data = [
 		'parent': 'life',
 		'range': 'ww',
 		'age': 1850,
+		'desc': 'Eukaryotes are organisms which have cells with a nucleus enclosed within membranes, unlike prokaryotes, which have no membrane-bound organelles.',
 	},
 	{
 		'name': 'eulipotyphla',
@@ -1905,6 +1906,7 @@ var life_data = [
 		'parent': 'eukaryota',
 		'range': 'ww',
 		'age': 1010,
+		'desc': 'In opisthokonts, flagellate cells propel themselves with a single posterior flagellum.',
 	},
 	{
 		'name': 'orchidaceae',
