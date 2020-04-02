@@ -91,6 +91,9 @@ h3 {
 	pointer-events: all;
 	z-index: 1;
 }
+.unearnedAchievement {
+	opacity: 0.5;
+}
 .upgrade_buy_button {
 	background-color: #a99;
 	border: 6px solid #444;

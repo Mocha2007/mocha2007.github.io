@@ -445,6 +445,15 @@ class Achievement{
 	get id(){
 		return game.achievements.indexOf(this);
 	}
+	/** @returns {HTMLDivElement} achievement button */
+	get unearnedElement(){
+		// button
+		var div = this.element;
+		div.classList.add('unearnedAchievement');
+		div.innerHTML = '?';
+		div.style.color = 'red';
+		return div;
+	}
 	earn(){
 		game.player.achievements.push(this.id);
 	}
@@ -1281,6 +1290,9 @@ function statUpdate(){
 		achievement => {
 			if (achievement.earned){
 				achievementElement.appendChild(achievement.element);
+			}
+			else{
+				achievementElement.appendChild(achievement.unearnedElement);
 			}
 		}
 	);
