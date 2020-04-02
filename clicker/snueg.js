@@ -1351,6 +1351,8 @@ function updateSnuegCount(){
 // main only beyond here
 
 function main(){
+	// clear warning
+	document.getElementById('notsupported').remove();
 	// update version div
 	document.getElementById("version").innerHTML = "v. " + game.debug.version;
 	// load save
