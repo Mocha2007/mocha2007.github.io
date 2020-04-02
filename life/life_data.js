@@ -10,6 +10,7 @@ var life_data = [
 		'desc': 'This is an example of the format used on this page. The dagger indicates this clade is extinct. The two letters beside the name indicate the approximate native range. You can hover your cursor over the abbreviation to see a more detailed description. This clade diversified 800 mya.',
 	},
 	// BEGIN ALPHABETICAL ORDERING
+	// A
 	{
 		'name': 'abies',
 		'rank': 'genus',
@@ -27,6 +28,18 @@ var life_data = [
 		'name': 'acanthomorpha',
 		'rank': 'clade',
 		'parent': 'teleostei',
+		'range': 'ww',
+	},
+	{
+		'name': 'actinobacteria',
+		'rank': 'phylum',
+		'parent': 'terrabacteria',
+		'range': 'ww',
+	},
+	{
+		'name': 'actinomycetales',
+		'rank': 'order',
+		'parent': 'actinobacteria',
 		'range': 'ww',
 	},
 	{
@@ -295,6 +308,12 @@ var life_data = [
 		'range': 'ww',
 	},
 	{
+		'name': 'ascomycota',
+		'rank': 'division',
+		'parent': 'fungi',
+		'range': 'ww',
+	},
+	{
 		'name': 'asparagales',
 		'rank': 'order',
 		'parent': 'monocots',
@@ -367,6 +386,38 @@ var life_data = [
 		'rank': 'clade',
 		'parent': 'paraves',
 		'range': 'ww',
+	},
+	// B
+	{
+		'name': 'bacillaceae',
+		'rank': 'family',
+		'parent': 'bacillales',
+		'range': 'ww',
+	},
+	{
+		'name': 'bacillales',
+		'rank': 'order',
+		'parent': 'bacilli',
+		'range': 'ww',
+	},
+	{
+		'name': 'bacilli',
+		'rank': 'class',
+		'parent': 'firmicutes',
+		'range': 'ww',
+	},
+	{
+		'name': 'bacillus',
+		'rank': 'genus',
+		'parent': 'bacillaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'bacillus anthracis',
+		'rank': 'species',
+		'parent': 'bacillus',
+		'range': 'ww',
+		'desc': 'Anthrax',
 	},
 	{
 		'name': 'bacteria',
@@ -955,7 +1006,7 @@ var life_data = [
 	{
 		'name': 'cyanobacteria',
 		'rank': 'phylum',
-		'parent': 'bacteria',
+		'parent': 'terrabacteria',
 		'range': 'ww',
 		'age': 2100,
 	},
@@ -1052,6 +1103,7 @@ var life_data = [
 		'extinct': true,
 		'range': 'ww',
 	},
+	// E
 	{
 		'name': 'echinodermata',
 		'rank': 'phylum',
@@ -1176,6 +1228,19 @@ var life_data = [
 		'desc': 'Krill',
 	},
 	{
+		'name': 'eurotiales',
+		'rank': 'order',
+		'parent': 'eurotiomycetes',
+		'range': 'ww',
+	},
+	{
+		'name': 'eurotiomycetes',
+		'rank': 'class',
+		'parent': 'ascomycota',
+		'range': 'ww',
+	},
+	// F
+	{
 		'name': 'fabaceae',
 		'rank': 'family',
 		'parent': 'fabales',
@@ -1249,12 +1314,26 @@ var life_data = [
 		'age': 78.9,
 	},
 	{
+		'name': 'firmicutes',
+		'rank': 'phylum',
+		'parent': 'terrabacteria',
+		'range': 'ww',
+	},
+	{
 		'name': 'formicidae',
 		'rank': 'family',
 		'parent': 'hymenoptera',
 		'range': 'ww',
 		'desc': 'Ant',
 	},
+	{
+		'name': 'fungi',
+		'rank': 'kingdom',
+		'parent': 'eukaryota',
+		'range': 'ww',
+		'age': 410,
+	},
+	// G
 	{
 		'name': 'gadidae',
 		'rank': 'family',
@@ -1334,6 +1413,13 @@ var life_data = [
 		'range': 'eq',
 		'desc': 'Cotton',
 	},
+	{
+		'name': 'gracilicutes',
+		'rank': 'clade',
+		'parent': 'bacteria',
+		'range': 'ww',
+	},
+	// H
 	{
 		'name': 'hexapoda',
 		'rank': 'subphylum',
@@ -1449,6 +1535,7 @@ var life_data = [
 		'extinct': true,
 		'range': 'nh',
 	},
+	// I
 	{
 		'name': 'ichthyosauria',
 		'rank': 'order',
@@ -1484,6 +1571,7 @@ var life_data = [
 		'parent': 'malacostraca',
 		'range': 'ww',
 	},
+	// J
 	{
 		'name': 'juglandaceae',
 		'rank': 'family',
@@ -1497,6 +1585,7 @@ var life_data = [
 		'range': 'ww',
 		'desc': 'Walnut',
 	},
+	// L
 	{
 		'name': 'lactuca',
 		'rank': 'genus',
@@ -1607,6 +1696,7 @@ var life_data = [
 		'range': 'ww',
 		'age': 4280,
 	},
+	// M
 	{
 		'name': 'magnoliales',
 		'rank': 'order',
@@ -1725,6 +1815,25 @@ var life_data = [
 		'range': 'ow',
 	},
 	{
+		'name': 'mycobacteriaceae',
+		'rank': 'family',
+		'parent': 'actinomycetales',
+		'range': 'ww',
+	},
+	{
+		'name': 'mycobacterium',
+		'rank': 'genus',
+		'parent': 'mycobacteriaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'mycobacterium tuberculosis',
+		'rank': 'species',
+		'parent': 'mycobacterium',
+		'range': 'ww',
+		'desc': 'Tuberculosis',
+	},
+	{
 		'name': 'myristica',
 		'rank': 'genus',
 		'parent': 'myristicaceae',
@@ -1743,6 +1852,7 @@ var life_data = [
 		'parent': 'magnoliales',
 		'range': 'ww',
 	},
+	// N
 	{
 		'name': 'neoaves',
 		'rank': 'clade',
@@ -1834,6 +1944,7 @@ var life_data = [
 		'range': 'ea',
 		'desc': 'Sheep',
 	},
+	// P
 	{
 		'name': 'pacmad clade',
 		'rank': 'clade',
@@ -1947,6 +2058,12 @@ var life_data = [
 		'parent': 'phasianinae',
 		'range': 'as',
 		'desc': 'Peafowl',
+	},
+	{
+		'name': 'penicillum',
+		'rank': 'genus',
+		'parent': 'trichocomaceae',
+		'range': 'ww',
 	},
 	{
 		'name': 'pennatulacea',
@@ -2188,7 +2305,7 @@ var life_data = [
 	{
 		'name': 'proteobacteria',
 		'rank': 'phylum',
-		'parent': 'bacteria',
+		'parent': 'gracilicutes',
 		'range': 'ww',
 	},
 	{
@@ -2530,6 +2647,7 @@ var life_data = [
 		'range': 'ow',
 		'desc': 'Pig',
 	},
+	// T
 	{
 		'name': 'teleostei',
 		'rank': 'infraclass',
@@ -2540,6 +2658,12 @@ var life_data = [
 		'name': 'telluraves',
 		'rank': 'clade',
 		'parent': 'neoaves',
+		'range': 'ww',
+	},
+	{
+		'name': 'terrabacteria',
+		'rank': 'clade',
+		'parent': 'bacteria',
 		'range': 'ww',
 	},
 	{
@@ -2594,6 +2718,12 @@ var life_data = [
 		'parent': 'ceratopsidae',
 		'extinct': true,
 		'range': 'na',
+	},
+	{
+		'name': 'trichocomaceae',
+		'rank': 'family',
+		'parent': 'eurotiales',
+		'range': 'ww',
 	},
 	{
 		'name': 'triticum',
