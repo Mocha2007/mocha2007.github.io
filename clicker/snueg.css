@@ -67,8 +67,12 @@ h3 {
 	position: absolute;
 }
 .playerControls img{
+	cursor: pointer;
 	height: 20px;
 	filter: invert(1);
+}
+.playerControls img:active{
+	opacity: 50%;
 }
 .progressBarContainer {
 	background-color: black;
