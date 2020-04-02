@@ -617,8 +617,9 @@ var game = {
 		guideClicks: 0,
 		loadTime: new Date(),
 		log: [],
-		version: version,
 		newsTime: new Date(),
+		userAgent: navigator.appVersion,
+		version: version,
 	},
 	mouse: {
 		/** @returns {number} base clicks from relevant upgrades */
