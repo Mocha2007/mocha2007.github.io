@@ -589,6 +589,7 @@ var life_data = [
 		'parent': 'poales',
 		'range': 'nw',
 	},
+	// C
 	{
 		'name': 'camelidae',
 		'rank': 'family',
@@ -655,16 +656,23 @@ var life_data = [
 		'desc': 'Peppers, incl. Bell and Jalape&ntilde;os',
 	},
 	{
+		'name': 'carcharhiniformes',
+		'rank': 'order',
+		'parent': 'selachimorpha',
+		'range': 'ww',
+		'desc': 'Ground Shark',
+	},
+	{
 		'name': 'cardinalidae',
 		'rank': 'family',
-		'range': 'nw',
 		'parent': 'passeriformes',
+		'range': 'nw',
 	},
 	{
 		'name': 'cardinalis',
 		'rank': 'genus',
-		'range': 'nw',
 		'parent': 'cardinalidae',
+		'range': 'nw',
 	},
 	{
 		'name': 'cardinalis cardinalis',
@@ -2464,6 +2472,7 @@ var life_data = [
 		'parent': 'sapindales',
 		'range': 'ww',
 	},
+	// S
 	{
 		'name': 'saccharum',
 		'rank': 'genus',
@@ -2541,6 +2550,13 @@ var life_data = [
 		'rank': 'order',
 		'parent': 'percomorpha',
 		'range': 'ww',
+	},
+	{
+		'name': 'scyliorhinidae',
+		'rank': 'order',
+		'parent': 'carcharhiniformes',
+		'range': 'ww',
+		'desc': 'Catshark',
 	},
 	{
 		'name': 'selachimorpha',
