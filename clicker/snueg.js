@@ -1275,4 +1275,6 @@ function main(){
 	clearTooltip();
 	// music
 	game.youtube.play(1);
+	// notification
+	console.info('Snueg Clicker v. ' + version + ' loaded successfully.');
 }
