@@ -823,11 +823,47 @@ var game = {
 };
 // must be defined after game is defined since game.buildings isn't defined yet
 game.achievementSeries = [
+	// buying a building for the first time
 	new AchievementSeries(
 		n => "First " + game.buildings[n].name,
 		n => "Purchase one " + game.buildings[n].name,
 		n => () => 0 < game.player.buildings[n],
 		game.buildings.length
+	),
+	// 50 of a building
+	new AchievementSeries(
+		n => "Fiftieth " + game.buildings[n].name,
+		n => "Purchase fifty " + game.buildings[n].name,
+		n => () => 50 <= game.player.buildings[n],
+		game.buildings.length
+	),
+	// 100 of a building
+	new AchievementSeries(
+		n => "Hundredth " + game.buildings[n].name,
+		n => "Purchase a hundred " + game.buildings[n].name,
+		n => () => 100 <= game.player.buildings[n],
+		game.buildings.length
+	),
+	// 10^n income
+	new AchievementSeries(
+		n => Math.pow(10, n) + " snueg/s income",
+		n => "Get " + Math.pow(10, n) + " snueg/s income",
+		n => () => Math.pow(10, n) <= game.production,
+		10
+	),
+	// 10^n lifetime snueg
+	new AchievementSeries(
+		n => Math.pow(10, n) + " snueg lifetime earnings",
+		n => "Get " + Math.pow(10, n) + " snueg lifetime earnings",
+		n => () => Math.pow(10, n) <= game.player.lifetimeSnueg,
+		16
+	),
+	// 10^n minutes played
+	new AchievementSeries(
+		n => Math.pow(10, n) + " minute" + (n ? 's': '') + " played",
+		n => "Play snueg clicker for " + Math.pow(10, n) + " minutes",
+		n => () => Math.pow(10, n) <= (new Date() - game.player.startTime)/(60000),
+		6
 	),
 ];
 
@@ -995,6 +1031,9 @@ function nonEssentialUpdate(){
 			}
 		}
 	);
+	// clean up achievements
+	game.player.achievements = [...new Set(game.player.achievements)]
+	game.player.achievements.sort();
 	// update statistics page
 	statUpdate();
 }
