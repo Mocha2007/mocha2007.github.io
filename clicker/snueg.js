@@ -961,7 +961,7 @@ game.achievementSeries = [
 	// 10^n minutes played
 	new AchievementSeries(
 		n => bigNumber(Math.pow(10, n), true) + " minute" + (n ? 's': '') + " played",
-		n => "Play snueg clicker for " + bigNumber(Math.pow(10, n), true) + " minutes",
+		n => "Play snueg clicker for " + bigNumber(Math.pow(10, n), true) + " minute" + (n ? 's': ''),
 		n => () => Math.pow(10, n) <= (new Date() - game.player.startTime)/(60000),
 		6
 	),
