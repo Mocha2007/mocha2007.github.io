@@ -1241,6 +1241,21 @@ function snuegButton(){
 }
 
 function statUpdate(){
+	// basic stats
+	/** @type {HTMLUListElement} */
+	var statElement = document.getElementById('statPageBasic');
+	statElement.innerHTML = '';
+	var stats = [
+		'Lifetime Snueg: ' + game.player.lifetimeSnueg,
+		'Snugbug Clicks: ' + game.player.snugBugClicks,
+	]
+	stats.forEach(
+		stat => {
+			var li = document.createElement('li');
+			li.innerHTML = stat;
+			statElement.appendChild(li);
+		}
+	);
 	// blank achievements
 	/** @type {HTMLDivElement} */
 	var achievementElement = document.getElementById('statPageAchievements');

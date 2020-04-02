@@ -253,9 +253,11 @@ h3 {
 	background-color: #111;
 	display: none;
 	height: 100%;
-	margin-top: -10px;
 	overflow-y: auto;
 	padding: 40px;
+}
+#statPageAchievements {
+	padding-bottom: 40%;
 }
 #statPageButton {
 	background-color: #643;
