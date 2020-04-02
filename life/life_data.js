@@ -395,6 +395,24 @@ var life_data = [
 		'desc': 'Bamboo',
 	},
 	{
+		'name': 'bangiaceae',
+		'rank': 'family',
+		'parent': 'bangiales',
+		'range': 'ww',
+	},
+	{
+		'name': 'bangiales',
+		'rank': 'order',
+		'parent': 'bangiophyceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'bangiophyceae',
+		'rank': 'class',
+		'parent': 'rhodophyta',
+		'range': 'ww',
+	},
+	{
 		'name': 'batoidea',
 		'rank': 'superorder',
 		'parent': 'chondrichthyes',
@@ -712,6 +730,12 @@ var life_data = [
 		'desc': 'During some period of their life cycle, chordates possess a notochord, a dorsal nerve cord, pharyngeal slits, an endostyle, and a post-anal tail. These five anatomical features define this phylum.'
 	},
 	{
+		'name': 'chromista',
+		'rank': 'kingdom',
+		'parent': 'diaphoretickes',
+		'range': 'ww',
+	},
+	{
 		'name': 'cinnamomum',
 		'rank': 'genus',
 		'parent': 'lauraceae',
@@ -986,6 +1010,12 @@ var life_data = [
 		'range': 'ww',
 		'age': 540,
 		'desc': 'In deuterostomes, the first opening, the blastopore, becomes the anus, while in protostomes, it becomes the mouth.'
+	},
+	{
+		'name': 'diaphoretickes',
+		'rank': 'clade',
+		'parent': 'eukaryota',
+		'range': 'ww',
 	},
 	{
 		'name': 'diplodocidae',
@@ -1473,6 +1503,14 @@ var life_data = [
 		'range': 'ww',
 	},
 	{
+		'name': 'laminariales',
+		'rank': 'order',
+		'parent': 'phaeophyceae',
+		'range': 'ww',
+		'age': 45,
+		'desc': 'Kelp',
+	},
+	{
 		'name': 'lauraceae',
 		'rank': 'family',
 		'parent': 'laurales',
@@ -1672,6 +1710,12 @@ var life_data = [
 		'parent': 'decapoda',
 		'range': 'ww',
 		'desc': 'Lobster',
+	},
+	{
+		'name': 'ochrophyta',
+		'rank': 'phylum',
+		'parent': 'chromista',
+		'range': 'ww',
 	},
 	{
 		'name': 'ocimum',
@@ -1893,6 +1937,14 @@ var life_data = [
 		'desc': 'Parsley',
 	},
 	{
+		'name': 'phaeophyceae',
+		'rank': 'class',
+		'parent': 'ochrophyta',
+		'range': 'ww',
+		'age': 150,
+		'desc': 'Brown Algae',
+	},
+	{
 		'name': 'phaseolus',
 		'rank': 'genus',
 		'parent': 'fabaceae',
@@ -2025,7 +2077,7 @@ var life_data = [
 	{
 		'name': 'plantae',
 		'rank': 'kingdom',
-		'parent': 'eukaryota',
+		'parent': 'diaphoretickes',
 		'range': 'ww',
 		'age': 1200,
 	},
@@ -2150,6 +2202,13 @@ var life_data = [
 		'desc': 'Pterosaur',
 	},
 	{
+		'name': 'pyropia',
+		'rank': 'genus',
+		'parent': 'bangiaceae',
+		'range': 'ww',
+		'desc': 'Nori',
+	},
+	{
 		'name': 'pyrus',
 		'rank': 'genus',
 		'parent': 'rosaceae',
@@ -2182,6 +2241,14 @@ var life_data = [
 		'parent': 'amniota',
 		'range': 'ww',
 		'age': 312,
+	},
+	{
+		'name': 'rhodophyta',
+		'rank': 'division',
+		'parent': 'diaphoretickes',
+		'range': 'ww',
+		'age': 1300, // +/- 300
+		'desc': 'Red Algae',
 	},
 	{
 		'name': 'rhopalocera',
