@@ -895,7 +895,7 @@ var game = {
 	},
 	spawnSnugBug(){
 		var element = document.createElement('span');
-		element.innerHTML = '🐞';
+		element.innerHTML = game.random.choice(['🐞', '🐛', '🐜', '🐝']);
 		element.classList.add('snugBug');
 		element.onclick = () => {
 			log('player clicked snugbug');
