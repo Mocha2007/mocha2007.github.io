@@ -1070,7 +1070,7 @@ function bigNumber(amount, integer = false){
 		default: defaultPrefixes,
 		siabbr: siPrefixes,
 		siword: siFull,
-	}
+	};
 	// 245 -> 245
 	// 3245 -> 3.245 k
 	// 3950847 -> 3.950 M
