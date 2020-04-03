@@ -241,7 +241,7 @@ class Clade extends Instance{
 		}
 	}
 	get hasParent(){
-		return 0 < this.parents.size;
+		return 0 < this.parents.size && this.rank !== "life";
 	}
 	/** @return {Clade[]} */
 	get ladder(){
