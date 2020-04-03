@@ -59,7 +59,6 @@ h3 {
 }
 .item_price {
 	bottom: 10%;
-	/* todo color: #6f6; */
 	font-size: small;
 }
 .particle {
@@ -127,7 +126,6 @@ h3 {
 }
 #building_panel {
 	height: 80%;
-	/* overflow-y: scroll; */
 	width: 100%;
 }
 #guide {
@@ -304,7 +302,6 @@ h3 {
 }
 #youtube {
 	border: none;
-	/* border-bottom: 14px solid #532; */
 	margin-bottom: -4px;
 }
 @keyframes float{

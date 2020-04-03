@@ -96,7 +96,6 @@ class Building extends Purchase{
 		buy_button.onclick = () => this.buy();
 		buy_button.onmousemove = () => this.tooltip();
 		buy_button.onmouseout = () => clearTooltip();
-		// todo buy_button.style.opacity = this.canAfford ? "100%" : "50%";
 		// amount
 		var item_amount = document.createElement('span');
 		item_amount.classList.add('item_amount');
@@ -257,7 +256,6 @@ class Upgrade extends Purchase{
 		buy_button.onclick = () => this.buyBye();
 		buy_button.onmousemove = () => this.tooltip();
 		buy_button.onmouseout = () => clearTooltip();
-		// todo buy_button.style.opacity = this.canAfford ? "100%" : "50%";
 		// name
 		buy_button.innerHTML = this.textIcon;
 		return buy_button;
