@@ -1,5 +1,5 @@
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
-"use strict";
+'use strict';
 // Modelled on Bhavnagar, India
 var highs = [27.7,30.2,34.7,37.6,39.4,34.5,33,32.2,33,34.2,31.7,28.6];
 var lows = [11.2,14.7,19.5,23.8,25.9,27.1,26,24.8,24.1,22.4,17.9,14.1];
@@ -60,7 +60,7 @@ function weather(){
 		[1, 2, 3, 4, 5].map(function(i){
 			return bareWeather(bareOneiaMonth(Date.now()+i*day), oneiaDay()+i);
 		}).join('<br>') + '</details>';
-	document.getElementById("eremorweather").innerHTML = 'Weather in Eremor: <abbr title="' +
+	document.getElementById('eremorweather').innerHTML = 'Weather in Eremor: <abbr title="' +
 		Math.round(c2f(temp))+'&#176;F">'+Math.round(temp)+'&#176;C</abbr> <abbr title="'+state +
 		'</abbr>'+fiveday;
 }

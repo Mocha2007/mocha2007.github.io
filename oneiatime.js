@@ -1,5 +1,6 @@
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
-"use strict";
+/* exported playSound, stopSound */
+'use strict';
 var vernal = 6884100000; // ms after first vernal equinox 20 Mar 16:15 (2018)
 
 var egyptmonths = [
@@ -130,7 +131,7 @@ function jd(){
 }
 
 /** @param {number} year */
-function dhelp(year){
+function dhelp(){
 	return 668.591;
 	/*if (year < 2001){
 		return (year-1)/2+year/10-year/100+year/1000;
@@ -265,11 +266,11 @@ function holidayCSS(){
 
 	document.getElementById('m').title = title;
 	if (src !== default_src){
-		document.getElementById("m").src = 'img/'+src+'.png';
+		document.getElementById('m').src = 'img/'+src+'.png';
 	}
 
 	if (day === 11*month-17 && day === month*month + 3*month - 1){
-		document.getElementById("m").outerHTML = '<img id="m" src="img/mopril.png" width="200" alt="Mochadian Birthday Squiggle" onmouseover="playSound(\'sfx\')" onmouseout="stopSound(\'sfx\')"> <audio id="sfx" src="snd/partyhorn.mp3"/>';
+		document.getElementById('m').outerHTML = '<img id="m" src="img/mopril.png" width="200" alt="Mochadian Birthday Squiggle" onmouseover="playSound(\'sfx\')" onmouseout="stopSound(\'sfx\')"> <audio id="sfx" src="snd/partyhorn.mp3"/>';
 	}
 }
 
@@ -290,7 +291,7 @@ function oneiaTime(){
 	var nikkiphase = mod(Math.round(8*cnikkiphase), 8); // idk why it needs another mod, but the code breaks without it
 	//console.log(nikkiphase);
 
-	var currentTimeString = years + " AT, Day " + days + ", ";
+	var currentTimeString = years + ' AT, Day ' + days + ', ';
 	
 	for (var i = 1; i < 6; i += 1){
 		// oneian clock is conveniently decimal... :^)
@@ -311,7 +312,7 @@ function oneiaTime(){
 	// 2551442.9 = Lunar Synodic Period
 	var moonphase = Math.round(8*((currenttime-642900) % 2551442.9)/2551442.9) % 8;
 
-	document.getElementById("clock").innerHTML = '<img src="img/phase/'+nikkiphase +
+	document.getElementById('clock').innerHTML = '<img src="img/phase/'+nikkiphase +
 		'.png" height=9 alt="Nikki Phase: '+phases[nikkiphase]+'" title="Nikki Phase: ' +
 		phases[nikkiphase]+'"> Eremoran Time:<br/>'+currentTimeString+'<br/>\n<progress value="' +
 		yearprogress+'"></progress><br/>\n<img src="img/phase/'+moonphase +
@@ -321,8 +322,8 @@ function oneiaTime(){
 }
 
 function bonus(){
-	"use strict";
-	document.getElementById("clockbonus").innerHTML = zodiac()+'<br/>'+china()+'<br/>'+egypt() +
+	'use strict';
+	document.getElementById('clockbonus').innerHTML = zodiac()+'<br/>'+china()+'<br/>'+egypt() +
 		'<br/>'+maya()+'<br/>JD '+jd().toFixed(3)+'<br/>'+darian();
 }
 

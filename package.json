@@ -1,0 +1,19 @@
+{
+  "name": "mocha2007.github.io",
+  "version": "1.0.0",
+  "description": "Mocha's Website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mocha2007/mocha2007.github.io.git"
+  },
+  "author": "mocha2007",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Mocha2007/mocha2007.github.io/issues"
+  },
+  "homepage": "https://github.com/Mocha2007/mocha2007.github.io#readme"
+}

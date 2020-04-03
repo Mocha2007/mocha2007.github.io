@@ -1,5 +1,5 @@
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
-"use strict";
+'use strict';
 var subtitles =	[
 	'Math, &#x1F44F; Cities, &#x1F44F; Math &#x1F44F; &rsquo;n Cities! &#x1F44F;',
 	// vaguely linguistics/language
