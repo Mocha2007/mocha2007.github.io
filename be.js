@@ -1,30 +1,26 @@
+/* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
+/* exported tabledelta, vowelstats */
+"use strict";
 var alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
 function freqcalc(){
-	"use strict";
+	/** @type {number[]} */
 	var letterindex = [];
-	var corpus, count, letter;
 	var bigdick = '';
-	var corpora = document.getElementsByClassName('corpus');
-	for (var i in corpora){
-		corpus = corpora[i];
-		try {
-			bigdick += corpus.innerHTML.toLowerCase();
-		}
-		catch (TypeError){
-			break;
-		}
-	}
+	/** @type {(HTMLParagraphElement|HTMLPreElement)[]} */
+	var corpora = Array.prototype.slice.call(document.getElementsByClassName('corpus'));
+	corpora.forEach(function (corpus){
+		bigdick += corpus.innerHTML.toLowerCase();
+	});
 	var s = 0;
-	for (var j in alphabet){
-		letter = alphabet[j];
-		count = (bigdick.match(new RegExp(letter,'g')) || []).length;
+	alphabet.split('').forEach(function (letter){
+		var count = (bigdick.match(new RegExp(letter,'g')) || []).length;
 		letterindex[letter] = count;
 		s += count;
-	}
+	});
 	document.getElementById('lettercount').innerHTML = s;
 	document.getElementById('wordcount').innerHTML = (bigdick.match(/\s/g)).length;
-	for (var k in letterindex){
+	for (var k in letterindex){ // for no fucking reason a foreach breaks this
 		letterindex[k] = letterindex[k]/s;
 		letterindex[k] = Math.round(letterindex[k]*100000)/1000;
 	}
@@ -34,12 +30,10 @@ function freqcalc(){
 var oof = freqcalc();
 
 function delta(a,b){
-	"use strict";
 	return (b>a)?Math.round(100*(b/a-1)):Math.round(100*(1-b/a));
 }
 
 function tabledelta(){
-	"use strict";
 	var child,bef,aft;
 	var t = document.getElementById('letterstats');
 	for (var i in t.children[0].children){
@@ -65,7 +59,6 @@ function tabledelta(){
 }
 
 function getIPA(matchstring){
-	"use strict";
 	// matchstring is a match like "aad" or "ang"
 	// it NEEDS the next two characters
 	switch (matchstring.charAt(0)){
@@ -141,7 +134,6 @@ function getIPA(matchstring){
 }
 
 function getvowels(corpus){
-	"use strict";
 	// returns an array of all vowelthingies
 	corpus = corpus.toLowerCase();
 	corpus = corpus.replace('ng', 'N');
@@ -152,9 +144,7 @@ function getvowels(corpus){
 }
 
 function vowelstats(){
-	"use strict";
-	var letterindex = [];
-	var corpus, count, letter;
+	var corpus;
 	var bigdick = '';
 	var corpora = document.getElementsByClassName('corpus');
 	for (var i in corpora){
