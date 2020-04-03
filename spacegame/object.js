@@ -264,7 +264,7 @@ class Clade extends Instance{
 			['domain', 10],
 			['kingdom', 20],
 			['phylum', 30],
-			['division', 30], // botanical def.
+			['division', 30], // botanical def., otherwise b/w 40 and 50
 			['class', 40],
 			['legion', 50], // zoology only
 			['cohort', 60], // zoology only
@@ -272,8 +272,8 @@ class Clade extends Instance{
 			['family', 80],
 			['tribe', 90],
 			['genus', 100],
-			['section', 110], // botanical def.
-			['series', 120], // botanical def.
+			['section', 110], // botanical def., otherwise b/w 70 and 80
+			['series', 120], // botanical def., zoology subfield defs too complex to code anyways
 			['species', 130],
 			['variety', 140], // botany only
 			['form', 150], // botanical def., but doesn't matter overall
