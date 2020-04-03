@@ -326,6 +326,6 @@ function bonus(){
 		'<br/>'+maya()+'<br/>JD '+jd().toFixed(3)+'<br/>'+darian();
 }
 
-setInterval('oneiaTime()', 100);
+setInterval(oneiaTime, 100);
 bonus();
 holidayCSS();
