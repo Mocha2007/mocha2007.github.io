@@ -51,6 +51,10 @@
 			<br>
 			<label for="fps">FPS</label>
 			<input type="number" id="fps" min="1" max="60" value="20" onclick="game.settings.fps = parseInt(document.getElementById('fps').value);">
+			<br>
+			<label for="autosaveInterval">Autosave Interval (s)</label>
+			<input type="number" id="autosaveInterval" min="1" max="60" value="30"
+				onclick="game.settings.autosaveInterval = 1000*parseInt(document.getElementById('autosaveInterval').value);">
 		</div>
 		<div id="statPage">
 			<h2>Basic</h2>

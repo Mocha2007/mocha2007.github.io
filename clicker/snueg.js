@@ -1,7 +1,7 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true, nonew: false */
 /* exported delete_cookie, downloadSave, guide, importSave, main, prestige, snuegButton */
 "use strict";
-var version = "a200402";
+var version = "a200403";
 
 // classes
 
@@ -1145,6 +1145,7 @@ function gameTick(){
 	// production
 	game.buildings.forEach(building => building.produce(t));
 	updateSnuegCount();
+	setTimeout(gameTick, 1000/game.settings.fps);
 }
 
 function guide(){
@@ -1297,6 +1298,7 @@ function redrawInterface(){
 	// autosave notification
 	var autosaveCountdown = Math.floor((+game.player.lastSave + game.settings.autosaveInterval - new Date())/1000);
 	document.getElementById('autosave').innerHTML = "autosave in " + autosaveCountdown + "s";
+	setTimeout(redrawInterface, 1000/game.settings.fps);
 }
 
 /**
@@ -1324,6 +1326,7 @@ function saveGame(isManual = false){
 	if (isManual){
 		log("Successfully manually saved game!");
 	}
+	setTimeout(saveGame, game.settings.autosaveInterval);
 }
 
 // https://stackoverflow.com/a/2956980/2579798
@@ -1445,10 +1448,10 @@ function main(){
 		saveGame();
 	}
 	// set up ticks
-	setInterval(redrawInterface, 1000/game.settings.fps);
-	setInterval(gameTick, 1000/game.settings.fps);
+	setTimeout(redrawInterface, 1000/game.settings.fps);
+	setTimeout(gameTick, 1000/game.settings.fps);
 	setInterval(nonEssentialUpdate, game.settings.nonEssentialUpdateInterval);
-	setInterval(saveGame, game.settings.autosaveInterval);
+	setTimeout(saveGame, game.settings.autosaveInterval);
 	setInterval(news, game.settings.newsUpdateInterval);
 	// set up buildings
 	document.getElementById("building_panel").innerHTML = "";
