@@ -1,18 +1,18 @@
-var stack,valency,x;
-
-function reset(){
-	stack = [];
-	return false;
-}
+/* eslint-disable no-var */
+/* jshint esversion: 3, strict: true, strict: global, eqeqeq: true, nonew: false */
+/* exported parse */
+'use strict';
 
 function parse(){
-	reset();
+	/** @type {string[]} */
+	var stack = [];
+	/** @type {string[]} */
 	var input = document.getElementById('text').value.split(' ');
 	input.reverse();
 	while (input.length){
-		x = input.pop();
-		if (x !== ''){
-			valency = 0;
+		var x = input.pop();
+		if (x){
+			var valency = 0;
 			while (input[input.length-1] === 'ba'){
 				input.pop();
 				valency += 1;
@@ -21,5 +21,4 @@ function parse(){
 		}
 	}
 	document.getElementById('translation').innerHTML = stack.join(' ');
-	return false;
 }
