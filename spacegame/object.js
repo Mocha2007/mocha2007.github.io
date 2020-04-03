@@ -273,7 +273,7 @@ class Clade extends Instance{
 			['tribe', 90],
 			['genus', 100],
 			['section', 110], // botanical def., otherwise b/w 70 and 80
-			['series', 120], // botanical def., zoology subfield defs too complex to code anyways
+			['series', 120], // botanical def., ichthyological and lepidopterological defs too complex to code anyways
 			['species', 130],
 			['variety', 140], // botany only
 			['form', 150], // botanical def., but doesn't matter overall
