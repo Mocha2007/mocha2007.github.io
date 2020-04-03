@@ -1207,7 +1207,11 @@ function nonEssentialUpdate(){
 		building => building.updateAffordability()
 	);
 	game.upgrades.forEach(
-		upgrade => upgrade.updateAffordability()
+		upgrade => {
+			if (!upgrade.purchased){
+				upgrade.updateAffordability();
+			}
+		}
 	);
 }
 
