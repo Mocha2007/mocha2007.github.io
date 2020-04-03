@@ -10,13 +10,18 @@ function main(){
 // abstract
 
 class Instance{
-	/**
-	 * @param {string} name
-	 * @param {any[]} children
-	*/
-	constructor(name, children){
+	/** @param {string} name */
+	constructor(name){
 		this.name = name;
-		this.children = children;
+		/** @type {Set<Instance>} */
+		this.children = new Set();
+		/** @type {Set<Instance>} */
+		this.parents = new Set();
+	}
+	/** @param {Instance} child */
+	add(child){
+		child.parents.add(this);
+		this.children.add(child);
 	}
 }
 
@@ -278,6 +283,6 @@ var earth = new CelestialBody("earth",
 var phoenix = new Person(new PersonalName(new Name("Phoenix")));
 phoenix.mother = phoenix.father = phoenix;
 
-universe.children = [earth];
+universe.add(earth);
 
 console.log(universe);
