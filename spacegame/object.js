@@ -141,6 +141,10 @@ class CelestialBody extends Instance{
 // peepl
 
 class PersonalName{
+	/**
+	 * @param {string} given
+	 * @param {string} family
+	*/
 	constructor(given, family) {
 		this.given = given;
 		this.family = family;
@@ -148,16 +152,26 @@ class PersonalName{
 }
 
 class Vital{
+	/**
+	 * @param {Date} birth
+	 * @param {Date} death
+	*/
 	constructor(birth, death) {
 		this.birth = birth;
 		this.death = death;
 	}
 	get ageAtDeath(){
-		return new Time((death - birth)/1000);
+		return new Time((this.death - this.birth)/1000);
 	}
 }
 
 class Person{
+	/**
+	 * @param {PersonalName} name
+	 * @param {Person} mother
+	 * @param {Person} father
+	 * @param {Vital} vital
+	*/
 	constructor(name, mother, father, vital) {
 		this.name = name;
 		this.mother = mother;
@@ -167,6 +181,10 @@ class Person{
 	get parents(){
 		return [this.father, this.mother];
 	}
+	/**
+	 * @param {number} n
+	 * @return {Person[]}
+	*/
 	generation(n){
 		if (n === 0){
 			return [this];
