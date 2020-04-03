@@ -9,9 +9,13 @@
         "SharedArrayBuffer": "readonly"
     },
     "parserOptions": {
-        "ecmaVersion": 2018
+        "ecmaVersion": 6
     },
     "rules": {
+        // "default-case-last": 1,
+        "default-param-last": 1,
+        "dot-notation": 1,
+        "eqeqeq": 1,
         "indent": [
             "error",
             "tab",
@@ -23,6 +27,16 @@
             "error",
             "windows"
         ],
+        "no-constructor-return": 1,
+        "no-else-return": 1,
+        "no-extra-parens": 1,
+        "no-labels": 1,
+        "no-self-compare": 1,
+        "no-sequences": 1,
+        "no-shadow": 1,
+        "no-useless-concat": 1,
+        "no-useless-return": 1,
+        "no-void": 1,
         "quotes": [
             "error",
             "single"
@@ -30,6 +44,113 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "strict": [
+            "warn",
+            "global"
+        ],
+        "yoda": [
+            "warn",
+            "never",
+            {
+                "onlyEquality": true
+            }
+        ],
+        // style
+        "array-bracket-newline": [
+            "warn",
+            "consistent"
+        ],
+        "array-bracket-spacing": [
+            "warn",
+            "never"
+        ],
+        "block-spacing": [
+            "warn",
+            "never"
+        ],
+        "brace-style": [
+            "warn",
+            "stroustrup"
+        ],
+        "camelcase": 1,
+        "comma-dangle": [
+            "warn",
+            "always-multiline"
+        ],
+        "comma-spacing": [
+            "warn",
+            {
+                "after": true,
+                "before": false
+            }
+        ],
+        "func-call-spacing": [
+            "warn",
+            "never"
+        ],
+        "key-spacing": [
+            "warn",
+            {
+                "afterColon": true,
+                "beforeColon": false
+            }
+        ],
+        "keyword-spacing": [
+            "warn",
+            {
+                "overrides": {
+                    "else": {
+                        "after": true
+                    }
+                }
+            }
+        ],
+        "max-len": [
+            "warn",
+            {
+                "code": 100,
+                "ignoreComments": true,
+                "ignoreStrings": true,
+                "ignoreUrls": true
+            }
+        ],
+        "new-cap": 1,
+        "no-lonely-if": 1,
+        "no-trailing-spaces": 1,
+        "no-unneeded-ternary": 1,
+        "padded-blocks": [
+            "warn",
+            "never"
+        ],
+        /* I like to sort non-functions before functions... sorry...
+        "sort-keys": [
+            "warn",
+            "asc",
+            {
+                "natural": true
+            }
+        ],
+        */
+        "sort-vars": 1,
+        "space-before-blocks": [
+            "warn",
+            {
+                "functions": "never",
+                "keywords": "never",
+                "classes": "always"
+            }
+        ],
+        "space-before-function-paren": [
+            "warn",
+            "never"
+        ],
+        "space-in-parens": [
+            "warn",
+            "never"
+        ],
+        "switch-colon-spacing": 1,
+        "no-var": 1,
+        "prefer-const": 1
     }
 }

@@ -1,11 +1,11 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true, nonew: false */
-/* exported delete_cookie, downloadSave, guide, importSave, main, prestige, snuegButton */
+/* exported deleteCookie, downloadSave, guide, importSave, main, prestige, snuegButton */
 'use strict';
-var version = 'a200403';
+const version = 'a200403';
 
 // classes
 
-class Purchase{
+class Purchase {
 	/**
 	 * Buildings to improve snueg production
 	 * @param {string} name - Name of the building
@@ -22,7 +22,7 @@ class Purchase{
 	// getters
 	/** @returns {boolean} true if the player can afford to purchase another of this building */
 	get canAfford(){
-		return this.next_price <= game.player.snueg;
+		return this.nextPrice <= game.player.snueg;
 	}
 	/** @returns {string} id of buy button */
 	get elementId(){
@@ -37,7 +37,7 @@ class Purchase{
 	/** @returns {boolean} success */
 	buy(){
 		if (this.canAfford){
-			game.player.snueg -= this.next_price;
+			game.player.snueg -= this.nextPrice;
 			this.addToPlayer(1);
 			this.updateElement();
 			this.onPurchase();
@@ -45,7 +45,7 @@ class Purchase{
 			return true;
 		}
 		log('Player tried to buy 1 ' + this.name + ', but did not have enough snueg. (' +
-			game.player.snueg + ' < ' + this.next_price + ')');
+			game.player.snueg + ' < ' + this.nextPrice + ')');
 		return false;
 	}
 	buyBye(){
@@ -55,7 +55,7 @@ class Purchase{
 	}
 	updateAffordability(){
 		/** @type {HTMLDivElement} */
-		var element = document.getElementById(this.elementId);
+		const element = document.getElementById(this.elementId);
 		if (this.canAfford){
 			element.classList.remove('cantAfford');
 			element.classList.add('canAfford');
@@ -70,17 +70,17 @@ class Purchase{
 	}
 }
 
-class Building extends Purchase{
+class Building extends Purchase {
 	/**
 	 * Buildings to improve snueg production
 	 * @param {string} name - Name of the building
-	 * @param {number} base_price - Base price of the building, increases 15% each purchase
+	 * @param {number} basePrice - Base price of the building, increases 15% each purchase
 	 * @param {number} production - In snueg
 	 * @param {string} desc - Description of the building, given in the tooltip
 	 * @param {function} onPurchase - Function to play on purchase
 	*/
-	constructor(name, base_price, production, desc = '', onPurchase = () => {}){
-		super(name, base_price, desc, onPurchase);
+	constructor(name, basePrice, production, desc = '', onPurchase = () => {}){
+		super(name, basePrice, desc, onPurchase);
 		this.production = production;
 	}
 	// getters
@@ -97,33 +97,33 @@ class Building extends Purchase{
 	}
 	/** @returns {boolean} true if the player can afford to purchase another of this building */
 	get canAfford(){
-		return this.next_price <= game.player.snueg;
+		return this.nextPrice <= game.player.snueg;
 	}
 	/** @returns {HTMLDivElement} buy button */
 	get createElement(){
 		// button
-		var buy_button = document.createElement('div');
-		buy_button.classList.add('buy_button');
-		buy_button.id = this.elementId;
-		buy_button.onclick = () => this.buy();
-		buy_button.onmousemove = () => this.tooltip();
-		buy_button.onmouseout = () => clearTooltip();
+		const buyButton = document.createElement('div');
+		buyButton.classList.add('buy_button');
+		buyButton.id = this.elementId;
+		buyButton.onclick = () => this.buy();
+		buyButton.onmousemove = () => this.tooltip();
+		buyButton.onmouseout = () => clearTooltip();
 		// amount
-		var item_amount = document.createElement('span');
-		item_amount.classList.add('item_amount');
-		item_amount.innerHTML = this.amount;
-		buy_button.appendChild(item_amount);
+		const itemAmount = document.createElement('span');
+		itemAmount.classList.add('item_amount');
+		itemAmount.innerHTML = this.amount;
+		buyButton.appendChild(itemAmount);
 		// name
-		var item_name = document.createElement('span');
-		item_name.classList.add('item_name');
-		item_name.innerHTML = this.name;
-		buy_button.appendChild(item_name);
+		const itemName = document.createElement('span');
+		itemName.classList.add('item_name');
+		itemName.innerHTML = this.name;
+		buyButton.appendChild(itemName);
 		// price
-		var item_price = document.createElement('span');
-		item_price.classList.add('item_price');
-		item_price.innerHTML = bigNumber(this.next_price, true);
-		buy_button.appendChild(item_price);
-		return buy_button;
+		const itemPrice = document.createElement('span');
+		itemPrice.classList.add('item_price');
+		itemPrice.innerHTML = bigNumber(this.nextPrice, true);
+		buyButton.appendChild(itemPrice);
+		return buyButton;
 	}
 	/** @returns {number} index of this in game.buildings */
 	get id(){
@@ -138,8 +138,8 @@ class Building extends Purchase{
 		return game.player.buildingClicks[this.id];
 	}
 	/** @returns {number} cost to buy another of these buildings */
-	get next_price(){
-		return this.price_at(this.amount);
+	get nextPrice(){
+		return this.priceAt(this.amount);
 	}
 	/** @returns {number} fraction of total production provided by these buildings */
 	get productionFraction(){
@@ -147,7 +147,7 @@ class Building extends Purchase{
 	}
 	/** @returns {Upgrade[]} upgrades affecting this building */
 	get relevantUpgrades(){
-		var upgrades = [];
+		const upgrades = [];
 		game.upgrades.forEach(upgrade => {
 			if (upgrade.targets.includes(this.id)){
 				upgrades.push(upgrade);
@@ -161,7 +161,7 @@ class Building extends Purchase{
 	}
 	/** @returns {number} bonus from relevant upgrades */
 	get upgradeBonus(){
-		var bonus = 1;
+		let bonus = 1;
 		this.relevantUpgrades.forEach(upgrade => {
 			if (upgrade.purchased){
 				bonus *= upgrade.bonus;
@@ -186,19 +186,19 @@ class Building extends Purchase{
 	 * @param {number} n number of buildings already purchased
 	 * @return {number} price after already having n buildings
 	*/
-	price_at(n){
+	priceAt(n){
 		return round(this.price * Math.pow(1.15, n));
 	}
 	/** @param {number} time simulate the production of these buildings over time */
 	produce(time){
-		var snueg = this.totalProduction*time;
+		const snueg = this.totalProduction*time;
 		addSnueg(snueg);
 		// add to records
 		this.record(snueg);
 	}
 	/** @param {number} snueg amount of snuegs to record this building as having produced */
 	record(snueg){
-		var id = this.id;
+		const id = this.id;
 		if (game.player.buildingClicks[id] === undefined){
 			game.player.buildingClicks[id] = snueg;
 		}
@@ -209,19 +209,22 @@ class Building extends Purchase{
 	tooltip(){
 		// function to update the tooltip
 		/** @type {HTMLDivElement} */
-		var div = tooltip();
+		const div = tooltip();
 		// text
 		div.innerHTML = '<b>' + this.name + '</b>';
-		div.innerHTML += '<b style="float: right;">' + bigNumber(this.next_price, true) + '</b><br>';
+		div.innerHTML += '<b style="float: right;">' + bigNumber(this.nextPrice, true) + '</b><br>';
 		div.innerHTML += this.desc;
 		// item stats
-		var ul = document.createElement('ul');
+		const ul = document.createElement('ul');
 		div.appendChild(ul);
-		var li = document.createElement('li');
-		li.innerHTML = 'each ' + this.name + ' produces <b>' + bigNumber(this.individualProduction) + '</b> snueg per second';
+		let li = document.createElement('li');
+		li.innerHTML = 'each ' + this.name + ' produces <b>' +
+			bigNumber(this.individualProduction) + '</b> snueg per second';
 		ul.appendChild(li);
 		li = document.createElement('li');
-		li.innerHTML = this.amount + ' ' + this.name + ' producing <b>' + bigNumber(this.totalProduction) + '</b> snueg per second (<b>' + (100*this.productionFraction).toFixed(1)+ '%</b> of total SpS)';
+		li.innerHTML = this.amount + ' ' + this.name + ' producing <b>' +
+			bigNumber(this.totalProduction) + '</b> snueg per second (<b>' +
+			(100*this.productionFraction).toFixed(1)+ '%</b> of total SpS)';
 		ul.appendChild(li);
 		li = document.createElement('li');
 		li.innerHTML = bigNumber(this.lifetimeProduction, true) + ' snuegs so far';
@@ -230,7 +233,7 @@ class Building extends Purchase{
 	// debug statistics
 	/** @returns {number} if purchased now, the time it takes to pay itself off */
 	get roiTime(){
-		return this.next_price / this.individualProduction;
+		return this.nextPrice / this.individualProduction;
 	}
 	/** @returns {number} total seconds, from now, needed to pay itself off */
 	get roiWaitTime(){
@@ -238,11 +241,11 @@ class Building extends Purchase{
 	}
 	/** @returns {number} seconds needed to afford */
 	get waitTime(){
-		return Math.max(0, (this.next_price - game.player.snueg) / game.production);
+		return Math.max(0, (this.nextPrice - game.player.snueg) / game.production);
 	}
 }
 
-class Upgrade extends Purchase{
+class Upgrade extends Purchase {
 	/**
 	 * Upgrades to improve snueg production
 	 * @param {string} name - Name of the upgrade
@@ -262,22 +265,22 @@ class Upgrade extends Purchase{
 	/** @returns {HTMLDivElement} buy button */
 	get createElement(){
 		// button
-		var buy_button = document.createElement('div');
-		buy_button.classList.add('upgrade_buy_button');
-		buy_button.id = this.elementId;
-		buy_button.onclick = () => this.buyBye();
-		buy_button.onmousemove = () => this.tooltip();
-		buy_button.onmouseout = () => clearTooltip();
+		const buyButton = document.createElement('div');
+		buyButton.classList.add('upgrade_buy_button');
+		buyButton.id = this.elementId;
+		buyButton.onclick = () => this.buyBye();
+		buyButton.onmousemove = () => this.tooltip();
+		buyButton.onmouseout = () => clearTooltip();
 		// name
-		buy_button.innerHTML = this.textIcon;
-		return buy_button;
+		buyButton.innerHTML = this.textIcon;
+		return buyButton;
 	}
 	/** @returns {number} index of this in game.upgrades */
 	get id(){
 		return game.upgrades.indexOf(this);
 	}
 	/** @returns {number} upgrade price */
-	get next_price(){
+	get nextPrice(){
 		return this.price;
 	}
 	/** @returns {boolean} is this upgrade purchased? */
@@ -286,7 +289,7 @@ class Upgrade extends Purchase{
 	}
 	/** @returns {string} desc string for special abilities */
 	get specialString(){
-		var specials = '';
+		let specials = '';
 		if (this.special.includes('mouse')){
 			specials += '<li>Also increases production from clicking by this much.</li>';
 		}
@@ -311,16 +314,17 @@ class Upgrade extends Purchase{
 	}
 	tooltip(){
 		// function to update the tooltip
-		var div = tooltip();
+		const div = tooltip();
 		// text
 		div.innerHTML = '<b>' + this.name + '</b>';
 		div.innerHTML += '<b style="float: right;">' + bigNumber(this.price, true) + '</b><br>';
 		div.innerHTML += this.desc;
 		// item stats
-		var ul = document.createElement('ul');
+		const ul = document.createElement('ul');
 		div.appendChild(ul);
-		var li = document.createElement('li');
-		li.innerHTML = 'improves production of each ' + this.targetNames.join(' and ') + ' by ' + bigNumber((this.bonus-1)*100, true) + '%';
+		const li = document.createElement('li');
+		li.innerHTML = 'improves production of each ' + this.targetNames.join(' and ') + ' by ' +
+			bigNumber((this.bonus-1)*100, true) + '%';
 		ul.appendChild(li);
 		ul.innerHTML += this.specialString;
 	}
@@ -342,7 +346,7 @@ class Particle {
 		this.lifespan = lifespan;
 		setIntervalX(() => tick(element), 1000/game.settings.fps, lifespan*game.settings.fps);
 		setTimeout(() => {
-			try{
+			try {
 				document.getElementById(element.id).remove();
 			}
 			catch (TypeError){
@@ -361,15 +365,16 @@ class FlyingText extends Particle {
 	 * @param {number} y - y coord of location
 	*/
 	constructor(text, x, y){
-		var particleElement = document.createElement('div');
+		const particleElement = document.createElement('div');
 		particleElement.style.left = x + 'px';
 		particleElement.style.top = y + 'px';
 		particleElement.style.opacity = '1';
 		particleElement.innerHTML = text;
 		super(particleElement,
 			element => {
-				element.style.top = (parseInt(element.style.top.replace('px', '')) - 10) + 'px';
-				element.style.left = (parseInt(element.style.left.replace('px', '')) + game.random.uniform(-8, 8)) + 'px';
+				element.style.top = parseInt(element.style.top.replace('px', '')) - 10 + 'px';
+				element.style.left = parseInt(element.style.left.replace('px', '')) +
+					game.random.uniform(-8, 8) + 'px';
 				element.style.opacity = parseFloat(element.style.opacity) * 0.9;
 			},
 			1);
@@ -412,7 +417,7 @@ class Video {
 	 * @return {string} video url
 	*/
 	get url(){
-		var u = 'https://www.youtube.com/embed/' + this.id + '?autoplay=1';
+		let u = 'https://www.youtube.com/embed/' + this.id + '?autoplay=1';
 		if (this.startTime !== 0){
 			u += '&start=' + this.startTime;
 		}
@@ -423,7 +428,7 @@ class Video {
 	}
 }
 
-class Achievement{
+class Achievement {
 	/**
 	 * @param {string} name
 	 * @param {string} desc
@@ -440,7 +445,7 @@ class Achievement{
 	/** @returns {HTMLDivElement} achievement button */
 	get element(){
 		// button
-		var div = document.createElement('div');
+		const div = document.createElement('div');
 		div.classList.add('upgrade_buy_button');
 		div.id = 'achievement_' + this.name;
 		div.onmousemove = () => this.tooltip();
@@ -460,7 +465,7 @@ class Achievement{
 	/** @returns {HTMLDivElement} achievement button */
 	get unearnedElement(){
 		// button
-		var div = this.element;
+		const div = this.element;
 		div.classList.add('unearnedAchievement');
 		div.innerHTML = '?';
 		div.style.color = 'red';
@@ -475,7 +480,7 @@ class Achievement{
 	}
 }
 
-class AchievementSeries{
+class AchievementSeries {
 	/**
 	 * @param {string} nameFunction
 	 * @param {string} descFunction
@@ -490,14 +495,15 @@ class AchievementSeries{
 	}
 	get array(){
 		return range(this.max).map(
-			i => new Achievement(this.nameFunction(i), this.descFunction(i), this.criteriaFunctionFunction(i))
+			i => new Achievement(this.nameFunction(i), this.descFunction(i),
+				this.criteriaFunctionFunction(i))
 		);
 	}
 }
 
 // rpg classes
 
-class RPGFloor{
+class RPGFloor {
 	/**
 	 * @param {string} color - color used for the background
 	 * @param {string} name
@@ -509,13 +515,13 @@ class RPGFloor{
 		this.desc = desc;
 	}
 	get element(){
-		var span = document.createElement('span');
+		const span = document.createElement('span');
 		span.style.backgroundColor = this.color;
 		return span;
 	}
 }
 
-class RPGObject{
+class RPGObject {
 	/**
 	 * @param {string} icon - character(s) to use (will be ONE character, randomly chosen)
 	 * @param {string} color
@@ -531,14 +537,14 @@ class RPGObject{
 		this.hp = hp;
 	}
 	get element(){
-		var span = document.createElement('span');
+		const span = document.createElement('span');
 		span.innerHTML = game.random.choice(this.icon);
 		span.style.color = game.random.choice(this.color.split(' '));
 		return span;
 	}
 }
 
-class RPGEntity extends RPGObject{
+class RPGEntity extends RPGObject {
 	/**
 	 * @param {string} icon - character(s) to use (will be ONE character, randomly chosen)
 	 * @param {string} color
@@ -553,7 +559,7 @@ class RPGEntity extends RPGObject{
 	}
 }
 
-class RPGTile{
+class RPGTile {
 	/**
 	 * @param {RPGFloor} floor - floor of tile
 	 * @param {RPGObject} object - object/creature standing on tile
@@ -563,7 +569,7 @@ class RPGTile{
 		this.object = object;
 	}
 	get element(){
-		var span = this.floor.element;
+		const span = this.floor.element;
 		span.appendChild(this.object.element);
 		span.onmousemove = () => this.tooltip();
 		span.onmouseout = () => clearTooltip();
@@ -571,15 +577,14 @@ class RPGTile{
 	}
 	tooltip(){
 		// function to update the tooltip
-		var innerHTML = this.object.name + ', ' + this.floor.name;
+		const innerHTML = this.object.name + ', ' + this.floor.name;
 		tooltip(innerHTML);
 	}
 }
 
 // snuegworld classes
 /*
-
-class Snuegworld{
+class Snuegworld {
 	/**
 	 * @param {string} name
 	 * @param {SnuegworldResource[]} input
@@ -592,7 +597,7 @@ class Snuegworld{
 	}
 }
 
-class SnuegworldResource{
+class SnuegworldResource {
 	/**
 	 * @param {string} name
 	 * @param {HTMLElement} icon
@@ -607,7 +612,7 @@ class SnuegworldResource{
 
 // constants
 
-var game = {
+const game = {
 	get globalBonus(){
 		return 1 + 0.01 * game.player.prestige;
 	},
@@ -616,7 +621,7 @@ var game = {
 		if (game.player.lifetimeSnueg <= 0){
 			return 1e9;
 		}
-		var nextNumber = game.thisPrestigeNumber + 1;
+		const nextNumber = game.thisPrestigeNumber + 1;
 		return Math.pow(nextNumber, 5) * 1e9;
 	},
 	get production(){
@@ -666,8 +671,10 @@ var game = {
 	mouse: {
 		/** @returns {number} base clicks from relevant upgrades */
 		get base(){
-			var fromProduction = game.production * 
-				sum(game.upgrades.map(upgrade => upgrade.special.includes('fromProduction') && upgrade.purchased ? upgrade.bonus : 0));
+			const fromProduction = game.production *
+				sum(game.upgrades.map(upgrade =>
+					upgrade.special.includes('fromProduction') && upgrade.purchased ? upgrade.bonus : 0
+				));
 			return 1 + fromProduction;
 		},
 		/** @returns {number} bonus from relevant upgrades */
@@ -731,8 +738,7 @@ var game = {
 			return Math.random() * (max-min) + min;
 		},
 	},
-	rpg : {
-		worldSize: 16,
+	rpg: {
 		entities: [
 			new RPGEntity('f', 'maroon', 'Fox', 10, 2),
 		],
@@ -746,6 +752,7 @@ var game = {
 			new RPGObject('.', 'grey darkgrey silver', 'Pebble'),
 			new RPGObject('O', 'brown', 'Tree'),
 		],
+		worldSize: 16,
 		toggle(){
 			document.getElementById('rpg').style.display = document.getElementById('rpg').style.display === 'block' ? 'none' : 'block';
 		},
@@ -755,12 +762,12 @@ var game = {
 			}
 		},
 		worldGen(){
-			var world = document.createElement('div');
+			const world = document.createElement('div');
 			range(this.worldSize).map(row => {
 				range(this.worldSize).map(col => {
-					var floor = game.random.choice(this.floors);
-					var object = game.random.choice(this.objects);
-					var element = (new RPGTile(floor, object)).element;
+					const floor = game.random.choice(this.floors);
+					const object = game.random.choice(this.objects);
+					const element = new RPGTile(floor, object).element;
 					element.id = 'rpgTile' + row + '-' + col;
 					world.appendChild(element);
 				});
@@ -768,7 +775,7 @@ var game = {
 			});
 			document.getElementById('rpgdisp').innerHTML = '';
 			document.getElementById('rpgdisp').appendChild(world);
-		}
+		},
 	},
 	settings: {
 		autosaveInterval: 30 * 1000,
@@ -926,7 +933,7 @@ var game = {
 		skip(){
 			this.skips += 1;
 			this.play();
-		}
+		},
 	},
 	powerOverwhelming(){
 		// unlock all achievements
@@ -948,7 +955,7 @@ var game = {
 		this.player.upgrades = [];
 	},
 	spawnSnugBug(){
-		var element = document.createElement('span');
+		const element = document.createElement('span');
 		element.innerHTML = game.random.choice(['🐞', '🐛', '🐜', '🐝']);
 		element.classList.add('snugBug');
 		element.onclick = () => {
@@ -961,25 +968,25 @@ var game = {
 		element.style.left = this.random.randint(window.screen.width*0.1, window.screen.width*0.7) + 'px';
 		element.style.top = this.random.randint(window.screen.height*0.1, window.screen.height*0.9) + 'px';
 		element.style.opacity = 1;
-		var tick = e => {
-			e.style.top = (parseInt(e.style.top.replace('px', '')) + this.random.uniform(-20, 20)) + 'px';
-			e.style.left = (parseInt(e.style.left.replace('px', '')) + this.random.uniform(-20, 20)) + 'px';
+		const tick = e => {
+			e.style.top = parseInt(e.style.top.replace('px', '')) + this.random.uniform(-20, 20) + 'px';
+			e.style.left = parseInt(e.style.left.replace('px', '')) + this.random.uniform(-20, 20) + 'px';
 			e.style.opacity = parseFloat(e.style.opacity) * 0.99;
 		};
 		new Particle(element, tick, 10);
 	},
 	toggleSettings(){
 		/** @type {HTMLDivElement} */
-		var element = document.getElementById('settingsPage');
+		const element = document.getElementById('settingsPage');
 		element.style.display = element.style.display === 'block' ? 'none' : 'block';
 		log('settings page toggled');
 	},
 	toggleStats(){
 		/** @type {HTMLDivElement} */
-		var element = document.getElementById('statPage');
+		const element = document.getElementById('statPage');
 		element.style.display = element.style.display === 'block' ? 'none' : 'block';
 		log('stat page toggled');
-	}
+	},
 };
 // must be defined after game is defined since game.buildings isn't defined yet
 game.achievementSeries = [
@@ -1022,7 +1029,7 @@ game.achievementSeries = [
 	new AchievementSeries(
 		n => bigNumber(Math.pow(10, n), true) + ' minute' + (n ? 's': '') + ' played',
 		n => 'Play snueg clicker for ' + bigNumber(Math.pow(10, n), true) + ' minute' + (n ? 's': ''),
-		n => () => Math.pow(10, n) <= (new Date() - game.player.startTime)/(60000),
+		n => () => Math.pow(10, n) <= (new Date() - game.player.startTime)/60000,
 		6
 	),
 	// 10^n prestigeing achievement series
@@ -1041,9 +1048,9 @@ game.achievementSeries = [
 	),
 	// 25n upgrade series
 	new AchievementSeries(
-		n => (25*n + 25) + ' upgrades bought',
+		n => 25*n + 25 + ' upgrades bought',
 		n => 'Buy ' + (25*n + 25) + ' upgrades',
-		n => () => (25*n + 25) <= game.player.upgrades.length,
+		n => () => 25*n + 25 <= game.player.upgrades.length,
 		1
 	),
 ];
@@ -1051,23 +1058,23 @@ game.achievementSeries = [
 // functions
 
 // cookie shit (borrowed from spacegame's main.js)
-function delete_cookie(name) {
+function deleteCookie(name){
 	document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
 }
-function read_cookie(name){ // https://stackoverflow.com/a/11344672/2579798
-	var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
+function readCookie(name){ // https://stackoverflow.com/a/11344672/2579798
+	let result = document.cookie.match(new RegExp(name + '=([^;]+)'));
 	if (result){
 		result = JSON.parse(result[1]);
 	}
 	return result;
 }
-function write_cookie(name, value){ // https://stackoverflow.com/a/11344672/2579798
-	var cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
+function writeCookie(name, value){ // https://stackoverflow.com/a/11344672/2579798
+	const cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
 	document.cookie = cookie;
 }
 function download(content, fileName, contentType){ // https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file/34156339#34156339
-	var a = document.createElement('a');
-	var file = new Blob([content], {type: contentType});
+	const a = document.createElement('a');
+	const file = new Blob([content], {type: contentType});
 	a.href = URL.createObjectURL(file);
 	a.download = fileName;
 	a.click();
@@ -1078,7 +1085,7 @@ function importSave(){
 	location.reload();
 }
 function exportSave(){
-	var data = btoa(document.cookie);
+	const data = btoa(document.cookie);
 	log('Exported Save.');
 	return data;
 }
@@ -1101,10 +1108,10 @@ function addSnueg(amount){
  * @return {string} prettified number
 */
 function bigNumber(amount, integer = false){
-	var defaultPrefixes = ' k M B T Qa Qi Sx Sp Oc No Dc'.split(' ');
-	var siPrefixes = ' k M G T P E Z Y X W V U'.split(' ');
-	var siFull = ' kilo mega giga tera peta exa zeta yotta xenna weka vendeka udeka'.split(' ').map(i => i + 'snueg');
-	var settingVars = {
+	const defaultPrefixes = ' k M B T Qa Qi Sx Sp Oc No Dc'.split(' ');
+	const siPrefixes = ' k M G T P E Z Y X W V U'.split(' ');
+	const siFull = ' kilo mega giga tera peta exa zeta yotta xenna weka vendeka udeka'.split(' ').map(i => i + 'snueg');
+	const settingVars = {
 		default: defaultPrefixes,
 		siabbr: siPrefixes,
 		siword: siFull,
@@ -1118,9 +1125,9 @@ function bigNumber(amount, integer = false){
 	if (game.settings.numbers === 'exponential'){
 		return bigNumberExp(amount);
 	}
-	var prefixes = settingVars[game.settings.numbers];
-	var i = Math.floor(Math.log(amount)/Math.log(1000));
-	var factor = Math.pow(1000, i);
+	const prefixes = settingVars[game.settings.numbers];
+	const i = Math.floor(Math.log(amount)/Math.log(1000));
+	const factor = Math.pow(1000, i);
 	return round(amount/factor, 3).toFixed(3) + ' ' + prefixes[i];
 }
 
@@ -1129,21 +1136,21 @@ function bigNumber(amount, integer = false){
  * @return {string} prettified number
 */
 function bigNumberExp(amount){
-	var e = Math.floor(Math.log10(amount));
-	var n = amount / Math.pow(10, e);
+	const e = Math.floor(Math.log10(amount));
+	const n = amount / Math.pow(10, e);
 	return n.toFixed(3) + 'e' + e;
 }
 
 function clearTooltip(){
 	// erase current tooltip
-	var tooltip = document.getElementById('tooltip');
-	tooltip.innerHTML = '';
-	tooltip.style.top = '-5%';
-	tooltip.style.left = '0px';
+	const element = document.getElementById('tooltip');
+	element.innerHTML = '';
+	element.style.top = '-5%';
+	element.style.left = '0px';
 }
 
 function gameTick(){
-	var t = 1/game.settings.fps;
+	let t = 1/game.settings.fps;
 	// was the player away?
 	if (2*game.settings.autosaveInterval < new Date() - game.player.lastSave){
 		// offline rewards
@@ -1158,18 +1165,19 @@ function gameTick(){
 
 function guide(){
 	game.debug.guideClicks += 1;
-	var helpstring;
+	let helpstring;
 	/** @type {HTMLDivElement} */
-	var speechBubble = document.getElementById('guideSpeechBubble');
+	const speechBubble = document.getElementById('guideSpeechBubble');
 	/** @type {number} */
-	var n = game.random.randint(0, 5);
+	const n = game.random.randint(0, 5);
 	log('Guide string ' + n);
 	switch (n){
 		case 0: // upgrade advice
-			for (var i = 1; i < game.upgrades.length; i++){
-				var upgrade = game.upgrades[i];
+			for (let i = 1; i < game.upgrades.length; i++){
+				const upgrade = game.upgrades[i];
 				// most upgrades are worth 10s of production...
-				if (!upgrade.purchased && upgrade.price < Math.max(10*game.production, game.player.snueg)){
+				if (!upgrade.purchased &&
+					upgrade.price < Math.max(10*game.production, game.player.snueg)){
 					helpstring = 'The <b>' + upgrade.name + '</b> upgrade is looking pretty cheap right now... only ' + bigNumber(upgrade.price, true) + ' snueg!';
 					break;
 				}
@@ -1179,13 +1187,15 @@ function guide(){
 			}
 			/* falls through */
 		case 1: // building advice
-			var bestBuilding = game.buildings[0];
-			game.buildings.forEach(building => {
-				if (building.roiWaitTime < bestBuilding.roiWaitTime){
-					bestBuilding = building;
-				}
-			});
-			helpstring = 'I recommend purchasing the <b>' + bestBuilding.name + '</b>! It\'s the best deal right now!';
+			{ // this code block is for bestBuilding's let
+				let bestBuilding = game.buildings[0];
+				game.buildings.forEach(building => {
+					if (building.roiWaitTime < bestBuilding.roiWaitTime){
+						bestBuilding = building;
+					}
+				});
+				helpstring = 'I recommend purchasing the <b>' + bestBuilding.name + '</b>! It\'s the best deal right now!';
+			}
 			break;
 		case 2: // nonsense
 			helpstring = game.random.choice([
@@ -1256,12 +1266,12 @@ function nonEssentialUpdate(){
 
 /** @param {string} filename to play */
 function play(filename){
-	(new Audio(filename)).play();
+	new Audio(filename).play();
 }
 
 function prestige(){
 	// confirm
-	var pp = game.thisPrestigeNumber;
+	const pp = game.thisPrestigeNumber;
 	if (!confirm('Are you sure you want to prestige up? You will lose all your snueg and buildings, but will gain a permanent ' +
 		pp + '% boost to your snueg production from all sources.')){
 		return;
@@ -1288,12 +1298,12 @@ function product(array){
  * @return {HTMLDivElement} progress bar element
 */
 function progressBar(progress){
-	var progressBarContainer = document.createElement('div');
+	const progressBarContainer = document.createElement('div');
 	progressBarContainer.classList.add('progressBarContainer');
-	var progressBar = document.createElement('div');
-	progressBar.classList.add('progressBar');
-	progressBar.style.width = 100 * progress + '%';
-	progressBarContainer.appendChild(progressBar);
+	const progressBarDiv = document.createElement('div');
+	progressBarDiv.classList.add('progressBar');
+	progressBarDiv.style.width = 100 * progress + '%';
+	progressBarContainer.appendChild(progressBarDiv);
 	return progressBarContainer;
 }
 
@@ -1304,7 +1314,8 @@ function range(n){
 
 function redrawInterface(){
 	// autosave notification
-	var autosaveCountdown = Math.floor((+game.player.lastSave + game.settings.autosaveInterval - new Date())/1000);
+	const autosaveCountdown = Math.floor((+game.player.lastSave + game.settings.autosaveInterval -
+		new Date())/1000);
 	document.getElementById('autosave').innerHTML = 'autosave in ' + autosaveCountdown + 's';
 	setTimeout(redrawInterface, 1000/game.settings.fps);
 }
@@ -1325,11 +1336,11 @@ function round(number, digits = 0){
  * @param {boolean} isManual is this save manually triggered, or automatic?
 */
 function saveGame(isManual = false){
-	var saveFile = {};
+	const saveFile = {};
 	saveFile.settings = game.settings;
 	game.player.lastSave = +new Date();
 	saveFile.player = game.player;
-	write_cookie('snueg', saveFile);
+	writeCookie('snueg', saveFile);
 	game.debug.lastSave = new Date();
 	if (isManual){
 		log('Successfully manually saved game!');
@@ -1338,11 +1349,11 @@ function saveGame(isManual = false){
 }
 
 // https://stackoverflow.com/a/2956980/2579798
-function setIntervalX(callback, delay, repetitions) {
-	var x = 0;
-	var intervalID = window.setInterval(function () {
+function setIntervalX(callback, delay, repetitions){
+	let x = 0;
+	const intervalID = window.setInterval(function(){
 		callback();
-		if (++x === repetitions) {
+		if (++x === repetitions){
 			window.clearInterval(intervalID);
 		}
 	}, delay);
@@ -1350,7 +1361,7 @@ function setIntervalX(callback, delay, repetitions) {
 
 function snuegButton(){
 	// add snueg
-	var amount = game.mouse.base * game.mouse.bonus;
+	const amount = game.mouse.base * game.mouse.bonus;
 	addSnueg(amount);
 	// update snueg amount
 	updateSnuegCount();
@@ -1363,22 +1374,22 @@ function snuegButton(){
 function statUpdate(){
 	// basic stats
 	/** @type {HTMLUListElement} */
-	var statElement = document.getElementById('statPageBasic');
+	const statElement = document.getElementById('statPageBasic');
 	statElement.innerHTML = '';
-	var stats = [
+	const stats = [
 		'Lifetime Snueg: ' + game.player.lifetimeSnueg,
 		'Snugbug Clicks: ' + game.player.snugBugClicks,
 	];
 	stats.forEach(
 		stat => {
-			var li = document.createElement('li');
+			const li = document.createElement('li');
 			li.innerHTML = stat;
 			statElement.appendChild(li);
 		}
 	);
 	// blank achievements
 	/** @type {HTMLDivElement} */
-	var achievementElement = document.getElementById('statPageAchievements');
+	const achievementElement = document.getElementById('statPageAchievements');
 	achievementElement.innerHTML = '';
 	// add all achievements earned
 	game.achievements.forEach(
@@ -1386,15 +1397,15 @@ function statUpdate(){
 			if (achievement.earned){
 				achievementElement.appendChild(achievement.element);
 			}
-			else{
+			else {
 				achievementElement.appendChild(achievement.unearnedElement);
 			}
 		}
 	);
 	// update achievement progress
 	/** @type {HTMLSpanElement} */
-	var achievementProgress = document.getElementById('statAchievementProgress');
-	var percent = Math.round(100 * game.player.achievements.length / game.achievements.length);
+	const achievementProgress = document.getElementById('statAchievementProgress');
+	const percent = Math.round(100 * game.player.achievements.length / game.achievements.length);
 	achievementProgress.innerHTML = game.player.achievements.length + '/' + game.achievements.length + ' achievements earned (' + percent + '%)';
 }
 
@@ -1409,7 +1420,7 @@ function sum(array){
 */
 function tooltip(innerHTML = ''){
 	/** @type {HTMLDivElement} */
-	var div = document.getElementById('tooltip');
+	const div = document.getElementById('tooltip');
 	div.style.top = Math.min(window.event.clientY, window.innerHeight*0.85) - 25 + 'px';
 	div.style.left = window.event.clientX - 450 + 'px';
 	// text
@@ -1424,13 +1435,13 @@ function tooltip(innerHTML = ''){
 function updatePrestige(){
 	document.getElementById('prestigeNumber').innerHTML = game.thisPrestigeNumber;
 	document.getElementById('prestigeProgress').innerHTML = '';
-	var progress = game.player.lifetimeSnueg / game.nextPrestige;
+	const progress = game.player.lifetimeSnueg / game.nextPrestige;
 	document.getElementById('prestigeProgress').appendChild(progressBar(progress));
 	return progress;
 }
 
 function updateSnuegCount(){
-	var n = bigNumber(game.player.snueg, true);
+	const n = bigNumber(game.player.snueg, true);
 	document.getElementById('snueg_counter').innerHTML = n;
 	document.getElementById('snueg_production_counter').innerHTML = 'Production: ' + bigNumber(game.production) + '/s';
 	// update webpage title
@@ -1447,12 +1458,12 @@ function main(){
 	// update version div
 	document.getElementById('version').innerHTML = 'v. ' + game.debug.version;
 	// load save
-	if (read_cookie('snueg')){
-		var saveFile = read_cookie('snueg');
+	if (readCookie('snueg')){
+		const saveFile = readCookie('snueg');
 		game.player = saveFile.player;
 		game.settings = saveFile.settings;
 	}
-	else{
+	else {
 		saveGame();
 	}
 	// set up ticks
@@ -1471,7 +1482,8 @@ function main(){
 		achievementSeries => game.achievements.push(...achievementSeries.array)
 	);
 	// clones upgrade array, sorts, then adds each to document
-	game.upgrades.slice().sort((a, b) => a.price - b.price).forEach(upgrade => upgrade.addToDocument());
+	game.upgrades.slice().sort((a, b) => a.price - b.price).forEach(
+		upgrade => upgrade.addToDocument());
 	// clear tooltip
 	clearTooltip();
 	// music
