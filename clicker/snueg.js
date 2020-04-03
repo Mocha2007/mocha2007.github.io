@@ -1050,7 +1050,7 @@ function bigNumber(amount, integer = false){
 	if (amount < 1000){
 		return integer ? "" + round(amount) : amount.toFixed(3);
 	}
-	var prefixes = " k M B T Qa Qi Sx Sp Oc No Dc".split(" "); // todo add more varieties for settings: SI, 1.0e10, ...
+	var prefixes = " k M B T Qa Qi Sx Sp Oc No Dc".split(" ");
 	var i = Math.floor(Math.log(amount)/Math.log(1000));
 	var factor = Math.pow(1000, i);
 	return round(amount/factor, 3).toFixed(3) + " " + prefixes[i];
