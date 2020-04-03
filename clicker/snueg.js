@@ -825,6 +825,10 @@ var game = {
 		new Upgrade('8th Dimension', 1.23456789e13, 9/8, [11], "A eighth dimension will improve the IDTS by a whopping 13%!"),
 		new Upgrade('9th Dimension', 1.23456789e14, 10/9, [11], "A ninth dimension will improve the IDTS by a whopping 11%!"),
 		new Upgrade('10th Dimension', 1.23456789e15, 11/10, [11], "A tenth dimension will improve the IDTS by a whopping 10%!"),
+		// IDTS
+		new Upgrade('Intensify Forward Firepower', 1.23456789e10, 1.1, [1],
+			"Intensifying forward firepower will reduce the likelihood of A-wings smashing into your bridge.", [12],
+			() => game.youtube.play(19)),
 		// etc
 		new Upgrade('Clickysnueg', 750, 2, [], "Makes the cursor floofier so the clicks are nice and soft UwU", "mouse"),
 		new Upgrade('Snueg Siphon', 1e3, 0.01, [], "Siphons SPS from your buildings, giving your mouse an extra 1% of your production.", "fromProduction"),
@@ -864,6 +868,8 @@ var game = {
 			new Video('E1UEDulwWkY', 131, 'Minorities in my Waterpark', 'South Park', ['music']),
 			new Video('MtN1YnoL46Q', 191, 'The Duck Song', 'Bryant Oden', ['music'], 3, 190),
 			new Video('Dc-RRLKeilk', 139, 'Fresh Prince Of Dickbutt Bel Air', 'A.COE', ['music']),
+			new Video('IKxzI4LuNSU', 38, 'Intensify Forward Firepower', '', [], 12, 22),
+			// 20
 		],
 		/** @return {number} total soundtrack length, in seconds */
 		get soundtrackDuration(){
