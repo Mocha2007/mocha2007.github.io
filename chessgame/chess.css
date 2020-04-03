@@ -1,0 +1,58 @@
+html{
+	font-family: Consolas, "Courier New", monospace;
+	overflow: hidden;
+}
+ul{
+	list-style: none;
+}
+.attackSquare, .blackSquare, .dataSquare, .defenseSquare, .whiteSquare{
+	align-items: center;
+	display: flex;
+	height: 11.1111%;
+	justify-content: center;
+	position: absolute;
+	text-align: center;
+	width: 11.1111%;
+}
+.attackSquare{
+	background-color: rgba(255, 0, 0, 0.3);
+}
+.blackSquare{
+	background-color: #000;
+	color: #fff;
+}
+.defenseSquare{
+	background-color: rgba(0, 0, 255, 0.3);
+}
+.whiteSquare{
+	background-color: #fff;
+	color: #000;
+}
+#attackBoard, #board, #defenseBoard{
+	font-size: 200%;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 75%;
+}
+#attackBoard{
+	background-color: transparent;
+	color: red;
+}
+#defenseBoard{
+	background-color: transparent;
+	color: blue;
+}
+#board{
+	background-color: #444;
+	color: #ccc;
+}
+#left{
+	background-color: #888;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 25%;
+}

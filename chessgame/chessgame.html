@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="description" content="By Mocha2007">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link href=chess.css type="text/css" rel="stylesheet" title="Light">
+<title>Chess Tool</title>
+<div id="left">
+	<ul id="editor">
+		<li>Turn:
+			<input type="radio" name="turn" value="white" checked> White
+			<input type="radio" name="turn" value="black"> Black
+		</li>
+		<li>From: <input id="input_from" type="text" value="a1"></li>
+		<li>To: <input id="input_to" type="text" value="a1"></li>
+		<li><a href="javascript:movePiece(getFrom(), getTo());">Move&rarr;</a></li>
+		<li>
+			<input type="submit" value="Import FEN" onclick="importSave();">
+			<input type="submit" value="Export FEN" onclick="exportSave();">
+			<input type="submit" value="Download FEN" onclick="downloadSave();">
+			<br>
+			<textarea id="saveData" rows="8" cols="36"></textarea>
+		</li>
+	</ul>
+</div>
+<div id="board"></div>
+<div id="attackBoard"></div>
+<div id="defenseBoard"></div>
+<script src="main.js"></script>
+<script>main();</script>
+</html>
