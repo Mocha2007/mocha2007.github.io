@@ -1,4 +1,6 @@
-var ages = [
+/* exported ages */
+'use strict';
+const ages = [
 	/*
 	{
 		'name': 'Template',

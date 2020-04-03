@@ -1,21 +1,23 @@
+/* eslint-disable indent */
 /* jshint esversion: 6, strict: true, strict: global */
-/* globals ages, life_data */
-/* exported open_age, search_button, toggle, main */
-"use strict";
+/* globals ages, lifeData */
+/* exported openAge, searchButton, toggle, main */
+'use strict';
 
 // https://stackoverflow.com/a/196991/2579798
-function toTitleCase(str) {
+function toTitleCase(str){
 	return str.replace(
 		/\w\S*/g,
-		function(txt) {
+		function(txt){
 			return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
 		}
 	);
 }
 
-var objects = {}; // string -> DOM object map
-var open_setting = false; // default setting
-var regions = {
+/** @type {Object<string, HTMLElement>} */
+const objects = {}; // string -> DOM object map
+let openSetting = false; // default setting
+const regions = {
 	'WW': 'Worldwide',
 		'AN': 'Antarctica',
 		'NW': 'New World',
@@ -38,96 +40,88 @@ var regions = {
 
 // helper functions
 
-function get_age(age){
+function getAge(age){
 	if (1 < age){
 		return age + ' mya';
 	}
 		return age*1000 + ' kya';
 }
 
-function get_era(age, age_list = ages, depth = 0){
-	var i;
-	var names = ['eon', 'era', 'period', 'epoch', 'age'];
-	/* console.log(
-		age,
-		age_list,
-		depth
-	); */
-	for (i = 1; i < age_list.length; i++){
-		if (age_list[i].start < age){
+function getEra(age, ageList = ages, depth = 0){
+	let i;
+	const names = ['eon', 'era', 'period', 'epoch', 'age'];
+	for (i = 1; i < ageList.length; i++){
+		if (ageList[i].start < age){
 			break;
 		}
 	}
-	/* console.log(
-		' =>',
-		age_list[i-1].name,
-		age_list[i-1].type,
-		age_list[i-1].hasOwnProperty('divisions')
-	); */
-	return (age_list[i-1].hasOwnProperty('divisions') ?  get_era(age, age_list[i-1].divisions, depth+1) + ', ' : '') +
-	age_list[i-1].name + ' ' + names[depth];
+	return (ageList[i-1].hasOwnProperty('divisions') ?  getEra(age, ageList[i-1].divisions, depth+1) + ', ' : '') +
+	ageList[i-1].name + ' ' + names[depth];
 }
 
-function is_important(i){
-	// console.log('is_important', i, life_data[i]);
-	return life_data[i].hasOwnProperty('important') && life_data[i].important;
+function isImportant(i){
+	// console.log('isImportant', i, lifeData[i]);
+	return lifeData[i].hasOwnProperty('important') && lifeData[i].important;
 }
 
-function open_age(age){
+function openAge(age){
 	// open all clades older than age mya
-	for (var i = 0; i < life_data.length; i++){
-		var clade = life_data[i];
-		if (clade.hasOwnProperty('age') && age < clade.age){
-			open_parents(objects[clade.name]);
+	lifeData.forEach(
+		clade => {
+			if (clade.hasOwnProperty('age') && age < clade.age){
+				openParents(objects[clade.name]);
+			}
 		}
-	}
+	);
 }
 
-function open_parents(object){
-	// console.log('open_parents', object);
+function openParents(object){
+	// console.log('openParents', object);
 	// open object
 	object.open = true;
 	// get parent
-	var parent = object.parentElement;
+	const parent = object.parentElement;
 	// if parent === details then call for parent
 	if (parent.tagName === 'DETAILS'){
-		open_parents(parent);
+		openParents(parent);
 	}
 }
 
-function refresh_buttons(){
-	document.getElementById('toggle_button_inner').innerHTML = open_setting ? 'Close' : 'Open';
+function refreshButtons(){
+	document.getElementById('toggle_button_inner').innerHTML = openSetting ? 'Close' : 'Open';
 }
 
 function search(string){
-	var indices = [];
-	// return all life_data indices matching search string
-	for (var i = 0; i < life_data.length; i++){
-		// if name or desc contains string
-		if ((life_data[i].hasOwnProperty('name') && life_data[i].name.includes(string)) ||
-			(life_data[i].hasOwnProperty('desc') && life_data[i].desc.includes(string))){
-			indices.push(i);
+	const indices = [];
+	// return all lifeData indices matching search string
+	lifeData.forEach(
+		(clade, i) => {
+			// if name or desc contains string
+			if (clade.hasOwnProperty('name') && clade.name.includes(string) ||
+				clade.hasOwnProperty('desc') && clade.desc.includes(string)){
+				indices.push(i);
+			}
 		}
-	}
+	);
 	return indices;
 }
 
-function search_button(){
-	var search_string = document.getElementById('search_clade').value;
+function searchButton(){
+	const searchString = document.getElementById('search_clade').value;
 	// clear results
-	document.getElementById("results").innerHTML = "";
-	search(search_string).forEach((i) => {
-		var name = life_data[i].name;
+	document.getElementById('results').innerHTML = '';
+	search(searchString).forEach((i) => {
+		const name = lifeData[i].name;
 		// open element
-		open_parents(objects[name]);
+		openParents(objects[name]);
 		// show result
-		var li = document.createElement("li");
+		const li = document.createElement('li');
 		li.value = i;
-		if (name.includes(search_string)){
-			li.innerHTML = name.replace(new RegExp(search_string, "g"), "<b>" + search_string + "</b>");
+		if (name.includes(searchString)){
+			li.innerHTML = name.replace(new RegExp(searchString, 'g'), '<b>' + searchString + '</b>');
 		}
 		else {
-			li.innerHTML = name + " (matched description)";
+			li.innerHTML = name + ' (matched description)';
 		}
 		document.getElementById('results').appendChild(li);
 	});
@@ -135,34 +129,34 @@ function search_button(){
 
 function toggle(){
 	// make everything closed or open (toggle)
-	open_setting = !open_setting;
-	refresh_buttons();
-	var elements = document.getElementsByTagName("DETAILS");
-	for (var i = 0; i < elements.length; i++){
-		elements[i].open = open_setting;
-	}
+	openSetting = !openSetting;
+	refreshButtons();
+	const elements = document.getElementsByTagName('DETAILS');
+	Array.from(elements).forEach(
+		element => element.open = openSetting
+	);
 }
 
 // main program
 
 function main(){
-	var i, name;
+	let i, name;
 	// print appropriate text to toggle button
-	refresh_buttons();
-	// first, add everything in life_data to objects
-	for (i = 0; i < life_data.length; i++){
+	refreshButtons();
+	// first, add everything in lifeData to objects
+	for (i = 0; i < lifeData.length; i++){
 		// create DOM object
-		var details = document.createElement("details");
-		details.open = open_setting;
-		var rank = life_data[i].rank;
+		const details = document.createElement('details');
+		details.open = openSetting;
+		const rank = lifeData[i].rank;
 		details.classList.add(rank);
-		name = life_data[i].name;
+		name = lifeData[i].name;
 		objects[name] = details;
 		details.id = name;
 		// title
-		var title = document.createElement("summary");
+		const title = document.createElement('summary');
 		/* important
-		if (is_important(i)){
+		if (isImportant(i)){
 			var important = document.createElement("span");
 			important.classList.add('important');
 			important.innerHTML = '(!) ';
@@ -170,63 +164,63 @@ function main(){
 		}
 		*/
 		// rank
-		var b = document.createElement('b');
+		const b = document.createElement('b');
 		b.innerHTML = toTitleCase(rank) + ' ';
 		title.appendChild(b);
 		// extinct?
-		if (life_data[i].hasOwnProperty('extinct') && life_data[i].hasOwnProperty('extinct')){
+		if (lifeData[i].hasOwnProperty('extinct') && lifeData[i].hasOwnProperty('extinct')){
 			title.innerHTML += '&dagger; ';
 		}
 		// name
-		var a = document.createElement('a');
+		let a = document.createElement('a');
 		a.innerHTML = toTitleCase(name);
 		a.href = 'https://en.wikipedia.org/wiki/' + toTitleCase(name);
 		title.appendChild(a);
 		// range
-		if (life_data[i].hasOwnProperty('range')){
-			var range_abbr = life_data[i].range.toUpperCase();
+		if (lifeData[i].hasOwnProperty('range')){
+			const rangeAbbr = lifeData[i].range.toUpperCase();
 			title.innerHTML += ' ';
-			var range = document.createElement('abbr');
+			const range = document.createElement('abbr');
 			range.classList.add('range');
-			range.title = regions[range_abbr];
-			range.innerHTML = range_abbr;
+			range.title = regions[rangeAbbr];
+			range.innerHTML = rangeAbbr;
 			title.appendChild(range);
 		}
 		// age
-		if (life_data[i].hasOwnProperty('age')){
-			a = life_data[i].age; // mya
+		if (lifeData[i].hasOwnProperty('age')){
+			a = lifeData[i].age; // mya
 			title.innerHTML += ' ';
-			var age = document.createElement('abbr');
+			const age = document.createElement('abbr');
 			age.classList.add('age');
-			age.title = get_era(a);
-			age.innerHTML = get_age(a);
+			age.title = getEra(a);
+			age.innerHTML = getAge(a);
 			title.appendChild(age);
 		}
 		details.appendChild(title);
 		// desc
-		if (life_data[i].hasOwnProperty('desc')){
-			var desc = document.createElement("p");
-			desc.innerHTML = life_data[i].desc;
+		if (lifeData[i].hasOwnProperty('desc')){
+			const desc = document.createElement('p');
+			desc.innerHTML = lifeData[i].desc;
 			details.appendChild(desc);
 		}
 	}
 	// next, nest everything accordingly. add * to root.
-	for (i = 0; i < life_data.length; i++){
-		name = life_data[i].name;
-		console.log("Loading " + name + "...");
-		var parent_id = life_data[i].parent;
-		var child = objects[name];
-		var parent = document.getElementById('root');
-		if (parent_id !== '*'){
-			parent = objects[parent_id];
+	for (i = 0; i < lifeData.length; i++){
+		name = lifeData[i].name;
+		console.log('Loading ' + name + '...');
+		const parentId = lifeData[i].parent;
+		const child = objects[name];
+		let parent = document.getElementById('root');
+		if (parentId !== '*'){
+			parent = objects[parentId];
 		}
 		parent.appendChild(child);
 	}
 	// next, if important, open every parent
-	for (i = 0; i < life_data.length; i++){
-		if (is_important(i)){
-			open_parents(objects[life_data[i].name]);
+	for (i = 0; i < lifeData.length; i++){
+		if (isImportant(i)){
+			openParents(objects[lifeData[i].name]);
 		}
 	}
-	console.log("Loaded.");
+	console.log('Loaded.');
 }

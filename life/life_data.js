@@ -1,4 +1,6 @@
-var life_data = [
+/* exported lifeData */
+'use strict';
+const lifeData = [
 	{
 		'name': 'example',
 		'rank': 'rank',
@@ -288,7 +290,7 @@ var life_data = [
 		'rank': 'family',
 		'parent': 'isopoda',
 		'range': 'ow',
-		'desc': 'Rolly Polly'
+		'desc': 'Rolly Polly',
 	},
 	{
 		'name': 'arthropoda',
@@ -715,7 +717,7 @@ var life_data = [
 		'rank': 'genus',
 		'parent': 'castoridae',
 		'range': 'nh',
-		'desc': 'Beaver'
+		'desc': 'Beaver',
 	},
 	{
 		'name': 'castoridae',
@@ -795,7 +797,7 @@ var life_data = [
 		'parent': 'deuterostomia',
 		'range': 'ww',
 		'age': 535,
-		'desc': 'During some period of their life cycle, chordates possess a notochord, a dorsal nerve cord, pharyngeal slits, an endostyle, and a post-anal tail. These five anatomical features define this phylum.'
+		'desc': 'During some period of their life cycle, chordates possess a notochord, a dorsal nerve cord, pharyngeal slits, an endostyle, and a post-anal tail. These five anatomical features define this phylum.',
 	},
 	{
 		'name': 'chromista',
@@ -1057,7 +1059,7 @@ var life_data = [
 		'rank': 'subspecies',
 		'parent': 'daucus carota',
 		'range': 'ea',
-		'desc': 'Carrot'
+		'desc': 'Carrot',
 	},
 	{
 		'name': 'decapoda',
@@ -1084,7 +1086,7 @@ var life_data = [
 		'parent': 'bilateria',
 		'range': 'ww',
 		'age': 540,
-		'desc': 'In deuterostomes, the first opening, the blastopore, becomes the anus, while in protostomes, it becomes the mouth.'
+		'desc': 'In deuterostomes, the first opening, the blastopore, becomes the anus, while in protostomes, it becomes the mouth.',
 	},
 	{
 		'name': 'diaphoretickes',
@@ -1576,7 +1578,7 @@ var life_data = [
 		'rank': 'class',
 		'parent': 'hexapoda',
 		'range': 'ww',
-		'desc': 'Insects have a chitinous exoskeleton, a three-part body (head, thorax and abdomen), three pairs of jointed legs, compound eyes, and one pair of antennae.'
+		'desc': 'Insects have a chitinous exoskeleton, a three-part body (head, thorax and abdomen), three pairs of jointed legs, compound eyes, and one pair of antennae.',
 	},
 	{
 		'name': 'isopoda',
@@ -2487,7 +2489,7 @@ var life_data = [
 		'rank': 'genus',
 		'parent': 'panicoideae',
 		'range': 'ww',
-		'desc': 'Sugarcane'
+		'desc': 'Sugarcane',
 	},
 	{
 		'name': 'salmonidae',
@@ -2538,7 +2540,7 @@ var life_data = [
 		'rank': 'family',
 		'parent': 'rodentia',
 		'range': 'ww',
-		'desc': 'Squirrel'
+		'desc': 'Squirrel',
 	},
 	{
 		'name': 'scleractinia',
@@ -2579,7 +2581,7 @@ var life_data = [
 		'rank': 'suborder',
 		'parent': 'squamata',
 		'range': 'ww',
-		'desc': 'Snake'
+		'desc': 'Snake',
 	},
 	{
 		'name': 'siluriformes',

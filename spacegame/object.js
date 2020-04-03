@@ -425,7 +425,7 @@ var clades = [];
 /** @type {string[]} */
 var cladeNameIndex = [];
 
-life_data.forEach(
+lifeData.forEach(
 	clade => {
 		clades.push(new Clade(clade.name, clade.rank));
 		cladeNameIndex.push(clade.name);
@@ -434,7 +434,7 @@ life_data.forEach(
 
 clades.forEach(
 	(clade, i) => {
-		var index = cladeNameIndex.indexOf(life_data[i].parent);
+		var index = cladeNameIndex.indexOf(lifeData[i].parent);
 		if (index !== -1){
 			clade.addParent(clades[index]);
 		}
