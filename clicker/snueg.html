@@ -32,11 +32,22 @@
 		<div id="menu">
 			<!-- menu -->
 			<div id="news" onclick="news();"></div>
+			<div id="settingsPageButton" onclick="game.toggleSettings();">Settings</div>
 			<div id="statPageButton" onclick="game.toggleStats();">Stats</div>
 			<div id="prestige" onclick="prestige();">
 				Prestige +<span id="prestigeNumber"></span>
 				<div id="prestigeProgress"></div>
 			</div>
+		</div>
+		<div id="settingsPage">
+			<h2>Settings</h2>
+			Number Abbreviation Type:
+			<select id="numberSetting" onclick="game.settings.numbers = document.getElementById('numberSetting').value;">
+				<option value="default">Default (1 M, 1 T, 1 Qi, ...)</option>
+				<option value="exponential">Exponential (1.234e5)</option>
+				<option value="siabbr">SI Abbreviations (1 k, 1 M, 1 G, 1 T, 1 P, ...)</option>
+				<option value="siword">SI words (1 kilosnueg, 1 megasnueg, ...)</option>
+			</select>
 		</div>
 		<div id="statPage">
 			<h2>Basic</h2>

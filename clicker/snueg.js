@@ -743,6 +743,7 @@ var game = {
 		fps: 20,
 		newsUpdateInterval: 30 * 1000,
 		nonEssentialUpdateInterval: 2 * 1000,
+		numbers: 'default',
 	},
 	upgrades: [
 		// snueg
@@ -929,6 +930,12 @@ var game = {
 		};
 		new Particle(element, tick, 10);
 	},
+	toggleSettings(){
+		/** @type {HTMLDivElement} */
+		var element = document.getElementById('settingsPage');
+		element.style.display = element.style.display === 'block' ? 'none' : 'block';
+		log('settings page toggled');
+	},
 	toggleStats(){
 		/** @type {HTMLDivElement} */
 		var element = document.getElementById('statPage');
@@ -1056,16 +1063,37 @@ function addSnueg(amount){
  * @return {string} prettified number
 */
 function bigNumber(amount, integer = false){
+	var defaultPrefixes = " k M B T Qa Qi Sx Sp Oc No Dc".split(" ");
+	var siPrefixes = " k M G T P E Z Y X W V U".split(" ");
+	var siFull = " kilo mega giga tera peta exa zeta yotta xenna weka vendeka udeka".split(" ").map(i => i + 'snueg');
+	var settingVars = {
+		default: defaultPrefixes,
+		siabbr: siPrefixes,
+		siword: siFull,
+	}
 	// 245 -> 245
 	// 3245 -> 3.245 k
 	// 3950847 -> 3.950 M
 	if (amount < 1000){
 		return integer ? "" + round(amount) : amount.toFixed(3);
 	}
-	var prefixes = " k M B T Qa Qi Sx Sp Oc No Dc".split(" ");
+	if (game.settings.numbers === 'exponential'){
+		return bigNumberExp(amount);
+	}
+	var prefixes = settingVars[game.settings.numbers];
 	var i = Math.floor(Math.log(amount)/Math.log(1000));
 	var factor = Math.pow(1000, i);
 	return round(amount/factor, 3).toFixed(3) + " " + prefixes[i];
+}
+
+/**
+ * @param {number} amount number
+ * @return {string} prettified number
+*/
+function bigNumberExp(amount){
+	var e = Math.floor(Math.log10(amount));
+	var n = amount / Math.pow(10, e);
+	return n.toFixed(3) + 'e' + e;
 }
 
 function clearTooltip(){
