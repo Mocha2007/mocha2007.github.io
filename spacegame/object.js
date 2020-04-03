@@ -10,7 +10,8 @@ function main(){
 // abstract
 
 class Instance{
-	/** tangibles or abstractions with parents and children
+	/**
+	 * tangibles or abstractions with parents and children
 	 * @param {string} name
 	*/
 	constructor(name){
@@ -19,6 +20,13 @@ class Instance{
 		this.children = new Set();
 		/** @type {Set<Instance>} */
 		this.parents = new Set();
+	}
+	/** 
+	 * url of associated wikipedia article
+	 * @return {string}
+	*/
+	get wikipedia(){
+		return 'https://en.wikipedia.org/wiki/' + this.name;
 	}
 	/** @param {Instance} child */
 	add(child){
@@ -35,6 +43,7 @@ class Instance{
 
 class Value{
 	/**
+	 * measurements
 	 * @param {number} value
 	*/
 	constructor(value) {
