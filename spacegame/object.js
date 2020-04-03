@@ -125,15 +125,15 @@ class Sphere extends Solid{
 class Noun{
 	/**
 	 * @param {string} word - singular, or plural if alwaysPlural
-	 * @param {boolean} countable
-	 * @param {boolean} proper
+	 * @param {boolean} countable - uses many and few rather than much and little
+	 * @param {boolean} proper - requires capitalization of first letter
 	 * @param {boolean} alwaysSingular
 	 * @param {boolean} alwaysPlural
 	 * @param {string} irregularPlural
-	 * @param {boolean} definite
-	 * @param {boolean} indefinite
+	 * @param {boolean} definite - requires the
+	 * @param {boolean} indefinite - requires a(n)
 	*/
-	constructor(word, countable = true, proper = false, alwaysSingular = false, alwaysPlural = false, irregularPlural = '', definite = false, indefinite = false) {
+	constructor(word, countable = true, proper = false, alwaysSingular = false, alwaysPlural = false, irregularPlural = false, definite = false, indefinite = false) {
 		this.word = word;
 		this.countable = countable;
 		this.proper = proper;
@@ -176,6 +176,26 @@ class Noun{
 	}
 }
 
+class ProperNoun extends Noun{
+	/**
+	 * @param {string} word - singular, or plural if alwaysPlural
+	 * @param {boolean} alwaysPlural
+	 * @param {boolean} definite - requires the
+	*/
+	constructor(word, alwaysPlural = false, definite = false) {
+		super(word, false, true, !alwaysPlural, alwaysPlural, '', definite, false);
+	}
+}
+
+class Name extends ProperNoun{
+	/**
+	 * eg. a first name, or a last name.
+	 * @param {string} word
+	*/
+	constructor(word) {
+		super(word, false, false);
+	}
+}
 // astro
 
 class CelestialBody extends Instance{
@@ -198,8 +218,8 @@ class CelestialBody extends Instance{
 
 class PersonalName{
 	/**
-	 * @param {string} given
-	 * @param {string} family
+	 * @param {Name} given
+	 * @param {Name} family
 	*/
 	constructor(given, family) {
 		this.given = given;
@@ -255,7 +275,7 @@ var earth = new CelestialBody("earth",
 	new Mass(5.97237e24),
 	new Sphere(new Length(6371000))
 );
-var phoenix = new Person(new PersonalName("Phoenix"));
+var phoenix = new Person(new PersonalName(new Name("Phoenix")));
 phoenix.mother = phoenix.father = phoenix;
 
 universe.children = [earth];
