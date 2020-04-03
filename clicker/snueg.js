@@ -608,7 +608,7 @@ var game = {
 			() => game.youtube.play(0)),
 		new Building('Snuegland', 3e6, 7e3, "A magical kingdom teeming with snuegs, ripe for the snatching!"),
 		new Building('Snoo', 20050623, 2e4, "These strange little critters only need a G added to them to make them snuegs. Seems simple enough..."),
-		new Building('Snuegworld', 1.69e8, 6.9e4, "An entire world filled with snueg! :D"), // todo unlock slipworld-style minigame
+		new Building('Snuegworld', 1.69e8, 6.9e4, "An entire world filled with snueg! :D"),
 		new Building('I. D. T. S.', 1.23456789e9, 222222, "The <i>Interdimensional Transsnuegginator</i> is a device to harness snueggery from other dimensions."),
 	],
 	debug: {
