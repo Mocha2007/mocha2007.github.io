@@ -2,6 +2,6 @@ a,html,.highlight,.f,.m,.sub,.super,.y,.y2{color:#000;}
 h1,h2{text-shadow:none;}
 .new{list-style-image:url('img/newprint.png');}
 .up{list-style-image:url('img/upprint.png');}
-abbr{animation:none;border-bottom:1px solid black;}
+abbr{border-bottom:1px solid black;}
 #m{filter:brightness(0);}
 #nav{display:none;}
