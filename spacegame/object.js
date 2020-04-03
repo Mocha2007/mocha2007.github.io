@@ -254,6 +254,59 @@ class Clade extends Instance{
 	get parent(){
 		return Array.from(this.parents)[0];
 	}
+	/** @return {number} to sort ranks*/
+	get rankLevel(){
+		if (this.rank === "clade"){
+			return Infinity; // not enough info
+		}
+		var ranks = [
+			['life', 0],
+			['domain', 10],
+			['kingdom', 20],
+			['phylum', 30],
+			['division', 30],
+			['class', 40],
+			['legion', 50],
+			['cohort', 60],
+			['order', 70],
+			['family', 80],
+			['tribe', 90],
+			['genus', 100],
+			['section', 110],
+			['series', 120],
+			['species', 130],
+			['variety', 140],
+			['form', 150],
+		];
+		var modifiers = [
+			['giga', 6],
+			['magn', 5],
+			['mega', 5],
+			['capax', 4],
+			['grand', 4],
+			['hyper', 3],
+			['mir', 3],
+			['super', 2],
+			['epi', 1],
+			['sub', -1],
+			['infra', -2],
+			['micro', -3],
+			['parv', -3],
+		];
+		for (var i in ranks){
+			if (this.rank.includes(ranks[i][0])){
+				var value = ranks[i][1];
+				break;
+			}
+		}
+		for (var i in modifiers){
+			if (this.rank.includes(modifiers[i][0])){
+				value += modifiers[i][1];
+				break;
+			}
+		}
+		return value;
+	}
 	/**
 	 * returns most specific common clade
 	 * @param {Clade} other
