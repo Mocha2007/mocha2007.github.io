@@ -53,6 +53,18 @@ class Purchase{
 			document.getElementById(this.elementId).remove();
 		}
 	}
+	updateAffordability(){
+		/** @type {HTMLDivElement} */
+		var element = document.getElementById(this.elementId);
+		if (this.canAfford){
+			element.classList.remove('cantAfford');
+			element.classList.add('canAfford');
+		}
+		else {
+			element.classList.remove('canAfford');
+			element.classList.add('cantAfford');
+		}
+	}
 	updateElement(){
 		document.getElementById(this.elementId).innerHTML = this.createElement.innerHTML;
 	}
@@ -1162,6 +1174,13 @@ function nonEssentialUpdate(){
 	game.player.achievements.sort();
 	// update statistics page
 	statUpdate();
+	// update affodability
+	game.buildings.forEach(
+		building => building.updateAffordability()
+	);
+	game.upgrades.forEach(
+		upgrade => upgrade.updateAffordability()
+	);
 }
 
 /** @param {string} filename to play */

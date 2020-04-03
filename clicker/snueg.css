@@ -44,6 +44,16 @@ h3 {
 .buy_button:active, .upgrade_buy_button:active, #guide:active {
 	opacity: 0.5;
 }
+.canAfford .item_price{
+	color: lime;
+}
+.cantAfford{
+	opacity: 0.5;
+	pointer-events: none;
+}
+.cantAfford .item_price{
+	color: red;
+}
 .danger {
 	color: red;
 }
