@@ -115,7 +115,7 @@ class Time extends Value{
 // math
 
 class Solid{
-	/** abstract class */
+	/** @abstract */
 	constructor(){}
 	/** @type {Area} */
 	surfaceArea
