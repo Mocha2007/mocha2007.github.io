@@ -118,9 +118,9 @@ class Solid{
 	/** abstract class */
 	constructor(){}
 	/** @type {Area} */
-	surfaceArea;
+	surfaceArea
 	/** @type {Volume} */
-	volume;
+	volume
 }
 
 class Sphere extends Solid{
