@@ -56,3 +56,5 @@ function Weather() {
 	
 	document.getElementById("eremorweather").innerHTML = 'Weather in Eremor: <abbr title="'+Math.round(c2f(temp))+'&#176;F">'+Math.round(temp)+'&#176;C</abbr> <abbr title="'+state+'</abbr>'+fiveday;
 }
+
+Weather();

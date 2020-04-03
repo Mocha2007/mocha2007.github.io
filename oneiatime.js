@@ -278,3 +278,7 @@ function bonus(){
 	"use strict";
 	document.getElementById("clockbonus").innerHTML = zodiac()+'<br/>'+china()+'<br/>'+egypt()+'<br/>'+maya()+'<br/>JD '+jd().toFixed(3)+'<br/>'+darian();
 }
+
+setInterval('OneiaTime()',100);
+bonus();
+HolidayCSS();
