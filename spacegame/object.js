@@ -10,7 +10,9 @@ function main(){
 // abstract
 
 class Instance{
-	/** @param {string} name */
+	/** tangibles or abstractions with parents and children
+	 * @param {string} name
+	*/
 	constructor(name){
 		this.name = name;
 		/** @type {Set<Instance>} */
@@ -22,6 +24,10 @@ class Instance{
 	add(child){
 		child.parents.add(this);
 		this.children.add(child);
+	}
+	/** @param {Instance} parent */
+	addParent(parent){
+		parent.add(this);
 	}
 }
 
@@ -219,6 +225,23 @@ class CelestialBody extends Instance{
 	}
 }
 
+// bio
+
+class Clade extends Instance{
+	/**
+	 * @param {string} name
+	 * @param {string} rank
+	 * @param {Clade} parent
+	*/
+	constructor(name, rank = "clade", parent = undefined) {
+		super(name);
+		this.rank = rank;
+		if (parent){
+			this.addParent(parent);
+		}
+	}
+}
+
 // peepl
 
 class PersonalName{
@@ -275,14 +298,41 @@ class Person{
 }
 
 // Things
+var reality = new Instance("reality");
 var universe = new Instance("universe");
+reality.add(universe);
 var earth = new CelestialBody("earth", 
 	new Mass(5.97237e24),
 	new Sphere(new Length(6371000))
 );
-var phoenix = new Person(new PersonalName(new Name("Phoenix")));
-phoenix.mother = phoenix.father = phoenix;
-
 universe.add(earth);
+// var phoenix = new Person(new PersonalName(new Name("Phoenix")));
+// phoenix.mother = phoenix.father = phoenix;
 
-console.log(universe);
+// GENERATE CLADES
+/** @type {Clade[]} */
+var clades = [];
+/** @type {string[]} */
+var cladeNameIndex = [];
+
+life_data.forEach(
+	clade => {
+		clades.push(new Clade(clade.name, clade.rank));
+		cladeNameIndex.push(clade.name);
+	}
+);
+
+clades.forEach(
+	(clade, i) => {
+		var index = cladeNameIndex.indexOf(life_data[i].parent);
+		if (index !== -1){
+			clade.addParent(clades[index]);
+		}
+	}
+);
+
+var life = clades[cladeNameIndex.indexOf('life')];
+reality.add(life);
+
+// display in console
+console.log(reality);
