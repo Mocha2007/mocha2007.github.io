@@ -350,7 +350,7 @@ class Clade extends Instance{
 	}
 }
 
-// peepl
+// people
 
 class PersonalName{
 	/**
@@ -404,6 +404,8 @@ class Person{
 		return this.father.generation(n-1).concat(this.mother.generation(n-1));
 	}
 }
+
+// END CLASSES
 
 // Things
 var reality = new Instance("reality");
