@@ -26,7 +26,7 @@ class Purchase{
 	}
 	/** @returns {string} id of buy button */
 	get elementId(){
-		return this.name.replace(' ', '_') + "_button";
+		return this.name.split(' ').join('_') + "_button";
 	}
 	/** @returns {string} icon of button */
 	get textIcon(){
