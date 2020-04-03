@@ -10,6 +10,10 @@ function main(){
 // abstract
 
 class Instance{
+	/**
+	 * @param {string} name
+	 * @param {any[]} children
+	*/
 	constructor(name, children){
 		this.name = name;
 		this.children = children;
@@ -19,12 +23,18 @@ class Instance{
 // units
 
 class Value{
+	/**
+	 * @param {number} value
+	*/
 	constructor(value) {
 		this.value = value;
 	}
 }
 
 class Length extends Value{
+	/**
+	 * @param {number} value
+	*/
 	constructor(value) {
 		super(value);
 	}
@@ -34,18 +44,27 @@ class Length extends Value{
 }
 
 class Area extends Value{
+	/**
+	 * @param {number} value
+	*/
 	constructor(value) {
 		super(value);
 	}
 }
 
 class Volume extends Value{
+	/**
+	 * @param {number} value
+	*/
 	constructor(value) {
 		super(value);
 	}
 }
 
 class Mass extends Value{
+	/**
+	 * @param {number} value
+	*/
 	constructor(value) {
 		super(value);
 	}
@@ -55,12 +74,18 @@ class Mass extends Value{
 }
 
 class Density extends Value{
+	/**
+	 * @param {number} value
+	*/
 	constructor(value) {
 		super(value);
 	}
 }
 
 class Time extends Value{
+	/**
+	 * @param {number} value
+	*/
 	constructor(value) {
 		super(value);
 	}
@@ -68,8 +93,20 @@ class Time extends Value{
 
 // math
 
-class Sphere{
+class Solid{
+	constructor(){}
+	/** @type {Area} */
+	surfaceArea;
+	/** @type {Volume} */
+	volume;
+}
+
+class Sphere extends Solid{
+	/**
+	 * @param {number} radius
+	*/
 	constructor(radius) {
+		super();
 		this.radius = radius;
 	}
 	get circumference(){
@@ -86,6 +123,11 @@ class Sphere{
 // astro
 
 class CelestialBody extends Instance{
+	/**
+	 * @param {string} name
+	 * @param {Mass} mass
+	 * @param {Solid} solid
+	*/
 	constructor(name, mass, solid) {
 		super(name);
 		this.mass = mass;
