@@ -1,36 +1,36 @@
 /* jshint esversion: 6, strict: true, forin: false, loopfunc: true, strict: global */
 /* exported importSave, downloadSave, createOrder, wipeMap, hardReset */
-"use strict";
-var board = {};
-var colString = " abcdefgh";
-var colorData = [
+'use strict';
+const board = {};
+const colString = ' abcdefgh';
+const colorData = [
 	{
-		'name': 'black'
+		'name': 'black',
 	},
 	{
-		'name': 'white'
-	}
+		'name': 'white',
+	},
 ];
-var pieceData = {
+const pieceData = {
 	'bishop': {
 		'abbr': 'B',
 		'moves': [
 			{
 				'dir': 'diagonal',
-				'dist': Infinity
-			}
-		]
+				'dist': Infinity,
+			},
+		],
 	},
 	'king': {
 		'abbr': 'K',
-		'castling': "king",
+		'castling': 'king',
 		'isEssential': true,
 		'moves': [
 			{
 				'dir': 'any',
-				'dist': 1
-			}
-		]
+				'dist': 1,
+			},
+		],
 	},
 	'knight': {
 		'abbr': 'N',
@@ -38,9 +38,9 @@ var pieceData = {
 		'moves': [
 			{
 				'dir': 'L',
-				'dist': 1
-			}
-		]
+				'dist': 1,
+			},
+		],
 	},
 	'pawn': {
 		'abbr': 'P',
@@ -48,39 +48,39 @@ var pieceData = {
 		'moves': [
 			{
 				'dir': 'P',
-				'dist': 1
-			}
-		]
+				'dist': 1,
+			},
+		],
 	},
 	'queen': {
 		'abbr': 'Q',
 		'moves': [
 			{
 				'dir': 'any',
-				'dist': Infinity
-			}
-		]
+				'dist': Infinity,
+			},
+		],
 	},
 	'rook': {
 		'abbr': 'R',
 		'moves': [
 			{
 				'dir': 'orthogonal',
-				'dist': Infinity
-			}
-		]
-	}
+				'dist': Infinity,
+			},
+		],
+	},
 };
 
-class Piece{
+class Piece {
 	constructor(type, color){
 		this.type = type;
 		this.color = color;
 	}
 	get getElement(){
-		var elem = document.createElement("abbr");
+		const elem = document.createElement('abbr');
 		elem.innerHTML = pieceData[this.type].abbr + colorData[this.color].name[0];
-		elem.title = colorData[this.color].name + " " + this.type;
+		elem.title = colorData[this.color].name + ' ' + this.type;
 		return elem;
 	}
 }
@@ -89,17 +89,17 @@ class Piece{
 
 function displayAttacks(){
 	// fixme debug
-	var attacks = getAttacksByColor(1);
-	for (var square in attacks){
-		placeNote(attacks[square], square, "attack");
+	const attacks = getAttacksByColor(1);
+	for (const square in attacks){
+		placeNote(attacks[square], square, 'attack');
 	}
 }
 
 function getAttacks(type, pos, color){
-	var attacks = [];
-	var piece = pieceData[type];
-	var aType = piece.moves[0].dir;
-	var maxDist = 8 < piece.moves[0].dist? 8 : piece.moves[0].dist;
+	const attacks = [];
+	const piece = pieceData[type];
+	const aType = piece.moves[0].dir;
+	const maxDist = 8 < piece.moves[0].dist? 8 : piece.moves[0].dist;
 	if (aType === 'L'){
 		attacks.push([pos[0]-2, pos[1]-1]);
 		attacks.push([pos[0]-2, pos[1]+1]);
@@ -111,12 +111,12 @@ function getAttacks(type, pos, color){
 		attacks.push([pos[0]-1, pos[1]-2]);
 	}
 	else if (aType === 'P'){
-		var dir = color ? 1 : -1;
+		const dir = color ? 1 : -1;
 		attacks.push([pos[0]-1, pos[1]+dir]);
 		attacks.push([pos[0]+1, pos[1]+dir]);
 	}
-	else{
-		for (var i=1; i<=maxDist; i+=1){
+	else {
+		for (let i=1; i<=maxDist; i+=1){
 			if (aType === 'diagonal' || aType === 'any'){
 				attacks.push([pos[0]-i, pos[1]-i]);
 				attacks.push([pos[0]-i, pos[1]+i]);
@@ -132,19 +132,19 @@ function getAttacks(type, pos, color){
 		}
 	}
 	// remove invalid moves
-	var finalAttacks = [];
-	var desiredDistance, intermediateCoords, success;
-	for (i=0; i<attacks.length; i+=1){
+	const finalAttacks = [];
+	for (let i=0; i<attacks.length; i+=1){
 		// remove off-board moves
 		if (attacks[i][0] < 0 || 7 < attacks[i][0] || attacks[i][1] < 0 || 7 < attacks[i][1]){
 			continue;
 		}
 		// if has inf range, check for intervening pieces
 		if (1 < piece.moves[0].dist){
-			desiredDistance = attacks[i][0] ? attacks[i][0] : attacks[i][1];
-			success = true;
-			for (var j=0; j<desiredDistance; j+=1){
-				intermediateCoords = [attacks[i][0]*j/desiredDistance, attacks[i][1]*j/desiredDistance];
+			const desiredDistance = attacks[i][0] ? attacks[i][0] : attacks[i][1];
+			let success = true;
+			for (let j=0; j<desiredDistance; j+=1){
+				const intermediateCoords = [attacks[i][0]*j/desiredDistance,
+					attacks[i][1]*j/desiredDistance];
 				if (board[getIdFromCoords(intermediateCoords)]){
 					success = false;
 					break;
@@ -160,20 +160,19 @@ function getAttacks(type, pos, color){
 }
 
 function getAttacksByColor(colorID){
-	var attacks = {};
-	var currentAttacks, id, piece;
-	for (var square in board){
-		piece = board[square];
+	const attacks = {};
+	for (const square in board){
+		const piece = board[square];
 		if (piece.color !== colorID){
 			continue;
 		}
-		currentAttacks = getAttacks(piece.type, getCoordsFromId(square), piece.color);
-		for (var i=0; i<currentAttacks.length; i+=1){
-			id = getIdFromCoords(currentAttacks[i]);
+		const currentAttacks = getAttacks(piece.type, getCoordsFromId(square), piece.color);
+		for (let i=0; i<currentAttacks.length; i+=1){
+			const id = getIdFromCoords(currentAttacks[i]);
 			if (attacks.hasOwnProperty(id)){
 				attacks[id] += 1;
 			}
-			else{
+			else {
 				attacks[id] = 1;
 			}
 		}
@@ -183,40 +182,38 @@ function getAttacksByColor(colorID){
 
 function getCoordsFromId(id){
 	// a1 -> 0, 0; h8 -> 7, 7
-	var x = colString.indexOf(id[0])-1;
-	var y = Number(id[1])-1;
+	const x = colString.indexOf(id[0])-1;
+	const y = Number(id[1])-1;
 	return [x, y];
 }
 
 function getFrom(){
-	return document.getElementById("input_from").value;
+	return document.getElementById('input_from').value;
 }
 
 function getIdFromCoords(coords){
 	// 0, 0 -> a1; 7, 7 -> h8
-	var char = colString[coords[0]+1];
-	var num = coords[1]+1;
+	const char = colString[coords[0]+1];
+	const num = coords[1]+1;
 	return char+num;
 }
 
 function getTo(){
-	return document.getElementById("input_to").value;
+	return document.getElementById('input_to').value;
 }
 
 function main(){
-	console.info("Mocha's weird-ass chess test");
+	console.info('Mocha\'s weird-ass chess test');
 	makeBoard();
 	resetPieces();
 	// placeNote(3, "c6", "attack");
 	// placeNote(3, "c3", "defense");
 	displayAttacks();
-
 }
 
 function makeBoard(){
-	var col, row;
-	for (var i=0; i<9; i+=1){
-		for (var j=0; j<colString.length; j+=1){
+	for (let i=0; i<9; i+=1){
+		for (let j=0; j<colString.length; j+=1){
 			makeSquare(i, j);
 		}
 	}
@@ -224,20 +221,20 @@ function makeBoard(){
 
 function makeSquare(row, col){
 	// console.log(row, col);
-	var elem = document.createElement("div");
-	document.getElementById("board").appendChild(elem);
-	elem.style.left = 100*col/9+"%";
-	elem.style.top = 100*row/9+"%";
+	const elem = document.createElement('div');
+	document.getElementById('board').appendChild(elem);
+	elem.style.left = 100*col/9+'%';
+	elem.style.top = 100*row/9+'%';
 	if (row === 0){ // letters
-		elem.classList = "dataSquare";
+		elem.classList = 'dataSquare';
 		return elem.innerHTML = colString[col];
 	}
 	if (col === 0){ // numbers
-		elem.classList = "dataSquare";
-		return elem.innerHTML = row ? row : "";
+		elem.classList = 'dataSquare';
+		return elem.innerHTML = row ? row : '';
 	}
-	var color = (row+col)%2;
-	elem.classList = colorData[color].name+"Square";
+	const color = (row+col)%2;
+	elem.classList = colorData[color].name+'Square';
 	elem.id = colString[col] + row;
 	// console.log(color);
 }
@@ -245,20 +242,20 @@ function makeSquare(row, col){
 function movePiece(from, to){
 	board[to] = board[from];
 	board[from] = null;
-	var temp = document.getElementById(from).innerHTML
-	document.getElementById(from).innerHTML = "";
+	const temp = document.getElementById(from).innerHTML;
+	document.getElementById(from).innerHTML = '';
 	document.getElementById(to).innerHTML = temp;
 }
 
 function placeNote(n, tileID, type){
-	var elem = document.createElement("div");
-	elem.classList = type+"Square";
+	const elem = document.createElement('div');
+	elem.classList = type+'Square';
 	elem.innerHTML = n;
 	elem.id = tileID + type;
-	var under = document.getElementById(tileID);
+	const under = document.getElementById(tileID);
 	elem.style.left = under.style.left;
 	elem.style.top = under.style.top;
-	document.getElementById(type+"Board").appendChild(elem);
+	document.getElementById(type+'Board').appendChild(elem);
 }
 
 function placePiece(piece, tileID){
@@ -271,28 +268,27 @@ function reloadNotes(){
 
 function resetPieces(){
 	// white
-	placePiece(new Piece("rook", 1), "a1");
-	placePiece(new Piece("knight", 1), "b1");
-	placePiece(new Piece("bishop", 1), "c1");
-	placePiece(new Piece("queen", 1), "d1");
-	placePiece(new Piece("king", 1), "e1");
-	placePiece(new Piece("bishop", 1), "f1");
-	placePiece(new Piece("knight", 1), "g1");
-	placePiece(new Piece("rook", 1), "h1");
+	placePiece(new Piece('rook', 1), 'a1');
+	placePiece(new Piece('knight', 1), 'b1');
+	placePiece(new Piece('bishop', 1), 'c1');
+	placePiece(new Piece('queen', 1), 'd1');
+	placePiece(new Piece('king', 1), 'e1');
+	placePiece(new Piece('bishop', 1), 'f1');
+	placePiece(new Piece('knight', 1), 'g1');
+	placePiece(new Piece('rook', 1), 'h1');
 	// black
-	placePiece(new Piece("rook", 0), "a8");
-	placePiece(new Piece("knight", 0), "b8");
-	placePiece(new Piece("bishop", 0), "c8");
-	placePiece(new Piece("queen", 0), "d8");
-	placePiece(new Piece("king", 0), "e8");
-	placePiece(new Piece("bishop", 0), "f8");
-	placePiece(new Piece("knight", 0), "g8");
-	placePiece(new Piece("rook", 0), "h8");
+	placePiece(new Piece('rook', 0), 'a8');
+	placePiece(new Piece('knight', 0), 'b8');
+	placePiece(new Piece('bishop', 0), 'c8');
+	placePiece(new Piece('queen', 0), 'd8');
+	placePiece(new Piece('king', 0), 'e8');
+	placePiece(new Piece('bishop', 0), 'f8');
+	placePiece(new Piece('knight', 0), 'g8');
+	placePiece(new Piece('rook', 0), 'h8');
 	// pawns
-	var letter;
-	for (var i=1; i<colString.length; i+=1){
-		letter = colString[i];
-		placePiece(new Piece("pawn", 1), letter+2);
-		placePiece(new Piece("pawn", 0), letter+7);
+	for (let i=1; i<colString.length; i+=1){
+		const letter = colString[i];
+		placePiece(new Piece('pawn', 1), letter+2);
+		placePiece(new Piece('pawn', 0), letter+7);
 	}
 }
