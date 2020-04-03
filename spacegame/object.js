@@ -240,6 +240,42 @@ class Clade extends Instance{
 			this.addParent(parent);
 		}
 	}
+	get hasParent(){
+		return 0 < this.parents.size;
+	}
+	/** @return {Clade[]} */
+	get ladder(){
+		if (!this.hasParent){
+			return [this];
+		}
+		return [this].concat(this.parent.ladder);
+	}
+	/** @return {Clade} */
+	get parent(){
+		return Array.from(this.parents)[0];
+	}
+	/**
+	 * returns most specific common clade
+	 * @param {Clade} other
+	 * @return {Clade}
+	*/
+	commonClade(other){
+		var otherLadder = other.ladder;
+		var thisLadder = this.ladder;
+		for (var i in thisLadder){
+			if (-1 !== otherLadder.indexOf(thisLadder[i])){
+				return thisLadder[i];
+			}
+		}
+	}
+	/**
+	 * returns clade with the given name
+	 * @param {string} name
+	 * @return {Clade}
+	*/
+	static fromName(name){
+		return clades[cladeNameIndex.indexOf(name)];
+	}
 }
 
 // peepl
@@ -336,3 +372,9 @@ reality.add(life);
 
 // display in console
 console.log(reality);
+
+function test(){
+	var human = Clade.fromName('homo sapiens');
+	var fox = Clade.fromName('vulpes vulpes');
+	console.log(human.commonClade(fox));
+}
