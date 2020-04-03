@@ -4,8 +4,9 @@
 
 var pi = Math.PI;
 
-function main(){
-}
+var constants = {
+	g: 6.6743e-11,
+};
 
 // abstract
 
@@ -114,6 +115,7 @@ class Time extends Value{
 // math
 
 class Solid{
+	/** abstract class */
 	constructor(){}
 	/** @type {Area} */
 	surfaceArea;
@@ -232,6 +234,12 @@ class CelestialBody extends Instance{
 	get density(){
 		return new Density(this.mass.value / this.solid.volume.value);
 	}
+	/*
+	get escapeVelocity(){
+		var v = Math.sqrt(2*constants.g*this.mass.value / this.sphere.radius);
+		return new Velocity()
+	}
+	*/
 }
 
 // bio
