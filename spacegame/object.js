@@ -120,6 +120,62 @@ class Sphere extends Solid{
 	}
 }
 
+// ling lang
+
+class Noun{
+	/**
+	 * @param {string} word - singular, or plural if alwaysPlural
+	 * @param {boolean} countable
+	 * @param {boolean} proper
+	 * @param {boolean} alwaysSingular
+	 * @param {boolean} alwaysPlural
+	 * @param {string} irregularPlural
+	 * @param {boolean} definite
+	 * @param {boolean} indefinite
+	*/
+	constructor(word, countable = true, proper = false, alwaysSingular = false, alwaysPlural = false, irregularPlural = '', definite = false, indefinite = false) {
+		this.word = word;
+		this.countable = countable;
+		this.proper = proper;
+		this.alwaysSingular = alwaysSingular;
+		this.alwaysPlural = alwaysPlural;
+		if (alwaysSingular && alwaysPlural){
+			throw 'a noun cannot be always singular and plural';
+		}
+		this.irregularPlural = irregularPlural;
+		if (alwaysSingular && irregularPlural){
+			throw 'a noun which is always singular cannot have an irregular plural';
+		}
+		this.definite = definite;
+		this.indefinite = indefinite;
+		if (definite && indefinite){
+			throw 'a noun cannot be always indefinite and definite';
+		}
+	}
+	get plural(){
+		if (!this.countable || this.alwaysSingular){
+			throw 'uncountable or singular-only nouns cannot be pluralized';
+		}
+		if (this.alwaysPlural){
+			return this.word;
+		}
+		if (this.irregularPlural){
+			return this.irregularPlural;
+		}
+		if (this.word[this.word.length-1] === 's' ||
+			['ch', 'sh'].includes(this.name.slice(this.name.Length-2, this.name.Length))){
+			return this.word + 'es';
+		}
+		return this.word + 's';
+	}
+	get singular(){
+		if (this.alwaysPlural){
+			throw 'pluralia tantum cannot be singularized';
+		}
+		return this.word;
+	}
+}
+
 // astro
 
 class CelestialBody extends Instance{
