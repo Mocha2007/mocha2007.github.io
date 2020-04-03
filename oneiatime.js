@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle, no-var */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
 /* exported playSound, stopSound */
 'use strict';
@@ -38,7 +39,7 @@ var signqualities= [
 ];
 var signrulers= [
 	'Mars', 'Venus', 'Mercury', 'Moon', 'Sun', 'Mercury',
-	'Venus','Mars','Jupiter','Saturn','Saturn','Jupiter'
+	'Venus', 'Mars', 'Jupiter', 'Saturn', 'Saturn', 'Jupiter'
 ];
 var marsmonths = [
 	'Sagittarius', 'Dhanus', 'Capricornus', 'Makara', 'Aquarius', 'Kumbha',
@@ -47,7 +48,7 @@ var marsmonths = [
 	'Virgo', 'Kanya', 'Libra', 'Tula', 'Scorpius', 'Vrishika'
 ];
 var phases = [
-	'New', 'Waxing Crescent', 'First Quarter',' Waxing Gibbous',
+	'New', 'Waxing Crescent', 'First Quarter', ' Waxing Gibbous',
 	'Full', 'Waning Gibbous', 'Third Quarter', 'Waning Crescent'
 ];
 
@@ -58,7 +59,7 @@ var phases = [
  * @param {number} m - divisor
 */
 function mod(n, m){
-	return ((n % m)+m) % m;
+	return (n % m + m) % m;
 }
 
 /**
@@ -79,7 +80,7 @@ function stopSound(elementId){
 
 function egypt(){
 	var epoch =	21852000; // 1970 SEP 11 00:00:00 UTC+2; first akhet after epoch
-	var reltime = mod((new Date()/1000)-epoch, 31556952); // time (s) since beginning of akhet
+	var reltime = mod(new Date()/1000-epoch, 31556952); // time (s) since beginning of akhet
 	var wutwut = Math.floor(reltime/10518984); // season number
 	var wutmonth = Math.floor(reltime/2629746); // month number
 	var wutday = Math.floor(reltime/86400)-wutmonth*30; // day number
@@ -89,7 +90,7 @@ function egypt(){
 function maya(){
 	// 144000 days : 7200 days : 360 days : 20 days : day
 	var epoch = 1356069600; // 13th b'ak'tun : 21 Dec 2012 00:00:00 UTC-6
-	var remainder = Math.floor(((new Date()/1000)-epoch)/86400); // days since beginning of 13th b'ak'tun
+	var remainder = Math.floor((new Date()/1000-epoch)/86400); // days since beginning of 13th b'ak'tun
 
 	var mayaTime = [mod(remainder, 20)];
 	var temp = Math.floor(remainder/20);
@@ -110,7 +111,7 @@ function maya(){
 function china(){
 	// naive; does not account for time between new year's and chinese new year's well
 	var epoch = 444440000; // appx 1 FEB 1984
-	var y = Math.floor(((new Date()/1000)-epoch)/31556952); // years since epoch
+	var y = Math.floor((new Date()/1000-epoch)/31556952); // years since epoch
 	var yy = '<abbr title="'+(mod(y, 2)?'Yin"><ruby>兄<rt>え</rt></ruby>':'Yang"><ruby>弟<rt>と</rt></ruby>')+'</abbr>';
 	var element = '<abbr title="'+chineseelements[mod(Math.floor(y/2), 5)]+'</abbr>の'+yy;
 	var animal = '<abbr title="'+chinesesigns[mod(y, 12)]+'</abbr>';
@@ -119,8 +120,8 @@ function china(){
 
 function zodiac(){
 	var n = Math.floor(mod(new Date()-vernal, 31556952000)/2629746000); // sign number 0-11
-	return '<abbr title="Element: '+signelements[mod(n,4)]+'&#013;Quality: ' +
-		signqualities[mod(n, 3)]+'&#013;Ruler: '+signrulers[n] + 
+	return '<abbr title="Element: '+signelements[mod(n, 4)]+'&#013;Quality: ' +
+		signqualities[mod(n, 3)]+'&#013;Ruler: '+signrulers[n] +
 		' (this planet\'s influence heightens when inside this constellation)&#013;Detriment: ' +
 		signrulers[mod(n+6, 12)] + ' (this planet\'s influence weakens when inside this constellation)">' +
 		signs[n]+'</abbr>';
@@ -187,12 +188,12 @@ function holidayCSS(){
 	console.log(month, day);
 
 	var title = '';
-	var default_src = 'mo';
-	var src = default_src;
+	var defaultSrc = 'mo';
+	var src = defaultSrc;
 	switch (month){
 		case 2:
 			src = 'mochentines';
-			if (day === 4) {
+			if (day === 4){
 				title = 'Day of the Republic. Wiwie Erdeka! Long live the RTC!';
 			}
 			else {
@@ -210,8 +211,8 @@ function holidayCSS(){
 			break;
 		case 6:
 			src = 'mogay';
-			if (day === 23) {
-				title = 'Happy birthday, MochaFiction Wiki! 2011-' + (new Date()).getFullYear();
+			if (day === 23){
+				title = 'Happy birthday, MochaFiction Wiki! 2011-' + new Date().getFullYear();
 			}
 			else {
 				title = 'Everyone gets a nice big hug!';
@@ -265,7 +266,7 @@ function holidayCSS(){
 	}
 
 	document.getElementById('m').title = title;
-	if (src !== default_src){
+	if (src !== defaultSrc){
 		document.getElementById('m').src = 'img/'+src+'.png';
 	}
 
@@ -292,13 +293,13 @@ function oneiaTime(){
 	//console.log(nikkiphase);
 
 	var currentTimeString = years + ' AT, Day ' + days + ', ';
-	
+
 	for (var i = 1; i < 6; i += 1){
 		// oneian clock is conveniently decimal... :^)
 		currentTimeString += Math.floor(remainder/(day/Math.pow(10, i)))+(i !== 5 ? ':' : '');
 		remainder = remainder % (day/Math.pow(10, i));
 	}
-	
+
 	var timetime = new Date().toString();
 	var utc1 = timetime.slice(0, 16);
 	var utc2 = timetime.slice(16, 18);
@@ -318,11 +319,10 @@ function oneiaTime(){
 		yearprogress+'"></progress><br/>\n<img src="img/phase/'+moonphase +
 		'.png" height=9 alt="Moon Phase: '+phases[moonphase]+'" title="Moon Phase: ' +
 		phases[moonphase]+'"> Earth Time:<br/>'+utc1+utc2+utc3+medidiem+'<br/>\n<progress value="' +
-		((Date.now()-vernal) % yy)/yy+'"></progress>';
+		(Date.now()-vernal) % yy/yy+'"></progress>';
 }
 
 function bonus(){
-	'use strict';
 	document.getElementById('clockbonus').innerHTML = zodiac()+'<br/>'+china()+'<br/>'+egypt() +
 		'<br/>'+maya()+'<br/>JD '+jd().toFixed(3)+'<br/>'+darian();
 }

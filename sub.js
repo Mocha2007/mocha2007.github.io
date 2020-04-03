@@ -1,3 +1,4 @@
+/* eslint-disable no-var */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
 'use strict';
 var subtitles =	[
