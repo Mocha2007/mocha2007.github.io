@@ -573,6 +573,36 @@ class RPGTile{
 		tooltip(innerHTML);
 	}
 }
+
+// snuegworld classes
+/*
+
+class Snuegworld{
+	/**
+	 * @param {string} name
+	 * @param {SnuegworldResource[]} input
+	 * @param {SnuegworldResource[]} output
+	*//*
+	constructor(name, input = [], output = []){
+		this.name = name;
+		this.input = input;
+		this.output = output;
+	}
+}
+
+class SnuegworldResource{
+	/**
+	 * @param {string} name
+	 * @param {HTMLElement} icon
+	*//*
+	constructor(name, icon = document.createElement('div')){
+		this.name = name;
+		this.icon = icon;
+	}
+}
+*/
+
+
 // constants
 
 var game = {
