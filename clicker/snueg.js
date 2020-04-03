@@ -1,7 +1,7 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true, nonew: false */
 /* exported delete_cookie, downloadSave, guide, importSave, main, prestige, snuegButton */
-"use strict";
-var version = "a200403";
+'use strict';
+var version = 'a200403';
 
 // classes
 
@@ -13,7 +13,7 @@ class Purchase{
 	 * @param {string} desc - Description of the building, given in the tooltip
 	 * @param {function} onPurchase - Function to play on purchase
 	*/
-	constructor(name, price, desc = "", onPurchase = () => {}){
+	constructor(name, price, desc = '', onPurchase = () => {}){
 		this.name = name;
 		this.price = price;
 		this.desc = desc;
@@ -26,7 +26,7 @@ class Purchase{
 	}
 	/** @returns {string} id of buy button */
 	get elementId(){
-		return this.name.split(' ').join('_') + "_button";
+		return this.name.split(' ').join('_') + '_button';
 	}
 	/** @returns {string} icon of button */
 	get textIcon(){
@@ -41,11 +41,11 @@ class Purchase{
 			this.addToPlayer(1);
 			this.updateElement();
 			this.onPurchase();
-			log("Player bought 1 " + this.name);
+			log('Player bought 1 ' + this.name);
 			return true;
 		}
-		log("Player tried to buy 1 " + this.name + ", but did not have enough snueg. (" +
-			game.player.snueg + " < " + this.next_price + ")");
+		log('Player tried to buy 1 ' + this.name + ', but did not have enough snueg. (' +
+			game.player.snueg + ' < ' + this.next_price + ')');
 		return false;
 	}
 	buyBye(){
@@ -79,7 +79,7 @@ class Building extends Purchase{
 	 * @param {string} desc - Description of the building, given in the tooltip
 	 * @param {function} onPurchase - Function to play on purchase
 	*/
-	constructor(name, base_price, production, desc = "", onPurchase = () => {}){
+	constructor(name, base_price, production, desc = '', onPurchase = () => {}){
 		super(name, base_price, desc, onPurchase);
 		this.production = production;
 	}
@@ -171,7 +171,7 @@ class Building extends Purchase{
 	}
 	// functions
 	addToDocument(){
-		document.getElementById("building_panel").appendChild(this.createElement);
+		document.getElementById('building_panel').appendChild(this.createElement);
 	}
 	/** @param {number} n number of this to add to player */
 	addToPlayer(n){
@@ -218,13 +218,13 @@ class Building extends Purchase{
 		var ul = document.createElement('ul');
 		div.appendChild(ul);
 		var li = document.createElement('li');
-		li.innerHTML = "each " + this.name + " produces <b>" + bigNumber(this.individualProduction) + "</b> snueg per second";
+		li.innerHTML = 'each ' + this.name + ' produces <b>' + bigNumber(this.individualProduction) + '</b> snueg per second';
 		ul.appendChild(li);
 		li = document.createElement('li');
-		li.innerHTML = this.amount + " " + this.name + " producing <b>" + bigNumber(this.totalProduction) + "</b> snueg per second (<b>" + (100*this.productionFraction).toFixed(1)+ "%</b> of total SpS)";
+		li.innerHTML = this.amount + ' ' + this.name + ' producing <b>' + bigNumber(this.totalProduction) + '</b> snueg per second (<b>' + (100*this.productionFraction).toFixed(1)+ '%</b> of total SpS)';
 		ul.appendChild(li);
 		li = document.createElement('li');
-		li.innerHTML = bigNumber(this.lifetimeProduction, true) + " snuegs so far";
+		li.innerHTML = bigNumber(this.lifetimeProduction, true) + ' snuegs so far';
 		ul.appendChild(li);
 	}
 	// debug statistics
@@ -253,7 +253,7 @@ class Upgrade extends Purchase{
 	 * @param {string[]} special - Special effect(s) of the upgrade. Currently only "mouse" is supported.
 	 * @param {function} onPurchase - Function to play on purchase
 	*/
-	constructor(name, price, bonus, targets, desc = "", special = [], onPurchase = () => {}){
+	constructor(name, price, bonus, targets, desc = '', special = [], onPurchase = () => {}){
 		super(name, price, desc, onPurchase);
 		this.bonus = bonus;
 		this.targets = targets;
@@ -286,12 +286,12 @@ class Upgrade extends Purchase{
 	}
 	/** @returns {string} desc string for special abilities */
 	get specialString(){
-		var specials = "";
-		if (this.special.includes("mouse")){
-			specials += "<li>Also increases production from clicking by this much.</li>";
+		var specials = '';
+		if (this.special.includes('mouse')){
+			specials += '<li>Also increases production from clicking by this much.</li>';
 		}
-		if (this.special.includes("fromProduction")){
-			specials += "<li>Also adds this much of your production to your clicks.</li>";
+		if (this.special.includes('fromProduction')){
+			specials += '<li>Also adds this much of your production to your clicks.</li>';
 		}
 		return specials;
 	}
@@ -304,7 +304,7 @@ class Upgrade extends Purchase{
 		if (game.player.upgrades.includes(this.id)){
 			return;
 		}
-		document.getElementById("upgrade_panel").appendChild(this.createElement);
+		document.getElementById('upgrade_panel').appendChild(this.createElement);
 	}
 	addToPlayer(){
 		game.player.upgrades.push(this.id);
@@ -320,7 +320,7 @@ class Upgrade extends Purchase{
 		var ul = document.createElement('ul');
 		div.appendChild(ul);
 		var li = document.createElement('li');
-		li.innerHTML = "improves production of each " + this.targetNames.join(" and ") + " by " + bigNumber((this.bonus-1)*100, true) + "%";
+		li.innerHTML = 'improves production of each ' + this.targetNames.join(' and ') + ' by ' + bigNumber((this.bonus-1)*100, true) + '%';
 		ul.appendChild(li);
 		ul.innerHTML += this.specialString;
 	}
@@ -345,7 +345,9 @@ class Particle {
 			try{
 				document.getElementById(element.id).remove();
 			}
-			catch (TypeError){}
+			catch (TypeError){
+				// if a click-removable particle is defined and clicked, this block will trigger
+			}
 		}, lifespan*1000);
 		game.particles.push(this);
 	}
@@ -360,9 +362,9 @@ class FlyingText extends Particle {
 	*/
 	constructor(text, x, y){
 		var particleElement = document.createElement('div');
-		particleElement.style.left = x + "px";
-		particleElement.style.top = y + "px";
-		particleElement.style.opacity = "1";
+		particleElement.style.left = x + 'px';
+		particleElement.style.top = y + 'px';
+		particleElement.style.opacity = '1';
 		particleElement.innerHTML = text;
 		super(particleElement,
 			element => {
@@ -370,7 +372,7 @@ class FlyingText extends Particle {
 				element.style.left = (parseInt(element.style.left.replace('px', '')) + game.random.uniform(-8, 8)) + 'px';
 				element.style.opacity = parseFloat(element.style.opacity) * 0.9;
 			},
-		1);
+			1);
 	}
 }
 
@@ -440,7 +442,7 @@ class Achievement{
 		// button
 		var div = document.createElement('div');
 		div.classList.add('upgrade_buy_button');
-		div.id = "achievement_" + this.name;
+		div.id = 'achievement_' + this.name;
 		div.onmousemove = () => this.tooltip();
 		div.onmouseout = () => clearTooltip();
 		// name
@@ -501,7 +503,7 @@ class RPGFloor{
 	 * @param {string} name
 	 * @param {string} desc
 	*/
-	constructor(color, name = "", desc = ""){
+	constructor(color, name = '', desc = ''){
 		this.color = color;
 		this.name = name;
 		this.desc = desc;
@@ -521,7 +523,7 @@ class RPGObject{
 	 * @param {string} desc
 	 * @param {number} hp
 	*/
-	constructor(icon, color = "white", name = "", desc = "", hp = Infinity){
+	constructor(icon, color = 'white', name = '', desc = '', hp = Infinity){
 		this.icon = icon;
 		this.color = color;
 		this.name = name;
@@ -545,7 +547,7 @@ class RPGEntity extends RPGObject{
 	 * @param {number} hp
 	 * @param {number} attack
 	*/
-	constructor(icon, color = "white", name = "", desc = "", hp = 1, attack = 0){
+	constructor(icon, color = 'white', name = '', desc = '', hp = 1, attack = 0){
 		super(icon, color, name, desc, hp);
 		this.attack = attack;
 	}
@@ -626,32 +628,32 @@ var game = {
 	},
 	/** @type {Achievement[]} */
 	achievements: [
-		new Achievement("Lucky", "Every 2 seconds this achievement has a one in a million chance of unlocking. Should take you about two weeks...", () => Math.random() < 1e-6),
-		new Achievement("Picky", "Skip twenty songs in one session", () => 20 <= game.youtube.skips),
-		new Achievement("Well-Informed", "Ask the guide for advice 50 times in one session", () => 50 <= game.debug.guideClicks),
-		new Achievement("Prepared", "Back your save up", () => false), // DO NOT CHANGE THE ID OF THIS - SHOULD REMAIN 3
-		new Achievement("6 9", "Have exactly 69 SNG 69000s", () => game.buildings[5].amount === 69),
-		new Achievement("m o w mow mow mow", "mow mow mow mow mow mow mow mow mow mow mow mow mow mow", () => false), // DO NOT CHANGE THE ID OF THIS - SHOULD REMAIN 5
-		new Achievement("Closure", "Earn every achievement - you win! :D", () => game.player.achievements.length === game.achievements.length),
-		new Achievement("Efficient", "Buy every upgrade", () => game.player.upgrades.length === game.upgrades.length),
+		new Achievement('Lucky', 'Every 2 seconds this achievement has a one in a million chance of unlocking. Should take you about two weeks...', () => Math.random() < 1e-6),
+		new Achievement('Picky', 'Skip twenty songs in one session', () => 20 <= game.youtube.skips),
+		new Achievement('Well-Informed', 'Ask the guide for advice 50 times in one session', () => 50 <= game.debug.guideClicks),
+		new Achievement('Prepared', 'Back your save up', () => false), // DO NOT CHANGE THE ID OF THIS - SHOULD REMAIN 3
+		new Achievement('6 9', 'Have exactly 69 SNG 69000s', () => game.buildings[5].amount === 69),
+		new Achievement('m o w mow mow mow', 'mow mow mow mow mow mow mow mow mow mow mow mow mow mow', () => false), // DO NOT CHANGE THE ID OF THIS - SHOULD REMAIN 5
+		new Achievement('Closure', 'Earn every achievement - you win! :D', () => game.player.achievements.length === game.achievements.length),
+		new Achievement('Efficient', 'Buy every upgrade', () => game.player.upgrades.length === game.upgrades.length),
 	],
 	/** @type {AchievementSeries[]} */
 	achievementSeries: [],
 	buildings: [
-		new Building('Snueg', 10, 0.1, "A warm snueg."),
-		new Building('Megasnueg', 60, 0.5, "A really big snueg, more efficiently transferring warmth and affection."),
-		new Building('Snueggr', 400, 4, "An unpaid intern to snueg you cheaply."),
-		new Building('Snueggotron', 2e3, 10, "A simple robot designed to automatically snueg you."),
-		new Building('SNG 9000', 6e3, 40, "A half-sentient robot designed to automatically snueg you."),
-		new Building('SNG 69000', 25e3, 100, "A fully sentient robot designed to snueg you with maximum simulated affection."),
-		new Building('It&apos;s newegg', 125e3, 400, "For a nominal fee you too can own your own snueg-themed website."),
+		new Building('Snueg', 10, 0.1, 'A warm snueg.'),
+		new Building('Megasnueg', 60, 0.5, 'A really big snueg, more efficiently transferring warmth and affection.'),
+		new Building('Snueggr', 400, 4, 'An unpaid intern to snueg you cheaply.'),
+		new Building('Snueggotron', 2e3, 10, 'A simple robot designed to automatically snueg you.'),
+		new Building('SNG 9000', 6e3, 40, 'A half-sentient robot designed to automatically snueg you.'),
+		new Building('SNG 69000', 25e3, 100, 'A fully sentient robot designed to snueg you with maximum simulated affection.'),
+		new Building('It&apos;s newegg', 125e3, 400, 'For a nominal fee you too can own your own snueg-themed website.'),
 		new Building('G&eacute;&ucirc;&ntilde;s', 666666, 1666,
-			"An unholy abomination, you can use particle colliders to smash two of them together to get their antiparticle, the snueg.",
+			'An unholy abomination, you can use particle colliders to smash two of them together to get their antiparticle, the snueg.',
 			() => game.youtube.play(0)),
-		new Building('Snuegland', 3e6, 7e3, "A magical kingdom teeming with snuegs, ripe for the snatching!"),
-		new Building('Snoo', 20050623, 2e4, "These strange little critters only need a G added to them to make them snuegs. Seems simple enough..."),
-		new Building('Snuegworld', 1.69e8, 6.9e4, "An entire world filled with snueg! :D"),
-		new Building('I. D. T. S.', 1.23456789e9, 222222, "The <i>Interdimensional Transsnuegginator</i> is a device to harness snueggery from other dimensions."),
+		new Building('Snuegland', 3e6, 7e3, 'A magical kingdom teeming with snuegs, ripe for the snatching!'),
+		new Building('Snoo', 20050623, 2e4, 'These strange little critters only need a G added to them to make them snuegs. Seems simple enough...'),
+		new Building('Snuegworld', 1.69e8, 6.9e4, 'An entire world filled with snueg! :D'),
+		new Building('I. D. T. S.', 1.23456789e9, 222222, 'The <i>Interdimensional Transsnuegginator</i> is a device to harness snueggery from other dimensions.'),
 	],
 	debug: {
 		guideClicks: 0,
@@ -665,24 +667,24 @@ var game = {
 		/** @returns {number} base clicks from relevant upgrades */
 		get base(){
 			var fromProduction = game.production * 
-				sum(game.upgrades.map(upgrade => upgrade.special.includes("fromProduction") && upgrade.purchased ? upgrade.bonus : 0));
+				sum(game.upgrades.map(upgrade => upgrade.special.includes('fromProduction') && upgrade.purchased ? upgrade.bonus : 0));
 			return 1 + fromProduction;
 		},
 		/** @returns {number} bonus from relevant upgrades */
 		get bonus(){
-			return product(game.upgrades.map(upgrade => upgrade.special.includes("mouse") && upgrade.purchased ? upgrade.bonus : 1));
+			return product(game.upgrades.map(upgrade => upgrade.special.includes('mouse') && upgrade.purchased ? upgrade.bonus : 1));
 		},
 	},
 	news: [
-		"I like snueg.",
-		"I love to snueg.",
-		"licc",
-		"Must... forevrially... snueg...",
-		"Snueg is love, snueg is life.",
-		"Snuegging is the best!",
-		"That's the power of snueg.",
-		"UwU",
-		"Wow, snueg is great.",
+		'I like snueg.',
+		'I love to snueg.',
+		'licc',
+		'Must... forevrially... snueg...',
+		'Snueg is love, snueg is life.',
+		'Snuegging is the best!',
+		'That\'s the power of snueg.',
+		'UwU',
+		'Wow, snueg is great.',
 	],
 	/** @type {Particle[]} */
 	particles: [],
@@ -745,7 +747,7 @@ var game = {
 			new RPGObject('O', 'brown', 'Tree'),
 		],
 		toggle(){
-			document.getElementById('rpg').style.display = document.getElementById('rpg').style.display === "block" ? "none" : "block";
+			document.getElementById('rpg').style.display = document.getElementById('rpg').style.display === 'block' ? 'none' : 'block';
 		},
 		unlock(){
 			if (document.getElementById('rpg').style.display !== 'block'){
@@ -759,7 +761,7 @@ var game = {
 					var floor = game.random.choice(this.floors);
 					var object = game.random.choice(this.objects);
 					var element = (new RPGTile(floor, object)).element;
-					element.id = "rpgTile" + row + "-" + col;
+					element.id = 'rpgTile' + row + '-' + col;
 					world.appendChild(element);
 				});
 				world.appendChild(document.createElement('br'));
@@ -777,64 +779,64 @@ var game = {
 	},
 	upgrades: [
 		// snueg
-		new Upgrade('Decasnueg', 1e2, 1.5, [0], "A <i>really</i> warm snueg."),
-		new Upgrade('Hectosnueg', 1e3, 1.5, [0], "A <i>really really</i> warm snueg."),
-		new Upgrade('Kilosnueg', 1e4, 1.5, [0], "A <i>really, really, really</i> warm snueg."),
-		new Upgrade('Myriasnueg', 1e5, 1.5, [0], "A <i>really, r-</i>... dude, it's just a warm-ass snueg."),
-		new Upgrade('Hebdosnueg', 1e6, 1.5, [0], "Did you even know this used to be a metric prefix? I didn't. Must be a warm fuckin&apos; snueg."),
+		new Upgrade('Decasnueg', 1e2, 1.5, [0], 'A <i>really</i> warm snueg.'),
+		new Upgrade('Hectosnueg', 1e3, 1.5, [0], 'A <i>really really</i> warm snueg.'),
+		new Upgrade('Kilosnueg', 1e4, 1.5, [0], 'A <i>really, really, really</i> warm snueg.'),
+		new Upgrade('Myriasnueg', 1e5, 1.5, [0], 'A <i>really, r-</i>... dude, it\'s just a warm-ass snueg.'),
+		new Upgrade('Hebdosnueg', 1e6, 1.5, [0], 'Did you even know this used to be a metric prefix? I didn\'t. Must be a warm fuckin&apos; snueg.'),
 		// megasnueg
-		new Upgrade('Floofy Megasnuegs', 6e2, 1.2, [1], "Makes the megasnuegs even floofier!"),
-		new Upgrade('Woolen Megasnuegs', 6e3, 1.2, [1], "Makes the megasnuegs soopr soff!"),
-		new Upgrade('Cloud Megasnuegs', 6e4, 1.2, [1], "Clouds are like super soft, right? Let&apos;s just use those!"),
+		new Upgrade('Floofy Megasnuegs', 6e2, 1.2, [1], 'Makes the megasnuegs even floofier!'),
+		new Upgrade('Woolen Megasnuegs', 6e3, 1.2, [1], 'Makes the megasnuegs soopr soff!'),
+		new Upgrade('Cloud Megasnuegs', 6e4, 1.2, [1], 'Clouds are like super soft, right? Let&apos;s just use those!'),
 		new Upgrade('Kitten Megasnuegs', 6e5, 1.2, [1],
-			"The only thing softer than clouds is kittens!", [],
+			'The only thing softer than clouds is kittens!', [],
 			() => game.youtube.playCategory('cat')),
 		new Upgrade('Genetically Engineered Kitten Megasnuegs', 6e6, 1.1, [1],
-			"Genetically engineer the kittens to give even fluffier megasnuegs.", [],
+			'Genetically engineer the kittens to give even fluffier megasnuegs.', [],
 			() => game.youtube.playCategory('cat')),
 		// Snueggr
-		new Upgrade('Minimum Wage Snueggrs', 4e3, 1.1, [2], "Pays the unpaid interns to motivate them more."),
-		new Upgrade('Beyond Minimum Wage Snueggrs', 4e4, 1.1, [2], "Pays the slightly paid interns even more."),
-		new Upgrade('Almost Livable Wage Snueggrs', 4e5, 1.1, [2], "Pays the interns almost a living wage. Almost."),
-		new Upgrade('Livable Wage Snueggrs', 4e6, 1.1, [2], "Pays the interns a living wage."),
-		new Upgrade('Decent Wage Snueggrs', 4e7, 1.1, [2], "Pays the interns a decent wage, allowing for extra free time to snueg."),
+		new Upgrade('Minimum Wage Snueggrs', 4e3, 1.1, [2], 'Pays the unpaid interns to motivate them more.'),
+		new Upgrade('Beyond Minimum Wage Snueggrs', 4e4, 1.1, [2], 'Pays the slightly paid interns even more.'),
+		new Upgrade('Almost Livable Wage Snueggrs', 4e5, 1.1, [2], 'Pays the interns almost a living wage. Almost.'),
+		new Upgrade('Livable Wage Snueggrs', 4e6, 1.1, [2], 'Pays the interns a living wage.'),
+		new Upgrade('Decent Wage Snueggrs', 4e7, 1.1, [2], 'Pays the interns a decent wage, allowing for extra free time to snueg.'),
 		// Snuegotron
-		new Upgrade('Oiling', 2e4, 1.1, [3], "Oil helps the snuegotron move faster, providing more snuegs."),
-		new Upgrade('Coolant', 2e5, 1.1, [3], "Coolant allows the snuegotron to operate faster without overheating."),
-		new Upgrade('Snueg Processing Unit', 2e6, 1.1, [3], "An SPU will allow snueggotrons to snueg with greater care."),
-		new Upgrade('Snueg Nexus Unit Extended Graphics', 2e7, 1.1, [3], "A snueg nexus unit graphics chip (SNUEG chip) will allow better processing of snuegs."),
+		new Upgrade('Oiling', 2e4, 1.1, [3], 'Oil helps the snuegotron move faster, providing more snuegs.'),
+		new Upgrade('Coolant', 2e5, 1.1, [3], 'Coolant allows the snuegotron to operate faster without overheating.'),
+		new Upgrade('Snueg Processing Unit', 2e6, 1.1, [3], 'An SPU will allow snueggotrons to snueg with greater care.'),
+		new Upgrade('Snueg Nexus Unit Extended Graphics', 2e7, 1.1, [3], 'A snueg nexus unit graphics chip (SNUEG chip) will allow better processing of snuegs.'),
 		// Gneus
-		new Upgrade('Parallel G&eacute;&ucirc;&ntilde;s Collisions', 6666666, 1.1, [7], "Parallel colliders make for more snueg."),
-		new Upgrade('G&eacute;&ucirc;&ntilde;s Colliders in Series', 66666666, 1.1, [7], "Colliders in series make for more even more snueg."),
+		new Upgrade('Parallel G&eacute;&ucirc;&ntilde;s Collisions', 6666666, 1.1, [7], 'Parallel colliders make for more snueg.'),
+		new Upgrade('G&eacute;&ucirc;&ntilde;s Colliders in Series', 66666666, 1.1, [7], 'Colliders in series make for more even more snueg.'),
 		// Snuegland
-		new Upgrade('Duchies', 3e7, 1.1, [8], "Snueg duchies will enhance the administration of Snuegland."),
-		new Upgrade('Counties', 3e8, 1.1, [8], "Snueg counties will enhance the administration of Snuegland even further."),
+		new Upgrade('Duchies', 3e7, 1.1, [8], 'Snueg duchies will enhance the administration of Snuegland.'),
+		new Upgrade('Counties', 3e8, 1.1, [8], 'Snueg counties will enhance the administration of Snuegland even further.'),
 		// Snoo
-		new Upgrade('Baronies', 3e9, 1.1, [8], "Snueg baronies will enhance the administration of Snuegland yet further."),
-		new Upgrade('Subreddits', 2e8, 1.1, [9], "Subreddits will help corral the snoos, allowing for more efficient reaping."),
-		new Upgrade('Admins', 2e9, 1.1, [9], "Admins will frighten the snoos, allowing for faster culling."),
-		new Upgrade('Spezzing Protocols', 2e10, 1.1, [9], "Permit admins to spez unflattering snoos, allowing for more optimal harvest."),
+		new Upgrade('Baronies', 3e9, 1.1, [8], 'Snueg baronies will enhance the administration of Snuegland yet further.'),
+		new Upgrade('Subreddits', 2e8, 1.1, [9], 'Subreddits will help corral the snoos, allowing for more efficient reaping.'),
+		new Upgrade('Admins', 2e9, 1.1, [9], 'Admins will frighten the snoos, allowing for faster culling.'),
+		new Upgrade('Spezzing Protocols', 2e10, 1.1, [9], 'Permit admins to spez unflattering snoos, allowing for more optimal harvest.'),
 		// Snuegworld
-		new Upgrade('Snuegmoon', 1.69e9, 1.1, [10], "A snuegmoon will allow snuegtides on snuegworld."),
-		new Upgrade('Snuegstar', 1.69e10, 1.1, [10], "A snuegstar will allow snuegphotosynthesis in snuegplants on snuegworld."),
-		new Upgrade('Snueggalaxy', 1.69e11, 1.1, [10], "A snueggalaxy will allow sn-... well, you get the idea."),
+		new Upgrade('Snuegmoon', 1.69e9, 1.1, [10], 'A snuegmoon will allow snuegtides on snuegworld.'),
+		new Upgrade('Snuegstar', 1.69e10, 1.1, [10], 'A snuegstar will allow snuegphotosynthesis in snuegplants on snuegworld.'),
+		new Upgrade('Snueggalaxy', 1.69e11, 1.1, [10], 'A snueggalaxy will allow sn-... well, you get the idea.'),
 		// Snuegworld
-		new Upgrade('5th Dimension', 1.23456789e10, 6/5, [11], "A fifth dimension will improve the IDTS by a whopping 20%!"),
-		new Upgrade('6th Dimension', 1.23456789e11, 7/6, [11], "A sixth dimension will improve the IDTS by a whopping 17%!"),
-		new Upgrade('7th Dimension', 1.23456789e12, 8/7, [11], "A seventh dimension will improve the IDTS by a whopping 14%!"),
-		new Upgrade('8th Dimension', 1.23456789e13, 9/8, [11], "A eighth dimension will improve the IDTS by a whopping 13%!"),
-		new Upgrade('9th Dimension', 1.23456789e14, 10/9, [11], "A ninth dimension will improve the IDTS by a whopping 11%!"),
-		new Upgrade('10th Dimension', 1.23456789e15, 11/10, [11], "A tenth dimension will improve the IDTS by a whopping 10%!"),
+		new Upgrade('5th Dimension', 1.23456789e10, 6/5, [11], 'A fifth dimension will improve the IDTS by a whopping 20%!'),
+		new Upgrade('6th Dimension', 1.23456789e11, 7/6, [11], 'A sixth dimension will improve the IDTS by a whopping 17%!'),
+		new Upgrade('7th Dimension', 1.23456789e12, 8/7, [11], 'A seventh dimension will improve the IDTS by a whopping 14%!'),
+		new Upgrade('8th Dimension', 1.23456789e13, 9/8, [11], 'A eighth dimension will improve the IDTS by a whopping 13%!'),
+		new Upgrade('9th Dimension', 1.23456789e14, 10/9, [11], 'A ninth dimension will improve the IDTS by a whopping 11%!'),
+		new Upgrade('10th Dimension', 1.23456789e15, 11/10, [11], 'A tenth dimension will improve the IDTS by a whopping 10%!'),
 		// IDTS
 		new Upgrade('Intensify Forward Firepower', 1.23456789e10, 1.1, [1],
-			"Intensifying forward firepower will reduce the likelihood of A-wings smashing into your bridge.", [12],
+			'Intensifying forward firepower will reduce the likelihood of A-wings smashing into your bridge.', [12],
 			() => game.youtube.play(19)),
 		// etc
-		new Upgrade('Clickysnueg', 750, 2, [], "Makes the cursor floofier so the clicks are nice and soft UwU", "mouse"),
-		new Upgrade('Snueg Siphon', 1e3, 0.01, [], "Siphons SPS from your buildings, giving your mouse an extra 1% of your production.", "fromProduction"),
-		new Upgrade('Snueg Straw', 1e6, 0.01, [], "Siphons SPS from your buildings, giving your mouse an extra 1% of your production.", "fromProduction"),
-		new Upgrade('Snueg Vacuum', 1e9, 0.01, [], "Siphons SPS from your buildings, giving your mouse an extra 1% of your production.", "fromProduction"),
-		new Upgrade('Snueg Towhook', 1e12, 0.01, [], "Siphons SPS from your buildings, giving your mouse an extra 1% of your production.", "fromProduction"),
+		new Upgrade('Clickysnueg', 750, 2, [], 'Makes the cursor floofier so the clicks are nice and soft UwU', 'mouse'),
+		new Upgrade('Snueg Siphon', 1e3, 0.01, [], 'Siphons SPS from your buildings, giving your mouse an extra 1% of your production.', 'fromProduction'),
+		new Upgrade('Snueg Straw', 1e6, 0.01, [], 'Siphons SPS from your buildings, giving your mouse an extra 1% of your production.', 'fromProduction'),
+		new Upgrade('Snueg Vacuum', 1e9, 0.01, [], 'Siphons SPS from your buildings, giving your mouse an extra 1% of your production.', 'fromProduction'),
+		new Upgrade('Snueg Towhook', 1e12, 0.01, [], 'Siphons SPS from your buildings, giving your mouse an extra 1% of your production.', 'fromProduction'),
 	],
 	youtube: {
 		bufferTime: 2, // s
@@ -956,8 +958,8 @@ var game = {
 			setTimeout(() => this.spawnSnugBug(), 600*1000);
 			element.remove();
 		};
-		element.style.left = this.random.randint(window.screen.width*0.1, window.screen.width*0.7) + "px";
-		element.style.top = this.random.randint(window.screen.height*0.1, window.screen.height*0.9) + "px";
+		element.style.left = this.random.randint(window.screen.width*0.1, window.screen.width*0.7) + 'px';
+		element.style.top = this.random.randint(window.screen.height*0.1, window.screen.height*0.9) + 'px';
 		element.style.opacity = 1;
 		var tick = e => {
 			e.style.top = (parseInt(e.style.top.replace('px', '')) + this.random.uniform(-20, 20)) + 'px';
@@ -983,64 +985,64 @@ var game = {
 game.achievementSeries = [
 	// buying a building for the first time
 	new AchievementSeries(
-		n => "First " + game.buildings[n].name,
-		n => "Purchase one " + game.buildings[n].name,
+		n => 'First ' + game.buildings[n].name,
+		n => 'Purchase one ' + game.buildings[n].name,
 		n => () => 0 < game.player.buildings[n],
 		game.buildings.length
 	),
 	// 50 of a building
 	new AchievementSeries(
-		n => "Fiftieth " + game.buildings[n].name,
-		n => "Purchase fifty " + game.buildings[n].name,
+		n => 'Fiftieth ' + game.buildings[n].name,
+		n => 'Purchase fifty ' + game.buildings[n].name,
 		n => () => 50 <= game.player.buildings[n],
 		game.buildings.length
 	),
 	// 100 of a building
 	new AchievementSeries(
-		n => "Hundredth " + game.buildings[n].name,
-		n => "Purchase a hundred " + game.buildings[n].name,
+		n => 'Hundredth ' + game.buildings[n].name,
+		n => 'Purchase a hundred ' + game.buildings[n].name,
 		n => () => 100 <= game.player.buildings[n],
 		game.buildings.length
 	),
 	// 10^n income
 	new AchievementSeries(
-		n => bigNumber(Math.pow(10, n), true) + " snueg/s income",
-		n => "Get " + bigNumber(Math.pow(10, n), true) + " snueg/s income",
+		n => bigNumber(Math.pow(10, n), true) + ' snueg/s income',
+		n => 'Get ' + bigNumber(Math.pow(10, n), true) + ' snueg/s income',
 		n => () => Math.pow(10, n) <= game.production,
 		10
 	),
 	// 10^n lifetime snueg
 	new AchievementSeries(
-		n => bigNumber(Math.pow(10, n), true) + " snueg lifetime earnings",
-		n => "Get " + bigNumber(Math.pow(10, n), true) + " snueg lifetime earnings",
+		n => bigNumber(Math.pow(10, n), true) + ' snueg lifetime earnings',
+		n => 'Get ' + bigNumber(Math.pow(10, n), true) + ' snueg lifetime earnings',
 		n => () => Math.pow(10, n) <= game.player.lifetimeSnueg,
 		16
 	),
 	// 10^n minutes played
 	new AchievementSeries(
-		n => bigNumber(Math.pow(10, n), true) + " minute" + (n ? 's': '') + " played",
-		n => "Play snueg clicker for " + bigNumber(Math.pow(10, n), true) + " minute" + (n ? 's': ''),
+		n => bigNumber(Math.pow(10, n), true) + ' minute' + (n ? 's': '') + ' played',
+		n => 'Play snueg clicker for ' + bigNumber(Math.pow(10, n), true) + ' minute' + (n ? 's': ''),
 		n => () => Math.pow(10, n) <= (new Date() - game.player.startTime)/(60000),
 		6
 	),
 	// 10^n prestigeing achievement series
 	new AchievementSeries(
-		n => bigNumber(Math.pow(10, n), true) + " prestige earned",
-		n => "Earn " + bigNumber(Math.pow(10, n), true) + " prestige",
+		n => bigNumber(Math.pow(10, n), true) + ' prestige earned',
+		n => 'Earn ' + bigNumber(Math.pow(10, n), true) + ' prestige',
 		n => () => Math.pow(10, n) <= game.player.prestige,
 		7
 	),
 	// 10^n snugbug achievement series
 	new AchievementSeries(
-		n => bigNumber(Math.pow(10, n), true) + " snugbugs clicked",
-		n => "Click " + bigNumber(Math.pow(10, n), true) + " snugbugs",
+		n => bigNumber(Math.pow(10, n), true) + ' snugbugs clicked',
+		n => 'Click ' + bigNumber(Math.pow(10, n), true) + ' snugbugs',
 		n => () => Math.pow(10, n) <= game.player.snugBugClicks,
 		4
 	),
 	// 25n upgrade series
 	new AchievementSeries(
-		n => (25*n + 25) + " upgrades bought",
-		n => "Buy " + (25*n + 25) + " upgrades",
+		n => (25*n + 25) + ' upgrades bought',
+		n => 'Buy ' + (25*n + 25) + ' upgrades',
 		n => () => (25*n + 25) <= game.player.upgrades.length,
 		1
 	),
@@ -1064,7 +1066,7 @@ function write_cookie(name, value){ // https://stackoverflow.com/a/11344672/2579
 	document.cookie = cookie;
 }
 function download(content, fileName, contentType){ // https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file/34156339#34156339
-	var a = document.createElement("a");
+	var a = document.createElement('a');
 	var file = new Blob([content], {type: contentType});
 	a.href = URL.createObjectURL(file);
 	a.download = fileName;
@@ -1077,7 +1079,7 @@ function importSave(){
 }
 function exportSave(){
 	var data = btoa(document.cookie);
-	log("Exported Save.");
+	log('Exported Save.');
 	return data;
 }
 function downloadSave(){
@@ -1099,9 +1101,9 @@ function addSnueg(amount){
  * @return {string} prettified number
 */
 function bigNumber(amount, integer = false){
-	var defaultPrefixes = " k M B T Qa Qi Sx Sp Oc No Dc".split(" ");
-	var siPrefixes = " k M G T P E Z Y X W V U".split(" ");
-	var siFull = " kilo mega giga tera peta exa zeta yotta xenna weka vendeka udeka".split(" ").map(i => i + 'snueg');
+	var defaultPrefixes = ' k M B T Qa Qi Sx Sp Oc No Dc'.split(' ');
+	var siPrefixes = ' k M G T P E Z Y X W V U'.split(' ');
+	var siFull = ' kilo mega giga tera peta exa zeta yotta xenna weka vendeka udeka'.split(' ').map(i => i + 'snueg');
 	var settingVars = {
 		default: defaultPrefixes,
 		siabbr: siPrefixes,
@@ -1111,7 +1113,7 @@ function bigNumber(amount, integer = false){
 	// 3245 -> 3.245 k
 	// 3950847 -> 3.950 M
 	if (amount < 1000){
-		return integer ? "" + round(amount) : amount.toFixed(3);
+		return integer ? '' + round(amount) : amount.toFixed(3);
 	}
 	if (game.settings.numbers === 'exponential'){
 		return bigNumberExp(amount);
@@ -1119,7 +1121,7 @@ function bigNumber(amount, integer = false){
 	var prefixes = settingVars[game.settings.numbers];
 	var i = Math.floor(Math.log(amount)/Math.log(1000));
 	var factor = Math.pow(1000, i);
-	return round(amount/factor, 3).toFixed(3) + " " + prefixes[i];
+	return round(amount/factor, 3).toFixed(3) + ' ' + prefixes[i];
 }
 
 /**
@@ -1134,10 +1136,10 @@ function bigNumberExp(amount){
 
 function clearTooltip(){
 	// erase current tooltip
-	var tooltip = document.getElementById("tooltip");
-	tooltip.innerHTML = "";
-	tooltip.style.top = "-5%";
-	tooltip.style.left = "0px";
+	var tooltip = document.getElementById('tooltip');
+	tooltip.innerHTML = '';
+	tooltip.style.top = '-5%';
+	tooltip.style.left = '0px';
 }
 
 function gameTick(){
@@ -1158,17 +1160,17 @@ function guide(){
 	game.debug.guideClicks += 1;
 	var helpstring;
 	/** @type {HTMLDivElement} */
-	var speechBubble = document.getElementById("guideSpeechBubble");
+	var speechBubble = document.getElementById('guideSpeechBubble');
 	/** @type {number} */
 	var n = game.random.randint(0, 5);
-	log("Guide string " + n);
+	log('Guide string ' + n);
 	switch (n){
 		case 0: // upgrade advice
 			for (var i = 1; i < game.upgrades.length; i++){
 				var upgrade = game.upgrades[i];
 				// most upgrades are worth 10s of production...
 				if (!upgrade.purchased && upgrade.price < Math.max(10*game.production, game.player.snueg)){
-					helpstring = "The <b>" + upgrade.name + "</b> upgrade is looking pretty cheap right now... only " + bigNumber(upgrade.price, true) + " snueg!";
+					helpstring = 'The <b>' + upgrade.name + '</b> upgrade is looking pretty cheap right now... only ' + bigNumber(upgrade.price, true) + ' snueg!';
 					break;
 				}
 			}
@@ -1183,24 +1185,24 @@ function guide(){
 					bestBuilding = building;
 				}
 			});
-			helpstring = "I recommend purchasing the <b>" + bestBuilding.name + "</b>! It's the best deal right now!";
+			helpstring = 'I recommend purchasing the <b>' + bestBuilding.name + '</b>! It\'s the best deal right now!';
 			break;
 		case 2: // nonsense
 			helpstring = game.random.choice([
-				"Do you liek snueg too, hoomon?",
-				"I liek snueg",
-				"Pls gib guide snueg",
+				'Do you liek snueg too, hoomon?',
+				'I liek snueg',
+				'Pls gib guide snueg',
 			]);
-			helpstring += " UwU";
+			helpstring += ' UwU';
 			break;
 		case 3: // gameplay advice
 			helpstring = game.random.choice([
-				"Don&apos;t forget to purchase upgrades! They can help your SPS (Snuegs per second) immensely!",
-				"If the game is going slow, it might be time to prestige up! Click the prestige button in the upper left once you get a couple dozen points or so!",
+				'Don&apos;t forget to purchase upgrades! They can help your SPS (Snuegs per second) immensely!',
+				'If the game is going slow, it might be time to prestige up! Click the prestige button in the upper left once you get a couple dozen points or so!',
 			]);
 			break;
 		default:
-			helpstring = "Hiya! I'm the guide! Click me to get some advice! :D";
+			helpstring = 'Hiya! I\'m the guide! Click me to get some advice! :D';
 	}
 	// no duplicates
 	if (helpstring === speechBubble.innerHTML){
@@ -1260,8 +1262,8 @@ function play(filename){
 function prestige(){
 	// confirm
 	var pp = game.thisPrestigeNumber;
-	if (!confirm("Are you sure you want to prestige up? You will lose all your snueg and buildings, but will gain a permanent " +
-		pp + "% boost to your snueg production from all sources.")){
+	if (!confirm('Are you sure you want to prestige up? You will lose all your snueg and buildings, but will gain a permanent ' +
+		pp + '% boost to your snueg production from all sources.')){
 		return;
 	}
 	// follow through
@@ -1286,11 +1288,11 @@ function product(array){
  * @return {HTMLDivElement} progress bar element
 */
 function progressBar(progress){
-	var progressBarContainer = document.createElement("div");
+	var progressBarContainer = document.createElement('div');
 	progressBarContainer.classList.add('progressBarContainer');
-	var progressBar = document.createElement("div");
+	var progressBar = document.createElement('div');
 	progressBar.classList.add('progressBar');
-	progressBar.style.width = 100 * progress + "%";
+	progressBar.style.width = 100 * progress + '%';
 	progressBarContainer.appendChild(progressBar);
 	return progressBarContainer;
 }
@@ -1303,7 +1305,7 @@ function range(n){
 function redrawInterface(){
 	// autosave notification
 	var autosaveCountdown = Math.floor((+game.player.lastSave + game.settings.autosaveInterval - new Date())/1000);
-	document.getElementById('autosave').innerHTML = "autosave in " + autosaveCountdown + "s";
+	document.getElementById('autosave').innerHTML = 'autosave in ' + autosaveCountdown + 's';
 	setTimeout(redrawInterface, 1000/game.settings.fps);
 }
 
@@ -1327,23 +1329,23 @@ function saveGame(isManual = false){
 	saveFile.settings = game.settings;
 	game.player.lastSave = +new Date();
 	saveFile.player = game.player;
-	write_cookie("snueg", saveFile);
+	write_cookie('snueg', saveFile);
 	game.debug.lastSave = new Date();
 	if (isManual){
-		log("Successfully manually saved game!");
+		log('Successfully manually saved game!');
 	}
 	setTimeout(saveGame, game.settings.autosaveInterval);
 }
 
 // https://stackoverflow.com/a/2956980/2579798
 function setIntervalX(callback, delay, repetitions) {
-    var x = 0;
-    var intervalID = window.setInterval(function () {
-       callback();
-       if (++x === repetitions) {
-           window.clearInterval(intervalID);
-       }
-    }, delay);
+	var x = 0;
+	var intervalID = window.setInterval(function () {
+		callback();
+		if (++x === repetitions) {
+			window.clearInterval(intervalID);
+		}
+	}, delay);
 }
 
 function snuegButton(){
@@ -1355,7 +1357,7 @@ function snuegButton(){
 	// flying numbers
 	new FlyingText(bigNumber(amount, true), window.event.clientX, window.event.clientY);
 	// log action
-	log("Clicked snueg button");
+	log('Clicked snueg button');
 }
 
 function statUpdate(){
@@ -1407,9 +1409,9 @@ function sum(array){
 */
 function tooltip(innerHTML = ''){
 	/** @type {HTMLDivElement} */
-	var div = document.getElementById("tooltip");
-	div.style.top = Math.min(window.event.clientY, window.innerHeight*0.85) - 25 + "px";
-	div.style.left = window.event.clientX - 450 + "px";
+	var div = document.getElementById('tooltip');
+	div.style.top = Math.min(window.event.clientY, window.innerHeight*0.85) - 25 + 'px';
+	div.style.left = window.event.clientX - 450 + 'px';
 	// text
 	div.innerHTML = innerHTML;
 	return div;
@@ -1429,10 +1431,10 @@ function updatePrestige(){
 
 function updateSnuegCount(){
 	var n = bigNumber(game.player.snueg, true);
-	document.getElementById("snueg_counter").innerHTML = n;
-	document.getElementById("snueg_production_counter").innerHTML = "Production: " + bigNumber(game.production) + "/s";
+	document.getElementById('snueg_counter').innerHTML = n;
+	document.getElementById('snueg_production_counter').innerHTML = 'Production: ' + bigNumber(game.production) + '/s';
 	// update webpage title
-	document.title = n + " snuegs - Snueg Clicker";
+	document.title = n + ' snuegs - Snueg Clicker';
 	// update prestige progress
 	updatePrestige();
 }
@@ -1443,10 +1445,10 @@ function main(){
 	// clear warning
 	document.getElementById('notsupported').remove();
 	// update version div
-	document.getElementById("version").innerHTML = "v. " + game.debug.version;
+	document.getElementById('version').innerHTML = 'v. ' + game.debug.version;
 	// load save
-	if (read_cookie("snueg")){
-		var saveFile = read_cookie("snueg");
+	if (read_cookie('snueg')){
+		var saveFile = read_cookie('snueg');
 		game.player = saveFile.player;
 		game.settings = saveFile.settings;
 	}
@@ -1460,10 +1462,10 @@ function main(){
 	setTimeout(saveGame, game.settings.autosaveInterval);
 	setInterval(news, game.settings.newsUpdateInterval);
 	// set up buildings
-	document.getElementById("building_panel").innerHTML = "";
+	document.getElementById('building_panel').innerHTML = '';
 	game.buildings.forEach(building => building.addToDocument());
 	// set up upgrades
-	document.getElementById("upgrade_panel").innerHTML = "";
+	document.getElementById('upgrade_panel').innerHTML = '';
 	// set up achievements
 	game.achievementSeries.forEach(
 		achievementSeries => game.achievements.push(...achievementSeries.array)
