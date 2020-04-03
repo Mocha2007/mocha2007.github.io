@@ -281,15 +281,15 @@ class Clade extends Instance{
 			['abberation', 150], // lepidopterology only
 		];
 		var modifiers = [
-			['giga', 6],
-			['magn', 5],
-			['mega', 5],
-			['capax', 4],
-			['grand', 4],
+			['giga', 6], // zoology only
+			['magn', 5], // zoology only
+			['mega', 5], // zoology only
+			['capax', 4], // zoology only
+			['grand', 4], // zoology only
 			['hyper', 3],
-			['mir', 3],
+			['mir', 3], // zoology only
 			['super', 2],
-			['epi', 1],
+			['epi', 1], // zoology only
 			['sub', -1],
 			['infra', -2],
 			['micro', -3],
