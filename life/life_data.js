@@ -78,6 +78,15 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'ammonoidea',
+		'rank': 'subclass',
+		'parent': 'cephalopoda',
+		'extinct': true,
+		'range': 'ww',
+		'age': 409,
+		'desc': 'Ammonite',
+	},
+	{
 		'name': 'amniota',
 		'rank': 'clade',
 		'parent': 'tetrapoda',
@@ -750,6 +759,13 @@ const lifeData = [
 		'parent': 'abietoideae',
 		'range': 'ea',
 		'desc': 'Cedar',
+	},
+	{
+		'name': 'cephalopoda',
+		'rank': 'class',
+		'parent': 'mollusca',
+		'range': 'ww',
+		'age': 500,
 	},
 	{
 		'name': 'cerasus',
@@ -1778,6 +1794,14 @@ const lifeData = [
 		'range': 'ww',
 		'age': 540,
 		'desc': 'Jellyfish',
+	},
+	{
+		'name': 'mollusca',
+		'rank': 'phylum',
+		'parent': 'protostomia',
+		'range': 'ww',
+		'age': 555,
+		'desc': 'Mollusk',
 	},
 	{
 		'name': 'monocots',
