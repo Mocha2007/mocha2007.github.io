@@ -30,43 +30,64 @@ var pauseElement = document.getElementById('pause');
 // enemy code
 var maxenemyhp, enemyhp, enemyatt, atttime;
 
-var llama = {};
-llama.name = 'Demonic Llama';
-llama.img = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Llama_lying_down.jpg/1200px-Llama_lying_down.jpg';
-llama.desc = 'soopr evil bad bad pls kill';
-llama.attname = 'Spit';
-llama.att = 5;
-llama.speed = 1.5;
-llama.hp = 10;
+/**
+ * 
+ * @param {string} name
+ * @param {string} img - url
+ * @param {string} desc
+ * @param {string} attname
+ * @param {number} att
+ * @param {number} speed
+ * @param {number} hp
+ */
+function Enemy(name, img, desc, attname, att, speed, hp){
+	this.name = name;
+	this.img = img;
+	this.desc = desc;
+	this.attname = attname;
+	this.att = att;
+	this.speed = speed;
+	this.hp = hp;
+}
 
-var yuri = {};
-yuri.name = 'Yuri!!!';
-yuri.img = 'http://images.goodsmile.info/cgm/images/product/20170201/6231/43651/large/42f61413f2fec50155107225e94e4b20.jpg';
-yuri.desc = '... on ice!';
-yuri.attname = 'Skate Slash';
-yuri.att = 7;
-yuri.speed = 3;
-yuri.hp = 25;
-
-var moon = {};
-moon.name = 'Moon';
-moon.img = 'https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg';
-moon.desc = 'no awoo';
-moon.attname = 'Eclipse';
-moon.att = 10;
-moon.speed = 3.5;
-moon.hp = 30;
-
-var cone = {};
-cone.name = 'Alien Traffic Cone';
-cone.img = 'https://4.imimg.com/data4/HP/BP/MY-5351222/traffic-cone-500x500.png';
-cone.desc = '...from planet nine!!!';
-cone.attname = 'Trip';
-cone.att = 6;
-cone.speed = 2;
-cone.hp = 12;
-
-var enemy = [llama, yuri, moon, cone];
+var enemy = [
+	new Enemy(
+		'Demonic Llama',
+		'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Llama_lying_down.jpg/1200px-Llama_lying_down.jpg',
+		'soopr evil bad bad pls kill',
+		'Spit',
+		5,
+		1.5,
+		10
+	),
+	new Enemy(
+		'Yuri!!!',
+		'http://images.goodsmile.info/cgm/images/product/20170201/6231/43651/large/42f61413f2fec50155107225e94e4b20.jpg',
+		'... on ice!',
+		'Skate Slash',
+		7,
+		3,
+		25
+	),
+	new Enemy(
+		'Moon',
+		'https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg',
+		'no awoo',
+		'Eclipse',
+		10,
+		3.5,
+		30
+	),
+	new Enemy(
+		'Alien Traffic Cone',
+		'https://4.imimg.com/data4/HP/BP/MY-5351222/traffic-cone-500x500.png',
+		'...from planet nine!!!',
+		'Trip',
+		6,
+		2,
+		12
+	)
+];
 
 function newenemy(){
 	var ce = enemy[Math.floor(Math.random()*enemy.length)];
