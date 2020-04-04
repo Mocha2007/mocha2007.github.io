@@ -239,12 +239,14 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'arthropoda',
 		'range': 'ww',
+		'age': 430,
 	},
 	{
 		'name': 'araneae',
 		'rank': 'order',
 		'parent': 'arachnida',
 		'range': 'ww',
+		'age': 319,
 		'desc': 'Spider',
 	},
 	{
@@ -958,6 +960,7 @@ const lifeData = [
 		'rank': 'subphylum',
 		'parent': 'pancrustacea',
 		'range': 'ww',
+		'age': 511,
 	},
 	{
 		'name': 'ctenophora',
@@ -1455,6 +1458,7 @@ const lifeData = [
 		'rank': 'subphylum',
 		'parent': 'pancrustacea',
 		'range': 'ww',
+		'age': 411,
 	},
 	{
 		'name': 'hippotigris',
@@ -1594,6 +1598,7 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'hexapoda',
 		'range': 'ww',
+		'age': 396,
 		'desc': 'Insects have a chitinous exoskeleton, a three-part body (head, thorax and abdomen), three pairs of jointed legs, compound eyes, and one pair of antennae.',
 	},
 	{
@@ -2784,6 +2789,15 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'eurotiales',
 		'range': 'ww',
+	},
+	{
+		'name': 'trilobita',
+		'rank': 'class',
+		'parent': 'arthropoda',
+		'extinct': true,
+		'range': 'ww',
+		'age': 521,
+		'desc': 'Trilobite',
 	},
 	{
 		'name': 'triticum',
