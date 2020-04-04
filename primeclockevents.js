@@ -1,4 +1,4 @@
-/* eslint-disable comma-dangle, sno-var */
+/* eslint-disable comma-dangle, no-var */
 /* jshint esversion: 3, strict: true, strict: global */
 /* exported a, currentyear, diff, events */
 'use strict';
