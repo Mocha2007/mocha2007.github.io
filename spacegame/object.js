@@ -1,16 +1,17 @@
 /* jshint esversion: 6, strict: true, forin: false, loopfunc: true, strict: global */
+/* globals lifeData*/
 /* exported importSave, downloadSave, createOrder, wipeMap, hardReset */
-"use strict";
+'use strict';
 
-var pi = Math.PI;
+const pi = Math.PI;
 
-var constants = {
+const constants = {
 	g: 6.6743e-11,
 };
 
 // abstract
 
-class Instance{
+class Instance {
 	/**
 	 * tangibles or abstractions with parents and children
 	 * @param {string} name
@@ -22,7 +23,7 @@ class Instance{
 		/** @type {Set<Instance>} */
 		this.parents = new Set();
 	}
-	/** 
+	/**
 	 * url of associated wikipedia article
 	 * @return {string}
 	*/
@@ -42,21 +43,21 @@ class Instance{
 
 // units
 
-class Value{
+class Value {
 	/**
 	 * measurements
 	 * @param {number} value
 	*/
-	constructor(value) {
+	constructor(value){
 		this.value = value;
 	}
 }
 
-class Length extends Value{
+class Length extends Value {
 	/**
 	 * @param {number} value
 	*/
-	constructor(value) {
+	constructor(value){
 		super(value);
 	}
 	get toFeet(){
@@ -64,29 +65,29 @@ class Length extends Value{
 	}
 }
 
-class Area extends Value{
+class Area extends Value {
 	/**
 	 * @param {number} value
 	*/
-	constructor(value) {
+	constructor(value){
 		super(value);
 	}
 }
 
-class Volume extends Value{
+class Volume extends Value {
 	/**
 	 * @param {number} value
 	*/
-	constructor(value) {
+	constructor(value){
 		super(value);
 	}
 }
 
-class Mass extends Value{
+class Mass extends Value {
 	/**
 	 * @param {number} value
 	*/
-	constructor(value) {
+	constructor(value){
 		super(value);
 	}
 	get toPounds(){
@@ -94,40 +95,42 @@ class Mass extends Value{
 	}
 }
 
-class Density extends Value{
+class Density extends Value {
 	/**
 	 * @param {number} value
 	*/
-	constructor(value) {
+	constructor(value){
 		super(value);
 	}
 }
 
-class Time extends Value{
+class Time extends Value {
 	/**
 	 * @param {number} value
 	*/
-	constructor(value) {
+	constructor(value){
 		super(value);
 	}
 }
 
 // math
 
-class Solid{
+class Solid {
 	/** @abstract */
 	constructor(){}
-	/** @type {Area} */
-	surfaceArea
-	/** @type {Volume} */
-	volume
+	get surfaceArea(){
+		return new Area();
+	}
+	get volume(){
+		return new Volume();
+	}
 }
 
-class Sphere extends Solid{
+class Sphere extends Solid {
 	/**
 	 * @param {number} radius
 	*/
-	constructor(radius) {
+	constructor(radius){
 		super();
 		this.radius = radius;
 	}
@@ -144,7 +147,7 @@ class Sphere extends Solid{
 
 // ling lang
 
-class Noun{
+class Noun {
 	/**
 	 * @param {string} word - singular, or plural if alwaysPlural
 	 * @param {boolean} countable - uses many and few rather than much and little
@@ -155,7 +158,8 @@ class Noun{
 	 * @param {boolean} definite - requires the
 	 * @param {boolean} indefinite - requires a(n)
 	*/
-	constructor(word, countable = true, proper = false, alwaysSingular = false, alwaysPlural = false, irregularPlural = false, definite = false, indefinite = false) {
+	constructor(word, countable = true, proper = false, alwaysSingular = false,
+			alwaysPlural = false, irregularPlural = false, definite = false, indefinite = false){
 		this.word = word;
 		this.countable = countable;
 		this.proper = proper;
@@ -198,35 +202,35 @@ class Noun{
 	}
 }
 
-class ProperNoun extends Noun{
+class ProperNoun extends Noun {
 	/**
 	 * @param {string} word - singular, or plural if alwaysPlural
 	 * @param {boolean} alwaysPlural
 	 * @param {boolean} definite - requires the
 	*/
-	constructor(word, alwaysPlural = false, definite = false) {
+	constructor(word, alwaysPlural = false, definite = false){
 		super(word, false, true, !alwaysPlural, alwaysPlural, '', definite, false);
 	}
 }
 
-class Name extends ProperNoun{
+class Name extends ProperNoun {
 	/**
 	 * eg. a first name, or a last name.
 	 * @param {string} word
 	*/
-	constructor(word) {
+	constructor(word){
 		super(word, false, false);
 	}
 }
 // astro
 
-class CelestialBody extends Instance{
+class CelestialBody extends Instance {
 	/**
 	 * @param {string} name
 	 * @param {Mass} mass
 	 * @param {Solid} solid
 	*/
-	constructor(name, mass, solid) {
+	constructor(name, mass, solid){
 		super(name);
 		this.mass = mass;
 		this.solid = solid;
@@ -244,13 +248,13 @@ class CelestialBody extends Instance{
 
 // bio
 
-class Clade extends Instance{
+class Clade extends Instance {
 	/**
 	 * @param {string} name
 	 * @param {string} rank
 	 * @param {Clade} parent
 	*/
-	constructor(name, rank = "clade", parent = undefined) {
+	constructor(name, rank = 'clade', parent = undefined){
 		super(name);
 		this.rank = rank;
 		if (parent){
@@ -258,7 +262,7 @@ class Clade extends Instance{
 		}
 	}
 	get hasParent(){
-		return 0 < this.parents.size && this.rank !== "life";
+		return 0 < this.parents.size && this.rank !== 'life';
 	}
 	/** @return {Clade[]} */
 	get ladder(){
@@ -273,10 +277,10 @@ class Clade extends Instance{
 	}
 	/** @return {number} to sort ranks*/
 	get rankLevel(){
-		if (this.rank === "clade"){
+		if (this.rank === 'clade'){
 			return Infinity; // not enough info
 		}
-		var ranks = [
+		const ranks = [
 			['life', 0],
 			['domain', 10],
 			['kingdom', 20],
@@ -297,7 +301,7 @@ class Clade extends Instance{
 			['morph', 150], // zoology only
 			['abberation', 150], // lepidopterology only
 		];
-		var modifiers = [
+		const modifiers = [
 			['giga', 6], // zoology only
 			['magn', 5], // zoology only
 			['mega', 5], // zoology only
@@ -312,13 +316,14 @@ class Clade extends Instance{
 			['micro', -3],
 			['parv', -3],
 		];
-		for (var i in ranks){
+		let value;
+		for (const i in ranks){
 			if (this.rank.includes(ranks[i][0])){
-				var value = ranks[i][1];
+				value = ranks[i][1];
 				break;
 			}
 		}
-		for (var i in modifiers){
+		for (const i in modifiers){
 			if (this.rank.includes(modifiers[i][0])){
 				value += modifiers[i][1];
 				break;
@@ -332,9 +337,9 @@ class Clade extends Instance{
 	 * @return {Clade}
 	*/
 	commonClade(other){
-		var otherLadder = other.ladder;
-		var thisLadder = this.ladder;
-		for (var i in thisLadder){
+		const otherLadder = other.ladder;
+		const thisLadder = this.ladder;
+		for (const i in thisLadder){
 			if (-1 !== otherLadder.indexOf(thisLadder[i])){
 				return thisLadder[i];
 			}
@@ -352,23 +357,23 @@ class Clade extends Instance{
 
 // people
 
-class PersonalName{
+class PersonalName {
 	/**
 	 * @param {Name} given
 	 * @param {Name} family
 	*/
-	constructor(given, family) {
+	constructor(given, family){
 		this.given = given;
 		this.family = family;
 	}
 }
 
-class Vital{
+class Vital {
 	/**
 	 * @param {Date} birth
 	 * @param {Date} death
 	*/
-	constructor(birth, death) {
+	constructor(birth, death){
 		this.birth = birth;
 		this.death = death;
 	}
@@ -377,14 +382,14 @@ class Vital{
 	}
 }
 
-class Person{
+class Person {
 	/**
 	 * @param {PersonalName} name
 	 * @param {Person} mother
 	 * @param {Person} father
 	 * @param {Vital} vital
 	*/
-	constructor(name, mother, father, vital) {
+	constructor(name, mother, father, vital){
 		this.name = name;
 		this.mother = mother;
 		this.father = father;
@@ -408,22 +413,22 @@ class Person{
 // END CLASSES
 
 // Things
-var reality = new Instance("reality");
-var universe = new Instance("universe");
+const reality = new Instance('reality');
+const universe = new Instance('universe');
 reality.add(universe);
-var earth = new CelestialBody("earth", 
+const earth = new CelestialBody('earth',
 	new Mass(5.97237e24),
 	new Sphere(new Length(6371000))
 );
 universe.add(earth);
-// var phoenix = new Person(new PersonalName(new Name("Phoenix")));
-// phoenix.mother = phoenix.father = phoenix;
+const phoenix = new Person(new PersonalName(new Name('Phoenix')));
+phoenix.mother = phoenix.father = phoenix;
 
 // GENERATE CLADES
 /** @type {Clade[]} */
-var clades = [];
+const clades = [];
 /** @type {string[]} */
-var cladeNameIndex = [];
+const cladeNameIndex = [];
 
 lifeData.forEach(
 	clade => {
@@ -434,21 +439,22 @@ lifeData.forEach(
 
 clades.forEach(
 	(clade, i) => {
-		var index = cladeNameIndex.indexOf(lifeData[i].parent);
+		const index = cladeNameIndex.indexOf(lifeData[i].parent);
 		if (index !== -1){
 			clade.addParent(clades[index]);
 		}
 	}
 );
 
-var life = clades[cladeNameIndex.indexOf('life')];
+const life = clades[cladeNameIndex.indexOf('life')];
 reality.add(life);
 
 // display in console
 console.log(reality);
 
+// eslint-disable-next-line no-unused-vars
 function test(){
-	var human = Clade.fromName('homo sapiens');
-	var fox = Clade.fromName('vulpes vulpes');
+	const human = Clade.fromName('homo sapiens');
+	const fox = Clade.fromName('vulpes vulpes');
 	console.log(human.commonClade(fox));
 }
