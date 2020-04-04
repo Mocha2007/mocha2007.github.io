@@ -1,20 +1,23 @@
+/* jshint esversion: 6, strict: true, strict: global */
+/* exported doit */
+'use strict';
+
 function doit(){
-	"use strict";
-	var element=document.getElementById("result");
-	var s=document.getElementsByTagName("input")[0].value;
+	const element=document.getElementById('result');
+	const s=document.getElementsByTagName('input')[0].value;
 	/* Modified from https://stackoverflow.com/a/1643468/2579798 */
-	var monthNames=["January","February","March","April","May","June","July","August","September","October","November","December"];
-	var d = new Date();
+	const monthNames=['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+	const d = new Date();
 	/* Modified from https://stackoverflow.com/a/10211214/2579798 */
-	var currentdate=new Date(); 
-	var foot="Results generated "
-		+ currentdate.getDate() + " "
-		+ monthNames[d.getMonth()]  + " " 
-		+ currentdate.getFullYear() + " @ "  
-		+ currentdate.getHours() + ":"  
-		+ currentdate.getMinutes() + ":" 
-		+ currentdate.getSeconds() + " by MOLS (<a href='search.html'>mocha2007.github.io/search.html</a>)";
-	
+	const currentdate=new Date();
+	const foot='Results generated '
+		+ currentdate.getDate() + ' '
+		+ monthNames[d.getMonth()]  + ' '
+		+ currentdate.getFullYear() + ' @ '
+		+ currentdate.getHours() + ':'
+		+ currentdate.getMinutes() + ':'
+		+ currentdate.getSeconds() + ' by MOLS (<a href=\'search.html\'>mocha2007.github.io/search.html</a>)';
+
 	element.innerHTML=`
 	<hr/>
 	<div id="bottom"></div>
@@ -57,15 +60,4 @@ function doit(){
 	<a href="https://wolframalpha.com/input/?i=`+s+`">Wolfram Alpha</a><br/>
 	<a href="https://youtube.com/results?search_query=`+s+`">Youtube</a><br/><div id="foot">
 	`+foot+'</div>';
-	/* Namei Dictionary
-	if (s.toLowerCase() !== 'nameipedia' && s.toLowerCase() !== 'result' && s.toLowerCase() !== 'temp'){
-		$("#temp").load("https://mocha2007.github.io/namei.xml");
-		try {
-			document.getElementById("nameipedia").innerHTML = '<h3>Nameipedia</h3><p>'+document.getElementById(s.toLowerCase()).getAttribute('content')+'</p><a href="https://mocha2007.github.io/namei#'+s+'">Read More...</a>';
-		}
-		catch(err) {
-			document.getElementById("nameipedia").innerHTML = '';
-		}
-	}
-	*/
 }
