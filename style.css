@@ -6,9 +6,9 @@ a:hover{text-shadow:0 0 10px #0ff;}
 .new{list-style-image:url('img/new.png');}
 .up{list-style-image:url('img/up.png');}
 .title{font-style: italic;}
-.highlight{background-color: #630; color: #f80;}
-.highlight a{color: #f80;}
-.highlight a:hover, a.highlight:hover{text-shadow:0 0 10px #f80;}
+.highlight{background-color: #630; color: #f90;}
+.highlight a{color: #f90;}
+.highlight a:hover, a.highlight:hover{text-shadow:0 0 10px #f90;}
 h3,p{text-indent:45px;}
 h3::before,h3::after{content:'~~~';}
 abbr{text-decoration:none;animation:strobe 1s linear alternate infinite;cursor: help;}
