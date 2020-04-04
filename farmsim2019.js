@@ -1,3 +1,7 @@
+/* eslint-disable no-var */
+/* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
+/* exported click, dodge, reset */
+'use strict';
 var fps = 20;
 var att = 1;
 var clock = 0;
@@ -11,22 +15,22 @@ var enemyAttacking = false;
 
 var defaultTop = '<h1 id="Farm Simulator 2019">Farm Simulator 2019</h1>';
 
-var topElement = document.getElementById("top");
-var timeElement = document.getElementById("time");
-var scoreElement = document.getElementById("score");
-var healthElement = document.getElementById("health");
-var enemyhealthElement = document.getElementById("hp");
-var enemyNameElement = document.getElementById("enemyname");
-var enemyDescElement = document.getElementById("desc");
-var enemyAttNameElement = document.getElementById("attname");
-var enemyImgElement = document.getElementById("img");
-var readyElement = document.getElementById("ready");
-var pauseElement = document.getElementById("pause");
+var topElement = document.getElementById('top');
+var timeElement = document.getElementById('time');
+var scoreElement = document.getElementById('score');
+var healthElement = document.getElementById('health');
+var enemyhealthElement = document.getElementById('hp');
+var enemyNameElement = document.getElementById('enemyname');
+var enemyDescElement = document.getElementById('desc');
+var enemyAttNameElement = document.getElementById('attname');
+var enemyImgElement = document.getElementById('img');
+var readyElement = document.getElementById('ready');
+var pauseElement = document.getElementById('pause');
 
 // enemy code
-var maxenemyhp,enemyhp,enemyatt,atttime;
+var maxenemyhp, enemyhp, enemyatt, atttime;
 
-var llama = [];
+var llama = {};
 llama.name = 'Demonic Llama';
 llama.img = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Llama_lying_down.jpg/1200px-Llama_lying_down.jpg';
 llama.desc = 'soopr evil bad bad pls kill';
@@ -35,7 +39,7 @@ llama.att = 5;
 llama.speed = 1.5;
 llama.hp = 10;
 
-var yuri = [];
+var yuri = {};
 yuri.name = 'Yuri!!!';
 yuri.img = 'http://images.goodsmile.info/cgm/images/product/20170201/6231/43651/large/42f61413f2fec50155107225e94e4b20.jpg';
 yuri.desc = '... on ice!';
@@ -44,7 +48,7 @@ yuri.att = 7;
 yuri.speed = 3;
 yuri.hp = 25;
 
-var moon = [];
+var moon = {};
 moon.name = 'Moon';
 moon.img = 'https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg';
 moon.desc = 'no awoo';
@@ -53,7 +57,7 @@ moon.att = 10;
 moon.speed = 3.5;
 moon.hp = 30;
 
-var cone = [];
+var cone = {};
 cone.name = 'Alien Traffic Cone';
 cone.img = 'https://4.imimg.com/data4/HP/BP/MY-5351222/traffic-cone-500x500.png';
 cone.desc = '...from planet nine!!!';
@@ -62,10 +66,9 @@ cone.att = 6;
 cone.speed = 2;
 cone.hp = 12;
 
-var enemy = [llama,yuri,moon,cone];
+var enemy = [llama, yuri, moon, cone];
 
 function newenemy(){
-	"use strict";
 	var ce = enemy[Math.floor(Math.random()*enemy.length)];
 	enemyNameElement.innerHTML = ce.name;
 	enemyDescElement.innerHTML = ce.desc;
@@ -80,7 +83,6 @@ function newenemy(){
 }
 
 function reset(){
-	"use strict";
 	clock = 0;
 	lastkilltime = 0;
 	lastatttime = 0;
@@ -92,12 +94,10 @@ function reset(){
 }
 
 function attack(){
-	"use strict";
 	enemyhp -= att;
 }
 
 function kill(){
-	"use strict";
 	score += Math.floor(10*fps*maxenemyhp*maxenemyhp/(clock-lastkilltime));
 	lastkilltime = clock;
 	enemyAttacking = false;
@@ -105,7 +105,6 @@ function kill(){
 }
 
 function click(x){
-	"use strict";
 	if (!paused){
 		switch (x){
 			case 'att':
@@ -118,7 +117,7 @@ function click(x){
 				enemyAttacking = false;
 				break;
 			default:
-				console.warn('ERR1',x);
+				console.warn('ERR1', x);
 		}
 	}
 	else {
@@ -127,14 +126,12 @@ function click(x){
 }
 
 function dodge(){
-	"use strict";
 	click('dodge');
 }
 
 function damage(){
-	"use strict";
 	targetHealth -= enemyatt;
-	healthElement.classList = ["red"];
+	healthElement.classList = ['red'];
 	if (targetHealth<=0){
 		new Audio('https://www.myinstants.com/media/sounds/roblox-death-sound_1.mp3').play();
 		new Audio('https://www.myinstants.com/media/sounds/export_4.mp3').play();
@@ -145,7 +142,6 @@ function damage(){
 }
 
 function main(){
-	"use strict";
 	if (targetHealth <= 0){
 		topElement.innerHTML = '<h1 class="red">YOU LOSE!</h1><h1>Score: '+score+'</h1>';
 	}
@@ -179,13 +175,13 @@ function main(){
 		}
 
 		// launches an attack if not already
-		else if (!enemyAttacking){ 
+		else if (!enemyAttacking){
 			enemyAttacking = true;
 			lastatttime = clock;
 		}
-		
+
 		// set enemy hp color
-		enemyhealthElement.classList = [(3*enemyhp>2*maxenemyhp?"gre":(3*enemyhp>maxenemyhp?"yel":"red"))];
+		enemyhealthElement.classList = [3*enemyhp>2*maxenemyhp?'gre':3*enemyhp>maxenemyhp?'yel':'red'];
 
 		// ONLY update if absolutely necessary!
 		if (pauseElement.value !== 'Pause'){
@@ -200,8 +196,8 @@ function main(){
 		if (healthElement.innerHTML !== String(health)){
 			healthElement.innerHTML = health;
 		}
-		if (enemyhealthElement.innerHTML !== String(Math.max(0,enemyhp))){
-			enemyhealthElement.innerHTML = Math.max(0,enemyhp);
+		if (enemyhealthElement.innerHTML !== String(Math.max(0, enemyhp))){
+			enemyhealthElement.innerHTML = Math.max(0, enemyhp);
 		}
 		if (topElement.innerHTML !== defaultTop){
 			topElement.innerHTML = defaultTop;
@@ -214,3 +210,5 @@ function main(){
 		pauseElement.value = 'Play';
 	}
 }
+
+setInterval(main, 1000/fps);
