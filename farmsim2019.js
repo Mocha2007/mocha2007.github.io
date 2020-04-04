@@ -28,10 +28,9 @@ var readyElement = document.getElementById('ready');
 var pauseElement = document.getElementById('pause');
 
 // enemy code
-var maxenemyhp, enemyhp, enemyatt, atttime;
+var atttime, enemyatt, enemyhp, maxenemyhp;
 
 /**
- * 
  * @param {string} name
  * @param {string} img - url
  * @param {string} desc
@@ -40,12 +39,12 @@ var maxenemyhp, enemyhp, enemyatt, atttime;
  * @param {number} speed
  * @param {number} hp
  */
-function Enemy(name, img, desc, attname, att, speed, hp){
+function Enemy(name, img, desc, attname, enemyAtt, speed, hp){
 	this.name = name;
 	this.img = img;
 	this.desc = desc;
 	this.attname = attname;
-	this.att = att;
+	this.att = enemyAtt;
 	this.speed = speed;
 	this.hp = hp;
 }
@@ -86,7 +85,7 @@ var enemy = [
 		6,
 		2,
 		12
-	)
+	),
 ];
 
 function newenemy(){
