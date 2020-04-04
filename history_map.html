@@ -3,7 +3,6 @@
 <meta charset="utf-8">
 <meta name="description" content="History Map">
 <link rel="shortcut icon" href="img/favicon.ico">
-<script src="history_map.js"></script>
 <title>History Map</title>
 <style>
 #top {
@@ -76,9 +75,9 @@ input {
 <form onclick="bigmap();">
 	<fieldset>
 		Date: 1 Jan, <input id="date" type="number" value="0" max="2019">
-		<a href="javascript:console.log('this does nothing');">Go &rarr;</a><br/>
+		<a href="javascript:">Go &rarr;</a><br>
 		<input type="range" min="-3000" max="2019" value="2019" class="slider" id="date2"
-			   onclick="javascript:document.getElementById('date').value = document.getElementById('date2').value; ">
+			   onclick="document.getElementById('date').value = document.getElementById('date2').value; ">
 	</fieldset>
 </form>
 
@@ -95,5 +94,5 @@ input {
 </div>
 
 <div id="tooltip"></div>
-<script type="text/javascript">bigmap();</script>
+<script src="history_map.js"></script>
 </html>

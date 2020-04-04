@@ -1,46 +1,42 @@
-var map_src = 'https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg';
-var euromap_src = 'https://upload.wikimedia.org/wikipedia/commons/9/90/Europe_satellite_image_location_map.jpg';
-var pointsize = 6;
-var mapsize = window.innerWidth - 32;
-var euromapcoords = [
+/* jshint esversion: 6, strict: true, strict: global, eqeqeq: true */
+/* exported range2dates */
+'use strict';
+const mapSrc = 'https://upload.wikimedia.org/wikipedia/commons/5/51/BlankMap-Equirectangular.svg';
+const euromapSrc = 'https://upload.wikimedia.org/wikipedia/commons/9/90/Europe_satellite_image_location_map.jpg';
+const pointsize = 6;
+const mapsize = window.innerWidth - 32;
+const euromapcoords = [
 	[72, -25], // ULHC
-	[34,  60]  // BRHC
+	[34,  60],  // BRHC
 ];
-var maps = [
+const maps = [
 	['bigmap'],
 	['bigeuromap', euromapcoords, 1.5, 1.704],
 ];
 
-function range(n){
-	return [...Array(n).keys()];
+function uncorrectedCoordToPx(coords){
+	const x = coords[1] * mapsize/360 + mapsize/2;
+	const y = coords[0] * -mapsize/360 + mapsize/4;
+	return [y, x];
 }
 
-function uncorrected_coord2px(coords){
-	"use strict";
-	var x = coords[1] * mapsize/360 + mapsize/2;
-	var y = coords[0] * -mapsize/360 + mapsize/4;
-	return [y,x];
-}
-
-function inset_coord2px(coords, selected_map){
-	"use strict";
-	var inset_coords = selected_map[1];
-	var longitudes = inset_coords[1][1] - inset_coords[0][1];
-	var latitudes = inset_coords[0][0] - inset_coords[1][0];
-	var x = (coords[1] - inset_coords[0][1]) * mapsize/longitudes;
-	var y = (inset_coords[0][1] - coords[0]) * mapsize/latitudes/selected_map[2] + mapsize*selected_map[3];
-	return [y,x];
+function insetCoordToPx(coords, selectedMap){
+	const insetCoords = selectedMap[1];
+	const longitudes = insetCoords[1][1] - insetCoords[0][1];
+	const latitudes = insetCoords[0][0] - insetCoords[1][0];
+	const x = (coords[1] - insetCoords[0][1]) * mapsize/longitudes;
+	const y = (insetCoords[0][1] - coords[0]) * mapsize/latitudes/selectedMap[2] +
+		mapsize*selectedMap[3];
+	return [y, x];
 }
 
 function coord2px(coords){
-	"use strict";
-	var x = coords[1] * mapsize/360 + mapsize/2 - pointsize/2;
-	var y = coords[0] * -mapsize/360 + mapsize/4 - pointsize/2;
-	return [y,x];
+	const x = coords[1] * mapsize/360 + mapsize/2 - pointsize/2;
+	const y = coords[0] * -mapsize/360 + mapsize/4 - pointsize/2;
+	return [y, x];
 }
 
 function int2date(int){
-	"use strict";
 	if (int < 0){
 		int = -int;
 		int += ' BCE';
@@ -49,24 +45,21 @@ function int2date(int){
 }
 
 function range2dates(r){
-	"use strict";
-	var begin = int2date(r[0]) === '9999 BCE' ? '' : int2date(r[0]);
-	var end = int2date(r[1]) === 9999 ? '' : int2date(r[1]);
+	const begin = int2date(r[0]) === '9999 BCE' ? '' : int2date(r[0]);
+	const end = int2date(r[1]) === 9999 ? '' : int2date(r[1]);
 	return begin + '-' +end;
 }
 
 function tooltip(id){ // todo fix for inset
-	"use strict";
 	// console.log(id);
 	// bigmap
-	var newpoint = document.createElement("div");
-	var y = id.periods[0];
-	var coords = [window.event.clientY, window.event.clientX];
-	console.log(coords);
-	newpoint.id = "current_tooltip";
-	newpoint.style.top = coords[0]-25 + "px";
-	newpoint.style.left = coords[1]+25 + "px";
-	newpoint.style.position = "fixed";
+	const newpoint = document.createElement('div');
+	const coords = [window.event.clientY, window.event.clientX];
+	// console.log(coords);
+	newpoint.id = 'current_tooltip';
+	newpoint.style.top = coords[0]-25 + 'px';
+	newpoint.style.left = coords[1]+25 + 'px';
+	newpoint.style.position = 'fixed';
 	// text
 	newpoint.innerHTML = '<center><b>' + id.name + '</b></center>';
 	if (id.hasOwnProperty('img')){
@@ -80,2846 +73,2847 @@ function tooltip(id){ // todo fix for inset
 }
 
 function bigmap(){
-	"use strict";
-	var bottom_right_coords, coords, newlink, newpoint, period_specific_info;
-	var wants = document.getElementById("date").value;
-	document.getElementById("bigmap").innerHTML = '<img id="mapimg" src="'+map_src+'" width="'+mapsize+'">';
-	document.getElementById("bigeuromap").innerHTML = '<img id="euromapimg" src="'+euromap_src+'" width="'+mapsize+'">';
+	let bottomRightCoords, coords, newlink, newpoint; // , periodSpecificInfo;
+	const wants = document.getElementById('date').value;
+	document.getElementById('bigmap').innerHTML = '<img id="mapimg" src="'+mapSrc+'" width="'+mapsize+'">';
+	document.getElementById('bigeuromap').innerHTML = '<img id="euromapimg" src="'+euromapSrc+'" width="'+mapsize+'">';
 	features.forEach(function(x){
-		period_specific_info = '';
-		x.period_info.forEach(function(y){
-			if ((wants < y.year_range[0]) || (y.year_range[1] < wants)){
+		// periodSpecificInfo = '';
+		x.periodInfo.forEach(function(y){
+			if (wants < y.yearRange[0] || y.yearRange[1] < wants){
 				return false;
 			}
-			period_specific_info += '\n' + y.desc;
+			// periodSpecificInfo += '\n' + y.desc;
 		});
 		x.periods.forEach(function(y){
-			maps.forEach(function(selected_map){
-				if ((wants < y.year_range[0]) || (y.year_range[1] < wants)){
+			maps.forEach(function(selectedMap){
+				if (wants < y.yearRange[0] || y.yearRange[1] < wants){
 					return false;
 				}
 				// bottom of minimap cutoff
-				if (selected_map[1] !== undefined){
-					// console.log(y.coords[0], selected_map[1][1][0]);
-					if ((y.coords[0] < selected_map[1][1][0]) || (selected_map[1][1][1] < y.coords[1])){
+				if (selectedMap[1] !== undefined){
+					// console.log(y.coords[0], selectedMap[1][1][0]);
+					if (y.coords[0] < selectedMap[1][1][0] || selectedMap[1][1][1] < y.coords[1]){
 						return false;
 					}
 				}
 				// bigmap
-				newlink = document.createElement("a");
+				newlink = document.createElement('a');
 				newlink.href = x.source;
-				newpoint = document.createElement("div");
+				newpoint = document.createElement('div');
 				if (x.type === 'point'){
-					newpoint.classList.value = "point";
-					if (selected_map[1] === undefined){
+					newpoint.classList.value = 'point';
+					if (selectedMap[1] === undefined){
 						coords = coord2px(y.coords);
 					}
 					else {
-						coords = inset_coord2px(y.coords, selected_map);
+						coords = insetCoordToPx(y.coords, selectedMap);
 					}
 					newpoint.style.height = pointsize+'px';
 					newpoint.style.width = pointsize+'px';
 				}
 				else {
-					newpoint.classList.value = "box";
-					if (selected_map[1] === undefined){
-						coords = uncorrected_coord2px(y.coords);
-						bottom_right_coords = uncorrected_coord2px(y.bottom_right);
+					newpoint.classList.value = 'box';
+					if (selectedMap[1] === undefined){
+						coords = uncorrectedCoordToPx(y.coords);
+						bottomRightCoords = uncorrectedCoordToPx(y.bottomRight);
 					}
 					else {
-						coords = inset_coord2px(y.coords, selected_map);
-						bottom_right_coords = inset_coord2px(y.bottom_right, selected_map);
+						coords = insetCoordToPx(y.coords, selectedMap);
+						bottomRightCoords = insetCoordToPx(y.bottomRight, selectedMap);
 					}
-					newpoint.style.height = bottom_right_coords[0] - coords[0]+'px';
-					newpoint.style.width = bottom_right_coords[1] - coords[1]+'px';
+					newpoint.style.height = bottomRightCoords[0] - coords[0]+'px';
+					newpoint.style.width = bottomRightCoords[1] - coords[1]+'px';
 				}
 				newpoint.style.backgroundColor = x.color;
-				// newpoint.title = x.name + '\n' + x.desc + period_specific_info; // + ' (' + range2dates(x.year_range) +
-				newpoint.style.position = "absolute";
-				newpoint.style.top = coords[0] + "px";
-				newpoint.style.left = coords[1] + "px";
+				// newpoint.title = x.name + '\n' + x.desc + periodSpecificInfo; // + ' (' + range2dates(x.yearRange) +
+				newpoint.style.position = 'absolute';
+				newpoint.style.top = coords[0] + 'px';
+				newpoint.style.left = coords[1] + 'px';
 				// tooltip
 				// console.log(coords);
 				newpoint.onmouseover = () => tooltip(x);
-				newpoint.onmouseout = () => document.getElementById("current_tooltip").outerHTML = "";
+				newpoint.onmouseout = () => document.getElementById('current_tooltip').outerHTML = '';
 				// final
 				newlink.appendChild(newpoint);
-				document.getElementById(selected_map[0]).appendChild(newlink);
+				document.getElementById(selectedMap[0]).appendChild(newlink);
 			});
 		});
 	});
 }
 // years start at 1 jan - so for america, since it didn't exist 1 jan 1776, it has to wait until 1 jan 1777
-var features = [
+const features = [
 	// these need to be out of order because they block other regions
 	{
-		name: "Urnfield Culture",
-		type: "box",
+		name: 'Urnfield Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-1300, -750],
+				yearRange: [-1300, -750],
 				coords: [55, -1],
-				bottom_right: [40, 22],
+				bottomRight: [40, 22],
 			},
 		],
-		period_info: [],
-		color: "yellow",
-		source: "https://en.wikipedia.org/wiki/Urnfield_culture"
+		periodInfo: [],
+		color: 'yellow',
+		source: 'https://en.wikipedia.org/wiki/Urnfield_culture',
 	},
 	// alphabetical order
 	{
-		name: "A-Group Culture",
-		type: "box",
+		name: 'A-Group Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-3800, -3100],
+				yearRange: [-3800, -3100],
 				coords: [24, 31],
-				bottom_right: [21, 33],
+				bottomRight: [21, 33],
 			},
 		],
-		period_info: [],
-		color: "pink",
-		source: "https://en.wikipedia.org/wiki/A-Group_culture"
+		periodInfo: [],
+		color: 'pink',
+		source: 'https://en.wikipedia.org/wiki/A-Group_culture',
 	},
 	{
-		name: "Abashevo Culture",
-		type: "box",
+		name: 'Abashevo Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-2500, -1900],
+				yearRange: [-2500, -1900],
 				coords: [59, 48],
-				bottom_right: [53, 57],
+				bottomRight: [53, 57],
 			},
 		],
-		period_info: [],
-		color: "green",
-		source: "https://en.wikipedia.org/wiki/Abashevo_culture"
+		periodInfo: [],
+		color: 'green',
+		source: 'https://en.wikipedia.org/wiki/Abashevo_culture',
 	},
 	{
-		name: "Afanasievo Culture",
-		type: "box",
+		name: 'Afanasievo Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-3300, -2500],
+				yearRange: [-3300, -2500],
 				coords: [54, 73],
-				bottom_right: [46, 94],
+				bottomRight: [46, 94],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Afanasievo_culture"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Afanasievo_culture',
 	},
 	{
-		name: "Ahrensburg Culture",
-		type: "box",
+		name: 'Ahrensburg Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-10900, -9700],
+				yearRange: [-10900, -9700],
 				coords: [54, -2],
-				bottom_right: [50, 17],
+				bottomRight: [50, 17],
 			},
 		],
-		period_info: [],
-		color: "black",
-		source: "https://en.wikipedia.org/wiki/Ahrensburg_culture"
+		periodInfo: [],
+		color: 'black',
+		source: 'https://en.wikipedia.org/wiki/Ahrensburg_culture',
 	},
 	{
-		name: "Akkadian Empire",
-		type: "box",
+		name: 'Akkadian Empire',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-2334, -2154],
+				yearRange: [-2334, -2154],
 				coords: [38, 38],
-				bottom_right: [30, 48],
+				bottomRight: [30, 48],
 			},
 		],
-		period_info: [],
-		desc: "Mesopotamian Civilization",
-		color: "brown",
-		source: "https://en.wikipedia.org/wiki/Akkadian_Empire"
+		periodInfo: [],
+		desc: 'Mesopotamian Civilization',
+		color: 'brown',
+		source: 'https://en.wikipedia.org/wiki/Akkadian_Empire',
 	},
 	{
-		name: "Anarta Culture",
-		type: "box",
+		name: 'Anarta Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-3950, -1900],
+				yearRange: [-3950, -1900],
 				coords: [25, 68],
-				bottom_right: [20, 74],
+				bottomRight: [20, 74],
 			},
 		],
-		period_info: [],
-		color: "green",
-		source: "https://en.wikipedia.org/wiki/Anarta_tradition"
+		periodInfo: [],
+		color: 'green',
+		source: 'https://en.wikipedia.org/wiki/Anarta_tradition',
 	},
 	{
-		name: "Aurignacian Culture",
-		type: "box",
+		name: 'Aurignacian Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-41000, -26000],
+				yearRange: [-41000, -26000],
 				coords: [52, -10],
-				bottom_right: [36, 37],
+				bottomRight: [36, 37],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Aurignacian"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Aurignacian',
 	},
 	{
-		name: "Baden Culture",
-		type: "box",
+		name: 'Baden Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-3600, -2800],
+				yearRange: [-3600, -2800],
 				coords: [51, 12],
-				bottom_right: [44, 24],
+				bottomRight: [44, 24],
 			},
 		],
-		period_info: [],
-		color: "#CFA7F8",
-		img: "https://upload.wikimedia.org/wikipedia/commons/c/c7/Museum_für_Vor-_und_Frühgeschichte_Berlin_034.jpg",
-		source: "https://en.wikipedia.org/wiki/Baden_culture"
+		periodInfo: [],
+		color: '#CFA7F8',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Museum_für_Vor-_und_Frühgeschichte_Berlin_034.jpg',
+		source: 'https://en.wikipedia.org/wiki/Baden_culture',
 	},
 	{
-		name: "Beaker Culture",
-		type: "box",
+		name: 'Beaker Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-2800, -1800],
+				yearRange: [-2800, -1800],
 				coords: [58, -9],
-				bottom_right: [35, 19],
+				bottomRight: [35, 19],
 			},
 		],
-		period_info: [],
-		color: "#FF7F27",
-		source: "https://en.wikipedia.org/wiki/Beaker_culture"
+		periodInfo: [],
+		color: '#FF7F27',
+		source: 'https://en.wikipedia.org/wiki/Beaker_culture',
 	},
 	{
-		name: "Babylonia",
-		type: "box",
+		name: 'Babylonia',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-1895, -539],
+				yearRange: [-1895, -539],
 				coords: [38, 38],
-				bottom_right: [30, 48],
+				bottomRight: [30, 48],
 			},
 		],
-		period_info: [],
-		desc: "Mesopotamian Civilization",
-		color: "gold",
-		source: "https://en.wikipedia.org/wiki/Babylonia"
+		periodInfo: [],
+		desc: 'Mesopotamian Civilization',
+		color: 'gold',
+		source: 'https://en.wikipedia.org/wiki/Babylonia',
 	},
 	{
-		name: "Bactria-Margiana Archaeological Complex",
-		type: "box",
+		name: 'Bactria-Margiana Archaeological Complex',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-2300, -1700],
+				yearRange: [-2300, -1700],
 				coords: [40, 59],
-				bottom_right: [36, 68],
+				bottomRight: [36, 68],
 			},
 		],
-		period_info: [],
-		color: "orange",
-		source: "https://en.wikipedia.org/wiki/Bactria–Margiana_Archaeological_Complex"
+		periodInfo: [],
+		color: 'orange',
+		source: 'https://en.wikipedia.org/wiki/Bactria–Margiana_Archaeological_Complex',
 	},
 	{
-		name: "Boian Culture",
-		type: "box",
+		name: 'Boian Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-4300, -3500],
+				yearRange: [-4300, -3500],
 				coords: [45, 23],
-				bottom_right: [40, 28],
+				bottomRight: [40, 28],
 			},
 		],
-		period_info: [],
-		color: "yellow",
-		source: "https://en.wikipedia.org/wiki/Boian_culture"
+		periodInfo: [],
+		color: 'yellow',
+		source: 'https://en.wikipedia.org/wiki/Boian_culture',
 	},
 	{
-		name: "Bolshemys Culture",
-		type: "box",
+		name: 'Bolshemys Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-4000, -3000],
+				yearRange: [-4000, -3000],
 				coords: [50, 80],
-				bottom_right: [43, 98],
+				bottomRight: [43, 98],
 			},
 		],
-		period_info: [],
-		color: "blue",
-		source: "https://en.wikipedia.org/wiki/Bolshemys_culture"
+		periodInfo: [],
+		color: 'blue',
+		source: 'https://en.wikipedia.org/wiki/Bolshemys_culture',
 	},
 	{
-		name: "C-Group Culture",
-		type: "box",
+		name: 'C-Group Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-2400, -1550],
+				yearRange: [-2400, -1550],
 				coords: [20, 30],
-				bottom_right: [18, 34],
+				bottomRight: [18, 34],
 			},
 		],
-		period_info: [],
-		color: "pink",
-		source: "https://en.wikipedia.org/wiki/C-Group_culture"
+		periodInfo: [],
+		color: 'pink',
+		source: 'https://en.wikipedia.org/wiki/C-Group_culture',
 	},
 	{
-		name: "Cardium Pottery Culture",
-		type: "box",
+		name: 'Cardium Pottery Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-6400, -5500],
+				yearRange: [-6400, -5500],
 				coords: [46, -2],
-				bottom_right: [38, 22],
+				bottomRight: [38, 22],
 			},
 		],
-		period_info: [],
-		color: "green",
-		source: "https://en.wikipedia.org/wiki/Cardium_pottery"
+		periodInfo: [],
+		color: 'green',
+		source: 'https://en.wikipedia.org/wiki/Cardium_pottery',
 	},
 	{
-		name: "Catacomb Culture",
-		type: "box",
+		name: 'Catacomb Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-2800, -2200],
+				yearRange: [-2800, -2200],
 				coords: [52, 31],
-				bottom_right: [43, 42],
+				bottomRight: [43, 42],
 			},
 		],
-		period_info: [],
-		color: "black",
-		source: "https://en.wikipedia.org/wiki/Catacomb_culture"
+		periodInfo: [],
+		color: 'black',
+		source: 'https://en.wikipedia.org/wiki/Catacomb_culture',
 	},
 	{
-		name: "Clovis Culture",
-		type: "box",
+		name: 'Clovis Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-11200, -10900],
+				yearRange: [-11200, -10900],
 				coords: [49, -126],
-				bottom_right: [7, -78],
+				bottomRight: [7, -78],
 			},
 		],
-		period_info: [],
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/Clovis_culture"
+		periodInfo: [],
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Clovis_culture',
 	},
 	{
-		name: "Comb Ceramic Culture",
-		type: "box",
+		name: 'Comb Ceramic Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-4200, -2000],
+				yearRange: [-4200, -2000],
 				coords: [62, 21],
-				bottom_right: [54, 35],
+				bottomRight: [54, 35],
 			},
 		],
-		period_info: [],
-		color: "purple",
-		img: "https://upload.wikimedia.org/wikipedia/commons/d/d6/CombCeramicPottery.jpg",
-		source: "https://en.wikipedia.org/wiki/Pit–Comb_Ware_culture"
+		periodInfo: [],
+		color: 'purple',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/CombCeramicPottery.jpg',
+		source: 'https://en.wikipedia.org/wiki/Pit–Comb_Ware_culture',
 	},
 	{
-		name: "Corded Ware Culture",
-		type: "box",
+		name: 'Corded Ware Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-2900, -2350],
+				yearRange: [-2900, -2350],
 				coords: [59, 4],
-				bottom_right: [47, 31],
+				bottomRight: [47, 31],
 			},
 		],
-		period_info: [],
-		color: "#F97474",
-		source: "https://en.wikipedia.org/wiki/Corded_Ware_culture"
+		periodInfo: [],
+		color: '#F97474',
+		source: 'https://en.wikipedia.org/wiki/Corded_Ware_culture',
 	},
 	{
-		name: "Dacians",
-		type: "box",
+		name: 'Dacians',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-1000, 106], // estimate
+				yearRange: [-1000, 106], // estimate
 				coords: [48.4, 19.7],
-				bottom_right: [43.2, 30.8],
+				bottomRight: [43.2, 30.8],
 			},
 		],
-		period_info: [],
-		desc: "Indo-European tribe",
-		color: "slateblue",
-		img: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Costantino_Dacia.JPG",
-		source: "https://en.wikipedia.org/wiki/Dacians"
+		periodInfo: [],
+		desc: 'Indo-European tribe',
+		color: 'slateblue',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/b/b4/Costantino_Dacia.JPG',
+		source: 'https://en.wikipedia.org/wiki/Dacians',
 	},
 	{
-		name: "Dimini Culture",
-		type: "box",
+		name: 'Dimini Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-5000, -4400],
+				yearRange: [-5000, -4400],
 				coords: [40, 21],
-				bottom_right: [34, 27],
+				bottomRight: [34, 27],
 			},
 		],
-		period_info: [],
-		color: "teal",
-		source: "https://en.wikipedia.org/wiki/Dimini#History"
+		periodInfo: [],
+		color: 'teal',
+		source: 'https://en.wikipedia.org/wiki/Dimini#History',
 	},
 	{
-		name: "Elam",
-		type: "box",
+		name: 'Elam',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-2700, -539],
+				yearRange: [-2700, -539],
 				coords: [34, 48],
-				bottom_right: [27, 55],
+				bottomRight: [27, 55],
 			},
 		],
-		period_info: [],
-		desc: "Pre-Iranian Civilization",
-		color: "orange",
-		source: "https://en.wikipedia.org/wiki/Elam"
+		periodInfo: [],
+		desc: 'Pre-Iranian Civilization',
+		color: 'orange',
+		source: 'https://en.wikipedia.org/wiki/Elam',
 	},
 	{
-		name: "Erligang Culture",
-		type: "box",
+		name: 'Erligang Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-1510, -1460],
+				yearRange: [-1510, -1460],
 				coords: [39, 108],
-				bottom_right: [30, 118],
+				bottomRight: [30, 118],
 			},
 		],
-		period_info: [],
-		color: "teal",
-		source: "https://en.wikipedia.org/wiki/Erligang_culture"
+		periodInfo: [],
+		color: 'teal',
+		source: 'https://en.wikipedia.org/wiki/Erligang_culture',
 	},
 	{
-		name: "Erlitou Culture",
-		type: "box",
+		name: 'Erlitou Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-1900, -1500],
+				yearRange: [-1900, -1500],
 				coords: [36, 108],
-				bottom_right: [33, 116],
+				bottomRight: [33, 116],
 			},
 		],
-		period_info: [],
-		color: "teal",
-		source: "https://en.wikipedia.org/wiki/Erlitou_culture"
+		periodInfo: [],
+		color: 'teal',
+		source: 'https://en.wikipedia.org/wiki/Erlitou_culture',
 	},
 	{
-		name: "Fatyanovo-Balanovo Culture",
-		type: "box",
+		name: 'Fatyanovo-Balanovo Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-3200, -2300],
+				yearRange: [-3200, -2300],
 				coords: [58, 31],
-				bottom_right: [52, 53],
+				bottomRight: [52, 53],
 			},
 		],
-		period_info: [],
-		color: "pink",
-		source: "https://en.wikipedia.org/wiki/Fatyanovo–Balanovo_culture"
+		periodInfo: [],
+		color: 'pink',
+		source: 'https://en.wikipedia.org/wiki/Fatyanovo–Balanovo_culture',
 	},
 	{
-		name: "Egypt",
-		type: "box",
+		name: 'Egypt',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-3150, -30],
+				yearRange: [-3150, -30],
 				coords: [32, 25],
-				bottom_right: [22, 36],
+				bottomRight: [22, 36],
 			},
 			{
-				year_range: [868, 905],
+				yearRange: [868, 905],
 				coords: [37, 23],
-				bottom_right: [23, 39],
+				bottomRight: [23, 39],
 			},
 			{
-				year_range: [935, 969],
+				yearRange: [935, 969],
 				coords: [37, 20],
-				bottom_right: [12, 39],
+				bottomRight: [12, 39],
 			},
 		],
-		period_info: [
+		periodInfo: [
 			{
-				year_range: [-3150, -2686],
-				desc: "Early Dynastic Period",
+				yearRange: [-3150, -2686],
+				desc: 'Early Dynastic Period',
 			},
 			{
-				year_range: [-2686, -2181],
-				desc: "Old Kingdom",
+				yearRange: [-2686, -2181],
+				desc: 'Old Kingdom',
 			},
 			{
-				year_range: [-2181, -2055],
-				desc: "First Intermediate Period",
+				yearRange: [-2181, -2055],
+				desc: 'First Intermediate Period',
 			},
 			{
-				year_range: [-2055, -1650],
-				desc: "Middle Kingdom",
+				yearRange: [-2055, -1650],
+				desc: 'Middle Kingdom',
 			},
 			{
-				year_range: [-1650, -1550],
-				desc: "Second Intermediate Period",
+				yearRange: [-1650, -1550],
+				desc: 'Second Intermediate Period',
 			},
 			{
-				year_range: [-1550, -1069],
-				desc: "New Kingdom",
+				yearRange: [-1550, -1069],
+				desc: 'New Kingdom',
 			},
 			{
-				year_range: [-1069, -664],
-				desc: "Third Intermediate Period",
+				yearRange: [-1069, -664],
+				desc: 'Third Intermediate Period',
 			},
 			{
-				year_range: [-664, -332],
-				desc: "Late Period",
+				yearRange: [-664, -332],
+				desc: 'Late Period',
 			},
 			{
-				year_range: [-305, -30],
-				desc: "Ptolemaic Kingdom",
+				yearRange: [-305, -30],
+				desc: 'Ptolemaic Kingdom',
 			},
 			{
-				year_range: [868, 905],
-				desc: "Ṭūlūnid",
+				yearRange: [868, 905],
+				desc: 'Ṭūlūnid',
 			},
 			{
-				year_range: [935, 969],
-				desc: "Ikhshidid",
+				yearRange: [935, 969],
+				desc: 'Ikhshidid',
 			},
 		],
-		desc: "North African Civilization",
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Egypt"
+		desc: 'North African Civilization',
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Egypt',
 	},
 	{
-		name: "Ertebølle Culture",
-		type: "box",
+		name: 'Ertebølle Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-5300, -3950],
+				yearRange: [-5300, -3950],
 				coords: [59, 8],
-				bottom_right: [53, 15],
+				bottomRight: [53, 15],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Ertebølle_culture"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Ertebølle_culture',
 	},
 	{
-		name: "Etruria",
-		type: "box",
+		name: 'Etruria',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-750, -290],
+				yearRange: [-750, -290],
 				coords: [43.7, 10.3],
-				bottom_right: [42.0, 12.4],
+				bottomRight: [42.0, 12.4],
 			},
 		],
-		period_info: [],
-		desc: "Pre-Indo-European tribe",
-		color: "#CDCD65",
-		img: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Danseur_avec_une_coupe_de_vin_Tombe_oes_Leopards%2C_Tarquinia.jpg",
-		source: "https://en.wikipedia.org/wiki/Etruria"
+		periodInfo: [],
+		desc: 'Pre-Indo-European tribe',
+		color: '#CDCD65',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/Danseur_avec_une_coupe_de_vin_Tombe_oes_Leopards%2C_Tarquinia.jpg',
+		source: 'https://en.wikipedia.org/wiki/Etruria',
 	},
 	{
-		name: "Folsom Culture",
-		type: "box",
+		name: 'Folsom Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-9000, -8000],
+				yearRange: [-9000, -8000],
 				coords: [43, -107],
-				bottom_right: [36, -103],
+				bottomRight: [36, -103],
 			},
 		],
-		period_info: [],
-		color: "orange",
-		source: "https://en.wikipedia.org/wiki/Folsom_tradition"
+		periodInfo: [],
+		color: 'orange',
+		source: 'https://en.wikipedia.org/wiki/Folsom_tradition',
 	},
 	{
-		name: "Frentani",
-		type: "box",
+		name: 'Frentani',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-750, -49],
+				yearRange: [-750, -49],
 				coords: [42.4, 14.1],
-				bottom_right: [41.8, 15.0],
+				bottomRight: [41.8, 15.0],
 			},
 		],
-		period_info: [],
-		desc: "Italic tribe",
-		color: "yellow",
-		img: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Frentrum_Æ_sg0540.jpg",
-		source: "https://en.wikipedia.org/wiki/Sabines"
+		periodInfo: [],
+		desc: 'Italic tribe',
+		color: 'yellow',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/9/9f/Frentrum_Æ_sg0540.jpg',
+		source: 'https://en.wikipedia.org/wiki/Sabines',
 	},
 	{
-		name: "Glacial Kame Culture",
-		type: "box",
+		name: 'Glacial Kame Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-8000, -1000],
+				yearRange: [-8000, -1000],
 				coords: [46, -87],
-				bottom_right: [39, -80],
+				bottomRight: [39, -80],
 			},
 		],
-		period_info: [],
-		color: "cyan",
-		img: "https://upload.wikimedia.org/wikipedia/commons/9/98/Zimmerman_Kame.jpg",
-		source: "https://en.wikipedia.org/wiki/Glacial_Kame_Culture"
+		periodInfo: [],
+		color: 'cyan',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/9/98/Zimmerman_Kame.jpg',
+		source: 'https://en.wikipedia.org/wiki/Glacial_Kame_Culture',
 	},
 	{
-		name: "Globular Amphora Culture",
-		type: "box",
+		name: 'Globular Amphora Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-3400, -2800],
+				yearRange: [-3400, -2800],
 				coords: [55, 8],
-				bottom_right: [47, 30],
+				bottomRight: [47, 30],
 			},
 		],
-		period_info: [],
-		color: "#FDBAAF",
-		img: "https://upload.wikimedia.org/wikipedia/commons/6/67/GlobularAmphoraPiatraNeamt.JPG",
-		source: "https://en.wikipedia.org/wiki/Globular_Amphora_culture"
+		periodInfo: [],
+		color: '#FDBAAF',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/6/67/GlobularAmphoraPiatraNeamt.JPG',
+		source: 'https://en.wikipedia.org/wiki/Globular_Amphora_culture',
 	},
 	{
-		name: "Gojoseon",
-		type: "box",
+		name: 'Gojoseon',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-700, -108],
+				yearRange: [-700, -108],
 				coords: [41, 124],
-				bottom_right: [38, 128],
+				bottomRight: [38, 128],
 			},
 		],
-		period_info: [],
-		color: "blue",
-		source: "https://en.wikipedia.org/wiki/Gojoseon"
+		periodInfo: [],
+		color: 'blue',
+		source: 'https://en.wikipedia.org/wiki/Gojoseon',
 	},
 	{
-		name: "Gravettian Culture",
-		type: "box",
+		name: 'Gravettian Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-31000, -20000],
+				yearRange: [-31000, -20000],
 				coords: [52, -10],
-				bottom_right: [36, 37],
+				bottomRight: [36, 37],
 			},
 		],
-		period_info: [],
-		color: "tan",
-		source: "https://en.wikipedia.org/wiki/Gravettian"
+		periodInfo: [],
+		color: 'tan',
+		source: 'https://en.wikipedia.org/wiki/Gravettian',
 	},
 	{
-		name: "Halaf Culture",
-		type: "box",
+		name: 'Halaf Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-6100, -5100],
+				yearRange: [-6100, -5100],
 				coords: [39, 36],
-				bottom_right: [35, 44],
+				bottomRight: [35, 44],
 			},
 		],
-		period_info: [],
-		color: "purple",
-		source: "https://en.wikipedia.org/wiki/Halaf_culture"
+		periodInfo: [],
+		color: 'purple',
+		source: 'https://en.wikipedia.org/wiki/Halaf_culture',
 	},
 	{
-		name: "Hamangia Culture",
-		type: "box",
+		name: 'Hamangia Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-5250, -4500],
+				yearRange: [-5250, -4500],
 				coords: [45, 27],
-				bottom_right: [40, 30],
+				bottomRight: [40, 30],
 			},
 		],
-		period_info: [],
-		color: "yellow",
-		source: "https://en.wikipedia.org/wiki/Hamangia_culture"
+		periodInfo: [],
+		color: 'yellow',
+		source: 'https://en.wikipedia.org/wiki/Hamangia_culture',
 	},
 	{
-		name: "Hittites",
-		type: "box",
+		name: 'Hittites',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-1600, -1178],
+				yearRange: [-1600, -1178],
 				coords: [43, 27],
-				bottom_right: [36, 43],
+				bottomRight: [36, 43],
 			},
 		],
-		period_info: [],
-		desc: "Anatolian Civilization",
-		color: "blue",
-		source: "https://en.wikipedia.org/wiki/Hittites"
+		periodInfo: [],
+		desc: 'Anatolian Civilization',
+		color: 'blue',
+		source: 'https://en.wikipedia.org/wiki/Hittites',
 	},
 	{
-		name: "Indus Valley Civilization",
-		type: "box",
+		name: 'Indus Valley Civilization',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-3300, -1300],
+				yearRange: [-3300, -1300],
 				coords: [32, 64],
-				bottom_right: [20, 78],
+				bottomRight: [20, 78],
 			},
 		],
-		period_info: [
+		periodInfo: [
 			{
-				year_range: [-3500, -2800],
+				yearRange: [-3500, -2800],
 				desc: 'Early Phase',
 			},
 			{
-				year_range: [-2800, -2600],
+				yearRange: [-2800, -2600],
 				desc: 'Period of Transition',
 			},
 			{
-				year_range: [-2600, -1900],
+				yearRange: [-2600, -1900],
 				desc: 'Mature Phase',
 			},
 			{
-				year_range: [-1900, -1600],
+				yearRange: [-1900, -1600],
 				desc: 'Late Phase',
 			},
 			{
-				year_range: [-1600, -1500],
+				yearRange: [-1600, -1500],
 				desc: 'Final Phase',
 			},
 		],
-		color: "brown",
-		source: "https://en.wikipedia.org/wiki/Indus_Valley_Civilisation"
+		color: 'brown',
+		source: 'https://en.wikipedia.org/wiki/Indus_Valley_Civilisation',
 	},
 	{
-		name: "Jeulmun Culture",
-		type: "box",
+		name: 'Jeulmun Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-8000, -1500],
+				yearRange: [-8000, -1500],
 				coords: [38, 126],
-				bottom_right: [34, 130],
+				bottomRight: [34, 130],
 			},
 		],
-		period_info: [],
-		color: "blue",
-		source: "https://en.wikipedia.org/wiki/Jeulmun_pottery_period"
+		periodInfo: [],
+		color: 'blue',
+		source: 'https://en.wikipedia.org/wiki/Jeulmun_pottery_period',
 	},
 	{
-		name: "Jōmon Culture",
-		type: "box",
+		name: 'Jōmon Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-14000, -300],
+				yearRange: [-14000, -300],
 				coords: [46, 130],
-				bottom_right: [31, 145],
+				bottomRight: [31, 145],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Jōmon_period"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Jōmon_period',
 	},
 	{
-		name: "Khvalynsk Culture",
-		type: "box",
+		name: 'Khvalynsk Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-5000, -4500],
+				yearRange: [-5000, -4500],
 				coords: [52, 37],
-				bottom_right: [43, 52],
+				bottomRight: [43, 52],
 			},
 		],
-		period_info: [],
-		color: "magenta",
-		source: "https://en.wikipedia.org/wiki/Khvalynsk_culture"
+		periodInfo: [],
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Khvalynsk_culture',
 	},
 	{
-		name: "Kongemose Culture",
-		type: "box",
+		name: 'Kongemose Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-6000, -5200],
+				yearRange: [-6000, -5200],
 				coords: [59, 8],
-				bottom_right: [53, 15],
+				bottomRight: [53, 15],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Kongemose_culture"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Kongemose_culture',
 	},
 	{
-		name: "Ligures",
-		type: "box",
+		name: 'Ligures',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-750, -100],
+				yearRange: [-750, -100],
 				coords: [44.7, 6.9],
-				bottom_right: [43.6, 10.1],
+				bottomRight: [43.6, 10.1],
 			},
 		],
-		period_info: [],
-		desc: "Italic tribe",
-		color: "green",
-		source: "https://en.wikipedia.org/wiki/Ligures"
+		periodInfo: [],
+		desc: 'Italic tribe',
+		color: 'green',
+		source: 'https://en.wikipedia.org/wiki/Ligures',
 	},
 	{
-		name: "Longshan Culture",
-		type: "box",
+		name: 'Longshan Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-3000, -1900],
+				yearRange: [-3000, -1900],
 				coords: [39, 105],
-				bottom_right: [33, 123],
+				bottomRight: [33, 123],
 			},
 		],
-		period_info: [],
-		color: "green",
-		source: "https://en.wikipedia.org/wiki/Longshan_culture"
+		periodInfo: [],
+		color: 'green',
+		source: 'https://en.wikipedia.org/wiki/Longshan_culture',
 	},
 	{
-		name: "Lucani",
-		type: "box",
+		name: 'Lucani',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-750, -88],
+				yearRange: [-750, -88],
 				coords: [40.8, 14.9],
-				bottom_right: [39.8, 16.7],
+				bottomRight: [39.8, 16.7],
 			},
 		],
-		period_info: [],
-		desc: "Italic tribe",
-		color: "darkcyan",
-		img: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Grab_der_Granatäpfel_heimkehrender_Ritter.jpg",
-		source: "https://en.wikipedia.org/wiki/Lucanians"
+		periodInfo: [],
+		desc: 'Italic tribe',
+		color: 'darkcyan',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Grab_der_Granatäpfel_heimkehrender_Ritter.jpg',
+		source: 'https://en.wikipedia.org/wiki/Lucanians',
 	},
 	{
-		name: "Magdalenian Culture",
-		type: "box",
+		name: 'Magdalenian Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-15000, -10000],
+				yearRange: [-15000, -10000],
 				coords: [52, -10],
-				bottom_right: [36, 19],
+				bottomRight: [36, 19],
 			},
 		],
-		period_info: [],
-		color: "pink",
-		source: "https://en.wikipedia.org/wiki/Magdalenian"
+		periodInfo: [],
+		color: 'pink',
+		source: 'https://en.wikipedia.org/wiki/Magdalenian',
 	},
 	{
-		name: "Maglemosian Culture",
-		type: "box",
+		name: 'Maglemosian Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-9000, -6000],
+				yearRange: [-9000, -6000],
 				coords: [59, 8],
-				bottom_right: [53, 15],
+				bottomRight: [53, 15],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Maglemosian"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Maglemosian',
 	},
 	{
-		name: "Majiayao Culture",
-		type: "box",
+		name: 'Majiayao Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-3300, -2000],
+				yearRange: [-3300, -2000],
 				coords: [38, 102],
-				bottom_right: [34, 107],
+				bottomRight: [34, 107],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Majiayao_culture"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Majiayao_culture',
 	},
 	{
-		name: "Mumun Culture",
-		type: "box",
+		name: 'Mumun Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-1500, -300],
+				yearRange: [-1500, -300],
 				coords: [38, 126],
-				bottom_right: [34, 130],
+				bottomRight: [34, 130],
 			},
 		],
-		period_info: [],
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/Mumun_pottery_period"
+		periodInfo: [],
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Mumun_pottery_period',
 	},
 	{
-		name: "Natufian Culture",
-		type: "box",
+		name: 'Natufian Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-13050, -7550],
+				yearRange: [-13050, -7550],
 				coords: [37, 33],
-				bottom_right: [30, 39],
+				bottomRight: [30, 39],
 			},
 		],
-		period_info: [],
-		color: "orange",
-		source: "https://en.wikipedia.org/wiki/Natufian_culture"
+		periodInfo: [],
+		color: 'orange',
+		source: 'https://en.wikipedia.org/wiki/Natufian_culture',
 	},
 	{
-		name: "Old Copper Complex",
-		type: "box",
+		name: 'Old Copper Complex',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-4000, -1000],
+				yearRange: [-4000, -1000],
 				coords: [49, -93],
-				bottom_right: [44, -84],
+				bottomRight: [44, -84],
 			},
 		],
-		period_info: [],
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Copper_knife%2C_spearpoints%2C_awls%2C_and_spud%2C_Late_Archaic_period%2C_Wisconsin%2C_3000_BC-1000_BC_-_Wisconsin_Historical_Museum_-_DSC03436.JPG",
-		source: "https://en.wikipedia.org/wiki/Old_Copper_Complex"
+		periodInfo: [],
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/Copper_knife%2C_spearpoints%2C_awls%2C_and_spud%2C_Late_Archaic_period%2C_Wisconsin%2C_3000_BC-1000_BC_-_Wisconsin_Historical_Museum_-_DSC03436.JPG',
+		source: 'https://en.wikipedia.org/wiki/Old_Copper_Complex',
 	},
 	{
-		name: "Paiján Culture",
-		type: "box",
+		name: 'Paiján Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-8700, -5900],
+				yearRange: [-8700, -5900],
 				coords: [-4, -82],
-				bottom_right: [-11, -76],
+				bottomRight: [-11, -76],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Paiján_culture"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Paiján_culture',
 	},
 	{
-		name: "Paleo-Arctic Culture",
-		type: "box",
+		name: 'Paleo-Arctic Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-8000, -5000],
+				yearRange: [-8000, -5000],
 				coords: [72, -168],
-				bottom_right: [54, -135],
+				bottomRight: [54, -135],
 			},
 		],
-		period_info: [],
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/Paleo-Arctic_Tradition"
+		periodInfo: [],
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Paleo-Arctic_Tradition',
 	},
 	{
-		name: "Plano Culture",
-		type: "box",
+		name: 'Plano Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-9000, -6000],
+				yearRange: [-9000, -6000],
 				coords: [45, -110],
-				bottom_right: [41, -104],
+				bottomRight: [41, -104],
 			},
 		],
-		period_info: [],
-		color: "pink",
-		source: "https://en.wikipedia.org/wiki/Plano_cultures"
+		periodInfo: [],
+		color: 'pink',
+		source: 'https://en.wikipedia.org/wiki/Plano_cultures',
 	},
 	{
-		name: "Poltavka Culture",
-		type: "box",
+		name: 'Poltavka Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-2700, -2100],
+				yearRange: [-2700, -2100],
 				coords: [53, 44],
-				bottom_right: [46, 50],
+				bottomRight: [46, 50],
 			},
 		],
-		period_info: [],
-		color: "purple",
-		source: "https://en.wikipedia.org/wiki/Poltavka_culture"
+		periodInfo: [],
+		color: 'purple',
+		source: 'https://en.wikipedia.org/wiki/Poltavka_culture',
 	},
 	{
-		name: "Post Pattern Culture",
-		type: "box",
+		name: 'Post Pattern Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-11000, -7000],
+				yearRange: [-11000, -7000],
 				coords: [42, -125],
-				bottom_right: [37, -121],
+				bottomRight: [37, -121],
 			},
 		],
-		period_info: [],
-		color: "purple",
-		source: "https://en.wikipedia.org/wiki/Post_Pattern"
+		periodInfo: [],
+		color: 'purple',
+		source: 'https://en.wikipedia.org/wiki/Post_Pattern',
 	},
 	{
-		name: "Proto-Villanovan Culture",
-		type: "box",
+		name: 'Proto-Villanovan Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-1200, -900],
+				yearRange: [-1200, -900],
 				coords: [45, 10],
-				bottom_right: [42, 13],
+				bottomRight: [42, 13],
 			},
 		],
-		period_info: [],
-		color: "brown",
-		source: "https://en.wikipedia.org/wiki/Proto-Villanovan_culture"
+		periodInfo: [],
+		color: 'brown',
+		source: 'https://en.wikipedia.org/wiki/Proto-Villanovan_culture',
 	},
 	{
-		name: "Sabines",
-		type: "box",
+		name: 'Sabines',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-750, -468],
+				yearRange: [-750, -468],
 				coords: [42.8, 12.4],
-				bottom_right: [41.9, 13.5],
+				bottomRight: [41.9, 13.5],
 			},
 		],
-		period_info: [],
-		desc: "Italic tribe",
-		color: "green",
-		source: "https://en.wikipedia.org/wiki/Sabines"
+		periodInfo: [],
+		desc: 'Italic tribe',
+		color: 'green',
+		source: 'https://en.wikipedia.org/wiki/Sabines',
 	},
 	{
-		name: "Samarra Culture",
-		type: "box",
+		name: 'Samarra Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-5500, -4800],
+				yearRange: [-5500, -4800],
 				coords: [36, 41],
-				bottom_right: [31, 48],
+				bottomRight: [31, 48],
 			},
 		],
-		period_info: [],
-		color: "green",
-		source: "https://en.wikipedia.org/wiki/Samarra_culture"
+		periodInfo: [],
+		color: 'green',
+		source: 'https://en.wikipedia.org/wiki/Samarra_culture',
 	},
 	{
-		name: "Samnites",
-		type: "box",
+		name: 'Samnites',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-750, -290],
+				yearRange: [-750, -290],
 				coords: [41.9, 13.9],
-				bottom_right: [40.8, 15.6],
+				bottomRight: [40.8, 15.6],
 			},
 		],
-		period_info: [],
-		desc: "Italic tribe",
-		color: "pink",
-		img: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Samnite_soldiers_from_a_tomb_frieze_in_Nola_4th_century_BCE.jpg",
-		source: "https://en.wikipedia.org/wiki/Samnites"
+		periodInfo: [],
+		desc: 'Italic tribe',
+		color: 'pink',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/3/3b/Samnite_soldiers_from_a_tomb_frieze_in_Nola_4th_century_BCE.jpg',
+		source: 'https://en.wikipedia.org/wiki/Samnites',
 	},
 	{
-		name: "Shang",
-		type: "box",
+		name: 'Shang',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-1600, -1046],
+				yearRange: [-1600, -1046],
 				coords: [39, 108],
-				bottom_right: [30, 118],
+				bottomRight: [30, 118],
 			},
 		],
-		period_info: [],
-		color: "green",
-		source: "https://en.wikipedia.org/wiki/Shang_dynasty"
+		periodInfo: [],
+		color: 'green',
+		source: 'https://en.wikipedia.org/wiki/Shang_dynasty',
 	},
 	{
-		name: "Sintasha Culture",
-		type: "box",
+		name: 'Sintasha Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-2100, -1800],
+				yearRange: [-2100, -1800],
 				coords: [57, 58],
-				bottom_right: [51, 70],
+				bottomRight: [51, 70],
 			},
 		],
-		period_info: [],
-		color: "magenta",
-		source: "https://en.wikipedia.org/wiki/Sintasha_culture"
+		periodInfo: [],
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Sintasha_culture',
 	},
 	{
-		name: "Solutrean Culture",
-		type: "box",
+		name: 'Solutrean Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-20000, -15000],
+				yearRange: [-20000, -15000],
 				coords: [49, -10],
-				bottom_right: [36, 5],
+				bottomRight: [36, 5],
 			},
 		],
-		period_info: [],
-		color: "pink",
-		source: "https://en.wikipedia.org/wiki/Solutrean"
+		periodInfo: [],
+		color: 'pink',
+		source: 'https://en.wikipedia.org/wiki/Solutrean',
 	},
 	{
-		name: "Srubnaya Culture",
-		type: "box",
+		name: 'Srubnaya Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-1800, -1200],
+				yearRange: [-1800, -1200],
 				coords: [52, 33],
-				bottom_right: [43, 50],
+				bottomRight: [43, 50],
 			},
 		],
-		period_info: [],
-		color: "brown",
-		source: "https://en.wikipedia.org/wiki/Srubnaya_culture"
+		periodInfo: [],
+		color: 'brown',
+		source: 'https://en.wikipedia.org/wiki/Srubnaya_culture',
 	},
 	{
-		name: "Sumer",
-		type: "box",
+		name: 'Sumer',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-4500, -1900],
+				yearRange: [-4500, -1900],
 				coords: [34, 41],
-				bottom_right: [30, 48],
+				bottomRight: [30, 48],
 			},
 		],
-		period_info: [],
-		desc: "Mesopotamian Civilization",
-		color: "teal",
-		source: "https://en.wikipedia.org/wiki/Sumer"
+		periodInfo: [],
+		desc: 'Mesopotamian Civilization',
+		color: 'teal',
+		source: 'https://en.wikipedia.org/wiki/Sumer',
 	},
 	{
-		name: "Swiderian Culture",
-		type: "box",
+		name: 'Swiderian Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-9000, -6200],
+				yearRange: [-9000, -6200],
 				coords: [56, 15],
-				bottom_right: [48, 31],
+				bottomRight: [48, 31],
 			},
 		],
-		period_info: [],
-		color: "black",
-		source: "https://en.wikipedia.org/wiki/Swiderian_culture"
+		periodInfo: [],
+		color: 'black',
+		source: 'https://en.wikipedia.org/wiki/Swiderian_culture',
 	},
 	{
-		name: "Terramare Culture",
-		type: "box",
+		name: 'Terramare Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-1700, -1150],
+				yearRange: [-1700, -1150],
 				coords: [46, 8],
-				bottom_right: [44, 12],
+				bottomRight: [44, 12],
 			},
 		],
-		period_info: [],
-		color: "pink",
-		source: "https://en.wikipedia.org/wiki/Terramare_culture"
+		periodInfo: [],
+		color: 'pink',
+		source: 'https://en.wikipedia.org/wiki/Terramare_culture',
 	},
 	{
-		name: "Thracians",
-		type: "box",
+		name: 'Thracians',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-1000, -168], // estimate
+				yearRange: [-1000, -168], // estimate
 				coords: [43.2, 23.2],
-				bottom_right: [40.6, 29.1],
+				bottomRight: [40.6, 29.1],
 			},
 		],
-		period_info: [],
-		desc: "Indo-European tribe",
-		color: "brown",
-		img: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Xerxes_I_tomb_Skudrian_soldier_circa_470_BCE_cleaned_up.jpg",
-		source: "https://en.wikipedia.org/wiki/Thracians"
+		periodInfo: [],
+		desc: 'Indo-European tribe',
+		color: 'brown',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/b/b5/Xerxes_I_tomb_Skudrian_soldier_circa_470_BCE_cleaned_up.jpg',
+		source: 'https://en.wikipedia.org/wiki/Thracians',
 	},
 	{
-		name: "Tumulus Culture",
-		type: "box",
+		name: 'Tumulus Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-1600, -1200],
+				yearRange: [-1600, -1200],
 				coords: [52, 11],
-				bottom_right: [48, 20],
+				bottomRight: [48, 20],
 			},
 		],
-		period_info: [],
-		color: "yellow",
-		source: "https://en.wikipedia.org/wiki/Tumulus_culture"
+		periodInfo: [],
+		color: 'yellow',
+		source: 'https://en.wikipedia.org/wiki/Tumulus_culture',
 	},
 	{
-		name: "Ubaid Culture",
-		type: "box",
+		name: 'Ubaid Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-6500, -3800],
+				yearRange: [-6500, -3800],
 				coords: [34, 43],
-				bottom_right: [31, 46],
+				bottomRight: [31, 46],
 			},
 		],
-		period_info: [],
-		color: "brown",
-		source: "https://en.wikipedia.org/wiki/Ubaid_culture"
+		periodInfo: [],
+		color: 'brown',
+		source: 'https://en.wikipedia.org/wiki/Ubaid_culture',
 	},
 	{
-		name: "Únětice Culture",
-		type: "box",
+		name: 'Únětice Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-2300, -1600],
+				yearRange: [-2300, -1600],
 				coords: [52, 11],
-				bottom_right: [48, 20],
+				bottomRight: [48, 20],
 			},
 		],
-		period_info: [],
-		color: "yellow",
-		source: "https://en.wikipedia.org/wiki/Unetice_culture"
+		periodInfo: [],
+		color: 'yellow',
+		source: 'https://en.wikipedia.org/wiki/Unetice_culture',
 	},
 	{
-		name: "United States",
-		type: "box",
+		name: 'United States',
+		type: 'box',
 		periods: [
 			{
-				year_range: [1777, 1803],
+				yearRange: [1777, 1803],
 				coords: [48, -95],
-				bottom_right: [30, -65],
+				bottomRight: [30, -65],
 			}, // + louisiana
 			{
-				year_range: [1804, 1819],
+				yearRange: [1804, 1819],
 				coords: [48, -114],
-				bottom_right: [29, -65],
+				bottomRight: [29, -65],
 			}, // + oregon
 			{
-				year_range: [1820, 1821],
+				yearRange: [1820, 1821],
 				coords: [48, -124],
-				bottom_right: [29, -65],
+				bottomRight: [29, -65],
 			}, // + florida
 			{
-				year_range: [1822, 9999],
+				yearRange: [1822, 9999],
 				coords: [48, -124],
-				bottom_right: [24, -65],
+				bottomRight: [24, -65],
 			},
 		],
-		period_info: [
+		periodInfo: [
 			{ // Trump
-				year_range: [2018, 2026],
+				yearRange: [2018, 2026],
 				desc: 'President: Donald Trump',
 			},
 		],
-		desc: "Country",
-		color: "blue",
-		source: "https://en.wikipedia.org/wiki/United_States"
+		desc: 'Country',
+		color: 'blue',
+		source: 'https://en.wikipedia.org/wiki/United_States',
 	},
 	{
-		name: "Veneti",
-		type: "box",
+		name: 'Veneti',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-750, -49],
+				yearRange: [-750, -49],
 				coords: [46.3, 11.3],
-				bottom_right: [45.2, 13.6],
+				bottomRight: [45.2, 13.6],
 			},
 		],
-		period_info: [],
-		desc: "Italic tribe",
-		color: "blue",
-		source: "https://en.wikipedia.org/wiki/Adriatic_Veneti"
+		periodInfo: [],
+		desc: 'Italic tribe',
+		color: 'blue',
+		source: 'https://en.wikipedia.org/wiki/Adriatic_Veneti',
 	},
 	{
-		name: "Villanovan Culture",
-		type: "box",
+		name: 'Villanovan Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-900, -700],
+				yearRange: [-900, -700],
 				coords: [45, 10],
-				bottom_right: [42, 13],
+				bottomRight: [42, 13],
 			},
 		],
-		period_info: [],
-		color: "brown",
-		source: "https://en.wikipedia.org/wiki/Villanovan_culture"
+		periodInfo: [],
+		color: 'brown',
+		source: 'https://en.wikipedia.org/wiki/Villanovan_culture',
 	},
 	{
-		name: "Vinča Culture",
-		type: "box",
+		name: 'Vinča Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-5700, -4500],
+				yearRange: [-5700, -4500],
 				coords: [47, 18],
-				bottom_right: [41, 26],
+				bottomRight: [41, 26],
 			},
 		],
-		period_info: [],
-		color: "lavender",
-		source: "https://en.wikipedia.org/wiki/Vinča_culture"
+		periodInfo: [],
+		color: 'lavender',
+		source: 'https://en.wikipedia.org/wiki/Vinča_culture',
 	},
 	{
-		name: "Xindian Culture",
-		type: "box",
+		name: 'Xindian Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-1500, -1000],
+				yearRange: [-1500, -1000],
 				coords: [42, 92],
-				bottom_right: [32, 105],
+				bottomRight: [32, 105],
 			},
 		],
-		period_info: [],
-		color: "tan",
-		source: "https://en.wikipedia.org/wiki/Xindian_culture"
+		periodInfo: [],
+		color: 'tan',
+		source: 'https://en.wikipedia.org/wiki/Xindian_culture',
 	},
 	{
-		name: "Yamna Culture",
-		type: "box",
+		name: 'Yamna Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-3300, -2600],
+				yearRange: [-3300, -2600],
 				coords: [52, 30],
-				bottom_right: [43, 51],
+				bottomRight: [43, 51],
 			},
 		],
-		period_info: [],
-		color: "#F8F885",
-		img: "https://upload.wikimedia.org/wikipedia/commons/1/18/Yamna01.jpg",
-		source: "https://en.wikipedia.org/wiki/Yamnaya_culture"
+		periodInfo: [],
+		color: '#F8F885',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/1/18/Yamna01.jpg',
+		source: 'https://en.wikipedia.org/wiki/Yamnaya_culture',
 	},
 	{
-		name: "Yueshi Culture",
-		type: "box",
+		name: 'Yueshi Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-1900, -1500],
+				yearRange: [-1900, -1500],
 				coords: [39, 116],
-				bottom_right: [34, 123],
+				bottomRight: [34, 123],
 			},
 		],
-		period_info: [],
-		color: "tan",
-		source: "https://en.wikipedia.org/wiki/Yueshi_culture"
+		periodInfo: [],
+		color: 'tan',
+		source: 'https://en.wikipedia.org/wiki/Yueshi_culture',
 	},
 	{
-		name: "Zhou",
-		type: "box",
+		name: 'Zhou',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-1046, -249],
+				yearRange: [-1046, -249],
 				coords: [41, 105],
-				bottom_right: [28, 119],
+				bottomRight: [28, 119],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Zhou_dynasty"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Zhou_dynasty',
 	},
 	// PRIORITY BOXES
 	{
-		name: "Maykop Culture",
-		type: "box",
+		name: 'Maykop Culture',
+		type: 'box',
 		periods: [
 			{
-				year_range: [-3700, -3000],
+				yearRange: [-3700, -3000],
 				coords: [47, 37],
-				bottom_right: [43, 46],
+				bottomRight: [43, 46],
 			},
 		],
-		period_info: [],
-		color: "brown",
-		source: "https://en.wikipedia.org/wiki/Maykop_culture"
+		periodInfo: [],
+		color: 'brown',
+		source: 'https://en.wikipedia.org/wiki/Maykop_culture',
 	},
 	// POINTS
 	{
-		name: "Ahar-Banas culture",
-		type: "point",
+		name: 'Ahar-Banas culture',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-3000, -1500],
+				yearRange: [-3000, -1500],
 				coords: [25, 74],
 			},
 		],
-		period_info: [],
-		color: "black",
-		source: "https://en.wikipedia.org/wiki/Ahar–Banas_culture"
+		periodInfo: [],
+		color: 'black',
+		source: 'https://en.wikipedia.org/wiki/Ahar–Banas_culture',
 	},
 	{
-		name: "Alepotrypa cave",
-		type: "point",
+		name: 'Alepotrypa cave',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-4000, -1200],
+				yearRange: [-4000, -1200],
 				coords: [36.6, 22.4],
 			},
 		],
-		period_info: [],
-		color: "red",
-		img: "https://upload.wikimedia.org/wikipedia/commons/1/1c/Diros-cave-greece_16269357444_o.jpg",
-		source: "https://en.wikipedia.org/wiki/Alepotrypa_cave"
+		periodInfo: [],
+		color: 'red',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Diros-cave-greece_16269357444_o.jpg',
+		source: 'https://en.wikipedia.org/wiki/Alepotrypa_cave',
 	},
 	{
-		name: "Annaba",
-		type: "point",
+		name: 'Annaba',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-1200, 9999],
+				yearRange: [-1200, 9999],
 				coords: [37, 8],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Annaba"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Annaba',
 	},
 	{
-		name: "Assur",
-		type: "point",
+		name: 'Assur',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-2500, 1400],
+				yearRange: [-2500, 1400],
 				coords: [35, 43],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Assur"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Assur',
 	},
 	{
-		name: "Athens",
-		type: "point",
+		name: 'Athens',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-5000, 9999],
+				yearRange: [-5000, 9999],
 				coords: [38, 24],
 			},
 		],
-		period_info: [],
-		color: "red",
-		img: "https://upload.wikimedia.org/wikipedia/commons/a/a7/The_Acropolis_of_Athens_viewed_from_the_Hill_of_the_Muses_(14220794964).jpg",
-		source: "https://en.wikipedia.org/wiki/Athens"
+		periodInfo: [],
+		color: 'red',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/The_Acropolis_of_Athens_viewed_from_the_Hill_of_the_Muses_(14220794964).jpg',
+		source: 'https://en.wikipedia.org/wiki/Athens',
 	},
 	{
-		name: "Axum",
-		type: "point",
+		name: 'Axum',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-400, 9999],
+				yearRange: [-400, 9999],
 				coords: [14, 39],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Axum"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Axum',
 	},
 	{
-		name: "Babylon",
-		type: "point",
+		name: 'Babylon',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-1894, 1000],
+				yearRange: [-1894, 1000],
 				coords: [33, 44],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Babylon"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Babylon',
 	},
 	{
-		name: "Beersheba Culture",
-		type: "point",
+		name: 'Beersheba Culture',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-4200, 4000],
+				yearRange: [-4200, 4000],
 				coords: [31, 35],
 			},
 		],
-		period_info: [],
-		color: "black",
-		source: "https://en.wikipedia.org/wiki/Beersheba_culture"
+		periodInfo: [],
+		color: 'black',
+		source: 'https://en.wikipedia.org/wiki/Beersheba_culture',
 	},
 	{
-		name: "Benin City",
-		type: "point",
+		name: 'Benin City',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-400, 9999],
+				yearRange: [-400, 9999],
 				coords: [6, 6],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Benin_City"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Benin_City',
 	},
 	{
-		name: "Berbera",
-		type: "point",
+		name: 'Berbera',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-400, 9999],
+				yearRange: [-400, 9999],
 				coords: [10, 45],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Berbera"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Berbera',
 	},
 	{
-		name: "Bhirrana",
-		type: "point",
+		name: 'Bhirrana',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-7570, -2600],
+				yearRange: [-7570, -2600],
 				coords: [30, 76],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Bhirrana"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Bhirrana',
 	},
 	{
-		name: "Bonstorf Barrows",
-		type: "point",
+		name: 'Bonstorf Barrows',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-1500, -1200],
+				yearRange: [-1500, -1200],
 				coords: [53, 10],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Bonstorf_Barrows"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Bonstorf_Barrows',
 	},
 	{
-		name: "Brú na Bóinne",
-		type: "point",
+		name: 'Brú na Bóinne',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-4000, -2900],
+				yearRange: [-4000, -2900],
 				coords: [53.7, -6.4],
 			},
 		],
-		period_info: [],
-		desc: "Neolithic archaeological complex including monuments and passage graves",
-		color: "red",
-		img: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Newgrange.JPG",
-		source: "https://en.wikipedia.org/wiki/Brú_na_Bóinne"
+		periodInfo: [],
+		desc: 'Neolithic archaeological complex including monuments and passage graves',
+		color: 'red',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/b/bc/Newgrange.JPG',
+		source: 'https://en.wikipedia.org/wiki/Brú_na_Bóinne',
 	},
 	{
-		name: "Byblos",
-		type: "point",
+		name: 'Byblos',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-8800, -7000],
+				yearRange: [-8800, -7000],
 				coords: [34, 36],
 			},
 			{
-				year_range: [-5000, 9999],
+				yearRange: [-5000, 9999],
 				coords: [34, 36],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Byblos"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Byblos',
 	},
 	{
-		name: "Carthage",
-		type: "point",
+		name: 'Carthage',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-814, -146],
+				yearRange: [-814, -146],
 				coords: [37, 10],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Carthage"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Carthage',
 	},
 	{
-		name: "Çatalhöyük",
-		type: "point",
+		name: 'Çatalhöyük',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-7500, -5700],
+				yearRange: [-7500, -5700],
 				coords: [38, 33],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Çatalhöyük"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Çatalhöyük',
 	},
 	{
-		name: "Çukuriçi Höyük",
-		type: "point",
+		name: 'Çukuriçi Höyük',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-6700, -6000],
+				yearRange: [-6700, -6000],
 				coords: [38, 27],
 			},
 			{
-				year_range: [-3500, -2750],
+				yearRange: [-3500, -2750],
 				coords: [38, 27],
 			},
 		],
-		period_info: [],
-		color: "red",
-		desc: "Settlement",
-		img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/01_Cukurici_Höyük.tif/lossy-page1-800px-01_Cukurici_Höyük.tif.jpg",
-		source: "https://en.wikipedia.org/wiki/Çukuriçi_Höyük"
+		periodInfo: [],
+		color: 'red',
+		desc: 'Settlement',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/01_Cukurici_Höyük.tif/lossy-page1-800px-01_Cukurici_Höyük.tif.jpg',
+		source: 'https://en.wikipedia.org/wiki/Çukuriçi_Höyük',
 	},
 	{
-		name: "Cliff Palace",
-		type: "point",
+		name: 'Cliff Palace',
+		type: 'point',
 		periods: [
 			{
-				year_range: [1190, 1300],
+				yearRange: [1190, 1300],
 				coords: [37, -108],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Cliff_Palace"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Cliff_Palace',
 	},
 	{
-		name: "Devil's Lair",
-		type: "point",
+		name: 'Devil\'s Lair',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-46000, -10700],
+				yearRange: [-46000, -10700],
 				coords: [-34, 115],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Devil's_Lair"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Devil\'s_Lair',
 	},
 	{
-		name: "Dispilio",
-		type: "point",
+		name: 'Dispilio',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-5600, -3000],
+				yearRange: [-5600, -3000],
 				coords: [40.5, 21.3],
 			},
 		],
-		period_info: [],
-		desc: "Settlement",
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Dispilio"
+		periodInfo: [],
+		desc: 'Settlement',
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Dispilio',
 	},
 	{
-		name: "Domuztepe",
-		type: "point",
+		name: 'Domuztepe',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-6200, -5450],
+				yearRange: [-6200, -5450],
 				coords: [37, 37],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Domuztepe"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Domuztepe',
 	},
 	{
-		name: "Fox Farm Site",
-		type: "point",
+		name: 'Fox Farm Site',
+		type: 'point',
 		periods: [
 			{
-				year_range: [1200, 1400],
+				yearRange: [1200, 1400],
 				coords: [39, -84],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Fox_Farm_Site_(Mays_Lick,_Kentucky)"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Fox_Farm_Site_(Mays_Lick,_Kentucky)',
 	},
 	{
-		name: "Franchthi Cave",
-		type: "point",
+		name: 'Franchthi Cave',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-38000, -3000],
+				yearRange: [-38000, -3000],
 				coords: [37, 23],
 			},
 		],
-		period_info: [],
-		color: "red",
-		img: "https://upload.wikimedia.org/wikipedia/commons/5/57/Franchthi_Cave_from_Koilada_Argolidas.jpg",
-		source: "https://en.wikipedia.org/wiki/Franchthi_Cave"
+		periodInfo: [],
+		color: 'red',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/5/57/Franchthi_Cave_from_Koilada_Argolidas.jpg',
+		source: 'https://en.wikipedia.org/wiki/Franchthi_Cave',
 	},
 	{
-		name: "Frankleben Hoard",
-		type: "point",
+		name: 'Frankleben Hoard',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-1500, -1250],
+				yearRange: [-1500, -1250],
 				coords: [51, 12],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Frankleben_hoard"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Frankleben_hoard',
 	},
 	{
-		name: "Ganweriwal",
-		type: "point",
+		name: 'Ganweriwal',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-2500, -1900], // latter is an estimate
+				yearRange: [-2500, -1900], // latter is an estimate
 				coords: [29, 71],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Ganweriwal"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Ganweriwal',
 	},
 	{
-		name: "Göbekli Tepe",
-		type: "point",
+		name: 'Göbekli Tepe',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-10000, -8000],
+				yearRange: [-10000, -8000],
 				coords: [37, 39],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Göbekli_Tepe"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Göbekli_Tepe',
 	},
 	{
-		name: "Gortyn",
-		type: "point",
+		name: 'Gortyn',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-3200, 9999],
+				yearRange: [-3200, 9999],
 				coords: [35.0, 24.9],
 			},
 		],
-		period_info: [],
-		desc: "Settlement",
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Gortyn"
+		periodInfo: [],
+		desc: 'Settlement',
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Gortyn',
 	},
 	{
-		name: "Harappa",
-		type: "point",
+		name: 'Harappa',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-2600, -1300],
+				yearRange: [-2600, -1300],
 				coords: [31, 73],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Harappa"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Harappa',
 	},
 	{
-		name: "Hattusa",
-		type: "point",
+		name: 'Hattusa',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-6000, -1200],
+				yearRange: [-6000, -1200],
 				coords: [40, 35],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Hattusa"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Hattusa',
 	},
 	{
-		name: "Hohlenstein-Stadel",
-		type: "point",
+		name: 'Hohlenstein-Stadel',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-39000, -33000],
+				yearRange: [-39000, -33000],
 				coords: [49, 10],
 			},
 		],
-		period_info: [],
-		desc: "Cave",
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Hohlenstein-Stadel"
+		periodInfo: [],
+		desc: 'Cave',
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Hohlenstein-Stadel',
 	},
 	{
-		name: "Kerma",
-		type: "point",
+		name: 'Kerma',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-3500, -1100],
+				yearRange: [-3500, -1100],
 				coords: [20, 30],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Kerma"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Kerma',
 	},
 	{
-		name: "Krzemionki",
-		type: "point",
+		name: 'Krzemionki',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-3900, -1600],
+				yearRange: [-3900, -1600],
 				coords: [51, 21],
 			},
 		],
-		period_info: [],
-		desc: "Neolithic to Bronze Age flint mine complex",
-		color: "red",
-		img: "https://upload.wikimedia.org/wikipedia/commons/4/41/Krzemionki.JPG",
-		source: "https://en.wikipedia.org/wiki/Krzemionki"
+		periodInfo: [],
+		desc: 'Neolithic to Bronze Age flint mine complex',
+		color: 'red',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Krzemionki.JPG',
+		source: 'https://en.wikipedia.org/wiki/Krzemionki',
 	},
 	{
-		name: "Kültəpə",
-		type: "point",
+		name: 'Kültəpə',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-4500, 9999],
+				yearRange: [-4500, 9999],
 				coords: [39.3, 45.5],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Kültəpə"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Kültəpə',
 	},
 	{
-		name: "Las Cogotas",
-		type: "point",
+		name: 'Las Cogotas',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-1700, -1000],
+				yearRange: [-1700, -1000],
 				coords: [41, -5],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Las_Cogotas"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Las_Cogotas',
 	},
 	{
-		name: "Luxor",
-		type: "point",
+		name: 'Luxor',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-3200, 9999],
+				yearRange: [-3200, 9999],
 				coords: [26, 33],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Luxor"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Luxor',
 	},
 	{
-		name: "Mehrgarh",
-		type: "point",
+		name: 'Mehrgarh',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-7000, -2600],
+				yearRange: [-7000, -2600],
 				coords: [29, 67],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Mehrgarh"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Mehrgarh',
 	},
 	{
-		name: "Merheleva Ridge",
-		type: "point",
+		name: 'Merheleva Ridge',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-4000, -3000],
+				yearRange: [-4000, -3000],
 				coords: [48, 39],
 			},
 		],
-		period_info: [],
-		desc: "Chalcolithic temple and burial complex",
-		color: "red",
-		img: "http://photos.wikimapia.org/p/00/03/70/35/44_big.jpg",
-		source: "https://en.wikipedia.org/wiki/Merheleva_Ridge"
+		periodInfo: [],
+		desc: 'Chalcolithic temple and burial complex',
+		color: 'red',
+		img: 'http://photos.wikimapia.org/p/00/03/70/35/44_big.jpg',
+		source: 'https://en.wikipedia.org/wiki/Merheleva_Ridge',
 	},
 	{
-		name: "Mogadishu",
-		type: "point",
+		name: 'Mogadishu',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-200, 9999],
+				yearRange: [-200, 9999],
 				coords: [2, 45],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Mogadishu"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Mogadishu',
 	},
 	{
-		name: "Mohenjo-daro",
-		type: "point",
+		name: 'Mohenjo-daro',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-2500, -1900],
+				yearRange: [-2500, -1900],
 				coords: [27, 68],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Mohenjo-daro"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Mohenjo-daro',
 	},
 	{
-		name: "Nakhchivan Tepe",
-		type: "point",
+		name: 'Nakhchivan Tepe',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-5000, 9999],
+				yearRange: [-5000, 9999],
 				coords: [39.2, 45.4],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Nakhchivan_Tepe"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Nakhchivan_Tepe',
 	},
 	{
-		name: "Nanzhuangtou",
-		type: "point",
+		name: 'Nanzhuangtou',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-9500, -9000],
+				yearRange: [-9500, -9000],
 				coords: [39, 116],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Nanzhuangtou"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Nanzhuangtou',
 	},
 	{
-		name: "Nevalı Çori",
-		type: "point",
+		name: 'Nevalı Çori',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-8400, -8100],
+				yearRange: [-8400, -8100],
 				coords: [38, 39],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Nevalı_Çori"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Nevalı_Çori',
 	},
 	{
-		name: "Osaka",
-		type: "point",
+		name: 'Osaka',
+		type: 'point',
 		periods: [
 			{
-				year_range: [400, 9999],
+				yearRange: [400, 9999],
 				coords: [35, 135],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Osaka"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Osaka',
 	},
 	{
-		name: "Piedra Museo",
-		type: "point",
+		name: 'Piedra Museo',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-9000, -9000],
+				yearRange: [-9000, -9000],
 				coords: [-49, -70],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Piedra_Museo"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Piedra_Museo',
 	},
 	{
-		name: "Poverty Point",
-		type: "point",
+		name: 'Poverty Point',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-1800, -1200],
+				yearRange: [-1800, -1200],
 				coords: [33, -91],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Poverty_Point"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Poverty_Point',
 	},
 	{
-		name: "Priniatikos Pyrgos",
-		type: "point",
+		name: 'Priniatikos Pyrgos',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-3000, -1000],
+				yearRange: [-3000, -1000],
 				coords: [35.1, 25.7],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Priniatikos_Pyrgos"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Priniatikos_Pyrgos',
 	},
 	{
-		name: "Rome",
-		type: "point",
+		name: 'Rome',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-753, 9999],
+				yearRange: [-753, 9999],
 				coords: [41.9, 12.5],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Rome"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Rome',
 	},
 	{
-		name: "Schnidejoch",
-		type: "point",
+		name: 'Schnidejoch',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-5000, 1500], // roughly
+				yearRange: [-5000, 1500], // roughly
 				coords: [46, 7],
 			},
 		],
-		period_info: [],
-		desc: "Mountain Pass",
-		color: "red",
-		img: "https://upload.wikimedia.org/wikipedia/commons/5/51/Aufstieg_wildhornhuette.jpg",
-		source: "https://en.wikipedia.org/wiki/Schnidejoch"
+		periodInfo: [],
+		desc: 'Mountain Pass',
+		color: 'red',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Aufstieg_wildhornhuette.jpg',
+		source: 'https://en.wikipedia.org/wiki/Schnidejoch',
 	},
 	{
-		name: "Sechin Bajo",
-		type: "point",
+		name: 'Sechin Bajo',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-3500, -1500],
+				yearRange: [-3500, -1500],
 				coords: [-9, -78],
 			},
 		],
-		period_info: [],
-		color: "red",
-		img: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Sechin_casma_valley.JPG",
-		source: "https://en.wikipedia.org/wiki/Sechin_Bajo"
+		periodInfo: [],
+		color: 'red',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Sechin_casma_valley.JPG',
+		source: 'https://en.wikipedia.org/wiki/Sechin_Bajo',
 	},
 	{
-		name: "Teleilat el Ghassul",
-		type: "point",
+		name: 'Teleilat el Ghassul',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-4400, -3500],
+				yearRange: [-4400, -3500],
 				coords: [32, 36],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Teleilat_el_Ghassul"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Teleilat_el_Ghassul',
 	},
 	{
-		name: "Tell Qaramel",
-		type: "point",
+		name: 'Tell Qaramel',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-10700, -9400],
+				yearRange: [-10700, -9400],
 				coords: [36, 37],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Tell_Qaramel"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Tell_Qaramel',
 	},
 	{
-		name: "Tholos de El Romeral",
-		type: "point",
+		name: 'Tholos de El Romeral',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-1800, -1800],
+				yearRange: [-1800, -1800],
 				coords: [37, 5],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Tholos_de_El_Romeral"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Tholos_de_El_Romeral',
 	},
 	{
-		name: "Tripoli",
-		type: "point",
+		name: 'Tripoli',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-700, 9999],
+				yearRange: [-700, 9999],
 				coords: [33, 13],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Tripoli"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Tripoli',
 	},
 	{
-		name: "Troy",
-		type: "point",
+		name: 'Troy',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-3000, 500],
+				yearRange: [-3000, 500],
 				coords: [40, 26],
 			},
 		],
-		period_info: [
+		periodInfo: [
 			{
-				year_range: [-3000, -2600],
+				yearRange: [-3000, -2600],
 				desc: 'Troy I',
 			},
 			{
-				year_range: [-2600, -2250],
+				yearRange: [-2600, -2250],
 				desc: 'Troy II',
 			},
 			{
-				year_range: [-2250, -2100],
+				yearRange: [-2250, -2100],
 				desc: 'Troy III',
 			},
 			{
-				year_range: [-2100, -1950],
+				yearRange: [-2100, -1950],
 				desc: 'Troy IV',
 			},
 			{
-				year_range: [-1950, -1800],
+				yearRange: [-1950, -1800],
 				desc: 'Troy V',
 			},
 			{
-				year_range: [-1800, -1500],
+				yearRange: [-1800, -1500],
 				desc: 'Troy VI',
 			},
 			{
-				year_range: [-1500, -1400],
+				yearRange: [-1500, -1400],
 				desc: 'Troy VIh',
 			},
 			{
-				year_range: [-1300, -1190],
+				yearRange: [-1300, -1190],
 				desc: 'Troy VIIa',
 			},
 			{
-				year_range: [-1190, -1100],
+				yearRange: [-1190, -1100],
 				desc: 'Troy VIIb1',
 			},
 			{
-				year_range: [-1100, -1000],
+				yearRange: [-1100, -1000],
 				desc: 'Troy VIIb2',
 			},
 			{
-				year_range: [-1000, -950],
+				yearRange: [-1000, -950],
 				desc: 'Troy VIIb3',
 			},
 			{
-				year_range: [-950, -85],
+				yearRange: [-950, -85],
 				desc: 'Troy VIII',
 			},
 			{
-				year_range: [-85, 500],
+				yearRange: [-85, 500],
 				desc: 'Troy IX',
 			},
 		],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Troy"
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Troy',
 	},
 	{
-		name: "Upward Sun River Site",
-		type: "point",
+		name: 'Upward Sun River Site',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-9500, -7000],
+				yearRange: [-9500, -7000],
 				coords: [64.4, -147.0],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Upward_Sun_River_site"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Upward_Sun_River_site',
 	},
 	{
-		name: "Ur",
-		type: "point",
+		name: 'Ur',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-3800, -500],
+				yearRange: [-3800, -500],
 				coords: [31, 46],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Ur"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Ur',
 	},
 	{
-		name: "Uruk",
-		type: "point",
+		name: 'Uruk',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-4000, 700],
+				yearRange: [-4000, 700],
 				coords: [31, 46],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Uruk"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Uruk',
 	},
 	{
-		name: "Yanshi",
-		type: "point",
+		name: 'Yanshi',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-1900, 0],
+				yearRange: [-1900, 0],
 				coords: [35, 113],
 			},
 		],
-		period_info: [],
-		color: "red",
-		source: "https://en.wikipedia.org/wiki/Yanshi"
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Yanshi',
 	},
 	{
-		name: "Yaz Culture",
-		type: "point",
+		name: 'Yaz Culture',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-1500, -500],
+				yearRange: [-1500, -500],
 				coords: [38, 58],
 			},
 		],
-		period_info: [],
-		color: "black",
-		source: "https://en.wikipedia.org/wiki/Yaz_culture"
+		periodInfo: [],
+		color: 'black',
+		source: 'https://en.wikipedia.org/wiki/Yaz_culture',
 	},
 	{
-		name: "Watson Brake",
-		type: "point",
+		name: 'Watson Brake',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-3500, -3000],
+				yearRange: [-3500, -3000],
 				coords: [32, -92],
 			},
 		],
-		period_info: [],
-		color: "red",
-		img: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Watson_Brake_Aerial_Illustration_HRoe_2014.jpg",
-		source: "https://en.wikipedia.org/wiki/Watson_Brake"
+		periodInfo: [],
+		color: 'red',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Watson_Brake_Aerial_Illustration_HRoe_2014.jpg',
+		source: 'https://en.wikipedia.org/wiki/Watson_Brake',
 	},
 	{
-		name: "Wieliczka Salt Mine",
-		type: "point",
+		name: 'Wieliczka Salt Mine',
+		type: 'point',
 		periods: [
 			{
-				year_range: [1200, 2007],
+				yearRange: [1200, 2007],
 				coords: [50, 20],
 			},
 		],
-		period_info: [],
-		color: "red",
-		img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Wieliczka_salt_mine.jpg/260px-Wieliczka_salt_mine.jpg",
-		source: "https://en.wikipedia.org/wiki/Wieliczka_Salt_Mine"
+		periodInfo: [],
+		color: 'red',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Wieliczka_salt_mine.jpg/260px-Wieliczka_salt_mine.jpg',
+		source: 'https://en.wikipedia.org/wiki/Wieliczka_Salt_Mine',
 	},
 	// well-known buildings
 	{
-		name: "Alcántara Bridge",
-		type: "point",
+		name: 'Alcántara Bridge',
+		type: 'point',
 		periods: [
 			{
-				year_range: [106, 9999],
+				yearRange: [106, 9999],
 				coords: [39.7224, -6.8924],
 			},
 		],
-		period_info: [],
-		desc: "Roman bridge",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Bridge_Alcantara.JPG",
-		source: "https://en.wikipedia.org/wiki/Alcántara_Bridge"
+		periodInfo: [],
+		desc: 'Roman bridge',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Bridge_Alcantara.JPG',
+		source: 'https://en.wikipedia.org/wiki/Alcántara_Bridge',
 	},
 	{
-		name: "Alhambra",
-		type: "point",
+		name: 'Alhambra',
+		type: 'point',
 		periods: [
 			{
-				year_range: [889, 9999],
+				yearRange: [889, 9999],
 				coords: [37.17695, -3.59001],
 			},
 		],
-		period_info: [],
-		desc: "Palace and fortress complex",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/d/de/Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg",
-		source: "https://en.wikipedia.org/wiki/Alhambra"
+		periodInfo: [],
+		desc: 'Palace and fortress complex',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg',
+		source: 'https://en.wikipedia.org/wiki/Alhambra',
 	},
 	{
-		name: "Areni-1 winery",
-		type: "point",
+		name: 'Areni-1 winery',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-4100, 4000],
+				yearRange: [-4100, 4000],
 				coords: [40, 45],
 			},
 		],
-		period_info: [],
-		color: "orange",
-		source: "https://en.wikipedia.org/wiki/Areni-1_winery"
+		periodInfo: [],
+		color: 'orange',
+		source: 'https://en.wikipedia.org/wiki/Areni-1_winery',
 	},
 	{
-		name: "Bent Pyramid",
-		type: "point",
+		name: 'Bent Pyramid',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-2580, 9999],
+				yearRange: [-2580, 9999],
 				coords: [29.388056, 31.156944],
 			},
 		],
-		period_info: [],
-		desc: "Tomb",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Snefru's_Bent_Pyramid_in_Dahshur.jpg",
-		source: "https://en.wikipedia.org/wiki/Bent_Pyramid"
+		periodInfo: [],
+		desc: 'Tomb',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/e/eb/Snefru\'s_Bent_Pyramid_in_Dahshur.jpg',
+		source: 'https://en.wikipedia.org/wiki/Bent_Pyramid',
 	},
 	{
-		name: "Biniai Nou hypogea",
-		type: "point",
+		name: 'Biniai Nou hypogea',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-2290, -2030],
+				yearRange: [-2290, -2030],
 				coords: [40, 4],
 			},
 		],
-		period_info: [],
-		color: "orange",
-		source: "https://en.wikipedia.org/wiki/Biniai_Nou_hypogea"
+		periodInfo: [],
+		color: 'orange',
+		source: 'https://en.wikipedia.org/wiki/Biniai_Nou_hypogea',
 	},
 	{
-		name: "Borġ in-Nadur",
-		type: "point",
+		name: 'Borġ in-Nadur',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-2500, -500],
+				yearRange: [-2500, -500],
 				coords: [36, 15],
 			},
 		],
-		period_info: [],
-		color: "orange",
-		source: "https://en.wikipedia.org/wiki/Borġ_in-Nadur"
+		periodInfo: [],
+		color: 'orange',
+		source: 'https://en.wikipedia.org/wiki/Borġ_in-Nadur',
 	},
 	{
-		name: "Chalcolithic Temple of Ein Gedi",
-		type: "point",
+		name: 'Chalcolithic Temple of Ein Gedi',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-3500, -3500],
+				yearRange: [-3500, -3500],
 				coords: [31, 35],
 			},
 		],
-		period_info: [],
-		color: "orange",
-		source: "https://en.wikipedia.org/wiki/Chalcolithic_Temple_of_Ein_Gedi"
+		periodInfo: [],
+		color: 'orange',
+		source: 'https://en.wikipedia.org/wiki/Chalcolithic_Temple_of_Ein_Gedi',
 	},
 	{
-		name: "Colosseum",
-		type: "point",
+		name: 'Colosseum',
+		type: 'point',
 		periods: [
 			{
-				year_range: [80, 9999],
+				yearRange: [80, 9999],
 				coords: [41.890361, 12.4896418],
 			},
 		],
-		period_info: [],
-		desc: "Classical Roman amphitheater",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/5/53/Colosseum_in_Rome%2C_Italy_-_April_2007.jpg",
-		source: "https://en.wikipedia.org/wiki/Colosseum"
+		periodInfo: [],
+		desc: 'Classical Roman amphitheater',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Colosseum_in_Rome%2C_Italy_-_April_2007.jpg',
+		source: 'https://en.wikipedia.org/wiki/Colosseum',
 	},
 	{
-		name: "Colossus of Rhodes",
-		type: "point",
+		name: 'Colossus of Rhodes',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-280, -226],
+				yearRange: [-280, -226],
 				coords: [36.45111, 28.22778],
 			},
 		],
-		period_info: [],
-		desc: "One of the seven wonders of the ancient world",
-		color: "orange",
-		source: "https://en.wikipedia.org/wiki/Colossus_of_Rhodes"
+		periodInfo: [],
+		desc: 'One of the seven wonders of the ancient world',
+		color: 'orange',
+		source: 'https://en.wikipedia.org/wiki/Colossus_of_Rhodes',
 	},
 	{
-		name: "Great Pyramid of Giza",
-		type: "point",
+		name: 'Great Pyramid of Giza',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-2560, 9999],
+				yearRange: [-2560, 9999],
 				coords: [29.9791667, 31.13444],
 			},
 		],
-		period_info: [],
-		desc: "Tomb of Khufu and one of the seven wonders of the ancient world",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Kheops-Pyramid.jpg",
-		source: "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"
+		periodInfo: [],
+		desc: 'Tomb of Khufu and one of the seven wonders of the ancient world',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Kheops-Pyramid.jpg',
+		source: 'https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza',
 	},
 	{
-		name: "Haia Sophia",
-		type: "point",
+		name: 'Haia Sophia',
+		type: 'point',
 		periods: [
 			{
-				year_range: [532, 9999],
+				yearRange: [532, 9999],
 				coords: [41.0086111, 28.98],
 			},
 		],
-		period_info: [],
-		desc: "Former Greek Orthodox Christian patriarchal cathedral, later an Ottoman imperial mosque, now a museum",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/2/22/Hagia_Sophia_Mars_2013.jpg",
-		source: "https://en.wikipedia.org/wiki/Hagia_Sophia"
+		periodInfo: [],
+		desc: 'Former Greek Orthodox Christian patriarchal cathedral, later an Ottoman imperial mosque, now a museum',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/2/22/Hagia_Sophia_Mars_2013.jpg',
+		source: 'https://en.wikipedia.org/wiki/Hagia_Sophia',
 	},
 	{
-		name: "Ħal-Saflieni Hypogeum",
-		type: "point",
+		name: 'Ħal-Saflieni Hypogeum',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-4000, -2500],
+				yearRange: [-4000, -2500],
 				coords: [35.9, 14.5],
 			},
 		],
-		period_info: [],
-		desc: "Sanctuary and Necropolis",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/0/06/Photo_Ellis_Hal_Salflieni.jpg",
-		source: "https://en.wikipedia.org/wiki/Ħal-Saflieni_Hypogeum"
+		periodInfo: [],
+		desc: 'Sanctuary and Necropolis',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/0/06/Photo_Ellis_Hal_Salflieni.jpg',
+		source: 'https://en.wikipedia.org/wiki/Ħal-Saflieni_Hypogeum',
 	},
 	{
-		name: "Maison Carrée",
-		type: "point",
+		name: 'Maison Carrée',
+		type: 'point',
 		periods: [
 			{
-				year_range: [2, 9999],
+				yearRange: [2, 9999],
 				coords: [43.838333, 4.356111],
 			},
 		],
-		period_info: [],
-		desc: "Roman temple",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/1/10/MaisonCarrée.jpeg",
-		source: "https://en.wikipedia.org/wiki/Maison_Carrée"
+		periodInfo: [],
+		desc: 'Roman temple',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/1/10/MaisonCarrée.jpeg',
+		source: 'https://en.wikipedia.org/wiki/Maison_Carrée',
 	},
 	{
-		name: "Mausoleum at Halicarnassus",
-		type: "point",
+		name: 'Mausoleum at Halicarnassus',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-351, 1494],
+				yearRange: [-351, 1494],
 				coords: [37.03778, 27.4241667],
 			},
 		],
-		period_info: [],
-		desc: "Tomb of Mausolus and one of the wonders of the ancient world",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Mausoleum_at_Halicarnassus_at_the_Bodrum_Museum_of_Underwater_Archaeology.jpg",
-		source: "https://en.wikipedia.org/wiki/Mausoleum_at_Halicarnassus"
+		periodInfo: [],
+		desc: 'Tomb of Mausolus and one of the wonders of the ancient world',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/5/5e/Mausoleum_at_Halicarnassus_at_the_Bodrum_Museum_of_Underwater_Archaeology.jpg',
+		source: 'https://en.wikipedia.org/wiki/Mausoleum_at_Halicarnassus',
 	},
 	{
-		name: "Mausoleum of Pozo Moro",
-		type: "point",
+		name: 'Mausoleum of Pozo Moro',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-600, 9999],
+				yearRange: [-600, 9999],
 				coords: [38.836389, -1.696667],
 			},
 		],
-		period_info: [],
-		desc: "Iberian Mausoleum",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/6/65/Monumento_de_Pozo_Moro_(M.A.N._Inv.1999-76-A)_01.jpg",
-		source: "https://en.wikipedia.org/wiki/Mausoleum_of_Pozo_Moro"
+		periodInfo: [],
+		desc: 'Iberian Mausoleum',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/6/65/Monumento_de_Pozo_Moro_(M.A.N._Inv.1999-76-A)_01.jpg',
+		source: 'https://en.wikipedia.org/wiki/Mausoleum_of_Pozo_Moro',
 	},
 	{
-		name: "Mont Saint-Michel",
-		type: "point",
+		name: 'Mont Saint-Michel',
+		type: 'point',
 		periods: [
 			{
-				year_range: [460, 9999],
+				yearRange: [460, 9999],
 				coords: [48.636111, -1.5113889],
 			},
 		],
-		period_info: [],
-		desc: "Fortified island commune",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/2/29/Mont-Saint-Michel_Drone.jpg",
-		source: "https://en.wikipedia.org/wiki/Mont-Saint-Michel"
+		periodInfo: [],
+		desc: 'Fortified island commune',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Mont-Saint-Michel_Drone.jpg',
+		source: 'https://en.wikipedia.org/wiki/Mont-Saint-Michel',
 	},
 	{
-		name: "Lighthouse of Alexandria",
-		type: "point",
+		name: 'Lighthouse of Alexandria',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-246, 1307],
+				yearRange: [-246, 1307],
 				coords: [31.213889, 29.88556],
 			},
 		],
-		period_info: [],
-		desc: "One of the wonders of the ancient world",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/3/33/PHAROS2013-3000x2250.jpg",
-		source: "https://en.wikipedia.org/wiki/Lighthouse_of_Alexandria"
+		periodInfo: [],
+		desc: 'One of the wonders of the ancient world',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/3/33/PHAROS2013-3000x2250.jpg',
+		source: 'https://en.wikipedia.org/wiki/Lighthouse_of_Alexandria',
 	},
 	{
-		name: "Parthenon",
-		type: "point",
+		name: 'Parthenon',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-432, 1687],
+				yearRange: [-432, 1687],
 				coords: [37.9713889, 23.7263889],
 			},
 		],
-		period_info: [],
-		desc: "Temple to Athena",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/d/da/The_Parthenon_in_Athens.jpg",
-		source: "https://en.wikipedia.org/wiki/Parthenon"
+		periodInfo: [],
+		desc: 'Temple to Athena',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/d/da/The_Parthenon_in_Athens.jpg',
+		source: 'https://en.wikipedia.org/wiki/Parthenon',
 	},
 	{
-		name: "Pyramid of Djoser",
-		type: "point",
+		name: 'Pyramid of Djoser',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-2648, 9999],
+				yearRange: [-2648, 9999],
 				coords: [29.871267, 31.216394],
 			},
 		],
-		period_info: [],
-		desc: "Tomb and oldest pyramid",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Saqqara_pyramid_ver_2.jpg",
-		source: "https://en.wikipedia.org/wiki/Pyramid_of_Djoser"
+		periodInfo: [],
+		desc: 'Tomb and oldest pyramid',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/2/2e/Saqqara_pyramid_ver_2.jpg',
+		source: 'https://en.wikipedia.org/wiki/Pyramid_of_Djoser',
 	},
 	{
-		name: "Pyramid of Khafre",
-		type: "point",
+		name: 'Pyramid of Khafre',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-2570, 9999],
+				yearRange: [-2570, 9999],
 				coords: [29.976111, 31.130833],
 			},
 		],
-		period_info: [],
-		desc: "Tomb",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/7/71/Pyramid_of_Khafre_Giza_Egypt_in_2015_2.jpg",
-		source: "https://en.wikipedia.org/wiki/Pyramid_of_Khafre"
+		periodInfo: [],
+		desc: 'Tomb',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/7/71/Pyramid_of_Khafre_Giza_Egypt_in_2015_2.jpg',
+		source: 'https://en.wikipedia.org/wiki/Pyramid_of_Khafre',
 	},
 	{
-		name: "Pyramid of Meidum",
-		type: "point",
+		name: 'Pyramid of Meidum',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-2580, 9999],
+				yearRange: [-2580, 9999],
 				coords: [29.388056, 31.156944],
 			},
 		],
-		period_info: [],
-		desc: "Tomb",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Meidoum_pyramide_003.JPG",
-		source: "https://en.wikipedia.org/wiki/Meidum"
+		periodInfo: [],
+		desc: 'Tomb',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Meidoum_pyramide_003.JPG',
+		source: 'https://en.wikipedia.org/wiki/Meidum',
 	},
 	{
-		name: "St. Peter's Basilica",
-		type: "point",
+		name: 'St. Peter\'s Basilica',
+		type: 'point',
 		periods: [
 			{
-				year_range: [1626, 9999],
+				yearRange: [1626, 9999],
 				coords: [41.90222, 12.45333],
 			},
 		],
-		period_info: [],
-		desc: "Italian Renaissance church in Vatican City",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Rome_San_Pietro.jpg",
-		source: "https://en.wikipedia.org/wiki/St._Peter's_Basilica"
+		periodInfo: [],
+		desc: 'Italian Renaissance church in Vatican City',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Rome_San_Pietro.jpg',
+		source: 'https://en.wikipedia.org/wiki/St._Peter\'s_Basilica',
 	},
 	{
-		name: "Statue of Zeus",
-		type: "point",
+		name: 'Statue of Zeus',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-435, 475], // rough estimate
+				yearRange: [-435, 475], // rough estimate
 				coords: [37.63786111, 21.63],
 			},
 		],
-		period_info: [],
-		desc: "One of the seven wonders of the ancient world",
-		color: "orange",
-		source: "https://en.wikipedia.org/wiki/Statue_of_Zeus_at_Olympia"
+		periodInfo: [],
+		desc: 'One of the seven wonders of the ancient world',
+		color: 'orange',
+		source: 'https://en.wikipedia.org/wiki/Statue_of_Zeus_at_Olympia',
 	},
 	{
-		name: "Stonehenge",
-		type: "point",
+		name: 'Stonehenge',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-3000, 9999], // rough estimate
+				yearRange: [-3000, 9999], // rough estimate
 				coords: [51.17889, -1.826111],
 			},
 		],
-		period_info: [],
-		desc: "Ring of standing stones",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Stonehenge2007_07_30.jpg",
-		source: "https://en.wikipedia.org/wiki/Stonehenge"
+		periodInfo: [],
+		desc: 'Ring of standing stones',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Stonehenge2007_07_30.jpg',
+		source: 'https://en.wikipedia.org/wiki/Stonehenge',
 	},
 	{
-		name: "Temple of Artemis",
-		type: "point",
+		name: 'Temple of Artemis',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-432, 262],
+				yearRange: [-432, 262],
 				coords: [37.9497222, 27.363889],
 			},
 		],
-		period_info: [],
-		desc: "Temple to Artemis and one of the seven wonders of the ancient world",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Miniaturk_009.jpg",
-		source: "https://en.wikipedia.org/wiki/Temple_of_Artemis"
+		periodInfo: [],
+		desc: 'Temple to Artemis and one of the seven wonders of the ancient world',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/1/1d/Miniaturk_009.jpg',
+		source: 'https://en.wikipedia.org/wiki/Temple_of_Artemis',
 	},
 	{
-		name: "Tower of Hercules",
-		type: "point",
+		name: 'Tower of Hercules',
+		type: 'point',
 		periods: [
 			{
-				year_range: [100, 9999],
+				yearRange: [100, 9999],
 				coords: [43.3858333, -8.4063889],
 			},
 		],
-		period_info: [],
-		desc: "Ancient Roman lighthouse",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/e/eb/A_coruna_torre_de_hercules_sunset_edit.jpg",
-		source: "https://en.wikipedia.org/wiki/Tower_of_Hercules"
+		periodInfo: [],
+		desc: 'Ancient Roman lighthouse',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/e/eb/A_coruna_torre_de_hercules_sunset_edit.jpg',
+		source: 'https://en.wikipedia.org/wiki/Tower_of_Hercules',
 	},
 	{
-		name: "Xagħra Stone Circle",
-		type: "point",
+		name: 'Xagħra Stone Circle',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-4100, -2000],
+				yearRange: [-4100, -2000],
 				coords: [36.0, 14.3],
 			},
 		],
-		period_info: [],
-		desc: "Funerary Complex",
-		color: "orange",
-		img: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Hypogée_de_Xaghra.jpg",
-		source: "https://en.wikipedia.org/wiki/Xagħra_Stone_Circle"
+		periodInfo: [],
+		desc: 'Funerary Complex',
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/d/d8/Hypogée_de_Xaghra.jpg',
+		source: 'https://en.wikipedia.org/wiki/Xagħra_Stone_Circle',
 	},
 	// beyond cities and nations and cultures...
 	{
-		name: "Cheddar Man",
-		type: "point",
+		name: 'Cheddar Man',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-7150, -7100], // age guess
+				yearRange: [-7150, -7100], // age guess
 				coords: [51, -3],
 			},
 		],
-		period_info: [],
-		desc: "Fossil",
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/Cheddar_Man"
+		periodInfo: [],
+		desc: 'Fossil',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Cheddar_Man',
 	},
 	{
-		name: "Anzick-1",
-		type: "point",
+		name: 'Anzick-1',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-10630, -10630],
+				yearRange: [-10630, -10630],
 				coords: [46, -111],
 			},
 		],
-		period_info: [],
-		desc: "Skeleton",
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/Anzick-1"
+		periodInfo: [],
+		desc: 'Skeleton',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Anzick-1',
 	},
 	{
-		name: "Arlington Springs Man",
-		type: "point",
+		name: 'Arlington Springs Man',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-11050, -11000], // age is guess
+				yearRange: [-11050, -11000], // age is guess
 				coords: [34, -120],
 			},
 		],
-		period_info: [],
-		desc: "Skeleton",
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/Arlington_Springs_Man"
+		periodInfo: [],
+		desc: 'Skeleton',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Arlington_Springs_Man',
 	},
 	{
-		name: "Buhl Woman",
-		type: "point",
+		name: 'Buhl Woman',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-8725, -8675], // age is guess
+				yearRange: [-8725, -8675], // age is guess
 				coords: [34, -120],
 			},
 		],
-		period_info: [],
-		desc: "Skeleton",
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/Buhl_Woman"
+		periodInfo: [],
+		desc: 'Skeleton',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Buhl_Woman',
 	},
 	{
-		name: "Eve of Naharon",
-		type: "point",
+		name: 'Eve of Naharon',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-11650, -11600], // age is guess
+				yearRange: [-11650, -11600], // age is guess
 				coords: [20, -87],
 			},
 		],
-		period_info: [],
-		desc: "Skeleton",
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/Eve_of_Naharon"
+		periodInfo: [],
+		desc: 'Skeleton',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Eve_of_Naharon',
 	},
 	{
-		name: "Kennewick Man",
-		type: "point",
+		name: 'Kennewick Man',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-7000, -6950],
+				yearRange: [-7000, -6950],
 				coords: [46, -119],
 			},
 		],
-		period_info: [],
-		desc: "Skeleton",
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/Kennewick_Man"
+		periodInfo: [],
+		desc: 'Skeleton',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Kennewick_Man',
 	},
 	{
-		name: "Koelbjerg Man",
-		type: "point",
+		name: 'Koelbjerg Man',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-8025, -8000],
+				yearRange: [-8025, -8000],
 				coords: [55, 10],
 			},
 		],
-		period_info: [],
-		desc: "Bog body",
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/Koelbjerg_Man"
+		periodInfo: [],
+		desc: 'Bog body',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Koelbjerg_Man',
 	},
 	{
-		name: "La Brea Woman",
-		type: "point",
+		name: 'La Brea Woman',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-8285, -8235], // age is guess
+				yearRange: [-8285, -8235], // age is guess
 				coords: [34, -118],
 			},
 		],
-		period_info: [],
-		desc: "Skeleton",
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/La_Brea_Woman"
+		periodInfo: [],
+		desc: 'Skeleton',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/La_Brea_Woman',
 	},
 	{
-		name: "Lansing Man",
-		type: "point",
+		name: 'Lansing Man',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-3629, -3579], // age is guess
+				yearRange: [-3629, -3579], // age is guess
 				coords: [35, -95],
 			},
 		],
-		period_info: [],
-		desc: "Skeleton",
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/Lansing_Man"
+		periodInfo: [],
+		desc: 'Skeleton',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Lansing_Man',
 	},
 	{
-		name: "Luzia Woman",
-		type: "point",
+		name: 'Luzia Woman',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-9527, -9477], // age is guess
+				yearRange: [-9527, -9477], // age is guess
 				coords: [-20, -44],
 			},
 		],
-		period_info: [],
-		desc: "Skeleton",
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/Luzia_Woman"
+		periodInfo: [],
+		desc: 'Skeleton',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Luzia_Woman',
 	},
 	{
-		name: "Minnesota Woman",
-		type: "point",
+		name: 'Minnesota Woman',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-5940, -5890], // age is guess
+				yearRange: [-5940, -5890], // age is guess
 				coords: [47, -96],
 			},
 		],
-		period_info: [],
-		desc: "Skeleton",
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/Minnesota_Woman"
+		periodInfo: [],
+		desc: 'Skeleton',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Minnesota_Woman',
 	},
 	{
-		name: "Naia",
-		type: "point",
+		name: 'Naia',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-10050, -10000], // age is guess
+				yearRange: [-10050, -10000], // age is guess
 				coords: [20, -87],
 			},
 		],
-		period_info: [],
-		desc: "Skeleton",
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/Naia_(skeleton)"
+		periodInfo: [],
+		desc: 'Skeleton',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Naia_(skeleton)',
 	},
 	{
-		name: "Ötzi",
-		type: "point",
+		name: 'Ötzi',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-3345, -3300],
+				yearRange: [-3345, -3300],
 				coords: [47, 11],
 			},
 		],
-		period_info: [],
-		desc: "Natural mummy",
-		color: "cyan",
-		img: "https://upload.wikimedia.org/wikipedia/en/1/1d/OetzitheIceman02.jpg",
-		source: "https://en.wikipedia.org/wiki/Ötzi"
+		periodInfo: [],
+		desc: 'Natural mummy',
+		color: 'cyan',
+		img: 'https://upload.wikimedia.org/wikipedia/en/1/1d/OetzitheIceman02.jpg',
+		source: 'https://en.wikipedia.org/wiki/Ötzi',
 	},
 	{
-		name: "Peñon Woman",
-		type: "point",
+		name: 'Peñon Woman',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-10750, -10700], // age is guess
+				yearRange: [-10750, -10700], // age is guess
 				coords: [19, -99],
 			},
 		],
-		period_info: [],
-		desc: "Skeleton",
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/Peñon_woman"
+		periodInfo: [],
+		desc: 'Skeleton',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Peñon_woman',
 	},
 	{
-		name: "Spirit Cave Mummy",
-		type: "point",
+		name: 'Spirit Cave Mummy',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-9550, -9500], // age is guess
+				yearRange: [-9550, -9500], // age is guess
 				coords: [39, -119],
 			},
 		],
-		period_info: [],
-		desc: "Mummy",
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/Spirit_Cave_mummy"
+		periodInfo: [],
+		desc: 'Mummy',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Spirit_Cave_mummy',
 	},
 	{
-		name: "Tollund Man",
-		type: "point",
+		name: 'Tollund Man',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-415, -375],
+				yearRange: [-415, -375],
 				coords: [56, 9],
 			},
 		],
-		period_info: [],
-		desc: "Bog body",
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/Tollund_Man"
+		periodInfo: [],
+		desc: 'Bog body',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Tollund_Man',
 	},
 	{
-		name: "Tuqan Man",
-		type: "point",
+		name: 'Tuqan Man',
+		type: 'point',
 		periods: [
 			{
-				year_range: [-10050, -10000], // age is guess
+				yearRange: [-10050, -10000], // age is guess
 				coords: [39, -119],
 			},
 		],
-		period_info: [],
-		desc: "Skeleton",
-		color: "cyan",
-		source: "https://en.wikipedia.org/wiki/Tuqan_man"
+		periodInfo: [],
+		desc: 'Skeleton',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Tuqan_man',
 	},
 ];
+
+bigmap();
