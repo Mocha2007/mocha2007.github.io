@@ -315,7 +315,7 @@ function gameTick(){
 	// was the player away?
 	if (2*game.settings.autosaveInterval < new Date() - game.player.lastSave){
 		// offline rewards
-		t = (new Date() - game.player.lastSave)/1000;
+		t = (new Date() - game.player.lastSave)/1000 * 0.01; // 1% offline efficiency
 		saveGame();
 	}
 	// production
