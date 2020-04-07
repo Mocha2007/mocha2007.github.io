@@ -1,7 +1,7 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true, nonew: false */
 /* exported deleteCookie, downloadSave, guide, importSave, main, prestige, snuegButton */
 'use strict';
-const version = 'a200403';
+const version = 'a200407';
 
 // classes
 
