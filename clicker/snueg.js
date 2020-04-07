@@ -661,6 +661,8 @@ const game = {
 		new Building('I. D. T. S.', 1.23456789e9, 222222, 'The <i>Interdimensional Transsnuegginator</i> is a device to harness snueggery from other dimensions.'),
 	],
 	debug: {
+		/** @type {number} */
+		autosaveTimeout: undefined,
 		guideClicks: 0,
 		loadTime: new Date(),
 		log: [],
@@ -1336,6 +1338,7 @@ function round(number, digits = 0){
  * @param {boolean} isManual is this save manually triggered, or automatic?
 */
 function saveGame(isManual = false){
+	clearTimeout(game.debug.autosaveTimeout);
 	const saveFile = {};
 	saveFile.settings = game.settings;
 	game.player.lastSave = +new Date();
@@ -1345,7 +1348,7 @@ function saveGame(isManual = false){
 	if (isManual){
 		log('Successfully manually saved game!');
 	}
-	setTimeout(saveGame, game.settings.autosaveInterval);
+	game.debug.autosaveTimeout = setTimeout(saveGame, game.settings.autosaveInterval);
 }
 
 // https://stackoverflow.com/a/2956980/2579798
