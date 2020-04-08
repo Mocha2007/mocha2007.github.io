@@ -267,7 +267,6 @@ const lifeData = [
 		'name': 'apis',
 		'rank': 'genus',
 		'parent': 'apidae',
-		// 'important': true,
 		'range': 'ea',
 		'desc': 'Honey Bee',
 	},
@@ -717,7 +716,6 @@ const lifeData = [
 		'name': 'canis lupus familiaris',
 		'rank': 'subspecies',
 		'parent': 'canis lupus',
-		// 'important': true,
 		'desc': 'Dog',
 	},
 	{
@@ -1889,7 +1887,6 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'malus',
 		'range': 'as',
-		// 'important': true,
 		'desc': 'Apple',
 	},
 	{
