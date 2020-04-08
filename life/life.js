@@ -91,14 +91,17 @@ function refreshButtons(){
 	document.getElementById('toggle_button_inner').innerHTML = openSetting ? 'Close' : 'Open';
 }
 
+/** @param {string} string */
 function search(string){
+	string = string.toLowerCase();
+	/** @type {number[]} */
 	const indices = [];
 	// return all lifeData indices matching search string
 	lifeData.forEach(
 		(clade, i) => {
 			// if name or desc contains string
-			if (clade.hasOwnProperty('name') && clade.name.includes(string) ||
-				clade.hasOwnProperty('desc') && clade.desc.includes(string)){
+			if (clade.hasOwnProperty('name') && clade.name.toLowerCase().includes(string) ||
+				clade.hasOwnProperty('desc') && clade.desc.toLowerCase().includes(string)){
 				indices.push(i);
 			}
 		}
@@ -118,7 +121,7 @@ function searchButton(){
 		const li = document.createElement('li');
 		li.value = i;
 		if (name.includes(searchString)){
-			li.innerHTML = name.replace(new RegExp(searchString, 'g'), '<b>' + searchString + '</b>');
+			li.innerHTML = name.replace(new RegExp(searchString, 'gi'), '<b>' + searchString + '</b>');
 		}
 		else {
 			li.innerHTML = name + ' (matched description)';
