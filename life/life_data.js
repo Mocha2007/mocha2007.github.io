@@ -186,8 +186,8 @@ const lifeData = [
 	{
 		'name': 'anas',
 		'rank': 'genus',
-		'range': 'ww',
 		'parent': 'anatidae',
+		'range': 'ww',
 	},
 	{
 		'name': 'anas platyrhynchos',
@@ -578,21 +578,21 @@ const lifeData = [
 	{
 		'name': 'bop clade',
 		'rank': 'clade',
-		'range': 'ww',
 		'parent': 'poaceae',
+		'range': 'ww',
 	},
 	{
 		'name': 'boreoeutheria',
 		'rank': 'magnorder',
+		'parent': 'mammalia',
 		'range': 'ww',
 		'age': 65,
-		'parent': 'mammalia',
 	},
 	{
 		'name': 'bos',
 		'rank': 'genus',
-		'range': 'ww',
 		'parent': 'bovidae',
+		'range': 'ww',
 	},
 	{
 		'name': 'bos grunniens',
@@ -638,8 +638,8 @@ const lifeData = [
 	{
 		'name': 'brassica',
 		'rank': 'genus',
-		'range': 'ww',
 		'parent': 'brassicaceae',
+		'range': 'ww',
 	},
 	{
 		'name': 'brassica oleracea',
@@ -1146,8 +1146,8 @@ const lifeData = [
 	{
 		'name': 'daucus carota',
 		'rank': 'species',
-		'range': 'ea',
 		'parent': 'daucus',
+		'range': 'ea',
 	},
 	{
 		'name': 'daucus carota sativus',
@@ -1241,20 +1241,20 @@ const lifeData = [
 	{
 		'name': 'equidae',
 		'rank': 'family',
-		'range': 'ow',
 		'parent': 'perissodactyla',
+		'range': 'ow',
 	},
 	{
 		'name': 'equus',
 		'rank': 'genus',
-		'range': 'ow',
 		'parent': 'equidae',
+		'range': 'ow',
 	},
 	{
 		'name': 'equus africanus',
 		'rank': 'species',
-		'range': 'af',
 		'parent': 'equus',
+		'range': 'af',
 	},
 	{
 		'name': 'equus africanus asinus',
@@ -1266,8 +1266,8 @@ const lifeData = [
 	{
 		'name': 'equus ferus',
 		'rank': 'species',
-		'range': 'ea',
 		'parent': 'equus',
+		'range': 'ea',
 	},
 	{
 		'name': 'equus ferus caballus',
@@ -1397,9 +1397,9 @@ const lifeData = [
 	{
 		'name': 'felidae',
 		'rank': 'family',
+		'parent': 'feliformia',
 		'range': 'ww',
 		'age': 25,
-		'parent': 'feliformia',
 	},
 	{
 		'name': 'feliformia',
@@ -1493,8 +1493,8 @@ const lifeData = [
 	{
 		'name': 'gallus',
 		'rank': 'genus',
-		'range': 'as',
 		'parent': 'phasianinae',
+		'range': 'as',
 	},
 	{
 		'name': 'gallus gallus',
@@ -1592,8 +1592,8 @@ const lifeData = [
 	{
 		'name': 'homo',
 		'rank': 'genus',
-		'range': 'af',
 		'parent': 'hominini',
+		'range': 'af',
 		'age': 2.8,
 	},
 	{
@@ -2166,15 +2166,15 @@ const lifeData = [
 	{
 		'name': 'pacmad clade',
 		'rank': 'clade',
-		'range': 'ww',
 		'parent': 'poaceae',
+		'range': 'ww',
 	},
 	{
 		'name': 'pan',
 		'rank': 'genus',
+		'parent': 'hominini',
 		'range': 'af',
 		'age': 4,
-		'parent': 'hominini',
 	},
 	{
 		'name': 'pan troglodytes',
