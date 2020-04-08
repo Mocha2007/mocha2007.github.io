@@ -1157,6 +1157,14 @@ const lifeData = [
 		'age': 540,
 	},
 	{
+		'name': 'elephantidae',
+		'rank': 'family',
+		'parent': 'proboscidea',
+		'range': 'ow',
+		'age': 5,
+		'desc': 'Elephant',
+	},
+	{
 		'name': 'enterobacteriaceae',
 		'rank': 'family',
 		'parent': 'enterobacteriales',
@@ -1807,6 +1815,15 @@ const lifeData = [
 		'desc': 'Mammals are characterized by the presence of mammary glands, a neocortex, fur or hair, and three middle ear bones.',
 	},
 	{
+		'name': 'mammuthus',
+		'rank': 'genus',
+		'parent': 'elephantidae',
+		'extinct': true,
+		'range': 'nh',
+		'age': 5,
+		'desc': 'Mammoth',
+	},
+	{
 		'name': 'medusozoa',
 		'rank': 'subphylum',
 		'parent': 'cnidaria',
@@ -2371,6 +2388,13 @@ const lifeData = [
 		'range': 'eq',
 		'age': 55,
 		'desc': 'Primate characteristics include large brains, visual acuity, color vision, altered shoulder girdle, and dextrous hands.',
+	},
+	{
+		'name': 'proboscidea',
+		'rank': 'order',
+		'parent': 'afrotheria',
+		'range': 'ow',
+		'age': 60,
 	},
 	{
 		'name': 'proteobacteria',
