@@ -66,8 +66,8 @@ function getEra(age, ageList = ages, depth = 0){
 	ageList[i-1].name + ' ' + names[depth];
 }
 
+/** @param {number} i */
 function isImportant(i){
-	// console.log('isImportant', i, lifeData[i]);
 	return lifeData[i].hasOwnProperty('important') && lifeData[i].important;
 }
 
@@ -85,7 +85,6 @@ function openAge(age){
 
 /** @param {HTMLDetailsElement} object */
 function openParents(object){
-	// console.log('openParents', object);
 	// open object
 	object.open = true;
 	// get parent
