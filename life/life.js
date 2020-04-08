@@ -5,6 +5,7 @@
 'use strict';
 
 // https://stackoverflow.com/a/196991/2579798
+/** @param {string} str */
 function toTitleCase(str){
 	return str.replace(
 		/\w\S*/g,
@@ -14,7 +15,7 @@ function toTitleCase(str){
 	);
 }
 
-/** @type {Object<string, HTMLElement>} */
+/** @type {Object<string, HTMLDetailsElement>} */
 const objects = {}; // string -> DOM object map
 let openSetting = false; // default setting
 const regions = {
@@ -39,15 +40,21 @@ const regions = {
 };
 
 // helper functions
-
+/** @param {number} age */
 function getAge(age){
 	if (1 < age){
 		return age + ' mya';
 	}
-		return age*1000 + ' kya';
+	return age*1000 + ' kya';
 }
 
+/**
+ * @param {number} age
+ * @param {number} depth
+ * @return {string}
+*/
 function getEra(age, ageList = ages, depth = 0){
+	/** @type {number} */
 	let i;
 	const names = ['eon', 'era', 'period', 'epoch', 'age'];
 	for (i = 1; i < ageList.length; i++){
@@ -64,6 +71,7 @@ function isImportant(i){
 	return lifeData[i].hasOwnProperty('important') && lifeData[i].important;
 }
 
+/** @param {number} age */
 function openAge(age){
 	// open all clades older than age mya
 	lifeData.forEach(
@@ -75,11 +83,13 @@ function openAge(age){
 	);
 }
 
+/** @param {HTMLDetailsElement} object */
 function openParents(object){
 	// console.log('openParents', object);
 	// open object
 	object.open = true;
 	// get parent
+	/** @type {HTMLDetailsElement|HTMLDivElement} */
 	const parent = object.parentElement;
 	// if parent === details then call for parent
 	if (parent.tagName === 'DETAILS'){
@@ -134,8 +144,7 @@ function toggle(){
 	// make everything closed or open (toggle)
 	openSetting = !openSetting;
 	refreshButtons();
-	const elements = document.getElementsByTagName('DETAILS');
-	Array.from(elements).forEach(
+	Array.from(document.getElementsByTagName('DETAILS')).forEach(
 		element => element.open = openSetting
 	);
 }
