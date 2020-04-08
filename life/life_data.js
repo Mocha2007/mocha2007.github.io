@@ -1398,7 +1398,7 @@ const lifeData = [
 		'name': 'felis catus',
 		'rank': 'species',
 		'parent': 'felis',
-		// 'important': true,
+		'important': true,
 		'range': 'af',
 		'desc': 'Cat',
 	},
@@ -1997,6 +1997,19 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'aves',
 		'range': 'ww',
+	},
+	{
+		'name': 'neofelis',
+		'rank': 'genus',
+		'parent': 'felidae',
+		'range': 'as',
+	},
+	{
+		'name': 'neofelis nebulosa',
+		'rank': 'species',
+		'parent': 'neofelis',
+		'range': 'as',
+		'desc': 'Clouded Leopard',
 	},
 	{
 		'name': 'nephropidae',
