@@ -634,9 +634,16 @@ const lifeData = [
 	{
 		'name': 'canidae',
 		'rank': 'family',
+		'parent': 'caniformia',
 		'range': 'ww',
 		'age': 39.75,
+	},
+	{
+		'name': 'caniformia',
+		'rank': 'suborder',
 		'parent': 'carnivora',
+		'range': 'ww',
+		'age': 42,
 	},
 	{
 		'name': 'canis',
@@ -1754,6 +1761,14 @@ const lifeData = [
 		'range': 'ww',
 		'age': 4280,
 	},
+	{
+		'name': 'lutrinae',
+		'rank': 'subfamily',
+		'parent': 'mustelidae',
+		'range': 'ww',
+		'age': 15,
+		'desc': 'Otter',
+	},
 	// M
 	{
 		'name': 'magnoliales',
@@ -1889,6 +1904,20 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'zingiberales',
 		'range': 'ow',
+	},
+	{
+		'name': 'mustela',
+		'rank': 'genus',
+		'parent': 'mustelidae',
+		'range': 'ww',
+		'desc': 'Weasel',
+	},
+	{
+		'name': 'mustelidae',
+		'rank': 'family',
+		'parent': 'caniformia',
+		'range': 'ww',
+		'age': 30,
 	},
 	{
 		'name': 'mycobacteriaceae',
@@ -2893,11 +2922,20 @@ const lifeData = [
 		'range': 'na',
 		'extinct': true,
 	},
+	// U
 	{
 		'name': 'ungulata',
 		'rank': 'clade',
 		'parent': 'laurasiatheria',
 		'range': 'ww',
+	},
+	{
+		'name': 'ursidae',
+		'rank': 'family',
+		'parent': 'caniformia',
+		'range': 'nh',
+		'age': 38,
+		'desc': 'Bear',
 	},
 	{
 		'name': 'utahraptor',
