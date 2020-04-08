@@ -51,7 +51,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'acinonyx',
 		'range': 'ow',
-		'species': 'Cheetah',
+		'desc': 'Cheetah',
 	},
 	{
 		'name': 'actinobacteria',
@@ -2470,6 +2470,7 @@ const lifeData = [
 		'name': 'platyhelminthes',
 		'rank': 'phylum',
 		'parent': 'protostomia',
+		'range': 'ww',
 		'age': 580,
 		'desc': 'Flatworm',
 	},
@@ -3028,22 +3029,22 @@ const lifeData = [
 		'name': 'tyrannosauridae',
 		'rank': 'family',
 		'parent': 'theropoda',
-		'range': 'nh',
 		'extinct': true,
+		'range': 'nh',
 	},
 	{
 		'name': 'tyrannosaurus',
 		'rank': 'genus',
 		'parent': 'tyrannosauridae',
-		'range': 'na',
 		'extinct': true,
+		'range': 'na',
 	},
 	{
 		'name': 'tyrannosaurus rex',
 		'rank': 'species',
 		'parent': 'tyrannosaurus',
-		'range': 'na',
 		'extinct': true,
+		'range': 'na',
 	},
 	// U
 	{
