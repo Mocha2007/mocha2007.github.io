@@ -2001,7 +2001,7 @@ const lifeData = [
 	{
 		'name': 'neofelis',
 		'rank': 'genus',
-		'parent': 'felidae',
+		'parent': 'pantherinae',
 		'range': 'as',
 	},
 	{
@@ -2142,7 +2142,7 @@ const lifeData = [
 	{
 		'name': 'panthera',
 		'rank': 'genus',
-		'parent': 'felidae',
+		'parent': 'pantherinae',
 		'range': 'ww',
 		'age': 5.95,
 	},
@@ -2180,6 +2180,13 @@ const lifeData = [
 		'parent': 'panthera',
 		'range': 'as',
 		'desc': 'Snow Leopard',
+	},
+	{
+		'name': 'pantherinae',
+		'rank': 'subfamily',
+		'parent': 'felidae',
+		'range': 'ww',
+		'age': 10,
 	},
 	{
 		'name': 'paraceratherium',
