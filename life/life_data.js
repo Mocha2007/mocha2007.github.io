@@ -3068,6 +3068,7 @@ const lifeData = [
 		'extinct': true,
 		'range': 'na',
 	},
+	// V
 	{
 		'name': 'vanilla',
 		'rank': 'genus',
@@ -3120,6 +3121,7 @@ const lifeData = [
 		'range': 'nh',
 		'desc': 'Red Fox',
 	},
+	// Z
 	{
 		'name': 'zea',
 		'rank': 'genus',
