@@ -33,6 +33,27 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'acinonychini',
+		'rank': 'tribe',
+		'parent': 'felinae',
+		'range': 'ww',
+		'age': 6.7,
+	},
+	{
+		'name': 'acinonyx',
+		'rank': 'genus',
+		'parent': 'acinonychini',
+		'range': 'ow',
+		'age': 3,
+	},
+	{
+		'name': 'acinonyx jubatus',
+		'rank': 'species',
+		'parent': 'acinonyx',
+		'range': 'ow',
+		'species': 'Cheetah',
+	},
+	{
 		'name': 'actinobacteria',
 		'rank': 'phylum',
 		'parent': 'terrabacteria',
@@ -1383,16 +1404,23 @@ const lifeData = [
 	{
 		'name': 'feliformia',
 		'rank': 'suborder',
+		'parent': 'carnivora',
 		'range': 'ww',
 		'age': 40,
-		'parent': 'carnivora',
+	},
+	{
+		'name': 'felinae',
+		'rank': 'subfamily',
+		'parent': 'felidae',
+		'range': 'ww',
+		'age': 9,
 	},
 	{
 		'name': 'felis',
 		'rank': 'genus',
+		'parent': 'felinae',
 		'range': 'ow',
 		'age': 6.2,
-		'parent': 'felidae',
 	},
 	{
 		'name': 'felis catus',
@@ -1789,6 +1817,20 @@ const lifeData = [
 		'desc': 'Rabbit, Hare',
 	},
 	{
+		'name': 'leopardus',
+		'rank': 'genus',
+		'parent': 'felinae',
+		'range': 'nw',
+		'age': 2.5,
+	},
+	{
+		'name': 'leopardus pardalis',
+		'rank': 'species',
+		'parent': 'leopardus',
+		'range': 'nw',
+		'desc': 'Ocelot',
+	},
+	{
 		'name': 'life',
 		'rank': 'life',
 		'parent': '*',
@@ -1802,6 +1844,20 @@ const lifeData = [
 		'range': 'ww',
 		'age': 15,
 		'desc': 'Otter',
+	},
+	{
+		'name': 'lynx',
+		'rank': 'genus',
+		'parent': 'felinae',
+		'range': 'nh',
+		'desc': 'Lynx',
+	},
+	{
+		'name': 'lynx rufus',
+		'rank': 'species',
+		'parent': 'lynx',
+		'range': 'na',
+		'desc': 'Bobcat',
 	},
 	// M
 	{
@@ -2548,6 +2604,20 @@ const lifeData = [
 		'desc': 'Pterosaur',
 	},
 	{
+		'name': 'puma',
+		'rank': 'genus',
+		'parent': 'acinonychini',
+		'range': 'nw',
+		'age': 3,
+	},
+	{
+		'name': 'puma concolor',
+		'rank': 'species',
+		'parent': 'puma',
+		'range': 'nw',
+		'desc': 'Mountain Lion',
+	},
+	{
 		'name': 'pyropia',
 		'rank': 'genus',
 		'parent': 'bangiaceae',
@@ -2561,6 +2631,7 @@ const lifeData = [
 		'range': 'ea',
 		'desc': 'Pear',
 	},
+	// Q
 	{
 		'name': 'quercus',
 		'rank': 'genus',
@@ -2568,6 +2639,7 @@ const lifeData = [
 		'range': 'nh',
 		'desc': 'Oak',
 	},
+	// R
 	{
 		'name': 'raphanus',
 		'rank': 'genus',
