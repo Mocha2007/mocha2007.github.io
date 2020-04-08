@@ -668,7 +668,7 @@ const game = {
 		log: [],
 		newsTime: new Date(),
 		userAgent: navigator.appVersion,
-		version: version,
+		version,
 	},
 	mouse: {
 		/** @returns {number} base clicks from relevant upgrades */
