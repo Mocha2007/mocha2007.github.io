@@ -1,5 +1,15 @@
 /* exported lifeData */
 'use strict';
+/** @type {{
+    name: string;
+    rank: string;
+    parent: string;
+    important?: boolean;
+    extinct?: boolean;
+    range?: string;
+    age?: number;
+    desc?: string;
+}[]} */
 const lifeData = [
 	{
 		'name': 'example',
