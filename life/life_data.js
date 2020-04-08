@@ -52,6 +52,13 @@ const lifeData = [
 		'age': 420,
 	},
 	{
+		'name': 'afrotheria',
+		'rank': 'superorder',
+		'parent': 'mammalia',
+		'range': 'ww',
+		'age': 65,
+	},
+	{
 		'name': 'allium',
 		'rank': 'genus',
 		'parent': 'amaryllidaceae',
@@ -518,6 +525,13 @@ const lifeData = [
 		'rank': 'clade',
 		'range': 'ww',
 		'parent': 'poaceae',
+	},
+	{
+		'name': 'boreoeutheria',
+		'rank': 'magnorder',
+		'range': 'ww',
+		'age': 65,
+		'parent': 'mammalia',
 	},
 	{
 		'name': 'bos',
@@ -1221,7 +1235,7 @@ const lifeData = [
 	{
 		'name': 'euarchontoglires',
 		'rank': 'superorder',
-		'parent': 'mammalia',
+		'parent': 'boreoeutheria',
 		'range': 'ww',
 		'age': 65,
 	},
@@ -1695,7 +1709,7 @@ const lifeData = [
 	{
 		'name': 'laurasiatheria',
 		'rank': 'superorder',
-		'parent': 'mammalia',
+		'parent': 'boreoeutheria',
 		'range': 'ww',
 		'age': 91,
 	},
@@ -2620,6 +2634,13 @@ const lifeData = [
 		'desc': 'Catfish',
 	},
 	{
+		'name': 'sirenia',
+		'rank': 'order',
+		'parent': 'afrotheria',
+		'range': 'eq',
+		'age': 55.8,
+	},
+	{
 		'name': 'solanaceae',
 		'rank': 'family',
 		'parent': 'solanales',
@@ -2783,6 +2804,14 @@ const lifeData = [
 		'parent': 'ceratopsidae',
 		'extinct': true,
 		'range': 'na',
+	},
+	{
+		'name': 'trichetidae',
+		'rank': 'family',
+		'parent': 'sirenia',
+		'range': 'eq',
+		'age': 2.5,
+		'desc': 'Manatee',
 	},
 	{
 		'name': 'trichocomaceae',
