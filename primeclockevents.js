@@ -545,6 +545,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[diff(1522687500), 'PrimeClock <a href="https://github.com/Mocha2007/mocha2007.github.io/commit/0f4ac911c48e82779748c4629b57ec72503ba45d">launched</a>'],
 	[diff(1554854400), 'First <a href="https://en.wikipedia.org/wiki/Event_Horizon_Telescope">direct image of a black hole</a>'],
 	[diff(1567123200), '<abbr title="The second known insterstellar object to enter the solar system"><a href="https://en.wikipedia.org/wiki/2I/Borisov">2I/Borisov</a></abbr> discovered'],
+	[diff(1575158400), 'Outbreak of the <a href="https://en.wikipedia.org/wiki/2019–20_coronavirus_pandemic">Coronavirus Pandemic</a>'],
 	[diff(1578024000), 'The <a href="https://en.wikipedia.org/wiki/2020_Baghdad_International_Airport_airstrike">2020 Baghdad International Airport airstrike</a> kills <a href="https://en.wikipedia.org/wiki/Qasem_Soleimani">Qasem Soleimani</a>']
 // 2020
 // https://en.wikipedia.org/wiki/Timelines_of_world_history
