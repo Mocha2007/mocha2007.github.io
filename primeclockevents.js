@@ -46,6 +46,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[5.3e9, 'Formation of the <a href="https://en.wikipedia.org/wiki/Alpha_Centauri">Alpha Centauri</a> System'],
 	[4.85e9, 'Formation of <a href="https://en.wikipedia.org/wiki/Proxima_Centauri">Proxima Centauri</a>'],
 	// SOLAR SYSTEM
+	[4.68e9, 'Two neutron stars <a href="https://ourplnt.com/two-neutron-stars-collided-near-solar-system-4-6-billion-years/">merge</a> near the solar systerm, seeding it with metals'], // Algol
 	[4.6e9, 'Formation of the <a href="https://en.wikipedia.org/wiki/Solar_System">Solar System</a>'],
 	[4.58e9, 'Formation of <a href="https://en.wikipedia.org/wiki/Kappa_Persei">Kappa Persei</a>'],
 	// dates updated from Algol's video: https://www.youtube.com/watch?v=d27exZfXzsc
