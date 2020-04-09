@@ -241,6 +241,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[1.5e6, 'Formation of the <a href="https://en.wikipedia.org/wiki/Eagle_Nebula">Eagle Nebula</a>'], // 1-2 mya
 	[1.25e6, '<a href="https://en.wikipedia.org/wiki/Biber-Danube_interglacial">Biber-Danube Interglacial</a>'],
 	[1.2e6, '<i><a href="https://en.wikipedia.org/wiki/Homo_antecessor">Homo antecessor</a></i>'],
+	[1.15e6, 'Formation of <a href="https://en.wikipedia.org/wiki/Westerhout_40">Westerhout 40</a>'], // 0.8-1.5 mya
 	[1.09e6, '<a href="https://en.wikipedia.org/wiki/Jaramillo_normal_event">Jaramillo Normal Event</a>'],
 	[1.07e6, '<a href="https://en.wikipedia.org/wiki/Lake_Bosumtwi">Lake Bosumtwi Impact</a>'],
 	[990e3, '<a href="https://en.wikipedia.org/wiki/Jaramillo_reversal">Jaramillo Reversal</a>'],
