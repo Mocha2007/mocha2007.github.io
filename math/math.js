@@ -64,22 +64,47 @@ class Complex {
 		return Complex.exp(Complex.log(this).product(other));
 	}
 	// exp, sin, cos, tan
-	/** @param {Complex} z */
+	/** @param {number|Complex} z */
 	static exp(z){
+		if (!(z instanceof Complex)){
+			return new Complex(Math.exp(z));
+		}
 		// e^x (cosy + isiny)
 		return Complex.i.product(Math.sin(z.imag)).add(Math.cos(z.imag)).product(Math.exp(z.real));
 	}
 	// log, asin, acos, atan
-	/** @param {Complex} z */
-	static log(z){
+	/**
+	 * @param {number|Complex} z
+	 * @param {number|Complex} base
+	 * @return {Complex}
+	*/
+	static log(z, base = Math.E){
+		if (!(z instanceof Complex)){
+			return Complex.log(new Complex(z), base);
+		}
+		if (!(base instanceof Complex)){
+			return Complex.log(z, new Complex(base));
+		}
 		// log(r) + i*theta
-		return Complex.i.product(z.argument).add(Math.log(z.magnitude));
+		if (base.equals(Math.E)){
+			return Complex.i.product(z.argument).add(Math.log(z.magnitude));
+		}
+		return Complex.log(z).quotient(Complex.log(base));
 	}
 	// constants
 	static get i(){
 		return new Complex(0, 1);
 	}
 	// etc
+	/**
+	 * @param {number|Complex} other
+	*/
+	equals(other){
+		if (other instanceof Complex){
+			return this.real === other.real && this.imag === other.imag;
+		}
+		return this.real === other && this.imag === 0;
+	}
 	toString(){
 		return this.real + '+' + this.imag + 'i';
 	}
