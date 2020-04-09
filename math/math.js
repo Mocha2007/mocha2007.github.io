@@ -79,4 +79,8 @@ class Complex {
 	static get i(){
 		return new Complex(0, 1);
 	}
+	// etc
+	toString(){
+		return this.real + '+' + this.imag + 'i';
+	}
 }
