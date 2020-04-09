@@ -23,6 +23,15 @@ a:visited{
 }
 #c2{
 	font-size: xxx-large;
+	height: 69px;
+	position: relative;
+}
+#c2Inner{
+	bottom: 0;
+	display: block;
+	position: absolute;
+	text-align: center;
+	width: 100%;
 }
 .prime{
 	color:green;
@@ -35,9 +44,6 @@ a:visited{
 }
 .ppower{
 	color:#80C;
-}
-.invisible{
-	visibility: hidden;
 }
 /* Eras */
 .cosmological{

@@ -218,7 +218,7 @@ function alc(){
 	}
 }
 
-function primeclock(){ // can't use strict mode because of IE
+function primeclock(){
 	var sec = Math.floor(new Date()/1000);
 	var str = factorize(sec);
 	var factorization = commaconvert(String(str)).replace(/\^1/g, '').replace(/\^/g, '<sup>').replace(/\s&times;/g, '</sup> &times;');
@@ -227,8 +227,7 @@ function primeclock(){ // can't use strict mode because of IE
 	var title = document.getElementById('c1');
 	title.innerHTML = sec;
 	title.classList = [isprime?'prime':ispower(str)?'ppower':issemiprime(str)?'semiprime':'composite'];
-	var buffer = '<sup class="invisible">1</sup>'; // necessary to prevent text from jumping up and down; sadly, no css solution possible
-	document.getElementById('c2').innerHTML = buffer+factorization+buffer;
+	document.getElementById('c2Inner').innerHTML = factorization;
 
 	var x = timeSinceYear(); // seconds since year beginning
 	var y = Math.pow(a, 1-x/year);
@@ -241,3 +240,6 @@ function enableDebug(){
 	debug = true;
 	alc();
 }
+
+alc();
+setInterval(primeclock, 1000/20);

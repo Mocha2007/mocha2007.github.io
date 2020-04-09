@@ -8,19 +8,17 @@
 <link href=blend.css type="text/css" rel="alternate stylesheet" title="Blend">
 <link href=print.css type="text/css" rel="stylesheet" media="print">
 <link href="css/primeclock.css" type="text/css" rel="stylesheet">
+<title>The Great Clock</title>
+<h1 id="c1">Please</h1>
+<h2 id="c2"><span id="c2Inner">Enable Javascript!</span></h2>
+<div id="information">
+	<p>Events are logarithmically spaced. The following eras are color-coded:
+		<details id="key">
+			<summary>Expand</summary>
+		</details>
+	</p>
+</div>
+<div id="alc"></div>
 <script src="primeclockevents.js"></script>
 <script src="primeclock.js"></script>
-<title>The Great Clock</title>
-<body onload="alc(); primeclock(); setInterval('primeclock()',1000);">
-	<h1 id="c1">Please</h1>
-	<h2 id="c2">Enable Javascript!</h2>
-	<div id="information">
-		<p>Events are logarithmically spaced. The following eras are color-coded:
-			<details id="key">
-				<summary>Expand</summary>
-			</details>
-		</p>
-	</div>
-	<div id="alc"></div>
-</body>
 </html>
