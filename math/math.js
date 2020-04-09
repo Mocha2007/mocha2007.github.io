@@ -20,6 +20,9 @@ class Complex {
 	get magnitude(){
 		return Math.sqrt(this.real * this.real + this.imag * this.imag);
 	}
+	get reciporical(){
+		return this.conjugate.product(Math.pow(this.magnitude, -2));
+	}
 	// basic binary operations (also recip.)
 	/** @param {number|Complex} other */
 	add(other){
@@ -42,6 +45,13 @@ class Complex {
 				this.real * other.imag + this.imag * other.real);
 		}
 		return new Complex(this.real*other, this.imag*other);
+	}
+	/** @param {number|Complex} other */
+	quotient(other){
+		if (other instanceof Complex){
+			return this.product(other.reciporical);
+		}
+		return this.product(1/other);
 	}
 	// constants
 	static get i(){
