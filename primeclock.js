@@ -229,7 +229,7 @@ function alc(){
 		// add class
 		/** @type {string} */
 		var name = geoera[j][1];
-		elem.classList += name;
+		elem.classList.add(name);
 		// create link
 		var link = document.createElement('a');
 		link.href = 'https://en.wikipedia.org/wiki/' + name;
@@ -251,7 +251,7 @@ function header(){
 
 	var title = document.getElementById('c1');
 	title.innerHTML = sec;
-	title.classList = [isprime?'prime':ispower(str)?'ppower':issemiprime(str)?'semiprime':'composite'];
+	title.classList.add(isprime?'prime':ispower(str)?'ppower':issemiprime(str)?'semiprime':'composite');
 	document.getElementById('c2Inner').innerHTML = factorization;
 }
 
