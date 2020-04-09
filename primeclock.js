@@ -218,7 +218,7 @@ function alc(){
 	}
 }
 
-function primeclock(){
+function header(){
 	var sec = Math.floor(new Date()/1000);
 	var str = factorize(sec);
 	var factorization = commaconvert(String(str)).replace(/\^1/g, '').replace(/\^/g, '<sup>').replace(/\s&times;/g, '</sup> &times;');
@@ -228,7 +228,9 @@ function primeclock(){
 	title.innerHTML = sec;
 	title.classList = [isprime?'prime':ispower(str)?'ppower':issemiprime(str)?'semiprime':'composite'];
 	document.getElementById('c2Inner').innerHTML = factorization;
+}
 
+function footer(){
 	var x = timeSinceYear(); // seconds since year beginning
 	var y = Math.pow(a, 1-x/year);
 	var yprime = Math.round(y*Math.log(a)*24*60*60).toLocaleString();
@@ -242,4 +244,5 @@ function enableDebug(){
 }
 
 alc();
-setInterval(primeclock, 1000/20);
+setInterval(header, 1000);
+setInterval(footer, 50);
