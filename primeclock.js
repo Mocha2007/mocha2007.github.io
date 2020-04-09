@@ -3,8 +3,11 @@
 /* globals a, currentyear, diff, events */
 /* exported primeclock, enableDebug */
 'use strict';
-var year = 86400*(currentyear%400?currentyear%100?currentyear%4?365:366:365:366); // number of seconds in this year, eg. 31622400 = 366 * 86400
-var cye = new Date(currentyear+'-01-01T00:00:00'+String(new Date()).slice(28, 33))/1000; // current year epoch - jan 1 XXXX 00:00 utc
+var isLeapYear = new Date(currentyear, 1, 29).getDate() === 29;
+/** @type {31622400|31536000} number of seconds in this year, eg. 31622400 = 366 * 86400*/
+var year = 86400*(isLeapYear?366:365);
+var cye = new Date(currentyear+'-01-01T00:00:00')/1000; // current year epoch - jan 1 XXXX 00:00 local
+// new Date("2020-01-01T00:00:00")
 var debug = false; // enable to see all events at any time
 var color = true; // enable to have lines color-coded
 /*
