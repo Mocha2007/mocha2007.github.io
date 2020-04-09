@@ -113,9 +113,19 @@ class Complex {
 // plot object
 
 const plot = {
+	/** @type {[[number, number], [number, number]]} minx maxx miny maxy */
+	view: [[-20, 20], [-10, 10]],
 	/** @return {HTMLUnknownElement} */
 	get element(){
 		return document.getElementById('plot');
+	},
+	/** @return {[number, number]} x, y in px*/
+	get origin(){
+		return [window.innerWidth/2, window.innerHeight/4];
+	},
+	/** @return {[number, number]} width, height in px of svg*/
+	get screen(){
+		return [window.innerWidth, window.innerHeight/2];
 	},
 	/**
 	 * @param {[number, number]} from
@@ -131,9 +141,60 @@ const plot = {
 		element.setAttribute('style', style);
 		this.element.appendChild(element);
 	},
+	/**
+	 * @param {Function<number, number>} f
+	 * @param {number} from
+	 * @param {number} to
+	 * @param {number} resolution
+	 */
+	plot(f, from = this.view[0][0], to = this.view[0][1], resolution = 1e3){
+		const xs = linspace(from, to, resolution);
+		/** @type {number[]} */
+		const ys = xs.map(f);
+		// now, draw the line...
+		xs.forEach((x, i) => {
+			if (xs.length - 1 <= i){
+				return;
+			}
+			const coords = [x, ys[i]];
+			// confirmed that all before this is correct
+			const nextCoords = [xs[i+1], ys[i+1]];
+			this.line(this.toPx(coords[0], coords[1]), this.toPx(nextCoords[0], nextCoords[1]));
+		});
+	},
+	/**
+	 * transform absolute coords to px coords
+	 * @param {number} x
+	 * @param {number} y
+	 * @return {[number, number]}
+	 */
+	toPx(x, y){
+		// x [-1, 1] => [0, 1920]
+		// y [-1, 1] => [1080, 0]
+		return [remap(x, this.view[0], [0, this.screen[0]]),
+			remap(y, this.view[1], [this.screen[1], 0])];
+	},
 };
 
 // functions
+
+// math functions
+
+function linspace(from = 0, to = 1, points = 1){
+	return new Array(points).fill(0).map((_, i) => i/points * (to-from) + from);
+}
+
+/**
+ * n in [a, b] => n* in [c, d] linearly
+ * @param {number} n
+ * @param {[number, number]} from
+ * @param {[number, number]} to
+ */
+function remap(n, from, to){
+	return (n - from[0]) / (from[1] - from[0]) * (to[1] - to[0]) + to[0];
+}
+
+// doc functions
 
 /**
  * @param {string} name
@@ -158,7 +219,8 @@ function main(){
 }
 
 function test(){
-	plot.line([0, 0], [200, 200]);
+	// plot.line([0, 0], [200, 200]);
+	plot.plot(Math.tan);
 }
 
 main();
