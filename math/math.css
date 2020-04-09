@@ -3,6 +3,7 @@ html, body {
 	font-size: 3vh;
 	height: 100%;
 	margin: 0;
+	overflow: hidden;
 	width: 100%;
 }
 input {
