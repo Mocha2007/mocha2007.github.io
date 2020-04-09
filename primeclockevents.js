@@ -369,7 +369,9 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[currentyear+1175, '<a href="https://en.wikipedia.org/wiki/Late_Bronze_Age_collapse">Late Bronze Age Collapse</a>'],
 	// Individual days do not matter before 1680 BCE (ty calculus)
 	[currentyear+962, '<a href="https://en.wikipedia.org/wiki/Solomon">Solomon</a> becomes king of Israel'],
+	[currentyear+765, 'The <a href="https://en.wikipedia.org/wiki/Assyrian_eclipse">Assyrian Eclipse</a>'],
 	[currentyear+753, '<a href="https://en.wikipedia.org/wiki/Ab_urbe_condita">Founding of Rome</a>'],
+	[currentyear+585, 'The <a href="https://en.wikipedia.org/wiki/Eclipse_of_Thales">Eclipse of Thales</a>'],
 	[currentyear+570, 'Birth of <a href="https://en.wikipedia.org/wiki/Pythagoras">Pythagoras</a>'],
 	[currentyear+400, 'End of <a href="https://en.wikipedia.org/wiki/Lake_Ptolemy">Lake Ptolemy</a>'],
 	[currentyear+323, 'Death of <a href="https://en.wikipedia.org/wiki/Alexander_the_Great">Alexander the Great</a>'],
