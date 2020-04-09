@@ -60,6 +60,10 @@ var geoera = [
 	[0, 'future']
 ];
 
+/**
+ * @param {Array} arr1
+ * @param {Array} arr2
+ */
 function arraysEqual(arr1, arr2){
 	if (arr1.length !== arr2.length){
 		return false;
@@ -72,15 +76,22 @@ function arraysEqual(arr1, arr2){
 	return true;
 }
 
+/**
+ * @param {number} a
+ * @param {number} b
+ * @return {number}
+ */
 function gcd(a, b){
-	if (b===0){
+	if (b === 0){
 		return a;
 	}
-	return gcd(b, a%b);
+	return gcd(b, a % b);
 }
 
+/** @param {number} n */
 function factorize(n){
 	// only works for natual numbers greater than one
+	/** @type {number[][]} */
 	var pf = [];
 	var t = 2;
 	while (t*t <= n){
@@ -106,6 +117,7 @@ function factorize(n){
 	return pf;
 }
 
+/** @param {number[][]} factorization */
 function ispower(factorization){
 	var powertable = factorization.map(function(x){
 		return x[1];
@@ -125,6 +137,7 @@ function ispower(factorization){
 	return arraysEqual(new Array(factorization.length).fill(factorization[0][1]), powertable);
 }
 
+/** @param {number[][]} factorization */
 function issemiprime(factorization){
 	if (factorization.length === 2 && factorization[0][1]+factorization[1][1] === 2){
 		return true;
@@ -135,6 +148,10 @@ function issemiprime(factorization){
 	return false;
 }
 
+/**
+ * @param {string} s
+ * @return {string}
+*/
 function commaconvert(s){
 	s = s.split('');
 	var n = 0;
@@ -162,10 +179,12 @@ ae^-(bx/year) = 14e9 * year
 a = 14e9
 */
 
-function timeSinceYear(){ // seconds since year start
+/** @return {number} seconds since year beginning */
+function timeSinceYear(){
 	return new Date()/1000-cye;
 }
 
+/** @param {number} y */
 function ialc(y){
 	// logarithmically maps time from the beginning (1 Jan) to 1 yr ago (31 Dec)
 	var otherx = timeSinceYear(); // REAL seconds since year beginning
@@ -174,6 +193,10 @@ function ialc(y){
 	return String(wannadate).slice(4, 24);
 }
 
+/**
+ * @param {number} age
+ * @return {string}
+*/
 function getClass(age){
 	if (color){
 		for (var i=0; i<geoera.length; i+=1){
@@ -191,7 +214,8 @@ function alc(){
 	var str = '';
 	for (var i=0;i<events.length;i+=1){
 		if (debug || events[i][0]>y){
-			str+='<div class="' + getClass(events[i][0]) + '">'+(i===0?'Jan 01 '+currentyear+' 00:00:00':ialc(events[i][0]))+' - '+events[i][1] + '</div>';
+			str += '<div class="' + getClass(events[i][0]) + '">' + (i === 0 ? 'Jan 01 ' +
+				currentyear + ' 00:00:00':ialc(events[i][0])) + ' - ' + events[i][1] + '</div>';
 		}
 		else {
 			break;
@@ -203,6 +227,7 @@ function alc(){
 		// create div
 		var elem = document.createElement('div');
 		// add class
+		/** @type {string} */
 		var name = geoera[j][1];
 		elem.classList += name;
 		// create link
@@ -231,7 +256,7 @@ function header(){
 }
 
 function footer(){
-	var x = timeSinceYear(); // seconds since year beginning
+	var x = timeSinceYear();
 	var y = Math.pow(a, 1-x/year);
 	var yprime = Math.round(y*Math.log(a)*24*60*60).toLocaleString();
 
