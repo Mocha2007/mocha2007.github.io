@@ -114,7 +114,7 @@ class Complex {
 
 const plot = {
 	/** @type {[[number, number], [number, number]]} minx maxx miny maxy */
-	view: [[-20, 20], [-10, 10]],
+	view: [[-1, 1], [-1, 1]],
 	/** @return {HTMLUnknownElement} */
 	get element(){
 		return document.getElementById('plot');
@@ -126,6 +126,9 @@ const plot = {
 	/** @return {[number, number]} width, height in px of svg*/
 	get screen(){
 		return [window.innerWidth, window.innerHeight/2];
+	},
+	clear(){
+		this.element.innerHTML = '';
 	},
 	/**
 	 * @param {[number, number]} from
@@ -220,7 +223,7 @@ function main(){
 
 function test(){
 	// plot.line([0, 0], [200, 200]);
-	plot.plot(Math.tan);
+	plot.plot(x => Math.sin(1/x), );
 }
 
 main();
