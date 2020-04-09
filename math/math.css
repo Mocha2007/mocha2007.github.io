@@ -1,13 +1,15 @@
 html, body {
-	font-family: Consolas, "Courier New", monospace;
-	font-size: 3vh;
 	height: 100%;
 	margin: 0;
 	overflow: hidden;
 	width: 100%;
 }
-input {
+html, body, input, textarea {
 	font-family: Consolas, "Courier New", monospace;
+	font-size: 3vh;
+}
+textarea {
+	margin-bottom: -0.7%;
 }
 #controls, #plot {
 	height: 50%;
