@@ -96,9 +96,7 @@ class Complex {
 		return new Complex(0, 1);
 	}
 	// etc
-	/**
-	 * @param {number|Complex} other
-	*/
+	/** @param {number|Complex} other */
 	equals(other){
 		if (other instanceof Complex){
 			return this.real === other.real && this.imag === other.imag;
