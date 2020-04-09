@@ -113,6 +113,8 @@ class Complex {
 // plot object
 
 const plot = {
+	/** @type {Function<number, number>} */
+	f: Math.tan,
 	/** @type {[[number, number], [number, number]]} minx maxx miny maxy */
 	view: [[-1, 1], [-1, 1]],
 	/** @return {HTMLUnknownElement} */
@@ -162,6 +164,11 @@ const plot = {
 			const coords = [x, ys[i]];
 			// confirmed that all before this is correct
 			const nextCoords = [xs[i+1], ys[i+1]];
+			// check for NaN
+			if (!isFinite(ys[i]) || !isFinite(ys[i+1])){
+				return;
+			}
+			// plot line
 			this.line(this.toPx(coords[0], coords[1]), this.toPx(nextCoords[0], nextCoords[1]));
 		});
 	},
@@ -176,6 +183,31 @@ const plot = {
 		// y [-1, 1] => [1080, 0]
 		return [remap(x, this.view[0], [0, this.screen[0]]),
 			remap(y, this.view[1], [this.screen[1], 0])];
+	},
+	update(){
+		// update values
+		this.view[0][0] = parseFloat(document.getElementById('xmin').value);
+		this.view[0][1] = parseFloat(document.getElementById('xmax').value);
+		this.view[1][0] = parseFloat(document.getElementById('ymin').value);
+		this.view[1][1] = parseFloat(document.getElementById('ymax').value);
+		try {
+			if (this.view[0][0] === this.view[0][1] || this.view[1][0] === this.view[1][1]){
+				throw new RangeError('min and max can\'t be the same value');
+			}
+			if (!isFinite(this.view[0][0]) || !isFinite(this.view[0][1]) ||
+				!isFinite(this.view[1][0]) || !isFinite(this.view[1][1])){
+				throw new RangeError('invalid number');
+			}
+			this.f = eval('x=>' + document.getElementById('f').value);
+		}
+		catch (e){
+			document.getElementById('error').innerHTML = e;
+			return;
+		}
+		document.getElementById('error').innerHTML = '';
+		// plot
+		this.clear();
+		this.plot(this.f);
 	},
 };
 
@@ -223,7 +255,7 @@ function main(){
 
 function test(){
 	// plot.line([0, 0], [200, 200]);
-	plot.plot(x => Math.sin(1/x), );
+	plot.plot(x => Math.sin(1/x));
 }
 
 main();

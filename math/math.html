@@ -6,6 +6,28 @@
 <link href="math.css" type="text/css" rel="stylesheet">
 <title>Math</title>
 <svg id="plot"></svg>
-<div id="controls"></div>
+<div id="controls">
+	<label>xmin =
+		<input type="number" id="xmin" value="-1" step=".1" onkeydown="plot.update()" onclick="plot.update()">;
+	</label>
+	<br>
+	<label for="xmax">xmax =
+		<input type="number" id="xmax" value="1" step=".1" onkeydown="plot.update()" onclick="plot.update()">;
+	</label>
+	<br>
+	<label for="ymin">ymin =
+		<input type="number" id="ymin" value="-1" step=".1" onkeydown="plot.update()" onclick="plot.update()">;
+	</label>
+	<br>
+	<label for="ymax">ymax =
+		<input type="number" id="ymax" value="1" step=".1" onkeydown="plot.update()" onclick="plot.update()">;
+	</label>
+	<br>
+	<label>f = x =>
+		<input type="text" id="f" value="Math.sin(1/x)" onkeydown="plot.update()">;
+	</label>
+	<br>
+	<span id="error"></span>
+</div>
 <script src="math.js"></script>
 </html>

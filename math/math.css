@@ -1,7 +1,12 @@
 html, body {
+	font-family: Consolas, "Courier New", monospace;
+	font-size: 3vh;
 	height: 100%;
 	margin: 0;
 	width: 100%;
+}
+input {
+	font-family: Consolas, "Courier New", monospace;
 }
 #controls, #plot {
 	height: 50%;
@@ -10,4 +15,8 @@ html, body {
 #controls {
 	background-color: black;
 	color: silver;
+	padding: 1%;
+}
+#error {
+	color: red;
 }
