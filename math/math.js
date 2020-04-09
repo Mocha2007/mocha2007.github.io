@@ -59,7 +59,10 @@ class Complex {
 		}
 		return this.product(1/other);
 	}
-	// todo Complex.pow(other)
+	/** @param {number|Complex} other */
+	pow(other){
+		return Complex.exp(Complex.log(this).product(other));
+	}
 	// exp, sin, cos, tan
 	/** @param {Complex} z */
 	static exp(z){
