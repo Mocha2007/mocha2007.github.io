@@ -1,6 +1,8 @@
 /* jshint esversion: 6, strict: true, strict: global */
 'use strict';
 
+// classes
+
 class Complex {
 	/**
 	 * @param {number} real
@@ -107,3 +109,57 @@ class Complex {
 		return this.real + '+' + this.imag + 'i';
 	}
 }
+
+// plot object
+
+const plot = {
+	/** @return {HTMLUnknownElement} */
+	get element(){
+		return document.getElementById('plot');
+	},
+	/**
+	 * @param {[number, number]} from
+	 * @param {[number, number]} to
+	 * @param {string} style
+	 */
+	line(from, to, style = 'stroke:red;stroke-width:2'){
+		const element = createSvgElement('line');
+		element.setAttribute('x1', from[0]);
+		element.setAttribute('y1', from[1]);
+		element.setAttribute('x2', to[0]);
+		element.setAttribute('y2', to[1]);
+		element.setAttribute('style', style);
+		this.element.appendChild(element);
+	},
+};
+
+// functions
+
+/**
+ * @param {string} name
+ * @return {HTMLUnknownElement}
+ */
+function createSvgElement(name = 'svg'){
+	// https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
+	return document.createElementNS('http://www.w3.org/2000/svg', name);
+}
+
+function main(){
+	///** @type {HTMLDivElement} */
+	/*
+	const root = document.getElementById('main');
+	root.innerHTML = '';
+	// set up graph
+	// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
+	const svg = createSvgElement();
+	*/
+	// plot.element.setAttribute('height', window.innerHeight);
+	// plot.element.setAttribute('width', window.innerWidth);
+}
+
+function test(){
+	plot.line([0, 0], [200, 200]);
+}
+
+main();
+test();
