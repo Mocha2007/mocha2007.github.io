@@ -197,6 +197,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[100e6, 'Earliest <a href="https://en.wikipedia.org/wiki/Bee">Bees</a>'],
 	[99e6, 'Formation of the <a href="https://en.wikipedia.org/wiki/Burmese_amber">Burmese Amber</a> in Burma'],
 	[94e6, 'Cenomanian-Turonian Boundary Event'],
+	[91.5e3, 'The <a href="https://en.wikipedia.org/wiki/Cenomanian-Turonian_boundary_event">Cenomanian-Turonian Boundary Event</a>'],
 	[90e6, 'Beginning of the <a href="https://en.wikipedia.org/wiki/Andean_orogeny">Andean Orogeny</a>'],
 	[80e6, 'Beginning of the <a href="https://en.wikipedia.org/wiki/Laramide_orogeny">Laramide Orogeny</a>'],
 	// https://en.wikipedia.org/wiki/Timeline_of_natural_history#Cretaceous_Period
