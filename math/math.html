@@ -7,6 +7,11 @@
 <title>Math</title>
 <svg id="plot"></svg>
 <div id="controls">
+	<label>zoom 
+		<button onclick="plot.zoom(.5)">+</button>
+		<button onclick="plot.zoom(2)">-</button>
+	</label>
+	<br>
 	<label>xmin =
 		<input type="number" id="xmin" value="-1" step=".1" onkeyup="plot.update()" onclick="plot.update()">;
 	</label>

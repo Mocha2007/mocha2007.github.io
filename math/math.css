@@ -4,7 +4,7 @@ html, body {
 	overflow: hidden;
 	width: 100%;
 }
-html, body, input, textarea {
+html, body, button, input, textarea {
 	font-family: Consolas, "Courier New", monospace;
 	font-size: 3vh;
 }

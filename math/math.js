@@ -227,6 +227,13 @@ const plot = {
 		element.setAttribute('y', this.origin[1]);
 		this.element.appendChild(element);
 	},
+	zoom(factor = 1){
+		'xmin xmax ymin ymax'.split(' ').forEach(name => {
+			const element = document.getElementById(name);
+			element.value = parseFloat(element.value) * factor;
+		});
+		this.update();
+	},
 };
 
 // functions
