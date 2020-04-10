@@ -172,6 +172,16 @@ const plot = {
 			this.line(this.toPx(coords[0], coords[1]), this.toPx(nextCoords[0], nextCoords[1]));
 		});
 	},
+	status(e){
+		const status = document.getElementById('status');
+		if (!e){
+			status.classList = 'success';
+			status.innerHTML = '✔';
+			return;
+		}
+		status.classList = 'error';
+		status.innerHTML = e;
+	},
 	/**
 	 * transform absolute coords to px coords
 	 * @param {number} x
@@ -185,6 +195,7 @@ const plot = {
 			remap(y, this.view[1], [this.screen[1], 0])];
 	},
 	update(){
+		this.status('X');
 		// update values
 		this.view[0][0] = parseFloat(document.getElementById('xmin').value);
 		this.view[0][1] = parseFloat(document.getElementById('xmax').value);
@@ -201,13 +212,20 @@ const plot = {
 			this.f = eval('x=>' + document.getElementById('f').value);
 		}
 		catch (e){
-			document.getElementById('error').innerHTML = e;
+			this.status(e);
 			return;
 		}
-		document.getElementById('error').innerHTML = '';
+		this.status();
 		// plot
 		this.clear();
 		this.plot(this.f);
+	},
+	uwu(){
+		const element = createSvgElement('text');
+		element.innerHTML = 'UwU';
+		element.setAttribute('x', this.origin[0]);
+		element.setAttribute('y', this.origin[1]);
+		this.element.appendChild(element);
 	},
 };
 
@@ -240,23 +258,5 @@ function createSvgElement(name = 'svg'){
 	return document.createElementNS('http://www.w3.org/2000/svg', name);
 }
 
-function main(){
-	///** @type {HTMLDivElement} */
-	/*
-	const root = document.getElementById('main');
-	root.innerHTML = '';
-	// set up graph
-	// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
-	const svg = createSvgElement();
-	*/
-	// plot.element.setAttribute('height', window.innerHeight);
-	// plot.element.setAttribute('width', window.innerWidth);
-}
-
-function test(){
-	// plot.line([0, 0], [200, 200]);
-	plot.plot(x => Math.sin(1/x));
-}
-
-main();
-test();
+plot.update();
+window.addEventListener('error', e => plot.status(e.message));

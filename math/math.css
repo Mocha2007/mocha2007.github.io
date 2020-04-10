@@ -20,6 +20,9 @@ textarea {
 	color: silver;
 	padding: 1%;
 }
-#error {
+.error {
 	color: red;
+}
+.success {
+	color: green;
 }

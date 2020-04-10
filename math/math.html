@@ -8,26 +8,27 @@
 <svg id="plot"></svg>
 <div id="controls">
 	<label>xmin =
-		<input type="number" id="xmin" value="-1" step=".1" onkeydown="plot.update()" onclick="plot.update()">;
+		<input type="number" id="xmin" value="-1" step=".1" onkeyup="plot.update()" onclick="plot.update()">;
 	</label>
 	<br>
 	<label for="xmax">xmax =
-		<input type="number" id="xmax" value="1" step=".1" onkeydown="plot.update()" onclick="plot.update()">;
+		<input type="number" id="xmax" value="1" step=".1" onkeyup="plot.update()" onclick="plot.update()">;
 	</label>
 	<br>
 	<label for="ymin">ymin =
-		<input type="number" id="ymin" value="-1" step=".1" onkeydown="plot.update()" onclick="plot.update()">;
+		<input type="number" id="ymin" value="-1" step=".1" onkeyup="plot.update()" onclick="plot.update()">;
 	</label>
 	<br>
 	<label for="ymax">ymax =
-		<input type="number" id="ymax" value="1" step=".1" onkeydown="plot.update()" onclick="plot.update()">;
+		<input type="number" id="ymax" value="1" step=".1" onkeyup="plot.update()" onclick="plot.update()">;
 	</label>
 	<br>
 	<label>f = x =>
-		<textarea cols="40" rows="1" id="f" onkeydown="plot.update()">Math.sin(1/x)</textarea>;
+		<textarea cols="40" rows="1" id="f" onkeyup="plot.update()">Math.sin(1/x)</textarea>;
 	</label>
-	<br>
-	<span id="error"></span>
+	<hr>
+	Status:<br>
+	<span id="status"></span>
 </div>
 <script src="math.js"></script>
 </html>
