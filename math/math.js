@@ -26,7 +26,7 @@ class Complex {
 		return Math.sqrt(this.real * this.real + this.imag * this.imag);
 	}
 	get reciporical(){
-		return this.conjugate.product(Math.pow(this.magnitude, -2));
+		return this.conjugate.mul(Math.pow(this.magnitude, -2));
 	}
 	// basic binary operations (also recip.)
 	/**
@@ -45,12 +45,12 @@ class Complex {
 	*/
 	sub(other){
 		if (other instanceof Complex){
-			return this.add(other.product(-1));
+			return this.add(other.mul(-1));
 		}
 		return this.sub(new Complex(other));
 	}
 	/** @param {number|Complex} other */
-	product(other){
+	mul(other){
 		if (other instanceof Complex){
 			return new Complex(this.real * other.real - this.imag * other.imag,
 				this.real * other.imag + this.imag * other.real);
@@ -58,15 +58,15 @@ class Complex {
 		return new Complex(this.real*other, this.imag*other);
 	}
 	/** @param {number|Complex} other */
-	quotient(other){
+	div(other){
 		if (other instanceof Complex){
-			return this.product(other.reciporical);
+			return this.mul(other.reciporical);
 		}
-		return this.product(1/other);
+		return this.mul(1/other);
 	}
 	/** @param {number|Complex} other */
 	pow(other){
-		return Complex.exp(Complex.log(this).product(other));
+		return Complex.exp(Complex.log(this).mul(other));
 	}
 	// exp, sin, cos, tan
 	/** @param {number|Complex} z */
@@ -75,7 +75,7 @@ class Complex {
 			return new Complex(Math.exp(z));
 		}
 		// e^x (cosy + isiny)
-		return Complex.i.product(Math.sin(z.imag)).add(Math.cos(z.imag)).product(Math.exp(z.real));
+		return Complex.i.mul(Math.sin(z.imag)).add(Math.cos(z.imag)).mul(Math.exp(z.real));
 	}
 	// log, asin, acos, atan
 	/**
@@ -92,9 +92,9 @@ class Complex {
 		}
 		// log(r) + i*theta
 		if (base.equals(Math.E)){
-			return Complex.i.product(z.argument).add(Math.log(z.magnitude));
+			return Complex.i.mul(z.argument).add(Math.log(z.magnitude));
 		}
-		return Complex.log(z).quotient(Complex.log(base));
+		return Complex.log(z).div(Complex.log(base));
 	}
 	// constants
 	static get i(){
