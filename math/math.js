@@ -266,7 +266,12 @@ const plot = {
 		this.status();
 		// plot
 		this.clear();
-		this.cplot(this.f);
+		if (document.getElementById('cmathCheckbox').checked){
+			this.cplot(this.f);
+		}
+		else {
+			this.plot(this.f)
+		}
 	},
 	uwu(){
 		const element = createSvgElement('text');

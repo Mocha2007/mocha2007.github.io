@@ -6,30 +6,34 @@
 <link href="math.css" type="text/css" rel="stylesheet">
 <title>Math</title>
 <svg id="plot"></svg>
-<div id="controls">
+<div id="controls" onclick="plot.update()" onkeyup="plot.update()">
 	<label>zoom 
 		<button onclick="plot.zoom(.5)">+</button>
 		<button onclick="plot.zoom(2)">-</button>
 	</label>
 	<br>
+	<label>cmath
+		<input type="checkbox" id="cmathCheckbox">
+	</label>
+	<br>
 	<label>xmin =
-		<input type="number" id="xmin" value="-1" step=".1" onkeyup="plot.update()" onclick="plot.update()">;
+		<input type="number" id="xmin" value="-1" step=".1">;
 	</label>
 	<br>
 	<label for="xmax">xmax =
-		<input type="number" id="xmax" value="1" step=".1" onkeyup="plot.update()" onclick="plot.update()">;
+		<input type="number" id="xmax" value="1" step=".1">;
 	</label>
 	<br>
 	<label for="ymin">ymin =
-		<input type="number" id="ymin" value="-1" step=".1" onkeyup="plot.update()" onclick="plot.update()">;
+		<input type="number" id="ymin" value="-1" step=".1">;
 	</label>
 	<br>
 	<label for="ymax">ymax =
-		<input type="number" id="ymax" value="1" step=".1" onkeyup="plot.update()" onclick="plot.update()">;
+		<input type="number" id="ymax" value="1" step=".1">;
 	</label>
 	<br>
 	<label>f = x =>
-		<textarea cols="40" rows="1" id="f" onkeyup="plot.update()">Complex.log(x)</textarea>;
+		<textarea cols="40" rows="1" id="f">Math.sin(1/x)</textarea>;
 	</label>
 	<hr>
 	Status:<br>
