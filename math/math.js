@@ -105,6 +105,27 @@ class Complex {
 		}
 		return this.real === other && this.imag === 0;
 	}
+	/** @param {string} string */
+	static parse(string){
+		if (/[^\di.+-]/.test(string)){
+			throw RangeError('invalid complex string');
+		}
+		if (!string.includes('i')){
+			return new Complex(parseFloat(string));
+		}
+		// remove i
+		string = string.replace('i', '');
+		// force -------... into +++++++(-)
+		string = string.replace(/--/g, '+');
+		// force - and +- and +++++- to +-
+		string = string.replace(/\+*-/g, '+-');
+		// turn bare i into + or - 1i
+		string = string.replace(/(?<=[+-])i/g, '1i');
+		// string now MUST be of form 1.23+(-)4.56
+		const [rString, iString] = string.split('+');
+		const [r, i] = [parseFloat(rString), parseFloat(iString)];
+		return new Complex(r, i);
+	}
 	toString(){
 		return this.real + '+' + this.imag + 'i';
 	}
