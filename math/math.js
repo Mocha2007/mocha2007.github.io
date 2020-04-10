@@ -108,6 +108,10 @@ class Complex {
 		}
 		return this.real === other && this.imag === 0;
 	}
+	/** @param {Complex} z*/
+	static isFinite(z){
+		return isFinite(z.real) && isFinite(z.imag);
+	}
 	/** @param {string} string */
 	static parse(string){
 		if (/[^\di.+-]/.test(string)){
@@ -139,6 +143,7 @@ class Complex {
 const plot = {
 	/** @type {Function<number, number>} */
 	f: Math.tan,
+	resolution: 1e3,
 	/** @type {[[number, number], [number, number]]} minx maxx miny maxy */
 	view: [[-1, 1], [-1, 1]],
 	/** @return {HTMLUnknownElement} */
@@ -156,28 +161,47 @@ const plot = {
 	clear(){
 		this.element.innerHTML = '';
 	},
+	/** @param {Function<Complex, Complex>} f */
+	cplot(f){
+		const xs = linspace(this.view[0][0], this.view[0][1], this.resolution);
+		/** @type {Complex[]} */
+		const ys = xs.map(f);
+		// now, draw the line...
+		xs.forEach((x, i) => {
+			if (xs.length - 1 <= i){
+				return;
+			}
+			/** @type {[number, Complex]} */
+			const coords = [x, ys[i]];
+			/** @type {[number, Complex]} */
+			const nextCoords = [xs[i+1], ys[i+1]];
+			// check for NaN
+			if (!Complex.isFinite(ys[i]) || !Complex.isFinite(ys[i+1])){
+				return;
+			}
+			// plot real line
+			this.line(this.toPx(coords[0], coords[1].real), this.toPx(nextCoords[0], nextCoords[1].real));
+			// plot imag line
+			this.line(this.toPx(coords[0], coords[1].imag), this.toPx(nextCoords[0], nextCoords[1].imag), 'orange');
+		});
+	},
 	/**
 	 * @param {[number, number]} from
 	 * @param {[number, number]} to
-	 * @param {string} style
+	 * @param {string} color
 	 */
-	line(from, to, style = 'stroke:red;stroke-width:2'){
+	line(from, to, color = 'blue'){
 		const element = createSvgElement('line');
 		element.setAttribute('x1', from[0]);
 		element.setAttribute('y1', from[1]);
 		element.setAttribute('x2', to[0]);
 		element.setAttribute('y2', to[1]);
-		element.setAttribute('style', style);
+		element.setAttribute('style', 'stroke:'+color+';stroke-width:2');
 		this.element.appendChild(element);
 	},
-	/**
-	 * @param {Function<number, number>} f
-	 * @param {number} from
-	 * @param {number} to
-	 * @param {number} resolution
-	 */
-	plot(f, from = this.view[0][0], to = this.view[0][1], resolution = 1e3){
-		const xs = linspace(from, to, resolution);
+	/** @param {Function<number, number>} f */
+	plot(f){
+		const xs = linspace(this.view[0][0], this.view[0][1], this.resolution);
 		/** @type {number[]} */
 		const ys = xs.map(f);
 		// now, draw the line...
@@ -242,7 +266,7 @@ const plot = {
 		this.status();
 		// plot
 		this.clear();
-		this.plot(this.f);
+		this.cplot(this.f);
 	},
 	uwu(){
 		const element = createSvgElement('text');
