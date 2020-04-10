@@ -6,7 +6,7 @@ html, body {
 }
 html, body, button, input, textarea {
 	font-family: Consolas, "Courier New", monospace;
-	font-size: 3vh;
+	font-size: 2vh;
 }
 textarea {
 	margin-bottom: -0.7%;
