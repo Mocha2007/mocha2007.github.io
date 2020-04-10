@@ -6,6 +6,17 @@
 <link href="math.css" type="text/css" rel="stylesheet">
 <title>Math</title>
 <svg id="plot"></svg>
+<div id="help">
+	<span id="helpIcon">?</span>
+	<div>
+		Notes:
+		<ul>
+			<li>cmath requires a complex output</li>
+			<li>the Complex class has add, sub, mul, div, and pow methods</li>
+			<li>the Complex class has exp and log static methods</li>
+		</ul>
+	</div>
+</div>
 <div id="controls" onclick="plot.update()" onkeyup="plot.update()">
 	<label>zoom 
 		<button onclick="plot.zoom(.5)">+</button>

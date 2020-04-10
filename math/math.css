@@ -20,6 +20,25 @@ textarea {
 	color: silver;
 	padding: 1%;
 }
+#help {
+	background-color: black;
+	border: 1px solid gold;
+	color: silver;
+	left: 0;
+	padding: 0.5%;
+	position: absolute;
+	top: 0;
+}
+#helpIcon {
+	color: red;
+	font-size: xx-large;
+}
+#help > div {
+	display: none;
+}
+#help:hover > div {
+	display: block;
+}
 .error {
 	color: red;
 }
