@@ -620,20 +620,20 @@ function drawEvent(event){
 	eventElement.appendChild(desc);
 	// options
 	const optionList = document.createElement('ul');
-	for (let i=0; i<event.options.length; i+=1){
+	event.options.forEach(e => {
 		const option = document.createElement('li');
 		const optionButton = document.createElement('input');
 		optionButton.type = 'submit';
-		optionButton.value = event.options[i].text;
+		optionButton.value = e.text;
 		optionButton.onclick = () => {
-			event.options[i].onClick();
+			e.onClick();
 			event.remove();
 			const eventNode = document.getElementById('event'+event.id);
 			eventNode.parentNode.removeChild(eventNode);
 		};
 		option.appendChild(optionButton);
 		optionList.appendChild(option);
-	}
+	});
 	eventElement.appendChild(optionList);
 	return eventElement;
 }
