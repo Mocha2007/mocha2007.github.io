@@ -3,7 +3,7 @@
 // begin basic block
 'use strict';
 
-function round(number, digits){
+function round(number, digits = 0){
 	number *= Math.pow(10, digits);
 	number = Math.round(number);
 	number /= Math.pow(10, digits);
@@ -863,7 +863,7 @@ const Game = {
 		asciiEmoji: 0,
 		selectionStyle: 0,
 	},
-	speed: hour,
+	speed: 16*hour,
 	/** @type {System} */
 	system: undefined,
 	systemHeight: 3*au,
@@ -958,7 +958,7 @@ function main(){
 }
 
 function gameTick(){
-	Game.time = Game.paused ? Game.time : Game.time + Game.speed;
+	Game.time = Game.paused ? Game.time : Game.time + Game.speed/Game.settings.fps;
 	Game.systemWidth = window.innerWidth/window.innerHeight * Game.systemHeight;
 }
 
@@ -993,7 +993,7 @@ function redrawMap(){
 		infoboxElement.benisData = selectionId;
 	}
 	// update time
-	document.getElementById('time').innerHTML = 't = ' + Game.time/hour + ' h';
+	document.getElementById('time').innerHTML = 't = ' + round(Game.time/hour) + ' h';
 	document.getElementById('timerate').innerHTML = 'dt = ' + Game.speed/hour + ' h';
 	// update zoom
 	document.getElementById('zoom').innerHTML = Game.systemHeight/au;
