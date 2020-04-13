@@ -782,7 +782,9 @@ const Game = {
 			{'fuel': 10},
 			{'surveyor': 1},
 			{'water': 1},
-			() => Game.player.resources.steel += 100
+			() => {
+				Game.player.resources.steel += 100;
+			}
 		),
 		new Order(
 			'Convert Water to Fuel',
@@ -1093,7 +1095,6 @@ function updateOrders(){
 		// check if conditions are fulfilled
 		// if done, finish order and delete it
 		const thisOrder = Game.player.orders[i];
-		/** @type {Order} */
 		const orderType = Game.orders[thisOrder[1]];
 		if (thisOrder[3] >= orderType.progressNeeded){
 			// give bonus
