@@ -899,8 +899,7 @@ function generatePlanet(sma){
 	return planet;
 }
 
-/** @param {number} attempt */
-function generateSystem(attempt){
+function generateSystem(attempt = 0){
 	if (attempt >= 100){
 		console.log(systemAttempt);
 		throw 'too many failed attempts... something is broken :(';
@@ -938,7 +937,7 @@ function main(){
 	Game.debug.loaded = seededRandomSetup();
 	document.getElementById('seed').innerHTML = Game.rng.seed;
 	// set up system
-	Game.system = new System(sun, generateSystem(0));
+	Game.system = new System(sun, generateSystem());
 	// console.log(Game.system);
 	// set variables up
 	Game.speed = hour;
