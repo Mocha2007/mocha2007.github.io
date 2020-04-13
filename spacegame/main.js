@@ -749,10 +749,7 @@ function modifyNavy(shipClass, count){
 
 /** @param {string} id */
 function selectTab(id){
-	const children = document.getElementById('rightdocs').children;
-	for (let i=0; i<children.length; i+=1){
-		children[i].style.display = 'none';
-	}
+	Array.from(document.getElementById('rightdocs').children).forEach(c => c.style.display = 'none');
 	document.getElementById(id).style.display = '';
 }
 
