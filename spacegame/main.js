@@ -458,6 +458,12 @@ function nextSMA(previousSMA){
 	return previousSMA * uniform(1.38, 2.01);
 }
 
+/** @param {number} mass in suns */
+function starGen(mass = 1){
+	const luminosity = 0.45 < mass ? 1.148*Math.pow(mass, 3.4751) : .2264*Math.pow(mass, 2.52);
+	return new Star(mass, Math.pow(mass, 0.96), 'Star', luminosity, 5772*Math.pow(mass, 0.54));
+}
+
 const sun = new Star(1.9885e30, 6.957e8, 'Sun', 3.828e26, 5778);
 const earth = new Body(5.97237e24, 6371000, 0.306, new Orbit(sun, 1.49598023e11, 0.0167086, 1.9933027, 6.25905), 'Earth');
 
