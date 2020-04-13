@@ -27,21 +27,6 @@ function seededRandom(){
 	Game.rng.i += 1;
 	return (Game.rng.value+max31Bit)/max32Bit;
 }
-function seededRandomSetup(){
-	Game.rng = {};
-	let loaded = false;
-	if (readCookie('seed')){
-		Game.rng.seed = readCookie('seed');
-		loaded = true;
-	}
-	else {
-		Game.rng.seed = Number(new Date());
-		writeCookie('seed', Game.rng.seed);
-	}
-	Game.rng.value = Game.rng.seed;
-	Game.rng.i = 0;
-	return loaded;
-}
 function deleteCookie(name){
 	document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
 }
@@ -867,7 +852,52 @@ function wipeMap(){
 
 // end interface block
 // begin main program
-const Game = {};
+const Game = {
+	debug: {
+		loaded: false,
+	},
+	player: {
+		quests: [],
+		events: [],
+		resources: {
+			water: 1000,
+			fuel: 1000,
+			steel: 1000,
+		},
+		navy: {
+			surveyor: 1,
+		},
+		orders: [],
+	},
+	rng: {
+		i: 0,
+		seed: Number(new Date()),
+		value: 0,
+		init(){
+			/** @type {number} */
+			const loaded = readCookie('seed');
+			if (loaded){
+				this.seed = readCookie('seed');
+			}
+			else {
+				writeCookie('seed', this.seed);
+			}
+			this.value = this.seed;
+			return Boolean(loaded);
+		},
+	},
+	settings: {
+		autosaveInterval: 1,
+		fps: 20,
+		asciiEmoji: 0,
+		selectionStyle: 0,
+	},
+	speed: hour,
+	/** @type {System} */
+	system: undefined,
+	systemHeight: 3*au,
+	time: 0,
+};
 
 /** @param {number} sma */
 function generateBody(sma){
@@ -927,27 +957,15 @@ function getQuestsFromIds(){
 
 function main(){
 	console.info('Mocha\'s weird-ass space game test');
-	Game.debug = {};
 	if (readCookie('settings')){
 		Game.settings = readCookie('settings');
 		document.getElementById('input_fps').value = Game.settings.fps;
 	}
-	else {
-		Game.settings = {};
-		Game.settings.autosaveInterval = 1;
-		Game.settings.fps = 20;
-		Game.settings.asciiEmoji = 0;
-		Game.settings.selectionStyle = 0;
-	}
 	// set up RNG
-	Game.debug.loaded = seededRandomSetup();
+	Game.debug.loaded = Game.rng.init();
 	document.getElementById('seed').innerHTML = Game.rng.seed;
 	// set up system
-	Game.system = new System(sun, generateSystem());
-	// console.log(Game.system);
-	// set variables up
-	Game.speed = hour;
-	Game.systemHeight = 3*au;
+	Game.system = new System(starGen(), generateSystem());
 	// set up ticks
 	updateFPS();
 	setInterval(redrawInterface, 1000);
@@ -959,23 +977,8 @@ function main(){
 	if (readCookie('player')){
 		Game.player = readCookie('player');
 	}
-	else {
-		Game.player = {};
-		Game.player.quests = [];
-		Game.player.events = [];
-		Game.player.resources = {};
-		Game.player.resources.water = 1000;
-		Game.player.resources.fuel = 1000;
-		Game.player.resources.steel = 1000;
-		Game.player.navy = {};
-		Game.player.navy.surveyor = 1;
-		Game.player.orders = [];
-	}
 	if (readCookie('time')){
 		Game.time = readCookie('time');
-	}
-	else {
-		Game.time = 0;
 	}
 	// save
 	saveGame();
