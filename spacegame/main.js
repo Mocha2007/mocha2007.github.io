@@ -15,18 +15,6 @@ function round(number, digits){
 	number /= Math.pow(10, digits);
 	return number;
 }
-function seededRandom(){
-	/* jshint bitwise: false */
-	const max31Bit = Math.pow(2, 31) - 1;
-	const max32Bit = Math.pow(2, 32) - 1;
-	let x = Game.rng.value;
-	x ^= x << 13;
-	x ^= x >> 17;
-	x ^= x << 5;
-	Game.rng.value = x;
-	Game.rng.i += 1;
-	return (Game.rng.value+max31Bit)/max32Bit;
-}
 function deleteCookie(name){
 	document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
 }
@@ -75,14 +63,6 @@ function mod(n, m){
 }
 
 /**
- * @param {number} min
- * @param {number} max
- */
-function randint(min, max){ // random integer in range
-	return Math.floor(uniform(min, max+1));
-}
-
-/**
  * @param {number} value
  * @param {[number, number]} range1
  * @param {[number, number]} range2
@@ -92,14 +72,6 @@ function remap(value, range1, range2){
 	const range2range = range2[1] - range2[0];
 	const fraction = (value - range1[0]) / range1range;
 	return fraction * range2range + range2[0];
-}
-
-/**
- * @param {number} min
- * @param {number} max
- */
-function uniform(min, max){ // random real in range
-	return seededRandom() * (max-min) + min;
 }
 
 /**
@@ -430,17 +402,17 @@ class System {
 /** @param {number} mass */
 function densityFromMass(mass){
 	if (2e26 < mass){
-		return uniform(600, 1400);
+		return Game.rng.uniform(600, 1400);
 	}
 	if (6e25 < mass){
-		return uniform(1200, 1700);
+		return Game.rng.uniform(1200, 1700);
 	}
-	return uniform(3900, 5600);
+	return Game.rng.uniform(3900, 5600);
 }
 
 /** @param {number} previousSMA */
 function nextSMA(previousSMA){
-	return previousSMA * uniform(1.38, 2.01);
+	return previousSMA * Game.rng.uniform(1.38, 2.01);
 }
 
 /** @param {number} mass in suns */
@@ -885,6 +857,32 @@ const Game = {
 			this.value = this.seed;
 			return Boolean(loaded);
 		},
+		/**
+		 * @param {number} min
+		 * @param {number} max
+		 */
+		randint(min, max){ // random integer in range
+			return Math.floor(this.uniform(min, max+1));
+		},
+		random(){
+			/* jshint bitwise: false */
+			const max31Bit = Math.pow(2, 31) - 1;
+			const max32Bit = Math.pow(2, 32) - 1;
+			let x = Game.rng.value;
+			x ^= x << 13;
+			x ^= x >> 17;
+			x ^= x << 5;
+			Game.rng.value = x;
+			Game.rng.i += 1;
+			return (Game.rng.value+max31Bit)/max32Bit;
+		},
+		/**
+		 * @param {number} min
+		 * @param {number} max
+		 */
+		uniform(min, max){ // random real in range
+			return this.random() * (max-min) + min;
+		},
 	},
 	settings: {
 		autosaveInterval: 1,
@@ -904,26 +902,26 @@ function generateBody(sma){
 	sma /= au;
 	let mass;
 	if (0.8 < sma && sma < 1.5){
-		mass = Math.pow(10, uniform(23.8, 25.2));
+		mass = Math.pow(10, Game.rng.uniform(23.8, 25.2));
 	}
 	else if (5 < sma && sma < 31){
-		mass = Math.pow(10, uniform(25.9, 28.3));
+		mass = Math.pow(10, Game.rng.uniform(25.9, 28.3));
 	}
 	else {
-		mass = 2*Math.pow(10, uniform(17, 27));
+		mass = 2*Math.pow(10, Game.rng.uniform(17, 27));
 	}
 	const density = densityFromMass(mass);
 	const radius = Math.pow(mass/(density*4/3*pi), 1/3);
-	const albedo = uniform(0.1, 0.7);
+	const albedo = Game.rng.uniform(0.1, 0.7);
 	return new Body(mass, radius, albedo);
 }
 
 /** @param {number} sma */
 function generateOrbit(sma){
 	const parent = sun;
-	const ecc = uniform(0, 0.21);
-	const aop = uniform(0, 2*pi);
-	const man = uniform(0, 2*pi);
+	const ecc = Game.rng.uniform(0, 0.21);
+	const aop = Game.rng.uniform(0, 2*pi);
+	const man = Game.rng.uniform(0, 2*pi);
 	return new Orbit(parent, sma, ecc, aop, man);
 }
 
@@ -931,7 +929,7 @@ function generateOrbit(sma){
 function generatePlanet(sma){
 	const planet = generateBody(sma);
 	planet.orbit = generateOrbit(sma);
-	planet.name = 'Sol-' + randint(100000, 999999);
+	planet.name = 'Sol-' + Game.rng.randint(100000, 999999);
 	return planet;
 }
 
@@ -940,7 +938,7 @@ function generateSystem(attempt = 0){
 		console.log(systemAttempt);
 		throw 'too many failed attempts... something is broken :(';
 	}
-	const numberOfPlanets = randint(7, 9);
+	const numberOfPlanets = Game.rng.randint(7, 9);
 	const startSMA = 0.39*au;
 	const SMAList = zeros(numberOfPlanets);
 	SMAList[0] = startSMA;
@@ -1106,7 +1104,7 @@ function updateEvents(){
 		if (0 <= Game.player.events.indexOf(j) || !e.condition()){
 			continue;
 		}
-		if (seededRandom() < Game.speed/e.mtth){
+		if (Game.rng.random() < Game.speed/e.mtth){
 			Game.player.events.push(j);
 		}
 	}
