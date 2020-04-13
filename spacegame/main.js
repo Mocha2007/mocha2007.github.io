@@ -1,12 +1,8 @@
 /* jshint esversion: 6, strict: true, forin: false, loopfunc: true, strict: global */
-/* exported importSave, downloadSave, createOrder, wipeMap, hardReset */
+/* exported importSave, downloadSave, wipeMap, hardReset */
 // begin basic block
 'use strict';
 
-function clone(object){
-	return JSON.parse(JSON.stringify(object));
-}
-function nop(){}
 function round(number, digits){
 	number *= Math.pow(10, digits);
 	number = Math.round(number);
@@ -472,63 +468,74 @@ const questList = [
 		],
 	},
 ];
-const orderList = [
-	{
-		'type': 'Assay',
-		'progressNeeded': 50,
-		'cost': {
-			'fuel': 10,
-		},
-		'shipCost': {
-			'surveyor': 1,
-		},
-		'consumption': { // per day
-			'water': 1,
-		},
-		onComplete(){
-			Game.player.resources.steel += 100;
-		},
-	},
-	{
-		'type': 'Convert Water to Fuel',
-		'progressNeeded': 50,
-		'cost': {},
-		'shipCost': {
-			'constructor': 1,
-		},
-		'consumption': {
-			'fuel': -1,
-			'water': 1,
-		},
-		'onComplete': nop,
-	},
-	{
-		'type': 'Mine Ice',
-		'progressNeeded': 50,
-		'cost': {
-			'fuel': 10,
-		},
-		'shipCost': {
-			'constructor': 1,
-		},
-		'consumption': {
-			'water': -1,
-		},
-		'onComplete': nop,
-	},
-];
-/*
-var sampleOrder = {
-	'type': 'survey',
-	'target': 2,
-	'progress': 12,
-	'progressNeeded': 46,
-	'consumption': { // per day
-		'water': 1
-	},
-	'onComplete': () => console.log("benis")
-};
-*/
+
+class Order {
+	/**
+	 * @param {string} type
+	 * @param {number} progressNeeded
+	 * @param {Object<string, number>} cost
+	 * @param {Object<string, number>} shipCost
+	 * @param {Object<string, number>} consumption
+	 */
+	constructor(type, progressNeeded, cost, shipCost, consumption, onComplete = () => undefined){
+		this.type = type;
+		this.progressNeeded = progressNeeded;
+		this.cost = cost;
+		this.shipCost = shipCost;
+		this.consumption = consumption;
+		this.onComplete = onComplete;
+	}
+	get affordable(){
+		// check resource costs
+		for (const resource in this.cost){
+			if (Game.player.resources[resource] < this.cost[resource]){
+				return false;
+			}
+		}
+		// check ship costs
+		for (const shipClass in this.shipCost){
+			if (!Game.player.navy.hasOwnProperty(shipClass) ||
+				Game.player.navy[shipClass] < this.shipCost[shipClass]){
+				return false;
+			}
+		}
+		return true;
+	}
+	get consumptionAfforable(){
+		for (const resource in this.consumption){
+			if (Game.player.resources[resource] < this.consumption[resource]){
+				return false;
+			}
+		}
+		return true;
+	}
+	get id(){
+		return Game.orders.indexOf(this);
+	}
+	static create(){
+		const orderID = getOrderID();
+		/** @type {Order} */
+		const order = Game.orders[orderID];
+		if (!order.affordable){
+			return;
+		}
+		// else, pay cost
+		for (const resource in order.cost){
+			Game.player.resources[resource] -= order.cost[resource];
+		}
+		for (const shipClass in order.shipCost){
+			Game.player.navy[shipClass] -= order.shipCost[shipClass];
+		}
+		// newOrder[''] = '<input type="submit" value="Cancel" onclick="deleteOrderById('+newOrder.id+')">';
+		Game.player.orders.push([Number(new Date()), orderID, getID(), 0]);
+	}
+	// CreatedOrder => Specific Order ID, Order Type ID, target, progress
+	/** @param {number} specificId */
+	static remove(specificId){
+		Game.player.orders = Game.player.orders.filter(
+			SpecificOrder => SpecificOrder[0] !== specificId);
+	}
+}
 
 function drawQuests(quest){
 	const id = questList.indexOf(quest);
@@ -564,83 +571,27 @@ function drawQuests(quest){
 	}
 }
 
-function canAffordOrder(order){
-	// check resource costs
-	for (const resource in order.cost){
-		if (Game.player.resources[resource] < order.cost[resource]){
-			return false;
-		}
-	}
-	// check ship costs
-	for (const shipClass in order.shipCost){
-		if (!Game.player.navy.hasOwnProperty(shipClass) ||
-			Game.player.navy[shipClass] < order.shipCost[shipClass]){
-			return false;
-		}
-	}
-	return true;
-}
-
-function createOrder(){
-	const orderID = getOrderID();
-	const order = orderList[orderID];
-	if (!canAffordOrder(order)){
-		return;
-	}
-	// else, pay cost
-	for (const resource in order.cost){
-		Game.player.resources[resource] -= order.cost[resource];
-	}
-	for (const shipClass in order.shipCost){
-		Game.player.navy[shipClass] -= order.shipCost[shipClass];
-	}
-	const newOrder = clone(orderList[orderID]);
-	newOrder.onComplete = orderList[orderID].onComplete; // trust me, this is indeed necessary
-	newOrder.progress = 0;
-	newOrder.target = getID();
-	newOrder.id = Number(new Date());
-	newOrder[''] = '<input type="submit" value="Cancel" onclick="deleteOrderById('+newOrder.id+')">';
-	Game.player.orders.push(newOrder);
-}
-
-/** @param {number} id */
-function deleteOrderById(id){
-	// console.log("Deleting order", id);
-	let order;
-	for (let i=0; i<Game.player.orders.length; i+=1){
-		if (Game.player.orders[i].id === id){
-			order = Game.player.orders.pop(i);
-			break;
-		}
-	}
-	// return ships
-	for (const shipClass in order.shipCost){
-		Game.player.navy[shipClass] += order.shipCost[shipClass];
-	}
-}
-
+/** @param {[number, number, number, number]} order */
 function drawOrder(order){
 	const orderElement = document.createElement('table');
 	for (const property in order){
-		if (0 <= ['progressNeeded', 'consumption', 'onComplete', 'cost', 'shipCost'].indexOf(property)){
-			continue;
-		}
+		const name = 'id type target progress'.split(' ')[property];
 		// create new row
 		const row = document.createElement('tr');
 		// create header col
 		const col1 = document.createElement('th');
-		col1.innerHTML = property;
+		col1.innerHTML = name;
 		row.appendChild(col1);
 		// create value col
 		const col2 = document.createElement('td');
-		if (property === 'progress'){
+		if (name === 'progress'){
 			// create progress element
 			const progressBar = document.createElement('progress');
-			progressBar.value = order.progress / order.progressNeeded;
+			progressBar.value = order[3] / Game.orders[order[1]].progressNeeded;
 			col2.appendChild(progressBar);
 			// annotation
 			const progressSpan = document.createElement('span');
-			progressSpan.innerHTML = order.progress + '/' + order.progressNeeded;
+			progressSpan.innerHTML = order[3] + '/' + Game.orders[order[1]].progressNeeded;
 			col2.appendChild(progressSpan);
 		}
 		else {
@@ -684,15 +635,6 @@ function drawEvent(event){
 	return eventElement;
 }
 
-function enoughResourcesToSupportOrder(order){
-	for (const resource in order.consumption){
-		if (Game.player.resources[resource] < order.consumption[resource]){
-			return false;
-		}
-	}
-	return true;
-}
-
 // end gameplay block
 // begin interface block
 const asciiEmoji = {
@@ -706,10 +648,10 @@ const selectionStyle = ['selected', 'selectedOld'];
 
 function createOrderTypeList(){
 	const selector = document.getElementById('input_order_type');
-	for (let i=0; i<orderList.length; i+=1){
+	for (let i=0; i<Game.orders.length; i+=1){
 		const option = document.createElement('option');
 		option.value = i;
-		option.innerHTML = orderList[i].type;
+		option.innerHTML = Game.orders[i].type;
 		selector.appendChild(option);
 	}
 }
@@ -773,6 +715,7 @@ function getID(){
 	return Number(document.getElementById('input_id').value);
 }
 
+/** general order type, not specific order */
 function getOrderID(){
 	return Number(document.getElementById('input_order_type').value);
 }
@@ -832,7 +775,32 @@ const Game = {
 			]
 		),
 	],
+	orders: [
+		new Order(
+			'Assay',
+			50,
+			{'fuel': 10},
+			{'surveyor': 1},
+			{'water': 1},
+			() => Game.player.resources.steel += 100
+		),
+		new Order(
+			'Convert Water to Fuel',
+			50,
+			{},
+			{'constructor': 1},
+			{'fuel': -1, 'water': 1}
+		),
+		new Order(
+			'Mine Ice',
+			50,
+			{'fuel': 10},
+			{'constructor': 1},
+			{'water': -1}
+		),
+	],
 	player: {
+		/** @type {number[]} */
 		quests: [],
 		/** @type {number[]} */
 		events: [],
@@ -1125,24 +1093,26 @@ function updateOrders(){
 		// check if conditions are fulfilled
 		// if done, finish order and delete it
 		const thisOrder = Game.player.orders[i];
-		if (thisOrder.progress >= thisOrder.progressNeeded){
+		/** @type {Order} */
+		const orderType = Game.orders[thisOrder[1]];
+		if (thisOrder[3] >= orderType.progressNeeded){
 			// give bonus
-			thisOrder.onComplete();
+			orderType.onComplete();
 			// return ships
 			// delete it
-			deleteOrderById(thisOrder.id);
+			Order.remove(thisOrder[0]);
 		}
 		// if enough resources to continue, continue
-		else if (enoughResourcesToSupportOrder(thisOrder)){
-			for (const resource in thisOrder.consumption){
-				Game.player.resources[resource] -= thisOrder.consumption[resource];
+		else if (orderType.consumptionAfforable){
+			for (const resource in orderType.consumption){
+				Game.player.resources[resource] -= orderType.consumption[resource];
 			}
-			thisOrder.progress += 1;
+			thisOrder[3] += 1;
 		}
 	}
 	// update selection
 	document.getElementById('orderSelectionID').innerHTML = getID();
-	const order = orderList[getOrderID()];
+	const order = Game.orders[getOrderID()];
 	const shipTable = document.getElementById('shipTable');
 	shipTable.innerHTML = '';
 	for (const shipClass in order.shipCost){
@@ -1156,8 +1126,8 @@ function updateOrders(){
 		shipTable.appendChild(row);
 	}
 	// update "can afford?"
-	document.getElementById('orderAffordable').innerHTML = 'Can' + (canAffordOrder(order) ? '': '&rsquo;t') + ' afford';
-	document.getElementById('orderAffordable').classList = canAffordOrder(order) ? 'green' : 'red';
+	document.getElementById('orderAffordable').innerHTML = 'Can' + (order.affordable ? '': '&rsquo;t') + ' afford';
+	document.getElementById('orderAffordable').classList = order.affordable ? 'green' : 'red';
 }
 
 function updateQuests(){

@@ -75,7 +75,7 @@
 			Target: <span id="orderSelectionID"></span><br>
 			Ships Required: <table id="shipTable"></table>
 			<span id="orderAffordable"></span><br>
-			<input type="submit" value="Create Order" onclick="createOrder();">
+			<input type="submit" value="Create Order" onclick="Order.create();">
 			<hr>
 			<input type="submit" value="Cancel" onclick="Game.player.orders.pop(Number(document.getElementById('input_order_id')));">
 			<input id="input_order_id" type="number" min="0" value="0">
