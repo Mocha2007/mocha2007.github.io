@@ -2,9 +2,7 @@
 /* exported importSave, downloadSave, createOrder, wipeMap, hardReset */
 // begin basic block
 'use strict';
-function alwaysTrue(){
-	return true;
-}
+
 function clone(object){
 	return JSON.parse(JSON.stringify(object));
 }
@@ -433,7 +431,7 @@ class GameEvent {
 	 * @param {string} desc
 	 * @param {number} mtth
 	 */
-	constructor(title, desc, mtth, condition = alwaysTrue, options = [{text: 'OK', onClick: nop}]){
+	constructor(title, desc, mtth, condition = () => true, options = [{text: 'OK', onClick: nop}]){
 		this.title = title;
 		this.desc = desc;
 		this.mtth = mtth;
