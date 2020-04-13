@@ -411,7 +411,7 @@ function nextSMA(previousSMA){
 
 /** @param {number} mass in suns */
 function starGen(mass = 1){
-	const luminosity = 0.45 < mass ? 1.148*Math.pow(mass, 3.4751) : .2264*Math.pow(mass, 2.52);
+	const luminosity = 0.45 < mass ? 1.148*Math.pow(mass, 3.4751) : 0.2264*Math.pow(mass, 2.52);
 	return new Star(mass, Math.pow(mass, 0.96), 'Star', luminosity, 5772*Math.pow(mass, 0.54));
 }
 
@@ -420,6 +420,13 @@ const earth = new Body(5.97237e24, 6371000, 0.306, new Orbit(sun, 1.49598023e11,
 
 // end astro block
 // begin gameplay block
+
+class GameEventOption {
+	constructor(text = 'OK', onClick = () => undefined){
+		this.text = text;
+		this.onClick = onClick;
+	}
+}
 
 class GameEvent {
 	/**
@@ -439,13 +446,6 @@ class GameEvent {
 	}
 	remove(){
 		Game.player.events = Game.player.events.filter(id => id !== this.id);
-	}
-}
-
-class GameEventOption {
-	constructor(text = 'OK', onClick = () => undefined){
-		this.text = text;
-		this.onClick = onClick;
 	}
 }
 
@@ -910,7 +910,6 @@ function generatePlanet(sma){
 
 function generateSystem(attempt = 0){
 	if (attempt >= 100){
-		console.log(systemAttempt);
 		throw 'too many failed attempts... something is broken :(';
 	}
 	const numberOfPlanets = Game.rng.randint(7, 9);
