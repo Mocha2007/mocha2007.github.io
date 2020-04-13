@@ -449,26 +449,6 @@ class GameEvent {
 	}
 }
 
-const questList = [
-	{
-		'title': 'Select World',
-		'desc': 'Select a world to colonize. An ideal world is one with (in order of importance):<ol><li>temperature around -18&deg;C</li><li>mass within a factor of two of Earth\'s</li><li>near bodies which could be exploited in the future</li></ol><center class=\'red\'>(WARNING: cannot be undone!)<br><input id=\'world_selector\' type=\'submit\' value=\'Confirm Selection\' onclick=\'Game.player.colonyID=getID();\'></center><br>Reward: 1 Constructor',
-		'conditions': [() => 0 <= Game.player.colonyID],
-		'requirements': [
-			// () => true
-		],
-		'results': [
-			() => {
-				// remove button
-				const node = document.getElementById('world_selector');
-				node.parentNode.removeChild(node);
-				// add constructor
-				modifyNavy('constructor', 1);
-			},
-		],
-	},
-];
-
 class Order {
 	/**
 	 * @param {string} type
@@ -536,8 +516,24 @@ class Order {
 	}
 }
 
+class Quest {
+	/**
+	 * @param {string} title
+	 * @param {Array<() => boolean>} conditions required to display
+	 * @param {Array<() => boolean>} requirements required to execute
+	 * @param {Array<() => void>} results
+	 */
+	constructor(title, desc = '', conditions = [], requirements = [], results = []){
+		this.title = title;
+		this.desc = desc;
+		this.conditions = conditions;
+		this.requirements = requirements;
+		this.results = results;
+	}
+}
+
 function drawQuests(quest){
-	const id = questList.indexOf(quest);
+	const id = Game.quests.indexOf(quest);
 	if (document.getElementById('quest'+id)){
 		// update
 		if (quest.complete && !quest.elementUpdated){
@@ -802,6 +798,7 @@ const Game = {
 		),
 	],
 	player: {
+		colonyID: -1,
 		/** @type {number[]} */
 		quests: [],
 		/** @type {number[]} */
@@ -816,6 +813,23 @@ const Game = {
 		},
 		orders: [],
 	},
+	quests: [
+		new Quest(
+			'Select World',
+			'Select a world to colonize. An ideal world is one with (in order of importance):<ol><li>temperature around -18&deg;C</li><li>mass within a factor of two of Earth\'s</li><li>near bodies which could be exploited in the future</li></ol><center class=\'red\'>(WARNING: cannot be undone!)<br><input id=\'world_selector\' type=\'submit\' value=\'Confirm Selection\' onclick=\'Game.player.colonyID=getID();\'></center><br>Reward: 1 Constructor',
+			undefined, // Q0COND
+			undefined,
+			[
+				() => {
+					// remove button
+					const node = document.getElementById('world_selector');
+					node.parentNode.removeChild(node);
+					// add constructor
+					modifyNavy('constructor', 1);
+				},
+			]
+		),
+	],
 	rng: {
 		i: 0,
 		seed: Number(new Date()),
@@ -870,7 +884,13 @@ const Game = {
 	system: undefined,
 	systemHeight: 3*au,
 	time: 0,
+	// methods
+	get playerHasColony(){
+		return 0 <= this.player.colonyID;
+	}
 };
+// Q0COND
+Game.quests[0].conditions = [() => Game.playerHasColony];
 
 /** @param {number} sma */
 function generateBody(sma){
@@ -924,7 +944,7 @@ function generateSystem(attempt = 0){
 }
 
 function getQuestsFromIds(){
-	return Game.player.quests.map(x => questList[x]);
+	return Game.player.quests.map(x => Game.quests[x]);
 }
 
 function main(){
@@ -1134,8 +1154,8 @@ function updateQuests(){
 	// display/update current quests
 	getQuestsFromIds(Game.player.quests).map(drawQuests);
 	// see if new quests apply
-	for (let i=0; i<questList.length; i+=1){
-		const quest = questList[i];
+	for (let i=0; i<Game.quests.length; i+=1){
+		const quest = Game.quests[i];
 		if (Game.player.quests.indexOf(i) >= 0){
 			continue;
 		}
