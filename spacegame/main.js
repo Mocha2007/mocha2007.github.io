@@ -868,13 +868,13 @@ const Game = {
 			/* jshint bitwise: false */
 			const max31Bit = Math.pow(2, 31) - 1;
 			const max32Bit = Math.pow(2, 32) - 1;
-			let x = Game.rng.value;
+			let x = this.value;
 			x ^= x << 13;
 			x ^= x >> 17;
 			x ^= x << 5;
-			Game.rng.value = x;
-			Game.rng.i += 1;
-			return (Game.rng.value+max31Bit)/max32Bit;
+			this.value = x;
+			this.i += 1;
+			return (this.value+max31Bit)/max32Bit;
 		},
 		/**
 		 * @param {number} min
