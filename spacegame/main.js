@@ -426,24 +426,25 @@ const earth = new Body(5.97237e24, 6371000, 0.306, new Orbit(sun, 1.49598023e11,
 
 // end astro block
 // begin gameplay block
-const eventList = [
-	{
-		'title': 'Comet Sighted',
-		'desc': 'A comet was sighted. Ouf. Prepare for revolts...?',
-		'condition': alwaysTrue,
-		'mtth': year,
-		'options': [
-			{
-				'text': 'Neat.',
-				'onClick': nop,
-			},
-			{
-				'text': 'Meh.',
-				'onClick': nop,
-			},
-		],
-	},
-];
+
+class GameEvent {
+	/**
+	 * @param {string} title
+	 * @param {string} desc
+	 * @param {number} mtth
+	 */
+	constructor(title, desc, mtth, condition = alwaysTrue, options = [{text: 'OK', onClick: nop}]){
+		this.title = title;
+		this.desc = desc;
+		this.mtth = mtth;
+		this.condition = condition;
+		this.options = options;
+	}
+	get id(){
+		return Game.events.indexOf(this);
+	}
+}
+
 const questList = [
 	{
 		'title': 'Select World',
@@ -676,8 +677,8 @@ function drawEvent(event){
 }
 
 function getEventID(event){
-	for (let i=0; i<eventList.length; i+=1){
-		if (event === eventList[i]){
+	for (let i=0; i<Game.events.length; i+=1){
+		if (event === Game.events[i]){
 			return i;
 		}
 	}
@@ -828,6 +829,24 @@ const Game = {
 	debug: {
 		loaded: false,
 	},
+	events: [
+		new GameEvent(
+			'Comet Sighted',
+			'A comet was sighted. Ouf. Prepare for revolts...?',
+			year,
+			undefined,
+			[
+				{
+					'text': 'Neat.',
+					'onClick': nop,
+				},
+				{
+					'text': 'Meh.',
+					'onClick': nop,
+				},
+			]
+		),
+	],
 	player: {
 		quests: [],
 		events: [],
@@ -1090,7 +1109,7 @@ function updateEvents(){
 		const id = 'event'+Game.player.events[i];
 		if (!document.getElementById(id)){
 			const itemElement = document.createElement('li');
-			itemElement.appendChild(drawEvent(eventList[Game.player.events[i]]));
+			itemElement.appendChild(drawEvent(Game.events[Game.player.events[i]]));
 			itemElement.id = id;
 			eventListElement.appendChild(itemElement);
 		}
@@ -1099,15 +1118,14 @@ function updateEvents(){
 	if (Game.paused){
 		return;
 	}
-	for (let j=0; j<eventList.length; j+=1){
-		const e = eventList[j];
+	Game.events.forEach((e, j) => {
 		if (0 <= Game.player.events.indexOf(j) || !e.condition()){
-			continue;
+			return;
 		}
 		if (Game.rng.random() < Game.speed/e.mtth){
 			Game.player.events.push(j);
 		}
-	}
+	});
 }
 
 function updateOrders(){
