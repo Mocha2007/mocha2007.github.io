@@ -431,7 +431,7 @@ class GameEvent {
 	 * @param {string} desc
 	 * @param {number} mtth
 	 */
-	constructor(title, desc, mtth, condition = () => true, options = [{text: 'OK', onClick: nop}]){
+	constructor(title, desc, mtth, condition = () => true, options = [new GameEventOption()]){
 		this.title = title;
 		this.desc = desc;
 		this.mtth = mtth;
@@ -440,6 +440,16 @@ class GameEvent {
 	}
 	get id(){
 		return Game.events.indexOf(this);
+	}
+	remove(){
+		Game.player.events = Game.player.events.filter(id => id !== this.id);
+	}
+}
+
+class GameEventOption {
+	constructor(text = 'OK', onClick = () => undefined){
+		this.text = text;
+		this.onClick = onClick;
 	}
 }
 
@@ -663,25 +673,15 @@ function drawEvent(event){
 		optionButton.value = event.options[i].text;
 		optionButton.onclick = () => {
 			event.options[i].onClick();
-			removeEvent(event.id);
+			event.remove();
 			const eventNode = document.getElementById('event'+event.id);
 			eventNode.parentNode.removeChild(eventNode);
 		};
-		// console.log(event.options[i].onClick);
 		option.appendChild(optionButton);
 		optionList.appendChild(option);
 	}
 	eventElement.appendChild(optionList);
 	return eventElement;
-}
-
-/** @param {number} id */
-function removeEvent(id){
-	for (let i=0; i<Game.player.events.length; i+=1){
-		if (id === Game.player.events[i]){
-			return Game.player.events.pop(i);
-		}
-	}
 }
 
 function enoughResourcesToSupportOrder(order){
@@ -827,19 +827,14 @@ const Game = {
 			year,
 			undefined,
 			[
-				{
-					'text': 'Neat.',
-					'onClick': nop,
-				},
-				{
-					'text': 'Meh.',
-					'onClick': nop,
-				},
+				new GameEventOption('Neat.'),
+				new GameEventOption('Meh.'),
 			]
 		),
 	],
 	player: {
 		quests: [],
+		/** @type {number[]} */
 		events: [],
 		resources: {
 			water: 1000,
