@@ -526,7 +526,6 @@ class Order {
 		for (const shipClass in order.shipCost){
 			Game.player.navy[shipClass] -= order.shipCost[shipClass];
 		}
-		// newOrder[''] = '<input type="submit" value="Cancel" onclick="deleteOrderById('+newOrder.id+')">';
 		Game.player.orders.push([Number(new Date()), orderID, getID(), 0]);
 	}
 	// CreatedOrder => Specific Order ID, Order Type ID, target, progress
@@ -574,8 +573,8 @@ function drawQuests(quest){
 /** @param {[number, number, number, number]} order */
 function drawOrder(order){
 	const orderElement = document.createElement('table');
-	for (const property in order){
-		const name = 'id type target progress'.split(' ')[property];
+	for (const property in order.concat(-1)){
+		const name = 'id type target progress '.split(' ')[property];
 		// create new row
 		const row = document.createElement('tr');
 		// create header col
@@ -593,6 +592,10 @@ function drawOrder(order){
 			const progressSpan = document.createElement('span');
 			progressSpan.innerHTML = order[3] + '/' + Game.orders[order[1]].progressNeeded;
 			col2.appendChild(progressSpan);
+		}
+		else if (name === ''){
+			col1.innerHTML = '';
+			col2.innerHTML = '<input type="submit" value="Cancel" onclick="Order.remove('+order[0]+')">';
 		}
 		else {
 			col2.innerHTML = order[property];
