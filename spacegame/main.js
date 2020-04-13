@@ -651,12 +651,12 @@ const selectionStyle = ['selected', 'selectedOld'];
 
 function createOrderTypeList(){
 	const selector = document.getElementById('input_order_type');
-	for (let i=0; i<Game.orders.length; i+=1){
+	Game.orders.forEach((o, i) => {
 		const option = document.createElement('option');
 		option.value = i;
-		option.innerHTML = Game.orders[i].type;
+		option.innerHTML = o.type;
 		selector.appendChild(option);
-	}
+	});
 }
 
 /** @param {Body} planet */
