@@ -1059,15 +1059,15 @@ function updateNavy(){
 function updateEvents(){
 	// relist events
 	const eventListElement = document.getElementById('eventlist');
-	for (let i=0; i<Game.player.events.length; i+=1){
-		const id = 'event'+Game.player.events[i];
+	Game.player.events.forEach(e => {
+		const id = 'event'+e;
 		if (!document.getElementById(id)){
 			const itemElement = document.createElement('li');
-			itemElement.appendChild(drawEvent(Game.events[Game.player.events[i]]));
+			itemElement.appendChild(drawEvent(Game.events[e]));
 			itemElement.id = id;
 			eventListElement.appendChild(itemElement);
 		}
-	}
+	});
 	// check if new events apply
 	if (Game.paused){
 		return;
