@@ -645,6 +645,7 @@ function drawOrder(order){
 	return orderElement;
 }
 
+/** @param {GameEvent} event */
 function drawEvent(event){
 	const eventElement = document.createElement('div');
 	// title
@@ -664,8 +665,8 @@ function drawEvent(event){
 		optionButton.value = event.options[i].text;
 		optionButton.onclick = () => {
 			event.options[i].onClick();
-			removeEvent(getEventID(event));
-			const eventNode = document.getElementById('event'+getEventID(event));
+			removeEvent(event.id);
+			const eventNode = document.getElementById('event'+event.id);
 			eventNode.parentNode.removeChild(eventNode);
 		};
 		// console.log(event.options[i].onClick);
@@ -674,14 +675,6 @@ function drawEvent(event){
 	}
 	eventElement.appendChild(optionList);
 	return eventElement;
-}
-
-function getEventID(event){
-	for (let i=0; i<Game.events.length; i+=1){
-		if (event === Game.events[i]){
-			return i;
-		}
-	}
 }
 
 /** @param {number} id */
