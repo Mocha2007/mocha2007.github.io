@@ -81,14 +81,27 @@ function downloadSave(){
 // begin math block
 const pi = Math.PI;
 
+/**
+ * @param {number} n
+ * @param {number} m
+ */
 function mod(n, m){
 	return (n%m+m)%m;
 }
 
+/**
+ * @param {number} min
+ * @param {number} max
+ */
 function randint(min, max){ // random integer in range
 	return Math.floor(uniform(min, max+1));
 }
 
+/**
+ * @param {number} value
+ * @param {[number, number]} range1
+ * @param {[number, number]} range2
+ */
 function remap(value, range1, range2){
 	const range1range = range1[1] - range1[0];
 	const range2range = range2[1] - range2[0];
@@ -96,6 +109,10 @@ function remap(value, range1, range2){
 	return fraction * range2range + range2[0];
 }
 
+/**
+ * @param {number} min
+ * @param {number} max
+ */
 function uniform(min, max){ // random real in range
 	return seededRandom() * (max-min) + min;
 }
@@ -174,6 +191,13 @@ const specialUnits = {
 };
 
 class Body {
+	/**
+	 * @param {number} mass
+	 * @param {number} radius
+	 * @param {number} albedo
+	 * @param {Orbit} orbit
+	 * @param {string} name
+	 */
 	constructor(mass, radius, albedo, orbit, name){
 		this.mass = mass;
 		this.radius = radius;
@@ -214,6 +238,7 @@ class Body {
 		return Math.pow(esi1, 0.57/4) * Math.pow(esi2, 1.07/4) *
 			Math.pow(esi3, 0.7/4) * Math.pow(esi4, 5.58/4);
 	}
+	/** @return {HTMLDivElement} */
 	get getElement(){
 		return document.getElementById(this.name);
 	}
@@ -259,6 +284,7 @@ class Body {
 	get temp(){
 		return this.tempAt(this.orbit.sma);
 	}
+	/** @param {number} dist */
 	tempAt(dist){
 		return this.orbit.parent.temperature * Math.pow(1-this.albedo, 0.25) *
 			Math.pow(this.orbit.parent.radius/2/dist, 0.5);
@@ -288,6 +314,13 @@ class Body {
 }
 
 class Orbit {
+	/**
+	 * @param {Body} parent
+	 * @param {number} sma
+	 * @param {number} ecc
+	 * @param {number} aop
+	 * @param {number} man
+	 */
 	constructor(parent, sma, ecc, aop, man){
 		this.parent = parent;
 		this.sma = sma;
@@ -299,12 +332,14 @@ class Orbit {
 	get apoapsis(){
 		return (1+this.ecc)*this.sma;
 	}
+	/** @param {number} t */
 	cartesian(t){
 		const E = this.eccentricAnomaly(t);
 		const nu = this.trueAnomaly(t);
 		const rC = this.sma*(1-this.ecc*Math.cos(E));
 		return [rC*Math.cos(nu), rC*Math.sin(nu)];
 	}
+	/** @param {number} t */
 	eccentricAnomaly(t){
 		const tol = 1e-10;
 		const M = mod(this.man + 2*pi*t/this.period, 2*pi);
@@ -362,6 +397,7 @@ class Orbit {
 	get period(){
 		return 2*pi*Math.pow(Math.pow(this.sma, 3)/this.parent.mu, 0.5);
 	}
+	/** @param {number} t */
 	trueAnomaly(t){
 		const E = this.eccentricAnomaly(t);
 		const e = this.ecc;
@@ -371,6 +407,13 @@ class Orbit {
 }
 
 class Star extends Body {
+	/**
+	 * @param {number} mass
+	 * @param {number} radius
+	 * @param {string} name
+	 * @param {number} luminosity
+	 * @param {number} temperature
+	 */
 	constructor(mass, radius, name, luminosity, temperature){
 		super(mass, radius, undefined, undefined, name);
 		this.luminosity = luminosity;
@@ -379,6 +422,10 @@ class Star extends Body {
 }
 
 class System {
+	/**
+	 * @param {Body} primary
+	 * @param {Body[]} secondaries
+	 */
 	constructor(primary, secondaries){
 		this.primary = primary;
 		this.secondaries = secondaries;
@@ -386,15 +433,16 @@ class System {
 	get maxOrbitRadius(){
 		let maximum = 0;
 		let currentApoapsis;
-		for (let i=0; i<this.secondaries.length; i+=1){
-			if (maximum < (currentApoapsis = this.secondaries[i].orbit.apoapsis)){
+		this.secondaries.forEach(s => {
+			if (maximum < (currentApoapsis = s.orbit.apoapsis)){
 				maximum = currentApoapsis;
 			}
-		}
+		});
 		return maximum;
 	}
 }
 
+/** @param {number} mass */
 function densityFromMass(mass){
 	if (2e26 < mass){
 		return uniform(600, 1400);
@@ -405,6 +453,7 @@ function densityFromMass(mass){
 	return uniform(3900, 5600);
 }
 
+/** @param {number} previousSMA */
 function nextSMA(previousSMA){
 	return previousSMA * uniform(1.38, 2.01);
 }
@@ -542,6 +591,7 @@ function drawQuests(quest){
 		document.getElementById('quests').appendChild(questElement);
 	}
 }
+
 function canAffordOrder(order){
 	// check resource costs
 	for (const resource in order.cost){
@@ -558,6 +608,7 @@ function canAffordOrder(order){
 	}
 	return true;
 }
+
 function createOrder(){
 	const orderID = getOrderID();
 	const order = orderList[orderID];
@@ -579,6 +630,8 @@ function createOrder(){
 	newOrder[''] = '<input type="submit" value="Cancel" onclick="deleteOrderById('+newOrder.id+')">';
 	Game.player.orders.push(newOrder);
 }
+
+/** @param {number} id */
 function deleteOrderById(id){
 	// console.log("Deleting order", id);
 	let order;
@@ -593,6 +646,7 @@ function deleteOrderById(id){
 		Game.player.navy[shipClass] += order.shipCost[shipClass];
 	}
 }
+
 function drawOrder(order){
 	const orderElement = document.createElement('table');
 	for (const property in order){
@@ -626,6 +680,7 @@ function drawOrder(order){
 	}
 	return orderElement;
 }
+
 function drawEvent(event){
 	const eventElement = document.createElement('div');
 	// title
@@ -656,6 +711,7 @@ function drawEvent(event){
 	eventElement.appendChild(optionList);
 	return eventElement;
 }
+
 function getEventID(event){
 	for (let i=0; i<eventList.length; i+=1){
 		if (event === eventList[i]){
@@ -663,6 +719,8 @@ function getEventID(event){
 		}
 	}
 }
+
+/** @param {number} id */
 function removeEvent(id){
 	for (let i=0; i<Game.player.events.length; i+=1){
 		if (id === Game.player.events[i]){
@@ -670,6 +728,7 @@ function removeEvent(id){
 		}
 	}
 }
+
 function enoughResourcesToSupportOrder(order){
 	for (const resource in order.consumption){
 		if (Game.player.resources[resource] < order.consumption[resource]){
@@ -700,6 +759,7 @@ function createOrderTypeList(){
 	}
 }
 
+/** @param {Body} planet */
 function drawPlanet(planet){
 	let planetIcon = document.getElementById(planet.name);
 	if (planetIcon === null){
@@ -762,6 +822,10 @@ function getOrderID(){
 	return Number(document.getElementById('input_order_type').value);
 }
 
+/**
+ * @param {Body} planet
+ * @return {[number, number]}
+*/
 function getPlanetCoods(planet){
 	const absCoords = planet.orbit.cartesian(Game.time);
 	const x = remap(absCoords[0], [-Game.systemWidth, Game.systemWidth], [0, window.innerWidth]);
@@ -769,6 +833,10 @@ function getPlanetCoods(planet){
 	return [x, y];
 }
 
+/**
+ * @param {string} shipClass
+ * @param {number} count
+*/
 function modifyNavy(shipClass, count){
 	if (!Game.player.navy.hasOwnProperty(shipClass)){
 		Game.player.navy[shipClass] = count;
@@ -778,6 +846,7 @@ function modifyNavy(shipClass, count){
 	}
 }
 
+/** @param {string} id */
 function selectTab(id){
 	const children = document.getElementById('rightdocs').children;
 	for (let i=0; i<children.length; i+=1){
@@ -794,6 +863,7 @@ function wipeMap(){
 // begin main program
 const Game = {};
 
+/** @param {number} sma */
 function generateBody(sma){
 	sma /= au;
 	let mass;
@@ -812,6 +882,7 @@ function generateBody(sma){
 	return new Body(mass, radius, albedo);
 }
 
+/** @param {number} sma */
 function generateOrbit(sma){
 	const parent = sun;
 	const ecc = uniform(0, 0.21);
@@ -820,6 +891,7 @@ function generateOrbit(sma){
 	return new Orbit(parent, sma, ecc, aop, man);
 }
 
+/** @param {number} sma */
 function generatePlanet(sma){
 	const planet = generateBody(sma);
 	planet.orbit = generateOrbit(sma);
@@ -827,6 +899,7 @@ function generatePlanet(sma){
 	return planet;
 }
 
+/** @param {number} attempt */
 function generateSystem(attempt){
 	if (attempt >= 100){
 		console.log(systemAttempt);
@@ -954,6 +1027,7 @@ function redrawMap(){
 	}
 }
 
+/** @param {boolean} isManual */
 function saveGame(isManual){
 	// store cookie https://www.w3schools.com/js/js_cookies.asp
 	writeCookie('settings', Game.settings);
@@ -965,6 +1039,7 @@ function saveGame(isManual){
 	}
 }
 
+/** @param {number} id */
 function setBody(id){
 	document.getElementById('input_id').value = id;
 }
