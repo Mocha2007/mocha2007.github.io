@@ -3,27 +3,40 @@
 // begin basic block
 'use strict';
 
+/** @param {number} number */
 function round(number, digits = 0){
 	number *= Math.pow(10, digits);
 	number = Math.round(number);
 	number /= Math.pow(10, digits);
 	return number;
 }
+/** @param {string} name */
 function deleteCookie(name){
 	document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
 }
-function readCookie(name){ // https://stackoverflow.com/a/11344672/2579798
+/** https://stackoverflow.com/a/11344672/2579798
+ * @param {string} name
+*/
+function readCookie(name){
 	let result = document.cookie.match(new RegExp(name + '=([^;]+)'));
 	if (result){
 		result = JSON.parse(result[1]);
 	}
 	return result;
 }
-function writeCookie(name, value){ // https://stackoverflow.com/a/11344672/2579798
+/** https://stackoverflow.com/a/11344672/2579798
+ * @param {string} name
+*/
+function writeCookie(name, value){
 	const cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
 	document.cookie = cookie;
 }
-function download(content, fileName, contentType){ // https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file/34156339#34156339
+/** https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file/34156339#34156339
+ * @param {string} content
+ * @param {string} fileName
+ * @param {string} contentType
+*/
+function download(content, fileName, contentType){
 	const a = document.createElement('a');
 	const file = new Blob([content], {type: contentType});
 	a.href = URL.createObjectURL(file);
@@ -529,9 +542,11 @@ class Quest {
 		this.conditions = conditions;
 		this.requirements = requirements;
 		this.results = results;
+		this.complete = false;
 	}
 }
 
+/** @param {Quest} quest */
 function drawQuests(quest){
 	const id = Game.quests.indexOf(quest);
 	if (document.getElementById('quest'+id)){
@@ -1000,7 +1015,7 @@ function redrawInterface(){
 	updateEvents();
 	// save
 	if (minute < new Date() - Game.debug.lastSave){
-		saveGame(false);
+		saveGame();
 	}
 }
 
@@ -1027,8 +1042,7 @@ function redrawMap(){
 	}
 }
 
-/** @param {boolean} isManual */
-function saveGame(isManual){
+function saveGame(isManual = false){
 	// store cookie https://www.w3schools.com/js/js_cookies.asp
 	writeCookie('settings', Game.settings);
 	writeCookie('player', Game.player);
@@ -1173,6 +1187,7 @@ function updateQuests(){
 	getQuestsFromIds(Game.player.quests).map(updateQuestCompletion);
 }
 
+/** @param {Quest} quest */
 function updateQuestCompletion(quest){
 	if (quest.complete){
 		return;
