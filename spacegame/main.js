@@ -601,8 +601,14 @@ class Star extends Body {
 	set radius(_){}
 	get temperature(){
 		let c = 1;
-		if (this.lifespanFraction < 1){
+		if (this.lifespanFraction < 0.6){
 			c = 0.979 * Math.exp(0.0543 * this.lifespanFraction);
+		}
+		else if (this.lifespanFraction < 0.9){
+			c = 1.09 * Math.exp(-0.124 * this.lifespanFraction);
+		}
+		else if (this.lifespanFraction < 1){
+			c = 7.89 * Math.exp(-2.34 * this.lifespanFraction);
 		}
 		else { // white dwarf
 			const x = (this.age - this.lifespan)/(1e6*year); // time since death, Myr
@@ -617,7 +623,7 @@ class Star extends Body {
 		return Game.rng.uniform(15.5e6*year, Math.min(universeAge, s.lifespan));
 	}
 	static debug(){
-		setInterval(() => console.log(Game.system.primary.lifespanFraction), 1000);
+		setInterval(() => console.log(Game.system.primary.lifespanFraction, Game.system.primary.temperature), 1000);
 	}
 	/** @param {number} mass in suns */
 	static gen(mass = this.massGen()){
