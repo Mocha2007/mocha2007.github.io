@@ -16,7 +16,6 @@ function round(number, digits = 0){
  * @param {string} fileName
  * @param {string} contentType
 */
-
 function download(content, fileName, contentType){
 	const a = document.createElement('a');
 	const file = new Blob([content], {type: contentType});
