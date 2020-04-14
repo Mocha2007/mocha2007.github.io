@@ -1,5 +1,5 @@
 /* jshint esversion: 6, strict: true, forin: false, loopfunc: true, strict: global */
-/* exported importSave, downloadSave, wipeMap, hardReset */
+/* exported importSave, downloadSave, wipeMap */
 // begin basic block
 'use strict';
 
@@ -1005,6 +1005,12 @@ const Game = {
 			]
 		),
 	],
+	reset(){
+		console.warn('Hard Reset!');
+		deleteCookie('seed');
+		deleteCookie('player');
+		location.reload();
+	},
 	rng: {
 		i: 0,
 		seed: Number(new Date()),
@@ -1107,12 +1113,6 @@ function gameTick(){
 	Game.time += Game.paused ? 0 : Game.speed/Game.settings.fps;
 }
 
-function hardReset(){
-	console.warn('Hard Reset!');
-	deleteCookie('seed');
-	deleteCookie('player');
-	location.reload();
-}
 function redrawInterface(){
 	// update quests
 	Quest.update();
