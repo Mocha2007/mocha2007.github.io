@@ -35,6 +35,10 @@ function createSvgElement(name = 'svg'){
 // begin math block
 const pi = Math.PI;
 
+function linspace(from = 0, to = 1, points = 1){
+	return new Array(points).fill(0).map((_, i) => i/points * (to-from) + from);
+}
+
 /**
  * @param {number} n
  * @param {number} m
@@ -66,6 +70,7 @@ const universeAge = 13.799e9 * year;
 
 const au = 149597870700;
 const gravConstant = 6.674e-11;
+const L_0 = 3.0128e28; // W; exact; zero point luminosity
 const visibleProperties = [
 	'name',
 	'classification',
@@ -535,8 +540,14 @@ class Star extends Body {
 		this.temperature_ = temperature;
 		this.age_ = age;
 	}
+	get absMag(){
+		return -2.5 * Math.log10(this.luminosity / L_0);
+	}
 	get age(){
 		return this.age_ + Game.time;
+	}
+	get class(){
+		return this.spectralType + this.luminosityClass;
 	}
 	get color(){ // todo
 		// partially from http://www.vendian.org/mncharity/dir3/blackbody/
@@ -556,6 +567,15 @@ class Star extends Body {
 		];
 		const i = Math.min(10, round(this.temperature/1000));
 		return colors[i];
+	}
+	get info(){
+		return `${this.name}
+
+Class: ${this.class}
+Mass: ${round(this.mass/sun.mass, 2)} M_sun
+Temperature: ${round(this.temperature).toLocaleString()} K
+Abs Mag: ${round(this.absMag, 2)}
+Age: ${round(this.age/(1e6*year)).toLocaleString()} Myr`; // todo
 	}
 	/** @return lifespan in seconds */
 	get lifespan(){
@@ -588,6 +608,21 @@ class Star extends Body {
 	get lifespanFraction(){
 		return this.age / this.lifespan;
 	}
+	get luminosityClass(){
+		if (1 < this.lifespanFraction){
+			// https://en.wikipedia.org/wiki/White_dwarf
+			return 'VII';
+		}
+		if (11777 / 12474 < this.lifespanFraction){ // appx.
+			// https://en.wikipedia.org/wiki/Giant_star
+			return 'III';
+		}
+		if (10521 / 12474 < this.lifespanFraction){ // appx.
+			// https://en.wikipedia.org/wiki/Subgiant
+			return 'IV';
+		}
+		return 'V';
+	}
 	get radius(){
 		let c = 1;
 		let w = 0;
@@ -611,6 +646,26 @@ class Star extends Body {
 		return this.radius_ * (c + w);
 	}
 	set radius(_){}
+	get spectralType(){
+		/** @type {[string, number][]} */
+		const classes = [
+			['O', 30000],
+			['B', 10000],
+			['A', 7500],
+			['F', 6000],
+			['G', 5200],
+			['K', 3700],
+			['M', 2400],
+			['X', 0],
+		];
+		const i = classes.findIndex(x => x[1] < this.temperature);
+		if (!i){
+			return classes[0][0]+0;
+		}
+		const c2 = linspace(classes[i-1][1], classes[i][1], 10);
+		const i2 = c2.findIndex(x => x < this.temperature);
+		return classes[i][0]+i2;
+	}
 	get temperature(){
 		let c = 1;
 		if (this.lifespanFraction < 0.6){
@@ -1352,6 +1407,8 @@ function redrawMap(){
 	drawStar();
 	// redraw orbits
 	Game.system.secondaries.map(p => p.orbit.draw());
+	// update star info
+	document.getElementById('orbitbar').title = Game.system.primary.info;
 	// check if red giant star engulfs inner planets
 	Game.system.secondaries.forEach(p => {
 		if (!p.destroyed && p.orbit.periapsis < Game.system.primary.radius){
