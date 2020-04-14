@@ -176,6 +176,15 @@ class Body {
 		}
 		return 'rock';
 	}
+	/** @return {[number, number]} */
+	get coords(){
+		const absCoords = this.orbit.cartesian(Game.time);
+		const x = remap(absCoords[0],
+			[-Game.systemWidth, Game.systemWidth], [0, window.innerWidth]);
+		const y = remap(absCoords[1],
+			[-Game.systemHeight, Game.systemHeight], [0, window.innerHeight]);
+		return [x, y];
+	}
 	get density(){
 		return this.mass / this.volume;
 	}
@@ -240,6 +249,44 @@ class Body {
 	get temp(){
 		return this.tempAt(this.orbit.sma);
 	}
+	// methods
+	draw(){
+		let planetIcon = document.getElementById(this.name);
+		if (planetIcon === null){
+			planetIcon = document.createElement('div');
+			document.getElementById('map').appendChild(planetIcon);
+			planetIcon.id = this.name;
+			planetIcon.innerHTML = asciiEmoji.planet[Game.settings.asciiEmoji];
+			planetIcon.style.position = 'absolute';
+			planetIcon.title = this.name;
+		}
+		planetIcon.classList.value = 'planet ' + this.classification;
+		if (this.isPHW){
+			planetIcon.classList.value += ' phw';
+		}
+		const planetCoords = this.coords;
+		planetIcon.style.left = planetCoords[0]+'px';
+		planetIcon.style.top = planetCoords[1]+'px';
+		const index = Game.system.secondaries.indexOf(this);
+		planetIcon.onclick = () => setBody(index);
+		// check if selection...
+		if (getID() === index){
+			planetIcon.classList.value += ' ' + selectionStyle[Game.settings.selectionStyle];
+		}
+		// check if colony
+		if (Game.player.colonyID === index){
+			planetIcon.classList.value += ' colony';
+		}
+		// orbit bar
+		if (!document.getElementById('orbitBar' + this.name)){
+			const orbitBarRect = this.orbit.orbitBarRect;
+			orbitBarRect.id = 'orbitBar' + this.name;
+			orbitBarRect.style['background-color'] = document.defaultView.getComputedStyle(planetIcon).color;
+			orbitBarRect.onclick = () => setBody(index);
+			orbitBarRect.title = this.name;
+			document.getElementById('orbitbar').appendChild(orbitBarRect);
+		}
+	}
 	/** @param {number} dist */
 	tempAt(dist){
 		return this.orbit.parent.temperature * Math.pow(1-this.albedo, 0.25) *
@@ -266,6 +313,17 @@ class Body {
 	// eslint-disable-next-line camelcase
 	get v_e(){
 		return Math.pow(2*this.mu/this.radius, 0.5);
+	}
+	// static methods
+	/** @param {number} mass */
+	static densityFromMass(mass){
+		if (2e26 < mass){
+			return Game.rng.uniform(600, 1400);
+		}
+		if (6e25 < mass){
+			return Game.rng.uniform(1200, 1700);
+		}
+		return Game.rng.uniform(3900, 5600);
 	}
 }
 
@@ -360,6 +418,11 @@ class Orbit {
 		return 2 * Math.atan2(Math.pow(1+e, 0.5) * Math.sin(E/2),
 			Math.pow(1-e, 0.5) * Math.cos(E/2));
 	}
+	// static methods
+	/** @param {number} previousSMA */
+	static nextSMA(previousSMA){
+		return previousSMA * Game.rng.uniform(1.38, 2.01);
+	}
 }
 
 class Star extends Body {
@@ -375,6 +438,12 @@ class Star extends Body {
 		this.luminosity = luminosity;
 		this.temperature = temperature;
 	}
+	// static methods
+	/** @param {number} mass in suns */
+	static gen(mass = 1){
+		const luminosity = 0.45 < mass ? 1.148*Math.pow(mass, 3.4751) : 0.2264*Math.pow(mass, 2.52);
+		return new Star(mass, Math.pow(mass, 0.96), 'Star', luminosity, 5772*Math.pow(mass, 0.54));
+	}
 }
 
 class System {
@@ -382,7 +451,7 @@ class System {
 	 * @param {Body} primary
 	 * @param {Body[]} secondaries
 	 */
-	constructor(primary, secondaries){
+	constructor(primary = Star.gen(), secondaries = System.gen()){
 		this.primary = primary;
 		this.secondaries = secondaries;
 	}
@@ -396,28 +465,20 @@ class System {
 		});
 		return maximum;
 	}
-}
-
-/** @param {number} mass */
-function densityFromMass(mass){
-	if (2e26 < mass){
-		return Game.rng.uniform(600, 1400);
+	// static methods
+	static gen(attempt = 0){
+		if (attempt >= 100){
+			throw 'too many failed attempts... something is broken :(';
+		}
+		const numberOfPlanets = Game.rng.randint(7, 9);
+		const startSMA = 0.39*au;
+		const SMAList = [startSMA];
+		for (let i=1; i<numberOfPlanets; i+=1){
+			SMAList[i] = Orbit.nextSMA(SMAList[i-1]);
+		}
+		const systemAttempt = SMAList.map(generatePlanet);
+		return systemAttempt.some(x => x.isPHW) ? systemAttempt : this.gen(attempt+1);
 	}
-	if (6e25 < mass){
-		return Game.rng.uniform(1200, 1700);
-	}
-	return Game.rng.uniform(3900, 5600);
-}
-
-/** @param {number} previousSMA */
-function nextSMA(previousSMA){
-	return previousSMA * Game.rng.uniform(1.38, 2.01);
-}
-
-/** @param {number} mass in suns */
-function starGen(mass = 1){
-	const luminosity = 0.45 < mass ? 1.148*Math.pow(mass, 3.4751) : 0.2264*Math.pow(mass, 2.52);
-	return new Star(mass, Math.pow(mass, 0.96), 'Star', luminosity, 5772*Math.pow(mass, 0.54));
 }
 
 const sun = new Star(1.9885e30, 6.957e8, 'Sun', 3.828e26, 5778);
@@ -662,45 +723,6 @@ function createOrderTypeList(){
 	});
 }
 
-/** @param {Body} planet */
-function drawPlanet(planet){
-	let planetIcon = document.getElementById(planet.name);
-	if (planetIcon === null){
-		planetIcon = document.createElement('div');
-		document.getElementById('map').appendChild(planetIcon);
-		planetIcon.id = planet.name;
-		planetIcon.innerHTML = asciiEmoji.planet[Game.settings.asciiEmoji];
-		planetIcon.style.position = 'absolute';
-		planetIcon.title = planet.name;
-	}
-	planetIcon.classList.value = 'planet ' + planet.classification;
-	if (planet.isPHW){
-		planetIcon.classList.value += ' phw';
-	}
-	const planetCoords = getPlanetCoods(planet);
-	planetIcon.style.left = planetCoords[0]+'px';
-	planetIcon.style.top = planetCoords[1]+'px';
-	const index = Game.system.secondaries.indexOf(planet);
-	planetIcon.onclick = () => setBody(index);
-	// check if selection...
-	if (getID() === index){
-		planetIcon.classList.value += ' ' + selectionStyle[Game.settings.selectionStyle];
-	}
-	// check if colony
-	if (Game.player.colonyID === index){
-		planetIcon.classList.value += ' colony';
-	}
-	// orbit bar
-	if (!document.getElementById('orbitBar' + planet.name)){
-		const orbitBarRect = planet.orbit.orbitBarRect;
-		orbitBarRect.id = 'orbitBar' + planet.name;
-		orbitBarRect.style['background-color'] = document.defaultView.getComputedStyle(planetIcon).color;
-		orbitBarRect.onclick = () => setBody(index);
-		orbitBarRect.title = planet.name;
-		document.getElementById('orbitbar').appendChild(orbitBarRect);
-	}
-}
-
 function drawStar(){
 	let planetIcon = document.getElementById(sun.name);
 	if (planetIcon === null){
@@ -724,17 +746,6 @@ function getID(){
 /** general order type, not specific order */
 function getOrderID(){
 	return Number(document.getElementById('input_order_type').value);
-}
-
-/**
- * @param {Body} planet
- * @return {[number, number]}
-*/
-function getPlanetCoods(planet){
-	const absCoords = planet.orbit.cartesian(Game.time);
-	const x = remap(absCoords[0], [-Game.systemWidth, Game.systemWidth], [0, window.innerWidth]);
-	const y = remap(absCoords[1], [-Game.systemHeight, Game.systemHeight], [0, window.innerHeight]);
-	return [x, y];
 }
 
 /**
@@ -900,53 +911,37 @@ const Game = {
 Game.quests[0].conditions = [() => Game.playerHasColony];
 
 /** @param {number} sma */
-function generateBody(sma){
-	sma /= au;
-	let mass;
-	if (0.8 < sma && sma < 1.5){
-		mass = Math.pow(10, Game.rng.uniform(23.8, 25.2));
-	}
-	else if (5 < sma && sma < 31){
-		mass = Math.pow(10, Game.rng.uniform(25.9, 28.3));
-	}
-	else {
-		mass = 2*Math.pow(10, Game.rng.uniform(17, 27));
-	}
-	const density = densityFromMass(mass);
-	const radius = Math.pow(mass/(density*4/3*pi), 1/3);
-	const albedo = Game.rng.uniform(0.1, 0.7);
-	return new Body(mass, radius, albedo);
-}
-
-/** @param {number} sma */
-function generateOrbit(sma){
-	const parent = sun;
-	const ecc = Game.rng.uniform(0, 0.21);
-	const aop = Game.rng.uniform(0, 2*pi);
-	const man = Game.rng.uniform(0, 2*pi);
-	return new Orbit(parent, sma, ecc, aop, man);
-}
-
-/** @param {number} sma */
 function generatePlanet(sma){
+	/** @param {number} s */
+	function generateBody(s){
+		s /= au;
+		let mass;
+		if (0.8 < s && s < 1.5){
+			mass = Math.pow(10, Game.rng.uniform(23.8, 25.2));
+		}
+		else if (5 < s && s < 31){
+			mass = Math.pow(10, Game.rng.uniform(25.9, 28.3));
+		}
+		else {
+			mass = 2*Math.pow(10, Game.rng.uniform(17, 27));
+		}
+		const density = Body.densityFromMass(mass);
+		const radius = Math.pow(mass/(density*4/3*pi), 1/3);
+		const albedo = Game.rng.uniform(0.1, 0.7);
+		return new Body(mass, radius, albedo);
+	}
+	/** @param {number} s */
+	function generateOrbit(s){
+		const parent = sun;
+		const ecc = Game.rng.uniform(0, 0.21);
+		const aop = Game.rng.uniform(0, 2*pi);
+		const man = Game.rng.uniform(0, 2*pi);
+		return new Orbit(parent, s, ecc, aop, man);
+	}
 	const planet = generateBody(sma);
 	planet.orbit = generateOrbit(sma);
 	planet.name = 'Sol-' + Game.rng.randint(100000, 999999);
 	return planet;
-}
-
-function generateSystem(attempt = 0){
-	if (attempt >= 100){
-		throw 'too many failed attempts... something is broken :(';
-	}
-	const numberOfPlanets = Game.rng.randint(7, 9);
-	const startSMA = 0.39*au;
-	const SMAList = [startSMA];
-	for (let i=1; i<numberOfPlanets; i+=1){
-		SMAList[i] = nextSMA(SMAList[i-1]);
-	}
-	const systemAttempt = SMAList.map(generatePlanet);
-	return systemAttempt.some(x => x.isPHW) ? systemAttempt : generateSystem(attempt+1);
 }
 
 function getQuestsFromIds(){
@@ -963,7 +958,7 @@ function main(){
 	Game.debug.loaded = Game.rng.init();
 	document.getElementById('seed').innerHTML = Game.rng.seed;
 	// set up system
-	Game.system = new System(starGen(), generateSystem());
+	Game.system = new System();
 	// set up ticks
 	updateFPS();
 	setInterval(redrawInterface, 1000);
@@ -1028,7 +1023,7 @@ function redrawMap(){
 	updateResources();
 	// update map
 	if (!Game.paused){
-		Game.system.secondaries.map(drawPlanet);
+		Game.system.secondaries.map(p => p.draw());
 		drawStar();
 	}
 }
