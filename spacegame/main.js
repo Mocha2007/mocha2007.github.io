@@ -636,6 +636,35 @@ class GameEvent {
 	get id(){
 		return Game.events.indexOf(this);
 	}
+	draw(){
+		const eventElement = document.createElement('div');
+		// title
+		const title = document.createElement('h2');
+		title.innerHTML = this.title;
+		eventElement.appendChild(title);
+		// desc
+		const desc = document.createElement('p');
+		desc.innerHTML = this.desc;
+		eventElement.appendChild(desc);
+		// options
+		const optionList = document.createElement('ul');
+		this.options.forEach(e => {
+			const option = document.createElement('li');
+			const optionButton = document.createElement('input');
+			optionButton.type = 'submit';
+			optionButton.value = e.text;
+			optionButton.onclick = () => {
+				e.onClick();
+				this.remove();
+				const eventNode = document.getElementById('event'+this.id);
+				eventNode.parentNode.removeChild(eventNode);
+			};
+			option.appendChild(optionButton);
+			optionList.appendChild(option);
+		});
+		eventElement.appendChild(optionList);
+		return eventElement;
+	}
 	remove(){
 		Game.player.events = Game.player.events.filter(id => id !== this.id);
 	}
@@ -825,37 +854,6 @@ function drawOrder(order){
 		orderElement.appendChild(row);
 	}
 	return orderElement;
-}
-
-/** @param {GameEvent} event */
-function drawEvent(event){
-	const eventElement = document.createElement('div');
-	// title
-	const title = document.createElement('h2');
-	title.innerHTML = event.title;
-	eventElement.appendChild(title);
-	// desc
-	const desc = document.createElement('p');
-	desc.innerHTML = event.desc;
-	eventElement.appendChild(desc);
-	// options
-	const optionList = document.createElement('ul');
-	event.options.forEach(e => {
-		const option = document.createElement('li');
-		const optionButton = document.createElement('input');
-		optionButton.type = 'submit';
-		optionButton.value = e.text;
-		optionButton.onclick = () => {
-			e.onClick();
-			event.remove();
-			const eventNode = document.getElementById('event'+event.id);
-			eventNode.parentNode.removeChild(eventNode);
-		};
-		option.appendChild(optionButton);
-		optionList.appendChild(option);
-	});
-	eventElement.appendChild(optionList);
-	return eventElement;
 }
 
 // end gameplay block
@@ -1206,7 +1204,7 @@ function updateEvents(){
 		const id = 'event'+e;
 		if (!document.getElementById(id)){
 			const itemElement = document.createElement('li');
-			itemElement.appendChild(drawEvent(Game.events[e]));
+			itemElement.appendChild(Game.events[e].draw());
 			itemElement.id = id;
 			eventListElement.appendChild(itemElement);
 		}
