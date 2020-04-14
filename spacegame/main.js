@@ -524,8 +524,26 @@ class Star extends Body {
 	get age(){
 		return this.age_ + Game.time;
 	}
-	get color(){
-		return 'yellow'; // todo
+	get color(){ // todo
+		if (7500 < this.temperature){
+			return 'skyBlue';
+		}
+		if (6000 < this.temperature){
+			return 'white';
+		}
+		if (5400 < this.temperature){
+			return 'lightYellow';
+		}
+		if (3900 < this.temperature){
+			return 'peachPuff';
+		}
+		if (2000 < this.temperature){
+			return 'lightSalmon';
+		}
+		if (1500 < this.temperature){
+			return 'orange';
+		}
+		return 'red';
 	}
 	/** @return lifespan in seconds */
 	get lifespan(){
@@ -922,6 +940,7 @@ function drawStar(){
 		planetIcon.id = star.id;
 		planetIcon.innerHTML = asciiEmoji.star[Game.settings.asciiEmoji];
 		planetIcon.style.position = 'absolute';
+		planetIcon.style.color = star.color;
 	}
 	planetIcon.style.left = Game.center[0]+Game.debug.iconOffset+'px';
 	planetIcon.style.top = Game.center[1]+Game.debug.iconOffset+'px';
