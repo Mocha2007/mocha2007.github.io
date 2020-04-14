@@ -192,7 +192,8 @@ class Body {
 				if (specialUnits[property].hasOwnProperty('f')){
 					value = specialUnits[property].f(value);
 				}
-				cell.innerHTML = round(value/specialUnits[property].constant, 2) + ' ' + specialUnits[property].name;
+				cell.innerHTML = round(value/specialUnits[property].constant, 2) + ' ' +
+					specialUnits[property].name;
 			}
 			else {
 				cell.innerHTML = typeof value === 'number'? round(value, 2) : value;
@@ -460,7 +461,8 @@ class Orbit {
 				cell.innerHTML = this.parent.name;
 			}
 			else if (specialUnits.hasOwnProperty(property)){
-				cell.innerHTML = round(value/specialUnits[property].constant, 2) + ' ' + specialUnits[property].name;
+				cell.innerHTML = round(value/specialUnits[property].constant, 2) + ' ' +
+					specialUnits[property].name;
 			}
 			else {
 				cell.innerHTML = round(value, 2);
@@ -520,7 +522,8 @@ class Star extends Body {
 	/** @param {number} mass in suns */
 	static gen(mass = this.massGen()){
 		const luminosity = 0.45 < mass ? 1.148*Math.pow(mass, 3.4751) : 0.2264*Math.pow(mass, 2.52);
-		return new Star(sun.mass*mass, sun.radius*Math.pow(mass, 0.96), 'Star', sun.luminosity*luminosity, sun.temperature*Math.pow(mass, 0.54));
+		return new Star(sun.mass*mass, sun.radius*Math.pow(mass, 0.96), 'Star',
+			sun.luminosity*luminosity, sun.temperature*Math.pow(mass, 0.54));
 	}
 	//** solar masses */
 	static massGen(){
@@ -566,7 +569,8 @@ class System {
 
 const sun = new Star(1.9885e30, 6.957e8, 'Sun', 3.828e26, 5772);
 /** @type {Body} */
-const earth = new Body(5.97237e24, 6371000, 0.306, new Orbit(sun, 1.49598023e11, 0.0167086, 0, 0, 0, 0), 'Earth');
+const earth = new Body(5.97237e24, 6371000, 0.306,
+	new Orbit(sun, 1.49598023e11, 0.0167086, 0, 0, 0, 0), 'Earth');
 
 // end astro block
 // begin gameplay block
@@ -890,7 +894,8 @@ const Game = {
 	cookie: {
 		/** @param {string} name */
 		delete(name){
-			document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
+			document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.',
+				window.location.host.toString()].join('');
 		},
 		/** https://stackoverflow.com/a/11344672/2579798
 		 * @param {string} name
@@ -906,7 +911,8 @@ const Game = {
 		 * @param {string} name
 		*/
 		write(name, value){
-			const cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
+			const cookie = [name, '=', JSON.stringify(value), '; domain=.',
+				window.location.host.toString(), '; path=/;'].join('');
 			document.cookie = cookie;
 		},
 	},
@@ -970,7 +976,12 @@ const Game = {
 	quests: [
 		new Quest(
 			'Select World',
-			'Select a world to colonize. An ideal world is one with (in order of importance):<ol><li>temperature around -18&deg;C</li><li>mass within a factor of two of Earth\'s</li><li>near bodies which could be exploited in the future</li></ol><center class=\'red\'>(WARNING: cannot be undone!)<br><input id=\'world_selector\' type=\'submit\' value=\'Confirm Selection\' onclick=\'Game.player.colonyID=getID();\'></center><br>Reward: 1 Constructor',
+			`Select a world to colonize. An ideal world is one with (in order of importance):<ol>
+			<li>temperature around -18&deg;C</li><li>mass within a factor of two of Earth's</li>
+			<li>near bodies which could be exploited in the future</li></ol><center class='red'>
+			(WARNING: cannot be undone!)<br><input id='world_selector' type='submit'
+			value='Confirm Selection' onclick='Game.player.colonyID=getID();'>
+			</center><br>Reward: 1 Constructor`,
 			undefined, // Q0COND
 			undefined,
 			[
