@@ -551,9 +551,10 @@ class Star extends Body {
 			'#edeeff', // 7000 K
 			'#cfdbff', // 8000 K
 			'#bdceff', // 9000 K
-			// max t = 9384 K
+			// max t = 9384 K for main seq.
+			'#b2c6ff', // 10000 K
 		];
-		const i = round(this.temperature/1000);
+		const i = Math.min(10, round(this.temperature/1000));
 		return colors[i];
 	}
 	/** @return lifespan in seconds */
@@ -682,7 +683,11 @@ class System {
 			SMAList[i] = Orbit.nextSMA(SMAList[i-1]);
 		}
 		const systemAttempt = SMAList.map(a => Body.gen(a, star));
-		return systemAttempt.some(x => x.isPHW) ? systemAttempt : this.gen(star, attempt+1);
+		if (systemAttempt.some(x => x.isPHW)){
+			console.log('Generated system with PHW on attempt #' + (attempt+1));
+			return systemAttempt;
+		}
+		return this.gen(star, attempt+1);
 	}
 }
 
