@@ -86,10 +86,10 @@ ul {
 	display: block;
 }
 #leftinfo {
-	background-color: #444;
+	background-color: rgba(64, 64, 64, 0.5);
     bottom: 0;
     font-size: 75%;
-    left: 0;
+	left: 0;
     position: absolute;
 }
 #nojs {
@@ -107,8 +107,8 @@ ul {
 }
 #timecontrols {
 	background-color: #422;
-    float: left;
-    margin-left: 10px;
+	position: absolute;
+	top: 60px;
 }
 #map {
 	font-size: 200%;
