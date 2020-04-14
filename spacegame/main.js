@@ -512,18 +512,29 @@ class Star extends Body {
 	 * @param {string} name
 	 * @param {number} luminosity
 	 * @param {number} temperature
+	 * @param {number} age
 	 */
-	constructor(mass, radius, name, luminosity, temperature){
+	constructor(mass, radius, name, luminosity, temperature, age){
 		super(mass, radius, undefined, undefined, name);
 		this.luminosity = luminosity;
 		this.temperature = temperature;
+		this.age = age;
+	}
+	/** @return lifespan in seconds */
+	get lifespan(){
+		return 3e17*Math.pow(this.mass/sun.mass, -2.5162);
 	}
 	// static methods
+	/** @param {number} mass in suns */
+	static ageGen(mass){
+		const s = new Star(mass*sun.mass);
+		return Game.rng.uniform(15.5e6*year, s.lifespan);
+	}
 	/** @param {number} mass in suns */
 	static gen(mass = this.massGen()){
 		const luminosity = 0.45 < mass ? 1.148*Math.pow(mass, 3.4751) : 0.2264*Math.pow(mass, 2.52);
 		return new Star(sun.mass*mass, sun.radius*Math.pow(mass, 0.96), 'Star',
-			sun.luminosity*luminosity, sun.temperature*Math.pow(mass, 0.54));
+			sun.luminosity*luminosity, sun.temperature*Math.pow(mass, 0.54), Star.ageGen(mass));
 	}
 	//** solar masses */
 	static massGen(){
