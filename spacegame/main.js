@@ -539,25 +539,22 @@ class Star extends Body {
 		return this.age_ + Game.time;
 	}
 	get color(){ // todo
-		if (7500 < this.temperature){
-			return 'skyBlue';
-		}
-		if (6000 < this.temperature){
-			return 'white';
-		}
-		if (5400 < this.temperature){
-			return 'lightYellow';
-		}
-		if (3900 < this.temperature){
-			return 'peachPuff';
-		}
-		if (2000 < this.temperature){
-			return 'lightSalmon';
-		}
-		if (1500 < this.temperature){
-			return 'orange';
-		}
-		return 'red';
+		// partially from http://www.vendian.org/mncharity/dir3/blackbody/
+		const colors = [
+			'#333', // 0 K
+			'#ff3800', // 1000 K
+			'#ff9e02', // 2000 K
+			'#ffbb7b', // 3000 K
+			'#ffc288', // 4000 K
+			'#ffe7c9', // 5000 K
+			'#fff8f4', // 6000 K
+			'#edeeff', // 7000 K
+			'#cfdbff', // 8000 K
+			'#bdceff', // 9000 K
+			// max t = 9384 K
+		];
+		const i = round(this.temperature/1000);
+		return colors[i];
 	}
 	/** @return lifespan in seconds */
 	get lifespan(){
