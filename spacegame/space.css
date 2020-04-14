@@ -1,22 +1,25 @@
-html, body{
+html {
 	background-color: black;
 	color: cyan;
 	font-family: Consolas, "Courier New", monospace;
 	margin: 0;
 	overflow: hidden;
 }
-p{
+body {
+	margin: 0;
+}
+p {
 	text-indent: 45px;
 }
-abbr{
+abbr {
 	animation: strobe 1s linear alternate infinite;
 	cursor: help;
 	text-decoration: none;
 }
-th{
+th {
 	text-align: right;
 }
-h2{
+h2 {
 	text-align: center;
 }
 svg {
@@ -25,16 +28,16 @@ svg {
 	z-index: -1;
 	width: 100%;
 }
-ul{
+ul {
 	list-style-type: none;
 }
-.red{
+.red {
 	color: red;
 }
-.green{
+.green {
 	color: lime;
 }
-.planet{
+.planet {
 	border: 2px solid transparent;
 	border-radius: 90px;
 	color: silver;
@@ -45,61 +48,61 @@ ul{
 	padding-right: 1px;
 	z-index: -1;
 }
-.gasGiant{
+.gasGiant {
 	color: tan;
 }
-.iceGiant{
+.iceGiant {
 	color: cyan;
 }
-.desert{
+.desert {
 	color: orange;
 }
-.terra{
+.terra {
 	color: seaGreen;
 }
-.phw{
+.phw {
 	color: lime;
 }
-.star{
+.star {
 	color: yellow;
 	cursor: default;
 }
-.selected{
+.selected {
 	animation: selectionstrobe 0.5s linear alternate infinite;
 }
-.selectedOld{
+.selectedOld {
 	animation: selectionStrobeOld 0.5s linear alternate infinite;
 }
-.quest{
+.quest {
 	border: 1px dashed cyan;
 }
-.colony{
+.colony {
 	border: 2px solid teal;
 }
-.supsub{
+.supsub {
 	display: block;
 }
-#leftinfo{
+#leftinfo {
 	background-color: #444;
     bottom: 0;
     font-size: 75%;
     left: 0;
     position: absolute;
 }
-#selector{
+#selector {
 	background-color: #422;
     float: left;
 }
-#timecontrols{
+#timecontrols {
 	background-color: #422;
     float: left;
     margin-left: 10px;
 }
-#map{
+#map {
 	font-size: 200%;
 	z-index: -2;
 }
-#rightinfo{
+#rightinfo {
 	background-color: #224;
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -108,13 +111,13 @@ ul{
     top: 0;
 	width: 25%;
 }
-#righttabs span{
+#righttabs span {
 	border: 2px solid cyan;
 	border-radius: 6px;
 	cursor: pointer;
 	line-height: 25px;
 }
-#resourcebar{
+#resourcebar {
 	background-color: #224;
 	left: 50%;
 	margin-left: -15%;
@@ -123,7 +126,7 @@ ul{
 	top: 0;
 	width: 30%;
 }
-#orbitbar{
+#orbitbar {
 	background-color: #222;
 	bottom: 0;
 	left: 50%;
@@ -132,15 +135,15 @@ ul{
 	text-align: center;
 	width: 50%;
 }
-@keyframes selectionstrobe{
+@keyframes selectionstrobe {
 	0% {border: 2px solid red;}
 	100% {border: 2px solid transparent;}
 }
-@keyframes selectionStrobeOld{
+@keyframes selectionStrobeOld {
 	0% {color: red;}
 	100% {color: transparent;}
 }
-@keyframes strobe{
+@keyframes strobe {
 	0% {border-bottom:1px solid transparent;}
 	100% {border-bottom:1px solid cyan;}
 }
