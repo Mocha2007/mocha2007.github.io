@@ -444,6 +444,9 @@ class Star extends Body {
 		const luminosity = 0.45 < mass ? 1.148*Math.pow(mass, 3.4751) : 0.2264*Math.pow(mass, 2.52);
 		return new Star(mass, Math.pow(mass, 0.96), 'Star', luminosity, 5772*Math.pow(mass, 0.54));
 	}
+	static massGen(){
+		return Game.rng.uniform(0.7, 1.3);
+	}
 }
 
 class System {
@@ -451,7 +454,7 @@ class System {
 	 * @param {Body} primary
 	 * @param {Body[]} secondaries
 	 */
-	constructor(primary = Star.gen(), secondaries = System.gen()){
+	constructor(primary = Star.gen(Star.massGen()), secondaries = System.gen()){
 		this.primary = primary;
 		this.secondaries = secondaries;
 	}
