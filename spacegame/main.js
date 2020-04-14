@@ -625,6 +625,7 @@ class Star extends Body {
 	static debug(){
 		setInterval(() => console.log(Game.system.primary.lifespanFraction,
 			Game.system.primary.temperature), 1000);
+		Game.speed = Game.system.primary.lifespan / 100;
 	}
 	/** @param {number} mass in suns */
 	static gen(mass = this.massGen()){
@@ -956,8 +957,8 @@ function drawStar(){
 		planetIcon.id = star.id;
 		planetIcon.innerHTML = asciiEmoji.star[Game.settings.asciiEmoji];
 		planetIcon.style.position = 'absolute';
-		planetIcon.style.color = star.color;
 	}
+	planetIcon.style.color = star.color;
 	planetIcon.style.left = Game.center[0]+Game.debug.iconOffset+'px';
 	planetIcon.style.top = Game.center[1]+Game.debug.iconOffset+'px';
 	// svg component
