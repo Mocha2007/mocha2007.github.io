@@ -218,11 +218,19 @@ class Body {
 		return this.tempAt(this.orbit.sma);
 	}
 	// methods
-	destroy(){ // todo
-		this.destroyed = true;
-	}
 	draw(){
 		let planetIcon = document.getElementById(this.name);
+		// check destruction
+		if (this.destroyed){
+			// icon
+			planetIcon.classList.value = 'destroyed';
+			// orbit
+			document.getElementById(this.orbit.orbitId).classList.value = 'destroyed';
+			// orbit bar
+			document.getElementById('orbitBar' + this.name).classList.value = 'destroyed';
+			return;
+		}
+		// else continue
 		if (planetIcon === null){
 			planetIcon = document.createElement('div');
 			document.getElementById('map').appendChild(planetIcon);
@@ -256,13 +264,6 @@ class Body {
 			orbitBarRect.onclick = () => setBody(index);
 			orbitBarRect.title = this.name;
 			document.getElementById('orbitbar').appendChild(orbitBarRect);
-		}
-		// check destruction
-		if (this.destroyed){
-			// icon
-			planetIcon.classList.add('destroyed');
-			// orbit
-			document.getElementById(this.orbit.orbitId).classList.add('destroyed');
 		}
 	}
 	/** @param {number} dist */
@@ -985,7 +986,7 @@ function drawStar(){
 		Game.svg.appendChild(element);
 	}
 	// update color and radius
-	element.setAttribute('r', star.radius/Game.systemWidth * window.innerWidth);
+	element.setAttribute('r', star.radius/Game.systemWidth * window.innerHeight);
 	element.setAttribute('fill', star.color);
 }
 
@@ -1322,8 +1323,8 @@ function redrawMap(){
 	Game.system.secondaries.map(p => p.orbit.draw());
 	// check if red giant star engulfs inner planets
 	Game.system.secondaries.forEach(p => {
-		if (p.orbit.periapsis < Game.system.primary.radius){
-			p.destroy();
+		if (!p.destroyed && p.orbit.periapsis < Game.system.primary.radius){
+			p.destroyed = true;
 		}
 	});
 }
