@@ -135,6 +135,7 @@ class Body {
 		this.albedo = albedo;
 		this.orbit = orbit;
 		this.name = name;
+		this.destroyed = false;
 	}
 	get classification(){
 		if (2e26 < this.mass){
@@ -217,6 +218,9 @@ class Body {
 		return this.tempAt(this.orbit.sma);
 	}
 	// methods
+	destroy(){ // todo
+		this.destroyed = true;
+	}
 	draw(){
 		let planetIcon = document.getElementById(this.name);
 		if (planetIcon === null){
@@ -229,7 +233,7 @@ class Body {
 		}
 		planetIcon.classList.value = 'planet ' + this.classification;
 		if (this.isPHW){
-			planetIcon.classList.value += ' phw';
+			planetIcon.classList.add('phw');
 		}
 		const planetCoords = this.orbit.coords;
 		planetIcon.style.left = planetCoords[0]+Game.debug.iconOffset+'px';
@@ -252,6 +256,13 @@ class Body {
 			orbitBarRect.onclick = () => setBody(index);
 			orbitBarRect.title = this.name;
 			document.getElementById('orbitbar').appendChild(orbitBarRect);
+		}
+		// check destruction
+		if (this.destroyed){
+			// icon
+			planetIcon.classList.add('destroyed');
+			// orbit
+			document.getElementById(this.orbit.orbitId).classList.add('destroyed');
 		}
 	}
 	/** @param {number} dist */
@@ -404,15 +415,14 @@ class Orbit {
 	draw(){
 		const resolution = 32; // lines to draw
 		// if group doesn't exist, create it, and its children.
-		const orbitId = this.sma.toString();
-		if (!document.getElementById(orbitId)){
+		if (!document.getElementById(this.orbitId)){
 			// create element and its children
 			const g = createSvgElement('g');
-			g.id = orbitId;
+			g.id = this.orbitId;
 			Game.svg.appendChild(g);
 			for (let i = 0; i < resolution; i++){
 				const line = createSvgElement('line');
-				line.id = orbitId + '-' + i;
+				line.id = this.orbitId + '-' + i;
 				line.setAttribute('style', 'stroke:red;stroke-width:1');
 				g.appendChild(line);
 			}
@@ -421,7 +431,7 @@ class Orbit {
 			const step = this.period/resolution;
 			// update children endpoints
 			for (let i = 0; i < resolution; i++){
-				const line = document.getElementById(orbitId + '-' + i);
+				const line = document.getElementById(this.orbitId + '-' + i);
 				const [x1, y1] = this.coordsAt(i*step);
 				const [x2, y2] = this.coordsAt((i+1)*step);
 				line.setAttribute('x1', x1);
@@ -484,6 +494,9 @@ class Orbit {
 		rect.style.cursor = 'pointer';
 		rect.innerHTML = '&nbsp;';
 		return rect;
+	}
+	get orbitId(){
+		return this.sma.toString();
 	}
 	get periapsis(){
 		return (1-this.ecc)*this.sma;
@@ -589,7 +602,7 @@ class Star extends Body {
 			c = 2.33e-04*Math.exp(9.79*this.lifespanFraction);
 		}
 		else if (this.lifespanFraction < 1){ // accurate [0.975, 1]
-			c = 1.2e-22*Math.exp(53*this.lifespanFraction); // ideally this would max out at ~258
+			c = 4.5e-70*Math.exp(165*this.lifespanFraction); // ideally this would max out at ~258
 		}
 		else { // white dwarf
 			w = 0.0126; // asymptotic radius
@@ -1294,6 +1307,12 @@ function redrawMap(){
 	drawStar();
 	// redraw orbits
 	Game.system.secondaries.map(p => p.orbit.draw());
+	// check if red giant star engulfs inner planets
+	Game.system.secondaries.forEach(p => {
+		if (p.orbit.periapsis < Game.system.primary.radius){
+			p.destroy();
+		}
+	});
 }
 
 /** @param {number} id */

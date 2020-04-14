@@ -48,6 +48,9 @@ ul {
 	padding-right: 1px;
 	z-index: 0;
 }
+.destroyed {
+	display: none;
+}
 .gasGiant {
 	color: tan;
 }
