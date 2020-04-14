@@ -343,12 +343,14 @@ class Orbit {
 	 * @param {number} aop
 	 * @param {number} man
 	 */
-	constructor(parent, sma, ecc, aop, man){
+	constructor(parent, sma, ecc, inc, aop, lan, man){
 		this.parent = parent;
-		this.sma = sma;
-		this.ecc = ecc;
-		this.aop = aop;
-		this.man = man;
+		this.sma = sma; // a
+		this.ecc = ecc; // e
+		this.inc = inc; // i
+		this.aop = aop; // omega
+		this.lan = lan; // Omega
+		this.man = man; // M
 		this.lastZoom = 0;
 	}
 	// functions
@@ -357,10 +359,29 @@ class Orbit {
 	}
 	/** @param {number} t */
 	cartesian(t){
+		// 2
 		const E = this.eccentricAnomaly(t);
+		// 3
 		const nu = this.trueAnomaly(t);
-		const rC = this.sma*(1-this.ecc*Math.cos(E));
-		return [rC*Math.cos(nu), rC*Math.sin(nu)];
+		// 4
+		const [a, e] = [this.sma, this.ecc];
+		const rC = a*(1-e*Math.cos(E));
+		// 5
+		// const mu = this.parent.mu;
+		const o = [Math.cos(nu), Math.sin(nu), 0].map(z => rC*z);
+		// const o_ = [-Math.sin(E), Math.sqrt(1-e*e)*Math.cos(E), 0].forEach(z => Math.sqrt(mu*a)/rC*z);
+		// 6
+		const i = this.inc;
+		const [om, Om] = [this.aop, this.lan];
+		const [c, C, s, S] = [Math.cos(om), Math.cos(Om), Math.sin(om), Math.sin(Om)];
+		function r(x){
+			return [
+				x[0]*(c*C - s*Math.cos(i)*S) - x[1]*(s*C + c*Math.cos(i)*S),
+				x[0]*(c*S + s*Math.cos(i)*C) + x[1]*(c*Math.cos(i)*C - s*S),
+				x[0]*(s*Math.sin(i)) + x[1]*(c*Math.sin(i)),
+			];
+		}
+		return r(o);
 	}
 	get coords(){
 		return this.coordsAt(Game.time);
@@ -395,7 +416,7 @@ class Orbit {
 		}
 		if (this.lastZoom !== Game.systemHeight){
 			const step = this.period/resolution;
-			const offset = 10;
+			const offset = 12;
 			// update children endpoints
 			for (let i = 0; i < resolution; i++){
 				const line = document.getElementById(orbitId + '-' + i);
@@ -541,7 +562,7 @@ class System {
 }
 
 const sun = new Star(1.9885e30, 6.957e8, 'Sun', 3.828e26, 5778);
-const earth = new Body(5.97237e24, 6371000, 0.306, new Orbit(sun, 1.49598023e11, 0.0167086, 1.9933027, 6.25905), 'Earth');
+const earth = new Body(5.97237e24, 6371000, 0.306, new Orbit(sun, 1.49598023e11, 0.0167086, 0, 0, 0, 0), 'Earth');
 
 // end astro block
 // begin gameplay block
@@ -994,9 +1015,11 @@ function generatePlanet(sma){
 	function generateOrbit(s){
 		const parent = sun;
 		const ecc = Game.rng.uniform(0, 0.21);
+		const inc = Game.rng.uniform(0, 0.13);
 		const aop = Game.rng.uniform(0, 2*pi);
+		const lan = Game.rng.uniform(0, 2*pi);
 		const man = Game.rng.uniform(0, 2*pi);
-		return new Orbit(parent, s, ecc, aop, man);
+		return new Orbit(parent, s, ecc, inc, aop, lan, man);
 	}
 	const planet = generateBody(sma);
 	planet.orbit = generateOrbit(sma);
