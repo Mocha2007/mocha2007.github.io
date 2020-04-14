@@ -1,7 +1,8 @@
-html{
+html, body{
 	background-color: black;
 	color: cyan;
 	font-family: Consolas, "Courier New", monospace;
+	margin: 0;
 	overflow: hidden;
 }
 p{
@@ -17,6 +18,12 @@ th{
 }
 h2{
 	text-align: center;
+}
+svg {
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+	width: 100%;
 }
 ul{
 	list-style-type: none;

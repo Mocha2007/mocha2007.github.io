@@ -309,12 +309,11 @@ function remap(n, from, to){
 
 // doc functions
 
-/**
+/** https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
  * @param {string} name
  * @return {HTMLUnknownElement}
  */
 function createSvgElement(name = 'svg'){
-	// https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
 	return document.createElementNS('http://www.w3.org/2000/svg', name);
 }
 

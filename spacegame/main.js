@@ -10,13 +10,16 @@ function round(number, digits = 0){
 	number /= Math.pow(10, digits);
 	return number;
 }
+
 /** @param {string} name */
 function deleteCookie(name){
 	document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
 }
+
 /** https://stackoverflow.com/a/11344672/2579798
  * @param {string} name
 */
+
 function readCookie(name){
 	let result = document.cookie.match(new RegExp(name + '=([^;]+)'));
 	if (result){
@@ -24,6 +27,7 @@ function readCookie(name){
 	}
 	return result;
 }
+
 /** https://stackoverflow.com/a/11344672/2579798
  * @param {string} name
 */
@@ -31,11 +35,13 @@ function writeCookie(name, value){
 	const cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
 	document.cookie = cookie;
 }
+
 /** https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file/34156339#34156339
  * @param {string} content
  * @param {string} fileName
  * @param {string} contentType
 */
+
 function download(content, fileName, contentType){
 	const a = document.createElement('a');
 	const file = new Blob([content], {type: contentType});
@@ -43,19 +49,30 @@ function download(content, fileName, contentType){
 	a.download = fileName;
 	a.click();
 }
+
 function importSave(){
 	const saveData = document.getElementById('saveData').value;
 	document.cookie = atob(saveData);
 	location.reload();
 }
+
 function exportSave(){
 	const data = btoa(document.cookie);
 	document.getElementById('saveData').value = data;
 	console.log('Exported Save.');
 	return data;
 }
+
 function downloadSave(){
 	download(exportSave(), 'mochaSpaceGameSave.txt', 'text/plain');
+}
+
+/** https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
+ * @param {string} name
+ * @return {HTMLUnknownElement}
+ */
+function createSvgElement(name = 'svg'){
+	return document.createElementNS('http://www.w3.org/2000/svg', name);
 }
 // end basic block
 // begin math block
@@ -176,15 +193,6 @@ class Body {
 		}
 		return 'rock';
 	}
-	/** @return {[number, number]} */
-	get coords(){
-		const absCoords = this.orbit.cartesian(Game.time);
-		const x = remap(absCoords[0],
-			[-Game.systemWidth, Game.systemWidth], [0, window.innerWidth]);
-		const y = remap(absCoords[1],
-			[-Game.systemHeight, Game.systemHeight], [0, window.innerHeight]);
-		return [x, y];
-	}
 	get density(){
 		return this.mass / this.volume;
 	}
@@ -264,7 +272,7 @@ class Body {
 		if (this.isPHW){
 			planetIcon.classList.value += ' phw';
 		}
-		const planetCoords = this.coords;
+		const planetCoords = this.orbit.coords;
 		planetIcon.style.left = planetCoords[0]+'px';
 		planetIcon.style.top = planetCoords[1]+'px';
 		const index = Game.system.secondaries.indexOf(this);
@@ -341,6 +349,7 @@ class Orbit {
 		this.ecc = ecc;
 		this.aop = aop;
 		this.man = man;
+		this.lastZoom = 0;
 	}
 	// functions
 	get apoapsis(){
@@ -352,6 +361,53 @@ class Orbit {
 		const nu = this.trueAnomaly(t);
 		const rC = this.sma*(1-this.ecc*Math.cos(E));
 		return [rC*Math.cos(nu), rC*Math.sin(nu)];
+	}
+	get coords(){
+		return this.coordsAt(Game.time);
+	}
+	/**
+	 * @param {number} t
+	 * @return {[number, number]}
+	*/
+	coordsAt(t){
+		const absCoords = this.cartesian(t);
+		const x = remap(absCoords[0],
+			[-Game.systemWidth, Game.systemWidth], [0, window.innerWidth]);
+		const y = remap(absCoords[1],
+			[-Game.systemHeight, Game.systemHeight], [0, window.innerHeight]);
+		return [x, y];
+	}
+	draw(){
+		const resolution = 32; // lines to draw
+		// if group doesn't exist, create it, and its children.
+		const orbitId = this.sma.toString();
+		if (!document.getElementById(orbitId)){
+			// create element and its children
+			const g = createSvgElement('g');
+			g.id = orbitId;
+			Game.svg.appendChild(g);
+			for (let i = 0; i < resolution; i++){
+				const line = createSvgElement('line');
+				line.id = orbitId + '-' + i;
+				line.setAttribute('style', 'stroke:red;stroke-width:1');
+				g.appendChild(line);
+			}
+		}
+		if (this.lastZoom !== Game.systemHeight){
+			const step = this.period/resolution;
+			const offset = 10;
+			// update children endpoints
+			for (let i = 0; i < resolution; i++){
+				const line = document.getElementById(orbitId + '-' + i);
+				const [x1, y1] = this.coordsAt(i*step);
+				const [x2, y2] = this.coordsAt((i+1)*step);
+				line.setAttribute('x1', x1+offset);
+				line.setAttribute('y1', y1+offset);
+				line.setAttribute('x2', x2+offset);
+				line.setAttribute('y2', y2+offset);
+			}
+			this.lastZoom = Game.systemHeight;
+		}
 	}
 	/** @param {number} t */
 	eccentricAnomaly(t){
@@ -901,6 +957,7 @@ const Game = {
 		selectionStyle: 0,
 	},
 	speed: 16*hour,
+	svg: document.getElementById('orbits'),
 	/** @type {System} */
 	system: undefined,
 	systemHeight: 3*au,
@@ -1025,10 +1082,10 @@ function redrawMap(){
 	// update resource count
 	updateResources();
 	// update map
-	if (!Game.paused){
-		Game.system.secondaries.map(p => p.draw());
-		drawStar();
-	}
+	Game.system.secondaries.map(p => p.draw());
+	drawStar();
+	// redraw orbits
+	Game.system.secondaries.map(p => p.orbit.draw());
 }
 
 function saveGame(isManual = false){
