@@ -728,8 +728,12 @@ class System {
 	// static methods
 	/** @param {Star} star */
 	static gen(star, attempt = 0){
-		if (1000 <= attempt){
-			throw 'too many failed attempts... something is broken :(';
+		if (9 < attempt && attempt % 10 === 0){
+			console.warn(attempt + ' failed attempts');
+		}
+		else if (100 < attempt){
+			// too many failed attempts... something is broken :(
+			window.location.reload();
 		}
 		const numberOfPlanets = Game.rng.randint(7, 9);
 		const startSMA = 0.39*au*Math.pow(star.mass/sun.mass, 2);
