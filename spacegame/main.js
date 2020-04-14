@@ -529,7 +529,7 @@ class Star extends Body {
 	/** @param {number} mass in suns */
 	static ageGen(mass){
 		const s = new Star(mass*sun.mass);
-		return Math.min(universeAge, Game.rng.uniform(15.5e6*year, s.lifespan));
+		return Game.rng.uniform(15.5e6*year, Math.min(universeAge, s.lifespan));
 	}
 	/** @param {number} mass in suns */
 	static gen(mass = this.massGen()){
