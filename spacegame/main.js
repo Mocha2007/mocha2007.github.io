@@ -61,6 +61,7 @@ const minute = 60;
 const hour = 60*minute;
 const day = 24*hour;
 const year = 365.2425 * day;
+const universeAge = 13.799e9 * year;
 // var month = year/12;
 
 const au = 149597870700;
@@ -528,7 +529,7 @@ class Star extends Body {
 	/** @param {number} mass in suns */
 	static ageGen(mass){
 		const s = new Star(mass*sun.mass);
-		return Game.rng.uniform(15.5e6*year, s.lifespan);
+		return Math.min(universeAge, Game.rng.uniform(15.5e6*year, s.lifespan));
 	}
 	/** @param {number} mass in suns */
 	static gen(mass = this.massGen()){
@@ -536,7 +537,7 @@ class Star extends Body {
 		return new Star(sun.mass*mass, sun.radius*Math.pow(mass, 0.96), 'Star',
 			sun.luminosity*luminosity, sun.temperature*Math.pow(mass, 0.54), Star.ageGen(mass));
 	}
-	//** solar masses */
+	/** solar masses */
 	static massGen(){
 		return Game.rng.uniform(0.7, 1.3);
 	}
