@@ -648,7 +648,7 @@ class Star extends Body {
 	}
 	/** solar masses */
 	static massGen(){
-		return Game.rng.uniform(0.7, 1.3);
+		return Math.exp(Game.rng.uniform(-2.5, 0.9)); // ~ [0.082, 2.460), expected value = 0.449
 	}
 }
 
@@ -1222,6 +1222,12 @@ const Game = {
 	/** @type {System} */
 	system: undefined,
 	systemHeight: 3*au,
+	systemHeightSetup(){
+		// nearest power of 2 au to...
+		const tgt = 10*this.system.secondaries[0].orbit.sma/au; // in au
+		this.systemHeight = au*Math.pow(2, round(Math.log2(tgt)));
+
+	},
 	get systemWidth(){
 		return window.innerWidth/window.innerHeight * this.systemHeight;
 	},
@@ -1246,6 +1252,8 @@ function main(){
 	document.getElementById('seed').innerHTML = Game.rng.seed;
 	// set up system
 	Game.system = new System();
+	// set up systemHeight
+	Game.systemHeightSetup();
 	// set up ticks
 	updateFPS();
 	setInterval(redrawInterface, 1000);
