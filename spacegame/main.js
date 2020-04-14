@@ -548,12 +548,13 @@ class System {
 		return maximum;
 	}
 	// static methods
+	/** @param {Star} star */
 	static gen(star, attempt = 0){
 		if (attempt >= 100){
 			throw 'too many failed attempts... something is broken :(';
 		}
 		const numberOfPlanets = Game.rng.randint(7, 9);
-		const startSMA = 0.39*au;
+		const startSMA = 0.39*au*Math.pow(star.mass/sun.mass, 2);
 		const SMAList = [startSMA];
 		for (let i=1; i<numberOfPlanets; i+=1){
 			SMAList[i] = Orbit.nextSMA(SMAList[i-1]);
