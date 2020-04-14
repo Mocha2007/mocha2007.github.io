@@ -95,7 +95,7 @@
 		</ol>
 		<div id="options">
 			<ul>
-				<li onclick="Game.save(true);">Save Game</li>
+				<li onclick="Game.save.save(true);">Save Game</li>
 				<li>Autosave interval:
 					<input id="input_autosave_interval" type="number" min="1" max="60" value="1"
 						   onclick="Game.settings.autosaveInterval = Number(document.getElementById('input_autosave_interval').value);"> min
@@ -118,9 +118,9 @@
 					selection style.
 				</li>
 				<li>
-					<input type="submit" value="Import" onclick="importSave();">
-					<input type="submit" value="Export" onclick="exportSave();">
-					<input type="submit" value="Download" onclick="downloadSave();">
+					<input type="submit" value="Import" onclick="Game.save.import();">
+					<input type="submit" value="Export" onclick="Game.save.export();">
+					<input type="submit" value="Download" onclick="Game.save.download();">
 					<br>
 					<textarea id="saveData" rows="8" cols="40"></textarea>
 				</li>

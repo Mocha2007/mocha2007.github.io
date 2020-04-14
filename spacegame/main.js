@@ -1,5 +1,5 @@
 /* jshint esversion: 6, strict: true, forin: false, loopfunc: true, strict: global */
-/* exported importSave, downloadSave, wipeMap */
+/* exported downloadSave, Game, wipeMap */
 // begin basic block
 'use strict';
 
@@ -9,31 +9,6 @@ function round(number, digits = 0){
 	number = Math.round(number);
 	number /= Math.pow(10, digits);
 	return number;
-}
-
-/** @param {string} name */
-function deleteCookie(name){
-	document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
-}
-
-/** https://stackoverflow.com/a/11344672/2579798
- * @param {string} name
-*/
-
-function readCookie(name){
-	let result = document.cookie.match(new RegExp(name + '=([^;]+)'));
-	if (result){
-		result = JSON.parse(result[1]);
-	}
-	return result;
-}
-
-/** https://stackoverflow.com/a/11344672/2579798
- * @param {string} name
-*/
-function writeCookie(name, value){
-	const cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
-	document.cookie = cookie;
 }
 
 /** https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file/34156339#34156339
@@ -48,23 +23,6 @@ function download(content, fileName, contentType){
 	a.href = URL.createObjectURL(file);
 	a.download = fileName;
 	a.click();
-}
-
-function importSave(){
-	const saveData = document.getElementById('saveData').value;
-	document.cookie = atob(saveData);
-	location.reload();
-}
-
-function exportSave(){
-	const data = btoa(document.cookie);
-	document.getElementById('saveData').value = data;
-	console.log('Exported Save.');
-	return data;
-}
-
-function downloadSave(){
-	download(exportSave(), 'mochaSpaceGameSave.txt', 'text/plain');
 }
 
 /** https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
@@ -929,6 +887,29 @@ function wipeMap(){
 // end interface block
 // begin main program
 const Game = {
+	cookie: {
+		/** @param {string} name */
+		delete(name){
+			document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
+		},
+		/** https://stackoverflow.com/a/11344672/2579798
+		 * @param {string} name
+		*/
+		read(name){
+			let result = document.cookie.match(new RegExp(name + '=([^;]+)'));
+			if (result){
+				result = JSON.parse(result[1]);
+			}
+			return result;
+		},
+		/** https://stackoverflow.com/a/11344672/2579798
+		 * @param {string} name
+		*/
+		write(name, value){
+			const cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
+			document.cookie = cookie;
+		},
+	},
 	debug: {
 		loaded: false,
 	},
@@ -1005,8 +986,8 @@ const Game = {
 	],
 	reset(){
 		console.warn('Hard Reset!');
-		deleteCookie('seed');
-		deleteCookie('player');
+		this.cookie.delete('seed');
+		this.cookie.delete('player');
 		location.reload();
 	},
 	rng: {
@@ -1015,12 +996,12 @@ const Game = {
 		value: 0,
 		init(){
 			/** @type {number} */
-			const loaded = readCookie('seed');
+			const loaded = Game.cookie.read('seed');
 			if (loaded){
-				this.seed = readCookie('seed');
+				this.seed = Game.cookie.read('seed');
 			}
 			else {
-				writeCookie('seed', this.seed);
+				Game.cookie.write('seed', this.seed);
 			}
 			this.value = this.seed;
 			return Boolean(loaded);
@@ -1053,15 +1034,31 @@ const Game = {
 			return this.random() * (max-min) + min;
 		},
 	},
-	save(isManual = false){
-		// store cookie https://www.w3schools.com/js/js_cookies.asp
-		writeCookie('settings', Game.settings);
-		writeCookie('player', Game.player);
-		writeCookie('time', Game.time);
-		Game.debug.lastSave = new Date();
-		if (isManual){
-			console.log('Successfully manually saved game!');
-		}
+	save: {
+		download(){
+			download(this.export(), 'mochaSpaceGameSave.txt', 'text/plain');
+		},
+		export(){
+			const data = btoa(document.cookie);
+			document.getElementById('saveData').value = data;
+			console.log('Exported Save.');
+			return data;
+		},
+		import(){
+			const saveData = document.getElementById('saveData').value;
+			document.cookie = atob(saveData);
+			location.reload();
+		},
+		save(isManual = false){
+			// store cookie https://www.w3schools.com/js/js_cookies.asp
+			Game.cookie.write('settings', Game.settings);
+			Game.cookie.write('player', Game.player);
+			Game.cookie.write('time', Game.time);
+			Game.debug.lastSave = new Date();
+			if (isManual){
+				console.log('Successfully manually saved game!');
+			}
+		},
 	},
 	settings: {
 		autosaveInterval: 1,
@@ -1081,15 +1078,15 @@ const Game = {
 	// methods
 	get playerHasColony(){
 		return 0 <= this.player.colonyID;
-	}
+	},
 };
 // Q0COND
 Game.quests[0].conditions = [() => Game.playerHasColony];
 
 function main(){
 	console.info('Mocha\'s weird-ass space game test');
-	if (readCookie('settings')){
-		Game.settings = readCookie('settings');
+	if (Game.cookie.read('settings')){
+		Game.settings = Game.cookie.read('settings');
 		document.getElementById('input_fps').value = Game.settings.fps;
 	}
 	// set up RNG
@@ -1105,14 +1102,14 @@ function main(){
 	// select welcome tab
 	selectTab('welcome');
 	// load?
-	if (readCookie('player')){
-		Game.player = readCookie('player');
+	if (Game.cookie.read('player')){
+		Game.player = Game.cookie.read('player');
 	}
-	if (readCookie('time')){
-		Game.time = readCookie('time');
+	if (Game.cookie.read('time')){
+		Game.time = Game.cookie.read('time');
 	}
 	// save
-	Game.save();
+	Game.save.save();
 	// set up order type list
 	createOrderTypeList();
 }
@@ -1132,7 +1129,7 @@ function redrawInterface(){
 	updateEvents();
 	// save
 	if (minute < new Date() - Game.debug.lastSave){
-		Game.save();
+		Game.save.save();
 	}
 }
 
@@ -1166,7 +1163,7 @@ function setBody(id){
 
 function updateFPS(){
 	Game.settings.fps = Number(document.getElementById('input_fps').value);
-	Game.save();
+	Game.save.save();
 }
 
 function updateNavy(){
