@@ -623,7 +623,8 @@ class Star extends Body {
 		return Game.rng.uniform(15.5e6*year, Math.min(universeAge, s.lifespan));
 	}
 	static debug(){
-		setInterval(() => console.log(Game.system.primary.lifespanFraction, Game.system.primary.temperature), 1000);
+		setInterval(() => console.log(Game.system.primary.lifespanFraction,
+			Game.system.primary.temperature), 1000);
 	}
 	/** @param {number} mass in suns */
 	static gen(mass = this.massGen()){
