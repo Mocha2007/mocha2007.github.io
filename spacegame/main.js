@@ -232,8 +232,8 @@ class Body {
 			planetIcon.classList.value += ' phw';
 		}
 		const planetCoords = this.orbit.coords;
-		planetIcon.style.left = planetCoords[0]+'px';
-		planetIcon.style.top = planetCoords[1]+'px';
+		planetIcon.style.left = planetCoords[0]+Game.debug.iconOffset+'px';
+		planetIcon.style.top = planetCoords[1]+Game.debug.iconOffset+'px';
 		const index = Game.system.secondaries.indexOf(this);
 		planetIcon.onclick = () => setBody(index);
 		// check if selection...
@@ -419,16 +419,15 @@ class Orbit {
 		}
 		if (this.lastZoom !== Game.systemHeight){
 			const step = this.period/resolution;
-			const offset = 12;
 			// update children endpoints
 			for (let i = 0; i < resolution; i++){
 				const line = document.getElementById(orbitId + '-' + i);
 				const [x1, y1] = this.coordsAt(i*step);
 				const [x2, y2] = this.coordsAt((i+1)*step);
-				line.setAttribute('x1', x1+offset);
-				line.setAttribute('y1', y1+offset);
-				line.setAttribute('x2', x2+offset);
-				line.setAttribute('y2', y2+offset);
+				line.setAttribute('x1', x1);
+				line.setAttribute('y1', y1);
+				line.setAttribute('x2', x2);
+				line.setAttribute('y2', y2);
 			}
 			this.lastZoom = Game.systemHeight;
 		}
@@ -524,6 +523,9 @@ class Star extends Body {
 	}
 	get age(){
 		return this.age_ + Game.time;
+	}
+	get color(){
+		return 'yellow'; // todo
 	}
 	/** @return lifespan in seconds */
 	get lifespan(){
@@ -911,20 +913,31 @@ function createOrderTypeList(){
 }
 
 function drawStar(){
-	const id = Game.system.primary.name;
-	let planetIcon = document.getElementById(id);
+	const star = Game.system.primary;
+	let planetIcon = document.getElementById(star.id);
 	if (planetIcon === null){
 		planetIcon = document.createElement('div');
 		document.getElementById('map').appendChild(planetIcon);
 		planetIcon.classList.value = 'star';
-		planetIcon.id = id;
+		planetIcon.id = star.id;
 		planetIcon.innerHTML = asciiEmoji.star[Game.settings.asciiEmoji];
 		planetIcon.style.position = 'absolute';
 	}
-
-	const planetCoords = [window.innerWidth/2, window.innerHeight/2];
-	planetIcon.style.left = planetCoords[0]+'px';
-	planetIcon.style.top = planetCoords[1]+'px';
+	planetIcon.style.left = Game.center[0]+Game.debug.iconOffset+'px';
+	planetIcon.style.top = Game.center[1]+Game.debug.iconOffset+'px';
+	// svg component
+	let element = document.getElementById(star.id+'svg');
+	if (!element){
+		// create
+		element = createSvgElement('circle');
+		element.setAttribute('cx', Game.center[0]);
+		element.setAttribute('cy', Game.center[1]);
+		element.id = star.id+'svg';
+		Game.svg.appendChild(element);
+	}
+	// update color and radius
+	element.setAttribute('r', star.radius/Game.systemWidth * window.innerWidth);
+	element.setAttribute('fill', star.color);
 }
 
 function getID(){
@@ -962,6 +975,10 @@ function wipeMap(){
 // end interface block
 // begin main program
 const Game = {
+	/** @return {[number, number]} */
+	get center(){
+		return [window.innerWidth/2, window.innerHeight/2];
+	},
 	cookie: {
 		/** @param {string} name */
 		delete(name){
@@ -988,6 +1005,7 @@ const Game = {
 		},
 	},
 	debug: {
+		iconOffset: -12, // 12
 		infoboxUpdateTime: 1e14,
 		lastInfoboxUpdate: -Infinity,
 		loaded: false,
