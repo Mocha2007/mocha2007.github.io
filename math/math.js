@@ -270,7 +270,7 @@ const plot = {
 			this.cplot(this.f);
 		}
 		else {
-			this.plot(this.f)
+			this.plot(this.f);
 		}
 	},
 	uwu(){
