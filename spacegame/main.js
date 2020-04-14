@@ -673,7 +673,7 @@ class System {
 	// static methods
 	/** @param {Star} star */
 	static gen(star, attempt = 0){
-		if (attempt >= 100){
+		if (1000 <= attempt){
 			throw 'too many failed attempts... something is broken :(';
 		}
 		const numberOfPlanets = Game.rng.randint(7, 9);
@@ -1061,6 +1061,14 @@ const Game = {
 		infoboxUpdateTime: 1e14,
 		lastInfoboxUpdate: -Infinity,
 		loaded: false,
+		killStar(){
+			/** @type {Star} */
+			const star = Game.system.primary;
+			Game.time = star.lifespan;
+			Game.systemHeight = 1.2*star.radius;
+			Game.speed = 2*star.lifespan;
+			setInterval(() => console.info(round(star.temperature)), 1000);
+		},
 	},
 	events: [
 		new GameEvent(
@@ -1240,6 +1248,23 @@ const Game = {
 	},
 	/** in seconds from epoch t=0 */
 	time: 0,
+	get timeString(){
+		// yr mo d h min s
+		const pad = x => x < 10 ? '0'+x : x;
+		let s = this.time;
+		const yr = Math.floor(s/year).toLocaleString();
+		s %= year;
+		const mo = pad(Math.floor(s/(30*day)));
+		s %= 30*day;
+		const d = pad(Math.floor(s/day));
+		s %= day;
+		const h = pad(Math.floor(s/hour));
+		s %= hour;
+		const min = pad(Math.floor(s/hour));
+		s %= minute;
+		s = pad(round(s));
+		return `t = ${yr} yr ${mo} mo ${d} d<br>&nbsp;&nbsp;@ ${h}:${min}:${s}`;
+	},
 	// methods
 	get playerHasColony(){
 		return 0 <= this.player.colonyID;
@@ -1315,7 +1340,7 @@ function redrawMap(){
 		infoboxElement.benisData = selectionId;
 	}
 	// update time
-	document.getElementById('time').innerHTML = 't = ' + round(Game.time/hour) + ' h';
+	document.getElementById('time').innerHTML = Game.timeString;
 	document.getElementById('timerate').innerHTML = 'dt = ' + Game.speed/hour + ' h';
 	// update zoom
 	document.getElementById('zoom').innerHTML = Game.systemHeight/au;
