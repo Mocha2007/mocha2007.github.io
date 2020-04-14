@@ -951,6 +951,7 @@ const Game = {
 		randint(min, max){ // random integer in range
 			return Math.floor(this.uniform(min, max+1));
 		},
+		/** [0, 1) */
 		random(){
 			/* jshint bitwise: false */
 			const max31Bit = Math.pow(2, 31) - 1;
@@ -1013,8 +1014,10 @@ function generatePlanet(sma){
 	}
 	/** @param {number} s */
 	function generateOrbit(s){
+		// http://exoplanets.org/plots
+		// https://www.desmos.com/calculator/ixd7gm2hpy
 		const parent = sun;
-		const ecc = Game.rng.uniform(0, 0.21);
+		const ecc = Game.rng.uniform(0, 0.21); // Math.pow(Game.rng.random(), 2.2)
 		const inc = Game.rng.uniform(0, 0.13);
 		const aop = Game.rng.uniform(0, 2*pi);
 		const lan = Game.rng.uniform(0, 2*pi);
