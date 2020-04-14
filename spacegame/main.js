@@ -1218,6 +1218,11 @@ const Game = {
 		selectionStyle: 0,
 	},
 	speed: 16*hour,
+	speedSetup(){
+		// nearest power of 2 au to...
+		const tgt = 1/4 * this.system.secondaries[0].orbit.period/hour; // in h
+		this.speed = hour*Math.pow(2, round(Math.log2(tgt)));
+	},
 	svg: document.getElementById('orbits'),
 	/** @type {System} */
 	system: undefined,
@@ -1226,7 +1231,6 @@ const Game = {
 		// nearest power of 2 au to...
 		const tgt = 10*this.system.secondaries[0].orbit.sma/au; // in au
 		this.systemHeight = au*Math.pow(2, round(Math.log2(tgt)));
-
 	},
 	get systemWidth(){
 		return window.innerWidth/window.innerHeight * this.systemHeight;
@@ -1252,7 +1256,8 @@ function main(){
 	document.getElementById('seed').innerHTML = Game.rng.seed;
 	// set up system
 	Game.system = new System();
-	// set up systemHeight
+	// set up systemHeight and speed
+	Game.speedSetup();
 	Game.systemHeightSetup();
 	// set up ticks
 	updateFPS();
