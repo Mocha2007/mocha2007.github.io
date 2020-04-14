@@ -986,7 +986,7 @@ function drawStar(){
 		Game.svg.appendChild(element);
 	}
 	// update color and radius
-	element.setAttribute('r', star.radius/Game.systemWidth * window.innerHeight);
+	element.setAttribute('r', star.radius/Game.systemHeight * window.innerHeight/2);
 	element.setAttribute('fill', star.color);
 }
 
