@@ -81,14 +81,6 @@ function remap(value, range1, range2){
 	return fraction * range2range + range2[0];
 }
 
-/**
- * @param {number} n
- * @return {0[]}
-*/
-function zeros(n){
-	return Array(n).map(() => 0);
-}
-
 // end math block
 // begin astro block
 const minute = 60;
@@ -949,9 +941,8 @@ function generateSystem(attempt = 0){
 	}
 	const numberOfPlanets = Game.rng.randint(7, 9);
 	const startSMA = 0.39*au;
-	const SMAList = zeros(numberOfPlanets);
-	SMAList[0] = startSMA;
-	for (let i=1; i<SMAList.length; i+=1){
+	const SMAList = [startSMA];
+	for (let i=1; i<numberOfPlanets; i+=1){
 		SMAList[i] = nextSMA(SMAList[i-1]);
 	}
 	const systemAttempt = SMAList.map(generatePlanet);
