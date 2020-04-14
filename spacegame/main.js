@@ -1055,6 +1055,16 @@ const Game = {
 			return this.random() * (max-min) + min;
 		},
 	},
+	save(isManual = false){
+		// store cookie https://www.w3schools.com/js/js_cookies.asp
+		writeCookie('settings', Game.settings);
+		writeCookie('player', Game.player);
+		writeCookie('time', Game.time);
+		Game.debug.lastSave = new Date();
+		if (isManual){
+			console.log('Successfully manually saved game!');
+		}
+	},
 	settings: {
 		autosaveInterval: 1,
 		fps: 20,
@@ -1104,7 +1114,7 @@ function main(){
 		Game.time = readCookie('time');
 	}
 	// save
-	saveGame();
+	Game.save();
 	// set up order type list
 	createOrderTypeList();
 }
@@ -1124,7 +1134,7 @@ function redrawInterface(){
 	updateEvents();
 	// save
 	if (minute < new Date() - Game.debug.lastSave){
-		saveGame();
+		Game.save();
 	}
 }
 
@@ -1151,17 +1161,6 @@ function redrawMap(){
 	Game.system.secondaries.map(p => p.orbit.draw());
 }
 
-function saveGame(isManual = false){
-	// store cookie https://www.w3schools.com/js/js_cookies.asp
-	writeCookie('settings', Game.settings);
-	writeCookie('player', Game.player);
-	writeCookie('time', Game.time);
-	Game.debug.lastSave = new Date();
-	if (isManual){
-		console.log('Successfully manually saved game!');
-	}
-}
-
 /** @param {number} id */
 function setBody(id){
 	document.getElementById('input_id').value = id;
@@ -1169,7 +1168,7 @@ function setBody(id){
 
 function updateFPS(){
 	Game.settings.fps = Number(document.getElementById('input_fps').value);
-	saveGame();
+	Game.save();
 }
 
 function updateNavy(){
