@@ -517,13 +517,43 @@ class Star extends Body {
 	 */
 	constructor(mass, radius, name, luminosity, temperature, age){
 		super(mass, radius, undefined, undefined, name);
-		this.luminosity = luminosity;
-		this.temperature = temperature;
-		this.age = age;
+		this.luminosity_ = luminosity;
+		this.temperature_ = temperature;
+		this.age_ = age;
+	}
+	get age(){
+		return this.age_ + Game.time;
 	}
 	/** @return lifespan in seconds */
 	get lifespan(){
 		return 3e17*Math.pow(this.mass/sun.mass, -2.5162);
+	}
+	get luminosity(){
+		const f = this.lifespanFraction;
+		let l = 0;
+		if (f < 0.6){
+			l = 0.693 * Math.exp(0.991*f);
+		}
+		else if (f < 0.9){
+			l = 0.42 * Math.exp(1.78*f);
+		}
+		else if (f < 0.93){
+			l = 1.01 * Math.exp(0.814*f);
+		}
+		else if (f < 0.97){
+			l = 3.62e-9 * Math.exp(21.7*f);
+		}
+		else {
+			l = 7.08e-39 * Math.exp(91.9*f);
+		}
+		return this.luminosity_ * l;
+	}
+	get lifespanFraction(){
+		return this.age / this.lifespan;
+	}
+	get temperature(){
+		const c = 0.979 * Math.exp(0.0543 * this.lifespanFraction);
+		return this.temperature_ * c;
 	}
 	// static methods
 	/** @param {number} mass in suns */
@@ -535,7 +565,7 @@ class Star extends Body {
 	static gen(mass = this.massGen()){
 		const luminosity = 0.45 < mass ? 1.148*Math.pow(mass, 3.4751) : 0.2264*Math.pow(mass, 2.52);
 		return new Star(sun.mass*mass, sun.radius*Math.pow(mass, 0.96), 'Star',
-			sun.luminosity*luminosity, sun.temperature*Math.pow(mass, 0.54), Star.ageGen(mass));
+			sun.luminosity_*luminosity, sun.temperature*Math.pow(mass, 0.54), Star.ageGen(mass));
 	}
 	/** solar masses */
 	static massGen(){
@@ -579,7 +609,7 @@ class System {
 	}
 }
 
-const sun = new Star(1.9885e30, 6.957e8, 'Sun', 3.828e26, 5772);
+const sun = new Star(1.9885e30, 6.957e8, 'Sun', 3.828e26, 5772, 4.6e9*year);
 /** @type {Body} */
 const earth = new Body(5.97237e24, 6371000, 0.306,
 	new Orbit(sun, 1.49598023e11, 0.0167086, 0, 0, 0, 0), 'Earth');
@@ -929,6 +959,8 @@ const Game = {
 		},
 	},
 	debug: {
+		infoboxUpdateTime: 1e14,
+		lastInfoboxUpdate: -Infinity,
 		loaded: false,
 	},
 	events: [
@@ -1097,6 +1129,7 @@ const Game = {
 	get systemWidth(){
 		return window.innerWidth/window.innerHeight * this.systemHeight;
 	},
+	/** in seconds from epoch t=0 */
 	time: 0,
 	// methods
 	get playerHasColony(){
@@ -1160,7 +1193,8 @@ function redrawMap(){
 	// update infobox
 	const selectionId = getID();
 	const infoboxElement = document.getElementById('leftinfo');
-	if (infoboxElement.benisData !== selectionId){
+	if (infoboxElement.benisData !== selectionId ||
+			Game.debug.lastInfoboxUpdate + Game.debug.infoboxUpdateTime < Game.time){
 		infoboxElement.innerHTML = '';
 		infoboxElement.appendChild(Game.system.secondaries[selectionId].info);
 		infoboxElement.benisData = selectionId;
