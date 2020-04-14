@@ -1274,7 +1274,8 @@ function updateOrders(){
 		shipTable.appendChild(row);
 	}
 	// update "can afford?"
-	document.getElementById('orderAffordable').innerHTML = 'Can' + (order.affordable ? '': '&rsquo;t') + ' afford';
+	document.getElementById('orderAffordable').innerHTML = 'Can' +
+		(order.affordable ? '': '&rsquo;t') + ' afford';
 	document.getElementById('orderAffordable').classList = order.affordable ? 'green' : 'red';
 }
 
