@@ -102,11 +102,11 @@ ul {
 	z-index: 1;
 }
 #selector {
-	background-color: #422;
+	background-color: rgba(128, 64, 64, 0.5);
     float: left;
 }
 #timecontrols {
-	background-color: #422;
+	background-color: rgba(128, 64, 64, 0.5);
 	position: absolute;
 	top: 60px;
 }
@@ -115,7 +115,7 @@ ul {
 	z-index: 0;
 }
 #rightinfo {
-	background-color: #224;
+	background-color: rgba(64, 64, 128, 0.5);
 	overflow-x: hidden;
 	overflow-y: auto;
     position: absolute;
@@ -130,7 +130,7 @@ ul {
 	line-height: 25px;
 }
 #resourcebar {
-	background-color: #224;
+	background-color: rgba(64, 64, 128, 0.5);
 	left: 50%;
 	margin-left: -15%;
 	position: absolute;
@@ -139,7 +139,7 @@ ul {
 	width: 30%;
 }
 #orbitbar {
-	background-color: #222;
+	background-color: rgba(64, 64, 64, 0.5);
 	bottom: 0;
 	left: 50%;
 	margin-left: -25%;
