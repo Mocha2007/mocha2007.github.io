@@ -589,7 +589,7 @@ class Star extends Body {
 			c = 2.33e-04*Math.exp(9.79*this.lifespanFraction);
 		}
 		else if (this.lifespanFraction < 1){ // accurate [0.975, 1]
-			c = 7.92e-22*Math.exp(51.1*this.lifespanFraction);
+			c = 9.7e-22*Math.exp(51.1*this.lifespanFraction);
 		}
 		else { // white dwarf
 			w = 0.0126; // asymptotic radius
