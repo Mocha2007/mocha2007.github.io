@@ -333,6 +333,50 @@ class Body {
 		}
 		return Game.rng.uniform(3900, 5600);
 	}
+	/**
+	 * @param {number} sma
+	 * @param {Star} star
+	*/
+	static gen(sma, star){
+		/** @param {number} s */
+		function generateBody(s){
+			s /= au;
+			let mass;
+			if (0.8 < s && s < 1.5){
+				mass = Math.pow(10, Game.rng.uniform(23.8, 25.2));
+			}
+			else if (5 < s && s < 31){
+				mass = Math.pow(10, Game.rng.uniform(25.9, 28.3));
+			}
+			else {
+				mass = 2*Math.pow(10, Game.rng.uniform(17, 27));
+			}
+			// mass = Math.pow(10, Game.rng.uniform(-1, 4))*earth.mass;
+			const density = Body.densityFromMass(mass);
+			const radius = Math.pow(mass/(density*4/3*pi), 1/3);
+			const albedo = Game.rng.uniform(0.1, 0.7);
+			return new Body(mass, radius, albedo);
+		}
+		/** @param {number} s */
+		function generateOrbit(s){
+			// http://exoplanets.org/plots
+			// https://www.desmos.com/calculator/ixd7gm2hpy
+			const parent = star;
+			const ecc = Game.rng.uniform(0, 0.21); // Math.pow(Game.rng.random(), 2.2)
+			const inc = Game.rng.uniform(0, 0.13);
+			const aop = Game.rng.uniform(0, 2*pi);
+			const lan = Game.rng.uniform(0, 2*pi);
+			const man = Game.rng.uniform(0, 2*pi);
+			return new Orbit(parent, s, ecc, inc, aop, lan, man);
+		}
+		const planet = generateBody(sma);
+		planet.orbit = generateOrbit(sma);
+		planet.name = 'Sol-' + Game.rng.randint(100000, 999999);
+		return planet;
+	}
+	static test(){
+		return Array.from(Array(100).keys()).map(() => Body.gen(au, sun));
+	}
 }
 
 class Orbit {
@@ -517,10 +561,11 @@ class Star extends Body {
 	}
 	// static methods
 	/** @param {number} mass in suns */
-	static gen(mass = 1){
+	static gen(mass = this.massGen()){
 		const luminosity = 0.45 < mass ? 1.148*Math.pow(mass, 3.4751) : 0.2264*Math.pow(mass, 2.52);
-		return new Star(mass, Math.pow(mass, 0.96), 'Star', luminosity, 5772*Math.pow(mass, 0.54));
+		return new Star(sun.mass*mass, sun.radius*Math.pow(mass, 0.96), 'Star', sun.luminosity*luminosity, sun.temperature*Math.pow(mass, 0.54));
 	}
+	//** solar masses */
 	static massGen(){
 		return Game.rng.uniform(0.7, 1.3);
 	}
@@ -531,7 +576,7 @@ class System {
 	 * @param {Body} primary
 	 * @param {Body[]} secondaries
 	 */
-	constructor(primary = Star.gen(Star.massGen()), secondaries = System.gen()){
+	constructor(primary = Star.gen(), secondaries = System.gen(primary)){
 		this.primary = primary;
 		this.secondaries = secondaries;
 	}
@@ -546,7 +591,7 @@ class System {
 		return maximum;
 	}
 	// static methods
-	static gen(attempt = 0){
+	static gen(star, attempt = 0){
 		if (attempt >= 100){
 			throw 'too many failed attempts... something is broken :(';
 		}
@@ -556,12 +601,12 @@ class System {
 		for (let i=1; i<numberOfPlanets; i+=1){
 			SMAList[i] = Orbit.nextSMA(SMAList[i-1]);
 		}
-		const systemAttempt = SMAList.map(generatePlanet);
-		return systemAttempt.some(x => x.isPHW) ? systemAttempt : this.gen(attempt+1);
+		const systemAttempt = SMAList.map(a => Body.gen(a, star));
+		return systemAttempt.some(x => x.isPHW) ? systemAttempt : this.gen(star, attempt+1);
 	}
 }
 
-const sun = new Star(1.9885e30, 6.957e8, 'Sun', 3.828e26, 5778);
+const sun = new Star(1.9885e30, 6.957e8, 'Sun', 3.828e26, 5772);
 /** @type {Body} */
 const earth = new Body(5.97237e24, 6371000, 0.306, new Orbit(sun, 1.49598023e11, 0.0167086, 0, 0, 0, 0), 'Earth');
 
@@ -805,12 +850,13 @@ function createOrderTypeList(){
 }
 
 function drawStar(){
-	let planetIcon = document.getElementById(sun.name);
+	const id = Game.system.primary.name;
+	let planetIcon = document.getElementById(id);
 	if (planetIcon === null){
 		planetIcon = document.createElement('div');
 		document.getElementById('map').appendChild(planetIcon);
 		planetIcon.classList.value = 'star';
-		planetIcon.id = sun.name;
+		planetIcon.id = id;
 		planetIcon.innerHTML = asciiEmoji.star[Game.settings.asciiEmoji];
 		planetIcon.style.position = 'absolute';
 	}
@@ -992,45 +1038,6 @@ const Game = {
 };
 // Q0COND
 Game.quests[0].conditions = [() => Game.playerHasColony];
-
-/** @param {number} sma */
-function generatePlanet(sma){
-	/** @param {number} s */
-	function generateBody(s){
-		s /= au;
-		let mass;
-		if (0.8 < s && s < 1.5){
-			mass = Math.pow(10, Game.rng.uniform(23.8, 25.2));
-		}
-		else if (5 < s && s < 31){
-			mass = Math.pow(10, Game.rng.uniform(25.9, 28.3));
-		}
-		else {
-			mass = 2*Math.pow(10, Game.rng.uniform(17, 27));
-		}
-		// mass = Math.pow(10, Game.rng.uniform(-1, 4))*earth.mass;
-		const density = Body.densityFromMass(mass);
-		const radius = Math.pow(mass/(density*4/3*pi), 1/3);
-		const albedo = Game.rng.uniform(0.1, 0.7);
-		return new Body(mass, radius, albedo);
-	}
-	/** @param {number} s */
-	function generateOrbit(s){
-		// http://exoplanets.org/plots
-		// https://www.desmos.com/calculator/ixd7gm2hpy
-		const parent = sun;
-		const ecc = Game.rng.uniform(0, 0.21); // Math.pow(Game.rng.random(), 2.2)
-		const inc = Game.rng.uniform(0, 0.13);
-		const aop = Game.rng.uniform(0, 2*pi);
-		const lan = Game.rng.uniform(0, 2*pi);
-		const man = Game.rng.uniform(0, 2*pi);
-		return new Orbit(parent, s, ecc, inc, aop, lan, man);
-	}
-	const planet = generateBody(sma);
-	planet.orbit = generateOrbit(sma);
-	planet.name = 'Sol-' + Game.rng.randint(100000, 999999);
-	return planet;
-}
 
 function getQuestsFromIds(){
 	return Game.player.quests.map(x => Game.quests[x]);
