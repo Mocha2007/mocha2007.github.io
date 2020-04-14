@@ -723,40 +723,70 @@ class Quest {
 		this.results = results;
 		this.complete = false;
 	}
-}
-
-/** @param {Quest} quest */
-function drawQuests(quest){
-	const id = Game.quests.indexOf(quest);
-	if (document.getElementById('quest'+id)){
-		// update
-		if (quest.complete && !quest.elementUpdated){
-			document.getElementById('quest'+id+'completion').classList = 'green';
-			document.getElementById('quest'+id+'completion').innerHTML = 'complete';
-			quest.elementUpdated = true;
-			quest.results.map(x => x());
+	draw(){
+		const id = Game.quests.indexOf(this);
+		if (document.getElementById('quest'+id)){
+			// update
+			if (this.complete && !this.elementUpdated){
+				document.getElementById('quest'+id+'completion').classList = 'green';
+				document.getElementById('quest'+id+'completion').innerHTML = 'complete';
+				this.elementUpdated = true;
+				this.results.map(x => x());
+			}
+		}
+		else { // create
+			const questElement = document.createElement('div');
+			questElement.classList = 'quest';
+			questElement.id = 'quest'+id;
+			// title
+			const questTitle = document.createElement('h2');
+			questTitle.innerHTML = this.title;
+			questElement.appendChild(questTitle);
+			// desc
+			const questDesc = document.createElement('div');
+			questDesc.innerHTML = this.desc;
+			questElement.appendChild(questDesc);
+			// quest status
+			const questStatus = document.createElement('span');
+			questStatus.innerHTML = 'incomplete';
+			questStatus.classList = 'red';
+			questStatus.id = 'quest'+id+'completion';
+			questElement.appendChild(questStatus);
+			// append to main
+			document.getElementById('quests').appendChild(questElement);
 		}
 	}
-	else { // create
-		const questElement = document.createElement('div');
-		questElement.classList = 'quest';
-		questElement.id = 'quest'+id;
-		// title
-		const questTitle = document.createElement('h2');
-		questTitle.innerHTML = quest.title;
-		questElement.appendChild(questTitle);
-		// desc
-		const questDesc = document.createElement('div');
-		questDesc.innerHTML = quest.desc;
-		questElement.appendChild(questDesc);
-		// quest status
-		const questStatus = document.createElement('span');
-		questStatus.innerHTML = 'incomplete';
-		questStatus.classList = 'red';
-		questStatus.id = 'quest'+id+'completion';
-		questElement.appendChild(questStatus);
-		// append to main
-		document.getElementById('quests').appendChild(questElement);
+	updateCompletion(){
+		if (this.complete){
+			return;
+		}
+		if (this.conditions.every(x => x())){
+			this.complete = true;
+		}
+	}
+	// static methods
+	static update(){
+		const quests = Game.player.quests.map(x => Game.quests[x]);
+		// display/update current quests
+		quests.map(q => q.draw());
+		// see if new quests apply
+		for (let i=0; i<Game.quests.length; i+=1){
+			const quest = Game.quests[i];
+			if (Game.player.quests.indexOf(i) >= 0){
+				continue;
+			}
+			let success = true;
+			for (let j=0; j<quest.requirements.length; j++){
+				if (!quest.requirements[j]()){
+					success = false;
+					break;
+				}
+			}
+			if (success){
+				Game.player.quests.push(i);
+			}
+		}
+		quests.map(q => q.updateCompletion());
 	}
 }
 
@@ -1030,6 +1060,9 @@ const Game = {
 	/** @type {System} */
 	system: undefined,
 	systemHeight: 3*au,
+	get systemWidth(){
+		return window.innerWidth/window.innerHeight * this.systemHeight;
+	},
 	time: 0,
 	// methods
 	get playerHasColony(){
@@ -1038,10 +1071,6 @@ const Game = {
 };
 // Q0COND
 Game.quests[0].conditions = [() => Game.playerHasColony];
-
-function getQuestsFromIds(){
-	return Game.player.quests.map(x => Game.quests[x]);
-}
 
 function main(){
 	console.info('Mocha\'s weird-ass space game test');
@@ -1075,8 +1104,7 @@ function main(){
 }
 
 function gameTick(){
-	Game.time = Game.paused ? Game.time : Game.time + Game.speed/Game.settings.fps;
-	Game.systemWidth = window.innerWidth/window.innerHeight * Game.systemHeight;
+	Game.time += Game.paused ? 0 : Game.speed/Game.settings.fps;
 }
 
 function hardReset(){
@@ -1087,7 +1115,7 @@ function hardReset(){
 }
 function redrawInterface(){
 	// update quests
-	updateQuests();
+	Quest.update();
 	// update navy
 	updateNavy();
 	// update orders
@@ -1243,39 +1271,6 @@ function updateOrders(){
 	// update "can afford?"
 	document.getElementById('orderAffordable').innerHTML = 'Can' + (order.affordable ? '': '&rsquo;t') + ' afford';
 	document.getElementById('orderAffordable').classList = order.affordable ? 'green' : 'red';
-}
-
-function updateQuests(){
-	// display/update current quests
-	getQuestsFromIds().map(drawQuests);
-	// see if new quests apply
-	for (let i=0; i<Game.quests.length; i+=1){
-		const quest = Game.quests[i];
-		if (Game.player.quests.indexOf(i) >= 0){
-			continue;
-		}
-		let success = true;
-		for (let j=0; j<quest.requirements.length; j++){
-			if (!quest.requirements[j]()){
-				success = false;
-				break;
-			}
-		}
-		if (success){
-			Game.player.quests.push(i);
-		}
-	}
-	getQuestsFromIds().map(updateQuestCompletion);
-}
-
-/** @param {Quest} quest */
-function updateQuestCompletion(quest){
-	if (quest.complete){
-		return;
-	}
-	if (quest.conditions.every(x => x())){
-		quest.complete = true;
-	}
 }
 
 function updateResources(){
