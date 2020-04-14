@@ -1247,7 +1247,7 @@ function updateOrders(){
 
 function updateQuests(){
 	// display/update current quests
-	getQuestsFromIds(Game.player.quests).map(drawQuests);
+	getQuestsFromIds().map(drawQuests);
 	// see if new quests apply
 	for (let i=0; i<Game.quests.length; i+=1){
 		const quest = Game.quests[i];
@@ -1265,7 +1265,7 @@ function updateQuests(){
 			Game.player.quests.push(i);
 		}
 	}
-	getQuestsFromIds(Game.player.quests).map(updateQuestCompletion);
+	getQuestsFromIds().map(updateQuestCompletion);
 }
 
 /** @param {Quest} quest */
