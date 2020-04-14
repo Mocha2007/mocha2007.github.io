@@ -1231,8 +1231,8 @@ const Game = {
 	speed: 16*hour,
 	speedSetup(){
 		// nearest power of 2 au to...
-		const tgt = 1/4 * this.system.secondaries[0].orbit.period/hour; // in h
-		this.speed = hour*Math.pow(2, round(Math.log2(tgt)));
+		const tgt = 1/4 * this.system.secondaries[0].orbit.period; // in s
+		this.speed = Math.pow(2, round(Math.log2(tgt)));
 	},
 	svg: document.getElementById('orbits'),
 	/** @type {System} */
@@ -1248,10 +1248,11 @@ const Game = {
 	},
 	/** in seconds from epoch t=0 */
 	time: 0,
-	get timeString(){
+	/** @param {number} s seconds */
+	timeFormat(s){
 		// yr mo d h min s
+		/** @param {number} x */
 		const pad = x => x < 10 ? '0'+x : x;
-		let s = this.time;
 		const yr = Math.floor(s/year).toLocaleString();
 		s %= year;
 		const mo = pad(Math.floor(s/(30*day)));
@@ -1260,10 +1261,10 @@ const Game = {
 		s %= day;
 		const h = pad(Math.floor(s/hour));
 		s %= hour;
-		const min = pad(Math.floor(s/hour));
+		const min = pad(Math.floor(s/minute));
 		s %= minute;
 		s = pad(round(s));
-		return `t = ${yr} yr ${mo} mo ${d} d<br>&nbsp;&nbsp;@ ${h}:${min}:${s}`;
+		return `${yr} yr ${mo} mo ${d} d<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${h}:${min}:${s}`;
 	},
 	// methods
 	get playerHasColony(){
@@ -1340,8 +1341,8 @@ function redrawMap(){
 		infoboxElement.benisData = selectionId;
 	}
 	// update time
-	document.getElementById('time').innerHTML = Game.timeString;
-	document.getElementById('timerate').innerHTML = 'dt = ' + Game.speed/hour + ' h';
+	document.getElementById('time').innerHTML = '&nbsp;t = ' + Game.timeFormat(Game.time);
+	document.getElementById('timerate').innerHTML = '&Delta;t = ' + Game.timeFormat(Game.speed);
 	// update zoom
 	document.getElementById('zoom').innerHTML = Game.systemHeight/au;
 	// update resource count
