@@ -1249,7 +1249,7 @@ const Game = {
 Game.quests[0].conditions = [() => Game.playerHasColony];
 
 function main(){
-	console.info('Mocha\'s weird-ass space game test');
+	console.info('Mocha\'s Space Game Alpha loading...');
 	if (Game.cookie.read('settings')){
 		Game.settings = Game.cookie.read('settings');
 		document.getElementById('input_fps').value = Game.settings.fps;
@@ -1280,6 +1280,9 @@ function main(){
 	Game.save.save();
 	// set up order type list
 	createOrderTypeList();
+	// successful loading
+	document.getElementById('nojs').style.visibility = 'hidden';
+	console.info('Mocha\'s Space Game Alpha loaded.');
 }
 
 function gameTick(){

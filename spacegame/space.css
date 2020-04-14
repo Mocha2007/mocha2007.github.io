@@ -92,6 +92,15 @@ ul {
     left: 0;
     position: absolute;
 }
+#nojs {
+	background-color: black;
+	line-height: 300%;
+	height: 100%;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	z-index: 1;
+}
 #selector {
 	background-color: #422;
     float: left;
