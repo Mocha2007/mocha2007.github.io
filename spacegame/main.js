@@ -562,6 +562,7 @@ class System {
 }
 
 const sun = new Star(1.9885e30, 6.957e8, 'Sun', 3.828e26, 5778);
+/** @type {Body} */
 const earth = new Body(5.97237e24, 6371000, 0.306, new Orbit(sun, 1.49598023e11, 0.0167086, 0, 0, 0, 0), 'Earth');
 
 // end astro block
@@ -1007,6 +1008,7 @@ function generatePlanet(sma){
 		else {
 			mass = 2*Math.pow(10, Game.rng.uniform(17, 27));
 		}
+		// mass = Math.pow(10, Game.rng.uniform(-1, 4))*earth.mass;
 		const density = Body.densityFromMass(mass);
 		const radius = Math.pow(mass/(density*4/3*pi), 1/3);
 		const albedo = Game.rng.uniform(0.1, 0.7);
