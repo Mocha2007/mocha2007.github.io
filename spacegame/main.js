@@ -509,14 +509,15 @@ class Orbit {
 class Star extends Body {
 	/**
 	 * @param {number} mass
-	 * @param {number} radius
+	 * @param {number} radius (base radius, varies with age)
 	 * @param {string} name
-	 * @param {number} luminosity
-	 * @param {number} temperature
+	 * @param {number} luminosity (base luminosity, varies with age)
+	 * @param {number} temperature (base temperature, varies with age)
 	 * @param {number} age
 	 */
 	constructor(mass, radius, name, luminosity, temperature, age){
 		super(mass, radius, undefined, undefined, name);
+		this.radius_ = radius;
 		this.luminosity_ = luminosity;
 		this.temperature_ = temperature;
 		this.age_ = age;
@@ -551,6 +552,11 @@ class Star extends Body {
 	get lifespanFraction(){
 		return this.age / this.lifespan;
 	}
+	get radius(){
+		const c = 0.878*Math.exp(0.373*this.lifespanFraction);
+		return this.radius_ * c;
+	}
+	set radius(_){}
 	get temperature(){
 		const c = 0.979 * Math.exp(0.0543 * this.lifespanFraction);
 		return this.temperature_ * c;
@@ -560,6 +566,9 @@ class Star extends Body {
 	static ageGen(mass){
 		const s = new Star(mass*sun.mass);
 		return Game.rng.uniform(15.5e6*year, Math.min(universeAge, s.lifespan));
+	}
+	static debug(){
+		setInterval(() => console.log(Game.system.primary.lifespanFraction), 1000);
 	}
 	/** @param {number} mass in suns */
 	static gen(mass = this.massGen()){
