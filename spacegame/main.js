@@ -531,7 +531,7 @@ class Star extends Body {
 	}
 	get luminosity(){
 		const f = this.lifespanFraction;
-		let l = 0;
+		let l = 1;
 		if (f < 0.6){
 			l = 0.693 * Math.exp(0.991*f);
 		}
@@ -544,8 +544,12 @@ class Star extends Body {
 		else if (f < 0.97){
 			l = 3.62e-9 * Math.exp(21.7*f);
 		}
-		else {
+		else if (f < 1){
 			l = 7.08e-39 * Math.exp(91.9*f);
+		}
+		else { // white dwarf
+			const x = (this.age - this.lifespan)/(1e6*year); // time since death, Myr
+			l = 4.9 * Math.pow(x, -1.32);
 		}
 		return this.luminosity_ * l;
 	}
@@ -553,12 +557,28 @@ class Star extends Body {
 		return this.age / this.lifespan;
 	}
 	get radius(){
-		const c = 0.878*Math.exp(0.373*this.lifespanFraction);
-		return this.radius_ * c;
+		let c = 1;
+		let w = 0;
+		if (this.lifespanFraction < 1){
+			c = 0.878*Math.exp(0.373*this.lifespanFraction);
+		}
+		else { // white dwarf
+			w = 0.0126; // asymptotic radius
+			const x = (this.age - this.lifespan)/(1e6*year); // time since death, Myr
+			c = 8.32e-3 * Math.pow(x, -0.297);
+		}
+		return this.radius_ * (c + w);
 	}
 	set radius(_){}
 	get temperature(){
-		const c = 0.979 * Math.exp(0.0543 * this.lifespanFraction);
+		let c = 1;
+		if (this.lifespanFraction < 1){
+			c = 0.979 * Math.exp(0.0543 * this.lifespanFraction);
+		}
+		else { // white dwarf
+			const x = (this.age - this.lifespan)/(1e6*year); // time since death, Myr
+			c = 10.7 * Math.pow(x, -0.302);
+		}
 		return this.temperature_ * c;
 	}
 	// static methods
