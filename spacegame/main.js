@@ -1271,12 +1271,10 @@ function updateOrders(){
 }
 
 function updateResources(){
-	document.getElementById('water').innerHTML = Game.player.resources.water;
-	document.getElementById('fuel').innerHTML = Game.player.resources.fuel;
-	document.getElementById('steel').innerHTML = Game.player.resources.steel;
-	document.getElementById('waterlabel').innerHTML = asciiEmoji.water[Game.settings.asciiEmoji];
-	document.getElementById('fuellabel').innerHTML = asciiEmoji.fuel[Game.settings.asciiEmoji];
-	document.getElementById('steellabel').innerHTML = asciiEmoji.steel[Game.settings.asciiEmoji];
+	'water fuel steel'.split(' ').forEach(s => {
+		document.getElementById(s).innerHTML = Game.player.resources[s];
+		document.getElementById(s+'label').innerHTML = asciiEmoji[s][Game.settings.asciiEmoji];
+	});
 }
 
 main();
