@@ -318,7 +318,7 @@ class Body {
 	static gen(sma, star){
 		/** @param {number} s */
 		function generateBody(s){
-			s /= au;
+			s /= au * Math.sqrt(star.mass/sun.mass); // scale based on ~temp
 			let mass;
 			if (0.8 < s && s < 1.5){
 				mass = Math.pow(10, Game.rng.uniform(23.8, 25.2));
