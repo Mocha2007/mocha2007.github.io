@@ -575,6 +575,9 @@ class Star extends Body {
 		const b = round(bAbs/max*value);
 		return `rgb(${r}, ${g}, ${b})`;
 	}
+	get id(){
+		return this.name.toLowerCase();
+	}
 	get info(){
 		return `${this.name}
 
