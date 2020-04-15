@@ -38,8 +38,10 @@ ul {
 	color: lime;
 }
 .orbitBarScale {
+	border-left: 1px solid white;
 	color: white;
 	font-size: x-small;
+	padding-left: 1px;
 	position: absolute;
 }
 .planet {
