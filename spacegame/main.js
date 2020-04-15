@@ -676,7 +676,7 @@ Age: ${round(this.age/(1e6*year)).toLocaleString()} Myr`;
 		}
 		const c2 = linspace(classes[i-1][1], classes[i][1], 10);
 		const i2 = c2.findIndex(x => x < this.temperature);
-		return classes[i][0]+i2;
+		return classes[i][0]+(i2 === -1 ? 9 : i2);
 	}
 	get temperature(){
 		let c = 1;
@@ -750,8 +750,10 @@ class System {
 			// too many failed attempts... something is broken :(
 			return window.location.reload();
 		}
-		const numberOfPlanets = Game.rng.randint(6, 10);
-		const c = Game.rng.uniform(0.2, 0.5); // mercury is 0.39
+		const numberOfPlanets = Game.rng.randint(6, 12); // max observed = 8 (Sol)
+		// (scaled) HD 10180b = 0.0216; Mercury = 0.3871
+		// cf. https://en.wikipedia.org/wiki/List_of_multiplanetary_systems
+		const c = Game.rng.uniform(0.1, 0.4);
 		const startSMA = c*au*Math.pow(star.mass/sun.mass, 2);
 		const SMAList = [startSMA];
 		for (let i=1; i<numberOfPlanets; i+=1){
