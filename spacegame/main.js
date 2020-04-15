@@ -751,7 +751,7 @@ class System {
 			return window.location.reload();
 		}
 		const numberOfPlanets = Game.rng.randint(6, 10);
-		const startSMA = 0.39*au*Math.sqrt(star.mass/sun.mass);
+		const startSMA = 0.39*au*Math.pow(star.mass/sun.mass, 2);
 		const SMAList = [startSMA];
 		for (let i=1; i<numberOfPlanets; i+=1){
 			SMAList[i] = Orbit.nextSMA(SMAList[i-1]);
