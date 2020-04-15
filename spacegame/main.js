@@ -574,6 +574,10 @@ class Star extends Body {
 		const b = round(bAbs/max*value);
 		return `rgb(${r}, ${g}, ${b})`;
 	}
+	get frostLine(){
+		// https://en.wikipedia.org/wiki/Frost_line_(astrophysics)
+		return 5*au*Math.sqrt(this.luminosity/sun.luminosity_);
+	}
 	get habitableZoneCenter(){
 		// cf. https://en.wikipedia.org/wiki/Circumstellar_habitable_zone#Extrasolar_extrapolation
 		return 1.34*au*Math.sqrt(this.luminosity/sun.luminosity_);
@@ -1207,11 +1211,16 @@ const Game = {
 		const H = document.createElement('span');
 		H.id = 'orbitBarH';
 		H.style.left = this.system.primary.habitableZoneCenter/au*pxau + 'px';
-		console.log(this.system.primary.habitableZoneCenter, pxau);
 		H.innerHTML = 'H';
 		H.title = 'Habitable zone centerline';
-		console.log(H);
 		Game.orbitBar.appendChild(H);
+		// frost zone one
+		const F = document.createElement('span');
+		F.id = 'orbitBarF';
+		F.style.left = this.system.primary.frostLine/au*pxau + 'px';
+		F.innerHTML = 'F';
+		F.title = 'Frost Line';
+		Game.orbitBar.appendChild(F);
 	},
 	orders: [
 		new Order(

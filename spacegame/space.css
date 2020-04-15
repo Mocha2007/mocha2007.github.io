@@ -37,7 +37,7 @@ ul {
 .green {
 	color: lime;
 }
-.orbitBarScale, #orbitBarH {
+.orbitBarScale, #orbitBarF, #orbitBarH {
 	border-radius: 10px;
 	bottom: 23px;
 	color: white;
@@ -51,10 +51,13 @@ ul {
 .orbitBarScale {
 	background: linear-gradient(cyan, teal);
 }
+#orbitBarF {
+	background: linear-gradient(darkViolet, indigo);
+}
 #orbitBarH {
 	background: linear-gradient(lime, green);
 }
-.orbitBarScale:after, #orbitBarH:after {
+.orbitBarScale:after, #orbitBarF:after, #orbitBarH:after {
 	content: '';
 	position: absolute;
 	bottom: 0;
@@ -68,6 +71,9 @@ ul {
 }
 .orbitBarScale:after {
 	border-top-color: teal;
+}
+#orbitBarF:after {
+	border-top-color: indigo;
 }
 #orbitBarH:after {
 	border-top-color: green;
