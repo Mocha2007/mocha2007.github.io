@@ -661,7 +661,7 @@ Age: ${round(this.age/(1e6*year)).toLocaleString()} Myr`; // todo
 		];
 		const i = classes.findIndex(x => x[1] < this.temperature);
 		if (!i){
-			return classes[0][0]+0;
+			return classes[0][0]+9;
 		}
 		const c2 = linspace(classes[i-1][1], classes[i][1], 10);
 		const i2 = c2.findIndex(x => x < this.temperature);
@@ -703,7 +703,10 @@ Age: ${round(this.age/(1e6*year)).toLocaleString()} Myr`; // todo
 	}
 	/** solar masses */
 	static massGen(){
-		return Math.exp(Game.rng.uniform(-2.5, 0.9)); // ~ [0.082, 2.460), expected value = 0.449
+		return Math.exp(Game.rng.uniform(-0.9, 0.9)); // ~ [0.407, 2.460), expected value = 1
+		// Generating a successful system below 0.43 M_sun is VERY rare... don't set the min below that!!!
+		// 2.5 has a lifespan of 1 billion years
+		// The lower limit is b/w 0.39 and 0.4; upper b/w 50 and ???
 	}
 }
 
