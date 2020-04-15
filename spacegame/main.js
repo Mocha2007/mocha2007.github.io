@@ -276,6 +276,7 @@ class Body {
 			planetIcon.classList.add('colony');
 		}
 		// orbit bar
+		/** @type {HTMLDivElement} */
 		let orbitBarRect = document.getElementById('orbitBar' + this.name);
 		if (!orbitBarRect){
 			orbitBarRect = this.orbit.orbitBarRect;
@@ -503,15 +504,12 @@ class Orbit {
 		return table;
 	}
 	get orbitBarRect(){
-		const rect = document.createElement('span');
+		const rect = document.createElement('div');
 		const p = remap(this.periapsis, [0, Game.system.maxOrbitRadius], [0, Game.orbitbarWidth]);
 		const width = Math.max(1, remap(this.apoapsis - this.periapsis, // minimum width: 1px
 			[0, Game.system.maxOrbitRadius], [0, Game.orbitbarWidth]));
 		rect.style.width = width + 'px';
-		rect.style.position = 'absolute';
 		rect.style.left = p + 'px';
-		rect.style.cursor = 'pointer';
-		rect.innerHTML = '&nbsp;';
 		return rect;
 	}
 	get orbitId(){

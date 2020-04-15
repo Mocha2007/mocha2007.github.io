@@ -62,7 +62,7 @@ ul {
 #orbitBarHLine {
 	background: linear-gradient(rgba(0, 255, 0, 0), rgba(0, 255, 0, 0.5));
 	border-radius: 20px 20px 0 0;
-	bottom: 19px;
+	bottom: 20px;
 	height: 20px;
 	position: absolute;
 }
@@ -204,6 +204,12 @@ ul {
 }
 #orbitbar {
 	background-color: rgba(64, 64, 64, 0.5);
+	height: 20px;
+}
+#orbitbar div {
+	cursor: pointer;
+	height: 100%;
+	position: absolute;
 }
 @keyframes selectionstrobe {
 	0% {r:5;}
