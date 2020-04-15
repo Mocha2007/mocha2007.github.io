@@ -192,14 +192,16 @@ ul {
 	top: 0;
 	width: 30%;
 }
-#orbitbar {
-	background-color: rgba(64, 64, 64, 0.5);
+#orbitbar, #orbitbarUpper {
 	bottom: 0;
 	left: 50%;
 	margin-left: -25%;
 	position: absolute;
 	text-align: center;
 	width: 50%;
+}
+#orbitbar {
+	background-color: rgba(64, 64, 64, 0.5);
 }
 @keyframes selectionstrobe {
 	0% {r:5;}

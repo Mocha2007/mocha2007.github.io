@@ -1191,6 +1191,7 @@ const Game = {
 		return document.getElementById('orbitbar');
 	},
 	orbitBarScale(){
+		Game.orbitBarUpper.innerHTML = '';
 		/** in au */
 		const systemRadius = this.system.maxOrbitRadius/au;
 		/** px / au */
@@ -1204,7 +1205,7 @@ const Game = {
 		HLine.style.left = min/au*pxau + 'px';
 		HLine.style.width = (max - min)/au*pxau + 'px';
 		HLine.title = 'Habitable zone';
-		Game.orbitBar.appendChild(HLine);
+		Game.orbitBarUpper.appendChild(HLine);
 		// find min and max power of 2 to display
 		let minPow2 = Math.floor(Math.log2(this.system.minOrbitRadius/au));
 		const maxPow2 = Math.floor(Math.log2(systemRadius));
@@ -1218,7 +1219,7 @@ const Game = {
 			elem.style.left = dist*pxau + 'px';
 			elem.innerHTML = distString;
 			elem.title = distString + ' au';
-			Game.orbitBar.appendChild(elem);
+			Game.orbitBarUpper.appendChild(elem);
 		});
 		// hab zone one
 		const H = document.createElement('span');
@@ -1226,14 +1227,18 @@ const Game = {
 		H.style.left = this.system.primary.habitableZoneCenter/au*pxau + 'px';
 		H.innerHTML = 'H';
 		H.title = 'Habitable zone centerline';
-		Game.orbitBar.appendChild(H);
+		Game.orbitBarUpper.appendChild(H);
 		// frost zone one
 		const F = document.createElement('span');
 		F.id = 'orbitBarF';
 		F.style.left = this.system.primary.frostLine/au*pxau + 'px';
 		F.innerHTML = 'F';
 		F.title = 'Frost Line';
-		Game.orbitBar.appendChild(F);
+		Game.orbitBarUpper.appendChild(F);
+	},
+	/** @return {HTMLDivElement} */
+	get orbitBarUpper(){
+		return document.getElementById('orbitbarUpper');
 	},
 	orders: [
 		new Order(
@@ -1457,8 +1462,6 @@ function main(){
 	// set up systemHeight and speed
 	Game.speedSetup();
 	Game.systemHeightSetup();
-	// set up orbitbar scale
-	Game.orbitBarScale();
 	// set up ticks
 	updateFPS();
 	setInterval(redrawInterface, 1000);
@@ -1520,6 +1523,8 @@ function redrawMap(){
 	drawStar();
 	// redraw orbits
 	Game.system.secondaries.map(p => p.orbit.draw());
+	// update orbitBar scale
+	Game.orbitBarScale();
 	// update star info
 	Game.orbitBar.title = Game.system.primary.info;
 	// check if red giant star engulfs inner planets
