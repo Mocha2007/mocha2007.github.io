@@ -37,6 +37,11 @@ ul {
 .green {
 	color: lime;
 }
+.orbitBarScale {
+	color: white;
+	font-size: x-small;
+	position: absolute;
+}
 .planet {
 	border: 2px solid transparent;
 	border-radius: 90px;

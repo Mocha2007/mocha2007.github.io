@@ -83,7 +83,7 @@ const colorFreq = {
 	red: 440e12,
 	green: 550e12,
 	blue: 640e12,
-}
+};
 
 // infobox crap
 const visibleProperties = [
@@ -282,7 +282,7 @@ class Body {
 			orbitBarRect.style['background-color'] = document.defaultView.getComputedStyle(planetIcon).fill;
 			orbitBarRect.onclick = () => setBody(index);
 			orbitBarRect.title = this.name;
-			document.getElementById('orbitbar').appendChild(orbitBarRect);
+			Game.orbitBar.appendChild(orbitBarRect);
 		}
 	}
 	/** @param {number} dist */
@@ -503,10 +503,9 @@ class Orbit {
 	}
 	get orbitBarRect(){
 		const rect = document.createElement('span');
-		const barWidth = window.innerWidth / 2;
-		const p = remap(this.periapsis, [0, Game.system.maxOrbitRadius], [0, barWidth]);
+		const p = remap(this.periapsis, [0, Game.system.maxOrbitRadius], [0, Game.orbitbarWidth]);
 		const width = remap(this.apoapsis - this.periapsis,
-			[0, Game.system.maxOrbitRadius], [0, barWidth]);
+			[0, Game.system.maxOrbitRadius], [0, Game.orbitbarWidth]);
 		rect.style.width = width + 'px';
 		rect.style.position = 'absolute';
 		rect.style.left = p + 'px';
@@ -728,15 +727,13 @@ class System {
 		this.primary = primary;
 		this.secondaries = secondaries;
 	}
+	/** maximum apoapsis */
 	get maxOrbitRadius(){
-		let maximum = 0;
-		let currentApoapsis;
-		this.secondaries.forEach(s => {
-			if (maximum < (currentApoapsis = s.orbit.apoapsis)){
-				maximum = currentApoapsis;
-			}
-		});
-		return maximum;
+		return Math.max(...this.secondaries.map(p => p.orbit.apoapsis));
+	}
+	/** minimum periapsis */
+	get minOrbitRadius(){
+		return Math.min(...this.secondaries.map(p => p.orbit.periapsis));
 	}
 	// static methods
 	/** @param {Star} star */
@@ -1174,6 +1171,36 @@ const Game = {
 			]
 		),
 	],
+	get orbitbarWidth(){
+		return this.center[0];
+	},
+	/** @return {HTMLDivElement} */
+	get orbitBar(){
+		return document.getElementById('orbitbar');
+	},
+	orbitBarScale(){
+		// todo: every 1 2 3 ... 10 20 30 ... 100 etc.
+		/** in au */
+		const systemRadius = this.system.maxOrbitRadius/au;
+		/** px / au */
+		const aupx = this.orbitbarWidth / systemRadius;
+		// find min and max power of 2 to display
+		let minPow2 = Math.floor(Math.log2(this.system.minOrbitRadius/au));
+		const maxPow2 = Math.floor(Math.log2(systemRadius));
+		minPow2 = Math.max(minPow2, maxPow2-4);
+		linspace(minPow2, maxPow2, maxPow2-minPow2).map(round).forEach(p => {
+			// element
+			const dist = Math.pow(2, p);
+			const distString = 1 <= dist ? dist : '1/'+round(1/dist);
+			const elem = document.createElement('span');
+			elem.classList.add('orbitBarScale');
+			elem.style.left = dist*aupx + 'px';
+			elem.style.bottom = '16px';
+			elem.innerHTML = distString;
+			elem.title = distString + ' au';
+			Game.orbitBar.appendChild(elem);
+		});
+	},
 	orders: [
 		new Order(
 			'Assay',
@@ -1396,6 +1423,8 @@ function main(){
 	// set up systemHeight and speed
 	Game.speedSetup();
 	Game.systemHeightSetup();
+	// set up orbitbar scale
+	Game.orbitBarScale();
 	// set up ticks
 	updateFPS();
 	setInterval(redrawInterface, 1000);
@@ -1458,7 +1487,7 @@ function redrawMap(){
 	// redraw orbits
 	Game.system.secondaries.map(p => p.orbit.draw());
 	// update star info
-	document.getElementById('orbitbar').title = Game.system.primary.info;
+	Game.orbitBar.title = Game.system.primary.info;
 	// check if red giant star engulfs inner planets
 	Game.system.secondaries.forEach(p => {
 		if (!p.destroyed && p.orbit.periapsis < Game.system.primary.radius){
