@@ -505,8 +505,8 @@ class Orbit {
 	get orbitBarRect(){
 		const rect = document.createElement('span');
 		const p = remap(this.periapsis, [0, Game.system.maxOrbitRadius], [0, Game.orbitbarWidth]);
-		const width = remap(this.apoapsis - this.periapsis,
-			[0, Game.system.maxOrbitRadius], [0, Game.orbitbarWidth]);
+		const width = Math.max(1, remap(this.apoapsis - this.periapsis, // minimum width: 1px
+			[0, Game.system.maxOrbitRadius], [0, Game.orbitbarWidth]));
 		rect.style.width = width + 'px';
 		rect.style.position = 'absolute';
 		rect.style.left = p + 'px';
