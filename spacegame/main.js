@@ -1191,7 +1191,6 @@ const Game = {
 		return document.getElementById('orbitbar');
 	},
 	orbitBarScale(){
-		const offset = 10; // to account for the fact bubbles are 20px wide
 		/** in au */
 		const systemRadius = this.system.maxOrbitRadius/au;
 		/** px / au */
@@ -1216,7 +1215,7 @@ const Game = {
 			const distString = 1 <= dist ? dist : '1/'+round(1/dist);
 			const elem = document.createElement('span');
 			elem.classList.add('orbitBarScale');
-			elem.style.left = dist*pxau-offset + 'px';
+			elem.style.left = dist*pxau + 'px';
 			elem.innerHTML = distString;
 			elem.title = distString + ' au';
 			Game.orbitBar.appendChild(elem);
@@ -1224,14 +1223,14 @@ const Game = {
 		// hab zone one
 		const H = document.createElement('span');
 		H.id = 'orbitBarH';
-		H.style.left = this.system.primary.habitableZoneCenter/au*pxau-offset + 'px';
+		H.style.left = this.system.primary.habitableZoneCenter/au*pxau + 'px';
 		H.innerHTML = 'H';
 		H.title = 'Habitable zone centerline';
 		Game.orbitBar.appendChild(H);
 		// frost zone one
 		const F = document.createElement('span');
 		F.id = 'orbitBarF';
-		F.style.left = this.system.primary.frostLine/au*pxau-offset + 'px';
+		F.style.left = this.system.primary.frostLine/au*pxau + 'px';
 		F.innerHTML = 'F';
 		F.title = 'Frost Line';
 		Game.orbitBar.appendChild(F);

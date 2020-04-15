@@ -44,6 +44,7 @@ ul {
 	font-size: x-small;
 	height: 20px;
 	line-height: 20px;
+	margin-left: -10px; /* to account for the fact bubbles are 20px wide */
 	position: absolute;
 	user-select: none;
 	width: 20px;
