@@ -551,22 +551,33 @@ class Star extends Body {
 		return this.spectralType + this.luminosityClass;
 	}
 	get color(){
-		// partially from http://www.vendian.org/mncharity/dir3/blackbody/
+		// 3000- from https://phet.colorado.edu/sims/html/blackbody-spectrum/latest/blackbody-spectrum_en.html
+		// 3500+ from WA
+		// cf. http://www.vendian.org/mncharity/dir3/blackbody/
 		const colors = [
 			'#333', // 0 K
-			'#ff3800', // 1000 K
-			'#ff9e02', // 2000 K
-			'#ffbb7b', // 3000 K
+			'#333', // 500 K
+			'rgb(72, 2, 0)', // 1000 K
+			'rgb(135, 21, 1)', // 1500 K
+			'rgb(176, 54, 8)', // 2000 K
+			'rgb(210, 96, 25)', // 2500 K
+			'rgb(239, 144, 56)', // 3000 K
+			'#ffbe7e', // 3500 K <- this boi
 			'#ffc288', // 4000 K
+			'#ffd5aa', // 4500 K
 			'#ffe7c9', // 5000 K
+			'#fff4e7', // 5500 K
 			'#fff8f4', // 6000 K
+			'#fdf9fd', // 6500 K
 			'#edeeff', // 7000 K
+			'#dee4ff', // 7500 K
 			'#cfdbff', // 8000 K
+			'#c4d4ff', // 8500 K
 			'#bdceff', // 9000 K
-			// max t = 9384 K for main seq.
+			'#b9cbff', // 9500 K
 			'#b2c6ff', // 10000 K
 		];
-		const i = Math.min(10, round(this.temperature/1000));
+		const i = Math.min(10, round(this.temperature/500));
 		return colors[i];
 	}
 	get info(){
