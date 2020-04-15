@@ -562,25 +562,16 @@ class Star extends Body {
 	}
 	get color(){
 		const t = this.temperature;
-		if (t < 3500){
-			// 3000- from https://phet.colorado.edu/sims/html/blackbody-spectrum/latest/blackbody-spectrum_en.html
-			const colors = [
-				'#333', // 0 K
-				'#333', // 500 K
-				'rgb(72, 2, 0)', // 1000 K
-				'rgb(135, 21, 1)', // 1500 K
-				'rgb(176, 54, 8)', // 2000 K
-				'rgb(210, 96, 25)', // 2500 K
-				'rgb(239, 144, 56)', // 3000 K
-			];
-			const i = Math.min(10, round(t/500));
-			return colors[i];
-		}
 		const rAbs = planckLaw(colorFreq.red, t);
 		const gAbs = planckLaw(colorFreq.green, t);
 		const bAbs = planckLaw(colorFreq.blue, t);
 		const max = Math.max(rAbs, gAbs, bAbs)/255;
-		return `rgb(${rAbs/max}, ${gAbs/max}, ${bAbs/max})`;
+		// [800, 3500] => [black, red]
+		const value = 3500 < t ? 1 : Math.max(0.1, (t - 800)/2700);
+		const r = rAbs/max*value;
+		const g = gAbs/max*value;
+		const b = bAbs/max*value;
+		return `rgb(${r}, ${g}, ${b})`;
 	}
 	get info(){
 		return `${this.name}
