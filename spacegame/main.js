@@ -576,11 +576,11 @@ class Star extends Body {
 	}
 	get frostLine(){
 		// https://en.wikipedia.org/wiki/Frost_line_(astrophysics)
-		return this.tempRadius(150);
+		return this.tempRadius(143);
 	}
 	get habitableZoneCenter(){
 		// cf. https://en.wikipedia.org/wiki/Circumstellar_habitable_zone#Extrasolar_extrapolation
-		return this.tempRadius(270);
+		return this.tempRadius(220);
 	}
 	get id(){
 		return this.name.toLowerCase();
@@ -1191,22 +1191,32 @@ const Game = {
 		return document.getElementById('orbitbar');
 	},
 	orbitBarScale(){
-		// todo: every 1 2 3 ... 10 20 30 ... 100 etc.
+		const offset = 10; // to account for the fact bubbles are 20px wide
 		/** in au */
 		const systemRadius = this.system.maxOrbitRadius/au;
 		/** px / au */
 		const pxau = this.orbitbarWidth / systemRadius;
+		// hab zone line
+		const HLine = document.createElement('div');
+		HLine.id = 'orbitBarHLine';
+		// https://en.wikipedia.org/wiki/Circumstellar_habitable_zone#Solar_System_estimates
+		/** @type {[number, number]} */
+		const [min, max] = [294, 147].map(x => this.system.primary.tempRadius(x));
+		HLine.style.left = min/au*pxau + 'px';
+		HLine.style.width = (max - min)/au*pxau + 'px';
+		HLine.title = 'Habitable zone';
+		Game.orbitBar.appendChild(HLine);
 		// find min and max power of 2 to display
 		let minPow2 = Math.floor(Math.log2(this.system.minOrbitRadius/au));
 		const maxPow2 = Math.floor(Math.log2(systemRadius));
 		minPow2 = Math.max(minPow2, maxPow2-4);
 		linspace(minPow2, maxPow2+1, maxPow2-minPow2+1).map(round).forEach(p => {
-			// element
+			// numeric elements
 			const dist = Math.pow(2, p);
 			const distString = 1 <= dist ? dist : '1/'+round(1/dist);
 			const elem = document.createElement('span');
 			elem.classList.add('orbitBarScale');
-			elem.style.left = dist*pxau + 'px';
+			elem.style.left = dist*pxau-offset + 'px';
 			elem.innerHTML = distString;
 			elem.title = distString + ' au';
 			Game.orbitBar.appendChild(elem);
@@ -1214,14 +1224,14 @@ const Game = {
 		// hab zone one
 		const H = document.createElement('span');
 		H.id = 'orbitBarH';
-		H.style.left = this.system.primary.habitableZoneCenter/au*pxau + 'px';
+		H.style.left = this.system.primary.habitableZoneCenter/au*pxau-offset + 'px';
 		H.innerHTML = 'H';
 		H.title = 'Habitable zone centerline';
 		Game.orbitBar.appendChild(H);
 		// frost zone one
 		const F = document.createElement('span');
 		F.id = 'orbitBarF';
-		F.style.left = this.system.primary.frostLine/au*pxau + 'px';
+		F.style.left = this.system.primary.frostLine/au*pxau-offset + 'px';
 		F.innerHTML = 'F';
 		F.title = 'Frost Line';
 		Game.orbitBar.appendChild(F);
