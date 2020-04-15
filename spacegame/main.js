@@ -279,7 +279,7 @@ class Body {
 		if (!document.getElementById('orbitBar' + this.name)){
 			const orbitBarRect = this.orbit.orbitBarRect;
 			orbitBarRect.id = 'orbitBar' + this.name;
-			orbitBarRect.style['background-color'] = document.defaultView.getComputedStyle(planetIcon).color;
+			orbitBarRect.style['background-color'] = document.defaultView.getComputedStyle(planetIcon).fill;
 			orbitBarRect.onclick = () => setBody(index);
 			orbitBarRect.title = this.name;
 			document.getElementById('orbitbar').appendChild(orbitBarRect);
