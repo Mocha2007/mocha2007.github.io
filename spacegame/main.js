@@ -428,7 +428,7 @@ class Orbit {
 		return [x, y];
 	}
 	draw(){
-		const resolution = 32; // lines to draw
+		const resolution = 64; // lines to draw
 		// if group doesn't exist, create it, and its children.
 		if (!document.getElementById(this.orbitId)){
 			// create element and its children
