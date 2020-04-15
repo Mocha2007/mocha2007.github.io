@@ -48,6 +48,10 @@ function mod(n, m){
 	return (n%m+m)%m;
 }
 
+function range(n = 0){
+	return Array.from(Array(n).keys());
+}
+
 /**
  * @param {number} value
  * @param {[number, number]} range1
@@ -360,7 +364,7 @@ class Body {
 		return planet;
 	}
 	static test(){
-		return Array.from(Array(100).keys()).map(() => Body.gen(au, sun));
+		return range(100).map(() => Body.gen(au, sun));
 	}
 }
 
@@ -566,9 +570,9 @@ class Star extends Body {
 		const max = Math.max(rAbs, gAbs, bAbs)/255;
 		// [800, 3500] => [black, red]
 		const value = 3500 < t ? 1 : Math.max(0.1, (t - 800)/2700);
-		const r = rAbs/max*value;
-		const g = gAbs/max*value;
-		const b = bAbs/max*value;
+		const r = round(rAbs/max*value);
+		const g = round(gAbs/max*value);
+		const b = round(bAbs/max*value);
 		return `rgb(${r}, ${g}, ${b})`;
 	}
 	get info(){
@@ -1043,7 +1047,7 @@ function drawStar(){
 	let planetIcon = document.getElementById(star.id);
 	if (planetIcon === null){
 		planetIcon = createSvgElement('text');
-		planetIcon.classList.value = 'star';
+		planetIcon.classList.add('star');
 		planetIcon.id = star.id;
 		planetIcon.innerHTML = asciiEmoji.star[Game.settings.asciiEmoji];
 		Game.svg.bodies.appendChild(planetIcon);
@@ -1053,17 +1057,28 @@ function drawStar(){
 	planetIcon.setAttribute('y', Game.center[1]+Game.debug.iconOffset);
 	// svg component
 	let element = document.getElementById(star.id+'svg');
+	let corona = document.getElementById(star.id+'coronasvg');
 	if (!element){
-		// create
+		// create star
 		element = createSvgElement('circle');
 		element.setAttribute('cx', Game.center[0]);
 		element.setAttribute('cy', Game.center[1]);
 		element.id = star.id+'svg';
+		element.classList.add('star');
 		Game.svg.bodies.appendChild(element);
+		// create corona
+		corona = createSvgElement('circle');
+		corona.setAttribute('cx', Game.center[0]);
+		corona.setAttribute('cy', Game.center[1]);
+		corona.id = star.id+'coronasvg';
+		corona.classList.add('corona');
+		Game.svg.bodies.appendChild(corona);
 	}
 	// update color and radius
-	element.setAttribute('r', star.radius/Game.systemHeight * window.innerHeight/2);
-	element.setAttribute('fill', star.color);
+	const r = star.radius/Game.systemHeight * window.innerHeight/2;
+	element.setAttribute('r', r);
+	corona.setAttribute('r', 2*r);
+	range(4).forEach(i => document.getElementById('starColor'+(i+1)).setAttribute('stop-color', star.color));
 }
 
 function getID(){
