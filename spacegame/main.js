@@ -67,11 +67,21 @@ const hour = 60*minute;
 const day = 24*hour;
 const year = 365.2425 * day;
 const universeAge = 13.799e9 * year;
-// var month = year/12;
 
 const au = 149597870700;
+const boltzmann = 1.380649e-23; // J/K; exact; https://en.wikipedia.org/wiki/Boltzmann_constant
 const gravConstant = 6.674e-11;
 const L_0 = 3.0128e28; // W; exact; zero point luminosity
+const planck = 6.62607015e-34; // J*s; exact; https://en.wikipedia.org/wiki/Planck_constant
+const speedOfLight = 299792458; // m/s; exact; https://en.wikipedia.org/wiki/Speed_of_light
+
+const colorFreq = {
+	red: 440e12,
+	green: 550e12,
+	blue: 640e12,
+}
+
+// infobox crap
 const visibleProperties = [
 	'name',
 	'classification',
@@ -551,34 +561,26 @@ class Star extends Body {
 		return this.spectralType + this.luminosityClass;
 	}
 	get color(){
-		// 3000- from https://phet.colorado.edu/sims/html/blackbody-spectrum/latest/blackbody-spectrum_en.html
-		// 3500+ from WA
-		// cf. http://www.vendian.org/mncharity/dir3/blackbody/
-		const colors = [
-			'#333', // 0 K
-			'#333', // 500 K
-			'rgb(72, 2, 0)', // 1000 K
-			'rgb(135, 21, 1)', // 1500 K
-			'rgb(176, 54, 8)', // 2000 K
-			'rgb(210, 96, 25)', // 2500 K
-			'rgb(239, 144, 56)', // 3000 K
-			'#ffbe7e', // 3500 K <- this boi
-			'#ffc288', // 4000 K
-			'#ffd5aa', // 4500 K
-			'#ffe7c9', // 5000 K
-			'#fff4e7', // 5500 K
-			'#fff8f4', // 6000 K
-			'#fdf9fd', // 6500 K
-			'#edeeff', // 7000 K
-			'#dee4ff', // 7500 K
-			'#cfdbff', // 8000 K
-			'#c4d4ff', // 8500 K
-			'#bdceff', // 9000 K
-			'#b9cbff', // 9500 K
-			'#b2c6ff', // 10000 K
-		];
-		const i = Math.min(10, round(this.temperature/500));
-		return colors[i];
+		const t = this.temperature;
+		if (t < 3500){
+			// 3000- from https://phet.colorado.edu/sims/html/blackbody-spectrum/latest/blackbody-spectrum_en.html
+			const colors = [
+				'#333', // 0 K
+				'#333', // 500 K
+				'rgb(72, 2, 0)', // 1000 K
+				'rgb(135, 21, 1)', // 1500 K
+				'rgb(176, 54, 8)', // 2000 K
+				'rgb(210, 96, 25)', // 2500 K
+				'rgb(239, 144, 56)', // 3000 K
+			];
+			const i = Math.min(10, round(t/500));
+			return colors[i];
+		}
+		const rAbs = planckLaw(colorFreq.red, t);
+		const gAbs = planckLaw(colorFreq.green, t);
+		const bAbs = planckLaw(colorFreq.blue, t);
+		const max = Math.max(rAbs, gAbs, bAbs)/255;
+		return `rgb(${rAbs/max}, ${gAbs/max}, ${bAbs/max})`;
 	}
 	get info(){
 		return `${this.name}
@@ -773,6 +775,13 @@ const sun = new Star(1.9885e30, 6.957e8, 'Sun', 3.828e26, 5778, 4.543e9*year);
 const earth = new Body(5.97237e24, 6371000, 0.306,
 	new Orbit(sun, 1.49598023e11, 0.0167086, 0, 114.20783*deg, 0, 0.1249), 'Earth');
 
+// https://en.wikipedia.org/wiki/Planck's_law
+function planckLaw(freq, temp){
+	const c = speedOfLight;
+	const h = planck;
+	const k = boltzmann;
+	return 2*h*Math.pow(freq, 3)/Math.pow(c, 2) / (Math.exp(h*freq/(k*temp))-1);
+}
 // end astro block
 // begin gameplay block
 
