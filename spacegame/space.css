@@ -39,6 +39,7 @@ ul {
 }
 .orbitBarScale {
 	border-left: 1px solid white;
+	bottom: 19px;
 	color: white;
 	font-size: x-small;
 	padding-left: 1px;

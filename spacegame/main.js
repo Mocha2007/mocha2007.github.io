@@ -1195,7 +1195,6 @@ const Game = {
 			const elem = document.createElement('span');
 			elem.classList.add('orbitBarScale');
 			elem.style.left = dist*aupx + 'px';
-			elem.style.bottom = '16px';
 			elem.innerHTML = distString;
 			elem.title = distString + ' au';
 			Game.orbitBar.appendChild(elem);
