@@ -249,20 +249,19 @@ class Body {
 		}
 		// else continue
 		if (planetIcon === null){
-			planetIcon = document.createElement('div');
-			document.getElementById('map').appendChild(planetIcon);
-			planetIcon.id = this.name;
-			planetIcon.innerHTML = asciiEmoji.planet[Game.settings.asciiEmoji];
-			planetIcon.style.position = 'absolute';
-			planetIcon.title = this.name;
+			planetIcon = createSvgElement('circle');
+			planetIcon.id = planetIcon.title = this.name;
+			Game.svg.bodies.appendChild(planetIcon);
 		}
 		planetIcon.classList.value = 'planet ' + this.classification;
 		if (this.isPHW){
 			planetIcon.classList.add('phw');
 		}
 		const planetCoords = this.orbit.coords;
-		planetIcon.style.left = planetCoords[0]+Game.debug.iconOffset+'px';
-		planetIcon.style.top = planetCoords[1]+Game.debug.iconOffset+'px';
+		planetIcon.setAttribute('cx', planetCoords[0]);
+		planetIcon.setAttribute('cy', planetCoords[1]);
+		planetIcon.setAttribute('r', Game.debug.planetRadius);
+		// planetIcon.setAttribute('fill', this.color);
 		const index = Game.system.secondaries.indexOf(this);
 		planetIcon.onclick = () => setBody(index);
 		// check if selection...
@@ -436,7 +435,7 @@ class Orbit {
 			// create element and its children
 			const g = createSvgElement('g');
 			g.id = this.orbitId;
-			Game.svg.appendChild(g);
+			Game.svg.orbits.appendChild(g);
 			for (let i = 0; i < resolution; i++){
 				const line = createSvgElement('line');
 				line.id = this.orbitId + '-' + i;
@@ -1044,16 +1043,15 @@ function drawStar(){
 	const star = Game.system.primary;
 	let planetIcon = document.getElementById(star.id);
 	if (planetIcon === null){
-		planetIcon = document.createElement('div');
-		document.getElementById('map').appendChild(planetIcon);
+		planetIcon = createSvgElement('text');
 		planetIcon.classList.value = 'star';
 		planetIcon.id = star.id;
 		planetIcon.innerHTML = asciiEmoji.star[Game.settings.asciiEmoji];
-		planetIcon.style.position = 'absolute';
+		Game.svg.bodies.appendChild(planetIcon);
 	}
-	planetIcon.style.color = star.color;
-	planetIcon.style.left = Game.center[0]+Game.debug.iconOffset+'px';
-	planetIcon.style.top = Game.center[1]+Game.debug.iconOffset+'px';
+	planetIcon.style.fill = star.color;
+	planetIcon.setAttribute('x', Game.center[0]-Game.debug.iconOffset);
+	planetIcon.setAttribute('y', Game.center[1]+Game.debug.iconOffset);
 	// svg component
 	let element = document.getElementById(star.id+'svg');
 	if (!element){
@@ -1062,7 +1060,7 @@ function drawStar(){
 		element.setAttribute('cx', Game.center[0]);
 		element.setAttribute('cy', Game.center[1]);
 		element.id = star.id+'svg';
-		Game.svg.appendChild(element);
+		Game.svg.bodies.appendChild(element);
 	}
 	// update color and radius
 	element.setAttribute('r', star.radius/Game.systemHeight * window.innerHeight/2);
@@ -1134,7 +1132,7 @@ const Game = {
 		},
 	},
 	debug: {
-		iconOffset: -12, // 12
+		iconOffset: 7,
 		infoboxUpdateTime: 1e14,
 		lastInfoboxUpdate: -Infinity,
 		loaded: false,
@@ -1146,6 +1144,7 @@ const Game = {
 			Game.speed = 2*star.lifespan;
 			setInterval(() => console.info(round(star.temperature)), 1000);
 		},
+		planetRadius: 3, // todo
 	},
 	events: [
 		new GameEvent(
@@ -1324,7 +1323,10 @@ const Game = {
 		const tgt = 1/4 * this.system.secondaries[0].orbit.period; // in s
 		this.speed = Math.pow(2, round(Math.log2(tgt)));
 	},
-	svg: document.getElementById('orbits'),
+	svg: {
+		bodies: document.getElementById('bodies'),
+		orbits: document.getElementById('orbits'),
+	},
 	/** @type {System} */
 	system: undefined,
 	systemHeight: 3*au,

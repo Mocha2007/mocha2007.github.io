@@ -40,34 +40,32 @@ ul {
 .planet {
 	border: 2px solid transparent;
 	border-radius: 90px;
-	color: silver;
 	cursor: pointer;
+	fill: silver;
 	line-height: 17px;
 	padding-bottom: 3px;
 	padding-left: 1px;
 	padding-right: 1px;
-	z-index: 0;
 }
 .destroyed {
 	display: none;
 }
 .gasGiant {
-	color: tan;
+	fill: tan;
 }
 .iceGiant {
-	color: cyan;
+	fill: cyan;
 }
 .desert {
-	color: orange;
+	fill: orange;
 }
 .terra {
-	color: seaGreen;
+	fill: seaGreen;
 }
 .phw {
-	color: lime;
+	fill: lime;
 }
 .star {
-	color: yellow;
 	cursor: default;
 }
 .selected {
