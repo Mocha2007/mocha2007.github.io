@@ -734,10 +734,10 @@ class System {
 		}
 		else if (100 < attempt){
 			// too many failed attempts... something is broken :(
-			window.location.reload();
+			return window.location.reload();
 		}
-		const numberOfPlanets = Game.rng.randint(7, 9);
-		const startSMA = 0.39*au*Math.pow(star.mass/sun.mass, 2);
+		const numberOfPlanets = Game.rng.randint(6, 10);
+		const startSMA = 0.39*au*Math.sqrt(star.mass/sun.mass);
 		const SMAList = [startSMA];
 		for (let i=1; i<numberOfPlanets; i+=1){
 			SMAList[i] = Orbit.nextSMA(SMAList[i-1]);
@@ -1213,9 +1213,15 @@ const Game = {
 		location.reload();
 	},
 	rng: {
+		debug(){
+			let x = Number(new Date());
+			x ^= x << 13;
+			x ^= x >> 17;
+			x ^= x << 5;
+			return x;
+		},
+		/** number of times random has been run */
 		i: 0,
-		seed: Number(new Date()),
-		value: 0,
 		init(){
 			/** @type {number} */
 			const loaded = Game.cookie.read('seed');
@@ -1223,11 +1229,14 @@ const Game = {
 				this.seed = Game.cookie.read('seed');
 			}
 			else {
+				this.seed = Math.floor(Math.random()*this.max32Bit);
 				Game.cookie.write('seed', this.seed);
 			}
 			this.value = this.seed;
 			return Boolean(loaded);
 		},
+		max31Bit: Math.pow(2, 31) - 1,
+		max32Bit: Math.pow(2, 32) - 1,
 		/**
 		 * @param {number} min
 		 * @param {number} max
@@ -1238,16 +1247,16 @@ const Game = {
 		/** [0, 1) */
 		random(){
 			/* jshint bitwise: false */
-			const max31Bit = Math.pow(2, 31) - 1;
-			const max32Bit = Math.pow(2, 32) - 1;
 			let x = this.value;
 			x ^= x << 13;
 			x ^= x >> 17;
 			x ^= x << 5;
 			this.value = x;
-			this.i += 1;
-			return (this.value+max31Bit)/max32Bit;
+			this.i++;
+			return (this.value+this.max31Bit)/this.max32Bit;
 		},
+		/** seed = R_0 */
+		seed: Number(new Date()),
 		/**
 		 * @param {number} min
 		 * @param {number} max
@@ -1255,6 +1264,8 @@ const Game = {
 		uniform(min, max){ // random real in range
 			return this.random() * (max-min) + min;
 		},
+		/** R_n = random(R_(n-1)) */
+		value: 0,
 	},
 	save: {
 		download(){
@@ -1283,7 +1294,9 @@ const Game = {
 		},
 	},
 	settings: {
-		autosaveInterval: 1,
+		/** in seconds */
+		autosaveInterval: 30,
+		/** in hz */
 		fps: 20,
 		asciiEmoji: 0,
 		selectionStyle: 0,
@@ -1353,6 +1366,7 @@ function main(){
 	setInterval(redrawInterface, 1000);
 	setInterval(gameTick, 1000/Game.settings.fps);
 	setInterval(redrawMap, 1000/Game.settings.fps);
+	setInterval(Game.save.save, 1000*Game.settings.autosaveInterval);
 	// select welcome tab
 	selectTab('welcome');
 	// load?
@@ -1384,10 +1398,6 @@ function redrawInterface(){
 	updateOrders();
 	// update events
 	updateEvents();
-	// save
-	if (minute < new Date() - Game.debug.lastSave){
-		Game.save.save();
-	}
 }
 
 function redrawMap(){
