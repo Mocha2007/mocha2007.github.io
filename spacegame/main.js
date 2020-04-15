@@ -576,11 +576,11 @@ class Star extends Body {
 	}
 	get frostLine(){
 		// https://en.wikipedia.org/wiki/Frost_line_(astrophysics)
-		return 5*au*Math.sqrt(this.luminosity/sun.luminosity_);
+		return this.tempRadius(150);
 	}
 	get habitableZoneCenter(){
 		// cf. https://en.wikipedia.org/wiki/Circumstellar_habitable_zone#Extrasolar_extrapolation
-		return 1.34*au*Math.sqrt(this.luminosity/sun.luminosity_);
+		return this.tempRadius(270);
 	}
 	get id(){
 		return this.name.toLowerCase();
@@ -699,6 +699,10 @@ Age: ${round(this.age/(1e6*year)).toLocaleString()} Myr`;
 			c = 10.7 * Math.pow(x, -0.302);
 		}
 		return this.temperature_ * c;
+	}
+	tempRadius(temperature = 255){
+		return this.radius / 2 * Math.sqrt(1-earth.albedo) /
+			Math.pow(temperature / this.temperature, 2);
 	}
 	// static methods
 	/** @param {number} mass in suns */
