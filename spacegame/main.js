@@ -574,6 +574,10 @@ class Star extends Body {
 		const b = round(bAbs/max*value);
 		return `rgb(${r}, ${g}, ${b})`;
 	}
+	get habitableZoneCenter(){
+		// cf. https://en.wikipedia.org/wiki/Circumstellar_habitable_zone#Extrasolar_extrapolation
+		return 1.34*au*Math.sqrt(this.luminosity/sun.luminosity_);
+	}
 	get id(){
 		return this.name.toLowerCase();
 	}
@@ -1183,7 +1187,7 @@ const Game = {
 		/** in au */
 		const systemRadius = this.system.maxOrbitRadius/au;
 		/** px / au */
-		const aupx = this.orbitbarWidth / systemRadius;
+		const pxau = this.orbitbarWidth / systemRadius;
 		// find min and max power of 2 to display
 		let minPow2 = Math.floor(Math.log2(this.system.minOrbitRadius/au));
 		const maxPow2 = Math.floor(Math.log2(systemRadius));
@@ -1194,11 +1198,20 @@ const Game = {
 			const distString = 1 <= dist ? dist : '1/'+round(1/dist);
 			const elem = document.createElement('span');
 			elem.classList.add('orbitBarScale');
-			elem.style.left = dist*aupx + 'px';
+			elem.style.left = dist*pxau + 'px';
 			elem.innerHTML = distString;
 			elem.title = distString + ' au';
 			Game.orbitBar.appendChild(elem);
 		});
+		// hab zone one
+		const H = document.createElement('span');
+		H.id = 'orbitBarH';
+		H.style.left = this.system.primary.habitableZoneCenter/au*pxau + 'px';
+		console.log(this.system.primary.habitableZoneCenter, pxau);
+		H.innerHTML = 'H';
+		H.title = 'Habitable zone centerline';
+		console.log(H);
+		Game.orbitBar.appendChild(H);
 	},
 	orders: [
 		new Order(

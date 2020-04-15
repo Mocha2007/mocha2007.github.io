@@ -37,8 +37,7 @@ ul {
 .green {
 	color: lime;
 }
-.orbitBarScale {
-	background: linear-gradient(cyan, teal);
+.orbitBarScale, #orbitBarH {
 	border-radius: 10px;
 	bottom: 23px;
 	color: white;
@@ -46,9 +45,16 @@ ul {
 	height: 20px;
 	line-height: 20px;
 	position: absolute;
+	user-select: none;
 	width: 20px;
 }
-.orbitBarScale:after {
+.orbitBarScale {
+	background: linear-gradient(cyan, teal);
+}
+#orbitBarH {
+	background: linear-gradient(lime, green);
+}
+.orbitBarScale:after, #orbitBarH:after {
 	content: '';
 	position: absolute;
 	bottom: 0;
@@ -56,10 +62,15 @@ ul {
 	width: 0;
 	height: 0;
 	border: 5px solid transparent;
-	border-top-color: teal;
 	border-bottom: 0;
 	margin-left: -5px;
 	margin-bottom: -4px;
+}
+.orbitBarScale:after {
+	border-top-color: teal;
+}
+#orbitBarH:after {
+	border-top-color: green;
 }
 .planet {
 	border: 2px solid transparent;
