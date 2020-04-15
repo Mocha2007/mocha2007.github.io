@@ -1459,6 +1459,8 @@ function main(){
 	document.getElementById('seed').innerHTML = Game.rng.seed;
 	// set up system
 	Game.system = new System();
+	// change max
+	document.getElementById('input_id').max = Game.system.secondaries.length-1;
 	// set up systemHeight and speed
 	Game.speedSetup();
 	Game.systemHeightSetup();
