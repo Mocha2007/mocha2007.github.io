@@ -550,7 +550,7 @@ class Star extends Body {
 	get class(){
 		return this.spectralType + this.luminosityClass;
 	}
-	get color(){ // todo
+	get color(){
 		// partially from http://www.vendian.org/mncharity/dir3/blackbody/
 		const colors = [
 			'#333', // 0 K
@@ -576,7 +576,7 @@ Class: ${this.class}
 Mass: ${round(this.mass/sun.mass, 2)} M_sun
 Temperature: ${round(this.temperature).toLocaleString()} K
 Abs Mag: ${round(this.absMag, 2)}
-Age: ${round(this.age/(1e6*year)).toLocaleString()} Myr`; // todo
+Age: ${round(this.age/(1e6*year)).toLocaleString()} Myr`;
 	}
 	/** @return lifespan in seconds */
 	get lifespan(){
