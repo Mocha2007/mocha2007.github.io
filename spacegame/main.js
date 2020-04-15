@@ -712,8 +712,7 @@ Age: ${round(this.age/(1e6*year)).toLocaleString()} Myr`;
 		return Game.rng.uniform(15.5e6*year, Math.min(universeAge, s.lifespan));
 	}
 	static debug(){
-		setInterval(() => console.log(Game.system.primary.lifespanFraction,
-			Game.system.primary.temperature), 1000);
+		setInterval(() => console.log(Game.system.primary.lifespanFraction), 1000);
 		Game.speed = Game.system.primary.lifespan / 100;
 	}
 	/** @param {number} mass in suns */
@@ -1169,7 +1168,6 @@ const Game = {
 			Game.time = star.lifespan;
 			Game.systemHeight = 1.2*star.radius;
 			Game.speed = 2*star.lifespan;
-			setInterval(() => console.info(round(star.temperature)), 1000);
 		},
 	},
 	events: [
@@ -1306,7 +1304,6 @@ const Game = {
 		),
 	],
 	reset(){
-		console.warn('Hard Reset!');
 		this.cookie.delete('seed');
 		this.cookie.delete('player');
 		location.reload();
