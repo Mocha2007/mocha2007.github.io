@@ -1188,7 +1188,7 @@ const Game = {
 		let minPow2 = Math.floor(Math.log2(this.system.minOrbitRadius/au));
 		const maxPow2 = Math.floor(Math.log2(systemRadius));
 		minPow2 = Math.max(minPow2, maxPow2-4);
-		linspace(minPow2, maxPow2, maxPow2-minPow2).map(round).forEach(p => {
+		linspace(minPow2, maxPow2+1, maxPow2-minPow2+1).map(round).forEach(p => {
 			// element
 			const dist = Math.pow(2, p);
 			const distString = 1 <= dist ? dist : '1/'+round(1/dist);
