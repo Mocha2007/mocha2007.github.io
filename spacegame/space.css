@@ -112,6 +112,7 @@ ul {
 }
 #map {
 	font-size: 200%;
+	user-select: none;
 	z-index: 0;
 }
 #rightinfo {
