@@ -1488,6 +1488,7 @@ function gameTick(){
 	Game.time += Game.paused ? 0 : Game.speed/Game.settings.fps;
 }
 
+/** update the right menu */
 function redrawInterface(){
 	// update quests
 	Quest.update();
@@ -1508,6 +1509,7 @@ function redrawMap(){
 		infoboxElement.innerHTML = '';
 		infoboxElement.appendChild(Game.system.secondaries[selectionId].info);
 		infoboxElement.benisData = selectionId;
+		Game.debug.lastInfoboxUpdate = Game.time;
 	}
 	// update time
 	document.getElementById('time').innerHTML = '&nbsp;t = ' + Game.timeFormat(Game.time);
