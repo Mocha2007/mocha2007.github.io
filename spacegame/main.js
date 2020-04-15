@@ -260,7 +260,6 @@ class Body {
 		const planetCoords = this.orbit.coords;
 		planetIcon.setAttribute('cx', planetCoords[0]);
 		planetIcon.setAttribute('cy', planetCoords[1]);
-		planetIcon.setAttribute('r', Game.debug.planetRadius);
 		// planetIcon.setAttribute('fill', this.color);
 		const index = Game.system.secondaries.indexOf(this);
 		planetIcon.onclick = () => setBody(index);
@@ -1144,7 +1143,6 @@ const Game = {
 			Game.speed = 2*star.lifespan;
 			setInterval(() => console.info(round(star.temperature)), 1000);
 		},
-		planetRadius: 3, // todo
 	},
 	events: [
 		new GameEvent(

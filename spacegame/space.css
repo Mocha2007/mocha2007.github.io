@@ -46,6 +46,9 @@ ul {
 	padding-bottom: 3px;
 	padding-left: 1px;
 	padding-right: 1px;
+	r: 3;
+	stroke: transparent;
+	stroke-width: 2;
 }
 .destroyed {
 	display: none;
@@ -147,11 +150,11 @@ ul {
 	width: 50%;
 }
 @keyframes selectionstrobe {
-	0% {border: 2px solid red;}
-	100% {border: 2px solid transparent;}
+	0% {r:5;}
+	100% {}
 }
 @keyframes selectionStrobeOld {
-	0% {color: red;}
+	0% {fill: gold;}
 	100% {color: transparent;}
 }
 @keyframes strobe {
