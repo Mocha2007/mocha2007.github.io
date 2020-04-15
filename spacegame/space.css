@@ -38,12 +38,28 @@ ul {
 	color: lime;
 }
 .orbitBarScale {
-	border-left: 1px solid white;
-	bottom: 19px;
+	background: linear-gradient(cyan, teal);
+	border-radius: 10px;
+	bottom: 23px;
 	color: white;
 	font-size: x-small;
-	padding-left: 3px;
+	height: 20px;
+	line-height: 20px;
 	position: absolute;
+	width: 20px;
+}
+.orbitBarScale:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-top-color: teal;
+	border-bottom: 0;
+	margin-left: -5px;
+	margin-bottom: -4px;
 }
 .planet {
 	border: 2px solid transparent;
