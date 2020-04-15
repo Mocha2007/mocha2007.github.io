@@ -34,6 +34,7 @@ function createSvgElement(name = 'svg'){
 // end basic block
 // begin math block
 const pi = Math.PI;
+const deg = pi/180;
 
 function linspace(from = 0, to = 1, points = 1){
 	return new Array(points).fill(0).map((_, i) => i/points * (to-from) + from);
@@ -166,12 +167,11 @@ class Body {
 		const T = this.temp;
 		const rE = earth.radius;
 		const rhoE = earth.density;
-		const TE = earth.temp;
+		const TE = 255;
 		const esi1 = 1-Math.abs((r-rE)/(r+rE));
 		const esi2 = 1-Math.abs((rho-rhoE)/(rho+rhoE));
 		const esi3 = 1-Math.abs((this.v_e-earth.v_e)/(this.v_e+earth.v_e));
 		const esi4 = 1-Math.abs((T-TE)/(T+TE));
-		// console.log(esi1, esi2, esi3, esi4);
 		return Math.pow(esi1, 0.57/4) * Math.pow(esi2, 1.07/4) *
 			Math.pow(esi3, 0.7/4) * Math.pow(esi4, 5.58/4);
 	}
@@ -274,7 +274,7 @@ class Body {
 	/** @param {number} dist */
 	tempAt(dist){
 		return this.orbit.parent.temperature * Math.pow(1-this.albedo, 0.25) *
-			Math.pow(this.orbit.parent.radius/2/dist, 0.5);
+			Math.sqrt(this.orbit.parent.radius/2/dist);
 	}
 	get tempDelta(){
 		const mean = this.temp;
@@ -327,7 +327,6 @@ class Body {
 			else {
 				mass = 2*Math.pow(10, Game.rng.uniform(17, 27));
 			}
-			// mass = Math.pow(10, Game.rng.uniform(-1, 4))*earth.mass;
 			const density = Body.densityFromMass(mass);
 			const radius = Math.pow(mass/(density*4/3*pi), 1/3);
 			const albedo = Game.rng.uniform(0.1, 0.7);
@@ -698,7 +697,7 @@ Age: ${round(this.age/(1e6*year)).toLocaleString()} Myr`; // todo
 	static gen(mass = this.massGen()){
 		const luminosity = 0.45 < mass ? 1.148*Math.pow(mass, 3.4751) : 0.2264*Math.pow(mass, 2.52);
 		return new Star(sun.mass*mass, sun.radius*Math.pow(mass, 0.96), 'Star',
-			sun.luminosity_*luminosity, sun.temperature*Math.pow(mass, 0.54), Star.ageGen(mass));
+			sun.luminosity_*luminosity, sun.temperature_*Math.pow(mass, 0.54), Star.ageGen(mass));
 	}
 	/** solar masses */
 	static massGen(){
@@ -750,10 +749,10 @@ class System {
 	}
 }
 
-const sun = new Star(1.9885e30, 6.957e8, 'Sun', 3.828e26, 5772, 4.6e9*year);
+const sun = new Star(1.9885e30, 6.957e8, 'Sun', 3.828e26, 5778, 4.543e9*year);
 /** @type {Body} */
 const earth = new Body(5.97237e24, 6371000, 0.306,
-	new Orbit(sun, 1.49598023e11, 0.0167086, 0, 0, 0, 0), 'Earth');
+	new Orbit(sun, 1.49598023e11, 0.0167086, 0, 114.20783*deg, 0, 0.1249), 'Earth');
 
 // end astro block
 // begin gameplay block
