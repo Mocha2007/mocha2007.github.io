@@ -276,14 +276,15 @@ class Body {
 			planetIcon.classList.add('colony');
 		}
 		// orbit bar
-		if (!document.getElementById('orbitBar' + this.name)){
-			const orbitBarRect = this.orbit.orbitBarRect;
+		let orbitBarRect = document.getElementById('orbitBar' + this.name);
+		if (!orbitBarRect){
+			orbitBarRect = this.orbit.orbitBarRect;
 			orbitBarRect.id = 'orbitBar' + this.name;
-			orbitBarRect.style['background-color'] = document.defaultView.getComputedStyle(planetIcon).fill;
 			orbitBarRect.onclick = () => setBody(index);
 			orbitBarRect.title = this.name;
 			Game.orbitBar.appendChild(orbitBarRect);
 		}
+		orbitBarRect.style['background-color'] = document.defaultView.getComputedStyle(planetIcon).fill;
 	}
 	/** @param {number} dist */
 	tempAt(dist){
