@@ -751,7 +751,8 @@ class System {
 			return window.location.reload();
 		}
 		const numberOfPlanets = Game.rng.randint(6, 10);
-		const startSMA = 0.39*au*Math.pow(star.mass/sun.mass, 2);
+		const c = Game.rng.uniform(0.2, 0.5); // mercury is 0.39
+		const startSMA = c*au*Math.pow(star.mass/sun.mass, 2);
 		const SMAList = [startSMA];
 		for (let i=1; i<numberOfPlanets; i+=1){
 			SMAList[i] = Orbit.nextSMA(SMAList[i-1]);
