@@ -211,7 +211,9 @@ class Body {
 		return table;
 	}
 	get isPHW(){
-		return 6e23 < this.mass && this.mass < 6e25 && 205 < this.temp && this.temp < 305;
+		// https://mocha2007.github.io/worldbuilding_guide
+		return earth.mass/37 < this.mass && this.mass < 10*earth.mass &&
+			205 < this.temp && this.temp < 305 && 0.73 < this.esi; // +/-50K from earth; mars is 0.73
 	}
 	get mu(){
 		return this.mass * gravConstant;
