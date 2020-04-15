@@ -116,8 +116,11 @@ ul {
 .phw {
 	fill: lime;
 }
+.star, .corona {
+	cx: 50%;
+	cy: 50%;
+}
 .star {
-	cursor: default;
 	fill: url(#starGradient);
 }
 .corona {

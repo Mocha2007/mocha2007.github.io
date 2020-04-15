@@ -1071,15 +1071,11 @@ function drawStar(){
 	if (!element){
 		// create star
 		element = createSvgElement('circle');
-		element.setAttribute('cx', Game.center[0]);
-		element.setAttribute('cy', Game.center[1]);
 		element.id = star.id+'svg';
 		element.classList.add('star');
 		Game.svg.bodies.appendChild(element);
 		// create corona
 		corona = createSvgElement('circle');
-		corona.setAttribute('cx', Game.center[0]);
-		corona.setAttribute('cy', Game.center[1]);
 		corona.id = star.id+'coronasvg';
 		corona.classList.add('corona');
 		Game.svg.bodies.appendChild(corona);
