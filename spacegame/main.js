@@ -269,11 +269,11 @@ class Body {
 		planetIcon.onclick = () => setBody(index);
 		// check if selection...
 		if (getID() === index){
-			planetIcon.classList.value += ' ' + selectionStyle[Game.settings.selectionStyle];
+			planetIcon.classList.add(selectionStyle[Game.settings.selectionStyle]);
 		}
 		// check if colony
 		if (Game.player.colonyID === index){
-			planetIcon.classList.value += ' colony';
+			planetIcon.classList.add('colony');
 		}
 		// orbit bar
 		if (!document.getElementById('orbitBar' + this.name)){
