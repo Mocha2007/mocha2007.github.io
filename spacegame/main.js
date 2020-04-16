@@ -1148,7 +1148,6 @@ const Game = {
 	debug: {
 		infoboxUpdateTime: 1e14,
 		lastInfoboxUpdate: -Infinity,
-		loaded: false,
 		killStar(){
 			/** @type {Star} */
 			const star = Game.system.primary;
@@ -1290,11 +1289,6 @@ const Game = {
 			]
 		),
 	],
-	reset(){
-		this.cookie.delete('seed');
-		this.cookie.delete('player');
-		location.reload();
-	},
 	rng: {
 		debug(){
 			let x = Number(new Date());
@@ -1306,17 +1300,10 @@ const Game = {
 		/** number of times random has been run */
 		i: 0,
 		init(){
-			/** @type {number} */
-			const loaded = Game.cookie.read('seed');
-			if (loaded){
-				this.seed = Game.cookie.read('seed');
-			}
-			else {
+			if (!Game.save.loaded){
 				this.seed = Math.floor(Math.random()*this.max32Bit);
-				Game.cookie.write('seed', this.seed);
 			}
 			this.value = this.seed;
-			return Boolean(loaded);
 		},
 		max31Bit: Math.pow(2, 31) - 1,
 		max32Bit: Math.pow(2, 32) - 1,
@@ -1365,9 +1352,34 @@ const Game = {
 			document.cookie = atob(saveData);
 			location.reload();
 		},
+		load(){
+			console.log('Attempting to load savefile...');
+			// savefile exists?
+			if (!Game.cookie.read('settings')){
+				console.log('\t... none found.');
+				return this.loaded = false;
+			}
+			// settings
+			Game.settings = Game.cookie.read('settings');
+			// rng
+			Game.rng.seed = Game.cookie.read('seed');
+			// player
+			Game.player = Game.cookie.read('player');
+			// time
+			Game.time = Game.cookie.read('time');
+			// finish
+			console.log('\t... success.');
+			return this.loaded = true;
+		},
+		loaded: false,
+		reset(){
+			Game.cookie.delete('settings'); // when game loads it will fail b/c no settings
+			location.reload();
+		},
 		save(isManual = false){
 			// store cookie https://www.w3schools.com/js/js_cookies.asp
 			Game.cookie.write('settings', Game.settings);
+			Game.cookie.write('seed', this.seed);
 			Game.cookie.write('player', Game.player);
 			Game.cookie.write('time', Game.time);
 			Game.debug.lastSave = new Date();
@@ -1435,12 +1447,11 @@ Game.quests[0].conditions = [() => Game.playerHasColony];
 
 function main(){
 	console.info('Mocha\'s Space Game Alpha loading...');
-	if (Game.cookie.read('settings')){
-		Game.settings = Game.cookie.read('settings');
-		document.getElementById('input_fps').value = Game.settings.fps;
-	}
+	// load
+	Game.save.load();
+	document.getElementById('input_fps').value = Game.settings.fps;
 	// set up RNG
-	Game.debug.loaded = Game.rng.init();
+	Game.rng.init();
 	document.getElementById('seed').innerHTML = Game.rng.seed;
 	// set up system
 	Game.system = new System();
@@ -1456,17 +1467,10 @@ function main(){
 	setInterval(Game.save.save, 1000*Game.settings.autosaveInterval);
 	// select welcome tab
 	selectTab('welcome');
-	// load?
-	if (Game.cookie.read('player')){
-		Game.player = Game.cookie.read('player');
-	}
-	if (Game.cookie.read('time')){
-		Game.time = Game.cookie.read('time');
-	}
-	// save
-	Game.save.save();
 	// set up order type list
 	createOrderTypeList();
+	// save
+	Game.save.save();
 	// successful loading
 	document.getElementById('nojs').style.visibility = 'hidden';
 	console.info('Mocha\'s Space Game Alpha loaded.');
