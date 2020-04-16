@@ -78,6 +78,7 @@ const gravConstant = 6.674e-11;
 const L_0 = 3.0128e28; // W; exact; zero point luminosity
 const planck = 6.62607015e-34; // J*s; exact; https://en.wikipedia.org/wiki/Planck_constant
 const speedOfLight = 299792458; // m/s; exact; https://en.wikipedia.org/wiki/Speed_of_light
+const waterMelt = 373.13; // K; appx; https://en.wikipedia.org/wiki/Properties_of_water
 
 const colorFreq = {
 	red: 440e12,
@@ -131,7 +132,7 @@ const specialUnits = {
 	'temp': {
 		'constant': 1,
 		f(x){
-			return x-273.2;
+			return x-273.15; // not actual melting point anymore
 		},
 		'name': '&deg;C',
 	},
@@ -166,19 +167,17 @@ class Body {
 		}
 		// rockies mars+ or just under
 		if (5e23 < this.mass){
-			// 50 C
-			if (323 < this.temp){
+			if (waterMelt + 50 < this.temp){
 				return 'desert';
 			}
-			// -50 C
-			if (223 < this.temp){
+			if (waterMelt - 50 < this.temp){
 				return 'terra';
 			}
 			return 'tundra';
 		}
 		// rocks
 		// 0 C
-		if (273 < this.temp){
+		if (waterMelt < this.temp){
 			return 'rock';
 		}
 		return 'iceball';
