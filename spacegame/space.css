@@ -93,7 +93,7 @@ ul {
 }
 .planet {
 	cursor: pointer;
-	fill: silver;
+	fill: darkGrey;
 	r: 3;
 	stroke: transparent;
 	stroke-width: 2;
@@ -105,13 +105,16 @@ ul {
 	fill: tan;
 }
 .iceGiant {
-	fill: cyan;
+	fill: #0cc;
 }
 .desert {
 	fill: orange;
 }
 .terra {
 	fill: seaGreen;
+}
+.tundra, .iceball {
+	fill: powderblue;
 }
 .phw {
 	fill: lime;

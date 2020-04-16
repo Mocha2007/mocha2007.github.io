@@ -164,13 +164,24 @@ class Body {
 		if (6e25 < this.mass){
 			return 'iceGiant';
 		}
-		if (2e24 < this.mass){
-			return 'terra';
-		}
+		// rockies mars+ or just under
 		if (5e23 < this.mass){
-			return 'desert';
+			// 50 C
+			if (323 < this.temp){
+				return 'desert';
+			}
+			// -50 C
+			if (223 < this.temp){
+				return 'terra';
+			}
+			return 'tundra';
 		}
-		return 'rock';
+		// rocks
+		// 0 C
+		if (273 < this.temp){
+			return 'rock';
+		}
+		return 'iceball';
 	}
 	get density(){
 		return this.mass / this.volume;
