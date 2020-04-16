@@ -1449,7 +1449,8 @@ const Game = {
 Game.quests[0].conditions = [() => Game.playerHasColony];
 
 function main(){
-	console.info('Mocha\'s Space Game Alpha loading...');
+	console.info('%cMocha\'s Space Game Alpha',
+		'background-color: black; border-radius: 20px; color: cyan; font-size: 4.5em; font-weight: bolder; padding: 0 10px 0 10px;');
 	// load
 	Game.save.load();
 	document.getElementById('input_fps').value = Game.settings.fps;
