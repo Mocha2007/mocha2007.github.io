@@ -221,6 +221,14 @@ class Body {
 		this.atmosphere = atmosphere;
 		this.destroyed = false;
 	}
+	/**
+	 * smallest molecular mass in kg/mol retained by the atm
+	 * based on my python algorithm mochalib/mochaastro2.py : Body.atm_retention
+	 * please see that implementation for sources and further details
+	*/
+	get atmRetention(){
+		return 887.364 * this.temp / Math.pow(this.v_e, 2);
+	}
 	get classification(){
 		if (2e26 < this.mass){
 			return 'gasGiant';
@@ -437,7 +445,7 @@ class Body {
 		const planet = generateBody(sma);
 		planet.orbit = generateOrbit(sma);
 		planet.name = 'Sol-' + Game.rng.randint(100000, 999999);
-		planet.atmosphere = Atmosphere.gen(planet.mass);
+		planet.atmosphere = Atmosphere.gen(planet);
 		return planet;
 	}
 	static test(){
@@ -456,14 +464,30 @@ class Atmosphere {
 		this.scaleHeight = scaleHeight;
 		this.composition = composition;
 	}
-	/** @param {number} mass */
-	static gen(mass){ // todo
-		return new Atmosphere(Atmosphere.genPressure(mass));
+	/** @param {Body} planet */
+	static gen(planet){ // todo
+		return new Atmosphere(
+			Atmosphere.genPressure(planet),
+			Atmosphere.genScaleHeight(planet),
+			Atmosphere.genComposition(planet)
+		);
 	}
-	/** @param {number} mass */
-	static genPressure(mass){
+	/**
+	 * @param {Body} planet
+	 * @return {[Chem, number][]}
+	*/
+	static genComposition(planet){
+		const validChems = Game.chems.filter(c => planet.atmRetention < c.molarMass);
+		return validChems.map(c => [c, 1/validChems.length]); // todo
+	}
+	/** @param {Body} planet */
+	static genPressure(planet){
 		const c = Math.pow(10, Game.rng.uniform(-1, 1));
-		return c * 8.14e-43 * Math.pow(mass, 1.94);
+		return c * 8.14e-43 * Math.pow(planet.mass, 1.94);
+	}
+	/** @param {Body} planet */
+	static genScaleHeight(){ // todo
+		return Game.rng.uniform(8.5e3, 60e3);
 	}
 }
 
@@ -1217,6 +1241,16 @@ const Game = {
 	get center(){
 		return [window.innerWidth/2, window.innerHeight/2];
 	},
+	chems: [ // name mass melt boil triple crit
+		new Chem('H2', 2*1.00784e-3, 13.99, 20.271, [13.8033, 7041], [32.938, 1.2858e6]),
+		new Chem('He', 4.002602e-3, 0.95, 4.222, [2.177, 5043], [5.1953, 227460]),
+		new Chem('N2', 2*14.00643e-3, 63.15, 77.355, [63.151, 12520], [126.21, 3.39e6]),
+		new Chem('O2', 2*15.99903e-3, 54.36, 90.188, [54.361, 146.3], [154.581, 5.043e6]),
+		// https://en.wikipedia.org/wiki/Methane_(data_page)
+		new Chem('CH4', 16.043e-3, 90.7, 111.65, [90.67, 0.117*atm], [190.6, 46*atm]),
+		water,
+		new Chem('CO2', 44.009e-3, 216.6, 216.6, [216.5944, 5.1*atm], [304.2, 7.38e6]), // todo check if the trip being above atm breaks phase code
+	],
 	cookie: {
 		// store cookie https://www.w3schools.com/js/js_cookies.asp
 		/** @param {string} name */
