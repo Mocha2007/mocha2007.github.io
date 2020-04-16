@@ -768,6 +768,12 @@ class System {
 	get minOrbitRadius(){
 		return Math.min(...this.secondaries.map(p => p.orbit.periapsis));
 	}
+	// methods
+	draw(){
+		this.secondaries.map(p => p.draw());
+		this.primary.draw();
+		this.secondaries.map(p => p.orbit.draw());
+	}
 	// static methods
 	/** @param {Star} star */
 	static gen(star, attempt = 0){
@@ -1502,10 +1508,7 @@ function redrawMap(){
 	// update resource count
 	updateResources();
 	// update map
-	Game.system.secondaries.map(p => p.draw());
-	Game.system.primary.draw();
-	// redraw orbits
-	Game.system.secondaries.map(p => p.orbit.draw());
+	Game.system.draw();
 	// update orbitBar scale
 	Game.orbitBarScale();
 	// update star info
