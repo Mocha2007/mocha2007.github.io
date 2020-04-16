@@ -1158,7 +1158,7 @@ const Game = {
 		},
 	},
 	debug: {
-		infoboxUpdateTime: 1e14,
+		infoboxUpdateTime: 1e13,
 		killStar(){
 			/** @type {Star} */
 			const star = Game.system.primary;
