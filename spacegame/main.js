@@ -65,26 +65,83 @@ function remap(value, range1, range2){
 }
 
 // end math block
-// begin astro block
+// begin constants block
 const minute = 60;
 const hour = 60*minute;
 const day = 24*hour;
 const year = 365.2425 * day;
 const universeAge = 13.799e9 * year;
 
-const au = 149597870700;
+const atm = 101325; // Pa; exact; https://en.wikipedia.org/wiki/Standard_atmosphere_(unit)
+const au = 149597870700; // m; exact
 const boltzmann = 1.380649e-23; // J/K; exact; https://en.wikipedia.org/wiki/Boltzmann_constant
 const gravConstant = 6.674e-11;
 const L_0 = 3.0128e28; // W; exact; zero point luminosity
 const planck = 6.62607015e-34; // J*s; exact; https://en.wikipedia.org/wiki/Planck_constant
 const speedOfLight = 299792458; // m/s; exact; https://en.wikipedia.org/wiki/Speed_of_light
-const waterMelt = 373.13; // K; appx; https://en.wikipedia.org/wiki/Properties_of_water
 
 const colorFreq = {
 	red: 440e12,
 	green: 550e12,
 	blue: 640e12,
 };
+// end constants block
+// begin chem block
+class Chem {
+	/**
+	 * @param {string} name
+	 * @param {number} molarMass kg/mol, not g/mol
+	 * @param {number} melt at 1 atm
+	 * @param {number} boil at 1 atm
+	 * @param {[number, number]} triple [t, p]
+	 * @param {[number, number]} critical [t, p]
+	 */
+	constructor(name, molarMass, melt, boil, triple, critical){
+		this.name = name;
+		this.molarMass = molarMass;
+		this.melt = melt;
+		this.boil = boil;
+		this.triple = triple;
+		this.critical = critical;
+	}
+	phase(temp = water.melt, pressure = atm){
+		// if triple or critical absent, assume 1 atm
+		if (!this.triple || !this.critical){
+			return temp < this.melt ? 'solid' : temp < this.boil ? 'liquid' : 'gas';
+		}
+		if (temp < this.triple[0]){
+			return 'solid';
+		}
+		// for the purposes of the game, a supercritical fluid is the same as a gas
+		if (this.critical[0] < temp){
+			return 'gas';
+		}
+		// the problem we are faced with now is we have to appx. a curve on a log-linear plot
+		// our hacky solution is to split the curve into two lines of form y = b*exp(ax)
+		const [x2, y2] = [this.boil, atm];
+		/** @type {(t: number) => number} */
+		let f;
+		// left line
+		if (temp < this.boil){
+			const [x1, y1] = this.triple;
+			const a1 = Math.log(y1 * y2)/(x1 + x2);
+			const b1 = Math.exp(a1 * x1)/y1;
+			f = t => b1*Math.exp(a1*t);
+		}
+		// right line
+		else {
+			const [x3, y3] = this.critical;
+			const a2 = Math.log(y2 * y3)/(x2 + x3);
+			const b2 = Math.exp(a2 * x2)/y2;
+			f = t => b2*Math.exp(a2*t);
+		}
+		return f(temp) < pressure ? 'liquid' : 'gas';
+	}
+}
+
+const water = new Chem('water', 0.01801528, 373.13, 373.13, [273.16, 611.657], [647, 22.064e6]);
+// end chem block
+// begin astro block
 
 // infobox crap
 const visibleProperties = [
@@ -167,17 +224,17 @@ class Body {
 		}
 		// rockies mars+ or just under
 		if (5e23 < this.mass){
-			if (waterMelt + 50 < this.temp){
+			if (water.melt + 50 < this.temp){
 				return 'desert';
 			}
-			if (waterMelt - 50 < this.temp){
+			if (water.melt - 50 < this.temp){
 				return 'terra';
 			}
 			return 'tundra';
 		}
 		// rocks
 		// 0 C
-		if (waterMelt < this.temp){
+		if (water.melt < this.temp){
 			return 'rock';
 		}
 		return 'iceball';
