@@ -573,6 +573,29 @@ class Star extends Body {
 		const b = round(bAbs/max*value);
 		return `rgb(${r}, ${g}, ${b})`;
 	}
+	draw(){
+		// svg component
+		let element = document.getElementById(this.id+'svg');
+		let corona = document.getElementById(this.id+'coronasvg');
+		if (!element){
+			// create star
+			element = createSvgElement('circle');
+			element.id = this.id+'svg';
+			element.classList.add('star');
+			Game.svg.bodies.appendChild(element);
+			// create corona
+			corona = createSvgElement('circle');
+			corona.id = this.id+'coronasvg';
+			corona.classList.add('corona');
+			Game.svg.bodies.appendChild(corona);
+		}
+		// update color and radius
+		// min star radius = 0.5px
+		const r = Math.max(0.5, this.radius/Game.systemHeight * window.innerHeight/2);
+		element.setAttribute('r', r);
+		corona.setAttribute('r', 2*r);
+		range(4).forEach(i => document.getElementById('starColor'+(i+1)).setAttribute('stop-color', this.color));
+	}
 	get frostLine(){
 		// https://en.wikipedia.org/wiki/Frost_line_(astrophysics)
 		return this.tempRadius(143);
@@ -1052,31 +1075,6 @@ function createOrderTypeList(){
 	});
 }
 
-function drawStar(){
-	const star = Game.system.primary;
-	// svg component
-	let element = document.getElementById(star.id+'svg');
-	let corona = document.getElementById(star.id+'coronasvg');
-	if (!element){
-		// create star
-		element = createSvgElement('circle');
-		element.id = star.id+'svg';
-		element.classList.add('star');
-		Game.svg.bodies.appendChild(element);
-		// create corona
-		corona = createSvgElement('circle');
-		corona.id = star.id+'coronasvg';
-		corona.classList.add('corona');
-		Game.svg.bodies.appendChild(corona);
-	}
-	// update color and radius
-	// min star radius = 0.5px
-	const r = Math.max(0.5, star.radius/Game.systemHeight * window.innerHeight/2);
-	element.setAttribute('r', r);
-	corona.setAttribute('r', 2*r);
-	range(4).forEach(i => document.getElementById('starColor'+(i+1)).setAttribute('stop-color', star.color));
-}
-
 function getID(){
 	return Number(document.getElementById('input_id').value);
 }
@@ -1505,7 +1503,7 @@ function redrawMap(){
 	updateResources();
 	// update map
 	Game.system.secondaries.map(p => p.draw());
-	drawStar();
+	Game.system.primary.draw();
 	// redraw orbits
 	Game.system.secondaries.map(p => p.orbit.draw());
 	// update orbitBar scale
