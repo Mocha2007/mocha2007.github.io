@@ -137,6 +137,10 @@ class Chem {
 		}
 		return f(temp) < pressure ? 'liquid' : 'gas';
 	}
+	/** @param {Body} planet */
+	phaseOn(planet){
+		return this.phase(planet.temp, planet.atmosphere.surfacePressure);
+	}
 }
 
 const water = new Chem('water', 0.01801528, 373.13, 373.13, [273.16, 611.657], [647, 22.064e6]);
@@ -206,13 +210,15 @@ class Body {
 	 * @param {number} albedo
 	 * @param {Orbit} orbit
 	 * @param {string} name
+	 * @param {Atmosphere} atmosphere
 	 */
-	constructor(mass, radius, albedo, orbit, name){
+	constructor(mass, radius, albedo, orbit, name, atmosphere){
 		this.mass = mass;
 		this.radius = radius;
 		this.albedo = albedo;
 		this.orbit = orbit;
 		this.name = name;
+		this.atmosphere = atmosphere;
 		this.destroyed = false;
 	}
 	get classification(){
@@ -224,20 +230,21 @@ class Body {
 		}
 		// rockies mars+ or just under
 		if (5e23 < this.mass){
-			if (water.melt + 50 < this.temp){
-				return 'desert';
+			switch (water.phaseOn(this)){
+				case 'gas':
+					return 'desert';
+				case 'liquid':
+					return 'terra';
+				default: // solid
+					return 'tundra';
 			}
-			if (water.melt - 50 < this.temp){
-				return 'terra';
-			}
-			return 'tundra';
 		}
 		// rocks
 		// 0 C
-		if (water.melt < this.temp){
-			return 'rock';
+		if (water.phaseOn(this) === 'solid'){
+			return 'iceball';
 		}
-		return 'iceball';
+		return 'rock';
 	}
 	get density(){
 		return this.mass / this.volume;
@@ -294,7 +301,7 @@ class Body {
 	get isPHW(){
 		// https://mocha2007.github.io/worldbuilding_guide
 		return earth.mass/37 < this.mass && this.mass < 10*earth.mass &&
-			205 < this.temp && this.temp < 305 && 0.73 < this.esi; // +/-50K from earth; mars is 0.73
+			water.phaseOn(this) === 'liquid' && 0.73 < this.esi; // mars is 0.73
 	}
 	get mu(){
 		return this.mass * gravConstant;
@@ -430,10 +437,33 @@ class Body {
 		const planet = generateBody(sma);
 		planet.orbit = generateOrbit(sma);
 		planet.name = 'Sol-' + Game.rng.randint(100000, 999999);
+		planet.atmosphere = Atmosphere.gen(planet.mass);
 		return planet;
 	}
 	static test(){
 		return range(100).map(() => Body.gen(au, sun));
+	}
+}
+
+class Atmosphere {
+	/**
+	 * @param {number} surfacePressure
+	 * @param {number} scaleHeight
+	 * @param {[Chem, number][]} composition
+	 */
+	constructor(surfacePressure, scaleHeight, composition){
+		this.surfacePressure = surfacePressure;
+		this.scaleHeight = scaleHeight;
+		this.composition = composition;
+	}
+	/** @param {number} mass */
+	static gen(mass){ // todo
+		return new Atmosphere(Atmosphere.genPressure(mass));
+	}
+	/** @param {number} mass */
+	static genPressure(mass){
+		const c = Math.pow(10, Game.rng.uniform(-1, 1));
+		return c * 8.14e-43 * Math.pow(mass, 1.94);
 	}
 }
 
