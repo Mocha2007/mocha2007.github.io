@@ -1121,6 +1121,7 @@ const Game = {
 		return [window.innerWidth/2, window.innerHeight/2];
 	},
 	cookie: {
+		// store cookie https://www.w3schools.com/js/js_cookies.asp
 		/** @param {string} name */
 		delete(name){
 			document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.',
@@ -1147,7 +1148,6 @@ const Game = {
 	},
 	debug: {
 		infoboxUpdateTime: 1e14,
-		lastInfoboxUpdate: -Infinity,
 		killStar(){
 			/** @type {Star} */
 			const star = Game.system.primary;
@@ -1155,6 +1155,9 @@ const Game = {
 			Game.systemHeight = 1.2*star.radius;
 			Game.speed = 2*star.lifespan;
 		},
+		lastInfoboxUpdate: -Infinity,
+		/** @type {Date} */
+		lastSave: undefined,
 	},
 	events: [
 		new GameEvent(
@@ -1342,50 +1345,50 @@ const Game = {
 			download(this.export(), 'mochaSpaceGameSave.txt', 'text/plain');
 		},
 		export(){
-			const data = btoa(document.cookie);
+			const data = btoa(JSON.stringify(this.json));
 			document.getElementById('saveData').value = data;
 			console.log('Exported Save.');
 			return data;
 		},
 		import(){
 			const saveData = document.getElementById('saveData').value;
-			document.cookie = atob(saveData);
-			location.reload();
+			this.load(JSON.parse(atob(saveData)));
 		},
-		load(){
+		get json(){
+			return {
+				settings: Game.settings,
+				seed: Game.rng.seed,
+				player: Game.player,
+				time: Game.time,
+			};
+		},
+		load(saveFile = Game.cookie.read('spacegame')){
 			console.log('Attempting to load savefile...');
 			// savefile exists?
-			if (!Game.cookie.read('settings')){
+			if (!saveFile){
 				console.log('\t... none found.');
 				return this.loaded = false;
 			}
 			// settings
-			Game.settings = Game.cookie.read('settings');
+			Game.settings = saveFile.settings;
 			// rng
-			Game.rng.seed = Game.cookie.read('seed');
+			Game.rng.seed = saveFile.seed;
 			// player
-			Game.player = Game.cookie.read('player');
+			Game.player = saveFile.player;
 			// time
-			Game.time = Game.cookie.read('time');
+			Game.time = saveFile.time;
 			// finish
 			console.log('\t... success.');
 			return this.loaded = true;
 		},
 		loaded: false,
 		reset(){
-			Game.cookie.delete('settings'); // when game loads it will fail b/c no settings
+			Game.cookie.delete('spacegame');
 			location.reload();
 		},
-		save(isManual = false){
-			// store cookie https://www.w3schools.com/js/js_cookies.asp
-			Game.cookie.write('settings', Game.settings);
-			Game.cookie.write('seed', this.seed);
-			Game.cookie.write('player', Game.player);
-			Game.cookie.write('time', Game.time);
+		save(){
+			Game.cookie.write('spacegame', this.json);
 			Game.debug.lastSave = new Date();
-			if (isManual){
-				console.log('Successfully manually saved game!');
-			}
 		},
 	},
 	settings: {
