@@ -1450,7 +1450,6 @@ function main(){
 	Game.speedSetup();
 	Game.systemHeightSetup();
 	// set up ticks
-	updateFPS();
 	setInterval(redrawInterface, 1000);
 	setInterval(gameTick, 1000/Game.settings.fps);
 	setInterval(redrawMap, 1000/Game.settings.fps);
@@ -1524,11 +1523,6 @@ function redrawMap(){
 /** @param {number} id */
 function setBody(id){
 	document.getElementById('input_id').value = id;
-}
-
-function updateFPS(){
-	Game.settings.fps = Number(document.getElementById('input_fps').value);
-	Game.save.save();
 }
 
 function updateNavy(){
