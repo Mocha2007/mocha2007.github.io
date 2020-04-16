@@ -142,7 +142,38 @@ class Chem {
 		return this.phase(planet.temp, planet.atmosphere.surfacePressure);
 	}
 }
+// person block
 
+class Person {
+	/**
+	 * @param {Name} name
+	 * In the future, this will be an object containing the following properties:
+	 * - given name(s)
+	 * - family name(s)
+	 * - patrynomics/matrynomics
+	 * - name ordering
+	 * - nicknames
+	 * - translations
+	 * @param {Set<Vital>} vital birth/death/marriage data.
+	 * In the future, this will be a SET of VITAL objects.
+	 * These objects will contain a TYPE, DATE, and RELEVANT PARTIES.
+	 * an example would be BIRTH / 1 Jan 2020 / JOHN DOE + JANE DOE
+	 * this will allow distinguishing between biological and adoptive parents
+	 * it will additionally allow simple computation of complex family structures without the need for another Person property
+	 * @param {Personality} personality
+	 * In the future, this will determine the character's interaction with you and others, including
+	 * - willingness to support a coup
+	 * - happiness with appointments, gifts, and property
+	 * - decisions they cause
+	 */
+	constructor(name, vital, personality){
+		this.name = name;
+		this.vital = vital;
+		this.personality = personality;
+	}
+}
+
+// end person block
 const water = new Chem('water', 0.01801528, 373.13, 373.13, [273.16, 611.657], [647, 22.064e6]);
 // end chem block
 // begin astro block
