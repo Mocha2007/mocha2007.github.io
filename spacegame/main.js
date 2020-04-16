@@ -1459,7 +1459,7 @@ const Game = {
 				time: Game.time,
 			};
 		},
-		load(saveFile = Game.cookie.read('spacegame')){
+		load(saveFile){
 			console.log('Attempting to load savefile...');
 			// savefile exists?
 			if (!saveFile){
@@ -1549,7 +1549,7 @@ function main(){
 	console.info('%cMocha\'s Space Game Alpha',
 		'background-color: black; border-radius: 20px; color: cyan; font-size: 4.5em; font-weight: bolder; padding: 0 10px 0 10px;');
 	// load
-	Game.save.load();
+	Game.save.load(Game.cookie.read('spacegame')); // sadly can't specify as default cause VSC bitches about it
 	document.getElementById('input_fps').value = Game.settings.fps;
 	// set up RNG
 	Game.rng.init();
