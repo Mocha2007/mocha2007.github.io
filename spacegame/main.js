@@ -1054,17 +1054,6 @@ function createOrderTypeList(){
 
 function drawStar(){
 	const star = Game.system.primary;
-	let planetIcon = document.getElementById(star.id);
-	if (planetIcon === null){
-		planetIcon = createSvgElement('text');
-		planetIcon.classList.add('star');
-		planetIcon.id = star.id;
-		planetIcon.innerHTML = asciiEmoji.star[Game.settings.asciiEmoji];
-		Game.svg.bodies.appendChild(planetIcon);
-	}
-	planetIcon.style.fill = star.color;
-	planetIcon.setAttribute('x', Game.center[0]-Game.debug.iconOffset);
-	planetIcon.setAttribute('y', Game.center[1]+Game.debug.iconOffset);
 	// svg component
 	let element = document.getElementById(star.id+'svg');
 	let corona = document.getElementById(star.id+'coronasvg');
@@ -1081,7 +1070,8 @@ function drawStar(){
 		Game.svg.bodies.appendChild(corona);
 	}
 	// update color and radius
-	const r = star.radius/Game.systemHeight * window.innerHeight/2;
+	// min star radius = 0.5px
+	const r = Math.max(0.5, star.radius/Game.systemHeight * window.innerHeight/2);
 	element.setAttribute('r', r);
 	corona.setAttribute('r', 2*r);
 	range(4).forEach(i => document.getElementById('starColor'+(i+1)).setAttribute('stop-color', star.color));
@@ -1152,7 +1142,6 @@ const Game = {
 		},
 	},
 	debug: {
-		iconOffset: 7,
 		infoboxUpdateTime: 1e14,
 		lastInfoboxUpdate: -Infinity,
 		loaded: false,
