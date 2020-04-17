@@ -245,8 +245,18 @@ class Person {
 		const timeSinceLastCheck = Game.time - event[4];
 		// reset timer
 		event[4] = Game.time;
+		const yslc = timeSinceLastCheck/year;
+		// once every 10 years or so, if male, bone a random female
+		if (this.physicality.sex && Game.rng.random() < Math.pow(0.5, yslc/10)){
+			try {
+				Game.rng.choice(Person.allInSex()).impregnate(this);
+			}
+			catch (e){
+				// unknown what causes the occasional TypeError but it doesn't seem to affect anything
+			}
+		}
 		// 99% survival per year
-		return Game.rng.random() < Math.pow(0.99, timeSinceLastCheck/year);
+		return Game.rng.random() < Math.pow(0.99, yslc);
 	}
 	die(){
 		this.vital.push(new Vital('death', Game.time, []));
@@ -268,6 +278,9 @@ class Person {
 		p.physicality = Physicality.gen();
 		p.name = Name.gen(p);
 		return p;
+	}
+	static allInSex(sex = false){
+		return Game.people.filter(p => p.physicality.sex === sex);
 	}
 	static test(){
 		// gregnancy test
