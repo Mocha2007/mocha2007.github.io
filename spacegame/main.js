@@ -276,10 +276,12 @@ class Person {
 			}
 		}
 		// 99% survival per year
-		return Game.rng.random() < Math.pow(0.99, yslc);
+		return Game.rng.random() < Math.pow(0.99, yslc) ? true : this.die();
 	}
+	/** @return {false} */
 	die(){
 		this.vital.push(new Vital('death', Game.time, []));
+		return false;
 	}
 	/** @param {Person} father */
 	impregnate(father){
