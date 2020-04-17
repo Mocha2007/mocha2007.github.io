@@ -154,7 +154,7 @@ class Person {
 	 * - name ordering
 	 * - nicknames
 	 * - translations
-	 * @param {Set<Vital>} vital birth/death/marriage data.
+	 * @param {Vital[]} vital birth/death/marriage data.
 	 * In the future, this will be a SET of VITAL objects.
 	 * These objects will contain a TYPE, DATE, and RELEVANT PARTIES.
 	 * an example would be BIRTH / 1 Jan 2020 / JOHN DOE + JANE DOE
@@ -165,11 +165,115 @@ class Person {
 	 * - willingness to support a coup
 	 * - happiness with appointments, gifts, and property
 	 * - decisions they cause
+	 * @param {Physicality} physicality
+	 * In the future, this will determine the character's physical attributes and biology
+	 * - traits, incl.:
+	 *   - strength, and hair / eye / body color
+	 *   - sex (cf. gender in personality) => false = female, true = male
+	 *   - anything which can be randomly inherited from the mother or father
+	 * - statuses, incl.:
+	 *   - pregnancy
+	 *   - other diseases
 	 */
-	constructor(name, vital, personality){
+	constructor(name, vital = [], personality = new Personality(), physicality = new Physicality()){
 		this.name = name;
 		this.vital = vital;
 		this.personality = personality;
+		this.physicality = physicality;
+		Game.people.push(this);
+	}
+	get children(){
+		return Game.people.filter(p => p.parents.includes(this));
+	}
+	get dead(){
+		return Boolean(this.vital.filter(v => v.type === 'death').length);
+	}
+	get father(){
+		const ps = this.parents;
+		if (ps.length){
+			return ps.filter(p => p.physicality.sex)[0];
+		}
+		return undefined;
+	}
+	get mother(){
+		const ps = this.parents;
+		if (ps.length){
+			return ps.filter(p => !p.physicality.sex)[0];
+		}
+		return undefined;
+	}
+	/** preferably father first, but not a hard-and-fast rule */
+	get parents(){
+		const birthEvent = this.vital.filter(v => v.type === 'birth');
+		return birthEvent.length ? birthEvent[0].parties : [];
+	}
+	/** full siblings */
+	get siblings(){
+		const f = this.father;
+		return f ? f.children.filter(p => p.mother === this.mother) : [];
+	}
+	// methods
+	/** produce child */
+	bear(){
+		const child = new Person();
+		// physicality random mix of parents' traits
+		const father = this.physicality.father; // bio father
+		child.physicality.traits = this.physicality.traits.map((trait, i) =>
+			Game.rng.bool() ? father.physicality.traits[i] : trait);
+		// birth info
+		const birth = new Vital('birth', Game.time, [father, this]);
+		child.vital.push(birth);
+	}
+	die(){
+		this.vital.push(new Vital('death', Game.time, []));
+	}
+	/** @param {Person} father */
+	impregnate(father){
+		this.physicality.father === father;
+		this.physicality.pregnant = true;
+		this.physicality.impregnationTime = Game.time;
+	}
+	// static methods
+	gen(){
+		// todo
+	}
+}
+
+class Vital {
+	/**
+	 * @param {string} type
+	 * @param {number} date
+	 * @param {Person[]} parties
+	 * example:
+	 * new Vital('birth', year*20, [johnDoe, janeDoe]);
+	 */
+	constructor(type, date, parties = []){
+		this.type = type;
+		this.date = date;
+		this.parties = parties;
+	}
+}
+
+class Personality {
+	constructor(){
+		// todo
+	}
+}
+
+class Physicality {
+	constructor(){
+		/** @type {[string, any][]} */
+		this.traits = [];
+		/** @type {Person} */
+		this.father;
+		this.pregnant = false;
+		/** @type {number} */
+		this.impregnationTime;
+	}
+	/** @type {boolean} */
+	get sex(){
+		const s = this.traits.filter(t => t[0] === 'sex');
+		return s.length ? s[0][1] : undefined;
 	}
 }
 
@@ -1416,6 +1520,8 @@ const Game = {
 			{'water': -1}
 		),
 	],
+	/** @type {Person[]} */
+	people: [],
 	player: {
 		colonyID: -1,
 		/** @type {number[]} */
@@ -1455,6 +1561,9 @@ const Game = {
 		),
 	],
 	rng: {
+		bool(){
+			return this.random() < 0.5;
+		},
 		debug(){
 			let x = Number(new Date());
 			x ^= x << 13;
