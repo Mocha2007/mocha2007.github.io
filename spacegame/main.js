@@ -226,7 +226,7 @@ class Person {
 	/** full siblings */
 	get siblings(){
 		const f = this.father;
-		return f ? f.children.filter(p => p.mother === this.mother) : [];
+		return f ? f.children.filter(p => p.mother === this.mother && p !== this) : [];
 	}
 	get sex(){
 		return this.physicality.sex;
