@@ -143,6 +143,7 @@ class Chem {
 	}
 }
 // person block
+// todo toJSON and fromJSON static methods for all these classes for savegames...
 
 class Person {
 	/**
@@ -229,13 +230,19 @@ class Person {
 	}
 	/** @param {Person} father */
 	impregnate(father){
-		this.physicality.father === father;
+		this.physicality.father = father;
 		this.physicality.pregnant = true;
 		this.physicality.impregnationTime = Game.time;
+		this.physicality.dueDate = Game.time + Physicality.pregnancyTime();
 	}
 	// static methods
-	gen(){
-		// todo
+	static gen(){
+		const p = new Person();
+		// p.name = Name.gen();
+		p.vital = Vital.gen();
+		p.personality = Personality.gen();
+		p.physicality = Physicality.gen();
+		return p;
 	}
 }
 
@@ -252,11 +259,24 @@ class Vital {
 		this.date = date;
 		this.parties = parties;
 	}
+	// static methods
+	static gen(){
+		/** @type {Vital[]} */
+		const v = [];
+		// born [20, 50] years ago
+		const birthDate = Game.rng.uniform(Game.time - 50*year, Game.time - 20*year);
+		v.push(new Vital('birth', birthDate));
+		return v;
+	}
 }
 
 class Personality {
 	constructor(){
 		// todo
+	}
+	// static methods
+	static gen(){
+		return new Personality();
 	}
 }
 
@@ -269,11 +289,24 @@ class Physicality {
 		this.pregnant = false;
 		/** @type {number} */
 		this.impregnationTime;
+		/** @type {number} */
+		this.dueDate;
 	}
 	/** @type {boolean} */
 	get sex(){
 		const s = this.traits.filter(t => t[0] === 'sex');
 		return s.length ? s[0][1] : undefined;
+	}
+	// static methods
+	static gen(){
+		const p = new Physicality();
+		// sex
+		p.traits.push(['sex', Game.rng.bool()]);
+		return p;
+	}
+	static pregnancyTime(){
+		// https://en.wikipedia.org/wiki/Estimated_date_of_delivery
+		return Game.rng.uniform(37*7*day, 42*7*day);
 	}
 }
 
