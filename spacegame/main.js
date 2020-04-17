@@ -172,6 +172,7 @@ class Person {
 	 *   - strength, and hair / eye / body color
 	 *   - sex (cf. gender in personality) => false = female, true = male
 	 *   - anything which can be randomly inherited from the mother or father
+	 *   - in the future these may belong to their own Gene class
 	 * - statuses, incl.:
 	 *   - pregnancy
 	 *   - other diseases
