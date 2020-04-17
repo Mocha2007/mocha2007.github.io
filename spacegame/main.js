@@ -177,7 +177,8 @@ class Person {
 	 *   - pregnancy
 	 *   - other diseases
 	 */
-	constructor(name, vital = [], personality = new Personality(), physicality = new Physicality()){
+	constructor(name = new Name(), vital = [],
+		personality = new Personality(), physicality = new Physicality()){
 		this.name = name;
 		this.vital = vital;
 		this.personality = personality;
@@ -217,6 +218,7 @@ class Person {
 	// methods
 	/** produce child */
 	bear(){
+		this.physicality.pregnant = false;
 		const child = new Person();
 		// physicality random mix of parents' traits
 		const father = this.physicality.father; // bio father
@@ -225,6 +227,9 @@ class Person {
 		// birth info
 		const birth = new Vital('birth', Game.time, [father, this]);
 		child.vital.push(birth);
+		// name
+		child.name = Name.gen(child);
+		child.name.family = father.name.family;
 	}
 	die(){
 		this.vital.push(new Vital('death', Game.time, []));
@@ -235,6 +240,8 @@ class Person {
 		this.physicality.pregnant = true;
 		this.physicality.impregnationTime = Game.time;
 		this.physicality.dueDate = Game.time + Physicality.pregnancyTime();
+		// add event to queue
+		Game.queue.push([this.physicality.dueDate, () => this.bear()]);
 	}
 	// static methods
 	static gen(){
@@ -244,6 +251,13 @@ class Person {
 		p.physicality = Physicality.gen();
 		p.name = Name.gen(p);
 		return p;
+	}
+	static test(){
+		// gregnancy test
+		Person.gen().physicality.traits[0][1] = false;
+		Person.gen().physicality.traits[0][1] = true;
+		Game.people[0].impregnate(Game.people[1]);
+		Game.time = Game.people[0].physicality.dueDate;
 	}
 }
 
@@ -1599,6 +1613,9 @@ const Game = {
 		},
 		orders: [],
 	},
+	processQueue(){
+		Game.queue = Game.queue.filter(e => e[0] < Game.time ? e[1]() : true);
+	},
 	quests: [
 		new Quest(
 			'Select World',
@@ -1621,6 +1638,11 @@ const Game = {
 			]
 		),
 	],
+	/** events that will fire after the given date
+	 * the boolean will determine whether the event remains in the queue
+	 * @type {[number, () => boolean][]}
+	*/
+	queue: [],
 	rng: {
 		bool(){
 			return this.random() < 0.5;
@@ -1804,6 +1826,7 @@ function main(){
 	setInterval(redrawInterface, 1000);
 	setInterval(gameTick, 1000/Game.settings.fps);
 	setInterval(redrawMap, 1000/Game.settings.fps);
+	setInterval(Game.processQueue, 1000);
 	setInterval(Game.save.save, 1000*Game.settings.autosaveInterval);
 	// select welcome tab
 	selectTab('welcome');
