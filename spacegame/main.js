@@ -184,7 +184,7 @@ class Person {
 		this.personality = personality;
 		this.physicality = physicality;
 		Game.people.push(this);
-		Game.queue.push([0, () => this.checkLife(), 'checkLife', this, Game.time]);
+		Game.queue.add([Game.time, () => this.checkLife(), 'checkLife', this, Game.time]);
 	}
 	get age(){
 		return Game.time - this.vital.filter(v => v.type === 'birth')[0].date;
@@ -201,6 +201,9 @@ class Person {
 			return ps.filter(p => p.physicality.sex)[0];
 		}
 		return undefined;
+	}
+	get getCheckLife(){
+		return Game.queue.queue.filter(e => e[2] === 'checkLife' && e[3] === this)[0];
 	}
 	get mother(){
 		const ps = this.parents;
@@ -237,8 +240,8 @@ class Person {
 	}
 	/** @return {boolean} true if alive, false if dead */
 	checkLife(){
-		/** @type {[0, () => boolean, string, Person, number]} */
-		const event = Game.queue.filter(e => e[2] === 'checkLife' && e[3] === this)[0];
+		/** @type {[number, () => boolean, string, Person, number]} */
+		const event = this.getCheckLife;
 		const timeSinceLastCheck = Game.time - event[4];
 		// reset timer
 		event[4] = Game.time;
@@ -255,7 +258,7 @@ class Person {
 		this.physicality.impregnationTime = Game.time;
 		this.physicality.dueDate = Game.time + Physicality.pregnancyTime();
 		// add event to queue
-		Game.queue.push([this.physicality.dueDate, () => this.bear()]);
+		Game.queue.add([this.physicality.dueDate, () => this.bear()]);
 	}
 	// static methods
 	static gen(){
@@ -1627,9 +1630,6 @@ const Game = {
 		},
 		orders: [],
 	},
-	processQueue(){
-		Game.queue = Game.queue.filter(e => e[0] < Game.time ? e[1]() : true);
-	},
 	quests: [
 		new Quest(
 			'Select World',
@@ -1652,12 +1652,32 @@ const Game = {
 			]
 		),
 	],
-	/** events that will fire after the given date
-	 * the boolean will determine whether the event remains in the queue
-	 * indices >1 reserved for additional details.
-	 * @type {[number, () => boolean][]}
-	*/
-	queue: [],
+	queue: {
+		/** @param {[number, () => boolean]} event */
+		add(event){
+			this.addenda.push(event);
+		},
+		/** @type {[number, () => boolean][]} */
+		addenda: [],
+		/** events that will fire after the given date
+		 * the boolean will determine whether the event remains in the queue
+		 * indices >1 reserved for additional details.
+		 * @type {[number, () => boolean][]}
+		*/
+		queue: [],
+		/** @param {[number, () => boolean]} event */
+		remove(event){
+			this.queue.splice(this.queue.indexOf(event));
+		},
+		update(){
+			// remove
+			Game.queue.queue.filter(e => e[0] < Game.time ? !e[1]() : false).forEach(
+				e => Game.queue.remove(e));
+			// add
+			Game.queue.addenda.forEach(e => Game.queue.queue.push(e));
+			Game.queue.addenda = [];
+		},
+	},
 	rng: {
 		bool(){
 			return this.random() < 0.5;
@@ -1841,7 +1861,7 @@ function main(){
 	setInterval(redrawInterface, 1000);
 	setInterval(gameTick, 1000/Game.settings.fps);
 	setInterval(redrawMap, 1000/Game.settings.fps);
-	setInterval(Game.processQueue, 1000);
+	setInterval(Game.queue.update, 1000);
 	setInterval(Game.save.save, 1000*Game.settings.autosaveInterval);
 	// select welcome tab
 	selectTab('welcome');
