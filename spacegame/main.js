@@ -185,6 +185,9 @@ class Person {
 		this.physicality = physicality;
 		Game.people.push(this);
 	}
+	get age(){
+		return Game.time - this.vital.filter(v => v.type === 'birth')[0].date;
+	}
 	get children(){
 		return Game.people.filter(p => p.parents.includes(this));
 	}
@@ -1796,7 +1799,7 @@ const Game = {
 		const min = pad(Math.floor(s/minute));
 		s %= minute;
 		s = pad(round(s));
-		return `${yr} yr ${mo} mo ${d} d<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${h}:${min}:${s}`;
+		return `${yr} yr ${mo} mo ${d} d ${h}:${min}:${s}`;
 	},
 	// methods
 	get playerHasColony(){
