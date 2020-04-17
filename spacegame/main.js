@@ -222,7 +222,22 @@ class Person {
 		const f = this.father;
 		return f ? f.children.filter(p => p.mother === this.mother) : [];
 	}
+	get sex(){
+		return this.physicality.sex;
+	}
 	// methods
+	ahnentafel(n = 1){
+		/** @type {[number, string][]} */
+		let a = [[n, this.name.toString()]];
+		this.parents.map(p => p.ahnentafel(2*n + (p.sex ? 0 : 1))).forEach(p => a = a.concat(p));
+		console.log(n, a);
+		if (n !== 1){
+			return a;
+		}
+		// else return string
+		a.sort((x, y) => x[0] - y[0]); // sort in place
+		return a.map(e => e[0] + '. ' + e[1]).join('\n');
+	}
 	/** produce child */
 	bear(){
 		this.physicality.pregnant = false;
@@ -371,6 +386,11 @@ class Name {
 	static get male(){
 		return ['Bob', 'Chris', 'Joe', 'John', 'Mike'];
 	}
+	// methods
+	toString(){
+		return this.given + ' ' + this.family;
+	}
+	// static methods
 	// todo /** @type {string} gender */
 	/** @param {Person} person */
 	static gen(person){
