@@ -239,10 +239,10 @@ class Person {
 	// static methods
 	static gen(){
 		const p = new Person();
-		// p.name = Name.gen();
 		p.vital = Vital.gen();
 		p.personality = Personality.gen();
 		p.physicality = Physicality.gen();
+		p.name = Name.gen(p);
 		return p;
 	}
 }
@@ -308,6 +308,33 @@ class Physicality {
 	static pregnancyTime(){
 		// https://en.wikipedia.org/wiki/Estimated_date_of_delivery
 		return Game.rng.uniform(37*7*day, 42*7*day);
+	}
+}
+
+class Name {
+	constructor(given = '', family = ''){
+		this.given = given;
+		this.family = family;
+		this.style = 'western'; // JOHN SMITH; cf. eastern => SMITH JOHN
+	}
+	// static methods
+	static get family(){
+		return ['Brown', 'Clark', 'Davis', 'Johnson', 'Jones', 'Miller', 'Smith', 'Williams'];
+	}
+	static get female(){
+		return ['Alice', 'Jane', 'Mary'];
+	}
+	static get male(){
+		return ['Bob', 'Chris', 'Joe', 'John', 'Mike'];
+	}
+	// todo /** @type {string} gender */
+	/** @param {Person} person */
+	static gen(person){
+		const sex = person.physicality.sex; // todo change to gender
+		return new Name(
+			Game.rng.choice(sex ? Name.male : Name.female),
+			Game.rng.choice(Name.family)
+		);
 	}
 }
 
@@ -1597,6 +1624,10 @@ const Game = {
 	rng: {
 		bool(){
 			return this.random() < 0.5;
+		},
+		/** @param {string | any[] | Set} iterable*/
+		choice(iterable){
+			return Array.from(iterable)[this.randint(0, iterable.length)];
 		},
 		debug(){
 			let x = Number(new Date());
