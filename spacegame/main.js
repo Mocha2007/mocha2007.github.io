@@ -230,7 +230,6 @@ class Person {
 		/** @type {[number, string][]} */
 		let a = [[n, this.name.toString()]];
 		this.parents.map(p => p.ahnentafel(2*n + (p.sex ? 0 : 1))).forEach(p => a = a.concat(p));
-		console.log(n, a);
 		if (n !== 1){
 			return a;
 		}
