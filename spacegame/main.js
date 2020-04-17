@@ -52,6 +52,11 @@ function range(n = 0){
 	return Array.from(Array(n).keys());
 }
 
+/** @param {number[]} arr */
+function sum(arr){
+	return arr.reduce((a, b) => a + b);
+}
+
 /**
  * @param {number} value
  * @param {[number, number]} range1
@@ -186,8 +191,10 @@ class Person {
 		Game.people.push(this);
 		Game.queue.add([Game.time, () => this.checkLife(), 'checkLife', this, Game.time]);
 	}
+	/** current age or age at death */
 	get age(){
-		return Game.time - this.vital.filter(v => v.type === 'birth')[0].date;
+		const start = this.dead ? this.vital.filter(v => v.type === 'death')[0].date : Game.time;
+		return start - this.vital.filter(v => v.type === 'birth')[0].date;
 	}
 	/** from closest to furthest */
 	get ancestors(){
@@ -1690,6 +1697,35 @@ const Game = {
 			surveyor: 1,
 		},
 		orders: [],
+	},
+	/** population statistics */
+	population: {
+		/** specific people alive */
+		get alive(){
+			return Game.people.filter(p => !p.dead);
+		},
+		/** specific people dead */
+		get dead(){
+			return Game.people.filter(p => p.dead);
+		},
+		get meanAge(){
+			const a = this.alive;
+			return sum(a.map(p => p.age))/a.length;
+		},
+		get lifeExpectancy(){
+			const a = this.dead;
+			return sum(a.map(p => p.age))/a.length;
+		},
+		/** number alive */
+		get n(){
+			return this.alive.length;
+		},
+		/** males per female */
+		get sexRatio(){
+			const a = this.alive;
+			const m = a.filter(p => p.sex).length;
+			return m / (a.length - m);
+		},
 	},
 	quests: [
 		new Quest(
