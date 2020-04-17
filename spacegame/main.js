@@ -189,6 +189,12 @@ class Person {
 	get age(){
 		return Game.time - this.vital.filter(v => v.type === 'birth')[0].date;
 	}
+	/** from closest to furthest */
+	get ancestors(){
+		let a = this.parents;
+		a.forEach(p => a = a.concat(p.ancestors));
+		return a;
+	}
 	get children(){
 		return Game.people.filter(p => p.parents.includes(this));
 	}
@@ -283,6 +289,27 @@ class Person {
 		this.physicality.dueDate = Game.time + Physicality.pregnancyTime();
 		// add event to queue
 		Game.queue.add([this.physicality.dueDate, () => this.bear()]);
+	}
+	/** most recent common ancestor; returns undefined if none exist
+	 * @param {Person} other
+	*/
+	mrca(other){
+		if (this === other){
+			return this;
+		}
+		const b = other.ancestors;
+		if (b.includes(this)){
+			return this;
+		}
+		const a = this.ancestors;
+		if (a.includes(other)){
+			return other;
+		}
+		for (let i = 0; i < a.length; i++){
+			if (b.includes(a[i])){
+				return a[i];
+			}
+		}
 	}
 	// static methods
 	static gen(){
