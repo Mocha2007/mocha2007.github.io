@@ -184,6 +184,7 @@ class Person {
 		this.personality = personality;
 		this.physicality = physicality;
 		Game.people.push(this);
+		Game.queue.push([0, () => this.checkLife(), 'checkLife', this, Game.time]);
 	}
 	get age(){
 		return Game.time - this.vital.filter(v => v.type === 'birth')[0].date;
@@ -233,6 +234,16 @@ class Person {
 		// name
 		child.name = Name.gen(child);
 		child.name.family = father.name.family;
+	}
+	/** @return {boolean} true if alive, false if dead */
+	checkLife(){
+		/** @type {[0, () => boolean, string, Person, number]} */
+		const event = Game.queue.filter(e => e[2] === 'checkLife' && e[3] === this)[0];
+		const timeSinceLastCheck = Game.time - event[4];
+		// reset timer
+		event[4] = Game.time;
+		// 99% survival per year
+		return Game.rng.random() < Math.pow(0.99, timeSinceLastCheck/year);
 	}
 	die(){
 		this.vital.push(new Vital('death', Game.time, []));
@@ -1643,6 +1654,7 @@ const Game = {
 	],
 	/** events that will fire after the given date
 	 * the boolean will determine whether the event remains in the queue
+	 * indices >1 reserved for additional details.
 	 * @type {[number, () => boolean][]}
 	*/
 	queue: [],
