@@ -1717,7 +1717,7 @@ const Game = {
 		},
 		/** @param {string | any[] | Set} iterable*/
 		choice(iterable){
-			return Array.from(iterable)[this.randint(0, iterable.length)];
+			return Array.from(iterable)[this.randint(0, iterable.length-1)];
 		},
 		debug(){
 			let x = Number(new Date());
