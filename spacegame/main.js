@@ -118,8 +118,8 @@ const colorL = {
 		max: 15e-6, // x5
 	},
 	fir: {
-		min: 700e-9,
-		max: 1e-3, // x1,429
+		min: 15e-6,
+		max: 1e-3, // x67
 	},
 	microwave: {
 		min: 1e-3,
