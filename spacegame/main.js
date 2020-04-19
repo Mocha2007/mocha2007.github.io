@@ -867,6 +867,7 @@ class Atmosphere {
 	}
 	/** @param {Body} planet */
 	static genPressure(planet){
+		// https://docs.google.com/spreadsheets/d/1LPoczfWn3NOKlbP93gkvMylK_30I7Tg37-0UnAdHvAg
 		const c = Math.pow(10, Game.rng.uniform(-1, 1));
 		return c * 8.14e-43 * Math.pow(planet.mass, 1.94);
 	}
