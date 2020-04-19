@@ -675,6 +675,10 @@ class Body extends HasInfo {
 	get greenhouse(){
 		return this.temperature - this.temp;
 	}
+	get iconRadius(){
+		const r = this.radius / Game.systemHeight * window.innerHeight;
+		return Math.max(3, r); // min = 3px
+	}
 	get isPHW(){
 		// https://mocha2007.github.io/worldbuilding_guide
 		return earth.mass/37 < this.mass && this.mass < 10*earth.mass &&
@@ -729,6 +733,8 @@ class Body extends HasInfo {
 		if (Game.player.colonyID === index){
 			planetIcon.classList.add('colony');
 		}
+		// set radius
+		planetIcon.setAttribute('r', this.iconRadius);
 		// orbit bar
 		/** @type {HTMLDivElement} */
 		let orbitBarRect = document.getElementById('orbitBar' + this.name);

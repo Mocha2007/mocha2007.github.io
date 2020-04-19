@@ -94,7 +94,7 @@ ul {
 .planet {
 	cursor: pointer;
 	fill: darkGrey;
-	r: 3;
+	/* r: 3; */
 	stroke: transparent;
 	stroke-width: 2;
 }
