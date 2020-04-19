@@ -93,7 +93,7 @@ ul {
 }
 .planet {
 	cursor: pointer;
-	fill: darkGrey;
+	fill: darkGrey; /* mercury */
 	/* r: 3; */
 	stroke: transparent;
 	stroke-width: 2;
@@ -102,25 +102,25 @@ ul {
 	display: none;
 }
 .desert {
-	fill: coral;
+	fill: lemonchiffon;  /* venus */
 }
 .gasGiant {
-	fill: tan;
+	fill: burlywood; /* saturn */
 }
 .iceball {
-	fill: aliceblue;
+	fill: aliceblue;  /* enceladus */
 }
 .iceGiant {
-	fill: cornflowerblue;
+	fill: skyblue; /* neptune */
 }
 .lava {
-	fill: orangered;
+	fill: orangered;  /* lava */
 }
 .terra {
-	fill: seagreen;
+	fill: darkolivegreen; /* satellite image of taiga */
 }
 .tundra {
-	fill: skyblue;
+	fill: coral; /* mars */
 }
 .phw {
 	fill: lime;
