@@ -479,8 +479,11 @@ const specialUnits = {
 		'name': 'Earths',
 	},
 	'period': {
-		'constant': year,
-		'name': 'yr',
+		'constant': 1,
+		f(t){ // Game not initialized yet
+			return Game.timeFormat(t);
+		},
+		'name': '',
 	},
 	'radius': {
 		'constant': 1000,
@@ -977,7 +980,7 @@ class Orbit {
 			if (this[property] === undefined){
 				continue;
 			}
-			const value = this[property];
+			let value = this[property];
 			const row = document.createElement('tr');
 			let cell = document.createElement('th');
 			cell.innerHTML = property;
@@ -987,8 +990,14 @@ class Orbit {
 				cell.innerHTML = this.parent.name;
 			}
 			else if (specialUnits.hasOwnProperty(property)){
-				cell.innerHTML = round(value/specialUnits[property].constant, 2) + ' ' +
-					specialUnits[property].name;
+				if (specialUnits[property].hasOwnProperty('f')){
+					value = specialUnits[property].f(value);
+					cell.innerHTML = value;
+				}
+				else {
+					cell.innerHTML = round(value/specialUnits[property].constant, 2) + ' ' +
+						specialUnits[property].name;
+				}
 			}
 			else {
 				cell.innerHTML = round(value, 2);
