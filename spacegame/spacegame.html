@@ -33,8 +33,8 @@
 		</tr>
 		<tr>
 			<td>
-				<input type="submit" value="+" onclick="Game.systemHeight /= 2;" title="Zoom in">
-				<input type="submit" value="-" onclick="Game.systemHeight *= 2;" title="Zoom out">
+				<input type="submit" value="+" onclick="Game.zoom(1/2);" title="Zoom in">
+				<input type="submit" value="-" onclick="Game.zoom(2);" title="Zoom out">
 			</td>
 			<td><abbr title="Screen height">Zoom</abbr>: <span id="zoom"></span> au</td>
 		</tr>
@@ -44,9 +44,9 @@
 	<div id="time"></div>
 	<div id="timerate"></div>
 	<div>
-		<input type="submit" value="+" onclick="Game.speed *= 2;" title="Double game speed">
-		<input type="submit" value="-" onclick="Game.speed /= 2;" title="Halve game speed">
-		<input type="submit" value="P" onclick="Game.paused = !Game.paused;" title="Pause game">
+		<input type="submit" value="+" onclick="Game.zoom(1/2);" title="Double game speed">
+		<input type="submit" value="-" onclick="Game.zoom(2);" title="Halve game speed">
+		<input type="submit" value="P" onclick="Game.pause();" title="Pause game">
 		<input type="submit" value="Live" onclick="Game.speed = 1;" title="Set game speed to realtime">
 	</div>
 </div>
@@ -109,7 +109,6 @@
 		<ol id="todo">
 			<li>characters with <i>souls</i></li>
 			<li>add event progress/completion</li>
-			<li>stargen</li>
 			<li>more quests</li>
 			<li>more events</li>
 			<li>buildings</li>

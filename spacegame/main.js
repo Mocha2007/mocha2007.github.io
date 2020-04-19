@@ -1680,6 +1680,11 @@ const Game = {
 	getChem(name){
 		return this.chems.filter(c => c.name === name)[0];
 	},
+	keybinds: {
+		p: () => Game.pause,
+		'+': () => Game.zoom(1/2),
+		'-': () => Game.zoom(2),
+	},
 	get orbitbarWidth(){
 		return window.innerWidth;
 	},
@@ -1763,6 +1768,10 @@ const Game = {
 			{'water': -1}
 		),
 	],
+	pause(){
+		this.paused = !this.paused;
+	},
+	paused: false,
 	/** @type {Person[]} */
 	people: [],
 	player: {
@@ -1780,6 +1789,9 @@ const Game = {
 			surveyor: 1,
 		},
 		orders: [],
+	},
+	get playerHasColony(){
+		return 0 <= this.player.colonyID;
 	},
 	/** population statistics */
 	population: {
@@ -2014,9 +2026,8 @@ const Game = {
 		s = pad(round(s));
 		return `${yr} yr ${mo} mo ${d} d ${h}:${min}:${s}`;
 	},
-	// methods
-	get playerHasColony(){
-		return 0 <= this.player.colonyID;
+	zoom(c = 1){
+		this.systemHeight *= c;
 	},
 };
 // Q0COND
@@ -2059,6 +2070,12 @@ function main(){
 	selectTab('welcome');
 	// set up order type list
 	createOrderTypeList();
+	// set up keybinds
+	document.addEventListener('keydown', event => {
+		if (Game.keybinds.hasOwnProperty(event.key)){
+			Game.keybinds[event.key]();
+		}
+	});
 	// save
 	Game.save.save();
 	// successful loading
