@@ -31,6 +31,14 @@ function download(content, fileName, contentType){
 function createSvgElement(name = 'svg'){
 	return document.createElementNS('http://www.w3.org/2000/svg', name);
 }
+
+/** https://stackoverflow.com/a/1026087/2579798
+ * @param {string} string
+*/
+function title(string){
+	return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 // end basic block
 // begin math block
 const pi = Math.PI;
@@ -2043,6 +2051,17 @@ function main(){
 	setInterval(redrawMap, 1000/Game.settings.fps);
 	setInterval(Game.queue.update, 1000);
 	setInterval(Game.save.save, 1000*Game.settings.autosaveInterval);
+	// set up tabs
+	const rightTabs = document.getElementById('righttabs');
+	Array.from(document.getElementById('rightdocs').children).forEach(elem => {
+		const span = document.createElement('span');
+		span.id = elem.id + '-tab';
+		// for some dumb fuckin reason directly setting onclick doesn't work heres
+		span.setAttribute('onclick', 'selectTab("' + elem.id + '");');
+		span.innerHTML = title(elem.id);
+		rightTabs.appendChild(span);
+		rightTabs.innerHTML += ' ';
+	});
 	// select welcome tab
 	selectTab('welcome');
 	// set up order type list
