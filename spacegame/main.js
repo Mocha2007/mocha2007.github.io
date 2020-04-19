@@ -451,8 +451,9 @@ const visibleProperties = [
 	'radius',
 	'density',
 	'surfaceGravity',
-	'temp',
+	'temperature',
 	'tempDelta',
+	'greenhouse',
 	'v_e',
 	// orbit
 	'orbit',
@@ -485,11 +486,15 @@ const specialUnits = {
 		'constant': 9.7,
 		'name': 'g',
 	},
-	'temp': {
+	'temperature': {
 		'constant': 1,
 		f(x){
 			return x-273.15; // not actual melting point anymore
 		},
+		'name': '&deg;C',
+	},
+	'greenhouse': {
+		'constant': 1,
 		'name': '&deg;C',
 	},
 	'v_e': {
@@ -556,10 +561,10 @@ class Body {
 	get esi(){
 		const r = this.radius;
 		const rho = this.density;
-		const T = this.temp;
+		const T = this.temperature;
 		const rE = earth.radius;
 		const rhoE = earth.density;
-		const TE = 255;
+		const TE = 287.16;
 		const esi1 = 1-Math.abs((r-rE)/(r+rE));
 		const esi2 = 1-Math.abs((rho-rhoE)/(rho+rhoE));
 		const esi3 = 1-Math.abs((this.v_e-earth.v_e)/(this.v_e+earth.v_e));
@@ -570,6 +575,10 @@ class Body {
 	/** @return {HTMLDivElement} */
 	get getElement(){
 		return document.getElementById(this.name);
+	}
+	/** total temp increase from greenhouse effect */
+	get greenhouse(){
+		return this.temperature - this.temp;
 	}
 	get info(){
 		const table = document.createElement('table');
@@ -615,6 +624,9 @@ class Body {
 	}
 	get temp(){
 		return this.tempAt(this.orbit.sma);
+	}
+	get temperature(){
+		return this.temp * (this.mass < 10*earth.mass ? this.atmosphere.greenhouse : 1);
 	}
 	// methods
 	draw(){
@@ -671,9 +683,9 @@ class Body {
 			Math.sqrt(this.orbit.parent.radius/2/dist);
 	}
 	get tempDelta(){
-		const mean = this.temp;
-		const plus = round(this.tempAt(this.orbit.periapsis) - mean, 2);
-		const minus = round(mean - this.tempAt(this.orbit.apoapsis), 2);
+		const mean = this.temperature;
+		const plus = round(this.tempAt(this.orbit.periapsis)/this.temp * mean - mean, 2);
+		const minus = round(mean - this.tempAt(this.orbit.apoapsis)/this.temp * mean, 2);
 		const elem = document.createElement('span');
 		const plusElement = document.createElement('sup');
 		plusElement.classList = 'supsub';
@@ -760,6 +772,33 @@ class Atmosphere {
 		this.scaleHeight = scaleHeight;
 		this.composition = composition;
 	}
+	// methods
+	/** based on mochalib/mochaastro2.py : Atmosphere.greenhouse, in turn mostly based on Aurora alg */
+	get greenhouse(){
+		const ghp = this.greenhousePressure / atm;
+		const atmPressure = this.surfacePressure / earth.atmosphere.surfacePressure;
+		const correctionFactor = 1.319714531668124;
+		const gheMax = 3.2141846382913877;
+		return Math.min(gheMax, 1 + (atmPressure/10 + ghp) * correctionFactor);
+	}
+	// ditto
+	get greenhousePressure(){
+		const ghg = ['CH4', 'CO2']; // todo add water/H2O and fix orig python code
+		const g = ghg.map(name => Game.getChem(name)).filter(c => this.composition.includes(c));
+		return sum(g.map(c => this.partialPressure(c)));
+	}
+	// methods
+	// ditto
+	/** @param {Chem} chem */
+	compositionOf(chem){
+		const contents = this.composition.map(cn => cn[0]);
+		return contents.includes(chem) ? this.composition.filter(cn => cn[0] === chem)[0][1] : 0;
+	}
+	/** @param {Chem} chem */
+	partialPressure(chem){
+		return this.surfacePressure * this.compositionOf(chem);
+	}
+	// static methods
 	/** name, ln(min), ln(max) of X/H2 ratio
 	 * @return {[string, number, number][]}
 	*/
@@ -1253,7 +1292,9 @@ class System {
 const sun = new Star(1.9885e30, 6.957e8, 'Sun', 3.828e26, 5778, 4.543e9*year);
 /** @type {Body} */
 const earth = new Body(5.97237e24, 6371000, 0.306,
-	new Orbit(sun, 1.49598023e11, 0.0167086, 0, 114.20783*deg, 0, 0.1249), 'Earth');
+	new Orbit(sun, 1.49598023e11, 0.0167086, 0, 114.20783*deg, 0, 0.1249), 'Earth',
+	new Atmosphere(101.325e3, 8500, [])
+);
 
 // https://en.wikipedia.org/wiki/Planck's_law
 function planckLaw(freq, temp){
@@ -1634,6 +1675,10 @@ const Game = {
 			]
 		),
 	],
+	/** @param {string} name */
+	getChem(name){
+		return this.chems.filter(c => c.name === name)[0];
+	},
 	get orbitbarWidth(){
 		return this.center[0];
 	},
