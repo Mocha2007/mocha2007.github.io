@@ -93,11 +93,47 @@ const L_0 = 3.0128e28; // W; exact; zero point luminosity
 const planck = 6.62607015e-34; // J*s; exact; https://en.wikipedia.org/wiki/Planck_constant
 const speedOfLight = 299792458; // m/s; exact; https://en.wikipedia.org/wiki/Speed_of_light
 
-const colorFreq = {
-	red: 440e12,
-	green: 550e12,
-	blue: 640e12,
+const colorL = {
+	xray: {
+		min: 0.01e-9,
+		max: 10e-9,
+	},
+	ultraviolet: {
+		min: 10e-9,
+		max: 400e-9,
+	},
+	visible: {
+		min: 400e-9,
+		b: 470e-9,
+		g: 530e-9,
+		r: 680e-9,
+		max: 700e-9,
+	},
+	infrared: {
+		min: 700e-9,
+		max: 1e-3,
+	},
+	microwave: {
+		min: 1e-3,
+		max: 1,
+	},
+	radio: {
+		min: 1,
+		max: 1e3, // technically 1e5(?) but...
+	},
+	make(spectrum){
+		'rgb'.split('').forEach(color => colorL[spectrum][color] = remap(
+			colorL.visible[color], // map this color
+			[colorL.visible.min, colorL.visible.max], // from this range
+			[colorL[spectrum].min, colorL[spectrum].max] // to this range
+		));
+	},
 };
+colorL.make('xray');
+colorL.make('ultraviolet');
+colorL.make('infrared');
+colorL.make('microwave');
+colorL.make('radio');
 // end constants block
 // begin chem block
 class Chem {
@@ -1047,12 +1083,15 @@ class Star extends Body {
 	}
 	get color(){
 		const t = this.temperature;
-		const rAbs = planckLaw(colorFreq.red, t);
-		const gAbs = planckLaw(colorFreq.green, t);
-		const bAbs = planckLaw(colorFreq.blue, t);
+		const rAbs = planckLaw(speedOfLight/colorL[Game.spectrum].r, t);
+		const gAbs = planckLaw(speedOfLight/colorL[Game.spectrum].g, t);
+		const bAbs = planckLaw(speedOfLight/colorL[Game.spectrum].b, t);
 		const max = Math.max(rAbs, gAbs, bAbs)/255;
 		// [800, 3500] => [black, red]
-		const value = 3500 < t ? 1 : Math.max(0.1, (t - 800)/2700);
+		let value = 1;
+		if (Game.spectrum === 'visible' && t < 3500){
+			value = Math.max(0.1, (t - 800)/2700);
+		}
 		const r = round(rAbs/max*value);
 		const g = round(gAbs/max*value);
 		const b = round(bAbs/max*value);
@@ -1650,11 +1689,7 @@ const Game = {
 	debug: {
 		infoboxUpdateTime: 1e13,
 		killStar(){
-			/** @type {Star} */
-			const star = Game.system.primary;
-			Game.time = star.lifespan;
-			Game.systemHeight = 1.2*star.radius;
-			Game.speed = 2*star.lifespan;
+			Game.time = Game.system.primary.lifespan;
 		},
 		lastInfoboxUpdate: -Infinity,
 		/** @type {Date} */
@@ -2015,6 +2050,10 @@ const Game = {
 		fps: 20,
 		asciiEmoji: 0,
 		selectionStyle: 0,
+	},
+	/** @return {string} */
+	get spectrum(){
+		return document.getElementById('spectrum').value;
 	},
 	speed: 16*hour,
 	speedSetup(){

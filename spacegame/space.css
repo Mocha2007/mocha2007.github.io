@@ -6,7 +6,7 @@ html {
 	margin: 0;
 	overflow: hidden;
 }
-input {
+input, select {
 	font-size: 1.7vh;
 }
 body {
