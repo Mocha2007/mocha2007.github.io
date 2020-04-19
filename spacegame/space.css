@@ -150,11 +150,11 @@ ul {
 	display: block;
 }
 #leftinfo {
-	background-color: rgba(64, 64, 64, 0.5);
-	bottom: 0;
+	background-color: rgba(128, 128, 128, 0.15);
 	font-size: 75%;
 	left: 0;
 	position: absolute;
+	top: 16%;
 }
 #nojs {
 	background-color: black;
@@ -206,11 +206,10 @@ ul {
 #orbitbar, #orbitbarUpper {
 	bottom: 0;
 	height: 3%;
-	left: 50%;
-	margin-left: -25%;
+	left: 0;
 	position: absolute;
 	text-align: center;
-	width: 50%;
+	width: 100%;
 }
 #orbitbar {
 	background-color: rgba(64, 64, 64, 0.5);

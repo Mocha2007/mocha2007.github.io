@@ -1681,7 +1681,7 @@ const Game = {
 		return this.chems.filter(c => c.name === name)[0];
 	},
 	get orbitbarWidth(){
-		return this.center[0];
+		return window.innerWidth;
 	},
 	/** @return {HTMLDivElement} */
 	get orbitBar(){
