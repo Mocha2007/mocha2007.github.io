@@ -54,7 +54,7 @@ function range(n = 0){
 
 /** @param {number[]} arr */
 function sum(arr){
-	return arr.reduce((a, b) => a + b);
+	return arr.reduce((a, b) => a + b, 0);
 }
 
 /**
@@ -438,7 +438,7 @@ class Name {
 }
 
 // end person block
-const water = new Chem('water', 0.01801528, 373.13, 373.13, [273.16, 611.657], [647, 22.064e6]);
+const water = new Chem('H2O', 0.01801528, 373.13, 373.13, [273.16, 611.657], [647, 22.064e6]);
 // end chem block
 // begin astro block
 
@@ -522,7 +522,8 @@ class Body {
 	 * please see that implementation for sources and further details
 	*/
 	get atmRetention(){
-		return 887.364 * this.temp / Math.pow(this.v_e, 2);
+		const c = 6; // to account for slow leakage
+		return 887.364 * this.temp / Math.pow(this.v_e, 2) * c;
 	}
 	get classification(){
 		if (2e26 < this.mass){
@@ -759,6 +760,27 @@ class Atmosphere {
 		this.scaleHeight = scaleHeight;
 		this.composition = composition;
 	}
+	/** name, ln(min), ln(max) of X/H2 ratio
+	 * @return {[string, number, number][]}
+	*/
+	static get chemRatios(){
+		return [
+			['H2', 0, 0],
+			['He', -1.471742926, -0.624336386],
+			['CH4', -2.557350256, -1.726998728],
+			['NH3', -3.886716274, -3.534416659],
+			['H2O', -4.5515565, -4.5515565], // only jupiter has data
+			// based on X/H2O ratios
+			['N2', -2.659016695, -2.308518451],
+			['O2', -4.32970775, -3.230372473],
+			['CO2', -5.940896337, -5.940896337], // ignoring 2 outliers
+			// non-He noble gases
+			['Ne', -4.910094889, -4.910094889],
+			['Ar', -5.043351421, -5.043351421],
+			['Kr', -8.36181036, -8.36181036],
+			['Xe', -9.35971737, -9.35971737],
+		];
+	}
 	/** @param {Body} planet */
 	static gen(planet){ // todo
 		return new Atmosphere(
@@ -772,8 +794,18 @@ class Atmosphere {
 	 * @return {[Chem, number][]}
 	*/
 	static genComposition(planet){
+		/** @type {[Chem, number][]} */
+		const localDust = this.chemRatios.map(c => [
+			Game.chems[Game.chems.map(ch => ch.name).indexOf(c[0])], // Chem
+			Math.exp(Game.rng.uniform(c[1], c[2])), // Ratio
+		]);
+		// chems planet can retain
 		const validChems = Game.chems.filter(c => planet.atmRetention < c.molarMass);
-		return validChems.map(c => [c, 1/validChems.length]); // todo
+		// collected ratios
+		const collected = localDust.filter(cn => validChems.includes(cn[0]));
+		const s = sum(collected.map(cn => cn[1]));
+		// normalize
+		return collected.map(cn => [cn[0], cn[1]/s]);
 	}
 	/** @param {Body} planet */
 	static genPressure(planet){
@@ -1543,8 +1575,13 @@ const Game = {
 		new Chem('O2', 2*15.99903e-3, 54.36, 90.188, [54.361, 146.3], [154.581, 5.043e6]),
 		// https://en.wikipedia.org/wiki/Methane_(data_page)
 		new Chem('CH4', 16.043e-3, 90.7, 111.65, [90.67, 0.117*atm], [190.6, 46*atm]),
+		new Chem('NH3', 17.031e-3, 195.42, 239.81, [195.4, 6060], [405.5, 111.3*atm]),
 		water,
+		new Chem('Ne', 20.1797e-3, 24.56, 27.104, [24.556, 43.37e3], [44.4918, 2.7686e6]),
+		new Chem('Ar', 39.95e-3, 83.81, 87.302, [83.8058, 68.89e3], [150.687, 4.863e6]),
 		new Chem('CO2', 44.009e-3, 216.6, 216.6, [216.5944, 5.1*atm], [304.2, 7.38e6]), // todo check if the trip being above atm breaks phase code
+		new Chem('Kr', 83.798e-3, 115.78, 119.93, [115.775, 73.53e3], [209.48, 5.525e6]),
+		new Chem('Xe', 131.293e-3, 161.4, 165.051, [161.405, 81.77e3], [289.733, 5.842e6]),
 	],
 	cookie: {
 		// store cookie https://www.w3schools.com/js/js_cookies.asp
