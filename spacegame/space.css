@@ -148,9 +148,10 @@ ul {
 }
 #leftinfo {
 	background-color: rgba(64, 64, 64, 0.5);
-    bottom: 0;
+	bottom: 0;
+	font-size: 75%;
 	left: 0;
-    position: absolute;
+	position: absolute;
 }
 #nojs {
 	background-color: black;
