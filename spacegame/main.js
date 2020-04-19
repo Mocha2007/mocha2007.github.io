@@ -1,5 +1,5 @@
 /* jshint esversion: 6, strict: true, forin: false, loopfunc: true, strict: global */
-/* exported downloadSave, Game, wipeMap */
+/* exported downloadSave, Game, updatePersonSearch, wipeMap */
 // begin basic block
 'use strict';
 
@@ -156,9 +156,50 @@ class Chem {
 	}
 }
 // person block
-// todo toJSON and fromJSON static methods for all these classes for savegames...
 
-class Person {
+class HasInfo {
+	constructor(){}
+	get info(){
+		const table = document.createElement('table');
+		for (const i in visibleProperties){
+			const property = visibleProperties[i];
+			if (this[property] === undefined){
+				continue;
+			}
+			let value = this[property];
+			const row = document.createElement('tr');
+			let cell = document.createElement('th');
+			cell.innerHTML = property;
+			row.appendChild(cell);
+			cell = document.createElement('td');
+			if (property === 'parent'){
+				cell.innerHTML = this.parent.name;
+			}
+			else if (property === 'orbit'){
+				cell.appendChild(this.orbit.info);
+			}
+			else if (specialUnits.hasOwnProperty(property)){
+				if (specialUnits[property].hasOwnProperty('f')){
+					value = specialUnits[property].f(value);
+					cell.innerHTML = value;
+				}
+				else {
+					cell.innerHTML = round(value/specialUnits[property].constant, 2) + ' ' +
+						specialUnits[property].name;
+				}
+			}
+			else {
+				cell.innerHTML = typeof value === 'number' ? round(value, 2) : value;
+			}
+			row.appendChild(cell);
+			table.appendChild(row);
+		}
+		return table;
+	}
+}
+
+// todo toJSON and fromJSON static methods for all these classes for savegames...
+class Person extends HasInfo {
 	/**
 	 * @param {Name} name
 	 * In the future, this will be an object containing the following properties:
@@ -192,6 +233,7 @@ class Person {
 	 */
 	constructor(name = new Name(), vital = [],
 		personality = new Personality(), physicality = new Physicality()){
+		super();
 		this.name = name;
 		this.vital = vital;
 		this.personality = personality;
@@ -509,47 +551,6 @@ const specialUnits = {
 		'name': 'km/s',
 	},
 };
-
-class HasInfo {
-	constructor(){}
-	get info(){
-		const table = document.createElement('table');
-		for (const i in visibleProperties){
-			const property = visibleProperties[i];
-			if (this[property] === undefined){
-				continue;
-			}
-			let value = this[property];
-			const row = document.createElement('tr');
-			let cell = document.createElement('th');
-			cell.innerHTML = property;
-			row.appendChild(cell);
-			cell = document.createElement('td');
-			if (property === 'parent'){
-				cell.innerHTML = this.parent.name;
-			}
-			else if (property === 'orbit'){
-				cell.appendChild(this.orbit.info);
-			}
-			else if (specialUnits.hasOwnProperty(property)){
-				if (specialUnits[property].hasOwnProperty('f')){
-					value = specialUnits[property].f(value);
-					cell.innerHTML = value;
-				}
-				else {
-					cell.innerHTML = round(value/specialUnits[property].constant, 2) + ' ' +
-						specialUnits[property].name;
-				}
-			}
-			else {
-				cell.innerHTML = typeof value === 'number' ? round(value, 2) : value;
-			}
-			row.appendChild(cell);
-			table.appendChild(row);
-		}
-		return table;
-	}
-}
 
 class Body extends HasInfo {
 	/**
@@ -1955,6 +1956,7 @@ const Game = {
 			Game.debug.lastSave = new Date();
 		},
 	},
+	selectedPerson: 0,
 	settings: {
 		/** in seconds */
 		autosaveInterval: 30,
@@ -2064,6 +2066,8 @@ function gameTick(){
 function redrawInterface(){
 	// update quests
 	Quest.update();
+	// update people tab
+	updatePeople();
 	// update navy
 	updateNavy();
 	// update orders
@@ -2209,6 +2213,20 @@ function updateOrders(){
 	document.getElementById('orderAffordable').innerHTML = 'Can' +
 		(order.affordable ? '': '&rsquo;t') + ' afford';
 	document.getElementById('orderAffordable').classList = order.affordable ? 'green' : 'red';
+}
+
+// hey mocha continue here okay?
+function updatePeople(){
+	if (!Game.people.length){
+		return;
+	}
+	// todo
+	const p = Game.people[Game.selectedPerson];
+	document.getElementById('personInfo').innerHTML = p.info.innerHTML;
+}
+
+function updatePersonSearch(){
+	// create tables with clickable names that change Game.selectedPerson
 }
 
 function updateResources(){
