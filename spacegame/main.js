@@ -940,6 +940,8 @@ class Orbit extends HasInfo {
 		this.aop = aop; // omega
 		this.lan = lan; // Omega
 		this.man = man; // M
+		this.lastCenter = [0, 0];
+		this.lastView = '+z';
 		this.lastZoom = 0;
 	}
 	// functions
@@ -963,6 +965,7 @@ class Orbit extends HasInfo {
 		const i = this.inc;
 		const [om, Om] = [this.aop, this.lan];
 		const [c, C, s, S] = [Math.cos(om), Math.cos(Om), Math.sin(om), Math.sin(Om)];
+		/** @return {[number, number, number]} */
 		function r(x){
 			return [
 				x[0]*(c*C - s*Math.cos(i)*S) - x[1]*(s*C + c*Math.cos(i)*S),
@@ -970,7 +973,21 @@ class Orbit extends HasInfo {
 				x[0]*(s*Math.sin(i)) + x[1]*(c*Math.sin(i)),
 			];
 		}
-		return r(o);
+		const [x, y, z] = r(o);
+		switch (Game.view){
+			case '+x':
+				return [y, z, x];
+			case '-x':
+				return [-y, z, -x];
+			case '+y':
+				return [x, -z, y];
+			case '-y':
+				return [x, z, -y];
+			case '-z':
+				return [-x, y, -z];
+			default: // +z
+				return [x, y, z];
+		}
 	}
 	get coords(){
 		return this.coordsAt(Game.time);
@@ -1002,7 +1019,9 @@ class Orbit extends HasInfo {
 				g.appendChild(line);
 			}
 		}
-		if (this.lastZoom !== Game.systemHeight){
+		if (this.lastZoom !== Game.systemHeight ||
+				this.lastCenter !== Game.center ||
+				this.lastView !== Game.view){
 			const step = this.period/resolution;
 			// update children endpoints
 			for (let i = 0; i < resolution; i++){
@@ -1014,6 +1033,8 @@ class Orbit extends HasInfo {
 				line.setAttribute('x2', x2);
 				line.setAttribute('y2', y2);
 			}
+			this.lastCenter = Game.center;
+			this.lastView = Game.view;
 			this.lastZoom = Game.systemHeight;
 		}
 	}
@@ -2100,6 +2121,10 @@ const Game = {
 		s %= minute;
 		s = pad(round(s));
 		return `${yr} yr ${mo} mo ${d} d ${h}:${min}:${s}`;
+	},
+	/** @return {string} */
+	get view(){
+		return document.getElementById('view').value;
 	},
 	zoom(c = 1){
 		this.systemHeight *= c;
