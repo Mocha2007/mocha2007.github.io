@@ -681,7 +681,7 @@ class Body extends HasInfo {
 		const index = Game.system.secondaries.indexOf(this);
 		planetIcon.onclick = () => setBody(index);
 		// check if selection...
-		if (getID() === index){
+		if (Game.planet.id === index){
 			planetIcon.classList.add(selectionStyle[Game.settings.selectionStyle]);
 		}
 		// check if colony
@@ -1569,10 +1569,6 @@ function createOrderTypeList(){
 	});
 }
 
-function getID(){
-	return Number(document.getElementById('input_id').value);
-}
-
 /** general order type, not specific order */
 function getOrderID(){
 	return Number(document.getElementById('input_order_type').value);
@@ -1681,9 +1677,26 @@ const Game = {
 		return this.chems.filter(c => c.name === name)[0];
 	},
 	keybinds: {
+		// https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
+		Escape: () => selectTab('options'),
+		l: () => Game.speed = 1,
 		p: () => Game.pause,
+		'=': () => Game.zoom(1/2), // unshifted +
 		'+': () => Game.zoom(1/2),
 		'-': () => Game.zoom(2),
+		',': () => Game.speed /= 2,
+		'.': () => Game.speed *= 2,
+		'?': () => selectTab('about'),
+		'0': () => Game.planet.id = 0,
+		'1': () => Game.planet.id = 1,
+		'2': () => Game.planet.id = 2,
+		'3': () => Game.planet.id = 3,
+		'4': () => Game.planet.id = 4,
+		'5': () => Game.planet.id = 5,
+		'6': () => Game.planet.id = 6,
+		'7': () => Game.planet.id = 7,
+		'8': () => Game.planet.id = 8,
+		'9': () => Game.planet.id = 9,
 	},
 	get orbitbarWidth(){
 		return window.innerWidth;
@@ -1774,6 +1787,18 @@ const Game = {
 	paused: false,
 	/** @type {Person[]} */
 	people: [],
+	planet: {
+		get body(){
+			return Game.system.secondaries[this.id];
+		},
+		get id(){
+			return Number(document.getElementById('input_id').value);
+		},
+		/** @param {number} n */
+		set id(n){
+			document.getElementById('input_id').value = n;
+		},
+	},
 	player: {
 		colonyID: -1,
 		/** @type {number[]} */
@@ -1829,7 +1854,7 @@ const Game = {
 			<li>temperature around -18&deg;C</li><li>mass within a factor of two of Earth's</li>
 			<li>near bodies which could be exploited in the future</li></ol><center class='red'>
 			(WARNING: cannot be undone!)<br><input id='world_selector' type='submit'
-			value='Confirm Selection' onclick='Game.player.colonyID=getID();'>
+			value='Confirm Selection' onclick='Game.player.colonyID=Game.planet.id;'>
 			</center><br>Reward: 1 Constructor`,
 			undefined, // Q0COND
 			undefined,
@@ -2103,7 +2128,7 @@ function redrawInterface(){
 
 function redrawMap(){
 	// update infobox
-	const selectionId = getID();
+	const selectionId = Game.planet.id;
 	const infoboxElement = document.getElementById('leftinfo');
 	if (infoboxElement.benisData !== selectionId ||
 			Game.debug.lastInfoboxUpdate + Game.debug.infoboxUpdateTime < Game.time){
@@ -2222,7 +2247,7 @@ function updateOrders(){
 		}
 	}
 	// update selection
-	document.getElementById('orderSelectionID').innerHTML = getID();
+	document.getElementById('orderSelectionID').innerHTML = Game.planet.id;
 	const order = Game.orders[getOrderID()];
 	const shipTable = document.getElementById('shipTable');
 	shipTable.innerHTML = '';
