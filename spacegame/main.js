@@ -152,7 +152,7 @@ class Chem {
 	}
 	/** @param {Body} planet */
 	phaseOn(planet){
-		return this.phase(planet.temp, planet.atmosphere.surfacePressure);
+		return this.phase(planet.temperature, planet.atmosphere.surfacePressure);
 	}
 }
 // person block
