@@ -105,7 +105,19 @@ const colorL = {
 		r: 680e-9,
 		max: 700e-9, // x1.75
 	},
-	infrared: {
+	ira: {
+		min: 700e-9,
+		max: 1.4e-6, // x2
+	},
+	irb: {
+		min: 1.4e-6,
+		max: 3e-6, // x2.14
+	},
+	irc: {
+		min: 3e-6,
+		max: 15e-6, // x5
+	},
+	fir: {
 		min: 700e-9,
 		max: 1e-3, // x1,429
 	},
@@ -122,7 +134,10 @@ const colorL = {
 	},
 };
 colorL.make('ultraviolet');
-colorL.make('infrared');
+colorL.make('ira');
+colorL.make('irb');
+colorL.make('irc');
+colorL.make('fir');
 colorL.make('microwave');
 // end constants block
 // begin chem block
