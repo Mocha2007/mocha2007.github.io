@@ -479,11 +479,9 @@ const specialUnits = {
 		'name': 'Earths',
 	},
 	'period': {
-		'constant': 1,
 		f(t){ // Game not initialized yet
 			return Game.timeFormat(t);
 		},
-		'name': '',
 	},
 	'radius': {
 		'constant': 1000,
@@ -498,11 +496,9 @@ const specialUnits = {
 		'name': 'g',
 	},
 	'temperature': {
-		'constant': 1,
 		f(x){
-			return x-273.15; // not actual melting point anymore
+			return round(x-273.15, 2)+'&deg;C'; // not actual melting point anymore
 		},
-		'name': '&deg;C',
 	},
 	'greenhouse': {
 		'constant': 1,
@@ -514,7 +510,48 @@ const specialUnits = {
 	},
 };
 
-class Body {
+class HasInfo {
+	constructor(){}
+	get info(){
+		const table = document.createElement('table');
+		for (const i in visibleProperties){
+			const property = visibleProperties[i];
+			if (this[property] === undefined){
+				continue;
+			}
+			let value = this[property];
+			const row = document.createElement('tr');
+			let cell = document.createElement('th');
+			cell.innerHTML = property;
+			row.appendChild(cell);
+			cell = document.createElement('td');
+			if (property === 'parent'){
+				cell.innerHTML = this.parent.name;
+			}
+			else if (property === 'orbit'){
+				cell.appendChild(this.orbit.info);
+			}
+			else if (specialUnits.hasOwnProperty(property)){
+				if (specialUnits[property].hasOwnProperty('f')){
+					value = specialUnits[property].f(value);
+					cell.innerHTML = value;
+				}
+				else {
+					cell.innerHTML = round(value/specialUnits[property].constant, 2) + ' ' +
+						specialUnits[property].name;
+				}
+			}
+			else {
+				cell.innerHTML = typeof value === 'number' ? round(value, 2) : value;
+			}
+			row.appendChild(cell);
+			table.appendChild(row);
+		}
+		return table;
+	}
+}
+
+class Body extends HasInfo {
 	/**
 	 * @param {number} mass
 	 * @param {number} radius
@@ -524,6 +561,7 @@ class Body {
 	 * @param {Atmosphere} atmosphere
 	 */
 	constructor(mass, radius, albedo, orbit, name, atmosphere){
+		super();
 		this.mass = mass;
 		this.radius = radius;
 		this.albedo = albedo;
@@ -590,37 +628,6 @@ class Body {
 	/** total temp increase from greenhouse effect */
 	get greenhouse(){
 		return this.temperature - this.temp;
-	}
-	get info(){
-		const table = document.createElement('table');
-		for (const i in visibleProperties){
-			const property = visibleProperties[i];
-			if (this[property] === undefined){
-				continue;
-			}
-			let value = this[property];
-			const row = document.createElement('tr');
-			let cell = document.createElement('th');
-			cell.innerHTML = property;
-			row.appendChild(cell);
-			cell = document.createElement('td');
-			if (property === 'orbit'){
-				cell.appendChild(this.orbit.info);
-			}
-			else if (specialUnits.hasOwnProperty(property)){
-				if (specialUnits[property].hasOwnProperty('f')){
-					value = specialUnits[property].f(value);
-				}
-				cell.innerHTML = round(value/specialUnits[property].constant, 2) + ' ' +
-					specialUnits[property].name;
-			}
-			else {
-				cell.innerHTML = typeof value === 'number'? round(value, 2) : value;
-			}
-			row.appendChild(cell);
-			table.appendChild(row);
-		}
-		return table;
 	}
 	get isPHW(){
 		// https://mocha2007.github.io/worldbuilding_guide
@@ -868,7 +875,7 @@ class Atmosphere {
 	}
 }
 
-class Orbit {
+class Orbit extends HasInfo {
 	/**
 	 * @param {Body} parent
 	 * @param {number} sma
@@ -877,6 +884,7 @@ class Orbit {
 	 * @param {number} man
 	 */
 	constructor(parent, sma, ecc, inc, aop, lan, man){
+		super();
 		this.parent = parent;
 		this.sma = sma; // a
 		this.ecc = ecc; // e
@@ -972,40 +980,6 @@ class Orbit {
 			E = M + this.ecc*Math.sin(E);
 		}
 		return E;
-	}
-	get info(){
-		const table = document.createElement('table');
-		for (const i in visibleProperties){
-			const property = visibleProperties[i];
-			if (this[property] === undefined){
-				continue;
-			}
-			let value = this[property];
-			const row = document.createElement('tr');
-			let cell = document.createElement('th');
-			cell.innerHTML = property;
-			row.appendChild(cell);
-			cell = document.createElement('td');
-			if (property === 'parent'){
-				cell.innerHTML = this.parent.name;
-			}
-			else if (specialUnits.hasOwnProperty(property)){
-				if (specialUnits[property].hasOwnProperty('f')){
-					value = specialUnits[property].f(value);
-					cell.innerHTML = value;
-				}
-				else {
-					cell.innerHTML = round(value/specialUnits[property].constant, 2) + ' ' +
-						specialUnits[property].name;
-				}
-			}
-			else {
-				cell.innerHTML = round(value, 2);
-			}
-			row.appendChild(cell);
-			table.appendChild(row);
-		}
-		return table;
 	}
 	get orbitBarRect(){
 		const rect = document.createElement('div');
