@@ -1796,7 +1796,13 @@ const Game = {
 		},
 		/** @param {number} n */
 		set id(n){
-			document.getElementById('input_id').value = n;
+			if (this.idExists(n)){
+				document.getElementById('input_id').value = n;
+			}
+		},
+		/** @param {number} n */
+		idExists(n){
+			return n < Game.system.secondaries.length && !Game.system.secondaries[n].destroyed;
 		},
 	},
 	player: {
