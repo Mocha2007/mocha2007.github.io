@@ -101,17 +101,20 @@ ul {
 .destroyed {
 	display: none;
 }
+.desert {
+	fill: coral;
+}
 .gasGiant {
 	fill: tan;
 }
 .iceGiant {
-	fill: #0cc;
+	fill: skyblue;
 }
-.desert {
-	fill: orange;
+.lava {
+	fill: orangered;
 }
 .terra {
-	fill: seaGreen;
+	fill: seagreen;
 }
 .tundra, .iceball {
 	fill: powderblue;

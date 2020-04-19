@@ -587,6 +587,10 @@ class Body extends HasInfo {
 		if (6e25 < this.mass){
 			return 'iceGiant';
 		}
+		if (1300 < this.temperature){
+			// cf. https://en.wikipedia.org/wiki/CoRoT-7b
+			return 'lava';
+		}
 		// rockies mars+ or just under
 		if (5e23 < this.mass){
 			switch (water.phaseOn(this)){
@@ -600,10 +604,10 @@ class Body extends HasInfo {
 		}
 		// rocks
 		// 0 C
-		if (water.phaseOn(this) === 'solid'){
+		if (water.phaseOn(this) === 'solid'){ // pluto-like
 			return 'iceball';
 		}
-		return 'rock';
+		return 'rock'; // mercury-like
 	}
 	get density(){
 		return this.mass / this.volume;
