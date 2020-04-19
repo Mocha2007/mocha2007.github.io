@@ -2100,6 +2100,8 @@ function redrawMap(){
 	document.getElementById('timerate').innerHTML = '&Delta;t = ' + Game.timeFormat(Game.speed);
 	// update zoom
 	document.getElementById('zoom').innerHTML = Game.systemHeight/au;
+	// update planetId min
+	document.getElementById('input_id').min = Game.system.secondaries.filter(p => p.destroyed).length;
 	// update resource count
 	updateResources();
 	// update map
