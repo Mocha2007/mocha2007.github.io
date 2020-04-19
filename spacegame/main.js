@@ -1231,9 +1231,10 @@ Age: ${round(this.age/(1e6*year)).toLocaleString()} Myr`;
 	}
 	/** solar masses */
 	static massGen(){
-		return Math.exp(Game.rng.uniform(-0.9, 0.9)); // ~ [0.407, 2.460), expected value = 1
+		return Math.exp(Game.rng.uniform(-1, 1)); // ~ [0.368, 2.718), expected value = 1
+		// 2.718 has a lifespan of ~800 Myr
+		// No longer true:
 		// Generating a successful system below 0.43 M_sun is VERY rare... don't set the min below that!!!
-		// 2.5 has a lifespan of 1 billion years
 		// The lower limit is b/w 0.39 and 0.4; upper b/w 50 and ???
 	}
 }
