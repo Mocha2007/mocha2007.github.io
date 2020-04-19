@@ -94,32 +94,24 @@ const planck = 6.62607015e-34; // J*s; exact; https://en.wikipedia.org/wiki/Plan
 const speedOfLight = 299792458; // m/s; exact; https://en.wikipedia.org/wiki/Speed_of_light
 
 const colorL = {
-	xray: {
-		min: 0.01e-9,
-		max: 10e-9,
-	},
 	ultraviolet: {
 		min: 10e-9,
-		max: 400e-9,
+		max: 400e-9, // x40
 	},
 	visible: {
 		min: 400e-9,
 		b: 470e-9,
 		g: 530e-9,
 		r: 680e-9,
-		max: 700e-9,
+		max: 700e-9, // x1.75
 	},
 	infrared: {
 		min: 700e-9,
-		max: 1e-3,
+		max: 1e-3, // x1,429
 	},
 	microwave: {
 		min: 1e-3,
-		max: 1,
-	},
-	radio: {
-		min: 1,
-		max: 1e3, // technically 1e5(?) but...
+		max: 1, // x1,000
 	},
 	make(spectrum){
 		'rgb'.split('').forEach(color => colorL[spectrum][color] = remap(
@@ -129,11 +121,9 @@ const colorL = {
 		));
 	},
 };
-colorL.make('xray');
 colorL.make('ultraviolet');
 colorL.make('infrared');
 colorL.make('microwave');
-colorL.make('radio');
 // end constants block
 // begin chem block
 class Chem {
