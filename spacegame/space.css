@@ -107,8 +107,11 @@ ul {
 .gasGiant {
 	fill: tan;
 }
+.iceball {
+	fill: aliceblue;
+}
 .iceGiant {
-	fill: skyblue;
+	fill: cornflowerblue;
 }
 .lava {
 	fill: orangered;
@@ -116,8 +119,8 @@ ul {
 .terra {
 	fill: seagreen;
 }
-.tundra, .iceball {
-	fill: powderblue;
+.tundra {
+	fill: skyblue;
 }
 .phw {
 	fill: lime;
