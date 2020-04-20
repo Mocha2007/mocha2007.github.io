@@ -125,6 +125,9 @@ ul {
 .phw {
 	fill: lime;
 }
+.backgroundStar {
+	r: 0.5;
+}
 .star, .corona {
 	cx: 50%;
 	cy: 50%;

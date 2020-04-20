@@ -1129,6 +1129,13 @@ class Star extends Body {
 		const b = round(bAbs/max*value);
 		return `rgb(${r}, ${g}, ${b})`;
 	}
+	/** get a <circle> of the star on the celestial sphere */
+	get celestial(){
+		const element = createSvgElement('circle');
+		element.classList.add('backgroundStar');
+		element.setAttribute('fill', this.color);
+		return element;
+	}
 	draw(){
 		// svg component
 		let element = document.getElementById(this.id+'svg');
@@ -1316,6 +1323,7 @@ class System {
 	constructor(primary = Star.gen(), secondaries = System.gen(primary)){
 		this.primary = primary;
 		this.secondaries = secondaries;
+		this.celestialSphere = System.genCelestialSphere();
 	}
 	/** maximum apoapsis */
 	get maxOrbitRadius(){
@@ -1327,9 +1335,25 @@ class System {
 	}
 	// methods
 	draw(){
+		this.drawCelestialSphere();
 		this.secondaries.map(p => p.draw());
 		this.primary.draw();
 		this.secondaries.map(p => p.orbit.draw());
+	}
+	drawCelestialSphere(){
+		this.celestialSphere.forEach((snn, i) => {
+			const id = 'celestial'+i;
+			let elem = document.getElementById(id);
+			if (!elem || Game.debug.lastCelestialUpdate + Game.debug.infoboxUpdateTime < Game.time){
+				elem = snn[0].celestial;
+				elem.id = 'celestial'+i;
+				document.getElementById('celestialSphere').appendChild(elem);
+			}
+			// x, y
+			const [x, y] = [snn[1]*window.innerWidth, snn[2]*window.innerHeight];
+			elem.setAttribute('cx', x);
+			elem.setAttribute('cy', y);
+		});
 	}
 	// static methods
 	/** @param {Star} star */
@@ -1356,6 +1380,19 @@ class System {
 			return systemAttempt;
 		}
 		return this.gen(star, attempt+1);
+	}
+	/** @return {[Star, number, number][]} */
+	static genCelestialSphere(){
+		const count = 0; // too laggy
+		return linspace(0, 0, count).map(() => {
+			// todo
+			const star = Star.gen();
+			const [x, y] = [
+				Game.rng.random(),
+				Game.rng.random(),
+			];
+			return [star, x, y];
+		});
 	}
 }
 
@@ -1723,7 +1760,9 @@ const Game = {
 		killStar(){
 			Game.time = Game.system.primary.lifespan;
 		},
+		lastCelestialUpdate: -Infinity,
 		lastInfoboxUpdate: -Infinity,
+		lastOrbitBarUpdate: -Infinity,
 		/** @type {Date} */
 		lastSave: undefined,
 	},
@@ -1773,6 +1812,9 @@ const Game = {
 		return document.getElementById('orbitbar');
 	},
 	orbitBarScale(){
+		if (Game.time < Game.debug.lastOrbitBarUpdate + Game.debug.infoboxUpdateTime){
+			return;
+		}
 		Game.orbitBarUpper.innerHTML = '';
 		/** in au */
 		const systemRadius = this.system.maxOrbitRadius/au;
@@ -1817,6 +1859,8 @@ const Game = {
 		F.innerHTML = 'F';
 		F.title = 'Frost Line';
 		Game.orbitBarUpper.appendChild(F);
+		// update time
+		Game.debug.lastOrbitBarUpdate = Game.time;
 	},
 	/** @return {HTMLDivElement} */
 	get orbitBarUpper(){
