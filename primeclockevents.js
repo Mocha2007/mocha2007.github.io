@@ -196,8 +196,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[108e6, 'Impact creates the <a href="https://en.wikipedia.org/wiki/Tycho_(lunar_crater)">Tycho Crater</a> on the Moon'],
 	[100e6, 'Earliest <a href="https://en.wikipedia.org/wiki/Bee">Bees</a>'],
 	[99e6, 'Formation of the <a href="https://en.wikipedia.org/wiki/Burmese_amber">Burmese Amber</a> in Burma'],
-	[94e6, 'Cenomanian-Turonian Boundary Event'],
-	[91.5e3, 'The <a href="https://en.wikipedia.org/wiki/Cenomanian-Turonian_boundary_event">Cenomanian-Turonian Boundary Event</a>'],
+	[91.5e6, 'The <a href="https://en.wikipedia.org/wiki/Cenomanian-Turonian_boundary_event">Cenomanian-Turonian Boundary Event</a>'],
 	[90e6, 'Beginning of the <a href="https://en.wikipedia.org/wiki/Andean_orogeny">Andean Orogeny</a>'],
 	[80e6, 'Beginning of the <a href="https://en.wikipedia.org/wiki/Laramide_orogeny">Laramide Orogeny</a>'],
 	// https://en.wikipedia.org/wiki/Timeline_of_natural_history#Cretaceous_Period
@@ -285,6 +284,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[75e3, '<a href="https://en.wikipedia.org/wiki/Toba_catastrophe_theory">Toba Catastrophe</a>'],
 	[70e3, 'Age of <a href="https://en.wikipedia.org/wiki/Haplogroup_CT">Haplogroup CT</a>\'s common ancestor'],
 	[70e3, 'The first Humans <a href="https://en.wikipedia.org/wiki/Recent_African_origin_of_modern_humans#Southern_Route_dispersal">migrate</a> out of Africa'],
+	[70e3, '<a href="https://en.wikipedia.org/wiki/Scholz\'s_Star">Scholz\'s Star</a> passes through the Oort Cloud'],
 	[65e3, 'The first humans <a href="https://en.wikipedia.org/wiki/Recent_African_origin_of_modern_humans#South-Asia_and_Australia">migrate</a> to Southeast Asia and Australia'],
 	[64e3, 'Archery Invented'],
 	[60e3, 'The <a href="https://en.wikipedia.org/wiki/Heinrich_event">H6 Heinrich Event</a>'],
