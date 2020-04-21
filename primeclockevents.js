@@ -533,6 +533,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[diff(1338934140), '<a href="https://en.wikipedia.org/wiki/2012_transit_of_Venus">2012 Transit of Venus</a>'],
 	[diff(1355443200), 'The <a href="https://en.wikipedia.org/wiki/Sandy_Hook_Elementary_School_shooting">Sandy Hook School Shooting</a>'],
 	[diff(1359003600), '<a href="https://en.wikipedia.org/wiki/Vine_(service)">Vine</a> Launched'],
+	[diff(1360898400), 'The <a href="https://en.wikipedia.org/wiki/Chelyabinsk_meteor">Chelyabinsk Meteor</a>'],
 	[diff(1365878940), 'The <a href="https://en.wikipedia.org/wiki/Boston_Marathon_bombing">Boston Marathon Bombing</a>'],
 	[diff(1394236800), 'Flight <a href="https://en.wikipedia.org/wiki/Malaysia_Airlines_Flight_370">MH370</a> goes missing'],
 	[diff(1425600000), 'NASA\'s <a href="https://en.wikipedia.org/wiki/Dawn_(spacecraft)">Dawn</a> spacecraft enters orbits of Ceres'],
