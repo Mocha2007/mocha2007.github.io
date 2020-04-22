@@ -2120,12 +2120,14 @@ const Game = {
 	},
 	selectedPerson: 0,
 	settings: {
+		asciiEmoji: 0,
 		/** in seconds */
 		autosaveInterval: 30,
 		/** in hz */
 		fps: 20,
-		asciiEmoji: 0,
 		selectionStyle: 0,
+		/** in hours */
+		userHealthWarningInterval: 2,
 	},
 	/** @return {string} */
 	get spectrum(){
@@ -2205,6 +2207,11 @@ function main(){
 	setInterval(redrawMap, 1000/Game.settings.fps);
 	setInterval(Game.queue.update, 1000);
 	setInterval(Game.save.save, 1000*Game.settings.autosaveInterval);
+	// "Annie, are you okay?" every 2h
+	const uhwi = Game.settings.userHealthWarningInterval*hour*1000;
+	if (uhwi){
+		setInterval(userHealth, uhwi);
+	}
 	// set up tabs
 	const rightTabs = document.getElementById('righttabs');
 	Array.from(document.getElementById('rightdocs').children).forEach(elem => {
@@ -2411,6 +2418,14 @@ function updateResources(){
 		document.getElementById(s).innerHTML = Game.player.resources[s];
 		document.getElementById(s+'label').innerHTML = asciiEmoji[s][Game.settings.asciiEmoji];
 	});
+}
+
+function userHealth(){
+	const uhwi = Game.settings.userHealthWarningInterval;
+	const h = uhwi === 1 ? '' : 's';
+	alert('Hey there! I see you\'ve been playing the game for over ' + uhwi +
+		' hour' + h + ' straight! Do you wanna take a break for a bit?' +
+		' You can disable me or change my interval in the settings! :)');
 }
 
 main();

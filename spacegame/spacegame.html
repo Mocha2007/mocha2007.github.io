@@ -139,7 +139,11 @@
 				<li onclick="Game.save.save();">Save Game</li>
 				<li>Autosave interval:
 					<input id="input_autosave_interval" type="number" min="1" max="60" value="30"
-						   onclick="Game.settings.autosaveInterval = Number(document.getElementById('input_autosave_interval').value);"> seconds
+						   onclick="Game.settings.autosaveInterval = Number(document.getElementById('input_autosave_interval').value);"> second(s)
+				</li>
+				<li>User health warning interval: (0 to disable)
+					<input id="uhwi" type="number" min="0" max="24" value="2"
+						   onclick="Game.settings.userHealthWarningInterval = Number(document.getElementById('uhwi').value);"> hour(s)
 				</li>
 				<li><abbr title="You'll need to refresh the page for this to have any effect.">FPS</abbr>
 					<input id="input_fps" type="number" min="1" max="30" value="20" onclick="updateFPS();">
