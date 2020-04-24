@@ -1380,7 +1380,7 @@ function statUpdate(){
 	// update achievement progress
 	/** @type {HTMLSpanElement} */
 	const achievementProgress = document.getElementById('statAchievementProgress');
-	const percent = Math.round(100 * game.player.achievements.length / game.achievements.length);
+	const percent = round(100 * game.player.achievements.length / game.achievements.length);
 	achievementProgress.innerHTML = game.player.achievements.length + '/' + game.achievements.length + ' achievements earned (' + percent + '%)';
 }
 
