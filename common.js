@@ -146,6 +146,14 @@ function download(content, fileName, contentType){
 	a.click();
 }
 
+/** functions identically to python
+ * @param {any[]} arr
+ * @return {[number, any][]}
+ */
+function enumerate(arr, start=0){
+	return arr.map((a, i) => [i+start, a]);
+}
+
 /** https://stackoverflow.com/a/16227294/2579798
  * @param {any[]} a
  * @param {any[]} b
