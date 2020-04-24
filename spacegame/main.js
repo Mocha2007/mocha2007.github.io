@@ -48,8 +48,16 @@ function mod(n, m){
 	return (n%m+m)%m;
 }
 
-function range(n = 0){
-	return Array.from(Array(n).keys());
+/** works just like in python
+ * @param {number} m
+ * @param {number} [n]
+*/
+function range(m, n, step = 1){
+	if (step !== 1)
+		return Array.from(Array(Math.ceil((n-m)/step)).keys()).map(i => i*step+m);
+	if (n === undefined)
+		return Array.from(Array(m).keys());
+	return range(n-m).map(i => i + m);
 }
 
 /**
