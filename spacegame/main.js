@@ -3,12 +3,12 @@
 // begin basic block
 'use strict';
 
-/** @param {number} number */
-function round(number, digits = 0){
-	number *= Math.pow(10, digits);
-	number = Math.round(number);
-	number /= Math.pow(10, digits);
-	return number;
+/** https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
+ * @param {string} name
+ * @return {HTMLUnknownElement}
+ */
+function createSvgElement(name = 'svg'){
+	return document.createElementNS('http://www.w3.org/2000/svg', name);
 }
 
 /** https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file/34156339#34156339
@@ -24,13 +24,32 @@ function download(content, fileName, contentType){
 	a.click();
 }
 
-/** https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
- * @param {string} name
- * @return {HTMLUnknownElement}
- */
-function createSvgElement(name = 'svg'){
-	return document.createElementNS('http://www.w3.org/2000/svg', name);
-}
+/** https://stackoverflow.com/a/45332959/2579798
+ * mix multiple types
+*/
+const aggregation = (baseClass, ...mixins) => {
+	class base extends baseClass {
+		constructor(...args){
+			super(...args);
+			mixins.forEach((Mixin) => {
+				copyProps(this, new Mixin);
+			});
+		}
+	}
+	const copyProps = (target, source) => {
+		// this function copies all properties and symbols, filtering out some special ones
+		Object.getOwnPropertyNames(source).concat(Object.getOwnPropertySymbols(source)).forEach((prop) => {
+			if (!prop.match(/^(?:constructor|prototype|arguments|caller|name|bind|call|apply|toString|length)$/))
+				Object.defineProperty(target, prop, Object.getOwnPropertyDescriptor(source, prop));
+		});
+	};
+	mixins.forEach((mixin) => {
+		// outside contructor() to allow aggregation(A,B,C).staticFunction() to be called etc.
+		copyProps(base.prototype, mixin.prototype);
+		copyProps(base, mixin);
+	});
+	return base;
+};
 
 /** https://stackoverflow.com/a/1026087/2579798
  * @param {string} string
@@ -58,6 +77,14 @@ function mod(n, m){
 
 function range(n = 0){
 	return Array.from(Array(n).keys());
+}
+
+/** @param {number} number */
+function round(number, digits = 0){
+	number *= Math.pow(10, digits);
+	number = Math.round(number);
+	number /= Math.pow(10, digits);
+	return number;
 }
 
 /** @param {number[]} arr */
@@ -140,8 +167,18 @@ colorL.make('irc');
 colorL.make('fir');
 colorL.make('microwave');
 // end constants block
+/** @type {Likable[]} */
+const likables = [];
+class Likable {
+	/** @param {string} name */
+	constructor(name){
+		this.name = name;
+		likables.push(this);
+	}
+}
+
 // begin chem block
-class Chem {
+class Chem extends Likable {
 	/**
 	 * @param {string} name
 	 * @param {number} molarMass kg/mol, not g/mol
@@ -151,7 +188,7 @@ class Chem {
 	 * @param {[number, number]} critical [t, p]
 	 */
 	constructor(name, molarMass, melt, boil, triple, critical){
-		this.name = name;
+		super(name);
 		this.molarMass = molarMass;
 		this.melt = melt;
 		this.boil = boil;
@@ -596,7 +633,7 @@ const specialUnits = {
 	},
 };
 
-class Body extends HasInfo {
+class Body extends aggregation(Likable, HasInfo) {
 	/**
 	 * @param {number} mass
 	 * @param {number} radius
@@ -606,12 +643,12 @@ class Body extends HasInfo {
 	 * @param {Atmosphere} atmosphere
 	 */
 	constructor(mass, radius, albedo, orbit, name, atmosphere){
-		super();
+		super(name);
 		this.mass = mass;
 		this.radius = radius;
 		this.albedo = albedo;
 		this.orbit = orbit;
-		this.name = name;
+		// this.name = name;
 		this.atmosphere = atmosphere;
 		this.destroyed = false;
 	}
@@ -1807,6 +1844,7 @@ const Game = {
 		'8': () => Game.planet.id = 8,
 		'9': () => Game.planet.id = 9,
 	},
+	likables,
 	get orbitbarWidth(){
 		return window.innerWidth;
 	},
