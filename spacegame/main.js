@@ -51,6 +51,7 @@ function mod(n, m){
 /** works just like in python
  * @param {number} m
  * @param {number} [n]
+ * @return {number[]}
 */
 function range(m, n, step = 1){
 	if (step !== 1)
