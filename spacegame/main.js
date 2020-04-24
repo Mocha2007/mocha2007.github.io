@@ -3,12 +3,12 @@
 // begin basic block
 'use strict';
 
-/** @param {number} number */
-function round(number, digits = 0){
-	number *= Math.pow(10, digits);
-	number = Math.round(number);
-	number /= Math.pow(10, digits);
-	return number;
+/** https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
+ * @param {string} name
+ * @return {HTMLUnknownElement}
+ */
+function createSvgElement(name = 'svg'){
+	return document.createElementNS('http://www.w3.org/2000/svg', name);
 }
 
 /** https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file/34156339#34156339
@@ -22,14 +22,6 @@ function download(content, fileName, contentType){
 	a.href = URL.createObjectURL(file);
 	a.download = fileName;
 	a.click();
-}
-
-/** https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
- * @param {string} name
- * @return {HTMLUnknownElement}
- */
-function createSvgElement(name = 'svg'){
-	return document.createElementNS('http://www.w3.org/2000/svg', name);
 }
 
 /** https://stackoverflow.com/a/1026087/2579798
@@ -58,6 +50,14 @@ function mod(n, m){
 
 function range(n = 0){
 	return Array.from(Array(n).keys());
+}
+
+/** @param {number} number */
+function round(number, digits = 0){
+	number *= Math.pow(10, digits);
+	number = Math.round(number);
+	number /= Math.pow(10, digits);
+	return number;
 }
 
 /** @param {number[]} arr */
