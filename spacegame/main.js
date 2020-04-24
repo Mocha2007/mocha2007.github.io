@@ -240,6 +240,7 @@ class HasInfo {
 }
 
 // todo toJSON and fromJSON static methods for all these classes for savegames...
+// eslint-disable-next-line no-unused-vars
 class Person extends HasInfo {
 	/**
 	 * @param {Name} name
@@ -459,6 +460,8 @@ class Vital {
 class Personality {
 	constructor(){
 		// todo
+		this.likes = [];
+		this.dislikes = [];
 	}
 	// static methods
 	static gen(){
@@ -1422,12 +1425,12 @@ class GameEventOption {
 
 class GameEvent {
 	/**
-	 * @param {string} title
+	 * @param {string} eventTitle
 	 * @param {string} desc
 	 * @param {number} mtth
 	 */
-	constructor(title, desc, mtth, condition = () => true, options = [new GameEventOption()]){
-		this.title = title;
+	constructor(eventTitle, desc, mtth, condition = () => true, options = [new GameEventOption()]){
+		this.title = eventTitle;
 		this.desc = desc;
 		this.mtth = mtth;
 		this.condition = condition;
@@ -1439,9 +1442,9 @@ class GameEvent {
 	draw(){
 		const eventElement = document.createElement('div');
 		// title
-		const title = document.createElement('h2');
-		title.innerHTML = this.title;
-		eventElement.appendChild(title);
+		const t = document.createElement('h2');
+		t.innerHTML = this.title;
+		eventElement.appendChild(t);
 		// desc
 		const desc = document.createElement('p');
 		desc.innerHTML = this.desc;
@@ -1527,7 +1530,7 @@ class Order {
 		for (const shipClass in order.shipCost){
 			Game.player.navy[shipClass] -= order.shipCost[shipClass];
 		}
-		Game.player.orders.push([Number(new Date()), orderID, getID(), 0]);
+		Game.player.orders.push([Number(new Date()), orderID, Game.planet.id, 0]);
 	}
 	// CreatedOrder => Specific Order ID, Order Type ID, target, progress
 	/** @param {number} specificId */
@@ -1544,8 +1547,8 @@ class Quest {
 	 * @param {Array<() => boolean>} requirements required to execute
 	 * @param {Array<() => void>} results
 	 */
-	constructor(title, desc = '', conditions = [], requirements = [], results = []){
-		this.title = title;
+	constructor(questTitle, desc = '', conditions = [], requirements = [], results = []){
+		this.title = questTitle;
 		this.desc = desc;
 		this.conditions = conditions;
 		this.requirements = requirements;
