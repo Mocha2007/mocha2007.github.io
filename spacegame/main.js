@@ -1,92 +1,8 @@
 /* jshint esversion: 6, strict: true, forin: false, loopfunc: true, strict: global */
 /* exported downloadSave, Game, updatePersonSearch, wipeMap */
-// begin basic block
+/* globals createSvgElement, deg, download, linspace, mod, pi, proper, range, remap, round, sum */
 'use strict';
 
-/** https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
- * @param {string} name
- * @return {HTMLUnknownElement}
- */
-function createSvgElement(name = 'svg'){
-	return document.createElementNS('http://www.w3.org/2000/svg', name);
-}
-
-/** https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file/34156339#34156339
- * @param {string} content
- * @param {string} fileName
- * @param {string} contentType
-*/
-function download(content, fileName, contentType){
-	const a = document.createElement('a');
-	const file = new Blob([content], {type: contentType});
-	a.href = URL.createObjectURL(file);
-	a.download = fileName;
-	a.click();
-}
-
-/** https://stackoverflow.com/a/1026087/2579798
- * @param {string} string
-*/
-function title(string){
-	return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-// end basic block
-// begin math block
-const pi = Math.PI;
-const deg = pi/180;
-
-function linspace(from = 0, to = 1, points = 1){
-	return new Array(points).fill(0).map((_, i) => i/points * (to-from) + from);
-}
-
-/**
- * @param {number} n
- * @param {number} m
- */
-function mod(n, m){
-	return (n%m+m)%m;
-}
-
-/** works just like in python
- * @param {number} m
- * @param {number} [n]
- * @return {number[]}
-*/
-function range(m, n, step = 1){
-	if (step !== 1)
-		return Array.from(Array(Math.ceil((n-m)/step)).keys()).map(i => i*step+m);
-	if (n === undefined)
-		return Array.from(Array(m).keys());
-	return range(n-m).map(i => i + m);
-}
-
-/**
- * @param {number} value
- * @param {[number, number]} range1
- * @param {[number, number]} range2
- */
-function remap(value, range1, range2){
-	const range1range = range1[1] - range1[0];
-	const range2range = range2[1] - range2[0];
-	const fraction = (value - range1[0]) / range1range;
-	return fraction * range2range + range2[0];
-}
-
-/** @param {number} number */
-function round(number, digits = 0){
-	number *= Math.pow(10, digits);
-	number = Math.round(number);
-	number /= Math.pow(10, digits);
-	return number;
-}
-
-/** @param {number[]} arr */
-function sum(arr){
-	return arr.reduce((a, b) => a + b, 0);
-}
-
-// end math block
 // begin constants block
 const minute = 60;
 const hour = 60*minute;
@@ -2231,7 +2147,7 @@ function main(){
 		span.id = elem.id + '-tab';
 		// for some dumb fuckin reason directly setting onclick doesn't work heres
 		span.setAttribute('onclick', 'selectTab("' + elem.id + '");');
-		span.innerHTML = title(elem.id);
+		span.innerHTML = proper(elem.id);
 		rightTabs.appendChild(span);
 		rightTabs.innerHTML += ' ';
 	});

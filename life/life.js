@@ -1,19 +1,8 @@
 /* eslint-disable indent */
 /* jshint esversion: 6, strict: true, strict: global */
-/* globals ages, lifeData */
+/* globals ages, lifeData, proper */
 /* exported openAge, searchButton, toggle, main */
 'use strict';
-
-// https://stackoverflow.com/a/196991/2579798
-/** @param {string} str */
-function toTitleCase(str){
-	return str.replace(
-		/\w\S*/g,
-		function(txt){
-			return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-		}
-	);
-}
 
 /** @type {Object<string, HTMLDetailsElement>} */
 const objects = {}; // string -> DOM object map
@@ -176,7 +165,7 @@ function main(){
 		*/
 		// rank
 		const b = document.createElement('b');
-		b.innerHTML = toTitleCase(rank) + ' ';
+		b.innerHTML = proper(rank) + ' ';
 		title.appendChild(b);
 		// extinct?
 		if (lifeData[i].hasOwnProperty('extinct') && lifeData[i].hasOwnProperty('extinct')){
@@ -184,8 +173,8 @@ function main(){
 		}
 		// name
 		let a = document.createElement('a');
-		a.innerHTML = toTitleCase(name);
-		a.href = 'https://en.wikipedia.org/wiki/' + toTitleCase(name);
+		a.innerHTML = proper(name);
+		a.href = 'https://en.wikipedia.org/wiki/' + proper(name);
 		title.appendChild(a);
 		// range
 		if (lifeData[i].hasOwnProperty('range')){

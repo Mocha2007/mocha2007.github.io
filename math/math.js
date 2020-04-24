@@ -1,4 +1,5 @@
 /* jshint esversion: 6, strict: true, strict: global */
+/* globals createSvgElement, linspace, remap */
 'use strict';
 
 // classes
@@ -288,34 +289,6 @@ const plot = {
 		this.update();
 	},
 };
-
-// functions
-
-// math functions
-
-function linspace(from = 0, to = 1, points = 1){
-	return new Array(points).fill(0).map((_, i) => i/points * (to-from) + from);
-}
-
-/**
- * n in [a, b] => n* in [c, d] linearly
- * @param {number} n
- * @param {[number, number]} from
- * @param {[number, number]} to
- */
-function remap(n, from, to){
-	return (n - from[0]) / (from[1] - from[0]) * (to[1] - to[0]) + to[0];
-}
-
-// doc functions
-
-/** https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
- * @param {string} name
- * @return {HTMLUnknownElement}
- */
-function createSvgElement(name = 'svg'){
-	return document.createElementNS('http://www.w3.org/2000/svg', name);
-}
 
 plot.update();
 window.addEventListener('error', e => plot.status(e.message));

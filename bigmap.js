@@ -8,29 +8,6 @@ const pointsize = 8;
 const mapsize = window.innerWidth - 32;
 const brcount = mapsize / 34;
 
-// https://stackoverflow.com/a/16227294/2579798
-function intersect(a, b){
-	if (b.length > a.length){
-		const t = b; b = a; a = t;
-	} // indexOf to loop over shorter
-	// extra step to remove duplicates
-	return a.filter(e => -1 < b.indexOf(e)).filter((e, i, c) => c.indexOf(e) === i);
-}
-
-// https://stackoverflow.com/a/27997088/2579798
-function union(a, b){
-	return [...new Set([...a, ...b])];
-}
-
-// https://stackoverflow.com/a/1026087/2579798
-function proper(string){
-	return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-function range(n){
-	return [...Array(n).keys()];
-}
-
 function coord2px(coords){
 	const x = coords[1] * mapsize/360 + mapsize/2 - pointsize/2;
 	const y = coords[0] * -mapsize/360 + mapsize/4 - pointsize/2;

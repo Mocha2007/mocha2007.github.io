@@ -1,0 +1,184 @@
+/* jshint esversion: 6, strict: true, strict: global */
+/* eslint-disable no-unused-vars */
+// this file provides functions used in many of my other js files
+'use strict';
+
+// math block
+const pi = Math.PI;
+/** degree / radian */
+const deg = pi/180;
+
+/**
+ * @param {number} n
+ * @return {number}
+*/
+function factorial(n){
+	if (n % 1 !== 0 || n < 0)
+		throw RangeError;
+	if (factorial.precomputed[n])
+		return factorial.precomputed[n];
+	factorial.precomputed[n] = n ? factorial(n-1)*n : 1;
+	return factorial(n);
+}
+/** @type {number[]} */
+factorial.precomputed = [];
+
+/**
+ * @param {number} a
+ * @param {number} b
+ * @return {number}
+ */
+function gcd(a, b){
+	return b ? gcd(b, mod(a, b)) : a;
+}
+
+/** works identically to matlab and numpy */
+function linspace(from = 0, to = 1, points = 1){
+	return new Array(points).fill(0).map((_, i) => i/points * (to-from) + from);
+}
+
+/** find the mean of an array
+ * @param {number[]} x
+*/
+function mean(x){
+	return sum(x)/x.length;
+}
+
+/**
+ * @param {number} n
+ * @param {number} m
+ */
+function mod(n, m){
+	return (n%m+m)%m;
+}
+
+/**
+ * @param {number} n
+ * @param {number} k
+ */
+function nCr(n, k){
+	return nPr(n, k)/factorial(k);
+}
+
+/**
+ * @param {number} n
+ * @param {number} k
+ */
+function nPr(n, k){
+	return factorial(n)/factorial(n-k);
+}
+
+/** works just like in python
+ * @param {number} m
+ * @param {number} [n]
+ * @return {number[]}
+*/
+function range(m, n, step = 1){
+	if (step !== 1)
+		return Array.from(Array(Math.ceil((n-m)/step)).keys()).map(i => i*step+m);
+	if (n === undefined)
+		return Array.from(Array(m).keys());
+	return range(n-m).map(i => i + m);
+}
+
+/**
+ * @param {number} value
+ * @param {[number, number]} range1
+ * @param {[number, number]} range2
+ */
+function remap(value, range1, range2){
+	const range1range = range1[1] - range1[0];
+	const range2range = range2[1] - range2[0];
+	const fraction = (value - range1[0]) / range1range;
+	return fraction * range2range + range2[0];
+}
+
+/** @param {number} number */
+function round(number, digits = 0){
+	number *= Math.pow(10, digits);
+	number = Math.round(number);
+	number /= Math.pow(10, digits);
+	return number;
+}
+
+/** find the standard deviation of an array
+ * @param {number[]} x
+*/
+function sd(x){
+	return Math.sqrt(variance(x));
+}
+
+/** @param {number[]} arr */
+function sum(arr){
+	return arr.reduce((a, b) => a + b, 0);
+}
+
+/** find the variance of an array
+ * @param {number[]} x
+*/
+function variance(x){
+	const meanOfArray = mean(x);
+	const v = x.map(y => Math.pow(y - meanOfArray, 2));
+	return sum(v) / (x.length - 1);
+}
+
+// other block
+const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+/** https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
+ * @param {string} name
+ * @return {HTMLUnknownElement}
+ */
+function createSvgElement(name = 'svg'){
+	return document.createElementNS('http://www.w3.org/2000/svg', name);
+}
+
+/** https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file/34156339#34156339
+ * @param {string} content
+ * @param {string} fileName
+ * @param {string} contentType
+*/
+function download(content, fileName, contentType){
+	const a = document.createElement('a');
+	const file = new Blob([content], {type: contentType});
+	a.href = URL.createObjectURL(file);
+	a.download = fileName;
+	a.click();
+}
+
+/** https://stackoverflow.com/a/16227294/2579798
+ * @param {any[]} a
+ * @param {any[]} b
+*/
+function intersect(a, b){
+	if (b.length > a.length){
+		const t = b; b = a; a = t;
+	} // indexOf to loop over shorter
+	// extra step to remove duplicates
+	return a.filter(e => -1 < b.indexOf(e)).filter((e, i, c) => c.indexOf(e) === i);
+}
+
+/** @param {string} filename to play */
+function play(filename){
+	new Audio(filename).play();
+}
+
+/** https://stackoverflow.com/a/196991/2579798
+ * @param {string} str
+*/
+function proper(str){
+	return str.replace(
+		/\w\S*/g,
+		function(txt){
+			return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+		}
+	);
+}
+
+/** https://stackoverflow.com/a/27997088/2579798
+ * @param {any[]} a
+ * @param {any[]} b
+*/
+function union(a, b){
+	return [...new Set([...a, ...b])];
+}

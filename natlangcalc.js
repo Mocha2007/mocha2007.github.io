@@ -1,48 +1,17 @@
+/* jshint esversion: 6, strict: true, strict: global */
+/* exported fstep, fstep100, reset, rprog */
+/* globals mod, sum */
 // temps
-var a,b,i; // add b c d etc as needed
-var versionno = '1.2';
-/* Introduce l8r
-// https://stackoverflow.com/questions/3959211/fast-factorial-function-in-javascript/3959275#3959275
-var f = [];
-function factorial(n){
-	if (n === 0 || n === 1){
-		return 1;
-	}
-	if (f[n] > 0){
-		return f[n];
-	}
-	return f[n] = factorial(n-1) * n;
-}
+'use strict';
+let a, b, i; // add b c d etc as needed
+const versionno = '1.2';
 
-function nPr(n,k){
-	return factorial(n)/factorial(n-k);
-}
-
-function nCr(n,k){
-	return nPr(n,k)/factorial(k);
-}
-*/
-function mod(n,m){
-	'use strict';
-	return ((n%m)+m)%m;
-}
-
-function drop(x,a){
-	'use strict';
-	var s=[];
-	for (i=0;i<a.length;i+=1){
-		if (a[i]!==x){
-			s.push(a[i]);
+function drop(x, arr){
+	const s=[];
+	for (i=0;i<arr.length;i+=1){
+		if (arr[i]!==x){
+			s.push(arr[i]);
 		}
-	}
-	return s;
-}
-
-function sum(x){
-	'use strict';
-	var s=0;
-	for (i=0;i<x.length;i+=1){
-		s+=x[i];
 	}
 	return s;
 }
@@ -50,8 +19,7 @@ function sum(x){
 // MAIN
 
 // Console
-function mconsole(MessageClass,Message){
-	'use strict';
+function mconsole(MessageClass, Message){
 	if (MessageClass==='i'){
 		document.getElementById('console').innerHTML += '\n<span class="ci">info</span>: '+Message;
 	}
@@ -78,7 +46,7 @@ function mconsole(MessageClass,Message){
 	return false;
 }
 
-var commandlist = [];
+const commandlist = [];
 commandlist.zero = 0;
 commandlist.quarter = 0;
 commandlist.half = 0;
@@ -113,8 +81,8 @@ commandlist.million = 0;
 commandlist.billion = 0;
 commandlist.trillion = 0;
 // non-numerals
-commandlist["baker's"] = 1;
-commandlist["banker's"] = 1;
+commandlist['baker\'s'] = 1;
+commandlist['banker\'s'] = 1;
 commandlist.decimated = 1;
 commandlist.divides = 2;
 commandlist.doubled = 1;
@@ -126,8 +94,8 @@ commandlist.from = 2;
 commandlist.grand = 1;
 commandlist.gross = 1;
 commandlist.halved = 1;
-commandlist["isn't"] = 2;
-commandlist['long'] = 1;
+commandlist['isn\'t'] = 2;
+commandlist.long = 1;
 commandlist.mil = 1;
 commandlist.minus = 2;
 commandlist.mod = 2;
@@ -140,42 +108,38 @@ commandlist.pop = 1;
 commandlist.quartered = 1;
 commandlist.root = 2;
 commandlist.score = 1;
-commandlist['short'] = 1;
+commandlist.short = 1;
 commandlist.squared = 1;
 commandlist.sum = 1;
 commandlist.thrice = 1;
 commandlist.times = 2;
 commandlist.tripled = 1;
 commandlist.twice = 1;
-var program = '';
-var oplist = []; // split by the word
-var opwaitlist = [];
-var stack = [];
-var pointer = 0;
-var command = '';
+let program = '';
+let oplist = []; // split by the word
+let opwaitlist = [];
+let stack = [];
+let pointer = 0;
+let command = '';
 
 function err(errMsg){
-	"use strict";
 	console.error(errMsg+'\n@ Char '+pointer+'\n\t'+command);
-	mconsole('e',errMsg+'\n@ Char '+pointer+'\n\t'+command);
+	mconsole('e', errMsg+'\n@ Char '+pointer+'\n\t'+command);
 	return true;
 }
 
 function warn(warnMsg){
-	"use strict";
 	console.warn(warnMsg+'\n@ Char '+pointer+'\n\t'+command);
-	mconsole('w',warnMsg+'\n@ Char '+pointer+'\n\t'+command);
+	mconsole('w', warnMsg+'\n@ Char '+pointer+'\n\t'+command);
 	return false;
 }
 
 function cclr(){
-	'use strict';
 	document.getElementById('console').innerHTML = '<i>MoCalc rev '+versionno+'</i>';
 	return false;
 }
 
 function reset(){
-	'use strict';
 	// pointer
 	pointer = 0;
 	// Reset line
@@ -184,7 +148,7 @@ function reset(){
 	stack = [];
 	opwaitlist = [];
 	// Load Program
-	program = document.getElementById('code').value.replace(/[^A-Za-z']+/g,' ').toLowerCase();
+	program = document.getElementById('code').value.replace(/[^A-Za-z']+/g, ' ').toLowerCase();
 	oplist = program.split(' ').reverse(); // split by the word
 	console.log(program);
 	// blank warn
@@ -198,7 +162,6 @@ function reset(){
 
 // Main
 function fstep(){
-	'use strict';
 	// ended?
 	if (oplist.length===0 && opwaitlist.length===0){
 		if (document.getElementById('console').innerHTML.slice(-44)!=='<span class="ci">info</span>: End of Program'){
@@ -208,8 +171,8 @@ function fstep(){
 			else {
 				a = stack.join();
 			}
-			mconsole('o',a);
-			mconsole('i','End of Program');
+			mconsole('o', a);
+			mconsole('i', 'End of Program');
 		}
 		return 1;
 	}
@@ -225,8 +188,8 @@ function fstep(){
 		// replacements
 		if (command.slice(-4)==='fold'){ // n-fold
 			// end replace
-			opwaitlist.push(['times',2]);
-			opwaitlist.push([command.slice(0,-4),0]);
+			opwaitlist.push(['times', 2]);
+			opwaitlist.push([command.slice(0, -4), 0]);
 		}
 		else {
 			switch (command){
@@ -257,61 +220,61 @@ function fstep(){
 				case 'is':
 					command = 'equals';
 					break;
-				case "of":
+				case 'of':
 					command = 'times';
 					break;
-				case "on":
+				case 'on':
 					command = 'plus';
 					break;
-				case "onto":
+				case 'onto':
 					command = 'plus';
 					break;
-				case "that's":
+				case 'that\'s':
 					command = 'equals';
 					break;
-				case "to":
+				case 'to':
 					command = 'over';
 					break;
-				case "too":
+				case 'too':
 					command = 'plus';
 					break;
 				default:
-					command = command.replace('all','sum');
-					command = command.replace('also','plus');
-					command = command.replace('cents','cent');
-					command = command.replace('couples','doubled'); // keep before
-					command = command.replace('couple','doubled');
-					command = command.replace('deuce','two');
-					command = command.replace('dozens','dozen');
-					command = command.replace('dust','zero');
-					command = command.replace('false','zero');
-					command = command.replace('fewer','minus');
-					command = command.replace('great','dozen');
-					command = command.replace('grosses','gross');
-					command = command.replace('less','minus');
-					command = command.replace('modulo','mod');
-					command = command.replace('more','plus');
-					command = command.replace('negative','negated');
-					command = command.replace('niner','nine');
-					command = command.replace('nothing','zero');
-					command = command.replace('pairs','doubled');
-					command = command.replace('pair','doubled');
-					command = command.replace('small','short');
-					command = command.replace('surd','root');
-					command = command.replace('thrice','tripled');
-					command = command.replace('true','one');
-					command = command.replace('twain','two');
-					command = command.replace('twice','doubled');
-					command = command.replace('unity','one');
+					command = command.replace('all', 'sum');
+					command = command.replace('also', 'plus');
+					command = command.replace('cents', 'cent');
+					command = command.replace('couples', 'doubled'); // keep before
+					command = command.replace('couple', 'doubled');
+					command = command.replace('deuce', 'two');
+					command = command.replace('dozens', 'dozen');
+					command = command.replace('dust', 'zero');
+					command = command.replace('false', 'zero');
+					command = command.replace('fewer', 'minus');
+					command = command.replace('great', 'dozen');
+					command = command.replace('grosses', 'gross');
+					command = command.replace('less', 'minus');
+					command = command.replace('modulo', 'mod');
+					command = command.replace('more', 'plus');
+					command = command.replace('negative', 'negated');
+					command = command.replace('niner', 'nine');
+					command = command.replace('nothing', 'zero');
+					command = command.replace('pairs', 'doubled');
+					command = command.replace('pair', 'doubled');
+					command = command.replace('small', 'short');
+					command = command.replace('surd', 'root');
+					command = command.replace('thrice', 'tripled');
+					command = command.replace('true', 'one');
+					command = command.replace('twain', 'two');
+					command = command.replace('twice', 'doubled');
+					command = command.replace('unity', 'one');
 			}
 			// end replace
-			opwaitlist.push([command,commandlist[command]]);
+			opwaitlist.push([command, commandlist[command]]);
 		}
 	}
 	else { // else perform next word
 		command = opwaitlist.pop()[0];
 		console.log('able to perform '+command);
-		switch (command) {
+		switch (command){
 			case 'zero':
 				stack.push(0);
 				break;
@@ -412,11 +375,11 @@ function fstep(){
 				stack.push(1000000000000);
 				break;
 			// non-numerals
-			case "baker's":
+			case 'baker\'s':
 				a = stack.pop();
 				stack.push(13/12*a);
 				break;
-			case "banker's":
+			case 'banker\'s':
 				a = stack.pop();
 				stack.push(11/12*a);
 				break;
@@ -431,7 +394,7 @@ function fstep(){
 			case 'divides':
 				b = stack.pop();
 				a = stack.pop();
-				stack.push(Number(mod(a,b)===0));
+				stack.push(Number(mod(a, b)===0));
 				break;
 			case 'doubled':
 				a = stack.pop();
@@ -443,7 +406,7 @@ function fstep(){
 				break;
 			case 'drop':
 				a = stack.pop();
-				stack = drop(a,stack);
+				stack = drop(a, stack);
 				break;
 			case 'equals':
 				b = stack.pop();
@@ -493,7 +456,7 @@ function fstep(){
 			case 'mod':
 				b = stack.pop();
 				a = stack.pop();
-				stack.push(mod(a,b));
+				stack.push(mod(a, b));
 				break;
 			case 'negated':
 				a = stack.pop();
@@ -501,10 +464,10 @@ function fstep(){
 				break;
 			case 'not':
 				a = stack.pop();
-				if (a===0){	
+				if (a===0){
 					stack.push(1);
 				}
-				else {	
+				else {
 					stack.push(0);
 				}
 				break;
@@ -530,7 +493,7 @@ function fstep(){
 			case 'root':
 				b = stack.pop();
 				a = stack.pop();
-				stack.push(Math.pow(b,1/a));
+				stack.push(Math.pow(b, 1/a));
 				break;
 			case 'score':
 				a = stack.pop();
@@ -575,9 +538,10 @@ function fstep(){
 }
 
 function fstep100(){
-	'use strict';
 	for (i=0;i<100;i+=1){
 		fstep();
 	}
 	return false;
 }
+
+reset();

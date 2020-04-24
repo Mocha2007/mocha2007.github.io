@@ -1,5 +1,6 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true, nonew: false */
 /* exported deleteCookie, downloadSave, guide, importSave, main, prestige, snuegButton */
+/* globals download, play, range, round, sum */
 'use strict';
 const version = 'a200407';
 
@@ -1074,13 +1075,6 @@ function writeCookie(name, value){ // https://stackoverflow.com/a/11344672/25797
 	const cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
 	document.cookie = cookie;
 }
-function download(content, fileName, contentType){ // https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file/34156339#34156339
-	const a = document.createElement('a');
-	const file = new Blob([content], {type: contentType});
-	a.href = URL.createObjectURL(file);
-	a.download = fileName;
-	a.click();
-}
 function importSave(){
 	navigator.clipboard.readText().then(
 		clipText => document.cookie = atob(clipText));
@@ -1266,11 +1260,6 @@ function nonEssentialUpdate(){
 	);
 }
 
-/** @param {string} filename to play */
-function play(filename){
-	new Audio(filename).play();
-}
-
 function prestige(){
 	// confirm
 	const pp = game.thisPrestigeNumber;
@@ -1309,29 +1298,12 @@ function progressBar(progress){
 	return progressBarContainer;
 }
 
-/** @param {number} n */
-function range(n){
-	return [...Array(n).keys()];
-}
-
 function redrawInterface(){
 	// autosave notification
 	const autosaveCountdown = Math.floor((+game.player.lastSave + game.settings.autosaveInterval -
 		new Date())/1000);
 	document.getElementById('autosave').innerHTML = 'autosave in ' + autosaveCountdown + 's';
 	setTimeout(redrawInterface, 1000/game.settings.fps);
-}
-
-/**
- * @param {number} number to round
- * @param {number} digits to round to (default 0)
- * @return {number} rounded number
-*/
-function round(number, digits = 0){
-	number *= Math.pow(10, digits);
-	number = Math.round(number);
-	number /= Math.pow(10, digits);
-	return number;
 }
 
 /**
@@ -1410,10 +1382,6 @@ function statUpdate(){
 	const achievementProgress = document.getElementById('statAchievementProgress');
 	const percent = Math.round(100 * game.player.achievements.length / game.achievements.length);
 	achievementProgress.innerHTML = game.player.achievements.length + '/' + game.achievements.length + ' achievements earned (' + percent + '%)';
-}
-
-function sum(array){
-	return array.reduce((a, b) => a + b, 0);
 }
 
 /**

@@ -1,9 +1,7 @@
 /* jshint esversion: 6, strict: true, forin: false, loopfunc: true, strict: global */
-/* globals lifeData*/
+/* globals lifeData, pi */
 /* exported importSave, downloadSave, createOrder, wipeMap, hardReset */
 'use strict';
-
-const pi = Math.PI;
 
 const constants = {
 	g: 6.6743e-11,
