@@ -52,6 +52,18 @@ function range(n = 0){
 	return Array.from(Array(n).keys());
 }
 
+/**
+ * @param {number} value
+ * @param {[number, number]} range1
+ * @param {[number, number]} range2
+ */
+function remap(value, range1, range2){
+	const range1range = range1[1] - range1[0];
+	const range2range = range2[1] - range2[0];
+	const fraction = (value - range1[0]) / range1range;
+	return fraction * range2range + range2[0];
+}
+
 /** @param {number} number */
 function round(number, digits = 0){
 	number *= Math.pow(10, digits);
@@ -63,18 +75,6 @@ function round(number, digits = 0){
 /** @param {number[]} arr */
 function sum(arr){
 	return arr.reduce((a, b) => a + b, 0);
-}
-
-/**
- * @param {number} value
- * @param {[number, number]} range1
- * @param {[number, number]} range2
- */
-function remap(value, range1, range2){
-	const range1range = range1[1] - range1[0];
-	const range2range = range2[1] - range2[0];
-	const fraction = (value - range1[0]) / range1range;
-	return fraction * range2range + range2[0];
 }
 
 // end math block
