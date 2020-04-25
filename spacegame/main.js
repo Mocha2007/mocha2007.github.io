@@ -201,7 +201,6 @@ class Person extends HasInfo {
 	constructor(name = new Name(), vital = [],
 		personality = new Personality(), physicality = new Physicality()){
 		super();
-		this.id = Game.rng.i;
 		this.name = name;
 		this.vital = vital;
 		this.personality = personality;
@@ -235,9 +234,6 @@ class Person extends HasInfo {
 	}
 	get getCheckLife(){
 		return Game.queue.queue.filter(e => e[2] === 'checkLife' && e[3] === this)[0];
-	}
-	get JSON(){
-		return JSON.stringify({id: this.id, vital: this.vital.map(v => v.JSON)});
 	}
 	get mother(){
 		const ps = this.parents;
@@ -342,17 +338,6 @@ class Person extends HasInfo {
 		}
 	}
 	// static methods
-	static allInSex(sex = false){
-		return Game.people.filter(p => p.physicality.sex === sex);
-	}
-	/** @param {string} json */
-	static fromJSON(json){
-		const j = JSON.parse(json);
-		Game.rng.i = j.id;
-		const p = Person.gen();
-		p.vital = j.vital.map(v => Vital.fromJSON(v));
-		return p;
-	}
 	static gen(){
 		const p = new Person();
 		p.vital = Vital.gen();
@@ -361,9 +346,8 @@ class Person extends HasInfo {
 		p.name = Name.gen(p);
 		return p;
 	}
-	/** @param {number} id */
-	static getPersonById(id){
-		return Game.people.filter(p => p.id === id)[0];
+	static allInSex(sex = false){
+		return Game.people.filter(p => p.physicality.sex === sex);
 	}
 	static test(){
 		// gregnancy test
@@ -387,19 +371,7 @@ class Vital {
 		this.date = date;
 		this.parties = parties;
 	}
-	get JSON(){
-		return JSON.stringify({
-			type: this.type,
-			date: this.date,
-			parties: this.parties.map(p => p.id),
-		});
-	}
 	// static methods
-	/** @param {string} json */
-	static fromJSON(json){
-		const j = JSON.parse(json);
-		return new Vital(j.type, j.date, j.parties.map(p => Person.getPersonById(p)));
-	}
 	static gen(){
 		/** @type {Vital[]} */
 		const v = [];
