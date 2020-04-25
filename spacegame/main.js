@@ -2043,6 +2043,7 @@ const Game = {
 				seed: Game.rng.seed,
 				player: Game.player,
 				time: Game.time,
+				people: Game.people.map(p => p.JSON),
 			};
 		},
 		load(saveFile){
@@ -2060,6 +2061,8 @@ const Game = {
 			Game.player = saveFile.player;
 			// time
 			Game.time = saveFile.time;
+			// people
+			Game.people = saveFile.people.map(p => Person.fromJSON(p));
 			// finish
 			console.log('\t... success.');
 			return this.loaded = true;
