@@ -463,10 +463,13 @@ class Name {
 		return ['Brown', 'Clark', 'Davis', 'Johnson', 'Jones', 'Miller', 'Smith', 'Williams'];
 	}
 	static get female(){
-		return ['Alice', 'Jane', 'Mary'];
+		return ['Alice', 'Charlotte', 'Emma', 'Grace', 'Jane', 'Mary'];
+	}
+	static get genderNeutral(){
+		return ['Alex', 'Ashton', 'Avery', 'Bailey', 'Cameron', 'Dakota', 'Morgan', 'Taylor'];
 	}
 	static get male(){
-		return ['Bob', 'Chris', 'Joe', 'John', 'Mike'];
+		return ['Bob', 'Chris', 'Francis', 'Joe', 'John', 'Liam', 'Mike', 'Milo', 'Ted'];
 	}
 	// methods
 	toString(){
@@ -478,7 +481,7 @@ class Name {
 	static gen(person){
 		const sex = person.physicality.sex; // todo change to gender
 		return new Name(
-			Game.rng.choice(sex ? Name.male : Name.female),
+			Game.rng.choice(Name.genderNeutral.concat(sex ? Name.male : Name.female)),
 			Game.rng.choice(Name.family)
 		);
 	}
