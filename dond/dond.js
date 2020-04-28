@@ -126,16 +126,11 @@ class Music extends Sound {
 		allMusic.push(this);
 	}
 	onended(){
-		try {
-			Game.sfx.bgm.play();
-		}
-		catch (e){
-			// pass
-		}
+		Game.sfx.bgm.play();
 	}
 	play(){
 		allMusic.forEach(m => m.stop());
-		this.audio.play();
+		this.audio.play().catch(() => undefined);
 	}
 }
 
