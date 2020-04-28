@@ -51,7 +51,7 @@ body, html {
 	font-size: 5vh;
 	height: calc((100% - 10px)/4 - 20px); /* 5*2px for container padding, 5*2 for border, 5*2 for margin */
 	line-height: 15vh;
-	margin: 0 5px 0 5px;
+	margin: 5px;
 	width: calc((100% - 10px)/7 - 20px); /* 5*2px for container padding, 5*2 for border, 5*2 for margin */
 }
 /* values */
