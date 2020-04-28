@@ -224,7 +224,7 @@ function main(){
 		}
 
 		// this fine to update constantly
-		readyElement.innerHTML = '<progress value="'+(clock-lastatttime)/fps/atttime+'"></progress>';
+		readyElement.value = (clock-lastatttime)/fps/atttime;
 	}
 	else {
 		pauseElement.value = 'Play';
