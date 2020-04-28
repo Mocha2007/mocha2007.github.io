@@ -176,7 +176,7 @@ const alphabet = 'abcdefghijklmnopqrstuvwxyz';
  * @param {number} x
 */
 function commaNumber(x){
-	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+	return x.toLocaleString();
 }
 
 /** https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
