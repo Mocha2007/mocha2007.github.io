@@ -8,6 +8,12 @@ const caseValues = [
 	1e3, 5e3, 1e4, 25e3, 5e4, 75e3, 1e5,
 	2e5, 3e5, 4e5, 5e5, 75e4, 1e6,
 ];
+const modelNames = [
+	'Claudia', 'Stacey', 'Lisa', 'Lindsay', 'Ursula', 'Megan',
+	'Sara', 'Pilar', 'Patricia', 'Anya', 'Katie', 'Jill', 'Leyla',
+	'April', 'Lanisha', 'Kimberly', 'Jenelle', 'Aliké', 'Mylinda', 'Marisa',
+	'Temeka', 'Donna', 'Aubrie', 'Nancy', 'Sonia', 'Lindsay',
+];
 
 class Case {
 	/**
@@ -30,6 +36,9 @@ class Case {
 	get id(){
 		return this.num+'case';
 	}
+	get model(){
+		return modelNames[this.num-1];
+	}
 	click(){
 		console.log('Clicked on case ' + this.num);
 		if (this.num === Game.chosen || Game.banker.offering){
@@ -44,10 +53,9 @@ class Case {
 		else {
 			this.open();
 			this.value.reveal();
-			Game.log('The case was worth $' + commaNumber(this.value.value) + '!');
+			Game.log(this.model + ' opens up the case - it\'s worth $' + commaNumber(this.value.value) + '!');
 		}
 		Game.banker.update();
-
 	}
 	open(){
 		this.opened = true;
@@ -184,6 +192,5 @@ Game.build(); // construct game
 Game.new(); // reset game
 
 /* TODO LIST
-- banker
-- endgame
+- sfx
 */
