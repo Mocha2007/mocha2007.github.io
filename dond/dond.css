@@ -1,5 +1,6 @@
 body, html {
 	background-color: black;
+	color: black;
 	cursor: default;
 	font-family: eurostile, sans-serif;
 	height: 100%;
@@ -8,6 +9,15 @@ body, html {
 	user-select: none;
 }
 /* main */
+#top, #bottom {
+	width: 100%;
+}
+#top {
+	height: 10%;
+}
+#bottom {
+	height: 90%;
+}
 #left, #middle, #right {
 	height: 100%;
 	position: absolute;
@@ -33,13 +43,40 @@ body, html {
 #bottomText {
 	height: 25%;
 	padding: 10px;
+	position: absolute;
+	top: 70%;
+	width: calc(100% - 30px);
+}
+/* help */
+#top > *:nth-child(2) {
+	left: 50%;
+}
+.help {
+	height: calc(10% - 10px);
+	position: absolute;
+	width: 50%;
+	z-index: 100;
+}
+.help > span {
+	display: block;
+	font-weight: bold;
+	line-height: 8vh;
+	height: 100%;
+	text-align: center;
+}
+.help > div {
+	display: none;
+	padding: 2%;
+}
+.help:hover > div {
+	display: block;
 }
 /* pretty gold shit */
-#bottomText, .value {
+#bottomText, .value, .help > * {
 	background-color: #DCD177; /* For browsers that do not support gradients */
 	background-image: linear-gradient(to bottom right, #989043, #DCD177, #989043);
 	border: 5px outset #989043;
-	font-size: 6vh;
+	font-size: 5vh;
 }
 /* cases */
 .case {
@@ -50,10 +87,10 @@ body, html {
 	display: inline-block;
 	font-weight: bold;
 	font-size: 5vh;
-	height: calc((100% - 10px)/4 - 20px); /* 5*2px for container padding, 5*2 for border, 5*2 for margin */
+	height: calc((90% - 10px)/4 - 20px); /* 5*2px for container padding, 5*2 for border, 5*2 for margin */
 	line-height: 15vh;
 	margin: 5px;
-	width: calc((100% - 10px)/7 - 20px); /* 5*2px for container padding, 5*2 for border, 5*2 for margin */
+	width: calc((90% - 10px)/7 - 20px); /* 5*2px for container padding, 5*2 for border, 5*2 for margin */
 }
 .case:active:not(.chosen) {
 	opacity: 75%;
@@ -61,7 +98,7 @@ body, html {
 /* values */
 .value {
 	font-weight: bold;
-	height: calc(100%/13 - 10px);
+	height: calc(90%/13 - 10px);
 	padding: 0 5% 0 5%;
 	text-align: right;
 }
