@@ -100,6 +100,13 @@ body, html {
 .case:active:not(.chosen) {
 	opacity: 75%;
 }
+/* rotate text if too narrow */
+@media (max-aspect-ratio: 3/2){
+	.case {
+		line-height: 7vh;
+		writing-mode: vertical-lr;
+	}
+}
 /* values */
 .value {
 	font-weight: bold;
