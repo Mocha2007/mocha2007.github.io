@@ -171,8 +171,7 @@ function variance(x){
 // other block
 const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
-/** https://stackoverflow.com/a/2901298/2579798
- * be careful when editing this, Firefox doesn't support certain Regex features Chrome does
+/** https://stackoverflow.com/q/2901102/2579798
  * @param {number} x
 */
 function commaNumber(x){
