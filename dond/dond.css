@@ -109,6 +109,10 @@ body, html {
 }
 .value::before {
 	content: '$ ';
+	left: 5%;
+	position: absolute;
+	text-align: left;
+	width: 10%;
 }
 .chosen {
 	cursor: default;
