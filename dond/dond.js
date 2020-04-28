@@ -126,7 +126,12 @@ class Music extends Sound {
 		allMusic.push(this);
 	}
 	onended(){
-		Game.sfx.bgm.play();
+		try {
+			Game.sfx.bgm.play();
+		}
+		catch (e){
+			// pass
+		}
 	}
 	play(){
 		allMusic.forEach(m => m.stop());
