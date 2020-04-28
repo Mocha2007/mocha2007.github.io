@@ -5,6 +5,7 @@ body, html {
 	height: 100%;
 	margin: 0;
 	overflow: hidden;
+	user-select: none;
 }
 /* main */
 #left, #middle, #right {
@@ -29,12 +30,12 @@ body, html {
 	padding: 5px;
 	text-align: center;
 }
-#log {
+#bottomText {
 	height: 25%;
 	padding: 10px;
 }
 /* pretty gold shit */
-#log, .value {
+#bottomText, .value {
 	background-color: #DCD177; /* For browsers that do not support gradients */
 	background-image: linear-gradient(to bottom right, #989043, #DCD177, #989043);
 	border: 5px outset #989043;
@@ -67,5 +68,6 @@ body, html {
 	opacity: 0;
 }
 .opened { /* opened cases */
+	cursor: default;
 	opacity: 50%;
 }
