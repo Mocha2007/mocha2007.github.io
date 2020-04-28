@@ -42,8 +42,10 @@ body, html {
 }
 #cases {
 	height: 75%;
+	margin-top: calc(-7% - 15px);
 	padding: 5px;
 	text-align: center;
+	transform: scale(1, -1); /* big-endian */
 }
 #bottomText {
 	height: 25%;
@@ -95,6 +97,7 @@ body, html {
 	height: calc((90% - 10px)/4 - 20px); /* 5*2px for container padding, 5*2 for border, 5*2 for margin */
 	line-height: 14vh;
 	margin: 5px;
+	transform: scale(1, -1); /* counteract the transform in #cases */
 	width: calc((90% - 10px)/7 - 20px); /* 5*2px for container padding, 5*2 for border, 5*2 for margin */
 }
 .case:active:not(.chosen) {
@@ -104,6 +107,7 @@ body, html {
 @media (max-aspect-ratio: 3/2){
 	.case {
 		line-height: 7vh;
+		transform: scale(-1, 1); /* counteract the transform in #cases */
 		writing-mode: vertical-lr;
 	}
 }
@@ -141,5 +145,5 @@ body, html {
 	100% {opacity: 40%;}
 }
 @keyframes flyDown {
-	to {transform: translateY(600%);} /* approximately enough to go out of view */
+	to {transform: translateY(-500%); opacity: 0;} /* approximately enough to go out of view */
 }
