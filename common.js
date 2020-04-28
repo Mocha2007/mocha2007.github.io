@@ -68,6 +68,43 @@ function nPr(n, k){
 	return factorial(n)/factorial(n-k);
 }
 
+/** NOT seeded like in spacegame, but based off its code... */
+const random = {
+	bool(){
+		return this.random() < 0.5;
+	},
+	/** @param {string | any[] | Set} iterable*/
+	choice(iterable){
+		return Array.from(iterable)[this.randint(0, iterable.length-1)];
+	},
+	/**
+	 * @param {number} min
+	 * @param {number} max
+	 */
+	randint(min, max){ // random integer in range
+		return Math.floor(this.uniform(min, max+1));
+	},
+	/** [0, 1) */
+	random: Math.random,
+	/** @param {any[]} arr */
+	shuffle(arr){
+		const a = range(0, arr.length);
+		const o = [];
+		while (a.length){
+			const i = a.splice(this.randint(0, a.length-1), 1)[0];
+			o.push(arr[i])
+		}
+		return o;
+	},
+	/**
+	 * @param {number} min
+	 * @param {number} max
+	 */
+	uniform(min, max){ // random real in range
+		return this.random() * (max-min) + min;
+	},
+};
+
 /** works just like in python
  * @param {number} m
  * @param {number} [n]

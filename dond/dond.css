@@ -1,0 +1,71 @@
+body, html {
+	background-color: black;
+	cursor: default;
+	font-family: eurostile, sans-serif;
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+}
+/* main */
+#left, #middle, #right {
+	height: 100%;
+	position: absolute;
+}
+#left {
+	left: 0;
+	width: 25%;
+}
+#right {
+	left: 75%;
+	width: 25%;
+}
+/* middle */
+#middle {
+	left: 25%;
+	width: 50%;
+}
+#cases {
+	height: 75%;
+	padding: 5px;
+	text-align: center;
+}
+#log {
+	height: 25%;
+	padding: 10px;
+}
+/* pretty gold shit */
+#log, .value {
+	background-color: #DCD177; /* For browsers that do not support gradients */
+	background-image: linear-gradient(to bottom right, #989043, #DCD177, #989043);
+	border: 5px outset #989043;
+	font-size: 6vh;
+}
+/* cases */
+.case {
+	background-color: silver;
+	border: 5px outset grey;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 6vh;
+	height: calc((100% - 10px)/4 - 20px); /* 5*2px for container padding, 5*2 for border, 5*2 for margin */
+	line-height: 15vh;
+	margin: 0 5px 0 5px;
+	width: calc((100% - 10px)/7 - 20px); /* 5*2px for container padding, 5*2 for border, 5*2 for margin */
+}
+/* values */
+.value {
+	font-weight: bold;
+	height: calc(100%/13 - 10px);
+	padding: 0 5% 0 5%;
+	text-align: right;
+}
+.value::before {
+	content: '$ ';
+}
+.chosen {
+	cursor: default;
+	opacity: 0;
+}
+.opened { /* opened cases */
+	opacity: 50%;
+}
