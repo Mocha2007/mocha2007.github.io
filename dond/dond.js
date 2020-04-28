@@ -53,6 +53,7 @@ class Case {
 	}
 	reset(){
 		this.opened = false;
+		document.getElementById(this.id).classList.remove('chosen');
 		document.getElementById(this.id).classList.remove('opened');
 	}
 }
