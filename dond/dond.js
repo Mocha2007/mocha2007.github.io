@@ -186,7 +186,7 @@ const Game = {
 			Game.log('You take the $' + commaNumber(this.offer) +
 			'! Howie opens your case, and inside was $' + commaNumber(moolah) + '! ' +
 			(moolah <= this.offer ? 'A wise choice!' : 'An unfortunate decision!') +
-			' <a href="Game.new()">Play Again?</a>');
+			' <a href="javascript:Game.new()">Play Again?</a>');
 		},
 	},
 	build(){
