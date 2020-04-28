@@ -257,5 +257,4 @@ const clickFunction = () => {
 document.addEventListener('click', clickFunction);
 
 /* TODO
-- css animation for values going away
 */
