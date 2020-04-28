@@ -32,7 +32,7 @@ class Case {
 	}
 	click(){
 		console.log('Clicked on case ' + this.num);
-		if (this.num === Game.chosen){
+		if (this.num === Game.chosen || Game.banker.offering){
 			return;
 		}
 		if (!Game.chosen){
@@ -96,12 +96,14 @@ const Game = {
 		},
 		callWeights: [0.1, 0.3, 0.75, 0.83, 0.95, 1, 1, 1, 1],
 		no(){
+			this.offering = false;
 			Game.log('You have declined the banker\'s offer! Please select another case...');
 		},
 		get offer(){
 			return round(mean(Game.casesUnopened.map(c => c.value.value)) *
 				this.callWeights[this.callId]);
 		},
+		offering: false,
 		get timeUntilNextCall(){
 			const nextCallId = this.callId;
 			return Game.casesUnopened.length - this.callsAt[nextCallId];
@@ -116,8 +118,10 @@ const Game = {
 			Game.log('The banker offers you $' + commaNumber(this.offer) + `. Do you accept?<br>
 			<a href="javascript:Game.banker.yes()">YES</a>
 			<a href="javascript:Game.banker.no()">NO</a>`);
+			this.offering = true;
 		},
 		yes(){
+			this.offering = false;
 			const moolah = Game.cases[Game.chosen].value.value;
 			Game.log('You take the $' + commaNumber(this.offer) +
 			'! Howie opens your case, and inside was $' + commaNumber(moolah) + '! ' +
