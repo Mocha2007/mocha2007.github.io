@@ -145,6 +145,15 @@ function sd(x){
 	return Math.sqrt(variance(x));
 }
 
+/** eg. sigFigs(pi, 3) = 3.14
+ * @param {number} x round this number...
+ * @param {number} s to this many digits of precision.
+ */
+function sigFigs(x, s){
+	const l = Math.pow(10, 1 + Math.floor(Math.log10(x))); // 10^(number of digits)
+	return round(x/l, s) * l;
+}
+
 /** @param {number[]} arr */
 function sum(arr){
 	return arr.reduce((a, b) => a + b, 0);

@@ -1,5 +1,5 @@
 /* jshint esversion: 6, strict: true, strict: global */
-/* globals commaNumber, mean, random, round */
+/* globals commaNumber, mean, random, sigFigs */
 'use strict';
 
 const caseValues = [
@@ -155,8 +155,8 @@ const Game = {
 			Game.log('You have rejected the banker\'s offer! Please select another case...');
 		},
 		get offer(){
-			return round(mean(Game.casesUnopened.map(c => c.value.value)) *
-				this.callWeights[this.callId]);
+			return sigFigs(mean(Game.casesUnopened.map(c => c.value.value)) *
+				this.callWeights[this.callId], 2);
 		},
 		offering: false,
 		get timeUntilNextCall(){
