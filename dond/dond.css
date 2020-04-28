@@ -2,7 +2,12 @@ body, html {
 	background-color: black;
 	color: black;
 	cursor: default;
-	font-family: eurostile, sans-serif;
+	/* Eurostile is the exact font.
+	https://www.whatfontis.com/Eurostile-Extended-Black-urw.similar
+	Grammara and Federation are the two closest fonts.
+	I added Roboto for Ubuntu.
+	Otherwise, use whatever sans-serif font is available. */
+	font-family: Eurostile, Grammara, Federation, Roboto, sans-serif;
 	height: 100%;
 	margin: 0;
 	overflow: hidden;
