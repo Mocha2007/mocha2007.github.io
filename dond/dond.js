@@ -146,13 +146,18 @@ const Game = {
 		/** ie., the number of previous times the banker has called */
 		get callId(){
 			const remaining = Game.casesUnopened.length;
-			return this.callsAt.indexOf(this.callsAt.filter(x => x <= remaining)[0]);
+			const id = this.callsAt.indexOf(this.callsAt.filter(x => x <= remaining)[0]);
+			return id === -1 ? this.callsAt.length : id;
 		},
 		callWeights: [0.1, 0.3, 0.75, 0.83, 0.95, 1, 1, 1, 1],
 		largeOffer: 2e5,
 		no(){
 			this.offering = false;
-			Game.log('You have rejected the banker\'s offer! Please select another case...');
+			if (this.callId < 8){
+				Game.log('You have rejected the banker\'s offer! Please select another case...');
+				return;
+			}
+			this.yes(true);
 		},
 		get offer(){
 			return sigFigs(mean(Game.casesUnopened.map(c => c.value.value)) *
@@ -161,7 +166,7 @@ const Game = {
 		offering: false,
 		get timeUntilNextCall(){
 			const nextCallId = this.callId;
-			return Game.casesUnopened.length - this.callsAt[nextCallId];
+			return 8 < nextCallId ? Infinity : Game.casesUnopened.length - this.callsAt[nextCallId];
 		},
 		update(){
 			const tunc = this.timeUntilNextCall;
@@ -180,13 +185,14 @@ const Game = {
 			<a href="javascript:Game.banker.no()" tabindex="0">NO</a>`);
 			this.offering = true;
 		},
-		yes(){
+		yes(tookOwnCase = false){
 			Game.sfx.yes.play();
 			this.offering = false;
-			const moolah = Game.playerCase.value.value;
-			Game.log('You take the $' + commaNumber(this.offer) +
-			'! Howie opens your case, and inside was $' + commaNumber(moolah) + '! ' +
-			(moolah <= this.offer ? 'A wise choice!' : 'An unfortunate decision!') +
+			const taken = tookOwnCase ? Game.playerCase.value.value : this.offer;
+			const other = tookOwnCase ? this.offer : Game.playerCase.value.value;
+			Game.log('You ' + (tookOwnCase ? 'reject' : 'take') + ' the $' + commaNumber(this.offer) +
+			'! Howie opens your case, and inside was $' + commaNumber(Game.playerCase.value.value) + '! ' +
+			(other <= taken ? 'A wise choice!' : 'An unfortunate decision!') +
 			' <a href="javascript:Game.new()" tabindex="0">Play Again?</a>');
 		},
 	},
