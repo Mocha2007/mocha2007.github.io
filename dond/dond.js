@@ -32,7 +32,7 @@ class Case {
 		div.innerHTML = this.num;
 		div.onclick = () => this.click();
 		div.onkeydown = e => e.key === 'Enter' ? div.onclick() : undefined;
-		div.tabIndex = this.num+2;
+		div.tabIndex = 0;
 		return div;
 	}
 	get id(){
@@ -72,7 +72,7 @@ class Case {
 		const div = document.getElementById(this.id);
 		div.classList.remove('chosen');
 		div.classList.remove('opened');
-		div.tabIndex = this.num+2;
+		div.tabIndex = 0;
 	}
 }
 
@@ -176,8 +176,8 @@ const Game = {
 				Game.sfx.largeOffer : Game.sfx.smallOffer).play();
 			document.getElementById('casesUntilNextCall').innerHTML = '';
 			Game.log('The banker offers you $' + commaNumber(this.offer) + `. Do you accept?<br>
-			<a href="javascript:Game.banker.yes()" tabindex="1">YES</a>
-			<a href="javascript:Game.banker.no()" tabindex="2">NO</a>`);
+			<a href="javascript:Game.banker.yes()" tabindex="0">YES</a>
+			<a href="javascript:Game.banker.no()" tabindex="0">NO</a>`);
 			this.offering = true;
 		},
 		yes(){
@@ -187,7 +187,7 @@ const Game = {
 			Game.log('You take the $' + commaNumber(this.offer) +
 			'! Howie opens your case, and inside was $' + commaNumber(moolah) + '! ' +
 			(moolah <= this.offer ? 'A wise choice!' : 'An unfortunate decision!') +
-			' <a href="javascript:Game.new()" tabindex="1">Play Again?</a>');
+			' <a href="javascript:Game.new()" tabindex="0">Play Again?</a>');
 		},
 	},
 	build(){
