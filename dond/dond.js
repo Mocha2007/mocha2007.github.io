@@ -58,6 +58,8 @@ class Case {
 		Game.banker.update();
 	}
 	open(){
+		Game.sfx.open.play();
+		(this.value.big ? Game.sfx.bigAmountGone : Game.sfx.smallAmountGone).play();
 		this.opened = true;
 		document.getElementById(this.id).classList.add('opened');
 	}
@@ -73,6 +75,10 @@ class Value {
 	constructor(value){
 		this.value = value;
 		this.revealed = false;
+	}
+	get big(){
+		// if bigger than 75%, panic!!!
+		return 0.75 < mean(Game.casesUnopened.map(c => c.value.value < this.value));
 	}
 	get div(){
 		const div = document.createElement('div');
@@ -94,6 +100,40 @@ class Value {
 	}
 }
 
+class Sound {
+	/** @param {string} url */
+	constructor(url){
+		this.url = url;
+		this.audio = new Audio(url);
+	}
+	play(){
+		this.audio.play();
+	}
+	stop(){
+		this.audio.pause();
+		this.audio.currentTime = 0;
+	}
+}
+
+/** @type {Music[]} */
+const allMusic = [];
+class Music extends Sound {
+	/** @param {string} url */
+	constructor(url){
+		super(url);
+		this.audio.volume = 0.2;
+		this.audio.onended = () => this.onended();
+		allMusic.push(this);
+	}
+	onended(){
+		Game.sfx.bgm.play();
+	}
+	play(){
+		allMusic.forEach(m => m.stop());
+		this.audio.play();
+	}
+}
+
 const Game = {
 	banker: {
 		callsAt: [20, 15, 11, 8, 6, 5, 4, 3, 2],
@@ -103,9 +143,10 @@ const Game = {
 			return this.callsAt.indexOf(this.callsAt.filter(x => x <= remaining)[0]);
 		},
 		callWeights: [0.1, 0.3, 0.75, 0.83, 0.95, 1, 1, 1, 1],
+		largeOffer: 2e5,
 		no(){
 			this.offering = false;
-			Game.log('You have declined the banker\'s offer! Please select another case...');
+			Game.log('You have rejected the banker\'s offer! Please select another case...');
 		},
 		get offer(){
 			return round(mean(Game.casesUnopened.map(c => c.value.value)) *
@@ -124,6 +165,9 @@ const Game = {
 					this.timeUntilNextCall + ' more case' + plural + '...';
 				return;
 			}
+			Game.sfx.call.play();
+			Game.sfx.call.audio.onended = () => (this.largeOffer <= this.offer ?
+				Game.sfx.largeOffer : Game.sfx.smallOffer).play();
 			document.getElementById('casesUntilNextCall').innerHTML = '';
 			Game.log('The banker offers you $' + commaNumber(this.offer) + `. Do you accept?<br>
 			<a href="javascript:Game.banker.yes()">YES</a>
@@ -131,8 +175,9 @@ const Game = {
 			this.offering = true;
 		},
 		yes(){
+			Game.sfx.yes.play();
 			this.offering = false;
-			const moolah = Game.cases[Game.chosen].value.value;
+			const moolah = Game.playerCase.value.value;
 			Game.log('You take the $' + commaNumber(this.offer) +
 			'! Howie opens your case, and inside was $' + commaNumber(moolah) + '! ' +
 			(moolah <= this.offer ? 'A wise choice!' : 'An unfortunate decision!') +
@@ -173,7 +218,11 @@ const Game = {
 		Game.values.forEach(v => v.reset());
 		// reset chosen
 		Game.chosen = 0;
-		Game.log('Select your case...');
+		Game.log('Select your case to begin...');
+		Game.sfx.theme.play()
+	},
+	get playerCase(){
+		return Game.cases[Game.chosen-1];
 	},
 	/** @param {number} i */
 	reveal(i){
@@ -183,6 +232,17 @@ const Game = {
 		// reveal value
 		c.value.reveal();
 	},
+	sfx: {
+		bgm: new Music('https://www.soundboard.com/mediafiles/mt/MTI5OTI2NzYxMjk5OTg_ZHE95Cjg8LQ.mp3'),
+		bigAmountGone: new Sound('https://www.soundboard.com/mediafiles/mj/Mjc0MjI2NzYyNzQyNTI_z0kYdmYNpWQ.mp3'),
+		call: new Sound('https://www.soundboard.com/mediafiles/nj/NjM5MTI2NzY2MzkyMTk_qqoRKnOqaNc.mp3'),
+		largeOffer: new Sound('https://www.soundboard.com/mediafiles/nd/NDE0NjI2NzY0MTQ3MzQ_jS49MEHM2dc.mp3'),
+		open: new Sound('https://www.soundboard.com/mediafiles/mj/MjU1MTI2NzYyNTUxOTA_1agykhsm8s8.mp3'),
+		smallAmountGone: new Sound('https://www.soundboard.com/mediafiles/nd/NDUwNTI2NzY0NTA2MDk_WwX0VBNxjjE.mp3'),
+		smallOffer: new Sound('https://www.soundboard.com/mediafiles/ot/OTQzNzI2NzY5NDM4ODc_cZt51fuUnZA.mp3'),
+		theme: new Music('https://www.soundboard.com/mediafiles/mz/MzQxNjI2NzYzNDE2NDk_UC3784hWjLI.mp3'),
+		yes: new Sound('https://www.soundboard.com/mediafiles/ot/OTAyMTI2NzY5MDIyMzY_nZyNlpDh6EI.mp3'),
+	},
 	/** @type {Value[]} */
 	values: [],
 };
@@ -190,7 +250,12 @@ Game.values = caseValues.map(v => new Value(v));
 
 Game.build(); // construct game
 Game.new(); // reset game
+const clickFunction = () => {
+	Game.sfx.theme.play();
+	document.removeEventListener('click', clickFunction);
+}
+document.addEventListener('click', clickFunction);
 
-/* TODO LIST
-- sfx
+/* TODO
+- css animation for values going away
 */
