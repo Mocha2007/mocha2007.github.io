@@ -77,8 +77,8 @@ class Value {
 		this.revealed = false;
 	}
 	get big(){
-		// if bigger than 75%, panic!!!
-		return 0.75 < mean(Game.casesUnopened.map(c => c.value.value < this.value));
+		// if bigger than 65%, panic!!!
+		return 0.65 < mean(Game.casesUnopened.map(c => c.value.value < this.value));
 	}
 	get div(){
 		const div = document.createElement('div');
