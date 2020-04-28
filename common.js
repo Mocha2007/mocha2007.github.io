@@ -125,6 +125,13 @@ function variance(x){
 // other block
 const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
+/** https://stackoverflow.com/a/2901298/2579798
+ * @param {number} x
+*/
+function commaNumber(x) {
+    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+}
+
 /** https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
  * @param {string} name
  * @return {HTMLUnknownElement}
