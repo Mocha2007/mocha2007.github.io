@@ -163,10 +163,11 @@ function variance(x){
 const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
 /** https://stackoverflow.com/a/2901298/2579798
+ * be careful when editing this, Firefox doesn't support certain Regex features Chrome does
  * @param {number} x
 */
-function commaNumber(x) {
-    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+function commaNumber(x){
+	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
 /** https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
