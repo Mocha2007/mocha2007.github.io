@@ -145,5 +145,5 @@ body, html {
 	100% {opacity: 40%;}
 }
 @keyframes flyDown {
-	to {transform: translateY(-500%); opacity: 0;} /* approximately enough to go out of view */
+	to {transform: translateY(-500%); opacity: 0; display: none;} /* approximately enough to go out of view */
 }
