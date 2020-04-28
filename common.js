@@ -171,7 +171,7 @@ function variance(x){
 // other block
 const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
-/** https://stackoverflow.com/q/2901102/2579798
+/** https://stackoverflow.com/a/17663871/2579798
  * @param {number} x
 */
 function commaNumber(x){
