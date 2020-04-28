@@ -110,8 +110,10 @@ const Game = {
 		},
 		update(){
 			const tunc = this.timeUntilNextCall;
+			const plural = tunc === 1 ? '' : 's';
 			if (tunc){
-				document.getElementById('casesUntilNextCall').innerHTML = 'Please select ' + this.timeUntilNextCall + ' more cases...';
+				document.getElementById('casesUntilNextCall').innerHTML = 'Please select ' +
+					this.timeUntilNextCall + ' more case' + plural + '...';
 				return;
 			}
 			document.getElementById('casesUntilNextCall').innerHTML = '';
