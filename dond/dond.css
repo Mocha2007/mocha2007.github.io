@@ -47,7 +47,8 @@ body, html {
 	border: 5px outset grey;
 	cursor: pointer;
 	display: inline-block;
-	font-size: 6vh;
+	font-weight: bold;
+	font-size: 5vh;
 	height: calc((100% - 10px)/4 - 20px); /* 5*2px for container padding, 5*2 for border, 5*2 for margin */
 	line-height: 15vh;
 	margin: 0 5px 0 5px;
