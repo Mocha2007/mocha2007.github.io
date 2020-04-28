@@ -43,7 +43,8 @@ body, html {
 }
 /* cases */
 .case {
-	background-color: silver;
+	background-color: silver; /* For browsers that do not support gradients */
+	background-image: linear-gradient(to bottom right, #eee, silver);
 	border: 5px outset grey;
 	cursor: pointer;
 	display: inline-block;
