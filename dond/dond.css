@@ -70,11 +70,14 @@ body, html {
 }
 .chosen {
 	cursor: default;
-	opacity: 0;
 }
 .opened { /* opened cases */
 	cursor: default;
 	opacity: 40%;
+}
+.case.chosen {
+	/* quadratic */
+	animation: flyDown 1s cubic-bezier(0.55, 0, 1, 1) forwards 1;
 }
 .value.opened {
 	animation: flip 1s linear normal 1;
@@ -83,4 +86,7 @@ body, html {
 	0% {opacity: 100%;}
 	50% {transform: rotateX(180deg);}
 	100% {opacity: 40%;}
+}
+@keyframes flyDown {
+	to {transform: translateY(600%);} /* approximately enough to go out of view */
 }
