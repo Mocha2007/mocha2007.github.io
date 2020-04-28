@@ -53,7 +53,7 @@ class Case {
 		else {
 			this.open();
 			this.value.reveal();
-			Game.log(this.model + ' opens up the case - it\'s worth $' + commaNumber(this.value.value) + '!');
+			Game.log(this.model + ' opens up the case - it&rsquo;s worth $' + commaNumber(this.value.value) + '!');
 		}
 		Game.banker.update();
 	}
@@ -224,7 +224,7 @@ const Game = {
 		// reset chosen
 		Game.chosen = 0;
 		Game.log('Select your case to begin...');
-		Game.sfx.theme.play()
+		Game.sfx.theme.play();
 	},
 	get playerCase(){
 		return Game.cases[Game.chosen-1];
@@ -258,7 +258,7 @@ Game.new(); // reset game
 const clickFunction = () => {
 	Game.sfx.theme.play();
 	document.removeEventListener('click', clickFunction);
-}
+};
 document.addEventListener('click', clickFunction);
 
 /* TODO
