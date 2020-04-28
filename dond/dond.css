@@ -74,5 +74,13 @@ body, html {
 }
 .opened { /* opened cases */
 	cursor: default;
-	opacity: 50%;
+	opacity: 40%;
+}
+.value.opened {
+	animation: flip 1s linear normal 1;
+}
+@keyframes flip {
+	0% {opacity: 100%;}
+	50% {transform: rotateX(180deg);}
+	100% {opacity: 40%;}
 }
