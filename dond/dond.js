@@ -197,21 +197,20 @@ const Game = {
 			(other <= taken ? 'A wise choice!' : 'An unfortunate decision!') +
 			' <a href="javascript:Game.new()" tabindex="0">Play Again?</a>');
 			// medals
-			if (taken === 0.01){
+			if (taken === 0.01)
 				unlockMedal('Heather McKee');
-			}
-			else if (taken === 1e6){
-				Game.milCount++;
-				Game.save.save();
-				unlockMedal('Jessica Robinson');
-				postScore('Multimillionaire', Game.milCount);
-			}
-			if (1e5 <= taken){
+			else if (1e5 <= taken){
 				unlockMedal('Decent Show');
-			}
-			if (tookOwnCase && 1e4 <= Math.max(Game.casesUnopened)/Math.min(Game.casesUnopened) &&
-				other < taken){
-				unlockMedal('Gambler');
+				if (taken === 1e6){
+					Game.milCount++;
+					Game.save.save();
+					unlockMedal('Jessica Robinson');
+					postScore('Multimillionaire', Game.milCount);
+				}
+				const vals = Game.casesUnopened.map(c => c.value.value);
+				// 1e5 req is so the penny doesn't cheese it
+				if (tookOwnCase && 1e4 <= Math.max(vals)/Math.min(vals) && other < taken)
+					unlockMedal('Gambler');
 			}
 			// scoreboards
 			postScore('Money', taken*100);
