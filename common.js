@@ -92,7 +92,7 @@ const random = {
 		const o = [];
 		while (a.length){
 			const i = a.splice(this.randint(0, a.length-1), 1)[0];
-			o.push(arr[i])
+			o.push(arr[i]);
 		}
 		return o;
 	},
@@ -235,6 +235,29 @@ function proper(str){
 		}
 	);
 }
+
+const cookie = {
+	/** @param {string} name */
+	delete(name){
+		document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
+	},
+	/** https://stackoverflow.com/a/11344672/2579798
+	 * @param {string} name
+	*/
+	read(name){
+		let result = document.cookie.match(new RegExp(name + '=([^;]+)'));
+		if (result)
+			result = JSON.parse(result[1]);
+		return result;
+	},
+	/** https://stackoverflow.com/a/11344672/2579798
+	 * @param {string} name
+	 * @param {any} value
+	*/
+	write(name, value){
+		document.cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
+	},
+};
 
 /** https://stackoverflow.com/a/27997088/2579798
  * @param {any[]} a

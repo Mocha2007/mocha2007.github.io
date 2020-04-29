@@ -1,5 +1,5 @@
 /* jshint esversion: 6, strict: true, strict: global */
-/* globals commaNumber, mean, postScore, random, sigFigs, unlockMedal */
+/* globals commaNumber, cookie, mean, postScore, random, sigFigs, unlockMedal */
 'use strict';
 
 const caseValues = [
@@ -201,16 +201,24 @@ const Game = {
 				unlockMedal('Heather McKee');
 			}
 			else if (taken === 1e6){
+				Game.milCount++;
+				Game.save.save();
 				unlockMedal('Jessica Robinson');
+				postScore('Multimillionaire', Game.milCount);
 			}
 			if (1e5 <= taken){
 				unlockMedal('Decent Show');
+			}
+			if (tookOwnCase && 1e4 <= Math.max(Game.casesUnopened)/Math.min(Game.casesUnopened) &&
+				other < taken){
+				unlockMedal('Gambler');
 			}
 			// scoreboards
 			postScore('Money', taken*100);
 		},
 	},
 	build(){
+		Game.save.load();
 		// build cases and values
 		caseValues.forEach((_, i) => {
 			// values
@@ -231,6 +239,7 @@ const Game = {
 	log(s = ''){
 		return document.getElementById('log').innerHTML = s;
 	},
+	milCount: 0,
 	new(){
 		Game.over = false;
 		// shuffle values...
@@ -259,6 +268,19 @@ const Game = {
 		c.open();
 		// reveal value
 		c.value.reveal();
+	},
+	save: {
+		load(){
+			const data = cookie.read('mocha-dond');
+			if (!data) return;
+			Game.milCount = data.milCount;
+		},
+		save(){
+			const data = {
+				milCount: Game.milCount,
+			};
+			cookie.write('mocha-dond', data);
+		},
 	},
 	sfx: {
 		bgm: new Music('https://www.soundboard.com/mediafiles/mt/MTI5OTI2NzYxMjk5OTg_ZHE95Cjg8LQ.mp3'),

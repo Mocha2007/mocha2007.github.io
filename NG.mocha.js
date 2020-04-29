@@ -1,7 +1,7 @@
 
 
 /* globals Newgrounds */
-/* exported unlockMedal */
+/* exported postScore, unlockMedal */
 'use strict';
 
 // newgrounds api bullshit
@@ -103,16 +103,16 @@ function unlockMedal(medalName){
 	}
 }
 
-function postScore(boardId, scoreValue){
+function onPostScore(scoreValue, result){
+	console.log('SCORE POSTED:', scoreValue, result);
+}
+
+function postScore(boardName, scoreValue){
 	/* If there is no user attached to our ngio object, it means the user isn't logged in and we can't post anything */
 	if (!ngio.user) return;
 	for (let i = 0; i < scoreboards.length; i++){
 		const scoreboard = scoreboards[i];
-		if (boardId === scoreboard.id)
-			ngio.callComponent('ScoreBoard.postScore', {id: scoreboard.id, value: scoreValue});
+		if (boardName === scoreboard.name)
+			ngio.callComponent('ScoreBoard.postScore', {id: scoreboard.id, value: scoreValue}, result => onPostScore(scoreValue, result));
 	}
 }
-
-postScore('test scores', 1234);
-
-// todo scoreboards
