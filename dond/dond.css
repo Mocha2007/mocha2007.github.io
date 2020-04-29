@@ -8,6 +8,7 @@ body, html {
 	I added Roboto for Ubuntu.
 	Otherwise, use whatever sans-serif font is available. */
 	font-family: Eurostile, Grammara, Federation, Roboto, sans-serif;
+	font-weight: bold;
 	height: 100%;
 	margin: 0;
 	overflow: hidden;
@@ -54,6 +55,9 @@ body, html {
 	top: 70%;
 	width: calc(100% - 30px);
 }
+#log {
+	font-size: 4vh;
+}
 /* help */
 #top > *:nth-child(2) {
 	left: 50%;
@@ -66,7 +70,6 @@ body, html {
 }
 .help > span {
 	display: block;
-	font-weight: bold;
 	line-height: 8vh;
 	height: 100%;
 	text-align: center;
@@ -92,7 +95,6 @@ body, html {
 	border: 5px outset grey;
 	cursor: pointer;
 	display: inline-block;
-	font-weight: bold;
 	font-size: 5vh;
 	height: calc((90% - 10px)/4 - 20px); /* 5*2px for container padding, 5*2 for border, 5*2 for margin */
 	line-height: 14vh;
@@ -113,7 +115,6 @@ body, html {
 }
 /* values */
 .value {
-	font-weight: bold;
 	height: calc(90%/13 - 10px);
 	padding: 0 5% 0 5%;
 	text-align: right;
