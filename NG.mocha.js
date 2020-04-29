@@ -60,21 +60,21 @@ function requestLogin(){
 initSession();
 
 /* vars to record any medals and scoreboards that get loaded */
-let medals; // todo scoreboards;
+let medals, scoreboards;
 
 /* handle loaded medals */
 function onMedalsLoaded(result){
 	if (result.success) medals = result.medals;
 }
 
-/* handle loaded scores
+/* handle loaded scores */
 function onScoreboardsLoaded(result){
 	if (result.success) scoreboards = result.scoreboards;
-}*/
+}
 
 /* load our medals and scoreboards from the server */
 ngio.queueComponent('Medal.getList', {}, onMedalsLoaded);
-// ngio.queueComponent('ScoreBoard.getBoards', {}, onScoreboardsLoaded);
+ngio.queueComponent('ScoreBoard.getBoards', {}, onScoreboardsLoaded);
 ngio.executeQueue();
 
 
@@ -103,9 +103,16 @@ function unlockMedal(medalName){
 	}
 }
 
-// eslint-disable-next-line no-unused-vars
-function debugUnlock(){
-	ngio.callComponent('Medal.unlock', {id: medals[0].id}, console.log);
+function postScore(boardId, scoreValue){
+	/* If there is no user attached to our ngio object, it means the user isn't logged in and we can't post anything */
+	if (!ngio.user) return;
+	for (let i = 0; i < scoreboards.length; i++){
+		const scoreboard = scoreboards[i];
+		if (boardId === scoreboard.id)
+			ngio.callComponent('ScoreBoard.postScore', {id: scoreboard.id, value: scoreValue});
+	}
 }
+
+postScore('test scores', 1234);
 
 // todo scoreboards

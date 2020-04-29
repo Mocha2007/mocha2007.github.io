@@ -1,5 +1,5 @@
 /* jshint esversion: 6, strict: true, strict: global */
-/* globals commaNumber, mean, random, sigFigs, unlockMedal */
+/* globals commaNumber, mean, postScore, random, sigFigs, unlockMedal */
 'use strict';
 
 const caseValues = [
@@ -196,6 +196,7 @@ const Game = {
 			'! Howie opens your case, and inside was $' + commaNumber(Game.playerCase.value.value) + '! ' +
 			(other <= taken ? 'A wise choice!' : 'An unfortunate decision!') +
 			' <a href="javascript:Game.new()" tabindex="0">Play Again?</a>');
+			// medals
 			if (taken === 0.01){
 				unlockMedal('Heather McKee');
 			}
@@ -205,6 +206,8 @@ const Game = {
 			if (1e5 <= taken){
 				unlockMedal('Decent Show');
 			}
+			// scoreboards
+			postScore('Money', taken*100);
 		},
 	},
 	build(){
