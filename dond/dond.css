@@ -62,7 +62,7 @@ body, html {
 	height: calc(10% - 10px);
 	position: absolute;
 	width: 50%;
-	z-index: 100;
+	z-index: 1;
 }
 .help > span {
 	display: block;
@@ -146,4 +146,8 @@ body, html {
 }
 @keyframes flyDown {
 	to {transform: translateY(-500%); opacity: 0; display: none;} /* approximately enough to go out of view */
+}
+/* NG bs */
+#medal_container {
+	z-index: 999;
 }

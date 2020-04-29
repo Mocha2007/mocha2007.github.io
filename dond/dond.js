@@ -1,5 +1,5 @@
 /* jshint esversion: 6, strict: true, strict: global */
-/* globals commaNumber, mean, random, sigFigs */
+/* globals commaNumber, mean, NG, random, sigFigs */
 'use strict';
 
 const caseValues = [
@@ -194,6 +194,15 @@ const Game = {
 			'! Howie opens your case, and inside was $' + commaNumber(Game.playerCase.value.value) + '! ' +
 			(other <= taken ? 'A wise choice!' : 'An unfortunate decision!') +
 			' <a href="javascript:Game.new()" tabindex="0">Play Again?</a>');
+			if (taken === 0.01){
+				NG.unlockMedal('Heather McKee');
+			}
+			else if (taken === 1e6){
+				NG.unlockMedal('Jessica Robinson');
+			}
+			if (1e5 <= taken){
+				NG.unlockMedal('Decent Show');
+			}
 		},
 	},
 	build(){
@@ -268,5 +277,5 @@ const clickFunction = () => {
 };
 document.addEventListener('click', clickFunction);
 
-/* TODO
-*/
+// newgrounds api
+NG.connect('50305:QVq4Lget', '4IsS3BhJEGFLgXhptkZTpKWmtWH3guHL');
