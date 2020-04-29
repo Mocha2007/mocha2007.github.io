@@ -1,5 +1,5 @@
 /* jshint esversion: 6, strict: true, strict: global */
-/* globals commaNumber, mean, NG, random, sigFigs */
+/* globals commaNumber, mean, Newgrounds, random, sigFigs */
 'use strict';
 
 const caseValues = [
@@ -196,13 +196,13 @@ const Game = {
 			(other <= taken ? 'A wise choice!' : 'An unfortunate decision!') +
 			' <a href="javascript:Game.new()" tabindex="0">Play Again?</a>');
 			if (taken === 0.01){
-				NG.unlockMedal('Heather McKee');
+				unlockMedal('Heather McKee');
 			}
 			else if (taken === 1e6){
-				NG.unlockMedal('Jessica Robinson');
+				unlockMedal('Jessica Robinson');
 			}
 			if (1e5 <= taken){
-				NG.unlockMedal('Decent Show');
+				unlockMedal('Decent Show');
 			}
 		},
 	},
@@ -281,4 +281,57 @@ const clickFunction = () => {
 document.addEventListener('click', clickFunction);
 
 // newgrounds api
-NG.connect('50305:QVq4Lget', '4IsS3BhJEGFLgXhptkZTpKWmtWH3guHL');
+// https://bitbucket.org/newgrounds/newgrounds.io-for-javascript-html5/src/default/
+// eslint-disable-next-line new-cap
+const ngio = new Newgrounds.io.core('50305:QVq4Lget', '4IsS3BhJEGFLgXhptkZTpKWmtWH3guHL');
+/* vars to record any medals and scoreboards that get loaded */
+let medals; // todo scoreboards;
+
+/* handle loaded medals */
+function onMedalsLoaded(result){
+	if (result.success) medals = result.medals;
+}
+
+/* handle loaded scores
+function onScoreboardsLoaded(result){
+	if (result.success) scoreboards = result.scoreboards;
+}*/
+
+/* load our medals and scoreboards from the server */
+ngio.queueComponent('Medal.getList', {}, onMedalsLoaded);
+// ngio.queueComponent('ScoreBoard.getBoards', {}, onScoreboardsLoaded);
+ngio.executeQueue();
+
+
+/* You could use this function to draw the medal notification on-screen */
+function onMedalUnlocked(medal){
+	console.log('MEDAL GET:', medal.name);
+}
+
+function unlockMedal(medalName){
+	/* If there is no user attached to our ngio object, it means the user isn't logged in and we can't unlock anything */
+	if (!ngio.user) return;
+
+	let medal;
+
+	for (let i = 0; i < medals.length; i++){
+		medal = medal[i];
+
+		/* look for a matching medal name */
+		if (medal.name === medalName){
+			/* we can skip unlocking a medal that's already been earned */
+			if (!medal.unlocked){
+				/* unlock the medal from the server */
+				ngio.callComponent('Medal.unlock', {id: medal.id}, function(result){
+					if (result.success) onMedalUnlocked(result.medal);
+				});
+			}
+
+			return;
+		}
+	}
+}
+
+/* lets unlock a medal!!! */
+unlockMedal('test medal 1');
+// todo scoreboards
