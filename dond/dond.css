@@ -49,6 +49,7 @@ body, html {
 	transform: scale(1, -1); /* big-endian */
 }
 #bottomText {
+	font-weight: normal;
 	height: 25%;
 	padding: 10px;
 	position: absolute;
