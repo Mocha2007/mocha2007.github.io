@@ -43,7 +43,7 @@ class Case {
 	}
 	click(){
 		console.log('Clicked on case ' + this.num);
-		if (this.num === Game.chosen || Game.banker.offering){
+		if (this.num === Game.chosen || Game.banker.offering || Game.over){
 			return;
 		}
 		const div = document.getElementById(this.id);
@@ -186,6 +186,7 @@ const Game = {
 			this.offering = true;
 		},
 		yes(tookOwnCase = false){
+			Game.over = true;
 			Game.sfx.yes.play();
 			this.offering = false;
 			const taken = tookOwnCase ? Game.playerCase.value.value : this.offer;
@@ -227,6 +228,7 @@ const Game = {
 		return document.getElementById('log').innerHTML = s;
 	},
 	new(){
+		Game.over = false;
 		// shuffle values...
 		/** @type {Value[]} */
 		const vv = random.shuffle(Game.values);
@@ -242,6 +244,7 @@ const Game = {
 		Game.log('Select your case to begin...');
 		Game.sfx.theme.play();
 	},
+	over: false,
 	get playerCase(){
 		return Game.cases[Game.chosen-1];
 	},
