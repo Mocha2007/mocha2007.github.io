@@ -209,7 +209,7 @@ const Game = {
 				}
 				const vals = Game.casesUnopened.map(c => c.value.value);
 				// 1e5 req is so the penny doesn't cheese it
-				if (tookOwnCase && 1e4 <= Math.max(vals)/Math.min(vals) && other < taken)
+				if (tookOwnCase && 1e4 <= Math.max(...vals)/Math.min(...vals) && other < taken)
 					unlockMedal('Gambler');
 			}
 			// scoreboards
