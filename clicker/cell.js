@@ -58,6 +58,7 @@ const Game = {
 	},
 	chem: {
 		chems,
+		/** @return {Chem} */
 		random(){
 			return random.weightedChoice(this.chems, this.weights);
 		},
