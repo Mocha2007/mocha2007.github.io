@@ -44,6 +44,14 @@ new Chem(2001, 'ATP', 507.18, 'https://upload.wikimedia.org/wikipedia/commons/2/
 
 const Game = {
 	action: {
+		/** @param {Chem} chem */
+		addToPlayer(chem, amount = 1){
+			const idMap = Game.player.inventory.map(item => item[0]);
+			if (idMap.includes(chem.id))
+				Game.player.inventory[idMap.indexOf(chem.id)][1] += amount;
+			else
+				Game.player.inventory.push([chem.id, amount]);
+		},
 		mine(){
 			// todo
 		},
