@@ -53,7 +53,9 @@ const Game = {
 				Game.player.inventory.push([chem.id, amount]);
 		},
 		mine(){
-			// todo
+			const c = Game.chem.random();
+			this.addToPlayer(c);
+			document.getElementById('miningLog').innerHTML = 'mined ' + c.name;
 		},
 	},
 	chem: {
