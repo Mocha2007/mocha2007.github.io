@@ -38,6 +38,7 @@ new Chem(1002, 'Thymine', 126.115, 'https://upload.wikimedia.org/wikipedia/commo
 new Chem(1003, 'Adenine', 135.13, 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Adenine-3D-balls.png');
 new Chem(1004, 'Guanine', 151.13, 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Guanine-3D-balls.png');
 new Chem(2000, 'Glucose', 180.156, 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Alpha-D-glucose-from-xtal-1979-3D-balls.png');
+new Chem(2001, 'ATP', 507.18, 'https://upload.wikimedia.org/wikipedia/commons/2/22/ATP-3D-vdW.png');
 
 // constants
 
@@ -53,7 +54,7 @@ const Game = {
 			return random.weightedChoice(this.chems, this.weights);
 		},
 		get weights(){
-			return this.chems.map(c => 1/c.mass);
+			return this.chems.map(c => Math.pow(c.mass, -2));
 		},
 	},
 	debug: {
