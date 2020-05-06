@@ -1,6 +1,6 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true, nonew: false */
 /* exported main */
-/* globals cookie, random, sum */
+/* globals cookie, random */
 'use strict';
 const version = 'a200506';
 const clickerName = 'cellgame';
