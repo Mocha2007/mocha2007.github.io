@@ -10,10 +10,13 @@ const clickerName = 'cellgame';
 const chems = [];
 class Chem {
 	/**
+	 * @param {number} id
 	 * @param {string} name
 	 * @param {number} molarMass g/mol
+	 * @param {string} imgUrl
 	 */
-	constructor(name, molarMass, imgUrl = ''){
+	constructor(id, name, molarMass, imgUrl = ''){
+		this.id = id;
 		this.name = name;
 		this.mass = molarMass;
 		this.imgUrl = imgUrl;
@@ -28,12 +31,13 @@ class Chem {
 		return image;
 	}
 }
-new Chem('Water', 18.01528, 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Water_molecule_3D.svg');
-new Chem('Cytosine', 111.1, 'https://upload.wikimedia.org/wikipedia/commons/7/73/Cytosine-3D-balls.png');
-new Chem('Uracil', 112.08676, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Uracil-3D-balls.png');
-new Chem('Adenine', 135.13, 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Adenine-3D-balls.png');
-new Chem('Guanine', 151.13, 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Guanine-3D-balls.png');
-new Chem('Glucose', 180.156, 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Alpha-D-glucose-from-xtal-1979-3D-balls.png');
+new Chem(0, 'Water', 18.01528, 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Water_molecule_3D.svg');
+new Chem(1000, 'Cytosine', 111.1, 'https://upload.wikimedia.org/wikipedia/commons/7/73/Cytosine-3D-balls.png');
+new Chem(1001, 'Uracil', 112.08676, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Uracil-3D-balls.png');
+new Chem(1002, 'Thymine', 126.115, 'https://upload.wikimedia.org/wikipedia/commons/8/88/Thymine-3D-balls.png');
+new Chem(1003, 'Adenine', 135.13, 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Adenine-3D-balls.png');
+new Chem(1004, 'Guanine', 151.13, 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Guanine-3D-balls.png');
+new Chem(2000, 'Glucose', 180.156, 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Alpha-D-glucose-from-xtal-1979-3D-balls.png');
 
 // constants
 
@@ -112,6 +116,9 @@ function main(){
 		Game.save.save();
 	// set up ticks
 	setTimeout(Game.save.save, Game.settings.autosaveInterval);
+	// verify unique chem ids
+	if (new Set(chems.map(c => c.id)).size !== chems.length)
+		throw new RangeError('invalid chem id');
 	// notification
 	Game.log(clickerName + ' v. ' + version + ' loaded successfully.');
 }
