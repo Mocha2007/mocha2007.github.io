@@ -1,13 +1,7 @@
 html, body {
-	background: repeating-linear-gradient(
-	  90deg,
-	  #1E506C,
-	  #1E506C 32px,
-	  #1B4862 32px,
-	  #1B4862 64px
-	);
+	background-color: black;
 	color: white;
-	font-family: Georgia, serif;
+	font-family: Consolas, monospace;
 	height: 100%;
 	margin: 0;
 	overflow: hidden;
