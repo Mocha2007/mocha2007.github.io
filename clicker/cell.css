@@ -1,0 +1,20 @@
+html, body {
+	background: repeating-linear-gradient(
+	  90deg,
+	  #1E506C,
+	  #1E506C 32px,
+	  #1B4862 32px,
+	  #1B4862 64px
+	);
+	color: white;
+	font-family: Georgia, serif;
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+	user-select: none;
+}
+#version {
+	bottom: 10px;
+	left: 10px;
+	position: absolute;
+}
