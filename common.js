@@ -103,6 +103,23 @@ const random = {
 	uniform(min, max){ // random real in range
 		return this.random() * (max-min) + min;
 	},
+	/**
+	 * @param {any[]} arr
+	 * @param {number[]} weights
+	 */
+	weightedChoice(arr, weights){
+		const s = sum(weights);
+		weights = weights.map(w => w/s); // normalize
+		const r = this.random();
+		let z = 0;
+		let i = 0;
+		for (i = 0; i < arr.length; i++){
+			z += weights[i];
+			if (r <= z)
+				break;
+		}
+		return arr[i];
+	},
 };
 
 /** works just like in python
