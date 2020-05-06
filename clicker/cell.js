@@ -71,6 +71,8 @@ const Game = {
 		console.log(string);
 	},
 	player: {
+		/** @type {[number, number][]} [id, count] of chems */
+		inventory: [],
 		lastSave: 0,
 		lifetimeSnueg: 0,
 		snueg: 0,
