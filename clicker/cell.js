@@ -30,6 +30,16 @@ class Chem {
 		image.alt = this.name;
 		return image;
 	}
+	/** @return {0|2|3|4} de facto */
+	get rarity(){
+		return Math.max(2, Math.floor(Math.log(this.mass))) - 2;
+	}
+	get rarityDiv(){
+		const div = document.createElement('div');
+		div.classList.add('rarity' + this.rarity);
+		div.innerHTML = 'Rarity: ' + this.rarity;
+		return div;
+	}
 }
 new Chem(0, 'Water', 18.01528, 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Water_molecule_3D.svg');
 new Chem(1000, 'Cytosine', 111.1, 'https://upload.wikimedia.org/wikipedia/commons/7/73/Cytosine-3D-balls.png');
@@ -55,7 +65,9 @@ const Game = {
 		mine(){
 			const c = Game.chem.random();
 			this.addToPlayer(c);
-			document.getElementById('miningLog').innerHTML = 'mined ' + c.name;
+			const l = document.getElementById('miningLog');
+			l.innerHTML = 'mined ' + c.name;
+			l.appendChild(c.rarityDiv);
 		},
 	},
 	chem: {
@@ -65,6 +77,7 @@ const Game = {
 			return random.weightedChoice(this.chems, this.weights);
 		},
 		get weights(){
+			// -1 too big, -2 too small... but realistic...
 			return this.chems.map(c => Math.pow(c.mass, -2));
 		},
 	},
