@@ -1,6 +1,6 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true, nonew: false */
 /* exported main */
-/* globals chemData, cookie, random, recipeData */
+/* globals chemData, cookie, random, recipeData, round */
 'use strict';
 const version = 'a200511';
 const clickerName = 'cellgame';
@@ -158,6 +158,7 @@ class Item extends Interactable {
 		elem.title = this.name + '\n' +
 			'ID: ' + this.itemId + '\n' +
 			'Rarity: ' + Game.rarity.names[this.rarity] + ' (' + this.rarity + ')\n' +
+			'Mass: ' + massString(this.mass, 2) +
 			this.desc;
 		return elem;
 	}
@@ -482,6 +483,13 @@ recipeData.forEach(o => Recipe.fromJSON(o));
 const automineTech = new Tech('Automine', 'Automatically mine for resources', undefined, [[water, 100]]);
 
 // functions
+/** @param {number} mass in kg */
+function massString(mass){
+	const prefixes = 'yzafpnμm kMGTPEZY'.split('');
+	const i = Math.floor(Math.log10(mass)/3) + 8;
+	const c = Math.pow(10, 3*(i-8));
+	return round(mass / c, 2) + ' ' + prefixes[i] + 'g';
+}
 
 // https://stackoverflow.com/a/2956980/2579798
 function setIntervalX(callback, delay, repetitions){

@@ -8,6 +8,7 @@ const chemData = [
 		name: 'Hydrogen',
 		density: 0.08988e-3,
 		molarMass: 1.008*2,
+		imgUrl: 'https://imagenesgratis.com.ar/wp-content/uploads/2020/01/sphere-3d-white-001.png',
 		tags: ['Blacklisted'],
 	},
 	{
@@ -181,6 +182,17 @@ const chemData = [
 // recipes
 // todo https://en.wikipedia.org/wiki/Metabolic_pathway#Major_metabolic_pathways
 const recipeData = [
+	// simple reactions
+	{
+		reagents: [
+			['Hydrogen', 2],
+			['Oxygen', 1],
+		],
+		products: [
+			['Water', 2],
+		],
+	},
+	// biochemical reactions
 	{
 		name: 'Glycolysis',
 		reagents: [
