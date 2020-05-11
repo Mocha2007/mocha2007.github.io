@@ -60,6 +60,10 @@ class Interactable {
 		this.imgUrl = imgUrl;
 		this.tags = tags.map(tagName => Tag.fromString(tagName));
 	}
+	/** @return {Tag[]} a flat array of all categories and supercategories it is a member of */
+	get categories(){
+		return this.tags.concat(...this.tags.map(t => t.categories));
+	}
 	get img(){
 		const image = document.createElement('img');
 		image.src = this.imgUrl;
@@ -393,6 +397,10 @@ const Game = {
 		snueg: 0,
 		startTime: +new Date(),
 	},
+	powerOverwhelming(){
+		Game.p.add(water.molecule, 100);
+		automineTech.unlock();
+	},
 	rarity: {
 		colors: 'White CornflowerBlue PaleGreen BurlyWood IndianRed'.split(' '),
 		names: 'Common Uncommon Rare Epic Legendary'.split(' '),
@@ -443,11 +451,12 @@ const Game = {
 new Tag('Organic', [], 'Molecules containing a carbon-hydrogen bond'); // must contain H C
 
 // Tier 1 - requires something from Tier 0
-new Tag('Amino Acid', ['Organic'], 'Molecules with an amine and carboxyl group'); // must contain H C N O
+new Tag('Carboxylic Acid', ['Organic'], 'Molecules with a carboxyl group'); // must contain H C O
 new Tag('Carbohydrate', ['Organic'], 'Molecules of Carbon, Oxygen, and Hydrogen'); // must contain H C O and only those
 new Tag('Nucleobase', ['Organic']);
 
 // Tier 2
+new Tag('Amino Acid', ['Carboxylic Acid'], 'Molecules with an amine and carboxyl group'); // must contain H C N O
 new Tag('Monosaccharide', ['Carbohydrate']);
 
 // chems - ball-and-stick models preferred
@@ -464,6 +473,7 @@ new Chem('Adenine', 1.6, 135.13, 'https://upload.wikimedia.org/wikipedia/commons
 new Chem('Guanine', 2.2, 151.13, 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Guanine-3D-balls.png', ['Nucleobase']);
 new Chem('Vitamin C', 1.694, 176.12, 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Ascorbic-acid-from-xtal-1997-3D-balls.png', ['Organic']);
 new Chem('Glucose', 1.54, 180.156, 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Alpha-D-glucose-from-xtal-1979-3D-balls.png', ['Monosaccharide']);
+new Chem('Citric Acid', 1.665, 192.123, 'https://upload.wikimedia.org/wikipedia/commons/7/7a/Citric-acid-3D-balls.png', ['Carboxylic Acid']);
 new Chem('ATP', 1.04, 507.18, 'https://upload.wikimedia.org/wikipedia/commons/2/22/ATP-3D-vdW.png', ['Organic']);
 // https://en.wikipedia.org/wiki/Eukaryotic_ribosome_(80S)#Composition
 /* new Chem('Ribosome', undefined, 3.2e6, 'https://upload.wikimedia.org/wikipedia/commons/a/a8/80S_2XZM_4A17_4A19.png', ['Organic']);
