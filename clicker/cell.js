@@ -1,6 +1,6 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true, nonew: false */
 /* exported main */
-/* globals cookie, random */
+/* globals chemData, cookie, random, recipeData */
 'use strict';
 const version = 'a200511';
 const clickerName = 'cellgame';
@@ -205,6 +205,9 @@ class Chem extends Item {
 	static find(name){
 		return chems.filter(c => c.name === name)[0];
 	}
+	static fromJSON(o){
+		return new Chem(o.name, o.density, o.molarMass, o.imgUrl, o.tags);
+	}
 }
 
 /** @type {Recipe[]} */
@@ -268,6 +271,11 @@ class Recipe {
 		this.reagents.forEach(i => Game.p.add(i[0], -i[1]));
 		this.products.forEach(i => Game.p.add(i[0], i[1]));
 		return true;
+	}
+	static fromJSON(o){
+		return new Recipe(o.reagents.map(x => [Chem.find(x[0]), x[1]]),
+			o.products.map(x => [Chem.find(x[0]), x[1]])
+		);
 	}
 }
 
@@ -343,8 +351,8 @@ const Game = {
 		},
 		get weights(){
 			// -1 too big, -2 too small... but realistic...
-			return this.chems.map(c => Math.pow(c.molarMass, -2) *
-				!c.categories.includes(blacklisted));
+			return this.chems.map(c => !c.categories.includes(blacklisted) &&
+				Math.pow(c.molarMass, -2));
 		},
 	},
 	debug: {
@@ -465,81 +473,11 @@ new Tag('Nucleobase', ['Organic']);
 new Tag('Amino Acid', ['Carboxylic Acid'], 'Molecules with an amine and carboxyl group'); // must contain H C N O
 new Tag('Monosaccharide', ['Carbohydrate']);
 
-// chems - ball-and-stick models preferred
-// blacklisted
-new Chem('Hydrogen', 0.08988e-3, 1.008*2, undefined, ['Blacklisted']);
-new Chem('Ammonia', 0.769e-3, 17.031, 'https://upload.wikimedia.org/wikipedia/commons/0/05/Ammonia-3D-balls-A.png', ['Blacklisted']);
-// whitelisted
-const water = new Chem('Water', 1, 18.01528, 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Water_molecule_3D.svg');
-new Chem('Nitrogen', 1.2506e-3, 28, 'https://upload.wikimedia.org/wikipedia/commons/2/20/Dinitrogen-3D-vdW.png');
-new Chem('Phosphorus', 1.823, 30.973761998, 'https://cdn0.iconfinder.com/data/icons/3D-shapes-psd/256/ball-6x6.png');
-new Chem('Oxygen', 1.429e-3, 32, 'https://upload.wikimedia.org/wikipedia/commons/5/57/Oxygen_molecule.svg');
-new Chem('Carbon Dioxide', 1.429e-3, 44.009, 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Carbon_dioxide_3D_ball.png');
-new Chem('Sodium Chloride', 2.17, 58.443, 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Sodium-chloride-3D-ionic.png');
-new Chem('Glycine', 1.1607, 75.067, 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Glycine-3D-balls.png', ['Amino Acid']);
-new Chem('Pyruvic Acid', 1.25, 88.06, 'https://upload.wikimedia.org/wikipedia/commons/d/dc/Pyruvic-acid-3D-balls.png', ['Carboxylic Acid']);
-new Chem('Serine', 1.603, 105.093, 'https://upload.wikimedia.org/wikipedia/commons/d/d0/L-serine-3D-balls.png', ['Amino Acid']);
-new Chem('Cytosine', 1.55, 111.1, 'https://upload.wikimedia.org/wikipedia/commons/7/73/Cytosine-3D-balls.png', ['Nucleobase']);
-new Chem('Uracil', 1.32, 112.08676, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Uracil-3D-balls.png', ['Nucleobase']);
-new Chem('Thymine', 1.223, 126.115, 'https://upload.wikimedia.org/wikipedia/commons/8/88/Thymine-3D-balls.png', ['Nucleobase']);
-new Chem('Adenine', 1.6, 135.13, 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Adenine-3D-balls.png', ['Nucleobase']);
-new Chem('Guanine', 2.2, 151.13, 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Guanine-3D-balls.png', ['Nucleobase']);
-new Chem('Vitamin C', 1.694, 176.12, 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Ascorbic-acid-from-xtal-1997-3D-balls.png', ['Organic']);
-new Chem('Glucose', 1.54, 180.156, 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Alpha-D-glucose-from-xtal-1979-3D-balls.png', ['Monosaccharide']);
-new Chem('Citric Acid', 1.665, 192.123, 'https://upload.wikimedia.org/wikipedia/commons/7/7a/Citric-acid-3D-balls.png', ['Carboxylic Acid']);
-new Chem('Tryptophan', undefined, 204.229, 'https://upload.wikimedia.org/wikipedia/commons/b/ba/L-Tryptophan-3D-balls.png', ['Amino Acid']);
-new Chem('ADP', 2.49, 427.201, 'https://upload.wikimedia.org/wikipedia/commons/9/99/Adenosine-diphosphate-3D-balls.png', ['Organic']);
-new Chem('Tetrahydrofolate', undefined, 445.43, 'https://upload.wikimedia.org/wikipedia/commons/7/76/Tetrahydrofolic-acid-3D-spacefill.png', ['Carboxylic Acid']); // unsure if amino acid
-// https://en.wikipedia.org/wiki/5,10-Methylenetetrahydrofolate
-new Chem('MTHF', undefined, 457.44, 'https://upload.wikimedia.org/wikipedia/commons/a/ae/5%2C10-methylenetetrahydrofolic_acid.svg', ['Carboxylic Acid']); // unsure if amino acid
-new Chem('ATP', 1.04, 507.18, 'https://upload.wikimedia.org/wikipedia/commons/2/22/ATP-3D-vdW.png', ['Organic']);
-new Chem('NAD+', undefined, 663.43, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/NAD%2B-from-xtal-2003-3D-balls.png', ['Organic']);
-new Chem('NADH', undefined, 663.43, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/NAD%2B-from-xtal-2003-3D-balls.png', ['Organic']);
+// read chemData, recipeData
+chemData.forEach(o => Chem.fromJSON(o));
+const water = Chem.find('Water');
 
-// recipes
-// todo https://en.wikipedia.org/wiki/Metabolic_pathway#Major_metabolic_pathways
-// glycolysis
-new Recipe(
-	[
-		[Chem.find('Glucose'), 1],
-		[Chem.find('NAD+'), 2],
-		[Chem.find('ADP'), 2],
-		[Chem.find('Phosphorus'), 2],
-	],
-	[
-		[Chem.find('Pyruvic Acid'), 2],
-		[Chem.find('NADH'), 2],
-		[Chem.find('ATP'), 2],
-		[Chem.find('Water'), 2],
-	]
-);
-// https://en.wikipedia.org/wiki/Glycine#Biosynthesis
-new Recipe(
-	[
-		[Chem.find('Serine'), 1],
-		[Chem.find('Tetrahydrofolate'), 1],
-	],
-	[
-		[Chem.find('Glycine'), 1],
-		[Chem.find('MTHF'), 1],
-		[Chem.find('Water'), 1],
-	]
-);
-// https://en.wikipedia.org/wiki/Glycine#Degradation
-new Recipe(
-	[
-		[Chem.find('Glycine'), 1],
-		[Chem.find('Tetrahydrofolate'), 1],
-		[Chem.find('NAD+'), 1],
-	],
-	[
-		[Chem.find('Carbon Dioxide'), 1],
-		[Chem.find('Ammonia'), 1], // technically ammonium, but given how complex this game already is...
-		[Chem.find('MTHF'), 1],
-		[Chem.find('NADH'), 1],
-		[Chem.find('Hydrogen'), 1],
-	]
-);
+recipeData.forEach(o => Recipe.fromJSON(o));
 
 const automineTech = new Tech('Automine', 'Automatically mine for resources', undefined, [[water, 100]]);
 
