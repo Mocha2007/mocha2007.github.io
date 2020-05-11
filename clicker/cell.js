@@ -333,7 +333,6 @@ const Game = {
 			l.appendChild(document.createElement('br'));
 			l.appendChild(Game.rarity.elem(c.rarity));
 			c.createParticle();
-			c.elem; // create inventory element
 		},
 	},
 	chem: {
@@ -530,6 +529,8 @@ function main(){
 	// set up ticks
 	setTimeout(Game.save.save, Game.settings.autosaveInterval);
 	setInterval(Game.tick, 1000);
+	// set up inventory
+	items.forEach(i => i.elem);
 	// notification
 	Game.log(clickerName + ' v. ' + version + ' loaded successfully.');
 }
