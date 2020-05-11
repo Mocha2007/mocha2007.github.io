@@ -11,7 +11,7 @@ const angstrom = 1e-10;
 /** mol^-1; exact; Avogadro's Constant */
 const avogadro = 6.02214076e23;
 /** m/s; exact */
-const speedOfLight = 299792458;
+// const speedOfLight = 299792458;
 
 // simple fxs
 
@@ -19,16 +19,16 @@ const speedOfLight = 299792458;
 const sphere = r => 4/3 * pi * r*r*r;
 
 // classes
-const resources = [];
-class Resource {
-	/**
+class Interactable {
+	/** things with names, descs, and images
 	 * @param {string} name
+	 * @param {string} desc
 	 * @param {string} imgUrl
 	 */
-	constructor(name, imgUrl = ''){
+	constructor(name, desc, imgUrl = ''){
 		this.name = name;
+		this.desc = desc;
 		this.imgUrl = imgUrl;
-		resources.push(this);
 	}
 	get img(){
 		const image = document.createElement('img');
@@ -43,6 +43,19 @@ class Resource {
 		a.href = 'https://en.wikipedia.org/wiki/' + this.name;
 		a.innerHTML = this.name;
 		return a;
+	}
+}
+
+
+const resources = [];
+class Resource extends Interactable {
+	/**
+	 * @param {string} name
+	 * @param {string} imgUrl
+	 */
+	constructor(name, imgUrl = ''){
+		super(name, undefined, imgUrl);
+		resources.push(this);
 	}
 }
 
@@ -79,7 +92,7 @@ class Chem extends Material {
 	}
 	get molecule(){
 		const name = this.name + ' Molecule';
-		const i = items.filter(i => i.name === name);
+		const i = items.filter(item => item.name === name);
 		if (i.length) // preexisting
 			return i[0];
 		// new
@@ -159,17 +172,23 @@ class Recipe {
 new Recipe([['todo proteins', 6592 + 5265]], [[ribosome, 1]]);
 
 const techs = [];
-class Tech {
+class Tech extends Interactable {
 	/**
+	 * @param {string} name
+	 * @param {string} desc
 	 * @param {Tech[]} prereqs
 	 * @param {[Resource, number][]} cost
 	 */
-	constructor(prereqs, cost){
+	constructor(name, desc, prereqs, cost){
+		super(name, desc);
 		this.prereqs = new Set(prereqs);
 		this.cost = cost;
 		techs.push(this);
 	}
 }
+
+const ribosomeTech = new Tech('Ribosome', 'Unlock ribosome manufacture', [], ['todo amino acids', 1e4]);
+
 // constants
 
 const Game = {
