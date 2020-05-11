@@ -62,7 +62,7 @@ class Tag extends Interactable {
 	 * @param {string} name
 	 * @param {string} desc
 	 * @param {string} imgUrl
-	 * @param {string[]} tags
+	 * @param {string[]} tags - implications, like how FPS => first person, shooter
 	 */
 	constructor(name, desc, imgUrl = '', tags = []){
 		super(name, desc, imgUrl, tags);
