@@ -77,6 +77,17 @@ class Chem extends Material {
 	get mass(){
 		return this.molarMass / avogadro;
 	}
+	get molecule(){
+		const name = this.name + ' Molecule';
+		const i = items.filter(i => i.name === name);
+		if (i.length) // preexisting
+			return i[0];
+		// new
+		return new Item(name, this.mass,
+			// estimate from https://physics.stackexchange.com/a/67721
+			this.molarMass / this.density / avogadro,
+			[this], this.imgUrl);
+	}
 	/** @return {0|2|3|4} de facto */
 	get rarity(){
 		return Math.max(2, Math.floor(Math.log(this.molarMass))) - 2;
