@@ -157,6 +157,7 @@ class Item extends Interactable {
 		elem.style.color = Game.rarity.colors[this.rarity];
 		elem.title = this.name + '\n' +
 			'ID: ' + this.itemId + '\n' +
+			'Rarity: ' + Game.rarity.names[this.rarity] + ' (' + this.rarity + ')\n' +
 			this.desc;
 		return elem;
 	}
