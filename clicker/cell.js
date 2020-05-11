@@ -73,8 +73,6 @@ class Tag extends Interactable {
 		return tagList.filter(t => t.name === string)[0];
 	}
 }
-new Tag('AA', 'Amino Acid');
-new Tag('NA', 'Nucleic Acid', undefined, ['AA']);
 
 const resources = [];
 class Resource extends Interactable {
@@ -151,17 +149,6 @@ class Chem extends Material {
 		return chems.filter(c => c.name === name)[0];
 	}
 }
-const water = new Chem('Water', 1, 18.01528, 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Water_molecule_3D.svg');
-new Chem('Glycine', 1.1607, 75.067, 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Glycine-3D-balls.png', ['AA']);
-new Chem('Cytosine', 1.55, 111.1, 'https://upload.wikimedia.org/wikipedia/commons/7/73/Cytosine-3D-balls.png', ['NA']);
-new Chem('Uracil', 1.32, 112.08676, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Uracil-3D-balls.png', ['NA']);
-new Chem('Thymine', 1.223, 126.115, 'https://upload.wikimedia.org/wikipedia/commons/8/88/Thymine-3D-balls.png', ['NA']);
-new Chem('Adenine', 1.6, 135.13, 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Adenine-3D-balls.png', ['NA']);
-new Chem('Guanine', 2.2, 151.13, 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Guanine-3D-balls.png', ['NA']);
-new Chem('Glucose', 1.54, 180.156, 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Alpha-D-glucose-from-xtal-1979-3D-balls.png');
-new Chem('ATP', 1.04, 507.18, 'https://upload.wikimedia.org/wikipedia/commons/2/22/ATP-3D-vdW.png');
-// https://en.wikipedia.org/wiki/Eukaryotic_ribosome_(80S)#Composition
-new Chem('Ribosome', undefined, 3.2e6, 'https://upload.wikimedia.org/wikipedia/commons/a/a8/80S_2XZM_4A17_4A19.png');
 
 /** @type {Item[]} */
 const items = [];
@@ -254,10 +241,10 @@ class Tech extends Interactable {
 	 * @param {string} name
 	 * @param {string} desc
 	 * @param {Tech[]} prereqs
-	 * @param {[Resource, number][]} cost
+	 * @param {[Item, number][]} cost
 	 * @param {string[]} tags
 	 */
-	constructor(name, desc, prereqs, cost, tags = []){
+	constructor(name, desc, prereqs = [], cost = [], tags = []){
 		super(name, desc, undefined, tags);
 		this.prereqs = prereqs;
 		this.cost = cost;
@@ -279,13 +266,22 @@ class Tech extends Interactable {
 		}
 		return li;
 	}
+	get unlockable(){
+		return this.prereqs.every(t => t.unlocked) &&
+			this.cost.every(x => x[1] <= x[0].amount);
+	}
+	get unlocked(){
+		return Game.player.unlockedTechs.includes(this.name);
+	}
+	/** @return {boolean} Was the unlock successful? */
 	unlock(){
-		// todo
+		if (!this.unlockable || this.unlocked)
+			return false;
+		this.cost.forEach(x => Game.p.add(x[0], -x[1]));
+		Game.player.unlockedTechs.push(this.name);
+		return true;
 	}
 }
-
-new Tech('Automine', 'Automatically mine for resources', undefined, [water, 100]);
-// todo const ribosomeTech = new Tech('Ribosome', 'Unlock ribosome manufacture', [], ['amino acids', 1e4]);
 
 // constants
 
@@ -383,7 +379,22 @@ const Game = {
 		autosaveInterval: 30 * 1000,
 	},
 };
-// ITEM, RECIPE DEFS (MUST COME AFTER GAME)
+
+// ITEM, RECIPE, ETC DEFS (MUST COME AFTER GAME)
+new Tag('AA', 'Amino Acid');
+new Tag('NA', 'Nucleic Acid', undefined, ['AA']);
+
+const water = new Chem('Water', 1, 18.01528, 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Water_molecule_3D.svg');
+new Chem('Glycine', 1.1607, 75.067, 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Glycine-3D-balls.png', ['AA']);
+new Chem('Cytosine', 1.55, 111.1, 'https://upload.wikimedia.org/wikipedia/commons/7/73/Cytosine-3D-balls.png', ['NA']);
+new Chem('Uracil', 1.32, 112.08676, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Uracil-3D-balls.png', ['NA']);
+new Chem('Thymine', 1.223, 126.115, 'https://upload.wikimedia.org/wikipedia/commons/8/88/Thymine-3D-balls.png', ['NA']);
+new Chem('Adenine', 1.6, 135.13, 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Adenine-3D-balls.png', ['NA']);
+new Chem('Guanine', 2.2, 151.13, 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Guanine-3D-balls.png', ['NA']);
+new Chem('Glucose', 1.54, 180.156, 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Alpha-D-glucose-from-xtal-1979-3D-balls.png');
+new Chem('ATP', 1.04, 507.18, 'https://upload.wikimedia.org/wikipedia/commons/2/22/ATP-3D-vdW.png');
+// https://en.wikipedia.org/wiki/Eukaryotic_ribosome_(80S)#Composition
+new Chem('Ribosome', undefined, 3.2e6, 'https://upload.wikimedia.org/wikipedia/commons/a/a8/80S_2XZM_4A17_4A19.png');
 
 const ribosome = new Item('Ribosome', Chem.find('Ribosome').mass,
 	sphere(mean([200, 300])/2*angstrom),
@@ -392,6 +403,9 @@ const ribosome = new Item('Ribosome', Chem.find('Ribosome').mass,
 );
 
 // const ribosomeRecipe = new Recipe([['proteins', 6592 + 5265]], [[ribosome, 1]]);
+
+new Tech('Automine', 'Automatically mine for resources', undefined, [[water.molecule, 100]]);
+// todo const ribosomeTech = new Tech('Ribosome', 'Unlock ribosome manufacture', undefined, ['amino acids', 1e4]);
 
 // functions
 
