@@ -468,6 +468,7 @@ new Chem('Guanine', 2.2, 151.13, 'https://upload.wikimedia.org/wikipedia/commons
 new Chem('Vitamin C', 1.694, 176.12, 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Ascorbic-acid-from-xtal-1997-3D-balls.png', ['Organic']);
 new Chem('Glucose', 1.54, 180.156, 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Alpha-D-glucose-from-xtal-1979-3D-balls.png', ['Monosaccharide']);
 new Chem('Citric Acid', 1.665, 192.123, 'https://upload.wikimedia.org/wikipedia/commons/7/7a/Citric-acid-3D-balls.png', ['Carboxylic Acid']);
+new Chem('ADP', 2.49, 427.201, 'https://upload.wikimedia.org/wikipedia/commons/9/99/Adenosine-diphosphate-3D-balls.png', ['Organic']);
 new Chem('ATP', 1.04, 507.18, 'https://upload.wikimedia.org/wikipedia/commons/2/22/ATP-3D-vdW.png', ['Organic']);
 // https://en.wikipedia.org/wiki/Eukaryotic_ribosome_(80S)#Composition
 /* new Chem('Ribosome', undefined, 3.2e6, 'https://upload.wikimedia.org/wikipedia/commons/a/a8/80S_2XZM_4A17_4A19.png', ['Organic']);
@@ -477,10 +478,13 @@ const ribosome = new Item('Ribosome', Chem.find('Ribosome').mass,
 	[Chem.find('Ribosome')],
 	Chem.find('Ribosome').imgUrl
 );*/
-
+// todo https://en.wikipedia.org/wiki/Metabolic_pathway
 // const ribosomeRecipe = new Recipe([['proteins', 6592 + 5265]], [[ribosome, 1]]);
 const glycolysisTest = new Recipe( // not the actual reaction, just a test
-	[[Chem.find('Glucose'), 1]],
+	[
+		[Chem.find('Glucose'), 1],
+		[Chem.find('ADP'), 2],
+	],
 	[
 		[Chem.find('Pyruvic Acid'), 2],
 		[Chem.find('ATP'), 2],
