@@ -163,7 +163,7 @@ class Chem extends Material {
 	}
 	/** @return {number} integer in [1, 4] */
 	get rarity(){
-		return Math.floor(Math.log(this.molarMass)) + 5;
+		return Math.max(0, Math.floor(Math.log(this.molarMass)) + 4);
 	}
 	/** @param {string} name */
 	static find(name){
