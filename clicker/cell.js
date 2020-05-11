@@ -231,7 +231,7 @@ class Item extends Resource {
 		return new Particle(p, e => {
 			e.style.opacity = parseFloat(e.style.opacity) * 0.9;
 			e.style.width = parseFloat(e.style.width.slice(0, -2)) * 0.9 + 'px';
-		}, 2);
+		}, 1);
 	}
 	/** @param {number} v */
 	kinetic(v){
