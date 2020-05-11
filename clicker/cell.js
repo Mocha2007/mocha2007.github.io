@@ -165,12 +165,6 @@ class Chem extends Material {
 	get rarity(){
 		return Math.floor(Math.log(this.molarMass)) + 5;
 	}
-	get rarityDiv(){
-		const div = document.createElement('div');
-		div.classList.add('rarity' + this.rarity);
-		div.innerHTML = 'Rarity: ' + this.rarity;
-		return div;
-	}
 	/** @param {string} name */
 	static find(name){
 		return chems.filter(c => c.name === name)[0];
@@ -329,7 +323,8 @@ const Game = {
 			Game.p.add(mol);
 			const l = document.getElementById('miningLog');
 			l.innerHTML = 'mined ' + mol.name;
-			l.appendChild(c.rarityDiv);
+			l.appendChild(document.createElement('br'));
+			l.appendChild(Game.rarity.elem(c.rarity));
 			mol.createParticle();
 		},
 	},
@@ -392,6 +387,18 @@ const Game = {
 		unlockedTechs: [],
 		snueg: 0,
 		startTime: +new Date(),
+	},
+	rarity: {
+		colors: 'White CornflowerBlue PaleGreen BurlyWood IndianRed'.split(' '),
+		names: 'Common Uncommon Rare Epic Legendary'.split(' '),
+		/** @param {number} n */
+		elem(n){
+			const span = document.createElement('span');
+			span.id = 'rarity';
+			span.innerHTML = this.names[n];
+			span.style.color = this.colors[n];
+			return span;
+		},
 	},
 	save: {
 		load(){

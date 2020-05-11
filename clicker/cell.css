@@ -26,6 +26,9 @@ ol, ul {
 #left {
 	text-align: center;
 }
+#rarity {
+	font-weight: bold;
+}
 #version {
 	bottom: 10px;
 	left: 10px;
