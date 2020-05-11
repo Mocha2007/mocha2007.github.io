@@ -7,6 +7,9 @@ html, body {
 	overflow: hidden;
 	user-select: none;
 }
+h2 {
+	margin: 0;
+}
 .invisible {
 	display: none;
 }
@@ -16,14 +19,20 @@ html, body {
 	position: absolute;
 	width: 50%;
 }
-#right {
-	left: 50%;
-}
-#techList li {
-	cursor: pointer;
-}
+/* inside left */
 #version {
 	bottom: 10px;
 	left: 10px;
 	position: absolute;
+}
+/* inside right */
+#right {
+	left: 50%;
+}
+#techs, #recipes, #inventory {
+	height: calc(100% / 3);
+	width: 100%;
+}
+#recipeList > li, #techList > li {
+	cursor: pointer;
 }

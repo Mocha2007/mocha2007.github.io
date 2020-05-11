@@ -225,10 +225,30 @@ class Recipe {
 		this.reagents = reagents;
 		this.products = products;
 		recipes.push(this);
+		// create element
+		this.elem;
+	}
+	get elem(){
+		const elemId = 'recipe' + this.id;
+		/** @type {HTMLLIElement} */
+		let li = document.getElementById(elemId);
+		if (!li){
+			li = document.createElement('li');
+			li.id = elemId;
+			li.innerHTML = this.reagents + ' &rarr; ' + this.products;
+			li.onclick = () => this.make();
+			li.title = 'Make this recipe';
+			document.getElementById('recipeList').appendChild(li);
+		}
+		return li;
+	}
+	get id(){
+		return recipes.indexOf(this);
+	}
+	make(){
+		// todo
 	}
 }
-
-// todo const ribosomeRecipe = new Recipe([['proteins', 6592 + 5265]], [[ribosome, 1]]);
 
 const techs = [];
 class Tech extends Interactable {
@@ -351,13 +371,15 @@ const Game = {
 		autosaveInterval: 30 * 1000,
 	},
 };
-// ITEM DEFS (MUST COME AFTER GAME)
+// ITEM, RECIPE DEFS (MUST COME AFTER GAME)
 
 const ribosome = new Item('Ribosome', Chem.find('Ribosome').mass,
 	sphere(mean([200, 300])/2*angstrom),
 	[Chem.find('Ribosome')],
 	Chem.find('Ribosome').imgUrl
 );
+
+// const ribosomeRecipe = new Recipe([['proteins', 6592 + 5265]], [[ribosome, 1]]);
 
 // functions
 
