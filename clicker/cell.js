@@ -422,8 +422,7 @@ const Game = {
 			saveFile.player = Game.player;
 			cookie.write(clickerName, saveFile);
 			Game.debug.lastSave = new Date();
-			if (isManual)
-				Game.log('Successfully manually saved Game!');
+			Game.log('Game saved.');
 			Game.debug.autosaveTimeout = setTimeout(Game.save.save, Game.settings.autosaveInterval);
 		},
 	},
