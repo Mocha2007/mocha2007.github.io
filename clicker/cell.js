@@ -54,7 +54,7 @@ class Interactable {
 	 * @param {string} imgUrl
 	 * @param {string[]} tags
 	 */
-	constructor(name, desc, imgUrl = '', tags = []){
+	constructor(name, desc = '', imgUrl = '', tags = []){
 		this.name = name;
 		this.desc = desc;
 		this.imgUrl = imgUrl;
@@ -87,11 +87,11 @@ const tagList = [];
 class Tag extends Interactable {
 	/** things with names, descs, and images
 	 * @param {string} name
+	 * @param {string[]} tags - implications, like how FPS => first person, shooter
 	 * @param {string} desc
 	 * @param {string} imgUrl
-	 * @param {string[]} tags - implications, like how FPS => first person, shooter
 	 */
-	constructor(name, desc, imgUrl = '', tags = []){
+	constructor(name, tags = [], desc = '', imgUrl = ''){
 		super(name, desc, imgUrl, tags);
 		tagList.push(this);
 	}
@@ -427,20 +427,29 @@ const Game = {
 };
 
 // ITEM, RECIPE, ETC DEFS (MUST COME AFTER GAME)
-new Tag('AA', 'Amino Acid');
-new Tag('NA', 'Nucleic Acid', undefined, ['AA']);
+// Tier 0 - no reqs
+new Tag('Organic', [], 'Molecules containing a carbon-hydrogen bond'); // must contain H C
 
+// Tier 1 - requires something from Tier 0
+new Tag('Amino Acid', ['Organic'], 'Molecules with an amine and carboxyl group'); // must contain H C N O
+new Tag('Carbohydrate', ['Organic'], 'Molecules of Carbon, Oxygen, and Hydrogen'); // must contain H C O and only those
+new Tag('Nucleobase', ['Organic']);
+
+// Tier 2
+new Tag('Monosaccharide', ['Carbohydrate']);
+
+// chems
 const water = new Chem('Water', 1, 18.01528, 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Water_molecule_3D.svg');
-new Chem('Glycine', 1.1607, 75.067, 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Glycine-3D-balls.png', ['AA']);
-new Chem('Cytosine', 1.55, 111.1, 'https://upload.wikimedia.org/wikipedia/commons/7/73/Cytosine-3D-balls.png', ['NA']);
-new Chem('Uracil', 1.32, 112.08676, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Uracil-3D-balls.png', ['NA']);
-new Chem('Thymine', 1.223, 126.115, 'https://upload.wikimedia.org/wikipedia/commons/8/88/Thymine-3D-balls.png', ['NA']);
-new Chem('Adenine', 1.6, 135.13, 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Adenine-3D-balls.png', ['NA']);
-new Chem('Guanine', 2.2, 151.13, 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Guanine-3D-balls.png', ['NA']);
-new Chem('Glucose', 1.54, 180.156, 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Alpha-D-glucose-from-xtal-1979-3D-balls.png');
+new Chem('Glycine', 1.1607, 75.067, 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Glycine-3D-balls.png', ['Amino Acid']);
+new Chem('Cytosine', 1.55, 111.1, 'https://upload.wikimedia.org/wikipedia/commons/7/73/Cytosine-3D-balls.png', ['Nucleobase']);
+new Chem('Uracil', 1.32, 112.08676, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Uracil-3D-balls.png', ['Nucleobase']);
+new Chem('Thymine', 1.223, 126.115, 'https://upload.wikimedia.org/wikipedia/commons/8/88/Thymine-3D-balls.png', ['Nucleobase']);
+new Chem('Adenine', 1.6, 135.13, 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Adenine-3D-balls.png', ['Nucleobase']);
+new Chem('Guanine', 2.2, 151.13, 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Guanine-3D-balls.png', ['Nucleobase']);
+new Chem('Glucose', 1.54, 180.156, 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Alpha-D-glucose-from-xtal-1979-3D-balls.png', ['Monosaccharide']);
 new Chem('ATP', 1.04, 507.18, 'https://upload.wikimedia.org/wikipedia/commons/2/22/ATP-3D-vdW.png');
 // https://en.wikipedia.org/wiki/Eukaryotic_ribosome_(80S)#Composition
-new Chem('Ribosome', undefined, 3.2e6, 'https://upload.wikimedia.org/wikipedia/commons/a/a8/80S_2XZM_4A17_4A19.png');
+new Chem('Ribosome', undefined, 3.2e6, 'https://upload.wikimedia.org/wikipedia/commons/a/a8/80S_2XZM_4A17_4A19.png', ['Organic']);
 
 const ribosome = new Item('Ribosome', Chem.find('Ribosome').mass,
 	sphere(mean([200, 300])/2*angstrom),
