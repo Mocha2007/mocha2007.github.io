@@ -45,7 +45,7 @@ ol, ul {
 	columns: 2;
 }
 #techs, #recipes, #inventory {
-	height: calc(100% / 3);
+	/* height: calc(100% / 3); */
 	width: 100%;
 }
 #recipeList > li, #techList > li {
