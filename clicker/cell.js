@@ -1,22 +1,13 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true, nonew: false */
 /* exported main */
-/* globals cookie, mean, pi, random */
+/* globals cookie, random */
 'use strict';
 const version = 'a200511';
 const clickerName = 'cellgame';
 
 // constants
-/** m; exact */
-const angstrom = 1e-10;
 /** mol^-1; exact; Avogadro's Constant */
 const avogadro = 6.02214076e23;
-/** m/s; exact */
-// const speedOfLight = 299792458;
-
-// simple fxs
-
-/** @param {number} r */
-const sphere = r => 4/3 * pi * r*r*r;
 
 // classes
 
@@ -105,83 +96,9 @@ class Tag extends Interactable {
 	}
 }
 
-const resources = [];
-class Resource extends Interactable {
-	/**
-	 * @param {string} name
-	 * @param {string} imgUrl
-	 * @param {string[]} tags
-	 */
-	constructor(name, imgUrl = '', tags = []){
-		super(name, undefined, imgUrl, tags);
-		this.rarity = 0;
-		resources.push(this);
-	}
-}
-
-const materials = [];
-class Material extends Resource {
-	/** NOT objects. abstract. use item for physical objects.
-	 * @param {string} name
-	 * @param {number} density kg/m^3
-	 * @param {string} imgUrl
-	 * @param {string[]} tags
-	 */
-	constructor(name, density, imgUrl = '', tags = []){
-		super(name, imgUrl, tags);
-		/** kg/m^3 */
-		this.density = density;
-		materials.push(this);
-	}
-}
-
-/** @type {Chem[]} */
-const chems = [];
-class Chem extends Material {
-	/**
-	 * @param {string} name
-	 * @param {number} density g/cm^3
-	 * @param {number} molarMass g/mol
-	 * @param {string} imgUrl
-	 * @param {string[]} tags
-	 */
-	constructor(name, density, molarMass, imgUrl = '', tags = []){
-		super(name, density*1000, imgUrl, tags);
-		/** kg/mol */
-		this.molarMass = molarMass / 1000;
-		chems.push(this);
-	}
-	/** mass of a single atom/molecule */
-	get mass(){
-		return this.molarMass / avogadro;
-	}
-	get molecule(){
-		const name = this.name + ' Molecule';
-		const i = items.filter(item => item.name === name);
-		if (i.length) // preexisting
-			return i[0];
-		// new
-		const mol = new Item(name, this.mass,
-			// estimate from https://physics.stackexchange.com/a/67721
-			this.molarMass / this.density / avogadro,
-			[this], this.imgUrl);
-		mol.rarity = this.rarity;
-		return mol;
-	}
-	/** @return {number} integer in [1, 4] */
-	get rarity(){
-		return Math.max(0, Math.floor(Math.log(this.molarMass)) + 4);
-	}
-	set rarity(_){}
-	/** @param {string} name */
-	static find(name){
-		return chems.filter(c => c.name === name)[0];
-	}
-}
-
 /** @type {Item[]} */
 const items = [];
-class Item extends Resource {
+class Item extends Interactable {
 	/** physical, tangible objects
 	 * @param {string} name
 	 * @param {number} mass
@@ -189,11 +106,10 @@ class Item extends Resource {
 	 * @param {Material[]} composition
 	 * @param {string[]} tags
 	 */
-	constructor(name, mass, volume, composition, imgUrl = '', tags = []){
-		super(name, imgUrl, tags);
+	constructor(name, mass, volume, imgUrl = '', tags = []){
+		super(name, undefined, imgUrl, tags);
 		this.mass = mass;
 		this.volume = volume;
-		this.composition = composition;
 		items.push(this);
 		// create element
 		this.elem;
@@ -239,11 +155,42 @@ class Item extends Resource {
 	}
 }
 
+/** @type {Chem[]} */
+const chems = [];
+class Chem extends Item {
+	/**
+	 * @param {string} name
+	 * @param {number} density g/cm^3
+	 * @param {number} molarMass g/mol
+	 * @param {string} imgUrl
+	 * @param {string[]} tags
+	 */
+	constructor(name, density, molarMass, imgUrl = '', tags = []){
+		super(name, molarMass/avogadro,
+			// volume estimate from https://physics.stackexchange.com/a/67721
+			molarMass / density / avogadro,
+			imgUrl, tags);
+		// super(name, density*1000, imgUrl, tags);
+		/** kg/mol */
+		this.molarMass = molarMass / 1000;
+		chems.push(this);
+	}
+	/** @return {number} integer in [1, 4] */
+	get rarity(){
+		return Math.max(0, Math.floor(Math.log(this.molarMass)) + 4);
+	}
+	set rarity(_){}
+	/** @param {string} name */
+	static find(name){
+		return chems.filter(c => c.name === name)[0];
+	}
+}
+
 const recipes = [];
 class Recipe {
 	/**
-	 * @param {[Resource, number][]} reagents
-	 * @param {[Resource, number][]} products
+	 * @param {[Item, number][]} reagents
+	 * @param {[Item, number][]} products
 	 */
 	constructor(reagents, products){
 		this.reagents = reagents;
@@ -259,7 +206,7 @@ class Recipe {
 		if (!li){
 			li = document.createElement('li');
 			li.id = elemId;
-			li.innerHTML = this.reagents + ' &rarr; ' + this.products;
+			li.innerHTML = this.reactionString;
 			li.onclick = () => this.make();
 			li.title = 'Make this recipe';
 			document.getElementById('recipeList').appendChild(li);
@@ -269,8 +216,20 @@ class Recipe {
 	get id(){
 		return recipes.indexOf(this);
 	}
+	get makable(){
+		return this.reagents.every(i => i[1] <= i[0].amount);
+	}
+	get reactionString(){
+		return this.reagents.map(x => x[1] + ' ' + x[0].name).join(', ') + ' &rarr; ' +
+			this.products.map(x => x[1] + ' ' + x[0].name).join(', ');
+	}
 	make(){
-		// todo
+		Game.log('Attempted to craft recipe' + this.id);
+		if (!this.makable)
+			return false;
+		this.reagents.forEach(i => Game.p.add(i[0], -i[1]));
+		this.products.forEach(i => Game.p.add(i[0], i[1]));
+		return true;
 	}
 }
 
@@ -328,13 +287,12 @@ const Game = {
 	action: {
 		mine(){
 			const c = Game.chem.random();
-			const mol = c.molecule;
-			Game.p.add(mol);
+			Game.p.add(c);
 			const l = document.getElementById('miningLog');
-			l.innerHTML = 'mined ' + mol.name;
+			l.innerHTML = 'mined ' + c.name;
 			l.appendChild(document.createElement('br'));
 			l.appendChild(Game.rarity.elem(c.rarity));
-			mol.createParticle();
+			c.createParticle();
 		},
 	},
 	chem: {
@@ -398,7 +356,7 @@ const Game = {
 		startTime: +new Date(),
 	},
 	powerOverwhelming(){
-		Game.p.add(water.molecule, 100);
+		Game.p.add(water, 100);
 		automineTech.unlock();
 	},
 	rarity: {
@@ -466,6 +424,7 @@ new Chem('Oxygen', 1.429e-3, 32, 'https://upload.wikimedia.org/wikipedia/commons
 new Chem('Carbon Dioxide', 1.429e-3, 44.009, 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Carbon_dioxide_3D_ball.png');
 new Chem('Sodium Chloride', 2.17, 58.443, 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Sodium-chloride-3D-ionic.png');
 new Chem('Glycine', 1.1607, 75.067, 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Glycine-3D-balls.png', ['Amino Acid']);
+new Chem('Pyruvic Acid', 1.25, 88.06, 'https://upload.wikimedia.org/wikipedia/commons/d/dc/Pyruvic-acid-3D-balls.png', ['Carboxylic Acid']);
 new Chem('Cytosine', 1.55, 111.1, 'https://upload.wikimedia.org/wikipedia/commons/7/73/Cytosine-3D-balls.png', ['Nucleobase']);
 new Chem('Uracil', 1.32, 112.08676, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Uracil-3D-balls.png', ['Nucleobase']);
 new Chem('Thymine', 1.223, 126.115, 'https://upload.wikimedia.org/wikipedia/commons/8/88/Thymine-3D-balls.png', ['Nucleobase']);
@@ -485,8 +444,16 @@ const ribosome = new Item('Ribosome', Chem.find('Ribosome').mass,
 );*/
 
 // const ribosomeRecipe = new Recipe([['proteins', 6592 + 5265]], [[ribosome, 1]]);
+const glycolysisTest = new Recipe( // not the actual reaction, just a test
+	[[Chem.find('Glucose'), 1]],
+	[
+		[Chem.find('Pyruvic Acid'), 2],
+		[Chem.find('ATP'), 2],
+		[Chem.find('Water'), 2],
+	]
+);
 
-const automineTech = new Tech('Automine', 'Automatically mine for resources', undefined, [[water.molecule, 100]]);
+const automineTech = new Tech('Automine', 'Automatically mine for resources', undefined, [[water, 100]]);
 // todo const ribosomeTech = new Tech('Ribosome', 'Unlock ribosome manufacture', undefined, ['amino acids', 1e4]);
 
 // functions
