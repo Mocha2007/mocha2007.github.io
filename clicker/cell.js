@@ -169,7 +169,7 @@ class Recipe {
 	}
 }
 
-new Recipe([['todo proteins', 6592 + 5265]], [[ribosome, 1]]);
+const ribosomeRecipe = new Recipe([['todo proteins', 6592 + 5265]], [[ribosome, 1]]);
 
 const techs = [];
 class Tech extends Interactable {
