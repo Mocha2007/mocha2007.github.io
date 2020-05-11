@@ -224,11 +224,7 @@ class Item extends Resource {
 	createParticle(){
 		const p = this.img;
 		p.style.opacity = 1;
-		console.log(p);
-		console.log(p.style);
-		console.log(p.style.width);
 		p.style.width = '200px';
-		console.log(p.style.width);
 		return new Particle(p, e => {
 			e.style.opacity = parseFloat(e.style.opacity) * 0.9;
 			e.style.width = parseFloat(e.style.width.slice(0, -2)) * 0.9 + 'px';
@@ -425,7 +421,7 @@ const Game = {
 	},
 	tick(){
 		// automine
-		if (automineTech.unlocked && Game.debug.tick % Game.settings.fps === 0)
+		if (automineTech.unlocked)
 			Game.action.mine();
 	},
 };
