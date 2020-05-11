@@ -109,13 +109,13 @@ const chems = [];
 class Chem extends Material {
 	/**
 	 * @param {string} name
-	 * @param {number} density kg/m^3
+	 * @param {number} density g/cm^3
 	 * @param {number} molarMass g/mol
 	 * @param {string} imgUrl
 	 * @param {string[]} tags
 	 */
 	constructor(name, density, molarMass, imgUrl = '', tags = []){
-		super(name, density, imgUrl, tags);
+		super(name, density*1000, imgUrl, tags);
 		/** kg/mol */
 		this.molarMass = molarMass / 1000;
 		chems.push(this);
@@ -150,15 +150,15 @@ class Chem extends Material {
 		return chems.filter(c => c.name === name)[0];
 	}
 }
-const water = new Chem('Water', 1000, 18.01528, 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Water_molecule_3D.svg');
-new Chem('Glycine', 1.1607e3, 75.067, 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Glycine-3D-balls.png', ['AA']);
-new Chem('Cytosine', 1.55e3, 111.1, 'https://upload.wikimedia.org/wikipedia/commons/7/73/Cytosine-3D-balls.png', ['NA']);
-new Chem('Uracil', 1.32e3, 112.08676, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Uracil-3D-balls.png', ['NA']);
-new Chem('Thymine', 1.223e3, 126.115, 'https://upload.wikimedia.org/wikipedia/commons/8/88/Thymine-3D-balls.png', ['NA']);
-new Chem('Adenine', 1.6e3, 135.13, 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Adenine-3D-balls.png', ['NA']);
-new Chem('Guanine', 2.2e3, 151.13, 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Guanine-3D-balls.png', ['NA']);
-new Chem('Glucose', 1.54e3, 180.156, 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Alpha-D-glucose-from-xtal-1979-3D-balls.png');
-new Chem('ATP', 1.04e3, 507.18, 'https://upload.wikimedia.org/wikipedia/commons/2/22/ATP-3D-vdW.png');
+const water = new Chem('Water', 1, 18.01528, 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Water_molecule_3D.svg');
+new Chem('Glycine', 1.1607, 75.067, 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Glycine-3D-balls.png', ['AA']);
+new Chem('Cytosine', 1.55, 111.1, 'https://upload.wikimedia.org/wikipedia/commons/7/73/Cytosine-3D-balls.png', ['NA']);
+new Chem('Uracil', 1.32, 112.08676, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Uracil-3D-balls.png', ['NA']);
+new Chem('Thymine', 1.223, 126.115, 'https://upload.wikimedia.org/wikipedia/commons/8/88/Thymine-3D-balls.png', ['NA']);
+new Chem('Adenine', 1.6, 135.13, 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Adenine-3D-balls.png', ['NA']);
+new Chem('Guanine', 2.2, 151.13, 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Guanine-3D-balls.png', ['NA']);
+new Chem('Glucose', 1.54, 180.156, 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Alpha-D-glucose-from-xtal-1979-3D-balls.png');
+new Chem('ATP', 1.04, 507.18, 'https://upload.wikimedia.org/wikipedia/commons/2/22/ATP-3D-vdW.png');
 // https://en.wikipedia.org/wiki/Eukaryotic_ribosome_(80S)#Composition
 new Chem('Ribosome', undefined, 3.2e6, 'https://upload.wikimedia.org/wikipedia/commons/a/a8/80S_2XZM_4A17_4A19.png');
 
