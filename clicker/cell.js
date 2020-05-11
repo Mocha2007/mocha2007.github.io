@@ -411,10 +411,7 @@ const Game = {
 			Game.player = saveFile.player;
 			Game.settings = saveFile.settings;
 		},
-		/**
-		 * @param {boolean} isManual is this save manually triggered, or automatic?
-		*/
-		save(isManual = false){
+		save(){
 			clearTimeout(Game.debug.autosaveTimeout);
 			const saveFile = {};
 			saveFile.settings = Game.settings;
