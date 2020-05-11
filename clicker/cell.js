@@ -99,6 +99,7 @@ class Material extends Resource {
 	 */
 	constructor(name, density, imgUrl = '', tags = []){
 		super(name, imgUrl, tags);
+		/** kg/m^3 */
 		this.density = density;
 		materials.push(this);
 	}
