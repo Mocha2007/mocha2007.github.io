@@ -116,7 +116,8 @@ class Chem extends Material {
 	 */
 	constructor(name, density, molarMass, imgUrl = '', tags = []){
 		super(name, density, imgUrl, tags);
-		this.molarMass = molarMass;
+		/** kg/mol */
+		this.molarMass = molarMass / 1000;
 		chems.push(this);
 	}
 	/** mass of a single atom/molecule */
