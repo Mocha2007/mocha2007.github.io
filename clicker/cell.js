@@ -161,9 +161,9 @@ class Chem extends Material {
 			this.molarMass / this.density / avogadro,
 			[this], this.imgUrl);
 	}
-	/** @return {0|2|3|4} de facto */
+	/** @return {number} integer in [1, 4] */
 	get rarity(){
-		return Math.max(2, Math.floor(Math.log(this.molarMass))) - 2;
+		return Math.floor(Math.log(this.molarMass)) + 5;
 	}
 	get rarityDiv(){
 		const div = document.createElement('div');
@@ -454,13 +454,13 @@ new Chem('Vitamin C', 1.694, 176.12, 'https://upload.wikimedia.org/wikipedia/com
 new Chem('Glucose', 1.54, 180.156, 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Alpha-D-glucose-from-xtal-1979-3D-balls.png', ['Monosaccharide']);
 new Chem('ATP', 1.04, 507.18, 'https://upload.wikimedia.org/wikipedia/commons/2/22/ATP-3D-vdW.png', ['Organic']);
 // https://en.wikipedia.org/wiki/Eukaryotic_ribosome_(80S)#Composition
-new Chem('Ribosome', undefined, 3.2e6, 'https://upload.wikimedia.org/wikipedia/commons/a/a8/80S_2XZM_4A17_4A19.png', ['Organic']);
+/* new Chem('Ribosome', undefined, 3.2e6, 'https://upload.wikimedia.org/wikipedia/commons/a/a8/80S_2XZM_4A17_4A19.png', ['Organic']);
 
 const ribosome = new Item('Ribosome', Chem.find('Ribosome').mass,
 	sphere(mean([200, 300])/2*angstrom),
 	[Chem.find('Ribosome')],
 	Chem.find('Ribosome').imgUrl
-);
+);*/
 
 // const ribosomeRecipe = new Recipe([['proteins', 6592 + 5265]], [[ribosome, 1]]);
 
