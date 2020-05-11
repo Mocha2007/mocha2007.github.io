@@ -110,9 +110,8 @@ class Item extends Interactable {
 		super(name, undefined, imgUrl, tags);
 		this.mass = mass;
 		this.volume = volume;
+		this.rarity = 0;
 		items.push(this);
-		// create element
-		this.elem;
 	}
 	get amount(){
 		return Game.p.amount(this);
@@ -127,7 +126,7 @@ class Item extends Interactable {
 		if (!li){
 			li = document.createElement('li');
 			li.id = elemId;
-			li.innerHTML = this.name;
+			li.appendChild(this.span);
 			document.getElementById('invList').appendChild(li);
 		}
 		// update amount
@@ -136,9 +135,30 @@ class Item extends Interactable {
 		else
 			li.classList.add('invisible');
 		li.value = this.amount;
-		li.style.color = Game.rarity.colors[this.rarity];
 		// return
 		return li;
+	}
+	get itemId(){
+		return items.indexOf(this);
+	}
+	/** inline representation of an item */
+	get span(){
+		const elem = document.createElement('span');
+		// icon
+		const img = this.img;
+		img.style.height = '20px';
+		img.style.marginBottom = '-5px';
+		elem.appendChild(img);
+		// name
+		const name = document.createElement('span');
+		name.innerHTML = this.name;
+		elem.appendChild(name);
+		// styling
+		elem.style.color = Game.rarity.colors[this.rarity];
+		elem.title = this.name + '\n' +
+			'ID: ' + this.itemId + '\n' +
+			this.desc;
+		return elem;
 	}
 	createParticle(){
 		const p = this.img;
@@ -206,7 +226,7 @@ class Recipe {
 		if (!li){
 			li = document.createElement('li');
 			li.id = elemId;
-			li.innerHTML = this.reactionString;
+			li.appendChild(this.span);
 			li.onclick = () => this.make();
 			li.title = 'Make this recipe';
 			document.getElementById('recipeList').appendChild(li);
@@ -219,9 +239,22 @@ class Recipe {
 	get makable(){
 		return this.reagents.every(i => i[1] <= i[0].amount);
 	}
-	get reactionString(){
-		return this.reagents.map(x => x[1] + ' ' + x[0].name).join(', ') + ' &rarr; ' +
-			this.products.map(x => x[1] + ' ' + x[0].name).join(', ');
+	get span(){
+		const span = document.createElement('span');
+		this.reagents.forEach((x, i) => {
+			span.innerHTML += x[1] + ' ';
+			span.appendChild(x[0].span);
+			if (i !== this.reagents.length - 1)
+				span.innerHTML += ', ';
+		});
+		span.innerHTML += ' &rarr; ';
+		this.products.forEach((x, i) => {
+			span.innerHTML += x[1] + ' ';
+			span.appendChild(x[0].span);
+			if (i !== this.products.length - 1)
+				span.innerHTML += ', ';
+		});
+		return span;
 	}
 	make(){
 		Game.log('Attempted to craft recipe' + this.id);
@@ -293,6 +326,7 @@ const Game = {
 			l.appendChild(document.createElement('br'));
 			l.appendChild(Game.rarity.elem(c.rarity));
 			c.createParticle();
+			c.elem; // create inventory element
 		},
 	},
 	chem: {
