@@ -378,6 +378,10 @@ const Game = {
 	settings: {
 		autosaveInterval: 30 * 1000,
 	},
+	tick(){
+		if (automineTech.unlocked)
+			Game.action.mine();
+	},
 };
 
 // ITEM, RECIPE, ETC DEFS (MUST COME AFTER GAME)
@@ -404,7 +408,7 @@ const ribosome = new Item('Ribosome', Chem.find('Ribosome').mass,
 
 // const ribosomeRecipe = new Recipe([['proteins', 6592 + 5265]], [[ribosome, 1]]);
 
-new Tech('Automine', 'Automatically mine for resources', undefined, [[water.molecule, 100]]);
+const automineTech = new Tech('Automine', 'Automatically mine for resources', undefined, [[water.molecule, 100]]);
 // todo const ribosomeTech = new Tech('Ribosome', 'Unlock ribosome manufacture', undefined, ['amino acids', 1e4]);
 
 // functions
@@ -421,6 +425,7 @@ function main(){
 		Game.save.save();
 	// set up ticks
 	setTimeout(Game.save.save, Game.settings.autosaveInterval);
+	setInterval(Game.tick, 1000);
 	// notification
 	Game.log(clickerName + ' v. ' + version + ' loaded successfully.');
 }
