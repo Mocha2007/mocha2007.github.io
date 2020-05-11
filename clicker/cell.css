@@ -11,7 +11,7 @@ h2 {
 	margin: 0;
 }
 ol, ul {
-	columns: 2;
+	margin-right: 16px;
 }
 .invisible {
 	display: none;
@@ -37,6 +37,9 @@ ol, ul {
 /* inside right */
 #right {
 	left: 50%;
+}
+#invList {
+	columns: 2;
 }
 #techs, #recipes, #inventory {
 	height: calc(100% / 3);

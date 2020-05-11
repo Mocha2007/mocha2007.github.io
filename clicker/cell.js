@@ -454,6 +454,7 @@ new Tag('Monosaccharide', ['Carbohydrate']);
 // chems - ball-and-stick models preferred
 const water = new Chem('Water', 1, 18.01528, 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Water_molecule_3D.svg');
 new Chem('Nitrogen', 1.2506e-3, 28, 'https://upload.wikimedia.org/wikipedia/commons/2/20/Dinitrogen-3D-vdW.png');
+new Chem('Phosphorus', 1.823, 30.973761998, 'https://cdn0.iconfinder.com/data/icons/3D-shapes-psd/256/ball-6x6.png');
 new Chem('Oxygen', 1.429e-3, 32, 'https://upload.wikimedia.org/wikipedia/commons/5/57/Oxygen_molecule.svg');
 new Chem('Carbon Dioxide', 1.429e-3, 44.009, 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Carbon_dioxide_3D_ball.png');
 new Chem('Sodium Chloride', 2.17, 58.443, 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Sodium-chloride-3D-ionic.png');
@@ -469,30 +470,26 @@ new Chem('Glucose', 1.54, 180.156, 'https://upload.wikimedia.org/wikipedia/commo
 new Chem('Citric Acid', 1.665, 192.123, 'https://upload.wikimedia.org/wikipedia/commons/7/7a/Citric-acid-3D-balls.png', ['Carboxylic Acid']);
 new Chem('ADP', 2.49, 427.201, 'https://upload.wikimedia.org/wikipedia/commons/9/99/Adenosine-diphosphate-3D-balls.png', ['Organic']);
 new Chem('ATP', 1.04, 507.18, 'https://upload.wikimedia.org/wikipedia/commons/2/22/ATP-3D-vdW.png', ['Organic']);
-// https://en.wikipedia.org/wiki/Eukaryotic_ribosome_(80S)#Composition
-/* new Chem('Ribosome', undefined, 3.2e6, 'https://upload.wikimedia.org/wikipedia/commons/a/a8/80S_2XZM_4A17_4A19.png', ['Organic']);
+new Chem('NAD+', undefined, 663.43, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/NAD%2B-from-xtal-2003-3D-balls.png', ['Organic']);
+new Chem('NADH', undefined, 663.43, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/NAD%2B-from-xtal-2003-3D-balls.png', ['Organic']);
 
-const ribosome = new Item('Ribosome', Chem.find('Ribosome').mass,
-	sphere(mean([200, 300])/2*angstrom),
-	[Chem.find('Ribosome')],
-	Chem.find('Ribosome').imgUrl
-);*/
-// todo https://en.wikipedia.org/wiki/Metabolic_pathway
-// const ribosomeRecipe = new Recipe([['proteins', 6592 + 5265]], [[ribosome, 1]]);
-const glycolysisTest = new Recipe( // not the actual reaction, just a test
+// recipes
+const glycolysisTest = new Recipe(
 	[
 		[Chem.find('Glucose'), 1],
+		[Chem.find('NAD+'), 2],
 		[Chem.find('ADP'), 2],
+		[Chem.find('Phosphorus'), 2],
 	],
 	[
 		[Chem.find('Pyruvic Acid'), 2],
+		[Chem.find('NADH'), 2],
 		[Chem.find('ATP'), 2],
 		[Chem.find('Water'), 2],
 	]
 );
 
 const automineTech = new Tech('Automine', 'Automatically mine for resources', undefined, [[water, 100]]);
-// todo const ribosomeTech = new Tech('Ribosome', 'Unlock ribosome manufacture', undefined, ['amino acids', 1e4]);
 
 // functions
 
