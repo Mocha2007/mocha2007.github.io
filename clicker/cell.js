@@ -206,7 +206,7 @@ class Recipe {
 	}
 }
 
-const ribosomeRecipe = new Recipe([['todo proteins', 6592 + 5265]], [[ribosome, 1]]);
+// todo const ribosomeRecipe = new Recipe([['proteins', 6592 + 5265]], [[ribosome, 1]]);
 
 const techs = [];
 class Tech extends Interactable {
@@ -222,10 +222,30 @@ class Tech extends Interactable {
 		this.prereqs = prereqs;
 		this.cost = cost;
 		techs.push(this);
+		// create element
+		this.elem;
+	}
+	get elem(){
+		const elemId = 'tech' + this.name;
+		/** @type {HTMLLIElement} */
+		let li = document.getElementById(elemId);
+		if (!li){
+			li = document.createElement('li');
+			li.id = elemId;
+			li.innerHTML = this.name;
+			li.onclick = () => this.unlock();
+			li.title = 'Buy this upgrade';
+			document.getElementById('techList').appendChild(li);
+		}
+		return li;
+	}
+	unlock(){
+		// todo
 	}
 }
 
-const ribosomeTech = new Tech('Ribosome', 'Unlock ribosome manufacture', [], ['todo amino acids', 1e4]);
+new Tech('Automine', 'Automatically mine for resources', undefined, [water, 100]);
+// todo const ribosomeTech = new Tech('Ribosome', 'Unlock ribosome manufacture', [], ['amino acids', 1e4]);
 
 // constants
 

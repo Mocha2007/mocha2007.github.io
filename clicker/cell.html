@@ -6,13 +6,22 @@
 <link href="cell.css" type="text/css" rel="stylesheet">
 <script src="../common.js"></script>
 <title>cellgame</title>
-<div id="mining">
-	<button type="button" onclick="Game.action.mine()">Mine</button>
-	<progress id="miningProgress" value="0"></progress>
-	<div id="miningLog"></div>
+<div id="left">
+	<div id="mining">
+		<button type="button" onclick="Game.action.mine()">Mine</button>
+		<progress id="miningProgress" value="0"></progress>
+		<div id="miningLog"></div>
+	</div>
+	<span id="version"></div>
 </div>
-<div id="inventory"></div>
-<span id="version"></div>
+<div id="right">
+	<div id="techs">
+		<ul id="techList"></ul>
+	</div>
+	<div id="inventory">
+		<ul id="invList"></ul>
+	</div>
+</div>
 <script src="cell.js"></script>
 <script>main();</script>
 </html>
