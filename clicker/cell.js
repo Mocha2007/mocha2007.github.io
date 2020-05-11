@@ -6,21 +6,16 @@ const version = 'a200506';
 const clickerName = 'cellgame';
 
 // classes
-/** @type {Chem[]} */
-const chems = [];
-class Chem {
+const resources = [];
+class Resource {
 	/**
-	 * @param {number} id
 	 * @param {string} name
-	 * @param {number} molarMass g/mol
-	 * @param {string} imgUrl
+	 * @param {number} density kg/m^3
 	 */
-	constructor(id, name, molarMass, imgUrl = ''){
-		this.id = id;
+	constructor(name, imgUrl = ''){
 		this.name = name;
-		this.mass = molarMass;
 		this.imgUrl = imgUrl;
-		chems.push(this);
+		resources.push(this);
 	}
 	get img(){
 		const image = document.createElement('img');
@@ -30,9 +25,43 @@ class Chem {
 		image.alt = this.name;
 		return image;
 	}
+	get wikilink(){
+		const a = document.createElement('a');
+		a.href = 'https://en.wikipedia.org/wiki/' + this.name;
+		a.innerHTML = this.name;
+		return a;
+	}
+}
+
+const materials = [];
+class Material extends Resource {
+	/**
+	 * @param {string} name
+	 * @param {number} density kg/m^3
+	 */
+	constructor(name, density, imgUrl = ''){
+		super(name, imgUrl);
+		this.density = density;
+		materials.push(this);
+	}
+}
+
+/** @type {Chem[]} */
+const chems = [];
+class Chem extends Material {
+	/**
+	 * @param {string} name
+	 * @param {number} molarMass g/mol
+	 * @param {string} imgUrl
+	 */
+	constructor(name, density, molarMass, imgUrl = ''){
+		super(name, density, imgUrl); // todo
+		this.molarMass = molarMass;
+		chems.push(this);
+	}
 	/** @return {0|2|3|4} de facto */
 	get rarity(){
-		return Math.max(2, Math.floor(Math.log(this.mass))) - 2;
+		return Math.max(2, Math.floor(Math.log(this.molarMass))) - 2;
 	}
 	get rarityDiv(){
 		const div = document.createElement('div');
@@ -41,14 +70,14 @@ class Chem {
 		return div;
 	}
 }
-new Chem(0, 'Water', 18.01528, 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Water_molecule_3D.svg');
-new Chem(1000, 'Cytosine', 111.1, 'https://upload.wikimedia.org/wikipedia/commons/7/73/Cytosine-3D-balls.png');
-new Chem(1001, 'Uracil', 112.08676, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Uracil-3D-balls.png');
-new Chem(1002, 'Thymine', 126.115, 'https://upload.wikimedia.org/wikipedia/commons/8/88/Thymine-3D-balls.png');
-new Chem(1003, 'Adenine', 135.13, 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Adenine-3D-balls.png');
-new Chem(1004, 'Guanine', 151.13, 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Guanine-3D-balls.png');
-new Chem(2000, 'Glucose', 180.156, 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Alpha-D-glucose-from-xtal-1979-3D-balls.png');
-new Chem(2001, 'ATP', 507.18, 'https://upload.wikimedia.org/wikipedia/commons/2/22/ATP-3D-vdW.png');
+new Chem('Water', 1000, 18.01528, 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Water_molecule_3D.svg');
+new Chem('Cytosine', 1.55e3, 111.1, 'https://upload.wikimedia.org/wikipedia/commons/7/73/Cytosine-3D-balls.png');
+new Chem('Uracil', 1.32e3, 112.08676, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Uracil-3D-balls.png');
+new Chem('Thymine', 1.223e3, 126.115, 'https://upload.wikimedia.org/wikipedia/commons/8/88/Thymine-3D-balls.png');
+new Chem('Adenine', 1.6e3, 135.13, 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Adenine-3D-balls.png');
+new Chem('Guanine', 2.2e3, 151.13, 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Guanine-3D-balls.png');
+new Chem('Glucose', 1.54e3, 180.156, 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Alpha-D-glucose-from-xtal-1979-3D-balls.png');
+new Chem('ATP', 1.04e3, 507.18, 'https://upload.wikimedia.org/wikipedia/commons/2/22/ATP-3D-vdW.png');
 
 // constants
 
@@ -56,11 +85,11 @@ const Game = {
 	action: {
 		/** @param {Chem} chem */
 		addToPlayer(chem, amount = 1){
-			const idMap = Game.player.inventory.map(item => item[0]);
-			if (idMap.includes(chem.id))
-				Game.player.inventory[idMap.indexOf(chem.id)][1] += amount;
+			const nameMap = Game.player.inventory.map(item => item[0]);
+			if (nameMap.includes(chem.name))
+				Game.player.inventory[nameMap.indexOf(chem.name)][1] += amount;
 			else
-				Game.player.inventory.push([chem.id, amount]);
+				Game.player.inventory.push([chem.name, amount]);
 		},
 		mine(){
 			const c = Game.chem.random();
@@ -78,7 +107,7 @@ const Game = {
 		},
 		get weights(){
 			// -1 too big, -2 too small... but realistic...
-			return this.chems.map(c => Math.pow(c.mass, -2));
+			return this.chems.map(c => Math.pow(c.molarMass, -2));
 		},
 	},
 	debug: {
@@ -95,7 +124,7 @@ const Game = {
 		console.log(string);
 	},
 	player: {
-		/** @type {[number, number][]} [id, count] of chems */
+		/** @type {[string, number][]} [name, count] of chems */
 		inventory: [],
 		lastSave: 0,
 		lifetimeSnueg: 0,
@@ -143,9 +172,6 @@ function main(){
 		Game.save.save();
 	// set up ticks
 	setTimeout(Game.save.save, Game.settings.autosaveInterval);
-	// verify unique chem ids
-	if (new Set(chems.map(c => c.id)).size !== chems.length)
-		throw new RangeError('invalid chem id');
 	// notification
 	Game.log(clickerName + ' v. ' + version + ' loaded successfully.');
 }
