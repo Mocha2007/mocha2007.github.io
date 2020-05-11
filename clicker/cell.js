@@ -10,6 +10,11 @@ const clickerName = 'cellgame';
 const angstrom = 1e-10;
 /** mol^-1; exact; Avogadro's Constant */
 const avogadro = 6.02214076e23;
+/** m/s; exact */
+const speedOfLight = 299792458;
+
+// simple fxs
+
 /** @param {number} r */
 const sphere = r => 4/3 * pi * r*r*r;
 
@@ -115,6 +120,10 @@ class Item extends Resource {
 	}
 	get density(){
 		return this.mass / this.volume;
+	}
+	/** @param {number} v */
+	kinetic(v){
+		return 1/2 * this.mass * v*v;
 	}
 }
 const ribosome = new Item('Ribosome', Chem.find('Ribosome').mass,
