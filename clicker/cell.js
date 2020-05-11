@@ -30,7 +30,7 @@ class Interactable {
 		this.name = name;
 		this.desc = desc;
 		this.imgUrl = imgUrl;
-		this.tags = new Set(tags);
+		this.tags = tags.map(tagName => Tag.fromString(tagName));
 	}
 	get img(){
 		const image = document.createElement('img');
@@ -46,8 +46,35 @@ class Interactable {
 		a.innerHTML = this.name;
 		return a;
 	}
+	/**
+	 * @param {Tag} tag
+	 * @return {boolean}
+	 */
+	hasTag(tag){
+		return this.tags.some(t => t === tag || t.hasTag(t));
+	}
 }
 
+/** @type {Tag[]} */
+const tagList = [];
+class Tag extends Interactable {
+	/** things with names, descs, and images
+	 * @param {string} name
+	 * @param {string} desc
+	 * @param {string} imgUrl
+	 * @param {string[]} tags
+	 */
+	constructor(name, desc, imgUrl = '', tags = []){
+		super(name, desc, imgUrl, tags);
+		tagList.push(this);
+	}
+	/** @param {string} string */
+	static fromString(string){
+		return tagList.filter(t => t.name === string)[0];
+	}
+}
+new Tag('AA', 'Amino Acid');
+new Tag('NA', 'Nucleic Acid', undefined, ['AA']);
 
 const resources = [];
 class Resource extends Interactable {
@@ -147,7 +174,7 @@ class Item extends Resource {
 		super(name, imgUrl, tags);
 		this.mass = mass;
 		this.volume = volume;
-		this.composition = new Set(composition);
+		this.composition = composition;
 		items.push(this);
 	}
 	get density(){
@@ -190,7 +217,7 @@ class Tech extends Interactable {
 	 */
 	constructor(name, desc, prereqs, cost, tags = []){
 		super(name, desc, undefined, tags);
-		this.prereqs = new Set(prereqs);
+		this.prereqs = prereqs;
 		this.cost = cost;
 		techs.push(this);
 	}
