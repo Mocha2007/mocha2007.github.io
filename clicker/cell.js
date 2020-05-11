@@ -411,6 +411,10 @@ const Game = {
 			Game.player = saveFile.player;
 			Game.settings = saveFile.settings;
 		},
+		reset(){
+			cookie.delete(clickerName);
+			location.reload();
+		},
 		save(){
 			clearTimeout(Game.debug.autosaveTimeout);
 			const saveFile = {};
