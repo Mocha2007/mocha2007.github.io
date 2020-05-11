@@ -12,6 +12,20 @@ const chemData = [
 		tags: ['Blacklisted'],
 	},
 	{
+		name: 'Carbon',
+		density: 2,
+		molarMass: 12.011,
+		imgUrl: 'https://www.intrism.com/wp-content/uploads/2017/01/cropped-black-sphere.png',
+		tags: ['Blacklisted'],
+	},
+	{
+		name: 'Methane',
+		density: 0.657e-3,
+		molarMass: 16.043,
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/58/Methane-3D-balls.png',
+		tags: ['Blacklisted'],
+	},
+	{
 		name: 'Ammonia',
 		density: 0.769e-3,
 		molarMass: 17.031,
@@ -186,9 +200,46 @@ const recipeData = [
 	{
 		reagents: [
 			['Hydrogen', 2],
+			['Carbon', 1],
+		],
+		products: [
+			['Methane', 1],
+		],
+	},
+	{
+		reagents: [
+			['Hydrogen', 3],
+			['Nitrogen', 1],
+		],
+		products: [
+			['Ammonia', 2],
+		],
+	},
+	{
+		reagents: [
+			['Hydrogen', 2],
 			['Oxygen', 1],
 		],
 		products: [
+			['Water', 2],
+		],
+	},
+	{
+		reagents: [
+			['Carbon', 1],
+			['Oxygen', 1],
+		],
+		products: [
+			['Carbon Dioxide', 1],
+		],
+	},
+	{
+		reagents: [
+			['Methane', 1],
+			['Oxygen', 2],
+		],
+		products: [
+			['Carbon Dioxide', 1],
 			['Water', 2],
 		],
 	},

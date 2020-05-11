@@ -45,8 +45,11 @@ ol, ul {
 	columns: 2;
 }
 #techs, #recipes, #inventory {
-	/* height: calc(100% / 3); */
 	width: 100%;
+}
+#techList, #recipeList, #invList {
+	max-height: calc(100% / 3);
+	overflow-y: auto;
 }
 #recipeList > li, #techList > li {
 	cursor: pointer;
