@@ -163,6 +163,7 @@ new Chem('ATP', 1.04, 507.18, 'https://upload.wikimedia.org/wikipedia/commons/2/
 // https://en.wikipedia.org/wiki/Eukaryotic_ribosome_(80S)#Composition
 new Chem('Ribosome', undefined, 3.2e6, 'https://upload.wikimedia.org/wikipedia/commons/a/a8/80S_2XZM_4A17_4A19.png');
 
+/** @type {Item[]} */
 const items = [];
 class Item extends Resource {
 	/** physical, tangible objects
@@ -178,20 +179,41 @@ class Item extends Resource {
 		this.volume = volume;
 		this.composition = composition;
 		items.push(this);
+		// create element
+		this.elem;
+	}
+	get amount(){
+		return Game.player.inventory.some(i => i[0] === this.name) &&
+			Game.player.inventory.filter(i => i[0] === this.name)[0][1] ||
+			0;
 	}
 	get density(){
 		return this.mass / this.volume;
+	}
+	get elem(){
+		const elemId = 'item' + this.name;
+		/** @type {HTMLLIElement} */
+		let li = document.getElementById(elemId);
+		if (!li){
+			li = document.createElement('li');
+			li.id = elemId;
+			li.innerHTML = this.name;
+			document.getElementById('invList').appendChild(li);
+		}
+		// update amount
+		if (this.amount)
+			li.classList.remove('invisible');
+		else
+			li.classList.add('invisible');
+		li.value = this.amount;
+		// return
+		return li;
 	}
 	/** @param {number} v */
 	kinetic(v){
 		return 1/2 * this.mass * v*v;
 	}
 }
-const ribosome = new Item('Ribosome', Chem.find('Ribosome').mass,
-	sphere(mean([200, 300])/2*angstrom),
-	[Chem.find('Ribosome')],
-	Chem.find('Ribosome').imgUrl
-);
 
 const recipes = [];
 class Recipe {
@@ -251,17 +273,19 @@ new Tech('Automine', 'Automatically mine for resources', undefined, [water, 100]
 
 const Game = {
 	action: {
-		/** @param {Chem} chem */
+		/** @param {Item} chem */
 		addToPlayer(chem, amount = 1){
 			const nameMap = Game.player.inventory.map(item => item[0]);
 			if (nameMap.includes(chem.name))
 				Game.player.inventory[nameMap.indexOf(chem.name)][1] += amount;
 			else
 				Game.player.inventory.push([chem.name, amount]);
+			// update count
+			chem.elem;
 		},
 		mine(){
 			const c = Game.chem.random();
-			this.addToPlayer(c);
+			this.addToPlayer(c.molecule);
 			const l = document.getElementById('miningLog');
 			l.innerHTML = 'mined ' + c.name;
 			l.appendChild(c.rarityDiv);
@@ -327,6 +351,13 @@ const Game = {
 		autosaveInterval: 30 * 1000,
 	},
 };
+// ITEM DEFS (MUST COME AFTER GAME)
+
+const ribosome = new Item('Ribosome', Chem.find('Ribosome').mass,
+	sphere(mean([200, 300])/2*angstrom),
+	[Chem.find('Ribosome')],
+	Chem.find('Ribosome').imgUrl
+);
 
 // functions
 

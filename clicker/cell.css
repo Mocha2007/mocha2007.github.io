@@ -7,6 +7,9 @@ html, body {
 	overflow: hidden;
 	user-select: none;
 }
+.invisible {
+	display: none;
+}
 #left, #right {
 	height: 100%;
 	padding: 10px;
