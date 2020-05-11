@@ -323,7 +323,8 @@ const Game = {
 			const c = Game.chem.random();
 			Game.p.add(c);
 			const l = document.getElementById('miningLog');
-			l.innerHTML = 'mined ' + c.name;
+			l.innerHTML = 'mined ';
+			l.appendChild(c.span);
 			l.appendChild(document.createElement('br'));
 			l.appendChild(Game.rarity.elem(c.rarity));
 			c.createParticle();
