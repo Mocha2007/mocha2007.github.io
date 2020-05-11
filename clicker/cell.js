@@ -2,7 +2,7 @@
 /* exported main */
 /* globals cookie, mean, pi, random */
 'use strict';
-const version = 'a200506';
+const version = 'a200511';
 const clickerName = 'cellgame';
 
 // constants
@@ -155,6 +155,8 @@ class Recipe {
 		recipes.push(this);
 	}
 }
+
+new Recipe([['todo proteins', 6592 + 5265]], [[ribosome, 1]]);
 
 const techs = [];
 class Tech {
