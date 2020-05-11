@@ -385,10 +385,8 @@ const Game = {
 		/** @type {[string, number][]} [name, count] of Item */
 		inventory: [],
 		lastSave: 0,
-		lifetimeSnueg: 0,
 		/** @type {number[]} tech ids */
 		unlockedTechs: [],
-		snueg: 0,
 		startTime: +new Date(),
 	},
 	powerOverwhelming(){
