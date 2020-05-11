@@ -207,6 +207,7 @@ class Chem extends Item {
 	}
 }
 
+/** @type {Recipe[]} */
 const recipes = [];
 class Recipe {
 	/**
@@ -221,7 +222,7 @@ class Recipe {
 		this.elem;
 	}
 	get elem(){
-		const elemId = 'recipe' + this.id;
+		const elemId = this.elemId;
 		/** @type {HTMLLIElement} */
 		let li = document.getElementById(elemId);
 		if (!li){
@@ -233,6 +234,9 @@ class Recipe {
 			document.getElementById('recipeList').appendChild(li);
 		}
 		return li;
+	}
+	get elemId(){
+		return 'recipe' + this.id;
 	}
 	get id(){
 		return recipes.indexOf(this);
@@ -267,6 +271,7 @@ class Recipe {
 	}
 }
 
+/** @type {Tech[]} */
 const techs = [];
 class Tech extends Interactable {
 	/**
@@ -435,6 +440,14 @@ const Game = {
 		// automine
 		if (automineTech.unlocked)
 			Game.action.mine();
+		// fade / unfade recipes
+		recipes.forEach(r => {
+			const c = document.getElementById(r.elemId).classList;
+			if (r.makable)
+				c.remove('faded');
+			else
+				c.add('faded');
+		});
 	},
 };
 

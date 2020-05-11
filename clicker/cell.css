@@ -13,6 +13,9 @@ h2 {
 ol, ul {
 	margin-right: 16px;
 }
+.faded {
+	opacity: 0.5;
+}
 .invisible {
 	display: none;
 }
