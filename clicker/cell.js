@@ -183,9 +183,7 @@ class Item extends Resource {
 		this.elem;
 	}
 	get amount(){
-		return Game.player.inventory.some(i => i[0] === this.name) &&
-			Game.player.inventory.filter(i => i[0] === this.name)[0][1] ||
-			0;
+		return Game.p.amount(this);
 	}
 	get density(){
 		return this.mass / this.volume;
@@ -293,19 +291,9 @@ new Tech('Automine', 'Automatically mine for resources', undefined, [water, 100]
 
 const Game = {
 	action: {
-		/** @param {Item} chem */
-		addToPlayer(chem, amount = 1){
-			const nameMap = Game.player.inventory.map(item => item[0]);
-			if (nameMap.includes(chem.name))
-				Game.player.inventory[nameMap.indexOf(chem.name)][1] += amount;
-			else
-				Game.player.inventory.push([chem.name, amount]);
-			// update count
-			chem.elem;
-		},
 		mine(){
 			const c = Game.chem.random();
-			this.addToPlayer(c.molecule);
+			Game.p.add(c.molecule);
 			const l = document.getElementById('miningLog');
 			l.innerHTML = 'mined ' + c.name;
 			l.appendChild(c.rarityDiv);
@@ -334,6 +322,30 @@ const Game = {
 	log(string){
 		Game.debug.log.push(string);
 		console.log(string);
+	},
+	/** shit that can't go into a savefile */
+	p: {
+		/** @param {Item} item */
+		add(item, amount = 1){
+			if (this.hasItem(item)){
+				const nameMap = Game.player.inventory.map(i => i[0]);
+				Game.player.inventory[nameMap.indexOf(item.name)][1] += amount;
+			}
+			else
+				Game.player.inventory.push([item.name, amount]);
+			// update count
+			item.elem;
+		},
+		/** @param {Item} item */
+		amount(item){
+			return this.hasItem(item) &&
+				Game.player.inventory.filter(i => i[0] === item.name)[0][1] ||
+				0;
+		},
+		/** @param {Item} item */
+		hasItem(item){
+			return Game.player.inventory.some(i => i[0] === item.name);
+		},
 	},
 	player: {
 		/** @type {[string, number][]} [name, count] of Item */
