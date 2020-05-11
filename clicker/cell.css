@@ -20,6 +20,9 @@ h2 {
 	width: 50%;
 }
 /* inside left */
+#left {
+	text-align: center;
+}
 #version {
 	bottom: 10px;
 	left: 10px;

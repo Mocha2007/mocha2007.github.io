@@ -19,6 +19,34 @@ const avogadro = 6.02214076e23;
 const sphere = r => 4/3 * pi * r*r*r;
 
 // classes
+
+class Particle {
+	/**
+	 * Aesthetic Particles
+	 * @param {HTMLElement} element - element to animate
+	 * @param {(elem: HTMLElement) => void} tick - animation function (runs every tick, takes element as argument)
+	 * @param {number} lifespan - animation time (s)
+	*/
+	constructor(element, tick, lifespan){
+		element.id = +new Date();
+		element.classList.add('particle');
+		document.getElementById('left').appendChild(element);
+		this.element = element;
+		this.tick = tick;
+		this.lifespan = lifespan;
+		setIntervalX(() => tick(element), 1000/Game.settings.fps, lifespan*Game.settings.fps);
+		setTimeout(() => {
+			try {
+				document.getElementById(element.id).remove();
+			}
+			catch (TypeError){
+				// if a click-removable particle is defined and clicked, this block will trigger
+			}
+		}, lifespan*1000);
+		Game.particles.push(this);
+	}
+}
+
 class Interactable {
 	/** things with names, descs, and images
 	 * @param {string} name
@@ -34,7 +62,6 @@ class Interactable {
 	}
 	get img(){
 		const image = document.createElement('img');
-		image.classList.add('chem');
 		image.src = this.imgUrl;
 		image.title = this.name;
 		image.alt = this.name;
@@ -194,6 +221,19 @@ class Item extends Resource {
 		// return
 		return li;
 	}
+	createParticle(){
+		const p = this.img;
+		p.style.opacity = 1;
+		console.log(p);
+		console.log(p.style);
+		console.log(p.style.width);
+		p.style.width = '200px';
+		console.log(p.style.width);
+		return new Particle(p, e => {
+			e.style.opacity = parseFloat(e.style.opacity) * 0.9;
+			e.style.width = parseFloat(e.style.width.slice(0, -2)) * 0.9 + 'px';
+		}, 2);
+	}
 	/** @param {number} v */
 	kinetic(v){
 		return 1/2 * this.mass * v*v;
@@ -289,10 +329,12 @@ const Game = {
 	action: {
 		mine(){
 			const c = Game.chem.random();
-			Game.p.add(c.molecule);
+			const mol = c.molecule;
+			Game.p.add(mol);
 			const l = document.getElementById('miningLog');
-			l.innerHTML = 'mined ' + c.name;
+			l.innerHTML = 'mined ' + mol.name;
 			l.appendChild(c.rarityDiv);
+			mol.createParticle();
 		},
 	},
 	chem: {
@@ -343,6 +385,8 @@ const Game = {
 			return Game.player.inventory.some(i => i[0] === item.name);
 		},
 	},
+	/** @type {Particle[]} */
+	particles: [],
 	player: {
 		/** @type {[string, number][]} [name, count] of Item */
 		inventory: [],
@@ -377,9 +421,11 @@ const Game = {
 	},
 	settings: {
 		autosaveInterval: 30 * 1000,
+		fps: 20,
 	},
 	tick(){
-		if (automineTech.unlocked)
+		// automine
+		if (automineTech.unlocked && Game.debug.tick % Game.settings.fps === 0)
 			Game.action.mine();
 	},
 };
@@ -412,6 +458,17 @@ const automineTech = new Tech('Automine', 'Automatically mine for resources', un
 // todo const ribosomeTech = new Tech('Ribosome', 'Unlock ribosome manufacture', undefined, ['amino acids', 1e4]);
 
 // functions
+
+// https://stackoverflow.com/a/2956980/2579798
+function setIntervalX(callback, delay, repetitions){
+	let x = 0;
+	const intervalID = window.setInterval(function(){
+		callback();
+		if (++x === repetitions){
+			window.clearInterval(intervalID);
+		}
+	}, delay);
+}
 
 // main only beyond here
 
