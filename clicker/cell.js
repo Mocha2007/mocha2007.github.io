@@ -110,6 +110,7 @@ class Resource extends Interactable {
 	 */
 	constructor(name, imgUrl = '', tags = []){
 		super(name, undefined, imgUrl, tags);
+		this.rarity = 0;
 		resources.push(this);
 	}
 }
@@ -156,15 +157,18 @@ class Chem extends Material {
 		if (i.length) // preexisting
 			return i[0];
 		// new
-		return new Item(name, this.mass,
+		const mol = new Item(name, this.mass,
 			// estimate from https://physics.stackexchange.com/a/67721
 			this.molarMass / this.density / avogadro,
 			[this], this.imgUrl);
+		mol.rarity = this.rarity;
+		return mol;
 	}
 	/** @return {number} integer in [1, 4] */
 	get rarity(){
 		return Math.max(0, Math.floor(Math.log(this.molarMass)) + 4);
 	}
+	set rarity(_){}
 	/** @param {string} name */
 	static find(name){
 		return chems.filter(c => c.name === name)[0];
@@ -212,6 +216,7 @@ class Item extends Resource {
 		else
 			li.classList.add('invisible');
 		li.value = this.amount;
+		li.style.color = Game.rarity.colors[this.rarity];
 		// return
 		return li;
 	}
