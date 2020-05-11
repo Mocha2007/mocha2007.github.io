@@ -1,16 +1,24 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true, nonew: false */
 /* exported main */
-/* globals cookie, random */
+/* globals cookie, mean, pi, random */
 'use strict';
 const version = 'a200506';
 const clickerName = 'cellgame';
+
+// constants
+/** m; exact */
+const angstrom = 1e-10;
+/** mol^-1; exact; Avogadro's Constant */
+const avogadro = 6.02214076e23;
+/** @param {number} r */
+const sphere = r => 4/3 * pi * r*r*r;
 
 // classes
 const resources = [];
 class Resource {
 	/**
 	 * @param {string} name
-	 * @param {number} density kg/m^3
+	 * @param {string} imgUrl
 	 */
 	constructor(name, imgUrl = ''){
 		this.name = name;
@@ -38,6 +46,7 @@ class Material extends Resource {
 	/**
 	 * @param {string} name
 	 * @param {number} density kg/m^3
+	 * @param {string} imgUrl
 	 */
 	constructor(name, density, imgUrl = ''){
 		super(name, imgUrl);
@@ -55,9 +64,13 @@ class Chem extends Material {
 	 * @param {string} imgUrl
 	 */
 	constructor(name, density, molarMass, imgUrl = ''){
-		super(name, density, imgUrl); // todo
+		super(name, density, imgUrl);
 		this.molarMass = molarMass;
 		chems.push(this);
+	}
+	/** mass of a single atom/molecule */
+	get mass(){
+		return this.molarMass / avogadro;
 	}
 	/** @return {0|2|3|4} de facto */
 	get rarity(){
@@ -69,8 +82,12 @@ class Chem extends Material {
 		div.innerHTML = 'Rarity: ' + this.rarity;
 		return div;
 	}
+	/** @param {string} name */
+	static find(name){
+		return chems.filter(c => c.name === name)[0];
+	}
 }
-new Chem('Water', 1000, 18.01528, 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Water_molecule_3D.svg');
+const water = new Chem('Water', 1000, 18.01528, 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Water_molecule_3D.svg');
 new Chem('Cytosine', 1.55e3, 111.1, 'https://upload.wikimedia.org/wikipedia/commons/7/73/Cytosine-3D-balls.png');
 new Chem('Uracil', 1.32e3, 112.08676, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Uracil-3D-balls.png');
 new Chem('Thymine', 1.223e3, 126.115, 'https://upload.wikimedia.org/wikipedia/commons/8/88/Thymine-3D-balls.png');
@@ -78,7 +95,52 @@ new Chem('Adenine', 1.6e3, 135.13, 'https://upload.wikimedia.org/wikipedia/commo
 new Chem('Guanine', 2.2e3, 151.13, 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Guanine-3D-balls.png');
 new Chem('Glucose', 1.54e3, 180.156, 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Alpha-D-glucose-from-xtal-1979-3D-balls.png');
 new Chem('ATP', 1.04e3, 507.18, 'https://upload.wikimedia.org/wikipedia/commons/2/22/ATP-3D-vdW.png');
+// https://en.wikipedia.org/wiki/Eukaryotic_ribosome_(80S)#Composition
+new Chem('Ribosome', undefined, 3.2e6, 'https://upload.wikimedia.org/wikipedia/commons/2/22/ATP-3D-vdW.png');
 
+const items = [];
+class Item extends Resource {
+	/** objects which aren't materials...?
+	 * @param {string} name
+	 * @param {string} imgUrl
+	 */
+	constructor(name, mass, volume, imgUrl = ''){
+		super(name, imgUrl);
+		this.mass = mass;
+		this.volume = volume;
+		items.push(this);
+	}
+	get density(){
+		return this.mass / this.volume;
+	}
+}
+const ribosome = new Item('Ribosome', Chem.find('Ribosome').mass, sphere(mean([200, 300])/2*angstrom), 'https://upload.wikimedia.org/wikipedia/commons/a/a8/80S_2XZM_4A17_4A19.png');
+
+const recipes = [];
+class Recipe {
+	/**
+	 * @param {[Resource, number][]} reagents
+	 * @param {[Resource, number][]} products
+	 */
+	constructor(reagents, products){
+		this.reagents = reagents;
+		this.products = products;
+		recipes.push(this);
+	}
+}
+
+const techs = [];
+class Tech {
+	/**
+	 * @param {Tech[]} prereqs
+	 * @param {[Resource, number][]} cost
+	 */
+	constructor(prereqs, cost){
+		this.prereqs = new Set(prereqs);
+		this.cost = cost;
+		techs.push(this);
+	}
+}
 // constants
 
 const Game = {
@@ -128,6 +190,8 @@ const Game = {
 		inventory: [],
 		lastSave: 0,
 		lifetimeSnueg: 0,
+		/** @type {number[]} tech ids */
+		unlockedTechs: [],
 		snueg: 0,
 		startTime: +new Date(),
 	},
