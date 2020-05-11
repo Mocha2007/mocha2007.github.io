@@ -43,7 +43,7 @@ class Resource {
 
 const materials = [];
 class Material extends Resource {
-	/**
+	/** NOT objects. abstract. use item for physical objects.
 	 * @param {string} name
 	 * @param {number} density kg/m^3
 	 * @param {string} imgUrl
@@ -96,25 +96,32 @@ new Chem('Guanine', 2.2e3, 151.13, 'https://upload.wikimedia.org/wikipedia/commo
 new Chem('Glucose', 1.54e3, 180.156, 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Alpha-D-glucose-from-xtal-1979-3D-balls.png');
 new Chem('ATP', 1.04e3, 507.18, 'https://upload.wikimedia.org/wikipedia/commons/2/22/ATP-3D-vdW.png');
 // https://en.wikipedia.org/wiki/Eukaryotic_ribosome_(80S)#Composition
-new Chem('Ribosome', undefined, 3.2e6, 'https://upload.wikimedia.org/wikipedia/commons/2/22/ATP-3D-vdW.png');
+new Chem('Ribosome', undefined, 3.2e6, 'https://upload.wikimedia.org/wikipedia/commons/a/a8/80S_2XZM_4A17_4A19.png');
 
 const items = [];
 class Item extends Resource {
-	/** objects which aren't materials...?
+	/** physical, tangible objects
 	 * @param {string} name
-	 * @param {string} imgUrl
+	 * @param {number} mass
+	 * @param {number} volume
+	 * @param {Material[]} composition
 	 */
-	constructor(name, mass, volume, imgUrl = ''){
+	constructor(name, mass, volume, composition, imgUrl = ''){
 		super(name, imgUrl);
 		this.mass = mass;
 		this.volume = volume;
+		this.composition = new Set(composition);
 		items.push(this);
 	}
 	get density(){
 		return this.mass / this.volume;
 	}
 }
-const ribosome = new Item('Ribosome', Chem.find('Ribosome').mass, sphere(mean([200, 300])/2*angstrom), 'https://upload.wikimedia.org/wikipedia/commons/a/a8/80S_2XZM_4A17_4A19.png');
+const ribosome = new Item('Ribosome', Chem.find('Ribosome').mass,
+	sphere(mean([200, 300])/2*angstrom),
+	[Chem.find('Ribosome')],
+	Chem.find('Ribosome').imgUrl
+);
 
 const recipes = [];
 class Recipe {
