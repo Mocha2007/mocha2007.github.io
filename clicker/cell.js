@@ -353,7 +353,7 @@ const Game = {
 		get weights(){
 			// -1 too big, -2 too small... but realistic...
 			return this.chems.map(c => !c.categories.includes(blacklisted) &&
-				Math.pow(c.molarMass, -2));
+				Math.pow(c.molarMass, -3));
 		},
 	},
 	debug: {
