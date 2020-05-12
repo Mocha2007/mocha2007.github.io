@@ -243,6 +243,16 @@ const recipeData = [
 			['Water', 2],
 		],
 	},
+	{
+		reagents: [
+			['Ammonia', 4],
+			['Oxygen', 3],
+		],
+		products: [
+			['Nitrogen', 2],
+			['Water', 6],
+		],
+	},
 	// biochemical reactions
 	{
 		name: 'Glycolysis',
