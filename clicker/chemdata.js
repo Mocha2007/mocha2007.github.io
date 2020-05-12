@@ -64,6 +64,13 @@ const chemData = [
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Carbon_dioxide_3D_ball.png',
 	},
 	{
+		name: 'Formic Acid',
+		density: 1.22,
+		molarMass: 46.025,
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/Formic-acid-CRC-MW-3D-balls.png',
+		tags: ['Carboxylic Acid'],
+	},
+	{
 		name: 'Sodium Chloride',
 		density: 2.17,
 		molarMass: 58.443,
@@ -105,6 +112,13 @@ const chemData = [
 		tags: ['Nucleobase'],
 	},
 	{
+		name: 'Indole',
+		density: 1.1747,
+		molarMass: 117.151,
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Indole-3D-balls-2.png',
+		tags: ['Organic'],
+	},
+	{
 		name: 'Thymine',
 		density: 1.223,
 		molarMass: 126.115,
@@ -130,6 +144,12 @@ const chemData = [
 		density: 1.694,
 		molarMass: 176.12,
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Ascorbic-acid-from-xtal-1997-3D-balls.png',
+		tags: ['Organic'],
+	},
+	{
+		name: 'Seratonin',
+		molarMass: 176.215,
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/24/Serotonin-Spartan-HF-based-on-xtal-3D-balls-web.png',
 		tags: ['Organic'],
 	},
 	{
@@ -294,6 +314,28 @@ const recipeData = [
 			['MTHF', 1],
 			['NADH', 1],
 			['Hydrogen', 1],
+		],
+	},
+	// https://en.wikipedia.org/wiki/File:Tryptophan_biosynthesis_(en).svg
+	{
+		reagents: [
+			['Indole', 1],
+			['Serine', 1],
+		],
+		products: [
+			['Tryptophan', 1],
+			['Water', 1],
+		],
+	},
+	// https://en.wikipedia.org/wiki/Serotonin#Biosynthesis
+	{
+		reagents: [
+			['Tryptophan', 2],
+			['Oxygen', 1],
+		],
+		products: [
+			['Formic Acid', 1],
+			['Seratonin', 1],
 		],
 	},
 ];
