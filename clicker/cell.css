@@ -43,6 +43,7 @@ ol, ul {
 }
 #invList {
 	columns: 2;
+	padding-left: 60px;
 }
 #techs, #recipes, #inventory {
 	width: 100%;
