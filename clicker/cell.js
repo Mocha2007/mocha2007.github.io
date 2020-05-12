@@ -468,9 +468,11 @@ new Tag('Organic', [], 'Molecules containing a carbon-hydrogen bond'); // must c
 // Tier 1 - requires something from Tier 0
 new Tag('Carboxylic Acid', ['Organic'], 'Molecules with a carboxyl group'); // must contain H C O
 new Tag('Carbohydrate', ['Organic'], 'Molecules of Carbon, Oxygen, and Hydrogen'); // must contain H C O and only those
+new Tag('Hydrocarbon', ['Organic'], 'Organic compound consisting entirely of hydrogen and carbon'); // ONLY H and C
 new Tag('Nucleobase', ['Organic']);
 
 // Tier 2
+new Tag('Alkane', ['Hydrocarbon'], 'Acyclic saturated hydrocarbon'); // ONLY H and C, all carbons are single-bonded, no rings
 new Tag('Amino Acid', ['Carboxylic Acid'], 'Molecules with an amine and carboxyl group'); // must contain H C N O
 new Tag('Monosaccharide', ['Carbohydrate']);
 

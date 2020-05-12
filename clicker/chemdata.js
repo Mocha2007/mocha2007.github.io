@@ -23,7 +23,7 @@ const chemData = [
 		density: 0.657e-3,
 		molarMass: 16.043,
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/58/Methane-3D-balls.png',
-		tags: ['Blacklisted'],
+		tags: ['Alkane', 'Blacklisted'],
 	},
 	{
 		name: 'Ammonia',
