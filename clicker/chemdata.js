@@ -58,6 +58,13 @@ const chemData = [
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/57/Oxygen_molecule.svg',
 	},
 	{
+		name: 'Methanol',
+		density: 0.792,
+		molarMass: 32.04,
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/db/Methanol-3D-balls.png',
+		tags: ['Alcohol'],
+	},
+	{
 		name: 'Carbon Dioxide',
 		density: 1.977e-3,
 		molarMass: 44.009,
@@ -318,6 +325,16 @@ const recipeData = [
 		products: [
 			['Nitrogen', 2],
 			['Water', 6],
+		],
+	},
+	{
+		reagents: [
+			['Methanol', 1],
+			['Oxygen', 1],
+		],
+		products: [
+			['Carbon Dioxide', 1],
+			['Water', 2],
 		],
 	},
 	{
