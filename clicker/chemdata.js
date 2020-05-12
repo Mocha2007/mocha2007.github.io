@@ -320,6 +320,16 @@ const recipeData = [
 			['Water', 6],
 		],
 	},
+	{
+		reagents: [
+			['Ethanol', 1],
+			['Oxygen', 3],
+		],
+		products: [
+			['Carbon Dioxide', 2],
+			['Water', 3],
+		],
+	},
 	// biochemical reactions
 	// oversimplified since I can't find an explanation
 	{
