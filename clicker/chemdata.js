@@ -139,6 +139,12 @@ const chemData = [
 		tags: ['Organic'],
 	},
 	{
+		name: 'Purine',
+		molarMass: 120.115,
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Purine-3D-balls.png',
+		tags: ['Organic'],
+	},
+	{
 		name: 'Thymine',
 		density: 1.223,
 		molarMass: 126.115,
@@ -338,6 +344,30 @@ const recipeData = [
 		products: [
 			['Tryptophan', 1],
 			['Water', 1],
+		],
+	},
+	// oversimplified since I can't find an explanation
+	{
+		reagents: [
+			['Purine', 2],
+			['Ammonia', 2],
+			['Oxygen', 1],
+		],
+		products: [
+			['Guanine', 2],
+			['Hydrogen', 3],
+		],
+	},
+	// oversimplified since I can't find an explanation
+	{
+		reagents: [
+			['Guanine', 2],
+			['Oxygen', 1],
+			['Hydrogen', 1],
+		],
+		products: [
+			['Xanthine', 2],
+			['Ammonia', 2],
 		],
 	},
 	// oversimplified since I can't find an explanation
