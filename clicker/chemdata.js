@@ -160,6 +160,12 @@ const chemData = [
 		tags: ['Amine', 'Nucleobase'],
 	},
 	{
+		name: 'Xanthine',
+		molarMass: 152.11,
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Xanthin_-_Xanthine.svg',
+		tags: ['Organic'],
+	},
+	{
 		name: 'Vitamin C',
 		density: 1.694,
 		molarMass: 176.12,
@@ -185,6 +191,13 @@ const chemData = [
 		molarMass: 192.123,
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7a/Citric-acid-3D-balls.png',
 		tags: ['Carboxylic Acid'], // unsure if carbohydrate
+	},
+	{
+		name: 'Caffeine',
+		density: 1.23,
+		molarMass: 194.19,
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Caffeine_molecule_ball_from_xtal_(1).png',
+		tags: ['Organic'],
 	},
 	{
 		name: 'Tryptophan',
@@ -325,6 +338,17 @@ const recipeData = [
 		products: [
 			['Tryptophan', 1],
 			['Water', 1],
+		],
+	},
+	// oversimplified since I can't find an explanation
+	{
+		reagents: [
+			['Xanthine', 1],
+			['Methane', 3],
+		],
+		products: [
+			['Caffeine', 1],
+			['Hydrogen', 3],
 		],
 	},
 	// https://en.wikipedia.org/wiki/Serotonin#Biosynthesis
