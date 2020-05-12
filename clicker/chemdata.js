@@ -339,6 +339,16 @@ const recipeData = [
 	},
 	{
 		reagents: [
+			['Formic Acid', 2],
+			['Oxygen', 3],
+		],
+		products: [
+			['Carbon Dioxide', 4],
+			['Water', 2],
+		],
+	},
+	{
+		reagents: [
 			['Ethanol', 1],
 			['Oxygen', 3],
 		],
