@@ -463,9 +463,11 @@ const Game = {
 // ITEM, RECIPE, ETC DEFS (MUST COME AFTER GAME)
 // Tier 0 - no reqs
 const blacklisted = new Tag('Blacklisted', [], 'Cannot be mined');
+new Tag('Amine', [], 'Molecules containing a basic nitrogen atom with a lone pair'); // must contain H N, basically ammonia with one of the hydrogens replaced
 new Tag('Organic', [], 'Molecules containing a carbon-hydrogen bond'); // must contain H C
 
 // Tier 1 - requires something from Tier 0
+new Tag('Alcohol', ['Organic'], 'Organic compound carrying at least one hydroxyl group bound to a saturated carbon atom'); // must contain H C O
 new Tag('Carboxylic Acid', ['Organic'], 'Molecules with a carboxyl group'); // must contain H C O
 new Tag('Carbohydrate', ['Organic'], 'Molecules of Carbon, Oxygen, and Hydrogen'); // must contain H C O and only those
 new Tag('Hydrocarbon', ['Organic'], 'Organic compound consisting entirely of hydrogen and carbon'); // ONLY H and C
@@ -473,7 +475,7 @@ new Tag('Nucleobase', ['Organic']);
 
 // Tier 2
 new Tag('Alkane', ['Hydrocarbon'], 'Acyclic saturated hydrocarbon'); // ONLY H and C, all carbons are single-bonded, no rings
-new Tag('Amino Acid', ['Carboxylic Acid'], 'Molecules with an amine and carboxyl group'); // must contain H C N O
+new Tag('Amino Acid', ['Amine', 'Carboxylic Acid'], 'Molecules with an amine and carboxyl group'); // must contain H C N O
 new Tag('Monosaccharide', ['Carbohydrate']);
 
 // read chemData, recipeData

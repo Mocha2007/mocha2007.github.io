@@ -71,6 +71,13 @@ const chemData = [
 		tags: ['Carboxylic Acid'],
 	},
 	{
+		name: 'Ethanol',
+		density: 0.7893,
+		molarMass: 46.069,
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Ethanol-3D-balls.png',
+		tags: ['Alcohol'],
+	},
+	{
 		name: 'Sodium Chloride',
 		density: 2.17,
 		molarMass: 58.443,
@@ -82,6 +89,19 @@ const chemData = [
 		molarMass: 75.067,
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Glycine-3D-balls.png',
 		tags: ['Amino Acid'],
+	},
+	{
+		name: 'Pyramidine',
+		density: 1.016,
+		molarMass: 80.088,
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/26/Pyrimidine-3D-balls-2.png',
+		tags: ['Organic'],
+	},
+	{
+		name: 'Thiazole',
+		molarMass: 85.12,
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Thiazole-3D-balls.png',
+		tags: ['Organic'],
 	},
 	{
 		name: 'Pyruvic Acid',
@@ -102,7 +122,7 @@ const chemData = [
 		density: 1.55,
 		molarMass: 111.1,
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/73/Cytosine-3D-balls.png',
-		tags: ['Nucleobase'],
+		tags: ['Amine', 'Nucleobase'],
 	},
 	{
 		name: 'Uracil',
@@ -130,27 +150,27 @@ const chemData = [
 		density: 1.6,
 		molarMass: 135.13,
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Adenine-3D-balls.png',
-		tags: ['Nucleobase'],
+		tags: ['Amine', 'Nucleobase'],
 	},
 	{
 		name: 'Guanine',
 		density: 2.2,
 		molarMass: 151.13,
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Guanine-3D-balls.png',
-		tags: ['Nucleobase'],
+		tags: ['Amine', 'Nucleobase'],
 	},
 	{
 		name: 'Vitamin C',
 		density: 1.694,
 		molarMass: 176.12,
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Ascorbic-acid-from-xtal-1997-3D-balls.png',
-		tags: ['Organic'],
+		tags: ['Organic'], // unsure if carbohydrate
 	},
 	{
 		name: 'Seratonin',
 		molarMass: 176.215,
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/24/Serotonin-Spartan-HF-based-on-xtal-3D-balls-web.png',
-		tags: ['Organic'],
+		tags: ['Amine', 'Organic'],
 	},
 	{
 		name: 'Glucose',
@@ -164,7 +184,7 @@ const chemData = [
 		density: 1.665,
 		molarMass: 192.123,
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7a/Citric-acid-3D-balls.png',
-		tags: ['Carboxylic Acid'],
+		tags: ['Carboxylic Acid'], // unsure if carbohydrate
 	},
 	{
 		name: 'Tryptophan',
@@ -173,54 +193,62 @@ const chemData = [
 		tags: ['Amino Acid'],
 	},
 	{
+		name: 'Thiamine',
+		molarMass: 265.35,
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/Thiamine_cation_3D_ball.png',
+		tags: ['Amine', 'Organic'],
+	},
+	{
 		name: 'ADP',
 		density: 2.49,
 		molarMass: 427.201,
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Adenosine-diphosphate-3D-balls.png',
-		tags: ['Organic'],
+		tags: ['Amine', 'Organic'],
 	},
 	{
 		name: 'Tetrahydrofolate',
 		molarMass: 445.43,
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/76/Tetrahydrofolic-acid-3D-spacefill.png',
-		tags: ['Carboxylic Acid'], // unsure if amino acid
+		tags: ['Amine', 'Carboxylic Acid'], // unsure if amino acid
 	},
 	// https://en.wikipedia.org/wiki/5,10-Methylenetetrahydrofolate
 	{
 		name: 'MTHF',
 		molarMass: 457.44,
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/ae/5%2C10-methylenetetrahydrofolic_acid.svg',
-		tags: ['Carboxylic Acid'], // unsure if amino acid
+		tags: ['Amine', 'Carboxylic Acid'], // unsure if amino acid
 	},
 	{
 		name: 'ATP',
 		density: 1.04,
 		molarMass: 507.18,
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/22/ATP-3D-vdW.png',
-		tags: ['Organic'],
+		tags: ['Amine', 'Organic'],
 	},
 	{
 		name: 'NAD+',
 		molarMass: 663.43,
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/NAD%2B-from-xtal-2003-3D-balls.png',
-		tags: ['Organic'],
+		tags: ['Amine', 'Organic'],
 	},
 	{
 		name: 'NADH',
 		molarMass: 663.43,
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/NAD%2B-from-xtal-2003-3D-balls.png',
-		tags: ['Organic'],
+		tags: ['Amine', 'Organic'],
 	},
 ];
 
 // recipes
+// list reagents and products from MOST MASSIVE to LEAST MASSIVE
+// list recipes from LEAST TO MOST MASSIVE PRIMARY REAGENT (then second reagent, ..., then first product, ...)
 // todo https://en.wikipedia.org/wiki/Metabolic_pathway#Major_metabolic_pathways
 const recipeData = [
 	// simple reactions
 	{
 		reagents: [
-			['Hydrogen', 2],
 			['Carbon', 1],
+			['Hydrogen', 2],
 		],
 		products: [
 			['Methane', 1],
@@ -228,8 +256,8 @@ const recipeData = [
 	},
 	{
 		reagents: [
-			['Hydrogen', 3],
 			['Nitrogen', 1],
+			['Hydrogen', 3],
 		],
 		products: [
 			['Ammonia', 2],
@@ -237,8 +265,8 @@ const recipeData = [
 	},
 	{
 		reagents: [
+			['Oxygen', 1],
 			['Hydrogen', 2],
-			['Oxygen', 1],
 		],
 		products: [
 			['Water', 2],
@@ -246,8 +274,8 @@ const recipeData = [
 	},
 	{
 		reagents: [
+			['Oxygen', 1],
 			['Carbon', 1],
-			['Oxygen', 1],
 		],
 		products: [
 			['Carbon Dioxide', 1],
@@ -255,8 +283,8 @@ const recipeData = [
 	},
 	{
 		reagents: [
-			['Methane', 1],
 			['Oxygen', 2],
+			['Methane', 1],
 		],
 		products: [
 			['Carbon Dioxide', 1],
@@ -265,8 +293,8 @@ const recipeData = [
 	},
 	{
 		reagents: [
-			['Ammonia', 4],
 			['Oxygen', 3],
+			['Ammonia', 4],
 		],
 		products: [
 			['Nitrogen', 2],
@@ -274,46 +302,18 @@ const recipeData = [
 		],
 	},
 	// biochemical reactions
-	{
-		name: 'Glycolysis',
-		reagents: [
-			['Glucose', 1],
-			['NAD+', 2],
-			['ADP', 2],
-			['Phosphorus', 2],
-		],
-		products: [
-			['Pyruvic Acid', 2],
-			['NADH', 2],
-			['ATP', 2],
-			['Water', 2],
-		],
-	},
-	// https://en.wikipedia.org/wiki/Glycine#Biosynthesis
+	// oversimplified since I can't find an explanation
 	{
 		reagents: [
-			['Serine', 1],
-			['Tetrahydrofolate', 1],
+			['Pyramidine', 1],
+			['Thiazole', 1],
+			['Ethanol', 1],
+			['Ammonia', 1],
+			['Methane', 2],
 		],
 		products: [
-			['Glycine', 1],
-			['MTHF', 1],
-			['Water', 1],
-		],
-	},
-	// https://en.wikipedia.org/wiki/Glycine#Degradation
-	{
-		reagents: [
-			['Glycine', 1],
-			['Tetrahydrofolate', 1],
-			['NAD+', 1],
-		],
-		products: [
-			['Carbon Dioxide', 1],
-			['Ammonia', 1], // technically ammonium, but given how complex this game already is...
-			['MTHF', 1],
-			['NADH', 1],
-			['Hydrogen', 1],
+			['Thiamine', 1],
+			['Hydrogen', 4],
 		],
 	},
 	// https://en.wikipedia.org/wiki/File:Tryptophan_biosynthesis_(en).svg
@@ -334,8 +334,50 @@ const recipeData = [
 			['Oxygen', 1],
 		],
 		products: [
-			['Formic Acid', 2],
 			['Seratonin', 2],
+			['Formic Acid', 2],
+		],
+	},
+	// https://en.wikipedia.org/wiki/Glycine#Biosynthesis
+	{
+		reagents: [
+			['Tetrahydrofolate', 1],
+			['Serine', 1],
+		],
+		products: [
+			['MTHF', 1],
+			['Glycine', 1],
+			['Water', 1],
+		],
+	},
+	{
+		name: 'Glycolysis',
+		reagents: [
+			['NAD+', 2],
+			['ADP', 2],
+			['Glucose', 1],
+			['Phosphorus', 2],
+		],
+		products: [
+			['NADH', 2],
+			['ATP', 2],
+			['Pyruvic Acid', 2],
+			['Water', 2],
+		],
+	},
+	// https://en.wikipedia.org/wiki/Glycine#Degradation
+	{
+		reagents: [
+			['NAD+', 1],
+			['Tetrahydrofolate', 1],
+			['Glycine', 1],
+		],
+		products: [
+			['NADH', 1],
+			['MTHF', 1],
+			['Carbon Dioxide', 1],
+			['Ammonia', 1], // technically ammonium, but given how complex this game already is...
+			['Hydrogen', 1],
 		],
 	},
 ];
