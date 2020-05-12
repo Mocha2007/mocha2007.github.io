@@ -98,7 +98,7 @@ const chemData = [
 		tags: ['Amino Acid'],
 	},
 	{
-		name: 'Pyramidine',
+		name: 'Pyrimidine',
 		density: 1.016,
 		molarMass: 80.088,
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/26/Pyrimidine-3D-balls-2.png',
@@ -361,7 +361,7 @@ const recipeData = [
 	// oversimplified since I can't find an explanation
 	{
 		reagents: [
-			['Pyramidine', 1],
+			['Pyrimidine', 1],
 			['Thiazole', 1],
 			['Ethanol', 1],
 			['Ammonia', 1],
