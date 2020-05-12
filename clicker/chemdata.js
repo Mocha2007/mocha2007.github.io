@@ -334,8 +334,8 @@ const recipeData = [
 			['Oxygen', 1],
 		],
 		products: [
-			['Formic Acid', 1],
-			['Seratonin', 1],
+			['Formic Acid', 2],
+			['Seratonin', 2],
 		],
 	},
 ];
