@@ -118,6 +118,12 @@ const chemData = [
 		tags: ['Carboxylic Acid'],
 	},
 	{
+		name: 'Lactic Acid',
+		molarMass: 90.078,
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/L-Lactic_acid_molecule_spacefill.png',
+		tags: ['Carboxylic Acid'],
+	},
+	{
 		name: 'Serine',
 		density: 1.603,
 		molarMass: 105.093,
@@ -370,6 +376,17 @@ const recipeData = [
 		products: [
 			['Thiamine', 1],
 			['Hydrogen', 4],
+		],
+	},
+	// // https://en.wikipedia.org/wiki/Pyruvic_acid#Reduction_to_lactate
+	{
+		reagents: [
+			['Pyruvic Acid', 1],
+			['NADH', 1],
+		],
+		products: [
+			['Lactic Acid', 1],
+			['NAD+', 1],
 		],
 	},
 	// https://en.wikipedia.org/wiki/File:Tryptophan_biosynthesis_(en).svg
