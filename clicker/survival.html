@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="description" content="By Mocha2007">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link href="cell.css" type="text/css" rel="stylesheet">
+<script src="../common.js"></script>
+<script src="itemdata.js"></script>
+<title>Survival</title>
+<div id="load">
+	Loading...
+	<progress id="loadbar" value="0"></progress>
+	<span id="loadcurrent">0</span> / <span id="loadtotal">0</span>
+</div>
+<div id="left">
+	<div id="mining">
+		<h2>Mining</h2>
+		<button type="button" onclick="Game.action.mine()">Mine</button>
+		<!--<progress id="miningProgress" value="0"></progress>-->
+		<div id="miningLog"></div>
+	</div>
+	<span id="version"></div>
+</div>
+<div id="right">
+	<div id="techs">
+		<h2>Techs</h2>
+		<ul id="techList"></ul>
+	</div>
+	<div id="recipes">
+		<h2>Recipes</h2>
+		<ul id="recipeList"></ul>
+	</div>
+	<div id="inventory">
+		<h2>Inventory</h2>
+		<ol id="invList"></ol>
+	</div>
+</div>
+<script src="survival.js"></script>
+<script>main();</script>
+</html>
