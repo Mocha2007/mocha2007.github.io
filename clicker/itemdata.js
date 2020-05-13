@@ -1,5 +1,5 @@
 /* jshint esversion: 6, strict: true, strict: global */
-/* exported chemData, recipeData */
+/* exported itemData, recipeData */
 'use strict';
 // chems - ball-and-stick models preferred
 const itemData = [
@@ -7,7 +7,7 @@ const itemData = [
 	{
 		name: 'Water',
 		mass: 1,
-		volume: 1,
+		volume: 0.001,
 		// Elegant Themes, GPL2
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Circle-icons-water.svg',
 		tags: ['Whitelisted'],
@@ -18,6 +18,14 @@ const itemData = [
 		volume: 0.0025,
 		// Pakmafafmr, cc-by-sa 4.0
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Tree-icon.png',
+		tags: ['Whitelisted'],
+	},
+	{
+		name: 'Mushroom',
+		mass: 0.02,
+		volume: 2e-5,
+		// rugby471, Public Domain
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Tango_Style_Mushroom_icon.svg',
 		tags: ['Whitelisted'],
 	},
 	// complex

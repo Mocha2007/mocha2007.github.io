@@ -157,8 +157,8 @@ class Item extends Interactable {
 		elem.title = this.name + '\n' +
 			'ID: ' + this.itemId + '\n' +
 			'Rarity: ' + Game.rarity.names[this.rarity] + ' (' + this.rarity + ')\n' +
-			'Mass: ' + massString(this.mass, 2) + '\n' +
-			'Volume: ' + round(this.volume*1e3, 2) + 'L\n' +
+			'Mass: ' + unitString(this.mass, 'g', 2, 1e3) + '\n' +
+			'Volume: ' + unitString(this.volume, 'L', 2, 1e3) + '\n' +
 			'Density: ' + round(this.density, 2) + 'kg/m³\n' +
 			this.desc;
 		return elem;
@@ -446,12 +446,17 @@ recipeData.forEach(o => Recipe.fromJSON(o));
 const automineTech = new Tech('Automine', 'Automatically mine for resources', undefined, [[water, 100]]);
 
 // functions
-/** @param {number} mass in kg */
-function massString(mass){
+/**
+ * @param {number} value
+ * @param {string} name
+ */
+function unitString(value, name, rounding = 2, constant = 1){
+	value *= constant;
 	const prefixes = 'yzafpnμm kMGTPEZY'.split('');
-	const i = Math.floor(Math.log10(mass)/3) + 9;
-	const c = Math.pow(10, 3*(i-9));
-	return round(mass / c, 2) + ' ' + prefixes[i] + 'g';
+	const i = Math.floor(Math.log10(value)/3) + 8;
+	const c = Math.pow(10, 3*(i-8));
+	const prefix = i !== 8 ? prefixes[i] : '';
+	return round(value / c, rounding) + ' ' + prefix + name;
 }
 
 function preloader(){
