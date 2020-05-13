@@ -519,7 +519,6 @@ function preloader(){
 		};
 		img.src = interactable.imgUrl;
 	});
-
 }
 
 // https://stackoverflow.com/a/2956980/2579798
