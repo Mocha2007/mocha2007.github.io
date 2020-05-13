@@ -1,7 +1,9 @@
 /* jshint esversion: 6, strict: true, strict: global */
 /* exported itemData, recipeData */
 'use strict';
-// chems - ball-and-stick models preferred
+// items
+// todo https://commons.wikimedia.org/wiki/Category:Fruit_icons
+// todo https://commons.wikimedia.org/wiki/Category:Vegetable_icons
 const itemData = [
 	// basic
 	{
@@ -26,6 +28,22 @@ const itemData = [
 		volume: 2e-5,
 		// rugby471, Public Domain
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Tango_Style_Mushroom_icon.svg',
+		tags: ['Whitelisted'],
+	},
+	{
+		name: 'Onion',
+		mass: 0.15,
+		volume: 1.5e-4,
+		// DBCLS, cc-by-4.0
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/202002_Model_plant_bulb.svg',
+		tags: ['Whitelisted'],
+	},
+	{
+		name: 'Soybeans',
+		mass: 0.1,
+		volume: 1.94e-4,
+		// DBCLS, cc-by-4.0
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/93/202002_Model_plant_glycine_max.svg',
 		tags: ['Whitelisted'],
 	},
 	// complex
