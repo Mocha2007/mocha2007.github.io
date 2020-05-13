@@ -40,6 +40,14 @@ const itemData = [
 		tags: ['Whitelisted'],
 	},
 	{
+		name: 'Bone',
+		mass: 0.25,
+		volume: 1.7e-4, // 1500 kg/m^3 https://hypertextbook.com/facts/2002/AnnaYarusskaya.shtml
+		// 7Soul1, Public Domain
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/I_Bone.png',
+		tags: ['Whitelisted'],
+	},
+	{
 		name: 'Mushroom',
 		mass: 0.02,
 		volume: 4.9e-5,
