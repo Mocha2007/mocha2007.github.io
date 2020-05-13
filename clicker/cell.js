@@ -513,6 +513,7 @@ function preloader(){
 		img.onload = () => {
 			loadcurrent++;
 			document.getElementById('loadcurrent').innerHTML = loadcurrent;
+			document.getElementById('loadbar').value = loadcurrent / loadtotal;
 			if (loadtotal <= loadcurrent)
 				document.getElementById('load').classList.add('invisible');
 		};
