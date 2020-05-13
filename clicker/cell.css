@@ -39,7 +39,7 @@ ol, ul {
 	font-weight: bold;
 }
 #version {
-	bottom: 10px;
+	bottom: 20px;
 	left: 10px;
 	position: absolute;
 }
