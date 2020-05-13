@@ -19,6 +19,12 @@ ol, ul {
 .invisible {
 	display: none;
 }
+#load {
+	height: 100%;
+	line-height: 100vh;
+	text-align: center;
+	width: 100%;
+}
 #left, #right {
 	height: 100%;
 	padding: 10px;

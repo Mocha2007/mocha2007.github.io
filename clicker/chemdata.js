@@ -275,6 +275,8 @@ const chemData = [
 // list reagents and products from MOST MASSIVE to LEAST MASSIVE
 // list recipes from LEAST TO MOST MASSIVE PRIMARY REAGENT (then second reagent, ..., then first product, ...)
 // todo https://en.wikipedia.org/wiki/Metabolic_pathway#Major_metabolic_pathways
+// todo https://en.wikipedia.org/wiki/Cori_cycle
+// todo https://en.wikipedia.org/wiki/Citric_acid_cycle
 const recipeData = [
 	// simple reactions
 	{

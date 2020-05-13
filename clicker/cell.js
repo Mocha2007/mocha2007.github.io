@@ -2,7 +2,7 @@
 /* exported main */
 /* globals chemData, cookie, random, recipeData, round */
 'use strict';
-const version = 'a200511';
+const version = 'a200512';
 const clickerName = 'cellgame';
 
 // constants
@@ -38,6 +38,8 @@ class Particle {
 	}
 }
 
+/** @type {Interactable[]} */
+const interactables = [];
 class Interactable {
 	/** things with names, descs, and images
 	 * @param {string} name
@@ -50,6 +52,7 @@ class Interactable {
 		this.desc = desc;
 		this.imgUrl = imgUrl;
 		this.tags = tags.map(tagName => Tag.fromString(tagName));
+		interactables.push(this);
 	}
 	/** @return {Tag[]} a flat array of all categories and supercategories it is a member of */
 	get categories(){
@@ -495,6 +498,29 @@ function massString(mass){
 	return round(mass / c, 2) + ' ' + prefixes[i] + 'g';
 }
 
+function preloader(){
+	// loadbar, loadcurrent, loadtotal
+	let loadcurrent = 0;
+	const loadtotal = interactables.length;
+	document.getElementById('loadtotal').innerHTML = loadtotal;
+	interactables.forEach(interactable => {
+		// https://stackoverflow.com/a/2342181/2579798
+		if (!interactable.imgUrl){
+			loadcurrent++;
+			return;
+		}
+		const img = new Image();
+		img.onload = () => {
+			loadcurrent++;
+			document.getElementById('loadcurrent').innerHTML = loadcurrent;
+			if (loadtotal <= loadcurrent)
+				document.getElementById('load').classList.add('invisible');
+		};
+		img.src = interactable.imgUrl;
+	});
+
+}
+
 // https://stackoverflow.com/a/2956980/2579798
 function setIntervalX(callback, delay, repetitions){
 	let x = 0;
@@ -521,6 +547,8 @@ function main(){
 	setInterval(Game.tick, 1000);
 	// set up inventory
 	items.forEach(i => i.elem);
+	// preloader
+	preloader();
 	// notification
 	Game.log(clickerName + ' v. ' + version + ' loaded successfully.');
 }
