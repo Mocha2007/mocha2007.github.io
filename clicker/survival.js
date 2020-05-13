@@ -325,8 +325,9 @@ const Game = {
 			return random.weightedChoice(this.items, this.weights);
 		},
 		get weights(){
+			// rarity 0 -> weight 1; 1 -> 1/10, 2 -> 1/100, 3 -> 1/1000, ...
 			return this.items.map(c => c.categories.includes(whitelisted) &&
-				Math.pow(c.rarity+1, -1));
+				Math.pow(10, -c.rarity));
 		},
 	},
 	debug: {

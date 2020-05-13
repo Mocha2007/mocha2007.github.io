@@ -14,6 +14,7 @@ const itemData = [
 		// Elegant Themes, GPL2
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Circle-icons-water.svg',
 		tags: ['Whitelisted'],
+		rarity: 0,
 	},
 	{
 		name: 'Wood',
@@ -22,6 +23,7 @@ const itemData = [
 		// Pakmafafmr, cc-by-sa 4.0
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Tree-icon.png',
 		tags: ['Whitelisted'],
+		rarity: 0,
 	},
 	{
 		name: 'Stone',
@@ -30,6 +32,7 @@ const itemData = [
 		// 7Soul1, Public Domain
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/3b/I_Rock01.png',
 		tags: ['Whitelisted'],
+		rarity: 0,
 	},
 	{
 		name: 'Feather',
@@ -38,6 +41,7 @@ const itemData = [
 		// 7Soul1, Public Domain
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/I_Feather01.png',
 		tags: ['Whitelisted'],
+		rarity: 1,
 	},
 	{
 		name: 'Bone',
@@ -46,6 +50,7 @@ const itemData = [
 		// 7Soul1, Public Domain
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/I_Bone.png',
 		tags: ['Whitelisted'],
+		rarity: 0,
 	},
 	{
 		name: 'Mushroom',
@@ -54,6 +59,7 @@ const itemData = [
 		// rugby471, Public Domain
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Tango_Style_Mushroom_icon.svg',
 		tags: ['Whitelisted'],
+		rarity: 0,
 	},
 	{
 		name: 'Onion',
@@ -62,6 +68,7 @@ const itemData = [
 		// DBCLS, cc-by-4.0
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/202002_Model_plant_bulb.svg',
 		tags: ['Whitelisted'],
+		rarity: 1,
 	},
 	{
 		name: 'Soybeans',
@@ -70,6 +77,7 @@ const itemData = [
 		// DBCLS, cc-by-4.0
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/93/202002_Model_plant_glycine_max.svg',
 		tags: ['Whitelisted'],
+		rarity: 1,
 	},
 	// complex
 	{
@@ -78,7 +86,7 @@ const itemData = [
 		volume: 0.225,
 		// Jerem43, cc-by-sa 3.0
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Barrel_icon.png',
-		rarity: 1,
+		rarity: 2,
 	},
 	{
 		name: 'Water Barrel',
@@ -86,7 +94,7 @@ const itemData = [
 		volume: 0.225,
 		// Jerem43, cc-by-sa 3.0
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Barrel_icon.png',
-		rarity: 1,
+		rarity: 2,
 	},
 ];
 
