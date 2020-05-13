@@ -4,6 +4,7 @@
 // items
 // todo https://commons.wikimedia.org/wiki/Category:Fruit_icons
 // todo https://commons.wikimedia.org/wiki/Category:Vegetable_icons
+// food densities from https://fdc.nal.usda.gov/fdc-app.html
 const itemData = [
 	// basic
 	{
@@ -23,9 +24,25 @@ const itemData = [
 		tags: ['Whitelisted'],
 	},
 	{
+		name: 'Stone',
+		mass: 1,
+		volume: 0.0003,
+		// 7Soul1, Public Domain
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/3b/I_Rock01.png',
+		tags: ['Whitelisted'],
+	},
+	{
+		name: 'Feather',
+		mass: 1e-3, // guess
+		volume: 1e-6,
+		// 7Soul1, Public Domain
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/I_Feather01.png',
+		tags: ['Whitelisted'],
+	},
+	{
 		name: 'Mushroom',
 		mass: 0.02,
-		volume: 2e-5,
+		volume: 4.9e-5,
 		// rugby471, Public Domain
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Tango_Style_Mushroom_icon.svg',
 		tags: ['Whitelisted'],
@@ -33,7 +50,7 @@ const itemData = [
 	{
 		name: 'Onion',
 		mass: 0.15,
-		volume: 1.5e-4,
+		volume: 2.22e-4,
 		// DBCLS, cc-by-4.0
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/202002_Model_plant_bulb.svg',
 		tags: ['Whitelisted'],
