@@ -2,8 +2,10 @@
 /* exported main */
 /* globals itemData, cookie, random, recipeData, round */
 'use strict';
-const version = 'a200512';
+const version = 'a200517';
 const clickerName = 'survival';
+// Willscrlt, public domain
+const defaultImgUrl = 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Question_Mark_Icon_-_Blue_Box_withoutQuestionmarkBlur.svg';
 
 // classes
 
@@ -43,7 +45,7 @@ class Interactable {
 	 * @param {string} imgUrl
 	 * @param {string[]} tags
 	 */
-	constructor(name, desc = '', imgUrl = '', tags = []){
+	constructor(name, desc = '', imgUrl = defaultImgUrl, tags = []){
 		this.name = name;
 		this.desc = desc;
 		this.imgUrl = imgUrl;
@@ -85,7 +87,7 @@ class Tag extends Interactable {
 	 * @param {string} desc
 	 * @param {string} imgUrl
 	 */
-	constructor(name, tags = [], desc = '', imgUrl = ''){
+	constructor(name, tags = [], desc = '', imgUrl = defaultImgUrl){
 		super(name, desc, imgUrl, tags);
 		tagList.push(this);
 	}
@@ -105,7 +107,7 @@ class Item extends Interactable {
 	 * @param {Material[]} composition
 	 * @param {string[]} tags
 	 */
-	constructor(name, mass, volume, imgUrl = '', tags = [], rarity = 0){
+	constructor(name, mass, volume, imgUrl = defaultImgUrl, tags = [], rarity = 0){
 		super(name, undefined, imgUrl, tags);
 		this.mass = mass;
 		this.volume = volume;

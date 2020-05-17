@@ -81,6 +81,22 @@ const itemData = [
 	},
 	// complex
 	{
+		name: 'Stone Axehead',
+		mass: 1,
+		volume: 0.0003,
+		// 7Soul1, Public Domain
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/cd/I_BatWing.png',
+		rarity: 2,
+	},
+	{
+		name: 'Stone Axe',
+		mass: 3,
+		volume: 0.0028,
+		// 7Soul1, Public Domain
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/44/W_Axe007.png',
+		rarity: 2,
+	},
+	{
 		name: 'Barrel',
 		mass: 50,
 		volume: 0.225,
@@ -100,6 +116,24 @@ const itemData = [
 
 // recipes
 const recipeData = [
+	{
+		reagents: [
+			['Stone', 2],
+		],
+		products: [
+			['Stone Axehead', 1],
+			['Stone', 1],
+		],
+	},
+	{
+		reagents: [
+			['Stone Axehead', 1],
+			['Wood', 1],
+		],
+		products: [
+			['Stone Axe', 1],
+		],
+	},
 	{
 		reagents: [
 			['Wood', 25],
