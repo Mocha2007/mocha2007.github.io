@@ -124,6 +124,7 @@ const recipeData = [
 			['Stone Axehead', 1],
 			['Stone', 1],
 		],
+		time: 1,
 	},
 	{
 		reagents: [
@@ -133,6 +134,7 @@ const recipeData = [
 		products: [
 			['Stone Axe', 1],
 		],
+		time: 0.1,
 	},
 	{
 		reagents: [
@@ -151,6 +153,7 @@ const recipeData = [
 		products: [
 			['Barrel', 1],
 		],
+		time: 1,
 	},
 	{
 		reagents: [
@@ -160,6 +163,7 @@ const recipeData = [
 		products: [
 			['Water Barrel', 1],
 		],
+		time: 1,
 	},
 	{
 		reagents: [
@@ -169,5 +173,6 @@ const recipeData = [
 			['Barrel', 1],
 			['Water', 175],
 		],
+		time: 1,
 	},
 ];
