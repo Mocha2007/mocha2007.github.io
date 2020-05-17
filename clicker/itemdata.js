@@ -136,6 +136,16 @@ const recipeData = [
 	},
 	{
 		reagents: [
+			['Stone Axe', 1],
+		],
+		products: [
+			['Stone Axe', 1],
+			['Wood', 20],
+		],
+		time: 10,
+	},
+	{
+		reagents: [
 			['Wood', 25],
 		],
 		products: [

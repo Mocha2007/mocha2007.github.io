@@ -193,13 +193,17 @@ class Recipe {
 	/**
 	 * @param {[Item, number][]} reagents
 	 * @param {[Item, number][]} products
+	 * @param {number} time - crafting time. ingame: (h); irl: (s)
 	 */
-	constructor(reagents, products){
+	constructor(reagents, products, time = 0, onComplete = () => undefined){
 		this.reagents = reagents;
 		this.products = products;
+		this.time = time;
+		this.onComplete = onComplete;
 		recipes.push(this);
 		// create element
-		this.elem;
+		if (reagents.length)
+			this.elem;
 	}
 	get elem(){
 		const elemId = this.elemId;
@@ -241,17 +245,43 @@ class Recipe {
 		});
 		return span;
 	}
+	finishCrafting(){
+		// reset Game.inProgress
+		Game.inProgress = false;
+		// give products
+		this.products.forEach(i => Game.p.add(i[0], i[1]));
+		// onComplete
+		this.onComplete();
+		// reset progress bar
+		document.getElementById('progressbar').value = 0;
+	}
 	make(){
 		Game.log('Attempted to craft recipe' + this.id);
-		if (!this.makable)
+		if (!this.makable || Game.inProgress)
 			return false;
+		// consume reagents
 		this.reagents.forEach(i => Game.p.add(i[0], -i[1]));
-		this.products.forEach(i => Game.p.add(i[0], i[1]));
+		Game.inProgress = true;
+		if (this.time){
+			/** @type {HTMLProgressElement} */
+			const progressBar = document.getElementById('progressbar');
+			// update progress
+			const minInterval = 1000 / Game.settings.fps; // default: 33 ms
+			const maxDivisions = 160; // default browser width is 160px
+			const interval = Math.max(1000 * this.time / maxDivisions, minInterval);
+			const divisions = round(1000 * this.time / interval);
+			// Game.log(minInterval, maxDivisions, interval, divisions);
+			setIntervalX(() => progressBar.value += 1/divisions, interval, divisions);
+		}
+		// give products after this.time seconds
+		setTimeout(() => this.finishCrafting(), this.time*1000);
 		return true;
 	}
 	static fromJSON(o){
-		return new Recipe(o.reagents.map(x => [Item.find(x[0]), x[1]]),
-			o.products.map(x => [Item.find(x[0]), x[1]])
+		return new Recipe(
+			o.reagents.map(x => [Item.find(x[0]), x[1]]),
+			o.products.map(x => [Item.find(x[0]), x[1]]),
+			o.time
 		);
 	}
 }
@@ -320,6 +350,18 @@ const Game = {
 			c.createParticle();
 		},
 	},
+	buttonRecipes: {
+		mine: new Recipe([], [], 1, () => Game.action.mine()),
+	},
+	debug: {
+		/** @type {number} */
+		autosaveTimeout: undefined,
+		loadTime: new Date(),
+		/** @type {string[]} */
+		log: [],
+		version,
+	},
+	inProgress: false,
 	item: {
 		items,
 		/** @return {Item} */
@@ -331,14 +373,6 @@ const Game = {
 			return this.items.map(c => c.categories.includes(whitelisted) &&
 				Math.pow(10, -c.rarity));
 		},
-	},
-	debug: {
-		/** @type {number} */
-		autosaveTimeout: undefined,
-		loadTime: new Date(),
-		/** @type {string[]} */
-		log: [],
-		version,
 	},
 	/** @param {string} string string to log */
 	log(string){
@@ -419,7 +453,7 @@ const Game = {
 	},
 	settings: {
 		autosaveInterval: 30 * 1000,
-		fps: 20,
+		fps: 30,
 	},
 	tick(){
 		// automine
@@ -427,11 +461,14 @@ const Game = {
 			Game.action.mine();
 		// fade / unfade recipes
 		recipes.forEach(r => {
-			const c = document.getElementById(r.elemId).classList;
+			/** @type {HTMLLIElement} */
+			const elem = document.getElementById(r.elemId);
+			if (!elem)
+				return;
 			if (r.makable)
-				c.remove('faded');
+				elem.classList.remove('faded');
 			else
-				c.add('faded');
+				elem.classList.add('faded');
 		});
 	},
 };
