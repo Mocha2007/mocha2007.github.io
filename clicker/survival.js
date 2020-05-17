@@ -161,7 +161,7 @@ class Item extends Interactable {
 			'Rarity: ' + Game.rarity.names[this.rarity] + ' (' + this.rarity + ')\n' +
 			'Mass: ' + unitString(this.mass, 'g', 2, 1e3) + '\n' +
 			'Volume: ' + unitString(this.volume, 'L', 2, 1e3) + '\n' +
-			'Density: ' + round(this.density, 2) + 'kg/m³\n' +
+			'Density: ' + round(this.density) + ' kg/m³\n' +
 			this.desc;
 		return elem;
 	}
