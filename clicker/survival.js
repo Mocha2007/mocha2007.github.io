@@ -339,7 +339,9 @@ class Tech extends Interactable {
 
 const Game = {
 	action: {
-		mine(){
+		mine(n = 1){
+			if (n < 1)
+				return;
 			const c = Game.item.random();
 			Game.p.add(c);
 			const l = document.getElementById('miningLog');
@@ -348,10 +350,12 @@ const Game = {
 			l.appendChild(document.createElement('br'));
 			l.appendChild(Game.rarity.elem(c.rarity));
 			c.createParticle();
+			if (1 < n)
+				this.mine(n-1);
 		},
 	},
 	buttonRecipes: {
-		mine: new Recipe([], [], 1, () => Game.action.mine()),
+		mine: new Recipe([], [], 1, () => Game.action.mine(3)),
 	},
 	debug: {
 		/** @type {number} */
