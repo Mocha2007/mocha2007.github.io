@@ -355,7 +355,15 @@ const Game = {
 		},
 	},
 	buttonRecipes: {
-		mine: new Recipe([], [], 1, () => Game.action.mine(3)),
+		mine: new Recipe([], [], 1),
+	},
+	clock(){
+		let time = Game.player.ticks;
+		const month = Math.floor(time / (30*24));
+		time -= month * 30 * 24;
+		const day = Math.floor(time / 24);
+		time -= day * 24;
+		document.getElementById('clock').innerHTML = `Month ${month}, Day ${day}, ${time} h`;
 	},
 	debug: {
 		/** @type {number} */
@@ -416,6 +424,7 @@ const Game = {
 		/** @type {number[]} tech ids */
 		unlockedTechs: [],
 		startTime: +new Date(),
+		ticks: 0,
 	},
 	powerOverwhelming(){
 		Game.p.add(water, 100);
@@ -460,6 +469,9 @@ const Game = {
 		fps: 30,
 	},
 	tick(){
+		// update clock
+		Game.player.ticks++;
+		Game.clock();
 		// automine
 		if (automineTech.unlocked)
 			Game.action.mine();
@@ -476,6 +488,7 @@ const Game = {
 		});
 	},
 };
+Game.buttonRecipes.mine.onComplete = () => Game.action.mine(3);
 
 // ITEM, RECIPE, ETC DEFS (MUST COME AFTER GAME)
 // Tier 0 - no reqs

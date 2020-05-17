@@ -32,6 +32,11 @@ ol, ul {
 	width: 50%;
 }
 /* inside left */
+#clock {
+	left: 5px;
+	position: absolute;
+	top: 0;
+}
 #left {
 	text-align: center;
 }
@@ -40,7 +45,7 @@ ol, ul {
 }
 #version {
 	bottom: 20px;
-	left: 10px;
+	left: 5px;
 	position: absolute;
 }
 /* inside right */
