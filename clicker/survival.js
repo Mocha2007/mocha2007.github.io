@@ -359,11 +359,13 @@ const Game = {
 	},
 	clock(){
 		let time = Game.player.ticks;
-		const month = Math.floor(time / (30*24));
+		const year = Math.floor(time / (12*30*24)); // 2 h 24 min irl
+		time -= year * 12 * 30 * 24;
+		const month = Math.floor(time / (30*24)); // 12 irl minutes
 		time -= month * 30 * 24;
-		const day = Math.floor(time / 24);
+		const day = Math.floor(time / 24); // 24 irl seconds
 		time -= day * 24;
-		document.getElementById('clock').innerHTML = `Month ${month}, Day ${day}, ${time} h`;
+		document.getElementById('clock').innerHTML = `Year ${year}, Month ${month}, Day ${day}, ${time} h`;
 	},
 	debug: {
 		/** @type {number} */
@@ -553,6 +555,8 @@ function setIntervalX(callback, delay, repetitions){
 // main only beyond here
 
 function main(){
+	// preloader
+	preloader();
 	// update version div
 	document.getElementById('version').innerHTML = 'v. ' + Game.debug.version;
 	// load save
@@ -565,8 +569,8 @@ function main(){
 	setInterval(Game.tick, 1000);
 	// set up inventory
 	items.forEach(i => i.elem);
-	// preloader
-	preloader();
+	// set up clock
+	Game.clock();
 	// notification
 	Game.log(clickerName + ' v. ' + version + ' loaded successfully.');
 }
