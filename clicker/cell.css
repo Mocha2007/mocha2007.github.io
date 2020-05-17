@@ -11,7 +11,8 @@ h2 {
 	margin: 0;
 }
 ol, ul {
-	margin-right: 16px;
+	margin: 0;
+	padding: 5px 0 5px 20px;
 }
 .faded {
 	opacity: 0.5;
@@ -27,7 +28,6 @@ ol, ul {
 }
 #left, #right {
 	height: 100%;
-	padding: 10px;
 	position: absolute;
 	width: 50%;
 }
@@ -44,7 +44,7 @@ ol, ul {
 	font-weight: bold;
 }
 #version {
-	bottom: 20px;
+	bottom: 0;
 	left: 5px;
 	position: absolute;
 }
