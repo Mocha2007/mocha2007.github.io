@@ -258,7 +258,6 @@ class Recipe {
 		document.getElementById('progressbar').value = 0;
 	}
 	make(){
-		Game.log('Attempted to craft recipe' + this.id);
 		if (!this.makable || Game.inProgress)
 			return false;
 		// consume reagents
@@ -277,6 +276,7 @@ class Recipe {
 		}
 		// give products after this.time seconds
 		setTimeout(() => this.finishCrafting(), this.time*1000);
+		Game.log('Crafted ' + this.id);
 		return true;
 	}
 	static fromJSON(o){
