@@ -508,7 +508,7 @@ const water = Item.find('Water');
 // buttonrecipes
 Game.buttonRecipes = {
 	mine: new Recipe([], [], 1, () => Game.action.mine(3)),
-	mineralSplit: new Recipe([[Item.find('Stone'), 1]], [], 10, () => Game.action.mineralSplit()),
+	mineralSplit: new Recipe([[Item.find('Stone'), 1]], [], 1, () => Game.action.mineralSplit()),
 };
 
 // other recipes
