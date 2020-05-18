@@ -49,7 +49,7 @@ class Interactable {
 		this.name = name;
 		this.desc = desc;
 		this.imgUrl = imgUrl;
-		this.tags = tags.map(tagName => Tag.fromString(tagName));
+		this.tags = tags.map(tagName => Tag.find(tagName));
 		interactables.push(this);
 	}
 	/** @return {Tag[]} a flat array of all categories and supercategories it is a member of */
@@ -92,7 +92,7 @@ class Tag extends Interactable {
 		tagList.push(this);
 	}
 	/** @param {string} string */
-	static fromString(string){
+	static find(string){
 		return tagList.filter(t => t.name === string)[0];
 	}
 }
@@ -243,6 +243,8 @@ class Recipe {
 			if (i !== this.products.length - 1)
 				span.innerHTML += ', ';
 		});
+		if (!this.products.length)
+			span.innerHTML += '<span title="This recipe has unpredictable results...">?</span>';
 		return span;
 	}
 	finishCrafting(){
@@ -353,9 +355,12 @@ const Game = {
 			if (1 < n)
 				this.mine(n-1);
 		},
-	},
-	buttonRecipes: {
-		mine: new Recipe([], [], 1),
+		mineralSplit(){
+			const mineralTag = Tag.find('Mineral');
+			const minerals = items.filter(i => i.categories.includes(mineralTag));
+			// todo weights
+			Game.p.add(random.choice(minerals), 1);
+		},
 	},
 	clock(){
 		let time = Game.player.ticks;
@@ -490,16 +495,23 @@ const Game = {
 		});
 	},
 };
-Game.buttonRecipes.mine.onComplete = () => Game.action.mine(3);
 
 // ITEM, RECIPE, ETC DEFS (MUST COME AFTER GAME)
 // Tier 0 - no reqs
 const whitelisted = new Tag('Whitelisted', [], 'Can be mined');
+new Tag('Mineral', [], 'Broken off from a larger stone');
 
 // read chemData, recipeData
 itemData.forEach(o => Item.fromJSON(o));
 const water = Item.find('Water');
 
+// buttonrecipes
+Game.buttonRecipes = {
+	mine: new Recipe([], [], 1, () => Game.action.mine(3)),
+	mineralSplit: new Recipe([[Item.find('Stone'), 1]], [], 10, () => Game.action.mineralSplit()),
+};
+
+// other recipes
 recipeData.forEach(o => Recipe.fromJSON(o));
 
 const automineTech = new Tech('Automine', 'Automatically mine for resources', undefined, [[water, 100]]);

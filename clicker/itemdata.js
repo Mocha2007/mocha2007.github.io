@@ -35,6 +35,14 @@ const itemData = [
 		rarity: 0,
 	},
 	{
+		name: 'Gypsum',
+		mass: 0.1,
+		// gypsum density 2.32 g/cm^3 (specific gravity)
+		volume: 4.31e-5,
+		tags: ['Mineral'],
+		rarity: 1,
+	},
+	{
 		name: 'Feather',
 		mass: 1e-3, // guess
 		volume: 1e-6,
@@ -112,6 +120,12 @@ const itemData = [
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Barrel_icon.png',
 		rarity: 2,
 	},
+	{
+		name: 'Tofu',
+		mass: 0.2,
+		volume: 0.00019, // 124g / 0.5 cup
+		rarity: 2,
+	},
 ];
 
 // recipes
@@ -174,5 +188,17 @@ const recipeData = [
 			['Water', 175],
 		],
 		time: 1,
+	},
+	{
+		// recipe from https://www.thespruceeats.com/how-to-make-tofu-1001574
+		reagents: [
+			['Soybeans', 33],
+			['Water', 1],
+			['Gypsum', 3],
+		],
+		products: [
+			['Tofu', 23],
+		],
+		time: 7, // https://www.foodnetwork.com/recipes/homemade-tofu-recipe-1949760
 	},
 ];
