@@ -2,7 +2,7 @@
 /* exported main */
 /* globals itemData, cookie, random, recipeData, round */
 'use strict';
-const version = 'a200517';
+const version = 'a200518';
 const clickerName = 'survival';
 // Willscrlt, public domain
 const defaultImgUrl = 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Question_Mark_Icon_-_Blue_Box_withoutQuestionmarkBlur.svg';
@@ -531,10 +531,13 @@ function unitString(value, name, rounding = 2, constant = 1){
 }
 
 function preloader(){
-	// loadbar, loadcurrent, loadtotal
+	// loadcircle, loadpercent
 	let loadcurrent = 0;
 	const loadtotal = interactables.length;
-	document.getElementById('loadtotal').innerHTML = loadtotal;
+	const load = document.getElementById('loadContainer');
+	load.style.opacity = 0.999; // setting the opacity to 1 will cause it to become transparent for some dumb fucking css reason
+	const loadPercent = document.getElementById('loadPercent');
+	const loadCircle = document.getElementById('loadCircle');
 	interactables.forEach(interactable => {
 		// https://stackoverflow.com/a/2342181/2579798
 		if (!interactable.imgUrl){
@@ -544,10 +547,18 @@ function preloader(){
 		const img = new Image();
 		img.onload = () => {
 			loadcurrent++;
-			document.getElementById('loadcurrent').innerHTML = loadcurrent;
-			document.getElementById('loadbar').value = loadcurrent / loadtotal;
-			if (loadtotal <= loadcurrent)
-				document.getElementById('load').classList.add('invisible');
+			// percentage
+			loadPercent.innerHTML = round(100 * loadcurrent / loadtotal) + '%';
+			// circle
+			// 71% is full screen for some dumb fucking reason
+			loadCircle.setAttribute('r', 71 * loadcurrent / loadtotal + '%');
+			if (loadtotal <= loadcurrent){
+				// fade for 1s
+				setIntervalX(() => load.style.opacity *= 0.9,
+					1000 / Game.settings.fps, Game.settings.fps);
+				// delete after 1s
+				setTimeout(() => load.remove(), 1000);
+			}
 		};
 		img.src = interactable.imgUrl;
 	});

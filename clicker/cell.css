@@ -20,16 +20,21 @@ ol, ul {
 .invisible {
 	display: none;
 }
-#load {
-	height: 100%;
-	line-height: 100vh;
-	text-align: center;
-	width: 100%;
-}
 #left, #right {
 	height: 100%;
 	position: absolute;
+	top: 0;
 	width: 50%;
+}
+#load, #loadContainer {
+	height: 100%;
+	width: 100%;
+}
+#load {
+	background-color: #022;
+}
+#loadPercent {
+	font-size: 10vh;
 }
 /* inside left */
 #clock {

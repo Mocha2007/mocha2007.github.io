@@ -7,11 +7,6 @@
 <script src="../common.js"></script>
 <script src="itemdata.js"></script>
 <title>Survival</title>
-<div id="load">
-	Loading...
-	<progress id="loadbar" value="0"></progress>
-	<span id="loadcurrent">0</span> / <span id="loadtotal">0</span>
-</div>
 <div id="left">
 	<span id="clock"></span>
 	<div id="mining">
@@ -35,6 +30,12 @@
 		<h2>Inventory</h2>
 		<ol id="invList"></ol>
 	</div>
+</div>
+<div id="loadContainer">
+	<svg id="load">
+		<circle id="loadCircle" cx="50%" cy="50%" fill="black"></circle>
+		<text id="loadPercent" x="45%" y="53%" fill="white">0%</text>
+	</svg>
 </div>
 <script src="survival.js"></script>
 <script>main();</script>
