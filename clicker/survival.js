@@ -434,8 +434,8 @@ const Game = {
 		ticks: 0,
 	},
 	powerOverwhelming(){
-		Game.p.add(water, 100);
-		automineTech.unlock();
+		items.forEach(i => Game.p.add(i, 200));
+		techs.forEach(t => t.unlock());
 	},
 	rarity: {
 		colors: 'White CornflowerBlue PaleGreen BurlyWood IndianRed'.split(' '),

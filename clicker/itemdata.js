@@ -94,7 +94,7 @@ const itemData = [
 		volume: 0.0003,
 		// 7Soul1, Public Domain
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/cd/I_BatWing.png',
-		rarity: 2,
+		rarity: 1,
 	},
 	{
 		name: 'Stone Axe',
@@ -102,7 +102,7 @@ const itemData = [
 		volume: 0.0028,
 		// 7Soul1, Public Domain
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/44/W_Axe007.png',
-		rarity: 2,
+		rarity: 1,
 	},
 	{
 		name: 'Barrel',
