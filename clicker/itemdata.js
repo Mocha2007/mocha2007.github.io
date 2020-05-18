@@ -35,14 +35,6 @@ const itemData = [
 		rarity: 0,
 	},
 	{
-		name: 'Gypsum',
-		mass: 0.1,
-		// gypsum density 2.32 g/cm^3 (specific gravity)
-		volume: 4.31e-5,
-		tags: ['Mineral'],
-		rarity: 1,
-	},
-	{
 		name: 'Feather',
 		mass: 1e-3, // guess
 		volume: 1e-6,
@@ -87,6 +79,23 @@ const itemData = [
 		tags: ['Whitelisted'],
 		rarity: 1,
 	},
+	// Minerals
+	{
+		name: 'Gypsum',
+		mass: 0.1,
+		// gypsum density 2.32 g/cm^3 (specific gravity)
+		volume: 4.31e-5,
+		tags: ['Mineral'],
+		rarity: 1,
+	},
+	{
+		name: 'Salt',
+		mass: 0.1,
+		// halite density 2.17 g/cm^3 (specific gravity)
+		volume: 4.6e-5,
+		tags: ['Mineral'],
+		rarity: 1,
+	},
 	// complex
 	{
 		name: 'Stone Axehead',
@@ -118,6 +127,13 @@ const itemData = [
 		volume: 0.225,
 		// Jerem43, cc-by-sa 3.0
 		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Barrel_icon.png',
+		rarity: 2,
+	},
+	// food/drink
+	{
+		name: 'Soy Sauce',
+		mass: 0.0037,
+		volume: 3.7e-6,
 		rarity: 2,
 	},
 	{
@@ -190,11 +206,23 @@ const recipeData = [
 		time: 1,
 	},
 	{
+		// recipe from https://thethingswellmake.com/how-to-make-soy-sauce-homemade-shoyu/
+		reagents: [
+			['Soybeans', 3],
+			['Salt', 2],
+			['Water', 1],
+		],
+		products: [
+			['Soy Sauce', 1],
+		],
+		time: 24,
+	},
+	{
 		// recipe from https://www.thespruceeats.com/how-to-make-tofu-1001574
 		reagents: [
 			['Soybeans', 33],
-			['Water', 1],
 			['Gypsum', 3],
+			['Water', 1],
 		],
 		products: [
 			['Tofu', 23],
