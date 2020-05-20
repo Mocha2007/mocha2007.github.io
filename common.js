@@ -283,3 +283,16 @@ const cookie = {
 function union(a, b){
 	return [...new Set([...a, ...b])];
 }
+
+/**
+ * @param {number} value
+ * @param {string} name
+ */
+function unitString(value, name, rounding = 2, constant = 1){
+	value *= constant;
+	const prefixes = 'yzafpnμm kMGTPEZY'.split('');
+	const i = Math.floor(Math.log10(value)/3) + 8;
+	const c = Math.pow(10, 3*(i-8));
+	const prefix = i !== 8 ? prefixes[i] : '';
+	return round(value / c, rounding) + ' ' + prefix + name;
+}

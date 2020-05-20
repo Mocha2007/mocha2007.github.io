@@ -1,5 +1,11 @@
-/* exported elementData */
+/* exported elementData, isotopeData */
 'use strict';
+
+const minute = 60;
+const hour = 60 * minute;
+const day = 24 * hour;
+const year = 365.2425 * day;
+
 const elementData = [
 	{
 		z: 1,
@@ -91,10 +97,35 @@ const elementData = [
 		period: 4,
 	},
 	{
+		z: 90,
+		name: 'Thorium',
+		symbol: 'Th',
+		mass: 232.0377,
+		period: 7,
+	},
+	{
 		z: 92,
 		name: 'Uranium',
 		symbol: 'U',
 		mass: 238.02891,
 		period: 7,
+	},
+];
+
+const isotopeData = [
+	{
+		name: 'Th-231',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 25.5*hour,
+	},
+	{
+		name: 'U-235',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 7.038e9*year,
+		abundance: 0.0072,
 	},
 ];

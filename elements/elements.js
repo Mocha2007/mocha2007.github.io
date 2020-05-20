@@ -1,6 +1,13 @@
 /* jshint esversion: 6, strict: true, strict: global */
-/* globals elementData, range, round */
+/* globals createSvgElement, elementData, isotopeData, range, round, unitString */
 'use strict';
+
+const corner = 30/Math.sqrt(2);
+const decayArrows = {
+	'a': [0, 30, 0, 90],
+	'b+': [-corner, corner, -corner - 30, corner + 30],
+	'b-': [corner, -corner, corner + 30, -corner - 30],
+};
 
 const typeColors = {
 	'Alkali metal': '#f66',
@@ -38,6 +45,9 @@ class ChemElement {
 		// push to element list and create cell
 		elements.push(this);
 		this.createElement();
+	}
+	get color(){
+		return typeColors[this.type];
 	}
 	/** @return {[number, number]} zero-indexed coord of the square */
 	get coords(){
@@ -95,7 +105,7 @@ class ChemElement {
 		div.appendChild(mass);
 		// styling
 		div.style.border = '2px solid darkGrey';
-		div.style.backgroundColor = typeColors[this.type];
+		div.style.backgroundColor = this.color;
 		// place element
 		const [x, y] = this.coords;
 		/** @type {HTMLTableDataCellElement} */
@@ -104,6 +114,131 @@ class ChemElement {
 	}
 	static fromJSON(o){
 		return new ChemElement(o.z, o.name, o.symbol, o.mass, o.group, o.period);
+	}
+	/** @param {string} symbol */
+	static fromSymbol(symbol){
+		return elements.filter(e => e.symbol === symbol)[0];
+	}
+	/** @param {number} z */
+	static fromZ(z){
+		return elements.filter(e => e.z === z)[0];
+	}
+}
+
+/** @type {Decay[]} */
+const decays = [];
+class Decay {
+	/** @param {string} name */
+	constructor(name, deltaZ = 0, deltaN = 0){
+		this.name = name;
+		this.deltaZ = deltaZ;
+		this.deltaN = deltaN;
+		decays.push(this);
+	}
+	get arrow(){
+		const line = createSvgElement('line'); // todo other types
+		const [x1, y1, x2, y2] = decayArrows[this.name];
+		line.setAttribute('x1', x1);
+		line.setAttribute('y1', y1);
+		line.setAttribute('x2', x2);
+		line.setAttribute('y2', y2);
+		return line;
+	}
+	get deltaA(){
+		return this.deltaN + this.deltaZ;
+	}
+	/** @param {string} name */
+	static find(name){
+		return decays.filter(d => d.name === name)[0];
+	}
+}
+new Decay('a', -2, -2); // Alpha Decay
+new Decay('b+', -1, 1); // Beta+ Decay
+new Decay('b-', 1, -1); // Beta- Decay
+const sf = new Decay('sf'); // Spontaneous Fission
+
+/** @type {Isotope[]} */
+const isotopes = [];
+class Isotope {
+	/**
+	 * @param {ChemElement} element
+	 * @param {number} mass
+	 * @param {[Decay, number][]} decayTypes
+	 * @param {number} halfLife
+	*/
+	constructor(element, mass, decayTypes, halfLife, abundance = 0){
+		this.element = element;
+		this.mass = mass;
+		this.decayTypes = decayTypes;
+		this.halfLife = halfLife;
+		this.abundance = abundance;
+		isotopes.push(this);
+	}
+	get coords(){
+		// y-coord represents Z. x-coord represents A/2 - Z (?)
+		// max z = seaborgium; Cf-256 => A = 256, Z = 98 => 30; He-4 => A = 4, Z = 2 => 0
+		const xFactor = Math.floor(this.mass/2) - this.element.z;
+		const x = 30 + 60*(30 - xFactor);
+		const y = 30 + 60*(106 - this.element.z);
+		return [x, y];
+	}
+	get daughters(){
+		return this.decayTypes.map(d => d[0]).filter(d => d !== sf).map(d =>
+			Isotope.find(ChemElement.fromZ(this.element.z + d.deltaZ).symbol +
+				'-' + (this.mass + d.deltaA))
+		);
+	}
+	get name(){
+		return `${this.element.symbol}-${this.mass}`;
+	}
+	createElement(){
+		const svg = document.getElementById('decay0');
+		// todo
+		const g = createSvgElement('g');
+		g.id = this.name;
+		const [x, y] = this.coords;
+		g.setAttribute('transform', `translate(${x} ${y})`);
+		svg.appendChild(g);
+		// circle
+		const circle = createSvgElement('circle');
+		circle.setAttribute('fill', this.element.color);
+		g.appendChild(circle);
+		// text
+		const superscript = createSvgElement('text');
+		superscript.innerHTML = this.mass;
+		superscript.classList.add('superscript');
+		superscript.setAttribute('dx', '-20px');
+		superscript.setAttribute('dy', '-10px');
+		g.appendChild(superscript);
+		const subscript = createSvgElement('text');
+		subscript.innerHTML = this.element.z;
+		subscript.classList.add('subscript');
+		subscript.setAttribute('dx', '-20px');
+		g.appendChild(subscript);
+		const symbol = createSvgElement('text');
+		symbol.innerHTML = this.element.symbol;
+		symbol.classList.add('symbol');
+		symbol.setAttribute('dx', '-5px');
+		g.appendChild(symbol);
+		const halfLife = createSvgElement('text');
+		halfLife.innerHTML = unitString(this.halfLife, 's'); // todo
+		halfLife.classList.add('halfLife');
+		halfLife.setAttribute('dx', '-20px');
+		halfLife.setAttribute('dy', '15px');
+		g.appendChild(halfLife);
+		// draw arrows
+		this.decayTypes.forEach(d => g.appendChild(d[0].arrow));
+	}
+	/** @param {string} name */
+	static find(name){
+		return isotopes.filter(i => i.name === name)[0];
+	}
+	static fromJSON(o){
+		const [symbol, massString] = o.name.split('-');
+		const mass = parseInt(massString);
+		return new Isotope(ChemElement.fromSymbol(symbol), mass,
+			o.decayTypes.map(d => [Decay.find(d[0]), d[1]]),
+			o.halfLife, o.abundance);
 	}
 }
 
@@ -125,8 +260,14 @@ function main(){
 	});
 	// read data from elementData
 	elementData.forEach(e => ChemElement.fromJSON(e));
+	isotopeData.forEach(i => Isotope.fromJSON(i));
+	// draw isotopes
+	isotopes.forEach(i => i.createElement());
 	// log
 	console.info('elements.js successfully loaded.');
 }
 
 main();
+// debug remove this before pushing
+// const u235 = isotopes[1];
+// u235.createElement();

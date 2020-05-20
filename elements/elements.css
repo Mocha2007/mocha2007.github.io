@@ -3,7 +3,7 @@ html, body, #table, td div {
 	color: #222;
 	height: 100%;
 	margin: 0;
-	overflow: hidden;
+	/* overflow: hidden; */
 	width: 100%;
 }
 td {
@@ -16,4 +16,30 @@ td {
 }
 .smaller {
 	font-size: 80%;
+}
+/* svg bs */
+svg {
+	background-color: white;
+	height: 200%;
+	width: 100%;
+}
+circle {
+	stroke: black;
+	stroke-width: 1px;
+	r: 30px;
+}
+line {
+	marker-end: url(#Arrow2Mend);
+	stroke: black;
+	stroke-width: 1;
+}
+.halfLife {
+	font-size: 75%;
+}
+.subscript, .superscript {
+	font-size: 50%;
+}
+.symbol {
+	font-size: 150%;
+	font-weight: bold;
 }

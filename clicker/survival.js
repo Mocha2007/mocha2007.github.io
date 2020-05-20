@@ -1,6 +1,6 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true, nonew: false */
 /* exported main */
-/* globals itemData, cookie, random, recipeData, round */
+/* globals itemData, cookie, random, recipeData, round, unitString */
 'use strict';
 const version = 'a200518';
 const clickerName = 'survival';
@@ -517,18 +517,6 @@ recipeData.forEach(o => Recipe.fromJSON(o));
 const automineTech = new Tech('Automine', 'Automatically mine for resources', undefined, [[water, 100]]);
 
 // functions
-/**
- * @param {number} value
- * @param {string} name
- */
-function unitString(value, name, rounding = 2, constant = 1){
-	value *= constant;
-	const prefixes = 'yzafpnμm kMGTPEZY'.split('');
-	const i = Math.floor(Math.log10(value)/3) + 8;
-	const c = Math.pow(10, 3*(i-8));
-	const prefix = i !== 8 ? prefixes[i] : '';
-	return round(value / c, rounding) + ' ' + prefix + name;
-}
 
 function preloader(){
 	// loadcircle, loadpercent
