@@ -15,9 +15,9 @@ const typeColors = {
 };
 
 // classes
-/** @type {Element[]} */
+/** @type {ChemElement[]} */
 const elements = [];
-class Element {
+class ChemElement {
 	/**
 	 * @param {number} z - atomic number
 	 * @param {string} name
@@ -103,7 +103,7 @@ class Element {
 		cell.appendChild(div);
 	}
 	static fromJSON(o){
-		return new Element(o.z, o.name, o.symbol, o.mass, o.group, o.period);
+		return new ChemElement(o.z, o.name, o.symbol, o.mass, o.group, o.period);
 	}
 }
 
@@ -124,7 +124,7 @@ function main(){
 		table.appendChild(row);
 	});
 	// read data from elementData
-	elementData.forEach(e => Element.fromJSON(e));
+	elementData.forEach(e => ChemElement.fromJSON(e));
 	// log
 	console.info('elements.js successfully loaded.');
 }
