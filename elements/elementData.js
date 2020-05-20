@@ -81,4 +81,20 @@ const elementData = [
 		group: 18,
 		period: 2,
 	},
+	// skip a few
+	{
+		z: 26,
+		name: 'Iron',
+		symbol: 'Fe',
+		mass: 55.845,
+		group: 8,
+		period: 4,
+	},
+	{
+		z: 92,
+		name: 'Uranium',
+		symbol: 'U',
+		mass: 238.02891,
+		period: 7,
+	},
 ];
