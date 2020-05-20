@@ -1,0 +1,19 @@
+html, body, #table, td div {
+	background-color: black;
+	color: #222;
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+	width: 100%;
+}
+td {
+	font-size: 2vh;
+	height: 10%;
+	padding: 0;
+	padding-right: 4px;
+	text-align: center;
+	width: calc(100% / 18);
+}
+.smaller {
+	font-size: 80%;
+}
