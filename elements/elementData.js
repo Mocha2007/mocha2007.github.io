@@ -97,10 +97,81 @@ const elementData = [
 		period: 4,
 	},
 	{
+		z: 81,
+		name: 'Thallium',
+		symbol: 'Tl',
+		mass: 204.38,
+		group: 13,
+		period: 6,
+	},
+	{
+		z: 82,
+		name: 'Lead',
+		symbol: 'Pb',
+		mass: 207.2,
+		group: 14,
+		period: 6,
+	},
+	{
+		z: 83,
+		name: 'Bismuth',
+		symbol: 'Bi',
+		mass: 208.9804,
+		group: 15,
+		period: 6,
+	},
+	{
+		z: 84,
+		name: 'Polonium',
+		symbol: 'Po',
+		mass: 209,
+		group: 16,
+		period: 6,
+	},
+	{
+		z: 86,
+		name: 'Radon',
+		symbol: 'Rn',
+		mass: 222,
+		group: 18,
+		period: 6,
+	},
+	{
+		z: 87,
+		name: 'Francium',
+		symbol: 'Fr',
+		mass: 223,
+		group: 1,
+		period: 7,
+	},
+	{
+		z: 88,
+		name: 'Radium',
+		symbol: 'Ra',
+		mass: 226,
+		group: 2,
+		period: 7,
+	},
+	{
+		z: 89,
+		name: 'Actinium',
+		symbol: 'Ac',
+		mass: 227,
+		group: 3,
+		period: 7,
+	},
+	{
 		z: 90,
 		name: 'Thorium',
 		symbol: 'Th',
 		mass: 232.0377,
+		period: 7,
+	},
+	{
+		z: 91,
+		name: 'Protactinium',
+		symbol: 'Pa',
+		mass: 231.03588,
 		period: 7,
 	},
 	{
@@ -113,6 +184,82 @@ const elementData = [
 ];
 
 const isotopeData = [
+	// ignore all decay modes with P < 0.01
+	{
+		name: 'Tl-207',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 4.77*minute,
+	},
+	{
+		name: 'Pb-207',
+	},
+	{
+		name: 'Pb-211',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 36.1*minute,
+	},
+	{
+		name: 'Bi-211',
+		decayTypes: [
+			['a', 0.9972],
+		],
+		halfLife: 2.14*minute,
+	},
+	{
+		name: 'Po-215',
+		decayTypes: [
+			['a', 0.9999],
+		],
+		halfLife: 1.781e-3,
+	},
+	{
+		name: 'Rn-219',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 3.96,
+	},
+	{
+		name: 'Fr-223',
+		decayTypes: [
+			['b-', 0.9999],
+		],
+		halfLife: 22*minute,
+	},
+	{
+		name: 'Ra-223',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 11.43*day,
+	},
+	{
+		name: 'Ac-227',
+		decayTypes: [
+			['b-', 0.9861],
+			['a', 0.0138],
+		],
+		halfLife: 21.772*year,
+	},
+	{
+		name: 'Pa-231',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 3.276e4*year,
+		abundance: 1,
+	},
+	{
+		name: 'Th-227',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 18.68*day,
+	},
 	{
 		name: 'Th-231',
 		decayTypes: [

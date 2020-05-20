@@ -3,10 +3,11 @@
 'use strict';
 
 const corner = 30/Math.sqrt(2);
+const corner2 = 30*(1-1/Math.sqrt(2));
 const decayArrows = {
 	'a': [0, 30, 0, 90],
-	'b+': [-corner, corner, -corner - 30, corner + 30],
-	'b-': [corner, -corner, corner + 30, -corner - 30],
+	'b+': [-corner, corner, corner-60, 60-corner],
+	'b-': [corner, -corner, 60-corner, corner-60],
 };
 
 const typeColors = {
@@ -166,7 +167,7 @@ class Isotope {
 	 * @param {[Decay, number][]} decayTypes
 	 * @param {number} halfLife
 	*/
-	constructor(element, mass, decayTypes, halfLife, abundance = 0){
+	constructor(element, mass, decayTypes = [], halfLife = 0, abundance = 0){
 		this.element = element;
 		this.mass = mass;
 		this.decayTypes = decayTypes;
@@ -221,7 +222,7 @@ class Isotope {
 		symbol.setAttribute('dx', '-5px');
 		g.appendChild(symbol);
 		const halfLife = createSvgElement('text');
-		halfLife.innerHTML = unitString(this.halfLife, 's'); // todo
+		halfLife.innerHTML = this.halfLife ? unitString(this.halfLife, 's') : 'Stable'; // todo
 		halfLife.classList.add('halfLife');
 		halfLife.setAttribute('dx', '-20px');
 		halfLife.setAttribute('dy', '15px');
@@ -236,9 +237,10 @@ class Isotope {
 	static fromJSON(o){
 		const [symbol, massString] = o.name.split('-');
 		const mass = parseInt(massString);
+		const decayTypes = o.decayTypes ?
+			o.decayTypes.map(d => [Decay.find(d[0]), d[1]]) : undefined;
 		return new Isotope(ChemElement.fromSymbol(symbol), mass,
-			o.decayTypes.map(d => [Decay.find(d[0]), d[1]]),
-			o.halfLife, o.abundance);
+			decayTypes, o.halfLife, o.abundance);
 	}
 }
 
