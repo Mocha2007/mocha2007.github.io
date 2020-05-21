@@ -8,6 +8,7 @@ const decayArrows = {
 	'a': [0, 30, 0, 90],
 	'b+': [-corner, corner, corner-60, 60-corner],
 	'b-': [corner, -corner, 60-corner, corner-60],
+	'ec': [-corner, corner, corner-60, 60-corner],
 };
 
 const typeColors = {
@@ -183,6 +184,7 @@ class Decay {
 			'a': 'α',
 			'b+': 'β+',
 			'b-': 'β-',
+			'ec': 'EC',
 		}[this.name];
 	}
 	/** @param {string} name */
@@ -193,6 +195,7 @@ class Decay {
 new Decay('a', -2, -2); // Alpha Decay
 new Decay('b+', -1, 1); // Beta+ Decay
 new Decay('b-', 1, -1); // Beta- Decay
+new Decay('ec', -1, 1); // Electron Capture
 const sf = new Decay('sf'); // Spontaneous Fission
 
 /** @type {Isotope[]} */
