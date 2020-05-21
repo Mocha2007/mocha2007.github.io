@@ -217,6 +217,20 @@ const elementData = [
 		mass: 247,
 		period: 7,
 	},
+	{
+		z: 97,
+		name: 'Berkelium',
+		symbol: 'Bk',
+		mass: 247,
+		period: 7,
+	},
+	{
+		z: 98,
+		name: 'Californium',
+		symbol: 'Cf',
+		mass: 251,
+		period: 7,
+	},
 ];
 
 const isotopeData = [
@@ -589,6 +603,13 @@ const isotopeData = [
 		halfLife: 2.356*day,
 	},
 	{
+		name: 'U-232',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 68.9*year,
+	},
+	{
 		name: 'U-233',
 		decayTypes: [
 			['a', 1],
@@ -634,6 +655,14 @@ const isotopeData = [
 		halfLife: 14.1*hour,
 	},
 	{
+		name: 'Np-236',
+		decayTypes: [
+			['ec', 0.873],
+			['b-', 0.125],
+		],
+		halfLife: 1.54e6*year,
+	},
+	{
 		name: 'Np-237',
 		decayTypes: [
 			['a', 1],
@@ -646,6 +675,13 @@ const isotopeData = [
 			['b-', 1],
 		],
 		halfLife: 61.9*minute,
+	},
+	{
+		name: 'Pu-236',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 2.858*year,
 	},
 	{
 		name: 'Pu-239',
@@ -662,6 +698,13 @@ const isotopeData = [
 		halfLife: 6.561e3*year,
 	},
 	{
+		name: 'Pu-242',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 3.75e5*year,
+	},
+	{
 		name: 'Pu-243',
 		decayTypes: [
 			['b-', 1],
@@ -676,11 +719,32 @@ const isotopeData = [
 		halfLife: 8e7*year,
 	},
 	{
+		name: 'Pu-246',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 10.84*day,
+	},
+	{
 		name: 'Am-243',
 		decayTypes: [
 			['a', 1],
 		],
 		halfLife: 7370*year,
+	},
+	{
+		name: 'Am-246',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 39*minute,
+	},
+	{
+		name: 'Cm-246',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 4760*year,
 	},
 	{
 		name: 'Cm-247',
@@ -696,5 +760,42 @@ const isotopeData = [
 			['sf', 0.0826],
 		],
 		halfLife: 3.48e5*year,
+	},
+	{
+		name: 'Cm-250',
+		decayTypes: [
+			['sf', 0.74],
+			['a', 0.18],
+			['b-', 0.08],
+		],
+		halfLife: 8300*year,
+	},
+	{
+		name: 'Bk-247',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 1380*year,
+	},
+	{
+		name: 'Bk-250',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 3.212*hour,
+	},
+	{
+		name: 'Cf-250',
+		decayTypes: [
+			['a', 0.9992],
+		],
+		halfLife: 13.08*year,
+	},
+	{
+		name: 'Cf-251',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 900*year,
 	},
 ];

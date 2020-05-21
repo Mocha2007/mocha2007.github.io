@@ -2,7 +2,7 @@
 /* globals createSvgElement, day, elementData, hour, isotopeData, minute, range, round, unitString, year */
 'use strict';
 
-const maxZ = 96;
+const maxZ = 98;
 const corner = 30/Math.sqrt(2);
 const decayArrows = {
 	'a': [0, 30, 0, 90],
