@@ -185,6 +185,7 @@ const elementData = [
 
 const isotopeData = [
 	// ignore all decay modes with P < 0.01
+	// include all primordeal isotopes
 	{
 		name: 'Tl-207',
 		decayTypes: [
@@ -200,10 +201,20 @@ const isotopeData = [
 		halfLife: 1.3*minute,
 	},
 	{
+		name: 'Pb-204',
+		abundance: 0.014,
+	},
+	{
 		name: 'Pb-206',
+		abundance: 0.241,
 	},
 	{
 		name: 'Pb-207',
+		abundance: 0.221,
+	},
+	{
+		name: 'Pb-208',
+		abundance: 0.524,
 	},
 	{
 		name: 'Pb-210',
