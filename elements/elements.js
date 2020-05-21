@@ -113,6 +113,23 @@ class ChemElement {
 		const cell = document.getElementById(`cell${x}-${y}`);
 		cell.appendChild(div);
 	}
+	createSVGLabel(){
+		const svg = document.getElementById('decay0');
+		// rect
+		const rect = createSvgElement('rect');
+		rect.setAttribute('height', '60px');
+		rect.setAttribute('width', '100%');
+		const y = 60*(106 - this.z);
+		rect.setAttribute('y', y);
+		rect.setAttribute('fill', this.z % 2 ? 'white' : 'silver');
+		svg.appendChild(rect);
+		// text label
+		const text = createSvgElement('text');
+		text.setAttribute('y', y + 35);
+		text.innerHTML = this.name;
+		text.classList.add('svgLabel');
+		svg.appendChild(text);
+	}
 	static fromJSON(o){
 		return new ChemElement(o.z, o.name, o.symbol, o.mass, o.group, o.period);
 	}
@@ -264,6 +281,7 @@ function main(){
 	elementData.forEach(e => ChemElement.fromJSON(e));
 	isotopeData.forEach(i => Isotope.fromJSON(i));
 	// draw isotopes
+	elements.slice().reverse().forEach(e => e.createSVGLabel());
 	isotopes.forEach(i => i.createElement());
 	// log
 	console.info('elements.js successfully loaded.');
