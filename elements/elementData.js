@@ -193,7 +193,24 @@ const isotopeData = [
 		halfLife: 4.77*minute,
 	},
 	{
+		name: 'Tl-210',
+		decayTypes: [
+			['b-', 0.99991],
+		],
+		halfLife: 1.3*minute,
+	},
+	{
+		name: 'Pb-206',
+	},
+	{
 		name: 'Pb-207',
+	},
+	{
+		name: 'Pb-210',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 22.3*year,
 	},
 	{
 		name: 'Pb-211',
@@ -203,11 +220,39 @@ const isotopeData = [
 		halfLife: 36.1*minute,
 	},
 	{
+		name: 'Pb-214',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 26.8*minute,
+	},
+	{
+		name: 'Bi-210',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 5.012*day,
+	},
+	{
 		name: 'Bi-211',
 		decayTypes: [
 			['a', 0.9972],
 		],
 		halfLife: 2.14*minute,
+	},
+	{
+		name: 'Bi-214',
+		decayTypes: [
+			['a', 0.9997],
+		],
+		halfLife: 19.9*minute,
+	},
+	{
+		name: 'Po-210',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 138.376*day,
 	},
 	{
 		name: 'Po-215',
@@ -217,11 +262,25 @@ const isotopeData = [
 		halfLife: 1.781e-3,
 	},
 	{
+		name: 'Po-218',
+		decayTypes: [
+			['a', 0.9998],
+		],
+		halfLife: 3.1*minute,
+	},
+	{
 		name: 'Rn-219',
 		decayTypes: [
 			['a', 1],
 		],
 		halfLife: 3.96,
+	},
+	{
+		name: 'Rn-222',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 3.8235*day,
 	},
 	{
 		name: 'Fr-223',
@@ -236,6 +295,13 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 11.43*day,
+	},
+	{
+		name: 'Ra-226',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 1600*year,
 	},
 	{
 		name: 'Ac-227',
@@ -254,6 +320,13 @@ const isotopeData = [
 		abundance: 1,
 	},
 	{
+		name: 'Pa-234',
+		decayTypes: [
+			['b-', 0.9984],
+		],
+		halfLife: 6.7*hour,
+	},
+	{
 		name: 'Th-227',
 		decayTypes: [
 			['a', 1],
@@ -261,11 +334,33 @@ const isotopeData = [
 		halfLife: 18.68*day,
 	},
 	{
+		name: 'Th-230',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 7.538e4*year,
+	},
+	{
 		name: 'Th-231',
 		decayTypes: [
 			['b-', 1],
 		],
 		halfLife: 25.5*hour,
+	},
+	{
+		name: 'Th-234',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 24.1*day,
+	},
+	{
+		name: 'U-234',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 2.455e5*year,
+		abundance: 0.000054,
 	},
 	{
 		name: 'U-235',
