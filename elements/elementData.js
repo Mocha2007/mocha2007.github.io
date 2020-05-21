@@ -277,6 +277,14 @@ const isotopeData = [
 	// ignore all decay modes with P < 0.01
 	// include just HL >= 1 yr
 	{
+		name: 'H-1',
+		abundance: 0.9998,
+	},
+	{
+		name: 'H-2',
+		abundance: 0.0002,
+	},
+	{
 		name: 'Os-184',
 		abundance: 2e-4,
 	},

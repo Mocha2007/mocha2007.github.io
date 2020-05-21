@@ -326,10 +326,14 @@ function chooseTimeUnit(value){
 	return [year, 'yr'];
 }
 
-/** @param {number} n - default = 23 */
-function setDecayChainLength(n){
+/** @param {number} width - default = 14, max = 32 */
+/** @param {number} height - default = 23, max = 98 */
+function setDecayChainLength(width, height){
 	const svgs = document.getElementsByTagName('svg');
-	Array.from(svgs).forEach(svg => svg.style.height = `calc(${n}*60px)`);
+	Array.from(svgs).forEach(svg => {
+		svg.style.width = `calc(${width}*60px)`;
+		svg.style.height = `calc(${height}*60px)`;
+	});
 }
 
 // main
