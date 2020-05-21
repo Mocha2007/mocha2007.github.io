@@ -97,6 +97,30 @@ const elementData = [
 		period: 4,
 	},
 	{
+		z: 78,
+		name: 'Platinum',
+		symbol: 'Pt',
+		mass: 195.084,
+		group: 10,
+		period: 6,
+	},
+	{
+		z: 79,
+		name: 'Gold',
+		symbol: 'Au',
+		mass: 196.96657,
+		group: 11,
+		period: 6,
+	},
+	{
+		z: 80,
+		name: 'Mercury',
+		symbol: 'Hg',
+		mass: 200.592,
+		group: 12,
+		period: 6,
+	},
+	{
 		z: 81,
 		name: 'Thallium',
 		symbol: 'Tl',
@@ -236,6 +260,72 @@ const elementData = [
 const isotopeData = [
 	// ignore all decay modes with P < 0.01
 	// include just primordeal isotopes and daughters for now
+	{
+		name: 'Pt-192',
+		abundance: 0.00782,
+	},
+	{
+		name: 'Pt-194',
+		abundance: 0.32967,
+	},
+	{
+		name: 'Pt-195',
+		abundance: 0.33832,
+	},
+	{
+		name: 'Pt-196',
+		abundance: 0.25242,
+	},
+	{
+		name: 'Pt-198',
+		abundance: 0.07163,
+	},
+	{
+		name: 'Au-194',
+		decayTypes: [
+			['b+', 1],
+		],
+		halfLife: 38.02*hour,
+	},
+	{
+		name: 'Au-197',
+		abundance: 1,
+	},
+	{
+		name: 'Hg-194',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 444*year,
+	},
+	{
+		name: 'Hg-196',
+		abundance: 0.0015,
+	},
+	{
+		name: 'Hg-198',
+		abundance: 0.0997,
+	},
+	{
+		name: 'Hg-199',
+		abundance: 0.1687,
+	},
+	{
+		name: 'Hg-200',
+		abundance: 0.231,
+	},
+	{
+		name: 'Hg-201',
+		abundance: 0.1318,
+	},
+	{
+		name: 'Hg-202',
+		abundance: 0.2986,
+	},
+	{
+		name: 'Hg-204',
+		abundance: 0.0687,
+	},
 	{
 		name: 'Tl-203',
 		abundance: 0.2952,
