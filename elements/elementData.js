@@ -122,7 +122,7 @@ const elementData = [
 	{
 		z: 15,
 		name: 'Phosphorus',
-		symbol: 'Si',
+		symbol: 'P',
 		mass: 30.973761998,
 		group: 15,
 		period: 3,
@@ -448,6 +448,129 @@ const isotopeData = [
 	{
 		name: 'Ne-22',
 		abundance: 0.0925,
+	},
+	{
+		name: 'Na-22',
+		decayTypes: [
+			['b+', 1],
+		],
+		halfLife: 2.6018*year,
+	},
+	{
+		name: 'Na-23',
+		abundance: 1,
+	},
+	{
+		name: 'Mg-24',
+		abundance: 0.7899,
+	},
+	{
+		name: 'Mg-25',
+		abundance: 0.1,
+	},
+	{
+		name: 'Mg-26',
+		abundance: 0.1101,
+	},
+	{
+		name: 'Al-26',
+		decayTypes: [
+			['b+', 0.85],
+			['ec', 0.15],
+		],
+		halfLife: 7.17e5*year,
+	},
+	{
+		name: 'Al-27',
+		abundance: 1,
+	},
+	{
+		name: 'Si-28',
+		abundance: 0.92223,
+	},
+	{
+		name: 'Si-29',
+		abundance: 0.04685,
+	},
+	{
+		name: 'Si-30',
+		abundance: 0.03092,
+	},
+	{
+		name: 'Si-32',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 153*year,
+	},
+	{
+		name: 'P-31',
+		abundance: 1,
+	},
+	{
+		name: 'P-32',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 14.268*day,
+	},
+	{
+		name: 'S-32',
+		abundance: 0.9499,
+	},
+	{
+		name: 'S-33',
+		abundance: 0.0075,
+	},
+	{
+		name: 'S-34',
+		abundance: 0.0425,
+	},
+	{
+		name: 'S-36',
+		abundance: 0.0001,
+	},
+	{
+		name: 'Cl-35',
+		abundance: 0.7576,
+	},
+	{
+		name: 'Cl-36',
+		decayTypes: [
+			['b-', 0.981],
+			['b+', 0.019],
+		],
+		halfLife: 14.268*day,
+	},
+	{
+		name: 'Cl-37',
+		abundance: 0.2424,
+	},
+	{
+		name: 'Ar-36',
+		abundance: 0.003336,
+	},
+	{
+		name: 'Ar-38',
+		abundance: 0.000629,
+	},
+	{
+		name: 'Ar-39',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 269*year,
+	},
+	{
+		name: 'Ar-40',
+		abundance: 0.996035,
+	},
+	{
+		name: 'Ar-42',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 32.9*year,
 	},
 	// skip a few...
 	{
