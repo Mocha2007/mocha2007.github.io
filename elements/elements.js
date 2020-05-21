@@ -3,7 +3,6 @@
 'use strict';
 
 const corner = 30/Math.sqrt(2);
-const corner2 = 30*(1-1/Math.sqrt(2));
 const decayArrows = {
 	'a': [0, 30, 0, 90],
 	'b+': [-corner, corner, corner-60, 60-corner],
@@ -130,7 +129,7 @@ class ChemElement {
 			text.innerHTML = this.name;
 			text.classList.add('svgLabel');
 			svg.appendChild(text);
-		})
+		});
 	}
 	static fromJSON(o){
 		return new ChemElement(o.z, o.name, o.symbol, o.mass, o.group, o.period);
@@ -212,7 +211,7 @@ class Isotope {
 		return `${this.element.symbol}-${this.mass}`;
 	}
 	createElement(){
-		const chain = 'decay' + (this.mass % 4);
+		const chain = 'decay' + this.mass % 4;
 		const svg = document.getElementById(chain);
 		// todo
 		const g = createSvgElement('g');
