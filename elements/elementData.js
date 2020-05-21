@@ -201,6 +201,14 @@ const isotopeData = [
 	// ignore all decay modes with P < 0.01
 	// include just primordeal isotopes and daughters for now
 	{
+		name: 'Tl-203',
+		abundance: 0.2952,
+	},
+	{
+		name: 'Tl-205',
+		abundance: 0.7048,
+	},
+	{
 		name: 'Tl-207',
 		decayTypes: [
 			['b-', 1],
@@ -264,6 +272,13 @@ const isotopeData = [
 			['b-', 1],
 		],
 		halfLife: 26.8*minute,
+	},
+	{
+		name: 'Bi-209',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 2.01e19*year,
 	},
 	{
 		name: 'Bi-210',
