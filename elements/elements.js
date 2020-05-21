@@ -290,7 +290,7 @@ class Isotope {
 		const symbol = createSvgElement('text');
 		symbol.innerHTML = this.element.symbol;
 		symbol.classList.add('symbol');
-		symbol.setAttribute('dx', '-10px');
+		symbol.setAttribute('dx', '-8px');
 		g.appendChild(symbol);
 		const halfLife = createSvgElement('text');
 		const [c, u] = chooseTimeUnit(this.halfLife);
