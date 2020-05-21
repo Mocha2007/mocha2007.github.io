@@ -265,7 +265,7 @@ class Isotope {
 		symbol.setAttribute('dx', '-5px');
 		g.appendChild(symbol);
 		const halfLife = createSvgElement('text');
-		const [c, u] = chooseTimeUnit(this.halfLife)
+		const [c, u] = chooseTimeUnit(this.halfLife);
 		halfLife.innerHTML = this.halfLife ? unitString(this.halfLife/c, u) : 'Stable';
 		halfLife.classList.add('halfLife');
 		halfLife.setAttribute('dx', '-20px');
