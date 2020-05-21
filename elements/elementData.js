@@ -281,6 +281,13 @@ const isotopeData = [
 		abundance: 2e-4,
 	},
 	{
+		name: 'Os-186',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 2e15*year,
+	},
+	{
 		name: 'Os-187',
 		abundance: 0.0196,
 	},
@@ -301,6 +308,13 @@ const isotopeData = [
 		abundance: 0.4078,
 	},
 	{
+		name: 'Os-194',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 6*year,
+	},
+	{
 		name: 'Ir-190',
 		decayTypes: [
 			['b+', 1],
@@ -314,6 +328,13 @@ const isotopeData = [
 	{
 		name: 'Ir-193',
 		abundance: 0.627,
+	},
+	{
+		name: 'Ir-194',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 19.28*hour,
 	},
 	{
 		name: 'Pt-190',

@@ -21,7 +21,7 @@ td {
 /* svg bs */
 svg {
 	background-color: white;
-	height: 150%;
+	height: calc(23*60px);
 	width: 100%;
 }
 circle {
