@@ -181,17 +181,38 @@ const elementData = [
 		mass: 238.02891,
 		period: 7,
 	},
+	{
+		z: 93,
+		name: 'Neptunium',
+		symbol: 'Np',
+		mass: 237,
+		period: 7,
+	},
+	{
+		z: 94,
+		name: 'Plutonium',
+		symbol: 'Pu',
+		mass: 244,
+		period: 7,
+	},
 ];
 
 const isotopeData = [
 	// ignore all decay modes with P < 0.01
-	// include all primordeal isotopes
+	// include just primordeal isotopes and daughters for now
 	{
 		name: 'Tl-207',
 		decayTypes: [
 			['b-', 1],
 		],
 		halfLife: 4.77*minute,
+	},
+	{
+		name: 'Tl-208',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 3.053*minute,
 	},
 	{
 		name: 'Tl-210',
@@ -231,6 +252,13 @@ const isotopeData = [
 		halfLife: 36.1*minute,
 	},
 	{
+		name: 'Pb-212',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 10.64*hour,
+	},
+	{
 		name: 'Pb-214',
 		decayTypes: [
 			['b-', 1],
@@ -252,6 +280,14 @@ const isotopeData = [
 		halfLife: 2.14*minute,
 	},
 	{
+		name: 'Bi-212',
+		decayTypes: [
+			['b-', 0.6405],
+			['a', 0.3594],
+		],
+		halfLife: 60.55*minute,
+	},
+	{
 		name: 'Bi-214',
 		decayTypes: [
 			['a', 0.9997],
@@ -266,11 +302,25 @@ const isotopeData = [
 		halfLife: 138.376*day,
 	},
 	{
+		name: 'Po-212',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 299e-9,
+	},
+	{
 		name: 'Po-215',
 		decayTypes: [
 			['a', 0.9999],
 		],
 		halfLife: 1.781e-3,
+	},
+	{
+		name: 'Po-216',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 0.145,
 	},
 	{
 		name: 'Po-218',
@@ -285,6 +335,13 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 3.96,
+	},
+	{
+		name: 'Rn-220',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 55.6,
 	},
 	{
 		name: 'Rn-222',
@@ -308,11 +365,25 @@ const isotopeData = [
 		halfLife: 11.43*day,
 	},
 	{
+		name: 'Ra-224',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 3.6319*day,
+	},
+	{
 		name: 'Ra-226',
 		decayTypes: [
 			['a', 1],
 		],
 		halfLife: 1600*year,
+	},
+	{
+		name: 'Ra-228',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 5.75*year,
 	},
 	{
 		name: 'Ac-227',
@@ -321,6 +392,13 @@ const isotopeData = [
 			['a', 0.0138],
 		],
 		halfLife: 21.772*year,
+	},
+	{
+		name: 'Ac-228',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 6.13*hour,
 	},
 	{
 		name: 'Pa-231',
@@ -345,6 +423,13 @@ const isotopeData = [
 		halfLife: 18.68*day,
 	},
 	{
+		name: 'Th-228',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 1.9116*year,
+	},
+	{
 		name: 'Th-230',
 		decayTypes: [
 			['a', 1],
@@ -357,6 +442,14 @@ const isotopeData = [
 			['b-', 1],
 		],
 		halfLife: 25.5*hour,
+	},
+	{
+		name: 'Th-232',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 1.405e10*year,
+		abundance: 0.9998,
 	},
 	{
 		name: 'Th-234',
@@ -382,11 +475,46 @@ const isotopeData = [
 		abundance: 0.0072,
 	},
 	{
+		name: 'U-236',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 2.342e7*year,
+	},
+	{
 		name: 'U-238',
 		decayTypes: [
 			['a', 1],
 		],
 		halfLife: 4.468e9*year,
 		abundance: 0.992745,
+	},
+	{
+		name: 'U-240',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 14.1*hour,
+	},
+	{
+		name: 'Np-240',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 61.9*minute,
+	},
+	{
+		name: 'Pu-240',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 6.561e3*year,
+	},
+	{
+		name: 'Pu-244',
+		decayTypes: [
+			['a', 0.9988],
+		],
+		halfLife: 8e7*year,
 	},
 ];
