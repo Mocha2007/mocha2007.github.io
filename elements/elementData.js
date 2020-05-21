@@ -195,6 +195,20 @@ const elementData = [
 		mass: 244,
 		period: 7,
 	},
+	{
+		z: 95,
+		name: 'Americium',
+		symbol: 'Am',
+		mass: 243,
+		period: 7,
+	},
+	{
+		z: 96,
+		name: 'Curium',
+		symbol: 'Cm',
+		mass: 247,
+		period: 7,
+	},
 ];
 
 const isotopeData = [
@@ -474,6 +488,13 @@ const isotopeData = [
 		halfLife: 24.1*day,
 	},
 	{
+		name: 'Np-239',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 2.356*day,
+	},
+	{
 		name: 'U-234',
 		decayTypes: [
 			['a', 1],
@@ -519,6 +540,13 @@ const isotopeData = [
 		halfLife: 61.9*minute,
 	},
 	{
+		name: 'Pu-239',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 2.411e4*year,
+	},
+	{
 		name: 'Pu-240',
 		decayTypes: [
 			['a', 1],
@@ -526,10 +554,31 @@ const isotopeData = [
 		halfLife: 6.561e3*year,
 	},
 	{
+		name: 'Pu-243',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 4.956*hour,
+	},
+	{
 		name: 'Pu-244',
 		decayTypes: [
 			['a', 0.9988],
 		],
 		halfLife: 8e7*year,
+	},
+	{
+		name: 'Am-243',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 7370*year,
+	},
+	{
+		name: 'Cm-247',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 1.56e7*year,
 	},
 ];

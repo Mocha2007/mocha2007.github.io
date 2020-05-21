@@ -2,6 +2,7 @@
 /* globals createSvgElement, day, elementData, hour, isotopeData, minute, range, round, unitString, year */
 'use strict';
 
+const maxZ = 96;
 const corner = 30/Math.sqrt(2);
 const decayArrows = {
 	'a': [0, 30, 0, 90],
@@ -119,7 +120,7 @@ class ChemElement {
 			const rect = createSvgElement('rect');
 			rect.setAttribute('height', '60px');
 			rect.setAttribute('width', '100%');
-			const y = 60*(106 - this.z);
+			const y = 60*(maxZ - this.z);
 			rect.setAttribute('y', y);
 			rect.setAttribute('fill', this.z % 2 ? 'white' : 'silver');
 			svg.appendChild(rect);
@@ -216,7 +217,7 @@ class Isotope {
 		// max z = seaborgium; Cf-256 => A = 256, Z = 98 => 30; He-4 => A = 4, Z = 2 => 0
 		const xFactor = Math.floor(this.mass/2) - this.element.z;
 		const x = 30 + 60*(30 - xFactor);
-		const y = 30 + 60*(106 - this.element.z);
+		const y = 30 + 60*(maxZ - this.element.z);
 		return [x, y];
 	}
 	get daughters(){
