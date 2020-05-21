@@ -155,16 +155,34 @@ class Decay {
 		decays.push(this);
 	}
 	get arrow(){
+		const g = createSvgElement('g');
+		// line
 		const line = createSvgElement('line'); // todo other types
 		const [x1, y1, x2, y2] = decayArrows[this.name];
 		line.setAttribute('x1', x1);
 		line.setAttribute('y1', y1);
 		line.setAttribute('x2', x2);
 		line.setAttribute('y2', y2);
-		return line;
+		g.appendChild(line);
+		// label
+		const text = createSvgElement('text');
+		text.innerHTML = this.symbol;
+		const [x, y] = [(x1+x2)/2, (y1+y2)/2];
+		text.setAttribute('x', x+2);
+		text.setAttribute('y', y+10);
+		text.classList.add('decayLabel');
+		g.appendChild(text);
+		return g;
 	}
 	get deltaA(){
 		return this.deltaN + this.deltaZ;
+	}
+	get symbol(){
+		return {
+			'a': 'α',
+			'b+': 'β+',
+			'b-': 'β-',
+		}[this.name];
 	}
 	/** @param {string} name */
 	static find(name){
