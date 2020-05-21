@@ -272,7 +272,15 @@ const isotopeData = [
 		decayTypes: [
 			['a', 1],
 		],
-		halfLife: 7.038e9*year,
+		halfLife: 7.038e6*year,
 		abundance: 0.0072,
+	},
+	{
+		name: 'U-238',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 4.468e9*year,
+		abundance: 0.992745,
 	},
 ];
