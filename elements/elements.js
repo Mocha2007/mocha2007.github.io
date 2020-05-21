@@ -262,24 +262,24 @@ class Isotope {
 		const superscript = createSvgElement('text');
 		superscript.innerHTML = this.mass;
 		superscript.classList.add('superscript');
-		superscript.setAttribute('dx', '-20px');
+		superscript.setAttribute('dx', '-22px');
 		superscript.setAttribute('dy', '-10px');
 		g.appendChild(superscript);
 		const subscript = createSvgElement('text');
 		subscript.innerHTML = this.element.z;
 		subscript.classList.add('subscript');
-		subscript.setAttribute('dx', '-20px');
+		subscript.setAttribute('dx', '-22px');
 		g.appendChild(subscript);
 		const symbol = createSvgElement('text');
 		symbol.innerHTML = this.element.symbol;
 		symbol.classList.add('symbol');
-		symbol.setAttribute('dx', '-5px');
+		symbol.setAttribute('dx', '-8px');
 		g.appendChild(symbol);
 		const halfLife = createSvgElement('text');
 		const [c, u] = chooseTimeUnit(this.halfLife);
 		halfLife.innerHTML = this.halfLife ? unitString(this.halfLife/c, u) : 'Stable';
 		halfLife.classList.add('halfLife');
-		halfLife.setAttribute('dx', '-20px');
+		halfLife.setAttribute('dx', '-22px');
 		halfLife.setAttribute('dy', '15px');
 		g.appendChild(halfLife);
 		// draw arrows
