@@ -317,6 +317,13 @@ const isotopeData = [
 		halfLife: 26.8*minute,
 	},
 	{
+		name: 'Bi-208',
+		decayTypes: [
+			['b+', 1],
+		],
+		halfLife: 3.68e5*year,
+	},
+	{
 		name: 'Bi-209',
 		decayTypes: [
 			['a', 1],
@@ -681,5 +688,13 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 1.56e7*year,
+	},
+	{
+		name: 'Cm-248',
+		decayTypes: [
+			['a', 0.9174],
+			['sf', 0.0826],
+		],
+		halfLife: 3.48e5*year,
 	},
 ];

@@ -9,6 +9,7 @@ const decayArrows = {
 	'b+': [-corner, corner, corner-60, 60-corner],
 	'b-': [corner, -corner, 60-corner, corner-60],
 	'ec': [-corner, corner, corner-60, 60-corner],
+	'sf': [30, 0, 38, 0],
 };
 
 const typeColors = {
@@ -185,6 +186,7 @@ class Decay {
 			'b+': 'β+',
 			'b-': 'β-',
 			'ec': 'EC',
+			'sf': 'SF',
 		}[this.name];
 	}
 	/** @param {string} name */
