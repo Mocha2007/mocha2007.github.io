@@ -14,7 +14,7 @@ const decayArrows = {
 	'sf': [30, 0, 38, 0],
 };
 
-const typeColors = {
+const elemCatColors = {
 	'Alkali metal': '#f66',
 	'Alkaline earth metal': '#fda',
 	'Lanthanide': '#fbf',
@@ -51,8 +51,27 @@ class ChemElement {
 		elements.push(this);
 		this.createElement();
 	}
+	get category(){
+		if ([1, 6, 7, 8, 9, 15, 16, 17, 34, 35, 53].includes(this.z))
+			return 'Reactive nonmetal';
+		if ([5, 14, 32, 33, 51, 52, 85].includes(this.z))
+			return 'Metalloid';
+		if (this.group === 1)
+			return 'Alkali metal';
+		if (this.group === 2)
+			return 'Alkaline earth metal';
+		if (this.group === 18)
+			return 'Noble gas';
+		if (11 < this.group)
+			return 'Post-transition metal';
+		if (this.period === 6 && this.z < 72)
+			return 'Lanthanide';
+		if (this.period === 7 && this.z < 104)
+			return 'Actinide';
+		return 'Transition metal';
+	}
 	get color(){
-		return typeColors[this.type];
+		return elemCatColors[this.category];
 	}
 	/** @return {[number, number]} zero-indexed coord of the square */
 	get coords(){
@@ -75,25 +94,6 @@ class ChemElement {
 	/** @return {HTMLDivElement} DOM element */
 	get element(){
 		return document.getElementById(this.name);
-	}
-	get type(){
-		if ([1, 6, 7, 8, 9, 15, 16, 17, 34, 35, 53].includes(this.z))
-			return 'Reactive nonmetal';
-		if ([5, 14, 32, 33, 51, 52, 85].includes(this.z))
-			return 'Metalloid';
-		if (this.group === 1)
-			return 'Alkali metal';
-		if (this.group === 2)
-			return 'Alkaline earth metal';
-		if (this.group === 18)
-			return 'Noble gas';
-		if (11 < this.group)
-			return 'Post-transition metal';
-		if (this.period === 6 && this.z < 72)
-			return 'Lanthanide';
-		if (this.period === 7 && this.z < 104)
-			return 'Actinide';
-		return 'Transition metal';
 	}
 	createElement(){
 		const div = document.createElement('div');
@@ -366,3 +366,5 @@ main();
 /* todo list
 - add a "circle radius" variable for convenience
 */
+// DEBUG DONT PUSH
+// setDecayChainLength(32, 98);
