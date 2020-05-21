@@ -1,5 +1,6 @@
 /* jshint esversion: 6, strict: true, strict: global */
-/* globals createSvgElement, day, elementData, hour, isotopeData, minute, range, round, unitString, year */
+/* globals createSvgElement, day, deg, elementData, hour,
+	isotopeData, minute, range, round, unitString, year */
 /* exported setDecayChainLength */
 'use strict';
 
@@ -203,8 +204,14 @@ class Decay {
 			const fraction = createSvgElement('text');
 			fraction.innerHTML = round(p*100, 2) + '%';
 			fraction.classList.add('fraction');
-			fraction.setAttribute('x', x-1);
-			fraction.setAttribute('y', y-7);
+			fraction.setAttribute('x', 2); // so it's not right at the beginning
+			fraction.setAttribute('y', -5); // so it's not right on the line
+			let angle = Math.atan2(y, x)/deg;
+			if (90 < angle){
+				angle -= 180;
+				fraction.setAttribute('x', -20);
+			}
+			fraction.setAttribute('transform', `translate(${x1}, ${y1}) rotate(${angle})`);
 			g.appendChild(fraction);
 		}
 		return g;

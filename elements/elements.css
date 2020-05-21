@@ -51,6 +51,8 @@ line {
 }
 .fraction, .subscript, .superscript {
 	font-size: 50%;
+}
+.subscript, .superscript {
 	text-anchor: end;
 }
 .svgLabel, .symbol {
