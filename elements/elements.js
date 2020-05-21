@@ -198,6 +198,15 @@ class Decay {
 		text.setAttribute('y', y+10);
 		text.classList.add('decayLabel');
 		g.appendChild(text);
+		// fraction
+		if (p < 1){
+			const fraction = createSvgElement('text');
+			fraction.innerHTML = round(p*100, 2) + '%';
+			fraction.classList.add('fraction');
+			fraction.setAttribute('x', x-1);
+			fraction.setAttribute('y', y-7);
+			g.appendChild(fraction);
+		}
 		return g;
 	}
 	/** @param {string} name */
@@ -263,13 +272,13 @@ class Isotope {
 		const superscript = createSvgElement('text');
 		superscript.innerHTML = this.mass;
 		superscript.classList.add('superscript');
-		superscript.setAttribute('dx', '-22px');
+		superscript.setAttribute('dx', '-10px');
 		superscript.setAttribute('dy', '-10px');
 		g.appendChild(superscript);
 		const subscript = createSvgElement('text');
 		subscript.innerHTML = this.element.z;
 		subscript.classList.add('subscript');
-		subscript.setAttribute('dx', '-22px');
+		subscript.setAttribute('dx', '-10px');
 		g.appendChild(subscript);
 		const symbol = createSvgElement('text');
 		symbol.innerHTML = this.element.symbol;
@@ -280,7 +289,6 @@ class Isotope {
 		const [c, u] = chooseTimeUnit(this.halfLife);
 		halfLife.innerHTML = this.halfLife ? unitString(this.halfLife/c, u) : 'Stable';
 		halfLife.classList.add('halfLife');
-		halfLife.setAttribute('dx', '-22px');
 		halfLife.setAttribute('dy', '15px');
 		g.appendChild(halfLife);
 		// draw arrows

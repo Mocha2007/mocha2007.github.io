@@ -43,9 +43,11 @@ line {
 }
 .halfLife {
 	font-size: 75%;
+	text-anchor: middle;
 }
-.subscript, .superscript {
+.fraction, .subscript, .superscript {
 	font-size: 50%;
+	text-anchor: end;
 }
 .svgLabel, .symbol {
 	font-size: 150%;
