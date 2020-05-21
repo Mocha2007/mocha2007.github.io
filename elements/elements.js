@@ -195,7 +195,7 @@ class Decay {
 		const text = createSvgElement('text');
 		text.innerHTML = this.symbol;
 		const [x, y] = [(x1+x2)/2, (y1+y2)/2];
-		text.setAttribute('x', x+2);
+		text.setAttribute('x', x+3);
 		text.setAttribute('y', y+10);
 		text.classList.add('decayLabel');
 		g.appendChild(text);
@@ -280,7 +280,7 @@ class Isotope {
 		superscript.innerHTML = this.mass;
 		superscript.classList.add('superscript');
 		superscript.setAttribute('dx', '-10px');
-		superscript.setAttribute('dy', '-10px');
+		superscript.setAttribute('dy', '-11px');
 		g.appendChild(superscript);
 		const subscript = createSvgElement('text');
 		subscript.innerHTML = this.element.z;
@@ -290,7 +290,7 @@ class Isotope {
 		const symbol = createSvgElement('text');
 		symbol.innerHTML = this.element.symbol;
 		symbol.classList.add('symbol');
-		symbol.setAttribute('dx', '-8px');
+		symbol.setAttribute('dx', '-10px');
 		g.appendChild(symbol);
 		const halfLife = createSvgElement('text');
 		const [c, u] = chooseTimeUnit(this.halfLife);

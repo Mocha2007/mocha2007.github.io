@@ -2,7 +2,7 @@ html, body, #table, td div {
 	background-color: black;
 	color: #222;
 	height: 100%;
-	font-family: sans-serif;
+	font-family: DejaVu Sans, sans-serif;
 	margin: 0;
 	/* overflow: hidden; */
 	width: 100%;
@@ -26,6 +26,7 @@ td {
 svg {
 	background-color: white;
 	display: block;
+	font-family: DejaVu Sans Condensed, sans-serif;
 	height: calc(19*60px);
 	margin-left: auto;
 	margin-right: auto;
@@ -51,7 +52,7 @@ line {
 	font-style: italic;
 }
 .halfLife {
-	font-size: 75%;
+	font-size: 70%;
 	text-anchor: middle;
 }
 .fraction, .subscript, .superscript {
