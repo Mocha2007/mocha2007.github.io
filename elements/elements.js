@@ -1,5 +1,5 @@
 /* jshint esversion: 6, strict: true, strict: global */
-/* globals createSvgElement, elementData, isotopeData, range, round, unitString */
+/* globals createSvgElement, day, elementData, hour, isotopeData, minute, range, round, unitString, year */
 'use strict';
 
 const corner = 30/Math.sqrt(2);
@@ -259,7 +259,8 @@ class Isotope {
 		symbol.setAttribute('dx', '-5px');
 		g.appendChild(symbol);
 		const halfLife = createSvgElement('text');
-		halfLife.innerHTML = this.halfLife ? unitString(this.halfLife, 's') : 'Stable'; // todo
+		const [c, u] = chooseTimeUnit(this.halfLife)
+		halfLife.innerHTML = this.halfLife ? unitString(this.halfLife/c, u) : 'Stable';
 		halfLife.classList.add('halfLife');
 		halfLife.setAttribute('dx', '-20px');
 		halfLife.setAttribute('dy', '15px');
@@ -279,6 +280,24 @@ class Isotope {
 		return new Isotope(ChemElement.fromSymbol(symbol), mass,
 			decayTypes, o.halfLife, o.abundance);
 	}
+}
+
+// functions
+
+/**
+ * @param {number} value
+ * @return {[number, string]}
+ */
+function chooseTimeUnit(value){
+	if (value < minute)
+		return [1, 's'];
+	if (value < hour)
+		return [minute, 'min'];
+	if (value < day)
+		return [hour, 'h'];
+	if (value < year)
+		return [day, 'd'];
+	return [year, 'yr'];
 }
 
 // main
