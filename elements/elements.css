@@ -7,6 +7,10 @@ html, body, #table, td div {
 	/* overflow: hidden; */
 	width: 100%;
 }
+h2, h3, p {
+	color: silver;
+	margin-left: 1vw;
+}
 td {
 	font-size: 2vh;
 	height: 10%;
@@ -21,7 +25,7 @@ td {
 /* svg bs */
 svg {
 	background-color: white;
-	height: calc(23*60px);
+	height: calc(19*60px);
 	width: 100%;
 }
 circle {

@@ -1,5 +1,6 @@
 /* jshint esversion: 6, strict: true, strict: global */
 /* globals createSvgElement, day, elementData, hour, isotopeData, minute, range, round, unitString, year */
+/* exported setDecayChainLength */
 'use strict';
 
 const maxZ = 98;
@@ -317,6 +318,12 @@ function chooseTimeUnit(value){
 	return [year, 'yr'];
 }
 
+/** @param {number} n - default = 23 */
+function setDecayChainLength(n){
+	const svgs = document.getElementsByTagName('svg');
+	Array.from(svgs).forEach(svg => svg.style.height = `calc(${n}*60px)`);
+}
+
 // main
 
 function main(){
@@ -344,6 +351,6 @@ function main(){
 }
 
 main();
-// debug remove this before pushing
-// const u235 = isotopes[1];
-// u235.createElement();
+/* todo list
+- add a "circle radius" variable for convenience
+*/
