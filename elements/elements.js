@@ -8,6 +8,7 @@ const decayArrows = {
 	'a': [0, 30, 0, 90],
 	'b+': [-corner, corner, corner-60, 60-corner],
 	'b-': [corner, -corner, 60-corner, corner-60],
+	'b-b-': [corner, -corner, 120-corner, corner-120], // todo make this not intersect shit
 	'ec': [-corner, corner, corner-60, 60-corner],
 	'sf': [30, 0, 38, 0],
 };
@@ -157,7 +158,21 @@ class Decay {
 		this.deltaN = deltaN;
 		decays.push(this);
 	}
-	get arrow(){
+	get deltaA(){
+		return this.deltaN + this.deltaZ;
+	}
+	get symbol(){
+		return {
+			'a': 'α',
+			'b+': 'β+',
+			'b-': 'β-',
+			'b-b-': 'β-β-',
+			'ec': 'EC',
+			'sf': 'SF',
+		}[this.name];
+	}
+	/** @param {number} p - probability */
+	arrow(p){
 		const g = createSvgElement('g');
 		// line
 		const line = createSvgElement('line'); // todo other types
@@ -166,6 +181,13 @@ class Decay {
 		line.setAttribute('y1', y1);
 		line.setAttribute('x2', x2);
 		line.setAttribute('y2', y2);
+		// todo show probability somehow...
+		if (p < 0.01)
+			g.style.opacity = 0.5;
+		if (p < 0.0001)
+			line.style['stroke-dasharray'] = '2,2';
+		else if (p < 0.01)
+			line.style['stroke-dasharray'] = '4,4';
 		g.appendChild(line);
 		// label
 		const text = createSvgElement('text');
@@ -177,18 +199,6 @@ class Decay {
 		g.appendChild(text);
 		return g;
 	}
-	get deltaA(){
-		return this.deltaN + this.deltaZ;
-	}
-	get symbol(){
-		return {
-			'a': 'α',
-			'b+': 'β+',
-			'b-': 'β-',
-			'ec': 'EC',
-			'sf': 'SF',
-		}[this.name];
-	}
 	/** @param {string} name */
 	static find(name){
 		return decays.filter(d => d.name === name)[0];
@@ -197,6 +207,7 @@ class Decay {
 new Decay('a', -2, -2); // Alpha Decay
 new Decay('b+', -1, 1); // Beta+ Decay
 new Decay('b-', 1, -1); // Beta- Decay
+new Decay('b-b-', 2, -2); // Double Beta- Decay
 new Decay('ec', -1, 1); // Electron Capture
 const sf = new Decay('sf'); // Spontaneous Fission
 
@@ -272,7 +283,7 @@ class Isotope {
 		halfLife.setAttribute('dy', '15px');
 		g.appendChild(halfLife);
 		// draw arrows
-		this.decayTypes.forEach(d => g.appendChild(d[0].arrow));
+		this.decayTypes.forEach(d => g.appendChild(d[0].arrow(d[1])));
 	}
 	/** @param {string} name */
 	static find(name){
