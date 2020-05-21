@@ -97,6 +97,14 @@ const elementData = [
 		period: 4,
 	},
 	{
+		z: 74,
+		name: 'Tungsten',
+		symbol: 'W',
+		mass: 183.84,
+		group: 6,
+		period: 6,
+	},
+	{
 		z: 76,
 		name: 'Osmium',
 		symbol: 'Os',
@@ -283,6 +291,104 @@ const isotopeData = [
 	{
 		name: 'H-2',
 		abundance: 0.0002,
+	},
+	{
+		name: 'H-3',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 12.32*year,
+	},
+	{
+		name: 'He-3',
+		abundance: 1.34e-6,
+	},
+	{
+		name: 'He-4',
+		abundance: 0.99999866,
+	},
+	{
+		name: 'Li-6',
+		abundance: 0.0759,
+	},
+	{
+		name: 'Li-7',
+		abundance: 0.9241,
+	},
+	{
+		name: 'Be-9',
+		abundance: 1,
+	},
+	{
+		name: 'Be-10',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 1.51e6*year,
+	},
+	{
+		name: 'B-10',
+		abundance: 0.199,
+	},
+	{
+		name: 'B-11',
+		abundance: 0.801,
+	},
+	{
+		name: 'C-12',
+		abundance: 0.9893,
+	},
+	{
+		name: 'C-13',
+		abundance: 0.0107,
+	},
+	{
+		name: 'C-14',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 5730*year,
+	},
+	{
+		name: 'N-14',
+		abundance: 0.99636,
+	},
+	{
+		name: 'N-15',
+		abundance: 0.00364,
+	},
+	{
+		name: 'O-16',
+		abundance: 0.99757,
+	},
+	{
+		name: 'O-17',
+		abundance: 3.8e-4,
+	},
+	{
+		name: 'O-18',
+		abundance: 2.05e-3,
+	},
+	{
+		name: 'F-19',
+		abundance: 1,
+	},
+	{
+		name: 'Ne-20',
+		abundance: 0.9048,
+	},
+	{
+		name: 'Ne-21',
+		abundance: 0.0027,
+	},
+	{
+		name: 'Ne-22',
+		abundance: 0.0925,
+	},
+	// skip a few...
+	{
+		name: 'W-182',
+		abundance: 0.265,
 	},
 	{
 		name: 'Os-184',
