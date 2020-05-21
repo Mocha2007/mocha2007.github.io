@@ -121,14 +121,14 @@ class ChemElement {
 	createSVGLabel(){
 		range(4).forEach(i => {
 			const svg = document.getElementById('decay'+i);
-			// rect
-			const rect = createSvgElement('rect');
-			rect.setAttribute('height', '60px');
-			rect.setAttribute('width', '100%');
 			const y = 60*(maxZ - this.z);
-			rect.setAttribute('y', y);
-			rect.setAttribute('fill', this.z % 2 ? 'white' : 'silver');
-			svg.appendChild(rect);
+			// rect
+			if (this.z % 2){
+				const rect = createSvgElement('rect');
+				rect.classList.add('darkRect');
+				rect.setAttribute('y', y);
+				svg.appendChild(rect);
+			}
 			// text label
 			const text = createSvgElement('text');
 			text.setAttribute('y', y + 35);

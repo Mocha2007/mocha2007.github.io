@@ -42,6 +42,11 @@ line {
 	stroke: black;
 	stroke-width: 1;
 }
+.darkRect {
+	fill: #eee;
+	height: 60px;
+	width: 100%;
+}
 .decayLabel {
 	font-style: italic;
 }
@@ -55,9 +60,10 @@ line {
 .subscript, .superscript {
 	text-anchor: end;
 }
-.svgLabel, .symbol {
-	font-size: 150%;
+.svgLabel {
+	fill: #555;
 }
 .symbol {
+	font-size: 150%;
 	font-weight: bold;
 }
