@@ -97,6 +97,22 @@ const elementData = [
 		period: 4,
 	},
 	{
+		z: 76,
+		name: 'Osmium',
+		symbol: 'Os',
+		mass: 190.23,
+		group: 8,
+		period: 6,
+	},
+	{
+		z: 77,
+		name: 'Iridium',
+		symbol: 'Ir',
+		mass: 192.217,
+		group: 9,
+		period: 6,
+	},
+	{
 		z: 78,
 		name: 'Platinum',
 		symbol: 'Pt',
@@ -261,8 +277,62 @@ const isotopeData = [
 	// ignore all decay modes with P < 0.01
 	// include just HL >= 1 yr
 	{
+		name: 'Os-184',
+		abundance: 2e-4,
+	},
+	{
+		name: 'Os-187',
+		abundance: 0.0196,
+	},
+	{
+		name: 'Os-188',
+		abundance: 0.1324,
+	},
+	{
+		name: 'Os-189',
+		abundance: 0.1615,
+	},
+	{
+		name: 'Os-190',
+		abundance: 0.2626,
+	},
+	{
+		name: 'Os-192',
+		abundance: 0.4078,
+	},
+	{
+		name: 'Ir-190',
+		decayTypes: [
+			['b+', 1],
+		],
+		halfLife: 11.78*day,
+	},
+	{
+		name: 'Ir-191',
+		abundance: 0.373,
+	},
+	{
+		name: 'Ir-193',
+		abundance: 0.627,
+	},
+	{
+		name: 'Pt-190',
+		decayTypes: [
+			['b+', 1],
+		],
+		halfLife: 6.5e11*year,
+		abundance: 1.4e-4,
+	},
+	{
 		name: 'Pt-192',
 		abundance: 0.00782,
+	},
+	{
+		name: 'Pt-193',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 50*year,
 	},
 	{
 		name: 'Pt-194',
