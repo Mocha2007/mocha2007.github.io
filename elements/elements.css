@@ -11,6 +11,9 @@ h2, h3, p {
 	color: silver;
 	margin-left: 1vw;
 }
+a {
+	color: cornflowerblue;
+}
 table {
 	table-layout: fixed;
 }
