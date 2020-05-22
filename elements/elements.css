@@ -11,9 +11,13 @@ h2, h3, p {
 	color: silver;
 	margin-left: 1vw;
 }
+table {
+	table-layout: fixed;
+}
 td {
-	font-size: 2vh;
+	font-size: 1.7vh;
 	height: 10%;
+	line-height: 2.5vh;
 	padding: 0;
 	padding-right: 4px;
 	text-align: center;
