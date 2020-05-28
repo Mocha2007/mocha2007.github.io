@@ -145,15 +145,22 @@ class ChemElement {
 	updateColor(type){
 		/** @type {HTMLDivElement} */
 		const div = document.getElementById(this.name);
-		let c;
+		let c, x;
 		switch (type){
 			case 'category':
 				c = this.color;
+				break;
+			case 'weight':
+				x = 255*this.mass/ChemElement.maxWeight;
+				c = `rgb(255, ${255-x}, ${255-x})`;
 				break;
 			default:
 				c = 'white';
 		}
 		div.style.backgroundColor = c;
+	}
+	static get maxWeight(){
+		return Math.max(...elements.map(e => e.mass));
 	}
 	static fromJSON(o){
 		return new ChemElement(o.z, o.name, o.symbol, o.mass, o.group, o.period);
