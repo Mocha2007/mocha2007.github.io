@@ -9,11 +9,19 @@
 <script src="isotopeData.js"></script>
 <title>Periodic Table</title>
 <table id="table"></table>
+<h2>Table Type</h2>
+<p>
+	(todo)
+</p>
 <h2>Decay Chains</h2>
 <p>
 	Controls:<br>
-	<a href="javascript:setDecayChainLength(14, 19)">Brief</a>
-	<a href="javascript:setDecayChainLength(32, 98)">Full</a>
+	<label onclick="setDecayChainLength(14, 19)">Brief
+		<input name="decay" type="radio" checked>
+	</label>
+	<label onclick="setDecayChainLength(32, 98)">Full
+		<input name="decay" type="radio">
+	</label>
 </p>
 <h3>4n Decay Chain</h3>
 <svg id="decay0">
