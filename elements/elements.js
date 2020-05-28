@@ -110,7 +110,7 @@ class ChemElement {
 		div.appendChild(name);
 		div.innerHTML += `<br>${this.z}<br>${this.symbol}<br>`;
 		const mass = document.createElement('span');
-		mass.innerHTML = round(this.mass, 3);
+		mass.innerHTML = this.mass % 1 ? round(this.mass, 3) : `[${this.mass}]`;
 		mass.classList.add('smaller');
 		div.appendChild(mass);
 		// styling
