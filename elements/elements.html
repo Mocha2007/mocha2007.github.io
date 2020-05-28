@@ -11,17 +11,22 @@
 <table id="table"></table>
 <h2>Table Type</h2>
 <p>
-	(todo)
+	<label onclick="tableColor('blank')">
+		<input name="table" type="radio">
+	Blank</label><br>
+	<label onclick="tableColor('category')">
+		<input name="table" type="radio" checked>
+	Category</label>
 </p>
 <h2>Decay Chains</h2>
 <p>
 	Diagram Type:<br>
-	<label onclick="setDecayChainLength(14, 19)">Brief
+	<label onclick="setDecayChainLength(14, 19)">
 		<input name="decay" type="radio" checked>
-	</label>
-	<label onclick="setDecayChainLength(32, 98)">Full
+	Brief</label><br>
+	<label onclick="setDecayChainLength(32, 98)">
 		<input name="decay" type="radio">
-	</label>
+	Full</label>
 </p>
 <h3>4n Decay Chain</h3>
 <svg id="decay0">

@@ -1,7 +1,7 @@
 /* jshint esversion: 6, strict: true, strict: global */
 /* globals createSvgElement, day, deg, elementData, hour,
 	isotopeData, minute, range, round, sum, unitString, year */
-/* exported setDecayChainLength */
+/* exported setDecayChainLength, tableColor */
 'use strict';
 
 const eV = 1.602176634e-19; // J; exact; electronvolt
@@ -140,6 +140,20 @@ class ChemElement {
 			text.classList.add('svgLabel');
 			svg.appendChild(text);
 		});
+	}
+	/** @param {string} type */
+	updateColor(type){
+		/** @type {HTMLDivElement} */
+		const div = document.getElementById(this.name);
+		let c;
+		switch (type){
+			case 'category':
+				c = this.color;
+				break;
+			default:
+				c = 'white';
+		}
+		div.style.backgroundColor = c;
 	}
 	static fromJSON(o){
 		return new ChemElement(o.z, o.name, o.symbol, o.mass, o.group, o.period);
@@ -361,6 +375,11 @@ function setDecayChainLength(width, height){
 		svg.style.width = `calc(${width}*60px)`;
 		svg.style.height = `calc(${height}*60px)`;
 	});
+}
+
+/** @param {string} type */
+function tableColor(type){
+	elements.forEach(e => e.updateColor(type));
 }
 
 // main
