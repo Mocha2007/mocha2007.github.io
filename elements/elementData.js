@@ -292,6 +292,30 @@ const elementData = [
 	},
 	// skip a few
 	{
+		z: 55,
+		name: 'Cesium',
+		symbol: 'Cs',
+		mass: 132.90545196,
+		group: 1,
+		period: 6,
+	},
+	{
+		z: 56,
+		name: 'Barium',
+		symbol: 'Ba',
+		mass: 137.327,
+		group: 2,
+		period: 6,
+	},
+	{
+		z: 57,
+		name: 'Lanthanum',
+		symbol: 'La',
+		mass: 138.90547,
+		group: 3,
+		period: 6,
+	},
+	{
 		z: 58,
 		name: 'Cerium',
 		symbol: 'Ce',

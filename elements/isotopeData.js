@@ -597,6 +597,84 @@ const isotopeData = [
 	},
 	// skip a few...
 	{
+		name: 'Cs-133',
+		abundance: 1,
+	},
+	{
+		name: 'Cs-134',
+		decayTypes: [
+			['b-', 1],
+			['ec', 3e-6],
+		],
+		halfLife: 2.0652*year,
+	},
+	{
+		name: 'Cs-135',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 2.3e6*year,
+	},
+	{
+		name: 'Cs-137',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 30.1671*year,
+	},
+	{
+		name: 'Ba-130',
+		decayTypes: [
+			['ecec', 1],
+		],
+		halfLife: 1.6e21*year,
+		abundance: 0.00106,
+	},
+	{
+		name: 'Ba-132',
+		abundance: 0.00101,
+	},
+	{
+		name: 'Ba-133',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 10.51*year,
+	},
+	{
+		name: 'Ba-134',
+		abundance: 0.02417,
+	},
+	{
+		name: 'Ba-135',
+		abundance: 0.06592,
+	},
+	{
+		name: 'Ba-136',
+		abundance: 0.07854,
+	},
+	{
+		name: 'Ba-137',
+		abundance: 0.11232,
+	},
+	{
+		name: 'Ba-138',
+		abundance: 0.71698,
+	},
+	{
+		name: 'La-138',
+		decayTypes: [
+			['b+', 0.664],
+			['b-', 0.336],
+		],
+		halfLife: 1.02e11*year,
+		abundance: 9e-4,
+	},
+	{
+		name: 'La-139',
+		abundance: 0.9991,
+	},
+	{
 		name: 'Ce-136',
 		abundance: 0.00185,
 	},
@@ -992,6 +1070,13 @@ const isotopeData = [
 	{
 		name: 'Ta-181',
 		abundance: 0.99988,
+	},
+	{
+		name: 'Ta-182',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 114.43*day,
 	},
 	{
 		name: 'W-180',
