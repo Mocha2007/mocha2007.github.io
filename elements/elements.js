@@ -100,6 +100,13 @@ class ChemElement {
 	get element(){
 		return document.getElementById(this.name);
 	}
+	/** @return {Isotope[]} this element's isotopes */
+	get isotopes(){
+		return isotopes.filter(i => i.element === this);
+	}
+	get stable(){
+		return this.isotopes.some(i => i.stable);
+	}
 	createElement(){
 		const div = document.createElement('div');
 		div.id = this.name;
@@ -149,6 +156,15 @@ class ChemElement {
 		switch (type){
 			case 'category':
 				c = this.color;
+				break;
+			case 'halflife':
+				if (this.stable){
+					c = '#0c0';
+					break;
+				}
+				const hl = Math.max(...this.isotopes.map(i => i.halfLife));
+				x = 255*Math.log(hl)/Math.log(Isotope.maxHalfLife);
+				c = `rgb(${255-x}, 128, ${255-x})`;
 				break;
 			case 'weight':
 				x = 255*this.mass/ChemElement.maxWeight;
@@ -304,6 +320,9 @@ class Isotope {
 	get power(){
 		return sum(this.decayTypes.map(d => d[1]*d[0].energy))/this.halfLife;
 	}
+	get stable(){
+		return this.halfLife === 0;
+	}
 	createElement(){
 		const chain = 'decay' + this.mass % 4;
 		const svg = document.getElementById(chain);
@@ -335,12 +354,15 @@ class Isotope {
 		g.appendChild(symbol);
 		const halfLife = createSvgElement('text');
 		const [c, u] = chooseTimeUnit(this.halfLife);
-		halfLife.innerHTML = this.halfLife ? unitString(this.halfLife/c, u) : 'Stable';
+		halfLife.innerHTML = this.stable ? unitString(this.halfLife/c, u) : 'Stable';
 		halfLife.classList.add('halfLife');
 		halfLife.setAttribute('dy', '15px');
 		g.appendChild(halfLife);
 		// draw arrows
 		this.decayTypes.forEach(d => g.appendChild(d[0].arrow(d[1])));
+	}
+	static get maxHalfLife(){
+		return Math.max(...isotopes.map(i => i.halfLife));
 	}
 	/** @param {string} name */
 	static find(name){
