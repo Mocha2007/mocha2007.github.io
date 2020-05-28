@@ -292,11 +292,35 @@ const elementData = [
 	},
 	// skip a few
 	{
+		z: 72,
+		name: 'Hafnium',
+		symbol: 'Hf',
+		mass: 178.486,
+		group: 4,
+		period: 6,
+	},
+	{
+		z: 73,
+		name: 'Tantalum',
+		symbol: 'Ta',
+		mass: 180.94788,
+		group: 5,
+		period: 6,
+	},
+	{
 		z: 74,
 		name: 'Tungsten',
 		symbol: 'W',
 		mass: 183.84,
 		group: 6,
+		period: 6,
+	},
+	{
+		z: 75,
+		name: 'Rhenium',
+		symbol: 'Rh',
+		mass: 186.207,
+		group: 7,
 		period: 6,
 	},
 	{

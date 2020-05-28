@@ -597,8 +597,86 @@ const isotopeData = [
 	},
 	// skip a few...
 	{
+		name: 'Hf-174',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 2e15*year,
+		abundance: 0.0016,
+	},
+	{
+		name: 'Hf-176',
+		abundance: 0.0526,
+	},
+	{
+		name: 'Hf-177',
+		abundance: 0.186,
+	},
+	{
+		name: 'Hf-178',
+		abundance: 0.2728,
+	},
+	{
+		name: 'Hf-179',
+		abundance: 0.1362,
+	},
+	{
+		name: 'Hf-180',
+		abundance: 0.3508,
+	},
+	{
+		name: 'Hf-182',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 8.9e6*year,
+	},
+	{
+		name: 'Ta-179',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 1.82*year,
+	},
+	{
+		name: 'Ta-181',
+		abundance: 0.99988,
+	},
+	{
+		name: 'W-180',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 1.8e18*year,
+		abundance: 0.0012,
+	},
+	{
 		name: 'W-182',
 		abundance: 0.265,
+	},
+	{
+		name: 'W-183',
+		abundance: 0.1431,
+	},
+	{
+		name: 'W-184',
+		abundance: 0.3064,
+	},
+	{
+		name: 'W-186',
+		abundance: 0.2843,
+	},
+	{
+		name: 'Rh-185',
+		abundance: 0.374,
+	},
+	{
+		name: 'Rh-187',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 41.2e9*year,
+		abundance: 0.626,
 	},
 	{
 		name: 'Os-184',
