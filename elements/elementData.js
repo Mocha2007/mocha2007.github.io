@@ -723,6 +723,13 @@ const isotopeData = [
 		abundance: 1.17e-4,
 	},
 	{
+		name: 'K-42',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 12.355*hour,
+	},
+	{
 		name: 'K-41',
 		abundance: 0.067302,
 	},
@@ -759,6 +766,13 @@ const isotopeData = [
 			['b-b-', 1],
 		],
 		halfLife: 6.4e19*year,
+	},
+	{
+		name: 'Sc-44',
+		decayTypes: [
+			['b+', 1],
+		],
+		halfLife: 3.97*hour,
 	},
 	{
 		name: 'Sc-45',
@@ -803,6 +817,258 @@ const isotopeData = [
 	{
 		name: 'V-51',
 		abundance: 0.9975,
+	},
+	{
+		name: 'Cr-50',
+		abundance: 0.04345,
+	},
+	{
+		name: 'Cr-52',
+		abundance: 0.83789,
+	},
+	{
+		name: 'Cr-53',
+		abundance: 0.09501,
+	},
+	{
+		name: 'Cr-54',
+		abundance: 0.02365,
+	},
+	{
+		name: 'Mn-53',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 3.7e6*year,
+	},
+	{
+		name: 'Mn-55',
+		abundance: 1,
+	},
+	{
+		name: 'Fe-54',
+		abundance: 0.05845,
+	},
+	{
+		name: 'Fe-55',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 2.737*year,
+	},
+	{
+		name: 'Fe-56',
+		abundance: 0.91754,
+	},
+	{
+		name: 'Fe-57',
+		abundance: 0.02119,
+	},
+	{
+		name: 'Fe-58',
+		abundance: 0.00282,
+	},
+	{
+		name: 'Fe-60',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 2.6e6*year,
+	},
+	{
+		name: 'Co-59',
+		abundance: 1,
+	},
+	{
+		name: 'Co-60',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 5.2713*year,
+	},
+	{
+		name: 'Ni-58',
+		abundance: 0.680769,
+	},
+	{
+		name: 'Ni-59',
+		decayTypes: [
+			['ec', 1],
+			['b+', 1.5e-7],
+		],
+		halfLife: 7.6e4*year,
+	},
+	{
+		name: 'Ni-60',
+		abundance: 0.262231,
+	},
+	{
+		name: 'Ni-61',
+		abundance: 0.011399,
+	},
+	{
+		name: 'Ni-62',
+		abundance: 0.036345,
+	},
+	{
+		name: 'Ni-63',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 100.1*year,
+	},
+	{
+		name: 'Ni-64',
+		abundance: 0.009256,
+	},
+	{
+		name: 'Cu-63',
+		abundance: 0.6915,
+	},
+	{
+		name: 'Cu-65',
+		abundance: 0.3085,
+	},
+	{
+		name: 'Zn-64',
+		abundance: 0.4917,
+	},
+	{
+		name: 'Zn-66',
+		abundance: 0.2773,
+	},
+	{
+		name: 'Zn-67',
+		abundance: 0.0404,
+	},
+	{
+		name: 'Zn-68',
+		abundance: 0.1845,
+	},
+	{
+		name: 'Zn-70',
+		abundance: 0.0061,
+	},
+	{
+		name: 'Ga-69',
+		abundance: 0.60108,
+	},
+	{
+		name: 'Ga-71',
+		abundance: 0.39892,
+	},
+	{
+		name: 'Ge-70',
+		abundance: 0.2038,
+	},
+	{
+		name: 'Ge-72',
+		abundance: 0.2731,
+	},
+	{
+		name: 'Ge-73',
+		abundance: 0.0776,
+	},
+	{
+		name: 'Ge-74',
+		abundance: 0.3672,
+	},
+	{
+		name: 'Ge-76',
+		decayTypes: [
+			['b-b-', 1],
+		],
+		halfLife: 1.926e21*year,
+		abundance: 0.0783,
+	},
+	{
+		name: 'As-75',
+		abundance: 1,
+	},
+	{
+		name: 'Se-74',
+		abundance: 0.0089,
+	},
+	{
+		name: 'Se-76',
+		abundance: 0.0937,
+	},
+	{
+		name: 'Se-77',
+		abundance: 0.0763,
+	},
+	{
+		name: 'Se-78',
+		abundance: 0.2377,
+	},
+	{
+		name: 'Se-79',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 3.27e5*year,
+	},
+	{
+		name: 'Se-80',
+		abundance: 0.4961,
+	},
+	{
+		name: 'Se-82',
+		decayTypes: [
+			['b-b-', 1],
+		],
+		halfLife: 0.97e20*year,
+		abundance: 0.0873,
+	},
+	{
+		name: 'Br-79',
+		abundance: 0.5069,
+	},
+	{
+		name: 'Br-81',
+		abundance: 0.4931,
+	},
+	{
+		name: 'Kr-78',
+		decayTypes: [
+			['ecec', 1],
+		],
+		halfLife: 9.2e21*year,
+		abundance: 0.00355,
+	},
+	{
+		name: 'Kr-80',
+		abundance: 0.02286,
+	},
+	{
+		name: 'Kr-81',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 2.29e5*year,
+	},
+	{
+		name: 'Kr-82',
+		abundance: 0.11593,
+	},
+	{
+		name: 'Kr-83',
+		abundance: 0.115,
+	},
+	{
+		name: 'Kr-84',
+		abundance: 0.56987,
+	},
+	{
+		name: 'Kr-85',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 10.776*year,
+	},
+	{
+		name: 'Kr-86',
+		abundance: 0.17279,
 	},
 	// skip a few...
 	{

@@ -9,11 +9,13 @@ const corner = 30/Math.sqrt(2);
 const decayArrows = {
 	'a': [0, 30, 0, 90],
 	'b+': [-corner, corner, corner-60, 60-corner],
+	'b+b+': [-corner, corner, corner-120, 120-corner],
 	'b-': [corner, -corner, 60-corner, corner-60],
 	'b-b-': [corner, -corner, 120-corner, corner-120], // todo make this not intersect shit
-	'ec': [-corner, corner, corner-60, 60-corner],
 	'sf': [30, 0, 38, 0],
 };
+decayArrows.ec = decayArrows['b+'];
+decayArrows.ecec = decayArrows['b+b+'];
 
 const elemCatColors = {
 	'Alkali metal': '#f66',
@@ -170,6 +172,7 @@ class Decay {
 			'b-': 'β-',
 			'b-b-': 'β-β-',
 			'ec': 'EC',
+			'ecec': 'Double EC',
 			'sf': 'SF',
 		}[this.name];
 	}
@@ -226,6 +229,7 @@ new Decay('b+', -1, 1); // Beta+ Decay
 new Decay('b-', 1, -1); // Beta- Decay
 new Decay('b-b-', 2, -2); // Double Beta- Decay
 new Decay('ec', -1, 1); // Electron Capture
+new Decay('ecec', -2, 2); // Double Electron Capture
 const sf = new Decay('sf'); // Spontaneous Fission
 
 /** @type {Isotope[]} */
