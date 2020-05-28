@@ -4,6 +4,8 @@
 /* exported setDecayChainLength */
 'use strict';
 
+const eV = 1.602176634e-19; // J; exact; electronvolt
+
 const maxZ = 98;
 const corner = 30/Math.sqrt(2);
 const decayArrows = {
@@ -164,6 +166,14 @@ class Decay {
 	}
 	get deltaA(){
 		return this.deltaN + this.deltaZ;
+	}
+	/** appx. energy released, in Joules */
+	get energy(){
+		return {
+			'a': 5e6*eV, // https://en.wikipedia.org/wiki/Alpha_particle
+			'b+': 1e6*eV, // https://en.wikipedia.org/wiki/Q_value_(nuclear_science)#Applications
+			'b-': 1e6*eV,
+		}[this.name];
 	}
 	get symbol(){
 		return {
