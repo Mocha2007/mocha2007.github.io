@@ -597,6 +597,357 @@ const isotopeData = [
 	},
 	// skip a few...
 	{
+		name: 'Ce-136',
+		abundance: 0.00185,
+	},
+	{
+		name: 'Ce-138',
+		abundance: 0.00251,
+	},
+	{
+		name: 'Ce-140',
+		abundance: 0.8845,
+	},
+	{
+		name: 'Ce-142',
+		abundance: 0.11114,
+	},
+	{
+		name: 'Pr-141',
+		abundance: 1,
+	},
+	{
+		name: 'Nd-142',
+		abundance: 0.272,
+	},
+	{
+		name: 'Nd-143',
+		abundance: 0.122,
+	},
+	{
+		name: 'Nd-144',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 2.29e15*year,
+		abundance: 0.238,
+	},
+	{
+		name: 'Nd-145',
+		abundance: 0.083,
+	},
+	{
+		name: 'Nd-146',
+		abundance: 0.172,
+	},
+	{
+		name: 'Nd-148',
+		abundance: 0.057,
+	},
+	{
+		name: 'Nd-150',
+		decayTypes: [
+			['b-b-', 1],
+		],
+		halfLife: 6.7e18*year,
+		abundance: 0.056,
+	},
+	{
+		name: 'Pm-145',
+		decayTypes: [
+			['ec', 1],
+			['a', 2.8e-9],
+		],
+		halfLife: 17.7*year,
+	},
+	{
+		name: 'Pm-146',
+		decayTypes: [
+			['ec', 0.66],
+			['b-', 0.34],
+		],
+		halfLife: 5.53*year,
+	},
+	{
+		name: 'Pm-147',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 2.6234*year,
+	},
+	{
+		name: 'Sm-144',
+		abundance: 0.0307,
+	},
+	{
+		name: 'Sm-146',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 6.7e7*year,
+	},
+	{
+		name: 'Sm-147',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 1.06e11*year,
+		abundance: 0.1499,
+	},
+	{
+		name: 'Sm-148',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 7e15*year,
+		abundance: 0.1124,
+	},
+	{
+		name: 'Sm-149',
+		abundance: 0.1382,
+	},
+	{
+		name: 'Sm-150',
+		abundance: 0.0738,
+	},
+	{
+		name: 'Sm-151',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 88.8*year,
+	},
+	{
+		name: 'Sm-152',
+		abundance: 0.2675,
+	},
+	{
+		name: 'Sm-154',
+		abundance: 0.2275,
+	},
+	{
+		name: 'Eu-150',
+		decayTypes: [
+			['b+', 1],
+		],
+		halfLife: 36.9*year,
+	},
+	{
+		name: 'Eu-151',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 4.62e18*year,
+		abundance: 0.4781,
+	},
+	{
+		name: 'Eu-152',
+		decayTypes: [
+			['ec', 0.7209],
+			['b-', 0.279],
+			['b+', 0.00027],
+		],
+		halfLife: 13.537*year,
+	},
+	{
+		name: 'Eu-153',
+		abundance: 0.5219,
+	},
+	{
+		name: 'Eu-154',
+		decayTypes: [
+			['b-', 0.9998],
+			['ec', 0.0002],
+		],
+		halfLife: 8.593*year,
+	},
+	{
+		name: 'Eu-155',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 4.7611*year,
+	},
+	{
+		name: 'Gd-148',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 74.6*year,
+	},
+	{
+		name: 'Gd-150',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 1.79e6*year,
+	},
+	{
+		name: 'Gd-152',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 1.08e14*year,
+		abundance: 0.002,
+	},
+	{
+		name: 'Gd-154',
+		abundance: 0.0218,
+	},
+	{
+		name: 'Gd-155',
+		abundance: 0.148,
+	},
+	{
+		name: 'Gd-156',
+		abundance: 0.2047,
+	},
+	{
+		name: 'Gd-157',
+		abundance: 0.1565,
+	},
+	{
+		name: 'Gd-158',
+		abundance: 0.2484,
+	},
+	{
+		name: 'Gd-160',
+		abundance: 0.2186,
+	},
+	{
+		name: 'Tb-158',
+		decayTypes: [
+			['b+', 0.834],
+			['b-', 0.166],
+		],
+		halfLife: 180*year,
+	},
+	{
+		name: 'Tb-159',
+		abundance: 1,
+	},
+	{
+		name: 'Dy-154',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 3e6*year,
+	},
+	{
+		name: 'Dy-156',
+		abundance: 5.6e-4,
+	},
+	{
+		name: 'Dy-158',
+		abundance: 9.5e-4,
+	},
+	{
+		name: 'Dy-160',
+		abundance: 0.02329,
+	},
+	{
+		name: 'Dy-161',
+		abundance: 0.18889,
+	},
+	{
+		name: 'Dy-162',
+		abundance: 0.25475,
+	},
+	{
+		name: 'Dy-163',
+		abundance: 0.24896,
+	},
+	{
+		name: 'Dy-164',
+		abundance: 0.2826,
+	},
+	{
+		name: 'Ho-163',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 4570*year,
+	},
+	{
+		name: 'Ho-165',
+		abundance: 1,
+	},
+	{
+		name: 'Er-162',
+		abundance: 0.00139,
+	},
+	{
+		name: 'Er-164',
+		abundance: 0.01601,
+	},
+	{
+		name: 'Er-166',
+		abundance: 0.33503,
+	},
+	{
+		name: 'Er-167',
+		abundance: 0.22869,
+	},
+	{
+		name: 'Er-168',
+		abundance: 0.26978,
+	},
+	{
+		name: 'Er-170',
+		abundance: 0.1491,
+	},
+	{
+		name: 'Tm-169',
+		abundance: 1,
+	},
+	{
+		name: 'Tm-171',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 1.92*year,
+	},
+	{
+		name: 'Yb-168',
+		abundance: 0.0013,
+	},
+	{
+		name: 'Yb-170',
+		abundance: 0.0304,
+	},
+	{
+		name: 'Yb-171',
+		abundance: 0.1428,
+	},
+	{
+		name: 'Yb-172',
+		abundance: 0.2183,
+	},
+	{
+		name: 'Yb-173',
+		abundance: 0.1613,
+	},
+	{
+		name: 'Yb-174',
+		abundance: 0.3183,
+	},
+	{
+		name: 'Lu-175',
+		abundance: 0.9741,
+	},
+	{
+		name: 'Lu-176',
+		abundance: 0.1276,
+	},
+	{
+		name: 'Lu-176',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 38.5e9*year,
+		abundance: 0.0259,
+	},
+	{
 		name: 'Hf-174',
 		decayTypes: [
 			['a', 1],
