@@ -162,8 +162,8 @@ class ChemElement {
 					c = '#0c0';
 					break;
 				}
-				const hl = Math.max(...this.isotopes.map(i => i.halfLife));
-				x = 255*Math.log(hl)/Math.log(Isotope.maxHalfLife);
+				x = Math.log(Math.max(...this.isotopes.map(i => i.halfLife))) /
+					Math.log(Isotope.maxHalfLife) * 255;
 				c = `rgb(${255-x}, 128, ${255-x})`;
 				break;
 			case 'weight':
