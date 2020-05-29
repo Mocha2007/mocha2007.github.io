@@ -635,6 +635,13 @@ const isotopeData = [
 		abundance: 1,
 	},
 	{
+		name: 'Y-90',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 64.053*hour,
+	},
+	{
 		name: 'Zr-90',
 		abundance: 0.5145,
 	},
@@ -790,6 +797,13 @@ const isotopeData = [
 	{
 		name: 'Rh-103',
 		abundance: 1,
+	},
+	{
+		name: 'Rh-106',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 29.8,
 	},
 	{
 		name: 'Pd-102',
@@ -950,6 +964,13 @@ const isotopeData = [
 			['b-', 1],
 		],
 		halfLife: 2.75856*year,
+	},
+	{
+		name: 'Sb-126',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 12.35*day,
 	},
 	{
 		name: 'Te-120',
