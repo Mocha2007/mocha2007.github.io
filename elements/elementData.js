@@ -25,6 +25,9 @@ const elementData = [
 		mass: 6.94,
 		group: 1,
 		period: 2,
+		properties: {
+			rgb: 'rgb(249, 255, 252)',
+		},
 	},
 	{
 		z: 4,
@@ -33,6 +36,9 @@ const elementData = [
 		mass: 9.0121831,
 		group: 2,
 		period: 2,
+		properties: {
+			rgb: 'rgb(255, 255, 255)',
+		},
 	},
 	{
 		z: 5,
@@ -41,6 +47,9 @@ const elementData = [
 		mass: 10.81,
 		group: 13,
 		period: 2,
+		properties: {
+			rgb: 'rgb(255, 232, 219)',
+		},
 	},
 	{
 		z: 6,
@@ -49,6 +58,9 @@ const elementData = [
 		mass: 12.011,
 		group: 14,
 		period: 2,
+		properties: {
+			rgb: 'rgb(255, 251, 239)',
+		},
 	},
 	{
 		z: 7,
@@ -73,6 +85,9 @@ const elementData = [
 		mass: 18.998403163,
 		group: 17,
 		period: 2,
+		properties: {
+			rgb: 'rgb(255, 207, 112)',
+		},
 	},
 	{
 		z: 10,
@@ -121,6 +136,9 @@ const elementData = [
 		mass: 30.973761998,
 		group: 15,
 		period: 3,
+		properties: {
+			rgb: 'rgb(255, 235, 186)',
+		},
 	},
 	{
 		z: 16,
@@ -129,6 +147,9 @@ const elementData = [
 		mass: 32.06,
 		group: 16,
 		period: 3,
+		properties: {
+			rgb: 'rgb(255, 218, 86)',
+		},
 	},
 	{
 		z: 17,
@@ -137,6 +158,9 @@ const elementData = [
 		mass: 35.45,
 		group: 17,
 		period: 3,
+		properties: {
+			rgb: 'rgb(246, 255, 188)',
+		},
 	},
 	{
 		z: 18,
@@ -209,6 +233,9 @@ const elementData = [
 		mass: 55.845,
 		group: 8,
 		period: 4,
+		properties: {
+			rgb: 'rgb(255, 252, 252)',
+		},
 	},
 	{
 		z: 27,
@@ -217,6 +244,9 @@ const elementData = [
 		mass: 58.933194,
 		group: 9,
 		period: 4,
+		properties: {
+			rgb: 'rgb(255, 249, 244)',
+		},
 	},
 	{
 		z: 28,
@@ -225,6 +255,9 @@ const elementData = [
 		mass: 58.6934,
 		group: 10,
 		period: 4,
+		properties: {
+			rgb: 'rgb(255, 245, 224)',
+		},
 	},
 	{
 		z: 29,
@@ -233,6 +266,9 @@ const elementData = [
 		mass: 63.546,
 		group: 11,
 		period: 4,
+		properties: {
+			rgb: 'rgb(255, 121, 76)',
+		},
 	},
 	{
 		z: 30,
@@ -281,6 +317,9 @@ const elementData = [
 		mass: 79.904,
 		group: 17,
 		period: 4,
+		properties: {
+			rgb: 'rgb(255, 94, 35)',
+		},
 	},
 	{
 		z: 36,
@@ -425,6 +464,9 @@ const elementData = [
 		mass: 126.90447,
 		group: 17,
 		period: 5,
+		properties: {
+			rgb: 'rgb(216, 229, 255)',
+		},
 	},
 	{
 		z: 54,
@@ -442,6 +484,9 @@ const elementData = [
 		mass: 132.90545196,
 		group: 1,
 		period: 6,
+		properties: {
+			rgb: 'rgb(255, 212, 153)',
+		},
 	},
 	{
 		z: 56,
@@ -620,6 +665,9 @@ const elementData = [
 		mass: 196.96657,
 		group: 11,
 		period: 6,
+		properties: {
+			rgb: 'rgb(255, 211, 109)',
+		},
 	},
 	{
 		z: 80,
@@ -721,6 +769,9 @@ const elementData = [
 		symbol: 'U',
 		mass: 238.02891,
 		period: 7,
+		properties: {
+			rgb: 'rgb(255, 251, 242)',
+		},
 	},
 	{
 		z: 93,
@@ -735,6 +786,9 @@ const elementData = [
 		symbol: 'Pu',
 		mass: 244,
 		period: 7,
+		properties: {
+			rgb: 'rgb(255, 226, 249)',
+		},
 	},
 	{
 		z: 95,
@@ -742,6 +796,9 @@ const elementData = [
 		symbol: 'Am',
 		mass: 243,
 		period: 7,
+		properties: {
+			rgb: 'rgb(255, 233, 224)',
+		},
 	},
 	{
 		z: 96,
@@ -749,6 +806,9 @@ const elementData = [
 		symbol: 'Cm',
 		mass: 247,
 		period: 7,
+		properties: {
+			rgb: 'rgb(255, 255, 216)',
+		},
 	},
 	{
 		z: 97,

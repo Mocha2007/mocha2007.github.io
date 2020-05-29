@@ -42,8 +42,9 @@ class ChemElement {
 	 * @param {number} mass
 	 * @param {number} group - used in determining coord x
 	 * @param {number} period - used in determining coord y
+	 * @param {{rgb: string}} properties
 	*/
-	constructor(z, name, symbol, mass, group, period){
+	constructor(z, name, symbol, mass, group, period, properties){
 		this.z = z;
 		this.name = name;
 		this.symbol = symbol;
@@ -52,6 +53,14 @@ class ChemElement {
 		this.group = group;
 		/** row */
 		this.period = period;
+		if (properties){
+			/** Normalized Color:
+			 * - A photograph of the element is taken.
+			 * - White and Black are removed.
+			 * - The rest is averaged and white-balanced.
+			 */
+			this.rgb = properties.rgb;
+		}
 		// push to element list and create cell
 		elements.push(this);
 		this.createElement();
@@ -106,41 +115,6 @@ class ChemElement {
 	}
 	get stable(){
 		return this.isotopes.some(i => i.stable);
-	}
-	/** Normalized Color:
-	 * - A photograph of the element is taken.
-	 * - White and Black are removed.
-	 * - The rest is averaged and white-balanced.
-	 */
-	get rgb(){
-		return {
-			// 2
-			Li: 'rgb(249, 255, 252)',
-			Be: 'rgb(255, 255, 255)',
-			B: 'rgb(255, 232, 219)',
-			C: 'rgb(255, 251, 239)',
-			F: 'rgb(255, 207, 112)',
-			// 3
-			P: 'rgb(255, 235, 186)',
-			S: 'rgb(255, 218, 86)',
-			Cl: 'rgb(246, 255, 188)',
-			// 4
-			Fe: 'rgb(255, 252, 252)',
-			Co: 'rgb(255, 249, 244)',
-			Ni: 'rgb(255, 245, 224)',
-			Cu: 'rgb(255, 121, 76)',
-			Br: 'rgb(255, 94, 35)',
-			// 5
-			I: 'rgb(216, 229, 255)',
-			// 6
-			Cs: 'rgb(255, 212, 153)',
-			Au: 'rgb(255, 211, 109)',
-			// 7
-			U: 'rgb(255, 251, 242)',
-			Pu: 'rgb(255, 226, 249)',
-			Am: 'rgb(255, 233, 224)',
-			Cm: 'rgb(255, 255, 216)',
-		}[this.symbol];
 	}
 	createElement(){
 		const div = document.createElement('div');
@@ -221,7 +195,7 @@ class ChemElement {
 		return Math.max(...elements.map(e => e.mass));
 	}
 	static fromJSON(o){
-		return new ChemElement(o.z, o.name, o.symbol, o.mass, o.group, o.period);
+		return new ChemElement(o.z, o.name, o.symbol, o.mass, o.group, o.period, o.properties);
 	}
 	/** @param {string} symbol */
 	static fromSymbol(symbol){
