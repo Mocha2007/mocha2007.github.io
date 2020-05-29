@@ -428,6 +428,9 @@ const elementData = [
 		mass: 107.8682,
 		group: 11,
 		period: 5,
+		properties: {
+			rgb: 'rgb(255, 248, 239)',
+		},
 	},
 	{
 		z: 48,
