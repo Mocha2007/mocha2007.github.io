@@ -6,7 +6,7 @@
 
 const eV = 1.602176634e-19; // J; exact; electronvolt
 
-const maxZ = 98;
+const maxZ = 100; // Z of top of charts
 const corner = 30/Math.sqrt(2);
 const decayArrows = {
 	'a': [0, 30, 0, 90],
@@ -440,8 +440,9 @@ function chooseTimeUnit(value){
 	return [year, 'yr'];
 }
 
-/** @param {number} width - default = 14, max = 32 */
-/** @param {number} height - default = 23, max = 98 */
+/** @param {number} width - default = 14, max = 32
+ * @param {number} height - default = 21, max = 100
+ */
 function setDecayChainLength(width, height){
 	const svgs = document.getElementsByTagName('svg');
 	Array.from(svgs).forEach(svg => {
@@ -477,6 +478,7 @@ function main(){
 	// draw isotopes
 	elements.slice().reverse().forEach(e => e.createSVGLabel());
 	isotopes.forEach(i => i.createElement());
+	setDecayChainLength(14, 21);
 	// log
 	console.info('elements.js successfully loaded.');
 }

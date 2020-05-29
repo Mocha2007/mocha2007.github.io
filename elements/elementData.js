@@ -857,4 +857,18 @@ const elementData = [
 		mass: 251,
 		period: 7,
 	},
+	{
+		z: 99,
+		name: 'Einsteinium',
+		symbol: 'Es',
+		mass: 252,
+		period: 7,
+	},
+	{
+		z: 100,
+		name: 'Fermium',
+		symbol: 'Fm',
+		mass: 257,
+		period: 7,
+	},
 ];

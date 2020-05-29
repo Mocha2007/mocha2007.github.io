@@ -2513,6 +2513,20 @@ const isotopeData = [
 		halfLife: 7370*year,
 	},
 	{
+		name: 'Am-244',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 10.1*hour,
+	},
+	{
+		name: 'Am-245',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 2.05*hour,
+	},
+	{
 		name: 'Am-246',
 		decayTypes: [
 			['b-', 1],
@@ -2568,6 +2582,13 @@ const isotopeData = [
 		halfLife: 3.48e5*year,
 	},
 	{
+		name: 'Cm-249',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 64.15*minute,
+	},
+	{
 		name: 'Cm-250',
 		decayTypes: [
 			['sf', 0.74],
@@ -2582,6 +2603,22 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 1380*year,
+	},
+	{
+		name: 'Bk-248',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 300*year,
+	},
+	{
+		name: 'Bk-249',
+		decayTypes: [
+			['b-', 1],
+			['a', 0.00145],
+			['sf', 4.7e-10],
+		],
+		halfLife: 330*day,
 	},
 	{
 		name: 'Bk-250',
@@ -2628,5 +2665,72 @@ const isotopeData = [
 			['sf', 0.0309],
 		],
 		halfLife: 2.645*year,
+	},
+	{
+		name: 'Cf-253',
+		decayTypes: [
+			['b-', 0.9969],
+			['a', 0.0031],
+		],
+		halfLife: 17.81*day,
+	},
+	{
+		name: 'Cf-254',
+		decayTypes: [
+			['sf', 0.9969],
+			['a', 0.0031],
+		],
+		halfLife: 60.5*day,
+	},
+	{
+		name: 'Es-252',
+		decayTypes: [
+			['a', 0.76],
+			['ec', 0.24],
+			['b-', 0.0001],
+		],
+		halfLife: 471.7*day,
+	},
+	{
+		name: 'Es-253',
+		decayTypes: [
+			['a', 1],
+			['sf', 8.7e-6],
+		],
+		halfLife: 20.47*day,
+	},
+	{
+		name: 'Es-254',
+		decayTypes: [
+			['a', 1],
+			['ec', 1e-6],
+			['sf', 3e-8],
+			['b-', 1.74e-8],
+		],
+		halfLife: 275.7*day,
+	},
+	{
+		name: 'Fm-252',
+		decayTypes: [
+			['a', 0.9999],
+			['sf', 0.000023],
+		],
+		halfLife: 25.39*hour,
+	},
+	{
+		name: 'Fm-254',
+		decayTypes: [
+			['a', 0.9994],
+			['sf', 0.000592],
+		],
+		halfLife: 3.24*hour,
+	},
+	{
+		name: 'Fm-257',
+		decayTypes: [
+			['a', 0.9979],
+			['sf', 0.0021],
+		],
+		halfLife: 100.5*day,
 	},
 ];

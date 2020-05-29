@@ -34,11 +34,9 @@ svg {
 	background-color: white;
 	display: block;
 	font-family: DejaVu Sans Condensed, sans-serif;
-	height: calc(19*60px);
 	margin-left: auto;
 	margin-right: auto;
 	overflow: auto;
-	width: calc(14*60px);
 }
 circle {
 	stroke: black;
