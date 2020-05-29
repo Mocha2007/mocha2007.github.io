@@ -8,7 +8,7 @@ const year = 365.2425 * day;
 
 const isotopeData = [
 	// ignore all decay modes with P < 0.01
-	// include just HL >= 4 mos
+	// include just HL >= 2 mos
 	{
 		name: 'H-1',
 		abundance: 0.9998,
@@ -188,6 +188,13 @@ const isotopeData = [
 		abundance: 0.0425,
 	},
 	{
+		name: 'S-35',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 87.37*day,
+	},
+	{
 		name: 'S-36',
 		abundance: 0.0001,
 	},
@@ -311,6 +318,13 @@ const isotopeData = [
 		abundance: 1,
 	},
 	{
+		name: 'Sc-46',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 83.79*day,
+	},
+	{
 		name: 'Ti-44',
 		decayTypes: [
 			['ec', 1],
@@ -413,6 +427,13 @@ const isotopeData = [
 			['b-', 1],
 		],
 		halfLife: 2.6e6*year,
+	},
+	{
+		name: 'Co-56',
+		decayTypes: [
+			['b+', 1],
+		],
+		halfLife: 77.233*day,
 	},
 	{
 		name: 'Co-57',
@@ -1486,6 +1507,14 @@ const isotopeData = [
 	{
 		name: 'Er-170',
 		abundance: 0.1491,
+	},
+	{
+		name: 'Tm-168',
+		decayTypes: [
+			['b+', 0.9999],
+			['b-', 0.0001],
+		],
+		halfLife: 93.1*day,
 	},
 	{
 		name: 'Tm-169',
