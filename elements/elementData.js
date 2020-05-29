@@ -290,6 +290,38 @@ const elementData = [
 		group: 18,
 		period: 4,
 	},
+	{
+		z: 37,
+		name: 'Rubidium',
+		symbol: 'Rb',
+		mass: 85.4678,
+		group: 1,
+		period: 5,
+	},
+	{
+		z: 38,
+		name: 'Strontium',
+		symbol: 'Sr',
+		mass: 87.62,
+		group: 2,
+		period: 5,
+	},
+	{
+		z: 39,
+		name: 'Yttrium',
+		symbol: 'Y',
+		mass: 88.90584,
+		group: 3,
+		period: 5,
+	},
+	{
+		z: 40,
+		name: 'Zirconium',
+		symbol: 'Zr',
+		mass: 91.224,
+		group: 4,
+		period: 5,
+	},
 	// skip a few
 	{
 		z: 55,

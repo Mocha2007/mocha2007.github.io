@@ -595,6 +595,76 @@ const isotopeData = [
 		name: 'Kr-86',
 		abundance: 0.17279,
 	},
+	{
+		name: 'Rb-85',
+		abundance: 0.7217,
+	},
+	{
+		name: 'Rb-87',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 4.923e10*year,
+		abundance: 0.2783,
+	},
+	{
+		name: 'Sr-84',
+		abundance: 0.0056,
+	},
+	{
+		name: 'Sr-86',
+		abundance: 0.0986,
+	},
+	{
+		name: 'Sr-87',
+		abundance: 0.07,
+	},
+	{
+		name: 'Sr-88',
+		abundance: 0.8258,
+	},
+	{
+		name: 'Sr-90',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 28.9*year,
+	},
+	{
+		name: 'Y-89',
+		abundance: 1,
+	},
+	{
+		name: 'Zr-90',
+		abundance: 0.5145,
+	},
+	{
+		name: 'Zr-91',
+		abundance: 0.1122,
+	},
+	{
+		name: 'Zr-92',
+		abundance: 0.1715,
+	},
+	{
+		name: 'Zr-93',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 1.53e6*year,
+	},
+	{
+		name: 'Zr-94',
+		abundance: 0.1738,
+	},
+	{
+		name: 'Zr-96',
+		decayTypes: [
+			['b-b-', 1],
+		],
+		halfLife: 20e18*year,
+		abundance: 0.028,
+	},
 	// skip a few...
 	{
 		name: 'Cs-133',
