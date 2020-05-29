@@ -104,6 +104,9 @@ const elementData = [
 		mass: 22.98976928,
 		group: 1,
 		period: 3,
+		properties: {
+			rgb: 'rgb(252, 255, 249)',
+		},
 	},
 	{
 		z: 12,
@@ -112,6 +115,9 @@ const elementData = [
 		mass: 24.305,
 		group: 2,
 		period: 3,
+		properties: {
+			rgb: 'rgb(255, 251, 234)',
+		},
 	},
 	{
 		z: 13,
@@ -120,6 +126,9 @@ const elementData = [
 		mass: 26.9815384,
 		group: 13,
 		period: 3,
+		properties: {
+			rgb: 'rgb(244, 251, 255)',
+		},
 	},
 	{
 		z: 14,
@@ -128,6 +137,9 @@ const elementData = [
 		mass: 28.085,
 		group: 14,
 		period: 3,
+		properties: {
+			rgb: 'rgb(234, 241, 255)',
+		},
 	},
 	{
 		z: 15,
@@ -708,6 +720,9 @@ const elementData = [
 		mass: 209,
 		group: 16,
 		period: 6,
+		properties: {
+			rgb: 'rgb(234, 242, 255)',
+		},
 	},
 	{
 		z: 85,
