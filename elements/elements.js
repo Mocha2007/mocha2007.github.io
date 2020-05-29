@@ -61,6 +61,8 @@ class ChemElement {
 			 * - The rest is averaged and white-balanced.
 			 */
 			this.rgb = properties.rgb;
+			/** color used in models */
+			this.modelColor = properties.modelColor;
 		}
 		// push to element list and create cell
 		elements.push(this);
@@ -207,6 +209,9 @@ class ChemElement {
 			case 'stable':
 				x = this.isotopes.filter(i => i.stable).length / 10 * 255;
 				c = `rgb(255, ${255-x}, 255)`;
+				break;
+			case 'synesthete':
+				c = this.modelColor ? this.modelColor : '#ccc';
 				break;
 			case 'weight':
 				x = 255*this.mass/ChemElement.maxWeight;

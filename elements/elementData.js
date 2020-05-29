@@ -1,5 +1,6 @@
 /* exported elementData, isotopeData */
 'use strict';
+// modelColor from https://sciencenotes.org/wp-content/uploads/2019/07/CPK-Jmol-1024x791.png
 
 const elementData = [
 	{
@@ -9,6 +10,9 @@ const elementData = [
 		mass: 1.008,
 		group: 1,
 		period: 1,
+		properties: {
+			modelColor: 'white',
+		},
 	},
 	{
 		z: 2,
@@ -59,6 +63,7 @@ const elementData = [
 		group: 14,
 		period: 2,
 		properties: {
+			modelColor: 'rgb(144, 144, 144)',
 			rgb: 'rgb(255, 251, 239)',
 		},
 	},
@@ -69,6 +74,9 @@ const elementData = [
 		mass: 14.007,
 		group: 15,
 		period: 2,
+		properties: {
+			modelColor: 'rgb(48, 80, 248)',
+		},
 	},
 	{
 		z: 8,
@@ -77,6 +85,9 @@ const elementData = [
 		mass: 15.999,
 		group: 16,
 		period: 2,
+		properties: {
+			modelColor: 'rgb(255, 13, 13)',
+		},
 	},
 	{
 		z: 9,
@@ -149,6 +160,7 @@ const elementData = [
 		group: 15,
 		period: 3,
 		properties: {
+			modelColor: 'rgb(255, 128, 0)',
 			rgb: 'rgb(255, 235, 186)',
 		},
 	},
@@ -160,6 +172,7 @@ const elementData = [
 		group: 16,
 		period: 3,
 		properties: {
+			modelColor: 'rgb(255, 255, 48)',
 			rgb: 'rgb(255, 218, 86)',
 		},
 	},
