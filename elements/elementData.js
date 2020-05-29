@@ -338,6 +338,14 @@ const elementData = [
 		group: 6,
 		period: 5,
 	},
+	{
+		z: 43,
+		name: 'Technetium',
+		symbol: 'Tc',
+		mass: 97,
+		group: 7,
+		period: 5,
+	},
 	// skip a few
 	{
 		z: 55,
