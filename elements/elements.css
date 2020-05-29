@@ -51,7 +51,7 @@ line {
 .darkRect {
 	fill: #eee;
 	height: 60px;
-	width: 100%;
+	width: 300%;
 }
 .decayLabel {
 	font-style: italic;
