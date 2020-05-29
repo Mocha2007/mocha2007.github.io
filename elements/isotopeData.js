@@ -830,6 +830,53 @@ const isotopeData = [
 		name: 'Ag-109',
 		abundance: 0.48161,
 	},
+	{
+		name: 'Cd-106',
+		abundance: 0.0125,
+	},
+	{
+		name: 'Cd-108',
+		abundance: 0.0089,
+	},
+	{
+		name: 'Cd-109',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 461.4*day,
+	},
+	{
+		name: 'Cd-110',
+		abundance: 0.1249,
+	},
+	{
+		name: 'Cd-111',
+		abundance: 0.128,
+	},
+	{
+		name: 'Cd-112',
+		abundance: 0.2413,
+	},
+	{
+		name: 'Cd-113',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 8.04e15*year,
+		abundance: 0.1222,
+	},
+	{
+		name: 'Cd-114',
+		abundance: 0.2873,
+	},
+	{
+		name: 'Cd-116',
+		decayTypes: [
+			['b-b-', 1],
+		],
+		halfLife: 2.8e19*year,
+		abundance: 0.0749,
+	},
 	// skip a few...
 	{
 		name: 'Cs-133',

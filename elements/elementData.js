@@ -378,6 +378,14 @@ const elementData = [
 		group: 11,
 		period: 5,
 	},
+	{
+		z: 48,
+		name: 'Cadmium',
+		symbol: 'Cd',
+		mass: 112.414,
+		group: 12,
+		period: 5,
+	},
 	// skip a few
 	{
 		z: 55,
