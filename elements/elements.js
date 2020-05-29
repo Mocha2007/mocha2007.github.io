@@ -58,6 +58,7 @@ class ChemElement {
 			this.abundance = properties.abundance;
 			/** color used in models */
 			this.modelColor = properties.modelColor;
+			this.nutrition = properties.nutrition;
 			/** Normalized Color:
 			 * - A photograph of the element is taken.
 			 * - White and Black are removed.
@@ -220,6 +221,10 @@ class ChemElement {
 					c = c4[this.isotopes[isotopeMasses.indexOf(
 						Math.max(...isotopeMasses))].mass % 4];
 				}
+				break;
+			case 'nutrition':
+				c = this.nutrition === undefined ? 'white' :
+					['#060', '#0b0', '#7f0', '#670', '#f70', '#dd9'][this.nutrition];
 				break;
 			case 'stable':
 				x = this.isotopes.filter(i => i.stable).length / 10 * 255;

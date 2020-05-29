@@ -2,6 +2,7 @@
 'use strict';
 // modelColor from https://sciencenotes.org/wp-content/uploads/2019/07/CPK-Jmol-1024x791.png
 // abundaces from https://en.wikipedia.org/wiki/Abundance_of_the_chemical_elements#Universe
+// nutrition from https://en.wikipedia.org/wiki/Composition_of_the_human_body#Periodic_table
 
 const elementData = [
 	{
@@ -17,6 +18,7 @@ const elementData = [
 				universe: 0.739,
 			},
 			modelColor: 'white',
+			nutrition: 0,
 		},
 	},
 	{
@@ -45,6 +47,7 @@ const elementData = [
 				earth: 4.1e-6,
 			},
 			modelColor: 'rgb(204, 128, 255)',
+			nutrition: 3,
 			rgb: 'rgb(249, 255, 252)',
 		},
 	},
@@ -75,6 +78,7 @@ const elementData = [
 				earth: 480e-9,
 			},
 			modelColor: 'rgb(255, 181, 181)',
+			nutrition: 4,
 			rgb: 'rgb(255, 232, 219)',
 		},
 	},
@@ -91,6 +95,7 @@ const elementData = [
 				universe: 4600e-6,
 			},
 			modelColor: 'rgb(144, 144, 144)',
+			nutrition: 0,
 			rgb: 'rgb(255, 251, 239)',
 		},
 	},
@@ -107,6 +112,7 @@ const elementData = [
 				universe: 960e-6,
 			},
 			modelColor: 'rgb(48, 80, 248)',
+			nutrition: 0,
 		},
 	},
 	{
@@ -122,6 +128,7 @@ const elementData = [
 				universe: 10400e-6,
 			},
 			modelColor: 'rgb(255, 13, 13)',
+			nutrition: 0,
 		},
 	},
 	{
@@ -136,6 +143,7 @@ const elementData = [
 				earth: 14e-6,
 			},
 			modelColor: 'rgb(144, 224, 80)',
+			nutrition: 3,
 			rgb: 'rgb(255, 207, 112)',
 		},
 	},
@@ -166,6 +174,7 @@ const elementData = [
 				universe: 33e-6,
 			},
 			modelColor: 'rgb(171, 92, 242)',
+			nutrition: 1,
 			rgb: 'rgb(252, 255, 249)',
 		},
 	},
@@ -182,6 +191,7 @@ const elementData = [
 				universe: 580e-6,
 			},
 			modelColor: 'rgb(138, 255, 0)',
+			nutrition: 1,
 			rgb: 'rgb(255, 251, 234)',
 		},
 	},
@@ -198,6 +208,7 @@ const elementData = [
 				universe: 58e-6,
 			},
 			modelColor: 'rgb(191, 166, 166)',
+			nutrition: 4,
 			rgb: 'rgb(244, 251, 255)',
 		},
 	},
@@ -214,6 +225,7 @@ const elementData = [
 				universe: 650e-6,
 			},
 			modelColor: 'rgb(240, 200, 160)',
+			nutrition: 4,
 			rgb: 'rgb(234, 241, 255)',
 		},
 	},
@@ -229,6 +241,7 @@ const elementData = [
 				earth: 1.02e-3,
 			},
 			modelColor: 'rgb(255, 128, 0)',
+			nutrition: 1,
 			rgb: 'rgb(255, 235, 186)',
 		},
 	},
@@ -245,6 +258,7 @@ const elementData = [
 				universe: 440e-6,
 			},
 			modelColor: 'rgb(255, 255, 48)',
+			nutrition: 1,
 			rgb: 'rgb(255, 218, 86)',
 		},
 	},
@@ -260,6 +274,7 @@ const elementData = [
 				earth: 56e-6,
 			},
 			modelColor: 'rgb(31, 240, 31)',
+			nutrition: 1,
 			rgb: 'rgb(246, 255, 188)',
 		},
 	},
@@ -288,6 +303,7 @@ const elementData = [
 			abundance: {
 				earth: 110e-6,
 			},
+			nutrition: 1,
 		},
 	},
 	{
@@ -302,6 +318,7 @@ const elementData = [
 				earth: 11.1e-3,
 				universe: 60e-6,
 			},
+			nutrition: 1,
 		},
 	},
 	{
@@ -341,6 +358,7 @@ const elementData = [
 			abundance: {
 				earth: 53.6e-6,
 			},
+			nutrition: 4,
 		},
 	},
 	{
@@ -354,6 +372,7 @@ const elementData = [
 			abundance: {
 				earth: 2.3e-3,
 			},
+			nutrition: 2,
 		},
 	},
 	{
@@ -367,6 +386,7 @@ const elementData = [
 			abundance: {
 				earth: 800e-6,
 			},
+			nutrition: 2,
 		},
 	},
 	{
@@ -381,6 +401,7 @@ const elementData = [
 				earth: 148e-3,
 				universe: 1090e-6,
 			},
+			nutrition: 2,
 			rgb: 'rgb(255, 252, 252)',
 		},
 	},
@@ -395,6 +416,7 @@ const elementData = [
 			abundance: {
 				earth: 390e-6,
 			},
+			nutrition: 2,
 			rgb: 'rgb(255, 249, 244)',
 		},
 	},
@@ -410,6 +432,7 @@ const elementData = [
 				earth: 8.01e-3,
 				universe: 49e-6,
 			},
+			nutrition: 4,
 			rgb: 'rgb(255, 245, 224)',
 		},
 	},
@@ -424,6 +447,7 @@ const elementData = [
 			abundance: {
 				earth: 25e-6,
 			},
+			nutrition: 2,
 			rgb: 'rgb(255, 121, 76)',
 		},
 	},
@@ -438,6 +462,7 @@ const elementData = [
 			abundance: {
 				earth: 16e-6,
 			},
+			nutrition: 2,
 		},
 	},
 	{
@@ -464,6 +489,7 @@ const elementData = [
 			abundance: {
 				earth: 2.5e-6,
 			},
+			nutrition: 4,
 		},
 	},
 	{
@@ -477,6 +503,7 @@ const elementData = [
 			abundance: {
 				earth: 590e-9,
 			},
+			nutrition: 4,
 		},
 	},
 	{
@@ -490,6 +517,7 @@ const elementData = [
 			abundance: {
 				earth: 890e-9,
 			},
+			nutrition: 2,
 		},
 	},
 	{
@@ -503,6 +531,7 @@ const elementData = [
 			abundance: {
 				earth: 97e-9,
 			},
+			nutrition: 3,
 			rgb: 'rgb(255, 94, 35)',
 		},
 	},
@@ -525,6 +554,7 @@ const elementData = [
 			abundance: {
 				earth: 120e-9,
 			},
+			nutrition: 4,
 		},
 	},
 	{
@@ -538,6 +568,7 @@ const elementData = [
 			abundance: {
 				earth: 3.9e-6,
 			},
+			nutrition: 3,
 		},
 	},
 	{
@@ -590,6 +621,7 @@ const elementData = [
 			abundance: {
 				earth: 460e-9,
 			},
+			nutrition: 2,
 		},
 	},
 	{
@@ -664,6 +696,7 @@ const elementData = [
 			abundance: {
 				earth: 18e-9,
 			},
+			nutrition: 5,
 		},
 	},
 	{
@@ -690,6 +723,7 @@ const elementData = [
 			abundance: {
 				earth: 55e-9,
 			},
+			nutrition: 4,
 		},
 	},
 	{
@@ -729,6 +763,7 @@ const elementData = [
 			abundance: {
 				earth: 10e-9,
 			},
+			nutrition: 2,
 			rgb: 'rgb(216, 229, 255)',
 		},
 	},
@@ -779,6 +814,7 @@ const elementData = [
 			abundance: {
 				earth: 82e-9,
 			},
+			nutrition: 5,
 		},
 	},
 	{
@@ -791,6 +827,7 @@ const elementData = [
 			abundance: {
 				earth: 210e-9,
 			},
+			nutrition: 5,
 		},
 	},
 	{
@@ -803,6 +840,7 @@ const elementData = [
 			abundance: {
 				earth: 31e-9,
 			},
+			nutrition: 5,
 		},
 	},
 	{
@@ -815,6 +853,7 @@ const elementData = [
 			abundance: {
 				earth: 150e-9,
 			},
+			nutrition: 5,
 		},
 	},
 	{
@@ -834,6 +873,7 @@ const elementData = [
 			abundance: {
 				earth: 47e-9,
 			},
+			nutrition: 5,
 		},
 	},
 	{
@@ -981,6 +1021,7 @@ const elementData = [
 			abundance: {
 				earth: 24e-9,
 			},
+			nutrition: 5,
 		},
 	},
 	{
@@ -1087,6 +1128,7 @@ const elementData = [
 			abundance: {
 				earth: 29e-9,
 			},
+			nutrition: 4,
 			rgb: 'rgb(255, 255, 255)',
 		},
 	},
