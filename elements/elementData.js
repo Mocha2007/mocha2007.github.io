@@ -354,6 +354,14 @@ const elementData = [
 		group: 8,
 		period: 5,
 	},
+	{
+		z: 45,
+		name: 'Rhodium',
+		symbol: 'Rh',
+		mass: 102.90549,
+		group: 9,
+		period: 5,
+	},
 	// skip a few
 	{
 		z: 55,

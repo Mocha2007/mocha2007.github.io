@@ -787,6 +787,10 @@ const isotopeData = [
 		],
 		halfLife: 373.59*day,
 	},
+	{
+		name: 'Rh-103',
+		abundance: 1,
+	},
 	// skip a few...
 	{
 		name: 'Cs-133',
