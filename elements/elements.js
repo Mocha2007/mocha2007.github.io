@@ -161,7 +161,7 @@ class ChemElement {
 	updateColor(type){
 		/** @type {HTMLDivElement} */
 		const div = document.getElementById(this.name);
-		const c4 = ['red', 'yellow', 'green', 'skyBlue'];
+		const c4 = ['red', 'yellow', '#4c4', 'skyBlue'];
 		let c, x;
 		switch (type){
 			case 'color': // normalized color
@@ -191,7 +191,7 @@ class ChemElement {
 						c = c4[this.isotopes.filter(i => i.stable && i.n % 2 === 0)[0].mass % 4];
 					}
 					else {
-						c = 'magenta';
+						c = 'grey';
 					}
 				}
 				else {
