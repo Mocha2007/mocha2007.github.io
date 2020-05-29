@@ -418,6 +418,14 @@ const elementData = [
 		group: 16,
 		period: 5,
 	},
+	{
+		z: 53,
+		name: 'Iodine',
+		symbol: 'I',
+		mass: 126.90447,
+		group: 17,
+		period: 5,
+	},
 	// skip a few
 	{
 		z: 55,
