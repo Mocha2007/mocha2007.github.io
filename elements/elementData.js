@@ -426,6 +426,14 @@ const elementData = [
 		group: 17,
 		period: 5,
 	},
+	{
+		z: 54,
+		name: 'Xenon',
+		symbol: 'Xe',
+		mass: 131.293,
+		group: 18,
+		period: 5,
+	},
 	// skip a few
 	{
 		z: 55,

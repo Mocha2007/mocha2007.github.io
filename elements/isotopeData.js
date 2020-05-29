@@ -1002,6 +1002,49 @@ const isotopeData = [
 		],
 		halfLife: 1.57e7*year,
 	},
+	{
+		name: 'Xe-124',
+		decayTypes: [
+			['ecec', 1],
+		],
+		halfLife: 1.8e22*year,
+		abundance: 9.52e-4,
+	},
+	{
+		name: 'Xe-126',
+		abundance: 8.9e-4,
+	},
+	{
+		name: 'Xe-128',
+		abundance: 0.019102,
+	},
+	{
+		name: 'Xe-129',
+		abundance: 0.264006,
+	},
+	{
+		name: 'Xe-130',
+		abundance: 0.04071,
+	},
+	{
+		name: 'Xe-131',
+		abundance: 0.212324,
+	},
+	{
+		name: 'Xe-132',
+		abundance: 0.269086,
+	},
+	{
+		name: 'Xe-134',
+		abundance: 0.104357,
+	},
+	{
+		name: 'Xe-136',
+		decayTypes: [
+			['b-b-', 1],
+		],
+		halfLife: 2.165e21*year,
+	},
 	// skip a few...
 	{
 		name: 'Cs-133',
