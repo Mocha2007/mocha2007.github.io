@@ -386,6 +386,14 @@ const elementData = [
 		group: 12,
 		period: 5,
 	},
+	{
+		z: 49,
+		name: 'Indium',
+		symbol: 'In',
+		mass: 114.818,
+		group: 13,
+		period: 5,
+	},
 	// skip a few
 	{
 		z: 55,

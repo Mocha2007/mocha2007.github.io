@@ -877,6 +877,18 @@ const isotopeData = [
 		halfLife: 2.8e19*year,
 		abundance: 0.0749,
 	},
+	{
+		name: 'In-113',
+		abundance: 0.0429,
+	},
+	{
+		name: 'In-115',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 4.41e14*year,
+		abundance: 0.9571,
+	},
 	// skip a few...
 	{
 		name: 'Cs-133',
