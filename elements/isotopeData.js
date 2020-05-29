@@ -822,6 +822,14 @@ const isotopeData = [
 		name: 'Pd-110',
 		abundance: 0.1172,
 	},
+	{
+		name: 'Ag-107',
+		abundance: 0.51839,
+	},
+	{
+		name: 'Ag-109',
+		abundance: 0.48161,
+	},
 	// skip a few...
 	{
 		name: 'Cs-133',

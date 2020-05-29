@@ -370,6 +370,14 @@ const elementData = [
 		group: 10,
 		period: 5,
 	},
+	{
+		z: 47,
+		name: 'Silver',
+		symbol: 'Ag',
+		mass: 107.8682,
+		group: 11,
+		period: 5,
+	},
 	// skip a few
 	{
 		z: 55,
