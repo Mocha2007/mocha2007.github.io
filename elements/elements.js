@@ -185,6 +185,11 @@ class ChemElement {
 						i => i.mass % 4)).size === 1){
 						c = c4[this.isotopes.filter(i => i.stable)[0].mass % 4];
 					}
+					// otherwise multiple options
+					else if (new Set(this.isotopes.filter(i => i.stable && i.n % 2 === 0).map(
+						i => i.mass % 4)).size === 1){ // only one stable isotope with even # of neutrons?
+						c = c4[this.isotopes.filter(i => i.stable && i.n % 2 === 0)[0].mass % 4];
+					}
 					else {
 						c = 'magenta';
 					}
@@ -346,6 +351,9 @@ class Isotope {
 				'-' + (this.mass + d.deltaA))
 		);
 	}
+	get n(){
+		return this.mass - this.z;
+	}
 	get name(){
 		return `${this.element.symbol}-${this.mass}`;
 	}
@@ -355,6 +363,9 @@ class Isotope {
 	}
 	get stable(){
 		return this.halfLife === 0;
+	}
+	get z(){
+		return this.element.z;
 	}
 	createElement(){
 		const chain = 'decay' + this.mass % 4;
