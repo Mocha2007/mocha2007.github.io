@@ -41,7 +41,6 @@ svg {
 circle {
 	stroke: black;
 	stroke-width: 1px;
-	r: 30px;
 }
 line {
 	marker-end: url(#Arrow2Mend);

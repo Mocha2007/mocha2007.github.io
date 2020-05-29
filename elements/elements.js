@@ -7,14 +7,15 @@
 const eV = 1.602176634e-19; // J; exact; electronvolt
 
 const maxZ = 100; // Z of top of charts
-const corner = 30/Math.sqrt(2);
+const r = 30; // px
+const corner = r/Math.sqrt(2);
 const decayArrows = {
-	'a': [0, 30, 0, 90],
-	'b+': [-corner, corner, corner-60, 60-corner],
-	'b+b+': [-corner, corner, corner-120, 120-corner],
-	'b-': [corner, -corner, 60-corner, corner-60],
-	'b-b-': [corner, -corner, 120-corner, corner-120], // todo make this not intersect shit
-	'sf': [30, 0, 38, 0],
+	'a': [0, r, 0, 3*r],
+	'b+': [-corner, corner, corner-2*r, 2*r-corner],
+	'b+b+': [-corner, corner, corner-4*r, 4*r-corner],
+	'b-': [corner, -corner, 2*r-corner, corner-2*r],
+	'b-b-': [corner, -corner, 4*r-corner, corner-4*r], // todo make this not intersect shit
+	'sf': [r, 0, r+8, 0],
 };
 decayArrows.ec = decayArrows['b+'];
 decayArrows.ecec = decayArrows['b+b+'];
@@ -141,7 +142,7 @@ class ChemElement {
 	createSVGLabel(){
 		range(4).forEach(i => {
 			const svg = document.getElementById('decay'+i);
-			const y = 60*(maxZ - this.z);
+			const y = 2*r*(maxZ - this.z);
 			// rect
 			if (this.z % 2){
 				const rect = createSvgElement('rect');
@@ -339,10 +340,10 @@ class Isotope {
 	}
 	get coords(){
 		// y-coord represents Z. x-coord represents A/2 - Z (?)
-		// max z = seaborgium; Cf-256 => A = 256, Z = 98 => 30; He-4 => A = 4, Z = 2 => 0
+		// max z = seaborgium; Cf-256 => A = 256, Z = 98 => r; He-4 => A = 4, Z = 2 => 0
 		const xFactor = Math.floor(this.mass/2) - this.element.z;
-		const x = 30 + 60*(30 - xFactor);
-		const y = 30 + 60*(maxZ - this.element.z);
+		const x = r + 2*r*(r - xFactor);
+		const y = r + 2*r*(maxZ - this.element.z);
 		return [x, y];
 	}
 	get daughters(){
@@ -378,6 +379,7 @@ class Isotope {
 		// circle
 		const circle = createSvgElement('circle');
 		circle.setAttribute('fill', this.element.color);
+		circle.setAttribute('r', r);
 		g.appendChild(circle);
 		// text
 		const superscript = createSvgElement('text');
@@ -441,13 +443,15 @@ function chooseTimeUnit(value){
 }
 
 /** @param {number} width - default = 14, max = 32
- * @param {number} height - default = 21, max = 100
+ * @param {number} height - default = 15, max = 100
+ * @param {number} start - default = 94, max = 100
  */
-function setDecayChainLength(width, height){
+function setDecayChainLength(width=14, height=15, start=94){
 	const svgs = document.getElementsByTagName('svg');
 	Array.from(svgs).forEach(svg => {
-		svg.style.width = `calc(${width}*60px)`;
-		svg.style.height = `calc(${height}*60px)`;
+		svg.style.width = `${width*r*2}px`;
+		svg.style.height = `${height*r*2}px`;
+		svg.setAttribute('viewBox', `0 ${(maxZ-start)*r*2} ${width*r*2} ${height*r*2}`);
 	});
 }
 
@@ -478,7 +482,7 @@ function main(){
 	// draw isotopes
 	elements.slice().reverse().forEach(e => e.createSVGLabel());
 	isotopes.forEach(i => i.createElement());
-	setDecayChainLength(14, 21);
+	setDecayChainLength();
 	// log
 	console.info('elements.js successfully loaded.');
 }
