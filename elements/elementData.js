@@ -1,6 +1,7 @@
 /* exported elementData, isotopeData */
 'use strict';
 // modelColor from https://sciencenotes.org/wp-content/uploads/2019/07/CPK-Jmol-1024x791.png
+// abundaces from https://en.wikipedia.org/wiki/Abundance_of_the_chemical_elements#Universe
 
 const elementData = [
 	{
@@ -11,6 +12,10 @@ const elementData = [
 		group: 1,
 		period: 1,
 		properties: {
+			abundance: {
+				earth: 6.7e-3,
+				universe: 0.739,
+			},
 			modelColor: 'white',
 		},
 	},
@@ -22,6 +27,9 @@ const elementData = [
 		group: 18,
 		period: 1,
 		properties: {
+			abundance: {
+				universe: 0.24,
+			},
 			modelColor: 'rgb(217, 255, 255)',
 		},
 	},
@@ -33,6 +41,9 @@ const elementData = [
 		group: 1,
 		period: 2,
 		properties: {
+			abundance: {
+				earth: 4.1e-6,
+			},
 			modelColor: 'rgb(204, 128, 255)',
 			rgb: 'rgb(249, 255, 252)',
 		},
@@ -45,6 +56,9 @@ const elementData = [
 		group: 2,
 		period: 2,
 		properties: {
+			abundance: {
+				earth: 140e-9,
+			},
 			modelColor: 'rgb(194, 255, 0)',
 			rgb: 'rgb(255, 255, 255)',
 		},
@@ -57,6 +71,9 @@ const elementData = [
 		group: 13,
 		period: 2,
 		properties: {
+			abundance: {
+				earth: 480e-9,
+			},
 			modelColor: 'rgb(255, 181, 181)',
 			rgb: 'rgb(255, 232, 219)',
 		},
@@ -69,6 +86,10 @@ const elementData = [
 		group: 14,
 		period: 2,
 		properties: {
+			abundance: {
+				earth: 1.6e-3,
+				universe: 4600e-6,
+			},
 			modelColor: 'rgb(144, 144, 144)',
 			rgb: 'rgb(255, 251, 239)',
 		},
@@ -81,6 +102,10 @@ const elementData = [
 		group: 15,
 		period: 2,
 		properties: {
+			abundance: {
+				earth: 46e-6,
+				universe: 960e-6,
+			},
 			modelColor: 'rgb(48, 80, 248)',
 		},
 	},
@@ -92,6 +117,10 @@ const elementData = [
 		group: 16,
 		period: 2,
 		properties: {
+			abundance: {
+				earth: 482e-3,
+				universe: 10400e-6,
+			},
 			modelColor: 'rgb(255, 13, 13)',
 		},
 	},
@@ -103,6 +132,9 @@ const elementData = [
 		group: 17,
 		period: 2,
 		properties: {
+			abundance: {
+				earth: 14e-6,
+			},
 			modelColor: 'rgb(144, 224, 80)',
 			rgb: 'rgb(255, 207, 112)',
 		},
@@ -115,6 +147,9 @@ const elementData = [
 		group: 18,
 		period: 2,
 		properties: {
+			abundance: {
+				universe: 1340e-6,
+			},
 			modelColor: 'rgb(179, 227, 245)',
 		},
 	},
@@ -126,6 +161,10 @@ const elementData = [
 		group: 1,
 		period: 3,
 		properties: {
+			abundance: {
+				earth: 2e-3,
+				universe: 33e-6,
+			},
 			modelColor: 'rgb(171, 92, 242)',
 			rgb: 'rgb(252, 255, 249)',
 		},
@@ -138,6 +177,10 @@ const elementData = [
 		group: 2,
 		period: 3,
 		properties: {
+			abundance: {
+				earth: 164e-3,
+				universe: 580e-6,
+			},
 			modelColor: 'rgb(138, 255, 0)',
 			rgb: 'rgb(255, 251, 234)',
 		},
@@ -150,6 +193,10 @@ const elementData = [
 		group: 13,
 		period: 3,
 		properties: {
+			abundance: {
+				earth: 15.3e-3,
+				universe: 58e-6,
+			},
 			modelColor: 'rgb(191, 166, 166)',
 			rgb: 'rgb(244, 251, 255)',
 		},
@@ -162,6 +209,10 @@ const elementData = [
 		group: 14,
 		period: 3,
 		properties: {
+			abundance: {
+				earth: 150e-3,
+				universe: 650e-6,
+			},
 			modelColor: 'rgb(240, 200, 160)',
 			rgb: 'rgb(234, 241, 255)',
 		},
@@ -174,6 +225,9 @@ const elementData = [
 		group: 15,
 		period: 3,
 		properties: {
+			abundance: {
+				earth: 1.02e-3,
+			},
 			modelColor: 'rgb(255, 128, 0)',
 			rgb: 'rgb(255, 235, 186)',
 		},
@@ -186,6 +240,10 @@ const elementData = [
 		group: 16,
 		period: 3,
 		properties: {
+			abundance: {
+				earth: 5.15e-3,
+				universe: 440e-6,
+			},
 			modelColor: 'rgb(255, 255, 48)',
 			rgb: 'rgb(255, 218, 86)',
 		},
@@ -198,6 +256,9 @@ const elementData = [
 		group: 17,
 		period: 3,
 		properties: {
+			abundance: {
+				earth: 56e-6,
+			},
 			modelColor: 'rgb(31, 240, 31)',
 			rgb: 'rgb(246, 255, 188)',
 		},
@@ -210,6 +271,9 @@ const elementData = [
 		group: 18,
 		period: 3,
 		properties: {
+			abundance: {
+				universe: 77e-6,
+			},
 			modelColor: 'rgb(128, 209, 227)',
 		},
 	},
@@ -220,6 +284,11 @@ const elementData = [
 		mass: 39.0983,
 		group: 1,
 		period: 4,
+		properties: {
+			abundance: {
+				earth: 110e-6,
+			},
+		},
 	},
 	{
 		z: 20,
@@ -228,6 +297,12 @@ const elementData = [
 		mass: 40.078,
 		group: 2,
 		period: 4,
+		properties: {
+			abundance: {
+				earth: 11.1e-3,
+				universe: 60e-6,
+			},
+		},
 	},
 	{
 		z: 21,
@@ -236,6 +311,11 @@ const elementData = [
 		mass: 44.955908,
 		group: 3,
 		period: 4,
+		properties: {
+			abundance: {
+				earth: 6.3e-6,
+			},
+		},
 	},
 	{
 		z: 22,
@@ -244,6 +324,11 @@ const elementData = [
 		mass: 47.867,
 		group: 4,
 		period: 4,
+		properties: {
+			abundance: {
+				earth: 440e-6,
+			},
+		},
 	},
 	{
 		z: 23,
@@ -252,6 +337,11 @@ const elementData = [
 		mass: 50.9415,
 		group: 5,
 		period: 4,
+		properties: {
+			abundance: {
+				earth: 53.6e-6,
+			},
+		},
 	},
 	{
 		z: 24,
@@ -260,6 +350,11 @@ const elementData = [
 		mass: 51.9961,
 		group: 6,
 		period: 4,
+		properties: {
+			abundance: {
+				earth: 2.3e-3,
+			},
+		},
 	},
 	{
 		z: 25,
@@ -268,6 +363,11 @@ const elementData = [
 		mass: 54.938043,
 		group: 7,
 		period: 4,
+		properties: {
+			abundance: {
+				earth: 800e-6,
+			},
+		},
 	},
 	{
 		z: 26,
@@ -277,6 +377,10 @@ const elementData = [
 		group: 8,
 		period: 4,
 		properties: {
+			abundance: {
+				earth: 148e-3,
+				universe: 1090e-6,
+			},
 			rgb: 'rgb(255, 252, 252)',
 		},
 	},
@@ -288,6 +392,9 @@ const elementData = [
 		group: 9,
 		period: 4,
 		properties: {
+			abundance: {
+				earth: 390e-6,
+			},
 			rgb: 'rgb(255, 249, 244)',
 		},
 	},
@@ -299,6 +406,10 @@ const elementData = [
 		group: 10,
 		period: 4,
 		properties: {
+			abundance: {
+				earth: 8.01e-3,
+				universe: 49e-6,
+			},
 			rgb: 'rgb(255, 245, 224)',
 		},
 	},
@@ -310,6 +421,9 @@ const elementData = [
 		group: 11,
 		period: 4,
 		properties: {
+			abundance: {
+				earth: 25e-6,
+			},
 			rgb: 'rgb(255, 121, 76)',
 		},
 	},
@@ -320,6 +434,11 @@ const elementData = [
 		mass: 65.38,
 		group: 12,
 		period: 4,
+		properties: {
+			abundance: {
+				earth: 16e-6,
+			},
+		},
 	},
 	{
 		z: 31,
@@ -328,6 +447,11 @@ const elementData = [
 		mass: 69.723,
 		group: 13,
 		period: 4,
+		properties: {
+			abundance: {
+				earth: 1e-6,
+			},
+		},
 	},
 	{
 		z: 32,
@@ -336,6 +460,11 @@ const elementData = [
 		mass: 72.630,
 		group: 14,
 		period: 4,
+		properties: {
+			abundance: {
+				earth: 2.5e-6,
+			},
+		},
 	},
 	{
 		z: 33,
@@ -344,6 +473,11 @@ const elementData = [
 		mass: 74.921595,
 		group: 15,
 		period: 4,
+		properties: {
+			abundance: {
+				earth: 590e-9,
+			},
+		},
 	},
 	{
 		z: 34,
@@ -352,6 +486,11 @@ const elementData = [
 		mass: 78.971,
 		group: 16,
 		period: 4,
+		properties: {
+			abundance: {
+				earth: 890e-9,
+			},
+		},
 	},
 	{
 		z: 35,
@@ -361,6 +500,9 @@ const elementData = [
 		group: 17,
 		period: 4,
 		properties: {
+			abundance: {
+				earth: 97e-9,
+			},
 			rgb: 'rgb(255, 94, 35)',
 		},
 	},
@@ -379,6 +521,11 @@ const elementData = [
 		mass: 85.4678,
 		group: 1,
 		period: 5,
+		properties: {
+			abundance: {
+				earth: 120e-9,
+			},
+		},
 	},
 	{
 		z: 38,
@@ -387,6 +534,11 @@ const elementData = [
 		mass: 87.62,
 		group: 2,
 		period: 5,
+		properties: {
+			abundance: {
+				earth: 3.9e-6,
+			},
+		},
 	},
 	{
 		z: 39,
@@ -395,6 +547,11 @@ const elementData = [
 		mass: 88.90584,
 		group: 3,
 		period: 5,
+		properties: {
+			abundance: {
+				earth: 850e-9,
+			},
+		},
 	},
 	{
 		z: 40,
@@ -403,6 +560,11 @@ const elementData = [
 		mass: 91.224,
 		group: 4,
 		period: 5,
+		properties: {
+			abundance: {
+				earth: 2e-6,
+			},
+		},
 	},
 	{
 		z: 41,
@@ -411,6 +573,11 @@ const elementData = [
 		mass: 92.90637,
 		group: 5,
 		period: 5,
+		properties: {
+			abundance: {
+				earth: 120e-9,
+			},
+		},
 	},
 	{
 		z: 42,
@@ -419,6 +586,11 @@ const elementData = [
 		mass: 95.95,
 		group: 6,
 		period: 5,
+		properties: {
+			abundance: {
+				earth: 460e-9,
+			},
+		},
 	},
 	{
 		z: 43,
@@ -435,6 +607,11 @@ const elementData = [
 		mass: 101.07,
 		group: 8,
 		period: 5,
+		properties: {
+			abundance: {
+				earth: 330e-9,
+			},
+		},
 	},
 	{
 		z: 45,
@@ -443,6 +620,11 @@ const elementData = [
 		mass: 102.90549,
 		group: 9,
 		period: 5,
+		properties: {
+			abundance: {
+				earth: 61e-9,
+			},
+		},
 	},
 	{
 		z: 46,
@@ -451,6 +633,11 @@ const elementData = [
 		mass: 106.42,
 		group: 10,
 		period: 5,
+		properties: {
+			abundance: {
+				earth: 240e-9,
+			},
+		},
 	},
 	{
 		z: 47,
@@ -460,6 +647,9 @@ const elementData = [
 		group: 11,
 		period: 5,
 		properties: {
+			abundance: {
+				earth: 12e-9,
+			},
 			rgb: 'rgb(255, 248, 239)',
 		},
 	},
@@ -470,6 +660,11 @@ const elementData = [
 		mass: 112.414,
 		group: 12,
 		period: 5,
+		properties: {
+			abundance: {
+				earth: 18e-9,
+			},
+		},
 	},
 	{
 		z: 49,
@@ -478,6 +673,11 @@ const elementData = [
 		mass: 114.818,
 		group: 13,
 		period: 5,
+		properties: {
+			abundance: {
+				earth: 2e-9,
+			},
+		},
 	},
 	{
 		z: 50,
@@ -486,6 +686,11 @@ const elementData = [
 		mass: 118.71,
 		group: 14,
 		period: 5,
+		properties: {
+			abundance: {
+				earth: 55e-9,
+			},
+		},
 	},
 	{
 		z: 51,
@@ -494,6 +699,11 @@ const elementData = [
 		mass: 121.76,
 		group: 15,
 		period: 5,
+		properties: {
+			abundance: {
+				earth: 11e-9,
+			},
+		},
 	},
 	{
 		z: 52,
@@ -502,6 +712,11 @@ const elementData = [
 		mass: 127.6,
 		group: 16,
 		period: 5,
+		properties: {
+			abundance: {
+				earth: 61e-9,
+			},
+		},
 	},
 	{
 		z: 53,
@@ -511,6 +726,9 @@ const elementData = [
 		group: 17,
 		period: 5,
 		properties: {
+			abundance: {
+				earth: 10e-9,
+			},
 			rgb: 'rgb(216, 229, 255)',
 		},
 	},
@@ -531,6 +749,9 @@ const elementData = [
 		group: 1,
 		period: 6,
 		properties: {
+			abundance: {
+				earth: 7e-9,
+			},
 			rgb: 'rgb(255, 212, 153)',
 		},
 	},
@@ -541,6 +762,11 @@ const elementData = [
 		mass: 137.327,
 		group: 2,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 850e-9,
+			},
+		},
 	},
 	{
 		z: 57,
@@ -549,6 +775,11 @@ const elementData = [
 		mass: 138.90547,
 		group: 3,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 82e-9,
+			},
+		},
 	},
 	{
 		z: 58,
@@ -556,6 +787,11 @@ const elementData = [
 		symbol: 'Ce',
 		mass: 140.116,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 210e-9,
+			},
+		},
 	},
 	{
 		z: 59,
@@ -563,6 +799,11 @@ const elementData = [
 		symbol: 'Pr',
 		mass: 140.90766,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 31e-9,
+			},
+		},
 	},
 	{
 		z: 60,
@@ -570,6 +811,11 @@ const elementData = [
 		symbol: 'Nd',
 		mass: 144.242,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 150e-9,
+			},
+		},
 	},
 	{
 		z: 61,
@@ -584,6 +830,11 @@ const elementData = [
 		symbol: 'Sm',
 		mass: 150.36,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 47e-9,
+			},
+		},
 	},
 	{
 		z: 63,
@@ -591,6 +842,11 @@ const elementData = [
 		symbol: 'Eu',
 		mass: 151.964,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 17e-9,
+			},
+		},
 	},
 	{
 		z: 64,
@@ -598,6 +854,11 @@ const elementData = [
 		symbol: 'Gd',
 		mass: 157.25,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 61e-9,
+			},
+		},
 	},
 	{
 		z: 65,
@@ -605,6 +866,11 @@ const elementData = [
 		symbol: 'Tb',
 		mass: 158.925354,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 11e-9,
+			},
+		},
 	},
 	{
 		z: 66,
@@ -612,6 +878,11 @@ const elementData = [
 		symbol: 'Dy',
 		mass: 162.5,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 74e-9,
+			},
+		},
 	},
 	{
 		z: 67,
@@ -619,6 +890,11 @@ const elementData = [
 		symbol: 'Ho',
 		mass: 164.930328,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 16e-9,
+			},
+		},
 	},
 	{
 		z: 68,
@@ -626,6 +902,11 @@ const elementData = [
 		symbol: 'Er',
 		mass: 167.259,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 47e-9,
+			},
+		},
 	},
 	{
 		z: 69,
@@ -633,6 +914,11 @@ const elementData = [
 		symbol: 'Tm',
 		mass: 168.934218,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 7e-9,
+			},
+		},
 	},
 	{
 		z: 70,
@@ -640,6 +926,11 @@ const elementData = [
 		symbol: 'Yb',
 		mass: 173.045,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 45e-9,
+			},
+		},
 	},
 	{
 		z: 71,
@@ -647,6 +938,11 @@ const elementData = [
 		symbol: 'Lu',
 		mass: 174.9668,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 7e-9,
+			},
+		},
 	},
 	{
 		z: 72,
@@ -655,6 +951,11 @@ const elementData = [
 		mass: 178.486,
 		group: 4,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 28e-9,
+			},
+		},
 	},
 	{
 		z: 73,
@@ -663,6 +964,11 @@ const elementData = [
 		mass: 180.94788,
 		group: 5,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 4e-9,
+			},
+		},
 	},
 	{
 		z: 74,
@@ -671,6 +977,11 @@ const elementData = [
 		mass: 183.84,
 		group: 6,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 24e-9,
+			},
+		},
 	},
 	{
 		z: 75,
@@ -679,6 +990,11 @@ const elementData = [
 		mass: 186.207,
 		group: 7,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 10e-9,
+			},
+		},
 	},
 	{
 		z: 76,
@@ -687,6 +1003,11 @@ const elementData = [
 		mass: 190.23,
 		group: 8,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 120e-9,
+			},
+		},
 	},
 	{
 		z: 77,
@@ -695,6 +1016,11 @@ const elementData = [
 		mass: 192.217,
 		group: 9,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 120e-9,
+			},
+		},
 	},
 	{
 		z: 78,
@@ -703,6 +1029,11 @@ const elementData = [
 		mass: 195.084,
 		group: 10,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 250e-9,
+			},
+		},
 	},
 	{
 		z: 79,
@@ -712,6 +1043,9 @@ const elementData = [
 		group: 11,
 		period: 6,
 		properties: {
+			abundance: {
+				earth: 21e-9,
+			},
 			rgb: 'rgb(255, 211, 109)',
 		},
 	},
@@ -722,6 +1056,11 @@ const elementData = [
 		mass: 200.592,
 		group: 12,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 3e-9,
+			},
+		},
 	},
 	{
 		z: 81,
@@ -731,6 +1070,9 @@ const elementData = [
 		group: 13,
 		period: 6,
 		properties: {
+			abundance: {
+				earth: 2e-9,
+			},
 			rgb: 'rgb(255, 252, 253)',
 		},
 	},
@@ -742,6 +1084,9 @@ const elementData = [
 		group: 14,
 		period: 6,
 		properties: {
+			abundance: {
+				earth: 29e-9,
+			},
 			rgb: 'rgb(255, 255, 255)',
 		},
 	},
@@ -753,6 +1098,9 @@ const elementData = [
 		group: 15,
 		period: 6,
 		properties: {
+			abundance: {
+				earth: 1e-9,
+			},
 			rgb: 'rgb(255, 245, 232)',
 		},
 	},
@@ -817,6 +1165,9 @@ const elementData = [
 		mass: 232.0377,
 		period: 7,
 		properties: {
+			abundance: {
+				earth: 6e-9,
+			},
 			rgb: 'rgb(255, 229, 216)',
 		},
 	},
@@ -834,6 +1185,9 @@ const elementData = [
 		mass: 238.02891,
 		period: 7,
 		properties: {
+			abundance: {
+				earth: 2e-9,
+			},
 			rgb: 'rgb(255, 251, 242)',
 		},
 	},

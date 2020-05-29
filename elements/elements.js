@@ -55,14 +55,15 @@ class ChemElement {
 		/** row */
 		this.period = period;
 		if (properties){
+			this.abundance = properties.abundance;
+			/** color used in models */
+			this.modelColor = properties.modelColor;
 			/** Normalized Color:
 			 * - A photograph of the element is taken.
 			 * - White and Black are removed.
 			 * - The rest is averaged and white-balanced.
 			 */
 			this.rgb = properties.rgb;
-			/** color used in models */
-			this.modelColor = properties.modelColor;
 		}
 		// push to element list and create cell
 		elements.push(this);
@@ -167,6 +168,20 @@ class ChemElement {
 		const c4 = ['red', 'yellow', '#4c4', 'skyBlue'];
 		let c, x;
 		switch (type){
+			case 'abundanceEarth':
+				if (!this.abundance || !this.abundance.earth){
+					c = 'white';
+					break;
+				}
+				c = `hsl(${120+8*Math.log(this.abundance.earth)}, 100%, 50%)`;
+				break;
+			case 'abundanceUniverse':
+				if (!this.abundance || !this.abundance.universe){
+					c = 'white';
+					break;
+				}
+				c = `hsl(${120+11*Math.log(this.abundance.universe)}, 100%, 50%)`;
+				break;
 			case 'block':
 				c = {s: '#f99', p: '#ff8', d: '#9cf', f: '#9f9'}[this.electronShell];
 				break;
