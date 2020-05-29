@@ -795,6 +795,13 @@ const isotopeData = [
 		halfLife: 373.59*day,
 	},
 	{
+		name: 'Rh-101',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 3.3*year,
+	},
+	{
 		name: 'Rh-103',
 		abundance: 1,
 	},
@@ -1131,6 +1138,13 @@ const isotopeData = [
 	{
 		name: 'Ba-138',
 		abundance: 0.71698,
+	},
+	{
+		name: 'La-137',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 6e4*year,
 	},
 	{
 		name: 'La-138',
@@ -2329,6 +2343,14 @@ const isotopeData = [
 		halfLife: 14.1*hour,
 	},
 	{
+		name: 'Np-235',
+		decayTypes: [
+			['ec', 1],
+			['a', 0.000026],
+		],
+		halfLife: 396.1*day,
+	},
+	{
 		name: 'Np-236',
 		decayTypes: [
 			['ec', 0.873],
@@ -2524,6 +2546,14 @@ const isotopeData = [
 			['b-', 1],
 		],
 		halfLife: 3.212*hour,
+	},
+	{
+		name: 'Cf-249',
+		decayTypes: [
+			['a', 1],
+			['sf', 5e-9],
+		],
+		halfLife: 351*year,
 	},
 	{
 		name: 'Cf-250',
