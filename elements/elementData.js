@@ -362,6 +362,14 @@ const elementData = [
 		group: 9,
 		period: 5,
 	},
+	{
+		z: 46,
+		name: 'Palladium',
+		symbol: 'Pd',
+		mass: 106.42,
+		group: 10,
+		period: 5,
+	},
 	// skip a few
 	{
 		z: 55,

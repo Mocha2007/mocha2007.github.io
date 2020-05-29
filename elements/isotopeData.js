@@ -791,6 +791,37 @@ const isotopeData = [
 		name: 'Rh-103',
 		abundance: 1,
 	},
+	{
+		name: 'Pd-102',
+		abundance: 0.0102,
+	},
+	{
+		name: 'Pd-104',
+		abundance: 0.1114,
+	},
+	{
+		name: 'Pd-105',
+		abundance: 0.2233,
+	},
+	{
+		name: 'Pd-106',
+		abundance: 0.2733,
+	},
+	{
+		name: 'Pd-107',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 6.5e6*year,
+	},
+	{
+		name: 'Pd-108',
+		abundance: 0.2646,
+	},
+	{
+		name: 'Pd-110',
+		abundance: 0.1172,
+	},
 	// skip a few...
 	{
 		name: 'Cs-133',
