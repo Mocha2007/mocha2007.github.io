@@ -182,8 +182,8 @@ class ChemElement {
 					break;
 				}
 				x = Math.log(Math.max(...this.isotopes.map(i => i.halfLife))) /
-					Math.log(Isotope.maxHalfLife) * 255;
-				c = `rgb(${255-x}, 128, ${255-x})`;
+					Math.log(Isotope.maxHalfLife) * 120;
+				c = `hsl(${x}, 100%, 50%)`;
 				break;
 			case 'msi%4':
 				if (this.stable){
