@@ -346,6 +346,14 @@ const elementData = [
 		group: 7,
 		period: 5,
 	},
+	{
+		z: 44,
+		name: 'Ruthenium',
+		symbol: 'Ru',
+		mass: 101.07,
+		group: 8,
+		period: 5,
+	},
 	// skip a few
 	{
 		z: 55,

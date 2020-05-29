@@ -752,6 +752,41 @@ const isotopeData = [
 		],
 		halfLife: 2.111e5*year,
 	},
+	{
+		name: 'Ru-96',
+		abundance: 0.0554,
+	},
+	{
+		name: 'Ru-98',
+		abundance: 0.0187,
+	},
+	{
+		name: 'Ru-99',
+		abundance: 0.1276,
+	},
+	{
+		name: 'Ru-100',
+		abundance: 0.126,
+	},
+	{
+		name: 'Ru-101',
+		abundance: 0.1706,
+	},
+	{
+		name: 'Ru-102',
+		abundance: 0.3155,
+	},
+	{
+		name: 'Ru-104',
+		abundance: 0.1862,
+	},
+	{
+		name: 'Ru-106',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 373.59*day,
+	},
 	// skip a few...
 	{
 		name: 'Cs-133',
