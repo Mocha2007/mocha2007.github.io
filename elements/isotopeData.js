@@ -1299,11 +1299,11 @@ const isotopeData = [
 		abundance: 0.2843,
 	},
 	{
-		name: 'Rh-185',
+		name: 'Re-185',
 		abundance: 0.374,
 	},
 	{
-		name: 'Rh-187',
+		name: 'Re-187',
 		decayTypes: [
 			['b-', 1],
 		],
