@@ -396,7 +396,7 @@ class Isotope {
 		g.appendChild(symbol);
 		const halfLife = createSvgElement('text');
 		const [c, u] = chooseTimeUnit(this.halfLife);
-		halfLife.innerHTML = this.stable ? unitString(this.halfLife/c, u) : 'Stable';
+		halfLife.innerHTML = this.stable ? 'Stable' : unitString(this.halfLife/c, u);
 		halfLife.classList.add('halfLife');
 		halfLife.setAttribute('dy', '15px');
 		g.appendChild(halfLife);
