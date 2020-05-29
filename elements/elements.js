@@ -204,6 +204,10 @@ class ChemElement {
 					Math.log(Isotope.maxHalfLife) * 255;
 				c = `rgb(${255-x}, 128, ${255-x})`;
 				break;
+			case 'stable':
+				x = this.isotopes.filter(i => i.stable).length / 10 * 255;
+				c = `rgb(255, ${255-x}, 255)`;
+				break;
 			case 'weight':
 				x = 255*this.mass/ChemElement.maxWeight;
 				c = `rgb(255, ${255-x}, ${255-x})`;
