@@ -126,6 +126,7 @@ const elementData = [
 		group: 1,
 		period: 3,
 		properties: {
+			modelColor: 'rgb(171, 92, 242)',
 			rgb: 'rgb(252, 255, 249)',
 		},
 	},
@@ -137,6 +138,7 @@ const elementData = [
 		group: 2,
 		period: 3,
 		properties: {
+			modelColor: 'rgb(138, 255, 0)',
 			rgb: 'rgb(255, 251, 234)',
 		},
 	},
@@ -207,6 +209,9 @@ const elementData = [
 		mass: 39.95,
 		group: 18,
 		period: 3,
+		properties: {
+			modelColor: 'rgb(128, 209, 227)',
+		},
 	},
 	{
 		z: 19,
