@@ -512,7 +512,7 @@ const elementData = [
 	{
 		z: 75,
 		name: 'Rhenium',
-		symbol: 'Rh',
+		symbol: 'Re',
 		mass: 186.207,
 		group: 7,
 		period: 6,
