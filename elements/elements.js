@@ -161,6 +161,7 @@ class ChemElement {
 	updateColor(type){
 		/** @type {HTMLDivElement} */
 		const div = document.getElementById(this.name);
+		const c4 = ['red', 'yellow', 'green', 'skyBlue'];
 		let c, x;
 		switch (type){
 			case 'color': // normalized color
@@ -177,6 +178,22 @@ class ChemElement {
 				x = Math.log(Math.max(...this.isotopes.map(i => i.halfLife))) /
 					Math.log(Isotope.maxHalfLife) * 255;
 				c = `rgb(${255-x}, 128, ${255-x})`;
+				break;
+			case 'msi%4':
+				if (this.stable){
+					if (new Set(this.isotopes.filter(i => i.stable).map(
+						i => i.mass % 4)).size === 1){
+						c = c4[this.isotopes.filter(i => i.stable)[0].mass % 4];
+					}
+					else {
+						c = 'magenta';
+					}
+				}
+				else {
+					const isotopeMasses = this.isotopes.map(i => i.mass);
+					c = c4[this.isotopes[isotopeMasses.indexOf(
+						Math.max(...isotopeMasses))].mass % 4];
+				}
 				break;
 			case 'stable':
 				x = this.isotopes.filter(i => i.stable).length / 10 * 255;
@@ -459,3 +476,4 @@ main();
 */
 // DEBUG DONT PUSH
 // setDecayChainLength(32, 98);
+// tableColor('msi%4');
