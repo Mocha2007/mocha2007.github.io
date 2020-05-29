@@ -410,6 +410,14 @@ const elementData = [
 		group: 15,
 		period: 5,
 	},
+	{
+		z: 52,
+		name: 'Tellurium',
+		symbol: 'Te',
+		mass: 127.6,
+		group: 16,
+		period: 5,
+	},
 	// skip a few
 	{
 		z: 55,

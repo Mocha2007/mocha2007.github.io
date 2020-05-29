@@ -951,6 +951,46 @@ const isotopeData = [
 		],
 		halfLife: 2.75856*year,
 	},
+	{
+		name: 'Te-120',
+		abundance: 9e-4,
+	},
+	{
+		name: 'Te-122',
+		abundance: 0.0255,
+	},
+	{
+		name: 'Te-123',
+		abundance: 0.0089,
+	},
+	{
+		name: 'Te-124',
+		abundance: 0.0474,
+	},
+	{
+		name: 'Te-125',
+		abundance: 0.0707,
+	},
+	{
+		name: 'Te-126',
+		abundance: 0.1884,
+	},
+	{
+		name: 'Te-128',
+		decayTypes: [
+			['b-b-', 1],
+		],
+		halfLife: 2.2e24*year,
+		abundance: 0.3174,
+	},
+	{
+		name: 'Te-130',
+		decayTypes: [
+			['b-b-', 1],
+		],
+		halfLife: 8.2e20*year,
+		abundance: 0.3408,
+	},
 	// skip a few...
 	{
 		name: 'Cs-133',
