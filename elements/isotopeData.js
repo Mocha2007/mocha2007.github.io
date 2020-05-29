@@ -936,6 +936,21 @@ const isotopeData = [
 		],
 		halfLife: 2.3e5*year,
 	},
+	{
+		name: 'Sb-121',
+		abundance: 0.5721,
+	},
+	{
+		name: 'Sb-123',
+		abundance: 0.4279,
+	},
+	{
+		name: 'Sb-125',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 2.75856*year,
+	},
 	// skip a few...
 	{
 		name: 'Cs-133',

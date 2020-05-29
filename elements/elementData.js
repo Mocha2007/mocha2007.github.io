@@ -402,6 +402,14 @@ const elementData = [
 		group: 14,
 		period: 5,
 	},
+	{
+		z: 51,
+		name: 'Antimony',
+		symbol: 'Sb',
+		mass: 121.76,
+		group: 15,
+		period: 5,
+	},
 	// skip a few
 	{
 		z: 55,
