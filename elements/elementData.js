@@ -322,6 +322,14 @@ const elementData = [
 		group: 4,
 		period: 5,
 	},
+	{
+		z: 41,
+		name: 'Niobium',
+		symbol: 'Nb',
+		mass: 92.90637,
+		group: 5,
+		period: 5,
+	},
 	// skip a few
 	{
 		z: 55,
