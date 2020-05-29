@@ -8,7 +8,7 @@ const year = 365.2425 * day;
 
 const isotopeData = [
 	// ignore all decay modes with P < 0.01
-	// include just HL >= 1 yr
+	// include just HL >= 4 mos
 	{
 		name: 'H-1',
 		abundance: 0.9998,
@@ -282,6 +282,13 @@ const isotopeData = [
 		abundance: 0.02086,
 	},
 	{
+		name: 'Ca-45',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 162.61*day,
+	},
+	{
 		name: 'Ca-46',
 		abundance: 4e-5,
 	},
@@ -329,6 +336,13 @@ const isotopeData = [
 	{
 		name: 'Ti-50',
 		abundance: 0.0518,
+	},
+	{
+		name: 'V-49',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 329*day,
 	},
 	{
 		name: 'V-50',
@@ -401,6 +415,13 @@ const isotopeData = [
 		halfLife: 2.6e6*year,
 	},
 	{
+		name: 'Co-57',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 271.74*day,
+	},
+	{
 		name: 'Co-59',
 		abundance: 1,
 	},
@@ -457,6 +478,13 @@ const isotopeData = [
 	{
 		name: 'Zn-64',
 		abundance: 0.4917,
+	},
+	{
+		name: 'Zn-65',
+		decayTypes: [
+			['b+', 1],
+		],
+		halfLife: 243.66*day,
 	},
 	{
 		name: 'Zn-66',
@@ -1464,6 +1492,14 @@ const isotopeData = [
 		abundance: 1,
 	},
 	{
+		name: 'Tm-170',
+		decayTypes: [
+			['b-', 0.9986],
+			['ec', 0.0014],
+		],
+		halfLife: 128.6*day,
+	},
+	{
 		name: 'Tm-171',
 		decayTypes: [
 			['b-', 1],
@@ -1700,6 +1736,13 @@ const isotopeData = [
 			['b+', 1],
 		],
 		halfLife: 38.02*hour,
+	},
+	{
+		name: 'Au-195',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 186.098*day,
 	},
 	{
 		name: 'Au-197',
@@ -2546,6 +2589,14 @@ const isotopeData = [
 			['b-', 1],
 		],
 		halfLife: 3.212*hour,
+	},
+	{
+		name: 'Cf-248',
+		decayTypes: [
+			['a', 0.9999],
+			['sf', 0.000029],
+		],
+		halfLife: 333.5*day,
 	},
 	{
 		name: 'Cf-249',
