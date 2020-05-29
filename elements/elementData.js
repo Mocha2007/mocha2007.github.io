@@ -21,6 +21,9 @@ const elementData = [
 		mass: 4.0026,
 		group: 18,
 		period: 1,
+		properties: {
+			modelColor: 'rgb(217, 255, 255)',
+		},
 	},
 	{
 		z: 3,
@@ -30,6 +33,7 @@ const elementData = [
 		group: 1,
 		period: 2,
 		properties: {
+			modelColor: 'rgb(204, 128, 255)',
 			rgb: 'rgb(249, 255, 252)',
 		},
 	},
@@ -41,6 +45,7 @@ const elementData = [
 		group: 2,
 		period: 2,
 		properties: {
+			modelColor: 'rgb(194, 255, 0)',
 			rgb: 'rgb(255, 255, 255)',
 		},
 	},
@@ -52,6 +57,7 @@ const elementData = [
 		group: 13,
 		period: 2,
 		properties: {
+			modelColor: 'rgb(255, 181, 181)',
 			rgb: 'rgb(255, 232, 219)',
 		},
 	},
@@ -97,6 +103,7 @@ const elementData = [
 		group: 17,
 		period: 2,
 		properties: {
+			modelColor: 'rgb(144, 224, 80)',
 			rgb: 'rgb(255, 207, 112)',
 		},
 	},
@@ -107,6 +114,9 @@ const elementData = [
 		mass: 20.1797,
 		group: 18,
 		period: 2,
+		properties: {
+			modelColor: 'rgb(179, 227, 245)',
+		},
 	},
 	{
 		z: 11,
@@ -138,6 +148,7 @@ const elementData = [
 		group: 13,
 		period: 3,
 		properties: {
+			modelColor: 'rgb(191, 166, 166)',
 			rgb: 'rgb(244, 251, 255)',
 		},
 	},
@@ -149,6 +160,7 @@ const elementData = [
 		group: 14,
 		period: 3,
 		properties: {
+			modelColor: 'rgb(240, 200, 160)',
 			rgb: 'rgb(234, 241, 255)',
 		},
 	},
@@ -184,6 +196,7 @@ const elementData = [
 		group: 17,
 		period: 3,
 		properties: {
+			modelColor: 'rgb(31, 240, 31)',
 			rgb: 'rgb(246, 255, 188)',
 		},
 	},
