@@ -699,6 +699,9 @@ const elementData = [
 		mass: 204.38,
 		group: 13,
 		period: 6,
+		properties: {
+			rgb: 'rgb(255, 252, 253)',
+		},
 	},
 	{
 		z: 82,
@@ -707,6 +710,9 @@ const elementData = [
 		mass: 207.2,
 		group: 14,
 		period: 6,
+		properties: {
+			rgb: 'rgb(255, 255, 255)',
+		},
 	},
 	{
 		z: 83,
@@ -715,6 +721,9 @@ const elementData = [
 		mass: 208.9804,
 		group: 15,
 		period: 6,
+		properties: {
+			rgb: 'rgb(255, 245, 232)',
+		},
 	},
 	{
 		z: 84,
@@ -758,6 +767,9 @@ const elementData = [
 		mass: 226,
 		group: 2,
 		period: 7,
+		properties: {
+			rgb: 'rgb(255, 233, 198)',
+		},
 	},
 	{
 		z: 89,
@@ -773,6 +785,9 @@ const elementData = [
 		symbol: 'Th',
 		mass: 232.0377,
 		period: 7,
+		properties: {
+			rgb: 'rgb(255, 229, 216)',
+		},
 	},
 	{
 		z: 91,
