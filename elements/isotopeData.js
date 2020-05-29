@@ -692,6 +692,45 @@ const isotopeData = [
 		],
 		halfLife: 2.03e4*year,
 	},
+	{
+		name: 'Mo-92',
+		abundance: 0.14649,
+	},
+	{
+		name: 'Mo-93',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 4e3*year,
+	},
+	{
+		name: 'Mo-94',
+		abundance: 0.09187,
+	},
+	{
+		name: 'Mo-95',
+		abundance: 0.15873,
+	},
+	{
+		name: 'Mo-96',
+		abundance: 0.16673,
+	},
+	{
+		name: 'Mo-97',
+		abundance: 0.09582,
+	},
+	{
+		name: 'Mo-98',
+		abundance: 0.24292,
+	},
+	{
+		name: 'Mo-100',
+		decayTypes: [
+			['b-b-', 1],
+		],
+		halfLife: 8.5e18*year,
+		abundance: 0.09744,
+	},
 	// skip a few...
 	{
 		name: 'Cs-133',

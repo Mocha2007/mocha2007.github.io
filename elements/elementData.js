@@ -330,6 +330,14 @@ const elementData = [
 		group: 5,
 		period: 5,
 	},
+	{
+		z: 42,
+		name: 'Molybdenum',
+		symbol: 'Mo',
+		mass: 95.95,
+		group: 6,
+		period: 5,
+	},
 	// skip a few
 	{
 		z: 55,
