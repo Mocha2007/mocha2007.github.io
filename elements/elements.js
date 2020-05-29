@@ -165,6 +165,9 @@ class ChemElement {
 		const c4 = ['red', 'yellow', '#4c4', 'skyBlue'];
 		let c, x;
 		switch (type){
+			case 'block':
+				c = {s: '#f99', p: '#ff8', d: '#9cf', f: '#9f9'}[this.electronShell];
+				break;
 			case 'color': // normalized color
 				c = this.rgb ? this.rgb : 'grey';
 				break;
@@ -489,7 +492,7 @@ function main(){
 
 main();
 /* todo list
-- add a "circle radius" variable for convenience
+- fix double ec/double b- intersecting other nuclides
 */
 // DEBUG DONT PUSH
 // setDecayChainLength(32, 98);
