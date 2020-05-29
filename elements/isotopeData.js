@@ -889,6 +889,53 @@ const isotopeData = [
 		halfLife: 4.41e14*year,
 		abundance: 0.9571,
 	},
+	{
+		name: 'Sn-112',
+		abundance: 0.0097,
+	},
+	{
+		name: 'Sn-114',
+		abundance: 0.0066,
+	},
+	{
+		name: 'Sn-115',
+		abundance: 0.0034,
+	},
+	{
+		name: 'Sn-116',
+		abundance: 0.1454,
+	},
+	{
+		name: 'Sn-117',
+		abundance: 0.0768,
+	},
+	{
+		name: 'Sn-118',
+		abundance: 0.2422,
+	},
+	{
+		name: 'Sn-119',
+		abundance: 0.0859,
+	},
+	{
+		name: 'Sn-120',
+		abundance: 0.3258,
+	},
+	{
+		name: 'Sn-122',
+		abundance: 0.0463,
+	},
+	{
+		name: 'Sn-124',
+		abundance: 0.0579,
+	},
+	{
+		name: 'Sn-126',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 2.3e5*year,
+	},
 	// skip a few...
 	{
 		name: 'Cs-133',

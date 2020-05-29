@@ -394,6 +394,14 @@ const elementData = [
 		group: 13,
 		period: 5,
 	},
+	{
+		z: 50,
+		name: 'Tin',
+		symbol: 'Sn',
+		mass: 118.71,
+		group: 14,
+		period: 5,
+	},
 	// skip a few
 	{
 		z: 55,
