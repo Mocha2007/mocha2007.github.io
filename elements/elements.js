@@ -238,7 +238,7 @@ class ChemElement {
 				break;
 			case 'production':
 				if (!this.production){
-					c = '#ccc';
+					c = 'white';
 					break;
 				}
 				c = this.production ? `hsl(${6*Math.log(this.production)}, 100%, 50%)` : '#ccc';

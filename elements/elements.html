@@ -10,53 +10,172 @@
 <title>Periodic Table</title>
 <table id="table"></table>
 <h2>Table Type</h2>
-<p>
-	<!-- todo add legends -->
-	<label onclick="tableColor('abundanceEarth')">
-		<input name="table" type="radio">
-	Abundance (Earth)</label><br>
-	<label onclick="tableColor('abundanceHuman')">
-		<input name="table" type="radio">
-	Abundance (Human)</label><br>
-	<label onclick="tableColor('abundanceUniverse')">
-		<input name="table" type="radio">
-	Abundance (Universe)</label><br>
-	<label onclick="tableColor('blank')">
-		<input name="table" type="radio">
-	Blank</label><br>
-	<label onclick="tableColor('block')">
-		<input name="table" type="radio">
-	Block</label><br>
-	<label onclick="tableColor('category')">
-		<input name="table" type="radio" checked>
-	Category</label><br>
-	<label onclick="tableColor('color')">
-		<input name="table" type="radio">
-	Color (Normalized)</label> (Grey = unavailable)<br>
-	<label onclick="tableColor('halflife')">
-		<input name="table" type="radio">
-	Half-Life</label><br>
-	<label onclick="tableColor('msi%4')">
-		<input name="table" type="radio">
-	Most Stable Isotope mod 4</label> (R=0, Y=1, G=2, B=3, Gry=multiple)<br>
-	<label onclick="tableColor('nutrition')">
-		<input name="table" type="radio">
-	Nutrition</label><br>
-	<label onclick="tableColor('production')">
-		<input name="table" type="radio">
-	Production</label><br>
-	<label onclick="tableColor('stable')">
-		<input name="table" type="radio">
-	Stable Isotopes</label><br>
-	<label onclick="tableColor('synesthete')">
-		<input name="table" type="radio">
-	Synesthete</label><br>
-	<label onclick="tableColor('weight')">
-		<input name="table" type="radio">
-	Weight</label>
-</p>
+<table id="tableControls">
+	<tr>
+		<td>
+			<label onclick="tableColor('abundanceEarth')">
+			<input name="table" type="radio">
+			Abundance (Earth)</label>
+		</td>
+		<td>
+			<span class="legend" style="background-color: lime;"></span> High ...
+			<span class="legend" style="background-color: red;"></span> Low
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label onclick="tableColor('abundanceHuman')">
+			<input name="table" type="radio">
+			Abundance (Human)</label>
+		</td>
+		<td>
+			<span class="legend" style="background-color: lime;"></span> High ...
+			<span class="legend" style="background-color: red;"></span> Low
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label onclick="tableColor('abundanceUniverse')">
+			<input name="table" type="radio">
+			Abundance (Universe)</label>
+		</td>
+		<td>
+			<span class="legend" style="background-color: lime;"></span> High ...
+			<span class="legend" style="background-color: red;"></span> Low
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label onclick="tableColor('blank')">
+			<input name="table" type="radio">
+			Blank</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label onclick="tableColor('block')">
+			<input name="table" type="radio">
+			Block</label>
+		</td>
+		<td><ul>
+			<li><span class="legend" style="background-color: #f99;"></span> <a href="https://en.wikipedia.org/wiki/Block_(periodic_table)#s-block">s</a></li>
+			<li><span class="legend" style="background-color: #ff8;"></span> <a href="https://en.wikipedia.org/wiki/Block_(periodic_table)#p-block">p</a></li>
+			<li><span class="legend" style="background-color: #9cf;"></span> <a href="https://en.wikipedia.org/wiki/Block_(periodic_table)#d-block">d</a></li>
+			<li><span class="legend" style="background-color: #9f9;"></span> <a href="https://en.wikipedia.org/wiki/Block_(periodic_table)#f-block">f</a></li>
+		</ul></td>
+	</tr>
+	<tr>
+		<td>
+			<label onclick="tableColor('category')">
+			<input name="table" type="radio" checked>
+			Category</label>
+		</td>
+		<td><ul>
+			<li><span class="legend" style="background-color: #f66"></span> <a href="https://en.wikipedia.org/wiki/Alkali_metal">Alkali metal</a></li>
+			<li><span class="legend" style="background-color: #fda"></span> <a href="https://en.wikipedia.org/wiki/Alkaline_earth_metal">Alkaline earth metal</a></li>
+			<li><span class="legend" style="background-color: #fbf"></span> <a href="https://en.wikipedia.org/wiki/Lanthanide">Lanthanide</a></li>
+			<li><span class="legend" style="background-color: #f9c"></span> <a href="https://en.wikipedia.org/wiki/Actinide">Actinide</a></li>
+			<li><span class="legend" style="background-color: #fcc"></span> <a href="https://en.wikipedia.org/wiki/Transition_metal">Transition metal</a></li>
+			<li><span class="legend" style="background-color: #ccc"></span> <a href="https://en.wikipedia.org/wiki/Post-transition_metal">Post-transition metal</a></li>
+			<li><span class="legend" style="background-color: #cc9"></span> <a href="https://en.wikipedia.org/wiki/Metalloid">Metalloid</a></li>
+			<li><span class="legend" style="background-color: #ff8"></span> <a href="https://en.wikipedia.org/wiki/Reactive_nonmetal">Reactive nonmetal</a></li>
+			<li><span class="legend" style="background-color: #cff"></span> <a href="https://en.wikipedia.org/wiki/Noble_gas">Noble gas</a></li>
+		</ul></td>
+	</tr>
+	<tr>
+		<td>
+			<label onclick="tableColor('color')">
+			<input name="table" type="radio">
+			Color (Normalized)</label>
+		</td>
+		<td>
+			<span class="legend" style="background-color: grey;"></span> unavailable
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label onclick="tableColor('halflife')">
+			<input name="table" type="radio">
+			Half-Life</label>
+		</td>
+		<td><ul>
+			<li><span class="legend" style="background-color: #0c0;"></span> Stable</li>
+			<li><span class="legend" style="background-color: lime;"></span> High ...
+			<span class="legend" style="background-color: red;"></span> Low</li>
+		</ul></td>
+	</tr>
+	<tr>
+		<td>
+			<label onclick="tableColor('msi%4')">
+			<input name="table" type="radio">
+			Most Stable Isotope mod 4</label>
+		</td>
+		<td><ul>
+			<li><span class="legend" style="background-color: red;"></span> 0</li>
+			<li><span class="legend" style="background-color: yellow;"></span> 1</li>
+			<li><span class="legend" style="background-color: #4c4;"></span> 2</li>
+			<li><span class="legend" style="background-color: skyblue;"></span> 3</li>
+			<li><span class="legend" style="background-color: grey;"></span> multiple</li>
+		</ul></td>
+	</tr>
+	<tr>
+		<td>
+			<label onclick="tableColor('nutrition')">
+			<input name="table" type="radio">
+			Nutrition</label>
+		</td>
+		<td><ul>
+			<li><span class="legend" style="background-color: #060"></span> <a href="https://en.wikipedia.org/wiki/CHON">CHON</a></li>
+			<li><span class="legend" style="background-color: #0b0"></span> Quantity element</li>
+			<li><span class="legend" style="background-color: #7f0"></span> Essential trace</li>
+			<li><span class="legend" style="background-color: #670"></span> Suggested function from deprivation effects</li>
+			<li><span class="legend" style="background-color: #f70"></span> Limited circumstantial evidence for trace benefit</li>
+			<li><span class="legend" style="background-color: #dd9"></span> Essential in some lower organisms</li>
+		</ul></td>
+	</tr>
+	<tr>
+		<td>
+			<label onclick="tableColor('production')">
+			<input name="table" type="radio">
+			Production</label>
+		</td>
+		<td><ul>
+			<li><span class="legend" style="background-color: lime;"></span> High ...
+			<span class="legend" style="background-color: red;"></span> Low</li>
+		</ul></td>
+	</tr>
+	<tr>
+		<td>
+			<label onclick="tableColor('stable')">
+			<input name="table" type="radio">
+			Stable Isotopes</label>
+		</td>
+		<td><ul>
+			<li><span class="legend" style="background-color: white;"></span> 0 ...
+			<span class="legend" style="background-color: magenta;"></span> 10</li>
+		</ul></td>
+	</tr>
+	<tr>
+		<td>
+			<label onclick="tableColor('synesthete')">
+			<input name="table" type="radio">
+			Synesthete</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label onclick="tableColor('weight')">
+			<input name="table" type="radio">
+			Weight</label>
+		</td>
+		<td><ul>
+			<li><span class="legend" style="background-color: white;"></span> 0 ...
+			<span class="legend" style="background-color: red;"></span> 300</li>
+		</ul></td>
+	</tr>
+</table>
 <h2>Decay Chains</h2>
-<p>
+<div>
 	Diagram Type:<br>
 	<label onclick="setDecayChainLength()">
 		<input name="decay" type="radio" checked>
@@ -65,7 +184,7 @@
 		<input name="decay" type="radio">
 	Full</label><br>
 	Includes all nuclides w/ HL >= 2 months, or part of a decay chain.
-</p>
+</div>
 <h3>4n Decay Chain</h3>
 <svg id="decay0">
 	<!-- huge thanks to BatesIsBack -->
