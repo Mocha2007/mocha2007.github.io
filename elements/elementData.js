@@ -21,6 +21,7 @@ const elementData = [
 			},
 			modelColor: 'white',
 			nutrition: 0,
+			production: 50e6,
 		},
 	},
 	{
@@ -35,6 +36,7 @@ const elementData = [
 				universe: 0.24,
 			},
 			modelColor: 'rgb(217, 255, 255)',
+			production: 32e3,
 		},
 	},
 	{
@@ -52,6 +54,7 @@ const elementData = [
 			},
 			modelColor: 'rgb(204, 128, 255)',
 			nutrition: 3,
+			production: 55e3,
 			rgb: 'rgb(249, 255, 252)',
 		},
 	},
@@ -69,6 +72,7 @@ const elementData = [
 				universe: 1e-9,
 			},
 			modelColor: 'rgb(194, 255, 0)',
+			production: 200,
 			rgb: 'rgb(255, 255, 255)',
 		},
 	},
@@ -87,6 +91,7 @@ const elementData = [
 			},
 			modelColor: 'rgb(255, 181, 181)',
 			nutrition: 4,
+			production: 1.8e6,
 			rgb: 'rgb(255, 232, 219)',
 		},
 	},
@@ -105,6 +110,7 @@ const elementData = [
 			},
 			modelColor: 'rgb(144, 144, 144)',
 			nutrition: 0,
+			production: 1.03e6,
 			rgb: 'rgb(255, 251, 239)',
 		},
 	},
@@ -123,6 +129,7 @@ const elementData = [
 			},
 			modelColor: 'rgb(48, 80, 248)',
 			nutrition: 0,
+			production: 131e6,
 		},
 	},
 	{
@@ -140,6 +147,7 @@ const elementData = [
 			},
 			modelColor: 'rgb(255, 13, 13)',
 			nutrition: 0,
+			production: 100e6,
 		},
 	},
 	{
@@ -157,6 +165,7 @@ const elementData = [
 			},
 			modelColor: 'rgb(144, 224, 80)',
 			nutrition: 3,
+			production: 5.5e6,
 			rgb: 'rgb(255, 207, 112)',
 		},
 	},
@@ -172,6 +181,7 @@ const elementData = [
 				universe: 1340e-6,
 			},
 			modelColor: 'rgb(179, 227, 245)',
+			production: 500,
 		},
 	},
 	{
@@ -189,6 +199,7 @@ const elementData = [
 			},
 			modelColor: 'rgb(171, 92, 242)',
 			nutrition: 1,
+			production: 100e3,
 			rgb: 'rgb(252, 255, 249)',
 		},
 	},
@@ -207,6 +218,7 @@ const elementData = [
 			},
 			modelColor: 'rgb(138, 255, 0)',
 			nutrition: 1,
+			production: 748e3,
 			rgb: 'rgb(255, 251, 234)',
 		},
 	},
@@ -225,6 +237,7 @@ const elementData = [
 			},
 			modelColor: 'rgb(191, 166, 166)',
 			nutrition: 4,
+			production: 44.1e6,
 			rgb: 'rgb(244, 251, 255)',
 		},
 	},
@@ -243,6 +256,7 @@ const elementData = [
 			},
 			modelColor: 'rgb(240, 200, 160)',
 			nutrition: 4,
+			production: 8e6,
 			rgb: 'rgb(234, 241, 255)',
 		},
 	},
@@ -261,6 +275,7 @@ const elementData = [
 			},
 			modelColor: 'rgb(255, 128, 0)',
 			nutrition: 1,
+			production: 910e3,
 			rgb: 'rgb(255, 235, 186)',
 		},
 	},
@@ -279,6 +294,7 @@ const elementData = [
 			},
 			modelColor: 'rgb(255, 255, 48)',
 			nutrition: 1,
+			production: 69e6,
 			rgb: 'rgb(255, 218, 86)',
 		},
 	},
@@ -312,6 +328,7 @@ const elementData = [
 				universe: 77e-6,
 			},
 			modelColor: 'rgb(128, 209, 227)',
+			production: 700e3,
 		},
 	},
 	{
@@ -359,6 +376,7 @@ const elementData = [
 				human: 4e-10,
 				universe: 3e-8,
 			},
+			production: 2,
 		},
 	},
 	{
@@ -374,6 +392,7 @@ const elementData = [
 				human: 4e-8,
 				universe: 3e-6,
 			},
+			production: 6.7e6,
 		},
 	},
 	{
@@ -406,6 +425,7 @@ const elementData = [
 				universe: 1.5e-5,
 			},
 			nutrition: 2,
+			production: 4.4e6,
 		},
 	},
 	{
@@ -438,6 +458,7 @@ const elementData = [
 				universe: 1.09e-3,
 			},
 			nutrition: 2,
+			production: 1544e6,
 			rgb: 'rgb(255, 252, 252)',
 		},
 	},
@@ -472,6 +493,7 @@ const elementData = [
 				universe: 49e-6,
 			},
 			nutrition: 4,
+			production: 1.8e6,
 			rgb: 'rgb(255, 245, 224)',
 		},
 	},
@@ -489,6 +511,7 @@ const elementData = [
 				universe: 6e-8,
 			},
 			nutrition: 2,
+			production: 15.1e6,
 			rgb: 'rgb(255, 121, 76)',
 		},
 	},
@@ -506,6 +529,7 @@ const elementData = [
 				universe: 3e-7,
 			},
 			nutrition: 2,
+			production: 11.2e6,
 		},
 	},
 	{
@@ -521,6 +545,7 @@ const elementData = [
 				human: 7e-6,
 				universe: 1e-8,
 			},
+			production: 184,
 		},
 	},
 	{
@@ -537,6 +562,7 @@ const elementData = [
 				universe: 2e-7,
 			},
 			nutrition: 4,
+			production: 118,
 		},
 	},
 	{
@@ -569,6 +595,7 @@ const elementData = [
 				universe: 3e-8,
 			},
 			nutrition: 2,
+			production: 2e3,
 		},
 	},
 	{
@@ -585,6 +612,7 @@ const elementData = [
 				universe: 7e-9,
 			},
 			nutrition: 3,
+			production: 556e3,
 			rgb: 'rgb(255, 94, 35)',
 		},
 	},
@@ -614,6 +642,7 @@ const elementData = [
 				human: 3.3e-7,
 			},
 			nutrition: 4,
+			production: 2,
 		},
 	},
 	{
@@ -643,6 +672,7 @@ const elementData = [
 				earth: 850e-9,
 				human: 6e-10,
 			},
+			production: 200,
 		},
 	},
 	{
@@ -657,6 +687,7 @@ const elementData = [
 				earth: 2e-6,
 				human: 3e-9,
 			},
+			production: 900e3,
 		},
 	},
 	{
@@ -671,6 +702,7 @@ const elementData = [
 				earth: 120e-9,
 				human: 1e-10,
 			},
+			production: 44.5e3,
 		},
 	},
 	{
@@ -686,6 +718,7 @@ const elementData = [
 				human: 4.5e-10,
 			},
 			nutrition: 2,
+			production: 250e3,
 		},
 	},
 	{
@@ -707,6 +740,7 @@ const elementData = [
 			abundance: {
 				earth: 330e-9,
 			},
+			production: 12,
 		},
 	},
 	{
@@ -720,6 +754,7 @@ const elementData = [
 			abundance: {
 				earth: 61e-9,
 			},
+			production: 25,
 		},
 	},
 	{
@@ -747,6 +782,7 @@ const elementData = [
 				earth: 12e-9,
 				human: 2e-9,
 			},
+			production: 322e3,
 			rgb: 'rgb(255, 248, 239)',
 		},
 	},
@@ -777,6 +813,7 @@ const elementData = [
 				earth: 2e-9,
 				human: 4e-10,
 			},
+			production: 476,
 		},
 	},
 	{
@@ -792,6 +829,7 @@ const elementData = [
 				human: 6e-9,
 			},
 			nutrition: 4,
+			production: 340e3,
 		},
 	},
 	{
@@ -806,6 +844,7 @@ const elementData = [
 				earth: 11e-9,
 				human: 6e-10,
 			},
+			production: 150e3,
 		},
 	},
 	{
@@ -820,6 +859,7 @@ const elementData = [
 				earth: 61e-9,
 				human: 2e-10,
 			},
+			production: 122,
 		},
 	},
 	{
@@ -845,6 +885,9 @@ const elementData = [
 		mass: 131.293,
 		group: 18,
 		period: 5,
+		properties: {
+			production: 40,
+		},
 	},
 	// skip a few
 	{
@@ -929,6 +972,7 @@ const elementData = [
 				earth: 150e-9,
 			},
 			nutrition: 5,
+			production: 7000,
 		},
 	},
 	{
@@ -950,6 +994,7 @@ const elementData = [
 				human: 3e-11,
 			},
 			nutrition: 5,
+			production: 700,
 		},
 	},
 	{
@@ -998,6 +1043,7 @@ const elementData = [
 			abundance: {
 				earth: 74e-9,
 			},
+			production: 100,
 		},
 	},
 	{
@@ -1071,6 +1117,7 @@ const elementData = [
 			abundance: {
 				earth: 28e-9,
 			},
+			production: 10,
 		},
 	},
 	{
@@ -1100,6 +1147,7 @@ const elementData = [
 				human: 3e-10,
 			},
 			nutrition: 5,
+			production: 37400,
 		},
 	},
 	{
@@ -1113,6 +1161,7 @@ const elementData = [
 			abundance: {
 				earth: 10e-9,
 			},
+			production: 45,
 		},
 	},
 	{
@@ -1126,6 +1175,7 @@ const elementData = [
 			abundance: {
 				earth: 120e-9,
 			},
+			production: 1,
 		},
 	},
 	{
@@ -1139,6 +1189,7 @@ const elementData = [
 			abundance: {
 				earth: 120e-9,
 			},
+			production: 3,
 		},
 	},
 	{
@@ -1152,6 +1203,7 @@ const elementData = [
 			abundance: {
 				earth: 250e-9,
 			},
+			production: 239,
 		},
 	},
 	{
@@ -1166,6 +1218,7 @@ const elementData = [
 				earth: 21e-9,
 				human: 3e-9,
 			},
+			production: 2310,
 			rgb: 'rgb(255, 211, 109)',
 		},
 	},
@@ -1195,6 +1248,7 @@ const elementData = [
 				earth: 2e-9,
 				human: 7e-11,
 			},
+			production: 10,
 			rgb: 'rgb(255, 252, 253)',
 		},
 	},
@@ -1211,6 +1265,7 @@ const elementData = [
 				human: 4.5e-8,
 			},
 			nutrition: 4,
+			production: 8725e3,
 			rgb: 'rgb(255, 255, 255)',
 		},
 	},
@@ -1226,6 +1281,7 @@ const elementData = [
 				earth: 1e-9,
 				human: 2e-10,
 			},
+			production: 15e3,
 			rgb: 'rgb(255, 245, 232)',
 		},
 	},
@@ -1237,6 +1293,7 @@ const elementData = [
 		group: 16,
 		period: 6,
 		properties: {
+			production: 100e-6,
 			rgb: 'rgb(234, 242, 255)',
 		},
 	},
@@ -1318,6 +1375,7 @@ const elementData = [
 				earth: 2e-9,
 				human: 3e-11,
 			},
+			production: 50572,
 			rgb: 'rgb(255, 251, 242)',
 		},
 	},
@@ -1371,6 +1429,9 @@ const elementData = [
 		symbol: 'Cf',
 		mass: 251,
 		period: 7,
+		properties: {
+			production: 0.275e-6,
+		},
 	},
 	{
 		z: 99,

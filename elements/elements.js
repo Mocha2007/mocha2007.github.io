@@ -56,10 +56,14 @@ class ChemElement {
 		this.period = period;
 		if (properties){
 			this.abundance = properties.abundance;
-			/** color used in models */
+			/** @type {string} - color used in models */
 			this.modelColor = properties.modelColor;
+			/** @type {number} */
 			this.nutrition = properties.nutrition;
-			/** Normalized Color:
+			/** @type {number} t/yr */
+			this.production = properties.production;
+			/** @type {string}
+			 * Normalized Color:
 			 * - A photograph of the element is taken.
 			 * - White and Black are removed.
 			 * - The rest is averaged and white-balanced.
@@ -232,6 +236,13 @@ class ChemElement {
 			case 'nutrition':
 				c = this.nutrition === undefined ? 'white' :
 					['#060', '#0b0', '#7f0', '#670', '#f70', '#dd9'][this.nutrition];
+				break;
+			case 'production':
+				if (!this.production){
+					c = '#ccc';
+					break;
+				}
+				c = this.production ? `hsl(${6*Math.log(this.production)}, 100%, 50%)` : '#ccc';
 				break;
 			case 'stable':
 				x = this.isotopes.filter(i => i.stable).length / 10 * 255;
