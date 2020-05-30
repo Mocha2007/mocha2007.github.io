@@ -4,7 +4,6 @@ html, body, #table, td div {
 	height: 100%;
 	font-family: DejaVu Sans, sans-serif;
 	margin: 0;
-	/* overflow: hidden; */
 	width: 100%;
 }
 h2, h3, p {
@@ -15,19 +14,23 @@ a {
 	color: cornflowerblue;
 }
 table {
+	border-collapse: collapse;
 	table-layout: fixed;
 }
 td {
-	font-size: 1.7vh;
+	font-size: 1.4vw;
 	height: 10%;
 	line-height: 2.5vh;
-	padding: 0;
-	padding-right: 4px;
+	padding: 1px;
 	text-align: center;
 	width: calc(100% / 18);
 }
-.smaller {
-	font-size: 80%;
+td span:first-child {
+	font-size: 0.8vw;
+	font-stretch: condensed;
+}
+td span:nth-of-type(2) {
+	font-size: 1vw;
 }
 /* svg bs */
 svg {

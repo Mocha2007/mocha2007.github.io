@@ -128,18 +128,17 @@ class ChemElement {
 	createElement(){
 		const div = document.createElement('div');
 		div.id = this.name;
-		// content
+		// name
 		const name = document.createElement('span');
 		name.innerHTML = this.name;
-		name.classList.add('smaller');
 		div.appendChild(name);
+		// Z and symbol
 		div.innerHTML += `<br>${this.z}<br>${this.symbol}<br>`;
+		// mass
 		const mass = document.createElement('span');
 		mass.innerHTML = this.mass % 1 ? round(this.mass, 3) : `[${this.mass}]`;
-		mass.classList.add('smaller');
 		div.appendChild(mass);
 		// styling
-		div.style.border = '2px solid darkGrey';
 		div.style.backgroundColor = this.color;
 		// place element
 		const [x, y] = this.coords;
