@@ -409,6 +409,7 @@ const elementData = [
 				universe: 1e-6,
 			},
 			nutrition: 4,
+			production: 73e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-vanadium.pdf
 		},
 	},
 	{
@@ -442,6 +443,7 @@ const elementData = [
 				universe: 8e-6,
 			},
 			nutrition: 2,
+			production: 19e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-manganese.pdf
 		},
 	},
 	{
@@ -476,6 +478,7 @@ const elementData = [
 				universe: 3e-6,
 			},
 			nutrition: 2,
+			production: 140e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cobalt.pdf
 			rgb: 'rgb(255, 249, 244)',
 		},
 	},
@@ -579,6 +582,7 @@ const elementData = [
 				universe: 8e-9,
 			},
 			nutrition: 4,
+			production: 33e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-arsenic.pdf
 		},
 	},
 	{
@@ -658,6 +662,7 @@ const elementData = [
 				human: 3.3e-7,
 			},
 			nutrition: 3,
+			production: 220e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-strontium.pdf
 		},
 	},
 	{
@@ -768,6 +773,7 @@ const elementData = [
 			abundance: {
 				earth: 240e-9,
 			},
+			production: 210, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-platinum.pdf
 		},
 	},
 	{
@@ -799,6 +805,7 @@ const elementData = [
 				human: 4.5e-8,
 			},
 			nutrition: 5,
+			production: 25e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cadmium.pdf
 		},
 	},
 	{
@@ -875,6 +882,7 @@ const elementData = [
 				human: 7.5e-9,
 			},
 			nutrition: 2,
+			production: 28e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-iodine.pdf
 			rgb: 'rgb(216, 229, 255)',
 		},
 	},
@@ -1132,6 +1140,7 @@ const elementData = [
 				earth: 4e-9,
 				human: 3e-9,
 			},
+			production: 1.8e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-tantalum.pdf
 		},
 	},
 	{
@@ -1234,6 +1243,7 @@ const elementData = [
 				earth: 3e-9,
 				human: 8.9e-10,
 			},
+			production: 4e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-mercury.pdf
 		},
 	},
 	{
@@ -1354,6 +1364,7 @@ const elementData = [
 				earth: 6e-9,
 				human: 3e-11,
 			},
+			production: 1.2e3, // US, est. https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-thorium.pdf
 			rgb: 'rgb(255, 229, 216)',
 		},
 	},
