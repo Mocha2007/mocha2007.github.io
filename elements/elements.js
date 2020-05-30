@@ -204,7 +204,7 @@ class ChemElement {
 				break;
 			case 'halflife':
 				if (this.stable){
-					c = '#0c0';
+					c = '#0cc';
 					break;
 				}
 				x = Math.log(Math.max(...this.isotopes.map(i => i.halfLife))) /
