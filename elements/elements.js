@@ -176,6 +176,13 @@ class ChemElement {
 				}
 				c = `hsl(${120+8*Math.log(this.abundance.earth)}, 100%, 50%)`;
 				break;
+			case 'abundanceHuman':
+				if (!this.abundance || !this.abundance.human){
+					c = 'white';
+					break;
+				}
+				c = `hsl(${120+6*Math.log(this.abundance.human)}, 100%, 50%)`;
+				break;
 			case 'abundanceUniverse':
 				if (!this.abundance || !this.abundance.universe){
 					c = 'white';

@@ -15,6 +15,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 6.7e-3,
+				human: 0.62,
 				universe: 0.739,
 			},
 			modelColor: 'white',
@@ -45,6 +46,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 4.1e-6,
+				human: 1.5e-8,
 			},
 			modelColor: 'rgb(204, 128, 255)',
 			nutrition: 3,
@@ -61,6 +63,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 140e-9,
+				human: 4.5e-10,
 			},
 			modelColor: 'rgb(194, 255, 0)',
 			rgb: 'rgb(255, 255, 255)',
@@ -76,6 +79,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 480e-9,
+				human: 3e-8,
 			},
 			modelColor: 'rgb(255, 181, 181)',
 			nutrition: 4,
@@ -92,6 +96,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 1.6e-3,
+				human: 0.12,
 				universe: 4600e-6,
 			},
 			modelColor: 'rgb(144, 144, 144)',
@@ -109,6 +114,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 46e-6,
+				human: 0.011,
 				universe: 960e-6,
 			},
 			modelColor: 'rgb(48, 80, 248)',
@@ -125,6 +131,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 482e-3,
+				human: 0.24,
 				universe: 10400e-6,
 			},
 			modelColor: 'rgb(255, 13, 13)',
@@ -141,6 +148,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 14e-6,
+				human: 1.2e-5,
 			},
 			modelColor: 'rgb(144, 224, 80)',
 			nutrition: 3,
@@ -171,6 +179,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 2e-3,
+				human: 3.7e-4,
 				universe: 33e-6,
 			},
 			modelColor: 'rgb(171, 92, 242)',
@@ -188,6 +197,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 164e-3,
+				human: 7e-5,
 				universe: 580e-6,
 			},
 			modelColor: 'rgb(138, 255, 0)',
@@ -205,6 +215,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 15.3e-3,
+				human: 1.5e-7,
 				universe: 58e-6,
 			},
 			modelColor: 'rgb(191, 166, 166)',
@@ -222,6 +233,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 150e-3,
+				human: 5.8e-5,
 				universe: 650e-6,
 			},
 			modelColor: 'rgb(240, 200, 160)',
@@ -239,6 +251,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 1.02e-3,
+				human: 0.0022,
 			},
 			modelColor: 'rgb(255, 128, 0)',
 			nutrition: 1,
@@ -255,6 +268,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 5.15e-3,
+				human: 3.8e-4,
 				universe: 440e-6,
 			},
 			modelColor: 'rgb(255, 255, 48)',
@@ -272,6 +286,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 56e-6,
+				human: 2.4e-4,
 			},
 			modelColor: 'rgb(31, 240, 31)',
 			nutrition: 1,
@@ -302,6 +317,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 110e-6,
+				human: 3.3e-4,
 			},
 			nutrition: 1,
 		},
@@ -316,6 +332,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 11.1e-3,
+				human: 0.0022,
 				universe: 60e-6,
 			},
 			nutrition: 1,
@@ -331,6 +348,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 6.3e-6,
+				human: 4e-10,
 			},
 		},
 	},
@@ -344,6 +362,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 440e-6,
+				human: 4e-8,
 			},
 		},
 	},
@@ -357,6 +376,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 53.6e-6,
+				human: 1.2e-10,
 			},
 			nutrition: 4,
 		},
@@ -371,6 +391,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 2.3e-3,
+				human: 1.9e-10,
 			},
 			nutrition: 2,
 		},
@@ -385,6 +406,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 800e-6,
+				human: 1.5e-8,
 			},
 			nutrition: 2,
 		},
@@ -399,6 +421,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 148e-3,
+				human: 6.7e-6,
 				universe: 1090e-6,
 			},
 			nutrition: 2,
@@ -415,6 +438,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 390e-6,
+				human: 3e-9,
 			},
 			nutrition: 2,
 			rgb: 'rgb(255, 249, 244)',
@@ -430,6 +454,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 8.01e-3,
+				human: 1.5e-8,
 				universe: 49e-6,
 			},
 			nutrition: 4,
@@ -446,6 +471,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 25e-6,
+				human: 1.04e-7,
 			},
 			nutrition: 2,
 			rgb: 'rgb(255, 121, 76)',
@@ -461,6 +487,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 16e-6,
+				human: 3.1e-6,
 			},
 			nutrition: 2,
 		},
@@ -475,6 +502,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 1e-6,
+				human: 7e-6,
 			},
 		},
 	},
@@ -488,6 +516,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 2.5e-6,
+				human: 6e-10,
 			},
 			nutrition: 4,
 		},
@@ -502,6 +531,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 590e-9,
+				human: 8.9e-10,
 			},
 			nutrition: 4,
 		},
@@ -516,6 +546,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 890e-9,
+				human: 4.5e-10,
 			},
 			nutrition: 2,
 		},
@@ -530,6 +561,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 97e-9,
+				human: 3e-7,
 			},
 			nutrition: 3,
 			rgb: 'rgb(255, 94, 35)',
@@ -553,6 +585,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 120e-9,
+				human: 3.3e-7,
 			},
 			nutrition: 4,
 		},
@@ -567,6 +600,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 3.9e-6,
+				human: 3.3e-7,
 			},
 			nutrition: 3,
 		},
@@ -581,6 +615,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 850e-9,
+				human: 6e-10,
 			},
 		},
 	},
@@ -594,6 +629,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 2e-6,
+				human: 3e-9,
 			},
 		},
 	},
@@ -607,6 +643,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 120e-9,
+				human: 1e-10,
 			},
 		},
 	},
@@ -620,6 +657,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 460e-9,
+				human: 4.5e-10,
 			},
 			nutrition: 2,
 		},
@@ -681,6 +719,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 12e-9,
+				human: 2e-9,
 			},
 			rgb: 'rgb(255, 248, 239)',
 		},
@@ -695,6 +734,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 18e-9,
+				human: 4.5e-8,
 			},
 			nutrition: 5,
 		},
@@ -709,6 +749,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 2e-9,
+				human: 4e-10,
 			},
 		},
 	},
@@ -722,6 +763,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 55e-9,
+				human: 6e-9,
 			},
 			nutrition: 4,
 		},
@@ -736,6 +778,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 11e-9,
+				human: 6e-10,
 			},
 		},
 	},
@@ -749,6 +792,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 61e-9,
+				human: 2e-10,
 			},
 		},
 	},
@@ -762,6 +806,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 10e-9,
+				human: 7.5e-9,
 			},
 			nutrition: 2,
 			rgb: 'rgb(216, 229, 255)',
@@ -786,6 +831,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 7e-9,
+				human: 1e-9,
 			},
 			rgb: 'rgb(255, 212, 153)',
 		},
@@ -800,6 +846,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 850e-9,
+				human: 1.2e-8,
 			},
 		},
 	},
@@ -813,6 +860,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 82e-9,
+				human: 4e-10,
 			},
 			nutrition: 5,
 		},
@@ -826,6 +874,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 210e-9,
+				human: 2e-8,
 			},
 			nutrition: 5,
 		},
@@ -872,6 +921,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 47e-9,
+				human: 3e-11,
 			},
 			nutrition: 5,
 		},
@@ -1007,6 +1057,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 4e-9,
+				human: 3e-9,
 			},
 		},
 	},
@@ -1020,6 +1071,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 24e-9,
+				human: 3e-10,
 			},
 			nutrition: 5,
 		},
@@ -1086,6 +1138,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 21e-9,
+				human: 3e-9,
 			},
 			rgb: 'rgb(255, 211, 109)',
 		},
@@ -1100,6 +1153,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 3e-9,
+				human: 8.9e-10,
 			},
 		},
 	},
@@ -1113,6 +1167,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 2e-9,
+				human: 7e-11,
 			},
 			rgb: 'rgb(255, 252, 253)',
 		},
@@ -1127,6 +1182,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 29e-9,
+				human: 4.5e-8,
 			},
 			nutrition: 4,
 			rgb: 'rgb(255, 255, 255)',
@@ -1142,6 +1198,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 1e-9,
+				human: 2e-10,
 			},
 			rgb: 'rgb(255, 245, 232)',
 		},
@@ -1189,6 +1246,9 @@ const elementData = [
 		group: 2,
 		period: 7,
 		properties: {
+			abundance: {
+				human: 1e-19,
+			},
 			rgb: 'rgb(255, 233, 198)',
 		},
 	},
@@ -1209,6 +1269,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 6e-9,
+				human: 3e-11,
 			},
 			rgb: 'rgb(255, 229, 216)',
 		},
@@ -1229,6 +1290,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 2e-9,
+				human: 3e-11,
 			},
 			rgb: 'rgb(255, 251, 242)',
 		},
