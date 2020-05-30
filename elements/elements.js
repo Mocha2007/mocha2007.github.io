@@ -188,7 +188,7 @@ class ChemElement {
 					c = 'white';
 					break;
 				}
-				c = `hsl(${120+11*Math.log(this.abundance.universe)}, 100%, 50%)`;
+				c = `hsl(${120+8*Math.log(this.abundance.universe)}, 100%, 50%)`;
 				break;
 			case 'block':
 				c = {s: '#f99', p: '#ff8', d: '#9cf', f: '#9f9'}[this.electronShell];

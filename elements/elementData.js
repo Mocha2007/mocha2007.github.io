@@ -2,6 +2,7 @@
 'use strict';
 // modelColor from https://sciencenotes.org/wp-content/uploads/2019/07/CPK-Jmol-1024x791.png
 // abundaces from https://en.wikipedia.org/wiki/Abundance_of_the_chemical_elements#Universe
+// also https://periodictable.com/Properties/A/UniverseAbundance.html
 // nutrition from https://en.wikipedia.org/wiki/Composition_of_the_human_body#Periodic_table
 
 const elementData = [
@@ -47,6 +48,7 @@ const elementData = [
 			abundance: {
 				earth: 4.1e-6,
 				human: 1.5e-8,
+				universe: 6e-9,
 			},
 			modelColor: 'rgb(204, 128, 255)',
 			nutrition: 3,
@@ -64,6 +66,7 @@ const elementData = [
 			abundance: {
 				earth: 140e-9,
 				human: 4.5e-10,
+				universe: 1e-9,
 			},
 			modelColor: 'rgb(194, 255, 0)',
 			rgb: 'rgb(255, 255, 255)',
@@ -80,6 +83,7 @@ const elementData = [
 			abundance: {
 				earth: 480e-9,
 				human: 3e-8,
+				universe: 1e-9,
 			},
 			modelColor: 'rgb(255, 181, 181)',
 			nutrition: 4,
@@ -149,6 +153,7 @@ const elementData = [
 			abundance: {
 				earth: 14e-6,
 				human: 1.2e-5,
+				universe: 4e-7,
 			},
 			modelColor: 'rgb(144, 224, 80)',
 			nutrition: 3,
@@ -252,6 +257,7 @@ const elementData = [
 			abundance: {
 				earth: 1.02e-3,
 				human: 0.0022,
+				universe: 7e-6,
 			},
 			modelColor: 'rgb(255, 128, 0)',
 			nutrition: 1,
@@ -287,6 +293,7 @@ const elementData = [
 			abundance: {
 				earth: 56e-6,
 				human: 2.4e-4,
+				universe: 1e-6,
 			},
 			modelColor: 'rgb(31, 240, 31)',
 			nutrition: 1,
@@ -318,6 +325,7 @@ const elementData = [
 			abundance: {
 				earth: 110e-6,
 				human: 3.3e-4,
+				universe: 3e-6,
 			},
 			nutrition: 1,
 		},
@@ -349,6 +357,7 @@ const elementData = [
 			abundance: {
 				earth: 6.3e-6,
 				human: 4e-10,
+				universe: 3e-8,
 			},
 		},
 	},
@@ -363,6 +372,7 @@ const elementData = [
 			abundance: {
 				earth: 440e-6,
 				human: 4e-8,
+				universe: 3e-6,
 			},
 		},
 	},
@@ -377,6 +387,7 @@ const elementData = [
 			abundance: {
 				earth: 53.6e-6,
 				human: 1.2e-10,
+				universe: 1e-6,
 			},
 			nutrition: 4,
 		},
@@ -392,6 +403,7 @@ const elementData = [
 			abundance: {
 				earth: 2.3e-3,
 				human: 1.9e-10,
+				universe: 1.5e-5,
 			},
 			nutrition: 2,
 		},
@@ -407,6 +419,7 @@ const elementData = [
 			abundance: {
 				earth: 800e-6,
 				human: 1.5e-8,
+				universe: 8e-6,
 			},
 			nutrition: 2,
 		},
@@ -422,7 +435,7 @@ const elementData = [
 			abundance: {
 				earth: 148e-3,
 				human: 6.7e-6,
-				universe: 1090e-6,
+				universe: 1.09e-3,
 			},
 			nutrition: 2,
 			rgb: 'rgb(255, 252, 252)',
@@ -439,6 +452,7 @@ const elementData = [
 			abundance: {
 				earth: 390e-6,
 				human: 3e-9,
+				universe: 3e-6,
 			},
 			nutrition: 2,
 			rgb: 'rgb(255, 249, 244)',
@@ -472,6 +486,7 @@ const elementData = [
 			abundance: {
 				earth: 25e-6,
 				human: 1.04e-7,
+				universe: 6e-8,
 			},
 			nutrition: 2,
 			rgb: 'rgb(255, 121, 76)',
@@ -488,6 +503,7 @@ const elementData = [
 			abundance: {
 				earth: 16e-6,
 				human: 3.1e-6,
+				universe: 3e-7,
 			},
 			nutrition: 2,
 		},
@@ -503,6 +519,7 @@ const elementData = [
 			abundance: {
 				earth: 1e-6,
 				human: 7e-6,
+				universe: 1e-8,
 			},
 		},
 	},
@@ -517,6 +534,7 @@ const elementData = [
 			abundance: {
 				earth: 2.5e-6,
 				human: 6e-10,
+				universe: 2e-7,
 			},
 			nutrition: 4,
 		},
@@ -532,6 +550,7 @@ const elementData = [
 			abundance: {
 				earth: 590e-9,
 				human: 8.9e-10,
+				universe: 8e-9,
 			},
 			nutrition: 4,
 		},
@@ -547,6 +566,7 @@ const elementData = [
 			abundance: {
 				earth: 890e-9,
 				human: 4.5e-10,
+				universe: 3e-8,
 			},
 			nutrition: 2,
 		},
@@ -562,6 +582,7 @@ const elementData = [
 			abundance: {
 				earth: 97e-9,
 				human: 3e-7,
+				universe: 7e-9,
 			},
 			nutrition: 3,
 			rgb: 'rgb(255, 94, 35)',
@@ -574,6 +595,11 @@ const elementData = [
 		mass: 83.798,
 		group: 18,
 		period: 4,
+		properties: {
+			abundance: {
+				universe: 4e-8,
+			},
+		},
 	},
 	{
 		z: 37,
