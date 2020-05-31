@@ -1,6 +1,6 @@
 /* jshint esversion: 6, strict: true, strict: global */
-/* globals createSvgElement, day, deg, elementData, hour,
-	isotopeData, minute, range, round, sum, unitString, year */
+/* globals createSvgElement, day, deg, elementData, hour, isotopeData, minute,
+	nobleMetalColors, nutritionColors, range, round, sum, unitString, year */
 /* exported setDecayChainLength, tableColor */
 'use strict';
 
@@ -58,6 +58,8 @@ class ChemElement {
 			this.abundance = properties.abundance;
 			/** @type {string} - color used in models */
 			this.modelColor = properties.modelColor;
+			/** @type {number} */
+			this.nobleMetal = properties.nobleMetal;
 			/** @type {number} */
 			this.nutrition = properties.nutrition;
 			/** @type {number} t/yr */
@@ -236,9 +238,11 @@ class ChemElement {
 						Math.max(...isotopeMasses))].mass % 4];
 				}
 				break;
+			case 'nobleMetal':
+				c = this.nobleMetal === undefined ? 'white' : nobleMetalColors[this.nobleMetal];
+				break;
 			case 'nutrition':
-				c = this.nutrition === undefined ? 'white' :
-					['#060', '#0b0', '#7f0', '#670', '#f70', '#dd9'][this.nutrition];
+				c = this.nutrition === undefined ? 'white' : nutritionColors[this.nutrition];
 				break;
 			case 'production':
 				if (!this.production){

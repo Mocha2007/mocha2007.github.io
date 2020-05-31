@@ -1,9 +1,13 @@
-/* exported elementData, isotopeData */
+/* exported elementData, isotopeData, nobleMetalColors, nutritionColors */
 'use strict';
 // modelColor from https://sciencenotes.org/wp-content/uploads/2019/07/CPK-Jmol-1024x791.png
 // abundances from https://periodictable.com/Properties/A/UniverseAbundance.an.log.html
 // also https://periodictable.com/Properties/A/UniverseAbundance.html
-// nutrition from https://en.wikipedia.org/wiki/Composition_of_the_human_body#Periodic_table
+
+// https://en.wikipedia.org/wiki/Template:Periodic_table_(noble_metals)
+const nobleMetalColors = ['#cf0', '#0e7', '#6bf', '#c9f', '#fb6', '#f66'];
+// https://en.wikipedia.org/wiki/Template:Periodic_table_(nutritional_elements)
+const nutritionColors = ['#060', '#0b0', '#7f0', '#670', '#f70', '#dd9'];
 
 const elementData = [
 	{
@@ -392,6 +396,7 @@ const elementData = [
 				human: 4e-8,
 				universe: 3e-6,
 			},
+			nobleMetal: 0,
 			production: 6.7e6,
 		},
 	},
@@ -408,6 +413,7 @@ const elementData = [
 				human: 1.2e-10,
 				universe: 1e-6,
 			},
+			nobleMetal: 0,
 			nutrition: 4,
 			production: 73e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-vanadium.pdf
 		},
@@ -425,6 +431,7 @@ const elementData = [
 				human: 1.9e-10,
 				universe: 1.5e-5,
 			},
+			nobleMetal: 0,
 			nutrition: 2,
 			production: 4.4e6,
 		},
@@ -513,6 +520,7 @@ const elementData = [
 				human: 1.04e-7,
 				universe: 6e-8,
 			},
+			nobleMetal: 2,
 			nutrition: 2,
 			production: 15.1e6,
 			rgb: 'rgb(255, 121, 76)',
@@ -581,6 +589,7 @@ const elementData = [
 				human: 8.9e-10,
 				universe: 8e-9,
 			},
+			nobleMetal: 3,
 			nutrition: 4,
 			production: 33e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-arsenic.pdf
 		},
@@ -598,6 +607,7 @@ const elementData = [
 				human: 4.5e-10,
 				universe: 3e-8,
 			},
+			nobleMetal: 3,
 			nutrition: 2,
 			production: 2e3,
 		},
@@ -696,6 +706,7 @@ const elementData = [
 				human: 3e-9,
 				universe: 5e-8,
 			},
+			nobleMetal: 0,
 			production: 900e3,
 		},
 	},
@@ -712,6 +723,7 @@ const elementData = [
 				human: 1e-10,
 				universe: 2e-9,
 			},
+			nobleMetal: 0,
 			production: 44.5e3,
 		},
 	},
@@ -728,6 +740,7 @@ const elementData = [
 				human: 4.5e-10,
 				universe: 5e-9,
 			},
+			nobleMetal: 0,
 			nutrition: 2,
 			production: 250e3,
 		},
@@ -743,6 +756,7 @@ const elementData = [
 			abundance: {
 				earth: 0.003e-12, // https://en.wikipedia.org/wiki/Technetium#Occurrence_and_production
 			},
+			nobleMetal: 4,
 		},
 	},
 	{
@@ -757,6 +771,7 @@ const elementData = [
 				earth: 330e-9,
 				universe: 4e-9,
 			},
+			nobleMetal: 1,
 			production: 12,
 		},
 	},
@@ -772,6 +787,7 @@ const elementData = [
 				earth: 61e-9,
 				universe: 6e-10,
 			},
+			nobleMetal: 1,
 			production: 25,
 		},
 	},
@@ -787,6 +803,7 @@ const elementData = [
 				earth: 240e-9,
 				universe: 2e-9,
 			},
+			nobleMetal: 1,
 			production: 210, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-platinum.pdf
 		},
 	},
@@ -803,6 +820,7 @@ const elementData = [
 				human: 2e-9,
 				universe: 6e-10,
 			},
+			nobleMetal: 2,
 			production: 322e3,
 			rgb: 'rgb(255, 248, 239)',
 		},
@@ -870,6 +888,7 @@ const elementData = [
 				human: 6e-10,
 				universe: 4e-10,
 			},
+			nobleMetal: 3,
 			production: 150e3,
 		},
 	},
@@ -886,6 +905,7 @@ const elementData = [
 				human: 2e-10,
 				universe: 9e-9,
 			},
+			nobleMetal: 3,
 			production: 122,
 		},
 	},
@@ -1166,6 +1186,7 @@ const elementData = [
 				earth: 28e-9,
 				universe: 7e-10,
 			},
+			nobleMetal: 0,
 			production: 10,
 		},
 	},
@@ -1182,6 +1203,7 @@ const elementData = [
 				human: 3e-9,
 				universe: 8e-11,
 			},
+			nobleMetal: 0,
 			production: 1.8e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-tantalum.pdf
 		},
 	},
@@ -1198,6 +1220,7 @@ const elementData = [
 				human: 3e-10,
 				universe: 5e-10,
 			},
+			nobleMetal: 0,
 			nutrition: 5,
 			production: 37400,
 		},
@@ -1214,6 +1237,7 @@ const elementData = [
 				earth: 10e-9,
 				universe: 2e-10,
 			},
+			nobleMetal: 2,
 			production: 45,
 		},
 	},
@@ -1229,6 +1253,7 @@ const elementData = [
 				earth: 120e-9,
 				universe: 3e-9,
 			},
+			nobleMetal: 1,
 			production: 1,
 		},
 	},
@@ -1244,6 +1269,7 @@ const elementData = [
 				earth: 120e-9,
 				universe: 2e-9,
 			},
+			nobleMetal: 1,
 			production: 3,
 		},
 	},
@@ -1259,6 +1285,7 @@ const elementData = [
 				earth: 250e-9,
 				universe: 5e-9,
 			},
+			nobleMetal: 1,
 			production: 239,
 		},
 	},
@@ -1275,6 +1302,7 @@ const elementData = [
 				human: 3e-9,
 				universe: 6e-10,
 			},
+			nobleMetal: 2,
 			production: 2310,
 			rgb: 'rgb(255, 211, 109)',
 		},
@@ -1292,6 +1320,7 @@ const elementData = [
 				human: 8.9e-10,
 				universe: 1e-9,
 			},
+			nobleMetal: 2,
 			production: 4e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-mercury.pdf
 		},
 	},
@@ -1343,6 +1372,7 @@ const elementData = [
 				human: 2e-10,
 				universe: 7e-10,
 			},
+			nobleMetal: 3,
 			production: 15e3,
 			rgb: 'rgb(255, 245, 232)',
 		},
@@ -1358,6 +1388,7 @@ const elementData = [
 			abundance: {
 				earth: 0.2e-2 * 9e-13, // https://en.wikipedia.org/wiki/Polonium#Occurrence_and_production
 			},
+			nobleMetal: 4,
 			production: 100e-6,
 			rgb: 'rgb(234, 242, 255)',
 		},
@@ -1373,6 +1404,7 @@ const elementData = [
 			abundance: {
 				earth: 1e-24, // https://en.wikipedia.org/wiki/Polonium#Occurrence_and_production
 			},
+			nobleMetal: 4,
 		},
 	},
 	{
@@ -1583,6 +1615,9 @@ const elementData = [
 		mass: 278,
 		group: 7,
 		period: 7,
+		properties: {
+			nobleMetal: 5,
+		},
 	},
 	{
 		z: 108,
@@ -1591,6 +1626,9 @@ const elementData = [
 		mass: 269,
 		group: 8,
 		period: 7,
+		properties: {
+			nobleMetal: 5,
+		},
 	},
 	{
 		z: 109,
@@ -1599,6 +1637,9 @@ const elementData = [
 		mass: 282,
 		group: 9,
 		period: 7,
+		properties: {
+			nobleMetal: 5,
+		},
 	},
 	{
 		z: 110,
@@ -1607,6 +1648,9 @@ const elementData = [
 		mass: 281,
 		group: 10,
 		period: 7,
+		properties: {
+			nobleMetal: 5,
+		},
 	},
 	{
 		z: 111,
@@ -1615,6 +1659,9 @@ const elementData = [
 		mass: 286,
 		group: 11,
 		period: 7,
+		properties: {
+			nobleMetal: 5,
+		},
 	},
 	{
 		z: 112,
@@ -1623,6 +1670,9 @@ const elementData = [
 		mass: 285,
 		group: 12,
 		period: 7,
+		properties: {
+			nobleMetal: 5,
+		},
 	},
 	{
 		z: 113,
@@ -1631,6 +1681,9 @@ const elementData = [
 		mass: 286,
 		group: 13,
 		period: 7,
+		properties: {
+			nobleMetal: 5,
+		},
 	},
 	{
 		z: 114,
@@ -1639,6 +1692,9 @@ const elementData = [
 		mass: 290,
 		group: 14,
 		period: 7,
+		properties: {
+			nobleMetal: 5,
+		},
 	},
 	{
 		z: 115,
@@ -1655,6 +1711,9 @@ const elementData = [
 		mass: 294,
 		group: 16,
 		period: 7,
+		properties: {
+			nobleMetal: 5,
+		},
 	},
 	{
 		z: 117,
