@@ -1,7 +1,7 @@
 /* exported elementData, isotopeData */
 'use strict';
 // modelColor from https://sciencenotes.org/wp-content/uploads/2019/07/CPK-Jmol-1024x791.png
-// abundances from https://en.wikipedia.org/wiki/Abundance_of_the_chemical_elements#Universe
+// abundances from https://periodictable.com/Properties/A/UniverseAbundance.an.log.html
 // also https://periodictable.com/Properties/A/UniverseAbundance.html
 // nutrition from https://en.wikipedia.org/wiki/Composition_of_the_human_body#Periodic_table
 
@@ -644,6 +644,7 @@ const elementData = [
 			abundance: {
 				earth: 120e-9,
 				human: 3.3e-7,
+				universe: 1e-8,
 			},
 			nutrition: 4,
 			production: 2,
@@ -660,6 +661,7 @@ const elementData = [
 			abundance: {
 				earth: 3.9e-6,
 				human: 3.3e-7,
+				universe: 4e-8,
 			},
 			nutrition: 3,
 			production: 220e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-strontium.pdf
@@ -676,6 +678,7 @@ const elementData = [
 			abundance: {
 				earth: 850e-9,
 				human: 6e-10,
+				universe: 7e-9,
 			},
 			production: 200,
 		},
@@ -691,6 +694,7 @@ const elementData = [
 			abundance: {
 				earth: 2e-6,
 				human: 3e-9,
+				universe: 5e-8,
 			},
 			production: 900e3,
 		},
@@ -706,6 +710,7 @@ const elementData = [
 			abundance: {
 				earth: 120e-9,
 				human: 1e-10,
+				universe: 2e-9,
 			},
 			production: 44.5e3,
 		},
@@ -721,6 +726,7 @@ const elementData = [
 			abundance: {
 				earth: 460e-9,
 				human: 4.5e-10,
+				universe: 5e-9,
 			},
 			nutrition: 2,
 			production: 250e3,
@@ -749,6 +755,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 330e-9,
+				universe: 4e-9,
 			},
 			production: 12,
 		},
@@ -763,6 +770,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 61e-9,
+				universe: 6e-10,
 			},
 			production: 25,
 		},
@@ -777,6 +785,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 240e-9,
+				universe: 2e-9,
 			},
 			production: 210, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-platinum.pdf
 		},
@@ -792,6 +801,7 @@ const elementData = [
 			abundance: {
 				earth: 12e-9,
 				human: 2e-9,
+				universe: 6e-10,
 			},
 			production: 322e3,
 			rgb: 'rgb(255, 248, 239)',
@@ -808,6 +818,7 @@ const elementData = [
 			abundance: {
 				earth: 18e-9,
 				human: 4.5e-8,
+				universe: 2e-9,
 			},
 			nutrition: 5,
 			production: 25e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cadmium.pdf
@@ -824,6 +835,7 @@ const elementData = [
 			abundance: {
 				earth: 2e-9,
 				human: 4e-10,
+				universe: 3e-10,
 			},
 			production: 476,
 		},
@@ -839,6 +851,7 @@ const elementData = [
 			abundance: {
 				earth: 55e-9,
 				human: 6e-9,
+				universe: 4e-9,
 			},
 			nutrition: 4,
 			production: 340e3,
@@ -855,6 +868,7 @@ const elementData = [
 			abundance: {
 				earth: 11e-9,
 				human: 6e-10,
+				universe: 4e-10,
 			},
 			production: 150e3,
 		},
@@ -870,6 +884,7 @@ const elementData = [
 			abundance: {
 				earth: 61e-9,
 				human: 2e-10,
+				universe: 9e-9,
 			},
 			production: 122,
 		},
@@ -885,6 +900,7 @@ const elementData = [
 			abundance: {
 				earth: 10e-9,
 				human: 7.5e-9,
+				universe: 1e-9,
 			},
 			nutrition: 2,
 			production: 28e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-iodine.pdf
@@ -899,6 +915,9 @@ const elementData = [
 		group: 18,
 		period: 5,
 		properties: {
+			abundance: {
+				universe: 1e-8,
+			},
 			production: 40,
 		},
 	},
