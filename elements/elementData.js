@@ -933,6 +933,7 @@ const elementData = [
 			abundance: {
 				earth: 7e-9,
 				human: 1e-9,
+				universe: 8e-10,
 			},
 			rgb: 'rgb(255, 212, 153)',
 		},
@@ -948,6 +949,7 @@ const elementData = [
 			abundance: {
 				earth: 850e-9,
 				human: 1.2e-8,
+				universe: 1e-8,
 			},
 		},
 	},
@@ -962,6 +964,7 @@ const elementData = [
 			abundance: {
 				earth: 82e-9,
 				human: 4e-10,
+				universe: 2e-9,
 			},
 			nutrition: 5,
 		},
@@ -976,6 +979,7 @@ const elementData = [
 			abundance: {
 				earth: 210e-9,
 				human: 2e-8,
+				universe: 1e-8,
 			},
 			nutrition: 5,
 		},
@@ -989,6 +993,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 31e-9,
+				universe: 2e-9,
 			},
 			nutrition: 5,
 		},
@@ -1002,6 +1007,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 150e-9,
+				universe: 1e-8,
 			},
 			nutrition: 5,
 			production: 7000,
@@ -1024,6 +1030,7 @@ const elementData = [
 			abundance: {
 				earth: 47e-9,
 				human: 3e-11,
+				universe: 5e-9,
 			},
 			nutrition: 5,
 			production: 700,
@@ -1038,6 +1045,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 17e-9,
+				universe: 5e-10,
 			},
 		},
 	},
@@ -1050,6 +1058,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 61e-9,
+				universe: 2e-9,
 			},
 		},
 	},
@@ -1062,6 +1071,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 11e-9,
+				universe: 5e-10,
 			},
 		},
 	},
@@ -1074,6 +1084,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 74e-9,
+				universe: 2e-9,
 			},
 			production: 100,
 		},
@@ -1087,6 +1098,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 16e-9,
+				universe: 5e-10,
 			},
 		},
 	},
@@ -1099,6 +1111,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 47e-9,
+				universe: 2e-9,
 			},
 		},
 	},
@@ -1111,6 +1124,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 7e-9,
+				universe: 1e-10,
 			},
 		},
 	},
@@ -1123,6 +1137,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 45e-9,
+				universe: 2e-9,
 			},
 		},
 	},
@@ -1135,6 +1150,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 7e-9,
+				universe: 1e-10,
 			},
 		},
 	},
@@ -1148,6 +1164,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 28e-9,
+				universe: 7e-10,
 			},
 			production: 10,
 		},
@@ -1163,6 +1180,7 @@ const elementData = [
 			abundance: {
 				earth: 4e-9,
 				human: 3e-9,
+				universe: 8e-11,
 			},
 			production: 1.8e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-tantalum.pdf
 		},
@@ -1178,6 +1196,7 @@ const elementData = [
 			abundance: {
 				earth: 24e-9,
 				human: 3e-10,
+				universe: 5e-10,
 			},
 			nutrition: 5,
 			production: 37400,
@@ -1193,6 +1212,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 10e-9,
+				universe: 2e-10,
 			},
 			production: 45,
 		},
@@ -1207,6 +1227,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 120e-9,
+				universe: 3e-9,
 			},
 			production: 1,
 		},
@@ -1221,6 +1242,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 120e-9,
+				universe: 2e-9,
 			},
 			production: 3,
 		},
@@ -1235,6 +1257,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 250e-9,
+				universe: 5e-9,
 			},
 			production: 239,
 		},
@@ -1250,6 +1273,7 @@ const elementData = [
 			abundance: {
 				earth: 21e-9,
 				human: 3e-9,
+				universe: 6e-10,
 			},
 			production: 2310,
 			rgb: 'rgb(255, 211, 109)',
@@ -1266,6 +1290,7 @@ const elementData = [
 			abundance: {
 				earth: 3e-9,
 				human: 8.9e-10,
+				universe: 1e-9,
 			},
 			production: 4e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-mercury.pdf
 		},
@@ -1281,6 +1306,7 @@ const elementData = [
 			abundance: {
 				earth: 2e-9,
 				human: 7e-11,
+				universe: 5e-10,
 			},
 			production: 10,
 			rgb: 'rgb(255, 252, 253)',
@@ -1297,6 +1323,7 @@ const elementData = [
 			abundance: {
 				earth: 29e-9,
 				human: 4.5e-8,
+				universe: 1e-8,
 			},
 			nutrition: 4,
 			production: 8725e3,
@@ -1314,6 +1341,7 @@ const elementData = [
 			abundance: {
 				earth: 1e-9,
 				human: 2e-10,
+				universe: 7e-10,
 			},
 			production: 15e3,
 			rgb: 'rgb(255, 245, 232)',
@@ -1406,6 +1434,7 @@ const elementData = [
 			abundance: {
 				earth: 6e-9,
 				human: 3e-11,
+				universe: 4e-10,
 			},
 			production: 1.2e3, // US, est. https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-thorium.pdf
 			rgb: 'rgb(255, 229, 216)',
@@ -1428,6 +1457,7 @@ const elementData = [
 			abundance: {
 				earth: 2e-9,
 				human: 3e-11,
+				universe: 2e-10,
 			},
 			production: 50572,
 			rgb: 'rgb(255, 251, 242)',
