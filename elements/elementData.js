@@ -1,7 +1,7 @@
 /* exported elementData, isotopeData */
 'use strict';
 // modelColor from https://sciencenotes.org/wp-content/uploads/2019/07/CPK-Jmol-1024x791.png
-// abundaces from https://en.wikipedia.org/wiki/Abundance_of_the_chemical_elements#Universe
+// abundances from https://en.wikipedia.org/wiki/Abundance_of_the_chemical_elements#Universe
 // also https://periodictable.com/Properties/A/UniverseAbundance.html
 // nutrition from https://en.wikipedia.org/wiki/Composition_of_the_human_body#Periodic_table
 
@@ -1303,6 +1303,9 @@ const elementData = [
 		group: 16,
 		period: 6,
 		properties: {
+			abundance: {
+				earth: 0.2e-2 * 9e-13, // https://en.wikipedia.org/wiki/Polonium#Occurrence_and_production
+			},
 			production: 100e-6,
 			rgb: 'rgb(234, 242, 255)',
 		},
@@ -1314,6 +1317,11 @@ const elementData = [
 		mass: 210,
 		group: 17,
 		period: 6,
+		properties: {
+			abundance: {
+				earth: 1e-24, // https://en.wikipedia.org/wiki/Polonium#Occurrence_and_production
+			},
+		},
 	},
 	{
 		z: 86,
@@ -1340,6 +1348,7 @@ const elementData = [
 		period: 7,
 		properties: {
 			abundance: {
+				earth: 9e-13, // https://en.wikipedia.org/wiki/Radium#Occurrence
 				human: 1e-19,
 			},
 			rgb: 'rgb(255, 233, 198)',

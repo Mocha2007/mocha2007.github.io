@@ -175,9 +175,13 @@ class ChemElement {
 			case 'abundanceEarth':
 				if (!this.abundance || !this.abundance.earth){
 					c = 'white';
-					break;
 				}
-				c = `hsl(${120+8*Math.log(this.abundance.earth)}, 100%, 50%)`;
+				else if (this.abundance.earth < 1e-9){ // trace
+					c = 'magenta';
+				}
+				else {
+					c = `hsl(${120+6*Math.log(this.abundance.earth)}, 100%, 50%)`;
+				}
 				break;
 			case 'abundanceHuman':
 				if (!this.abundance || !this.abundance.human){
