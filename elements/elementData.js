@@ -733,6 +733,11 @@ const elementData = [
 		mass: 97,
 		group: 7,
 		period: 5,
+		properties: {
+			abundance: {
+				earth: 0.003e-12, // https://en.wikipedia.org/wiki/Technetium#Occurrence_and_production
+			},
+		},
 	},
 	{
 		z: 44,
@@ -1338,6 +1343,11 @@ const elementData = [
 		mass: 223,
 		group: 1,
 		period: 7,
+		properties: {
+			abundance: {
+				earth: 1e-18 * 2e-9, // https://en.wikipedia.org/wiki/Francium#Occurrence
+			},
+		},
 	},
 	{
 		z: 88,
@@ -1361,6 +1371,11 @@ const elementData = [
 		mass: 227,
 		group: 3,
 		period: 7,
+		properties: {
+			abundance: {
+				earth: 2e-7 * 2e-9, // https://en.wikipedia.org/wiki/Actinium#Occurrence_and_synthesis
+			},
+		},
 	},
 	{
 		z: 90,
