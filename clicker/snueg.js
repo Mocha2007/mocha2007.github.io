@@ -351,7 +351,7 @@ class Particle {
 				document.getElementById(element.id).remove();
 			}
 			catch (TypeError){
-				// if a click-removable particle is defined and clicked, this block will trigger
+				// if a click-removable particle is defined and clicked, this block triggers
 			}
 		}, lifespan*1000);
 		game.particles.push(this);
@@ -524,7 +524,7 @@ class RPGFloor {
 
 class RPGObject {
 	/**
-	 * @param {string} icon - character(s) to use (will be ONE character, randomly chosen)
+	 * @param {string} icon - character(s) to use (ONE character, randomly chosen)
 	 * @param {string} color
 	 * @param {string} name
 	 * @param {string} desc
@@ -547,7 +547,7 @@ class RPGObject {
 
 class RPGEntity extends RPGObject {
 	/**
-	 * @param {string} icon - character(s) to use (will be ONE character, randomly chosen)
+	 * @param {string} icon - character(s) to use (ONE character, randomly chosen)
 	 * @param {string} color
 	 * @param {string} name
 	 * @param {string} desc
@@ -813,33 +813,33 @@ const game = {
 		// Snuegotron
 		new Upgrade('Oiling', 2e4, 1.1, [3], 'Oil helps the snuegotron move faster, providing more snuegs.'),
 		new Upgrade('Coolant', 2e5, 1.1, [3], 'Coolant allows the snuegotron to operate faster without overheating.'),
-		new Upgrade('Snueg Processing Unit', 2e6, 1.1, [3], 'An SPU will allow snueggotrons to snueg with greater care.'),
-		new Upgrade('Snueg Nexus Unit Extended Graphics', 2e7, 1.1, [3], 'A snueg nexus unit graphics chip (SNUEG chip) will allow better processing of snuegs.'),
+		new Upgrade('Snueg Processing Unit', 2e6, 1.1, [3], 'An SPU allows snueggotrons to snueg with greater care.'),
+		new Upgrade('Snueg Nexus Unit Extended Graphics', 2e7, 1.1, [3], 'A snueg nexus unit graphics chip (SNUEG chip) allows better processing of snuegs.'),
 		// Gneus
 		new Upgrade('Parallel G&eacute;&ucirc;&ntilde;s Collisions', 6666666, 1.1, [7], 'Parallel colliders make for more snueg.'),
 		new Upgrade('G&eacute;&ucirc;&ntilde;s Colliders in Series', 66666666, 1.1, [7], 'Colliders in series make for more even more snueg.'),
 		// Snuegland
-		new Upgrade('Duchies', 3e7, 1.1, [8], 'Snueg duchies will enhance the administration of Snuegland.'),
-		new Upgrade('Counties', 3e8, 1.1, [8], 'Snueg counties will enhance the administration of Snuegland even further.'),
+		new Upgrade('Duchies', 3e7, 1.1, [8], 'Snueg duchies enhance the administration of Snuegland.'),
+		new Upgrade('Counties', 3e8, 1.1, [8], 'Snueg counties enhance the administration of Snuegland even further.'),
 		// Snoo
-		new Upgrade('Baronies', 3e9, 1.1, [8], 'Snueg baronies will enhance the administration of Snuegland yet further.'),
-		new Upgrade('Subreddits', 2e8, 1.1, [9], 'Subreddits will help corral the snoos, allowing for more efficient reaping.'),
-		new Upgrade('Admins', 2e9, 1.1, [9], 'Admins will frighten the snoos, allowing for faster culling.'),
+		new Upgrade('Baronies', 3e9, 1.1, [8], 'Snueg baronies enhance the administration of Snuegland yet further.'),
+		new Upgrade('Subreddits', 2e8, 1.1, [9], 'Subreddits help corral the snoos, allowing for more efficient reaping.'),
+		new Upgrade('Admins', 2e9, 1.1, [9], 'Admins frighten the snoos, allowing for faster culling.'),
 		new Upgrade('Spezzing Protocols', 2e10, 1.1, [9], 'Permit admins to spez unflattering snoos, allowing for more optimal harvest.'),
 		// Snuegworld
-		new Upgrade('Snuegmoon', 1.69e9, 1.1, [10], 'A snuegmoon will allow snuegtides on snuegworld.'),
-		new Upgrade('Snuegstar', 1.69e10, 1.1, [10], 'A snuegstar will allow snuegphotosynthesis in snuegplants on snuegworld.'),
-		new Upgrade('Snueggalaxy', 1.69e11, 1.1, [10], 'A snueggalaxy will allow sn-... well, you get the idea.'),
+		new Upgrade('Snuegmoon', 1.69e9, 1.1, [10], 'A snuegmoon allows snuegtides on snuegworld.'),
+		new Upgrade('Snuegstar', 1.69e10, 1.1, [10], 'A snuegstar allows snuegphotosynthesis in snuegplants on snuegworld.'),
+		new Upgrade('Snueggalaxy', 1.69e11, 1.1, [10], 'A snueggalaxy allows sn-... well, you get the idea.'),
 		// Snuegworld
-		new Upgrade('5th Dimension', 1.23456789e10, 6/5, [11], 'A fifth dimension will improve the IDTS by a whopping 20%!'),
-		new Upgrade('6th Dimension', 1.23456789e11, 7/6, [11], 'A sixth dimension will improve the IDTS by a whopping 17%!'),
-		new Upgrade('7th Dimension', 1.23456789e12, 8/7, [11], 'A seventh dimension will improve the IDTS by a whopping 14%!'),
-		new Upgrade('8th Dimension', 1.23456789e13, 9/8, [11], 'A eighth dimension will improve the IDTS by a whopping 13%!'),
-		new Upgrade('9th Dimension', 1.23456789e14, 10/9, [11], 'A ninth dimension will improve the IDTS by a whopping 11%!'),
-		new Upgrade('10th Dimension', 1.23456789e15, 11/10, [11], 'A tenth dimension will improve the IDTS by a whopping 10%!'),
+		new Upgrade('5th Dimension', 1.23456789e10, 6/5, [11], 'A fifth dimension improves the IDTS by a whopping 20%!'),
+		new Upgrade('6th Dimension', 1.23456789e11, 7/6, [11], 'A sixth dimension improves the IDTS by a whopping 17%!'),
+		new Upgrade('7th Dimension', 1.23456789e12, 8/7, [11], 'A seventh dimension improves the IDTS by a whopping 14%!'),
+		new Upgrade('8th Dimension', 1.23456789e13, 9/8, [11], 'A eighth dimension improves the IDTS by a whopping 13%!'),
+		new Upgrade('9th Dimension', 1.23456789e14, 10/9, [11], 'A ninth dimension improves the IDTS by a whopping 11%!'),
+		new Upgrade('10th Dimension', 1.23456789e15, 11/10, [11], 'A tenth dimension improves the IDTS by a whopping 10%!'),
 		// IDTS
 		new Upgrade('Intensify Forward Firepower', 1.23456789e10, 1.1, [1],
-			'Intensifying forward firepower will reduce the likelihood of A-wings smashing into your bridge.', [12],
+			'Intensifying forward firepower reduces the likelihood of A-wings smashing into your bridge.', [12],
 			() => game.youtube.play(19)),
 		// etc
 		new Upgrade('Clickysnueg', 750, 2, [], 'Makes the cursor floofier so the clicks are nice and soft UwU', 'mouse'),
@@ -1263,7 +1263,7 @@ function nonEssentialUpdate(){
 function prestige(){
 	// confirm
 	const pp = game.thisPrestigeNumber;
-	if (!confirm('Are you sure you want to prestige up? You will lose all your snueg and buildings, but will gain a permanent ' +
+	if (!confirm('Are you sure you want to prestige up? You will lose all your snueg and buildings, but gain a permanent ' +
 		pp + '% boost to your snueg production from all sources.')){
 		return;
 	}

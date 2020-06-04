@@ -29,7 +29,7 @@ class Particle {
 				document.getElementById(element.id).remove();
 			}
 			catch (TypeError){
-				// if a click-removable particle is defined and clicked, this block will trigger
+				// if a click-removable particle is defined and clicked, this block triggers
 			}
 		}, lifespan*1000);
 		Game.particles.push(this);
@@ -523,7 +523,7 @@ function preloader(){
 	let loadcurrent = 0;
 	const loadtotal = interactables.length;
 	const load = document.getElementById('loadContainer');
-	load.style.opacity = 0.999; // setting the opacity to 1 will cause it to become transparent for some dumb fucking css reason
+	load.style.opacity = 0.999; // setting the opacity to 1 causes it to become transparent for some dumb fucking css reason
 	const loadPercent = document.getElementById('loadPercent');
 	const loadCircle = document.getElementById('loadCircle');
 	interactables.forEach(interactable => {

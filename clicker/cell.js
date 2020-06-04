@@ -31,7 +31,7 @@ class Particle {
 				document.getElementById(element.id).remove();
 			}
 			catch (TypeError){
-				// if a click-removable particle is defined and clicked, this block will trigger
+				// if a click-removable particle is defined and clicked, this block triggers
 			}
 		}, lifespan*1000);
 		Game.particles.push(this);
