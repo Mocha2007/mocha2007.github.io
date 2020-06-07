@@ -468,6 +468,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[diff(-1025654400), 'The disappearance of <a href="https://en.wikipedia.org/wiki/Amelia_Earhart">Amelia Earhart</a>'],
 	[diff(-1025222400), 'The <a href="https://en.wikipedia.org/wiki/Marco_Polo_Bridge_Incident">Marco Polo Bridge Incident</a>'],
 	[diff(-1003795200), '<a href="https://en.wikipedia.org/wiki/Anschluss">Anschluss</a>'],
+	[diff(-986342400), 'The <a href="https://en.wikipedia.org/wiki/Munich_Agreement">Munich Agreement</a>'],
 	[diff(-983491200), 'The <a href="https://en.wikipedia.org/wiki/First_Vienna_Award">First Vienna Award</a>'],
 	[diff(-971568000), 'The <a href="https://en.wikipedia.org/wiki/1939_German_ultimatum_to_Lithuania">1939 German ultimatum to Lithuania</a>'],
 	[diff(-970012800), 'The <a href="https://en.wikipedia.org/wiki/Italian_invasion_of_Albania">Italian invasion of Albania</a>'],
