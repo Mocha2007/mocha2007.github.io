@@ -59,7 +59,7 @@ var geoera = [
 	[currentyear-1760, 'industrial'],
 	[diff(-2955225600), 'modern'], // internal combustion engine
 	[diff(-771984000), 'atomic'], // atom bomb
-	[diff(831873600), 'information'], // archive.org
+	[diff(628387200), 'information'], // 1990
 	[0, 'future']
 ];
 
