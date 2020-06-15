@@ -242,8 +242,9 @@ class ChemElement {
 				c = this.nobleMetal === undefined ? 'white' : nobleMetalColors[this.nobleMetal];
 				break;
 			case 'nuclearBinding':
-				x = Math.max(...this.isotopes.map(i => i.nuclearBindingEnergy/i.mass));
-				c = `hsl(${Math.max(0, 4e14*x-445)}, 100%, 50%)`;
+				x = Math.max((Math.max(...this.isotopes.map(i => i.nuclearBindingEnergy/i.mass)) -
+					1.13e-12) * 3.6e12, 0); // appx from 0 to 1
+				c = `hsl(${180+120*x}, 100%, ${100-65*x}%)`;
 				break;
 			case 'nutrition':
 				c = this.nutrition === undefined ? 'white' : nutritionColors[this.nutrition];
