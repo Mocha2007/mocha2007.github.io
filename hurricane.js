@@ -735,6 +735,7 @@ hurricanelist[2019] = [
 hurricanelist[2020] = [
 	[136, 139, 0, 'Arthur'],
 	[147, 148, 0, 'Bertha'],
+	[152, 161, 0, 'Cristobal'],
 ];
 /*
 0	1 Jan
