@@ -469,13 +469,6 @@ class Person extends HasInfo {
 	static getPersonById(id){
 		return Game.people.filter(p => p.id === id)[0];
 	}
-	static test(){
-		// gregnancy test
-		Person.gen().physicality.traits[0][1] = false;
-		Person.gen().physicality.traits[0][1] = true;
-		Game.people[0].impregnate(Game.people[1]);
-		Game.time = Game.people[0].physicality.dueDate;
-	}
 }
 
 class Vital {
@@ -606,14 +599,16 @@ class Name {
 		return this.given + ' ' + this.family;
 	}
 	// static methods
-	// todo /** @type {string} gender */
 	/** @param {Person} person */
 	static gen(person){
-		// todo change to gender
 		return new Name(
-			Game.rng.choice(Name.genderNeutral.concat(person.sex ? Name.male : Name.female)),
+			Game.rng.choice(Name.genderNames(person.sex)), // todo change to gender
 			Game.rng.choice(Name.family)
 		);
+	}
+	/** @param {boolean} gender - todo nb folk */
+	static genderNames(gender){
+		return Name.genderNeutral.concat(gender ? Name.male : Name.female);
 	}
 }
 
@@ -918,9 +913,6 @@ class Body extends HasInfo {
 		planet.name = 'Sol-' + Game.rng.randint(100000, 999999);
 		planet.atmosphere = Atmosphere.gen(planet);
 		return planet;
-	}
-	static test(){
-		return range(100).map(() => Body.gen(au, sun));
 	}
 }
 
@@ -2333,7 +2325,7 @@ function main(){
 	// set up system
 	Game.system = new System();
 	// set up people
-	range(10).forEach(() => Person.test());
+	range(50).forEach(() => Person.gen());
 	// change max
 	document.getElementById('input_id').max = Game.system.secondaries.length-1;
 	// set up speed, systemHeight, zoom, resources, redrawInterface
