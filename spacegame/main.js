@@ -64,6 +64,11 @@ colorL.make('irb');
 colorL.make('irc');
 colorL.make('fir');
 colorL.make('microwave');
+// gameplay constants
+
+/** Maximum population. Beyond this, no new people will spawn. */
+const popCap = 100; // for now, will be increased to 1K eventually.
+
 // end constants block
 // begin chem block
 class Chem {
@@ -294,8 +299,9 @@ class Person extends HasInfo {
 		// reset timer
 		event[4] = Game.time;
 		const yslc = timeSinceLastCheck/year;
-		// once every 10 years or so, if male, bone a random female
-		if (this.physicality.sex && Game.rng.random() < Math.pow(0.5, yslc/10)){
+		// once every 10 years or so, if male, and under popcap, bone a random female
+		if (this.physicality.sex && Game.population.n < popCap &&
+			Game.rng.random() < Math.pow(0.5, yslc/10)){
 			try {
 				Game.rng.choice(Person.allInSex()).impregnate(this);
 			}
