@@ -2243,6 +2243,8 @@ function redrawInterface(){
 	updateOrders();
 	// update events
 	updateEvents();
+	// update resource count
+	updateResources();
 }
 
 function redrawMap(){
@@ -2263,8 +2265,6 @@ function redrawMap(){
 	document.getElementById('zoom').innerHTML = Game.systemHeight/au;
 	// update planetId min
 	document.getElementById('input_id').min = Game.system.secondaries.filter(p => p.destroyed).length;
-	// update resource count
-	updateResources();
 	// update map
 	Game.system.draw();
 	// update orbitBar scale
@@ -2401,7 +2401,7 @@ function updatePersonSearch(){
 }
 
 function updateResources(){
-	'water fuel steel'.split(' ').forEach(s => {
+	['water', 'fuel', 'steel'].forEach(s => {
 		document.getElementById(s).innerHTML = Game.player.resources[s];
 		document.getElementById(s+'label').innerHTML = asciiEmoji[s][Game.settings.asciiEmoji];
 	});
