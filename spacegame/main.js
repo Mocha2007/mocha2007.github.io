@@ -328,7 +328,7 @@ class Person extends HasInfo {
 	bear(){
 		this.physicality.pregnant = false;
 		const child = new Person();
-		// physicality random mix of parents' traits
+		// todo physicality random mix of parents' traits
 		const father = this.physicality.father; // bio father
 		child.physicality.traits = this.physicality.traits.map((trait, i) =>
 			Game.rng.bool() ? father.physicality.traits[i] : trait);
@@ -480,6 +480,30 @@ class Personality {
 	}
 }
 
+/** @type {{name: string, p: number, heritable: boolean, heritabilityFunction?: () => boolean, values: [any, number][]}[]} */
+const traits = [
+	{
+		name: 'sex',
+		p: 1,
+		heritable: false,
+		values: [
+			[true, 1], // male
+			[false, 1], // female
+		],
+	},
+	{
+		name: 'eyeColor',
+		p: 1,
+		heritable: true,
+		heritabilityFunction: () => true, // todo, eg. mendelian
+		values: [
+			['blue', 1],
+			['brown', 3],
+			['green', 0.5],
+		],
+	},
+];
+
 class Physicality {
 	constructor(){
 		/** @type {[string, any][]} */
@@ -500,8 +524,11 @@ class Physicality {
 	// static methods
 	static gen(){
 		const p = new Physicality();
-		// sex
-		p.traits.push(['sex', Game.rng.bool()]);
+		traits.filter(o => Game.rng.random() < o.p).forEach(o => // for each trait that passes rng...
+			p.traits.push([o.name, Game.rng.weightedChoice( // add trait with name, RANDOM CHOICE to Person
+				o.values.map(i => i[0]), o.values.map(i => i[1]))])
+		);
+		console.log(p.traits[0]);
 		return p;
 	}
 	static pregnancyTime(){
@@ -2108,6 +2135,23 @@ const Game = {
 		},
 		/** R_n = random(R_(n-1)) */
 		value: 0,
+		/**
+		 * @param {any[]} arr
+		 * @param {number[]} weights
+		 */
+		weightedChoice(arr, weights){
+			const s = sum(weights);
+			weights = weights.map(w => w/s); // normalize
+			const r = this.random();
+			let z = 0;
+			let i = 0;
+			for (i = 0; i < arr.length; i++){
+				z += weights[i];
+				if (r <= z)
+					break;
+			}
+			return arr[i];
+		},
 	},
 	save: {
 		download(){
