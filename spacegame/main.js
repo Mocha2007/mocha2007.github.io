@@ -998,7 +998,7 @@ class Orbit extends HasInfo {
 			}
 		}
 		if (this.lastZoom !== Game.systemHeight ||
-				this.lastCenter !== Game.center ||
+				this.lastCenter[0] !== Game.center[0] || this.lastCenter[1] !== Game.center[1] ||
 				this.lastView !== Game.view){
 			const step = this.period/resolution;
 			// update children endpoints
