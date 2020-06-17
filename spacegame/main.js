@@ -942,12 +942,13 @@ class Orbit extends HasInfo {
 		const i = this.inc;
 		const [om, Om] = [this.aop, this.lan];
 		const [c, C, s, S] = [Math.cos(om), Math.cos(Om), Math.sin(om), Math.sin(Om)];
+		const [ci, si] = [Math.cos(i), Math.sin(i)];
 		/** @return {[number, number, number]} */
 		function r(x){
 			return [
-				x[0]*(c*C - s*Math.cos(i)*S) - x[1]*(s*C + c*Math.cos(i)*S),
-				x[0]*(c*S + s*Math.cos(i)*C) + x[1]*(c*Math.cos(i)*C - s*S),
-				x[0]*(s*Math.sin(i)) + x[1]*(c*Math.sin(i)),
+				x[0]*(c*C - s*ci*S) - x[1]*(s*C + c*ci*S),
+				x[0]*(c*S + s*ci*C) + x[1]*(c*ci*C - s*S),
+				x[0]*(s*si) + x[1]*(c*si),
 			];
 		}
 		const [x, y, z] = r(o);
