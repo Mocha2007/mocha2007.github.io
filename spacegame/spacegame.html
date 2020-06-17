@@ -46,8 +46,8 @@
 	<div id="time"></div>
 	<div id="timerate"></div>
 	<div>
-		<input type="submit" value="+" onclick="Game.zoom(1/2);" title="Double game speed">
-		<input type="submit" value="-" onclick="Game.zoom(2);" title="Halve game speed">
+		<input type="submit" value="+" onclick="Game.speed *= 2;" title="Double game speed">
+		<input type="submit" value="-" onclick="Game.speed /= 2;" title="Halve game speed">
 		<input type="submit" value="P" onclick="Game.pause();" title="Pause game">
 		<input type="submit" value="Live" onclick="Game.speed = 1;" title="Set game speed to realtime">
 		<hr>
