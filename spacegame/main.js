@@ -10,13 +10,20 @@ const day = 24*hour;
 const year = 365.2425 * day;
 const universeAge = 13.799e9 * year;
 
-const atm = 101325; // Pa; exact; https://en.wikipedia.org/wiki/Standard_atmosphere_(unit)
-const au = 149597870700; // m; exact
-const boltzmann = 1.380649e-23; // J/K; exact; https://en.wikipedia.org/wiki/Boltzmann_constant
+/** Pa; exact; https://en.wikipedia.org/wiki/Standard_atmosphere_(unit) */
+const atm = 101325;
+/** m; exact; https://en.wikipedia.org/wiki/Astronomical_unit */
+const au = 149597870700;
+/** J/K; exact; https://en.wikipedia.org/wiki/Boltzmann_constant */
+const boltzmann = 1.380649e-23;
+/** m^3/kgs^2; appx; https://en.wikipedia.org/wiki/Gravitational_constant */
 const gravConstant = 6.674e-11;
-const L_0 = 3.0128e28; // W; exact; zero point luminosity
-const planck = 6.62607015e-34; // J*s; exact; https://en.wikipedia.org/wiki/Planck_constant
-const speedOfLight = 299792458; // m/s; exact; https://en.wikipedia.org/wiki/Speed_of_light
+/** W; exact; zero point luminosity */
+const L_0 = 3.0128e28;
+/** J*s; exact; https://en.wikipedia.org/wiki/Planck_constant */
+const planck = 6.62607015e-34;
+/** m/s; exact; https://en.wikipedia.org/wiki/Speed_of_light */
+const speedOfLight = 299792458;
 
 const colorL = {
 	ultraviolet: {
