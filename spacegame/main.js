@@ -265,7 +265,8 @@ class Person extends HasInfo {
 		return div;
 	}
 	get JSON(){
-		return JSON.stringify({id: this.id, vital: this.vital.map(v => v.JSON)});
+		return JSON.stringify({id: this.id, vital: this.vital.map(v => v.JSON),
+			traits: this.physicality.traits, familyName: this.name.family});
 	}
 	get mother(){
 		const ps = this.parents;
@@ -403,6 +404,10 @@ class Person extends HasInfo {
 		Game.rng.i = j.id;
 		const p = Person.gen();
 		p.vital = j.vital.map(v => Vital.fromJSON(v));
+		// re-add inherited traits
+		p.physicality.traits = j.traits;
+		// re-add family name
+		p.name.family = j.familyName;
 		return p;
 	}
 	static gen(){
