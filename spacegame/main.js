@@ -4,10 +4,15 @@
 'use strict';
 
 // begin constants block
+/** s; exact */
 const minute = 60;
+/** s; exact */
 const hour = 60*minute;
+/** s; exact */
 const day = 24*hour;
+/** s; exact; Gregorian */
 const year = 365.2425 * day;
+/** s; appx; https://en.wikipedia.org/wiki/Age_of_the_universe */
 const universeAge = 13.799e9 * year;
 
 /** Pa; exact; https://en.wikipedia.org/wiki/Standard_atmosphere_(unit) */
