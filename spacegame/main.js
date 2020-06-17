@@ -2167,6 +2167,7 @@ const Game = {
 	},
 	zoom(c = 1){
 		this.systemHeight *= c;
+		document.getElementById('zoom').innerHTML = Game.systemHeight/au;
 	},
 };
 // Q0COND
@@ -2185,9 +2186,10 @@ function main(){
 	Game.system = new System();
 	// change max
 	document.getElementById('input_id').max = Game.system.secondaries.length-1;
-	// set up systemHeight and speed
+	// set up systemHeight, speed, zoom
 	Game.speedSetup();
 	Game.systemHeightSetup();
+	Game.zoom();
 	// set up ticks
 	setInterval(redrawInterface, 1000);
 	setInterval(gameTick, 1000/Game.settings.fps);
@@ -2261,10 +2263,6 @@ function redrawMap(){
 	// update time
 	document.getElementById('time').innerHTML = '&nbsp;t = ' + Game.timeFormat(Game.time);
 	document.getElementById('timerate').innerHTML = '&Delta;t = ' + Game.timeFormat(Game.speed);
-	// update zoom
-	document.getElementById('zoom').innerHTML = Game.systemHeight/au;
-	// update planetId min
-	document.getElementById('input_id').min = Game.system.secondaries.filter(p => p.destroyed).length;
 	// update map
 	Game.system.draw();
 	// update orbitBar scale
@@ -2277,6 +2275,8 @@ function redrawMap(){
 			p.destroyed = true;
 		}
 	});
+	// update planetId min
+	document.getElementById('input_id').min = Game.system.secondaries.filter(p => p.destroyed).length;
 }
 
 /** @param {number} id */
