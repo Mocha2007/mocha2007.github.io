@@ -216,8 +216,8 @@ class Person extends HasInfo {
 	}
 	/** current age or age at death */
 	get age(){
-		const start = this.dead ? this.vital.filter(v => v.type === 'death')[0].date : Game.time;
-		return start - this.vital.filter(v => v.type === 'birth')[0].date;
+		const start = this.dead ? this.death : Game.time;
+		return start - this.birth;
 	}
 	/** from closest to furthest */
 	get ancestors(){
@@ -225,11 +225,17 @@ class Person extends HasInfo {
 		a.forEach(p => a = a.concat(p.ancestors));
 		return a;
 	}
+	get birth(){
+		return this.vital.filter(v => v.type === 'birth')[0].date;
+	}
 	get children(){
 		return Game.people.filter(p => p.parents.includes(this));
 	}
 	get dead(){
 		return Boolean(this.vital.filter(v => v.type === 'death').length);
+	}
+	get death(){
+		return this.vital.filter(v => v.type === 'death')[0].date;
 	}
 	get father(){
 		const ps = this.parents;
@@ -1905,6 +1911,14 @@ const Game = {
 		/** specific people alive */
 		get alive(){
 			return Game.people.filter(p => !p.dead);
+		},
+		/** people born per year per person */
+		get birthrate(){
+			return this.births.length / this.n;
+		},
+		/** people born in past year */
+		get births(){
+			return Game.people.filter(p => Game.time < p.birth + year);
 		},
 		/** specific people dead */
 		get dead(){
