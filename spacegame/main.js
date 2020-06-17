@@ -199,6 +199,7 @@ class Person extends HasInfo {
 	 * an example would be BIRTH / 1 Jan 2020 / JOHN DOE + JANE DOE
 	 * this will allow distinguishing between biological and adoptive parents
 	 * it will additionally allow simple computation of complex family structures without the need for another Person property
+	 * it will also include friending and unfriending activity to determine the current friend set
 	 * @param {Personality} personality
 	 * In the future, this will determine the character's interaction with you and others, including
 	 * - willingness to support a coup
