@@ -227,6 +227,17 @@ class Person extends HasInfo {
 		Game.people.push(this);
 		Game.queue.add([Game.time, () => this.checkLife(), 'checkLife', this, Game.time]);
 	}
+	/** interactive person link */
+	get a(){ // todo
+		const link = document.createElement('a');
+		link.innerHTML = this.name;
+		link.classList = 'peopleSearchResult';
+		link.href = `javascript:
+			Game.selectedPerson = ${this.gameIndex};
+			updatePeople();
+			selectTab('people');`;
+		return link;
+	}
 	/** current age or age at death */
 	get age(){
 		const start = this.dead ? this.death : Game.time;
@@ -257,12 +268,43 @@ class Person extends HasInfo {
 		}
 		return undefined;
 	}
+	get gameIndex(){
+		return Game.people.indexOf(this);
+	}
 	get getCheckLife(){
 		return Game.queue.queue.filter(e => e[2] === 'checkLife' && e[3] === this)[0];
 	}
 	get info(){ // todo
 		const div = document.createElement('div');
-		div.innerHTML = `${this.name} - ${Math.floor(this.age/year)} years old`;
+		div.innerHTML = `${this.name} - ${Math.floor(this.age/year)} years old<br>
+		Father: <span id="father"></span><br>
+		Mother: <span id="mother"></span><br>
+		Children: <span id="children"></span>`;
+		// father
+		if (this.father){
+			// can't use document.getElementById since it isn't a child of the document yet
+			div.querySelector('#father').appendChild(this.father.a);
+		}
+		else {
+			div.querySelector('#father').innerHTML = 'Unknown';
+		}
+		// mother
+		if (this.mother){
+			div.querySelector('#mother').appendChild(this.mother.a);
+		}
+		else {
+			div.querySelector('#mother').innerHTML = 'Unknown';
+		}
+		// children
+		if (this.children.length){
+			this.children.forEach(c => {
+				div.querySelector('#children').appendChild(c.a);
+				div.querySelector('#children').appendChild(document.createElement('br'));
+			});
+		}
+		else {
+			div.querySelector('#children').innerHTML = 'None';
+		}
 		return div;
 	}
 	get JSON(){
@@ -293,7 +335,7 @@ class Person extends HasInfo {
 	get tr(){
 		const row = document.createElement('tr');
 		row.classList = 'peopleSearchResult';
-		const gameIndex = Game.people.indexOf(this);
+		const gameIndex = this.gameIndex;
 		row.onclick = () => Game.selectedPerson = gameIndex;
 		// ID/seed
 		const cell1 = document.createElement('td');
@@ -528,7 +570,6 @@ class Physicality {
 			p.traits.push([o.name, Game.rng.weightedChoice( // add trait with name, RANDOM CHOICE to Person
 				o.values.map(i => i[0]), o.values.map(i => i[1]))])
 		);
-		console.log(p.traits[0]);
 		return p;
 	}
 	static pregnancyTime(){
@@ -2291,11 +2332,12 @@ function main(){
 	range(10).forEach(() => Person.test());
 	// change max
 	document.getElementById('input_id').max = Game.system.secondaries.length-1;
-	// set up speed, systemHeight, zoom, resources
+	// set up speed, systemHeight, zoom, resources, redrawInterface
 	Game.speedSetup();
 	Game.systemHeightSetup();
 	Game.zoom();
 	updateResources();
+	redrawInterface();
 	// set up ticks
 	setInterval(redrawInterface, 1000);
 	setInterval(gameTick, 1000/Game.settings.fps);

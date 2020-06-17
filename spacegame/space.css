@@ -161,7 +161,9 @@ ul {
 }
 .peopleSearchResult {
 	background-color: #022;
+	color: cyan;
 	cursor: pointer;
+	text-decoration: none;
 }
 .peopleSearchResult:hover {
 	background-color: #044;
