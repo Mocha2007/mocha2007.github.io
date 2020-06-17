@@ -276,7 +276,8 @@ class Person extends HasInfo {
 	}
 	get info(){ // todo
 		const div = document.createElement('div');
-		div.innerHTML = `${this.name} - ${Math.floor(this.age/year)} years old<br>
+		div.innerHTML = `<h2>${this.name}</h2>
+		(${this.sexLetter}) - ${Math.floor(this.age/year)} years old<br><br>
 		Father: <span id="father"></span><br>
 		Mother: <span id="mother"></span><br>
 		Children: <span id="children"></span>`;
@@ -330,6 +331,9 @@ class Person extends HasInfo {
 	}
 	get sex(){
 		return this.physicality.sex;
+	}
+	get sexLetter(){
+		return this.sex ? 'M' : 'F';
 	}
 	/** returns the tr element for search results in person tab */
 	get tr(){
@@ -592,10 +596,10 @@ class Name {
 		return ['Alice', 'Charlotte', 'Emma', 'Grace', 'Jane', 'Mary'];
 	}
 	static get genderNeutral(){
-		return ['Alex', 'Ashton', 'Avery', 'Bailey', 'Cameron', 'Dakota', 'Morgan', 'Taylor'];
+		return ['Alex', 'Ashton', 'Avery', 'Bailey', 'Cameron', 'Chris', 'Dakota', 'Morgan', 'Taylor'];
 	}
 	static get male(){
-		return ['Bob', 'Chris', 'Francis', 'Joe', 'John', 'Liam', 'Mike', 'Milo', 'Ted'];
+		return ['Christian', 'Francis', 'John', 'Joseph', 'Liam', 'Mike', 'Milo', 'Robert', 'Theodore'];
 	}
 	// methods
 	toString(){
@@ -605,9 +609,9 @@ class Name {
 	// todo /** @type {string} gender */
 	/** @param {Person} person */
 	static gen(person){
-		const sex = person.physicality.sex; // todo change to gender
+		// todo change to gender
 		return new Name(
-			Game.rng.choice(Name.genderNeutral.concat(sex ? Name.male : Name.female)),
+			Game.rng.choice(Name.genderNeutral.concat(person.sex ? Name.male : Name.female)),
 			Game.rng.choice(Name.family)
 		);
 	}
