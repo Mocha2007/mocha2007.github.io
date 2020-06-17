@@ -155,6 +155,10 @@ ul {
 .supsub {
 	display: block;
 }
+#people {
+	max-height: 90vh;
+	overflow: auto;
+}
 .peopleSearchResult {
 	background-color: #022;
 	cursor: pointer;
