@@ -259,6 +259,11 @@ class Person extends HasInfo {
 	get getCheckLife(){
 		return Game.queue.queue.filter(e => e[2] === 'checkLife' && e[3] === this)[0];
 	}
+	get info(){ // todo
+		const div = document.createElement('div');
+		div.innerHTML = `${this.name} - ${Math.floor(this.age/year)} years old`;
+		return div;
+	}
 	get JSON(){
 		return JSON.stringify({id: this.id, vital: this.vital.map(v => v.JSON)});
 	}
@@ -281,6 +286,29 @@ class Person extends HasInfo {
 	}
 	get sex(){
 		return this.physicality.sex;
+	}
+	/** returns the tr element for search results in person tab */
+	get tr(){
+		const row = document.createElement('tr');
+		row.classList = 'peopleSearchResult';
+		const gameIndex = Game.people.indexOf(this);
+		row.onclick = () => Game.selectedPerson = gameIndex;
+		// ID/seed
+		const cell1 = document.createElement('td');
+		cell1.innerHTML = gameIndex;
+		cell1.title = 'internal id';
+		row.appendChild(cell1);
+		// ID/database
+		const cell2 = document.createElement('td');
+		cell2.innerHTML = this.id;
+		cell2.title = 'seed';
+		row.appendChild(cell2);
+		// name
+		const cell3 = document.createElement('td');
+		cell3.innerHTML = this.name;
+		cell3.title = 'full name';
+		row.appendChild(cell3);
+		return row;
 	}
 	// methods
 	ahnentafel(n = 1){
@@ -1858,10 +1886,7 @@ const Game = {
 			50,
 			{'fuel': 10},
 			{'surveyor': 1},
-			{'water': 1},
-			() => {
-				Game.p.addResource('steel', 100);
-			}
+			{'water': 1}
 		),
 		new Order(
 			'Convert Water to Fuel',
@@ -2199,6 +2224,7 @@ const Game = {
 };
 // Q0COND
 Game.quests[0].conditions = [() => Game.playerHasColony];
+Game.orders[0].onComplete = () => Game.p.addResource('steel', 100);
 
 function main(){
 	console.info('%cMocha\'s Space Game Alpha',
@@ -2211,6 +2237,8 @@ function main(){
 	document.getElementById('seed').innerHTML = Game.rng.seed;
 	// set up system
 	Game.system = new System();
+	// set up people
+	range(10).forEach(() => Person.test());
 	// change max
 	document.getElementById('input_id').max = Game.system.secondaries.length-1;
 	// set up speed, systemHeight, zoom, resources
@@ -2410,18 +2438,25 @@ function updateOrders(){
 	document.getElementById('orderAffordable').classList = order.affordable ? 'green' : 'red';
 }
 
-// hey mocha continue here okay?
 function updatePeople(){
 	if (!Game.people.length){
 		return;
 	}
-	// todo
 	const p = Game.people[Game.selectedPerson];
 	document.getElementById('personInfo').innerHTML = p.info.innerHTML;
 }
 
 function updatePersonSearch(){
+	/** @type {string} - what the user searched for */
+	const search = document.getElementById('personNameSearch').value;
+	const index = parseInt(search);
 	// create tables with clickable names that change Game.selectedPerson
+	/** @type {HTMLTableElement} */
+	const table = document.getElementById('personSearchResults');
+	table.innerHTML = '';
+	const matches = Game.people.filter((p, i) => i === index || p.id === index ||
+		p.name.toString().includes(search));
+	matches.forEach(p => table.appendChild(p.tr));
 }
 
 function updateResources(){
