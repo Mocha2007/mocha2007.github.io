@@ -1497,9 +1497,7 @@ class Order {
 			return;
 		}
 		// else, pay cost
-		for (const resource in order.cost){
-			Game.player.resources[resource] -= order.cost[resource];
-		}
+		Game.p.payCost(order.cost);
 		for (const shipClass in order.shipCost){
 			Game.player.navy[shipClass] -= order.shipCost[shipClass];
 		}
@@ -1850,7 +1848,7 @@ const Game = {
 			{'surveyor': 1},
 			{'water': 1},
 			() => {
-				Game.player.resources.steel += 100;
+				Game.p.addResource('steel', 100);
 			}
 		),
 		new Order(
@@ -1868,6 +1866,22 @@ const Game = {
 			{'water': -1}
 		),
 	],
+	/** player interface - modifications to player are done through this object */
+	p: {
+		/**
+		 * @param {string} name
+		 * @param {number} amt
+		 */
+		addResource(name, amt){
+			Game.player.resources[name] += amt;
+			updateResources();
+		},
+		payCost(cost){
+			for (const resource in cost){
+				this.addResource(resource, -cost[resource]);
+			}
+		},
+	},
 	pause(){
 		this.paused = !this.paused;
 	},
@@ -1892,6 +1906,7 @@ const Game = {
 			return n < Game.system.secondaries.length && !Game.system.secondaries[n].destroyed;
 		},
 	},
+	/** DO NOT WRITE INFORMATION TO THIS OBJECT; USE GAME.P INSTEAD!!! */
 	player: {
 		colonyID: -1,
 		/** @type {number[]} */
@@ -2186,10 +2201,11 @@ function main(){
 	Game.system = new System();
 	// change max
 	document.getElementById('input_id').max = Game.system.secondaries.length-1;
-	// set up systemHeight, speed, zoom
+	// set up speed, systemHeight, zoom, resources
 	Game.speedSetup();
 	Game.systemHeightSetup();
 	Game.zoom();
+	updateResources();
 	// set up ticks
 	setInterval(redrawInterface, 1000);
 	setInterval(gameTick, 1000/Game.settings.fps);
@@ -2245,8 +2261,6 @@ function redrawInterface(){
 	updateOrders();
 	// update events
 	updateEvents();
-	// update resource count
-	updateResources();
 }
 
 function redrawMap(){
@@ -2359,9 +2373,7 @@ function updateOrders(){
 		}
 		// if enough resources to continue, continue
 		else if (orderType.consumptionAfforable){
-			for (const resource in orderType.consumption){
-				Game.player.resources[resource] -= orderType.consumption[resource];
-			}
+			Game.p.payCost(orderType.consumption);
 			thisOrder[3] += 1;
 		}
 	}
