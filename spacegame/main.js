@@ -2448,14 +2448,14 @@ function updatePeople(){
 
 function updatePersonSearch(){
 	/** @type {string} - what the user searched for */
-	const search = document.getElementById('personNameSearch').value;
+	const search = document.getElementById('personNameSearch').value.toLowerCase();
 	const index = parseInt(search);
 	// create tables with clickable names that change Game.selectedPerson
 	/** @type {HTMLTableElement} */
 	const table = document.getElementById('personSearchResults');
 	table.innerHTML = '';
 	const matches = Game.people.filter((p, i) => i === index || p.id === index ||
-		p.name.toString().includes(search));
+		p.name.toString().toLowerCase().includes(search));
 	matches.forEach(p => table.appendChild(p.tr));
 }
 
