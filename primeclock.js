@@ -263,8 +263,7 @@ function header(){
 }
 
 function footer(){
-	var x = timeSinceYear();
-	var y = Math.pow(a, 1-x/year);
+	var y = Math.pow(a, 1-timeSinceYear()/year);
 	var yprime = Math.round(y*Math.log(a)*24*60*60).toLocaleString();
 
 	document.getElementById('nowtime').innerHTML = String(new Date()).slice(4, 24)+' - Now ('+Math.round(y).toLocaleString()+') Years Ago ('+yprime+'x Speed)';
