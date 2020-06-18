@@ -224,7 +224,11 @@ function alc(){
 			break;
 		}
 	}
-	document.getElementById('alc').innerHTML = str+'<span id="nowtime"></span>';
+	var alcElem = document.getElementById('alc');
+	alcElem.innerHTML = str;
+	var nowTime = document.createElement('span');
+	nowTime.id = 'nowtime';
+	alcElem.appendChild(nowTime);
 	// now create key
 	for (var j=0; j<geoera.length-1; j+=1){
 		// create div
