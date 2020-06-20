@@ -593,14 +593,14 @@
 		</animateMotion>
 	</a>
 
-	<a href="https://en.wikipedia.org/wiki/ʻOumuamua"><!-- ʻOumuamua Epoch 2019 --> <!-- https://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3788040;old=0;orb=1;cov=0;log=0;cad=0#orb -->
-		<text x="1440" y="97" font-size="8" fill="white">ʻOumuamua</text>
-		<image href="https://upload.wikimedia.org/wikipedia/commons/1/1c/Artist's_impression_of_ʻOumuamua.jpg" x="1420" y="88" height="12"/>
-	</a>
-
 	<a href="https://en.wikipedia.org/wiki/10199_Chariklo"><!-- Chariklo -->
 		<text x="1605" y="97" font-size="8" fill="white">Chariklo</text>
 		<image href="https://upload.wikimedia.org/wikipedia/commons/5/51/Chariklo_with_rings_eso1410b.jpg" x="1582" y="88" height="12"/>
+	</a>
+
+	<a href="https://en.wikipedia.org/wiki/ʻOumuamua"><!-- ʻOumuamua Epoch 2019 --> <!-- https://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3788040;old=0;orb=1;cov=0;log=0;cad=0#orb -->
+		<text x="1839" y="107" font-size="8" fill="white">ʻOumuamua</text>
+		<image href="https://upload.wikimedia.org/wikipedia/commons/1/1c/Artist's_impression_of_ʻOumuamua.jpg" x="1839" y="88" height="12"/>
 	</a>
 	
 	<!-- 6.885013194 s * (6.8000km/s)/(2*pi*41.947 AU/(271.68 yr)) -->
@@ -682,8 +682,8 @@
 
 	<!-- TNOs -->
 	<g id='tnos'>
-		<a href="https://en.wikipedia.org/wiki/Halley's_Comet"><!-- Halley's Comet Epoch 2018-08-22 -->
-			<text x="3510" y="103">Halley's Comet</text>
+		<a href="https://en.wikipedia.org/wiki/Halley's_Comet"><!-- Halley's Comet Epoch 2020-06-20 -->
+			<text x="3490" y="103">Halley's Comet</text>
 			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Lspn_comet_halley.jpg" x="3467" y="88" height="24"/>
 		</a>
 
@@ -750,9 +750,9 @@
 			</animateMotion>
 		</a>
 
-		<a href="https://en.wikipedia.org/wiki/New_Horizons"><!-- New Horizons Epoch 2018-08-22 http://pluto.jhuapl.edu/Mission/Where-is-New-Horizons.php -->
-			<text x="4747" y="120" font-size="8" fill="white">New Horizons</text>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/e/ee/New_Horizons_spacecraft_model_1.png" x="4747" y="88" height="24"/>
+		<a href="https://en.wikipedia.org/wiki/New_Horizons"><!-- New Horizons Epoch 2020-06-20 http://pluto.jhuapl.edu/Mission/Where-is-New-Horizons.php -->
+			<text x="4760" y="120" font-size="8" fill="white">New Horizons</text>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/e/ee/New_Horizons_spacecraft_model_1.png" x="4760" y="88" height="24"/>
 		</a>
 
 		<circle class='mo' r="4572"/><!-- Makemake orbit -->
