@@ -683,8 +683,8 @@
 	<!-- TNOs -->
 	<g id='tnos'>
 		<a href="https://en.wikipedia.org/wiki/Halley's_Comet"><!-- Halley's Comet Epoch 2020-06-20 -->
-			<text x="3490" y="103">Halley's Comet</text>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Lspn_comet_halley.jpg" x="3467" y="88" height="24"/>
+			<text x="3490" y="120">Halley's Comet</text>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Lspn_comet_halley.jpg" x="3490" y="88" height="24"/>
 		</a>
 
 		<circle class='mo' r="3940"/><!-- Orcus orbit -->
