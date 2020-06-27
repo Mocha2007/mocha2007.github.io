@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="description" content="A Waterworks! solver, by Mocha2007, powered by JavaScript.">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link href="ww.css" type="text/css" rel="stylesheet">
+<script src="../common.js"></script>
+<title>Waterworks Solver</title>
+<table id="wwGrid">
+	<tr id="row1">
+		<td id="block0"></td>
+		<td id="block1"></td>
+		<td id="block2"></td>
+		<td id="block3" colspan="2"></td>
+		<td id="block4"></td>
+		<td id="block5"></td>
+	</tr>
+	<tr id="row2">
+		<td id="block6"></td>
+		<td id="block7" rowspan="2"></td>
+		<td id="block8" rowspan="2"></td>
+		<td id="block9" rowspan="2"></td>
+		<td id="block10" rowspan="2"></td>
+		<td id="block11" rowspan="2"></td>
+		<td id="block12" rowspan="2"></td>
+	</tr>
+	<tr id="row3">
+		<td id="block13"></td>
+	</tr>
+	<tr id="row4">
+		<td id="block14"></td>
+		<td id="block15"></td>
+		<td id="block16"></td>
+		<td id="block17" colspan="2"></td>
+		<td id="block18"></td>
+		<td id="block19"></td>
+	</tr>
+</table>
+<div>
+	Score: <span id="score"></span><br><br>
+	Compute...<br>
+	<label>
+		<input type="number" id="carriers" name="compute" min="0" max="6" step="1" value="0">
+		Water Carrier
+	</label><br>
+	<label>
+		<input type="number" id="carts" name="compute" min="0" max="6" step="1" value="0">
+		Water Cart
+	</label><br>
+	<label>
+		<input type="number" id="wagons" name="compute" min="0" max="3" step="1" value="0">
+		Water Wagon
+	</label><br>
+	<label>
+		<input type="number" id="wagons" name="compute" min="0" max="3" step="1" value="0">
+		Well
+	</label><br>
+	<label>
+		<input type="number" id="wagons" name="compute" min="0" max="13" step="1" value="0">
+		Sump
+	</label>
+	<br>
+	<button type="button" onclick="recalc();">Recalculate Solution</button>
+	<p id="solution">
+		(solution will appear here)
+	</p>
+</div>
+<script src="ww.js"></script>
+</html>
+<!-- todo
+	- include tech ticks
+	- change from radio buttons to input numbers
+-->
