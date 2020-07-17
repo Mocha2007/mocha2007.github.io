@@ -296,3 +296,18 @@ function unitString(value, name, rounding = 2, constant = 1){
 	const prefix = i !== 8 ? prefixes[i] : '';
 	return round(value / c, rounding) + ' ' + prefix + name;
 }
+
+/**
+ * time a function
+ * @param {()} f
+ * @param {number} n
+ */
+function timer(f, n){
+	const start = +(new Date());
+	for (let i = 0; i < n; i++){
+		f();
+	}
+	const end = +(new Date());
+	// console.log(`t = ${end-start} ms`);
+	return end-start;
+}
