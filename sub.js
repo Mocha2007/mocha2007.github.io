@@ -98,7 +98,7 @@ var subtitles =	[
 	'MOW! MOW! MOW!',
 	'HAAAAAAAAAAAA YOUR CAMERA IS TRAAAAASH',
 	'My thesis was on the rind of Zayo Dadong',
-	'Let&apos;s have us a pizza bungus',
+	'Let&rsquo;s have us a pizza bungus',
 ];
 
 function sub(){
