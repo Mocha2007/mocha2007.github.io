@@ -97,11 +97,12 @@ var subtitles =	[
 	'Update Furrygram',
 	'MOW! MOW! MOW!',
 	'HAAAAAAAAAAAA YOUR CAMERA IS TRAAAAASH',
-	'My thesis was on the rind of Zayo Dadong'
+	'My thesis was on the rind of Zayo Dadong',
+	'Let&apos;s have us a pizza bungus',
 ];
 
 function sub(){
-	var index = Math.floor(Math.random()*(subtitles.length));
+	var index = Math.floor(Math.random()*subtitles.length);
 	document.getElementById('subtitle').innerHTML = subtitles[index];
 	console.info('C3692 6510 QT4420');
 }
