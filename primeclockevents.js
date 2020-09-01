@@ -567,7 +567,8 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	// 2020
 	[diff(1578024000), 'The <a href="https://en.wikipedia.org/wiki/2020_Baghdad_International_Airport_airstrike">2020 Baghdad International Airport airstrike</a> kills <a href="https://en.wikipedia.org/wiki/Qasem_Soleimani">Qasem Soleimani</a>'],
 	[diff(1584835200), 'A national emergency <a href="https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_the_United_States">is declared</a> in the US in response to the Coronavirus pandemic'],
-	[diff(1590458400), 'The <a href="https://en.wikipedia.org/wiki/Killing_of_George_Floyd">Murder of George Floyd</a> spawns <a href="https://en.wikipedia.org/wiki/George_Floyd_protests">subsequent riots and protests</a>'] // as controversial as this is, it thankfully won't show until next year anwyays
+	[diff(1590458400), 'The <a href="https://en.wikipedia.org/wiki/Killing_of_George_Floyd">Murder of George Floyd</a> spawns <a href="https://en.wikipedia.org/wiki/George_Floyd_protests">subsequent riots and protests</a>'], // as controversial as this is, it thankfully won't show until next year anwyays
+	[diff(1596553698), 'The <a href="https://en.wikipedia.org/wiki/2020_Beirut_explosion">Beirut Explosion</a>']
 // 2020
 // https://en.wikipedia.org/wiki/Timelines_of_world_history
 // https://www.epochconverter.com/
