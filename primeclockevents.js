@@ -516,6 +516,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[diff(626590800), '<a href="https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall">Fall of the Berlin Wall</a>'],
 	// 1990
 	[diff(654926400), '<a href="https://en.wikipedia.org/wiki/German_reunification">German reunification</a>'],
+	[diff(662083200), 'The first release of the first web browser, <a href="https://en.wikipedia.org/wiki/WorldWideWeb">WorldWideWeb</a>'],
 	[diff(682056000), '<a href="https://en.wikipedia.org/wiki/Super_Mario_World">Super Mario World</a> Released in NA'],
 	[diff(715132800), 'Discovery of <a href="https://en.wikipedia.org/wiki/15760_Albion">15760 Albion</a>, the second KBO'],
 	[diff(725846400), '<a href="https://en.wikipedia.org/wiki/Dissolution_of_Czechoslovakia">Velvet Divorce</a>'],
