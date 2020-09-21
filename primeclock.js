@@ -262,11 +262,34 @@ function header(){
 	document.getElementById('c2Inner').innerHTML = factorization;
 }
 
+/** @param {number} r - years before present */
+function getDateBeforeNow(r){
+	var now = new Date();
+	var y = now.getFullYear() - Math.floor(r);
+	r -= Math.floor(r);
+	r *= 12;
+	var mo = now.getMonth() - Math.floor(r);
+	r -= Math.floor(r);
+	r *= 365.2425/12;
+	var d = now.getDay() - Math.floor(r);
+	r -= Math.floor(r);
+	r *= 24;
+	var h = now.getHours() - Math.floor(r);
+	r -= Math.floor(r);
+	r *= 60;
+	var min = now.getMinutes() - Math.floor(r);
+	r -= Math.floor(r);
+	r *= 60;
+	return new Date(y, mo, d, h, min, r);
+}
+
 function footer(){
 	var y = Math.pow(a, 1-timeSinceYear()/year);
 	var yprime = Math.round(y*Math.log(a)*24*60*60).toLocaleString();
 
-	document.getElementById('nowtime').innerHTML = String(new Date()).slice(4, 24)+' - Now ('+Math.round(y).toLocaleString()+') Years Ago ('+yprime+'x Speed)';
+	document.getElementById('nowtime').innerHTML = String(new Date()).slice(4, 24)+
+		' - '+String(getDateBeforeNow(y)).slice(4, 24)+
+		' ('+Math.round(y).toLocaleString()+' Years Ago, '+yprime+'x Speed)';
 }
 
 function enableDebug(){
