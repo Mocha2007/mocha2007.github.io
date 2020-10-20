@@ -1905,7 +1905,7 @@ const features = [
 		periodInfo: [],
 		desc: 'Chalcolithic temple and burial complex',
 		color: 'red',
-		img: 'http://photos.wikimapia.org/p/00/03/70/35/44_big.jpg',
+		img: 'https://photos.wikimapia.org/p/00/03/70/35/44_big.jpg',
 		source: 'https://en.wikipedia.org/wiki/Merheleva_Ridge',
 	},
 	{

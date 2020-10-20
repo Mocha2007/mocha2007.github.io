@@ -61,7 +61,7 @@ var enemy = [
 	),
 	new Enemy(
 		'Yuri!!!',
-		'http://images.goodsmile.info/cgm/images/product/20170201/6231/43651/large/42f61413f2fec50155107225e94e4b20.jpg',
+		'https://images.goodsmile.info/cgm/images/product/20170201/6231/43651/large/42f61413f2fec50155107225e94e4b20.jpg',
 		'... on ice!',
 		'Skate Slash',
 		7,

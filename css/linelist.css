@@ -7,7 +7,7 @@ ul.linelist li {
 
 ul.linelist li:after {
     /* bullets */
-    content: url('http://upload.wikimedia.org/wikipedia/commons/thumb/3/30/RedDisc.svg/20px-RedDisc.svg.png');
+    content: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/RedDisc.svg/20px-RedDisc.svg.png');
     position: absolute;
     left: -25px; /*adjust manually*/
     top: -1px;

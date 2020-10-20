@@ -37,14 +37,14 @@ function doit(){
 	<b>THESAURI:</b><br/>
 	<a href="https://en.wiktionary.org/wiki/Wikisaurus:`+s+`">Wikisaurus</a><br/>
 	<a href="https://merriam-webster.com/thesaurus/`+s+`">Merriam-Webster</a><br/>
-	<a href="http://thesaurus.com/browse/`+s+`">thesaurus.com</a><br/>
+	<a href="https://thesaurus.com/browse/`+s+`">thesaurus.com</a><br/>
 	<b>ENCYCLOPEDIAE:</b><br/>
 	<a href="https://en.wikipedia.org/wiki/`+s+`">Wikipedia</a><br/><b>GAME ENCYCLOPEDIAE:</b><br/>
 	<a href="https://dwarffortresswiki.org/index.php/DF2014:`+s+`">DFWiki</a><br/>
 	<a href="https://minecraft.gamepedia.com/`+s+`">MCWiki</a><br/>
 	<a href="https://terraria.gamepedia.com/`+s+`">Terraria Wiki</a><br/>
 	<b>RESURSOJ ESPERANTAJ:</b><br/>
-	<a href="http://vortaro.net/#`+s+`">vortaro.net</a><br/>
+	<a href="https://vortaro.net/#`+s+`">vortaro.net</a><br/>
 	<a href="https://eo.wikipedia.org/wiki/`+s+`">Vikipedio</a><br/>
 	<a href="https://eo.wiktionary.org/wiki/`+s+`#Esperanto">Vikivortaro</a><br/>
 	<b>OTHER RESOURCES:</b><br/>

@@ -57,7 +57,7 @@ abbr{
 	cursor: help;
 }
 /* special link images */
-a[href^="http://tvt"] {
+a[href^="https://tvt"] {
 	background: transparent url('img/tvt.png') no-repeat right center;
 	padding-right: 20px;
 	white-space: nowrap;

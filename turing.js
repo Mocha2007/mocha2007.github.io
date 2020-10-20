@@ -116,7 +116,7 @@ function sleep(ms){
 	return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// http://marcgg.com/blog/2016/11/01/javascript-audio
+// https://marcgg.com/blog/2016/11/01/javascript-audio
 var context = new AudioContext();
 function beep(hz,s,wave){
 	var o = context.createOscillator();
