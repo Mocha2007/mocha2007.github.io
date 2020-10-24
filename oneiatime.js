@@ -331,12 +331,12 @@ function oneiaTimeInitialize(){
 	var moonphase = Math.round(8*((currenttime-642900) % 2551442.9)/2551442.9) % 8;
 	// eremor time
 	document.getElementById('clock_eremor_title').innerHTML = '<img src="img/phase/'+nikkiphase +
-		'.png" height=9 alt="Nikki Phase: '+phases[nikkiphase]+'" title="Nikki Phase: ' +
+		'.png" height="9" width="9" alt="Nikki Phase: '+phases[nikkiphase]+'" title="Nikki Phase: ' +
 		phases[nikkiphase]+'"> Eremoran Time:';
 	document.getElementById('clock_eremor_progress').value = yearprogress;
 	// earth time
 	document.getElementById('clock_earth_title').innerHTML = '<img src="img/phase/'+moonphase +
-		'.png" height=9 alt="Moon Phase: '+phases[moonphase]+'" title="Moon Phase: ' +
+		'.png" height="9" width="9" alt="Moon Phase: '+phases[moonphase]+'" title="Moon Phase: ' +
 		phases[moonphase]+'"> Earth Time:';
 	document.getElementById('clock_earth_progress').value = (Date.now()-vernal) % yy/yy;
 }
