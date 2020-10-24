@@ -285,13 +285,8 @@ function oneiaTime(){
 	var remainder = currenttime-epoch;
 	var years = 950+Math.floor(remainder/year);
 	remainder = remainder % year;
-	var yearprogress = remainder/year;
 	var days = Math.floor(remainder/day);
 	remainder = remainder % day;
-	var cnikkiphase = mod(remainder/day-0.078, 1);
-	var nikkiphase = mod(Math.round(8*cnikkiphase), 8); // idk why it needs another mod, but the code breaks without it
-	//console.log(nikkiphase);
-
 	var currentTimeString = years + ' AT, Day ' + days + ', ';
 
 	for (var i = 1; i < 6; i += 1){
@@ -308,18 +303,8 @@ function oneiaTime(){
 	var medidiem = utc2 > 11 ? ' PM' : ' AM';
 	utc2 = utc2 > 12 ? utc2-12 : utc2;
 
-	var yy = 31556952000;
-	// 642900 = 7 Jan 1970 10:35:00 UTC
-	// 2551442.9 = Lunar Synodic Period
-	var moonphase = Math.round(8*((currenttime-642900) % 2551442.9)/2551442.9) % 8;
-
-	document.getElementById('clock').innerHTML = '<img src="img/phase/'+nikkiphase +
-		'.png" height=9 alt="Nikki Phase: '+phases[nikkiphase]+'" title="Nikki Phase: ' +
-		phases[nikkiphase]+'"> Eremoran Time:<br/>'+currentTimeString+'<br/>\n<progress value="' +
-		yearprogress+'"></progress><br/>\n<img src="img/phase/'+moonphase +
-		'.png" height=9 alt="Moon Phase: '+phases[moonphase]+'" title="Moon Phase: ' +
-		phases[moonphase]+'"> Earth Time:<br/>'+utc1+utc2+utc3+medidiem+'<br/>\n<progress value="' +
-		(Date.now()-vernal) % yy/yy+'"></progress>';
+	document.getElementById('clock_eremor_date').innerHTML = currentTimeString;
+	document.getElementById('clock_earth_date').innerHTML = utc1+utc2+utc3+medidiem;
 }
 
 function bonus(){
@@ -327,6 +312,36 @@ function bonus(){
 		'<br/>'+maya()+'<br/>JD '+jd().toFixed(3)+'<br/>'+darian();
 }
 
+function oneiaTimeInitialize(){
+	var epoch =	1497151176; // SUN 2017 JUN 11 03:19:36 UTC
+	var year =	6477407.605917404;
+	var day =	105850.25205028882; //104148
+
+	var currenttime = Date.now()/1000;
+	// 00:00 is at roughly local noon
+	var remainder = currenttime-epoch;
+	remainder = remainder % year;
+	var yearprogress = remainder/year;
+	remainder = remainder % day;
+	var cnikkiphase = mod(remainder/day-0.078, 1);
+	var nikkiphase = mod(Math.round(8*cnikkiphase), 8); // idk why it needs another mod, but the code breaks without it
+	var yy = 31556952000;
+	// 642900 = 7 Jan 1970 10:35:00 UTC
+	// 2551442.9 = Lunar Synodic Period
+	var moonphase = Math.round(8*((currenttime-642900) % 2551442.9)/2551442.9) % 8;
+	// eremor time
+	document.getElementById('clock_eremor_title').innerHTML = '<img src="img/phase/'+nikkiphase +
+		'.png" height=9 alt="Nikki Phase: '+phases[nikkiphase]+'" title="Nikki Phase: ' +
+		phases[nikkiphase]+'"> Eremoran Time:';
+	document.getElementById('clock_eremor_progress').value = yearprogress;
+	// earth time
+	document.getElementById('clock_earth_title').innerHTML = '<img src="img/phase/'+moonphase +
+		'.png" height=9 alt="Moon Phase: '+phases[moonphase]+'" title="Moon Phase: ' +
+		phases[moonphase]+'"> Earth Time:';
+	document.getElementById('clock_earth_progress').value = (Date.now()-vernal) % yy/yy;
+}
+
+oneiaTimeInitialize();
 setInterval(oneiaTime, 100);
 bonus();
 holidayCSS();
