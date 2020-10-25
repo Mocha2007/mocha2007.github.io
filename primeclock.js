@@ -285,7 +285,7 @@ function getDateBeforeNow(r){
 
 function footer(){
 	var y = Math.pow(a, 1-timeSinceYear()/year);
-	var yprime = Math.round(y*Math.log(a)*24*60*60).toLocaleString();
+	var yprime = Math.round(y*Math.log(a)).toLocaleString();
 
 	document.getElementById('nowtime').innerHTML = String(new Date()).slice(4, 24)+
 		' - '+String(getDateBeforeNow(y)).slice(4, 24)+
