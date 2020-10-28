@@ -3,6 +3,7 @@ progress {
 	/* Dimensions */
 	width: 300px;
 	height: 20px;
+	border: 0px;
 }
 
 /* Polyfill */
