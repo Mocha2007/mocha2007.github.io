@@ -19,7 +19,7 @@ table.mid{margin-left:auto;margin-right: auto;}
 .navchart a{
 	color: white;
 }
-.navchart font{
+.navchart span{
 	font-size: 24px;
 	letter-spacing: -3px;
 }
@@ -54,7 +54,7 @@ table.mid{margin-left:auto;margin-right: auto;}
   background-color: #fcc;
 }
 #eclipse tr:nth-child(1){
-  background-color: #aaa;
+  background-color: #bbb;
 }
 /* fire animation */
 @keyframes flame{

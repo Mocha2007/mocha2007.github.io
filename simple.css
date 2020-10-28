@@ -138,13 +138,13 @@ table.lefttable td{
 }
 .tintred{
 	background-color: #fcc;
-	color: #c00;
-	border: 1px solid #600;
+	color: #a00;
+	border: 1px solid #a00;
 }
 .tintsky{
 	background-color: #cef;
-	color: #08f;
-	border: 1px solid #08f;
+	color: #06c;
+	border: 1px solid #06c;
 }
 .tintyellow{
 	background-color: #ffc;
