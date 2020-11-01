@@ -211,6 +211,11 @@ function dorf(){
 		', Tick ' + t;
 }
 
+/** ab urbe condita */
+function auc(){
+	return new Date().getFullYear() + 753 + ' <abbr title="ab urbe condita">AUC</abbr>';
+}
+
 function holidayCSS(){
 	var month = new Date().getMonth() + 1;
 	var day = new Date().getDate();
@@ -337,7 +342,7 @@ function oneiaTime(){
 }
 
 function bonus(){
-	document.getElementById('clockbonus').innerHTML = [zodiac(), china(), egypt(), maya(),
+	document.getElementById('clockbonus').innerHTML = [zodiac(), china(), egypt(), auc(), maya(),
 		'JD '+jd().toFixed(3), darian(), dorf()].join('<br>');
 }
 
