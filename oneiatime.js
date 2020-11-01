@@ -179,7 +179,35 @@ function darian(){
 	var marsday = dhelp3(marsd)[1]+1;
 	var marshour = dhelp3(marsd)[2];
 	return [marsday, marsmonth, marsy, marshour,
-		'<a href="https://en.wikipedia.org/wiki/Darian_calendar">UMST</abbr>'].join(' ');
+		'<a href="https://en.wikipedia.org/wiki/Darian_calendar">UMST</a>'].join(' ');
+}
+
+/** DF time */
+function dorf(){
+	var dorfMonths = [
+		'Granite', 'Slate', 'Felsite', 'Hematite', 'Malachite', 'Galena',
+		'Limestone', 'Sandstone', 'Timber', 'Moonstone', 'Opal', 'Obsidian',
+	];
+	var dorfSeasons = ['Spring', 'Summer', 'Autumn', 'Winter'];
+	var dorfCaravans = ['Elven', 'Human', 'Dwarven', 'No'];
+	var dorfSeasonModifiers = ['Early', 'Mid', 'Late'];
+	var yearLength = 60*60*24*365.2425;
+	var epoch = 1142878500; // 1:15 PM EST 20 MAR 2006, the first vernal equinox before release
+	var remainder = new Date()/1000 - epoch; // seconds since epoch
+	var y = Math.floor(remainder / yearLength);
+	remainder -= y*yearLength;
+	var m = Math.floor(remainder / (yearLength/12));
+	var s = Math.floor(m/3);
+	var sm = m - s*3;
+	remainder -= m*yearLength/12;
+	var d = Math.floor(remainder / (yearLength/12/28));
+	remainder -= d*yearLength/12/28;
+	var h = Math.floor(remainder / (yearLength/12/28/24));
+	remainder -= h*yearLength/12/28/24;
+	var t = Math.floor(remainder / 72); // ticks
+	return d + ' ' + dorfMonths[m] + ' (<abbr title="' + dorfCaravans[s] + ' caravan">' +
+		dorfSeasonModifiers[sm] + ' ' + dorfSeasons[s] + '</abbr>), Year ' + y + ' - Hour ' + h +
+		', Tick ' + t;
 }
 
 function holidayCSS(){
@@ -308,8 +336,8 @@ function oneiaTime(){
 }
 
 function bonus(){
-	document.getElementById('clockbonus').innerHTML = zodiac()+'<br/>'+china()+'<br/>'+egypt() +
-		'<br/>'+maya()+'<br/>JD '+jd().toFixed(3)+'<br/>'+darian();
+	document.getElementById('clockbonus').innerHTML = [zodiac(), china(), egypt(), maya(),
+		'JD '+jd().toFixed(3), darian(), dorf()].join('<br>');
 }
 
 function oneiaTimeInitialize(){
