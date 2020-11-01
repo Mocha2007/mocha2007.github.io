@@ -1,6 +1,6 @@
 /* eslint-disable comma-dangle, no-var */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
-/* exported playSound, stopSound */
+/* exported bonus, holidayCSS, oneiaTime, oneiaTimeInitialize, playSound, stopSound */
 'use strict';
 var vernal = 6884100000; // ms after first vernal equinox 20 Mar 16:15 (2018)
 
@@ -216,6 +216,24 @@ function auc(){
 	return new Date().getFullYear() + 753 + ' <abbr title="ab urbe condita">AUC</abbr>';
 }
 
+/** japanese era */
+function japan(){
+	var eras = [ // older ones included in case some weirdo sets their system time to 1970
+		[2019, '令和', 'Reiwa', 'Naruhito', 'れいわ'],
+		[1989, '平成', 'Heisei', 'Akihito', 'へいせい'],
+		[1926, '昭和', 'Shōwa', 'Hirohito', 'しょうわ'],
+	];
+	var y = new Date().getFullYear();
+	var i; // need this outside the for scope
+	for (i = 0; i < eras.length; i++){
+		if (y > eras[i][0])
+			break;
+	}
+	y -= eras[i][0] - 1;
+	return '<abbr title="' + eras[i][2] + ' era\nEmperor ' + eras[i][3] + '"><ruby>' + eras[i][1] +
+		'<rt>' + eras[i][4] + '</rt></ruby></abbr>の' + y + '年';
+}
+
 function holidayCSS(){
 	var month = new Date().getMonth() + 1;
 	var day = new Date().getDate();
@@ -342,8 +360,8 @@ function oneiaTime(){
 }
 
 function bonus(){
-	document.getElementById('clockbonus').innerHTML = [zodiac(), china(), egypt(), auc(), maya(),
-		'JD '+jd().toFixed(3), darian(), dorf()].join('<br>');
+	document.getElementById('clockbonus').innerHTML = [zodiac(), china(), egypt(), japan(), auc(),
+		maya(), 'JD '+jd().toFixed(3), darian(), dorf()].join('<br>');
 }
 
 function oneiaTimeInitialize(){
@@ -374,8 +392,3 @@ function oneiaTimeInitialize(){
 		phases[moonphase]+'"> Earth Time:';
 	document.getElementById('clock_earth_progress').value = (Date.now()-vernal) % yy/yy;
 }
-
-oneiaTimeInitialize();
-setInterval(oneiaTime, 100);
-bonus();
-holidayCSS();
