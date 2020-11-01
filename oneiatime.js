@@ -231,7 +231,7 @@ function japan(){
 	}
 	y -= eras[i][0] - 1;
 	return '<abbr title="' + eras[i][2] + ' era\nEmperor ' + eras[i][3] + '"><ruby>' + eras[i][1] +
-		'<rt>' + eras[i][4] + '</rt></ruby></abbr>の' + y + '年';
+		'<rt>' + eras[i][4] + '</rt></ruby></abbr>' + y + '年';
 }
 
 function holidayCSS(){
