@@ -206,7 +206,8 @@ function dorf(){
 	remainder -= h*yearLength/12/28/24;
 	var t = Math.floor(remainder / 72); // ticks
 	return d + ' ' + dorfMonths[m] + ' (<abbr title="' + dorfCaravans[s] + ' caravan">' +
-		dorfSeasonModifiers[sm] + ' ' + dorfSeasons[s] + '</abbr>), Year ' + y + ' - Hour ' + h +
+		dorfSeasonModifiers[sm] + ' ' + dorfSeasons[s] +
+		'</abbr>), <abbr title="Age of Civilization">Year ' + y + '</abbr> - Hour ' + h +
 		', Tick ' + t;
 }
 
