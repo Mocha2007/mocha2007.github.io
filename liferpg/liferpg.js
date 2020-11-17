@@ -32,12 +32,14 @@ const pronN = new Pronoun("it", "it", "its", "its", "itself");
 const pronP = new Pronoun("they", "them", "their", "theirs", "themselves", true);
 const pronThey = new Pronoun("they", "them", "their", "theirs", "themself", true);
 
+/** @type {[string, Item => () => void, Item => boolean][]} */
 const verbs = [
+	["Drop", i => () => i.drop(), i => i.tags.includes("take") && Game.player.contents.includes(i)],
 	// go to (for rooms)
-	["Look", i => () => i.look(), () => true],
+	["Look at", i => () => i.look(), _ => true],
 	// look around (for containers)
 	// speak to (for people)
-	// take (for take)
+	["Take", i => () => i.take(), i => i.tags.includes("take") && !Game.player.contents.includes(i)],
 ];
 
 class Item {
@@ -48,6 +50,11 @@ class Item {
 		this.imgsrc = imgsrc;
 		this.pronoun = this.plural ? pronP : pronN;
 		classLists.item.push(this);
+	}
+	get container(){
+		for (const c of classLists.container)
+			if (c.contents.includes(this))
+				return c;
 	}
 	get menu(){
 		/** @type {HTMLDivElement} */
@@ -94,6 +101,18 @@ class Item {
 	hideMenu(){
 		Game.elem.tooltip.innerHTML = "";
 	}
+	/** @param {HTMLSpanElement} elem */
+	showMenu(elem){
+		const outerMenu = Game.elem.tooltip;
+		const innerMenu = this.menu;
+		outerMenu.innerHTML = "";
+		outerMenu.appendChild(innerMenu);
+		elem.appendChild(outerMenu);
+	}
+	// VERBS
+	drop(){
+		this.putInto(Game.player.container);
+	}
 	look(){
 		const tt = document.getElementById("tooltip");
 		tt.innerHTML = "";
@@ -110,13 +129,15 @@ class Item {
 		tt.appendChild(back);
 		
 	}
-	/** @param {HTMLSpanElement} elem */
-	showMenu(elem){
-		const outerMenu = Game.elem.tooltip;
-		const innerMenu = this.menu;
-		outerMenu.innerHTML = "";
-		outerMenu.appendChild(innerMenu);
-		elem.appendChild(outerMenu);
+	/** @param {Container} c */
+	putInto(c){
+		// remove from current container
+		this.container.contents = this.container.contents.filter(i => i != this);
+		// place in new container
+		c.contents.push(this);
+	}
+	take(){
+		this.putInto(Game.player);
 	}
 }
 
