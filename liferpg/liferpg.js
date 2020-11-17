@@ -95,7 +95,7 @@ class Item {
 		text.classList.add("clickable")
 		text.innerHTML = this.name;
 		text.onclick = () => this.showMenu(elem);
-		// elem.onmouseleave = () => this.hideMenu();
+		elem.onmouseleave = () => this.hideMenu();
 		return elem;
 	}
 	get thumbnail(){
