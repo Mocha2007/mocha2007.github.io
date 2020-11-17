@@ -36,9 +36,9 @@ const pronThey = new Pronoun("they", "them", "their", "theirs", "themself", true
 const verbs = [
 	["Drop", i => () => i.drop(), i => i.tags.includes("take") && Game.player.contents.includes(i)],
 	["Go to", i => () => i.go(), i => i.tags.includes("room") && Game.player.container != i],
-	["Lie in", i => () => Game.tooltipMessage("Mmm... comfy!", i), i => i.tags.includes("lie in")],
+	["Lie in", i => () => Game.tooltipMessage(i, "Mmm... comfy!"), i => i.tags.includes("lie in")],
+	["Look around", i => () => Game.tooltipMessage(i, "", i.contentList), i => i.tags.includes("container") && i.room == Game.player.room],
 	["Look at", i => () => i.look(), _ => true],
-	// look around (for containers)
 	["Look into", i => () => Game.player.look(), i => i.tags.includes("reflective")],
 	// speak to (for people)
 	["Take", i => () => i.take(), i => i.tags.includes("take") && !Game.player.contents.includes(i)],
@@ -79,6 +79,9 @@ class Item {
 		elem.src = this.imgsrc;
 		elem.alt = elem.title = this.name;
 		return elem;
+	}
+	get room(){
+		return this instanceof Room ? this : this.container.room;
 	}
 	get span(){
 		/** @type {HTMLSpanElement} */
@@ -292,14 +295,18 @@ const Game = {
 		this.update();
 	},
 	/**
+	 * @param {Item} itemForBack
 	 * @param {string} message 
-	 * @param {Item} itemForBack 
+	 * @param {HTMLElement?} optionalElement
 	 */
-	tooltipMessage(message, itemForBack){
+	tooltipMessage(itemForBack, message, optionalElement){
 		const tt = this.elem.tooltip;
 		// text
-		tt.innerHTML = message;
+		tt.innerHTML = message ? message : "";
 		tt.appendChild(document.createElement("br"));
+		// optional element
+		if (optionalElement)
+			tt.appendChild(optionalElement);
 		// back
 		const back = document.createElement("span");
 		back.innerHTML = "&larr; Back";
