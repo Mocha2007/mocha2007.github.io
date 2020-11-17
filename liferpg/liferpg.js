@@ -40,7 +40,7 @@ const verbs = [
 	["Look around", i => () => Game.tooltipMessage(i, "", i.contentList), i => i.tags.includes("container") && i.room == Game.player.room],
 	["Look at", i => () => i.look(), _ => true],
 	["Look into", i => () => Game.player.look(), i => i.tags.includes("reflective")],
-	// speak to (for people)
+	["Speak to", i => () => i.speakTo(), i => i.tags.includes("person") && Game.player != i],
 	["Take", i => () => i.take(), i => i.tags.includes("take") && !Game.player.contents.includes(i)],
 ];
 
@@ -95,7 +95,7 @@ class Item {
 		text.classList.add("clickable")
 		text.innerHTML = this.name;
 		text.onclick = () => this.showMenu(elem);
-		elem.onmouseleave = () => this.hideMenu();
+		// elem.onmouseleave = () => this.hideMenu();
 		return elem;
 	}
 	get thumbnail(){
@@ -167,6 +167,8 @@ class Container extends Item {
 		const itemList = document.createElement("ul");
 		itemList.classList.add("contents");
 		this.contents.forEach(i => {
+			if (i == Game.player)
+				return;
 			const item = document.createElement("li");
 			item.appendChild(i.span);
 			itemList.appendChild(item);
