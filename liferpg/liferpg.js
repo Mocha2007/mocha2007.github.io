@@ -38,6 +38,7 @@ const verbs = [
 	["Go to", i => () => i.go(), i => i.tags.includes("room") && Game.player.container != i],
 	["Look at", i => () => i.look(), _ => true],
 	// look around (for containers)
+	["Look into", i => () => Game.player.look(), i => i.tags.includes("reflective")],
 	// speak to (for people)
 	["Take", i => () => i.take(), i => i.tags.includes("take") && !Game.player.contents.includes(i)],
 ];
@@ -132,10 +133,9 @@ class Item {
 		const back = document.createElement("span");
 		back.innerHTML = "&larr; Back";
 		back.classList.add("clickable", "back");
-		const elem = tt.parentElement;
+		const elem = Game.elem.tooltip.parentElement;
 		back.onclick = () => this.showMenu(elem);
 		tt.appendChild(back);
-		
 	}
 	/** @param {Container} c */
 	putInto(c){
@@ -274,12 +274,19 @@ const Game = {
 		// init
 		this.elem.init();
 		// test items
+		// bedroom
 		const bedroom = new Room("Bedroom", "A sleepy hallow");
 		const bed = new Item("Bed", "Bouncy bouncy bouncy", [], "https://productimages.mybobs.com/fit-in/624x0/sp/20031533/20031533_hero_wide.jpg");
 		const pencil = new Item("Pencil", "The superior writing implement", ["take"], "https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half-caption/public/field_blog_entry_images/2019-12/redpencil.png");
 		bedroom.contents.push(bed, pencil, this.player);
+		// living room
 		const livingRoom = new Room("Living Room", "A lively chamber");
 		bedroom.connect(livingRoom);
+		// bathroom
+		const bathroom = new Room("Bathroom", "A calm, secluded alcove");
+		bedroom.connect(bathroom);
+		const mirror = new Item("Mirror", "A shiny, reflective surface for gazing at yourself", ["reflective"]);
+		bathroom.contents.push(mirror);
 		// FINISH
 		this.update();
 	},
