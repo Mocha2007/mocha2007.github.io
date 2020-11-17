@@ -1,3 +1,6 @@
+/* eslint-disable */
+'use strict';
+
 const classLists = {
 	/** @type {Container[]} */
 	container: [],
@@ -30,7 +33,11 @@ const pronP = new Pronoun("they", "them", "their", "theirs", "themselves", true)
 const pronThey = new Pronoun("they", "them", "their", "theirs", "themself", true);
 
 const verbs = [
+	// go to (for rooms)
 	["Look", i => () => i.Look(), () => true],
+	// look around (for containers)
+	// speak to (for people)
+	// take (for take)
 ];
 
 class Item {
@@ -70,8 +77,9 @@ class Item {
 		elem.appendChild(this.thumbnail);
 		const text = document.createElement("span");
 		elem.appendChild(text);
-		text.innerHTML = this.name;
-		elem.onclick = () => this.showMenu();
+		text.innerHTML = " " + this.name;
+		elem.onmouseover = () => this.showMenu(elem);
+		elem.onmouseleave = () => this.hideMenu(elem);
 		return elem;
 	}
 	get thumbnail(){
@@ -79,9 +87,17 @@ class Item {
 		elem.height = elem.width = 20;
 		return elem;
 	}
-	showMenu(){
-		// todo
-		this.menu;
+	/** @param {HTMLSpanElement} elem */
+	hideMenu(elem){
+		Game.elem.tooltip.innerHTML = "";
+	}
+	/** @param {HTMLSpanElement} elem */
+	showMenu(elem){
+		const outerMenu = Game.elem.tooltip;
+		const innerMenu = this.menu;
+		outerMenu.innerHTML = "";
+		outerMenu.appendChild(innerMenu);
+		elem.appendChild(outerMenu);
 	}
 }
 
@@ -101,6 +117,31 @@ class Room extends Container {
 		this.connections = [];
 		classLists.room.push(this);
 	}
+	/** show info on screen */
+	details(){
+		const elem = Game.elem.details;
+		elem.innerHTML = "";
+		// title
+		const title = document.createElement("h1");
+		title.innerHTML = this.name;
+		elem.appendChild(title);
+		// desc
+		const description = document.createElement("p");
+		description.innerHTML = this.desc;
+		elem.appendChild(description);
+		// item list title
+		const itemListTitle = document.createElement("h2");
+		itemListTitle.innerHTML = "You see the following items:";
+		elem.appendChild(itemListTitle);
+		// item list
+		const itemList = document.createElement("ul");
+		elem.appendChild(itemList);
+		this.contents.forEach(i => {
+			const item = document.createElement("li");
+			item.appendChild(i.span);
+			itemList.appendChild(item);
+		});
+	}
 }
 
 class Person extends Container {
@@ -112,14 +153,42 @@ class Person extends Container {
 }
 
 const Game = {
-	player: new Person("Player"),
-	run(){
-		const bedroom = new Room("Bedroom", "A sleepy hallow");
-		const bed = new Item("Bed", "Bouncy bouncy bouncy");
-		const pencil = new Item("Pencil", "The superior writing implement", ["take"]);
-		bedroom.contents.push(bed, pencil);
-		// todo...?
+	elem: {
+		details: document.createElement("div"),
+		gameFrame: document.createElement("div"),
+		status: document.createElement("div"),
+		tooltip: document.createElement("div"),
+		init(){
+			// gameframe setup
+			this.gameFrame.id = "gameFrame"
+			document.body.appendChild(this.gameFrame);
+			// status setup
+			this.status.id = "status"
+			this.gameFrame.appendChild(this.status);
+			// details setup
+			this.details.id = "details"
+			this.gameFrame.appendChild(this.details);
+			// tooltip setup
+			this.tooltip.id = "tooltip";
+			this.gameFrame.appendChild(this.tooltip);
+			// this.tooltip.style.visibility = "none";
+		},
 	},
+	player: new Person("Player", "Stunningly gorgeous", [], "https://www.clker.com/cliparts/F/V/I/C/q/Z/red-stick-man-md.png"),
+	run(){
+		// init
+		this.elem.init();
+		// test items
+		const bedroom = new Room("Bedroom", "A sleepy hallow");
+		const bed = new Item("Bed", "Bouncy bouncy bouncy", [], "https://productimages.mybobs.com/fit-in/624x0/sp/20031533/20031533_hero_wide.jpg");
+		const pencil = new Item("Pencil", "The superior writing implement", ["take"], "https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half-caption/public/field_blog_entry_images/2019-12/redpencil.png");
+		bedroom.contents.push(bed, pencil, this.player);
+		// todo...?
+		bedroom.details();
+	},
+	updateTitle(){
+		// todo: change title based on room, open window, etc...
+	}
 };
 
 Game.run();
@@ -134,4 +203,5 @@ Game.run();
 				- player
 	- inventory/stats screen (always visible...?)
 	- options for what to do in each room
+	- preload all images
 */

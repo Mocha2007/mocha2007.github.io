@@ -1,5 +1,36 @@
+body {
+	margin: 0;
+}
+
 html {
 	background-color: black;
 	color: silver;
 	font-family: Consolas, 'Courier New', Courier, monospace;
+}
+
+#details {
+	height: 100%;
+	left: 20%;
+	position: absolute;
+	top: 0;
+	width: 80%;
+}
+
+#gameFrame {
+	height: 100%;
+	width: 100%;
+}
+
+#status {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 20%;
+}
+
+#tooltip {
+	border: 1px solid silver;
+	display: inline-block;
+	max-width: 20%;
 }
