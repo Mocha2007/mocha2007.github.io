@@ -67,6 +67,7 @@ html {
 #tooltip {
 	border: 1px solid silver;
 	display: inline-block;
+	text-align: left;
 	vertical-align: top;
 	width: 20vw;
 }
