@@ -51,12 +51,13 @@ class Item {
 	}
 	get menu(){
 		/** @type {HTMLDivElement} */
-		const elem = document.createElement("div");
+		const elem = document.createElement("ul");
 		// list items
 		verbs.filter(v => v[2](this)).forEach(v => {
-			const verbElem = document.createElement("span");
+			const verbElem = document.createElement("li");
 			verbElem.onclick = v[1](this);
 			verbElem.innerHTML = v[0];
+			verbElem.classList.add("clickable");
 			elem.appendChild(verbElem);
 		});
 		// finish
@@ -75,10 +76,13 @@ class Item {
 		const elem = document.createElement("span");
 		elem.classList.add("rich_item");
 		elem.appendChild(this.thumbnail);
+		const sp = document.createTextNode(" ");
+		elem.appendChild(sp);
 		const text = document.createElement("span");
 		elem.appendChild(text);
-		text.innerHTML = " " + this.name;
-		elem.onmouseover = () => this.showMenu(elem);
+		text.classList.add("clickable")
+		text.innerHTML = this.name;
+		text.onclick = () => this.showMenu(elem);
 		elem.onmouseleave = () => this.hideMenu(elem);
 		return elem;
 	}
@@ -92,10 +96,24 @@ class Item {
 		Game.elem.tooltip.innerHTML = "";
 	}
 	look(){
-		console.warn("unimplemented");
+		const tt = document.getElementById("tooltip")
+			console.log(tt);
+		tt.innerHTML = this.desc;
+			console.log(tt.innerHTML);
+		tt.appendChild(document.createElement("br"));
+		const back = document.createElement("span");
+		back.innerHTML = "&larr; Back";
+		back.classList.add("clickable");
+		const elem = tt.parentElement;
+		back.onclick = () => this.showMenu(elem);
+		tt.appendChild(back);
+			console.log(back);
+			console.log(back.parentElement);
+		
 	}
 	/** @param {HTMLSpanElement} elem */
 	showMenu(elem){
+		console.warn("tomfuckery afoot");
 		const outerMenu = Game.elem.tooltip;
 		const innerMenu = this.menu;
 		outerMenu.innerHTML = "";
@@ -138,6 +156,7 @@ class Room extends Container {
 		elem.appendChild(itemListTitle);
 		// item list
 		const itemList = document.createElement("ul");
+		itemList.classList.add("contents");
 		elem.appendChild(itemList);
 		this.contents.forEach(i => {
 			const item = document.createElement("li");
