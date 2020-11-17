@@ -42,6 +42,7 @@ const verbs = [
 	["Look into", i => () => Game.player.look(), i => i.tags.includes("look into")],
 	["Speak to", i => () => i.speakTo(), i => i.tags.includes("person") && Game.player != i],
 	["Take", i => () => i.take(), i => i.tags.includes("take") && !Game.player.contents.includes(i)],
+	["Wash up", i => () => Game.tooltipMessage(i, "Ahh, nice and squeaky clean!"), i => i.tags.includes("wash up")],
 ];
 
 class Item {
@@ -292,7 +293,8 @@ const Game = {
 		const bathroom = new Room("Bathroom", "A calm, secluded alcove");
 		bedroom.connect(bathroom);
 		const mirror = new Item("Mirror", "A shiny, reflective surface for gazing at yourself", ["look into"]);
-		bathroom.contents.push(mirror);
+		const shower = new Item("Shower", "To clean yourself with, of course!", ["wash up"]);
+		bathroom.contents.push(mirror, shower);
 		// FINISH
 		this.update();
 	},
