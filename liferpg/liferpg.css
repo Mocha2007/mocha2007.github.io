@@ -55,12 +55,9 @@ html {
 	height: 100%;
 	left: 0;
 	position: absolute;
+	text-align: center;
 	top: 0;
 	width: 20%;
-}
-
-#status > h1 {
-	text-align: center;
 }
 
 #status > img {

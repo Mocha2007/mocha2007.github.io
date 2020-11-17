@@ -82,7 +82,7 @@ class Item {
 		/** @type {HTMLSpanElement} */
 		const elem = document.createElement("span");
 		elem.classList.add("rich_item");
-		elem.appendChild(this.thumbnail);
+		// elem.appendChild(this.thumbnail);
 		const sp = document.createTextNode(" ");
 		elem.appendChild(sp);
 		const text = document.createElement("span");
@@ -238,6 +238,7 @@ const Game = {
 		details: document.createElement("div"),
 		gameFrame: document.createElement("div"),
 		inventory: document.createElement("div"),
+		location: document.createElement("span"),
 		status: document.createElement("div"),
 		tooltip: document.createElement("div"),
 		init(){
@@ -253,6 +254,9 @@ const Game = {
 			this.status.appendChild(statusTitle);
 			// status image
 			this.status.appendChild(Game.player.img);
+			// status location
+			this.location.id = "location";
+			this.status.appendChild(this.location);
 			// inventory
 			this.status.appendChild(this.inventory);
 			// details setup
@@ -292,6 +296,8 @@ const Game = {
 		this.elem.inventory.innerHTML = "";
 		this.elem.inventory.appendChild(this.player.contentList);
 		// current location
+		this.elem.location.innerHTML = "Location: ";
+		this.elem.location.appendChild(this.player.container.span)
 		// health/mana/status/that kind of shit
 	},
 	updateTitle(){
