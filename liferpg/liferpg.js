@@ -34,6 +34,7 @@ const pronThey = new Pronoun("they", "them", "their", "theirs", "themself", true
 
 /** @type {[string, Item => () => void, Item => boolean][]} */
 const verbs = [
+	["Answer nature&rsquo;s call", i => () => Game.tooltipMessage(i, "Ahh, much better."), i => i.tags.includes("toilet")],
 	["Drop", i => () => i.drop(), i => i.tags.includes("take") && Game.player.contents.includes(i)],
 	["Go to", i => () => i.go(), i => i.tags.includes("room") && Game.player.container != i],
 	["Lie in", i => () => Game.tooltipMessage(i, "Mmm... comfy!"), i => i.tags.includes("lie in")],
@@ -294,7 +295,8 @@ const Game = {
 		bedroom.connect(bathroom);
 		const mirror = new Item("Mirror", "A shiny, reflective surface for gazing at yourself", ["look into"]);
 		const shower = new Item("Shower", "To clean yourself with, of course!", ["wash up"]);
-		bathroom.contents.push(mirror, shower);
+		const toilet = new Item("Toilet", "You know the drill", ["toilet"]);
+		bathroom.contents.push(mirror, shower, toilet);
 		// FINISH
 		this.update();
 	},
