@@ -8,6 +8,12 @@ html {
 	font-family: Consolas, 'Courier New', Courier, monospace;
 }
 
+.back {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}
+
 .clickable {
 	cursor: pointer;
 }
@@ -20,11 +26,6 @@ html {
 .contents, .itemMenu {
 	list-style: none;
 	padding: 0;
-}
-
-.rich_item {
-	display: inline-block;
-	width: 100%; /* to prevent bugs with hovering */
 }
 
 #details {

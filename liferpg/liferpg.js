@@ -83,7 +83,7 @@ class Item {
 		text.classList.add("clickable")
 		text.innerHTML = this.name;
 		text.onclick = () => this.showMenu(elem);
-		elem.onmouseleave = () => this.hideMenu(elem);
+		elem.onmouseleave = () => this.hideMenu();
 		return elem;
 	}
 	get thumbnail(){
@@ -91,29 +91,27 @@ class Item {
 		elem.height = elem.width = 20;
 		return elem;
 	}
-	/** @param {HTMLSpanElement} elem */
-	hideMenu(elem){
+	hideMenu(){
 		Game.elem.tooltip.innerHTML = "";
 	}
 	look(){
-		const tt = document.getElementById("tooltip")
-			console.log(tt);
-		tt.innerHTML = this.desc;
-			console.log(tt.innerHTML);
+		const tt = document.getElementById("tooltip");
+		tt.innerHTML = "";
+		const title = document.createElement("h3");
+		title.innerHTML = "Description";
+		tt.appendChild(title)
+		tt.innerHTML += this.desc;
 		tt.appendChild(document.createElement("br"));
 		const back = document.createElement("span");
 		back.innerHTML = "&larr; Back";
-		back.classList.add("clickable");
+		back.classList.add("clickable", "back");
 		const elem = tt.parentElement;
 		back.onclick = () => this.showMenu(elem);
 		tt.appendChild(back);
-			console.log(back);
-			console.log(back.parentElement);
 		
 	}
 	/** @param {HTMLSpanElement} elem */
 	showMenu(elem){
-		console.warn("tomfuckery afoot");
 		const outerMenu = Game.elem.tooltip;
 		const innerMenu = this.menu;
 		outerMenu.innerHTML = "";
