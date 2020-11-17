@@ -143,6 +143,8 @@ class Item {
 		this.container.contents = this.container.contents.filter(i => i != this);
 		// place in new container
 		c.contents.push(this);
+		// update
+		Game.update();
 	}
 	take(){
 		this.putInto(Game.player);
@@ -155,6 +157,17 @@ class Container extends Item {
 		/** @type {Item[]} */
 		this.contents = [];
 		classLists.container.push(this);
+	}
+	get contentList(){
+		// item list
+		const itemList = document.createElement("ul");
+		itemList.classList.add("contents");
+		this.contents.forEach(i => {
+			const item = document.createElement("li");
+			item.appendChild(i.span);
+			itemList.appendChild(item);
+		});
+		return itemList;
 	}
 }
 
@@ -182,14 +195,7 @@ class Room extends Container {
 		itemListTitle.innerHTML = "You see the following items:";
 		elem.appendChild(itemListTitle);
 		// item list
-		const itemList = document.createElement("ul");
-		itemList.classList.add("contents");
-		elem.appendChild(itemList);
-		this.contents.forEach(i => {
-			const item = document.createElement("li");
-			item.appendChild(i.span);
-			itemList.appendChild(item);
-		});
+		elem.appendChild(this.contentList);
 	}
 }
 
@@ -205,6 +211,7 @@ const Game = {
 	elem: {
 		details: document.createElement("div"),
 		gameFrame: document.createElement("div"),
+		inventory: document.createElement("div"),
 		status: document.createElement("div"),
 		tooltip: document.createElement("div"),
 		init(){
@@ -214,6 +221,14 @@ const Game = {
 			// status setup
 			this.status.id = "status"
 			this.gameFrame.appendChild(this.status);
+			// status title
+			const statusTitle = document.createElement("h1");
+			statusTitle.innerHTML = Game.name;
+			this.status.appendChild(statusTitle);
+			// status image
+			this.status.appendChild(Game.player.img);
+			// inventory
+			this.status.appendChild(this.inventory);
 			// details setup
 			this.details.id = "details"
 			this.gameFrame.appendChild(this.details);
@@ -223,6 +238,7 @@ const Game = {
 			// this.tooltip.style.visibility = "none";
 		},
 	},
+	name: "Life RPG",
 	player: new Person("Player", "Stunningly gorgeous", [], "https://www.clker.com/cliparts/F/V/I/C/q/Z/red-stick-man-md.png"),
 	run(){
 		// init
@@ -233,11 +249,27 @@ const Game = {
 		const pencil = new Item("Pencil", "The superior writing implement", ["take"], "https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half-caption/public/field_blog_entry_images/2019-12/redpencil.png");
 		bedroom.contents.push(bed, pencil, this.player);
 		// todo...?
-		bedroom.details();
+		this.update();
+	},
+	/** update interface */
+	update(){
+		this.updateTitle();
+		this.player.container.details();
+		this.updateStatus();
+	},
+	updateStatus(){
+		// game title
+		// image of player
+		// inventory
+		this.elem.inventory.innerHTML = "";
+		this.elem.inventory.appendChild(this.player.contentList);
+		// current location
+		// health/mana/status/that kind of shit
 	},
 	updateTitle(){
 		// todo: change title based on room, open window, etc...
-	}
+		document.title = this.name + " - " + this.player.container.name;
+	},
 };
 
 Game.run();

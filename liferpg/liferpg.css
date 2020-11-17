@@ -32,7 +32,7 @@ html {
 	text-align: center;
 }
 
-.look img {
+.look img, #status > img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -57,6 +57,14 @@ html {
 	position: absolute;
 	top: 0;
 	width: 20%;
+}
+
+#status > h1 {
+	text-align: center;
+}
+
+#status > img {
+	width: 50%;
 }
 
 #tooltip {
