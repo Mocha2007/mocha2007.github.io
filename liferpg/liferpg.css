@@ -71,7 +71,7 @@ html {
 	border: 1px solid silver;
 	display: inline-block;
 	vertical-align: top;
-	width: 20%;
+	width: 20vw;
 }
 
 #tooltip:empty {
