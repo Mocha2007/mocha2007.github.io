@@ -35,7 +35,7 @@ const pronThey = new Pronoun("they", "them", "their", "theirs", "themself", true
 /** @type {[string, Item => () => void, Item => boolean][]} */
 const verbs = [
 	["Drop", i => () => i.drop(), i => i.tags.includes("take") && Game.player.contents.includes(i)],
-	// go to (for rooms)
+	["Go to", i => () => i.go(), i => i.tags.includes("room") && Game.player.container != i],
 	["Look at", i => () => i.look(), _ => true],
 	// look around (for containers)
 	// speak to (for people)
@@ -178,6 +178,22 @@ class Room extends Container {
 		this.connections = [];
 		classLists.room.push(this);
 	}
+	get connectionList(){
+		// connection list
+		const connectionList = document.createElement("ul");
+		connectionList.classList.add("contents");
+		this.connections.forEach(r => {
+			const connection = document.createElement("li");
+			connection.appendChild(r.span);
+			connectionList.appendChild(connection);
+		});
+		return connectionList;
+	}
+	/** @param {Room} dest */
+	connect(dest){
+		this.connections.push(dest);
+		dest.connections.push(this);
+	}
 	/** show info on screen */
 	details(){
 		const elem = Game.elem.details;
@@ -196,6 +212,16 @@ class Room extends Container {
 		elem.appendChild(itemListTitle);
 		// item list
 		elem.appendChild(this.contentList);
+		// door list title
+		const doorListTitle = document.createElement("h2");
+		doorListTitle.innerHTML = "You see passages to the following rooms:";
+		elem.appendChild(doorListTitle);
+		// door list
+		elem.appendChild(this.connectionList);
+	}
+	// VERBS
+	go(){
+		Game.player.putInto(this);
 	}
 }
 
@@ -248,7 +274,9 @@ const Game = {
 		const bed = new Item("Bed", "Bouncy bouncy bouncy", [], "https://productimages.mybobs.com/fit-in/624x0/sp/20031533/20031533_hero_wide.jpg");
 		const pencil = new Item("Pencil", "The superior writing implement", ["take"], "https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half-caption/public/field_blog_entry_images/2019-12/redpencil.png");
 		bedroom.contents.push(bed, pencil, this.player);
-		// todo...?
+		const livingRoom = new Room("Living Room", "A lively chamber");
+		bedroom.connect(livingRoom);
+		// FINISH
 		this.update();
 	},
 	/** update interface */
