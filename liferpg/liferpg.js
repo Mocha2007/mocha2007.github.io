@@ -120,8 +120,8 @@ class Item {
 		Game.elem.tooltip.appendChild(tt);
 		// title
 		const title = document.createElement("h3");
-		title.innerHTML = "Description";
-		tt.appendChild(title)
+		title.innerHTML = this.name;
+		tt.appendChild(title);
 		// image
 		const image = this.img;
 		image.height = image.width = 100;
