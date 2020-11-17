@@ -297,6 +297,9 @@ const Game = {
 		const shower = new Item("Shower", "To clean yourself with, of course!", ["wash up"]);
 		const toilet = new Item("Toilet", "You know the drill", ["toilet"]);
 		bathroom.contents.push(mirror, shower, toilet);
+		// outside
+		const outside = new Room("Outside", "A dangerous urban jungle");
+		livingRoom.connect(outside);
 		// FINISH
 		this.update();
 	},
