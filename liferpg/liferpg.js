@@ -114,11 +114,19 @@ class Item {
 		this.putInto(Game.player.container);
 	}
 	look(){
-		const tt = document.getElementById("tooltip");
-		tt.innerHTML = "";
+		Game.elem.tooltip.innerHTML = "";
+		const tt = document.createElement("div");
+		tt.classList.add("look");
+		Game.elem.tooltip.appendChild(tt);
+		// title
 		const title = document.createElement("h3");
 		title.innerHTML = "Description";
 		tt.appendChild(title)
+		// image
+		const image = this.img;
+		image.height = image.width = 100;
+		tt.appendChild(image);
+		// text
 		tt.innerHTML += this.desc;
 		tt.appendChild(document.createElement("br"));
 		const back = document.createElement("span");

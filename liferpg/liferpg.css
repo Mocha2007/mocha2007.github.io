@@ -28,6 +28,16 @@ html {
 	padding: 0;
 }
 
+.look {
+	text-align: center;
+}
+
+.look img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 #details {
 	height: 100%;
 	left: 20%;
