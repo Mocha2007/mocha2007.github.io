@@ -39,7 +39,7 @@ const verbs = [
 	["Lie in", i => () => Game.tooltipMessage(i, "Mmm... comfy!"), i => i.tags.includes("lie in")],
 	["Look around", i => () => Game.tooltipMessage(i, "", i.contentList), i => i.tags.includes("container") && i.room == Game.player.room],
 	["Look at", i => () => i.look(), _ => true],
-	["Look into", i => () => Game.player.look(), i => i.tags.includes("reflective")],
+	["Look into", i => () => Game.player.look(), i => i.tags.includes("look into")],
 	["Speak to", i => () => i.speakTo(), i => i.tags.includes("person") && Game.player != i],
 	["Take", i => () => i.take(), i => i.tags.includes("take") && !Game.player.contents.includes(i)],
 ];
@@ -291,7 +291,7 @@ const Game = {
 		// bathroom
 		const bathroom = new Room("Bathroom", "A calm, secluded alcove");
 		bedroom.connect(bathroom);
-		const mirror = new Item("Mirror", "A shiny, reflective surface for gazing at yourself", ["reflective"]);
+		const mirror = new Item("Mirror", "A shiny, reflective surface for gazing at yourself", ["look into"]);
 		bathroom.contents.push(mirror);
 		// FINISH
 		this.update();
