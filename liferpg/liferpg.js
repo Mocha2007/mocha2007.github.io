@@ -34,7 +34,7 @@ const pronThey = new Pronoun("they", "them", "their", "theirs", "themself", true
 
 const verbs = [
 	// go to (for rooms)
-	["Look", i => () => i.Look(), () => true],
+	["Look", i => () => i.look(), () => true],
 	// look around (for containers)
 	// speak to (for people)
 	// take (for take)
@@ -90,6 +90,9 @@ class Item {
 	/** @param {HTMLSpanElement} elem */
 	hideMenu(elem){
 		Game.elem.tooltip.innerHTML = "";
+	}
+	look(){
+		console.warn("unimplemented");
 	}
 	/** @param {HTMLSpanElement} elem */
 	showMenu(elem){
