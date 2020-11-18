@@ -283,7 +283,7 @@ const Game = {
 		this.elem.init();
 		// test items
 		// bedroom
-		const bedroom = new Room("Bedroom", "A sleepy hallow");
+		const bedroom = new Room("Bedroom", "A sleepy hollow");
 		const bed = new Item("Bed", "Bouncy bouncy bouncy", ["lie in"], "https://productimages.mybobs.com/fit-in/624x0/sp/20031533/20031533_hero_wide.jpg");
 		const pencil = new Item("Pencil", "The superior writing implement", ["take"], "https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half-caption/public/field_blog_entry_images/2019-12/redpencil.png");
 		bedroom.contents.push(bed, pencil, this.player);
