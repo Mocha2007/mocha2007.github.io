@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="description" content="Template">
+<link rel="shortcut icon" href="img/favicon.ico">
+<link href=simple.css type="text/css" rel="stylesheet" title="Light">
+<link href=dark.css type="text/css" rel="alternate stylesheet" title="Dark"> 
+<link href=blend.css type="text/css" rel="alternate stylesheet" title="Blend">
+<link href=print.css type="text/css" rel="stylesheet" media="print">
+<script src="toc.js"></script>
+<title>Chess Game Comparison</title>
+<div id="nav"></div>
+<div id="top"><h1 id="Chess_Game_Comparison">Chess Game Comparison</h1></div>
+<p>
+	AI strength is determined by how long it takes Stockfish 11 to mate the AI.
+	The titles are sorted by implementation correctness, then AI strength, then alphebetically.
+	Implementation errors are sorted from most to least problematic.
+</p>
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Year</th>
+		<th>Properly Implemented?</th>
+		<th>AI Strength</th>
+		<th>Notes</th>
+	</tr>
+	<tr>
+		<td><a href="https://www.newgrounds.com/portal/view/713669">Pico Chess</a></td>
+		<td>Krystman</td>
+		<td>2018</td>
+		<td class="tintgreen">&check;</td>
+		<td>33</td>
+		<td>Deterministic; <abbr title="1. e4 d5 2. exd5 Qxd5 3. Nc3 Qe6+ 4. Be2 Nc6
+5. Nf3 Nf6 6. O-O Qd6 7. d4 e5 8. dxe5 Nxe5
+9. Nxe5 Qxe5 10. Bb5+ Bd7 11. Re1 Qe7 12. Rxe7+ Kxe7
+13. Bg5 Bxb5 14. Nxb5 c6 15. Qd6+ Ke8 16. Nc7#">forced mate in 16 for white</abbr></td>
+	</tr>
+	<tr>
+		<td><a href="https://www.newgrounds.com/portal/view/666970">3/2 Chess : Three Players Chess</a></td>
+		<td>shurf771</td>
+		<td>2015</td>
+		<td class="tintgreen">&check;</td> <!-- todo check en passant -->
+		<td>31</td>
+	</tr>
+	<tr>
+		<td><a href="https://www.newgrounds.com/portal/view/481731">flashCHESS III</a></td>
+		<td>liviurene</td>
+		<td>2009</td>
+		<td class="tintgreen">&check;</td><!-- todo check en passant -->
+		<td>25</td>
+		<td>Pseudo-3D</td>
+	</tr>
+	<tr>
+		<td><a href="https://www.newgrounds.com/portal/view/231283">Easy Chess</a></td>
+		<td>JamesBurton</td>
+		<td>2005</td>
+		<td class="tintgreen">&check;</td>
+		<td>14</td>
+		<td>Hard to distinguish bishop from knight; nonstandard move notation</td>
+	</tr>
+	<tr>
+		<td><a href="https://www.newgrounds.com/portal/view/463671">Halloween Chess</a></td>
+		<td>Sparkplug90</td>
+		<td>2008</td>
+		<td class="tintred"><ul>
+			<li>no en passant</li>
+		</ul></td>
+		<td>27</td>
+	</tr>
+	<tr>
+		<td><a href="https://www.newgrounds.com/portal/view/566288">chessgame</a></td>
+		<td>uzuriel</td>
+		<td>2011</td>
+		<td class="tintred"><ul>
+			<li>no en passant</li>
+		</ul></td>
+		<td>25</td>
+	</tr>
+	<tr>
+		<td><a href="https://www.newgrounds.com/portal/view/715272">Chogue</a></td>
+		<td>lablablab-games</td>
+		<td>2018</td>
+		<td class="tintred"><ul>
+			<li>black's king flees the chessboard through a stairwell first move</li>
+			<li>opponent skips turn if only their pawns remain</li>
+			<li>no castling</li>
+		</ul></td><!-- todo: check en passant -->
+		<td>n/a</td>
+		<td>AI greatly values pawns</td>
+	</tr>
+	<tr>
+		<td><a href="https://www.newgrounds.com/portal/view/86731">Chess</a></td>
+		<td>Scarydoll</td>
+		<td>2003</td>
+		<td class="tintred"><ul>
+			<li>opponent will smash your head into the chessboard when you move</li>
+		</ul></td>
+		<td>n/a</td>
+	</tr>
+	<tr>
+		<td><a href="https://www.newgrounds.com/portal/view/735700">Mind Games for 2 Player</a></td>
+		<td>RHMGames</td>
+		<td>2019</td>
+		<td class="tintred"><ul>
+			<li>can move into check</li>
+			<li>no castling</li>
+		</ul></td>
+		<td>n/a</td>
+		<td>en passant implemented; no undo; no move history</td>
+	</tr>
+</table>
+<div id="bottom"></div>
+</html>
