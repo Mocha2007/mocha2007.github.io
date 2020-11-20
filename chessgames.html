@@ -64,7 +64,7 @@
 		<td>Krystman</td>
 		<td>2018</td>
 		<td class="tintgreen">&check;</td>
-		<td>33</td>
+		<td><abbr title="~2200 elo?">33</abbr></td><!-- beat stockfish level 5 (2000 elo); lost to stockfish level 6 (2300 elo) after 69 moves -->
 		<td>Deterministic; <abbr title="1. e4 d5 2. exd5 Qxd5 3. Nc3 Qe6+ 4. Be2 Nc6
 5. Nf3 Nf6 6. O-O Qd6 7. d4 e5 8. dxe5 Nxe5
 9. Nxe5 Qxe5 10. Bb5+ Bd7 11. Re1 Qe7 12. Rxe7+ Kxe7
@@ -118,7 +118,12 @@
 		<td>JamesBurton</td>
 		<td>2005</td>
 		<td class="tintgreen">&check;</td>
-		<td>14</td>
+		<td><abbr title="~1300 elo?">14</abbr></td>
+		<!--
+			demolished stockfish level 2 (1100 elo) after 15 moves
+			lost to stockfish level 3 (1400 elo) after 20 moves
+			lost to stockfish level 4 (1700 elo) after 43 moves
+		-->
 		<td>Hard to distinguish bishop from knight; nonstandard move notation</td>
 	</tr>
 	<tr>
@@ -172,7 +177,11 @@
 			<li>no en passant</li>
 			<li>no underpromotion</li>
 		</ul></td>
-		<td>9</td>
+		<td><abbr title="~1200 elo?">9</abbr></td>
+		<!--
+			won against stockfish level 2 (1100 elo) after 52 moves
+			demolished by stockfish level 3 (1400 elo) after 30 moves
+		-->
 	</tr>
 	<tr>
 		<td><a href="https://www.newgrounds.com/portal/view/715272">Chogue</a></td>
@@ -193,6 +202,7 @@
 		<td class="tintred"><ul>
 			<li>can move into check</li>
 			<li>no castling</li>
+			<li>incorrect board checkers</li>
 		</ul></td> <!-- check underpromotion -->
 		<td>n/a</td>
 		<td>en passant implemented; no undo; no move history; unknown if underpromotion implemented</td>
