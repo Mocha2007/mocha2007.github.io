@@ -16,7 +16,13 @@
 	Unless otherwise stated, the most difficult AI is chosen.
 	The titles are sorted by implementation correctness, then AI strength, then alphebetically.
 	Implementation errors are sorted from most to least problematic.
+	Things checked for:
 </p>
+<ul>
+	<li>castling (kingside and queenside)</li>
+	<li>en passant</li>
+	<li>underpromotion (I forgot to check this for most games in red)</li>
+</ul>
 <table>
 	<tr>
 		<th>Title</th>
@@ -84,6 +90,7 @@
 		<td>2010</td>
 		<td class="tintgreen">&check;</td>
 		<td>18</td>
+		<td>crashes often; unknown if underpromotion works</td>
 	</tr>
 	<tr>
 		<td><a href="https://www.newgrounds.com/portal/view/231283">Easy Chess</a></td>
@@ -92,6 +99,15 @@
 		<td class="tintgreen">&check;</td>
 		<td>14</td>
 		<td>Hard to distinguish bishop from knight; nonstandard move notation</td>
+	</tr>
+	<tr>
+		<td><a href="https://www.kongregate.com/games/veclock/chess-ai-game">Chess AI Game</a></td>
+		<td>veclock</td>
+		<td>2011</td>
+		<td class="tintred"><ul>
+			<li>no underpromotion</li>
+		</ul></td>
+		<td>25</td>
 	</tr>
 	<tr>
 		<td><a href="https://www.newgrounds.com/portal/view/463671">Halloween Chess</a></td>
