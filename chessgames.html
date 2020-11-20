@@ -9,6 +9,11 @@
 <link href=print.css type="text/css" rel="stylesheet" media="print">
 <script src="toc.js"></script>
 <title>Chess Game Comparison</title>
+<style>
+table {
+	font-size: 70%;
+}
+</style>
 <div id="nav"></div>
 <div id="top"><h1 id="Chess_Game_Comparison">Chess Game Comparison</h1></div>
 <p>
@@ -31,6 +36,7 @@
 		<th>Year</th>
 		<th>Properly Implemented?</th>
 		<th>AI Strength</th>
+		<th>Average turn time</th>
 		<!--<th>S12 Mate in</th>-->
 		<th>Notes</th>
 	</tr>
@@ -53,6 +59,7 @@
 		<td>1993</td>
 		<td class="tintgreen">&check;</td> <!-- presumably -->
 		<td>56</td> <!-- stockfish 12 -->
+		<td>15</td>
 		<td>AI allows itself 15s/turn thinking time</td>
 	</tr>
 	<tr>
@@ -60,6 +67,7 @@
 		<td>2007</td>
 		<td class="tintgreen">&check;</td> <!-- presumably -->
 		<td><abbr title="Chessmaster DS (Elo: 1850)">53</abbr></td>
+		<td>20</td>
 		<td>Took about 18 minutes total for the AI to think</td>
 	</tr>
 	<tr>
@@ -67,13 +75,15 @@
 		<td>2008</td>
 		<td class="tintgreen">&check;</td> <!-- presumably -->
 		<td>44</td> <!-- stockfish 12 -->
-		<td>Took about 56 minutes for Wii Chess to play</td>
+		<td>76</td>
+		<td>Took about 56 minutes for Wii Chess to play. Some moves were instantaneous while others lasted several minutes.</td>
 	</tr>
 	<tr>
 		<td colspan="2">Chessmaster 4000 Turbo (Windows 3.1)</td>
 		<td>1993</td>
 		<td class="tintgreen">&check;</td> <!-- presumably -->
 		<td>39</td>
+		<td></td>
 		<td><abbr title="Rate my Play: Janowski vs. Lasker, Paris, 1909">Chessmaster estimates Stockfish's rating at 1787</abbr></td>
 	</tr>
 	<tr>
@@ -82,6 +92,7 @@
 		<td>2018</td>
 		<td class="tintgreen">&check;</td>
 		<td><abbr title="~2200 elo?">33</abbr></td><!-- beat stockfish level 5 (2000 elo); lost to stockfish level 6 (2300 elo) after 69 moves -->
+		<td></td>
 		<td>Deterministic; <abbr title="1. e4 d5 2. exd5 Qxd5 3. Nc3 Qe6+ 4. Be2 Nc6
 5. Nf3 Nf6 6. O-O Qd6 7. d4 e5 8. dxe5 Nxe5
 9. Nxe5 Qxe5 10. Bb5+ Bd7 11. Re1 Qe7 12. Rxe7+ Kxe7
@@ -106,6 +117,7 @@
 		<td>2009</td>
 		<td class="tintgreen">&check;</td>
 		<td>25</td>
+		<td></td>
 		<td>Pseudo-3D</td>
 	</tr>
 	<tr>
@@ -128,6 +140,7 @@
 		<td>2010</td>
 		<td class="tintgreen">&check;</td> <!-- check underpromotion -->
 		<td>18</td>
+		<td></td>
 		<td>crashes often; unknown if underpromotion works</td>
 	</tr>
 	<tr>
@@ -135,6 +148,7 @@
 		<td>1988</td>
 		<td class="tintgreen">&check;</td> <!-- presumably -->
 		<td>14</td> <!-- stockfish 12 -->
+		<td></td>
 		<td>amusing animations and sfx</td>
 	</tr>
 	<tr>
@@ -148,6 +162,7 @@
 			lost to stockfish level 3 (1400 elo) after 20 moves
 			lost to stockfish level 4 (1700 elo) after 43 moves
 		-->
+		<td></td>
 		<td>Hard to distinguish bishop from knight; nonstandard move notation</td>
 	</tr>
 	<tr>
@@ -217,6 +232,7 @@
 			<li>no castling</li>
 		</ul></td><!-- todo: check en passant -->
 		<td>n/a</td>
+		<td></td>
 		<td>AI greatly values pawns; unknown if en passant implemented</td>
 	</tr>
 	<tr>
@@ -229,6 +245,7 @@
 			<li>incorrect board checkers</li>
 		</ul></td> <!-- check underpromotion -->
 		<td>22</td>
+		<td></td>
 		<td>en passant implemented; no undo; no move history; unknown if underpromotion implemented</td>
 	</tr>
 	<tr>
