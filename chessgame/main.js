@@ -66,6 +66,8 @@ const pieceData = {
 		],
 	},
 };
+/** @type {0|1} */
+let turn = 1; // white
 
 /** @type {Piece[]} */
 const pieceList = [];
@@ -158,6 +160,8 @@ class Piece {
 		destinationElement.appendChild(this.element);
 		// hide moves
 		Piece.hideMoves();
+		// swap player
+		turn ^= 1;
 	}
 	/** @param {[number, number]} coords */
 	moveButton(coords){
@@ -170,6 +174,8 @@ class Piece {
 		return elem;
 	}
 	showMoves(){
+		if (this.color !== turn)
+			return; // not your turn!
 		const root = document.body;
 		// button to hide moves
 		root.appendChild(this.hideMoveButton(this.coords));
