@@ -1,5 +1,5 @@
 /* jshint esversion: 6, strict: true, forin: false, loopfunc: true, strict: global */
-/* exported importSave, downloadSave, createOrder, wipeMap, hardReset */
+/* exported importSave, downloadSave, movePiece, getFrom, getTo, main */
 'use strict';
 const board = {};
 const colString = ' abcdefgh';
@@ -73,9 +73,16 @@ const pieceData = {
 };
 
 class Piece {
-	constructor(type, color){
+	/**
+	 * @param {string} type
+	 * @param {number} color 0 = black; 1 = white
+	 * @param {[number, number]} coords x, y
+	 */
+	constructor(type, color, coords){
 		this.type = type;
 		this.color = color;
+		this.coords = coords;
+		placePiece(this, coords);
 	}
 	get abbr(){
 		return pieceData[this.type].abbr + colorData[this.color].name[0];
@@ -97,7 +104,7 @@ class Piece {
 		}[this.abbr];
 	}
 	get getElement(){
-		const elem = document.createElement('abbr');
+		const elem = document.createElement('span');
 		elem.innerHTML = this.emoji;
 		elem.title = colorData[this.color].name + ' ' + this.type;
 		return elem;
@@ -105,14 +112,14 @@ class Piece {
 }
 
 // functions
-
+/*
 function displayAttacks(){
 	// fixme debug
 	const attacks = getAttacksByColor(1);
 	for (const square in attacks){
 		placeNote(attacks[square], square, 'attack');
 	}
-}
+}*/
 
 function getAttacks(type, pos, color){
 	const attacks = [];
@@ -177,7 +184,7 @@ function getAttacks(type, pos, color){
 	}
 	return finalAttacks;
 }
-
+/*
 function getAttacksByColor(colorID){
 	const attacks = {};
 	for (const square in board){
@@ -197,14 +204,15 @@ function getAttacksByColor(colorID){
 		}
 	}
 	return attacks;
-}
-
+}*/
+/*
 function getCoordsFromId(id){
 	// a1 -> 0, 0; h8 -> 7, 7
 	const x = colString.indexOf(id[0])-1;
 	const y = Number(id[1])-1;
 	return [x, y];
 }
+*/
 
 function getFrom(){
 	return document.getElementById('input_from').value;
@@ -265,7 +273,7 @@ function movePiece(from, to){
 	document.getElementById(from).innerHTML = '';
 	document.getElementById(to).innerHTML = temp;
 }
-
+/*
 function placeNote(n, tileID, type){
 	const elem = document.createElement('div');
 	elem.classList = type+'Square';
@@ -275,39 +283,39 @@ function placeNote(n, tileID, type){
 	elem.style.left = under.style.left;
 	elem.style.top = under.style.top;
 	document.getElementById(type+'Board').appendChild(elem);
-}
+}*/
 
 function placePiece(piece, tileID){
 	document.getElementById(tileID).appendChild(piece.getElement);
 	board[tileID] = piece;
 }
-
+/*
 function reloadNotes(){
-}
+}*/
 
 function resetPieces(){
 	// white
-	placePiece(new Piece('rook', 1), 'a1');
-	placePiece(new Piece('knight', 1), 'b1');
-	placePiece(new Piece('bishop', 1), 'c1');
-	placePiece(new Piece('queen', 1), 'd1');
-	placePiece(new Piece('king', 1), 'e1');
-	placePiece(new Piece('bishop', 1), 'f1');
-	placePiece(new Piece('knight', 1), 'g1');
-	placePiece(new Piece('rook', 1), 'h1');
+	new Piece('rook', 1, 'a1');
+	new Piece('knight', 1, 'b1');
+	new Piece('bishop', 1, 'c1');
+	new Piece('queen', 1, 'd1');
+	new Piece('king', 1, 'e1');
+	new Piece('bishop', 1, 'f1');
+	new Piece('knight', 1, 'g1');
+	new Piece('rook', 1, 'h1');
 	// black
-	placePiece(new Piece('rook', 0), 'a8');
-	placePiece(new Piece('knight', 0), 'b8');
-	placePiece(new Piece('bishop', 0), 'c8');
-	placePiece(new Piece('queen', 0), 'd8');
-	placePiece(new Piece('king', 0), 'e8');
-	placePiece(new Piece('bishop', 0), 'f8');
-	placePiece(new Piece('knight', 0), 'g8');
-	placePiece(new Piece('rook', 0), 'h8');
+	new Piece('rook', 0, 'a8');
+	new Piece('knight', 0, 'b8');
+	new Piece('bishop', 0, 'c8');
+	new Piece('queen', 0, 'd8');
+	new Piece('king', 0, 'e8');
+	new Piece('bishop', 0, 'f8');
+	new Piece('knight', 0, 'g8');
+	new Piece('rook', 0, 'h8');
 	// pawns
 	for (let i=1; i<colString.length; i+=1){
 		const letter = colString[i];
-		placePiece(new Piece('pawn', 1), letter+2);
-		placePiece(new Piece('pawn', 0), letter+7);
+		new Piece('pawn', 1, letter+2);
+		new Piece('pawn', 0, letter+7);
 	}
 }

@@ -22,6 +22,7 @@ ul{
 }
 .dataSquare{
 	color: silver;
+	font-size: 50%;
 }
 .defenseSquare{
 	background-color: rgba(0, 0, 255, 0.3);
@@ -30,7 +31,7 @@ ul{
 	background-color: #F0D9B5;
 }
 #attackBoard, #board, #defenseBoard{
-	font-size: 400%;
+	font-size: 500%;
 	height: 100%;
 	position: absolute;
 	right: 0;
