@@ -1,9 +1,9 @@
-body{
-	margin: 0;
-}
-html{
+body, html{
 	font-family: Consolas, "Courier New", monospace;
+	height: 100%;
+	margin: 0;
 	overflow: hidden;
+	width: 100%;
 }
 ul{
 	list-style: none;

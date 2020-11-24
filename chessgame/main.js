@@ -144,8 +144,8 @@ class Piece {
 	hideMoveButton(coords){
 		const elem = document.createElement('div');
 		elem.classList.add('move');
-		elem.style.marginLeft = (coords[0]+1)/9 * 100 + '%';
-		elem.style.marginTop = (coords[1]+1)/9 * 100 + '%';
+		elem.style.marginLeft = (coords[0]+1)/9 * 100 + 'vw';
+		elem.style.marginTop = (coords[1]+1)/9 * 100 + 'vh';
 		elem.title = 'Cancel move';
 		elem.onclick = Piece.hideMoves;
 		return elem;
@@ -167,8 +167,8 @@ class Piece {
 	moveButton(coords){
 		const elem = document.createElement('div');
 		elem.classList.add('move');
-		elem.style.marginLeft = (coords[0]+1)/9 * 100 + '%';
-		elem.style.marginTop = (coords[1]+1)/9 * 100 + '%';
+		elem.style.marginLeft = (coords[0]+1)/9 * 100 + 'vw';
+		elem.style.marginTop = (coords[1]+1)/9 * 100 + 'vh';
 		elem.title = 'Move ' + this.type + ' to ' + colString[coords[0]+1] + coords[1];
 		elem.onclick = () => this.move(coords);
 		return elem;
