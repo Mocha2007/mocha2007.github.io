@@ -3,6 +3,7 @@ body, html{
 	height: 100%;
 	margin: 0;
 	overflow: hidden;
+	user-select: none;
 	width: 100%;
 }
 ul{
@@ -27,6 +28,7 @@ ul{
 .move{
 	background-color: rgba(0, 0, 255, 0.5);
 	color: blue;
+	font-size: 500%;
 }
 .move, .piece{
 	cursor: pointer;

@@ -148,6 +148,7 @@ class Piece {
 		elem.style.marginTop = (coords[1]+1)/9 * 100 + 'vh';
 		elem.title = 'Cancel move';
 		elem.onclick = Piece.hideMoves;
+		elem.innerHTML = '❌';
 		return elem;
 	}
 	/** move this piece to specifed coords */
