@@ -228,22 +228,21 @@ function getCoordsFromId(id){
 	const y = Number(id[1])-1;
 	return [x, y];
 }
-*/
 
 function getFrom(){
 	return document.getElementById('input_from').value;
 }
 
-/*function getIdFromCoords(coords){
+function getIdFromCoords(coords){
 	// 0, 0 -> a1; 7, 7 -> h8
 	const char = colString[coords[0]+1];
 	const num = coords[1]+1;
 	return char+num;
-}*/
+}
 
 function getTo(){
 	return document.getElementById('input_to').value;
-}
+}*/
 
 function main(){
 	console.info('Mocha\'s weird-ass chess test');
@@ -281,7 +280,7 @@ function makeSquare(row, col){
 	elem.id = colString[col] + row;
 	// console.log(color);
 }
-
+/*
 function movePiece(from, to){
 	board[to] = board[from];
 	board[from] = null;
@@ -289,7 +288,7 @@ function movePiece(from, to){
 	document.getElementById(from).innerHTML = '';
 	document.getElementById(to).innerHTML = temp;
 }
-/*
+
 function placeNote(n, tileID, type){
 	const elem = document.createElement('div');
 	elem.classList = type+'Square';
