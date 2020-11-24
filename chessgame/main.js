@@ -1,5 +1,5 @@
 /* jshint esversion: 6, strict: true, forin: false, loopfunc: true, strict: global */
-/* exported importSave, downloadSave, movePiece, getFrom, getTo, main */
+/* exported main */
 'use strict';
 const board = {};
 const colString = ' abcdefgh';

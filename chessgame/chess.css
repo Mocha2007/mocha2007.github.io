@@ -36,7 +36,7 @@ ul{
 	position: absolute;
 	right: 0;
 	top: 0;
-	width: 75%;
+	width: 100%; /* change to 75% if you add the editor back */
 }
 #attackBoard{
 	background-color: transparent;
