@@ -4,12 +4,8 @@
 const board = {};
 const colString = ' abcdefgh';
 const colorData = [
-	{
-		'name': 'black',
-	},
-	{
-		'name': 'white',
-	},
+	{'name': 'black'},
+	{'name': 'white'},
 ];
 const pieceData = {
 	'bishop': {
@@ -128,129 +124,11 @@ class Piece {
 }
 
 // functions
-/*
-function displayAttacks(){
-	// fixme debug
-	const attacks = getAttacksByColor(1);
-	for (const square in attacks){
-		placeNote(attacks[square], square, 'attack');
-	}
-}
-
-function getAttacks(type, pos, color){
-	const attacks = [];
-	const piece = pieceData[type];
-	const aType = piece.moves[0].dir;
-	const maxDist = 8 < piece.moves[0].dist? 8 : piece.moves[0].dist;
-	if (aType === 'L'){
-		attacks.push([pos[0]-2, pos[1]-1]);
-		attacks.push([pos[0]-2, pos[1]+1]);
-		attacks.push([pos[0]-1, pos[1]+2]);
-		attacks.push([pos[0]+1, pos[1]+2]);
-		attacks.push([pos[0]+2, pos[1]+1]);
-		attacks.push([pos[0]+2, pos[1]-1]);
-		attacks.push([pos[0]+1, pos[1]-2]);
-		attacks.push([pos[0]-1, pos[1]-2]);
-	}
-	else if (aType === 'P'){
-		const dir = color ? 1 : -1;
-		attacks.push([pos[0]-1, pos[1]+dir]);
-		attacks.push([pos[0]+1, pos[1]+dir]);
-	}
-	else {
-		for (let i=1; i<=maxDist; i+=1){
-			if (aType === 'diagonal' || aType === 'any'){
-				attacks.push([pos[0]-i, pos[1]-i]);
-				attacks.push([pos[0]-i, pos[1]+i]);
-				attacks.push([pos[0]+i, pos[1]-i]);
-				attacks.push([pos[0]+i, pos[1]+i]);
-			}
-			if (aType === 'orthogonal' || aType === 'any'){
-				attacks.push([pos[0], pos[1]-i]);
-				attacks.push([pos[0], pos[1]+i]);
-				attacks.push([pos[0]-i, pos[1]]);
-				attacks.push([pos[0]+i, pos[1]]);
-			}
-		}
-	}
-	// remove invalid moves
-	const finalAttacks = [];
-	for (let i=0; i<attacks.length; i+=1){
-		// remove off-board moves
-		if (attacks[i][0] < 0 || 7 < attacks[i][0] || attacks[i][1] < 0 || 7 < attacks[i][1]){
-			continue;
-		}
-		// if has inf range, check for intervening pieces
-		if (1 < piece.moves[0].dist){
-			const desiredDistance = attacks[i][0] ? attacks[i][0] : attacks[i][1];
-			let success = true;
-			for (let j=0; j<desiredDistance; j+=1){
-				const intermediateCoords = [attacks[i][0]*j/desiredDistance,
-					attacks[i][1]*j/desiredDistance];
-				if (board[getIdFromCoords(intermediateCoords)]){
-					success = false;
-					break;
-				}
-			}
-			if (!success){
-				continue;
-			}
-		}
-		finalAttacks.push(attacks[i]);
-	}
-	return finalAttacks;
-}
-
-function getAttacksByColor(colorID){
-	const attacks = {};
-	for (const square in board){
-		const piece = board[square];
-		if (piece.color !== colorID){
-			continue;
-		}
-		const currentAttacks = getAttacks(piece.type, getCoordsFromId(square), piece.color);
-		for (let i=0; i<currentAttacks.length; i+=1){
-			const id = getIdFromCoords(currentAttacks[i]);
-			if (attacks.hasOwnProperty(id)){
-				attacks[id] += 1;
-			}
-			else {
-				attacks[id] = 1;
-			}
-		}
-	}
-	return attacks;
-}*/
-/*
-function getCoordsFromId(id){
-	// a1 -> 0, 0; h8 -> 7, 7
-	const x = colString.indexOf(id[0])-1;
-	const y = Number(id[1])-1;
-	return [x, y];
-}
-
-function getFrom(){
-	return document.getElementById('input_from').value;
-}
-
-function getIdFromCoords(coords){
-	// 0, 0 -> a1; 7, 7 -> h8
-	const char = colString[coords[0]+1];
-	const num = coords[1]+1;
-	return char+num;
-}
-
-function getTo(){
-	return document.getElementById('input_to').value;
-}*/
 
 function main(){
 	console.info('Mocha\'s weird-ass chess test');
 	makeBoard();
 	resetPieces();
-	// placeNote(3, "c6", "attack");
-	// placeNote(3, "c3", "defense");
-	// displayAttacks();
 }
 
 function makeBoard(){
@@ -280,33 +158,11 @@ function makeSquare(row, col){
 	elem.id = colString[col] + row;
 	// console.log(color);
 }
-/*
-function movePiece(from, to){
-	board[to] = board[from];
-	board[from] = null;
-	const temp = document.getElementById(from).innerHTML;
-	document.getElementById(from).innerHTML = '';
-	document.getElementById(to).innerHTML = temp;
-}
-
-function placeNote(n, tileID, type){
-	const elem = document.createElement('div');
-	elem.classList = type+'Square';
-	elem.innerHTML = n;
-	elem.id = tileID + type;
-	const under = document.getElementById(tileID);
-	elem.style.left = under.style.left;
-	elem.style.top = under.style.top;
-	document.getElementById(type+'Board').appendChild(elem);
-}*/
 
 function placePiece(piece, tileID){
 	document.getElementById(tileID).appendChild(piece.span);
 	board[tileID] = piece;
 }
-/*
-function reloadNotes(){
-}*/
 
 function resetPieces(){
 	// white
