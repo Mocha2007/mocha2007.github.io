@@ -77,9 +77,28 @@ class Piece {
 		this.type = type;
 		this.color = color;
 	}
+	get abbr(){
+		return pieceData[this.type].abbr + colorData[this.color].name[0];
+	}
+	get emoji(){
+		return {
+			'Pw': '♙',
+			'Nw': '♘',
+			'Bw': '♗',
+			'Rw': '♖',
+			'Qw': '♕',
+			'Kw': '♔',
+			'Pb': '♟',
+			'Nb': '♞',
+			'Bb': '♝',
+			'Rb': '♜',
+			'Qb': '♛',
+			'Kb': '♚',
+		}[this.abbr];
+	}
 	get getElement(){
 		const elem = document.createElement('abbr');
-		elem.innerHTML = pieceData[this.type].abbr + colorData[this.color].name[0];
+		elem.innerHTML = this.emoji;
 		elem.title = colorData[this.color].name + ' ' + this.type;
 		return elem;
 	}
@@ -208,7 +227,7 @@ function main(){
 	resetPieces();
 	// placeNote(3, "c6", "attack");
 	// placeNote(3, "c3", "defense");
-	displayAttacks();
+	// displayAttacks();
 }
 
 function makeBoard(){

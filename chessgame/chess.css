@@ -18,18 +18,19 @@ ul{
 	background-color: rgba(255, 0, 0, 0.3);
 }
 .blackSquare{
-	background-color: #000;
-	color: #fff;
+	background-color: #B58863;
+}
+.dataSquare{
+	color: silver;
 }
 .defenseSquare{
 	background-color: rgba(0, 0, 255, 0.3);
 }
 .whiteSquare{
-	background-color: #fff;
-	color: #000;
+	background-color: #F0D9B5;
 }
 #attackBoard, #board, #defenseBoard{
-	font-size: 200%;
+	font-size: 400%;
 	height: 100%;
 	position: absolute;
 	right: 0;
@@ -46,7 +47,7 @@ ul{
 }
 #board{
 	background-color: #444;
-	color: #ccc;
+	color: black;
 }
 #left{
 	background-color: #888;
