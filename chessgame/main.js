@@ -1,7 +1,6 @@
 /* jshint esversion: 6, strict: true, forin: false, loopfunc: true, strict: global */
 /* exported main */
 'use strict';
-const board = {};
 const colString = ' abcdefgh';
 const colorData = [
 	{'name': 'black'},
@@ -75,12 +74,13 @@ class Piece {
 	/**
 	 * @param {string} type
 	 * @param {number} color 0 = black; 1 = white
-	 * @param {[number, number]} coords x, y
+	 * @param {string} coords eg. c4
 	 */
 	constructor(type, color, coords){
 		this.type = type;
 		this.color = color;
-		this.coords = coords;
+		/** @type {[number, number]} coords x, y - 0 = a, 0 = 1 */
+		this.coords = fromNotation(coords);
 		this.id = 'piece_' + coords[0] + '_' + coords[1];
 		placePiece(this, coords);
 		pieceList.push(this);
@@ -108,6 +108,27 @@ class Piece {
 			'Kb': '♚',
 		}[this.abbr];
 	}
+	/** @returns {[number, number][]} */
+	get moveList(){
+		// todo
+		const list = [];
+		const pieceType = pieceData[this.type];
+		if (pieceType.pawnMoves){ // pawns
+			if (this.color === 0){ // black
+				list.push([this.coords[0], this.coords[1]-1]); // single forward
+				if (this.coords[1] === 6)
+					list.push([this.coords[0], this.coords[1]-2]); // double forward
+				// todo en passant
+				return list;
+			} // white
+			list.push([this.coords[0], this.coords[1]+1]); // single forward
+			if (this.coords[1] === 1)
+				list.push([this.coords[0], this.coords[1]+2]); // double forward
+			// todo en passant
+			return list;
+		}
+		// todo other pieces
+	}
 	get span(){
 		const elem = document.createElement('span');
 		elem.innerHTML = this.emoji;
@@ -117,13 +138,60 @@ class Piece {
 		elem.onclick = () => this.showMoves();
 		return elem;
 	}
+	/** @param {[number, number]} coords */
+	hideMoveButton(coords){
+		const elem = document.createElement('div');
+		elem.classList.add('move');
+		elem.style.marginLeft = (coords[0]+1)/9 * 100 + '%';
+		elem.style.marginTop = (coords[1]+1)/9 * 100 + '%';
+		elem.title = 'Cancel move';
+		elem.onclick = Piece.hideMoves;
+		return elem;
+	}
+	/** move this piece to specifed coords */
+	move(coords){
+		// update piece coords
+		this.coords = coords;
+		// move element
+		/** @type {HTMLDivElement} */
+		const destinationElement = document.getElementById(toNotation(coords));
+		destinationElement.appendChild(this.element);
+		// hide moves
+		Piece.hideMoves();
+	}
+	/** @param {[number, number]} coords */
+	moveButton(coords){
+		const elem = document.createElement('div');
+		elem.classList.add('move');
+		elem.style.marginLeft = (coords[0]+1)/9 * 100 + '%';
+		elem.style.marginTop = (coords[1]+1)/9 * 100 + '%';
+		elem.title = 'Move ' + this.type + ' to ' + colString[coords[0]+1] + coords[1];
+		elem.onclick = () => this.move(coords);
+		return elem;
+	}
+	showMoves(){
+		const root = document.body;
+		// button to hide moves
+		root.appendChild(this.hideMoveButton(this.coords));
+		// show each move, onclick = perform move
+		this.moveList.forEach(m => root.appendChild(this.moveButton(m)));
+	}
 	static hideMoves(){
-		// todo
-		// pieceList.forEach(p => p.g)
+		Array.from(document.getElementsByClassName('move')).forEach(e => e.remove());
 	}
 }
 
 // functions
+
+/**
+ * @param {string} s eg. c4
+ * @returns {[number, number]}
+ */
+function fromNotation(s){
+	const x = colString.indexOf(s[0])-1;
+	const y = parseInt(s[1])-1;
+	return [x, y];
+}
 
 function main(){
 	console.info('Mocha\'s weird-ass chess test');
@@ -161,7 +229,6 @@ function makeSquare(row, col){
 
 function placePiece(piece, tileID){
 	document.getElementById(tileID).appendChild(piece.span);
-	board[tileID] = piece;
 }
 
 function resetPieces(){
@@ -189,4 +256,12 @@ function resetPieces(){
 		new Piece('pawn', 1, letter+2);
 		new Piece('pawn', 0, letter+7);
 	}
+}
+
+/**
+ * @param {[number, number]}
+ * @returns {string} s eg. c4
+ */
+function toNotation(coords){
+	return colString[coords[0]+1] + (coords[1]+1);
 }

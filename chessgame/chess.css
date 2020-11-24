@@ -1,3 +1,6 @@
+body{
+	margin: 0;
+}
 html{
 	font-family: Consolas, "Courier New", monospace;
 	overflow: hidden;
@@ -5,7 +8,7 @@ html{
 ul{
 	list-style: none;
 }
-.attackSquare, .blackSquare, .dataSquare, .defenseSquare, .whiteSquare{
+.blackSquare, .dataSquare, .move, .whiteSquare{
 	align-items: center;
 	display: flex;
 	height: 11.1111%;
@@ -14,9 +17,6 @@ ul{
 	text-align: center;
 	width: 11.1111%;
 }
-.attackSquare{
-	background-color: rgba(255, 0, 0, 0.3);
-}
 .blackSquare{
 	background-color: #B58863;
 }
@@ -24,27 +24,23 @@ ul{
 	color: silver;
 	font-size: 50%;
 }
-.defenseSquare{
-	background-color: rgba(0, 0, 255, 0.3);
+.move{
+	background-color: rgba(0, 0, 255, 0.5);
+	color: blue;
+}
+.move, .piece{
+	cursor: pointer;
 }
 .whiteSquare{
 	background-color: #F0D9B5;
 }
-#attackBoard, #board, #defenseBoard{
+#board{
 	font-size: 500%;
 	height: 100%;
 	position: absolute;
 	right: 0;
 	top: 0;
 	width: 100%; /* change to 75% if you add the editor back */
-}
-#attackBoard{
-	background-color: transparent;
-	color: red;
-}
-#defenseBoard{
-	background-color: transparent;
-	color: blue;
 }
 #board{
 	background-color: #444;
