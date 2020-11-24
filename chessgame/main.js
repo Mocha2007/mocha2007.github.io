@@ -82,6 +82,7 @@ class Piece {
 		this.type = type;
 		this.color = color;
 		this.coords = coords;
+		this.id = coords[0] + '_' + coords[1];
 		placePiece(this, coords);
 	}
 	get abbr(){
@@ -107,6 +108,8 @@ class Piece {
 		const elem = document.createElement('span');
 		elem.innerHTML = this.emoji;
 		elem.title = colorData[this.color].name + ' ' + this.type;
+		elem.id = 'piece_' + this.id;
+		elem.classList.add('piece');
 		return elem;
 	}
 }
@@ -119,7 +122,7 @@ function displayAttacks(){
 	for (const square in attacks){
 		placeNote(attacks[square], square, 'attack');
 	}
-}*/
+}
 
 function getAttacks(type, pos, color){
 	const attacks = [];
@@ -184,7 +187,7 @@ function getAttacks(type, pos, color){
 	}
 	return finalAttacks;
 }
-/*
+
 function getAttacksByColor(colorID){
 	const attacks = {};
 	for (const square in board){
@@ -218,12 +221,12 @@ function getFrom(){
 	return document.getElementById('input_from').value;
 }
 
-function getIdFromCoords(coords){
+/*function getIdFromCoords(coords){
 	// 0, 0 -> a1; 7, 7 -> h8
 	const char = colString[coords[0]+1];
 	const num = coords[1]+1;
 	return char+num;
-}
+}*/
 
 function getTo(){
 	return document.getElementById('input_to').value;
