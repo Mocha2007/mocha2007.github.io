@@ -72,6 +72,9 @@ const pieceData = {
 	},
 };
 
+/** @type {Piece[]} */
+const pieceList = [];
+
 class Piece {
 	/**
 	 * @param {string} type
@@ -82,11 +85,16 @@ class Piece {
 		this.type = type;
 		this.color = color;
 		this.coords = coords;
-		this.id = coords[0] + '_' + coords[1];
+		this.id = 'piece_' + coords[0] + '_' + coords[1];
 		placePiece(this, coords);
+		pieceList.push(this);
 	}
 	get abbr(){
 		return pieceData[this.type].abbr + colorData[this.color].name[0];
+	}
+	/** @type {HTMLSpanElement} */
+	get element(){
+		return document.getElementById(this.id);
 	}
 	get emoji(){
 		return {
@@ -104,13 +112,18 @@ class Piece {
 			'Kb': '♚',
 		}[this.abbr];
 	}
-	get getElement(){
+	get span(){
 		const elem = document.createElement('span');
 		elem.innerHTML = this.emoji;
 		elem.title = colorData[this.color].name + ' ' + this.type;
-		elem.id = 'piece_' + this.id;
+		elem.id = this.id;
 		elem.classList.add('piece');
+		elem.onclick = () => this.showMoves();
 		return elem;
+	}
+	static hideMoves(){
+		// todo
+		// pieceList.forEach(p => p.g)
 	}
 }
 
@@ -289,7 +302,7 @@ function placeNote(n, tileID, type){
 }*/
 
 function placePiece(piece, tileID){
-	document.getElementById(tileID).appendChild(piece.getElement);
+	document.getElementById(tileID).appendChild(piece.span);
 	board[tileID] = piece;
 }
 /*
