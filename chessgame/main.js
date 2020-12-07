@@ -126,7 +126,7 @@ class Piece {
 			list.push([this.coords[0], this.coords[1]+1]); // single forward
 			if (this.coords[1] === 1)
 				list.push([this.coords[0], this.coords[1]+2]); // double forward
-			// todo en passant
+			// todo en passant, capturing
 			return list;
 		}
 		// todo other pieces
