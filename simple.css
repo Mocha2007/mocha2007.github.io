@@ -183,7 +183,7 @@ div.titlelinks a{
 	overflow-y: auto;
 	max-height: 940px;
 }
-#top, #bottom{
+#top, #bottom, .center{
 	text-align:center;
 }
 /* Text Animations */
