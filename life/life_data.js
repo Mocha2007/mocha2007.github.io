@@ -19,7 +19,7 @@ const lifeData = [
 		'extinct': true,
 		'range': 'ww',
 		'age': 800,
-		'desc': 'This is an example of the format used on this page. The dagger indicates this clade is extinct. The two letters beside the name indicate the approximate native range. You can hover your cursor over the abbreviation to see a more detailed description. This clade diversified 800 mya.',
+		'desc': 'This is an example of the format used on this page. The dagger indicates this clade is extinct. The two letters beside the name indicate the approximate combined native range of all extant members, or of all extinct members if no extant species exist. You can hover your cursor over the abbreviation to see a more detailed description. This clade diversified 800 mya.',
 	},
 	// BEGIN ALPHABETICAL ORDERING
 	// A
@@ -85,7 +85,7 @@ const lifeData = [
 	{
 		'name': 'afrotheria',
 		'rank': 'superorder',
-		'parent': 'mammalia',
+		'parent': 'placentalia',
 		'range': 'ww',
 		'age': 65,
 	},
@@ -593,7 +593,7 @@ const lifeData = [
 	{
 		'name': 'boreoeutheria',
 		'rank': 'magnorder',
-		'parent': 'mammalia',
+		'parent': 'placentalia',
 		'range': 'ww',
 		'age': 65,
 	},
@@ -1198,6 +1198,14 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'didelphimorphia',
+		'rank': 'order',
+		'parent': 'marsupialia',
+		'range': 'nw',
+		'age': 20, // "early miocene"
+		'desc': 'Opossum',
+	},
+	{
 		'name': 'diplodocidae',
 		'rank': 'family',
 		'parent': 'saurischia',
@@ -1210,6 +1218,13 @@ const lifeData = [
 		'parent': 'diplodocidae',
 		'extinct': true,
 		'range': 'na',
+	},
+	{
+		'name': 'diprotodontia',
+		'rank': 'order',
+		'parent': 'marsupialia',
+		'range': 'oc',
+		'age': 28,
 	},
 	{
 		'name': 'dromaeosauridae',
@@ -1869,6 +1884,14 @@ const lifeData = [
 	},
 	// M
 	{
+		'name': 'macropodidae',
+		'rank': 'family',
+		'parent': 'diprotodontia',
+		'range': 'oc',
+		'age': 28,
+		'desc': 'Kangaroo',
+	},
+	{
 		'name': 'magnoliales',
 		'rank': 'order',
 		'parent': 'magnoliids',
@@ -1936,6 +1959,13 @@ const lifeData = [
 		'desc': 'Mammoth',
 	},
 	{
+		'name': 'marsupialia',
+		'rank': 'infraclass',
+		'parent': 'theria',
+		'range': 'ww',
+		'age': 66,
+	},
+	{
 		'name': 'medusozoa',
 		'rank': 'subphylum',
 		'parent': 'cnidaria',
@@ -1956,6 +1986,13 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'angiosperms',
 		'range': 'ww',
+	},
+	{
+		'name': 'monotremata',
+		'rank': 'order',
+		'parent': 'yinotheria',
+		'range': 'oc',
+		'age': 145, // "early cretaceous"
 	},
 	{
 		'name': 'mosasauroidea',
@@ -2134,6 +2171,21 @@ const lifeData = [
 		'parent': 'archosauria',
 		'extinct': true,
 		'range': 'ww',
+	},
+	{
+		'name': 'ornithorhynchidae',
+		'rank': 'family',
+		'parent': 'monotremata',
+		'range': 'oc',
+		'age': 61,
+	},
+	{
+		'name': 'ornithorhynchus',
+		'rank': 'genus',
+		'parent': 'ornithorhynchidae',
+		'range': 'oc',
+		'age': 9,
+		'desc': 'Platypus'
 	},
 	{
 		'name': 'oryza',
@@ -2339,6 +2391,27 @@ const lifeData = [
 		'desc': 'Brown Algae',
 	},
 	{
+		'name': 'phascolarctidae',
+		'rank': 'family',
+		'parent': 'diprotodontia',
+		'range': 'oc',
+		'age': 25, // chattian
+	},
+	{
+		'name': 'phascolarctos',
+		'rank': 'genus',
+		'parent': 'phascolarctidae',
+		'range': 'oc',
+	},
+	{
+		'name': 'phascolarctos cinereus',
+		'rank': 'species',
+		'parent': 'phascolarctos',
+		'range': 'oc',
+		'age': 0.7,
+		'desc': 'Koala',
+	},
+	{
 		'name': 'phaseolus',
 		'rank': 'genus',
 		'parent': 'fabaceae',
@@ -2467,6 +2540,13 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'magnoliids',
 		'range': 'eq',
+	},
+	{
+		'name': 'placentalia',
+		'rank': 'infraclass',
+		'parent': 'theria',
+		'range': 'ww',
+		'age': 66,
 	},
 	{
 		'name': 'plantae',
@@ -2973,6 +3053,13 @@ const lifeData = [
 		'desc': 'Cocoa',
 	},
 	{
+		'name': 'theria',
+		'rank': 'subclass',
+		'parent': 'mammalia',
+		'range': 'ww',
+		'age': 160,
+	},
+	{
 		'name': 'theropoda',
 		'rank': 'clade',
 		'parent': 'saurischia',
@@ -3130,6 +3217,14 @@ const lifeData = [
 		'parent': 'vulpes',
 		'range': 'nh',
 		'desc': 'Red Fox',
+	},
+	// Y
+	{
+		'name': 'yinotheria',
+		'rank': 'subclass',
+		'parent': 'mammalia',
+		'range': 'oc',
+		'age': 165,
 	},
 	// Z
 	{
