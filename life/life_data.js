@@ -1670,6 +1670,15 @@ const lifeData = [
 		'desc': 'Ancestor of H. Sapiens, descended from H. Erectus.',
 	},
 	{
+		'name': 'homo neanderthalensis',
+		'rank': 'species',
+		'parent': 'homo',
+		'extinct': true,
+		'range': 'ea',
+		'age': 0.25,
+		'desc': 'Neanderthal',
+	},
+	{
 		'name': 'homo sapiens',
 		'rank': 'species',
 		'parent': 'homo',
