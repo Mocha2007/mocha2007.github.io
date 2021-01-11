@@ -442,6 +442,7 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'echinodermata',
 		'range': 'ww',
+		'age': 250,
 		'desc': 'Starfish',
 	},
 	{
