@@ -1449,7 +1449,7 @@ const lifeData = [
 		'name': 'felis catus',
 		'rank': 'species',
 		'parent': 'felis',
-		'important': true,
+		// 'important': true,
 		'range': 'af',
 		'desc': 'Cat',
 	},
