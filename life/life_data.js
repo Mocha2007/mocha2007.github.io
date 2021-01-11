@@ -1643,6 +1643,15 @@ const lifeData = [
 		'age': 2.8,
 	},
 	{
+		'name': 'homo denisova',
+		'rank': 'species',
+		'parent': 'homo',
+		'extinct': true,
+		'range': 'as',
+		'age': 0.3, // appx.
+		'desc': 'Denisovan',
+	},
+	{
 		'name': 'homo erectus',
 		'rank': 'species',
 		'parent': 'homo',
@@ -1667,7 +1676,7 @@ const lifeData = [
 		'extinct': true,
 		'range': 'ow',
 		'age': 0.7,
-		'desc': 'Ancestor of H. Sapiens, descended from H. Erectus.',
+		'desc': 'Ancestor of H. Sapiens, Denisovans, and Neanderthals, descended from H. Erectus.',
 	},
 	{
 		'name': 'homo neanderthalensis',
