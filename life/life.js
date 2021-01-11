@@ -24,7 +24,8 @@ const regions = {
 		'EQ': 'Equatorial Regions',
 		'SH': 'Southern Hemisphere',
 		// oceans
-		'AL': 'Atlantic',
+		'WO': 'World Ocean',
+			'AL': 'Atlantic',
 	'XX': 'Extinct',
 };
 
