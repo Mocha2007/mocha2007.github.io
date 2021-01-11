@@ -2004,7 +2004,7 @@ const lifeData = [
 	{
 		'name': 'mollusca',
 		'rank': 'phylum',
-		'parent': 'protostomia',
+		'parent': 'platytrochozoa',
 		'range': 'ww',
 		'age': 555,
 		'desc': 'Mollusk',
@@ -2594,10 +2594,17 @@ const lifeData = [
 	{
 		'name': 'platyhelminthes',
 		'rank': 'phylum',
-		'parent': 'protostomia',
+		'parent': 'platytrochozoa',
 		'range': 'ww',
 		'age': 580,
 		'desc': 'Flatworm',
+	},
+	{
+		'name': 'platytrochozoa',
+		'rank': 'clade',
+		'parent': 'protostomia',
+		'range': 'ww',
+		'age': 580,
 	},
 	{
 		'name': 'plesiosauria',
