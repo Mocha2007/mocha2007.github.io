@@ -384,7 +384,7 @@ const lifeData = [
 	{
 		'name': 'arthropoda',
 		'rank': 'phylum',
-		'parent': 'protostomia',
+		'parent': 'panarthropoda',
 		'range': 'ww',
 		'age': 540,
 	},
@@ -2278,6 +2278,13 @@ const lifeData = [
 		'desc': 'Chimpanzee',
 	},
 	{
+		'name': 'panarthropoda',
+		'rank': 'clade',
+		'parent': 'protostomia',
+		'range': 'ww',
+		'age': 540,
+	},
+	{
 		'name': 'pancrustacea',
 		'rank': 'clade',
 		'parent': 'arthropoda',
@@ -3049,6 +3056,14 @@ const lifeData = [
 		'desc': 'Pig',
 	},
 	// T
+	{
+		'name': 'tardigrada',
+		'rank': 'phylum',
+		'parent': 'panarthropoda',
+		'range': 'ww',
+		'age': 90, // turonian
+		'desc': 'Tardigrade',
+	},
 	{
 		'name': 'teleostei',
 		'rank': 'infraclass',
