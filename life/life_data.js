@@ -174,6 +174,13 @@ const lifeData = [
 		'age': 370,
 	},
 	{
+		'name': 'amphioxiformes',
+		'rank': 'order',
+		'parent': 'leptocardii',
+		'range': 'ww',
+		'desc': 'Lancelet',
+	},
+	{
 		'name': 'ananas',
 		'rank': 'genus',
 		'parent': 'bromeliaceae',
@@ -847,6 +854,13 @@ const lifeData = [
 		'desc': 'Cedar',
 	},
 	{
+		'name': 'cephalochordata',
+		'rank': 'subphylum',
+		'parent': 'chordata',
+		'range': 'ww',
+		'age': 520,
+	},
+	{
 		'name': 'cephalopoda',
 		'rank': 'class',
 		'parent': 'mollusca',
@@ -889,7 +903,7 @@ const lifeData = [
 	{
 		'name': 'chondrichthyes',
 		'rank': 'class',
-		'parent': 'chordata',
+		'parent': 'vertebrata',
 		'range': 'ww',
 		'age': 430,
 	},
@@ -1218,6 +1232,14 @@ const lifeData = [
 		'parent': 'diplodocidae',
 		'extinct': true,
 		'range': 'na',
+	},
+	{
+		'name': 'dipnoi',
+		'rank': 'order',
+		'parent': 'rhipidistia',
+		'range': 'ww',
+		'age': 410, // early devonian
+		'desc': 'Lungfish',
 	},
 	{
 		'name': 'diprotodontia',
@@ -1840,6 +1862,12 @@ const lifeData = [
 		'desc': 'Rabbit, Hare',
 	},
 	{
+		'name': 'leptocardii',
+		'rank': 'class',
+		'parent': 'cephalochordata',
+		'range': 'ww',
+	},
+	{
 		'name': 'leopardus',
 		'rank': 'genus',
 		'parent': 'felinae',
@@ -2139,6 +2167,13 @@ const lifeData = [
 		'desc': 'Basil',
 	},
 	{
+		'name': 'olfactores',
+		'rank': 'clade',
+		'parent': 'chordata',
+		'range': 'ww',
+		'age': 535,
+	},
+	{
 		'name': 'opisthokonta',
 		'rank': 'clade',
 		'parent': 'eukaryota',
@@ -2203,7 +2238,7 @@ const lifeData = [
 	{
 		'name': 'osteichthyes',
 		'rank': 'superclass',
-		'parent': 'chordata',
+		'parent': 'vertebrata',
 		'range': 'ww',
 		'age': 420,
 		'desc': 'Bony Fish',
@@ -2749,6 +2784,13 @@ const lifeData = [
 		'age': 312,
 	},
 	{
+		'name': 'rhipidistia',
+		'rank': 'clade',
+		'parent': 'osteichthyes',
+		'range': 'ww',
+		'age': 416,
+	},
+	{
 		'name': 'rhodophyta',
 		'rank': 'division',
 		'parent': 'diaphoretickes',
@@ -3034,7 +3076,7 @@ const lifeData = [
 	{
 		'name': 'tetrapoda',
 		'rank': 'superclass',
-		'parent': 'osteichthyes',
+		'parent': 'rhipidistia',
 		'range': 'ww',
 		'age': 370,
 		'desc': 'Tetrapods are four-limbed animals.',
@@ -3108,6 +3150,14 @@ const lifeData = [
 		'parent': 'bop clade',
 		'range': 'as',
 		'desc': 'Wheat',
+	},
+	{
+		'name': 'tunicata',
+		'rank': 'subphylum',
+		'parent': 'olfactores',
+		'range': 'ww',
+		'age': 525, // camb stage 2
+		'desc': 'Tunicate',
 	},
 	{
 		'name': 'tursiops',
@@ -3185,6 +3235,13 @@ const lifeData = [
 		'parent': 'dromaeosauridae',
 		'extinct': true,
 		'range': 'as',
+	},
+	{
+		'name': 'vertebrata',
+		'rank': 'subphylum',
+		'parent': 'olfactores',
+		'range': 'ww',
+		'age': 520,
 	},
 	{
 		'name': 'vitaceae',
