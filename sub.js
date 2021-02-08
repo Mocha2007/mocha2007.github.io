@@ -33,7 +33,7 @@ var subtitles =	[
 	'It growe&thorn; to ben a frogge, if it be noght eten.', // https://incubator.wikimedia.org/wiki/Wp/enm/Frogge
 	// mat
 	'I have created a truly marvelous conworld,<br/>which this randomly generated subtitle is too small to contain.',
-	'Mocha &isin; Fags',
+	'Mocha &isin; UwUers',
 	'&lambda;x.x is Mocha',
 	// his
 	'<span class="highlight">aragoscope</span> <em>n</em>. : the act of <a href="https://en.wikipedia.org/wiki/Kingdom_of_Castile#Union_of_the_Crowns_of_Castile_and_Aragon">noscoping Aragon</a>',
