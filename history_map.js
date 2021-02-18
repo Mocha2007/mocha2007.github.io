@@ -3093,20 +3093,6 @@ const features = [
 	},
 	// beyond cities and nations and cultures...
 	{
-		name: 'Cheddar Man',
-		type: 'point',
-		periods: [
-			{
-				yearRange: [-7150, -7100], // age guess
-				coords: [51, -3],
-			},
-		],
-		periodInfo: [],
-		desc: 'Fossil',
-		color: 'cyan',
-		source: 'https://en.wikipedia.org/wiki/Cheddar_Man',
-	},
-	{
 		name: 'Anzick-1',
 		type: 'point',
 		periods: [
@@ -3149,6 +3135,21 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Buhl_Woman',
 	},
 	{
+		name: 'Cheddar Man',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-7200, -7000], // 7100 bc
+				coords: [51, -3],
+			},
+		],
+		periodInfo: [],
+		desc: 'Fossil<br>Y-DNA haplogroup: I2a2<br>mt-DNA haplogroup: U5b1',
+		color: 'cyan',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/5/52/Cheddar_Man_scull.jpg',
+		source: 'https://en.wikipedia.org/wiki/Cheddar_Man',
+	},
+	{
 		name: 'Eve of Naharon',
 		type: 'point',
 		periods: [
@@ -3172,8 +3173,9 @@ const features = [
 			},
 		],
 		periodInfo: [],
-		desc: 'Skeleton',
+		desc: 'Skeleton<br>Y-DNA haplogroup: Q-M3<br>mt-DNA haplogroup: X2a',
 		color: 'cyan',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/4/40/Kennewick_Man.jpg',
 		source: 'https://en.wikipedia.org/wiki/Kennewick_Man',
 	},
 	{
@@ -3270,10 +3272,38 @@ const features = [
 			},
 		],
 		periodInfo: [],
-		desc: 'Natural mummy',
+		desc: 'Natural mummy<br>Y-DNA haplogroup: G2a2b<br>mt-DNA haplogroup: K1',
 		color: 'cyan',
 		img: 'https://upload.wikimedia.org/wikipedia/en/1/1d/OetzitheIceman02.jpg',
 		source: 'https://en.wikipedia.org/wiki/Ötzi',
+	},
+	{
+		name: 'Pagliacci 23',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-27000, -25000], // 28kya
+				coords: [42, 16],
+			},
+		],
+		periodInfo: [],
+		desc: 'Remains<br>mt-DNA haplogroup: R',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Paglicci_23',
+	},
+	{
+		name: 'Pagliacci 25',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-22000, -20000], // 23kya
+				coords: [42, 16],
+			},
+		],
+		periodInfo: [],
+		desc: 'Remains<br>mt-DNA haplogroup: HV',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Paglicci_25',
 	},
 	{
 		name: 'Peñon Woman',
@@ -3330,6 +3360,64 @@ const features = [
 		desc: 'Skeleton',
 		color: 'cyan',
 		source: 'https://en.wikipedia.org/wiki/Tuqan_Man',
+	},
+	{
+		name: 'Ust\'-Ishim Man',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-44000, -42000], // 45kya
+				coords: [57.744, 71.2],
+			},
+		],
+		periodInfo: [],
+		desc: 'Skeleton<br>Y-DNA haplogroup: K2a*<br>mt-DNA haplogroup: R*',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Ust%27-Ishim_man',
+	},
+	// haplogroup origins https://www.yfull.com/tree/R/
+	{
+		name: 'Haplogroup R',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-28500, -23900],
+				coords: [52, 104],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from P1',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_R_(Y-DNA)',
+	},
+	{
+		name: 'Haplogroup R1b',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-21300, -15500],
+				coords: [52, 60],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from R1',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_R1b',
+	},
+	{
+		name: 'Haplogroup R-M269',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-5100, -3700],
+				coords: [46, 0],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from R1b',
+		color: 'magenta',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/a/a3/Geographical_distribution_of_haplogroup_frequency_of_hgR1b1b2.png',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_R-M269',
 	},
 ];
 
