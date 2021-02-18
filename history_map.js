@@ -160,6 +160,20 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Mousterian',
 	},
 	{
+		name: 'Sangoan Industry',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-130000, -8000],
+				coords: [14, 20],
+				bottomRight: [-27, 47],
+			},
+		],
+		periodInfo: [],
+		color: 'orange',
+		source: 'https://en.wikipedia.org/wiki/Sangoan',
+	},
+	{
 		name: 'Urnfield Culture',
 		type: 'box',
 		periods: [
@@ -503,6 +517,21 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Ch%C3%A2telperronian',
 	},
 	{
+		name: 'Chinchorro Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-7000, -1500],
+				coords: [-17, -72],
+				bottomRight: [-22, -69],
+			},
+		],
+		periodInfo: [],
+		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/a/a3/Chinchorro_rito_funerario_500-1000_AC.jpg',
+		source: 'https://en.wikipedia.org/wiki/Chinchorro_culture',
+	},
+	{
 		name: 'Cimmerians',
 		type: 'box',
 		periods: [
@@ -804,8 +833,8 @@ const features = [
 		periods: [
 			{
 				yearRange: [-9000, -8000],
-				coords: [43, -107],
-				bottomRight: [36, -103],
+				coords: [50, -117],
+				bottomRight: [26, -88],
 			},
 		],
 		periodInfo: [],
@@ -1074,6 +1103,20 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Kura%E2%80%93Araxes_culture',
 	},
 	{
+		name: 'Las Vegas Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-8000, -4600],
+				coords: [2, -82],
+				bottomRight: [-5, -78],
+			},
+		],
+		periodInfo: [],
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Las_Vegas_culture_(archaeology)',
+	},
+	{
 		name: 'Ligures',
 		type: 'box',
 		periods: [
@@ -1180,6 +1223,20 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Lydians',
 	},
 	{
+		name: 'Machalilla Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-1500, -1100],
+				coords: [2, -82],
+				bottomRight: [-5, -78],
+			},
+		],
+		periodInfo: [],
+		color: 'brown',
+		source: 'https://en.wikipedia.org/wiki/Machalilla_culture',
+	},
+	{
 		name: 'Magdalenian Culture',
 		type: 'box',
 		periods: [
@@ -1240,6 +1297,21 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Mal%27ta%E2%80%93Buret%27_culture',
 	},
 	{
+		name: 'Maya',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-2000, 1539],
+				coords: [22, -94],
+				bottomRight: [14, -87],
+			},
+		],
+		periodInfo: [],
+		color: 'grey',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Chichen_Itza_3.jpg',
+		source: 'https://en.wikipedia.org/wiki/Maya_civilization',
+	},
+	{
 		name: 'Micoquien Industry',
 		type: 'box',
 		periods: [
@@ -1285,6 +1357,21 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Natufian_culture',
 	},
 	{
+		name: 'Norte Chico',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-3700, -1800],
+				coords: [-9, -79],
+				bottomRight: [-14, -75],
+			},
+		],
+		periodInfo: [],
+		color: 'blue',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Aspero.jpg',
+		source: 'https://en.wikipedia.org/wiki/Norte_Chico_civilization',
+	},
+	{
 		name: 'Oksywie Culture',
 		type: 'box',
 		periods: [
@@ -1313,6 +1400,22 @@ const features = [
 		color: 'orange',
 		img: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/Copper_knife%2C_spearpoints%2C_awls%2C_and_spud%2C_Late_Archaic_period%2C_Wisconsin%2C_3000_BC-1000_BC_-_Wisconsin_Historical_Museum_-_DSC03436.JPG',
 		source: 'https://en.wikipedia.org/wiki/Old_Copper_Complex',
+	},
+	{
+		name: 'Olmecs',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-2500, -400],
+				coords: [19, -96],
+				bottomRight: [17, -93],
+			},
+		],
+		periodInfo: [],
+		desc: 'Thought to speak a Mixe-Zoque language',
+		color: 'yellow',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/9/94/San_Lorenzo_Monument_3.jpg',
+		source: 'https://en.wikipedia.org/wiki/Olmecs',
 	},
 	{
 		name: 'Paiján Culture',
@@ -1402,6 +1505,36 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Post_Pattern',
 	},
 	{
+		name: 'Proto-Afroasiatic',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-16000, -10000],
+				coords: [12, 33],
+				bottomRight: [3, 38],
+			},
+		],
+		periodInfo: [],
+		desc: 'Urheimat',
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Proto-Afroasiatic_language',
+	},
+	{
+		name: 'Proto-Chukotko-Kamchatkan',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-2500, -1500], // c. 2000 BCE
+				coords: [71, 153],
+				bottomRight: [51, 180],
+			},
+		],
+		periodInfo: [],
+		desc: 'Urheimat',
+		color: 'PaleVioletRed',
+		source: 'https://en.wikipedia.org/wiki/Proto-Afroasiatic_language',
+	},
+	{
 		name: 'Proto-Villanovan Culture',
 		type: 'box',
 		periods: [
@@ -1463,20 +1596,6 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Samnites',
 	},
 	{
-		name: 'Sangoan Industry',
-		type: 'box',
-		periods: [
-			{
-				yearRange: [-130000, -8000],
-				coords: [14, 20],
-				bottomRight: [-27, 47],
-			},
-		],
-		periodInfo: [],
-		color: 'orange',
-		source: 'https://en.wikipedia.org/wiki/Sangoan',
-	},
-	{
 		name: 'Scythians',
 		type: 'box',
 		periods: [
@@ -1534,6 +1653,20 @@ const features = [
 		color: 'pink',
 		img: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Solutrean_tools_22000_17000_Crot_du_Charnier_Solutre_Pouilly_Saone_et_Loire_France.jpg',
 		source: 'https://en.wikipedia.org/wiki/Solutrean',
+	},
+	{
+		name: 'Son Vi Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-20000, -12000],
+				coords: [23, 102],
+				bottomRight: [8, 110],
+			},
+		],
+		periodInfo: [],
+		color: 'teal',
+		source: 'https://en.wikipedia.org/wiki/S%C6%A1n_Vi_culture',
 	},
 	{
 		name: 'Sredny Stog Culture',
@@ -1764,6 +1897,20 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Usatovo_culture',
 	},
 	{
+		name: 'Valdivia Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-3500, -1500],
+				coords: [2, -82],
+				bottomRight: [-5, -78],
+			},
+		],
+		periodInfo: [],
+		color: 'orange',
+		source: 'https://en.wikipedia.org/wiki/Valdivia_culture',
+	},
+	{
 		name: 'Veneti',
 		type: 'box',
 		periods: [
@@ -1868,6 +2015,22 @@ const features = [
 		periodInfo: [],
 		color: 'tan',
 		source: 'https://en.wikipedia.org/wiki/Yueshi_culture',
+	},
+	{
+		name: 'Zapotec',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-700, 1521],
+				coords: [18, -98],
+				bottomRight: [15, -94],
+			},
+		],
+		periodInfo: [],
+		desc: 'Oto-Manguean civilization',
+		color: 'red',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Zona_Arqueol%C3%B3gica_Mitla_10.JPG',
+		source: 'https://en.wikipedia.org/wiki/Zapotec_civilization',
 	},
 	{
 		name: 'Zhou',
