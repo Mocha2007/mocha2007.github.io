@@ -294,6 +294,21 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Aterian',
 	},
 	{
+		name: 'Atlantic Bronze Age',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-1300, -700],
+				coords: [59, -11],
+				bottomRight: [36, 5],
+			},
+		],
+		periodInfo: [],
+		color: 'magenta',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/e/ea/Atlantic_Bronze_Age_riveted_cauldrons._Left_Cantabria%2C_Spain._Right_Chiseldon%2C_UK.jpg',
+		source: 'https://en.wikipedia.org/wiki/Atlantic_Bronze_Age',
+	},
+	{
 		name: 'Aurignacian Culture',
 		type: 'box',
 		periods: [
@@ -890,6 +905,22 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Halaf_culture',
 	},
 	{
+		name: 'Halstatt Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-1200, -500],
+				coords: [49, 6],
+				bottomRight: [47, 17],
+			},
+		],
+		periodInfo: [],
+		desc: 'Associated with Celts<br>Observed Y-DNA: G2a, R1b<br>Observed mt-DNA: H6a1a, H7d, HV0, J1c2o, J1c-16261, K1a2a, U5a1a1',
+		color: 'green',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Destral_decorada_de_bronze%2C_800_-_750_aC%2C_Hallstatt_%28cropped%29.JPG',
+		source: 'https://en.wikipedia.org/wiki/Hallstatt_culture',
+	},
+	{
 		name: 'Hamangia Culture',
 		type: 'box',
 		periods: [
@@ -1102,6 +1133,21 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Lucanians',
 	},
 	{
+		name: 'Lusatian Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-1300, -500],
+				coords: [55, 11],
+				bottomRight: [49, 28],
+			},
+		],
+		periodInfo: [],
+		color: 'lime',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/1/18/ALB_-_Kultwagen.jpg',
+		source: 'https://en.wikipedia.org/wiki/Lusatian_culture',
+	},
+	{
 		name: 'Luwians',
 		type: 'box',
 		periods: [
@@ -1237,6 +1283,21 @@ const features = [
 		color: 'orange',
 		img: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Basalt_%26_Limestone_Mortar_%26_Pestle%2C_Natufian_Culture.jpg',
 		source: 'https://en.wikipedia.org/wiki/Natufian_culture',
+	},
+	{
+		name: 'Oksywie Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-200, 100],
+				coords: [55, 14],
+				bottomRight: [53, 19],
+			},
+		],
+		periodInfo: [],
+		desc: 'Associated with Rugii',
+		color: 'brown',
+		source: 'https://en.wikipedia.org/wiki/Oksywie_culture',
 	},
 	{
 		name: 'Old Copper Complex',
@@ -1580,6 +1641,21 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Thracians',
 	},
 	{
+		name: 'Trzciniec Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-1600, -1200],
+				coords: [53, 14],
+				bottomRight: [50, 31],
+			},
+		],
+		periodInfo: [],
+		desc: 'Observed Y-DNA: CT, R1a1a1b<br>Observed mt-DNA: H, H4a1a1a3, H5, T2b, U5a2a1',
+		color: 'black',
+		source: 'https://en.wikipedia.org/wiki/Trzciniec_culture',
+	},
+	{
 		name: 'Tumulus Culture',
 		type: 'box',
 		periods: [
@@ -1732,6 +1808,22 @@ const features = [
 		color: 'lavender',
 		img: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Vinca_clay_figure_02.jpg',
 		source: 'https://en.wikipedia.org/wiki/Vinča_culture',
+	},
+	{
+		name: 'Wielbark Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [100, 400],
+				coords: [55, 17],
+				bottomRight: [50, 26],
+			},
+		],
+		periodInfo: [],
+		desc: 'Associated with Goths<br>Observed Y-DNA: I1, I2a2, R1b<br>Observed mt-DNA: H, U, U5b, W',
+		color: 'yellow',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/e/eb/Rekonstrukcja_gockiego_d%C5%82ugiego_domu_w_Mas%C5%82om%C4%99czu.JPG',
+		source: 'https://en.wikipedia.org/wiki/Wielbark_culture',
 	},
 	{
 		name: 'Xindian Culture',
