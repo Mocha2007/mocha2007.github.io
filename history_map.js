@@ -523,8 +523,8 @@ const features = [
 		periods: [
 			{
 				yearRange: [-11200, -10900],
-				coords: [49, -126],
-				bottomRight: [7, -78],
+				coords: [49, -117],
+				bottomRight: [26, -95],
 			},
 		],
 		periodInfo: [],
