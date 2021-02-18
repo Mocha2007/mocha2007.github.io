@@ -246,6 +246,7 @@ const features = [
 		],
 		periodInfo: [],
 		color: 'black',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/8/86/Ahrensburg_point.png',
 		source: 'https://en.wikipedia.org/wiki/Ahrensburg_culture',
 	},
 	{
@@ -278,7 +279,7 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Anarta_tradition',
 	},
 	{
-		name: 'Aterian Culture',
+		name: 'Aterian Industry',
 		type: 'box',
 		periods: [
 			{
@@ -303,7 +304,9 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Observed Y-DNA: C1a<br>Observed mt-DNA: M',
 		color: 'red',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/1/17/Rhinos_Chauvet_Cave.jpg',
 		source: 'https://en.wikipedia.org/wiki/Aurignacian',
 	},
 	{
@@ -450,6 +453,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Observed Y-DNA: C1a2, E1b1b1a1b1, G2a2a1<br>Observed mt-DNA: H1, H3, H4a1a, H5a, H7c, K1a2a, K1a4a1, K1b1a, N1a1, X2c',
 		color: 'green',
 		source: 'https://en.wikipedia.org/wiki/Cardium_pottery',
 	},
@@ -509,7 +513,9 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Observed Y-DNA: Q-L54<br>Observed mt-DNA: D4h3a',
 		color: 'cyan',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Clovis_Point.jpg',
 		source: 'https://en.wikipedia.org/wiki/Clovis_culture',
 	},
 	{
@@ -571,6 +577,7 @@ const features = [
 		],
 		periodInfo: [],
 		color: 'teal',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/Clay_vase_with_polychrome_decoration%2C_Dimini%2C_Magnesia%2C_Late_or_Final_Neolithic_%285300-3300_BC%29.jpg',
 		source: 'https://en.wikipedia.org/wiki/Dimini#History',
 	},
 	{
@@ -584,6 +591,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Pre-Indo-Europeans<br>Observed Y-DNA: I2, R1b<br>Observed mt-DNA: U2, U4, U5',
 		color: 'black',
 		source: 'https://en.wikipedia.org/wiki/Dnieper%E2%80%93Donets_culture',
 	},
@@ -787,6 +795,7 @@ const features = [
 		],
 		periodInfo: [],
 		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/f/f8/Folsom_point.png',
 		source: 'https://en.wikipedia.org/wiki/Folsom_tradition',
 	},
 	{
@@ -861,7 +870,9 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Observed Y-DNA: BT, C1a2, CT, F, I, IJK<br>Observed mt-DNA: M, U, U2, U5',
 		color: 'tan',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/8/86/Pointe_de_la_Gravette_MHNT_PRE.2009.0.231.2.fond_%282%29.jpg',
 		source: 'https://en.wikipedia.org/wiki/Gravettian',
 	},
 	{
@@ -997,6 +1008,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Indo-Europeans<br>Observed Y-DNA: I2a2, J, Q1a, R1a, R1b',
 		color: 'magenta',
 		source: 'https://en.wikipedia.org/wiki/Khvalynsk_culture',
 	},
@@ -1132,7 +1144,9 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Observed Y-DNA: HIJK, I<br>Observed mt-DNA: U, U5b, U8b',
 		color: 'pink',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/4/4f/Magdalenian_tools_17000_9000_BCE_Abri_de_la_Madeleine_Tursac_Dordogne_France.jpg',
 		source: 'https://en.wikipedia.org/wiki/Magdalenian',
 	},
 	{
@@ -1179,6 +1193,21 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Mal%27ta%E2%80%93Buret%27_culture',
 	},
 	{
+		name: 'Micoquien Industry',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-130000, -60000],
+				coords: [52, 1],
+				bottomRight: [45, 8],
+			},
+		],
+		periodInfo: [],
+		color: 'red',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/7/7f/Biface_Micoquien_MHNT_PRE_.2009.0.193.1_%283%29.jpg',
+		source: 'https://en.wikipedia.org/wiki/Micoquien',
+	},
+	{
 		name: 'Mumun Culture',
 		type: 'box',
 		periods: [
@@ -1203,7 +1232,9 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Afroasiatic<br>Observed Y-DNA: CT, E1b1, E1b1b1b2',
 		color: 'orange',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Basalt_%26_Limestone_Mortar_%26_Pestle%2C_Natufian_Culture.jpg',
 		source: 'https://en.wikipedia.org/wiki/Natufian_culture',
 	},
 	{
@@ -1233,6 +1264,7 @@ const features = [
 		],
 		periodInfo: [],
 		color: 'red',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/b/bc/Punta_Paij%C3%A1n.jpg',
 		source: 'https://en.wikipedia.org/wiki/Paiján_culture',
 	},
 	{
@@ -1262,20 +1294,6 @@ const features = [
 		periodInfo: [],
 		color: 'red',
 		source: 'https://en.wikipedia.org/wiki/Pavlovian_culture',
-	},
-	{
-		name: 'Périgordian Culture',
-		type: 'box',
-		periods: [
-			{
-				yearRange: [-33000, -18000],
-				coords: [45, 0],
-				bottomRight: [39, 1],
-			},
-		],
-		periodInfo: [],
-		color: 'lime',
-		source: 'https://en.wikipedia.org/wiki/Périgordian',
 	},
 	{
 		name: 'Plano Culture',
@@ -1317,6 +1335,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Yuki-Wappo people',
 		color: 'purple',
 		source: 'https://en.wikipedia.org/wiki/Post_Pattern',
 	},
@@ -1362,6 +1381,7 @@ const features = [
 		],
 		periodInfo: [],
 		color: 'green',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/1/1d/Samarra_bowl.jpg',
 		source: 'https://en.wikipedia.org/wiki/Samarra_culture',
 	},
 	{
@@ -1379,6 +1399,20 @@ const features = [
 		color: 'pink',
 		img: 'https://upload.wikimedia.org/wikipedia/commons/3/3b/Samnite_soldiers_from_a_tomb_frieze_in_Nola_4th_century_BCE.jpg',
 		source: 'https://en.wikipedia.org/wiki/Samnites',
+	},
+	{
+		name: 'Sangoan Industry',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-130000, -8000],
+				coords: [14, 20],
+				bottomRight: [-27, 47],
+			},
+		],
+		periodInfo: [],
+		color: 'orange',
+		source: 'https://en.wikipedia.org/wiki/Sangoan',
 	},
 	{
 		name: 'Scythians',
@@ -1436,6 +1470,7 @@ const features = [
 		],
 		periodInfo: [],
 		color: 'pink',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Solutrean_tools_22000_17000_Crot_du_Charnier_Solutre_Pouilly_Saone_et_Loire_France.jpg',
 		source: 'https://en.wikipedia.org/wiki/Solutrean',
 	},
 	{
@@ -1449,7 +1484,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
-		desc: 'Observed Y-DNA: R1a1a1<br>Observed mt-DNA: H2a1a',
+		desc: 'Indo-Europeans<br>Observed Y-DNA: R1a1a1<br>Observed mt-DNA: H2a1a',
 		color: 'grey',
 		source: 'https://en.wikipedia.org/wiki/Sredny_Stog_culture',
 	},
@@ -1495,6 +1530,7 @@ const features = [
 		],
 		periodInfo: [],
 		color: 'black',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/9/91/Swiderian_point_2.jpg',
 		source: 'https://en.wikipedia.org/wiki/Swiderian_culture',
 	},
 	{
@@ -1691,7 +1727,9 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Observed Y-DNA: G2a2a, G2a2b2a1a, H2<br>Observed mt-DNA: H, K, T, U',
 		color: 'lavender',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Vinca_clay_figure_02.jpg',
 		source: 'https://en.wikipedia.org/wiki/Vinča_culture',
 	},
 	{
@@ -1768,6 +1806,20 @@ const features = [
 		color: 'brown',
 		img: 'https://upload.wikimedia.org/wikipedia/en/4/48/R3_2_2d_eneolith_bull.jpg',
 		source: 'https://en.wikipedia.org/wiki/Maykop_culture',
+	},
+	{
+		name: 'Périgordian Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-33000, -18000],
+				coords: [45, 0],
+				bottomRight: [39, 1],
+			},
+		],
+		periodInfo: [],
+		color: 'lime',
+		source: 'https://en.wikipedia.org/wiki/Périgordian',
 	},
 	// POINTS
 	{
@@ -3204,7 +3256,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
-		desc: 'Skeleton',
+		desc: 'Skeleton of a teenage girl<br>mt-DNA haplogroup D1',
 		color: 'cyan',
 		source: 'https://en.wikipedia.org/wiki/Naia_(skeleton)',
 	},
