@@ -1188,6 +1188,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Observed Y-DNA: R*<br>Observed mt-DNA: U',
 		color: 'tan',
 		img: 'https://upload.wikimedia.org/wikipedia/commons/9/91/Engraving_of_a_mammoth_on_a_slab_of_mammoth_ivory%2C_from_the_Upper_Paleolithic_Mal%27ta_deposits_at_Lake_Baikal%2C_Siberia.gif',
 		source: 'https://en.wikipedia.org/wiki/Mal%27ta%E2%80%93Buret%27_culture',
@@ -3249,6 +3250,20 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Minnesota_Woman',
 	},
 	{
+		name: 'Mummy Juanita',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [1440, 1480], // age is guess
+				coords: [-15.8, -71.9],
+			},
+		],
+		periodInfo: [],
+		desc: 'Mummy of a young girl<br>mt-DNA haplogroup: A',
+		color: 'cyan',
+		source: 'https://en.wikipedia.org/wiki/Mummy_Juanita',
+	},
+	{
 		name: 'Naia',
 		type: 'point',
 		periods: [
@@ -3320,6 +3335,21 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Peñon_woman',
 	},
 	{
+		name: 'Ramesses III',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-1217, -1155],
+				coords: [25.739889, 32.601083],
+			},
+		],
+		periodInfo: [],
+		desc: 'Egyptian Pharaoh of the 20th dynasty (New Kingdom)<br>Y-DNA haplogroup: E1b1a',
+		color: 'cyan',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/KhonsuTemple-Karnak-RamessesIII-2.jpg',
+		source: 'https://en.wikipedia.org/wiki/Ramesses_III',
+	},
+	{
 		name: 'Spirit Cave Mummy',
 		type: 'point',
 		periods: [
@@ -3346,6 +3376,21 @@ const features = [
 		desc: 'Bog body',
 		color: 'cyan',
 		source: 'https://en.wikipedia.org/wiki/Tollund_Man',
+	},
+	{
+		name: 'Tutankhamun',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-1334, -1325],
+				coords: [25.740222, 32.601333],
+			},
+		],
+		periodInfo: [],
+		desc: 'Egyptian Pharaoh of the 18th dynasty (New Kingdom)<br>Y-DNA haplogroup: R1b<br>mt-DNA haplogroup: K',
+		color: 'cyan',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/2/27/CairoEgMuseumTaaMaskMostlyPhotographed.jpg',
+		source: 'https://en.wikipedia.org/wiki/Tutankhamun',
 	},
 	{
 		name: 'Tuqan Man',
@@ -3377,6 +3422,381 @@ const features = [
 	},
 	// haplogroup origins https://www.yfull.com/tree/R/
 	{
+		name: 'Haplogroup A',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-167900, -150900],
+				coords: [5, 15],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA',
+		color: 'magenta',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Distribution_of_Y-Chromosome_Haplogroup_A_in_Africa.png',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_A_(Y-DNA)',
+	},
+	{
+		name: 'Haplogroup B',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-88300, -77400],
+				coords: [0, 25],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from BT',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_B-M60',
+	},
+	{
+		name: 'Haplogroup BT',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-90500, -81600],
+				coords: [-4, 32],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from A1b',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_BT',
+	},
+	{
+		name: 'Haplogroup C',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-69800, -60700],
+				coords: [29, 53],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from CF',
+		color: 'magenta',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/d/d8/Geographic_distributions_of_Y_chromosome_haplogroups_C_in_East_Asia.png',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_C-M130',
+	},
+	{
+		name: 'Haplogroup CF',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-67100, -60700],
+				coords: [14, 44],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from CT',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_CF',
+	},
+	{
+		name: 'Haplogroup CT',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-69800, -63200],
+				coords: [8, 33],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from BT',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_CT',
+	},
+	{
+		name: 'Haplogroup DE',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-66300, -60100],
+				coords: [12, 33],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from CT',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_DE',
+	},
+	{
+		name: 'Haplogroup D',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-47300, -41700],
+				coords: [17, 36],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from DE',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_D-CTS3946',
+	},
+	{
+		name: 'Haplogroup E',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-54300, -46400],
+				coords: [14, 25],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from DE',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_E-M96',
+	},
+	{
+		name: 'Haplogroup E1b1b',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-33600, -28400],
+				coords: [16, 38],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from E1b1',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_E-M215_(Y-DNA)',
+	},
+	{
+		name: 'Haplogroup F',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-49400, -44300],
+				coords: [24, 74],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from CF',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_F-M89',
+	},
+	{
+		name: 'Haplogroup G',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-25200, -21300],
+				coords: [48, 54],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from CF',
+		color: 'magenta',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Haplogrupo_G_%28ADN-Y%29.PNG',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_G-M201',
+	},
+	{
+		name: 'Haplogroup H',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-46400, -40900],
+				coords: [18, 79],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from HIJK',
+		color: 'magenta',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Y_haplo_H.png',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_H_(Y-DNA)',
+	},
+	{
+		name: 'Haplogroup I',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-27800, -23200],
+				coords: [50, 15],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from IJ',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_I-M170',
+	},
+	{
+		name: 'Haplogroup J',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-32000, -27200],
+				coords: [32, 45],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from IJ',
+		color: 'magenta',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/a/ae/Haplogroup_J_%28Y-DNA%29.PNG',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_J_(Y-DNA)',
+	},
+	{
+		name: 'Haplogroup K2b',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-43400, -41000],
+				coords: [20, 100],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from K2',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_K2b_(Y-DNA)',
+	},
+	{
+		name: 'Haplogroup L',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-23500, -18800],
+				coords: [32, 68],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from LT',
+		color: 'magenta',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/4/42/Distribution_Haplogroup_L_Y-DNA.svg',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_L-M20',
+	},
+	{
+		name: 'Haplogroup LT',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-43500, -37700],
+				coords: [34, 48],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from LT',
+		color: 'magenta',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Haplogroup_LT_%28L298-P326%29.png',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_LT',
+	},
+	{
+		name: 'Haplogroup M',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-10400, -7300],
+				coords: [-3, 126],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from MS',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_M-P256',
+	},
+	{
+		name: 'Haplogroup MS',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-43400, -41000],
+				coords: [20, 105],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from K2b',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_K2b1_(Y-DNA)',
+	},
+	{
+		name: 'Haplogroup N',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-22300, -17800],
+				coords: [25, 110],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from NO',
+		color: 'magenta',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/3/3f/Haplogrupo_N_%28ADN-Y%29.PNG',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_N-M231',
+	},
+	{
+		name: 'Haplogroup NO',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-37300, -32300],
+				coords: [35, 110],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from K2a1',
+		color: 'magenta',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/Haplogroup_NO.png',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_NO',
+	},
+	{
+		name: 'Haplogroup O',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-30400, -26700],
+				coords: [35, 115],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from NO',
+		color: 'magenta',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/6/65/Haplogrupo_O_%28ADN-Y%29.PNG',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_O-M175',
+	},
+	{
+		name: 'Haplogroup P',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-40000, -38900],
+				coords: [56, 104],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from K2b',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_P_(Y-DNA)',
+	},
+	{
+		name: 'Haplogroup Q',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-29000, -24500],
+				coords: [61, 92],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from P1',
+		color: 'magenta',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/6/67/Global_frequency_distribution_map_of_haplogroup_Q-M242_%28Y-DNA%29.png',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_Q-M242',
+	},
+	{
+		name: 'Haplogroup Q-M3',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-12300, -9100],
+				coords: [65, -165],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from Q',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_Q-M3',
+	},
+	{
 		name: 'Haplogroup R',
 		type: 'point',
 		periods: [
@@ -3389,6 +3809,34 @@ const features = [
 		desc: 'Y-DNA; from P1',
 		color: 'magenta',
 		source: 'https://en.wikipedia.org/wiki/Haplogroup_R_(Y-DNA)',
+	},
+	{
+		name: 'Haplogroup R1',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-23100, -18500],
+				coords: [49, 64],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from R',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_R1',
+	},
+	{
+		name: 'Haplogroup R1a',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-18100, -14400],
+				coords: [40, 42],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from R1',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_R1a',
 	},
 	{
 		name: 'Haplogroup R1b',
@@ -3418,6 +3866,49 @@ const features = [
 		color: 'magenta',
 		img: 'https://upload.wikimedia.org/wikipedia/commons/a/a3/Geographical_distribution_of_haplogroup_frequency_of_hgR1b1b2.png',
 		source: 'https://en.wikipedia.org/wiki/Haplogroup_R-M269',
+	},
+	{
+		name: 'Haplogroup R2',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-16000, -12600],
+				coords: [38, 72],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from R',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_R2',
+	},
+	{
+		name: 'Haplogroup S',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-43400, -41000],
+				coords: [-2, 138],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from MS',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_S-B254',
+	},
+	{
+		name: 'Haplogroup T',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-26600, -21800],
+				coords: [35, 36],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from LT',
+		color: 'magenta',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/4/40/Distribution_Haplogroup_T_Y-DNA_II.svg',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_T-M184',
 	},
 ];
 
