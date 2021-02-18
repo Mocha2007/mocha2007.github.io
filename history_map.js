@@ -145,6 +145,21 @@ function bigmap(){
 const features = [
 	// these need to be out of order because they block other regions
 	{
+		name: 'Mousterian Complex',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-160000, -38000],
+				coords: [51, -7],
+				bottomRight: [33, 67],
+			},
+		],
+		periodInfo: [],
+		color: 'purple',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Production_of_points_%26_spearheads_from_a_flint_stone_core%2C_Levallois_technique%2C_Mousterian_Culture%2C_Tabun_Cave%2C_250%2C000-50%2C000_BP_%28detail%29.jpg',
+		source: 'https://en.wikipedia.org/wiki/Mousterian',
+	},
+	{
 		name: 'Urnfield Culture',
 		type: 'box',
 		periods: [
@@ -155,6 +170,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Associated with Italo-Celtic<br>Observed Y-DNA: R1a1a1b1a2<br>Observed mt-DNA: H23',
 		color: 'yellow',
 		source: 'https://en.wikipedia.org/wiki/Urnfield_culture',
 	},
@@ -184,6 +200,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Associated with Indo-Iranian',
 		color: 'green',
 		source: 'https://en.wikipedia.org/wiki/Abashevo_culture',
 	},
@@ -198,8 +215,24 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Associated with Indo-Europeans<br>Observed Y-DNA: Q1a2, R1b1a1a2a, R1b1a1a2a2<br>Observed mt-DNA: J2a2a, H, K, T2c1a2, U5a1a1',
 		color: 'red',
 		source: 'https://en.wikipedia.org/wiki/Afanasievo_culture',
+	},
+	{
+		name: 'Afontova Gora',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-19000, -10000],
+				coords: [57, 92],
+				bottomRight: [55, 94],
+			},
+		],
+		periodInfo: [],
+		color: 'teal',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/6/66/Implements_from_Afontova_Gora%2C_Krasnoyarsk_Regional_Museum.jpg',
+		source: 'https://en.wikipedia.org/wiki/Afontova_Gora',
 	},
 	{
 		name: 'Ahrensburg Culture',
@@ -245,6 +278,21 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Anarta_tradition',
 	},
 	{
+		name: 'Aterian Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-150000, -18000],
+				coords: [37, -9],
+				bottomRight: [17, 76],
+			},
+		],
+		periodInfo: [],
+		color: 'green',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/At%C3%A9rien_%28Djelfa%29.JPG',
+		source: 'https://en.wikipedia.org/wiki/Aterian',
+	},
+	{
 		name: 'Aurignacian Culture',
 		type: 'box',
 		periods: [
@@ -269,6 +317,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Observed Y-DNA: I, G2a2<br>Observed mt-DNA: H, HV, J, K, T2, U',
 		color: '#CFA7F8',
 		img: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Museum_für_Vor-_und_Frühgeschichte_Berlin_034.jpg',
 		source: 'https://en.wikipedia.org/wiki/Baden_culture',
@@ -284,6 +333,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Poss. Associated with Vasconic<br>Observed Y-DNA: R1b',
 		color: '#FF7F27',
 		source: 'https://en.wikipedia.org/wiki/Beaker_culture',
 	},
@@ -313,8 +363,24 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Observed Y-DNA: E1b1a, E1b1b, G, J*, J1, J2, L, R*, R1b, R2, T',
 		color: 'orange',
 		source: 'https://en.wikipedia.org/wiki/Bactria–Margiana_Archaeological_Complex',
+	},
+	{
+		name: 'Bohunician Industry',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-46000, -38000],
+				coords: [51, 17],
+				bottomRight: [41, 30],
+			},
+		],
+		periodInfo: [],
+		color: 'teal',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Bohunician_scrapers.jpg',
+		source: 'https://en.wikipedia.org/wiki/Bohunician',
 	},
 	{
 		name: 'Boian Culture',
@@ -345,6 +411,20 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Bolshemys_culture',
 	},
 	{
+		name: 'Bug-Dniester Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-6300, -5000],
+				coords: [48, 24],
+				bottomRight: [44, 32],
+			},
+		],
+		periodInfo: [],
+		color: 'yellow',
+		source: 'https://en.wikipedia.org/wiki/Bug%E2%80%93Dniester_culture',
+	},
+	{
 		name: 'C-Group Culture',
 		type: 'box',
 		periods: [
@@ -355,6 +435,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Associated with Cushitic',
 		color: 'pink',
 		source: 'https://en.wikipedia.org/wiki/C-Group_culture',
 	},
@@ -383,8 +464,39 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Potential Associations: Armenian, Greek, Indo-Iranian, Thracian<br>Observed Y-DNA: R1b1a2<br>Observed mt-DNA: U4, U5, U5a, X4',
 		color: 'black',
 		source: 'https://en.wikipedia.org/wiki/Catacomb_culture',
+	},
+	{
+		name: 'Châtelperronian Industry',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-42500, -34000],
+				coords: [47, 3],
+				bottomRight: [45, 8],
+			},
+		],
+		periodInfo: [],
+		color: 'green',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/7/77/Pointes_de_chatelperron.jpg',
+		source: 'https://en.wikipedia.org/wiki/Ch%C3%A2telperronian',
+	},
+	{
+		name: 'Cimmerians',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-1000, -600],
+				coords: [50, 31],
+				bottomRight: [45, 55],
+			},
+		],
+		periodInfo: [],
+		desc: 'Nomadic Indo-European group<br>Observed Y-DNA: Q1a1, R1a, R1a2c, R1b1a<br>Observed mt-DNA: C5c, H9a, H35, R, U2e2, U5a1b1',
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Cimmerians',
 	},
 	{
 		name: 'Clovis Culture',
@@ -411,6 +523,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Observed Y-DNA: R1, R1a5<br>Observed mt-DNA: U2e1, U4a, U4d2, U5a1d2b, U5b1d1',
 		color: 'purple',
 		img: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/CombCeramicPottery.jpg',
 		source: 'https://en.wikipedia.org/wiki/Pit–Comb_Ware_culture',
@@ -426,6 +539,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Associated with Balto-Slavic and Germanic<br>Observed Y-DNA: I2a2a2, R, R1, R1a, R1a1, R1a1a, R1a1a1, R1b, R1b1, R1b1a',
 		color: '#F97474',
 		source: 'https://en.wikipedia.org/wiki/Corded_Ware_culture',
 	},
@@ -460,6 +574,20 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Dimini#History',
 	},
 	{
+		name: 'Dnieper-Donets Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-5000, -4200],
+				coords: [52, 25],
+				bottomRight: [47, 39],
+			},
+		],
+		periodInfo: [],
+		color: 'black',
+		source: 'https://en.wikipedia.org/wiki/Dnieper%E2%80%93Donets_culture',
+	},
+	{
 		name: 'Elam',
 		type: 'box',
 		periods: [
@@ -473,6 +601,21 @@ const features = [
 		desc: 'Pre-Iranian Civilization',
 		color: 'orange',
 		source: 'https://en.wikipedia.org/wiki/Elam',
+	},
+	{
+		name: 'Emiran Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-58000, -38000],
+				coords: [35, 34],
+				bottomRight: [31, 38],
+			},
+		],
+		periodInfo: [],
+		color: 'yellow',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Emireh-Point.jpg',
+		source: 'https://en.wikipedia.org/wiki/Emiran',
 	},
 	{
 		name: 'Erligang Culture',
@@ -513,6 +656,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Associated with Baltic<br>Observed Y-DNA: R1a, R1a2<br>Observed mt-DNA: H, I, J, K, N1a, T, U2e, U4, U5, W',
 		color: 'pink',
 		source: 'https://en.wikipedia.org/wiki/Fatyanovo–Balanovo_culture',
 	},
@@ -582,7 +726,7 @@ const features = [
 				desc: 'Ikhshidid',
 			},
 		],
-		desc: 'North African Civilization',
+		desc: 'North African Civilization<br>Contemporary Y-DNA: E1b1b, J',
 		color: 'red',
 		source: 'https://en.wikipedia.org/wiki/Egypt',
 	},
@@ -597,6 +741,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Observed Y-DNA: I2a1, I2c<br>Observed mt-DNA: U2e1, U5a',
 		color: 'red',
 		source: 'https://en.wikipedia.org/wiki/Ertebølle_culture',
 	},
@@ -615,6 +760,20 @@ const features = [
 		color: '#CDCD65',
 		img: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/Danseur_avec_une_coupe_de_vin_Tombe_oes_Leopards%2C_Tarquinia.jpg',
 		source: 'https://en.wikipedia.org/wiki/Etruria',
+	},
+	{
+		name: 'Epigravettian Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-19000, -8000],
+				coords: [52, 8],
+				bottomRight: [36, 39],
+			},
+		],
+		periodInfo: [],
+		color: 'purple',
+		source: 'https://en.wikipedia.org/wiki/Epigravettian',
 	},
 	{
 		name: 'Folsom Culture',
@@ -672,6 +831,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Observed Y-DNA: BT, CT, I2, I2a, I2a2, I2a2a1b<br>Observed mt-DNA: H, HV, J, K, T, U, W',
 		color: '#FDBAAF',
 		img: 'https://upload.wikimedia.org/wikipedia/commons/6/67/GlobularAmphoraPiatraNeamt.JPG',
 		source: 'https://en.wikipedia.org/wiki/Globular_Amphora_culture',
@@ -731,6 +891,21 @@ const features = [
 		periodInfo: [],
 		color: 'yellow',
 		source: 'https://en.wikipedia.org/wiki/Hamangia_culture',
+	},
+	{
+		name: 'Hamburg Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-13500, -11100],
+				coords: [55, 6],
+				bottomRight: [53, 19],
+			},
+		],
+		periodInfo: [],
+		color: 'tan',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/7/78/K%C3%A6rvspids%2C_Bjerlev_Hede.jpg',
+		source: 'https://en.wikipedia.org/wiki/Hamburg_culture',
 	},
 	{
 		name: 'Hittites',
@@ -807,6 +982,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Observed Y-DNA: C1a1? D1a2a?<br>Observed mt-DNA: D4h2, G1b, M7a, N9b',
 		color: 'red',
 		source: 'https://en.wikipedia.org/wiki/Jōmon_period',
 	},
@@ -839,6 +1015,22 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Kongemose_culture',
 	},
 	{
+		name: 'Kura-Araxes Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-3400, -2000],
+				coords: [44, 40],
+				bottomRight: [37, 50],
+			},
+		],
+		periodInfo: [],
+		desc: 'Associated with either the Hurro-Urartian or Anatolian languages.',
+		color: 'silver',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/7/75/Saxs%C4%B1_k%C3%BCp%2C_T%C9%99p%C9%99yata%C4%9F%C4%B1.JPG',
+		source: 'https://en.wikipedia.org/wiki/Kura%E2%80%93Araxes_culture',
+	},
+	{
 		name: 'Ligures',
 		type: 'box',
 		periods: [
@@ -852,6 +1044,20 @@ const features = [
 		desc: 'Italic tribe',
 		color: 'green',
 		source: 'https://en.wikipedia.org/wiki/Ligures',
+	},
+	{
+		name: 'Lincombian-Ranisian-Jerzmanowician Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-41000, -30000],
+				coords: [53, -6],
+				bottomRight: [49, 21],
+			},
+		],
+		periodInfo: [],
+		color: 'grey',
+		source: 'https://en.wikipedia.org/wiki/Lincombian-Ranisian-Jerzmanowician',
 	},
 	{
 		name: 'Longshan Culture',
@@ -882,6 +1088,38 @@ const features = [
 		color: 'darkcyan',
 		img: 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Grab_der_Granatäpfel_heimkehrender_Ritter.jpg',
 		source: 'https://en.wikipedia.org/wiki/Lucanians',
+	},
+	{
+		name: 'Luwians',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-2000, -900],
+				coords: [39, 25.5],
+				bottomRight: [35.5, 37],
+			},
+		],
+		periodInfo: [],
+		desc: 'Anatolian Civilization',
+		color: 'black',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/b/bc/Hetite_God_in_Aleppo.jpg',
+		source: 'https://en.wikipedia.org/wiki/Luwians',
+	},
+	{
+		name: 'Lydians',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-1200, -546],
+				coords: [42, 26],
+				bottomRight: [37, 34],
+			},
+		],
+		periodInfo: [],
+		desc: 'Anatolian Civilization',
+		color: 'green',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Croesus_portrait.jpg',
+		source: 'https://en.wikipedia.org/wiki/Lydians',
 	},
 	{
 		name: 'Magdalenian Culture',
@@ -924,6 +1162,21 @@ const features = [
 		periodInfo: [],
 		color: 'red',
 		source: 'https://en.wikipedia.org/wiki/Majiayao_culture',
+	},
+	{
+		name: 'Mal\'ta–Buret\' Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-22050, -13050],
+				coords: [58, 93],
+				bottomRight: [52, 109],
+			},
+		],
+		periodInfo: [],
+		color: 'tan',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/9/91/Engraving_of_a_mammoth_on_a_slab_of_mammoth_ivory%2C_from_the_Upper_Paleolithic_Mal%27ta_deposits_at_Lake_Baikal%2C_Siberia.gif',
+		source: 'https://en.wikipedia.org/wiki/Mal%27ta%E2%80%93Buret%27_culture',
 	},
 	{
 		name: 'Mumun Culture',
@@ -997,6 +1250,34 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Paleo-Arctic_Tradition',
 	},
 	{
+		name: 'Pavlovian Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-27000, -23000],
+				coords: [51, 15],
+				bottomRight: [48, 19],
+			},
+		],
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Pavlovian_culture',
+	},
+	{
+		name: 'Périgordian Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-33000, -18000],
+				coords: [45, 0],
+				bottomRight: [39, 1],
+			},
+		],
+		periodInfo: [],
+		color: 'lime',
+		source: 'https://en.wikipedia.org/wiki/Périgordian',
+	},
+	{
 		name: 'Plano Culture',
 		type: 'box',
 		periods: [
@@ -1017,10 +1298,11 @@ const features = [
 			{
 				yearRange: [-2700, -2100],
 				coords: [53, 44],
-				bottomRight: [46, 50],
+				bottomRight: [48, 55],
 			},
 		],
 		periodInfo: [],
+		desc: 'Associated with Indo-Iranian<br>Observed Y-DNA: R1a1a1b2a, R1b1a1a2a2, R1b1a2<br>Observed mt-DNA: U5a1b, U5a1g',
 		color: 'purple',
 		source: 'https://en.wikipedia.org/wiki/Poltavka_culture',
 	},
@@ -1049,6 +1331,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Associated with Italic<br>Observed mt-DNA: U5a2b',
 		color: 'brown',
 		source: 'https://en.wikipedia.org/wiki/Proto-Villanovan_culture',
 	},
@@ -1098,6 +1381,21 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Samnites',
 	},
 	{
+		name: 'Scythians',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-900, 200],
+				coords: [52, 45],
+				bottomRight: [42, 95],
+			},
+		],
+		periodInfo: [],
+		desc: 'Nomadic Iranian group<br>Observed Y-DNA: Q, R1a, R1a1a1b2, R1a1a1b2a2a, R1b1a1a2',
+		color: 'black',
+		source: 'https://en.wikipedia.org/wiki/Scythians',
+	},
+	{
 		name: 'Shang',
 		type: 'box',
 		periods: [
@@ -1112,7 +1410,7 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Shang_dynasty',
 	},
 	{
-		name: 'Sintasha Culture',
+		name: 'Sintashta Culture',
 		type: 'box',
 		periods: [
 			{
@@ -1122,8 +1420,9 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Associated with Indo-Iranian<br>Observed Y-DNA: I2a1a1a, Q1a, R1, R1a, R1a1a1b, R1b, R1b1a1a2<br>Observed mt-DNA: H, J, J1c1b1a, J2b1a2a, T, U, U2, U2e1e, U2e1h, U5, W',
 		color: 'magenta',
-		source: 'https://en.wikipedia.org/wiki/Sintasha_culture',
+		source: 'https://en.wikipedia.org/wiki/Sintashta_culture',
 	},
 	{
 		name: 'Solutrean Culture',
@@ -1140,6 +1439,21 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Solutrean',
 	},
 	{
+		name: 'Sredny Stog Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-4500, -3500],
+				coords: [51, 31],
+				bottomRight: [46, 41],
+			},
+		],
+		periodInfo: [],
+		desc: 'Observed Y-DNA: R1a1a1<br>Observed mt-DNA: H2a1a',
+		color: 'grey',
+		source: 'https://en.wikipedia.org/wiki/Sredny_Stog_culture',
+	},
+	{
 		name: 'Srubnaya Culture',
 		type: 'box',
 		periods: [
@@ -1150,6 +1464,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Associated with Iranian<br>Observed Y-DNA: R1a1<br>Observed mt-DNA: I1a, J2b, K1b, H, T1, T2, U5',
 		color: 'brown',
 		source: 'https://en.wikipedia.org/wiki/Srubnaya_culture',
 	},
@@ -1183,6 +1498,20 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Swiderian_culture',
 	},
 	{
+		name: 'Szeletian Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-39000, -35000],
+				coords: [51, 15],
+				bottomRight: [47, 23],
+			},
+		],
+		periodInfo: [],
+		color: 'silver',
+		source: 'https://en.wikipedia.org/wiki/Szeletian',
+	},
+	{
 		name: 'Terramare Culture',
 		type: 'box',
 		periods: [
@@ -1193,6 +1522,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Associated with Ligurian, Tyrrhenian, or Italo-Celtic',
 		color: 'pink',
 		source: 'https://en.wikipedia.org/wiki/Terramare_culture',
 	},
@@ -1223,6 +1553,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Associated with Italo-Celtic',
 		color: 'yellow',
 		source: 'https://en.wikipedia.org/wiki/Tumulus_culture',
 	},
@@ -1251,6 +1582,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Observed Y-DNA: I2, I2a2, I2c2<br>Observed mt-DNA: H3, H4a1a1, H6a1b, I3a, K1a4a1, K1b1a, T2b, U2e1f1, U4, U5a1, U5a1b1, U5b2a1b, V, W3a1',
 		color: 'yellow',
 		source: 'https://en.wikipedia.org/wiki/Unetice_culture',
 	},
@@ -1290,6 +1622,35 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/United_States',
 	},
 	{
+		name: 'Urartu',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-860, -590],
+				coords: [41, 38],
+				bottomRight: [36, 47],
+			},
+		],
+		periodInfo: [],
+		desc: 'Urartian-speaking Kingdom',
+		color: 'orange',
+		source: 'https://en.wikipedia.org/wiki/Urartu',
+	},
+	{
+		name: 'Usatovo Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-3500, -3000],
+				coords: [47, 27],
+				bottomRight: [45, 31],
+			},
+		],
+		periodInfo: [],
+		color: 'black',
+		source: 'https://en.wikipedia.org/wiki/Usatovo_culture',
+	},
+	{
 		name: 'Veneti',
 		type: 'box',
 		periods: [
@@ -1315,6 +1676,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Etruscan<br>Observed mt-DNA: K1a4',
 		color: 'brown',
 		source: 'https://en.wikipedia.org/wiki/Villanovan_culture',
 	},
@@ -1357,6 +1719,7 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Associated with Indo-Europeans',
 		color: '#F8F885',
 		img: 'https://upload.wikimedia.org/wikipedia/commons/1/18/Yamna01.jpg',
 		source: 'https://en.wikipedia.org/wiki/Yamnaya_culture',
@@ -1401,7 +1764,9 @@ const features = [
 			},
 		],
 		periodInfo: [],
+		desc: 'Associated with Northwest Caucasian',
 		color: 'brown',
+		img: 'https://upload.wikimedia.org/wikipedia/en/4/48/R3_2_2d_eneolith_bull.jpg',
 		source: 'https://en.wikipedia.org/wiki/Maykop_culture',
 	},
 	// POINTS
@@ -2912,7 +3277,7 @@ const features = [
 		periodInfo: [],
 		desc: 'Skeleton',
 		color: 'cyan',
-		source: 'https://en.wikipedia.org/wiki/Tuqan_man',
+		source: 'https://en.wikipedia.org/wiki/Tuqan_Man',
 	},
 ];
 
