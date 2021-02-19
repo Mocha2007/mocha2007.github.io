@@ -3703,6 +3703,7 @@ const features = [
 		periodInfo: [],
 		desc: 'Y-DNA; from BT',
 		color: 'magenta',
+		img: 'https://3.bp.blogspot.com/-zFEh3_DkTJo/WgxgWy4GbUI/AAAAAAAAACw/LFLZBwjwO7odFxviWfD7wb4dVHQJzby5gCEwYBhgL/s1600/2.png',
 		source: 'https://en.wikipedia.org/wiki/Haplogroup_B-M60',
 	},
 	{
@@ -3831,6 +3832,7 @@ const features = [
 		periodInfo: [],
 		desc: 'Y-DNA; from DE',
 		color: 'magenta',
+		img: 'https://www.researchgate.net/profile/Miguel_Alfonso-Sanchez/publication/327888656/figure/fig8/AS:687452628992002@1540912887289/Contour-map-of-Y-SNP-Haplogroup-D.ppm',
 		source: 'https://en.wikipedia.org/wiki/Haplogroup_D-CTS3946',
 	},
 	{
@@ -3859,6 +3861,7 @@ const features = [
 		periodInfo: [],
 		desc: 'Y-DNA; from E1b1',
 		color: 'magenta',
+		img: 'https://i.pinimg.com/originals/df/4d/a5/df4da5a22554af3272ef1f3a0674242b.gif',
 		source: 'https://en.wikipedia.org/wiki/Haplogroup_E-M215_(Y-DNA)',
 	},
 	{
@@ -3917,6 +3920,7 @@ const features = [
 		periodInfo: [],
 		desc: 'Y-DNA; from IJ',
 		color: 'magenta',
+		img: 'https://cache.eupedia.com/images/content/Haplogroup_I-borders.gif',
 		source: 'https://en.wikipedia.org/wiki/Haplogroup_I-M170',
 	},
 	{
@@ -4106,6 +4110,7 @@ const features = [
 		periodInfo: [],
 		desc: 'Y-DNA; from P1',
 		color: 'magenta',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Haplogroup_R_%28Y-DNA%29.PNG',
 		source: 'https://en.wikipedia.org/wiki/Haplogroup_R_(Y-DNA)',
 	},
 	{
@@ -4120,6 +4125,7 @@ const features = [
 		periodInfo: [],
 		desc: 'Y-DNA; from R',
 		color: 'magenta',
+		img: 'https://i.pinimg.com/originals/ec/59/a9/ec59a9b5eda0d159a5261dc3e15385d6.gif',
 		source: 'https://en.wikipedia.org/wiki/Haplogroup_R1',
 	},
 	{
@@ -4134,6 +4140,7 @@ const features = [
 		periodInfo: [],
 		desc: 'Y-DNA; from R1',
 		color: 'magenta',
+		img: 'https://cache.eupedia.com/images/content/Haplogroup-R1a.gif',
 		source: 'https://en.wikipedia.org/wiki/Haplogroup_R1a',
 	},
 	{
@@ -4148,6 +4155,7 @@ const features = [
 		periodInfo: [],
 		desc: 'Y-DNA; from R1',
 		color: 'magenta',
+		img: 'https://cache.eupedia.com/images/content/Haplogroup_R1b_World.png',
 		source: 'https://en.wikipedia.org/wiki/Haplogroup_R1b',
 	},
 	{
@@ -4177,6 +4185,7 @@ const features = [
 		periodInfo: [],
 		desc: 'Y-DNA; from R',
 		color: 'magenta',
+		img: 'https://www.researchgate.net/profile/Connie-Mulligan/publication/230748587/figure/fig3/AS:267506694750221@1440789974096/Interpolation-map-for-R2-haplogroup.png',
 		source: 'https://en.wikipedia.org/wiki/Haplogroup_R2',
 	},
 	{
