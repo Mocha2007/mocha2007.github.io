@@ -3735,6 +3735,49 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Haplogroup_C-M130',
 	},
 	{
+		name: 'Haplogroup C1',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-48700, -44400],
+				coords: [32, 61],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from C',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_C-M217',
+	},
+	{
+		name: 'Haplogroup C2',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-34600, -29400],
+				coords: [65, 132],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from C',
+		color: 'magenta',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/8/89/Haplogrupo_C3_%28ADN-Y%29.PNG',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_C-M217',
+	},
+	{
+		name: 'Haplogroup C2b1a2',
+		type: 'point',
+		periods: [
+			{
+				yearRange: [-2200, -1000],
+				coords: [51, 105],
+			},
+		],
+		periodInfo: [],
+		desc: 'Y-DNA; from C2b1a',
+		color: 'magenta',
+		source: 'https://en.wikipedia.org/wiki/Haplogroup_C-M48',
+	},
+	{
 		name: 'Haplogroup CF',
 		type: 'point',
 		periods: [
