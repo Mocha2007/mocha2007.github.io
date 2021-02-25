@@ -72,7 +72,8 @@ input {
 <div id="top">
 	<h1>The History Map</h1>
 </div>
-<form onclick="bigmap();">
+<!-- https://stackoverflow.com/a/52040802 -->
+<form onclick="bigmap();" onkeypress="return event.keyCode != 13;">
 	<fieldset>
 		Date: 1 Jan, <input id="date" type="number" value="0" max="2019">
 		<a href="javascript:">Go &rarr;</a><br>
