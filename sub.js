@@ -28,6 +28,7 @@ var subtitles =	[
 	'So does the text contain just iambs there?<br>Then does it have five iambs total, too?',
 	'Roll for consonant mutation save.',
 	'Are noun countability stuffs that hard?',
+	'Real grammars are descriptivist',
 	'English sucks, and then you die.', // https://meta.stackexchange.com/questions/336005/neopronouns-or-trolling?newreg=7d69c4a9e87042df92f32d4bf2487f37#comment1109688_336011
 	'Common sense is a term we use for things obvious to us, but not others.', // https://meta.stackexchange.com/questions/335708/under-what-circumstances-will-stack-exchange-inc-share-private-sensitive-infor/335749#comment1106974_335749
 	'It growe&thorn; to ben a frogge, if it be noght eten.', // https://incubator.wikimedia.org/wiki/Wp/enm/Frogge
@@ -41,7 +42,7 @@ var subtitles =	[
 	'If eyes are round, then why is the image we see flat?',
 	// etc gaming
 	'The med curse is real',
-	'contown retarded; gg maf',
+	// I was never satisfied with this one... 'contown retarded; gg maf',
 	'Certified Elf-Kosher',
 	'More struts and boosters than the leading brand!',
 	'We can finally invade the heart of Eremor.<br/>Unfortunately for you, your adventure ends here.',
@@ -68,15 +69,20 @@ var subtitles =	[
 	'You spice?',
 	'<em>Real</em> News.',
 	'The coneconomy, stupid!',
-	'Make Namei Great Again',
-	'But I would walk <abbr title="878 km, 546 mi">200 abakêum</abbr>, and I would walk 200 more!',
 	'I did <em>not</em> have sexual relations with that map.',
 	'⬇ 🌀 🆘',
 	'Pay no attention to that Mocha in the closet!',
-	'Namei crawling through my windowpane',
 	'Splunge is for Splunge',
 	'Patterns are traps.',
 	'Kiss me under the kissing fern!~',
+	// namei/oneia/eremor
+	'Make Namei Great Again',
+	'But I would walk <abbr title="878 km, 546 mi">200 abakêum</abbr>, and I would walk 200 more!',
+	'Namei crawling through my windowpane',
+	'Invest in Eremor! 💎🙌',
+	'Paint Pankair red!',
+	'Temer guide us!',
+	'Rubri Eremorae donum requirunt',
 	// mochisms
 	'slash-me huggu',
 	'Enkl&aacute;r&rsquo;s Stead, by Enkl&aacute;r&rsquo;s Head',
@@ -98,6 +104,8 @@ var subtitles =	[
 	'MOW! MOW! MOW!',
 	'HAAAAAAAAAAAA YOUR CAMERA IS TRAAAAASH',
 	'My thesis was on the rind of Zayo Dadong',
+	'This individual, however, <em>is</em> firing on all cinderblocks situation.',
+	'Not a scam artist situation',
 	'Let&rsquo;s have us a pizza bungus',
 ];
 
