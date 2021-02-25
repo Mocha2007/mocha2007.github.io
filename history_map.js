@@ -355,21 +355,6 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Baden_culture',
 	},
 	{
-		name: 'Beaker Culture',
-		type: 'box',
-		periods: [
-			{
-				yearRange: [-2800, -1800],
-				coords: [58, -9],
-				bottomRight: [35, 19],
-			},
-		],
-		periodInfo: [],
-		desc: 'Poss. Associated with Vasconic<br>Observed Y-DNA: R1b',
-		color: '#FF7F27',
-		source: 'https://en.wikipedia.org/wiki/Beaker_culture',
-	},
-	{
 		name: 'Babylonia',
 		type: 'box',
 		periods: [
@@ -398,6 +383,36 @@ const features = [
 		desc: 'Observed Y-DNA: E1b1a, E1b1b, G, J*, J1, J2, L, R*, R1b, R2, T',
 		color: 'orange',
 		source: 'https://en.wikipedia.org/wiki/Bactria–Margiana_Archaeological_Complex',
+	},
+	{
+		name: 'Battle Axe Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-2800, -2300],
+				coords: [69, 4],
+				bottomRight: [55, 28],
+			},
+		],
+		periodInfo: [],
+		desc: 'Associated with Germanic<br>Observed Y-DNA: R1a, R1a1a1, R1a1a1b<br>Observed mt-DNA: H6a1b3, K1a2a, N1a1a1a1, U4c1a, U4c2a',
+		color: 'orange',
+		source: 'https://en.wikipedia.org/wiki/Battle_Axe_culture',
+	},
+	{
+		name: 'Beaker Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-2800, -1800],
+				coords: [58, -9],
+				bottomRight: [35, 19],
+			},
+		],
+		periodInfo: [],
+		desc: 'Poss. Associated with Vasconic<br>Observed Y-DNA: R1b',
+		color: '#FF7F27',
+		source: 'https://en.wikipedia.org/wiki/Beaker_culture',
 	},
 	{
 		name: 'Bohunician Industry',
@@ -1355,6 +1370,21 @@ const features = [
 		color: 'orange',
 		img: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Basalt_%26_Limestone_Mortar_%26_Pestle%2C_Natufian_Culture.jpg',
 		source: 'https://en.wikipedia.org/wiki/Natufian_culture',
+	},
+	{
+		name: 'Nordic Bronze Age',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [-1700, -500],
+				coords: [63.5, 4.5],
+				bottomRight: [53.5, 21],
+			},
+		],
+		periodInfo: [],
+		desc: 'Associated with Germanic<br>Observed Y-DNA: I1, R1a1a1, R1b1a1a2, R1b1a1a2a1a1',
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Nordic_Bronze_Age',
 	},
 	{
 		name: 'Norte Chico',
