@@ -44,7 +44,13 @@ const Game = {
 	teach(){
 		console.log("seq", this.seq);
 		this.seq.forEach((x, i) => {
-			setTimeout(() => {this.buttonNoise(x);}, i*1000);
+			setTimeout(() => {this.buttonNoise(x);}, i*700);
+			/*
+			0	604 ms
+			1	673 ms
+			2	430 ms
+			3	650 ms
+			*/
 		});
 	}
 };
