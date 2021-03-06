@@ -79,7 +79,7 @@ const random = {
 	},
 	/**
 	 * @param {number} min
-	 * @param {number} max
+	 * @param {number} max - inclusive
 	 */
 	randint(min, max){ // random integer in range
 		return Math.floor(this.uniform(min, max+1));

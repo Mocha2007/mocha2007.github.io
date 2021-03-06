@@ -1,0 +1,35 @@
+html {
+	background-color: black;
+	color: black;
+}
+div {
+	cursor: pointer;
+	font-size: 40vh;
+	height: 50%;
+	position: absolute;
+	text-align: center;
+	width: 50%;
+}
+div:active:hover {
+	opacity: 0.5;
+}
+#button1 {
+	background-color: red;
+	left: 0;
+	top: 0;
+}
+#button2 {
+	background-color: yellow;
+	right: 0;
+	top: 0;
+}
+#button3 {
+	background-color: lime;
+	bottom: 0;
+	left: 0;
+}
+#button4 {
+	background-color: blue;
+	bottom: 0;
+	right: 0;
+}
