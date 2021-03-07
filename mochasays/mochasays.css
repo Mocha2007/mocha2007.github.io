@@ -1,6 +1,7 @@
 html {
 	background-color: black;
 	color: black;
+	user-select: none;
 }
 div {
 	cursor: pointer;
