@@ -30,6 +30,7 @@ const elementData = [
 				human: 0.62,
 				universe: 0.739,
 			},
+			biologicalHalfLife: 12*day, // tritium; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			modelColor: 'white',
 			nutrition: 0,
 			production: 50e6,
@@ -119,6 +120,7 @@ const elementData = [
 				human: 0.12,
 				universe: 4600e-6,
 			},
+			biologicalHalfLife: 40*day, // C-14; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			modelColor: 'rgb(144, 144, 144)',
 			nutrition: 0,
 			production: 1.03e6,
@@ -210,6 +212,7 @@ const elementData = [
 				universe: 33e-6,
 			},
 			biologicalHalfLife: 69*day, // personal estimate; 100 g sodium per person, 1 mg/day per person
+			// 11 d according to http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			modelColor: 'rgb(171, 92, 242)',
 			nutrition: 1,
 			production: 100e3,
@@ -288,6 +291,7 @@ const elementData = [
 				universe: 7e-6,
 			},
 			biologicalHalfLife: 932*day, // personal estimate; 780 g phosphorus per person, 580 mg/day per person
+			// 1155 d according to http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			modelColor: 'rgb(255, 128, 0)',
 			nutrition: 1,
 			production: 910e3,
@@ -307,6 +311,7 @@ const elementData = [
 				human: 3.8e-4,
 				universe: 440e-6,
 			},
+			biologicalHalfLife: 90*day, // S-35; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			modelColor: 'rgb(255, 255, 48)',
 			nutrition: 1,
 			production: 69e6,
@@ -326,6 +331,7 @@ const elementData = [
 				human: 2.4e-4,
 				universe: 1e-6,
 			},
+			biologicalHalfLife: 29*day, // Cl-36; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			modelColor: 'rgb(31, 240, 31)',
 			nutrition: 1,
 			rgb: 'rgb(246, 255, 188)',
@@ -502,6 +508,7 @@ const elementData = [
 				human: 3e-9,
 				universe: 3e-6,
 			},
+			biologicalHalfLife: 10*day, // Co-60; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			nutrition: 2,
 			production: 140e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cobalt.pdf
 			rgb: 'rgb(255, 249, 244)',
@@ -679,6 +686,7 @@ const elementData = [
 				human: 3.3e-7,
 				universe: 1e-8,
 			},
+			biologicalHalfLife: 45*day, // Rb-86; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			nutrition: 4,
 			production: 2,
 		},
@@ -696,6 +704,7 @@ const elementData = [
 				human: 3.3e-7,
 				universe: 4e-8,
 			},
+			biologicalHalfLife: 1.8e4*day, // Sr-90; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			nutrition: 3,
 			production: 220e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-strontium.pdf
 		},
@@ -780,6 +789,7 @@ const elementData = [
 			abundance: {
 				earth: 0.003e-12, // https://en.wikipedia.org/wiki/Technetium#Occurrence_and_production
 			},
+			biologicalHalfLife: day, // Tc-99m; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			nobleMetal: 4,
 		},
 	},
@@ -897,6 +907,7 @@ const elementData = [
 				human: 6e-9,
 				universe: 4e-9,
 			},
+			biologicalHalfLife: 3.5*day, // rats; oral; diethyltin chloride; https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/biological-half-life
 			nutrition: 4,
 			production: 340e3,
 			toxicity: 200e-6, // "Nausea, vomiting and diarrhea have been reported after ingesting canned food containing 200 mg/kg of tin."
@@ -949,7 +960,7 @@ const elementData = [
 				human: 7.5e-9,
 				universe: 1e-9,
 			},
-			biologicalHalfLife: 92*day, // personal estimate; 20 mg iodine per person, 0.15 mg/day per person
+			biologicalHalfLife: 66.1*day, // https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/biological-half-life
 			nutrition: 2,
 			production: 28e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-iodine.pdf
 			rgb: 'rgb(216, 229, 255)',
@@ -1000,6 +1011,7 @@ const elementData = [
 				human: 1.2e-8,
 				universe: 1e-8,
 			},
+			biologicalHalfLife: 65*day, // Ba-140; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 		},
 	},
 	{
@@ -1331,6 +1343,7 @@ const elementData = [
 				human: 3e-9,
 				universe: 6e-10,
 			},
+			biologicalHalfLife: 280*day, // Au-198; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			nobleMetal: 2,
 			production: 2310,
 			rgb: 'rgb(255, 211, 109)',
@@ -1472,6 +1485,7 @@ const elementData = [
 				earth: 9e-13, // https://en.wikipedia.org/wiki/Radium#Occurrence
 				human: 1e-19,
 			},
+			biologicalHalfLife: 1.6e4*day, // Ra-226; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			rgb: 'rgb(255, 233, 198)',
 		},
 	},
@@ -1523,6 +1537,7 @@ const elementData = [
 				human: 3e-11,
 				universe: 2e-10,
 			},
+			biologicalHalfLife: 15*day, // U-235; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			production: 50572,
 			rgb: 'rgb(255, 251, 242)',
 		},
