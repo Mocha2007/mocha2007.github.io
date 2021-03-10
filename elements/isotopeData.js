@@ -1,10 +1,5 @@
-/* exported isotopeData */
+/* global minute, hour, day, year */
 'use strict';
-
-const minute = 60;
-const hour = 60 * minute;
-const day = 24 * hour;
-const year = 365.2425 * day;
 
 const isotopeData = [
 	// ignore all decay modes with P < 0.01

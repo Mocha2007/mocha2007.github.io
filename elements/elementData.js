@@ -1,4 +1,4 @@
-/* exported elementData, isotopeData, nobleMetalColors, nutritionColors */
+/* exported elementData, isotopeData, nobleMetalColors, nutritionColors, minute, hour, day, year */
 'use strict';
 // modelColor from https://sciencenotes.org/wp-content/uploads/2019/07/CPK-Jmol-1024x791.png
 // abundances from https://periodictable.com/Properties/A/UniverseAbundance.an.log.html
@@ -8,6 +8,13 @@
 const nobleMetalColors = ['#cf0', '#0e7', '#6bf', '#c9f', '#fb6', '#f66'];
 // https://en.wikipedia.org/wiki/Template:Periodic_table_(nutritional_elements)
 const nutritionColors = ['#060', '#0b0', '#7f0', '#670', '#f70', '#dd9'];
+
+// also used in isotopeData.js
+const minute = 60;
+const hour = 60 * minute;
+const day = 24 * hour;
+const year = 365.2425 * day;
+const month = year / 12;
 
 const elementData = [
 	{
@@ -167,6 +174,7 @@ const elementData = [
 				human: 1.2e-5,
 				universe: 4e-7,
 			},
+			biologicalHalfLife: 450*day, // personal estimate; 2.6 g magnesium per person, 4 mg/day per person
 			modelColor: 'rgb(144, 224, 80)',
 			nutrition: 3,
 			production: 5.5e6,
@@ -201,6 +209,7 @@ const elementData = [
 				human: 3.7e-4,
 				universe: 33e-6,
 			},
+			biologicalHalfLife: 69*day, // personal estimate; 100 g sodium per person, 1 mg/day per person
 			modelColor: 'rgb(171, 92, 242)',
 			nutrition: 1,
 			production: 100e3,
@@ -220,6 +229,7 @@ const elementData = [
 				human: 7e-5,
 				universe: 580e-6,
 			},
+			biologicalHalfLife: 44*day, // personal estimate; 19 g magnesium per person, 300 mg/day per person
 			modelColor: 'rgb(138, 255, 0)',
 			nutrition: 1,
 			production: 748e3,
@@ -277,6 +287,7 @@ const elementData = [
 				human: 0.0022,
 				universe: 7e-6,
 			},
+			biologicalHalfLife: 932*day, // personal estimate; 780 g phosphorus per person, 580 mg/day per person
 			modelColor: 'rgb(255, 128, 0)',
 			nutrition: 1,
 			production: 910e3,
@@ -348,6 +359,7 @@ const elementData = [
 				human: 3.3e-4,
 				universe: 3e-6,
 			},
+			biologicalHalfLife: 20*day, // personal estimate; 140 g potassium per person, 4.7 mg/day per person
 			nutrition: 1,
 		},
 	},
@@ -364,6 +376,7 @@ const elementData = [
 				human: 0.0022,
 				universe: 60e-6,
 			},
+			biologicalHalfLife: 693*day, // personal estimate; 1kg calcium per person, 1 g/day per person
 			nutrition: 1,
 		},
 	},
@@ -431,6 +444,7 @@ const elementData = [
 				human: 1.9e-10,
 				universe: 1.5e-5,
 			},
+			biologicalHalfLife: 320*day, // personal estimate; 14 mg chromium per person, 0.03 mg/day per person
 			nobleMetal: 0,
 			nutrition: 2,
 			production: 4.4e6,
@@ -450,6 +464,7 @@ const elementData = [
 				human: 1.5e-8,
 				universe: 8e-6,
 			},
+			biologicalHalfLife: 3.8*day, // personal estimate; 12 mg manganese per person, 2 mg/day per person
 			nutrition: 2,
 			production: 19e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-manganese.pdf
 		},
@@ -467,6 +482,7 @@ const elementData = [
 				human: 6.7e-6,
 				universe: 1.09e-3,
 			},
+			biologicalHalfLife: 485*day, // personal estimate; 4.2g iron per person, 6 mg/day per person; 0.5^(1/L) = 1 - 0.006/4.2
 			nutrition: 2,
 			production: 1544e6,
 			rgb: 'rgb(255, 252, 252)',
@@ -522,6 +538,7 @@ const elementData = [
 				human: 1.04e-7,
 				universe: 6e-8,
 			},
+			biologicalHalfLife: 55*day, // personal estimate; 72 mg copper per person, 0.9 mg/day per person
 			nobleMetal: 2,
 			nutrition: 2,
 			production: 15.1e6,
@@ -542,6 +559,7 @@ const elementData = [
 				human: 3.1e-6,
 				universe: 3e-7,
 			},
+			biologicalHalfLife: 200*day, // personal estimate; 2.3 g magnesium per person, 8 mg/day per person
 			nutrition: 2,
 			production: 11.2e6,
 		},
@@ -611,6 +629,7 @@ const elementData = [
 				human: 4.5e-10,
 				universe: 3e-8,
 			},
+			biologicalHalfLife: 190*day, // personal estimate; 15 mg selenium per person, 0.055 mg/day per person
 			nobleMetal: 3,
 			nutrition: 2,
 			production: 2e3,
@@ -744,6 +763,7 @@ const elementData = [
 				human: 4.5e-10,
 				universe: 5e-9,
 			},
+			biologicalHalfLife: 77*day, // personal estimate; 5 mg molybdenum per person, 0.045 mg/day per person
 			nobleMetal: 0,
 			nutrition: 2,
 			production: 250e3,
@@ -842,6 +862,7 @@ const elementData = [
 				human: 4.5e-8,
 				universe: 2e-9,
 			},
+			biologicalHalfLife: 30*year, // in bone
 			nutrition: 5,
 			production: 25e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cadmium.pdf
 			toxicity: 225e-6, // rat, oral
@@ -928,6 +949,7 @@ const elementData = [
 				human: 7.5e-9,
 				universe: 1e-9,
 			},
+			biologicalHalfLife: 92*day, // personal estimate; 20 mg iodine per person, 0.15 mg/day per person
 			nutrition: 2,
 			production: 28e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-iodine.pdf
 			rgb: 'rgb(216, 229, 255)',
@@ -961,6 +983,7 @@ const elementData = [
 				human: 1e-9,
 				universe: 8e-10,
 			},
+			biologicalHalfLife: 2.5*month, // 1-4 mos
 			rgb: 'rgb(255, 212, 153)',
 		},
 	},
@@ -1326,6 +1349,7 @@ const elementData = [
 				human: 8.9e-10,
 				universe: 1e-9,
 			},
+			biologicalHalfLife: 65*day, // as methylmercury; in blood
 			nobleMetal: 2,
 			production: 4e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-mercury.pdf
 		},
@@ -1360,6 +1384,7 @@ const elementData = [
 				human: 4.5e-8,
 				universe: 1e-8,
 			},
+			biologicalHalfLife: 32*day, // 28-36 d in blood
 			nutrition: 4,
 			production: 8725e3,
 			rgb: 'rgb(255, 255, 255)',
@@ -1394,6 +1419,7 @@ const elementData = [
 			abundance: {
 				earth: 0.2e-2 * 9e-13, // https://en.wikipedia.org/wiki/Polonium#Occurrence_and_production
 			},
+			biologicalHalfLife: 40*day, // 30-50 d
 			nobleMetal: 4,
 			production: 100e-6,
 			rgb: 'rgb(234, 242, 255)',
@@ -1408,7 +1434,7 @@ const elementData = [
 		period: 6,
 		properties: {
 			abundance: {
-				earth: 1e-24, // https://en.wikipedia.org/wiki/Polonium#Occurrence_and_production
+				earth: 1e-24, // https://en.wikipedia.org/wiki/Astatine#Natural_occurrence
 			},
 			nobleMetal: 4,
 		},
@@ -1515,6 +1541,7 @@ const elementData = [
 		mass: 244,
 		period: 7,
 		properties: {
+			biologicalHalfLife: 40*year, // in liver
 			rgb: 'rgb(255, 226, 249)',
 		},
 	},

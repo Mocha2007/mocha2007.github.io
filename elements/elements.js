@@ -55,7 +55,10 @@ class ChemElement {
 		/** row */
 		this.period = period;
 		if (properties){
+			/** @type {number} */
 			this.abundance = properties.abundance;
+			/** @type {number} - in seconds */
+			this.biologicalHalfLife = properties.biologicalHalfLife;
 			/** @type {string} - color used in models */
 			this.modelColor = properties.modelColor;
 			/** @type {number} */
@@ -212,6 +215,15 @@ class ChemElement {
 					x = Math.log(Math.max(...this.isotopes.map(i => i.halfLife))) /
 						Math.log(Isotope.maxHalfLife) * 120;
 					c = `hsl(${x}, 100%, 50%)`;
+				}
+				break;
+			case 'halflifeb':
+				if (!this.biologicalHalfLife)
+					c = '#ccc';
+				else {
+					x = Math.cbrt(this.biologicalHalfLife) /
+						Math.cbrt(Math.max(...elements.filter(e => e.biologicalHalfLife).map(e => e.biologicalHalfLife)));
+					c = `hsl(${180+120*x}, 100%, ${100-65*x}%)`;
 				}
 				break;
 			case 'msi%4':
