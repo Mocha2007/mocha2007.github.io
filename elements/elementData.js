@@ -434,6 +434,7 @@ const elementData = [
 			nobleMetal: 0,
 			nutrition: 2,
 			production: 4.4e6,
+			toxicity: 50e-6, // Chromium(VI) human, min est. LD50
 		},
 	},
 	{
@@ -469,6 +470,7 @@ const elementData = [
 			nutrition: 2,
 			production: 1544e6,
 			rgb: 'rgb(255, 252, 252)',
+			toxicity: 50e-6, // "Ingestions of more than 50 mg/kg of elemental iron are associated with severe toxicity"
 		},
 	},
 	{
@@ -524,6 +526,7 @@ const elementData = [
 			nutrition: 2,
 			production: 15.1e6,
 			rgb: 'rgb(255, 121, 76)',
+			toxicity: 30e-6, // Copper sulfate, rat
 		},
 	},
 	{
@@ -592,6 +595,7 @@ const elementData = [
 			nobleMetal: 3,
 			nutrition: 4,
 			production: 33e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-arsenic.pdf
+			toxicity: 763e-6, // rat, oral
 		},
 	},
 	{
@@ -840,6 +844,7 @@ const elementData = [
 			},
 			nutrition: 5,
 			production: 25e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cadmium.pdf
+			toxicity: 225e-6, // rat, oral
 		},
 	},
 	{
@@ -873,6 +878,7 @@ const elementData = [
 			},
 			nutrition: 4,
 			production: 340e3,
+			toxicity: 200e-6, // "Nausea, vomiting and diarrhea have been reported after ingesting canned food containing 200 mg/kg of tin."
 		},
 	},
 	{

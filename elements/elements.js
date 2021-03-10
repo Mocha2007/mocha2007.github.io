@@ -71,6 +71,8 @@ class ChemElement {
 			 * - The rest is averaged and white-balanced.
 			 */
 			this.rgb = properties.rgb;
+			/** @type {number} LD50, as close to humans as possible, (0, 1) */
+			this.toxicity = properties.toxicity;
 		}
 		// push to element list and create cell
 		elements.push(this);
@@ -175,29 +177,24 @@ class ChemElement {
 		let c, x;
 		switch (type){
 			case 'abundanceEarth':
-				if (!this.abundance || !this.abundance.earth){
+				if (!this.abundance || !this.abundance.earth)
 					c = 'white';
-				}
-				else if (this.abundance.earth < 1e-9){ // trace
+				else if (this.abundance.earth < 1e-9) // trace
 					c = 'magenta';
-				}
-				else {
+				else
 					c = `hsl(${120+6*Math.log(this.abundance.earth)}, 100%, 50%)`;
-				}
 				break;
 			case 'abundanceHuman':
-				if (!this.abundance || !this.abundance.human){
+				if (!this.abundance || !this.abundance.human)
 					c = 'white';
-					break;
-				}
-				c = `hsl(${120+5*Math.log(this.abundance.human)}, 100%, 50%)`;
+				else
+					c = `hsl(${120+5*Math.log(this.abundance.human)}, 100%, 50%)`;
 				break;
 			case 'abundanceUniverse':
-				if (!this.abundance || !this.abundance.universe){
+				if (!this.abundance || !this.abundance.universe)
 					c = 'white';
-					break;
-				}
-				c = `hsl(${120+5.2*Math.log(this.abundance.universe)}, 100%, 50%)`;
+				else
+					c = `hsl(${120+5.2*Math.log(this.abundance.universe)}, 100%, 50%)`;
 				break;
 			case 'block':
 				c = {s: '#f99', p: '#ff8', d: '#9cf', f: '#9f9'}[this.electronShell];
@@ -209,13 +206,13 @@ class ChemElement {
 				c = this.color;
 				break;
 			case 'halflife':
-				if (this.stable){
+				if (this.stable)
 					c = '#0cc';
-					break;
+				else {
+					x = Math.log(Math.max(...this.isotopes.map(i => i.halfLife))) /
+						Math.log(Isotope.maxHalfLife) * 120;
+					c = `hsl(${x}, 100%, 50%)`;
 				}
-				x = Math.log(Math.max(...this.isotopes.map(i => i.halfLife))) /
-					Math.log(Isotope.maxHalfLife) * 120;
-				c = `hsl(${x}, 100%, 50%)`;
 				break;
 			case 'msi%4':
 				if (this.stable){
@@ -228,9 +225,8 @@ class ChemElement {
 						i => i.mass % 4)).size === 1){ // only one stable isotope with even # of neutrons?
 						c = c4[this.isotopes.filter(i => i.stable && i.n % 2 === 0)[0].mass % 4];
 					}
-					else {
+					else
 						c = 'grey';
-					}
 				}
 				else {
 					const isotopeMasses = this.isotopes.map(i => i.mass);
@@ -250,11 +246,10 @@ class ChemElement {
 				c = this.nutrition === undefined ? 'white' : nutritionColors[this.nutrition];
 				break;
 			case 'production':
-				if (!this.production){
+				if (!this.production)
 					c = 'white';
-					break;
-				}
-				c = this.production ? `hsl(${6*Math.log(this.production)}, 100%, 50%)` : '#ccc';
+				else
+					c = this.production ? `hsl(${6*Math.log(this.production)}, 100%, 50%)` : '#ccc';
 				break;
 			case 'stable':
 				x = this.isotopes.filter(i => i.stable).length / 10 * 255;
@@ -262,6 +257,12 @@ class ChemElement {
 				break;
 			case 'synesthete':
 				c = this.modelColor ? this.modelColor : '#ccc';
+				break;
+			case 'toxicity':
+				if (!this.toxicity)
+					c = 'white';
+				else
+					c = `hsl(${120+6*Math.log(this.toxicity)}, 100%, 50%)`;
 				break;
 			case 'weight':
 				x = 255*this.mass/ChemElement.maxWeight;
