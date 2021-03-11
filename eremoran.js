@@ -1,4 +1,4 @@
-/* exported compileDict, compileInitials, compileMedials, compileFinals */
+/* exported compileDict, compileFinals, compileInitials, compileLength, compileMedials */
 
 "use strict";
 
@@ -22,6 +22,10 @@ function compileFinals(){
 
 function compileInitials(){
 	p.innerHTML = dict().map(w => w[0]).join("");
+}
+
+function compileLength(){
+	p.innerHTML = dict().map(w => w.length).join(" ");
 }
 
 function compileMedials(){
