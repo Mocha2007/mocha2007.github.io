@@ -1,4 +1,5 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true */
+/* globals intersect, proper, range, union */
 'use strict';
 
 const point0 = 'img/dots/red.png';

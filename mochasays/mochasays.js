@@ -1,3 +1,5 @@
+/* globals play, random */
+
 'use strict';
 
 const Game = {
@@ -25,10 +27,10 @@ const Game = {
 	press(i){
 		// console.log("Pressed " + i);
 		// check if wrong
-		if (0 < this.seq.length && this.seq[this.correctSoFar] != i)
+		if (0 < this.seq.length && this.seq[this.correctSoFar] !== i)
 			return this.gameOver();
 		// do every time
-		if (this.seq.length != 0)
+		if (this.seq.length !== 0)
 			this.correctSoFar++;
 		// did you get the sequence right?
 		if (this.seq.length <= this.correctSoFar)
@@ -52,7 +54,7 @@ const Game = {
 		let i = 0;
 		const interval = setInterval(() => {
 			this.buttonNoise(this.seq[i]);
-			if (++i == this.seq.length)
+			if (++i === this.seq.length)
 				window.clearInterval(interval);
 		}, 700);
 	}

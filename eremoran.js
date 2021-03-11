@@ -40,6 +40,6 @@ function compileMedials(){
 
 function compileNounClass(){
 	p.innerHTML = new Array(...d.getElementsByTagName('dd'))
-		.filter(x => x.innerHTML.slice(0, 3) == 'n.,')
+		.filter(x => x.innerHTML.slice(0, 3) === 'n.,')
 		.map(x => x.innerHTML[4]).join(" ");
 }
