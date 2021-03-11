@@ -1,14 +1,15 @@
-/* exported compileDict, compileFinals, compileInitials, compileLength, compileMedials */
+/* exported compileDict, compileFinals, compileInitials, compileLength, compileMedials, compileNounClass */
 
 "use strict";
 
 // tools for main
+/** @param {HTMLDListElement} */
+const d = document.getElementsByClassName('dictionary')[0];
+/** @param {HTMLParagraphElement} */
 const p = document.getElementById("wordlist");
 
 function dict(){
-	return new Array(...
-		document.getElementsByClassName('dictionary')[0].getElementsByTagName('dt')
-	).map(e => e.innerHTML);
+	return new Array(...d.getElementsByTagName('dt')).map(e => e.innerHTML);
 }
 
 // main
@@ -30,4 +31,8 @@ function compileLength(){
 
 function compileMedials(){
 	p.innerHTML = dict().map(w => w.slice(1, -1)).join("");
+}
+
+function compileNounClass(){
+	p.innerHTML = new Array(...d.getElementsByTagName('dd')).filter(x => x.innerHTML.slice(0, 3) == 'n.,').map(x => x.innerHTML[4]).join(" ");
 }
