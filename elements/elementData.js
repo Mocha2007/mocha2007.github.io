@@ -366,6 +366,7 @@ const elementData = [
 				universe: 3e-6,
 			},
 			biologicalHalfLife: 20*day, // personal estimate; 140 g potassium per person, 4.7 mg/day per person
+			modelColor: 'rgb(143, 64, 212)',
 			nutrition: 1,
 		},
 	},
@@ -383,6 +384,7 @@ const elementData = [
 				universe: 60e-6,
 			},
 			biologicalHalfLife: 693*day, // personal estimate; 1kg calcium per person, 1 g/day per person
+			modelColor: 'rgb(61, 255, 0)',
 			nutrition: 1,
 		},
 	},
@@ -399,6 +401,7 @@ const elementData = [
 				human: 4e-10,
 				universe: 3e-8,
 			},
+			modelColor: 'rgb(230, 230, 230)',
 			production: 2,
 		},
 	},
@@ -415,6 +418,7 @@ const elementData = [
 				human: 4e-8,
 				universe: 3e-6,
 			},
+			modelColor: 'rgb(191, 194, 199)',
 			nobleMetal: 0,
 			production: 6.7e6,
 		},
@@ -432,6 +436,7 @@ const elementData = [
 				human: 1.2e-10,
 				universe: 1e-6,
 			},
+			modelColor: 'rgb(166, 166, 171)',
 			nobleMetal: 0,
 			nutrition: 3,
 			production: 73e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-vanadium.pdf
@@ -451,6 +456,7 @@ const elementData = [
 				universe: 1.5e-5,
 			},
 			biologicalHalfLife: 320*day, // personal estimate; 14 mg chromium per person, 0.03 mg/day per person
+			modelColor: 'rgb(138, 153, 199)',
 			nobleMetal: 0,
 			nutrition: 2,
 			production: 4.4e6,
@@ -471,6 +477,7 @@ const elementData = [
 				universe: 8e-6,
 			},
 			biologicalHalfLife: 3.8*day, // personal estimate; 12 mg manganese per person, 2 mg/day per person
+			modelColor: 'rgb(156, 122, 199)',
 			nutrition: 2,
 			production: 19e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-manganese.pdf
 		},
@@ -489,6 +496,7 @@ const elementData = [
 				universe: 1.09e-3,
 			},
 			biologicalHalfLife: 485*day, // personal estimate; 4.2g iron per person, 6 mg/day per person; 0.5^(1/L) = 1 - 0.006/4.2
+			modelColor: 'rgb(224, 102, 51)',
 			nutrition: 2,
 			production: 1544e6,
 			rgb: 'rgb(255, 252, 252)',
@@ -509,6 +517,7 @@ const elementData = [
 				universe: 3e-6,
 			},
 			biologicalHalfLife: 10*day, // Co-60; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			modelColor: 'rgb(240, 144, 160)',
 			nutrition: 2,
 			production: 140e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cobalt.pdf
 			rgb: 'rgb(255, 249, 244)',
@@ -527,6 +536,7 @@ const elementData = [
 				human: 1.5e-8,
 				universe: 49e-6,
 			},
+			modelColor: 'rgb(80, 208, 80)',
 			nutrition: 3,
 			production: 1.8e6,
 			rgb: 'rgb(255, 245, 224)',
@@ -546,6 +556,7 @@ const elementData = [
 				universe: 6e-8,
 			},
 			biologicalHalfLife: 55*day, // personal estimate; 72 mg copper per person, 0.9 mg/day per person
+			modelColor: 'rgb(200, 128, 51)',
 			nobleMetal: 2,
 			nutrition: 2,
 			production: 15.1e6,
@@ -567,6 +578,7 @@ const elementData = [
 				universe: 3e-7,
 			},
 			biologicalHalfLife: 200*day, // personal estimate; 2.3 g magnesium per person, 8 mg/day per person
+			modelColor: 'rgb(125, 128, 176)',
 			nutrition: 2,
 			production: 11.2e6,
 		},
@@ -584,6 +596,7 @@ const elementData = [
 				human: 7e-6,
 				universe: 1e-8,
 			},
+			modelColor: 'rgb(194, 143, 143)',
 			production: 184,
 		},
 	},
@@ -600,6 +613,7 @@ const elementData = [
 				human: 6e-10,
 				universe: 2e-7,
 			},
+			modelColor: 'rgb(102, 143, 143)',
 			nutrition: 4,
 			production: 118,
 		},
@@ -617,6 +631,7 @@ const elementData = [
 				human: 8.9e-10,
 				universe: 8e-9,
 			},
+			modelColor: 'rgb(189, 128, 227)',
 			nobleMetal: 3,
 			nutrition: 4,
 			production: 33e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-arsenic.pdf
@@ -637,6 +652,7 @@ const elementData = [
 				universe: 3e-8,
 			},
 			biologicalHalfLife: 190*day, // personal estimate; 15 mg selenium per person, 0.055 mg/day per person
+			modelColor: 'rgb(255, 161, 0)',
 			nobleMetal: 3,
 			nutrition: 2,
 			production: 2e3,
@@ -655,6 +671,7 @@ const elementData = [
 				human: 3e-7,
 				universe: 7e-9,
 			},
+			modelColor: 'rgb(166, 41, 41)',
 			nutrition: 3,
 			production: 556e3,
 			rgb: 'rgb(255, 94, 35)',
@@ -671,6 +688,7 @@ const elementData = [
 			abundance: {
 				universe: 4e-8,
 			},
+			modelColor: 'rgb(92, 184, 209)',
 		},
 	},
 	{
