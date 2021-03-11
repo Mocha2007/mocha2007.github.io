@@ -1,6 +1,6 @@
 /* jshint esversion: 6, strict: true, strict: global */
 /* globals createSvgElement, day, deg, elementData, hour, isotopeData, minute,
-	nobleMetalColors, nutritionColors, range, round, sum, unitString, year */
+	nobleMetalColors, nutritionColors, range, remap, round, sum, unitString, year */
 /* exported setDecayChainLength, tableColor */
 'use strict';
 
@@ -210,11 +210,11 @@ class ChemElement {
 				break;
 			case 'halflife':
 				if (this.stable)
-					c = '#0cc';
+					c = '#f0f';
 				else {
 					x = Math.log(Math.max(...this.isotopes.map(i => i.halfLife))) /
-						Math.log(Isotope.maxHalfLife) * 120;
-					c = `hsl(${x}, 100%, 50%)`;
+						Math.log(Isotope.maxHalfLife); // [0, 1]
+					c = gradient1(x);
 				}
 				break;
 			case 'halflifeb':
@@ -223,7 +223,7 @@ class ChemElement {
 				else {
 					x = Math.cbrt(this.biologicalHalfLife) /
 						Math.cbrt(Math.max(...elements.filter(e => e.biologicalHalfLife).map(e => e.biologicalHalfLife)));
-					c = `hsl(${180+120*x}, 100%, ${100-65*x}%)`;
+					c = gradient1(x);
 				}
 				break;
 			case 'msi%4':
@@ -252,16 +252,14 @@ class ChemElement {
 			case 'nuclearBinding':
 				x = Math.max((Math.max(...this.isotopes.map(i => i.nuclearBindingEnergy/i.mass)) -
 					1.13e-12) * 3.6e12, 0); // appx from 0 to 1
-				c = `hsl(${180+120*x}, 100%, ${100-65*x}%)`;
+				c = gradient1(x);
 				break;
 			case 'nutrition':
 				c = this.nutrition === undefined ? 'white' : nutritionColors[this.nutrition];
 				break;
 			case 'production':
-				if (!this.production)
-					c = 'white';
-				else
-					c = this.production ? `hsl(${6*Math.log(this.production)}, 100%, 50%)` : '#ccc';
+				const max_prod = Math.max(...elements.filter(e => e.production).map(e => Math.log(e.production)));
+				c = gradient1(remap(Math.max(0, Math.log(this.production)), [0, max_prod], [0, 1]));
 				break;
 			case 'stable':
 				x = this.isotopes.filter(i => i.stable).length / 10 * 255;
@@ -514,6 +512,16 @@ class Isotope {
 }
 
 // functions
+
+/**
+ * @param {number} x - value in [0, 1]; undefined/NaN -> grey
+ * @return {string} - css color string; purple = high; blue = mid; white = low
+ */
+function gradient1(x){
+	if (!isFinite(x))
+		return '#ccc';
+	return `hsl(${180+120*x}, 100%, ${100-65*x}%)`;
+}
 
 /**
  * @param {number} value
