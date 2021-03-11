@@ -1,4 +1,5 @@
-/* exported compileDict, compileFinals, compileInitials, compileLength, compileMedials, compileNounClass */
+/* exported compileDict, compileFinals, compileInitials, compileLength,
+	compileMeanings, compileMedials, compileNounClass */
 
 "use strict";
 
@@ -29,10 +30,18 @@ function compileLength(){
 	p.innerHTML = dict().map(w => w.length).join(" ");
 }
 
+function compileMeanings(){
+	p.innerHTML = new Array(...d.getElementsByTagName('dd'))
+		.filter(x => 0 < x.getElementsByTagName('ol').length)
+		.map(x => x.getElementsByTagName('ol')[0].children.length).join(" ");
+}
+
 function compileMedials(){
 	p.innerHTML = dict().map(w => w.slice(1, -1)).join("");
 }
 
 function compileNounClass(){
-	p.innerHTML = new Array(...d.getElementsByTagName('dd')).filter(x => x.innerHTML.slice(0, 3) == 'n.,').map(x => x.innerHTML[4]).join(" ");
+	p.innerHTML = new Array(...d.getElementsByTagName('dd'))
+		.filter(x => x.innerHTML.slice(0, 3) == 'n.,')
+		.map(x => x.innerHTML[4]).join(" ");
 }
