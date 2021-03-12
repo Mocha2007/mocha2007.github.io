@@ -36,6 +36,13 @@ const isotopeData = [
 		abundance: 0.9241,
 	},
 	{
+		name: 'Be-7',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 53.22*day,
+	},
+	{
 		name: 'Be-9',
 		abundance: 1,
 	},
@@ -2472,6 +2479,14 @@ const isotopeData = [
 		halfLife: 2.858*year,
 	},
 	{
+		name: 'Pu-237',
+		decayTypes: [
+			['ec', 1],
+			['a', 0.000042],
+		],
+		halfLife: 45.2*day,
+	},
+	{
 		name: 'Pu-238',
 		decayTypes: [
 			['a', 1],
@@ -2578,6 +2593,14 @@ const isotopeData = [
 			['b-', 1],
 		],
 		halfLife: 23*minute,
+	},
+	{
+		name: 'Cm-241',
+		decayTypes: [
+			['ec', 0.99],
+			['a', 0.01],
+		],
+		halfLife: 32.8*day,
 	},
 	{
 		name: 'Cm-243',
