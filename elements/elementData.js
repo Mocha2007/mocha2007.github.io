@@ -1340,7 +1340,6 @@ const elementData = [
 		name: 'Lanthanum',
 		symbol: 'La',
 		mass: 138.90547,
-		group: 3,
 		period: 6,
 		properties: {
 			abundance: {
@@ -1600,6 +1599,7 @@ const elementData = [
 		name: 'Lutetium',
 		symbol: 'Lu',
 		mass: 174.9668,
+		group: 3,
 		period: 6,
 		properties: {
 			abundance: {
@@ -1974,7 +1974,6 @@ const elementData = [
 		name: 'Actinium',
 		symbol: 'Ac',
 		mass: 227,
-		group: 3,
 		period: 7,
 		properties: {
 			abundance: {
@@ -2183,6 +2182,7 @@ const elementData = [
 		name: 'Lawrencium',
 		symbol: 'Lr',
 		mass: 266,
+		group: 3,
 		period: 7,
 		properties: {
 			density: 16100,
@@ -2377,5 +2377,16 @@ const elementData = [
 			density: 7000,
 			discovery: 2002,
 		},
-	},
+	},/* somehow this actually doesn't break the table!!! wow
+	{
+		z: 119,
+		name: 'Ununennium',
+		symbol: 'Uue',
+		mass: 316, // predicted to be the most stable
+		group: 1,
+		period: 8,
+		properties: {
+			density: 3000,
+		},
+	},*/
 ];
