@@ -1198,6 +1198,9 @@ const elementData = [
 				universe: 8e-10,
 			},
 			biologicalHalfLife: 2.5*month, // 1-4 mos
+			prices: {
+				2018: 61.8e3,
+			},
 			rgb: 'rgb(255, 212, 153)',
 		},
 	},
@@ -1215,6 +1218,9 @@ const elementData = [
 				universe: 1e-8,
 			},
 			biologicalHalfLife: 65*day, // Ba-140; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			prices: {
+				2016: 0.261,
+			},
 		},
 	},
 	{
@@ -1231,6 +1237,9 @@ const elementData = [
 				universe: 2e-9,
 			},
 			nutrition: 5,
+			prices: {
+				2020: 4.85,
+			},
 		},
 	},
 	{
@@ -1246,6 +1255,9 @@ const elementData = [
 				universe: 1e-8,
 			},
 			nutrition: 5,
+			prices: {
+				2020: 31.4,
+			},
 		},
 	},
 	{
@@ -1260,6 +1272,9 @@ const elementData = [
 				universe: 2e-9,
 			},
 			nutrition: 5,
+			prices: {
+				2019: 103,
+			},
 		},
 	},
 	{
@@ -1274,6 +1289,9 @@ const elementData = [
 				universe: 1e-8,
 			},
 			nutrition: 5,
+			prices: {
+				2019: 57.5,
+			},
 			production: 7000,
 		},
 	},
@@ -1283,6 +1301,11 @@ const elementData = [
 		symbol: 'Pm',
 		mass: 145,
 		period: 6,
+		properties: {
+			prices: {
+				2003: 460e3,
+			},
+		}
 	},
 	{
 		z: 62,
@@ -1297,6 +1320,9 @@ const elementData = [
 				universe: 5e-9,
 			},
 			nutrition: 5,
+			prices: {
+				2019: 13.9,
+			},
 			production: 700,
 		},
 	},
@@ -1311,6 +1337,9 @@ const elementData = [
 				earth: 17e-9,
 				universe: 5e-10,
 			},
+			prices: {
+				2020: 31.4,
+			},
 		},
 	},
 	{
@@ -1323,6 +1352,9 @@ const elementData = [
 			abundance: {
 				earth: 61e-9,
 				universe: 2e-9,
+			},
+			prices: {
+				2020: 28.6,
 			},
 		},
 	},
@@ -1337,6 +1369,9 @@ const elementData = [
 				earth: 11e-9,
 				universe: 5e-10,
 			},
+			prices: {
+				2019: 658,
+			},
 		},
 	},
 	{
@@ -1349,6 +1384,9 @@ const elementData = [
 			abundance: {
 				earth: 74e-9,
 				universe: 2e-9,
+			},
+			prices: {
+				2019: 307,
 			},
 			production: 100,
 		},
@@ -1364,6 +1402,9 @@ const elementData = [
 				earth: 16e-9,
 				universe: 5e-10,
 			},
+			prices: {
+				2020: 57.1,
+			},
 		},
 	},
 	{
@@ -1376,6 +1417,9 @@ const elementData = [
 			abundance: {
 				earth: 47e-9,
 				universe: 2e-9,
+			},
+			prices: {
+				2020: 26.4,
 			},
 		},
 	},
@@ -1390,6 +1434,9 @@ const elementData = [
 				earth: 7e-9,
 				universe: 1e-10,
 			},
+			prices: {
+				2003: 3000,
+			},
 		},
 	},
 	{
@@ -1403,6 +1450,9 @@ const elementData = [
 				earth: 45e-9,
 				universe: 2e-9,
 			},
+			prices: {
+				2020: 17.1,
+			},
 		},
 	},
 	{
@@ -1415,6 +1465,9 @@ const elementData = [
 			abundance: {
 				earth: 7e-9,
 				universe: 1e-10,
+			},
+			prices: {
+				2020: 643,
 			},
 		},
 	},
@@ -1431,6 +1484,9 @@ const elementData = [
 				universe: 7e-10,
 			},
 			nobleMetal: 0,
+			prices: {
+				2017: 900,
+			},
 			production: 10,
 		},
 	},
@@ -1449,6 +1505,7 @@ const elementData = [
 			},
 			nobleMetal: 0,
 			prices: {
+				2019: 305,
 				2018: 151.8,
 			},
 			production: 1.8e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-tantalum.pdf
@@ -1470,6 +1527,7 @@ const elementData = [
 			nobleMetal: 0,
 			nutrition: 5,
 			prices: {
+				2019: 35.3,
 				2018: 30.3,
 			},
 			production: 37400,
@@ -1488,6 +1546,9 @@ const elementData = [
 				universe: 2e-10,
 			},
 			nobleMetal: 2,
+			prices: {
+				2020: 3580,
+			},
 			production: 45,
 		},
 	},
@@ -1506,6 +1567,7 @@ const elementData = [
 			nobleMetal: 1,
 			prices: {
 				2018: 400/ounce,
+				2016: 12e3,
 			},
 			production: 1,
 		},
@@ -1525,6 +1587,7 @@ const elementData = [
 			nobleMetal: 1,
 			prices: {
 				2021: 5500/ounce,
+				2020: 55850,
 			},
 			production: 3,
 		},
@@ -1544,6 +1607,7 @@ const elementData = [
 			nobleMetal: 1,
 			prices: {
 				2021: 1227/ounce,
+				2020: 27800,
 			},
 			production: 239,
 		},
@@ -1565,6 +1629,7 @@ const elementData = [
 			nobleMetal: 2,
 			prices: {
 				2021: 1711.5/ounce,
+				2020: 44800,
 			},
 			production: 2310,
 			rgb: 'rgb(255, 211, 109)',
@@ -1585,6 +1650,9 @@ const elementData = [
 			},
 			biologicalHalfLife: 65*day, // as methylmercury; in blood
 			nobleMetal: 2,
+			prices: {
+				2017: 30.2,
+			},
 			production: 4e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-mercury.pdf
 		},
 	},
@@ -1600,6 +1668,9 @@ const elementData = [
 				earth: 2e-9,
 				human: 7e-11,
 				universe: 5e-10,
+			},
+			prices: {
+				2017: 4200,
 			},
 			production: 10,
 			rgb: 'rgb(255, 252, 253)',
@@ -1622,6 +1693,7 @@ const elementData = [
 			nutrition: 4,
 			prices: {
 				2021: 0.8729/pound,
+				2019: 2,
 			},
 			production: 8725e3,
 			rgb: 'rgb(255, 255, 255)',
@@ -1641,6 +1713,9 @@ const elementData = [
 				universe: 7e-10,
 			},
 			nobleMetal: 3,
+			prices: {
+				2019: 6.36,
+			},
 			production: 15e3,
 			rgb: 'rgb(255, 245, 232)',
 		},
@@ -1658,6 +1733,9 @@ const elementData = [
 			},
 			biologicalHalfLife: 40*day, // 30-50 d
 			nobleMetal: 4,
+			/* prices: {
+				2004: 49.2e12,
+			}, */
 			production: 100e-6,
 			rgb: 'rgb(234, 242, 255)',
 		},
@@ -1724,6 +1802,9 @@ const elementData = [
 			abundance: {
 				earth: 2e-7 * 2e-9, // https://en.wikipedia.org/wiki/Actinium#Occurrence_and_synthesis
 			},
+			/* prices: {
+				2004: 29e12,
+			}, */
 		},
 	},
 	{
@@ -1738,6 +1819,9 @@ const elementData = [
 				human: 3e-11,
 				universe: 4e-10,
 			},
+			prices: {
+				2010: 287,
+			},
 			production: 1.2e3, // US, est. https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-thorium.pdf
 			rgb: 'rgb(255, 229, 216)',
 		},
@@ -1748,6 +1832,11 @@ const elementData = [
 		symbol: 'Pa',
 		mass: 231.03588,
 		period: 7,
+		properties: {
+			prices: {
+				2011: 280e3,
+			},
+		}
 	},
 	{
 		z: 92,
@@ -1763,7 +1852,7 @@ const elementData = [
 			},
 			biologicalHalfLife: 15*day, // U-235; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			prices: {
-				2018: 21.5/pound,
+				2018: 101,
 			},
 			production: 50572,
 			rgb: 'rgb(255, 251, 242)',
@@ -1775,6 +1864,11 @@ const elementData = [
 		symbol: 'Np',
 		mass: 237,
 		period: 7,
+		properties: {
+			prices: {
+				2020: 660e3,
+			},
+		}
 	},
 	{
 		z: 94,
@@ -1784,6 +1878,9 @@ const elementData = [
 		period: 7,
 		properties: {
 			biologicalHalfLife: 40*year, // in liver
+			/* prices: {
+				2019: 6.49e6,
+			}, */
 			rgb: 'rgb(255, 226, 249)',
 		},
 	},
@@ -1794,6 +1891,9 @@ const elementData = [
 		mass: 243,
 		period: 7,
 		properties: {
+			prices: {
+				1998: 728e3,
+			},
 			rgb: 'rgb(255, 233, 224)',
 		},
 	},
@@ -1804,6 +1904,9 @@ const elementData = [
 		mass: 247,
 		period: 7,
 		properties: {
+			/* prices: {
+				2004: 185e6,
+			}, */
 			rgb: 'rgb(255, 255, 216)',
 		},
 	},
@@ -1813,6 +1916,11 @@ const elementData = [
 		symbol: 'Bk',
 		mass: 247,
 		period: 7,
+		properties: {
+			/* prices: {
+				2004: 185e9,
+			}, */
+		}
 	},
 	{
 		z: 98,
@@ -1821,6 +1929,9 @@ const elementData = [
 		mass: 251,
 		period: 7,
 		properties: {
+			/* prices: {
+				2004: 906e9,
+			}, */
 			production: 0.275e-6,
 		},
 	},
