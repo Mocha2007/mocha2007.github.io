@@ -1096,6 +1096,13 @@ const isotopeData = [
 		halfLife: 1.57e7*year,
 	},
 	{
+		name: 'I-131',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 8.0207*day,
+	},
+	{
 		name: 'Xe-124',
 		decayTypes: [
 			['ecec', 1],
@@ -1523,6 +1530,13 @@ const isotopeData = [
 	{
 		name: 'Er-170',
 		abundance: 0.1491,
+	},
+	{
+		name: 'Tm-167',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 9.25*day,
 	},
 	{
 		name: 'Tm-168',
@@ -2041,6 +2055,14 @@ const isotopeData = [
 			['b-', 1],
 		],
 		halfLife: 7.6*minute,
+	},
+	{
+		name: 'Po-206',
+		decayTypes: [
+			['b+', 0.9455],
+			['a', 0.0545],
+		],
+		halfLife: 8.8*day,
 	},
 	{
 		name: 'Po-208',
@@ -2886,6 +2908,13 @@ const isotopeData = [
 			['b-', 1],
 		],
 		halfLife: 25.4*minute,
+	},
+	{
+		name: 'Es-257',
+		decayTypes: [
+			['b-', 1], // also lists alpha with no %
+		],
+		halfLife: 7.7*day,
 	},
 	{
 		name: 'Fm-252',
