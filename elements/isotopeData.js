@@ -3340,7 +3340,7 @@ const isotopeData = [
 		decayTypes: [
 			['a', 1],
 		],
-		halfLife: 67,
+		halfLife: 9.6,
 	},
 	{
 		name: 'Rg-282',
@@ -3360,7 +3360,7 @@ const isotopeData = [
 		name: 'Cn-283',
 		decayTypes: [
 			['a', 0.9],
-			['sf', 0.1],
+			['sf', 0.1], // ec listed as a "maybe"
 		],
 		halfLife: 4,
 	},
@@ -3388,14 +3388,14 @@ const isotopeData = [
 	{
 		name: 'Fl-287',
 		decayTypes: [
-			['a', 1],
+			['a', 1], // ec listed as a maybe
 		],
 		halfLife: 0.51,
 	},
 	{
 		name: 'Fl-290',
 		decayTypes: [
-			['ec', 1],
+			['ec', 1], // a listed as secondary, no % given
 		],
 		halfLife: 19,
 	},
