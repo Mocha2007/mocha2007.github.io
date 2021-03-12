@@ -36,6 +36,7 @@ const elementData = [
 				universe: 0.739,
 			},
 			biologicalHalfLife: 12*day, // tritium; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			discovery: 1500,
 			modelColor: 'white',
 			nutrition: 0,
 			prices: {
@@ -55,6 +56,7 @@ const elementData = [
 			abundance: {
 				universe: 0.24,
 			},
+			discovery: 1895,
 			modelColor: 'rgb(217, 255, 255)',
 			prices: {
 				2018: 24,
@@ -75,6 +77,7 @@ const elementData = [
 				human: 1.5e-8,
 				universe: 6e-9,
 			},
+			discovery: 1821,
 			modelColor: 'rgb(204, 128, 255)',
 			nutrition: 3,
 			prices: {
@@ -98,6 +101,7 @@ const elementData = [
 				human: 4.5e-10,
 				universe: 1e-9,
 			},
+			discovery: 1828,
 			modelColor: 'rgb(194, 255, 0)',
 			prices: {
 				2020: 857,
@@ -119,6 +123,7 @@ const elementData = [
 				human: 3e-8,
 				universe: 1e-9,
 			},
+			discovery: 1808,
 			modelColor: 'rgb(255, 181, 181)',
 			nutrition: 3,
 			prices: {
@@ -142,6 +147,7 @@ const elementData = [
 				universe: 4600e-6,
 			},
 			biologicalHalfLife: 40*day, // C-14; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			discovery: -3750,
 			modelColor: 'rgb(144, 144, 144)',
 			nutrition: 0,
 			prices: {
@@ -164,6 +170,7 @@ const elementData = [
 				human: 0.011,
 				universe: 960e-6,
 			},
+			discovery: 1772,
 			modelColor: 'rgb(48, 80, 248)',
 			nutrition: 0,
 			prices: {
@@ -185,6 +192,7 @@ const elementData = [
 				human: 0.24,
 				universe: 10400e-6,
 			},
+			discovery: 1604,
 			modelColor: 'rgb(255, 13, 13)',
 			nutrition: 0,
 			prices: {
@@ -206,7 +214,8 @@ const elementData = [
 				human: 1.2e-5,
 				universe: 4e-7,
 			},
-			biologicalHalfLife: 450*day, // personal estimate; 2.6 g magnesium per person, 4 mg/day per person
+			discovery: 1886,
+			biologicalHalfLife: 450*day, // personal estimate; 2.6 g fluorine per person, 4 mg/day per person
 			modelColor: 'rgb(144, 224, 80)',
 			nutrition: 3,
 			prices: {
@@ -227,6 +236,7 @@ const elementData = [
 			abundance: {
 				universe: 1340e-6,
 			},
+			discovery: 1898,
 			modelColor: 'rgb(179, 227, 245)',
 			prices: {
 				1999: 240,
@@ -249,6 +259,7 @@ const elementData = [
 			},
 			biologicalHalfLife: 69*day, // personal estimate; 100 g sodium per person, 1 mg/day per person
 			// 11 d according to http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			discovery: 1807,
 			modelColor: 'rgb(171, 92, 242)',
 			nutrition: 1,
 			prices: {
@@ -272,6 +283,7 @@ const elementData = [
 				universe: 580e-6,
 			},
 			biologicalHalfLife: 44*day, // personal estimate; 19 g magnesium per person, 300 mg/day per person
+			discovery: 1808,
 			modelColor: 'rgb(138, 255, 0)',
 			nutrition: 1,
 			prices: {
@@ -294,6 +306,7 @@ const elementData = [
 				human: 1.5e-7,
 				universe: 58e-6,
 			},
+			discovery: 1825,
 			modelColor: 'rgb(191, 166, 166)',
 			nutrition: 4,
 			prices: {
@@ -317,6 +330,7 @@ const elementData = [
 				human: 5.8e-5,
 				universe: 650e-6,
 			},
+			discovery: 1823,
 			modelColor: 'rgb(240, 200, 160)',
 			nutrition: 3,
 			prices: {
@@ -341,6 +355,7 @@ const elementData = [
 			},
 			biologicalHalfLife: 932*day, // personal estimate; 780 g phosphorus per person, 580 mg/day per person
 			// 1155 d according to http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			discovery: 1669,
 			modelColor: 'rgb(255, 128, 0)',
 			nutrition: 1,
 			prices: {
@@ -364,6 +379,7 @@ const elementData = [
 				universe: 440e-6,
 			},
 			biologicalHalfLife: 90*day, // S-35; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			discovery: -2000,
 			modelColor: 'rgb(255, 255, 48)',
 			nutrition: 1,
 			prices: {
@@ -387,6 +403,7 @@ const elementData = [
 				universe: 1e-6,
 			},
 			biologicalHalfLife: 29*day, // Cl-36; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			discovery: 1774,
 			modelColor: 'rgb(31, 240, 31)',
 			nutrition: 1,
 			prices: {
@@ -406,6 +423,7 @@ const elementData = [
 			abundance: {
 				universe: 77e-6,
 			},
+			discovery: 1894,
 			modelColor: 'rgb(128, 209, 227)',
 			prices: {
 				2019: 0.931,
@@ -427,6 +445,7 @@ const elementData = [
 				universe: 3e-6,
 			},
 			biologicalHalfLife: 20*day, // personal estimate; 140 g potassium per person, 4.7 mg/day per person
+			discovery: 1807,
 			modelColor: 'rgb(143, 64, 212)',
 			nutrition: 1,
 			prices: {
@@ -448,6 +467,7 @@ const elementData = [
 				universe: 60e-6,
 			},
 			biologicalHalfLife: 693*day, // personal estimate; 1kg calcium per person, 1 g/day per person
+			discovery: 1808,
 			modelColor: 'rgb(61, 255, 0)',
 			nutrition: 1,
 			prices: {
@@ -468,6 +488,7 @@ const elementData = [
 				human: 4e-10,
 				universe: 3e-8,
 			},
+			discovery: 1879,
 			modelColor: 'rgb(230, 230, 230)',
 			prices: {
 				2020: 3460,
@@ -488,6 +509,7 @@ const elementData = [
 				human: 4e-8,
 				universe: 3e-6,
 			},
+			discovery: 1825,
 			modelColor: 'rgb(191, 194, 199)',
 			nobleMetal: 0,
 			prices: {
@@ -510,6 +532,7 @@ const elementData = [
 				human: 1.2e-10,
 				universe: 1e-6,
 			},
+			discovery: 1867,
 			modelColor: 'rgb(166, 166, 171)',
 			nobleMetal: 0,
 			nutrition: 3,
@@ -533,6 +556,7 @@ const elementData = [
 				universe: 1.5e-5,
 			},
 			biologicalHalfLife: 320*day, // personal estimate; 14 mg chromium per person, 0.03 mg/day per person
+			discovery: 1797,
 			modelColor: 'rgb(138, 153, 199)',
 			nobleMetal: 0,
 			nutrition: 2,
@@ -557,6 +581,7 @@ const elementData = [
 				universe: 8e-6,
 			},
 			biologicalHalfLife: 3.8*day, // personal estimate; 12 mg manganese per person, 2 mg/day per person
+			discovery: 1774,
 			modelColor: 'rgb(156, 122, 199)',
 			nutrition: 2,
 			prices: {
@@ -580,6 +605,7 @@ const elementData = [
 				universe: 1.09e-3,
 			},
 			biologicalHalfLife: 485*day, // personal estimate; 4.2g iron per person, 6 mg/day per person; 0.5^(1/L) = 1 - 0.006/4.2
+			discovery: -5000,
 			modelColor: 'rgb(224, 102, 51)',
 			nutrition: 2,
 			prices: {
@@ -605,6 +631,7 @@ const elementData = [
 				universe: 3e-6,
 			},
 			biologicalHalfLife: 10*day, // Co-60; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			discovery: 1735,
 			modelColor: 'rgb(240, 144, 160)',
 			nutrition: 2,
 			prices: {
@@ -628,6 +655,7 @@ const elementData = [
 				human: 1.5e-8,
 				universe: 49e-6,
 			},
+			discovery: 1751,
 			modelColor: 'rgb(80, 208, 80)',
 			nutrition: 3,
 			prices: {
@@ -652,6 +680,7 @@ const elementData = [
 				universe: 6e-8,
 			},
 			biologicalHalfLife: 55*day, // personal estimate; 72 mg copper per person, 0.9 mg/day per person
+			discovery: -9000,
 			modelColor: 'rgb(200, 128, 51)',
 			nobleMetal: 2,
 			nutrition: 2,
@@ -677,7 +706,8 @@ const elementData = [
 				human: 3.1e-6,
 				universe: 3e-7,
 			},
-			biologicalHalfLife: 200*day, // personal estimate; 2.3 g magnesium per person, 8 mg/day per person
+			biologicalHalfLife: 200*day, // personal estimate; 2.3 g zinc per person, 8 mg/day per person
+			discovery: -1000,
 			modelColor: 'rgb(125, 128, 176)',
 			nutrition: 2,
 			prices: {
@@ -700,6 +730,7 @@ const elementData = [
 				human: 7e-6,
 				universe: 1e-8,
 			},
+			discovery: 1875,
 			modelColor: 'rgb(194, 143, 143)',
 			prices: {
 				2020: 148,
@@ -720,6 +751,7 @@ const elementData = [
 				human: 6e-10,
 				universe: 2e-7,
 			},
+			discovery: 1886,
 			modelColor: 'rgb(102, 143, 143)',
 			nutrition: 4,
 			prices: {
@@ -741,6 +773,7 @@ const elementData = [
 				human: 8.9e-10,
 				universe: 8e-9,
 			},
+			discovery: 815,
 			modelColor: 'rgb(189, 128, 227)',
 			nobleMetal: 3,
 			nutrition: 4,
@@ -765,6 +798,7 @@ const elementData = [
 				universe: 3e-8,
 			},
 			biologicalHalfLife: 190*day, // personal estimate; 15 mg selenium per person, 0.055 mg/day per person
+			discovery: 1817,
 			modelColor: 'rgb(255, 161, 0)',
 			nobleMetal: 3,
 			nutrition: 2,
@@ -787,6 +821,7 @@ const elementData = [
 				human: 3e-7,
 				universe: 7e-9,
 			},
+			discovery: 1825,
 			modelColor: 'rgb(166, 41, 41)',
 			nutrition: 3,
 			prices: {
@@ -807,6 +842,7 @@ const elementData = [
 			abundance: {
 				universe: 4e-8,
 			},
+			discovery: 1898,
 			modelColor: 'rgb(92, 184, 209)',
 			prices: {
 				1999: 290,
@@ -827,6 +863,7 @@ const elementData = [
 				universe: 1e-8,
 			},
 			biologicalHalfLife: 45*day, // Rb-86; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			discovery: 1861,
 			nutrition: 4,
 			prices: {
 				2018: 15500,
@@ -848,6 +885,7 @@ const elementData = [
 				universe: 4e-8,
 			},
 			biologicalHalfLife: 1.8e4*day, // Sr-90; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			discovery: 1808,
 			nutrition: 3,
 			prices: {
 				2019: 6.61,
@@ -868,6 +906,7 @@ const elementData = [
 				human: 6e-10,
 				universe: 7e-9,
 			},
+			discovery: 1843,
 			prices: {
 				2019: 31,
 			},
@@ -887,6 +926,7 @@ const elementData = [
 				human: 3e-9,
 				universe: 5e-8,
 			},
+			discovery: 1824,
 			nobleMetal: 0,
 			prices: {
 				2020: 36.4,
@@ -907,6 +947,7 @@ const elementData = [
 				human: 1e-10,
 				universe: 2e-9,
 			},
+			discovery: 1864,
 			nobleMetal: 0,
 			prices: {
 				2018: 42.28,
@@ -931,6 +972,7 @@ const elementData = [
 				universe: 5e-9,
 			},
 			biologicalHalfLife: 77*day, // personal estimate; 5 mg molybdenum per person, 0.045 mg/day per person
+			discovery: 1781,
 			nobleMetal: 0,
 			nutrition: 2,
 			prices: {
@@ -952,6 +994,7 @@ const elementData = [
 				earth: 0.003e-12, // https://en.wikipedia.org/wiki/Technetium#Occurrence_and_production
 			},
 			biologicalHalfLife: day, // Tc-99m; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			discovery: 1937,
 			nobleMetal: 4,
 			prices: {
 				2004: 1e5,
@@ -970,6 +1013,7 @@ const elementData = [
 				earth: 330e-9,
 				universe: 4e-9,
 			},
+			discovery: 1844,
 			nobleMetal: 1,
 			prices: {
 				2021: 370/ounce,
@@ -990,6 +1034,7 @@ const elementData = [
 				earth: 61e-9,
 				universe: 6e-10,
 			},
+			discovery: 1804,
 			nobleMetal: 1,
 			prices: {
 				2021: 25700/ounce,
@@ -1010,6 +1055,7 @@ const elementData = [
 				earth: 240e-9,
 				universe: 2e-9,
 			},
+			discovery: 1802,
 			nobleMetal: 1,
 			prices: {
 				2021: 2350/ounce,
@@ -1031,6 +1077,7 @@ const elementData = [
 				human: 2e-9,
 				universe: 6e-10,
 			},
+			discovery: -5000,
 			nobleMetal: 2,
 			prices: {
 				2021: 25.645/ounce,
@@ -1054,6 +1101,7 @@ const elementData = [
 				universe: 2e-9,
 			},
 			biologicalHalfLife: 30*year, // in bone
+			discovery: 1817,
 			nutrition: 5,
 			prices: {
 				2019: 2.73,
@@ -1075,6 +1123,7 @@ const elementData = [
 				human: 4e-10,
 				universe: 3e-10,
 			},
+			discovery: 1867,
 			prices: {
 				2019: 167,
 			},
@@ -1095,6 +1144,7 @@ const elementData = [
 				universe: 4e-9,
 			},
 			biologicalHalfLife: 3.5*day, // rats; oral; diethyltin chloride; https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/biological-half-life
+			discovery: -3500,
 			nutrition: 4,
 			prices: {
 				2021: 12.565/pound,
@@ -1117,6 +1167,7 @@ const elementData = [
 				human: 6e-10,
 				universe: 4e-10,
 			},
+			discovery: 815,
 			nobleMetal: 3,
 			prices: {
 				2019: 5.79,
@@ -1137,6 +1188,7 @@ const elementData = [
 				human: 2e-10,
 				universe: 9e-9,
 			},
+			discovery: 1782,
 			nobleMetal: 3,
 			prices: {
 				2019: 63.5,
@@ -1158,6 +1210,7 @@ const elementData = [
 				universe: 1e-9,
 			},
 			biologicalHalfLife: 66.1*day, // https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/biological-half-life
+			discovery: 1811,
 			nutrition: 2,
 			prices: {
 				2019: 35,
@@ -1177,6 +1230,7 @@ const elementData = [
 			abundance: {
 				universe: 1e-8,
 			},
+			discovery: 1898,
 			prices: {
 				1999: 1800,
 			},
@@ -1198,6 +1252,7 @@ const elementData = [
 				universe: 8e-10,
 			},
 			biologicalHalfLife: 2.5*month, // 1-4 mos
+			discovery: 1882,
 			prices: {
 				2018: 61.8e3,
 			},
@@ -1218,6 +1273,7 @@ const elementData = [
 				universe: 1e-8,
 			},
 			biologicalHalfLife: 65*day, // Ba-140; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			discovery: 1808,
 			prices: {
 				2016: 0.261,
 			},
@@ -1236,6 +1292,7 @@ const elementData = [
 				human: 4e-10,
 				universe: 2e-9,
 			},
+			discovery: 1841,
 			nutrition: 5,
 			prices: {
 				2020: 4.85,
@@ -1254,6 +1311,7 @@ const elementData = [
 				human: 2e-8,
 				universe: 1e-8,
 			},
+			discovery: 1838,
 			nutrition: 5,
 			prices: {
 				2020: 31.4,
@@ -1271,6 +1329,7 @@ const elementData = [
 				earth: 31e-9,
 				universe: 2e-9,
 			},
+			discovery: 1885,
 			nutrition: 5,
 			prices: {
 				2019: 103,
@@ -1288,6 +1347,7 @@ const elementData = [
 				earth: 150e-9,
 				universe: 1e-8,
 			},
+			discovery: 1885,
 			nutrition: 5,
 			prices: {
 				2019: 57.5,
@@ -1302,6 +1362,7 @@ const elementData = [
 		mass: 145,
 		period: 6,
 		properties: {
+			discovery: 1945,
 			prices: {
 				2003: 460e3,
 			},
@@ -1319,6 +1380,7 @@ const elementData = [
 				human: 3e-11,
 				universe: 5e-9,
 			},
+			discovery: 1879,
 			nutrition: 5,
 			prices: {
 				2019: 13.9,
@@ -1337,6 +1399,7 @@ const elementData = [
 				earth: 17e-9,
 				universe: 5e-10,
 			},
+			discovery: 1901,
 			prices: {
 				2020: 31.4,
 			},
@@ -1353,6 +1416,7 @@ const elementData = [
 				earth: 61e-9,
 				universe: 2e-9,
 			},
+			discovery: 1886,
 			prices: {
 				2020: 28.6,
 			},
@@ -1369,6 +1433,7 @@ const elementData = [
 				earth: 11e-9,
 				universe: 5e-10,
 			},
+			discovery: 1886,
 			prices: {
 				2019: 658,
 			},
@@ -1385,6 +1450,7 @@ const elementData = [
 				earth: 74e-9,
 				universe: 2e-9,
 			},
+			discovery: 1886,
 			prices: {
 				2019: 307,
 			},
@@ -1402,6 +1468,7 @@ const elementData = [
 				earth: 16e-9,
 				universe: 5e-10,
 			},
+			discovery: 1879,
 			prices: {
 				2020: 57.1,
 			},
@@ -1418,6 +1485,7 @@ const elementData = [
 				earth: 47e-9,
 				universe: 2e-9,
 			},
+			discovery: 1879,
 			prices: {
 				2020: 26.4,
 			},
@@ -1434,6 +1502,7 @@ const elementData = [
 				earth: 7e-9,
 				universe: 1e-10,
 			},
+			discovery: 1879,
 			prices: {
 				2003: 3000,
 			},
@@ -1450,6 +1519,7 @@ const elementData = [
 				earth: 45e-9,
 				universe: 2e-9,
 			},
+			discovery: 1906,
 			prices: {
 				2020: 17.1,
 			},
@@ -1466,6 +1536,7 @@ const elementData = [
 				earth: 7e-9,
 				universe: 1e-10,
 			},
+			discovery: 1906,
 			prices: {
 				2020: 643,
 			},
@@ -1483,6 +1554,7 @@ const elementData = [
 				earth: 28e-9,
 				universe: 7e-10,
 			},
+			discovery: 1922,
 			nobleMetal: 0,
 			prices: {
 				2017: 900,
@@ -1503,6 +1575,7 @@ const elementData = [
 				human: 3e-9,
 				universe: 8e-11,
 			},
+			discovery: 1802,
 			nobleMetal: 0,
 			prices: {
 				2019: 305,
@@ -1524,6 +1597,7 @@ const elementData = [
 				human: 3e-10,
 				universe: 5e-10,
 			},
+			discovery: 1783,
 			nobleMetal: 0,
 			nutrition: 5,
 			prices: {
@@ -1545,6 +1619,7 @@ const elementData = [
 				earth: 10e-9,
 				universe: 2e-10,
 			},
+			discovery: 1919,
 			nobleMetal: 2,
 			prices: {
 				2020: 3580,
@@ -1564,6 +1639,7 @@ const elementData = [
 				earth: 120e-9,
 				universe: 3e-9,
 			},
+			discovery: 1803,
 			nobleMetal: 1,
 			prices: {
 				2018: 400/ounce,
@@ -1584,6 +1660,7 @@ const elementData = [
 				earth: 120e-9,
 				universe: 2e-9,
 			},
+			discovery: 1803,
 			nobleMetal: 1,
 			prices: {
 				2021: 5500/ounce,
@@ -1604,6 +1681,7 @@ const elementData = [
 				earth: 250e-9,
 				universe: 5e-9,
 			},
+			discovery: 1735,
 			nobleMetal: 1,
 			prices: {
 				2021: 1227/ounce,
@@ -1626,6 +1704,7 @@ const elementData = [
 				universe: 6e-10,
 			},
 			biologicalHalfLife: 280*day, // Au-198; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			discovery: -6000,
 			nobleMetal: 2,
 			prices: {
 				2021: 1711.5/ounce,
@@ -1649,6 +1728,7 @@ const elementData = [
 				universe: 1e-9,
 			},
 			biologicalHalfLife: 65*day, // as methylmercury; in blood
+			discovery: -1500,
 			nobleMetal: 2,
 			prices: {
 				2017: 30.2,
@@ -1669,6 +1749,7 @@ const elementData = [
 				human: 7e-11,
 				universe: 5e-10,
 			},
+			discovery: 1862,
 			prices: {
 				2017: 4200,
 			},
@@ -1690,6 +1771,7 @@ const elementData = [
 				universe: 1e-8,
 			},
 			biologicalHalfLife: 32*day, // 28-36 d in blood
+			discovery: -7000,
 			nutrition: 4,
 			prices: {
 				2021: 0.8729/pound,
@@ -1712,6 +1794,7 @@ const elementData = [
 				human: 2e-10,
 				universe: 7e-10,
 			},
+			discovery: 1000,
 			nobleMetal: 3,
 			prices: {
 				2019: 6.36,
@@ -1732,6 +1815,7 @@ const elementData = [
 				earth: 0.2e-2 * 9e-13, // https://en.wikipedia.org/wiki/Polonium#Occurrence_and_production
 			},
 			biologicalHalfLife: 40*day, // 30-50 d
+			discovery: 1902,
 			nobleMetal: 4,
 			/* prices: {
 				2004: 49.2e12,
@@ -1751,6 +1835,7 @@ const elementData = [
 			abundance: {
 				earth: 1e-24, // https://en.wikipedia.org/wiki/Astatine#Natural_occurrence
 			},
+			discovery: 1940,
 			nobleMetal: 4,
 		},
 	},
@@ -1761,6 +1846,9 @@ const elementData = [
 		mass: 222,
 		group: 18,
 		period: 6,
+		properties: {
+			discovery: 1910,
+		},
 	},
 	{
 		z: 87,
@@ -1773,6 +1861,7 @@ const elementData = [
 			abundance: {
 				earth: 1e-18 * 2e-9, // https://en.wikipedia.org/wiki/Francium#Occurrence
 			},
+			discovery: 1939,
 		},
 	},
 	{
@@ -1788,6 +1877,7 @@ const elementData = [
 				human: 1e-19,
 			},
 			biologicalHalfLife: 1.6e4*day, // Ra-226; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			discovery: 1902,
 			rgb: 'rgb(255, 233, 198)',
 		},
 	},
@@ -1802,6 +1892,7 @@ const elementData = [
 			abundance: {
 				earth: 2e-7 * 2e-9, // https://en.wikipedia.org/wiki/Actinium#Occurrence_and_synthesis
 			},
+			discovery: 1902,
 			/* prices: {
 				2004: 29e12,
 			}, */
@@ -1819,6 +1910,7 @@ const elementData = [
 				human: 3e-11,
 				universe: 4e-10,
 			},
+			discovery: 1914,
 			prices: {
 				2010: 287,
 			},
@@ -1833,6 +1925,7 @@ const elementData = [
 		mass: 231.03588,
 		period: 7,
 		properties: {
+			discovery: 1927,
 			prices: {
 				2011: 280e3,
 			},
@@ -1851,6 +1944,7 @@ const elementData = [
 				universe: 2e-10,
 			},
 			biologicalHalfLife: 15*day, // U-235; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			discovery: 1841,
 			prices: {
 				2018: 101,
 			},
@@ -1865,6 +1959,7 @@ const elementData = [
 		mass: 237,
 		period: 7,
 		properties: {
+			discovery: 1940,
 			prices: {
 				2020: 660e3,
 			},
@@ -1881,6 +1976,7 @@ const elementData = [
 			/* prices: {
 				2019: 6.49e6,
 			}, */
+			discovery: 1940,
 			rgb: 'rgb(255, 226, 249)',
 		},
 	},
@@ -1891,6 +1987,7 @@ const elementData = [
 		mass: 243,
 		period: 7,
 		properties: {
+			discovery: 1944,
 			prices: {
 				1998: 728e3,
 			},
@@ -1904,6 +2001,7 @@ const elementData = [
 		mass: 247,
 		period: 7,
 		properties: {
+			discovery: 1944,
 			/* prices: {
 				2004: 185e6,
 			}, */
@@ -1917,6 +2015,7 @@ const elementData = [
 		mass: 247,
 		period: 7,
 		properties: {
+			discovery: 1949,
 			/* prices: {
 				2004: 185e9,
 			}, */
@@ -1929,6 +2028,7 @@ const elementData = [
 		mass: 251,
 		period: 7,
 		properties: {
+			discovery: 1950,
 			/* prices: {
 				2004: 906e9,
 			}, */
@@ -1941,6 +2041,9 @@ const elementData = [
 		symbol: 'Es',
 		mass: 252,
 		period: 7,
+		properties: {
+			discovery: 1952,
+		}
 	},
 	{
 		z: 100,
@@ -1948,6 +2051,9 @@ const elementData = [
 		symbol: 'Fm',
 		mass: 257,
 		period: 7,
+		properties: {
+			discovery: 1952,
+		}
 	},
 	{
 		z: 101,
@@ -1955,6 +2061,9 @@ const elementData = [
 		symbol: 'Md',
 		mass: 258,
 		period: 7,
+		properties: {
+			discovery: 1955,
+		}
 	},
 	{
 		z: 102,
@@ -1962,6 +2071,9 @@ const elementData = [
 		symbol: 'No',
 		mass: 259,
 		period: 7,
+		properties: {
+			discovery: 1966,
+		}
 	},
 	{
 		z: 103,
@@ -1969,6 +2081,9 @@ const elementData = [
 		symbol: 'Lr',
 		mass: 266,
 		period: 7,
+		properties: {
+			discovery: 1961,
+		}
 	},
 	{
 		z: 104,
@@ -1977,6 +2092,9 @@ const elementData = [
 		mass: 267,
 		group: 4,
 		period: 7,
+		properties: {
+			discovery: 1969,
+		}
 	},
 	{
 		z: 105,
@@ -1985,6 +2103,9 @@ const elementData = [
 		mass: 268,
 		group: 5,
 		period: 7,
+		properties: {
+			discovery: 1970,
+		}
 	},
 	{
 		z: 106,
@@ -1993,6 +2114,9 @@ const elementData = [
 		mass: 269,
 		group: 6,
 		period: 7,
+		properties: {
+			discovery: 1974,
+		}
 	},
 	{
 		z: 107,
@@ -2002,6 +2126,7 @@ const elementData = [
 		group: 7,
 		period: 7,
 		properties: {
+			discovery: 1981,
 			nobleMetal: 5,
 		},
 	},
@@ -2013,6 +2138,7 @@ const elementData = [
 		group: 8,
 		period: 7,
 		properties: {
+			discovery: 1984,
 			nobleMetal: 5,
 		},
 	},
@@ -2024,6 +2150,7 @@ const elementData = [
 		group: 9,
 		period: 7,
 		properties: {
+			discovery: 1982,
 			nobleMetal: 5,
 		},
 	},
@@ -2035,6 +2162,7 @@ const elementData = [
 		group: 10,
 		period: 7,
 		properties: {
+			discovery: 1994,
 			nobleMetal: 5,
 		},
 	},
@@ -2046,6 +2174,7 @@ const elementData = [
 		group: 11,
 		period: 7,
 		properties: {
+			discovery: 1994,
 			nobleMetal: 5,
 		},
 	},
@@ -2057,6 +2186,7 @@ const elementData = [
 		group: 12,
 		period: 7,
 		properties: {
+			discovery: 1996,
 			nobleMetal: 5,
 		},
 	},
@@ -2068,6 +2198,7 @@ const elementData = [
 		group: 13,
 		period: 7,
 		properties: {
+			discovery: 2003,
 			nobleMetal: 5,
 		},
 	},
@@ -2079,6 +2210,7 @@ const elementData = [
 		group: 14,
 		period: 7,
 		properties: {
+			discovery: 1999,
 			nobleMetal: 5,
 		},
 	},
@@ -2089,6 +2221,9 @@ const elementData = [
 		mass: 290,
 		group: 15,
 		period: 7,
+		properties: {
+			discovery: 2003,
+		},
 	},
 	{
 		z: 116,
@@ -2098,6 +2233,7 @@ const elementData = [
 		group: 16,
 		period: 7,
 		properties: {
+			discovery: 2000,
 			nobleMetal: 5,
 		},
 	},
@@ -2108,6 +2244,9 @@ const elementData = [
 		mass: 294,
 		group: 17,
 		period: 7,
+		properties: {
+			discovery: 2009,
+		},
 	},
 	{
 		z: 118,
@@ -2116,5 +2255,8 @@ const elementData = [
 		mass: 295,
 		group: 18,
 		period: 7,
+		properties: {
+			discovery: 2002,
+		},
 	},
 ];

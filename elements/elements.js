@@ -59,6 +59,8 @@ class ChemElement {
 			this.abundance = properties.abundance;
 			/** @type {number} - in seconds */
 			this.biologicalHalfLife = properties.biologicalHalfLife;
+			/** @type {number} - year CE/BCE */
+			this.discovery = properties.discovery;
 			/** @type {string} - color used in models */
 			this.modelColor = properties.modelColor;
 			/** @type {number} */
@@ -217,6 +219,10 @@ class ChemElement {
 				break;
 			case 'category':
 				c = this.color;
+				break;
+			case 'discovery':
+				const ages = elements.filter(e => isFinite(e.discovery)).map(e => Math.log(new Date().getFullYear() - e.discovery));
+				c = gradient1(remap(Math.log(new Date().getFullYear() - this.discovery), [Math.min(...ages), Math.max(...ages)], [0, 1]));
 				break;
 			case 'halflife':
 				if (this.stable)
