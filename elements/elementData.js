@@ -828,6 +828,9 @@ const elementData = [
 			},
 			biologicalHalfLife: 45*day, // Rb-86; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			nutrition: 4,
+			prices: {
+				2018: 15500,
+			},
 			production: 2,
 		},
 	},
@@ -846,6 +849,9 @@ const elementData = [
 			},
 			biologicalHalfLife: 1.8e4*day, // Sr-90; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			nutrition: 3,
+			prices: {
+				2019: 6.61,
+			},
 			production: 220e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-strontium.pdf
 		},
 	},
@@ -861,6 +867,9 @@ const elementData = [
 				earth: 850e-9,
 				human: 6e-10,
 				universe: 7e-9,
+			},
+			prices: {
+				2019: 31,
 			},
 			production: 200,
 		},
@@ -879,6 +888,9 @@ const elementData = [
 				universe: 5e-8,
 			},
 			nobleMetal: 0,
+			prices: {
+				2020: 36.4,
+			},
 			production: 900e3,
 		},
 	},
@@ -898,6 +910,9 @@ const elementData = [
 			nobleMetal: 0,
 			prices: {
 				2018: 42.28,
+			},
+			prices: {
+				2020: 73.5,
 			},
 			production: 44.5e3,
 		},
@@ -920,6 +935,7 @@ const elementData = [
 			nutrition: 2,
 			prices: {
 				2021: 12.28/pound,
+				2019: 40.1,
 			},
 			production: 250e3,
 		},
@@ -937,6 +953,9 @@ const elementData = [
 			},
 			biologicalHalfLife: day, // Tc-99m; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			nobleMetal: 4,
+			prices: {
+				2004: 1e5,
+			},
 		},
 	},
 	{
@@ -954,6 +973,7 @@ const elementData = [
 			nobleMetal: 1,
 			prices: {
 				2021: 370/ounce,
+				2020: 10500,
 			},
 			production: 12,
 		},
@@ -973,6 +993,7 @@ const elementData = [
 			nobleMetal: 1,
 			prices: {
 				2021: 25700/ounce,
+				2019: 147e3,
 			},
 			production: 25,
 		},
@@ -992,6 +1013,7 @@ const elementData = [
 			nobleMetal: 1,
 			prices: {
 				2021: 2350/ounce,
+				2019: 49.5e3,
 			},
 			production: 210, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-platinum.pdf
 		},
@@ -1012,6 +1034,7 @@ const elementData = [
 			nobleMetal: 2,
 			prices: {
 				2021: 25.645/ounce,
+				2019: 521,
 			},
 			production: 322e3,
 			rgb: 'rgb(255, 248, 239)',
@@ -1032,6 +1055,9 @@ const elementData = [
 			},
 			biologicalHalfLife: 30*year, // in bone
 			nutrition: 5,
+			prices: {
+				2019: 2.73,
+			},
 			production: 25e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cadmium.pdf
 			toxicity: 225e-6, // rat, oral
 		},
@@ -1048,6 +1074,9 @@ const elementData = [
 				earth: 2e-9,
 				human: 4e-10,
 				universe: 3e-10,
+			},
+			prices: {
+				2019: 167,
 			},
 			production: 476,
 		},
@@ -1069,6 +1098,7 @@ const elementData = [
 			nutrition: 4,
 			prices: {
 				2021: 12.565/pound,
+				2019: 18.7,
 			},
 			production: 340e3,
 			toxicity: 200e-6, // "Nausea, vomiting and diarrhea have been reported after ingesting canned food containing 200 mg/kg of tin."
@@ -1088,6 +1118,9 @@ const elementData = [
 				universe: 4e-10,
 			},
 			nobleMetal: 3,
+			prices: {
+				2019: 5.79,
+			},
 			production: 150e3,
 		},
 	},
@@ -1105,6 +1138,9 @@ const elementData = [
 				universe: 9e-9,
 			},
 			nobleMetal: 3,
+			prices: {
+				2019: 63.5,
+			},
 			production: 122,
 		},
 	},
@@ -1123,6 +1159,9 @@ const elementData = [
 			},
 			biologicalHalfLife: 66.1*day, // https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/biological-half-life
 			nutrition: 2,
+			prices: {
+				2019: 35,
+			},
 			production: 28e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-iodine.pdf
 			rgb: 'rgb(216, 229, 255)',
 		},
@@ -1137,6 +1176,9 @@ const elementData = [
 		properties: {
 			abundance: {
 				universe: 1e-8,
+			},
+			prices: {
+				1999: 1800,
 			},
 			production: 40,
 		},
