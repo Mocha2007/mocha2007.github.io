@@ -429,6 +429,9 @@ const elementData = [
 			biologicalHalfLife: 20*day, // personal estimate; 140 g potassium per person, 4.7 mg/day per person
 			modelColor: 'rgb(143, 64, 212)',
 			nutrition: 1,
+			prices: {
+				2020: 12.85,
+			},
 		},
 	},
 	{
@@ -447,6 +450,9 @@ const elementData = [
 			biologicalHalfLife: 693*day, // personal estimate; 1kg calcium per person, 1 g/day per person
 			modelColor: 'rgb(61, 255, 0)',
 			nutrition: 1,
+			prices: {
+				2020: 2.28,
+			},
 		},
 	},
 	{
@@ -463,6 +469,9 @@ const elementData = [
 				universe: 3e-8,
 			},
 			modelColor: 'rgb(230, 230, 230)',
+			prices: {
+				2020: 3460,
+			},
 			production: 2,
 		},
 	},
@@ -482,6 +491,7 @@ const elementData = [
 			modelColor: 'rgb(191, 194, 199)',
 			nobleMetal: 0,
 			prices: {
+				2020: 11.4,
 				2018: 4.8,
 			},
 			production: 6.7e6,
@@ -503,6 +513,9 @@ const elementData = [
 			modelColor: 'rgb(166, 166, 171)',
 			nobleMetal: 0,
 			nutrition: 3,
+			prices: {
+				2020: 371,
+			},
 			production: 73e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-vanadium.pdf
 		},
 	},
@@ -523,6 +536,9 @@ const elementData = [
 			modelColor: 'rgb(138, 153, 199)',
 			nobleMetal: 0,
 			nutrition: 2,
+			prices: {
+				2019: 9.4,
+			},
 			production: 4.4e6,
 			toxicity: 50e-6, // Chromium(VI) human, min est. LD50
 		},
@@ -544,7 +560,8 @@ const elementData = [
 			modelColor: 'rgb(156, 122, 199)',
 			nutrition: 2,
 			prices: {
-				2018: 2060/1000,
+				2019: 1.82,
+				2018: 2.06,
 			},
 			production: 19e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-manganese.pdf
 		},
@@ -567,6 +584,7 @@ const elementData = [
 			nutrition: 2,
 			prices: {
 				2021: 164.41/1000,
+				2020: 0.424,
 			},
 			production: 1544e6,
 			rgb: 'rgb(255, 252, 252)',
@@ -591,6 +609,7 @@ const elementData = [
 			nutrition: 2,
 			prices: {
 				2021: 25.18/pound,
+				2019: 32.8,
 			},
 			production: 140e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cobalt.pdf
 			rgb: 'rgb(255, 249, 244)',
@@ -613,6 +632,7 @@ const elementData = [
 			nutrition: 3,
 			prices: {
 				2021: 7.2756/pound,
+				2019: 13.9,
 			},
 			production: 1.8e6,
 			rgb: 'rgb(255, 245, 224)',
@@ -637,6 +657,7 @@ const elementData = [
 			nutrition: 2,
 			prices: {
 				2021: 4.0547/pound,
+				2019: 6,
 			},
 			production: 15.1e6,
 			rgb: 'rgb(255, 121, 76)',
@@ -661,6 +682,7 @@ const elementData = [
 			nutrition: 2,
 			prices: {
 				2021: 1.2474/pound,
+				2019: 2.55,
 			},
 			production: 11.2e6,
 		},
@@ -679,6 +701,9 @@ const elementData = [
 				universe: 1e-8,
 			},
 			modelColor: 'rgb(194, 143, 143)',
+			prices: {
+				2020: 148,
+			},
 			production: 184,
 		},
 	},
@@ -697,6 +722,9 @@ const elementData = [
 			},
 			modelColor: 'rgb(102, 143, 143)',
 			nutrition: 4,
+			prices: {
+				2020: 962,
+			},
 			production: 118,
 		},
 	},
@@ -716,6 +744,9 @@ const elementData = [
 			modelColor: 'rgb(189, 128, 227)',
 			nobleMetal: 3,
 			nutrition: 4,
+			prices: {
+				2020: 1.15,
+			},
 			production: 33e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-arsenic.pdf
 			toxicity: 763e-6, // rat, oral
 		},
@@ -737,6 +768,9 @@ const elementData = [
 			modelColor: 'rgb(255, 161, 0)',
 			nobleMetal: 3,
 			nutrition: 2,
+			prices: {
+				2019: 21.4,
+			},
 			production: 2e3,
 		},
 	},
@@ -755,6 +789,9 @@ const elementData = [
 			},
 			modelColor: 'rgb(166, 41, 41)',
 			nutrition: 3,
+			prices: {
+				2019: 4.39,
+			},
 			production: 556e3,
 			rgb: 'rgb(255, 94, 35)',
 		},
@@ -771,6 +808,9 @@ const elementData = [
 				universe: 4e-8,
 			},
 			modelColor: 'rgb(92, 184, 209)',
+			prices: {
+				1999: 290,
+			},
 		},
 	},
 	{
