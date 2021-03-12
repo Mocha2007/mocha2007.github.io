@@ -99,7 +99,7 @@ class ChemElement {
 			return 'Alkaline earth metal';
 		if (this.group === 18)
 			return 'Noble gas';
-		if (11 < this.group)
+		if (12 < this.group)
 			return 'Post-transition metal';
 		if (this.period === 6 && this.z < 72)
 			return 'Lanthanide';
