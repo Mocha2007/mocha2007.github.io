@@ -60,6 +60,8 @@ class ChemElement {
 			this.abundance = properties.abundance;
 			/** @type {number} - in seconds */
 			this.biologicalHalfLife = properties.biologicalHalfLife;
+			/** @type {number} - kg/m^3; divide by 1000 to get g/cm^3 */
+			this.density = properties.density;
 			/** @type {number} - year CE/BCE */
 			this.discovery = properties.discovery;
 			/** @type {string} - color used in models */
@@ -220,6 +222,10 @@ class ChemElement {
 				break;
 			case 'category':
 				c = this.color;
+				break;
+			case 'density':
+				const densest = Math.sqrt(Math.max(...elements.filter(e => e.density).map(e => e.density)));
+				c = gradient1(Math.sqrt(this.density)/densest);
 				break;
 			case 'discovery':
 				const ages = elements.filter(e => isFinite(e.discovery)).map(e => Math.log(new Date().getFullYear() - e.discovery));
@@ -440,6 +446,13 @@ class Isotope {
 		const x = r + 2*r*(minX + r - xFactor);
 		const y = r + 2*r*(maxZ - this.element.z);
 		return [x, y];
+	}
+	/** TODO: kg estimated critical mass, in kg, based on what little data I have 
+	 * https://docs.google.com/spreadsheets/d/1ARdzYjBcXjnoQkj6AO55De_WOa7KMb4sFj6lqF5me8c
+	*/
+	get criticalMass(){
+		const x = Math.pow(this.mass * Math.sqrt(this.halfLife/year), 3)/Math.pow(this.element.density/1000, 2);
+		return 10.7 * Math.pow(x, 0.0294);
 	}
 	get daughters(){
 		return this.decayTypes.map(d => d[0]).filter(d => d !== sf).map(d =>
