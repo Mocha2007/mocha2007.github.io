@@ -76,7 +76,7 @@ circle {
 	stroke: black;
 	stroke-width: 1px;
 }
-line {
+line, .hingedArrow {
 	marker-end: url(#Arrow2Mend);
 	stroke: black;
 	stroke-width: 1;

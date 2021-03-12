@@ -20,6 +20,7 @@ const decayArrows = {
 };
 decayArrows.ec = decayArrows['b+'];
 decayArrows.ecec = decayArrows['b+b+'];
+const hingedArrowTypes = ['b+b+', 'b-b-', 'ecec'];
 
 const elemCatColors = {
 	'Alkali metal': '#f66',
@@ -380,12 +381,23 @@ class Decay {
 	arrow(p){
 		const g = createSvgElement('g');
 		// line
-		const line = createSvgElement('line');
-		const [x1, y1, x2, y2] = decayArrows[this.name];
-		line.setAttribute('x1', x1);
-		line.setAttribute('y1', y1);
-		line.setAttribute('x2', x2);
-		line.setAttribute('y2', y2);
+		// todo - hinged arrows for b-b- and ecec/b+b+ (b+b+ isn't used yet)
+		let line, x1, y1, x2, y2;
+		if (hingedArrowTypes.includes(this.name)){
+			const d = this.name == 'b-b-' ? 1 : -1;
+			line = hingedArrow(d);
+			// used to determine label placement
+			[x1, y1, x2, y2] = [0, -d*r, 2*d*r, -6*d*r];
+		}
+		else {
+			line = createSvgElement('line');
+			[x1, y1, x2, y2] = decayArrows[this.name];
+			line.setAttribute('x1', x1);
+			line.setAttribute('y1', y1);
+			line.setAttribute('x2', x2);
+			line.setAttribute('y2', y2);
+		}
+		// line styling
 		if (p < 0.01)
 			g.style.opacity = 0.5;
 		if (p < 0.0001)
@@ -562,16 +574,6 @@ class Isotope {
 // functions
 
 /**
- * @param {number} x - value in [0, 1]; undefined/NaN -> grey
- * @return {string} - css color string; purple = high; blue = mid; white = low
- */
-function gradient1(x){
-	if (!isFinite(x))
-		return '#ccc';
-	return `hsl(${180+120*x}, 100%, ${100-65*x}%)`;
-}
-
-/**
  * @param {number} value
  * @return {[number, string]}
  */
@@ -585,6 +587,25 @@ function chooseTimeUnit(value){
 	if (value < year)
 		return [day, 'd'];
 	return [year, 'yr'];
+}
+
+/**
+ * @param {number} x - value in [0, 1]; undefined/NaN -> grey
+ * @return {string} - css color string; purple = high; blue = mid; white = low
+ */
+function gradient1(x){
+	if (!isFinite(x))
+		return '#ccc';
+	return `hsl(${180+120*x}, 100%, ${100-65*x}%)`;
+}
+
+/** @param {1|-1} d - 1 = b-b-, -1 = ecec/b+b+ */
+function hingedArrow(d){
+	const path = createSvgElement('path');
+	path.setAttribute('d', `M 0 ${-d*r} q ${0.5*d*r} ${-2.5*d*r} ${3*d*r} ${-3*d*r}`);
+	path.setAttribute('class', `hingedArrow`);
+	path.setAttribute('fill', `none`);
+	return path;
 }
 
 /** 
