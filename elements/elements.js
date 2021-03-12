@@ -563,16 +563,18 @@ function chooseTimeUnit(value){
 	return [year, 'yr'];
 }
 
-/** @param {number} width - default = 14, max = 32
- * @param {number} height - default = 15, max = 100
- * @param {number} start - default = 94, max = 100
+/** 
+ * @param {number} width - default = 14, max = 32
+ * @param {number} height - default = 15, max = 118
+ * @param {number} ystart - default = 94, max = 118
+ * @param {number} xstart - default = 0, min = -2
  */
-function setDecayChainLength(width=14, height=15, start=94){
+function setDecayChainLength(width=14, height=15, ystart=94, xstart=0){
 	const svgs = document.getElementsByTagName('svg');
 	Array.from(svgs).forEach(svg => {
 		svg.style.width = `${width*r*2}px`;
 		svg.style.height = `${height*r*2}px`;
-		svg.setAttribute('viewBox', `0 ${(maxZ-start)*r*2} ${width*r*2} ${height*r*2}`);
+		svg.setAttribute('viewBox', `${xstart*r*2} ${(maxZ-ystart)*r*2} ${width*r*2} ${height*r*2}`);
 	});
 }
 
