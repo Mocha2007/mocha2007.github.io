@@ -65,6 +65,8 @@ class ChemElement {
 			this.nobleMetal = properties.nobleMetal;
 			/** @type {number} */
 			this.nutrition = properties.nutrition;
+			/** year => $/kg inflation-adjusted */
+			this.prices = properties.prices;
 			/** @type {number} t/yr */
 			this.production = properties.production;
 			/** @type {string}
@@ -128,6 +130,14 @@ class ChemElement {
 	/** @return {Isotope[]} this element's isotopes */
 	get isotopes(){
 		return isotopes.filter(i => i.element === this);
+	}
+	get latestPrice(){
+		// list of years
+		const years = Object.keys(this.prices).map(parseInt);
+		// sort descending
+		years.sort((a, b) => b-a);
+		// return most recent year's price
+		return this.prices[years[0]];
 	}
 	get stable(){
 		return this.isotopes.some(i => i.stable);
@@ -256,6 +266,14 @@ class ChemElement {
 				break;
 			case 'nutrition':
 				c = this.nutrition === undefined ? 'white' : nutritionColors[this.nutrition];
+				break;
+			case 'price':
+				if (!this.prices)
+					c = '#ccc';
+				else {
+					const prices = elements.filter(e => e.prices).map(e => Math.log(e.latestPrice));
+					c = gradient1(remap(Math.log(this.latestPrice), [Math.min(...prices), Math.max(...prices)], [0, 1]));
+				}
 				break;
 			case 'production':
 				const max_prod = Math.max(...elements.filter(e => e.production).map(e => Math.log(e.production)));

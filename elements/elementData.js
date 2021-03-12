@@ -3,6 +3,7 @@
 // modelColor from https://sciencenotes.org/wp-content/uploads/2019/07/CPK-Jmol-1024x791.png
 // abundances from https://periodictable.com/Properties/A/UniverseAbundance.an.log.html
 // also https://periodictable.com/Properties/A/UniverseAbundance.html
+// metal prices from https://www.dailymetalprice.com/ and https://www.metalary.com
 
 // https://en.wikipedia.org/wiki/Template:Periodic_table_(noble_metals)
 const nobleMetalColors = ['#cf0', '#0e7', '#6bf', '#c9f', '#fb6', '#f66'];
@@ -15,6 +16,9 @@ const hour = 60 * minute;
 const day = 24 * hour;
 const year = 365.2425 * day;
 const month = year / 12;
+// used for metal prices
+const pound = 0.45359237;
+const ounce = pound/16;
 
 const elementData = [
 	{
@@ -66,6 +70,9 @@ const elementData = [
 			},
 			modelColor: 'rgb(204, 128, 255)',
 			nutrition: 3,
+			prices: {
+				2018: 16.5,
+			},
 			production: 55e3,
 			rgb: 'rgb(249, 255, 252)',
 		},
@@ -254,6 +261,9 @@ const elementData = [
 			},
 			modelColor: 'rgb(191, 166, 166)',
 			nutrition: 4,
+			prices: {
+				2021: 0.975/pound,
+			},
 			production: 44.1e6,
 			rgb: 'rgb(244, 251, 255)',
 		},
@@ -420,6 +430,9 @@ const elementData = [
 			},
 			modelColor: 'rgb(191, 194, 199)',
 			nobleMetal: 0,
+			prices: {
+				2018: 4.8,
+			},
 			production: 6.7e6,
 		},
 	},
@@ -479,6 +492,9 @@ const elementData = [
 			biologicalHalfLife: 3.8*day, // personal estimate; 12 mg manganese per person, 2 mg/day per person
 			modelColor: 'rgb(156, 122, 199)',
 			nutrition: 2,
+			prices: {
+				2018: 2060/1000,
+			},
 			production: 19e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-manganese.pdf
 		},
 	},
@@ -498,6 +514,9 @@ const elementData = [
 			biologicalHalfLife: 485*day, // personal estimate; 4.2g iron per person, 6 mg/day per person; 0.5^(1/L) = 1 - 0.006/4.2
 			modelColor: 'rgb(224, 102, 51)',
 			nutrition: 2,
+			prices: {
+				2021: 164.41/1000,
+			},
 			production: 1544e6,
 			rgb: 'rgb(255, 252, 252)',
 			toxicity: 50e-6, // "Ingestions of more than 50 mg/kg of elemental iron are associated with severe toxicity"
@@ -519,6 +538,9 @@ const elementData = [
 			biologicalHalfLife: 10*day, // Co-60; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			modelColor: 'rgb(240, 144, 160)',
 			nutrition: 2,
+			prices: {
+				2021: 25.18/pound,
+			},
 			production: 140e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cobalt.pdf
 			rgb: 'rgb(255, 249, 244)',
 		},
@@ -538,6 +560,9 @@ const elementData = [
 			},
 			modelColor: 'rgb(80, 208, 80)',
 			nutrition: 3,
+			prices: {
+				2021: 7.2756/pound,
+			},
 			production: 1.8e6,
 			rgb: 'rgb(255, 245, 224)',
 		},
@@ -559,6 +584,9 @@ const elementData = [
 			modelColor: 'rgb(200, 128, 51)',
 			nobleMetal: 2,
 			nutrition: 2,
+			prices: {
+				2021: 4.0547/pound,
+			},
 			production: 15.1e6,
 			rgb: 'rgb(255, 121, 76)',
 			toxicity: 30e-6, // Copper sulfate, rat
@@ -580,6 +608,9 @@ const elementData = [
 			biologicalHalfLife: 200*day, // personal estimate; 2.3 g magnesium per person, 8 mg/day per person
 			modelColor: 'rgb(125, 128, 176)',
 			nutrition: 2,
+			prices: {
+				2021: 1.2474/pound,
+			},
 			production: 11.2e6,
 		},
 	},
@@ -774,6 +805,9 @@ const elementData = [
 				universe: 2e-9,
 			},
 			nobleMetal: 0,
+			prices: {
+				2018: 42.28,
+			},
 			production: 44.5e3,
 		},
 	},
@@ -793,6 +827,9 @@ const elementData = [
 			biologicalHalfLife: 77*day, // personal estimate; 5 mg molybdenum per person, 0.045 mg/day per person
 			nobleMetal: 0,
 			nutrition: 2,
+			prices: {
+				2021: 12.28/pound,
+			},
 			production: 250e3,
 		},
 	},
@@ -824,6 +861,9 @@ const elementData = [
 				universe: 4e-9,
 			},
 			nobleMetal: 1,
+			prices: {
+				2021: 370/ounce,
+			},
 			production: 12,
 		},
 	},
@@ -840,6 +880,9 @@ const elementData = [
 				universe: 6e-10,
 			},
 			nobleMetal: 1,
+			prices: {
+				2021: 25700/ounce,
+			},
 			production: 25,
 		},
 	},
@@ -856,6 +899,9 @@ const elementData = [
 				universe: 2e-9,
 			},
 			nobleMetal: 1,
+			prices: {
+				2021: 2350/ounce,
+			},
 			production: 210, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-platinum.pdf
 		},
 	},
@@ -873,6 +919,9 @@ const elementData = [
 				universe: 6e-10,
 			},
 			nobleMetal: 2,
+			prices: {
+				2021: 25.645/ounce,
+			},
 			production: 322e3,
 			rgb: 'rgb(255, 248, 239)',
 		},
@@ -927,6 +976,9 @@ const elementData = [
 			},
 			biologicalHalfLife: 3.5*day, // rats; oral; diethyltin chloride; https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/biological-half-life
 			nutrition: 4,
+			prices: {
+				2021: 12.565/pound,
+			},
 			production: 340e3,
 			toxicity: 200e-6, // "Nausea, vomiting and diarrhea have been reported after ingesting canned food containing 200 mg/kg of tin."
 		},
@@ -1263,6 +1315,9 @@ const elementData = [
 				universe: 8e-11,
 			},
 			nobleMetal: 0,
+			prices: {
+				2018: 151.8,
+			},
 			production: 1.8e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-tantalum.pdf
 		},
 	},
@@ -1281,6 +1336,9 @@ const elementData = [
 			},
 			nobleMetal: 0,
 			nutrition: 5,
+			prices: {
+				2018: 30.3,
+			},
 			production: 37400,
 		},
 	},
@@ -1313,6 +1371,9 @@ const elementData = [
 				universe: 3e-9,
 			},
 			nobleMetal: 1,
+			prices: {
+				2018: 400/ounce,
+			},
 			production: 1,
 		},
 	},
@@ -1329,6 +1390,9 @@ const elementData = [
 				universe: 2e-9,
 			},
 			nobleMetal: 1,
+			prices: {
+				2021: 5500/ounce,
+			},
 			production: 3,
 		},
 	},
@@ -1345,6 +1409,9 @@ const elementData = [
 				universe: 5e-9,
 			},
 			nobleMetal: 1,
+			prices: {
+				2021: 1227/ounce,
+			},
 			production: 239,
 		},
 	},
@@ -1363,6 +1430,9 @@ const elementData = [
 			},
 			biologicalHalfLife: 280*day, // Au-198; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			nobleMetal: 2,
+			prices: {
+				2021: 1711.5/ounce,
+			},
 			production: 2310,
 			rgb: 'rgb(255, 211, 109)',
 		},
@@ -1417,6 +1487,9 @@ const elementData = [
 			},
 			biologicalHalfLife: 32*day, // 28-36 d in blood
 			nutrition: 4,
+			prices: {
+				2021: 0.8729/pound,
+			},
 			production: 8725e3,
 			rgb: 'rgb(255, 255, 255)',
 		},
@@ -1556,6 +1629,9 @@ const elementData = [
 				universe: 2e-10,
 			},
 			biologicalHalfLife: 15*day, // U-235; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			prices: {
+				2018: 21.5/pound,
+			},
 			production: 50572,
 			rgb: 'rgb(255, 251, 242)',
 		},
