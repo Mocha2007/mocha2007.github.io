@@ -610,12 +610,12 @@ function hingedArrow(d){
 }
 
 /** 
- * @param {number} width - default = 15, max = 33
+ * @param {number} width - default = 14, max = 33
  * @param {number} height - default = 14, max = 118
  * @param {number} ystart - default = 94, max = 118
  * @param {number} xstart - default = 0, min = -2
  */
-function setDecayChainLength(width=15, height=14, ystart=94, xstart=0){
+function setDecayChainLength(width=14, height=14, ystart=94, xstart=0){
 	const svgs = document.getElementsByTagName('svg');
 	Array.from(svgs).forEach(svg => {
 		svg.style.width = `${width*r*2}px`;
