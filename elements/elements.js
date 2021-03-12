@@ -416,7 +416,8 @@ class Decay {
 		// fraction
 		if (p < 1){
 			const fraction = createSvgElement('text');
-			fraction.innerHTML = round(p*100, 2) + '%';
+			// avoid silly "0%" for tiny p
+			fraction.innerHTML = (p < 1e-3 ? (p*100).toExponential(1) : round(p*100, 2)) + '%';
 			fraction.classList.add('fraction');
 			fraction.setAttribute('x', 2); // so it's not right at the beginning
 			fraction.setAttribute('y', -5); // so it's not right on the line
