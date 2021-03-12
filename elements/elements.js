@@ -31,6 +31,7 @@ const elemCatColors = {
 	'Metalloid': '#cc9',
 	'Reactive nonmetal': '#ff8',
 	'Noble gas': '#cff',
+	'Superactinide': '#f7a',
 };
 
 // classes
@@ -105,6 +106,8 @@ class ChemElement {
 			return 'Lanthanide';
 		if (this.period === 7 && this.z < 104)
 			return 'Actinide';
+		if (this.period === 8 && this.z < 158)
+			return 'Superactinide';
 		return 'Transition metal';
 	}
 	get color(){
@@ -112,12 +115,19 @@ class ChemElement {
 	}
 	/** @return {[number, number]} zero-indexed coord of the square */
 	get coords(){
-		// lanthanides and actinides
-		if (this.electronShell === 'f'){
-			const x = this.z - (this.z < 72 ? 55 : 87);
-			const y = this.period + 2;
-			return [x, y];
+		switch (this.electronShell){
+			// lanthanides and actinides
+			case 'f':
+				const x = this.z - (this.z < 72 ? 55 : this.z < 104 ? 87 : 137);
+				const y = this.period + 2;
+				return [x, y];
+			// superactinides
+			case 'g':
+				// todo
+				// x and y both untested
+				return [this.z - 121, this.period + 3];
 		}
+		// most elements
 		return [this.group - 1, this.period - 1];
 	}
 	get electronShell(){
@@ -125,8 +135,8 @@ class ChemElement {
 			return 's';
 		if (12 < this.group)
 			return 'p';
-		// undefined = lantanide or actinide
-		return this.group ? 'd' : 'f';
+		// this is correct up to z = 170, highly unlikely I'll be around to ever see this table broken
+		return this.group ? 'd' : 120 < this.z && this.z < 139 ? 'g' : 'f';
 	}
 	/** @return {HTMLDivElement} DOM element */
 	get element(){
@@ -215,7 +225,7 @@ class ChemElement {
 					c = `hsl(${120+5.2*Math.log(this.abundance.universe)}, 100%, 50%)`;
 				break;
 			case 'block':
-				c = {s: '#f99', p: '#ff8', d: '#9cf', f: '#9f9'}[this.electronShell];
+				c = '#'+{s: 'f99', p: 'ff8', d: '9cf', f: '9f9', g: 'f9f'}[this.electronShell];
 				break;
 			case 'color': // normalized color
 				c = this.rgb ? this.rgb : 'grey';
@@ -603,7 +613,7 @@ function main(){
 	// create rows/cols
 	/** @type {HTMLTableElement} */
 	const table = document.getElementById('table');
-	range(10).forEach(y => {
+	range(12).forEach(y => {
 		const row = document.createElement('tr');
 		row.id = 'period' + (y+1);
 		range(18).forEach(x => {

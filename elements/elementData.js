@@ -2382,11 +2382,80 @@ const elementData = [
 		z: 119,
 		name: 'Ununennium',
 		symbol: 'Uue',
-		mass: 316, // predicted to be the most stable
+		mass: 315, // predicted to be the most stable
 		group: 1,
 		period: 8,
 		properties: {
 			density: 3000,
 		},
-	},*/
+	},
+	{
+		z: 120,
+		name: 'Unbinilium',
+		symbol: 'Ubn',
+		mass: 317, // predicted to be the most stable
+		group: 2,
+		period: 8,
+		properties: {
+			density: 7000,
+		},
+	},
+	{
+		z: 121,
+		name: 'Unbiunium',
+		symbol: 'Ubu',
+		mass: 319, // predicted to be the most stable
+		period: 8,
+	},
+	{
+		z: 122,
+		name: 'Unbibium',
+		symbol: 'Ubb',
+		mass: 321, // predicted to be the most stable
+		period: 8,
+	},
+	{
+		z: 123,
+		name: 'Unbitrium',
+		symbol: 'Ubt',
+		mass: 321, // predicted to be the most stable
+		period: 8,
+	},
+	{
+		z: 124,
+		name: 'Unbiquadium',
+		symbol: 'Ubq',
+		mass: 323, // predicted to be the most stable
+		period: 8,
+	},
+	{
+		z: 125,
+		name: 'Unbipentium',
+		symbol: 'Ubp',
+		mass: 325, // predicted to be the most stable
+		period: 8,
+	},
+	{
+		z: 126,
+		name: 'Unbihexium',
+		symbol: 'Ubh',
+		mass: 325, // predicted to be the most stable
+		period: 8,
+	},
+	{
+		z: 139,
+		name: 'Untriennium',
+		symbol: 'Ute',
+		mass: 343, // 10/7 z + 145
+		period: 8,
+	},
+	{
+		z: 153,
+		name: 'Unpenttrium',
+		symbol: 'Upt',
+		mass: 365, // 10/7 z + 145
+		group: 3,
+		period: 8,
+	},
+	*/
 ];
