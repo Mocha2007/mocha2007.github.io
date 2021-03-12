@@ -6,6 +6,7 @@
 
 const eV = 1.602176634e-19; // J; exact; electronvolt
 
+const minX = 1; // constant used to determine origin of x-values
 const maxZ = 100; // Z of top of charts
 const r = 30; // px
 const corner = r/Math.sqrt(2);
@@ -436,7 +437,7 @@ class Isotope {
 		// y-coord represents Z. x-coord represents A/2 - Z (?)
 		// max z = seaborgium; Cf-256 => A = 256, Z = 98 => r; He-4 => A = 4, Z = 2 => 0
 		const xFactor = Math.floor(this.mass/2) - this.element.z;
-		const x = r + 2*r*(r - xFactor);
+		const x = r + 2*r*(minX + r - xFactor);
 		const y = r + 2*r*(maxZ - this.element.z);
 		return [x, y];
 	}
@@ -564,12 +565,12 @@ function chooseTimeUnit(value){
 }
 
 /** 
- * @param {number} width - default = 14, max = 32
+ * @param {number} width - default = 15, max = 33
  * @param {number} height - default = 15, max = 118
  * @param {number} ystart - default = 94, max = 118
  * @param {number} xstart - default = 0, min = -2
  */
-function setDecayChainLength(width=14, height=15, ystart=94, xstart=0){
+function setDecayChainLength(width=15, height=15, ystart=94, xstart=0){
 	const svgs = document.getElementsByTagName('svg');
 	Array.from(svgs).forEach(svg => {
 		svg.style.width = `${width*r*2}px`;
