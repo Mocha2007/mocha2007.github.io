@@ -4,6 +4,7 @@
 // abundances from https://periodictable.com/Properties/A/UniverseAbundance.an.log.html
 // also https://periodictable.com/Properties/A/UniverseAbundance.html
 // metal prices from https://www.dailymetalprice.com/ and https://www.metalary.com
+// other prices from https://en.wikipedia.org/wiki/Prices_of_chemical_elements
 
 // https://en.wikipedia.org/wiki/Template:Periodic_table_(noble_metals)
 const nobleMetalColors = ['#cf0', '#0e7', '#6bf', '#c9f', '#fb6', '#f66'];
@@ -37,6 +38,9 @@ const elementData = [
 			biologicalHalfLife: 12*day, // tritium; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			modelColor: 'white',
 			nutrition: 0,
+			prices: {
+				2012: 1.39,
+			},
 			production: 50e6,
 		},
 	},
@@ -52,6 +56,9 @@ const elementData = [
 				universe: 0.24,
 			},
 			modelColor: 'rgb(217, 255, 255)',
+			prices: {
+				2018: 24,
+			},
 			production: 32e3,
 		},
 	},
@@ -71,6 +78,7 @@ const elementData = [
 			modelColor: 'rgb(204, 128, 255)',
 			nutrition: 3,
 			prices: {
+				2020: 83.5,
 				2018: 16.5,
 			},
 			production: 55e3,
@@ -91,6 +99,9 @@ const elementData = [
 				universe: 1e-9,
 			},
 			modelColor: 'rgb(194, 255, 0)',
+			prices: {
+				2020: 857,
+			},
 			production: 200,
 			rgb: 'rgb(255, 255, 255)',
 		},
@@ -110,6 +121,9 @@ const elementData = [
 			},
 			modelColor: 'rgb(255, 181, 181)',
 			nutrition: 3,
+			prices: {
+				2019: 3.68,
+			},
 			production: 1.8e6,
 			rgb: 'rgb(255, 232, 219)',
 		},
@@ -130,6 +144,9 @@ const elementData = [
 			biologicalHalfLife: 40*day, // C-14; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			modelColor: 'rgb(144, 144, 144)',
 			nutrition: 0,
+			prices: {
+				2018: 0.122,
+			},
 			production: 1.03e6,
 			rgb: 'rgb(255, 251, 239)',
 		},
@@ -149,6 +166,9 @@ const elementData = [
 			},
 			modelColor: 'rgb(48, 80, 248)',
 			nutrition: 0,
+			prices: {
+				2001: 0.14,
+			},
 			production: 131e6,
 		},
 	},
@@ -167,6 +187,9 @@ const elementData = [
 			},
 			modelColor: 'rgb(255, 13, 13)',
 			nutrition: 0,
+			prices: {
+				2001: 0.154,
+			},
 			production: 100e6,
 		},
 	},
@@ -186,6 +209,9 @@ const elementData = [
 			biologicalHalfLife: 450*day, // personal estimate; 2.6 g magnesium per person, 4 mg/day per person
 			modelColor: 'rgb(144, 224, 80)',
 			nutrition: 3,
+			prices: {
+				2017: 2,
+			},
 			production: 5.5e6,
 			rgb: 'rgb(255, 207, 112)',
 		},
@@ -202,6 +228,9 @@ const elementData = [
 				universe: 1340e-6,
 			},
 			modelColor: 'rgb(179, 227, 245)',
+			prices: {
+				1999: 240,
+			},
 			production: 500,
 		},
 	},
@@ -222,6 +251,9 @@ const elementData = [
 			// 11 d according to http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			modelColor: 'rgb(171, 92, 242)',
 			nutrition: 1,
+			prices: {
+				2020: 3,
+			},
 			production: 100e3,
 			rgb: 'rgb(252, 255, 249)',
 		},
@@ -242,6 +274,9 @@ const elementData = [
 			biologicalHalfLife: 44*day, // personal estimate; 19 g magnesium per person, 300 mg/day per person
 			modelColor: 'rgb(138, 255, 0)',
 			nutrition: 1,
+			prices: {
+				2019: 2.32,
+			},
 			production: 748e3,
 			rgb: 'rgb(255, 251, 234)',
 		},
@@ -263,6 +298,7 @@ const elementData = [
 			nutrition: 4,
 			prices: {
 				2021: 0.975/pound,
+				2019: 1.79,
 			},
 			production: 44.1e6,
 			rgb: 'rgb(244, 251, 255)',
@@ -283,6 +319,9 @@ const elementData = [
 			},
 			modelColor: 'rgb(240, 200, 160)',
 			nutrition: 3,
+			prices: {
+				2019: 1.7,
+			},
 			production: 8e6,
 			rgb: 'rgb(234, 241, 255)',
 		},
@@ -304,6 +343,9 @@ const elementData = [
 			// 1155 d according to http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			modelColor: 'rgb(255, 128, 0)',
 			nutrition: 1,
+			prices: {
+				2019: 2.69,
+			},
 			production: 910e3,
 			rgb: 'rgb(255, 235, 186)',
 		},
@@ -324,6 +366,9 @@ const elementData = [
 			biologicalHalfLife: 90*day, // S-35; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			modelColor: 'rgb(255, 255, 48)',
 			nutrition: 1,
+			prices: {
+				2019: 0.0926,
+			},
 			production: 69e6,
 			rgb: 'rgb(255, 218, 86)',
 		},
@@ -344,6 +389,9 @@ const elementData = [
 			biologicalHalfLife: 29*day, // Cl-36; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			modelColor: 'rgb(31, 240, 31)',
 			nutrition: 1,
+			prices: {
+				2013: 0.082,
+			},
 			rgb: 'rgb(246, 255, 188)',
 		},
 	},
@@ -359,6 +407,9 @@ const elementData = [
 				universe: 77e-6,
 			},
 			modelColor: 'rgb(128, 209, 227)',
+			prices: {
+				2019: 0.931,
+			},
 			production: 700e3,
 		},
 	},

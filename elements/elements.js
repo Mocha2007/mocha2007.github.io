@@ -133,7 +133,7 @@ class ChemElement {
 	}
 	get latestPrice(){
 		// list of years
-		const years = Object.keys(this.prices).map(parseInt);
+		const years = Object.keys(this.prices).map(x => parseInt(x)); // for some retarded reason, using just parseInt doesn't work
 		// sort descending
 		years.sort((a, b) => b-a);
 		// return most recent year's price
