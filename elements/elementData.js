@@ -223,6 +223,9 @@ const elementData = [
 				universe: 4e-7,
 			},
 			biologicalHalfLife: 450*day, // personal estimate; 2.6 g fluorine per person, 4 mg/day per person
+			categories: {
+				halogen: true,
+			},
 			density: 1.696,
 			discovery: 1886,
 			modelColor: 'rgb(144, 224, 80)',
@@ -419,6 +422,9 @@ const elementData = [
 				universe: 1e-6,
 			},
 			biologicalHalfLife: 29*day, // Cl-36; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			categories: {
+				halogen: true,
+			},
 			density: 3.214,
 			discovery: 1774,
 			modelColor: 'rgb(31, 240, 31)',
@@ -855,6 +861,9 @@ const elementData = [
 				human: 3e-7,
 				universe: 7e-9,
 			},
+			categories: {
+				halogen: true,
+			},
 			density: 3122,
 			discovery: 1825,
 			modelColor: 'rgb(166, 41, 41)',
@@ -1262,6 +1271,9 @@ const elementData = [
 				universe: 1e-9,
 			},
 			biologicalHalfLife: 66.1*day, // https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/biological-half-life
+			categories: {
+				halogen: true,
+			},
 			density: 4930,
 			discovery: 1811,
 			nutrition: 2,
@@ -1919,6 +1931,9 @@ const elementData = [
 			abundance: {
 				earth: 1e-24, // https://en.wikipedia.org/wiki/Astatine#Natural_occurrence
 			},
+			categories: {
+				halogen: true,
+			},
 			density: 7000,
 			discovery: 1940,
 			nobleMetal: 4,
@@ -2362,6 +2377,9 @@ const elementData = [
 		group: 17,
 		period: 7,
 		properties: {
+			categories: {
+				halogen: true,
+			},
 			density: 7200,
 			discovery: 2009,
 		},

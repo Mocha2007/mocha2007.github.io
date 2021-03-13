@@ -62,6 +62,8 @@ class ChemElement {
 			this.abundance = properties.abundance;
 			/** @type {number} - in seconds */
 			this.biologicalHalfLife = properties.biologicalHalfLife;
+			/** string => true|false|0.5 */
+			this.categories = properties.categories;
 			/** @type {number} - kg/m^3; divide by 1000 to get g/cm^3 */
 			this.density = properties.density;
 			/** @type {number} - year CE/BCE */
@@ -197,6 +199,29 @@ class ChemElement {
 			text.classList.add('svgLabel');
 			svg.appendChild(text);
 		});
+	}
+	/** @param {string} category */
+	highlightCategory(category){
+		const c = this.element.parentElement.classList;
+		if (category === 'none'){
+			c.value = "";
+			return;
+		}
+		switch(this.inCategory(category)){
+			case true:
+				c.value = "categoryHighlight";
+				break;
+			case 0.5:
+				c.value = "categoryHalfHighlight";
+				break;
+			default:
+				c.value = "categoryUnhighlight";
+		}
+	}
+	/** @param {string} category 
+	 * @returns {boolean|0.5} */
+	inCategory(category){
+		return this.categories && this.categories.hasOwnProperty(category) ? this.categories[category]: false;
 	}
 	/** @param {string} type */
 	updateColor(type){
@@ -598,6 +623,11 @@ function gradient1(x){
 	if (!isFinite(x))
 		return '#ccc';
 	return `hsl(${180+120*x}, 100%, ${100-65*x}%)`;
+}
+
+/** @param {string} category */
+function highlightCategory(category){
+	elements.forEach(e => e.highlightCategory(category));
 }
 
 /** @param {1|-1} d - 1 = b-b-, -1 = ecec/b+b+ */
