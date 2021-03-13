@@ -235,20 +235,24 @@ class ChemElement {
 					c = 'white';
 				else if (this.abundance.earth < 1e-9) // trace
 					c = 'magenta';
-				else
-					c = `hsl(${120+6*Math.log(this.abundance.earth)}, 100%, 50%)`;
+				else // 13 * -9 = -117 ~ -120
+					c = `hsl(${120+13*Math.log10(this.abundance.earth)}, 100%, 50%)`;
 				break;
 			case 'abundanceHuman':
 				if (!this.abundance || !this.abundance.human)
 					c = 'white';
+				else if (this.abundance.human < 1e-9) // trace
+					c = 'magenta';
 				else
-					c = `hsl(${120+5*Math.log(this.abundance.human)}, 100%, 50%)`;
+					c = `hsl(${120+13*Math.log10(this.abundance.human)}, 100%, 50%)`;
 				break;
 			case 'abundanceUniverse':
 				if (!this.abundance || !this.abundance.universe)
 					c = 'white';
+				else if (this.abundance.universe < 1e-9) // trace
+					c = 'magenta';
 				else
-					c = `hsl(${120+5.2*Math.log(this.abundance.universe)}, 100%, 50%)`;
+					c = `hsl(${120+13*Math.log10(this.abundance.universe)}, 100%, 50%)`;
 				break;
 			case 'block':
 				c = '#'+{s: 'f99', p: 'ff8', d: '9cf', f: '9f9', g: 'f9f'}[this.electronShell];
@@ -342,10 +346,8 @@ class ChemElement {
 				c = this.modelColor ? this.modelColor : '#ccc';
 				break;
 			case 'toxicity':
-				if (!this.toxicity)
-					c = 'white';
-				else
-					c = `hsl(${120+6*Math.log(this.toxicity)}, 100%, 50%)`;
+				const tox = elements.filter(e => e.toxicity).map(e => Math.log(e.toxicity));
+				c = gradient1(remap(Math.log(this.toxicity), [Math.min(...tox), Math.max(...tox)], [1, 0]));
 				break;
 			case 'weight':
 				x = 255*this.mass/ChemElement.maxWeight;

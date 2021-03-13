@@ -1541,6 +1541,7 @@ const elementData = [
 				2018: 61.8e3,
 			},
 			rgb: 'rgb(255, 212, 153)',
+			toxicity: 2.3e-3, // https://en.wikipedia.org/wiki/Caesium#Health_and_safety_hazards
 		},
 	},
 	{
@@ -1970,6 +1971,7 @@ const elementData = [
 				2018: 30.3,
 			},
 			production: 37400,
+			toxicity: 59e-6, // https://en.wikipedia.org/wiki/Tungsten#Health_factors
 		},
 	},
 	{
@@ -1997,6 +1999,7 @@ const elementData = [
 				2020: 3580,
 			},
 			production: 45,
+			toxicity: 280e-6, // https://en.wikipedia.org/wiki/Rhenium#Precautions
 		},
 	},
 	{
@@ -2038,6 +2041,7 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 120e-9,
+				human: 20e-12, // https://en.wikipedia.org/wiki/Iridium#Precautions
 				universe: 2e-9,
 			},
 			categories: {
@@ -2206,6 +2210,7 @@ const elementData = [
 				human: 2e-10,
 				universe: 7e-10,
 			},
+			biologicalHalfLife: 5*day, // https://en.wikipedia.org/wiki/Bismuth#Toxicology_and_ecotoxicology
 			categories: {
 				nativeMetal: 0.5,
 				pnictogen: true,
@@ -2244,6 +2249,7 @@ const elementData = [
 			}, */
 			production: 100e-6,
 			rgb: 'rgb(234, 242, 255)',
+			toxicity: 8.7e-12, //  rats were given a fatal dose of 1.45 MBq/kg (8.7 ng/kg) of 210Po;
 		},
 	},
 	{
@@ -2377,6 +2383,7 @@ const elementData = [
 			abundance: {
 				earth: 1.4e-12,
 			},
+			biologicalHalfLife: 25*day, // appx.; https://en.wikipedia.org/wiki/Protactinium#Precautions
 			categories: {
 				actinide: true,
 			},
@@ -2385,6 +2392,7 @@ const elementData = [
 			prices: {
 				2011: 280e3,
 			},
+			toxicity: 0.5e-9/70, // "The maximum safe dose of Pa in the human body (~70kg) is ... 0.5 micrograms
 		}
 	},
 	{
@@ -2462,6 +2470,7 @@ const elementData = [
 		mass: 243,
 		period: 7,
 		properties: {
+			biologicalHalfLife: 7*day, // "If consumed, most of the americium is excreted within a few days,"
 			categories: {
 				actinide: true,
 			},
