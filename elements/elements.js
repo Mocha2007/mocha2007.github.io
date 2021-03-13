@@ -313,6 +313,12 @@ class ChemElement {
 					1.13e-12) * 3.6e12, 0); // appx from 0 to 1
 				c = gradient1(x);
 				break;
+			case 'n/z':
+				x = this.stable ? mean(this.isotopes.filter(i => i.stable).map(i => i.n)) :
+					this.isotopes.filter(i => i.halfLife === Math.max(...this.isotopes.map(i => i.halfLife)))[0].n;
+				console.log(x/this.z);
+				c = gradient1((x/this.z-1)/.6); // should be fine for everything except H1 and He3
+				break;
 			case 'nutrition':
 				c = this.nutrition === undefined ? 'white' : nutritionColors[this.nutrition];
 				break;
