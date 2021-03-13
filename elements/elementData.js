@@ -593,6 +593,9 @@ const elementData = [
 				human: 4e-10,
 				universe: 3e-8,
 			},
+			categories: {
+				rem: true,
+			},
 			density: 2989,
 			discovery: 1879,
 			modelColor: 'rgb(230, 230, 230)',
@@ -1100,6 +1103,9 @@ const elementData = [
 				human: 6e-10,
 				universe: 7e-9,
 			},
+			categories: {
+				rem: true,
+			},
 			density: 4469,
 			discovery: 1843,
 			prices: {
@@ -1582,6 +1588,7 @@ const elementData = [
 			},
 			categories: {
 				lanthanide: true,
+				rem: true,
 			},
 			density: 6145,
 			discovery: 1841,
@@ -1605,6 +1612,7 @@ const elementData = [
 			},
 			categories: {
 				lanthanide: true,
+				rem: true,
 			},
 			density: 6770,
 			discovery: 1838,
@@ -1627,6 +1635,7 @@ const elementData = [
 			},
 			categories: {
 				lanthanide: true,
+				rem: true,
 			},
 			density: 6773,
 			discovery: 1885,
@@ -1649,6 +1658,7 @@ const elementData = [
 			},
 			categories: {
 				lanthanide: true,
+				rem: true,
 			},
 			density: 7007,
 			discovery: 1885,
@@ -1671,6 +1681,7 @@ const elementData = [
 			},
 			categories: {
 				lanthanide: true,
+				rem: true,
 			},
 			density: 7260,
 			discovery: 1945,
@@ -1693,6 +1704,7 @@ const elementData = [
 			},
 			categories: {
 				lanthanide: true,
+				rem: true,
 			},
 			density: 7520,
 			discovery: 1879,
@@ -1716,6 +1728,7 @@ const elementData = [
 			},
 			categories: {
 				lanthanide: true,
+				rem: true,
 			},
 			density: 5243,
 			discovery: 1901,
@@ -1737,6 +1750,7 @@ const elementData = [
 			},
 			categories: {
 				lanthanide: true,
+				rem: true,
 			},
 			density: 7895,
 			discovery: 1886,
@@ -1758,6 +1772,7 @@ const elementData = [
 			},
 			categories: {
 				lanthanide: true,
+				rem: true,
 			},
 			density: 8229,
 			discovery: 1886,
@@ -1779,6 +1794,7 @@ const elementData = [
 			},
 			categories: {
 				lanthanide: true,
+				rem: true,
 			},
 			density: 8550,
 			discovery: 1886,
@@ -1801,6 +1817,7 @@ const elementData = [
 			},
 			categories: {
 				lanthanide: true,
+				rem: true,
 			},
 			density: 8795,
 			discovery: 1879,
@@ -1822,6 +1839,7 @@ const elementData = [
 			},
 			categories: {
 				lanthanide: true,
+				rem: true,
 			},
 			density: 9066,
 			discovery: 1879,
@@ -1843,6 +1861,7 @@ const elementData = [
 			},
 			categories: {
 				lanthanide: true,
+				rem: true,
 			},
 			density: 9321,
 			discovery: 1879,
@@ -1864,6 +1883,7 @@ const elementData = [
 			},
 			categories: {
 				lanthanide: true,
+				rem: true,
 			},
 			density: 6965,
 			discovery: 1906,
@@ -1886,6 +1906,7 @@ const elementData = [
 			},
 			categories: {
 				lanthanide: true,
+				rem: true,
 			},
 			density: 9840,
 			discovery: 1906,
