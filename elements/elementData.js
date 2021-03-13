@@ -48,6 +48,10 @@ const elementData = [
 				2012: 1.39,
 			},
 			production: 50e6,
+			temperatures: {
+				boil: 20.28,
+				melt: 14.01,
+			},
 		},
 	},
 	{
@@ -72,6 +76,9 @@ const elementData = [
 				2018: 24,
 			},
 			production: 32e3,
+			temperatures: {
+				boil: 4.22, // does not solidify at SP
+			},
 		},
 	},
 	{
@@ -100,6 +107,10 @@ const elementData = [
 			},
 			production: 55e3,
 			rgb: 'rgb(249, 255, 252)',
+			temperatures: {
+				boil: 1560,
+				melt: 453.69,
+			},
 		},
 	},
 	{
@@ -127,6 +138,10 @@ const elementData = [
 			},
 			production: 200,
 			rgb: 'rgb(255, 255, 255)',
+			temperatures: {
+				boil: 2742,
+				melt: 1560,
+			},
 		},
 	},
 	{
@@ -154,6 +169,10 @@ const elementData = [
 			},
 			production: 1.8e6,
 			rgb: 'rgb(255, 232, 219)',
+			temperatures: {
+				boil: 4200,
+				melt: 2349,
+			},
 		},
 	},
 	{
@@ -184,6 +203,10 @@ const elementData = [
 			},
 			production: 1.03e6,
 			rgb: 'rgb(255, 251, 239)',
+			temperatures: {
+				boil: 3915,
+				melt: 3915,
+			},
 		},
 	},
 	{
@@ -211,6 +234,10 @@ const elementData = [
 				2001: 0.14,
 			},
 			production: 131e6,
+			temperatures: {
+				boil: 77.36,
+				melt: 63.15,
+			},
 		},
 	},
 	{
@@ -239,6 +266,10 @@ const elementData = [
 				2001: 0.154,
 			},
 			production: 100e6,
+			temperatures: {
+				boil: 90.2,
+				melt: 54.36,
+			},
 		},
 	},
 	{
@@ -269,6 +300,10 @@ const elementData = [
 			},
 			production: 5.5e6,
 			rgb: 'rgb(255, 207, 112)',
+			temperatures: {
+				boil: 85.03,
+				melt: 53.53,
+			},
 		},
 	},
 	{
@@ -293,6 +328,10 @@ const elementData = [
 				1999: 240,
 			},
 			production: 500,
+			temperatures: {
+				boil: 27.07,
+				melt: 24.56,
+			},
 		},
 	},
 	{
@@ -323,6 +362,10 @@ const elementData = [
 			},
 			production: 100e3,
 			rgb: 'rgb(252, 255, 249)',
+			temperatures: {
+				boil: 1156,
+				melt: 370.87,
+			},
 		},
 	},
 	{
@@ -352,6 +395,10 @@ const elementData = [
 			},
 			production: 748e3,
 			rgb: 'rgb(255, 251, 234)',
+			temperatures: {
+				boil: 1363,
+				melt: 923,
+			},
 		},
 	},
 	{
@@ -382,6 +429,10 @@ const elementData = [
 			},
 			production: 44.1e6,
 			rgb: 'rgb(244, 251, 255)',
+			temperatures: {
+				boil: 2792,
+				melt: 933.47,
+			},
 		},
 	},
 	{
@@ -410,6 +461,10 @@ const elementData = [
 			},
 			production: 8e6,
 			rgb: 'rgb(234, 241, 255)',
+			temperatures: {
+				boil: 3538,
+				melt: 1687,
+			},
 		},
 	},
 	{
@@ -441,6 +496,10 @@ const elementData = [
 			},
 			production: 910e3,
 			rgb: 'rgb(255, 235, 186)',
+			temperatures: {
+				boil: 550,
+				melt: 317.3,
+			},
 		},
 	},
 	{
@@ -471,6 +530,10 @@ const elementData = [
 			},
 			production: 69e6,
 			rgb: 'rgb(255, 218, 86)',
+			temperatures: {
+				boil: 717.87,
+				melt: 388.36,
+			},
 		},
 	},
 	{
@@ -500,6 +563,10 @@ const elementData = [
 				2013: 0.082,
 			},
 			rgb: 'rgb(246, 255, 188)',
+			temperatures: {
+				boil: 239.11,
+				melt: 171.6,
+			},
 		},
 	},
 	{
@@ -524,6 +591,10 @@ const elementData = [
 				2019: 0.931,
 			},
 			production: 700e3,
+			temperatures: {
+				boil: 87.3,
+				melt: 83.8,
+			},
 		},
 	},
 	{
@@ -550,6 +621,10 @@ const elementData = [
 			nutrition: 1,
 			prices: {
 				2020: 12.85,
+			},
+			temperatures: {
+				boil: 1032,
+				melt: 336.53,
 			},
 		},
 	},
@@ -578,6 +653,10 @@ const elementData = [
 			prices: {
 				2020: 2.28,
 			},
+			temperatures: {
+				boil: 1757,
+				melt: 1115,
+			},
 		},
 	},
 	{
@@ -603,6 +682,10 @@ const elementData = [
 				2020: 3460,
 			},
 			production: 2,
+			temperatures: {
+				boil: 3109,
+				melt: 1814,
+			},
 		},
 	},
 	{
@@ -632,6 +715,10 @@ const elementData = [
 				2018: 4.8,
 			},
 			production: 6.7e6,
+			temperatures: {
+				boil: 3560,
+				melt: 1941,
+			},
 		},
 	},
 	{
@@ -660,6 +747,10 @@ const elementData = [
 				2020: 371,
 			},
 			production: 73e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-vanadium.pdf
+			temperatures: {
+				boil: 3680,
+				melt: 2183,
+			},
 		},
 	},
 	{
@@ -689,6 +780,10 @@ const elementData = [
 				2019: 9.4,
 			},
 			production: 4.4e6,
+			temperatures: {
+				boil: 2944,
+				melt: 2180,
+			},
 			toxicity: 50e-6, // Chromium(VI) human, min est. LD50
 		},
 	},
@@ -721,6 +816,10 @@ const elementData = [
 				2018: 2.06,
 			},
 			production: 19e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-manganese.pdf
+			temperatures: {
+				boil: 2334,
+				melt: 1519,
+			},
 		},
 	},
 	{
@@ -752,6 +851,10 @@ const elementData = [
 			},
 			production: 1544e6,
 			rgb: 'rgb(255, 252, 252)',
+			temperatures: {
+				boil: 3134,
+				melt: 1811,
+			},
 			toxicity: 50e-6, // "Ingestions of more than 50 mg/kg of elemental iron are associated with severe toxicity"
 		},
 	},
@@ -782,6 +885,10 @@ const elementData = [
 			},
 			production: 140e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cobalt.pdf
 			rgb: 'rgb(255, 249, 244)',
+			temperatures: {
+				boil: 3200,
+				melt: 1768,
+			},
 		},
 	},
 	{
@@ -811,6 +918,10 @@ const elementData = [
 			},
 			production: 1.8e6,
 			rgb: 'rgb(255, 245, 224)',
+			temperatures: {
+				boil: 3186,
+				melt: 1728,
+			},
 		},
 	},
 	{
@@ -843,6 +954,10 @@ const elementData = [
 			},
 			production: 15.1e6,
 			rgb: 'rgb(255, 121, 76)',
+			temperatures: {
+				boil: 2835,
+				melt: 1357.77,
+			},
 			toxicity: 30e-6, // Copper sulfate, rat
 		},
 	},
@@ -873,6 +988,10 @@ const elementData = [
 				2019: 2.55,
 			},
 			production: 11.2e6,
+			temperatures: {
+				boil: 1180,
+				melt: 692.88,
+			},
 		},
 	},
 	{
@@ -898,6 +1017,10 @@ const elementData = [
 				2020: 148,
 			},
 			production: 184,
+			temperatures: {
+				boil: 2673,
+				melt: 692.88,
+			},
 		},
 	},
 	{
@@ -925,6 +1048,10 @@ const elementData = [
 				2020: 962,
 			},
 			production: 118,
+			temperatures: {
+				boil: 3106,
+				melt: 1211.4,
+			},
 		},
 	},
 	{
@@ -954,6 +1081,10 @@ const elementData = [
 				2020: 1.15,
 			},
 			production: 33e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-arsenic.pdf
+			temperatures: {
+				boil: 887,
+				melt: 887, // sublimates
+			},
 			toxicity: 763e-6, // rat, oral
 		},
 	},
@@ -985,6 +1116,10 @@ const elementData = [
 				2019: 21.4,
 			},
 			production: 2e3,
+			temperatures: {
+				boil: 958,
+				melt: 453,
+			},
 		},
 	},
 	{
@@ -1013,6 +1148,10 @@ const elementData = [
 			},
 			production: 556e3,
 			rgb: 'rgb(255, 94, 35)',
+			temperatures: {
+				boil: 332,
+				melt: 265.8,
+			},
 		},
 	},
 	{
@@ -1035,6 +1174,10 @@ const elementData = [
 			modelColor: 'rgb(92, 184, 209)',
 			prices: {
 				1999: 290,
+			},
+			temperatures: {
+				boil: 119.93,
+				melt: 115.79,
 			},
 		},
 	},
@@ -1062,6 +1205,10 @@ const elementData = [
 				2018: 15500,
 			},
 			production: 2,
+			temperatures: {
+				boil: 961,
+				melt: 312.46,
+			},
 		},
 	},
 	{
@@ -1088,6 +1235,10 @@ const elementData = [
 				2019: 6.61,
 			},
 			production: 220e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-strontium.pdf
+			temperatures: {
+				boil: 1655,
+				melt: 1050,
+			},
 		},
 	},
 	{
@@ -1112,6 +1263,10 @@ const elementData = [
 				2019: 31,
 			},
 			production: 200,
+			temperatures: {
+				boil: 3609,
+				melt: 1799,
+			},
 		},
 	},
 	{
@@ -1137,6 +1292,10 @@ const elementData = [
 				2020: 36.4,
 			},
 			production: 900e3,
+			temperatures: {
+				boil: 4682,
+				melt: 2128,
+			},
 		},
 	},
 	{
@@ -1166,6 +1325,10 @@ const elementData = [
 				2020: 73.5,
 			},
 			production: 44.5e3,
+			temperatures: {
+				boil: 5017,
+				melt: 2750,
+			},
 		},
 	},
 	{
@@ -1195,6 +1358,10 @@ const elementData = [
 				2019: 40.1,
 			},
 			production: 250e3,
+			temperatures: {
+				boil: 4912,
+				melt: 2896,
+			},
 		},
 	},
 	{
@@ -1217,6 +1384,10 @@ const elementData = [
 			nobleMetal: 4,
 			prices: {
 				2004: 1e5,
+			},
+			temperatures: {
+				boil: 4538,
+				melt: 2430,
 			},
 		},
 	},
@@ -1248,6 +1419,10 @@ const elementData = [
 				2020: 10500,
 			},
 			production: 12,
+			temperatures: {
+				boil: 4423,
+				melt: 2607,
+			},
 		},
 	},
 	{
@@ -1277,6 +1452,10 @@ const elementData = [
 				2019: 147e3,
 			},
 			production: 25,
+			temperatures: {
+				boil: 3968,
+				melt: 2237,
+			},
 		},
 	},
 	{
@@ -1305,6 +1484,10 @@ const elementData = [
 				2019: 49.5e3,
 			},
 			production: 210, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-platinum.pdf
+			temperatures: {
+				boil: 3236,
+				melt: 1828.05,
+			},
 		},
 	},
 	{
@@ -1335,6 +1518,10 @@ const elementData = [
 			},
 			production: 322e3,
 			rgb: 'rgb(255, 248, 239)',
+			temperatures: {
+				boil: 2435,
+				melt: 1234.93,
+			},
 		},
 	},
 	{
@@ -1361,6 +1548,10 @@ const elementData = [
 				2019: 2.73,
 			},
 			production: 25e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cadmium.pdf
+			temperatures: {
+				boil: 1040,
+				melt: 594.22,
+			},
 			toxicity: 225e-6, // rat, oral
 		},
 	},
@@ -1387,6 +1578,10 @@ const elementData = [
 				2019: 167,
 			},
 			production: 476,
+			temperatures: {
+				boil: 2345,
+				melt: 429.75,
+			},
 		},
 	},
 	{
@@ -1415,6 +1610,10 @@ const elementData = [
 				2019: 18.7,
 			},
 			production: 340e3,
+			temperatures: {
+				boil: 2875,
+				melt: 505.08,
+			},
 			toxicity: 200e-6, // "Nausea, vomiting and diarrhea have been reported after ingesting canned food containing 200 mg/kg of tin."
 		},
 	},
@@ -1443,6 +1642,10 @@ const elementData = [
 				2019: 5.79,
 			},
 			production: 150e3,
+			temperatures: {
+				boil: 1860,
+				melt: 903.78,
+			},
 		},
 	},
 	{
@@ -1470,6 +1673,10 @@ const elementData = [
 				2019: 63.5,
 			},
 			production: 122,
+			temperatures: {
+				boil: 1261,
+				melt: 722.66,
+			},
 		},
 	},
 	{
@@ -1498,6 +1705,10 @@ const elementData = [
 			},
 			production: 28e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-iodine.pdf
 			rgb: 'rgb(216, 229, 255)',
+			temperatures: {
+				boil: 457.4,
+				melt: 386.85,
+			},
 		},
 	},
 	{
@@ -1521,6 +1732,10 @@ const elementData = [
 				1999: 1800,
 			},
 			production: 40,
+			temperatures: {
+				boil: 165.03,
+				melt: 161.4,
+			},
 		},
 	},
 	// period 6

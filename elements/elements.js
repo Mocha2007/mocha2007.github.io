@@ -85,6 +85,8 @@ class ChemElement {
 			 * - The rest is averaged and white-balanced.
 			 */
 			this.rgb = properties.rgb;
+			/** string => number */
+			this.temperatures = properties.temperatures;
 			/** @type {number} LD50, as close to humans as possible, (0, 1) */
 			this.toxicity = properties.toxicity;
 		}
@@ -257,6 +259,14 @@ class ChemElement {
 			case 'block':
 				c = '#'+{s: 'f99', p: 'ff8', d: '9cf', f: '9f9', g: 'f9f'}[this.electronShell];
 				break;
+			case 'boil':
+				if (!this.temperatures)
+					c = '#ccc';
+				else {
+					const boils = elements.filter(e => e.temperatures && e.temperatures.boil).map(e => Math.log(e.temperatures.boil));
+					c = gradient1(remap(Math.log(this.temperatures.boil), [Math.min(...boils), Math.max(...boils)], [0, 1]));
+				}
+				break;
 			case 'color': // normalized color
 				c = this.rgb ? this.rgb : 'grey';
 				break;
@@ -287,6 +297,14 @@ class ChemElement {
 					x = Math.cbrt(this.biologicalHalfLife) /
 						Math.cbrt(Math.max(...elements.filter(e => e.biologicalHalfLife).map(e => e.biologicalHalfLife)));
 					c = gradient1(x);
+				}
+				break;
+			case 'melt':
+				if (!this.temperatures)
+					c = '#ccc';
+				else {
+					const melts = elements.filter(e => e.temperatures && e.temperatures.melt).map(e => Math.log(e.temperatures.melt));
+					c = gradient1(remap(Math.log(this.temperatures.melt), [Math.min(...melts), Math.max(...melts)], [0, 1]));
 				}
 				break;
 			case 'msi%4':
