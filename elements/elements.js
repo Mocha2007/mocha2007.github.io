@@ -5,6 +5,7 @@
 'use strict';
 
 const eV = 1.602176634e-19; // J; exact; electronvolt
+const standardTemperature = 273.15; // K; exact; melting point of water
 
 const minX = 1; // constant used to determine origin of x-values
 const maxZ = 100; // Z of top of charts
@@ -161,6 +162,15 @@ class ChemElement {
 	}
 	get stable(){
 		return this.isotopes.some(i => i.stable);
+	}
+	get state(){
+		return this.temperatures
+				? this.temperatures.boil < standardTemperature
+					? 'gas'
+					: this.temperatures.melt < standardTemperature
+						? 'liquid'
+						: 'solid'
+				: 'unknown';
 	}
 	createElement(){
 		const div = document.createElement('div');
@@ -359,6 +369,9 @@ class ChemElement {
 			case 'stable':
 				x = this.isotopes.filter(i => i.stable).length / 10 * 255;
 				c = `rgb(255, ${255-x}, 255)`;
+				break;
+			case 'state':
+				c = {gas: 'cyan', liquid: 'blue', solid: 'white', unknown: 'silver'}[this.state];
 				break;
 			case 'synesthete':
 				c = this.modelColor ? this.modelColor : '#ccc';

@@ -1762,6 +1762,10 @@ const elementData = [
 				2018: 61.8e3,
 			},
 			rgb: 'rgb(255, 212, 153)',
+			temperatures: {
+				boil: 944,
+				melt: 301.59,
+			},
 			toxicity: 2.3e-3, // https://en.wikipedia.org/wiki/Caesium#Health_and_safety_hazards
 		},
 	},
@@ -1787,6 +1791,10 @@ const elementData = [
 			prices: {
 				2016: 0.261,
 			},
+			temperatures: {
+				boil: 2170,
+				melt: 1000,
+			},
 		},
 	},
 	{
@@ -1810,6 +1818,10 @@ const elementData = [
 			nutrition: 5,
 			prices: {
 				2020: 4.85,
+			},
+			temperatures: {
+				boil: 3737,
+				melt: 1193,
 			},
 		},
 	},
@@ -1835,6 +1847,10 @@ const elementData = [
 			prices: {
 				2020: 31.4,
 			},
+			temperatures: {
+				boil: 3716,
+				melt: 1068,
+			},
 		},
 	},
 	{
@@ -1857,6 +1873,10 @@ const elementData = [
 			nutrition: 5,
 			prices: {
 				2019: 103,
+			},
+			temperatures: {
+				boil: 3793,
+				melt: 1208,
 			},
 		},
 	},
@@ -1882,6 +1902,10 @@ const elementData = [
 				2019: 57.5,
 			},
 			production: 7000,
+			temperatures: {
+				boil: 3347,
+				melt: 1297,
+			},
 		},
 	},
 	{
@@ -1902,6 +1926,10 @@ const elementData = [
 			discovery: 1945,
 			prices: {
 				2003: 460e3,
+			},
+			temperatures: {
+				boil: 3273,
+				melt: 1315,
 			},
 		}
 	},
@@ -1928,6 +1956,10 @@ const elementData = [
 				2019: 13.9,
 			},
 			production: 700,
+			temperatures: {
+				boil: 2067,
+				melt: 1345,
+			},
 		},
 	},
 	{
@@ -1949,6 +1981,10 @@ const elementData = [
 			discovery: 1901,
 			prices: {
 				2020: 31.4,
+			},
+			temperatures: {
+				boil: 1802,
+				melt: 1099,
 			},
 		},
 	},
@@ -1972,6 +2008,10 @@ const elementData = [
 			prices: {
 				2020: 28.6,
 			},
+			temperatures: {
+				boil: 3546,
+				melt: 1585,
+			},
 		},
 	},
 	{
@@ -1993,6 +2033,10 @@ const elementData = [
 			discovery: 1886,
 			prices: {
 				2019: 658,
+			},
+			temperatures: {
+				boil: 3503,
+				melt: 1629,
 			},
 		},
 	},
@@ -2017,6 +2061,10 @@ const elementData = [
 				2019: 307,
 			},
 			production: 100,
+			temperatures: {
+				boil: 2840,
+				melt: 1680,
+			},
 		},
 	},
 	{
@@ -2038,6 +2086,10 @@ const elementData = [
 			discovery: 1879,
 			prices: {
 				2020: 57.1,
+			},
+			temperatures: {
+				boil: 2993,
+				melt: 1734,
 			},
 		},
 	},
@@ -2061,6 +2113,10 @@ const elementData = [
 			prices: {
 				2020: 26.4,
 			},
+			temperatures: {
+				boil: 3141,
+				melt: 1734,
+			},
 		},
 	},
 	{
@@ -2082,6 +2138,10 @@ const elementData = [
 			discovery: 1879,
 			prices: {
 				2003: 3000,
+			},
+			temperatures: {
+				boil: 2223,
+				melt: 1818,
 			},
 		},
 	},
@@ -2105,6 +2165,10 @@ const elementData = [
 			prices: {
 				2020: 17.1,
 			},
+			temperatures: {
+				boil: 1469,
+				melt: 1097,
+			},
 		},
 	},
 	{
@@ -2127,6 +2191,10 @@ const elementData = [
 			discovery: 1906,
 			prices: {
 				2020: 643,
+			},
+			temperatures: {
+				boil: 3675,
+				melt: 1925,
 			},
 		},
 	},
@@ -2152,6 +2220,10 @@ const elementData = [
 				2017: 900,
 			},
 			production: 10,
+			temperatures: {
+				boil: 4876,
+				melt: 2506,
+			},
 		},
 	},
 	{
@@ -2179,6 +2251,10 @@ const elementData = [
 				2018: 151.8,
 			},
 			production: 1.8e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-tantalum.pdf
+			temperatures: {
+				boil: 5731,
+				melt: 3290,
+			},
 		},
 	},
 	{
@@ -2207,6 +2283,10 @@ const elementData = [
 				2018: 30.3,
 			},
 			production: 37400,
+			temperatures: {
+				boil: 5828,
+				melt: 3695,
+			},
 			toxicity: 59e-6, // https://en.wikipedia.org/wiki/Tungsten#Health_factors
 		},
 	},
@@ -2235,6 +2315,14 @@ const elementData = [
 				2020: 3580,
 			},
 			production: 45,
+			temperatures: {
+				boil: 2742,
+				melt: 1560,
+			},
+			temperatures: {
+				boil: 5869,
+				melt: 3459,
+			},
 			toxicity: 280e-6, // https://en.wikipedia.org/wiki/Rhenium#Precautions
 		},
 	},
@@ -2265,6 +2353,10 @@ const elementData = [
 				2016: 12e3,
 			},
 			production: 1,
+			temperatures: {
+				boil: 5285,
+				melt: 3306,
+			},
 		},
 	},
 	{
@@ -2295,6 +2387,10 @@ const elementData = [
 				2020: 55850,
 			},
 			production: 3,
+			temperatures: {
+				boil: 4701,
+				melt: 2719,
+			},
 		},
 	},
 	{
@@ -2323,6 +2419,10 @@ const elementData = [
 				2020: 27800,
 			},
 			production: 239,
+			temperatures: {
+				boil: 4098,
+				melt: 2041.4,
+			},
 		},
 	},
 	{
@@ -2354,6 +2454,10 @@ const elementData = [
 			},
 			production: 2310,
 			rgb: 'rgb(255, 211, 109)',
+			temperatures: {
+				boil: 3129,
+				melt: 1337.33,
+			},
 		},
 	},
 	{
@@ -2381,6 +2485,10 @@ const elementData = [
 				2017: 30.2,
 			},
 			production: 4e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-mercury.pdf
+			temperatures: {
+				boil: 629.88,
+				melt: 234.43,
+			},
 		},
 	},
 	{
@@ -2403,6 +2511,10 @@ const elementData = [
 			},
 			production: 10,
 			rgb: 'rgb(255, 252, 253)',
+			temperatures: {
+				boil: 1746,
+				melt: 577,
+			},
 		},
 	},
 	{
@@ -2431,6 +2543,10 @@ const elementData = [
 			},
 			production: 8725e3,
 			rgb: 'rgb(255, 255, 255)',
+			temperatures: {
+				boil: 2022,
+				melt: 600.61,
+			},
 		},
 	},
 	{
@@ -2459,6 +2575,10 @@ const elementData = [
 			},
 			production: 15e3,
 			rgb: 'rgb(255, 245, 232)',
+			temperatures: {
+				boil: 1837,
+				melt: 544.7,
+			},
 		},
 	},
 	{
@@ -2485,6 +2605,10 @@ const elementData = [
 			}, */
 			production: 100e-6,
 			rgb: 'rgb(234, 242, 255)',
+			temperatures: {
+				boil: 1235,
+				melt: 527,
+			},
 			toxicity: 8.7e-12, //  rats were given a fatal dose of 1.45 MBq/kg (8.7 ng/kg) of 210Po;
 		},
 	},
@@ -2506,6 +2630,10 @@ const elementData = [
 			density: 7000,
 			discovery: 1940,
 			nobleMetal: 4,
+			temperatures: {
+				boil: 610,
+				melt: 575,
+			},
 		},
 	},
 	{
@@ -2524,6 +2652,10 @@ const elementData = [
 			},
 			density: 9.73,
 			discovery: 1910,
+			temperatures: {
+				boil: 211.3,
+				melt: 202,
+			},
 		},
 	},
 	{
