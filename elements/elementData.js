@@ -2674,6 +2674,10 @@ const elementData = [
 			},
 			density: 1870,
 			discovery: 1939,
+			temperatures: {
+				boil: 890,
+				melt: 281,
+			},
 		},
 	},
 	{
@@ -2695,6 +2699,10 @@ const elementData = [
 			density: 5500,
 			discovery: 1902,
 			rgb: 'rgb(255, 233, 198)',
+			temperatures: {
+				boil: 2010,
+				melt: 973,
+			},
 		},
 	},
 	{
@@ -2715,6 +2723,10 @@ const elementData = [
 			/* prices: {
 				2004: 29e12,
 			}, */
+			temperatures: {
+				boil: 3471,
+				melt: 1323,
+			},
 		},
 	},
 	{
@@ -2739,6 +2751,10 @@ const elementData = [
 			},
 			production: 1.2e3, // US, est. https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-thorium.pdf
 			rgb: 'rgb(255, 229, 216)',
+			temperatures: {
+				boil: 5061,
+				melt: 2115,
+			},
 		},
 	},
 	{
@@ -2759,6 +2775,10 @@ const elementData = [
 			discovery: 1927,
 			prices: {
 				2011: 280e3,
+			},
+			temperatures: {
+				boil: 4300,
+				melt: 1841,
 			},
 			toxicity: 0.5e-9/70, // "The maximum safe dose of Pa in the human body (~70kg) is ... 0.5 micrograms
 		}
@@ -2786,6 +2806,10 @@ const elementData = [
 			},
 			production: 50572,
 			rgb: 'rgb(255, 251, 242)',
+			temperatures: {
+				boil: 4404,
+				melt: 1405.3,
+			},
 		},
 	},
 	{
@@ -2805,6 +2829,10 @@ const elementData = [
 			discovery: 1940,
 			prices: {
 				2020: 660e3,
+			},
+			temperatures: {
+				boil: 4273,
+				melt: 917,
 			},
 		}
 	},
@@ -2828,6 +2856,10 @@ const elementData = [
 			density: 19850,
 			discovery: 1940,
 			rgb: 'rgb(255, 226, 249)',
+			temperatures: {
+				boil: 3501,
+				melt: 912.5,
+			},
 			toxicity: 5e-6, // "Animal studies found that a few milligrams of plutonium per kilogram of tissue is a lethal dose."
 		},
 	},
@@ -2848,6 +2880,10 @@ const elementData = [
 				1998: 728e3,
 			},
 			rgb: 'rgb(255, 233, 224)',
+			temperatures: {
+				boil: 2880,
+				melt: 1449,
+			},
 		},
 	},
 	{
@@ -2866,6 +2902,10 @@ const elementData = [
 				2004: 185e6,
 			}, */
 			rgb: 'rgb(255, 255, 216)',
+			temperatures: {
+				boil: 3383,
+				melt: 1613,
+			},
 		},
 	},
 	{
@@ -2883,6 +2923,10 @@ const elementData = [
 			/* prices: {
 				2004: 185e9,
 			}, */
+			temperatures: {
+				boil: 2900,
+				melt: 1259,
+			},
 		}
 	},
 	{
@@ -2901,6 +2945,10 @@ const elementData = [
 				2004: 906e9,
 			}, */
 			production: 0.275e-6,
+			temperatures: {
+				boil: 1743, // estimate
+				melt: 1173,
+			},
 		},
 	},
 	{
@@ -2915,6 +2963,10 @@ const elementData = [
 			},
 			density: 8840,
 			discovery: 1952,
+			temperatures: {
+				boil: 1269, // estimate
+				melt: 1133,
+			},
 		}
 	},
 	{
@@ -2929,6 +2981,9 @@ const elementData = [
 			},
 			density: 9700,
 			discovery: 1952,
+			temperatures: {
+				melt: 1800, // predicted
+			},
 		}
 	},
 	{
@@ -2943,6 +2998,9 @@ const elementData = [
 			},
 			density: 10300,
 			discovery: 1955,
+			temperatures: {
+				melt: 1100, // predicted
+			},
 		}
 	},
 	{
@@ -2957,6 +3015,9 @@ const elementData = [
 			},
 			density: 9900,
 			discovery: 1966,
+			temperatures: {
+				melt: 1100, // predicted
+			},
 		}
 	},
 	{
@@ -2972,6 +3033,9 @@ const elementData = [
 			},
 			density: 16100,
 			discovery: 1961,
+			temperatures: {
+				melt: 1900, // predicted
+			},
 		}
 	},
 	{
@@ -2984,6 +3048,10 @@ const elementData = [
 		properties: {
 			density: 23200,
 			discovery: 1969,
+			temperatures: {
+				boil: 5800, // predicted
+				melt: 2400, // predicted
+			},
 		}
 	},
 	{
@@ -3086,6 +3154,10 @@ const elementData = [
 			density: 14000,
 			discovery: 1996,
 			nobleMetal: 5,
+			temperatures: {
+				boil: 340, // predicted
+				melt: 283, // predicted
+			},
 		},
 	},
 	{
@@ -3099,6 +3171,10 @@ const elementData = [
 			density: 16000,
 			discovery: 2003,
 			nobleMetal: 5,
+			temperatures: {
+				boil: 1430, // predicted
+				melt: 700, // predicted
+			},
 		},
 	},
 	{
@@ -3112,6 +3188,10 @@ const elementData = [
 			density: 9928,
 			discovery: 1999,
 			nobleMetal: 5,
+			temperatures: {
+				boil: 380, // predicted
+				melt: 200, // predicted
+			},
 		},
 	},
 	{
@@ -3127,6 +3207,10 @@ const elementData = [
 			},
 			density: 13500,
 			discovery: 2003,
+			temperatures: {
+				boil: 1400, // predicted
+				melt: 670, // predicted
+			},
 		},
 	},
 	{
@@ -3143,6 +3227,10 @@ const elementData = [
 			density: 12900,
 			discovery: 2000,
 			nobleMetal: 5,
+			temperatures: {
+				boil: 1085, // extrapolated
+				melt: 708.5, // extrapolated
+			},
 		},
 	},
 	{
@@ -3158,6 +3246,10 @@ const elementData = [
 			},
 			density: 7200,
 			discovery: 2009,
+			temperatures: {
+				boil: 883, // predicted
+				melt: 723, // predicted
+			},
 		},
 	},
 	{
@@ -3173,6 +3265,10 @@ const elementData = [
 			},
 			density: 7000,
 			discovery: 2002,
+			temperatures: {
+				boil: 450, // predicted
+				melt: 325, // predicted
+			},
 		},
 	},/* somehow this actually doesn't break the table!!! wow
 	{
