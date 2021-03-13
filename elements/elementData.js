@@ -36,6 +36,10 @@ const elementData = [
 				universe: 0.739,
 			},
 			biologicalHalfLife: 12*day, // tritium; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			categories: {
+				reactiveNonmetal: true,
+				rockForming: 0.5,
+			},
 			density: 0.08988,
 			discovery: 1500,
 			modelColor: 'white',
@@ -55,7 +59,11 @@ const elementData = [
 		period: 1,
 		properties: {
 			abundance: {
+				earth: 0.008e-6,
 				universe: 0.24,
+			},
+			categories: {
+				nobleGas: true,
 			},
 			density: 0.1785,
 			discovery: 1895,
@@ -78,6 +86,9 @@ const elementData = [
 				earth: 4.1e-6,
 				human: 1.5e-8,
 				universe: 6e-9,
+			},
+			categories: {
+				alkaliMetal: true,
 			},
 			density: 534,
 			discovery: 1821,
@@ -104,6 +115,10 @@ const elementData = [
 				human: 4.5e-10,
 				universe: 1e-9,
 			},
+			categories: {
+				aem: true,
+				preciousMetal: 0.5,
+			},
 			density: 1850,
 			discovery: 1828,
 			modelColor: 'rgb(194, 255, 0)',
@@ -126,6 +141,9 @@ const elementData = [
 				earth: 480e-9,
 				human: 3e-8,
 				universe: 1e-9,
+			},
+			categories: {
+				metalloid: true,
 			},
 			density: 2340,
 			discovery: 1808,
@@ -152,6 +170,11 @@ const elementData = [
 				universe: 4600e-6,
 			},
 			biologicalHalfLife: 40*day, // C-14; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			categories: {
+				coinageMetal: 0.5, // various russian coins
+				reactiveNonmetal: true,
+				rockForming: 0.5,
+			},
 			density: 2267,
 			discovery: -3750,
 			modelColor: 'rgb(144, 144, 144)',
@@ -176,6 +199,10 @@ const elementData = [
 				human: 0.011,
 				universe: 960e-6,
 			},
+			categories: {
+				pnictogen: true,
+				reactiveNonmetal: true,
+			},
 			density: 1.2506,
 			discovery: 1772,
 			modelColor: 'rgb(48, 80, 248)',
@@ -198,6 +225,11 @@ const elementData = [
 				earth: 482e-3,
 				human: 0.24,
 				universe: 10400e-6,
+			},
+			categories: {
+				chalcogen: true,
+				reactiveNonmetal: true,
+				rockForming: true,
 			},
 			density: 1.429,
 			discovery: 1604,
@@ -225,6 +257,8 @@ const elementData = [
 			biologicalHalfLife: 450*day, // personal estimate; 2.6 g fluorine per person, 4 mg/day per person
 			categories: {
 				halogen: true,
+				reactiveNonmetal: true,
+				rockForming: 0.5,
 			},
 			density: 1.696,
 			discovery: 1886,
@@ -246,7 +280,11 @@ const elementData = [
 		period: 2,
 		properties: {
 			abundance: {
+				earth: 0.0051e-6,
 				universe: 1340e-6,
+			},
+			categories: {
+				nobleGas: true,
 			},
 			density: 0.8999,
 			discovery: 1898,
@@ -272,6 +310,10 @@ const elementData = [
 			},
 			biologicalHalfLife: 69*day, // personal estimate; 100 g sodium per person, 1 mg/day per person
 			// 11 d according to http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			categories: {
+				alkaliMetal: true,
+				rockForming: true,
+			},
 			density: 971,
 			discovery: 1807,
 			modelColor: 'rgb(171, 92, 242)',
@@ -297,6 +339,10 @@ const elementData = [
 				universe: 580e-6,
 			},
 			biologicalHalfLife: 44*day, // personal estimate; 19 g magnesium per person, 300 mg/day per person
+			categories: {
+				aem: true,
+				rockForming: true,
+			},
 			density: 1738,
 			discovery: 1808,
 			modelColor: 'rgb(138, 255, 0)',
@@ -320,6 +366,11 @@ const elementData = [
 				earth: 15.3e-3,
 				human: 1.5e-7,
 				universe: 58e-6,
+			},
+			categories: {
+				coinageMetal: 0.5, // 1 yen coin
+				nativeMetal: 0.5,
+				rockForming: true,
 			},
 			density: 2698,
 			discovery: 1825,
@@ -346,6 +397,10 @@ const elementData = [
 				human: 5.8e-5,
 				universe: 650e-6,
 			},
+			categories: {
+				metalloid: true,
+				rockForming: true,
+			},
 			density: 2329.6,
 			discovery: 1823,
 			modelColor: 'rgb(240, 200, 160)',
@@ -371,6 +426,11 @@ const elementData = [
 				universe: 7e-6,
 			},
 			biologicalHalfLife: 932*day, // personal estimate; 780 g phosphorus per person, 580 mg/day per person
+			categories: {
+				pnictogen: true,
+				reactiveNonmetal: true,
+				rockForming: 0.5,
+			},
 			// 1155 d according to http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			density: 1820,
 			discovery: 1669,
@@ -397,6 +457,11 @@ const elementData = [
 				universe: 440e-6,
 			},
 			biologicalHalfLife: 90*day, // S-35; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			categories: {
+				chalcogen: true,
+				reactiveNonmetal: true,
+				rockForming: 0.5,
+			},
 			density: 2067,
 			discovery: -2000,
 			modelColor: 'rgb(255, 255, 48)',
@@ -424,6 +489,8 @@ const elementData = [
 			biologicalHalfLife: 29*day, // Cl-36; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			categories: {
 				halogen: true,
+				reactiveNonmetal: true,
+				rockForming: 0.5,
 			},
 			density: 3.214,
 			discovery: 1774,
@@ -444,7 +511,11 @@ const elementData = [
 		period: 3,
 		properties: {
 			abundance: {
+				earth: 3.5e-6,
 				universe: 77e-6,
+			},
+			categories: {
+				nobleGas: true,
 			},
 			density: 1.7837,
 			discovery: 1894,
@@ -469,6 +540,10 @@ const elementData = [
 				universe: 3e-6,
 			},
 			biologicalHalfLife: 20*day, // personal estimate; 140 g potassium per person, 4.7 mg/day per person
+			categories: {
+				alkaliMetal: true,
+				rockForming: true,
+			},
 			density: 862,
 			discovery: 1807,
 			modelColor: 'rgb(143, 64, 212)',
@@ -492,6 +567,10 @@ const elementData = [
 				universe: 60e-6,
 			},
 			biologicalHalfLife: 693*day, // personal estimate; 1kg calcium per person, 1 g/day per person
+			categories: {
+				aem: true,
+				rockForming: true,
+			},
 			density: 1540,
 			discovery: 1808,
 			modelColor: 'rgb(61, 255, 0)',
@@ -536,6 +615,11 @@ const elementData = [
 				human: 4e-8,
 				universe: 3e-6,
 			},
+			categories: {
+				nativeMetal: 0.5,
+				refractoryMetal: 0.5,
+				rockForming: 0.5,
+			},
 			density: 4540,
 			discovery: 1825,
 			modelColor: 'rgb(191, 194, 199)',
@@ -559,6 +643,10 @@ const elementData = [
 				earth: 53.6e-6,
 				human: 1.2e-10,
 				universe: 1e-6,
+			},
+			categories: {
+				nativeMetal: 0.5,
+				refractoryMetal: 0.5,
 			},
 			density: 6110,
 			discovery: 1867,
@@ -585,6 +673,10 @@ const elementData = [
 				universe: 1.5e-5,
 			},
 			biologicalHalfLife: 320*day, // personal estimate; 14 mg chromium per person, 0.03 mg/day per person
+			categories: {
+				nativeMetal: 0.5,
+				refractoryMetal: 0.5,
+			},
 			density: 7150,
 			discovery: 1797,
 			modelColor: 'rgb(138, 153, 199)',
@@ -611,6 +703,12 @@ const elementData = [
 				universe: 8e-6,
 			},
 			biologicalHalfLife: 3.8*day, // personal estimate; 12 mg manganese per person, 2 mg/day per person
+			categories: {
+				coinageMetal: 0.5, // $1 coin
+				nativeMetal: 0.5,
+				refractoryMetal: 0.5,
+				rockForming: 0.5,
+			},
 			density: 7440,
 			discovery: 1774,
 			modelColor: 'rgb(156, 122, 199)',
@@ -636,6 +734,11 @@ const elementData = [
 				universe: 1.09e-3,
 			},
 			biologicalHalfLife: 485*day, // personal estimate; 4.2g iron per person, 6 mg/day per person; 0.5^(1/L) = 1 - 0.006/4.2
+			categories: {
+				coinageMetal: 0.5, // various russian coins
+				nativeMetal: 0.5,
+				rockForming: true,
+			},
 			density: 7874,
 			discovery: -5000,
 			modelColor: 'rgb(224, 102, 51)',
@@ -663,6 +766,9 @@ const elementData = [
 				universe: 3e-6,
 			},
 			biologicalHalfLife: 10*day, // Co-60; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			categories: {
+				nativeMetal: 0.5,
+			},
 			density: 8860,
 			discovery: 1735,
 			modelColor: 'rgb(240, 144, 160)',
@@ -687,6 +793,10 @@ const elementData = [
 				earth: 8.01e-3,
 				human: 1.5e-8,
 				universe: 49e-6,
+			},
+			categories: {	
+				coinageMetal: 0.5, // us coins
+				nativeMetal: 0.5,
 			},
 			density: 8912,
 			discovery: 1751,
@@ -714,6 +824,11 @@ const elementData = [
 				universe: 6e-8,
 			},
 			biologicalHalfLife: 55*day, // personal estimate; 72 mg copper per person, 0.9 mg/day per person
+			categories: {
+				coinageMetal: true,
+				nativeMetal: true,
+				nobleMetal: 0.5,
+			},
 			density: 8960,
 			discovery: -9000,
 			modelColor: 'rgb(200, 128, 51)',
@@ -742,6 +857,10 @@ const elementData = [
 				universe: 3e-7,
 			},
 			biologicalHalfLife: 200*day, // personal estimate; 2.3 g zinc per person, 8 mg/day per person
+			categories: {
+				coinageMetal: 0.5, // us coins
+				nativeMetal: 0.5,
+			},
 			density: 7134,
 			discovery: -1000,
 			modelColor: 'rgb(125, 128, 176)',
@@ -766,6 +885,9 @@ const elementData = [
 				human: 7e-6,
 				universe: 1e-8,
 			},
+			categories: {
+				preciousMetal: 0.5,
+			},
 			density: 5907,
 			discovery: 1875,
 			modelColor: 'rgb(194, 143, 143)',
@@ -787,6 +909,10 @@ const elementData = [
 				earth: 2.5e-6,
 				human: 6e-10,
 				universe: 2e-7,
+			},
+			categories: {
+				metalloid: true,
+				preciousMetal: 0.5,
 			},
 			density: 5323,
 			discovery: 1886,
@@ -810,6 +936,11 @@ const elementData = [
 				earth: 590e-9,
 				human: 8.9e-10,
 				universe: 8e-9,
+			},
+			categories: {
+				metalloid: true,
+				nativeMetal: 0.5,
+				pnictogen: true,
 			},
 			density: 5776,
 			discovery: 815,
@@ -837,6 +968,11 @@ const elementData = [
 				universe: 3e-8,
 			},
 			biologicalHalfLife: 190*day, // personal estimate; 15 mg selenium per person, 0.055 mg/day per person
+			categories: {
+				chalcogen: true,
+				nativeMetal: 0.5,
+				reactiveNonmetal: true,
+			},
 			density: 4809,
 			discovery: 1817,
 			modelColor: 'rgb(255, 161, 0)',
@@ -863,6 +999,7 @@ const elementData = [
 			},
 			categories: {
 				halogen: true,
+				reactiveNonmetal: true,
 			},
 			density: 3122,
 			discovery: 1825,
@@ -884,7 +1021,11 @@ const elementData = [
 		period: 4,
 		properties: {
 			abundance: {
+				earth: 0.0001e-6,
 				universe: 4e-8,
+			},
+			categories: {
+				nobleGas: true,
 			},
 			density: 3.733,
 			discovery: 1898,
@@ -908,6 +1049,9 @@ const elementData = [
 				universe: 1e-8,
 			},
 			biologicalHalfLife: 45*day, // Rb-86; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			categories: {
+				alkaliMetal: true,
+			},
 			density: 1532,
 			discovery: 1861,
 			nutrition: 4,
@@ -931,6 +1075,9 @@ const elementData = [
 				universe: 4e-8,
 			},
 			biologicalHalfLife: 1.8e4*day, // Sr-90; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			categories: {
+				aem: true,
+			},
 			density: 2640,
 			discovery: 1808,
 			nutrition: 3,
@@ -974,6 +1121,9 @@ const elementData = [
 				human: 3e-9,
 				universe: 5e-8,
 			},
+			categories: {
+				refractoryMetal: 0.5,
+			},
 			density: 6506,
 			discovery: 1824,
 			nobleMetal: 0,
@@ -995,6 +1145,10 @@ const elementData = [
 				earth: 120e-9,
 				human: 1e-10,
 				universe: 2e-9,
+			},
+			categories: {
+				nativeMetal: 0.5,
+				refractoryMetal: true,
 			},
 			density: 8570,
 			discovery: 1864,
@@ -1022,6 +1176,10 @@ const elementData = [
 				universe: 5e-9,
 			},
 			biologicalHalfLife: 77*day, // personal estimate; 5 mg molybdenum per person, 0.045 mg/day per person
+			categories: {
+				nativeMetal: 0.5,
+				refractoryMetal: true,
+			},
 			density: 10220,
 			discovery: 1781,
 			nobleMetal: 0,
@@ -1045,6 +1203,9 @@ const elementData = [
 				earth: 0.003e-12, // https://en.wikipedia.org/wiki/Technetium#Occurrence_and_production
 			},
 			biologicalHalfLife: day, // Tc-99m; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			categories: {
+				refractoryMetal: 0.5,
+			},
 			density: 11500,
 			discovery: 1937,
 			nobleMetal: 4,
@@ -1063,7 +1224,15 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 330e-9,
+				human: 7.6e-11, // appx
 				universe: 4e-9,
+			},
+			categories: {
+				nativeMetal: true,
+				nobleMetal: true,
+				platinumGroup: true,
+				preciousMetal: true,
+				refractoryMetal: 0.5,
 			},
 			density: 12370,
 			discovery: 1844,
@@ -1087,6 +1256,13 @@ const elementData = [
 				earth: 61e-9,
 				universe: 6e-10,
 			},
+			categories: {
+				nativeMetal: true,
+				nobleMetal: true,
+				platinumGroup: true,
+				preciousMetal: true,
+				refractoryMetal: 0.5,
+			},
 			density: 12410,
 			discovery: 1804,
 			nobleMetal: 1,
@@ -1108,6 +1284,12 @@ const elementData = [
 			abundance: {
 				earth: 240e-9,
 				universe: 2e-9,
+			},
+			categories: {
+				nativeMetal: true,
+				nobleMetal: true,
+				platinumGroup: true,
+				preciousMetal: true,
 			},
 			density: 12020,
 			discovery: 1802,
@@ -1131,6 +1313,12 @@ const elementData = [
 				earth: 12e-9,
 				human: 2e-9,
 				universe: 6e-10,
+			},
+			categories: {
+				coinageMetal: true,
+				nativeMetal: true,
+				nobleMetal: 0.5,
+				preciousMetal: true,
 			},
 			density: 10501,
 			discovery: -5000,
@@ -1157,6 +1345,9 @@ const elementData = [
 				universe: 2e-9,
 			},
 			biologicalHalfLife: 30*year, // in bone
+			categories: {	
+				nativeMetal: 0.5,
+			},
 			density: 8690,
 			discovery: 1817,
 			nutrition: 5,
@@ -1180,6 +1371,10 @@ const elementData = [
 				human: 4e-10,
 				universe: 3e-10,
 			},
+			categories: {
+				nativeMetal: 0.5,
+				preciousMetal: 0.5,
+			},
 			density: 7310,
 			discovery: 1867,
 			prices: {
@@ -1202,6 +1397,10 @@ const elementData = [
 				universe: 4e-9,
 			},
 			biologicalHalfLife: 3.5*day, // rats; oral; diethyltin chloride; https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/biological-half-life
+			categories: {
+				coinageMetal: true,
+				nativeMetal: 0.5,
+			},
 			density: 7287,
 			discovery: -3500,
 			nutrition: 4,
@@ -1226,6 +1425,11 @@ const elementData = [
 				human: 6e-10,
 				universe: 4e-10,
 			},
+			categories: {
+				metalloid: true,
+				nativeMetal: 0.5,
+				pnictogen: true,
+			},
 			density: 6685,
 			discovery: 815,
 			nobleMetal: 3,
@@ -1247,6 +1451,11 @@ const elementData = [
 				earth: 61e-9,
 				human: 2e-10,
 				universe: 9e-9,
+			},
+			categories: {
+				chalcogen: true,
+				metalloid: true,
+				nativeMetal: 0.5,
 			},
 			density: 6232,
 			discovery: 1782,
@@ -1273,6 +1482,7 @@ const elementData = [
 			biologicalHalfLife: 66.1*day, // https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/biological-half-life
 			categories: {
 				halogen: true,
+				reactiveNonmetal: true,
 			},
 			density: 4930,
 			discovery: 1811,
@@ -1293,7 +1503,11 @@ const elementData = [
 		period: 5,
 		properties: {
 			abundance: {
+				earth: 0.00003e-6,
 				universe: 1e-8,
+			},
+			categories: {
+				nobleGas: true,
 			},
 			density: 5.887,
 			discovery: 1898,
@@ -1318,6 +1532,9 @@ const elementData = [
 				universe: 8e-10,
 			},
 			biologicalHalfLife: 2.5*month, // 1-4 mos
+			categories: {
+				alkaliMetal: true,
+			},
 			density: 1873,
 			discovery: 1882,
 			prices: {
@@ -1340,6 +1557,9 @@ const elementData = [
 				universe: 1e-8,
 			},
 			biologicalHalfLife: 65*day, // Ba-140; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			categories: {
+				aem: true,
+			},
 			density: 3594,
 			discovery: 1808,
 			prices: {
@@ -1358,6 +1578,9 @@ const elementData = [
 				earth: 82e-9,
 				human: 4e-10,
 				universe: 2e-9,
+			},
+			categories: {
+				lanthanide: true,
 			},
 			density: 6145,
 			discovery: 1841,
@@ -1379,6 +1602,9 @@ const elementData = [
 				human: 2e-8,
 				universe: 1e-8,
 			},
+			categories: {
+				lanthanide: true,
+			},
 			density: 6770,
 			discovery: 1838,
 			nutrition: 5,
@@ -1397,6 +1623,9 @@ const elementData = [
 			abundance: {
 				earth: 31e-9,
 				universe: 2e-9,
+			},
+			categories: {
+				lanthanide: true,
 			},
 			density: 6773,
 			discovery: 1885,
@@ -1417,6 +1646,9 @@ const elementData = [
 				earth: 150e-9,
 				universe: 1e-8,
 			},
+			categories: {
+				lanthanide: true,
+			},
 			density: 7007,
 			discovery: 1885,
 			nutrition: 5,
@@ -1433,6 +1665,12 @@ const elementData = [
 		mass: 145,
 		period: 6,
 		properties: {
+			abundance: {
+				earth: 2e-23,
+			},
+			categories: {
+				lanthanide: true,
+			},
 			density: 7260,
 			discovery: 1945,
 			prices: {
@@ -1451,6 +1689,9 @@ const elementData = [
 				earth: 47e-9,
 				human: 3e-11,
 				universe: 5e-9,
+			},
+			categories: {
+				lanthanide: true,
 			},
 			density: 7520,
 			discovery: 1879,
@@ -1472,6 +1713,9 @@ const elementData = [
 				earth: 17e-9,
 				universe: 5e-10,
 			},
+			categories: {
+				lanthanide: true,
+			},
 			density: 5243,
 			discovery: 1901,
 			prices: {
@@ -1489,6 +1733,9 @@ const elementData = [
 			abundance: {
 				earth: 61e-9,
 				universe: 2e-9,
+			},
+			categories: {
+				lanthanide: true,
 			},
 			density: 7895,
 			discovery: 1886,
@@ -1508,6 +1755,9 @@ const elementData = [
 				earth: 11e-9,
 				universe: 5e-10,
 			},
+			categories: {
+				lanthanide: true,
+			},
 			density: 8229,
 			discovery: 1886,
 			prices: {
@@ -1525,6 +1775,9 @@ const elementData = [
 			abundance: {
 				earth: 74e-9,
 				universe: 2e-9,
+			},
+			categories: {
+				lanthanide: true,
 			},
 			density: 8550,
 			discovery: 1886,
@@ -1545,6 +1798,9 @@ const elementData = [
 				earth: 16e-9,
 				universe: 5e-10,
 			},
+			categories: {
+				lanthanide: true,
+			},
 			density: 8795,
 			discovery: 1879,
 			prices: {
@@ -1562,6 +1818,9 @@ const elementData = [
 			abundance: {
 				earth: 47e-9,
 				universe: 2e-9,
+			},
+			categories: {
+				lanthanide: true,
 			},
 			density: 9066,
 			discovery: 1879,
@@ -1581,6 +1840,9 @@ const elementData = [
 				earth: 7e-9,
 				universe: 1e-10,
 			},
+			categories: {
+				lanthanide: true,
+			},
 			density: 9321,
 			discovery: 1879,
 			prices: {
@@ -1598,6 +1860,9 @@ const elementData = [
 			abundance: {
 				earth: 45e-9,
 				universe: 2e-9,
+			},
+			categories: {
+				lanthanide: true,
 			},
 			density: 6965,
 			discovery: 1906,
@@ -1618,6 +1883,9 @@ const elementData = [
 				earth: 7e-9,
 				universe: 1e-10,
 			},
+			categories: {
+				lanthanide: true,
+			},
 			density: 9840,
 			discovery: 1906,
 			prices: {
@@ -1636,6 +1904,9 @@ const elementData = [
 			abundance: {
 				earth: 28e-9,
 				universe: 7e-10,
+			},
+			categories: {
+				refractoryMetal: 0.5,
 			},
 			density: 13310,
 			discovery: 1922,
@@ -1658,6 +1929,10 @@ const elementData = [
 				earth: 4e-9,
 				human: 3e-9,
 				universe: 8e-11,
+			},
+			categories: {
+				nativeMetal: 0.5,
+				refractoryMetal: true,
 			},
 			density: 16654,
 			discovery: 1802,
@@ -1682,6 +1957,10 @@ const elementData = [
 				human: 3e-10,
 				universe: 5e-10,
 			},
+			categories: {
+				nativeMetal: 0.5,
+				refractoryMetal: true,
+			},
 			density: 19250,
 			discovery: 1783,
 			nobleMetal: 0,
@@ -1705,6 +1984,12 @@ const elementData = [
 				earth: 10e-9,
 				universe: 2e-10,
 			},
+			categories: {
+				nativeMetal: 0.5,
+				nobleMetal: 0.5,
+				preciousMetal: true,
+				refractoryMetal: true,
+			},
 			density: 21020,
 			discovery: 1919,
 			nobleMetal: 2,
@@ -1725,6 +2010,13 @@ const elementData = [
 			abundance: {
 				earth: 120e-9,
 				universe: 3e-9,
+			},
+			categories: {
+				nativeMetal: true,
+				nobleMetal: true,
+				platinumGroup: true,
+				preciousMetal: true,
+				refractoryMetal: 0.5,
 			},
 			density: 22590,
 			discovery: 1803,
@@ -1748,6 +2040,13 @@ const elementData = [
 				earth: 120e-9,
 				universe: 2e-9,
 			},
+			categories: {
+				nativeMetal: true,
+				nobleMetal: true,
+				platinumGroup: true,
+				preciousMetal: true,
+				refractoryMetal: 0.5,
+			},
 			density: 22560,
 			discovery: 1803,
 			nobleMetal: 1,
@@ -1769,6 +2068,12 @@ const elementData = [
 			abundance: {
 				earth: 250e-9,
 				universe: 5e-9,
+			},
+			categories: {
+				nativeMetal: true,
+				nobleMetal: true,
+				platinumGroup: true,
+				preciousMetal: true,
 			},
 			density: 21460,
 			discovery: 1735,
@@ -1794,6 +2099,12 @@ const elementData = [
 				universe: 6e-10,
 			},
 			biologicalHalfLife: 280*day, // Au-198; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			categories: {
+				nativeMetal: true,
+				nobleMetal: true,
+				coinageMetal: true,
+				preciousMetal: true,
+			},
 			density: 19282,
 			discovery: -6000,
 			nobleMetal: 2,
@@ -1819,6 +2130,10 @@ const elementData = [
 				universe: 1e-9,
 			},
 			biologicalHalfLife: 65*day, // as methylmercury; in blood
+			categories: {	
+				nativeMetal: 0.5,
+				nobleMetal: 0.5,
+			},
 			density: 13533.6,
 			discovery: -1500,
 			nobleMetal: 2,
@@ -1864,6 +2179,9 @@ const elementData = [
 				universe: 1e-8,
 			},
 			biologicalHalfLife: 32*day, // 28-36 d in blood
+			categories: {
+				nativeMetal: 0.5,
+			},
 			density: 11342,
 			discovery: -7000,
 			nutrition: 4,
@@ -1888,6 +2206,10 @@ const elementData = [
 				human: 2e-10,
 				universe: 7e-10,
 			},
+			categories: {
+				nativeMetal: 0.5,
+				pnictogen: true,
+			},
 			density: 9807,
 			discovery: 1000,
 			nobleMetal: 3,
@@ -1910,6 +2232,10 @@ const elementData = [
 				earth: 0.2e-2 * 9e-13, // https://en.wikipedia.org/wiki/Polonium#Occurrence_and_production
 			},
 			biologicalHalfLife: 40*day, // 30-50 d
+			categories: {
+				chalcogen: true,
+				metalloid: 0.5,
+			},
 			density: 9320,
 			discovery: 1902,
 			nobleMetal: 4,
@@ -1933,6 +2259,7 @@ const elementData = [
 			},
 			categories: {
 				halogen: true,
+				metalloid: 0.5,
 			},
 			density: 7000,
 			discovery: 1940,
@@ -1947,6 +2274,12 @@ const elementData = [
 		group: 18,
 		period: 6,
 		properties: {
+			abundance: {
+				earth: 4e-17,
+			},
+			categories: {
+				nobleGas: true,
+			},
 			density: 9.73,
 			discovery: 1910,
 		},
@@ -1961,6 +2294,9 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 1e-18 * 2e-9, // https://en.wikipedia.org/wiki/Francium#Occurrence
+			},
+			categories: {
+				alkaliMetal: true,
 			},
 			density: 1870,
 			discovery: 1939,
@@ -1979,6 +2315,9 @@ const elementData = [
 				human: 1e-19,
 			},
 			biologicalHalfLife: 1.6e4*day, // Ra-226; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			categories: {
+				aem: true,
+			},
 			density: 5500,
 			discovery: 1902,
 			rgb: 'rgb(255, 233, 198)',
@@ -1993,6 +2332,9 @@ const elementData = [
 		properties: {
 			abundance: {
 				earth: 2e-7 * 2e-9, // https://en.wikipedia.org/wiki/Actinium#Occurrence_and_synthesis
+			},
+			categories: {
+				actinide: true,
 			},
 			density: 10070,
 			discovery: 1902,
@@ -2013,6 +2355,9 @@ const elementData = [
 				human: 3e-11,
 				universe: 4e-10,
 			},
+			categories: {
+				actinide: true,
+			},
 			density: 11720,
 			discovery: 1914,
 			prices: {
@@ -2029,6 +2374,12 @@ const elementData = [
 		mass: 231.03588,
 		period: 7,
 		properties: {
+			abundance: {
+				earth: 1.4e-12,
+			},
+			categories: {
+				actinide: true,
+			},
 			density: 15370,
 			discovery: 1927,
 			prices: {
@@ -2049,6 +2400,9 @@ const elementData = [
 				universe: 2e-10,
 			},
 			biologicalHalfLife: 15*day, // U-235; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			categories: {
+				actinide: true,
+			},
 			density: 18950,
 			discovery: 1841,
 			prices: {
@@ -2065,6 +2419,12 @@ const elementData = [
 		mass: 237,
 		period: 7,
 		properties: {
+			abundance: {
+				earth: 3e-18,
+			},
+			categories: {
+				actinide: true,
+			},
 			density: 20450,
 			discovery: 1940,
 			prices: {
@@ -2079,10 +2439,16 @@ const elementData = [
 		mass: 244,
 		period: 7,
 		properties: {
+			abundance: {
+				earth: 3e-17,
+			},
 			biologicalHalfLife: 40*year, // in liver
 			/* prices: {
 				2019: 6.49e6,
 			}, */
+			categories: {
+				actinide: true,
+			},
 			density: 19850,
 			discovery: 1940,
 			rgb: 'rgb(255, 226, 249)',
@@ -2096,6 +2462,9 @@ const elementData = [
 		mass: 243,
 		period: 7,
 		properties: {
+			categories: {
+				actinide: true,
+			},
 			density: 13690,
 			discovery: 1944,
 			prices: {
@@ -2111,6 +2480,9 @@ const elementData = [
 		mass: 247,
 		period: 7,
 		properties: {
+			categories: {
+				actinide: true,
+			},
 			density: 13510,
 			discovery: 1944,
 			/* prices: {
@@ -2126,6 +2498,9 @@ const elementData = [
 		mass: 247,
 		period: 7,
 		properties: {
+			categories: {
+				actinide: true,
+			},
 			density: 14790,
 			discovery: 1949,
 			/* prices: {
@@ -2140,6 +2515,9 @@ const elementData = [
 		mass: 251,
 		period: 7,
 		properties: {
+			categories: {
+				actinide: true,
+			},
 			density: 15100,
 			discovery: 1950,
 			/* prices: {
@@ -2155,6 +2533,9 @@ const elementData = [
 		mass: 252,
 		period: 7,
 		properties: {
+			categories: {
+				actinide: true,
+			},
 			density: 8840,
 			discovery: 1952,
 		}
@@ -2166,6 +2547,9 @@ const elementData = [
 		mass: 257,
 		period: 7,
 		properties: {
+			categories: {
+				actinide: true,
+			},
 			density: 9700,
 			discovery: 1952,
 		}
@@ -2177,6 +2561,9 @@ const elementData = [
 		mass: 258,
 		period: 7,
 		properties: {
+			categories: {
+				actinide: true,
+			},
 			density: 10300,
 			discovery: 1955,
 		}
@@ -2188,6 +2575,9 @@ const elementData = [
 		mass: 259,
 		period: 7,
 		properties: {
+			categories: {
+				actinide: true,
+			},
 			density: 9900,
 			discovery: 1966,
 		}
@@ -2200,6 +2590,9 @@ const elementData = [
 		group: 3,
 		period: 7,
 		properties: {
+			categories: {
+				actinide: true,
+			},
 			density: 16100,
 			discovery: 1961,
 		}
@@ -2352,6 +2745,9 @@ const elementData = [
 		group: 15,
 		period: 7,
 		properties: {
+			categories: {
+				pnictogen: true,
+			},
 			density: 13500,
 			discovery: 2003,
 		},
@@ -2364,6 +2760,9 @@ const elementData = [
 		group: 16,
 		period: 7,
 		properties: {
+			categories: {
+				chalcogen: true,
+			},
 			density: 12900,
 			discovery: 2000,
 			nobleMetal: 5,
@@ -2392,6 +2791,9 @@ const elementData = [
 		group: 18,
 		period: 7,
 		properties: {
+			categories: {
+				nobleGas: true,
+			},
 			density: 7000,
 			discovery: 2002,
 		},
@@ -2404,6 +2806,9 @@ const elementData = [
 		group: 1,
 		period: 8,
 		properties: {
+			categories: {
+				alkaliMetal: true,
+			},
 			density: 3000,
 		},
 	},
@@ -2415,6 +2820,9 @@ const elementData = [
 		group: 2,
 		period: 8,
 		properties: {
+			categories: {
+				aem: true,
+			},
 			density: 7000,
 		},
 	},

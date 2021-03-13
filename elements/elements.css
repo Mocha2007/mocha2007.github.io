@@ -13,16 +13,20 @@ h2, h3 {
 a {
 	color: cornflowerblue;
 }
+label {
+	white-space: nowrap;
+}
 /* table */
 td div {
 	color: #222;
 }
 #table {
-	border-collapse: collapse;
+	/*border-collapse: collapse;*/
+	border-spacing: 0;
 	table-layout: fixed;
 }
 #table td {
-	border: 2px solid black;
+	border: 1px solid black;
 	font-size: 1.4vw;
 	height: 10%;
 	line-height: 2.5vh;
@@ -108,7 +112,15 @@ line, .hingedArrow {
 	font-weight: bold;
 }
 /* category highlighting */
-.categoryHalfHighlight {
+#categorySelector {
+	line-height: 4vh;
+	padding: 1%;
+}
+#table td.categoryHighlight {
+	border: 1px solid silver;
+}
+#table td.categoryHalfHighlight {
+	border: 1px dashed silver;
 	opacity: 67%;
 }
 .categoryUnhighlight {
