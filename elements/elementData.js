@@ -1776,6 +1776,7 @@ const elementData = [
 			},
 			density: 1873,
 			discovery: 1882,
+			modelColor: 'rgb(87, 23, 143)',
 			prices: {
 				2018: 61.8e3,
 			},
@@ -1806,6 +1807,7 @@ const elementData = [
 			},
 			density: 3594,
 			discovery: 1808,
+			modelColor: 'rgb(0, 201, 0)',
 			prices: {
 				2016: 0.261,
 			},
@@ -1833,6 +1835,7 @@ const elementData = [
 			},
 			density: 6145,
 			discovery: 1841,
+			modelColor: 'rgb(112, 212, 255)',
 			nutrition: 5,
 			prices: {
 				2020: 4.85,
@@ -1861,6 +1864,7 @@ const elementData = [
 			},
 			density: 6770,
 			discovery: 1838,
+			modelColor: 'rgb(255, 255, 199)',
 			nutrition: 5,
 			prices: {
 				2020: 31.4,
@@ -1888,6 +1892,7 @@ const elementData = [
 			},
 			density: 6773,
 			discovery: 1885,
+			modelColor: 'rgb(217, 255, 199)',
 			nutrition: 5,
 			prices: {
 				2019: 103,
@@ -1915,6 +1920,7 @@ const elementData = [
 			},
 			density: 7007,
 			discovery: 1885,
+			modelColor: 'rgb(199, 255, 199)',
 			nutrition: 5,
 			prices: {
 				2019: 57.5,
@@ -1942,6 +1948,7 @@ const elementData = [
 			},
 			density: 7260,
 			discovery: 1945,
+			modelColor: 'rgb(163, 255, 199)',
 			prices: {
 				2003: 460e3,
 			},
@@ -1969,6 +1976,7 @@ const elementData = [
 			},
 			density: 7520,
 			discovery: 1879,
+			modelColor: 'rgb(143, 255, 199)',
 			nutrition: 5,
 			prices: {
 				2019: 13.9,
@@ -1997,6 +2005,7 @@ const elementData = [
 			},
 			density: 5243,
 			discovery: 1901,
+			modelColor: 'rgb(97, 255, 199)',
 			prices: {
 				2020: 31.4,
 			},
@@ -2023,6 +2032,7 @@ const elementData = [
 			},
 			density: 7895,
 			discovery: 1886,
+			modelColor: 'rgb(69, 255, 199)',
 			prices: {
 				2020: 28.6,
 			},
@@ -2049,6 +2059,7 @@ const elementData = [
 			},
 			density: 8229,
 			discovery: 1886,
+			modelColor: 'rgb(48, 255, 199)',
 			prices: {
 				2019: 658,
 			},
@@ -2075,6 +2086,7 @@ const elementData = [
 			},
 			density: 8550,
 			discovery: 1886,
+			modelColor: 'rgb(31, 255, 199)',
 			prices: {
 				2019: 307,
 			},
@@ -2102,6 +2114,7 @@ const elementData = [
 			},
 			density: 8795,
 			discovery: 1879,
+			modelColor: 'rgb(0, 255, 156)',
 			prices: {
 				2020: 57.1,
 			},
@@ -2128,6 +2141,7 @@ const elementData = [
 			},
 			density: 9066,
 			discovery: 1879,
+			modelColor: 'rgb(0, 230, 117)',
 			prices: {
 				2020: 26.4,
 			},
@@ -2154,6 +2168,7 @@ const elementData = [
 			},
 			density: 9321,
 			discovery: 1879,
+			modelColor: 'rgb(0, 212, 82)',
 			prices: {
 				2003: 3000,
 			},
@@ -2180,6 +2195,7 @@ const elementData = [
 			},
 			density: 6965,
 			discovery: 1906,
+			modelColor: 'rgb(0, 191, 56)',
 			prices: {
 				2020: 17.1,
 			},
@@ -2207,6 +2223,7 @@ const elementData = [
 			},
 			density: 9840,
 			discovery: 1906,
+			modelColor: 'rgb(0, 171, 36)',
 			prices: {
 				2020: 643,
 			},
@@ -2233,6 +2250,7 @@ const elementData = [
 			},
 			density: 13310,
 			discovery: 1922,
+			modelColor: 'rgb(77, 194, 255)',
 			nobleMetal: 0,
 			prices: {
 				2017: 900,
@@ -2263,6 +2281,7 @@ const elementData = [
 			},
 			density: 16654,
 			discovery: 1802,
+			modelColor: 'rgb(77, 166, 255)',
 			nobleMetal: 0,
 			prices: {
 				2019: 305,
@@ -2294,6 +2313,7 @@ const elementData = [
 			},
 			density: 19250,
 			discovery: 1783,
+			modelColor: 'rgb(33, 148, 214)',
 			nobleMetal: 0,
 			nutrition: 5,
 			prices: {
@@ -2328,6 +2348,7 @@ const elementData = [
 			},
 			density: 21020,
 			discovery: 1919,
+			modelColor: 'rgb(38, 125, 171)',
 			nobleMetal: 2,
 			prices: {
 				2020: 3580,
@@ -2365,6 +2386,7 @@ const elementData = [
 			},
 			density: 22590,
 			discovery: 1803,
+			modelColor: 'rgb(38, 102, 150)',
 			nobleMetal: 1,
 			prices: {
 				2018: 400/ounce,
@@ -2399,6 +2421,7 @@ const elementData = [
 			},
 			density: 22560,
 			discovery: 1803,
+			modelColor: 'rgb(22, 84, 135)',
 			nobleMetal: 1,
 			prices: {
 				2021: 5500/ounce,
@@ -2431,6 +2454,7 @@ const elementData = [
 			},
 			density: 21460,
 			discovery: 1735,
+			modelColor: 'rgb(208, 208, 224)',
 			nobleMetal: 1,
 			prices: {
 				2021: 1227/ounce,
@@ -2465,6 +2489,7 @@ const elementData = [
 			},
 			density: 19282,
 			discovery: -6000,
+			modelColor: 'rgb(255, 209, 35)',
 			nobleMetal: 2,
 			prices: {
 				2021: 1711.5/ounce,
@@ -2498,6 +2523,7 @@ const elementData = [
 			},
 			density: 13533.6,
 			discovery: -1500,
+			modelColor: 'rgb(184, 184, 208)',
 			nobleMetal: 2,
 			prices: {
 				2017: 30.2,
@@ -2524,6 +2550,7 @@ const elementData = [
 			},
 			density: 11850,
 			discovery: 1862,
+			modelColor: 'rgb(166, 84, 77)',
 			prices: {
 				2017: 4200,
 			},
@@ -2554,6 +2581,7 @@ const elementData = [
 			},
 			density: 11342,
 			discovery: -7000,
+			modelColor: 'rgb(87, 89, 97)',
 			nutrition: 4,
 			prices: {
 				2021: 0.8729/pound,
@@ -2587,6 +2615,7 @@ const elementData = [
 			},
 			density: 9807,
 			discovery: 1000,
+			modelColor: 'rgb(158, 79, 181)',
 			nobleMetal: 3,
 			prices: {
 				2019: 6.36,
@@ -2617,6 +2646,7 @@ const elementData = [
 			},
 			density: 9320,
 			discovery: 1902,
+			modelColor: 'rgb(171, 92, 0)',
 			nobleMetal: 4,
 			/* prices: {
 				2004: 49.2e12,
@@ -2647,6 +2677,7 @@ const elementData = [
 			},
 			density: 7000,
 			discovery: 1940,
+			modelColor: 'rgb(117, 79, 69)',
 			nobleMetal: 4,
 			temperatures: {
 				boil: 610,
@@ -2670,6 +2701,7 @@ const elementData = [
 			},
 			density: 9.73,
 			discovery: 1910,
+			modelColor: 'rgb(66, 130, 150)',
 			temperatures: {
 				boil: 211.3,
 				melt: 202,
