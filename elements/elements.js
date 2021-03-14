@@ -163,15 +163,6 @@ class ChemElement {
 	get stable(){
 		return this.isotopes.some(i => i.stable);
 	}
-	get state(){
-		return this.temperatures
-				? this.temperatures.boil < standardTemperature
-					? 'gas'
-					: this.temperatures.melt < standardTemperature
-						? 'liquid'
-						: 'solid'
-				: 'unknown';
-	}
 	createElement(){
 		const div = document.createElement('div');
 		div.id = this.name;
@@ -234,6 +225,16 @@ class ChemElement {
 	 * @returns {boolean|0.5} */
 	inCategory(category){
 		return this.categories && this.categories.hasOwnProperty(category) ? this.categories[category]: false;
+	}
+	/** @param {number} t */
+	stateAt(t){
+		return this.temperatures
+				? this.temperatures.boil < t
+					? 'gas'
+					: this.temperatures.melt < t
+						? 'liquid'
+						: 'solid'
+				: 'unknown';
 	}
 	/** @param {string} type */
 	updateColor(type){
@@ -371,7 +372,9 @@ class ChemElement {
 				c = `rgb(255, ${255-x}, 255)`;
 				break;
 			case 'state':
-				c = {gas: 'cyan', liquid: 'blue', solid: 'white', unknown: 'silver'}[this.state];
+				/** @type {number} */
+				const t = document.getElementById('temperatureSelector').value;
+				c = {gas: 'cyan', liquid: 'blue', solid: 'white', unknown: 'silver'}[this.stateAt(t)];
 				break;
 			case 'synesthete':
 				c = this.modelColor ? this.modelColor : '#ccc';
@@ -698,6 +701,12 @@ function tableColor(type){
 	elements.forEach(e => e.updateColor(type));
 }
 
+function updateTemperature(delta=0){
+	const selector = document.getElementById('temperatureSelector');
+	selector.value = parseInt(selector.value) + delta;
+	document.getElementById('selectedTemperature').innerHTML = selector.value;
+}
+
 // main
 
 function main(){
@@ -721,6 +730,9 @@ function main(){
 	elements.slice().reverse().forEach(e => e.createSVGLabel());
 	isotopes.forEach(i => i.createElement());
 	setDecayChainLength();
+	// reset temperature
+	document.getElementById('temperatureSelector').value = standardTemperature;
+	updateTemperature();
 	// log
 	console.info('elements.js successfully loaded.');
 }

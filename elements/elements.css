@@ -16,6 +16,10 @@ a {
 label {
 	white-space: nowrap;
 }
+.updownbutton {
+	cursor: pointer;
+	user-select: none;
+}
 /* table */
 td div {
 	color: #222;

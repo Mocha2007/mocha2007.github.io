@@ -352,7 +352,10 @@
 		<td>
 			<label onclick="tableColor('state')">
 			<input name="table" type="radio"><span title="Or sublimation point, if applicable.">
-			State @ STP</span></label>
+			State @ <span id="selectedTemperature">300</span> K</span></label><br>
+			<span class="updownbutton" onmouseup="updateTemperature(-1);tableColor('state')">-</span>
+			<input type="range" min="0" max="6000" value="300" class="slider" id="temperatureSelector" onmouseup="updateTemperature();tableColor('state')">
+			<span class="updownbutton" onmouseup="updateTemperature(1);tableColor('state')">+</span>
 		</td>
 		<td><ul>
 			<li><span class="legend" style="background-color: cyan;"></span> Gas</li>
