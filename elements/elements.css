@@ -16,7 +16,10 @@ a {
 label {
 	white-space: nowrap;
 }
-.updownbutton {
+p {
+	line-height: 25px;
+}
+.button {
 	cursor: pointer;
 	user-select: none;
 }
@@ -46,7 +49,7 @@ td div {
 	font-size: 1vw;
 }
 /* legend */
-label {
+label, .button {
 	border: 1px solid silver;
 	padding: 5px;
 }

@@ -353,9 +353,9 @@
 			<label onclick="tableColor('state')">
 			<input name="table" type="radio"><span title="Or sublimation point, if applicable.">
 			State @ <span id="selectedTemperature">300</span> K</span></label><br>
-			<span class="updownbutton" onmouseup="updateTemperature(-1);tableColor('state')">-</span>
+			<span class="button" onmouseup="updateTemperature(-1);tableColor('state')">-</span>
 			<input type="range" min="0" max="6000" value="300" class="slider" id="temperatureSelector" onmouseup="updateTemperature();tableColor('state')">
-			<span class="updownbutton" onmouseup="updateTemperature(1);tableColor('state')">+</span>
+			<span class="button" onmouseup="updateTemperature(1);tableColor('state')">+</span>
 		</td>
 		<td><ul>
 			<li><span class="legend" style="background-color: cyan;"></span> Gas</li>
@@ -402,36 +402,51 @@
 	<label onclick="setDecayChainLength(34, 118, 118, -1)">
 		<input name="decay" type="radio">
 	Full</label><br><br>
-	Includes all nuclides w/ HL >= 1 day, part of a decay chain, or the most stable isotope of an element.
+	Includes all nuclides w/ HL >= 1 day, part of a decay chain, or the most stable isotope of an element.<br>
+	<span class="button" onclick="redrawDiagrams();">Force Redraw Diagrams</span><br>
+	Cull HL &lt; ...<br>
+	<span class="button" onclick="hlCull = 0;">0</span>
+	<span class="button" onclick="hlCull = 1;">1 s</span>
+	<span class="button" onclick="hlCull = minute;">1 min</span>
+	<span class="button" onclick="hlCull = hour;">1 h</span>
+	<span class="button" onclick="hlCull = day;">1 d</span>
+	<span class="button" onclick="hlCull = week;">1 wk</span>
+	<span class="button" onclick="hlCull = month;">1 mo</span>
+	<span class="button" onclick="hlCull = year;">1 yr</span>
+	<span class="button" onclick="hlCull = Infinity;">stable</span>
 </p>
 <h3>4n Decay Chain</h3>
 <p>Thorium Series</p>
-<svg id="decay0">
+<svg>
 	<!-- huge thanks to BatesIsBack -->
 	<marker refX="0" refY="0" orient="auto" id="Arrow2Mend" style="overflow:visible"> 
 		<path d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z" transform="scale(-1,-1)" id="path4011" style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"> 
 	</marker>
+	<g id="decay0"></g>
 </svg>
 <h3>4n+1 Decay Chain</h3>
 <p>Neptunium Series</p>
-<svg id="decay1">
+<svg>
 	<marker refX="0" refY="0" orient="auto" id="Arrow2Mend" style="overflow:visible"> 
 		<path d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z" transform="scale(-1,-1)" id="path4011" style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"> 
 	</marker>
+	<g id="decay1"></g>
 </svg>
 <h3>4n+2 Decay Chain</h3>
 <p>Uranium Series</p>
-<svg id="decay2">
+<svg>
 	<marker refX="0" refY="0" orient="auto" id="Arrow2Mend" style="overflow:visible"> 
 		<path d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z" transform="scale(-1,-1)" id="path4011" style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"> 
 	</marker>
+	<g id="decay2"></g>
 </svg>
 <h3>4n+3 Decay Chain</h3>
 <p>Actinium Series</p>
-<svg id="decay3">
+<svg>
 	<marker refX="0" refY="0" orient="auto" id="Arrow2Mend" style="overflow:visible"> 
 		<path d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z" transform="scale(-1,-1)" id="path4011" style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"> 
 	</marker>
+	<g id="decay3"></g>
 </svg>
 <script src="elements.js"></script>
 </html>
@@ -443,5 +458,4 @@
 	isotope table https://en.wikipedia.org/wiki/File:Isotopes_and_half-life.svg
 	support for elements above 168
 	finish temperatures
-	"state at STP"
 -->

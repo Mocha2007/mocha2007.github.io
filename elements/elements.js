@@ -36,6 +36,8 @@ const elemCatColors = {
 	'Superactinide': '#f7a',
 };
 
+let hlCull = 0; // s, when to stop drawing isotopes
+
 // classes
 /** @type {ChemElement[]} */
 const elements = [];
@@ -349,7 +351,6 @@ class ChemElement {
 			case 'n/z':
 				x = this.stable ? mean(this.isotopes.filter(i => i.stable).map(i => i.n)) :
 					this.isotopes.filter(i => i.halfLife === Math.max(...this.isotopes.map(i => i.halfLife)))[0].n;
-				console.log(x/this.z);
 				c = gradient1((x/this.z-1)/.6); // should be fine for everything except H1 and He3
 				break;
 			case 'nutrition':
@@ -520,7 +521,7 @@ class Isotope {
 	 * @param {[Decay, number][]} decayTypes
 	 * @param {number} halfLife
 	*/
-	constructor(element, mass, decayTypes = [], halfLife = 0, abundance = 0){
+	constructor(element, mass, decayTypes = [], halfLife = Infinity, abundance = 0){
 		this.element = element;
 		/** @type {number} - interger A */
 		this.mass = mass;
@@ -578,7 +579,7 @@ class Isotope {
 		return 0.5*sum(this.decayTypes.map(d => d[1]*d[0].energy))/this.halfLife;
 	}
 	get stable(){
-		return this.halfLife === 0;
+		return this.halfLife === Infinity;
 	}
 	get z(){
 		return this.element.z;
@@ -681,6 +682,16 @@ function hingedArrow(d){
 	return path;
 }
 
+function redrawDiagrams(){
+	// blank
+	range(4).forEach(i => document.getElementById('decay'+i).innerHTML = "");
+	// draw
+	elements.slice().reverse().forEach(e => e.createSVGLabel());
+	isotopes.filter(i => hlCull <= i.halfLife).forEach(i => i.createElement());
+	setDecayChainLength();
+	console.info("drew isotope diagrams");
+}
+
 /** 
  * @param {number} width - default = 14, max = 33
  * @param {number} height - default = 14, max = 118
@@ -727,9 +738,7 @@ function main(){
 	elementData.forEach(e => ChemElement.fromJSON(e));
 	isotopeData.forEach(i => Isotope.fromJSON(i));
 	// draw isotopes
-	elements.slice().reverse().forEach(e => e.createSVGLabel());
-	isotopes.forEach(i => i.createElement());
-	setDecayChainLength();
+	redrawDiagrams();
 	// reset temperature
 	document.getElementById('temperatureSelector').value = standardTemperature;
 	updateTemperature();
