@@ -2692,6 +2692,7 @@ const elementData = [
 			},
 			density: 1870,
 			discovery: 1939,
+			modelColor: 'rgb(66, 0, 102)',
 			temperatures: {
 				boil: 890,
 				melt: 281,
@@ -2716,6 +2717,7 @@ const elementData = [
 			},
 			density: 5500,
 			discovery: 1902,
+			modelColor: 'rgb(0, 125, 0)',
 			rgb: 'rgb(255, 233, 198)',
 			temperatures: {
 				boil: 2010,
@@ -2738,6 +2740,7 @@ const elementData = [
 			},
 			density: 10070,
 			discovery: 1902,
+			modelColor: 'rgb(112, 171, 250)',
 			/* prices: {
 				2004: 29e12,
 			}, */
@@ -2764,6 +2767,7 @@ const elementData = [
 			},
 			density: 11720,
 			discovery: 1914,
+			modelColor: 'rgb(0, 185, 255)',
 			prices: {
 				2010: 287,
 			},
@@ -2791,6 +2795,7 @@ const elementData = [
 			},
 			density: 15370,
 			discovery: 1927,
+			modelColor: 'rgb(0, 161, 255)',
 			prices: {
 				2011: 280e3,
 			},
@@ -2819,6 +2824,7 @@ const elementData = [
 			},
 			density: 18950,
 			discovery: 1841,
+			modelColor: 'rgb(0, 143, 255)',
 			prices: {
 				2018: 101,
 			},
@@ -2845,6 +2851,7 @@ const elementData = [
 			},
 			density: 20450,
 			discovery: 1940,
+			modelColor: 'rgb(0, 128, 255)',
 			prices: {
 				2020: 660e3,
 			},
@@ -2873,6 +2880,7 @@ const elementData = [
 			},
 			density: 19850,
 			discovery: 1940,
+			modelColor: 'rgb(0, 107, 255)',
 			rgb: 'rgb(255, 226, 249)',
 			temperatures: {
 				boil: 3501,
@@ -2894,6 +2902,7 @@ const elementData = [
 			},
 			density: 13690,
 			discovery: 1944,
+			modelColor: 'rgb(84, 92, 242)',
 			prices: {
 				1998: 728e3,
 			},
@@ -2916,6 +2925,7 @@ const elementData = [
 			},
 			density: 13510,
 			discovery: 1944,
+			modelColor: 'rgb(120, 92, 227)',
 			/* prices: {
 				2004: 185e6,
 			}, */
@@ -2938,6 +2948,7 @@ const elementData = [
 			},
 			density: 14790,
 			discovery: 1949,
+			modelColor: 'rgb(138, 79, 227)',
 			/* prices: {
 				2004: 185e9,
 			}, */
@@ -2959,6 +2970,7 @@ const elementData = [
 			},
 			density: 15100,
 			discovery: 1950,
+			modelColor: 'rgb(161, 54, 212)',
 			/* prices: {
 				2004: 906e9,
 			}, */
@@ -2981,6 +2993,7 @@ const elementData = [
 			},
 			density: 8840,
 			discovery: 1952,
+			modelColor: 'rgb(179, 31, 212)',
 			temperatures: {
 				boil: 1269, // estimate
 				melt: 1133,
@@ -2999,6 +3012,7 @@ const elementData = [
 			},
 			density: 9700,
 			discovery: 1952,
+			modelColor: 'rgb(179, 31, 186)',
 			temperatures: {
 				melt: 1800, // predicted
 			},
@@ -3016,6 +3030,7 @@ const elementData = [
 			},
 			density: 10300,
 			discovery: 1955,
+			modelColor: 'rgb(179, 13, 166)',
 			temperatures: {
 				melt: 1100, // predicted
 			},
@@ -3033,6 +3048,7 @@ const elementData = [
 			},
 			density: 9900,
 			discovery: 1966,
+			modelColor: 'rgb(189, 13, 135)',
 			temperatures: {
 				melt: 1100, // predicted
 			},
@@ -3051,6 +3067,7 @@ const elementData = [
 			},
 			density: 16100,
 			discovery: 1961,
+			modelColor: 'rgb(199, 0, 102)',
 			temperatures: {
 				melt: 1900, // predicted
 			},
@@ -3066,6 +3083,7 @@ const elementData = [
 		properties: {
 			density: 23200,
 			discovery: 1969,
+			modelColor: 'rgb(204, 0, 89)',
 			temperatures: {
 				boil: 5800, // predicted
 				melt: 2400, // predicted
@@ -3082,6 +3100,7 @@ const elementData = [
 		properties: {
 			density: 29300,
 			discovery: 1970,
+			modelColor: 'rgb(209, 0, 79)',
 		}
 	},
 	{
@@ -3094,6 +3113,7 @@ const elementData = [
 		properties: {
 			density: 35000,
 			discovery: 1974,
+			modelColor: 'rgb(217, 0, 69)',
 		}
 	},
 	{
@@ -3106,6 +3126,7 @@ const elementData = [
 		properties: {
 			density: 37100,
 			discovery: 1981,
+			modelColor: 'rgb(224, 0, 56)',
 			nobleMetal: 5,
 		},
 	},
@@ -3119,6 +3140,7 @@ const elementData = [
 		properties: {
 			density: 41000,
 			discovery: 1984,
+			modelColor: 'rgb(230, 0, 46)',
 			nobleMetal: 5,
 		},
 	},
@@ -3132,6 +3154,7 @@ const elementData = [
 		properties: {
 			density: 37400,
 			discovery: 1982,
+			modelColor: 'rgb(235, 0, 38)',
 			nobleMetal: 5,
 		},
 	},
@@ -3145,6 +3168,7 @@ const elementData = [
 		properties: {
 			density: 34800,
 			discovery: 1994,
+			modelColor: 'rgb(239, 0, 29)', // extrapolation
 			nobleMetal: 5,
 		},
 	},
@@ -3158,6 +3182,7 @@ const elementData = [
 		properties: {
 			density: 28700,
 			discovery: 1994,
+			modelColor: 'rgb(242, 0, 19)', // extrapolation
 			nobleMetal: 5,
 		},
 	},
@@ -3171,6 +3196,7 @@ const elementData = [
 		properties: {
 			density: 14000,
 			discovery: 1996,
+			modelColor: 'rgb(244, 0, 9)', // extrapolation
 			nobleMetal: 5,
 			temperatures: {
 				boil: 340, // predicted
@@ -3188,6 +3214,7 @@ const elementData = [
 		properties: {
 			density: 16000,
 			discovery: 2003,
+			modelColor: 'rgb(166, 51, 39)', // extrapolation
 			nobleMetal: 5,
 			temperatures: {
 				boil: 1430, // predicted
@@ -3205,6 +3232,7 @@ const elementData = [
 		properties: {
 			density: 9928,
 			discovery: 1999,
+			modelColor: 'rgb(62, 50, 66)', // extrapolation
 			nobleMetal: 5,
 			temperatures: {
 				boil: 380, // predicted
@@ -3225,6 +3253,7 @@ const elementData = [
 			},
 			density: 13500,
 			discovery: 2003,
+			modelColor: 'rgb(158, 59, 181)', // extrapolation
 			temperatures: {
 				boil: 1400, // predicted
 				melt: 670, // predicted
@@ -3244,6 +3273,7 @@ const elementData = [
 			},
 			density: 12900,
 			discovery: 2000,
+			modelColor: 'rgb(130, 60, 0)', // extrapolation
 			nobleMetal: 5,
 			temperatures: {
 				boil: 1085, // extrapolated
@@ -3264,6 +3294,7 @@ const elementData = [
 			},
 			density: 7200,
 			discovery: 2009,
+			modelColor: 'rgb(94, 63, 55)', // extrapolation
 			temperatures: {
 				boil: 883, // predicted
 				melt: 723, // predicted
@@ -3283,6 +3314,7 @@ const elementData = [
 			},
 			density: 7000,
 			discovery: 2002,
+			modelColor: 'rgb(66, 102, 124)', // extrapolation
 			temperatures: {
 				boil: 450, // predicted
 				melt: 325, // predicted
