@@ -362,6 +362,7 @@ const isotopeData = [
 			['b-b-', 1],
 		],
 		halfLife: 6.4e19*year,
+		abundance: 0.00187,
 	},
 	{
 		name: 'Sc-44',
@@ -1227,6 +1228,7 @@ const isotopeData = [
 			['b-b-', 1],
 		],
 		halfLife: 2.165e21*year,
+		abundance: 0.088573,
 	},
 	// skip a few...
 	{
@@ -1406,6 +1408,7 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 6.7e7*year,
+		abundance: trace,
 	},
 	{
 		name: 'Sm-147',
@@ -1804,6 +1807,7 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 2e15*year,
+		abundance: 0.0159,
 	},
 	{
 		name: 'Os-187',
@@ -2000,6 +2004,7 @@ const isotopeData = [
 			['b-', 1],
 		],
 		halfLife: 4.2*minute,
+		abundance: trace,
 	},
 	{
 		name: 'Tl-207',
@@ -2007,6 +2012,7 @@ const isotopeData = [
 			['b-', 1],
 		],
 		halfLife: 4.77*minute,
+		abundance: trace,
 	},
 	{
 		name: 'Tl-208',
@@ -2014,6 +2020,7 @@ const isotopeData = [
 			['b-', 1],
 		],
 		halfLife: 3.053*minute,
+		abundance: trace,
 	},
 	{
 		name: 'Tl-209',
@@ -2021,6 +2028,7 @@ const isotopeData = [
 			['b-', 1],
 		],
 		halfLife: 2.161*minute,
+		abundance: trace,
 	},
 	{
 		name: 'Tl-210',
@@ -2028,6 +2036,7 @@ const isotopeData = [
 			['b-', 0.99991],
 		],
 		halfLife: 1.3*minute,
+		abundance: trace,
 	},
 	{
 		name: 'Pb-202',
@@ -2143,6 +2152,7 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 2.01e19*year,
+		abundance: 1,
 	},
 	{
 		name: 'Bi-210',
@@ -2160,6 +2170,7 @@ const isotopeData = [
 			['b-', 0.00276],
 		],
 		halfLife: 2.14*minute,
+		abundance: trace,
 	},
 	{
 		name: 'Bi-212',
@@ -2168,6 +2179,7 @@ const isotopeData = [
 			['a', 0.3594],
 		],
 		halfLife: 60.55*minute,
+		abundance: trace,
 	},
 	{
 		name: 'Bi-213',
@@ -2176,6 +2188,7 @@ const isotopeData = [
 			['a', 0.0209],
 		],
 		halfLife: 45.59*minute,
+		abundance: trace,
 	},
 	{
 		name: 'Bi-214',
@@ -2184,6 +2197,7 @@ const isotopeData = [
 			['a', 0.00021],
 		],
 		halfLife: 19.9*minute,
+		abundance: trace,
 	},
 	{
 		name: 'Bi-215',
@@ -2191,6 +2205,7 @@ const isotopeData = [
 			['b-', 1],
 		],
 		halfLife: 7.6*minute,
+		abundance: trace,
 	},
 	{
 		name: 'Po-206',
@@ -2230,6 +2245,7 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 0.516,
+		abundance: trace,
 	},
 	{
 		name: 'Po-212',
@@ -2237,6 +2253,7 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 299e-9,
+		abundance: trace,
 	},
 	{
 		name: 'Po-213',
@@ -2244,6 +2261,7 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 3.65e-6,
+		abundance: trace,
 	},
 	{
 		name: 'Po-214',
@@ -2251,6 +2269,7 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 164.3e-6,
+		abundance: trace,
 	},
 	{
 		name: 'Po-215',
@@ -2259,6 +2278,7 @@ const isotopeData = [
 			['b-', 2.3e-6],
 		],
 		halfLife: 1.781e-3,
+		abundance: trace,
 	},
 	{
 		name: 'Po-216',
@@ -2266,6 +2286,7 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 0.145,
+		abundance: trace,
 	},
 	{
 		name: 'Po-218',
@@ -2274,6 +2295,7 @@ const isotopeData = [
 			['b-', 0.0002],
 		],
 		halfLife: 3.1*minute,
+		abundance: trace,
 	},
 	{
 		name: 'At-210',
@@ -2289,6 +2311,7 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 0.1e-3,
+		abundance: trace,
 	},
 	{
 		name: 'At-217',
@@ -2297,6 +2320,7 @@ const isotopeData = [
 			['b-', 0.00012],
 		],
 		halfLife: 32.3e-3,
+		abundance: trace,
 	},
 	{
 		name: 'At-218',
@@ -2305,6 +2329,7 @@ const isotopeData = [
 			['b-', 0.001],
 		],
 		halfLife: 1.5,
+		abundance: trace,
 	},
 	{
 		name: 'At-219',
@@ -2313,6 +2338,7 @@ const isotopeData = [
 			['b-', 0.03],
 		],
 		halfLife: 56,
+		abundance: trace,
 	},
 	{
 		name: 'Rn-217',
@@ -2320,6 +2346,7 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 0.54e-3,
+		abundance: trace,
 	},
 	{
 		name: 'Rn-218',
@@ -2327,6 +2354,7 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 35e-3,
+		abundance: trace,
 	},
 	{
 		name: 'Rn-219',
@@ -2334,6 +2362,7 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 3.96,
+		abundance: trace,
 	},
 	{
 		name: 'Rn-220',
@@ -2341,6 +2370,7 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 55.6,
+		abundance: trace,
 	},
 	{
 		name: 'Rn-222',
@@ -2388,6 +2418,7 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 28,
+		abundance: trace,
 	},
 	{
 		name: 'Ra-222',
@@ -2476,6 +2507,7 @@ const isotopeData = [
 			['a', 5.5e-8],
 		],
 		halfLife: 6.13*hour,
+		abundance: trace,
 	},
 	{
 		name: 'Th-226',
@@ -2515,6 +2547,7 @@ const isotopeData = [
 			['sf', 5e-13],
 		],
 		halfLife: 7.538e4*year,
+		abundance: 0.0002,
 	},
 	{
 		name: 'Th-231',
@@ -2691,6 +2724,7 @@ const isotopeData = [
 			['a', 1e-12],
 		],
 		halfLife: 14.1*hour,
+		abundance: trace,
 	},
 	{
 		name: 'Np-234',
@@ -2746,6 +2780,7 @@ const isotopeData = [
 			['b-', 1],
 		],
 		halfLife: 61.9*minute,
+		abundance: trace,
 	},
 	{
 		name: 'Pu-236',

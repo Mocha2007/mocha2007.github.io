@@ -620,13 +620,15 @@ class Isotope {
 		halfLife.classList.add('halfLife');
 		halfLife.setAttribute('dy', '15px');
 		g.appendChild(halfLife);
-		if (this.abundance){
-			const abundance = createSvgElement('text');
-			abundance.innerHTML = this.abundance === trace ? "trace" : prettyPercent(this.abundance);
-			abundance.classList.add('abundance')
-			abundance.setAttribute('dy', '25px');
-			g.appendChild(abundance);
-		}
+		const abundance = createSvgElement('text');
+		abundance.innerHTML = this.abundance
+			? this.abundance === trace
+				? "trace"
+				: prettyPercent(this.abundance)
+			: "syn";
+		abundance.classList.add('abundance')
+		abundance.setAttribute('dy', '25px');
+		g.appendChild(abundance);
 		// draw arrows
 		this.decayTypes.forEach(d => g.appendChild(d[0].arrow(d[1])));
 	}
