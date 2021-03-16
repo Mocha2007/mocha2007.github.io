@@ -485,7 +485,7 @@ class Decay {
 		if (p < 1){
 			const fraction = createSvgElement('text');
 			// avoid silly "0%" for tiny p
-			fraction.innerHTML = (p < 1e-3 ? (p*100).toExponential(1).replace(".0", "") : round(p*100, 2)) + '%';
+			fraction.innerHTML = prettyPercent(p);
 			fraction.classList.add('fraction');
 			fraction.setAttribute('x', 2); // so it's not right at the beginning
 			fraction.setAttribute('y', -5); // so it's not right on the line
@@ -620,6 +620,13 @@ class Isotope {
 		halfLife.classList.add('halfLife');
 		halfLife.setAttribute('dy', '15px');
 		g.appendChild(halfLife);
+		if (this.abundance){
+			const abundance = createSvgElement('text');
+			abundance.innerHTML = this.abundance === trace ? "trace" : prettyPercent(this.abundance);
+			abundance.classList.add('abundance')
+			abundance.setAttribute('dy', '25px');
+			g.appendChild(abundance);
+		}
 		// draw arrows
 		this.decayTypes.forEach(d => g.appendChild(d[0].arrow(d[1])));
 	}
@@ -680,6 +687,11 @@ function hingedArrow(d){
 	path.setAttribute('class', `hingedArrow`);
 	path.setAttribute('fill', `none`);
 	return path;
+}
+
+/** @param {number} p - [0, 1]*/
+function prettyPercent(p){
+	return (p < 1e-3 ? (p*100).toExponential(1).replace(".0", "") : round(p*100, 2)) + '%'
 }
 
 function redrawDiagrams(){

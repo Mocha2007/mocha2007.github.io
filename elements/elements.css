@@ -93,6 +93,10 @@ line, .hingedArrow {
 	stroke: black;
 	stroke-width: 1;
 }
+.abundance {
+	font-size: 50%;
+	text-anchor: middle;
+}
 .darkRect {
 	fill: #eee;
 	height: 60px;
