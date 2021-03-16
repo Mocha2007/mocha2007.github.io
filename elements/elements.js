@@ -16,7 +16,7 @@ const decayArrows = {
 	'b+': [-corner, corner, corner-2*r, 2*r-corner],
 	'b+b+': [-corner, corner, corner-4*r, 4*r-corner],
 	'b-': [corner, -corner, 2*r-corner, corner-2*r],
-	'b-b-': [corner, -corner, 4*r-corner, corner-4*r], // todo make this not intersect shit
+	'b-b-': [corner, -corner, 4*r-corner, corner-4*r],
 	'sf': [r, 0, r+8, 0],
 };
 decayArrows.ec = decayArrows['b+'];
@@ -131,8 +131,6 @@ class ChemElement {
 				return [x, y];
 			// superactinides
 			case 'g':
-				// todo
-				// x and y both untested
 				return [this.z - 121, this.period + 3];
 		}
 		// most elements
@@ -438,6 +436,7 @@ class Decay {
 		return {
 			'a': 'α',
 			'b+': 'β+',
+			'b+b+': 'β+β+',
 			'b-': 'β-',
 			'b-b-': 'β-β-',
 			'ec': 'EC',
@@ -449,8 +448,8 @@ class Decay {
 	arrow(p){
 		const g = createSvgElement('g');
 		// line
-		// todo - hinged arrows for b-b- and ecec/b+b+ (b+b+ isn't used yet)
 		let line, x1, y1, x2, y2;
+		// hinged arrows for b-b- and ecec/b+b+
 		if (hingedArrowTypes.includes(this.name)){
 			const d = this.name == 'b-b-' ? 1 : -1;
 			line = hingedArrow(d);
@@ -485,7 +484,9 @@ class Decay {
 		if (p < 1){
 			const fraction = createSvgElement('text');
 			// avoid silly "0%" for tiny p
-			fraction.innerHTML = prettyPercent(p);
+			fraction.innerHTML = p === trace
+				? "rare"
+				: prettyPercent(p);
 			fraction.classList.add('fraction');
 			fraction.setAttribute('x', 2); // so it's not right at the beginning
 			fraction.setAttribute('y', -5); // so it's not right on the line
@@ -506,6 +507,7 @@ class Decay {
 }
 new Decay('a', -2, -2); // Alpha Decay
 new Decay('b+', -1, 1); // Beta+ Decay
+new Decay('b+b+', -2, 2); // Double Beta+ Decay
 new Decay('b-', 1, -1); // Beta- Decay
 new Decay('b-b-', 2, -2); // Double Beta- Decay
 new Decay('ec', -1, 1); // Electron Capture
@@ -761,9 +763,3 @@ function main(){
 }
 
 main();
-/* todo list
-- fix double ec/double b- intersecting other nuclides
-*/
-// DEBUG DONT PUSH
-// setDecayChainLength(32, 98);
-// tableColor('msi%4');

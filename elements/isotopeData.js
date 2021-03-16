@@ -2644,7 +2644,8 @@ const isotopeData = [
 		name: 'U-230',
 		decayTypes: [
 			['a', 1],
-			['sf', 1.4e-12], // also "rarely" b+b+
+			['sf', 1.4e-12],
+			['b+b+', trace],
 		],
 		halfLife: 20.8*day,
 	},
@@ -2954,7 +2955,8 @@ const isotopeData = [
 		name: 'Cm-242',
 		decayTypes: [
 			['a', 1],
-			['sf', 6.33e-8], // also cd and "rare" b+b+
+			['sf', 6.33e-8], // also cd
+			['b+b+', trace],
 		],
 		halfLife: 162.8*day,
 	},
