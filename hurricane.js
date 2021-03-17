@@ -761,7 +761,9 @@ hurricanelist[2020] = [
 	[278, 283, 4, 'Delta'],
 	[292, 299, 3, 'Epsilon'],
 	[297, 302, 2, 'Zeta'],
-	// [304, ???, 0, 'Eta'],
+	[304, 317, 4, 'Eta'],
+	[314, 319, 0, 'Theta'],
+	[317, 322, 5, 'Iota'],
 ];
 /*
 0	1 Jan
@@ -805,6 +807,29 @@ var greek = [
 	'chi',
 	'psi',
 	'omega',
+];
+var greek2 = [ // https://public.wmo.int/en/media/news/supplemental-list-of-tropical-cyclone-names-raiv
+	'adria',
+	'braylen',
+	'caridad',
+	'deshawn',
+	'emery',
+	'foster',
+	'gemma',
+	'heath',
+	'isla',
+	'jacobus',
+	'kenzie',
+	'lucio',
+	'makayla',
+	'nolan',
+	'orlanda',
+	'pax',
+	'ronin',
+	'sophie',
+	'tayshaun',
+	'viviana',
+	'will',
 ];
 var numbers = [
 	'one',
@@ -904,7 +929,8 @@ function randomSeason(){
 				name = alphabet[currentStorm];
 			}
 			else { // greek
-				name = greek[currentStorm - alphabet.length];
+				const supplementalList = document.getElementById('supplementalListType').checked ? greek : greek2;
+				name = supplementalList[currentStorm - alphabet.length];
 			}
 			currentStorm += 1;
 		}
