@@ -1669,6 +1669,13 @@ const isotopeData = [
 		halfLife: 1.92*year,
 	},
 	{
+		name: 'Yb-166',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 56.7*hour,
+	},
+	{
 		name: 'Yb-168',
 		abundance: 0.0013,
 	},
@@ -1698,6 +1705,17 @@ const isotopeData = [
 	{
 		name: 'Yb-174',
 		abundance: 0.3183,
+	},
+	{
+		name: 'Yb-175',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 4.185*day,
+	},
+	{
+		name: 'Yb-176',
+		abundance: 0.1276,
 	},
 	{
 		name: 'Lu-169',
