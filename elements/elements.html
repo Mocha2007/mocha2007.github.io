@@ -18,7 +18,7 @@
 </p>
 <h2>Highlight a Category</h2>
 <div id="categorySelector">
-	<label onclick="highlightCategory('none')">
+	<label onclick="highlightFunction(() => undefined)">
 		<input name="category" type="radio" checked>
 		None</label>
 		<!-- others -->
@@ -40,9 +40,15 @@
 	<label onclick="highlightCategory('halogen')">
 		<input name="category" type="radio">
 		Halogen</label>
+	<label onclick="highlightCategory('ironGroup')">
+		<input name="category" type="radio">
+		Iron Group</label>
 	<label onclick="highlightCategory('lanthanide')">
 		<input name="category" type="radio">
 		Lanthanide</label>
+	<label onclick="highlightFunction(e => e.density < 5000 && e.category !== 'Reactive nonmetal' && e.category != 'Noble gas')">
+		<input name="category" type="radio">
+		Light Metal</label>
 	<label onclick="highlightCategory('metalloid')">
 		<input name="category" type="radio">
 		Metalloid</label>

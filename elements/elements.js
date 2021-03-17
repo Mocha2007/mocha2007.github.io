@@ -205,12 +205,14 @@ class ChemElement {
 	}
 	/** @param {string} category */
 	highlightCategory(category){
+		this.highlightFunction(e => e.inCategory(category));
+	}
+	highlightFunction(f){
 		const c = this.element.parentElement.classList;
-		if (category === 'none'){
-			c.value = "";
-			return;
-		}
-		switch(this.inCategory(category)){
+		switch(f(this)){
+			case undefined:
+				c.value = "";
+				break;
 			case true:
 				c.value = "categoryHighlight";
 				break;
@@ -698,6 +700,10 @@ function gradient1(x){
 /** @param {string} category */
 function highlightCategory(category){
 	elements.forEach(e => e.highlightCategory(category));
+}
+
+function highlightFunction(f){
+	elements.forEach(e => e.highlightFunction(f));
 }
 
 /** @param {1|-1} d - 1 = b-b-, -1 = ecec/b+b+ */

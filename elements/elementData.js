@@ -768,6 +768,7 @@ const elementData = [
 			},
 			biologicalHalfLife: 320*day, // personal estimate; 14 mg chromium per person, 0.03 mg/day per person
 			categories: {
+				ironGroup: 0.5,
 				nativeMetal: 0.5,
 				refractoryMetal: 0.5,
 			},
@@ -803,6 +804,7 @@ const elementData = [
 			biologicalHalfLife: 3.8*day, // personal estimate; 12 mg manganese per person, 2 mg/day per person
 			categories: {
 				coinageMetal: 0.5, // $1 coin
+				ironGroup: 0.5,
 				nativeMetal: 0.5,
 				refractoryMetal: 0.5,
 				rockForming: 0.5,
@@ -838,6 +840,7 @@ const elementData = [
 			biologicalHalfLife: 485*day, // personal estimate; 4.2g iron per person, 6 mg/day per person; 0.5^(1/L) = 1 - 0.006/4.2
 			categories: {
 				coinageMetal: 0.5, // various russian coins
+				ironGroup: true,
 				nativeMetal: 0.5,
 				rockForming: true,
 			},
@@ -873,6 +876,7 @@ const elementData = [
 			},
 			biologicalHalfLife: 10*day, // Co-60; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			categories: {
+				ironGroup: true,
 				nativeMetal: 0.5,
 			},
 			density: 8860,
@@ -906,6 +910,7 @@ const elementData = [
 			},
 			categories: {	
 				coinageMetal: 0.5, // us coins
+				ironGroup: true,
 				nativeMetal: 0.5,
 			},
 			density: 8912,
