@@ -2284,6 +2284,7 @@ const isotopeData = [
 		name: 'Po-216',
 		decayTypes: [
 			['a', 1],
+			['b-b-', trace],
 		],
 		halfLife: 0.145,
 		abundance: trace,
@@ -2341,6 +2342,13 @@ const isotopeData = [
 		abundance: trace,
 	},
 	{
+		name: 'Rn-216',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 45e-6,
+	},
+	{
 		name: 'Rn-217',
 		decayTypes: [
 			['a', 1],
@@ -2368,6 +2376,7 @@ const isotopeData = [
 		name: 'Rn-220',
 		decayTypes: [
 			['a', 1],
+			['b-b-', trace],
 		],
 		halfLife: 55.6,
 		abundance: trace,
@@ -2384,7 +2393,7 @@ const isotopeData = [
 		name: 'Fr-221',
 		decayTypes: [
 			['a', 0.999],
-			['b-', 0.001],
+			['b-', 0.001], // also CD
 		],
 		halfLife: 4.9*minute,
 		abundance: trace,
@@ -2413,9 +2422,16 @@ const isotopeData = [
 		halfLife: 3.33*minute,
 	},
 	{
-		name: 'Ra-221',
+		name: 'Ra-220',
 		decayTypes: [
 			['a', 1],
+		],
+		halfLife: 17.9e-3,
+	},
+	{
+		name: 'Ra-221',
+		decayTypes: [
+			['a', 1], // also CD
 		],
 		halfLife: 28,
 		abundance: trace,
@@ -2423,14 +2439,14 @@ const isotopeData = [
 	{
 		name: 'Ra-222',
 		decayTypes: [
-			['a', 1], // also CD, but I can't mark that yet...
+			['a', 1], // also CD
 		],
 		halfLife: 38,
 	},
 	{
 		name: 'Ra-223',
 		decayTypes: [
-			['a', 1],
+			['a', 1], // also CD
 		],
 		halfLife: 11.43*day,
 		abundance: trace,
@@ -2438,7 +2454,7 @@ const isotopeData = [
 	{
 		name: 'Ra-224',
 		decayTypes: [
-			['a', 1],
+			['a', 1], // also CD
 		],
 		halfLife: 3.6319*day,
 		abundance: trace,
@@ -2454,7 +2470,8 @@ const isotopeData = [
 	{
 		name: 'Ra-226',
 		decayTypes: [
-			['a', 1],
+			['a', 1], // also CD
+			['b-b-', trace],
 		],
 		halfLife: 1600*year,
 		abundance: trace,
@@ -2477,7 +2494,7 @@ const isotopeData = [
 	{
 		name: 'Ac-225',
 		decayTypes: [
-			['a', 1],
+			['a', 1], // also CD
 		],
 		halfLife: 10*day,
 		abundance: trace,
@@ -2562,7 +2579,8 @@ const isotopeData = [
 		name: 'Th-232',
 		decayTypes: [
 			['a', 1],
-			['sf', 1.1e-11],
+			['sf', 1.1e-11], // also CD
+			['b-b-', trace],
 		],
 		halfLife: 1.405e10*year,
 		abundance: 0.9998,
