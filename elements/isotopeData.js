@@ -1566,6 +1566,13 @@ const isotopeData = [
 		abundance: 9.5e-4,
 	},
 	{
+		name: 'Dy-159',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 144.4*day,
+	},
+	{
 		name: 'Dy-160',
 		abundance: 0.02329,
 	},
@@ -1586,6 +1593,13 @@ const isotopeData = [
 		abundance: 0.2826,
 	},
 	{
+		name: 'Dy-166',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 81.6*hour,
+	},
+	{
 		name: 'Ho-160',
 		decayTypes: [
 			['b+', 1],
@@ -1604,6 +1618,13 @@ const isotopeData = [
 		abundance: 1,
 	},
 	{
+		name: 'Ho-166',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 26.83*hour,
+	},
+	{
 		name: 'Er-160',
 		decayTypes: [
 			['ec', 1],
@@ -1619,6 +1640,13 @@ const isotopeData = [
 		abundance: 0.01601,
 	},
 	{
+		name: 'Er-165',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 10.36*hour,
+	},
+	{
 		name: 'Er-166',
 		abundance: 0.33503,
 	},
@@ -1631,8 +1659,36 @@ const isotopeData = [
 		abundance: 0.26978,
 	},
 	{
+		name: 'Er-169',
+		decayTypes: [
+			['ec', 1],
+		],
+		halfLife: 9.392*day,
+	},
+	{
 		name: 'Er-170',
 		abundance: 0.1491,
+	},
+	{
+		name: 'Er-172',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 49.3*hour,
+	},
+	{
+		name: 'Tm-165',
+		decayTypes: [
+			['b+', 1],
+		],
+		halfLife: 30.06*hour,
+	},
+	{
+		name: 'Tm-166',
+		decayTypes: [
+			['b+', 1],
+		],
+		halfLife: 7.7*hour,
 	},
 	{
 		name: 'Tm-167',
@@ -1667,6 +1723,13 @@ const isotopeData = [
 			['b-', 1],
 		],
 		halfLife: 1.92*year,
+	},
+	{
+		name: 'Tm-172',
+		decayTypes: [
+			['b-', 1],
+		],
+		halfLife: 63.6*hour,
 	},
 	{
 		name: 'Yb-166',
