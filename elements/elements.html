@@ -82,6 +82,9 @@
 	<label onclick="highlightCategory('rockForming')">
 		<input name="category" type="radio">
 		Rock-forming</label>
+	<label onclick="highlightFunction(e => e.inCategory('rem') || e.inCategory('platinumGroup') || [3, 4, 27, 31, 32, 41, 49, 51, 52, 55, 73, 74].includes(e.z))">
+		<input name="category" type="radio">
+		Technology-critical</label>
 </div>
 <h2>Table Type</h2>
 <table id="tableControls">
