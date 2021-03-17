@@ -366,6 +366,23 @@ class ChemElement {
 				const max_prod = Math.max(...elements.filter(e => e.production).map(e => Math.log(e.production)));
 				c = gradient1(remap(Math.max(0, Math.log(this.production)), [0, max_prod], [0, 1]));
 				break;
+			case 'stability':
+				switch (this.isotopes.filter(i => i.stable).length){
+					case 0:
+						x = Math.max(...this.isotopes.map(i => i.halfLife));
+						c = x < minute ? 'purple'
+							: x < day ? 'red'
+							: x < 1e3 * year ? 'orange'
+							: x < 1e6 * year ? 'yellow'
+							: 'lime';
+						break;
+					case 1:
+						c = 'cyan';
+						break;
+					default:
+						c = 'skyblue';
+				}
+				break;
 			case 'stable':
 				x = this.isotopes.filter(i => i.stable).length / 10 * 255;
 				c = `rgb(255, ${255-x}, 255)`;
