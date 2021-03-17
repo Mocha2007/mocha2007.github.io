@@ -370,9 +370,8 @@ class ChemElement {
 				switch (this.isotopes.filter(i => i.stable).length){
 					case 0:
 						x = Math.max(...this.isotopes.map(i => i.halfLife));
-						c = x < minute ? 'purple'
-							: x < day ? 'red'
-							: x < 1e3 * year ? 'orange'
+						c = x < minute ? 'red'
+							: x < year ? 'orange'
 							: x < 1e6 * year ? 'yellow'
 							: 'lime';
 						break;
