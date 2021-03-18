@@ -1,3 +1,4 @@
+/* exported Game */
 /* globals play, random */
 
 'use strict';
@@ -10,10 +11,10 @@ const Game = {
 	// methods
 	/** @param {number} i - button ID */
 	buttonNoise(i){
-		play("sfx/button" + i + ".mp3");
+		play('sfx/button' + i + '.mp3');
 	},
 	gameOver(){
-		play("sfx/ono.mp3");
+		play('sfx/ono.mp3');
 		this.reset();
 	},
 	newitem(){
@@ -44,7 +45,7 @@ const Game = {
 	},
 	/** show the player the new sequence */
 	teach(){
-		console.log("seq", this.seq);
+		console.log('seq', this.seq);
 		/*
 		0	604 ms
 		1	673 ms
@@ -57,5 +58,5 @@ const Game = {
 			if (++i === this.seq.length)
 				window.clearInterval(interval);
 		}, 700);
-	}
+	},
 };
