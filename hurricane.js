@@ -1,65 +1,25 @@
-/* eslint-disable no-var */
-/* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
+/* jshint esversion: 6, strict: true, strict: global, eqeqeq: true */
+/* global mean, proper, random, range, sd, sum, variance */
 /* exported avgyear, randomSeason */
 'use strict';
 
-var months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
-var offset = [-1, 30, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun',
+	'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+const offset = [-1, 30, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
 
-// begin math block
-
-function sum(x){ // find the sum of an array
-	var s = 0;
-	x.forEach(function(y){ // for each year
-		s += y;
-	});
-	return s;
-}
-
-function mean(x){ // find the mean of an array
-	return sum(x)/x.length;
-}
-
-function variance(x){ // find the variance of an array
-	var meanOfArray = mean(x);
-	var v = x.map(function(y){
-		var z = y - meanOfArray;
-		return z * z;
-	});
-	return sum(v) / (x.length - 1);
-}
-
-function sd(x){ // find the standard deviation of an array
-	return Math.sqrt(variance(x));
-}
-
-function randomRange(min, max){ // random real in range
-	return Math.random() * (max-min) + min;
-}
-
-// end math block
-
-function proper(word){
-	if (word === ''){
-		return '';
-	}
-	word = word.split('');
-	word[0] = word[0].toUpperCase();
-	return word.join('');
-}
-
+/** @param {string} name */
 function n2n(name){ // name to number
-	var date = name.split(' ');
-	var day = Number(date[0]);
-	var month = months.indexOf(date[1].toLowerCase());
+	const date = name.split(' ');
+	const day = Number(date[0]);
+	const month = months.indexOf(date[1].toLowerCase());
 	return offset[month] + day;
 }
 
+/** @param {number} n */
 function n2n2(n){ // number to name
-	var day, i;
-	for (i = 12; i > 0; i -= 1){
+	for (let i = 12; 0 < i; i--){
 		if (n > offset[i]){
-			day = n - offset[i];
+			const day = n - offset[i];
 			return day+' '+proper(months[i]);
 		}
 	}
@@ -74,8 +34,8 @@ function realsize(x){
 }
 
 function avgduring(date){
-	var n = 0;
-	var years = realsize(hurricanelist);
+	let n = 0;
+	const years = realsize(hurricanelist);
 	// date is an integer between 0 and 365
 	hurricanelist.forEach(function(x){ // for each year
 		x.forEach(function(y){ // for each hurricane
@@ -88,7 +48,7 @@ function avgduring(date){
 }
 
 function maxcatduring(date){
-	var maxcat = -1;
+	let maxcat = -1;
 	// date is an integer between 0 and 365
 	hurricanelist.forEach(function(x){ // for each year
 		x.forEach(function(y){ // for each hurricane
@@ -101,21 +61,20 @@ function maxcatduring(date){
 }
 
 function catStyle(category){
-	var style = category > 0 ? 'c'+category : category === 0 ? 'ts' : 'td';
+	const style = category > 0 ? 'c'+category : category === 0 ? 'ts' : 'td';
 	return '<td class='+style+'>'+style.toUpperCase()+'</td>';
 }
 
 function maxcathtml(date){
-	var maxcat = maxcatduring(date);
-	return catStyle(maxcat);
+	return catStyle(maxcatduring(date));
 }
 
 function fractionhurricane(date, m, n){
 	// % of cat m hurricanes that turn into cat n hurricanes
-	var maxcat = maxcatduring(date);
-	var maxcatname = maxcat < n ? '0' : 1;
-	var stormsondate = 0;
-	var hurricanesondate = 0;
+	const maxcat = maxcatduring(date);
+	let maxcatname = maxcat < n ? '0' : 1;
+	let stormsondate = 0;
+	let hurricanesondate = 0;
 	if (maxcatname === 1){
 		hurricanelist.forEach(function(x){ // for each year
 			x.forEach(function(y){ // for each hurricane
@@ -129,15 +88,13 @@ function fractionhurricane(date, m, n){
 		});
 		maxcatname = Math.round(hurricanesondate/stormsondate*100);
 	}
-	var style = Math.floor(maxcatname/10);
-	var html = '<td class=\'p'+style+'\'>'+maxcatname+'%</td>';
-	return html;
+	return '<td class=\'p'+Math.floor(maxcatname/10)+'\'>'+maxcatname+'%</td>';
 }
 
 function yearsContaining(date){
 	// % of years where ANY storm exists on a date
-	var yearCount = 0;
-	var stormsondate = 0;
+	let yearCount = 0;
+	let stormsondate = 0;
 	hurricanelist.forEach(function(x){ // for each year
 		yearCount += 1;
 		x.some(function(y){ // for each hurricane
@@ -147,16 +104,14 @@ function yearsContaining(date){
 			}
 		});
 	});
-	var ratio = Math.floor(stormsondate / yearCount*100);
-	var style = Math.floor(ratio/10);
-	var html = '<td class=\'p'+style+'\'>'+ratio+'%</td>';
-	return html;
+	const ratio = Math.floor(stormsondate / yearCount*100);
+	return '<td class=\'p'+Math.floor(ratio/10)+'\'>'+ratio+'%</td>';
 }
 
 function avgDuration(category){
 	// average category duration
-	var d = 0;
-	var n = 0;
+	let d = 0;
+	let n = 0;
 	hurricanelist.forEach(function(x){ // for each year
 		x.forEach(function(y){ // for each hurricane
 			if (y[2] === category){
@@ -170,7 +125,7 @@ function avgDuration(category){
 
 function avgDurationSD(category){
 	// average category duration standard deviation
-	var durations = [];
+	const durations = [];
 	hurricanelist.forEach(function(x){ // for each year
 		x.forEach(function(y){ // for each hurricane
 			if (y[2] === category){
@@ -197,7 +152,7 @@ function getMaxOfArray(numArray){
 }
 
 function maxyear(){
-	var wholeyear = [];
+	const wholeyear = [];
 	range1(356).forEach(function(x){
 		wholeyear.push(avgduring(x));
 	});
@@ -205,17 +160,16 @@ function maxyear(){
 }
 
 function avgyear(){
-	var datestring, newrow, newval;
-	var wholeyear = [];
-	var maxinyear = maxyear();
+	const wholeyear = [];
+	const maxinyear = maxyear();
 	// reset
 	document.getElementById('avgByDate').innerHTML = '<tr><th>Date</th><th>Quantity</th><th>Visual</th><th>Max</th><th>%D</th><th>%H</th><th>%M</th></tr>';
 	range1(366).forEach(function(x){
 		x = x-1;
-		newrow = document.createElement('tr');
-		newval = avgduring(x);
+		let newrow = document.createElement('tr');
+		let newval = avgduring(x);
 		wholeyear.push(newval);
-		datestring = n2n2(x);
+		let datestring = n2n2(x);
 		newrow.innerHTML = '<td>'+datestring+'</td><td>'+Math.round(newval*100)/100+'</td><td><progress value='+newval+' max='+maxinyear+'></progress></td>'+maxcathtml(x)+yearsContaining(x)+fractionhurricane(x, -1, 1)+fractionhurricane(x, 1, 3);
 		document.getElementById('avgByDate').appendChild(newrow);
 	});
@@ -223,13 +177,13 @@ function avgyear(){
 }
 
 function seasonstats(year){
-	var y = hurricanelist[year];
+	const y = hurricanelist[year];
 	// maj. hurricanes (3+)
-	var majors = 0;
+	let majors = 0;
 	// hurricanes
-	var hurricanes = 0;
+	let hurricanes = 0;
 	// storms
-	var storms = 0;
+	let storms = 0;
 	y.forEach(function(x){ // for each depression
 		switch (x[2]){
 			case 0:
@@ -261,14 +215,14 @@ function seasonstats(year){
 		}
 	});
 	// depressions
-	var depressions = y.length;
+	let depressions = y.length;
 	return [depressions, storms, hurricanes, majors];
 }
 
 // data follows
 // hurricanelist[year][number] = [start,end,cat,name];
 
-var hurricanelist = [];
+const hurricanelist = [];
 hurricanelist[1995] = [
 	[n2n('2 jun'), n2n('10 jun'), 1, 'Allison'],
 	[n2n('6 jul'), n2n('10 jul'), 0, 'Barry'],
@@ -780,8 +734,7 @@ hurricanelist[2020] = [
 335 1 Dec
 */
 
-var alphabet = 'abcdefghijklmnoprstvw'.split('');
-var greek = [
+const greek = [
 	'alpha',
 	'beta',
 	'gamma',
@@ -808,7 +761,7 @@ var greek = [
 	'psi',
 	'omega',
 ];
-var greek2 = [ // https://public.wmo.int/en/media/news/supplemental-list-of-tropical-cyclone-names-raiv
+const greek2 = [ // https://public.wmo.int/en/media/news/supplemental-list-of-tropical-cyclone-names-raiv
 	'adria',
 	'braylen',
 	'caridad',
@@ -831,7 +784,7 @@ var greek2 = [ // https://public.wmo.int/en/media/news/supplemental-list-of-trop
 	'viviana',
 	'will',
 ];
-var numbers = [
+const numbers = [
 	'one',
 	'two',
 	'three',
@@ -857,19 +810,19 @@ var numbers = [
 // for the random generator
 
 function volumes(){
-	var v = [];
+	const v = [];
 	hurricanelist.forEach(function(x){ // for each year
 		v.push(x.length);
 	});
 	return v;
 }
 
-var averagePerYear = mean(volumes());
-var sdPerYear = sd(volumes());
+const averagePerYear = mean(volumes());
+const sdPerYear = sd(volumes());
 
 function pseudoNormal(m, s){ // I couldn't find any way to do a TRUE normal distr., so this is my close approximation.
-	var r = Math.random();
-	var lower, upper;
+	const r = Math.random();
+	let lower, upper;
 	if (r < 0.022){
 		lower = m-3*s;
 		upper = m-2*s;
@@ -894,7 +847,7 @@ function pseudoNormal(m, s){ // I couldn't find any way to do a TRUE normal dist
 		lower = m+2*s;
 		upper = m+3*s;
 	}
-	return randomRange(lower, upper);
+	return random.uniform(lower, upper);
 }
 
 function randomVolume(){
@@ -903,34 +856,42 @@ function randomVolume(){
 }
 
 function randomSeason(){
-	var name;
+	let name;
 	// setup
-	var volume = randomVolume();
+	const volume = randomVolume();
 	document.getElementById('randomSeason').innerHTML = '<tr><th>Name</th><th>From</th><th>Until</th><th>Category</th></tr>';
-	var starts = [];
+	const starts = [];
 	// main
 	range1(volume).forEach(function(){
-		var randomYear = Math.round(randomRange(1995, 2018));
-		var randomStorm = Math.round(randomRange(0, hurricanelist[randomYear].length-1));
-		var randomStart = hurricanelist[randomYear][randomStorm][0];
+		const randomYear = Math.round(random.uniform(1995, 2018));
+		const randomStorm = Math.round(random.uniform(0, hurricanelist[randomYear].length-1));
+		const randomStart = hurricanelist[randomYear][randomStorm][0];
 		starts.push(randomStart);
 	});
 	starts.sort();
 	// for each date, use the date to generate a random END and CATEGORY
-	var currentDepression = 0;
-	var currentStorm = 0;
+	let currentDepression = 0;
+	let currentStorm = 0;
+	/** @type {string[]} */
+	const nameList = new Array(...
+		random.choice(document.getElementsByClassName('names')) // select random name table
+		.children[0] // select tbody
+		.children[1] // select first row (excluding header row)
+		.children // select cells of first row
+		).slice(1) // deselect first cell (the year)
+		.map(e => e.innerHTML); // select innerHTML of all cells
 	starts.forEach(function(x){
-		var category = Math.round(randomRange(-1, maxcatduring(x)));
-		var end = x + Math.max(1, Math.round(
+		const category = Math.round(random.uniform(-1, maxcatduring(x)));
+		const end = x + Math.max(1, Math.round(
 			pseudoNormal(avgDuration(category), avgDurationSD(category))));
-		var newrow = document.createElement('tr');
+		const newrow = document.createElement('tr');
 		if (category > -1){
-			if (currentStorm < alphabet.length){ // names
-				name = alphabet[currentStorm];
+			if (currentStorm < nameList.length){ // names
+				name = nameList[currentStorm];
 			}
 			else { // greek
 				const supplementalList = document.getElementById('supplementalListType').checked ? greek : greek2;
-				name = supplementalList[currentStorm - alphabet.length];
+				name = supplementalList[currentStorm - nameList.length];
 			}
 			currentStorm += 1;
 		}
