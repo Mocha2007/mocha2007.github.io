@@ -1,6 +1,6 @@
-/* jshint esversion: 6, strict: true, forin: false, loopfunc: true, strict: global */
+/* jshint esversion: 6, strict: true, strict: global */
 /* globals lifeData, pi */
-/* exported importSave, downloadSave, createOrder, wipeMap, hardReset */
+/* exported test */
 'use strict';
 
 const constants = {
@@ -59,7 +59,7 @@ class Length extends Value {
 		super(value);
 	}
 	get toFeet(){
-		return this.value / .3048;
+		return this.value / 0.3048;
 	}
 }
 
@@ -98,7 +98,7 @@ class Mass extends Value {
 		super(value);
 	}
 	get toPounds(){
-		return this.value / .45359237;
+		return this.value / 0.45359237;
 	}
 }
 
