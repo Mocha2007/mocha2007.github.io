@@ -1,26 +1,26 @@
+/* eslint-disable no-var */
+/* jshint esversion: 3, strict: true, strict: global */
+/* exported tilde */
+'use strict';
+
 function play(name){
-    "use strict";
-	(new Audio('https://www.myinstants.com/media/sounds/'+name+'.mp3')).play();
+	new Audio('https://www.myinstants.com/media/sounds/'+name+'.mp3').play();
 }
 
 function settilde(string){
-    "use strict";
 	document.getElementById('tilde').innerHTML = string;
 }
 
 function tildesize(){
-    "use strict";
 	var x = window.getComputedStyle(document.querySelector('#tilde')).fontSize;
 	return parseFloat(x.slice(0,-2));
 }
 
 function setsize(x){
-    "use strict";
-	document.getElementById("tilde").style["font-size"] = String(x) + 'px';
+	document.getElementById('tilde').style['font-size'] = String(x) + 'px';
 }
 
 function tilde(){
-    "use strict";
 	var i;
 	var ratio = 0.99; // must be .99 < r < 1
 	var duration = 600;
@@ -28,7 +28,7 @@ function tilde(){
 	// audio
 	play('yandere-dev-woah-technology');
 	// visual
-	settilde("❄️");
+	settilde('❄️');
 	// initialize
 	setsize(defaultsize * 0.62); // minimize jumping
 	// main
@@ -40,7 +40,7 @@ function tilde(){
 	}
 	// reset
 	setTimeout(function(){
-		settilde("~️");
+		settilde('~️');
 		setsize(defaultsize);
 	}, duration*4);
 }

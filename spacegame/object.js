@@ -81,6 +81,15 @@ class Volume extends Value {
 	}
 }
 
+class Velocity extends Value {
+	/**
+	 * @param {number} value
+	*/
+	constructor(value){
+		super(value);
+	}
+}
+
 class Mass extends Value {
 	/**
 	 * @param {number} value
@@ -146,6 +155,7 @@ class Sphere extends Solid {
 // ling lang
 
 class Noun {
+	/* eslint-disable indent */
 	/**
 	 * @param {string} word - singular, or plural if alwaysPlural
 	 * @param {boolean} countable - uses many and few rather than much and little
@@ -158,6 +168,7 @@ class Noun {
 	*/
 	constructor(word, countable = true, proper = false, alwaysSingular = false,
 			alwaysPlural = false, irregularPlural = false, definite = false, indefinite = false){
+		/* eslint-enable indent */
 		this.word = word;
 		this.countable = countable;
 		this.proper = proper;
@@ -236,12 +247,10 @@ class CelestialBody extends Instance {
 	get density(){
 		return new Density(this.mass.value / this.solid.volume.value);
 	}
-	/*
 	get escapeVelocity(){
-		var v = Math.sqrt(2*constants.g*this.mass.value / this.sphere.radius);
-		return new Velocity()
+		const v = Math.sqrt(2*constants.g*this.mass.value / this.sphere.radius);
+		return new Velocity(v);
 	}
-	*/
 }
 
 // bio

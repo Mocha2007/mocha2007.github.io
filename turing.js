@@ -1,4 +1,7 @@
-"use strict";
+/* eslint-disable no-var */
+/* jshint esversion: 3, strict: true, strict: global */
+/* exported cclr, fstep100, reset, run */
+'use strict';
 var versionno = '191119a';
 // Myinstants
 var quos = [];
@@ -137,11 +140,11 @@ var birthday =	[1/16,[
 				[],
 
 				[],
-				
+
 				[['C4',1/16]],
-				
+
 				//
-				
+
 				[['F3',1/2*1.5],
 				['A3',1/2*1.5],
 				['D4',1/4]],
@@ -151,53 +154,53 @@ var birthday =	[1/16,[
 				[],
 
 				[],
-				
+
 				[['C4',1/4]],
 
 				[],
-				
+
 				[],
 
 				[],
-				
+
 				[['F4',1/4]],
 
 				[],
-				
+
 				[],
 
 				[],
-				
+
 				//
-				
+
 				[['C3',1/2*1.5],
 				['B3',1/2*1.5],
 				['E4',1/2]],
 
 				[],
-				
+
 				[],
 
 				[],
-				
+
 				[],
 
 				[],
-				
+
 				[],
 
 				[],
-				
+
 				[['C4',1/8*1.5]],
 
 				[],
 
 				[],
-				
+
 				[['C4',1/16]],
-				
+
 				//
-				
+
 				[['C3',1/2*1.5],
 				['B3',1/2*1.5],
 				['D4',1/2]],
@@ -207,53 +210,53 @@ var birthday =	[1/16,[
 				[],
 
 				[],
-				
+
 				[['C4',1/4]],
 
 				[],
-				
+
 				[],
 
 				[],
-				
+
 				[['G4',1/4]],
 
 				[],
-				
+
 				[],
 
 				[],
-				
+
 				//
-				
+
 				[['F3',1/2*1.5],
 				['A3',1/2*1.5],
 				['F4',1/2]],
 
 				[],
-				
+
 				[],
 
 				[],
-				
+
 				[],
 
 				[],
-				
+
 				[],
 
 				[],
-				
+
 				[['C4',1/8*1.5]],
 
 				[],
 
 				[],
-				
+
 				[['C4',1/16]],
-				
+
 				//
-				
+
 				[['F3',1/2*1.5],
 				['A3',1/2*1.5],
 				['C5',1/4]],
@@ -263,25 +266,25 @@ var birthday =	[1/16,[
 				[],
 
 				[],
-				
+
 				[['A4',1/4]],
 
 				[],
-				
+
 				[],
 
 				[],
-				
+
 				[['F4',1/4]],
 
 				[],
-				
+
 				[],
 
 				[],
-				
+
 				//
-				
+
 				[['F3',1/2*1.5],
 				['B3',1/2*1.5],
 				['E4',1/4]],
@@ -291,25 +294,25 @@ var birthday =	[1/16,[
 				[],
 
 				[],
-				
+
 				[['D4',1/4]],
 
 				[],
-				
+
 				[],
 
 				[],
-				
+
 				[['A#4',1/8*1.5]],
 
 				[],
 
 				[],
-				
+
 				[['A#4',1/16]],
-				
+
 				//
-				
+
 				[['F3',1/2],
 				['A3',1/2],
 				['A4',1/4]],
@@ -319,27 +322,27 @@ var birthday =	[1/16,[
 				[],
 
 				[],
-				
+
 				[['F4',1/4]],
 
 				[],
-				
+
 				[],
 
 				[],
-				
+
 				[['C3',1/4],
 				['B3',1/4],
 				['G4',1/4]],
 
 				[],
-				
+
 				[],
 
 				[],
-				
+
 				//
-				
+
 				[['F3',1/2],
 				['A3',1/2],
 				['F4',1/2]],
@@ -373,22 +376,22 @@ async function mochsic(song){
 	}
 }*/
 
-function nPr(n,k){
+function nPr(n, k){
 	return factorial(n)/factorial(n-k);
 }
 
-function nCr(n,k){
-	return nPr(n,k)/factorial(k);
+function nCr(n, k){
+	return nPr(n, k)/factorial(k);
 }
 
-function mod(n,m){
-	return ((n%m)+m)%m;
+function mod(n, m){
+	return (n%m+m)%m;
 }
 
 function EnglishNumber(integer){
-	var words = ['zero','one','two','three','four','five','six','seven','eight','nine'];
-	var teens = ['ten','eleven','twelve','thir','four','fif','six','seven','eigh','nine'];
-	var illions = [';)','thousand','m','b','tr'];
+	var words = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+	var teens = ['ten', 'eleven', 'twelve', 'thir', 'four', 'fif', 'six', 'seven', 'eigh', 'nine'];
+	var illions = [';)', 'thousand', 'm', 'b', 'tr'];
 	var string = '';
 	// Zero & Negatives
 	if (integer===0){
@@ -474,7 +477,7 @@ function EnglishNumber(integer){
 	return 'a really, really big number';
 }
 // Console
-function mconsole(MessageClass,Message){
+function mconsole(MessageClass, Message){
 	if (MessageClass==='i'){
 		document.getElementById('console').innerHTML += '\n<span class="ci">info</span>: '+Message;
 	}
@@ -515,19 +518,19 @@ function cclr(){
 
 function run(){
 	document.getElementById('machinestate').innerHTML = '0';
-	program = document.getElementById('code').value.split("\n");
+	program = document.getElementById('code').value.split('\n');
 	console.log(program);
 	console.log('Load');
 	// Bad Practices
 	// blank
 	if (program === ''){
-			console.warn('No Program');
-			mconsole('w','No Program');
+		console.warn('No Program');
+		mconsole('w', 'No Program');
 	}
 	// Last line is a label but not :X
 	if (program[program.length-1][0]===':' && program[program.length-1]!==':X'){
-			console.warn('Last line is label but not ":X"\n@ Line '+(program.length-1)+'\n\t'+program[program.length-1]);
-			mconsole('w','Last line is label but not "<span class="cf">:</span>X"\n@ Line '+(program.length-1)+'\n\t<span class="cf">:</span>'+program[program.length-1].substring(1));
+		console.warn('Last line is label but not ":X"\n@ Line '+(program.length-1)+'\n\t'+program[program.length-1]);
+		mconsole('w', 'Last line is label but not "<span class="cf">:</span>X"\n@ Line '+(program.length-1)+'\n\t<span class="cf">:</span>'+program[program.length-1].substring(1));
 	}
 	//inputline
 	inputline = 0;
@@ -537,26 +540,26 @@ function reset(){
 	program = [];
 	document.getElementById('machinestate').innerHTML = '[PRESS LOAD]';
 	document.getElementById('line').innerHTML = '0';
-	
+
 	//table construction
 	var tabularasa = '<table>';
-	for (var i=0;i<xsize;i+=1) {
+	for (var i=0;i<xsize;i+=1){
 		tabularasa+='<tr>';
-		for (var j=0;j<ysize;j+=1) {
+		for (var j=0;j<ysize;j+=1){
 			tabularasa+='<td id="x'+Number(i*ysize+j)+'">0</td>';
 		}
 		tabularasa+='</tr>';
 	}
 	tabularasa+='</table>';
 	document.getElementById('memory').innerHTML = tabularasa;
-	
+
 	//pointer
 	if (document.getElementById('x'+pointer)!==null){
-		document.getElementById('x'+pointer).classList.remove("pointed");
+		document.getElementById('x'+pointer).classList.remove('pointed');
 	}
 	pointer = 0;
 	document.getElementById('pointing').innerHTML=pointer;
-	document.getElementById('x0').classList.add("pointed");
+	document.getElementById('x0').classList.add('pointed');
 
 	console.log('Reset');
 }
@@ -570,42 +573,42 @@ function fstep(){
 	// Reject
 	if (typeof command === 'undefined' || command===''){
 		if (document.getElementById('console').innerHTML.slice(-44)!=='<span class="ci">info</span>: End of Program'){
-			mconsole('i','End of Program');
+			mconsole('i', 'End of Program');
 		}
 		return true;
 	}
 	// INC
 	document.getElementById('line').innerHTML=linenumber+1;
 	// Remove color
-	document.getElementById('x'+pointer).classList.remove("pointed");
+	document.getElementById('x'+pointer).classList.remove('pointed');
 	// Grabbing specials beforehand
 	var specialstate = document.getElementById('machinestate').innerHTML;
 	var specialtarget = document.getElementById('x'+pointer).innerHTML;
 	// replacing shorthand operation mode
 	if ('i!t&a|lsmor^j=x'.indexOf(command[0])!==-1){
 		command = command.split('');
-		command[0] = command[0].replace('i','INP');
-		command[0] = command[0].replace('!','NOT');
-		command[0] = command[0].replace('t','TIM');
-		command[0] = command[0].replace('&','AND');
-		command[0] = command[0].replace('a','APP');
-		command[0] = command[0].replace('|','IOR');
-		command[0] = command[0].replace('l','LEN');
-		command[0] = command[0].replace('s','MMS');
-		command[0] = command[0].replace('m','MOV');
-		command[0] = command[0].replace('o','OUT');
-		command[0] = command[0].replace('r','RPN');
-		command[0] = command[0].replace('^','XOR');
-		command[0] = command[0].replace('j','JJJ');
-		command[0] = command[0].replace('=','LET');
-		command[0] = command[0].replace('x','SWP');
+		command[0] = command[0].replace('i', 'INP');
+		command[0] = command[0].replace('!', 'NOT');
+		command[0] = command[0].replace('t', 'TIM');
+		command[0] = command[0].replace('&', 'AND');
+		command[0] = command[0].replace('a', 'APP');
+		command[0] = command[0].replace('|', 'IOR');
+		command[0] = command[0].replace('l', 'LEN');
+		command[0] = command[0].replace('s', 'MMS');
+		command[0] = command[0].replace('m', 'MOV');
+		command[0] = command[0].replace('o', 'OUT');
+		command[0] = command[0].replace('r', 'RPN');
+		command[0] = command[0].replace('^', 'XOR');
+		command[0] = command[0].replace('j', 'JJJ');
+		command[0] = command[0].replace('=', 'LET');
+		command[0] = command[0].replace('x', 'SWP');
 		command[0] += ' ';
 		command = command.join('');
 	}
 	// If still nonalphanumeric characters in first slot, then invalid shortcut error
 	if ('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.indexOf(command[0])===-1){
 		console.error('"'+command[0]+'" not valid shortcut\n@ Line '+linenumber+'\n\t'+command);
-		mconsole('e','"'+command[0]+'" not valid shortcut\n@ Line '+linenumber+'\n\t'+command);
+		mconsole('e', '"'+command[0]+'" not valid shortcut\n@ Line '+linenumber+'\n\t'+command);
 		return true;
 	}
 	// Determining arguments
@@ -622,85 +625,85 @@ function fstep(){
 			break;
 	}
 	//
-	var operation = command.substring(0,3);
-	
+	var operation = command.substring(0, 3);
+
 	var badop = 'Useless operation written by a useless coder\n@ Line ';
 	// Generating warning for deprecated ops
 	if ('ADD DIV EXP INV MOD MUL NEG NRT'.indexOf(operation)!==-1){
-			console.warn(operation+' is deprecated, use RPN instad.\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('w','<span class="cf">'+operation+'</span> is deprecated, use <span class="cf">RPN</span> instad.\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+		console.warn(operation+' is deprecated, use RPN instad.\n@ Line '+linenumber+'\n\t'+command);
+		mconsole('w', '<span class="cf">'+operation+'</span> is deprecated, use <span class="cf">RPN</span> instad.\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 	}
 	// Generating warning for deprecated ops
 	if ('JIF JIG JIL JIZ JMP JNE JNZ'.indexOf(operation)!==-1){
-			console.warn(operation+' is deprecated, use JJJ instad.\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('w','<span class="cf">'+operation+'</span> is deprecated, use <span class="cf">JJJ</span> instad.\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+		console.warn(operation+' is deprecated, use JJJ instad.\n@ Line '+linenumber+'\n\t'+command);
+		mconsole('w', '<span class="cf">'+operation+'</span> is deprecated, use <span class="cf">JJJ</span> instad.\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 	}
 	// Generating warning for deprecated ops
 	if ('NAN NOR XNR'.indexOf(operation)!==-1){
-			console.warn(operation+' is deprecated, use INV + its opposite instad.\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('w','<span class="cf">'+operation+'</span> is deprecated, use <span class="cf">INV</span>  + its opposite instad.\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+		console.warn(operation+' is deprecated, use INV + its opposite instad.\n@ Line '+linenumber+'\n\t'+command);
+		mconsole('w', '<span class="cf">'+operation+'</span> is deprecated, use <span class="cf">INV</span>  + its opposite instad.\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 	}
 	// Generating warning for specialchar-duped ops
-	if ('LET SWP'.indexOf(operation)!==-1 && ['* *','$ $','@ @'].indexOf(arg)!==-1){
-			console.warn(badop+linenumber+'\n\t'+command);
-			mconsole('w',badop+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+	if ('LET SWP'.indexOf(operation)!==-1 && ['* *', '$ $', '@ @'].indexOf(arg)!==-1){
+		console.warn(badop+linenumber+'\n\t'+command);
+		mconsole('w', badop+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 	}
 	// Generating warning for other NOPs arg===0
 	else if ('ADD IOR MMS MOV'.indexOf(operation)!==-1 && Number(arg)===0){
-			console.warn(badop+linenumber+'\n\t'+command);
-			mconsole('w',badop+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+		console.warn(badop+linenumber+'\n\t'+command);
+		mconsole('w', badop+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 	}
 	// Generating warning for other NOPs arg===1
 	else if ('DIV EXP MUL NRT'.indexOf(operation)!==-1 && Number(arg)===1){
-			console.warn(badop+linenumber+'\n\t'+command);
-			mconsole('w',badop+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+		console.warn(badop+linenumber+'\n\t'+command);
+		mconsole('w', badop+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 	}
 	// Generating errors for number-only ops
 	else if ('ADD DIV EXP MMS MOD MOV MUL NRT FUN I2W'.indexOf(operation)!==-1 && Number.isNaN(Number(arg))){
-			console.error('"'+arg+'" not number\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','"'+arg+'" not number\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
-			return true;
+		console.error('"'+arg+'" not number\n@ Line '+linenumber+'\n\t'+command);
+		mconsole('e', '"'+arg+'" not number\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+		return true;
 	}
 	// Generating err for insufficient commas (FRG/FSW)
 	if ('FRG FSW'.indexOf(operation)!==-1 && (arg.match(/,/g) || []).length<1){
-			console.error('Insufficient arguments\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Insufficient arguments\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
-			return true;
+		console.error('Insufficient arguments\n@ Line '+linenumber+'\n\t'+command);
+		mconsole('e', 'Insufficient arguments\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+		return true;
 	}
 	// Generating err for insufficient commas (FAA)
 	if (operation==='FAA' && (arg.match(/,/g) || []).length<3){
-			console.error('Insufficient arguments\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Insufficient arguments\n@ Line '+linenumber+'\n\t<span class="cf">FAA</span> '+arg);
-			return true;
+		console.error('Insufficient arguments\n@ Line '+linenumber+'\n\t'+command);
+		mconsole('e', 'Insufficient arguments\n@ Line '+linenumber+'\n\t<span class="cf">FAA</span> '+arg);
+		return true;
 	}
 	// Generating err for non-nonnegative integer args
 	if ('FAA FSW'.indexOf(operation)!==-1 && (arg.match(/[^,0-9]/g) || []).length!==0){
-			console.error('Arguments not nonnegative integers\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Arguments not nonnegative integers\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
-			return true;
+		console.error('Arguments not nonnegative integers\n@ Line '+linenumber+'\n\t'+command);
+		mconsole('e', 'Arguments not nonnegative integers\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+		return true;
 	}
 	// Generating err for non-numeral first arg
 	if (operation==='FRG' && (arg.match(/^[0-9]+,/g) || []).length===0){
-			console.error('First argument not a nonnegative integer\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','First argument not a nonnegative integer\n@ Line '+linenumber+'\n\t<span class="cf">FRG</span> '+arg);
-			return true;
+		console.error('First argument not a nonnegative integer\n@ Line '+linenumber+'\n\t'+command);
+		mconsole('e', 'First argument not a nonnegative integer\n@ Line '+linenumber+'\n\t<span class="cf">FRG</span> '+arg);
+		return true;
 	}
 	// Generating ZeroDivisionError
 	if ('DIV MOD NRT'.indexOf(operation)!==-1 && arg==='0'){
-			console.error('Zero divisor\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Zero divisor\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
-			return true;
+		console.error('Zero divisor\n@ Line '+linenumber+'\n\t'+command);
+		mconsole('e', 'Zero divisor\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+		return true;
 	}
 	// Generating ZeroDivisionError for INV on 0
 	if (operation==='INV' && specialtarget==='0'){
-			console.error('Zero divisor\n@ Line '+linenumber+'\n\tINV');
-			mconsole('e','Zero divisor\n@ Line '+linenumber+'\n\t<span class="cf">INV</span>');
-			return true;
+		console.error('Zero divisor\n@ Line '+linenumber+'\n\tINV');
+		mconsole('e', 'Zero divisor\n@ Line '+linenumber+'\n\t<span class="cf">INV</span>');
+		return true;
 	}
 	// OPERATIONS
 	console.log(command);
 	var arg1, arg2;
-	if (command.substring(0,1)===':'){
+	if (command.substring(0, 1)===':'){
 		console.log(command.substring(1));
 	}
 	else if (operation==='SWP'){
@@ -723,7 +726,7 @@ function fstep(){
 		// Error
 		else {
 			console.error('Special not in dictionary: '+arg2+'\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Special not in dictionary: '+arg2+'\n@ Line '+linenumber+'\n\t<span class="cf">SWP</span> '+arg);
+			mconsole('e', 'Special not in dictionary: '+arg2+'\n@ Line '+linenumber+'\n\t<span class="cf">SWP</span> '+arg);
 			return true;
 		}
 		// replacements
@@ -745,7 +748,7 @@ function fstep(){
 		// Error
 		else {
 			console.error('Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t<span class="cf">SWP</span> '+arg);
+			mconsole('e', 'Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t<span class="cf">SWP</span> '+arg);
 			return true;
 		}
 		// Do shit some more
@@ -766,14 +769,14 @@ function fstep(){
 		console.log(arg);
 		var rpnstack = [];
 		var currentstring = '';
-		arg = arg.replace("*",specialstate).replace("$",pointer).replace("@",specialtarget);
+		arg = arg.replace('*', specialstate).replace('$', pointer).replace('@', specialtarget);
 		// Go through vals
 		var a, b, c;
 		for (var i=0;i<arg.length;i+=1){
 			// Check if NaN
 			if (rpnstack.length>0 && !Number.isFinite(rpnstack[rpnstack.length-1])){
-				console.error('RPN error performing '+arg[i-1]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(i).join(" ")+'^');
-				mconsole('e','RPN error performing '+arg[i-1]+':\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg+'\n\t    '+Array(i).join(" ")+'^');
+				console.error('RPN error performing '+arg[i-1]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(i).join(' ')+'^');
+				mconsole('e', 'RPN error performing '+arg[i-1]+':\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg+'\n\t    '+Array(i).join(' ')+'^');
 				return true;
 			}
 			// Work
@@ -782,7 +785,7 @@ function fstep(){
 			}
 			else if (arg[i]===' '){
 				console.warn('NOP in RPN\n@ Line '+linenumber+'\n\t'+command);
-				mconsole('w','NOP in RPN\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg);
+				mconsole('w', 'NOP in RPN\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg);
 			}
 			else if (arg[i]===','){
 				rpnstack.push(Number(currentstring));
@@ -797,19 +800,23 @@ function fstep(){
 				rpnstack.pop();
 			}
 			else if (arg[i]==='x'){
-				rpnstack[rpnstack.length-2] = rpnstack[rpnstack.length-2]*rpnstack[rpnstack.length-1];
+				rpnstack[rpnstack.length-2] =
+					rpnstack[rpnstack.length-2]*rpnstack[rpnstack.length-1];
 				rpnstack.pop();
 			}
 			else if (arg[i]==='/'){
-				rpnstack[rpnstack.length-2] = rpnstack[rpnstack.length-2]/rpnstack[rpnstack.length-1];
+				rpnstack[rpnstack.length-2] =
+					rpnstack[rpnstack.length-2]/rpnstack[rpnstack.length-1];
 				rpnstack.pop();
 			}
 			else if (arg[i]==='^'){
-				rpnstack[rpnstack.length-2] = Math.pow(rpnstack[rpnstack.length-2],rpnstack[rpnstack.length-1]);
+				rpnstack[rpnstack.length-2] =
+					Math.pow(rpnstack[rpnstack.length-2], rpnstack[rpnstack.length-1]);
 				rpnstack.pop();
 			}
 			else if (arg[i]==='%'){
-				rpnstack[rpnstack.length-2] = mod(rpnstack[rpnstack.length-2],rpnstack[rpnstack.length-1]);
+				rpnstack[rpnstack.length-2] =
+					mod(rpnstack[rpnstack.length-2], rpnstack[rpnstack.length-1]);
 				rpnstack.pop();
 			}
 			else if (arg[i]==='!'){
@@ -825,7 +832,7 @@ function fstep(){
 			}
 			else if (arg[i]==='g'){
 				if (currentstring===''){
-					currentstring = "0.5772156649015329";
+					currentstring = '0.5772156649015329';
 				}
 				else {
 					currentstring = String(0.5772156649015329*Number(currentstring));
@@ -853,7 +860,8 @@ function fstep(){
 				rpnstack.push(Math.random()*(b-a)-a);
 			}
 			else if (arg[i]==='l'){
-				rpnstack[rpnstack.length-2] = Math.log(rpnstack[rpnstack.length-2])/Math.log(rpnstack[rpnstack.length-1]);
+				rpnstack[rpnstack.length-2] =
+					Math.log(rpnstack[rpnstack.length-2])/Math.log(rpnstack[rpnstack.length-1]);
 				rpnstack.pop();
 			}
 			else if (arg[i]==='L'){
@@ -927,13 +935,13 @@ function fstep(){
 				c = rpnstack.pop();
 				b = rpnstack.pop();
 				a = rpnstack.pop();
-				rpnstack.push((-b+Math.pow(b*b-4*a*c,0.5))/2/a);
+				rpnstack.push((-b+Math.pow(b*b-4*a*c, 0.5))/2/a);
 			}
 			else if (arg[i]==='Q'){
 				c = rpnstack.pop();
 				b = rpnstack.pop();
 				a = rpnstack.pop();
-				rpnstack.push((-b-Math.pow(b*b-4*a*c,0.5))/2/a);
+				rpnstack.push((-b-Math.pow(b*b-4*a*c, 0.5))/2/a);
 			}
 			else if (arg[i]==='\''){
 				for (var j=0;j<rpnstack.length;j+=1){
@@ -963,23 +971,23 @@ function fstep(){
 				b = rpnstack.pop();
 				a = rpnstack.pop();
 				var s = (a+b+c)/2;
-				rpnstack.push(Math.pow(s*(s-a)*(s-b)*(s-c),0.5));
+				rpnstack.push(Math.pow(s*(s-a)*(s-b)*(s-c), 0.5));
 			}
 			else if (arg[i]==='m'){
-				rpnstack = [Math.min.apply(null,rpnstack)];
+				rpnstack = [Math.min.apply(null, rpnstack)];
 			}
 			else if (arg[i]==='M'){
-				rpnstack = [Math.max.apply(null,rpnstack)];
+				rpnstack = [Math.max.apply(null, rpnstack)];
 			}
 			else if (arg[i]==='n'){
 				b = rpnstack.pop();
 				a = rpnstack.pop();
-				rpnstack.push(nCr(a,b));
+				rpnstack.push(nCr(a, b));
 			}
 			else if (arg[i]==='N'){
 				b = rpnstack.pop();
 				a = rpnstack.pop();
-				rpnstack.push(nPr(a,b));
+				rpnstack.push(nPr(a, b));
 			}
 			// Shamelessly stolen from GolfScript
 			else if (arg[i]==='\\'){
@@ -1000,29 +1008,29 @@ function fstep(){
 				rpnstack[rpnstack.length-1] += 1;
 			}
 			else {
-				console.error('RPN error performing unindexed operation '+arg[i]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(i).join(" ")+'^');
-				mconsole('e','RPN error performing unindexed operation '+arg[i]+':\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg+'\n\t    '+Array(i).join(" ")+'^');
+				console.error('RPN error performing unindexed operation '+arg[i]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(i).join(' ')+'^');
+				mconsole('e', 'RPN error performing unindexed operation '+arg[i]+':\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg+'\n\t    '+Array(i).join(' ')+'^');
 				return true;
 			}
-			console.log(i,arg[i],rpnstack);
+			console.log(i, arg[i], rpnstack);
 		}
 		// Return
 		if (rpnstack.length===1){
 			if (!Number.isFinite(rpnstack[0])){
-				console.error('RPN error performing '+arg[arg.length-1]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(arg.length).join(" ")+'^');
-				mconsole('e','RPN error performing '+arg[arg.length-1]+':\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg+'\n\t    '+Array(arg.length).join(" ")+'^');
+				console.error('RPN error performing '+arg[arg.length-1]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(arg.length).join(' ')+'^');
+				mconsole('e', 'RPN error performing '+arg[arg.length-1]+':\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg+'\n\t    '+Array(arg.length).join(' ')+'^');
 				return true;
 			}
 			document.getElementById('x'+pointer).innerHTML = Number(specialtarget)+Number(rpnstack[0]);
 		}
 		else if (rpnstack.length>1){
 			console.error('RPN error, numbers still in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','RPN error, numbers still in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg);
+			mconsole('e', 'RPN error, numbers still in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg);
 			return true;
 		}
 		else {
 			console.error('RPN error, not enough numbers in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','RPN error, not enough numbers in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg);
+			mconsole('e', 'RPN error, not enough numbers in stack: '+rpnstack+'\n@ Line '+linenumber+'\n\t<span class="cf">RPN</span> '+arg);
 			return true;
 		}
 	}
@@ -1062,46 +1070,46 @@ function fstep(){
 		}
 	}*/
 	else {
-	switch (operation){
+		switch (operation){
 		// let
-		case 'LET':
-			arg1 = arg[0];
-			arg2 = arg.substring(2);
-			// Figure out if arg2 is a specialchar
-			switch (arg2){
-				case '*':
-					arg2 = specialstate;
-					break;
-				case '$':
-					arg2 = pointer;
-					break;
-				case '@':
-					arg2 = specialtarget;
-					break;
-			}
-			// Do shit
-			switch (arg1){
-				case '*':
-					document.getElementById('machinestate').innerHTML = arg2;
-					break;
-				case '$':
-					pointer = arg2;
-					break;
-				case '@':
-					document.getElementById('x'+pointer).innerHTML = arg2;
-					break;
-				// Error
-				default:
-					console.error('Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t'+command);
-					mconsole('e','Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t<span class="cf">LET</span> '+arg);
-					return true;
-			}
-			break;
-		// jumps
-		case 'JJJ':
-				arg = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget);
-				arg1 = arg.split(" ")[0];
-				arg2 = arg.split(" ")[1];
+			case 'LET':
+				arg1 = arg[0];
+				arg2 = arg.substring(2);
+				// Figure out if arg2 is a specialchar
+				switch (arg2){
+					case '*':
+						arg2 = specialstate;
+						break;
+					case '$':
+						arg2 = pointer;
+						break;
+					case '@':
+						arg2 = specialtarget;
+						break;
+				}
+				// Do shit
+				switch (arg1){
+					case '*':
+						document.getElementById('machinestate').innerHTML = arg2;
+						break;
+					case '$':
+						pointer = arg2;
+						break;
+					case '@':
+						document.getElementById('x'+pointer).innerHTML = arg2;
+						break;
+						// Error
+					default:
+						console.error('Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t'+command);
+						mconsole('e', 'Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t<span class="cf">LET</span> '+arg);
+						return true;
+				}
+				break;
+				// jumps
+			case 'JJJ':
+				arg = arg.replace('*', specialstate).replace('$', pointer).replace('@', specialtarget);
+				arg1 = arg.split(' ')[0];
+				arg2 = arg.split(' ')[1];
 				// Determining Target Type
 				var target = arg2;
 				if (Number.isNaN(Number(arg2))){
@@ -1149,204 +1157,205 @@ function fstep(){
 							break;
 						default:
 							console.error('Misformed comparison "'+arg1b+'"\n@ Line '+linenumber+'\n\t'+command);
-							mconsole('e','Misformed comparison "'+arg1b+'"\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
+							mconsole('e', 'Misformed comparison "'+arg1b+'"\n@ Line '+linenumber+'\n\t<span class="cf">'+operation+'</span> '+arg);
 							return true;
 					}
 				}
-			break;
-		// deprecated
-		case 'ADD':
-			document.getElementById('x'+pointer).innerHTML = Number(specialtarget)+Number(arg);
-			break;
-		case 'MUL':
-			document.getElementById('x'+pointer).innerHTML = Number(specialtarget)*Number(arg);
-			break;
-		case 'EXP':
-			document.getElementById('x'+pointer).innerHTML = Math.pow(Number(specialtarget),Number(arg));
-			break;
-		case 'NRT':
-			document.getElementById('x'+pointer).innerHTML = Math.pow(Number(specialtarget),1/Number(arg));
-			break;
-		case 'DIV':
-			document.getElementById('x'+pointer).innerHTML = Number(specialtarget)/Number(arg);
-			break;
-		case 'MOD':
-			document.getElementById('x'+pointer).innerHTML = mod(Number(specialtarget),Number(arg));
-			break;	
-		case 'AND':
-			if (specialtarget==='1'){
-				document.getElementById('x'+pointer).innerHTML = arg;
-			}
-			break;
-		case 'IOR':
-			if (specialtarget==='0'){
-				document.getElementById('x'+pointer).innerHTML = arg;
-			}
-			break;
-		case 'NEG':
-			document.getElementById('x'+pointer).innerHTML = -Number(specialtarget);
-			break;
-		case 'INV':
-			document.getElementById('x'+pointer).innerHTML = 1/Number(specialtarget);
-			break;
-		case 'XOR':
-			if (specialtarget===arg){
-				document.getElementById('x'+pointer).innerHTML = 0;
-			}
-			else {
-				document.getElementById('x'+pointer).innerHTML = 1;
-			}
-			break;
-		case 'XNR':
-			if (specialtarget===arg){
-				document.getElementById('x'+pointer).innerHTML = 1;
-			}
-			else {
-				document.getElementById('x'+pointer).innerHTML = 0;
-			}
-			break;
-		case 'NOR':
-			if (specialtarget===arg && arg==='0'){
-				document.getElementById('x'+pointer).innerHTML = 1;
-			}
-			else {
-				document.getElementById('x'+pointer).innerHTML = 0;
-			}
-			break;
-		case 'NAN':
-			if (specialtarget===arg && arg==='1'){
-				document.getElementById('x'+pointer).innerHTML = 0;
-			}
-			else {
-				document.getElementById('x'+pointer).innerHTML = 1;
-			}
-			break;
-		// NOT deprecated
-		case 'APP':
-			document.getElementById('x'+pointer).innerHTML += arg;
-			break;
-		case 'I2W':
-			document.getElementById('x'+pointer).innerHTML = new EnglishNumber(arg);
-			break;
-		case 'IMG':
-			mconsole('o','<img src="'+arg+'" class="cimg">');
-			break;
-		case 'INP':
-			var programinput = document.getElementById('input').value.split("\n")[inputline];
-			mconsole('I',programinput);
-			document.getElementById('x'+pointer).innerHTML = programinput;
-			inputline+=1;
-			break;
-		case 'LEN':
-			document.getElementById('x'+pointer).innerHTML = arg.length;
-			break;
-		case 'MMS':
-			document.getElementById('machinestate').innerHTML = Number(specialstate)+Number(arg);
-			break;
-		case 'MOV':
-			pointer = mod(pointer+Number(arg),tapesize);
-			break;
-		case 'NOT':
-			if (specialtarget==='0'){
-				document.getElementById('x'+pointer).innerHTML = '1';
-			}
-			else {
-				document.getElementById('x'+pointer).innerHTML = '0';
-			}
-			break;
-		case 'OUT':
-			mconsole('o',arg);
-			break;
-		case 'QUO':
+				break;
+				// deprecated
+			case 'ADD':
+				document.getElementById('x'+pointer).innerHTML = Number(specialtarget)+Number(arg);
+				break;
+			case 'MUL':
+				document.getElementById('x'+pointer).innerHTML = Number(specialtarget)*Number(arg);
+				break;
+			case 'EXP':
+				document.getElementById('x'+pointer).innerHTML = Math.pow(Number(specialtarget), Number(arg));
+				break;
+			case 'NRT':
+				document.getElementById('x'+pointer).innerHTML = Math.pow(Number(specialtarget), 1/Number(arg));
+				break;
+			case 'DIV':
+				document.getElementById('x'+pointer).innerHTML = Number(specialtarget)/Number(arg);
+				break;
+			case 'MOD':
+				document.getElementById('x'+pointer).innerHTML = mod(Number(specialtarget), Number(arg));
+				break;
+			case 'AND':
+				if (specialtarget==='1'){
+					document.getElementById('x'+pointer).innerHTML = arg;
+				}
+				break;
+			case 'IOR':
+				if (specialtarget==='0'){
+					document.getElementById('x'+pointer).innerHTML = arg;
+				}
+				break;
+			case 'NEG':
+				document.getElementById('x'+pointer).innerHTML = -Number(specialtarget);
+				break;
+			case 'INV':
+				document.getElementById('x'+pointer).innerHTML = 1/Number(specialtarget);
+				break;
+			case 'XOR':
+				if (specialtarget===arg){
+					document.getElementById('x'+pointer).innerHTML = 0;
+				}
+				else {
+					document.getElementById('x'+pointer).innerHTML = 1;
+				}
+				break;
+			case 'XNR':
+				if (specialtarget===arg){
+					document.getElementById('x'+pointer).innerHTML = 1;
+				}
+				else {
+					document.getElementById('x'+pointer).innerHTML = 0;
+				}
+				break;
+			case 'NOR':
+				if (specialtarget===arg && arg==='0'){
+					document.getElementById('x'+pointer).innerHTML = 1;
+				}
+				else {
+					document.getElementById('x'+pointer).innerHTML = 0;
+				}
+				break;
+			case 'NAN':
+				if (specialtarget===arg && arg==='1'){
+					document.getElementById('x'+pointer).innerHTML = 0;
+				}
+				else {
+					document.getElementById('x'+pointer).innerHTML = 1;
+				}
+				break;
+				// NOT deprecated
+			case 'APP':
+				document.getElementById('x'+pointer).innerHTML += arg;
+				break;
+			case 'I2W':
+				document.getElementById('x'+pointer).innerHTML = new EnglishNumber(arg);
+				break;
+			case 'IMG':
+				mconsole('o', '<img src="'+arg+'" class="cimg">');
+				break;
+			case 'INP':
+				var programinput = document.getElementById('input').value.split('\n')[inputline];
+				mconsole('I', programinput);
+				document.getElementById('x'+pointer).innerHTML = programinput;
+				inputline+=1;
+				break;
+			case 'LEN':
+				document.getElementById('x'+pointer).innerHTML = arg.length;
+				break;
+			case 'MMS':
+				document.getElementById('machinestate').innerHTML = Number(specialstate)+Number(arg);
+				break;
+			case 'MOV':
+				pointer = mod(pointer+Number(arg), tapesize);
+				break;
+			case 'NOT':
+				if (specialtarget==='0'){
+					document.getElementById('x'+pointer).innerHTML = '1';
+				}
+				else {
+					document.getElementById('x'+pointer).innerHTML = '0';
+				}
+				break;
+			case 'OUT':
+				mconsole('o', arg);
+				break;
+			case 'QUO':
 			// Unique
-			if (arg==='PYT'){
-				new Audio('https://www.intriguing.com/mp/_sounds/hg/hamster.wav').play();
-			}
-			else if (quos[arg]!==undefined){
-				new Audio('https://www.myinstants.com/media/sounds/'+quos[arg]+'.mp3').play();
-			}
-			else {
-				console.error('QUO not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t'+command);
-				mconsole('e','QUO not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t<span class="cf">QUO</span> '+arg);
-				return true;
-			}
-			mconsole('o','sfx');
-			break;
-		/*case 'RER':
+				if (arg==='PYT'){
+					new Audio('https://www.intriguing.com/mp/_sounds/hg/hamster.wav').play();
+				}
+				else if (quos[arg]!==undefined){
+					new Audio('https://www.myinstants.com/media/sounds/'+quos[arg]+'.mp3').play();
+				}
+				else {
+					console.error('QUO not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t'+command);
+					mconsole('e', 'QUO not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t<span class="cf">QUO</span> '+arg);
+					return true;
+				}
+				mconsole('o', 'sfx');
+				break;
+				/*case 'RER':
 			document.getElementById('x'+pointer).innerHTML = document.getElementById('x'+pointer).innerHTML.replace( new RegExp(arg1,"gm"),arg2);
 			break;*/
-		case 'SFX':
+			case 'SFX':
 			// Unique
-			if (arg==='PTY'){
-				new Audio('snd/partyhorn.mp3').play();
-			}
-			else if (arg==='SAD'){
-				new Audio('http://www.orangefreesounds.com/wp-content/uploads/2015/07/Sad-trombone.mp3').play();
-			}
-			else if (sfxs[arg]!==undefined){
-				new Audio('https://www.myinstants.com/media/sounds/'+sfxs[arg]+'.mp3').play();
-			}
-			else {
-				console.error('SFX not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t'+command);
-				mconsole('e','SFX not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t<span class="cf">SFX</span> '+arg);
-				return true;
-			}
-			mconsole('o','sfx');
-			break;
-		case 'TIM':
-			document.getElementById('x'+pointer).innerHTML = (new Date()).getTime()/1000;
-			break;
-		// WEIRD AND HARDLY USEFUL COMMANDS
-		case 'FUN':
-			var otherlinenumber = linenumber+Number(arg);
-			var funtemp = program[linenumber];
-			program[linenumber] = program[otherlinenumber];
-			program[otherlinenumber] = funtemp;
-			console.log(program);
-			break;
-		case 'FSW':
+				if (arg==='PTY'){
+					new Audio('snd/partyhorn.mp3').play();
+				}
+				else if (arg==='SAD'){
+					new Audio('http://www.orangefreesounds.com/wp-content/uploads/2015/07/Sad-trombone.mp3').play();
+				}
+				else if (sfxs[arg]!==undefined){
+					new Audio('https://www.myinstants.com/media/sounds/'+sfxs[arg]+'.mp3').play();
+				}
+				else {
+					console.error('SFX not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t'+command);
+					mconsole('e', 'SFX not in dictionary: '+arg+'\n@ Line '+linenumber+'\n\t<span class="cf">SFX</span> '+arg);
+					return true;
+				}
+				mconsole('o', 'sfx');
+				break;
+			case 'TIM':
+				document.getElementById('x'+pointer).innerHTML = new Date().getTime()/1000;
+				break;
+				// WEIRD AND HARDLY USEFUL COMMANDS
+			case 'FUN':
+				var otherlinenumber = linenumber+Number(arg);
+				var funtemp = program[linenumber];
+				program[linenumber] = program[otherlinenumber];
+				program[otherlinenumber] = funtemp;
+				console.log(program);
+				break;
+			case 'FSW':
 			// Specials replacement
-			arg = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget);
-			
-			var fswonelinenumber = Number(arg.split(",")[0]);
-			var anotherlinenumber = Number(arg.split(",")[1]);
-			var fswtemp = program[fswonelinenumber];
-			program[fswonelinenumber] = program[anotherlinenumber];
-			program[anotherlinenumber] = fswtemp;
-			console.log(program);
-			break;
-		case 'FRG':
-			// Specials replacement
-			arg = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget);
-			
-			var frgonelinenumber = Number(arg.split(/,(.+)/)[0]);
-			var oneargs = arg.split(/,(.+)/)[1];
-			program[frgonelinenumber] = program[frgonelinenumber].substring(0,4)+oneargs;
-			console.log(program);
-			break;
-		case 'FAA':
-			// Specials replacement
-			var args = arg.replace('*',specialstate).replace('$',pointer).replace('@',specialtarget).split(',');
-			var oldcode = program.join('\n');
-			var code1 = oldcode.substring(0,Number(args[0]));
-			var code2 = oldcode.substring(Number(args[2]),Number(args[3]));
-			var code3 = oldcode.substring(Number(args[1]),oldcode.length-1);
+				arg = arg.replace('*', specialstate).replace('$', pointer).replace('@', specialtarget);
 
-			console.log([code1,code2,code3]);
-			var newcode = code1+code2+code3;
-			
-			console.log(newcode);
-			program = newcode.split('\n');
-		
-			console.log(program);
-			break;
-		default:
-			console.error('Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
-			mconsole('e','Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
-			return true;
-	}}
+				var fswonelinenumber = Number(arg.split(',')[0]);
+				var anotherlinenumber = Number(arg.split(',')[1]);
+				var fswtemp = program[fswonelinenumber];
+				program[fswonelinenumber] = program[anotherlinenumber];
+				program[anotherlinenumber] = fswtemp;
+				console.log(program);
+				break;
+			case 'FRG':
+			// Specials replacement
+				arg = arg.replace('*', specialstate).replace('$', pointer).replace('@', specialtarget);
+
+				var frgonelinenumber = Number(arg.split(/,(.+)/)[0]);
+				var oneargs = arg.split(/,(.+)/)[1];
+				program[frgonelinenumber] = program[frgonelinenumber].substring(0, 4)+oneargs;
+				console.log(program);
+				break;
+			case 'FAA':
+			// Specials replacement
+				var args = arg.replace('*', specialstate).replace('$', pointer).replace('@', specialtarget).split(',');
+				var oldcode = program.join('\n');
+				var code1 = oldcode.substring(0, Number(args[0]));
+				var code2 = oldcode.substring(Number(args[2]), Number(args[3]));
+				var code3 = oldcode.substring(Number(args[1]), oldcode.length-1);
+
+				console.log([code1, code2, code3]);
+				var newcode = code1+code2+code3;
+
+				console.log(newcode);
+				program = newcode.split('\n');
+
+				console.log(program);
+				break;
+			default:
+				console.error('Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
+				mconsole('e', 'Operation not in dictionary: '+command+'\n@ Line '+linenumber+'\n\t'+command);
+				return true;
+		}
+	}
 	document.getElementById('pointing').innerHTML=pointer;
-	document.getElementById('x'+pointer).classList.add("pointed");
+	document.getElementById('x'+pointer).classList.add('pointed');
 	return false;
 }
 

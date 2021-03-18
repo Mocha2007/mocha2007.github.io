@@ -2239,7 +2239,7 @@ const lifeData = [
 		'parent': 'ornithorhynchidae',
 		'range': 'oc',
 		'age': 9,
-		'desc': 'Platypus'
+		'desc': 'Platypus',
 	},
 	{
 		'name': 'oryza',
