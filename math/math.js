@@ -116,7 +116,7 @@ class Complex {
 	/** @param {string} string */
 	static parse(string){
 		if (/[^\di.+-]/.test(string)){
-			throw RangeError('invalid complex string');
+			throw new RangeError('invalid complex string');
 		}
 		if (!string.includes('i')){
 			return new Complex(parseFloat(string));
