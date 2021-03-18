@@ -1,4 +1,4 @@
-/* jshint esversion: 6, strict: true, strict: global */
+/* jshint esversion: 6, strict: true, strict: global, laxbreak: true, nonew: false */
 /* globals createSvgElement, day, deg, elementData, hour, isotopeData, mean, minute,
 	nobleMetalColors, nutritionColors, range, remap, round, sum, trace, unitString, year */
 /* exported highlightCategory, highlightFunction, hlCull, setDecayChainLength, tableColor */
@@ -371,7 +371,7 @@ class ChemElement {
 					this.isotopes.filter(i =>
 						i.halfLife === Math.max(...this.isotopes.map(i_ => i_.halfLife))
 					)[0].n;
-				c = gradient1((x/this.z-1)/.6); // should be fine for everything except H1 and He3
+				c = gradient1((x/this.z-1)/0.6); // should be fine for everything except H1 and He3
 				break;
 			case 'nutrition':
 				c = this.nutrition === undefined ? 'white' : nutritionColors[this.nutrition];
