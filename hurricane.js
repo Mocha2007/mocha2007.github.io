@@ -1,6 +1,6 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true */
-/* global mean, proper, random, range, sd, sum, variance */
-/* exported avgyear, randomSeason */
+/* global mean, proper, random, sd */
+/* exported avgprint, avgyear, randomSeason, seasonstats */
 'use strict';
 
 const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun',
@@ -166,10 +166,10 @@ function avgyear(){
 	document.getElementById('avgByDate').innerHTML = '<tr><th>Date</th><th>Quantity</th><th>Visual</th><th>Max</th><th>%D</th><th>%H</th><th>%M</th></tr>';
 	range1(366).forEach(function(x){
 		x = x-1;
-		let newrow = document.createElement('tr');
-		let newval = avgduring(x);
+		const newrow = document.createElement('tr');
+		const newval = avgduring(x);
 		wholeyear.push(newval);
-		let datestring = n2n2(x);
+		const datestring = n2n2(x);
 		newrow.innerHTML = '<td>'+datestring+'</td><td>'+Math.round(newval*100)/100+'</td><td><progress value='+newval+' max='+maxinyear+'></progress></td>'+maxcathtml(x)+yearsContaining(x)+fractionhurricane(x, -1, 1)+fractionhurricane(x, 1, 3);
 		document.getElementById('avgByDate').appendChild(newrow);
 	});
@@ -215,7 +215,7 @@ function seasonstats(year){
 		}
 	});
 	// depressions
-	let depressions = y.length;
+	const depressions = y.length;
 	return [depressions, storms, hurricanes, majors];
 }
 
@@ -872,6 +872,7 @@ function randomSeason(){
 	// for each date, use the date to generate a random END and CATEGORY
 	let currentDepression = 0;
 	let currentStorm = 0;
+	/* eslint-disable */
 	/** @type {string[]} */
 	const nameList = new Array(...
 		random.choice(document.getElementsByClassName('names')) // select random name table
@@ -880,15 +881,15 @@ function randomSeason(){
 		.children // select cells of first row
 		).slice(1) // deselect first cell (the year)
 		.map(e => e.innerHTML); // select innerHTML of all cells
+	/* eslint-enable */
 	starts.forEach(function(x){
 		const category = Math.round(random.uniform(-1, maxcatduring(x)));
 		const end = x + Math.max(1, Math.round(
 			pseudoNormal(avgDuration(category), avgDurationSD(category))));
 		const newrow = document.createElement('tr');
 		if (category > -1){
-			if (currentStorm < nameList.length){ // names
+			if (currentStorm < nameList.length) // names
 				name = nameList[currentStorm];
-			}
 			else { // greek
 				const supplementalList = document.getElementById('supplementalListType').checked ? greek : greek2;
 				name = supplementalList[currentStorm - nameList.length];
@@ -896,12 +897,10 @@ function randomSeason(){
 			currentStorm += 1;
 		}
 		// numbers
-		else if (currentDepression < 20){
+		else if (currentDepression < 20)
 			name = numbers[currentDepression];
-		}
-		else {
+		else
 			name = 'twenty-' + numbers[currentDepression-20];
-		}
 		currentDepression += 1;
 		// print
 		newrow.innerHTML = '<td>'+proper(name)+'</td><td>'+n2n2(x)+'</td><td>'+n2n2(end)+'</td>'+catStyle(category);
