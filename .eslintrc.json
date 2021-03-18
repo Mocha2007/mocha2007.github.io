@@ -157,7 +157,8 @@
             "warn",
             "never"
         ],
-        "switch-colon-spacing": 1,
+		/* conflicts with space-before-blocks when solving no-case-declarations
+        "switch-colon-spacing": 1, */
         "no-var": 1,
         "prefer-const": 1
     }

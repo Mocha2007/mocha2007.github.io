@@ -1,7 +1,7 @@
 /* jshint esversion: 6, strict: true, strict: global */
-/* globals createSvgElement, day, deg, elementData, hour, isotopeData, minute,
-	nobleMetalColors, nutritionColors, range, remap, round, sum, unitString, year */
-/* exported setDecayChainLength, tableColor */
+/* globals createSvgElement, day, deg, elementData, hour, isotopeData, mean, minute,
+	nobleMetalColors, nutritionColors, range, remap, round, sum, trace, unitString, year */
+/* exported highlightCategory, highlightFunction, hlCull, setDecayChainLength, tableColor */
 'use strict';
 
 const eV = 1.602176634e-19; // J; exact; electronvolt
@@ -125,10 +125,11 @@ class ChemElement {
 	get coords(){
 		switch (this.electronShell){
 			// lanthanides and actinides
-			case 'f':
+			case 'f':{
 				const x = this.z - (this.z < 72 ? 55 : this.z < 104 ? 87 : 137);
 				const y = this.period + 2;
 				return [x, y];
+			}
 			// superactinides
 			case 'g':
 				return [this.z - 121, this.period + 3];
@@ -209,27 +210,30 @@ class ChemElement {
 	}
 	highlightFunction(f){
 		const c = this.element.parentElement.classList;
-		switch(f(this)){
+		switch (f(this)){
 			case undefined:
-				c.value = "";
+				c.value = '';
 				break;
 			case true:
-				c.value = "categoryHighlight";
+				c.value = 'categoryHighlight';
 				break;
 			case 0.5:
-				c.value = "categoryHalfHighlight";
+				c.value = 'categoryHalfHighlight';
 				break;
 			default:
-				c.value = "categoryUnhighlight";
+				c.value = 'categoryUnhighlight';
 		}
 	}
-	/** @param {string} category 
+	/** @param {string} category
 	 * @returns {boolean|0.5} */
 	inCategory(category){
-		return this.categories && this.categories.hasOwnProperty(category) ? this.categories[category]: false;
+		return this.categories && this.categories.hasOwnProperty(category)
+			? this.categories[category]
+			: false;
 	}
 	/** @param {number} t */
 	stateAt(t){
+		/* eslint-disable */
 		return this.temperatures
 				? this.temperatures.boil < t
 					? 'gas'
@@ -237,6 +241,7 @@ class ChemElement {
 						? 'liquid'
 						: 'solid'
 				: 'unknown';
+		/* eslint-enable */
 	}
 	/** @param {string} type */
 	updateColor(type){
@@ -276,8 +281,11 @@ class ChemElement {
 				if (!this.temperatures)
 					c = '#ccc';
 				else {
-					const boils = elements.filter(e => e.temperatures && e.temperatures.boil).map(e => Math.log(e.temperatures.boil));
-					c = gradient1(remap(Math.log(this.temperatures.boil), [Math.min(...boils), Math.max(...boils)], [0, 1]));
+					const boils = elements.filter(e => e.temperatures && e.temperatures.boil)
+						.map(e => Math.log(e.temperatures.boil));
+					c = gradient1(remap(
+						Math.log(this.temperatures.boil),
+						[Math.min(...boils), Math.max(...boils)], [0, 1]));
 				}
 				break;
 			case 'color': // normalized color
@@ -286,14 +294,20 @@ class ChemElement {
 			case 'category':
 				c = this.color;
 				break;
-			case 'density':
-				const densest = Math.sqrt(Math.max(...elements.filter(e => e.density).map(e => e.density)));
+			case 'density':{
+				const densest = Math.sqrt(
+					Math.max(...elements.filter(e => e.density).map(e => e.density)));
 				c = gradient1(Math.sqrt(this.density)/densest);
 				break;
-			case 'discovery':
-				const ages = elements.filter(e => isFinite(e.discovery)).map(e => Math.log(new Date().getFullYear() - e.discovery));
-				c = gradient1(remap(Math.log(new Date().getFullYear() - this.discovery), [Math.min(...ages), Math.max(...ages)], [0, 1]));
+			}
+			case 'discovery':{
+				const ages = elements.filter(e => isFinite(e.discovery))
+					.map(e => Math.log(new Date().getFullYear() - e.discovery));
+				c = gradient1(remap(
+					Math.log(new Date().getFullYear() - this.discovery),
+					[Math.min(...ages), Math.max(...ages)], [0, 1]));
 				break;
+			}
 			case 'halflife':
 				if (this.stable)
 					c = '#f0f';
@@ -308,7 +322,8 @@ class ChemElement {
 					c = '#ccc';
 				else {
 					x = Math.cbrt(this.biologicalHalfLife) /
-						Math.cbrt(Math.max(...elements.filter(e => e.biologicalHalfLife).map(e => e.biologicalHalfLife)));
+						Math.cbrt(Math.max(...elements.filter(e => e.biologicalHalfLife)
+							.map(e => e.biologicalHalfLife)));
 					c = gradient1(x);
 				}
 				break;
@@ -316,8 +331,11 @@ class ChemElement {
 				if (!this.temperatures)
 					c = '#ccc';
 				else {
-					const melts = elements.filter(e => e.temperatures && e.temperatures.melt).map(e => Math.log(e.temperatures.melt));
-					c = gradient1(remap(Math.log(this.temperatures.melt), [Math.min(...melts), Math.max(...melts)], [0, 1]));
+					const melts = elements.filter(e => e.temperatures && e.temperatures.melt)
+						.map(e => Math.log(e.temperatures.melt));
+					c = gradient1(remap(
+						Math.log(this.temperatures.melt),
+						[Math.min(...melts), Math.max(...melts)], [0, 1]));
 				}
 				break;
 			case 'msi%4':
@@ -350,7 +368,9 @@ class ChemElement {
 				break;
 			case 'n/z':
 				x = this.stable ? mean(this.isotopes.filter(i => i.stable).map(i => i.n)) :
-					this.isotopes.filter(i => i.halfLife === Math.max(...this.isotopes.map(i => i.halfLife)))[0].n;
+					this.isotopes.filter(i =>
+						i.halfLife === Math.max(...this.isotopes.map(i_ => i_.halfLife))
+					)[0].n;
 				c = gradient1((x/this.z-1)/.6); // should be fine for everything except H1 and He3
 				break;
 			case 'nutrition':
@@ -361,21 +381,27 @@ class ChemElement {
 					c = '#ccc';
 				else {
 					const prices = elements.filter(e => e.prices).map(e => Math.log(e.latestPrice));
-					c = gradient1(remap(Math.log(this.latestPrice), [Math.min(...prices), Math.max(...prices)], [0, 1]));
+					c = gradient1(remap(
+						Math.log(this.latestPrice),
+						[Math.min(...prices), Math.max(...prices)], [0, 1]));
 				}
 				break;
-			case 'production':
-				const max_prod = Math.max(...elements.filter(e => e.production).map(e => Math.log(e.production)));
-				c = gradient1(remap(Math.max(0, Math.log(this.production)), [0, max_prod], [0, 1]));
+			case 'production':{
+				const maxProd = Math.max(...elements.filter(e => e.production)
+					.map(e => Math.log(e.production)));
+				c = gradient1(remap(Math.max(0, Math.log(this.production)), [0, maxProd], [0, 1]));
 				break;
+			}
 			case 'stability':
 				switch (this.isotopes.filter(i => i.stable).length){
 					case 0:
 						x = Math.max(...this.isotopes.map(i => i.halfLife));
+						/* eslint-disable */
 						c = x < minute ? 'red'
 							: x < year ? 'orange'
 							: x < 1e6 * year ? 'yellow'
 							: 'lime';
+						/* eslint-enable */
 						break;
 					case 1:
 						c = 'cyan';
@@ -388,18 +414,22 @@ class ChemElement {
 				x = this.isotopes.filter(i => i.stable).length / 10 * 255;
 				c = `rgb(255, ${255-x}, 255)`;
 				break;
-			case 'state':
+			case 'state':{
 				/** @type {number} */
 				const t = document.getElementById('temperatureSelector').value;
 				c = {gas: 'cyan', liquid: 'blue', solid: 'white', unknown: 'silver'}[this.stateAt(t)];
 				break;
+			}
 			case 'synesthete':
 				c = this.modelColor ? this.modelColor : '#ccc';
 				break;
-			case 'toxicity':
+			case 'toxicity':{
 				const tox = elements.filter(e => e.toxicity).map(e => Math.log(e.toxicity));
-				c = gradient1(remap(Math.log(this.toxicity), [Math.min(...tox), Math.max(...tox)], [1, 0]));
+				c = gradient1(remap(
+					Math.log(this.toxicity),
+					[Math.min(...tox), Math.max(...tox)], [1, 0]));
 				break;
+			}
 			case 'weight':
 				x = 255*this.mass/ChemElement.maxWeight;
 				c = `rgb(255, ${255-x}, ${255-x})`;
@@ -466,10 +496,10 @@ class Decay {
 	arrow(p){
 		const g = createSvgElement('g');
 		// line
-		let line, x1, y1, x2, y2;
+		let line, x1, x2, y1, y2;
 		// hinged arrows for b-b- and ecec/b+b+
 		if (hingedArrowTypes.includes(this.name)){
-			const d = this.name == 'b-b-' ? 1 : -1;
+			const d = this.name === 'b-b-' ? 1 : -1;
 			line = hingedArrow(d);
 			// used to determine label placement
 			[x1, y1, x2, y2] = [0, -d*r, 2*d*r, -6*d*r];
@@ -503,7 +533,7 @@ class Decay {
 			const fraction = createSvgElement('text');
 			// avoid silly "0%" for tiny p
 			fraction.innerHTML = p === trace
-				? "rare"
+				? 'rare'
 				: prettyPercent(p);
 			fraction.classList.add('fraction');
 			fraction.setAttribute('x', 2); // so it's not right at the beginning
@@ -558,11 +588,12 @@ class Isotope {
 		const y = r + 2*r*(maxZ - this.element.z);
 		return [x, y];
 	}
-	/** TODO: kg estimated critical mass, in kg, based on what little data I have 
+	/** TODO: kg estimated critical mass, in kg, based on what little data I have
 	 * https://docs.google.com/spreadsheets/d/1ARdzYjBcXjnoQkj6AO55De_WOa7KMb4sFj6lqF5me8c
 	*/
 	get criticalMass(){
-		const x = Math.pow(this.mass * Math.sqrt(this.halfLife/year), 3)/Math.pow(this.element.density/1000, 2);
+		const x = Math.pow(this.mass * Math.sqrt(this.halfLife/year), 3)
+			/ Math.pow(this.element.density/1000, 2);
 		return 10.7 * Math.pow(x, 0.0294);
 	}
 	get daughters(){
@@ -643,10 +674,10 @@ class Isotope {
 		const abundance = createSvgElement('text');
 		abundance.innerHTML = this.abundance
 			? this.abundance === trace
-				? "trace"
+				? 'trace'
 				: prettyPercent(this.abundance)
-			: "syn";
-		abundance.classList.add('abundance')
+			: 'syn';
+		abundance.classList.add('abundance');
 		abundance.setAttribute('dy', '25px');
 		g.appendChild(abundance);
 		// draw arrows
@@ -710,27 +741,27 @@ function highlightFunction(f){
 function hingedArrow(d){
 	const path = createSvgElement('path');
 	path.setAttribute('d', `M 0 ${-d*r} q ${0.5*d*r} ${-2.5*d*r} ${3*d*r} ${-3*d*r}`);
-	path.setAttribute('class', `hingedArrow`);
-	path.setAttribute('fill', `none`);
+	path.setAttribute('class', 'hingedArrow');
+	path.setAttribute('fill', 'none');
 	return path;
 }
 
 /** @param {number} p - [0, 1]*/
 function prettyPercent(p){
-	return (p < 1e-3 ? (p*100).toExponential(1).replace(".0", "") : round(p*100, 2)) + '%'
+	return (p < 1e-3 ? (p*100).toExponential(1).replace('.0', '') : round(p*100, 2)) + '%';
 }
 
 function redrawDiagrams(){
 	// blank
-	range(4).forEach(i => document.getElementById('decay'+i).innerHTML = "");
+	range(4).forEach(i => document.getElementById('decay'+i).innerHTML = '');
 	// draw
 	elements.slice().reverse().forEach(e => e.createSVGLabel());
 	isotopes.filter(i => hlCull <= i.halfLife).forEach(i => i.createElement());
 	setDecayChainLength();
-	console.info("drew isotope diagrams");
+	console.info('drew isotope diagrams');
 }
 
-/** 
+/**
  * @param {number} width - default = 14, max = 33
  * @param {number} height - default = 14, max = 118
  * @param {number} ystart - default = 94, max = 118

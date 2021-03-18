@@ -1,4 +1,5 @@
 /* global minute, hour, day, year */
+/* exported isotopeData */
 'use strict';
 
 const trace = 1e-50; // should be sufficiently small; the earth contains ~1e50 atoms total

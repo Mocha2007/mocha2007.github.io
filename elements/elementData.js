@@ -908,7 +908,7 @@ const elementData = [
 				human: 1.5e-8,
 				universe: 49e-6,
 			},
-			categories: {	
+			categories: {
 				coinageMetal: 0.5, // us coins
 				ironGroup: true,
 				nativeMetal: 0.5,
@@ -1330,8 +1330,6 @@ const elementData = [
 			nobleMetal: 0,
 			prices: {
 				2018: 42.28,
-			},
-			prices: {
 				2020: 73.5,
 			},
 			production: 44.5e3,
@@ -1554,7 +1552,7 @@ const elementData = [
 				universe: 2e-9,
 			},
 			biologicalHalfLife: 30*year, // in bone
-			categories: {	
+			categories: {
 				nativeMetal: 0.5,
 			},
 			density: 8690,
@@ -1961,7 +1959,7 @@ const elementData = [
 				boil: 3273,
 				melt: 1315,
 			},
-		}
+		},
 	},
 	{
 		z: 62,
@@ -2360,10 +2358,6 @@ const elementData = [
 			},
 			production: 45,
 			temperatures: {
-				boil: 2742,
-				melt: 1560,
-			},
-			temperatures: {
 				boil: 5869,
 				melt: 3459,
 			},
@@ -2522,7 +2516,7 @@ const elementData = [
 				universe: 1e-9,
 			},
 			biologicalHalfLife: 65*day, // as methylmercury; in blood
-			categories: {	
+			categories: {
 				nativeMetal: 0.5,
 				nobleMetal: 0.5,
 			},
@@ -2841,7 +2835,7 @@ const elementData = [
 				melt: 1841,
 			},
 			toxicity: 0.5e-9/70, // "The maximum safe dose of Pa in the human body (~70kg) is ... 0.5 micrograms
-		}
+		},
 	},
 	{
 		z: 92,
@@ -2896,7 +2890,7 @@ const elementData = [
 				boil: 4273,
 				melt: 917,
 			},
-		}
+		},
 	},
 	{
 		z: 94,
@@ -2993,7 +2987,7 @@ const elementData = [
 				boil: 2900,
 				melt: 1259,
 			},
-		}
+		},
 	},
 	{
 		z: 98,
@@ -3035,7 +3029,7 @@ const elementData = [
 				boil: 1269, // estimate
 				melt: 1133,
 			},
-		}
+		},
 	},
 	{
 		z: 100,
@@ -3053,7 +3047,7 @@ const elementData = [
 			temperatures: {
 				melt: 1800, // predicted
 			},
-		}
+		},
 	},
 	{
 		z: 101,
@@ -3071,7 +3065,7 @@ const elementData = [
 			temperatures: {
 				melt: 1100, // predicted
 			},
-		}
+		},
 	},
 	{
 		z: 102,
@@ -3089,7 +3083,7 @@ const elementData = [
 			temperatures: {
 				melt: 1100, // predicted
 			},
-		}
+		},
 	},
 	{
 		z: 103,
@@ -3108,7 +3102,7 @@ const elementData = [
 			temperatures: {
 				melt: 1900, // predicted
 			},
-		}
+		},
 	},
 	{
 		z: 104,
@@ -3125,7 +3119,7 @@ const elementData = [
 				boil: 5800, // predicted
 				melt: 2400, // predicted
 			},
-		}
+		},
 	},
 	{
 		z: 105,
@@ -3138,7 +3132,7 @@ const elementData = [
 			density: 29300,
 			discovery: 1970,
 			modelColor: 'rgb(209, 0, 79)',
-		}
+		},
 	},
 	{
 		z: 106,
@@ -3151,7 +3145,7 @@ const elementData = [
 			density: 35000,
 			discovery: 1974,
 			modelColor: 'rgb(217, 0, 69)',
-		}
+		},
 	},
 	{
 		z: 107,
@@ -3357,7 +3351,8 @@ const elementData = [
 				melt: 325, // predicted
 			},
 		},
-	},/* somehow this actually doesn't break the table!!! wow
+	},
+	/* somehow this actually doesn't break the table!!! wow
 	{
 		z: 119,
 		name: 'Ununennium',
