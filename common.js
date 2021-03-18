@@ -303,11 +303,11 @@ function unitString(value, name, rounding = 2, constant = 1){
  * @param {number} n
  */
 function timer(f, n){
-	const start = +(new Date());
+	const start = +new Date();
 	for (let i = 0; i < n; i++){
 		f();
 	}
-	const end = +(new Date());
+	const end = +new Date();
 	// console.log(`t = ${end-start} ms`);
 	return end-start;
 }
