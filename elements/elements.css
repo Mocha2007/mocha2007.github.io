@@ -169,6 +169,10 @@ line, .hingedArrow {
 	border: 1px solid grey;
 	border-collapse: collapse;
 	margin: auto;
+	text-align: center;
+}
+#categoryTable .blank {
+	color: inherit;
 }
 #categoryTable td {
 	border: 1px solid grey;
