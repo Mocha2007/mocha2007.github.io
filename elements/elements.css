@@ -137,3 +137,41 @@ line, .hingedArrow {
 .categoryUnhighlight {
 	opacity: 33%;
 }
+/* category table */
+.actinide {
+	background-color: #f9c;
+}
+.aem {
+	background-color: #fda;
+}
+.am {
+	background-color: #f66;
+}
+.lanthanide {
+	background-color: #fbf;
+}
+.metalloid {
+	background-color: #cc9;
+}
+.ng {
+	background-color: #cff;
+}
+.ptm {
+	background-color: #ccc;
+}
+.rnm {
+	background-color: #ff8;
+}
+.tm {
+	background-color: #fcc;
+}
+#categoryTable {
+	border: 1px solid grey;
+	border-collapse: collapse;
+	margin: auto;
+}
+#categoryTable td {
+	border: 1px solid grey;
+	color: black;
+	min-width: 21px;
+}
