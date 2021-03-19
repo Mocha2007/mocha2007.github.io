@@ -387,6 +387,10 @@ class Vital {
 	get ageAtDeath(){
 		return new Time((this.death - this.birth)/1000);
 	}
+	/** make sure dates are logical */
+	verify(){
+		return this.birth < this.death;
+	}
 }
 
 class Person {
