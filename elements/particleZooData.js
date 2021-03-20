@@ -290,6 +290,68 @@ const particleData = [
 		charge: 0,
 		mass: 939.56542052e6*eVc2,
 	},
+	{
+		name: 'lambda',
+		category: 'baryon',
+		symbol: {
+			char: 'Λ',
+			sup: '0',
+		},
+		spin: 0,
+		charge: 0,
+		mass: 1115.683e6*eVc2,
+		decays: [
+			['proton', 'pion-'],
+			['neutron', 'pion0'],
+		],
+		halfLife: 2.632e-10,
+	},
+	{
+		name: 'sigma0',
+		category: 'baryon',
+		symbol: {
+			char: 'Σ',
+			sup: '0',
+		},
+		spin: 1,
+		charge: 0,
+		mass: 1192.642e6*eVc2,
+		decays: [
+			['lambda', 'photon'],
+		],
+		halfLife: 7.4e-20,
+	},
+	{
+		name: 'sigma+',
+		category: 'baryon',
+		symbol: {
+			char: 'Σ',
+			sup: '+',
+		},
+		spin: 1,
+		charge: eV,
+		mass: 1189.37e6*eVc2,
+		decays: [
+			['proton', 'pion0'],
+			['neutron', 'pion+'],
+		],
+		halfLife: 8.018e-11,
+	},
+	{
+		name: 'sigma-',
+		category: 'baryon',
+		symbol: {
+			char: 'Σ',
+			sup: '-',
+		},
+		spin: 1,
+		charge: -eV,
+		mass: 1197.449e6*eVc2,
+		decays: [
+			['neutron', 'pion-'],
+		],
+		halfLife: 1.479e-10,
+	},
 	// isotopes/elements/atoms
 	{
 		name: 'protium',
