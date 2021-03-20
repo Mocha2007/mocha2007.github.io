@@ -266,6 +266,7 @@ const particleData = [
 		symbol: {
 			char: 'H',
 			presup: '1',
+			presub: '1',
 		},
 		spin: 0.5,
 		charge: 0,
@@ -277,6 +278,7 @@ const particleData = [
 		symbol: {
 			char: 'H',
 			presup: '2',
+			presub: '1',
 		},
 		spin: 1,
 		charge: 0,
@@ -288,12 +290,13 @@ const particleData = [
 		symbol: {
 			char: 'H',
 			presup: '3',
+			presub: '1',
 		},
 		spin: 0.5,
 		charge: 0,
 		mass: 3.01604928199*amu,
 		decays: [
-			['helium-3', 'antineutrino'],
+			['helium-3', 'electron antineutrino'],
 		],
 		halfLife: 12.32*year,
 	},
@@ -303,6 +306,7 @@ const particleData = [
 		symbol: {
 			char: 'He',
 			presup: '3',
+			presub: '2',
 		},
 		spin: 0.5,
 		charge: 0,
@@ -314,6 +318,7 @@ const particleData = [
 		symbol: {
 			char: 'He',
 			presup: '4',
+			presub: '2',
 		},
 		spin: 0,
 		charge: 0,

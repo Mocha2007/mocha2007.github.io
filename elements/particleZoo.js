@@ -12,7 +12,7 @@ class Particle {
 	/**
 	 * @param {string} name
 	 * @param {string} category
-	 * @param {{char: string, sup: string, sub: string, overline: boolean, presup: string}} symbol
+	 * @param {{char: string, sup: string, sub: string, overline: boolean, presup: string, presub: string}} symbol
 	 * @param {number} spin
 	 * @param {number} charge
 	 * @param {number} mass
@@ -74,7 +74,7 @@ class Particle {
 			const sup = createSvgElement('text');
 			sup.innerHTML = this.symbol.sup;
 			sup.classList.add('sup');
-			sup.setAttribute('transform', 'translate(15, -10)');
+			sup.setAttribute('transform', 'translate(15, -15)');
 			g.appendChild(sup);
 		}
 		if (this.symbol && this.symbol.sub){
@@ -95,8 +95,15 @@ class Particle {
 			const presup = createSvgElement('text');
 			presup.innerHTML = this.symbol.presup;
 			presup.classList.add('presup');
-			presup.setAttribute('transform', 'translate(-15, -10)');
+			presup.setAttribute('transform', 'translate(-15, -15)');
 			g.appendChild(presup);
+		}
+		if (this.symbol && this.symbol.presub){
+			const presub = createSvgElement('text');
+			presub.innerHTML = this.symbol.presub;
+			presub.classList.add('presub');
+			presub.setAttribute('transform', 'translate(-15, 5)');
+			g.appendChild(presub);
 		}
 		g.setAttribute('transform', `translate(${this.radius}, ${this.radius+10})`);
 		return g;
