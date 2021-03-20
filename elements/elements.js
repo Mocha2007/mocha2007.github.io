@@ -314,6 +314,7 @@ class ChemElement {
 				else {
 					x = Math.log(Math.max(...this.isotopes.map(i => i.halfLife))) /
 						Math.log(Isotope.maxHalfLife); // [0, 1]
+					console.log(this, x);
 					c = gradient1(x);
 				}
 				break;
@@ -684,7 +685,7 @@ class Isotope {
 		this.decayTypes.forEach(d => g.appendChild(d[0].arrow(d[1])));
 	}
 	static get maxHalfLife(){
-		return Math.max(...isotopes.map(i => i.halfLife));
+		return Math.max(...isotopes.filter(i => !i.stable).map(i => i.halfLife));
 	}
 	/** @param {string} name */
 	static find(name){
