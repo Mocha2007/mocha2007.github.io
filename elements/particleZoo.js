@@ -4,6 +4,7 @@
 
 let fps = 30; // todo: temporary
 const desiredParticles = 20;
+const interactionRadius = 50; // todo: temporary
 
 /** @type {Particle[]} */
 const particles = [];
@@ -27,6 +28,10 @@ class Particle {
 		this.mass = mass;
 		this.decays = decays;
 		this.halfLife = halfLife;
+	}
+	get antiparticle(){
+		// look for SAME MASS but OPPOSITE CHARGE
+		return particles.filter(p => p.mass === this.mass && p.charge === -this.charge)[0];
 	}
 	get color(){
 		// todo
@@ -52,7 +57,7 @@ class Particle {
 	}
 	/** radius for circle element */
 	get radius(){
-		return Math.log(this.mass)/2+43; // todo: fine-tune this
+		return Math.max(0, Math.log(this.mass)/2+43); // todo: fine-tune this
 	}
 	get stable(){
 		return !isFinite(this.halfLife);
@@ -107,15 +112,25 @@ class Particle {
 	}
 }
 
+/** @type {Instance[]} */
+const instances = [];
 class Instance {
 	/**
 	 * @param {Particle} type
+	 * @param {number} x
+	 * @param {number} y
 	 */
-	constructor(type){
+	constructor(type, x, y){
 		this.type = type;
 		[this.x, this.y, this.vx, this.vy] = Instance.spawnPoint();
+		if (isFinite(x))
+			this.x = x;
+		if (isFinite(y))
+			this.y = y;
 		// eslint-disable-next-line no-extra-parens
 		this.id = 'particle'+random.random();
+		instances.push(this);
+		this.createElement();
 	}
 	get element(){
 		return document.getElementById(this.id);
@@ -125,6 +140,27 @@ class Instance {
 		return this.x < -buffer || window.innerWidth+buffer < this.x
 			|| this.y < -buffer || window.innerHeight+buffer < this.y;
 	}
+	/** if a reactable particle is nearby, react! */
+	checkreactions(){
+		const interactable = instances.filter(i => i !== this
+			&& this.distanceTo(i) < interactionRadius);
+		for (const other of interactable){
+			if (this.type.antiparticle !== this.type
+				&& other.type.antiparticle === this.type){ // annihilation
+				range(2).forEach(() => { // create two photons
+					new Instance(Particle.fromName('photon'),
+						(this.x + other.x)/2,
+						(this.y + other.y)/2);
+				});
+				other.delete();
+				this.delete();
+				// console.log('ANNIHILATION!!!');
+				return true;
+			}
+			// todo: other reactions
+		}
+		return false;
+	}
 	createElement(){
 		const testParticle = this.type.element;
 		testParticle.id = this.id;
@@ -132,44 +168,47 @@ class Instance {
 		this.tick();
 	}
 	decay(){
-		console.log('DECAY!!!');
+		// console.log('DECAY!!!');
 		// choose random decay mode
 		/** @type {Particle[]} */
 		const pp = random.choice(this.type.decays).map(name => Particle.fromName(name));
-		const ii = pp.map(p => new Instance(p));
-		ii.forEach(i => {
-			i.x = this.x;
-			i.y = this.y;
-			i.createElement();
-		});
+		pp.map(p => new Instance(p, this.x, this.y));
 		// delete without replacement
 		this.delete(false);
 	}
 	delete(replace = true){
-		this.element.remove();
+		if (this.element)
+			this.element.remove();
 		// new particle
 		if (replace && document.getElementById('canvas').children.length < desiredParticles)
 			Instance.random();
+		// remove from instance list
+		const i = instances.indexOf(this);
+		instances.splice(i, 1);
+	}
+	/** @param {Instance} other */
+	distanceTo(other){
+		return Math.sqrt(Math.pow(this.x - other.x, 2) + Math.pow(this.y - other.y, 2));
 	}
 	tick(){
 		const c = this.type.name === 'photon' ? 20 : 1;
 		this.x += this.vx*c;
 		this.y += this.vy*c;
+		if (!this.element) // should never trigger, but ...
+			return;
 		this.element.setAttribute('transform', `translate(${this.x}, ${this.y})`);
 		if (this.outOfBounds)
 			this.delete();
 		else if (!this.type.stable && random.random() < 1/100) // todo
 			this.decay();
-		else
+		else if (!this.checkreactions())
 			setTimeout(() => this.tick(), 1000/fps);
 	}
 	static random(){
 		const p = new Instance(random.choice(particles));
-		// const p = new Instance(particles[4]);
-		p.createElement();
-		console.info(p.id);
 		return p;
 	}
+	/** @returns {[number, number, number, number]} */
 	static spawnPoint(){
 		const theta = random.uniform(0, 2*pi);
 		return [
