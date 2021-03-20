@@ -257,9 +257,9 @@ class Instance {
 			if (this.type.category === 'atom')
 				this.bounce();
 			else
-				this.delete();
+				return this.delete();
 		}
-		else if (!this.type.stable && random.random() < 1/100) // todo
+		if (!this.type.stable && random.random() < 1/100) // todo
 			this.decay();
 		else if (!this.checkreactions())
 			setTimeout(() => this.tick(), 1000/fps);

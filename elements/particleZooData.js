@@ -6,6 +6,11 @@ const eV = 1.602176634e-19; // J; exact
 const eVc2 = eV / Math.pow(speedOfLight, 2); // kg; exact
 const amu = 1.6605390666e-27; // kg; unsure exactless; AKA dalton
 
+const minute = 60;
+const hour = 60*minute;
+const day = 24*hour;
+const year = 365.2425*day;
+
 const particleData = [
 	// bosons
 	{
@@ -287,6 +292,32 @@ const particleData = [
 		spin: 0.5,
 		charge: 0,
 		mass: 3.01604928199*amu,
+		decays: [
+			['helium-3', 'antineutrino'],
+		],
+		halfLife: 12.32*year,
+	},
+	{
+		name: 'helium-3',
+		category: 'atom',
+		symbol: {
+			char: 'He',
+			presup: '3',
+		},
+		spin: 0.5,
+		charge: 0,
+		mass: 3.01602932265*amu,
+	},
+	{
+		name: 'helium-4',
+		category: 'atom',
+		symbol: {
+			char: 'He',
+			presup: '4',
+		},
+		spin: 0,
+		charge: 0,
+		mass: 4.00260325413*amu,
 	},
 ];
 
@@ -302,5 +333,9 @@ const reactionData = [
 	{
 		reagents: ['deuterium', 'neutron'],
 		products: ['tritium'],
+	},
+	{
+		reagents: ['helium-3', 'neutron'],
+		products: ['helium-4'],
 	},
 ];
