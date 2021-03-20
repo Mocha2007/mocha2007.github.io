@@ -1,9 +1,10 @@
-/* exported particleData */
+/* exported particleData, reactionData */
 'use strict';
 
 const speedOfLight =  299792458; // m/s; exact
 const eV = 1.602176634e-19; // J; exact
 const eVc2 = eV / Math.pow(speedOfLight, 2); // kg; exact
+const amu = 1.6605390666e-27; // kg; unsure exactless; AKA dalton
 
 const particleData = [
 	// bosons
@@ -252,5 +253,24 @@ const particleData = [
 		spin: 0.5,
 		charge: 0,
 		mass: 939.56542052e6*eVc2,
+	},
+	// isotopes/elements/atoms
+	{
+		name: 'protium',
+		category: 'atom',
+		symbol: {
+			char: 'H',
+			presup: '1',
+		},
+		spin: 0.5,
+		charge: 0,
+		mass: 1.00782503224*amu,
+	},
+];
+
+const reactionData = [
+	{
+		reagents: ['proton', 'electron'],
+		products: ['protium'],
 	},
 ];

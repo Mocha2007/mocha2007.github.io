@@ -1,4 +1,4 @@
-/* global createSvgElement, particleData, pi, random, range */
+/* global createSvgElement, particleData, pi, random, range, reactionData */
 /* exported fps, init */
 'use strict';
 
@@ -12,7 +12,7 @@ class Particle {
 	/**
 	 * @param {string} name
 	 * @param {string} category
-	 * @param {{char: string, sup: string, sub: string}} symbol
+	 * @param {{char: string, sup: string, sub: string, overline: boolean, presup: string}} symbol
 	 * @param {number} spin
 	 * @param {number} charge
 	 * @param {number} mass
@@ -36,6 +36,7 @@ class Particle {
 	get color(){
 		// todo
 		return {
+			atom: 'magenta',
 			baryon: 'skyBlue',
 			boson: 'pink', // sorta unused
 			meson: 'orange',
@@ -90,6 +91,13 @@ class Particle {
 			sub.setAttribute('transform', 'translate(0, -25)');
 			g.appendChild(sub);
 		}
+		if (this.symbol && this.symbol.presup){
+			const presup = createSvgElement('text');
+			presup.innerHTML = this.symbol.presup;
+			presup.classList.add('presup');
+			presup.setAttribute('transform', 'translate(-15, -10)');
+			g.appendChild(presup);
+		}
 		g.setAttribute('transform', `translate(${this.radius}, ${this.radius+10})`);
 		return g;
 	}
@@ -109,6 +117,29 @@ class Particle {
 			o.halfLife
 		);
 		return p;
+	}
+}
+
+/** @type {Reaction[]} */
+const reactions = [];
+class Reaction {
+	/**
+	 * @param {Particle[]} reagents
+	 * @param {Particle[]} products
+	 */
+	constructor(reagents, products){
+		this.reagents = reagents;
+		this.products = products;
+		reactions.push(this);
+	}
+	/** Are the inputs enough for this reaction? */
+	satisfies(){
+		const args = new Array(...arguments);
+		return this.reagents.every(reagent => args.includes(reagent));
+	}
+	static fromObject(o){
+		new Reaction(o.reagents.map(name => Particle.fromName(name)),
+			o.products.map(name => Particle.fromName(name)));
 	}
 }
 
@@ -157,7 +188,22 @@ class Instance {
 				// console.log('ANNIHILATION!!!');
 				return true;
 			}
-			// todo: other reactions
+		}
+		// other reactions
+		for (const reaction of reactions){
+			if (reaction.satisfies(this, ...interactable)){
+				// REACT!!!
+				this.delete();
+				// delete other reagents
+				reaction.reagents.filter(r => r !== this.type).forEach(r => {
+					interactable.filter(ii => ii.type === r)[0].delete();
+				});
+				// create products!!!
+				reaction.products.forEach(product => {
+					new Instance(product, this.x, this.y);
+				});
+				return true;
+			}
 		}
 		return false;
 	}
@@ -205,7 +251,7 @@ class Instance {
 			setTimeout(() => this.tick(), 1000/fps);
 	}
 	static random(){
-		const p = new Instance(random.choice(particles));
+		const p = new Instance(random.choice(particles.filter(p => p.category !== 'atom')));
 		return p;
 	}
 	/** @returns {[number, number, number, number]} */
@@ -224,6 +270,8 @@ class Instance {
 function init(){
 	// read particle data
 	particleData.forEach(p => particles.push(Particle.fromObject(p)));
+	// read reaction data
+	reactionData.forEach(r => Reaction.fromObject(r));
 	// test
 	range(20).forEach(() => Instance.random());
 	// done!
