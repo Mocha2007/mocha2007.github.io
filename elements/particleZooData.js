@@ -236,6 +236,37 @@ const particleData = [
 		],
 		halfLife: 2.6033e-8,
 	},
+	{
+		name: 'eta',
+		category: 'meson',
+		symbol: {
+			char: 'η',
+		},
+		spin: 0, // unsure
+		charge: 0,
+		mass: 547.862e6*eVc2,
+		decays: [
+			['photon', 'photon'],
+			['pion0', 'pion0', 'pion0'],
+			['pion+', 'pion0', 'pion-'],
+		],
+		halfLife: 5.02e-19,
+	},
+	{
+		name: 'eta prime',
+		category: 'meson',
+		symbol: {
+			char: 'η′',
+		},
+		spin: 0, // unsure
+		charge: 0,
+		mass: 957.78e6*eVc2,
+		decays: [
+			['pion+', 'pion-', 'eta'],
+			['pion0', 'pion0', 'eta'],
+		],
+		halfLife: 3.32e-21,
+	},
 	// baryons
 	{
 		name: 'proton',
