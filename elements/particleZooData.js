@@ -6,6 +6,18 @@ const eV = 1.602176634e-19; // J; exact
 const eVc2 = eV / Math.pow(speedOfLight, 2); // kg; exact
 
 const particleData = [
+	// bosons
+	{
+		name: 'photon',
+		category: 'boson',
+		symbol: {
+			char: 'γ',
+		},
+		spin: 1,
+		charge: 0,
+		mass: 0,
+	},
+	// leptons
 	{
 		name: 'electron',
 		category: 'lepton',
@@ -76,6 +88,10 @@ const particleData = [
 		spin: 0.5,
 		charge: eV,
 		mass: 105.6583745e6*eVc2,
+		decays: [
+			['positron', 'electron neutrino', 'muon antineutrino'],
+		],
+		halfLife: 2.1969811e-6,
 	},
 	{
 		name: 'muon neutrino',
@@ -145,16 +161,41 @@ const particleData = [
 		charge: 0,
 		mass: 15.5e6*eVc2,
 	},
+	// mesons
 	{
-		name: 'photon',
-		category: 'boson',
+		name: 'pion0',
+		category: 'meson',
 		symbol: {
-			char: 'γ',
+			char: 'π',
+			sup: '0',
 		},
-		spin: 1,
+		spin: 0,
 		charge: 0,
-		mass: 0,
+		mass: 134.9766e6*eVc2,
 	},
+	{
+		name: 'pion+',
+		category: 'meson',
+		symbol: {
+			char: 'π',
+			sup: '+',
+		},
+		spin: 0,
+		charge: +eV,
+		mass: 139.57018e6*eVc2,
+	},
+	{
+		name: 'pion-',
+		category: 'meson',
+		symbol: {
+			char: 'π',
+			sup: '-',
+		},
+		spin: 0,
+		charge: -eV,
+		mass: 139.57018e6*eVc2,
+	},
+	// baryons
 	{
 		name: 'proton',
 		category: 'baryon',

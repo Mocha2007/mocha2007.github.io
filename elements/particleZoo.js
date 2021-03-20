@@ -32,9 +32,10 @@ class Particle {
 		// todo
 		return {
 			baryon: 'skyBlue',
-			boson: 'pink',
+			boson: 'pink', // sorta unused
+			meson: 'orange',
 			lepton: 'lime',
-			quark: 'lavender',
+			quark: 'lavender', // unused
 		}[this.category];
 	}
 	get element(){
