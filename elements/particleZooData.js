@@ -143,7 +143,7 @@ const particleData = [
 		category: 'lepton',
 		symbol: {
 			char: 'ν',
-			sup: 'τ',
+			sub: 'τ',
 		},
 		spin: 0.5,
 		charge: 0,
@@ -154,7 +154,7 @@ const particleData = [
 		category: 'lepton',
 		symbol: {
 			char: 'ν',
-			sup: 'τ',
+			sub: 'τ',
 			overline: true,
 		},
 		spin: 0.5,
