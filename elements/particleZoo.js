@@ -171,6 +171,16 @@ class Instance {
 		return this.x < -buffer || window.innerWidth+buffer < this.x
 			|| this.y < -buffer || window.innerHeight+buffer < this.y;
 	}
+	bounce(){
+		/* eslint-disable no-extra-parens */
+		if ((this.x <= 0 && this.vx < 0)
+			|| (window.innerWidth <= this.x && 0 < this.vx))
+			this.vx *= -1;
+		else if (this.y <= 0 && this.vy < 0
+			|| (window.innerHeight <= this.y && 0 < this.vy))
+			this.vy *= -1;
+		/* eslint-enable no-extra-parens */
+	}
 	/** if a reactable particle is nearby, react! */
 	checkreactions(){
 		const interactable = instances.filter(i => i !== this
@@ -243,8 +253,12 @@ class Instance {
 		if (!this.element) // should never trigger, but ...
 			return;
 		this.element.setAttribute('transform', `translate(${this.x}, ${this.y})`);
-		if (this.outOfBounds)
-			this.delete();
+		if (this.outOfBounds){
+			if (this.type.category === 'atom')
+				this.bounce();
+			else
+				this.delete();
+		}
 		else if (!this.type.stable && random.random() < 1/100) // todo
 			this.decay();
 		else if (!this.checkreactions())
