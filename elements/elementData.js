@@ -10,21 +10,25 @@
 	1	https://upload.wikimedia.org/wikipedia/commons/4/44/Kernfusionen1_en.png
 	2	https://upload.wikimedia.org/wikipedia/commons/3/31/Nucleosynthesis_periodic_table.svg
 	3	https://vimeo.com/74662953
+	4	https://web.archive.org/web/20190104023431/http://www.cosmic-origins.org/
+			https://web.archive.org/web/20181228175648/http://www.cosmic-origins.org/PAGES/chartnuc.html
 */
 const nucleosynthesisColors = {
-	artificial: '#886', // the rest
+	artificial: '#fff', // the rest
 	decay: '#ccb', // Po-Ac; Pa
 	bigBang: '#18d', // H He Li
 	ppChain: '#db2', // He
+	pProcess: '#282', // Se
 	rProcess: '#b7d', // many
 	sProcess: '#3d3', // many
 	spallation: '#d88', // Li Be B
 	tripleAlphaProcess: '#d8d', // C
-	cnoCycle: '#3b3', // N
+	cnoCycle: '#3b3', // N, F
 	alphaProcess: '#a1b', // even-Z from O to Ni
 	rpProcess: '#edd', // [guess] odd-Z from F to Co and all from Cu to Rb
-	carbonBurningProcess: '#dcc', // Na
-	oxygenBurningProcess: '#cbb', // P
+	carbonBurningProcess: '#cbb', // Na
+	oxygenBurningProcess: '#a99', // P
+	neonBurningProcess: '#d3b', // Al
 };
 // https://en.wikipedia.org/wiki/Template:Periodic_table_(noble_metals)
 const nobleMetalColors = ['#cf0', '#0e7', '#6bf', '#c9f', '#fb6', '#f66'];
@@ -345,7 +349,7 @@ const elementData = [
 			discovery: 1886,
 			modelColor: 'rgb(144, 224, 80)',
 			nucleosynthesis: {
-				rpProcess: 1, // guess
+				cnoCycle: 1,
 			},
 			nutrition: 3,
 			prices: {
@@ -485,7 +489,7 @@ const elementData = [
 			discovery: 1825,
 			modelColor: 'rgb(191, 166, 166)',
 			nucleosynthesis: {
-				rpProcess: 1, // guess
+				neonBurningProcess: 1,
 			},
 			nutrition: 4,
 			prices: {
@@ -521,7 +525,8 @@ const elementData = [
 			discovery: 1823,
 			modelColor: 'rgb(240, 200, 160)',
 			nucleosynthesis: {
-				alphaProcess: 1,
+				oxygenBurningProcess: 0.92,
+				neonBurningProcess: 0.08,
 			},
 			nutrition: 3,
 			prices: {
@@ -559,7 +564,7 @@ const elementData = [
 			discovery: 1669,
 			modelColor: 'rgb(255, 128, 0)',
 			nucleosynthesis: {
-				oxygenBurningProcess: 1, // guess
+				neonBurningProcess: 1,
 			},
 			nutrition: 1,
 			prices: {
@@ -595,8 +600,9 @@ const elementData = [
 			density: 2067,
 			discovery: -2000,
 			modelColor: 'rgb(255, 255, 48)',
-			nucleosynthesis: {
-				alphaProcess: 1,
+			nucleosynthesis: { // best guess
+				oxygenBurningProcess: 0.9924,
+				alphaProcess: 0.0034,
 			},
 			nutrition: 1,
 			prices: {
@@ -633,7 +639,7 @@ const elementData = [
 			discovery: 1774,
 			modelColor: 'rgb(31, 240, 31)',
 			nucleosynthesis: {
-				rpProcess: 1, // guess
+				rpProcess: 1, // "explosive nucleosynthesis"
 			},
 			nutrition: 1,
 			prices: {
@@ -665,7 +671,9 @@ const elementData = [
 			discovery: 1894,
 			modelColor: 'rgb(128, 209, 227)',
 			nucleosynthesis: {
-				alphaProcess: 1,
+				oxygenBurningProcess: 0.00063, // Ar-36
+				alphaProcess: 0.00334, // Ar-38
+				sProcess: 0.99604, // Ar-40
 			},
 			prices: {
 				2019: 0.931,
@@ -699,7 +707,8 @@ const elementData = [
 			discovery: 1807,
 			modelColor: 'rgb(143, 64, 212)',
 			nucleosynthesis: {
-				rpProcess: 1, // guess
+				rpProcess: 1, // guess; K-39, K-41
+				sProcess: 0.00012, // K-40
 			},
 			nutrition: 1,
 			prices: {
@@ -1135,7 +1144,7 @@ const elementData = [
 			discovery: 1875,
 			modelColor: 'rgb(194, 143, 143)',
 			nucleosynthesis: {
-				rpProcess: 1, // guess
+				sProcess: 1,
 			},
 			prices: {
 				2020: 148,
@@ -1168,7 +1177,8 @@ const elementData = [
 			discovery: 1886,
 			modelColor: 'rgb(102, 143, 143)',
 			nucleosynthesis: {
-				rpProcess: 1, // guess
+				rpProcess: 0.5203, // guess; Ge-73, Ge-74, Ge-76
+				sProcess: 0.4797, // Ge-70, Ge-72
 			},
 			nutrition: 4,
 			prices: {
@@ -1204,7 +1214,7 @@ const elementData = [
 			modelColor: 'rgb(189, 128, 227)',
 			nobleMetal: 3,
 			nucleosynthesis: {
-				rpProcess: 1, // guess
+				rProcess: 1,
 			},
 			nutrition: 4,
 			prices: {
@@ -1242,7 +1252,9 @@ const elementData = [
 			modelColor: 'rgb(255, 161, 0)',
 			nobleMetal: 3,
 			nucleosynthesis: {
-				rpProcess: 1, // guess
+				pProcess: 0.0086, // Se-74
+				sProcess: 0.0923, // Se-76
+				rProcess: 0.8891, // other
 			},
 			nutrition: 2,
 			prices: {
@@ -1276,7 +1288,7 @@ const elementData = [
 			discovery: 1825,
 			modelColor: 'rgb(166, 41, 41)',
 			nucleosynthesis: {
-				rpProcess: 1, // guess
+				rProcess: 1,
 			},
 			nutrition: 3,
 			prices: {
@@ -1309,7 +1321,9 @@ const elementData = [
 			discovery: 1898,
 			modelColor: 'rgb(92, 184, 209)',
 			nucleosynthesis: {
-				rpProcess: 1, // guess
+				pProcess: 0.0036, // Kr-78
+				sProcess: 0.3116, // Kr-80, Kr-82, Kr-86
+				rProcess: 0.6849, // Kr-83, Kr-84
 			},
 			prices: {
 				1999: 290,
@@ -1341,7 +1355,8 @@ const elementData = [
 			discovery: 1861,
 			modelColor: 'rgb(112, 46, 176)',
 			nucleosynthesis: {
-				rpProcess: 1, // guess
+				rProcess: 0.7217, // Rb-85
+				sProcess: 0.2783, // Rb-87
 			},
 			nutrition: 4,
 			prices: {
@@ -1375,7 +1390,8 @@ const elementData = [
 			discovery: 1808,
 			modelColor: 'rgb(0, 255, 0)',
 			nucleosynthesis: {
-				sProcess: 1,
+				pProcess: 0.0056, // Sr-84
+				sProcess: 0.9944, // rest
 			},
 			nutrition: 3,
 			prices: {
@@ -1441,7 +1457,8 @@ const elementData = [
 			modelColor: 'rgb(148, 224, 224)',
 			nobleMetal: 0,
 			nucleosynthesis: {
-				sProcess: 1,
+				sProcess: 0.972, // rest
+				rProcess: 0.028, // Zr-96
 			},
 			prices: {
 				2020: 36.4,
