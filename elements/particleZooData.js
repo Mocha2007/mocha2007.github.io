@@ -142,6 +142,16 @@ const particleData = [
 		mass: 15.5e6*eVc2,
 	},
 	{
+		name: 'photon',
+		category: 'boson',
+		symbol: {
+			char: 'γ',
+		},
+		spin: 1,
+		charge: 0,
+		mass: 0,
+	},
+	{
 		name: 'proton',
 		category: 'baryon',
 		symbol: {

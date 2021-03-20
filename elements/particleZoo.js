@@ -122,8 +122,9 @@ class Instance {
 		Instance.random();
 	}
 	tick(){
-		this.x += this.vx;
-		this.y += this.vy;
+		const c = this.type.name === 'photon' ? 20 : 1;
+		this.x += this.vx*c;
+		this.y += this.vy*c;
 		this.element.setAttribute('transform', `translate(${this.x}, ${this.y})`);
 		if (this.outOfBounds)
 			this.delete();
