@@ -172,6 +172,10 @@ const particleData = [
 		spin: 0,
 		charge: 0,
 		mass: 134.9766e6*eVc2,
+		decays: [
+			['photon', 'photon'],
+		],
+		halfLife: 8.4e-17,
 	},
 	{
 		name: 'pion+',
@@ -183,6 +187,10 @@ const particleData = [
 		spin: 0,
 		charge: +eV,
 		mass: 139.57018e6*eVc2,
+		decays: [
+			['antimuon', 'muon neutrino'],
+		],
+		halfLife: 2.6033e-8,
 	},
 	{
 		name: 'pion-',
@@ -194,6 +202,10 @@ const particleData = [
 		spin: 0,
 		charge: -eV,
 		mass: 139.57018e6*eVc2,
+		decays: [
+			['muon', 'muon antineutrino'],
+		],
+		halfLife: 2.6033e-8,
 	},
 	// baryons
 	{
