@@ -1,4 +1,4 @@
-/* global createSvgElement, particleData, random, range */
+/* global createSvgElement, particleData, pi, random, range */
 /* exported fps, init */
 'use strict';
 
@@ -138,11 +138,12 @@ class Instance {
 		return p;
 	}
 	static spawnPoint(){
+		const theta = random.uniform(0, 2*pi);
 		return [
 			random.uniform(0, window.innerWidth),
 			random.uniform(0, window.innerHeight),
-			random.uniform(-1, 1),
-			random.uniform(-1, 1),
+			Math.cos(theta),
+			Math.sin(theta),
 		]; // todo
 	}
 }
