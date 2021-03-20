@@ -169,7 +169,7 @@ class ChemElement {
 		if (!this.nucleosynthesis)
 			return 'artificial';
 		return Object.keys(this.nucleosynthesis)
-			.sort((a, b) => this.nucleosynthesis[a] - this.nucleosynthesis[b])[0];
+			.sort((a, b) => this.nucleosynthesis[b] - this.nucleosynthesis[a])[0];
 	}
 	get stable(){
 		return this.isotopes.some(i => i.stable);
