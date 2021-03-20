@@ -3,6 +3,7 @@
 'use strict';
 
 let fps = 30; // todo: temporary
+const desiredParticles = 20;
 
 /** @type {Particle[]} */
 const particles = [];
@@ -14,14 +15,18 @@ class Particle {
 	 * @param {number} spin
 	 * @param {number} charge
 	 * @param {number} mass
+	 * @param {string[][]} decays
+	 * @param {number} halfLife
 	 */
-	constructor(name, category, symbol, spin, charge, mass){
+	constructor(name, category, symbol, spin, charge, mass, decays, halfLife){
 		this.name = name;
 		this.category = category;
 		this.symbol = symbol;
 		this.spin = spin;
 		this.charge = charge;
 		this.mass = mass;
+		this.decays = decays;
+		this.halfLife = halfLife;
 	}
 	get color(){
 		// todo
@@ -47,6 +52,9 @@ class Particle {
 	/** radius for circle element */
 	get radius(){
 		return Math.log(this.mass)/2+43; // todo: fine-tune this
+	}
+	get stable(){
+		return !isFinite(this.halfLife);
 	}
 	get textElement(){
 		const g = createSvgElement('g');
@@ -79,6 +87,10 @@ class Particle {
 		g.setAttribute('transform', `translate(${this.radius}, ${this.radius+10})`);
 		return g;
 	}
+	/** @param {string} name */
+	static fromName(name){
+		return particles.filter(p => p.name === name)[0];
+	}
 	static fromObject(o){
 		const p = new Particle(
 			o.name,
@@ -86,7 +98,9 @@ class Particle {
 			o.symbol,
 			o.spin,
 			o.charge,
-			o.mass
+			o.mass,
+			o.decays,
+			o.halfLife
 		);
 		return p;
 	}
@@ -116,10 +130,25 @@ class Instance {
 		document.getElementById('canvas').appendChild(testParticle);
 		this.tick();
 	}
-	delete(){
+	decay(){
+		console.log('DECAY!!!');
+		// choose random decay mode
+		/** @type {Particle[]} */
+		const pp = random.choice(this.type.decays).map(name => Particle.fromName(name));
+		const ii = pp.map(p => new Instance(p));
+		ii.forEach(i => {
+			i.x = this.x;
+			i.y = this.y;
+			i.createElement();
+		});
+		// delete without replacement
+		this.delete(false);
+	}
+	delete(replace = true){
 		this.element.remove();
 		// new particle
-		Instance.random();
+		if (replace && document.getElementById('canvas').children.length < desiredParticles)
+			Instance.random();
 	}
 	tick(){
 		const c = this.type.name === 'photon' ? 20 : 1;
@@ -128,11 +157,14 @@ class Instance {
 		this.element.setAttribute('transform', `translate(${this.x}, ${this.y})`);
 		if (this.outOfBounds)
 			this.delete();
+		else if (!this.type.stable && random.random() < 1/100) // todo
+			this.decay();
 		else
 			setTimeout(() => this.tick(), 1000/fps);
 	}
 	static random(){
 		const p = new Instance(random.choice(particles));
+		// const p = new Instance(particles[4]);
 		p.createElement();
 		console.info(p.id);
 		return p;
@@ -157,3 +189,7 @@ function init(){
 	// done!
 	console.info('particleZoo.js loaded.');
 }
+/** TODO
+ * - decay
+ * - combinations - eg. proton + electron = H
+ */

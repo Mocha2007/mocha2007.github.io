@@ -61,6 +61,10 @@ const particleData = [
 		spin: 0.5,
 		charge: -eV,
 		mass: 105.6583745e6*eVc2,
+		decays: [
+			['electron', 'electron antineutrino', 'muon neutrino'],
+		],
+		halfLife: 2.1969811e-6,
 	},
 	{
 		name: 'antimuon',
