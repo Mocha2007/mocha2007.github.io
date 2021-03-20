@@ -241,8 +241,8 @@ const elementData = [
 			discovery: -3750,
 			modelColor: 'rgb(144, 144, 144)',
 			nucleosynthesis: {
-				sProcess: 0.75,
-				tripleAlphaProcess: 0.25,
+				tripleAlphaProcess: 0.989, // C-12
+				alphaProcess: 0.011, // C-13; guess
 			},
 			nutrition: 0,
 			prices: {
@@ -277,8 +277,7 @@ const elementData = [
 			discovery: 1772,
 			modelColor: 'rgb(48, 80, 248)',
 			nucleosynthesis: {
-				sProcess: 0.75,
-				cnoCycle: 0.25,
+				cnoCycle: 1,
 			},
 			nutrition: 0,
 			prices: {
@@ -313,7 +312,8 @@ const elementData = [
 			discovery: 1604,
 			modelColor: 'rgb(255, 13, 13)',
 			nucleosynthesis: {
-				alphaProcess: 1,
+				alphaProcess: 0.9996, // O-16, O-18
+				cnoCycle: 0.0004, // O-17
 			},
 			nutrition: 0,
 			prices: {
@@ -382,7 +382,8 @@ const elementData = [
 			discovery: 1898,
 			modelColor: 'rgb(179, 227, 245)',
 			nucleosynthesis: {
-				alphaProcess: 1,
+				carbonBurningProcess: 0.9075, // Ne-20, Ne-21
+				alphaProcess: 0.0925, // Ne-22
 			},
 			prices: {
 				1999: 240,
@@ -453,7 +454,8 @@ const elementData = [
 			discovery: 1808,
 			modelColor: 'rgb(138, 255, 0)',
 			nucleosynthesis: {
-				alphaProcess: 1,
+				alphaProcess: 0.79, // Mg-24
+				neonBurningProcess: 0.21, // Mg-25, Mg-26
 			},
 			nutrition: 1,
 			prices: {
