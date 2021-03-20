@@ -267,6 +267,89 @@ const particleData = [
 		],
 		halfLife: 3.32e-21,
 	},
+	{
+		name: 'kaon',
+		category: 'meson',
+		symbol: {
+			char: 'K',
+			sup: '0',
+		},
+		spin: 0.5, // unsure
+		charge: 0,
+		mass: 497.614e6*eVc2,
+	},
+	{
+		name: 'kaon+',
+		category: 'meson',
+		symbol: {
+			char: 'K',
+			sup: '+',
+		},
+		spin: 0.5, // unsure
+		charge: eV,
+		mass: 497.614e6*eVc2,
+		decays: [
+			['antimuon', 'muon neutrino'],
+			['pion+', 'pion0'],
+			['pion0', 'positron', 'electron neutrino'],
+		],
+		halfLife: 3.32e-21,
+	},
+	{
+		name: 'kaon-',
+		category: 'meson',
+		symbol: {
+			char: 'K',
+			sup: '-',
+		},
+		spin: 0.5, // unsure
+		charge: -eV,
+		mass: 497.614e6*eVc2,
+		decays: [
+			['muon', 'muon antineutrino'],
+			['pion-', 'pion0'],
+			['pion0', 'electron', 'electron antineutrino'],
+		],
+		halfLife: 3.32e-21,
+	},
+	{
+		name: 'kaon short',
+		category: 'meson',
+		symbol: {
+			char: 'K',
+			sup: '0',
+			sub: 'S',
+		},
+		spin: 0.5, // unsure
+		charge: 0,
+		mass: 497.614e6*eVc2,
+		decays: [
+			['pion+', 'pion-'],
+			['pion0', 'pion0'],
+		],
+		halfLife: 8.953e-11,
+	},
+	{
+		name: 'kaon long',
+		category: 'meson',
+		symbol: {
+			char: 'K',
+			sup: '0',
+			sub: 'L',
+		},
+		spin: 0.5, // unsure
+		charge: 0,
+		mass: 497.614e6*eVc2,
+		decays: [
+			['pion+', 'electron', 'electron neutrino'],
+			['pion-', 'positron', 'electron neutrino'],
+			['pion+', 'muon', 'muon neutrino'],
+			['pion-', 'antimuon', 'muon neutrino'],
+			['pion0', 'pion0', 'pion0'],
+			['pion+', 'pion0', 'pion-'],
+		],
+		halfLife: 5.116e-8,
+	},
 	// baryons
 	{
 		name: 'proton',
