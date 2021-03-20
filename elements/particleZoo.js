@@ -1,5 +1,5 @@
 /* global createSvgElement, particleData, pi, random, range, reactionData */
-/* exported fps, init */
+/* exported fps, init, spawnClick */
 'use strict';
 
 let fps = 30; // todo: temporary
@@ -264,6 +264,13 @@ class Instance {
 			Math.sin(theta),
 		]; // todo
 	}
+}
+
+function spawnClick(event){
+	const e = Instance.random();
+	e.x = event.clientX;
+	e.y = event.clientY;
+	console.log('spawned ' + e.type.name);
 }
 
 /** main function */

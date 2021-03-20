@@ -266,11 +266,41 @@ const particleData = [
 		charge: 0,
 		mass: 1.00782503224*amu,
 	},
+	{
+		name: 'deuterium',
+		category: 'atom',
+		symbol: {
+			char: 'H',
+			presup: '2',
+		},
+		spin: 1,
+		charge: 0,
+		mass: 2.01410177811*amu,
+	},
+	{
+		name: 'tritium',
+		category: 'atom',
+		symbol: {
+			char: 'H',
+			presup: '3',
+		},
+		spin: 0.5,
+		charge: 0,
+		mass: 3.01604928199*amu,
+	},
 ];
 
 const reactionData = [
 	{
 		reagents: ['proton', 'electron'],
 		products: ['protium'],
+	},
+	{
+		reagents: ['protium', 'neutron'],
+		products: ['deuterium'],
+	},
+	{
+		reagents: ['deuterium', 'neutron'],
+		products: ['tritium'],
 	},
 ];
