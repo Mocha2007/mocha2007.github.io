@@ -1,6 +1,7 @@
 /* jshint esversion: 6, strict: true, strict: global, laxbreak: true, nonew: false */
 /* globals createSvgElement, day, deg, elementData, hour, isotopeData, mean, minute,
-	nobleMetalColors, nutritionColors, range, remap, round, sum, trace, unitString, year */
+	nobleMetalColors, nucleosynthesisColors, nutritionColors, range, remap, round, sum, trace,
+	unitString, year */
 /* exported highlightCategory, highlightFunction, hlCull, setDecayChainLength, tableColor */
 'use strict';
 
@@ -75,6 +76,8 @@ class ChemElement {
 			this.modelColor = properties.modelColor;
 			/** @type {number} */
 			this.nobleMetal = properties.nobleMetal;
+			/** string => [0, 1] */
+			this.nucleosynthesis = properties.nucleosynthesis;
 			/** @type {number} */
 			this.nutrition = properties.nutrition;
 			/** year => $/kg inflation-adjusted */
@@ -160,6 +163,13 @@ class ChemElement {
 		years.sort((a, b) => b-a);
 		// return most recent year's price
 		return this.prices[years[0]];
+	}
+	/** most common stellar nucleosynthesis process */
+	get nucleoMax(){
+		if (!this.nucleosynthesis)
+			return 'artificial';
+		return Object.keys(this.nucleosynthesis)
+			.sort((a, b) => this.nucleosynthesis[a] - this.nucleosynthesis[b])[0];
 	}
 	get stable(){
 		return this.isotopes.some(i => i.stable);
@@ -366,6 +376,9 @@ class ChemElement {
 				x = Math.max((Math.max(...this.isotopes.map(i => i.nuclearBindingEnergy/i.mass)) -
 					1.13e-12) * 3.6e12, 0); // appx from 0 to 1
 				c = gradient1(x);
+				break;
+			case 'nucleosynthesis':
+				c = nucleosynthesisColors[this.nucleoMax];
 				break;
 			case 'n/z':
 				x = this.stable ? mean(this.isotopes.filter(i => i.stable).map(i => i.n)) :
