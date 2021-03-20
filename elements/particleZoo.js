@@ -191,7 +191,7 @@ class Instance {
 		}
 		// other reactions
 		for (const reaction of reactions){
-			if (reaction.satisfies(this, ...interactable)){
+			if (reaction.satisfies(this.type, ...interactable.map(i => i.type))){
 				// REACT!!!
 				this.delete();
 				// delete other reagents
@@ -266,11 +266,16 @@ class Instance {
 	}
 }
 
+/** @param {Event} event */
 function spawnClick(event){
-	const e = Instance.random();
-	e.x = event.clientX;
-	e.y = event.clientY;
-	console.log('spawned ' + e.type.name);
+	const onlyBaryons = event.shiftKey;
+	const i = new Instance(
+		random.choice(particles.filter(p =>
+			(onlyBaryons ? p.category === 'baryon' : true) && p.category !== 'atom')),
+		event.clientX,
+		event.clientY
+	);
+	console.log('spawned ' + i.type.name);
 }
 
 /** main function */
