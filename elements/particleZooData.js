@@ -108,6 +108,40 @@ const particleData = [
 		mass: 1776.86e6*eVc2,
 	},
 	{
+		name: 'antitau',
+		category: 'lepton',
+		symbol: {
+			char: 'τ',
+			sup: '+',
+		},
+		spin: 0.5,
+		charge: eV,
+		mass: 1776.86e6*eVc2,
+	},
+	{
+		name: 'tau neutrino',
+		category: 'lepton',
+		symbol: {
+			char: 'ν',
+			sup: 'τ',
+		},
+		spin: 0.5,
+		charge: 0,
+		mass: 15.5e6*eVc2,
+	},
+	{
+		name: 'tau antineutrino',
+		category: 'lepton',
+		symbol: {
+			char: 'ν',
+			sup: 'τ',
+			overline: true,
+		},
+		spin: 0.5,
+		charge: 0,
+		mass: 15.5e6*eVc2,
+	},
+	{
 		name: 'proton',
 		category: 'baryon',
 		symbol: {
