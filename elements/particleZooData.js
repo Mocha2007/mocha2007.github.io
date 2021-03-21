@@ -1077,10 +1077,6 @@ const reactionData = [
 		reagents: ['helium-3', 'protium'],
 		products: ['helium-4', 'positron', 'electron neutrino'],
 	},
-	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_IV_branch
-		reagents: ['helium-3', 'protium'],
-		products: ['helium-4', 'positron', 'electron neutrino'],
-	},
 	{ // https://en.wikipedia.org/wiki/Deuterium_fusion#Other_reactions
 		reagents: ['helium-3', 'deuterium'],
 		products: ['lithium-5', 'photon'],
