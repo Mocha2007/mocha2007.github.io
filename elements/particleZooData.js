@@ -943,7 +943,7 @@ const reactionData = [
 	// + neutron interactions; most are automatic, these are manual!
 	{ // https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Baryon%E2%80%93photon_ratio
 		reagents: ['protium', 'neutron'],
-		products: ['deuterium', 'gamma'],
+		products: ['deuterium', 'photon'],
 	},
 	{
 		reagents: ['deuterium', 'neutron'],
