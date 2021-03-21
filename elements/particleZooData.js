@@ -980,6 +980,42 @@ const particleData = [
 		charge: 0,
 		mass: 25.98259297*amu,
 	},
+	{
+		name: 'silicon-28',
+		category: 'atom',
+		symbol: {
+			char: 'Si',
+			presup: '28',
+			presub: '14',
+		},
+		spin: 0,
+		charge: 0,
+		mass: 27.976926535*amu,
+	},
+	{
+		name: 'sulfur-32',
+		category: 'atom',
+		symbol: {
+			char: 'S',
+			presup: '32',
+			presub: '16',
+		},
+		spin: 0,
+		charge: 0,
+		mass: 31.9720711744*amu,
+	},
+	{
+		name: 'argon-36',
+		category: 'atom',
+		symbol: {
+			char: 'Ar',
+			presup: '36',
+			presub: '18',
+		},
+		spin: 0,
+		charge: 0,
+		mass: 35.967545105*amu,
+	},
 ];
 
 const reactionData = [
@@ -1061,8 +1097,6 @@ const reactionData = [
 		reagents: ['helium-4', 'helium-3'],
 		products: ['beryllium-7', 'photon'],
 	},
-	/* FORBIDDEN - THIS WILL CLONE ITSELF!!!
-	*/
 	{ // https://en.wikipedia.org/wiki/Triple-alpha_process#Triple-alpha_process_in_stars
 		reagents: ['helium-4', 'helium-4'],
 		products: ['beryllium-8', 'photon'],
@@ -1152,6 +1186,10 @@ const reactionData = [
 		reagents: ['oxygen-16', 'helium-4'],
 		products: ['neon-20', 'photon'],
 	},
+	{ // https://en.wikipedia.org/wiki/Oxygen-burning_process
+		reagents: ['oxygen-16', 'oxygen-16'],
+		products: ['sulfur-32', 'photon'],
+	},
 	{ // https://en.wikipedia.org/wiki/CNO_cycle#CNO-II
 		reagents: ['oxygen-17', 'protium'],
 		products: ['nitrogen-14', 'helium-4'],
@@ -1169,6 +1207,10 @@ const reactionData = [
 		products: ['magnesium-24', 'photon'],
 		tags: 'photodisintegration',
 	},
+	{ // https://en.wikipedia.org/wiki/Neon-burning_process
+		reagents: ['neon-20', 'photon'],
+		products: ['oxygen-16', 'helium-4'],
+	},
 	{ // https://en.wikipedia.org/wiki/Alpha_process
 		reagents: ['neon-20', 'helium-4'],
 		products: ['magnesium-24', 'photon'],
@@ -1180,5 +1222,17 @@ const reactionData = [
 	{ // https://en.wikipedia.org/wiki/S-process#The_s-process_in_stars
 		reagents: ['neon-22', 'helium-4'],
 		products: ['magnesium-25', 'neutron'],
+	},
+	{ // https://en.wikipedia.org/wiki/Alpha_process
+		reagents: ['magnesium-24', 'helium-4'],
+		products: ['silicon-28', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/Alpha_process
+		reagents: ['silicon-28', 'helium-4'],
+		products: ['sulfur-32', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/Alpha_process
+		reagents: ['sulfur-32', 'helium-4'],
+		products: ['argon-36', 'photon'],
 	},
 ];

@@ -244,7 +244,12 @@ class Instance {
 				this.delete();
 				other.delete();
 				// CREATE
+				// atom
 				new Instance(Particle.fromName(isoName),
+					(this.x + other.x)/2,
+					(this.y + other.y)/2);
+				// photon
+				new Instance(Particle.fromName('photon'),
 					(this.x + other.x)/2,
 					(this.y + other.y)/2);
 			}
