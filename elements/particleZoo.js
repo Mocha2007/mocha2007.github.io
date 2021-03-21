@@ -6,7 +6,7 @@ let fps = 30; // todo: temporary
 const desiredParticles = 20;
 const interactionRadius = 50; // todo: temporary
 let onlyNucleons = true;
-let onlyProtium = true;
+let onlyProtium = false;
 
 /** @type {Particle[]} */
 const particles = [];
@@ -315,7 +315,8 @@ class Instance {
 		if (onlyProtium)
 			return new Instance(Particle.fromName('proton'));
 		const particle = new Instance(random.choice(particles.filter(p =>
-			onlyNucleons ? ['proton', 'neutron', 'electron'].includes(p.name): p.category !== 'atom')));
+			onlyNucleons ? ['protium', 'proton', 'neutron', 'electron']
+				.includes(p.name): p.category !== 'atom')));
 		return particle;
 	}
 	/** @returns {[number, number, number, number]} */
