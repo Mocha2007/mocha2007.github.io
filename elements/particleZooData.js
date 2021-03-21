@@ -1068,10 +1068,6 @@ const reactionData = [
 		reagents: ['fluorine-18', 'protium'],
 		products: ['oxygen-15', 'helium-4'],
 	},
-	{ // https://en.wikipedia.org/wiki/Neon-burning_process
-		reagents: ['neon-20', 'photon'],
-		products: ['oxygen-16', 'helium-4'],
-	},
 	{ // https://en.wikipedia.org/wiki/Alpha_process
 		reagents: ['neon-20', 'helium-4'],
 		products: ['magnesium-24', 'photon'],
