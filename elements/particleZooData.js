@@ -1005,6 +1005,10 @@ const reactionData = [
 		reagents: ['lithium-6', 'deuterium'],
 		products: ['helium-4', 'helium-4'],
 	},
+	{ // https://en.wikipedia.org/wiki/Aneutronic_fusion
+		reagents: ['lithium-6', 'helium-3'],
+		products: ['helium-4', 'helium-4', 'protium'],
+	},
 	{ // https://en.wikipedia.org/wiki/Lithium_burning#6Li
 		reagents: ['lithium-7', 'protium'],
 		products: ['beryllium-8', 'photon'],
@@ -1026,7 +1030,7 @@ const reactionData = [
 		products: ['carbon-12', 'photon', 'photon'],
 	},
 	{ // https://en.wikipedia.org/wiki/Fusion_power#Proton,_boron-11
-		reagents: ['boron-11', 'proton'],
+		reagents: ['boron-11', 'protium'],
 		products: ['helium-4', 'helium-4', 'helium-4'],
 	},
 	{ // https://en.wikipedia.org/wiki/CNO_cycle#CNO-I
