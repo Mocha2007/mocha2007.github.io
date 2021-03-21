@@ -1,3 +1,4 @@
+/* jshint esversion: 6, strict: true, strict: global */
 /* exported particleData, reactionData */
 'use strict';
 

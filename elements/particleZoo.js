@@ -1,3 +1,4 @@
+/* jshint esversion: 6, strict: true, strict: global */
 /* global createSvgElement, particleData, pi, random, range, reactionData */
 /* exported fps, init, onlyNucleons, onlyProtium, spawnClick */
 'use strict';
