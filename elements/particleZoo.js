@@ -5,6 +5,7 @@
 let fps = 30; // todo: temporary
 const desiredParticles = 50;
 const interactionRadius = 50; // todo: temporary
+const reactionCooldown = 5; // s
 let onlyNucleons = true;
 let onlyProtium = false;
 
@@ -146,10 +147,12 @@ class Reaction {
 	/**
 	 * @param {Particle[]} reagents
 	 * @param {Particle[]} products
+	 * @param {string} tags
 	 */
-	constructor(reagents, products){
+	constructor(reagents, products, tags){
 		this.reagents = reagents;
 		this.products = products;
+		this.tags = tags ? tags.split(' ') : [];
 		reactions.push(this);
 	}
 	/** Are the inputs enough for this reaction? */
@@ -164,8 +167,10 @@ class Reaction {
 		return true;
 	}
 	static fromObject(o){
-		new Reaction(o.reagents.map(name => Particle.fromName(name)),
-			o.products.map(name => Particle.fromName(name)));
+		new Reaction(
+			o.reagents.map(name => Particle.fromName(name)),
+			o.products.map(name => Particle.fromName(name)),
+			o.tags);
 	}
 }
 
@@ -178,6 +183,8 @@ class Instance {
 	 * @param {number} y
 	 */
 	constructor(type, x, y){
+		/** this many ticks must pass before it can react */
+		this.cooldown = fps*reactionCooldown;
 		this.type = type;
 		[this.x, this.y, this.vx, this.vy] = Instance.spawnPoint();
 		if (isFinite(x))
@@ -209,6 +216,8 @@ class Instance {
 	}
 	/** if a reactable particle is nearby, react! */
 	checkreactions(){
+		if (0 < this.cooldown) // can't react during cooldown
+			return false;
 		const interactable = instances.filter(i => i !== this
 			&& this.distanceTo(i) < interactionRadius);
 		for (const other of interactable){
@@ -294,6 +303,7 @@ class Instance {
 		return Math.sqrt(Math.pow(this.x - other.x, 2) + Math.pow(this.y - other.y, 2));
 	}
 	tick(){
+		this.cooldown--;
 		const c = this.type.name === 'photon' ? 20 : 1;
 		this.x += this.vx*c;
 		this.y += this.vy*c;

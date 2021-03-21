@@ -757,7 +757,7 @@ const particleData = [
 		symbol: {
 			char: 'N',
 			presup: '13',
-			presub: '6',
+			presub: '7',
 		},
 		spin: 0.5,
 		charge: 0,
@@ -994,6 +994,11 @@ const reactionData = [
 		reagents: ['protium', 'protium', 'electron'],
 		products: ['deuterium', 'electron neutrino'],
 	},
+	{ // https://en.wikipedia.org/wiki/Photodisintegration#Photodisintegration_of_deuterium
+		reagents: ['deuterium', 'photon'],
+		products: ['protium', 'neutron'],
+		tags: 'photodisintegration',
+	},
 	{ // https://en.wikipedia.org/wiki/Deuterium_fusion
 		reagents: ['deuterium', 'protium'],
 		products: ['helium-3', 'photon'],
@@ -1069,6 +1074,11 @@ const reactionData = [
 		reagents: ['beryllium-8', 'helium-4'],
 		products: ['carbon-12', 'photon', 'photon'],
 	},
+	{ // https://en.wikipedia.org/wiki/Photodisintegration#Photodisintegration_of_beryllium
+		reagents: ['beryllium-9', 'photon'],
+		products: ['helium-4', 'helium-4', 'neutron'],
+		tags: 'photodisintegration',
+	},
 	{ // https://en.wikipedia.org/wiki/Fusion_power#Proton,_boron-11
 		reagents: ['boron-11', 'protium'],
 		products: ['helium-4', 'helium-4', 'helium-4'],
@@ -1092,6 +1102,10 @@ const reactionData = [
 	{ // https://en.wikipedia.org/wiki/CNO_cycle#HCNO-I
 		reagents: ['nitrogen-13', 'protium'],
 		products: ['oxygen-14', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/Cosmic_ray#Changes_in_atmospheric_chemistry
+		reagents: ['nitrogen-14', 'neutron'],
+		products: ['carbon-14', 'protium'],
 	},
 	{ // https://en.wikipedia.org/wiki/CNO_cycle#CNO-I
 		reagents: ['nitrogen-14', 'protium'],
@@ -1120,6 +1134,11 @@ const reactionData = [
 	{ // https://en.wikipedia.org/wiki/CNO_cycle#HCNO-II
 		reagents: ['fluorine-18', 'protium'],
 		products: ['oxygen-15', 'helium-4'],
+	},
+	{ // https://en.wikipedia.org/wiki/Neon-burning_process
+		reagents: ['neon-20', 'helium-4'],
+		products: ['magnesium-24', 'photon'],
+		tags: 'photodisintegration',
 	},
 	{ // https://en.wikipedia.org/wiki/Alpha_process
 		reagents: ['neon-20', 'helium-4'],
