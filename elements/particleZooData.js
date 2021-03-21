@@ -543,6 +543,86 @@ const particleData = [
 		charge: 0,
 		mass: 4.00260325413*amu,
 	},
+	{
+		name: 'lithium-7',
+		category: 'atom',
+		symbol: {
+			char: 'Li',
+			presup: '7',
+			presub: '3',
+		},
+		spin: 1.5,
+		charge: 0,
+		mass: 7.016003437*amu,
+	},
+	{
+		name: 'beryllium-7',
+		category: 'atom',
+		symbol: {
+			char: 'Be',
+			presup: '7',
+			presub: '4',
+		},
+		spin: 1.5,
+		charge: 0,
+		mass: 7.01692872*amu,
+	},
+	{
+		name: 'beryllium-8',
+		category: 'atom',
+		symbol: {
+			char: 'Be',
+			presup: '8',
+			presub: '4',
+		},
+		spin: 0,
+		charge: 0,
+		mass: 8.0053051*amu,
+		decays: [
+			['helium-4', 'helium-4'],
+		],
+		halfLife: 8.19e-19,
+	},
+	{
+		name: 'boron-8',
+		category: 'atom',
+		symbol: {
+			char: 'B',
+			presup: '8',
+			presub: '5',
+		},
+		spin: 2,
+		charge: 0,
+		mass: 8.0246073*amu,
+		decays: [
+			['beryllium-8', 'positron', 'electron neutrino'],
+		],
+		halfLife: 0.77,
+	},
+	{
+		name: 'carbon-12',
+		category: 'atom',
+		symbol: {
+			char: 'C',
+			presup: '12',
+			presub: '6',
+		},
+		spin: 0,
+		charge: 0,
+		mass: 12*amu,
+	},
+	{
+		name: 'oxygen-16',
+		category: 'atom',
+		symbol: {
+			char: 'O',
+			presup: '16',
+			presub: '8',
+		},
+		spin: 0,
+		charge: 0,
+		mass: 15.99491461960*amu,
+	},
 ];
 
 const reactionData = [
@@ -564,6 +644,10 @@ const reactionData = [
 		reagents: ['proton', 'electron'],
 		products: ['protium'],
 	},
+	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain
+		reagents: ['proton', 'proton', 'electron'],
+		products: ['deuterium', 'electron neutrino'],
+	},
 	{
 		reagents: ['protium', 'neutron'],
 		products: ['deuterium'],
@@ -577,16 +661,52 @@ const reactionData = [
 		products: ['helium-4'],
 	},
 	// atom + atom
-	{
-		reagents: ['protium', 'deuterium'],
-		products: ['helium-3'],
+	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_PEP_reaction
+		reagents: ['protium', 'protium', 'electron'],
+		products: ['deuterium', 'electron neutrino'],
 	},
-	{
+	{ // https://en.wikipedia.org/wiki/Deuterium_fusion
+		reagents: ['protium', 'deuterium'],
+		products: ['helium-3', 'photon'],
+	},
+	{ // uncertain
 		reagents: ['protium', 'tritium'],
 		products: ['helium-4'],
 	},
-	{
+	{ // uncertain
 		reagents: ['deuterium', 'deuterium'],
 		products: ['helium-4'],
+	},
+	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_IV_branch
+		reagents: ['helium-3', 'protium'],
+		products: ['helium-4', 'positron', 'electron neutrino'],
+	},
+	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_I_branch
+		reagents: ['helium-3', 'helium-3'],
+		products: ['helium-4', 'protium', 'protium'],
+	},
+	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_II_branch
+		reagents: ['helium-3', 'helium-4'],
+		products: ['beryllium-7', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_II_branch
+		reagents: ['lithium-7', 'protium'],
+		products: ['helium-4', 'helium-4'],
+	},
+	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_II_branch
+		reagents: ['beryllium-7', 'electron'],
+		products: ['lithium-7', 'electron neutrino'],
+	},
+	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_III_branch
+		reagents: ['beryllium-7', 'protium'],
+		products: ['boron-8', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/Triple-alpha_process#Triple-alpha_process_in_stars
+		reagents: ['beryllium-8', 'helium-4'],
+		products: ['carbon-12', 'photon', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/Triple-alpha_process#Triple-alpha_process_in_stars
+		reagents: ['carbon-12', 'helium-4'],
+		products: ['oxygen-16', 'photon'],
 	},
 ];

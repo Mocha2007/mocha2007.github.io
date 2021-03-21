@@ -5,7 +5,7 @@
 let fps = 30; // todo: temporary
 const desiredParticles = 20;
 const interactionRadius = 50; // todo: temporary
-let onlyNucleons = false;
+let onlyNucleons = true;
 
 /** @type {Particle[]} */
 const particles = [];
