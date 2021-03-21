@@ -15,7 +15,8 @@ text {
 }
 </style>
 <!-- BEGINNING -->
-<text class="button" onclick="onlyNucleons = !onlyNucleons;" y="20">Only p, n, e</text>
+<text class="button" onclick="onlyNucleons = !onlyNucleons;" y="25">Only p, n, e</text>
+<text class="button" onclick="onlyProtium = !onlyProtium;" y="50">Only protium</text>
 <g id="canvas">
 </g>
 <!-- END -->

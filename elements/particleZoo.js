@@ -1,11 +1,12 @@
 /* global createSvgElement, particleData, pi, random, range, reactionData */
-/* exported fps, init, onlyNucleons, spawnClick */
+/* exported fps, init, onlyNucleons, onlyProtium, spawnClick */
 'use strict';
 
 let fps = 30; // todo: temporary
 const desiredParticles = 20;
 const interactionRadius = 50; // todo: temporary
 let onlyNucleons = true;
+let onlyProtium = true;
 
 /** @type {Particle[]} */
 const particles = [];
@@ -311,6 +312,8 @@ class Instance {
 			setTimeout(() => this.tick(), 1000/fps);
 	}
 	static random(){
+		if (onlyProtium)
+			return new Instance(Particle.fromName('proton'));
 		const particle = new Instance(random.choice(particles.filter(p =>
 			onlyNucleons ? ['proton', 'neutron', 'electron'].includes(p.name): p.category !== 'atom')));
 		return particle;
