@@ -736,6 +736,22 @@ const particleData = [
 		mass: 13.00335483521*amu,
 	},
 	{
+		name: 'carbon-14',
+		category: 'atom',
+		symbol: {
+			char: 'C',
+			presup: '14',
+			presub: '6',
+		},
+		spin: 0,
+		charge: 0,
+		mass: 14.003241988*amu,
+		decays: [
+			['nitrogen-14', 'electron antineutrino'], // beta-
+		],
+		halfLife: 5730*year,
+	},
+	{
 		name: 'nitrogen-13',
 		category: 'atom',
 		symbol: {
