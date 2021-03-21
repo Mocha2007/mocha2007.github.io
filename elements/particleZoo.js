@@ -1,5 +1,5 @@
 /* jshint esversion: 6, strict: true, strict: global */
-/* global createSvgElement, particleData, pi, random, range, reactionData */
+/* global amu, atomData, createSvgElement, particleData, pi, random, range, reactionData */
 /* exported fps, init, onlyNucleons, onlyProtium, spawnClick */
 'use strict';
 
@@ -32,6 +32,7 @@ class Particle {
 		this.mass = mass;
 		this.decays = decays;
 		this.halfLife = halfLife;
+		particles.push(this);
 	}
 	get antiparticle(){
 		// look for SAME MASS but OPPOSITE CHARGE
@@ -61,15 +62,7 @@ class Particle {
 		return g;
 	}
 	get hasHeavierIsotope(){
-		if (this.category !== 'atom')
-			return false;
-		const [elementName, massString] = this.name.split('-');
-		const mass = parseInt(massString);
-		// console.log(elementName, mass);
-		if (!isFinite(mass))
-			return false;
-		const targetName = elementName + '-' + (mass+1);
-		return particles.some(p => p.name === targetName) ? targetName : false;
+		return false; // not an atom
 	}
 	/** radius for circle element */
 	get radius(){
@@ -139,6 +132,51 @@ class Particle {
 			o.halfLife
 		);
 		return p;
+	}
+}
+
+/** @type {Atom[]} */
+const atoms = [];
+class Atom extends Particle {
+	/**
+	 * @param {string} name
+	 * @param {string} symbol
+	 * @param {number} z
+	 * @param {number} n
+	 * @param {number} spin
+	 * @param {string[][]} decays
+	 * @param {number} halfLife
+	*/
+	constructor(name, symbol, z, n, spin, decays, halfLife){
+		super(name, 'atom', {char: symbol, presup: z+n, presub: z}, spin, 0, (z+n)*amu, decays, halfLife);
+		this.char = symbol;
+		this.z = z;
+		this.n = n;
+		atoms.push(this);
+	}
+	get atomicMass(){
+		return this.z+this.n;
+	}
+	/** @returns {string|false} */
+	get hasHeavierIsotope(){
+		// hydrogen
+		if (this.z === 1)
+			return ['deuterium', 'tritium', false][this.n];
+		// non-hydrogen
+		const targetName = this.name.split('-')[0] + '-' + (this.atomicMass + 1);
+		return atoms.some(a => a.z === this.z && a.n === this.n+1) ? targetName : false;
+	}
+	static fromObject(o){
+		const a = new Atom(
+			o.name,
+			o.symbol,
+			o.z,
+			o.n,
+			o.spin,
+			o.decays,
+			o.halfLife
+		);
+		return a;
 	}
 }
 
@@ -377,7 +415,9 @@ function spawnClick(event){
 /** main function */
 function init(){
 	// read particle data
-	particleData.forEach(p => particles.push(Particle.fromObject(p)));
+	particleData.forEach(p => Particle.fromObject(p));
+	// read atom data
+	atomData.forEach(a => Atom.fromObject(a));
 	// read reaction data
 	reactionData.forEach(r => Reaction.fromObject(r));
 	// test
