@@ -584,6 +584,22 @@ const particleData = [
 		mass: 7.016003437*amu,
 	},
 	{
+		name: 'lithium-8',
+		category: 'atom',
+		symbol: {
+			char: 'Li',
+			presup: '8',
+			presub: '3',
+		},
+		spin: 2,
+		charge: 0,
+		mass: 8.02248625*amu,
+		decays: [
+			['beryllium-8', 'electron antineutrino'], // beta-
+		],
+		halfLife: 0.8394,
+	},
+	{
 		name: 'beryllium-7',
 		category: 'atom',
 		symbol: {
@@ -623,7 +639,7 @@ const particleData = [
 		charge: 0,
 		mass: 8.0246073*amu,
 		decays: [
-			['beryllium-8', 'positron', 'electron neutrino'],
+			['beryllium-8', 'positron', 'electron neutrino'], // beta+
 		],
 		halfLife: 0.77,
 	},
@@ -844,7 +860,7 @@ const reactionData = [
 		reagents: ['proton', 'proton', 'electron'],
 		products: ['deuterium', 'electron neutrino'],
 	},
-	// + neutron interactions
+	// + neutron interactions; most are automatic, these are manual!
 	{
 		reagents: ['protium', 'neutron'],
 		products: ['deuterium'],
@@ -852,46 +868,6 @@ const reactionData = [
 	{
 		reagents: ['deuterium', 'neutron'],
 		products: ['tritium'],
-	},
-	{
-		reagents: ['helium-3', 'neutron'],
-		products: ['helium-4'],
-	},
-	{
-		reagents: ['beryllium-7', 'neutron'],
-		products: ['beryllium-8'],
-	},
-	{
-		reagents: ['carbon-12', 'neutron'],
-		products: ['carbon-13'],
-	},
-	{
-		reagents: ['nitrogen-13', 'neutron'],
-		products: ['nitrogen-14'],
-	},
-	{
-		reagents: ['nitrogen-14', 'neutron'],
-		products: ['nitrogen-15'],
-	},
-	{
-		reagents: ['oxygen-14', 'neutron'],
-		products: ['oxygen-15'],
-	},
-	{
-		reagents: ['oxygen-15', 'neutron'],
-		products: ['oxygen-16'],
-	},
-	{
-		reagents: ['oxygen-16', 'neutron'],
-		products: ['oxygen-17'],
-	},
-	{
-		reagents: ['oxygen-17', 'neutron'],
-		products: ['oxygen-18'],
-	},
-	{
-		reagents: ['fluorine-17', 'neutron'],
-		products: ['oxygen-18'],
 	},
 	// atom + atom
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_PEP_reaction

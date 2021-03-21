@@ -57,6 +57,17 @@ class Particle {
 		g.appendChild(this.textElement);
 		return g;
 	}
+	get hasHeavierIsotope(){
+		if (this.category !== 'atom')
+			return false;
+		const [elementName, massString] = this.name.split('-');
+		const mass = parseInt(massString);
+		// console.log(elementName, mass);
+		if (!isFinite(mass))
+			return false;
+		const targetName = elementName + '-' + (mass+1);
+		return particles.some(p => p.name === targetName) ? targetName : false;
+	}
 	/** radius for circle element */
 	get radius(){
 		return Math.max(0, Math.log(this.mass)/2+43); // todo: fine-tune this
@@ -143,7 +154,13 @@ class Reaction {
 	/** Are the inputs enough for this reaction? */
 	satisfies(){
 		const args = new Array(...arguments);
-		return this.reagents.every(reagent => args.includes(reagent));
+		for (const r of this.reagents){
+			const i = args.indexOf(r);
+			if (i === -1)
+				return false;
+			args.splice(i, 1);
+		}
+		return true;
 	}
 	static fromObject(o){
 		new Reaction(o.reagents.map(name => Particle.fromName(name)),
@@ -194,11 +211,12 @@ class Instance {
 		const interactable = instances.filter(i => i !== this
 			&& this.distanceTo(i) < interactionRadius);
 		for (const other of interactable){
+			// annihilation
 			if (this.type.antiparticle !== this.type
-				&& other.type.antiparticle === this.type){ // annihilation
+				&& other.type.antiparticle === this.type){
 				// DELETE
-				other.delete();
 				this.delete();
+				other.delete();
 				// CREATE
 				range(2).forEach(() => { // create two photons
 					new Instance(Particle.fromName('photon'),
@@ -206,6 +224,18 @@ class Instance {
 						(this.y + other.y)/2);
 				});
 				return true;
+			}
+			// neutron addition
+			const isoName = this.type.hasHeavierIsotope;
+			if (isoName && other.type.name === 'neutron'){
+				console.log('NEUTRON ADDITION!');
+				// DELETE
+				this.delete();
+				other.delete();
+				// CREATE
+				new Instance(Particle.fromName(isoName),
+					(this.x + other.x)/2,
+					(this.y + other.y)/2);
 			}
 		}
 		// other reactions
