@@ -920,6 +920,30 @@ const particleData = [
 		mass: 19.9924401762*amu,
 	},
 	{
+		name: 'neon-21',
+		category: 'atom',
+		symbol: {
+			char: 'Ne',
+			presup: '21',
+			presub: '10',
+		},
+		spin: 3/2,
+		charge: 0,
+		mass: 20.99384669*amu,
+	},
+	{
+		name: 'neon-22',
+		category: 'atom',
+		symbol: {
+			char: 'Ne',
+			presup: '22',
+			presub: '10',
+		},
+		spin: 0,
+		charge: 0,
+		mass: 21.991385110*amu,
+	},
+	{
 		name: 'magnesium-24',
 		category: 'atom',
 		symbol: {
@@ -1100,5 +1124,9 @@ const reactionData = [
 	{ // https://en.wikipedia.org/wiki/Alpha_process
 		reagents: ['neon-20', 'helium-4'],
 		products: ['magnesium-24', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/Neon-burning_process
+		reagents: ['neon-21', 'helium-4'],
+		products: ['magnesium-24', 'neutron'],
 	},
 ];
