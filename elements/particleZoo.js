@@ -74,14 +74,14 @@ class Particle {
 			const sup = createSvgElement('text');
 			sup.innerHTML = this.symbol.sup;
 			sup.classList.add('sup');
-			sup.setAttribute('transform', 'translate(15, -15)');
+			sup.setAttribute('transform', 'translate(18, -15)');
 			g.appendChild(sup);
 		}
 		if (this.symbol && this.symbol.sub){
 			const sub = createSvgElement('text');
 			sub.innerHTML = this.symbol.sub;
 			sub.classList.add('sub');
-			sub.setAttribute('transform', 'translate(15, 5)');
+			sub.setAttribute('transform', 'translate(18, 5)');
 			g.appendChild(sub);
 		}
 		if (this.symbol && this.symbol.overline){

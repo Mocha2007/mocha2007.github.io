@@ -436,6 +436,49 @@ const particleData = [
 		halfLife: 1.479e-10,
 	},
 	// isotopes/elements/atoms
+	// exotic
+	{
+		name: 'muonium',
+		category: 'atom',
+		symbol: {
+			char: 'Mu',
+		},
+		charge: 0,
+		mass: 106e6*eVc2, // guess
+		decays: [
+			['photon', 'photon', 'electron neutrino', 'muon antineutrino'],
+		],
+		halfLife: 2.2e-6,
+	},
+	{
+		name: 'antimuonium',
+		category: 'atom',
+		symbol: {
+			char: 'Mu',
+			overline: true,
+		},
+		charge: 0,
+		mass: 106e6*eVc2, // guess
+		decays: [
+			['photon', 'photon', 'electron antineutrino', 'muon neutrino'],
+		],
+		halfLife: 2.2e-6,
+	},
+	{
+		name: 'pionium',
+		category: 'atom',
+		symbol: {
+			char: 'Pi',
+		},
+		charge: 0,
+		mass: 280e6*eVc2, // guess
+		decays: [
+			['pion0', 'pion0'],
+			['photon', 'photon'],
+		],
+		halfLife: 2.85e-15,
+	},
+	// normal
 	{
 		name: 'protium',
 		category: 'atom',
@@ -503,6 +546,20 @@ const particleData = [
 ];
 
 const reactionData = [
+	// exotic atoms
+	{
+		reagents: ['muon', 'electron'],
+		products: ['muonium'],
+	},
+	{
+		reagents: ['antimuon', 'positron'],
+		products: ['antimuonium'],
+	},
+	{
+		reagents: ['pion+', 'pion-'],
+		products: ['pionium'],
+	},
+	// normal atoms
 	{
 		reagents: ['proton', 'electron'],
 		products: ['protium'],
