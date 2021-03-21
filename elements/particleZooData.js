@@ -628,6 +628,34 @@ const particleData = [
 		halfLife: 8.19e-19,
 	},
 	{
+		name: 'beryllium-9',
+		category: 'atom',
+		symbol: {
+			char: 'Be',
+			presup: '9',
+			presub: '4',
+		},
+		spin: 3/2,
+		charge: 0,
+		mass: 9.01218307*amu,
+	},
+	{
+		name: 'beryllium-10',
+		category: 'atom',
+		symbol: {
+			char: 'Be',
+			presup: '10',
+			presub: '4',
+		},
+		spin: 0,
+		charge: 0,
+		mass: 10.01353470*amu,
+		decays: [
+			['boron-10', 'electron antineutrino'], // beta-
+		],
+		halfLife: 1.51e6*year,
+	},
+	{
 		name: 'boron-8',
 		category: 'atom',
 		symbol: {
@@ -642,6 +670,46 @@ const particleData = [
 			['beryllium-8', 'positron', 'electron neutrino'], // beta+
 		],
 		halfLife: 0.77,
+	},
+	{
+		name: 'boron-10',
+		category: 'atom',
+		symbol: {
+			char: 'B',
+			presup: '10',
+			presub: '5',
+		},
+		spin: 3,
+		charge: 0,
+		mass: 10.012936862*amu,
+	},
+	{
+		name: 'boron-11',
+		category: 'atom',
+		symbol: {
+			char: 'B',
+			presup: '11',
+			presub: '5',
+		},
+		spin: 3/2,
+		charge: 0,
+		mass: 11.009305167*amu,
+	},
+	{
+		name: 'boron-12',
+		category: 'atom',
+		symbol: {
+			char: 'B',
+			presup: '12',
+			presub: '5',
+		},
+		spin: 1,
+		charge: 0,
+		mass: 12.0143526*amu,
+		decays: [
+			['carbon-12', 'electron antineutrino'], // beta-
+		],
+		halfLife: 0.0202,
 	},
 	{
 		name: 'carbon-12',
