@@ -10,11 +10,12 @@ svg {
 text {
 	fill: white;
 }
-.char, .overline {
+.button, .char, .overline {
 	font-size: 30px;
 }
 </style>
 <!-- BEGINNING -->
+<text class="button" onclick="onlyNucleons = !onlyNucleons;" y="20">Only p, n, e</text>
 <g id="canvas">
 </g>
 <!-- END -->
