@@ -1263,10 +1263,18 @@ const reactionData = [
 			[1, ['tritium', 'protium']], // https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Baryon%E2%80%93photon_ratio
 		],
 	},
+	{ // https://physics.stackexchange.com/questions/403063/can-you-combine-protium-and-tritium-to-produce-helium-4
+		reagents: ['tritium', 'protium'],
+		products: ['helium-3', 'neutron'],
+	},
 	{ // https://en.wikipedia.org/wiki/Deuterium%E2%80%93tritium_fusion
 		// https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Baryon%E2%80%93photon_ratio
 		reagents: ['tritium', 'deuterium'],
 		products: ['helium-4', 'neutron'],
+	},
+	{ // https://www.quora.com/Tritium-Tritium-reaction-besides-scarce-supply-would-it-not-be-easier-to-obtain-fusion-and-say-we-finally-obtained-fusion
+		reagents: ['tritium', 'tritium'],
+		products: ['helium-4', 'neutron', 'neutron'],
 	},
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_IV_branch
 		reagents: ['helium-3', 'protium'],
