@@ -576,4 +576,17 @@ const reactionData = [
 		reagents: ['helium-3', 'neutron'],
 		products: ['helium-4'],
 	},
+	// atom + atom
+	{
+		reagents: ['protium', 'deuterium'],
+		products: ['helium-3'],
+	},
+	{
+		reagents: ['protium', 'tritium'],
+		products: ['helium-4'],
+	},
+	{
+		reagents: ['deuterium', 'deuterium'],
+		products: ['helium-4'],
+	},
 ];
