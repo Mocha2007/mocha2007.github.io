@@ -962,7 +962,8 @@ const reactionData = [
 		reagents: ['deuterium', 'deuterium'],
 		products: ['helium-4', 'photon'],
 	},
-	{ // https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Baryon%E2%80%93photon_ratio
+	{ // https://en.wikipedia.org/wiki/Deuterium%E2%80%93tritium_fusion
+		// https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Baryon%E2%80%93photon_ratio
 		reagents: ['tritium', 'deuterium'],
 		products: ['helium-4', 'neutron'],
 	},
@@ -1000,6 +1001,10 @@ const reactionData = [
 		reagents: ['lithium-6', 'protium'],
 		products: ['beryllium-7', 'photon'],
 	},
+	{ // https://en.wikipedia.org/wiki/Aneutronic_fusion
+		reagents: ['lithium-6', 'deuterium'],
+		products: ['helium-4', 'helium-4'],
+	},
 	{ // https://en.wikipedia.org/wiki/Lithium_burning#6Li
 		reagents: ['lithium-7', 'protium'],
 		products: ['beryllium-8', 'photon'],
@@ -1019,6 +1024,10 @@ const reactionData = [
 	{ // https://en.wikipedia.org/wiki/Triple-alpha_process#Triple-alpha_process_in_stars
 		reagents: ['beryllium-8', 'helium-4'],
 		products: ['carbon-12', 'photon', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/Fusion_power#Proton,_boron-11
+		reagents: ['boron-11', 'proton'],
+		products: ['helium-4', 'helium-4', 'helium-4'],
 	},
 	{ // https://en.wikipedia.org/wiki/CNO_cycle#CNO-I
 		reagents: ['carbon-12', 'protium'],
