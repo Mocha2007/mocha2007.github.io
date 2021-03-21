@@ -213,7 +213,7 @@ class Instance {
 				// REACT!!!
 				this.delete();
 				// delete other reagents
-				reaction.reagents.forEach(r => {
+				reaction.reagents.filter(r => r !== this.type).forEach(r => {
 					interactable.filter(ii => ii.type === r)[0].delete();
 				});
 				// create products!!!
@@ -291,13 +291,10 @@ class Instance {
 
 /** @param {Event} event */
 function spawnClick(event){
-	const onlyBaryons = event.shiftKey;
-	const i = new Instance(
-		random.choice(particles.filter(p =>
-			(onlyBaryons ? p.category === 'baryon' : true) && p.category !== 'atom')),
-		event.clientX,
-		event.clientY
-	);
+	// const onlyBaryons = event.shiftKey;
+	const i = Instance.random();
+	i.x = event.clientX;
+	i.y = event.clientY;
 	console.log('spawned ' + i.type.name);
 }
 
