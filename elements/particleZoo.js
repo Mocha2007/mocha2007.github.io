@@ -245,12 +245,12 @@ class Instance {
 	delete(replace = true){
 		if (this.element)
 			this.element.remove();
-		// new particle
-		if (replace && document.getElementById('canvas').children.length < desiredParticles)
-			Instance.random();
 		// remove from instance list
 		const i = instances.indexOf(this);
 		instances.splice(i, 1);
+		// new particle
+		if (replace && document.getElementById('canvas').children.length < desiredParticles)
+			Instance.random();
 	}
 	/** @param {Instance} other */
 	distanceTo(other){
