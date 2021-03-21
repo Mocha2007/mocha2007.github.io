@@ -612,6 +612,90 @@ const particleData = [
 		mass: 12*amu,
 	},
 	{
+		name: 'carbon-13',
+		category: 'atom',
+		symbol: {
+			char: 'C',
+			presup: '13',
+			presub: '6',
+		},
+		spin: 0.5,
+		charge: 0,
+		mass: 13.00335483521*amu,
+	},
+	{
+		name: 'nitrogen-13',
+		category: 'atom',
+		symbol: {
+			char: 'N',
+			presup: '13',
+			presub: '6',
+		},
+		spin: 0.5,
+		charge: 0,
+		mass: 13.005738613*amu,
+		decays: [
+			['carbon-13', 'positron', 'electron neutrino'], // beta+
+		],
+		halfLife: 9.965*minute,
+	},
+	{
+		name: 'nitrogen-14',
+		category: 'atom',
+		symbol: {
+			char: 'N',
+			presup: '14',
+			presub: '7',
+		},
+		spin: 1,
+		charge: 0,
+		mass: 14.00307400446*amu,
+	},
+	{
+		name: 'nitrogen-15',
+		category: 'atom',
+		symbol: {
+			char: 'N',
+			presup: '15',
+			presub: '7',
+		},
+		spin: 0.5,
+		charge: 0,
+		mass: 15.0001088989*amu,
+	},
+	{
+		name: 'oxygen-14',
+		category: 'atom',
+		symbol: {
+			char: 'O',
+			presup: '14',
+			presub: '8',
+		},
+		spin: 0,
+		charge: 0,
+		mass: 14.008596706*amu,
+		decays: [
+			['nitrogen-14', 'positron', 'electron neutrino'], // beta+
+		],
+		halfLife: 70.62,
+	},
+	{
+		name: 'oxygen-15',
+		category: 'atom',
+		symbol: {
+			char: 'O',
+			presup: '15',
+			presub: '8',
+		},
+		spin: 0.5,
+		charge: 0,
+		mass: 15.0030656*amu,
+		decays: [
+			['nitrogen-15', 'positron', 'electron neutrino'], // beta+
+		],
+		halfLife: 2.034*minute,
+	},
+	{
 		name: 'oxygen-16',
 		category: 'atom',
 		symbol: {
@@ -622,6 +706,78 @@ const particleData = [
 		spin: 0,
 		charge: 0,
 		mass: 15.99491461960*amu,
+	},
+	{
+		name: 'oxygen-17',
+		category: 'atom',
+		symbol: {
+			char: 'O',
+			presup: '17',
+			presub: '8',
+		},
+		spin: 5/2,
+		charge: 0,
+		mass: 16.9991317566*amu,
+	},
+	{
+		name: 'oxygen-18',
+		category: 'atom',
+		symbol: {
+			char: 'O',
+			presup: '18',
+			presub: '8',
+		},
+		spin: 0,
+		charge: 0,
+		mass: 17.9991596128*amu,
+	},
+	{
+		name: 'fluorine-17',
+		category: 'atom',
+		symbol: {
+			char: 'F',
+			presup: '17',
+			presub: '9',
+		},
+		spin: 5/2,
+		charge: 0,
+		mass: 17.00209524*amu,
+		decays: [
+			['oxygen-17', 'positron', 'electron neutrino'], // beta+
+		],
+		halfLife: 64.37,
+	},
+	{
+		name: 'fluorine-18',
+		category: 'atom',
+		symbol: {
+			char: 'F',
+			presup: '18',
+			presub: '9',
+		},
+		spin: 1,
+		charge: 0,
+		mass: 18.0009373*amu,
+		decays: [
+			['oxygen-18', 'positron', 'electron neutrino'], // beta+
+		],
+		halfLife: 109.739*minute,
+	},
+	{
+		name: 'neon-18',
+		category: 'atom',
+		symbol: {
+			char: 'Ne',
+			presup: '18',
+			presub: '10',
+		},
+		spin: 0,
+		charge: 0,
+		mass: 18.0057087*amu,
+		decays: [
+			['fluorine-18', 'positron', 'electron neutrino'], // beta+
+		],
+		halfLife: 1.6642,
 	},
 ];
 
@@ -666,16 +822,8 @@ const reactionData = [
 		products: ['deuterium', 'electron neutrino'],
 	},
 	{ // https://en.wikipedia.org/wiki/Deuterium_fusion
-		reagents: ['protium', 'deuterium'],
+		reagents: ['deuterium', 'protium'],
 		products: ['helium-3', 'photon'],
-	},
-	{ // uncertain
-		reagents: ['protium', 'tritium'],
-		products: ['helium-4'],
-	},
-	{ // uncertain
-		reagents: ['deuterium', 'deuterium'],
-		products: ['helium-4'],
 	},
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_IV_branch
 		reagents: ['helium-3', 'protium'],
@@ -686,8 +834,16 @@ const reactionData = [
 		products: ['helium-4', 'protium', 'protium'],
 	},
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_II_branch
-		reagents: ['helium-3', 'helium-4'],
+		reagents: ['helium-4', 'helium-3'],
 		products: ['beryllium-7', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/Triple-alpha_process#Triple-alpha_process_in_stars
+		reagents: ['helium-4', 'helium-4'],
+		products: ['beryllium-8'],
+	},
+	{ // https://en.wikipedia.org/wiki/Lithium_burning#6Li
+		reagents: ['lithium-7', 'proton'],
+		products: ['beryllium-8'],
 	},
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_II_branch
 		reagents: ['lithium-7', 'protium'],
@@ -705,8 +861,44 @@ const reactionData = [
 		reagents: ['beryllium-8', 'helium-4'],
 		products: ['carbon-12', 'photon', 'photon'],
 	},
+	{ // https://en.wikipedia.org/wiki/CNO_cycle#CNO-I
+		reagents: ['carbon-12', 'protium'],
+		products: ['nitrogen-13', 'photon'],
+	},
 	{ // https://en.wikipedia.org/wiki/Triple-alpha_process#Triple-alpha_process_in_stars
 		reagents: ['carbon-12', 'helium-4'],
 		products: ['oxygen-16', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/CNO_cycle#CNO-I
+		reagents: ['carbon-13', 'protium'],
+		products: ['nitrogen-14', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/CNO_cycle#HCNO-I
+		reagents: ['nitrogen-13', 'protium'],
+		products: ['oxygen-14', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/CNO_cycle#CNO-I
+		reagents: ['nitrogen-14', 'protium'],
+		products: ['oxygen-15', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/CNO_cycle#CNO-I
+		reagents: ['nitrogen-15', 'protium'],
+		products: ['carbon-12', 'helium-4'],
+	},
+	{ // https://en.wikipedia.org/wiki/CNO_cycle#CNO-II
+		reagents: ['oxygen-16', 'protium'],
+		products: ['fluorine-17', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/CNO_cycle#CNO-II
+		reagents: ['oxygen-17', 'protium'],
+		products: ['nitrogen-14', 'helium-4'],
+	},
+	{ // https://en.wikipedia.org/wiki/CNO_cycle#HCNO-II
+		reagents: ['fluorine-17', 'protium'],
+		products: ['neon-18', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/CNO_cycle#HCNO-II
+		reagents: ['fluorine-18', 'protium'],
+		products: ['oxygen-15', 'helium-4'],
 	},
 ];
