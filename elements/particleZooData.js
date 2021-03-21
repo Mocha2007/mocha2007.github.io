@@ -793,6 +793,22 @@ const particleData = [
 		mass: 15.0001088989*amu,
 	},
 	{
+		name: 'nitrogen-16',
+		category: 'atom',
+		symbol: {
+			char: 'N',
+			presup: '16',
+			presub: '7',
+		},
+		spin: 2,
+		charge: 0,
+		mass: 16.0061019*amu,
+		decays: [
+			['oxygen-16', 'electron antineutrino'], // beta-
+		],
+		halfLife: 7.13,
+	},
+	{
 		name: 'oxygen-14',
 		category: 'atom',
 		symbol: {
@@ -861,6 +877,22 @@ const particleData = [
 		mass: 17.9991596128*amu,
 	},
 	{
+		name: 'oxygen-19',
+		category: 'atom',
+		symbol: {
+			char: 'O',
+			presup: '19',
+			presub: '8',
+		},
+		spin: 5/2,
+		charge: 0,
+		mass: 19.0035780*amu,
+		decays: [
+			['fluorine-19', 'electron antineutrino'], // beta-
+		],
+		halfLife: 7.13,
+	},
+	{
 		name: 'fluorine-17',
 		category: 'atom',
 		symbol: {
@@ -905,6 +937,22 @@ const particleData = [
 		mass: 18.9984031629*amu,
 	},
 	{
+		name: 'fluorine-20',
+		category: 'atom',
+		symbol: {
+			char: 'F',
+			presup: '20',
+			presub: '9',
+		},
+		spin: 2,
+		charge: 0,
+		mass: 19.99998125*amu,
+		decays: [
+			['neon-20', 'electron antineutrino'], // beta-
+		],
+		halfLife: 11.163,
+	},
+	{
 		name: 'neon-18',
 		category: 'atom',
 		symbol: {
@@ -919,6 +967,22 @@ const particleData = [
 			['fluorine-18', 'positron', 'electron neutrino'], // beta+
 		],
 		halfLife: 1.6642,
+	},
+	{
+		name: 'neon-19',
+		category: 'atom',
+		symbol: {
+			char: 'Ne',
+			presup: '19',
+			presub: '10',
+		},
+		spin: 1/2,
+		charge: 0,
+		mass: 19.00188090*amu,
+		decays: [
+			['fluorine-19', 'positron', 'electron neutrino'], // beta+
+		],
+		halfLife: 17.274,
 	},
 	{
 		name: 'neon-20',
@@ -955,6 +1019,22 @@ const particleData = [
 		spin: 0,
 		charge: 0,
 		mass: 21.991385110*amu,
+	},
+	{
+		name: 'neon-23',
+		category: 'atom',
+		symbol: {
+			char: 'Ne',
+			presup: '23',
+			presub: '10',
+		},
+		spin: 1/2,
+		charge: 0,
+		mass: 19.00188090*amu,
+		decays: [
+			['sodium-23', 'electron antineutrino'], // beta-
+		],
+		halfLife: 17.274,
 	},
 	{
 		name: 'sodium-23',
@@ -1399,6 +1479,7 @@ const reactionData = [
 ];
 /* stellar nucleosynthesis pages:
 	DONE:
+		- isotopes of elements before sodium
 		- Deuterium fusion
 		- proton-proton chain
 		- CNO cycle
