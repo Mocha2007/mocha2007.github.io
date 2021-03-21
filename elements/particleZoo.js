@@ -9,6 +9,7 @@ const interactionRadius = 50; // todo: temporary
 const reactionCooldown = 5; // s
 let onlyNucleons = true;
 let onlyProtium = false;
+const debug = false;
 
 /** @type {Particle[]} */
 const particles = [];
@@ -252,6 +253,7 @@ class Instance {
 		this.id = 'particle'+random.random();
 		instances.push(this);
 		this.createElement();
+		this.timeOutId = 0;
 	}
 	get element(){
 		return document.getElementById(this.id);
@@ -276,7 +278,9 @@ class Instance {
 		if (0 < this.cooldown) // can't react during cooldown
 			return false;
 		const interactable = instances.filter(i => i !== this
-			&& this.distanceTo(i) < interactionRadius);
+			&& this.lazyDistanceTo(i) < interactionRadius);
+		if (!interactable.length)
+			return; // nothing to interact with
 		for (const other of interactable){
 			// annihilation
 			if (this.type.antiparticle !== this.type
@@ -295,7 +299,8 @@ class Instance {
 			// neutron addition
 			const isoName = this.type.hasHeavierIsotope;
 			if (isoName && other.type.name === 'neutron'){
-				console.log('NEUTRON ADDITION!');
+				if (debug)
+					console.log('NEUTRON ADDITION!');
 				// DELETE
 				this.delete();
 				other.delete();
@@ -313,8 +318,9 @@ class Instance {
 		// other reactions
 		for (const reaction of reactions){
 			if (reaction.satisfies(this.type, ...interactable.map(i => i.type))){
-				console.log(reaction.reagents.map(r => r.name).join(' + '),
-					'=>', reaction.chooseProbabilisticProducts.map(r => r.name).join(' + '));
+				if (debug)
+					console.log(reaction.reagents.map(r => r.name).join(' + '),
+						'=>', reaction.chooseProbabilisticProducts.map(r => r.name).join(' + '));
 				// REACT!!!
 				// DELETE
 				this.delete();
@@ -342,7 +348,8 @@ class Instance {
 		this.tick();
 	}
 	decay(){
-		// console.log('DECAY!!!');
+		if (debug)
+			console.log('DECAY!!!');
 		// delete without replacement
 		this.delete(false);
 		// choose random decay mode
@@ -351,26 +358,36 @@ class Instance {
 		pp.map(p => new Instance(p, this.x, this.y));
 	}
 	delete(replace = true){
+		// clear timeout
+		clearTimeout(this.timeOutId);
+		// delete svg element
 		if (this.element)
 			this.element.remove();
 		// remove from instance list
 		const i = instances.indexOf(this);
 		instances.splice(i, 1);
-		// new particle
+		// new particle, if necessary
 		if (replace && document.getElementById('canvas').children.length < desiredParticles)
 			Instance.random();
 	}
-	/** @param {Instance} other */
+	/** for exact difference; for approximation use lazyDistanceTo
+	 * @param {Instance} other
+	*/
 	distanceTo(other){
 		return Math.sqrt(Math.pow(this.x - other.x, 2) + Math.pow(this.y - other.y, 2));
+	}
+	/** for when the exact distance isn't strictly necessary
+	 * using abs instead of pow seemed to offer no performance improvement
+	 * @param {Instance} other
+	*/
+	lazyDistanceTo(other){
+		return Math.pow(this.x - other.x, 2) + Math.pow(this.y - other.y, 2);
 	}
 	tick(){
 		this.cooldown--;
 		const c = this.type.name === 'photon' ? 20 : 1;
 		this.x += this.vx*c;
 		this.y += this.vy*c;
-		if (!this.element) // should never trigger, but ...
-			return;
 		this.element.setAttribute('transform', `translate(${this.x}, ${this.y})`);
 		if (this.outOfBounds){
 			if (this.type.category === 'atom')
@@ -381,7 +398,7 @@ class Instance {
 		if (!this.type.stable && random.random() < 1/1000) // todo
 			this.decay();
 		else if (!this.checkreactions())
-			setTimeout(() => this.tick(), 1000/fps);
+			this.timeOutId = setTimeout(() => this.tick(), 1000/fps);
 	}
 	static random(){
 		if (onlyProtium)
@@ -409,7 +426,8 @@ function spawnClick(event){
 	const i = Instance.random();
 	i.x = event.clientX;
 	i.y = event.clientY;
-	// console.log('spawned ' + i.type.name);
+	if (debug)
+		console.log('spawned ' + i.type.name);
 }
 
 /** main function */
