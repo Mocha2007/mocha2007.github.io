@@ -3,7 +3,7 @@
 'use strict';
 
 let fps = 30; // todo: temporary
-const desiredParticles = 20;
+const desiredParticles = 50;
 const interactionRadius = 50; // todo: temporary
 let onlyNucleons = true;
 let onlyProtium = false;
@@ -347,7 +347,7 @@ function init(){
 	// read reaction data
 	reactionData.forEach(r => Reaction.fromObject(r));
 	// test
-	range(20).forEach(() => Instance.random());
+	range(desiredParticles).forEach(() => Instance.random());
 	// done!
 	console.info('particleZoo.js loaded.');
 }
