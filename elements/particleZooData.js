@@ -1048,7 +1048,7 @@ const reactionData = [
 	},
 	{
 		reagents: ['deuterium', 'neutron'],
-		products: ['tritium'],
+		products: ['tritium', 'photon'],
 	},
 	// atom + atom
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_PEP_reaction
