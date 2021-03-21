@@ -925,8 +925,8 @@ const reactionData = [
 		products: ['protium'],
 	},
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain
-		reagents: ['proton', 'proton', 'electron'],
-		products: ['deuterium', 'electron neutrino'],
+		reagents: ['proton', 'proton'],
+		products: ['deuterium', 'positron', 'electron neutrino'],
 	},
 	// + neutron interactions; most are automatic, these are manual!
 	{
@@ -971,11 +971,11 @@ const reactionData = [
 		products: ['beryllium-7', 'photon'],
 	},
 	/* FORBIDDEN - THIS WILL CLONE ITSELF!!!
+	*/
 	{ // https://en.wikipedia.org/wiki/Triple-alpha_process#Triple-alpha_process_in_stars
 		reagents: ['helium-4', 'helium-4'],
 		products: ['beryllium-8'],
 	},
-	*/
 	{ // https://en.wikipedia.org/wiki/Lithium_burning#6Li
 		reagents: ['lithium-7', 'protium'],
 		products: ['beryllium-8'],

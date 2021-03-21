@@ -305,7 +305,7 @@ class Instance {
 			else
 				return this.delete();
 		}
-		if (!this.type.stable && random.random() < 1/100) // todo
+		if (!this.type.stable && random.random() < 1/1000) // todo
 			this.decay();
 		else if (!this.checkreactions())
 			setTimeout(() => this.tick(), 1000/fps);
