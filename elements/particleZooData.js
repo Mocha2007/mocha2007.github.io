@@ -779,6 +779,18 @@ const particleData = [
 		],
 		halfLife: 1.6642,
 	},
+	{
+		name: 'neon-20',
+		category: 'atom',
+		symbol: {
+			char: 'Ne',
+			presup: '20',
+			presub: '10',
+		},
+		spin: 0,
+		charge: 0,
+		mass: 19.9924401762*amu,
+	},
 ];
 
 const reactionData = [
@@ -804,6 +816,7 @@ const reactionData = [
 		reagents: ['proton', 'proton', 'electron'],
 		products: ['deuterium', 'electron neutrino'],
 	},
+	// + neutron interactions
 	{
 		reagents: ['protium', 'neutron'],
 		products: ['deuterium'],
@@ -815,6 +828,42 @@ const reactionData = [
 	{
 		reagents: ['helium-3', 'neutron'],
 		products: ['helium-4'],
+	},
+	{
+		reagents: ['beryllium-7', 'neutron'],
+		products: ['beryllium-8'],
+	},
+	{
+		reagents: ['carbon-12', 'neutron'],
+		products: ['carbon-13'],
+	},
+	{
+		reagents: ['nitrogen-13', 'neutron'],
+		products: ['nitrogen-14'],
+	},
+	{
+		reagents: ['nitrogen-14', 'neutron'],
+		products: ['nitrogen-15'],
+	},
+	{
+		reagents: ['oxygen-14', 'neutron'],
+		products: ['oxygen-15'],
+	},
+	{
+		reagents: ['oxygen-15', 'neutron'],
+		products: ['oxygen-16'],
+	},
+	{
+		reagents: ['oxygen-16', 'neutron'],
+		products: ['oxygen-17'],
+	},
+	{
+		reagents: ['oxygen-17', 'neutron'],
+		products: ['oxygen-18'],
+	},
+	{
+		reagents: ['fluorine-17', 'neutron'],
+		products: ['fluorine-18'],
 	},
 	// atom + atom
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_PEP_reaction
@@ -842,7 +891,7 @@ const reactionData = [
 		products: ['beryllium-8'],
 	},
 	{ // https://en.wikipedia.org/wiki/Lithium_burning#6Li
-		reagents: ['lithium-7', 'proton'],
+		reagents: ['lithium-7', 'protium'],
 		products: ['beryllium-8'],
 	},
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_II_branch
@@ -888,6 +937,10 @@ const reactionData = [
 	{ // https://en.wikipedia.org/wiki/CNO_cycle#CNO-II
 		reagents: ['oxygen-16', 'protium'],
 		products: ['fluorine-17', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/Alpha_process
+		reagents: ['oxygen-16', 'helium-4'],
+		products: ['neon-20', 'photon'],
 	},
 	{ // https://en.wikipedia.org/wiki/CNO_cycle#CNO-II
 		reagents: ['oxygen-17', 'protium'],
