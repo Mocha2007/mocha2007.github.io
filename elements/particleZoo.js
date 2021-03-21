@@ -196,13 +196,13 @@ class Instance {
 		for (const other of interactable){
 			if (this.type.antiparticle !== this.type
 				&& other.type.antiparticle === this.type){ // annihilation
+				other.delete();
+				this.delete();
 				range(2).forEach(() => { // create two photons
 					new Instance(Particle.fromName('photon'),
 						(this.x + other.x)/2,
 						(this.y + other.y)/2);
 				});
-				other.delete();
-				this.delete();
 				// console.log('ANNIHILATION!!!');
 				return true;
 			}
@@ -210,6 +210,8 @@ class Instance {
 		// other reactions
 		for (const reaction of reactions){
 			if (reaction.satisfies(this.type, ...interactable.map(i => i.type))){
+				console.log(reaction.reagents.map(r => r.name).join(' + '),
+					'=>', reaction.products.map(r => r.name).join(' + '));
 				// REACT!!!
 				this.delete();
 				// delete other reagents
@@ -233,12 +235,12 @@ class Instance {
 	}
 	decay(){
 		// console.log('DECAY!!!');
+		// delete without replacement
+		this.delete(false);
 		// choose random decay mode
 		/** @type {Particle[]} */
 		const pp = random.choice(this.type.decays).map(name => Particle.fromName(name));
 		pp.map(p => new Instance(p, this.x, this.y));
-		// delete without replacement
-		this.delete(false);
 	}
 	delete(replace = true){
 		if (this.element)
