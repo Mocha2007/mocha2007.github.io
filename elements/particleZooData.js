@@ -956,6 +956,30 @@ const particleData = [
 		charge: 0,
 		mass: 23.985041697*amu,
 	},
+	{
+		name: 'magnesium-25',
+		category: 'atom',
+		symbol: {
+			char: 'Mg',
+			presup: '25',
+			presub: '12',
+		},
+		spin: 5/2,
+		charge: 0,
+		mass: 24.98583696*amu,
+	},
+	{
+		name: 'magnesium-26',
+		category: 'atom',
+		symbol: {
+			char: 'Mg',
+			presup: '26',
+			presub: '12',
+		},
+		spin: 0,
+		charge: 0,
+		mass: 25.98259297*amu,
+	},
 ];
 
 const reactionData = [
@@ -1100,6 +1124,10 @@ const reactionData = [
 		reagents: ['carbon-13', 'protium'],
 		products: ['nitrogen-14', 'photon'],
 	},
+	{ // https://en.wikipedia.org/wiki/S-process#The_s-process_in_stars
+		reagents: ['carbon-13', 'helium-4'],
+		products: ['oxygen-16', 'neutron'],
+	},
 	{ // https://en.wikipedia.org/wiki/CNO_cycle#HCNO-I
 		reagents: ['nitrogen-13', 'protium'],
 		products: ['oxygen-14', 'photon'],
@@ -1148,5 +1176,9 @@ const reactionData = [
 	{ // https://en.wikipedia.org/wiki/Neon-burning_process
 		reagents: ['neon-21', 'helium-4'],
 		products: ['magnesium-24', 'neutron'],
+	},
+	{ // https://en.wikipedia.org/wiki/S-process#The_s-process_in_stars
+		reagents: ['neon-22', 'helium-4'],
+		products: ['magnesium-25', 'neutron'],
 	},
 ];
