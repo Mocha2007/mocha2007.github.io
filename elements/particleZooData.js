@@ -12,6 +12,9 @@ const hour = 60*minute;
 const day = 24*hour;
 const year = 365.2425*day;
 
+const betaMinus = ['electron antineutrino'];
+const betaPlus = ['positron', 'electron neutrino'];
+
 const particleData = [
 	// bosons
 	{
@@ -164,7 +167,7 @@ const particleData = [
 			['pion+', 'pion0', 'pion0', 'tau antineutrino'],
 			['pion-', 'pion0', 'pion0', 'tau antineutrino'],
 			['pion+', 'pion+', 'pion-', 'tau antineutrino'],
-			['tau antineutrino', 'positron', 'electron neutrino'],
+			['tau antineutrino', ...betaPlus],
 			['tau antineutrino', 'antimuon', 'muon neutrino'],
 		],
 	},
@@ -292,7 +295,7 @@ const particleData = [
 		decays: [
 			['antimuon', 'muon neutrino'],
 			['pion+', 'pion0'],
-			['pion0', 'positron', 'electron neutrino'],
+			['pion0', ...betaPlus],
 		],
 		halfLife: 3.32e-21,
 	},
@@ -343,9 +346,9 @@ const particleData = [
 		mass: 497.614e6*eVc2,
 		decays: [
 			['pion+', 'electron', 'electron neutrino'],
-			['pion-', 'positron', 'electron neutrino'],
+			['pion-', ...betaPlus],
 			['pion+', 'muon', 'muon neutrino'],
-			['pion-', 'antimuon', 'muon neutrino'],
+			['pion-', 'antimuon', 'muon antineutrino'],
 			['pion0', 'pion0', 'pion0'],
 			['pion+', 'pion0', 'pion-'],
 		],
@@ -516,7 +519,7 @@ const particleData = [
 		charge: 0,
 		mass: 3.01604928199*amu,
 		decays: [
-			['helium-3', 'electron antineutrino'],
+			['helium-3', ...betaMinus],
 		],
 		halfLife: 12.32*year,
 	},
@@ -596,7 +599,7 @@ const particleData = [
 		charge: 0,
 		mass: 8.02248625*amu,
 		decays: [
-			['beryllium-8', 'electron antineutrino'], // beta-
+			['beryllium-8', ...betaMinus],
 		],
 		halfLife: 0.8394,
 	},
@@ -652,7 +655,7 @@ const particleData = [
 		charge: 0,
 		mass: 10.01353470*amu,
 		decays: [
-			['boron-10', 'electron antineutrino'], // beta-
+			['boron-10', ...betaMinus],
 		],
 		halfLife: 1.51e6*year,
 	},
@@ -668,7 +671,7 @@ const particleData = [
 		charge: 0,
 		mass: 8.0246073*amu,
 		decays: [
-			['beryllium-8', 'positron', 'electron neutrino'], // beta+
+			['beryllium-8', ...betaPlus],
 		],
 		halfLife: 0.77,
 	},
@@ -708,7 +711,7 @@ const particleData = [
 		charge: 0,
 		mass: 12.0143526*amu,
 		decays: [
-			['carbon-12', 'electron antineutrino'], // beta-
+			['carbon-12', ...betaMinus],
 		],
 		halfLife: 0.0202,
 	},
@@ -748,7 +751,7 @@ const particleData = [
 		charge: 0,
 		mass: 14.003241988*amu,
 		decays: [
-			['nitrogen-14', 'electron antineutrino'], // beta-
+			['nitrogen-14', ...betaMinus],
 		],
 		halfLife: 5730*year,
 	},
@@ -764,7 +767,7 @@ const particleData = [
 		charge: 0,
 		mass: 13.005738613*amu,
 		decays: [
-			['carbon-13', 'positron', 'electron neutrino'], // beta+
+			['carbon-13', ...betaPlus],
 		],
 		halfLife: 9.965*minute,
 	},
@@ -804,7 +807,7 @@ const particleData = [
 		charge: 0,
 		mass: 16.0061019*amu,
 		decays: [
-			['oxygen-16', 'electron antineutrino'], // beta-
+			['oxygen-16', ...betaMinus], // beta-
 		],
 		halfLife: 7.13,
 	},
@@ -820,7 +823,7 @@ const particleData = [
 		charge: 0,
 		mass: 14.008596706*amu,
 		decays: [
-			['nitrogen-14', 'positron', 'electron neutrino'], // beta+
+			['nitrogen-14', ...betaPlus],
 		],
 		halfLife: 70.62,
 	},
@@ -836,7 +839,7 @@ const particleData = [
 		charge: 0,
 		mass: 15.0030656*amu,
 		decays: [
-			['nitrogen-15', 'positron', 'electron neutrino'], // beta+
+			['nitrogen-15', ...betaPlus],
 		],
 		halfLife: 2.034*minute,
 	},
@@ -888,7 +891,7 @@ const particleData = [
 		charge: 0,
 		mass: 19.0035780*amu,
 		decays: [
-			['fluorine-19', 'electron antineutrino'], // beta-
+			['fluorine-19', ...betaMinus],
 		],
 		halfLife: 7.13,
 	},
@@ -904,7 +907,7 @@ const particleData = [
 		charge: 0,
 		mass: 17.00209524*amu,
 		decays: [
-			['oxygen-17', 'positron', 'electron neutrino'], // beta+
+			['oxygen-17', ...betaPlus],
 		],
 		halfLife: 64.37,
 	},
@@ -920,7 +923,7 @@ const particleData = [
 		charge: 0,
 		mass: 18.0009373*amu,
 		decays: [
-			['oxygen-18', 'positron', 'electron neutrino'], // beta+
+			['oxygen-18', ...betaPlus],
 		],
 		halfLife: 109.739*minute,
 	},
@@ -948,7 +951,7 @@ const particleData = [
 		charge: 0,
 		mass: 19.99998125*amu,
 		decays: [
-			['neon-20', 'electron antineutrino'], // beta-
+			['neon-20', ...betaMinus],
 		],
 		halfLife: 11.163,
 	},
@@ -964,7 +967,7 @@ const particleData = [
 		charge: 0,
 		mass: 18.0057087*amu,
 		decays: [
-			['fluorine-18', 'positron', 'electron neutrino'], // beta+
+			['fluorine-18', ...betaPlus],
 		],
 		halfLife: 1.6642,
 	},
@@ -980,7 +983,7 @@ const particleData = [
 		charge: 0,
 		mass: 19.00188090*amu,
 		decays: [
-			['fluorine-19', 'positron', 'electron neutrino'], // beta+
+			['fluorine-19', ...betaPlus],
 		],
 		halfLife: 17.274,
 	},
@@ -1032,7 +1035,7 @@ const particleData = [
 		charge: 0,
 		mass: 19.00188090*amu,
 		decays: [
-			['sodium-23', 'electron antineutrino'], // beta-
+			['sodium-23', ...betaMinus],
 		],
 		halfLife: 17.274,
 	},
@@ -1060,7 +1063,7 @@ const particleData = [
 		charge: 0,
 		mass: 22.99412394*amu,
 		decays: [
-			['sodium-23', 'positron', 'electron neutrino'], // beta+
+			['sodium-23', ...betaPlus],
 		],
 		halfLife: 11.317,
 	},
@@ -1136,7 +1139,7 @@ const particleData = [
 		charge: 0,
 		mass: 29.97831349*amu,
 		decays: [
-			['silicon-30', 'positron', 'electron neutrino'], // beta+
+			['silicon-30', ...betaPlus],
 		],
 		halfLife: 2.498*minute,
 	},
@@ -1164,7 +1167,7 @@ const particleData = [
 		charge: 0,
 		mass: 30.97955701*amu,
 		decays: [
-			['phosphorus-31', 'positron', 'electron neutrino'], // beta+
+			['phosphorus-31', ...betaPlus],
 		],
 		halfLife: 2.5534,
 	},
