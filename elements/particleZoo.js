@@ -213,7 +213,7 @@ class Instance {
 				// REACT!!!
 				this.delete();
 				// delete other reagents
-				reaction.reagents.filter(r => r !== this.type).forEach(r => {
+				reaction.reagents.forEach(r => {
 					interactable.filter(ii => ii.type === r)[0].delete();
 				});
 				// create products!!!
