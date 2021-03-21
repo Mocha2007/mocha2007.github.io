@@ -903,6 +903,18 @@ const particleData = [
 		charge: 0,
 		mass: 19.9924401762*amu,
 	},
+	{
+		name: 'magnesium-24',
+		category: 'atom',
+		symbol: {
+			char: 'Mg',
+			presup: '24',
+			presub: '12',
+		},
+		spin: 0,
+		charge: 0,
+		mass: 23.985041697*amu,
+	},
 ];
 
 const reactionData = [
@@ -1008,6 +1020,10 @@ const reactionData = [
 		reagents: ['carbon-12', 'helium-4'],
 		products: ['oxygen-16', 'photon'],
 	},
+	{ // https://en.wikipedia.org/wiki/Carbon-burning_process#Fusion_reactions
+		reagents: ['carbon-12', 'carbon-12'],
+		products: ['magnesium-24', 'photon'],
+	},
 	{ // https://en.wikipedia.org/wiki/CNO_cycle#CNO-I
 		reagents: ['carbon-13', 'protium'],
 		products: ['nitrogen-14', 'photon'],
@@ -1043,5 +1059,9 @@ const reactionData = [
 	{ // https://en.wikipedia.org/wiki/CNO_cycle#HCNO-II
 		reagents: ['fluorine-18', 'protium'],
 		products: ['oxygen-15', 'helium-4'],
+	},
+	{ // https://en.wikipedia.org/wiki/Alpha_process
+		reagents: ['neon-20', 'helium-4'],
+		products: ['magnesium-24', 'photon'],
 	},
 ];
