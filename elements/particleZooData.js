@@ -893,6 +893,18 @@ const particleData = [
 		halfLife: 109.739*minute,
 	},
 	{
+		name: 'fluorine-19',
+		category: 'atom',
+		symbol: {
+			char: 'F',
+			presup: '19',
+			presub: '9',
+		},
+		spin: 1/2,
+		charge: 0,
+		mass: 18.9984031629*amu,
+	},
+	{
 		name: 'neon-18',
 		category: 'atom',
 		symbol: {
@@ -945,6 +957,34 @@ const particleData = [
 		mass: 21.991385110*amu,
 	},
 	{
+		name: 'sodium-23',
+		category: 'atom',
+		symbol: {
+			char: 'Na',
+			presup: '23',
+			presub: '11',
+		},
+		spin: 3/2,
+		charge: 0,
+		mass: 22.9897692820*amu,
+	},
+	{
+		name: 'magnesium-23',
+		category: 'atom',
+		symbol: {
+			char: 'Mg',
+			presup: '23',
+			presub: '12',
+		},
+		spin: 3/2,
+		charge: 0,
+		mass: 22.99412394*amu,
+		decays: [
+			['sodium-23', 'positron', 'electron neutrino'], // beta+
+		],
+		halfLife: 11.317,
+	},
+	{
 		name: 'magnesium-24',
 		category: 'atom',
 		symbol: {
@@ -993,6 +1033,62 @@ const particleData = [
 		mass: 27.976926535*amu,
 	},
 	{
+		name: 'silicon-30',
+		category: 'atom',
+		symbol: {
+			char: 'Si',
+			presup: '30',
+			presub: '14',
+		},
+		spin: 0,
+		charge: 0,
+		mass: 29.973770137*amu,
+	},
+	{
+		name: 'phosphorus-30',
+		category: 'atom',
+		symbol: {
+			char: 'P',
+			presup: '30',
+			presub: '15',
+		},
+		spin: 1,
+		charge: 0,
+		mass: 29.97831349*amu,
+		decays: [
+			['silicon-30', 'positron', 'electron neutrino'], // beta+
+		],
+		halfLife: 2.498*minute,
+	},
+	{
+		name: 'phosphorus-31',
+		category: 'atom',
+		symbol: {
+			char: 'P',
+			presup: '31',
+			presub: '15',
+		},
+		spin: 1/2,
+		charge: 0,
+		mass: 30.9737619986*amu,
+	},
+	{
+		name: 'sulfur-31',
+		category: 'atom',
+		symbol: {
+			char: 'S',
+			presup: '31',
+			presub: '16',
+		},
+		spin: 1/2,
+		charge: 0,
+		mass: 30.97955701*amu,
+		decays: [
+			['phosphorus-31', 'positron', 'electron neutrino'], // beta+
+		],
+		halfLife: 2.5534,
+	},
+	{
 		name: 'sulfur-32',
 		category: 'atom',
 		symbol: {
@@ -1033,6 +1129,10 @@ const reactionData = [
 		products: ['pionium'],
 	},
 	// normal atoms
+	{ // https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Neutron%E2%80%93proton_ratio
+		reagents: ['proton', 'electron antineutrino'],
+		products: ['neutron', 'positron'],
+	},
 	{
 		reagents: ['proton', 'electron'],
 		products: ['protium'],
@@ -1040,6 +1140,14 @@ const reactionData = [
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain
 		reagents: ['proton', 'proton'],
 		products: ['deuterium', 'positron', 'electron neutrino'],
+	},
+	{ // https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Neutron%E2%80%93proton_ratio
+		reagents: ['neutron', 'electron neutrino'],
+		products: ['proton', 'electron'],
+	},
+	{ // https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Neutron%E2%80%93proton_ratio
+		reagents: ['neutron', 'positron'],
+		products: ['proton', 'electron antineutrino'],
 	},
 	// + neutron interactions; most are automatic, these are manual!
 	{ // https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Baryon%E2%80%93photon_ratio
@@ -1064,9 +1172,13 @@ const reactionData = [
 		reagents: ['deuterium', 'protium'],
 		products: ['helium-3', 'photon'],
 	},
-	{ // https://en.wikipedia.org/wiki/Deuterium_fusion#Other_reactions
+	{
 		reagents: ['deuterium', 'deuterium'],
-		products: ['helium-4', 'photon'],
+		products: [
+			[1, ['helium-4', 'photon']], // https://en.wikipedia.org/wiki/Deuterium_fusion#Other_reactions
+			[1, ['helium-3', 'neutron']], // https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Baryon%E2%80%93photon_ratio
+			[1, ['tritium', 'protium']], // https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Baryon%E2%80%93photon_ratio
+		],
 	},
 	{ // https://en.wikipedia.org/wiki/Deuterium%E2%80%93tritium_fusion
 		// https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Baryon%E2%80%93photon_ratio
@@ -1077,9 +1189,12 @@ const reactionData = [
 		reagents: ['helium-3', 'protium'],
 		products: ['helium-4', 'positron', 'electron neutrino'],
 	},
-	{ // https://en.wikipedia.org/wiki/Deuterium_fusion#Other_reactions
+	{
 		reagents: ['helium-3', 'deuterium'],
-		products: ['lithium-5', 'photon'],
+		products: [
+			[1, ['helium-4', 'protium']], // https://en.wikipedia.org/wiki/Aneutronic_fusion#Candidate_reactions
+			[1, ['lithium-5', 'photon']], // https://en.wikipedia.org/wiki/Deuterium_fusion#Other_reactions
+		],
 	},
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_I_branch
 		reagents: ['helium-3', 'helium-3'],
@@ -1101,9 +1216,12 @@ const reactionData = [
 		reagents: ['helium-4', 'helium-4'],
 		products: ['beryllium-8', 'photon'],
 	},
-	{ // https://en.wikipedia.org/wiki/Lithium_burning#6Li
+	{
 		reagents: ['lithium-6', 'protium'],
-		products: ['beryllium-7', 'photon'],
+		products: [
+			[1, ['beryllium-7', 'photon']], // https://en.wikipedia.org/wiki/Lithium_burning#6Li
+			[1, ['helium-4', 'helium-3']], // https://en.wikipedia.org/wiki/Aneutronic_fusion#Candidate_reactions
+		],
 	},
 	{ // https://en.wikipedia.org/wiki/Aneutronic_fusion
 		reagents: ['lithium-6', 'deuterium'],
@@ -1113,13 +1231,12 @@ const reactionData = [
 		reagents: ['lithium-6', 'helium-3'],
 		products: ['helium-4', 'helium-4', 'protium'],
 	},
-	{ // https://en.wikipedia.org/wiki/Lithium_burning#6Li
+	{
 		reagents: ['lithium-7', 'protium'],
-		products: ['beryllium-8', 'photon'],
-	},
-	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_II_branch
-		reagents: ['lithium-7', 'protium'],
-		products: ['helium-4', 'helium-4'],
+		products: [
+			[1, ['beryllium-8', 'photon']], // https://en.wikipedia.org/wiki/Lithium_burning#6Li
+			[1, ['helium-4', 'helium-4']], // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_II_branch
+		],
 	},
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_II_branch
 		reagents: ['beryllium-7', 'electron'],
@@ -1138,9 +1255,22 @@ const reactionData = [
 		products: ['helium-4', 'helium-4', 'neutron'],
 		tags: 'photodisintegration',
 	},
-	{ // https://en.wikipedia.org/wiki/Fusion_power#Proton,_boron-11
+	{
 		reagents: ['boron-11', 'protium'],
-		products: ['helium-4', 'helium-4', 'helium-4'],
+		products: [
+			[1, ['helium-4', 'helium-4', 'helium-4']], // https://en.wikipedia.org/wiki/Fusion_power#Proton,_boron-11
+			[0.001, ['carbon-11', 'neutron']], // https://en.wikipedia.org/wiki/Aneutronic_fusion#Boron
+			// prob from https://en.wikipedia.org/wiki/Fusion_power#Proton,_boron-11
+			[1, ['carbon-12', 'photon']], // https://en.wikipedia.org/wiki/Aneutronic_fusion#Boron
+		],
+	},
+	{ // https://en.wikipedia.org/wiki/Aneutronic_fusion#Boron
+		reagents: ['boron-11', 'deuterium'],
+		products: ['carbon-12', 'neutron'],
+	},
+	{ // https://en.wikipedia.org/wiki/Aneutronic_fusion#Boron
+		reagents: ['boron-11', 'helium-4'],
+		products: ['nitrogen-14', 'neutron'],
 	},
 	{ // https://en.wikipedia.org/wiki/CNO_cycle#CNO-I
 		reagents: ['carbon-12', 'protium'],
@@ -1152,7 +1282,13 @@ const reactionData = [
 	},
 	{ // https://en.wikipedia.org/wiki/Carbon-burning_process#Fusion_reactions
 		reagents: ['carbon-12', 'carbon-12'],
-		products: ['magnesium-24', 'photon'],
+		products: [
+			[2, ['neon-20', 'helium-4']],
+			[2, ['sodium-23', 'protium']],
+			[2, ['magnesium-23', 'neutron']],
+			[1, ['magnesium-24', 'photon']],
+			[1, ['oxygen-16', 'helium-4', 'helium-4']],
+		],
 	},
 	{ // https://en.wikipedia.org/wiki/CNO_cycle#CNO-I
 		reagents: ['carbon-13', 'protium'],
@@ -1174,9 +1310,12 @@ const reactionData = [
 		reagents: ['nitrogen-14', 'protium'],
 		products: ['oxygen-15', 'photon'],
 	},
-	{ // https://en.wikipedia.org/wiki/CNO_cycle#CNO-I
+	{
 		reagents: ['nitrogen-15', 'protium'],
-		products: ['carbon-12', 'helium-4'],
+		products: [
+			[0.9996, ['carbon-12', 'helium-4']], // https://en.wikipedia.org/wiki/CNO_cycle#CNO-I
+			[0.0004, ['oxygen-16', 'photon']], // https://en.wikipedia.org/wiki/CNO_cycle#CNO-II
+		],
 	},
 	{ // https://en.wikipedia.org/wiki/CNO_cycle#CNO-II
 		reagents: ['oxygen-16', 'protium'],
@@ -1188,11 +1327,29 @@ const reactionData = [
 	},
 	{ // https://en.wikipedia.org/wiki/Oxygen-burning_process
 		reagents: ['oxygen-16', 'oxygen-16'],
-		products: ['sulfur-32', 'photon'],
+		products: [
+			[0.34, ['silicon-28', 'helium-4']],
+			[0.56, ['phosphorus-31', 'protium']],
+			[0.05, ['sulfur-31', 'neutron']],
+			[0.01, ['silicon-30', 'protium', 'protium']],
+			[0.05, ['phosphorus-30', 'deuterium']],
+			[0.01, ['sulfur-32', 'photon']],
+			[0.01, ['magnesium-24', 'helium-4', 'helium-4']],
+		],
 	},
-	{ // https://en.wikipedia.org/wiki/CNO_cycle#CNO-II
+	{
 		reagents: ['oxygen-17', 'protium'],
-		products: ['nitrogen-14', 'helium-4'],
+		products: [
+			[1, ['nitrogen-14', 'helium-4']], // https://en.wikipedia.org/wiki/CNO_cycle#CNO-II
+			[1, ['fluorine-18', 'photon']], // https://en.wikipedia.org/wiki/CNO_cycle#CNO-III
+		],
+	},
+	{
+		reagents: ['oxygen-18', 'protium'],
+		products: [
+			[1, ['nitrogen-15', 'helium-4']], // https://en.wikipedia.org/wiki/CNO_cycle#CNO-III
+			[1, ['fluorine-19', 'photon']], // https://en.wikipedia.org/wiki/CNO_cycle#CNO-IV
+		],
 	},
 	{ // https://en.wikipedia.org/wiki/CNO_cycle#HCNO-II
 		reagents: ['fluorine-17', 'protium'],
@@ -1201,6 +1358,10 @@ const reactionData = [
 	{ // https://en.wikipedia.org/wiki/CNO_cycle#HCNO-II
 		reagents: ['fluorine-18', 'protium'],
 		products: ['oxygen-15', 'helium-4'],
+	},
+	{ // https://en.wikipedia.org/wiki/CNO_cycle#HCNO-IV
+		reagents: ['fluorine-19', 'protium'],
+		products: ['oxygen-16', 'helium-4'],
 	},
 	{ // https://en.wikipedia.org/wiki/Neon-burning_process
 		reagents: ['neon-20', 'helium-4'],
@@ -1236,3 +1397,24 @@ const reactionData = [
 		products: ['argon-36', 'photon'],
 	},
 ];
+/* stellar nucleosynthesis pages:
+	DONE:
+		- Deuterium fusion
+		- proton-proton chain
+		- CNO cycle
+		- triple-alpha process
+		- lithium burning
+		- carbon burning
+		- neon burning
+		- oxygen burning
+		other:
+			- aneutronic fusion
+			- big bang nucleosynthesis
+			- deuterium fusion
+			- cosmic ray
+			- fusion power
+			- photodisintegration
+	TODO:
+		- alpha process
+		- silicon burning
+*/

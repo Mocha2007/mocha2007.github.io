@@ -147,7 +147,7 @@ const reactions = [];
 class Reaction {
 	/**
 	 * @param {Particle[]} reagents
-	 * @param {Particle[]} products
+	 * @param {[number, Particle[]][]} products
 	 * @param {string} tags
 	 */
 	constructor(reagents, products, tags){
@@ -155,6 +155,17 @@ class Reaction {
 		this.products = products;
 		this.tags = tags ? tags.split(' ') : [];
 		reactions.push(this);
+	}
+	/** when multiple products are possible, choose one randomly */
+	get chooseProbabilisticProducts(){
+		// no choice
+		if (this.products.length === 1)
+			return this.products[0][1];
+		// weighted choice
+		return random.weightedChoice(
+			this.products.map(row => row[1]),
+			this.products.map(row => row[0])
+		);
 	}
 	/** Are the inputs enough for this reaction? */
 	satisfies(){
@@ -170,8 +181,15 @@ class Reaction {
 	static fromObject(o){
 		new Reaction(
 			o.reagents.map(name => Particle.fromName(name)),
-			o.products.map(name => Particle.fromName(name)),
+			Reaction.parseProducts(o.products),
 			o.tags);
+	}
+	static parseProducts(a){
+		// simple product
+		if (typeof a[0] === 'string')
+			return [[1, a.map(name => Particle.fromName(name))]];
+		// probabilistic product
+		return a.map(row => [row[0], row[1].map(name => Particle.fromName(name))]);
 	}
 }
 
@@ -258,7 +276,7 @@ class Instance {
 		for (const reaction of reactions){
 			if (reaction.satisfies(this.type, ...interactable.map(i => i.type))){
 				console.log(reaction.reagents.map(r => r.name).join(' + '),
-					'=>', reaction.products.map(r => r.name).join(' + '));
+					'=>', reaction.chooseProbabilisticProducts.map(r => r.name).join(' + '));
 				// REACT!!!
 				// DELETE
 				this.delete();
@@ -271,7 +289,7 @@ class Instance {
 					}
 				});
 				// CREATE
-				reaction.products.forEach(product => {
+				reaction.chooseProbabilisticProducts.forEach(product => {
 					new Instance(product, this.x, this.y);
 				});
 				return true;
