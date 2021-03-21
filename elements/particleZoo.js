@@ -196,14 +196,15 @@ class Instance {
 		for (const other of interactable){
 			if (this.type.antiparticle !== this.type
 				&& other.type.antiparticle === this.type){ // annihilation
+				// DELETE
 				other.delete();
 				this.delete();
+				// CREATE
 				range(2).forEach(() => { // create two photons
 					new Instance(Particle.fromName('photon'),
 						(this.x + other.x)/2,
 						(this.y + other.y)/2);
 				});
-				// console.log('ANNIHILATION!!!');
 				return true;
 			}
 		}
@@ -213,12 +214,12 @@ class Instance {
 				console.log(reaction.reagents.map(r => r.name).join(' + '),
 					'=>', reaction.products.map(r => r.name).join(' + '));
 				// REACT!!!
+				// DELETE
 				this.delete();
-				// delete other reagents
 				reaction.reagents.filter(r => r !== this.type).forEach(r => {
 					interactable.filter(ii => ii.type === r)[0].delete();
 				});
-				// create products!!!
+				// CREATE
 				reaction.products.forEach(product => {
 					new Instance(product, this.x, this.y);
 				});
@@ -269,7 +270,7 @@ class Instance {
 			else
 				return this.delete();
 		}
-		if (!this.type.stable && random.random() < 1/100) // todo
+		if (!this.type.stable && random.random() < 1/1000) // todo
 			this.decay();
 		else if (!this.checkreactions())
 			setTimeout(() => this.tick(), 1000/fps);
