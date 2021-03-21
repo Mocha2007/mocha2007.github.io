@@ -977,6 +977,10 @@ const reactionData = [
 		products: ['beryllium-8'],
 	},
 	{ // https://en.wikipedia.org/wiki/Lithium_burning#6Li
+		reagents: ['lithium-6', 'protium'],
+		products: ['beryllium-7'],
+	},
+	{ // https://en.wikipedia.org/wiki/Lithium_burning#6Li
 		reagents: ['lithium-7', 'protium'],
 		products: ['beryllium-8'],
 	},
