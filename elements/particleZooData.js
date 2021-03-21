@@ -941,9 +941,9 @@ const reactionData = [
 		products: ['deuterium', 'positron', 'electron neutrino'],
 	},
 	// + neutron interactions; most are automatic, these are manual!
-	{
+	{ // https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Baryon%E2%80%93photon_ratio
 		reagents: ['protium', 'neutron'],
-		products: ['deuterium'],
+		products: ['deuterium', 'gamma'],
 	},
 	{
 		reagents: ['deuterium', 'neutron'],
@@ -962,6 +962,10 @@ const reactionData = [
 		reagents: ['deuterium', 'deuterium'],
 		products: ['helium-4', 'photon'],
 	},
+	{ // https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Baryon%E2%80%93photon_ratio
+		reagents: ['tritium', 'deuterium'],
+		products: ['helium-4', 'neutron'],
+	},
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_IV_branch
 		reagents: ['helium-3', 'protium'],
 		products: ['helium-4', 'positron', 'electron neutrino'],
@@ -970,13 +974,17 @@ const reactionData = [
 		reagents: ['helium-3', 'deuterium'],
 		products: ['lithium-5', 'photon'],
 	},
+	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_I_branch
+		reagents: ['helium-3', 'helium-3'],
+		products: ['helium-4', 'protium', 'protium'],
+	},
 	{ // https://en.wikipedia.org/wiki/Deuterium_fusion#Other_reactions
 		reagents: ['helium-4', 'deuterium'],
 		products: ['lithium-6', 'photon'],
 	},
-	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_I_branch
-		reagents: ['helium-3', 'helium-3'],
-		products: ['helium-4', 'protium', 'protium'],
+	{ // https://en.wikipedia.org/wiki/Nucleosynthesis#Big_Bang_nucleosynthesis
+		reagents: ['helium-4', 'tritium'],
+		products: ['lithium-7', 'photon'],
 	},
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_II_branch
 		reagents: ['helium-4', 'helium-3'],
@@ -986,15 +994,15 @@ const reactionData = [
 	*/
 	{ // https://en.wikipedia.org/wiki/Triple-alpha_process#Triple-alpha_process_in_stars
 		reagents: ['helium-4', 'helium-4'],
-		products: ['beryllium-8'],
+		products: ['beryllium-8', 'photon'],
 	},
 	{ // https://en.wikipedia.org/wiki/Lithium_burning#6Li
 		reagents: ['lithium-6', 'protium'],
-		products: ['beryllium-7'],
+		products: ['beryllium-7', 'photon'],
 	},
 	{ // https://en.wikipedia.org/wiki/Lithium_burning#6Li
 		reagents: ['lithium-7', 'protium'],
-		products: ['beryllium-8'],
+		products: ['beryllium-8', 'photon'],
 	},
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_II_branch
 		reagents: ['lithium-7', 'protium'],
@@ -1059,6 +1067,10 @@ const reactionData = [
 	{ // https://en.wikipedia.org/wiki/CNO_cycle#HCNO-II
 		reagents: ['fluorine-18', 'protium'],
 		products: ['oxygen-15', 'helium-4'],
+	},
+	{ // https://en.wikipedia.org/wiki/Neon-burning_process
+		reagents: ['neon-20', 'photon'],
+		products: ['oxygen-16', 'helium-4'],
 	},
 	{ // https://en.wikipedia.org/wiki/Alpha_process
 		reagents: ['neon-20', 'helium-4'],
