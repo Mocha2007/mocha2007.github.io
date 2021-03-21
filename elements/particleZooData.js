@@ -544,6 +544,34 @@ const particleData = [
 		mass: 4.00260325413*amu,
 	},
 	{
+		name: 'lithium-5',
+		category: 'atom',
+		symbol: {
+			char: 'Li',
+			presup: '5',
+			presub: '3',
+		},
+		spin: 3/2,
+		charge: 0,
+		mass: 5.01254*amu,
+		decays: [
+			['helium-4', 'proton'],
+		],
+		halfLife: 370e-24,
+	},
+	{
+		name: 'lithium-6',
+		category: 'atom',
+		symbol: {
+			char: 'Li',
+			presup: '6',
+			presub: '3',
+		},
+		spin: 1,
+		charge: 0,
+		mass: 6.0151228874*amu,
+	},
+	{
 		name: 'lithium-7',
 		category: 'atom',
 		symbol: {
@@ -863,7 +891,7 @@ const reactionData = [
 	},
 	{
 		reagents: ['fluorine-17', 'neutron'],
-		products: ['fluorine-18'],
+		products: ['oxygen-18'],
 	},
 	// atom + atom
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_PEP_reaction
@@ -874,9 +902,21 @@ const reactionData = [
 		reagents: ['deuterium', 'protium'],
 		products: ['helium-3', 'photon'],
 	},
+	{ // https://en.wikipedia.org/wiki/Deuterium_fusion#Other_reactions
+		reagents: ['deuterium', 'deuterium'],
+		products: ['helium-4', 'photon'],
+	},
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_IV_branch
 		reagents: ['helium-3', 'protium'],
 		products: ['helium-4', 'positron', 'electron neutrino'],
+	},
+	{ // https://en.wikipedia.org/wiki/Deuterium_fusion#Other_reactions
+		reagents: ['helium-3', 'deuterium'],
+		products: ['lithium-5', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/Deuterium_fusion#Other_reactions
+		reagents: ['helium-4', 'deuterium'],
+		products: ['lithium-6', 'photon'],
 	},
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_p%E2%80%93p_I_branch
 		reagents: ['helium-3', 'helium-3'],
@@ -886,10 +926,12 @@ const reactionData = [
 		reagents: ['helium-4', 'helium-3'],
 		products: ['beryllium-7', 'photon'],
 	},
+	/* FORBIDDEN - THIS WILL CLONE ITSELF!!!
 	{ // https://en.wikipedia.org/wiki/Triple-alpha_process#Triple-alpha_process_in_stars
 		reagents: ['helium-4', 'helium-4'],
 		products: ['beryllium-8'],
 	},
+	*/
 	{ // https://en.wikipedia.org/wiki/Lithium_burning#6Li
 		reagents: ['lithium-7', 'protium'],
 		products: ['beryllium-8'],

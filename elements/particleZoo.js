@@ -216,8 +216,13 @@ class Instance {
 				// REACT!!!
 				// DELETE
 				this.delete();
-				reaction.reagents.filter(r => r !== this.type).forEach(r => {
-					interactable.filter(ii => ii.type === r)[0].delete();
+				reaction.reagents.forEach(r => {
+					try {
+						interactable.filter(ii => ii.type === r)[0].delete();
+					}
+					catch (e){
+						// TypeError for when it doesnt exist...
+					}
 				});
 				// CREATE
 				reaction.products.forEach(product => {
@@ -270,7 +275,7 @@ class Instance {
 			else
 				return this.delete();
 		}
-		if (!this.type.stable && random.random() < 1/1000) // todo
+		if (!this.type.stable && random.random() < 1/100) // todo
 			this.decay();
 		else if (!this.checkreactions())
 			setTimeout(() => this.tick(), 1000/fps);
@@ -298,7 +303,7 @@ function spawnClick(event){
 	const i = Instance.random();
 	i.x = event.clientX;
 	i.y = event.clientY;
-	console.log('spawned ' + i.type.name);
+	// console.log('spawned ' + i.type.name);
 }
 
 /** main function */
