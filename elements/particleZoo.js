@@ -325,11 +325,11 @@ class Instance {
 				// DELETE
 				this.delete();
 				reaction.reagents.forEach(r => {
-					try {
-						interactable.filter(ii => ii.type === r)[0].delete();
-					}
-					catch (e){
-						// TypeError for when it doesnt exist...
+					const delendum = interactable.filter(ii => ii.type === r)[0];
+					if (delendum){
+						delendum.delete();
+						// remove from interactable so this doesn't error out
+						interactable.splice(interactable.indexOf(delendum), 1);
 					}
 				});
 				// CREATE
