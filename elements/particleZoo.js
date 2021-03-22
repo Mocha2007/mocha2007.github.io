@@ -36,8 +36,16 @@ class Particle {
 		particles.push(this);
 	}
 	get antiparticle(){
-		// look for SAME MASS but OPPOSITE CHARGE
-		return particles.filter(p => p.mass === this.mass && p.charge === -this.charge)[0];
+		/*
+			NO CACHE	20.3 μs
+			WITH CACHE	14.1 μs
+			~30% reduction
+		*/
+		return this.antiparticleCache
+			? this.antiparticleCache
+			: this.antiparticleCache = particles
+				// look for SAME MASS but OPPOSITE CHARGE
+				.filter(p => p.mass === this.mass && p.charge === -this.charge)[0];
 	}
 	get color(){
 		// todo
@@ -160,6 +168,11 @@ class Atom extends Particle {
 	}
 	/** @returns {string|false} */
 	get hasHeavierIsotope(){
+		/*
+			NO CACHE	9.3 ms
+			WITH CACHE	9.3 ms
+			~0% reduction
+		*/
 		// hydrogen
 		if (this.z === 1)
 			return ['deuterium', 'tritium', false][this.n];
@@ -256,7 +269,14 @@ class Instance {
 		this.timeOutId = setTimeout(() => this.tick(), 0);
 	}
 	get element(){
-		return document.getElementById(this.id);
+		/*
+			NO CACHE	4.9 μs
+			WITH CACHE	3.5 μs
+			~20% reduction
+		*/
+		return this.elementCache
+			? this.elementCache
+			: this.elementCache = document.getElementById(this.id);
 	}
 	get outOfBounds(){
 		const buffer = 50;

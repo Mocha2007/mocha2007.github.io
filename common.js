@@ -1,4 +1,4 @@
-/* jshint esversion: 6, strict: true, strict: global */
+/* jshint esversion: 6, strict: true, strict: global, boss: true */
 /* eslint-disable no-unused-vars */
 // this file provides functions used in many of my other js files
 'use strict';
@@ -311,3 +311,21 @@ function timer(f, n){
 	// console.log(`t = ${end-start} ms`);
 	return end-start;
 }
+
+/**
+ * run before and after a function to determine the time taken
+ *
+ * automatically prints avg in ms to console
+ * @param {number} [everyNSamples=1000] - every N samples, print to console; default = 1000
+*/
+function debugPerf(everyNSamples = 1000){
+	debugPerf.i++;
+	if (debugPerf.i % 2)
+		return debugPerf.t0 = performance.now();
+	debugPerf.history.push(performance.now() - debugPerf.t0);
+	if (debugPerf.history.length % everyNSamples === 0)
+		console.debug(mean(debugPerf.history));
+}
+debugPerf.i = 0;
+/** @type {number[]} */
+debugPerf.history = [];
