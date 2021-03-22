@@ -253,7 +253,7 @@ class Instance {
 		this.id = 'particle'+random.random();
 		instances.push(this);
 		this.createElement();
-		this.timeOutId = 0;
+		this.timeOutId = setTimeout(() => this.tick(), 0);
 	}
 	get element(){
 		return document.getElementById(this.id);
@@ -300,7 +300,7 @@ class Instance {
 			const isoName = this.type.hasHeavierIsotope;
 			if (isoName && other.type.name === 'neutron'){
 				if (debug)
-					console.log('NEUTRON ADDITION!');
+					console.debug('NEUTRON ADDITION!');
 				// DELETE
 				this.delete();
 				other.delete();
@@ -319,7 +319,7 @@ class Instance {
 		for (const reaction of reactions){
 			if (reaction.satisfies(this.type, ...interactable.map(i => i.type))){
 				if (debug)
-					console.log(reaction.reagents.map(r => r.name).join(' + '),
+					console.debug(reaction.reagents.map(r => r.name).join(' + '),
 						'=>', reaction.chooseProbabilisticProducts.map(r => r.name).join(' + '));
 				// REACT!!!
 				// DELETE
@@ -345,11 +345,10 @@ class Instance {
 		const testParticle = this.type.element;
 		testParticle.id = this.id;
 		document.getElementById('canvas').appendChild(testParticle);
-		this.tick();
 	}
 	decay(){
 		if (debug)
-			console.log('DECAY!!!');
+			console.debug('DECAY!');
 		// delete without replacement
 		this.delete(false);
 		// choose random decay mode
@@ -358,8 +357,12 @@ class Instance {
 		pp.map(p => new Instance(p, this.x, this.y));
 	}
 	delete(replace = true){
+		if (debug)
+			console.debug('DELETING ' + this.id);
 		// clear timeout
 		clearTimeout(this.timeOutId);
+		// mark element for deletion
+		this.timeOutId = 'MARKED FOR DELETION';
 		// delete svg element
 		if (this.element)
 			this.element.remove();
@@ -369,6 +372,8 @@ class Instance {
 		// new particle, if necessary
 		if (replace && document.getElementById('canvas').children.length < desiredParticles)
 			Instance.random();
+		// mark element as deleted
+		this.timeOutId = 'DELETED';
 	}
 	/** euclidian distance; taxicab distance does not improve performance of this
 	 * @param {Instance} other
@@ -377,7 +382,7 @@ class Instance {
 		return Math.sqrt(Math.pow(this.x - other.x, 2) + Math.pow(this.y - other.y, 2));
 	}
 	tick(){
-		if (!this.element)
+		if (!this.element) // clearTimeout in js sometimes actually doesn't clear the timeout, so this is necessary
 			return console.warn('this should never trigger, but it was triggered by:\n', this);
 		this.cooldown--;
 		const c = this.type.name === 'photon' ? 20 : 1;
@@ -422,7 +427,7 @@ function spawnClick(event){
 	i.x = event.clientX;
 	i.y = event.clientY;
 	if (debug)
-		console.log('spawned ' + i.type.name);
+		console.debug('spawned ' + i.type.name);
 }
 
 /** main function */
