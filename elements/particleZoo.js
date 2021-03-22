@@ -262,8 +262,7 @@ class Instance {
 			this.x = x;
 		if (isFinite(y))
 			this.y = y;
-		// eslint-disable-next-line no-extra-parens
-		this.id = 'particle'+random.random();
+		this.id = 'particle'+(''+random.random()).slice(2);
 		instances.push(this);
 		this.createElement();
 		this.timeOutId = setTimeout(() => this.tick(), 0);
@@ -333,6 +332,7 @@ class Instance {
 				new Instance(Particle.fromName('photon'),
 					(this.x + other.x)/2,
 					(this.y + other.y)/2);
+				return true;
 			}
 		}
 		// other reactions
@@ -404,8 +404,15 @@ class Instance {
 		return Math.sqrt(Math.pow(this.x - other.x, 2) + Math.pow(this.y - other.y, 2));
 	}
 	tick(){
-		if (!this.element) // clearTimeout in js sometimes actually doesn't clear the timeout, so this is necessary
-			return console.warn('this should never trigger, but it was triggered by:\n', this);
+		if (!instances.includes(this)){
+			console.warn('had to re-add this to instances:\n', this);
+			instances.push(this);
+			debugger;
+		}
+		if (!this.element){ // clearTimeout in js sometimes actually doesn't clear the timeout, so this is necessary
+			debugger;
+			return console.warn('clearTimeout failed to clear timeout for:\n', this);
+		}
 		this.cooldown--;
 		const c = this.type.name === 'photon' ? 20 : 1;
 		this.x += this.vx*c;

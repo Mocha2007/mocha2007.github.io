@@ -124,6 +124,7 @@
             }
         ],
         "new-cap": 1,
+        "no-debugger": 0,
         "no-lonely-if": 1,
         "no-trailing-spaces": 1,
         "no-unneeded-ternary": 1,

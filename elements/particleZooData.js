@@ -1026,15 +1026,6 @@ const reactionData = [
 		reagents: ['neutron', 'positron'],
 		products: ['proton', 'electron antineutrino'],
 	},
-	// + neutron interactions; most are automatic, these are manual!
-	{ // https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Baryon%E2%80%93photon_ratio
-		reagents: ['protium', 'neutron'],
-		products: ['deuterium', 'photon'],
-	},
-	{
-		reagents: ['deuterium', 'neutron'],
-		products: ['tritium', 'photon'],
-	},
 	// atom + atom
 	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_PEP_reaction
 		reagents: ['protium', 'protium', 'electron'],
