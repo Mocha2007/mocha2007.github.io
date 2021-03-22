@@ -316,7 +316,8 @@ class Instance {
 			}
 		}
 		// other reactions
-		for (const reaction of reactions){
+		// first, make sure the reaction is applicable to our current particle.
+		for (const reaction of reactions.filter(r => r.reagents.includes(this.type))){
 			if (reaction.satisfies(this.type, ...interactable.map(i => i.type))){
 				if (debug)
 					console.debug(reaction.reagents.map(r => r.name).join(' + '),
