@@ -367,11 +367,35 @@ const particleData = [
 		mass: 938.27208816e6*eVc2,
 	},
 	{
+		name: 'antiproton',
+		category: 'baryon',
+		symbol: {
+			char: 'p',
+			sup: '-',
+			overline: true,
+		},
+		spin: 0.5,
+		charge: -eV,
+		mass: 938.27208816e6*eVc2,
+	},
+	{
 		name: 'neutron',
 		category: 'baryon',
 		symbol: {
 			char: 'n',
 			sup: '0',
+		},
+		spin: 0.5,
+		charge: 0,
+		mass: 939.56542052e6*eVc2,
+	},
+	{
+		name: 'antineutron',
+		category: 'baryon',
+		symbol: {
+			char: 'n',
+			sup: '0',
+			overline: 0,
 		},
 		spin: 0.5,
 		charge: 0,
@@ -1005,6 +1029,15 @@ const reactionData = [
 		reagents: ['pion+', 'pion-'],
 		products: ['pionium'],
 	},
+	// antimatter reactions
+	{ // (educated guess)
+		reagents: ['proton', 'antineutron'],
+		products: ['pion+', 'photon'],
+	},
+	{ // (educated guess)
+		reagents: ['neutron', 'antiproton'],
+		products: ['pion-', 'photon'],
+	},
 	// normal atoms
 	{ // https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Neutron%E2%80%93proton_ratio
 		reagents: ['proton', 'electron antineutrino'],
@@ -1027,8 +1060,15 @@ const reactionData = [
 		products: ['proton', 'electron antineutrino'],
 	},
 	// atom + atom
-	{ // https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_PEP_reaction
-		reagents: ['protium', 'protium', 'electron'],
+	{ // https://www.phy.anl.gov/mep/photorxn/index.html 1999
+		reagents: ['protium', 'photon'],
+		products: [
+			[1, ['proton', 'electron']],
+			[1, ['proton', 'pion0']],
+		],
+	},
+	{ // alternate https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain
+		reagents: ['protium', 'protium'],
 		products: ['deuterium', 'electron neutrino'],
 	},
 	{ // https://en.wikipedia.org/wiki/Photodisintegration#Photodisintegration_of_deuterium

@@ -7,6 +7,7 @@ let fps = 30; // todo: temporary
 const desiredParticles = 50;
 const interactionRadius = 50; // todo: temporary
 const reactionCooldown = 5; // s
+const photonScaling = 20; // xN speed, /N cooldown
 let onlyNucleons = true;
 let stellarFuel = true;
 const debug = true;
@@ -44,8 +45,15 @@ class Particle {
 		return this.antiparticleCache
 			? this.antiparticleCache
 			: this.antiparticleCache = particles
-				// look for SAME MASS but OPPOSITE CHARGE
-				.filter(p => p.mass === this.mass && p.charge === -this.charge)[0];
+				.filter(p =>
+					p.charge
+						// look for SAME MASS but OPPOSITE CHARGE
+						? p.mass === this.mass && p.charge === -this.charge
+						// look for SAME SYMBOL except OPPOSITE OVERLINE; sup can be ignored since it's charge
+						: p.symbol.char === this.symbol.char
+							&& p.symbol.sub === this.symbol.sub
+							&& p.symbol.overline !== this.symbol.overline
+				)[0];
 	}
 	get color(){
 		// todo
@@ -69,6 +77,10 @@ class Particle {
 		g.appendChild(circle);
 		g.appendChild(this.textElement);
 		return g;
+	}/* get simulated halfLife in ticks */
+	get halfLifeTicks(){
+		const s = Math.log(this.halfLife) + 30;
+		return s * fps;
 	}
 	get hasHeavierIsotope(){
 		return false; // not an atom
@@ -254,8 +266,8 @@ class Instance {
 	 * @param {number} y
 	 */
 	constructor(type, x, y){
-		/** this many ticks must pass before it can react */
-		this.cooldown = fps*reactionCooldown;
+		/** this many ticks must pass before it can react; photons exempt from cooldown */
+		this.cooldown = (type.name === 'photon' ? 1/photonScaling : 1) * fps*reactionCooldown;
 		this.type = type;
 		[this.x, this.y, this.vx, this.vy] = Instance.spawnPoint();
 		if (isFinite(x))
@@ -334,6 +346,27 @@ class Instance {
 					(this.y + other.y)/2);
 				return true;
 			}
+			// pair production
+			if (this.type.name === 'photon' && other.type.name === 'photon'){
+				if (debug)
+					console.debug('PAIR PRODUCTION!');
+				// DELETE
+				this.delete();
+				other.delete();
+				// CREATE
+				// particle
+				const choice = Particle.fromName(random.choice(
+					['electron', 'electron neutrino', 'muon', 'muon neutrino', 'tau', 'tau neutrino', 'proton', 'neutron']
+				));
+				new Instance(choice,
+					(this.x + other.x)/2,
+					(this.y + other.y)/2);
+				// antiparticle
+				new Instance(choice.antiparticle,
+					(this.x + other.x)/2,
+					(this.y + other.y)/2);
+				return true;
+			}
 		}
 		// other reactions
 		// first, make sure the reaction is applicable to our current particle.
@@ -404,17 +437,8 @@ class Instance {
 		return Math.sqrt(Math.pow(this.x - other.x, 2) + Math.pow(this.y - other.y, 2));
 	}
 	tick(){
-		if (!instances.includes(this)){
-			console.warn('had to re-add this to instances:\n', this);
-			instances.push(this);
-			debugger;
-		}
-		if (!this.element){ // clearTimeout in js sometimes actually doesn't clear the timeout, so this is necessary
-			debugger;
-			return console.warn('clearTimeout failed to clear timeout for:\n', this);
-		}
 		this.cooldown--;
-		const c = this.type.name === 'photon' ? 20 : 1;
+		const c = this.type.name === 'photon' ? photonScaling : 1;
 		this.x += this.vx*c;
 		this.y += this.vy*c;
 		this.element.setAttribute('transform', `translate(${this.x}, ${this.y})`);
@@ -424,7 +448,8 @@ class Instance {
 			else
 				return this.delete();
 		}
-		if (!this.type.stable && random.random() < 1/1000) // todo
+		if (!this.type.stable &&
+			random.random() < 1/(this.type.halfLifeTicks <= 0 ? fps : this.type.halfLifeTicks))
 			this.decay();
 		else if (!this.checkreactions())
 			this.timeOutId = setTimeout(() => this.tick(), 1000/fps);
