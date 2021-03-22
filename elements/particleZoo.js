@@ -1,6 +1,6 @@
 /* jshint esversion: 6, strict: true, strict: global */
 /* global amu, atomData, createSvgElement, particleData, pi, random, range, reactionData */
-/* exported fps, init, onlyNucleons, onlyProtium, spawnClick */
+/* exported fps, init, onlyNucleons, spawnClick, stellarFuel */
 'use strict';
 
 let fps = 30; // todo: temporary
@@ -8,8 +8,8 @@ const desiredParticles = 50;
 const interactionRadius = 50; // todo: temporary
 const reactionCooldown = 5; // s
 let onlyNucleons = true;
-let onlyProtium = false;
-const debug = false;
+let stellarFuel = true;
+const debug = true;
 
 /** @type {Particle[]} */
 const particles = [];
@@ -430,8 +430,11 @@ class Instance {
 			this.timeOutId = setTimeout(() => this.tick(), 1000/fps);
 	}
 	static random(){
-		if (onlyProtium)
-			return new Instance(Particle.fromName('proton'));
+		if (stellarFuel)
+			return new Instance(Particle.fromName(random.weightedChoice(
+				['protium', 'deuterium', 'helium-3', 'helium-4'],
+				[0.75*0.9998, 0.75*0.0002, 0.25*0.000002, 0.25*0.999998]
+			)));
 		const particle = new Instance(random.choice(particles.filter(p =>
 			onlyNucleons ? ['protium', 'proton', 'neutron', 'electron']
 				.includes(p.name): p.category !== 'atom')));
