@@ -344,6 +344,7 @@ class Instance {
 	createElement(){
 		const testParticle = this.type.element;
 		testParticle.id = this.id;
+		testParticle.setAttribute('transform', `translate(${this.x}, ${this.y})`);
 		document.getElementById('canvas').appendChild(testParticle);
 	}
 	decay(){
