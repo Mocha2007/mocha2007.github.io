@@ -278,7 +278,7 @@ class Instance {
 		if (0 < this.cooldown) // can't react during cooldown
 			return false;
 		const interactable = instances.filter(i => i !== this
-			&& this.lazyDistanceTo(i) < interactionRadius);
+			&& this.distanceTo(i) < interactionRadius);
 		if (!interactable.length)
 			return; // nothing to interact with
 		for (const other of interactable){
@@ -370,20 +370,15 @@ class Instance {
 		if (replace && document.getElementById('canvas').children.length < desiredParticles)
 			Instance.random();
 	}
-	/** for exact difference; for approximation use lazyDistanceTo
+	/** euclidian distance; taxicab distance does not improve performance of this
 	 * @param {Instance} other
 	*/
 	distanceTo(other){
 		return Math.sqrt(Math.pow(this.x - other.x, 2) + Math.pow(this.y - other.y, 2));
 	}
-	/** for when the exact distance isn't strictly necessary
-	 * using abs instead of pow seemed to offer no performance improvement
-	 * @param {Instance} other
-	*/
-	lazyDistanceTo(other){
-		return Math.pow(this.x - other.x, 2) + Math.pow(this.y - other.y, 2);
-	}
 	tick(){
+		if (!this.element)
+			return console.warn('this should never trigger, but it was triggered by:\n', this);
 		this.cooldown--;
 		const c = this.type.name === 'photon' ? 20 : 1;
 		this.x += this.vx*c;
