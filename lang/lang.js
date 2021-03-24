@@ -177,6 +177,17 @@ class Entry extends Clickable {
 		this.notes = notes;
 		Entry.list.push(this);
 	}
+	get childList(){
+		const elem = document.createElement('ul');
+		Entry.list.filter(e => e.etymology && e.etymology.includes(this)).forEach(e => {
+			const li = document.createElement('li');
+			li.appendChild(e.language.span);
+			li.appendChild(e.word);
+			li.appendChild(e.childList);
+			elem.appendChild(li);
+		});
+		return elem;
+	}
 	get div(){
 		/** @type {HTMLDivElement} */
 		const elem = document.createElement('div');
@@ -201,6 +212,11 @@ class Entry extends Clickable {
 			ul.appendChild(li);
 		});
 		elem.appendChild(ul);
+		// children
+		const h2 = document.createElement('h2');
+		h2.innerHTML = 'Children';
+		elem.appendChild(h2);
+		elem.appendChild(this.childList);
 		// note button
 		if (this.notes){
 			const notes = document.createElement('p');
@@ -212,7 +228,10 @@ class Entry extends Clickable {
 	get etymologyDiv(){
 		const elem = document.createElement('div');
 		elem.innerHTML = 'Etymology: ';
-		this.etymology.forEach(e => e ? elem.appendChild(e.span) : elem.innerHTML+=undefined);
+		if (this.etymology)
+			this.etymology.forEach(e => e ? elem.appendChild(e.span) : elem.innerHTML+=undefined);
+		else
+			elem.innerHTML += this.etymology;
 		return elem;
 	}
 	parseEtymology(){
@@ -247,6 +266,6 @@ function main(){
 	Category.list.forEach(c => c.parseCategories());
 	Entry.list.forEach(e => e.parseEtymology());
 	Language.list.forEach(l => l.parseParent());
-	// display first entry just to start off...
-	Entry.list[0].go();
+	// display sem's entry just to start off...
+	Entry.list[1].go();
 }
