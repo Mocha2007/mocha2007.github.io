@@ -2,9 +2,29 @@
 /* global authorData, categoryData, entryData, languageData, meaningData, sourceData */
 'use strict';
 
-class Author {
+/** @type {HTMLBodyElement} */
+const body = document.getElementById('body');
+
+class Clickable {
 	constructor(name){
 		this.name = name;
+	}
+	get span(){
+		const elem = document.createElement('span');
+		elem.classList.add('clickable');
+		elem.innerHTML = this.name;
+		elem.onclick = () => this.go();
+		return elem;
+	}
+	go(){
+		body.innerHTML = '';
+		body.appendChild(this.div);
+	}
+}
+
+class Author extends Clickable {
+	constructor(name){
+		super(name);
 		Author.list.push(this);
 	}
 	static fromName(name){
@@ -17,9 +37,9 @@ class Author {
 /** @type {Author[]} */
 Author.list = [];
 
-class Source {
+class Source extends Clickable {
 	constructor(name, author='', url='', date=''){
-		this.name = name;
+		super(name);
 		this.author = Author.fromName(author);
 		this.url = url;
 		this.date = date;
@@ -35,9 +55,9 @@ class Source {
 /** @type {Source[]} */
 Source.list = [];
 
-class Language {
+class Language extends Clickable {
 	constructor(name, parent, location, period){
-		this.name = name;
+		super(name);
 		/** @type {Language} - parsed after loading */
 		this.parent = parent;
 		this.location = location;
@@ -60,9 +80,9 @@ class Language {
 /** @type {Language[]} */
 Language.list = [];
 
-class Category {
+class Category extends Clickable {
 	constructor(name, categories){
-		this.name = name;
+		super(name);
 		/** @type {Category[]} - parsed afterwards */
 		this.categories = categories;
 		Category.list.push(this);
@@ -82,9 +102,9 @@ class Category {
 /** @type {Category[]} */
 Category.list = [];
 
-class Meaning {
+class Meaning extends Clickable {
 	constructor(name, categories){
-		this.name = name;
+		super(name);
 		this.categories = categories.split(';').map(c => Category.fromName(c));
 		Meaning.list.push(this);
 	}
@@ -98,8 +118,9 @@ class Meaning {
 /** @type {Meaning[]} */
 Meaning.list = [];
 
-class Entry {
+class Entry extends Clickable {
 	constructor(language, word, meanings, etymology, source, notes){
+		super(word);
 		this.language = Language.fromName(language);
 		this.word = word;
 		this.meanings = Entry.parseMeanings(meanings);
@@ -108,6 +129,44 @@ class Entry {
 		this.source = Source.fromName(source);
 		this.notes = notes;
 		Entry.list.push(this);
+	}
+	get div(){
+		/** @type {HTMLDivElement} */
+		const elem = document.createElement('div');
+		elem.classList.add('entry');
+		elem.id = `${this.language.name}/${this.word}/div`;
+		const header = document.createElement('h1');
+		header.innerHTML = this.word;
+		elem.appendChild(header);
+		// lang button
+		elem.appendChild(this.language.span);
+		// source button
+		elem.appendChild(this.source.span);
+		// etymology button
+		elem.appendChild(this.etymologyDiv);
+		const ul = document.createElement('ul');
+		this.meanings.forEach(m => {
+			const li = document.createElement('li');
+			if (m)
+				li.appendChild(m.span);
+			else
+				li.innerHTML = m;
+			ul.appendChild(li);
+		});
+		elem.appendChild(ul);
+		// note button
+		if (this.notes){
+			const notes = document.createElement('p');
+			notes.innerHTML = 'Notes: ' + this.notes;
+			elem.appendChild(notes);
+		}
+		return elem;
+	}
+	get etymologyDiv(){
+		const elem = document.createElement('div');
+		elem.innerHTML = 'Etymology: ';
+		this.etymology.forEach(e => e ? elem.appendChild(e.span) : elem.innerHTML+=undefined);
+		return elem;
 	}
 	parseEtymology(){
 		if (!this.etymology)
@@ -141,4 +200,6 @@ function main(){
 	Category.list.forEach(c => c.parseCategories());
 	Entry.list.forEach(e => e.parseEtymology());
 	Language.list.forEach(l => l.parseParent());
+	// display first entry just to start off...
+	Entry.list[0].go();
 }
