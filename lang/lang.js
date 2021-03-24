@@ -1,5 +1,5 @@
 /* exported main */
-/* global authorData, categoryData, entryData, languageData, meaningData, sourceData */
+/* global authorData, categoryData, entryData, languageData, meaningData, sourceData, union */
 'use strict';
 
 /** @type {HTMLBodyElement} */
@@ -107,6 +107,53 @@ class Meaning extends Clickable {
 		super(name);
 		this.categories = categories.split(';').map(c => Category.fromName(c));
 		Meaning.list.push(this);
+	}
+	get div(){
+		/** @type {HTMLDivElement} */
+		const elem = document.createElement('div');
+		elem.classList.add('meaning');
+		elem.id = `meaning/${this.name}/div`;
+		const header = document.createElement('h1');
+		header.innerHTML = this.name;
+		elem.appendChild(header);
+		// word list
+		const ul = document.createElement('ul');
+		const entries = Entry.list.filter(e => e.meanings.includes(this));
+		entries.forEach(m => {
+			// language: word
+			const li = document.createElement('li');
+			li.appendChild(m.language.span);
+			li.appendChild(m.span);
+			ul.appendChild(li);
+		});
+		elem.appendChild(ul);
+		// colex list
+		const h2 = document.createElement('h2');
+		h2.innerHTML = 'Colexifications';
+		elem.appendChild(h2);
+		/** @type {Meaning[]} */
+		let colex = [];
+		entries.forEach(e => colex = union(colex, e.meanings.filter(m => m !== this)));
+		const ul2 = document.createElement('ul');
+		colex.forEach(m => {
+			const li = document.createElement('li');
+			if (m)
+				li.appendChild(m.span);
+			else
+				li.innerHTML = m;
+			ul2.appendChild(li);
+		});
+		// todo category list
+		const h22 = document.createElement('h2');
+		h22.innerHTML = 'Categories';
+		elem.appendChild(h22);
+		const ul3 = document.createElement('ul');
+		this.categories.forEach(c => {
+			const li = document.createElement('li');
+			li.appendChild(c.span);
+			ul3.appendChild(li);
+		});
+		return elem;
 	}
 	static fromName(name){
 		return Meaning.list.find(x => x.name === name);
