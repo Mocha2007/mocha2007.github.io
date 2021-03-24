@@ -14,6 +14,7 @@ class Clickable {
 		elem.classList.add('clickable');
 		elem.innerHTML = this.name;
 		elem.onclick = () => this.go();
+		elem.title = this.title;
 		return elem;
 	}
 	go(){
@@ -98,6 +99,9 @@ class Source extends Clickable {
 		elem.appendChild(ul);
 		return elem;
 	}
+	get title(){
+		return `${this.author}, ${this.date}`;
+	}
 	static fromName(name){
 		return Source.list.find(x => x.name === name);
 	}
@@ -153,6 +157,9 @@ class Language extends Clickable {
 		elem.appendChild(h22);
 		elem.appendChild(this.childList);
 		return elem;
+	}
+	get title(){
+		return `Parent: ${this.parent}; ${this.location}, ${this.date}`;
 	}
 	/** @param {string} s */
 	parseParent(){
@@ -217,6 +224,9 @@ class Category extends Clickable {
 		});
 		elem.appendChild(ul2);
 		return elem;
+	}
+	get title(){
+		return this.categories.map(c => c.name).join(', ');
 	}
 	parseCategories(){
 		this.categories = this.categories.split(';').filter(x => x).map(c => Category.fromName(c));
@@ -286,6 +296,9 @@ class Meaning extends Clickable {
 		});
 		elem.appendChild(ul3);
 		return elem;
+	}
+	get title(){
+		return this.categories.map(c => c.name).join(', ');
 	}
 	static fromName(name){
 		return Meaning.list.find(x => x.name === name);
@@ -365,6 +378,9 @@ class Entry extends Clickable {
 		else
 			elem.innerHTML += this.etymology;
 		return elem;
+	}
+	get title(){
+		return this.meanings.map(m => m.name).join(', ');
 	}
 	parseEtymology(){
 		if (!this.etymology)

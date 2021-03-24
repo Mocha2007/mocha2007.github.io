@@ -61,6 +61,19 @@ const languageData = [
 
 const categoryData = [
 	{
+		name: 'adjective',
+	},
+	{
+		name: 'article',
+		categories: 'determiner',
+	},
+	{
+		name: 'conjunction',
+	},
+	{
+		name: 'determiner',
+	},
+	{
 		name: 'numeral',
 	},
 ];
@@ -85,6 +98,10 @@ const meaningData = [
 	},
 	// misc determiners
 	{
+		name: 'an',
+		categories: 'article',
+	},
+	{
 		name: 'some.certain',
 		categories: 'determiner',
 	},
@@ -96,6 +113,15 @@ const meaningData = [
 	{
 		name: 'or.excl',
 		categories: 'conjunction',
+	},
+	// adjectives
+	{
+		name: 'alone',
+		categories: 'adjective',
+	},
+	{
+		name: 'only.adj',
+		categories: 'adjective',
 	},
 ];
 
