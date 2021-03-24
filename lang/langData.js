@@ -80,14 +80,25 @@ const categoryData = [
 	{
 		name: 'numeral',
 	},
+	{
+		name: 'verb',
+	},
 	// sets
 	{
 		name: 'anatomy',
+	},
+	// todo: swadesh list items
+	{
+		name: 'swadesh',
 	},
 ];
 
 const meaningData = [
 	// numerals
+	{
+		name: 'eight',
+		categories: 'numeral',
+	},
 	{
 		name: 'five',
 		categories: 'numeral',
@@ -97,11 +108,35 @@ const meaningData = [
 		categories: 'numeral',
 	},
 	{
+		name: 'hundred',
+		categories: 'numeral',
+	},
+	{
+		name: 'nine',
+		categories: 'numeral',
+	},
+	{
 		name: 'one',
 		categories: 'numeral',
 	},
 	{
+		name: 'seven',
+		categories: 'numeral',
+	},
+	{
+		name: 'six',
+		categories: 'numeral',
+	},
+	{
+		name: 'ten',
+		categories: 'numeral',
+	},
+	{
 		name: 'three',
+		categories: 'numeral',
+	},
+	{
+		name: 'thousand',
 		categories: 'numeral',
 	},
 	{
@@ -137,8 +172,21 @@ const meaningData = [
 	},
 	// nouns
 	{
+		name: 'four.fingers',
+		categories: 'noun;anatomy',
+	},
+	{
 		name: 'hand',
 		categories: 'noun;anatomy',
+	},
+	// verbs
+	{
+		name: 'give',
+		categories: 'verb',
+	},
+	{
+		name: 'take',
+		categories: 'verb',
 	},
 ];
 
@@ -155,14 +203,58 @@ const entryData = [
 	// PIE
 	{
 		language: 'pie',
+		word: 'déḱm̥',
+		meanings: 'ten',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'dwóh₁',
 		meanings: 'two',
 		source: 'wiktionary',
 	},
 	{
 		language: 'pie',
+		word: 'ǵʰes-',
+		meanings: 'hand;take;give',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'ǵʰéslom',
+		meanings: 'thousand',
+		etymology: 'pie:ǵʰes-;pie:-lom',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'h₁néwn̥',
+		meanings: 'nine',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: '(H)oḱto-',
+		meanings: 'four.fingers',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'kʷetwóres',
 		meanings: 'four',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'ḱm̥tóm',
+		meanings: 'hundred',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'oḱtṓw',
+		meanings: 'eight',
+		etymology: 'pie:(H)oḱto-',
 		source: 'wiktionary',
 	},
 	{
@@ -192,8 +284,26 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'septḿ̥',
+		meanings: 'seven',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'swéḱs',
+		meanings: 'six',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'tréyes',
 		meanings: 'three',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'tuHsont-',
+		meanings: 'thousand',
 		source: 'wiktionary',
 	},
 	// proto-germanic

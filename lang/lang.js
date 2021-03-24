@@ -1,5 +1,6 @@
 /* exported main */
-/* global authorData, categoryData, entryData, languageData, meaningData, sourceData, union */
+/* global authorData, categoryData, entryData, intersect, languageData, meaningData, sourceData,
+	union */
 'use strict';
 
 /** @type {HTMLBodyElement} */
@@ -347,6 +348,7 @@ class Entry extends Clickable {
 		elem.appendChild(this.source.span);
 		// etymology button
 		elem.appendChild(this.etymologyDiv);
+		// meanings
 		const ul = document.createElement('ul');
 		this.meanings.forEach(m => {
 			const li = document.createElement('li');
@@ -357,6 +359,11 @@ class Entry extends Clickable {
 			ul.appendChild(li);
 		});
 		elem.appendChild(ul);
+		// synonyms
+		const h22 = document.createElement('h2');
+		h22.innerHTML = 'Synonyms';
+		elem.appendChild(h22);
+		this.synonyms.forEach(e => elem.appendChild(e.span));
 		// children
 		const h2 = document.createElement('h2');
 		h2.innerHTML = 'Children';
@@ -378,6 +385,10 @@ class Entry extends Clickable {
 		else
 			elem.innerHTML += this.etymology;
 		return elem;
+	}
+	get synonyms(){
+		return Entry.list.filter(e => e !== this && e.language === this.language
+			&& intersect(e.meanings, this.meanings).length);
 	}
 	get title(){
 		return this.meanings.map(m => m.name).join(', ');
