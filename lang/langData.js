@@ -245,6 +245,14 @@ const meaningData = [
 	},
 	// conjunctions
 	{
+		name: 'and',
+		categories: 'conjunction',
+	},
+	{
+		name: 'or',
+		categories: 'conjunction',
+	},
+	{
 		name: 'or.excl',
 		categories: 'conjunction',
 	},
@@ -816,6 +824,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: '-kʷe',
+		meanings: 'and',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'ḱḗr',
 		meanings: 'heart',
 		source: 'wiktionary',
@@ -1077,6 +1091,12 @@ const entryData = [
 		word: 'údteros',
 		meanings: 'higher;upper',
 		etymology: 'pie:úd;pie:-teros',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: '-wē',
+		meanings: 'or',
 		source: 'wiktionary',
 	},
 	{
