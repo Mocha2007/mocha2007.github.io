@@ -364,6 +364,11 @@ class Entry extends Clickable {
 		h22.innerHTML = 'Synonyms';
 		elem.appendChild(h22);
 		this.synonyms.forEach(e => elem.appendChild(e.span));
+		// translations
+		const h23 = document.createElement('h2');
+		h23.innerHTML = 'Translations';
+		elem.appendChild(h23);
+		this.translations.forEach(e => elem.appendChild(e.span));
 		// children
 		const h2 = document.createElement('h2');
 		h2.innerHTML = 'Children';
@@ -392,6 +397,10 @@ class Entry extends Clickable {
 	}
 	get title(){
 		return this.meanings.map(m => m.name).join(', ');
+	}
+	get translations(){
+		return Entry.list.filter(e => e.language !== this.language
+			&& intersect(e.meanings, this.meanings).length);
 	}
 	parseEtymology(){
 		if (!this.etymology)
