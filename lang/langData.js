@@ -60,6 +60,7 @@ const languageData = [
 ];
 
 const categoryData = [
+	// pos
 	{
 		name: 'adjective',
 	},
@@ -74,18 +75,29 @@ const categoryData = [
 		name: 'determiner',
 	},
 	{
+		name: 'noun',
+	},
+	{
 		name: 'numeral',
+	},
+	// sets
+	{
+		name: 'anatomy',
 	},
 ];
 
 const meaningData = [
 	// numerals
 	{
-		name: 'one',
+		name: 'five',
 		categories: 'numeral',
 	},
 	{
-		name: 'two',
+		name: 'four',
+		categories: 'numeral',
+	},
+	{
+		name: 'one',
 		categories: 'numeral',
 	},
 	{
@@ -93,7 +105,7 @@ const meaningData = [
 		categories: 'numeral',
 	},
 	{
-		name: 'four',
+		name: 'two',
 		categories: 'numeral',
 	},
 	// misc determiners
@@ -123,6 +135,11 @@ const meaningData = [
 		name: 'only.adj',
 		categories: 'adjective',
 	},
+	// nouns
+	{
+		name: 'hand',
+		categories: 'noun;anatomy',
+	},
 ];
 
 const entryData = [
@@ -138,8 +155,14 @@ const entryData = [
 	// PIE
 	{
 		language: 'pie',
-		word: 'sḗm',
-		meanings: 'one',
+		word: 'dwóh₁',
+		meanings: 'two',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'kʷetwóres',
+		meanings: 'four',
 		source: 'wiktionary',
 	},
 	{
@@ -150,20 +173,27 @@ const entryData = [
 	},
 	{
 		language: 'pie',
-		word: 'dwóh₁',
-		meanings: 'two',
+		word: 'penkʷ-',
+		meanings: 'hand',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'pénkʷe',
+		meanings: 'five',
+		etymology: 'pie:penkʷ-',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'sḗm',
+		meanings: 'one',
 		source: 'wiktionary',
 	},
 	{
 		language: 'pie',
 		word: 'tréyes',
 		meanings: 'three',
-		source: 'wiktionary',
-	},
-	{
-		language: 'pie',
-		word: 'kʷetwóres',
-		meanings: 'four',
 		source: 'wiktionary',
 	},
 	// proto-germanic

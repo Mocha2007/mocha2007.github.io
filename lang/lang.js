@@ -416,6 +416,6 @@ function main(){
 	Category.list.forEach(c => c.parseCategories());
 	Entry.list.forEach(e => e.parseEtymology());
 	Language.list.forEach(l => l.parseParent());
-	// display sem's entry just to start off...
-	Entry.list[2].go();
+	// display óynos's entry just to start off...
+	Entry.fromId('pie:óynos').go();
 }
