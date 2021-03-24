@@ -171,16 +171,55 @@ class Language extends Clickable {
 Language.list = [];
 
 class Category extends Clickable {
-	constructor(name, categories){
+	constructor(name, categories=''){
 		super(name);
 		/** @type {Category[]} - parsed afterwards */
 		this.categories = categories;
 		Category.list.push(this);
 	}
+	get childList(){
+		const elem = document.createElement('ul');
+		Category.list.filter(c => c.categories.includes(this)).forEach(c => {
+			const li = document.createElement('li');
+			li.appendChild(c.span);
+			li.appendChild(c.childList);
+			elem.appendChild(li);
+		});
+		Meaning.list.filter(m => m.categories.includes(this)).forEach(m => {
+			const li = document.createElement('li');
+			li.appendChild(m.span);
+			elem.appendChild(li);
+		});
+		return elem;
+	}
+	get div(){
+		/** @type {HTMLDivElement} */
+		const elem = document.createElement('div');
+		elem.classList.add('category');
+		elem.id = `${this.name}/div`;
+		const header = document.createElement('h1');
+		header.innerHTML = this.name;
+		elem.appendChild(header);
+		// meanings
+		const h2 = document.createElement('h2');
+		h2.innerHTML = 'Entries';
+		elem.appendChild(h2);
+		elem.appendChild(this.childList);
+		// category list
+		const h22 = document.createElement('h2');
+		h22.innerHTML = 'Categories';
+		elem.appendChild(h22);
+		const ul2 = document.createElement('ul');
+		this.categories.forEach(c => {
+			const li = document.createElement('li');
+			li.appendChild(c.span);
+			ul2.appendChild(li);
+		});
+		elem.appendChild(ul2);
+		return elem;
+	}
 	parseCategories(){
-		if (!this.categories)
-			return;
-		this.categories = this.categories.split(';').map(c => Category.fromName(c));
+		this.categories = this.categories.split(';').filter(x => x).map(c => Category.fromName(c));
 	}
 	static fromName(name){
 		return Category.list.find(x => x.name === name);
@@ -195,7 +234,7 @@ Category.list = [];
 class Meaning extends Clickable {
 	constructor(name, categories){
 		super(name);
-		this.categories = categories.split(';').map(c => Category.fromName(c));
+		this.categories = categories.split(';').filter(x => x).map(c => Category.fromName(c));
 		Meaning.list.push(this);
 	}
 	get div(){
@@ -208,6 +247,7 @@ class Meaning extends Clickable {
 		elem.appendChild(header);
 		// word list
 		const ul = document.createElement('ul');
+		/** @type {Meaning[]} entries including this meaning */
 		const entries = Entry.list.filter(e => e.meanings.includes(this));
 		entries.forEach(m => {
 			// language: word
@@ -233,7 +273,8 @@ class Meaning extends Clickable {
 				li.innerHTML = m;
 			ul2.appendChild(li);
 		});
-		// todo category list
+		elem.appendChild(ul2);
+		// category list
 		const h22 = document.createElement('h2');
 		h22.innerHTML = 'Categories';
 		elem.appendChild(h22);
@@ -243,6 +284,7 @@ class Meaning extends Clickable {
 			li.appendChild(c.span);
 			ul3.appendChild(li);
 		});
+		elem.appendChild(ul3);
 		return elem;
 	}
 	static fromName(name){
