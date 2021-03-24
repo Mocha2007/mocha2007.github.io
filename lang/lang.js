@@ -45,6 +45,38 @@ class Source extends Clickable {
 		this.date = date;
 		Source.list.push(this);
 	}
+	get div(){
+		/** @type {HTMLDivElement} */
+		const elem = document.createElement('div');
+		elem.classList.add('source');
+		elem.id = `${this.name}/div`;
+		const header = document.createElement('h1');
+		header.innerHTML = this.name;
+		elem.appendChild(header);
+		// author
+		elem.appendChild(this.author.span);
+		// date
+		const date = document.createElement('span');
+		date.innerHTML = this.date;
+		elem.appendChild(date);
+		// url
+		const a = document.createElement('a');
+		a.innerHTML = 'external link';
+		a.href = this.url;
+		elem.appendChild(a);
+		// entries
+		const h2 = document.createElement('h2');
+		h2.innerHTML = 'Entries';
+		elem.appendChild(h2);
+		const ul = document.createElement('ul');
+		Entry.list.filter(e => e.source === this).forEach(m => {
+			const li = document.createElement('li');
+			li.appendChild(m.span);
+			ul.appendChild(li);
+		});
+		elem.appendChild(ul);
+		return elem;
+	}
 	static fromName(name){
 		return Source.list.find(x => x.name === name);
 	}
@@ -63,6 +95,43 @@ class Language extends Clickable {
 		this.location = location;
 		this.period = period;
 		Language.list.push(this);
+	}
+	get childList(){
+		const elem = document.createElement('ul');
+		Language.list.filter(l => l.parent === this).forEach(l => {
+			const li = document.createElement('li');
+			li.appendChild(l.span);
+			li.appendChild(l.childList);
+			elem.appendChild(li);
+		});
+		return elem;
+	}
+	get div(){
+		/** @type {HTMLDivElement} */
+		const elem = document.createElement('div');
+		elem.classList.add('language');
+		elem.id = `${this.name}/div`;
+		const header = document.createElement('h1');
+		header.innerHTML = this.name;
+		elem.appendChild(header);
+		// todo parent, location, period
+		// entries
+		const h2 = document.createElement('h2');
+		h2.innerHTML = 'Entries';
+		elem.appendChild(h2);
+		const ul = document.createElement('ul');
+		Entry.list.filter(e => e.language === this).forEach(m => {
+			const li = document.createElement('li');
+			li.appendChild(m.span);
+			ul.appendChild(li);
+		});
+		elem.appendChild(ul);
+		// children
+		const h22 = document.createElement('h2');
+		h22.innerHTML = 'Children';
+		elem.appendChild(h22);
+		elem.appendChild(this.childList);
+		return elem;
 	}
 	/** @param {string} s */
 	parseParent(){
