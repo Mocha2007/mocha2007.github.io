@@ -48,9 +48,32 @@ const categoryData = [
 ];
 
 const meaningData = [
+	// numerals
 	{
 		name: 'one',
 		categories: 'numeral',
+	},
+	{
+		name: 'two',
+		categories: 'numeral',
+	},
+	{
+		name: 'three',
+		categories: 'numeral',
+	},
+	{
+		name: 'four',
+		categories: 'numeral',
+	},
+	// misc determiners
+	{
+		name: 'some.certain',
+		categories: 'determiner',
+	},
+	// conjunctions
+	{
+		name: 'or.excl',
+		categories: 'conjunction',
 	},
 ];
 
@@ -69,6 +92,30 @@ const entryData = [
 		language: 'pie',
 		word: 'sḗm',
 		meanings: 'one',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'óynos',
+		meanings: 'one',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'dwóh₁',
+		meanings: 'two',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'tréyes',
+		meanings: 'three',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'kʷetwóres',
+		meanings: 'four',
 		source: 'wiktionary',
 	},
 ];
