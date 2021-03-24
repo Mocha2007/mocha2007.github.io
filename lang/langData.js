@@ -39,6 +39,24 @@ const languageData = [
 		location: 'pontic-caspian steppe',
 		period: 'c. 3000 BCE',
 	},
+	{
+		name: 'pger',
+		parent: 'pie',
+		location: 'central europe',
+		period: 'c. 500 BCE',
+	},
+	{
+		name: 'pwger',
+		parent: 'pger',
+		location: 'northwest germany',
+		period: 'c. 500 CE',
+	},
+	{
+		name: 'oe',
+		parent: 'pwger',
+		location: 'england',
+		period: 'c. 1000 CE',
+	},
 ];
 
 const categoryData = [
@@ -68,6 +86,10 @@ const meaningData = [
 	// misc determiners
 	{
 		name: 'some.certain',
+		categories: 'determiner',
+	},
+	{
+		name: 'some.quelques',
 		categories: 'determiner',
 	},
 	// conjunctions
@@ -116,6 +138,30 @@ const entryData = [
 		language: 'pie',
 		word: 'kʷetwóres',
 		meanings: 'four',
+		source: 'wiktionary',
+	},
+	// proto-germanic
+	{
+		language: 'pger',
+		word: 'ainaz',
+		meanings: 'one;some.quelques',
+		etymology: 'pie:óynos',
+		source: 'wiktionary',
+	},
+	// proto-west germanic
+	{
+		language: 'pwger',
+		word: 'ain',
+		meanings: 'one',
+		etymology: 'pger:ainaz',
+		source: 'wiktionary',
+	},
+	// OE
+	{
+		language: 'oe',
+		word: 'ān',
+		meanings: 'one;an;only.adj;alone',
+		etymology: 'pwger:ain',
 		source: 'wiktionary',
 	},
 ];

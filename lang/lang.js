@@ -314,7 +314,7 @@ class Entry extends Clickable {
 		Entry.list.filter(e => e.etymology && e.etymology.includes(this)).forEach(e => {
 			const li = document.createElement('li');
 			li.appendChild(e.language.span);
-			li.appendChild(e.word);
+			li.appendChild(e.span);
 			li.appendChild(e.childList);
 			elem.appendChild(li);
 		});
@@ -369,10 +369,12 @@ class Entry extends Clickable {
 	parseEtymology(){
 		if (!this.etymology)
 			return;
-		this.etymology = this.etymology.split(';').map(name => Entry.fromName(name));
+		this.etymology = this.etymology.split(';').map(id => Entry.fromId(id));
 	}
-	static fromName(name){
-		return Entry.list.find(x => x.name === name);
+	static fromId(id){
+		// eg. pger:ainaz
+		const [lang, word] = id.split(':');
+		return Entry.list.find(x => x.name === word && x.language.name === lang);
 	}
 	static parseData(o){
 		new Entry(o.language, o.word, o.meanings, o.etymology, o.source, o.notes);
@@ -399,5 +401,5 @@ function main(){
 	Entry.list.forEach(e => e.parseEtymology());
 	Language.list.forEach(l => l.parseParent());
 	// display sem's entry just to start off...
-	Entry.list[1].go();
+	Entry.list[2].go();
 }
