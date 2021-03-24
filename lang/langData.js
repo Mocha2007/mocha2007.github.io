@@ -84,6 +84,12 @@ const categoryData = [
 		name: 'numeral',
 	},
 	{
+		name: 'particle',
+	},
+	{
+		name: 'pronoun',
+	},
+	{
 		name: 'verb',
 	},
 	// sets
@@ -174,6 +180,68 @@ const meaningData = [
 	{
 		name: 'up',
 		categories: 'preposition',
+	},
+	// particles
+	{
+		name: 'NEG',
+		categories: 'particle',
+	},
+	{
+		name: 'PROH',
+		categories: 'particle',
+	},
+	// pronouns
+	{
+		name: '1s',
+		categories: 'pronoun',
+	},
+	{
+		name: '1pl',
+		categories: 'pronoun',
+	},
+	{
+		name: '2s',
+		categories: 'pronoun',
+	},
+	{
+		name: '2pl',
+		categories: 'pronoun',
+	},
+	{
+		name: '3s',
+		categories: 'pronoun',
+	},
+	{
+		name: '3pl',
+		categories: 'pronoun',
+	},
+	{
+		name: 'REFL',
+		categories: 'pronoun',
+	},
+	{
+		name: 'this',
+		categories: 'pronoun',
+	},
+	{
+		name: 'that', // PROXIMAL or unspecified
+		categories: 'pronoun',
+	},
+	{
+		name: 'yon',
+		categories: 'pronoun',
+	},
+	{
+		name: 'what',
+		categories: 'pronoun',
+	},
+	{
+		name: 'which',
+		categories: 'pronoun',
+	},
+	{
+		name: 'who',
+		categories: 'pronoun',
 	},
 	// conjunctions
 	{
@@ -542,6 +610,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'éǵh₂',
+		meanings: '1s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'ǵénus',
 		meanings: 'cheek;jaw;chin',
 		source: 'wiktionary',
@@ -614,6 +688,12 @@ const entryData = [
 		word: 'h₂éḱru',
 		meanings: 'tear.eye',
 		etymology: 'pie:h₂eḱ-',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'h₁énos',
+		meanings: 'yon',
 		source: 'wiktionary',
 	},
 	{
@@ -724,6 +804,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'ís',
+		meanings: '3s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'káput',
 		meanings: 'head',
 		source: 'wiktionary',
@@ -738,6 +824,12 @@ const entryData = [
 		language: 'pie',
 		word: 'kʷetwóres',
 		meanings: 'four',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'kʷís',
+		meanings: 'what;who;which',
 		source: 'wiktionary',
 	},
 	{
@@ -766,6 +858,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'meh₁',
+		meanings: 'PROH',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: '-mō',
 		meanings: 'v>n.agent',
 		source: 'wiktionary',
@@ -774,6 +872,12 @@ const entryData = [
 		language: 'pie',
 		word: 'mosgʰós',
 		meanings: 'marrow;brain',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'ne',
+		meanings: 'NEG',
 		source: 'wiktionary',
 	},
 	{
@@ -909,6 +1013,18 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'só',
+		meanings: 'this;that',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'swé',
+		meanings: 'REFL',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'swéḱs',
 		meanings: 'six',
 		source: 'wiktionary',
@@ -929,6 +1045,12 @@ const entryData = [
 		language: 'pie',
 		word: 'tréyes',
 		meanings: 'three',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'túh₂',
+		meanings: '2s',
 		source: 'wiktionary',
 	},
 	{
@@ -959,8 +1081,26 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'wéy',
+		meanings: '1pl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'yókʷr̥',
 		meanings: 'liver',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'yós',
+		meanings: 'that;who;which',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'yū́',
+		meanings: '2pl',
 		source: 'wiktionary',
 	},
 	// proto-germanic
