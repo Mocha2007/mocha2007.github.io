@@ -65,6 +65,9 @@ const categoryData = [
 		name: 'adjective',
 	},
 	{
+		name: 'affix',
+	},
+	{
 		name: 'article',
 		categories: 'determiner',
 	},
@@ -86,6 +89,9 @@ const categoryData = [
 	// sets
 	{
 		name: 'anatomy',
+	},
+	{
+		name: 'motion',
 	},
 	// todo: swadesh list items
 	{
@@ -172,21 +178,106 @@ const meaningData = [
 	},
 	// nouns
 	{
+		name: 'arm',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'breast',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'cheek',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'chin',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'ear',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'fingernail',
+		categories: 'noun;anatomy',
+	},
+	{
 		name: 'four.fingers',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'foot',
 		categories: 'noun;anatomy',
 	},
 	{
 		name: 'hand',
 		categories: 'noun;anatomy',
 	},
+	{
+		name: 'heel',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'jaw',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'nose',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'penis',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'teat',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'upper.thigh',
+		categories: 'noun;anatomy',
+	},
 	// verbs
+	{
+		name: 'be.aware',
+		categories: 'verb',
+	},
+	{
+		name: 'fall',
+		categories: 'verb;motion',
+	},
 	{
 		name: 'give',
 		categories: 'verb',
 	},
 	{
+		name: 'perceive',
+		categories: 'verb',
+	},
+	{
+		name: 'see',
+		categories: 'verb',
+	},
+	{
+		name: 'step',
+		categories: 'verb',
+	},
+	{
+		name: 'stumble',
+		categories: 'verb',
+	},
+	{
 		name: 'take',
 		categories: 'verb',
+	},
+	{
+		name: 'walk',
+		categories: 'verb;motion',
+	},
+	// morphemes
+	{
+		name: '*>n', // nominalizer
+		categories: 'affix',
 	},
 ];
 
@@ -203,14 +294,32 @@ const entryData = [
 	// PIE
 	{
 		language: 'pie',
+		word: 'bʰeh₂ǵʰús',
+		meanings: 'arm',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'déḱm̥',
 		meanings: 'ten',
 		source: 'wiktionary',
 	},
 	{
 		language: 'pie',
+		word: 'dóws',
+		meanings: 'arm',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'dwóh₁',
 		meanings: 'two',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'ǵénus',
+		meanings: 'cheek;jaw;chin',
 		source: 'wiktionary',
 	},
 	{
@@ -228,14 +337,40 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'ǵʰésōr',
+		meanings: 'hand',
+		etymology: 'pie:ǵʰes-;pie:-ōr',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'h₂ew-',
+		meanings: 'perceive;see;be.aware',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'h₁néwn̥',
 		meanings: 'nine',
 		source: 'wiktionary',
 	},
 	{
 		language: 'pie',
+		word: 'h₃nṓgʰs',
+		meanings: 'fingernail',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: '(H)oḱto-',
 		meanings: 'four.fingers',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'h₂ṓws',
+		meanings: 'ear',
+		etymology: 'pie:h₂ew-;pie:-s',
 		source: 'wiktionary',
 	},
 	{
@@ -248,6 +383,12 @@ const entryData = [
 		language: 'pie',
 		word: 'ḱm̥tóm',
 		meanings: 'hundred',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'néh₂s',
+		meanings: 'nose',
 		source: 'wiktionary',
 	},
 	{
@@ -265,6 +406,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'ped-',
+		meanings: 'walk;step;stumble;fall',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'penkʷ-',
 		meanings: 'hand',
 		source: 'wiktionary',
@@ -274,6 +421,31 @@ const entryData = [
 		word: 'pénkʷe',
 		meanings: 'five',
 		etymology: 'pie:penkʷ-',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'pes-',
+		meanings: 'penis',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'pṓds',
+		meanings: 'foot',
+		etymology: 'pie:ped-;pie:-s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'pstḗn',
+		meanings: 'breast;teat',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: '-s',
+		meanings: '*>n',
 		source: 'wiktionary',
 	},
 	{
@@ -292,6 +464,12 @@ const entryData = [
 		language: 'pie',
 		word: 'swéḱs',
 		meanings: 'six',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'tpḗrsneh₂',
+		meanings: 'heel;upper.thigh',
 		source: 'wiktionary',
 	},
 	{
