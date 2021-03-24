@@ -27,6 +27,27 @@ class Author extends Clickable {
 		super(name);
 		Author.list.push(this);
 	}
+	get div(){
+		/** @type {HTMLDivElement} */
+		const elem = document.createElement('div');
+		elem.classList.add('author');
+		elem.id = `${this.name}/div`;
+		const header = document.createElement('h1');
+		header.innerHTML = this.name;
+		elem.appendChild(header);
+		// sources by author
+		const h2 = document.createElement('h2');
+		h2.innerHTML = 'Sources';
+		elem.appendChild(h2);
+		const ul = document.createElement('ul');
+		Source.list.filter(s => s.author === this).forEach(s => {
+			const li = document.createElement('li');
+			li.appendChild(s.span);
+			ul.appendChild(li);
+		});
+		elem.appendChild(ul);
+		return elem;
+	}
 	static fromName(name){
 		return Author.list.find(x => x.name === name);
 	}
