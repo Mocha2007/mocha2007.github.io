@@ -463,8 +463,8 @@ class Entry extends Clickable {
 	 * @param {Entry} other
 	*/
 	diff(other){
-		return lev(this.name, other.name)
-			+ 2*lev(this.vwllss, other.vwllss)
+		return 2* lev(this.name, other.name)
+			+ lev(this.vwllss, other.vwllss)
 			- 2*intersect(this.meanings, other.meanings).length;
 	}
 	parseEtymology(){
