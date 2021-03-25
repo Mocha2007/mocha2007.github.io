@@ -711,6 +711,10 @@ const meaningData = [
 		hypernyms: 'cattle',
 	},
 	{
+		name: 'bush',
+		categories: 'noun;plant',
+	},
+	{
 		name: 'burial;interment',
 		categories: 'noun;religion',
 	},
@@ -771,6 +775,10 @@ const meaningData = [
 		categories: 'noun',
 	},
 	{
+		name: 'egg',
+		categories: 'noun;animal',
+	},
+	{
 		name: 'eye;eyeball',
 		categories: 'noun;anatomy',
 	},
@@ -800,7 +808,7 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
-		name: 'fire',
+		name: 'fire;flame',
 		categories: 'noun',
 	},
 	{
@@ -822,6 +830,10 @@ const meaningData = [
 	{
 		name: 'forehead',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'forest',
+		categories: 'noun;plant;landform',
 	},
 	{
 		name: 'four.fingers',
@@ -1037,6 +1049,10 @@ const meaningData = [
 		categories: 'noun;person;animal',
 	},
 	{
+		name: 'plant',
+		categories: 'noun;plant',
+	},
+	{
 		name: 'queen',
 		categories: 'noun;person',
 		hypernyms: 'woman',
@@ -1084,6 +1100,10 @@ const meaningData = [
 	{
 		name: 'sea',
 		categories: 'noun;landform',
+	},
+	{
+		name: 'seed',
+		categories: 'noun;plant',
 	},
 	{
 		name: 'shadow;shade',
@@ -4603,7 +4623,7 @@ const entryData = [
 		source: 'starling',
 	},
 	// proto-afro-asiatic
-	// everything here A-C matching existing defs is added:
+	// everything here A-F matching existing defs is added:
 	// https://en.wiktionary.org/wiki/Appendix:Proto-Afroasiatic_reconstructions
 	{
 		language: 'proto-afro-asiatic',
@@ -4649,6 +4669,24 @@ const entryData = [
 	},
 	{
 		language: 'proto-afro-asiatic',
+		word: 'gâb-',
+		meanings: 'great',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'gâr-',
+		meanings: 'forest;bush',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'ʔâayš-',
+		meanings: 'flesh;meat',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
 		word: 'ʕaĉir-',
 		meanings: 'ten',
 		source: 'starling',
@@ -4657,6 +4695,18 @@ const entryData = [
 		language: 'proto-afro-asiatic',
 		word: 'ʔǎnn-',
 		meanings: '1pl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'ʔǐl-',
+		meanings: 'eye',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'kʷ’ânḥ-',
+		meanings: 'egg',
 		source: 'wiktionary',
 	},
 	{
@@ -4703,6 +4753,24 @@ const entryData = [
 	},
 	{
 		language: 'proto-afro-asiatic',
+		word: '-ŋîiwr-',
+		meanings: 'flame',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'rǐiz-',
+		meanings: 'foot',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'šâp-',
+		meanings: 'earth;ground',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
 		word: 'sâr-',
 		meanings: 'back',
 		source: 'wiktionary',
@@ -4723,6 +4791,12 @@ const entryData = [
 		language: 'proto-afro-asiatic',
 		word: 'tsan-',
 		meanings: 'two',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'tsim-',
+		meanings: 'fruit;seed;foliage;plant',
 		source: 'wiktionary',
 	},
 	{
