@@ -532,6 +532,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'bamboo.rat',
+		categories: 'noun;animal',
+	},
+	{
 		name: 'belly',
 		categories: 'noun;anatomy',
 	},
@@ -664,6 +668,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'hare',
+		categories: 'noun;animal',
+	},
+	{
 		name: 'head',
 		categories: 'noun;anatomy',
 	},
@@ -792,8 +800,16 @@ const meaningData = [
 		categories: 'noun;person',
 	},
 	{
+		name: 'rabbit',
+		categories: 'noun;animal',
+	},
+	{
 		name: 'rain',
 		categories: 'noun;weather',
+	},
+	{
+		name: 'rat',
+		categories: 'noun;animal',
 	},
 	{
 		name: 'rib',
@@ -884,6 +900,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'vagina',
+		categories: 'noun;anatomy',
+	},
+	{
 		name: 'vulva',
 		categories: 'noun;anatomy',
 	},
@@ -930,6 +950,10 @@ const meaningData = [
 	},
 	{
 		name: 'burn',
+		categories: 'verb',
+	},
+	{
+		name: 'carry',
 		categories: 'verb',
 	},
 	{
@@ -1207,6 +1231,12 @@ const entryData = [
 		language: 'pie',
 		word: 'éyes',
 		meanings: '3pl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'gʰebʰ-',
+		meanings: 'give',
 		source: 'wiktionary',
 	},
 	{
@@ -1996,6 +2026,20 @@ const entryData = [
 	},
 	{
 		language: 'pger',
+		word: 'gebaną',
+		meanings: 'give',
+		etymology: 'pie:gʰebʰ-',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pger',
+		word: 'giftiz',
+		meanings: 'gift',
+		etymology: 'pger:gebaną;pger:-þiz',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pger',
 		word: 'jūz',
 		meanings: '2pl',
 		etymology: 'pie:yū́',
@@ -2017,8 +2061,16 @@ const entryData = [
 	},
 	{
 		language: 'pger',
+		word: '-þiz',
+		meanings: 'v>n',
+		etymology: 'pie:-tis',
+		source: 'wiktionary',
+		notes: 'Forms abstract nouns from verb roots, usually from strong verbs.',
+	},
+	{
+		language: 'pger',
 		word: 'þrīz',
-		meanings: 'navel',
+		meanings: 'three',
 		etymology: 'pie:tréyes',
 		source: 'wiktionary',
 	},
@@ -2148,6 +2200,13 @@ const entryData = [
 		word: 'ġē',
 		meanings: '2pl',
 		etymology: 'pwger:jiʀ',
+		source: 'wiktionary',
+	},
+	{
+		language: 'oe',
+		word: 'ġift',
+		meanings: 'gift',
+		etymology: 'pger:giftiz',
 		source: 'wiktionary',
 	},
 	{
@@ -3606,6 +3665,18 @@ const entryData = [
 	// Proto-Sino-Tibetan
 	{
 		language: 'pst',
+		word: 'ba',
+		meanings: 'carry;shoulder',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'b(j)at',
+		meanings: 'vagina;vulva',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
 		word: 'bləj',
 		meanings: 'four',
 		source: 'wiktionary',
@@ -3620,6 +3691,12 @@ const entryData = [
 		language: 'pst',
 		word: 'brgjat',
 		meanings: 'eight',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'bwəj',
+		meanings: 'rat;bamboo.rat;rabbit;hare',
 		source: 'wiktionary',
 	},
 	{
