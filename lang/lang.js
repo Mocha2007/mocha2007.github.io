@@ -314,7 +314,7 @@ Meaning.list = [];
 
 class Entry extends Clickable {
 	constructor(language, name, meanings, etymology, source, notes){
-		super(name);
+		super(name.normalize());
 		this.language = Language.fromName(language);
 		this.meanings = Entry.parseMeanings(meanings);
 		/** @type {Entry[]} - this will be parsed from a string AFTER all entries are loaded */
@@ -423,16 +423,15 @@ class Entry extends Clickable {
 	/** get an oversimplified structure of a word */
 	get vwllss(){
 		return this.name.normalize('NFD')
-			.toLowerCase() // lowercase
 			.replace(/[\u0300-\u036f]/g, '') // remove diacritics
-			.replace(/[[\]()]/g, '') // remove [] ()
+			.replace(/[[\]()/-]/g, '') // remove [] () / -
 			.replace(/[aeiouAEIOU]+/g, 'V').normalize(); // make all vowels V
 	}
 	/** cognate score
 	 * @param {Entry} other
 	*/
 	diff(other){
-		return lev(this.name.normalize(), other.name.normalize())
+		return lev(this.name, other.name)
 			+ 2*lev(this.vwllss, other.vwllss)
 			- 2*intersect(this.meanings, other.meanings).length;
 	}
@@ -488,6 +487,8 @@ function main(){
 	Category.list.forEach(c => c.parseCategories());
 	Entry.list.forEach(e => e.parseEtymology());
 	Language.list.forEach(l => l.parseParent());
+	// sort entries alphabetically...
+	Entry.list.sort((a, b) => a.name < b.name ? -1 : 1);
 	// display óynos's entry just to start off...
 	Entry.fromId('pie:óynos').go();
 }

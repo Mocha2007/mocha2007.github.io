@@ -10,6 +10,12 @@ const authorData = [
 		name: 'mocha',
 	},
 	{
+		name: 'R. L. Trask',
+	},
+	{
+		name: 'Sergei Starostin',
+	},
+	{
 		name: 'wikimedia',
 	},
 ];
@@ -25,6 +31,17 @@ const sourceData = [
 		name: 'mocha',
 		author: 'mocha',
 		url: 'https://mocha2007.github.io',
+		date: '2021',
+	},
+	{
+		name: 'starling',
+		author: 'Sergei Starostin',
+		url: 'https://starling.rinet.ru/cgi-bin/main.cgi?flags=eygtnnl',
+		date: '2021',
+	},
+	{
+		name: 'uralonet',
+		url: 'http://uralonet.nytud.hu/search.cgi?id_eintrag=&rkn_l=%25&rkn_c=0&skeleton=&skeletonjoker=fixfix&taxonomy=&rkn_BED=they&rkn_BED_l=en&lexem=&verg_DI=&dialect_from=&dialect_to=&kme_fulltext=&author=&abbr=&submit=Search',
 		date: '2021',
 	},
 	{
@@ -62,7 +79,20 @@ const languageData = [
 		period: 'c. 500 BCE',
 	},
 	{
+		name: 'pnec',
+		location: 'caucasus',
+	},
+	{
+		name: 'pnwc',
+		location: 'caucasus',
+	},
+	{
 		name: 'proto-tyrsenian',
+	},
+	{
+		name: 'proto-uralic',
+		location: 'urals',
+		period: 'c. 2000 BCE',
 	},
 	{
 		name: 'proto-vasconic',
@@ -1345,5 +1375,182 @@ const entryData = [
 		word: 'zal',
 		meanings: 'two',
 		source: 'wiktionary',
+	},
+	// proto-uralic
+	{
+		language: 'proto-uralic',
+		word: 'kakta',
+		meanings: 'two',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'kolme',
+		meanings: 'three',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'küme',
+		meanings: 'ten',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'kutte',
+		meanings: 'six',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'neljä',
+		meanings: 'four',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'śäjćem',
+		meanings: 'seven',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'ükte',
+		meanings: 'one',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'ükteksä',
+		meanings: 'nine',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'witte',
+		meanings: 'five',
+		source: 'uralonet',
+	},
+	// pnwc
+	{
+		language: 'pnwc',
+		word: 'bć’ʷə',
+		meanings: 'ten',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'bδə',
+		meanings: 'seven',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'bğʷʲə',
+		meanings: 'nine',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'λ:ə',
+		meanings: 'three',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'ɬʷə',
+		meanings: 'six',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'p’λ’a',
+		meanings: 'four',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'sx̂ʷə',
+		meanings: 'five',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 't’qʷ’a',
+		meanings: 'two',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: '(w/y)ɣə/a',
+		meanings: 'eight',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'za',
+		meanings: 'one',
+		source: 'wiktionary',
+	},
+	// pnec
+	{
+		language: 'pnec',
+		word: 'bǖnŁ_e',
+		meanings: 'eight',
+		source: 'starling',
+	},
+	{
+		language: 'pnec',
+		word: 'cV',
+		meanings: 'one',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'hĕmq̇ɨ',
+		meanings: 'four',
+		source: 'starling',
+	},
+	{
+		language: 'pnec',
+		word: 'ʡĕnc̣Ĕ',
+		meanings: 'ten',
+		source: 'starling',
+	},
+	{
+		language: 'pnec',
+		word: 'ʡĕrŁ_ɨ̆',
+		meanings: 'seven',
+		source: 'starling',
+	},
+	{
+		language: 'pnec',
+		word: 'ʔĭlć̣wɨ',
+		meanings: 'nine',
+		source: 'starling',
+	},
+	{
+		language: 'pnec',
+		word: 'ʔrǟnƛ_E',
+		meanings: 'six',
+		source: 'starling',
+	},
+	{
+		language: 'pnec',
+		word: 'ƛHĕ',
+		meanings: 'three',
+		source: 'starling',
+	},
+	{
+		language: 'pnec',
+		word: 'ƛƛwi',
+		meanings: 'five',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'q̇Hwǟ',
+		meanings: 'five',
+		source: 'starling',
 	},
 ];
