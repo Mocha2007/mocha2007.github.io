@@ -311,11 +311,13 @@ class Category extends Clickable {
 Category.list = [];
 
 class Meaning extends Clickable {
-	constructor(name, categories){
+	constructor(name, categories, hypernyms){
 		super(name);
 		this.categories = categories
 			? categories.split(';').filter(x => x).map(c => Category.fromName(c))
 			: [];
+		/** @type {Meaning[]} */
+		this.hypernyms = hypernyms;
 		Meaning.list.push(this);
 	}
 	get div(){
@@ -366,16 +368,58 @@ class Meaning extends Clickable {
 			ul3.appendChild(li);
 		});
 		elem.appendChild(ul3);
+		// hypernym list
+		if (this.hypernyms.length){
+			const h23 = document.createElement('h2');
+			h23.innerHTML = 'Hypernyms';
+			elem.appendChild(h23);
+			elem.appendChild(this.hypernymList);
+		}
+		// hyponym list
+		if (this.hyponyms.length){
+			const h24 = document.createElement('h2');
+			h24.innerHTML = 'Hyponyms';
+			elem.appendChild(h24);
+			elem.appendChild(this.hyponymList);
+		}
 		return elem;
+	}
+	get hypernymList(){
+		const ul = document.createElement('ul');
+		this.hypernyms.forEach(m => {
+			const li = document.createElement('li');
+			li.appendChild(m.span);
+			li.appendChild(m.hypernymList);
+			ul.appendChild(li);
+		});
+		return ul;
+	}
+	get hyponymList(){
+		const ul = document.createElement('ul');
+		this.hyponyms.forEach(m => {
+			const li = document.createElement('li');
+			li.appendChild(m.span);
+			li.appendChild(m.hyponymList);
+			ul.appendChild(li);
+		});
+		return ul;
+	}
+	get hyponyms(){
+		return Meaning.list.filter(m => m.hypernyms.includes(this));
 	}
 	get title(){
 		return this.categories.map(c => c.name).join(', ');
+	}
+	parseHypernyms(){
+		if (!this.hypernyms)
+			return this.hypernyms = [];
+		this.hypernyms = this.hypernyms.split(';').map(name => Meaning.fromName(name));
 	}
 	static fromName(name){
 		return Meaning.list.find(x => x.name.split(';').includes(name));
 	}
 	static parseData(o){
-		new Meaning(o.name, o.categories);
+		new Meaning(o.name, o.categories, o.hypernyms);
 	}
 }
 /** @type {Meaning[]} */
@@ -568,8 +612,9 @@ function main(){
 	categoryData.forEach(o => Category.parseData(o));
 	meaningData.forEach(o => Meaning.parseData(o));
 	entryData.forEach(o => Entry.parseData(o));
-	// construct etymology mappings after all entries loaded
+	// post-processing
 	Category.list.forEach(c => c.parseCategories());
+	Meaning.list.forEach(m => m.parseHypernyms());
 	Entry.list.forEach(e => e.parseEtymology());
 	Language.list.forEach(l => l.parseParent());
 	// sort entries alphabetically...

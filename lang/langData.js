@@ -397,6 +397,12 @@ const meaningData = [
 		name: 'ACC',
 	},
 	{
+		name: 'ALL',
+	},
+	{
+		name: 'ERG',
+	},
+	{
 		name: 'GEN',
 	},
 	{
@@ -473,14 +479,17 @@ const meaningData = [
 	{
 		name: 'he', // for languages that distinguish gender
 		categories: 'pronoun',
+		hypernyms: '3s',
 	},
 	{
 		name: 'she',
 		categories: 'pronoun',
+		hypernyms: '3s',
 	},
 	{
 		name: 'it',
 		categories: 'pronoun',
+		hypernyms: '3s',
 	},
 	// conjunctions
 	{
@@ -494,6 +503,7 @@ const meaningData = [
 	{
 		name: 'or.excl',
 		categories: 'conjunction',
+		hypernyms: 'or',
 	},
 	// adjectives
 	{
@@ -681,6 +691,7 @@ const meaningData = [
 	{
 		name: 'bull',
 		categories: 'noun;animal',
+		hypernyms: 'cattle',
 	},
 	{
 		name: 'burial;interment',
@@ -696,6 +707,10 @@ const meaningData = [
 	},
 	{
 		name: 'cat',
+		categories: 'noun;animal',
+	},
+	{
+		name: 'cattle',
 		categories: 'noun;animal',
 	},
 	{
@@ -969,6 +984,7 @@ const meaningData = [
 	{
 		name: 'ox',
 		categories: 'noun;animal',
+		hypernyms: 'bull',
 	},
 	{
 		name: 'panther',
@@ -1144,6 +1160,10 @@ const meaningData = [
 	},
 	{
 		name: 'wind',
+		categories: 'noun',
+	},
+	{
+		name: 'wine',
 		categories: 'noun',
 	},
 	{
@@ -2599,6 +2619,12 @@ const entryData = [
 	// Proto-Vasconic
 	{
 		language: 'proto-vasconic',
+		word: '-a',
+		meanings: 'ALL',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
 		word: 'adar',
 		meanings: 'horn',
 		source: shortcuts.edob,
@@ -2637,6 +2663,18 @@ const entryData = [
 		language: 'proto-vasconic',
 		word: 'andere',
 		meanings: 'lady',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'aRani',
+		meanings: 'fish',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'ardano',
+		meanings: 'wine',
 		source: shortcuts.edob,
 	},
 	{
@@ -2685,6 +2723,12 @@ const entryData = [
 		language: 'proto-vasconic',
 		word: 'beLaun',
 		meanings: 'knee',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'bene',
+		meanings: 'thin',
 		source: shortcuts.edob,
 	},
 	{
@@ -2785,14 +2829,44 @@ const entryData = [
 	},
 	{
 		language: 'proto-vasconic',
+		word: '-k',
+		meanings: 'PL;ERG',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
 		word: 'laur',
 		meanings: 'four',
 		source: shortcuts.edob,
 	},
 	{
 		language: 'proto-vasconic',
+		word: '-n',
+		meanings: 'LOC',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
 		word: 'ni',
 		meanings: '1s',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'lur',
+		meanings: 'earth',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'luze',
+		meanings: 'long',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: '-oan-',
+		meanings: 'go',
 		source: shortcuts.edob,
 	},
 	{
