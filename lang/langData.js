@@ -3,6 +3,7 @@
 
 const shortcuts = {
 	edob: 'Etymological Dictionary of Basque',
+	rhaetian: 'Thesaurus Inscriptionum Raeticarum',
 };
 
 const authorData = [
@@ -14,6 +15,9 @@ const authorData = [
 	},
 	{
 		name: 'Sergei Starostin',
+	},
+	{
+		name: 'Stefan Schumacher',
 	},
 	{
 		name: 'wikimedia',
@@ -38,6 +42,12 @@ const sourceData = [
 		author: 'Sergei Starostin',
 		url: 'https://starling.rinet.ru/cgi-bin/main.cgi?flags=eygtnnl',
 		date: '2021',
+	},
+	{
+		name: shortcuts.rhaetian,
+		author: 'Stefan Schumacher',
+		url: 'https://www.univie.ac.at/raetica/wiki/Category:Word',
+		date: '2016',
 	},
 	{
 		name: 'uralonet',
@@ -66,6 +76,12 @@ const languageData = [
 		parent: 'proto-tyrsenian',
 		location: 'italy',
 		period: 'c. 500 BCE',
+	},
+	{
+		name: 'oe',
+		parent: 'pwger',
+		location: 'england',
+		period: 'c. 1000 CE',
 	},
 	{
 		name: 'pie',
@@ -118,10 +134,10 @@ const languageData = [
 		period: 'c. 500 CE',
 	},
 	{
-		name: 'oe',
-		parent: 'pwger',
-		location: 'england',
-		period: 'c. 1000 CE',
+		name: 'rhaetian',
+		parent: 'proto-tyrsenian',
+		location: 'alps',
+		period: 'c. 500 BCE',
 	},
 ];
 
@@ -164,6 +180,13 @@ const categoryData = [
 	},
 	{
 		name: 'motion',
+	},
+	{
+		name: 'religion',
+		categories: 'society',
+	},
+	{
+		name: 'society',
 	},
 	// todo: swadesh list items
 	{
@@ -247,14 +270,18 @@ const meaningData = [
 		name: 'up',
 		categories: 'preposition',
 	},
-	// particles
+	// misc morphemes
+	{
+		name: 'GEN',
+	},
 	{
 		name: 'NEG',
-		categories: 'particle',
+	},
+	{
+		name: 'PL',
 	},
 	{
 		name: 'PROH',
-		categories: 'particle',
 	},
 	// pronouns
 	{
@@ -389,6 +416,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'community',
+		categories: 'noun;society',
+	},
+	{
 		name: 'ear',
 		categories: 'noun;anatomy',
 	},
@@ -422,6 +453,10 @@ const meaningData = [
 	},
 	{
 		name: 'front',
+		categories: 'noun',
+	},
+	{
+		name: 'gift',
 		categories: 'noun',
 	},
 	{
@@ -503,6 +538,10 @@ const meaningData = [
 	{
 		name: 'row.of.teeth',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'sacrifice.n',
+		categories: 'noun;religion',
 	},
 	{
 		name: 'shoulder',
@@ -609,7 +648,7 @@ const meaningData = [
 		name: 'walk',
 		categories: 'verb;motion',
 	},
-	// morphemes
+	// derivational morphemes
 	{
 		name: '*>adj.contrastive',
 		categories: 'affix',
@@ -620,6 +659,10 @@ const meaningData = [
 	},
 	{
 		name: '*>n', // nominalizer
+		categories: 'affix',
+	},
+	{
+		name: 'v>n', // v. -> n.
 		categories: 'affix',
 	},
 	{
@@ -652,6 +695,19 @@ const entryData = [
 		word: 'dáḱru',
 		meanings: 'tear.eye',
 		etymology: 'pie:derḱ-;pie:h₂éḱru',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'deh₃-',
+		meanings: 'give',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'déh₃tis',
+		meanings: 'gift',
+		etymology: 'pie:deh₃-;pie:-tis',
 		source: 'wiktionary',
 	},
 	{
@@ -1119,6 +1175,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: '-tis',
+		meanings: 'v>n',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'tpḗrsneh₂',
 		meanings: 'heel;upper.thigh',
 		source: 'wiktionary',
@@ -1414,6 +1476,20 @@ const entryData = [
 	// etruscan
 	{
 		language: 'etruscan',
+		word: '-(a)cvil',
+		meanings: 'gift',
+		etymology: 'proto-tyrsenian:akvil',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: '-ar',
+		meanings: 'PL',
+		etymology: 'proto-tyrsenian:-r',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
 		word: 'cezp',
 		meanings: 'eight',
 		source: 'wiktionary',
@@ -1432,14 +1508,35 @@ const entryData = [
 	},
 	{
 		language: 'etruscan',
+		word: '-(i)a',
+		meanings: 'GEN',
+		etymology: 'proto-tyrsenian:-(i)a',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
 		word: 'maχ',
 		meanings: 'five',
 		source: 'wiktionary',
 	},
 	{
 		language: 'etruscan',
+		word: 'mi',
+		meanings: '1s',
+		etymology: 'proto-tyrsenian:mi',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
 		word: 'nurφ',
 		meanings: 'nine',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: '-s',
+		meanings: 'GEN',
+		etymology: 'proto-tyrsenian:-s',
 		source: 'wiktionary',
 	},
 	{
@@ -1470,7 +1567,130 @@ const entryData = [
 		language: 'etruscan',
 		word: 'zal',
 		meanings: 'two',
+		etymology: 'proto-tyrsenian:zal',
 		source: 'wiktionary',
+	},
+	// rhaetian
+	{
+		language: 'rhaetian',
+		word: 'akvil',
+		meanings: 'gift',
+		etymology: 'proto-tyrsenian:akvil',
+		source: 'wiktionary',
+	},
+	{
+		language: 'rhaetian',
+		word: 'eluku',
+		meanings: 'sacrifice.n',
+		source: shortcuts.rhaetian,
+	},
+	{
+		language: 'rhaetian',
+		word: '-(i)a',
+		meanings: 'GEN',
+		etymology: 'proto-tyrsenian:-(i)a',
+		source: 'wiktionary',
+	},
+	{
+		language: 'rhaetian',
+		word: '-ka',
+		meanings: 'and',
+		source: shortcuts.rhaetian,
+	},
+	{
+		language: 'rhaetian',
+		word: '-le',
+		meanings: 'GEN',
+		source: shortcuts.rhaetian,
+	},
+	{
+		language: 'rhaetian',
+		word: 'mi',
+		meanings: '1s',
+		source: shortcuts.rhaetian,
+	},
+	{
+		language: 'rhaetian',
+		word: '-r(a)',
+		meanings: 'PL',
+		etymology: 'proto-tyrsenian:-s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'rhaetian',
+		word: '-s',
+		meanings: 'GEN',
+		etymology: 'proto-tyrsenian:-s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'rhaetian',
+		word: '-si',
+		meanings: 'GEN',
+		etymology: 'proto-tyrsenian:-s',
+		source: shortcuts.rhaetian,
+	},
+	{
+		language: 'rhaetian',
+		word: 'sφura',
+		meanings: 'community',
+		source: shortcuts.rhaetian,
+	},
+	{
+		language: 'rhaetian',
+		word: 'ta',
+		meanings: 'this',
+		source: shortcuts.rhaetian,
+	},
+	{
+		language: 'rhaetian',
+		word: '-u',
+		meanings: 'v>n',
+		source: shortcuts.rhaetian,
+	},
+	{
+		language: 'rhaetian',
+		word: 'zal',
+		meanings: 'two',
+		etymology: 'proto-tyrsenian:zal',
+		source: 'wiktionary',
+	},
+	// proto-tyrsenian
+	{
+		language: 'proto-tyrsenian',
+		word: 'akvil',
+		meanings: 'gift',
+		source: 'mocha',
+	},
+	{
+		language: 'proto-tyrsenian',
+		word: '-(i)a',
+		meanings: 'GEN',
+		source: 'mocha',
+	},
+	{
+		language: 'proto-tyrsenian',
+		word: 'mi',
+		meanings: '1s',
+		source: 'mocha',
+	},
+	{
+		language: 'proto-tyrsenian',
+		word: '-r',
+		meanings: 'PL',
+		source: 'mocha',
+	},
+	{
+		language: 'proto-tyrsenian',
+		word: '-s',
+		meanings: 'GEN',
+		source: 'mocha',
+	},
+	{
+		language: 'proto-tyrsenian',
+		word: 'zal',
+		meanings: 'two',
+		source: 'mocha',
 	},
 	// proto-uralic
 	{

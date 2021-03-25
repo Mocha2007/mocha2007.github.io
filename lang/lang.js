@@ -280,7 +280,9 @@ Category.list = [];
 class Meaning extends Clickable {
 	constructor(name, categories){
 		super(name);
-		this.categories = categories.split(';').filter(x => x).map(c => Category.fromName(c));
+		this.categories = categories
+			? categories.split(';').filter(x => x).map(c => Category.fromName(c))
+			: [];
 		Meaning.list.push(this);
 	}
 	get div(){
