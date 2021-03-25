@@ -87,6 +87,18 @@ const languageData = [
 		location: 'caucasus',
 	},
 	{
+		name: 'proto-afro-asiatic',
+		location: 'ethiopia',
+	},
+	{
+		name: 'proto-kartvelian',
+		location: 'caucasus',
+	},
+	{
+		name: 'proto-semitic',
+		parent: 'proto-afro-asiatic',
+	},
+	{
 		name: 'proto-tyrsenian',
 	},
 	{
@@ -1552,5 +1564,159 @@ const entryData = [
 		word: 'q̇Hwǟ',
 		meanings: 'five',
 		source: 'starling',
+	},
+	// kartvelian
+	{
+		language: 'proto-kartvelian',
+		word: 'arwa-',
+		meanings: 'eight',
+		etymology: 'proto-semitic:ʔarbaʕ-',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'at',
+		meanings: 'ten',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'c₁xar-',
+		meanings: 'nine',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'eks₁w-',
+		meanings: 'six',
+		etymology: 'pie:swéḱs',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'ert-',
+		meanings: 'one',
+		source: 'wiktionary',
+		notes: 'Proto-Georgian-Zan',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'jor-',
+		meanings: 'two',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'otxo-',
+		meanings: 'four',
+		etymology: 'pie:oḱtṓw',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'sam-',
+		meanings: 'three',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'šwid-',
+		meanings: 'seven',
+		etymology: 'pie:oḱtṓw',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'xut-',
+		meanings: 'five',
+		source: 'wiktionary',
+	},
+	// proto-semitic
+	{
+		language: 'proto-semitic',
+		word: 'ḫamš-',
+		meanings: 'five',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-semitic',
+		word: 'ʔarbaʕ-',
+		meanings: 'four',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-semitic',
+		word: 'ʕaśar-',
+		meanings: 'ten',
+		etymology: 'proto-afro-asiatic:ʕaĉir-',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-semitic',
+		word: 'ʕašt-',
+		meanings: 'one',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-semitic',
+		word: 'šabʕ-',
+		meanings: 'seven',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-semitic',
+		word: 'šidṯ-',
+		meanings: 'six',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-semitic',
+		word: 'ṯalāṯ-',
+		meanings: 'three',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-semitic',
+		word: 'ṯamāniy-',
+		meanings: 'eight',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-semitic',
+		word: 'ṯin-',
+		meanings: 'two',
+		etymology: 'proto-afro-asiatic:tsan-',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-semitic',
+		word: 'tišʕ-',
+		meanings: 'nine',
+		source: 'wiktionary',
+	},
+	// proto-afro-asiatic
+	{
+		language: 'proto-afro-asiatic',
+		word: 'fâzw-',
+		meanings: 'four',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'ʕaĉir-',
+		meanings: 'ten',
+		source: 'starling',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'tsan-',
+		meanings: 'two',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'xaynz-',
+		meanings: 'three',
+		source: 'wiktionary',
 	},
 ];

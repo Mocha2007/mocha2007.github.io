@@ -399,7 +399,7 @@ class Entry extends Clickable {
 	get likelyCognateList(){
 		const n = 10;
 		const ol = document.createElement('ol');
-		Entry.list.filter(e => e.language !== this.language)
+		this.translations
 			.sort((a, b) => b.diff(this) - a.diff(this)).slice(-n).reverse().forEach((e, i) => {
 				const li = document.createElement('li');
 				li.appendChild(e.span);
@@ -443,7 +443,7 @@ class Entry extends Clickable {
 	/** @param {string} id */
 	static fromId(id){
 		// eg. pger:ainaz
-		const [lang, word] = id.split(':');
+		const [lang, word] = id.normalize().split(':');
 		return Entry.list.find(x => x.name === word && x.language.name === lang);
 	}
 	static parseData(o){
