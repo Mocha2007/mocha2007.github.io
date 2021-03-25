@@ -152,6 +152,9 @@ const categoryData = [
 		name: 'adjective',
 	},
 	{
+		name: 'adposition;preposition;postposition',
+	},
+	{
 		name: 'affix',
 	},
 	{

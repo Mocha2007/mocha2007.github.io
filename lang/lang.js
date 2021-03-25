@@ -289,7 +289,7 @@ class Category extends Clickable {
 		this.categories = this.categories.split(';').filter(x => x).map(c => Category.fromName(c));
 	}
 	static fromName(name){
-		return Category.list.find(x => x.name === name);
+		return Category.list.find(x => x.name.split(';').includes(name));
 	}
 	static parseData(o){
 		new Category(o.name, o.categories);
