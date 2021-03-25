@@ -29,7 +29,7 @@ const authorData = [
 ];
 
 const sourceData = [
-	{
+	{ // this resource is pretty much exhausted
 		name: shortcuts.etruscan,
 		author: 'Dieter H. Steinbauer',
 		url: 'http://www.etruskisch.de/pgs/vc.htm',
@@ -231,6 +231,7 @@ const categoryData = [
 	},
 	{
 		name: 'family',
+		categories: 'person',
 	},
 	{ // eg. brook, mountain, desert, ...
 		name: 'landform',
@@ -769,6 +770,7 @@ const meaningData = [
 	{
 		name: 'father',
 		categories: 'noun;family',
+		hypernyms: 'man',
 	},
 	{
 		name: 'feather;plume',
@@ -893,6 +895,7 @@ const meaningData = [
 	{
 		name: 'king',
 		categories: 'noun;person',
+		hypernyms: 'man',
 	},
 	{
 		name: 'knee',
@@ -933,6 +936,7 @@ const meaningData = [
 	{
 		name: 'man',
 		categories: 'noun;person',
+		hypernyms: 'person',
 	},
 	{
 		name: 'marrow',
@@ -957,6 +961,7 @@ const meaningData = [
 	{
 		name: 'mother',
 		categories: 'noun;family',
+		hypernyms: 'woman',
 	},
 	{
 		name: 'mountain',
@@ -1018,7 +1023,12 @@ const meaningData = [
 	},
 	{
 		name: 'person;human;earthling',
+		categories: 'noun;person;animal',
+	},
+	{
+		name: 'queen',
 		categories: 'noun;person',
+		hypernyms: 'woman',
 	},
 	{
 		name: 'rabbit',
@@ -1169,6 +1179,10 @@ const meaningData = [
 		categories: 'noun',
 	},
 	{
+		name: 'wife',
+		categories: 'noun;family',
+	},
+	{
 		name: 'wind',
 		categories: 'noun',
 	},
@@ -1183,6 +1197,7 @@ const meaningData = [
 	{
 		name: 'woman;lady',
 		categories: 'noun;person',
+		hypernyms: 'person',
 	},
 	{
 		name: 'word',
@@ -3191,6 +3206,12 @@ const entryData = [
 	},
 	{
 		language: 'etruscan',
+		word: 'meχ',
+		meanings: 'lady;queen',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
 		word: 'mi',
 		meanings: '1s',
 		etymology: 'proto-tyrsenian:mi',
@@ -3238,6 +3259,12 @@ const entryData = [
 		word: 'nurφ',
 		meanings: 'nine',
 		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'puia',
+		meanings: 'wife;woman',
+		source: shortcuts.etruscan,
 	},
 	{
 		language: 'etruscan',
