@@ -376,6 +376,9 @@ const meaningData = [
 	},
 	// misc morphemes
 	{
+		name: 'ABE',
+	},
+	{
 		name: 'ABL',
 	},
 	{
@@ -383,6 +386,9 @@ const meaningData = [
 	},
 	{
 		name: 'GEN',
+	},
+	{
+		name: 'LAT',
 	},
 	{
 		name: 'LOC',
@@ -395,6 +401,9 @@ const meaningData = [
 	},
 	{
 		name: 'PROH',
+	},
+	{
+		name: 'TRANSL',
 	},
 	// pronouns
 	{
@@ -658,6 +667,10 @@ const meaningData = [
 		categories: 'noun;society',
 	},
 	{
+		name: 'crane',
+		categories: 'noun;animal',
+	},
+	{
 		name: 'day',
 		categories: 'noun;time',
 	},
@@ -706,6 +719,10 @@ const meaningData = [
 		categories: 'noun',
 	},
 	{
+		name: 'fish',
+		categories: 'noun;animal',
+	},
+	{
 		name: 'flower',
 		categories: 'noun;plant',
 	},
@@ -732,6 +749,10 @@ const meaningData = [
 	{
 		name: 'gift',
 		categories: 'noun',
+	},
+	{
+		name: 'goose',
+		categories: 'noun;animal',
 	},
 	{
 		name: 'hand',
@@ -3301,6 +3322,12 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: 'e-',
+		meanings: 'NEG',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-uralic',
 		word: '-ek',
 		meanings: 'v>n',
 		source: 'wiktionary',
@@ -3355,6 +3382,12 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: 'kala',
+		meanings: 'fish',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'kälɜ',
 		meanings: 'blood',
 		source: 'uralonet',
@@ -3373,6 +3406,18 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: '-ksi',
+		meanings: 'TRANSL',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-uralic',
+		word: '-ktak',
+		meanings: 'ABE',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'ku-',
 		meanings: 'who;which;what',
 		source: 'uralonet',
@@ -3382,6 +3427,12 @@ const entryData = [
 		word: 'küme',
 		meanings: 'ten',
 		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'kurki',
+		meanings: 'crane',
+		source: 'wiktionary',
 	},
 	{
 		language: 'proto-uralic',
@@ -3400,6 +3451,12 @@ const entryData = [
 		word: 'kutte',
 		meanings: 'six',
 		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'lunta',
+		meanings: 'goose',
+		source: 'wiktionary',
 	},
 	{
 		language: 'proto-uralic',
@@ -3463,6 +3520,12 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: '-ŋ',
+		meanings: 'LAT',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-uralic',
 		word: '-na',
 		meanings: 'LOC',
 		source: 'wiktionary',
@@ -3490,6 +3553,12 @@ const entryData = [
 		word: 'niŋä',
 		meanings: 'woman',
 		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'ńoma',
+		meanings: 'hare',
+		source: 'wiktionary',
 	},
 	{
 		language: 'proto-uralic',
