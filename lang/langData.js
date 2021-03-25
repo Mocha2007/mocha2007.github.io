@@ -221,6 +221,9 @@ const categoryData = [
 		categories: 'life',
 	},
 	{
+		name: 'disease',
+	},
+	{
 		name: 'celestial.object',
 	},
 	{
@@ -493,6 +496,10 @@ const meaningData = [
 		categories: 'adjective',
 	},
 	{
+		name: 'heavy',
+		categories: 'adjective',
+	},
+	{
 		name: 'higher',
 		categories: 'adjective',
 	},
@@ -575,6 +582,10 @@ const meaningData = [
 		categories: 'noun;animal',
 	},
 	{
+		name: 'blister',
+		categories: 'noun;disease',
+	},
+	{
 		name: 'blood',
 		categories: 'noun;anatomy',
 	},
@@ -601,6 +612,10 @@ const meaningData = [
 	{
 		name: 'brook;creek;stream',
 		categories: 'noun;landform',
+	},
+	{
+		name: 'bubble',
+		categories: 'noun',
 	},
 	{
 		name: 'bull',
@@ -645,6 +660,10 @@ const meaningData = [
 	{
 		name: 'day',
 		categories: 'noun;time',
+	},
+	{
+		name: 'dust',
+		categories: 'noun',
 	},
 	{
 		name: 'ear',
@@ -739,6 +758,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'hill',
+		categories: 'noun;landform',
+	},
+	{
 		name: 'hip',
 		categories: 'noun;anatomy',
 	},
@@ -749,6 +772,10 @@ const meaningData = [
 	{
 		name: 'horn',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'house',
+		categories: 'noun',
 	},
 	{
 		name: 'intestines',
@@ -811,6 +838,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'measles',
+		categories: 'noun;disease',
+	},
+	{
 		name: 'month',
 		categories: 'noun;time',
 	},
@@ -848,6 +879,10 @@ const meaningData = [
 	},
 	{
 		name: 'owl',
+		categories: 'noun;animal',
+	},
+	{
+		name: 'ox',
 		categories: 'noun;animal',
 	},
 	{
@@ -901,6 +936,10 @@ const meaningData = [
 	{
 		name: 'sacrifice.n',
 		categories: 'noun;religion',
+	},
+	{
+		name: 'scarlet.fever',
+		categories: 'noun;disease',
 	},
 	{
 		name: 'sea',
@@ -3665,6 +3704,24 @@ const entryData = [
 	// pnwc
 	{
 		language: 'pnwc',
+		word: '(a)nǝ',
+		meanings: 'mother',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'anǝTa',
+		meanings: 'heavy',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: '(a)ṕ:ǝ',
+		meanings: 'father',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
 		word: 'bć’ʷə',
 		meanings: 'ten',
 		source: 'wiktionary',
@@ -3677,8 +3734,44 @@ const entryData = [
 	},
 	{
 		language: 'pnwc',
+		word: 'bǝbǝ',
+		meanings: 'dust;bubble;blister',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'bǝč̣́ǝ',
+		meanings: 'measles;scarlet.fever;navel',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'bǝɣA',
+		meanings: 'mountain;hill',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'bǝźA',
+		meanings: 'language;tongue',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
 		word: 'bğʷʲə',
 		meanings: 'nine',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'c:ʷǝ',
+		meanings: 'ox',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'ɡʲʷə',
+		meanings: 'heart',
 		source: 'wiktionary',
 	},
 	{
@@ -3697,6 +3790,12 @@ const entryData = [
 		language: 'pnwc',
 		word: 'p’λ’a',
 		meanings: 'four',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'ʁ́Iʷǝna',
+		meanings: 'house',
 		source: 'wiktionary',
 	},
 	{
