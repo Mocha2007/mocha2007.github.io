@@ -1706,7 +1706,6 @@ const entryData = [
 		language: 'proto-kartvelian',
 		word: 'šwid-',
 		meanings: 'seven',
-		etymology: 'pie:oḱtṓw',
 		source: 'wiktionary',
 	},
 	{
