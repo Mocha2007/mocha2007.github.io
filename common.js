@@ -284,6 +284,17 @@ function union(a, b){
 	return [...new Set([...a, ...b])];
 }
 
+/** https://stackoverflow.com/a/14438954/2579798
+ *
+ * usage: arr.filter(unique);
+ * @param {any} v
+ * @param {number} i
+ * @param {any[]} a
+*/
+function unique(v, i, a){
+	return a.indexOf(v) === i;
+}
+
 /**
  * @param {number} value
  * @param {string} name

@@ -1,6 +1,6 @@
 /* exported main */
 /* global authorData, categoryData, entryData, intersect, languageData, mean, meaningData,
-	sourceData, union */
+	sourceData, union, unique */
 'use strict';
 
 /** @type {HTMLBodyElement} */
@@ -360,7 +360,7 @@ class Meaning extends Clickable {
 		return this.categories.map(c => c.name).join(', ');
 	}
 	static fromName(name){
-		return Meaning.list.find(x => x.name === name);
+		return Meaning.list.find(x => x.name.split(';').includes(name));
 	}
 	static parseData(o){
 		new Meaning(o.name, o.categories);
@@ -516,7 +516,7 @@ class Entry extends Clickable {
 	/** @param {string} s */
 	static parseMeanings(s){
 		// eg. meanings1;meaning2;...
-		return s.split(';').map(name => Meaning.fromName(name));
+		return s.split(';').map(name => Meaning.fromName(name)).filter(unique);
 	}
 }
 /** @type {Entry[]} */

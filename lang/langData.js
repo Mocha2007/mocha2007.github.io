@@ -405,7 +405,7 @@ const meaningData = [
 		categories: 'adjective',
 	},
 	{
-		name: 'big',
+		name: 'big;great;large',
 		categories: 'adjective',
 	},
 	{
@@ -417,15 +417,15 @@ const meaningData = [
 		categories: 'adjective',
 	},
 	{
-		name: 'great',
-		categories: 'adjective',
-	},
-	{
 		name: 'higher',
 		categories: 'adjective',
 	},
 	{
 		name: 'new',
+		categories: 'adjective',
+	},
+	{
+		name: 'old',
 		categories: 'adjective',
 	},
 	{
@@ -438,6 +438,10 @@ const meaningData = [
 	},
 	{
 		name: 'sharp',
+		categories: 'adjective',
+	},
+	{
+		name: 'thick',
 		categories: 'adjective',
 	},
 	{
@@ -982,6 +986,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'éyes',
+		meanings: '3pl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'gʷeh₂-',
 		meanings: 'step;go;stand',
 		source: 'wiktionary',
@@ -1096,6 +1106,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'h₁es-',
+		meanings: 'be',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'h₁ésh₂r̥',
 		meanings: 'blood',
 		source: 'wiktionary',
@@ -1188,8 +1204,27 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: '-ī',
+		meanings: 'GEN',
+		source: 'wiktionary',
+		notes: 'thematic genitive #1',
+	},
+	{
+		language: 'pie',
+		word: 'íd',
+		meanings: 'it',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'íh₂',
+		meanings: 'she',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'ís',
-		meanings: '3s',
+		meanings: 'he;3s',
 		source: 'wiktionary',
 	},
 	{
@@ -1260,6 +1295,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'méǵh₂s',
+		meanings: 'big;great',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'mḗh₁n̥s',
 		meanings: 'moon;month',
 		source: 'wiktionary',
@@ -1306,6 +1347,20 @@ const entryData = [
 		word: '-ónts',
 		meanings: '*>body.part',
 		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: '-(o/e)s',
+		meanings: 'GEN',
+		source: 'wiktionary',
+		notes: 'athematic genitive',
+	},
+	{
+		language: 'pie',
+		word: '-osyo',
+		meanings: 'GEN',
+		source: 'wiktionary',
+		notes: 'thematic genitive #2',
 	},
 	{
 		language: 'pie',
@@ -1429,6 +1484,13 @@ const entryData = [
 		language: 'pie',
 		word: 'steh₂-',
 		meanings: 'stand',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'steh₂ro-',
+		meanings: 'large;big;thick;old',
+		etymology: 'pie:steh₂-',
 		source: 'wiktionary',
 	},
 	{
