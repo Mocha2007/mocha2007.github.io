@@ -1,6 +1,6 @@
 /* exported main */
-/* global authorData, categoryData, entryData, intersect, languageData, meaningData, sourceData,
-	union */
+/* global authorData, categoryData, entryData, intersect, languageData, mean, meaningData,
+	sourceData, union */
 'use strict';
 
 /** @type {HTMLBodyElement} */
@@ -147,7 +147,7 @@ class Language extends Clickable {
 		h2.innerHTML = 'Entries';
 		elem.appendChild(h2);
 		const ul = document.createElement('ul');
-		Entry.list.filter(e => e.language === this).forEach(m => {
+		this.vocab.forEach(m => {
 			const li = document.createElement('li');
 			li.appendChild(m.span);
 			ul.appendChild(li);
@@ -158,10 +158,42 @@ class Language extends Clickable {
 		h22.innerHTML = 'Children';
 		elem.appendChild(h22);
 		elem.appendChild(this.childList);
+		// most likely relatives
+		const h23 = document.createElement('h2');
+		h23.innerHTML = 'Most Likely Relatives';
+		elem.appendChild(h23);
+		h23.onclick = () => elem.appendChild(this.likelyRelativeList);
 		return elem;
+	}
+	get likelyRelativeList(){
+		const n = 10;
+		const ol = document.createElement('ol');
+		Language.list.filter(l => l !== this)
+			.sort((a, b) => b.diff(this) - a.diff(this)).slice(-n).reverse().forEach((e, i) => {
+				const li = document.createElement('li');
+				li.appendChild(e.span);
+				li.innerHTML += `score: ${-e.diff(this)}`;
+				li.style.opacity = 1 - i/(2*n);
+				ol.appendChild(li);
+			});
+		return ol;
+	}
+	get vocab(){
+		return Entry.list.filter(e => e.language === this);
 	}
 	get title(){
 		return `Parent: ${this.parent}; ${this.location}, ${this.date}`;
+	}
+	/** averaged cognate score
+	 * @param {Language} other
+	*/
+	diff(other){
+		const d = mean(this.vocab
+			.map(e => [e, e.translateInto(other)]) // translate
+			.filter(e => e[1]) // make sure translation exists
+			.map(e => e[0].diff(e[1])) // find diff
+		);
+		return isFinite(d) ? d : Infinity;
 	}
 	/** @param {string} s */
 	parseParent(){
@@ -439,6 +471,11 @@ class Entry extends Clickable {
 		if (!this.etymology)
 			return;
 		this.etymology = this.etymology.split(';').map(id => Entry.fromId(id));
+	}
+	/** @param {Language} target - translate ANY MEANING into target language */
+	translateInto(target){
+		return Entry.list.find(e => e.language === target
+			&& intersect(e.meanings, this.meanings).length);
 	}
 	/** @param {string} id */
 	static fromId(id){
