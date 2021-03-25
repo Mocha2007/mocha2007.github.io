@@ -483,7 +483,7 @@ class Entry extends Clickable {
 	get vwllss(){
 		return this.name.normalize('NFD')
 			.replace(/[\u0300-\u036f]/g, '') // remove diacritics
-			.replace(/[[\]()/-]/g, '') // remove [] () / -
+			.replace(/[[\]()/=_-]/g, '') // remove [] () / - = _
 			.replace(/[aeiouAEIOU]+/g, 'V').normalize(); // make all vowels V
 	}
 	/** cognate score

@@ -242,6 +242,9 @@ const categoryData = [
 		name: 'life',
 	},
 	{
+		name: 'measurement',
+	},
+	{
 		name: 'motion',
 	},
 	{
@@ -497,6 +500,18 @@ const meaningData = [
 		categories: 'adjective',
 	},
 	{
+		name: 'black',
+		categories: 'adjective;color',
+	},
+	{
+		name: 'dry',
+		categories: 'adjective',
+	},
+	{
+		name: 'far',
+		categories: 'adjective',
+	},
+	{
 		name: 'favorable',
 		categories: 'adjective',
 	},
@@ -510,6 +525,10 @@ const meaningData = [
 	},
 	{
 		name: 'higher',
+		categories: 'adjective',
+	},
+	{
+		name: 'long',
 		categories: 'adjective',
 	},
 	{
@@ -541,6 +560,10 @@ const meaningData = [
 		categories: 'adjective;color',
 	},
 	{
+		name: 'round',
+		categories: 'adjective',
+	},
+	{
 		name: 'sharp',
 		categories: 'adjective',
 	},
@@ -554,6 +577,10 @@ const meaningData = [
 	},
 	{
 		name: 'thick',
+		categories: 'adjective',
+	},
+	{
+		name: 'thin',
 		categories: 'adjective',
 	},
 	{
@@ -571,8 +598,16 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'apple',
+		categories: 'noun;plant',
+	},
+	{
 		name: 'arm',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'ash.dust;ashes',
+		categories: 'noun',
 	},
 	{
 		name: 'back',
@@ -583,7 +618,15 @@ const meaningData = [
 		categories: 'noun;animal',
 	},
 	{
+		name: 'bear.n',
+		categories: 'noun;animal',
+	},
+	{
 		name: 'belly',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'bile',
 		categories: 'noun;anatomy',
 	},
 	{
@@ -747,6 +790,10 @@ const meaningData = [
 		categories: 'noun',
 	},
 	{
+		name: 'gall',
+		categories: 'noun;anatomy',
+	},
+	{
 		name: 'gift',
 		categories: 'noun',
 	},
@@ -863,6 +910,10 @@ const meaningData = [
 		categories: 'noun;disease',
 	},
 	{
+		name: 'meat;flesh;muscle',
+		categories: 'noun;anatomy',
+	},
+	{
 		name: 'month',
 		categories: 'noun;time',
 	},
@@ -885,6 +936,10 @@ const meaningData = [
 	{
 		name: 'muzzle',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'name',
+		categories: 'noun;language',
 	},
 	{
 		name: 'navel',
@@ -915,6 +970,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'pear',
+		categories: 'noun;plant',
+	},
+	{
 		name: 'peg',
 		categories: 'noun',
 	},
@@ -941,6 +1000,10 @@ const meaningData = [
 	{
 		name: 'rib',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'road',
+		categories: 'noun',
 	},
 	{
 		name: 'root',
@@ -1086,6 +1149,10 @@ const meaningData = [
 		name: 'year',
 		categories: 'noun;time',
 	},
+	{
+		name: 'yoke',
+		categories: 'noun',
+	},
 	// verbs
 	{
 		name: 'be',
@@ -1117,6 +1184,10 @@ const meaningData = [
 	},
 	{
 		name: 'cover',
+		categories: 'verb',
+	},
+	{
+		name: 'die',
 		categories: 'verb',
 	},
 	{
@@ -1162,6 +1233,14 @@ const meaningData = [
 	{
 		name: 'hear',
 		categories: 'verb;sensory',
+	},
+	{
+		name: 'kill',
+		categories: 'verb',
+	},
+	{
+		name: 'know',
+		categories: 'verb',
 	},
 	{
 		name: 'lay',
@@ -3894,14 +3973,116 @@ const entryData = [
 	// pnec
 	{
 		language: 'pnec',
+		word: 'baʒVr',
+		meanings: 'moon',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: '(b)ul',
+		meanings: 'eye',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
 		word: 'bǖnŁ_e',
 		meanings: 'eight',
 		source: 'starling',
 	},
 	{
 		language: 'pnec',
+		word: 'bVrVg',
+		meanings: 'sun',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'c’ar(i)',
+		meanings: 'fire',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'cc’Vr',
+		meanings: 'name',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
 		word: 'cV',
 		meanings: 'one',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'alč’i-',
+		meanings: 'black',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: '(C)=uƛ’Vl-',
+		meanings: 'thin',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'cVl-',
+		meanings: 'tooth',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: '(CV)=(lV)ƛƛ’',
+		meanings: 'meat',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: '(CV=)RVxx-',
+		meanings: 'long;far',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'D=aqq’(u)',
+		meanings: 'dry',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'D=eqq’',
+		meanings: 'road',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'D=uqq’',
+		meanings: 'back',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: '(=D=)Vc’',
+		meanings: 'know',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'D=Vk’',
+		meanings: 'burn',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'D=Vƛ’',
+		meanings: 'die;kill',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'goRg',
+		meanings: 'round',
 		source: 'wiktionary',
 	},
 	{
@@ -3924,6 +4105,12 @@ const entryData = [
 	},
 	{
 		language: 'pnec',
+		word: 'hʕam(V)c',
+		meanings: 'apple',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
 		word: 'ʔĭlć̣wɨ',
 		meanings: 'nine',
 		source: 'starling',
@@ -3942,8 +4129,38 @@ const entryData = [
 	},
 	{
 		language: 'pnec',
+		word: 'ƛƛ’',
+		meanings: 'yoke',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
 		word: 'ƛƛwi',
 		meanings: 'five',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'kV',
+		meanings: 'hand;arm',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'ɬɬin',
+		meanings: 'water',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: '(l)ončči',
+		meanings: 'earth',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'maʒi',
+		meanings: 'tongue',
 		source: 'wiktionary',
 	},
 	{
@@ -3951,6 +4168,42 @@ const entryData = [
 		word: 'q̇Hwǟ',
 		meanings: 'five',
 		source: 'starling',
+	},
+	{
+		language: 'pnec',
+		word: 'qur',
+		meanings: 'pear',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'rVk’u',
+		meanings: 'heart',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'rV=uqq’',
+		meanings: 'ashes',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'sti-',
+		meanings: 'what',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'sttim',
+		meanings: 'bile;gall',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnec',
+		word: 'sVʔin',
+		meanings: 'bear.n',
+		source: 'wiktionary',
 	},
 	// kartvelian
 	{
