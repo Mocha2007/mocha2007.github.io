@@ -172,6 +172,8 @@ class Language extends Clickable {
 			.forEach(m => {
 				const li = document.createElement('li');
 				li.appendChild(m.span);
+				li.id = `missingMeanings${m.name}`;
+				li.appendChild(deleteButton(li.id));
 				ul2.appendChild(li);
 			});
 		elem.appendChild(ul2);
@@ -519,6 +521,15 @@ class Entry extends Clickable {
 }
 /** @type {Entry[]} */
 Entry.list = [];
+
+function deleteButton(id){
+	const span = document.createElement('span');
+	span.innerHTML = 'X';
+	span.title = 'delete this';
+	span.classList.add('clickable');
+	span.onclick = () => document.getElementById(id).remove();
+	return span;
+}
 
 /** Levenshtein distance
  * @param {string} a
