@@ -278,6 +278,10 @@ const meaningData = [
 		categories: 'numeral',
 	},
 	{
+		name: 'first',
+		categories: 'numeral;adjective',
+	},
+	{
 		name: 'five',
 		categories: 'numeral',
 	},
@@ -294,6 +298,10 @@ const meaningData = [
 		categories: 'numeral',
 	},
 	{
+		name: 'once',
+		categories: 'numeral;adverb',
+	},
+	{
 		name: 'one',
 		categories: 'numeral',
 	},
@@ -307,6 +315,10 @@ const meaningData = [
 	},
 	{
 		name: 'ten',
+		categories: 'numeral',
+	},
+	{
+		name: 'thirty',
 		categories: 'numeral',
 	},
 	{
@@ -1197,6 +1209,10 @@ const meaningData = [
 	},
 	{
 		name: 'n>adj',
+		categories: 'affix',
+	},
+	{
+		name: 'num>+10', // thirTEEN, fourTEEN, fifTEEN, ...
 		categories: 'affix',
 	},
 	{
@@ -2630,6 +2646,12 @@ const entryData = [
 	},
 	{
 		language: 'etruscan',
+		word: '-alχ',
+		meanings: 'num>*10',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
 		word: 'am-',
 		meanings: 'be',
 		source: shortcuts.etruscan,
@@ -2723,6 +2745,13 @@ const entryData = [
 	},
 	{
 		language: 'etruscan',
+		word: 'cialχ',
+		meanings: 'thirty',
+		etymology: 'etruscan:ci;etruscan:-alχ',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
 		word: 'ein',
 		meanings: '3pl',
 		source: 'wiktionary',
@@ -2793,12 +2822,6 @@ const entryData = [
 		word: 'leu',
 		meanings: 'lion',
 		etymology: 'la:leo',
-		source: shortcuts.etruscan,
-	},
-	{
-		language: 'etruscan',
-		word: '-lχ',
-		meanings: 'num>*10',
 		source: shortcuts.etruscan,
 	},
 	{
@@ -2932,6 +2955,20 @@ const entryData = [
 	},
 	{
 		language: 'etruscan',
+		word: 'θunina',
+		meanings: 'first',
+		etymology: 'etruscan:θu;etruscan:-na',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
+		word: 'θunz',
+		meanings: 'once',
+		etymology: 'etruscan:θu;etruscan:-z',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
 		word: 'trut',
 		meanings: 'lightning',
 		source: shortcuts.etruscan,
@@ -2984,6 +3021,13 @@ const entryData = [
 		word: 'zal',
 		meanings: 'two',
 		etymology: 'proto-tyrsenian:zal',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
+		word: '-zar',
+		meanings: 'num>+10',
+		etymology: 'etruscan:śar',
 		source: shortcuts.etruscan,
 	},
 	{
@@ -3276,6 +3320,12 @@ const entryData = [
 		word: 'minä',
 		meanings: '1s',
 		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: '-mte',
+		meanings: 'num>adj',
+		source: 'wiktionary',
 	},
 	{
 		language: 'proto-uralic',
