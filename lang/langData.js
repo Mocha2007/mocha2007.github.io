@@ -372,6 +372,10 @@ const meaningData = [
 		categories: 'preposition',
 	},
 	{
+		name: 'by',
+		categories: 'preposition',
+	},
+	{
 		name: 'near',
 		categories: 'preposition',
 	},
@@ -381,6 +385,10 @@ const meaningData = [
 	},
 	{
 		name: 'out',
+		categories: 'preposition',
+	},
+	{
+		name: 'to',
 		categories: 'preposition',
 	},
 	{
@@ -402,6 +410,9 @@ const meaningData = [
 	},
 	{
 		name: 'ERG',
+	},
+	{
+		name: 'FEM',
 	},
 	{
 		name: 'GEN',
@@ -426,19 +437,19 @@ const meaningData = [
 	},
 	// pronouns
 	{
-		name: '1s',
+		name: '1s;I',
 		categories: 'pronoun',
 	},
 	{
-		name: '1pl',
+		name: '1pl;we',
 		categories: 'pronoun',
 	},
 	{
-		name: '2s',
+		name: '2s;thou',
 		categories: 'pronoun',
 	},
 	{
-		name: '2pl',
+		name: '2pl;ye',
 		categories: 'pronoun',
 	},
 	{
@@ -446,7 +457,7 @@ const meaningData = [
 		categories: 'pronoun',
 	},
 	{
-		name: '3pl',
+		name: '3pl;they',
 		categories: 'pronoun',
 	},
 	{
@@ -1152,6 +1163,10 @@ const meaningData = [
 	},
 	{
 		name: 'upper.arm',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'upper.chest',
 		categories: 'noun;anatomy',
 	},
 	{
@@ -4588,6 +4603,44 @@ const entryData = [
 		source: 'starling',
 	},
 	// proto-afro-asiatic
+	// everything here A-C matching existing defs is added:
+	// https://en.wiktionary.org/wiki/Appendix:Proto-Afroasiatic_reconstructions
+	{
+		language: 'proto-afro-asiatic',
+		word: 'ˀanāku',
+		meanings: '1s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'ar-',
+		meanings: 'at;by',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'bôf-',
+		meanings: 'upper.chest',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: '-bôoḥ-',
+		meanings: 'flow',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'c’ilm-',
+		meanings: 'black',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'dam-',
+		meanings: 'blood',
+		source: 'wiktionary',
+	},
 	{
 		language: 'proto-afro-asiatic',
 		word: 'fâzw-',
@@ -4602,14 +4655,98 @@ const entryData = [
 	},
 	{
 		language: 'proto-afro-asiatic',
+		word: 'ʔǎnn-',
+		meanings: '1pl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'k’os-',
+		meanings: 'bone',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'kuuna',
+		meanings: '2pl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'la',
+		meanings: 'at;to',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'legʔ-',
+		meanings: 'bull',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'ɬǒʔ-',
+		meanings: 'cattle',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'ma',
+		meanings: 'what',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'maʔ-',
+		meanings: 'water',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'sâr-',
+		meanings: 'back',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'su',
+		meanings: '3pl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: '-t',
+		meanings: 'FEM',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
 		word: 'tsan-',
 		meanings: 'two',
 		source: 'wiktionary',
 	},
 	{
 		language: 'proto-afro-asiatic',
+		word: 'wa-',
+		meanings: 'what',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: '-wêeb-',
+		meanings: 'burn',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
 		word: 'xaynz-',
 		meanings: 'three',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-afro-asiatic',
+		word: 'yaw-',
+		meanings: 'bull',
 		source: 'wiktionary',
 	},
 	// hattic
