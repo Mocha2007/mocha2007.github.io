@@ -99,6 +99,12 @@ const languageData = [
 		period: 'c. 500 BCE - 500 CE',
 	},
 	{
+		name: 'ancient-greek',
+		parent: 'pie',
+		location: 'greece',
+		period: 'c. 500 BCE - 500 CE',
+	},
+	{
 		name: 'oe',
 		parent: 'pwger',
 		location: 'england',
@@ -502,6 +508,10 @@ const meaningData = [
 		categories: 'adjective',
 	},
 	{
+		name: 'single',
+		categories: 'adjective',
+	},
+	{
 		name: 'straight',
 		categories: 'adjective',
 	},
@@ -572,8 +582,24 @@ const meaningData = [
 		categories: 'noun;landform',
 	},
 	{
+		name: 'bull',
+		categories: 'noun;animal',
+	},
+	{
+		name: 'burial;interment',
+		categories: 'noun;religion',
+	},
+	{
 		name: 'butt',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'casket;coffin',
+		categories: 'noun;religion',
+	},
+	{
+		name: 'cat',
+		categories: 'noun;animal',
 	},
 	{
 		name: 'charcoal',
@@ -744,6 +770,10 @@ const meaningData = [
 		categories: 'noun;weather',
 	},
 	{
+		name: 'lion',
+		categories: 'noun;animal',
+	},
+	{
 		name: 'liver',
 		categories: 'noun;anatomy',
 	},
@@ -794,6 +824,14 @@ const meaningData = [
 	{
 		name: 'nose.tip',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'owl',
+		categories: 'noun;animal',
+	},
+	{
+		name: 'panther',
+		categories: 'noun;animal',
 	},
 	{
 		name: 'palm.hand',
@@ -848,6 +886,10 @@ const meaningData = [
 		categories: 'noun;landform',
 	},
 	{
+		name: 'shadow;shade',
+		categories: 'noun',
+	},
+	{
 		name: 'shoulder',
 		categories: 'noun;anatomy',
 	},
@@ -858,6 +900,10 @@ const meaningData = [
 	{
 		name: 'skin',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'soul',
+		categories: 'noun;religion',
 	},
 	{
 		name: 'spelt',
@@ -882,6 +928,10 @@ const meaningData = [
 	{
 		name: 'sun',
 		categories: 'noun;celestial.object',
+	},
+	{
+		name: 'swan',
+		categories: 'noun;animal',
 	},
 	{
 		name: 'tear.eye',
@@ -918,6 +968,10 @@ const meaningData = [
 	{
 		name: 'upper.thigh',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'urn',
+		categories: 'noun',
 	},
 	{
 		name: 'vagina',
@@ -1139,6 +1193,22 @@ const meaningData = [
 	},
 	{
 		name: '*>v', // verbalizer
+		categories: 'affix',
+	},
+	{
+		name: 'n>adj',
+		categories: 'affix',
+	},
+	{
+		name: 'num>*10', // twenTY, thirTY, forTY, ...
+		categories: 'affix',
+	},
+	{
+		name: 'num>adj', // fourTH, fifTH, sixTH, ...
+		categories: 'affix',
+	},
+	{
+		name: 'num>adv', // adverbial numeral
 		categories: 'affix',
 	},
 	{
@@ -2014,9 +2084,37 @@ const entryData = [
 	// latin
 	{
 		language: 'la',
+		word: 'leo',
+		meanings: 'lion',
+		etymology: 'ancient-greek:léōn',
+		source: 'wiktionary',
+	},
+	{
+		language: 'la',
 		word: 'sol',
 		meanings: 'sun',
 		etymology: 'pie:sóh₂wl̥',
+		source: 'wiktionary',
+	},
+	{
+		language: 'la',
+		word: 'ūnus',
+		meanings: 'one;single;alone',
+		etymology: 'pie:óynos',
+		source: 'wiktionary',
+	},
+	// ancient greek
+	{
+		language: 'ancient-greek',
+		word: 'heîs',
+		meanings: 'one',
+		etymology: 'pie:sḗm',
+		source: 'wiktionary',
+	},
+	{
+		language: 'ancient-greek',
+		word: 'léōn',
+		meanings: 'lion',
 		source: 'wiktionary',
 	},
 	// proto-germanic
@@ -2520,15 +2618,33 @@ const entryData = [
 	},
 	{
 		language: 'etruscan',
+		word: 'aliχa',
+		meanings: 'gift',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
+		word: 'alpan',
+		meanings: 'gift',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
 		word: 'am-',
 		meanings: 'be',
-		source: 'wiktionary',
+		source: shortcuts.etruscan,
 	},
 	{
 		language: 'etruscan',
 		word: 'an',
 		meanings: 'he;she',
 		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'apa',
+		meanings: 'father',
+		source: shortcuts.etruscan,
 	},
 	{
 		language: 'etruscan',
@@ -2539,8 +2655,52 @@ const entryData = [
 	},
 	{
 		language: 'etruscan',
+		word: 'ati',
+		meanings: 'mother',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
+		word: 'avil',
+		meanings: 'year',
+		source: shortcuts.etruscan,
+		notes: 'years',
+	},
+	{
+		language: 'etruscan',
+		word: 'azaru(a)',
+		meanings: 'good',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
+		word: '-c',
+		meanings: 'n>adj',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'cal',
+		meanings: 'this',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
+		word: 'capra',
+		meanings: 'coffin',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
 		word: 'cel',
 		meanings: 'earth;ground;soil',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
+		word: 'celuca',
+		meanings: 'interment',
+		etymology: 'etruscan:cel',
 		source: shortcuts.etruscan,
 	},
 	{
@@ -2559,13 +2719,25 @@ const entryData = [
 		language: 'etruscan',
 		word: 'ci',
 		meanings: 'three',
-		source: 'wiktionary',
+		source: shortcuts.etruscan,
 	},
 	{
 		language: 'etruscan',
 		word: 'ein',
 		meanings: '3pl',
 		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'hinθial',
+		meanings: 'soul;shade',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
+		word: 'hiul',
+		meanings: 'owl',
+		source: shortcuts.etruscan,
 	},
 	{
 		language: 'etruscan',
@@ -2588,6 +2760,12 @@ const entryData = [
 	},
 	{
 		language: 'etruscan',
+		word: 'ika',
+		meanings: 'this;that',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
 		word: 'in',
 		meanings: 'it',
 		source: 'wiktionary',
@@ -2600,6 +2778,31 @@ const entryData = [
 	},
 	{
 		language: 'etruscan',
+		word: 'ita',
+		meanings: 'this;that',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'krankru',
+		meanings: 'cat;panther',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
+		word: 'leu',
+		meanings: 'lion',
+		etymology: 'la:leo',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
+		word: '-lχ',
+		meanings: 'num>*10',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
 		word: 'maχ',
 		meanings: 'five',
 		source: 'wiktionary',
@@ -2609,13 +2812,37 @@ const entryData = [
 		word: 'mi',
 		meanings: '1s',
 		etymology: 'proto-tyrsenian:mi',
-		source: 'wiktionary',
+		source: shortcuts.etruscan,
 	},
 	{
 		language: 'etruscan',
 		word: 'mir',
 		meanings: '1pl',
 		etymology: 'etruscan:mi;etruscan:-(a)r',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'mlaχ',
+		meanings: 'good;beautiful',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
+		word: 'murś',
+		meanings: 'coffin;urn',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
+		word: 'mutna',
+		meanings: 'coffin;casket',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
+		word: '-na',
+		meanings: 'n>adj;num>adj',
 		source: 'wiktionary',
 	},
 	{
@@ -2647,7 +2874,7 @@ const entryData = [
 		language: 'etruscan',
 		word: 'śa',
 		meanings: 'six',
-		source: 'wiktionary',
+		source: shortcuts.etruscan,
 	},
 	{
 		language: 'etruscan',
@@ -2663,26 +2890,56 @@ const entryData = [
 	},
 	{
 		language: 'etruscan',
+		word: 'śuθ',
+		meanings: 'put',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
+		word: 'teśam',
+		meanings: 'burial',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
+		word: 'θevru',
+		meanings: 'bull',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
 		word: 'θi',
 		meanings: 'water;creek',
 		source: shortcuts.etruscan,
 	},
 	{
 		language: 'etruscan',
+		word: 'tinia',
+		meanings: 'day',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
 		word: 'tiur',
-		meanings: 'moon',
+		meanings: 'moon;month',
 		source: shortcuts.etruscan,
 	},
 	{
 		language: 'etruscan',
 		word: 'θu',
 		meanings: 'one',
-		source: 'wiktionary',
+		source: shortcuts.etruscan,
 	},
 	{
 		language: 'etruscan',
 		word: 'trut',
 		meanings: 'lightning',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
+		word: 'tusna',
+		meanings: 'swan',
 		source: shortcuts.etruscan,
 	},
 	{
@@ -2727,7 +2984,7 @@ const entryData = [
 		word: 'zal',
 		meanings: 'two',
 		etymology: 'proto-tyrsenian:zal',
-		source: 'wiktionary',
+		source: shortcuts.etruscan,
 	},
 	{
 		language: 'etruscan',
@@ -2811,6 +3068,12 @@ const entryData = [
 		language: 'rhaetian',
 		word: '-u',
 		meanings: 'v>n',
+		source: shortcuts.rhaetian,
+	},
+	{
+		language: 'rhaetian',
+		word: '-z',
+		meanings: 'num>adv',
 		source: shortcuts.rhaetian,
 	},
 	{
