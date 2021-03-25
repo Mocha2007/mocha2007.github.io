@@ -373,7 +373,16 @@ const meaningData = [
 	},
 	// misc morphemes
 	{
+		name: 'ABL',
+	},
+	{
+		name: 'ACC',
+	},
+	{
 		name: 'GEN',
+	},
+	{
+		name: 'LOC',
 	},
 	{
 		name: 'NEG',
@@ -1212,6 +1221,10 @@ const meaningData = [
 		categories: 'affix',
 	},
 	{
+		name: 'n>v',
+		categories: 'affix',
+	},
+	{
 		name: 'num>+10', // thirTEEN, fourTEEN, fifTEEN, ...
 		categories: 'affix',
 	},
@@ -1339,8 +1352,39 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: '-éh₁ti',
+		meanings: '*>v;n>v',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: '-eh₂',
+		meanings: '*>n',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: '-eh₂tos',
+		meanings: 'n>adj',
+		etymology: 'pie:-éh₂;pie:-tós',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: '-ḗn',
+		meanings: '*>n',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'éyes',
 		meanings: '3pl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: '-éyti',
+		meanings: '*>v',
 		source: 'wiktionary',
 	},
 	{
@@ -2000,6 +2044,13 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: '-tḗr',
+		meanings: 'v>n.agent',
+		source: 'wiktionary',
+		notes: 'Forms agent nouns from verbs',
+	},
+	{
+		language: 'pie',
 		word: '-teros',
 		meanings: '*>adj.contrastive',
 		source: 'wiktionary',
@@ -2021,6 +2072,14 @@ const entryData = [
 		word: 'tréyes',
 		meanings: 'three',
 		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: '-trom',
+		meanings: '*>n',
+		source: 'wiktionary',
+		etymology: 'pie:-tḗr',
+		notes: 'Forms nouns denoting a tool or instrument',
 	},
 	{
 		language: 'pie',
@@ -3203,9 +3262,21 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: '-ek',
+		meanings: 'v>n',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'emä',
 		meanings: 'mother;woman',
 		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: '-eta',
+		meanings: '*>adj',
+		source: 'wiktionary',
 	},
 	{
 		language: 'proto-uralic',
@@ -3299,6 +3370,12 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: '-m',
+		meanings: 'ACC',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'maksa',
 		meanings: 'liver',
 		source: 'uralonet',
@@ -3338,6 +3415,18 @@ const entryData = [
 		word: 'mȣ̈rɜ',
 		meanings: 'upper.arm;wing',
 		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: '-n',
+		meanings: 'GEN',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-uralic',
+		word: '-na',
+		meanings: 'LOC',
+		source: 'wiktionary',
 	},
 	{
 		language: 'proto-uralic',
@@ -3470,6 +3559,18 @@ const entryData = [
 		word: 'ta',
 		meanings: 'this',
 		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: '-ta',
+		meanings: 'ABL',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-uralic',
+		word: '-ta-',
+		meanings: 'n>v',
+		source: 'wiktionary',
 	},
 	{
 		language: 'proto-uralic',
