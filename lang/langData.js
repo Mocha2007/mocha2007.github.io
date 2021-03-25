@@ -3805,6 +3805,12 @@ const entryData = [
 	},
 	{
 		language: 'pst',
+		word: 'ʔa',
+		meanings: 'this',
+		source: 'starling',
+	},
+	{
+		language: 'pst',
 		word: 'ʔit',
 		meanings: 'one',
 		source: 'wiktionary',
@@ -3829,6 +3835,12 @@ const entryData = [
 	},
 	{
 		language: 'pst',
+		word: 'mV',
+		meanings: 'that',
+		source: 'starling',
+	},
+	{
+		language: 'pst',
 		word: 'ŋaj',
 		meanings: '1s',
 		source: 'wiktionary',
@@ -3838,6 +3850,12 @@ const entryData = [
 		word: 'naŋ',
 		meanings: '2s',
 		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'qhā-',
+		meanings: 'what',
+		source: 'starling',
 	},
 	{
 		language: 'pst',
@@ -3862,5 +3880,11 @@ const entryData = [
 		word: 'tsjaj',
 		meanings: 'ten',
 		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'wV',
+		meanings: 'that',
+		source: 'starling',
 	},
 ];
