@@ -396,7 +396,7 @@ class Entry extends Clickable {
 			&& intersect(e.meanings, this.meanings).length);
 	}
 	get title(){
-		return this.meanings.map(m => m.name).join(', ');
+		return this.language.name + ': ' + this.meanings.map(m => m.name).join(', ');
 	}
 	get translations(){
 		return Entry.list.filter(e => e.language !== this.language

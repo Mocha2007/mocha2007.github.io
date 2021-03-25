@@ -1131,6 +1131,13 @@ const entryData = [
 		etymology: 'pie:óynos',
 		source: 'wiktionary',
 	},
+	{
+		language: 'pie',
+		word: 'nabalô',
+		meanings: 'navel',
+		etymology: 'pie:h₃nóbʰōl',
+		source: 'wiktionary',
+	},
 	// proto-west germanic
 	{
 		language: 'pwger',
@@ -1139,12 +1146,26 @@ const entryData = [
 		etymology: 'pger:ainaz',
 		source: 'wiktionary',
 	},
+	{
+		language: 'pwger',
+		word: 'nabulō',
+		meanings: 'navel',
+		etymology: 'pger:nabalô',
+		source: 'wiktionary',
+	},
 	// OE
 	{
 		language: 'oe',
 		word: 'ān',
 		meanings: 'one;an;only.adj;alone',
 		etymology: 'pwger:ain',
+		source: 'wiktionary',
+	},
+	{
+		language: 'oe',
+		word: 'nafola',
+		meanings: 'navel',
+		etymology: 'pwger:nabulō',
 		source: 'wiktionary',
 	},
 ];
