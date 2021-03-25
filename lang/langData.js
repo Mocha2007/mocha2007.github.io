@@ -395,6 +395,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'back',
+		categories: 'noun;anatomy',
+	},
+	{
 		name: 'blood',
 		categories: 'noun;anatomy',
 	},
@@ -621,6 +625,10 @@ const meaningData = [
 	},
 	{
 		name: 'bite',
+		categories: 'verb',
+	},
+	{
+		name: 'do',
 		categories: 'verb',
 	},
 	{
@@ -1520,7 +1528,13 @@ const entryData = [
 		language: 'proto-vasconic',
 		word: 'bade',
 		meanings: 'one',
-		source: 'wiktionary',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: '-ban-',
+		meanings: 'give',
+		source: shortcuts.edob,
 	},
 	{
 		language: 'proto-vasconic',
@@ -1530,27 +1544,51 @@ const entryData = [
 	},
 	{
 		language: 'proto-vasconic',
+		word: 'beso',
+		meanings: 'and',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
 		word: 'biga',
 		meanings: 'two',
-		source: 'wiktionary',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'bizkar',
+		meanings: 'back',
+		source: shortcuts.edob,
 	},
 	{
 		language: 'proto-vasconic',
 		word: 'bortz',
 		meanings: 'five',
-		source: 'wiktionary',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'eta',
+		meanings: 'and',
+		source: shortcuts.edob,
 	},
 	{
 		language: 'proto-vasconic',
 		word: 'ez',
 		meanings: 'NEG',
-		source: 'wiktionary',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: '-gin-',
+		meanings: 'make;do',
+		source: shortcuts.edob,
 	},
 	{
 		language: 'proto-vasconic',
 		word: 'gu',
 		meanings: '1pl',
-		source: 'wiktionary',
+		source: shortcuts.edob,
 	},
 	{
 		language: 'proto-vasconic',
@@ -1562,30 +1600,48 @@ const entryData = [
 		language: 'proto-vasconic',
 		word: '[h]i',
 		meanings: '2s',
-		source: 'wiktionary',
+		source: shortcuts.edob,
 	},
 	{
 		language: 'proto-vasconic',
 		word: '[h]irur',
 		meanings: 'three',
-		source: 'wiktionary',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: '-(i)zan-',
+		meanings: 'be',
+		source: shortcuts.edob,
 	},
 	{
 		language: 'proto-vasconic',
 		word: 'laur',
 		meanings: 'four',
-		source: 'wiktionary',
+		source: shortcuts.edob,
 	},
 	{
 		language: 'proto-vasconic',
 		word: 'ni',
 		meanings: '1s',
-		source: 'wiktionary',
+		source: shortcuts.edob,
 	},
 	{
 		language: 'proto-vasconic',
 		word: 'sei',
 		meanings: 'six',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'su',
+		meanings: 'fire',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'ur',
+		meanings: 'water',
 		source: shortcuts.edob,
 	},
 	{
@@ -1604,7 +1660,7 @@ const entryData = [
 		language: 'proto-vasconic',
 		word: 'zu',
 		meanings: '2pl',
-		source: 'wiktionary',
+		source: shortcuts.edob,
 	},
 	// etruscan
 	{
