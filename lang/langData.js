@@ -178,6 +178,9 @@ const categoryData = [
 	{
 		name: 'anatomy',
 	},
+	{ // words specifically having to do with the creation or interpretation of language, eg. "write, word"
+		name: 'language',
+	},
 	{
 		name: 'motion',
 	},
@@ -336,6 +339,18 @@ const meaningData = [
 		name: 'who',
 		categories: 'pronoun',
 	},
+	{
+		name: 'he', // for languages that distinguish gender
+		categories: 'pronoun',
+	},
+	{
+		name: 'she',
+		categories: 'pronoun',
+	},
+	{
+		name: 'it',
+		categories: 'pronoun',
+	},
 	// conjunctions
 	{
 		name: 'and',
@@ -438,6 +453,10 @@ const meaningData = [
 	{
 		name: 'fingernail',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'fire',
+		categories: 'noun',
 	},
 	{
 		name: 'four.fingers',
@@ -584,10 +603,18 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'water',
+		categories: 'noun',
+	},
+	{
 		name: 'wing',
 		categories: 'noun;anatomy',
 	},
 	// verbs
+	{
+		name: 'be',
+		categories: 'verb',
+	},
 	{
 		name: 'be.aware',
 		categories: 'verb',
@@ -610,6 +637,10 @@ const meaningData = [
 	},
 	{
 		name: 'give',
+		categories: 'verb',
+	},
+	{
+		name: 'make',
 		categories: 'verb',
 	},
 	{
@@ -647,6 +678,10 @@ const meaningData = [
 	{
 		name: 'walk',
 		categories: 'verb;motion',
+	},
+	{
+		name: 'write',
+		categories: 'verb;language',
 	},
 	// derivational morphemes
 	{
@@ -1581,9 +1616,27 @@ const entryData = [
 	},
 	{
 		language: 'etruscan',
-		word: '-ar',
+		word: 'am-',
+		meanings: 'be',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'an',
+		meanings: 'he;she',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: '-(a)r',
 		meanings: 'PL',
 		etymology: 'proto-tyrsenian:-r',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'cer-',
+		meanings: 'make',
 		source: 'wiktionary',
 	},
 	{
@@ -1596,6 +1649,12 @@ const entryData = [
 		language: 'etruscan',
 		word: 'ci',
 		meanings: 'three',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'ein',
+		meanings: '3pl',
 		source: 'wiktionary',
 	},
 	{
@@ -1613,6 +1672,18 @@ const entryData = [
 	},
 	{
 		language: 'etruscan',
+		word: 'in',
+		meanings: 'it',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'ipa',
+		meanings: 'what',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
 		word: 'maχ',
 		meanings: 'five',
 		source: 'wiktionary',
@@ -1622,6 +1693,19 @@ const entryData = [
 		word: 'mi',
 		meanings: '1s',
 		etymology: 'proto-tyrsenian:mi',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'mir',
+		meanings: '1pl',
+		etymology: 'etruscan:mi;etruscan:-(a)r',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'neri',
+		meanings: 'water',
 		source: 'wiktionary',
 	},
 	{
@@ -1657,8 +1741,38 @@ const entryData = [
 	},
 	{
 		language: 'etruscan',
+		word: 'θi',
+		meanings: 'water',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
 		word: 'θu',
 		meanings: 'one',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'tur-',
+		meanings: 'give',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'un',
+		meanings: '2s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'unu',
+		meanings: '2pl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'vers-',
+		meanings: 'fire',
 		source: 'wiktionary',
 	},
 	{
@@ -1666,6 +1780,12 @@ const entryData = [
 		word: 'zal',
 		meanings: 'two',
 		etymology: 'proto-tyrsenian:zal',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'ziχ-',
+		meanings: 'write',
 		source: 'wiktionary',
 	},
 	// rhaetian
