@@ -1263,6 +1263,13 @@ const entryData = [
 	},
 	{
 		language: 'pger',
+		word: 'ek',
+		meanings: '1s',
+		etymology: 'pie:éǵh₂',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pger',
 		word: 'fedwōr',
 		meanings: 'four',
 		etymology: 'pie:kʷetwóres',
@@ -1277,9 +1284,23 @@ const entryData = [
 	},
 	{
 		language: 'pger',
+		word: 'jūz',
+		meanings: '2pl',
+		etymology: 'pie:yū́',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pger',
 		word: 'nabalô',
 		meanings: 'navel',
 		etymology: 'pie:h₃nóbʰōl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pger',
+		word: 'sek',
+		meanings: 'REFL',
+		etymology: 'pie:swé',
 		source: 'wiktionary',
 	},
 	{
@@ -1291,9 +1312,23 @@ const entryData = [
 	},
 	{
 		language: 'pger',
+		word: 'þū',
+		meanings: '2s',
+		etymology: 'pie:túh₂',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pger',
 		word: 'twai',
 		meanings: 'navel',
 		etymology: 'pie:dwóh₁',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pger',
+		word: 'wīz',
+		meanings: '1pl',
+		etymology: 'pie:wéy',
 		source: 'wiktionary',
 	},
 	// proto-west germanic
@@ -1320,9 +1355,30 @@ const entryData = [
 	},
 	{
 		language: 'pwger',
+		word: 'ik',
+		meanings: '1s',
+		etymology: 'pger:ek',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pwger',
+		word: 'jiʀ',
+		meanings: '2pl',
+		etymology: 'pger:jūz',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pwger',
 		word: 'nabulō',
 		meanings: 'navel',
 		etymology: 'pger:nabalô',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pwger',
+		word: 'sik',
+		meanings: 'REFL',
+		etymology: 'pger:sek',
 		source: 'wiktionary',
 	},
 	{
@@ -1337,6 +1393,20 @@ const entryData = [
 		word: 'þrīʀ',
 		meanings: 'three',
 		etymology: 'pger:þrīz',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pwger',
+		word: 'þū',
+		meanings: '2s',
+		etymology: 'pger:þū',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pwger',
+		word: 'wiʀ',
+		meanings: '1pl',
+		etymology: 'pger:wīz',
 		source: 'wiktionary',
 	},
 	// OE
@@ -1363,6 +1433,20 @@ const entryData = [
 	},
 	{
 		language: 'oe',
+		word: 'ġē',
+		meanings: '2pl',
+		etymology: 'pwger:jiʀ',
+		source: 'wiktionary',
+	},
+	{
+		language: 'oe',
+		word: 'iċ',
+		meanings: '1s',
+		etymology: 'pwger:ik',
+		source: 'wiktionary',
+	},
+	{
+		language: 'oe',
 		word: 'nafola',
 		meanings: 'navel',
 		etymology: 'pwger:nabulō',
@@ -1377,9 +1461,23 @@ const entryData = [
 	},
 	{
 		language: 'oe',
+		word: 'þū',
+		meanings: '2s',
+		etymology: 'pwger:þū',
+		source: 'wiktionary',
+	},
+	{
+		language: 'oe',
 		word: 'twēġen',
 		meanings: 'two',
 		etymology: 'pwger:twai-',
+		source: 'wiktionary',
+	},
+	{
+		language: 'oe',
+		word: 'wē',
+		meanings: '1pl',
+		etymology: 'pwger:wiʀ',
 		source: 'wiktionary',
 	},
 	// Proto-Vasconic
