@@ -172,8 +172,10 @@ class Language extends Clickable {
 			.sort((a, b) => b.diff(this) - a.diff(this)).slice(-n).reverse().forEach((e, i) => {
 				const li = document.createElement('li');
 				li.appendChild(e.span);
-				li.innerHTML += `score: ${-e.diff(this)}`;
 				li.style.opacity = 1 - i/(2*n);
+				const score = document.createElement('span');
+				score.innerHTML = `score: ${-e.diff(this)}`;
+				li.appendChild(score);
 				ol.appendChild(li);
 			});
 		return ol;
@@ -435,8 +437,10 @@ class Entry extends Clickable {
 			.sort((a, b) => b.diff(this) - a.diff(this)).slice(-n).reverse().forEach((e, i) => {
 				const li = document.createElement('li');
 				li.appendChild(e.span);
-				li.innerHTML += `score: ${-e.diff(this)}`;
 				li.style.opacity = 1 - i/(2*n);
+				const score = document.createElement('span');
+				score.innerHTML = `score: ${-e.diff(this)}`;
+				li.appendChild(score);
 				ol.appendChild(li);
 			});
 		return ol;
