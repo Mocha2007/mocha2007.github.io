@@ -1,6 +1,10 @@
 /* exported authorData, categoryData, entryData, languageData, meaningData, sourceData */
 'use strict';
 
+const shortcuts = {
+	edob: 'Etymological Dictionary of Basque',
+};
+
 const authorData = [
 	{
 		name: 'mocha',
@@ -11,6 +15,12 @@ const authorData = [
 ];
 
 const sourceData = [
+	{
+		name: shortcuts.edob,
+		author: 'R. L. Trask',
+		url: 'https://www.sussex.ac.uk/webteam/gateway/file.php?name=lxwp23-08-edb.pdf&site=1',
+		date: '2008',
+	},
 	{
 		name: 'mocha',
 		author: 'mocha',
@@ -35,6 +45,12 @@ const languageData = [
 	},
 	// real
 	{
+		name: 'etruscan',
+		parent: 'proto-tyrsenian',
+		location: 'italy',
+		period: 'c. 500 BCE',
+	},
+	{
 		name: 'pie',
 		location: 'pontic-caspian steppe',
 		period: 'c. 3000 BCE',
@@ -43,6 +59,14 @@ const languageData = [
 		name: 'pger',
 		parent: 'pie',
 		location: 'central europe',
+		period: 'c. 500 BCE',
+	},
+	{
+		name: 'proto-tyrsenian',
+	},
+	{
+		name: 'proto-vasconic',
+		location: 'iberia',
 		period: 'c. 500 BCE',
 	},
 	{
@@ -564,6 +588,7 @@ const meaningData = [
 
 const entryData = [
 	// eremoran (sample)
+	/*
 	{
 		language: 'eremoran',
 		word: 'id',
@@ -572,6 +597,7 @@ const entryData = [
 		source: 'mocha',
 		notes: 'this is a sample entry',
 	},
+	*/
 	// PIE
 	{
 		language: 'pie',
@@ -1132,7 +1158,7 @@ const entryData = [
 		source: 'wiktionary',
 	},
 	{
-		language: 'pie',
+		language: 'pger',
 		word: 'nabalô',
 		meanings: 'navel',
 		etymology: 'pie:h₃nóbʰōl',
@@ -1166,6 +1192,158 @@ const entryData = [
 		word: 'nafola',
 		meanings: 'navel',
 		etymology: 'pwger:nabulō',
+		source: 'wiktionary',
+	},
+	// Proto-Vasconic
+	{
+		language: 'proto-vasconic',
+		word: 'bade',
+		meanings: 'one',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'bederatzu',
+		meanings: 'nine',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'biga',
+		meanings: 'two',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'bortz',
+		meanings: 'five',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'ez',
+		meanings: 'NEG',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'gu',
+		meanings: '1pl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-vasconic',
+		word: '[h]anbar',
+		meanings: 'ten',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: '[h]i',
+		meanings: '2s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-vasconic',
+		word: '[h]irur',
+		meanings: 'three',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'laur',
+		meanings: 'four',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'ni',
+		meanings: '1s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'sei',
+		meanings: 'six',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'zazpi',
+		meanings: 'seven',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'zortzi',
+		meanings: 'eight',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'zu',
+		meanings: '2pl',
+		source: 'wiktionary',
+	},
+	// etruscan
+	{
+		language: 'etruscan',
+		word: 'cezp',
+		meanings: 'eight',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'ci',
+		meanings: 'three',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'huθ',
+		meanings: 'four',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'maχ',
+		meanings: 'five',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'nurφ',
+		meanings: 'nine',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'śa',
+		meanings: 'six',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'śar',
+		meanings: 'ten',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'semφ',
+		meanings: 'seven',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'θu',
+		meanings: 'one',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'zal',
+		meanings: 'two',
 		source: 'wiktionary',
 	},
 ];

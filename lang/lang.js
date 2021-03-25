@@ -7,6 +7,7 @@
 const body = document.getElementById('body');
 
 class Clickable {
+	/** @param {string} name */
 	constructor(name){
 		this.name = name;
 	}
@@ -312,10 +313,9 @@ class Meaning extends Clickable {
 Meaning.list = [];
 
 class Entry extends Clickable {
-	constructor(language, word, meanings, etymology, source, notes){
-		super(word);
+	constructor(language, name, meanings, etymology, source, notes){
+		super(name);
 		this.language = Language.fromName(language);
-		this.word = word;
 		this.meanings = Entry.parseMeanings(meanings);
 		/** @type {Entry[]} - this will be parsed from a string AFTER all entries are loaded */
 		this.etymology = etymology;
@@ -338,9 +338,9 @@ class Entry extends Clickable {
 		/** @type {HTMLDivElement} */
 		const elem = document.createElement('div');
 		elem.classList.add('entry');
-		elem.id = `${this.language.name}/${this.word}/div`;
+		elem.id = `${this.language.name}/${this.name}/div`;
 		const header = document.createElement('h1');
-		header.innerHTML = this.word;
+		header.innerHTML = this.name;
 		elem.appendChild(header);
 		// lang button
 		elem.appendChild(this.language.span);
@@ -374,6 +374,11 @@ class Entry extends Clickable {
 		h2.innerHTML = 'Children';
 		elem.appendChild(h2);
 		elem.appendChild(this.childList);
+		// most likely cognates
+		const h24 = document.createElement('h2');
+		h24.innerHTML = 'Most Likely Cognates';
+		elem.appendChild(h24);
+		h24.onclick = () => elem.appendChild(this.likelyCognateList);
 		// note button
 		if (this.notes){
 			const notes = document.createElement('p');
@@ -391,6 +396,19 @@ class Entry extends Clickable {
 			elem.innerHTML += this.etymology;
 		return elem;
 	}
+	get likelyCognateList(){
+		const n = 10;
+		const ol = document.createElement('ol');
+		Entry.list.filter(e => e.language !== this.language)
+			.sort((a, b) => b.diff(this) - a.diff(this)).slice(-n).reverse().forEach((e, i) => {
+				const li = document.createElement('li');
+				li.appendChild(e.span);
+				li.innerHTML += `score: ${-e.diff(this)}`;
+				li.style.opacity = 1 - i/(2*n);
+				ol.appendChild(li);
+			});
+		return ol;
+	}
 	get synonyms(){
 		return Entry.list.filter(e => e !== this && e.language === this.language
 			&& intersect(e.meanings, this.meanings).length);
@@ -402,11 +420,28 @@ class Entry extends Clickable {
 		return Entry.list.filter(e => e.language !== this.language
 			&& intersect(e.meanings, this.meanings).length);
 	}
+	/** get an oversimplified structure of a word */
+	get vwllss(){
+		return this.name.normalize('NFD')
+			.toLowerCase() // lowercase
+			.replace(/[\u0300-\u036f]/g, '') // remove diacritics
+			.replace(/[[\]()]/g, '') // remove [] ()
+			.replace(/[aeiouAEIOU]+/g, 'V').normalize(); // make all vowels V
+	}
+	/** cognate score
+	 * @param {Entry} other
+	*/
+	diff(other){
+		return lev(this.name.normalize(), other.name.normalize())
+			+ 2*lev(this.vwllss, other.vwllss)
+			- 2*intersect(this.meanings, other.meanings).length;
+	}
 	parseEtymology(){
 		if (!this.etymology)
 			return;
 		this.etymology = this.etymology.split(';').map(id => Entry.fromId(id));
 	}
+	/** @param {string} id */
 	static fromId(id){
 		// eg. pger:ainaz
 		const [lang, word] = id.split(':');
@@ -423,6 +458,23 @@ class Entry extends Clickable {
 }
 /** @type {Entry[]} */
 Entry.list = [];
+
+/** Levenshtein distance
+ * @param {string} a
+ * @param {string} b
+ * @returns {number}
+ */
+function lev(a, b){
+	if (!a.length)
+		return b.length;
+	if (!b.length)
+		return a.length;
+	return 1 + Math.min(
+		lev(a.slice(1), b),
+		lev(a, b.slice(1)),
+		lev(a.slice(1), b.slice(1))
+	);
+}
 
 function main(){
 	// load shit
