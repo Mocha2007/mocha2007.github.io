@@ -78,6 +78,11 @@ const languageData = [
 		period: 'c. 500 BCE',
 	},
 	{
+		name: 'hattic',
+		location: 'anatolia',
+		period: 'c. 2000 BCE',
+	},
+	{
 		name: 'oe',
 		parent: 'pwger',
 		location: 'england',
@@ -178,11 +183,32 @@ const categoryData = [
 	{
 		name: 'anatomy',
 	},
+	{
+		name: 'animal',
+		categories: 'life',
+	},
+	{
+		name: 'celestial.object',
+	},
+	{
+		name: 'color',
+	},
 	{ // words specifically having to do with the creation or interpretation of language, eg. "write, word"
 		name: 'language',
 	},
 	{
+		name: 'life',
+	},
+	{
 		name: 'motion',
+	},
+	{
+		name: 'person',
+		categories: 'society',
+	},
+	{
+		name: 'plant',
+		categories: 'life',
 	},
 	{
 		name: 'religion',
@@ -190,6 +216,12 @@ const categoryData = [
 	},
 	{
 		name: 'society',
+	},
+	{
+		name: 'time',
+	},
+	{
+		name: 'weather',
 	},
 	// todo: swadesh list items
 	{
@@ -370,12 +402,36 @@ const meaningData = [
 		categories: 'adjective',
 	},
 	{
+		name: 'big',
+		categories: 'adjective',
+	},
+	{
+		name: 'favorable',
+		categories: 'adjective',
+	},
+	{
+		name: 'good',
+		categories: 'adjective',
+	},
+	{
+		name: 'great',
+		categories: 'adjective',
+	},
+	{
 		name: 'higher',
+		categories: 'adjective',
+	},
+	{
+		name: 'new',
 		categories: 'adjective',
 	},
 	{
 		name: 'only.adj',
 		categories: 'adjective',
+	},
+	{
+		name: 'red',
+		categories: 'adjective;color',
 	},
 	{
 		name: 'sharp',
@@ -397,6 +453,10 @@ const meaningData = [
 	{
 		name: 'back',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'bird',
+		categories: 'noun;animal',
 	},
 	{
 		name: 'blood',
@@ -463,8 +523,8 @@ const meaningData = [
 		categories: 'noun',
 	},
 	{
-		name: 'four.fingers',
-		categories: 'noun;anatomy',
+		name: 'foliage',
+		categories: 'noun;plant',
 	},
 	{
 		name: 'foot',
@@ -475,11 +535,19 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'four.fingers',
+		categories: 'noun;anatomy',
+	},
+	{
 		name: 'front',
 		categories: 'noun',
 	},
 	{
 		name: 'gift',
+		categories: 'noun',
+	},
+	{
+		name: 'ground',
 		categories: 'noun',
 	},
 	{
@@ -504,6 +572,10 @@ const meaningData = [
 	},
 	{
 		name: 'hoof',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'horn',
 		categories: 'noun;anatomy',
 	},
 	{
@@ -535,6 +607,18 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'month',
+		categories: 'noun;time',
+	},
+	{
+		name: 'moon',
+		categories: 'noun;celestial.object',
+	},
+	{
+		name: 'mountain',
+		categories: 'noun',
+	},
+	{
 		name: 'mouth',
 		categories: 'noun;anatomy',
 	},
@@ -555,8 +639,16 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'rain',
+		categories: 'noun;weather',
+	},
+	{
 		name: 'rib',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'root',
+		categories: 'noun;plant',
 	},
 	{
 		name: 'row.of.teeth',
@@ -573,6 +665,14 @@ const meaningData = [
 	{
 		name: 'stomach',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'stone',
+		categories: 'noun',
+	},
+	{
+		name: 'sun',
+		categories: 'noun;celestial.object',
 	},
 	{
 		name: 'tear.eye',
@@ -595,6 +695,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'top',
+		categories: 'noun',
+	},
+	{
 		name: 'udder',
 		categories: 'noun;anatomy',
 	},
@@ -611,8 +715,20 @@ const meaningData = [
 		categories: 'noun',
 	},
 	{
+		name: 'wind',
+		categories: 'noun',
+	},
+	{
 		name: 'wing',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'woman',
+		categories: 'noun;person',
+	},
+	{
+		name: 'year',
+		categories: 'noun;time',
 	},
 	// verbs
 	{
@@ -628,8 +744,24 @@ const meaningData = [
 		categories: 'verb',
 	},
 	{
+		name: 'come',
+		categories: 'verb;motion',
+	},
+	{
 		name: 'do',
 		categories: 'verb',
+	},
+	{
+		name: 'drink',
+		categories: 'verb',
+	},
+	{
+		name: 'eat',
+		categories: 'verb',
+	},
+	{
+		name: 'exclaim',
+		categories: 'verb;language',
 	},
 	{
 		name: 'fall',
@@ -648,6 +780,30 @@ const meaningData = [
 		categories: 'verb',
 	},
 	{
+		name: 'go',
+		categories: 'verb;motion',
+	},
+	{
+		name: 'hear',
+		categories: 'verb',
+	},
+	{
+		name: 'lay',
+		categories: 'verb',
+	},
+	{
+		name: 'lie.down',
+		categories: 'verb',
+	},
+	{
+		name: 'listen',
+		categories: 'verb',
+	},
+	{
+		name: 'look',
+		categories: 'verb',
+	},
+	{
 		name: 'make',
 		categories: 'verb',
 	},
@@ -656,11 +812,27 @@ const meaningData = [
 		categories: 'verb',
 	},
 	{
+		name: 'pronounce',
+		categories: 'verb;language',
+	},
+	{
 		name: 'run',
 		categories: 'verb;motion',
 	},
 	{
 		name: 'see',
+		categories: 'verb',
+	},
+	{
+		name: 'sit',
+		categories: 'verb',
+	},
+	{
+		name: 'stand',
+		categories: 'verb',
+	},
+	{
+		name: 'stay',
 		categories: 'verb',
 	},
 	{
@@ -791,6 +963,18 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'gʷeh₂-',
+		meanings: 'step;go;stand',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'gʷem-',
+		meanings: 'step;go;stand',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'ǵénus',
 		meanings: 'cheek;jaw;chin',
 		source: 'wiktionary',
@@ -911,6 +1095,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'h₂éwis',
+		meanings: 'bird',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'h₃meyǵʰ-',
 		meanings: 'urinate',
 		source: 'wiktionary',
@@ -1003,6 +1193,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'ḱerh₂-',
+		meanings: 'head;top;horn',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'kʷetwóres',
 		meanings: 'four',
 		source: 'wiktionary',
@@ -1041,6 +1237,12 @@ const entryData = [
 		language: 'pie',
 		word: 'meh₁',
 		meanings: 'PROH',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'mḗh₁n̥s',
+		meanings: 'moon;month',
 		source: 'wiktionary',
 	},
 	{
@@ -1196,6 +1398,18 @@ const entryData = [
 		language: 'pie',
 		word: 'só',
 		meanings: 'this;that',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'sóh₂wl̥',
+		meanings: 'sun',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'steh₂-',
+		meanings: 'stand',
 		source: 'wiktionary',
 	},
 	{
@@ -2336,6 +2550,223 @@ const entryData = [
 		language: 'proto-afro-asiatic',
 		word: 'xaynz-',
 		meanings: 'three',
+		source: 'wiktionary',
+	},
+	// hattic
+	{
+		language: 'hattic',
+		word: '(a)nti',
+		meanings: 'stand;stay',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'alef',
+		meanings: 'tongue',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'aš',
+		meanings: 'come',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'ašti',
+		meanings: 'bird',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'eštan',
+		meanings: 'sun',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'fa-',
+		meanings: '1s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'hu',
+		meanings: 'exclaim;pronounce',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'hukur',
+		meanings: 'see;look',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'imallen',
+		meanings: 'this',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'kaiš',
+		meanings: 'horn',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'kap',
+		meanings: 'moon',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'kaš',
+		meanings: 'head',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'kazza',
+		meanings: 'red',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'liš',
+		meanings: 'year',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'lin-',
+		meanings: 'drink',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'malhip',
+		meanings: 'good;favorable',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'nif',
+		meanings: 'sit',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'nimah',
+		meanings: 'eye',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'nimhu-',
+		meanings: 'woman',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'nu-',
+		meanings: 'come;go',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'pezil',
+		meanings: 'wind',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'pip',
+		meanings: 'stone',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'puluku',
+		meanings: 'foliage',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'šahhu',
+		meanings: 'ground',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'šaki-',
+		meanings: 'heart',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'šam(a)',
+		meanings: 'hear;listen',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'tahalai',
+		meanings: 'liver',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'tataet',
+		meanings: 'new',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'te',
+		meanings: 'great;big',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'ti',
+		meanings: 'lie.down;lay',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'tu',
+		meanings: 'eat',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'tumil',
+		meanings: 'rain',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'tup',
+		meanings: 'root',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'we',
+		meanings: '2s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'yay',
+		meanings: 'give',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'ziš',
+		meanings: 'mountain',
 		source: 'wiktionary',
 	},
 ];
