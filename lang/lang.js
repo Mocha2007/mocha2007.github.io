@@ -179,10 +179,14 @@ class Language extends Clickable {
 		elem.appendChild(ul2);
 		return elem;
 	}
+	get ignore(){
+		// if it has less vocab than ANY of its parents, ignore this language when doing the closest lang evaluation
+		return this.vocabSizeOfGreatestAncestor !== this.vocab.length;
+	}
 	get likelyRelativeList(){
 		const n = 10;
 		const ol = document.createElement('ol');
-		Language.list.filter(l => l !== this)
+		Language.list.filter(l => l !== this && !l.ignore)
 			.sort((a, b) => b.diff(this) - a.diff(this)).slice(-n).reverse().forEach((e, i) => {
 				const li = document.createElement('li');
 				li.appendChild(e.span);
@@ -203,6 +207,14 @@ class Language extends Clickable {
 	}
 	get vocab(){
 		return Entry.list.filter(e => e.language === this);
+	}
+	/** @returns {number} */
+	get vocabSizeOfGreatestAncestor(){
+		if (!this.parent)
+			return this.vocab.length;
+		const m = this.parent.vocabSizeOfGreatestAncestor;
+		const n = this.vocab.length;
+		return m > n ? m : n;
 	}
 	get title(){
 		return `Parent: ${this.parent}; ${this.location}, ${this.date}`;
