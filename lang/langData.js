@@ -196,6 +196,9 @@ const categoryData = [
 	{
 		name: 'color',
 	},
+	{
+		name: 'family',
+	},
 	{ // words specifically having to do with the creation or interpretation of language, eg. "write, word"
 		name: 'language',
 	},
@@ -436,6 +439,10 @@ const meaningData = [
 		categories: 'adjective',
 	},
 	{
+		name: 'much;a.lot',
+		categories: 'adjective',
+	},
+	{
 		name: 'new',
 		categories: 'adjective',
 	},
@@ -481,6 +488,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'belly',
+		categories: 'noun;anatomy',
+	},
+	{
 		name: 'bird',
 		categories: 'noun;animal',
 	},
@@ -494,6 +505,10 @@ const meaningData = [
 	},
 	{
 		name: 'breast',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'breastbone;sternum',
 		categories: 'noun;anatomy',
 	},
 	{
@@ -529,6 +544,10 @@ const meaningData = [
 		categories: 'noun;society',
 	},
 	{
+		name: 'day',
+		categories: 'noun;time',
+	},
+	{
 		name: 'ear',
 		categories: 'noun;anatomy',
 	},
@@ -545,7 +564,7 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
-		name: 'feather',
+		name: 'feather;plume',
 		categories: 'noun;anatomy',
 	},
 	{
@@ -570,6 +589,10 @@ const meaningData = [
 	},
 	{
 		name: 'foot',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'forearm',
 		categories: 'noun;anatomy',
 	},
 	{
@@ -637,6 +660,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'land',
+		categories: 'noun',
+	},
+	{
 		name: 'language',
 		categories: 'noun;language',
 	},
@@ -645,12 +672,20 @@ const meaningData = [
 		categories: 'noun;plant',
 	},
 	{
+		name: 'light.n',
+		categories: 'noun',
+	},
+	{
 		name: 'liver',
 		categories: 'noun;anatomy',
 	},
 	{
 		name: 'lung',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'man',
+		categories: 'noun;person',
 	},
 	{
 		name: 'marrow',
@@ -665,6 +700,10 @@ const meaningData = [
 		categories: 'noun;celestial.object',
 	},
 	{
+		name: 'mother',
+		categories: 'noun;family',
+	},
+	{
 		name: 'mountain',
 		categories: 'noun',
 	},
@@ -673,11 +712,23 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'muzzle',
+		categories: 'noun;anatomy',
+	},
+	{
 		name: 'navel',
 		categories: 'noun;anatomy',
 	},
 	{
 		name: 'nose',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'nose.tip',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'palm.hand',
 		categories: 'noun;anatomy',
 	},
 	{
@@ -709,6 +760,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'rumen',
+		categories: 'noun;anatomy',
+	},
+	{
 		name: 'sacrifice.n',
 		categories: 'noun;religion',
 	},
@@ -717,16 +772,20 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'shoulderblade',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'spelt',
+		categories: 'noun;plant',
+	},
+	{
 		name: 'stomach',
 		categories: 'noun;anatomy',
 	},
 	{
 		name: 'stone',
 		categories: 'noun',
-	},
-	{
-		name: 'spelt',
-		categories: 'noun;plant',
 	},
 	{
 		name: 'sun',
@@ -758,6 +817,10 @@ const meaningData = [
 	},
 	{
 		name: 'udder',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'upper.arm',
 		categories: 'noun;anatomy',
 	},
 	{
@@ -846,7 +909,7 @@ const meaningData = [
 		categories: 'verb',
 	},
 	{
-		name: 'fly',
+		name: 'fly.v',
 		categories: 'verb;motion',
 	},
 	{
@@ -1606,7 +1669,7 @@ const entryData = [
 	{
 		language: 'pie',
 		word: 'peth₂-',
-		meanings: 'spread.out;fly',
+		meanings: 'spread.out;fly.v',
 		source: 'wiktionary',
 	},
 	{
@@ -1625,7 +1688,7 @@ const entryData = [
 	{
 		language: 'pie',
 		word: 'plew-',
-		meanings: 'fly;flow;run',
+		meanings: 'fly.v;flow;run',
 		source: 'wiktionary',
 	},
 	{
@@ -1795,6 +1858,12 @@ const entryData = [
 		language: 'pie',
 		word: '-wē',
 		meanings: 'or',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'wendtri-',
+		meanings: 'belly',
 		source: 'wiktionary',
 	},
 	{
@@ -2501,6 +2570,54 @@ const entryData = [
 	// proto-uralic
 	{
 		language: 'proto-uralic',
+		word: 'anɜ',
+		meanings: 'big;great;a.lot',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'äŋɜ',
+		meanings: 'chin;jaw',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'aŋtɜ',
+		meanings: 'horn',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'ärɜ',
+		meanings: 'year',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'će',
+		meanings: 'this;that',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'ćowja',
+		meanings: 'stomach;belly;rumen',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'emä',
+		meanings: 'mother;woman',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'jelä',
+		meanings: 'light.n;sun;day',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'kule-',
 		meanings: 'hear;ear',
 		source: 'uralonet',
@@ -2513,8 +2630,26 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: 'kaδ̕a',
+		meanings: 'mountain',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'käjɜ',
+		meanings: 'bird',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'kakta',
 		meanings: 'two',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'kälɜ',
+		meanings: 'blood',
 		source: 'uralonet',
 	},
 	{
@@ -2525,8 +2660,32 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: 'koje',
+		meanings: 'man;person',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'ku-',
+		meanings: 'who;which;what',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'küme',
 		meanings: 'ten',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'kuttɜ',
+		meanings: 'back',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'kuŋe',
+		meanings: 'moon;month',
 		source: 'uralonet',
 	},
 	{
@@ -2537,8 +2696,20 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: 'luwe',
+		meanings: 'bone',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'maksa',
 		meanings: 'liver',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'maγe',
+		meanings: 'land;earth',
 		source: 'uralonet',
 	},
 	{
@@ -2555,8 +2726,86 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: 'mɜ',
+		meanings: 'what',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'mȣ̈rɜ',
+		meanings: 'upper.arm;wing',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'nä',
+		meanings: 'this;that',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'nere',
+		meanings: 'nose',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'neljä',
 		meanings: 'four',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'niŋä',
+		meanings: 'woman',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'ojwa',
+		meanings: 'head',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'päkse',
+		meanings: 'breastbone',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'päŋe',
+		meanings: 'head',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'peδpä',
+		meanings: 'shoulderblade',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'pije',
+		meanings: 'stone',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'piŋɜ',
+		meanings: 'palm.hand',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'polwe',
+		meanings: 'knee',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'poske',
+		meanings: 'face;cheek',
 		source: 'uralonet',
 	},
 	{
@@ -2567,8 +2816,20 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: 'śänčɜ',
+		meanings: 'knee',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'śeδ̕mä',
 		meanings: 'kidney',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'seŋkɜ',
+		meanings: 'forearm;upper.arm',
 		source: 'uralonet',
 	},
 	{
@@ -2585,8 +2846,38 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: 'soja',
+		meanings: 'arm',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'suδ̕ɜ',
 		meanings: 'finger',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'śuwe',
+		meanings: 'mouth;muzzle',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'ta',
+		meanings: 'this',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'tä',
+		meanings: 'this',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'täŋɜ',
+		meanings: 'nose.tip',
 		source: 'uralonet',
 	},
 	{
@@ -2603,8 +2894,26 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: 'tule',
+		meanings: 'fire',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'tulka',
+		meanings: 'feather;plume;wing',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'tumte-',
 		meanings: 'feel;touch;finger',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'ukɜ',
+		meanings: 'head',
 		source: 'uralonet',
 	},
 	{
@@ -2617,6 +2926,30 @@ const entryData = [
 		language: 'proto-uralic',
 		word: 'ükteksä',
 		meanings: 'nine',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'wačɜ',
+		meanings: 'root',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'wenčɜ',
+		meanings: 'face',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'we̮re',
+		meanings: 'mountain',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'wete',
+		meanings: 'water',
 		source: 'uralonet',
 	},
 	{
