@@ -4147,8 +4147,32 @@ const entryData = [
 	},
 	{
 		language: 'pnwc',
+		word: 'co',
+		meanings: 'skin',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'ǧa',
+		meanings: 'testicle',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
 		word: 'ɡʲʷə',
 		meanings: 'heart',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'hə',
+		meanings: 'sea',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'ƛàs',
+		meanings: 'year',
 		source: 'wiktionary',
 	},
 	{
@@ -4167,6 +4191,12 @@ const entryData = [
 		language: 'pnwc',
 		word: 'p’λ’a',
 		meanings: 'four',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'pʎəʔà',
+		meanings: 'shoulder',
 		source: 'wiktionary',
 	},
 	{
@@ -4195,8 +4225,20 @@ const entryData = [
 	},
 	{
 		language: 'pnwc',
+		word: 'xa-',
+		meanings: 'woman',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
 		word: 'za',
 		meanings: 'one',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'yśə̀ʢa',
+		meanings: 'word',
 		source: 'wiktionary',
 	},
 	{
@@ -4204,6 +4246,12 @@ const entryData = [
 		word: 'ž́ʷǝ',
 		meanings: 'pear',
 		source: 'starling',
+	},
+	{
+		language: 'pnwc',
+		word: 'ʒə',
+		meanings: 'water',
+		source: 'wiktionary',
 	},
 	// pnec
 	{
