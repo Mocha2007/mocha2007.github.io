@@ -595,6 +595,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'language',
+		categories: 'noun;language',
+	},
+	{
 		name: 'liver',
 		categories: 'noun;anatomy',
 	},
@@ -2183,6 +2187,12 @@ const entryData = [
 	// proto-uralic
 	{
 		language: 'proto-uralic',
+		word: 'kele',
+		meanings: 'tongue;language',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'kakta',
 		meanings: 'two',
 		source: 'uralonet',
@@ -2207,6 +2217,18 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: 'me',
+		meanings: '1pl',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'minä',
+		meanings: '1s',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'neljä',
 		meanings: 'four',
 		source: 'uralonet',
@@ -2215,6 +2237,18 @@ const entryData = [
 		language: 'proto-uralic',
 		word: 'śäjćem',
 		meanings: 'seven',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'te',
+		meanings: '2pl',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'tinä',
+		meanings: '2s',
 		source: 'uralonet',
 	},
 	{
