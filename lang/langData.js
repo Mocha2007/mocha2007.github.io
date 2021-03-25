@@ -616,6 +616,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'father',
+		categories: 'noun;family',
+	},
+	{
 		name: 'feather;plume',
 		categories: 'noun;anatomy',
 	},
@@ -680,6 +684,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'hearth',
+		categories: 'noun',
+	},
+	{
 		name: 'heel',
 		categories: 'noun;anatomy',
 	},
@@ -706,6 +714,10 @@ const meaningData = [
 	{
 		name: 'kidney',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'king',
+		categories: 'noun;person',
 	},
 	{
 		name: 'knee',
@@ -830,6 +842,10 @@ const meaningData = [
 	{
 		name: 'sacrifice.n',
 		categories: 'noun;religion',
+	},
+	{
+		name: 'sea',
+		categories: 'noun;landform',
 	},
 	{
 		name: 'shoulder',
@@ -1026,6 +1042,10 @@ const meaningData = [
 	},
 	{
 		name: 'make',
+		categories: 'verb',
+	},
+	{
+		name: 'open.v',
 		categories: 'verb',
 	},
 	{
@@ -3472,14 +3492,32 @@ const entryData = [
 	},
 	{
 		language: 'hattic',
+		word: 'eš',
+		meanings: 'put',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
 		word: 'eštan',
-		meanings: 'sun',
+		meanings: 'sun;day',
 		source: 'wiktionary',
 	},
 	{
 		language: 'hattic',
 		word: 'fa-',
-		meanings: '1s',
+		meanings: '1s;PL',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'fafaya',
+		meanings: 'father',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'han',
+		meanings: 'sea;open.v',
 		source: 'wiktionary',
 	},
 	{
@@ -3520,8 +3558,26 @@ const entryData = [
 	},
 	{
 		language: 'hattic',
+		word: 'katte',
+		meanings: 'king',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
 		word: 'kazza',
 		meanings: 'red',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'kun',
+		meanings: 'see',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'le-',
+		meanings: 'PL',
 		source: 'wiktionary',
 	},
 	{
@@ -3580,8 +3636,20 @@ const entryData = [
 	},
 	{
 		language: 'hattic',
+		word: 'pu',
+		meanings: 'do',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
 		word: 'puluku',
 		meanings: 'foliage',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'pupišet',
+		meanings: 'hearth',
 		source: 'wiktionary',
 	},
 	{
@@ -3642,6 +3710,12 @@ const entryData = [
 		language: 'hattic',
 		word: 'tup',
 		meanings: 'root',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: '-(u)n',
+		meanings: 'GEN',
 		source: 'wiktionary',
 	},
 	{
