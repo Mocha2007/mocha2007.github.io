@@ -61,7 +61,7 @@ const sourceData = [
 	},
 	{
 		name: 'uralonet',
-		url: 'http://uralonet.nytud.hu/search.cgi?id_eintrag=&rkn_l=%25&rkn_c=0&skeleton=&skeletonjoker=fixfix&taxonomy=&rkn_BED=they&rkn_BED_l=en&lexem=&verg_DI=&dialect_from=&dialect_to=&kme_fulltext=&author=&abbr=&submit=Search',
+		url: 'http://www.uralonet.nytud.hu/search.cgi?locale=en_GB&resetform=1&collapse=1',
 		date: '2021',
 	},
 	{
@@ -619,6 +619,7 @@ const meaningData = [
 	{
 		name: 'apple',
 		categories: 'noun;plant',
+		hypernyms: 'fruit',
 	},
 	{
 		name: 'arm',
@@ -631,6 +632,10 @@ const meaningData = [
 	{
 		name: 'back',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'ball;sphere',
+		categories: 'noun',
 	},
 	{
 		name: 'bamboo.rat',
@@ -754,7 +759,7 @@ const meaningData = [
 		categories: 'noun',
 	},
 	{
-		name: 'eye',
+		name: 'eye;eyeball',
 		categories: 'noun;anatomy',
 	},
 	{
@@ -812,6 +817,10 @@ const meaningData = [
 	{
 		name: 'front',
 		categories: 'noun',
+	},
+	{
+		name: 'fruit',
+		categories: 'noun;plant',
 	},
 	{
 		name: 'gall',
@@ -997,6 +1006,7 @@ const meaningData = [
 	{
 		name: 'pear',
 		categories: 'noun;plant',
+		hypernyms: 'fruit',
 	},
 	{
 		name: 'peg',
@@ -1173,6 +1183,10 @@ const meaningData = [
 	{
 		name: 'woman;lady',
 		categories: 'noun;person',
+	},
+	{
+		name: 'word',
+		categories: 'noun;language',
 	},
 	{
 		name: 'year',
@@ -1634,6 +1648,12 @@ const entryData = [
 		word: 'h₃dónts',
 		meanings: 'tooth',
 		etymology: 'pie:h₃ed-;pie:-ónts',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'h₂ébōl',
+		meanings: 'apple',
 		source: 'wiktionary',
 	},
 	{
@@ -2334,6 +2354,13 @@ const entryData = [
 	},
 	{
 		language: 'la',
+		word: 'mālum',
+		meanings: 'apple',
+		etymology: 'ancient-greek:mêlon',
+		source: 'wiktionary',
+	},
+	{
+		language: 'la',
 		word: 'sol',
 		meanings: 'sun',
 		etymology: 'pie:sóh₂wl̥',
@@ -2360,12 +2387,25 @@ const entryData = [
 		meanings: 'lion',
 		source: 'wiktionary',
 	},
+	{
+		language: 'ancient-greek',
+		word: 'mêlon',
+		meanings: 'apple;fruit;breast;cheek',
+		source: 'wiktionary',
+	},
 	// proto-germanic
 	{
 		language: 'pger',
 		word: 'ainaz',
 		meanings: 'one;some.quelques',
 		etymology: 'pie:óynos',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pger',
+		word: 'aplaz',
+		meanings: 'apple;fruit',
+		etymology: 'pie:h₂ébōl',
 		source: 'wiktionary',
 	},
 	{
@@ -2470,6 +2510,13 @@ const entryData = [
 	},
 	{
 		language: 'pwger',
+		word: 'applu',
+		meanings: 'apple',
+		etymology: 'pger:aplaz',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pwger',
 		word: 'fauwar',
 		meanings: 'four',
 		etymology: 'pger:fedwōr',
@@ -2544,6 +2591,13 @@ const entryData = [
 		word: 'ān',
 		meanings: 'one;an;only.adj;alone',
 		etymology: 'pwger:ain',
+		source: 'wiktionary',
+	},
+	{
+		language: 'oe',
+		word: 'æppel',
+		meanings: 'fruit;apple;ball;sphere;eyeball',
+		etymology: 'pwger:applu',
 		source: 'wiktionary',
 	},
 	{
@@ -2823,6 +2877,12 @@ const entryData = [
 	},
 	{
 		language: 'proto-vasconic',
+		word: '[h]itz',
+		meanings: 'word',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
 		word: '-(i)zan-',
 		meanings: 'be',
 		source: shortcuts.edob,
@@ -2853,6 +2913,12 @@ const entryData = [
 	},
 	{
 		language: 'proto-vasconic',
+		word: 'no-',
+		meanings: 'who;what',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
 		word: 'lur',
 		meanings: 'earth',
 		source: shortcuts.edob,
@@ -2867,6 +2933,12 @@ const entryData = [
 		language: 'proto-vasconic',
 		word: '-oan-',
 		meanings: 'go',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'sagar',
+		meanings: 'apple',
 		source: shortcuts.edob,
 	},
 	{
@@ -2891,6 +2963,12 @@ const entryData = [
 		language: 'proto-vasconic',
 		word: 'zazpi',
 		meanings: 'seven',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'ze',
+		meanings: 'who;what',
 		source: shortcuts.edob,
 	},
 	{
@@ -3932,7 +4010,7 @@ const entryData = [
 		meanings: 'five',
 		source: 'uralonet',
 	},
-	// pnwc
+	// pnwc (AKA Abkhaz-Adyghe)
 	{
 		language: 'pnwc',
 		word: '(a)nǝ',
@@ -3995,6 +4073,12 @@ const entryData = [
 	},
 	{
 		language: 'pnwc',
+		word: 'c̣ʷa',
+		meanings: 'apple',
+		source: 'starling',
+	},
+	{
+		language: 'pnwc',
 		word: 'c:ʷǝ',
 		meanings: 'ox',
 		source: 'wiktionary',
@@ -4052,6 +4136,12 @@ const entryData = [
 		word: 'za',
 		meanings: 'one',
 		source: 'wiktionary',
+	},
+	{
+		language: 'pnwc',
+		word: 'ž́ʷǝ',
+		meanings: 'pear',
+		source: 'starling',
 	},
 	// pnec
 	{
@@ -4391,6 +4481,12 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
+		word: 'wašl-',
+		meanings: 'apple',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
 		word: 'ʒećx-',
 		meanings: 'fire',
 		source: 'starling',
@@ -4457,6 +4553,12 @@ const entryData = [
 		word: 'tišʕ-',
 		meanings: 'nine',
 		source: 'wiktionary',
+	},
+	{
+		language: 'proto-semitic',
+		word: 'tupāḥ-',
+		meanings: 'apple',
+		source: 'starling',
 	},
 	// proto-afro-asiatic
 	{
@@ -4669,6 +4771,13 @@ const entryData = [
 		word: 'pupišet',
 		meanings: 'hearth',
 		source: 'wiktionary',
+	},
+	{
+		language: 'hattic',
+		word: 'šafat',
+		meanings: 'apple',
+		source: 'wiktionary',
+		notes: 'apple tree, poss. apricot tree',
 	},
 	{
 		language: 'hattic',
