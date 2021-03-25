@@ -856,6 +856,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'skin',
+		categories: 'noun;anatomy',
+	},
+	{
 		name: 'spelt',
 		categories: 'noun;plant',
 	},
@@ -940,7 +944,7 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
-		name: 'woman',
+		name: 'woman;lady',
 		categories: 'noun;person',
 	},
 	{
@@ -2274,6 +2278,66 @@ const entryData = [
 	// Proto-Vasconic
 	{
 		language: 'proto-vasconic',
+		word: 'adar',
+		meanings: 'horn',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'a[h]o',
+		meanings: 'mouth',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'aita',
+		meanings: 'father',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'aLu',
+		meanings: 'vulva',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'ama',
+		meanings: 'mother',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: '-an-',
+		meanings: 'eat',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'andere',
+		meanings: 'lady',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: '-ario[n]-',
+		meanings: 'flow',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: '-augin-',
+		meanings: 'come',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'azal',
+		meanings: 'skin',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
 		word: 'bade',
 		meanings: 'one',
 		source: shortcuts.edob,
@@ -2288,6 +2352,18 @@ const entryData = [
 		language: 'proto-vasconic',
 		word: 'bederatzu',
 		meanings: 'nine',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'begi',
+		meanings: 'eye',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: 'beLaun',
+		meanings: 'knee',
 		source: shortcuts.edob,
 	},
 	{
@@ -2340,8 +2416,32 @@ const entryData = [
 	},
 	{
 		language: 'proto-vasconic',
+		word: '[h]aize',
+		meanings: 'wind',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
 		word: '[h]anbar',
 		meanings: 'ten',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: '[h]andi',
+		meanings: 'big',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: '[h]aRi',
+		meanings: 'stone',
+		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: '[h]aur',
+		meanings: 'this',
 		source: shortcuts.edob,
 	},
 	{
