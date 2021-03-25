@@ -409,6 +409,9 @@ const meaningData = [
 		name: 'ALL',
 	},
 	{
+		name: 'DAT',
+	},
+	{
 		name: 'ERG',
 	},
 	{
@@ -431,6 +434,9 @@ const meaningData = [
 	},
 	{
 		name: 'PROH',
+	},
+	{
+		name: 'PST',
 	},
 	{
 		name: 'TRANSL',
@@ -3161,6 +3167,13 @@ const entryData = [
 	},
 	{
 		language: 'etruscan',
+		word: '-e',
+		meanings: 'PST',
+		etymology: 'proto-tyrsenian:-ai',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
 		word: 'ein',
 		meanings: '3pl',
 		source: 'wiktionary',
@@ -3330,6 +3343,13 @@ const entryData = [
 		language: 'etruscan',
 		word: 'semφ',
 		meanings: 'seven',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: '-si',
+		meanings: 'DAT',
+		etymology: 'proto-tyrsenian:-si',
 		source: 'wiktionary',
 	},
 	{
@@ -3551,6 +3571,12 @@ const entryData = [
 	// proto-tyrsenian
 	{
 		language: 'proto-tyrsenian',
+		word: '-ai',
+		meanings: 'PST',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-tyrsenian',
 		word: 'akvil',
 		meanings: 'gift',
 		source: 'mocha',
@@ -3578,6 +3604,12 @@ const entryData = [
 		word: '-s',
 		meanings: 'GEN',
 		source: 'mocha',
+	},
+	{
+		language: 'proto-tyrsenian',
+		word: '-si',
+		meanings: 'DAT',
+		source: 'wiktionary',
 	},
 	{
 		language: 'proto-tyrsenian',
