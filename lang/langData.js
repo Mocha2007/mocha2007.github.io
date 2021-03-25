@@ -215,6 +215,9 @@ const categoryData = [
 		categories: 'society',
 	},
 	{
+		name: 'sensory',
+	},
+	{
 		name: 'society',
 	},
 	{
@@ -515,6 +518,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'finger',
+		categories: 'noun;anatomy',
+	},
+	{
 		name: 'fingernail',
 		categories: 'noun;anatomy',
 	},
@@ -772,6 +779,10 @@ const meaningData = [
 		categories: 'verb;motion',
 	},
 	{
+		name: 'feel',
+		categories: 'verb;sensory',
+	},
+	{
 		name: 'flow',
 		categories: 'verb',
 	},
@@ -789,7 +800,7 @@ const meaningData = [
 	},
 	{
 		name: 'hear',
-		categories: 'verb',
+		categories: 'verb;sensory',
 	},
 	{
 		name: 'lay',
@@ -813,7 +824,7 @@ const meaningData = [
 	},
 	{
 		name: 'perceive',
-		categories: 'verb',
+		categories: 'verb;sensory',
 	},
 	{
 		name: 'pronounce',
@@ -825,7 +836,7 @@ const meaningData = [
 	},
 	{
 		name: 'see',
-		categories: 'verb',
+		categories: 'verb;sensory',
 	},
 	{
 		name: 'sit',
@@ -853,6 +864,10 @@ const meaningData = [
 	},
 	{
 		name: 'take',
+		categories: 'verb',
+	},
+	{
+		name: 'touch',
 		categories: 'verb',
 	},
 	{
@@ -2187,6 +2202,12 @@ const entryData = [
 	// proto-uralic
 	{
 		language: 'proto-uralic',
+		word: 'kule-',
+		meanings: 'hear;ear',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'kele',
 		meanings: 'tongue;language',
 		source: 'uralonet',
@@ -2217,6 +2238,12 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: 'maksa',
+		meanings: 'liver',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'me',
 		meanings: '1pl',
 		source: 'uralonet',
@@ -2241,6 +2268,30 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: 'śeδ̕mä',
+		meanings: 'kidney',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'śiδä',
+		meanings: 'heart',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'śilmä',
+		meanings: 'eye',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'suδ̕ɜ',
+		meanings: 'finger',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'te',
 		meanings: '2pl',
 		source: 'uralonet',
@@ -2249,6 +2300,12 @@ const entryData = [
 		language: 'proto-uralic',
 		word: 'tinä',
 		meanings: '2s',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'tumte-',
+		meanings: 'feel;touch;finger',
 		source: 'uralonet',
 	},
 	{
