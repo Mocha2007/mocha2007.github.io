@@ -163,6 +163,18 @@ class Language extends Clickable {
 		h23.innerHTML = 'Most Likely Relatives';
 		elem.appendChild(h23);
 		h23.onclick = () => elem.appendChild(this.likelyRelativeList);
+		// missing meanings
+		const h24 = document.createElement('h2');
+		h24.innerHTML = 'Missing Meanings';
+		elem.appendChild(h24);
+		const ul2 = document.createElement('ul');
+		h24.onclick = () => this.missingMeanings.sort((a, b) => a.name > b.name ? 1 : -1)
+			.forEach(m => {
+				const li = document.createElement('li');
+				li.appendChild(m.span);
+				ul2.appendChild(li);
+			});
+		elem.appendChild(ul2);
 		return elem;
 	}
 	get likelyRelativeList(){
@@ -179,6 +191,13 @@ class Language extends Clickable {
 				ol.appendChild(li);
 			});
 		return ol;
+	}
+	/** meanings not expressed by any word in the language */
+	get missingMeanings(){
+		/** @type {Meaning[]} */
+		const foundMeanings = [];
+		this.vocab.forEach(v => v.meanings.forEach(m => foundMeanings.push(m)));
+		return Meaning.list.filter(m => !foundMeanings.includes(m));
 	}
 	get vocab(){
 		return Entry.list.filter(e => e.language === this);
