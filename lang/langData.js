@@ -2103,6 +2103,18 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
+		word: 'c̣q̇al-',
+		meanings: 'water',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'čwen',
+		meanings: '1pl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
 		word: 'c₁xar-',
 		meanings: 'nine',
 		source: 'wiktionary',
@@ -2129,6 +2141,18 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
+		word: 'ma-',
+		meanings: 'what',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'me',
+		meanings: '1s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
 		word: 'otxo-',
 		meanings: 'four',
 		etymology: 'pie:oḱtṓw',
@@ -2142,8 +2166,20 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
+		word: 'š(w)en-',
+		meanings: '2s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
 		word: 'šwid-',
 		meanings: 'seven',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'tkwen-',
+		meanings: '2pl',
 		source: 'wiktionary',
 	},
 	{
@@ -2151,6 +2187,12 @@ const entryData = [
 		word: 'xut-',
 		meanings: 'five',
 		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'ʒećx-',
+		meanings: 'fire',
+		source: 'starling',
 	},
 	// proto-semitic
 	{
