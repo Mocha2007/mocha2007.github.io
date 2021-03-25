@@ -297,7 +297,19 @@ const meaningData = [
 	},
 	// prepositions
 	{
+		name: 'at',
+		categories: 'preposition',
+	},
+	{
 		name: 'away',
+		categories: 'preposition',
+	},
+	{
+		name: 'near',
+		categories: 'preposition',
+	},
+	{
+		name: 'on',
 		categories: 'preposition',
 	},
 	{
@@ -433,6 +445,10 @@ const meaningData = [
 		categories: 'adjective',
 	},
 	{
+		name: 'opportune;timely',
+		categories: 'adjective',
+	},
+	{
 		name: 'red',
 		categories: 'adjective;color',
 	},
@@ -490,6 +506,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'charcoal',
+		categories: 'noun',
+	},
+	{
 		name: 'cheek',
 		categories: 'noun;anatomy',
 	},
@@ -510,6 +530,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'earth',
+		categories: 'noun',
+	},
+	{
 		name: 'eye',
 		categories: 'noun;anatomy',
 	},
@@ -520,6 +544,10 @@ const meaningData = [
 	{
 		name: 'feather',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'fern',
+		categories: 'noun;plant',
 	},
 	{
 		name: 'finger',
@@ -534,7 +562,7 @@ const meaningData = [
 		categories: 'noun',
 	},
 	{
-		name: 'foliage',
+		name: 'flower',
 		categories: 'noun;plant',
 	},
 	{
@@ -610,6 +638,10 @@ const meaningData = [
 		categories: 'noun;language',
 	},
 	{
+		name: 'leaf;foliage',
+		categories: 'noun;plant',
+	},
+	{
 		name: 'liver',
 		categories: 'noun;anatomy',
 	},
@@ -654,6 +686,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'person;human;earthling',
+		categories: 'noun;person',
+	},
+	{
 		name: 'rain',
 		categories: 'noun;weather',
 	},
@@ -684,6 +720,10 @@ const meaningData = [
 	{
 		name: 'stone',
 		categories: 'noun',
+	},
+	{
+		name: 'spelt',
+		categories: 'noun;plant',
 	},
 	{
 		name: 'sun',
@@ -759,8 +799,20 @@ const meaningData = [
 		categories: 'verb',
 	},
 	{
+		name: 'bloom',
+		categories: 'verb;plant',
+	},
+	{
+		name: 'burn',
+		categories: 'verb',
+	},
+	{
 		name: 'come',
 		categories: 'verb;motion',
+	},
+	{
+		name: 'cover',
+		categories: 'verb',
 	},
 	{
 		name: 'do',
@@ -771,7 +823,7 @@ const meaningData = [
 		categories: 'verb',
 	},
 	{
-		name: 'eat',
+		name: 'eat;devour',
 		categories: 'verb',
 	},
 	{
@@ -831,6 +883,10 @@ const meaningData = [
 		categories: 'verb;sensory',
 	},
 	{
+		name: 'place.v;put',
+		categories: 'verb;language',
+	},
+	{
 		name: 'pronounce',
 		categories: 'verb;language',
 	},
@@ -867,6 +923,10 @@ const meaningData = [
 		categories: 'verb',
 	},
 	{
+		name: 'swallow',
+		categories: 'verb',
+	},
+	{
 		name: 'take',
 		categories: 'verb',
 	},
@@ -888,6 +948,10 @@ const meaningData = [
 	},
 	// derivational morphemes
 	{
+		name: '*>adj',
+		categories: 'affix',
+	},
+	{
 		name: '*>adj.contrastive',
 		categories: 'affix',
 	},
@@ -897,6 +961,10 @@ const meaningData = [
 	},
 	{
 		name: '*>n', // nominalizer
+		categories: 'affix',
+	},
+	{
+		name: '*>v', // verbalizer
 		categories: 'affix',
 	},
 	{
@@ -930,9 +998,34 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'bʰleh₃-',
+		meanings: 'bloom;flower',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'bʰolh₃yom',
+		meanings: 'leaf',
+		etymology: 'pie:bʰleh₃-',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'dáḱru',
 		meanings: 'tear.eye',
 		etymology: 'pie:derḱ-;pie:h₂éḱru',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'dʰéǵʰōm',
+		meanings: 'earth',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'dʰeh₁-',
+		meanings: 'do;put;place.v',
 		source: 'wiktionary',
 	},
 	{
@@ -1016,6 +1109,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'gʷerh₃-',
+		meanings: 'swallow;devour;eat',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'ǵʰes-',
 		meanings: 'hand;take;give',
 		source: 'wiktionary',
@@ -1032,6 +1131,12 @@ const entryData = [
 		word: 'ǵʰésōr',
 		meanings: 'hand',
 		etymology: 'pie:ǵʰes-;pie:-ōr',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'ǵʰmṓ',
+		meanings: 'earthling',
 		source: 'wiktionary',
 	},
 	{
@@ -1055,8 +1160,20 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'h₁ed-',
+		meanings: 'eat',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'h₃ed-',
 		meanings: 'bite',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'h₁egʷʰ-',
+		meanings: 'drink',
 		source: 'wiktionary',
 	},
 	{
@@ -1076,6 +1193,12 @@ const entryData = [
 		word: 'h₂éḱru',
 		meanings: 'tear.eye',
 		etymology: 'pie:h₂eḱ-',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'h₁engʷ-',
+		meanings: 'burn;fire',
 		source: 'wiktionary',
 	},
 	{
@@ -1102,6 +1225,25 @@ const entryData = [
 		word: 'h₂entíos',
 		meanings: 'front;forehead',
 		etymology: 'pie:h₂ent-',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'h₁epi',
+		meanings: 'on;at;near',
+		etymology: 'pie:h₁eps',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'h₁eps',
+		meanings: 'back',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'h₁er-',
+		meanings: 'earth',
 		source: 'wiktionary',
 	},
 	{
@@ -1136,6 +1278,13 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'h₂ḱh₂owsyéti',
+		meanings: 'hear',
+		etymology: 'pie:h₂eḱ-;pie:h₂ṓws;pie:-yéti',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'h₃meyǵʰ-',
 		meanings: 'urinate',
 		source: 'wiktionary',
@@ -1144,6 +1293,13 @@ const entryData = [
 		language: 'pie',
 		word: 'h₁néwn̥',
 		meanings: 'nine',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'h₁n̥gʷnís',
+		meanings: 'fire',
+		etymology: 'pie:h₁engʷ-',
 		source: 'wiktionary',
 	},
 	{
@@ -1181,6 +1337,13 @@ const entryData = [
 		language: 'pie',
 		word: 'h₂ṓms',
 		meanings: 'shoulder',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'h₁óngʷl̥',
+		meanings: 'charcoal',
+		etymology: 'pie:h₁engʷ-;pie:-ōl',
 		source: 'wiktionary',
 	},
 	{
@@ -1241,6 +1404,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'ḱel-',
+		meanings: 'cover',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'ḱḗr',
 		meanings: 'heart',
 		source: 'wiktionary',
@@ -1261,6 +1430,13 @@ const entryData = [
 		language: 'pie',
 		word: 'kʷís',
 		meanings: 'what;who;which',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'ḱlew-',
+		meanings: 'hear',
+		etymology: 'pie:ḱel-',
 		source: 'wiktionary',
 	},
 	{
@@ -1291,6 +1467,12 @@ const entryData = [
 		language: 'pie',
 		word: 'meh₁',
 		meanings: 'PROH',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'meh₂',
+		meanings: 'good;timely;opportune',
 		source: 'wiktionary',
 	},
 	{
@@ -1376,6 +1558,18 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'peh₃-',
+		meanings: 'drink',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'péh₂wr̥',
+		meanings: 'fire;spelt',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'penkʷ-',
 		meanings: 'hand',
 		source: 'wiktionary',
@@ -1385,6 +1579,13 @@ const entryData = [
 		word: 'pénkʷe',
 		meanings: 'five',
 		etymology: 'pie:penkʷ-',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'penkʷrós',
+		meanings: 'finger',
+		etymology: 'pie:penkʷ-;pie:-rós',
 		source: 'wiktionary',
 	},
 	{
@@ -1440,14 +1641,34 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'pornóm',
+		meanings: 'feather;wing;fern;leaf',
+		etymology: 'pie:p(t)erH-',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'pstḗn',
 		meanings: 'breast;teat',
 		source: 'wiktionary',
 	},
 	{
 		language: 'pie',
+		word: 'p(t)erH-',
+		meanings: 'fern',
+		etymology: 'pie:p(t)erH-',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: '-r̥',
 		meanings: '*>n',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: '-rós',
+		meanings: '*>adj',
 		source: 'wiktionary',
 	},
 	{
@@ -1460,6 +1681,12 @@ const entryData = [
 		language: 'pie',
 		word: 'sḗm',
 		meanings: 'one',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'sent-',
+		meanings: 'feel',
 		source: 'wiktionary',
 	},
 	{
@@ -1572,6 +1799,13 @@ const entryData = [
 		word: 'wéy',
 		meanings: '1pl',
 		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: '-yéti',
+		meanings: '*>v',
+		source: 'wiktionary',
+		notes: 'Creates intransitive, often deponent, imperfective verbs from roots.',
 	},
 	{
 		language: 'pie',
