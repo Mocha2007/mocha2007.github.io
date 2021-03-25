@@ -3,10 +3,14 @@
 
 const shortcuts = {
 	edob: 'Etymological Dictionary of Basque',
+	etruscan: 'Etruscology at its best',
 	rhaetian: 'Thesaurus Inscriptionum Raeticarum',
 };
 
 const authorData = [
+	{
+		name: 'Dieter H. Steinbauer',
+	},
 	{
 		name: 'mocha',
 	},
@@ -25,6 +29,12 @@ const authorData = [
 ];
 
 const sourceData = [
+	{
+		name: shortcuts.etruscan,
+		author: 'Dieter H. Steinbauer',
+		url: 'http://www.etruskisch.de/pgs/vc.htm',
+		date: '2002',
+	},
 	{
 		name: shortcuts.edob,
 		author: 'R. L. Trask',
@@ -83,6 +93,12 @@ const languageData = [
 		period: 'c. 2000 BCE',
 	},
 	{
+		name: 'la',
+		parent: 'pie',
+		location: 'rome',
+		period: 'c. 500 BCE - 500 CE',
+	},
+	{
 		name: 'oe',
 		parent: 'pwger',
 		location: 'england',
@@ -133,6 +149,11 @@ const languageData = [
 		period: 'c. 500 BCE',
 	},
 	{
+		name: 'pst',
+		location: 'china',
+		period: 'c. 4000 BCE',
+	},
+	{
 		name: 'pwger',
 		parent: 'pger',
 		location: 'northwest germany',
@@ -153,6 +174,9 @@ const categoryData = [
 	},
 	{
 		name: 'adposition;preposition;postposition',
+	},
+	{
+		name: 'adverb',
 	},
 	{
 		name: 'affix',
@@ -198,6 +222,9 @@ const categoryData = [
 	},
 	{
 		name: 'family',
+	},
+	{ // eg. brook, mountain, desert, ...
+		name: 'landform',
 	},
 	{ // words specifically having to do with the creation or interpretation of language, eg. "write, word"
 		name: 'language',
@@ -423,6 +450,10 @@ const meaningData = [
 		categories: 'adjective',
 	},
 	{
+		name: 'beautiful',
+		categories: 'adjective',
+	},
+	{
 		name: 'big;great;large',
 		categories: 'adjective',
 	},
@@ -459,11 +490,19 @@ const meaningData = [
 		categories: 'adjective',
 	},
 	{
+		name: 'real',
+		categories: 'adjective',
+	},
+	{
 		name: 'red',
 		categories: 'adjective;color',
 	},
 	{
 		name: 'sharp',
+		categories: 'adjective',
+	},
+	{
+		name: 'straight',
 		categories: 'adjective',
 	},
 	{
@@ -473,6 +512,11 @@ const meaningData = [
 	{
 		name: 'upper',
 		categories: 'adjective',
+	},
+	// adverbs
+	{
+		name: 'very',
+		categories: 'adverb',
 	},
 	// nouns
 	{
@@ -500,6 +544,14 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'bone',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'bowels',
+		categories: 'noun;anatomy',
+	},
+	{
 		name: 'brain',
 		categories: 'noun;anatomy',
 	},
@@ -512,12 +564,8 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
-		name: 'bone',
-		categories: 'noun;anatomy',
-	},
-	{
-		name: 'bowels',
-		categories: 'noun;anatomy',
+		name: 'brook;creek;stream',
+		categories: 'noun;landform',
 	},
 	{
 		name: 'butt',
@@ -552,7 +600,7 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
-		name: 'earth',
+		name: 'earth;ground;soil',
 		categories: 'noun',
 	},
 	{
@@ -609,10 +657,6 @@ const meaningData = [
 	},
 	{
 		name: 'gift',
-		categories: 'noun',
-	},
-	{
-		name: 'ground',
 		categories: 'noun',
 	},
 	{
@@ -676,6 +720,10 @@ const meaningData = [
 		categories: 'noun',
 	},
 	{
+		name: 'lightning;thunder',
+		categories: 'noun;weather',
+	},
+	{
 		name: 'liver',
 		categories: 'noun;anatomy',
 	},
@@ -705,7 +753,7 @@ const meaningData = [
 	},
 	{
 		name: 'mountain',
-		categories: 'noun',
+		categories: 'noun;landform',
 	},
 	{
 		name: 'mouth',
@@ -780,6 +828,14 @@ const meaningData = [
 		categories: 'noun;plant',
 	},
 	{
+		name: 'spring.water',
+		categories: 'noun;landform',
+	},
+	{
+		name: 'star',
+		categories: 'noun;celestial.object',
+	},
+	{
 		name: 'stomach',
 		categories: 'noun;anatomy',
 	},
@@ -833,6 +889,10 @@ const meaningData = [
 	},
 	{
 		name: 'water',
+		categories: 'noun',
+	},
+	{
+		name: 'well',
 		categories: 'noun',
 	},
 	{
@@ -1897,6 +1957,14 @@ const entryData = [
 		meanings: '2pl',
 		source: 'wiktionary',
 	},
+	// latin
+	{
+		language: 'la',
+		word: 'sol',
+		meanings: 'sun',
+		etymology: 'pie:sóh₂wl̥',
+		source: 'wiktionary',
+	},
 	// proto-germanic
 	{
 		language: 'pger',
@@ -2292,6 +2360,12 @@ const entryData = [
 	},
 	{
 		language: 'etruscan',
+		word: 'cel',
+		meanings: 'earth;ground;soil',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
 		word: 'cer-',
 		meanings: 'make',
 		source: 'wiktionary',
@@ -2313,6 +2387,12 @@ const entryData = [
 		word: 'ein',
 		meanings: '3pl',
 		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'huin',
+		meanings: 'spring.water;well',
+		source: shortcuts.etruscan,
 	},
 	{
 		language: 'etruscan',
@@ -2373,6 +2453,12 @@ const entryData = [
 	},
 	{
 		language: 'etruscan',
+		word: 'pulum',
+		meanings: 'star',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
 		word: '-s',
 		meanings: 'GEN',
 		etymology: 'proto-tyrsenian:-s',
@@ -2399,14 +2485,26 @@ const entryData = [
 	{
 		language: 'etruscan',
 		word: 'θi',
-		meanings: 'water',
-		source: 'wiktionary',
+		meanings: 'water;creek',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
+		word: 'tiur',
+		meanings: 'moon',
+		source: shortcuts.etruscan,
 	},
 	{
 		language: 'etruscan',
 		word: 'θu',
 		meanings: 'one',
 		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'trut',
+		meanings: 'lightning',
+		source: shortcuts.etruscan,
 	},
 	{
 		language: 'etruscan',
@@ -2422,9 +2520,22 @@ const entryData = [
 	},
 	{
 		language: 'etruscan',
+		word: 'una',
+		meanings: 'stream',
+		source: shortcuts.etruscan,
+	},
+	{
+		language: 'etruscan',
 		word: 'unu',
 		meanings: '2pl',
 		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
+		word: 'uśil',
+		meanings: 'sun',
+		etymology: 'la:sol',
+		source: shortcuts.etruscan,
 	},
 	{
 		language: 'etruscan',
@@ -3490,6 +3601,115 @@ const entryData = [
 		language: 'hattic',
 		word: 'ziš',
 		meanings: 'mountain',
+		source: 'wiktionary',
+	},
+	// Proto-Sino-Tibetan
+	{
+		language: 'pst',
+		word: 'bləj',
+		meanings: 'four',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'brgja',
+		meanings: 'hundred',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'brgjat',
+		meanings: 'eight',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'dkruk',
+		meanings: 'six',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'd/skəw',
+		meanings: 'nine',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'gip',
+		meanings: 'ten',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'g/snis',
+		meanings: 'two',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'gsum',
+		meanings: 'three',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'ʔit',
+		meanings: 'one',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'l/bŋa',
+		meanings: 'five',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'l(j)a(k/ŋ)',
+		meanings: 'good;beautiful;real;straight;very',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'ma',
+		meanings: 'NEG',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'ŋaj',
+		meanings: '1s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'naŋ',
+		meanings: '2s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'snis',
+		meanings: 'seven',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'stawŋ',
+		meanings: 'thousand',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'tjak',
+		meanings: 'one',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'tsjaj',
+		meanings: 'ten',
 		source: 'wiktionary',
 	},
 ];
