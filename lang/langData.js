@@ -239,7 +239,15 @@ const categoryData = [
 		name: 'language',
 	},
 	{
+		name: 'length',
+		categories: 'measurement',
+	},
+	{
 		name: 'life',
+	},
+	{
+		name: 'mass',
+		categories: 'measurement',
 	},
 	{
 		name: 'measurement',
@@ -267,6 +275,7 @@ const categoryData = [
 	},
 	{
 		name: 'time',
+		categories: 'measurement',
 	},
 	{
 		name: 'weather',
@@ -497,7 +506,7 @@ const meaningData = [
 	},
 	{
 		name: 'big;great;large',
-		categories: 'adjective',
+		categories: 'adjective;measurement',
 	},
 	{
 		name: 'black',
@@ -509,7 +518,7 @@ const meaningData = [
 	},
 	{
 		name: 'far',
-		categories: 'adjective',
+		categories: 'adjective;length',
 	},
 	{
 		name: 'favorable',
@@ -521,15 +530,15 @@ const meaningData = [
 	},
 	{
 		name: 'heavy',
-		categories: 'adjective',
+		categories: 'adjective;mass',
 	},
 	{
 		name: 'higher',
-		categories: 'adjective',
+		categories: 'adjective;length',
 	},
 	{
 		name: 'long',
-		categories: 'adjective',
+		categories: 'adjective;length',
 	},
 	{
 		name: 'much;a.lot',
@@ -537,11 +546,11 @@ const meaningData = [
 	},
 	{
 		name: 'new',
-		categories: 'adjective',
+		categories: 'adjective;time',
 	},
 	{
 		name: 'old',
-		categories: 'adjective',
+		categories: 'adjective;time',
 	},
 	{
 		name: 'only.adj',
@@ -577,11 +586,11 @@ const meaningData = [
 	},
 	{
 		name: 'thick',
-		categories: 'adjective',
+		categories: 'adjective;length',
 	},
 	{
 		name: 'thin',
-		categories: 'adjective',
+		categories: 'adjective;length',
 	},
 	{
 		name: 'upper',
