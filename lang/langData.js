@@ -660,6 +660,10 @@ const meaningData = [
 		categories: 'noun;animal',
 	},
 	{
+		name: 'bark',
+		categories: 'noun;plant',
+	},
+	{
 		name: 'bear.n',
 		categories: 'noun;animal',
 	},
@@ -910,6 +914,10 @@ const meaningData = [
 		categories: 'noun',
 	},
 	{
+		name: 'hut',
+		categories: 'noun',
+	},
+	{
 		name: 'intestines',
 		categories: 'noun;anatomy',
 	},
@@ -941,6 +949,14 @@ const meaningData = [
 	{
 		name: 'leaf;foliage',
 		categories: 'noun;plant',
+	},
+	{
+		name: 'leather',
+		categories: 'noun',
+	},
+	{
+		name: 'leg',
+		categories: 'noun;anatomy',
 	},
 	{
 		name: 'light.n',
@@ -1044,6 +1060,10 @@ const meaningData = [
 	},
 	{
 		name: 'peg',
+		categories: 'noun',
+	},
+	{
+		name: 'pelt',
 		categories: 'noun',
 	},
 	{
@@ -1160,12 +1180,16 @@ const meaningData = [
 		categories: 'noun;animal',
 	},
 	{
-		name: 'tear.eye',
+		name: 'tear.eye;tear.water',
 		categories: 'noun;anatomy',
 	},
 	{
 		name: 'teat',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'tent',
+		categories: 'noun',
 	},
 	{
 		name: 'testicle',
@@ -3624,6 +3648,12 @@ const entryData = [
 	// proto-uralic
 	{
 		language: 'proto-uralic',
+		word: 'äćä',
+		meanings: 'father',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'anɜ',
 		meanings: 'big;great;a.lot',
 		source: 'uralonet',
@@ -3644,6 +3674,12 @@ const entryData = [
 		language: 'proto-uralic',
 		word: 'ärɜ',
 		meanings: 'year',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'ćäptɜ',
+		meanings: 'skin;bark',
 		source: 'uralonet',
 	},
 	{
@@ -3681,6 +3717,12 @@ const entryData = [
 		word: '-eta',
 		meanings: '*>adj',
 		source: 'wiktionary',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'ićä',
+		meanings: 'father',
+		source: 'uralonet',
 	},
 	{
 		language: 'proto-uralic',
@@ -3726,6 +3768,12 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: 'kama',
+		meanings: 'skin',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'kele',
 		meanings: 'tongue;language',
 		source: 'uralonet',
@@ -3733,7 +3781,13 @@ const entryData = [
 	{
 		language: 'proto-uralic',
 		word: 'kińe',
-		meanings: 'tear.n',
+		meanings: 'tear.eye',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'koje',
+		meanings: 'man;person',
 		source: 'uralonet',
 	},
 	{
@@ -3744,8 +3798,8 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
-		word: 'koje',
-		meanings: 'man;person',
+		word: 'kopa',
+		meanings: 'skin;bark',
 		source: 'uralonet',
 	},
 	{
@@ -3824,6 +3878,12 @@ const entryData = [
 		language: 'proto-uralic',
 		word: 'maksa',
 		meanings: 'liver',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'mättɜ',
+		meanings: 'house;tent;hut',
 		source: 'uralonet',
 	},
 	{
@@ -3932,6 +3992,12 @@ const entryData = [
 		language: 'proto-uralic',
 		word: 'peδpä',
 		meanings: 'shoulderblade',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'perɜ',
+		meanings: 'skin;bark',
 		source: 'uralonet',
 	},
 	{
@@ -4046,6 +4112,12 @@ const entryData = [
 		language: 'proto-uralic',
 		word: 'tä',
 		meanings: 'this',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'talja',
+		meanings: 'skin;leather;pelt',
 		source: 'uralonet',
 	},
 	{
