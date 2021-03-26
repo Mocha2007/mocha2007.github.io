@@ -1,6 +1,6 @@
 /* exported main */
 /* global authorData, categoryData, entryData, intersect, languageData, mean, meaningData,
-	sourceData, union, unique */
+	round, sourceData, union, unique */
 'use strict';
 
 /** @type {HTMLBodyElement} */
@@ -192,8 +192,9 @@ class Language extends Clickable {
 				li.appendChild(e.span);
 				li.style.opacity = 1 - i/(2*n);
 				const score = document.createElement('span');
-				score.innerHTML = `score: ${-e.diff(this)}`;
+				score.innerHTML = `score: ${round(-e.diff(this), 2)} `;
 				li.appendChild(score);
+				li.appendChild(new Comparison(this, e).span);
 				ol.appendChild(li);
 			});
 		return ol;
@@ -560,6 +561,11 @@ class Entry extends Clickable {
 		return Entry.list.find(e => e.language === target
 			&& intersect(e.meanings, this.meanings).length);
 	}
+	/** @param {Language} target - get ALL TRANSLATIONS for ANY MEANING in target language */
+	translateIntoAll(target){
+		return Entry.list.filter(e => e.language === target
+			&& intersect(e.meanings, this.meanings).length);
+	}
 	/** @param {string} id */
 	static fromId(id){
 		// eg. pger:ainaz
@@ -577,6 +583,55 @@ class Entry extends Clickable {
 }
 /** @type {Entry[]} */
 Entry.list = [];
+
+class Comparison extends Clickable {
+	/** a page comparing two languages
+	 * @param {Language} a left
+	 * @param {Language} b right
+	 */
+	constructor(a, b){
+		super('compare...');
+		this.a = a;
+		this.b = b;
+	}
+	get div(){
+		const div = document.createElement('div');
+		// header
+		const h1 = document.createElement('h1');
+		h1.innerHTML = this.title;
+		div.appendChild(h1);
+		// table
+		const table = document.createElement('table');
+		div.appendChild(table);
+		// table header
+		const tr = document.createElement('tr');
+		const th1 = document.createElement('th');
+		th1.appendChild(this.a.span);
+		tr.appendChild(th1);
+		const th2 = document.createElement('th');
+		th2.appendChild(this.b.span);
+		tr.appendChild(th2);
+		table.appendChild(tr);
+		// table body
+		Entry.list.filter(e => this.a === e.language)
+			.sort((a, b) => a.name < b.name ? -1 : 1)
+			.forEach(e => {
+				const row = document.createElement('tr');
+				const td1 = document.createElement('td');
+				td1.appendChild(e.span);
+				row.appendChild(td1);
+				const td2 = document.createElement('td');
+				const translations = e.translateIntoAll(this.b);
+				translations.forEach(translation => td2.appendChild(translation.span));
+				row.appendChild(td2);
+				table.appendChild(row);
+			});
+		return div;
+	}
+	get title(){
+		return `A Comparison of ${this.a.name} and ${this.b.name}`;
+	}
+}
 
 function deleteButton(id){
 	const span = document.createElement('span');
