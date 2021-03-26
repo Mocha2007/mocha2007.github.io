@@ -1172,6 +1172,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'thigh',
+		categories: 'noun;anatomy',
+	},
+	{
 		name: 'tongue',
 		categories: 'noun;anatomy',
 	},
@@ -3686,14 +3690,8 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
-		word: 'kule-',
-		meanings: 'hear;ear',
-		source: 'uralonet',
-	},
-	{
-		language: 'proto-uralic',
-		word: 'kele',
-		meanings: 'tongue;language',
+		word: 'kaćɜ',
+		meanings: 'gift',
 		source: 'uralonet',
 	},
 	{
@@ -3728,6 +3726,18 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: 'kele',
+		meanings: 'tongue;language',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'kińe',
+		meanings: 'tear.n',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'kolme',
 		meanings: 'three',
 		source: 'uralonet',
@@ -3754,6 +3764,12 @@ const entryData = [
 		language: 'proto-uralic',
 		word: 'ku-',
 		meanings: 'who;which;what',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'kule-',
+		meanings: 'hear;ear',
 		source: 'uralonet',
 	},
 	{
@@ -3932,6 +3948,12 @@ const entryData = [
 	},
 	{
 		language: 'proto-uralic',
+		word: 'počka',
+		meanings: 'leg;thigh',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
 		word: 'polwe',
 		meanings: 'knee',
 		source: 'uralonet',
@@ -3970,6 +3992,12 @@ const entryData = [
 		language: 'proto-uralic',
 		word: 'śiδä',
 		meanings: 'heart',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'śiδ̕e',
+		meanings: 'charcoal',
 		source: 'uralonet',
 	},
 	{
@@ -4096,6 +4124,12 @@ const entryData = [
 		language: 'proto-uralic',
 		word: 'wete',
 		meanings: 'water',
+		source: 'uralonet',
+	},
+	{
+		language: 'proto-uralic',
+		word: 'wilä',
+		meanings: 'upper',
 		source: 'uralonet',
 	},
 	{
