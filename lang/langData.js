@@ -138,6 +138,15 @@ const languageData = [
 		location: 'caucasus',
 	},
 	{
+		name: 'proto-khoe-kwadi',
+		parent: 'proto-khoe-kwadi-sandawe',
+		location: 'south africa',
+	},
+	{
+		name: 'proto-khoe-kwadi-sandawe',
+		location: 'tanzania',
+	},
+	{
 		name: 'proto-semitic',
 		parent: 'proto-afro-asiatic',
 	},
@@ -170,6 +179,11 @@ const languageData = [
 		parent: 'proto-tyrsenian',
 		location: 'alps',
 		period: 'c. 500 BCE',
+	},
+	{
+		name: 'sandawe',
+		parent: 'proto-khoe-kwadi-sandawe',
+		location: 'tanzania',
 	},
 ];
 
@@ -412,10 +426,13 @@ const meaningData = [
 		name: 'DAT',
 	},
 	{
+		name: 'DEF',
+	},
+	{
 		name: 'ERG',
 	},
 	{
-		name: 'FEM',
+		name: 'F;FEM',
 	},
 	{
 		name: 'GEN',
@@ -451,12 +468,23 @@ const meaningData = [
 		categories: 'pronoun',
 	},
 	{
+		name: '1incl',
+		categories: 'pronoun',
+		hypernyms: '1pl',
+	},
+	{
+		name: '2;you',
+		categories: 'pronoun',
+	},
+	{
 		name: '2s;thou',
 		categories: 'pronoun',
+		hypernyms: '2',
 	},
 	{
 		name: '2pl;ye',
 		categories: 'pronoun',
+		hypernyms: '2',
 	},
 	{
 		name: '3s',
@@ -629,6 +657,10 @@ const meaningData = [
 		name: 'very',
 		categories: 'adverb',
 	},
+	{
+		name: 'yesterday',
+		categories: 'adverb;time',
+	},
 	// nouns
 	{
 		name: 'abdomen',
@@ -694,6 +726,11 @@ const meaningData = [
 	{
 		name: 'bowels',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'boy',
+		categories: 'noun;person',
+		hypernyms: 'person',
 	},
 	{
 		name: 'brain',
@@ -5437,5 +5474,144 @@ const entryData = [
 		word: 'wV',
 		meanings: 'that',
 		source: 'starling',
+	},
+	// Proto-khoe-kwadi
+	{
+		language: 'proto-khoe-kwadi',
+		word: 'baseCE',
+		meanings: 'he',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-khoe-kwadi',
+		word: 'base(s)E',
+		meanings: 'she',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-khoe-kwadi',
+		word: 'haka',
+		meanings: 'four',
+		etymology: 'proto-khoe-kwadi-sandawe:haka',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-khoe-kwadi',
+		word: 'mu',
+		meanings: '1incl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-khoe-kwadi',
+		word: 'nǁâ',
+		meanings: 'horn',
+		etymology: 'proto-khoe-kwadi-sandawe:tlana',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-khoe-kwadi',
+		word: 'sa',
+		meanings: '2',
+		source: 'wiktionary',
+	},
+	// Proto-Khoe-Kwadi-Sandawe
+	{
+		language: 'proto-khoe-kwadi-sandawe',
+		word: 'haka',
+		meanings: 'four',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-khoe-kwadi-sandawe',
+		word: 'tlana',
+		meanings: 'horn',
+		source: 'wiktionary',
+	},
+	// Sandawe
+	{
+		language: 'sandawe',
+		word: 'haka',
+		meanings: 'four',
+		etymology: 'proto-khoe-kwadi-sandawe:haka',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'hapu',
+		meanings: '2s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'heso',
+		meanings: '3pl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'hesu',
+		meanings: 'she',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'hewe',
+		meanings: 'he',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'kxʼaré',
+		meanings: 'boy',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: '-n',
+		meanings: 'DEF',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'ncûmsù',
+		meanings: 'wife',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'sĩĩ',
+		meanings: '2pl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: '-sù',
+		meanings: 'F',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'sũũ',
+		meanings: '1pl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'tlana',
+		meanings: 'horn',
+		etymology: 'proto-khoe-kwadi-sandawe:tlana',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'tsi',
+		meanings: '1s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'úte',
+		meanings: 'yesterday',
+		source: 'wiktionary',
 	},
 ];
