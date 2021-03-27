@@ -32,6 +32,25 @@ function gcd(a, b){
 	return b ? gcd(b, mod(a, b)) : a;
 }
 
+/** Levenshtein distance
+ * @param {string} a
+ * @param {string} b
+ * @returns {number}
+ */
+function lev(a, b){
+	if (!a.length)
+		return b.length;
+	if (!b.length)
+		return a.length;
+	if (a[0] === b[0])
+		return lev(a.slice(1), b.slice(1));
+	return 1 + Math.min(
+		lev(a.slice(1), b),
+		lev(a, b.slice(1)),
+		lev(a.slice(1), b.slice(1))
+	);
+}
+
 /** works identically to matlab and numpy */
 function linspace(from = 0, to = 1, points = 1){
 	return new Array(points).fill(0).map((_, i) => i/points * (to-from) + from);

@@ -642,23 +642,6 @@ function deleteButton(id){
 	return span;
 }
 
-/** Levenshtein distance
- * @param {string} a
- * @param {string} b
- * @returns {number}
- */
-function lev(a, b){
-	if (!a.length)
-		return b.length;
-	if (!b.length)
-		return a.length;
-	return 1 + Math.min(
-		lev(a.slice(1), b),
-		lev(a, b.slice(1)),
-		lev(a.slice(1), b.slice(1))
-	);
-}
-
 function main(){
 	// load shit
 	authorData.forEach(o => Author.parseData(o));
