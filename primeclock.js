@@ -193,7 +193,8 @@ function ialc(y){
 	var otherx = timeSinceYear(); // REAL seconds since year beginning
 	var x = Math.floor(year*(1-Math.log(y)/Math.log(a))); // FAKE seconds after beginning of year
 	var wannadate = new Date(Date.now()-1000*(otherx-x)); // convert FAKE 2 DATE
-	return String(wannadate).slice(4, 24);
+	return String(wannadate).slice(4, 24)
+		.replace(new Date().getFullYear()+' ', '');
 }
 
 /**
@@ -217,8 +218,8 @@ function alc(){
 	var str = '';
 	for (var i=0;i<events.length;i+=1){
 		if (debug || events[i][0]>y){
-			str += '<div class="' + getClass(events[i][0]) + '">' + (i === 0 ? 'Jan 01 ' +
-				currentyear + ' 00:00:00':ialc(events[i][0])) + ' - ' + events[i][1] + '</div>';
+			str += '<div class="' + getClass(events[i][0]) + '">'
+				+ ialc(events[i][0]) + ' - ' + events[i][1] + '</div>';
 		}
 		else {
 			break;
@@ -253,7 +254,8 @@ function alc(){
 function header(){
 	var sec = Math.floor(new Date()/1000);
 	var str = factorize(sec);
-	var factorization = commaconvert(String(str)).replace(/\^1/g, '').replace(/\^/g, '<sup>').replace(/\s&times;/g, '</sup> &times;');
+	var factorization = commaconvert(String(str)).replace(/\^1/g, '')
+		.replace(/\^/g, '<sup>').replace(/\s&times;/g, '</sup> &times;');
 	var isprime = factorization.length === String(sec).length;
 
 	var title = document.getElementById('c1');
@@ -291,10 +293,12 @@ function getDateBeforeNow(r){
 function footer(){
 	var y = Math.pow(a, 1-timeSinceYear()/year);
 	var yprime = Math.round(y*Math.log(a)).toLocaleString();
+	var dateString = String(getDateBeforeNow(y)).slice(4, 24) + ' ';
 
-	document.getElementById('nowtime').innerHTML = String(new Date()).slice(4, 24)+
-		' - '+String(getDateBeforeNow(y)).slice(4, 24)+
-		' ('+Math.round(y).toLocaleString()+' Years Ago, '+yprime+'x Speed)';
+	document.getElementById('nowtime').innerHTML = String(new Date()).slice(4, 24)
+		.replace(new Date().getFullYear()+' ', '')+
+		' - '+(dateString[0] === 'l' ? '' : dateString)+
+		'('+Math.round(y).toLocaleString()+' Years Ago, '+yprime+'x Speed)';
 }
 
 function enableDebug(){
