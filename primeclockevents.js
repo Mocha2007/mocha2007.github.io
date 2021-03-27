@@ -14,6 +14,18 @@ function diff(epoch){
 	return toYear(Date.now()-epoch*1000);
 }
 
+/** a - zToYear(8); // example
+ * @param {number} z
+function zToYear(z){
+	// Literally no one online - and I do mean no one - can give a straight answer to this,
+	// not even stack exchange, so I've reverse-engineered the formula based on distance/z pairs.
+	// This works virtually flawlessly for ~6 < z, which is when it will be needed most.
+	// This was designed for 6 < z < 12, but even for very high z (eg. 1100), this has only an 11% error.
+	// This has a 23% error for 4.5 = z, so I wouldn't recommend this formula for z < 5 or so
+	// Still, this is nevertheless fantastic and dead simple for getting quick estimates.
+	return 1.7e10 / Math.pow(z, 1.55);
+}*/
+
 var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[a, '<a href="https://en.wikipedia.org/wiki/Big_Bang">Big Bang</a>'],
 	[a-47e3, 'Beginning of the <a href="https://en.wikipedia.org/wiki/Scale_factor_(cosmology)#Matter-dominated_era">Matter-Dominated Era</a>'],
@@ -21,6 +33,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[a-377e3, '<a href="https://en.wikipedia.org/wiki/Chronology_of_the_universe#Dark_Ages">Cosmic Dark Ages</a>'],
 	[a-1e7, '<a href="https://en.wikipedia.org/wiki/Chronology_of_the_universe#Habitable_epoch">Habitable Epoch</a>'],
 	[a-15e7, '<a href="https://en.wikipedia.org/wiki/Reionization">Reionization</a>'],
+	[a-2e8, 'The <a href="https://en.wikipedia.org/wiki/Population_III_stars">first stars</a> form, including <a href="https://en.wikipedia.org/wiki/HD_140283">HD 140283</a>, the oldest known star'],
 	[13.39e9, 'Age of light from <a href="https://en.wikipedia.org/wiki/GN-z11">GN-z11</a>, one of the oldest known galaxies'],
 	[13.37e9, 'Age of light from <a href="https://en.wikipedia.org/wiki/UDFj-39546284">UDFj-39546284</a>, an ancient protogalaxy'],
 	[13.2e9, 'Depth of the <a href="https://en.wikipedia.org/wiki/Hubble_Ultra-Deep_Field#Hubble_eXtreme_Deep_Field">Hubble Extreme Deep Field</a>'],

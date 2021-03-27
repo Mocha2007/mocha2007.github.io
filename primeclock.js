@@ -307,5 +307,6 @@ function enableDebug(){
 }
 
 alc();
+header();
 setInterval(header, 1000);
 setInterval(footer, 50);
