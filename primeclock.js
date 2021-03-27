@@ -258,7 +258,12 @@ function header(){
 
 	var title = document.getElementById('c1');
 	title.innerHTML = sec;
-	title.classList.add(isprime?'prime':ispower(str)?'ppower':issemiprime(str)?'semiprime':'composite');
+	title.className = isprime
+		? 'prime'
+		: ispower(str)
+			? 'ppower'
+			: issemiprime(str)
+				? 'semiprime' : 'composite';
 	document.getElementById('c2Inner').innerHTML = factorization;
 }
 
