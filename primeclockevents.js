@@ -336,6 +336,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[900e3, '<a href="https://en.wikipedia.org/wiki/Zhamanshin_crater">Zhamanshin Impact</a>'],
 	[790e3, '<a href="https://en.wikipedia.org/wiki/Gunz_(geology)">Gunz Glaciation</a>'],
 	[781e3, '<a href="https://en.wikipedia.org/wiki/Brunhes–Matuyama_reversal">Brunhes-Matuyama Reversal</a> - most recent geomagnetic reversal'],
+	// 773 kya - Chibanian Age; 1 yr ~ 2s
 	[700e3, '<i><a href="https://en.wikipedia.org/wiki/Homo_heidelbergensis">Homo heidelbergensis</a></i>'],
 	[474e3, '<a href="https://en.wikipedia.org/wiki/Haslach_glaciation">Haslach Glaciation</a>'],
 	[430e3, '<a href="https://en.wikipedia.org/wiki/Neanderthal">Neanderthals</a>'],
@@ -352,6 +353,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[161.3e3, 'Origin of <a href="https://en.wikipedia.org/wiki/Haplogroup_A-P305">Haplogroup A1</a>'],
 	[153.19e3, '<a href="https://en.wikipedia.org/wiki/GJ_3379">Gliese 3379</a> passes four light-years from the sun'],
 	[150e3, '<a href="https://en.wikipedia.org/wiki/Wolfe_Creek_Crater">Wolfe Creek Impact</a>'],
+	// 126 kya - Tarantian Age; 1 yr ~ 11s
 	[120e3, '<a href="https://en.wikipedia.org/wiki/Abbassia_Pluvial">Abbassia Pluvial</a> Begins'],
 	[113e3, 'The <a href="https://en.wikipedia.org/wiki/Heinrich_event">H12 Heinrich Event</a>'],
 	[110e3, '<a href="https://en.wikipedia.org/wiki/Last_glacial_period">Last Glacial Period</a> Begins'],
@@ -405,7 +407,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[12.9e3, '<a href="https://en.wikipedia.org/wiki/Younger_Dryas">Younger Dryas</a>'],
 	[12e3, '<a href="https://en.wikipedia.org/wiki/Goat">Goats</a> and <a href="https://en.wikipedia.org/wiki/Sheep">Sheep</a> Domesticated'],
 	[12e3, 'The <a href="https://en.wikipedia.org/wiki/Heinrich_event">H0 Heinrich Event</a>'],
-	// HOLOCENE 11.7 kya
+	// HOLOCENE 11.7 kya; 1 yr ~ 2 mins
 	[11.7e3, '<a href="https://en.wikipedia.org/wiki/Last_glacial_period">Last Glacial Period</a> Ends'],
 	[11.1e3, '<a href="https://en.wikipedia.org/wiki/Bond_event">11.1 Kiloyear Event</a>'],
 	[11e3, 'Extinction of <a class="title" href="https://en.wikipedia.org/wiki/Glyptodon">Glyptodon</a> and the <a class="title" href="https://en.wikipedia.org/wiki/Cave_hyena">Cave Hyena</a>'],
@@ -425,6 +427,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[7.6e3, '<a href="https://en.wikipedia.org/wiki/Black_Sea_deluge_hypothesis">Black Sea Deluge</a>'],
 	[7.3e3, '<a href="https://en.wikipedia.org/wiki/Macha_crater">Macha Impact</a>'],
 	// Above events should be forever static
+	// 5000 BCE; 1 yr ~ 3 mins
 	[currentyear+5000, '<a href="https://en.wikipedia.org/wiki/Chalcolithic">Copper</a>'],
 	[currentyear+4600, '<a href="https://en.wikipedia.org/wiki/Ilumetsa_crater">Ilumetsa Impact</a>'],
 	[currentyear+4500, 'Dawn of <a href="https://en.wikipedia.org/wiki/Sumer">Sumer</a>'],
