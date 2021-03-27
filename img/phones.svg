@@ -152,6 +152,18 @@
 			<text x="1000" y="150">n</text>
 		</a>
 
+		<a href='https://en.wikipedia.org/wiki/Close-mid_back_rounded_vowel'>
+			<text x="760" y="660">o</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Voiceless_bilabial_plosive'>
+			<text x="490" y="160">p</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Voiceless_uvular_plosive'>
+			<text x="200" y="85">q</text>
+		</a>
+
 		<a href='https://en.wikipedia.org/wiki/Alveolar_trill'>
 			<text class="light" x="1050" y="480">r</text>
 		</a>
@@ -170,6 +182,18 @@
 
 		<a href='https://en.wikipedia.org/wiki/Labiodental_flap'>
 			<text class="light" x="810" y="520">ⱱ</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Voiced_labial%E2%80%93velar_approximant'>
+			<text x="1060" y="300">w</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Voiceless_velar_fricative'>
+			<text x="160" y="660">x</text>
+		</a>
+
+		<a href='https://en.wikipedia.org/wiki/Voiced_alveolar_fricative'>
+			<text x="490" y="650">z</text>
 		</a>
 
 		<a href='https://en.wikipedia.org/wiki/Voiced_epiglottal_trill'>
