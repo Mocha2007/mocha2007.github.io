@@ -5,6 +5,7 @@
 // todo https://commons.wikimedia.org/wiki/Category:Fruit_icons
 // todo https://commons.wikimedia.org/wiki/Category:Vegetable_icons
 // food densities from https://fdc.nal.usda.gov/fdc-app.html
+// todo consider using https://thenounproject.com/ for icons
 const itemData = [
 	// basic
 	{
