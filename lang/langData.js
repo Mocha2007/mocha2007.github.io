@@ -677,7 +677,7 @@ const meaningData = [
 	{
 		name: 'apple',
 		categories: 'noun;plant',
-		hypernyms: 'fruit',
+		hypernyms: 'tree',
 	},
 	{
 		name: 'arm',
@@ -1101,7 +1101,7 @@ const meaningData = [
 	{
 		name: 'pear',
 		categories: 'noun;plant',
-		hypernyms: 'fruit',
+		hypernyms: 'tree',
 	},
 	{
 		name: 'peg',
@@ -1255,6 +1255,11 @@ const meaningData = [
 	{
 		name: 'top',
 		categories: 'noun',
+	},
+	{
+		name: 'tree',
+		categories: 'noun;plant',
+		hypernyms: 'plant',
 	},
 	{
 		name: 'udder',
@@ -5569,8 +5574,20 @@ const entryData = [
 	},
 	{
 		language: 'sandawe',
+		word: 'kéké',
+		meanings: 'ear',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
 		word: 'kxʼaré',
 		meanings: 'boy',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'mántʃʰâ',
+		meanings: 'eat',
 		source: 'wiktionary',
 	},
 	{
@@ -5605,9 +5622,21 @@ const entryData = [
 	},
 	{
 		language: 'sandawe',
+		word: 'tʰěː',
+		meanings: 'tree',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
 		word: 'tlana',
 		meanings: 'horn',
 		etymology: 'proto-khoe-kwadi-sandawe:tlana',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'ts’â',
+		meanings: 'water',
 		source: 'wiktionary',
 	},
 	{
@@ -5622,6 +5651,54 @@ const entryData = [
 		meanings: 'yesterday',
 		source: 'wiktionary',
 	},
+	{
+		language: 'sandawe',
+		word: 'ǀʷěː',
+		meanings: 'eye',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'ⁿǀáti̥',
+		meanings: 'nose',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: '!’àkʰã̌ː',
+		meanings: 'tooth',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: '!ʰẽ̂ː',
+		meanings: 'tongue',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'ⁿ!ũ̂ː',
+		meanings: 'mouth',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'ǁ’ék’â',
+		meanings: 'blood',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: '!î',
+		meanings: 'bone',
+		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'ǁʷâ',
+		meanings: 'name',
+		source: 'wiktionary',
+	},
 	// Hadza
 	{
 		language: 'hadza',
@@ -5631,10 +5708,58 @@ const entryData = [
 	},
 	{
 		language: 'hadza',
+		word: 'ʔaɦa',
+		meanings: 'tooth',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ʔakʷʰa',
+		meanings: 'eye',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ʔakʰana',
+		meanings: 'name',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ʔatʰama',
+		meanings: 'blood',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ʔati',
+		meanings: 'water',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ɦat͜ʃ’apit͜ʃʰi',
+		meanings: 'ear',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ʔiƞtʰawe',
+		meanings: 'nose',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
 		word: '-ko',
 		meanings: 'F',
 		source: 'wiktionary',
 		notes: 'in personal pronouns',
+	},
+	{
+		language: 'hadza',
+		word: 'mic͜ʎ̥˔’a',
+		meanings: 'bone',
+		source: 'wiktionary',
 	},
 	{
 		language: 'hadza',
@@ -5668,5 +5793,18 @@ const entryData = [
 		meanings: '2',
 		source: 'wiktionary',
 		notes: 'root',
+	},
+	{
+		language: 'hadza',
+		word: 't͜s’iti',
+		meanings: 'tree',
+		source: 'wiktionary',
+		notes: 'root',
+	},
+	{
+		language: 'hadza',
+		word: 'ⁿǀata',
+		meanings: 'tongue',
+		source: 'wiktionary',
 	},
 ];
