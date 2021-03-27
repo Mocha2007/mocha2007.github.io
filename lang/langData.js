@@ -88,6 +88,10 @@ const languageData = [
 		period: 'c. 500 BCE',
 	},
 	{
+		name: 'hadza',
+		location: 'tanzania',
+	},
+	{
 		name: 'hattic',
 		location: 'anatolia',
 		period: 'c. 2000 BCE',
@@ -638,6 +642,10 @@ const meaningData = [
 	},
 	{
 		name: 'straight',
+		categories: 'adjective',
+	},
+	{
+		name: 'sweet',
 		categories: 'adjective',
 	},
 	{
@@ -5613,5 +5621,52 @@ const entryData = [
 		word: 'úte',
 		meanings: 'yesterday',
 		source: 'wiktionary',
+	},
+	// Hadza
+	{
+		language: 'hadza',
+		word: 'itchâme',
+		meanings: 'one',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: '-ko',
+		meanings: 'F',
+		source: 'wiktionary',
+		notes: 'in personal pronouns',
+	},
+	{
+		language: 'hadza',
+		word: 'onê',
+		meanings: 'sweet',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ono',
+		meanings: '1s',
+		source: 'wiktionary',
+		notes: 'root',
+	},
+	{
+		language: 'hadza',
+		word: 'piye',
+		meanings: 'two',
+		source: 'wiktionary',
+		notes: 'root',
+	},
+	{
+		language: 'hadza',
+		word: 'séseme',
+		meanings: 'lion',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'the',
+		meanings: '2',
+		source: 'wiktionary',
+		notes: 'root',
 	},
 ];
