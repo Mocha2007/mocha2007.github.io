@@ -573,8 +573,8 @@ class Entry extends Clickable {
 	*/
 	diff(other){
 		const c = this.meanings.some(m => m.categories.includes('inflectional')) ? 2 : 1; // double weight for inflectional morphemes
-		return c*(3*lev(this.vwllss, other.vwllss) // similarity: vowels and diacritics removed
-			- 2*intersect(this.meanings, other.meanings).length); // colexifications
+		return c*(2*lev(this.vwllss, other.vwllss)/this.vwllss.length // similarity: vowels and diacritics removed; normalize to length to get % error
+			- intersect(this.meanings, other.meanings).length); // colexifications
 	}
 	parseEtymology(){
 		if (!this.etymology)
