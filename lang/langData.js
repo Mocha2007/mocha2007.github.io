@@ -6314,6 +6314,18 @@ const entryData = [
 	},
 	{
 		language: 'proto-khoe-kwadi',
+		word: 'ɣáí',
+		meanings: 'mother',
+		source: 'starling',
+	},
+	{
+		language: 'proto-khoe-kwadi',
+		word: 'i',
+		meanings: 'this;that',
+		source: 'starling',
+	},
+	{
+		language: 'proto-khoe-kwadi',
 		word: 'kxó',
 		meanings: 'eat;meat',
 		source: 'starling',
@@ -6330,6 +6342,12 @@ const entryData = [
 		meanings: 'horn',
 		etymology: 'proto-khoe-kwadi-sandawe:tlana',
 		source: 'wiktionary',
+	},
+	{
+		language: 'proto-khoe-kwadi',
+		word: 'ɳ|é',
+		meanings: 'this',
+		source: 'starling',
 	},
 	{
 		language: 'proto-khoe-kwadi',
@@ -6359,6 +6377,18 @@ const entryData = [
 		language: 'proto-khoe-kwadi',
 		word: '|kxóǹ',
 		meanings: 'name',
+		source: 'starling',
+	},
+	{
+		language: 'proto-khoe-kwadi',
+		word: '|úí',
+		meanings: 'one',
+		source: 'starling',
+	},
+	{
+		language: 'proto-khoe-kwadi',
+		word: '|xá',
+		meanings: 'muscle;body',
 		source: 'starling',
 	},
 	{
