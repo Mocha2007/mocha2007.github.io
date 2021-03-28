@@ -576,6 +576,10 @@ const meaningData = [
 	},
 	// adjectives
 	{
+		name: 'alive',
+		categories: 'adjective',
+	},
+	{
 		name: 'alone',
 		categories: 'adjective',
 	},
@@ -592,7 +596,19 @@ const meaningData = [
 		categories: 'adjective;color',
 	},
 	{
+		name: 'dark',
+		categories: 'adjective',
+	},
+	{
+		name: 'deep',
+		categories: 'adjective;length',
+	},
+	{
 		name: 'dry',
+		categories: 'adjective',
+	},
+	{
+		name: 'evil',
 		categories: 'adjective',
 	},
 	{
@@ -606,6 +622,10 @@ const meaningData = [
 	{
 		name: 'good',
 		categories: 'adjective',
+	},
+	{
+		name: 'green',
+		categories: 'adjective;color',
 	},
 	{
 		name: 'heavy',
@@ -641,6 +661,10 @@ const meaningData = [
 	},
 	{
 		name: 'other',
+		categories: 'adjective',
+	},
+	{
+		name: 'raw',
 		categories: 'adjective',
 	},
 	{
@@ -751,6 +775,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'body',
+		categories: 'noun;anatomy',
+	},
+	{
 		name: 'bone',
 		categories: 'noun;anatomy',
 	},
@@ -837,6 +865,10 @@ const meaningData = [
 		categories: 'noun;animal',
 	},
 	{
+		name: 'cubit',
+		categories: 'noun;length',
+	},
+	{
 		name: 'day',
 		categories: 'noun;time',
 	},
@@ -855,6 +887,10 @@ const meaningData = [
 	{
 		name: 'egg',
 		categories: 'noun;animal',
+	},
+	{
+		name: 'elbow',
+		categories: 'noun;anatomy',
 	},
 	{
 		name: 'eye;eyeball',
@@ -934,8 +970,16 @@ const meaningData = [
 		categories: 'noun',
 	},
 	{
+		name: 'ginger',
+		categories: 'noun;plant',
+	},
+	{
 		name: 'goose',
 		categories: 'noun;animal',
+	},
+	{
+		name: 'grass',
+		categories: 'noun;plant',
 	},
 	{
 		name: 'hand',
@@ -983,6 +1027,10 @@ const meaningData = [
 	},
 	{
 		name: 'hut',
+		categories: 'noun',
+	},
+	{
+		name: 'ink',
 		categories: 'noun',
 	},
 	{
@@ -1317,6 +1365,10 @@ const meaningData = [
 		categories: 'noun',
 	},
 	{
+		name: 'weed',
+		categories: 'noun;plant',
+	},
+	{
 		name: 'well',
 		categories: 'noun',
 	},
@@ -1340,6 +1392,10 @@ const meaningData = [
 		name: 'woman;lady',
 		categories: 'noun;person',
 		hypernyms: 'person',
+	},
+	{
+		name: 'wood',
+		categories: 'noun;plant',
 	},
 	{
 		name: 'word',
@@ -1427,6 +1483,10 @@ const meaningData = [
 		categories: 'verb',
 	},
 	{
+		name: 'give.birth;bear.child',
+		categories: 'verb',
+	},
+	{
 		name: 'go',
 		categories: 'verb;motion',
 	},
@@ -1452,6 +1512,10 @@ const meaningData = [
 	},
 	{
 		name: 'listen',
+		categories: 'verb',
+	},
+	{
+		name: 'live',
 		categories: 'verb',
 	},
 	{
@@ -5465,6 +5529,12 @@ const entryData = [
 	},
 	{
 		language: 'pst',
+		word: 'glwap',
+		meanings: 'lung',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
 		word: 'g/snis',
 		meanings: 'two',
 		source: 'wiktionary',
@@ -5477,6 +5547,12 @@ const entryData = [
 	},
 	{
 		language: 'pst',
+		word: 'guŋ',
+		meanings: 'body;back',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
 		word: 'ʔa',
 		meanings: 'this',
 		source: 'starling',
@@ -5485,6 +5561,12 @@ const entryData = [
 		language: 'pst',
 		word: 'ʔit',
 		meanings: 'one',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'kjaŋ',
+		meanings: 'ginger',
 		source: 'wiktionary',
 	},
 	{
@@ -5513,6 +5595,12 @@ const entryData = [
 	},
 	{
 		language: 'pst',
+		word: 'mljak',
+		meanings: 'grass;weed',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
 		word: 'ŋaj',
 		meanings: '1s',
 		source: 'wiktionary',
@@ -5525,9 +5613,39 @@ const entryData = [
 	},
 	{
 		language: 'pst',
+		word: 'pwap',
+		meanings: 'lung',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
 		word: 'qhā-',
 		meanings: 'what',
 		source: 'starling',
+	},
+	{
+		language: 'pst',
+		word: 'siŋ',
+		meanings: 'tree;wood',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'sg(r)u',
+		meanings: 'elbow;cubit',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'smaŋ',
+		meanings: 'black;dark;ink;deep',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'snak',
+		meanings: 'black;evil',
+		source: 'wiktionary',
 	},
 	{
 		language: 'pst',
@@ -5543,8 +5661,20 @@ const entryData = [
 	},
 	{
 		language: 'pst',
+		word: 'sriŋ',
+		meanings: 'live;alive;green;raw;give.birth',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
 		word: 'tjak',
 		meanings: 'one',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'ts(i/u)t',
+		meanings: 'lung',
 		source: 'wiktionary',
 	},
 	{
