@@ -184,7 +184,6 @@ class Language extends Clickable {
 		return this.vocabSizeOfGreatestAncestor !== this.vocab.length;
 	}
 	get likelyRelativeList(){
-		debugPerf(1);
 		const n = 10;
 		const ol = document.createElement('ol');
 		Language.list.filter(l => l !== this && !l.ignore)
@@ -198,7 +197,6 @@ class Language extends Clickable {
 				li.appendChild(new Comparison(this, e).span);
 				ol.appendChild(li);
 			});
-		debugPerf(1);
 		return ol;
 	}
 	/** meanings not expressed by any word in the language */
