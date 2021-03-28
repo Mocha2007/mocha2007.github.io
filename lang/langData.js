@@ -891,6 +891,10 @@ const meaningData = [
 		categories: 'noun;time',
 	},
 	{
+		name: 'dog',
+		categories: 'noun;animal',
+	},
+	{
 		name: 'dust',
 		categories: 'noun',
 	},
@@ -1132,6 +1136,10 @@ const meaningData = [
 	{
 		name: 'meat;flesh;muscle',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'milk',
+		categories: 'noun;animal',
 	},
 	{
 		name: 'month',
@@ -6076,6 +6084,12 @@ const entryData = [
 	},
 	{
 		language: 'hadza',
+		word: 'ʔiɺiba',
+		meanings: 'breast;milk',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
 		word: 'ʔoː',
 		meanings: '1excl',
 		source: 'wiktionary',
@@ -6084,12 +6098,6 @@ const entryData = [
 		language: 'hadza',
 		word: 'ʔone',
 		meanings: '1s',
-		source: 'wiktionary',
-	},
-	{
-		language: 'hadza',
-		word: 'ʔiɺiba',
-		meanings: 'breast;milk',
 		source: 'wiktionary',
 	},
 	{
