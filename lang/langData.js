@@ -1780,6 +1780,13 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: '-ey',
+		meanings: 'DAT',
+		source: 'wiktionary',
+		notes: 'Athematic dative singular. Thematic dative possibly derived from this morpheme as well',
+	},
+	{
+		language: 'pie',
 		word: 'éyes',
 		meanings: '3pl',
 		source: 'wiktionary',
@@ -2180,6 +2187,12 @@ const entryData = [
 		language: 'pie',
 		word: 'kréwh₂s',
 		meanings: 'blood',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: '-m',
+		meanings: 'ACC',
 		source: 'wiktionary',
 	},
 	{
@@ -2825,7 +2838,7 @@ const entryData = [
 		language: 'oe',
 		word: 'fēower',
 		meanings: 'four',
-		etymology: 'pwger:feuwar',
+		etymology: 'pwger:fauwar',
 		source: 'wiktionary',
 	},
 	{
