@@ -1,0 +1,14 @@
+html {
+	background-color: black;
+	color: silver;
+}
+body {
+	margin: 0;
+}
+.datum {
+	background-color: red;
+	cursor: help;
+	height: 5px;
+	position: absolute;
+	width: 5px;
+}
