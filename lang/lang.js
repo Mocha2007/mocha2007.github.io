@@ -141,7 +141,12 @@ class Language extends Clickable {
 		const header = document.createElement('h1');
 		header.innerHTML = this.name;
 		elem.appendChild(header);
-		// todo parent, location, period
+		// parent, location, period
+		if (this.parent)
+			elem.appendChild(this.parent.span);
+		const locper = document.createElement('span');
+		locper.innerHTML = `${this.location}, ${this.period}`;
+		elem.appendChild(locper);
 		// entries
 		const h2 = document.createElement('h2');
 		h2.innerHTML = 'Entries';
