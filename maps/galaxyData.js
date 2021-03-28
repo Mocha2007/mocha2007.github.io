@@ -109,6 +109,14 @@ const data = [
 		dec: [-59, 52, 4],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Eagle_Nebula_from_ESO.jpg/600px-Eagle_Nebula_from_ESO.jpg',
 	},
+	{ // NGC 6334
+		name: 'Cat&apos;s Paw Nebula',
+		type: 'emission nebula',
+		dist: 5540*ly,
+		ra: [17, 20, 50.9],
+		dec: [-36, 6, 54],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/PIA22568-CatsPawNebula-Spitzer-20181023.jpg/800px-PIA22568-CatsPawNebula-Spitzer-20181023.jpg',
+	},
 	{ // NGC 6523
 		name: 'Lagoon Nebula',
 		type: 'emission nebula',
