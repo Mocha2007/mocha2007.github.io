@@ -2693,6 +2693,13 @@ const entryData = [
 	},
 	{
 		language: 'pger',
+		word: 'ne',
+		meanings: 'NEG',
+		etymology: 'pie:ne',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pger',
 		word: 'sek',
 		meanings: 'REFL',
 		etymology: 'pie:swé',
@@ -2786,6 +2793,13 @@ const entryData = [
 	},
 	{
 		language: 'pwger',
+		word: 'ne',
+		meanings: 'NEG',
+		etymology: 'pger:ne',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pwger',
 		word: 'sik',
 		meanings: 'REFL',
 		etymology: 'pger:sek',
@@ -2874,6 +2888,13 @@ const entryData = [
 		word: 'nafola',
 		meanings: 'navel',
 		etymology: 'pwger:nabulō',
+		source: 'wiktionary',
+	},
+	{
+		language: 'oe',
+		word: 'ne',
+		meanings: 'NEG',
+		etymology: 'pwger:ne',
 		source: 'wiktionary',
 	},
 	{
