@@ -101,8 +101,8 @@ class Body {
 		const x = gc[xIndex]/Body.maxDim;
 		const y = gc[yIndex]/Body.maxDim;
 		console.debug(x, y);
-		div.style.left = `calc(50% + ${45*x}%)`;
-		div.style.top = `calc(50% + ${45*y}%)`;
+		div.style.left = `calc(50% + ${45*x}vh)`;
+		div.style.top = `calc(50% + ${45*y}vh)`;
 		div.style.backgroundColor = this.color;
 		this.element = div;
 		// tooltip
@@ -141,7 +141,7 @@ function main(){
 	const disk = document.getElementById('galacticDisk');
 	const scale = 45/Body.maxDim;// %/m
 	const size = 2*52850*ly*scale;
-	disk.style.paddingLeft = disk.style.height = size + '%';
-	disk.style.left = `calc(50% - ${size/2}%)`;
-	disk.style.top = `calc(50% + ${sgra_.dist*scale-size/2}%)`;
+	disk.style.paddingLeft = disk.style.height = size + 'vh';
+	disk.style.left = `calc(50% - ${size/2}vh)`;
+	disk.style.top = `calc(50% + ${sgra_.dist*scale-size/2}vh)`;
 }
