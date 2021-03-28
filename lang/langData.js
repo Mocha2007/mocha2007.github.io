@@ -826,6 +826,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'bottom',
+		categories: 'noun',
+	},
+	{
 		name: 'bowels',
 		categories: 'noun;anatomy',
 	},
@@ -902,6 +906,10 @@ const meaningData = [
 	{
 		name: 'claw',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'clay',
+		categories: 'noun',
 	},
 	{
 		name: 'community',
@@ -1029,6 +1037,11 @@ const meaningData = [
 		categories: 'noun;animal',
 	},
 	{
+		name: 'grandfather',
+		categories: 'noun;family',
+		hypernyms: 'man',
+	},
+	{
 		name: 'grass',
 		categories: 'noun;plant',
 	},
@@ -1091,6 +1104,10 @@ const meaningData = [
 	{
 		name: 'jaw',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'kernel',
+		categories: 'noun;plant',
 	},
 	{
 		name: 'kidney',
@@ -1272,7 +1289,7 @@ const meaningData = [
 	},
 	{
 		name: 'rain',
-		categories: 'noun;weather',
+		categories: 'noun;verb;weather',
 	},
 	{
 		name: 'rat',
@@ -1324,6 +1341,10 @@ const meaningData = [
 	},
 	{
 		name: 'shoulderblade',
+		categories: 'noun;anatomy',
+	},
+	{
+		name: 'sinew;tendon',
 		categories: 'noun;anatomy',
 	},
 	{
@@ -1444,7 +1465,7 @@ const meaningData = [
 		categories: 'noun;family',
 	},
 	{
-		name: 'wind',
+		name: 'wind.n',
 		categories: 'noun',
 	},
 	{
@@ -1482,11 +1503,19 @@ const meaningData = [
 		categories: 'verb',
 	},
 	{
+		name: 'arrive',
+		categories: 'verb;motion',
+	},
+	{
 		name: 'be',
 		categories: 'verb',
 	},
 	{
 		name: 'be.aware',
+		categories: 'verb',
+	},
+	{
+		name: 'beat',
 		categories: 'verb',
 	},
 	{
@@ -1616,6 +1645,14 @@ const meaningData = [
 		categories: 'verb',
 	},
 	{
+		name: 'move',
+		categories: 'verb;motion',
+	},
+	{
+		name: 'obey',
+		categories: 'verb',
+	},
+	{
 		name: 'open.v',
 		categories: 'verb',
 	},
@@ -1632,6 +1669,10 @@ const meaningData = [
 		categories: 'verb;language',
 	},
 	{
+		name: 'roll',
+		categories: 'verb;motion',
+	},
+	{
 		name: 'run',
 		categories: 'verb;motion',
 	},
@@ -1640,7 +1681,15 @@ const meaningData = [
 		categories: 'verb;sensory',
 	},
 	{
+		name: 'show',
+		categories: 'verb',
+	},
+	{
 		name: 'sit',
+		categories: 'verb',
+	},
+	{
+		name: 'spread.out',
 		categories: 'verb',
 	},
 	{
@@ -1649,10 +1698,6 @@ const meaningData = [
 	},
 	{
 		name: 'stay',
-		categories: 'verb',
-	},
-	{
-		name: 'spread.out',
 		categories: 'verb',
 	},
 	{
@@ -1682,6 +1727,10 @@ const meaningData = [
 	{
 		name: 'walk',
 		categories: 'verb;motion',
+	},
+	{
+		name: 'wind.v',
+		categories: 'verb',
 	},
 	{
 		name: 'write',
@@ -3193,7 +3242,7 @@ const entryData = [
 	{
 		language: 'proto-vasconic',
 		word: '[h]aize',
-		meanings: 'wind',
+		meanings: 'wind.n',
 		source: shortcuts.edob,
 	},
 	{
@@ -4899,7 +4948,7 @@ const entryData = [
 		meanings: 'bear.n',
 		source: 'wiktionary',
 	},
-	// kartvelian
+	// Proto-Kartvelian
 	{
 		language: 'proto-kartvelian',
 		word: 'arwa',
@@ -4921,6 +4970,60 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
+		word: 'baba',
+		meanings: 'father;grandfather',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'bal-',
+		meanings: 'leaf',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'buṭḳ-',
+		meanings: 'leaf',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'ć-',
+		meanings: 'beat;give',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'č̣am-',
+		meanings: 'eat',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'čan-',
+		meanings: 'see',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'ćar-',
+		meanings: 'roll;wind.v',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'c̣d-',
+		meanings: 'drink',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'c̣el-',
+		meanings: 'year',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
 		word: 'c̣q̇al-',
 		meanings: 'water',
 		source: 'wiktionary',
@@ -4930,6 +5033,48 @@ const entryData = [
 		word: 'čwen',
 		meanings: '1pl',
 		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'c̣wen',
+		meanings: 'see;show',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'ć̣wim',
+		meanings: 'rain',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'deg-',
+		meanings: 'stand;put',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'deɣ-',
+		meanings: 'day',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'dew-',
+		meanings: 'lie.down;lay',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'did-',
+		meanings: 'big',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'diq-',
+		meanings: 'clay;earth',
+		source: 'starling',
 	},
 	{
 		language: 'proto-kartvelian',
@@ -4959,8 +5104,32 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
+		word: 'gim-',
+		meanings: 'earth',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'gwal-',
+		meanings: 'go',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
 		word: 'ha-',
 		meanings: 'this',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'guga',
+		meanings: 'heart;kernel',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'gul-',
+		meanings: 'heart',
 		source: 'starling',
 	},
 	{
@@ -4971,8 +5140,32 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
+		word: 'kal-',
+		meanings: 'woman',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'kam-',
+		meanings: 'do',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'kwa-',
+		meanings: 'stone',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
 		word: 'ma-',
 		meanings: 'what',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'mam-',
+		meanings: 'father;man',
 		source: 'starling',
 	},
 	{
@@ -4983,10 +5176,76 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
+		word: 'mźe-',
+		meanings: 'sun',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'nen-',
+		meanings: 'stand;put',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
 		word: 'o(s₁)txo-',
 		meanings: 'four',
 		etymology: 'pie:oḱtṓw',
 		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'ṗaṗ-',
+		meanings: 'grandfather',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'pasw-',
+		meanings: 'root',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'pin-',
+		meanings: 'dog',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'po(ś)tel-',
+		meanings: 'leaf',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'qad-',
+		meanings: 'move;go;arrive',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'q̇uq̇-',
+		meanings: 'sit',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'q̇wiʒ́-',
+		meanings: 'liver',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'rč-',
+		meanings: 'listen;obey',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'rt-',
+		meanings: 'do',
+		source: 'starling',
 	},
 	{
 		language: 'proto-kartvelian',
@@ -5008,9 +5267,27 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
+		word: 'sem-',
+		meanings: 'hear',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
 		word: 'stkwen',
 		meanings: '2pl',
 		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: '(ś)twal-',
+		meanings: 'eye',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'św-',
+		meanings: 'drink',
+		source: 'starling',
 	},
 	{
 		language: 'proto-kartvelian',
@@ -5032,15 +5309,33 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
+		word: 'te-',
+		meanings: 'eye;light.n',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
 		word: 'ts₁xara',
 		meanings: 'nine',
 		source: 'wiktionary',
 	},
 	{
 		language: 'proto-kartvelian',
+		word: 'twer-',
+		meanings: 'drink',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
 		word: 'xu(s₁)ti',
 		meanings: 'five',
 		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'uc̣q̇-',
+		meanings: 'see',
+		source: 'starling',
 	},
 	{
 		language: 'proto-kartvelian',
@@ -5056,8 +5351,32 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
+		word: 'zoɣw-',
+		meanings: 'sea',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'ʒ́arɣw-',
+		meanings: 'sinew',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
 		word: 'ʒećx-',
 		meanings: 'fire',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'ʒ́ir-',
+		meanings: 'root;bottom',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'ʒuʒu-',
+		meanings: 'breast',
 		source: 'starling',
 	},
 	// proto-semitic
@@ -5490,7 +5809,7 @@ const entryData = [
 	{
 		language: 'hattic',
 		word: 'pezil',
-		meanings: 'wind',
+		meanings: 'wind.n',
 		source: 'wiktionary',
 	},
 	{
