@@ -2,73 +2,9 @@
 <html lang="en-US">
 <meta charset="utf-8">
 <meta name="description" content="History Map">
-<link rel="shortcut icon" href="img/favicon.ico">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link href="history_map.css" type="text/css" rel="stylesheet">
 <title>History Map</title>
-<style>
-#top {
-	text-align: center;
-}
-#bigmap, #bigeuromap {
-	position: relative;
-	top: 0;
-	left: 0;
-}
-#bigeuromap {
-	margin-top: 800px;
-}
-#whitespace {
-	margin-top: 1750px;
-}
-#mapimg, #euromapimg {
-	position: absolute;
-	top: 0;
-	left: 0;
-	background: white;
-}
-.box {
-	background-color: black;
-	opacity: 0.4;
-}
-.point {
-	background-color: black;
-	opacity: 1;
-}
-.dot:hover, .box:hover {
-	animation:dothover 0.5s linear alternate infinite;
-}
-@keyframes dothover{
-	0% {opacity: 0.4;}
-	100% {opacity: 0.8;}
-}
-input {
-	font-family: monospace;
-}
-.true, .false {
-	font-weight: bold;
-}
-.true {
-	color: green!important;
-}
-.false {
-	color: red!important;
-}
-#mapinfo tr td{
-	font-family: monospace;
-	color: black;
-	background-color: AliceBlue;
-}
-#mapinfo tr td:nth-child(1), #mapinfo tr td:nth-child(2){
-	font-family: serif;
-	background-color: White;
-}
-#current_tooltip {
-	background-color: white;
-	max-width: 200px;
-	position: absolute;
-	border: 1px solid black;
-	padding: 2px;
-}
-</style>
 <div id="top">
 	<h1>The History Map</h1>
 </div>

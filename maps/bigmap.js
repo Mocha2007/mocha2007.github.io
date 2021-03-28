@@ -2,9 +2,9 @@
 /* globals intersect, proper, range, union */
 'use strict';
 
-const point0 = 'img/dots/red.png';
-const point1 = 'img/dots/green.png';
-const point2 = 'img/dots/yellow.png';
+const point0 = '../img/dots/red.png';
+const point1 = '../img/dots/green.png';
+const point2 = '../img/dots/yellow.png';
 const pointsize = 8;
 const mapsize = window.innerWidth - 32;
 const brcount = mapsize / 34;
