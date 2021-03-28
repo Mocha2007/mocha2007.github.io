@@ -7,3 +7,9 @@ html {
 	cursor: pointer;
 	margin-right: 10px;
 }
+.translation {
+	background-color: #040;
+}
+.sharesHypernyms {
+	background-color: #440;
+}

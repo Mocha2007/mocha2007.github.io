@@ -406,11 +406,24 @@ class Meaning extends Clickable {
 		});
 		return ul;
 	}
+	get headHypernyms(){
+		if (!this.hypernyms.length)
+			return [this];
+		/** @type {Meaning[]} */
+		const h = [];
+		this.hypernyms.forEach(m => m.headHypernyms.forEach(n => h.push(n)));
+		return h;
+	}
 	get hyponyms(){
 		return Meaning.list.filter(m => m.hypernyms.includes(this));
 	}
 	get title(){
 		return this.categories.map(c => c.name).join(', ');
+	}
+	/** @param {Meaning} other */
+	shareHypernyms(other){
+		const ho = other.headHypernyms;
+		return this.headHypernyms.some(m => ho.includes(m));
 	}
 	parseHypernyms(){
 		if (!this.hypernyms)
@@ -514,7 +527,8 @@ class Entry extends Clickable {
 	get likelyCognateList(){
 		const n = 10;
 		const ol = document.createElement('ol');
-		this.translations
+		const t = this.translations;
+		this.potentialCognates
 			.sort((a, b) => b.diff(this) - a.diff(this)).slice(-n).reverse().forEach((e, i) => {
 				const li = document.createElement('li');
 				li.appendChild(e.span);
@@ -522,6 +536,8 @@ class Entry extends Clickable {
 				const score = document.createElement('span');
 				score.innerHTML = `score: ${-e.diff(this)}`;
 				li.appendChild(score);
+				// determine class
+				li.classList.add(t.includes(e) ? 'translation' : 'sharesHypernyms');
 				ol.appendChild(li);
 			});
 		return ol;
@@ -529,6 +545,14 @@ class Entry extends Clickable {
 	get synonyms(){
 		return Entry.list.filter(e => e !== this && e.language === this.language
 			&& intersect(e.meanings, this.meanings).length);
+	}
+	get potentialCognates(){
+		// direct translations AND "share same tree shit"
+		/** @type {Meaning[]} */
+		const h = [];
+		this.meanings.forEach(m => m.headHypernyms.forEach(n => h.push(n)));
+		return Entry.list.filter(e => e.language !== this.language
+			&& e.meanings.some(m => m.headHypernyms.some(n => h.includes(n))));
 	}
 	get title(){
 		return this.language.name + ': ' + this.meanings.map(m => m.name).join(', ');
