@@ -1,4 +1,5 @@
-/* exported authorData, categoryData, entryData, languageData, meaningData, sourceData */
+/* exported authorData, categoryData, entryData, languageData, meaningData, replacementDate,
+	sourceData */
 'use strict';
 
 const shortcuts = {
@@ -69,6 +70,69 @@ const sourceData = [
 		author: 'wikimedia',
 		url: 'https://en.wiktionary.org',
 		date: '2021',
+	},
+];
+
+const replacementDate = [
+	{ // voiced non-nasal labials
+		to: 'B',
+		from: 'BVWbvw',
+	},
+	{ // unknown consonant
+		to: 'C',
+		from: 'C',
+	},
+	{ // voiceled alveolar plosive-likes
+		to: 'D',
+		from: 'Ddðɖδ',
+	},
+	{ // voiced non-nasal dorsal consonants
+		to: 'G',
+		from: 'Ggɡɣγ',
+	},
+	{ // postuvular consonants
+		to: 'H',
+		from: 'Hhɦʔʕʡʢ',
+	},
+	{ // voiced non-nasal postalveolar and palatal consonants
+		to: 'J',
+		from: 'JYjyɟ',
+	},
+	{ // voiceless non-nasal dorsal consonants
+		to: 'K',
+		from: 'KQXkqxǁχ',
+	},
+	{ // lateral consonants
+		to: 'L',
+		from: 'LlŁƛɬʎλ',
+	},
+	{ // labial nasal consonants
+		to: 'M',
+		from: 'Mm',
+	},
+	{ // non-labial nasal consonants
+		to: 'N',
+		from: 'Nnŋƞ',
+	},
+	{ // voiceless non-nasal labials
+		to: 'P',
+		from: 'FPfpφ',
+	},
+	{ // rhotic consonants
+		to: 'R',
+		from: 'Rrɺʀʁ',
+	},
+	{ // sibilants
+		to: 'S',
+		from: 'CSZcszʃʒ',
+	},
+	{ // voiceless alveolar plosive-likes
+		to: 'T',
+		from: '!Ttþǀǃθ',
+	},
+	{ // vowels
+		to: 'V',
+		from: 'AEIOUaeiouæǝȣɑəɛɜɨʌ',
 	},
 ];
 

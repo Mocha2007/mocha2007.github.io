@@ -1,6 +1,6 @@
 /* exported main */
 /* global authorData, categoryData, entryData, intersect, languageData, lev, mean, meaningData,
-	round, sourceData, union, unique */
+	replacementDate, round, sourceData, union, unique */
 'use strict';
 
 /** @type {HTMLBodyElement} */
@@ -184,6 +184,7 @@ class Language extends Clickable {
 		return this.vocabSizeOfGreatestAncestor !== this.vocab.length;
 	}
 	get likelyRelativeList(){
+		debugPerf(1);
 		const n = 10;
 		const ol = document.createElement('ol');
 		Language.list.filter(l => l !== this && !l.ignore)
@@ -197,6 +198,7 @@ class Language extends Clickable {
 				li.appendChild(new Comparison(this, e).span);
 				ol.appendChild(li);
 			});
+		debugPerf(1);
 		return ol;
 	}
 	/** meanings not expressed by any word in the language */
@@ -470,6 +472,9 @@ class Entry extends Clickable {
 		const header = document.createElement('h1');
 		header.innerHTML = this.name;
 		elem.appendChild(header);
+		const subheader = document.createElement('h2');
+		subheader.innerHTML = this.vwllss;
+		elem.appendChild(subheader);
 		// lang button
 		elem.appendChild(this.language.span);
 		// source button
@@ -563,18 +568,14 @@ class Entry extends Clickable {
 	}
 	/** get an oversimplified structure of a word */
 	get vwllss(){
-		return this.name.normalize('NFD')
-			.replace(/[\u0300-\u036f]/g, '') // remove diacritics
-			.replace(/[[\]()/=_:ː-]/g, '') // remove [] () / - = _ : ː
-			.replace(/[aeiouAEIOU]+/g, 'V').normalize(); // make all vowels V
+		return Replacement.transform(this.name);
 	}
 	/** cognate score
 	 * @param {Entry} other
 	*/
 	diff(other){
 		const c = this.meanings.some(m => m.categories.includes('inflectional')) ? 2 : 1; // double weight for inflectional morphemes
-		return c*(2* lev(this.name, other.name) // similarity: raw string
-			+ lev(this.vwllss, other.vwllss) // similarity: vowels and diacritics removed
+		return c*(3*lev(this.vwllss, other.vwllss) // similarity: vowels and diacritics removed
 			- 2*intersect(this.meanings, other.meanings).length); // colexifications
 	}
 	parseEtymology(){
@@ -659,6 +660,50 @@ class Comparison extends Clickable {
 	}
 }
 
+class Replacement {
+	/**
+	 * @param {string} from
+	 * @param {string} to
+	 */
+	constructor(from, to){
+		this.from = from.split('');
+		this.to = to;
+		Replacement.list.push(this);
+	}
+	/** @param {string} char */
+	targets(char){
+		return this.from.includes(
+			char.normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
+	}
+	static forThis(char){
+		return Replacement.list.find(r => r.from.includes(char));
+	}
+	static parseData(o){
+		new Replacement(o.from, o.to);
+	}
+	static test(){
+		// test
+		const test = new Set();
+		Entry.list.forEach(e => e.name.split('').forEach(l => test.add(l)));
+		Replacement.list.forEach(r => test.forEach(l => {
+			if (r.targets(l))
+				test.delete(l);
+		}));
+		console.debug(new Array(...test).sort());
+	}
+	static transform(s){
+		const output = [];
+		s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').split('').forEach(char => {
+			const to = Replacement.forThis(char);
+			if (to)
+				output.push(to.to);
+		});
+		return output.join('').replace(/V+/g, 'V');
+	}
+}
+/** @type {Replacement[]} */
+Replacement.list = [];
+
 function deleteButton(id){
 	const span = document.createElement('span');
 	span.innerHTML = 'X';
@@ -672,6 +717,7 @@ function main(){
 	// load shit
 	authorData.forEach(o => Author.parseData(o));
 	sourceData.forEach(o => Source.parseData(o));
+	replacementDate.forEach(o => Replacement.parseData(o));
 	languageData.forEach(o => Language.parseData(o));
 	categoryData.forEach(o => Category.parseData(o));
 	meaningData.forEach(o => Meaning.parseData(o));
@@ -685,4 +731,6 @@ function main(){
 	Entry.list.sort((a, b) => a.name < b.name ? -1 : 1);
 	// display óynos's entry just to start off...
 	Entry.fromId('pie:óynos').go();
+	// test
+	Replacement.test();
 }
