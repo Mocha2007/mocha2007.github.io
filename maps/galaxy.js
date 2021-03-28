@@ -4,6 +4,7 @@
 
 /** @type {HTMLBodyElement} */
 const canvas = document.getElementById('canvas');
+const [xIndex, yIndex] = [0, 2];
 
 class Coords {
 	/**
@@ -67,8 +68,8 @@ class Body {
 		const div = document.createElement('div');
 		div.classList.add('datum');
 		const gc = this.galacticCoords;
-		const x = gc[0]/Body.maxDim;
-		const y = gc[2]/Body.maxDim;
+		const x = gc[xIndex]/Body.maxDim;
+		const y = gc[yIndex]/Body.maxDim;
 		console.debug(x, y);
 		div.style.left = `calc(50% + ${45*x}%)`;
 		div.style.top = `calc(50% + ${45*y}%)`;
@@ -107,7 +108,7 @@ Body.list = [];
 function main(){
 	data.forEach(o => Body.fromObject(o));
 	Body.maxDim = Math.max(...Body.list.map(b =>
-		Math.max(Math.abs(b.galacticCoords[0]), Math.abs(b.galacticCoords[2]))
+		Math.max(Math.abs(b.galacticCoords[xIndex]), Math.abs(b.galacticCoords[yIndex]))
 	));
 	Body.list.forEach(b => b.createElement());
 	const sgra_ = Body.fromName('Sgr A*');
