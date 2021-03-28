@@ -100,7 +100,7 @@ const replacementDate = [
 	},
 	{ // voiceless non-nasal dorsal consonants
 		to: 'K',
-		from: 'KQXkqxǁχ',
+		from: 'KQXkqxǁχǂ',
 	},
 	{ // lateral consonants
 		to: 'L',
@@ -128,7 +128,7 @@ const replacementDate = [
 	},
 	{ // voiceless alveolar plosive-likes
 		to: 'T',
-		from: '!Ttþǀǃθ',
+		from: '!Ttþǀǃθ|',
 	},
 	{ // vowels
 		to: 'V',
@@ -218,6 +218,7 @@ const languageData = [
 		name: 'proto-khoe-kwadi',
 		parent: 'proto-khoe-kwadi-sandawe',
 		location: 'south africa',
+		// on Starling, this is "Central Khoisan"
 	},
 	{
 		name: 'proto-khoe-kwadi-sandawe',
@@ -1791,6 +1792,10 @@ const meaningData = [
 	{
 		name: 'urinate',
 		categories: 'verb;anatomy',
+	},
+	{
+		name: 'wake;wake.up',
+		categories: 'verb',
 	},
 	{
 		name: 'walk',
@@ -6286,7 +6291,8 @@ const entryData = [
 		meanings: 'that',
 		source: 'starling',
 	},
-	// Proto-khoe-kwadi
+	// Proto-Khoe-Kwadi
+	// aka "Central Khoisan" on starling
 	{
 		language: 'proto-khoe-kwadi',
 		word: 'baseCE',
@@ -6308,6 +6314,12 @@ const entryData = [
 	},
 	{
 		language: 'proto-khoe-kwadi',
+		word: 'kxó',
+		meanings: 'eat;meat',
+		source: 'starling',
+	},
+	{
+		language: 'proto-khoe-kwadi',
 		word: 'mu',
 		meanings: '1incl',
 		source: 'wiktionary',
@@ -6324,6 +6336,42 @@ const entryData = [
 		word: 'sa',
 		meanings: '2',
 		source: 'wiktionary',
+	},
+	{
+		language: 'proto-khoe-kwadi',
+		word: 'tí',
+		meanings: '1s',
+		source: 'starling',
+	},
+	{
+		language: 'proto-khoe-kwadi',
+		word: '!ʔã́',
+		meanings: 'know',
+		source: 'starling',
+	},
+	{
+		language: 'proto-khoe-kwadi',
+		word: '!hu',
+		meanings: 'earth',
+		source: 'starling',
+	},
+	{
+		language: 'proto-khoe-kwadi',
+		word: '|kxóǹ',
+		meanings: 'name',
+		source: 'starling',
+	},
+	{
+		language: 'proto-khoe-kwadi',
+		word: 'ǂxéí',
+		meanings: 'eye;wake.up',
+		source: 'starling',
+	},
+	{
+		language: 'proto-khoe-kwadi',
+		word: 'ǂʔáǹ',
+		meanings: 'know',
+		source: 'starling',
 	},
 	// Proto-Khoe-Kwadi-Sandawe
 	{
