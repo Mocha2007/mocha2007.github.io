@@ -1739,6 +1739,13 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: '-dḱomt',
+		meanings: 'num>*10',
+		etymology: 'pie:déḱm̥',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'dn̥ǵʰwéh₂s',
 		meanings: 'tongue',
 		source: 'wiktionary',
