@@ -51,6 +51,14 @@ const data = [
 		dec: [-52, 41, 44.381],
 	},
 	{
+		name: 'Pleiades',
+		type: 'open cluster',
+		dist: 444*ly,
+		ra: [3, 47, 24],
+		dec: [24, 7, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Pleiades_large.jpg/640px-Pleiades_large.jpg',
+	},
+	{
 		name: 'Betelgeuse',
 		type: 'star',
 		dist: 548*ly,
@@ -101,6 +109,22 @@ const data = [
 		dec: [22, 0, 52.2],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Crab_Nebula.jpg/600px-Crab_Nebula.jpg',
 	},
+	{ // NGC 2237
+		name: 'Rosette Nebula',
+		type: 'emission nebula',
+		dist: 5200*ly,
+		ra: [6, 33, 45],
+		dec: [4, 49, 54],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/3/3f/NGC_2244_Rosette_Nebula.jpg',
+	},
+	{
+		name: 'NGC 2547',
+		type: 'open cluster',
+		dist: 1190*ly,
+		ra: [8, 9, 52.36],
+		dec: [-49, 10, 35.01],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/7/7f/Star_cluster_NGC_2547.jpg',
+	},
 	{ // NGC 3372
 		name: 'Carina Nebula',
 		type: 'emission nebula',
@@ -116,6 +140,14 @@ const data = [
 		ra: [17, 20, 50.9],
 		dec: [-36, 6, 54],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/PIA22568-CatsPawNebula-Spitzer-20181023.jpg/800px-PIA22568-CatsPawNebula-Spitzer-20181023.jpg',
+	},
+	{ // NGC 6405
+		name: 'Butterfly Cluster',
+		type: 'open cluster',
+		dist: 1590*ly,
+		ra: [17, 40.1, 0],
+		dec: [-32, 13, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/7/7f/M6a.jpg',
 	},
 	{ // NGC 6523
 		name: 'Lagoon Nebula',
@@ -140,6 +172,22 @@ const data = [
 		ra: [18, 20, 26],
 		dec: [-16, 10, 36],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/VST_image_of_the_spectacular_star-forming_region_Messier_17_%28Omega_Nebula%29.jpg/600px-VST_image_of_the_spectacular_star-forming_region_Messier_17_%28Omega_Nebula%29.jpg',
+	},
+	{
+		name: 'NGC 6633',
+		type: 'open cluster',
+		dist: 1040*ly,
+		ra: [18, 27.7, 0],
+		dec: [6, 34, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/1/14/NGC_6633.png',
+	},
+	{ // NGC 7092
+		name: 'Messier 39',
+		type: 'open cluster',
+		dist: 1010*ly,
+		ra: [21, 31, 48],
+		dec: [48, 26, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/8/83/M39_Mazur.jpg',
 	},
 ];
 

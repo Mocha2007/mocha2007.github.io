@@ -1,4 +1,4 @@
-/* global data, ly, pi */
+/* global data, ly, pi, proper */
 /* exported main */
 'use strict';
 
@@ -55,6 +55,7 @@ class Body {
 	get color(){
 		const colors = {
 			'emission nebula': 'pink',
+			'open cluster': '#CFF',
 			'star': '#FFFFC0',
 			'sun': '#FCC857',
 			'supernova remnant': '#9C8AE4',
@@ -82,7 +83,7 @@ class Body {
 		tt.style.left = coords[1]+25 + 'px';
 		tt.style.position = 'fixed';
 		// text
-		tt.innerHTML = '<center><b>' + this.name + '</b></center>';
+		tt.innerHTML = '<center><b>' + this.name + '</b></center>' + proper(this.type);
 		if (this.img)
 			tt.innerHTML += '<center><img src="'+this.img+'" height="100px"></center>';
 		if (this.desc)
