@@ -880,7 +880,7 @@ const meaningData = [
 		categories: 'noun;religion',
 	},
 	{
-		name: 'cat',
+		name: 'cat;wild.cat',
 		categories: 'noun;animal',
 	},
 	{
@@ -1324,6 +1324,10 @@ const meaningData = [
 		categories: 'noun;disease',
 	},
 	{
+		name: 'scent',
+		categories: 'noun',
+	},
+	{
 		name: 'sea',
 		categories: 'noun;landform',
 	},
@@ -1352,7 +1356,7 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
-		name: 'soul',
+		name: 'soul;spirit',
 		categories: 'noun;religion',
 	},
 	{
@@ -2684,6 +2688,12 @@ const entryData = [
 		word: 'údteros',
 		meanings: 'higher;upper',
 		etymology: 'pie:úd;pie:-teros',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'uksḗn',
+		meanings: 'bull',
 		source: 'wiktionary',
 	},
 	{
@@ -4982,6 +4992,12 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
+		word: 'b(ɣ)u',
+		meanings: 'owl',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
 		word: 'buṭḳ-',
 		meanings: 'leaf',
 		source: 'starling',
@@ -5024,6 +5040,18 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
+		word: 'ć̣er-',
+		meanings: 'write',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'cic(a)',
+		meanings: 'wild.cat',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
 		word: 'c̣q̇al-',
 		meanings: 'water',
 		source: 'wiktionary',
@@ -5044,6 +5072,12 @@ const entryData = [
 		language: 'proto-kartvelian',
 		word: 'ć̣wim',
 		meanings: 'rain',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'ded-',
+		meanings: 'mother',
 		source: 'starling',
 	},
 	{
@@ -5074,6 +5108,12 @@ const entryData = [
 		language: 'proto-kartvelian',
 		word: 'diq-',
 		meanings: 'clay;earth',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'du(ś)te-',
+		meanings: 'moon',
 		source: 'starling',
 	},
 	{
@@ -5118,6 +5158,12 @@ const entryData = [
 		language: 'proto-kartvelian',
 		word: 'ha-',
 		meanings: 'this',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: '(h)el-',
+		meanings: 'flame;lightning',
 		source: 'starling',
 	},
 	{
@@ -5188,6 +5234,12 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
+		word: 'nena-',
+		meanings: 'mother',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
 		word: 'o(s₁)txo-',
 		meanings: 'four',
 		etymology: 'pie:oḱtṓw',
@@ -5221,6 +5273,12 @@ const entryData = [
 		language: 'proto-kartvelian',
 		word: 'qad-',
 		meanings: 'move;go;arrive',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'qar-',
+		meanings: 'bull',
 		source: 'starling',
 	},
 	{
@@ -5285,6 +5343,12 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
+		word: 'śul-',
+		meanings: 'spirit;soul;scent',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
 		word: 'św-',
 		meanings: 'drink',
 		source: 'starling',
@@ -5339,9 +5403,23 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
+		word: 'usxo-',
+		meanings: 'bull',
+		source: 'wiktionary',
+		etymology: 'pie:uksḗn',
+		note: 'sacrificial bull',
+	},
+	{
+		language: 'proto-kartvelian',
 		word: 'wašl-',
 		meanings: 'apple',
 		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'weʒ́-',
+		meanings: 'spring.water',
+		source: 'starling',
 	},
 	{
 		language: 'proto-kartvelian',
