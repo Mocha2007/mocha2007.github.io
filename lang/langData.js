@@ -307,6 +307,7 @@ const categoryData = [
 		name: 'weather',
 	},
 	// todo: swadesh list items
+	// Wichmann & Holman basic 40-word list
 	{
 		name: 'swadesh',
 	},
@@ -499,6 +500,11 @@ const meaningData = [
 		categories: 'pronoun',
 	},
 	{
+		name: '1excl',
+		categories: 'pronoun',
+		hypernyms: '1pl',
+	},
+	{
 		name: '1incl',
 		categories: 'pronoun',
 		hypernyms: '1pl',
@@ -625,6 +631,10 @@ const meaningData = [
 	},
 	{
 		name: 'favorable',
+		categories: 'adjective',
+	},
+	{
+		name: 'full',
 		categories: 'adjective',
 	},
 	{
@@ -1099,6 +1109,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'louse',
+		categories: 'noun;animal',
+	},
+	{
 		name: 'lung',
 		categories: 'noun;anatomy',
 	},
@@ -1153,6 +1167,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'night',
+		categories: 'noun;time',
+	},
+	{
 		name: 'nose',
 		categories: 'noun;anatomy',
 	},
@@ -1176,6 +1194,10 @@ const meaningData = [
 	{
 		name: 'palm.hand',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'path',
+		categories: 'noun',
 	},
 	{
 		name: 'pear',
@@ -5952,14 +5974,50 @@ const entryData = [
 	// Hadza
 	{
 		language: 'hadza',
+		word: 'bot͜ʃo',
+		meanings: 'come',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'd͜zana',
+		meanings: 'new',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
 		word: 'itchâme',
 		meanings: 'one',
 		source: 'wiktionary',
 	},
 	{
 		language: 'hadza',
+		word: 'fʷa',
+		meanings: 'drink',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ɡuɺiƞɡuɺi',
+		meanings: 'knee',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ɦad͜za',
+		meanings: 'human',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
 		word: 'ʔaɦa',
 		meanings: 'tooth',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ʔaɦu',
+		meanings: 'skin',
 		source: 'wiktionary',
 	},
 	{
@@ -5983,7 +6041,13 @@ const entryData = [
 	{
 		language: 'hadza',
 		word: 'ʔati',
-		meanings: 'water',
+		meanings: 'water;rain',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ɦat͜s’ape',
+		meanings: 'leaf',
 		source: 'wiktionary',
 	},
 	{
@@ -5994,8 +6058,62 @@ const entryData = [
 	},
 	{
 		language: 'hadza',
+		word: 'ɦaⁿǃˀa',
+		meanings: 'stone',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ɦek͜xʷ’a',
+		meanings: 'bark',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
 		word: 'ʔiƞtʰawe',
 		meanings: 'nose',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ʔoː',
+		meanings: '1excl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ʔone',
+		meanings: '1s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ʔiɺiba',
+		meanings: 'breast;milk',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ʔiʃo',
+		meanings: 'sun',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ʔukʷʰa',
+		meanings: 'hand;arm',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ʔunu',
+		meanings: 'person',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'jeke',
+		meanings: 'path',
 		source: 'wiktionary',
 	},
 	{
@@ -6007,8 +6125,20 @@ const entryData = [
 	},
 	{
 		language: 'hadza',
+		word: 'k͜x’aʔe',
+		meanings: 'full',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
 		word: 'mic͜ʎ̥˔’a',
 		meanings: 'bone',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ƞt͜sʰa',
+		meanings: 'star',
 		source: 'wiktionary',
 	},
 	{
@@ -6033,14 +6163,33 @@ const entryData = [
 	},
 	{
 		language: 'hadza',
+		word: 'ɺoʔo',
+		meanings: 'horn',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
 		word: 'séseme',
 		meanings: 'lion',
 		source: 'wiktionary',
 	},
 	{
 		language: 'hadza',
-		word: 'the',
+		word: 'taⁿǁˀi',
+		meanings: 'die',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'tʰe',
 		meanings: '2',
+		source: 'wiktionary',
+		notes: 'root',
+	},
+	{
+		language: 'hadza',
+		word: 't͜s’ifi',
+		meanings: 'night',
 		source: 'wiktionary',
 		notes: 'root',
 	},
@@ -6053,8 +6202,69 @@ const entryData = [
 	},
 	{
 		language: 'hadza',
+		word: 't͜s’oko',
+		meanings: 'fire',
+		source: 'wiktionary',
+		notes: 'root',
+	},
+	{
+		language: 'hadza',
+		word: 'ⁿǀˀama',
+		meanings: 'fish',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
 		word: 'ⁿǀata',
 		meanings: 'tongue',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ⁿǀˀamat͜sʼi',
+		meanings: 'louse',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ǀʰiː',
+		meanings: 'see',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ⁿǀˀo-',
+		meanings: 'full',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ǁʰaʔano',
+		meanings: 'dog',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ⁿǁaʔe',
+		meanings: 'hear',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ⁿǁˀe',
+		meanings: 'liver',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ǁoː',
+		meanings: 'kill',
+		source: 'wiktionary',
+	},
+	{
+		language: 'hadza',
+		word: 'ⁿǁˀuc͜ʎ̥˔’e',
+		meanings: 'mountain',
 		source: 'wiktionary',
 	},
 	// Burushaski
