@@ -112,7 +112,7 @@ const replacementDate = [
 	},
 	{ // non-labial nasal consonants
 		to: 'N',
-		from: 'Nnŋƞ',
+		from: 'Nnŋƞɳ',
 	},
 	{ // voiceless non-nasal labials
 		to: 'P',
@@ -1879,6 +1879,12 @@ const entryData = [
 	// PIE
 	{
 		language: 'pie',
+		word: 'átta',
+		meanings: 'father',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'bʰeh₂ǵʰús',
 		meanings: 'arm',
 		source: 'wiktionary',
@@ -2093,6 +2099,19 @@ const entryData = [
 		language: 'pie',
 		word: 'ǵónu',
 		meanings: 'knee',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'gʷreh₂-',
+		meanings: 'heavy',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'gʷréh₂us',
+		meanings: 'heavy',
+		etymology: 'pie:gʷreh₂-;pie:-us',
 		source: 'wiktionary',
 	},
 	{
@@ -2433,6 +2452,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'méh₂tēr',
+		meanings: 'mother',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'méǵh₂s',
 		meanings: 'big;great',
 		source: 'wiktionary',
@@ -2567,6 +2592,12 @@ const entryData = [
 		word: 'péth₂r̥',
 		meanings: 'wing;feather',
 		etymology: 'pie:peth₂-;pie:-r̥',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'ph₂tḗr',
+		meanings: 'father',
 		source: 'wiktionary',
 	},
 	{
@@ -2763,6 +2794,12 @@ const entryData = [
 		language: 'pie',
 		word: 'uksḗn',
 		meanings: 'bull',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: '-us',
+		meanings: '*>adj',
 		source: 'wiktionary',
 	},
 	{
