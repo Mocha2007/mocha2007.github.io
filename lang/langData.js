@@ -119,6 +119,11 @@ const languageData = [
 		period: 'c. 1000 CE',
 	},
 	{
+		name: 'pck', // proto-chukotko-kamchatkan
+		location: 'eastern siberia',
+		period: 'c. 2000 BCE',
+	},
+	{
 		name: 'pie',
 		location: 'pontic-caspian steppe',
 		period: 'c. 3000 BCE',
@@ -431,11 +436,23 @@ const meaningData = [
 		categories: 'inflectional',
 	},
 	{
+		name: 'ABS',
+		categories: 'inflectional',
+	},
+	{
 		name: 'ACC',
 		categories: 'inflectional',
 	},
 	{
 		name: 'ALL',
+		categories: 'inflectional',
+	},
+	{
+		name: 'ASS',
+		categories: 'inflectional',
+	},
+	{
+		name: 'COM',
 		categories: 'inflectional',
 	},
 	{
@@ -456,6 +473,10 @@ const meaningData = [
 	},
 	{
 		name: 'GEN',
+		categories: 'inflectional',
+	},
+	{
+		name: 'INS',
 		categories: 'inflectional',
 	},
 	{
@@ -480,6 +501,10 @@ const meaningData = [
 	},
 	{
 		name: 'PROH',
+		categories: 'inflectional',
+	},
+	{
+		name: 'PROL;VIA;PROS',
 		categories: 'inflectional',
 	},
 	{
@@ -1449,11 +1474,19 @@ const meaningData = [
 	},
 	// verbs
 	{
+		name: 'appear',
+		categories: 'verb',
+	},
+	{
 		name: 'be',
 		categories: 'verb',
 	},
 	{
 		name: 'be.aware',
+		categories: 'verb',
+	},
+	{
+		name: 'become',
 		categories: 'verb',
 	},
 	{
@@ -1529,6 +1562,10 @@ const meaningData = [
 		categories: 'verb;motion',
 	},
 	{
+		name: 'grow',
+		categories: 'verb;plant',
+	},
+	{
 		name: 'hear',
 		categories: 'verb;sensory',
 	},
@@ -1573,7 +1610,7 @@ const meaningData = [
 		categories: 'verb;sensory',
 	},
 	{
-		name: 'place.v;put',
+		name: 'place.v;put;set',
 		categories: 'verb;language',
 	},
 	{
@@ -1721,6 +1758,12 @@ const entryData = [
 		word: 'bʰolh₃yom',
 		meanings: 'leaf',
 		etymology: 'pie:bʰleh₃-',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'bʰuH-',
+		meanings: 'become;grow;appear',
 		source: 'wiktionary',
 	},
 	{
@@ -6456,6 +6499,223 @@ const entryData = [
 		language: 'burushaski',
 		word: 'wálto',
 		meanings: 'four',
+		source: 'wiktionary',
+	},
+	// Proto-Chukotko-Kamchatkan
+	{
+		language: 'pck',
+		word: 'æl(læ)',
+		meanings: 'NEG',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'aŋqa',
+		meanings: 'sea',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'ðəððil-',
+		meanings: 'put',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'ðənt(ə)vat-',
+		meanings: 'put;set',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'əð(ði)',
+		meanings: '3pl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: '-(ǝ)k',
+		meanings: 'LOC',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'ən-',
+		meanings: 'that',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'ən(no)',
+		meanings: '3s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: '-(ǝ)ŋ',
+		meanings: 'DAT',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'inuN',
+		meanings: 'sea',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'it-',
+		meanings: 'be',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: '-jǝpǝŋ',
+		meanings: 'VIA',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: '-jǝtǝŋ',
+		meanings: 'ALL',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'jilə(jil)',
+		meanings: 'tongue',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'ka-',
+		meanings: 'ASS',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'kæ-',
+		meanings: 'COM',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'kəð',
+		meanings: '2',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'kəm',
+		meanings: '1s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: '(lə)qut-',
+		meanings: 'stand',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'ləʀu-',
+		meanings: 'see',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'li-',
+		meanings: 'become',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'məlləNen(a)',
+		meanings: 'five',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'mənɣətken(a)',
+		meanings: 'ten',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'mikæ',
+		meanings: 'who',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'mur(i)',
+		meanings: '1pl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'Nəraq',
+		meanings: 'four',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'Nəroq',
+		meanings: 'three',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'Niðæq',
+		meanings: 'two',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: '-ŋqo(rǝŋ)',
+		meanings: 'ABL',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'Nut',
+		meanings: 'this',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'pəciq(æ)',
+		meanings: 'bird',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'pəkir-',
+		meanings: 'come',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'qonʀajcəNken',
+		meanings: 'nine',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'qun',
+		meanings: 'one',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: '-tæ',
+		meanings: 'INS',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pck',
+		word: 'təʀəl(wəðə)',
+		meanings: 'day',
 		source: 'wiktionary',
 	},
 ];
