@@ -216,6 +216,9 @@ const categoryData = [
 		name: 'determiner',
 	},
 	{
+		name: 'inflectional',
+	},
+	{
 		name: 'noun',
 	},
 	{
@@ -416,51 +419,67 @@ const meaningData = [
 	// misc morphemes
 	{
 		name: 'ABE',
+		categories: 'inflectional',
 	},
 	{
 		name: 'ABL',
+		categories: 'inflectional',
 	},
 	{
 		name: 'ACC',
+		categories: 'inflectional',
 	},
 	{
 		name: 'ALL',
+		categories: 'inflectional',
 	},
 	{
 		name: 'DAT',
+		categories: 'inflectional',
 	},
 	{
 		name: 'DEF',
+		categories: 'inflectional',
 	},
 	{
 		name: 'ERG',
+		categories: 'inflectional',
 	},
 	{
 		name: 'F;FEM',
+		categories: 'inflectional',
 	},
 	{
 		name: 'GEN',
+		categories: 'inflectional',
 	},
 	{
 		name: 'LAT',
+		categories: 'inflectional',
 	},
 	{
 		name: 'LOC',
+		categories: 'inflectional',
 	},
 	{
 		name: 'NEG',
+		categories: 'inflectional',
 	},
 	{
 		name: 'PL',
+		categories: 'inflectional',
 	},
 	{
 		name: 'PROH',
+		categories: 'inflectional',
 	},
 	{
 		name: 'PST',
+		categories: 'inflectional',
 	},
 	{
 		name: 'TRANSL',
+		categories: 'inflectional',
 	},
 	// pronouns
 	{

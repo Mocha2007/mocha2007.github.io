@@ -1,5 +1,5 @@
 /* exported main */
-/* global authorData, categoryData, entryData, intersect, languageData, mean, meaningData,
+/* global authorData, categoryData, entryData, intersect, languageData, lev, mean, meaningData,
 	round, sourceData, union, unique */
 'use strict';
 
@@ -314,6 +314,7 @@ Category.list = [];
 class Meaning extends Clickable {
 	constructor(name, categories, hypernyms){
 		super(name);
+		/** @type {Category[]} */
 		this.categories = categories
 			? categories.split(';').filter(x => x).map(c => Category.fromName(c))
 			: [];
@@ -547,9 +548,10 @@ class Entry extends Clickable {
 	 * @param {Entry} other
 	*/
 	diff(other){
-		return 2* lev(this.name, other.name)
-			+ lev(this.vwllss, other.vwllss)
-			- 2*intersect(this.meanings, other.meanings).length;
+		const c = this.meanings.some(m => m.categories.includes('inflectional')) ? 2 : 1; // double weight for inflectional morphemes
+		return c*(2* lev(this.name, other.name) // similarity: raw string
+			+ lev(this.vwllss, other.vwllss) // similarity: vowels and diacritics removed
+			- 2*intersect(this.meanings, other.meanings).length); // colexifications
 	}
 	parseEtymology(){
 		if (!this.etymology)
