@@ -621,6 +621,10 @@ const meaningData = [
 		categories: 'adjective',
 	},
 	{
+		name: 'other',
+		categories: 'adjective',
+	},
+	{
 		name: 'real',
 		categories: 'adjective',
 	},
@@ -4679,14 +4683,20 @@ const entryData = [
 	// kartvelian
 	{
 		language: 'proto-kartvelian',
-		word: 'arwa-',
+		word: 'arwa',
 		meanings: 'eight',
 		etymology: 'proto-semitic:ʔarbaʕ-',
 		source: 'wiktionary',
 	},
 	{
 		language: 'proto-kartvelian',
-		word: 'at',
+		word: 'as₁i',
+		meanings: 'hundred',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'a(s₁)ti',
 		meanings: 'ten',
 		source: 'wiktionary',
 	},
@@ -4704,13 +4714,13 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
-		word: 'c₁xar-',
-		meanings: 'nine',
+		word: 'e-',
+		meanings: 'that',
 		source: 'wiktionary',
 	},
 	{
 		language: 'proto-kartvelian',
-		word: 'eks₁w-',
+		word: 'eks₁wi',
 		meanings: 'six',
 		etymology: 'pie:swéḱs',
 		source: 'wiktionary',
@@ -4724,8 +4734,20 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
-		word: 'jor-',
-		meanings: 'two',
+		word: 'g-',
+		meanings: 'this',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'ha-',
+		meanings: 'this',
+		source: 'starling',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: '-iš',
+		meanings: 'GEN',
 		source: 'wiktionary',
 	},
 	{
@@ -4742,15 +4764,33 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
-		word: 'otxo-',
+		word: 'o(s₁)txo-',
 		meanings: 'four',
 		etymology: 'pie:oḱtṓw',
 		source: 'wiktionary',
 	},
 	{
 		language: 'proto-kartvelian',
-		word: 'sam-',
+		word: '-s',
+		meanings: 'DAT',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'sami',
 		meanings: 'three',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'sen',
+		meanings: '2s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'stkwen',
+		meanings: '2pl',
 		source: 'wiktionary',
 	},
 	{
@@ -4761,19 +4801,25 @@ const entryData = [
 	},
 	{
 		language: 'proto-kartvelian',
-		word: 'šwid-',
+		word: 's₁xwa',
+		meanings: 'one;other',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'šwidi',
 		meanings: 'seven',
 		source: 'wiktionary',
 	},
 	{
 		language: 'proto-kartvelian',
-		word: 'tkwen-',
-		meanings: '2pl',
+		word: 'ts₁xara',
+		meanings: 'nine',
 		source: 'wiktionary',
 	},
 	{
 		language: 'proto-kartvelian',
-		word: 'xut-',
+		word: 'xu(s₁)ti',
 		meanings: 'five',
 		source: 'wiktionary',
 	},
@@ -4781,6 +4827,12 @@ const entryData = [
 		language: 'proto-kartvelian',
 		word: 'wašl-',
 		meanings: 'apple',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-kartvelian',
+		word: 'yori',
+		meanings: 'two',
 		source: 'wiktionary',
 	},
 	{
