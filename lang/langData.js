@@ -900,6 +900,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'claw',
+		categories: 'noun;anatomy',
+	},
+	{
 		name: 'community',
 		categories: 'noun;society',
 	},
@@ -1500,6 +1504,16 @@ const meaningData = [
 	{
 		name: 'burn',
 		categories: 'verb',
+	},
+	{
+		name: 'burn.intr',
+		categories: 'verb',
+		hypernyms: 'burn',
+	},
+	{
+		name: 'burn.tr',
+		categories: 'verb',
+		hypernyms: 'burn',
 	},
 	{
 		name: 'carry',
@@ -5866,6 +5880,48 @@ const entryData = [
 	// Sandawe
 	{
 		language: 'sandawe',
+		word: 'bàʔé',
+		meanings: 'big',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
+		word: 'cʼʷáʔá',
+		meanings: 'claw;fingernail',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
+		word: 'cʼéː',
+		meanings: 'drink',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
+		word: 'cʼéxê',
+		meanings: 'one',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
+		word: '=čʰì',
+		meanings: 'NEG',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
+		word: 'dìʔá',
+		meanings: 'egg',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
+		word: 'hǎː-',
+		meanings: 'that',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
 		word: 'haka',
 		meanings: 'four',
 		etymology: 'proto-khoe-kwadi-sandawe:haka',
@@ -5876,6 +5932,12 @@ const entryData = [
 		word: 'hapu',
 		meanings: '2s',
 		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'hěː-',
+		meanings: 'this',
+		source: 'starling',
 	},
 	{
 		language: 'sandawe',
@@ -5897,15 +5959,81 @@ const entryData = [
 	},
 	{
 		language: 'sandawe',
+		word: 'hĩ̌-',
+		meanings: 'that',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
+		word: 'híkʼi̥',
+		meanings: 'walk;go',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
+		word: 'hóčōː',
+		meanings: 'what',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
+		word: 'káːkâ',
+		meanings: 'dog',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
+		word: 'kámâ',
+		meanings: 'burn.tr',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
+		word: 'kʼáŋkʼárâ',
+		meanings: 'black',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
 		word: 'kéké',
 		meanings: 'ear',
 		source: 'wiktionary',
 	},
 	{
 		language: 'sandawe',
+		word: 'kísôxi̥',
+		meanings: 'two',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
 		word: 'kxʼaré',
 		meanings: 'boy',
 		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'ƛâ',
+		meanings: 'bark',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
+		word: 'ƛʼàbísó',
+		meanings: 'belly',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
+		word: 'ƛǎːsi̥',
+		meanings: 'die',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
+		word: 'ɬáû',
+		meanings: 'good',
+		source: 'starling',
 	},
 	{
 		language: 'sandawe',
@@ -5924,6 +6052,12 @@ const entryData = [
 		word: 'ncûmsù',
 		meanings: 'wife',
 		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'sákâ',
+		meanings: 'breast',
+		source: 'starling',
 	},
 	{
 		language: 'sandawe',
@@ -5970,6 +6104,12 @@ const entryData = [
 	},
 	{
 		language: 'sandawe',
+		word: 'tʰwǐː',
+		meanings: 'bird',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
 		word: 'úte',
 		meanings: 'yesterday',
 		source: 'wiktionary',
@@ -5979,6 +6119,12 @@ const entryData = [
 		word: 'ǀʷěː',
 		meanings: 'eye',
 		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'ǀʼíná',
+		meanings: 'earth',
+		source: 'starling',
 	},
 	{
 		language: 'sandawe',
@@ -6006,6 +6152,18 @@ const entryData = [
 	},
 	{
 		language: 'sandawe',
+		word: '!ʼû',
+		meanings: 'feather',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
+		word: '!ʼúpʰá',
+		meanings: 'ashes',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
 		word: 'ǁ’ék’â',
 		meanings: 'blood',
 		source: 'wiktionary',
@@ -6018,9 +6176,21 @@ const entryData = [
 	},
 	{
 		language: 'sandawe',
+		word: 'ǀí',
+		meanings: 'come',
+		source: 'starling',
+	},
+	{
+		language: 'sandawe',
 		word: 'ǁʷâ',
 		meanings: 'name',
 		source: 'wiktionary',
+	},
+	{
+		language: 'sandawe',
+		word: 'ǀǀʼĩ̂ː',
+		meanings: 'fire',
+		source: 'starling',
 	},
 	// Hadza
 	{
