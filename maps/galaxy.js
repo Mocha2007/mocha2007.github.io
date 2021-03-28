@@ -52,6 +52,15 @@ class Body {
 		this.href = href ? href : 'https://en.wikipedia.org/wiki/' + this.name;
 		Body.list.push(this);
 	}
+	get color(){
+		const colors = {
+			'emission nebula': 'pink',
+			'star': '#FFFFC0',
+			'sun': '#FCC857',
+			'supernova remnant': '#9C8AE4',
+		};
+		return colors[this.type] ? colors[this.type] : 'white';
+	}
 	/** @returns {[number, number, number]} xyz coords */
 	get galacticCoords(){
 		// set sgra_'s coords to ZERO ZERO
@@ -64,7 +73,25 @@ class Body {
 			this.dist * Math.cos(ra_),
 		];
 	}
+	get tooltip(){
+		const tt = document.createElement('div');
+		const coords = [window.event.clientY, window.event.clientX];
+		tt.id = 'current_tooltip';
+		tt.style.backgroundColor = this.color;
+		tt.style.top = coords[0]-25 + 'px';
+		tt.style.left = coords[1]+25 + 'px';
+		tt.style.position = 'fixed';
+		// text
+		tt.innerHTML = '<center><b>' + this.name + '</b></center>';
+		if (this.img)
+			tt.innerHTML += '<center><img src="'+this.img+'" height="100px"></center>';
+		if (this.desc)
+			tt.innerHTML += this.desc;
+		return tt;
+	}
 	createElement(){
+		const a = document.createElement('a');
+		a.href = this.href;
 		const div = document.createElement('div');
 		div.classList.add('datum');
 		const gc = this.galacticCoords;
@@ -73,18 +100,14 @@ class Body {
 		console.debug(x, y);
 		div.style.left = `calc(50% + ${45*x}%)`;
 		div.style.top = `calc(50% + ${45*y}%)`;
-		const color =  {
-			'emission nebula': 'pink',
-			'star': '#FFFFC0',
-			'sun': '#FCC857',
-			'supernova remnant': '#9C8AE4',
-		}[this.type];
-		if (color)
-			div.style.backgroundColor = color;
-		canvas.appendChild(div);
+		div.style.backgroundColor = this.color;
 		this.element = div;
-		// now, style!
-		div.title = `${this.name}\n${this.type}\n${this.desc}`;
+		// tooltip
+		div.onmouseover = () => document.getElementById('tooltip').appendChild(this.tooltip);
+		div.onmouseout = () => document.getElementById('current_tooltip').outerHTML = '';
+		// end
+		a.appendChild(div);
+		canvas.appendChild(a);
 	}
 	/** @param {string} s */
 	static fromName(s){

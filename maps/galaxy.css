@@ -2,6 +2,7 @@ html {
 	background-color: black;
 	color: silver;
 	overflow: hidden;
+	user-select: none;
 }
 body {
 	margin: 0;
@@ -9,7 +10,6 @@ body {
 .datum {
 	background-color: red;
 	border-radius: 50%;
-	cursor: help;
 	height: 5px;
 	position: absolute;
 	width: 5px;
@@ -19,4 +19,8 @@ body {
 	border-radius: 50%;
 	width: 0;
 	position: absolute;
+}
+#tooltip {
+	border: 1px solid black;
+	color: black;
 }
