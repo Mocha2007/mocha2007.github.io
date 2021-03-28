@@ -51,14 +51,6 @@ const data = [
 		dec: [-52, 41, 44.381],
 	},
 	{
-		name: 'Pleiades',
-		type: 'open cluster',
-		dist: 444*ly,
-		ra: [3, 47, 24],
-		dec: [24, 7, 0],
-		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Pleiades_large.jpg/640px-Pleiades_large.jpg',
-	},
-	{
 		name: 'Betelgeuse',
 		type: 'star',
 		dist: 548*ly,
@@ -99,6 +91,23 @@ const data = [
 		dist: 2615*ly,
 		ra: [20, 41, 25.9],
 		dec: [45, 16, 49],
+	},
+	// not stars, but not in NGC; sort by dist
+	{
+		name: 'Pleiades',
+		type: 'open cluster',
+		dist: 444*ly,
+		ra: [3, 47, 24],
+		dec: [24, 7, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Pleiades_large.jpg/640px-Pleiades_large.jpg',
+	},
+	{
+		name: 'Small Sagittarius Star Cloud',
+		type: 'star cloud',
+		dist: 1e4*ly,
+		ra: [18, 17, 0],
+		dec: [-18, 29, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Messier_24_Colombari_crop_invert.jpg',
 	},
 	// sort by NGC identifier
 	{ // NGC 1952
@@ -149,6 +158,14 @@ const data = [
 		dec: [-32, 13, 0],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/7/7f/M6a.jpg',
 	},
+	{ // NGC 6514
+		name: 'Trifid Nebula',
+		type: 'emission nebula',
+		dist: 4100*ly,
+		ra: [18, 2, 23],
+		dec: [-23, 1, 48],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/f/f3/Trifid.nebula.arp.750pix.jpg',
+	},
 	{ // NGC 6523
 		name: 'Lagoon Nebula',
 		type: 'emission nebula',
@@ -157,6 +174,14 @@ const data = [
 		dec: [-24, 23, 12],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/VST_images_the_Lagoon_Nebula.jpg/800px-VST_images_the_Lagoon_Nebula.jpg',
 	},
+	{ // NGC 6531
+		name: 'Messier 21',
+		type: 'open cluster',
+		dist: 3930*ly,
+		ra: [18, 4, 13],
+		dec: [-22, 29, 24],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Messier_21.jpg',
+	},
 	{ // NGC 6611
 		name: 'Eagle Nebula',
 		type: 'emission nebula',
@@ -164,6 +189,14 @@ const data = [
 		ra: [18, 18, 48],
 		dec: [-13, 49, 0],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Eagle_Nebula_from_ESO.jpg/600px-Eagle_Nebula_from_ESO.jpg',
+	},
+	{ // NGC 6613
+		name: 'Messier 18',
+		type: 'open cluster',
+		dist: 4230*ly,
+		ra: [18, 19, 58],
+		dec: [-17, 6, 6],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/6/64/Messier_18.jpg',
 	},
 	{ // NGC 6618
 		name: 'Omega Nebula',
@@ -180,6 +213,30 @@ const data = [
 		ra: [18, 27.7, 0],
 		dec: [6, 34, 0],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/1/14/NGC_6633.png',
+	},
+	{ // NGC 6694
+		name: 'Messier 26',
+		type: 'open cluster',
+		dist: 5160*ly,
+		ra: [18, 45, 18],
+		dec: [-9, 23, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Messier_26.jpg/600px-Messier_26.jpg',
+	},
+	{ // NGC 6705
+		name: 'Wild Duck Cluster',
+		type: 'open cluster',
+		dist: 6120*ly,
+		ra: [18, 51, 5],
+		dec: [-6, 16, 12],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Eso1430a.jpg/684px-Eso1430a.jpg',
+	},
+	{ // NGC 6809
+		name: 'Messier 55',
+		type: 'open cluster',
+		dist: 17.6e3*ly,
+		ra: [19, 39, 59.71],
+		dec: [-30, 57, 53.1],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/6/65/M55.jpg',
 	},
 	{ // NGC 7092
 		name: 'Messier 39',

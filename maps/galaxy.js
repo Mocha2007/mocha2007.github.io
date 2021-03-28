@@ -54,9 +54,11 @@ class Body {
 	}
 	get color(){
 		const colors = {
+			'globular cluster': '#FC9',
 			'emission nebula': 'pink',
 			'open cluster': '#CFF',
 			'star': '#FFFFC0',
+			'star cloud': '#ACC',
 			'sun': '#FCC857',
 			'supernova remnant': '#9C8AE4',
 		};
