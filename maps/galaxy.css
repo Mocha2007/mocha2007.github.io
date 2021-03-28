@@ -1,14 +1,22 @@
 html {
 	background-color: black;
 	color: silver;
+	overflow: hidden;
 }
 body {
 	margin: 0;
 }
 .datum {
 	background-color: red;
+	border-radius: 50%;
 	cursor: help;
 	height: 5px;
 	position: absolute;
 	width: 5px;
+}
+#galacticDisk {
+	background-color: #446;
+	border-radius: 50%;
+	width: 0;
+	position: absolute;
 }

@@ -48,7 +48,7 @@ class Body {
 		this.coords = coords;
 		this.desc = desc;
 		this.img = img;
-		this.href = href;
+		this.href = href ? href : 'https://en.wikipedia.org/wiki/' + this.name;
 		Body.list.push(this);
 	}
 	/** @returns {[number, number, number]} xyz coords */
@@ -73,6 +73,7 @@ class Body {
 		div.style.left = `calc(50% + ${45*x}%)`;
 		div.style.top = `calc(50% + ${45*y}%)`;
 		const color =  {
+			'emission nebula': 'pink',
 			'star': '#FFFFC0',
 			'sun': '#FCC857',
 			'supernova remnant': '#9C8AE4',
@@ -109,4 +110,11 @@ function main(){
 		Math.max(Math.abs(b.galacticCoords[0]), Math.abs(b.galacticCoords[2]))
 	));
 	Body.list.forEach(b => b.createElement());
+	const sgra_ = Body.fromName('Sgr A*');
+	const disk = document.getElementById('galacticDisk');
+	const scale = 45/Body.maxDim;// %/m
+	const size = 2*52850*ly*scale;
+	disk.style.paddingLeft = disk.style.height = size + '%';
+	disk.style.left = `calc(50% - ${size/2}%)`;
+	disk.style.top = `calc(50% + ${sgra_.dist*scale-size/2}%)`;
 }
