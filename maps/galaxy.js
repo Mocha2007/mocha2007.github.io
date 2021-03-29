@@ -115,11 +115,13 @@ class Body {
 		tt.innerHTML = '<center><b>' + this.name + '</b></center>' + proper(this.type);
 		if (this.img)
 			tt.innerHTML += '<center><img src="'+this.img+'" height="100px"></center>';
+		else
+			tt.innerHTML += '<br>';
 		tt.innerHTML += `RA: ${round(this.coords.ra/pi*180, 2)}&deg;<br>
 		DEC: ${round(this.coords.dec/pi*180, 2)}&deg;<br>
 		DIST: ${round(this.dist/ly)} ly`;
 		if (this.desc)
-			tt.innerHTML += this.desc;
+			tt.innerHTML += '<br>' + this.desc;
 		return tt;
 	}
 	createElement(){
