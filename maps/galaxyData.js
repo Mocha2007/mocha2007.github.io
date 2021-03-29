@@ -92,6 +92,13 @@ const data = [
 		ra: [20, 41, 25.9],
 		dec: [45, 16, 49],
 	},
+	{
+		name: 'Chi Aurigae',
+		type: 'star',
+		dist: 3032*ly,
+		ra: [5, 32, 43.67312],
+		dec: [32, 11, 31.2753],
+	},
 	// not stars, but not in NGC; sort by dist
 	{
 		name: 'Pleiades',
@@ -110,6 +117,14 @@ const data = [
 		img: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Messier_24_Colombari_crop_invert.jpg',
 	},
 	// sort by NGC identifier
+	{ // NGC 1912
+		name: 'Messier 38',
+		type: 'open cluster',
+		dist: 3480*ly,
+		ra: [5, 28, 43],
+		dec: [35, 51, 18],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/M38_Open_Cluster.jpg/640px-M38_Open_Cluster.jpg',
+	},
 	{ // NGC 1952
 		name: 'Crab Nebula',
 		type: 'supernova remnant',
@@ -117,6 +132,22 @@ const data = [
 		ra: [5, 34, 31.94],
 		dec: [22, 0, 52.2],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Crab_Nebula.jpg/600px-Crab_Nebula.jpg',
+	},
+	{ // NGC 1960
+		name: 'Messier 36',
+		type: 'open cluster',
+		dist: 4340*ly,
+		ra: [5, 36, 18],
+		dec: [34, 8, 24],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/d/dc/M36_2mass.jpg',
+	},
+	{ // NGC 2099
+		name: 'Messier 37',
+		type: 'open cluster',
+		dist: 4511*ly,
+		ra: [5, 52, 18],
+		dec: [32, 33, 2],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/M37_Mazur_full.jpg/618px-M37_Mazur_full.jpg',
 	},
 	{ // NGC 2237
 		name: 'Rosette Nebula',
@@ -141,6 +172,14 @@ const data = [
 		ra: [10, 45, 8.5],
 		dec: [-59, 52, 4],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Eagle_Nebula_from_ESO.jpg/600px-Eagle_Nebula_from_ESO.jpg',
+	},
+	{
+		name: 'Omega Centauri',
+		type: 'globular cluster',
+		dist: 15.8e3*ly,
+		ra: [13, 26, 47.28],
+		dec: [-47, 28, 46.1],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Omega_Centauri_by_ESO.jpg/638px-Omega_Centauri_by_ESO.jpg',
 	},
 	{ // NGC 6334
 		name: 'Cat&apos;s Paw Nebula',
