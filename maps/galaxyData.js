@@ -74,6 +74,13 @@ const data = [
 		dec: [-52, 41, 44.381],
 	},
 	{
+		name: 'Polaris',
+		type: 'star',
+		dist: 378*ly,
+		ra: [2, 31, 49.09],
+		dec: [89, 15, 50.8],
+	},
+	{
 		name: 'Betelgeuse',
 		type: 'star',
 		dist: 548*ly,
@@ -116,12 +123,33 @@ const data = [
 		dec: [-47, 20, 11.7108],
 	},
 	{
+		name: 'Mu Sagittarii',
+		type: 'star',
+		dist: 920*ly,
+		ra: [18, 13, 45.8],
+		dec: [-21, 3, 32],
+	},
+	{
+		name: 'Mintaka',
+		type: 'star',
+		dist: 1200*ly,
+		ra: [5, 32, 0.40009],
+		dec: [0, -17, -56.7424],
+	},
+	{
 		name: 'Alnitak',
 		type: 'star',
 		dist: 1260*ly,
 		ra: [5, 40, 45.52666],
 		dec: [-1, 56, 34.2649],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Ngc2024_2mass.jpg',
+	},
+	{
+		name: 'Eta Leonis',
+		type: 'star',
+		dist: 1270*ly,
+		ra: [10, 7, 19.95186],
+		dec: [16, 45, 45.592],
 	},
 	{
 		name: 'Wezen',
@@ -164,6 +192,35 @@ const data = [
 		dist: 3032*ly,
 		ra: [5, 32, 43.67312],
 		dec: [32, 11, 31.2753],
+	},
+	{
+		name: 'Mu Cephei',
+		type: 'star',
+		dist: 940*pc, // ~3066 ly
+		ra: [21, 43, 30.4609],
+		dec: [58, 46, 48.166],
+	},
+	{
+		name: 'Rho Cassiopeiae',
+		type: 'star',
+		dist: 1050*pc, // ~3425 ly
+		ra: [23, 54, 23],
+		dec: [57, 29, 58],
+	},
+	{
+		name: 'Kappa Cassiopeiae',
+		type: 'star',
+		dist: 4e3*ly,
+		ra: [0, 32, 59.991],
+		dec: [62, 55, 54.42],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Kappa_Cassiopeiae.jpg/631px-Kappa_Cassiopeiae.jpg',
+	},
+	{
+		name: 'Alpha Camelopardalis',
+		type: 'star',
+		dist: 6e3*ly,
+		ra: [4, 54, 3.01040],
+		dec: [66, 20, 33.6365],
 	},
 	// not stars, but not in NGC; sort by dist
 	{
@@ -406,6 +463,14 @@ const data = [
 		ra: [20, 6, 4.85],
 		dec: [-21, 55, 17.85],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Crowded_cluster_Messier_75.jpg/640px-Crowded_cluster_Messier_75.jpg',
+	},
+	{ // NGC 7000
+		name: 'North America Nebula',
+		type: 'emission nebula',
+		dist: 2590*ly,
+		ra: [20, 59, 17.1],
+		dec: [44, 31, 44],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/North_America_and_Pelican_-_Wesley_Chang.jpg/658px-North_America_and_Pelican_-_Wesley_Chang.jpg',
 	},
 	{ // NGC 7089 Far side of Galaxy
 		name: 'Messier 2',
