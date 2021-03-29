@@ -20,6 +20,12 @@ body {
 	width: 0;
 	position: absolute;
 }
+#scaleWrapper {
+	left: 0;
+	position: absolute;
+	text-shadow: 2px 2px 5px black;
+	top: 0;
+}
 #tooltip {
 	border: 1px solid black;
 	color: black;

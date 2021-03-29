@@ -174,17 +174,17 @@ const Game = {
 		disk.style.top = `calc(50% + ${sgra_.dist*scale-size/2}vh)`;
 	},
 	/** @param {number} factor - 1=in; -1=out; 0=no change */
-	zoom(factor){
+	zoom(factor=0){
 		this.scale *= Math.pow(2, -factor);
 		this.redraw();
-		console.debug('zoom', factor);
+		document.getElementById('scale').innerHTML = 2*this.scale/ly;
 	},
 };
 
 function main(){
 	// reverse to draw closer objects later
 	data.reverse().forEach(o => Body.fromObject(o));
-	Game.redraw();
+	Game.zoom();
 	// set up keybinds
 	document.addEventListener('keydown', event => {
 		if (Game.keybinds[event.key]){
