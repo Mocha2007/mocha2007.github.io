@@ -24,6 +24,23 @@ const data = [
 		dec: [-29, 0, 28.118],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Sagittarius_A%2A.jpg',
 	},
+	// Some distant solar system objects, for scale...
+	{
+		name: 'Neptune',
+		type: 'planet',
+		dist: 30.87*au,
+		ra: [23, 29, 50.3], // location on 29 Mar 2021
+		dec: [-4, 25, 23.8],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/6/63/Neptune_-_Voyager_2_%2829347980845%29_flatten_crop.jpg',
+	},
+	{
+		name: 'Planet Nine',
+		type: 'planet',
+		dist: 630*au,
+		ra: [2, 0, 0], // est.
+		dec: [-20, 0, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Planet_nine_artistic_plain.png/640px-Planet_nine_artistic_plain.png',
+	},
 	// main
 	// nearby stars (sort by dist)
 	{
