@@ -30,3 +30,6 @@ body {
 	border: 1px solid black;
 	color: black;
 }
+#tooltip * {
+	padding: 5px;
+}

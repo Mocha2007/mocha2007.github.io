@@ -46,7 +46,8 @@ class Coords {
 	static fromThreeThree(ra1, ra2, ra3, dec1, dec2, dec3){
 		// 17h 45m 40.0409s; −29° 0′ 28.118″
 		const ra = ra1/12*pi + ra2/720*pi + ra3/43200*pi;
-		const s = Math.sign(dec1);
+		const s = dec1 ? Math.sign(dec1)
+			: dec2 ? Math.sign(dec2) : 1;
 		const dec = dec1/180*pi + s*dec2/10800*pi + s*dec3/648e3*pi;
 		return new Coords(ra, dec);
 	}
