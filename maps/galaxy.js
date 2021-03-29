@@ -25,23 +25,15 @@ class Coords {
 			+ Math.cos(this.dec)*Math.cos(deltaG)
 			* Math.cos(this.ra - alphaG)
 		);
-		const long1 = lNCP - Math.acos(
-			(Math.sin(this.dec)*Math.cos(deltaG)
-			- Math.cos(this.dec)*Math.sin(deltaG)*Math.cos(this.ra-alphaG))
-			/ Math.cos(lat)
-		);
-		const long2 = lNCP - Math.asin(
-			Math.cos(this.dec)*Math.sin(this.ra - alphaG)
-			/ Math.cos(lat)
-		);
-		const long3 = lNCP - Math.atan2(
+		// Wikipedia's formulas don't work so I used this
+		// https://www.atnf.csiro.au/people/Tobias.Westmeier/tools_coords.php
+		const long = lNCP - Math.atan2(
 			Math.cos(this.dec) * Math.sin(this.ra - alphaG),
 			Math.sin(this.dec)*Math.cos(deltaG)
 				- Math.cos(this.dec)*Math.sin(deltaG)
 				* Math.cos(this.ra - alphaG)
 		);
-		console.debug(long1, long2, long3);
-		return [lat, long3];
+		return [lat, long];
 	}
 	/**
 	 * @param {number} ra1 hours
@@ -130,8 +122,8 @@ class Body {
 		const div = document.createElement('div');
 		div.classList.add('datum');
 		const gc = this.galacticXYZ;
-		const x = gc[xIndex]/Body.maxDim;
-		const y = gc[yIndex]/Body.maxDim;
+		const x = gc[xIndex]/Game.scale;
+		const y = gc[yIndex]/Game.scale;
 		div.style.left = `calc(50% + ${45*x}vh)`;
 		div.style.top = `calc(50% + ${45*y}vh)`;
 		div.style.backgroundColor = this.color;
@@ -162,17 +154,42 @@ class Body {
 /** @type {Body[]} */
 Body.list = [];
 
+const Game = {
+	keybinds: {
+		'=': () => Game.zoom(1), // unshifted +
+		'+': () => Game.zoom(1),
+		'-': () => Game.zoom(-1),
+	},
+	scale: 32768*ly,
+	redraw(){
+		canvas.innerHTML = '';
+		Body.list.forEach(b => b.createElement());
+		// disk
+		const sgra_ = Body.fromName('Sgr A*');
+		const disk = document.getElementById('galacticDisk');
+		const scale = 45/Game.scale;// %/m
+		const size = 2*52850*ly*scale;
+		disk.style.paddingLeft = disk.style.height = size + 'vh';
+		disk.style.left = `calc(50% - ${size/2}vh)`;
+		disk.style.top = `calc(50% + ${sgra_.dist*scale-size/2}vh)`;
+	},
+	/** @param {number} factor - 1=in; -1=out; 0=no change */
+	zoom(factor){
+		this.scale *= Math.pow(2, -factor);
+		this.redraw();
+		console.debug('zoom', factor);
+	},
+};
+
 function main(){
-	data.forEach(o => Body.fromObject(o));
-	Body.maxDim = Math.max(...Body.list.map(b =>
-		Math.max(Math.abs(b.galacticXYZ[xIndex]), Math.abs(b.galacticXYZ[yIndex]))
-	));
-	Body.list.forEach(b => b.createElement());
-	const sgra_ = Body.fromName('Sgr A*');
-	const disk = document.getElementById('galacticDisk');
-	const scale = 45/Body.maxDim;// %/m
-	const size = 2*52850*ly*scale;
-	disk.style.paddingLeft = disk.style.height = size + 'vh';
-	disk.style.left = `calc(50% - ${size/2}vh)`;
-	disk.style.top = `calc(50% + ${sgra_.dist*scale-size/2}vh)`;
+	// reverse to draw closer objects later
+	data.reverse().forEach(o => Body.fromObject(o));
+	Game.redraw();
+	// set up keybinds
+	document.addEventListener('keydown', event => {
+		if (Game.keybinds[event.key]){
+			Game.keybinds[event.key]();
+		}
+		console.debug(event.key);
+	});
 }

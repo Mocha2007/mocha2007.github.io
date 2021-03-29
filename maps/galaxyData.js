@@ -26,7 +26,6 @@ const data = [
 	},
 	// main
 	// nearby stars (sort by dist)
-	/*
 	{
 		name: 'Proxima Centauri',
 		type: 'star',
@@ -42,7 +41,6 @@ const data = [
 		ra: [6, 45, 8.91728],
 		dec: [-16, 42, 58.0171],
 	},
-	*/
 	{
 		name: 'Canopus',
 		type: 'star',
@@ -215,6 +213,15 @@ const data = [
 		dec: [-1, 51, 0],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/3/36/NASA-FlameNebula-NGC2024-20140507.jpg',
 	},
+	{ // NGC 2070; LMC
+		name: 'Tarantula Nebula',
+		type: 'emission nebula',
+		dist: 160e3*ly,
+		ra: [5, 38, 38],
+		dec: [-69, 5.7, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Tarantula_Nebula_TRAPPIST.jpg/594px-Tarantula_Nebula_TRAPPIST.jpg',
+		href: 'https://en.wikipedia.org/wiki/Tarantula_Nebula',
+	},
 	{ // NGC 2099
 		name: 'Messier 37',
 		type: 'open cluster',
@@ -351,6 +358,14 @@ const data = [
 		dec: [-6, 16, 12],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Eso1430a.jpg/684px-Eso1430a.jpg',
 	},
+	{ // NGC 6715; SagDEG
+		name: 'Messier 54',
+		type: 'globular cluster',
+		dist: 87.4e3*ly,
+		ra: [18, 55, 3.33],
+		dec: [-30, 28, 47.5],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Messier_54_HST.jpg/612px-Messier_54_HST.jpg',
+	},
 	{ // NGC 6809
 		name: 'Messier 55',
 		type: 'globular cluster',
@@ -358,25 +373,6 @@ const data = [
 		ra: [19, 39, 59.71],
 		dec: [-30, 57, 53.1],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/6/65/M55.jpg',
-	},
-	{ // NGC 7092
-		name: 'Messier 39',
-		type: 'open cluster',
-		dist: 1010*ly,
-		ra: [21, 31, 48],
-		dec: [48, 26, 0],
-		img: 'https://upload.wikimedia.org/wikipedia/commons/8/83/M39_Mazur.jpg',
-	},
-];
-
-const unusedData = [ // objects beyond ~50 kly are outside the galaxy
-	{ // NGC 7089 Far side of Galaxy
-		name: 'Messier 2',
-		type: 'globular cluster',
-		dist: 55e3*ly,
-		ra: [21, 33, 27.02],
-		dec: [0, -49, -23.7],
-		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Messier2_-_HST_-_Potw1913a.jpg/597px-Messier2_-_HST_-_Potw1913a.jpg',
 	},
 	{ // NGC 6864 Far side of Galaxy
 		name: 'Messier 75',
@@ -386,6 +382,23 @@ const unusedData = [ // objects beyond ~50 kly are outside the galaxy
 		dec: [-21, 55, 17.85],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Crowded_cluster_Messier_75.jpg/640px-Crowded_cluster_Messier_75.jpg',
 	},
+	{ // NGC 7089 Far side of Galaxy
+		name: 'Messier 2',
+		type: 'globular cluster',
+		dist: 55e3*ly,
+		ra: [21, 33, 27.02],
+		dec: [0, -49, -23.7],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Messier2_-_HST_-_Potw1913a.jpg/597px-Messier2_-_HST_-_Potw1913a.jpg',
+	},
+	{ // NGC 7092
+		name: 'Messier 39',
+		type: 'open cluster',
+		dist: 1010*ly,
+		ra: [21, 31, 48],
+		dec: [48, 26, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/8/83/M39_Mazur.jpg',
+	},
+	// extragalactic and no NGC identifier
 	{ // Halo
 		name: 'Koposov 1',
 		type: 'globular cluster',
@@ -393,22 +406,5 @@ const unusedData = [ // objects beyond ~50 kly are outside the galaxy
 		ra: [11, 59, 18],
 		dec: [12, 15, 36],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/5/56/GLC_Koposov1.png',
-	},
-	{ // NGC 2070; LMC
-		name: 'Tarantula Nebula',
-		type: 'emission nebula',
-		dist: 160e3*ly,
-		ra: [5, 38, 38],
-		dec: [-69, 5.7, 0],
-		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Tarantula_Nebula_TRAPPIST.jpg/594px-Tarantula_Nebula_TRAPPIST.jpg',
-		href: 'https://en.wikipedia.org/wiki/Tarantula_Nebula',
-	},
-	{ // NGC 6715; SagDEG
-		name: 'Messier 54',
-		type: 'globular cluster',
-		dist: 87.4e3*ly,
-		ra: [18, 55, 3.33],
-		dec: [-30, 28, 47.5],
-		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Messier_54_HST.jpg/612px-Messier_54_HST.jpg',
 	},
 ];
