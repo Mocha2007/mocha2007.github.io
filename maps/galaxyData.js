@@ -35,6 +35,14 @@ const data = [
 		img: 'https://upload.wikimedia.org/wikipedia/commons/9/95/New_shot_of_Proxima_Centauri%2C_our_nearest_neighbour.jpg',
 	},
 	{
+		name: 'Alpha Centauri',
+		type: 'star',
+		dist: 4.37*ly,
+		ra: [14, 39, 36],
+		dec: [-60, 50, 9],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Alpha%2C_Beta_and_Proxima_Centauri_%281%29.jpg/640px-Alpha%2C_Beta_and_Proxima_Centauri_%281%29.jpg',
+	},
+	{
 		name: 'Sirius',
 		type: 'star',
 		dist: 8.6*ly,
