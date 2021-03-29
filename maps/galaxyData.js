@@ -79,11 +79,54 @@ const data = [
 		dec: [-8, 12, 5.8981],
 	},
 	{
+		name: 'Zeta Puppis',
+		type: 'star',
+		dist: 1080*ly,
+		ra: [8, 3, 35.1],
+		dec: [-40, 0, 11.6],
+	},
+	{
+		name: 'Gamma Velorum',
+		type: 'star',
+		dist: 379*pc, // ~1237
+		ra: [8, 9, 31.95013],
+		dec: [-47, 20, 11.7108],
+	},
+	{
+		name: 'Alnitak',
+		type: 'star',
+		dist: 1260*ly,
+		ra: [5, 40, 45.52666],
+		dec: [-1, 56, 34.2649],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Ngc2024_2mass.jpg',
+	},
+	{
+		name: 'Wezen',
+		type: 'star',
+		dist: 1600*ly,
+		ra: [7, 8, 23.48608],
+		dec: [-26, 23, 35.5474],
+	},
+	{
+		name: 'Gamma Cygni',
+		type: 'star',
+		dist: 1800*ly,
+		ra: [20, 22, 13.70184],
+		dec: [40, 15, 24.045],
+	},
+	{
 		name: 'Alnilam',
 		type: 'star',
 		dist: 2000*ly,
 		ra: [5, 36, 12.8],
 		dec: [-1, 12, 6.9],
+	},
+	{
+		name: 'Aludra',
+		type: 'star',
+		dist: 2000*ly,
+		ra: [7, 24, 5.70228],
+		dec: [-29, 18, 11.1798],
 	},
 	{
 		name: 'Deneb',
@@ -117,6 +160,14 @@ const data = [
 		img: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Messier_24_Colombari_crop_invert.jpg',
 	},
 	// sort by NGC identifier
+	{ // NGC 1499
+		name: 'California Nebula',
+		type: 'emission nebula',
+		dist: 1000*ly,
+		ra: [4, 3, 18],
+		dec: [36, 25, 18],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/4/41/California-nebula.jpeg',
+	},
 	{ // NGC 1912
 		name: 'Messier 38',
 		type: 'open cluster',
@@ -140,6 +191,14 @@ const data = [
 		ra: [5, 36, 18],
 		dec: [34, 8, 24],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/d/dc/M36_2mass.jpg',
+	},
+	{ // NGC 2024
+		name: 'Flame Nebula',
+		type: 'emission nebula',
+		dist: 1350*ly,
+		ra: [5, 41, 54],
+		dec: [-1, 51, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/3/36/NASA-FlameNebula-NGC2024-20140507.jpg',
 	},
 	{ // NGC 2099
 		name: 'Messier 37',
@@ -173,13 +232,21 @@ const data = [
 		dec: [-59, 52, 4],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Eagle_Nebula_from_ESO.jpg/600px-Eagle_Nebula_from_ESO.jpg',
 	},
-	{
+	{ // NGC 5139
 		name: 'Omega Centauri',
 		type: 'globular cluster',
 		dist: 15.8e3*ly,
 		ra: [13, 26, 47.28],
 		dec: [-47, 28, 46.1],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Omega_Centauri_by_ESO.jpg/638px-Omega_Centauri_by_ESO.jpg',
+	},
+	{
+		name: 'NGC 5460',
+		type: 'open cluster',
+		dist: 2350*ly,
+		ra: [14, 7, 27],
+		dec: [-48, 20, 36],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/NGC_5460.png',
 	},
 	{ // NGC 6334
 		name: 'Cat&apos;s Paw Nebula',
