@@ -686,6 +686,14 @@ const data = [
 		img: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Be087.jpg',
 	},
 	{
+		name: 'Sh2-264',
+		type: 'supernova remnant',
+		dist: 1100*ly,
+		ra: [5, 37, 0],
+		dec: [9, 30, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Orion%27s_Big_Head_Revealed_in_Infrared.jpg/645px-Orion%27s_Big_Head_Revealed_in_Infrared.jpg',
+	},
+	{
 		name: 'Medusa Nebula',
 		type: 'planetary nebula',
 		dist: 1500*ly,
@@ -700,6 +708,14 @@ const data = [
 		ra: [20, 50, 0],
 		dec: [31, 0, 0],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Ultraviolet_image_of_the_Cygnus_Loop_Nebula_crop.jpg/691px-Ultraviolet_image_of_the_Cygnus_Loop_Nebula_crop.jpg',
+	},
+	{
+		name: 'Simeis 147',
+		type: 'supernova remnant',
+		dist: 3000*ly,
+		ra: [5, 39, 6],
+		dec: [27, 59, 55],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/S147_SH2-240_GeorgesAttard_Apod1012020.jpg/423px-S147_SH2-240_GeorgesAttard_Apod1012020.jpg',
 	},
 	{
 		name: 'Spirograph Nebula',
