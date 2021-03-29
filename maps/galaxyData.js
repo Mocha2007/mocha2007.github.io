@@ -480,6 +480,14 @@ const data = [
 		dec: [-30, 57, 53.1],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/6/65/M55.jpg',
 	},
+	{ // NGC 6855
+		name: 'Dumbbell Nebula',
+		type: 'planetary nebula',
+		dist: 417*pc,
+		ra: [19, 59, 36.34],
+		dec: [22, 43, 16.09],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/7/7a/M27-Mazur.jpg',
+	},
 	{ // NGC 6864 Far side of Galaxy
 		name: 'Messier 75',
 		type: 'globular cluster',
