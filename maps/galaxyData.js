@@ -610,6 +610,14 @@ const data = [
 	},
 	// not a star and no NGC identifier; sort by dist
 	{
+		name: 'Berkeley 87',
+		type: 'open cluster',
+		dist: 946*ly,
+		ra: [20, 21, 43.01],
+		dec: [37, 22, 13.8],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Be087.jpg',
+	},
+	{
 		name: 'Abell 36',
 		type: 'planetary nebula',
 		dist: 780*ly,
