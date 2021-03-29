@@ -159,7 +159,22 @@ const data = [
 		dec: [-18, 29, 0],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Messier_24_Colombari_crop_invert.jpg',
 	},
+	{
+		name: 'FSR 1758',
+		type: 'globular cluster',
+		dist: 11.5e3*ly,
+		ra: [17, 31, 12],
+		dec: [-39, 48, 30],
+	},
 	// sort by NGC identifier
+	{ // NGC 104
+		name: '47 Tucanae',
+		type: 'globular cluster',
+		dist: 13e3*ly,
+		ra: [0, 24, 5.67],
+		dec: [-72, 4, 52.6],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Heic1510a.tif/lossy-page1-613px-Heic1510a.tif.jpg',
+	},
 	{ // NGC 1499
 		name: 'California Nebula',
 		type: 'emission nebula',
@@ -355,8 +370,31 @@ const data = [
 ];
 
 const unusedData = [ // objects beyond ~50 kly are outside the galaxy
-	// LMC
-	{ // NGC 2070
+	{ // NGC 7089 Far side of Galaxy
+		name: 'Messier 2',
+		type: 'globular cluster',
+		dist: 55e3*ly,
+		ra: [21, 33, 27.02],
+		dec: [0, -49, -23.7],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Messier2_-_HST_-_Potw1913a.jpg/597px-Messier2_-_HST_-_Potw1913a.jpg',
+	},
+	{ // NGC 6864 Far side of Galaxy
+		name: 'Messier 75',
+		type: 'globular cluster',
+		dist: 68e3*ly,
+		ra: [20, 6, 4.85],
+		dec: [-21, 55, 17.85],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Crowded_cluster_Messier_75.jpg/640px-Crowded_cluster_Messier_75.jpg',
+	},
+	{ // Halo
+		name: 'Koposov 1',
+		type: 'globular cluster',
+		dist: 157.5e3*ly,
+		ra: [11, 59, 18],
+		dec: [12, 15, 36],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/5/56/GLC_Koposov1.png',
+	},
+	{ // NGC 2070; LMC
 		name: 'Tarantula Nebula',
 		type: 'emission nebula',
 		dist: 160e3*ly,
@@ -364,5 +402,13 @@ const unusedData = [ // objects beyond ~50 kly are outside the galaxy
 		dec: [-69, 5.7, 0],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Tarantula_Nebula_TRAPPIST.jpg/594px-Tarantula_Nebula_TRAPPIST.jpg',
 		href: 'https://en.wikipedia.org/wiki/Tarantula_Nebula',
+	},
+	{ // NGC 6715; SagDEG
+		name: 'Messier 54',
+		type: 'globular cluster',
+		dist: 87.4e3*ly,
+		ra: [18, 55, 3.33],
+		dec: [-30, 28, 47.5],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Messier_54_HST.jpg/612px-Messier_54_HST.jpg',
 	},
 ];
