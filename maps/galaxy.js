@@ -4,7 +4,7 @@
 
 /** @type {HTMLBodyElement} */
 const canvas = document.getElementById('canvas');
-const [xIndex, yIndex] = [0, 2];
+const [xIndex, yIndex] = [1, 0];
 
 class Coords {
 	/**
@@ -14,6 +14,34 @@ class Coords {
 	constructor(ra, dec){
 		this.ra = ra;
 		this.dec = dec;
+	}
+	get galactic(){ // CONFIRMED CORRECT
+		// https://en.wikipedia.org/wiki/Galactic_coordinate_system
+		const alphaG = 192.85948*pi/180;
+		const deltaG = 27.12825*pi/180;
+		const lNCP = 122.93192*pi/180;
+		const lat = Math.asin(
+			Math.sin(this.dec)*Math.sin(deltaG)
+			+ Math.cos(this.dec)*Math.cos(deltaG)
+			* Math.cos(this.ra - alphaG)
+		);
+		const long1 = lNCP - Math.acos(
+			(Math.sin(this.dec)*Math.cos(deltaG)
+			- Math.cos(this.dec)*Math.sin(deltaG)*Math.cos(this.ra-alphaG))
+			/ Math.cos(lat)
+		);
+		const long2 = lNCP - Math.asin(
+			Math.cos(this.dec)*Math.sin(this.ra - alphaG)
+			/ Math.cos(lat)
+		);
+		const long3 = lNCP - Math.atan2(
+			Math.cos(this.dec) * Math.sin(this.ra - alphaG),
+			Math.sin(this.dec)*Math.cos(deltaG)
+				- Math.cos(this.dec)*Math.sin(deltaG)
+				* Math.cos(this.ra - alphaG)
+		);
+		console.debug(long1, long2, long3);
+		return [lat, long3];
 	}
 	/**
 	 * @param {number} ra1 hours
@@ -65,15 +93,14 @@ class Body {
 		return colors[this.type] ? colors[this.type] : 'white';
 	}
 	/** @returns {[number, number, number]} xyz coords */
-	get galacticCoords(){
-		// set sgra_'s coords to ZERO ZERO
-		const sgra_ = Body.fromName('Sgr A*');
-		const ra_ = this.coords.ra - sgra_.coords.ra;
-		const dec_ = this.coords.dec - sgra_.coords.dec;
+	get galacticXYZ(){
+		// https://en.wikipedia.org/wiki/Spherical_coordinate_system#Cartesian_coordinates
+		// dec = up-down; ra = left-right
+		const [dec, ra] = this.coords.galactic;
 		return [
-			this.dist * Math.sin(ra_) * Math.cos(dec_),
-			this.dist * Math.sin(ra_) * Math.sin(dec_),
-			this.dist * Math.cos(ra_),
+			this.dist * Math.cos(dec) * Math.cos(ra),
+			this.dist * Math.cos(dec) * Math.sin(ra),
+			this.dist * Math.sin(dec),
 		];
 	}
 	get tooltip(){
@@ -97,10 +124,9 @@ class Body {
 		a.href = this.href;
 		const div = document.createElement('div');
 		div.classList.add('datum');
-		const gc = this.galacticCoords;
+		const gc = this.galacticXYZ;
 		const x = gc[xIndex]/Body.maxDim;
 		const y = gc[yIndex]/Body.maxDim;
-		console.debug(x, y);
 		div.style.left = `calc(50% + ${45*x}vh)`;
 		div.style.top = `calc(50% + ${45*y}vh)`;
 		div.style.backgroundColor = this.color;
@@ -134,7 +160,7 @@ Body.list = [];
 function main(){
 	data.forEach(o => Body.fromObject(o));
 	Body.maxDim = Math.max(...Body.list.map(b =>
-		Math.max(Math.abs(b.galacticCoords[xIndex]), Math.abs(b.galacticCoords[yIndex]))
+		Math.max(Math.abs(b.galacticXYZ[xIndex]), Math.abs(b.galacticXYZ[yIndex]))
 	));
 	Body.list.forEach(b => b.createElement());
 	const sgra_ = Body.fromName('Sgr A*');
