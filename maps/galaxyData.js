@@ -360,6 +360,14 @@ const data = [
 		dec: [-49, 10, 35.01],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/7/7f/Star_cluster_NGC_2547.jpg',
 	},
+	{ // NGC 3242
+		name: 'Ghost of Jupiter',
+		type: 'planetary nebula',
+		dist: 4800*ly,
+		ra: [10, 24, 46.1],
+		dec: [-18, 38, 32.6],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/NGC_3242_%22Ghost_of_Jupiter%22.png/619px-NGC_3242_%22Ghost_of_Jupiter%22.png',
+	},
 	{ // NGC 3372
 		name: 'Carina Nebula',
 		type: 'emission nebula',
@@ -600,7 +608,31 @@ const data = [
 		dec: [-20, 50, 13.6],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NGC7293_%282004%29.jpg/557px-NGC7293_%282004%29.jpg',
 	},
-	// not a star and no NGC identifier
+	// not a star and no NGC identifier; sort by dist
+	{
+		name: 'Abell 36',
+		type: 'planetary nebula',
+		dist: 780*ly,
+		ra: [13, 40, 41.34369],
+		dec: [-19, 52, 55.32],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/ESO_577-24_FORS2_VLT.jpg/551px-ESO_577-24_FORS2_VLT.jpg',
+	},
+	{
+		name: 'Medusa Nebula',
+		type: 'planetary nebula',
+		dist: 1500*ly,
+		ra: [7, 29, 2.69],
+		dec: [13, 14, 48.4],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Medusa_nebula.jpg/693px-Medusa_nebula.jpg',
+	},
+	{
+		name: 'Spirograph Nebula',
+		type: 'planetary nebula',
+		dist: 3600*ly,
+		ra: [5, 27, 28.2037],
+		dec: [-12, 41, 50.265],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/Spirograph_Nebula_-_Hubble_1999.jpg',
+	},
 	{
 		name: 'Lemon Slice Nebula',
 		type: 'planetary nebula',
