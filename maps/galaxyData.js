@@ -255,6 +255,14 @@ const data = [
 		dec: [-72, 4, 52.6],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Heic1510a.tif/lossy-page1-613px-Heic1510a.tif.jpg',
 	},
+	{ // NGC 650/651
+		name: 'Little Dumbbell Nebula',
+		type: 'planetary nebula',
+		dist: 2500*ly,
+		ra: [1, 42.4, 0],
+		dec: [51, 34, 31],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Little_Dumbbell_Nebula_M76_by_Goran_Nilsson%2C_Wim_van_Berlo_%26_Liverpool_Telescope.jpg/606px-Little_Dumbbell_Nebula_M76_by_Goran_Nilsson%2C_Wim_van_Berlo_%26_Liverpool_Telescope.jpg',
+	},
 	{ // NGC 1499
 		name: 'California Nebula',
 		type: 'emission nebula',
@@ -471,6 +479,14 @@ const data = [
 		ra: [18, 55, 3.33],
 		dec: [-30, 28, 47.5],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Messier_54_HST.jpg/612px-Messier_54_HST.jpg',
+	},
+	{ // NGC 6720
+		name: 'Ring Nebula',
+		type: 'planetary nebula',
+		dist: 2567*ly,
+		ra: [18, 53, 35.079],
+		dec: [33, 1, 45.03],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/M57_The_Ring_Nebula.JPG/587px-M57_The_Ring_Nebula.JPG',
 	},
 	{ // NGC 6809
 		name: 'Messier 55',
