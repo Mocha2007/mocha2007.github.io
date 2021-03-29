@@ -338,7 +338,7 @@ const data = [
 	},
 	{ // NGC 6809
 		name: 'Messier 55',
-		type: 'open cluster',
+		type: 'globular cluster',
 		dist: 17.6e3*ly,
 		ra: [19, 39, 59.71],
 		dec: [-30, 57, 53.1],
