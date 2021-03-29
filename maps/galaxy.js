@@ -79,6 +79,7 @@ class Body {
 			'emission nebula': 'pink',
 			'open cluster': '#CFF',
 			'planetary nebula': '#a0d8a0',
+			'reflection nebula': 'lightblue',
 			'star': '#FFFFC0',
 			'star cloud': '#ACC',
 			'sun': '#FCC857',

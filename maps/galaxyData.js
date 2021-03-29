@@ -246,6 +246,14 @@ const data = [
 		ra: [17, 31, 12],
 		dec: [-39, 48, 30],
 	},
+	{ // NGC 2392
+		name: 'Necklace Nebula',
+		type: 'planetary nebula',
+		dist: 15e3*ly,
+		ra: [19, 43, 59.51104],
+		dec: [17, 9, 0.9579],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Necklace_Nebula_by_Hubble.jpg/539px-Necklace_Nebula_by_Hubble.jpg',
+	},
 	// sort by NGC identifier
 	{ // NGC 104
 		name: '47 Tucanae',
@@ -299,9 +307,17 @@ const data = [
 		name: 'Flame Nebula',
 		type: 'emission nebula',
 		dist: 1350*ly,
+		ra: [5, 46, 46.7],
+		dec: [0, 0, 50],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/3/36/NASA-FlameNebula-NGC2024-20140507.jpg',
+	},
+	{ // NGC 2068
+		name: 'Messier 78',
+		type: 'reflection nebula',
+		dist: 1350*ly,
 		ra: [5, 41, 54],
 		dec: [-1, 51, 0],
-		img: 'https://upload.wikimedia.org/wikipedia/commons/3/36/NASA-FlameNebula-NGC2024-20140507.jpg',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Messier_78.jpg/619px-Messier_78.jpg',
 	},
 	{ // NGC 2070; LMC
 		name: 'Tarantula Nebula',
@@ -328,6 +344,14 @@ const data = [
 		dec: [4, 49, 54],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/3/3f/NGC_2244_Rosette_Nebula.jpg',
 	},
+	{ // NGC 2392
+		name: 'Eskimo Nebula',
+		type: 'planetary nebula',
+		dist: 6520*ly,
+		ra: [7, 29, 10.7669],
+		dec: [20, 54, 42.488],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Ngc2392.jpg/600px-Ngc2392.jpg',
+	},
 	{
 		name: 'NGC 2547',
 		type: 'open cluster',
@@ -343,6 +367,14 @@ const data = [
 		ra: [10, 45, 8.5],
 		dec: [-59, 52, 4],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Eagle_Nebula_from_ESO.jpg/600px-Eagle_Nebula_from_ESO.jpg',
+	},
+	{ // NGC 3587
+		name: 'Owl Nebula',
+		type: 'planetary nebula',
+		dist: 2415*ly,
+		ra: [11, 14, 47.734],
+		dec: [55, 1, 8.5],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/The_Owl_Nebula_M97_Goran_Nilsson_%26_The_Liverpool_Telescope.jpg/606px-The_Owl_Nebula_M97_Goran_Nilsson_%26_The_Liverpool_Telescope.jpg',
 	},
 	{ // NGC 5139
 		name: 'Omega Centauri',
@@ -384,6 +416,14 @@ const data = [
 		dec: [-26, 31, 32.7],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Globular_star_cluster_Messier_4.jpg/621px-Globular_star_cluster_Messier_4.jpg',
 	},
+	{
+		name: 'NGC 6543',
+		type: 'planetary nebula',
+		dist: 11e3*ly,
+		ra: [17, 20, 46.3],
+		dec: [51, 45, 16],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/NGC_6326.jpg',
+	},
 	{ // NGC 6334
 		name: 'Cat&apos;s Paw Nebula',
 		type: 'emission nebula',
@@ -423,6 +463,14 @@ const data = [
 		ra: [18, 4, 13],
 		dec: [-22, 29, 24],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Messier_21.jpg',
+	},
+	{ // NGC 6543
+		name: 'Cat&apos; Eye Nebula',
+		type: 'planetary nebula',
+		dist: 3300*ly,
+		ra: [17, 58, 33.423],
+		dec: [66, 37, 59.52],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/NGC6543.jpg/600px-NGC6543.jpg',
 	},
 	{ // NGC 6611
 		name: 'Eagle Nebula',
@@ -512,6 +560,14 @@ const data = [
 		dec: [-21, 55, 17.85],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Crowded_cluster_Messier_75.jpg/640px-Crowded_cluster_Messier_75.jpg',
 	},
+	{
+		name: 'NGC 6886',
+		type: 'planetary nebula',
+		dist: 4600*ly,
+		ra: [20, 12, 42.83],
+		dec: [19, 59, 22.6],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/7/78/NGC_6886.jpg',
+	},
 	{ // NGC 7000
 		name: 'North America Nebula',
 		type: 'emission nebula',
@@ -536,7 +592,23 @@ const data = [
 		dec: [48, 26, 0],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/8/83/M39_Mazur.jpg',
 	},
-	// extragalactic and no NGC identifier
+	{ // NGC 7293
+		name: 'Helix Nebula',
+		type: 'planetary nebula',
+		dist: 650*ly,
+		ra: [22, 29, 38.55],
+		dec: [-20, 50, 13.6],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NGC7293_%282004%29.jpg/557px-NGC7293_%282004%29.jpg',
+	},
+	// not a star and no NGC identifier
+	{
+		name: 'Lemon Slice Nebula',
+		type: 'planetary nebula',
+		dist: 4500*ly,
+		ra: [12, 33, 6],
+		dec: [82, 34, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/IC_3568_%22Lemon_Slice%22.jpg',
+	},
 	{ // Halo
 		name: 'Koposov 1',
 		type: 'globular cluster',
