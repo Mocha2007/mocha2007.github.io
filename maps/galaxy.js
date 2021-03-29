@@ -101,7 +101,6 @@ class Body {
 	get tooltip(){
 		const tt = document.createElement('div');
 		const coords = [window.event.clientY, window.event.clientX];
-		tt.id = 'current_tooltip';
 		tt.style.backgroundColor = this.color;
 		tt.style.top = coords[0]-25 + 'px';
 		tt.style.left = coords[1]+25 + 'px';
@@ -133,7 +132,7 @@ class Body {
 		this.element = div;
 		// tooltip
 		div.onmouseover = () => document.getElementById('tooltip').appendChild(this.tooltip);
-		div.onmouseout = () => document.getElementById('current_tooltip').outerHTML = '';
+		div.onmouseout = () => document.getElementById('tooltip').innerHTML = '';
 		// end
 		a.appendChild(div);
 		canvas.appendChild(a);
