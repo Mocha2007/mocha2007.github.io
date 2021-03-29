@@ -1,4 +1,4 @@
-/* global data, ly, pi, proper, round */
+/* global data, ly, pi, proper, round, unitString */
 /* exported main */
 'use strict';
 
@@ -177,7 +177,7 @@ const Game = {
 	zoom(factor=0){
 		this.scale *= Math.pow(2, -factor);
 		this.redraw();
-		document.getElementById('scale').innerHTML = 2*this.scale/ly;
+		document.getElementById('scale').innerHTML = unitString(2*this.scale/ly, 'ly', 2);
 	},
 };
 
