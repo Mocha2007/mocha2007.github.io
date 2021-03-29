@@ -192,6 +192,5 @@ function main(){
 		if (Game.keybinds[event.key]){
 			Game.keybinds[event.key]();
 		}
-		console.debug(event.key);
 	});
 }

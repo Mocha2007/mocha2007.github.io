@@ -180,6 +180,13 @@ const data = [
 		dec: [-29, 18, 11.1798],
 	},
 	{
+		name: 'PSR B0943+10',
+		type: 'star',
+		dist: 630*pc, // ~2055 ly
+		ra: [9, 46, 7.31],
+		dec: [9, 51, 57.3],
+	},
+	{
 		name: 'Deneb',
 		type: 'star',
 		dist: 2615*ly,
@@ -222,6 +229,36 @@ const data = [
 		ra: [4, 54, 3.01040],
 		dec: [66, 20, 33.6365],
 	},
+	{
+		name: 'Tycho G',
+		type: 'star',
+		dist: 6e3*ly,
+		ra: [0, 25, 23.59],
+		dec: [64, 8, 2],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/SN1572.Companion.jpg',
+	},
+	{
+		name: 'WR 1',
+		type: 'star',
+		dist: 3150*pc,
+		ra: [0, 43, 28.39827],
+		dec: [64, 45, 35.4011],
+	},
+	{
+		name: '3C 58',
+		type: 'star',
+		dist: 10e3*ly,
+		ra: [2, 5, 38],
+		dec: [64, 49.7, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/3/34/3C58_chandra.jpg',
+	},
+	{
+		name: 'XTE J1739-285',
+		type: 'star',
+		dist: 39e3*ly,
+		ra: [17, 39, 53.95],
+		dec: [-28, 29, 46.8],
+	},
 	// not stars, but not in NGC; sort by dist
 	{
 		name: 'Pleiades',
@@ -246,7 +283,7 @@ const data = [
 		ra: [17, 31, 12],
 		dec: [-39, 48, 30],
 	},
-	{ // NGC 2392
+	{
 		name: 'Necklace Nebula',
 		type: 'planetary nebula',
 		dist: 15e3*ly,
@@ -648,6 +685,14 @@ const data = [
 		ra: [12, 33, 6],
 		dec: [82, 34, 0],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/IC_3568_%22Lemon_Slice%22.jpg',
+	},
+	{
+		name: 'Kepler&apos;s Supernova',
+		type: 'supernova remnant',
+		dist: 20e3*ly,
+		ra: [17, 30, 42],
+		dec: [-21, 29, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/Keplers_supernova.jpg',
 	},
 	{ // Halo
 		name: 'Koposov 1',
