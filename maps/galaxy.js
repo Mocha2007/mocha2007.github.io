@@ -161,6 +161,11 @@ const Game = {
 		'=': () => Game.zoom(1), // unshifted +
 		'+': () => Game.zoom(1),
 		'-': () => Game.zoom(-1),
+		// todo controls
+		// ? => about
+		// wasdqe => various rotations
+		// m => mapmode toggle
+		// have button to toggle "altitude" (Z) dashed lines
 	},
 	scale: 32768*ly,
 	redraw(){
