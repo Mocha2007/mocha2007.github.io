@@ -246,16 +246,15 @@ function holidayCSS(){
 	switch (month){
 		case 2:
 			src = 'mochentines';
-			if (day === 4){
+			if (day === 4)
 				title = 'Day of the Republic. Wiwie Erdeka! Long live the RTC!';
-			}
-			else {
+			else
 				title = 'Fuck merrily!';
-			}
 			break;
 		case 3:
 			src = 'mochricks';
-			title = 'Drink, ye bastard!';
+			if (day === 17)
+				title = 'Drink, ye bastard!';
 			break;
 		case 4:
 			if (day === 1){
@@ -266,57 +265,44 @@ function holidayCSS(){
 			break;
 		case 6:
 			src = 'mogay';
-			if (day === 23){
+			if (day === 23)
 				title = 'Happy birthday, MochaFiction Wiki! 2011-' + new Date().getFullYear();
-			}
-			else {
+			else
 				title = 'Everyone gets a nice big hug!';
-			}
 			break;
 		case 7:
-			if (day === 12){
+			if (day === 12)
 				title = 'King Witold\'s Birthday';
-			}
 			break;
 		case 9:
-			if (day === 19){
+			if (day === 19)
 				title = 'Yarrrr!';
-			}
 			break;
 		case 10:
 			src = 'mochaween';
-			if (day === 18){
+			if (day === 18)
 				title = 'Memorial Day for the Victims of the Bombing of Łódź';
-			}
-			else {
+			else
 				title = 'Boo, motherfucker!';
-			}
 			break;
 		case 11:
-			if (day === 7){
+			if (day === 7)
 				title = 'The Feast of Boris is today! \'Tis the season to be gorging!';
-			}
-			else if (day === 14){
+			else if (day === 14)
 				title = '<3';
-			}
 			break;
 		case 12:
 			src = 'mochristmas';
-			if (day === 4){
+			if (day === 4)
 				title = 'Today is Yuletide! Roast marshmallows and listen to spooky ghost stories in Seaside Town!';
-			}
-			else if (17 <= day && day < 23){
+			else if (17 <= day && day < 23)
 				title = 'Have a joyous Saturnalia!';
-			}
-			else if (day === 23){
+			else if (day === 23)
 				title = 'Happy Festivus!';
-			}
-			else if (day === 31){
+			else if (day === 31)
 				title = 'Party Time!';
-			}
-			else {
+			else
 				title = 'Have a frosty winter solstice!';
-			}
 			break;
 	}
 
