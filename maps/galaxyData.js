@@ -517,7 +517,7 @@ const data = [
 		img: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Messier_21.jpg',
 	},
 	{ // NGC 6543
-		name: 'Cat&apos; Eye Nebula',
+		name: 'Cat&apos;s Eye Nebula',
 		type: 'planetary nebula',
 		dist: 3300*ly,
 		ra: [17, 58, 33.423],
