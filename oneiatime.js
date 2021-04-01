@@ -242,6 +242,7 @@ function holidayCSS(){
 	var title = '';
 	var defaultSrc = 'mo';
 	var src = defaultSrc;
+	var img = document.getElementById('m');
 	switch (month){
 		case 2:
 			src = 'mochentines';
@@ -259,6 +260,7 @@ function holidayCSS(){
 		case 4:
 			if (day === 1){
 				document.getElementById('title').innerHTML = 'Schmocha&rsquo;s Site';
+				img.style.transform = 'rotate(180deg)';
 			}
 			break;
 		case 6:
@@ -317,14 +319,12 @@ function holidayCSS(){
 			break;
 	}
 
-	document.getElementById('m').title = title;
-	if (src !== defaultSrc){
-		document.getElementById('m').src = 'img/'+src+'.png';
-	}
+	img.title = title;
+	if (src !== defaultSrc)
+		img.src = 'img/'+src+'.png';
 
-	if (day === 11*month-17 && day === month*month + 3*month - 1){
-		document.getElementById('m').outerHTML = '<img id="m" src="img/mopril.png" width="200" alt="Mochadian Birthday Squiggle" onmouseover="playSound(\'sfx\')" onmouseout="stopSound(\'sfx\')"> <audio id="sfx" src="snd/partyhorn.mp3"/>';
-	}
+	if (day === 11*month-17 && day === month*month + 3*month - 1)
+		img.outerHTML = '<img id="m" src="img/mopril.png" width="200" alt="Mochadian Birthday Squiggle" onmouseover="playSound(\'sfx\')" onmouseout="stopSound(\'sfx\')"> <audio id="sfx" src="snd/partyhorn.mp3"/>';
 }
 
 function oneiaTime(){
