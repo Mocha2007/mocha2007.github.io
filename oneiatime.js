@@ -261,6 +261,7 @@ function holidayCSS(){
 			if (day === 1){
 				document.getElementById('title').innerHTML = 'Schmocha&rsquo;s Site';
 				img.style.transform = 'rotate(180deg)';
+				document.getElementById('subtitle').innerHTML = document.getElementById('subtitle').innerHTML.split('').reverse().join('');
 			}
 			break;
 		case 6:
