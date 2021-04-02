@@ -241,7 +241,7 @@ const Game = {
 
 function main(){
 	// reverse to draw closer objects later
-	data.reverse().forEach(o => Body.fromObject(o));
+	data.sort((a, b) => b.dist - a.dist).forEach(o => Body.fromObject(o));
 	Game.zoom();
 	// set up keybinds
 	document.addEventListener('keydown', event => {
