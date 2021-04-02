@@ -44,9 +44,11 @@ body {
 }
 #tooltip img {
 	display: block;
+	height: auto;
 	margin: 0 auto;
 	max-height: 200px;
-	width: 200px;
+	max-width: 200px;
+	width: auto;
 }
 #tooltip .desc {
 	font-style: italic;
