@@ -97,7 +97,7 @@ class Body {
 		const div = document.createElement('div');
 		div.classList.add('altitude');
 		[div.style.left, div.style.top] = this.divCoords;
-		const h = 45*this.galacticXYZ[zIndex]/Game.scale;
+		const h = -45*this.galacticXYZ[zIndex]/Game.scale;
 		const hs = `${h}vh`;
 		if (h < 0){
 			div.style.top = `calc(${div.style.top} + ${hs})`;
@@ -117,7 +117,9 @@ class Body {
 	get divCoords(){
 		const gc = this.galacticXYZ;
 		const x = gc[xIndex]/Game.scale;
-		const y = gc[yIndex]/Game.scale;
+		let y = gc[yIndex]/Game.scale;
+		if (altitude)
+			y += gc[zIndex]/Game.scale;
 		return [
 			`calc(50% + ${45*x}vh)`,
 			`calc(50% + ${45*y}vh)`,
@@ -205,6 +207,7 @@ const Game = {
 		// todo controls
 		// ? => about
 		// m => mapmode toggle
+		// federation/klingon control mode? lol
 	},
 	scale: 32768*ly,
 	redraw(){
