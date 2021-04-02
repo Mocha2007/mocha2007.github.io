@@ -235,6 +235,7 @@ function japan(){
 }
 
 function holidayCSS(){
+	var year = new Date().getFullYear();
 	var month = new Date().getMonth() + 1;
 	var day = new Date().getDate();
 	console.log(month, day);
@@ -263,10 +264,14 @@ function holidayCSS(){
 				document.getElementById('subtitle').innerHTML = document.getElementById('subtitle').innerHTML.split('').reverse().join('');
 			}
 			break;
+		case 5:
+			if (day === 29)
+				title = 'Roma renascetur';
+			break;
 		case 6:
 			src = 'mogay';
 			if (day === 23)
-				title = 'Happy birthday, MochaFiction Wiki! 2011-' + new Date().getFullYear();
+				title = 'Happy birthday, MochaFiction Wiki! 2011-' + year;
 			else
 				title = 'Everyone gets a nice big hug!';
 			break;
@@ -288,6 +293,10 @@ function holidayCSS(){
 		case 11:
 			if (day === 7)
 				title = 'The Feast of Boris is today! \'Tis the season to be gorging!';
+			else if (day === 11){
+				title = '1918 - ' + year;
+				img.style.filter = 'hue-rotate(180deg)';
+			}
 			else if (day === 14)
 				title = '<3';
 			break;
