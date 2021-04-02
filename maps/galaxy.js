@@ -1,10 +1,15 @@
-/* global data, ly, pi, proper, round, unitString */
+/* global data, ly, mod, pi, proper, round, unitString */
 /* exported main */
 'use strict';
 
 /** @type {HTMLBodyElement} */
 const canvas = document.getElementById('canvas');
-const [xIndex, yIndex] = [1, 0];
+let [xIndex, yIndex] = [1, 0];
+const rotations = [
+	[1, 0],
+	[2, 1],
+	[0, 2],
+];
 
 class Coords {
 	/**
@@ -169,6 +174,8 @@ const Game = {
 		'=': () => Game.zoom(1), // unshifted +
 		'+': () => Game.zoom(1),
 		'-': () => Game.zoom(-1),
+		'q': () => Game.rotate(-1),
+		'e': () => Game.rotate(1),
 		// todo controls
 		// ? => about
 		// wasdqe => various rotations
@@ -179,14 +186,11 @@ const Game = {
 	redraw(){
 		canvas.innerHTML = '';
 		Body.list.forEach(b => b.createElement());
-		// disk
-		const sgra_ = Body.fromName('Sgr A*');
-		const disk = document.getElementById('galacticDisk');
-		const scale = 45/Game.scale;// %/m
-		const size = 2*52850*ly*scale;
-		disk.style.paddingLeft = disk.style.height = size + 'vh';
-		disk.style.left = `calc(50% - ${size/2}vh)`;
-		disk.style.top = `calc(50% + ${sgra_.dist*scale-size/2}vh)`;
+	},
+	rotate(direction=0){
+		const i = mod(rotations.map(x => x[0]).indexOf(xIndex) + direction, rotations.length);
+		[xIndex, yIndex] = rotations[i];
+		this.redraw();
 	},
 	/** @param {number} factor - 1=in; -1=out; 0=no change */
 	zoom(factor=0){

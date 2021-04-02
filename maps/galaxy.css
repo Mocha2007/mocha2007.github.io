@@ -12,12 +12,6 @@ body {
 	border-radius: 50%;
 	position: absolute;
 }
-#galacticDisk {
-	background-color: #446;
-	border-radius: 50%;
-	width: 0;
-	position: absolute;
-}
 #scaleWrapper {
 	left: 0;
 	position: absolute;

@@ -1068,6 +1068,15 @@ const data = [
 	// @ Draco Dwarf
 	// Local Group (excl. Satellites of Milky Way)
 	{
+		name: 'Milky Way',
+		type: 'galaxy',
+		dist: 26673*ly,
+		ra: [17, 45, 40.0409],
+		dec: [-29, 0, 28.118],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/ESO_-_Milky_Way.jpg/640px-ESO_-_Milky_Way.jpg',
+		radius: 52850*ly,
+	},
+	{
 		name: 'Andromeda Galaxy',
 		type: 'galaxy',
 		dist: 2.5e6*ly,
