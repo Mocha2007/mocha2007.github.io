@@ -319,6 +319,8 @@ function unique(v, i, a){
  * @param {string} name
  */
 function unitString(value, name, rounding = 2, constant = 1){
+	if (!value)
+		return `${value} ${name}`;
 	value *= constant;
 	const prefixes = 'yzafpnμm kMGTPEZY'.split('');
 	const i = Math.floor(Math.log10(value)/3) + 8;
