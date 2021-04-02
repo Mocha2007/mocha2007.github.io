@@ -337,12 +337,97 @@ const data = [
 	},
 	// not stars, but not in NGC; sort by dist
 	{
+		name: 'Ursa Major Moving Group',
+		type: 'moving group',
+		dist: 80*ly,
+		ra: [12, 0, 0],
+		dec: [56, 0, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Ursa_Major_%C5%81azy.jpg/640px-Ursa_Major_%C5%81azy.jpg',
+	},
+	{
+		name: 'AB Doradus Moving Group',
+		type: 'moving group',
+		dist: 100*ly,
+		ra: [5, 29, 0],
+		dec: [-65, 27, 0],
+	},
+	{
+		name: 'Beta Pictoris Moving Group',
+		type: 'moving group',
+		dist: 115*ly,
+		ra: [5, 47, 0],
+		dec: [-51, 4, 0],
+	},
+	{
+		name: 'Tucana-Horologium Association',
+		type: 'stellar association',
+		dist: 150*ly,
+		ra: [23, 0, 0],
+		dec: [-54, 0, 0],
+	},
+	{
+		name: 'Hyades',
+		type: 'open cluster',
+		dist: 153*ly,
+		ra: [4, 27, 0],
+		dec: [15, 52, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Hyades.jpg/640px-Hyades.jpg',
+		href: 'https://en.wikipedia.org/wiki/Hyades_(star_cluster)',
+		radius: 10*ly,
+	},
+	{
+		name: 'Coma Star Cluster',
+		type: 'open cluster',
+		dist: 280*ly,
+		ra: [12, 22.5, 0],
+		dec: [25, 51, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/ComaCluster.jpg/640px-ComaCluster.jpg',
+		radius: 7*ly, // personal estimate
+	},
+	{
 		name: 'Pleiades',
 		type: 'open cluster',
 		dist: 444*ly,
 		ra: [3, 47, 24],
 		dec: [24, 7, 0],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Pleiades_large.jpg/640px-Pleiades_large.jpg',
+		radius: 8*ly,
+	},
+	{
+		name: 'IC 2602',
+		type: 'open cluster',
+		dist: 547*ly,
+		ra: [10, 42, 57.5],
+		dec: [-64, 23, 29],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/The_Southern_Pleiades_%28IC_2602%29.jpg/629px-The_Southern_Pleiades_%28IC_2602%29.jpg',
+		radius: 8*ly, // personal estimate
+	},
+	{
+		name: 'Alpha Persei Cluster',
+		type: 'open cluster',
+		dist: 570*ly,
+		ra: [3, 26, 42],
+		dec: [48, 48, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Melotte_20.jpg/591px-Melotte_20.jpg',
+		radius: 25*ly, // personal estimate
+	},
+	{
+		name: 'IC 2391',
+		type: 'open cluster',
+		dist: 574*ly,
+		ra: [8, 40.6, 0],
+		dec: [-53, 2, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/IC_2391_in_Vele.jpg/678px-IC_2391_in_Vele.jpg',
+		radius: 5*ly, // personal estimate
+	},
+	{
+		name: 'Beehive Cluster',
+		type: 'open cluster',
+		dist: 610*ly,
+		ra: [8, 40.4, 0],
+		dec: [19, 59, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/M44_Heggie.jpg/600px-M44_Heggie.jpg',
+		radius: 12.7*ly,
 	},
 	{
 		name: 'Small Sagittarius Star Cloud',
@@ -351,6 +436,7 @@ const data = [
 		ra: [18, 17, 0],
 		dec: [-18, 29, 0],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Messier_24_Colombari_crop_invert.jpg',
+		radius: 300*ly,
 	},
 	{
 		name: 'FSR 1758',
@@ -358,6 +444,14 @@ const data = [
 		dist: 11.5e3*ly,
 		ra: [17, 31, 12],
 		dec: [-39, 48, 30],
+	},
+	{
+		name: 'Gaia 1',
+		type: 'open cluster',
+		dist: 15e3*ly,
+		ra: [6, 45, 52.8],
+		dec: [-16, 45, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Gaia_1_with_Sirius.jpg/640px-Gaia_1_with_Sirius.jpg',
 	},
 	{
 		name: 'Necklace Nebula',
@@ -416,6 +510,7 @@ const data = [
 		ra: [5, 34, 31.94],
 		dec: [22, 0, 52.2],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Crab_Nebula.jpg/600px-Crab_Nebula.jpg',
+		radius: 5.5*ly,
 	},
 	{ // NGC 1960
 		name: 'Messier 36',
@@ -673,6 +768,15 @@ const data = [
 		ra: [18, 53, 35.079],
 		dec: [33, 1, 45.03],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/M57_The_Ring_Nebula.JPG/587px-M57_The_Ring_Nebula.JPG',
+	},
+	{
+		name: 'NGC 6791',
+		type: 'open cluster',
+		dist: 13.3e3*ly,
+		ra: [19, 20, 53],
+		dec: [37, 46.3, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/5/54/NGC_6791_cluster.jpg',
+		radius: 100*ly, // personal estimate
 	},
 	{ // NGC 6809
 		name: 'Messier 55',

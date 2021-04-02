@@ -16,11 +16,13 @@ const colors = {
 	'galaxy': 'rgba(170, 170, 255, 0.5)',
 	'globular cluster': '#FC9',
 	'emission nebula': 'pink',
+	'moving group': '#DEC',
 	'open cluster': '#CFF',
 	'planetary nebula': '#a0d8a0',
 	'reflection nebula': 'lightblue',
 	'star': '#FFFFC0',
 	'star cloud': '#ACC',
+	'stellar association': '#CDB',
 	'sun': '#FCC857',
 	'supernova remnant': '#9C8AE4',
 };
