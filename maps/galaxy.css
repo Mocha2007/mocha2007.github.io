@@ -43,7 +43,10 @@ body {
 	text-align: center;
 }
 #tooltip img {
-	text-align: center;
+	display: block;
+	margin: 0 auto;
+	max-height: 200px;
+	width: 200px;
 }
 #tooltip .desc {
 	font-style: italic;

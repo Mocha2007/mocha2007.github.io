@@ -154,7 +154,7 @@ class Body {
 		// text
 		tt.innerHTML = '<h1>' + this.name + '</h1><h2>' + proper(this.type) + '</h2>';
 		if (this.img)
-			tt.innerHTML += '<img src="'+this.img+'" height="100px">';
+			tt.innerHTML += '<img src="'+this.img+'">';
 		tt.innerHTML += `<br>RA: ${round(this.coords.ra/pi*180, 2)}&deg;<br>
 		DEC: ${round(this.coords.dec/pi*180, 2)}&deg;<br>
 		DIST: ${unitString(this.dist/ly, 'ly')}`;
