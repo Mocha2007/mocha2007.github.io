@@ -159,6 +159,8 @@ class Body {
 		return tt;
 	}
 	createElement(){
+		if (2*window.innerHeight < this.divSize)
+			return;
 		const a = document.createElement('a');
 		a.href = this.href;
 		// altitude
