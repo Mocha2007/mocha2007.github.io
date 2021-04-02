@@ -216,7 +216,7 @@ const Game = {
 	},
 	rotate(direction=0){
 		const i = mod(rotations.map(x => x[0]).indexOf(xIndex) + direction, rotations.length);
-		[xIndex, yIndex] = rotations[i];
+		[xIndex, yIndex, zIndex] = rotations[i];
 		this.redraw();
 	},
 	toggleAltitude(){
