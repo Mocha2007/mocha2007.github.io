@@ -178,20 +178,6 @@ const data = [
 		dec: [-8, 12, 5.8981],
 	},
 	{
-		name: 'Zeta Puppis',
-		type: 'star',
-		dist: 1080*ly,
-		ra: [8, 3, 35.1],
-		dec: [-40, 0, 11.6],
-	},
-	{
-		name: 'Gamma Velorum',
-		type: 'star',
-		dist: 379*pc, // ~1237
-		ra: [8, 9, 31.95013],
-		dec: [-47, 20, 11.7108],
-	},
-	{
 		name: 'Mu Sagittarii',
 		type: 'star',
 		dist: 920*ly,
@@ -199,11 +185,32 @@ const data = [
 		dec: [-21, 3, 32],
 	},
 	{
+		name: '7 Vulpeculae',
+		type: 'star',
+		dist: 940*ly,
+		ra: [19, 29, 20.8974],
+		dec: [20, 16, 47.0583],
+	},
+	{
+		name: 'Zeta Puppis',
+		type: 'star',
+		dist: 1080*ly,
+		ra: [8, 3, 35.1],
+		dec: [-40, 0, 11.6],
+	},
+	{
 		name: 'Mintaka',
 		type: 'star',
 		dist: 1200*ly,
 		ra: [5, 32, 0.40009],
 		dec: [0, -17, -56.7424],
+	},
+	{
+		name: 'Gamma Velorum',
+		type: 'star',
+		dist: 379*pc, // ~1237
+		ra: [8, 9, 31.95013],
+		dec: [-47, 20, 11.7108],
 	},
 	{
 		name: 'Alnitak',
