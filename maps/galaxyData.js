@@ -335,6 +335,14 @@ const data = [
 		ra: [18, 8, 39.32],
 		dec: [-20, 24, 39.5],
 	},
+	{
+		name: 'UDF 2457',
+		type: 'star',
+		dist: 59e3*ly,
+		ra: [3, 32, 38.79],
+		dec: [-27, 48, 10],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/b/bc/UDF2457-mdwarf-star.jpg',
+	},
 	// not stars, but not in NGC; sort by dist
 	{
 		name: 'Ursa Major Moving Group',
