@@ -128,6 +128,14 @@ const data = [
 		dec: [9, 3, 24.4255],
 	},
 	{
+		name: 'Cor Caroli',
+		type: 'star',
+		dist: 115*ly,
+		ra: [12, 56, 0],
+		dec: [38, 19, 0],
+		desc: 'α² CVn variable lectotype',
+	},
+	{
 		name: 'Epsilon Sagittarii',
 		type: 'star',
 		dist: 143*ly,
@@ -143,11 +151,33 @@ const data = [
 		dec: [-52, 41, 44.381],
 	},
 	{
+		name: '21 Persei',
+		type: 'star',
+		dist: 331*ly,
+		ra: [2, 57, 17.28228],
+		dec: [31, 56, 3.1976],
+		desc: 'Mocha was born under this star',
+	},
+	{
 		name: 'Polaris',
 		type: 'star',
 		dist: 378*ly,
 		ra: [2, 31, 49.09],
 		dec: [89, 15, 50.8],
+	},
+	{
+		name: 'Epsilon Centauri',
+		type: 'star',
+		dist: 430*ly,
+		ra: [13, 39, 53.25774],
+		dec: [-53, 27, 59.0081],
+	},
+	{
+		name: '19 Arietis',
+		type: 'star',
+		dist: 480*ly,
+		ra: [2, 13, 3.3044],
+		dec: [15, 16, 47.5005],
 	},
 	{
 		name: 'Betelgeuse',
@@ -400,6 +430,15 @@ const data = [
 		radius: 7*ly, // personal estimate
 	},
 	{
+		name: 'Taurus Molecular Cloud',
+		type: 'molecular cloud',
+		dist: 430*ly,
+		ra: [4, 41, 0],
+		dec: [25, 52, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Herschel%E2%80%99s_view_of_the_Taurus_molecular_cloud_ESA384012.jpg/800px-Herschel%E2%80%99s_view_of_the_Taurus_molecular_cloud_ESA384012.jpg',
+		radius: 40*ly, // personal estimate
+	},
+	{
 		name: 'Pleiades',
 		type: 'open cluster',
 		dist: 444*ly,
@@ -407,6 +446,15 @@ const data = [
 		dec: [24, 7, 0],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Pleiades_large.jpg/640px-Pleiades_large.jpg',
 		radius: 8*ly,
+	},
+	{
+		name: 'Barnard 68',
+		type: 'molecular cloud',
+		dist: 500*ly,
+		ra: [17, 22, 38.2],
+		dec: [-23, 49, 34],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Barnard_68.jpg/600px-Barnard_68.jpg',
+		radius: 0.25*ly,
 	},
 	{
 		name: 'IC 2602',
@@ -477,13 +525,13 @@ const data = [
 		img: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Be087.jpg',
 	},
 	{
-		name: 'Small Sagittarius Star Cloud',
-		type: 'star cloud',
-		dist: 1e4*ly,
-		ra: [18, 17, 0],
-		dec: [-18, 29, 0],
-		img: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Messier_24_Colombari_crop_invert.jpg',
-		radius: 300*ly,
+		name: 'Perseus Molecular Cloud',
+		type: 'molecular cloud',
+		dist: 1000*ly,
+		ra: [3, 35, 0],
+		dec: [31, 13, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/PIA23405-PerseusMolecularCloud-FullRez.jpg/800px-PIA23405-PerseusMolecularCloud-FullRez.jpg',
+		radius: 35*ly, // personal estimate
 	},
 	{
 		name: 'Sh2-264',
@@ -492,6 +540,15 @@ const data = [
 		ra: [5, 37, 0],
 		dec: [9, 30, 0],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Orion%27s_Big_Head_Revealed_in_Infrared.jpg/645px-Orion%27s_Big_Head_Revealed_in_Infrared.jpg',
+	},
+	{
+		name: 'Orion Molecular Cloud Complex',
+		type: 'molecular cloud',
+		dist: 1200*ly,
+		ra: [5, 35.3, 0],
+		dec: [-5, 23, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Orion_Head_to_Toe.jpg/664px-Orion_Head_to_Toe.jpg',
+		radius: 100*ly, // "hundreds of light-years across"
 	},
 	{
 		name: 'Medusa Nebula',
@@ -580,6 +637,15 @@ const data = [
 		ra: [14, 43, 0],
 		dec: [-62, 30, 0],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/RCW_86.jpg/627px-RCW_86.jpg',
+	},
+	{
+		name: 'Small Sagittarius Star Cloud',
+		type: 'star cloud',
+		dist: 1e4*ly,
+		ra: [18, 17, 0],
+		dec: [-18, 29, 0],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Messier_24_Colombari_crop_invert.jpg',
+		radius: 300*ly,
 	},
 	{
 		name: 'RCW 103',

@@ -16,6 +16,7 @@ const colors = {
 	'galaxy': 'rgba(170, 170, 255, 0.5)',
 	'globular cluster': '#FC9',
 	'emission nebula': 'pink',
+	'molecular cloud': '#789',
 	'moving group': '#DEC',
 	'open cluster': '#CFF',
 	'planetary nebula': '#a0d8a0',
