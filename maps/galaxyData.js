@@ -329,6 +329,14 @@ const data = [
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Kappa_Cassiopeiae.jpg/631px-Kappa_Cassiopeiae.jpg',
 	},
 	{
+		name: 'V838 Monocerotis',
+		type: 'star',
+		dist: 5900*ly,
+		ra: [7, 4, 4.85],
+		dec: [-3, 50, 50.1],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/V838_Mon_HST.jpg/600px-V838_Mon_HST.jpg',
+	},
+	{
 		name: 'Alpha Camelopardalis',
 		type: 'star',
 		dist: 6e3*ly,

@@ -246,8 +246,7 @@ function main(){
 	Game.zoom();
 	// set up keybinds
 	document.addEventListener('keydown', event => {
-		if (Game.keybinds[event.key]){
+		if (Game.keybinds[event.key])
 			Game.keybinds[event.key]();
-		}
 	});
 }
