@@ -63,7 +63,7 @@ class Body {
 	 * @param {string} img
 	 * @param {string} href
 	 */
-	constructor(name, type, dist, coords, desc='', img='', href=''){
+	constructor(name, type, dist, coords, desc='', img='', href='', radius=0){
 		this.name = name;
 		this.type = type;
 		this.dist = dist;
@@ -71,10 +71,12 @@ class Body {
 		this.desc = desc;
 		this.img = img;
 		this.href = href ? href : 'https://en.wikipedia.org/wiki/' + this.name;
+		this.radius = radius;
 		Body.list.push(this);
 	}
 	get color(){
 		const colors = {
+			'dwarf galaxy': 'rgba(192, 192, 192, 0.5)',
 			'globular cluster': '#FC9',
 			'emission nebula': 'pink',
 			'open cluster': '#CFF',
@@ -86,6 +88,9 @@ class Body {
 			'supernova remnant': '#9C8AE4',
 		};
 		return colors[this.type] ? colors[this.type] : 'white';
+	}
+	get divSize(){
+		return Math.max(5, this.radius/Game.scale*window.innerHeight);
 	}
 	/** @returns {[number, number, number]} xyz coords */
 	get galacticXYZ(){
@@ -113,7 +118,7 @@ class Body {
 			tt.innerHTML += '<br>';
 		tt.innerHTML += `RA: ${round(this.coords.ra/pi*180, 2)}&deg;<br>
 		DEC: ${round(this.coords.dec/pi*180, 2)}&deg;<br>
-		DIST: ${round(this.dist/ly)} ly`;
+		DIST: ${unitString(this.dist/ly, 'ly', 0)}`;
 		if (this.desc)
 			tt.innerHTML += '<br>' + this.desc;
 		return tt;
@@ -126,8 +131,9 @@ class Body {
 		const gc = this.galacticXYZ;
 		const x = gc[xIndex]/Game.scale;
 		const y = gc[yIndex]/Game.scale;
-		div.style.left = `calc(50% + ${45*x}vh)`;
-		div.style.top = `calc(50% + ${45*y}vh)`;
+		div.style.left = `calc(50% + ${45*x}vh - ${this.divSize/2}px)`;
+		div.style.top = `calc(50% + ${45*y}vh - ${this.divSize/2}px)`;
+		div.style.height = div.style.width = `${this.divSize}px`;
 		div.style.backgroundColor = this.color;
 		this.element = div;
 		// tooltip
@@ -149,7 +155,8 @@ class Body {
 			Coords.fromThreeThree(...o.ra, ...o.dec),
 			o.desc,
 			o.img,
-			o.href
+			o.href,
+			o.radius
 		);
 	}
 }
@@ -184,7 +191,7 @@ const Game = {
 	zoom(factor=0){
 		this.scale *= Math.pow(2, -factor);
 		this.redraw();
-		document.getElementById('scale').innerHTML = unitString(2*this.scale/ly, 'ly', 2);
+		document.getElementById('scale').innerHTML = unitString(2*this.scale/ly, 'ly');
 	},
 };
 

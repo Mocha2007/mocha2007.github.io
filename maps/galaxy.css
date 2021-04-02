@@ -10,9 +10,7 @@ body {
 .datum {
 	background-color: red;
 	border-radius: 50%;
-	height: 5px;
 	position: absolute;
-	width: 5px;
 }
 #galacticDisk {
 	background-color: #446;
