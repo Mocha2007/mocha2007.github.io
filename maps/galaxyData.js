@@ -688,6 +688,15 @@ const data = [
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Heic1510a.tif/lossy-page1-613px-Heic1510a.tif.jpg',
 	},
 	{
+		name: 'NGC 206',
+		type: 'star cloud',
+		dist: 2.5e6*ly,
+		ra: [0, 40, 31.3],
+		dec: [40, 44, 21],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/NGC206.jpg/640px-NGC206.jpg',
+		radius: 400*ly,
+	},
+	{
 		name: 'NGC 300',
 		type: 'galaxy',
 		dist: 6.07e6*ly,
