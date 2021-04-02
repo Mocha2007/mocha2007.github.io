@@ -77,6 +77,7 @@ class Body {
 	get color(){
 		const colors = {
 			'dwarf galaxy': 'rgba(192, 192, 192, 0.5)',
+			'galaxy': 'rgba(170, 170, 255, 0.5)',
 			'globular cluster': '#FC9',
 			'emission nebula': 'pink',
 			'open cluster': '#CFF',
@@ -118,7 +119,7 @@ class Body {
 			tt.innerHTML += '<br>';
 		tt.innerHTML += `RA: ${round(this.coords.ra/pi*180, 2)}&deg;<br>
 		DEC: ${round(this.coords.dec/pi*180, 2)}&deg;<br>
-		DIST: ${unitString(this.dist/ly, 'ly', 0)}`;
+		DIST: ${unitString(this.dist/ly, 'ly')}`;
 		if (this.desc)
 			tt.innerHTML += '<br>' + this.desc;
 		return tt;
