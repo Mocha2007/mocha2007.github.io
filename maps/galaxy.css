@@ -7,6 +7,12 @@ html {
 body {
 	margin: 0;
 }
+.altitude {
+	border: 1px dashed red;
+	opacity: 0.5;
+	position: absolute;
+	width: 0;
+}
 .datum {
 	background-color: red;
 	border-radius: 50%;

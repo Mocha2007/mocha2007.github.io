@@ -4,12 +4,26 @@
 
 /** @type {HTMLBodyElement} */
 const canvas = document.getElementById('canvas');
-let [xIndex, yIndex] = [1, 0];
+let [xIndex, yIndex, zIndex] = [1, 0, 2];
 const rotations = [
-	[1, 0],
-	[2, 1],
-	[0, 2],
+	[1, 0, 2],
+	[2, 1, 0],
+	[0, 2, 1],
 ];
+let altitude = false;
+const colors = {
+	'dwarf galaxy': 'rgba(192, 192, 192, 0.5)',
+	'galaxy': 'rgba(170, 170, 255, 0.5)',
+	'globular cluster': '#FC9',
+	'emission nebula': 'pink',
+	'open cluster': '#CFF',
+	'planetary nebula': '#a0d8a0',
+	'reflection nebula': 'lightblue',
+	'star': '#FFFFC0',
+	'star cloud': '#ACC',
+	'sun': '#FCC857',
+	'supernova remnant': '#9C8AE4',
+};
 
 class Coords {
 	/**
@@ -79,24 +93,35 @@ class Body {
 		this.radius = radius;
 		Body.list.push(this);
 	}
+	get altitudeDiv(){
+		const div = document.createElement('div');
+		div.classList.add('altitude');
+		[div.style.left, div.style.top] = this.divCoords;
+		const h = 45*this.galacticXYZ[zIndex]/Game.scale;
+		const hs = `${h}vh`;
+		if (h < 0){
+			div.style.top = `calc(${div.style.top} + ${hs})`;
+			div.style.height = `${-h}vh`;
+			console.debug(div.style.height);
+		}
+		else
+			div.style.height = hs;
+		return div;
+	}
 	get color(){
-		const colors = {
-			'dwarf galaxy': 'rgba(192, 192, 192, 0.5)',
-			'galaxy': 'rgba(170, 170, 255, 0.5)',
-			'globular cluster': '#FC9',
-			'emission nebula': 'pink',
-			'open cluster': '#CFF',
-			'planetary nebula': '#a0d8a0',
-			'reflection nebula': 'lightblue',
-			'star': '#FFFFC0',
-			'star cloud': '#ACC',
-			'sun': '#FCC857',
-			'supernova remnant': '#9C8AE4',
-		};
 		return colors[this.type] ? colors[this.type] : 'white';
 	}
 	get divSize(){
 		return Math.max(5, this.radius/Game.scale*window.innerHeight);
+	}
+	get divCoords(){
+		const gc = this.galacticXYZ;
+		const x = gc[xIndex]/Game.scale;
+		const y = gc[yIndex]/Game.scale;
+		return [
+			`calc(50% + ${45*x}vh)`,
+			`calc(50% + ${45*y}vh)`,
+		];
 	}
 	/** @returns {[number, number, number]} xyz coords */
 	get galacticXYZ(){
@@ -132,13 +157,13 @@ class Body {
 	createElement(){
 		const a = document.createElement('a');
 		a.href = this.href;
+		// altitude
+		if (altitude)
+			a.appendChild(this.altitudeDiv);
 		const div = document.createElement('div');
 		div.classList.add('datum');
-		const gc = this.galacticXYZ;
-		const x = gc[xIndex]/Game.scale;
-		const y = gc[yIndex]/Game.scale;
-		div.style.left = `calc(50% + ${45*x}vh - ${this.divSize/2}px)`;
-		div.style.top = `calc(50% + ${45*y}vh - ${this.divSize/2}px)`;
+		const s = this.divSize/2;
+		[div.style.left, div.style.top] = this.divCoords.map(x => `calc(${x} - ${s}px)`);
 		div.style.height = div.style.width = `${this.divSize}px`;
 		div.style.backgroundColor = this.color;
 		this.element = div;
@@ -176,11 +201,10 @@ const Game = {
 		'-': () => Game.zoom(-1),
 		'q': () => Game.rotate(-1),
 		'e': () => Game.rotate(1),
+		'z': () => Game.toggleAltitude(),
 		// todo controls
 		// ? => about
-		// wasdqe => various rotations
 		// m => mapmode toggle
-		// have button to toggle "altitude" (Z) dashed lines
 	},
 	scale: 32768*ly,
 	redraw(){
@@ -190,6 +214,10 @@ const Game = {
 	rotate(direction=0){
 		const i = mod(rotations.map(x => x[0]).indexOf(xIndex) + direction, rotations.length);
 		[xIndex, yIndex] = rotations[i];
+		this.redraw();
+	},
+	toggleAltitude(){
+		altitude = !altitude;
 		this.redraw();
 	},
 	/** @param {number} factor - 1=in; -1=out; 0=no change */
