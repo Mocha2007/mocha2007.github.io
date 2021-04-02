@@ -24,11 +24,27 @@ body {
 	text-shadow: 2px 2px 5px black;
 	top: 0;
 }
-#tooltip {
+#tooltip * {
+	margin: 0;
+	max-width: 300px;
+	padding: 5px;
+}
+#tooltip div {
 	border: 1px solid black;
 	color: black;
 }
-#tooltip * {
-	max-width: 300px;
-	padding: 5px;
+#tooltip h1 {
+	font-size: 125%;
+	text-align: center;
+}
+#tooltip h2 {
+	font-size: 100%;
+	text-align: center;
+}
+#tooltip img {
+	text-align: center;
+}
+#tooltip .desc {
+	font-style: italic;
+	text-indent: 45px;
 }

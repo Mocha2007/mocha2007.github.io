@@ -113,6 +113,12 @@ class Body {
 	get color(){
 		return colors[this.type] ? colors[this.type] : 'white';
 	}
+	get descDiv(){
+		const div = document.createElement('p');
+		div.classList.add('desc');
+		div.innerHTML = this.desc;
+		return div;
+	}
 	get divSize(){
 		return Math.max(5, this.radius/Game.scale*window.innerHeight);
 	}
@@ -146,16 +152,13 @@ class Body {
 		tt.style.left = coords[1]+25 + 'px';
 		tt.style.position = 'fixed';
 		// text
-		tt.innerHTML = '<center><b>' + this.name + '</b></center>' + proper(this.type);
+		tt.innerHTML = '<h1>' + this.name + '</h1><h2>' + proper(this.type) + '</h2>';
 		if (this.img)
-			tt.innerHTML += '<center><img src="'+this.img+'" height="100px"></center>';
-		else
-			tt.innerHTML += '<br>';
-		tt.innerHTML += `RA: ${round(this.coords.ra/pi*180, 2)}&deg;<br>
+			tt.innerHTML += '<img src="'+this.img+'" height="100px">';
+		tt.innerHTML += `<br>RA: ${round(this.coords.ra/pi*180, 2)}&deg;<br>
 		DEC: ${round(this.coords.dec/pi*180, 2)}&deg;<br>
 		DIST: ${unitString(this.dist/ly, 'ly')}`;
-		if (this.desc)
-			tt.innerHTML += '<br>' + this.desc;
+		tt.appendChild(this.descDiv);
 		return tt;
 	}
 	createElement(){
