@@ -159,7 +159,8 @@ class Body {
 		return tt;
 	}
 	createElement(){
-		if (2*window.innerHeight < this.divSize)
+		// don't render bodies close
+		if (2*Math.max(window.innerHeight, window.innerWidth) < this.divSize)
 			return;
 		const a = document.createElement('a');
 		a.href = this.href;
