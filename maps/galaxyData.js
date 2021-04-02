@@ -103,6 +103,7 @@ const data = [
 		dist: 8.6*ly,
 		ra: [6, 45, 8.91728],
 		dec: [-16, 42, 58.0171],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/f/f3/Sirius_A_and_B_Hubble_photo.jpg',
 	},
 	{
 		name: 'Van Maanen 2',
