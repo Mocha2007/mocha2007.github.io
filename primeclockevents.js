@@ -301,6 +301,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[10.8e6, 'Formation of <a href="https://en.wikipedia.org/wiki/Acrux">Acrux</a>'],
 	[10e6, 'Formation of <a href="https://en.wikipedia.org/wiki/PDS_70">PDS 70</a>'],
 	[9.5e6, 'Formation of <a href="https://en.wikipedia.org/wiki/Mimosa_(star)">Mimosa</a>'],
+	[8.9e6, 'Formation of <a href="https://en.wikipedia.org/wiki/162173_Ryugu">162173 Ryugu</a>'],
 	[8.8e6, 'Earliest <a href="https://en.wikipedia.org/wiki/Homininae">African Apes</a>'],
 	[8.25e6, 'Formation of <a href="https://en.wikipedia.org/wiki/Betelgeuse">Betelgeuse</a>'],
 	[8e6, 'Formation of <a href="https://en.wikipedia.org/wiki/Rigel">Rigel</a>'],
