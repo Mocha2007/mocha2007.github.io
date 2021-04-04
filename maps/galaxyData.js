@@ -417,18 +417,18 @@ const data = [
 		img: 'https://upload.wikimedia.org/wikipedia/commons/3/34/3C58_chandra.jpg',
 	},
 	{
+		name: 'WR 1',
+		type: 'star',
+		dist: 3150*pc, // ~10,274 ly
+		ra: [0, 43, 28.39827],
+		dec: [64, 45, 35.4011],
+	},
+	{
 		name: 'Great Annihilator',
 		type: 'star',
 		dist: 5e3*pc, // ~16,308 ly
 		ra: [17, 43, 54.83],
 		dec: [-29, 44, 42.6],
-	},
-	{
-		name: 'WR 1',
-		type: 'star',
-		dist: 3150*pc, // ~10,274 pc
-		ra: [0, 43, 28.39827],
-		dec: [64, 45, 35.4011],
 	},
 	{
 		name: 'XTE J1739-285',
