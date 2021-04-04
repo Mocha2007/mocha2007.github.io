@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="description" content="Twine save editor">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<script src="https://cdn.rawgit.com/pieroxy/lz-string/master/libs/lz-string.min.js"></script>
+<style>
+.button {
+	background-color: silver;
+	border: 1px solid black;
+	border-radius: 10px;
+	cursor: pointer;
+	padding: 0 5px 0 5px;
+}
+</style>
+<title>Twine Save Editor</title>
+<textarea id="compressed"></textarea>
+<textarea id="decompressed"></textarea>
+<br>
+<span class="button" onclick="decompress();">decompress &rarr;</span>
+<span class="button" onclick="compress();">&larr; compress</span>
+<br>
+<p>edit with a json editor like <a href="https://jsoneditoronline.org/">jsoneditoronline.org</a> or manually</p>
+<script>
+var compressBox = document.getElementById('compressed');
+var decompressBox = document.getElementById('decompressed');
+function compress(){
+	compressBox.value = LZString.compressToBase64(decompressBox.value);
+}
+function decompress(){
+	decompressBox.value = LZString.decompressFromBase64(compressBox.value);
+}
+</script>
+</html>
