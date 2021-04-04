@@ -218,7 +218,7 @@ const Game = {
 		// m => mapmode toggle
 		// federation/klingon control mode? lol
 	},
-	scale: 32768*ly,
+	scale: 16384*ly,
 	redraw(){
 		canvas.innerHTML = '';
 		Body.list.forEach(b => b.createElement());

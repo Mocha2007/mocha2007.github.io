@@ -121,6 +121,13 @@ const data = [
 		desc: 'Said to be home to the Vulcan homeworld',
 	},
 	{
+		name: 'Gamma2 Sagittarii',
+		type: 'star',
+		dist: 96.9*ly,
+		ra: [18, 5, 48.4881],
+		dec: [-30, 25, 26.7235],
+	},
+	{
 		name: 'Omega Leonis',
 		type: 'star',
 		dist: 108*ly,
@@ -136,12 +143,33 @@ const data = [
 		desc: 'α² CVn variable lectotype',
 	},
 	{
+		name: 'Beta2 Sagittarii',
+		type: 'star',
+		dist: 134*ly,
+		ra: [19, 23, 13.13745],
+		dec: [-44, 47, 59.2051],
+	},
+	{
 		name: 'Epsilon Sagittarii',
 		type: 'star',
 		dist: 143*ly,
 		ra: [18, 24, 10.3184],
 		dec: [-34, 23, 4.6193],
 		desc: 'Said to be home to the Klingon homeworld QoʼnoS',
+	},
+	{
+		name: 'Rukbat',
+		type: 'star',
+		dist: 182*ly,
+		ra: [19, 23, 53.17483],
+		dec: [-40, 36, 57.3705],
+	},
+	{
+		name: 'Beta1 Sagittarii',
+		type: 'star',
+		dist: 310*ly,
+		ra: [19, 22, 38.2977],
+		dec: [-44, 27, 32.2458],
 	},
 	{
 		name: 'Canopus',
@@ -222,6 +250,13 @@ const data = [
 		dec: [20, 16, 47.0583],
 	},
 	{
+		name: 'X Sagittarii',
+		type: 'star',
+		dist: 950*ly,
+		ra: [17, 47, 33.6241],
+		dec: [-27, 49, 50.849],
+	},
+	{
 		name: 'Zeta Puppis',
 		type: 'star',
 		dist: 1080*ly,
@@ -256,6 +291,20 @@ const data = [
 		dist: 1270*ly,
 		ra: [10, 7, 19.95186],
 		dec: [16, 45, 45.592],
+	},
+	{
+		name: 'W Sagittarii',
+		type: 'star',
+		dist: 409*pc, // ~1334 ly
+		ra: [18, 5, 1.22409],
+		dec: [-29, 34, 48.3199],
+	},
+	{
+		name: 'Y Sagittarii',
+		type: 'star',
+		dist: 1500*ly,
+		ra: [18, 21, 22.98643],
+		dec: [-18, 51, 36.0018],
 	},
 	{
 		name: 'Wezen',
@@ -352,11 +401,12 @@ const data = [
 		img: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/SN1572.Companion.jpg',
 	},
 	{
-		name: 'WR 1',
+		name: 'WR 102',
 		type: 'star',
-		dist: 3150*pc,
-		ra: [0, 43, 28.39827],
-		dec: [64, 45, 35.4011],
+		dist: 9400*ly,
+		ra: [17, 45, 47.5],
+		dec: [-26, 10, 27],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/WR102_Ejecta_Nebula.png/604px-WR102_Ejecta_Nebula.png',
 	},
 	{
 		name: '3C 58',
@@ -365,6 +415,20 @@ const data = [
 		ra: [2, 5, 38],
 		dec: [64, 49.7, 0],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/3/34/3C58_chandra.jpg',
+	},
+	{
+		name: 'Great Annihilator',
+		type: 'star',
+		dist: 5e3*pc, // ~16,308 ly
+		ra: [17, 43, 54.83],
+		dec: [-29, 44, 42.6],
+	},
+	{
+		name: 'WR 1',
+		type: 'star',
+		dist: 3150*pc, // ~10,274 pc
+		ra: [0, 43, 28.39827],
+		dec: [64, 45, 35.4011],
 	},
 	{
 		name: 'XTE J1739-285',
