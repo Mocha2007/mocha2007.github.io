@@ -52,8 +52,11 @@ const LE = {
 	new(){
 		// blank
 		this.learn.innerHTML = '';
-		// new
-		const [question, answer] =  this.random.supraclause();
+		// old or new?
+		const [question, answer] =  this.review.list.length && random.random() < 0.5
+			? random.choice(this.review.list)
+			: this.random.supraclause();
+		this.review.current = [question, answer];
 		// question
 		const elemQ = document.createElement('span');
 		elemQ.innerHTML = question;
@@ -94,6 +97,18 @@ const LE = {
 	},
 	review: {
 		// todo
+		add(){
+			this.list.push(this.current);
+		},
+		/** @type {[string, string]} */
+		current: undefined,
+		/** @type {[string, string][]} */
+		list: [],
+		remove(){
+			const i = this.list.map(x => x[0]).indexOf(this.current[0]);
+			if (-1 < i)
+				this.list.splice(i, 1);
+		},
 	},
 	score: {
 		change(n = 0){
