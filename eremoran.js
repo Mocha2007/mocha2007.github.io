@@ -1,6 +1,6 @@
 /* exported compileDict, compileFinals, compileInitials, compileLength,
 	compileMeanings, compileMedials, compileNounClass */
-/* global random */
+/* global random, round */
 
 'use strict';
 
@@ -91,6 +91,23 @@ const LE = {
 			choice[1] = choice[1].replace('$c', c[1]);
 			return choice;
 		},
+	},
+	review: {
+		// todo
+	},
+	score: {
+		change(n = 0){
+			if (n < 0)
+				this.wrong -= n;
+			else
+				this.right += n;
+			document.getElementById('score').innerHTML = `${round(100*this.total, 2)}%`;
+		},
+		right: 0,
+		get total(){
+			return this.right / (this.right + this.wrong);
+		},
+		wrong: 0,
 	},
 	shapes: {
 		clause: [
