@@ -1,0 +1,16 @@
+.button {
+	background-color: silver;
+	border: 1px solid black;
+	border-radius: 10px;
+	cursor: pointer;
+	padding: 0 5px 0 5px;
+}
+.button:hover {
+	opacity: 0.5;
+}
+/* for spoilers in game */
+.hidden {
+	background-color: black;
+	color: black;
+	user-select: none;
+}
