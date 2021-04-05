@@ -143,6 +143,14 @@ const data = [
 		desc: 'α² CVn variable lectotype',
 	},
 	{
+		name: 'Iota Geminorum',
+		type: 'star',
+		dist: 120.4*ly,
+		ra: [7, 25, 43.59532],
+		dec: [27, 47, 53.0929],
+		desc: 'Said to be the home system of the tribbles in the Star Trek universe.',
+	},
+	{
 		name: 'Beta2 Sagittarii',
 		type: 'star',
 		dist: 134*ly,
