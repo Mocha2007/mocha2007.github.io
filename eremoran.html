@@ -5591,10 +5591,11 @@ the clowns’ new directive on nakedness.
 </table>
 
 <h3 id="Learn_Eremoran">Learn Eremoran</h3>
-<span id="score">0%</span><br>
+Score: <span id="score">0%</span><br>
+Review: <span id="review">0</span><br>
 <span class="button" onclick="LE.new();">New Question/Skip</span>
 <span class="button" onclick="LE.score.change(1);LE.review.remove();LE.new();">understood</span>
-<span class="button" onclick="LE.score.change(-1);LE.review.add();LE.new();">needs review</span>
+<span class="button" onclick="LE.score.change(-1);LE.review.add();LE.new(false);">needs review</span>
 <div id="learn"></div>
 
 <h2 id="Statistics">Misc. Statistics</h2>
