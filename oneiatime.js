@@ -263,6 +263,8 @@ function holidayCSS(){
 				img.style.transform = 'rotate(180deg)';
 				document.getElementById('subtitle').innerHTML = document.getElementById('subtitle').innerHTML.split('').reverse().join('');
 			}
+			else if (day === 5)
+				title = 'Live long and prosper. 2063 - Forever';
 			break;
 		case 5:
 			if (day === 29)
