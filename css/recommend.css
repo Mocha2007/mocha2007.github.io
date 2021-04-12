@@ -11,7 +11,7 @@ details{line-height:16px;}
 .m{color:#03f}
 .m::after{content:"(M)"}
 .super{color:#f00;}
-.sub{color:#f30}
+.sub{color:#f80}
 .y,.y2{color:#0f0}
 .y::before{content:"(20"}
 .y2::before{content:"("}
