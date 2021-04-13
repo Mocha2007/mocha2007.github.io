@@ -272,6 +272,7 @@ function proper(str){
 	);
 }
 
+/** DEPRECATED USE storage INSTEAD */
 const cookie = {
 	/** @param {string} name */
 	delete(name){
