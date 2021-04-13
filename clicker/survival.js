@@ -571,7 +571,7 @@ function main(){
 	// update version div
 	document.getElementById('version').innerHTML = 'v. ' + Game.debug.version;
 	// load save
-	if (storage.read(clickerName))
+	if (storage.exists(clickerName))
 		Game.save.load();
 	else
 		Game.save.save();

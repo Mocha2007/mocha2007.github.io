@@ -301,6 +301,9 @@ const storage = {
 	delete(name){
 		window.localStorage.removeItem(name);
 	},
+	exists(name){
+		return window.localStorage.getItem(name) !== null;
+	},
 	/** https://stackoverflow.com/a/11344672/2579798
 	 * @param {string} name
 	*/

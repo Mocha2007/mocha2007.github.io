@@ -1413,8 +1413,8 @@ function main(){
 	// update version div
 	document.getElementById('version').innerHTML = 'v. ' + game.debug.version;
 	// load save
-	const saveFile = storage.read('snueg');
-	if (saveFile){
+	if (storage.exists('snueg')){
+		const saveFile = storage.read('snueg');
 		game.player = saveFile.player;
 		game.settings = saveFile.settings;
 	}
