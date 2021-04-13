@@ -15,7 +15,7 @@ const chemData = [
 		name: 'Carbon',
 		density: 2,
 		molarMass: 12.011,
-		imgUrl: 'https://www.intrism.com/wp-content/uploads/2017/01/cropped-black-sphere.png',
+		imgUrl: 'https://png2.cleanpng.com/sh/15101dfb3671e741e503699351621aca/L0KzQYm3VMA1N5Z6iZH0aYP2gLBuTgNxcJZ3fZ9rYXzvf7F1TgBpd6V0fARqcHj8PbXokvsuPZJoTKdsYUW0c4i8VMgvO2M9T6YANUi0RYO5WME5OmI4SaMBNj7zfri=/kisspng-sphere-balloon-photography-dark-5ac45ca51c7548.3287455815228182131166.png',
 		tags: ['Blacklisted'],
 	},
 	{

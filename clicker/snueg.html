@@ -23,7 +23,7 @@
 	<div id="save_manager">
 		<abbr title="Export save to file" onclick="downloadSave();">e</abbr><br>
 		<abbr title="Import save from clipboard" onclick="importSave();">i</abbr><br>
-		<abbr class="danger" title="Delete save" onclick="deleteCookie('snueg');location.reload();">x</abbr>
+		<abbr class="danger" title="Delete save" onclick="storage.delete('snueg');location.reload();">x</abbr>
 	</div>
 	<div id="guide" onclick="guide();">M</div>
 	<div id="guideSpeechBubble">Hiya! I'm the guide! Click me to get some advice! :D</div>

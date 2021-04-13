@@ -1,5 +1,5 @@
 /* jshint esversion: 6, strict: true, strict: global */
-/* globals commaNumber, cookie, mean, postScore, random, sigFigs, unlockMedal */
+/* globals commaNumber, mean, postScore, random, sigFigs, storage, unlockMedal */
 'use strict';
 
 const caseValues = [
@@ -270,7 +270,7 @@ const Game = {
 	},
 	save: {
 		load(){
-			const data = cookie.read('mocha-dond');
+			const data = storage.read('mocha-dond');
 			if (!data) return;
 			Game.milCount = data.milCount;
 		},
@@ -278,7 +278,7 @@ const Game = {
 			const data = {
 				milCount: Game.milCount,
 			};
-			cookie.write('mocha-dond', data);
+			storage.write('mocha-dond', data);
 		},
 	},
 	sfx: {

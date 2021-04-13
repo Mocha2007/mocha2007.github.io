@@ -295,6 +295,27 @@ const cookie = {
 	},
 };
 
+/** https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API */
+const storage = {
+	/** @param {string} name */
+	delete(name){
+		window.localStorage.removeItem(name);
+	},
+	/** https://stackoverflow.com/a/11344672/2579798
+	 * @param {string} name
+	*/
+	read(name){
+		return JSON.parse(window.localStorage.getItem(name));
+	},
+	/**
+	 * @param {string} name
+	 * @param {any} value
+	*/
+	write(name, value){
+		window.localStorage.setItem(name, JSON.stringify(value));
+	},
+};
+
 /** https://stackoverflow.com/a/27997088/2579798
  * @param {any[]} a
  * @param {any[]} b

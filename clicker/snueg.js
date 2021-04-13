@@ -1,8 +1,8 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true, nonew: false */
-/* exported deleteCookie, downloadSave, guide, importSave, main, prestige, snuegButton */
-/* globals download, play, range, round, sum */
+/* exported downloadSave, guide, importSave, main, prestige, snuegButton */
+/* globals download, play, range, round, storage, sum */
 'use strict';
-const version = 'a200407';
+const version = 'a210413';
 
 // classes
 
@@ -1059,29 +1059,13 @@ game.achievementSeries = [
 ];
 
 // functions
-
-// cookie shit (borrowed from spacegame's main.js)
-function deleteCookie(name){
-	document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
-}
-function readCookie(name){ // https://stackoverflow.com/a/11344672/2579798
-	let result = document.cookie.match(new RegExp(name + '=([^;]+)'));
-	if (result){
-		result = JSON.parse(result[1]);
-	}
-	return result;
-}
-function writeCookie(name, value){ // https://stackoverflow.com/a/11344672/2579798
-	const cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
-	document.cookie = cookie;
-}
 function importSave(){
 	navigator.clipboard.readText().then(
-		clipText => document.cookie = atob(clipText));
+		clipText => storage.write('snueg', atob(clipText)));
 	location.reload();
 }
 function exportSave(){
-	const data = btoa(document.cookie);
+	const data = btoa(storage.read('snueg'));
 	log('Exported Save.');
 	return data;
 }
@@ -1315,7 +1299,7 @@ function saveGame(isManual = false){
 	saveFile.settings = game.settings;
 	game.player.lastSave = +new Date();
 	saveFile.player = game.player;
-	writeCookie('snueg', saveFile);
+	storage.write('snueg', saveFile);
 	game.debug.lastSave = new Date();
 	if (isManual){
 		log('Successfully manually saved game!');
@@ -1429,14 +1413,13 @@ function main(){
 	// update version div
 	document.getElementById('version').innerHTML = 'v. ' + game.debug.version;
 	// load save
-	if (readCookie('snueg')){
-		const saveFile = readCookie('snueg');
+	const saveFile = storage.read('snueg');
+	if (saveFile){
 		game.player = saveFile.player;
 		game.settings = saveFile.settings;
 	}
-	else {
+	else
 		saveGame();
-	}
 	// set up ticks
 	setTimeout(redrawInterface, 1000/game.settings.fps);
 	setTimeout(gameTick, 1000/game.settings.fps);

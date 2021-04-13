@@ -1,8 +1,8 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true, nonew: false */
 /* exported main */
-/* globals itemData, cookie, random, recipeData, round, unitString */
+/* globals itemData, random, recipeData, round, storage, unitString */
 'use strict';
-const version = 'a200518';
+const version = 'a210413';
 const clickerName = 'survival';
 // Willscrlt, public domain
 const defaultImgUrl = 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Question_Mark_Icon_-_Blue_Box_withoutQuestionmarkBlur.svg';
@@ -451,12 +451,12 @@ const Game = {
 	},
 	save: {
 		load(){
-			const saveFile = cookie.read(clickerName);
+			const saveFile = storage.read(clickerName);
 			Game.player = saveFile.player;
 			Game.settings = saveFile.settings;
 		},
 		reset(){
-			cookie.delete(clickerName);
+			storage.delete(clickerName);
 			location.reload();
 		},
 		save(){
@@ -465,7 +465,7 @@ const Game = {
 			saveFile.settings = Game.settings;
 			Game.player.lastSave = +new Date();
 			saveFile.player = Game.player;
-			cookie.write(clickerName, saveFile);
+			storage.write(clickerName, saveFile);
 			Game.debug.lastSave = new Date();
 			Game.log('Game saved.');
 			Game.debug.autosaveTimeout = setTimeout(Game.save.save, Game.settings.autosaveInterval);
@@ -571,7 +571,7 @@ function main(){
 	// update version div
 	document.getElementById('version').innerHTML = 'v. ' + Game.debug.version;
 	// load save
-	if (cookie.read(clickerName))
+	if (storage.read(clickerName))
 		Game.save.load();
 	else
 		Game.save.save();

@@ -1,6 +1,6 @@
 /* jshint esversion: 6, strict: true, forin: false, loopfunc: true, strict: global */
 /* exported downloadSave, Game, updatePersonSearch, wipeMap */
-/* globals createSvgElement, deg, download, linspace, mod, pi, proper, range, remap, round, sum */
+/* globals createSvgElement, deg, download, linspace, mod, pi, proper, range, remap, round, storage, sum */
 'use strict';
 
 // begin constants block
@@ -1813,32 +1813,6 @@ const Game = {
 		new Chem('Kr', 83.798e-3, 115.78, 119.93, [115.775, 73.53e3], [209.48, 5.525e6]),
 		new Chem('Xe', 131.293e-3, 161.4, 165.051, [161.405, 81.77e3], [289.733, 5.842e6]),
 	],
-	cookie: {
-		// store cookie https://www.w3schools.com/js/js_cookies.asp
-		/** @param {string} name */
-		delete(name){
-			document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.',
-				window.location.host.toString()].join('');
-		},
-		/** https://stackoverflow.com/a/11344672/2579798
-		 * @param {string} name
-		*/
-		read(name){
-			let result = document.cookie.match(new RegExp(name + '=([^;]+)'));
-			if (result){
-				result = JSON.parse(result[1]);
-			}
-			return result;
-		},
-		/** https://stackoverflow.com/a/11344672/2579798
-		 * @param {string} name
-		*/
-		write(name, value){
-			const cookie = [name, '=', JSON.stringify(value), '; domain=.',
-				window.location.host.toString(), '; path=/;'].join('');
-			document.cookie = cookie;
-		},
-	},
 	debug: {
 		infoboxUpdateTime: 1e13,
 		killStar(){
@@ -2236,11 +2210,11 @@ const Game = {
 		},
 		loaded: false,
 		reset(){
-			Game.cookie.delete('spacegame');
+			storage.delete('spacegame');
 			location.reload();
 		},
 		save(){
-			Game.cookie.write('spacegame', this.json);
+			storage.write('spacegame', this.json);
 			Game.debug.lastSave = new Date();
 		},
 	},
@@ -2317,7 +2291,7 @@ function main(){
 	console.info('%cMocha\'s Space Game Alpha',
 		'background-color: black; border-radius: 20px; color: cyan; font-size: 4.5em; font-weight: bolder; padding: 0 10px 0 10px;');
 	// load
-	Game.save.load(Game.cookie.read('spacegame')); // sadly can't specify as default cause VSC bitches about it
+	Game.save.load(storage.read('spacegame')); // sadly can't specify as default cause VSC bitches about it
 	document.getElementById('input_fps').value = Game.settings.fps;
 	// set up RNG
 	Game.rng.init();

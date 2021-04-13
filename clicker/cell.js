@@ -1,8 +1,8 @@
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true, nonew: false */
 /* exported main */
-/* globals chemData, cookie, random, recipeData, round */
+/* globals chemData, random, recipeData, round, storage */
 'use strict';
-const version = 'a200512';
+const version = 'a210413';
 const clickerName = 'cellgame';
 
 // constants
@@ -424,12 +424,12 @@ const Game = {
 	},
 	save: {
 		load(){
-			const saveFile = cookie.read(clickerName);
+			const saveFile = storage.read(clickerName);
 			Game.player = saveFile.player;
 			Game.settings = saveFile.settings;
 		},
 		reset(){
-			cookie.delete(clickerName);
+			storage.delete(clickerName);
 			location.reload();
 		},
 		save(){
@@ -438,7 +438,7 @@ const Game = {
 			saveFile.settings = Game.settings;
 			Game.player.lastSave = +new Date();
 			saveFile.player = Game.player;
-			cookie.write(clickerName, saveFile);
+			storage.write(clickerName, saveFile);
 			Game.debug.lastSave = new Date();
 			Game.log('Game saved.');
 			Game.debug.autosaveTimeout = setTimeout(Game.save.save, Game.settings.autosaveInterval);
@@ -538,7 +538,7 @@ function main(){
 	// update version div
 	document.getElementById('version').innerHTML = 'v. ' + Game.debug.version;
 	// load save
-	if (cookie.read(clickerName))
+	if (storage.read(clickerName))
 		Game.save.load();
 	else
 		Game.save.save();
