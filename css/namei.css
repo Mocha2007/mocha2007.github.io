@@ -68,3 +68,13 @@ table.mid{margin-left:auto;margin-right: auto;}
 	50% {text-shadow:5px -20px 1px rgba(8,8,8,.9);}
 	100% {text-shadow:40px -40px 10px transparent;}
 }
+/* coins */
+.copper {
+	background-color: #C73;
+}
+.silver {
+	background-color: silver;
+}
+.gold {
+	background-color: gold;
+}
