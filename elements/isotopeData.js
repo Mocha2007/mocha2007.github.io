@@ -4172,6 +4172,13 @@ const isotopeData = [
 		halfLife: 10.7*minute,
 	},
 	{
+		name: 'Cn-282',
+		decayTypes: [
+			['sf', 1],
+		],
+		halfLife: 800e-6,
+	},
+	{
 		name: 'Cn-283',
 		decayTypes: [
 			['a', 0.9],
@@ -4208,6 +4215,14 @@ const isotopeData = [
 		halfLife: 2,
 	},
 	{
+		name: 'Fl-286',
+		decayTypes: [
+			['sf', 0.6],
+			['a', 0.4],
+		],
+		halfLife: 130e-3,
+	},
+	{
 		name: 'Fl-287',
 		decayTypes: [
 			['a', 1], // ec listed as a maybe
@@ -4228,6 +4243,13 @@ const isotopeData = [
 			['a', 1],
 		],
 		halfLife: 650e-3,
+	},
+	{
+		name: 'Lv-290',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 15e-3,
 	},
 	{
 		name: 'Lv-291',
@@ -4251,10 +4273,10 @@ const isotopeData = [
 		halfLife: 51e-3,
 	},
 	{
-		name: 'Og-295',
+		name: 'Og-294',
 		decayTypes: [
 			['a', 1],
 		],
-		halfLife: 181e-3,
+		halfLife: 700e-6,
 	},
 ];

@@ -3698,7 +3698,7 @@ const elementData = [
 		z: 118,
 		name: 'Oganesson',
 		symbol: 'Og',
-		mass: 295,
+		mass: 294,
 		group: 18,
 		period: 7,
 		properties: {
