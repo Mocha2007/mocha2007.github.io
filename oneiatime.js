@@ -292,18 +292,19 @@ function roman(){
 	var nextMonth = new Date(year, month+1, 1).getMonth(); // 0-indexed
 	var numberOfDaysInTheMonth = new Date(year, month+1, 0).getDate();
 	var ides = numberOfDaysInTheMonth === 31 ? 15 : 13;
+	var nones = ides - 8;
 	var numberOfDaysBeforeNextKalends = numberOfDaysInTheMonth - (ides ? 15 : 13);
-	console.debug(day, month, year, numberOfDaysInTheMonth, ides, numberOfDaysBeforeNextKalends);
+	console.debug(day, month, year, ';', nones, ides, numberOfDaysInTheMonth);
 	if (day === 1)
 		return '<abbr title="kalendīs ' + monthsAbl[month]
 			+ '">Kal. ' + monthAbbreviations[month] + '.</abbr>';
-	if (day < 4)
-		return '<abbr title="ante diem ' + numerals[3-day] + ' nōnās ' + monthsAcc[month]
-			+ '"> a.d. ' + numeralAbbreviations[3-day] + ' Non. ' + monthAbbreviations[month] + '.</abbr>';
-	if (day === 4)
+	if (1 < nones - day)
+		return '<abbr title="ante diem ' + numerals[nones - day - 2] + ' nōnās ' + monthsAcc[month]
+			+ '"> a.d. ' + numeralAbbreviations[nones - day - 2] + ' Non. ' + monthAbbreviations[month] + '.</abbr>';
+	if (day === nones - 1)
 		return '<abbr title="prīdiē nōnās ' + monthsAcc[month]
 			+ '">Prid. Non. ' + monthAbbreviations[month] + '.</abbr>';
-	if (day === 5)
+	if (day === nones)
 		return '<abbr title="nōnīs ' + monthsAbl[month]
 			+ '">Non. ' + monthAbbreviations[month] + '.</abbr>';
 	if (1 < ides - day)
