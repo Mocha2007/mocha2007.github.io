@@ -316,6 +316,10 @@ function roman(){
 	if (day === ides)
 		return '<abbr title="īdibus' + monthsAbl[month]
 			+ '">Eid. ' + monthAbbreviations[month] + '.</abbr>';
+	// at this point all that remains is the time before the Kalends...
+	if (day === numberOfDaysInTheMonth)
+		return '<abbr title="prīdiē kalendās ' + monthsAcc[nextMonth]
+			+ '">Prid. Eid. ' + monthAbbreviations[nextMonth] + '.</abbr>';
 	return '<abbr title="ante diem ' + numerals[numberOfDaysBeforeNextKalends + ides - day] + ' kalendās ' + monthsAcc[nextMonth]
 		+ '"> a.d. ' + numeralAbbreviations[numberOfDaysBeforeNextKalends + ides - day] + ' Kal. ' + monthAbbreviations[nextMonth] + '.</abbr>';
 }
