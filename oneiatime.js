@@ -234,6 +234,91 @@ function japan(){
 		'<rt>' + eras[i][4] + '</rt></ruby></abbr>' + y + '年';
 }
 
+function roman(){
+	var monthsAbl = [ // f pl abl; used on the day of
+		'iānuāriīs',
+		'februāriīs',
+		'mārtiīs',
+		'aprīlibus',
+		'maiīs',
+		'iūniīs',
+		'iūliīs',
+		'augustīs',
+		'septembribus',
+		'octōbribus',
+		'novembribus',
+		'decembribus',
+	];
+	var monthsAcc = [ // f pl acc; used before the day
+		'iānuāriās',
+		'februāriās',
+		'mārtiās',
+		'aprīlēs',
+		'maiās',
+		'iūniās',
+		'iūliās',
+		'augustās',
+		'septembrēs',
+		'octōbrēs',
+		'novembrēs',
+		'decembrēs',
+	];
+	var monthAbbreviations = ['Ian', 'Feb', 'Mar', 'Apr', 'Mai', 'Iun',
+		'Iul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+	var numerals = [ // m s acc
+		'tertium',
+		'quartum',
+		'quintum',
+		'sextum',
+		'septimum',
+		'octavum',
+		'nonum',
+		'decimum',
+		'undecimum',
+		'duodecimum',
+		'tertium decimum',
+		'quartum decimum',
+		'quintum decimum',
+		'sextum decimum',
+		'septimum decimum',
+		'duodevicesimum',
+		'undevicesimum',
+	];
+	var numeralAbbreviations = ['III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII',
+		'XIII', 'XIV', 'XV', 'XVI', 'XVII', 'XVIII', 'XIX'];
+	var day = new Date().getDate(); // 1-indexed
+	var month = new Date().getMonth(); // 0-indexed
+	var year = new Date().getFullYear();
+	var nextMonth = new Date(year, month+1, 1).getMonth(); // 0-indexed
+	var numberOfDaysInTheMonth = new Date(year, month+1, 0).getDate();
+	var ides = numberOfDaysInTheMonth === 31 ? 15 : 13;
+	var numberOfDaysBeforeNextKalends = numberOfDaysInTheMonth - (ides ? 15 : 13);
+	console.debug(day, month, year, numberOfDaysInTheMonth, ides, numberOfDaysBeforeNextKalends);
+	if (day === 1)
+		return '<abbr title="kalendīs ' + monthsAbl[month]
+			+ '">Kal. ' + monthAbbreviations[month] + '.</abbr>';
+	if (day < 4)
+		return '<abbr title="ante diem ' + numerals[3-day] + ' nōnās ' + monthsAcc[month]
+			+ '"> a.d. ' + numeralAbbreviations[3-day] + ' Non. ' + monthAbbreviations[month] + '.</abbr>';
+	if (day === 4)
+		return '<abbr title="prīdiē nōnās ' + monthsAcc[month]
+			+ '">Prid. Non. ' + monthAbbreviations[month] + '.</abbr>';
+	if (day === 5)
+		return '<abbr title="nōnīs ' + monthsAbl[month]
+			+ '">Non. ' + monthAbbreviations[month] + '.</abbr>';
+	if (1 < ides - day)
+		return '<abbr title="ante diem ' + numerals[numberOfDaysInTheMonth-2-day] + ' īdūs ' + monthsAcc[month]
+			+ '"> a.d. ' + numeralAbbreviations[numberOfDaysInTheMonth-2-day] + ' Eid. ' + monthAbbreviations[month] + '.</abbr>';
+	if (day === ides - 1)
+		return '<abbr title="prīdiē īdūs ' + monthsAcc[month]
+			+ '">Prid. Eid. ' + monthAbbreviations[month] + '.</abbr>';
+	if (day === ides)
+		return '<abbr title="īdibus' + monthsAbl[month]
+			+ '">Eid. ' + monthAbbreviations[month] + '.</abbr>';
+	return '<abbr title="ante diem ' + numerals[numberOfDaysBeforeNextKalends + ides - day] + ' kalendās ' + monthsAcc[nextMonth]
+		+ '"> a.d. ' + numeralAbbreviations[numberOfDaysBeforeNextKalends + ides - day] + ' Kal. ' + monthAbbreviations[nextMonth] + '.</abbr>';
+}
+
 function holidayCSS(){
 	var year = new Date().getFullYear();
 	var month = new Date().getMonth() + 1;
@@ -358,8 +443,8 @@ function oneiaTime(){
 }
 
 function bonus(){
-	document.getElementById('clockbonus').innerHTML = [zodiac(), china(), egypt(), japan(), auc(),
-		maya(), 'JD '+jd().toFixed(3), darian(), dorf()].join('<br>');
+	document.getElementById('clockbonus').innerHTML = [zodiac(), china(), egypt(), japan(),
+		roman() + ' ' + auc(), maya(), 'JD '+jd().toFixed(3), darian(), dorf()].join('<br>');
 }
 
 function oneiaTimeInitialize(){
