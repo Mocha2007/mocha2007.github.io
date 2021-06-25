@@ -33,6 +33,7 @@ var subtitles =	[
 	'English sucks, and then you die.', // https://meta.stackexchange.com/questions/336005/neopronouns-or-trolling?newreg=7d69c4a9e87042df92f32d4bf2487f37#comment1109688_336011
 	'Common sense is a term we use for things obvious to us, but not others.', // https://meta.stackexchange.com/questions/335708/under-what-circumstances-will-stack-exchange-inc-share-private-sensitive-infor/335749#comment1106974_335749
 	'It growe&thorn; to ben a frogge, if it be noght eten.', // https://incubator.wikimedia.org/wiki/Wp/enm/Frogge
+	'Renascatur Latina!',
 	// mat
 	'I have created a truly marvelous conworld,<br/>which this randomly generated subtitle is too small to contain.',
 	'Mocha &isin; UwUers',
