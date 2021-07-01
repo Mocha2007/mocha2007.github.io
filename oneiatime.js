@@ -346,6 +346,8 @@ function holidayCSS(){
 			src = 'mochricks';
 			if (day === 17)
 				title = 'Drink, ye bastard!';
+			else if (day === 20)
+				title = 'Happy vernal equinox ' + year + '!';
 			break;
 		case 4:
 			if (day === 1){
@@ -362,7 +364,9 @@ function holidayCSS(){
 			break;
 		case 6:
 			src = 'mogay';
-			if (day === 23)
+			if (day === 20 + (0 < year % 4))
+				title = 'Happy summer solstice ' + year + '!';
+			else if (day === 23)
 				title = 'Happy birthday, MochaFiction Wiki! 2011-' + year;
 			else
 				title = 'Everyone gets a nice big hug!';
@@ -374,6 +378,8 @@ function holidayCSS(){
 		case 9:
 			if (day === 19)
 				title = 'Yarrrr!';
+			else if (day === 22 + (1 < year % 4))
+				title = 'Happy autumnal equinox ' + year + '!';
 			break;
 		case 10:
 			src = 'mochaween';
@@ -396,6 +402,8 @@ function holidayCSS(){
 			src = 'mochristmas';
 			if (day === 4)
 				title = 'Today is Yuletide! Roast marshmallows and listen to spooky ghost stories in Seaside Town!';
+			else if (day === 21 + (year % 4 === 3))
+				title = 'Happy winter solstice ' + year + '!';
 			else if (17 <= day && day < 23)
 				title = 'Have a joyous Saturnalia!';
 			else if (day === 23)
