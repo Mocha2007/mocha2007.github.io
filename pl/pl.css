@@ -1,0 +1,35 @@
+html, body {
+	background-color: black;
+	color: silver;
+	height: 100%;
+	margin: 0;
+}
+h1 {
+	margin: 0 0 0 10px;
+}
+.button {
+	background-color: silver;
+	border-radius: 10px;
+	color: black;
+	cursor: pointer;
+	padding: 0 5px 0 5px;
+}
+.button:hover {
+	opacity: 0.5;
+}
+#canvas {
+	height: 90%;
+	width: 100%;
+}
+#menuBar {
+	font-size: 5vh;
+	height: 10%;
+	text-align: center;
+	width: 100%;
+}
+#menuBar * {
+	display: inline-block;
+	height: 100%;
+	line-height: 150%;
+	width: 45%;
+}

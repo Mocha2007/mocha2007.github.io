@@ -1,0 +1,56 @@
+/* exported data */
+'use strict';
+const data = {
+	gender: [
+		{
+			name: 'masculine',
+			abbr: 'm',
+			subject: 'he',
+			oblique: 'him',
+			possDet: 'his',
+			possPron: 'his',
+			refl: 'himself',
+			title: 'mr',
+		},
+		{
+			name: 'feminine',
+			abbr: 'f',
+			subject: 'she',
+			oblique: 'her',
+			possDet: 'her',
+			possPron: 'hers',
+			refl: 'herself',
+			title: 'ms',
+		},
+		{
+			name: 'neuter inanimate',
+			abbr: 'n',
+			subject: 'it',
+			oblique: 'it',
+			possDet: 'its',
+			possPron: 'its',
+			refl: 'itself',
+		},
+		{
+			name: 'neuter animate',
+			abbr: 'na',
+			subject: 'they',
+			oblique: 'them',
+			possDet: 'their',
+			possPron: 'theirs',
+			refl: 'themself',
+			title: 'mx',
+			isPlural: true,
+		},
+		{
+			name: 'plural',
+			abbr: 'pl',
+			subject: 'they',
+			oblique: 'them',
+			possDet: 'their',
+			possPron: 'theirs',
+			refl: 'themselves',
+			isPlural: true,
+		},
+	],
+};
