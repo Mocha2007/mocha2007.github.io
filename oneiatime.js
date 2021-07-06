@@ -425,8 +425,8 @@ function holidayCSS(){
 
 function oneiaTime(){
 	var epoch =	1497151176; // SUN 2017 JUN 11 03:19:36 UTC
-	var year =	6477527.863370168; // oneian orbital period
-	var day =	105849.89226698066; // solar day; the sideral day is 104148 s
+	var year =	7662598.89579935; // oneian orbital period
+	var day =	105583.0567402678; // solar day; the sideral day is 104148 s
 
 	var currenttime = Date.now()/1000;
 	// 00:00 is at roughly local noon
