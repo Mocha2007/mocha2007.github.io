@@ -27,10 +27,8 @@ function keySpan(id){
 // https://stackoverflow.com/a/32632007/2579798
 const audio = new(window.AudioContext || window.webkitAudioContext)();
 
-/**
- * @param {number} id piano key id
- */
-function noteOnClick(id){
+/** returns the stop function */
+function playTone(freq){
 	const attack = 100, //duration it will take to increase volume full sound volume, makes it more natural
 		gain = audio.createGain(),
 		osc = audio.createOscillator();
@@ -39,13 +37,13 @@ function noteOnClick(id){
 	gain.gain.setValueAtTime(0, audio.currentTime); //change to "1" if you're not fadding in/out
 	gain.gain.linearRampToValueAtTime(1, audio.currentTime + attack / 1000); //remove if you don't want to fade in
 
-	osc.frequency.value = note2freq(id);
+	osc.frequency.value = freq;
 	osc.type = selectedWave;
 	osc.connect(gain);
 	osc.start(0);
 
 	// console.log(`pressing key ${id} (${osc.frequency.value} hz)`);
-	document.getElementById(`key${id}`).onmouseup = () => {
+	return () => {
 		// console.log(`depressing key ${id}`);
 		gain.gain.linearRampToValueAtTime(0, audio.currentTime + 1); //remove if you don't want to fade out
 		setTimeout(() => {
@@ -55,6 +53,13 @@ function noteOnClick(id){
 			gain.disconnect(audio.destination);
 		}, 1000);
 	};
+}
+
+/**
+ * @param {number} id piano key id
+ */
+function noteOnClick(id){
+	document.getElementById(`key${id}`).onmouseup = playTone(note2freq(id));
 }
 
 function generatePiano(){
