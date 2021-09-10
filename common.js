@@ -142,8 +142,8 @@ const random = {
 };
 
 /** works just like in python
- * @param {number} m
- * @param {number} [n]
+ * @param {number} m min (inclusive)
+ * @param {number} [n] max (exclusive)
  * @return {number[]}
 */
 function range(m, n, step = 1){

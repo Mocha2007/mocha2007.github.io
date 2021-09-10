@@ -1,0 +1,20 @@
+body, html, table {
+	border-collapse: collapse;
+	font-size: 4vh;
+	height: 100%;
+	margin: 0;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+
+td {
+	border: 1px solid #888;
+	height: calc(100% / 12);
+	width: calc(100% / 13);
+}
+
+.black {
+	background-color: black;
+	color: white;
+}
