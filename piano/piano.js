@@ -1,6 +1,9 @@
 /* global range */
 'use strict';
 
+const waveTypes = 'sine square triangle sawtooth'.split(' ');
+let selectedWave = 'sine';
+
 function note2freq(id){
 	return 27.5 * Math.pow(2, (id-1)/12);
 }
@@ -37,7 +40,7 @@ function noteOnClick(id){
 	gain.gain.linearRampToValueAtTime(1, audio.currentTime + attack / 1000); //remove if you don't want to fade in
 
 	osc.frequency.value = note2freq(id);
-	osc.type = 'sine';
+	osc.type = selectedWave;
 	osc.connect(gain);
 	osc.start(0);
 
@@ -67,8 +70,16 @@ function generatePiano(){
 			const td = document.createElement('td');
 			tr.appendChild(td);
 			const id = xy2id(x, y);
+			if (y === 0 && x < 4){ // waveform buttons
+				td.innerHTML = waveTypes[x];
+				td.classList.add('waveformButton');
+				td.onclick = () => selectedWave = waveTypes[x];
+				return;
+			}
 			if (id < 1 || 88 < id || 6 < x-y || x-y < -5)
 				return td.classList.add('bungus');
+			if (id < 18) // D2, the lowest sound playable on my laptop
+				td.classList.add('tooLow');
 			td.id = `key${id}`;
 			// black keys
 			if (-1 < [0, 2, 5, 7, 10].indexOf(id % 12))

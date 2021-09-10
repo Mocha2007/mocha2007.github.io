@@ -23,3 +23,11 @@ td {
 .bungus {
 	border: none;
 }
+/*
+.tooLow {
+	border: 1px solid red;
+}
+*/
+.waveformButton {
+	font-size: 2vh;
+}
