@@ -9,6 +9,18 @@ function xy2id(x, y){
 	return 7*(y+1) + 5*(x-6);
 }
 
+function keySpan(id){
+	// https://en.wikipedia.org/wiki/Piano_key_frequencies
+	const names = 'G♯ A A♯ B C C♯ D D♯ E F F♯ G'.split(' ');
+	/** @type {HTMLSpanElement} */
+	const span = document.createElement('span');
+	span.innerHTML = names[id % 12];
+	const sub = document.createElement('sub');
+	sub.innerHTML = Math.floor((id+8)/12);
+	span.appendChild(sub);
+	return span;
+}
+
 // https://stackoverflow.com/a/32632007/2579798
 const audio = new(window.AudioContext || window.webkitAudioContext)();
 
@@ -61,7 +73,7 @@ function generatePiano(){
 			// black keys
 			if (-1 < [0, 2, 5, 7, 10].indexOf(id % 12))
 				td.classList.add('black');
-			td.innerHTML = id;
+			td.appendChild(keySpan(id));
 			td.onmousedown = () => noteOnClick(id);
 		});
 	});
