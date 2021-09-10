@@ -68,7 +68,7 @@ function generatePiano(){
 			tr.appendChild(td);
 			const id = xy2id(x, y);
 			if (id < 1 || 88 < id || 6 < x-y || x-y < -5)
-				return;
+				return td.classList.add('bungus');
 			td.id = `key${id}`;
 			// black keys
 			if (-1 < [0, 2, 5, 7, 10].indexOf(id % 12))
