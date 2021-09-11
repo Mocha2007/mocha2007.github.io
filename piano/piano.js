@@ -59,9 +59,13 @@ function playTone(freq){
 		gain.gain.linearRampToValueAtTime(0, audio.currentTime + 1); //remove if you don't want to fade out
 		setTimeout(() => {
 			// console.log('this should fire 1s later');
-			osc.stop(0);
-			osc.disconnect(gain);
-			gain.disconnect(audio.destination);
+			try {
+				osc.stop(0);
+				osc.disconnect(gain);
+				gain.disconnect(audio.destination);
+			}
+			// eslint-disable-next-line no-empty
+			catch (_){}
 		}, 1000);
 	};
 }
