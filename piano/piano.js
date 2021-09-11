@@ -1,3 +1,4 @@
+/* exported stopAllAudio */
 /* global range */
 'use strict';
 
@@ -22,6 +23,16 @@ function keySpan(id){
 	sub.innerHTML = Math.floor((id+8)/12);
 	span.appendChild(sub);
 	return span;
+}
+
+function stopAllAudio(){
+	range(88).forEach(id => {
+		try {
+			document.getElementById(`key${id}`).onmouseup();
+		}
+		// eslint-disable-next-line no-empty
+		catch (_){}
+	});
 }
 
 // https://stackoverflow.com/a/32632007/2579798
@@ -93,6 +104,8 @@ function generatePiano(){
 			td.onmousedown = () => noteOnClick(id);
 		});
 	});
+	// misc setup
+	document.onmouseup = stopAllAudio;
 }
 
 generatePiano();
