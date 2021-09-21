@@ -4,6 +4,7 @@
 	border-radius: 10px;
 	cursor: pointer;
 	padding: 0 5px 0 5px;
+	user-select: none;
 }
 .button:hover {
 	opacity: 0.5;

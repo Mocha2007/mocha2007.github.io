@@ -57,11 +57,18 @@ const LE = {
 			? random.choice(this.review.list) // old
 			: this.random.supraclause(); // new
 		this.review.current = [question, answer];
+		// eremoran script
+		const elemQe = document.createElement('span');
+		elemQe.classList.add('eremoran');
+		elemQe.innerHTML = question.replace('f', 'h');
+		this.learn.appendChild(elemQe);
+		// newline
+		this.learn.appendChild(document.createElement('br'));
 		// question
 		const elemQ = document.createElement('span');
 		elemQ.innerHTML = question;
 		this.learn.appendChild(elemQ);
-		// linebreak
+		// newline
 		this.learn.appendChild(document.createElement('br'));
 		// answer (spoilered)
 		const elemA = document.createElement('span');
