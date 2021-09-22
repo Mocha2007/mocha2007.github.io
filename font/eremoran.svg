@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 <metadata>
-Created by FontForge 20170731 at Tue Sep 21 18:38:53 2021
+Created by FontForge 20170731 at Wed Sep 22 19:28:22 2021
  By Aleksey,,,
 Copyright Mocha2007 2021
 </metadata>
@@ -33,7 +33,7 @@ d="M1506 50l-719 954l-718 -954h1437zM50 69l718 955l-718 954v-1909v0zM1525 69v190
     <glyph glyph-name="space" unicode=" " 
  />
     <glyph glyph-name="A" unicode="A" 
-d="M0 0v853l341 683v170h-171l171 342h171v-171l85 171h171l597 -1195v-512h171l-171 -341h-171v853l-512 1024l-170 -341v-1195h170l-170 -341h-171v1194l-171 -341v-512h171l-171 -341h-170z" />
+d="M0 0v853l597 1195h171l597 -1195v-512h171l-171 -341h-341v853l-342 683l-341 -683v-512h171l-171 -341h-341z" />
     <glyph glyph-name="B" unicode="B" 
 d="M0 0v1706h-170l170 342h170v-1707h171l-171 -341h-170zM341 0v1706h-171l171 342h171v-512h853v-342h-341v-853h170l-170 -341h-171v1194h-341v-853h170l-170 -341h-171z" />
     <glyph glyph-name="D" unicode="D" 
@@ -41,7 +41,7 @@ d="M341 0l683 1365l-342 341l-256 -512h-170l-426 854h170l341 -683l341 683l683 -68
     <glyph glyph-name="E" unicode="E" 
 d="M0 0v512l1194 1194h-1024l-170 -170v341l170 171h1195v-512l-1195 -1195h1024l171 171v-342l-171 -170h-1194z" />
     <glyph glyph-name="H" unicode="H" 
-d="M1194 170v512l-512 1024l-512 -1024v-512h342v171h-171l171 341h341v-512h341zM0 0v682l682 1366l683 -1366v-682h-1365z" />
+d="M341 1024l853 426l-853 427v-853v0zM0 0v2048h341l1195 -598l-1195 -597v-512h171l-171 -341h-341z" />
     <glyph glyph-name="I" unicode="I" 
 d="M682 170l342 342v1024l-342 341l-341 -341v-1024l341 -342v0zM512 0l-512 512v1024l512 512h341l512 -512v-1024l-512 -512h-341z" />
     <glyph glyph-name="K" unicode="K" 
