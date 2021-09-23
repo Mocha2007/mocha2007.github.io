@@ -19,18 +19,24 @@
 https://stackoverflow.com/a/24990647/2579798
 https://fontstruct.com/fontstructions/show/1995779/eremoran
 https://transfonter.org/
+symbols for 10-19 are lowercase a-j
 */
 @font-face {
 	font-family: 'Eremoran';
 	src: url('../font/eremoran.eot'); /* IE9 Compat Modes */
 	src: url('../font/eremoran.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
 		 url('../font/eremoran.woff') format('woff'), /* Modern Browsers */
+		 url('../font/eremoran.woff2') format('woff2'), /* woff2 */
 		 url('../font/eremoran.ttf')  format('truetype'), /* Safari, Android, iOS */
 		 url('../font/eremoran.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 .eremoran {
 	font-family: Eremoran;
 	text-transform: uppercase;
+}
+/* case sensitive for nums */
+.eremoran.cs {
+	text-transform: none;
 }
 .eremoran .small {
 	font-size: 75%;
