@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 <metadata>
-Created by FontForge 20170731 at Wed Sep 22 19:38:37 2021
+Created by FontForge 20170731 at Thu Sep 23 05:13:44 2021
  By Aleksey,,,
 Copyright Mocha2007 2021
 </metadata>
@@ -17,7 +17,7 @@ Copyright Mocha2007 2021
     ascent="2048"
     descent="0"
     cap-height="2048"
-    bbox="-170 -170 1575 2218"
+    bbox="-170 -341 1575 2218"
     underline-thickness="102"
     underline-position="51"
     unicode-range="U+0020-00D4"
@@ -32,6 +32,34 @@ d="M1506 50l-719 954l-718 -954h1437zM50 69l718 955l-718 954v-1909v0zM1525 69v190
  />
     <glyph glyph-name="space" unicode=" " 
 d="M341 853l171 341h512l-171 -341h-512z" />
+    <glyph glyph-name="comma" unicode="," 
+d="M-170 -341l170 341v341h341v-341l-341 -341h-170z" />
+    <glyph glyph-name="hyphen" unicode="-" 
+ />
+    <glyph glyph-name="period" unicode="." 
+d="M-170 0l170 341h512l-171 -341h-511z" />
+    <glyph glyph-name="slash" unicode="/" 
+d="M682 853l512 512l-512 512l-512 -512l512 -512v0zM0 0v170l512 512l-512 512v342l170 170l-170 171v171h170l171 -171l171 171h341l512 -512v-342l-512 -512l512 -512v-170h-171l-512 512l-512 -512h-170z" />
+    <glyph glyph-name="zero" unicode="0" 
+d="M682 853l171 341h-171l-170 -341h170zM170 682l342 683h682l-341 -683h-683z" />
+    <glyph glyph-name="one" unicode="1" 
+d="M512 682v342l341 341v-341l-341 -342v0z" />
+    <glyph glyph-name="two" unicode="2" 
+d="M341 682v342l341 341v-341l-341 -342v0zM682 682v342l342 341v-341l-342 -342v0z" />
+    <glyph glyph-name="three" unicode="3" 
+d="M170 682v342l342 341v-341l-342 -342v0zM512 682v342l341 341v-341l-341 -342v0zM853 682v342l341 341v-341l-341 -342v0z" />
+    <glyph glyph-name="four" unicode="4" 
+d="M0 682v342l341 341v-341l-341 -342v0zM341 682v342l341 341v-341l-341 -342v0zM682 682v342l342 341v-341l-342 -342v0zM1024 682v342l341 341v-341l-341 -342v0z" />
+    <glyph glyph-name="five" unicode="5" 
+d="M-170 853l170 341h1536l-171 -341h-1535z" />
+    <glyph glyph-name="six" unicode="6" 
+d="M-170 512l170 341h1536l-171 -341h-1535zM512 853v341l341 342v-342l-341 -341v0z" />
+    <glyph glyph-name="seven" unicode="7" 
+d="M-170 512l170 341h1536l-171 -341h-1535zM341 853v341l341 342v-342l-341 -341v0zM682 853v341l342 342v-342l-342 -341v0z" />
+    <glyph glyph-name="eight" unicode="8" 
+d="M-170 512l170 341h1536l-171 -341h-1535zM170 853v341l342 342v-342l-342 -341v0zM512 853v341l341 342v-342l-341 -341v0zM853 853v341l341 342v-342l-341 -341v0z" />
+    <glyph glyph-name="nine" unicode="9" 
+d="M-170 512l170 341h1536l-171 -341h-1535zM0 853v341l341 342v-342l-341 -341v0zM341 853v341l341 342v-342l-341 -341v0zM682 853v341l342 342v-342l-342 -341v0zM1024 853v341l341 342v-342l-341 -341v0z" />
     <glyph glyph-name="colon" unicode=":" 
 d="M-170 341l170 341h512l-171 -341h-511zM-170 1365l170 341h512l-171 -341h-511z" />
     <glyph glyph-name="A" unicode="A" 
@@ -68,6 +96,8 @@ d="M0 0v341h1365v-341h-1365zM512 512l-512 512v170h170l512 -512l512 512v171l-512 
 d="M0 0v170l1024 1024h-854l-170 -170v341l170 171h1195v-171l-1024 -1024h853l171 171v-342l-171 -170h-1194zM1024 1536v170h-1024v171l341 341v-170h1024v-171l-341 -341v0z" />
     <glyph glyph-name="Z" unicode="Z" 
 d="M1024 0v853h-1024v341h1024v512h-171l171 342h341v-1707h171l-171 -341h-341z" />
+    <glyph glyph-name="underscore" unicode="_" 
+d="M-170 -341l170 341h1536l-171 -341h-1535z" />
     <glyph glyph-name="k" unicode="k" 
  />
     <glyph glyph-name="Ecircumflex" unicode="&#xca;" 
