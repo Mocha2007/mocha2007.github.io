@@ -41,10 +41,6 @@ symbols for 10-19 are lowercase a-j
 .eremoran .small {
 	font-size: 75%;
 }
-.overline {
-	text-decoration: overline;
-	text-decoration-thickness: 0.3vh;
-}
 .eremoran u {
 	text-decoration: underline;
 	text-decoration-thickness: 0.3vh;
