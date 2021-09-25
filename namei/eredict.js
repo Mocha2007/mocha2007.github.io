@@ -11,6 +11,8 @@ function getEreDict(){
 }
 
 function printEreDict(){
+	if (reader.readyState !== 4)
+		return;
 	/** @type {HTMLDListElement} */
 	const list = document.getElementById('dictlist');
 	reader.responseText.split('\n').forEach(line => {
