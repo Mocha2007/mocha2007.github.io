@@ -234,6 +234,33 @@ function japan(){
 		'<rt>' + eras[i][4] + '</rt></ruby></abbr>' + y + '年';
 }
 
+function romanFULL(){
+	return romanDOTW() + ' ' + roman() + ' ' + auc();
+}
+
+function romanDOTW(){
+	var days = [ // diēs + ? s gen
+		'sōlis', // Sunday
+		'lūnae',
+		'mārtis',
+		'mercuriī',
+		'iovis',
+		'veneris',
+		'saturnī',
+	];
+	var daysABBR = [
+		'Sol.', // Sunday
+		'Lun.',
+		'Mar.',
+		'Mer.',
+		'Iov.',
+		'Ven.',
+		'Sat.',
+	];
+	var dotw = new Date().getDay(); // 0=sun
+	return '<abbr title="diēs ' + days[dotw] + '">' + daysABBR[dotw] + '</abbr>';
+}
+
 function roman(){
 	var monthsAbl = [ // f pl abl; used on the day of
 		'iānuāriīs',
@@ -457,7 +484,7 @@ function oneiaTime(){
 
 function bonus(){
 	document.getElementById('clockbonus').innerHTML = [zodiac(), china(), egypt(), japan(),
-		roman() + ' ' + auc(), maya(), 'JD '+jd().toFixed(3), darian(), dorf()].join('<br>');
+		romanFULL(), maya(), 'JD '+jd().toFixed(3), darian(), dorf()].join('<br>');
 }
 
 function oneiaTimeInitialize(){
