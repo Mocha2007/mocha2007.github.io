@@ -308,8 +308,8 @@ function roman(){
 		return '<abbr title="nōnīs ' + monthsAbl[month]
 			+ '">Non. ' + monthAbbreviations[month] + '.</abbr>';
 	if (1 < ides - day)
-		return '<abbr title="ante diem ' + numerals[numberOfDaysInTheMonth-2-day] + ' īdūs ' + monthsAcc[month]
-			+ '"> a.d. ' + numeralAbbreviations[numberOfDaysInTheMonth-2-day] + ' Eid. ' + monthAbbreviations[month] + '.</abbr>';
+		return '<abbr title="ante diem ' + numerals[ides-2-day] + ' īdūs ' + monthsAcc[month]
+			+ '"> a.d. ' + numeralAbbreviations[ides-2-day] + ' Eid. ' + monthAbbreviations[month] + '.</abbr>';
 	if (day === ides - 1)
 		return '<abbr title="prīdiē īdūs ' + monthsAcc[month]
 			+ '">Prid. Eid. ' + monthAbbreviations[month] + '.</abbr>';
