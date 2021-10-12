@@ -31,6 +31,12 @@
 			<rect x="2020" width="1000" height="100" style="fill:magenta"/>
 			<text transform="translate(2030 50) rotate(90)">Future Era</text>
 			<g transform="translate(0 -5)">
+				<text x="-2000">S</text><!-- Sulfur -->
+				<text x="-1500">Hg</text><!-- Mercury -->
+				<text x="-1000">Zn</text><!-- Zinc -->
+				<text x="-600">Pt</text><!-- Platinum -->
+				<text x="815">As Sb</text><!-- Arsenic and Antimony -->
+				<text x="1000">Bi</text><!-- Bismuth -->
 				<text x="1608">🔭</text><!-- Telescope; representing astronomy -->
 				<text x="1669">⚗️</text><!-- Phosphorus; representing chemistry -->
 				<text x="1684">∫</text><!-- Calculus (appx.) -->
