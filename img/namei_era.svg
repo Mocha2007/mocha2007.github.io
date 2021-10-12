@@ -2,33 +2,34 @@
 <svg width="1000" height="650" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<desc>Nameian Eras</desc>
 	<style>
-		<!--#timeline text {
-			transform: rotate(90deg);
-		}-->
-		#labels  text {
+		#labels text {
 			text-anchor:end;
+		}
+		#timeline text {
+			text-anchor:middle;
+			font-size: 3.3vh;
 		}
 	</style>
 	<defs>
 		<symbol id="timeline" style="overflow: visible;">
 			<rect x="-3300" width="2500" height="100" style="fill:#FFBF00"/>
-			<text x="-3300" y="50">Bronze Age</text>
+			<text transform="translate(-3290 50) rotate(90)">Bronze Age</text>
 			<rect x="-800" width="1300" height="100" style="fill:#eee"/>
-			<text x="-800" y="50">Classical Era</text>
+			<text transform="translate(-790 50) rotate(90)">Classical Era</text>
 			<rect x="500" width="1000" height="100" style="fill:#444"/>
-			<text x="500" y="50" fill="white">Medieval Era</text>
+			<text fill="white" transform="translate(510 50) rotate(90)">Medieval Era</text>
 			<rect x="1500" width="250" height="100" style="fill:#EF7EBE"/>
-			<text x="1500" y="50">Renaissance</text>
+			<text transform="translate(1510 50) rotate(90)">Renaissance</text>
 			<rect x="1750" width="150" height="100" style="fill:#C67537"/>
-			<text x="1750" y="50">Industrial Era</text>
+			<text transform="translate(1760 50) rotate(90)">Industrial Era</text>
 			<rect x="1900" width="45" height="100" style="fill:#4ABDDA"/>
-			<text x="1900" y="50">Modern Era</text>
+			<text transform="translate(1910 50) rotate(90)">Modern Era</text>
 			<rect x="1945" width="45" height="100" style="fill:#91CAD8"/>
-			<text x="1945" y="50">Atomic Era</text>
+			<text transform="translate(1955 50) rotate(90)">Atomic Era</text>
 			<rect x="1990" width="30" height="100" style="fill:pink"/>
-			<text x="1990" y="50">Information Era</text>
+			<text transform="translate(2000 50) rotate(90)">Information Era</text>
 			<rect x="2020" width="1000" height="100" style="fill:magenta"/>
-			<text x="2020" y="50">Future Era</text>
+			<text transform="translate(2030 50) rotate(90)">Future Era</text>
 		</symbol>
 	</defs>
 	<use xlink:href="#timeline" x="0" y="30" transform="translate(-1020 0)"/>
