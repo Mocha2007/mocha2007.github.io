@@ -25,8 +25,10 @@
 			<text x="1900" y="50">Modern Era</text>
 			<rect x="1945" width="45" height="100" style="fill:#91CAD8"/>
 			<text x="1945" y="50">Atomic Era</text>
-			<rect x="1990" width="1000" height="100" style="fill:magenta"/>
+			<rect x="1990" width="30" height="100" style="fill:pink"/>
 			<text x="1990" y="50">Information Era</text>
+			<rect x="2020" width="1000" height="100" style="fill:magenta"/>
+			<text x="2020" y="50">Future Era</text>
 		</symbol>
 	</defs>
 	<use xlink:href="#timeline" x="0" y="30" transform="translate(-1020 0)"/>
