@@ -1,13 +1,10 @@
 <?xml version="1.0" standalone="no"?>
-<svg width="1000" height="650" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="650" height="530" version="1.1"
+	xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<desc>Nameian Eras</desc>
 	<style>
-		#labels text {
-			text-anchor:end;
-		}
-		#timeline text, #timeline2 text {
+		#labels text, #timeline text, #timeline2 text {
 			text-anchor:middle;
-			font-size: 3.3vh;
 		}
 	</style>
 	<defs>
@@ -54,18 +51,36 @@
 			<text x="1846.75">♆</text><!-- Neptune -->
 			<text x="1930.2">♇</text><!-- Pluto -->
 		</symbol>
+		<clipPath id="trim_top">
+			<rect x="0" y="0" width="650" height="500" />
+		</clipPath>
 	</defs>
-	<use xlink:href="#timeline" x="0" y="25" transform="translate(-1020 0)"/>
-		<use xlink:href="#timeline2" x="0" y="25" transform="translate(-1020 -5)"/>
-	<use xlink:href="#timeline" x="0" y="160" transform="translate(-1250 0)"/>
-	<use xlink:href="#timeline" x="0" y="290" transform="translate(-950 0)"/>
-	<use xlink:href="#timeline" x="0" y="420" transform="translate(-850 0)"/>
-	<use xlink:href="#timeline" x="0" y="550" transform="translate(1500 0)"/>
+	<!-- lines -->
+
+	<line x1="0" y1="130" x2="650" y2="130" style="stroke:grey;stroke-width:1"/>
+	<line x1="0" y1="230" x2="650" y2="230" style="stroke:grey;stroke-width:1"/>
+	<line x1="0" y1="330" x2="650" y2="330" style="stroke:grey;stroke-width:1"/>
+	<line x1="0" y1="430" x2="650" y2="430" style="stroke:grey;stroke-width:1"/>
+
+	<!-- main -->
+	<g transform="translate(0 30)" clip-path="url(#trim_top)">
+	<g transform="rotate(-90) translate(-1000 0)" style="overflow: visible;">
+		<use xlink:href="#timeline" x="0" y="25" transform="translate(-1020 0)"/>
+			<use xlink:href="#timeline2" x="0" y="25" transform="translate(-1020 -5)"/>
+		<use xlink:href="#timeline" x="0" y="160" transform="translate(-1250 0)"/>
+		<use xlink:href="#timeline" x="0" y="290" transform="translate(-950 0)"/>
+		<use xlink:href="#timeline" x="0" y="420" transform="translate(-850 0)"/>
+		<use xlink:href="#timeline" x="0" y="550" transform="translate(1500 0)"/>
+	</g></g>
 	<g id="labels">
-		<text x="1000" y="20">Earth</text>
-		<text x="1000" y="150">Pitang-Ra</text>
-		<text x="1000" y="280">Nikki</text>
-		<text x="1000" y="410">Maians</text>
-		<text x="1000" y="540">Eremor</text>
+		<text x="75" y="20">Earth</text>
+		<text x="210" y="20">Pitang-Ra</text>
+		<text x="340" y="20">Nikki</text>
+		<text x="470" y="20">Maians</text>
+		<text x="600" y="20">Eremor</text>
 	</g>
+	<line x1="0" y1="30" x2="650" y2="30" style="stroke:black;stroke-width:2" />
+	<text x="0" y="25" style="text-anchor:left;font-size:80%">now</text>
+	<line x1="0" y1="530" x2="650" y2="530" style="stroke:black;stroke-width:2" />
+	<text x="0" y="525" style="text-anchor:left;font-size:80%">500 ya</text>
 </svg>
