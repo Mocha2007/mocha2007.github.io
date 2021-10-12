@@ -30,20 +30,23 @@
 			<text transform="translate(2000 50) rotate(90)">Information Era</text>
 			<rect x="2020" width="1000" height="100" style="fill:magenta"/>
 			<text transform="translate(2030 50) rotate(90)">Future Era</text>
+			<g transform="translate(0 -5)">
+				<text x="1608">🔭</text><!-- Telescope -->
+				<text x="1669">⚗️</text><!-- Phosphorus -->
+				<text x="1684">∫</text><!-- Calculus (appx.) -->
+				<text x="1945.5">☢</text><!-- Nuclear Bomb -->
+				<text x="1957.75">🛰️</text><!-- Artificial Satellite -->
+			</g>
 		</symbol>
-		<symbol id="timeline2" style="overflow:visible;">
-			<text x="1608">🔭</text><!-- Telescope -->
-			<text x="1669">⚗️</text><!-- Phosphorus -->
-			<text x="1684">∫</text><!-- Calculus (appx.) -->
+		<symbol id="timeline2" style="overflow: visible;">
 			<text x="1781.25">⛢</text><!-- Uranus -->
 			<text x="1801">⚳</text><!-- Ceres -->
 			<text x="1846.75">♆</text><!-- Neptune -->
 			<text x="1930.2">♇</text><!-- Pluto -->
-			<text x="1945.5">☢</text><!-- Nuclear Bomb -->
-			<text x="1957.75">🛰️</text><!-- Artificial Satellite -->
 		</symbol>
 	</defs>
 	<use xlink:href="#timeline" x="0" y="25" transform="translate(-1020 0)"/>
+		<use xlink:href="#timeline2" x="0" y="25" transform="translate(-1020 -5)"/>
 	<use xlink:href="#timeline" x="0" y="160" transform="translate(-1250 0)"/>
 	<use xlink:href="#timeline" x="0" y="290" transform="translate(-950 0)"/>
 	<use xlink:href="#timeline" x="0" y="420" transform="translate(-850 0)"/>
@@ -55,5 +58,4 @@
 		<text x="1000" y="410">Maians</text>
 		<text x="1000" y="540">Eremor</text>
 	</g>
-	<use xlink:href="#timeline2" x="0" y="20" transform="translate(-1020 0)"/>
 </svg>
