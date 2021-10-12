@@ -55,7 +55,11 @@
 			<rect x="0" y="0" width="650" height="500" />
 		</clipPath>
 	</defs>
-	<!-- lines -->
+	<!-- lines
+		earth year = 100x + 30
+		oneian year = almost exactly 1/4 earth year so not incl.
+		maian year = roughly 5 earth years so not incl.
+	-->
 
 	<line x1="0" y1="130" x2="650" y2="130" style="stroke:grey;stroke-width:1"/>
 	<line x1="0" y1="230" x2="650" y2="230" style="stroke:grey;stroke-width:1"/>
@@ -82,5 +86,5 @@
 	<line x1="0" y1="30" x2="650" y2="30" style="stroke:black;stroke-width:2" />
 	<text x="0" y="25" style="text-anchor:left;font-size:80%">now</text>
 	<line x1="0" y1="530" x2="650" y2="530" style="stroke:black;stroke-width:2" />
-	<text x="0" y="525" style="text-anchor:left;font-size:80%">500 ya</text>
+	<text x="0" y="525" style="text-anchor:left;font-size:67%">500 ya = 2059 Eremoran = 103 Maian</text>
 </svg>
