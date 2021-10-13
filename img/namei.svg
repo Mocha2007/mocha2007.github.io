@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no"?>
 <!--Distance Scale: 1000 Pixels = 1 Au-->
-<svg width="530" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<svg width="660" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
 	<desc>Namei System</desc>
 	<defs>
 		<polygon id='arrow' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="red" transform="scale(.5)"/>
@@ -64,18 +64,32 @@
 	</a>
 
 	<a href='https://en.wikipedia.org/wiki/Asteroid_belt'>
+		<!-- First -->
 		<circle class='range' r="122" stroke="skyblue" stroke-width="24"/><!-- inner belt -->
 		<circle class='range' r="144.5" stroke="khaki" stroke-width="21"/><!-- middle belt -->
 		<circle class='range' r="165" stroke="lightgreen" stroke-width="20"/><!-- outer belt -->
+		<!-- Second -->
+		<circle class='range' r="1097" stroke="skyblue" stroke-width="210"/><!-- inner belt -->
+		<circle class='range' r="1279.5" stroke="khaki" stroke-width="155"/><!-- middle belt -->
+		<circle class='range' r="1466" stroke="lightgreen" stroke-width="218"/><!-- outer belt -->
 	</a>
 
 	<a id='kirkwood' href='https://en.wikipedia.org/wiki/Kirkwood_gap'><!-- Kirkwood Gaps -->
+		<!-- first -->
+		<!-- 8.747719631425032e-06 * (5/3*falto.orbit.p)**(2/3) -->
 		<circle r="110"/> <!-- 3:2 Inner 3.972 au -->
 		<circle r="134"/> <!-- 2:1 Inner/Mid -->
 		<circle r="148"/> <!-- 7:3 Mid -->
 		<circle r="155"/> <!-- 5:2 Mid/Outer -->
 		<circle r="175"/> <!-- 3:1 Outer 2.502 au -->
-		<!-- minors 8.747719631425032e-06 * (5/3*falto.orbit.p)**(2/3) -->
+		<!-- second -->
+		<circle r="992"/> <!-- 4:1 Inner -->
+		<circle r="1084"/> <!-- 7:2 Inner -->
+		<circle r="1202"/> <!-- 3:1 Inner/Mid -->
+		<circle r="1357"/> <!-- 5:2 Mid/Outer-->
+		<circle r="1421"/> <!-- 7:3 Outer -->
+		<circle r="1575"/> <!-- 2:1 Outer -->
+		<!-- minors -->
 		<g id='kirkwoodminor'>
 			<circle r="114"/> <!-- 11:7 -->
 			<circle r="115"/> <!-- 8:5 -->
@@ -170,12 +184,12 @@
 		</g>
 	</a>
 
-	<circle class='po' r="1224"/><!-- Don orbit -->
+	<circle class='po' r="626"/><!-- Don orbit -->
 	<a class='body' href='https://mocha2007.github.io/namei/namei.html#Don'><!-- Don -->
-		<path d="M -1224 1224 A 1 1 0 0 0 -1224 -1224" id="MarsPath"/>
+		<path d="M -626 626 A 1 1 0 0 0 -626 -626" id="MarsPath"/>
 		<g class='hovertext'>
-			<circle cx="1224" class='moc' style="fill:sienna"/>
-			<text x="1232" y="102">Don</text>
+			<circle cx="626" class='moc' style="fill:sienna"/>
+			<text x="634" y="102">Don</text>
 		</g>
 	</a>
 
