@@ -81,6 +81,10 @@
 	<text x="200" y="10" font-size="8" fill="grey">2 au</text>
 	<circle class='line' r="400" stroke="grey"/>
 	<text x="400" y="10" font-size="8" fill="grey">4 au</text>
+	<circle class='line' r="800" stroke="grey"/>
+	<text x="800" y="10" font-size="8" fill="grey">8 au</text>
+	<circle class='line' r="1600" stroke="grey"/>
+	<text x="1600" y="10" font-size="8" fill="grey">16 au</text>
 
 	<a href='https://en.wikipedia.org/wiki/Frost_line_(astrophysics)'><!-- Frost Line -->
 		<circle class='line' r="176.8" stroke="cyan"/>
