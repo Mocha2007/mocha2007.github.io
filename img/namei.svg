@@ -75,8 +75,10 @@
 		<circle r="148"/> <!-- 7:3 Mid -->
 		<circle r="155"/> <!-- 5:2 Mid/Outer -->
 		<circle r="175"/> <!-- 3:1 Outer 2.502 au -->
-		<!-- minors -->
+		<!-- minors 8.747719631425032e-06 * (5/3*falto.orbit.p)**(2/3) -->
 		<g id='kirkwoodminor'>
+			<circle r="114"/> <!-- 11:7 -->
+			<circle r="115"/> <!-- 8:5 -->
 			<circle r="118"/> <!-- 5:3 -->
 			<circle r="122"/> <!-- 7:4 -->
 			<circle r="124"/> <!-- 9:5 -->
@@ -84,6 +86,7 @@
 			<circle r="142"/> <!-- 11:5 -->
 			<circle r="144"/> <!-- 9:4 -->
 			<circle r="162"/> <!-- 8:3 -->
+			<circle r="165"/> <!-- 11:4 -->
 		</g>
 		<text x="75" y="10" font-size="8" fill="pink">Kirkwood Gaps</text>
 	</a>
