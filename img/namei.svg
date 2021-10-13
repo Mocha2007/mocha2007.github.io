@@ -209,7 +209,7 @@
 
 	<circle class='po' r="12733"/><!-- Dicito orbit -->
 	<a class='body' href='https://mocha2007.github.io/namei/namei.html#Dicito'><!-- Dicito -->
-		<text x="12733" y="110">Neuve</text>
+		<text x="12741" y="110">Dicito</text>
 		<path d="M -12733 12733 A 1 1 0 0 0 -12733 -12733" id="DicitoPath"/>
 		<circle cx="12733" class='moc' style="fill:sienna"/>
 	</a>
