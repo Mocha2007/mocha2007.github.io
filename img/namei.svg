@@ -106,7 +106,7 @@
 	
 	<a href='https://mocha2007.github.io/namei/namei.html#Namei'><!-- Namei -->
 		<g class='hovertext'>
-			<circle cx="0" cy="100" r="30" fill="khaki"/>
+			<circle cx="0" cy="100" r="30" fill="peachpuff"/>
 			<text x="0" y="102" font-size="8" fill="black">Namei</text>
 		</g>
 	</a>
@@ -117,7 +117,7 @@
 	<a class='body' href='https://mocha2007.github.io/namei/namei.html#Ara'><!-- Ara -->
 		<path d="M -50 50 A 1 1 0 0 0 -50 -50" id="MercuryPath"/>
 		<g class='hovertext'>
-			<circle cx="50" class='moc'/>
+			<circle cx="50" class='moc' style="fill:khaki"/>
 			<text x="58" y="102">Ara</text>
 		</g>
 	</a>
@@ -126,7 +126,7 @@
 	<a class='body' href='https://mocha2007.github.io/namei/namei.html#Falto'><!-- Falto -->
 		<path d="M -84 84 A 1 1 0 0 0 -84 -84" id="VenusPath"/>
 		<g class='hovertext'>
-			<circle cx="84" class='moc'/>
+			<circle cx="84" class='moc' style="fill:tan"/>
 			<text x="92" y="102">Falto</text>
 		</g>
 	</a>
@@ -135,7 +135,7 @@
 	<a class='body' href='https://mocha2007.github.io/namei/namei.html#Tata'><!-- Tata -->
 		<path d="M -137 137 A 1 1 0 0 0 -137 -137" id="TataPath"/>
 		<g class='hovertext'>
-			<circle cx="137" class='moc'/>
+			<circle cx="137" class='moc' style="fill:tan"/>
 			<text x="145" y="102">Tata</text>
 		</g>
 	</a>
@@ -144,7 +144,7 @@
 	<a class='body' href='https://mocha2007.github.io/namei/namei.html#Bau'><!-- Bau -->
 		<path d="M -196 196 A 1 1 0 0 0 -196 -196" id="BauPath"/>
 		<g class='hovertext'>
-			<circle cx="196" class='moc'/>
+			<circle cx="196" class='moc' style="fill:tan"/>
 			<text x="204" y="102">Bau</text>
 		</g>
 	</a>
@@ -153,7 +153,7 @@
 	<a class='body' href='https://mocha2007.github.io/namei/namei.html#Oneia'><!-- Oneia -->
 		<path d="M -340 340 A 1 1 0 0 0 -340 -340" id="EarthPath"/>
 		<g class='hovertext'>
-			<circle cx="340" class='moc'/>
+			<circle cx="340" class='moc' style="fill:cornflowerblue"/>
 			<text x="348" y="102">Oneia</text>
 		</g>
 	</a>
@@ -162,7 +162,7 @@
 	<a class='body' href='https://mocha2007.github.io/namei/namei.html#Don'><!-- Don -->
 		<path d="M -1224 1224 A 1 1 0 0 0 -1224 -1224" id="MarsPath"/>
 		<g class='hovertext'>
-			<circle cx="1224" class='moc'/>
+			<circle cx="1224" class='moc' style="fill:sienna"/>
 			<text x="1232" y="102">Don</text>
 		</g>
 	</a>
@@ -171,14 +171,14 @@
 	<a class='gas' href='https://mocha2007.github.io/namei/namei.html#Eisen'><!-- Eisen -->
 		<text x="2508" y="110">Eisen</text>
 		<path d="M -2500 2500 A 1 1 0 0 0 -2500 -2500" id="EisenPath"/>
-		<circle cx="2500" class='moc'/>
+		<circle cx="2500" class='moc' style="fill:darkkhaki"/>
 	</a>
 
 	<circle class='po' r="6464"/><!-- Neuve orbit -->
 	<a class='gas' href='https://mocha2007.github.io/namei/namei.html#Neuve'><!-- Neuve -->
 		<text x="6472" y="110">Neuve</text>
 		<path d="M -6464 6464 A 1 1 0 0 0 -6464 -6464" id="NeuvePath"/>
-		<circle cx="6464" class='moc'/>
+		<circle cx="6464" class='moc' style="fill:#7ca1ae"/>
 	</a>
 	
 	<a href='https://mocha2007.github.io'>
