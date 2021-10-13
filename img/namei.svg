@@ -183,6 +183,20 @@
 		<path d="M -6464 6464 A 1 1 0 0 0 -6464 -6464" id="NeuvePath"/>
 		<circle cx="6464" class='moc' style="fill:#7ca1ae"/>
 	</a>
+
+	<circle class='po' r="12733"/><!-- Dicito orbit -->
+	<a class='body' href='https://mocha2007.github.io/namei/namei.html#Dicito'><!-- Dicito -->
+		<text x="12733" y="110">Neuve</text>
+		<path d="M -12733 12733 A 1 1 0 0 0 -12733 -12733" id="DicitoPath"/>
+		<circle cx="12733" class='moc' style="fill:sienna"/>
+	</a>
+
+	<circle class='po' r="21797"/><!-- Mannu orbit -->
+	<a class='gas' href='https://mocha2007.github.io/namei/namei.html#Mannu'><!-- Mannu -->
+		<text x="21797" y="110">Mannu</text>
+		<path d="M -21797 21797 A 1 1 0 0 0 -21797 -21797" id="NeuvePath"/>
+		<circle cx="21797" class='moc' style="fill:darkseagreen"/>
+	</a>
 	
 	<a href='https://mocha2007.github.io'>
 		<image href="https://mocha2007.github.io/img/mo.png" x="6875" y="170" height="24"/>
