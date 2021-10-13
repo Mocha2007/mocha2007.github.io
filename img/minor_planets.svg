@@ -2,7 +2,7 @@
 <!--Distance Scale: 100 Pixels = 1 Au-->
 <!--Size Scale: Pixels = ln(radius in meters) -->
 <svg width="8000" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
-	<desc>Oneia-Nikki System</desc>
+	<desc>Solar System</desc>
 	<defs>
 		<polygon id='arrow' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="red" transform="scale(.5)"/>
 		<polygon id='arrowai' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="darkblue" transform="scale(.25)"/>

@@ -1,0 +1,188 @@
+<?xml version="1.0" standalone="no"?>
+<!--Distance Scale: 1000 Pixels = 1 Au-->
+<svg width="500" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<desc>Namei System</desc>
+	<defs>
+		<polygon id='arrow' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="red" transform="scale(.5)"/>
+		<polygon id='arrowai' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="darkblue" transform="scale(.25)"/>
+		<polygon id='arrowam' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="rgb(48,48,0)" transform="scale(.25)"/>
+		<polygon id='arrowao' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="darkgreen" transform="scale(.25)"/>
+		<clipPath id="round">
+			<circle r="8" cx="8" cy="8"/>
+		</clipPath>
+		<clipPath id="roundm">
+			<circle r="4" cx="4" cy="4"/>
+		</clipPath>
+	</defs>
+	
+	<style>
+		svg{font-family:"Verdana";}
+		path{fill:none;}
+		.visible{display:inline;}
+		.invisible{display:none;}
+		.nothovertext{display:block!important;}
+		.hoverrange circle,.hoverrange use{display:none;}
+		.hoverrange:hover circle,.hoverrange:hover use{display:block;}
+		.hoverrange text{text-shadow:#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px;}
+		.i{font-style:italic;}
+		.range,.line,#kirkwood circle{fill:none;cx:0px;cy:100px;}
+		.line,#kirkwood circle{stroke-width:1;}
+		.range{stroke-opacity:0.5;}
+		#kirkwood circle{stroke:pink;}
+		#kirkwoodminor circle{stroke-opacity:0.2;}
+		#af circle{cx:0px;cy:100px;stroke-opacity:0.2;fill:none;}
+		#af text{font-size:4px;}
+		#iaf circle{stroke:darkblue;}
+		#iaf text{fill:darkblue;}
+		#maf circle{stroke:rgb(32,32,0);}
+		#maf text{fill:olive;}
+		#oaf circle{stroke:rgb(0,48,0);}
+		#oaf text{fill:darkgreen;}
+		#raf circle{cx:0px;cy:100px;stroke-opacity:0.2;fill:none;}
+		#raf text{font-size:4px;}
+		#beltsections text{font-style:italic;font-size:8px;}
+		#rtno circle,#plutino circle{cx:0px;cy:100px;stroke:seagreen;fill:none;}
+		#rtno text,.desc text{font-size:10px;fill:white;}
+		.po,.mo{cx:0px;cy:100px;stroke-width:1px;fill:none;}
+		.po{stroke:white;}
+		.mo{stroke:silver;}
+		.moc{cy:100px;r:7px;fill:grey;}
+		.body g text,#tnos a text{font-size:8px;fill:white;}
+		.gas text{font-size:25px;fill:white;}
+		/* rounded pix */
+		.rp{height:16px;width:16px;clip-path:url(#round);}
+		.rm{height:8px;width:8px;clip-path:url(#roundm);}
+	</style>
+
+	<a href='https://en.wikipedia.org/wiki/Interplanetary_medium'><!-- fallback -->
+		<rect x="0" y="0" width="8000" height="200" fill="black"/>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Circumstellar_habitable_zone'>
+		<circle class='range' r="410" stroke="lime" stroke-width="148"/>
+		<text x="370" y="10" font-size="8" fill="lime">Habitable Zone</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Asteroid_belt'>
+		<circle class='range' r="122" stroke="skyblue" stroke-width="24"/><!-- inner belt -->
+		<circle class='range' r="144.5" stroke="khaki" stroke-width="21"/><!-- middle belt -->
+		<circle class='range' r="165" stroke="lightgreen" stroke-width="20"/><!-- outer belt -->
+	</a>
+
+	<a id='kirkwood' href='https://en.wikipedia.org/wiki/Kirkwood_gap'><!-- Kirkwood Gaps -->
+		<circle r="110"/> <!-- 3:2 Inner 3.972 au -->
+		<circle r="134"/> <!-- 2:1 Inner/Mid -->
+		<circle r="148"/> <!-- 7:3 Mid -->
+		<circle r="155"/> <!-- 5:2 Mid/Outer -->
+		<circle r="175"/> <!-- 3:1 Outer 2.502 au -->
+		<!-- minors -->
+		<g id='kirkwoodminor'>
+			<circle r="118"/> <!-- 5:3 -->
+			<circle r="122"/> <!-- 7:4 -->
+			<circle r="124"/> <!-- 9:5 -->
+			<circle r="126"/> <!-- 11:6 -->
+			<circle r="142"/> <!-- 11:5 -->
+			<circle r="144"/> <!-- 9:4 -->
+			<circle r="162"/> <!-- 8:3 -->
+		</g>
+		<text x="75" y="10" font-size="8" fill="pink">Kirkwood Gaps</text>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Asteroid_belt'><!-- asteroid belt part 2 -->
+		<g class='desc'>
+			<text x="70" y="195">Asteroid Belt</text>
+		</g>
+		<g id='beltsections'>
+			<text x="85" y="180" fill="darkblue">Inner</text>
+			<text x="110" y="180" fill="rgb(64,64,0)">Middle</text>
+			<text x="135" y="180" fill="darkgreen">Outer</text>
+		</g>
+	</a>
+
+	<a href='https://en.wikipedia.org/wiki/Frost_line_(astrophysics)'><!-- Frost Line -->
+		<circle class='line' r="1768" stroke="cyan"/>
+		<text x="1700" y="10" font-size="8" fill="cyan">Frost Line</text>
+	</a>
+	
+	<a href='https://mocha2007.github.io/namei/namei.html#Namei'><!-- Namei -->
+		<g class='hovertext'>
+			<circle cx="0" cy="100" r="30" fill="khaki"/>
+			<text x="0" y="102" font-size="8" fill="black">Namei</text>
+		</g>
+	</a>
+
+	<path d="M 0 0" id="NoPath"/>
+
+	<circle class='po' r="50"/><!-- Ara orbit -->
+	<a class='body' href='https://mocha2007.github.io/namei/namei.html#Ara'><!-- Ara -->
+		<path d="M -50 50 A 1 1 0 0 0 -50 -50" id="MercuryPath"/>
+		<g class='hovertext'>
+			<circle cx="50" class='moc'/>
+			<text x="58" y="102">Ara</text>
+		</g>
+	</a>
+
+	<circle class='po' r="84"/><!-- Falto orbit -->
+	<a class='body' href='https://mocha2007.github.io/namei/namei.html#Falto'><!-- Falto -->
+		<path d="M -84 84 A 1 1 0 0 0 -84 -84" id="VenusPath"/>
+		<g class='hovertext'>
+			<circle cx="84" class='moc'/>
+			<text x="92" y="102">Falto</text>
+		</g>
+	</a>
+
+	<circle class='mo' r="137"/><!-- Tata orbit -->
+	<a class='body' href='https://mocha2007.github.io/namei/namei.html#Tata'><!-- Tata -->
+		<path d="M -137 137 A 1 1 0 0 0 -137 -137" id="TataPath"/>
+		<g class='hovertext'>
+			<circle cx="137" class='moc'/>
+			<text x="145" y="102">Tata</text>
+		</g>
+	</a>
+
+	<circle class='po' r="196"/><!-- Bau orbit -->
+	<a class='body' href='https://mocha2007.github.io/namei/namei.html#Bau'><!-- Bau -->
+		<path d="M -196 196 A 1 1 0 0 0 -196 -196" id="BauPath"/>
+		<g class='hovertext'>
+			<circle cx="196" class='moc'/>
+			<text x="204" y="102">Bau</text>
+		</g>
+	</a>
+
+	<circle class='po' r="340"/><!-- Oneia orbit -->
+	<a class='body' href='https://mocha2007.github.io/namei/namei.html#Oneia'><!-- Oneia -->
+		<path d="M -340 340 A 1 1 0 0 0 -340 -340" id="EarthPath"/>
+		<g class='hovertext'>
+			<circle cx="340" class='moc'/>
+			<text x="348" y="102">Oneia</text>
+		</g>
+	</a>
+
+	<circle class='po' r="1224"/><!-- Don orbit -->
+	<a class='body' href='https://mocha2007.github.io/namei/namei.html#Don'><!-- Don -->
+		<path d="M -1224 1224 A 1 1 0 0 0 -1224 -1224" id="MarsPath"/>
+		<g class='hovertext'>
+			<circle cx="1224" class='moc'/>
+			<text x="1232" y="102">Don</text>
+		</g>
+	</a>
+
+	<circle class='po' r="2500"/><!-- Eisen orbit -->
+	<a class='gas' href='https://mocha2007.github.io/namei/namei.html#Eisen'><!-- Eisen -->
+		<text x="2508" y="110">Eisen</text>
+		<path d="M -2500 2500 A 1 1 0 0 0 -2500 -2500" id="EisenPath"/>
+		<circle cx="2500" class='moc'/>
+	</a>
+
+	<circle class='po' r="6464"/><!-- Neuve orbit -->
+	<a class='gas' href='https://mocha2007.github.io/namei/namei.html#Neuve'><!-- Neuve -->
+		<text x="6472" y="110">Neuve</text>
+		<path d="M -6464 6464 A 1 1 0 0 0 -6464 -6464" id="NeuvePath"/>
+		<circle cx="6464" class='moc'/>
+	</a>
+	
+	<a href='https://mocha2007.github.io'>
+		<image href="https://mocha2007.github.io/img/mo.png" x="6875" y="170" height="24"/>
+		<text x="6910" y="185" font-size="12" fill="cyan">mocha2007</text>
+	</a>
+</svg>
