@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no"?>
 <!--Distance Scale: 1000 Pixels = 1 Au-->
-<svg width="500" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<svg width="530" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
 	<desc>Namei System</desc>
 	<defs>
 		<polygon id='arrow' points="0 -1 7 -21 12 -15 47 -50 49 -48 14 -13 20 -8" fill="red" transform="scale(.5)"/>
@@ -101,6 +101,15 @@
 			<text x="135" y="180" fill="darkgreen">Outer</text>
 		</g>
 	</a>
+
+	<circle class='line' r="62.5" stroke="grey"/>
+	<text x="0" y="35" font-size="8" fill="grey">1/16 au</text>
+	<circle class='line' r="250" stroke="grey"/>
+	<text x="235" y="10" font-size="8" fill="grey">1/4 au</text>
+	<circle class='line' r="500" stroke="grey"/>
+	<text x="495" y="10" font-size="8" fill="grey">1/2 au</text>
+	<circle class='line' r="1000" stroke="grey"/>
+	<text x="1000" y="10" font-size="8" fill="grey">1 au</text>
 
 	<a href='https://en.wikipedia.org/wiki/Frost_line_(astrophysics)'><!-- Frost Line -->
 		<circle class='line' r="1768" stroke="cyan"/>
