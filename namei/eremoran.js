@@ -170,6 +170,8 @@ const EremoranTooltip = {
 	/** @type {HTMLDivElement} */
 	tooltip: undefined,
 	visible: true,
+	/** @type {HTMLElement[]} */
+	words: undefined,
 	clearTooltip(){
 		this.tooltip.innerHTML = '';
 		this.tooltip.style.display = 'none';
@@ -177,9 +179,7 @@ const EremoranTooltip = {
 	/** @param {string} word */
 	getDef(word){
 		// collect target elements
-		/** @type {HTMLElement[]} */
-		const words = Array.from(document.getElementsByTagName('dt'));
-		const desiredWordElement = words.filter(dt => dt.innerHTML.replace('f', 'h') === word)[0];
+		const desiredWordElement = this.words.filter(dt => dt.innerHTML.replace('f', 'h') === word)[0];
 		/** @type {HTMLElement[]} */
 		const elementsInDict = Array.from(desiredWordElement.parentElement.children);
 		const beginIndex = elementsInDict.indexOf(desiredWordElement);
@@ -192,6 +192,8 @@ const EremoranTooltip = {
 		return container;
 	},
 	setup(){
+		// store data
+		this.words = Array.from(document.getElementsByTagName('dt'));
 		// create tooltip
 		const div = this.tooltip = document.createElement('div');
 		div.id = this.id;
