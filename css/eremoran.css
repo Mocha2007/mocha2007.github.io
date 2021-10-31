@@ -51,7 +51,21 @@ symbols for 10-19 are lowercase a-j
 	border-radius: 2vh;
 	box-shadow: 2vh 2vh 1vh rgba(0, 0, 0, 0.7);
 	color: silver;
+	max-width: 50%;
 	padding: 0 2vh 0 2vh;
 	position: fixed;
 	user-select: none;
+}
+#eremoran_tooltip img {
+	background-color: silver;
+	border-radius: 2vh;
+}
+.eremoranWord {
+	padding: 0.4vh;
+}
+.eremoranWord:hover {
+	background-color: grey;
+	border-radius: 1vh;
+	box-shadow: 0 0 1vh rgba(0, 0, 0, 0.7);
+	color: black;
 }

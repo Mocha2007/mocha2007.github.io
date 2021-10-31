@@ -214,6 +214,7 @@ const EremoranTooltip = {
 				}
 				const span = document.createElement('span');
 				span.innerHTML = word;
+				span.classList.add('eremoranWord');
 				span.onmouseover = () => this.showTooltip(word.toLowerCase());
 				span.onmouseout = () => this.clearTooltip();
 				elem.appendChild(span);
