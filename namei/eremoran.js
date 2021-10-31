@@ -204,7 +204,12 @@ const EremoranTooltip = {
 			/** @type {string[]} */
 			const words = elem.innerHTML.split(' ');
 			elem.innerHTML = '';
-			words.forEach(word => {
+			words.forEach((word, i) => {
+				if (i){
+					const sp = document.createElement('span');
+					sp.innerHTML = ' ';
+					elem.appendChild(sp);
+				}
 				const span = document.createElement('span');
 				span.innerHTML = word;
 				span.onmouseover = () => this.showTooltip(word.toLowerCase());
