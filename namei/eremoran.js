@@ -1,6 +1,6 @@
 /* exported compileDict, compileFinals, compileInitials, compileLength,
-	compileMeanings, compileMedials, compileNounClass */
-/* global random, round */
+	compileMeanings, compileMedials, compileNounClass, EremoranTooltip */
+/* global random, range, round */
 
 'use strict';
 
@@ -160,5 +160,70 @@ const LE = {
 			['$c', '$c'],
 			['$c uid', '$c not'],
 		],
+	},
+};
+// replace each word in eremoran class span with <span ... >
+// which creates a tooltip with the word info!
+
+const EremoranTooltip = {
+	id: 'eremoran_tooltip',
+	/** @type {HTMLDivElement} */
+	tooltip: undefined,
+	visible: true,
+	clearTooltip(){
+		this.tooltip.innerHTML = '';
+		this.tooltip.style.display = 'none';
+	},
+	/** @param {string} word */
+	getDef(word){
+		// collect target elements
+		/** @type {HTMLElement[]} */
+		const words = Array.from(document.getElementsByTagName('dt'));
+		const desiredWordElement = words.filter(dt => dt.innerHTML.replace('f', 'h') === word)[0];
+		/** @type {HTMLElement[]} */
+		const elementsInDict = Array.from(desiredWordElement.parentElement.children);
+		const beginIndex = elementsInDict.indexOf(desiredWordElement);
+		const endIndex = elementsInDict.indexOf(elementsInDict.slice(beginIndex+1).find(elem => elem.tagName.toLowerCase() === 'dt'));
+		// create container
+		const container = document.createElement('dl');
+		range(beginIndex, endIndex).forEach(i => {
+			container.appendChild(elementsInDict[i].cloneNode(true));
+		});
+		return container;
+	},
+	setup(){
+		// create tooltip
+		const div = this.tooltip = document.createElement('div');
+		div.id = this.id;
+		document.body.appendChild(div);
+		this.clearTooltip();
+		// create triggers for words in eremoran class...
+		/** @type {HTMLElement[]} */
+		const eremoranTags = Array.from(document.getElementsByClassName('eremoran'));
+		eremoranTags.forEach(elem => {
+			/** @type {string[]} */
+			const words = elem.innerHTML.split(' ');
+			elem.innerHTML = '';
+			words.forEach(word => {
+				const span = document.createElement('span');
+				span.innerHTML = word;
+				span.onmouseover = () => this.showTooltip(word.toLowerCase());
+				span.onmouseout = () => this.clearTooltip();
+				elem.appendChild(span);
+			});
+		});
+	},
+	/** @param {string} word */
+	showTooltip(word){
+		this.tooltip.innerHTML = '';
+		try {
+			this.tooltip.appendChild(this.getDef(word));
+		}
+		catch (e){
+			return console.debug(`couldn't fetch ${word}.`);
+		}
+		this.tooltip.style.display = 'block';
+		this.tooltip.style.left = `${window.event.clientX+10}px`;
+		this.tooltip.style.top = `${window.event.clientY+10}px`;
 	},
 };

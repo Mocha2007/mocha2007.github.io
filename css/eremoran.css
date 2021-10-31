@@ -45,3 +45,12 @@ symbols for 10-19 are lowercase a-j
 	text-decoration: underline;
 	text-decoration-thickness: 0.3vh;
 }
+#eremoran_tooltip {
+	background-color: black;
+	border: 1vh solid grey;
+	border-radius: 2vh;
+	color: silver;
+	padding: 0 2vh 0 2vh;
+	position: fixed;
+	user-select: none;
+}
