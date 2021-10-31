@@ -49,6 +49,7 @@ symbols for 10-19 are lowercase a-j
 	background-color: black;
 	border: 1vh solid grey;
 	border-radius: 2vh;
+	box-shadow: 2vh 2vh 1vh rgba(0, 0, 0, 0.7);
 	color: silver;
 	padding: 0 2vh 0 2vh;
 	position: fixed;
