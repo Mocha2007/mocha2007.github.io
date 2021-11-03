@@ -235,8 +235,10 @@ const EremoranTooltip = {
 		}
 		this.tooltip.style.display = 'block';
 		const xy = elem.getBoundingClientRect();
-		if (xy.right < window.innerWidth/2)
+		if (xy.right < window.innerWidth/2){
 			this.tooltip.style.left = `${xy.right}px`;
+			this.tooltip.style.right = '';
+		}
 		else {
 			this.tooltip.style.right = `${window.innerWidth-xy.left}px`;
 			this.tooltip.style.left = '';
