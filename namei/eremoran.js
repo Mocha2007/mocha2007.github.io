@@ -227,14 +227,14 @@ const EremoranTooltip = {
 	 * @param {HTMLSpanElement} elem
 	*/
 	showTooltip(word, elem){
-		this.tooltip.innerHTML = '';
 		try {
 			this.tooltip.appendChild(this.getDef(word));
 		}
 		catch (e){
 			return console.debug(`couldn't fetch ${word}.`);
 		}
-		this.tooltip.style.display = 'block';
+		this.tooltip.style.display = 'block'; // to reveal it
+		// position it
 		const xy = elem.getBoundingClientRect();
 		if (xy.right+xy.left < window.innerWidth)
 			this.tooltip.style.left = `${xy.right}px`;
