@@ -175,6 +175,7 @@ const EremoranTooltip = {
 	clearTooltip(){
 		this.tooltip.innerHTML = '';
 		this.tooltip.style.display = 'none';
+		this.tooltip.style.left = this.tooltip.style.right = '';
 	},
 	/** @param {string} word */
 	getDef(word){
@@ -235,14 +236,10 @@ const EremoranTooltip = {
 		}
 		this.tooltip.style.display = 'block';
 		const xy = elem.getBoundingClientRect();
-		if (xy.right+xy.left < window.innerWidth){
+		if (xy.right+xy.left < window.innerWidth)
 			this.tooltip.style.left = `${xy.right}px`;
-			this.tooltip.style.right = '';
-		}
-		else {
+		else
 			this.tooltip.style.right = `${window.innerWidth-xy.left}px`;
-			this.tooltip.style.left = '';
-		}
 		this.tooltip.style.top = `${xy.bottom}px`;
 	},
 };
