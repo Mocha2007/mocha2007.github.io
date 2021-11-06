@@ -70,3 +70,8 @@ symbols for 10-19 are lowercase a-j
 	box-shadow: 0 0 1vh rgba(0, 0, 0, 0.7);
 	color: black;
 }
+/* only works in chrome-based browsers */
+.eremoran rt {
+	font-family: sans-serif;
+	text-transform: none;
+}

@@ -213,12 +213,16 @@ const EremoranTooltip = {
 					sp.innerHTML = ' ';
 					elem.appendChild(sp);
 				}
-				const span = document.createElement('span');
-				span.innerHTML = word;
+				const span = document.createElement('ruby');
+				const rt = document.createElement('rt'); // ruby top
+				rt.innerHTML = word;
+				const fixedword = word.replace('f', 'h').toLowerCase();
+				span.innerHTML = fixedword;
 				span.classList.add('eremoranWord');
-				span.onmouseover = () => this.showTooltip(word.toLowerCase(), span);
+				span.onmouseover = () => this.showTooltip(fixedword, span);
 				span.onmouseout = () => this.clearTooltip();
 				elem.appendChild(span);
+				span.appendChild(rt);
 			});
 		});
 	},
@@ -231,6 +235,8 @@ const EremoranTooltip = {
 			this.tooltip.appendChild(this.getDef(word));
 		}
 		catch (e){
+			if (1 < word.length)
+				return this.showTooltip(word.slice(0, -1), elem); // attempt truncation
 			return console.debug(`couldn't fetch ${word}.`);
 		}
 		this.tooltip.style.display = 'block'; // to reveal it
