@@ -75,4 +75,5 @@ symbols for 10-19 are lowercase a-j
 	font-family: sans-serif;
 	text-transform: none;
 	margin-top: 1.5vh;
+	user-select: none;
 }
