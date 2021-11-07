@@ -1,5 +1,6 @@
 /* exported compileDict, compileFinals, compileInitials, compileLength,
-	compileMeanings, compileMedials, compileNounClass, EremoranTooltip */
+	compileMeanings, compileMedials, compileNounClass, EremoranTooltip,
+	computeStats */
 /* global random, range, round */
 
 'use strict';
@@ -253,3 +254,7 @@ const EremoranTooltip = {
 		this.tooltip.style.top = `${xy.bottom}px`;
 	},
 };
+
+function computeStats(){
+	document.getElementById('wordcount').innerHTML = EremoranTooltip.words.length;
+}
