@@ -34,7 +34,7 @@ symbols for 10-19 are lowercase a-j
 	font-family: Eremoran;
 	text-transform: uppercase;
 }
-/* case sensitive for nums */
+/* case sensitive for nums/no tooltip */
 .eremoran.cs {
 	text-transform: none;
 }
@@ -74,4 +74,5 @@ symbols for 10-19 are lowercase a-j
 .eremoran rt {
 	font-family: sans-serif;
 	text-transform: none;
+	margin-top: 1.5vh;
 }

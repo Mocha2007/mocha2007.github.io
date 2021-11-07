@@ -204,6 +204,8 @@ const EremoranTooltip = {
 		/** @type {HTMLElement[]} */
 		const eremoranTags = Array.from(document.getElementsByClassName('eremoran'));
 		eremoranTags.forEach(elem => {
+			if (elem.classList.contains('cs')) // ignore case-sensitive
+				return;
 			/** @type {string[]} */
 			const words = elem.innerHTML.split(' ');
 			elem.innerHTML = '';
@@ -215,7 +217,7 @@ const EremoranTooltip = {
 				}
 				const span = document.createElement('ruby');
 				const rt = document.createElement('rt'); // ruby top
-				rt.innerHTML = word;
+				rt.innerHTML = word.toUpperCase();
 				const fixedword = word.replace('f', 'h').toLowerCase();
 				span.innerHTML = fixedword;
 				span.classList.add('eremoranWord');
