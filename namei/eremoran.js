@@ -180,11 +180,13 @@ const EremoranTooltip = {
 	/** @param {string} word */
 	getDef(word){
 		// collect target elements
-		const desiredWordElement = this.words.filter(dt => dt.innerHTML.replace('f', 'h') === word)[0];
+		const desiredWordElement = this.words.filter(dt => dt.innerHTML.toLowerCase() === word)[0];
 		/** @type {HTMLElement[]} */
 		const elementsInDict = Array.from(desiredWordElement.parentElement.children);
 		const beginIndex = elementsInDict.indexOf(desiredWordElement);
-		const endIndex = elementsInDict.indexOf(elementsInDict.slice(beginIndex+1).find(elem => elem.tagName.toLowerCase() === 'dt'));
+		let endIndex = elementsInDict.indexOf(elementsInDict.slice(beginIndex+1).find(elem => elem.tagName.toLowerCase() === 'dt'));
+		if (endIndex === -1)
+			endIndex = elementsInDict.length;
 		// create container
 		const container = document.createElement('dl');
 		range(beginIndex, endIndex).forEach(i => {
@@ -218,8 +220,8 @@ const EremoranTooltip = {
 				const span = document.createElement('ruby');
 				const rt = document.createElement('rt'); // ruby top
 				rt.innerHTML = word.toUpperCase();
-				const fixedword = word.replace('f', 'h').toLowerCase();
-				span.innerHTML = fixedword;
+				const fixedword = word.toLowerCase();
+				span.innerHTML = fixedword.replace('f', 'h').replace('ó', 'o');
 				span.classList.add('eremoranWord');
 				span.onmouseover = () => this.showTooltip(fixedword, span);
 				span.onmouseout = () => this.clearTooltip();
