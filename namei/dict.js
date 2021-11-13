@@ -20,6 +20,9 @@ function printDict(){
 	const list = document.getElementById('dictionary');
 	reader.responseText.split('\n').forEach(line => {
 		const [index, type, defs] = line.split('=');
+		// entry div - for organization!
+		// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl#wrapping_name-value_groups_in_div_elements
+		const entryDiv = document.createElement('div');
 		// entry title
 		const dt = document.createElement('dt');
 		dt.innerHTML = index;
@@ -35,8 +38,9 @@ function printDict(){
 			d.innerHTML = def;
 			deflist.appendChild(d);
 		});
-		list.appendChild(dt);
-		list.appendChild(typeelement);
-		list.appendChild(entryelement);
+		list.appendChild(entryDiv);
+		entryDiv.appendChild(dt);
+		entryDiv.appendChild(typeelement);
+		entryDiv.appendChild(entryelement);
 	});
 }
