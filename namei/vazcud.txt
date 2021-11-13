@@ -10,3 +10,336 @@ vak=num=nine
 cun=num;suff=ten;ty
 už=n, m=man
 zogu=v, 3=see, look
+go=pron, n=I
+wo=pron, n=you
+mal=v, 4=give
+ven=n, m=dog
+chonn=v, 4=come; when suffixed to infinitive, "begin/start ..." or "will ..."; when suffixed to adjectives, functions like eo. -igx-
+enb=n, m=hand
+tho=conj, =and (verbal and nominal)
+the=n, n=tree
+sog=adj, 1g=good
+lens=adj, 2s=bad
+lis=n, f=mouse
+theg=det (adj); pron, 1g=this (or something just mentioned)
+enz=det (adj); pron, 2z=that (near listener/something the listener said)
+ik=det (adj); pron, 1k=that (far); yon (or something said by the speaker/listener a while back)
+šikh=det (adj); pron, 1kh=what/who/which (interrogative)
+-ye=clitic, =question particle, suffixed to the word in question
+*wa=v/suff., 4=verb negator; suffixed to the infinitive form; can also be used as a suffix in negative copulative structures; does not exist alone
+*saku=v/suff., 2=desiderative verbal suffix; inflects like a verb but does not exist alone
+-bu=n/suff., n=verb/adj nominalizer; attaches to the STEM of adjectives and the INFINITIVE of verbs
+okhu=v, 1=be*/exist; as an OPTIONAL verbal suffix to the infinitive form, indicates past tense; also used for the identity correlative series
+*magu=v, 3=potential suffix
+*yuc=v/suff., 4=prohibitive verb; used only connected to another verb
+gez=n, f=color
+cug=adj, 1g=white
+wens=adj, 2s=red/yellow
+unt=adj, 2t=green/blue
+juk=adj, 1k=black
+it=n, f=woman
+thenkh=n, m=bird
+cho=n, n=reed
+yov=n, f=leaf
+bu-=prefix, =turns wh- words into some- words, eg. what -> something
+-ven=clitic, =intensifier pronoun clitic; ie the director HIMSELF said so
+-chakh=adj/suff., 1kh=-th; ie. five -> fifth = ša -> šachakh; 1-4th are exceptional; see nominal morphology
+venkh=adj, 1kh=first
+wekh=adj, 1kh=second
+cankh=adj, 1kh=third
+mokh=adj, 1kh=fourth
+-ni=adj/suff., indeclinable=distributive numeral suffix; ie. "apiece"
+veni=adj, indeclinable=one apiece
+weni=adj, indeclinable=two apiece
+cani=adj, indeclinable=three apiece
+moni=adj, indeclinable=four apiece
+-mok/-mu=adj/suff., 1k=possessive suffix, added to stem/base form of nouns; it -> itmoc/itmu;itmoj/itmi
+kan=n, m=person/guy
+vin=n, m=baby
+ponb=n, m=child/kid
+še=n, m=boy
+wanl=n, f=girl
+jinž=adj, 2ž=big
+binž=adj, 2ž=small/little
+junn=adj/det, 2n=many/much
+bunn=adj/det, 2n=few/little
+nikhu=v, 1=do/make
+beku=v, 2=go
+ukhu=v, 1=get/take
+je=adv, =very/really
+žukh=adj/det/pron, 1kh=all (pl)/every (s)
+ang=adj/det/pron, 1g=no/none
+-il=adv, =adverbial numeral suffix ie. once/twice/n times
+-phik=adj/suff., 1k=multiplicative numeral suffix ie. onefold/twofold/n-fold
+-žug=adj/suff., 1g=fractional numeral
+žo=adposition, =in
+a=adposition, =at
+chic=adposition, =on (at the upper surface of)
+ziz=adposition, =on (at the outer surface of)
+yog=n, f=cat
+ekh=n, m=horse
+tasot=n, f=chicken
+won=n, m=cattle, cow
+zoy=n, n=fish
+šoket=n, f=deer
+invil=n, m=goat
+khom=n, m=pig
+velip=n, f=sheep
+puzan=n, m=bear
+chinš=n, f=fox
+thin=n, m=snake
+bak=n, m=wolf
+pužit=n, f=ant
+yab=n, f=bee
+ci=n, n=fly
+že=n, n=louse
+khis=n, f=spider
+akhu=n, n=worm
+yin=n, m=egg
+avyenž=n, f=milk
+cheg=n, m=wool
+thit=n, f=rabbit
+bav=n, f=mouse
+thužonl=n, m=rat
+zoph=n, f=squirrel
+geg=n, m=claw
+šafniw=n, n=feather
+efni=n, n=hoof
+on=n, m=horn
+ufki=n, n=tail
+owu=n, n=wing
+ša=n, n=arm
+ud=n, f=finger
+imog=n, m=fingernail
+binkhek=n, m=foot
+sam=n, m=hand
+eš=n, f=leg
+thindgunž=n, f=thumb
+giš=n, f=toe
+we=n, n=head
+bofan=n, m=beard
+ži=n, n=chin
+yaliph=n, f=ear
+fonviph=n, f=eye
+baw=n, n=face
+thinchu=n, n=mouth
+oši=n, n=cheek
+khi=n, n=jaw
+funv=n, f=lip
+geng=n, f=tongue
+punn=n, m=tooth
+šenki=n, n=neck
+ankh=n, f=nose
+uso=n, n=throat
+u=n, n=blood
+thinye=n, n=bone
+che=n, n=fat
+bincaw=n, n=flesh~meat~muscle
+wiw=n, n=hair
+uje=n, n=nerve
+ženle=n, n=skin
+okso=n, n=tear
+anginž=n, f=ankle
+unbyi=n, n=elbow
+thadong=n, f=hip
+anthay=n, n=knee
+lunkhem=n, m=knuckle
+mišphuk=n, f=shoulder
+an=n, m=wrist
+pinš=n, f=back(side), bottom (ass)
+phuchunk=n, f=belly
+thoncug=n, f=breast
+onš=n, f=thigh
+zanlkhe=n, n=bladder
+anžo=n, n=brain
+chonchon=n, m=guts~intestine
+dunon=n, m=heart
+bunyu=n, n=kidney
+toy=n, n=liver
+echu=n, n=lung
+bon=n, m=stomach
+okni=n, n=pancreas~sweetbread
+šiko=n, n=bark
+ugvag=n, f=berry
+sin=n, m=branch~stick~twig
+ans=n, f=flower
+šio=n, n=rose
+ing=n, f=fruit
+okye=n, n=orange (sp. Mandarin)
+zintye=n, n=leaf
+bing=n, f=nut
+kužon=n, m=root
+wenchu=n, n=allium species, incl. onion, garlic, and green onion
+isunk=n, f=seed
+chan=n, m=stem~trunk
+den=n, m=stump
+uncoy=n, n=plant~vegetation
+lethfo=n, n=bush~shrub
+banltho=n, n=grass
+yu=n, n=beech (Fagus engleriana)
+ma=n, n=birch
+evcu=n, n=oak
+vu=n, n=pine
+uy=n, n=spruce (particularly Picea crassifolia and Picea retroflexa)
+thethe=n, n=forest
+wakh=det (adj); pron, 1kh=what/who/which (relative)
+mithin=num, =hundred
+vinthin=num, =thousand
+nathin=num, =ten thousand
+thun=v, 4=count
+-ud=n; suff, f=-ia, -land; country suffix; added to the plural demonym, also, used for the language
+alan=n, m=an Eremoran
+vaz=n, f=middle, center
+vazunk=adj, 1k=middle, center, central; Vazuk (demonym)
+Važcud=n; proper, f=Važcud (the country/language)
+yemin=n, m=lightning
+phenv=n, m=thunder
+saku=v, 2=fly
+bam=v, 4=run
+cešku=v, 2=swim
+sokhu=v, 1=walk
+pegu=v, 3=hear~listen
+ogu=v, 3=smell
+nam=n, m=air
+gath=n, f=earth
+li=n, n=fire
+daž=n, f=stone
+kunc=n, m=water
+ofem=n, m=sky
+inb=n, m=weather
+kha=n, n=sun
+o=n, n=moon
+se'anf=n, m=rain
+ens=n, m=cloud
+vins=n, m=snow
+zan=n, m=wind
+ag=n, m=ice
+silme=n, n=star
+en=n, m=fog
+then'=n, m=hail
+eseth=n, f=time
+gec=n, f=daytime
+daychak=n, f=nighttime
+cef=n, f=morning
+ankh=n, f=noon
+sankh=n, f=afternoon
+zab=n, f=evening
+in=n, m=night (=entire night)
+nen=n, m=day (=entire day)
+lem=n, m=week
+onf=n, m=year
+enthant=n, m=brook~creek~stream
+o'es=n, f=island
+okh=n, m=lake
+nik=n, f=mountain
+ked=n, f=path~road~way
+edop=n, f=place
+int=n, m=river
+osenkh=n, m=sea~ocean
+thoin=n, m=source~spring~well
+sonji=n, n=ash
+yene=n, n=dust
+zi=n, n=salt
+pomala=n, n=sand
+tha=n, n=smoke
+ze'=n, f=daughter
+onth=n, m=son
+cek=n, f=mother
+izak=n, m=father, paternal uncle
+yav=n, f=wife
+sonkh=n, m=husband
+iphad=n, f=older sister/older paternal uncle's daughter
+onb=n, m=older brother/older paternal uncle's daughter
+ginchas=n, f=younger sister/younger paternal uncle's daughter
+teng=n, m=younger brother/ younger paternal uncle's daughter
+noekh=n, f=(female) cross-cousin
+polink=n, m=(male) cross-cousin
+phag=n, f=aunt
+enk=n, m=maternal uncle
+-nikh=n, m/f=in law (relation through marriage); step-
+kunceš=adv, =reciporically (used in place of each other)
+sote=n, n=beaver
+niph=n, f=name
+ble=conj, =or
+mas=conj, =but
+šitho=adv, =also, too
+e=adposition, =to, towards
+ze=adposition, =from
+imphera=n, n=lemon
+phijas=n, f=sheep
+pagu=v, 3=write
+pagubu=n, n=symbol; letter; writing
+paku=v, 2=lie; lay
+zese=n, n=tile
+o'uk=adj/det, 1k=his/her/its own - reflexive determiner
+ojo=n, n=animal
+enzna=n, n=book
+-vaz=adv;suff., =in the middle of ...; while ...ing; during ...
+ey=interjection, =hey! oy!
+insa=n, n=table
+elgo=n, n=chair
+elgu=v, 1=sit
+gons=n, m=pole; long/tall thing
+iv=n, f=ball; sphere; round thing
+zilzo=n, n=plane; flat thing
+bong=n, f=home
+supku=v, 2=fall
+intek=adj, 1k=tall
+khig=adj, 1g=high
+lenž=adj, 2ž=long
+kind=adj, 2d=wide
+nons=adj, 2s=deep
+sagu=v, 3=love
+Sagub=n, f=female name
+manik=adj, 1k=wise
+ilak=adj, 1k=happy
+Egas=n, f=female name
+Nit=n, f=female name
+Folel=n, f=female name
+Lidunon=n, m=male name
+zoth=n, f=bee
+ceng=n, m=ghost (esp. wraith)
+zothceng=n, m=Zothcengs - large, dangerous, semiintelligent beasts
+wens=n, m=red/yellow; masculine gender; vaguely similar to "yang"
+ut=n, f=blue/grue; feminine gender; vaguely similar to "yin"
+Wensceng=n; proper, m=Male creator deity
+Utceng=n; proper, f=Female creator deity
+zo-=pref., =un-/in-; anti-
+no=n, n=copper; copper alloy (eg. bronze, brass)
+zinzo=n, n=silver
+enjo=n, n=gold
+sinku=v, 2=spell
+-um=v; suff, 4=strengthens/reinforces meaning of verb, cf. English "up" or "over"
+-ar=v; suff, 4=diminutive verbal suffix
+megu=v, 3=sting
+meguar=v, 4=tingle
+meguarakhu=n, n=parasitic worm similar to the Werm from Parasite Infection
+-wu=suff, =turns correlative roots into how-words
+-'uk=adj; n; suff, 1k=turns correlative roots into how much-words
+-wenz=adj; n; suff, 2z=turns correlative roots into whether-words; turns wh-words into other-words
+-ažu=n; suff, n=-er; agentive suffix
+ich=n, f=house
+ont=adj, 2t=right, correct
+antme=n, n=door
+chan=n, m=mister, sir
+absakhu=v, 1=knock
+soj=v, 4=say; speak
+pann=adj; n, m=young; a youth
+anj=adj; n, m=old; an elder
+go'=v, 4=know
+fanyenkhu=v, 1=open
+zann=n, m=friend
+sela=n, n=window
+nimo=n, n=roof
+zido=n, n=bed
+cimi=n, n=stove
+intha=n, n=oven
+enlinkh=adj, 1kh=cooked food smell
+zinkh=adj, 1kh=smoky smell
+ink=adj, 1k=flowery, fruity smell
+venž=adj, 2ž=earthy, stony, metallic smell
+inons=adj, 2s=sulfurous, garlic-like smell
+anl=adj, 2l=foul, fecal smell, skunk smell, etc
+ekkinž=adj, 2ž=nutty or dusty smell
+niknik=n, f=mountain range
+Penek=n, f=Pankair
