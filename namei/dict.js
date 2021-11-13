@@ -18,7 +18,7 @@ function printDict(){
 		return;
 	/** @type {HTMLDListElement} */
 	const list = document.getElementById('dictionary');
-	reader.responseText.split('\n').forEach(line => {
+	reader.responseText.split('\n').sort().forEach(line => {
 		const [index, type, defs] = line.split('=');
 		// entry div - for organization!
 		// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl#wrapping_name-value_groups_in_div_elements
