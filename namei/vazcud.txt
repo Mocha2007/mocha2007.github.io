@@ -1,1 +1,12 @@
 yig=num (adj), 1g=one
+pamol=num (adj), 2=two
+amol=num (adj), 2=three
+mol=num (adj), 2=four
+daj=num (adj), 1g=five
+khud=num=six
+ša=num=seven
+gak=num=eight
+vak=num=nine
+cun=num;suff=ten;ty
+už=n, m=man
+zogu=v, 3=see, look
