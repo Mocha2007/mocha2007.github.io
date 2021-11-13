@@ -1,22 +1,23 @@
-/* exported getEreDict */
+/* exported getDict */
 'use strict';
 // shamelessly stolen from verdurian dict,
 // didn't know this was even possible so I'm hyped to get this working!
 
 // eslint-disable-next-line no-undef
 const reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
-function getEreDict(){
-	reader.open('get', 'eremoran.txt', true);
-	reader.onreadystatechange = printEreDict; // generates dict
+/** @param {string} name */
+function getDict(name){
+	reader.open('get', `${name}.txt`, true);
+	reader.onreadystatechange = printDict; // generates dict
 	reader.send(null);
 }
 
-function printEreDict(){
+function printDict(){
 	// this is required to prevent it from double-posting
 	if (reader.readyState !== 4)
 		return;
 	/** @type {HTMLDListElement} */
-	const list = document.getElementById('dictlist');
+	const list = document.getElementById('dictionary');
 	reader.responseText.split('\n').forEach(line => {
 		const [index, type, defs] = line.split('=');
 		// entry title
