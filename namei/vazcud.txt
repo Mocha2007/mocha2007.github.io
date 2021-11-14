@@ -14,7 +14,7 @@ go=pron, n=I
 wo=pron, n=you
 mal=v, 4=give
 ven=n, m=dog
-chonn=v, 4=come; when suffixed to infinitive, "begin/start ..." or "will ..."; when suffixed to adjectives, functions like eo. -igx-
+chonn=v, 4=come;!when suffixed to infinitive, "begin/start ..." or "will ...";!when suffixed to adjectives, functions like eo. -igx-
 enb=n, m=hand
 tho=conj, =and (verbal and nominal)
 the=n, n=tree
@@ -25,13 +25,13 @@ theg=det (adj); pron, 1g=this (or something just mentioned)
 enz=det (adj); pron, 2z=that (near listener/something the listener said)
 ik=det (adj); pron, 1k=that (far); yon (or something said by the speaker/listener a while back)
 šikh=det (adj); pron, 1kh=what/who/which (interrogative)
--ye=clitic, =question particle, suffixed to the word in question
-*wa=v/suff., 4=verb negator; suffixed to the infinitive form; can also be used as a suffix in negative copulative structures; does not exist alone
-*saku=v/suff., 2=desiderative verbal suffix; inflects like a verb but does not exist alone
--bu=n/suff., n=verb/adj nominalizer; attaches to the STEM of adjectives and the INFINITIVE of verbs
-okhu=v, 1=be*/exist; as an OPTIONAL verbal suffix to the infinitive form, indicates past tense; also used for the identity correlative series
+-ye=clitic=question particle;!suffixed to the word in question
+*wa=v/suff., 4=verb negator;!suffixed to the infinitive form;!can also be used as a suffix in negative copulative structures;!does not exist alone
+*saku=v/suff., 2=desiderative verbal suffix;!inflects like a verb but does not exist alone
+-bu=n/suff., n=verb/adj nominalizer;!attaches to the STEM of adjectives and the INFINITIVE of verbs
+okhu=v, 1=be*/exist;as an OPTIONAL verbal suffix to the infinitive form, indicates past tense;!also used for the identity correlative series
 *magu=v, 3=potential suffix
-*yuc=v/suff., 4=prohibitive verb; used only connected to another verb
+*yuc=v/suff., 4=prohibitive verb;!used only connected to another verb
 gez=n, f=color
 cug=adj, 1g=white
 wens=adj, 2s=red/yellow

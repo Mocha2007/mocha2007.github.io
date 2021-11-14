@@ -33,14 +33,20 @@ function printDict(){
 		const entryelement = document.createElement('dd');
 		const deflist = document.createElement('ol');
 		entryelement.appendChild(deflist);
-		defs.split(';').forEach(def => {
-			const d = document.createElement('li');
-			d.innerHTML = def;
-			deflist.appendChild(d);
-		});
 		list.appendChild(entryDiv);
 		entryDiv.appendChild(dt);
 		entryDiv.appendChild(typeelement);
 		entryDiv.appendChild(entryelement);
+		defs.split(';').forEach(def => {
+			if (def[0] === '!'){ // note
+				const noteElement = document.createElement('dd');
+				noteElement.innerHTML = def.slice(1);
+				entryDiv.appendChild(noteElement);
+				return;
+			}
+			const d = document.createElement('li');
+			d.innerHTML = def;
+			deflist.appendChild(d);
+		});
 	});
 }
