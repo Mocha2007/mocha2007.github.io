@@ -28,7 +28,7 @@ function printDict(){
 		const dt = document.createElement('dt');
 		// hotlink to entry
 		/** @type {HTMLAnchorElement} */
-		const anchor = document.createElement('anchor');
+		const anchor = document.createElement('a');
 		anchor.href = `#${entryDiv.id}`;
 		anchor.innerHTML = '*';
 		dt.appendChild(anchor);
