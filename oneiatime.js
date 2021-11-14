@@ -355,7 +355,7 @@ function holidayCSS(){
 	var year = new Date().getFullYear();
 	var month = new Date().getMonth() + 1;
 	var day = new Date().getDate();
-	console.log(month, day);
+	// console.log(month, day);
 
 	var title = '';
 	var defaultSrc = 'mo';

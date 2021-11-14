@@ -114,7 +114,7 @@ var subtitles =	[
 function sub(){
 	var index = Math.floor(Math.random()*subtitles.length);
 	document.getElementById('subtitle').innerHTML = subtitles[index];
-	console.info('C3692 6510 QT4420');
+	// console.info('C3692 6510 QT4420');
 }
 
 sub();
