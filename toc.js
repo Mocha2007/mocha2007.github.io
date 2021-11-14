@@ -4,10 +4,8 @@
 
 function makeTOC(){
 	var namedheaders = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id],span.sub,span.super');
-	var text = '<details><summary>Navigation</summary><div class="desc"><a href="';
-	if (window.location.hostname)
-		text += window.location.hostname + '/';
-	text += 'index.html">Home</a></div>On This Page<br/>';
+	var text = '<details><summary>Navigation</summary><div class="desc"><a href="'
+		+ window.location.origin + '/index.html">Home</a></div>On This Page<br/>';
 	var depth, formattedname, i;
 	for (i=0; i<namedheaders.length; i += 1){
 		if (namedheaders[i].tagName === 'SPAN'){
