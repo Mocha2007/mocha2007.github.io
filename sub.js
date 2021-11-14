@@ -117,3 +117,6 @@ function sub(){
 	document.getElementById('subtitle').innerHTML = subtitles[index];
 	// console.info('C3692 6510 QT4420');
 }
+
+// run
+sub();
