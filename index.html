@@ -34,12 +34,18 @@
 	<link rel="manifest" href="manifest.json">
 	<link rel="mask-icon" href="img/icons/safari-pinned-tab.svg" color="#00cccc">
 	<title>Mocha's Site</title>
+	<script src="oneiatime2.js"></script>
+	<script src="sub.js"></script>
 </head>
 <body>
 	<div id="top" role="banner">
 		<img id="m" src="img/mo.png" height="200" alt="Mochadian Squiggle">
 		<h1 id="title">Mocha&rsquo;s Site</h1>
 		<div id="subtitle"></div><br>
+		<script>
+			holidayCSS();
+			sub();
+		</script>
 		<a href="other.html">Other, older pages... &rarr;</a>
 	</div>
 	<div role="navigation">
@@ -108,12 +114,9 @@
 		<a href="https://jigsaw.w3.org/css-validator/validator?uri=https://mocha2007.github.io"><img src="img/css.png" alt="Valid CSS!" height="31" width="88"></a><br><br>
 		<em>Site Last Updated 14 Nov 2021</em>
 	</div>
-	<script src="sub.js"></script>
-	<script src="oneiatime.js"></script>
 	<script>
 		oneiaTimeInitialize();
 		setInterval(oneiaTime, 100);
-		holidayCSS();
 	</script>
 </body>
 </html>
