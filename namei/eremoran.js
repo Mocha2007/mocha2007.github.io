@@ -222,7 +222,7 @@ const EremoranTooltip = {
 				const rt = document.createElement('rt'); // ruby top
 				rt.innerHTML = word.toUpperCase();
 				const fixedword = word.toLowerCase();
-				span.innerHTML = fixedword.replace('f', 'h').replace('á', 'a').replace('ó', 'o');
+				span.innerHTML = fixedword.replace('f', 'h').replace('á', 'a').replace('é', 'e').replace('ó', 'o');
 				span.classList.add('eremoranWord');
 				span.onmouseover = () => this.showTooltip(fixedword, span);
 				span.onmouseout = () => this.clearTooltip();
