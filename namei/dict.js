@@ -23,9 +23,17 @@ function printDict(){
 		// entry div - for organization!
 		// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl#wrapping_name-value_groups_in_div_elements
 		const entryDiv = document.createElement('div');
+		entryDiv.id = `lemma-${index}`;
 		// entry title
 		const dt = document.createElement('dt');
-		dt.innerHTML = index;
+		// hotlink to entry
+		/** @type {HTMLAnchorElement} */
+		const anchor = document.createElement('anchor');
+		anchor.href = `#${entryDiv.id}`;
+		anchor.innerHTML = '*';
+		dt.appendChild(anchor);
+		// entry title
+		dt.innerHTML += ` ${index}`;
 		// type, eg. noun, verb, ...
 		const typeelement = document.createElement('dd');
 		typeelement.innerHTML = type;
