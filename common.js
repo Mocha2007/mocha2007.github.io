@@ -20,10 +20,10 @@ function factorial(n){
 	factorial.precomputed[n] = n ? factorial(n-1)*n : 1;
 	return factorial(n);
 }
-/** @type {number[]} */
+/** @type {number[]} cache */
 factorial.precomputed = [];
 
-/**
+/** greatest common denominator
  * @param {number} a
  * @param {number} b
  * @return {number}
@@ -33,6 +33,7 @@ function gcd(a, b){
 }
 
 /** Levenshtein distance
+ * https://en.wikipedia.org/wiki/Levenshtein_distance
  * @param {string} a
  * @param {string} b
  * @returns {number}
@@ -51,7 +52,9 @@ function lev(a, b){
 	);
 }
 
-/** works identically to matlab and numpy */
+/** works identically to matlab and numpy;
+ * creates an array between two values with a given number of intermediate points
+ */
 function linspace(from = 0, to = 1, points = 1){
 	return new Array(points).fill(0).map((_, i) => i/points * (to-from) + from);
 }
@@ -63,7 +66,7 @@ function mean(x){
 	return sum(x)/x.length;
 }
 
-/**
+/** fixes a bug with the js % operator with negative numbers
  * @param {number} n
  * @param {number} m
  */
@@ -71,7 +74,8 @@ function mod(n, m){
 	return (n%m+m)%m;
 }
 
-/**
+/** https://en.wikipedia.org/wiki/Combination
+ * it's the one where order doesn't matter
  * @param {number} n
  * @param {number} k
  */
@@ -79,7 +83,8 @@ function nCr(n, k){
 	return nPr(n, k)/factorial(k);
 }
 
-/**
+/** https://en.wikipedia.org/wiki/Permutation
+ * it's the one where order matters
  * @param {number} n
  * @param {number} k
  */
@@ -92,7 +97,7 @@ const random = {
 	bool(){
 		return this.random() < 0.5;
 	},
-	/** @param {string | any[] | Set} iterable*/
+	/** @param {string | any[] | Set} iterable */
 	choice(iterable){
 		return Array.from(iterable)[this.randint(0, iterable.length-1)];
 	},
@@ -103,7 +108,7 @@ const random = {
 	randint(min, max){ // random integer in range
 		return Math.floor(this.uniform(min, max+1));
 	},
-	/** [0, 1) */
+	/** [0, 1) ; just alias to Math.random */
 	random: Math.random,
 	/** @param {any[]} arr */
 	shuffle(arr){
@@ -154,10 +159,10 @@ function range(m, n, step = 1){
 	return range(n-m).map(i => i + m);
 }
 
-/**
- * @param {number} value
- * @param {[number, number]} range1
- * @param {[number, number]} range2
+/** maps a value from one range to another
+ * @param {number} value value within source range
+ * @param {[number, number]} range1 source range
+ * @param {[number, number]} range2 destination range
  */
 function remap(value, range1, range2){
 	const range1range = range1[1] - range1[0];
@@ -207,7 +212,8 @@ function variance(x){
 // other block
 const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
-/** https://stackoverflow.com/a/17663871/2579798
+/** write a number with commas
+ * https://stackoverflow.com/a/17663871/2579798
  * @param {number} x
 */
 function commaNumber(x){
@@ -255,7 +261,7 @@ function intersect(a, b){
 	return a.filter(e => -1 < b.indexOf(e)).filter((e, i, c) => c.indexOf(e) === i);
 }
 
-/** @param {string} filename to play */
+/** @param {string} filename of audio to play */
 function play(filename){
 	new Audio(filename).play();
 }
