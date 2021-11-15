@@ -62,67 +62,56 @@ function tabledelta(){
 function getIPA(matchstring){
 	// matchstring is a match like "aad" or "ang"
 	// it NEEDS the next two characters
+	var second = matchstring.charAt(1);
 	switch (matchstring.charAt(0)){
 		case 'a':
-			switch (matchstring.charAt(1)){
+			switch (second){
 				case ' ':
-					return 'ɑ';
 				case 'a':
+				case 'r':
 					return 'ɑ';
 				case 'i':
 					return 'ai';
-				case 'r':
-					return 'ɑ';
 				case 'u':
 					return 'au';
 				default:
 					return 'æ';
 			}
 		case 'e':
-			switch (matchstring.charAt(1)){
+			switch (second){
 				case ' ':
-					return 'e';
 				case 'e':
-					return 'e';
 				case 'N':
-					return 'e';
 				case 'r':
 					return 'e';
 				default:
 					return 'ɛ';
 			}
 		case 'i':
-			switch (matchstring.charAt(1)){
+			switch (second){
 				case ' ':
-					return 'i';
 				case 'i':
-					return 'i';
 				case 'N':
-					return 'i';
 				case 'r':
 					return 'i';
 				default:
 					return 'ɪ';
 			}
 		case 'o':
-			switch (matchstring.charAt(1)){
+			switch (second){
 				case ' ':
+				case 'o':
+				case 'l':
+				case 'N':
+				case 'r':
 					return 'o';
 				case 'i':
 					return 'oi';
-				case 'o':
-					return 'o';
-				case 'l':
-					return 'o';
-				case 'N':
-					return 'o';
-				case 'r':
-					return 'o';
 				default:
 					return 'ʌ';
 			}
 		case 'u':
-			switch (matchstring.charAt(1)){
+			switch (second){
 				case 'u':
 					return 'u';
 				default:
