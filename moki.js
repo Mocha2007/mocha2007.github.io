@@ -6,12 +6,6 @@
 const versionno = '1.6.7';
 let i;
 
-function uniq(a){// https://stackoverflow.com/a/9229821/2579798
-	return a.sort().filter(function(item, pos, ary){
-		return !pos || item !== ary[pos - 1];
-	});
-}
-
 function isArrayOfCharacters(x){
 	if (x.length===0){
 		return false;
@@ -1090,7 +1084,7 @@ function fstep(){
 					if (typeof b === 'string'){
 						b = b.split('');
 					}
-					c = uniq(union(a, b));
+					c = union(a, b);
 					if (isArrayOfCharacters(c)){
 						c = c.join('');
 					}
@@ -1223,7 +1217,7 @@ function fstep(){
 						if (typeof b === 'string'){
 							b = b.split('');
 						}
-						c = uniq(intersect(a, b));
+						c = intersect(a, b);
 						if (isArrayOfCharacters(c)){
 							c = c.join('');
 						}
