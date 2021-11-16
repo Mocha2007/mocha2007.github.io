@@ -6,7 +6,7 @@
 var vernal = 6884100000; // ms after first vernal equinox 20 Mar 16:15 (2018)
 
 var phases = [
-	'New', 'Waxing Crescent', 'First Quarter', ' Waxing Gibbous',
+	'New', 'Waxing Crescent', 'First Quarter', 'Waxing Gibbous',
 	'Full', 'Waning Gibbous', 'Third Quarter', 'Waning Crescent'
 ];
 
