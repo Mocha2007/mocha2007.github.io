@@ -35,6 +35,7 @@ var subtitles =	[
 	'Common sense is a term we use for things obvious to us, but not others.', // https://meta.stackexchange.com/questions/335708/under-what-circumstances-will-stack-exchange-inc-share-private-sensitive-infor/335749#comment1106974_335749
 	'It growe&thorn; to ben a frogge, if it be noght eten.', // https://incubator.wikimedia.org/wiki/Wp/enm/Frogge
 	'Renascatur Latina!',
+	'The fox&rsquo;s attempt at the grapes, although he couldn&rsquo;t, was admirable.', // weird English sentence
 	// mat
 	'I have created a truly marvelous conworld,<br/>which this randomly generated subtitle is too small to contain.',
 	'Mocha &isin; UwUers',
