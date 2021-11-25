@@ -215,6 +215,11 @@ const languageData = [
 		location: 'ethiopia',
 	},
 	{
+		name: 'proto-japonic',
+		location: 'japan',
+		period: 'c. 700 CE',
+	},
+	{
 		name: 'proto-kartvelian',
 		location: 'caucasus',
 	},
@@ -1356,6 +1361,10 @@ const meaningData = [
 		categories: 'noun;plant',
 	},
 	{
+		name: 'place.n',
+		categories: 'noun',
+	},
+	{
 		name: 'queen',
 		categories: 'noun;person',
 		hypernyms: 'woman',
@@ -1531,6 +1540,10 @@ const meaningData = [
 	},
 	{
 		name: 'water',
+		categories: 'noun',
+	},
+	{
+		name: 'way',
 		categories: 'noun',
 	},
 	{
@@ -7481,36 +7494,42 @@ const entryData = [
 		language: 'jp',
 		word: 'de',
 		meanings: 'INS;LOC',
+		etymology: 'jp:ni;jp:te',
 		source: 'wiktionary',
 	},
 	{
 		language: 'jp',
 		word: 'e',
 		meanings: 'LAT',
+		etymology: 'proto-japonic:pe1',
 		source: 'wiktionary',
 	},
 	{
 		language: 'jp',
 		word: 'ga',
 		meanings: 'NOM',
+		etymology: 'proto-japonic:-nka',
 		source: 'wiktionary',
 	},
 	{
 		language: 'jp',
 		word: 'ichi',
 		meanings: 'one',
+		etymology: 'proto-japonic:pitə',
 		source: 'wiktionary',
 	},
 	{
 		language: 'jp',
 		word: 'kara',
 		meanings: 'ABL',
+		etymology: 'proto-japonic:kara',
 		source: 'wiktionary',
 	},
 	{
 		language: 'jp',
 		word: 'ni',
 		meanings: 'DAT',
+		etymology: 'proto-japonic:ni',
 		source: 'wiktionary',
 	},
 	{
@@ -7523,12 +7542,64 @@ const entryData = [
 		language: 'jp',
 		word: 'o',
 		meanings: 'ACC',
+		etymology: 'proto-japonic:wo',
 		source: 'wiktionary',
+	},
+	{
+		language: 'jp',
+		word: 'te',
+		meanings: 'and',
+		source: 'wiktionary',
+		notes: 'verbal conjunction',
 	},
 	{
 		language: 'jp',
 		word: 'wa',
 		meanings: 'TOP',
+		etymology: 'proto-japonic:pa',
+		source: 'wiktionary',
+	},
+	// Proto-Japonic
+	{
+		language: 'proto-japonic',
+		word: '-nka',
+		meanings: 'GEN',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'kara',
+		meanings: 'way',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'ni',
+		meanings: 'DAT;LOC',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'pa',
+		meanings: 'TOP',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'pe1',
+		meanings: 'LAT;place.n',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'pitə',
+		meanings: 'one',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'wo',
+		meanings: 'ACC;ABL',
 		source: 'wiktionary',
 	},
 ];
