@@ -7536,6 +7536,7 @@ const entryData = [
 		language: 'jp',
 		word: 'no',
 		meanings: 'GEN',
+		etymology: 'proto-japonic:nə',
 		source: 'wiktionary',
 	},
 	{
@@ -7565,6 +7566,7 @@ const entryData = [
 		word: '-nka',
 		meanings: 'GEN',
 		source: 'wiktionary',
+		notes: 'pronominal genitive',
 	},
 	{
 		language: 'proto-japonic',
@@ -7577,6 +7579,13 @@ const entryData = [
 		word: 'ni',
 		meanings: 'DAT;LOC',
 		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'nə',
+		meanings: 'GEN',
+		source: 'wiktionary',
+		notes: 'nominal genitive',
 	},
 	{
 		language: 'proto-japonic',
