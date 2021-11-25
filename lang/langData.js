@@ -171,6 +171,10 @@ const languageData = [
 		period: 'c. 2000 BCE',
 	},
 	{
+		name: 'jp',
+		location: 'japan',
+	},
+	{
 		name: 'la',
 		parent: 'pie',
 		location: 'rome',
@@ -553,6 +557,10 @@ const meaningData = [
 		categories: 'inflectional',
 	},
 	{
+		name: 'NOM',
+		categories: 'inflectional',
+	},
+	{
 		name: 'NEG',
 		categories: 'inflectional',
 	},
@@ -574,6 +582,10 @@ const meaningData = [
 	},
 	{
 		name: 'PST',
+		categories: 'inflectional',
+	},
+	{
+		name: 'TOP',
 		categories: 'inflectional',
 	},
 	{
@@ -7462,6 +7474,61 @@ const entryData = [
 		language: 'pck',
 		word: 'təʀəl(wəðə)',
 		meanings: 'day',
+		source: 'wiktionary',
+	},
+	// Japanese
+	{
+		language: 'jp',
+		word: 'de',
+		meanings: 'INS;LOC',
+		source: 'wiktionary',
+	},
+	{
+		language: 'jp',
+		word: 'e',
+		meanings: 'LAT',
+		source: 'wiktionary',
+	},
+	{
+		language: 'jp',
+		word: 'ga',
+		meanings: 'NOM',
+		source: 'wiktionary',
+	},
+	{
+		language: 'jp',
+		word: 'ichi',
+		meanings: 'one',
+		source: 'wiktionary',
+	},
+	{
+		language: 'jp',
+		word: 'kara',
+		meanings: 'ABL',
+		source: 'wiktionary',
+	},
+	{
+		language: 'jp',
+		word: 'ni',
+		meanings: 'DAT',
+		source: 'wiktionary',
+	},
+	{
+		language: 'jp',
+		word: 'no',
+		meanings: 'GEN',
+		source: 'wiktionary',
+	},
+	{
+		language: 'jp',
+		word: 'o',
+		meanings: 'ACC',
+		source: 'wiktionary',
+	},
+	{
+		language: 'jp',
+		word: 'wa',
+		meanings: 'TOP',
 		source: 'wiktionary',
 	},
 ];
