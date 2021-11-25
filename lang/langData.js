@@ -467,11 +467,7 @@ const meaningData = [
 		name: 'some.quelques',
 		categories: 'determiner',
 	},
-	// prepositions
-	{
-		name: 'at',
-		categories: 'preposition',
-	},
+	// prepositions (todo move to misc)
 	{
 		name: 'away',
 		categories: 'preposition',
@@ -485,28 +481,16 @@ const meaningData = [
 		categories: 'preposition',
 	},
 	{
-		name: 'on',
-		categories: 'preposition',
-	},
-	{
-		name: 'out',
-		categories: 'preposition',
-	},
-	{
-		name: 'to',
-		categories: 'preposition',
-	},
-	{
 		name: 'up',
 		categories: 'preposition',
 	},
 	// misc morphemes
 	{
-		name: 'ABE',
+		name: 'ABE;without',
 		categories: 'inflectional',
 	},
 	{
-		name: 'ABL',
+		name: 'ABL;from',
 		categories: 'inflectional',
 	},
 	{
@@ -542,6 +526,10 @@ const meaningData = [
 		categories: 'inflectional',
 	},
 	{
+		name: 'ELA;out',
+		categories: 'inflectional',
+	},
+	{
 		name: 'ERG',
 		categories: 'inflectional',
 	},
@@ -550,7 +538,11 @@ const meaningData = [
 		categories: 'inflectional',
 	},
 	{
-		name: 'GEN',
+		name: 'GEN;of',
+		categories: 'inflectional',
+	},
+	{
+		name: 'INE;in',
 		categories: 'inflectional',
 	},
 	{
@@ -558,15 +550,15 @@ const meaningData = [
 		categories: 'inflectional',
 	},
 	{
-		name: 'INS',
+		name: 'INS;using',
 		categories: 'inflectional',
 	},
 	{
-		name: 'LAT',
+		name: 'LAT;to',
 		categories: 'inflectional',
 	},
 	{
-		name: 'LOC',
+		name: 'LOC;at',
 		categories: 'inflectional',
 	},
 	{
@@ -574,7 +566,7 @@ const meaningData = [
 		categories: 'inflectional',
 	},
 	{
-		name: 'NEG',
+		name: 'NEG;not',
 		categories: 'inflectional',
 	},
 	{
@@ -590,11 +582,15 @@ const meaningData = [
 		categories: 'inflectional',
 	},
 	{
-		name: 'PROL;VIA;PROS',
+		name: 'PROL;VIA;PROS;through',
 		categories: 'inflectional',
 	},
 	{
 		name: 'PST',
+		categories: 'inflectional',
+	},
+	{
+		name: 'SUPE;on',
 		categories: 'inflectional',
 	},
 	{
@@ -2156,8 +2152,20 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'h₁é',
+		meanings: 'and',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'h₂ébōl',
 		meanings: 'apple',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'h₂éd',
+		meanings: 'LOC',
 		source: 'wiktionary',
 	},
 	{
@@ -2180,6 +2188,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'h₁eǵʰs',
+		meanings: 'ELA',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'h₂eḱ-',
 		meanings: 'sharp',
 		source: 'wiktionary',
@@ -2195,6 +2209,12 @@ const entryData = [
 		word: 'h₂éḱru',
 		meanings: 'tear.eye',
 		etymology: 'pie:h₂eḱ-',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'h₁én',
+		meanings: 'INE',
 		source: 'wiktionary',
 	},
 	{
@@ -2366,6 +2386,13 @@ const entryData = [
 		meanings: 'ear',
 		etymology: 'pie:h₂ew-;pie:-s',
 		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: '-i',
+		meanings: 'LOC',
+		source: 'wiktionary',
+		notes: 'athematic singular',
 	},
 	{
 		language: 'pie',
@@ -2739,6 +2766,13 @@ const entryData = [
 		meanings: 'large;big;thick;old',
 		etymology: 'pie:steh₂-',
 		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: '-su',
+		meanings: 'LOC',
+		source: 'wiktionary',
+		notes: 'athematic plural',
 	},
 	{
 		language: 'pie',
