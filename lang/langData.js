@@ -2145,6 +2145,13 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: '-h₂',
+		meanings: 'ALL',
+		source: 'wiktionary',
+		notes: 'exact shape uncertain',
+	},
+	{
+		language: 'pie',
 		word: 'h₃dónts',
 		meanings: 'tooth',
 		etymology: 'pie:h₃ed-;pie:-ónts',
