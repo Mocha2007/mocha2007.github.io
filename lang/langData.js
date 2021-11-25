@@ -526,6 +526,10 @@ const meaningData = [
 		categories: 'inflectional',
 	},
 	{
+		name: 'CAUS',
+		categories: 'inflectional',
+	},
+	{
 		name: 'COM',
 		categories: 'inflectional',
 	},
@@ -547,6 +551,10 @@ const meaningData = [
 	},
 	{
 		name: 'GEN',
+		categories: 'inflectional',
+	},
+	{
+		name: 'INF',
 		categories: 'inflectional',
 	},
 	{
@@ -4568,7 +4576,7 @@ const entryData = [
 	{
 		language: 'proto-uralic',
 		word: '-ta-',
-		meanings: 'n>v',
+		meanings: 'n>v;CAUS;INF',
 		source: 'wiktionary',
 	},
 	{
