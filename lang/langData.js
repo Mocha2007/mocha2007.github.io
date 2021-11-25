@@ -3923,6 +3923,12 @@ const entryData = [
 	},
 	{
 		language: 'etruscan',
+		word: '-θi',
+		meanings: 'LOC',
+		source: 'wiktionary',
+	},
+	{
+		language: 'etruscan',
 		word: 'θu',
 		meanings: 'one',
 		source: shortcuts.etruscan,
