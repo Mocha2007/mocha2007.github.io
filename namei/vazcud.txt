@@ -15,7 +15,7 @@ wo=pron, n=you
 mal=v, 4=give
 ven=n, m=dog
 chonn=v, 4=come;!when suffixed to infinitive, "begin/start ..." or "will ...";!when suffixed to adjectives, functions like eo. -igx-
-enb=n, m=hand
+pen=n, m=hand
 tho=conj, =and (verbal and nominal)
 the=n, n=tree
 sog=adj, 1g=good
@@ -40,7 +40,7 @@ juk=adj, 1k=black
 it=n, f=woman
 thenkh=n, m=bird
 cho=n, n=reed
-yov=n, f=leaf
+yovu=n, n=leaf
 bu-=prefix, =turns wh- words into some- words, eg. what -> something
 -ven=clitic, =intensifier pronoun clitic; ie the director HIMSELF said so
 -chakh=adj/suff., 1kh=-th; ie. five -> fifth = ša -> šachakh; 1-4th are exceptional; see nominal morphology
@@ -84,12 +84,12 @@ zoy=n, n=fish
 šoket=n, f=deer
 invil=n, m=goat
 khom=n, m=pig
-velip=n, f=sheep
+velik=n, m=ram (sheep)
 puzan=n, m=bear
 chinš=n, f=fox
-thin=n, m=snake
+bin=n, m=snake
 bak=n, m=wolf
-pužit=n, f=ant
+mužit=n, f=ant
 yab=n, f=bee
 ci=n, n=fly
 že=n, n=louse
@@ -111,7 +111,7 @@ owu=n, n=wing
 ša=n, n=arm
 ud=n, f=finger
 imog=n, m=fingernail
-binkhek=n, m=foot
+gek=n, m=foot
 sam=n, m=hand
 eš=n, f=leg
 thindgunž=n, f=thumb
@@ -126,10 +126,10 @@ thinchu=n, n=mouth
 oši=n, n=cheek
 khi=n, n=jaw
 funv=n, f=lip
-geng=n, f=tongue
+weng=n, f=tongue
 punn=n, m=tooth
 šenki=n, n=neck
-ankh=n, f=nose
+mankh=n, f=nose
 uso=n, n=throat
 u=n, n=blood
 thinye=n, n=bone
@@ -142,7 +142,7 @@ okso=n, n=tear
 anginž=n, f=ankle
 unbyi=n, n=elbow
 thadong=n, f=hip
-anthay=n, n=knee
+danthay=n, n=knee
 lunkhem=n, m=knuckle
 mišphuk=n, f=shoulder
 an=n, m=wrist
@@ -153,7 +153,7 @@ onš=n, f=thigh
 zanlkhe=n, n=bladder
 anžo=n, n=brain
 chonchon=n, m=guts~intestine
-dunon=n, m=heart
+lubon=n, m=heart
 bunyu=n, n=kidney
 toy=n, n=liver
 echu=n, n=lung
@@ -166,7 +166,7 @@ ans=n, f=flower
 šio=n, n=rose
 ing=n, f=fruit
 okye=n, n=orange (sp. Mandarin)
-zintye=n, n=leaf
+zintye=n, n=page;paper
 bing=n, f=nut
 kužon=n, m=root
 wenchu=n, n=allium species, incl. onion, garlic, and green onion
@@ -177,8 +177,8 @@ uncoy=n, n=plant~vegetation
 lethfo=n, n=bush~shrub
 banltho=n, n=grass
 yu=n, n=beech (Fagus engleriana)
-ma=n, n=birch
-evcu=n, n=oak
+guga=n, n=birch
+la=n, n=oak
 vu=n, n=pine
 uy=n, n=spruce (particularly Picea crassifolia and Picea retroflexa)
 thethe=n, n=forest
@@ -202,13 +202,13 @@ pegu=v, 3=hear~listen
 ogu=v, 3=smell
 nam=n, m=air
 gath=n, f=earth
-li=n, n=fire
+le=n, n=fire
 daž=n, f=stone
-kunc=n, m=water
+mun=n, m=water
 ofem=n, m=sky
 inb=n, m=weather
 kha=n, n=sun
-o=n, n=moon
+no=n, n=moon
 se'anf=n, m=rain
 ens=n, m=cloud
 vins=n, m=snow
@@ -227,7 +227,7 @@ zab=n, f=evening
 in=n, m=night (=entire night)
 nen=n, m=day (=entire day)
 lem=n, m=week
-onf=n, m=year
+nonf=n, m=year
 enthant=n, m=brook~creek~stream
 o'es=n, f=island
 okh=n, m=lake
@@ -240,7 +240,7 @@ thoin=n, m=source~spring~well
 sonji=n, n=ash
 yene=n, n=dust
 zi=n, n=salt
-pomala=n, n=sand
+aluga=n, n=sand
 tha=n, n=smoke
 ze'=n, f=daughter
 onth=n, m=son
@@ -343,3 +343,8 @@ anl=adj, 2l=foul, fecal smell, skunk smell, etc
 ekkinž=adj, 2ž=nutty or dusty smell
 niknik=n, f=mountain range
 Penek=n, f=Pankair
+-fo=adv;suff=forms the why-series of correlatives;!thefo = so, thus
+o'=conj=that (general-purpose subordinating conjunction)
+esokhu=v, 1=approach, attempt, try;!e + sokhu
+lessoj=v, 4=curse, maledict;!lens + soj
+pag=adj;num, 1g=half
