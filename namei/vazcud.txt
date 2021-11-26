@@ -87,7 +87,7 @@ khom=n, m=pig
 velik=n, m=ram (sheep)
 puzan=n, m=bear
 chinš=n, f=fox
-bin=n, m=snake
+pin=n, m=snake
 bak=n, m=wolf
 mužit=n, f=ant
 yab=n, f=bee
@@ -331,7 +331,7 @@ fanyenkhu=v, 1=open
 zann=n, m=friend
 sela=n, n=window
 nimo=n, n=roof
-zido=n, n=bed
+zitho=n, n=bed
 cimi=n, n=stove
 intha=n, n=oven
 enlinkh=adj, 1kh=cooked food smell
