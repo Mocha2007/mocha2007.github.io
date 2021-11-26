@@ -15,7 +15,7 @@ wo=pron, n=you
 mal=v, 4=give
 ven=n, m=dog
 chonn=v, 4=come;!when suffixed to infinitive, "begin/start ..." or "will ...";!when suffixed to adjectives, functions like eo. -igx-
-pun=n, m=hand
+pan=n, m=hand
 tho=conj, =and (verbal and nominal)
 the=n, n=tree
 sog=adj, 1g=good
