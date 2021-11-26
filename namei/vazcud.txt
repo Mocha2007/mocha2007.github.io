@@ -39,7 +39,7 @@ unt=adj, 2t=green/blue
 juk=adj, 1k=black
 it=n, f=woman
 thenkh=n, m=bird
-cho=n, n=reed
+gune=n, n=reed
 yovu=n, n=leaf
 bu-=prefix, =turns wh- words into some- words, eg. what -> something
 -ven=clitic, =intensifier pronoun clitic; ie the director HIMSELF said so
@@ -89,7 +89,7 @@ puzan=n, m=bear
 chinš=n, f=fox
 pin=n, m=snake
 bak=n, m=wolf
-mužit=n, f=ant
+mužut=n, f=ant
 yab=n, f=bee
 ci=n, n=fly
 že=n, n=louse
@@ -111,7 +111,7 @@ owu=n, n=wing
 ša=n, n=arm
 ud=n, f=finger
 imog=n, m=fingernail
-gek=n, m=foot
+guk=n, m=foot
 sam=n, m=hand
 eš=n, f=leg
 thindgunž=n, f=thumb
@@ -348,3 +348,4 @@ o'=conj=that (general-purpose subordinating conjunction)
 esokhu=v, 1=approach, attempt, try;!e + sokhu
 lessoj=v, 4=curse, maledict;!lens + soj
 pag=adj;num, 1g=half
+šema=n, n=grain
