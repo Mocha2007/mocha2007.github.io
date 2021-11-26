@@ -15,7 +15,7 @@ wo=pron, n=you
 mal=v, 4=give
 ven=n, m=dog
 chonn=v, 4=come;!when suffixed to infinitive, "begin/start ..." or "will ...";!when suffixed to adjectives, functions like eo. -igx-
-pen=n, m=hand
+pun=n, m=hand
 tho=conj, =and (verbal and nominal)
 the=n, n=tree
 sog=adj, 1g=good
@@ -89,7 +89,7 @@ puzan=n, m=bear
 chinš=n, f=fox
 pin=n, m=snake
 bak=n, m=wolf
-mužut=n, f=ant
+mežut=n, f=ant
 yab=n, f=bee
 ci=n, n=fly
 že=n, n=louse
@@ -100,7 +100,7 @@ avyenž=n, f=milk
 cheg=n, m=wool
 thit=n, f=rabbit
 bav=n, f=mouse
-tužonl=n, m=rat
+tenžonl=n, m=rat
 zoph=n, f=squirrel
 geg=n, m=claw
 šafniw=n, n=feather
@@ -142,7 +142,7 @@ okso=n, n=tear
 anginž=n, f=ankle
 unbyi=n, n=elbow
 thadong=n, f=hip
-danthay=n, n=knee
+dethaw=n, n=knee
 lunkhem=n, m=knuckle
 mišphuk=n, f=shoulder
 an=n, m=wrist
@@ -153,9 +153,9 @@ onš=n, f=thigh
 zanlkhe=n, n=bladder
 anžo=n, n=brain
 chonchon=n, m=guts~intestine
-lubon=n, m=heart
+luban=n, m=heart
 bunyu=n, n=kidney
-toy=n, n=liver
+nuwu=n, n=liver
 etu=n, n=lung
 bon=n, m=stomach
 okni=n, n=pancreas~sweetbread
@@ -208,7 +208,7 @@ mun=n, m=water
 ofem=n, m=sky
 inb=n, m=weather
 kha=n, n=sun
-no=n, n=moon
+ne=n, n=moon
 se'anf=n, m=rain
 ens=n, m=cloud
 vins=n, m=snow
@@ -225,9 +225,9 @@ ankh=n, f=noon
 sankh=n, f=afternoon
 zab=n, f=evening
 in=n, m=night (=entire night)
-nen=n, m=day (=entire day)
+nenf=n, m=day (=entire day)
 lem=n, m=week
-nonf=n, m=year
+nen=n, m=year
 enthant=n, m=brook~creek~stream
 o'es=n, f=island
 okh=n, m=lake
@@ -331,7 +331,7 @@ fanyenkhu=v, 1=open
 zann=n, m=friend
 sela=n, n=window
 nimo=n, n=roof
-zitho=n, n=bed
+zetho=n, n=bed
 cimi=n, n=stove
 intha=n, n=oven
 enlinkh=adj, 1kh=cooked food smell
