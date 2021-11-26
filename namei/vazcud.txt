@@ -64,7 +64,7 @@ binž=adj, 2ž=small/little
 junn=adj/det, 2n=many/much
 bunn=adj/det, 2n=few/little
 nikhu=v, 1=do/make
-beku=v, 2=go
+ve'=v, 4=go
 ukhu=v, 1=get/take
 je=adv, =very/really
 žukh=adj/det/pron, 1kh=all (pl)/every (s)
@@ -100,7 +100,7 @@ avyenž=n, f=milk
 cheg=n, m=wool
 thit=n, f=rabbit
 bav=n, f=mouse
-thužonl=n, m=rat
+tužonl=n, m=rat
 zoph=n, f=squirrel
 geg=n, m=claw
 šafniw=n, n=feather
@@ -156,7 +156,7 @@ chonchon=n, m=guts~intestine
 lubon=n, m=heart
 bunyu=n, n=kidney
 toy=n, n=liver
-echu=n, n=lung
+etu=n, n=lung
 bon=n, m=stomach
 okni=n, n=pancreas~sweetbread
 šiko=n, n=bark
@@ -177,7 +177,7 @@ uncoy=n, n=plant~vegetation
 lethfo=n, n=bush~shrub
 banltho=n, n=grass
 yu=n, n=beech (Fagus engleriana)
-guga=n, n=birch
+uga=n, n=birch
 la=n, n=oak
 vu=n, n=pine
 uy=n, n=spruce (particularly Picea crassifolia and Picea retroflexa)
