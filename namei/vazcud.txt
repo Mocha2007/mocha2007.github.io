@@ -153,7 +153,7 @@ onš=n, f=thigh
 zanlkhe=n, n=bladder
 anžo=n, n=brain
 chonchon=n, m=guts~intestine
-luban=n, m=heart
+lufan=n, m=heart
 bunyu=n, n=kidney
 nuwu=n, n=liver
 etu=n, n=lung
@@ -321,7 +321,7 @@ meguarakhu=n, n=parasitic worm similar to the Werm from Parasite Infection
 ich=n, f=house
 ont=adj, 2t=right, correct
 antme=n, n=door
-chan=n, m=mister, sir
+mel=n, m=mister, sir
 absakhu=v, 1=knock
 soj=v, 4=say; speak
 pann=adj; n, m=young; a youth
