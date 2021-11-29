@@ -229,9 +229,9 @@ function createSvgElement(name = 'svg'){
 }
 
 /** https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file/34156339#34156339
- * @param {string} content
- * @param {string} fileName
- * @param {string} contentType
+ * @param {string} content - eg 'hello!
+ * @param {string} fileName - eg 'mochaSpaceGameSave.txt'
+ * @param {string} contentType - eg 'text/plain'
 */
 function download(content, fileName, contentType){
 	const a = document.createElement('a');
