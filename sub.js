@@ -95,6 +95,10 @@ var subtitles =	[
 	'Drink me.',
 	'gib snuggu',
 	'insert dong',
+	// furry
+	'Update Furrygram',
+	'MOW! MOW! MOW!',
+	'That post-con depression feels real today',
 	// etc allusion
 	'The pizza doesn&rsquo;t scream when you put it in the oven.',
 	'/mo(ch|k|hx|\\u0125)[aeiou]r?/gi',
@@ -104,8 +108,6 @@ var subtitles =	[
 	'.... .- ...- . / -.-- --- ..- / -. --- / .-.. .. ..-. .',
 	'<em>"No"</em>',
 	'...baka!',
-	'Update Furrygram',
-	'MOW! MOW! MOW!',
 	'HAAAAAAAAAAAA YOUR CAMERA IS TRAAAAASH',
 	'My thesis was on the rind of Zayo Dadong',
 	'This individual, however, <em>is</em> firing on all cinderblocks situation.',
