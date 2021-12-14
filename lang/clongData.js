@@ -7,6 +7,18 @@
 */
 
 const data = {
+	cases: {
+		alignment: [
+			['DIR'],
+			['NOM', 'ACC'],
+			['ABS', 'ERG'],
+			['INTR', 'ERG', 'ACC'],
+			['TRANS', 'INTR'],
+		],
+		other: [
+			'DAT',
+		],
+	},
 	filters: {
 		consonant: x => !x.properties.isVowel,
 		vowel: x => x.properties.isVowel,

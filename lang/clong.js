@@ -173,6 +173,32 @@ class Word {
 	}
 }
 
+class Morphology {
+	/**
+	 * morphology data
+	 * @param {string[]} cases eg. ERG, DAT, ...
+	*/
+	constructor(cases){
+		this.cases = cases;
+	}
+	get html(){
+		// todo
+		const div = document.createElement('div');
+		const h2 = document.createElement('h2');
+		h2.innerHTML = 'Morphology';
+		div.appendChild(h2);
+		const cases = document.createElement('span');
+		cases.innerHTML = `Cases: ${this.cases.join()}`;
+		div.appendChild(cases);
+		return div;
+	}
+	static generate(){
+		const c = [...random.choice(data.cases.alignment)]; // copy template
+		// todo add other cases...
+		return new Morphology(c);
+	}
+}
+
 class Syntax {
 	/**
 	 * syntax rules
@@ -215,11 +241,13 @@ class Language {
 	 * @param {Phoneme[]} phonology set of phonemes
 	 * @param {Phonotactics} phonotactics
 	 * @param {Syntax} syntax
+	 * @param {Morphology} morphology
 	*/
-	constructor(phonology, phonotactics, syntax){
+	constructor(phonology, phonotactics, syntax, morphology){
 		this.phonology = phonology;
 		this.phonotactics = phonotactics;
 		this.syntax = syntax;
+		this.morphology = morphology;
 	}
 	get vocabHTML(){
 		const div = document.createElement('div');
@@ -246,6 +274,8 @@ class Language {
 		doc.appendChild(Phoneme.generateHTML(this.phonology));
 		// list of ten random words...
 		doc.appendChild(this.vocabHTML);
+		// morphology
+		doc.appendChild(this.morphology.html);
 		// syntax
 		doc.appendChild(this.syntax.html);
 	}
@@ -253,7 +283,8 @@ class Language {
 		return new Language(
 			Phoneme.generatePhonology(),
 			Phonotactics.generate(),
-			Syntax.generate()
+			Syntax.generate(),
+			Morphology.generate()
 		);
 	}
 }
