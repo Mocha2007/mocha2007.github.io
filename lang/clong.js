@@ -1,4 +1,5 @@
-/* global phones */
+/* exported main */
+/* global phones, random */
 'use strict';
 
 
@@ -12,6 +13,9 @@ class Phone {
 		this.name = name;
 		this.properties = properties;
 		Phone.list.push(this);
+	}
+	testIfGenerates(){
+		return random.random() < this.properties.freq;
 	}
 	static load(){
 		// todo
@@ -34,9 +38,27 @@ class Phoneme {
 		this.primary = primary;
 		this.allophones = allophones;
 	}
+	static generatePhonology(){
+		// todo
+		return Phone.list.filter(p => p.testIfGenerates());
+	}
+}
+
+class Language {
+	/**
+	 * currently, languages have only phonologies
+	 * @param {Phoneme[]} phonology set of phonemes
+	*/
+	constructor(phonology){
+		this.phonology = phonology;
+	}
+	static generate(){
+		return new Language(Phoneme.generatePhonology());
+	}
 }
 
 function main(){
 	// load all data
 	Phone.load();
+	console.debug(Language.generate());
 }
