@@ -7,6 +7,10 @@
 */
 
 const data = {
+	filters: {
+		consonant: x => !x.properties.isVowel,
+		vowel: x => x.properties.isVowel,
+	},
 	MOA: [
 		'nasal',
 		'plosive',

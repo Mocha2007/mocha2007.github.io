@@ -1,5 +1,5 @@
 /* exported main */
-/* global data, phones, random */
+/* global data, phones, random, range */
 'use strict';
 
 
@@ -121,21 +121,81 @@ class Phoneme {
 	}
 }
 
+class Phonotactics {
+	/**
+	 * phonotactics. used to generate and validate syllables.
+	 * @param {(Phone => boolean)[]} syllableStructure uses data.filters
+	*/
+	constructor(syllableStructure){
+		this.syllableStructure = syllableStructure;
+	}
+	/** @param {Phoneme[]} phonology */
+	randomSyllable(phonology){
+		/** @type {Phoneme[][]} */
+		const valids = this.syllableStructure.map(f =>
+			phonology.filter(p => f(p.primary)));
+		/** @type {Phoneme[]} */
+		const choices = valids.map(options => random.choice(options));
+		return choices;
+	}
+	randomWord(phonology, dropoff = 0.5){
+		const word = this.randomSyllable(phonology);
+		while (random.random() < dropoff)
+			this.randomSyllable(phonology).forEach(p => word.push(p));
+		return new Word(word);
+	}
+	static generate(){
+		// for now, only this:
+		return new Phonotactics([data.filters.consonant, data.filters.vowel]);
+	}
+}
+
+class Word {
+	/**
+	 * word. todo: add meaning
+	 * @param {Phoneme[]} phonemes each phoneme in word
+	*/
+	constructor(phonemes){
+		this.phonemes = phonemes;
+	}
+	get html(){
+		const container = document.createElement('span');
+		container.classList.add('word');
+		this.phonemes.forEach(p => container.appendChild(p.primary.html));
+		return container;
+	}
+}
+
 class Language {
 	/**
 	 * currently, languages have only phonologies
 	 * @param {Phoneme[]} phonology set of phonemes
+	 * @param {Phonotactics} phonotactics
 	*/
-	constructor(phonology){
+	constructor(phonology, phonotactics){
 		this.phonology = phonology;
+		this.phonotactics = phonotactics;
 	}
 	print(){
 		// show tables n sheit
 		const doc = document.getElementById('body');
 		doc.appendChild(Phoneme.generateHTML(this.phonology));
+		// list of ten random words...
+		const wordlist = document.createElement('ul');
+		doc.appendChild(wordlist);
+		wordlist.id = 'wordlist';
+		range(10).map(() => this.phonotactics.randomWord(this.phonology))
+			.forEach(word => {
+				const li = document.createElement('li');
+				wordlist.appendChild(li);
+				li.appendChild(word.html);
+			});
 	}
 	static generate(){
-		return new Language(Phoneme.generatePhonology());
+		return new Language(
+			Phoneme.generatePhonology(),
+			Phonotactics.generate()
+		);
 	}
 }
 

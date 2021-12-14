@@ -16,3 +16,6 @@ html {
 .phone {
 	padding: 0 1vh;
 }
+.word .phone {
+	padding: 0;
+}
