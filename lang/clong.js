@@ -1,5 +1,5 @@
 /* exported main */
-/* global data, phones, random, range */
+/* global data, phones, random, range, syllables */
 'use strict';
 
 
@@ -125,15 +125,19 @@ class Phonotactics {
 	/**
 	 * phonotactics. used to generate and validate syllables.
 	 * @param {(Phone => boolean)[]} syllableStructure uses data.filters
+	 * @param {boolean[]} mandatory which slots are mandatory/optional
 	*/
-	constructor(syllableStructure){
+	constructor(syllableStructure, mandatory){
 		this.syllableStructure = syllableStructure;
+		this.mandatory = mandatory;
 	}
 	/** @param {Phoneme[]} phonology */
 	randomSyllable(phonology){
 		/** @type {Phoneme[][]} */
 		const valids = this.syllableStructure.map(f =>
-			phonology.filter(p => f(p.primary)));
+			phonology.filter(p => f(p.primary)))
+			// remove optionals
+			.filter((_, i) => this.mandatory[i] || random.random() < 0.6);
 		/** @type {Phoneme[]} */
 		const choices = valids.map(options => random.choice(options));
 		return choices;
@@ -146,7 +150,7 @@ class Phonotactics {
 	}
 	static generate(){
 		// for now, only this:
-		return new Phonotactics([data.filters.consonant, data.filters.vowel]);
+		return new Phonotactics(...random.choice(syllables));
 	}
 }
 

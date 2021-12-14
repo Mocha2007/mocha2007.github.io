@@ -1,4 +1,4 @@
-/* exported data, phones */
+/* exported data, phones, syllables */
 'use strict';
 
 /* further reading
@@ -29,6 +29,29 @@ const data = {
 		'glottal',
 	],
 };
+
+const syllables = [
+	// CV
+	[
+		[data.filters.consonant, data.filters.vowel],
+		[true, true],
+	],
+	// (C)V
+	[
+		[data.filters.consonant, data.filters.vowel],
+		[false, true],
+	],
+	// CV(C)
+	[
+		[data.filters.consonant, data.filters.vowel, data.filters.consonant],
+		[true, true, false],
+	],
+	// (C)V(C)
+	[
+		[data.filters.consonant, data.filters.vowel, data.filters.consonant],
+		[false, true, false],
+	],
+];
 
 const phones = [
 	{
