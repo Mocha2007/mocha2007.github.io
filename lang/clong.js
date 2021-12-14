@@ -178,10 +178,12 @@ class Morphology {
 	 * morphology data
 	 * @param {string[]} cases eg. ERG, DAT, ...
 	 * @param {Word[]} caseEndings for the cases
+	 * @param {string[]} numbers eg. S, PL ...
 	*/
-	constructor(cases, caseEndings){
+	constructor(cases, caseEndings, numbers){
 		this.cases = cases;
 		this.caseEndings = caseEndings;
+		this.numbers = numbers;
 	}
 	get html(){
 		// todo
@@ -189,19 +191,26 @@ class Morphology {
 		const h2 = document.createElement('h2');
 		h2.innerHTML = 'Morphology';
 		div.appendChild(h2);
+		// cases
 		const cases = document.createElement('span');
 		const caseString = this.cases.map((c, i) => `${c} (-${this.caseEndings[i].html.outerHTML})`)
 			.join('<br>');
-		cases.innerHTML = `Cases: ${caseString}`;
+		cases.innerHTML = `Cases: ${caseString}<br><br>`;
 		div.appendChild(cases);
+		// numbers
+		const numbers = document.createElement('span');
+		numbers.innerHTML = `${this.numbers.join()}`;
+		div.appendChild(numbers);
 		return div;
 	}
 	static generate(phonology, phonotactics){
 		const c = [...random.choice(data.cases.alignment)]; // copy template
+		const numbers = data.cases.numbers.slice(0, random.randint(1, data.cases.numbers.length-1));
 		// todo add other cases...
 		return new Morphology(
 			c,
-			Morphology.generateEndings(phonology, phonotactics, c)
+			Morphology.generateEndings(phonology, phonotactics, c),
+			numbers
 		);
 	}
 	/**

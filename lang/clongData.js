@@ -15,6 +15,7 @@ const data = {
 			['INTR', 'ERG', 'ACC'],
 			['TRANS', 'INTR'],
 		],
+		numbers: ['S', 'PL', 'DU', 'PAUC', 'TRI'],
 		other: [
 			'DAT',
 		],
