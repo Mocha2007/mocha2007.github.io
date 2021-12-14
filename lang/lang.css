@@ -19,3 +19,8 @@ html {
 .word .phone {
 	padding: 0;
 }
+#wordlist li {
+	display: block;
+	float: left;
+	width: 25%;
+}

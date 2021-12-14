@@ -184,7 +184,7 @@ class Language {
 		const wordlist = document.createElement('ul');
 		doc.appendChild(wordlist);
 		wordlist.id = 'wordlist';
-		range(10).map(() => this.phonotactics.randomWord(this.phonology))
+		range(50).map(() => this.phonotactics.randomWord(this.phonology))
 			.forEach(word => {
 				const li = document.createElement('li');
 				wordlist.appendChild(li);
