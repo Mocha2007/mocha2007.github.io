@@ -7,6 +7,7 @@ const data = {
 		'plosive',
 		'fricative',
 		'approximant',
+		'trill',
 	],
 	POA: [
 		'bilabial',
@@ -167,12 +168,80 @@ const phones = [
 		},
 	},
 	{
+		name: 'r',
+		properties: {
+			manner: 'trill',
+			place: 'alveolar',
+			voiced: true,
+			freq: 1332/3183,
+		},
+	},
+	{
+		name: 's',
+		properties: {
+			manner: 'fricative',
+			place: 'alveolar',
+			voiced: false,
+			freq: 2020/3183,
+		},
+	},
+	{
 		name: 't',
 		properties: {
 			manner: 'plosive',
 			place: 'alveolar',
 			voiced: false,
 			freq: 2064/3183,
+		},
+	},
+	{
+		name: 'u',
+		properties: {
+			isVowel: true,
+			freq: 2646/3183,
+		},
+	},
+	{
+		name: 'v',
+		properties: {
+			manner: 'fricative',
+			place: 'labiodental',
+			voiced: true,
+			freq: 816/3183,
+		},
+	},
+	{
+		name: 'w',
+		properties: {
+			manner: 'approximant',
+			place: 'bilabial', // todo fix this weird
+			voiced: true,
+			freq: 2483/3183,
+		},
+	},
+	{
+		name: 'x',
+		properties: {
+			manner: 'fricative',
+			place: 'velar',
+			voiced: false,
+			freq: 576/3183,
+		},
+	},
+	{
+		name: 'y',
+		properties: {
+			isVowel: true,
+			freq: 175/3183,
+		},
+	},
+	{
+		name: 'z',
+		properties: {
+			manner: 'fricative',
+			place: 'alveolar',
+			voiced: true,
+			freq: 893/3183,
 		},
 	},
 ];
