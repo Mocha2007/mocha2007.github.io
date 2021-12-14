@@ -81,6 +81,9 @@ class Phoneme {
 		// todo
 		const div = document.createElement('div');
 		div.id = 'phonology';
+		const h2 = document.createElement('h2');
+		h2.innerHTML = 'Phonology';
+		div.appendChild(h2);
 		const consonantTable = document.createElement('table');
 		div.appendChild(consonantTable);
 		consonantTable.id = 'consonants';
@@ -223,6 +226,9 @@ class Language {
 		const doc = document.getElementById('body');
 		doc.appendChild(Phoneme.generateHTML(this.phonology));
 		// list of ten random words...
+		const vocabHeader = document.createElement('h2');
+		vocabHeader.innerHTML = 'Vocabulary';
+		doc.appendChild(vocabHeader);
 		const wordlist = document.createElement('ul');
 		doc.appendChild(wordlist);
 		wordlist.id = 'wordlist';
