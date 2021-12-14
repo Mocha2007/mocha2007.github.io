@@ -46,6 +46,7 @@ const phones = [
 			place: 'palatal',
 			voiced: false,
 			freq: 418/3183,
+			implications: ['j', 'k', 't'],
 		},
 	},
 	{
