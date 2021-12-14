@@ -1,5 +1,5 @@
 /* exported main */
-/* global data, phones, random, range, syllables */
+/* global data, phones, random, range, syllables, wordLists */
 'use strict';
 
 
@@ -221,23 +221,31 @@ class Language {
 		this.phonotactics = phonotactics;
 		this.syntax = syntax;
 	}
+	get vocabHTML(){
+		const div = document.createElement('div');
+		const vocabHeader = document.createElement('h2');
+		vocabHeader.innerHTML = 'Vocabulary';
+		div.appendChild(vocabHeader);
+		const wordlist = document.createElement('ul');
+		wordlist.id = 'wordlist';
+		wordLists.swadesh.map(def => [def, this.phonotactics.randomWord(this.phonology)])
+			.forEach(dwPair => {
+				const def = dwPair[0];
+				const word = dwPair[1];
+				const li = document.createElement('li');
+				wordlist.appendChild(li);
+				li.innerHTML = `${def} = `;
+				li.appendChild(word.html);
+			});
+		div.appendChild(wordlist);
+		return div;
+	}
 	print(){
 		// show tables n sheit
 		const doc = document.getElementById('body');
 		doc.appendChild(Phoneme.generateHTML(this.phonology));
 		// list of ten random words...
-		const vocabHeader = document.createElement('h2');
-		vocabHeader.innerHTML = 'Vocabulary';
-		doc.appendChild(vocabHeader);
-		const wordlist = document.createElement('ul');
-		doc.appendChild(wordlist);
-		wordlist.id = 'wordlist';
-		range(50).map(() => this.phonotactics.randomWord(this.phonology))
-			.forEach(word => {
-				const li = document.createElement('li');
-				wordlist.appendChild(li);
-				li.appendChild(word.html);
-			});
+		doc.appendChild(this.vocabHTML);
 		// syntax
 		doc.appendChild(this.syntax.html);
 	}
