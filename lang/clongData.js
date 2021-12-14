@@ -14,6 +14,7 @@ const data = {
 	MOA: [
 		'nasal',
 		'plosive',
+		'affricate',
 		'fricative',
 		'approximant',
 		'trill',
@@ -22,6 +23,7 @@ const data = {
 		'bilabial',
 		'labiodental',
 		'alveolar',
+		'postalveolar',
 		'palatal',
 		'velar',
 		'labiovelar',
@@ -89,6 +91,16 @@ const phones = [
 			voiced: true,
 			freq: 1376/3183,
 			implications: ['n'],
+		},
+	},
+	{
+		name: 'd̠ʒ',
+		properties: {
+			manner: 'affricate',
+			place: 'postalveolar',
+			voiced: true,
+			freq: 820/3183,
+			implications: ['j', 'g', 'd'], // guess. todo: verify
 		},
 	},
 	{
@@ -249,6 +261,16 @@ const phones = [
 		},
 	},
 	{
+		name: 'ʃ',
+		properties: {
+			manner: 'fricative',
+			place: 'postalveolar',
+			voiced: false,
+			freq: 1104/3183,
+			implications: ['j', 's'], // guess. todo: verify
+		},
+	},
+	{
 		name: 't',
 		properties: {
 			manner: 'plosive',
@@ -256,6 +278,16 @@ const phones = [
 			voiced: false,
 			freq: 2064/3183,
 			implications: ['k'],
+		},
+	},
+	{
+		name: 't̠ʃ',
+		properties: {
+			manner: 'affricate',
+			place: 'postalveolar',
+			voiced: false,
+			freq: 1218/3183,
+			implications: ['j', 'k', 't'], // guess. todo: verify
 		},
 	},
 	{
@@ -311,6 +343,16 @@ const phones = [
 			voiced: true,
 			freq: 893/3183,
 			implications: ['s'],
+		},
+	},
+	{
+		name: 'ʔ',
+		properties: {
+			manner: 'plosive',
+			place: 'glottal',
+			voiced: false,
+			freq: 1131/3183,
+			implications: ['k'], // todo guess
 		},
 	},
 ];
