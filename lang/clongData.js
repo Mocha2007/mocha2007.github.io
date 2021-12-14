@@ -30,6 +30,33 @@ const data = {
 		'uvular',
 		'glottal',
 	],
+	order: {
+		AdjN: [
+			['Adj', '{adjective}'],
+			['N', '{noun}'],
+		],
+		AdpN: [
+			['Adp', '{adposition}'],
+			['N', '{noun}'],
+		],
+		DetN: [
+			['Det', '{determiner}'],
+			['N', '{noun}'],
+		],
+		GenN: [
+			['Gen', '{genitive}'],
+			['N', '{noun}'],
+		],
+		NumN: [
+			['Num', '{numeral}'],
+			['N', '{noun}'],
+		],
+		SVO: [
+			['S', '{subject}'],
+			['V', '{verb}'],
+			['O', '{object}'],
+		],
+	},
 };
 
 const syllables = [

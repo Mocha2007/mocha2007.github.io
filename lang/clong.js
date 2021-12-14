@@ -170,15 +170,53 @@ class Word {
 	}
 }
 
+class Syntax {
+	/**
+	 * syntax rules
+	 * @param {idk yet} properties word order n stuff
+	*/
+	constructor(properties){
+		this.properties = properties;
+	}
+	get html(){
+		// div
+		const div = document.createElement('div');
+		// header
+		const h2 = document.createElement('h2');
+		h2.innerHTML = 'Syntax';
+		div.appendChild(h2);
+		// list stufffff
+		const ul = document.createElement('ul');
+		div.appendChild(ul);
+		for (const key in this.properties){
+			const li = document.createElement('li');
+			const s = this.properties[key].map(t => t[0]).join();
+			li.innerHTML = `${key} = ${s}`; //todo shuffle
+			ul.appendChild(li);
+		}
+		return div;
+	}
+	static generate(){
+		const orders = {};
+		for (const key in data.order){
+			// console.debug(key);
+			orders[key] = random.shuffle(data.order[key]); //todo shuffle
+		}
+		return new Syntax(orders);
+	}
+}
+
 class Language {
 	/**
 	 * currently, languages have only phonologies
 	 * @param {Phoneme[]} phonology set of phonemes
 	 * @param {Phonotactics} phonotactics
+	 * @param {Syntax} syntax
 	*/
-	constructor(phonology, phonotactics){
+	constructor(phonology, phonotactics, syntax){
 		this.phonology = phonology;
 		this.phonotactics = phonotactics;
+		this.syntax = syntax;
 	}
 	print(){
 		// show tables n sheit
@@ -194,11 +232,14 @@ class Language {
 				wordlist.appendChild(li);
 				li.appendChild(word.html);
 			});
+		// syntax
+		doc.appendChild(this.syntax.html);
 	}
 	static generate(){
 		return new Language(
 			Phoneme.generatePhonology(),
-			Phonotactics.generate()
+			Phonotactics.generate(),
+			Syntax.generate()
 		);
 	}
 }
