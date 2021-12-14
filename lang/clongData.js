@@ -11,10 +11,11 @@ const data = {
 	],
 	POA: [
 		'bilabial',
-		'labiovelar',
+		'labiodental',
 		'alveolar',
 		'palatal',
 		'velar',
+		'labiovelar',
 		'uvular',
 		'glottal',
 	],
@@ -214,7 +215,7 @@ const phones = [
 		name: 'w',
 		properties: {
 			manner: 'approximant',
-			place: 'bilabial', // todo fix this weird
+			place: 'labiovelar',
 			voiced: true,
 			freq: 2483/3183,
 		},
