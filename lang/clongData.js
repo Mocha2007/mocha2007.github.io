@@ -255,6 +255,7 @@ const phones = [
 			place: 'labiovelar',
 			voiced: true,
 			freq: 2483/3183,
+			implications: ['j'],
 		},
 	},
 	{
@@ -272,6 +273,7 @@ const phones = [
 		properties: {
 			isVowel: true,
 			freq: 175/3183,
+			implications: ['i', 'u'],
 		},
 	},
 	{
