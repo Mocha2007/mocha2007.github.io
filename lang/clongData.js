@@ -156,6 +156,26 @@ const phones = [
 		},
 	},
 	{
+		name: 'ŋ',
+		properties: {
+			manner: 'nasal',
+			place: 'velar',
+			voiced: true,
+			freq: 1897/3183,
+			implications: ['m', 'k'],
+		},
+	},
+	{
+		name: 'ɲ',
+		properties: {
+			manner: 'nasal',
+			place: 'palatal',
+			voiced: true,
+			freq: 1255/3183,
+			implications: ['n', 'j'],
+		},
+	},
+	{
 		name: 'o',
 		properties: {
 			isVowel: true,
@@ -189,6 +209,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: true,
 			freq: 1332/3183,
+			implications: ['n'],
 		},
 	},
 	{
@@ -260,6 +281,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: true,
 			freq: 893/3183,
+			implications: ['s'],
 		},
 	},
 ];
