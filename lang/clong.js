@@ -20,8 +20,17 @@ class Phone {
 		elem.innerHTML = this.name;
 		return elem;
 	}
+	/** @returns {Phone[]} */
+	get implications(){
+		if ('implications' in this.properties)
+			return this.properties.implications.map(s => Phone.fromString(s));
+		return [];
+	}
 	testIfGenerates(){
 		return random.random() < this.properties.freq;
+	}
+	static fromString(s){
+		return Phone.list.find(p => p.name === s);
 	}
 	static load(){
 		// todo
@@ -46,9 +55,26 @@ class Phoneme {
 	}
 	static generatePhonology(){
 		// todo
-		return Phone.list.filter(p => p.testIfGenerates()).map(p => {
-			return new Phoneme(p);
+		const attempt = Phone.list.filter(p => p.testIfGenerates());
+		while (Phoneme.verifyImplications(attempt)){
+			// keep trying
+		}
+		return attempt.map(p => new Phoneme(p));
+	}
+	/** @param {Phone[]} attempt */
+	static verifyImplications(attempt){
+		const failures = attempt.filter(
+			p => p.implications.some(i => !attempt.includes(i)));
+		if (!failures.length)
+			return false;
+		// otherwise, fix for next attempt:
+		failures.forEach(fail => {
+			fail.implications.forEach(implication => {
+				if (!attempt.includes(implication))
+					attempt.push(implication);
+			});
 		});
+		return true;
 	}
 	/** @param {Phoneme[]} phonology */
 	static generateHTML(phonology){

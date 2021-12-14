@@ -36,6 +36,7 @@ const phones = [
 			place: 'bilabial',
 			voiced: true,
 			freq: 1906/3183,
+			implications: ['m'],
 		},
 	},
 	{
@@ -54,6 +55,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: true,
 			freq: 1376/3183,
+			implications: ['n'],
 		},
 	},
 	{
@@ -79,6 +81,7 @@ const phones = [
 			place: 'velar',
 			voiced: true,
 			freq: 1712/3183,
+			implications: ['b'],
 		},
 	},
 	{
@@ -88,6 +91,7 @@ const phones = [
 			place: 'glottal',
 			voiced: false,
 			freq: 1703/3183,
+			implications: ['k'],
 		},
 	},
 	{
@@ -123,6 +127,7 @@ const phones = [
 			voiced: true,
 			lateral: true,
 			freq: 2044/3183,
+			implications: ['n'],
 		},
 	},
 	{
@@ -141,6 +146,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: true,
 			freq: 2349/3183,
+			implications: ['m'],
 		},
 	},
 	{
@@ -157,6 +163,7 @@ const phones = [
 			place: 'bilabial',
 			voiced: false,
 			freq: 2594/3183,
+			implications: ['k'],
 		},
 	},
 	{
@@ -193,6 +200,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: false,
 			freq: 2064/3183,
+			implications: ['k'],
 		},
 	},
 	{
@@ -209,6 +217,7 @@ const phones = [
 			place: 'labiodental',
 			voiced: true,
 			freq: 816/3183,
+			implications: ['b', 'f'],
 		},
 	},
 	{
@@ -227,6 +236,7 @@ const phones = [
 			place: 'velar',
 			voiced: false,
 			freq: 576/3183,
+			implications: ['k'],
 		},
 	},
 	{
