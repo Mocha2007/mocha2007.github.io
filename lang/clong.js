@@ -177,9 +177,11 @@ class Morphology {
 	/**
 	 * morphology data
 	 * @param {string[]} cases eg. ERG, DAT, ...
+	 * @param {Word[]} caseEndings for the cases
 	*/
-	constructor(cases){
+	constructor(cases, caseEndings){
 		this.cases = cases;
+		this.caseEndings = caseEndings;
 	}
 	get html(){
 		// todo
@@ -188,14 +190,32 @@ class Morphology {
 		h2.innerHTML = 'Morphology';
 		div.appendChild(h2);
 		const cases = document.createElement('span');
-		cases.innerHTML = `Cases: ${this.cases.join()}`;
+		const caseString = this.cases.map((c, i) => `${c} (-${this.caseEndings[i].html.outerHTML})`)
+			.join('<br>');
+		cases.innerHTML = `Cases: ${caseString}`;
 		div.appendChild(cases);
 		return div;
 	}
-	static generate(){
+	static generate(phonology, phonotactics){
 		const c = [...random.choice(data.cases.alignment)]; // copy template
 		// todo add other cases...
-		return new Morphology(c);
+		return new Morphology(
+			c,
+			Morphology.generateEndings(phonology, phonotactics, c)
+		);
+	}
+	/**
+	 * @param {Phonotactics} phonotactics
+	 * @param {string[]} cases
+	 */
+	static generateEndings(phonology, phonotactics, cases){
+		// todo also prefixes... and clitics...
+		// the first case is blank 50%.
+		return cases.map((_, i) => {
+			if (i === 0 && random.random() < 0.5)
+				return new Word([]);
+			return phonotactics.randomWord(phonology, 0.1);
+		});
 	}
 }
 
@@ -280,11 +300,13 @@ class Language {
 		doc.appendChild(this.syntax.html);
 	}
 	static generate(){
+		const phonology = Phoneme.generatePhonology();
+		const phonotactics = Phonotactics.generate();
 		return new Language(
-			Phoneme.generatePhonology(),
-			Phonotactics.generate(),
+			phonology,
+			phonotactics,
 			Syntax.generate(),
-			Morphology.generate()
+			Morphology.generate(phonology, phonotactics)
 		);
 	}
 }
