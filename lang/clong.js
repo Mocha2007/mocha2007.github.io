@@ -1,5 +1,5 @@
 /* exported main */
-/* global data, phones, random, range, syllables, wordLists */
+/* global data, phones, random, syllables, wordLists */
 'use strict';
 
 
