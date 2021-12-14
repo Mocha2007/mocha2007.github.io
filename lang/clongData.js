@@ -1,5 +1,24 @@
-/* exported phones */
+/* exported data, phones */
 'use strict';
+
+const data = {
+	MOA: [
+		'nasal',
+		'plosive',
+		'fricative',
+		'approximant',
+	],
+	POA: [
+		'bilabial',
+		'labiovelar',
+		'alveolar',
+		'palatal',
+		'velar',
+		'uvular',
+		'glottal',
+	],
+};
+
 const phones = [
 	{
 		name: 'a',
