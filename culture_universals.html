@@ -10,12 +10,15 @@
 <script src="toc.js"></script>
 <title>List of Cultural Universals</title>
 <style>
-.s{color:#c00}
-.a{color:#a00}
-.b{color:#800}
-.c{color:#600}
-.d{color:#400}
-.f{color:#000}
+.s{text-shadow: 0 0 0 #c00}
+.a{text-shadow: 0 0 0 #a00}
+.b{text-shadow: 0 0 0 #800}
+.c{text-shadow: 0 0 0 #600}
+.d{text-shadow: 0 0 0 #400}
+.f{text-shadow: 0 0 0 #000}
+.s, .a, .b, .c, .d, .f {
+	color: transparent;
+}
 .vowel {
 	font-family: monospace;
 	color: black;
@@ -82,6 +85,23 @@
 </ul>
 
 <h3 id="Implication">Phoneme Implication Universals</h3>
+
+<p>
+	The following data is taken from Phoible.
+	All implications are >95% true.
+	When // are separate that means the implications are separate.
+	When phonemes are grouped in // that means the implication is grouped.
+</p>
+
+<ul>
+	<li>/g/ &rarr; /b/</li>
+	<li>/l/ &rarr; /n/ &rarr; /m/</li>
+	<li>/b/ &rarr; /m/, /d/ &rarr; /n/</li>
+	<li>/&eng;/ &rarr; /m/, /k/</li>
+	<li>/x/ or /h/ &rarr; /k/</li>
+	<li>/p/ or /t/ &rarr; /k/</li>
+	<li>/v/ &rarr; /f/, /b/</li>
+</ul>
 
 <p>
 	Data From UPSID.
@@ -907,7 +927,7 @@
 	<li><span class="f">&#x26AB; 50.5%</span> (EU <span class="d">&#x26AB; 75.0%</span>) <a href="https://wals.info/feature/67A">Lack an Inflectional Future</a></li>
 </ul>
 
-<h2 id="Grammar">Grammar</h2>
+<h2 id="Syntax">Syntax</h2>
 
 <ul>
 	<li><span class="d">&#x26AB; 79.7%</span> (EU <span class="f">&#x26AB; 70.2%</span>) <a href="https://wals.info/feature/82A">Dominant Word Order is SV</a></li>
@@ -962,6 +982,287 @@
 		<th>-FUTURE</th>
 		<td>26.6%</td>
 		<td>23.9%</td>
+	</tr>
+</table>
+
+<h3 id="Word_Order_Implications">Word Order Implications</h3>
+
+<p>
+	If a word order has a majority, it is shown below.
+	Otherwise, it is marked &Oslash;.
+	Features are only listed if they have a majority for at least three word orders.
+</p>
+
+<table>
+	<tr>
+		<th>Feature</th>
+		<th>WALS</th>
+		<th>SVO</th>
+		<th>SOV</th>
+		<th>VSO</th>
+		<th>VOS</th>
+		<th>OSV</th>
+		<th>OVS</th>
+	</tr>
+	<tr>
+		<th>Subj, Obj, Verb</th>
+		<td><a href="https://wals.info/feature/81A">81A</a></td>
+		<td>35%</td>
+		<td>41%</td>
+		<td>7%</td>
+		<td>2%</td>
+		<td>0%</td>
+		<td>1%</td>
+	</tr>
+	<tr><td colspan=8>Nominal Categories</td></tr>
+	<tr>
+		<th>Position of Case Affixes</th>
+		<td><a href="https://wals.info/feature/51A">51A</a></td>
+		<td>None<br>
+			68%</td>
+		<td>Suffixes<br>
+			56%</td>
+		<td>None<br>
+			56%</td>
+		<td>None<br>
+			61%</td>
+		<td>&Oslash;</td>
+		<td>&Oslash;</td>
+	</tr>
+	<tr><td colspan=8>Word Order</td></tr>
+	<tr>
+		<th>Obj, Obl, Verb</th>
+		<td><a href="https://wals.info/feature/84A">84A</a></td>
+		<td>VOX<br>
+			91%</td>
+		<td>&Oslash;</td>
+		<td>VOX<br>
+			98%</td>
+		<td>VOX<br>
+			100%</td>
+		<td>&Oslash;</td>
+		<td>OVX<br>
+			100%</td>
+	</tr>
+	<tr>
+		<th>Adpositions</th>
+		<td><a href="https://wals.info/feature/85A">85A</a></td>
+		<td>Prep<br>
+			82%</td>
+		<td>Post<br>
+			92%</td>
+		<td>Prep<br>
+			89%</td>
+		<td>Prep<br>
+			91%</td>
+		<td>Post<br>
+			100%</td>
+		<td>Post<br>
+			73%</td>
+	</tr>
+	<tr>
+		<th>Genitives</th>
+		<td><a href="https://wals.info/feature/86A">86A</a></td>
+		<td>NGen<br>
+			63%</td>
+		<td>GenN<br>
+			90%</td>
+		<td>NGen<br>
+			92%</td>
+		<td>NGen<br>
+			88%</td>
+		<td>GenN<br>
+			100%</td>
+		<td>GenN<br>
+			56%</td>
+	</tr>
+	<tr>
+		<th>Adjectives</th>
+		<td><a href="https://wals.info/feature/87A">87A</a></td>
+		<td>NAdj<br>
+			80%</td>
+		<td>NAdj<br>
+			56%</td>
+		<td>NAdj<br>
+			69%</td>
+		<td>NAdj<br>
+			62%</td>
+		<td>NAdj<br>
+			67%</td>
+		<td>NAdj<br>
+			75%</td>
+	</tr>
+	<tr>
+		<th>Demonstratives</th>
+		<td><a href="https://wals.info/feature/88A">88A</a></td>
+		<td>NDem<br>
+			72%</td>
+		<td>DemN<br>
+			63%</td>
+		<td>&Oslash;</td>
+		<td>NDem<br>
+			52%</td>
+		<td>NDem<br>
+			67%</td>
+		<td>&Oslash;</td>
+	</tr>
+	<tr>
+		<th>Numerals</th>
+		<td><a href="https://wals.info/feature/89A">89A</a></td>
+		<td>NNum<br>
+			66%</td>
+		<td>NNum<br>
+			53%</td>
+		<td>NumN<br>
+			73%</td>
+		<td>NumN<br>
+			65%</td>
+		<td>NumN<br>
+			57%</td>
+		<td>&Oslash;</td>
+	</tr>
+	<tr>
+		<th>Relative Clauses</th>
+		<td><a href="https://wals.info/feature/90A">90A</a></td>
+		<td>NRelC<br>
+			97%</td>
+		<td>&Oslash;</td>
+		<td>NRelC<br>
+			97%</td>
+		<td>NRelC<br>
+			94%</td>
+		<td>NRelC<br>
+			100%</td>
+		<td>NRelC<br>
+			75%</td>
+	</tr>
+	<tr>
+		<th>Interrogative Phrases</th>
+		<td><a href="https://wals.info/feature/92A">93A</a></td>
+		<td>Not Init.<br>
+			73%</td>
+		<td>Not Init.<br>
+			81%</td>
+		<td>Init.<br>
+			68%</td>
+		<td>Init.<br>
+			67%</td>
+		<td>Not Init.<br>
+			100%</td>
+		<td>&Oslash;</td>
+	</tr>
+	<tr>
+		<th>Adverbial Subordinator</th>
+		<td><a href="https://wals.info/feature/93A">94A</a></td>
+		<td>Init.<br>
+			88%</td>
+		<td>&Oslash;</td>
+		<td>Init.<br>
+			92%</td>
+		<td>Init.<br>
+			83%</td>
+		<td>Init.<br>
+			100%</td>
+		<td>&Oslash;</td>
+	</tr>
+	<tr><td colspan=8>Simple Clauses</td></tr>
+	<tr>
+		<th>Case Marking - NPs</th>
+		<td><a href="https://wals.info/feature/98A">98A</a></td>
+		<td>Neutral<br>
+			95%</td>
+		<td>&Oslash;</td>
+		<td>Neutral<br>
+			67%</td>
+		<td>Neutral<br>
+			63%</td>
+		<td>&Oslash;</td>
+		<td>Neutral<br>
+			67%</td>
+	</tr>
+	<tr>
+		<th>Case Marking - Pronouns</th>
+		<td><a href="https://wals.info/feature/99A">99A</a></td>
+		<td>Neutral<br>
+			71%</td>
+		<td>&Oslash;</td>
+		<td>Neutral<br>
+			64%</td>
+		<td>&Oslash;</td>
+		<td>&Oslash;</td>
+		<td>Neutral<br>
+			67%</td>
+	</tr>
+	<tr>
+		<th>Case Marking - Verbs</th>
+		<td><a href="https://wals.info/feature/100A">100A</a></td>
+		<td>Accusative<br>
+			64%</td>
+		<td>Accusative<br>
+			58%</td>
+		<td>Accusative<br>
+			58%</td>
+		<td>Accusative<br>
+			80%</td>
+		<td>Ergative<br>
+			100%</td>
+		<td>&Oslash;</td>
+	</tr>
+	<tr>
+		<th>Expression of Pronominal Subjects</th>
+		<td><a href="https://wals.info/feature/101A">101A</a></td>
+		<td>Affixes<br>
+			58%</td>
+		<td>Affixes<br>
+			68%</td>
+		<td>Affixes<br>
+			53%</td>
+		<td>&Oslash;</td>
+		<td>Opt. Pron.<br>
+			100%</td>
+		<td>Affixes<br>
+			100%</td>
+	</tr>
+	<tr>
+		<th>Verbal Person Marking</th>
+		<td><a href="https://wals.info/feature/102A">102A</a></td>
+		<td>&Oslash;</td>
+		<td>&Oslash;</td>
+		<td>&Oslash;</td>
+		<td>Both<br>
+			70%</td>
+		<td>Only A<br>
+			100%</td>
+		<td>Both<br>
+			57%</td>
+	</tr>
+	<tr>
+		<th>Negative Morphemes</th>
+		<td><a href="https://wals.info/feature/112A">112A</a></td>
+		<td>&Oslash;</td>
+		<td>&Oslash;</td>
+		<td>Particle<br>
+			64%</td>
+		<td>Particle<br>
+			53%</td>
+		<td>Particle<br>
+			100%</td>
+		<td>&Oslash;</td>
+	</tr>
+	<tr>
+		<th>Polar Questions</th>
+		<td><a href="https://wals.info/feature/116A">116A</a></td>
+		<td>Particle<br>
+			69%</td>
+		<td>Particle<br>
+			51%</td>
+		<td>Particle<br>
+			72%</td>
+		<td>Particle<br>
+			71%</td>
+		<td>&Oslash;</td>
+		<td>Intonation<br>
+			67%</td>
 	</tr>
 </table>
 
