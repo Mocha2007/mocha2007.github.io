@@ -199,7 +199,7 @@ const phones = [
 			place: 'uvular',
 			voiced: false,
 			freq: 256/3183,
-			implications: ['k', 'x'],
+			implications: ['h', 'k', 'x'],
 		},
 	},
 	{
