@@ -1,6 +1,11 @@
 /* exported data, phones */
 'use strict';
 
+/* further reading
+	https://phoible.org/parameters
+	https://typo.uni-konstanz.de/rara/category/universals-archive/
+*/
+
 const data = {
 	MOA: [
 		'nasal',
