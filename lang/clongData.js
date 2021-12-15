@@ -18,6 +18,8 @@ const data = {
 		numbers: ['S', 'PL', 'DU', 'PAUC', 'TRI'],
 		other: [
 			'DAT',
+			'GEN',
+			'ABL',
 		],
 	},
 	filters: {

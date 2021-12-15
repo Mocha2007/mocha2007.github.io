@@ -205,9 +205,13 @@ class Morphology {
 	}
 	static generate(phonology, phonotactics){
 		const c = [...random.choice(data.cases.alignment)]; // copy template
+		// okay, now add other cases
+		const outsOther = range(data.cases.other.length); // 0 ... n
+		const distrOther = random.weightedChoice(outsOther, outsOther.map(n => Math.pow(0.5, n)));
+		data.cases.other.slice(0, distrOther).forEach(cc => c.push(cc));
 		// weighted distribution...
-		const outs = range(data.cases.numbers.length-2).map(n => n+1); // 1 ... n
-		const distr = random.weightedChoice(outs, outs.map(n => n*Math.pow(0.5, n)));
+		const outs = range(1, data.cases.numbers.length-1); // 1 ... n
+		const distr = random.weightedChoice(outs, outs.map(n => Math.pow(0.5, n)));
 		const numbers = data.cases.numbers.slice(0, distr);
 		// todo add other cases...
 		return new Morphology(
