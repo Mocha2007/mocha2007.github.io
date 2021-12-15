@@ -118,6 +118,13 @@ const syllables = [
 		[false, true, false],
 		'(C)V(C)',
 	],
+	// (C)(C)V(C)
+	[
+		[data.filters.consonant, data.filters.consonant,
+			data.filters.vowel, data.filters.consonant],
+		[false, false, true, false],
+		'(C)(C)V(C)',
+	],
 ];
 
 const phones = [
