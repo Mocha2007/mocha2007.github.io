@@ -1,5 +1,5 @@
 /* exported main */
-/* global data, phones, random, syllables, wordLists */
+/* global data, phones, random, range, syllables, wordLists */
 'use strict';
 
 
@@ -205,7 +205,10 @@ class Morphology {
 	}
 	static generate(phonology, phonotactics){
 		const c = [...random.choice(data.cases.alignment)]; // copy template
-		const numbers = data.cases.numbers.slice(0, random.randint(1, data.cases.numbers.length-1));
+		// weighted distribution...
+		const outs = range(data.cases.numbers.length-2).map(n => n+1); // 1 ... n
+		const distr = random.weightedChoice(outs, outs.map(n => n*Math.pow(0.5, n)));
+		const numbers = data.cases.numbers.slice(0, distr);
 		// todo add other cases...
 		return new Morphology(
 			c,
