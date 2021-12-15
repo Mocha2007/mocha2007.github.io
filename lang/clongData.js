@@ -608,5 +608,6 @@ const wordLists = {
 		'if',
 		'because',
 		'name',
+		'(Name of the Language)',
 	],
 };
