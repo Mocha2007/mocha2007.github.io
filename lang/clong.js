@@ -293,13 +293,16 @@ class Language {
 		const wordlist = document.createElement('ul');
 		wordlist.id = 'wordlist';
 		wordLists.swadesh.map(def => [def, this.phonotactics.randomWord(this.phonology)])
-			.forEach(dwPair => {
+			.forEach((dwPair, i) => {
 				const def = dwPair[0];
 				const word = dwPair[1];
 				const li = document.createElement('li');
 				wordlist.appendChild(li);
 				li.innerHTML = `${def} = `;
 				li.appendChild(word.html);
+				// title
+				if (i === wordLists.swadesh.length-1)
+					document.getElementById('language_name').appendChild(word.html);
 			});
 		div.appendChild(wordlist);
 		return div;
@@ -307,8 +310,17 @@ class Language {
 	print(){
 		// show tables n sheit
 		const doc = document.getElementById('body');
+		// header
+		const h1 = document.createElement('h1');
+		h1.innerHTML = 'The ';
+		const languageName = document.createElement('span');
+		languageName.id = 'language_name';
+		h1.appendChild(languageName);
+		h1.innerHTML += ' language';
+		doc.appendChild(h1);
+		// phonology
 		doc.appendChild(Phoneme.generateHTML(this.phonology));
-		// list of ten random words...
+		// vocab
 		doc.appendChild(this.vocabHTML);
 		// morphology
 		doc.appendChild(this.morphology.html);
