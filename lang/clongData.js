@@ -24,6 +24,7 @@ const data = {
 	},
 	filters: {
 		consonant: x => !x.properties.isVowel,
+		nasal: x => x.properties.manner === 'nasal',
 		vowel: x => x.properties.isVowel,
 	},
 	MOA: [
@@ -101,6 +102,11 @@ const syllables = [
 	[
 		[data.filters.consonant, data.filters.vowel, data.filters.consonant],
 		[true, true, false],
+	],
+	// (C)V(N) (Japonic)
+	[
+		[data.filters.consonant, data.filters.vowel, data.filters.nasal],
+		[false, true, false],
 	],
 	// (C)V(C)
 	[
