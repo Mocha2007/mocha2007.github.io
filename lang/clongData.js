@@ -72,6 +72,18 @@ const data = {
 			['O', '{object}'],
 		],
 	},
+	vowels: {
+		dx: [
+			'front',
+			'central',
+			'back',
+		],
+		dy: [
+			'close',
+			'mid',
+			'open',
+		],
+	},
 };
 
 const syllables = [
@@ -103,6 +115,9 @@ const phones = [
 		properties: {
 			isVowel: true,
 			freq: 2600/3183,
+			backness: 'central',
+			openness: 'open',
+			rounding: false,
 		},
 	},
 	{
@@ -150,6 +165,9 @@ const phones = [
 		properties: {
 			isVowel: true,
 			freq: 1841/3183,
+			backness: 'front',
+			openness: 'mid',
+			rounding: false,
 		},
 	},
 	{
@@ -186,6 +204,9 @@ const phones = [
 		properties: {
 			isVowel: true,
 			freq: 2779/3183,
+			backness: 'front',
+			openness: 'close',
+			rounding: false,
 		},
 	},
 	{
@@ -261,6 +282,9 @@ const phones = [
 		properties: {
 			isVowel: true,
 			freq: 1826/3183,
+			backness: 'back',
+			openness: 'mid',
+			rounding: true,
 		},
 	},
 	{
@@ -337,6 +361,9 @@ const phones = [
 		properties: {
 			isVowel: true,
 			freq: 2646/3183,
+			backness: 'back',
+			openness: 'close',
+			rounding: true,
 		},
 	},
 	{
@@ -375,6 +402,9 @@ const phones = [
 			isVowel: true,
 			freq: 175/3183,
 			implications: ['i', 'u'],
+			backness: 'front',
+			openness: 'close',
+			rounding: true,
 		},
 	},
 	{

@@ -120,6 +120,42 @@ class Phoneme {
 				});
 			});
 		});
+		// create vowel table...
+		const vowelTable = document.createElement('table');
+		div.appendChild(vowelTable);
+		// determine necessary columns (POA) and rows (MOA)
+		const vy = data.vowels.dy.filter(
+			y => phonology.some(p => p.primary.properties.openness === y));
+		const vx = data.vowels.dx.filter(
+			x => phonology.some(p => p.primary.properties.backness === x));
+		// create cells for that...
+		// create headers...
+		const vowelHeaderRow = document.createElement('tr');
+		vowelTable.appendChild(vowelHeaderRow);
+		vowelHeaderRow.appendChild(document.createElement('th')); // blank corner
+		vx.forEach(x => {
+			const cell = document.createElement('th');
+			cell.innerHTML = x;
+			vowelHeaderRow.appendChild(cell);
+		});
+		// create rows...
+		vy.forEach(y => {
+			const row = document.createElement('tr');
+			vowelTable.appendChild(row);
+			const header = document.createElement('th');
+			header.innerHTML = y;
+			row.appendChild(header);
+			// now create each cell in this row...
+			vx.forEach(x => {
+				const cell = document.createElement('td');
+				row.appendChild(cell);
+				// put all applicable phones in this cell...
+				phonology.filter(p => p.primary.properties.openness === y
+					&& p.primary.properties.backness === x).forEach(p => {
+					cell.appendChild(p.primary.html);
+				});
+			});
+		});
 		return div;
 	}
 }
