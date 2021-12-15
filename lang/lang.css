@@ -13,15 +13,3 @@ html {
 .sharesHypernyms {
 	background-color: #440;
 }
-/* for clong */
-.phone {
-	padding: 0 1vh;
-}
-.word .phone {
-	padding: 0;
-}
-#wordlist li {
-	display: block;
-	float: left;
-	width: 25%;
-}
