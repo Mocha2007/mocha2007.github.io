@@ -92,26 +92,31 @@ const syllables = [
 	[
 		[data.filters.consonant, data.filters.vowel],
 		[true, true],
+		'CV',
 	],
 	// (C)V
 	[
 		[data.filters.consonant, data.filters.vowel],
 		[false, true],
+		'(C)V',
 	],
 	// CV(C)
 	[
 		[data.filters.consonant, data.filters.vowel, data.filters.consonant],
 		[true, true, false],
+		'CV(C)',
 	],
 	// (C)V(N) (Japonic)
 	[
 		[data.filters.consonant, data.filters.vowel, data.filters.nasal],
 		[false, true, false],
+		'(C)V(N)',
 	],
 	// (C)V(C)
 	[
 		[data.filters.consonant, data.filters.vowel, data.filters.consonant],
 		[false, true, false],
+		'(C)V(C)',
 	],
 ];
 

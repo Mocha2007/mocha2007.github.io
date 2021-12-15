@@ -165,10 +165,24 @@ class Phonotactics {
 	 * phonotactics. used to generate and validate syllables.
 	 * @param {(Phone => boolean)[]} syllableStructure uses data.filters
 	 * @param {boolean[]} mandatory which slots are mandatory/optional
+	 * @param {string} syllableStructureName
 	*/
-	constructor(syllableStructure, mandatory){
+	constructor(syllableStructure, mandatory, syllableStructureName){
 		this.syllableStructure = syllableStructure;
 		this.mandatory = mandatory;
+		this.syllableStructureName = syllableStructureName;
+	}
+	get html(){
+		const div = document.createElement('div');
+		// header
+		const h3 = document.createElement('h3');
+		h3.innerHTML = 'Phonotactics';
+		div.appendChild(h3);
+		// show syllable structure...
+		const span = document.createElement('span');
+		span.innerHTML = `The syllable structure is ${this.syllableStructureName}`;
+		div.appendChild(span);
+		return div;
 	}
 	/** @param {Phoneme[]} phonology */
 	randomSyllable(phonology){
@@ -356,6 +370,8 @@ class Language {
 		doc.appendChild(h1);
 		// phonology
 		doc.appendChild(Phoneme.generateHTML(this.phonology));
+		// phonotactics
+		doc.appendChild(this.phonotactics.html);
 		// vocab
 		doc.appendChild(this.vocabHTML);
 		// morphology
