@@ -398,3 +398,25 @@ function main(){
 	console.debug(l);
 	l.print();
 }
+
+/* Vulgarlang but actually good
+	missing features from vulgarlang:
+	- sample sentence
+	- long vowels
+	- rarer consonants
+	- more complex syllable structures
+	- stress pattern
+	- article table
+	- pronoun table (but ideally, unlike vulgarlang, one that respects roots)
+	- possessives
+	- verbs
+	- numbers (preferably, with more than just base-10/20 like vulgarlang)
+	- derivational suffixes
+	other missing features:
+	- custom orthography
+		(like... entirely different script)
+		might be a challenge but with svg should definitely be possible
+	- cases other than the eight IE cases
+	- prettify css
+	- "generate more words" button
+*/
