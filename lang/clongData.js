@@ -24,7 +24,18 @@ const data = {
 	},
 	filters: {
 		consonant: x => !x.properties.isVowel,
+		fricative: x => x.properties.manner === 'fricative',
+		liquid: x => x.properties.lateral
+			|| x.properties.manner === 'trill'
+			|| x.properties.manner === 'tap',
+		liquidOrS(x){
+			return data.filters.liquid(x) || x.name === 's';
+		},
 		nasal: x => x.properties.manner === 'nasal',
+		plosive: x => x.properties.manner === 'plosive',
+		plosiveOrFricative(x){
+			return data.filters.plosive(x) || data.filters.fricative(x);
+		},
 		vowel: x => x.properties.isVowel,
 	},
 	MOA: [
@@ -124,6 +135,15 @@ const syllables = [
 			data.filters.vowel, data.filters.consonant],
 		[false, false, true, false],
 		'(C)(C)V(C)',
+	],
+	// (C)(C)V(C)(C) - verdurian style
+	// https://www.zompist.com/vergram.html#Phonotactics
+	[
+		[data.filters.plosiveOrFricative, data.filters.liquidOrS,
+			data.filters.vowel,
+			data.filters.liquidOrS, data.filters.plosiveOrFricative],
+		[false, false, true, false, false],
+		'(P/F)(L/s)V(L/s)(P/F)',
 	],
 ];
 
