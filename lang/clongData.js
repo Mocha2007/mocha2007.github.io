@@ -276,6 +276,28 @@ const phones = [
 		},
 	},
 	{
+		name: 'ɨ',
+		properties: {
+			isVowel: true,
+			freq: 491/3183,
+			backness: 'central',
+			openness: 'close',
+			rounding: false,
+			// todo implications
+		},
+	},
+	{
+		name: 'ɪ',
+		properties: {
+			isVowel: true,
+			freq: 444/3183,
+			backness: 'near-front',
+			openness: 'near-close',
+			rounding: false,
+			implications: ['i', 'e'],
+		},
+	},
+	{
 		name: 'j',
 		properties: {
 			manner: 'approximant',
@@ -362,6 +384,28 @@ const phones = [
 			openness: 'open-mid',
 			rounding: true,
 			implications: ['o'],
+		},
+	},
+	{
+		name: 'ø',
+		properties: {
+			isVowel: true,
+			freq: 94/3183,
+			backness: 'front',
+			openness: 'mid',
+			rounding: true,
+			implications: ['e', 'o'],
+		},
+	},
+	{
+		name: 'œ',
+		properties: {
+			isVowel: true,
+			freq: 89/3183,
+			backness: 'front',
+			openness: 'open-mid',
+			rounding: true,
+			implications: ['ɛ', 'ɔ', 'ø'],
 		},
 	},
 	{
@@ -471,6 +515,17 @@ const phones = [
 			backness: 'back',
 			openness: 'close',
 			rounding: true,
+		},
+	},
+	{
+		name: 'ʊ',
+		properties: {
+			isVowel: true,
+			freq: 409/3183,
+			backness: 'near-back',
+			openness: 'near-close',
+			rounding: true,
+			implications: ['u', 'o'],
 		},
 	},
 	{
