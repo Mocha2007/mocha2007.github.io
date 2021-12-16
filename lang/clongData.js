@@ -45,6 +45,7 @@ const data = {
 		'fricative',
 		'approximant',
 		'trill',
+		'tap',
 	],
 	POA: [
 		'bilabial',
