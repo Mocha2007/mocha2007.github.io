@@ -29,13 +29,14 @@ const data = {
 			|| x.properties.manner === 'trill'
 			|| x.properties.manner === 'tap',
 		liquidOrS(x){
-			return data.filters.liquid(x) || x.name === 's';
+			return data.filters.liquid(x) || data.filters.s(x);
 		},
 		nasal: x => x.properties.manner === 'nasal',
 		plosive: x => x.properties.manner === 'plosive',
 		plosiveOrFricative(x){
 			return data.filters.plosive(x) || data.filters.fricative(x);
 		},
+		s: x => x.name === 's',
 		vowel: x => x.properties.isVowel,
 	},
 	MOA: [
@@ -151,6 +152,15 @@ const syllables = [
 			data.filters.liquidOrS, data.filters.plosiveOrFricative],
 		[false, false, true, false, false],
 		'(P/F)(L/s)V(L/s)(P/F)',
+	],
+	// (s)(C)(L)V(L)(C)(s) - latin style
+	// https://christianlehmann.eu/publ/Latin_syllable_in_typological_perspective.pdf
+	[
+		[data.filters.s, data.filters.consonant, data.filters.liquid,
+			data.filters.vowel,
+			data.filters.liquid, data.filters.consonant, data.filters.s],
+		[false, false, false, true, false, false, false],
+		'(s)(C)(L)V(L)(C)(s)',
 	],
 ];
 
