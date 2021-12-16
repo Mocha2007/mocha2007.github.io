@@ -23,6 +23,10 @@ const data = {
 		],
 	},
 	filters: {
+		approximant: x => x.properties.manner === 'approximant',
+		approxOrLiquid(x){
+			return data.filters.approximant(x) || data.filters.liquid(x);
+		},
 		consonant: x => !x.properties.isVowel,
 		fricative: x => x.properties.manner === 'fricative',
 		liquid: x => x.properties.lateral
@@ -153,14 +157,14 @@ const syllables = [
 		[false, false, true, false, false],
 		'(P/F)(L/s)V(L/s)(P/F)',
 	],
-	// (s)(C)(L)V(L)(C)(s) - latin style
+	// (s)(C)(A/L)V(A/L)(C)(s) - latin style
 	// https://christianlehmann.eu/publ/Latin_syllable_in_typological_perspective.pdf
 	[
-		[data.filters.s, data.filters.consonant, data.filters.liquid,
+		[data.filters.s, data.filters.consonant, data.filters.approxOrLiquid,
 			data.filters.vowel,
-			data.filters.liquid, data.filters.consonant, data.filters.s],
+			data.filters.approxOrLiquid, data.filters.consonant, data.filters.s],
 		[false, false, false, true, false, false, false],
-		'(s)(C)(L)V(L)(C)(s)',
+		'(s)(C)(A/L)V(A/L)(C)(s)',
 	],
 ];
 
