@@ -189,6 +189,16 @@ const phones = [
 		},
 	},
 	{
+		name: 'ð',
+		properties: {
+			manner: 'fricative',
+			place: 'dental',
+			voiced: true,
+			freq: 160/3183,
+			// todo implications
+		},
+	},
+	{
 		name: 'd̠ʒ',
 		properties: {
 			manner: 'affricate',
@@ -356,6 +366,26 @@ const phones = [
 		},
 	},
 	{
+		name: 'ɾ',
+		properties: {
+			manner: 'tap',
+			place: 'alveolar',
+			voiced: true,
+			freq: 774/3183,
+			// todo implications
+		},
+	},
+	{
+		name: 'ʀ',
+		properties: {
+			manner: 'trill',
+			place: 'uvular',
+			voiced: true,
+			freq: 19/3183,
+			// todo implications
+		},
+	},
+	{
 		name: 's',
 		properties: {
 			manner: 'fricative',
@@ -392,6 +422,16 @@ const phones = [
 			voiced: false,
 			freq: 1218/3183,
 			implications: ['j', 'k', 't'], // guess. todo: verify
+		},
+	},
+	{
+		name: 'θ',
+		properties: {
+			manner: 'fricative',
+			place: 'dental',
+			voiced: false,
+			freq: 123/3183,
+			// todo implications
 		},
 	},
 	{
