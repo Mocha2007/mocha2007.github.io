@@ -88,12 +88,18 @@ const data = {
 	vowels: {
 		dx: [
 			'front',
+			'near-front',
 			'central',
+			'near-back',
 			'back',
 		],
 		dy: [
 			'close',
+			'near-close',
+			'close-mid',
 			'mid',
+			'open-mid',
+			'near-open',
 			'open',
 		],
 	},
@@ -220,6 +226,17 @@ const phones = [
 		},
 	},
 	{
+		name: 'ɛ',
+		properties: {
+			isVowel: true,
+			freq: 1129/3183,
+			backness: 'front',
+			openness: 'open-mid',
+			rounding: false,
+			implications: ['e'],
+		},
+	},
+	{
 		name: 'f',
 		properties: {
 			manner: 'fricative',
@@ -334,6 +351,17 @@ const phones = [
 			backness: 'back',
 			openness: 'mid',
 			rounding: true,
+		},
+	},
+	{
+		name: 'ɔ',
+		properties: {
+			isVowel: true,
+			freq: 1070/3183,
+			backness: 'back',
+			openness: 'open-mid',
+			rounding: true,
+			implications: ['o'],
 		},
 	},
 	{
