@@ -172,6 +172,9 @@ class Phonotactics {
 		this.mandatory = mandatory;
 		this.syllableStructureName = syllableStructureName;
 	}
+	get defaultDropoff(){
+		return 1/this.syllableStructure.length;
+	}
 	get html(){
 		const div = document.createElement('div');
 		// header
@@ -195,7 +198,7 @@ class Phonotactics {
 		const choices = valids.map(options => random.choice(options));
 		return choices;
 	}
-	randomWord(phonology, dropoff = 0.5){
+	randomWord(phonology, dropoff = this.defaultDropoff){
 		const word = this.randomSyllable(phonology);
 		while (random.random() < dropoff)
 			this.randomSyllable(phonology).forEach(p => word.push(p));
