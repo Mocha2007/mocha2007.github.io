@@ -44,8 +44,10 @@ const data = {
 		vowel: x => x.properties.isVowel,
 	},
 	implications: {
+		/** these are all pass/fail. if it fails, it's rerolled.
+		 * @type {((x: Phone[]) => boolean)[]}
+		 */
 		phonology: [
-			// these are all pass/fail. if it fails, it's rerolled.
 			// https://typo.uni-konstanz.de/rara/universals-archive/923/
 			phonology => phonology.some(phone => 'fp'.includes(phone.name)),
 		],
