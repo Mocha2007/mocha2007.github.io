@@ -314,16 +314,23 @@ class Syntax {
 		}
 		return div;
 	}
-	static generate(){
+	static generate(maxFailureResolutions = 10){
 		// first attempt at orders
 		const orders = {};
 		for (const key in data.order)
 			orders[key] = random.shuffle(data.order[key]);
 		// validate orders with implications
+		let failures = 0;
 		while (Syntax.verifyImplications(orders)){
+			failures++;
 			// keep trying
-			console.log('NEXT SYNTAX ATTEMPT', orders);
+			// console.log('NEXT SYNTAX ATTEMPT', orders);
 			// debugger;
+			if (maxFailureResolutions < failures){
+				// complete overhaul
+				console.log('TOO MANY FAILURES, RESTARTING SYNTAX GEN...');
+				return Syntax.generate();
+			}
 		}
 		return new Syntax(orders);
 	}

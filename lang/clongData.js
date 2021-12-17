@@ -46,6 +46,50 @@ const data = {
 	implications: {
 		syntax: [
 			{
+				name: 'UA15a',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/15/ ; https://typo.uni-konstanz.de/rara/universals-archive/831/',
+				conditions: { // OV
+					'SVO': ['SOV', 'OSV', 'OVS'],
+				},
+				results: {
+					'RelN': 'RelN',
+					'VNeg': 'VNeg',
+				},
+			},
+			{
+				name: 'UA15b',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/15/ ; https://typo.uni-konstanz.de/rara/universals-archive/109/',
+				conditions: { // VO
+					'SVO': ['SVO', 'VSO', 'VOS'],
+				},
+				results: {
+					'VNeg': 'NegV',
+				},
+			},
+			{
+				name: 'UA56',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/56/ ; https://typo.uni-konstanz.de/rara/universals-archive/67/ ; https://typo.uni-konstanz.de/rara/universals-archive/499/',
+				conditions: {
+					'SVO': ['VSO'],
+				},
+				results: {
+					'AdjN': 'NAdj',
+					'GenN': 'NGen',
+					'QS': 'QS',
+				},
+			},
+			{
+				name: 'UA57',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/57/ ; https://typo.uni-konstanz.de/rara/universals-archive/73/ ; https://typo.uni-konstanz.de/rara/universals-archive/75/',
+				conditions: {
+					'AdjN': ['AdjN'],
+				},
+				results: {
+					'DemN': 'DemN',
+					'NumN': 'NumN',
+				},
+			},
+			{
 				name: 'UA66',
 				url: 'https://typo.uni-konstanz.de/rara/universals-archive/66/',
 				conditions: { // OV
@@ -57,33 +101,182 @@ const data = {
 				},
 			},
 			{
-				name: 'UA88a',
-				url: 'https://typo.uni-konstanz.de/rara/universals-archive/88/',
+				name: 'UA73',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/73/ ; https://typo.uni-konstanz.de/rara/universals-archive/88/ ; https://typo.uni-konstanz.de/rara/universals-archive/114/ ; https://typo.uni-konstanz.de/rara/universals-archive/92/ ; https://typo.uni-konstanz.de/rara/universals-archive/72/',
 				conditions: {
 					'DemN': ['NDem'],
+				},
+				results: {
+					'AdjN': 'NAdj',
+					'RelN': 'NRel',
+				},
+			},
+			{
+				name: 'UA75',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/75/ ; https://typo.uni-konstanz.de/rara/universals-archive/92/ ; https://typo.uni-konstanz.de/rara/universals-archive/74/ ; https://typo.uni-konstanz.de/rara/universals-archive/121/ ; https://typo.uni-konstanz.de/rara/universals-archive/174/',
+				conditions: {
+					'NumN': ['NNum'],
+				},
+				results: {
+					'AdjN': 'NAdj',
+				},
+			},
+			{
+				name: 'UA88',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/88/ ; https://typo.uni-konstanz.de/rara/universals-archive/176/ ; https://typo.uni-konstanz.de/rara/universals-archive/1338/',
+				conditions: {
+					'RelN': ['RelN'],
+				},
+				results: {
+					'DemN': 'DemN',
+					'GenN': 'GenN',
+				},
+			},
+			{
+				name: 'UA92',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/92/ ; https://typo.uni-konstanz.de/rara/universals-archive/91/',
+				conditions: {
+					'AdpN': ['AdpN'],
+					'AdjN': ['NAdj'],
+				},
+				results: {
+					'GenN': 'NGen',
+				},
+			},
+			{
+				name: 'UA95a',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/95/ ; https://typo.uni-konstanz.de/rara/universals-archive/71/',
+				conditions: {
+					'AdpN': ['NAdp'],
+					'AdjN': ['AdjN'],
+				},
+				results: {
+					'DemN': 'DemN',
+					'NumN': 'NumN',
+				},
+			},
+			{
+				name: 'UA95b',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/95/',
+				conditions: {
+					'AdpN': ['NAdp'],
+					'RelN': ['RelN'],
+				},
+				results: {
+					'DemN': 'DemN',
+					'NumN': 'NumN',
+				},
+			},
+			{
+				name: 'UA95c',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/95/ ; https://typo.uni-konstanz.de/rara/universals-archive/177/',
+				conditions: {
+					'AdpN': ['NAdp'],
+					'DemN': ['DemN'],
+				},
+				results: {
+					'GenN': 'GenN',
+				},
+			},
+			{
+				name: 'UA95d',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/95/',
+				conditions: {
+					'AdpN': ['NAdp'],
+					'NumN': ['NumN'],
+				},
+				results: {
+					'GenN': 'GenN',
+				},
+			},
+			{
+				name: 'UA121',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/121/',
+				conditions: {
+					'AdpN': ['AdpN'],
+					'NumN': ['NNum'],
 				},
 				results: {
 					'RelN': 'NRel',
 				},
 			},
 			{
-				name: 'UA88b',
-				url: 'https://typo.uni-konstanz.de/rara/universals-archive/88/',
+				name: 'UA176',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/176/ ; https://typo.uni-konstanz.de/rara/universals-archive/175/ ; https://typo.uni-konstanz.de/rara/universals-archive/92/',
 				conditions: {
-					'RelN': ['RelN'],
+					'GenN': ['NGen'],
+				},
+				results: {
+					'RelN': 'NRel',
+				},
+			},
+			{
+				name: 'UA423',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/424/',
+				conditions: { // ¬ SOV
+					'AdpN': ['AdpN'],
+					'SVO': ['SVO', 'VSO', 'VOS', 'OSV', 'OVS'],
+				},
+				results: {
+					'RelN': 'NRel',
+				},
+			},
+			{
+				name: 'UA443',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/444/ ; https://typo.uni-konstanz.de/rara/universals-archive/1021/ ; https://typo.uni-konstanz.de/rara/universals-archive/1553/',
+				conditions: { // V1
+					'SVO': ['VSO', 'VOS'],
+				},
+				results: {
+					'GenN': 'NGen',
+					'VNeg': 'NegV',
+				},
+			},
+			{
+				name: 'UA489',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/491/ ; https://typo.uni-konstanz.de/rara/universals-archive/499/',
+				conditions: { // SOV
+					'SVO': ['SOV'],
+				},
+				results: {
+					'AdpN': 'NAdp',
+					'QS': 'SQ',
+				},
+			},
+			{
+				name: 'UA1334a',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/1338/',
+				conditions: {
+					'AdpN': ['AdpN'],
+					'GenN': ['GenN'],
+				},
+				results: {
+					'AdjN': 'AdjN',
+				},
+			},
+			{
+				name: 'UA1334b',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/1338/',
+				conditions: {
+					'AdpN': ['AdpN'],
+					'AdjN': ['AdjN'],
 				},
 				results: {
 					'DemN': 'DemN',
 				},
 			},
 			{
-				name: 'UA1525',
-				url: 'https://typo.uni-konstanz.de/rara/universals-archive/1525/',
+				name: 'UA1520',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/1524/',
 				conditions: { // OS
 					'SVO': ['VOS', 'OVS', 'OSV'],
 				},
 				results: {
+					'ArtN': 'ArtN',
+					'GenN': 'NGen',
+					'NumN': 'NumN',
 					'RelN': 'NRel',
+					'VNeg': 'NegV',
 				},
 			},
 		],
@@ -113,8 +306,16 @@ const data = {
 			['Adj', '{adjective}'],
 			['N', '{noun}'],
 		],
+		AdjAdv: [
+			['Adj', '{adjective}'],
+			['Adv', '{adverb}'],
+		],
 		AdpN: [
 			['Adp', '{adposition}'],
+			['N', '{noun}'],
+		],
+		ArtN: [
+			['Art', '{article}'],
 			['N', '{noun}'],
 		],
 		DemN: [
@@ -129,6 +330,10 @@ const data = {
 			['Num', '{numeral}'],
 			['N', '{noun}'],
 		],
+		QS: [
+			['Q', '{question}'],
+			['S', '{sentence}'],
+		],
 		RelN: [
 			['Rel', '{relc}'],
 			['N', '{noun}'],
@@ -137,6 +342,10 @@ const data = {
 			['S', '{subject}'],
 			['V', '{verb}'],
 			['O', '{object}'],
+		],
+		VNeg: [
+			['Neg', '{neg}'],
+			['V', '{verb}'],
 		],
 	},
 	vowels: {
