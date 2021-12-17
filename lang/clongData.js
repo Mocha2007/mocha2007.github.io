@@ -44,6 +44,11 @@ const data = {
 		vowel: x => x.properties.isVowel,
 	},
 	implications: {
+		phonology: [
+			// these are all pass/fail. if it fails, it's rerolled.
+			// https://typo.uni-konstanz.de/rara/universals-archive/923/
+			phonology => phonology.some(phone => 'fp'.includes(phone.name)),
+		],
 		syntax: [
 			{
 				name: 'UA15a',

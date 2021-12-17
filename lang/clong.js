@@ -59,6 +59,15 @@ class Phoneme {
 		while (Phoneme.verifyImplications(attempt)){
 			// keep trying
 		}
+		// pass/fail implications...
+		for (const i in data.implications.phonology){
+			const implication = data.implications.phonology[i];
+			if (!implication(attempt)){
+				// restart
+				console.log(`PHONOLOGY FAILED IMPLICATION ${i}, REGEN...`);
+				return Phoneme.generatePhonology();
+			}
+		}
 		return attempt.map(p => new Phoneme(p));
 	}
 	/** @param {Phone[]} attempt */
