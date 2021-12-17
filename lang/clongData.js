@@ -43,6 +43,51 @@ const data = {
 		s: x => x.name === 's',
 		vowel: x => x.properties.isVowel,
 	},
+	implications: {
+		syntax: [
+			{
+				name: 'UA66',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/66/',
+				conditions: { // OV
+					'SVO': ['SOV', 'OSV', 'OVS'],
+					'AdjN': ['AdjN'],
+				},
+				results: {
+					'GenN': 'GenN',
+				},
+			},
+			{
+				name: 'UA88a',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/88/',
+				conditions: {
+					'DemN': ['NDem'],
+				},
+				results: {
+					'RelN': 'NRel',
+				},
+			},
+			{
+				name: 'UA88b',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/88/',
+				conditions: {
+					'RelN': ['RelN'],
+				},
+				results: {
+					'DemN': 'DemN',
+				},
+			},
+			{
+				name: 'UA1525',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/1525/',
+				conditions: { // OS
+					'SVO': ['VOS', 'OVS', 'OSV'],
+				},
+				results: {
+					'RelN': 'NRel',
+				},
+			},
+		],
+	},
 	MOA: [
 		'nasal',
 		'plosive',
@@ -72,8 +117,8 @@ const data = {
 			['Adp', '{adposition}'],
 			['N', '{noun}'],
 		],
-		DetN: [
-			['Det', '{determiner}'],
+		DemN: [
+			['Dem', '{demonstrative}'],
 			['N', '{noun}'],
 		],
 		GenN: [
@@ -82,6 +127,10 @@ const data = {
 		],
 		NumN: [
 			['Num', '{numeral}'],
+			['N', '{noun}'],
+		],
+		RelN: [
+			['Rel', '{relc}'],
 			['N', '{noun}'],
 		],
 		SVO: [

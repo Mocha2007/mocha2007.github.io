@@ -315,12 +315,58 @@ class Syntax {
 		return div;
 	}
 	static generate(){
+		// first attempt at orders
 		const orders = {};
-		for (const key in data.order){
-			// console.debug(key);
-			orders[key] = random.shuffle(data.order[key]); //todo shuffle
+		for (const key in data.order)
+			orders[key] = random.shuffle(data.order[key]);
+		// validate orders with implications
+		while (Syntax.verifyImplications(orders)){
+			// keep trying
+			console.log('NEXT SYNTAX ATTEMPT', orders);
+			// debugger;
 		}
 		return new Syntax(orders);
+	}
+	/**  turns a property string back into an array for that property
+	 * @param {string} category eg. "GenN" (the category of the order)
+	 * @param {string} prop eg. "GenN" (the specific order)
+	 * @returns {[string, string]}
+	 */
+	static propToArray(category, prop){
+		let attempt;
+		while ((attempt = random.shuffle(data.order[category]))
+			.map(i => i[0]).join('') !== prop){
+			// keep trying - todo: do something smarter than just shuffling until you get the right answer... lol
+		}
+		return attempt;
+	}
+	static verifyImplications(attempt){
+		let failed = false;
+		data.implications.syntax.forEach(implication => {
+			// each implication has CONDITIONS and RESULTS
+			for (const condition in implication.conditions)
+				if (!implication.conditions[condition].includes(
+					attempt[condition].map(i => i[0]).join('')))
+					return;
+			// then all conditions passed
+			// check result
+			let resultsFailed = false;
+			for (const result in implication.results)
+				if (implication.results[result] !== attempt[result].map(i => i[0]).join('')){
+					resultsFailed = true;
+					break;
+				}
+			// check if results failed
+			if (!resultsFailed)
+				return;
+			// then result failed
+			failed = true;
+			console.log(`Syntax broke implication ${implication.name} (${implication.url})`);
+			// regen this thing
+			for (const result in implication.results)
+				attempt[result] = Syntax.propToArray(result, implication.results[result]);
+		});
+		return failed;
 	}
 }
 
