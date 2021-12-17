@@ -145,7 +145,7 @@ const data = {
 			},
 			{
 				name: 'UA95a',
-				url: '',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/95/ ; https://typo.uni-konstanz.de/rara/universals-archive/71/',
 				conditions: {
 					'AdpN': ['NAdp'],
 					'RelN': ['RelN'],
