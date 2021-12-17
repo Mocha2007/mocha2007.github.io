@@ -48,8 +48,35 @@ const data = {
 		 * @type {((x: Phone[]) => boolean)[]}
 		 */
 		phonology: [
+			// https://typo.uni-konstanz.de/rara/universals-archive/284/
+			phonology => phonology.some(phone => phone.properties.place === 'postalveolar')
+				? phonology.some(phone => phone.properties.place === 'alveolar')
+				: true,
+			// https://typo.uni-konstanz.de/rara/universals-archive/706/
+			phonology => phonology.filter(phone => phone.properties.backness === 'central').length
+				<= Math.max(phonology.filter(phone => phone.properties.backness === 'front').length,
+					phonology.filter(phone => phone.properties.backness === 'back').length),
+			// https://typo.uni-konstanz.de/rara/universals-archive/781/
+			phonology => phonology.filter(phone => phone.properties.manner === 'plosive').length === 3
+				? phonology.filter(phone => 'ptk'.includes(phone.name)).length === 3
+				: true,
+			// https://typo.uni-konstanz.de/rara/universals-archive/782/
+			phonology => phonology.some(phone => phone.properties.manner === 'affricate')
+				? 3 <= phonology.filter(phone => phone.properties.manner === 'plosive').length
+				: true,
+			// https://typo.uni-konstanz.de/rara/universals-archive/889/
+			phonology => phonology.some(phone => phone.properties.backness === 'back' && !phone.properties.rounding)
+				? phonology.some(phone => phone.properties.backness === 'front' && !phone.properties.rounding)
+				: true,
 			// https://typo.uni-konstanz.de/rara/universals-archive/923/
 			phonology => phonology.some(phone => 'fp'.includes(phone.name)),
+			// https://typo.uni-konstanz.de/rara/universals-archive/1331/
+			phonology => 1 < phonology.filter(phone => phone.properties.isVowel).length,
+			// todo later on when more advanced fxs are available:
+			// https://typo.uni-konstanz.de/rara/universals-archive/798/
+			// https://typo.uni-konstanz.de/rara/universals-archive/836/
+			// todo for phone section:
+			// https://typo.uni-konstanz.de/rara/universals-archive/1814/
 		],
 		syntax: [
 			{
