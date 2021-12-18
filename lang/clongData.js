@@ -22,7 +22,9 @@ const data = {
 			'ABL',
 		],
 	},
+	/** @type {((x: Phone) => boolean)[]} */
 	filters: {
+		affricate: x => x.properties.manner === 'affricate',
 		approximant: x => x.properties.manner === 'approximant',
 		approxOrLiquid(x){
 			return data.filters.approximant(x) || data.filters.liquid(x);
@@ -36,11 +38,20 @@ const data = {
 			return data.filters.liquid(x) || data.filters.s(x);
 		},
 		nasal: x => x.properties.manner === 'nasal',
+		obstruent(x){
+			return data.filters.plosive(x)
+				|| data.filters.affricate(x)
+				|| data.filters.fricative(x);
+		},
 		plosive: x => x.properties.manner === 'plosive',
 		plosiveOrFricative(x){
 			return data.filters.plosive(x) || data.filters.fricative(x);
 		},
 		s: x => x.name === 's',
+		voiced: x => x.properties.isVowel || x.properties.voiced,
+		voiceless: x => {
+			return !data.filters.voiced(x);
+		},
 		vowel: x => x.properties.isVowel,
 	},
 	implications: {
@@ -68,6 +79,12 @@ const data = {
 			phonology => phonology.filter(phone => phone.properties.manner === 'affricate').length === 1
 				? phonology.find(phone => phone.properties.manner === 'affricate').properties.place === 'postalveolar'
 				: true,
+			// https://typo.uni-konstanz.de/rara/universals-archive/798/
+			phonology => {
+				const obstruents = phonology.filter(data.filters.obstruent);
+				const voiced = obstruents.filter(data.filters.voiced).length;
+				return 2*voiced <= obstruents.length;
+			},
 			// https://typo.uni-konstanz.de/rara/universals-archive/836/
 			phonology => {
 				const laterals = phonology.filter(phone => phone.properties.lateral);
@@ -95,8 +112,7 @@ const data = {
 			// https://typo.uni-konstanz.de/rara/universals-archive/1331/
 			phonology => 1 < phonology.filter(phone => phone.properties.isVowel).length,
 			// todo later on when more advanced fxs are available:
-			// obstruent https://typo.uni-konstanz.de/rara/universals-archive/798/
-			// obstruent https://typo.uni-konstanz.de/rara/universals-archive/799/
+			// obstruent voiced/unvoiced counterpart https://typo.uni-konstanz.de/rara/universals-archive/799/
 			// todo for phone section:
 			// ejectives https://typo.uni-konstanz.de/rara/universals-archive/767/
 			// palatal g https://typo.uni-konstanz.de/rara/universals-archive/1814/
