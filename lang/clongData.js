@@ -70,6 +70,12 @@ const data = {
 		 * @type {((x: Phone[]) => boolean)[]}
 		 */
 		phonology: [
+			// https://typo.uni-konstanz.de/rara/universals-archive/224/
+			phonology => phonology.some(phone => phone.properties.place === 'labial')
+				&& phonology.some(phone => phone.properties.place === 'alveolar')
+				? phonology.some(phone => phone.properties.place === 'nasal')
+					&& phonology.some(phone => phone.properties.place === 'plosive')
+				: true,
 			// https://typo.uni-konstanz.de/rara/universals-archive/284/
 			phonology => phonology.some(phone => phone.properties.place === 'postalveolar')
 				? phonology.some(phone => phone.properties.place === 'alveolar')
@@ -126,6 +132,10 @@ const data = {
 				const obstruents = phonology.filter(data.filters.obstruent).length;
 				return primaryNasals <= obstruents;
 			},
+			// https://typo.uni-konstanz.de/rara/universals-archive/797/
+			phonology => data.MOA.filter(m =>
+				phonology.filter(phone => phone.properties.manner === m).length === 1) // filter out only MOAs with ONE phoneme
+				.every(m => phonology.find(phone => phone.properties.manner === m).properties.place === 'alveolar'), // make sure all of them are alveolar
 			// https://typo.uni-konstanz.de/rara/universals-archive/798/
 			phonology => {
 				const obstruents = phonology.filter(data.filters.obstruent);
@@ -141,6 +151,12 @@ const data = {
 					? liquids.some(phone => phone.properties.lateral)
 					: true;
 			},
+			// https://typo.uni-konstanz.de/rara/universals-archive/835/
+			phonology => phonology.some(phone => phone.properties.lateral)
+				? phonology.some(phone => phone.properties.voiced
+					&& phone.properties.lateral
+					&& phone.properties.manner === 'approximant')
+				: true,
 			// https://typo.uni-konstanz.de/rara/universals-archive/836/
 			phonology => {
 				const laterals = phonology.filter(phone => phone.properties.lateral);
@@ -181,6 +197,13 @@ const data = {
 			},
 			// https://typo.uni-konstanz.de/rara/universals-archive/1331/
 			phonology => 1 < phonology.filter(phone => phone.properties.isVowel).length,
+			// https://typo.uni-konstanz.de/rara/universals-archive/1335/
+			// this is not quite the same as 780 but it is similar
+			phonology => 2 <= new Set(phonology.filter(phone => phone.properties.manner === 'plosive').map(phone => phone.properties.place)).size,
+			// https://typo.uni-konstanz.de/rara/universals-archive/1608/
+			phonology => phonology.some(phone => phone.properties.isVowel && phone.properties.nasal && phone.properties.backness === 'front')
+				? phonology.some(phone => phone.properties.isVowel && phone.properties.nasal && phone.properties.backness === 'back')
+				: true,
 			// todo later on when more advanced fxs are available:
 			// NOT UNIVERSAL; IGNORE: obstruent voiced/unvoiced counterpart https://typo.uni-konstanz.de/rara/universals-archive/799/
 			// rhotic https://typo.uni-konstanz.de/rara/universals-archive/837/
