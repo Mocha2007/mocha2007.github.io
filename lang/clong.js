@@ -247,15 +247,26 @@ class Word {
 	 * word.
 	 * @param {Phoneme[]} phonemes each phoneme in word
 	 * @param {string} meaning
+	 * @param {string|false} affix
 	*/
-	constructor(phonemes, meaning){
+	constructor(phonemes, meaning, affix = false){
 		this.phonemes = phonemes;
 		this.meaning = meaning;
+		this.affix = affix;
 	}
 	get html(){
 		const container = document.createElement('span');
 		container.classList.add('word');
-		container.innerHTML = this.string;
+		if (this.affix)
+			container.innerHTML = '-';
+		container.innerHTML += this.string;
+		return container;
+	}
+	get htmlFull(){
+		const container = document.createElement('span');
+		container.classList.add('wordFull');
+		container.innerHTML = `${this.meaning} = `;
+		container.appendChild(this.html);
 		return container;
 	}
 	get string(){
@@ -266,31 +277,49 @@ class Word {
 class Morphology {
 	/**
 	 * morphology data
-	 * @param {string[]} cases eg. ERG, DAT, ...
-	 * @param {Word[]} caseEndings for the cases
+	 * @param {Word[]} caseEndings for the cases eg. ERG, DAT, ...
 	 * @param {string[]} numbers eg. S, PL ...
+	 * @param {Word[]} derivational eg. AUG, N>V, ...
 	*/
-	constructor(cases, caseEndings, numbers){
-		this.cases = cases;
+	constructor(caseEndings, numbers, derivational){
 		this.caseEndings = caseEndings;
 		this.numbers = numbers;
+		this.derivational = derivational;
 	}
 	get html(){
-		// todo
 		const div = document.createElement('div');
 		const h2 = document.createElement('h2');
 		h2.innerHTML = 'Morphology';
 		div.appendChild(h2);
 		// cases
-		const cases = document.createElement('span');
-		const caseString = this.cases.map((c, i) => `${c} (-${this.caseEndings[i].html.outerHTML})`)
-			.join('<br>');
-		cases.innerHTML = `Cases: ${caseString}<br><br>`;
+		const hCase = document.createElement('h3');
+		hCase.innerHTML = 'Cases';
+		div.appendChild(hCase);
+		const cases = document.createElement('ul');
+		this.caseEndings.forEach(c => {
+			const li = document.createElement('li');
+			li.appendChild(c.htmlFull);
+			cases.appendChild(li);
+		});
 		div.appendChild(cases);
 		// numbers
+		const hNum = document.createElement('h3');
+		hNum.innerHTML = 'Numbers';
+		div.appendChild(hNum);
 		const numbers = document.createElement('span');
 		numbers.innerHTML = `${this.numbers.join()}`;
 		div.appendChild(numbers);
+		// derivational
+		const hDeriv = document.createElement('h3');
+		hDeriv.innerHTML = 'Derivational Morphology';
+		div.appendChild(hDeriv);
+		const deriv = document.createElement('ul');
+		this.derivational.forEach(affix => {
+			const li = document.createElement('li');
+			li.appendChild(affix.htmlFull);
+			deriv.appendChild(li);
+		});
+		div.appendChild(deriv);
 		return div;
 	}
 	static generate(phonology, phonotactics){
@@ -311,22 +340,39 @@ class Morphology {
 			data.cases.rare.filter(() => random.random() < 1/4).forEach(x => c.push(x));
 		// return
 		return new Morphology(
-			c,
 			Morphology.generateEndings(phonology, phonotactics, c),
-			numbers
+			numbers,
+			Morphology.generateDerivational(phonology, phonotactics)
 		);
 	}
 	/**
+	 * @param {Phone[]} phonology
+	 * @param {Phonotactics} phonotactics
+	 */
+	static generateDerivational(phonology, phonotactics){
+		return data.morphology.derivational.filter(() => random.bool()).map(affix => {
+			const w = phonotactics.randomWord(phonology, 0.1);
+			w.meaning = affix;
+			w.affix = 'suff';
+			return w;
+		});
+	}
+	/**
+	 * @param {Phone[]} phonology
 	 * @param {Phonotactics} phonotactics
 	 * @param {string[]} cases
 	 */
 	static generateEndings(phonology, phonotactics, cases){
-		// todo also prefixes... and clitics...
-		// the first case is blank 50%.
-		return cases.map((_, i) => {
+		return cases.map((c, i) => {
+			let w;
+			// the first case is blank 50%.
 			if (i === 0 && random.bool())
-				return new Word([]);
-			return phonotactics.randomWord(phonology, 0.1);
+				w = new Word([]);
+			else
+				w = phonotactics.randomWord(phonology, 0.1);
+			w.meaning = c;
+			w.affix = 'suff';
+			return w;
 		});
 	}
 }
@@ -446,7 +492,7 @@ class Vocab {
 	 * @param {Phonotactics} phonotactics
 	 * @param {Morphology} morphology
 	*/
-	static generate(phonology, phonotactics, morphology){ // todo integrate morphology
+	static generate(phonology, phonotactics){ // todo integrate morphology
 		const v = new Vocab();
 		wordLists.swadesh.map(def => {
 			let attempt;
@@ -560,4 +606,5 @@ function main(){
 		might be a challenge but with svg should definitely be possible
 	- prettify css
 	- "generate more words" button
+	- morphology: also prefixes... and clitics...
 */

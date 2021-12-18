@@ -484,6 +484,21 @@ const data = {
 		'trill',
 		'tap',
 	],
+	morphology: {
+		derivational: [
+			'Adj>Adv',
+			'Adj>N',
+			'Adj>V',
+			'N>Adj',
+			'N>V',
+			'V>N (action)',
+			'V>N (agent)',
+			'V>N (patient)',
+			'place',
+			'DIM',
+			'AUG',
+		],
+	},
 	POA: [
 		'bilabial',
 		'labiodental',
