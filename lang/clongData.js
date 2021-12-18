@@ -49,7 +49,16 @@ const data = {
 		plosiveOrFricative(x){
 			return data.filters.plosive(x) || data.filters.fricative(x);
 		},
+		primary: x => {
+			return !data.filters.secondary(x);
+		},
 		s: x => x.name === 's',
+		secondary: x => x.properties.aspirated
+			|| x.properties.ejective
+			|| x.properties.labialized
+			|| x.properties.pharyngealized
+			|| x.properties.uvularized
+			|| x.properties.velarized,
 		voiced: x => x.properties.isVowel || x.properties.voiced,
 		voiceless: x => {
 			return !data.filters.voiced(x);
@@ -90,6 +99,12 @@ const data = {
 					.map(phone => phone.properties.openness)).size;
 				return backs <= fronts;
 			},
+			// https://typo.uni-konstanz.de/rara/universals-archive/777/
+			phonology => {
+				const fricatives = phonology.filter(data.filters.fricative);
+				const secondary = fricatives.filter(data.filters.secondary).length;
+				return 2*secondary <= fricatives.length;
+			},
 			// https://typo.uni-konstanz.de/rara/universals-archive/780/
 			phonology => 3 <= phonology.filter(phone => phone.properties.manner === 'plosive').length,
 			// https://typo.uni-konstanz.de/rara/universals-archive/781/
@@ -104,6 +119,13 @@ const data = {
 			phonology => phonology.filter(phone => phone.properties.manner === 'affricate').length === 1
 				? phonology.find(phone => phone.properties.manner === 'affricate').properties.place === 'postalveolar'
 				: true,
+			// https://typo.uni-konstanz.de/rara/universals-archive/793/
+			phonology => {
+				const primaryNasals = phonology.filter(data.filters.nasal)
+					.filters(data.filters.primary).length;
+				const obstruents = phonology.filter(data.filters.obstruent).length;
+				return primaryNasals <= obstruents;
+			},
 			// https://typo.uni-konstanz.de/rara/universals-archive/798/
 			phonology => {
 				const obstruents = phonology.filter(data.filters.obstruent);
