@@ -296,7 +296,7 @@ const data = {
 				},
 				results: {
 					'ArtN': 'ArtN',
-					'GenN': 'NGen',
+					// 'GenN': 'NGen', seems to be false, causes issues regardless
 					'NumN': 'NumN',
 					'RelN': 'NRel',
 					'VNeg': 'NegV',
