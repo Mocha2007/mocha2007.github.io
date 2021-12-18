@@ -4,6 +4,7 @@
 /* further reading
 	https://phoible.org/parameters
 	https://typo.uni-konstanz.de/rara/category/universals-archive/
+	https://wals.info/
 */
 
 const data = {
@@ -237,6 +238,20 @@ const data = {
 			// crazy uvular https://typo.uni-konstanz.de/rara/universals-archive/1826/
 			// voiceless appx https://typo.uni-konstanz.de/rara/universals-archive/1838/
 			// voiceless palatal nasal https://typo.uni-konstanz.de/rara/universals-archive/1844/
+		],
+		morphology: [
+			{
+				name: 'UA260',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/260/',
+				// todo: fix this when conjugation is implemented
+				implication: m => 1 < m.caseEndings.length && m.caseEndings[1].meaning === 'ERG'
+					? m.suffixationRate < 0.5
+					: true,
+			},
+			// todo
+			// Person Number => TAM https://typo.uni-konstanz.de/rara/universals-archive/267/
+			// VOS => no conj https://typo.uni-konstanz.de/rara/universals-archive/278/
+			// n vs pron infl https://typo.uni-konstanz.de/rara/universals-archive/585/
 		],
 		syntax: [
 			/* causes breaks; WALS contradicts both claims

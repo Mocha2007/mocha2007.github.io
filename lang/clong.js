@@ -360,12 +360,21 @@ class Morphology {
 			data.cases.rare.filter(() => random.random() < 1/4).forEach(x => c.push(x));
 		// return
 		const suffixationRate = random.random();
-		return new Morphology(
+		const morphology = new Morphology(
 			Morphology.generateEndings(phonology, phonotactics, c, suffixationRate),
 			Morphology.generateNumbers(phonology, phonotactics, numbers, suffixationRate),
 			Morphology.generateDerivational(phonology, phonotactics, suffixationRate),
 			suffixationRate
 		);
+		// verify goodness
+		for (const i in data.implications.morphology){
+			const imp = data.implications.morphology[i];
+			if (!imp.implication(morphology)){
+				console.log(`MORPHOLOGY FAILED IMPLICATION ${imp.name} (${imp.url})`);
+				return Morphology.generate(phonology, phonotactics);
+			}
+		}
+		return morphology;
 	}
 	/**
 	 * @param {Phone[]} phonology
