@@ -249,6 +249,7 @@ const data = {
 					'SVO': ['VSO', 'VOS'],
 				},
 				results: {
+					'AdpN': 'AdpN', // prevents conflict w/ 95c; basis: WALS, virtually universal
 					'GenN': 'NGen',
 					'VNeg': 'NegV',
 				},
