@@ -74,9 +74,9 @@ const data = {
 				&& !phone.properties.voiced && phone.properties.place.includes('labi')),
 			// https://typo.uni-konstanz.de/rara/universals-archive/1014/
 			phonology => {
-				const labial = phonology.filter(phone => phone.properties.place.includes('labi'));
+				const labial = phonology.filter(phone => !phone.properties.isVowel && phone.properties.place.includes('labi'));
 				const alveolar = phonology.filter(phone => phone.properties.place === 'alveolar');
-				const velar = phonology.filter(phone => phone.properties.place.includes('velar'));
+				const velar = phonology.filter(phone => !phone.properties.isVowel && phone.properties.place.includes('velar'));
 				return labial <= alveolar && velar <= alveolar;
 			},
 			// https://typo.uni-konstanz.de/rara/universals-archive/1331/
