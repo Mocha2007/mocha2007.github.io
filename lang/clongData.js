@@ -122,7 +122,7 @@ const data = {
 			// https://typo.uni-konstanz.de/rara/universals-archive/793/
 			phonology => {
 				const primaryNasals = phonology.filter(data.filters.nasal)
-					.filters(data.filters.primary).length;
+					.filter(data.filters.primary).length;
 				const obstruents = phonology.filter(data.filters.obstruent).length;
 				return primaryNasals <= obstruents;
 			},
@@ -182,8 +182,7 @@ const data = {
 			// https://typo.uni-konstanz.de/rara/universals-archive/1331/
 			phonology => 1 < phonology.filter(phone => phone.properties.isVowel).length,
 			// todo later on when more advanced fxs are available:
-			// long consonants https://typo.uni-konstanz.de/rara/universals-archive/489/
-			// obstruent voiced/unvoiced counterpart https://typo.uni-konstanz.de/rara/universals-archive/799/
+			// NOT UNIVERSAL; IGNORE: obstruent voiced/unvoiced counterpart https://typo.uni-konstanz.de/rara/universals-archive/799/
 			// rhotic https://typo.uni-konstanz.de/rara/universals-archive/837/
 			// todo for phone section:
 			// ejectives https://typo.uni-konstanz.de/rara/universals-archive/767/
