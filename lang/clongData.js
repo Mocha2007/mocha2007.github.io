@@ -69,14 +69,23 @@ const data = {
 				? phonology.some(phone => phone.properties.backness === 'front' && !phone.properties.rounding)
 				: true,
 			// https://typo.uni-konstanz.de/rara/universals-archive/923/
-			phonology => phonology.some(phone => 'fp'.includes(phone.name)),
+			// interpreted as "all languages have a voiceless labial"
+			phonology => phonology.some(phone => !phone.properties.voiced && phone.properties.place.includes('labi')),
+			// https://typo.uni-konstanz.de/rara/universals-archive/1014/
+			phonology => {
+				const labial = phonology.filter(phone => phone.properties.place.includes('labi'));
+				const alveolar = phonology.filter(phone => phone.properties.place === 'alveolar');
+				const velar = phonology.filter(phone => phone.properties.place.includes('velar'));
+				return labial <= alveolar && velar <= alveolar;
+			},
 			// https://typo.uni-konstanz.de/rara/universals-archive/1331/
 			phonology => 1 < phonology.filter(phone => phone.properties.isVowel).length,
 			// todo later on when more advanced fxs are available:
 			// https://typo.uni-konstanz.de/rara/universals-archive/798/
 			// https://typo.uni-konstanz.de/rara/universals-archive/836/
 			// todo for phone section:
-			// https://typo.uni-konstanz.de/rara/universals-archive/1814/
+			// palatal g https://typo.uni-konstanz.de/rara/universals-archive/1814/
+			// t' https://typo.uni-konstanz.de/rara/universals-archive/1816/
 		],
 		syntax: [
 			{
