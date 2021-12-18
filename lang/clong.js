@@ -221,17 +221,22 @@ class Phonotactics {
 
 class Word {
 	/**
-	 * word. todo: add meaning
+	 * word.
 	 * @param {Phoneme[]} phonemes each phoneme in word
+	 * @param {string} meaning
 	*/
-	constructor(phonemes){
+	constructor(phonemes, meaning){
 		this.phonemes = phonemes;
+		this.meaning = meaning;
 	}
 	get html(){
 		const container = document.createElement('span');
 		container.classList.add('word');
-		this.phonemes.forEach(p => container.appendChild(p.primary.html));
+		container.innerHTML = this.string;
 		return container;
+	}
+	get string(){
+		return this.phonemes.map(p => p.primary.name).join('');
 	}
 }
 
@@ -386,6 +391,48 @@ class Syntax {
 	}
 }
 
+class Vocab {
+	/** @param {Word[]} words set of words */
+	constructor(words = []){
+		/** @type {Word[]} words set of words */
+		this.words = [];
+		this.tokenCount = {};
+		words.forEach(w => this.add(w));
+	}
+	/** @param {Word} word */
+	add(word){
+		this.words.push(word);
+		if (this.tokenCount[word.string])
+			this.tokenCount[word.string]++;
+		else
+			this.tokenCount[word.string] = 1;
+	}
+	/** @param {Word} word */
+	checkPotentialToken(word){
+		// if it exists as a key, then check if it's < 2
+		return !this.tokenCount[word.string] || this.tokenCount[word.string] < 2;
+	}
+	/**
+	 * @param {Phoneme[]} phonology
+	 * @param {Phonotactics} phonotactics
+	 * @param {Morphology} morphology
+	*/
+	static generate(phonology, phonotactics, morphology){ // todo integrate morphology
+		const v = new Vocab();
+		wordLists.swadesh.map(def => {
+			let attempt;
+			while (!v.checkPotentialToken(attempt = phonotactics.randomWord(phonology))){
+				// keep trying
+				// console.debug(`${attempt.string} failed, already 2`);
+				// debugger;
+			}
+			attempt.meaning = def;
+			v.add(attempt);
+		});
+		return v;
+	}
+}
+
 class Language {
 	/**
 	 * currently, languages have only phonologies
@@ -393,12 +440,14 @@ class Language {
 	 * @param {Phonotactics} phonotactics
 	 * @param {Syntax} syntax
 	 * @param {Morphology} morphology
+	 * @param {Vocab} vocab
 	*/
-	constructor(phonology, phonotactics, syntax, morphology){
+	constructor(phonology, phonotactics, syntax, morphology, vocab){
 		this.phonology = phonology;
 		this.phonotactics = phonotactics;
 		this.syntax = syntax;
 		this.morphology = morphology;
+		this.vocab = vocab;
 	}
 	get vocabHTML(){
 		const div = document.createElement('div');
@@ -407,18 +456,15 @@ class Language {
 		div.appendChild(vocabHeader);
 		const wordlist = document.createElement('ul');
 		wordlist.id = 'wordlist';
-		wordLists.swadesh.map(def => [def, this.phonotactics.randomWord(this.phonology)])
-			.forEach((dwPair, i) => {
-				const def = dwPair[0];
-				const word = dwPair[1];
-				const li = document.createElement('li');
-				wordlist.appendChild(li);
-				li.innerHTML = `${def} = `;
-				li.appendChild(word.html);
-				// title
-				if (i === wordLists.swadesh.length-1)
-					document.getElementById('language_name').appendChild(word.html);
-			});
+		this.vocab.words.forEach((word, i) => {
+			const li = document.createElement('li');
+			wordlist.appendChild(li);
+			li.innerHTML = `${word.meaning} = `;
+			li.appendChild(word.html);
+			// title
+			if (i === wordLists.swadesh.length-1)
+				document.getElementById('language_name').appendChild(word.html);
+		});
 		div.appendChild(wordlist);
 		return div;
 	}
@@ -447,11 +493,13 @@ class Language {
 	static generate(){
 		const phonology = Phoneme.generatePhonology();
 		const phonotactics = Phonotactics.generate();
+		const morpho = Morphology.generate(phonology, phonotactics);
 		return new Language(
 			phonology,
 			phonotactics,
 			Syntax.generate(),
-			Morphology.generate(phonology, phonotactics)
+			morpho,
+			Vocab.generate(phonology, phonotactics, morpho)
 		);
 	}
 }
