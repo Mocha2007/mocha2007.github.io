@@ -1,5 +1,5 @@
 /* exported main */
-/* global data, phones, random, range, syllables, wordLists */
+/* global data, phones, random, range, sum, syllables, wordLists */
 'use strict';
 
 
@@ -181,8 +181,16 @@ class Phonotactics {
 		this.mandatory = mandatory;
 		this.syllableStructureName = syllableStructureName;
 	}
+	get averageSyllableLength(){
+		return sum(this.mandatory.map(x => x ? 1 : 0.5));
+	}
+	get averageWordLength(){
+		return 4;
+	}
 	get defaultDropoff(){
-		return 1/this.syllableStructure.length;
+		// 1-a/5; this means words will have a mean of 5 phonemes in them,
+		// assuming each non-mandatory token has a 50/50 chance of appearing
+		return 1 - this.averageSyllableLength/this.averageWordLength;
 	}
 	get html(){
 		const div = document.createElement('div');
@@ -532,4 +540,19 @@ function main(){
 	- cases other than the eight IE cases
 	- prettify css
 	- "generate more words" button
+*/
+/*
+A : average word length
+a : average syll length
+d : syllable dropoff (each successive syll has a d chance of getting generated)
+
+A = 5 (based on English)
+A = sum(ad^n, 0, inf) = a/(1-d)
+
+5 = a/(1-d)
+5(1-d) = a
+5-5d=a
+5-a=5d
+
+SOLUTION 1-a/5=d
 */
