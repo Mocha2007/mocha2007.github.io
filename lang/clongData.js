@@ -81,6 +81,15 @@ const data = {
 			phonology => phonology.filter(phone => phone.properties.backness === 'central').length
 				<= Math.max(phonology.filter(phone => phone.properties.backness === 'front').length,
 					phonology.filter(phone => phone.properties.backness === 'back').length),
+			// https://typo.uni-konstanz.de/rara/universals-archive/707/
+			phonology => {
+				const v = phonology.filter(data.filters.vowel);
+				const fronts = new Set(v.filter(data.filters.front)
+					.map(phone => phone.properties.openness)).size;
+				const backs = new Set(v.filter(data.filters.back)
+					.map(phone => phone.properties.openness)).size;
+				return backs <= fronts;
+			},
 			// https://typo.uni-konstanz.de/rara/universals-archive/780/
 			phonology => 3 <= phonology.filter(phone => phone.properties.manner === 'plosive').length,
 			// https://typo.uni-konstanz.de/rara/universals-archive/781/
@@ -122,7 +131,6 @@ const data = {
 			// https://typo.uni-konstanz.de/rara/universals-archive/885/
 			phonology => {
 				const v = phonology.filter(data.filters.vowel);
-				data.vowels.dy;
 				const maxBackVowelHeight = Math.min(v.filter(data.filters.back)
 					.map(phone => data.vowels.dy.indexOf(phone.properties.openness)));
 				const maxFrontVowelHeight = Math.min(v.filter(data.filters.front)
