@@ -29,8 +29,10 @@ const data = {
 		approxOrLiquid(x){
 			return data.filters.approximant(x) || data.filters.liquid(x);
 		},
+		back: x => x.properties.backness === 'back',
 		consonant: x => !x.properties.isVowel,
 		fricative: x => x.properties.manner === 'fricative',
+		front: x => x.properties.backness === 'front',
 		liquid: x => x.properties.lateral
 			|| x.properties.manner === 'trill'
 			|| x.properties.manner === 'tap',
@@ -67,6 +69,8 @@ const data = {
 			phonology => phonology.filter(phone => phone.properties.backness === 'central').length
 				<= Math.max(phonology.filter(phone => phone.properties.backness === 'front').length,
 					phonology.filter(phone => phone.properties.backness === 'back').length),
+			// https://typo.uni-konstanz.de/rara/universals-archive/780/
+			phonology => 3 <= phonology.filter(phone => phone.properties.manner === 'plosive').length,
 			// https://typo.uni-konstanz.de/rara/universals-archive/781/
 			phonology => phonology.filter(phone => phone.properties.manner === 'plosive').length === 3
 				? phonology.filter(phone => 'ptk'.includes(phone.name)).length === 3
@@ -85,6 +89,15 @@ const data = {
 				const voiced = obstruents.filter(data.filters.voiced).length;
 				return 2*voiced <= obstruents.length;
 			},
+			// https://typo.uni-konstanz.de/rara/universals-archive/834/
+			phonology => {
+				const liquids = phonology.filter(data.filters.liquid);
+				if (liquids.length < 2)
+					return true;
+				return liquids.some(phone => !phone.properties.lateral)
+					? liquids.some(phone => phone.properties.lateral)
+					: true;
+			},
 			// https://typo.uni-konstanz.de/rara/universals-archive/836/
 			phonology => {
 				const laterals = phonology.filter(phone => phone.properties.lateral);
@@ -93,6 +106,17 @@ const data = {
 				const manners = new Set(laterals.map(phone => phone.properties.manner)).size;
 				const voices = new Set(laterals.map(phone => phone.properties.voiced)).size;
 				return 1 < manners ^ 1 < voices;
+			},
+			// https://typo.uni-konstanz.de/rara/universals-archive/885/
+			phonology => {
+				const v = phonology.filter(data.filters.vowel);
+				data.vowels.dy;
+				const maxBackVowelHeight = Math.min(v.filter(data.filters.back)
+					.map(phone => data.vowels.dy.indexOf(phone.properties.openness)));
+				const maxFrontVowelHeight = Math.min(v.filter(data.filters.front)
+					.map(phone => data.vowels.dy.indexOf(phone.properties.openness)));
+				// lower = higher
+				return maxFrontVowelHeight <= maxBackVowelHeight;
 			},
 			// https://typo.uni-konstanz.de/rara/universals-archive/888/
 			phonology => phonology.some(phone => phone.properties.backness === 'front' && phone.properties.rounding)
@@ -116,12 +140,16 @@ const data = {
 			// https://typo.uni-konstanz.de/rara/universals-archive/1331/
 			phonology => 1 < phonology.filter(phone => phone.properties.isVowel).length,
 			// todo later on when more advanced fxs are available:
+			// long consonants https://typo.uni-konstanz.de/rara/universals-archive/489/
 			// obstruent voiced/unvoiced counterpart https://typo.uni-konstanz.de/rara/universals-archive/799/
 			// rhotic https://typo.uni-konstanz.de/rara/universals-archive/837/
 			// todo for phone section:
 			// ejectives https://typo.uni-konstanz.de/rara/universals-archive/767/
+			// voiced labiovelar stop https://typo.uni-konstanz.de/rara/universals-archive/1810/
 			// palatal g https://typo.uni-konstanz.de/rara/universals-archive/1814/
 			// t' https://typo.uni-konstanz.de/rara/universals-archive/1816/
+			// crazy uvular https://typo.uni-konstanz.de/rara/universals-archive/1826/
+			// voiceless palatal nasal https://typo.uni-konstanz.de/rara/universals-archive/1844/
 		],
 		syntax: [
 			/* causes breaks; WALS contradicts both claims
