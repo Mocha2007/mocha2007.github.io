@@ -287,11 +287,13 @@ class Morphology {
 	 * @param {Word[]} caseEndings for the cases eg. ERG, DAT, ...
 	 * @param {Word[]} numbers eg. S, PL ...
 	 * @param {Word[]} derivational eg. AUG, N>V, ...
+	 * @param {number} suffixationRate [0, 1]
 	*/
-	constructor(caseEndings, numbers, derivational){
+	constructor(caseEndings, numbers, derivational, suffixationRate){
 		this.caseEndings = caseEndings;
 		this.numbers = numbers;
 		this.derivational = derivational;
+		this.suffixationRate = suffixationRate;
 	}
 	get html(){
 		const div = document.createElement('div');
@@ -331,6 +333,13 @@ class Morphology {
 			deriv.appendChild(li);
 		});
 		div.appendChild(deriv);
+		// stats
+		const hStats = document.createElement('h3');
+		hStats.innerHTML = 'Stats';
+		div.appendChild(hStats);
+		const pStats = document.createElement('p');
+		pStats.innerHTML = `%suff = ${this.suffixationRate}`;
+		div.appendChild(pStats);
 		return div;
 	}
 	static generate(phonology, phonotactics){
@@ -350,21 +359,24 @@ class Morphology {
 		if (6 <= c.length)
 			data.cases.rare.filter(() => random.random() < 1/4).forEach(x => c.push(x));
 		// return
+		const suffixationRate = random.random();
 		return new Morphology(
-			Morphology.generateEndings(phonology, phonotactics, c),
-			Morphology.generateNumbers(phonology, phonotactics, numbers),
-			Morphology.generateDerivational(phonology, phonotactics)
+			Morphology.generateEndings(phonology, phonotactics, c, suffixationRate),
+			Morphology.generateNumbers(phonology, phonotactics, numbers, suffixationRate),
+			Morphology.generateDerivational(phonology, phonotactics, suffixationRate),
+			suffixationRate
 		);
 	}
 	/**
 	 * @param {Phone[]} phonology
 	 * @param {Phonotactics} phonotactics
+	 * @param {number} suffixationRate
 	 */
-	static generateDerivational(phonology, phonotactics){
+	static generateDerivational(phonology, phonotactics, suffixationRate){
 		return data.morphology.derivational.filter(() => random.bool()).map(affix => {
 			const w = phonotactics.randomWord(phonology, 0.1);
 			w.meaning = affix;
-			w.affix = 'suff';
+			w.affix = Morphology.randomAffixType(suffixationRate);
 			return w;
 		});
 	}
@@ -372,8 +384,9 @@ class Morphology {
 	 * @param {Phone[]} phonology
 	 * @param {Phonotactics} phonotactics
 	 * @param {string[]} cases
+	 * @param {number} suffixationRate
 	 */
-	static generateEndings(phonology, phonotactics, cases){
+	static generateEndings(phonology, phonotactics, cases, suffixationRate){
 		return cases.map((c, i) => {
 			let w;
 			// the first case is blank 50%.
@@ -382,7 +395,7 @@ class Morphology {
 			else
 				w = phonotactics.randomWord(phonology, 0.1);
 			w.meaning = c;
-			w.affix = 'suff';
+			w.affix = Morphology.randomAffixType(suffixationRate);
 			return w;
 		});
 	}
@@ -390,8 +403,9 @@ class Morphology {
 	 * @param {Phone[]} phonology
 	 * @param {Phonotactics} phonotactics
 	 * @param {string[]} numbers
+	 * @param {number} suffixationRate
 	 */
-	static generateNumbers(phonology, phonotactics, numbers){
+	static generateNumbers(phonology, phonotactics, numbers, suffixationRate){
 		return numbers.map((n, i) => {
 			let w;
 			// the first numbers is blank 50%.
@@ -400,9 +414,12 @@ class Morphology {
 			else
 				w = phonotactics.randomWord(phonology, 0.1);
 			w.meaning = n;
-			w.affix = 'suff';
+			w.affix = Morphology.randomAffixType(suffixationRate);
 			return w;
 		});
+	}
+	static randomAffixType(suffixationRate){
+		return random.random() < suffixationRate ? 'suff' : 'pref';
 	}
 }
 
@@ -635,5 +652,5 @@ function main(){
 		might be a challenge but with svg should definitely be possible
 	- prettify css
 	- "generate more words" button
-	- morphology: also prefixes... and clitics...
+	- morphology: implications for prefixation/suffixation
 */
