@@ -65,6 +65,18 @@ const data = {
 			phonology => phonology.some(phone => phone.properties.place === 'postalveolar')
 				? phonology.some(phone => phone.properties.place === 'alveolar')
 				: true,
+			// https://typo.uni-konstanz.de/rara/universals-archive/290/
+			phonology => phonology.some(phone => phone.properties.aspirated)
+				? phonology.some(phone => phone.name === 'h')
+				: true,
+			// https://typo.uni-konstanz.de/rara/universals-archive/489/
+			phonology => phonology.some(phone => phone.properties.long && phone.properties.manner === 'fricative')
+				? phonology.some(phone => phone.properties.long && phone.properties.manner === 'stop')
+					? phonology.some(phone => phone.properties.long && phone.properties.manner === 'affricate')
+					: false
+				: phonology.some(phone => phone.properties.long && phone.properties.manner === 'stop')
+					? phonology.some(phone => phone.properties.long && phone.properties.manner === 'affricate')
+					: true,
 			// https://typo.uni-konstanz.de/rara/universals-archive/706/
 			phonology => phonology.filter(phone => phone.properties.backness === 'central').length
 				<= Math.max(phonology.filter(phone => phone.properties.backness === 'front').length,
@@ -148,7 +160,9 @@ const data = {
 			// voiced labiovelar stop https://typo.uni-konstanz.de/rara/universals-archive/1810/
 			// palatal g https://typo.uni-konstanz.de/rara/universals-archive/1814/
 			// t' https://typo.uni-konstanz.de/rara/universals-archive/1816/
+			// ts' https://typo.uni-konstanz.de/rara/universals-archive/1820/
 			// crazy uvular https://typo.uni-konstanz.de/rara/universals-archive/1826/
+			// voiceless appx https://typo.uni-konstanz.de/rara/universals-archive/1838/
 			// voiceless palatal nasal https://typo.uni-konstanz.de/rara/universals-archive/1844/
 		],
 		syntax: [
