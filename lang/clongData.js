@@ -75,7 +75,7 @@ const data = {
 			phonology => phonology.some(phone => phone.properties.manner === 'affricate')
 				? 3 <= phonology.filter(phone => phone.properties.manner === 'plosive').length
 				: true,
-			// https://typo.uni-konstanz.de/rara/universals-archive/783/
+			// https://typo.uni-konstanz.de/rara/universals-archive/783/ ; https://typo.uni-konstanz.de/rara/universals-archive/882/
 			phonology => phonology.filter(phone => phone.properties.manner === 'affricate').length === 1
 				? phonology.find(phone => phone.properties.manner === 'affricate').properties.place === 'postalveolar'
 				: true,
@@ -94,6 +94,10 @@ const data = {
 				const voices = new Set(laterals.map(phone => phone.properties.voiced)).size;
 				return 1 < manners ^ 1 < voices;
 			},
+			// https://typo.uni-konstanz.de/rara/universals-archive/888/
+			phonology => phonology.some(phone => phone.properties.backness === 'front' && phone.properties.rounding)
+				? phonology.some(phone => phone.properties.backness === 'back' && phone.properties.rounding)
+				: true,
 			// https://typo.uni-konstanz.de/rara/universals-archive/889/
 			phonology => phonology.some(phone => phone.properties.backness === 'back' && !phone.properties.rounding)
 				? phonology.some(phone => phone.properties.backness === 'front' && !phone.properties.rounding)
@@ -113,6 +117,7 @@ const data = {
 			phonology => 1 < phonology.filter(phone => phone.properties.isVowel).length,
 			// todo later on when more advanced fxs are available:
 			// obstruent voiced/unvoiced counterpart https://typo.uni-konstanz.de/rara/universals-archive/799/
+			// rhotic https://typo.uni-konstanz.de/rara/universals-archive/837/
 			// todo for phone section:
 			// ejectives https://typo.uni-konstanz.de/rara/universals-archive/767/
 			// palatal g https://typo.uni-konstanz.de/rara/universals-archive/1814/
