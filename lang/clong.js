@@ -258,8 +258,10 @@ class Word {
 		const container = document.createElement('span');
 		container.classList.add('word');
 		if (this.affix)
-			container.innerHTML = '-';
-		container.innerHTML += this.string;
+			container.innerHTML = Word.affixPatterns[this.affix]
+				.replace('{stem}', '').replace('{aff}', this.string);
+		else
+			container.innerHTML = this.string;
 		return container;
 	}
 	get htmlFull(){
@@ -273,6 +275,11 @@ class Word {
 		return this.phonemes.map(p => p.primary.name).join('');
 	}
 }
+Word.affixPatterns = {
+	circum: '{aff}-{stem}-{aff}',
+	pref: '{aff}-{stem}',
+	suff: '{stem}-{aff}',
+};
 
 class Morphology {
 	/**
