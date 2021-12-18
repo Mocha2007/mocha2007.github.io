@@ -190,6 +190,21 @@ class Phonotactics {
 	get defaultDropoff(){
 		// 1-a/5; this means words will have a mean of 5 phonemes in them,
 		// assuming each non-mandatory token has a 50/50 chance of appearing
+		/*
+		A : average word length
+		a : average syll length
+		d : syllable dropoff (each successive syll has a d chance of getting generated)
+
+		A = 5 (based on English)
+		A = sum(ad^n, 0, inf) = a/(1-d)
+
+		5 = a/(1-d)
+		5(1-d) = a
+		5-5d=a
+		5-a=5d
+
+		SOLUTION 1-a/5=d
+		*/
 		return 1 - this.averageSyllableLength/this.averageWordLength;
 	}
 	get html(){
@@ -280,15 +295,21 @@ class Morphology {
 	}
 	static generate(phonology, phonotactics){
 		const c = [...random.choice(data.cases.alignment)]; // copy template
-		// okay, now add other cases
-		const outsOther = range(data.cases.other.length); // 0 ... n
+		// OTHER CASES: okay, now add other cases
+		const outsOther = range(data.cases.common.length); // 0 ... n
+		/** @type {number} */
 		const distrOther = random.weightedChoice(outsOther, outsOther.map(n => Math.pow(0.5, n)));
-		data.cases.other.slice(0, distrOther).forEach(cc => c.push(cc));
-		// weighted distribution...
+		data.cases.common.slice(0, distrOther).forEach(cc => c.push(cc));
+		// GRAMMATICAL NUMBER: weighted distribution...
 		const outs = range(1, data.cases.numbers.length-1); // 1 ... n
+		/** @type {number} */
 		const distr = random.weightedChoice(outs, outs.map(n => Math.pow(0.5, n)));
+		/** @type {string[]} */
 		const numbers = data.cases.numbers.slice(0, distr);
-		// todo add other cases...
+		// add other cases... (6 min)
+		if (6 <= c.length)
+			data.cases.rare.filter(() => random.random() < 1/4).forEach(x => c.push(x));
+		// return
 		return new Morphology(
 			c,
 			Morphology.generateEndings(phonology, phonotactics, c),
@@ -303,7 +324,7 @@ class Morphology {
 		// todo also prefixes... and clitics...
 		// the first case is blank 50%.
 		return cases.map((_, i) => {
-			if (i === 0 && random.random() < 0.5)
+			if (i === 0 && random.bool())
 				return new Word([]);
 			return phonotactics.randomWord(phonology, 0.1);
 		});
@@ -537,22 +558,6 @@ function main(){
 	- custom orthography
 		(like... entirely different script)
 		might be a challenge but with svg should definitely be possible
-	- cases other than the eight IE cases
 	- prettify css
 	- "generate more words" button
-*/
-/*
-A : average word length
-a : average syll length
-d : syllable dropoff (each successive syll has a d chance of getting generated)
-
-A = 5 (based on English)
-A = sum(ad^n, 0, inf) = a/(1-d)
-
-5 = a/(1-d)
-5(1-d) = a
-5-5d=a
-5-a=5d
-
-SOLUTION 1-a/5=d
 */

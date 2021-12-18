@@ -15,11 +15,32 @@ const data = {
 			['INTR', 'ERG', 'ACC'],
 			['TRANS', 'INTR'],
 		],
-		numbers: ['S', 'PL', 'DU', 'PAUC', 'TRI'],
-		other: [
-			'DAT',
+		// more common, non-local cases
+		common: [
 			'GEN',
+			'DAT',
+			'LOC',
 			'ABL',
+			'INS',
+		],
+		numbers: ['S', 'PL', 'DU', 'PAUC', 'TRI'],
+		// rarer, generally local cases
+		rare: [
+			'ADE',
+			'ALL',
+			'BEN',
+			'CAUS',
+			'COM',
+			'DEL',
+			'ELA',
+			'ESS',
+			'ILL',
+			'INE',
+			'SUBL',
+			'SUPE',
+			'TERM',
+			'TRANSL',
+			'VOC',
 		],
 	},
 	/** @type {((x: Phone) => boolean)[]} */
