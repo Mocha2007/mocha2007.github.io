@@ -324,6 +324,7 @@ const data = {
 	POA: [
 		'bilabial',
 		'labiodental',
+		'dental',
 		'alveolar',
 		'postalveolar',
 		'palatal',
