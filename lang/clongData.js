@@ -88,6 +88,7 @@ const data = {
 			// t' https://typo.uni-konstanz.de/rara/universals-archive/1816/
 		],
 		syntax: [
+			/* causes breaks; WALS contradicts both claims
 			{
 				name: 'UA15a',
 				url: 'https://typo.uni-konstanz.de/rara/universals-archive/15/ ; https://typo.uni-konstanz.de/rara/universals-archive/831/',
@@ -99,8 +100,9 @@ const data = {
 					'VNeg': 'VNeg',
 				},
 			},
+			*/
 			{
-				name: 'UA15b',
+				name: 'UA15',
 				url: 'https://typo.uni-konstanz.de/rara/universals-archive/15/ ; https://typo.uni-konstanz.de/rara/universals-archive/109/',
 				conditions: { // VO
 					'SVO': ['SVO', 'VSO', 'VOS'],
