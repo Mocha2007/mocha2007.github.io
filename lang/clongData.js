@@ -70,7 +70,8 @@ const data = {
 				: true,
 			// https://typo.uni-konstanz.de/rara/universals-archive/923/
 			// interpreted as "all languages have a voiceless labial"
-			phonology => phonology.some(phone => !phone.properties.voiced && phone.properties.place.includes('labi')),
+			phonology => phonology.some(phone => !phone.properties.isVowel
+				&& !phone.properties.voiced && phone.properties.place.includes('labi')),
 			// https://typo.uni-konstanz.de/rara/universals-archive/1014/
 			phonology => {
 				const labial = phonology.filter(phone => phone.properties.place.includes('labi'));
