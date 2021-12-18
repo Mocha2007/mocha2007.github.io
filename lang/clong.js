@@ -278,7 +278,7 @@ class Morphology {
 	/**
 	 * morphology data
 	 * @param {Word[]} caseEndings for the cases eg. ERG, DAT, ...
-	 * @param {string[]} numbers eg. S, PL ...
+	 * @param {Word[]} numbers eg. S, PL ...
 	 * @param {Word[]} derivational eg. AUG, N>V, ...
 	*/
 	constructor(caseEndings, numbers, derivational){
@@ -306,8 +306,12 @@ class Morphology {
 		const hNum = document.createElement('h3');
 		hNum.innerHTML = 'Numbers';
 		div.appendChild(hNum);
-		const numbers = document.createElement('span');
-		numbers.innerHTML = `${this.numbers.join()}`;
+		const numbers = document.createElement('ul');
+		this.numbers.forEach(n => {
+			const li = document.createElement('li');
+			li.appendChild(n.htmlFull);
+			numbers.appendChild(li);
+		});
 		div.appendChild(numbers);
 		// derivational
 		const hDeriv = document.createElement('h3');
@@ -341,7 +345,7 @@ class Morphology {
 		// return
 		return new Morphology(
 			Morphology.generateEndings(phonology, phonotactics, c),
-			numbers,
+			Morphology.generateNumbers(phonology, phonotactics, numbers),
 			Morphology.generateDerivational(phonology, phonotactics)
 		);
 	}
@@ -371,6 +375,24 @@ class Morphology {
 			else
 				w = phonotactics.randomWord(phonology, 0.1);
 			w.meaning = c;
+			w.affix = 'suff';
+			return w;
+		});
+	}
+	/**
+	 * @param {Phone[]} phonology
+	 * @param {Phonotactics} phonotactics
+	 * @param {string[]} numbers
+	 */
+	static generateNumbers(phonology, phonotactics, numbers){
+		return numbers.map((n, i) => {
+			let w;
+			// the first numbers is blank 50%.
+			if (i === 0 && random.bool())
+				w = new Word([]);
+			else
+				w = phonotactics.randomWord(phonology, 0.1);
+			w.meaning = n;
 			w.affix = 'suff';
 			return w;
 		});
