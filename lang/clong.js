@@ -647,8 +647,6 @@ function main(){
 /* Vulgarlang but actually good
 	missing features from vulgarlang:
 	- sample sentence
-	- long vowels
-	- rarer consonants
 	- more complex syllable structures
 	- stress pattern
 	- article table
@@ -656,7 +654,6 @@ function main(){
 	- possessives
 	- verbs
 	- numbers (preferably, with more than just base-10/20 like vulgarlang)
-	- derivational suffixes
 	other missing features:
 	- custom orthography
 		(like... entirely different script)
