@@ -144,6 +144,13 @@ const data = {
 				},
 			},
 			{
+				name: 'UA764',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/767/',
+				implication: phonology => phonology.some(phone => phone.ejective)
+					? phonology.some(phone => phone.manner === 'plosive')
+					: true,
+			},
+			{
 				name: 'UA774',
 				url: 'https://typo.uni-konstanz.de/rara/universals-archive/777/',
 				implication: phonology => {
@@ -323,7 +330,6 @@ const data = {
 			// NOT UNIVERSAL; IGNORE: obstruent voiced/unvoiced counterpart https://typo.uni-konstanz.de/rara/universals-archive/799/
 			// rhotic https://typo.uni-konstanz.de/rara/universals-archive/837/
 			// todo for phone section:
-			// ejectives https://typo.uni-konstanz.de/rara/universals-archive/767/
 			// voiced labiovelar stop https://typo.uni-konstanz.de/rara/universals-archive/1810/
 			// palatal g https://typo.uni-konstanz.de/rara/universals-archive/1814/
 			// t' https://typo.uni-konstanz.de/rara/universals-archive/1816/
