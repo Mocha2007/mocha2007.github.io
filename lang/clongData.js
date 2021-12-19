@@ -202,7 +202,7 @@ const data = {
 					// filter out only MOAs with ONE phoneme
 					phonology.filter(phone => phone.properties.manner === m).length === 1)
 					// make sure all of them are alveolar
-					.every(m => phonology.find(phone => phone.properties.manner === m).properties.place === 'alveolar'),
+					.every(m => phonology.find(phone => phone.properties.manner === m).properties.place.includes('alveo')),
 			},
 			{
 				name: 'UA795',
