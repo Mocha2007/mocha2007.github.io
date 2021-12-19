@@ -762,6 +762,18 @@ const phones = [
 		},
 	},
 	{
+		name: 'aː',
+		properties: {
+			isVowel: true,
+			freq: 893/3183,
+			backness: 'central',
+			openness: 'open',
+			rounding: false,
+			long: true,
+			implications: ['a'], // 98%
+		},
+	},
+	{
 		name: 'b',
 		properties: {
 			manner: 'plosive',
@@ -821,6 +833,17 @@ const phones = [
 		},
 	},
 	{
+		name: 'eː',
+		properties: {
+			isVowel: true,
+			freq: 641/3183,
+			backness: 'front',
+			openness: 'mid',
+			rounding: false,
+			long: true,
+		},
+	},
+	{
 		name: 'ɛ',
 		properties: {
 			isVowel: true,
@@ -871,6 +894,18 @@ const phones = [
 		},
 	},
 	{
+		name: 'iː',
+		properties: {
+			isVowel: true,
+			freq: 961/3183,
+			backness: 'front',
+			openness: 'close',
+			rounding: false,
+			long: true,
+			implications: ['i'], // 94%
+		},
+	},
+	{
 		name: 'ɨ',
 		properties: {
 			isVowel: true,
@@ -908,6 +943,16 @@ const phones = [
 			place: 'velar',
 			voiced: false,
 			freq: 2730/3183,
+		},
+	},
+	{
+		name: 'kʰ',
+		properties: {
+			manner: 'plosive',
+			place: 'velar',
+			voiced: false,
+			freq: 605/3183,
+			aspirated: true,
 		},
 	},
 	{
@@ -971,6 +1016,18 @@ const phones = [
 		},
 	},
 	{
+		name: 'oː',
+		properties: {
+			isVowel: true,
+			freq: 635/3183,
+			backness: 'back',
+			openness: 'mid',
+			rounding: true,
+			long: true,
+			implications: ['o'], // 91%
+		},
+	},
+	{
 		name: 'ɔ',
 		properties: {
 			isVowel: true,
@@ -978,7 +1035,6 @@ const phones = [
 			backness: 'back',
 			openness: 'open-mid',
 			rounding: true,
-			// implications: ['o'],
 		},
 	},
 	{
@@ -1011,6 +1067,16 @@ const phones = [
 			voiced: false,
 			freq: 2594/3183,
 			implications: ['k'], // 98%
+		},
+	},
+	{
+		name: 'pʰ',
+		properties: {
+			manner: 'plosive',
+			place: 'bilabial',
+			voiced: false,
+			freq: 592/3183,
+			aspirated: true,
 		},
 	},
 	{
@@ -1083,6 +1149,16 @@ const phones = [
 		},
 	},
 	{
+		name: 'ts',
+		properties: {
+			manner: 'affricate',
+			place: 'alveolar',
+			voiced: false,
+			freq: 666/3183,
+			implications: ['s'], // 94%
+		},
+	},
+	{
 		name: 't̠ʃ',
 		properties: {
 			manner: 'affricate',
@@ -1109,6 +1185,18 @@ const phones = [
 			backness: 'back',
 			openness: 'close',
 			rounding: true,
+		},
+	},
+	{
+		name: 'uː',
+		properties: {
+			isVowel: true,
+			freq: 888/3183,
+			backness: 'back',
+			openness: 'close',
+			rounding: true,
+			long: true,
+			implications: ['u'], // 95%
 		},
 	},
 	{
