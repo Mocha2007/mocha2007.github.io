@@ -759,6 +759,7 @@ const phones = [
 			backness: 'central',
 			openness: 'open',
 			rounding: false,
+			implications: ['m', 'i'], // 97%, 96%
 		},
 	},
 	{
@@ -770,7 +771,7 @@ const phones = [
 			openness: 'open',
 			rounding: false,
 			long: true,
-			implications: ['a'], // 98%
+			implications: ['m', 'a', 'j'], // 99%, 98%, 96%
 		},
 	},
 	{
@@ -790,7 +791,7 @@ const phones = [
 			place: 'palatal',
 			voiced: false,
 			freq: 418/3183,
-			implications: ['j', 'k'], // 94%, 97%
+			implications: ['k', 'm'], // 97%, 96%
 		},
 	},
 	{
@@ -800,7 +801,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: true,
 			freq: 1376/3183,
-			implications: ['n'], // 94%
+			implications: ['b', 'm', 'i'], // 97%, 96%, 95%
 		},
 	},
 	{
@@ -810,6 +811,7 @@ const phones = [
 			place: 'dental',
 			voiced: true,
 			freq: 160/3183,
+			implications: ['m'], // 98%
 		},
 	},
 	{
@@ -819,7 +821,7 @@ const phones = [
 			place: 'postalveolar',
 			voiced: true,
 			freq: 820/3183,
-			implications: ['j', 'g'], // 92%, 93%
+			implications: ['m'], // 97%
 		},
 	},
 	{
@@ -830,6 +832,7 @@ const phones = [
 			backness: 'front',
 			openness: 'mid',
 			rounding: false,
+			implications: ['i', 'm'], // 99%, 97%
 		},
 	},
 	{
@@ -841,6 +844,7 @@ const phones = [
 			openness: 'mid',
 			rounding: false,
 			long: true,
+			implications: ['m', 'i', 'j'], // 98%, 95%, 95%
 		},
 	},
 	{
@@ -851,7 +855,7 @@ const phones = [
 			backness: 'front',
 			openness: 'open-mid',
 			rounding: false,
-			// implications: ['e'],
+			implications: ['m', 'i'], // 97%, 95%
 		},
 	},
 	{
@@ -861,16 +865,17 @@ const phones = [
 			place: 'labiodental',
 			voiced: false,
 			freq: 1329/3183,
+			implications: ['m'], // 98%
 		},
 	},
 	{
-		name: 'g',
+		name: 'g', // ɡ
 		properties: {
 			manner: 'plosive',
 			place: 'velar',
 			voiced: true,
 			freq: 1712/3183,
-			implications: ['b'], // 96%
+			implications: ['m', 'b'], // 97%, 96%
 		},
 	},
 	{
@@ -880,7 +885,7 @@ const phones = [
 			place: 'glottal',
 			voiced: false,
 			freq: 1703/3183,
-			implications: ['k'], // 94%
+			implications: ['m'], // 96%
 		},
 	},
 	{
@@ -891,6 +896,7 @@ const phones = [
 			backness: 'front',
 			openness: 'close',
 			rounding: false,
+			implications: ['m', 'u'], // 97%, 95%
 		},
 	},
 	{
@@ -902,7 +908,7 @@ const phones = [
 			openness: 'close',
 			rounding: false,
 			long: true,
-			implications: ['i'], // 94%
+			implications: ['m', 'j'], // 98%, 95%
 		},
 	},
 	{
@@ -913,7 +919,7 @@ const phones = [
 			backness: 'central',
 			openness: 'close',
 			rounding: false,
-			implications: ['i', 'a'], // 97%, 93%
+			implications: ['i'], // 97%
 		},
 	},
 	{
@@ -924,7 +930,7 @@ const phones = [
 			backness: 'near-front',
 			openness: 'near-close',
 			rounding: false,
-			implications: ['a'], // 90%
+			implications: ['m', 'j'], // 98%, 96%
 		},
 	},
 	{
@@ -934,6 +940,7 @@ const phones = [
 			place: 'palatal',
 			voiced: true,
 			freq: 2716/3183,
+			implications: ['m', 'i'], // 97%, 95%
 		},
 	},
 	{
@@ -943,6 +950,7 @@ const phones = [
 			place: 'velar',
 			voiced: false,
 			freq: 2730/3183,
+			implications: ['m', 'i'], // 97%, 96%
 		},
 	},
 	{
@@ -953,6 +961,7 @@ const phones = [
 			voiced: false,
 			freq: 605/3183,
 			aspirated: true,
+			implications: ['m'], // 98%
 		},
 	},
 	{
@@ -963,7 +972,7 @@ const phones = [
 			voiced: true,
 			lateral: true,
 			freq: 2044/3183,
-			implications: ['n'], // 95%
+			implications: ['m', 'i', 'n'], // 99%, 95%, 95%
 		},
 	},
 	{
@@ -973,6 +982,7 @@ const phones = [
 			place: 'bilabial',
 			voiced: true,
 			freq: 2914/3183,
+			implications: ['i'], // 95%
 		},
 	},
 	{
@@ -982,7 +992,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: true,
 			freq: 2349/3183,
-			implications: ['m', 'k'], // 99%, 93%
+			implications: ['m', 'i'], // 99%, 95%
 		},
 	},
 	{
@@ -992,7 +1002,7 @@ const phones = [
 			place: 'velar',
 			voiced: true,
 			freq: 1897/3183,
-			implications: ['m', 'k'], // ~100%, 93%
+			implications: ['m', 'i'], // ~100%, 97%
 		},
 	},
 	{
@@ -1002,7 +1012,7 @@ const phones = [
 			place: 'palatal',
 			voiced: true,
 			freq: 1255/3183,
-			implications: ['n', 'j'], // 93%, 92%
+			implications: ['m', 'i', 'k'], // 99%, 97%, 97%
 		},
 	},
 	{
@@ -1013,6 +1023,7 @@ const phones = [
 			backness: 'back',
 			openness: 'mid',
 			rounding: true,
+			implications: ['i', 'm'], // 98%, 96%
 		},
 	},
 	{
@@ -1024,7 +1035,7 @@ const phones = [
 			openness: 'mid',
 			rounding: true,
 			long: true,
-			implications: ['o'], // 91%
+			implications: ['m', 'i'], // 98%, 96%
 		},
 	},
 	{
@@ -1035,6 +1046,7 @@ const phones = [
 			backness: 'back',
 			openness: 'open-mid',
 			rounding: true,
+			implications: ['m', 'i', 'u', 'k'], // 97%, 96%, 96%, 95%
 		},
 	},
 	{
@@ -1045,7 +1057,7 @@ const phones = [
 			backness: 'front',
 			openness: 'mid',
 			rounding: true,
-			implications: ['m'], // 100%
+			implications: ['m', 'i', 'k', 'p'], // 100%, 97%, 96%, 96%
 		},
 	},
 	{
@@ -1066,7 +1078,7 @@ const phones = [
 			place: 'bilabial',
 			voiced: false,
 			freq: 2594/3183,
-			implications: ['k'], // 98%
+			implications: ['k', 'm', 'i'], // 98%, 97%, 96%
 		},
 	},
 	{
@@ -1077,6 +1089,7 @@ const phones = [
 			voiced: false,
 			freq: 592/3183,
 			aspirated: true,
+			implications: ['m'], // 98%
 		},
 	},
 	{
@@ -1086,7 +1099,7 @@ const phones = [
 			place: 'uvular',
 			voiced: false,
 			freq: 256/3183,
-			implications: ['k'], // 93%
+			implications: ['m'], // 98%
 		},
 	},
 	{
@@ -1096,7 +1109,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: true,
 			freq: 1332/3183,
-			implications: ['n', 'l'], // 94%, 91%
+			implications: ['m', 'i', 'u'], // 99%, 96%, 95%
 		},
 	},
 	{
@@ -1106,7 +1119,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: true,
 			freq: 774/3183,
-			implications: ['n'], // 91%
+			implications: ['i', 'k'], // 96%, 95%
 		},
 	},
 	{
@@ -1126,6 +1139,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: false,
 			freq: 2020/3183,
+			implications: ['m'], // 97%
 		},
 	},
 	{
@@ -1135,7 +1149,7 @@ const phones = [
 			place: 'postalveolar',
 			voiced: false,
 			freq: 1104/3183,
-			implications: ['j'], // 94%
+			implications: ['m'], // 98%
 		},
 	},
 	{
@@ -1145,7 +1159,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: false,
 			freq: 2064/3183,
-			implications: ['k', 'n'], // 98%, 96%
+			implications: ['k', 'm', 'n', 'i'], // 98%, 97%, 96%, 96%
 		},
 	},
 	{
@@ -1155,7 +1169,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: false,
 			freq: 666/3183,
-			implications: ['s'], // 94%
+			implications: ['m', 'k', 'p'], // 98%, 97%, 96%
 		},
 	},
 	{
@@ -1165,7 +1179,7 @@ const phones = [
 			place: 'postalveolar',
 			voiced: false,
 			freq: 1218/3183,
-			implications: ['k', 'j'], // 97%, 92%
+			implications: ['m', 'k'], // 97%, 97%
 		},
 	},
 	{
@@ -1175,6 +1189,7 @@ const phones = [
 			place: 'dental',
 			voiced: false,
 			freq: 123/3183,
+			implications: ['m'], // 95%
 		},
 	},
 	{
@@ -1185,6 +1200,7 @@ const phones = [
 			backness: 'back',
 			openness: 'close',
 			rounding: true,
+			implications: ['i', 'm'], // 99%, 97%
 		},
 	},
 	{
@@ -1196,7 +1212,7 @@ const phones = [
 			openness: 'close',
 			rounding: true,
 			long: true,
-			implications: ['u'], // 95%
+			implications: ['m', 'i', 'j'], // 98%, 98%, 95%
 		},
 	},
 	{
@@ -1207,7 +1223,7 @@ const phones = [
 			backness: 'near-back',
 			openness: 'near-close',
 			rounding: true,
-			// implications: ['u', 'o'],
+			implications: ['m', 'j'], // 98%, 96%
 		},
 	},
 	{
@@ -1217,7 +1233,7 @@ const phones = [
 			place: 'labiodental',
 			voiced: true,
 			freq: 816/3183,
-			implications: ['m', 'f'], // 98%, 91%
+			implications: ['m'], // 98%
 		},
 	},
 	{
@@ -1227,7 +1243,7 @@ const phones = [
 			place: 'labiovelar',
 			voiced: true,
 			freq: 2483/3183,
-			implications: ['j'], // 96%
+			implications: ['m', 'i', 'j'], // 97%, 96%, 96%
 		},
 	},
 	{
@@ -1237,7 +1253,7 @@ const phones = [
 			place: 'velar',
 			voiced: false,
 			freq: 576/3183,
-			implications: ['k'], // 92%
+			implications: ['m'], // 98%
 		},
 	},
 	{
@@ -1248,7 +1264,7 @@ const phones = [
 			backness: 'front',
 			openness: 'close',
 			rounding: true,
-			implications: ['i', 'u'], // 94%, 93%
+			implications: ['m', 'i'], // 99%, 95%
 		},
 	},
 	{
@@ -1258,7 +1274,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: true,
 			freq: 893/3183,
-			implications: ['s', 'n'], // 99%, 93%
+			implications: ['s', 'm'], // 99%, 98%
 		},
 	},
 	{
@@ -1268,7 +1284,7 @@ const phones = [
 			place: 'glottal',
 			voiced: false,
 			freq: 1131/3183,
-			implications: ['k'], // 90%
+			implications: ['m'], // 97%
 		},
 	},
 ];
