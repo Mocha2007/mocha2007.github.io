@@ -592,14 +592,16 @@ const data = {
 		],
 	},
 	MOA: [
-		'nasal',
+		// sorted by sonority
+		// http://linguistics.berkeley.edu/~hsande/documents/BLS2020.pdf
 		'plosive',
-		'implosive',
 		'affricate',
 		'fricative',
-		'approximant',
+		'implosive',
+		'nasal',
 		'trill',
 		'tap',
+		'approximant',
 	],
 	morphology: {
 		derivational: [
