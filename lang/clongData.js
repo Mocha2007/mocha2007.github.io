@@ -1585,6 +1585,17 @@ const phones = [
 			implications: ['m'], // 97%
 		},
 	},
+	{
+		name: 'ə',
+		properties: {
+			isVowel: true,
+			freq: 675/3183,
+			backness: 'central',
+			openness: 'mid',
+			rounding: false,
+			implications: ['m', 'k'], // 98%, 95%
+		},
+	},
 ];
 
 const wordLists = {
