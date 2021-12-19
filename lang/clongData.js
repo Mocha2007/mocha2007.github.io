@@ -594,6 +594,7 @@ const data = {
 	MOA: [
 		'nasal',
 		'plosive',
+		'implosive',
 		'affricate',
 		'fricative',
 		'approximant',
@@ -621,6 +622,7 @@ const data = {
 		'dental',
 		'alveolar',
 		'postalveolar',
+		'retroflex',
 		'palatal',
 		'velar',
 		'labiovelar',
@@ -787,6 +789,37 @@ const phones = [
 		},
 	},
 	{
+		name: 'ᵐb',
+		properties: {
+			manner: 'plosive',
+			place: 'bilabial',
+			voiced: true,
+			freq: 292/3183,
+			prenasalized: true,
+			implications: ['a', 'm', 'i'], // 97%, 97%, 96%
+		},
+	},
+	{
+		name: 'β',
+		properties: {
+			manner: 'fricative',
+			place: 'bilabial',
+			voiced: true,
+			freq: 306/3183,
+			implications: ['m', 'i'], // 98%, 96%
+		},
+	},
+	{
+		name: 'ɓ',
+		properties: {
+			manner: 'implosive',
+			place: 'bilabial',
+			voiced: true,
+			freq: 300/3183,
+			implications: ['m', 'a', 'j', 'k', 'w'], // 98%, 97%, 96%, 96%, 96%
+		},
+	},
+	{
 		name: 'c',
 		properties: {
 			manner: 'plosive',
@@ -804,6 +837,47 @@ const phones = [
 			voiced: true,
 			freq: 1376/3183,
 			implications: ['b', 'm', 'i'], // 97%, 96%, 95%
+		},
+	},
+	{
+		name: 'ⁿd',
+		properties: {
+			manner: 'plosive',
+			place: 'alveolar',
+			voiced: true,
+			freq: 270/3183,
+			prenasalized: true,
+			implications: ['m', 'n', 'a', 'ᵐb', 'i', 'k'], // >95%
+		},
+	},
+	{
+		name: 'ɖ',
+		properties: {
+			manner: 'plosive',
+			place: 'retroflex',
+			voiced: true,
+			freq: 257/3183,
+			implications: ['m', 'b', 'g', 'j'], // >95%
+		},
+	},
+	{
+		name: 'ɗ',
+		properties: {
+			manner: 'implosive',
+			place: 'alveolar',
+			voiced: true,
+			freq: 248/3183,
+			implications: ['m', 'k', 'w', 'n', 'j', 'a'], // >95%
+		},
+	},
+	{
+		name: 'dz',
+		properties: {
+			manner: 'affricate',
+			place: 'alveolar',
+			voiced: true,
+			freq: 312/3183,
+			implications: ['m', 'b', 'g'], // 98%, 98%, 96%
 		},
 	},
 	{
@@ -881,6 +955,48 @@ const phones = [
 		},
 	},
 	{
+		name: 'ᵑg', // ŋɡ
+		properties: {
+			manner: 'plosive',
+			place: 'velar',
+			voiced: true,
+			freq: 268/3183,
+			prenasalized: true,
+			implications: ['a', 'ᵐb', 'm', 'i', 'k'], // >95%
+		},
+	},
+	{
+		name: 'gʷ', // ɡʷ
+		properties: {
+			manner: 'plosive',
+			place: 'velar',
+			voiced: true,
+			freq: 190/3183,
+			labialized: true,
+			// no implications
+		},
+	},
+	{
+		name: 'gb', // ɡb
+		properties: {
+			manner: 'plosive',
+			place: 'labiovelar',
+			voiced: true,
+			freq: 374/3183,
+			implications: ['b', 'i', 'u', 'w', 'k', 'm', 'a', 'j'], // 98%, 98%, 98%, 98%, 97%, 97%, 96%, 96%
+		},
+	},
+	{
+		name: 'ɣ',
+		properties: {
+			manner: 'fricative',
+			place: 'velar',
+			voiced: true,
+			freq: 436/3183,
+			implications: ['m'], // 98%
+		},
+	},
+	{
 		name: 'h',
 		properties: {
 			manner: 'approximant',
@@ -946,6 +1062,16 @@ const phones = [
 		},
 	},
 	{
+		name: 'ɟ',
+		properties: {
+			manner: 'plosive',
+			place: 'palatal',
+			voiced: true,
+			freq: 368/3183,
+			implications: ['b', 'i', 'k', 'm'], // 97%, 96%, 96%, 95%
+		},
+	},
+	{
 		name: 'k',
 		properties: {
 			manner: 'plosive',
@@ -967,6 +1093,38 @@ const phones = [
 		},
 	},
 	{
+		name: 'kʷ',
+		properties: {
+			manner: 'plosive',
+			place: 'velar',
+			voiced: false,
+			freq: 372/3183,
+			labialized: true,
+			implications: ['k'], // 97%
+		},
+	},
+	{
+		name: 'kʼ',
+		properties: {
+			manner: 'plosive',
+			place: 'velar',
+			voiced: false,
+			freq: 242/3183,
+			ejective: true,
+			implications: ['j', 'm'], // 96%, 95%
+		},
+	},
+	{
+		name: 'kp',
+		properties: {
+			manner: 'plosive',
+			place: 'labiovelar',
+			voiced: false,
+			freq: 373/3183,
+			implications: ['w', 'i', 'u', 'k', 'j', 'm', 'b', 'a'], // 99%, 98%, 98%, 97%, 96%, 96%, 96%, 96%
+		},
+	},
+	{
 		name: 'l',
 		properties: {
 			manner: 'approximant',
@@ -975,6 +1133,17 @@ const phones = [
 			lateral: true,
 			freq: 2044/3183,
 			implications: ['m', 'i', 'n'], // 99%, 95%, 95%
+		},
+	},
+	{
+		name: 'ɭ',
+		properties: {
+			manner: 'approximant',
+			place: 'retroflex',
+			voiced: true,
+			lateral: true,
+			freq: 359/3183,
+			implications: ['m', 'j', 'i', 'u', 'l', 'a', 'w', 'ŋ', 'n'], // ~100%, 99%, 99%, 98%, 97%, 96%, 96%, 96%, 95%
 		},
 	},
 	{
@@ -1015,6 +1184,16 @@ const phones = [
 			voiced: true,
 			freq: 1255/3183,
 			implications: ['m', 'i', 'k'], // 99%, 97%, 97%
+		},
+	},
+	{
+		name: 'ɳ',
+		properties: {
+			manner: 'nasal',
+			place: 'retroflex',
+			voiced: true,
+			freq: 399/3183,
+			implications: ['m', 'j', 'l', 'i', 'u', 'a', 'w', 'ŋ'], // ~100%, 99%, 98%, 98%, 97%, 97%, 96%, 95%
 		},
 	},
 	{
@@ -1095,6 +1274,17 @@ const phones = [
 		},
 	},
 	{
+		name: 'pʼ',
+		properties: {
+			manner: 'plosive',
+			place: 'bilabial',
+			voiced: false,
+			freq: 178/3183,
+			ejective: true,
+			implications: ['j'], // 96%
+		},
+	},
+	{
 		name: 'q',
 		properties: {
 			manner: 'plosive',
@@ -1122,6 +1312,26 @@ const phones = [
 			voiced: true,
 			freq: 774/3183,
 			implications: ['i', 'k'], // 96%, 95%
+		},
+	},
+	{
+		name: 'ɻ',
+		properties: {
+			manner: 'approximant',
+			place: 'retroflex',
+			voiced: true,
+			freq: 306/3183,
+			implications: ['m', 'j', 'w', 'a', 'i', 'n', 'ŋ', 'u', 'l'], // 100%, 100%, 100%, 99%, 99%, 98%, 98%, 98%, 96%
+		},
+	},
+	{
+		name: 'ɽ',
+		properties: {
+			manner: 'flap',
+			place: 'retroflex',
+			voiced: true,
+			freq: 179/3183,
+			implications: ['m'], // 99%
 		},
 	},
 	{
@@ -1155,6 +1365,16 @@ const phones = [
 		},
 	},
 	{
+		name: 'ʂ',
+		properties: {
+			manner: 'fricative',
+			place: 'retroflex',
+			voiced: false,
+			freq: 198/3183,
+			implications: ['m', 'p'], // 99%, 95%
+		},
+	},
+	{
 		name: 't',
 		properties: {
 			manner: 'plosive',
@@ -1162,6 +1382,17 @@ const phones = [
 			voiced: false,
 			freq: 2064/3183,
 			implications: ['k', 'm', 'n', 'i'], // 98%, 97%, 96%, 96%
+		},
+	},
+	{
+		name: 'tʰ',
+		properties: {
+			manner: 'plosive',
+			place: 'alveolar',
+			voiced: false,
+			freq: 403/3183,
+			aspirated: true,
+			implications: ['m', 'n'], // 98%, 97%
 		},
 	},
 	{
@@ -1175,6 +1406,17 @@ const phones = [
 		},
 	},
 	{
+		name: 'tsʰ',
+		properties: {
+			manner: 'affricate',
+			place: 'alveolar',
+			voiced: false,
+			freq: 195/3183,
+			aspirated: true,
+			implications: ['m', 's', 'kʰ'], // 99%, 97%, 95%
+		},
+	},
+	{
 		name: 't̠ʃ',
 		properties: {
 			manner: 'affricate',
@@ -1182,6 +1424,38 @@ const phones = [
 			voiced: false,
 			freq: 1218/3183,
 			implications: ['m', 'k'], // 97%, 97%
+		},
+	},
+	{
+		name: 't̠ʃʰ',
+		properties: {
+			manner: 'affricate',
+			place: 'postalveolar',
+			voiced: false,
+			freq: 229/3183,
+			aspirated: true,
+			implications: ['m', 'kʰ', 'j'], // >95%
+		},
+	},
+	{
+		name: 't̠ʃʼ',
+		properties: {
+			manner: 'affricate',
+			place: 'postalveolar',
+			voiced: false,
+			freq: 184/3183,
+			ejective: true,
+			implications: ['m', 'kʼ', 'j'], // >95%
+		},
+	},
+	{
+		name: 'ʈ',
+		properties: {
+			manner: 'plosive',
+			place: 'retroflex',
+			voiced: false,
+			freq: 481/3183,
+			implications: ['m', 'k', 'p', 'i', 'j', 'u', 'l'], // ~100%, ~100%, 99%, 98%, 98%, 97%, 96%
 		},
 	},
 	{
@@ -1259,6 +1533,16 @@ const phones = [
 		},
 	},
 	{
+		name: 'χ',
+		properties: {
+			manner: 'fricative',
+			place: 'uvular',
+			voiced: false,
+			freq: 213/3183,
+			implications: ['m'], // 97%
+		},
+	},
+	{
 		name: 'y',
 		properties: {
 			isVowel: true,
@@ -1277,6 +1561,16 @@ const phones = [
 			voiced: true,
 			freq: 893/3183,
 			implications: ['s', 'm'], // 99%, 98%
+		},
+	},
+	{
+		name: 'ʒ',
+		properties: {
+			manner: 'fricative',
+			place: 'postalveolar',
+			voiced: true,
+			freq: 478/3183,
+			implications: ['m', 'j'], // 99%, 95%
 		},
 	},
 	{
