@@ -88,144 +88,237 @@ const data = {
 		vowel: x => x.properties.isVowel,
 	},
 	implications: {
-		/** these are all pass/fail. if it fails, it's rerolled.
-		 * @type {((x: Phone[]) => boolean)[]}
-		 */
+		/** these are all pass/fail. if it fails, it's rerolled. */
 		phonology: [
-			// https://typo.uni-konstanz.de/rara/universals-archive/224/
-			phonology => phonology.some(phone => phone.properties.place === 'labial')
-				&& phonology.some(phone => phone.properties.place === 'alveolar')
-				? phonology.some(phone => phone.properties.place === 'nasal')
-					&& phonology.some(phone => phone.properties.place === 'plosive')
-				: true,
-			// https://typo.uni-konstanz.de/rara/universals-archive/284/
-			phonology => phonology.some(phone => phone.properties.place === 'postalveolar')
-				? phonology.some(phone => phone.properties.place === 'alveolar')
-				: true,
-			// https://typo.uni-konstanz.de/rara/universals-archive/290/
-			phonology => phonology.some(phone => phone.properties.aspirated)
-				? phonology.some(phone => phone.name === 'h')
-				: true,
-			// https://typo.uni-konstanz.de/rara/universals-archive/489/
-			phonology => phonology.some(phone => phone.properties.long && phone.properties.manner === 'fricative')
-				? phonology.some(phone => phone.properties.long && phone.properties.manner === 'stop')
-					? phonology.some(phone => phone.properties.long && phone.properties.manner === 'affricate')
-					: false
-				: phonology.some(phone => phone.properties.long && phone.properties.manner === 'stop')
-					? phonology.some(phone => phone.properties.long && phone.properties.manner === 'affricate')
+			{
+				name: 'UA224',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/224/',
+				implication: phonology => phonology.some(phone => phone.properties.place === 'labial')
+					&& phonology.some(phone => phone.properties.place === 'alveolar')
+					? phonology.some(phone => phone.properties.place === 'nasal')
+						&& phonology.some(phone => phone.properties.place === 'plosive')
 					: true,
-			// https://typo.uni-konstanz.de/rara/universals-archive/706/
-			phonology => phonology.filter(phone => phone.properties.backness === 'central').length
-				<= Math.max(phonology.filter(phone => phone.properties.backness === 'front').length,
-					phonology.filter(phone => phone.properties.backness === 'back').length),
-			// https://typo.uni-konstanz.de/rara/universals-archive/707/
-			phonology => {
-				const v = phonology.filter(data.filters.vowel);
-				const fronts = new Set(v.filter(data.filters.front)
-					.map(phone => phone.properties.openness)).size;
-				const backs = new Set(v.filter(data.filters.back)
-					.map(phone => phone.properties.openness)).size;
-				return backs <= fronts;
 			},
-			// https://typo.uni-konstanz.de/rara/universals-archive/777/
-			phonology => {
-				const fricatives = phonology.filter(data.filters.fricative);
-				const secondary = fricatives.filter(data.filters.secondary).length;
-				return 2*secondary <= fricatives.length;
+			{
+				name: 'UA283',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/284/',
+				implication: phonology => phonology.some(phone => phone.properties.place === 'postalveolar')
+					? phonology.some(phone => phone.properties.place === 'alveolar')
+					: true,
 			},
-			// https://typo.uni-konstanz.de/rara/universals-archive/780/
-			phonology => 3 <= phonology.filter(phone => phone.properties.manner === 'plosive').length,
-			// https://typo.uni-konstanz.de/rara/universals-archive/781/
-			phonology => phonology.filter(phone => phone.properties.manner === 'plosive').length === 3
-				? phonology.filter(phone => 'ptk'.includes(phone.name)).length === 3
-				: true,
-			// https://typo.uni-konstanz.de/rara/universals-archive/782/
-			phonology => phonology.some(phone => phone.properties.manner === 'affricate')
-				? 3 <= phonology.filter(phone => phone.properties.manner === 'plosive').length
-				: true,
-			// https://typo.uni-konstanz.de/rara/universals-archive/783/ ; https://typo.uni-konstanz.de/rara/universals-archive/882/
-			phonology => phonology.filter(phone => phone.properties.manner === 'affricate').length === 1
-				? phonology.find(phone => phone.properties.manner === 'affricate').properties.place === 'postalveolar'
-				: true,
-			// https://typo.uni-konstanz.de/rara/universals-archive/793/
-			phonology => {
-				const primaryNasals = phonology.filter(data.filters.nasal)
-					.filter(data.filters.primary).length;
-				const obstruents = phonology.filter(data.filters.obstruent).length;
-				return primaryNasals <= obstruents;
+			{
+				name: 'UA289',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/290/',
+				implication: phonology => phonology.some(phone => phone.properties.aspirated)
+					? phonology.some(phone => phone.name === 'h')
+					: true,
 			},
-			// https://typo.uni-konstanz.de/rara/universals-archive/797/
-			phonology => data.MOA.filter(m =>
-				phonology.filter(phone => phone.properties.manner === m).length === 1) // filter out only MOAs with ONE phoneme
-				.every(m => phonology.find(phone => phone.properties.manner === m).properties.place === 'alveolar'), // make sure all of them are alveolar
-			// https://typo.uni-konstanz.de/rara/universals-archive/798/
-			phonology => {
-				const obstruents = phonology.filter(data.filters.obstruent);
-				const voiced = obstruents.filter(data.filters.voiced).length;
-				return 2*voiced <= obstruents.length;
+			{
+				name: 'UA487',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/489/',
+				implication: phonology => phonology.some(phone => phone.properties.long && phone.properties.manner === 'fricative')
+					? phonology.some(phone => phone.properties.long && phone.properties.manner === 'stop')
+						? phonology.some(phone => phone.properties.long && phone.properties.manner === 'affricate')
+						: false
+					: phonology.some(phone => phone.properties.long && phone.properties.manner === 'stop')
+						? phonology.some(phone => phone.properties.long && phone.properties.manner === 'affricate')
+						: true,
 			},
-			// https://typo.uni-konstanz.de/rara/universals-archive/834/
-			phonology => {
-				const liquids = phonology.filter(data.filters.liquid);
-				if (liquids.length < 2)
+			{
+				name: 'UA703',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/706/',
+				implication: phonology => phonology.filter(phone => phone.properties.backness === 'central').length
+					<= Math.max(phonology.filter(phone => phone.properties.backness === 'front').length,
+						phonology.filter(phone => phone.properties.backness === 'back').length),
+			},
+			{
+				name: 'UA704',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/707/',
+				implication: phonology => {
+					const v = phonology.filter(data.filters.vowel);
+					const fronts = new Set(v.filter(data.filters.front)
+						.map(phone => phone.properties.openness)).size;
+					const backs = new Set(v.filter(data.filters.back)
+						.map(phone => phone.properties.openness)).size;
+					return backs <= fronts;
+				},
+			},
+			{
+				name: 'UA774',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/777/',
+				implication: phonology => {
+					const fricatives = phonology.filter(data.filters.fricative);
+					const secondary = fricatives.filter(data.filters.secondary).length;
+					return 2*secondary <= fricatives.length;
+				},
+			},
+			{
+				name: 'UA777',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/780/',
+				implication: phonology => 3 <= phonology.filter(phone => phone.properties.manner === 'plosive').length,
+			},
+			{
+				name: 'UA778',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/781/',
+				implication: phonology => phonology.filter(phone => phone.properties.manner === 'plosive').length === 3
+					? phonology.filter(phone => 'ptk'.includes(phone.name)).length === 3
+					: true,
+			},
+			{
+				name: 'UA779',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/782/',
+				implication: phonology => phonology.some(phone => phone.properties.manner === 'affricate')
+					? 3 <= phonology.filter(phone => phone.properties.manner === 'plosive').length
+					: true,
+			},
+			{
+				name: 'UA780',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/783/ ; https://typo.uni-konstanz.de/rara/universals-archive/882/',
+				implication: phonology => phonology.filter(phone => phone.properties.manner === 'affricate').length === 1
+					? phonology.find(phone => phone.properties.manner === 'affricate').properties.place === 'postalveolar'
+					: true,
+			},
+			{
+				name: 'UA790',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/793/',
+				implication: phonology => {
+					const primaryNasals = phonology.filter(data.filters.nasal)
+						.filter(data.filters.primary).length;
+					const obstruents = phonology.filter(data.filters.obstruent).length;
+					return primaryNasals <= obstruents;
+				},
+			},
+			{
+				name: 'UA794',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/797/',
+				implication: phonology => data.MOA.filter(m =>
+					// filter out only MOAs with ONE phoneme
+					phonology.filter(phone => phone.properties.manner === m).length === 1)
+					// make sure all of them are alveolar
+					.every(m => phonology.find(phone => phone.properties.manner === m).properties.place === 'alveolar'),
+			},
+			{
+				name: 'UA795',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/798/',
+				implication: phonology => {
+					const obstruents = phonology.filter(data.filters.obstruent);
+					const voiced = obstruents.filter(data.filters.voiced).length;
+					return 2*voiced <= obstruents.length;
+				},
+			},
+			{
+				name: 'UA831',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/834/',
+				implication: phonology => {
+					const liquids = phonology.filter(data.filters.liquid);
+					if (liquids.length < 2)
+						return true;
+					return liquids.some(phone => !phone.properties.lateral)
+						? liquids.some(phone => phone.properties.lateral)
+						: true;
+				},
+			},
+			{
+				name: 'UA832',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/835/',
+				implication: phonology => phonology.some(phone => phone.properties.lateral)
+					? phonology.some(phone => phone.properties.voiced
+						&& phone.properties.lateral
+						&& phone.properties.manner === 'approximant')
+					: true,
+			},
+			{
+				name: 'UA833',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/836/',
+				implication: phonology => {
+					const laterals = phonology.filter(phone => phone.properties.lateral);
+					if (laterals.length < 3)
+						return true;
+					const manners = new Set(laterals.map(phone => phone.properties.manner)).size;
+					const voices = new Set(laterals.map(phone => phone.properties.voiced)).size;
+					return 1 < manners ^ 1 < voices;
+				},
+			},
+			{
+				name: 'UA882',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/885/',
+				implication: phonology => {
+					const v = phonology.filter(data.filters.vowel);
+					const maxBackVowelHeight = Math.min(v.filter(data.filters.back)
+						.map(phone => data.vowels.dy.indexOf(phone.properties.openness)));
+					const maxFrontVowelHeight = Math.min(v.filter(data.filters.front)
+						.map(phone => data.vowels.dy.indexOf(phone.properties.openness)));
+					// lower = higher
+					return maxFrontVowelHeight <= maxBackVowelHeight;
+				},
+			},
+			{
+				name: 'UA885',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/888/',
+				implication: phonology => phonology.some(phone => phone.properties.backness === 'front' && phone.properties.rounding)
+					? phonology.some(phone => phone.properties.backness === 'back' && phone.properties.rounding)
+					: true,
+			},
+			{
+				name: 'UA886',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/889/',
+				implication: phonology => phonology.some(phone => phone.properties.backness === 'back' && !phone.properties.rounding)
+					? phonology.some(phone => phone.properties.backness === 'front' && !phone.properties.rounding)
+					: true,
+			},
+			{
+				name: 'UA920',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/923/',
+				// interpreted as "all languages have a voiceless labial"
+				implication: phonology => phonology.some(phone => !phone.properties.isVowel
+					&& !phone.properties.voiced && phone.properties.place.includes('labi')),
+			},
+			{
+				name: 'UA1010',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/1014/',
+				implication: phonology => {
+					const labial = phonology.filter(phone => !phone.properties.isVowel && phone.properties.place.includes('labi'));
+					const alveolar = phonology.filter(phone => phone.properties.place === 'alveolar');
+					const velar = phonology.filter(phone => !phone.properties.isVowel && phone.properties.place.includes('velar'));
+					return labial <= alveolar && velar <= alveolar;
+				},
+			},
+			{
+				name: 'UA1327',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/1331/',
+				implication: phonology => 1 < phonology
+					.filter(phone => phone.properties.isVowel).length,
+			},
+			{
+				name: 'UA1331',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/1335/',
+				// this is not quite the same as 780 but it is similar
+				implication: phonology => 2 <= new Set(phonology.filter(phone => phone.properties.manner === 'plosive').map(phone => phone.properties.place)).size,
+			},
+			{
+				name: 'UA1604',
+				url: 'https://typo.uni-konstanz.de/rara/universals-archive/1608/',
+				// this is not quite the same as 780 but it is similar
+				implication: phonology => phonology.some(phone => phone.properties.isVowel && phone.properties.nasal && phone.properties.backness === 'front')
+					? phonology.some(phone => phone.properties.isVowel && phone.properties.nasal && phone.properties.backness === 'back')
+					: true,
+			},
+			{
+				name: 'MOCHA1',
+				url: 'based on PHOIBLE data',
+				// no /k/ -> /b d g/
+				// no /p/ -> /b g/
+				implication: phonology => {
+					if (phonology.findIndex(p => p.name === 'k') === -1)
+						return -1 < phonology.findIndex(p => p.name === 'b')
+							&& -1 < phonology.findIndex(p => p.name === 'd')
+							&& -1 < phonology.findIndex(p => p.name === 'g');
+					if (phonology.findIndex(p => p.name === 'p') === -1)
+						return -1 < phonology.findIndex(p => p.name === 'b')
+							&& -1 < phonology.findIndex(p => p.name === 'g');
 					return true;
-				return liquids.some(phone => !phone.properties.lateral)
-					? liquids.some(phone => phone.properties.lateral)
-					: true;
+				},
 			},
-			// https://typo.uni-konstanz.de/rara/universals-archive/835/
-			phonology => phonology.some(phone => phone.properties.lateral)
-				? phonology.some(phone => phone.properties.voiced
-					&& phone.properties.lateral
-					&& phone.properties.manner === 'approximant')
-				: true,
-			// https://typo.uni-konstanz.de/rara/universals-archive/836/
-			phonology => {
-				const laterals = phonology.filter(phone => phone.properties.lateral);
-				if (laterals.length < 3)
-					return true;
-				const manners = new Set(laterals.map(phone => phone.properties.manner)).size;
-				const voices = new Set(laterals.map(phone => phone.properties.voiced)).size;
-				return 1 < manners ^ 1 < voices;
-			},
-			// https://typo.uni-konstanz.de/rara/universals-archive/885/
-			phonology => {
-				const v = phonology.filter(data.filters.vowel);
-				const maxBackVowelHeight = Math.min(v.filter(data.filters.back)
-					.map(phone => data.vowels.dy.indexOf(phone.properties.openness)));
-				const maxFrontVowelHeight = Math.min(v.filter(data.filters.front)
-					.map(phone => data.vowels.dy.indexOf(phone.properties.openness)));
-				// lower = higher
-				return maxFrontVowelHeight <= maxBackVowelHeight;
-			},
-			// https://typo.uni-konstanz.de/rara/universals-archive/888/
-			phonology => phonology.some(phone => phone.properties.backness === 'front' && phone.properties.rounding)
-				? phonology.some(phone => phone.properties.backness === 'back' && phone.properties.rounding)
-				: true,
-			// https://typo.uni-konstanz.de/rara/universals-archive/889/
-			phonology => phonology.some(phone => phone.properties.backness === 'back' && !phone.properties.rounding)
-				? phonology.some(phone => phone.properties.backness === 'front' && !phone.properties.rounding)
-				: true,
-			// https://typo.uni-konstanz.de/rara/universals-archive/923/
-			// interpreted as "all languages have a voiceless labial"
-			phonology => phonology.some(phone => !phone.properties.isVowel
-				&& !phone.properties.voiced && phone.properties.place.includes('labi')),
-			// https://typo.uni-konstanz.de/rara/universals-archive/1014/
-			phonology => {
-				const labial = phonology.filter(phone => !phone.properties.isVowel && phone.properties.place.includes('labi'));
-				const alveolar = phonology.filter(phone => phone.properties.place === 'alveolar');
-				const velar = phonology.filter(phone => !phone.properties.isVowel && phone.properties.place.includes('velar'));
-				return labial <= alveolar && velar <= alveolar;
-			},
-			// https://typo.uni-konstanz.de/rara/universals-archive/1331/
-			phonology => 1 < phonology.filter(phone => phone.properties.isVowel).length,
-			// https://typo.uni-konstanz.de/rara/universals-archive/1335/
-			// this is not quite the same as 780 but it is similar
-			phonology => 2 <= new Set(phonology.filter(phone => phone.properties.manner === 'plosive').map(phone => phone.properties.place)).size,
-			// https://typo.uni-konstanz.de/rara/universals-archive/1608/
-			phonology => phonology.some(phone => phone.properties.isVowel && phone.properties.nasal && phone.properties.backness === 'front')
-				? phonology.some(phone => phone.properties.isVowel && phone.properties.nasal && phone.properties.backness === 'back')
-				: true,
 			// todo later on when more advanced fxs are available:
 			// NOT UNIVERSAL; IGNORE: obstruent voiced/unvoiced counterpart https://typo.uni-konstanz.de/rara/universals-archive/799/
 			// rhotic https://typo.uni-konstanz.de/rara/universals-archive/837/

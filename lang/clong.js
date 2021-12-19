@@ -61,10 +61,12 @@ class Phoneme {
 		}
 		// pass/fail implications...
 		for (const i in data.implications.phonology){
-			const implication = data.implications.phonology[i];
+			const implication = data.implications.phonology[i].implication;
 			if (!implication(attempt)){
 				// restart
-				console.log(`PHONOLOGY FAILED IMPLICATION ${i}, REGEN...`);
+				const name = data.implications.phonology[i].name;
+				const url = data.implications.phonology[i].url;
+				console.log(`PHONOLOGY FAILED IMPLICATION ${name} (${url}), REGEN...`);
 				return Phoneme.generatePhonology();
 			}
 		}
