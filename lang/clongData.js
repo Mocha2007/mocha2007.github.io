@@ -182,7 +182,7 @@ const data = {
 				name: 'UA780',
 				url: 'https://typo.uni-konstanz.de/rara/universals-archive/783/ ; https://typo.uni-konstanz.de/rara/universals-archive/882/',
 				implication: phonology => phonology.filter(phone => phone.properties.manner === 'affricate').length === 1
-					? phonology.find(phone => phone.properties.manner === 'affricate').properties.place === 'postalveolar'
+					? phonology.find(phone => phone.properties.manner === 'affricate').properties.place.includes('alveo')
 					: true,
 			},
 			{
