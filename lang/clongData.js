@@ -246,6 +246,7 @@ const data = {
 					return 1 < manners ^ 1 < voices;
 				},
 			},
+			/* causes tons of issues
 			{
 				name: 'UA882',
 				url: 'https://typo.uni-konstanz.de/rara/universals-archive/885/',
@@ -259,6 +260,7 @@ const data = {
 					return maxFrontVowelHeight <= maxBackVowelHeight;
 				},
 			},
+			*/
 			{
 				name: 'UA885',
 				url: 'https://typo.uni-konstanz.de/rara/universals-archive/888/',
