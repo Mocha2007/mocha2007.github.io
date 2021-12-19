@@ -768,7 +768,7 @@ const phones = [
 			place: 'bilabial',
 			voiced: true,
 			freq: 1906/3183,
-			implications: ['m'],
+			implications: ['m'], // 96%
 		},
 	},
 	{
@@ -778,7 +778,7 @@ const phones = [
 			place: 'palatal',
 			voiced: false,
 			freq: 418/3183,
-			implications: ['j', 'k', 't'],
+			implications: ['j', 'k'], // 94%, 97%
 		},
 	},
 	{
@@ -788,7 +788,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: true,
 			freq: 1376/3183,
-			implications: ['n'],
+			implications: ['n'], // 94%
 		},
 	},
 	{
@@ -798,7 +798,6 @@ const phones = [
 			place: 'dental',
 			voiced: true,
 			freq: 160/3183,
-			// todo implications
 		},
 	},
 	{
@@ -808,7 +807,7 @@ const phones = [
 			place: 'postalveolar',
 			voiced: true,
 			freq: 820/3183,
-			implications: ['j', 'g', 'd'], // guess. todo: verify
+			implications: ['j', 'g'], // 92%, 93%
 		},
 	},
 	{
@@ -829,7 +828,7 @@ const phones = [
 			backness: 'front',
 			openness: 'open-mid',
 			rounding: false,
-			implications: ['e'],
+			// implications: ['e'],
 		},
 	},
 	{
@@ -848,7 +847,7 @@ const phones = [
 			place: 'velar',
 			voiced: true,
 			freq: 1712/3183,
-			implications: ['b'],
+			implications: ['b'], // 96%
 		},
 	},
 	{
@@ -858,7 +857,7 @@ const phones = [
 			place: 'glottal',
 			voiced: false,
 			freq: 1703/3183,
-			implications: ['k'],
+			implications: ['k'], // 94%
 		},
 	},
 	{
@@ -879,7 +878,7 @@ const phones = [
 			backness: 'central',
 			openness: 'close',
 			rounding: false,
-			// todo implications
+			implications: ['i', 'a'], // 97%, 93%
 		},
 	},
 	{
@@ -890,7 +889,7 @@ const phones = [
 			backness: 'near-front',
 			openness: 'near-close',
 			rounding: false,
-			implications: ['i', 'e'],
+			implications: ['a'], // 90%
 		},
 	},
 	{
@@ -919,7 +918,7 @@ const phones = [
 			voiced: true,
 			lateral: true,
 			freq: 2044/3183,
-			implications: ['n'],
+			implications: ['n'], // 95%
 		},
 	},
 	{
@@ -938,7 +937,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: true,
 			freq: 2349/3183,
-			implications: ['m'],
+			implications: ['m', 'k'], // 99%, 93%
 		},
 	},
 	{
@@ -948,7 +947,7 @@ const phones = [
 			place: 'velar',
 			voiced: true,
 			freq: 1897/3183,
-			implications: ['m', 'k'],
+			implications: ['m', 'k'], // ~100%, 93%
 		},
 	},
 	{
@@ -958,7 +957,7 @@ const phones = [
 			place: 'palatal',
 			voiced: true,
 			freq: 1255/3183,
-			implications: ['n', 'j'],
+			implications: ['n', 'j'], // 93%, 92%
 		},
 	},
 	{
@@ -979,7 +978,7 @@ const phones = [
 			backness: 'back',
 			openness: 'open-mid',
 			rounding: true,
-			implications: ['o'],
+			// implications: ['o'],
 		},
 	},
 	{
@@ -990,7 +989,7 @@ const phones = [
 			backness: 'front',
 			openness: 'mid',
 			rounding: true,
-			implications: ['e', 'o'],
+			implications: ['m'], // 100%
 		},
 	},
 	{
@@ -1001,7 +1000,7 @@ const phones = [
 			backness: 'front',
 			openness: 'open-mid',
 			rounding: true,
-			implications: ['ɛ', 'ɔ', 'ø'],
+			implications: ['m'], // 100%
 		},
 	},
 	{
@@ -1011,7 +1010,7 @@ const phones = [
 			place: 'bilabial',
 			voiced: false,
 			freq: 2594/3183,
-			implications: ['k'],
+			implications: ['k'], // 98%
 		},
 	},
 	{
@@ -1021,7 +1020,7 @@ const phones = [
 			place: 'uvular',
 			voiced: false,
 			freq: 256/3183,
-			implications: ['h', 'k', 'x'],
+			implications: ['k'], // 93%
 		},
 	},
 	{
@@ -1031,7 +1030,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: true,
 			freq: 1332/3183,
-			implications: ['n'],
+			implications: ['n', 'l'], // 94%, 91%
 		},
 	},
 	{
@@ -1041,7 +1040,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: true,
 			freq: 774/3183,
-			// todo implications
+			implications: ['n'], // 91%
 		},
 	},
 	{
@@ -1051,7 +1050,7 @@ const phones = [
 			place: 'uvular',
 			voiced: true,
 			freq: 19/3183,
-			// todo implications
+			implications: ['m'], // 100%
 		},
 	},
 	{
@@ -1070,7 +1069,7 @@ const phones = [
 			place: 'postalveolar',
 			voiced: false,
 			freq: 1104/3183,
-			implications: ['j', 's'], // guess. todo: verify
+			implications: ['j'], // 94%
 		},
 	},
 	{
@@ -1080,7 +1079,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: false,
 			freq: 2064/3183,
-			implications: ['k'],
+			implications: ['k', 'n'], // 98%, 96%
 		},
 	},
 	{
@@ -1090,7 +1089,7 @@ const phones = [
 			place: 'postalveolar',
 			voiced: false,
 			freq: 1218/3183,
-			implications: ['j', 'k', 't'], // guess. todo: verify
+			implications: ['k', 'j'], // 97%, 92%
 		},
 	},
 	{
@@ -1100,7 +1099,6 @@ const phones = [
 			place: 'dental',
 			voiced: false,
 			freq: 123/3183,
-			// todo implications
 		},
 	},
 	{
@@ -1121,7 +1119,7 @@ const phones = [
 			backness: 'near-back',
 			openness: 'near-close',
 			rounding: true,
-			implications: ['u', 'o'],
+			// implications: ['u', 'o'],
 		},
 	},
 	{
@@ -1131,7 +1129,7 @@ const phones = [
 			place: 'labiodental',
 			voiced: true,
 			freq: 816/3183,
-			implications: ['b', 'f'],
+			implications: ['m', 'f'], // 98%, 91%
 		},
 	},
 	{
@@ -1141,7 +1139,7 @@ const phones = [
 			place: 'labiovelar',
 			voiced: true,
 			freq: 2483/3183,
-			implications: ['j'],
+			implications: ['j'], // 96%
 		},
 	},
 	{
@@ -1151,7 +1149,7 @@ const phones = [
 			place: 'velar',
 			voiced: false,
 			freq: 576/3183,
-			implications: ['k'],
+			implications: ['k'], // 92%
 		},
 	},
 	{
@@ -1159,10 +1157,10 @@ const phones = [
 		properties: {
 			isVowel: true,
 			freq: 175/3183,
-			implications: ['i', 'u'],
 			backness: 'front',
 			openness: 'close',
 			rounding: true,
+			implications: ['i', 'u'], // 94%, 93%
 		},
 	},
 	{
@@ -1172,7 +1170,7 @@ const phones = [
 			place: 'alveolar',
 			voiced: true,
 			freq: 893/3183,
-			implications: ['s'],
+			implications: ['s', 'n'], // 99%, 93%
 		},
 	},
 	{
@@ -1182,7 +1180,7 @@ const phones = [
 			place: 'glottal',
 			voiced: false,
 			freq: 1131/3183,
-			implications: ['k'], // todo guess
+			implications: ['k'], // 90%
 		},
 	},
 ];
