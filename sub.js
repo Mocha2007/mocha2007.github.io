@@ -95,6 +95,7 @@ var subtitles =	[
 	'Drink me.',
 	'gib snuggu',
 	'insert dong',
+	'It is easier for a camel to find a needle in a haystack than one to simply enter Mordor.',
 	// furry
 	'Update Furrygram',
 	'MOW! MOW! MOW!',
