@@ -46,6 +46,7 @@ var subtitles =	[
 	'If eyes are round, then why is the image we see flat?',
 	// etc gaming
 	'The med curse is real',
+	'Hok-Seng Lau is innocent!',
 	// I was never satisfied with this one... 'contown retarded; gg maf',
 	'Certified Elf-Kosher',
 	'More struts and boosters than the leading brand!',
