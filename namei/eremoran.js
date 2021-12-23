@@ -278,7 +278,7 @@ function ereNum(x){
 		return `sesu ${ereNum(x-100)}`.replace(/ $/g, '');
 	const hundreds = Math.floor(x / 100);
 	const remainder = x % 100;
-	const hundredsWord = `${ereNum(hundreds)}sesu`;
+	const hundredsWord = `${ereNum(hundreds)}sesu`.replace(' ', 'sesu ');
 	const onesWord = ereNum(remainder);
 	return `${hundredsWord} ${onesWord}`.replace(/ $/g, '');
 }
