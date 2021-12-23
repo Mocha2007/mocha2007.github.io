@@ -1,6 +1,6 @@
 /* exported compileDict, compileFinals, compileInitials, compileLength,
 	compileMeanings, compileMedials, compileNounClass, EremoranTooltip,
-	computeStats */
+	computeStats, numberTool, autoUp */
 /* global random, range, round */
 
 'use strict';
@@ -206,29 +206,31 @@ const EremoranTooltip = {
 		// create triggers for words in eremoran class...
 		/** @type {HTMLElement[]} */
 		const eremoranTags = Array.from(document.getElementsByClassName('eremoran'));
-		eremoranTags.forEach(elem => {
-			if (elem.classList.contains('cs')) // ignore case-sensitive
-				return;
-			/** @type {string[]} */
-			const words = elem.innerHTML.split(' ');
-			elem.innerHTML = '';
-			words.forEach((word, i) => {
-				if (i){
-					const sp = document.createElement('span');
-					sp.innerHTML = ' ';
-					elem.appendChild(sp);
-				}
-				const span = document.createElement('ruby');
-				const rt = document.createElement('rt'); // ruby top
-				rt.innerHTML = word.toUpperCase();
-				const fixedword = word.toLowerCase();
-				span.innerHTML = fixedword.replace('f', 'h').replace('á', 'a').replace('é', 'e').replace('ó', 'o');
-				span.classList.add('eremoranWord');
-				span.onmouseover = () => this.showTooltip(fixedword, span);
-				span.onmouseout = () => this.clearTooltip();
-				elem.appendChild(span);
-				span.appendChild(rt);
-			});
+		eremoranTags.forEach(this.setupWord);
+	},
+	/** @param {HTMLElement} elem */
+	setupWord(elem){
+		if (elem.classList.contains('cs')) // ignore case-sensitive
+			return;
+		/** @type {string[]} */
+		const words = elem.innerHTML.split(' ');
+		elem.innerHTML = '';
+		words.forEach((word, i) => {
+			if (i){
+				const sp = document.createElement('span');
+				sp.innerHTML = ' ';
+				elem.appendChild(sp);
+			}
+			const span = document.createElement('ruby');
+			const rt = document.createElement('rt'); // ruby top
+			rt.innerHTML = word.toUpperCase();
+			const fixedword = word.toLowerCase();
+			span.innerHTML = fixedword.replace('f', 'h').replace('á', 'a').replace('é', 'e').replace('ó', 'o');
+			span.classList.add('eremoranWord');
+			span.onmouseover = () => EremoranTooltip.showTooltip(fixedword, span);
+			span.onmouseout = () => EremoranTooltip.clearTooltip();
+			elem.appendChild(span);
+			span.appendChild(rt);
 		});
 	},
 	/**
@@ -257,4 +259,66 @@ const EremoranTooltip = {
 
 function computeStats(){
 	document.getElementById('wordcount').innerHTML = EremoranTooltip.words.length;
+}
+
+/** @param {number} x */
+function ereNum(x){
+	if (x < 15)
+		return ereNum.first[x];
+	if (x < 80){
+		const fives = Math.floor(x / 5);
+		const remainder = x % 5;
+		const fivesWord = `${ereNum(fives).replace(/u$/g, '')}anu`;
+		const onesWord = ereNum.first[remainder];
+		return `${fivesWord} ${onesWord}`.replace(/ $/g, '');
+	}
+	if (x < 100)
+		return `kumkananu ${ereNum(x-75)}`;
+	if (x < 200)
+		return `sesu ${ereNum(x-100)}`.replace(/ $/g, '');
+	const hundreds = Math.floor(x / 100);
+	const remainder = x % 100;
+	const hundredsWord = `${ereNum(hundreds)}sesu`;
+	const onesWord = ereNum(remainder);
+	return `${hundredsWord} ${onesWord}`.replace(/ $/g, '');
+}
+ereNum.first = [
+	'',
+	'id',
+	'nasu',
+	'kumku',
+	'babzu',
+	'hanu',
+	'elmnu',
+	'klimu',
+	'triksu',
+	'talsu',
+	'nasanu',
+	'tanid',
+	'tanasu',
+	'tankumku',
+	'tambabzu',
+];
+
+function numberTool(){
+	/** @type {number} */
+	const input = document.getElementById('eremoranNumberInput').value;
+	/** @type {HTMLQuoteElement} */
+	const o = document.getElementById('eremoranNumberOutput');
+	// main
+	o.innerHTML = ereNum(input);
+	// recompute tooltips
+	EremoranTooltip.setupWord(o);
+}
+
+/** toggle eremoran number tool auto-up */
+function autoUp(){
+	autoUp.on = !autoUp.on;
+	if (autoUp.on)
+		autoUp.interval = setInterval(() => {
+			document.getElementById('eremoranNumberInput').value++;
+			numberTool();
+		}, 100);
+	else
+		clearInterval(autoUp.interval);
 }
