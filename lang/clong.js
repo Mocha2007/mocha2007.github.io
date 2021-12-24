@@ -598,6 +598,29 @@ class Language {
 				document.getElementById('language_name').appendChild(word.html);
 		});
 		div.appendChild(wordlist);
+		div.appendChild(document.createElement('br'));
+		div.appendChild(this.extraVocabHTML);
+		return div;
+	}
+	get extraVocabHTML(){
+		// generate MORE words
+		const div = document.createElement('div');
+		const ul = document.createElement('ul');
+		ul.id = 'extraWordList';
+		const button = document.createElement('span');
+		button.classList.add('button');
+		button.innerHTML = 'Drop and give me a hundred!';
+		button.onclick = () => {
+			ul.innerHTML = ''; // blank old list
+			range(100).forEach(() => {
+				const li = document.createElement('li');
+				li.appendChild(this.phonotactics.randomWord(this.phonology).html);
+				ul.appendChild(li);
+			});
+		};
+		// stitch everything together
+		div.appendChild(button);
+		div.appendChild(ul);
 		return div;
 	}
 	print(){

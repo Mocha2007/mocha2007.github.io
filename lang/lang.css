@@ -2,7 +2,7 @@ html {
 	background-color: black;
 	color: silver;
 }
-.clickable {
+.button, .clickable {
 	color: blue;
 	cursor: pointer;
 	margin-right: 10px;

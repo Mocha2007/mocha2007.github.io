@@ -11,8 +11,15 @@ table {
 .word .phone {
 	padding: 0;
 }
-#wordlist li {
+#wordlist li, #extraWordList li {
+	background-color: #222;
+	border: 0.1vw solid #111;
 	display: block;
 	float: left;
-	width: 25%;
+	padding: 1vh;
+	width: calc((100% - 8*1vh - 8*0.1vw)/4);
+}
+
+#extraWordList {
+	text-align: center;
 }
