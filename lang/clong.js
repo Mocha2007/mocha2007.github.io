@@ -486,12 +486,10 @@ class Syntax {
 	 * @returns {[string, string]}
 	 */
 	static propToArray(category, prop){
-		let attempt;
-		while ((attempt = random.shuffle(data.order[category]))
-			.map(i => i[0]).join('') !== prop){
-			// keep trying - todo: do something smarter than just shuffling until you get the right answer... lol
-		}
-		return attempt;
+		// split string at capitals
+		return prop.split(/(?=[A-Z])/)
+			// for each capital bit, find the array in the category
+			.map(s => data.order[category].find(i => i[0] === s));
 	}
 	static verifyImplications(attempt){
 		let failed = false;
