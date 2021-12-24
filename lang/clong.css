@@ -1,16 +1,34 @@
 h1, h2, h3 {
 	text-align: center;
 }
+
 table {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.button {
+	background-color: skyblue;
+	border-radius: 1vh;
+	border: 2px solid blue;
+	margin: 1vh;
+	padding: 0.5vh 1vh;
+	user-select: none;
+}
+.button:hover {
+	opacity: 0.75;
+}
+.button:active {
+	opacity: 0.5;
+}
+
 .phone {
 	padding: 0 1vh;
 }
 .word .phone {
 	padding: 0;
 }
+
 #wordlist li, #extraWordList li {
 	background-color: #222;
 	border: 0.1vw solid #111;
