@@ -236,6 +236,7 @@ const EremoranTooltip = {
 	/**
 	 * @param {string} word
 	 * @param {HTMLSpanElement} elem
+	 * @returns {void}
 	*/
 	showTooltip(word, elem){
 		try {
@@ -261,7 +262,10 @@ function computeStats(){
 	document.getElementById('wordcount').innerHTML = EremoranTooltip.words.length;
 }
 
-/** @param {number} x */
+/**
+ * @param {number} x
+ * @returns {string}
+ */
 function ereNum(x){
 	if (x < 15)
 		return ereNum.first[x];
