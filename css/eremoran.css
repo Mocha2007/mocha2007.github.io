@@ -9,6 +9,10 @@
 .button:hover {
 	opacity: 0.5;
 }
+.center {
+	display: block;
+	margin: 0 auto;
+}
 /* for spoilers in game */
 .hidden {
 	background-color: black;
