@@ -317,7 +317,7 @@ function roman(){
 	var ides = numberOfDaysInTheMonth === 31 ? 15 : 13;
 	var nones = ides - 8;
 	var numberOfDaysBeforeNextKalends = numberOfDaysInTheMonth - (ides ? 15 : 13);
-	console.debug(day, month, year, ';', nones, ides, numberOfDaysInTheMonth);
+	// console.debug(day, month, year, ';', nones, ides, numberOfDaysInTheMonth);
 	if (day === 1)
 		return '<abbr title="kalendīs ' + monthsAbl[month]
 			+ '">Kal. ' + monthAbbreviations[month] + '.</abbr>';
@@ -347,7 +347,47 @@ function roman(){
 		+ '"> a.d. ' + numeralAbbreviations[numberOfDaysBeforeNextKalends + ides - day] + ' Kal. ' + monthAbbreviations[nextMonth] + '.</abbr>';
 }
 
+/** Probably broken, but... */
+function hebrew(){
+	// maybe stick to https://www.hebcal.com/home/40/displaying-todays-hebrew-date-on-your-website
+	const monthNames = [
+		'Tishrei', 'Cheshvan', 'Kislev', 'Tevet', 'Shevat', 'Adar',
+		'Nisan', 'Iyar', 'Sivan', 'Tammuz', 'Av', 'Elul',
+	];
+	const monthLengths = [30, 29, 30, 29, 30, 29, 30, 29, 30, 29, 30, 29];
+	const leapMonthNames = [
+		'Tishrei', 'Cheshvan', 'Kislev', 'Tevet', 'Shevat', 'Adar I',
+		'Adar II',
+		'Nisan', 'Iyar', 'Sivan', 'Tammuz', 'Av', 'Elul',
+	];
+	const leapMonthLengths = [30, 29, 30, 29, 30, 30, 29, 30, 29, 30, 29, 30, 29];
+	// year advances on tishrei
+	// Nisan begins 2 wk before the vernal equinox???
+	const epoch = +new Date(2021, 8, 7); // 7 Sep 2021 = 1 Tishrei 5782
+	let remainder = new Date() - epoch;
+	const year = 5782 + Math.floor(remainder / 31556952000);
+	const metonic = year % 19;
+	const isLeap = [3, 6, 8, 11, 14, 17, 19].includes(metonic);
+	remainder %= 31556952000; // ms since year start
+	let month = 0;
+	let monthName;
+	if (isLeap){
+		while (0 < remainder - 1000*60*60*24*leapMonthLengths[month])
+			remainder -= 1000*60*60*24*leapMonthLengths[month++];
+		monthName = leapMonthNames[month];
+	}
+	else {
+		while (0 < remainder - 1000*60*60*24*monthLengths[month])
+			remainder -= 1000*60*60*24*monthLengths[month++];
+		monthName = monthNames[month];
+	}
+	const afterSunset = 16 <= new Date().getHours(); // approximation
+	const day = Math.floor(remainder / (1000*60*60*24))
+		+ afterSunset;
+	return `${day} ${monthName} ${year}`;
+}
+
 function bonus(){
-	document.getElementById('clockbonus').innerHTML = [zodiac(), china(), egypt(), japan(),
-		romanFULL(), maya(), 'JD '+jd().toFixed(3), darian(), dorf()].join('<br>');
+	document.getElementById('clockbonus').innerHTML = [zodiac(), china(), egypt(), hebrew(),
+		japan(), romanFULL(), maya(), 'JD '+jd().toFixed(3), darian(), dorf()].join('<br>');
 }
