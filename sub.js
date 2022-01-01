@@ -115,6 +115,7 @@ var subtitles =	[
 	'This individual, however, <em>is</em> firing on all cinderblocks situation.',
 	'Not a scam artist situation',
 	'Let&rsquo;s have us a pizza bungus',
+	'The Mocha / They destroyed their cage / Yes / YES / The Mocha is out',
 ];
 
 function sub(){
