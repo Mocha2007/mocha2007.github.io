@@ -82,7 +82,7 @@ table.mid{margin-left:auto;margin-right: auto;}
 	background-color: silver;
 }
 /* era table */
-#eraTable tr th {
+.eraTable tr th {
 	height: calc((700px - 2px*6)/5);
 	width: calc((700px - 2px*6)/5);
 }

@@ -4,6 +4,7 @@
 'use strict';
 
 var vernal = 6884100000; // ms after first vernal equinox 20 Mar 16:15 (2018)
+var atEpoch = 1150;
 
 var phases = [
 	'New', 'Waxing Crescent', 'First Quarter', 'Waxing Gibbous',
@@ -57,7 +58,7 @@ function oneiaTime(){
 	var currenttime = Date.now()/1000;
 	// 00:00 is at roughly local noon
 	var remainder = currenttime-epoch;
-	var years = 950+Math.floor(remainder/year);
+	var years = atEpoch+Math.floor(remainder/year);
 	remainder = remainder % year;
 	var days = Math.floor(remainder/day);
 	remainder = remainder % day;
