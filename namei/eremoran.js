@@ -363,7 +363,7 @@ namegen.vowels = 'aeiouêô';
 namegen.either = ['afês', 'ardo', 'badm', 'bi', 'kafl', 'labni', 'len', 'lib',
 	'lusi', 'mar', 'tem', 'uris'];
 namegen.first = union(namegen.either,
-	['bêt', 'dare', 'end', 'ere', 'ku', 'lak', 'si']
+	['bêt', 'dare', 'end', 'ere', 'ku', 'lak', 'maram', 'si']
 );
 namegen.last = union(namegen.either,
 	['bazê', 'ke', 'kiki', 'mo', 'subi']
