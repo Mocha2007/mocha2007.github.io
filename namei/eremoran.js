@@ -1,7 +1,7 @@
 /* exported compileDict, compileFinals, compileInitials, compileLength,
 	compileMeanings, compileMedials, compileNounClass, EremoranTooltip,
 	computeStats, numberTool, autoUp */
-/* global random, range, round, union */
+/* global commaNumber, random, range, round, union */
 
 'use strict';
 
@@ -371,4 +371,4 @@ namegen.last = union(namegen.either,
 namegen.endsWithVowel = s => namegen.vowels.includes(s[s.length-1]);
 namegen.startsWithVowel = s => namegen.vowels.includes(s[0]);
 namegen.updateCombos = () => document.getElementById('namegen_combos').innerHTML
-	= Math.pow(namegen.first.length * namegen.last.length, 2);
+	= commaNumber(Math.pow(namegen.first.length * namegen.last.length, 2));
