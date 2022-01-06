@@ -225,7 +225,11 @@ const EremoranTooltip = {
 			const rt = document.createElement('rt'); // ruby top
 			rt.innerHTML = word.toUpperCase();
 			const fixedword = word.toLowerCase();
-			span.innerHTML = fixedword.replace('f', 'h').replace('á', 'a').replace('é', 'e').replace('ó', 'o');
+			span.innerHTML = fixedword
+				.replace(/f/g, 'h')
+				.replace(/á/g, 'a')
+				.replace(/é/g, 'e')
+				.replace(/ó/g, 'o');
 			span.classList.add('eremoranWord');
 			span.onmouseover = () => EremoranTooltip.showTooltip(fixedword, span);
 			span.onmouseout = () => EremoranTooltip.clearTooltip();
@@ -352,16 +356,19 @@ function namegen(){
 	elem.innerHTML = `${family} ${given}`;
 	// recompute tooltips
 	EremoranTooltip.setupWord(elem);
+	namegen.updateCombos();
 }
 // todo: bold? army? fame?
 namegen.vowels = 'aeiouêô';
 namegen.either = ['afês', 'ardo', 'badm', 'bi', 'kafl', 'labni', 'len', 'lib',
 	'lusi', 'mar', 'tem', 'uris'];
 namegen.first = union(namegen.either,
-	['bêt', 'end', 'ere', 'ku', 'lak', 'si']
+	['bêt', 'dare', 'end', 'ere', 'ku', 'lak', 'si']
 );
 namegen.last = union(namegen.either,
 	['bazê', 'ke', 'kiki', 'mo', 'subi']
 );
 namegen.endsWithVowel = s => namegen.vowels.includes(s[s.length-1]);
 namegen.startsWithVowel = s => namegen.vowels.includes(s[0]);
+namegen.updateCombos = () => document.getElementById('namegen_combos').innerHTML
+	= Math.pow(namegen.first.length * namegen.last.length, 2);
