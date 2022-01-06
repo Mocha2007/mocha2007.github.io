@@ -358,15 +358,15 @@ function namegen(){
 	EremoranTooltip.setupWord(elem);
 	namegen.updateCombos();
 }
-// todo: bold? army? fame?
+// todo: bold? army? fame? fortress bear gift
 namegen.vowels = 'aeiouêô';
-namegen.either = ['afês', 'ardo', 'badm', 'bi', 'kafl', 'labni', 'len', 'lib',
+namegen.either = ['afês', 'ardo', 'badm', 'bi', 'hisk', 'kafl', 'ko', 'lib',
 	'lusi', 'mar', 'tem', 'uris'];
 namegen.first = union(namegen.either,
-	['bêt', 'dare', 'end', 'ere', 'ku', 'lak', 'maram', 'si']
+	['bêt', 'dare', 'end', 'ere', 'ku', 'lak', 'maram', 'saz', 'si']
 );
 namegen.last = union(namegen.either,
-	['bazê', 'ke', 'kiki', 'mo', 'subi']
+	['bazê', 'ke', 'kiki', 'labni', 'len', 'mo', 'subi']
 );
 namegen.endsWithVowel = s => namegen.vowels.includes(s[s.length-1]);
 namegen.startsWithVowel = s => namegen.vowels.includes(s[0]);
