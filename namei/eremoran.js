@@ -1,7 +1,7 @@
 /* exported compileDict, compileFinals, compileInitials, compileLength,
 	compileMeanings, compileMedials, compileNounClass, EremoranTooltip,
 	computeStats, numberTool, autoUp */
-/* global random, range, round */
+/* global random, range, round, union */
 
 'use strict';
 
@@ -326,3 +326,31 @@ function autoUp(){
 	else
 		clearInterval(autoUp.interval);
 }
+
+function namegen(){
+	const elem = document.getElementById('namegen_out');
+	/** @type {string} */
+	let name = random.choice(namegen.first);
+	/** @type {string} */
+	const last = random.choice(namegen.last);
+	if (!namegen.vowels.includes(name[name.length-1])
+			&& !namegen.vowels.includes(last[0]))
+		name += 'a';
+	name += last;
+	if (!namegen.vowels.includes(name[name.length-1]))
+		name += 'a';
+	name += 'r';
+	elem.innerHTML = name;
+	// recompute tooltips
+	EremoranTooltip.setupWord(elem);
+}
+// todo: bold? army? fame?
+namegen.vowels = 'aeiouêô';
+namegen.either = ['afês', 'ardo', 'badm', 'bi', 'kafl', 'labni', 'len', 'lib',
+	'lusi', 'mar', 'tem', 'uris'];
+namegen.first = union(namegen.either,
+	['bêt', 'end', 'ere', 'ku', 'lak', 'si']
+);
+namegen.last = union(namegen.either,
+	['bazê', 'ke', 'kiki', 'mo', 'subi']
+);
