@@ -329,18 +329,27 @@ function autoUp(){
 
 function namegen(){
 	const elem = document.getElementById('namegen_out');
-	/** @type {string} */
-	let name = random.choice(namegen.first);
-	/** @type {string} */
-	const last = random.choice(namegen.last);
-	if (!namegen.vowels.includes(name[name.length-1])
-			&& !namegen.vowels.includes(last[0]))
-		name += 'a';
-	name += last;
-	if (!namegen.vowels.includes(name[name.length-1]))
-		name += 'a';
-	name += 'r';
-	elem.innerHTML = name;
+	function stem(){
+		/** @type {string} */
+		let name = random.choice(namegen.first);
+		/** @type {string} */
+		const last = random.choice(namegen.last);
+		if (!namegen.endsWithVowel(name)
+				&& !namegen.startsWithVowel(last))
+			name += 'a';
+		name += last;
+		return name;
+	}
+	// generate name
+	let given = stem();
+	if (!namegen.endsWithVowel(given))
+		given += 'a';
+	given += 'r';
+	let family = stem();
+	if (!namegen.endsWithVowel(family))
+		family += 'i';
+	family += 'sur';
+	elem.innerHTML = `${family} ${given}`;
 	// recompute tooltips
 	EremoranTooltip.setupWord(elem);
 }
@@ -354,3 +363,5 @@ namegen.first = union(namegen.either,
 namegen.last = union(namegen.either,
 	['bazê', 'ke', 'kiki', 'mo', 'subi']
 );
+namegen.endsWithVowel = s => namegen.vowels.includes(s[s.length-1]);
+namegen.startsWithVowel = s => namegen.vowels.includes(s[0]);
