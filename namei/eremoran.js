@@ -360,7 +360,7 @@ namegen.updateCombos = () => document.getElementById('namegen_combos').innerHTML
  * @param {string} endAnaptyxis vowel to insert between suffix and last component if necessary
  * @param {string} suffix
  */
-function ngTemplate(firsts, lasts, midAnaptyxis, endAnaptyxis, suffix){
+function ngTemplate(firsts, lasts, midAnaptyxis = '', endAnaptyxis = '', suffix = ''){
 	/** @type {string} */
 	let name = random.choice(firsts);
 	/** @type {string} */
@@ -375,3 +375,22 @@ function ngTemplate(firsts, lasts, midAnaptyxis, endAnaptyxis, suffix){
 	name += suffix;
 	return name;
 }
+
+function toponym(){
+	const elem = document.getElementById('toponym_out');
+	elem.innerHTML = ngTemplate(toponym.first, toponym.last, 'a');
+	// recompute tooltips
+	EremoranTooltip.setupWord(elem);
+	toponym.updateCombos();
+}
+// todo: city/fort clearing
+toponym.either = ['bemmu', 'len', 'nô', 'nul'];
+toponym.first = union(toponym.either,
+	['ake', 'end', 'ere', 'hai', 'huk', 'kan', 'kokin', 'ku', 'kure', 'lak', 'muk',
+		'n', 'nats', 'sed', 'si', 'tar', 'tas']
+);
+toponym.last = union(toponym.either,
+	['ammut', 'da', 'damu', 'kokint', 'lira', 'mam', 'mamat', 'mor', 'seda', 'sedat']
+);
+toponym.updateCombos = () => document.getElementById('toponym_combos').innerHTML
+	= commaNumber(toponym.first.length * toponym.last.length);
