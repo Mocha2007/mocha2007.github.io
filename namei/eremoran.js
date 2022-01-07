@@ -333,27 +333,7 @@ function autoUp(){
 
 function namegen(){
 	const elem = document.getElementById('namegen_out');
-	function stem(){
-		/** @type {string} */
-		let name = random.choice(namegen.first);
-		/** @type {string} */
-		const last = random.choice(namegen.last);
-		if (!namegen.endsWithVowel(name)
-				&& !namegen.startsWithVowel(last))
-			name += 'a';
-		name += last;
-		return name;
-	}
-	// generate name
-	let given = stem();
-	if (!namegen.endsWithVowel(given))
-		given += 'a';
-	given += 'r';
-	let family = stem();
-	if (!namegen.endsWithVowel(family))
-		family += 'i';
-	family += 'sur';
-	elem.innerHTML = `${family} ${given}`;
+	elem.innerHTML = `${ngTemplate(namegen.first, namegen.last, 'a', 'i', 'sur')} ${ngTemplate(namegen.first, namegen.last, 'a', 'a', 'r')}`;
 	// recompute tooltips
 	EremoranTooltip.setupWord(elem);
 	namegen.updateCombos();
@@ -372,3 +352,26 @@ namegen.endsWithVowel = s => namegen.vowels.includes(s[s.length-1]);
 namegen.startsWithVowel = s => namegen.vowels.includes(s[0]);
 namegen.updateCombos = () => document.getElementById('namegen_combos').innerHTML
 	= commaNumber(Math.pow(namegen.first.length * namegen.last.length, 2));
+
+/**
+ * @param {string[]} firsts acceptable first components
+ * @param {string[]} lasts acceptable last components
+ * @param {string} midAnaptyxis vowel to insert between first and last components if necessary
+ * @param {string} endAnaptyxis vowel to insert between suffix and last component if necessary
+ * @param {string} suffix
+ */
+function ngTemplate(firsts, lasts, midAnaptyxis, endAnaptyxis, suffix){
+	/** @type {string} */
+	let name = random.choice(firsts);
+	/** @type {string} */
+	const last = random.choice(lasts);
+	if (!namegen.endsWithVowel(name)
+			&& !namegen.startsWithVowel(last))
+		name += midAnaptyxis;
+	name += last;
+	// generate name
+	if (!namegen.endsWithVowel(name))
+		name += endAnaptyxis;
+	name += suffix;
+	return name;
+}
