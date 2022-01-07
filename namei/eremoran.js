@@ -390,7 +390,7 @@ toponym.first = union(toponym.either,
 		'n', 'nats', 'sed', 'si', 'tar', 'tas']
 );
 toponym.last = union(toponym.either,
-	['ammut', 'da', 'damu', 'kokint', 'lira', 'mam', 'mamat', 'mor', 'seda', 'sedat']
+	['alika', 'ammut', 'da', 'damu', 'kokint', 'lira', 'mam', 'mamat', 'mor', 'seda', 'sedat']
 );
 toponym.updateCombos = () => document.getElementById('toponym_combos').innerHTML
 	= commaNumber(toponym.first.length * toponym.last.length);
