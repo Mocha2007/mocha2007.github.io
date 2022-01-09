@@ -386,11 +386,12 @@ function toponym(){
 // todo: city/fort clearing
 toponym.either = ['bemmu', 'len', 'nô', 'nul'];
 toponym.first = union(toponym.either,
-	['ake', 'end', 'ere', 'hai', 'huk', 'kan', 'kokin', 'ku', 'kure', 'lak', 'muk',
+	['ake', 'end', 'ere', 'hai', 'huk', 'kan', 'kokin', 'ku', 'kure', 'lak', 'lib', 'muk',
 		'n', 'nats', 'sed', 'si', 'tar', 'tas']
 );
 toponym.last = union(toponym.either,
-	['alika', 'ammut', 'da', 'damu', 'kokint', 'lira', 'mam', 'mamat', 'mor', 'seda', 'sedat']
+	['alika', 'ammut', 'da', 'damu', 'kokint', 'lira', 'mam', 'mamat', 'mor', 'saurom', 'seda',
+		'sedat']
 );
 toponym.updateCombos = () => document.getElementById('toponym_combos').innerHTML
 	= commaNumber(toponym.first.length * toponym.last.length);
