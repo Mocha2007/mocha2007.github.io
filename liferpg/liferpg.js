@@ -339,7 +339,7 @@ const Game = {
 		// current location
 		this.elem.location.innerHTML = "Location: ";
 		this.elem.location.appendChild(this.player.container.span)
-		// health/mana/status/that kind of shit
+		// health/mana/status/that kind of
 	},
 	updateTitle(){
 		// todo: change title based on room, open window, etc...

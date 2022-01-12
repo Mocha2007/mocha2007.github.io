@@ -555,7 +555,7 @@ class Entry extends Clickable {
 			&& intersect(e.meanings, this.meanings).length);
 	}
 	get potentialCognates(){
-		// direct translations AND "share same tree shit"
+		// direct translations AND "share same tree"
 		/** @type {Meaning[]} */
 		const h = [];
 		this.meanings.forEach(m => m.headHypernyms.forEach(n => h.push(n)));
@@ -717,7 +717,7 @@ function deleteButton(id){
 }
 
 function main(){
-	// load shit
+	// load
 	authorData.forEach(o => Author.parseData(o));
 	sourceData.forEach(o => Source.parseData(o));
 	replacementDate.forEach(o => Replacement.parseData(o));

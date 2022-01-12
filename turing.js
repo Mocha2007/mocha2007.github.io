@@ -751,7 +751,7 @@ function fstep(){
 			mconsole('e', 'Special not in dictionary: '+arg1+'\n@ Line '+linenumber+'\n\t<span class="cf">SWP</span> '+arg);
 			return true;
 		}
-		// Do shit some more
+		// Do some more
 		// Machinestate
 		if (oldarg2==='*'){
 			document.getElementById('machinestate').innerHTML = arg1;
@@ -1087,7 +1087,7 @@ function fstep(){
 						arg2 = specialtarget;
 						break;
 				}
-				// Do shit
+				// Do
 				switch (arg1){
 					case '*':
 						document.getElementById('machinestate').innerHTML = arg2;

@@ -372,7 +372,7 @@ const Game = {
 		Game.debug.log.push(string);
 		console.log(string);
 	},
-	/** shit that can't go into a savefile */
+	/** stuff that can't go into a savefile */
 	p: {
 		/** @param {Item} item */
 		add(item, amount = 1){

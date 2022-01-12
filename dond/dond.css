@@ -86,7 +86,7 @@ a {
 .help:hover > div {
 	display: block;
 }
-/* pretty gold shit */
+/* pretty gold */
 a, #bottomText, .value, .help > * {
 	background-color: #DCD177; /* For browsers that do not support gradients */
 	background-image: linear-gradient(to bottom right, #989043, #DCD177, #989043);

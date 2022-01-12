@@ -4,7 +4,7 @@
 /* exported postScore, unlockMedal */
 'use strict';
 
-// newgrounds api bullshit
+// newgrounds api bull
 // https://bitbucket.org/newgrounds/newgrounds.io-for-javascript-html5/src/default/
 // eslint-disable-next-line new-cap
 const ngio = new Newgrounds.io.core('50305:QVq4Lget', 'RuPv3HTuC95QUinN9/FmEw==');

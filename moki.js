@@ -1247,7 +1247,7 @@ function fstep(){
 						stack.push(a);
 						return err('error calling function');
 					}
-					// insert a(x) at current location! [HOLY SHIT WORKED FIRST TRY HYPE!]
+					// insert a(x) at current location! [HOLY CRAP WORKED FIRST TRY HYPE!]
 					commandlist = commandlist.slice(0, line)+definedfunctions[a] +
 						commandlist.slice(line);
 					mconsole('i', 'Function "'+a+'" called as "'+b+'"');
