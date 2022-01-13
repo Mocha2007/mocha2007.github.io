@@ -21,7 +21,7 @@ function freqcalc(){
 	});
 	document.getElementById('lettercount').innerHTML = s;
 	document.getElementById('wordcount').innerHTML = bigdick.match(/\s/g).length;
-	for (var k in letterindex){ // for no fucking reason a foreach breaks this
+	for (var k in letterindex){ // for no reason a foreach breaks this
 		letterindex[k] = letterindex[k]/s;
 		letterindex[k] = Math.round(letterindex[k]*100000)/1000;
 	}
