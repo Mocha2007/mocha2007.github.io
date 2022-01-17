@@ -515,13 +515,19 @@ const wordle = {
 		const guess = this.fixWord(document.getElementById('wordle_input').value);
 		// verify 5 valid chars
 		if (!this.validate(guess))
-			return console.warn(guess);
+			return window.alert('Invalid Word!');
+		if (5 < this.guesses)
+			return window.alert(`Too many guesses! The word was ${this.current}.
+			Press Reset to try again!`);
 		// add to history
 		const li = document.createElement('li');
 		li.appendChild(this.guessElement(guess));
 		document.getElementById('wordle_history').appendChild(li);
 		// clear text box
 		document.getElementById('wordle_input').value = '';
+		this.guesses++;
+		// refocus
+		document.getElementById('Wordle').scrollIntoView();
 	},
 	/** @param {string} guess */
 	validate(guess){
