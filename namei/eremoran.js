@@ -1,6 +1,6 @@
 /* exported adjTool, compileDict, compileFinals, compileInitials, compileLength,
 	compileMeanings, compileMedials, compileNounClass, EremoranTooltip,
-	computeStats, numberTool, autoUp */
+	computeStats, numberTool, autoUp, wordle */
 /* global commaNumber, random, range, round, union */
 
 'use strict';
@@ -463,3 +463,68 @@ function adjTool(){
 	output.innerHTML = '';
 	output.appendChild(adjDecline(adj));
 }
+
+const wordle = {
+	/** @type {string} */
+	current: undefined,
+	guesses: 0,
+	/** @type {string[]} */
+	wordbank: dict.filter(x => x.length === 5),
+	/** @param {string} char */
+	append(char){
+		document.getElementById('wordle_input').value += char;
+	},
+	/** @param {string} word */
+	fixWord(word){
+		return word.toLowerCase().replace(/f/g, 'h');
+	},
+	/** @param {string} guess */
+	guessElement(guess){
+		const span = document.createElement('span');
+		guess.split('').forEach((char, i) => {
+			const elem = document.createElement('span');
+			elem.innerHTML = char;
+			elem.classList.add(`wordle${this.rateLetter(char, i)}`);
+			span.appendChild(elem);
+		});
+		return span;
+	},
+	init(){
+		document.getElementById('wordle_input').addEventListener('keydown', e => {
+			if (e.key === 'Enter')
+				this.submit();
+		});
+		this.reset();
+	},
+	/** @returns {string} */
+	randomWord(){
+		return this.fixWord(random.choice(this.wordbank));
+	},
+	rateLetter(letter, position){
+		return this.current[position] === letter ? 2
+			: this.current.includes(letter) ? 1 : 0;
+	},
+	reset(){
+		document.getElementById('wordle_input').value = '';
+		document.getElementById('wordle_history').innerHTML = '';
+		this.current = this.randomWord();
+		this.guesses = 0;
+	},
+	submit(){
+		/** @type {string} */
+		const guess = this.fixWord(document.getElementById('wordle_input').value);
+		// verify 5 valid chars
+		if (!this.validate(guess))
+			return console.warn(guess);
+		// add to history
+		const li = document.createElement('li');
+		li.appendChild(this.guessElement(guess));
+		document.getElementById('wordle_history').appendChild(li);
+		// clear text box
+		document.getElementById('wordle_input').value = '';
+	},
+	/** @param {string} guess */
+	validate(guess){
+		return /[abdehiklmnoprstuzêô]{5}/.test(guess);
+	},
+};

@@ -7639,6 +7639,7 @@ Many pangrams rely on the root spe- (change) because it contains the uncommon le
 	</tr>
 </table>
 
+
 <h3 id="Learn_Eremoran">Learn Eremoran</h3>
 Score: <span id="score">0%</span><br>
 Review: <span id="review">0</span><br>
@@ -7646,6 +7647,18 @@ Review: <span id="review">0</span><br>
 <span class="button" onclick="LE.score.change(1);LE.review.remove();LE.new();">understood</span>
 <span class="button" onclick="LE.score.change(-1);LE.review.add();LE.new(false);">needs review</span>
 <div id="learn"></div>
+
+
+<h3 id="Wordle">Wordle</h3>
+
+<span class="button" onclick="wordle.reset();">Reset...</span>
+<ul id="wordle_history" class="eremoran"></ul>
+<input type="text" id="wordle_input">
+<span class="button" onclick="wordle.submit();">Submit &rarr;</span>
+<br>
+<span class="button" onclick="wordle.append('ê');">&ecirc;</span>
+<span class="button" onclick="wordle.append('ô');">&ocirc;</span>
+
 
 <h3 id="Memes">Memes</h3>
 
@@ -7656,7 +7669,6 @@ Review: <span id="review">0</span><br>
 	&Ocirc; hek, sud&ocirc;z as.<br>
 	Dir monanar tukuz dasulk.
 </div>
-
 
 
 <h2 id="Statistics">Misc. Statistics</h2>
@@ -8559,8 +8571,11 @@ Universals Violated:
 
 <div id="bottom"></div>
 <script src="eremoran.js"></script>
-<script>EremoranTooltip.setup();</script>
-<script>computeStats();</script>
+<script>
+	EremoranTooltip.setup();
+	computeStats();
+	wordle.init();
+</script>
 </html>
 <!--
 	TODO:
