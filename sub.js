@@ -36,6 +36,7 @@ var subtitles =	[
 	'It growe&thorn; to ben a frogge, if it be noght eten.', // https://incubator.wikimedia.org/wiki/Wp/enm/Frogge
 	'Renascatur Latina!',
 	'The fox&rsquo;s attempt at the grapes, although he couldn&rsquo;t, was admirable.', // weird English sentence
+	'The G in GIF is pronounced like the G in <em>gigantic</em> or <em>suggest</em>.',
 	// mat
 	'I have created a truly marvelous conworld,<br/>which this randomly generated subtitle is too small to contain.',
 	'Mocha &isin; UwUers',
