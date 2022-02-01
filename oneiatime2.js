@@ -94,11 +94,19 @@ function holidayCSS(){
 	var img = document.getElementById('m');
 	switch (month){
 		case 2:
-			src = 'mochentines';
+			// lunar new year, or valentines?
+			if (day < 8){
+				const animal = 'Goat Monkey Rooster Dog Pig Ox Tiger Rabbit Dragon Snake Horse'.split(' ')[year % 12];
+				img.style.filter = 'invert(0.75)';
+				title = 'Year of the ' + animal;
+			}
+			else {
+				src = 'mochentines';
+				title = 'Fuck merrily!';
+			}
+			// special day stuff
 			if (day === 4)
 				title = 'Day of the Republic. Wiwie Erdeka! Long live the RTC!';
-			else
-				title = 'Fuck merrily!';
 			break;
 		case 3:
 			src = 'mochricks';
