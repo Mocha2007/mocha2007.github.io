@@ -96,7 +96,7 @@ function holidayCSS(){
 		case 2:
 			// lunar new year, or valentines?
 			if (day < 8){
-				const animal = 'Goat Monkey Rooster Dog Pig Ox Tiger Rabbit Dragon Snake Horse'.split(' ')[year % 12];
+				const animal = 'Monkey Rooster Dog Pig Rat Ox Tiger Rabbit Dragon Snake Horse Goat'.split(' ')[year % 12];
 				img.style.filter = 'invert(0.75)';
 				title = 'Year of the ' + animal;
 			}
