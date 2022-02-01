@@ -100,6 +100,7 @@ function holidayCSS(){
 				img.style.filter = 'hue-rotate(225deg)';
 				img.style.borderRadius = '30px';
 				img.style.backgroundColor = '#082';
+				img.style.maskImage = 'linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0))';
 				title = 'Year of the ' + animal;
 			}
 			else {
