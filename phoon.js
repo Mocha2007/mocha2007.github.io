@@ -14,12 +14,14 @@ function createSvgElement(name){
 /** @param {number} phase [0, 1) */
 function phoonsvg(phase){
 	// shift from [0, 1) to [-1, 1)
-	// center of the bigger circle (terminator)
+	// in-circle zero
 	var x0 = 2*phase - 1;
 	// r^2 = (x+a)^2 + y^2
 	var a = -(x0*x0-1)/(2*x0);
 	// radius of bigger circle
 	var r = Math.sqrt(a*a + 1);
+	// center of the bigger circle (terminator)
+	var cen = x0 + r;
 	/* the basic structure of the image is this:
 		(1) black bg
 		(2) white terminator circle (above)
@@ -42,7 +44,7 @@ function phoonsvg(phase){
 	mask.appendChild(maskCircle);
 	// circle
 	var terminator = createSvgElement('circle');
-	terminator.setAttribute('cx', x0+1);
+	terminator.setAttribute('cx', cen);
 	terminator.setAttribute('r', r);
 	terminator.style.fill = 'black';
 	terminator.setAttribute('mask', 'url(#mask)');
