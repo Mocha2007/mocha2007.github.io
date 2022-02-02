@@ -16,15 +16,10 @@ function phoonsvg(phase){
 	// shift from [0, 1) to [-1, 1)
 	// in-circle zero
 	var x0 = 2*phase - 1;
-	// r^2 = (x+a)^2 + y^2
-	var a = -(x0*x0-1)/(2*x0);
-	// radius of bigger circle
-	var r = Math.sqrt(a*a + 1);
-	// center of the bigger circle (terminator)
-	var cen = x0 + r;
+	// r^2 = x^2/a + y^2
 	/* the basic structure of the image is this:
-		(1) black bg
-		(2) white terminator circle (above)
+		(1) white circle
+		(2) black terminator ellipse (above) + black terminator rect
 		(3) circular mask to remove edges
 	*/
 	var svg = createSvgElement('svg');
@@ -43,11 +38,16 @@ function phoonsvg(phase){
 	var maskCircle = shadow.cloneNode();
 	mask.appendChild(maskCircle);
 	// circle
-	var terminator = createSvgElement('circle');
-	terminator.setAttribute('cx', cen);
-	terminator.setAttribute('r', r);
+	var terminator = createSvgElement('ellipse');
+	terminator.setAttribute('rx', Math.abs(x0));
+	terminator.setAttribute('ry', 1);
 	terminator.style.fill = 'black';
-	terminator.setAttribute('mask', 'url(#mask)');
 	svg.appendChild(terminator);
+	var terminator2 = createSvgElement('rect');
+	terminator2.setAttribute('y', -1);
+	terminator2.setAttribute('width', 1);
+	terminator2.setAttribute('height', 2);
+	terminator2.setAttribute('mask', 'url(#mask)');
+	svg.appendChild(terminator2);
 	return svg;
 }
