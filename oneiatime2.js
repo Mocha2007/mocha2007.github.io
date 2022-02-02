@@ -16,6 +16,9 @@ var constants = {
 		epoch: 642900000, // ms; 7 Jan 1970 10:35:00 UTC
 		period: 2551442890, // ms orbital period; Lunar Synodic Period
 	},
+	nikki: {
+		epoch: 0.078, // fraction of orbit period?
+	},
 	oneia: {
 		// 00:00 is at roughly local noon
 		atEpoch: 1150,
@@ -63,7 +66,7 @@ function oneiaTimeInitialize(){
 	remainder = remainder % constants.oneia.year;
 	var yearprogress = remainder/constants.oneia.year;
 	remainder = remainder % constants.oneia.day;
-	var cnikkiphase = mod(remainder/constants.oneia.day-0.078, 1);
+	var cnikkiphase = mod(remainder/constants.oneia.day-constants.nikki.epoch, 1);
 	var nikkiphase = mod(Math.round(8*cnikkiphase), 8); // needs another mod in case it rounds up to 8
 	var moonphase = Math.round(8*moonPhase(Date.now())) % 8;
 	// eremor time
