@@ -106,10 +106,7 @@ function holidayCSS(){
 	// chinese new year stuff
 	var cny = getChineseNewYear(year);
 	var wkBefCNY = new Date(cny - 7 * 24 * 60 * 60 * 1000);
-	wkBefCNY = [wkBefCNY.getMonth()+1, wkBefCNY.getDate()];
 	var wkAftCNY = new Date(+cny + 7 * 24 * 60 * 60 * 1000);
-	wkAftCNY = [wkAftCNY.getMonth()+1, wkAftCNY.getDate()];
-	console.debug(cny, wkBefCNY, wkAftCNY);
 	function runCny(){
 		var animal = 'Monkey Rooster Dog Pig Rat Ox Tiger Rabbit Dragon Snake Horse Goat'.split(' ')[year % 12];
 		img.style.filter = 'hue-rotate(225deg)';
@@ -126,20 +123,10 @@ function holidayCSS(){
 	var src = defaultSrc;
 	var img = document.getElementById('m');
 	switch (month){
-		case 1:
-			// cny
-			if (wkBefCNY[0] === 1 && wkBefCNY[1] <= day) // after start
-				if (!(wkAftCNY[0] === 1 && wkAftCNY[1] < day)) // not after end
-					runCny();
-			break;
 		case 2:
 			// valentines
 			src = 'mochentines';
 			title = 'Fuck merrily!';
-			// cny
-			if (wkBefCNY[0] === 1 || wkBefCNY[0] === 2 && wkBefCNY[1] <= day) // after start
-				if (wkAftCNY[0] === 2 && day <= wkAftCNY[1]) // before end
-					runCny();
 			// special day stuff
 			if (day === 4)
 				title = 'Day of the Republic. Wiwie Erdeka! Long live the RTC!';
@@ -216,6 +203,10 @@ function holidayCSS(){
 				title = 'Have a frosty winter solstice!';
 			break;
 	}
+
+	// compute Chinese new year
+	if (wkBefCNY < Date.now() && Date.now() < wkAftCNY)
+		runCny();
 
 	img.title = title;
 	if (src !== defaultSrc)
