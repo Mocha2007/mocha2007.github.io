@@ -3,8 +3,24 @@
 /* exported holidayCSS, oneiaTime, oneiaTimeInitialize */
 'use strict';
 
-var vernal = 6884100000; // ms after first vernal equinox 20 Mar 16:15 (2018)
-var atEpoch = 1150;
+var constants = {
+	earth: {
+		vernal: 6884100000, // ms after first vernal equinox 20 Mar 16:15 (2018)
+		year: 31556952000, // ms
+	},
+	moon: {
+		epoch: 642900000, // ms; 7 Jan 1970 10:35:00 UTC
+		period: 2551442890, // ms orbital period; Lunar Synodic Period
+	},
+	oneia: {
+		// 00:00 is at roughly local noon
+		atEpoch: 1150,
+		day: 105583.0567402678, // s; solar day; the sideral day is 104148 s
+		epoch: 1497151176, // SUN 2017 JUN 11 03:19:36 UTC
+		year: 7662598.89579935, // s?; oneian orbital period
+	},
+	week: 7 * 24 * 60 * 60 * 1000, // ms
+};
 
 var phases = [
 	'New', 'Waxing Crescent', 'First Quarter', 'Waxing Gibbous',
@@ -26,7 +42,7 @@ function mod(n, m){
  * @param {Date} t a time
  */
 function moonPhase(t){
-	return mod(t - 642900000, 2551442890) / 2551442890;
+	return mod(t - constants.moon.epoch, constants.moon.period) / constants.moon.period;
 }
 
 /** @param {number} year */
@@ -39,21 +55,13 @@ function getChineseNewYear(year){
 }
 
 function oneiaTimeInitialize(){
-	var epoch =	1497151176; // SUN 2017 JUN 11 03:19:36 UTC
-	var year =	7662598.89579935; // oneian orbital period
-	var day =	105583.0567402678; // solar day; the sideral day is 104148 s
-
 	var currenttime = Date.now()/1000;
-	// 00:00 is at roughly local noon
-	var remainder = currenttime-epoch;
-	remainder = remainder % year;
-	var yearprogress = remainder/year;
-	remainder = remainder % day;
-	var cnikkiphase = mod(remainder/day-0.078, 1);
+	var remainder = currenttime-constants.oneia.epoch;
+	remainder = remainder % constants.oneia.year;
+	var yearprogress = remainder/constants.oneia.year;
+	remainder = remainder % constants.oneia.day;
+	var cnikkiphase = mod(remainder/constants.oneia.day-0.078, 1);
 	var nikkiphase = mod(Math.round(8*cnikkiphase), 8); // needs another mod in case it rounds up to 8
-	var yy = 31556952000;
-	// 642900 = 7 Jan 1970 10:35:00 UTC
-	// 2551442.9 = Lunar Synodic Period
 	var moonphase = Math.round(8*moonPhase(Date.now())) % 8;
 	// eremor time
 	document.getElementById('clock_eremor_title').innerHTML = '<img src="img/phase/'+nikkiphase +
@@ -64,27 +72,22 @@ function oneiaTimeInitialize(){
 	document.getElementById('clock_earth_title').innerHTML = '<img src="img/phase/'+moonphase +
 		'.png" height="9" width="9" alt="Moon Phase: '+phases[moonphase]+'" title="Moon Phase: ' +
 		phases[moonphase]+'"> Earth Time:';
-	document.getElementById('clock_earth_progress').value = (Date.now()-vernal) % yy/yy;
+	document.getElementById('clock_earth_progress').value = (Date.now()-constants.earth.vernal) % constants.earth.year/constants.earth.year;
 }
 
 function oneiaTime(){
-	var epoch =	1497151176; // SUN 2017 JUN 11 03:19:36 UTC
-	var year =	7662598.89579935; // oneian orbital period
-	var day =	105583.0567402678; // solar day; the sideral day is 104148 s
-
 	var currenttime = Date.now()/1000;
-	// 00:00 is at roughly local noon
-	var remainder = currenttime-epoch;
-	var years = atEpoch+Math.floor(remainder/year);
-	remainder = remainder % year;
-	var days = Math.floor(remainder/day);
-	remainder = remainder % day;
+	var remainder = currenttime-constants.oneia.epoch;
+	var years = constants.oneia.atEpoch+Math.floor(remainder/constants.oneia.year);
+	remainder = remainder % constants.oneia.year;
+	var days = Math.floor(remainder/constants.oneia.day);
+	remainder = remainder % constants.oneia.day;
 	var currentTimeString = years + ' AT, Day ' + days + ', ';
 
 	for (var i = 1; i < 6; i += 1){
 		// oneian clock is conveniently decimal... :^)
-		currentTimeString += Math.floor(remainder/(day/Math.pow(10, i)))+(i !== 5 ? ':' : '');
-		remainder = remainder % (day/Math.pow(10, i));
+		currentTimeString += Math.floor(remainder/(constants.oneia.day/Math.pow(10, i)))+(i !== 5 ? ':' : '');
+		remainder = remainder % (constants.oneia.day/Math.pow(10, i));
 	}
 
 	var timetime = new Date().toString();
@@ -105,8 +108,8 @@ function holidayCSS(){
 	var day = new Date().getDate();
 	// chinese new year stuff
 	var cny = getChineseNewYear(year);
-	var wkBefCNY = new Date(cny - 7 * 24 * 60 * 60 * 1000);
-	var wkAftCNY = new Date(+cny + 7 * 24 * 60 * 60 * 1000);
+	var wkBefCNY = new Date(cny - constants.week);
+	var wkAftCNY = new Date(+cny + constants.week);
 	function runCny(){
 		var animal = 'Monkey Rooster Dog Pig Rat Ox Tiger Rabbit Dragon Snake Horse Goat'.split(' ')[year % 12];
 		img.style.filter = 'hue-rotate(225deg)';
