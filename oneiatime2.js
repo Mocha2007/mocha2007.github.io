@@ -1,5 +1,6 @@
 /* eslint-disable no-var */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
+/* global phoonsvg */
 /* exported holidayCSS, oneiaTime, oneiaTimeInitialize */
 'use strict';
 
@@ -69,17 +70,21 @@ function oneiaTimeInitialize(){
 	remainder = remainder % constants.oneia.day;
 	var cnikkiphase = mod(remainder/constants.oneia.day-constants.nikki.epoch, 1);
 	var nikkiphase = mod(Math.round(8*cnikkiphase), 8); // needs another mod in case it rounds up to 8
-	var moonphase = Math.round(8*moonPhase(Date.now())) % 8;
+	var cmoonphase = moonPhase(Date.now());
+	var moonphase = mod(Math.round(8*cmoonphase), 8);
 	// eremor time
-	document.getElementById('clock_eremor_title').innerHTML = '<img src="img/phase/'+nikkiphase +
-		'.png" height="9" width="9" alt="Nikki Phase: '+phases[nikkiphase]+'" title="Nikki Phase: ' +
-		phases[nikkiphase]+'"> Eremoran Time:';
+	var titleEre = document.getElementById('clock_eremor_title');
+	titleEre.title = 'Nikki Phase: ' + phases[nikkiphase];
+	titleEre.appendChild(phoonsvg(cnikkiphase));
+	titleEre.innerHTML += ' Eremoran Time:';
 	document.getElementById('clock_eremor_progress').value = yearprogress;
 	// earth time
-	document.getElementById('clock_earth_title').innerHTML = '<img src="img/phase/'+moonphase +
-		'.png" height="9" width="9" alt="Moon Phase: '+phases[moonphase]+'" title="Moon Phase: ' +
-		phases[moonphase]+'"> Earth Time:';
-	document.getElementById('clock_earth_progress').value = (Date.now()-constants.earth.vernal) % constants.earth.year/constants.earth.year;
+	var titleEarth = document.getElementById('clock_earth_title');
+	titleEarth.title = 'Moon Phase: ' + phases[moonphase];
+	titleEarth.appendChild(phoonsvg(cmoonphase));
+	titleEarth.innerHTML += ' Earth Time:';
+	document.getElementById('clock_earth_progress').value =
+		(Date.now()-constants.earth.vernal) % constants.earth.year/constants.earth.year;
 }
 
 function oneiaTime(){
