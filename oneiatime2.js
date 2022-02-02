@@ -147,7 +147,7 @@ function holidayCSS(){
 			if (day === 17)
 				title = 'Drink, ye bastard!';
 			else if (day === 20)
-				title = 'Happy vernal equinox ' + year + '!';
+				title = 'Happy vernal equinox ' + year + '! Happy Nowruz!';
 			break;
 		case 4:
 			if (day === 1){
