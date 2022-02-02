@@ -98,16 +98,11 @@ function oneiaTime(){
 		remainder = remainder % (constants.oneia.day/Math.pow(constants.eremor.base, i));
 	}
 
-	var timetime = new Date().toString();
-	var utc1 = timetime.slice(0, 16);
-	var utc2 = timetime.slice(16, 18);
-	var utc3 = timetime.slice(18, 24);
-
-	var medidiem = utc2 > 11 ? ' PM' : ' AM';
-	utc2 = utc2 > 12 ? utc2-12 : utc2;
-
 	document.getElementById('clock_eremor_date').innerHTML = currentTimeString;
-	document.getElementById('clock_earth_date').innerHTML = utc1+utc2+utc3+medidiem;
+	document.getElementById('clock_earth_date').innerHTML = new Date().toLocaleString('en-US', {
+		weekday: 'short', year: 'numeric', month: 'short', day: '2-digit',
+		hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit'
+	}).replace(/,/g, '');
 }
 
 function holidayCSS(){
