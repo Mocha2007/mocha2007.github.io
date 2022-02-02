@@ -19,9 +19,9 @@ var constants = {
 	oneia: {
 		// 00:00 is at roughly local noon
 		atEpoch: 1150,
-		day: 105583.0567402678, // s; solar day; the sideral day is 104148 s
-		epoch: 1497151176, // SUN 2017 JUN 11 03:19:36 UTC
-		year: 7662598.89579935, // s?; oneian orbital period
+		day: 105583056.7402678, // ms; solar day; the sideral day is 104148 s
+		epoch: 1497151176000, // ms; SUN 2017 JUN 11 03:19:36 UTC
+		year: 7662598895.79935, // ms; oneian orbital period
 	},
 	week: 7 * 24 * 60 * 60 * 1000, // ms
 };
@@ -59,8 +59,7 @@ function getChineseNewYear(year){
 }
 
 function oneiaTimeInitialize(){
-	var currenttime = Date.now()/1000;
-	var remainder = currenttime-constants.oneia.epoch;
+	var remainder = Date.now()-constants.oneia.epoch;
 	remainder = remainder % constants.oneia.year;
 	var yearprogress = remainder/constants.oneia.year;
 	remainder = remainder % constants.oneia.day;
@@ -80,8 +79,7 @@ function oneiaTimeInitialize(){
 }
 
 function oneiaTime(){
-	var currenttime = Date.now()/1000;
-	var remainder = currenttime-constants.oneia.epoch;
+	var remainder = Date.now()-constants.oneia.epoch;
 	var years = constants.oneia.atEpoch+Math.floor(remainder/constants.oneia.year);
 	remainder = remainder % constants.oneia.year;
 	var days = Math.floor(remainder/constants.oneia.day);
