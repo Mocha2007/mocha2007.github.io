@@ -21,6 +21,23 @@ function mod(n, m){
 	return (n % m + m) % m;
 }
 
+/**
+ * gets the lunar phase [0, 1), starting at new
+ * @param {Date} t a time
+ */
+function moonPhase(t){
+	return mod(t - 642900000, 2551442890) / 2551442890;
+}
+
+/** @param {number} year */
+function getChineseNewYear(year){
+	var d;
+	for (var i = 0; i < 30; i++)
+		// if yesterday's % is greater than today's, that means it must now be a new moon
+		if (moonPhase(d = new Date(year, 0, 21+i)) < moonPhase(d = new Date(year, 0, 20+i)))
+			return d;
+}
+
 function oneiaTimeInitialize(){
 	var epoch =	1497151176; // SUN 2017 JUN 11 03:19:36 UTC
 	var year =	7662598.89579935; // oneian orbital period
@@ -37,7 +54,7 @@ function oneiaTimeInitialize(){
 	var yy = 31556952000;
 	// 642900 = 7 Jan 1970 10:35:00 UTC
 	// 2551442.9 = Lunar Synodic Period
-	var moonphase = Math.round(8*((currenttime-642900) % 2551442.9)/2551442.9) % 8;
+	var moonphase = Math.round(8*moonPhase(Date.now())) % 8;
 	// eremor time
 	document.getElementById('clock_eremor_title').innerHTML = '<img src="img/phase/'+nikkiphase +
 		'.png" height="9" width="9" alt="Nikki Phase: '+phases[nikkiphase]+'" title="Nikki Phase: ' +
@@ -86,27 +103,43 @@ function holidayCSS(){
 	var year = new Date().getFullYear();
 	var month = new Date().getMonth() + 1;
 	var day = new Date().getDate();
-	// console.log(month, day);
+	// chinese new year stuff
+	var cny = getChineseNewYear(year);
+	var wkBefCNY = new Date(cny - 7 * 24 * 60 * 60 * 1000);
+	wkBefCNY = [wkBefCNY.getMonth()+1, wkBefCNY.getDate()];
+	var wkAftCNY = new Date(+cny + 7 * 24 * 60 * 60 * 1000);
+	wkAftCNY = [wkAftCNY.getMonth()+1, wkAftCNY.getDate()];
+	console.debug(cny, wkBefCNY, wkAftCNY);
+	function runCny(){
+		var animal = 'Monkey Rooster Dog Pig Rat Ox Tiger Rabbit Dragon Snake Horse Goat'.split(' ')[year % 12];
+		img.style.filter = 'hue-rotate(225deg)';
+		img.style.borderRadius = '30px';
+		img.style.backgroundColor = '#082';
+		img.style.maskImage = 'linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0))';
+		title = 'Year of the ' + animal;
+		// to counteract valentines:
+		src = defaultSrc;
+	}
 
 	var title = '';
 	var defaultSrc = 'mo';
 	var src = defaultSrc;
 	var img = document.getElementById('m');
 	switch (month){
+		case 1:
+			// cny
+			if (wkBefCNY[0] === 1 && wkBefCNY[1] <= day) // after start
+				if (!(wkAftCNY[0] === 1 && wkAftCNY[1] < day)) // not after end
+					runCny();
+			break;
 		case 2:
-			// lunar new year, or valentines?
-			if (day < 8){
-				const animal = 'Monkey Rooster Dog Pig Rat Ox Tiger Rabbit Dragon Snake Horse Goat'.split(' ')[year % 12];
-				img.style.filter = 'hue-rotate(225deg)';
-				img.style.borderRadius = '30px';
-				img.style.backgroundColor = '#082';
-				img.style.maskImage = 'linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0))';
-				title = 'Year of the ' + animal;
-			}
-			else {
-				src = 'mochentines';
-				title = 'Fuck merrily!';
-			}
+			// valentines
+			src = 'mochentines';
+			title = 'Fuck merrily!';
+			// cny
+			if (wkBefCNY[0] === 1 || wkBefCNY[0] === 2 && wkBefCNY[1] <= day) // after start
+				if (wkAftCNY[0] === 2 && day <= wkAftCNY[1]) // before end
+					runCny();
 			// special day stuff
 			if (day === 4)
 				title = 'Day of the Republic. Wiwie Erdeka! Long live the RTC!';
