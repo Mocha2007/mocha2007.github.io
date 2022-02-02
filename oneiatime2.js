@@ -8,6 +8,10 @@ var constants = {
 		vernal: 6884100000, // ms after first vernal equinox 20 Mar 16:15 (2018)
 		year: 31556952000, // ms
 	},
+	eremor: {
+		base: 10,
+		places: 5,
+	},
 	moon: {
 		epoch: 642900000, // ms; 7 Jan 1970 10:35:00 UTC
 		period: 2551442890, // ms orbital period; Lunar Synodic Period
@@ -84,10 +88,13 @@ function oneiaTime(){
 	remainder = remainder % constants.oneia.day;
 	var currentTimeString = years + ' AT, Day ' + days + ', ';
 
-	for (var i = 1; i < 6; i += 1){
+	for (var i = 1; i < constants.eremor.places+1; i += 1){
 		// oneian clock is conveniently decimal... :^)
-		currentTimeString += Math.floor(remainder/(constants.oneia.day/Math.pow(10, i)))+(i !== 5 ? ':' : '');
-		remainder = remainder % (constants.oneia.day/Math.pow(10, i));
+		currentTimeString += Math.floor(remainder/
+			(constants.oneia.day/Math.pow(constants.eremor.base, i)));
+		if (i < constants.eremor.places)
+			currentTimeString += ':';
+		remainder = remainder % (constants.oneia.day/Math.pow(constants.eremor.base, i));
 	}
 
 	var timetime = new Date().toString();
