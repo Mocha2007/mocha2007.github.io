@@ -9,6 +9,7 @@ var constants = {
 		year: 31556952000, // ms
 	},
 	eremor: {
+		// eremoran timekeeping is conveniently decimal... :^)
 		base: 10,
 		places: 5,
 	},
@@ -90,7 +91,6 @@ function oneiaTime(){
 	var currentTimeString = years + ' AT, Day ' + days + ', ';
 
 	for (var i = 1; i < constants.eremor.places+1; i += 1){
-		// oneian clock is conveniently decimal... :^)
 		currentTimeString += Math.floor(remainder/
 			(constants.oneia.day/Math.pow(constants.eremor.base, i)));
 		if (i < constants.eremor.places)
