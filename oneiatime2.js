@@ -50,7 +50,7 @@ function oneiaTimeInitialize(){
 	var yearprogress = remainder/year;
 	remainder = remainder % day;
 	var cnikkiphase = mod(remainder/day-0.078, 1);
-	var nikkiphase = mod(Math.round(8*cnikkiphase), 8); // idk why it needs another mod, but the code breaks without it
+	var nikkiphase = mod(Math.round(8*cnikkiphase), 8); // needs another mod in case it rounds up to 8
 	var yy = 31556952000;
 	// 642900 = 7 Jan 1970 10:35:00 UTC
 	// 2551442.9 = Lunar Synodic Period
