@@ -1,4 +1,4 @@
-/* eslint-disable comma-dangle, no-var */
+/* eslint-disable no-var */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
 /* exported holidayCSS, oneiaTime, oneiaTimeInitialize */
 'use strict';
@@ -32,7 +32,7 @@ var constants = {
 
 var phases = [
 	'New', 'Waxing Crescent', 'First Quarter', 'Waxing Gibbous',
-	'Full', 'Waning Gibbous', 'Third Quarter', 'Waning Crescent'
+	'Full', 'Waning Gibbous', 'Third Quarter', 'Waning Crescent',
 ];
 
 /**
@@ -101,7 +101,7 @@ function oneiaTime(){
 	document.getElementById('clock_eremor_date').innerHTML = currentTimeString;
 	document.getElementById('clock_earth_date').innerHTML = new Date().toLocaleString('en-US', {
 		weekday: 'short', year: 'numeric', month: 'short', day: '2-digit',
-		hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit'
+		hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit',
 	}).replace(/,/g, '');
 }
 
