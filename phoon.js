@@ -44,7 +44,8 @@ function phoonsvg(phase){
 	terminator.style.fill = 'black';
 	svg.appendChild(terminator);
 	var terminator2 = createSvgElement('rect');
-	terminator2.setAttribute('y', Math.sign(x0));
+	terminator2.setAttribute('x', x0 < 0 ? -1 : 0);
+	terminator2.setAttribute('y', -1);
 	terminator2.setAttribute('width', 1);
 	terminator2.setAttribute('height', 2);
 	terminator2.setAttribute('mask', 'url(#mask)');
