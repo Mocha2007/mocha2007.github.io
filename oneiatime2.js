@@ -114,6 +114,13 @@ function holidayCSS(){
 	var year = new Date().getFullYear();
 	var month = new Date().getMonth() + 1;
 	var day = new Date().getDate();
+	function addExtraCss(){
+		var css = document.createElement('link');
+		css.href = 'css/extra.css';
+		css.type = 'text/css';
+		css.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(css);
+	}
 	// chinese new year stuff
 	var cny = getChineseNewYear(year);
 	var wkBefCNY = new Date(cny - constants.week);
@@ -133,6 +140,7 @@ function holidayCSS(){
 	var defaultSrc = 'mo';
 	var src = defaultSrc;
 	var img = document.getElementById('m');
+	var sub = document.getElementById('subtitle');
 	switch (month){
 		case 2:
 			// valentines
@@ -152,9 +160,10 @@ function holidayCSS(){
 		case 4:
 			if (day === 1){
 				document.getElementById('title').innerHTML = 'Schmocha&rsquo;s Site';
-				img.style.filter = 'hue-rotate(120deg)';
+				addExtraCss();
+				img.style.animation = 'rainbow 5s linear infinite'; // tried this for pride but it didn't look as good
 				img.style.transform = 'rotate(180deg)';
-				document.getElementById('subtitle').innerHTML = document.getElementById('subtitle').innerHTML.split('').reverse().join('');
+				sub.innerHTML = sub.innerHTML.split('').reverse().join('');
 			}
 			else if (day === 5)
 				title = 'Live long and prosper. 2063 - Forever';
