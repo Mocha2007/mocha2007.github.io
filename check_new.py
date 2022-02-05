@@ -3,13 +3,13 @@ from glob import glob
 from os.path import getctime, getmtime
 from time import time
 
-paths = glob('*.html', recursive=True)
-within30d = time() - 30 * 24 * 60 * 60
-for path in paths:
-	c = getctime(path)
-	if within30d < c:
-		print(str.ljust(f"C {c}", 22) + path)
+day = 24 * 60 * 60
+limit = 30 # days
+for path in glob('*.html', recursive=True):
+	c = round((time() - getctime(path))//day)
+	if c < limit:
+		print(f"C {str.rjust(str(c), 2)} d ago - {path}")
 		continue
-	m = getmtime(path)
-	if within30d < m:
-		print(str.ljust(f"M {m}", 22) + path)
+	m = round((time() - getmtime(path))//day)
+	if m < limit:
+		print(f"M {str.rjust(str(m), 2)} d ago - {path}")
