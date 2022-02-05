@@ -8,8 +8,8 @@ within30d = time() - 30 * 24 * 60 * 60
 for path in paths:
 	c = getctime(path)
 	if within30d < c:
-		print(f"C {c} - {path}")
+		print(str.ljust(f"C {c}", 22) + path)
 		continue
 	m = getmtime(path)
 	if within30d < m:
-		print(f"M {m} - {path}")
+		print(str.ljust(f"M {m}", 22) + path)
