@@ -228,6 +228,15 @@ function createSvgElement(name = 'svg'){
 	return document.createElementNS('http://www.w3.org/2000/svg', name);
 }
 
+/** https://stackoverflow.com/a/24285947/2579798
+ * @return {CSSStyleSheet}
+ */
+function createStyleSheet(){
+	const style = document.createElement('style');
+	document.head.appendChild(style);
+	return style.sheet;
+}
+
 /** https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file/34156339#34156339
  * @param {string} content - eg 'hello!
  * @param {string} fileName - eg 'mochaSpaceGameSave.txt'

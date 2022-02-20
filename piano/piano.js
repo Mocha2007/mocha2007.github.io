@@ -1,5 +1,5 @@
 /* exported stopAllAudio */
-/* global range */
+/* global createStyleSheet, range */
 'use strict';
 
 const waveTypes = 'sine square triangle sawtooth'.split(' ');
@@ -22,10 +22,16 @@ const settings = {
 		// theoretically should be 12 - 7 = 5
 		return settings.scale - settings.yScale;
 	},
+	get xShift(){
+		return -Math.ceil(settings.scale/2);
+	},
 	get yScale(){
 		// it's where it's closest to 3/2
 		const errors = range(settings.scale).map(i => Math.abs(3/2-Math.pow(2, i/settings.scale)));
 		return errors.indexOf(Math.min(...errors));
+	},
+	get yShift(){
+		return 1;
 	},
 };
 
@@ -34,7 +40,7 @@ function note2freq(id){
 }
 
 function xy2id(x, y){
-	return settings.yScale*(y+1) + settings.xScale*(x-6);
+	return settings.yScale*(y+settings.yShift) + settings.xScale*(x+settings.xShift);
 }
 
 function keySpan(id){
@@ -162,6 +168,11 @@ function generatePiano(){
 			td.onmousedown = () => noteOnClick(id);
 		});
 	});
+	// tweak css
+	const sheet = createStyleSheet();
+	sheet.insertRule(
+		`td{height:calc(100%/${settings.scale});width:calc(100%/${settings.scale+1});}`);
+	sheet.insertRule(`body,html,table{font-size:calc(48vh/${settings.scale})}`);
 	// misc setup
 	document.onmouseup = stopAllAudio;
 	document.onkeydown = keyStates.keydown;
