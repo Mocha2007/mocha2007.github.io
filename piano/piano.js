@@ -6,6 +6,15 @@ const waveTypes = 'sine square triangle sawtooth'.split(' ');
 let selectedWave = 'sine';
 
 const settings = {
+	freq: {
+		// just above max piano key
+		max: 4186.01, // hz
+		// D2, the lowest sound playable on my laptop
+		min: 70, // hz
+	},
+	get keys(){
+		return 88/12 * settings.scale;
+	},
 	scale: 12,
 	get xScale(){
 		// it's where it's closest to 4/3
@@ -40,7 +49,7 @@ function keySpan(id){
 }
 
 function stopAllAudio(){
-	range(88).forEach(id => {
+	range(settings.keys).forEach(id => {
 		try {
 			document.getElementById(`key${id}`).onmouseup();
 		}
@@ -139,14 +148,14 @@ function generatePiano(){
 				td.onclick = () => selectedWave = waveTypes[x];
 				return;
 			}
-			if (id < 1 || 88/12*settings.scale < id
+			if (id < 1 || settings.keys < id
 					|| settings.scale/2 < x-y || x-y < -settings.scale/2 + 1)
 				return td.classList.add('bungus');
-			if (id < 18) // D2, the lowest sound playable on my laptop
+			if (note2freq(id) < settings.freq.min)
 				td.classList.add('tooLow');
 			td.id = `key${id}`;
 			// black keys
-			if (-1 < [0, 2, 5, 7, 10, 12, 15].indexOf(id % settings.scale))
+			if (-1 < [0, 2].indexOf(id % settings.scale % 5))
 				td.classList.add('black');
 			td.appendChild(keySpan(id));
 			td.onmousedown = () => noteOnClick(id);
