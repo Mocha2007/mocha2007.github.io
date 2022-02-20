@@ -85,7 +85,7 @@ const keyStates = {
 	},
 	/** @param {Event} e */
 	keyup(e){
-		console.debug('KU', e.keyCode);
+		// console.debug('KU', e.keyCode);
 		keyStates[e.keyCode] = false;
 	},
 };
@@ -100,8 +100,9 @@ function noteOnClick(id){
 	range(12).forEach(i => { // +1 through +12 (1 through =)
 		if (keyStates[i + 49])
 			notes.push(id + i + 1);
+	});
 	range(12).forEach(i => { // -1 through -12 (Q through ])
-		if (keyStates[i + 17])
+		if (keyStates[i + 81])
 			notes.push(id - i - 1);
 	});
 	// root
