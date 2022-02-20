@@ -18,10 +18,10 @@ const settings = {
 	},
 	scale: 12,
 	get tableCols(){
-		return settings.scale+1;
+		return Math.floor(settings.scale/2 + 7.5);
 	},
 	get tableRows(){
-		return settings.scale;
+		return Math.floor(settings.scale/2 + 6);
 	},
 	get xScale(){
 		// it's where it's closest to 4/3
