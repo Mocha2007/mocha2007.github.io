@@ -80,13 +80,13 @@ function playTones(...tones){
 const keyStates = {
 	/** @param {Event} e */
 	keydown(e){
-		console.debug('KD', e.keyCode);
-		keyStates[e.keyCode] = true;
+		// console.debug('KD', e.key);
+		keyStates[e.key] = true;
 	},
 	/** @param {Event} e */
 	keyup(e){
-		// console.debug('KU', e.keyCode);
-		keyStates[e.keyCode] = false;
+		// console.debug('KU', e.key);
+		keyStates[e.key] = false;
 	},
 };
 
@@ -97,13 +97,9 @@ function noteOnClick(id){
 	const notes = [id];
 	// modifiers
 	// this allows chords to be played
-	range(12).forEach(i => { // +1 through +12 (1 through =)
-		if (keyStates[i + 49])
-			notes.push(id + i + 1);
-	});
-	range(12).forEach(i => { // -1 through -12 (Q through ])
-		if (keyStates[i + 81])
-			notes.push(id - i - 1);
+	'][poiuytrewq`1234567890-='.split('').forEach((key, i) => {
+		if (keyStates[key])
+			notes.push(id + i - 12);
 	});
 	// root
 	document.getElementById(`key${id}`).onmouseup = playTones(...notes.map(note2freq));
