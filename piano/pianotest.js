@@ -37,29 +37,28 @@ function freq2note(freq){
 	return id;
 }
 
+class MochaWave {
+	constructor(realGenerator, n){
+		this.real = range(n).map(realGenerator);
+		this.imag = range(n).map(() => 0);
+		this.parents = new Set();
+	}
+	// https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createPeriodicWave
+	/** @type {PeriodicWave} */
+	get wave(){
+		return audio.createPeriodicWave(this.real,
+			this.imag, {disableNormalization: true});
+	}
+}
+
+function isPowerOfTwo(n){
+	if (n === 1)
+		return true;
+	if (n <= 0 || n % 1 !== 0)
+		return false;
+	return isPowerOfTwo(n/2);
+}
+
 const waves = {
-	organ: {
-		overtones: 4,
-		get real(){
-			function isPowerOfTwo(n){
-				if (n === 1)
-					return true;
-				if (n <= 0 || n % 1 !== 0)
-					return false;
-				return isPowerOfTwo(n/2);
-			}
-			// powers of two are half the last
-			return range(Math.pow(2, this.overtones) + 1)
-				.map(x => x && isPowerOfTwo(x) / x);
-		},
-		get imag(){
-			return this.real.map(() => 0);
-		},
-		// https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createPeriodicWave
-		/** @type {PeriodicWave} */
-		get wave(){
-			return audio.createPeriodicWave(this.real,
-				this.imag, {disableNormalization: true});
-		},
-	},
+	organ: new MochaWave(x => x && isPowerOfTwo(x) / x, 17),
 };
