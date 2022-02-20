@@ -70,11 +70,42 @@ function playTone(freq){
 	};
 }
 
+/** returns the stop function */
+function playTones(...tones){
+	const stops = tones.map(tone => playTone(tone));
+	return () => stops.forEach(f => f());
+}
+
+/** str -> boolean */
+const keyStates = {
+	/** @param {Event} e */
+	keydown(e){
+		console.debug('KD', e.keyCode);
+		keyStates[e.keyCode] = true;
+	},
+	/** @param {Event} e */
+	keyup(e){
+		console.debug('KU', e.keyCode);
+		keyStates[e.keyCode] = false;
+	},
+};
+
 /**
  * @param {number} id piano key id
  */
 function noteOnClick(id){
-	document.getElementById(`key${id}`).onmouseup = playTone(note2freq(id));
+	const notes = [id];
+	// modifiers
+	// this allows chords to be played
+	range(12).forEach(i => { // +1 through +12 (1 through =)
+		if (keyStates[i + 49])
+			notes.push(id + i + 1);
+	range(12).forEach(i => { // -1 through -12 (Q through ])
+		if (keyStates[i + 17])
+			notes.push(id - i - 1);
+	});
+	// root
+	document.getElementById(`key${id}`).onmouseup = playTones(...notes.map(note2freq));
 }
 
 function generatePiano(){
@@ -110,6 +141,8 @@ function generatePiano(){
 	});
 	// misc setup
 	document.onmouseup = stopAllAudio;
+	document.onkeydown = keyStates.keydown;
+	document.onkeyup = keyStates.keyup;
 }
 
 generatePiano();
