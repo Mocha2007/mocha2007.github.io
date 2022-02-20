@@ -17,12 +17,6 @@ const settings = {
 		return 1 + Math.floor(Math.log2(settings.freq.max/settings.freq.min) * settings.scale);
 	},
 	scale: 12,
-	get tableCols(){
-		return Math.ceil(settings.keys / settings.yScale);
-	},
-	get tableRows(){
-		return Math.floor(settings.keys / settings.yScale);
-	},
 	get xScale(){
 		// it's where it's closest to 4/3
 		// theoretically should be 12 - 7 = 5
@@ -141,11 +135,11 @@ function generatePiano(){
 	const piano = document.getElementById('piano');
 	// FOURTEEN COLUMNS and ELEVEN ROWS
 	// each row is +7, each col is +5 keys
-	range(settings.tableRows).forEach(y => {
+	range(settings.scale).forEach(y => {
 		const tr = document.createElement('tr');
 		tr.id = `row${y}`;
 		piano.appendChild(tr);
-		range(settings.tableCols).forEach(x => {
+		range(settings.scale+1).forEach(x => {
 			const td = document.createElement('td');
 			tr.appendChild(td);
 			const id = xy2id(x, y);
