@@ -154,8 +154,8 @@ function noteOnClick(id){
 /** @param {number} octaveSize */
 function numberline(){
 	const svg = createSvgElement();
-	svg.setAttribute('viewBox', '-5 -10 110 20');
-	svg.setAttribute('width', '50%');
+	svg.setAttribute('viewBox', '-5 -5 110 10');
+	svg.setAttribute('width', '90%');
 	// svg.setAttribute('height', '100%');
 	// line
 	const line = createSvgElement('line');
@@ -166,18 +166,18 @@ function numberline(){
 		const m = createSvgElement('line');
 		m.setAttribute('x1', x*100);
 		m.setAttribute('x2', x*100);
-		m.setAttribute('y1', below ? 0 : -5);
-		m.setAttribute('y2', below ? 5 : 0);
+		m.setAttribute('y1', below ? 0 : -2);
+		m.setAttribute('y2', below ? 2 : 0);
 		svg.appendChild(m);
 		const label = createSvgElement('text');
 		label.innerHTML = t;
 		label.setAttribute('x', x*100);
-		label.setAttribute('y', below ? 9 : -6);
+		label.setAttribute('y', below ? 4 : -3);
 		svg.appendChild(label);
 	}
 	[
-		[0, 1], [1/4, '5/4'], [1/3, '4/3'],
-		[0.5, '3/2'], [2/3, '5/3'], [3/4, '7/4'], [1, 2],
+		[0, 1], [1/5, '6/5'], [1/4, '5/4'], [1/3, '4/3'], [2/5, '7/5'],
+		[0.5, '3/2'], [3/5, '8/5'], [2/3, '5/3'], [3/4, '7/4'], [4/5, '9/5'], [1, 2],
 	].forEach(x => mark(...x));
 	range(settings.scale+1).map(x => Math.pow(2, x/settings.scale))
 		.forEach((x, i) => mark(x-1, settings.names[i % settings.scale], true));
