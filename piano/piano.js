@@ -17,6 +17,12 @@ const settings = {
 		return 1 + Math.floor(Math.log2(settings.freq.max/settings.freq.min) * settings.scale);
 	},
 	scale: 12,
+	get tableCols(){
+		return settings.scale+1;
+	},
+	get tableRows(){
+		return settings.scale;
+	},
 	get xScale(){
 		// it's where it's closest to 4/3
 		// theoretically should be 12 - 7 = 5
@@ -141,11 +147,11 @@ function generatePiano(){
 	const piano = document.getElementById('piano');
 	// FOURTEEN COLUMNS and ELEVEN ROWS
 	// each row is +7, each col is +5 keys
-	range(settings.scale).forEach(y => {
+	range(settings.tableRows).forEach(y => {
 		const tr = document.createElement('tr');
 		tr.id = `row${y}`;
 		piano.appendChild(tr);
-		range(settings.scale+1).forEach(x => {
+		range(settings.tableCols).forEach(x => {
 			const td = document.createElement('td');
 			tr.appendChild(td);
 			const id = xy2id(x, y);
@@ -173,8 +179,8 @@ function generatePiano(){
 	// tweak css
 	const sheet = createStyleSheet();
 	sheet.insertRule(
-		`td{height:calc(100%/${settings.scale});width:calc(100%/${settings.scale+1});}`);
-	sheet.insertRule(`body,html,table{font-size:calc(48vh/${settings.scale})}`);
+		`td{height:calc(100%/${settings.tableRows});width:calc(100%/${settings.tableCols});}`);
+	sheet.insertRule(`body,html,table{font-size:calc(48vh/${settings.tableRows})}`);
 	// misc setup
 	document.onmouseup = stopAllAudio;
 	document.onkeydown = keyStates.keydown;
