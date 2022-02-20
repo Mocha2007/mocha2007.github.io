@@ -1,5 +1,5 @@
-/* exported playEFG */
-/* global playTone */
+/* exported freq2note, playEFG */
+/* global note2name, playTone, settings */
 'use strict';
 
 // https://stackoverflow.com/a/47147597/2579798
@@ -29,3 +29,10 @@ function playEFG(primes, root = 200, t = 1){
 }
 
 // eg. playEFG([3, 3, 5]);
+// Feb 2022 stuff
+/** @param {number} freq - in hz */
+function freq2note(freq){
+	const id = Math.round(settings.scale*Math.log2(freq/settings.freq.min) + 1);
+	console.debug(note2name(id));
+	return id;
+}

@@ -42,7 +42,13 @@ const settings = {
 };
 
 function note2freq(id){
-	return 27.5 * Math.pow(2, (id-1)/settings.scale);
+	return settings.freq.min * Math.pow(2, (id-1)/settings.scale);
+}
+
+function note2name(id){
+	// https://en.wikipedia.org/wiki/Piano_key_frequencies
+	const names = 'A A♯ B C C♯ D D♯ E F F♯ G G♯ H I I♯ J J♯'.split(' ');
+	return `${names[(id - 1) % settings.scale]} ${Math.floor((id+8)/settings.scale)}`;
 }
 
 function xy2id(x, y){
@@ -50,13 +56,10 @@ function xy2id(x, y){
 }
 
 function keySpan(id){
-	// https://en.wikipedia.org/wiki/Piano_key_frequencies
-	const names = 'A A♯ B C C♯ D D♯ E F F♯ G G♯ H I I♯ J J♯'.split(' ');
 	/** @type {HTMLSpanElement} */
 	const span = document.createElement('span');
-	span.innerHTML = names[(id - 1) % settings.scale];
 	const sub = document.createElement('sub');
-	sub.innerHTML = Math.floor((id+8)/settings.scale);
+	[span.innerHTML, sub.innerHTML] = note2name(id).split(' ');
 	span.appendChild(sub);
 	return span;
 }
