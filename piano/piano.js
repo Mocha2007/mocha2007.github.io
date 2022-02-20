@@ -165,7 +165,7 @@ function generatePiano(){
 				return;
 			}
 			if (id < 1 || settings.keys < id // outside key range
-					|| settings.scale/2 < x-y || x-y < -settings.scale/2 + 1) // outside central diagonal range (upper || lower)
+					|| settings.scale/2 < x-y || x-y < Math.floor(-settings.scale/2) + 1) // outside central diagonal range (upper || lower)
 				return td.classList.add('bungus');
 			if (note2freq(id) < settings.freq.softmin)
 				td.classList.add('tooLow');
