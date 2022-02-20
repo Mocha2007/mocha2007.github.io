@@ -5,22 +5,36 @@
 const waveTypes = 'sine square triangle sawtooth'.split(' ');
 let selectedWave = 'sine';
 
+const settings = {
+	scale: 12,
+	get xScale(){
+		// it's where it's closest to 4/3
+		// theoretically should be 12 - 7 = 5
+		return settings.scale - settings.yScale;
+	},
+	get yScale(){
+		// it's where it's closest to 3/2
+		const errors = range(settings.scale).map(i => Math.abs(3/2-Math.pow(2, i/settings.scale)));
+		return errors.indexOf(Math.min(...errors));
+	},
+};
+
 function note2freq(id){
-	return 27.5 * Math.pow(2, (id-1)/12);
+	return 27.5 * Math.pow(2, (id-1)/settings.scale);
 }
 
 function xy2id(x, y){
-	return 7*(y+1) + 5*(x-6);
+	return settings.yScale*(y+1) + settings.xScale*(x-6);
 }
 
 function keySpan(id){
 	// https://en.wikipedia.org/wiki/Piano_key_frequencies
-	const names = 'G♯ A A♯ B C C♯ D D♯ E F F♯ G'.split(' ');
+	const names = 'A A♯ B C C♯ D D♯ E F F♯ G G♯ H I I♯ J J♯'.split(' ');
 	/** @type {HTMLSpanElement} */
 	const span = document.createElement('span');
-	span.innerHTML = names[id % 12];
+	span.innerHTML = names[(id - 1) % settings.scale];
 	const sub = document.createElement('sub');
-	sub.innerHTML = Math.floor((id+8)/12);
+	sub.innerHTML = Math.floor((id+8)/settings.scale);
 	span.appendChild(sub);
 	return span;
 }
@@ -111,11 +125,11 @@ function generatePiano(){
 	const piano = document.getElementById('piano');
 	// FOURTEEN COLUMNS and ELEVEN ROWS
 	// each row is +7, each col is +5 keys
-	range(12).forEach(y => {
+	range(settings.scale).forEach(y => {
 		const tr = document.createElement('tr');
 		tr.id = `row${y}`;
 		piano.appendChild(tr);
-		range(13).forEach(x => {
+		range(settings.scale+1).forEach(x => {
 			const td = document.createElement('td');
 			tr.appendChild(td);
 			const id = xy2id(x, y);
@@ -125,13 +139,14 @@ function generatePiano(){
 				td.onclick = () => selectedWave = waveTypes[x];
 				return;
 			}
-			if (id < 1 || 88 < id || 6 < x-y || x-y < -5)
+			if (id < 1 || 88/12*settings.scale < id
+					|| settings.scale/2 < x-y || x-y < -settings.scale/2 + 1)
 				return td.classList.add('bungus');
 			if (id < 18) // D2, the lowest sound playable on my laptop
 				td.classList.add('tooLow');
 			td.id = `key${id}`;
 			// black keys
-			if (-1 < [0, 2, 5, 7, 10].indexOf(id % 12))
+			if (-1 < [0, 2, 5, 7, 10, 12, 15].indexOf(id % settings.scale))
 				td.classList.add('black');
 			td.appendChild(keySpan(id));
 			td.onmousedown = () => noteOnClick(id);
