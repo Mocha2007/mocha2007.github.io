@@ -155,7 +155,7 @@ function noteOnClick(id){
 function numberline(){
 	const svg = createSvgElement();
 	svg.setAttribute('viewBox', '-5 -5 110 10');
-	svg.setAttribute('width', '97%');
+	svg.setAttribute('width', '95%');
 	// svg.setAttribute('height', '100%');
 	// line
 	const line = createSvgElement('line');
