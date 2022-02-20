@@ -164,6 +164,8 @@ function generatePiano(){
 			// black keys
 			if (-1 < [0, 2].indexOf(id % settings.scale % 5))
 				td.classList.add('black');
+			// title
+			td.title = `${Math.round(note2freq(id))} hz`;
 			td.appendChild(keySpan(id));
 			td.onmousedown = () => noteOnClick(id);
 		});
