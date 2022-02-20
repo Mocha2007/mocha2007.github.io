@@ -48,7 +48,7 @@ function note2freq(id){
 
 function note2name(id){
 	// https://en.wikipedia.org/wiki/Piano_key_frequencies
-	const names = 'A A♯ B C C♯ D D♯ E F F♯ G G♯ H I I♯ J J♯'.split(' ');
+	const names = 'A A♯ B C C♯ D D♯ E F F♯ G G♯ H I I♯ J J♯ K L L♯ M M♯ N O O♯ P P♯ Q R R♯ S S♯ T U U♯ V V♯ W X X♯ Y Y♯'.split(' ');
 	return `${names[(id - 1) % settings.scale]} ${Math.floor((id+8)/settings.scale)}`;
 }
 
