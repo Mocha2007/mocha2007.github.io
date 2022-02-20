@@ -176,7 +176,8 @@ function numberline(){
 		svg.appendChild(label);
 	}
 	[
-		[0, 1], [1/3, '4/3'], [0.5, '3/2'], [2/3, '5/3'], [1, 2],
+		[0, 1], [1/4, '5/4'], [1/3, '4/3'],
+		[0.5, '3/2'], [2/3, '5/3'], [3/4, '7/4'], [1, 2],
 	].forEach(x => mark(...x));
 	range(settings.scale+1).map(x => Math.pow(2, x/settings.scale))
 		.forEach((x, i) => mark(x-1, settings.names[i % settings.scale], true));
