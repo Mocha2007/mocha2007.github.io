@@ -1,4 +1,4 @@
-/* exported freq2note, playEFG, waves */
+/* exported effectList, effects, freq2note, playEFG, waves */
 /* global audio, note2name, playTone, range, settings */
 'use strict';
 
@@ -38,16 +38,14 @@ function freq2note(freq){
 }
 
 class MochaWave {
-	constructor(realGenerator, n){
+	constructor(realGenerator, n = 10, imagGenerator = () => 0){
 		this.real = range(n).map(realGenerator);
-		this.imag = range(n).map(() => 0);
-		this.parents = new Set();
+		this.imag = range(n).map(imagGenerator);
 	}
 	// https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createPeriodicWave
 	/** @type {PeriodicWave} */
 	get wave(){
-		return audio.createPeriodicWave(this.real,
-			this.imag, {disableNormalization: true});
+		return audio.createPeriodicWave(this.real, this.imag); // {disableNormalization: true}
 	}
 }
 
@@ -61,4 +59,49 @@ function isPowerOfTwo(n){
 
 const waves = {
 	organ: new MochaWave(x => x && isPowerOfTwo(x) / x, 17),
+	trumpet: new MochaWave(x => x && 1),
+};
+
+const effectList = {
+	convolver: {
+		active: false,
+		/** @param {AudioNode} x */
+		get node(){
+			return audio.createConvolver();
+		},
+	},
+};
+
+const effects = {
+	// keep at the bottom
+	/** @param {AudioNode} node - input node */
+	apply(node){
+		range(effectList.length).map(i => effectList[this.getEffectNumber(i)])
+			.filter(x => x.active).forEach(x => {
+				const newNode = x.node;
+				node.connect(newNode);
+				node = newNode;
+			});
+		return node;
+	},
+	/** @param {number} id */
+	getEffectNumber(id){
+		return Object.keys(effectList)[id];
+	},
+	get length(){
+		return Object.keys(effectList).length;
+	},
+	/** @param {string} effectName */
+	toggle(effectName){
+		effectList[effectName].active = !effectList[effectName].active;
+		const elem = document.getElementById(effectName);
+		if (effectList[effectName].active){
+			elem.title = 'ON';
+			elem.classList.add('activeEffect');
+		}
+		else {
+			elem.title = 'OFF';
+			elem.classList.remove('activeEffect');
+		}
+	},
 };

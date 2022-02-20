@@ -3,7 +3,7 @@
 'use strict';
 
 const waveTypes = 'sine square triangle sawtooth'.split(' ');
-const allWaveTypes = 'sine square triangle sawtooth organ'.split(' ');
+const allWaveTypes = 'sine square triangle sawtooth organ trumpet'.split(' ');
 let selectedWave = 'sine';
 
 const settings = {
@@ -81,13 +81,13 @@ const audio = new(window.AudioContext || window.webkitAudioContext)();
 
 /** returns the stop function */
 function playTone(freq){
-	const attack = 100, //duration it will take to increase volume full sound volume, makes it more natural
+	const attack = 100, // duration it will take to increase volume full sound volume, makes it more natural
 		gain = audio.createGain(),
 		osc = audio.createOscillator();
 
 	gain.connect(audio.destination);
-	gain.gain.setValueAtTime(0, audio.currentTime); //change to "1" if you're not fadding in/out
-	gain.gain.linearRampToValueAtTime(1, audio.currentTime + attack / 1000); //remove if you don't want to fade in
+	gain.gain.setValueAtTime(0, audio.currentTime); // change to "1" if you're not fading in/out
+	gain.gain.linearRampToValueAtTime(1, audio.currentTime + attack / 1000); // remove if you don't want to fade in
 
 	osc.frequency.value = freq;
 	if (waveTypes.includes(selectedWave))
@@ -95,12 +95,13 @@ function playTone(freq){
 	else
 		osc.setPeriodicWave(waves[selectedWave].wave);
 	osc.connect(gain);
+	// effects.apply(osc).connect(gain);
 	osc.start(0);
 
 	// console.log(`pressing key ${id} (${osc.frequency.value} hz)`);
 	return () => {
 		// console.log(`depressing key ${id}`);
-		gain.gain.linearRampToValueAtTime(0, audio.currentTime + 1); //remove if you don't want to fade out
+		gain.gain.linearRampToValueAtTime(0, audio.currentTime + 1); // remove if you don't want to fade out
 		setTimeout(() => {
 			// console.log('this should fire 1s later');
 			try {
@@ -169,6 +170,15 @@ function generatePiano(){
 				td.onclick = () => selectedWave = allWaveTypes[x];
 				return;
 			}
+			/*
+			if (y === 1 && x < effects.length){ // effect buttons
+				const effectName = effects.getEffectNumber(x);
+				td.id = td.innerHTML = effectName;
+				td.classList.add('effectButton');
+				td.onclick = () => effects.toggle(effectName);
+				return;
+			}
+			*/
 			if (id < 1 || settings.keys < id // outside key range
 					|| settings.scale/2 < x-y || x-y < Math.floor(-settings.scale/2) + 1) // outside central diagonal range (upper || lower)
 				return td.classList.add('bungus');

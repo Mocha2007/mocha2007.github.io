@@ -28,6 +28,9 @@ td {
 	border: 1px solid red;
 }
 */
-.waveformButton {
+.effectButton, .waveformButton {
 	font-size: 2vh;
+}
+.activeEffect {
+	background-color: pink;
 }
