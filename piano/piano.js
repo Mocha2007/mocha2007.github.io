@@ -152,7 +152,7 @@ function noteOnClick(id){
 }
 
 /** @param {number} octaveSize */
-function numberline(octaveSize = settings.scale){
+function numberline(){
 	const svg = createSvgElement();
 	svg.setAttribute('viewBox', '-5 -10 110 20');
 	svg.setAttribute('width', '50%');
@@ -163,12 +163,12 @@ function numberline(octaveSize = settings.scale){
 	svg.appendChild(line);
 	// mark number line
 	function mark(x, t, below = false){
-		const mark = createSvgElement('line');
-		mark.setAttribute('x1', x*100);
-		mark.setAttribute('x2', x*100);
-		mark.setAttribute('y1', below ? 0 : -5);
-		mark.setAttribute('y2', below ? 5 : 0);
-		svg.appendChild(mark);
+		const m = createSvgElement('line');
+		m.setAttribute('x1', x*100);
+		m.setAttribute('x2', x*100);
+		m.setAttribute('y1', below ? 0 : -5);
+		m.setAttribute('y2', below ? 5 : 0);
+		svg.appendChild(m);
 		const label = createSvgElement('text');
 		label.innerHTML = t;
 		label.setAttribute('x', x*100);
