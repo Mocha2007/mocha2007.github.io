@@ -1,4 +1,4 @@
-/* exported effectList, effects, freq2note, playEFG, waves */
+/* exported effectList, effects, freq2note, numberline, playEFG, waves */
 /* global audio, note2name, playTone, range, settings */
 'use strict';
 
@@ -30,6 +30,7 @@ function playEFG(primes, root = 200, t = 1){
 
 // eg. playEFG([3, 3, 5]);
 // Feb 2022 stuff
+// yuck
 /** @param {number} freq - in hz */
 function freq2note(freq){
 	const id = Math.round(settings.scale*Math.log2(freq/settings.freq.min) + 1);

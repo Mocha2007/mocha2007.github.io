@@ -1,5 +1,5 @@
 /* exported stopAllAudio */
-/* global createStyleSheet, range, waves */
+/* global createStyleSheet, createSvgElement, range, waves */
 'use strict';
 
 const waveTypes = 'sine square triangle sawtooth'.split(' ');
@@ -17,6 +17,7 @@ const settings = {
 	get keys(){
 		return 1 + Math.floor(Math.log2(settings.freq.max/settings.freq.min) * settings.scale);
 	},
+	names: 'A A♯ B C C♯ D D♯ E F F♯ G G♯ H I I♯ J J♯ K L L♯ M M♯ N O O♯ P P♯ Q R R♯ S S♯ T U U♯ V V♯ W X X♯ Y Y♯'.split(' '),
 	scale: 12,
 	get tableCols(){
 		return Math.floor(settings.scale/2 + 8.5);
@@ -48,8 +49,7 @@ function note2freq(id){
 
 function note2name(id){
 	// https://en.wikipedia.org/wiki/Piano_key_frequencies
-	const names = 'A A♯ B C C♯ D D♯ E F F♯ G G♯ H I I♯ J J♯ K L L♯ M M♯ N O O♯ P P♯ Q R R♯ S S♯ T U U♯ V V♯ W X X♯ Y Y♯'.split(' ');
-	return `${names[(id - 1) % settings.scale]} ${Math.floor((id+8)/settings.scale)}`;
+	return `${settings.names[(id - 1) % settings.scale]} ${Math.floor((id+8)/settings.scale)}`;
 }
 
 function xy2id(x, y){
@@ -151,6 +151,38 @@ function noteOnClick(id){
 	document.getElementById(`key${id}`).onmouseup = playTones(...notes.map(note2freq));
 }
 
+/** @param {number} octaveSize */
+function numberline(octaveSize = settings.scale){
+	const svg = createSvgElement();
+	svg.setAttribute('viewBox', '-5 -10 110 20');
+	svg.setAttribute('width', '50%');
+	// svg.setAttribute('height', '100%');
+	// line
+	const line = createSvgElement('line');
+	line.setAttribute('x1', 100);
+	svg.appendChild(line);
+	// mark number line
+	function mark(x, t, below = false){
+		const mark = createSvgElement('line');
+		mark.setAttribute('x1', x*100);
+		mark.setAttribute('x2', x*100);
+		mark.setAttribute('y1', below ? 0 : -5);
+		mark.setAttribute('y2', below ? 5 : 0);
+		svg.appendChild(mark);
+		const label = createSvgElement('text');
+		label.innerHTML = t;
+		label.setAttribute('x', x*100);
+		label.setAttribute('y', below ? 9 : -6);
+		svg.appendChild(label);
+	}
+	[
+		[0, 1], [1/3, '4/3'], [0.5, '3/2'], [2/3, '5/3'], [1, 2],
+	].forEach(x => mark(...x));
+	range(settings.scale+1).map(x => Math.pow(2, x/settings.scale))
+		.forEach((x, i) => mark(x-1, settings.names[i % settings.scale], true));
+	return svg;
+}
+
 function generatePiano(){
 	/** @type {HTMLTableElement} */
 	const piano = document.getElementById('piano');
@@ -164,10 +196,21 @@ function generatePiano(){
 			const td = document.createElement('td');
 			tr.appendChild(td);
 			const id = xy2id(x, y);
-			if (y === 0 && x < allWaveTypes.length){ // waveform buttons
-				td.innerHTML = allWaveTypes[x];
-				td.classList.add('waveformButton');
-				td.onclick = () => selectedWave = allWaveTypes[x];
+			// top bar
+			if (y === 0){
+				// waveform buttons
+				if (x < allWaveTypes.length){
+					td.innerHTML = allWaveTypes[x];
+					td.classList.add('waveformButton');
+					td.onclick = () => selectedWave = allWaveTypes[x];
+				}
+				// number line
+				else if (x === allWaveTypes.length){
+					td.colSpan = settings.tableCols - y;
+					td.appendChild(numberline());
+				}
+				else
+					tr.removeChild(td);
 				return;
 			}
 			/*

@@ -12,6 +12,7 @@ body, html, table {
 td {
 	border: 1px solid #888;
 	height: calc(100% / 12);
+	padding: 0;
 	width: calc(100% / 13);
 }
 
@@ -33,4 +34,14 @@ td {
 }
 .activeEffect {
 	background-color: pink;
+}
+
+/* number line */
+line {
+	stroke: black;
+	stroke-width: 0.5;
+}
+text {
+	font: 5px sans-serif;
+	text-anchor: middle;
 }
