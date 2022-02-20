@@ -97,6 +97,7 @@ function noteOnClick(id){
 	const notes = [id];
 	// modifiers
 	// this allows chords to be played
+	// ranges from -12 to +12
 	'][poiuytrewq`1234567890-='.split('').forEach((key, i) => {
 		if (keyStates[key])
 			notes.push(id + i - 12);
