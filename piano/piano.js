@@ -22,7 +22,7 @@ const settings = {
 		return Math.floor(settings.scale/2 + 8.5);
 	},
 	get tableRows(){
-		return Math.floor(settings.scale/2 + 6);
+		return Math.max(10, Math.floor(settings.scale/2 + 6));
 	},
 	get xScale(){
 		// it's where it's closest to 4/3
