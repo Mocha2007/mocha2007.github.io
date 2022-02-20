@@ -1,8 +1,9 @@
 /* exported stopAllAudio */
-/* global createStyleSheet, range */
+/* global createStyleSheet, range, waves */
 'use strict';
 
 const waveTypes = 'sine square triangle sawtooth'.split(' ');
+const allWaveTypes = 'sine square triangle sawtooth organ'.split(' ');
 let selectedWave = 'sine';
 
 const settings = {
@@ -18,7 +19,7 @@ const settings = {
 	},
 	scale: 12,
 	get tableCols(){
-		return Math.floor(settings.scale/2 + 7.5);
+		return Math.floor(settings.scale/2 + 8.5);
 	},
 	get tableRows(){
 		return Math.floor(settings.scale/2 + 6);
@@ -37,7 +38,7 @@ const settings = {
 		return errors.indexOf(Math.min(...errors));
 	},
 	get yShift(){
-		return 1;
+		return 0;
 	},
 };
 
@@ -75,6 +76,7 @@ function stopAllAudio(){
 }
 
 // https://stackoverflow.com/a/32632007/2579798
+/** @type {AudioContext} */
 const audio = new(window.AudioContext || window.webkitAudioContext)();
 
 /** returns the stop function */
@@ -88,7 +90,10 @@ function playTone(freq){
 	gain.gain.linearRampToValueAtTime(1, audio.currentTime + attack / 1000); //remove if you don't want to fade in
 
 	osc.frequency.value = freq;
-	osc.type = selectedWave;
+	if (waveTypes.includes(selectedWave))
+		osc.type = selectedWave;
+	else
+		osc.setPeriodicWave(waves[selectedWave].wave);
 	osc.connect(gain);
 	osc.start(0);
 
@@ -158,10 +163,10 @@ function generatePiano(){
 			const td = document.createElement('td');
 			tr.appendChild(td);
 			const id = xy2id(x, y);
-			if (y === 0 && x < 4){ // waveform buttons
-				td.innerHTML = waveTypes[x];
+			if (y === 0 && x < allWaveTypes.length){ // waveform buttons
+				td.innerHTML = allWaveTypes[x];
 				td.classList.add('waveformButton');
-				td.onclick = () => selectedWave = waveTypes[x];
+				td.onclick = () => selectedWave = allWaveTypes[x];
 				return;
 			}
 			if (id < 1 || settings.keys < id // outside key range
