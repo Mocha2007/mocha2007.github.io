@@ -10,10 +10,11 @@ const settings = {
 		// just above max piano key
 		max: 4186.01, // hz
 		// D2, the lowest sound playable on my laptop
-		min: 70, // hz
+		softmin: 70, // hz
+		min: 27.5, // hz
 	},
 	get keys(){
-		return 88/12 * settings.scale;
+		return 1 + Math.floor(Math.log2(settings.freq.max/settings.freq.min) * settings.scale);
 	},
 	scale: 12,
 	get xScale(){
@@ -151,7 +152,7 @@ function generatePiano(){
 			if (id < 1 || settings.keys < id
 					|| settings.scale/2 < x-y || x-y < -settings.scale/2 + 1)
 				return td.classList.add('bungus');
-			if (note2freq(id) < settings.freq.min)
+			if (note2freq(id) < settings.freq.softmin)
 				td.classList.add('tooLow');
 			td.id = `key${id}`;
 			// black keys
