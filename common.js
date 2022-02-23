@@ -281,9 +281,7 @@ function play(filename){
 function proper(str){
 	return str.replace(
 		/\w\S*/g,
-		function(txt){
-			return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-		}
+		txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
 	);
 }
 
