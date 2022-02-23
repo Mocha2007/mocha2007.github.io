@@ -10,7 +10,7 @@ function isArrayOfCharacters(x){
 	if (x.length===0){
 		return false;
 	}
-	for (i=0;i<x.length;i+=1){
+	for (i=0; i<x.length; i+=1){
 		if (typeof x[i] !== 'string' || x[i].length !==1){
 			return false;
 		}
@@ -125,7 +125,7 @@ function rprog(){
 		n = 10;
 	}
 	let randomProgram = '';
-	for (i=0;i<n;i+=1){
+	for (i=0; i<n; i+=1){
 		randomProgram+=rchoice(validascii);
 	}
 	document.getElementById('code').value = randomProgram;
@@ -262,8 +262,8 @@ function fstep(){
 			// P multiply entire stack
 			case 'P':
 				a = 1;
-				for (i=0;i<stack.length;i+=1){
-					a = a*stack[i];
+				for (i=0; i<stack.length; i+=1){
+					a *= stack[i];
 				}
 				if (Number.isNaN(a)){
 					return err('Attempted product of a mixed stack');
@@ -273,7 +273,7 @@ function fstep(){
 			// S sum entire stack, or concatenate if ANY item is a string
 			case 'S':
 				a = 0;
-				for (i=0;i<stack.length;i+=1){
+				for (i=0; i<stack.length; i+=1){
 					a+=stack[i];
 				}
 				if (typeof a === 'number'){
@@ -484,7 +484,7 @@ function fstep(){
 		else if (typeof stack[stack.length-1] === 'object' && digits.indexOf(command) !== -1){ // number applied to an array
 			a = stack.pop();
 			b = a;
-			for (i=1;i<Number(command);i+=1){
+			for (i=1; i<Number(command); i+=1){
 				a = a.concat(b);
 			}
 			stack.push(a);
@@ -598,7 +598,7 @@ function fstep(){
 						}
 						// iterate over whole array
 						else if (typeof a === 'object'){
-							for (i=0;i<a.length;i+=1){
+							for (i=0; i<a.length; i+=1){
 								if (typeof a[i] === 'string'){
 									a[i] = String.fromCharCode(a[i].charCodeAt(0)-1);
 								}
@@ -625,7 +625,7 @@ function fstep(){
 						}
 						// iterate over whole array
 						else if (typeof a === 'object'){
-							for (i=0;i<a.length;i+=1){
+							for (i=0; i<a.length; i+=1){
 								if (typeof a[i] === 'string'){
 									a[i] = String.fromCharCode(a[i].charCodeAt(0)+1);
 								}
@@ -674,7 +674,7 @@ function fstep(){
 						// duplicate array if a is array
 						else if (typeof a === 'object'){
 							c = a;
-							for (i=1;i<b;i+=1){
+							for (i=1; i<b; i+=1){
 								a = a.concat(c); // concat
 							}
 							stack.push(a);
@@ -726,7 +726,7 @@ function fstep(){
 						}
 						// iterate over whole array
 						else if (typeof a === 'object'){
-							for (i=0;i<a.length;i+=1){
+							for (i=0; i<a.length; i+=1){
 								if (typeof a[i] === 'string'){
 									a[i] = String.fromCharCode(a[i].charCodeAt(0)-b);
 								}
@@ -966,7 +966,7 @@ function fstep(){
 					// A arithmetic mean ~ average
 				case 'A':
 					a = 0;
-					for (i=0;i<stack.length;i+=1){
+					for (i=0; i<stack.length; i+=1){
 						a+=stack[i];
 					}
 					if (typeof a === 'number'){
@@ -982,8 +982,8 @@ function fstep(){
 					// G geometric mean
 				case 'G':
 					a = 1;
-					for (i=0;i<stack.length;i+=1){
-						a = a*stack[i];
+					for (i=0; i<stack.length; i+=1){
+						a *= stack[i];
 					}
 					if (typeof a === 'number' && !Number.isNaN(a)){
 						stack = [Math.pow(Math.abs(a), 1/stack.length)]; // Math.abs needed to prevent negative roots!
@@ -1137,7 +1137,7 @@ function fstep(){
 					}
 					// for each list item, delete if falsey
 					c = [];
-					for (i=0;i<a.length;i+=1){
+					for (i=0; i<a.length; i+=1){
 						if (b[i]){
 							c=c.concat(a[i]);
 						}
@@ -1151,7 +1151,7 @@ function fstep(){
 						stack.push(a.toLowerCase());
 					}
 					else if (typeof a === 'object'){//array
-						for (i=0;i<a.length;i+=1){
+						for (i=0; i<a.length; i+=1){
 							if (typeof a[i]==='string'){
 								a[i] = a[i].toUpperCase();
 							}
@@ -1181,7 +1181,7 @@ function fstep(){
 						stack.push(a.toUpperCase());
 					}
 					else if (typeof a === 'object'){//array
-						for (i=0;i<a.length;i+=1){
+						for (i=0; i<a.length; i+=1){
 							if (typeof a[i]==='string'){
 								a[i] = a[i].toUpperCase();
 							}
@@ -1248,8 +1248,8 @@ function fstep(){
 						return err('error calling function');
 					}
 					// insert a(x) at current location! [HOLY CRAP WORKED FIRST TRY HYPE!]
-					commandlist = commandlist.slice(0, line)+definedfunctions[a] +
-						commandlist.slice(line);
+					commandlist = commandlist.slice(0, line)+definedfunctions[a]
+						+ commandlist.slice(line);
 					mconsole('i', 'Function "'+a+'" called as "'+b+'"');
 					break;
 					// abc
@@ -1305,7 +1305,7 @@ function fstep(){
 						return err('Invalid use of m ; errortype = '+errortype);
 					}
 					// for each list item, add 'f' ¡ [apply f] À [rotate list]
-					for (i=0;i<a.length;i+=1){
+					for (i=0; i<a.length; i+=1){
 						commandlist = commandlist.slice(0, line)+'\''+b+'\'¡À'+commandlist.slice(line);
 					}
 					stack.push(a);

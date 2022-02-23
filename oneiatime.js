@@ -116,11 +116,11 @@ function china(){
 
 function zodiac(){
 	var n = Math.floor(mod(new Date()-vernal, 31556952000)/2629746000); // sign number 0-11
-	return '<abbr title="Element: '+signelements[mod(n, 4)]+'&#013;Quality: ' +
-		signqualities[mod(n, 3)]+'&#013;Ruler: '+signrulers[n] +
-		' (this planet\'s influence heightens when inside this constellation)&#013;Detriment: ' +
-		signrulers[mod(n+6, 12)] + ' (this planet\'s influence weakens when inside this constellation)">' +
-		signs[n]+'</abbr>';
+	return '<abbr title="Element: '+signelements[mod(n, 4)]+'&#013;Quality: '
+		+ signqualities[mod(n, 3)]+'&#013;Ruler: '+signrulers[n]
+		+ ' (this planet\'s influence heightens when inside this constellation)&#013;Detriment: '
+		+ signrulers[mod(n+6, 12)] + ' (this planet\'s influence weakens when inside this constellation)">'
+		+ signs[n]+'</abbr>';
 }
 
 function jd(){
@@ -201,10 +201,10 @@ function dorf(){
 	var h = Math.floor(remainder / (yearLength/12/28/24));
 	remainder -= h*yearLength/12/28/24;
 	var t = Math.floor(remainder / 72); // ticks
-	return d + ' ' + dorfMonths[m] + ' (<abbr title="' + dorfCaravans[s] + ' caravan">' +
-		dorfSeasonModifiers[sm] + ' ' + dorfSeasons[s] +
-		'</abbr>), <abbr title="Age of Civilization">Year ' + y + '</abbr> - Hour ' + h +
-		', Tick ' + t;
+	return d + ' ' + dorfMonths[m] + ' (<abbr title="' + dorfCaravans[s] + ' caravan">'
+		+ dorfSeasonModifiers[sm] + ' ' + dorfSeasons[s]
+		+ '</abbr>), <abbr title="Age of Civilization">Year ' + y + '</abbr> - Hour ' + h
+		+ ', Tick ' + t;
 }
 
 /** ab urbe condita */
@@ -226,8 +226,8 @@ function japan(){
 			break;
 	}
 	y -= eras[i][0] - 1;
-	return '<abbr title="' + eras[i][2] + ' era\nEmperor ' + eras[i][3] + '"><ruby>' + eras[i][1] +
-		'<rt>' + eras[i][4] + '</rt></ruby></abbr>' + y + '年';
+	return '<abbr title="' + eras[i][2] + ' era\nEmperor ' + eras[i][3] + '"><ruby>' + eras[i][1]
+		+ '<rt>' + eras[i][4] + '</rt></ruby></abbr>' + y + '年';
 }
 
 function romanFULL(){

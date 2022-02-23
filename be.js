@@ -1,4 +1,4 @@
-/* eslint-disable no-var */
+/* eslint-disable no-var, prefer-arrow-callback */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
 /* exported tabledelta, vowelstats */
 'use strict';
@@ -22,7 +22,7 @@ function freqcalc(){
 	document.getElementById('lettercount').innerHTML = s;
 	document.getElementById('wordcount').innerHTML = bigdick.match(/\s/g).length;
 	for (var k in letterindex){ // for no reason a foreach breaks this
-		letterindex[k] = letterindex[k]/s;
+		letterindex[k] /= s;
 		letterindex[k] = Math.round(letterindex[k]*100000)/1000;
 	}
 	return letterindex;

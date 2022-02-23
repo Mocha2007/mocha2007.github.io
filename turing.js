@@ -543,9 +543,9 @@ function reset(){
 
 	//table construction
 	var tabularasa = '<table>';
-	for (var i=0;i<xsize;i+=1){
+	for (var i=0; i<xsize; i+=1){
 		tabularasa+='<tr>';
-		for (var j=0;j<ysize;j+=1){
+		for (var j=0; j<ysize; j+=1){
 			tabularasa+='<td id="x'+Number(i*ysize+j)+'">0</td>';
 		}
 		tabularasa+='</tr>';
@@ -772,7 +772,7 @@ function fstep(){
 		arg = arg.replace('*', specialstate).replace('$', pointer).replace('@', specialtarget);
 		// Go through vals
 		var a, b, c;
-		for (var i=0;i<arg.length;i+=1){
+		for (var i=0; i<arg.length; i+=1){
 			// Check if NaN
 			if (rpnstack.length>0 && !Number.isFinite(rpnstack[rpnstack.length-1])){
 				console.error('RPN error performing '+arg[i-1]+':\n@ Line '+linenumber+'\n\t'+command+'\n\t    '+Array(i).join(' ')+'^');
@@ -800,23 +800,23 @@ function fstep(){
 				rpnstack.pop();
 			}
 			else if (arg[i]==='x'){
-				rpnstack[rpnstack.length-2] =
-					rpnstack[rpnstack.length-2]*rpnstack[rpnstack.length-1];
+				rpnstack[rpnstack.length-2]
+					= rpnstack[rpnstack.length-2]*rpnstack[rpnstack.length-1];
 				rpnstack.pop();
 			}
 			else if (arg[i]==='/'){
-				rpnstack[rpnstack.length-2] =
-					rpnstack[rpnstack.length-2]/rpnstack[rpnstack.length-1];
+				rpnstack[rpnstack.length-2]
+					= rpnstack[rpnstack.length-2]/rpnstack[rpnstack.length-1];
 				rpnstack.pop();
 			}
 			else if (arg[i]==='^'){
-				rpnstack[rpnstack.length-2] =
-					Math.pow(rpnstack[rpnstack.length-2], rpnstack[rpnstack.length-1]);
+				rpnstack[rpnstack.length-2]
+					= Math.pow(rpnstack[rpnstack.length-2], rpnstack[rpnstack.length-1]);
 				rpnstack.pop();
 			}
 			else if (arg[i]==='%'){
-				rpnstack[rpnstack.length-2] =
-					mod(rpnstack[rpnstack.length-2], rpnstack[rpnstack.length-1]);
+				rpnstack[rpnstack.length-2]
+					= mod(rpnstack[rpnstack.length-2], rpnstack[rpnstack.length-1]);
 				rpnstack.pop();
 			}
 			else if (arg[i]==='!'){
@@ -860,8 +860,8 @@ function fstep(){
 				rpnstack.push(Math.random()*(b-a)-a);
 			}
 			else if (arg[i]==='l'){
-				rpnstack[rpnstack.length-2] =
-					Math.log(rpnstack[rpnstack.length-2])/Math.log(rpnstack[rpnstack.length-1]);
+				rpnstack[rpnstack.length-2]
+					= Math.log(rpnstack[rpnstack.length-2])/Math.log(rpnstack[rpnstack.length-1]);
 				rpnstack.pop();
 			}
 			else if (arg[i]==='L'){
@@ -944,15 +944,15 @@ function fstep(){
 				rpnstack.push((-b-Math.pow(b*b-4*a*c, 0.5))/2/a);
 			}
 			else if (arg[i]==='\''){
-				for (var j=0;j<rpnstack.length;j+=1){
-					rpnstack[j] = rpnstack[j]*(rpnstack.length-1-j);
+				for (var j=0; j<rpnstack.length; j+=1){
+					rpnstack[j] *= rpnstack.length - 1 - j;
 				}
 				rpnstack.pop();
 			}
 			else if (arg[i]==='"'){
-				for (var k=0;k<2;k+=1){
-					for (var jk=0;jk<rpnstack.length;jk+=1){
-						rpnstack[jk] = rpnstack[jk]*(rpnstack.length-1-jk);
+				for (var k=0; k<2; k+=1){
+					for (var jk=0; jk<rpnstack.length; jk+=1){
+						rpnstack[jk] *= rpnstack.length - 1 - jk;
 					}
 					rpnstack.pop();
 				}
@@ -1360,7 +1360,7 @@ function fstep(){
 }
 
 function fstep100(){
-	for (var i=0;i<100;i+=1){
+	for (var i=0; i<100; i+=1){
 		fstep();
 	}
 	return false;

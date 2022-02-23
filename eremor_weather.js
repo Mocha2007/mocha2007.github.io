@@ -1,4 +1,4 @@
-/* eslint-disable no-var */
+/* eslint-disable no-var, prefer-arrow-callback */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
 'use strict';
 // Modelled on Bhavnagar, India
@@ -49,21 +49,21 @@ function bareOneiaMonth(t){
 function bareWeather(m, d){
 	var temp = seededRandomRange(lows[m], highs[m], d);
 	var state = seededRandom(d) < rains[m] ? 'Rainy">&#x2614;' : 'Sunny">&#x2600;';
-	return '<abbr title="'+Math.round(c2f(temp))+'&#176;F">'+Math.round(temp) +
-		'&#176;C</abbr> <abbr title="'+state+'</abbr>';
+	return '<abbr title="'+Math.round(c2f(temp))+'&#176;F">'+Math.round(temp)
+		+ '&#176;C</abbr> <abbr title="'+state+'</abbr>';
 }
 
 function weather(){
 	var temp = seededRandomRange(lows[oneiaMonth()], highs[oneiaMonth()], oneiaDay());
 	var state = seededRandom(oneiaDay())<rains[oneiaMonth()] ? 'Rainy">&#x2614;' : 'Sunny">&#x2600;';
 	var day = 104148000;
-	var fiveday = '<details><summary>5-Day Forecast</summary>' +
-		[1, 2, 3, 4, 5].map(function(i){
-			return bareWeather(bareOneiaMonth(Date.now()+i*day), oneiaDay()+i);
-		}).join('<br>') + '</details>';
-	document.getElementById('eremorweather').innerHTML = 'Weather in Eremor: <abbr title="' +
-		Math.round(c2f(temp))+'&#176;F">'+Math.round(temp)+'&#176;C</abbr> <abbr title="'+state +
-		'</abbr>'+fiveday;
+	var fiveday = '<details><summary>5-Day Forecast</summary>'
+			+ [1, 2, 3, 4, 5].map(function(i){
+				return bareWeather(bareOneiaMonth(Date.now()+i*day), oneiaDay()+i);
+			}).join('<br>') + '</details>';
+	document.getElementById('eremorweather').innerHTML = 'Weather in Eremor: <abbr title="'
+		+ Math.round(c2f(temp))+'&#176;F">'+Math.round(temp)+'&#176;C</abbr> <abbr title="'+state
+		+ '</abbr>'+fiveday;
 }
 
 weather();

@@ -65,9 +65,9 @@ function getChineseNewYear(year){
 
 function oneiaTimeInitialize(){
 	var remainder = Date.now()-constants.oneia.epoch;
-	remainder = remainder % constants.oneia.year;
+	remainder %= constants.oneia.year;
 	var yearprogress = remainder/constants.oneia.year;
-	remainder = remainder % constants.oneia.day;
+	remainder %= constants.oneia.day;
 	var cnikkiphase = mod(remainder/constants.oneia.day-constants.nikki.epoch, 1);
 	var nikkiphase = mod(Math.round(8*cnikkiphase), 8); // needs another mod in case it rounds up to 8
 	var cmoonphase = moonPhase(Date.now());
@@ -83,24 +83,24 @@ function oneiaTimeInitialize(){
 	titleEarth.title = 'Moon Phase: ' + phases[moonphase];
 	titleEarth.appendChild(phoonsvg(cmoonphase));
 	titleEarth.innerHTML += ' Earth Time:';
-	document.getElementById('clock_earth_progress').value =
-		(Date.now()-constants.earth.vernal) % constants.earth.year/constants.earth.year;
+	document.getElementById('clock_earth_progress').value
+		= (Date.now()-constants.earth.vernal) % constants.earth.year/constants.earth.year;
 }
 
 function oneiaTime(){
 	var remainder = Date.now()-constants.oneia.epoch;
 	var years = constants.oneia.atEpoch+Math.floor(remainder/constants.oneia.year);
-	remainder = remainder % constants.oneia.year;
+	remainder %= constants.oneia.year;
 	var days = Math.floor(remainder/constants.oneia.day);
-	remainder = remainder % constants.oneia.day;
+	remainder %= constants.oneia.day;
 	var currentTimeString = years + ' AT, Day ' + days + ', ';
 
 	for (var i = 1; i < constants.eremor.places+1; i += 1){
-		currentTimeString += Math.floor(remainder/
-			(constants.oneia.day/Math.pow(constants.eremor.base, i)));
+		currentTimeString += Math.floor(remainder
+			/ (constants.oneia.day/Math.pow(constants.eremor.base, i)));
 		if (i < constants.eremor.places)
 			currentTimeString += ':';
-		remainder = remainder % (constants.oneia.day/Math.pow(constants.eremor.base, i));
+		remainder %= constants.oneia.day / Math.pow(constants.eremor.base, i);
 	}
 
 	document.getElementById('clock_eremor_date').innerHTML = currentTimeString;

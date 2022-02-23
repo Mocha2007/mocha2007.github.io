@@ -1,4 +1,4 @@
-/* eslint-disable comma-dangle, no-var */
+/* eslint-disable comma-dangle, no-var, prefer-arrow-callback */
 /* jshint esversion: 3, strict: true, strict: global */
 /* globals a, currentyear, diff, events */
 /* exported primeclock, enableDebug */
@@ -71,7 +71,7 @@ function arraysEqual(arr1, arr2){
 	if (arr1.length !== arr2.length){
 		return false;
 	}
-	for (var i=0;i<arr1.length;i+=1){
+	for (var i=0; i<arr1.length; i+=1){
 		if (arr1[i] !== arr2[i]){
 			return false;
 		}
@@ -105,7 +105,7 @@ function factorize(n){
 			else {
 				pf.push([t, 1]);
 			}
-			n = n/t;
+			n /= t;
 		}
 		else {
 			t+=t===2?1:2;
@@ -126,7 +126,7 @@ function ispower(factorization){
 		return x[1];
 	});
 	var gggcd = 0;
-	for (var i=0;i<powertable.length;i+=1){
+	for (var i=0; i<powertable.length; i+=1){
 		if (gggcd){
 			gggcd = gcd(gggcd, powertable[i]);
 		}
@@ -158,7 +158,7 @@ function issemiprime(factorization){
 function commaconvert(s){
 	s = s.split('');
 	var n = 0;
-	for (var i=0;i<s.length;i+=1){
+	for (var i=0; i<s.length; i+=1){
 		if (s[i]===','){
 			if (n%2===0){
 				s[i]='^';
@@ -216,7 +216,7 @@ function alc(){
 	var x = timeSinceYear(); // seconds since year beginning
 	var y = Math.pow(a, 1-x/year);
 	var str = '';
-	for (var i=0;i<events.length;i+=1){
+	for (var i=0; i<events.length; i+=1){
 		if (debug || events[i][0]>y){
 			str += '<div class="' + getClass(events[i][0]) + '">'
 				+ ialc(events[i][0]) + ' - ' + events[i][1] + '</div>';
@@ -296,9 +296,9 @@ function footer(){
 	var dateString = String(getDateBeforeNow(y)).slice(4, 24) + ' ';
 
 	document.getElementById('nowtime').innerHTML = String(new Date()).slice(4, 24)
-		.replace(new Date().getFullYear()+' ', '')+
-		' - '+(dateString[0] === 'l' ? '' : dateString)+
-		'('+Math.round(y).toLocaleString()+' Years Ago, '+yprime+'x Speed)';
+		.replace(new Date().getFullYear()+' ', '')
+		+ ' - '+(dateString[0] === 'l' ? '' : dateString)
+		+ '('+Math.round(y).toLocaleString()+' Years Ago, '+yprime+'x Speed)';
 }
 
 function enableDebug(){

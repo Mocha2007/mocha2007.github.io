@@ -8,7 +8,7 @@ const versionno = '1.2';
 
 function drop(x, arr){
 	const s=[];
-	for (i=0;i<arr.length;i+=1){
+	for (i=0; i<arr.length; i+=1){
 		if (arr[i]!==x){
 			s.push(arr[i]);
 		}
@@ -538,7 +538,7 @@ function fstep(){
 }
 
 function fstep100(){
-	for (i=0;i<100;i+=1){
+	for (i=0; i<100; i+=1){
 		fstep();
 	}
 	return false;

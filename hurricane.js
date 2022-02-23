@@ -1,25 +1,26 @@
-/* jshint esversion: 6, strict: true, strict: global, eqeqeq: true */
+/* eslint-disable comma-dangle, no-var, prefer-arrow-callback */
+/* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
 /* global mean, proper, random, sd */
 /* exported avgprint, avgyear, randomSeason, seasonstats */
 'use strict';
 
-const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun',
+var months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun',
 	'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
-const offset = [-1, 30, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+var offset = [-1, 30, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
 
 /** @param {string} name */
 function n2n(name){ // name to number
-	const date = name.split(' ');
-	const day = Number(date[0]);
-	const month = months.indexOf(date[1].toLowerCase());
+	var date = name.split(' ');
+	var day = Number(date[0]);
+	var month = months.indexOf(date[1].toLowerCase());
 	return offset[month] + day;
 }
 
 /** @param {number} n */
 function n2n2(n){ // number to name
-	for (let i = 12; 0 < i; i--){
+	for (var i = 12; 0 < i; i--){
 		if (n > offset[i]){
-			const day = n - offset[i];
+			var day = n - offset[i];
 			return day+' '+proper(months[i]);
 		}
 	}
@@ -34,8 +35,8 @@ function realsize(x){
 }
 
 function avgduring(date){
-	let n = 0;
-	const years = realsize(hurricanelist);
+	var n = 0;
+	var years = realsize(hurricanelist);
 	// date is an integer between 0 and 365
 	hurricanelist.forEach(function(x){ // for each year
 		x.forEach(function(y){ // for each hurricane
@@ -48,7 +49,7 @@ function avgduring(date){
 }
 
 function maxcatduring(date){
-	let maxcat = -1;
+	var maxcat = -1;
 	// date is an integer between 0 and 365
 	hurricanelist.forEach(function(x){ // for each year
 		x.forEach(function(y){ // for each hurricane
@@ -61,7 +62,7 @@ function maxcatduring(date){
 }
 
 function catStyle(category){
-	const style = category > 0 ? 'c'+category : category === 0 ? 'ts' : 'td';
+	var style = category > 0 ? 'c'+category : category === 0 ? 'ts' : 'td';
 	return '<td class='+style+'>'+style.toUpperCase()+'</td>';
 }
 
@@ -71,10 +72,10 @@ function maxcathtml(date){
 
 function fractionhurricane(date, m, n){
 	// % of cat m hurricanes that turn into cat n hurricanes
-	const maxcat = maxcatduring(date);
-	let maxcatname = maxcat < n ? '0' : 1;
-	let stormsondate = 0;
-	let hurricanesondate = 0;
+	var maxcat = maxcatduring(date);
+	var maxcatname = maxcat < n ? '0' : 1;
+	var stormsondate = 0;
+	var hurricanesondate = 0;
 	if (maxcatname === 1){
 		hurricanelist.forEach(function(x){ // for each year
 			x.forEach(function(y){ // for each hurricane
@@ -93,8 +94,8 @@ function fractionhurricane(date, m, n){
 
 function yearsContaining(date){
 	// % of years where ANY storm exists on a date
-	let yearCount = 0;
-	let stormsondate = 0;
+	var yearCount = 0;
+	var stormsondate = 0;
 	hurricanelist.forEach(function(x){ // for each year
 		yearCount += 1;
 		x.some(function(y){ // for each hurricane
@@ -102,16 +103,17 @@ function yearsContaining(date){
 				stormsondate += 1;
 				return true;
 			}
+			return false;
 		});
 	});
-	const ratio = Math.floor(stormsondate / yearCount*100);
+	var ratio = Math.floor(stormsondate / yearCount*100);
 	return '<td class=\'p'+Math.floor(ratio/10)+'\'>'+ratio+'%</td>';
 }
 
 function avgDuration(category){
 	// average category duration
-	let d = 0;
-	let n = 0;
+	var d = 0;
+	var n = 0;
 	hurricanelist.forEach(function(x){ // for each year
 		x.forEach(function(y){ // for each hurricane
 			if (y[2] === category){
@@ -125,7 +127,7 @@ function avgDuration(category){
 
 function avgDurationSD(category){
 	// average category duration standard deviation
-	const durations = [];
+	var durations = [];
 	hurricanelist.forEach(function(x){ // for each year
 		x.forEach(function(y){ // for each hurricane
 			if (y[2] === category){
@@ -152,7 +154,7 @@ function getMaxOfArray(numArray){
 }
 
 function maxyear(){
-	const wholeyear = [];
+	var wholeyear = [];
 	range1(356).forEach(function(x){
 		wholeyear.push(avgduring(x));
 	});
@@ -160,16 +162,16 @@ function maxyear(){
 }
 
 function avgyear(){
-	const wholeyear = [];
-	const maxinyear = maxyear();
+	var wholeyear = [];
+	var maxinyear = maxyear();
 	// reset
 	document.getElementById('avgByDate').innerHTML = '<tr><th>Date</th><th>Quantity</th><th>Visual</th><th>Max</th><th>%D</th><th>%H</th><th>%M</th></tr>';
 	range1(366).forEach(function(x){
-		x = x-1;
-		const newrow = document.createElement('tr');
-		const newval = avgduring(x);
+		x--;
+		var newrow = document.createElement('tr');
+		var newval = avgduring(x);
 		wholeyear.push(newval);
-		const datestring = n2n2(x);
+		var datestring = n2n2(x);
 		newrow.innerHTML = '<td>'+datestring+'</td><td>'+Math.round(newval*100)/100+'</td><td><progress value='+newval+' max='+maxinyear+'></progress></td>'+maxcathtml(x)+yearsContaining(x)+fractionhurricane(x, -1, 1)+fractionhurricane(x, 1, 3);
 		document.getElementById('avgByDate').appendChild(newrow);
 	});
@@ -177,13 +179,13 @@ function avgyear(){
 }
 
 function seasonstats(year){
-	const y = hurricanelist[year];
+	var y = hurricanelist[year];
 	// maj. hurricanes (3+)
-	let majors = 0;
+	var majors = 0;
 	// hurricanes
-	let hurricanes = 0;
+	var hurricanes = 0;
 	// storms
-	let storms = 0;
+	var storms = 0;
 	y.forEach(function(x){ // for each depression
 		switch (x[2]){
 			case 0:
@@ -215,14 +217,14 @@ function seasonstats(year){
 		}
 	});
 	// depressions
-	const depressions = y.length;
+	var depressions = y.length;
 	return [depressions, storms, hurricanes, majors];
 }
 
 // data follows
 // hurricanelist[year][number] = [start,end,cat,name];
 
-const hurricanelist = [];
+var hurricanelist = [];
 hurricanelist[1995] = [
 	[n2n('2 jun'), n2n('10 jun'), 1, 'Allison'],
 	[n2n('6 jul'), n2n('10 jul'), 0, 'Barry'],
@@ -244,7 +246,7 @@ hurricanelist[1995] = [
 	[n2n('4 oct'), n2n('8 oct'), 0, 'Pablo'],
 	[n2n('7 oct'), n2n('21 oct'), 3, 'Roxanne'],
 	[n2n('20 oct'), n2n('25 oct'), 0, 'Sebastien'],
-	[n2n('26 oct'), n2n('1 nov'), 1, 'Tanya'],
+	[n2n('26 oct'), n2n('1 nov'), 1, 'Tanya']
 ];
 hurricanelist[1996] = [
 	[n2n('17 jun'), n2n('21 jun'), 0, 'Arthur'],
@@ -259,7 +261,7 @@ hurricanelist[1996] = [
 	[n2n('4 oct'), n2n('8 oct'), 0, 'Josephine'],
 	[n2n('11 oct'), n2n('13 oct'), 0, 'Kyle'],
 	[n2n('14 oct'), n2n('27 oct'), 3, 'Lili'],
-	[n2n('16 nov'), n2n('26 nov'), 1, 'Marco'],
+	[n2n('16 nov'), n2n('26 nov'), 1, 'Marco']
 ];
 hurricanelist[1997] = [
 	[n2n('1 jun'), n2n('2 jun'), 0, 'Unnamed'],
@@ -270,7 +272,7 @@ hurricanelist[1997] = [
 	[n2n('17 jul'), n2n('19 jul'), -1, 'Five'],
 	[n2n('3 sep'), n2n('20 sep'), 3, 'Erika'],
 	[n2n('4 oct'), n2n('8 oct'), 0, 'Fabian'],
-	[n2n('16 oct'), n2n('17 oct'), 0, 'Grace'],
+	[n2n('16 oct'), n2n('17 oct'), 0, 'Grace']
 ];
 hurricanelist[1998] = [
 	[n2n('27 jul'), n2n('2 aug'), 0, 'Alex'],
@@ -286,7 +288,7 @@ hurricanelist[1998] = [
 	[n2n('23 sep'), n2n('28 sep'), 2, 'Karl'],
 	[n2n('5 oct'), n2n('9 oct'), 1, 'Lisa'],
 	[n2n('22 oct'), n2n('5 nov'), 5, 'Mitch'],
-	[n2n('24 oct'), n2n('1 dec'), 1, 'Nicole'],
+	[n2n('24 oct'), n2n('1 dec'), 1, 'Nicole']
 ];
 hurricanelist[1999] = [
 	[n2n('11 jun'), n2n('18 jun'), 0, 'Arlene'],
@@ -304,7 +306,7 @@ hurricanelist[1999] = [
 	[n2n('12 oct'), n2n('19 oct'), 2, 'Irene'],
 	[n2n('17 oct'), n2n('25 oct'), 2, 'Jose'],
 	[n2n('27 oct'), n2n('1 nov'), 0, 'Katrina'],
-	[n2n('13 nov'), n2n('23 nov'), 4, 'Lenny'],
+	[n2n('13 nov'), n2n('23 nov'), 4, 'Lenny']
 ];
 hurricanelist[2000] = [
 	[n2n('7 jun'), n2n('8 jun'), -1, 'One'],
@@ -325,7 +327,7 @@ hurricanelist[2000] = [
 	[n2n('4 oct'), n2n('7 oct'), 0, 'Leslie'],
 	[n2n('15 oct'), n2n('20 oct'), 2, 'Michael'],
 	[n2n('19 oct'), n2n('21 oct'), 0, 'Nadine'],
-	[n2n('25 oct'), n2n('29 oct'), 0, 'Unnamed'],
+	[n2n('25 oct'), n2n('29 oct'), 0, 'Unnamed']
 ];
 hurricanelist[2001] = [
 	[n2n('4 jun'), n2n('18 jun'), 0, 'Allison'],
@@ -344,7 +346,7 @@ hurricanelist[2001] = [
 	[n2n('27 oct'), n2n('31 oct'), 0, 'Lorenzo'],
 	[n2n('29 oct'), n2n('5 nov'), 4, 'Michelle'],
 	[n2n('4 nov'), n2n('6 nov'), 1, 'Noel'],
-	[n2n('24 nov'), n2n('4 dec'), 1, 'Olga'],
+	[n2n('24 nov'), n2n('4 dec'), 1, 'Olga']
 ];
 hurricanelist[2002] = [
 	[n2n('14 jul'), n2n('16 jul'), 0, 'Arthur'],
@@ -360,7 +362,7 @@ hurricanelist[2002] = [
 	[n2n('17 sep'), n2n('19 sep'), 0, 'Josephine'],
 	[n2n('20 sep'), n2n('12 oct'), 1, 'Kyle'],
 	[n2n('21 sep'), n2n('4 oct'), 4, 'Lili'],
-	[n2n('14 oct'), n2n('16 oct'), 4, 'Fourteen'],
+	[n2n('14 oct'), n2n('16 oct'), 4, 'Fourteen']
 ];
 hurricanelist[2003] = [
 	[n2n('20 apr'), n2n('24 apr'), 0, 'Ana'],
@@ -383,7 +385,7 @@ hurricanelist[2003] = [
 	[n2n('10 oct'), n2n('14 oct'), 0, 'Mindy'],
 	[n2n('13 oct'), n2n('23 oct'), 0, 'Nicholas'],
 	[n2n('4 dec'), n2n('7 dec'), 0, 'Odette'],
-	[n2n('7 dec'), n2n('11 dec'), 0, 'Peter'],
+	[n2n('7 dec'), n2n('11 dec'), 0, 'Peter']
 ];
 hurricanelist[2004] = [
 	[n2n('31 jul'), n2n('6 aug'), 3, 'Alex'],
@@ -401,7 +403,7 @@ hurricanelist[2004] = [
 	[n2n('19 sep'), n2n('3 oct'), 1, 'Lisa'],
 	[n2n('8 oct'), n2n('10 oct'), 0, 'Matthew'],
 	[n2n('10 oct'), n2n('11 oct'), 0, 'Nicole'],
-	[n2n('29 nov'), n2n('3 dec'), 0, 'Otto'],
+	[n2n('29 nov'), n2n('3 dec'), 0, 'Otto']
 ];
 hurricanelist[2005] = [
 	[n2n('8 jun'), n2n('13 jun'), 0, 'Arlene'],
@@ -434,7 +436,7 @@ hurricanelist[2005] = [
 	[n2n('14 nov'), n2n('21 nov'), 0, 'Gamma'],
 	[n2n('22 nov'), n2n('28 nov'), 0, 'Delta'],
 	[n2n('29 nov'), n2n('8 dec'), 1, 'Epsilon'],
-	[n2n('30 dec'), n2n('31 dec'), 0, 'Zeta'], // cont'd next year
+	[n2n('30 dec'), n2n('31 dec'), 0, 'Zeta'] // cont'd next year
 ];
 hurricanelist[2006] = [
 	[n2n('1 jan'), n2n('6 jan'), 0, 'Zeta'], // cont'd from last year
@@ -447,7 +449,7 @@ hurricanelist[2006] = [
 	[n2n('3 sep'), n2n('13 sep'), 1, 'Florence'],
 	[n2n('11 sep'), n2n('20 sep'), 3, 'Gordon'],
 	[n2n('12 sep'), n2n('24 sep'), 3, 'Helene'],
-	[n2n('27 sep'), n2n('2 oct'), 1, 'Isaac'],
+	[n2n('27 sep'), n2n('2 oct'), 1, 'Isaac']
 ];
 hurricanelist[2007] = [
 	[n2n('9 may'), n2n('11 may'), 0, 'Andrea'],
@@ -466,7 +468,7 @@ hurricanelist[2007] = [
 	[n2n('28 sep'), n2n('30 sep'), 0, 'Melissa'],
 	[n2n('11 oct'), n2n('12 oct'), 0, 'Fifteen'],
 	[n2n('28 oct'), n2n('2 nov'), 1, 'Noel'],
-	[n2n('11 dec'), n2n('13 dec'), 0, 'Olga'],
+	[n2n('11 dec'), n2n('13 dec'), 0, 'Olga']
 ];
 hurricanelist[2008] = [
 	[n2n('31 may'), n2n('2 jun'), 0, 'Arthur'],
@@ -485,7 +487,7 @@ hurricanelist[2008] = [
 	[n2n('12 oct'), n2n('14 oct'), 0, 'Nana'],
 	[n2n('13 oct'), n2n('18 oct'), 4, 'Omar'],
 	[n2n('14 oct'), n2n('15 oct'), -1, 'Sixteen'],
-	[n2n('5 nov'), n2n('10 nov'), 4, 'Paloma'],
+	[n2n('5 nov'), n2n('10 nov'), 4, 'Paloma']
 ];
 hurricanelist[2009] = [
 	[n2n('28 may'), n2n('29 may'), -1, 'One'],
@@ -498,7 +500,7 @@ hurricanelist[2009] = [
 	[n2n('25 sep'), n2n('26 sep'), -1, 'Eight'],
 	[n2n('4 oct'), n2n('6 oct'), 0, 'Grace'],
 	[n2n('6 oct'), n2n('8 oct'), 0, 'Henri'],
-	[n2n('4 nov'), n2n('10 nov'), 2, 'Ida'],
+	[n2n('4 nov'), n2n('10 nov'), 2, 'Ida']
 ];
 hurricanelist[2010] = [
 	[n2n('25 jun'), n2n('2 jul'), 2, 'Alex'],
@@ -521,7 +523,7 @@ hurricanelist[2010] = [
 	[n2n('11 oct'), n2n('15 oct'), 2, 'Paula'],
 	[n2n('20 oct'), n2n('26 oct'), 2, 'Richard'],
 	[n2n('28 oct'), n2n('30 oct'), 1, 'Shary'],
-	[n2n('29 oct'), n2n('7 nov'), 2, 'Tomas'],
+	[n2n('29 oct'), n2n('7 nov'), 2, 'Tomas']
 ];
 hurricanelist[2011] = [
 	[n2n('28 jun'), n2n('1 jul'), 0, 'Arlene'],
@@ -543,7 +545,7 @@ hurricanelist[2011] = [
 	[n2n('20 sep'), n2n('3 oct'), 4, 'Ophelia'],
 	[n2n('24 sep'), n2n('8 oct'), 1, 'Philippe'],
 	[n2n('23 oct'), n2n('28 oct'), 3, 'Rina'],
-	[n2n('8 nov'), n2n('11 nov'), 0, 'Sean'],
+	[n2n('8 nov'), n2n('11 nov'), 0, 'Sean']
 ];
 hurricanelist[2012] = [
 	[n2n('19 may'), n2n('22 may'), 0, 'Alberto'],
@@ -564,7 +566,7 @@ hurricanelist[2012] = [
 	[n2n('11 oct'), n2n('13 oct'), 0, 'Patty'],
 	[n2n('12 oct'), n2n('17 oct'), 1, 'Rafael'],
 	[n2n('22 oct'), n2n('29 oct'), 3, 'Sandy'],
-	[n2n('22 oct'), n2n('25 oct'), 0, 'Tony'],
+	[n2n('22 oct'), n2n('25 oct'), 0, 'Tony']
 ];
 hurricanelist[2013] = [
 	[n2n('5 jun'), n2n('7 jun'), 0, 'Andrea'],
@@ -581,7 +583,7 @@ hurricanelist[2013] = [
 	[n2n('3 oct'), n2n('6 oct'), 0, 'Karen'],
 	[n2n('21 oct'), n2n('24 oct'), 0, 'Lorenzo'],
 	[n2n('18 nov'), n2n('21 nov'), 0, 'Melissa'],
-	[n2n('5 dec'), n2n('7 dec'), 0, 'Unnamed'],
+	[n2n('5 dec'), n2n('7 dec'), 0, 'Unnamed']
 ];
 hurricanelist[2014] = [
 	[n2n('1 jul'), n2n('5 jul'), 2, 'Arthur'],
@@ -592,7 +594,7 @@ hurricanelist[2014] = [
 	[n2n('11 sep'), n2n('19 sep'), 3, 'Edouard'],
 	[n2n('10 oct'), n2n('13 oct'), 1, 'Fay'],
 	[n2n('12 oct'), n2n('19 oct'), 4, 'Gonzalo'],
-	[n2n('22 oct'), n2n('28 oct'), 0, 'Hanna'],
+	[n2n('22 oct'), n2n('28 oct'), 0, 'Hanna']
 ];
 hurricanelist[2015] = [
 	[n2n('8 may'), n2n('11 may'), 0, 'Ana'],
@@ -606,7 +608,7 @@ hurricanelist[2015] = [
 	[n2n('16 sep'), n2n('19 sep'), -1, 'Nine'],
 	[n2n('18 sep'), n2n('27 sep'), 0, 'Ida'],
 	[n2n('28 sep'), n2n('8 oct'), 4, 'Juaquin'],
-	[n2n('8 nov'), n2n('11 nov'), 1, 'Kate'],
+	[n2n('8 nov'), n2n('11 nov'), 1, 'Kate']
 ];
 hurricanelist[2016] = [
 	[11, 14, 1, 'Alex'],
@@ -624,7 +626,7 @@ hurricanelist[2016] = [
 	[262, 268, 0, 'Lisa'],
 	[271, 282, 5, 'Matthew'],
 	[277, 291, 4, 'Nicole'],
-	[324, 329, 3, 'Otto'],
+	[324, 329, 3, 'Otto']
 ];
 hurricanelist[2017] = [
 	[109, 111, 0, 'Arlene'],
@@ -644,7 +646,7 @@ hurricanelist[2017] = [
 	[277, 282, 1, 'Nate'],
 	[282, 289, 3, 'Ophelia'],
 	[301, 302, 0, 'Philippe'],
-	[309, 313, 0, 'Rina'],
+	[309, 313, 0, 'Rina']
 ];
 hurricanelist[2018] = [
 	[117, 123, 0, 'Alberto'],
@@ -662,7 +664,7 @@ hurricanelist[2018] = [
 	[266, 286, 1, 'Leslie'],
 	[280, 285, 4, 'Michael'],
 	[282, 286, 0, 'Nadine'],
-	[300, 304, 0, 'Oscar'],
+	[300, 304, 0, 'Oscar']
 ];
 hurricanelist[2019] = [
 	[140, 141, 0, 'Andrea'],
@@ -684,7 +686,7 @@ hurricanelist[2019] = [
 	[298, 299, 0, 'Olga'],
 	[298, 301, 1, 'Pablo'],
 	[303, 305, 0, 'Rebekah'],
-	[323, 329, 0, 'Sebastien'],
+	[323, 329, 0, 'Sebastien']
 ];
 hurricanelist[2020] = [
 	[136, 139, 0, 'Arthur'],
@@ -703,7 +705,7 @@ hurricanelist[2020] = [
 	[232, 237, 1, 'Marco'],
 	[244, 247, 1, 'Nana'],
 	[243, 248, 0, 'Omar'],
-	[252, 261, 2, 'Paulette'],
+	[252, 261, 2, 'Pauvarte'],
 	[252, 259, 0, 'Rene'],
 	[254, 260, 2, 'Sally'],
 	[255, 266, 4, 'Teddy'],
@@ -717,7 +719,7 @@ hurricanelist[2020] = [
 	[297, 302, 2, 'Zeta'],
 	[304, 317, 4, 'Eta'],
 	[314, 319, 0, 'Theta'],
-	[317, 322, 5, 'Iota'],
+	[317, 322, 5, 'Iota']
 ];
 hurricanelist[2021] = [
 	[142, 143, 0, 'Ana'],
@@ -740,7 +742,7 @@ hurricanelist[2021] = [
 	[265, 278, 4, 'Sam'],
 	[267, 268, 0, 'Teresa'],
 	[272, 277, 0, 'Victor'],
-	[304, 311, 0, 'Wanda'],
+	[304, 311, 0, 'Wanda']
 ];
 /*
 0	1 Jan
@@ -757,7 +759,7 @@ hurricanelist[2021] = [
 335 1 Dec
 */
 
-const greek = [
+var greek = [
 	'alpha',
 	'beta',
 	'gamma',
@@ -782,9 +784,9 @@ const greek = [
 	'phi',
 	'chi',
 	'psi',
-	'omega',
+	'omega'
 ];
-const greek2 = [ // https://public.wmo.int/en/media/news/supplemental-list-of-tropical-cyclone-names-raiv
+var greek2 = [ // https://public.wmo.int/en/media/news/supplemental-list-of-tropical-cyclone-names-raiv
 	'adria',
 	'braylen',
 	'caridad',
@@ -805,9 +807,9 @@ const greek2 = [ // https://public.wmo.int/en/media/news/supplemental-list-of-tr
 	'sophie',
 	'tayshaun',
 	'viviana',
-	'will',
+	'will'
 ];
-const numbers = [
+var numbers = [
 	'one',
 	'two',
 	'three',
@@ -827,25 +829,25 @@ const numbers = [
 	'seventeen',
 	'eighteen',
 	'nineteen',
-	'twenty',
+	'twenty'
 ];
 
 // for the random generator
 
 function volumes(){
-	const v = [];
+	var v = [];
 	hurricanelist.forEach(function(x){ // for each year
 		v.push(x.length);
 	});
 	return v;
 }
 
-const averagePerYear = mean(volumes());
-const sdPerYear = sd(volumes());
+var averagePerYear = mean(volumes());
+var sdPerYear = sd(volumes());
 
 function pseudoNormal(m, s){ // I couldn't find any way to do a TRUE normal distr., so this is my close approximation.
-	const r = Math.random();
-	let lower, upper;
+	var r = Math.random();
+	var lower, upper;
 	if (r < 0.022){
 		lower = m-3*s;
 		upper = m-2*s;
@@ -879,42 +881,42 @@ function randomVolume(){
 }
 
 function randomSeason(){
-	let name;
+	var name;
 	// setup
-	const volume = randomVolume();
+	var volume = randomVolume();
 	document.getElementById('randomSeason').innerHTML = '<tr><th>Name</th><th>From</th><th>Until</th><th>Category</th></tr>';
-	const starts = [];
+	var starts = [];
 	// main
 	range1(volume).forEach(function(){
-		const randomYear = Math.round(random.uniform(1995, 2018));
-		const randomStorm = Math.round(random.uniform(0, hurricanelist[randomYear].length-1));
-		const randomStart = hurricanelist[randomYear][randomStorm][0];
+		var randomYear = Math.round(random.uniform(1995, 2018));
+		var randomStorm = Math.round(random.uniform(0, hurricanelist[randomYear].length-1));
+		var randomStart = hurricanelist[randomYear][randomStorm][0];
 		starts.push(randomStart);
 	});
 	starts.sort();
 	// for each date, use the date to generate a random END and CATEGORY
-	let currentDepression = 0;
-	let currentStorm = 0;
+	var currentDepression = 0;
+	var currentStorm = 0;
 	/* eslint-disable */
 	/** @type {string[]} */
-	const nameList = new Array(...
+	var nameList = Array.from(
 		random.choice(document.getElementsByClassName('names')) // select random name table
 		.children[0] // select tbody
 		.children[1] // select first row (excluding header row)
 		.children // select cells of first row
 		).slice(1) // deselect first cell (the year)
-		.map(e => e.innerHTML); // select innerHTML of all cells
+		.map(function(e){ return e.innerHTML; }); // select innerHTML of all cells
 	/* eslint-enable */
 	starts.forEach(function(x){
-		const category = Math.round(random.uniform(-1, maxcatduring(x)));
-		const end = x + Math.max(1, Math.round(
+		var category = Math.round(random.uniform(-1, maxcatduring(x)));
+		var end = x + Math.max(1, Math.round(
 			pseudoNormal(avgDuration(category), avgDurationSD(category))));
-		const newrow = document.createElement('tr');
+		var newrow = document.createElement('tr');
 		if (category > -1){
 			if (currentStorm < nameList.length) // names
 				name = nameList[currentStorm];
 			else { // greek
-				const supplementalList = document.getElementById('supplementalListType').checked ? greek : greek2;
+				var supplementalList = document.getElementById('supplementalListType').checked ? greek : greek2;
 				name = supplementalList[currentStorm - nameList.length];
 			}
 			currentStorm += 1;

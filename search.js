@@ -12,7 +12,7 @@ function doit(){
 	const currentdate=new Date();
 	const foot='Results generated '
 		+ currentdate.getDate() + ' '
-		+ monthNames[d.getMonth()]  + ' '
+		+ monthNames[d.getMonth()] + ' '
 		+ currentdate.getFullYear() + ' @ '
 		+ currentdate.getHours() + ':'
 		+ currentdate.getMinutes() + ':'
