@@ -71,9 +71,7 @@ const data = {
 		plosiveOrFricative(x){
 			return data.filters.plosive(x) || data.filters.fricative(x);
 		},
-		primary: x => {
-			return !data.filters.secondary(x);
-		},
+		primary: x => !data.filters.secondary(x),
 		s: x => x.name === 's',
 		secondary: x => x.properties.aspirated
 			|| x.properties.ejective
@@ -82,9 +80,7 @@ const data = {
 			|| x.properties.uvularized
 			|| x.properties.velarized,
 		voiced: x => x.properties.isVowel || x.properties.voiced,
-		voiceless: x => {
-			return !data.filters.voiced(x);
-		},
+		voiceless: x => !data.filters.voiced(x),
 		vowel: x => x.properties.isVowel,
 	},
 	implications: {
@@ -198,9 +194,9 @@ const data = {
 			{
 				name: 'UA794',
 				url: 'https://typo.uni-konstanz.de/rara/universals-archive/797/',
-				implication: phonology => data.MOA.filter(m =>
+				implication: phonology => data.MOA.filter(m => phonology
 					// filter out only MOAs with ONE phoneme
-					phonology.filter(phone => phone.properties.manner === m).length === 1)
+					.filter(phone => phone.properties.manner === m).length === 1)
 					// make sure all of them are alveolar
 					.every(m => phonology.find(phone => phone.properties.manner === m).properties.place.includes('alveo')),
 			},

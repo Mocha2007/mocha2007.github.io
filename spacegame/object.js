@@ -55,9 +55,9 @@ class Length extends Value {
 	/**
 	 * @param {number} value
 	*/
-	constructor(value){
-		super(value);
-	}
+	// constructor(value){
+	//	super(value);
+	// }
 	get toFeet(){
 		return this.value / 0.3048;
 	}
@@ -67,36 +67,36 @@ class Area extends Value {
 	/**
 	 * @param {number} value
 	*/
-	constructor(value){
-		super(value);
-	}
+	// constructor(value){
+	// 	super(value);
+	// }
 }
 
 class Volume extends Value {
 	/**
 	 * @param {number} value
 	*/
-	constructor(value){
-		super(value);
-	}
+	// constructor(value){
+	// 	super(value);
+	// }
 }
 
 class Velocity extends Value {
 	/**
 	 * @param {number} value
 	*/
-	constructor(value){
-		super(value);
-	}
+	// constructor(value){
+	// 	super(value);
+	// }
 }
 
 class Mass extends Value {
 	/**
 	 * @param {number} value
 	*/
-	constructor(value){
-		super(value);
-	}
+	// constructor(value){
+	// 	super(value);
+	// }
 	get toPounds(){
 		return this.value / 0.45359237;
 	}
@@ -106,25 +106,25 @@ class Density extends Value {
 	/**
 	 * @param {number} value
 	*/
-	constructor(value){
-		super(value);
-	}
+	// constructor(value){
+	// 	super(value);
+	// }
 }
 
 class Time extends Value {
 	/**
 	 * @param {number} value
 	*/
-	constructor(value){
-		super(value);
-	}
+	// constructor(value){
+	// 	super(value);
+	// }
 }
 
 // math
 
 class Solid {
 	/** @abstract */
-	constructor(){}
+	// constructor(){}
 	get surfaceArea(){
 		return new Area();
 	}
@@ -175,21 +175,21 @@ class Noun {
 		this.alwaysSingular = alwaysSingular;
 		this.alwaysPlural = alwaysPlural;
 		if (alwaysSingular && alwaysPlural){
-			throw 'a noun cannot be always singular and plural';
+			throw new Error('a noun cannot be always singular and plural');
 		}
 		this.irregularPlural = irregularPlural;
 		if (alwaysSingular && irregularPlural){
-			throw 'a noun which is always singular cannot have an irregular plural';
+			throw new Error('a noun which is always singular cannot have an irregular plural');
 		}
 		this.definite = definite;
 		this.indefinite = indefinite;
 		if (definite && indefinite){
-			throw 'a noun cannot be always indefinite and definite';
+			throw new Error('a noun cannot be always indefinite and definite');
 		}
 	}
 	get plural(){
 		if (!this.countable || this.alwaysSingular){
-			throw 'uncountable or singular-only nouns cannot be pluralized';
+			throw new Error('uncountable or singular-only nouns cannot be pluralized');
 		}
 		if (this.alwaysPlural){
 			return this.word;
@@ -197,15 +197,15 @@ class Noun {
 		if (this.irregularPlural){
 			return this.irregularPlural;
 		}
-		if (this.word[this.word.length-1] === 's' ||
-			['ch', 'sh'].includes(this.name.slice(this.name.Length-2, this.name.Length))){
+		if (this.word[this.word.length-1] === 's'
+			|| ['ch', 'sh'].includes(this.name.slice(this.name.Length-2, this.name.Length))){
 			return this.word + 'es';
 		}
 		return this.word + 's';
 	}
 	get singular(){
 		if (this.alwaysPlural){
-			throw 'pluralia tantum cannot be singularized';
+			throw new Error('pluralia tantum cannot be singularized');
 		}
 		return this.word;
 	}

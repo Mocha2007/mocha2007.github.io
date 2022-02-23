@@ -156,13 +156,13 @@ class Item extends Interactable {
 		elem.appendChild(name);
 		// styling
 		elem.style.color = Game.rarity.colors[this.rarity];
-		elem.title = this.name + '\n' +
-			'ID: ' + this.itemId + '\n' +
-			'Rarity: ' + Game.rarity.names[this.rarity] + ' (' + this.rarity + ')\n' +
-			'Mass: ' + unitString(this.mass, 'g', 2, 1e3) + '\n' +
-			'Volume: ' + unitString(this.volume, 'L', 2, 1e3) + '\n' +
-			'Density: ' + round(this.density) + ' kg/m³\n' +
-			this.desc;
+		elem.title = this.name + '\n'
+			+ 'ID: ' + this.itemId + '\n'
+			+ 'Rarity: ' + Game.rarity.names[this.rarity] + ' (' + this.rarity + ')\n'
+			+ 'Mass: ' + unitString(this.mass, 'g', 2, 1e3) + '\n'
+			+ 'Volume: ' + unitString(this.volume, 'L', 2, 1e3) + '\n'
+			+ 'Density: ' + round(this.density) + ' kg/m³\n'
+			+ this.desc;
 		return elem;
 	}
 	createParticle(){
@@ -321,8 +321,8 @@ class Tech extends Interactable {
 		return li;
 	}
 	get unlockable(){
-		return this.prereqs.every(t => t.unlocked) &&
-			this.cost.every(x => x[1] <= x[0].amount);
+		return this.prereqs.every(t => t.unlocked)
+			&& this.cost.every(x => x[1] <= x[0].amount);
 	}
 	get unlocked(){
 		return Game.player.unlockedTechs.includes(this.name);
@@ -389,8 +389,8 @@ const Game = {
 		},
 		get weights(){
 			// rarity 0 -> weight 1; 1 -> 1/10, 2 -> 1/100, 3 -> 1/1000, ...
-			return this.items.map(c => c.categories.includes(whitelisted) &&
-				Math.pow(10, -c.rarity));
+			return this.items.map(c => c.categories.includes(whitelisted)
+				&& Math.pow(10, -c.rarity));
 		},
 	},
 	/** @param {string} string string to log */
@@ -413,9 +413,9 @@ const Game = {
 		},
 		/** @param {Item} item */
 		amount(item){
-			return this.hasItem(item) &&
-				Game.player.inventory.filter(i => i[0] === item.name)[0][1] ||
-				0;
+			return this.hasItem(item)
+				&& Game.player.inventory.filter(i => i[0] === item.name)[0][1]
+				|| 0;
 		},
 		/** @param {Item} item */
 		hasItem(item){
@@ -555,7 +555,7 @@ function preloader(){
 // https://stackoverflow.com/a/2956980/2579798
 function setIntervalX(callback, delay, repetitions){
 	let x = 0;
-	const intervalID = window.setInterval(function(){
+	const intervalID = window.setInterval(() => {
 		callback();
 		if (++x === repetitions){
 			window.clearInterval(intervalID);

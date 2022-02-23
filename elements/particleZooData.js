@@ -2,7 +2,7 @@
 /* exported amu, atomData, particleData, reactionData */
 'use strict';
 
-const speedOfLight =  299792458; // m/s; exact
+const speedOfLight = 299792458; // m/s; exact
 const eV = 1.602176634e-19; // J; exact
 const eVc2 = eV / Math.pow(speedOfLight, 2); // kg; exact
 const amu = 1.6605390666e-27; // kg; unsure exactless; AKA dalton

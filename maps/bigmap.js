@@ -3395,7 +3395,7 @@ const lang = [
 	},
 ];
 
-lang.forEach(function(x){
+lang.forEach(x => {
 	// generate OSV - OS OV SV
 	if (typeof x.features !== 'undefined' && typeof x.features.sov !== 'undefined' && x.features.sov.length === 3){
 		// OwO
@@ -3494,11 +3494,10 @@ const implications = [
 	],
 ];
 
-implications.forEach(function(x){
-	lang.forEach(function(y){
-		if (y.areas.includes(x[0])){
+implications.forEach(x => {
+	lang.forEach(y => {
+		if (y.areas.includes(x[0]))
 			y.areas = union(x[1], y.areas);
-		}
 	});
 });
 

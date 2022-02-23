@@ -322,8 +322,8 @@ class ChemElement {
 				if (this.stable)
 					c = '#f0f';
 				else {
-					x = Math.log(Math.max(...this.isotopes.map(i => i.halfLife))) /
-						Math.log(Isotope.maxHalfLife); // [0, 1]
+					x = Math.log(Math.max(...this.isotopes.map(i => i.halfLife)))
+						/ Math.log(Isotope.maxHalfLife); // [0, 1]
 					console.log(this, x);
 					c = gradient1(x);
 				}
@@ -332,8 +332,8 @@ class ChemElement {
 				if (!this.biologicalHalfLife)
 					c = '#ccc';
 				else {
-					x = Math.cbrt(this.biologicalHalfLife) /
-						Math.cbrt(Math.max(...elements.filter(e => e.biologicalHalfLife)
+					x = Math.cbrt(this.biologicalHalfLife)
+						/ Math.cbrt(Math.max(...elements.filter(e => e.biologicalHalfLife)
 							.map(e => e.biologicalHalfLife)));
 					c = gradient1(x);
 				}
@@ -373,17 +373,17 @@ class ChemElement {
 				c = this.nobleMetal === undefined ? 'white' : nobleMetalColors[this.nobleMetal];
 				break;
 			case 'nuclearBinding':
-				x = Math.max((Math.max(...this.isotopes.map(i => i.nuclearBindingEnergy/i.mass)) -
-					1.13e-12) * 3.6e12, 0); // appx from 0 to 1
+				x = Math.max((Math.max(...this.isotopes.map(i => i.nuclearBindingEnergy/i.mass))
+					- 1.13e-12) * 3.6e12, 0); // appx from 0 to 1
 				c = gradient1(x);
 				break;
 			case 'nucleosynthesis':
 				c = nucleosynthesisColors[this.nucleoMax];
 				break;
 			case 'n/z':
-				x = this.stable ? mean(this.isotopes.filter(i => i.stable).map(i => i.n)) :
-					this.isotopes.filter(i =>
-						i.halfLife === Math.max(...this.isotopes.map(i_ => i_.halfLife))
+				x = this.stable ? mean(this.isotopes.filter(i => i.stable).map(i => i.n))
+					: this.isotopes.filter(i => i.halfLife
+						=== Math.max(...this.isotopes.map(i_ => i_.halfLife))
 					)[0].n;
 				c = gradient1((x/this.z-1)/0.6); // should be fine for everything except H1 and He3
 				break;
@@ -611,9 +611,9 @@ class Isotope {
 		return 10.7 * Math.pow(x, 0.0294);
 	}
 	get daughters(){
-		return this.decayTypes.map(d => d[0]).filter(d => d !== sf).map(d =>
-			Isotope.find(ChemElement.fromZ(this.element.z + d.deltaZ).symbol +
-				'-' + (this.mass + d.deltaA))
+		return this.decayTypes.map(d => d[0]).filter(d => d !== sf).map(d => Isotope.find(
+			ChemElement.fromZ(this.element.z + d.deltaZ).symbol
+				+ '-' + (this.mass + d.deltaA))
 		);
 	}
 	get n(){
@@ -631,9 +631,9 @@ class Isotope {
 		const cp = 11.155e6*eV;
 		const oz = this.z % 2 === 1 ? 1 : 0;
 		const on = this.n % 2 === 1 ? 1 : 0;
-		return cv*this.mass - cs*Math.pow(this.mass, 2/3) -
-			cc*this.z*(this.z-1)/Math.cbrt(this.mass) - cd*Math.pow(this.z - this.n, 2)/this.mass -
-			cp * (oz + on - 1)/Math.sqrt(this.mass);
+		return cv*this.mass - cs*Math.pow(this.mass, 2/3)
+			- cc*this.z*(this.z-1)/Math.cbrt(this.mass) - cd*Math.pow(this.z - this.n, 2)/this.mass
+			- cp * (oz + on - 1)/Math.sqrt(this.mass);
 	}
 	get nuclearRadius(){
 		// http://www.dommelen.net/quantum2/style_a/ntld.html Section 14.10.1
@@ -707,8 +707,8 @@ class Isotope {
 	static fromJSON(o){
 		const [symbol, massString] = o.name.split('-');
 		const mass = parseInt(massString);
-		const decayTypes = o.decayTypes ?
-			o.decayTypes.map(d => [Decay.find(d[0]), d[1]]) : undefined;
+		const decayTypes = o.decayTypes
+			? o.decayTypes.map(d => [Decay.find(d[0]), d[1]]) : undefined;
 		return new Isotope(ChemElement.fromSymbol(symbol), mass,
 			decayTypes, o.halfLife, o.abundance);
 	}

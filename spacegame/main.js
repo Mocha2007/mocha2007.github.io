@@ -141,7 +141,7 @@ class Chem {
 // person block
 
 class HasInfo {
-	constructor(){}
+	// constructor(){}
 	get info(){
 		const table = document.createElement('table');
 		for (const i in visibleProperties){
@@ -167,8 +167,8 @@ class HasInfo {
 					cell.innerHTML = value;
 				}
 				else {
-					cell.innerHTML = round(value/specialUnits[property].constant, 2) + ' ' +
-						specialUnits[property].name;
+					cell.innerHTML = round(value/specialUnits[property].constant, 2) + ' '
+						+ specialUnits[property].name;
 				}
 			}
 			else {
@@ -376,8 +376,8 @@ class Person extends HasInfo {
 		const child = new Person();
 		// todo physicality random mix of parents' traits
 		const father = this.physicality.father; // bio father
-		child.physicality.traits = this.physicality.traits.map((trait, i) =>
-			Game.rng.bool() ? father.physicality.traits[i] : trait);
+		child.physicality.traits = this.physicality.traits.map((trait, i) => Game.rng.bool()
+			? father.physicality.traits[i] : trait);
 		// birth info
 		const birth = new Vital('birth', Game.time, [father, this]);
 		child.vital.push(birth);
@@ -394,8 +394,8 @@ class Person extends HasInfo {
 		event[4] = Game.time;
 		const yslc = timeSinceLastCheck/year;
 		// once every 10 years or so, if male, and under popcap, bone a random female
-		if (this.physicality.sex && Game.population.n < popCap &&
-			Game.rng.random() < Math.pow(0.5, yslc/10)){
+		if (this.physicality.sex && Game.population.n < popCap
+			&& Game.rng.random() < Math.pow(0.5, yslc/10)){
 			try {
 				Game.rng.choice(Person.allInSex()).impregnate(this);
 			}
@@ -563,8 +563,8 @@ class Physicality {
 	// static methods
 	static gen(){
 		const p = new Physicality();
-		traits.filter(o => Game.rng.random() < o.p).forEach(o => // for each trait that passes rng...
-			p.traits.push([o.name, Game.rng.weightedChoice( // add trait with name, RANDOM CHOICE to Person
+		traits.filter(o => Game.rng.random() < o.p).forEach(o => p.traits // for each trait that passes rng...
+			.push([o.name, Game.rng.weightedChoice( // add trait with name, RANDOM CHOICE to Person
 				o.values.map(i => i[0]), o.values.map(i => i[1]))])
 		);
 		return p;
@@ -749,8 +749,8 @@ class Body extends HasInfo {
 		const esi2 = 1-Math.abs((rho-rhoE)/(rho+rhoE));
 		const esi3 = 1-Math.abs((this.v_e-earth.v_e)/(this.v_e+earth.v_e));
 		const esi4 = 1-Math.abs((T-TE)/(T+TE));
-		return Math.pow(esi1, 0.57/4) * Math.pow(esi2, 1.07/4) *
-			Math.pow(esi3, 0.7/4) * Math.pow(esi4, 5.58/4);
+		return Math.pow(esi1, 0.57/4) * Math.pow(esi2, 1.07/4)
+			* Math.pow(esi3, 0.7/4) * Math.pow(esi4, 5.58/4);
 	}
 	/** @return {HTMLDivElement} */
 	get getElement(){
@@ -766,8 +766,8 @@ class Body extends HasInfo {
 	}
 	get isPHW(){
 		// https://mocha2007.github.io/worldbuilding_guide
-		return earth.mass/37 < this.mass && this.mass < 10*earth.mass &&
-			water.phaseOn(this) === 'liquid' && 0.73 < this.esi; // mars is 0.73
+		return earth.mass/37 < this.mass && this.mass < 10*earth.mass
+			&& water.phaseOn(this) === 'liquid' && 0.73 < this.esi; // mars is 0.73
 	}
 	get mu(){
 		return this.mass * gravConstant;
@@ -837,8 +837,8 @@ class Body extends HasInfo {
 	}
 	/** @param {number} dist */
 	tempAt(dist){
-		return this.orbit.parent.temperature * Math.pow(1-this.albedo, 0.25) *
-			Math.sqrt(this.orbit.parent.radius/2/dist);
+		return this.orbit.parent.temperature * Math.pow(1-this.albedo, 0.25)
+			* Math.sqrt(this.orbit.parent.radius/2/dist);
 	}
 	get tempDelta(){
 		const mean = this.temperature;
@@ -1111,9 +1111,9 @@ class Orbit extends HasInfo {
 				g.appendChild(line);
 			}
 		}
-		if (this.lastZoom !== Game.systemHeight ||
-				this.lastCenter[0] !== Game.center[0] || this.lastCenter[1] !== Game.center[1] ||
-				this.lastView !== Game.view){
+		if (this.lastZoom !== Game.systemHeight
+				|| this.lastCenter[0] !== Game.center[0] || this.lastCenter[1] !== Game.center[1]
+				|| this.lastView !== Game.view){
 			const step = this.period/resolution;
 			// update children endpoints
 			for (let i = 0; i < resolution; i++){
@@ -1333,6 +1333,7 @@ Age: ${round(this.age/(1e6*year)).toLocaleString()} Myr`;
 		}
 		return this.radius_ * (c + w);
 	}
+	// eslint-disable-next-line no-empty-function
 	set radius(_){}
 	get spectralType(){
 		/** @type {[string, number][]} */
@@ -1372,8 +1373,8 @@ Age: ${round(this.age/(1e6*year)).toLocaleString()} Myr`;
 		return this.temperature_ * c;
 	}
 	tempRadius(temperature = 255){
-		return this.radius / 2 * Math.sqrt(1-earth.albedo) /
-			Math.pow(temperature / this.temperature, 2);
+		return this.radius / 2 * Math.sqrt(1-earth.albedo)
+			/ Math.pow(temperature / this.temperature, 2);
 	}
 	// static methods
 	/** @param {number} mass in suns */
@@ -1581,8 +1582,8 @@ class Order {
 		}
 		// check ship costs
 		for (const shipClass in this.shipCost){
-			if (!Game.player.navy.hasOwnProperty(shipClass) ||
-				Game.player.navy[shipClass] < this.shipCost[shipClass]){
+			if (!Game.player.navy.hasOwnProperty(shipClass)
+				|| Game.player.navy[shipClass] < this.shipCost[shipClass]){
 				return false;
 			}
 		}
@@ -2369,8 +2370,8 @@ function redrawMap(){
 	// update infobox
 	const selectionId = Game.planet.id;
 	const infoboxElement = document.getElementById('leftinfo');
-	if (infoboxElement.benisData !== selectionId ||
-			Game.debug.lastInfoboxUpdate + Game.debug.infoboxUpdateTime < Game.time){
+	if (infoboxElement.benisData !== selectionId
+			|| Game.debug.lastInfoboxUpdate + Game.debug.infoboxUpdateTime < Game.time){
 		infoboxElement.innerHTML = '';
 		infoboxElement.appendChild(Game.system.secondaries[selectionId].info);
 		infoboxElement.benisData = selectionId;
@@ -2495,8 +2496,8 @@ function updateOrders(){
 		shipTable.appendChild(row);
 	}
 	// update "can afford?"
-	document.getElementById('orderAffordable').innerHTML = 'Can' +
-		(order.affordable ? '': '&rsquo;t') + ' afford';
+	document.getElementById('orderAffordable').innerHTML = 'Can'
+		+ (order.affordable ? '': '&rsquo;t') + ' afford';
 	document.getElementById('orderAffordable').classList = order.affordable ? 'green' : 'red';
 }
 
@@ -2516,8 +2517,8 @@ function updatePersonSearch(){
 	/** @type {HTMLTableElement} */
 	const table = document.getElementById('personSearchResults');
 	table.innerHTML = '';
-	const matches = Game.people.filter((p, i) => i === index || p.id === index ||
-		p.name.toString().toLowerCase().includes(search));
+	const matches = Game.people.filter((p, i) => i === index || p.id === index
+		|| p.name.toString().toLowerCase().includes(search));
 	matches.forEach(p => table.appendChild(p.tr));
 }
 
@@ -2531,9 +2532,9 @@ function updateResources(){
 function userHealth(){
 	const uhwi = Game.settings.userHealthWarningInterval;
 	const h = uhwi === 1 ? '' : 's';
-	alert('Hey there! I see you\'ve been playing the game for over ' + uhwi +
-		' hour' + h + ' straight! Do you wanna take a break for a bit?' +
-		' You can disable me or change my interval in the settings! :)');
+	alert('Hey there! I see you\'ve been playing the game for over ' + uhwi
+		+ ' hour' + h + ' straight! Do you wanna take a break for a bit?'
+		+ ' You can disable me or change my interval in the settings! :)');
 }
 
 main();

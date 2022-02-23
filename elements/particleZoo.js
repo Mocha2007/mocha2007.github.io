@@ -45,14 +45,13 @@ class Particle {
 		return this.antiparticleCache
 			? this.antiparticleCache
 			: this.antiparticleCache = particles
-				.filter(p =>
-					p.charge
-						// look for SAME MASS but OPPOSITE CHARGE
-						? p.mass === this.mass && p.charge === -this.charge
-						// look for SAME SYMBOL except OPPOSITE OVERLINE; sup can be ignored since it's charge
-						: p.symbol.char === this.symbol.char
-							&& p.symbol.sub === this.symbol.sub
-							&& p.symbol.overline !== this.symbol.overline
+				.filter(p => p.charge
+					// look for SAME MASS but OPPOSITE CHARGE
+					? p.mass === this.mass && p.charge === -this.charge
+					// look for SAME SYMBOL except OPPOSITE OVERLINE; sup can be ignored since it's charge
+					: p.symbol.char === this.symbol.char
+						&& p.symbol.sub === this.symbol.sub
+						&& p.symbol.overline !== this.symbol.overline
 				)[0];
 	}
 	get color(){
@@ -448,8 +447,8 @@ class Instance {
 			else
 				return this.delete();
 		}
-		if (!this.type.stable &&
-			random.random() < 1/(this.type.halfLifeTicks <= 0 ? fps : this.type.halfLifeTicks))
+		if (!this.type.stable
+			&& random.random() < 1/(this.type.halfLifeTicks <= 0 ? fps : this.type.halfLifeTicks))
 			this.decay();
 		else if (!this.checkreactions())
 			this.timeOutId = setTimeout(() => this.tick(), 1000/fps);
@@ -460,8 +459,8 @@ class Instance {
 				['protium', 'deuterium', 'helium-3', 'helium-4'],
 				[0.75*0.9998, 0.75*0.0002, 0.25*0.000002, 0.25*0.999998]
 			)));
-		const particle = new Instance(random.choice(particles.filter(p =>
-			onlyNucleons ? ['protium', 'proton', 'neutron', 'electron']
+		const particle = new Instance(random.choice(particles.filter(p => onlyNucleons
+			? ['protium', 'proton', 'neutron', 'electron']
 				.includes(p.name): p.category !== 'atom')));
 		return particle;
 	}

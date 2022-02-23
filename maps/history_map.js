@@ -7,7 +7,7 @@ const pointsize = 6;
 const mapsize = window.innerWidth - 32;
 const euromapcoords = [
 	[72, -25], // ULHC
-	[34,  60],  // BRHC
+	[34, 60], // BRHC
 ];
 const maps = [
 	['bigmap'],
@@ -25,8 +25,8 @@ function insetCoordToPx(coords, selectedMap){
 	const longitudes = insetCoords[1][1] - insetCoords[0][1];
 	const latitudes = insetCoords[0][0] - insetCoords[1][0];
 	const x = (coords[1] - insetCoords[0][1]) * mapsize/longitudes;
-	const y = (insetCoords[0][1] - coords[0]) * mapsize/latitudes/selectedMap[2] +
-		mapsize*selectedMap[3];
+	const y = (insetCoords[0][1] - coords[0]) * mapsize/latitudes/selectedMap[2]
+		+ mapsize*selectedMap[3];
 	return [y, x];
 }
 
@@ -77,16 +77,16 @@ function bigmap(){
 	const wants = document.getElementById('date').value;
 	document.getElementById('bigmap').innerHTML = '<img id="mapimg" src="'+mapSrc+'" width="'+mapsize+'">';
 	document.getElementById('bigeuromap').innerHTML = '<img id="euromapimg" src="'+euromapSrc+'" width="'+mapsize+'">';
-	features.forEach(function(x){
+	features.forEach(x => {
 		// periodSpecificInfo = '';
-		x.periodInfo.forEach(function(y){
+		x.periodInfo.forEach(y => {
 			if (wants < y.yearRange[0] || y.yearRange[1] < wants){
 				return false;
 			}
 			// periodSpecificInfo += '\n' + y.desc;
 		});
-		x.periods.forEach(function(y){
-			maps.forEach(function(selectedMap){
+		x.periods.forEach(y => {
+			maps.forEach(selectedMap => {
 				if (wants < y.yearRange[0] || y.yearRange[1] < wants){
 					return false;
 				}

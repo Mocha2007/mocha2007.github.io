@@ -52,8 +52,8 @@ function getEra(age, ageList = ages, depth = 0){
 			break;
 		}
 	}
-	return (ageList[i-1].hasOwnProperty('divisions') ?  getEra(age, ageList[i-1].divisions, depth+1) + ', ' : '') +
-	ageList[i-1].name + ' ' + names[depth];
+	return (ageList[i-1].hasOwnProperty('divisions') ? getEra(age, ageList[i-1].divisions, depth+1) + ', ' : '')
+	+ ageList[i-1].name + ' ' + names[depth];
 }
 
 /** @param {number} i */
@@ -99,8 +99,8 @@ function search(string){
 	lifeData.forEach(
 		(clade, i) => {
 			// if name or desc contains string
-			if (clade.hasOwnProperty('name') && clade.name.toLowerCase().includes(string) ||
-				clade.hasOwnProperty('desc') && clade.desc.toLowerCase().includes(string)){
+			if (clade.hasOwnProperty('name') && clade.name.toLowerCase().includes(string)
+				|| clade.hasOwnProperty('desc') && clade.desc.toLowerCase().includes(string)){
 				indices.push(i);
 			}
 		}
@@ -112,7 +112,7 @@ function searchButton(){
 	const searchString = document.getElementById('search_clade').value;
 	// clear results
 	document.getElementById('results').innerHTML = '';
-	search(searchString).forEach((i) => {
+	search(searchString).forEach(i => {
 		const name = lifeData[i].name;
 		// open element
 		openParents(objects[name]);

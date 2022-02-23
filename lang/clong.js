@@ -224,8 +224,8 @@ class Phonotactics {
 	/** @param {Phoneme[]} phonology */
 	randomSyllable(phonology){
 		/** @type {Phoneme[][]} */
-		const valids = this.syllableStructure.map(f =>
-			phonology.filter(p => f(p.primary)))
+		const valids = this.syllableStructure.map(f => phonology
+			.filter(p => f(p.primary)))
 			// remove optionals
 			.filter((_, i) => this.mandatory[i] || random.random() < 0.6);
 		/** @type {Phoneme[]} */
@@ -549,7 +549,7 @@ class Vocab {
 	*/
 	static generate(phonology, phonotactics){ // todo integrate morphology
 		const v = new Vocab();
-		wordLists.swadesh.map(def => {
+		wordLists.swadesh.forEach(def => {
 			let attempt;
 			while (!v.checkPotentialToken(attempt = phonotactics.randomWord(phonology))){
 				// keep trying

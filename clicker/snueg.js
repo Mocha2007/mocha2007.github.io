@@ -1,3 +1,4 @@
+/* eslint-disable no-empty-function */
 /* jshint esversion: 6, strict: true, strict: global, eqeqeq: true, nonew: false */
 /* exported downloadSave, guide, importSave, main, prestige, snuegButton */
 /* globals download, play, range, round, storage, sum */
@@ -45,8 +46,8 @@ class Purchase {
 			log('Player bought 1 ' + this.name);
 			return true;
 		}
-		log('Player tried to buy 1 ' + this.name + ', but did not have enough snueg. (' +
-			game.player.snueg + ' < ' + this.nextPrice + ')');
+		log('Player tried to buy 1 ' + this.name + ', but did not have enough snueg. ('
+			+ game.player.snueg + ' < ' + this.nextPrice + ')');
 		return false;
 	}
 	buyBye(){
@@ -219,13 +220,13 @@ class Building extends Purchase {
 		const ul = document.createElement('ul');
 		div.appendChild(ul);
 		let li = document.createElement('li');
-		li.innerHTML = 'each ' + this.name + ' produces <b>' +
-			bigNumber(this.individualProduction) + '</b> snueg per second';
+		li.innerHTML = 'each ' + this.name + ' produces <b>'
+			+ bigNumber(this.individualProduction) + '</b> snueg per second';
 		ul.appendChild(li);
 		li = document.createElement('li');
-		li.innerHTML = this.amount + ' ' + this.name + ' producing <b>' +
-			bigNumber(this.totalProduction) + '</b> snueg per second (<b>' +
-			(100*this.productionFraction).toFixed(1)+ '%</b> of total SpS)';
+		li.innerHTML = this.amount + ' ' + this.name + ' producing <b>'
+			+ bigNumber(this.totalProduction) + '</b> snueg per second (<b>'
+			+ (100*this.productionFraction).toFixed(1)+ '%</b> of total SpS)';
 		ul.appendChild(li);
 		li = document.createElement('li');
 		li.innerHTML = bigNumber(this.lifetimeProduction, true) + ' snuegs so far';
@@ -324,8 +325,8 @@ class Upgrade extends Purchase {
 		const ul = document.createElement('ul');
 		div.appendChild(ul);
 		const li = document.createElement('li');
-		li.innerHTML = 'improves production of each ' + this.targetNames.join(' and ') + ' by ' +
-			bigNumber((this.bonus-1)*100, true) + '%';
+		li.innerHTML = 'improves production of each ' + this.targetNames.join(' and ') + ' by '
+			+ bigNumber((this.bonus-1)*100, true) + '%';
 		ul.appendChild(li);
 		ul.innerHTML += this.specialString;
 	}
@@ -374,8 +375,8 @@ class FlyingText extends Particle {
 		super(particleElement,
 			element => {
 				element.style.top = parseInt(element.style.top.replace('px', '')) - 10 + 'px';
-				element.style.left = parseInt(element.style.left.replace('px', '')) +
-					game.random.uniform(-8, 8) + 'px';
+				element.style.left = parseInt(element.style.left.replace('px', ''))
+					+ game.random.uniform(-8, 8) + 'px';
 				element.style.opacity = parseFloat(element.style.opacity) * 0.9;
 			},
 			1);
@@ -674,9 +675,9 @@ const game = {
 	mouse: {
 		/** @returns {number} base clicks from relevant upgrades */
 		get base(){
-			const fromProduction = game.production *
-				sum(game.upgrades.map(upgrade =>
-					upgrade.special.includes('fromProduction') && upgrade.purchased ? upgrade.bonus : 0
+			const fromProduction = game.production
+				* sum(game.upgrades.map(upgrade => upgrade.special.includes('fromProduction')
+					&& upgrade.purchased ? upgrade.bonus : 0
 				));
 			return 1 + fromProduction;
 		},
@@ -766,8 +767,8 @@ const game = {
 		},
 		worldGen(){
 			const world = document.createElement('div');
-			range(this.worldSize).map(row => {
-				range(this.worldSize).map(col => {
+			range(this.worldSize).forEach(row => {
+				range(this.worldSize).forEach(col => {
 					const floor = game.random.choice(this.floors);
 					const object = game.random.choice(this.objects);
 					const element = new RPGTile(floor, object).element;
@@ -1156,8 +1157,8 @@ function guide(){
 			for (let i = 1; i < game.upgrades.length; i++){
 				const upgrade = game.upgrades[i];
 				// most upgrades are worth 10s of production...
-				if (!upgrade.purchased &&
-					upgrade.price < Math.max(10*game.production, game.player.snueg)){
+				if (!upgrade.purchased
+					&& upgrade.price < Math.max(10*game.production, game.player.snueg)){
 					helpstring = 'The <b>' + upgrade.name + '</b> upgrade is looking pretty cheap right now... only ' + bigNumber(upgrade.price, true) + ' snueg!';
 					break;
 				}
@@ -1247,8 +1248,8 @@ function nonEssentialUpdate(){
 function prestige(){
 	// confirm
 	const pp = game.thisPrestigeNumber;
-	if (!confirm('Are you sure you want to prestige up? You will lose all your snueg and buildings, but gain a permanent ' +
-		pp + '% boost to your snueg production from all sources.')){
+	if (!confirm('Are you sure you want to prestige up? You will lose all your snueg and buildings, but gain a permanent '
+		+ pp + '% boost to your snueg production from all sources.')){
 		return;
 	}
 	// follow through
@@ -1284,8 +1285,8 @@ function progressBar(progress){
 
 function redrawInterface(){
 	// autosave notification
-	const autosaveCountdown = Math.floor((+game.player.lastSave + game.settings.autosaveInterval -
-		new Date())/1000);
+	const autosaveCountdown = Math.floor((+game.player.lastSave + game.settings.autosaveInterval
+		- new Date())/1000);
 	document.getElementById('autosave').innerHTML = 'autosave in ' + autosaveCountdown + 's';
 	setTimeout(redrawInterface, 1000/game.settings.fps);
 }
@@ -1310,7 +1311,7 @@ function saveGame(isManual = false){
 // https://stackoverflow.com/a/2956980/2579798
 function setIntervalX(callback, delay, repetitions){
 	let x = 0;
-	const intervalID = window.setInterval(function(){
+	const intervalID = window.setInterval(() => {
 		callback();
 		if (++x === repetitions){
 			window.clearInterval(intervalID);

@@ -15,15 +15,15 @@ function oneiaTime(t){
 	t /= 1000;
 	let remainder = t-epoch;
 	const years = 950+Math.floor(remainder/year);
-	remainder = remainder % year;
+	remainder %= year;
 	const days = Math.floor(remainder/day);
-	remainder = remainder % day;
-	let currentTimeString =  `${years} AT, Day ${days}, `;
+	remainder %= day;
+	let currentTimeString = `${years} AT, Day ${days}, `;
 
 	for (let i = 1; i < 6; i += 1){
 		// oneian clock is conveniently decimal... :^)
 		currentTimeString += Math.floor(remainder/(day/Math.pow(10, i)))+(i !== 5 ? ':' : '');
-		remainder = remainder % (day/Math.pow(10, i));
+		remainder %= day/Math.pow(10, i);
 	}
 
 	return currentTimeString;

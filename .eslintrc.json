@@ -25,7 +25,7 @@
         "require-atomic-updates": 1,
         // suggestions
         "arrow-body-style": 1,
-        "class-methods-use-this": 1,
+        // "class-methods-use-this": 1, // buggy
         "default-case-last": 1,
         "default-param-last": 1,
         "dot-notation": 1,
@@ -206,7 +206,7 @@
             "never"
         ],
         "space-in-parens": 1,
-        "switch-colon-spacing": 1,
+        // "switch-colon-spacing": 1, // buggy - see elements.js - conflicts with {} spacing for const
         "template-curly-spacing": 1,
         "template-tag-spacing": 1,
         "unicode-bom": 1,

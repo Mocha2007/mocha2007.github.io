@@ -161,8 +161,8 @@ const Game = {
 			this.yes(true);
 		},
 		get offer(){
-			return sigFigs(mean(Game.casesUnopened.map(c => c.value.value)) *
-				this.callWeights[this.callId], 2);
+			return sigFigs(mean(Game.casesUnopened.map(c => c.value.value))
+				* this.callWeights[this.callId], 2);
 		},
 		offering: false,
 		get timeUntilNextCall(){
@@ -173,13 +173,13 @@ const Game = {
 			const tunc = this.timeUntilNextCall;
 			const plural = tunc === 1 ? '' : 's';
 			if (tunc){
-				document.getElementById('casesUntilNextCall').innerHTML = 'Please select ' +
-					this.timeUntilNextCall + ' more case' + plural + '...';
+				document.getElementById('casesUntilNextCall').innerHTML = 'Please select '
+					+ this.timeUntilNextCall + ' more case' + plural + '...';
 				return;
 			}
 			Game.sfx.call.play();
-			Game.sfx.call.audio.onended = () => (this.largeOffer <= this.offer ?
-				Game.sfx.largeOffer : Game.sfx.smallOffer).play();
+			Game.sfx.call.audio.onended = () => (this.largeOffer <= this.offer
+				? Game.sfx.largeOffer : Game.sfx.smallOffer).play();
 			document.getElementById('casesUntilNextCall').innerHTML = '';
 			Game.log('The banker offers you $' + commaNumber(this.offer) + `. Do you accept?<br>
 			<a href="javascript:Game.banker.yes()" tabindex="0">YES</a>
@@ -192,10 +192,10 @@ const Game = {
 			this.offering = false;
 			const taken = tookOwnCase ? Game.playerCase.value.value : this.offer;
 			const other = tookOwnCase ? this.offer : Game.playerCase.value.value;
-			Game.log('You ' + (tookOwnCase ? 'reject' : 'take') + ' the $' + commaNumber(this.offer) +
-			'! Howie opens your case, and inside was $' + commaNumber(Game.playerCase.value.value) + '! ' +
-			(other <= taken ? 'A wise choice!' : 'An unfortunate decision!') +
-			' <a href="javascript:Game.new()" tabindex="0">Play Again?</a>');
+			Game.log('You ' + (tookOwnCase ? 'reject' : 'take') + ' the $' + commaNumber(this.offer)
+			+ '! Howie opens your case, and inside was $' + commaNumber(Game.playerCase.value.value) + '! '
+			+ (other <= taken ? 'A wise choice!' : 'An unfortunate decision!')
+			+ ' <a href="javascript:Game.new()" tabindex="0">Play Again?</a>');
 			// medals
 			if (taken === 0.01)
 				unlockMedal('Heather McKee');
@@ -271,7 +271,8 @@ const Game = {
 	save: {
 		load(){
 			const data = storage.read('mocha-dond');
-			if (!data) return;
+			if (!data)
+				return;
 			Game.milCount = data.milCount;
 		},
 		save(){

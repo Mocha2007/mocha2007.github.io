@@ -1,4 +1,4 @@
-/* eslint-disable no-var */
+/* eslint-disable no-var, prefer-arrow-callback */
 /* jshint esversion: 3, strict: true, strict: global */
 /* exported tilde */
 'use strict';
@@ -13,7 +13,7 @@ function settilde(string){
 
 function tildesize(){
 	var x = window.getComputedStyle(document.querySelector('#tilde')).fontSize;
-	return parseFloat(x.slice(0,-2));
+	return parseFloat(x.slice(0, -2));
 }
 
 function setsize(x){
@@ -32,7 +32,7 @@ function tilde(){
 	// initialize
 	setsize(defaultsize * 0.62); // minimize jumping
 	// main
-	for (i = 0; i < duration; i += 1 ){
+	for (i = 0; i < duration; i += 1){
 		// https://stackoverflow.com/a/16873849/2579798
 		setTimeout(function(){
 			setsize(tildesize() * ratio);

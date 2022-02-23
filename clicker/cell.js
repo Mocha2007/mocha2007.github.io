@@ -158,11 +158,11 @@ class Item extends Interactable {
 		elem.appendChild(name);
 		// styling
 		elem.style.color = Game.rarity.colors[this.rarity];
-		elem.title = this.name + '\n' +
-			'ID: ' + this.itemId + '\n' +
-			'Rarity: ' + Game.rarity.names[this.rarity] + ' (' + this.rarity + ')\n' +
-			'Mass: ' + massString(this.mass, 2) +
-			this.desc;
+		elem.title = this.name + '\n'
+			+ 'ID: ' + this.itemId + '\n'
+			+ 'Rarity: ' + Game.rarity.names[this.rarity] + ' (' + this.rarity + ')\n'
+			+ 'Mass: ' + massString(this.mass, 2)
+			+ this.desc;
 		return elem;
 	}
 	createParticle(){
@@ -204,6 +204,7 @@ class Chem extends Item {
 	get rarity(){
 		return Math.max(0, Math.floor(Math.log(this.molarMass)) + 4);
 	}
+	// eslint-disable-next-line no-empty-function
 	set rarity(_){}
 	/** @param {string} name */
 	static find(name){
@@ -316,8 +317,8 @@ class Tech extends Interactable {
 		return li;
 	}
 	get unlockable(){
-		return this.prereqs.every(t => t.unlocked) &&
-			this.cost.every(x => x[1] <= x[0].amount);
+		return this.prereqs.every(t => t.unlocked)
+			&& this.cost.every(x => x[1] <= x[0].amount);
 	}
 	get unlocked(){
 		return Game.player.unlockedTechs.includes(this.name);
@@ -355,8 +356,8 @@ const Game = {
 		},
 		get weights(){
 			// -1 too big, -2 too small... but realistic...
-			return this.chems.map(c => !c.categories.includes(blacklisted) &&
-				Math.pow(c.molarMass, -3));
+			return this.chems.map(c => !c.categories.includes(blacklisted)
+				&& Math.pow(c.molarMass, -3));
 		},
 	},
 	debug: {
@@ -387,9 +388,9 @@ const Game = {
 		},
 		/** @param {Item} item */
 		amount(item){
-			return this.hasItem(item) &&
-				Game.player.inventory.filter(i => i[0] === item.name)[0][1] ||
-				0;
+			return this.hasItem(item)
+				&& Game.player.inventory.filter(i => i[0] === item.name)[0][1]
+				|| 0;
 		},
 		/** @param {Item} item */
 		hasItem(item){
@@ -524,7 +525,7 @@ function preloader(){
 // https://stackoverflow.com/a/2956980/2579798
 function setIntervalX(callback, delay, repetitions){
 	let x = 0;
-	const intervalID = window.setInterval(function(){
+	const intervalID = window.setInterval(() => {
 		callback();
 		if (++x === repetitions){
 			window.clearInterval(intervalID);
