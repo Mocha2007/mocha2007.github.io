@@ -185,6 +185,10 @@ function holidayCSS(){
 			if (day === 12)
 				title = 'King Witold\'s Birthday';
 			break;
+		case 8:
+			if (day === 24)
+				title = 'Слава Україні';
+			break;
 		case 9:
 			if (day === 19)
 				title = 'Yarrrr!';
