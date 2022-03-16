@@ -670,6 +670,10 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[diff(1584835200), 'A national emergency <a href="https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_the_United_States">is declared</a> in the US in response to the Coronavirus pandemic'],
 	[diff(1590458400), 'The <a href="https://en.wikipedia.org/wiki/Killing_of_George_Floyd">Murder of George Floyd</a> spawns <a href="https://en.wikipedia.org/wiki/George_Floyd_protests">subsequent riots and protests</a>'], // as controversial as this is, it thankfully won't show until next year anwyays
 	[diff(1596553698), 'The <a href="https://en.wikipedia.org/wiki/2020_Beirut_explosion">Beirut Explosion</a>'],
+	// 2021
+	[diff(1616478000), 'The Ever Given <a href="https://en.wikipedia.org/wiki/2021_Suez_Canal_obstruction">obstructs the Suez canal</a> for nearly a week'],
+	[diff(1626786660), '<a href="https://en.wikipedia.org/wiki/Blue_Origin_NS-16">Blue Origin NS-16</a> launches'],
+	[diff(1628985600), 'The <a href="https://en.wikipedia.org/wiki/Fall_of_Kabul_(2021)">Fall of Kabul</a>'],
 	// 2022
 	[diff(1645675200), 'The <a href="https://en.wikipedia.org/wiki/2022_Russian_invasion_of_Ukraine">Russia invades Ukraine</a>'] // appx.
 // 2020
