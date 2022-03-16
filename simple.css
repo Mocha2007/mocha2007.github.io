@@ -173,15 +173,16 @@ div.titlelinks a{
 .nav5::before{content:'┃┃┃┕';}
 .nav6::before{content:'┃┃┃┃┕';}
 #nav{
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	padding: 10px;
 	background: #999;
 	border: 2px solid #444;
 	color: #222;
+	max-height: 95vh;
+	left: 0px;
 	overflow-y: auto;
-	max-height: 940px;
+	padding: 10px;
+	position: fixed;
+	text-align: left;
+	top: 0px;
 }
 #top, #bottom, .center{
 	text-align:center;
