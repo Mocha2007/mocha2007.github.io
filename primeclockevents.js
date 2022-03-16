@@ -682,3 +682,18 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 // years with events included: 1985, 1987-2019
 // enableDebug();
 ];
+/*
+1 Jan	13.8 Gya
+1 Feb	~2 Gya
+1 Mar	~300 Mya
+1 Apr	~45 Mya
+1 May	~7 Mya
+1 Jun	~900 kya
+1 Jul	~150 kya
+1 Aug	~17 kya
+1 Sep	~2.4 kya
+1 Oct	~350 ya
+1 Nov	~50 ya
+1 Dec	~15 ya
+31 Dec	1 ya
+*/
