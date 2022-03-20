@@ -384,7 +384,7 @@ function toponym(){
 	toponym.updateCombos();
 }
 // todo: city/fort clearing
-toponym.either = ['bemmu', 'len', 'nô', 'nul'];
+toponym.either = ['bemmu', 'len', 'mura', 'nô', 'nul'];
 toponym.first = union(toponym.either,
 	['ake', 'end', 'ere', 'hai', 'huk', 'kan', 'kokin', 'ku', 'kure', 'lak', 'lib', 'muk',
 		'n', 'nats', 'sed', 'si', 'tar', 'tas']
