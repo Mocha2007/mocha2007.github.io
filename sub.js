@@ -89,6 +89,7 @@ var subtitles =	[
 	'Paint Pankair red!',
 	'Temer guide us!',
 	'Rubri Eremorae donum requirunt',
+	'<abbr title="Eremoran smith guild motto">Som ardo din, ardo som din.</abbr>',
 	// mochisms
 	'slash-me huggu',
 	'Enkl&aacute;r&rsquo;s Stead, by Enkl&aacute;r&rsquo;s Head',
@@ -117,6 +118,7 @@ var subtitles =	[
 	'Not a scam artist situation',
 	'Let&rsquo;s have us a pizza bungus',
 	'The Mocha / They destroyed their cage / Yes / YES / The Mocha is out',
+	'Heat from fire, fire from heat.',
 ];
 
 function sub(){
