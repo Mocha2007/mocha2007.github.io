@@ -1,7 +1,7 @@
 /* eslint-disable no-var */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
 /* global phoonsvg */
-/* exported holidayCSS, oneiaTime, oneiaTimeInitialize */
+/* exported holidayCSS, oneiaTime, oneiaTimeInitialize, playSound, stopSound */
 'use strict';
 
 var constants = {
@@ -44,6 +44,18 @@ var phases = [
 */
 function mod(n, m){
 	return (n % m + m) % m;
+}
+
+
+/** @param {string} id of audio to play */
+function playSound(id){ // used in bd easter egg
+	document.getElementById(id).play();
+}
+
+/** @param {string} id of audio to play */
+function stopSound(id){ // used in bd easter egg
+	document.getElementById(id).pause();
+	document.getElementById(id).currentTime = 0;
 }
 
 /**
