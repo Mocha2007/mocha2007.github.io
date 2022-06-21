@@ -3695,7 +3695,7 @@ const isotopeData = [
 	{
 		name: 'Bk-246',
 		decayTypes: [
-			['b+', 0.998],
+			['ec', 0.998],
 			['a', 0.002],
 		],
 		halfLife: 1.8*day,
@@ -4076,7 +4076,7 @@ const isotopeData = [
 		decayTypes: [
 			['a', 1],
 		],
-		halfLife: 16.2,
+		halfLife: 8,
 	},
 	{
 		name: 'Sg-269',
@@ -4126,7 +4126,7 @@ const isotopeData = [
 		decayTypes: [
 			['sf', 1],
 		],
-		halfLife: 11e-3,
+		halfLife: 12e-3,
 	},
 	{
 		name: 'Mt-278',
@@ -4153,7 +4153,8 @@ const isotopeData = [
 	{
 		name: 'Ds-281',
 		decayTypes: [
-			['a', 1],
+			['sf', 0.94],
+			['a', 0.06],
 		],
 		halfLife: 9.6,
 	},
@@ -4233,7 +4234,7 @@ const isotopeData = [
 		name: 'Fl-290',
 		decayTypes: [
 			['ec', 1], // a listed as secondary, no % given
-			['a', trace], //
+			['a', trace],
 		],
 		halfLife: 19,
 	},
@@ -4275,7 +4276,8 @@ const isotopeData = [
 	{
 		name: 'Og-294',
 		decayTypes: [
-			['a', 1],
+			['a', 1], // sf listed as secondary; no percentages
+			['sf', trace],
 		],
 		halfLife: 700e-6,
 	},
