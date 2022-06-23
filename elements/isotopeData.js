@@ -3347,7 +3347,7 @@ const isotopeData = [
 			['a', 1],
 			['sf', 7e-11], // also CD
 		],
-		halfLife: 7.038e6*year,
+		halfLife: 7.038e8*year,
 		abundance: 0.0072,
 	},
 	{
