@@ -1,5 +1,5 @@
 /* exported nucleus */
-/* global createSvgElement, ChemElement, Isotope */
+/* global createSvgElement, ChemElement, chooseTimeUnit, Isotope, unitString */
 const nucleus = {
 	neutrons: 6,
 	protons: 6,
@@ -58,9 +58,11 @@ const nucleus = {
 		const decayString = isotope.decayTypes
 			.map(d => `${d[0].name} (${d[1]*100}%)`)
 			.join(' ; ');
+		const [c, u] = chooseTimeUnit(this.halfLife);
+		const hlString = isotope.halfLife === Infinity ? 'Stable' : unitString(isotope.halfLife/c, u);
 		const t = [`Abundance: ${isotope.abundance*100}%`,
 			`decayTypes: ${decayString}`,
-			`halfLife: ${isotope.halfLife} s`];
+			`halfLife: ${hlString}`];
 		t.forEach(s => {
 			const tspan = createSvgElement('tspan');
 			tspan.innerHTML = s;
