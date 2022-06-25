@@ -424,6 +424,11 @@ class ChemElement {
 						c = 'skyblue';
 				}
 				break;
+			case 'stability2':
+				x = 30 * this.isotopes.filter(i => i.stable).length + (this.stable ? 0
+					: Math.log10(Math.max(...this.isotopes.map(i => i.halfLife))));
+				c = gradient1(x / 300); // tin should be 300
+				break;
 			case 'stable':
 				x = this.isotopes.filter(i => i.stable).length / 10 * 255;
 				c = `rgb(255, ${255-x}, 255)`;
