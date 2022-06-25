@@ -1,5 +1,5 @@
 /* exported nucleus */
-/* global createSvgElement, ChemElement, chooseTimeUnit, Isotope, unitString */
+/* global createSvgElement, ChemElement, chooseTimeUnit, Isotope, sigFigs, unitString */
 const nucleus = {
 	neutrons: 146,
 	protons: 92,
@@ -58,7 +58,7 @@ const nucleus = {
 		isoText.setAttribute('y', -85);
 		isoText.classList.add('isoText');
 		const decayString = isotope.decayTypes
-			.map(d => `${d[0].name} (${d[1]*100}%)`)
+			.map(d => `${d[0].name} (${sigFigs(d[1]*100, 3)}%)`)
 			.join(' ; ');
 		const [c, u] = chooseTimeUnit(this.halfLife);
 		const hlString = isotope.halfLife === Infinity ? 'Stable' : unitString(isotope.halfLife/c, u);
