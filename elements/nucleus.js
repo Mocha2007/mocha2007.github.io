@@ -1,8 +1,8 @@
 /* exported nucleus */
 /* global createSvgElement, ChemElement, chooseTimeUnit, Isotope, unitString */
 const nucleus = {
-	neutrons: 6,
-	protons: 6,
+	neutrons: 146,
+	protons: 92,
 	scale: 5,
 	get nucleons(){
 		return this.neutrons + this.protons;
@@ -23,10 +23,10 @@ const nucleus = {
 		this.svg.innerHTML = '';
 		let remainingProtons = this.protons;
 		let remainingNeutrons = this.neutrons;
-		for (let i = 0; i < this.nucleons; i++){
+		for (let i = this.nucleons-1; 0 <= i; i--){
 			// draw nucleon a fixed distance from the origin with certain angle
-			const theta = i*i;
 			const r = 0.7*this.scale*Math.sqrt(i);
+			const theta = 2 * Math.PI * r / this.scale;
 			const x = r*Math.cos(theta);
 			const y = r*Math.sin(theta);
 			const type = this.neutrons === 0
