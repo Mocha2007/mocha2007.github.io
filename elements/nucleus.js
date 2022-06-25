@@ -29,7 +29,8 @@ const nucleus = {
 			const r = 0.7*this.scale*Math.sqrt(i);
 			const x = r*Math.cos(theta);
 			const y = r*Math.sin(theta);
-			const type = remainingNeutrons * this.protons < remainingProtons * this.neutrons
+			const type = this.neutrons === 0
+				|| remainingNeutrons * this.protons < remainingProtons * this.neutrons
 				? 'proton' : 'neutron';
 			if (type === 'proton')
 				remainingProtons--;
