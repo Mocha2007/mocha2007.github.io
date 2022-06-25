@@ -181,8 +181,8 @@ line, .hingedArrow {
 }
 /* nucleus */
 #nucleus {
-	height: 600px;
-	width: 600px;
+	height: 800px;
+	width: 800px;
 }
 .proton {
 	fill: #c88;
