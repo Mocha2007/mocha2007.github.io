@@ -179,3 +179,17 @@ line, .hingedArrow {
 	color: black;
 	min-width: 21px;
 }
+/* nucleus */
+#nucleus {
+	height: 600px;
+	width: 600px;
+}
+.proton {
+	fill: #c88;
+}
+.neutron {
+	fill: #aaa;
+}
+.isoText {
+	font-size: 50%;
+}

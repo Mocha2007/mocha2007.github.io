@@ -7,6 +7,7 @@
 <script src="../common.js"></script>
 <script src="elementData.js"></script>
 <script src="isotopeData.js"></script>
+<script src="nucleus.js"></script>
 <title>Periodic Table</title>
 <table id="table"></table>
 <h2>Information</h2>
@@ -472,7 +473,7 @@
 </p>
 <h3>4n Decay Chain</h3>
 <p>Thorium Series</p>
-<svg>
+<svg class="decay">
 	<!-- huge thanks to BatesIsBack -->
 	<marker refX="0" refY="0" orient="auto" id="Arrow2Mend" style="overflow:visible"> 
 		<path d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z" transform="scale(-1,-1)" id="path4011" style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"> 
@@ -481,7 +482,7 @@
 </svg>
 <h3>4n+1 Decay Chain</h3>
 <p>Neptunium Series</p>
-<svg>
+<svg class="decay">
 	<marker refX="0" refY="0" orient="auto" id="Arrow2Mend" style="overflow:visible"> 
 		<path d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z" transform="scale(-1,-1)" id="path4011" style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"> 
 	</marker>
@@ -489,7 +490,7 @@
 </svg>
 <h3>4n+2 Decay Chain</h3>
 <p>Uranium Series</p>
-<svg>
+<svg class="decay">
 	<marker refX="0" refY="0" orient="auto" id="Arrow2Mend" style="overflow:visible"> 
 		<path d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z" transform="scale(-1,-1)" id="path4011" style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"> 
 	</marker>
@@ -497,12 +498,26 @@
 </svg>
 <h3>4n+3 Decay Chain</h3>
 <p>Actinium Series</p>
-<svg>
+<svg class="decay">
 	<marker refX="0" refY="0" orient="auto" id="Arrow2Mend" style="overflow:visible"> 
 		<path d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z" transform="scale(-1,-1)" id="path4011" style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"> 
 	</marker>
 	<g id="decay3"></g>
 </svg>
+
+<h2>Nucleus Visualization</h2>
+<p>
+	Protons
+	<span class="button" onmouseup="nucleus.updateProtons(-1);">-</span>
+	<input type="range" min="1" max="118" value="6" class="slider" id="protonSelector" onmouseup="nucleus.updateProtons();">
+	<span class="button" onmouseup="nucleus.updateProtons(1);">+</span><br>
+	Neutrons
+	<span class="button" onmouseup="nucleus.updateNeutrons(-1);">-</span>
+	<input type="range" min="0" max="165" value="6" class="slider" id="neutronSelector" onmouseup="nucleus.updateNeutrons();">
+	<span class="button" onmouseup="nucleus.updateNeutrons(1);">+</span>
+</p>
+<svg id="nucleus" viewBox="-100 -100 200 200"></svg>
+
 <h2>Element Categories by Source</h2>
 <p>
 	Hover over a cell to reveal more details about a source's classification.

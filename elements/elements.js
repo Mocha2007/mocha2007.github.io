@@ -1,7 +1,7 @@
 /* jshint esversion: 6, strict: true, strict: global, laxbreak: true, nonew: false */
 /* globals createSvgElement, day, deg, elementData, hour, isotopeData, mean, minute,
-	nobleMetalColors, nucleosynthesisColors, nutritionColors, range, remap, round, sum, trace,
-	unitString, year */
+	nobleMetalColors, nucleosynthesisColors, nucleus, nutritionColors, range, remap,
+	round, sum, trace, unitString, year */
 /* exported highlightCategory, highlightFunction, hlCull, setDecayChainLength, tableColor */
 'use strict';
 
@@ -782,7 +782,7 @@ function redrawDiagrams(){
  * @param {number} xstart - default = 0, min = -2
  */
 function setDecayChainLength(width=14, height=14, ystart=94, xstart=0){
-	const svgs = document.getElementsByTagName('svg');
+	const svgs = document.getElementsByClassName('decay');
 	Array.from(svgs).forEach(svg => {
 		svg.style.width = `${width*r*2}px`;
 		svg.style.height = `${height*r*2}px`;
@@ -825,6 +825,8 @@ function main(){
 	// reset temperature
 	document.getElementById('temperatureSelector').value = standardTemperature;
 	updateTemperature();
+	// draw nucleus
+	nucleus.update();
 	// log
 	console.info('elements.js successfully loaded.');
 }
