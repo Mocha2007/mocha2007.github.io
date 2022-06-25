@@ -60,7 +60,7 @@ const nucleus = {
 		const decayString = isotope.decayTypes
 			.map(d => `${d[0].name} (${sigFigs(d[1]*100, 3)}%)`)
 			.join(' ; ');
-		const [c, u] = chooseTimeUnit(this.halfLife);
+		const [c, u] = chooseTimeUnit(isotope.halfLife);
 		const hlString = isotope.halfLife === Infinity ? 'Stable' : unitString(isotope.halfLife/c, u);
 		const t = [`Abundance: ${isotope.abundance*100}%`,
 			`decayTypes: ${decayString}`,
