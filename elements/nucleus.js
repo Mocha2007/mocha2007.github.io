@@ -11,7 +11,10 @@ const nucleus = {
 	get svg(){
 		return document.getElementById('nucleus');
 	},
-	/** @param {'proton'|'neutron'} type */
+	/**
+	 * @param {'proton'|'neutron'} type
+	 * @returns {SVGCircleElement}
+	 */
 	nucleonElement(type){
 		const elem = createSvgElement('circle');
 		elem.classList.add(type);
