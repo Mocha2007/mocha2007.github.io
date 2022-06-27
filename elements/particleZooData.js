@@ -14,6 +14,7 @@ const year = 365.2425*day;
 
 const betaMinus = ['electron antineutrino'];
 const betaPlus = ['positron', 'electron neutrino'];
+const electronCapture = ['electron neutrino'];
 
 const particleData = [
 	// bosons
@@ -1013,6 +1014,150 @@ const atomData = [
 		z: 18,
 		spin: 0,
 	},
+	{
+		name: 'calcium-40',
+		category: 'atom',
+		symbol: 'Ca',
+		n: 20,
+		z: 20,
+		spin: 0,
+	},
+	{
+		name: 'calcium-44',
+		category: 'atom',
+		symbol: 'Ca',
+		n: 24,
+		z: 20,
+		spin: 0,
+	},
+	{
+		name: 'scandium-44',
+		category: 'atom',
+		symbol: 'Sc',
+		n: 23,
+		z: 21,
+		spin: 2,
+		decays: [
+			['calcium-44', ...betaPlus],
+		],
+		halfLife: 3.97*hour,
+	},
+	{
+		name: 'titanium-44',
+		category: 'atom',
+		symbol: 'Ti',
+		n: 22,
+		z: 22,
+		spin: 0,
+		decays: [
+			['scandium-44', ...electronCapture],
+		],
+		halfLife: 60*year,
+	},
+	{
+		name: 'titanium-48',
+		category: 'atom',
+		symbol: 'Ti',
+		n: 26,
+		z: 22,
+		spin: 0,
+	},
+	{
+		name: 'vanadium-48',
+		category: 'atom',
+		symbol: 'V',
+		n: 25,
+		z: 23,
+		spin: 4,
+		decays: [
+			['titanium-48', ...betaPlus],
+		],
+		halfLife: 15.9735*day,
+	},
+	{
+		name: 'chromium-48',
+		category: 'atom',
+		symbol: 'Cr',
+		n: 24,
+		z: 24,
+		spin: 0,
+		decays: [
+			['vanadium-48', ...betaPlus],
+		],
+		halfLife: 21.56*hour,
+	},
+	{
+		name: 'chromium-52',
+		category: 'atom',
+		symbol: 'Cr',
+		n: 28,
+		z: 24,
+		spin: 0,
+	},
+	{
+		name: 'manganese-52',
+		category: 'atom',
+		symbol: 'Mn',
+		n: 27,
+		z: 25,
+		spin: 6,
+		decays: [
+			['chromium-52', ...betaPlus],
+		],
+		halfLife: 5.591*day,
+	},
+	{
+		name: 'iron-52',
+		category: 'atom',
+		symbol: 'Fe',
+		n: 26,
+		z: 26,
+		spin: 0,
+		decays: [
+			['manganese-52', ...betaPlus], // technically 52m
+		],
+		halfLife: 8.275*hour,
+	},
+	{
+		name: 'iron-56',
+		category: 'atom',
+		symbol: 'Fe',
+		n: 30,
+		z: 26,
+		spin: 0,
+	},
+	{
+		name: 'cobalt-56',
+		category: 'atom',
+		symbol: 'Co',
+		n: 29,
+		z: 27,
+		spin: 4,
+		decays: [
+			['iron-56', ...betaPlus],
+		],
+		halfLife: 77.233*day,
+	},
+	{
+		name: 'nickel-56',
+		category: 'atom',
+		symbol: 'Ni',
+		n: 28,
+		z: 28,
+		spin: 0,
+		decays: [
+			['cobalt-56', ...betaPlus],
+		],
+		halfLife: 6.075*day,
+	},
+	{
+		name: 'nickel-60',
+		category: 'atom',
+		symbol: 'Ni',
+		n: 32,
+		z: 28,
+		spin: 0,
+	},
 ];
 
 const reactionData = [
@@ -1312,6 +1457,30 @@ const reactionData = [
 		reagents: ['sulfur-32', 'helium-4'],
 		products: ['argon-36', 'photon'],
 	},
+	{ // https://en.wikipedia.org/wiki/Alpha_process
+		reagents: ['argon-36', 'helium-4'],
+		products: ['calcium-40', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/Alpha_process
+		reagents: ['calcium-40', 'helium-4'],
+		products: ['titanium-44', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/Alpha_process
+		reagents: ['titanium-44', 'helium-4'],
+		products: ['chromium-48', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/Alpha_process
+		reagents: ['chromium-48', 'helium-4'],
+		products: ['iron-52', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/Alpha_process
+		reagents: ['iron-52', 'helium-4'],
+		products: ['nickel-56', 'photon'],
+	},
+	{ // https://en.wikipedia.org/wiki/Alpha_process
+		reagents: ['iron-56', 'helium-4'],
+		products: ['nickel-60', 'photon'],
+	},
 ];
 /* stellar nucleosynthesis pages:
 	DONE:
@@ -1331,7 +1500,6 @@ const reactionData = [
 			- cosmic ray
 			- fusion power
 			- photodisintegration
-	TODO:
 		- alpha process
 		- silicon burning
 */
