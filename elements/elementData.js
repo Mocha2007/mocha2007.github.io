@@ -338,7 +338,7 @@ const elementData = [
 		z: 9,
 		name: 'Fluorine',
 		symbol: 'F',
-		mass: 18.998403163,
+		mass: 18.998403162,
 		group: 17,
 		period: 2,
 		properties: {
@@ -770,7 +770,7 @@ const elementData = [
 		z: 21,
 		name: 'Scandium',
 		symbol: 'Sc',
-		mass: 44.955908,
+		mass: 44.955907,
 		group: 3,
 		period: 4,
 		properties: {
@@ -1433,7 +1433,7 @@ const elementData = [
 		z: 39,
 		name: 'Yttrium',
 		symbol: 'Y',
-		mass: 88.90584,
+		mass: 88.905838,
 		group: 3,
 		period: 5,
 		properties: {
@@ -2412,7 +2412,7 @@ const elementData = [
 		z: 67,
 		name: 'Holmium',
 		symbol: 'Ho',
-		mass: 164.930328,
+		mass: 164.930329,
 		period: 6,
 		properties: {
 			abundance: {
@@ -2476,7 +2476,7 @@ const elementData = [
 		z: 69,
 		name: 'Thulium',
 		symbol: 'Tm',
-		mass: 168.934218,
+		mass: 168.934219,
 		period: 6,
 		properties: {
 			abundance: {
