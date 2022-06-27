@@ -55,7 +55,7 @@ const nucleus = {
 		const isotope = Isotope.find(`${e.symbol}-${this.nucleons}`);
 		if (isotope === undefined)
 			return;
-		console.debug(isotope);
+		// console.debug(isotope);
 		const isoText = createSvgElement('text');
 		isoText.setAttribute('x', -95);
 		isoText.setAttribute('y', -85);

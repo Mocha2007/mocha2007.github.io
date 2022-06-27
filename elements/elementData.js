@@ -6,6 +6,11 @@
 // also https://periodictable.com/Properties/A/UniverseAbundance.html
 // metal prices from https://www.dailymetalprice.com/ and https://www.metalary.com
 // other prices from https://en.wikipedia.org/wiki/Prices_of_chemical_elements
+/* sources for technology-critical
+	1	https://en.wikipedia.org/wiki/Technology-critical_element#List_of_technology-critical_elements
+	2	https://www.sciencedirect.com/science/article/pii/S0921344919305750 p. 2
+	either source = 0.5; both sources = 1
+*/
 /* Nucleosynthesis
 	1	https://upload.wikimedia.org/wikipedia/commons/4/44/Kernfusionen1_en.png
 	2	https://upload.wikimedia.org/wikipedia/commons/3/31/Nucleosynthesis_periodic_table.svg
@@ -128,6 +133,7 @@ const elementData = [
 			},
 			categories: {
 				alkaliMetal: true,
+				tech: true,
 			},
 			density: 534,
 			discovery: 1821,
@@ -166,6 +172,7 @@ const elementData = [
 			categories: {
 				aem: true,
 				preciousMetal: 0.5,
+				tech: 0.5,
 			},
 			density: 1850,
 			discovery: 1828,
@@ -199,6 +206,7 @@ const elementData = [
 			},
 			categories: {
 				metalloid: true,
+				tech: 0.5,
 			},
 			density: 2340,
 			discovery: 1808,
@@ -449,6 +457,7 @@ const elementData = [
 			categories: {
 				aem: true,
 				rockForming: true,
+				tech: 0.5,
 			},
 			density: 1738,
 			discovery: 1808,
@@ -522,6 +531,7 @@ const elementData = [
 			categories: {
 				metalloid: true,
 				rockForming: true,
+				tech: 0.5,
 			},
 			density: 2329.6,
 			discovery: 1823,
@@ -771,6 +781,7 @@ const elementData = [
 			},
 			categories: {
 				rem: true,
+				tech: true,
 			},
 			density: 2989,
 			discovery: 1879,
@@ -805,6 +816,7 @@ const elementData = [
 				nativeMetal: 0.5,
 				refractoryMetal: 0.5,
 				rockForming: 0.5,
+				tech: 0.5,
 			},
 			density: 4540,
 			discovery: 1825,
@@ -840,6 +852,7 @@ const elementData = [
 			categories: {
 				nativeMetal: 0.5,
 				refractoryMetal: 0.5,
+				tech: 0.5,
 			},
 			density: 6110,
 			discovery: 1867,
@@ -877,6 +890,7 @@ const elementData = [
 				ironGroup: 0.5,
 				nativeMetal: 0.5,
 				refractoryMetal: 0.5,
+				tech: 0.5,
 			},
 			density: 7150,
 			discovery: 1797,
@@ -917,6 +931,7 @@ const elementData = [
 				nativeMetal: 0.5,
 				refractoryMetal: 0.5,
 				rockForming: 0.5,
+				tech: 0.5,
 			},
 			density: 7440,
 			discovery: 1774,
@@ -993,6 +1008,7 @@ const elementData = [
 			categories: {
 				ironGroup: true,
 				nativeMetal: 0.5,
+				tech: true,
 			},
 			density: 8860,
 			discovery: 1735,
@@ -1030,6 +1046,7 @@ const elementData = [
 				coinageMetal: 0.5, // us coins
 				ironGroup: true,
 				nativeMetal: 0.5,
+				tech: 0.5,
 			},
 			density: 8912,
 			discovery: 1751,
@@ -1068,6 +1085,7 @@ const elementData = [
 				coinageMetal: true,
 				nativeMetal: true,
 				nobleMetal: 0.5,
+				tech: 0.5,
 			},
 			density: 8960,
 			discovery: -9000,
@@ -1107,6 +1125,7 @@ const elementData = [
 			categories: {
 				coinageMetal: 0.5, // us coins
 				nativeMetal: 0.5,
+				tech: 0.5,
 			},
 			density: 7134,
 			discovery: -1000,
@@ -1141,6 +1160,7 @@ const elementData = [
 			},
 			categories: {
 				preciousMetal: 0.5,
+				tech: true,
 			},
 			density: 5907,
 			discovery: 1875,
@@ -1174,6 +1194,7 @@ const elementData = [
 			categories: {
 				metalloid: true,
 				preciousMetal: 0.5,
+				tech: true,
 			},
 			density: 5323,
 			discovery: 1886,
@@ -1210,6 +1231,7 @@ const elementData = [
 				metalloid: true,
 				nativeMetal: 0.5,
 				pnictogen: true,
+				tech: 0.5,
 			},
 			density: 5776,
 			discovery: 815,
@@ -1248,6 +1270,7 @@ const elementData = [
 				chalcogen: true,
 				nativeMetal: 0.5,
 				reactiveNonmetal: true,
+				tech: 0.5,
 			},
 			density: 4809,
 			discovery: 1817,
@@ -1421,6 +1444,7 @@ const elementData = [
 			},
 			categories: {
 				rem: true,
+				tech: true,
 			},
 			density: 4469,
 			discovery: 1843,
@@ -1453,6 +1477,7 @@ const elementData = [
 			},
 			categories: {
 				refractoryMetal: 0.5,
+				tech: 0.5,
 			},
 			density: 6506,
 			discovery: 1824,
@@ -1488,6 +1513,7 @@ const elementData = [
 			categories: {
 				nativeMetal: 0.5,
 				refractoryMetal: true,
+				tech: true,
 			},
 			density: 8570,
 			discovery: 1864,
@@ -1525,6 +1551,7 @@ const elementData = [
 			categories: {
 				nativeMetal: 0.5,
 				refractoryMetal: true,
+				tech: 0.5,
 			},
 			density: 10220,
 			discovery: 1781,
@@ -1593,6 +1620,7 @@ const elementData = [
 				platinumGroup: true,
 				preciousMetal: true,
 				refractoryMetal: 0.5,
+				tech: true,
 			},
 			density: 12370,
 			discovery: 1844,
@@ -1631,6 +1659,7 @@ const elementData = [
 				platinumGroup: true,
 				preciousMetal: true,
 				refractoryMetal: 0.5,
+				tech: true,
 			},
 			density: 12410,
 			discovery: 1804,
@@ -1668,6 +1697,7 @@ const elementData = [
 				nobleMetal: true,
 				platinumGroup: true,
 				preciousMetal: true,
+				tech: true,
 			},
 			density: 12020,
 			discovery: 1802,
@@ -1706,6 +1736,7 @@ const elementData = [
 				nativeMetal: true,
 				nobleMetal: 0.5,
 				preciousMetal: true,
+				tech: 0.5,
 			},
 			density: 10501,
 			discovery: -5000,
@@ -1743,6 +1774,7 @@ const elementData = [
 			biologicalHalfLife: 30*year, // in bone
 			categories: {
 				nativeMetal: 0.5,
+				tech: 0.5,
 			},
 			density: 8690,
 			discovery: 1817,
@@ -1779,6 +1811,7 @@ const elementData = [
 			categories: {
 				nativeMetal: 0.5,
 				preciousMetal: 0.5,
+				tech: true,
 			},
 			density: 7310,
 			discovery: 1867,
@@ -1814,6 +1847,7 @@ const elementData = [
 			categories: {
 				coinageMetal: true,
 				nativeMetal: 0.5,
+				tech: 0.5,
 			},
 			density: 7287,
 			discovery: -3500,
@@ -1852,6 +1886,7 @@ const elementData = [
 				metalloid: true,
 				nativeMetal: 0.5,
 				pnictogen: true,
+				tech: true,
 			},
 			density: 6685,
 			discovery: 815,
@@ -1888,6 +1923,7 @@ const elementData = [
 				chalcogen: true,
 				metalloid: true,
 				nativeMetal: 0.5,
+				tech: true,
 			},
 			density: 6232,
 			discovery: 1782,
@@ -1993,6 +2029,7 @@ const elementData = [
 			biologicalHalfLife: 2.5*month, // 1-4 mos
 			categories: {
 				alkaliMetal: true,
+				tech: 0.5,
 			},
 			density: 1873,
 			discovery: 1882,
@@ -2060,6 +2097,7 @@ const elementData = [
 			categories: {
 				lanthanide: true,
 				rem: true,
+				tech: true,
 			},
 			density: 6145,
 			discovery: 1841,
@@ -2093,6 +2131,7 @@ const elementData = [
 			categories: {
 				lanthanide: true,
 				rem: true,
+				tech: true,
 			},
 			density: 6770,
 			discovery: 1838,
@@ -2125,6 +2164,7 @@ const elementData = [
 			categories: {
 				lanthanide: true,
 				rem: true,
+				tech: true,
 			},
 			density: 6773,
 			discovery: 1885,
@@ -2157,6 +2197,7 @@ const elementData = [
 			categories: {
 				lanthanide: true,
 				rem: true,
+				tech: true,
 			},
 			density: 7007,
 			discovery: 1885,
@@ -2189,6 +2230,7 @@ const elementData = [
 			categories: {
 				lanthanide: true,
 				rem: true,
+				tech: 0.5,
 			},
 			density: 7260,
 			discovery: 1945,
@@ -2217,6 +2259,7 @@ const elementData = [
 			categories: {
 				lanthanide: true,
 				rem: true,
+				tech: true,
 			},
 			density: 7520,
 			discovery: 1879,
@@ -2250,6 +2293,7 @@ const elementData = [
 			categories: {
 				lanthanide: true,
 				rem: true,
+				tech: true,
 			},
 			density: 5243,
 			discovery: 1901,
@@ -2281,6 +2325,7 @@ const elementData = [
 			categories: {
 				lanthanide: true,
 				rem: true,
+				tech: true,
 			},
 			density: 7895,
 			discovery: 1886,
@@ -2312,6 +2357,7 @@ const elementData = [
 			categories: {
 				lanthanide: true,
 				rem: true,
+				tech: true,
 			},
 			density: 8229,
 			discovery: 1886,
@@ -2343,6 +2389,7 @@ const elementData = [
 			categories: {
 				lanthanide: true,
 				rem: true,
+				tech: true,
 			},
 			density: 8550,
 			discovery: 1886,
@@ -2375,6 +2422,7 @@ const elementData = [
 			categories: {
 				lanthanide: true,
 				rem: true,
+				tech: 0.5,
 			},
 			density: 8795,
 			discovery: 1879,
@@ -2406,6 +2454,7 @@ const elementData = [
 			categories: {
 				lanthanide: true,
 				rem: true,
+				tech: true,
 			},
 			density: 9066,
 			discovery: 1879,
@@ -2437,6 +2486,7 @@ const elementData = [
 			categories: {
 				lanthanide: true,
 				rem: true,
+				tech: 0.5,
 			},
 			density: 9321,
 			discovery: 1879,
@@ -2468,6 +2518,7 @@ const elementData = [
 			categories: {
 				lanthanide: true,
 				rem: true,
+				tech: 0.5,
 			},
 			density: 6965,
 			discovery: 1906,
@@ -2500,6 +2551,7 @@ const elementData = [
 			categories: {
 				lanthanide: true,
 				rem: true,
+				tech: 0.5,
 			},
 			density: 9840,
 			discovery: 1906,
@@ -2531,6 +2583,7 @@ const elementData = [
 			},
 			categories: {
 				refractoryMetal: 0.5,
+				tech: 0.5,
 			},
 			density: 13310,
 			discovery: 1922,
@@ -2566,6 +2619,7 @@ const elementData = [
 			categories: {
 				nativeMetal: 0.5,
 				refractoryMetal: true,
+				tech: true,
 			},
 			density: 16654,
 			discovery: 1802,
@@ -2602,6 +2656,7 @@ const elementData = [
 			categories: {
 				nativeMetal: 0.5,
 				refractoryMetal: true,
+				tech: true,
 			},
 			density: 19250,
 			discovery: 1783,
@@ -2641,6 +2696,7 @@ const elementData = [
 				nobleMetal: 0.5,
 				preciousMetal: true,
 				refractoryMetal: true,
+				tech: 0.5,
 			},
 			density: 21020,
 			discovery: 1919,
@@ -2679,6 +2735,7 @@ const elementData = [
 				platinumGroup: true,
 				preciousMetal: true,
 				refractoryMetal: 0.5,
+				tech: 0.5,
 			},
 			density: 22590,
 			discovery: 1803,
@@ -2718,6 +2775,7 @@ const elementData = [
 				platinumGroup: true,
 				preciousMetal: true,
 				refractoryMetal: 0.5,
+				tech: true,
 			},
 			density: 22560,
 			discovery: 1803,
@@ -2755,6 +2813,7 @@ const elementData = [
 				nobleMetal: true,
 				platinumGroup: true,
 				preciousMetal: true,
+				tech: true,
 			},
 			density: 21460,
 			discovery: 1735,
@@ -2794,6 +2853,7 @@ const elementData = [
 				nobleMetal: true,
 				coinageMetal: true,
 				preciousMetal: true,
+				tech: 0.5,
 			},
 			density: 19282,
 			discovery: -6000,
@@ -2905,6 +2965,7 @@ const elementData = [
 			nucleosynthesis: {
 				sProcess: 0.47,
 				rProcess: 0.53,
+				tech: 0.5,
 			},
 			nutrition: 4,
 			prices: {
