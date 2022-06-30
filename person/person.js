@@ -10,7 +10,7 @@ function getArraySpan(obj){
 			spacer.classList.add('spacer');
 			span.appendChild(spacer);
 		}
-		span.appendChild(getTableOrSpan(e))
+		span.appendChild(getTableOrSpan(e));
 	});
 	return span;
 }
@@ -20,7 +20,7 @@ function getArraySpan(obj){
 */
 function getTableOrSpan(obj){
 	// try to give the thumbnail
-	if (obj !== undefined && obj instanceof ObjectThumbnail)
+	if (obj instanceof ObjectThumbnail)
 		return obj.thumbnail;
 	if (Array.isArray(obj))
 		return getArraySpan(obj);
@@ -88,14 +88,21 @@ class Person extends ObjectThumbnail {
 	 * @param {Vital} vital
 	 * @param {Personality} personality -  should personality be renamed "mind"???
 	 * @param {Body} body
-	 * @param {Social} social
+	 * @param {Social} social - if undefined will randomly generate
 	 */
 	constructor(name, vital, personality, body, social){
 		super(name);
+		Person.people.push(this);
 		this.vital = vital;
 		this.personality = personality;
 		this.body = body;
-		this.social = social;
+		this.social = social || Social.gen(this);
+	}
+	/** @returns {Person|undefined} */
+	get randomOtherPerson(){
+		if (Person.people.length < 2)
+			return;
+		return random.choice(Person.people.filter(p => p !== this));
 	}
 	get table(){
 		return kvpTable({
@@ -114,9 +121,11 @@ class Person extends ObjectThumbnail {
 			Vital.gen(),
 			personality,
 			Body.gen(),
-			Social.gen()
+			undefined // in order for the person to be passed into Social.gen
 		);
 	}
+	/** @type {Person[]} */
+	static people = [];
 }
 class Name extends ObjectThumbnail {
 	/**
@@ -455,9 +464,10 @@ class Social extends ObjectThumbnail {
 		});
 	}
 	// static methods
-	static gen(){
+	/** @param {Person} person */
+	static gen(person){
 		return new Social(
-			range(random.randint(0, 5)).map(() => Relation.gen())
+			range(random.randint(0, 5)).map(() => Relation.gen(person))
 		);
 	}
 }
@@ -496,10 +506,13 @@ class Relation extends ObjectThumbnail {
 		});
 	}
 	// static methods
-	static gen(){
+	/** @param {Person} person */
+	static gen(person){
+		/** @type {RelationType} */
 		const relation = random.choice(this.relations);
 		return new Relation(
-			relation
+			relation,
+			relation.agentTypes.map(() => person.randomOtherPerson)
 		);
 	}
 	static relations = [
@@ -547,6 +560,7 @@ const history = {
 		const infobox = document.getElementById('infobox');
 		infobox.innerHTML = '';
 		infobox.appendChild(obj.table);
+		// console.debug(obj);
 	}
 };
 
