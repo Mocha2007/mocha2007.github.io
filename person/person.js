@@ -5,6 +5,7 @@
  * @returns {HTMLTableElement|HTMLSpanElement}
 */
 function getTableOrSpan(obj){
+	console.debug('getTableOrSpan', obj);
 	if (obj !== undefined){
 		const maybeTable = obj.table;
 		if (maybeTable)
@@ -13,6 +14,11 @@ function getTableOrSpan(obj){
 	// console.debug(Array.isArray(value), value);
 	if (Array.isArray(obj)) // todo create special array table function
 		obj = '[' + obj.map(e => getTableOrSpan(e).outerHTML).join(', ') + ']'
+	else if (typeof obj === "string" || obj instanceof String || obj === undefined){}
+		// https://stackoverflow.com/a/24844091/2579798
+		// empty block because I need it to fall below object BUT I need to check it before
+	else if (Object.keys(obj).length) // normal js object
+		return kvpTable(obj);
 	const span = document.createElement('span');
 	span.innerHTML = obj;
 	return span;
