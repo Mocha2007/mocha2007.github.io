@@ -58,13 +58,58 @@ class Vital {
 	}
 }
 class Personality {
-	/** @param {string} gender a single char denoting gender */
-	constructor(gender){
+	/** 
+	 * @param {string} gender a single char denoting gender 
+	 * @param {string} romantic_orientation a string of chars denoting what genders they are attracted to
+	 * @param {string} sexual_orientation a string of chars denoting what genders they are attracted to
+	 */
+	constructor(gender, romantic_orientation, sexual_orientation){
 		this.gender = gender;
+		this.romantic_orientation = romantic_orientation;
+		this.sexual_orientation = sexual_orientation;
+	}
+	/** @returns {'female'|'male'|'nonbinary'} */
+	get genderName(){
+		return {
+			f: 'female',
+			m: 'male',
+			n: 'nonbinary',
+		}[this.gender];
 	}
 	// static methods
 	static gen(){
-		return new Personality(random.choice(this.genders));
+		return new Personality(
+			random.choice(this.genders),
+			this.genOrientation(),
+			this.genOrientation()
+		);
+	}
+	static genOrientation(){
+		let o = '';
+		Array.from(this.genders).forEach(g => {
+			if (random.bool())
+				o += g;
+		})
+		return o;
+	}
+	/** @param {string} genders */
+	static orientationName(genders){
+		switch (genders){
+			case 'fmn':
+				return 'pan';
+			case 'fm':
+				return 'bi';
+			case 'fn':
+			case 'f':
+				return 'gyneco';
+			case 'mn':
+			case 'm':
+				return 'andro';
+			case 'n':
+				return 'skolio';
+			default:
+				return 'a';
+		}
 	}
 	// static vars
 	static genders = 'fmn';
