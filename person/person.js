@@ -173,7 +173,9 @@ class Personality {
 	}
 	// static methods
 	static gen(){
-		const gender = random.choice(this.genders);
+		const gender = random.weightedChoice(this.genders,
+			Object.entries(this.genderBiases).map(kvp => kvp[1])
+		);
 		return new Personality(
 			gender,
 			this.genOrientation(gender),
@@ -208,6 +210,11 @@ class Personality {
 	}
 	// static vars
 	static genders = 'fmn';
+	static genderBiases = {
+		f: 0.5,
+		m: 0.5,
+		n: 0.0036, // https://docs.google.com/spreadsheets/d/1aP7c14dLNY46AljXM11aNLrQgMWdl8gQnycvPFcgtwc/edit#gid=656383138
+	};
 	static orientationBiasesKeys = [
 		'f', 'fm', 'fmn', 'fn', 'm', 'mn', 'n', '',
 	];
