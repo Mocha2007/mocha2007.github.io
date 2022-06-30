@@ -50,9 +50,9 @@ function kvpTable(obj){
 
 class Person {
 	/**
-	 * @param {Name} name
+	 * @param {Name} name - should this be under personality instead?
 	 * @param {Vital} vital
-	 * @param {Personality} personality
+	 * @param {Personality} personality -  should personality be renamed "mind"???
 	 * @param {Body} body
 	 * @param {Social} social
 	 */
@@ -128,11 +128,17 @@ class Personality {
 	 * @param {string} gender a single char denoting gender 
 	 * @param {string} romantic_orientation a string of chars denoting what genders they are attracted to
 	 * @param {string} sexual_orientation a string of chars denoting what genders they are attracted to
+	 * @param {OCEAN} ocean big five personality values
 	 */
-	constructor(gender, romantic_orientation, sexual_orientation){
+	constructor(gender, romantic_orientation, sexual_orientation, ocean){
+		/** @type {string} */
 		this.gender = gender;
+		/** @type {string} */
 		this.romantic_orientation = romantic_orientation;
+		/** @type {string} */
 		this.sexual_orientation = sexual_orientation;
+		/** @type {OCEAN} */
+		this.ocean = ocean;
 	}
 	/** @returns {'female'|'male'|'nonbinary'} */
 	get genderName(){
@@ -156,17 +162,22 @@ class Personality {
 			gender: this.genderName,
 			romantic_orientation: this.romanticOrientationName,
 			sexual_orientation: this.sexualOrientationName,
+			ocean: this.ocean,
 		});
 	}
 	// static methods
 	static gen(){
+		const gender = random.choice(this.genders);
 		return new Personality(
-			random.choice(this.genders),
-			this.genOrientation(),
-			this.genOrientation()
+			gender,
+			this.genOrientation(gender),
+			this.genOrientation(gender),
+			OCEAN.gen(gender)
 		);
 	}
-	static genOrientation(){
+	/** @param {string} gender */
+	static genOrientation(gender){
+		// todo account for gender biases
 		let o = '';
 		Array.from(this.genders).forEach(g => {
 			if (random.bool())
@@ -195,6 +206,84 @@ class Personality {
 	}
 	// static vars
 	static genders = 'fmn';
+}
+
+class OCEAN {
+	/**
+	 * Big 5 personality values - all in [0, 1]
+	 * @param {number} openness 
+	 * @param {number} conscientiousness 
+	 * @param {number} extraversion 
+	 * @param {number} agreeableness 
+	 * @param {number} neuroticism 
+	 */
+	constructor(openness, conscientiousness, extraversion, agreeableness, neuroticism){
+		this.openness = openness;
+		this.conscientiousness = conscientiousness;
+		this.extraversion = extraversion;
+		this.agreeableness = agreeableness;
+		this.neuroticism = neuroticism;
+	}
+	get table(){
+		return kvpTable({
+			openness: this.openness,
+			conscientiousness: this.conscientiousness,
+			extraversion: this.extraversion,
+			agreeableness: this.agreeableness,
+			neuroticism: this.neuroticism,
+		});
+	}
+	// static methods
+	/** @param {string} gender */
+	static gen(gender){
+		const o = random.normal(...this.genderData[gender].o);
+		const c = random.normal(...this.genderData[gender].c);
+		const e = random.normal(...this.genderData[gender].e);
+		const a = random.normal(...this.genderData[gender].a);
+		const n = random.normal(...this.genderData[gender].n);
+		return new OCEAN(o, c, e, a, n);
+	}
+	// https://www.researchgate.net/figure/Means-and-standard-deviations-in-Adjective-Checklist-for-Personality-Assessment-AEP_tbl1_49707967
+	static genderData = {
+		f: {
+			o: [3.03, 0.62],
+			c: [3.68, 0.59],
+			e: [3.73, 0.68],
+			a: [4.01, 0.52],
+			n: [3.07, 0.65],
+		},
+		m: {
+			o: [3.09, 0.62],
+			c: [3.74, 0.62],
+			e: [3.74, 0.69],
+			a: [3.96, 0.53],
+			n: [2.74, 0.60],
+		},
+		n: {
+			/** @param {string} dimension char */
+			getValues(dimension){
+				return [
+					(OCEAN.genderData.f[dimension][0] + OCEAN.genderData.m[dimension][0])/2,
+					(OCEAN.genderData.f[dimension][1] + OCEAN.genderData.m[dimension][1])/2,
+				];
+			},
+			get o(){
+				return this.getValues('o');
+			},
+			get c(){
+				return this.getValues('c');
+			},
+			get e(){
+				return this.getValues('e');
+			},
+			get a(){
+				return this.getValues('a');
+			},
+			get n(){
+				return this.getValues('n');
+			},
+		},
+	};
 }
 
 class Body {

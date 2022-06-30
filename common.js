@@ -102,6 +102,29 @@ const random = {
 		return Array.from(iterable)[this.randint(0, iterable.length-1)];
 	},
 	/**
+	 * generate a normally-distributed number with the given mean and standard deviation
+	 * @param {number} mu mean
+	 * @param {number} sigma standard deviation
+	 * @returns {number}
+	 */
+	normal(mu = 0, sigma = 1){
+		/**
+		 * https://stackoverflow.com/a/196941/2579798
+		 * @returns {number}
+		 */
+		function gaussRandom(){
+			const u = 2*random.random()-1;
+			const v = 2*random.random()-1;
+			const r = u*u + v*v;
+			/*if outside interval [0,1] start over*/
+			if (r === 0 || r >= 1)
+				return gaussRandom();
+			const c = Math.sqrt(-2*Math.log(r)/r);
+			return u*c;
+		}
+		return mu + gaussRandom()*sigma;
+	},
+	/**
 	 * @param {number} min
 	 * @param {number} max - inclusive
 	 */
