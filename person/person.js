@@ -22,8 +22,9 @@ function kvpTable(obj){
 		// value
 		const tdValue = document.createElement('td');
 		const value = obj[key];
-		if ('table' in value)
-			tdValue.appendChild(value.table);
+		const maybeTable = value.table;
+		if (maybeTable)
+			tdValue.appendChild(maybeTable);
 		else
 			tdValue.innerHTML = value;
 		tr.appendChild(tdValue);
@@ -76,6 +77,12 @@ class Name {
 	constructor(first, last){
 		this.first = first;
 		this.last = last;
+	}
+	get table(){
+		return kvpTable({
+			first: this.first,
+			last: this.last,
+		});
 	}
 	// static methods
 	/** @param {string} gender */

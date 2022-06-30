@@ -1,0 +1,22 @@
+body, html {
+	background-color: black;
+	color: silver;
+	font-size: 3vh;
+}
+.kvpTable {
+	border-collapse: collapse;
+	border-radius: 1vh;
+	box-shadow: 0 0 0 0.5vh white;
+	color: black;
+	margin: 1vh;
+	overflow: hidden;
+}
+.kvpTable td {
+	padding: 1vh;
+}
+.kvpTable tr:nth-child(even){
+	background-color: #ccc;
+}
+.kvpTable tr:nth-child(odd){
+	background-color: #eee;
+}
