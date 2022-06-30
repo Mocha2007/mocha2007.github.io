@@ -134,6 +134,7 @@ class Personality {
 	 * @param {string} romantic_orientation a string of chars denoting what genders they are attracted to
 	 * @param {string} sexual_orientation a string of chars denoting what genders they are attracted to
 	 * @param {OCEAN} ocean big five personality values
+	 * @param {[Bodypart, {string: [number, number]}][]} preferredPartSize - an array of Bodypart - x pairs, where X is a dict of property-(mean, sd) pairs
 	 */
 	constructor(gender, romantic_orientation, sexual_orientation, ocean){
 		/** @type {string} */
