@@ -521,7 +521,8 @@ class Relation extends ObjectThumbnail {
 		new RelationType('apprenticeship', ['master', 'apprentice']),
 		new RelationType('employment', ['employer', 'employee']),
 		new RelationType('friendship', ['friend', 'friend']),
-		new RelationType('parenthood', ['parent', 'parent', 'child']),
+		new RelationType('parenthood (adoptive)', ['parent', 'parent', 'child']),
+		new RelationType('parenthood (biological)', ['parent', 'parent', 'child']),
 	];
 }
 
