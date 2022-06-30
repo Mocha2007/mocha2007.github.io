@@ -10,6 +10,9 @@ function getTableOrSpan(obj){
 		if (maybeTable)
 			return maybeTable
 	}
+	// console.debug(Array.isArray(value), value);
+	if (Array.isArray(obj)) // todo create special array table function
+		obj = '[' + obj.map(e => getTableOrSpan(e).outerHTML).join(', ') + ']'
 	const span = document.createElement('span');
 	span.innerHTML = obj;
 	return span;
@@ -35,13 +38,9 @@ function kvpTable(obj){
 		tdKey.innerHTML = key;
 		tr.appendChild(tdKey)
 		// value
-		const tdValue = document.createElement('td');
 		const value = obj[key];
-		console.debug(Array.isArray(value), value);
-		if (Array.isArray(value)) // todo create special array table function
-			tdValue.innerHTML = '[' + value.map(e => getTableOrSpan(e).outerHTML).join(', ') + ']';
-		else
-			tdValue.appendChild(getTableOrSpan(value));
+		const tdValue = document.createElement('td');
+		tdValue.appendChild(getTableOrSpan(value));
 		tr.appendChild(tdValue);
 		table.appendChild(tr);
 	}
