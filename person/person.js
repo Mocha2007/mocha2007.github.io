@@ -1,6 +1,20 @@
 /* exported debug */
 /* global body, names, random, range */
 
+/** if obj has table prop, use that, otherwise create span 
+ * @returns {HTMLTableElement|HTMLSpanElement}
+*/
+function getTableOrSpan(obj){
+	if (obj !== undefined){
+		const maybeTable = obj.table;
+		if (maybeTable)
+			return maybeTable
+	}
+	const span = document.createElement('span');
+	span.innerHTML = obj;
+	return span;
+}
+
 /** generates pretty tables based on key value pairs of objects */
 function kvpTable(obj){
 	const table = document.createElement('table');
@@ -23,11 +37,11 @@ function kvpTable(obj){
 		// value
 		const tdValue = document.createElement('td');
 		const value = obj[key];
-		const maybeTable = value.table;
-		if (maybeTable)
-			tdValue.appendChild(maybeTable);
+		console.debug(Array.isArray(value), value);
+		if (Array.isArray(value)) // todo create special array table function
+			tdValue.innerHTML = '[' + value.map(e => getTableOrSpan(e).outerHTML).join(', ') + ']';
 		else
-			tdValue.innerHTML = value;
+			tdValue.appendChild(getTableOrSpan(value));
 		tr.appendChild(tdValue);
 		table.appendChild(tr);
 	}
