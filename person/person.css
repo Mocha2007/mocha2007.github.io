@@ -14,6 +14,7 @@ body, html {
 	display: inline-block;
 	margin: 0.3vh;
 	padding: 0 0.3vh 0 0.3vh;
+	user-select: none;
 }
 .button:hover {
 	opacity: 0.6;
