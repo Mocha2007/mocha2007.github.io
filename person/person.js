@@ -57,7 +57,7 @@ class ObjectThumbnail {
 	}
 	get thumbnail(){
 		const span = document.createElement('span');
-		span.classList.add('thumbnail');
+		span.classList.add('button', 'thumbnail');
 		span.innerHTML = this.name;
 		span.onclick = () => this.showTable();
 		return span;

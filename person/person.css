@@ -1,8 +1,26 @@
 body, html {
 	background-color: black;
 	color: silver;
+	font-family: sans-serif;
 	font-size: 3vh;
 }
+.button {
+	background-color: #ccc;
+	border: 0.5vh solid white;
+	border-radius: 1vh;
+	color: #444;
+	cursor: pointer;
+	display: inline-block;
+	margin: 0.3vh;
+	padding: 0 0.3vh 0 0.3vh;
+}
+.button:hover {
+	opacity: 0.6;
+}
+.button:active {
+	opacity: 0.36;
+}
+/* kvp table start */
 .kvpTable {
 	border-collapse: collapse;
 	border-radius: 1vh;
@@ -23,3 +41,4 @@ body, html {
 .kvpKey {
 	text-align: right;
 }
+/* kvp table end */
