@@ -12,6 +12,7 @@ const body = {
 		},
 		{
 			name: 'eye',
+			icon: ['👀'],
 			validProperties: {
 				color: true,
 				size: true,

@@ -460,10 +460,11 @@ class Body extends ObjectThumbnail {
 class Bodypart extends ObjectThumbnail {
 	/**
 	 * @param {string} name
+	 * @param {string} icon
 	 * @param {{string: boolean}} validProperties a list of properties and whether they're valid for this part or not
 	 */
-	constructor(name, validProperties){
-		super(name);
+	constructor(name, icon, validProperties){
+		super(name, icon);
 		this.validProperties = validProperties;
 	}
 	get table(){
@@ -482,7 +483,7 @@ class Bodypart extends ObjectThumbnail {
 	// static methods
 	static parse(){
 		body.parts.forEach(obj => {
-			this.bodyparts.push(new Bodypart(obj.name, obj.validProperties));
+			this.bodyparts.push(new Bodypart(obj.name, obj.icon, obj.validProperties));
 		});
 	}
 	// static vars
