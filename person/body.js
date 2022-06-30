@@ -21,6 +21,9 @@ const body = {
 			'black',
 			'blue',
 			'brown',
+			'green',
+			'pink',
+			'red',
 		],
 		length: [
 			'short',
