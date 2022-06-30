@@ -52,7 +52,7 @@ body, html {
 .spacer {
 	margin: 0 0.3vh 0 0.3vh;
 }
-.spacer::before {
+.array > .spacer::before {
 	content: ',';
 }
 /* kvp table end */

@@ -5,11 +5,8 @@ function getArraySpan(obj){
 	const span = document.createElement('span');
 	span.classList.add('array');
 	obj.forEach((e, i) => {
-		if (0 < i){
-			const spacer = document.createElement('span');
-			spacer.classList.add('spacer');
-			span.appendChild(spacer);
-		}
+		if (0 < i)
+			span.appendChild(spacer());
 		span.appendChild(getTableOrSpan(e));
 	});
 	return span;
@@ -63,24 +60,61 @@ function kvpTable(obj){
 	return table;
 }
 
+function spacer(){
+	const spacer = document.createElement('span');
+	spacer.classList.add('spacer');
+	return spacer;
+}
+
 class ObjectThumbnail {
-	/** @param {string} name */
-	constructor(name){
+	/** 
+	 * @param {string} name 
+	 * @param {ThumbnailElem} thumbnailElem
+	 */
+	constructor(name, thumbnailElem = ThumbnailElem.default){
 		this.name = name;
-		// todo thumbnail icons for each object
+		this.thumbnailElem = thumbnailElem;
 	}
 	get thumbnail(){
 		const span = document.createElement('span');
 		span.classList.add('button', 'thumbnail');
-		span.innerHTML = this.name;
 		span.onclick = () => this.showTable();
 		span.obj = this;
+		span.appendChild(this.thumbnailElem.elem);
+		span.appendChild(spacer());
+		const inner = document.createElement('span');
+		inner.innerHTML = this.name;
+		span.appendChild(inner)
 		return span;
 	}
 	showTable(){
 		// edit history
 		history.go(this);
 	}
+}
+
+class ThumbnailElem {
+	constructor(char = '', url = ''){
+		this.char = char;
+		this.url = url;
+	}
+	get elem(){
+		switch (this.type){
+			case 'url':
+				const img = document.createElement('img');
+				img.src = this.url;
+				img.classList.add('thumbnail');
+				return img;
+			default:
+				const span = document.createElement('span');
+				span.innerHTML = this.char;
+				return span;
+		}
+	}
+	get type(){
+		return this.char ? 'char' : 'url';
+	}
+	static default = new ThumbnailElem('?');
 }
 
 class Person extends ObjectThumbnail {
