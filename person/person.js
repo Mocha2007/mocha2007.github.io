@@ -1,5 +1,5 @@
 /* exported debug */
-/* global names, random, range */
+/* global body, names, random, range */
 
 class Person {
 	/**
@@ -114,16 +114,50 @@ class Personality {
 	// static vars
 	static genders = 'fmn';
 }
+
 class Body {
-	constructor(colors){
-		/** a string -> css color mapping */
-		this.colors = colors;
+	/** @param {[Bodypart, {string: string}][]} partPropertyPairs */
+	constructor(partPropertyPairs){
+		/** @type {[Bodypart, {string: string}][]} 
+		 * a string -> css color mapping
+		 */
+		this.partPropertyPairs = partPropertyPairs;
 	}
 	// static methods
 	static gen(){
-		return new Body();
+		return new Body(
+			Bodypart.bodyparts.map(p => [p, p.gen()])
+		);
 	}
 }
+
+class Bodypart {
+	/**
+	 * @param {string} name
+	 * @param {{string: boolean}} validProperties a list of properties and whether they're valid for this part or not
+	 */
+	constructor(name, validProperties){
+		this.name = name;
+		this.validProperties = validProperties;
+	}
+	gen(){
+		const o = {};
+		for(let property in this.validProperties)
+			if (this.validProperties[property])
+				o[property] = random.choice(body.properties[property]);
+		return o;
+	}
+	// static methods
+	static parse(){
+		body.parts.forEach(obj => {
+			this.bodyparts.push(new Bodypart(obj.name, obj.validProperties));
+		});
+	}
+	// static vars
+	/** @type {Bodypart[]} */
+	static bodyparts = [];
+}
+Bodypart.parse();
 
 class Social {
 	/** @param {Relation[]} relations */
