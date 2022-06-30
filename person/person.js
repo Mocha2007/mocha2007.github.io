@@ -1,6 +1,20 @@
 /* exported debug */
 /* global body, names, random, range */
 
+function getArraySpan(obj){
+	const span = document.createElement('span');
+	span.classList.add('array');
+	obj.forEach((e, i) => {
+		if (0 < i){
+			const spacer = document.createElement('span');
+			spacer.classList.add('spacer');
+			span.appendChild(spacer);
+		}
+		span.appendChild(getTableOrSpan(e))
+	});
+	return span;
+}
+
 /** if obj has table prop, use that, otherwise create span
  * @returns {HTMLTableElement|HTMLSpanElement}
 */
@@ -8,9 +22,9 @@ function getTableOrSpan(obj){
 	// try to give the thumbnail
 	if (obj !== undefined && obj instanceof ObjectThumbnail)
 		return obj.thumbnail;
-	if (Array.isArray(obj)) // todo create special array table function
-		obj = '[' + obj.map(e => getTableOrSpan(e).outerHTML).join(', ') + ']'
-	else if (typeof obj === "string" || obj instanceof String || obj === undefined){}
+	if (Array.isArray(obj))
+		return getArraySpan(obj);
+	if (typeof obj === "string" || obj instanceof String || obj === undefined){}
 		// https://stackoverflow.com/a/24844091/2579798
 		// empty block because I need it to fall below object BUT I need to check it before
 	else if (Object.keys(obj).length) // normal js object
@@ -457,6 +471,12 @@ class RelationType extends ObjectThumbnail {
 		super(name);
 		this.agentTypes = agentTypes;
 	}
+	get table(){
+		return kvpTable({
+			name: this.name,
+			agentTypes: this.agentTypes,
+		});
+	}
 }
 
 class Relation extends ObjectThumbnail {
@@ -465,7 +485,7 @@ class Relation extends ObjectThumbnail {
 	 * @param {Person[]} agents (in same order as relationType.agentTypes)
 	 */
 	constructor(relationType, agents){
-		super('RelationType');
+		super('Relation');
 		this.relationType = relationType;
 		this.agents = agents;
 	}
