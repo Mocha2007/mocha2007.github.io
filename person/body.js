@@ -12,9 +12,16 @@ const body = {
 		},
 		{
 			name: 'eye',
-			icon: ['👀'],
+			icon: ['👁️'],
 			validProperties: {
 				color: true,
+				size: true,
+			},
+		},
+		{
+			name: 'foot',
+			icon: ['🦶'],
+			validProperties: {
 				size: true,
 			},
 		},
@@ -27,19 +34,35 @@ const body = {
 			},
 		},
 		{
+			name: 'hand',
+			icon: ['🖐️'],
+			validProperties: {
+				size: true,
+			},
+		},
+		{
 			name: 'head',
 			validProperties: {
 				size: true,
 			},
 		},
 		{
+			name: 'leg',
+			icon: ['🦵'],
+			validProperties: {
+				length: true,
+			},
+		},
+		{
 			name: 'lips',
+			icon: ['👄'],
 			validProperties: {
 				thickness: true,
 			},
 		},
 		{
 			name: 'nose',
+			icon: ['👃'],
 			validProperties: {
 				height: true,
 				width: true,
