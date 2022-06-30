@@ -74,6 +74,7 @@ class ObjectThumbnail {
 		span.classList.add('button', 'thumbnail');
 		span.innerHTML = this.name;
 		span.onclick = () => this.showTable();
+		span.obj = this;
 		return span;
 	}
 	showTable(){
@@ -91,7 +92,8 @@ class Person extends ObjectThumbnail {
 	 * @param {Social} social - if undefined will randomly generate
 	 */
 	constructor(name, vital, personality, body, social){
-		super(name);
+		super(`${name.first} ${name.last}`);
+		this.fullName = name;
 		Person.people.push(this);
 		this.vital = vital;
 		this.personality = personality;
@@ -106,7 +108,7 @@ class Person extends ObjectThumbnail {
 	}
 	get table(){
 		return kvpTable({
-			name: this.name,
+			name: this.fullName,
 			vital: this.vital,
 			personality: this.personality,
 			body: this.body,
@@ -512,7 +514,7 @@ class Relation extends ObjectThumbnail {
 		const relation = random.choice(this.relations);
 		return new Relation(
 			relation,
-			relation.agentTypes.map(() => person.randomOtherPerson)
+			relation.agentTypes.map((_, i) => i ? person.randomOtherPerson : person)
 		);
 	}
 	static relations = [
