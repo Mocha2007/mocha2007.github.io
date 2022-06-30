@@ -1,5 +1,5 @@
 /* exported debug */
-/* global random, range */
+/* global names, random, range */
 
 class Person {
 	/**
@@ -18,10 +18,11 @@ class Person {
 	}
 	// static methods
 	static gen(){
+		const personality = Personality.gen();
 		return new Person(
-			Name.gen(),
+			Name.gen(personality.gender),
 			Vital.gen(),
-			Personality.gen(),
+			personality,
 			Body.gen(),
 			Social.gen()
 		);
@@ -37,16 +38,17 @@ class Name {
 		this.last = last;
 	}
 	// static methods
+	/** @param {string} gender */
 	static gen(gender){
 		return new Name(
-			random.choice(this.firsts),
-			random.choice(this.firsts)
+			this.genFirst(gender),
+			random.choice(names.last)
 		);
 	}
-	// static vars
-	static firsts = [
-		'John',
-	];
+	/** @param {string} gender */
+	static genFirst(gender){
+		return random.choice(names.inSets(gender + 'n'));
+	}
 }
 class Vital {
 	// todo
@@ -56,11 +58,16 @@ class Vital {
 	}
 }
 class Personality {
-	// todo
+	/** @param {string} gender a single char denoting gender */
+	constructor(gender){
+		this.gender = gender;
+	}
 	// static methods
 	static gen(){
-		return new Personality();
+		return new Personality(random.choice(this.genders));
 	}
+	// static vars
+	static genders = 'fmn';
 }
 class Body {
 	constructor(colors){
