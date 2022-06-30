@@ -1,17 +1,13 @@
 /* exported debug */
 /* global body, names, random, range */
 
-/** if obj has table prop, use that, otherwise create span 
+/** if obj has table prop, use that, otherwise create span
  * @returns {HTMLTableElement|HTMLSpanElement}
 */
 function getTableOrSpan(obj){
-	console.debug('getTableOrSpan', obj);
-	if (obj !== undefined){ // todo fixme this is actually still necessary somehow
-		const maybeTable = obj.table;
-		if (maybeTable)
-			return maybeTable
-	}
-	// console.debug(Array.isArray(value), value);
+	// try to give the thumbnail
+	if (obj !== undefined && obj instanceof ObjectThumbnail)
+		return obj.thumbnail;
 	if (Array.isArray(obj)) // todo create special array table function
 		obj = '[' + obj.map(e => getTableOrSpan(e).outerHTML).join(', ') + ']'
 	else if (typeof obj === "string" || obj instanceof String || obj === undefined){}
@@ -53,7 +49,26 @@ function kvpTable(obj){
 	return table;
 }
 
-class Person {
+class ObjectThumbnail {
+	/** @param {string} name */
+	constructor(name){
+		this.name = name;
+		// todo thumbnail icons for each object
+	}
+	get thumbnail(){
+		const span = document.createElement('span');
+		span.classList.add('thumbnail');
+		span.innerHTML = this.name;
+		span.onclick = () => this.showTable();
+		return span;
+	}
+	showTable(){
+		// edit history
+		history.go(this);
+	}
+}
+
+class Person extends ObjectThumbnail {
 	/**
 	 * @param {Name} name - should this be under personality instead?
 	 * @param {Vital} vital
@@ -62,7 +77,7 @@ class Person {
 	 * @param {Social} social
 	 */
 	constructor(name, vital, personality, body, social){
-		this.name = name;
+		super(name);
 		this.vital = vital;
 		this.personality = personality;
 		this.body = body;
@@ -89,12 +104,13 @@ class Person {
 		);
 	}
 }
-class Name {
+class Name extends ObjectThumbnail {
 	/**
 	 * @param {string} first
 	 * @param {string} last
 	 */
 	constructor(first, last){
+		super(`${first} ${last}`);
 		this.first = first;
 		this.last = last;
 	}
@@ -117,7 +133,10 @@ class Name {
 		return random.choice(names.inSets(gender + 'n'));
 	}
 }
-class Vital {
+class Vital extends ObjectThumbnail {
+	constructor(){
+		super('Vital');
+	}
 	// todo
 	get table(){
 		return kvpTable({
@@ -128,7 +147,7 @@ class Vital {
 		return new Vital();
 	}
 }
-class Personality {
+class Personality extends ObjectThumbnail {
 	/** 
 	 * @param {string} gender a single char denoting gender 
 	 * @param {string} romantic_orientation a string of chars denoting what genders they are attracted to
@@ -137,6 +156,7 @@ class Personality {
 	 * @param {[Bodypart, {string: [number, number]}][]} partPrefs - an array of Bodypart - x pairs, where X is a dict of property-(mean, sd) pairs
 	 */
 	constructor(gender, romantic_orientation, sexual_orientation, ocean){
+		super('Personality');
 		/** @type {string} */
 		this.gender = gender;
 		/** @type {string} */
@@ -255,7 +275,7 @@ class Personality {
 	};
 }
 
-class OCEAN {
+class OCEAN extends ObjectThumbnail {
 	/**
 	 * Big 5 personality values - all in [0, 1]
 	 * @param {number} openness 
@@ -265,11 +285,15 @@ class OCEAN {
 	 * @param {number} neuroticism 
 	 */
 	constructor(openness, conscientiousness, extraversion, agreeableness, neuroticism){
+		super(OCEAN.getAbbreviated(openness, conscientiousness, extraversion, agreeableness, neuroticism));
 		this.openness = openness;
 		this.conscientiousness = conscientiousness;
 		this.extraversion = extraversion;
 		this.agreeableness = agreeableness;
 		this.neuroticism = neuroticism;
+	}
+	get abbreviated(){
+		return OCEAN.getAbbreviated(this.openness, this.conscientiousness, this.extraversion, this.agreeableness, this.neuroticism);
 	}
 	get table(){
 		return kvpTable({
@@ -289,6 +313,22 @@ class OCEAN {
 		const a = random.normal(...this.genderData[gender].a);
 		const n = random.normal(...this.genderData[gender].n);
 		return new OCEAN(o, c, e, a, n);
+	}
+	/**
+	 * get abbreviated string for quick personality reference
+	 * @param {number} o
+	 * @param {number} c
+	 * @param {number} e
+	 * @param {number} a
+	 * @param {number} n
+	 */
+	static getAbbreviated(o, c, e, a, n){
+		const oo = o < 3 ? 'o' : 'O';
+		const cc = c < 3 ? 'c' : 'C';
+		const ee = e < 3 ? 'e' : 'E';
+		const aa = a < 3 ? 'a' : 'A';
+		const nn = n < 3 ? 'n' : 'N';
+		return oo+cc+ee+aa+nn;
 	}
 	// https://www.researchgate.net/figure/Means-and-standard-deviations-in-Adjective-Checklist-for-Personality-Assessment-AEP_tbl1_49707967
 	static genderData = {
@@ -333,9 +373,10 @@ class OCEAN {
 	};
 }
 
-class Body {
+class Body extends ObjectThumbnail {
 	/** @param {[Bodypart, {string: string}][]} partPropertyPairs */
 	constructor(partPropertyPairs){
+		super('Body');
 		/** @type {[Bodypart, {string: string}][]} 
 		 * a string -> css color mapping
 		 */
@@ -354,13 +395,13 @@ class Body {
 	}
 }
 
-class Bodypart {
+class Bodypart extends ObjectThumbnail {
 	/**
 	 * @param {string} name
 	 * @param {{string: boolean}} validProperties a list of properties and whether they're valid for this part or not
 	 */
 	constructor(name, validProperties){
-		this.name = name;
+		super(name);
 		this.validProperties = validProperties;
 	}
 	get table(){
@@ -388,9 +429,10 @@ class Bodypart {
 }
 Bodypart.parse();
 
-class Social {
+class Social extends ObjectThumbnail {
 	/** @param {Relation[]} relations */
 	constructor(relations){
+		super('Social');
 		this.relations = relations;
 	}
 	get table(){
@@ -406,23 +448,24 @@ class Social {
 	}
 }
 
-class RelationType {
+class RelationType extends ObjectThumbnail {
 	/**
 	 * @param {string} name 
 	 * @param {string[]} agentTypes 
 	 */
 	constructor(name, agentTypes){
-		this.name = name;
+		super(name);
 		this.agentTypes = agentTypes;
 	}
 }
 
-class Relation {
+class Relation extends ObjectThumbnail {
 	/**
 	 * @param {RelationType} relationType
 	 * @param {Person[]} agents (in same order as relationType.agentTypes)
 	 */
 	constructor(relationType, agents){
+		super('RelationType');
 		this.relationType = relationType;
 		this.agents = agents;
 	}
@@ -447,11 +490,46 @@ class Relation {
 	];
 }
 
+const history = {
+	/** @type {ObjectThumbnail[]} */
+	backData: [],
+	/** @type {ObjectThumbnail} */
+	current: undefined,
+	/** @type {ObjectThumbnail[]} */
+	forwardData: [],
+	// methods
+	back(){
+		if (!this.backData.length)
+			return;
+		this.forwardData.push(this.current);
+		this.current = this.backData.pop();
+		this.set(this.current);
+	},
+	forward(){
+		if (!this.forwardData.length)
+			return;
+		this.backData.push(this.current);
+		this.current = this.forwardData.pop();
+		this.set(this.current);
+	},
+	/** equivalent to clicking on a hyperlink
+	 * @param {ObjectThumbnail} obj */
+	go(obj){
+		this.forwardData = [];
+		this.backData.push(this.current);
+		this.current = obj;
+		this.set(obj);
+	},
+	/** ONLY set the current displayed object, do not touch history
+	 * @param {ObjectThumbnail} obj */
+	set(obj){
+		/** @param {HTMLDivElement} */
+		const infobox = document.getElementById('infobox');
+		infobox.innerHTML = '';
+		infobox.appendChild(obj.table);
+	}
+};
+
 function debug(){
-	const person = Person.gen();
-	console.debug(person);
-	/** @param {HTMLDivElement} */
-	const infobox = document.getElementById('infobox');
-	infobox.innerHTML = '';
-	infobox.appendChild(person.table);
+	// console.debug();
 }

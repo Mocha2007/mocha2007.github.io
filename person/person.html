@@ -10,7 +10,10 @@
 <script src="person.js"></script>
 <title>Person</title>
 <div id="main">
-	<span class="button" id="debugButton" onclick="debug()">Generate new person</span>
+	<span class="button" id="debugButton" onclick="Person.gen().showTable()">Generate new person</span>
+	<br>
+	<span class="button" id="backButton" onclick="history.back()">&larr; Back</span>
+	<span class="button" id="forwardButton" onclick="history.forward()">Forward &rarr;</span>
 	<div id="infobox"></div>
 </div>
 </html>
