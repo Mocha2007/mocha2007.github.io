@@ -17,6 +17,7 @@ function kvpTable(obj){
 	for (let key in obj){
 		const tr = document.createElement('tr');
 		const tdKey = document.createElement('td');
+		tdKey.classList.add('kvpKey');
 		tdKey.innerHTML = key;
 		tr.appendChild(tdKey)
 		// value
