@@ -76,6 +76,9 @@ class Personality {
 			n: 'nonbinary',
 		}[this.gender];
 	}
+	get identityName(){
+		return `${Personality.orientationName(this.romantic_orientation)}romantic ${Personality.orientationName(this.sexual_orientation)}sexual ${this.genderName}`;
+	}
 	// static methods
 	static gen(){
 		return new Personality(
