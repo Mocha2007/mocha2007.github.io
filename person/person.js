@@ -1,6 +1,37 @@
 /* exported debug */
 /* global body, names, random, range */
 
+/** generates pretty tables based on key value pairs of objects */
+function kvpTable(obj){
+	const table = document.createElement('table');
+	table.classList.add('kvpTable');
+	const header = document.createElement('tr');
+	table.appendChild(header);
+	const headerKey = document.createElement('th');
+	headerKey.innerHTML = 'Key';
+	header.appendChild(headerKey);
+	const headerValue = document.createElement('th');
+	headerValue.innerHTML = 'Value';
+	header.appendChild(headerValue);
+	// main
+	for (let key in obj){
+		const tr = document.createElement('tr');
+		const tdKey = document.createElement('td');
+		tdKey.innerHTML = key;
+		tr.appendChild(tdKey)
+		// value
+		const tdValue = document.createElement('td');
+		const value = obj[key];
+		if ('table' in value)
+			tdValue.appendChild(value.table);
+		else
+			tdValue.innerHTML = value;
+		tr.appendChild(tdValue);
+		table.appendChild(tr);
+	}
+	return table;
+}
+
 class Person {
 	/**
 	 * @param {Name} name
@@ -15,6 +46,15 @@ class Person {
 		this.personality = personality;
 		this.body = body;
 		this.social = social;
+	}
+	get table(){
+		return kvpTable({
+			name: this.name,
+			vital: this.vital,
+			personality: this.personality,
+			body: this.body,
+			social: this.social,
+		});
 	}
 	// static methods
 	static gen(){
@@ -193,5 +233,10 @@ class Relation {
 }
 
 function debug(){
-	console.debug(Person.gen());
+	const person = Person.gen();
+	console.debug(person);
+	/** @param {HTMLDivElement} */
+	const infobox = document.getElementById('infobox');
+	infobox.innerHTML = '';
+	infobox.appendChild(person.table);
 }
