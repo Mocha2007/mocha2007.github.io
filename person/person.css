@@ -5,10 +5,11 @@ body, html {
 	font-size: 3vh;
 }
 .button {
-	background-color: #ccc;
-	border: 0.5vh solid white;
+	background-color: #cef;
+	border: 0.5vh solid #08f;
 	border-radius: 1vh;
-	color: #444;
+	box-shadow: 0 0 2vh #08f;
+	color: #024;
 	cursor: pointer;
 	display: inline-block;
 	margin: 0.3vh;
