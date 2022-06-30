@@ -5,6 +5,7 @@ const body = {
 			name: 'eye',
 			validProperties: {
 				color: true,
+				size: true,
 			},
 		},
 		{
@@ -25,6 +26,11 @@ const body = {
 			'short',
 			'medium',
 			'long',
+		],
+		size: [
+			'small',
+			'medium',
+			'large',
 		],
 	},
 };
