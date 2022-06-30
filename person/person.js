@@ -400,28 +400,45 @@ class Social {
 	}
 }
 
+class RelationType {
+	/**
+	 * @param {string} name 
+	 * @param {string[]} agentTypes 
+	 */
+	constructor(name, agentTypes){
+		this.name = name;
+		this.agentTypes = agentTypes;
+	}
+}
+
 class Relation {
 	/**
-	 * @param {string} relationType
-	 * @param {Person} agent
-	 * @param {Person} patient
+	 * @param {RelationType} relationType
+	 * @param {Person[]} agents (in same order as relationType.agentTypes)
 	 */
-	constrctor(relationType, agent, patient){
+	constructor(relationType, agents){
 		this.relationType = relationType;
-		this.agent = agent;
-		this.patient = patient;
+		this.agents = agents;
 	}
 	get table(){
 		return kvpTable({
 			relationType: this.relationType,
-			agent: this.agent,
-			patient: this.patient,
+			agents: this.agents,
 		});
 	}
 	// static methods
 	static gen(){
-		return new Relation();
+		const relation = random.choice(this.relations);
+		return new Relation(
+			relation
+		);
 	}
+	static relations = [
+		new RelationType('apprenticeship', ['master', 'apprentice']),
+		new RelationType('employment', ['employer', 'employee']),
+		new RelationType('friendship', ['friend', 'friend']),
+		new RelationType('parenthood', ['parent', 'parent', 'child']),
+	];
 }
 
 function debug(){
