@@ -183,13 +183,9 @@ class Personality {
 	}
 	/** @param {string} gender */
 	static genOrientation(gender){
-		// todo account for gender biases
-		let o = '';
-		Array.from(this.genders).forEach(g => {
-			if (random.bool())
-				o += g;
-		})
-		return o;
+		return random.weightedChoice(this.orientationBiasesKeys, 
+			Object.entries(this.orientationBiases[gender]).map(kvp => kvp[1])
+		);
 	}
 	/** @param {string} genders */
 	static orientationName(genders){
@@ -212,6 +208,45 @@ class Personality {
 	}
 	// static vars
 	static genders = 'fmn';
+	static orientationBiasesKeys = [
+		'f', 'fm', 'fmn', 'fn', 'm', 'mn', 'n', '',
+	];
+	static orientationBiases = {
+		// based on https://www.cmaj.ca/content/191/3/E63/tab-figures-data
+		// which is garbo-quality but it's all I got
+		// n and '' values are just a guess
+		f: {
+			f: 0.016,
+			fm: 0.023,
+			fmn: 0.023,
+			fn: 0.016,
+			m: 0.757,
+			mn: 0.757,
+			n: 0.01,
+			'': 0.01,
+		},
+		m: {
+			f: 0.757,
+			fm: 0.023,
+			fmn: 0.023,
+			fn: 0.757,
+			m: 0.093,
+			mn: 0.093,
+			n: 0.01,
+			'': 0.01,
+		},
+		n: {
+			// all of these are a wild guess
+			f: 0.25,
+			fm: 0.05,
+			fmn: 0.05,
+			fn: 0.25,
+			m: 0.25,
+			mn: 0.25,
+			n: 0.1,
+			'': 0.1,
+		},
+	};
 }
 
 class OCEAN {
