@@ -10,7 +10,7 @@ const names = {
 		'Alex',
 	],
 	last: [
-		'Black', 'Brown', 'Johnson', 'Smith',
+		'Black', 'Brown', 'Johnson', 'Jones', 'Smith',
 	],
 	/** @param {string} setChars m = masc, f = fem, n = neuter */
 	inSets(setChars){

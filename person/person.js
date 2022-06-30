@@ -1,6 +1,12 @@
 /* exported debug */
 /* global body, names, random, range */
 
+const icons = {
+	data: ['📝'],
+	person: ['🧑'],
+	unknown: ['❓'],
+};
+
 function getArraySpan(obj){
 	const span = document.createElement('span');
 	span.classList.add('array');
@@ -69,11 +75,13 @@ function spacer(){
 class ObjectThumbnail {
 	/** 
 	 * @param {string} name 
-	 * @param {ThumbnailElem} thumbnailElem
+	 * @param {string} thumbnailElem
 	 */
-	constructor(name, thumbnailElem = ThumbnailElem.default){
+	constructor(name, thumbnailElem){
 		this.name = name;
-		this.thumbnailElem = thumbnailElem;
+		console.debug(thumbnailElem);
+		this.thumbnailElem = thumbnailElem ? new ThumbnailElem(...thumbnailElem) : ThumbnailElem.default;
+		console.debug('\t=>', this.thumbnailElem);
 	}
 	get thumbnail(){
 		const span = document.createElement('span');
@@ -94,27 +102,22 @@ class ObjectThumbnail {
 }
 
 class ThumbnailElem {
-	constructor(char = '', url = ''){
-		this.char = char;
-		this.url = url;
+	constructor(s = '', isURL = false){
+		this.s = s;
+		this.isURL = isURL;
 	}
 	get elem(){
-		switch (this.type){
-			case 'url':
-				const img = document.createElement('img');
-				img.src = this.url;
-				img.classList.add('thumbnail');
-				return img;
-			default:
-				const span = document.createElement('span');
-				span.innerHTML = this.char;
-				return span;
+		if (this.isURL){
+			const img = document.createElement('img');
+			img.src = this.s;
+			img.classList.add('thumbnail');
+			return img;
 		}
+		const span = document.createElement('span');
+		span.innerHTML = this.s;
+		return span;
 	}
-	get type(){
-		return this.char ? 'char' : 'url';
-	}
-	static default = new ThumbnailElem('?');
+	static default = new ThumbnailElem(...icons.unknown);
 }
 
 class Person extends ObjectThumbnail {
@@ -126,7 +129,7 @@ class Person extends ObjectThumbnail {
 	 * @param {Social} social - if undefined will randomly generate
 	 */
 	constructor(name, vital, personality, body, social){
-		super(`${name.first} ${name.last}`);
+		super(`${name.first} ${name.last}`, icons.person);
 		this.fullName = name;
 		Person.people.push(this);
 		this.vital = vital;
@@ -169,7 +172,7 @@ class Name extends ObjectThumbnail {
 	 * @param {string} last
 	 */
 	constructor(first, last){
-		super(`${first} ${last}`);
+		super(`${first} ${last}`, icons.data);
 		this.first = first;
 		this.last = last;
 	}
@@ -194,7 +197,7 @@ class Name extends ObjectThumbnail {
 }
 class Vital extends ObjectThumbnail {
 	constructor(){
-		super('Vital');
+		super('Vital', icons.data);
 	}
 	// todo
 	get table(){
