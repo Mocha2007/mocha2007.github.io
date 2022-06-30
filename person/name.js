@@ -1,16 +1,16 @@
 /* exported names */
 const names = {
 	feminine: [
-		'Alice',
+		'Alice', 'Luna',
 	],
 	masculine: [
-		'John',
+		'Jake', 'John', 'Mordecai',
 	],
 	neuter: [
 		'Alex',
 	],
 	last: [
-		'Smith',
+		'Black', 'Brown', 'Johnson', 'Smith',
 	],
 	/** @param {string} setChars m = masc, f = fem, n = neuter */
 	inSets(setChars){
@@ -22,5 +22,5 @@ const names = {
 		if (setChars.includes('n'))
 			n = n.concat(this.neuter);
 		return n;
-	}
+	},
 };
