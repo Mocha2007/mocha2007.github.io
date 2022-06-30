@@ -6,7 +6,7 @@
 */
 function getTableOrSpan(obj){
 	console.debug('getTableOrSpan', obj);
-	if (obj !== undefined){
+	if (obj !== undefined){ // todo fixme this is actually still necessary somehow
 		const maybeTable = obj.table;
 		if (maybeTable)
 			return maybeTable
