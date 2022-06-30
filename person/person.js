@@ -212,39 +212,38 @@ class Personality {
 		'f', 'fm', 'fmn', 'fn', 'm', 'mn', 'n', '',
 	];
 	static orientationBiases = {
-		// based on https://www.cmaj.ca/content/191/3/E63/tab-figures-data
-		// which is garbo-quality but it's all I got
-		// n and '' values are just a guess
+		// https://news.gallup.com/poll/389792/lgbt-identification-ticks-up.aspx
+		// https://docs.google.com/spreadsheets/d/1aP7c14dLNY46AljXM11aNLrQgMWdl8gQnycvPFcgtwc/edit#gid=0
 		f: {
-			f: 0.016,
-			fm: 0.023,
-			fmn: 0.023,
-			fn: 0.016,
-			m: 0.757,
-			mn: 0.757,
-			n: 0.01,
-			'': 0.01,
+			f: 0.0449,
+			fm: 0.2250,
+			fmn: 0.2250,
+			fn: 0.0449,
+			m: 0.7549,
+			mn: 0.7549,
+			n: 0.0160,
+			'': 0.0160,
 		},
 		m: {
-			f: 0.757,
-			fm: 0.023,
-			fmn: 0.023,
-			fn: 0.757,
-			m: 0.093,
-			mn: 0.093,
-			n: 0.01,
-			'': 0.01,
+			f: 0.7891,
+			fm: 0.0750,
+			fmn: 0.0750,
+			fn: 0.7891,
+			m: 0.0451,
+			mn: 0.0451,
+			n: 0.0080,
+			'': 0.0080,
 		},
 		n: {
-			// all of these are a wild guess
-			f: 0.25,
-			fm: 0.05,
-			fmn: 0.05,
-			fn: 0.25,
-			m: 0.25,
-			mn: 0.25,
-			n: 0.1,
-			'': 0.1,
+			// based solely on genZ row
+			f: 0.772/4,
+			fm: 0.15/2,
+			fmn: 0.15/2,
+			fn: 0.772/4,
+			m: 0.772/4,
+			mn: 0.772/4,
+			n: 0.012/2,
+			'': 0.012/2,
 		},
 	};
 }
