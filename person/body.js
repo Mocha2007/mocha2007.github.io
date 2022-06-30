@@ -68,12 +68,12 @@ const body = {
 		],
 		height: [
 			'short',
-			'medium',
+			'moderately tall',
 			'tall',
 		],
 		length: [
 			'short',
-			'medium',
+			'moderately long',
 			'long',
 		],
 		musculature: [
