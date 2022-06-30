@@ -100,6 +100,10 @@ class Name {
 }
 class Vital {
 	// todo
+	get table(){
+		return kvpTable({
+		});
+	}
 	// static methods
 	static gen(){
 		return new Vital();
@@ -125,7 +129,20 @@ class Personality {
 		}[this.gender];
 	}
 	get identityName(){
-		return `${Personality.orientationName(this.romantic_orientation)}romantic ${Personality.orientationName(this.sexual_orientation)}sexual ${this.genderName}`;
+		return `${this.romanticOrientationName} ${this.sexualOrientationName} ${this.genderName}`;
+	}
+	get romanticOrientationName(){
+		return Personality.orientationName(this.romantic_orientation) + 'romantic';
+	}
+	get sexualOrientationName(){
+		return Personality.orientationName(this.sexual_orientation) + 'sexual';
+	}
+	get table(){
+		return kvpTable({
+			gender: this.genderName,
+			romantic_orientation: this.romanticOrientationName,
+			sexual_orientation: this.sexualOrientationName,
+		});
 	}
 	// static methods
 	static gen(){
@@ -174,6 +191,11 @@ class Body {
 		 */
 		this.partPropertyPairs = partPropertyPairs;
 	}
+	get table(){
+		return kvpTable({
+			partPropertyPairs: this.partPropertyPairs,
+		});
+	}
 	// static methods
 	static gen(){
 		return new Body(
@@ -190,6 +212,12 @@ class Bodypart {
 	constructor(name, validProperties){
 		this.name = name;
 		this.validProperties = validProperties;
+	}
+	get table(){
+		return kvpTable({
+			name: this.name,
+			validProperties: this.validProperties,
+		});
 	}
 	gen(){
 		const o = {};
@@ -215,6 +243,11 @@ class Social {
 	constructor(relations){
 		this.relations = relations;
 	}
+	get table(){
+		return kvpTable({
+			relations: this.relations,
+		});
+	}
 	// static methods
 	static gen(){
 		return new Social(
@@ -233,6 +266,13 @@ class Relation {
 		this.relationType = relationType;
 		this.agent = agent;
 		this.patient = patient;
+	}
+	get table(){
+		return kvpTable({
+			relationType: this.relationType,
+			agent: this.agent,
+			patient: this.patient,
+		});
 	}
 	// static methods
 	static gen(){
