@@ -1,5 +1,5 @@
 /* exported debug */
-/* global body, names, random, range */
+/* global body, icons, kvpTable, names, ObjectThumbnail, random, range */
 
 class Person extends ObjectThumbnail {
 	/**
@@ -21,7 +21,7 @@ class Person extends ObjectThumbnail {
 	/** @returns {Person|undefined} */
 	get randomOtherPerson(){
 		if (Person.people.length < 2)
-			return;
+			return undefined;
 		return random.choice(Person.people.filter(p => p !== this));
 	}
 	get table(){
@@ -44,9 +44,10 @@ class Person extends ObjectThumbnail {
 			undefined // in order for the person to be passed into Social.gen
 		);
 	}
-	/** @type {Person[]} */
-	static people = [];
 }
+/** @type {Person[]} */
+Person.people = [];
+
 class Name extends ObjectThumbnail {
 	/**
 	 * @param {string} first
@@ -91,8 +92,8 @@ class Vital extends ObjectThumbnail {
 	}
 }
 class Personality extends ObjectThumbnail {
-	/** 
-	 * @param {string} gender a single char denoting gender 
+	/**
+	 * @param {string} gender a single char denoting gender
 	 * @param {string} romantic_orientation a string of chars denoting what genders they are attracted to
 	 * @param {string} sexual_orientation a string of chars denoting what genders they are attracted to
 	 * @param {OCEAN} ocean big five personality values
@@ -148,7 +149,7 @@ class Personality extends ObjectThumbnail {
 	}
 	/** @param {string} gender */
 	static genOrientation(gender){
-		return random.weightedChoice(this.orientationBiasesKeys, 
+		return random.weightedChoice(this.orientationBiasesKeys,
 			Object.entries(this.orientationBiases[gender]).map(kvp => kvp[1])
 		);
 	}
@@ -171,64 +172,65 @@ class Personality extends ObjectThumbnail {
 				return 'a';
 		}
 	}
-	// static vars
-	static genders = 'fmn';
-	static genderBiases = {
-		f: 0.5,
-		m: 0.5,
-		n: 0.0036, // https://docs.google.com/spreadsheets/d/1aP7c14dLNY46AljXM11aNLrQgMWdl8gQnycvPFcgtwc/edit#gid=656383138
-	};
-	static orientationBiasesKeys = [
-		'f', 'fm', 'fmn', 'fn', 'm', 'mn', 'n', '',
-	];
-	static orientationBiases = {
-		// https://news.gallup.com/poll/389792/lgbt-identification-ticks-up.aspx
-		// https://docs.google.com/spreadsheets/d/1aP7c14dLNY46AljXM11aNLrQgMWdl8gQnycvPFcgtwc/edit#gid=0
-		f: {
-			f: 0.0449,
-			fm: 0.2250,
-			fmn: 0.2250,
-			fn: 0.0449,
-			m: 0.7549,
-			mn: 0.7549,
-			n: 0.0160,
-			'': 0.0160,
-		},
-		m: {
-			f: 0.7891,
-			fm: 0.0750,
-			fmn: 0.0750,
-			fn: 0.7891,
-			m: 0.0451,
-			mn: 0.0451,
-			n: 0.0080,
-			'': 0.0080,
-		},
-		n: {
-			// based solely on genZ row
-			f: 0.772/4,
-			fm: 0.15/2,
-			fmn: 0.15/2,
-			fn: 0.772/4,
-			m: 0.772/4,
-			mn: 0.772/4,
-			n: 0.012/2,
-			'': 0.012/2,
-		},
-	};
 }
+// static vars
+Personality.genders = 'fmn';
+Personality.genderBiases = {
+	f: 0.5,
+	m: 0.5,
+	n: 0.0036, // https://docs.google.com/spreadsheets/d/1aP7c14dLNY46AljXM11aNLrQgMWdl8gQnycvPFcgtwc/edit#gid=656383138
+};
+Personality.orientationBiasesKeys = [
+	'f', 'fm', 'fmn', 'fn', 'm', 'mn', 'n', '',
+];
+Personality.orientationBiases = {
+	// https://news.gallup.com/poll/389792/lgbt-identification-ticks-up.aspx
+	// https://docs.google.com/spreadsheets/d/1aP7c14dLNY46AljXM11aNLrQgMWdl8gQnycvPFcgtwc/edit#gid=0
+	f: {
+		f: 0.0449,
+		fm: 0.2250,
+		fmn: 0.2250,
+		fn: 0.0449,
+		m: 0.7549,
+		mn: 0.7549,
+		n: 0.0160,
+		'': 0.0160,
+	},
+	m: {
+		f: 0.7891,
+		fm: 0.0750,
+		fmn: 0.0750,
+		fn: 0.7891,
+		m: 0.0451,
+		mn: 0.0451,
+		n: 0.0080,
+		'': 0.0080,
+	},
+	n: {
+		// based solely on genZ row
+		f: 0.772/4,
+		fm: 0.15/2,
+		fmn: 0.15/2,
+		fn: 0.772/4,
+		m: 0.772/4,
+		mn: 0.772/4,
+		n: 0.012/2,
+		'': 0.012/2,
+	},
+};
 
 class OCEAN extends ObjectThumbnail {
 	/**
 	 * Big 5 personality values - all in [0, 1]
-	 * @param {number} openness 
-	 * @param {number} conscientiousness 
-	 * @param {number} extraversion 
-	 * @param {number} agreeableness 
-	 * @param {number} neuroticism 
+	 * @param {number} openness
+	 * @param {number} conscientiousness
+	 * @param {number} extraversion
+	 * @param {number} agreeableness
+	 * @param {number} neuroticism
 	 */
 	constructor(openness, conscientiousness, extraversion, agreeableness, neuroticism){
-		super(OCEAN.getAbbreviated(openness, conscientiousness, extraversion, agreeableness, neuroticism));
+		super(OCEAN.getAbbreviated(
+			openness, conscientiousness, extraversion, agreeableness, neuroticism));
 		this.openness = openness;
 		this.conscientiousness = conscientiousness;
 		this.extraversion = extraversion;
@@ -236,7 +238,9 @@ class OCEAN extends ObjectThumbnail {
 		this.neuroticism = neuroticism;
 	}
 	get abbreviated(){
-		return OCEAN.getAbbreviated(this.openness, this.conscientiousness, this.extraversion, this.agreeableness, this.neuroticism);
+		return OCEAN.getAbbreviated(
+			this.openness, this.conscientiousness,
+			this.extraversion, this.agreeableness, this.neuroticism);
 	}
 	get table(){
 		return kvpTable({
@@ -273,58 +277,58 @@ class OCEAN extends ObjectThumbnail {
 		const nn = n < 3 ? 'n' : 'N';
 		return oo+cc+ee+aa+nn;
 	}
-	// https://www.researchgate.net/figure/Means-and-standard-deviations-in-Adjective-Checklist-for-Personality-Assessment-AEP_tbl1_49707967
-	static genderData = {
-		f: {
-			o: [3.03, 0.62],
-			c: [3.68, 0.59],
-			e: [3.73, 0.68],
-			a: [4.01, 0.52],
-			n: [3.07, 0.65],
-		},
-		m: {
-			o: [3.09, 0.62],
-			c: [3.74, 0.62],
-			e: [3.74, 0.69],
-			a: [3.96, 0.53],
-			n: [2.74, 0.60],
-		},
-		n: {
-			/** @param {string} dimension char */
-			getValues(dimension){
-				return [
-					(OCEAN.genderData.f[dimension][0] + OCEAN.genderData.m[dimension][0])/2,
-					(OCEAN.genderData.f[dimension][1] + OCEAN.genderData.m[dimension][1])/2,
-				];
-			},
-			get o(){
-				return this.getValues('o');
-			},
-			get c(){
-				return this.getValues('c');
-			},
-			get e(){
-				return this.getValues('e');
-			},
-			get a(){
-				return this.getValues('a');
-			},
-			get n(){
-				return this.getValues('n');
-			},
-		},
-	};
 }
+// https://www.researchgate.net/figure/Means-and-standard-deviations-in-Adjective-Checklist-for-Personality-Assessment-AEP_tbl1_49707967
+OCEAN.genderData = {
+	f: {
+		o: [3.03, 0.62],
+		c: [3.68, 0.59],
+		e: [3.73, 0.68],
+		a: [4.01, 0.52],
+		n: [3.07, 0.65],
+	},
+	m: {
+		o: [3.09, 0.62],
+		c: [3.74, 0.62],
+		e: [3.74, 0.69],
+		a: [3.96, 0.53],
+		n: [2.74, 0.60],
+	},
+	n: {
+		/** @param {string} dimension char */
+		getValues(dimension){
+			return [
+				(OCEAN.genderData.f[dimension][0] + OCEAN.genderData.m[dimension][0])/2,
+				(OCEAN.genderData.f[dimension][1] + OCEAN.genderData.m[dimension][1])/2,
+			];
+		},
+		get o(){
+			return this.getValues('o');
+		},
+		get c(){
+			return this.getValues('c');
+		},
+		get e(){
+			return this.getValues('e');
+		},
+		get a(){
+			return this.getValues('a');
+		},
+		get n(){
+			return this.getValues('n');
+		},
+	},
+};
 
 class Body extends ObjectThumbnail {
-	/** 
+	/**
 	 * @param {Item[]} inventory
 	 * @param {[Bodypart, {string: string}][]} partPropertyPairs
 	 * @param {Needs} needs
 	 */
 	constructor(inventory, partPropertyPairs, needs){
 		super('Body');
-		/** @type {[Bodypart, {string: string}][]} 
+		/** @type {[Bodypart, {string: string}][]}
 		 * a string -> css color mapping
 		 */
 		this.inventory = inventory;
@@ -343,7 +347,7 @@ class Body extends ObjectThumbnail {
 		return new Body(
 			[],
 			Bodypart.bodyparts.map(p => [p, p.gen()]),
-			Needs.gen(),
+			Needs.gen()
 		);
 	}
 }
@@ -389,7 +393,7 @@ class Bodypart extends ObjectThumbnail {
 	}
 	gen(){
 		const o = {};
-		for(let property in this.validProperties)
+		for (const property in this.validProperties)
 			if (this.validProperties[property])
 				o[property] = random.choice(body.properties[property]);
 		return o;
@@ -401,10 +405,10 @@ class Bodypart extends ObjectThumbnail {
 		});
 		console.log('Bodyparts successfully parsed');
 	}
-	// static vars
-	/** @type {Bodypart[]} */
-	static bodyparts = [];
 }
+// static vars
+/** @type {Bodypart[]} */
+Bodypart.bodyparts = [];
 Bodypart.parse();
 
 class Social extends ObjectThumbnail {
@@ -429,8 +433,8 @@ class Social extends ObjectThumbnail {
 
 class RelationType extends ObjectThumbnail {
 	/**
-	 * @param {string} name 
-	 * @param {string[]} agentTypes 
+	 * @param {string} name
+	 * @param {string[]} agentTypes
 	 */
 	constructor(name, agentTypes){
 		super(name);
@@ -470,52 +474,11 @@ class Relation extends ObjectThumbnail {
 			relation.agentTypes.map((_, i) => i ? person.randomOtherPerson : person)
 		);
 	}
-	static relations = [
-		new RelationType('apprenticeship', ['master', 'apprentice']),
-		new RelationType('employment', ['employer', 'employee']),
-		new RelationType('friendship', ['friend', 'friend']),
-		new RelationType('parenthood (adoptive)', ['parent', 'parent', 'child']),
-		new RelationType('parenthood (biological)', ['parent', 'parent', 'child']),
-	];
 }
-
-const history = {
-	/** @type {ObjectThumbnail[]} */
-	backData: [],
-	/** @type {ObjectThumbnail} */
-	current: undefined,
-	/** @type {ObjectThumbnail[]} */
-	forwardData: [],
-	// methods
-	back(){
-		if (!this.backData.length)
-			return;
-		this.forwardData.push(this.current);
-		this.current = this.backData.pop();
-		this.set(this.current);
-	},
-	forward(){
-		if (!this.forwardData.length)
-			return;
-		this.backData.push(this.current);
-		this.current = this.forwardData.pop();
-		this.set(this.current);
-	},
-	/** equivalent to clicking on a hyperlink
-	 * @param {ObjectThumbnail} obj */
-	go(obj){
-		this.forwardData = [];
-		this.backData.push(this.current);
-		this.current = obj;
-		this.set(obj);
-	},
-	/** ONLY set the current displayed object, do not touch history
-	 * @param {ObjectThumbnail} obj */
-	set(obj){
-		/** @param {HTMLDivElement} */
-		const infobox = document.getElementById('infobox');
-		infobox.innerHTML = '';
-		infobox.appendChild(obj.table);
-		// console.debug(obj);
-	}
-};
+Relation.relations = [
+	new RelationType('apprenticeship', ['master', 'apprentice']),
+	new RelationType('employment', ['employer', 'employee']),
+	new RelationType('friendship', ['friend', 'friend']),
+	new RelationType('parenthood (adoptive)', ['parent', 'parent', 'child']),
+	new RelationType('parenthood (biological)', ['parent', 'parent', 'child']),
+];
