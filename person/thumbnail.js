@@ -1,4 +1,4 @@
-
+/* global game */
 
 const icons = {
 	data: ['📝'],
@@ -96,7 +96,7 @@ class ObjectThumbnail {
 	}
 	showTable(){
 		// edit history
-		history.go(this);
+		game.history.go(this);
 	}
 }
 
