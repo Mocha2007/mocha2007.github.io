@@ -1,5 +1,5 @@
 /* exported Item */
-/* global ObjectThumbnail */
+/* global itemData, ObjectThumbnail */
 
 class Item extends ObjectThumbnail {
 	/**
@@ -15,6 +15,16 @@ class Item extends ObjectThumbnail {
 		this.properties = properties;
 		Item.items.push(this);
 	}
-	/** @type {Item[]} */
-	static items = [];
+	// static methods
+	static parse(){
+		itemData.forEach(obj => {
+			obj;
+			// todo
+			// this.bodyparts.push(new Bodypart(obj.name, obj.icon, obj.validProperties));
+		});
+		console.log('Items successfully parsed');
+	}
 }
+/** @type {Item[]} */
+Item.items = [];
+Item.parse();
