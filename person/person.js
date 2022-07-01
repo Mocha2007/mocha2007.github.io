@@ -79,9 +79,7 @@ class ObjectThumbnail {
 	 */
 	constructor(name, thumbnailElem){
 		this.name = name;
-		console.debug(thumbnailElem);
 		this.thumbnailElem = thumbnailElem ? new ThumbnailElem(...thumbnailElem) : ThumbnailElem.default;
-		console.debug('\t=>', this.thumbnailElem);
 	}
 	get thumbnail(){
 		const span = document.createElement('span');
