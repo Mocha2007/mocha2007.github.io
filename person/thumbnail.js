@@ -26,9 +26,10 @@ function getTableOrSpan(obj){
 		return obj.thumbnail;
 	if (Array.isArray(obj))
 		return getArraySpan(obj);
-	if (typeof obj === "string" || obj instanceof String || obj === undefined){}
+	if (typeof obj === 'string' || obj instanceof String || obj === undefined){
 		// https://stackoverflow.com/a/24844091/2579798
 		// empty block because I need it to fall below object BUT I need to check it before
+	}
 	else if (Object.keys(obj).length) // normal js object
 		return kvpTable(obj);
 	const span = document.createElement('span');
@@ -49,12 +50,12 @@ function kvpTable(obj){
 	headerValue.innerHTML = 'Value';
 	header.appendChild(headerValue);
 	// main
-	for (let key in obj){
+	for (const key in obj){
 		const tr = document.createElement('tr');
 		const tdKey = document.createElement('td');
 		tdKey.classList.add('kvpKey');
 		tdKey.innerHTML = key;
-		tr.appendChild(tdKey)
+		tr.appendChild(tdKey);
 		// value
 		const value = obj[key];
 		const tdValue = document.createElement('td');
@@ -66,19 +67,20 @@ function kvpTable(obj){
 }
 
 function spacer(){
-	const spacer = document.createElement('span');
-	spacer.classList.add('spacer');
-	return spacer;
+	const s = document.createElement('span');
+	s.classList.add('spacer');
+	return s;
 }
 
 class ObjectThumbnail {
-	/** 
-	 * @param {string} name 
+	/**
+	 * @param {string} name
 	 * @param {string} thumbnailElem
 	 */
 	constructor(name, thumbnailElem){
 		this.name = name;
-		this.thumbnailElem = thumbnailElem ? new ThumbnailElem(...thumbnailElem) : ThumbnailElem.default;
+		this.thumbnailElem = thumbnailElem
+			? new ThumbnailElem(...thumbnailElem) : ThumbnailElem.default;
 	}
 	get thumbnail(){
 		const span = document.createElement('span');
@@ -89,7 +91,7 @@ class ObjectThumbnail {
 		span.appendChild(spacer());
 		const inner = document.createElement('span');
 		inner.innerHTML = this.name;
-		span.appendChild(inner)
+		span.appendChild(inner);
 		return span;
 	}
 	showTable(){
@@ -114,5 +116,5 @@ class ThumbnailElem {
 		span.innerHTML = this.s;
 		return span;
 	}
-	static default = new ThumbnailElem(...icons.unknown);
 }
+ThumbnailElem.default = new ThumbnailElem(...icons.unknown);
