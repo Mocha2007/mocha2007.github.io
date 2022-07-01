@@ -317,24 +317,57 @@ class OCEAN extends ObjectThumbnail {
 }
 
 class Body extends ObjectThumbnail {
-	/** @param {[Bodypart, {string: string}][]} partPropertyPairs */
-	constructor(partPropertyPairs){
+	/** 
+	 * @param {Item[]} inventory
+	 * @param {[Bodypart, {string: string}][]} partPropertyPairs
+	 * @param {Needs} needs
+	 */
+	constructor(inventory, partPropertyPairs, needs){
 		super('Body');
 		/** @type {[Bodypart, {string: string}][]} 
 		 * a string -> css color mapping
 		 */
+		this.inventory = inventory;
 		this.partPropertyPairs = partPropertyPairs;
+		this.needs = needs;
 	}
 	get table(){
 		return kvpTable({
+			inventory: this.inventory,
 			partPropertyPairs: this.partPropertyPairs,
+			needs: this.needs,
 		});
 	}
 	// static methods
 	static gen(){
 		return new Body(
-			Bodypart.bodyparts.map(p => [p, p.gen()])
+			[],
+			Bodypart.bodyparts.map(p => [p, p.gen()]),
+			Needs.gen(),
 		);
+	}
+}
+
+class Needs extends ObjectThumbnail {
+	// [0, 1]
+	constructor(bladder = 1, hunger = 1, sleep = 1, thirst = 1){
+		super('Needs');
+		this.bladder = bladder;
+		this.hunger = hunger;
+		this.sleep = sleep;
+		this.thirst = thirst;
+	}
+	get table(){
+		return kvpTable({
+			bladder: this.bladder,
+			hunger: this.hunger,
+			sleep: this.sleep,
+			thirst: this.thirst,
+		});
+	}
+	// static methods
+	static gen(){
+		return new Needs();
 	}
 }
 
