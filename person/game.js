@@ -41,7 +41,7 @@ const game = {
 			infobox.innerHTML = '';
 			infobox.appendChild(obj.table);
 			// console.debug(obj);
-		}
+		},
 	},
 	player: Person.gen(),
 };
