@@ -51,7 +51,7 @@ function debug(){
 }
 
 function main(){
-	game;
+	console.log('Game loaded.');
 }
 
 main();
