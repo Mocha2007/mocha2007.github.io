@@ -163,7 +163,7 @@ func:function()
 
 	// ARCHITECT / LODGE / GUILD
 
-	const lodge = G.unitsByName.lodge;
+	const lodge = G.unitByName.lodge;
 	lodge.desc = '@can be set to manage automatic recruitment for units such as [gatherer]s, [hunter]s or [woodcutter]s<>A [lodge] is where people of all professions gather to rest and store their tools.//Lodges let you automate your tribe somewhat; should a worker fall sick or die, they will be automatically replaced if a lodge is tasked for it.';
 	lodge.modes = {
 		off: G.MODE_OFF,
