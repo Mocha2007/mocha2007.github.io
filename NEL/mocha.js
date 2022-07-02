@@ -86,7 +86,7 @@ func:function()
 		req:{'soy sauce preparing':true},
 		effects:[
 			{type:'function',func:function(){
-				G.getDict('soy').turnToByContext['eat']['happiness']=0.2;
+				G.getDict('soybean').turnToByContext['eat']['happiness']=0.2;
 				G.getDict('soy sauce').turnToByContext['eat']['happiness']=0.2;
 				G.getDict('tofu').turnToByContext['eat']['happiness']=0.2;
 			}},
