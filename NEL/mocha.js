@@ -75,6 +75,14 @@ func:function()
 	G.getDict('artisan').effects.push({type:'convert',from:{'soybean':6,'water':1},into:{'tofu':7},every:1,mode:'tofu'});
 	
 	new G.Tech({
+		name:'agriculture',
+		desc:'@[worker]s can now produce plants without foraging.',
+		icon:[0,1,'mochaSheet'],
+		cost:{'insight':10},
+		req:{'cooking':true},
+	});
+	
+	new G.Tech({
 		name:'soy sauce preparing',
 		desc:'@[artisan]s can now produce [soy sauce] and [tofu] from [soybean]s.',
 		icon:[0,1,'mochaSheet'],
@@ -117,7 +125,7 @@ func:function()
 			{type:'gather',context:'farm',what:{'soybean':50},max:30,mode:'soybean'},
 		],
 		gizmos:true,
-		req:{'soy sauce preparing':true},
+		req:{'agriculture':true},
 		category:'production',
 	});
 
