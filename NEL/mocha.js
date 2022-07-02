@@ -17,13 +17,16 @@ func:function()
 		if (0 <= i)
 			a.splice(i, 1);
 	};
-	// slowlySpoils = loseMaterialsTick
+	const slowlySpoils = (me, tick) => {
+		if (G.checkPolicy('disable spoiling') === 'off')
+			G.props['perishable materials list'].push(me);
+	};
 	// prevent decay of certain items
 	['bone', 'clay', 'copper ore', 'limestone', 'mud', 'salt', 'stone', 'tin ore']
 		.forEach(s => G.getRes(s).tick = doesNotSpoil);
 	// make other items decay
 	['knapped tools', 'stone tools', 'metal tools', 'stone weapons', 'bow']
-		.forEach(s => G.getRes(s).tick = loseMaterialsTick);
+		.forEach(s => G.getRes(s).tick = slowlySpoils);
 	// add new flavor text
 	G.props['new day lines'].push('You hear the cries of Zothcengs in the distance.');
 	// new stuff
