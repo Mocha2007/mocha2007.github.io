@@ -172,12 +172,12 @@ func:function()
 		};
 	};
 
-	const maintain2 = (res, agent, minRes = 100, maxRes = 200, minAgent = 0, maxAgent = 5) => {
+	const maintain2 = (res, agent, minRes = 100, maxRes = 200) => {
 		return me => {
-			if (G.resByName[res].amount < minRes && G.getUnitAmount(agent) < maxAgent)
-				G.unidleUnit(agent, 1);
-			else if (maxRes < G.resByName[res].amount && minAgent < G.getUnitAmount(agent))
-				G.idleUnit(agent, 1);
+			if (G.resByName[res].amount < minRes)
+				G.unlockUnit(agent);
+			else if (maxRes < G.resByName[res].amount)
+				G.lockUnit(agent);
 		};
 	};
 
@@ -226,7 +226,7 @@ func:function()
 		const [res, agent, tech] = x;
 		guild.modes[res] = {
 			name: `${agent}\'s guild`,
-			desc: `Hire/fire 5 [${agent}]s to maintain [${res}] stocks between 100 and 200.`,
+			desc: `Enable/disable [${agent}]s to maintain [${res}] stocks between 100 and 200.`,
 			req: {}
 		};
 		guild.modes[res].req[tech] = true;
