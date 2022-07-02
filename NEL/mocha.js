@@ -172,7 +172,7 @@ func:function()
 				// [                  gotta make sure this exists              ]
 				&& u.unit.effects[u.mode.num] && (u.unit.effects[u.mode.num].into
 												? u.unit.effects[u.mode.num].into[res] : true
-			)[0]);
+			))[0];
 			if (G.resByName[res].amount < minRes && G.getUnitAmount(agent) < maxAgent)
 				unit.targetAmount = maxAgent;
 			else if (maxRes < G.resByName[res].amount && minAgent < G.getUnitAmount(agent))
