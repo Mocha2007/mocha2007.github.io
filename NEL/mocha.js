@@ -130,6 +130,16 @@ func:function()
 		category:'production',
 	});
 
+	// GEM MINE
+
+	const mine = G.unitByName.mine;
+	mine.modes.gem = {
+		name:'Gem',icon:[13,8],desc:'Mine for [gems] with x5 efficiency.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}
+	};
+	mine.effects.push(
+		{type:'gather',context:'mine',what:{'gems':50},max:30,mode:'gem'}
+	);
+
 	// SILVER
 
 	new G.Res({
@@ -146,7 +156,6 @@ func:function()
 		partOf:'misc materials',
 		category:'build',
 	});
-	const mine = G.unitByName.mine;
 	mine.modes.silver = {
 		name:'Silver',icon:[13,8],desc:'Mine for [silver ore] with x5 efficiency.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}
 	};
