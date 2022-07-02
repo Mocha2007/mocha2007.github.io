@@ -174,6 +174,7 @@ func:function()
 
 	const maintain = (res, agent, minRes = 100, maxRes = 200, minAgent = 0, maxAgent = 5) => {
 		return me => {
+			// TODO: vary maxRes by level of this lodge - don't forget to update maintain2 too!
 			// ensure the AGENT matches and the PRODUCT matches RES
 			// console.debug(res, agent);
 			let unit;
