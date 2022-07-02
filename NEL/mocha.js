@@ -9,6 +9,17 @@ requires:['Default dataset*'],
 sheets:{'mochaSheet':'https://mocha2007.github.io/NEL/mochaSheet.png',},
 func:function()
 {
+	// modified vanilla stuff
+	// from http://orteil.dashnet.org/legacy/data.js
+	// prevent decay of certain items
+	G.getRes('bone').lostBy = [];
+	G.getRes('clay').lostBy = [];
+	G.getRes('limestone').lostBy = [];
+	G.getRes('stone').lostBy = [];
+	// make other items decay
+	G.getRes('knapped tools').lostBy.push('decay');
+	G.getRes('stone tools').lostBy.push('decay');
+	// new stuff
 	new G.Res({
 		name:'soybean',
 		desc:'[soybean]s are loaded with nutrients and are a useful ingredient.',
