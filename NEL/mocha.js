@@ -35,7 +35,8 @@ func:function()
 	G.props['new day lines'][14] = 'In the distance, prey falls to a pack of beasts.';
 	G.props['new day lines'][29] = 'Distant lands lie undisturbed.';
 	G.props['new day lines'].push('You hear the cries of Zothcengs in the distance.');
-
+	// desc fixes
+	G.unitByName.digger.desc = '@digs the soil for [mud] and [stone]<>[digger]s may also rarely yield [sand], [ice], [clay], [limestone], [salt], [copper ore], and [tin ore], if available.';
 	// SOY
 
 	new G.Res({
