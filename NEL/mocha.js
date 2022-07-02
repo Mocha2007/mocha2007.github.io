@@ -139,14 +139,14 @@ func:function()
 	mine.modes.silver = {
 		name:'Silver',icon:[13,8],desc:'Mine for [silver ore] with x5 efficiency.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}
 	};
-	mine.effects.append(
+	mine.effects.push(
 		{type:'gather',context:'mine',what:{'silver ore':50},max:30,mode:'silver'}
 	);
 	const furnace = G.unitByName.furnace;
 	furnace.modes.gold = {
 		name:'Silver smelting',icon:[11,9],desc:'Cast [precious metal ingot]s out of 5 [silver ore] each.',use:{'worker':2,'metal tools':2},req:{'gold-working':true}
 	};
-	furnace.effects.append(
+	furnace.effects.push(
 		{type:'convert',from:{'silver ore':5},into:{'precious metal ingot':1},repeat:1,mode:'silver'}
 	);
 	G.goodsByName['rocky substrate'].res.mine['silver ore'] = 0.005;
