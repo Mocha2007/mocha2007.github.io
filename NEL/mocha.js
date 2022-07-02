@@ -189,7 +189,7 @@ func:function()
 			desc: `Hire/fire 5 [${agent}]s to maintain [${res}] stocks between 100 and 200.`,
 			req: {}
 		};
-		lodge.modes[res][tech] = true;
+		lodge.modes[res].req[tech] = true;
 		lodge.effects.push(
 			{
 				type: 'function',
