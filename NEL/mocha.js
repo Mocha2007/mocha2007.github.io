@@ -178,11 +178,12 @@ func:function()
 		off: G.MODE_OFF,
 	}
 	// clever simplification :^)
-	[
+	const additions = [
 		['log', 'woodcutter', 'woodcutting'],
 		['mud', 'digger', 'digging'],
-		['seafood', 'fisher', 'fishing']
-	].forEach(x => {
+		['seafood', 'fisher', 'fishing'],
+	];
+	additions.forEach(x => {
 		const [res, agent, tech] = x;
 		lodge.modes[res] = {
 			name: `${agent}\'s lodge`,
