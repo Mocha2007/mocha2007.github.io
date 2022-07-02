@@ -6,7 +6,7 @@ desc:'https://mocha2007.github.io/NEL/mocha.js',
 engineVersion:1,
 manifest:'mochaManifest.js',
 requires:['Default dataset*'],
-sheets:{'mochaSheet':'mochaSheet.png',},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'mochaSheet':'https://mocha2007.github.io/NEL/mochaSheet.png',}, //custom stylesheet (note : broken in IE and Edge for the time being)
 func:function()
 {
 	//The idea in this simple example mod is to add a few elements focused around hot sauce, because hot sauce is great and I use that stuff everywhere.
