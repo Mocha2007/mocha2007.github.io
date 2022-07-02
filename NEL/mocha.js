@@ -166,7 +166,7 @@ func:function()
 
 	const maintain = (res, agent, minRes = 100, maxRes = 200, minAgent = 0, maxAgent = 5) => {
 		return me => {
-			const unit = G.unitsOwned.filter(u => u.unit.name === agent)[0] 
+			const unit = G.unitsOwned.filter(u => u.unit.name === agent)[0];
 			if (G.resByName[res].amount < minRes && G.getUnitAmount(agent) < maxAgent)
 				unit.targetAmount = maxAgent;
 			else if (maxRes < G.resByName[res].amount && minAgent < G.getUnitAmount(agent))
