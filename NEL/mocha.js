@@ -2,7 +2,7 @@
 G.AddData({
 name:'Mocha\'s mod',
 author:'Mocha',
-desc:'https://raw.githubusercontent.com/Mocha2007/NEL-mocha/master/mocha.js',
+desc:'https://mocha2007.github.io/NEL/mocha.js',
 engineVersion:1,
 manifest:'modManifest.js',
 requires:['Default dataset*'],
