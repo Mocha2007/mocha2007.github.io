@@ -161,7 +161,7 @@ func:function()
 	);
 	G.goodsByName['rocky substrate'].res.mine['silver ore'] = 0.005;
 
-	// ARCHITECT / LODGE / GUILD
+	// LODGE
 
 	const maintain = (res, agent, minRes = 100, maxRes = 200, minAgent = 0, maxAgent = 5) => {
 		return me => {
@@ -180,6 +180,7 @@ func:function()
 	// clever simplification :^)
 	const additions = [
 		['log', 'woodcutter', 'woodcutting'],
+		['meat', 'hunter', 'hunting'],
 		['mud', 'digger', 'digging'],
 		['seafood', 'fisher', 'fishing'],
 	];
@@ -192,6 +193,35 @@ func:function()
 		};
 		lodge.modes[res].req[tech] = true;
 		lodge.effects.push(
+			{
+				type: 'function',
+				func: maintain(res, agent),
+				mode: res,
+			}
+		);
+	});
+
+	// GUILD
+
+	const guild = G.unitByName['guild quarters'];
+	guild.desc = '@can be set to manage automatic recruitment for units such as [potter]s or [carpenter workshop]s<>[guild quarters,Guilds] -that is, associations of people sharing the same profession- meet in these to share their craft and trade secrets.//They can coordinate the building of new workshops should the need arise.';
+	guild.modes = {
+		off: G.MODE_OFF,
+	}
+	const additions2 = [
+		['brick', 'kiln', 'masonry'],
+		['lumber', 'carpenter workshop', 'carpentry'],
+		['pot', 'potter', 'potter'],
+	]
+	additions2.forEach(x => {
+		const [res, agent, tech] = x;
+		guild.modes[res] = {
+			name: `${agent}\'s guild`,
+			desc: `Hire/fire 5 [${agent}]s to maintain [${res}] stocks between 100 and 200.`,
+			req: {}
+		};
+		guild.modes[res].req[tech] = true;
+		guild.effects.push(
 			{
 				type: 'function',
 				func: maintain(res, agent),
