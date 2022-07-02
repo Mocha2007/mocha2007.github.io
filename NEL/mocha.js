@@ -143,7 +143,7 @@ func:function()
 		{type:'gather',context:'mine',what:{'silver ore':50},max:30,mode:'silver'}
 	);
 	const furnace = G.unitByName.furnace;
-	furnace.modes.gold = {
+	furnace.modes.silver = {
 		name:'Silver smelting',icon:[11,9],desc:'Cast [precious metal ingot]s out of 5 [silver ore] each.',use:{'worker':2,'metal tools':2},req:{'gold-working':true}
 	};
 	furnace.effects.push(
