@@ -163,46 +163,41 @@ func:function()
 
 	// ARCHITECT / LODGE / GUILD
 
+	const maintain = (res, agent, minRes = 100, maxRes = 200, minAgent = 0, maxAgent = 5) => {
+		return me => {
+			if (G.resByName[res].amount < minRes && G.getUnitAmount(agent) < maxAgent)
+				G.buyUnitByName(agent, 1, true);
+			else if (maxRes < G.resByName[res].amount && minAgent < G.getUnitAmount(agent))
+				G.killUnitByName(agent, 1, true);
+		};
+	};
+
 	const lodge = G.unitByName.lodge;
 	lodge.desc = '@can be set to manage automatic recruitment for units such as [gatherer]s, [hunter]s or [woodcutter]s<>A [lodge] is where people of all professions gather to rest and store their tools.//Lodges let you automate your tribe somewhat; should a worker fall sick or die, they will be automatically replaced if a lodge is tasked for it.';
 	lodge.modes = {
 		off: G.MODE_OFF,
-		logs: {name:'Woodcutter\'s lodge',desc:'Hire/fire 5 [woodcutter]s to maintain 100-200 [log]s.',req:{'woodcutting':true}},
-		mud: {name:'Digger\'s lodge',desc:'Hire/fire 5 [digger]s to maintain 100-200 [mud].',req:{'digging':true}},
-		seafood: {name:'Fisher\'s lodge',desc:'Hire/fire 5 [fisher]s to maintain 100-200 [seafood].',req:{'fishing':true}},
 	}
-	lodge.effects = [
-		{
-			type: 'function',
-			func: me => {
-				if (G.resByName.log.amount < 100 && G.getUnitAmount('woodcutter') < 5)
-					G.buyUnitByName('woodcutter', 1, true);
-				else if (200 < G.resByName.log.amount && 0 < G.getUnitAmount('woodcutter'))
-					G.killUnitByName('woodcutter', 1, true);
-			},
-			mode:'logs',
-		},
-		{
-			type: 'function',
-			func: me => {
-				if (G.resByName.mud.amount < 100 && G.getUnitAmount('digger') < 5)
-					G.buyUnitByName('digger', 1, true);
-				else if (200 < G.resByName.mud.amount && 0 < G.getUnitAmount('digger'))
-					G.killUnitByName('digger', 1, true);
-			},
-			mode:'mud',
-		},
-		{
-			type: 'function',
-			func: me => {
-				if (G.resByName.seafood.amount < 100 && G.getUnitAmount('fisher') < 5)
-					G.buyUnitByName('fisher', 1, true);
-				else if (200 < G.resByName.seafood.amount && 0 < G.getUnitAmount('fisher'))
-					G.killUnitByName('fisher', 1, true);
-			},
-			mode:'seafood',
-		},
-	];
+	// clever simplification :^)
+	[
+		['log', 'woodcutter', 'woodcutting'],
+		['mud', 'digger', 'digging'],
+		['seafood', 'fisher', 'fishing']
+	].forEach(x => {
+		const [res, agent, tech] = x;
+		lodge.modes[res] = {
+			name: `${agent}\'s lodge`,
+			desc: `Hire/fire 5 [${agent}]s to maintain [${res}] stocks between 100 and 200.`,
+			req: {}
+		};
+		lodge.modes[res][tech] = true;
+		lodge.effects.push(
+			{
+				type: 'function',
+				func: maintain(res, agent),
+				mode: res,
+			}
+		);
+	});
 }
 });
 /*
