@@ -14,7 +14,7 @@ func:function()
 	//First we create a couple new resources :
 	new G.Res({
 		name:'soybean',
-		desc:'[soybeans]s are loaded with nutrients and are a useful ingredient.',
+		desc:'[soybean]s are loaded with nutrients and are a useful ingredient.',
 		icon:[0,0,'mochaSheet'],
 		turnToByContext:{'eat':{'health':0.01,'happiness':0.03},'decay':{'spoiled food':0.5}},//this basically translates to : "when eaten, generate some health and happiness; when rotting, turn into either nothing or some spoiled food"
 		partOf:'food',
