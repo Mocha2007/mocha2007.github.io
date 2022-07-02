@@ -4,7 +4,7 @@ name:'Mocha\'s mod',
 author:'Mocha',
 desc:'https://mocha2007.github.io/NEL/mocha.js',
 engineVersion:1,
-manifest:'modManifest.js',
+manifest:'mochaManifest.js',
 requires:['Default dataset*'],
 sheets:{'mochaSheet':'mochaSheet.png',},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function()
