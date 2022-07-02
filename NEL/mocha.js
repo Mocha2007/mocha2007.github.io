@@ -209,10 +209,12 @@ func:function()
 
 	const maintain2 = (res, agent, enabledId, minRes = 100, maxRes = 200) => {
 		return me => {
+			// ensure the AGENT matches and the PRODUCT matches RES
+			const unit = G.unitsOwned.filter(u => u.unit.name === agent && u.unit.effects[u.mode.num].into[res])[0];
 			if (G.resByName[res].amount < minRes)
-				G.unitsOwned.filter(u => u.unit.name === agent)[0].mode = G.unitByName[agent].modes[enabledId];
+				unit.mode = G.unitByName[agent].modes[enabledId];
 			else if (maxRes < G.resByName[res].amount)
-				G.unitsOwned.filter(u => u.unit.name === agent)[0].mode = G.unitByName[agent].modes.off;
+				unit.mode = G.unitByName[agent].modes.off;
 		};
 	};
 
