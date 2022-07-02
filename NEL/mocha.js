@@ -11,22 +11,19 @@ func:function()
 {
 	// modified vanilla stuff
 	// from http://orteil.dashnet.org/legacy/data.js
-	const doesNotSpoil = () => {};
-	const slowlySpoils = (me, tick) => G.lose(me.name,randomFloor(me.amount * 0.002),'decay');
+	const doesNotSpoil = (me, tick) => {
+		const a = G.props['perishable materials list'];
+		const i = a.indexOf(me);
+		if (0 <= i)
+			a.splice(i, 1);
+	};
+	// slowlySpoils = loseMaterialsTick
 	// prevent decay of certain items
 	['bone', 'clay', 'copper ore', 'limestone', 'mud', 'salt', 'stone', 'tin ore']
-		.forEach(s => {
-			const r = G.getRes(s);
-			r.lostBy = [];
-			r.tick = doesNotSpoil;
-		});
+		.forEach(s => G.getRes(s).tick = doesNotSpoil);
 	// make other items decay
 	['knapped tools', 'stone tools', 'metal tools', 'stone weapons', 'bow']
-	.forEach(s => {
-		const r = G.getRes(s);
-		r.lostBy.push("decay");
-		r.tick = slowlySpoils;
-	});
+		.forEach(s => G.getRes(s).tick = loseMaterialsTick);
 	// add new flavor text
 	G.props['new day lines'].push('You hear the cries of Zothcengs in the distance.');
 	// new stuff
