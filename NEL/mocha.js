@@ -28,15 +28,24 @@ func:function()
 		partOf:'food',
 		category:'food',
 	});
+	new G.Res({
+		name:'tofu',
+		desc:'Made from [soybean]s, this [tofu] stays fresh for a while and will leave everyone asking for more.',
+		icon:[1,0,'mochaSheet'],
+		turnToByContext:{'eat':{'health':0.03,'happiness':0.1},'decay':{'tofu':0.95,'spoiled food':0.05}},//that last part makes hot sauce effectively have a 95% chance of simply not rotting (in effect, it decays into itself)
+		partOf:'food',
+		category:'food',
+	});
 	
 	//Then we augment the base data to incorporate our new resources :
 		//adding hot pepper as something that can be gathered from grass
 	G.getDict('grass').res['gather']['soybean']=1;
 		//adding a new mode to artisans so they can make hot sauce from hot peppers
 	G.getDict('artisan').modes['soy sauce']={name:'Make soy sauce',desc:'Turn 1 [soybean], 1 [water], and 1 [salt] into 1 [soy sauce].',req:{'soy sauce preparing':true},use:{'knapped tools':1}};
+	G.getDict('artisan').modes['tofu']={name:'Make tofu',desc:'Turn 6 [soybean]s and 1 [water] into 7 [tofu].',req:{'soy sauce preparing':true},use:{'knapped tools':1}};
 		//adding a new effect to artisans that handles the actual hot sauce preparing and is only active when the unit has the mode "hot sauce"
-	G.getDict('artisan').effects.push({type:'convert',from:{'hot pepper':3,'herb':3},into:{'hot sauce':1},every:3,mode:'hot sauce'});
 	G.getDict('artisan').effects.push({type:'convert',from:{'soybean':1,'water':1,'salt':1},into:{'soy sauce':1},every:1,mode:'soy sauce'});
+	G.getDict('artisan').effects.push({type:'convert',from:{'soybean':6,'water':1},into:{'tofu':7},every:1,mode:'tofu'});
 	
 	//Then we add a new technology which is required by the artisans to gain access to the "hot sauce" mode :
 	new G.Tech({
@@ -58,6 +67,7 @@ func:function()
 			{type:'function',func:function(){
 				G.getDict('soy').turnToByContext['eat']['happiness']=0.2;
 				G.getDict('soy sauce').turnToByContext['eat']['happiness']=0.2;
+				G.getDict('tofu').turnToByContext['eat']['happiness']=0.2;
 			}},//this is a custom function executed when we gain the trait
 		],
 	});
