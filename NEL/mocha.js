@@ -172,6 +172,15 @@ func:function()
 		};
 	};
 
+	const maintain2 = (res, agent, minRes = 100, maxRes = 200, minAgent = 0, maxAgent = 5) => {
+		return me => {
+			if (G.resByName[res].amount < minRes && G.getUnitAmount(agent) < maxAgent)
+				G.unidleUnit(agent, 1);
+			else if (maxRes < G.resByName[res].amount && minAgent < G.getUnitAmount(agent))
+				G.idleUnit(agent, 1);
+		};
+	};
+
 	const lodge = G.unitByName.lodge;
 	lodge.desc = '@can be set to manage automatic recruitment for units such as [gatherer]s, [hunter]s or [woodcutter]s<>A [lodge] is where people of all professions gather to rest and store their tools.//Lodges let you automate your tribe somewhat; should a worker fall sick or die, they will be automatically replaced if a lodge is tasked for it.';
 	lodge.modes = {
@@ -182,6 +191,7 @@ func:function()
 		['log', 'woodcutter', 'woodcutting'],
 		['meat', 'hunter', 'hunting'],
 		['mud', 'digger', 'digging'],
+		['pot', 'potter', 'potter'],
 		['seafood', 'fisher', 'fishing'],
 	];
 	additions.forEach(x => {
@@ -204,14 +214,13 @@ func:function()
 	// GUILD
 
 	const guild = G.unitByName['guild quarters'];
-	guild.desc = '@can be set to manage automatic recruitment for units such as [potter]s or [carpenter workshop]s<>[guild quarters,Guilds] -that is, associations of people sharing the same profession- meet in these to share their craft and trade secrets.//They can coordinate the building of new workshops should the need arise.';
+	guild.desc = '@can be set to manage automatic recruitment for units such as [kiln]s or [carpenter workshop]s<>[guild quarters,Guilds] -that is, associations of people sharing the same profession- meet in these to share their craft and trade secrets.//They can coordinate the building of new workshops should the need arise.';
 	guild.modes = {
 		off: G.MODE_OFF,
 	}
 	const additions2 = [
 		['brick', 'kiln', 'masonry'],
 		['lumber', 'carpenter workshop', 'carpentry'],
-		['pot', 'potter', 'potter'],
 	]
 	additions2.forEach(x => {
 		const [res, agent, tech] = x;
@@ -224,7 +233,7 @@ func:function()
 		guild.effects.push(
 			{
 				type: 'function',
-				func: maintain(res, agent),
+				func: maintain2(res, agent),
 				mode: res,
 			}
 		);
