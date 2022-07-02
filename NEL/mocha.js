@@ -114,7 +114,7 @@ func:function()
 		//require:{'worker':3,'stone tools':3},
 		modes:{
 			'off':G.MODE_OFF,
-			'fruit':{name:'Farm fruit',icon:[4,6],desc:'Produce [fruit].',use:{'worker':3,'stone tools':3}},
+			'fruit':{name:'Farm fruit',icon:[4,7],desc:'Produce [fruit].',use:{'worker':3,'stone tools':3}},
 			'herb':{name:'Farm herbs',icon:[4,6],desc:'Produce [herb]s.',use:{'worker':3,'stone tools':3}},
 			'soybean':{name:'Farm soybeans',icon:[0,0,'mochaSheet'],desc:'Produce [soybean]s.',use:{'worker':3,'stone tools':3}},
 		},
