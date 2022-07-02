@@ -80,7 +80,7 @@ func:function()
 	
 	new G.Trait({
 		name:'soyboyism',
-		desc:'@your people appreciate [soy] products twice as much and will be twice as happy from consuming it.',
+		desc:'@your people appreciate [soybean,soy] products twice as much and will be twice as happy from consuming it.',
 		icon:[0,1,'mochaSheet'],
 		chance:20,
 		req:{'soy sauce preparing':true},
