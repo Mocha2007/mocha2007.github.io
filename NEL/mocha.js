@@ -35,7 +35,9 @@ func:function()
 	G.props['new day lines'][14] = 'In the distance, prey falls to a pack of beasts.';
 	G.props['new day lines'][29] = 'Distant lands lie undisturbed.';
 	G.props['new day lines'].push('You hear the cries of Zothcengs in the distance.');
-	// new stuff
+
+	// SOY
+
 	new G.Res({
 		name:'soybean',
 		desc:'[soybean]s are loaded with nutrients and are a useful ingredient.',
@@ -116,9 +118,41 @@ func:function()
 		req:{'soy sauce preparing':true},
 		category:'production',
 	});
+
+	// SILVER
+
+	new G.Res({
+		name:'silver block',
+		desc:'A valuable, if unreliable construction material.',
+		icon:[5,8], // todo
+		partOf:'precious building materials',
+		category:'build',
+	});
+	new G.Res({
+		name:'silver ore',
+		desc:'Ore that can be processed into [precious metal ingot]s.',
+		icon:[13,8], // todo
+		partOf:'misc materials',
+		category:'build',
+	});
+	const mine = G.unitByName.mine;
+	mine.modes.silver = {
+		name:'Silver',icon:[13,8],desc:'Mine for [silver ore] with x5 efficiency.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}
+	};
+	mine.effects.append(
+		{type:'gather',context:'mine',what:{'silver ore':50},max:30,mode:'silver'}
+	);
+	const furnace = G.unitByName.furnace;
+	furnace.modes.gold = {
+		name:'Silver smelting',icon:[11,9],desc:'Cast [precious metal ingot]s out of 5 [silver ore] each.',use:{'worker':2,'metal tools':2},req:{'gold-working':true}
+	};
+	furnace.effects.append(
+		{type:'convert',from:{'silver ore':5},into:{'precious metal ingot':1},repeat:1,mode:'silver'}
+	);
+	G.goodsByName['rocky substrate'].res.mine['silver ore'] = 0.005;
 }
 });
 /*
 	TODO
-	soy farm
+	more soy shit
 */
