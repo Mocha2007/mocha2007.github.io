@@ -22,10 +22,11 @@ func:function()
 			G.props['perishable materials list'].push(me);
 	};
 	// prevent decay of certain items
-	['advanced building materials', 'archaic building materials', 'basic building materials', 'misc materials', 'precious building materials']
+	['advanced building materials', 'archaic building materials',
+		'basic building materials', 'misc materials', 'precious building materials']
 		.forEach(s => G.getRes(s).tick = doesNotSpoil);
 	// make other items decay
-	['gear', 'log', 'lumber', 'stick']
+	['bow', 'knapped tools', 'log', 'lumber', 'metal tools', 'stick', 'stone tools', 'stone weapons']
 		.forEach(s => G.getRes(s).tick = doesSpoil);
 	// add new flavor text
 	G.props['new day lines'].push('You hear the cries of Zothcengs in the distance.');
