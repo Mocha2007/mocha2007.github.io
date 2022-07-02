@@ -31,7 +31,7 @@ func:function()
 	new G.Res({
 		name:'tofu',
 		desc:'Made from [soybean]s, this [tofu] stays fresh for a while and will leave everyone asking for more.',
-		icon:[1,0,'mochaSheet'],
+		icon:[2,0,'mochaSheet'],
 		turnToByContext:{'eat':{'health':0.03,'happiness':0.1},'decay':{'tofu':0.95,'spoiled food':0.05}},//that last part makes hot sauce effectively have a 95% chance of simply not rotting (in effect, it decays into itself)
 		partOf:'food',
 		category:'food',
@@ -60,7 +60,7 @@ func:function()
 	new G.Trait({
 		name:'soyboyism',
 		desc:'@your people appreciate [soy] products twice as much and will be twice as happy from consuming it.',
-		icon:[1,1,'mochaSheet'],
+		icon:[0,1,'mochaSheet'],
 		chance:20,
 		req:{'soy sauce preparing':true},
 		effects:[
