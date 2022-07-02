@@ -24,7 +24,7 @@ func:function()
 	['knapped tools', 'stone tools', 'metal tools', 'stone weapons', 'bow']
 	.forEach(s => {
 		const r = G.getRes(s);
-		r.lostBy = ["decay"];
+		r.lostBy.push("decay");
 		r.tick = slowlySpoils;
 	});
 	// add new flavor text
