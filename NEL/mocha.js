@@ -182,16 +182,20 @@ func:function()
 	}
 	// clever simplification :^)
 	const additions = [
+		['bows', 'artisan', 'stone tools'],
+		['knapped tools', 'artisan', 'stone-knapping'],
 		['log', 'woodcutter', 'woodcutting'],
+		['leather', 'clothier', 'leather-working'],
 		['meat', 'hunter', 'hunting'],
 		['mud', 'digger', 'digging'],
-		['pot', 'potter', 'potter'],
+		['pot', 'potter', 'pottery'],
 		['seafood', 'fisher', 'fishing'],
+		['stone tools', 'artisan', 'knapped tools'],
 	];
 	additions.forEach(x => {
 		const [res, agent, tech] = x;
 		lodge.modes[res] = {
-			name: `${agent}\'s lodge`,
+			name: `${tech} lodge`,
 			desc: `Hire/fire 5 [${agent}]s to maintain [${res}] stocks between 100 and 200.`,
 			req: {}
 		};
