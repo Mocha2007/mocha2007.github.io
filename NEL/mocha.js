@@ -168,11 +168,16 @@ func:function()
 		return me => {
 			// ensure the AGENT matches and the PRODUCT matches RES
 			// console.debug(res, agent);
-			const unit = G.unitsOwned.filter(u => u.unit.name === agent
-				// [                  gotta make sure this exists              ]
-				&& u.unit.effects[u.mode.num] && (u.unit.effects[u.mode.num].into
-												? u.unit.effects[u.mode.num].into[res] : true
-			))[0];
+			try {
+				const unit = G.unitsOwned.filter(u => u.unit.name === agent
+					// [                  gotta make sure this exists              ]
+					&& u.unit.effects[u.mode.num] && (u.unit.effects[u.mode.num].into
+													? u.unit.effects[u.mode.num].into[res] : true
+				))[0];
+			}
+			catch (e){
+				return console.error(`${e} finding ${res}-producing ${agent}!`);
+			}
 			if (!unit)
 				return console.warn(`No ${agent} producing ${res}!`);
 			if (G.resByName[res].amount < minRes && G.getUnitAmount(agent) < maxAgent)
