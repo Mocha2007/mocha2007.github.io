@@ -79,6 +79,7 @@ func:function()
 		],
 	});
 
+	G.contextNames['farm']='Farming';
 	new G.Unit({
 		name:'farm',
 		desc:'@farms stuff, like [soybean]s.',
