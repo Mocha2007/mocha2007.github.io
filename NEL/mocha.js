@@ -182,7 +182,7 @@ func:function()
 	}
 	// clever simplification :^)
 	const additions = [
-		['bows', 'artisan', 'stone tools'],
+		['bow', 'artisan', 'bows'],
 		['knapped tools', 'artisan', 'stone-knapping'],
 		['log', 'woodcutter', 'woodcutting'],
 		['leather', 'clothier', 'leather-working'],
@@ -190,7 +190,7 @@ func:function()
 		['mud', 'digger', 'digging'],
 		['pot', 'potter', 'pottery'],
 		['seafood', 'fisher', 'fishing'],
-		['stone tools', 'artisan', 'knapped tools'],
+		['stone tools', 'artisan', 'tool-making'],
 	];
 	additions.forEach(x => {
 		const [res, agent, tech] = x;
