@@ -134,7 +134,7 @@ func:function()
 
 	const mine = G.unitByName.mine;
 	mine.modes.gem = {
-		name:'Gem',icon:[13,8],desc:'Mine for [gems] with x5 efficiency.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}
+		name:'Gem',icon:[7,9],desc:'Mine for [gems] with x5 efficiency.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}
 	};
 	mine.effects.push(
 		{type:'gather',context:'mine',what:{'gems':50},max:30,mode:'gem'}
