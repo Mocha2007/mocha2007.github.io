@@ -164,17 +164,19 @@ func:function()
 
 	// LODGE
 
+	const getUnit = (res, agent) => G.unitsOwned.filter(u => u.unit.name === agent
+		// [                  gotta make sure this exists              ]
+		&& u.unit.effects[u.mode.num] && (u.unit.effects[u.mode.num].into
+										? u.unit.effects[u.mode.num].into[res] : true
+	))[0];
+
 	const maintain = (res, agent, minRes = 100, maxRes = 200, minAgent = 0, maxAgent = 5) => {
 		return me => {
 			// ensure the AGENT matches and the PRODUCT matches RES
 			// console.debug(res, agent);
 			let unit;
 			try {
-				unit = G.unitsOwned.filter(u => u.unit.name === agent
-					// [                  gotta make sure this exists              ]
-					&& u.unit.effects[u.mode.num] && (u.unit.effects[u.mode.num].into
-													? u.unit.effects[u.mode.num].into[res] : true
-				))[0];
+				unit = getUnit(res, agent);
 			}
 			catch (e){
 				return console.error(`${e} finding ${res}-producing ${agent}!`);
@@ -227,7 +229,16 @@ func:function()
 	const maintain2 = (res, agent, enabledId, minRes = 100, maxRes = 200) => {
 		return me => {
 			// ensure the AGENT matches and the PRODUCT matches RES
-			const unit = G.unitsOwned.filter(u => u.unit.name === agent && u.unit.effects[u.mode.num].into[res])[0];
+			// console.debug(res, agent);
+			let unit;
+			try {
+				unit = getUnit(res, agent);
+			}
+			catch (e){
+				return console.error(`${e} finding ${res}-producing ${agent}!`);
+			}
+			if (!unit)
+				return console.warn(`No ${agent} producing ${res}!`);
 			if (G.resByName[res].amount < minRes)
 				unit.mode = G.unitByName[agent].modes[enabledId];
 			else if (maxRes < G.resByName[res].amount)
