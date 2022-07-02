@@ -28,6 +28,9 @@ func:function()
 	// make other items decay
 	['bow', 'knapped tools', 'log', 'lumber', 'metal tools', 'stick', 'stone tools', 'stone weapons']
 		.forEach(s => G.getRes(s).tick = doesSpoil);
+	// show clothing usage
+	['basic clothes', 'primitive clothes']
+		.forEach(s => G.getRes(s).displayUsed = true);
 	// add new flavor text
 	G.props['new day lines'].push('You hear the cries of Zothcengs in the distance.');
 	// new stuff
