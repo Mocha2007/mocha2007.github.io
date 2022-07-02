@@ -14,7 +14,7 @@ func:function()
 	const doesNotSpoil = () => {};
 	const slowlySpoils = (me, tick) => G.lose(me.name,randomFloor(me.amount * 0.002),'decay');
 	// prevent decay of certain items
-	['bone', 'clay', 'limestone', 'stone']
+	['bone', 'clay', 'copper ore', 'limestone', 'mud', 'salt', 'stone', 'tin ore']
 		.forEach(s => G.getRes(s).tick = doesNotSpoil);
 	// make other items decay
 	['knapped tools', 'stone tools', 'metal tools', 'stone weapons', 'bow']
