@@ -207,9 +207,9 @@ func:function()
 	const maintain2 = (res, agent, enabledId, minRes = 100, maxRes = 200) => {
 		return me => {
 			if (G.resByName[res].amount < minRes)
-				G.unitsOwned.filter(u => u.unit.name === 'kiln')[0].mode = agent.modes[enabledId];
+				G.unitsOwned.filter(u => u.unit.name === agent)[0].mode = agent.modes[enabledId];
 			else if (maxRes < G.resByName[res].amount)
-				G.unitsOwned.filter(u => u.unit.name === 'kiln')[0].mode = agent.modes.off;
+				G.unitsOwned.filter(u => u.unit.name === agent)[0].mode = agent.modes.off;
 		};
 	};
 
