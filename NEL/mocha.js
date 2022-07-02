@@ -11,6 +11,7 @@ func:function()
 {
 	// modified vanilla stuff
 	// from http://orteil.dashnet.org/legacy/data.js
+	/*
 	const doesNotSpoil = () => {};
 	const slowlySpoils = (me, tick) => G.lose(me.name,randomFloor(me.amount * 0.002),'decay');
 	// prevent decay of certain items
@@ -19,6 +20,7 @@ func:function()
 	// make other items decay
 	['knapped tools', 'stone tools', 'metal tools', 'stone weapons', 'bow']
 		.forEach(s => G.getRes(s).tick = slowlySpoils);
+	*/
 	// add new flavor text
 	G.props['new day lines'].push('You hear the cries of Zothcengs in the distance.');
 	// new stuff
