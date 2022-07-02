@@ -166,8 +166,9 @@ func:function()
 
 	const getUnit = (res, agent) => G.unitsOwned.filter(u => u.unit.name === agent
 		// [                  gotta make sure this exists              ]
-		&& u.unit.effects[u.mode.num] && (u.unit.effects[u.mode.num].into
-										? u.unit.effects[u.mode.num].into[res] : true
+		&& u.unit.effects[u.mode.num]
+		&& (G.unitByName.woodcutter.modes.length && u.unit.effects[u.mode.num].into
+			? u.unit.effects[u.mode.num].into[res] : true
 	))[0];
 
 	const maintain = (res, agent, minRes = 100, maxRes = 200, minAgent = 0, maxAgent = 5) => {
