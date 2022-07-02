@@ -50,7 +50,7 @@ func:function()
 	//Then we add a new technology which is required by the artisans to gain access to the "hot sauce" mode :
 	new G.Tech({
 		name:'soy sauce preparing',
-		desc:'@[artisan]s can now produce [hot sauce] from [hot pepper]s and [herb]s//This special recipe allows a skilled craftsman to fully express the complex aromas present in hot peppers.',
+		desc:'@[artisan]s can now produce [soy sauce]  and [tofu] from [soybean]s.',
 		icon:[0,1,'mochaSheet'],
 		cost:{'insight':10},
 		req:{'cooking':true},
