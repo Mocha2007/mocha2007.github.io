@@ -77,7 +77,7 @@ func:function()
 	new G.Tech({
 		name:'agriculture',
 		desc:'@[worker]s can now produce plants without foraging.',
-		icon:[0,1,'mochaSheet'],
+		icon:[24,7],
 		cost:{'insight':10},
 		req:{'cooking':true},
 	});
