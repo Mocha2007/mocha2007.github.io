@@ -19,6 +19,8 @@ func:function()
 	// make other items decay
 	['knapped tools', 'stone tools', 'metal tools', 'stone weapons', 'bow']
 		.forEach(s => G.getRes(s).tick = slowlySpoils);
+	// add new flavor text
+	G.props['new day lines'].push('You hear the cries of Zothcengs in the distance.');
 	// new stuff
 	new G.Res({
 		name:'soybean',
@@ -90,7 +92,7 @@ func:function()
 		modes:{
 			'off':G.MODE_OFF,
 			'soy farming':{name:'Farm soybeans',icon:[0,0,'mochaSheet'],desc:'Produce [soybeans].',use:{'worker':3,'stone tools':3}},
-			'advanced soy farming':{name:'Advanced soybean farming',icon:[8, 12, 0,0,'mochaSheet'],desc:'Produce [soybeans] at a superior rate with metal tools.',use:{'worker':3,'metal tools':3}},
+			'advanced soy farming':{name:'Advanced soybean farming',icon:[8,12,0,0,'mochaSheet'],desc:'Produce [soybeans] at a superior rate with metal tools.',use:{'worker':3,'metal tools':3}},
 		},
 		effects:[
 			{type:'gather',context:'farm',amount:5,max:10,every:3,mode:'soy farming'},
