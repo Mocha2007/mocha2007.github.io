@@ -172,15 +172,6 @@ func:function()
 		};
 	};
 
-	const maintain2 = (res, agent, minRes = 100, maxRes = 200) => {
-		return me => {
-			if (G.resByName[res].amount < minRes)
-				G.unlockUnit(agent);
-			else if (maxRes < G.resByName[res].amount)
-				G.lockUnit(agent);
-		};
-	};
-
 	const lodge = G.unitByName.lodge;
 	lodge.desc = '@can be set to manage automatic recruitment for units such as [gatherer]s, [hunter]s or [woodcutter]s<>A [lodge] is where people of all professions gather to rest and store their tools.//Lodges let you automate your tribe somewhat; should a worker fall sick or die, they will be automatically replaced if a lodge is tasked for it.';
 	lodge.modes = {
@@ -213,17 +204,26 @@ func:function()
 
 	// GUILD
 
+	const maintain2 = (res, agent, enabledId, minRes = 100, maxRes = 200) => {
+		return me => {
+			if (G.resByName[res].amount < minRes)
+				G.unitsOwned.filter(u => u.unit.name === 'kiln')[0].mode = agent.modes[enabledId];
+			else if (maxRes < G.resByName[res].amount)
+				G.unitsOwned.filter(u => u.unit.name === 'kiln')[0].mode = agent.modes.off;
+		};
+	};
+
 	const guild = G.unitByName['guild quarters'];
 	guild.desc = '@can be set to manage automatic recruitment for units such as [kiln]s or [carpenter workshop]s<>[guild quarters,Guilds] -that is, associations of people sharing the same profession- meet in these to share their craft and trade secrets.//They can coordinate the building of new workshops should the need arise.';
 	guild.modes = {
 		off: G.MODE_OFF,
 	}
 	const additions2 = [
-		['brick', 'kiln', 'masonry'],
-		['lumber', 'carpenter workshop', 'carpentry'],
+		['brick', 'kiln', 'masonry', 'bricks'],
+		['lumber', 'carpenter workshop', 'carpentry', 'lumber'],
 	]
 	additions2.forEach(x => {
-		const [res, agent, tech] = x;
+		const [res, agent, tech, enabledId] = x;
 		guild.modes[res] = {
 			name: `${agent}\'s guild`,
 			desc: `Enable/disable [${agent}]s to maintain [${res}] stocks between 100 and 200.`,
@@ -233,7 +233,7 @@ func:function()
 		guild.effects.push(
 			{
 				type: 'function',
-				func: maintain2(res, agent),
+				func: maintain2(res, agent, enabledId),
 				mode: res,
 			}
 		);
