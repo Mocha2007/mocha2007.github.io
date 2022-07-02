@@ -32,6 +32,8 @@ func:function()
 	['basic clothes', 'primitive clothes']
 		.forEach(s => G.getRes(s).displayUsed = true);
 	// add new flavor text
+	G.props['new day lines'][14] = 'In the distance, prey falls to a pack of beasts.';
+	G.props['new day lines'][29] = 'Distant lands lie undisturbed.';
 	G.props['new day lines'].push('You hear the cries of Zothcengs in the distance.');
 	// new stuff
 	new G.Res({
