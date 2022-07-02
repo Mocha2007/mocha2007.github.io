@@ -226,19 +226,21 @@ func:function()
 
 	// GUILD
 
+	const getUnit2 = agent => G.unitsOwned.filter(u => u.unit.name === agent)[0];
+
 	const maintain2 = (res, agent, enabledId, minRes = 100, maxRes = 200) => {
 		return me => {
 			// ensure the AGENT matches and the PRODUCT matches RES
 			// console.debug(res, agent);
 			let unit;
 			try {
-				unit = getUnit(res, agent);
+				unit = getUnit2(agent);
 			}
 			catch (e){
-				return console.error(`${e} finding ${res}-producing ${agent}!`);
+				return console.error(`${e} finding ${agent}!`);
 			}
 			if (!unit)
-				return console.warn(`No ${agent} producing ${res}!`);
+				return console.warn(`No ${agent}!`);
 			if (G.resByName[res].amount < minRes)
 				unit.mode = G.unitByName[agent].modes[enabledId];
 			else if (maxRes < G.resByName[res].amount)
