@@ -78,6 +78,27 @@ func:function()
 			}},
 		],
 	});
+
+	new G.Unit({
+		name:'farm',
+		desc:'@farms stuff, like [soybean]s.',
+		icon:[24,7],
+		cost:{'archaic building materials':100},
+		use:{'land':4},
+		//require:{'worker':3,'stone tools':3},
+		modes:{
+			'off':G.MODE_OFF,
+			'soy farming':{name:'Farm soybeans',icon:[0,8],desc:'Produce [soybeans].',use:{'worker':3,'stone tools':3}},
+			'advanced soy farming':{name:'Advanced soybean farming',icon:[8,12,0,8],desc:'Produce [soybeans] at a superior rate with metal tools.',use:{'worker':3,'metal tools':3}},
+		},
+		effects:[
+			{type:'gather',context:'farm',amount:5,max:10,every:3,mode:'soy farming'},
+			{type:'gather',context:'farm',amount:10,max:30,every:3,mode:'advanced soy farming'},
+		],
+		gizmos:true,
+		req:{'soy sauce preparing':true},
+		category:'production',
+	});
 }
 });
 /*
