@@ -9,9 +9,6 @@ requires:['Default dataset*'],
 sheets:{'mochaSheet':'https://mocha2007.github.io/NEL/mochaSheet.png',}, //custom stylesheet (note : broken in IE and Edge for the time being)
 func:function()
 {
-	//The idea in this simple example mod is to add a few elements focused around hot sauce, because hot sauce is great and I use that stuff everywhere.
-	
-	//First we create a couple new resources :
 	new G.Res({
 		name:'soybean',
 		desc:'[soybean]s are loaded with nutrients and are a useful ingredient.',
@@ -71,7 +68,9 @@ func:function()
 			}},//this is a custom function executed when we gain the trait
 		],
 	});
-	
-	//There are many other ways of adding and changing content; refer to /data.js, the default dataset, if you want to see how everything is done in the base game. Good luck!
 }
 });
+/*
+	TODO
+	soy farm
+*/
