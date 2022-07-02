@@ -11,14 +11,14 @@ func:function()
 {
 	// modified vanilla stuff
 	// from http://orteil.dashnet.org/legacy/data.js
+	const doesNotSpoil = () => {};
+	const slowlySpoils = (me, tick) => G.lose(me.name,randomFloor(me.amount * 0.002),'decay');
 	// prevent decay of certain items
-	G.getRes('bone').lostBy = [];
-	G.getRes('clay').lostBy = [];
-	G.getRes('limestone').lostBy = [];
-	G.getRes('stone').lostBy = [];
+	['bone', 'clay', 'limestone', 'stone']
+		.forEach(s => G.getRes(s).tick = doesNotSpoil);
 	// make other items decay
-	G.getRes('knapped tools').lostBy.push('decay');
-	G.getRes('stone tools').lostBy.push('decay');
+	['knapped tools', 'stone tools', 'metal tools', 'stone weapons', 'bow']
+		.forEach(s => G.getRes(s).tick = slowlySpoils);
 	// new stuff
 	new G.Res({
 		name:'soybean',
