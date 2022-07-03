@@ -1,4 +1,5 @@
-/* exported  ObjectThumbnail */
+/* global Game */
+/* exported ObjectThumbnail */
 
 const icons = {
 	data: ['📝'],
@@ -15,10 +16,13 @@ function spacer(){
 class ObjectThumbnail {
 	/** inherit this class to get pretty tables for this element!
 	 * @param {string} name
+	 * @param {string} desc
 	 * @param {string} thumbnailString
 	 */
-	constructor(name, thumbnailString){
+	constructor(name, desc, thumbnailString){
 		this.name = name;
+		this.desc = desc; // todo unused
+		/** @type {ThumbnailElem} */
 		this.thumbnailString = thumbnailString
 			? new ThumbnailElem(...thumbnailString) : ThumbnailElem.default;
 	}
@@ -27,17 +31,17 @@ class ObjectThumbnail {
 		const header = document.createElement('tr');
 		table.appendChild(header);
 		const thKey = document.createElement('th');
-		thKey.innerHTML = 'Key';
+		thKey.innerHTML = Game.localization.key;
 		header.appendChild(thKey);
 		const thValue = document.createElement('th');
-		thValue.innerHTML = 'Value';
+		thValue.innerHTML = Game.localization.value;
 		header.appendChild(thValue);
 		// main
 		Object.keys(this).forEach(key => {
 			const tr = document.createElement('tr');
 			table.appendChild(tr);
 			const tdKey = document.createElement('td');
-			tdKey.innerHTML = key;
+			tdKey.innerHTML = Game.localization[key];
 			tr.appendChild(tdKey);
 			const tdValue = document.createElement('td');
 			const value = this[key];
@@ -57,7 +61,7 @@ class ObjectThumbnail {
 		span.appendChild(this.thumbnailElem.elem);
 		span.appendChild(spacer());
 		const inner = document.createElement('span');
-		inner.innerHTML = this.name;
+		inner.innerHTML = Game.localization[this.name];
 		span.appendChild(inner);
 		return span;
 	}

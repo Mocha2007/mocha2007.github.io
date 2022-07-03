@@ -1,5 +1,15 @@
 /* exported goodData */
 
 const goodData = [
-	// todo
+	{
+		name: 'copper_ore',
+		categories: ['stone'],
+	},
+	{
+		name: 'malachite',
+		categories: ['copper_ore'],
+	},
+	{
+		name: 'stone',
+	},
 ];
