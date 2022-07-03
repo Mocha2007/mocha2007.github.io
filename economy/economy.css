@@ -1,0 +1,53 @@
+body {
+	font-size: 2vh;
+	margin: 0;
+}
+#root {
+	height: 100%;
+	width: 100%;
+}
+.button {
+	background-color: #222;
+	cursor: pointer;
+	display: inline-block;
+	user-select: none;
+}
+.button:hover {
+	opacity: 0.6;
+}
+.button:active {
+	opacity: 0.36;
+}
+.monospace {
+	background-color: black;
+	color: silver;
+	font-family: 'Courier New', Courier, monospace;
+	position: absolute;
+}
+.promptbutton {
+	bottom: 0;
+	left: 50%;
+	position: absolute;
+}
+.topbar {
+	height: 1vh;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 100%;
+}
+.xbox {
+	color: red;
+	left: auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.window {
+	border: 1px solid silver;
+	display: inline-block;
+	min-height: 4vh;
+	min-width: 4vw;
+	padding: 1vh;
+	position: relative;
+}

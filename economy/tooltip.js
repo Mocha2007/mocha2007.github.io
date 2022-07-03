@@ -13,6 +13,74 @@ function spacer(){
 	return s;
 }
 
+/**
+ * @param {string} s
+ * @param {() => *} action
+ */
+function button(s, action){
+	const elem = document.createElement('div');
+	elem.classList.add('button');
+	elem.innerHTML = s;
+	elem.onclick = action;
+	return elem;
+}
+
+class GameWindow {
+	/** @param {HTMLElement} inner */
+	constructor(inner){
+		/** @type {HTMLElement} */
+		this.inner = inner;
+		GameWindow.active.push(this);
+	}
+	get elem(){
+		return this._elemCache ? this._elemCache : this._elemCache = this.outer();
+	}
+	close(){
+		const i = GameWindow.active.indexOf(this);
+		GameWindow.active.splice(i, 1);
+		this.elem.remove();
+	}
+	createXBox(){
+		const xBox = button('X', () => this.close());
+		xBox.classList.add('xbox');
+		return xBox;
+	}
+	outer(){
+		const outer = document.createElement('div');
+		outer.classList.add('window');
+		// top bar
+		const topbar = document.createElement('div');
+		topbar.classList.add('topbar');
+		topbar.appendChild(this.createXBox());
+		outer.appendChild(topbar);
+		outer.appendChild(this.inner);
+		return outer;
+	}
+	setDimensions(x = 0, y = 0, width = 10, height = 10){
+		this.elem.style.left = `${x}vw`;
+		this.elem.style.top = `${y}vh`;
+		this.elem.style.width = `${width}vw`;
+		this.elem.style.height = `${height}vh`;
+	}
+	static get activeWindow(){
+		return this.active[this.active.length-1];
+	}
+	/** @param {string} s - text to display as a notification */
+	static popup(s){
+		const div = document.createElement('div');
+		const span = document.createElement('span');
+		span.innerHTML = s;
+		div.appendChild(span);
+		const popup = new GameWindow(div);
+		const ok = button('OK', () => popup.close());
+		ok.classList.add('promptbutton');
+		div.appendChild(ok);
+		GameWindow.root.inner.appendChild(popup.elem);
+	}
+}
+/** @type {HTMLDivElement[]} */
+GameWindow.active = [];
+
 class ObjectThumbnail {
 	/** inherit this class to get pretty tables for this element!
 	 * @param {string} name
