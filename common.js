@@ -8,6 +8,27 @@ const pi = Math.PI;
 /** degree / radian */
 const deg = pi/180;
 
+const constants = {
+	get day(){
+		return 24 * this.hour;
+	},
+	get hour(){
+		return 60 * this.minute;
+	},
+	get minute(){
+		return 60;
+	},
+	get month(){
+		return this.year / 12;
+	},
+	get week(){
+		return 7 * this.day;
+	},
+	get year(){
+		return 365.2425 * this.day;
+	},
+};
+
 /**
  * @param {number} n
  * @return {number}
@@ -355,6 +376,14 @@ const storage = {
 		window.localStorage.setItem(name, JSON.stringify(value));
 	},
 };
+
+/**
+ * Converts string to title case. identical to str.title in python.
+ * @param {string} s
+ */
+function title(s){
+	return [...s].map((c, i) => i ? c : c.toUpperCase()).join('');
+}
 
 /** https://stackoverflow.com/a/27997088/2579798
  * @param {any[]} a

@@ -1,6 +1,12 @@
-/* globals localization */
+/* globals Building, buildingData, Good, goodData, localization */
 
 const Game = {
+	get buildings(){
+		return Building.buildings;
+	},
+	get goods(){
+		return Good.goods;
+	},
 	language: 'english',
 	/** @param {string} key */
 	localization(key){
@@ -9,7 +15,9 @@ const Game = {
 		return `<${key}>`;
 	},
 	run(){
-		// todo
+		Good.parse(goodData);
+		Building.parse(buildingData);
+		console.log('Game loaded.');
 	},
 };
 

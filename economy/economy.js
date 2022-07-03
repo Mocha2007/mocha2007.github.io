@@ -14,6 +14,7 @@ class Good extends ObjectThumbnail {
 	}
 	static parse(goodData){
 		goodData.forEach(good => new Good(good));
+		console.log(`Parsed ${this.goods.length} goods.`);
 	}
 }
 /** @type {Good[]} */
@@ -51,9 +52,15 @@ class Building extends ObjectThumbnail {
 		this.costBuildLock = data.costBuildLock.map(GoodAmount.parseObject);
 		/** @type {GoodAmount[]} */
 		this.costOngoing = data.costOngoing.map(GoodAmount.parseObject);
+		/** @type {GoodAmount[]} */
+		this.produces = data.produces.map(GoodAmount.parseObject);
 	}
 	static fromString(s){
 		return this.buildings.find(b => b.name === s);
+	}
+	static parse(buildingData){
+		buildingData.forEach(building => new Building(building));
+		console.log(`Parsed ${this.buildings.length} buildings.`);
 	}
 }
 /** @type {Building[]} */
