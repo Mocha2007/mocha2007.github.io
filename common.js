@@ -26,9 +26,9 @@ const constants = {
 
 // math block
 
+const pi = Math.PI;
 /** degree / radian */
 const deg = pi/180;
-const pi = Math.PI;
 
 /**
  * @param {number} n
@@ -401,7 +401,7 @@ const storage = {
  * @param {string} s
  */
 function title(s){
-	return [...s].map((c, i) => i ? c : c.toUpperCase()).join('');
+	return s[0].toUpperCase() + s.slice(1);
 }
 
 /** https://stackoverflow.com/a/27997088/2579798
