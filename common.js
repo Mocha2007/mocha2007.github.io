@@ -3,11 +3,6 @@
 // this file provides functions used in many of my other js files
 'use strict';
 
-// math block
-const pi = Math.PI;
-/** degree / radian */
-const deg = pi/180;
-
 const constants = {
 	get day(){
 		return 24 * this.hour;
@@ -28,6 +23,11 @@ const constants = {
 		return 365.2425 * this.day;
 	},
 };
+
+// math block
+const pi = Math.PI;
+/** degree / radian */
+const deg = pi/180;
 
 /**
  * @param {number} n
@@ -264,6 +264,30 @@ function commaNumber(x){
 	return x.toLocaleString();
 }
 
+/** DEPRECATED USE storage INSTEAD */
+const cookie = {
+	/** @param {string} name */
+	delete(name){
+		document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
+	},
+	/** https://stackoverflow.com/a/11344672/2579798
+	 * @param {string} name
+	*/
+	read(name){
+		let result = document.cookie.match(new RegExp(name + '=([^;]+)'));
+		if (result)
+			result = JSON.parse(result[1]);
+		return result;
+	},
+	/** https://stackoverflow.com/a/11344672/2579798
+	 * @param {string} name
+	 * @param {any} value
+	*/
+	write(name, value){
+		document.cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
+	},
+};
+
 /** https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
  * @param {string} name
  * @return {HTMLUnknownElement}
@@ -280,6 +304,24 @@ function createStyleSheet(){
 	document.head.appendChild(style);
 	return style.sheet;
 }
+
+/**
+ * run before and after a function to determine the time taken
+ *
+ * automatically prints avg in ms to console
+ * @param {number} [everyNSamples=1000] - every N samples, print to console; default = 1000
+*/
+function debugPerf(everyNSamples = 1000){
+	debugPerf.i++;
+	if (debugPerf.i % 2)
+		return debugPerf.t0 = performance.now();
+	debugPerf.history.push(performance.now() - debugPerf.t0);
+	if (debugPerf.history.length % everyNSamples === 0)
+		console.debug(mean(debugPerf.history));
+}
+debugPerf.i = 0;
+/** @type {number[]} */
+debugPerf.history = [];
 
 /** https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file/34156339#34156339
  * @param {string} content - eg 'hello!
@@ -328,30 +370,6 @@ function proper(str){
 		txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
 	);
 }
-
-/** DEPRECATED USE storage INSTEAD */
-const cookie = {
-	/** @param {string} name */
-	delete(name){
-		document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
-	},
-	/** https://stackoverflow.com/a/11344672/2579798
-	 * @param {string} name
-	*/
-	read(name){
-		let result = document.cookie.match(new RegExp(name + '=([^;]+)'));
-		if (result)
-			result = JSON.parse(result[1]);
-		return result;
-	},
-	/** https://stackoverflow.com/a/11344672/2579798
-	 * @param {string} name
-	 * @param {any} value
-	*/
-	write(name, value){
-		document.cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
-	},
-};
 
 /** https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API */
 const storage = {
@@ -433,21 +451,3 @@ function timer(f, n){
 	// console.log(`t = ${end-start} ms`);
 	return end-start;
 }
-
-/**
- * run before and after a function to determine the time taken
- *
- * automatically prints avg in ms to console
- * @param {number} [everyNSamples=1000] - every N samples, print to console; default = 1000
-*/
-function debugPerf(everyNSamples = 1000){
-	debugPerf.i++;
-	if (debugPerf.i % 2)
-		return debugPerf.t0 = performance.now();
-	debugPerf.history.push(performance.now() - debugPerf.t0);
-	if (debugPerf.history.length % everyNSamples === 0)
-		console.debug(mean(debugPerf.history));
-}
-debugPerf.i = 0;
-/** @type {number[]} */
-debugPerf.history = [];
