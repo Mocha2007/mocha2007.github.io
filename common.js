@@ -25,9 +25,10 @@ const constants = {
 };
 
 // math block
-const pi = Math.PI;
+
 /** degree / radian */
 const deg = pi/180;
+const pi = Math.PI;
 
 /**
  * @param {number} n
