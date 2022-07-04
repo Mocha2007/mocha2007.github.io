@@ -11,6 +11,9 @@ const goodData = [
 		categories: ['stone'],
 	},
 	{
+		name: 'lumber',
+	},
+	{
 		name: 'malachite',
 		categories: ['copper_ore'],
 	},
@@ -22,6 +25,9 @@ const goodData = [
 	},
 	{
 		name: 'stone',
+	},
+	{
+		name: 'wood',
 	},
 	{
 		name: 'worker',
@@ -58,6 +64,38 @@ const buildingData = [
 		}],
 		produces: [{
 			id: 'copper',
+			amount: 1,
+			time: constants.hour,
+		}],
+	},
+	{
+		name: 'logging_camp',
+		costBuild: [],
+		costBuildLock: [{
+			id: 'worker',
+			amount: 1,
+		}],
+		costOngoing: [],
+		produces: [{
+			id: 'wood',
+			amount: 1,
+			time: constants.hour,
+		}],
+	},
+	{
+		name: 'sawmill',
+		costBuild: [],
+		costBuildLock: [{
+			id: 'worker',
+			amount: 1,
+		}],
+		costOngoing: [{
+			id: 'wood',
+			amount: 1,
+			time: constants.hour,
+		}],
+		produces: [{
+			id: 'lumber',
 			amount: 1,
 			time: constants.hour,
 		}],
