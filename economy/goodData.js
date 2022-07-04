@@ -5,6 +5,7 @@ const goodData = [
 	{
 		name: 'copper',
 		categories: ['metal'],
+		basePrice: 6, // https://www.dailymetalprice.com/metalpricecharts.php?c=cu&u=lb&d=20
 	},
 	{
 		name: 'copper_ore',
@@ -12,6 +13,9 @@ const goodData = [
 	},
 	{
 		name: 'lumber',
+		// rough estimate based on 144 cubic inches * 0.7g/cm^3
+		// https://tradingeconomics.com/commodity/lumber
+		basePrice: 0.5,
 	},
 	{
 		name: 'malachite',
@@ -28,6 +32,8 @@ const goodData = [
 	},
 	{
 		name: 'wood',
+		// guess
+		basePrice: 0.25,
 	},
 	{
 		name: 'worker',

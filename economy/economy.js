@@ -7,6 +7,8 @@ class Good extends ObjectThumbnail {
 		this.rawObject = data; // for debugging
 		/** @type {string[]} */
 		this.categories = data.categories;
+		/** @type {number} - I use 2020 USD / kg as a base price */
+		this.basePrice = data.basePrice;
 		Good.goods.push(this);
 	}
 	static fromString(s){
