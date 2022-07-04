@@ -62,4 +62,15 @@ const buildingData = [
 			time: constants.hour,
 		}],
 	},
+	{
+		name: 'warehouse',
+		costBuild: [],
+		costBuildLock: [{
+			id: 'worker',
+			amount: 1,
+		}],
+		costOngoing: [],
+		produces: [],
+		storage: 1000,
+	},
 ];

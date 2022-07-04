@@ -1,5 +1,5 @@
 /* exported BuildingAmount */
-/* global ObjectThumbnail */
+/* global ObjectThumbnail, sum */
 
 class Good extends ObjectThumbnail {
 	constructor(data){
@@ -43,6 +43,7 @@ class Building extends ObjectThumbnail {
 	// (2) a lifetime "resource lock" (ie. it reserves resources, like land,
 	//     machinery, and workers, but never consumes them; they're refunded on destruction)
 	// (3) ongoing costs
+	// (4) storage (by default, 1d worth of input goods + 1d word of output goods)
 	constructor(data){
 		super(data.name, data.desc, data.icon);
 		this.rawObject = data; //for debugging
@@ -54,6 +55,10 @@ class Building extends ObjectThumbnail {
 		this.costOngoing = data.costOngoing.map(GoodAmount.parseObject);
 		/** @type {GoodAmount[]} */
 		this.produces = data.produces.map(GoodAmount.parseObject);
+		/** @type {number} in kg */
+		this.storage = data.storage ? data.storage
+			: sum(this.costOngoing.map(ga => ga.amount)) + sum(this.produces.map(ga => ga.amount));
+		Building.buildings.push(this);
 	}
 	static fromString(s){
 		return this.buildings.find(b => b.name === s);
