@@ -1,8 +1,9 @@
 /* exported startEreQuote */
 /* global EremoranTooltip, random, range */
 const quotes = [
-	['Dir nau sudôtamaz ne', 'What\'s to be done?', 'Urisbazêsur Badmar, philosopher'],
-	['Som ardo din ardo som din', 'Heat from fire; fire from heat.', '<abbr title="Metalsmith\'s Guild">Aramaêsur Temêmor</abbr> motto'],
+	['Dir nau sudôtamaz ne:', 'What\'s to be done?', 'Urisbazêsur Badmar, philosopher'],
+	['Mor su uid hod nau su i kekisuk tukilk ne:', 'Of what is the soul of gods if not man?', 'Temêsur Saiur, princess and philosopher'],
+	['Som ardo din ardo som din:', 'Heat from fire; fire from heat.', '<abbr title="Metalsmith\'s Guild">Aramaêsur Temêmor</abbr> motto'],
 	// Common Enklár Shibboleth
 ];
 
