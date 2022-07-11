@@ -16,6 +16,7 @@ const quotes = [
 	['Libam su zurkudoid bêm i dir nau sudôz tan', 'The worst part about crying is determining what to do after.', eremorans.poet1],
 	['Lusik i dir lusik namz uid', 'Wolves do not eat wolves.', eremorans.philosopher3],
 	['Mor su uid hod nau su i kekisuk tukilk ne', 'Of what is the soul of gods if not man?', eremorans.philosopher2],
+	['Roraok i id mo', 'Only cats are above man.', eremorans.philosopher2],
 	['Som ardo din ardo som din', 'Heat from fire; fire from heat.', '<abbr title="Metalsmith\'s Guild">Aramaêsur Temêmor</abbr> motto'],
 	// todo common Enklár Shibboleth
 ];
