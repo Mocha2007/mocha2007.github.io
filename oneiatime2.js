@@ -248,6 +248,15 @@ function holidayCSS(){
 	img.title = title;
 	if (src !== defaultSrc)
 		img.src = 'img/'+src+'.png';
+	else { // THE PINKENING
+		// compute
+		var pinkeningFactor = Math.max(0, Math.min(1,
+			(Date.now() - new Date(2022, 5, 1))/constants.earth.year
+		));
+		// pinkeningFactor = 1; // debug
+		document.getElementById('top').style.filter
+			= `hue-rotate(${120*pinkeningFactor}deg) brightness(${100 + 25*pinkeningFactor}%)`;
+	}
 
 	if (day === 11*month-17 && day === month*month + 3*month - 1)
 		img.outerHTML = '<img id="m" src="img/mopril.png" width="200" alt="Mochadian Birthday Squiggle" onmouseover="playSound(\'sfx\')" onmouseout="stopSound(\'sfx\')"> <audio id="sfx" src="snd/partyhorn.mp3"/>';
