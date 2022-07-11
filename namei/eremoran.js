@@ -6,42 +6,50 @@
 'use strict';
 
 // tools for main
-/** @param {HTMLDListElement} - the entire dictionary element*/
-const d = document.getElementsByClassName('dictionary')[0];
-/** @param {string[]} - array of words*/
-const dict = new Array(...d.getElementsByTagName('dt')).map(e => e.innerHTML);
-/** @param {HTMLParagraphElement} - the element with the buttons*/
-const p = document.getElementById('wordlist');
+const elements = {
+	/** @returns {HTMLDListElement} - the entire dictionary element*/
+	get d(){
+		return document.getElementsByClassName('dictionary')[0];
+	},
+	/** @returns {string[]} - array of words*/
+	get dict(){
+		return new Array(...this.d.getElementsByTagName('dt')).map(e => e.innerHTML);
+	},
+	/** @returns {HTMLParagraphElement} - the element with the buttons*/
+	get p(){
+		return document.getElementById('wordlist');
+	},
+};
 
 // main
 function compileDict(){
-	p.innerHTML = dict.join(' ');
+	elements.p.innerHTML = elements.dict.join(' ');
 }
 
 function compileFinals(){
-	p.innerHTML = dict.map(w => w[w.length-1]).join('');
+	elements.p.innerHTML = elements.dict.map(w => w[w.length-1]).join('');
 }
 
 function compileInitials(){
-	p.innerHTML = dict.map(w => w[0]).join('');
+	elements.p.innerHTML = elements.dict.map(w => w[0]).join('');
 }
 
 function compileLength(){
-	p.innerHTML = dict.map(w => w.length).join(' ');
+	elements.p.innerHTML = elements.dict.map(w => w.length).join(' ');
 }
 
 function compileMeanings(){
-	p.innerHTML = new Array(...d.getElementsByTagName('dd'))
+	elements.p.innerHTML = new Array(...elements.d.getElementsByTagName('dd'))
 		.filter(x => 0 < x.getElementsByTagName('ol').length)
 		.map(x => x.getElementsByTagName('ol')[0].children.length).join(' ');
 }
 
 function compileMedials(){
-	p.innerHTML = dict.map(w => w.slice(1, -1)).join('');
+	elements.p.innerHTML = elements.dict.map(w => w.slice(1, -1)).join('');
 }
 
 function compileNounClass(){
-	p.innerHTML = new Array(...d.getElementsByTagName('dd'))
+	elements.p.innerHTML = new Array(...elements.d.getElementsByTagName('dd'))
 		.filter(x => x.innerHTML.slice(0, 3) === 'n.,')
 		.map(x => x.innerHTML[4]).join(' ');
 }
@@ -407,7 +415,7 @@ function adjDecline(indexForm){
 	];
 	const positive = gendered
 		? adjClasses(indexForm) : adjClassless(indexForm);
-	const elements = [
+	const ee = [
 		{name: 'Positive', elem: positive},
 		{name: 'Comparative', elem: adjClasses(comparative)},
 		{name: 'Superlative', elem: adjClassless(superlative)},
@@ -416,7 +424,7 @@ function adjDecline(indexForm){
 	// TODO pu- + adj = negative
 	// make table
 	const table = document.createElement('table');
-	elements.forEach(data => {
+	ee.forEach(data => {
 		const name = data.name;
 		const elem = data.elem;
 		const row = document.createElement('tr');
@@ -468,8 +476,10 @@ const wordle = {
 	/** @type {string} */
 	current: undefined,
 	guesses: 0,
-	/** @type {string[]} */
-	wordbank: dict.filter(x => x.length === 5),
+	/** @returns {string[]} */
+	get wordbank(){
+		return elements.dict.filter(x => x.length === 5);
+	},
 	/** @param {string} char */
 	append(char){
 		document.getElementById('wordle_input').value += char;
