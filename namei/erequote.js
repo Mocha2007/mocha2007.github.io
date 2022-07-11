@@ -9,6 +9,7 @@ const eremorans = {
 
 const quotes = [
 	['Afêkkrum i hanum din id namboz', 'Philosophy devours the unready.', eremorans.philosopher2],
+	['Liba ku mor i daret ku mok', 'One with a heart is already wealthy.', eremorans.philosopher2],
 	['Dir nau sudôtamaz ne', 'What\'s to be done?', eremorans.philosopher1],
 	['Lakum i anôm sudôz ku zurkum i annumum su sudôz', 'Thought makes good and haste makes evil.', eremorans.poet1],
 	['Libam su zurkudoid bêm i dir nau sudôz tan', 'The worst part about crying is determining what to do after.', eremorans.poet1],
