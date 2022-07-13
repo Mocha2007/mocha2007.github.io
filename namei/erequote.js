@@ -2,22 +2,25 @@
 /* global EremoranTooltip, random, range */
 
 const eremorans = {
-	philosopher1: 'Urisbazêsur Badmar, philosopher',
-	philosopher2: 'Temêsur Saiur, princess and philosopher',
-	philosopher3: 'Mánikasur Hisklenar, philosopher',
-	poet1: 'Lusimarisur Siurisar, poet',
+	guild1: '<abbr title="Metalsmith\'s Guild">Aramaêsur Temêmor</abbr> motto',
+	philosopher1: 'Urisbazêsur Badmar, philosopher', // political
+	philosopher2: 'Temêsur Saiur, princess and philosopher', // infp
+	philosopher3: 'Mánikasur Hisklenar, philosopher', // serious/depresso
+	poet1: 'Lusimarisur Siurisar, poet', // more abstract / misc
+	pun: 'An Eremoran pun',
 };
 
 const quotes = [
-	['Afêkkrum i hanum din id namboz', 'Philosophy devours the unready.', eremorans.philosopher2],
+	['Afêkkrum i hanum din id namboz', 'Philosophy devours the unready.', eremorans.philosopher3],
 	['Liba ku mor i daret ku mok', 'One with a heart is already wealthy.', eremorans.philosopher2],
 	['Dir nau sudôtamaz ne', 'What\'s to be done?', eremorans.philosopher1],
-	['Lakum i anôm sudôz ku zurkum i annumum su sudôz', 'Thought makes good and haste makes evil.', eremorans.poet1],
-	['Libam su zurkudoid bêm i dir nau sudôz tan', 'The worst part about crying is determining what to do after.', eremorans.poet1],
+	['Id bi i dir hirak sudôz uid kubatu nasu hona', 'One leaf does not produce milk, but two do.', eremorans.pun],
+	['Lakum i anôm sudôz ku zurkum i annumum su sudôz', 'Thought makes good and haste makes evil.', eremorans.philosopher2],
+	['Libam su zurkudoid bêm i dir nau sudôz tan', 'The worst part about crying is determining what to do after.', eremorans.philosopher2],
 	['Lusik i dir lusik namz uid', 'Wolves do not eat wolves.', eremorans.philosopher3],
-	['Mor su uid hod nau su i kekisuk tukilk ne', 'Of what is the soul of gods if not man?', eremorans.philosopher2],
-	['Roraok i id mo', 'Only cats are above man.', eremorans.philosopher2],
-	['Som ardo din ardo som din', 'Heat from fire; fire from heat.', '<abbr title="Metalsmith\'s Guild">Aramaêsur Temêmor</abbr> motto'],
+	['Mor su uid hod nau su i kekisuk tukilk ne', 'Of what is the soul of gods if not man?', eremorans.poet1],
+	['Roraok i id mo', 'Only cats are above man.', eremorans.poet1],
+	['Som ardo din ardo som din', 'Heat from fire; fire from heat.', eremorans.guild1],
 	// todo common Enklár Shibboleth
 ];
 
