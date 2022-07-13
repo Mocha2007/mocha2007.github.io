@@ -11,6 +11,8 @@ const eremorans = {
 };
 
 const quotes = [
+	['Ad bibi bibimat ad balitômz uid i ad nau dinrôz ne : Ad nasisu nau bibimat ad baliz ne',
+		'What do you mean I can&apos;t buy breasts at a tavern? What else would a tavern sell?', eremorans.pun],
 	['Afêkkrum i hanum din id namboz', 'Philosophy devours the unready.', eremorans.philosopher3],
 	['Liba ku mor i daret ku mok', 'One with a heart is already wealthy.', eremorans.philosopher2],
 	['Dir nau sudôtamaz ne', 'What\'s to be done?', eremorans.philosopher1],
