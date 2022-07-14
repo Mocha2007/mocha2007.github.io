@@ -2,6 +2,7 @@
 /* global EremoranTooltip, random, range */
 
 const eremorans = {
+	aphorism: 'An Eremoran aphorism',
 	guild1: '<abbr title="Metalsmith\'s Guild">Aramaêsur Temêmor</abbr> motto',
 	philosopher1: 'Urisbazêsur Badmar, philosopher', // political
 	philosopher2: 'Temêsur Saiur, princess and philosopher', // infp
@@ -17,10 +18,11 @@ const quotes = [
 		'I am not a philosopher. Philosophers interpret the world; I have changed it.', eremorans.philosopher1],
 	['Afêkkrum i hanum din id namboz', 'Philosophy devours the unready.', eremorans.philosopher3],
 	['Baim i mom din mok kubatu baisulk uid', 'Reason has always existed, but not always in a reasonable way.', eremorans.philosopher1],
-	['Liba ku mor i daret ku mok', 'One with a heart is already wealthy.', eremorans.philosopher2],
 	['Dir nau sudôtamaz ne', 'What\'s to be done?', eremorans.philosopher1],
+	['Habim endum sudôm undum', 'Ars longa, vita brevis.', eremorans.aphorism],
 	['Id bi i dir hirak sudôz uid kubatu nasu hona', 'One leaf does not produce milk, but two do.', eremorans.pun],
 	['Lakum i anôm sudôz ku zurkum i annumum su sudôz', 'Thought makes good and haste makes evil.', eremorans.philosopher2],
+	['Liba ku mor i daret ku mok', 'One with a heart is already wealthy.', eremorans.philosopher2],
 	['Libam su zurkudoid bêm i dir nau sudôz tan', 'The worst part about crying is determining what to do after.', eremorans.philosopher2],
 	['Lusik i dir lusik namz uid', 'Wolves do not eat wolves.', eremorans.philosopher3],
 	['Mor i una kubatu hans nau tamaz', 'Man is nothing yet must be everything.', eremorans.philosopher1],
