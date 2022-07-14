@@ -2,13 +2,14 @@
 /* global EremoranTooltip, random, range */
 
 const eremorans = {
-	aphorism: 'An Eremoran aphorism',
+	aphorism: 'an Eremoran aphorism',
 	guild1: '<abbr title="Metalsmith\'s Guild">Aramaêsur Temêmor</abbr> motto',
+	guild2: 'common Enklár challenge and response',
 	philosopher1: 'Urisbazêsur Badmar, philosopher', // political
 	philosopher2: 'Temêsur Saiur, princess and philosopher', // infp
 	philosopher3: 'Mánikasur Hisklenar, philosopher', // serious/depresso
 	poet1: 'Lusimarisur Siurisar, poet', // more abstract / misc
-	pun: 'An Eremoran pun',
+	pun: 'an Eremoran pun',
 };
 
 const quotes = [
@@ -21,6 +22,7 @@ const quotes = [
 	['Dir nau sudôtamaz ne', 'What\'s to be done?', eremorans.philosopher1],
 	['Habim endum sudôm undum', 'Ars longa, vita brevis.', eremorans.aphorism],
 	['Id bi i dir hirak sudôz uid kubatu nasu hona', 'One leaf does not produce milk, but two do.', eremorans.pun],
+	['Id mor sesum afkam / Id afkam sesur mor', 'One person, a hundred journeys. One journey, a hundred people.', eremorans.guild2],
 	['Lakum i anôm sudôz ku zurkum i annumum su sudôz', 'Thought makes good and haste makes evil.', eremorans.philosopher2],
 	['Liba ku mor i daret ku mok', 'One with a heart is already wealthy.', eremorans.philosopher2],
 	['Libam su zurkudoid bêm i dir nau sudôz tan', 'The worst part about crying is determining what to do after.', eremorans.philosopher2],
@@ -29,7 +31,6 @@ const quotes = [
 	['Mor su uid hod nau su i kekisuk tukilk ne', 'Of what is the soul of gods if not man?', eremorans.poet1],
 	['Roraok i mor mo id', 'Only cats are above man.', eremorans.poet1],
 	['Som ardo din ardo som din', 'Heat from fire; fire from heat.', eremorans.guild1],
-	// todo common Enklár Shibboleth
 ];
 
 /** ms */
