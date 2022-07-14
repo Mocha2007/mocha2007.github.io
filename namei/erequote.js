@@ -23,7 +23,7 @@ const quotes = [
 	['Lakum i anôm sudôz ku zurkum i annumum su sudôz', 'Thought makes good and haste makes evil.', eremorans.philosopher2],
 	['Libam su zurkudoid bêm i dir nau sudôz tan', 'The worst part about crying is determining what to do after.', eremorans.philosopher2],
 	['Lusik i dir lusik namz uid', 'Wolves do not eat wolves.', eremorans.philosopher3],
-	['Mor i una kubatu hans nau tamaz', 'Man is nothing yet must be everything.', eremorans.philosopher1],
+	['Mor i una kubatu hans na tamaz', 'Man is nothing yet must be everything.', eremorans.philosopher1],
 	['Mor su uid hod nau su i kekisuk tukilk ne', 'Of what is the soul of gods if not man?', eremorans.poet1],
 	['Roraok i id mo', 'Only cats are above man.', eremorans.poet1],
 	['Som ardo din ardo som din', 'Heat from fire; fire from heat.', eremorans.guild1],
