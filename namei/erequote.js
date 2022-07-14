@@ -25,7 +25,7 @@ const quotes = [
 	['Lusik i dir lusik namz uid', 'Wolves do not eat wolves.', eremorans.philosopher3],
 	['Mor i una kubatu hans nau tamaz', 'Man is nothing yet must be everything.', eremorans.philosopher1],
 	['Mor su uid hod nau su i kekisuk tukilk ne', 'Of what is the soul of gods if not man?', eremorans.poet1],
-	['Roraok i id mo', 'Only cats are above man.', eremorans.poet1],
+	['Roraok i mor mo id', 'Only cats are above man.', eremorans.poet1],
 	['Som ardo din ardo som din', 'Heat from fire; fire from heat.', eremorans.guild1],
 	// todo common Enklár Shibboleth
 ];
