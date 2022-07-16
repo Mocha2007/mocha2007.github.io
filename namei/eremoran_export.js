@@ -1,15 +1,15 @@
 /* exported exportDict */
-/* global d, download */
+/* global download, elements */
 
 'use strict';
 
 function exportDict(){
 	// converts the <dl> to a txt file and saves it for download
-	// const d is the dl
+	// const elements.d is the dl
 	let entry = {};
 	let entryString = '';
 	let afterDefList = false;
-	Array.from(d.children).forEach(elem => {
+	Array.from(elements.d.children).forEach(elem => {
 		// console.debug(elem.tagName);
 		switch (elem.tagName){
 			case 'DT':
