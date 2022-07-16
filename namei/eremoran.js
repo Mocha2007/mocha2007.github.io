@@ -194,7 +194,10 @@ const EremoranTooltip = {
 		const desiredWordElement = document.getElementById(`lemma-${word}`);
 		// create container
 		const container = document.createElement('div');
-		container.innerHTML = desiredWordElement.innerHTML;
+		const header = document.createElement('h3');
+		header.innerHTML = word;
+		container.appendChild(header);
+		container.innerHTML += desiredWordElement.innerHTML;
 		return container;
 	},
 	setup(){
