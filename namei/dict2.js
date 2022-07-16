@@ -1,7 +1,6 @@
 /* exported getDict */
+/* global EremoranTooltip */
 'use strict';
-// shamelessly stolen from verdurian dict,
-// didn't know this was even possible so I'm hyped to get this working!
 
 // eslint-disable-next-line no-undef
 const reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
@@ -20,7 +19,7 @@ function printDict(){
 	const list = document.getElementById('dictionary');
 	/** @type {[]} */
 	const dictionary = JSON.parse(reader.responseText);
-	console.debug(dictionary);
+	// console.debug(dictionary);
 	dictionary.forEach(obj => {
 		// const [index, type, defs] = line.split('=');
 		// entry div - for organization!
@@ -39,17 +38,30 @@ function printDict(){
 		const ereTitle = document.createElement('span');
 		ereTitle.innerHTML = obj.title;
 		ereTitle.classList.add('eremoran');
+		EremoranTooltip.setupWord(ereTitle);
 		dt.appendChild(ereTitle);
+		entryDiv.appendChild(dt);
+		// img
+		if (obj.img){
+			const imgdd = document.createElement('dd');
+			const img = document.createElement('img');
+			img.src = obj.img;
+			img.width = 64;
+			imgdd.appendChild(img);
+			entryDiv.appendChild(imgdd);
+		}
+		// etym
+		const etymElement = document.createElement('dd');
+		etymElement.innerHTML = 'Etymology: ' + obj.etym;
+		entryDiv.appendChild(etymElement);
 		// type, eg. noun, verb, ...
 		const typeelement = document.createElement('dd');
 		typeelement.innerHTML = obj.cat;
+		entryDiv.appendChild(typeelement);
 		// def(s)
 		const entryelement = document.createElement('dd');
 		const deflist = document.createElement('ol');
 		entryelement.appendChild(deflist);
-		list.appendChild(entryDiv);
-		entryDiv.appendChild(dt);
-		entryDiv.appendChild(typeelement);
 		entryDiv.appendChild(entryelement);
 		obj.defList.forEach(def => {
 			if (def[0] === '!'){ // note
@@ -62,5 +74,12 @@ function printDict(){
 			d.innerHTML = def;
 			deflist.appendChild(d);
 		});
+		// notes
+		if (obj.notes){
+			const noteElement = document.createElement('dd');
+			noteElement.innerHTML = obj.notes;
+			entryDiv.appendChild(noteElement);
+		}
+		list.appendChild(entryDiv);
 	});
 }

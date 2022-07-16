@@ -180,7 +180,9 @@ const EremoranTooltip = {
 	tooltip: undefined,
 	visible: true,
 	/** @type {HTMLElement[]} */
-	words: undefined,
+	get words(){
+		return Array.from(document.getElementsByTagName('dt'));
+	},
 	clearTooltip(){
 		this.tooltip.innerHTML = '';
 		this.tooltip.style.display = 'none';
@@ -189,23 +191,15 @@ const EremoranTooltip = {
 	/** @param {string} word */
 	getDef(word){
 		// collect target elements
-		const desiredWordElement = this.words.filter(dt => dt.innerHTML.toLowerCase() === word)[0];
-		/** @type {HTMLElement[]} */
-		const elementsInDict = Array.from(desiredWordElement.parentElement.children);
-		const beginIndex = elementsInDict.indexOf(desiredWordElement);
-		let endIndex = elementsInDict.indexOf(elementsInDict.slice(beginIndex+1).find(elem => elem.tagName.toLowerCase() === 'dt'));
-		if (endIndex === -1)
-			endIndex = elementsInDict.length;
+		const desiredWordElement = document.getElementById(`lemma-${word}`);
 		// create container
-		const container = document.createElement('dl');
-		range(beginIndex, endIndex).forEach(i => {
-			container.appendChild(elementsInDict[i].cloneNode(true));
-		});
+		const container = document.createElement('div');
+		container.innerHTML = desiredWordElement.innerHTML;
 		return container;
 	},
 	setup(){
 		// store data
-		this.words = Array.from(document.getElementsByTagName('dt'));
+		// this.words = Array.from(document.getElementsByTagName('dt'));
 		// create tooltip
 		const div = this.tooltip = document.createElement('div');
 		div.id = this.id;
@@ -476,6 +470,7 @@ const wordle = {
 	/** @type {string} */
 	current: undefined,
 	guesses: 0,
+	initialized: false,
 	/** @returns {string[]} */
 	get wordbank(){
 		return elements.dict.filter(x => x.length === 5);
@@ -500,10 +495,13 @@ const wordle = {
 		return span;
 	},
 	init(){
-		document.getElementById('wordle_input').addEventListener('keydown', e => {
-			if (e.key === 'Enter')
-				this.submit();
-		});
+		if (!this.initialized){
+			document.getElementById('wordle_input').addEventListener('keydown', e => {
+				if (e.key === 'Enter')
+					this.submit();
+			});
+			this.initialized = true;
+		}
 		this.reset();
 	},
 	/** @returns {string} */

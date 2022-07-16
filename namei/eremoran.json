@@ -69,7 +69,6 @@
 		"defList": [
 			"wheel"
 		],
-		"notes": "abu is one of a handful of nouns ending in -u."
 	},
 	{
 		"title": "abubz",
@@ -78,7 +77,6 @@
 		"defList": [
 			"turn"
 		],
-		"notes": "abu is one of a handful of nouns ending in -u."
 	},
 	{
 		"title": "abusu",
@@ -162,7 +160,7 @@
 			"(transitive) understand",
 			"(transitive) learn"
 		],
-		"notes": "In addition, <em>bakaz</em> is telic and dynamic, while <em>afêkz</em> is atelic and stative."
+		"notes": "Unlike English, this is not used with subordinate clauses, including reporting knowledge of experiences - evidentials are used for that instead. In addition, <em>bakaz</em> is telic and dynamic, while <em>afêkz</em> is atelic and stative."
 	},
 	{
 		"title": "afês",
@@ -518,7 +516,7 @@
 			"(intransitive) understand",
 			"(transitive) teach"
 		],
-		"notes": "In addition, <em>bakaz</em> is telic and dynamic, while <em>afêkz</em> is atelic and stative."
+		"notes": "Unlike English, this is not used with subordinate clauses, including reporting knowledge of experiences - evidentials are used for that instead. cf. <em>bakaz</em>, a similar meaning with opposite transitivity. In addition, <em>bakaz</em> is telic and dynamic, while <em>afêkz</em> is atelic and stative."
 	},
 	{
 		"title": "baliz",
@@ -1975,7 +1973,7 @@
 			"(hoki/ho +) the other individual, the other thing recently mentioned: (cf. obviative pronoun) <ul> <li>  <i>Mor i lulz ku, <b>hor id</b> i libaz.</i><br>  person TOP laugh and, \"the other person\" TOP cry<br>  The person laughed, and then <b>they [another person]</b> cried. </li> </ul> ",
 			"(+ plural det) considering each member of the determiner equally, eg. <em>id hans</em> = \"every\" specifically rather than all. (Distributive pronoun/determiner) "
 		],
-		"notes": "the choice of <em>hoki</em> vs. <em>ho</em> with the obviative mostly has to do with whether the person is close in relation or proximity to the listener"
+		"notes": "See <em>be</em> for an or linking clauses. cf. <em>nanau</em>, inclusive or and \"quelque\" some. The choice of <em>hoki</em> vs. <em>ho</em> with the obviative mostly has to do with whether the person is close in relation or proximity to the listener"
 	},
 	{
 		"title": "idisu",
@@ -2554,7 +2552,7 @@
 			"with (comitative)",
 			"(<i>math</i>) times, by"
 		],
-		"notes": "see <i>hans</i> for an and linking nominals"
+		"notes": "See <em>bo</em> for the instrumental. See <em>hans</em> for an and linking nominals."
 	},
 	{
 		"title": "kuafkaz",
@@ -3264,7 +3262,7 @@
 			"or (inclusive)* <ul> <li>  <i>Roraok su lusik su <b>dir nanau</b> kopdoz.</i><br>  cat GEN dog GEN ABS or love.DIM<br>  I like <b>either</b> cats <b>or</b> dogs. </li> </ul> ",
 			"(archaic) whatever; whoever"
 		],
-		"notes": "cf. <i>id</i>"
+		"notes": "See <em>be</em> for the verbal conjunction. cf. <em>id</em>."
 	},
 	{
 		"title": "nasanu",
