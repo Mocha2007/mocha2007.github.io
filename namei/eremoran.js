@@ -544,3 +544,5 @@ const wordle = {
 		return /[abdehiklmnoprstuzêô]{5}/.test(guess);
 	},
 };
+
+// todo: function to create histogram of all words in .eremoran elements
