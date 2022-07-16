@@ -28,6 +28,7 @@ function printDict(){
 		entryDiv.id = `lemma-${obj.title}`;
 		// entry title
 		const dt = document.createElement('dt');
+		dt.classList.add('lemmaTitle');
 		// hotlink to entry
 		/** @type {HTMLAnchorElement} */
 		const anchor = document.createElement('a');
@@ -44,6 +45,7 @@ function printDict(){
 		// img
 		if (obj.img){
 			const imgdd = document.createElement('dd');
+			imgdd.classList.add('lemmaImage');
 			const img = document.createElement('img');
 			img.src = obj.img;
 			img.width = 64;
@@ -52,14 +54,17 @@ function printDict(){
 		}
 		// etym
 		const etymElement = document.createElement('dd');
+		etymElement.classList.add('lemmaEtym');
 		etymElement.innerHTML = 'Etymology: ' + obj.etym;
 		entryDiv.appendChild(etymElement);
 		// type, eg. noun, verb, ...
 		const typeelement = document.createElement('dd');
+		typeelement.classList.add('lemmaType');
 		typeelement.innerHTML = obj.cat;
 		entryDiv.appendChild(typeelement);
 		// def(s)
 		const entryelement = document.createElement('dd');
+		entryelement.classList.add('lemmaDefs');
 		const deflist = document.createElement('ol');
 		entryelement.appendChild(deflist);
 		entryDiv.appendChild(entryelement);
@@ -77,6 +82,7 @@ function printDict(){
 		// notes
 		if (obj.notes){
 			const noteElement = document.createElement('dd');
+			noteElement.classList.add('lemmaNotes');
 			noteElement.innerHTML = obj.notes;
 			entryDiv.appendChild(noteElement);
 		}
