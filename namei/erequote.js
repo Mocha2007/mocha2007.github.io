@@ -43,6 +43,7 @@ function newQuote(){
 	const [ere, eng, auth] = random.choice(quotes);
 	const qEre = document.createElement('q');
 	qEre.classList.add('eremoran');
+	qEre.lang = 'Eremoran';
 	qEre.innerHTML = ere;
 	EremoranTooltip.setupWord(qEre);
 	elem.appendChild(qEre);
@@ -65,7 +66,7 @@ function nextQuote(){
 	// fade current quote out
 	range(0, ereQuoteFadeT, 100).forEach(i => {
 		setTimeout(() => {
-			elem.style.opacity = 1 - i/ereQuoteFadeT;
+			elem.style.opacity = 0.9 - i/ereQuoteFadeT;
 		}, i);
 	});
 	// swap quote
@@ -76,7 +77,7 @@ function nextQuote(){
 	// fade next quote in
 	range(ereQuoteFadeT, 2*ereQuoteFadeT, 100).forEach(i => {
 		setTimeout(() => {
-			elem.style.opacity = (i - ereQuoteFadeT)/ereQuoteFadeT;
+			elem.style.opacity = (i - ereQuoteFadeT)/ereQuoteFadeT + 0.1;
 		}, i);
 	});
 }
