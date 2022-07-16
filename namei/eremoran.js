@@ -1,7 +1,7 @@
 /* exported adjTool, compileDict, compileFinals, compileInitials, compileLength,
 	compileMeanings, compileMedials, compileNounClass, EremoranTooltip,
 	computeStats, numberTool, autoUp, wordle */
-/* global commaNumber, random, range, round, union */
+/* global commaNumber, random, round, union */
 
 'use strict';
 
