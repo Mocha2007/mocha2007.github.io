@@ -7,7 +7,7 @@
 const reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
 /** @param {string} name */
 function getDict(name){
-	reader.open('get', `${name}.json`, true);
+	reader.open('get', `https://mocha2007.github.io/namei/${name}.json`, true);
 	reader.onreadystatechange = printDict; // generates dict
 	reader.send(null);
 }

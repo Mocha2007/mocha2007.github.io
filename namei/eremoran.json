@@ -882,7 +882,7 @@
 		"etym": "<em>bo</em> 'with' + Proto-Eremo-Numoran *kusam 'many'",
 		"cat": "n., 5th",
 		"defList": [
-			"a large quantity, many\n		 <ul>\n			<li class=\"eremoran\"><ruby class=\"eremoranWord\">mor<rt>MOR</rt></ruby><span> </span><ruby class=\"eremoranWord\">i<rt>I</rt></ruby><span> </span><ruby class=\"eremoranWord\">bokusam<rt>BOKUSAM</rt></ruby></li>\n			<li>There are many people.</li>\n		 </ul>\n		"
+			"a large quantity, many <ul> <li class=\"eremoran\"><ruby class=\"eremoranWord\">mor<rt>MOR</rt></ruby><span> </span><ruby class=\"eremoranWord\">i<rt>I</rt></ruby><span> </span><ruby class=\"eremoranWord\">bokusam<rt>BOKUSAM</rt></ruby></li> <li>There are many people.</li> </ul> "
 		],
 		"notes": "cf. <em>udou</em>, the adjective form, and <em>pukusam</em>, the opposite form"
 	},
@@ -1672,7 +1672,7 @@
 		"cat": "pron., adj.",
 		"defList": [
 			"all, every",
-			"and*\n		 <ul>\n			<li>\n			 <i>Roraok su lusik su <b>dir hans</b> kopdoz.</i><br>\n			 cat GEN dog GEN ABS all love-DIM<br>\n			 I like <b>both</b> cats <b>and</b> dogs.\n			</li>\n		 </ul>\n		"
+			"and* <ul> <li>  <i>Roraok su lusik su <b>dir hans</b> kopdoz.</i><br>  cat GEN dog GEN ABS all love-DIM<br>  I like <b>both</b> cats <b>and</b> dogs. </li> </ul> "
 		],
 		"notes": "there also exist the rare conjunctions <em>unau</em> 'nor', <em>ufans</em> 'nand', and <em>unanau</em> 'xnor', generally only used in formal writing"
 	},
@@ -1693,7 +1693,7 @@
 			"hold, grasp, grip",
 			"(+ ad) ready, prepared",
 			"(+ din) unready, unprepared, extemporaneous",
-			"(noun + su +) [used to indicate an outcome effected with the hands]; by hand, ahold\n		 <ul>\n			<li>\n			 <i>Sazam i afêst su <b>dir hanum</b> zestisudôz ômôrz.</i><br>\n			 awe TOP shortsword GEN ABS hold bent-CAUS EXP.PL<br>\n			 We were amazed to see him bend the shortsword <b>by hand</b>.\n			</li>\n		 </ul>\n		"
+			"(noun + su +) [used to indicate an outcome effected with the hands]; by hand, ahold <ul> <li>  <i>Sazam i afêst su <b>dir hanum</b> zestisudôz ômôrz.</i><br>  awe TOP shortsword GEN ABS hold bent-CAUS EXP.PL<br>  We were amazed to see him bend the shortsword <b>by hand</b>. </li> </ul> "
 		]
 	},
 	{
@@ -1970,12 +1970,12 @@
 		"defList": [
 			"one",
 			"some (fr. <i>certain</i>)",
-			"or (exclusive)*\n		 <ul>\n			<li>\n			 <i>Roraok su lusik su <b>dir id</b> kopdoz.</i><br>\n			 cat GEN dog GEN ABS or love.DIM<br>\n			 I like <b>either</b> cats <b>or</b> dogs.\n			</li>\n		 </ul>\n		",
-			"(ko +) the same individual, the thing just mentioned: (cf. \"se\" in Latin, proximate pronoun)\n		 <ul>\n			<li>\n			 <i>Mor i lulz ku, <b>kor id</b> i libaz.</i><br>\n			 person TOP laugh and, \"the same person\" TOP cry<br>\n			 The person laughed, and then <b>they [same person]</b> cried.\n			</li>\n		 </ul>\n		",
-			"(hoki/ho +) the other individual, the other thing recently mentioned: (cf. obviative pronoun)\n		 <ul>\n			<li>\n			 <i>Mor i lulz ku, <b>hor id</b> i libaz.</i><br>\n			 person TOP laugh and, \"the other person\" TOP cry<br>\n			 The person laughed, and then <b>they [another person]</b> cried.\n			</li>\n		 </ul>\n		",
-			"(+ plural det) considering each member of the determiner equally,\n		 eg. <em>id hans</em> = \"every\" specifically rather than all.\n		 (Distributive pronoun/determiner)\n		"
+			"or (exclusive)* <ul> <li>  <i>Roraok su lusik su <b>dir id</b> kopdoz.</i><br>  cat GEN dog GEN ABS or love.DIM<br>  I like <b>either</b> cats <b>or</b> dogs. </li> </ul> ",
+			"(ko +) the same individual, the thing just mentioned: (cf. \"se\" in Latin, proximate pronoun) <ul> <li>  <i>Mor i lulz ku, <b>kor id</b> i libaz.</i><br>  person TOP laugh and, \"the same person\" TOP cry<br>  The person laughed, and then <b>they [same person]</b> cried. </li> </ul> ",
+			"(hoki/ho +) the other individual, the other thing recently mentioned: (cf. obviative pronoun) <ul> <li>  <i>Mor i lulz ku, <b>hor id</b> i libaz.</i><br>  person TOP laugh and, \"the other person\" TOP cry<br>  The person laughed, and then <b>they [another person]</b> cried. </li> </ul> ",
+			"(+ plural det) considering each member of the determiner equally, eg. <em>id hans</em> = \"every\" specifically rather than all. (Distributive pronoun/determiner) "
 		],
-		"notes": "the choice of <em>hoki</em> vs. <em>ho</em> with the obviative mostly has to do with\n	 whether the person is close in relation or proximity to the listener"
+		"notes": "the choice of <em>hoki</em> vs. <em>ho</em> with the obviative mostly has to do with whether the person is close in relation or proximity to the listener"
 	},
 	{
 		"title": "idisu",
@@ -3261,7 +3261,7 @@
 		"defList": [
 			"some (fr. <i>quelque</i>)",
 			"something",
-			"or (inclusive)*\n		 <ul>\n			<li>\n			 <i>Roraok su lusik su <b>dir nanau</b> kopdoz.</i><br>\n			 cat GEN dog GEN ABS or love.DIM<br>\n			 I like <b>either</b> cats <b>or</b> dogs.\n			</li>\n		 </ul>\n		",
+			"or (inclusive)* <ul> <li>  <i>Roraok su lusik su <b>dir nanau</b> kopdoz.</i><br>  cat GEN dog GEN ABS or love.DIM<br>  I like <b>either</b> cats <b>or</b> dogs. </li> </ul> ",
 			"(archaic) whatever; whoever"
 		],
 		"notes": "cf. <i>id</i>"
@@ -3298,7 +3298,7 @@
 		"cat": "adj.",
 		"defList": [
 			"two",
-			"(+ plural det) considering each member of the determiner in pairs,\n		 eg. <em>nasu hans</em> = \"every pair\" specifically rather than all.\n		 (Distributive pronoun/determiner)\n		"
+			"(+ plural det) considering each member of the determiner in pairs, eg. <em>nasu hans</em> = \"every pair\" specifically rather than all. (Distributive pronoun/determiner) "
 		],
 		"notes": "While possible with greater numerals, it is rather rare."
 	},
@@ -3731,7 +3731,7 @@
 		"etym": "<em>pu-</em> 'not' + Proto-Eremo-Numoran *kusam 'many'",
 		"cat": "n., 5th",
 		"defList": [
-			"a small quantity, few\n		 <ul>\n			<li class=\"eremoran\"><ruby class=\"eremoranWord\">mor<rt>MOR</rt></ruby><span> </span><ruby class=\"eremoranWord\">i<rt>I</rt></ruby><span> </span><ruby class=\"eremoranWord\">pukusam<rt>PUKUSAM</rt></ruby></li>\n			<li>There are few people.</li>\n		 </ul>\n		"
+			"a small quantity, few <ul> <li class=\"eremoran\"><ruby class=\"eremoranWord\">mor<rt>MOR</rt></ruby><span> </span><ruby class=\"eremoranWord\">i<rt>I</rt></ruby><span> </span><ruby class=\"eremoranWord\">pukusam<rt>PUKUSAM</rt></ruby></li> <li>There are few people.</li> </ul> "
 		],
 		"notes": "cf. <em>dou</em>, the adjective form, and <em>bokusam</em>, the opposite form"
 	},
@@ -3820,7 +3820,7 @@
 	},
 	{
 		"title": "razbakum",
-		"etym": "from Pre-Eremoran <em>resepakup</em>,\n	 evidently loaned from <a href=\"vazcud.html#lemma-zesepakubu\">Važcud</a>\n	 zesepakubu \"tilelaying\", from zese \"tile\" + paku \"lay; lie\".\n	 Present form influenced by <em>raz</em> 'paint'.",
+		"etym": "from Pre-Eremoran <em>resepakup</em>, evidently loaned from <a href=\"vazcud.html#lemma-zesepakubu\">Važcud</a> zesepakubu \"tilelaying\", from zese \"tile\" + paku \"lay; lie\". Present form influenced by <em>raz</em> 'paint'.",
 		"cat": "n., 5th",
 		"defList": [
 			"pattern"
@@ -4099,7 +4099,7 @@
 		"etym": "Proto-Eremo-Numoran *ʃets '~planet'",
 		"cat": "n., 4th",
 		"defList": [
-			"substellar object orbiting a star\n		 <ol>\n			<li>(by extension) planet</li>\n			<li>(by extension) minor planet</li>\n			<li>(by extension) comet</li>\n		 </ol>\n		"
+			"substellar object orbiting a star <ol> <li>(by extension) planet</li> <li>(by extension) minor planet</li> <li>(by extension) comet</li> </ol> "
 		]
 	},
 	{
@@ -4811,7 +4811,7 @@
 			"big, great, large",
 			"many, much",
 			"more (incl. comparative)",
-			"(with <i>id</i>) (the) most (incl. superlative)\n		 <ul>\n			<li>\n			 <i>Roraok i id -udou kopdoz.</i><br>\n			 cat TOP most like<br>\n			 I like cats the most.\n			</li>\n		 </ul>\n		",
+			"(with <i>id</i>) (the) most (incl. superlative) <ul> <li>  <i>Roraok i id -udou kopdoz.</i><br>  cat TOP most like<br>  I like cats the most. </li> </ul> ",
 			"[optional plurality marker]"
 		],
 		"notes": "cf. <em>bokusam</em>, the noun form"
