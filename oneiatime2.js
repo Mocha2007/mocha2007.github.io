@@ -254,8 +254,9 @@ function holidayCSS(){
 			(Date.now() - new Date(2022, 5, 1))/constants.earth.year
 		));
 		// pinkeningFactor = 1; // debug
-		document.getElementById('top').style.filter
-			= `hue-rotate(${120*pinkeningFactor}deg) brightness(${100 + 25*pinkeningFactor}%)`;
+		var p1 = 120*pinkeningFactor;
+		var p2 = 100 + 25*pinkeningFactor;
+		document.getElementById('top').style.filter = 'hue-rotate(' + p1 + 'deg) brightness(' + p2 + '%)';
 	}
 
 	if (day === 11*month-17 && day === month*month + 3*month - 1)
