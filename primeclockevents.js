@@ -642,25 +642,34 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[diff(1242532800), '<a href="https://en.wikipedia.org/wiki/Minecraft">Minecraft Classic</a> Released'],
 	// 2010
 	[diff(1263333180), '<a href="https://en.wikipedia.org/wiki/2010_Haiti_earthquake">2010 Haiti Earthquake</a>'],
+	// 2011
 	[diff(1305172800), '<a href="https://en.wikipedia.org/wiki/Death_of_Osama_bin_Laden">Death of Osama bin Laden</a>'],
 	[diff(1307332800), '<a href="https://en.wikipedia.org/wiki/Twitch.tv">Twitch</a> Launched'],
 	[diff(1316217600), '<a href="https://en.wikipedia.org/wiki/Occupy_Wall_Street">Occupy Wall Street</a>'],
+	// 2012
 	[diff(1328486400), 'The <a href="https://en.wikipedia.org/wiki/Diamond_Jubilee_of_Elizabeth_II">Diamond Jubilee of Elizabeth II</a>'],
 	[diff(1338934140), '<a href="https://en.wikipedia.org/wiki/2012_transit_of_Venus">2012 Transit of Venus</a>'],
 	[diff(1355443200), 'The <a href="https://en.wikipedia.org/wiki/Sandy_Hook_Elementary_School_shooting">Sandy Hook School Shooting</a>'],
+	// 2013
 	[diff(1359003600), '<a href="https://en.wikipedia.org/wiki/Vine_(service)">Vine</a> Launched'],
 	[diff(1360898400), 'The <a href="https://en.wikipedia.org/wiki/Chelyabinsk_meteor">Chelyabinsk Meteor</a>'],
 	[diff(1365878940), 'The <a href="https://en.wikipedia.org/wiki/Boston_Marathon_bombing">Boston Marathon Bombing</a>'],
+	// 2014
 	[diff(1394236800), 'Flight <a href="https://en.wikipedia.org/wiki/Malaysia_Airlines_Flight_370">MH370</a> goes missing'],
+	// 2015
 	[diff(1425600000), 'NASA\'s <a href="https://en.wikipedia.org/wiki/Dawn_(spacecraft)">Dawn</a> spacecraft enters orbits of Ceres'],
+	// 2016
 	[diff(1478667600), 'Donald Trump <a href="https://en.wikipedia.org/wiki/2016_United_States_presidential_election">elected</a> president of the US in upset election'], // roughly when it became certain; 00:00 EST 9 NOV 2016
+	// 2017
 	[diff(1494907200), '<a href="https://mocha2007.github.io">Mocha\'s Site</a> Launched'],
 	[diff(1503705600), '<a href="https://en.wikipedia.org/wiki/Hurricane_Harvey">Hurricane Harvey</a> makes landfall in Texas'],
 	[diff(1506920400), 'The <a href="https://en.wikipedia.org/wiki/2017_Las_Vegas_shooting">2017 Las Vegas Shooting</a>, the deadliest mass shooting committed by a single person in American history'],
 	[diff(1508371200), '<abbr title="The first known insterstellar object to enter the solar system"><a href="https://en.wikipedia.org/wiki/ʻOumuamua">ʻOumuamua</a></abbr> discovered'],
+	// 2018
 	[diff(1519992000), 'The <a href="https://en.wikipedia.org/wiki/Austin_serial_bombings">Austin Serial Bombings</a>'],
 	[diff(1522687500), 'PrimeClock <a href="https://github.com/Mocha2007/mocha2007.github.io/commit/0f4ac911c48e82779748c4629b57ec72503ba45d">launched</a>'],
 	[diff(1539192600), '<a href="https://en.wikipedia.org/wiki/Hurricane_Michael">Hurricane Michael</a> makes landfall in Florida'],
+	// 2019
 	[diff(1554854400), 'First <a href="https://en.wikipedia.org/wiki/Event_Horizon_Telescope">direct image of a black hole</a>'],
 	[diff(1567123200), '<abbr title="The second known insterstellar object to enter the solar system"><a href="https://en.wikipedia.org/wiki/2I/Borisov">2I/Borisov</a></abbr> discovered'],
 	[diff(1567773300), '<a href="https://en.wikipedia.org/wiki/Hurricane_Dorian">Hurricane Dorian</a> makes landfall in North Carolina'],
