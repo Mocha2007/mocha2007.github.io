@@ -1,5 +1,5 @@
 /* exported getDict */
-/* global EremoranTooltip */
+/* global elements, EremoranTooltip */
 'use strict';
 
 // eslint-disable-next-line no-undef
@@ -20,6 +20,7 @@ function printDict(){
 	/** @type {[]} */
 	const dictionary = JSON.parse(reader.responseText);
 	// console.debug(dictionary);
+	elements.dict = dictionary.map(o => o.title);
 	dictionary.forEach(obj => {
 		// const [index, type, defs] = line.split('=');
 		// entry div - for organization!

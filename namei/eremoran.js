@@ -11,10 +11,8 @@ const elements = {
 	get d(){
 		return document.getElementsByClassName('dictionary')[0];
 	},
-	/** @returns {string[]} - array of words*/
-	get dict(){
-		return new Array(...this.d.getElementsByTagName('dt')).map(e => e.innerHTML);
-	},
+	/** @type {string[]} - array of words*/
+	dict: [],
 	/** @returns {HTMLParagraphElement} - the element with the buttons*/
 	get p(){
 		return document.getElementById('wordlist');
