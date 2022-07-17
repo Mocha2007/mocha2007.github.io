@@ -103,7 +103,7 @@ function oneiaTime(){
 	var remainder = Date.now()-constants.oneia.epoch;
 	var years = constants.oneia.atEpoch+Math.floor(remainder/constants.oneia.year);
 	remainder %= constants.oneia.year;
-	var days = Math.floor(remainder/constants.oneia.day);
+	var days = Math.floor(remainder/constants.oneia.day) + 1;
 	remainder %= constants.oneia.day;
 	var currentTimeString = years + ' AT, Day ' + days + ', ';
 
