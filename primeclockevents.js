@@ -653,7 +653,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[diff(1365878940), 'The <a href="https://en.wikipedia.org/wiki/Boston_Marathon_bombing">Boston Marathon Bombing</a>'],
 	[diff(1394236800), 'Flight <a href="https://en.wikipedia.org/wiki/Malaysia_Airlines_Flight_370">MH370</a> goes missing'],
 	[diff(1425600000), 'NASA\'s <a href="https://en.wikipedia.org/wiki/Dawn_(spacecraft)">Dawn</a> spacecraft enters orbits of Ceres'],
-	[diff(1478667600), 'Donald Trump <a href="https://en.wikipedia.org/wiki/2016_United_States_presidential_election">elected</a> president of the US'], // roughly when it became certain; 00:00 EST 9 NOV 2016
+	[diff(1478667600), 'Donald Trump <a href="https://en.wikipedia.org/wiki/2016_United_States_presidential_election">elected</a> president of the US in upset election'], // roughly when it became certain; 00:00 EST 9 NOV 2016
 	[diff(1494907200), '<a href="https://mocha2007.github.io">Mocha\'s Site</a> Launched'],
 	[diff(1503705600), '<a href="https://en.wikipedia.org/wiki/Hurricane_Harvey">Hurricane Harvey</a> makes landfall in Texas'],
 	[diff(1506920400), 'The <a href="https://en.wikipedia.org/wiki/2017_Las_Vegas_shooting">2017 Las Vegas Shooting</a>, the deadliest mass shooting committed by a single person in American history'],
@@ -671,6 +671,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[diff(1590458400), 'The <a href="https://en.wikipedia.org/wiki/Killing_of_George_Floyd">Murder of George Floyd</a> spawns <a href="https://en.wikipedia.org/wiki/George_Floyd_protests">subsequent riots and protests</a>'], // as controversial as this is, it thankfully won't show until next year anwyays
 	[diff(1596553698), 'The <a href="https://en.wikipedia.org/wiki/2020_Beirut_explosion">Beirut Explosion</a>'],
 	// 2021
+	[diff(1609955580), 'The <a href="https://en.wikipedia.org/wiki/2021_United_States_Capitol_attack">US Capitol Attack</a>'],
 	[diff(1616478000), 'The Ever Given <a href="https://en.wikipedia.org/wiki/2021_Suez_Canal_obstruction">obstructs the Suez canal</a> for nearly a week'],
 	[diff(1626786660), '<a href="https://en.wikipedia.org/wiki/Blue_Origin_NS-16">Blue Origin NS-16</a> launches'],
 	[diff(1628985600), 'The <a href="https://en.wikipedia.org/wiki/Fall_of_Kabul_(2021)">Fall of Kabul</a>'],
