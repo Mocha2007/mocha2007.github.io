@@ -1579,17 +1579,8 @@
 		]
 	},
 	{
-		"title": "habbu",
-		"etym": "Proto-Eremo-Numoran *ɸabɸu 'fingernail'. Related to <i>habin</i> 'finger'.",
-		"cat": "n., 4th",
-		"defList": [
-			"fingernail",
-			"toenail"
-		]
-	},
-	{
 		"title": "habin",
-		"etym": "Proto-Eremo-Numoran *ɸabin 'finger'. Related to <i>habbu</i> 'fingernail'.",
+		"etym": "Proto-Eremo-Numoran *ɸabin 'finger'. Related to <i>habu</i> 'fingernail'.",
 		"cat": "n., 4th",
 		"defList": [
 			"finger",
@@ -1602,6 +1593,15 @@
 		"cat": "v.",
 		"defList": [
 			"live (vivere, non habitare, quid est <em>~ dô momtantan</em>)"
+		]
+	},
+	{
+		"title": "habu",
+		"etym": "Proto-Eremo-Numoran *ɸabɸu 'fingernail'. Related to <i>habin</i> 'finger'.",
+		"cat": "n., 4th",
+		"defList": [
+			"fingernail",
+			"toenail"
 		]
 	},
 	{
