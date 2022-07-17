@@ -675,11 +675,12 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[diff(1626786660), '<a href="https://en.wikipedia.org/wiki/Blue_Origin_NS-16">Blue Origin NS-16</a> launches'],
 	[diff(1628985600), 'The <a href="https://en.wikipedia.org/wiki/Fall_of_Kabul_(2021)">Fall of Kabul</a>'],
 	// 2022
-	[diff(1645675200), 'The <a href="https://en.wikipedia.org/wiki/2022_Russian_invasion_of_Ukraine">Russia invades Ukraine</a>'] // appx.
+	[diff(1645668000), 'The <a href="https://en.wikipedia.org/wiki/2022_Russian_invasion_of_Ukraine">Russia invades Ukraine</a>'],
+	[diff(1657247400), 'The <a href="https://en.wikipedia.org/wiki/Assassination_of_Shinzo_Abe">Assassination of Shinzo Abe</a>']
 // 2020
 // https://en.wikipedia.org/wiki/Timelines_of_world_history
 // https://www.epochconverter.com/
-// years with events included: 1985, 1987-2019
+// years with events included: 1985, 1987-2022
 // enableDebug();
 ];
 /*
