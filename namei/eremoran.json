@@ -1729,6 +1729,14 @@
 		"notes": "See <em>zurkrôz</em>"
 	},
 	{
+		"title": "hema",
+		"etym": "Proto-Eremo-Numoran *ɸema 'rose'",
+		"cat": "n., 4th",
+		"defList": [
+			"rose"
+		]
+	},
+	{
 		"title": "henlôm",
 		"etym": "Proto-Eremo-Numoran *senlôm 'health'",
 		"cat": "n., 5th",
@@ -2947,6 +2955,14 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"storage, store, stockpile"
+		]
+	},
+	{
+		"title": "mask",
+		"etym": "Proto-Eremo-Numoran *mas-x 'bull'",
+		"cat": "n., 2nd",
+		"defList": [
+			"bull (male cow)"
 		]
 	},
 	{
@@ -4673,6 +4689,23 @@
 		"defList": [
 			"swell"
 		]
+	},
+	{
+		"title": "tranz",
+		"etym": "Proto-Eremo-Numoran *trans 'hide'",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) hide"
+		]
+	},
+	{
+		"title": "tranzu",
+		"etym": "tranz 'hide (transitive)' + -u (adjectivalizer)",
+		"cat": "v.",
+		"defList": [
+			"hidden, secret, private"
+		],
+		"notes": "Irregular. Expected form *tranu unattested."
 	},
 	{
 		"title": "triksu",

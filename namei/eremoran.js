@@ -343,13 +343,13 @@ function namegen(){
 }
 // todo: bold? army? fame? fortress bear gift
 namegen.vowels = 'aeiouêô';
-namegen.either = ['afês', 'ardo', 'badm', 'bi', 'hisk', 'kafl', 'ko', 'lib',
-	'lusi', 'mar', 'tem', 'uris'];
+namegen.either = ['afês', 'ardo', 'badm', 'bi', 'kafl', 'ko', 'lib',
+	'lusi', 'mar', 'mas', 'tem', 'uris'];
 namegen.first = union(namegen.either,
-	['bêt', 'dare', 'end', 'ere', 'ku', 'lak', 'maram', 'saz', 'si']
+	['bêt', 'dare', 'end', 'ere', 'hem', 'hisk', 'ku', 'lak', 'maram', 'saz', 'si', 'tranz']
 );
 namegen.last = union(namegen.either,
-	['bazê', 'ke', 'kiki', 'labni', 'len', 'mo', 'subi']
+	['bazê', 'fem', 'fisk', 'ke', 'kiki', 'labni', 'len', 'mo', 'subi']
 );
 namegen.endsWithVowel = s => namegen.vowels.includes(s[s.length-1]);
 namegen.startsWithVowel = s => namegen.vowels.includes(s[0]);
