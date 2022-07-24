@@ -433,6 +433,14 @@
 		]
 	},
 	{
+		"title": "arm",
+		"etym": "Nominalization of arz 'stand'",
+		"cat": "n., 5th",
+		"defList": [
+			"standing; status"
+		]
+	},
+	{
 		"title": "arz",
 		"etym": "Proto-Eremo-Numoran *ars 'stand'",
 		"cat": "v.",
