@@ -1,0 +1,18 @@
+html, body {
+	margin: 0;
+}
+#chart {
+	height: 100%;
+	width: 100%;
+}
+.bar {
+	fill: green;
+}
+.label {
+	fill: blue;
+	font: 25px monospace;
+}
+.value {
+	fill: red;
+	font: 15px monospace;
+}

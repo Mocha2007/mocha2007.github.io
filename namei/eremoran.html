@@ -11,6 +11,7 @@
 <link href=../print.css type="text/css" rel="stylesheet" media="print">
 <script src="../toc.js"></script>
 <script src="../common.js"></script><!-- for learning game -->
+<script src="../tools/chart.js"></script><!-- for dynamic charts -->
 <title>Eremoran Language</title>
 <div id="nav"></div>
 <div id="top">
@@ -447,14 +448,8 @@
 
 <h2 id="Phonology">Phonology</h2>
 
-<table role='presentation'>
-	<tr>
-		<td><img src="../img/eremoran_letter_frequency.png" width="600" alt='Eremoran Letter Frequency Chart'></td>
-	</tr>
-	<tr>
-		<td><div class="desc">Letter frequencies of Eremoran words.</div></td>
-	</tr>
-</table>
+<iframe id='chartLetter' width='700' height='350' scrolling='no' frameborder='0'></iframe>
+<div class="desc">Letter frequencies of Eremoran words.</div>
 
 
 <p>
@@ -3824,42 +3819,23 @@ Universals Violated:
 
 <h3 id="Charts">Charts</h3>
 
-<table role='presentation'>
-	<tr>
-		<td><img src="../img/eremoran_initial_frequency.png" width="600" alt='Eremoran Initial Frequency Chart'></td>
-	</tr>
-	<tr>
-		<td><div class="desc">Initial frequencies of Eremoran words.</div></td>
-	</tr>
-</table>
+<iframe id='chartInitial' width='700' height='350' scrolling='no' frameborder='0'></iframe>
+<div class="desc">Initial frequencies of Eremoran words.</div>
 
-<table role='presentation'>
-	<tr>
-		<td><img src="../img/eremoran_medial_frequency.png" width="600" alt='Eremoran Medial Frequency Chart'></td>
-	</tr>
-	<tr>
-		<td><div class="desc">Medial frequencies of Eremoran words.</div></td>
-	</tr>
-</table>
+<iframe id='chartMedial' width='700' height='350' scrolling='no' frameborder='0'></iframe>
+<div class="desc">Medial frequencies of Eremoran words.</div>
 
-<table role='presentation'>
-	<tr>
-		<td><img src="../img/eremoran_final_frequency.png" width="600" alt='Eremoran Final Frequency Chart'></td>
-	</tr>
-	<tr>
-		<td><div class="desc">Final frequencies of Eremoran words.</div></td>
-	</tr>
-</table>
+<iframe id='chartFinal' width='700' height='350' scrolling='no' frameborder='0'></iframe>
+<div class="desc">Final frequencies of Eremoran words.</div>
 
-<table role='presentation'>
-	<tr>
-		<td><img src="../img/eremoran_length_frequency.png" width="600" alt='Eremoran Length Histogram'></td>
-	</tr>
-	<tr>
-		<td><div class="desc">Histogram of Eremoran word length.<br>
-		cf. <a href="http://www.ravi.io/language-word-lengths">these histograms of other languages</a></div></td>
-	</tr>
-</table>
+<iframe id='chartLength' width='700' height='350' scrolling='no' frameborder='0'></iframe>
+<div class="desc">
+	Histogram of Eremoran word length.<br>
+	cf. <a href="http://www.ravi.io/language-word-lengths">these histograms of other languages</a>
+</div>
+
+<iframe id='chartMeaning' width='700' height='350' scrolling='no' frameborder='0'></iframe>
+<div class="desc">Frequencies of number of meanings per word in Eremoran.</div>
 
 <table role='presentation'>
 	<tr>
@@ -3867,15 +3843,6 @@ Universals Violated:
 	</tr>
 	<tr>
 		<td><div class="desc">Frequencies of noun classes in Eremoran.</div></td>
-	</tr>
-</table>
-
-<table role='presentation'>
-	<tr>
-		<td><img src="../img/eremoran_meanings.png" width="600" alt='Eremoran Meaning Count Frequency Chart'></td>
-	</tr>
-	<tr>
-		<td><div class="desc">Frequencies of number of meanings per word in Eremoran.</div></td>
 	</tr>
 </table>
 

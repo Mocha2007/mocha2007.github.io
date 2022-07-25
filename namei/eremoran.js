@@ -1,7 +1,7 @@
 /* exported adjTool, compileDict, compileFinals, compileInitials, compileLength,
 	compileMeanings, compileMedials, compileNounClass, EremoranTooltip,
 	computeStats, numberTool, autoUp, wordle */
-/* global commaNumber, random, round, union */
+/* global charHisto, commaNumber, histo, random, round, union */
 
 'use strict';
 
@@ -21,30 +21,36 @@ const elements = {
 
 // main
 function compileDict(){
-	elements.p.innerHTML = elements.dict.join(' ');
+	elements.p.innerHTML = compileDict.data();
 }
+compileDict.data = () => elements.dict.join(' ');
 
 function compileFinals(){
-	elements.p.innerHTML = elements.dict.map(w => w[w.length-1]).join('');
+	elements.p.innerHTML = compileFinals.data();
 }
+compileFinals.data = () => elements.dict.map(w => w[w.length-1]).join('');
 
 function compileInitials(){
-	elements.p.innerHTML = elements.dict.map(w => w[0]).join('');
+	elements.p.innerHTML = compileInitials.data();
 }
+compileInitials.data = () => elements.dict.map(w => w[0]).join('');
 
 function compileLength(){
-	elements.p.innerHTML = elements.dict.map(w => w.length).join(' ');
+	elements.p.innerHTML = compileLength.data().join(' ');
 }
+compileLength.data = () => elements.dict.map(w => w.length);
 
 function compileMeanings(){
-	elements.p.innerHTML = new Array(...elements.d.getElementsByTagName('dd'))
-		.filter(x => 0 < x.getElementsByTagName('ol').length)
-		.map(x => x.getElementsByTagName('ol')[0].children.length).join(' ');
+	elements.p.innerHTML = compileMeanings.data().join(' ');
 }
+compileMeanings.data = () => new Array(...elements.d.getElementsByTagName('dd'))
+	.filter(x => 0 < x.getElementsByTagName('ol').length)
+	.map(x => x.getElementsByTagName('ol')[0].children.length);
 
 function compileMedials(){
-	elements.p.innerHTML = elements.dict.map(w => w.slice(1, -1)).join('');
+	elements.p.innerHTML = compileMedials.data();
 }
+compileMedials.data = () => elements.dict.map(w => w.slice(1, -1)).join('').replace(/\s/g, '');
 
 function compileNounClass(){
 	elements.p.innerHTML = new Array(...elements.d.getElementsByTagName('dd'))
@@ -266,7 +272,15 @@ const EremoranTooltip = {
 };
 
 function computeStats(){
+	// print dict length
 	document.getElementById('wordcount').innerHTML = EremoranTooltip.words.length;
+	// new graphs
+	document.getElementById('chartLetter').src = `../tools/chart.html?data=${charHisto(compileDict.data().replace(/\s/g, ''))}`;
+	document.getElementById('chartInitial').src = `../tools/chart.html?data=${charHisto(compileInitials.data())}`;
+	document.getElementById('chartMedial').src = `../tools/chart.html?data=${charHisto(compileMedials.data())}`;
+	document.getElementById('chartFinal').src = `../tools/chart.html?data=${charHisto(compileFinals.data())}`;
+	document.getElementById('chartLength').src = `../tools/chart.html?data=${histo(compileLength.data())}`;
+	document.getElementById('chartMeaning').src = `../tools/chart.html?data=${histo(compileMeanings.data())}`;
 }
 
 /**
