@@ -132,19 +132,21 @@ function scatter(){
 		const point = createSvgElement('circle');
 		point.setAttribute('r', 1);
 		point.classList.add('point');
-		const labelElem = createSvgElement('text');
-		labelElem.innerHTML = `(${xy[0]}, ${xy[1]})`;
-		labelElem.classList.add('value');
 		// x-y coords
 		const [x, y] = [remap(xy[0], [xMin, xMax], [0, sizeX]),
 			remap(xy[1], [yMin, yMax], [sizeY, 0])];
-		labelElem.setAttribute('x', x + 5);
 		point.setAttribute('cx', x);
-		labelElem.setAttribute('y', y + 5);
 		point.setAttribute('cy', y);
 		// append to group
 		g.appendChild(point);
-		g.appendChild(labelElem);
+		if (data.labels){
+			const labelElem = createSvgElement('text');
+			labelElem.innerHTML = `(${xy[0]}, ${xy[1]})`;
+			labelElem.classList.add('value');
+			labelElem.setAttribute('x', x + 5);
+			labelElem.setAttribute('y', y + 5);
+			g.appendChild(labelElem);
+		}
 	});
 }
 
