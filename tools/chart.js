@@ -150,6 +150,15 @@ function scatter(){
 		}
 	});
 }
+/*
+{
+  type: 'scatter',
+  x,
+  y,
+  fill: 'red', // optional, default: black
+  radius: 1, // optional, default: 3
+}
+*/
 
 function toURL(data){
 	return btoa(JSON.stringify(data));
