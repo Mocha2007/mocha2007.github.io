@@ -156,6 +156,7 @@ function scatter(){
   x,
   y,
   fill: 'red', // optional, default: black
+  labels: true, // optional, default: false
   radius: 1, // optional, default: 3
 }
 */
