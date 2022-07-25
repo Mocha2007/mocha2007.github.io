@@ -275,7 +275,7 @@ function computeStats(){
 	// print dict length
 	document.getElementById('wordcount').innerHTML = EremoranTooltip.words.length;
 	// new graphs
-	const chartURL = 'https://mocha2007.github.io/tools/chart?data=';
+	const chartURL = 'https://mocha2007.github.io/tools/chart.svg?data=';
 	document.getElementById('chartLetter').src = chartURL + charHisto(compileDict.data().replace(/\s/g, ''));
 	document.getElementById('chartInitial').src = chartURL + charHisto(compileInitials.data());
 	document.getElementById('chartMedial').src = chartURL + charHisto(compileMedials.data());
