@@ -847,7 +847,7 @@
 		"etym": "Proto-Eremo-Numoran *biniom 'imagination'",
 		"cat": "n., 5th",
 		"defList": [
-			"(archaic, dialectal) imagination"
+			"(archaic, non-southern) imagination"
 		]
 	},
 	{
@@ -1207,7 +1207,7 @@
 			"(informal, <i>ardo i +</i>) ~ love*: Y ad Z din = Y loves Z",
 			"(verb +) just (recent past - cf. fr. <em>venir de</em>)"
 		],
-		"notes": "Note: * - There are many possible arrangements of this phrase. To emphasize the recipient, <i>ad</i> may even be replaced by <i>dir</i>. The most neutral phrasing is shown."
+		"notes": "Note: * - There are many possible arrangements of this phrase. To emphasize the recipient, <i>ad</i> may even be replaced by <i>dir</i>. The most neutral phrasing is shown. ZE dialects use this prepositionally for translative senses."
 	},
 	{
 		"title": "dinbamz",
@@ -1277,7 +1277,8 @@
 			"in, on",
 			"(<i>math</i>) over, divided by",
 			"(informal, verb +) (forms continuous aspect)"
-		]
+		],
+		"notes": "ZE dialects use this prepositionally for translative senses."
 	},
 	{
 		"title": "dôafkaz",
@@ -2012,7 +2013,7 @@
 		"etym": "Proto-Eremo-Numoran *ikatêr, from *ikat- ??? + -êr",
 		"cat": "n., 1st",
 		"defList": [
-			"(archaic, dialectal) girl (older form of elaôr)"
+			"(archaic, non-southern) girl (older form of elaôr)"
 		]
 	},
 	{
