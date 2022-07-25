@@ -468,6 +468,16 @@
 		]
 	},
 	{
+		"title": "astedu",
+		"etym": "Proto-Eremo-Numoran *astedu 'beautiful'",
+		"cat": "adj.",
+		"defList": [
+			"(southern, of a non-person) pretty, beautiful",
+			"(northern, of anything) pretty, beautiful"
+		],
+		"notes": "Cf. <span class='eremoran'>uzurkelau</span>."
+	},
+	{
 		"title": "asuz",
 		"etym": "Proto-Eremo-Numoran *asius 'freeze'",
 		"cat": "v.",
@@ -774,6 +784,22 @@
 		"defList": [
 			"(<i>of poisoned food</i>) eat",
 			"(<i>of alcoholic or poisoned beverages</i>) drink"
+		]
+	},
+	{
+		"title": "bidzam",
+		"etym": "Loan from Važcud <a href='vazcud.html#lemma-binž'>binž</a> 'small' with 5th class nominalization as *bidʒam",
+		"cat": "n., 5th",
+		"defList": [
+			"euphony, pretty/beautiful sound"
+		]
+	},
+	{
+		"title": "bidzau",
+		"etym": "Adjectivalization of <span class='eremoran'>bidzam</span> 'euphony'",
+		"cat": "adj.",
+		"defList": [
+			"euphonic, pretty/beautiful sound"
 		]
 	},
 	{
@@ -5062,7 +5088,7 @@
 		"etym": "diminutive of uzurku",
 		"cat": "adj.",
 		"defList": [
-			"pretty, beautiful",
+			"(southern, of a person) pretty, beautiful",
 			"thank you"
 		]
 	},
