@@ -275,12 +275,13 @@ function computeStats(){
 	// print dict length
 	document.getElementById('wordcount').innerHTML = EremoranTooltip.words.length;
 	// new graphs
-	document.getElementById('chartLetter').src = `../tools/chart.html?data=${charHisto(compileDict.data().replace(/\s/g, ''))}`;
-	document.getElementById('chartInitial').src = `../tools/chart.html?data=${charHisto(compileInitials.data())}`;
-	document.getElementById('chartMedial').src = `../tools/chart.html?data=${charHisto(compileMedials.data())}`;
-	document.getElementById('chartFinal').src = `../tools/chart.html?data=${charHisto(compileFinals.data())}`;
-	document.getElementById('chartLength').src = `../tools/chart.html?data=${histo(compileLength.data())}`;
-	document.getElementById('chartMeaning').src = `../tools/chart.html?data=${histo(compileMeanings.data())}`;
+	const chartURL = 'https://mocha2007.github.io/tools/chart?data=';
+	document.getElementById('chartLetter').src = chartURL + charHisto(compileDict.data().replace(/\s/g, ''));
+	document.getElementById('chartInitial').src = chartURL + charHisto(compileInitials.data());
+	document.getElementById('chartMedial').src = chartURL + charHisto(compileMedials.data());
+	document.getElementById('chartFinal').src = chartURL + charHisto(compileFinals.data());
+	document.getElementById('chartLength').src = chartURL + histo(compileLength.data());
+	document.getElementById('chartMeaning').src = chartURL + histo(compileMeanings.data());
 }
 
 /**
