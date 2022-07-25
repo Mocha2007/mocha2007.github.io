@@ -1,5 +1,5 @@
 /* exported charHisto, histo, main */
-/* global createSvgElement, remap */
+/* global createSvgElement, remap, round, sum */
 
 const sizeX = 700;
 const sizeY = 350;
@@ -15,11 +15,12 @@ function bar(){
 	const spacingRatio = 0.5;
 	const width = sizeX / (len + spacingRatio*(len-1));
 	const spacing = sizeX / len;
-	const maxY = Math.max(...data.y);
+	const divisor = data.percent ? sum(data.y) / 100 : 1;
+	const maxY = Math.max(...data.y) / divisor;
 	const yScale = sizeY / maxY * 0.85;
 
 	/** @type {[*, number][]} */
-	let xxyy = data.x.map((x, i) => [x, data.y[i]]);
+	let xxyy = data.x.map((x, i) => [x, round(data.y[i]/divisor, 1)]);
 	if (data.sort)
 		xxyy = xxyy.sort((a, b) => a[1] - b[1]);
 	else if (data.sortX)
@@ -41,13 +42,15 @@ function bar(){
 		labelElem.classList.add('label');
 		const valueElem = createSvgElement('text');
 		valueElem.innerHTML = y;
+		if (data.percent)
+			valueElem.innerHTML += '%';
 		valueElem.classList.add('value');
 		// x-y coords
 		const topY = sizeY - y*yScale;
-		labelElem.setAttribute('x', i*spacing);
-		valueElem.setAttribute('x', i*spacing);
+		labelElem.setAttribute('x', i*spacing + width/2);
+		valueElem.setAttribute('x', i*spacing + width/2);
 		barElem.setAttribute('x', i*spacing);
-		labelElem.setAttribute('y', topY - 30);
+		labelElem.setAttribute('y', topY - 20);
 		valueElem.setAttribute('y', topY - 5);
 		barElem.setAttribute('y', topY);
 		barElem.setAttribute('height', y*yScale);
@@ -63,6 +66,7 @@ function charHisto(s){
 	const x = Array.from(new Set(Array.from(s)));
 	const y = x.map(char => s.split(char).length - 1);
 	const data = {
+		percent: true,
 		reverse: true,
 		sort: true,
 		type: 'bar',
