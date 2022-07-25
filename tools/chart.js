@@ -1,5 +1,5 @@
 /* exported charHisto, histo, main */
-/* global createSvgElement */
+/* global createSvgElement, remap */
 
 const sizeX = 700;
 const sizeY = 350;
@@ -101,6 +101,9 @@ function main(){
 		case 'bar':
 			bar();
 			break;
+		case 'scatter':
+			scatter();
+			break;
 	}
 }
 main.testData = {
@@ -108,6 +111,42 @@ main.testData = {
 	x: ['a', 'b', 'c'],
 	y: [1, 2, 3],
 };
+
+/** generate scatter plot from URL data */
+function scatter(){
+	const data = getData();
+	/** @type {SVGElement} */
+	const chart = document.getElementById('chart');
+	chart.setAttribute('viewBox', `0 0 ${sizeX} ${sizeY}`);
+	const xMax = Math.max(...data.x);
+	const xMin = Math.min(...data.x);
+	const yMax = Math.max(...data.y);
+	const yMin = Math.min(...data.y);
+
+	/** @type {[number, number][]} */
+	const xxyy = data.x.map((x, i) => [x, data.y[i]]);
+
+	xxyy.forEach(xy => {
+		const g = createSvgElement('g');
+		chart.appendChild(g);
+		const point = createSvgElement('circle');
+		point.setAttribute('r', 1);
+		point.classList.add('point');
+		const labelElem = createSvgElement('text');
+		labelElem.innerHTML = `(${xy[0]}, ${xy[1]})`;
+		labelElem.classList.add('value');
+		// x-y coords
+		const [x, y] = [remap(xy[0], [xMin, xMax], [0, sizeX]),
+			remap(xy[1], [yMin, yMax], [sizeY, 0])];
+		labelElem.setAttribute('x', x + 5);
+		point.setAttribute('cx', x);
+		labelElem.setAttribute('y', y + 5);
+		point.setAttribute('cy', y);
+		// append to group
+		g.appendChild(point);
+		g.appendChild(labelElem);
+	});
+}
 
 function toURL(data){
 	return btoa(JSON.stringify(data));
