@@ -130,7 +130,8 @@ function scatter(){
 		const g = createSvgElement('g');
 		chart.appendChild(g);
 		const point = createSvgElement('circle');
-		point.setAttribute('r', 1);
+		point.setAttribute('r', data.radius || 3);
+		point.setAttribute('fill', data.fill || 'black');
 		point.classList.add('point');
 		// x-y coords
 		const [x, y] = [remap(xy[0], [xMin, xMax], [0, sizeX]),
