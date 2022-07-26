@@ -59,6 +59,15 @@ compileNounClass.data = () => new Array(...elements.d.getElementsByClassName('le
 	.filter(x => x.innerHTML.slice(0, 3) === 'n.,')
 	.map(x => x.innerHTML[4]);
 
+/** f -> h &c to match font */
+function normalizeEremoran(s){
+	return s
+		.replace(/f/g, 'h')
+		.replace(/á/g, 'a')
+		.replace(/é/g, 'e')
+		.replace(/ó/g, 'o');
+}
+
 // learn eremoran!
 
 const LE = {
@@ -235,11 +244,7 @@ const EremoranTooltip = {
 			const rt = document.createElement('rt'); // ruby top
 			rt.innerHTML = word.toUpperCase();
 			const fixedword = word.toLowerCase();
-			span.innerHTML = fixedword
-				.replace(/f/g, 'h')
-				.replace(/á/g, 'a')
-				.replace(/é/g, 'e')
-				.replace(/ó/g, 'o');
+			span.innerHTML = normalizeEremoran(fixedword);
 			span.classList.add('eremoranWord');
 			span.onmouseover = () => EremoranTooltip.showTooltip(fixedword, span);
 			span.onmouseout = () => EremoranTooltip.clearTooltip();
@@ -278,10 +283,12 @@ function computeStats(){
 	// new graphs
 	const chartURL = 'https://mocha2007.github.io/tools/chart.svg?data=';
 	// const chartURL = '../tools/chart.svg?data=';
-	document.getElementById('chartLetter').src = chartURL + charHisto(compileDict.data().replace(/\s/g, '').replace('h', 'f'));
-	document.getElementById('chartInitial').src = chartURL + charHisto(compileInitials.data());
-	document.getElementById('chartMedial').src = chartURL + charHisto(compileMedials.data());
-	document.getElementById('chartFinal').src = chartURL + charHisto(compileFinals.data());
+	document.getElementById('chartLetter').src = chartURL + charHisto(
+		normalizeEremoran(compileDict.data().replace(/\s/g, ''))
+	);
+	document.getElementById('chartInitial').src = chartURL + charHisto(normalizeEremoran(compileInitials.data()));
+	document.getElementById('chartMedial').src = chartURL + charHisto(normalizeEremoran(compileMedials.data()));
+	document.getElementById('chartFinal').src = chartURL + charHisto(normalizeEremoran(compileFinals.data()));
 	document.getElementById('chartLength').src = chartURL + histo(compileLength.data());
 	document.getElementById('chartMeaning').src = chartURL + histo(compileMeanings.data());
 	document.getElementById('chartClass').src = chartURL + histo(compileNounClass.data());
