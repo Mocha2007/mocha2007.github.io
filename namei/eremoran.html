@@ -3851,10 +3851,9 @@ Universals Violated:
 <script src="erequote.js"></script>
 <script src="dict2.js"></script>
 <script>
-	getDict('eremoran');
+	getDict('eremoran', computeStats); // needs to wait a second to download
 	EremoranTooltip.setup();
 	startEreQuote();
-	setTimeout(computeStats, 1000); // needs to wait a second to download
 </script>
 </html>
 <!--
