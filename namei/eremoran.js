@@ -56,7 +56,7 @@ function compileNounClass(){
 	elements.p.innerHTML = compileNounClass.data().join(' ');
 }
 compileNounClass.data = () => new Array(...elements.d.getElementsByClassName('lemmaType'))
-	.filter(x => x.innerHTML.slice(0, 3) === 'n.,')
+	.filter(x => x.innerHTML.slice(0, 3) === 'n.,' && x.innerHTML[4].match(/[1-5]/g))
 	.map(x => x.innerHTML[4]);
 
 // learn eremoran!
@@ -277,6 +277,7 @@ function computeStats(){
 	document.getElementById('wordcount').innerHTML = EremoranTooltip.words.length;
 	// new graphs
 	const chartURL = 'https://mocha2007.github.io/tools/chart.svg?data=';
+	// const chartURL = '../tools/chart.svg?data=';
 	document.getElementById('chartLetter').src = chartURL + charHisto(compileDict.data().replace(/\s/g, ''));
 	document.getElementById('chartInitial').src = chartURL + charHisto(compileInitials.data());
 	document.getElementById('chartMedial').src = chartURL + charHisto(compileMedials.data());
