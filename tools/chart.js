@@ -13,7 +13,7 @@ function bar(){
 	/** @type {number} */
 	const len = data.x.length;
 	const spacingRatio = 0.5;
-	const width = sizeX / (len + spacingRatio*(len-1));
+	const width = sizeX / (len + spacingRatio*(len+1));
 	const spacing = sizeX / len;
 	const divisor = data.percent ? sum(data.y) / 100 : 1;
 	const maxY = Math.max(...data.y) / divisor;
@@ -47,9 +47,10 @@ function bar(){
 		valueElem.classList.add('value');
 		// x-y coords
 		const topY = sizeY - y*yScale;
-		labelElem.setAttribute('x', i*spacing + width/2);
-		valueElem.setAttribute('x', i*spacing + width/2);
-		barElem.setAttribute('x', i*spacing);
+		const offsetX = i*spacing + (spacing - width);
+		labelElem.setAttribute('x', offsetX + width/2);
+		valueElem.setAttribute('x', offsetX + width/2);
+		barElem.setAttribute('x', offsetX);
 		labelElem.setAttribute('y', topY - 20);
 		valueElem.setAttribute('y', topY - 5);
 		barElem.setAttribute('y', topY);
