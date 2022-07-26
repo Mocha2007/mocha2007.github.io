@@ -56,7 +56,7 @@ function compileNounClass(){
 	elements.p.innerHTML = compileNounClass.data().join(' ');
 }
 compileNounClass.data = () => new Array(...elements.d.getElementsByClassName('lemmaType'))
-	.filter(x => x.innerHTML.slice(0, 3) === 'n.,' && x.innerHTML[4].match(/[1-5]/g))
+	.filter(x => x.innerHTML.slice(0, 3) === 'n.,')
 	.map(x => x.innerHTML[4]);
 
 // learn eremoran!

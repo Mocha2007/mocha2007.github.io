@@ -1702,7 +1702,7 @@
 	{
 		"title": "hans",
 		"etym": "Proto-Eremo-Numoran *ɸants 'all'",
-		"cat": "pron., adj.",
+		"cat": "pron., det.",
 		"defList": [
 			"all, every",
 			"and* <ul> <li>  <i>Roraok su lusik su <b>dir hans</b> kopdoz.</i><br>  cat GEN dog GEN ABS all love-DIM<br>  I like <b>both</b> cats <b>and</b> dogs. </li> </ul> "
@@ -1712,7 +1712,7 @@
 	{
 		"title": "hanu",
 		"etym": "Proto-Eremo-Numoran *ɸanu 'hand'",
-		"cat": "n.,adj.",
+		"cat": "n., 4th, adj.",
 		"defList": [
 			"hand",
 			"five"
@@ -3306,7 +3306,7 @@
 	{
 		"title": "nanau",
 		"etym": "Reduplicated from <i>nau</i>",
-		"cat": "pron., adj.",
+		"cat": "pron., det.",
 		"defList": [
 			"some (fr. <i>quelque</i>)",
 			"something",
