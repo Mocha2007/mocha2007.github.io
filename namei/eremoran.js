@@ -53,10 +53,11 @@ function compileMedials(){
 compileMedials.data = () => elements.dict.map(w => w.slice(1, -1)).join('').replace(/\s/g, '');
 
 function compileNounClass(){
-	elements.p.innerHTML = new Array(...elements.d.getElementsByTagName('dd'))
-		.filter(x => x.innerHTML.slice(0, 3) === 'n.,')
-		.map(x => x.innerHTML[4]).join(' ');
+	elements.p.innerHTML = compileNounClass.data().join(' ');
 }
+compileNounClass.data = () => new Array(...elements.d.getElementsByClassName('lemmaType'))
+	.filter(x => x.innerHTML.slice(0, 3) === 'n.,')
+	.map(x => x.innerHTML[4]);
 
 // learn eremoran!
 
@@ -282,6 +283,7 @@ function computeStats(){
 	document.getElementById('chartFinal').src = chartURL + charHisto(compileFinals.data());
 	document.getElementById('chartLength').src = chartURL + histo(compileLength.data());
 	document.getElementById('chartMeaning').src = chartURL + histo(compileMeanings.data());
+	document.getElementById('chartClass').src = chartURL + histo(compileNounClass.data());
 }
 
 /**
