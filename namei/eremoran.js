@@ -278,7 +278,7 @@ function computeStats(){
 	// new graphs
 	const chartURL = 'https://mocha2007.github.io/tools/chart.svg?data=';
 	// const chartURL = '../tools/chart.svg?data=';
-	document.getElementById('chartLetter').src = chartURL + charHisto(compileDict.data().replace(/\s/g, ''));
+	document.getElementById('chartLetter').src = chartURL + charHisto(compileDict.data().replace(/\s/g, '').replace('h', 'f'));
 	document.getElementById('chartInitial').src = chartURL + charHisto(compileInitials.data());
 	document.getElementById('chartMedial').src = chartURL + charHisto(compileMedials.data());
 	document.getElementById('chartFinal').src = chartURL + charHisto(compileFinals.data());
