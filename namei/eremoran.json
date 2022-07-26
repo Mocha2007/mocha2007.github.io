@@ -203,6 +203,22 @@
 		]
 	},
 	{
+		"title": "afkam",
+		"etym": "Nominalization of afkaz 'go'",
+		"cat": "n., 5th",
+		"defList": [
+			"trip; going"
+		]
+	},
+	{
+		"title": "afkaudom",
+		"etym": "Augmentive of afkam 'trip'",
+		"cat": "n., 5th",
+		"defList": [
+			"journey"
+		]
+	},
+	{
 		"title": "afkaz",
 		"etym": "Proto-Eremo-Numoran *aɸkas 'go'",
 		"cat": "v.",
@@ -2878,6 +2894,14 @@
 		]
 	},
 	{
+		"title": "mafir",
+		"etym": "Proto-Eremo-Numoran *maɸir 'gang; group'",
+		"cat": "n., 1st",
+		"defList": [
+			"gang; group (of people)"
+		]
+	},
+	{
 		"title": "maiusu",
 		"etym": "Proto-Eremo-Numoran *masiusiu 'stunned', from *mas 'contain' + *siusiu 'stunned, dazed', reduplicated from *siu 'bright'.",
 		"cat": "adj.",
@@ -5072,6 +5096,14 @@
 			"black",
 			"dim",
 			"(of the sky) overcast with storm clouds; having heavy cloud cover"
+		]
+	},
+	{
+		"title": "utbak",
+		"etym": "Proto-Eremo-Numoran *utba-x 'bear'",
+		"cat": "n., 2nd",
+		"defList": [
+			"bear"
 		]
 	},
 	{
