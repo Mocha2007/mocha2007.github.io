@@ -1,5 +1,5 @@
 /* exported getDict */
-/* global elements, EremoranTooltip */
+/* global elements, titleCard */
 'use strict';
 
 // eslint-disable-next-line no-undef
@@ -21,7 +21,7 @@ function printDict(){
 	/** @type {HTMLDListElement} */
 	const list = document.getElementById('dictionary');
 	/** @type {[]} */
-	const dictionary = JSON.parse(reader.responseText);
+	const dictionary = elements.raws = JSON.parse(reader.responseText);
 	// console.debug(dictionary);
 	elements.dict = dictionary.map(o => o.title);
 	dictionary.forEach(obj => {
@@ -33,18 +33,7 @@ function printDict(){
 		// entry title
 		const dt = document.createElement('dt');
 		dt.classList.add('lemmaTitle');
-		// hotlink to entry
-		/** @type {HTMLAnchorElement} */
-		const anchor = document.createElement('a');
-		anchor.href = `#${entryDiv.id}`;
-		anchor.innerHTML = '*';
-		dt.appendChild(anchor);
-		// entry title
-		const ereTitle = document.createElement('span');
-		ereTitle.innerHTML = obj.title;
-		ereTitle.classList.add('eremoran');
-		EremoranTooltip.setupWord(ereTitle);
-		dt.appendChild(ereTitle);
+		dt.appendChild(titleCard(obj.title));
 		entryDiv.appendChild(dt);
 		// img
 		if (obj.img){
@@ -91,5 +80,11 @@ function printDict(){
 			entryDiv.appendChild(noteElement);
 		}
 		list.appendChild(entryDiv);
+		// add categories
+		if (obj.categories)
+			obj.categories.forEach(category => {
+				if (!elements.categories.includes(category))
+					elements.categories.push(category);
+			});
 	});
 }

@@ -1,12 +1,14 @@
-/* exported adjTool, compileDict, compileFinals, compileInitials, compileLength,
-	compileMeanings, compileMedials, compileNounClass, EremoranTooltip,
-	computeStats, numberTool, autoUp, wordle */
+/* exported adjTool, autoUp, compileDict, compileFinals, compileInitials,
+	compileLength, compileMeanings, compileMedials, compileNounClass,
+	computeStats, EremoranTooltip, numberTool, search, titleCard, wordle */
 /* global charHisto, commaNumber, histo, random, round, union */
 
 'use strict';
 
 // tools for main
 const elements = {
+	/** @type {string} */
+	categories: [],
 	/** @returns {HTMLDListElement} - the entire dictionary element*/
 	get d(){
 		return document.getElementsByClassName('dictionary')[0];
@@ -17,6 +19,7 @@ const elements = {
 	get p(){
 		return document.getElementById('wordlist');
 	},
+	raws: [],
 };
 
 // main
@@ -292,6 +295,14 @@ function computeStats(){
 	document.getElementById('chartLength').src = chartURL + histo(compileLength.data());
 	document.getElementById('chartMeaning').src = chartURL + histo(compileMeanings.data());
 	document.getElementById('chartClass').src = chartURL + histo(compileNounClass.data());
+	// add categories
+	/** @type {HTMLSelectElement} */
+	const categorySearch = document.getElementById('categorySearch');
+	elements.categories.forEach(category => {
+		const option = document.createElement('option');
+		option.value = option.innerHTML = category;
+		categorySearch.appendChild(option);
+	});
 }
 
 /**
@@ -566,6 +577,52 @@ const wordle = {
 	/** @param {string} guess */
 	validate(guess){
 		return /[abdehiklmnoprstuzêô]{5}/.test(guess);
+	},
+};
+
+/** @param {string} s */
+function titleCard(s){
+	const span = document.createElement('span');
+	// hotlink to entry
+	/** @type {HTMLAnchorElement} */
+	const anchor = document.createElement('a');
+	anchor.href = `#lemma-${s}`;
+	anchor.innerHTML = '*';
+	span.appendChild(anchor);
+	// entry title
+	const ereTitle = document.createElement('span');
+	ereTitle.innerHTML = s;
+	ereTitle.classList.add('eremoran');
+	EremoranTooltip.setupWord(ereTitle);
+	span.appendChild(ereTitle);
+	return span;
+}
+
+const search = {
+	appendResult(s){
+		const li = document.createElement('li');
+		li.appendChild(titleCard(s));
+		this.searchResults.appendChild(li);
+	},
+	/** @returns {string} */
+	get category(){
+		return document.getElementById('categorySearch').value;
+	},
+	input(){
+		this.resetResults();
+		elements.raws.filter(o => {
+			// category match
+			if (this.category !== 'any' && (!o.categories || !o.categories.includes(this.category)))
+				return false;
+			return true;
+		}).forEach(o => this.appendResult(o.title));
+	},
+	resetResults(){
+		this.searchResults.innerHTML = '';
+	},
+	/** @returns {HTMLUListElement} */
+	get searchResults(){
+		return document.getElementById('searchResults');
 	},
 };
 
