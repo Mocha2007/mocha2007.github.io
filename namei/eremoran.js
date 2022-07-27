@@ -646,7 +646,8 @@ const phono = {
 			syllables[syllables.length-2] = syllables[syllables.length-2].toUpperCase();
 		const ipa = this.ipa(word);
 		const syllabification = syllables.join('-');
-		span.innerHTML = `IPA: [${ipa}] &ndash; Syllabification: ${syllabification}`;
+		const irr = elements.raws.find(w => w.title === s).pron; // irregular pron?
+		span.innerHTML = `IPA: [${irr || ipa}] &ndash; Syllabification: ${syllabification}`;
 		// debug warning
 		this.validate(word);
 		return span;
