@@ -672,7 +672,7 @@ const phono = {
 		o = o.replace(/ɪ$/, 'i');
 		o = o.replace(/ʊ$/, 'u');
 		// syllabify
-		o = this.syllabifyPost(o).map((syll, i) =>
+		o = this.syllabify(o).map((syll, i) =>
 			(syllables.length < 2 || i === syllables.length - 2
 				? 'ˈ' : i ? '.' : '') + syll
 		).join('');
@@ -681,13 +681,7 @@ const phono = {
 	/** @param {string} word */
 	syllabify(word){
 		const rev = word.split('').reverse().join('');
-		const regex = /[bdhklmnprstz]{0,2}[aeiouêô][bdhklmnprstz]{0,2}/g;
-		return rev.match(regex).reverse().map(s => s.split('').reverse().join(''));
-	},
-	/** @param {string} word */
-	syllabifyPost(word){
-		const rev = word.split('').reverse().join('');
-		const regex = /[^aeiouəɛɪɔʊ]{0,2}[aeiouəɛɪɔʊ][^aeiouəɛɪɔʊ]{0,2}/g;
+		const regex = /[^aeiouêôəɛɪɔʊ]{0,2}[aeiouêôəɛɪɔʊ][^aeiouêôəɛɪɔʊ]{0,2}/g;
 		return rev.match(regex).reverse().map(s => s.split('').reverse().join(''));
 	},
 	vowels: {
