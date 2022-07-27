@@ -673,7 +673,7 @@ const phono = {
 		o = o.replace(/ʊ$/, 'u');
 		// syllabify
 		o = this.syllabify(o).map((syll, i) =>
-			(syllables.length < 2 || i === syllables.length - 2
+			(i === syllables.length - 2
 				? 'ˈ' : i ? '.' : '') + syll
 		).join('');
 		return o;
