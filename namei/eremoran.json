@@ -17,7 +17,8 @@
 		"defList": [
 			"duck",
 			"(metaphorically) idiot"
-		]
+		],
+		"categories": ["animal", "person"]
 	},
 	{
 		"title": "abbak",
@@ -25,7 +26,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"bee"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "abbakarm",
@@ -51,7 +53,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"forehead"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "abu",
@@ -112,7 +115,8 @@
 		"defList": [
 			"tomorrow",
 			"yesterday"
-		]
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "addáukaz",
@@ -128,7 +132,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"eel"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "afêkam",
@@ -168,7 +173,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"penis, dong, cock, dick"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "afêsêr",
@@ -176,7 +182,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"shortswordsman"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "afêsma",
@@ -184,7 +191,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"vagina"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "afêst",
@@ -200,7 +208,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"watchman, guard, policeman, officer"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "afkam",
@@ -249,7 +258,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"oak"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "alika",
@@ -292,7 +302,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"fruit"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "annumz",
@@ -345,7 +356,7 @@
 		"defList": [
 			"metalsmith (more specifically, a coppersmith)"
 		],
-		"categories": ["metal"]
+		"categories": ["metal", "person"]
 	},
 	{
 		"title": "aramaêmat",
@@ -362,7 +373,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"military officer"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "aramat",
@@ -398,7 +410,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"wine"
-		]
+		],
+		"categories": ["drink"]
 	},
 	{
 		"title": "ardomukaskrut",
@@ -406,7 +419,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"cider"
-		]
+		],
+		"categories": ["drink"]
 	},
 	{
 		"title": "ardzin",
@@ -443,7 +457,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"cattle; cow"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "arlira",
@@ -452,7 +467,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"deciduous tree"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "arm",
@@ -513,7 +529,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"face"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "babzu",
@@ -530,7 +547,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"fox"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "badu",
@@ -585,7 +603,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"shark"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "bamz",
@@ -652,7 +671,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"intestines, guts"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "batlitam",
@@ -687,7 +707,8 @@
 			"leader, ruler",
 			"emperor, king",
 			"(chess) king"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "be",
@@ -732,7 +753,8 @@
 			"duration",
 			"era, age",
 			"cycle"
-		]
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "bemmu",
@@ -757,7 +779,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"longswordsman"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "betlat",
@@ -781,7 +804,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"leaf"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "bibi",
@@ -789,7 +813,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"breast"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "bibimat",
@@ -797,7 +822,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"bar, pub"
-		]
+		],
+		"categories": ["drink"]
 	},
 	{
 		"title": "bibiz",
@@ -806,7 +832,8 @@
 		"defList": [
 			"(<i>of poisoned food</i>) eat",
 			"(<i>of alcoholic or poisoned beverages</i>) drink"
-		]
+		],
+		"categories": ["drink"]
 	},
 	{
 		"title": "bidzam",
@@ -838,7 +865,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"feather"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "bikilat",
@@ -855,7 +883,8 @@
 		"defList": [
 			"fat (substance)"
 		],
-		"notes": "bilu is one of a handful of nouns ending in -u."
+		"notes": "bilu is one of a handful of nouns ending in -u.",
+		"categories": ["body part"]
 	},
 	{
 		"title": "bim",
@@ -872,7 +901,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"plant"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "bimam",
@@ -929,7 +959,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"(live) chicken"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "bokusam",
@@ -964,7 +995,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"beer"
-		]
+		],
+		"categories": ["drink"]
 	},
 	{
 		"title": "bra",
@@ -972,7 +1004,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"eyebrow"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "breka",
@@ -989,7 +1022,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"sea cow, manatee"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "bu",
@@ -1005,7 +1039,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"foreskin"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "bukt",
@@ -1021,7 +1056,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"ass, butt"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "busisudôz",
@@ -1029,7 +1065,8 @@
 		"cat": "v.",
 		"defList": [
 			"have anal sex"
-		]
+		],
+		"categories": ["sex"]
 	},
 	{
 		"title": "busk",
@@ -1039,7 +1076,8 @@
 			"an owned dog (specifically, one that is not feral or stray)",
 			"(archaic) any dog, feral or stray"
 		],
-		"notes": "Feral/stray dogs are called <em>lusik</em> 'wolf'"
+		"notes": "Feral/stray dogs are called <em>lusik</em> 'wolf'",
+		"categories": ["animal"]
 	},
 	{
 		"title": "da",
@@ -1080,7 +1118,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"time"
-		]
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "dalu",
@@ -1098,7 +1137,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"morning"
-		]
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "dammam",
@@ -1106,7 +1146,8 @@
 		"cat": "n., 5th; adv.",
 		"defList": [
 			"ereyesterday, the day before yesterday, two days ago"
-		]
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "damu",
@@ -1122,7 +1163,8 @@
 		"cat": "adv.",
 		"defList": [
 			"often; usually"
-		]
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "dantam",
@@ -1130,7 +1172,8 @@
 		"cat": "n., 5th; adv.",
 		"defList": [
 			"overmorrow, the day after tomorrow, two days hence"
-		]
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "danlikz",
@@ -1138,7 +1181,8 @@
 		"cat": "v.",
 		"defList": [
 			"suck"
-		]
+		],
+		"categories": ["sex"]
 	},
 	{
 		"title": "danôak",
@@ -1147,7 +1191,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"bug, insect"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "dare",
@@ -1176,9 +1221,10 @@
 	},
 	{
 		"title": "dasu",
-		"etym": "Proto-Eremo-Numoran *daʃu 'fast'",
+		"etym": "Proto-Eremo-Numoran *daʃu 'fast' and da-(i)su respectively",
 		"cat": "adj.",
 		"defList": [
+			"fast",
 			"dirty"
 		],
 		"notes": "adj."
@@ -1239,7 +1285,8 @@
 		"defList": [
 			"from now on",
 			"nowadays, anymore"
-		]
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "din",
@@ -1316,7 +1363,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"whale"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "dô",
@@ -1344,7 +1392,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"guest"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "dodamat",
@@ -1394,7 +1443,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"knee"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "dônumz",
@@ -1440,7 +1490,8 @@
 			"bark (of a tree)",
 			"skin, hide, leather",
 			"skin, peel (of a fruit)"
-		]
+		],
+		"categories": ["body part", "plant"]
 	},
 	{
 		"title": "edzam",
@@ -1461,7 +1512,8 @@
 		"defList": [
 			"horse",
 			"(chess) knight"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "ekar",
@@ -1469,7 +1521,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"horseman, equestian"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "êkar",
@@ -1478,7 +1531,8 @@
 		"defList": [
 			"man",
 			"husband"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "ela",
@@ -1494,7 +1548,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"child"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "elelak",
@@ -1502,7 +1557,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"young"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "elmnu",
@@ -1519,7 +1575,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"lemon"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "endu",
@@ -1556,7 +1613,8 @@
 		"cat": "adj.",
 		"defList": [
 			"lewd"
-		]
+		],
+		"categories": ["sex"]
 	},
 	{
 		"title": "epeêr",
@@ -1564,7 +1622,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"spearman"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "epet",
@@ -1602,7 +1661,8 @@
 			"an Eremoran",
 			"the city Eremora",
 			"the country Eremor"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "eremorôm",
@@ -1643,7 +1703,8 @@
 		"defList": [
 			"finger",
 			"toe"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "habiz",
@@ -1660,7 +1721,8 @@
 		"defList": [
 			"fingernail",
 			"toenail"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "hafa",
@@ -1739,7 +1801,8 @@
 		"defList": [
 			"hand",
 			"five"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "hanum",
@@ -1759,7 +1822,8 @@
 		"defList": [
 			"trusted person",
 			"second-in-command, right-hand man"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "hêan",
@@ -1767,7 +1831,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"chin"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "hek",
@@ -1792,7 +1857,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"rose"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "henlôm",
@@ -1820,7 +1886,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"healer, medic, doctor"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "henlôsudôz",
@@ -1836,7 +1903,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"tooth"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "hilbe",
@@ -1845,7 +1913,8 @@
 		"defList": [
 			"cloud",
 			"fog"
-		]
+		],
+		"categories": ["weather"]
 	},
 	{
 		"title": "hilsiz",
@@ -1885,7 +1954,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"milk"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "hisk",
@@ -1893,7 +1963,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"crow; raven"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "hiu",
@@ -2016,7 +2087,8 @@
 		"cat": "v.",
 		"defList": [
 			"blow (of the mouth)"
-		]
+		],
+		"categories": ["sex"]
 	},
 	{
 		"title": "i",
@@ -2063,7 +2135,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"(archaic, non-southern) girl (older form of elaôr)"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "imô",
@@ -2079,7 +2152,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"cow"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "irarz",
@@ -2104,7 +2178,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"hoaxster"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "it",
@@ -2207,7 +2282,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"any drink brewed with hot water except tea (from <em>Camellia sinensis</em>), including herbal teas and coffee"
-		]
+		],
+		"categories": ["drink"]
 	},
 	{
 		"title": "kamu",
@@ -2257,7 +2333,8 @@
 		"defList": [
 			"apple"
 		],
-		"notes": "kaskru is one of a handful of nouns ending in -u."
+		"notes": "kaskru is one of a handful of nouns ending in -u.",
+		"categories": ["plant"]
 	},
 	{
 		"title": "kaspa",
@@ -2267,7 +2344,8 @@
 		"defList": [
 			"chestnut",
 			"nut (in general)"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "kaspasu",
@@ -2293,7 +2371,8 @@
 		"defList": [
 			"lung"
 		],
-		"notes": "kasu is one of a handful of nouns ending in -u."
+		"notes": "kasu is one of a handful of nouns ending in -u.",
+		"categories": ["body part"]
 	},
 	{
 		"title": "kek",
@@ -2301,7 +2380,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"god"
-		]
+		],
+		"categories": ["animal", "person"]
 	},
 	{
 		"title": "ker",
@@ -2319,7 +2399,8 @@
 		"defList": [
 			"foot",
 			"(archaic) leg"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "kidôu",
@@ -2335,7 +2416,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"axeman"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "kika",
@@ -2343,7 +2425,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"leg"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "kikom",
@@ -2378,7 +2461,8 @@
 		"defList": [
 			"reed",
 			"cane"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "kink",
@@ -2386,7 +2470,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"weasel"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "kikir",
@@ -2394,7 +2479,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"friend"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "kiom",
@@ -2411,7 +2497,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"birch"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "kit",
@@ -2473,7 +2560,8 @@
 		"defList": [
 			"mouse",
 			"Any species of the suborder <i>Myomorpha</i>"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "koka",
@@ -2481,7 +2569,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"arm"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "kokint",
@@ -2565,7 +2654,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"fish"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "koz",
@@ -2590,7 +2680,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"wing"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "krum",
@@ -2716,8 +2807,9 @@
 		"etym": "ku + mu",
 		"cat": "adj.",
 		"defList": [
-			"wet"
-		]
+			"humid"
+		],
+		"categories": ["weather"]
 	},
 	{
 		"title": "kumz",
@@ -2733,7 +2825,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"snow"
-		]
+		],
+		"categories": ["weather"]
 	},
 	{
 		"title": "kunôz",
@@ -2838,7 +2931,8 @@
 			"heart",
 			"core",
 			"center"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "libaz",
@@ -2855,7 +2949,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"forest, a wood"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "linku",
@@ -2880,7 +2975,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"neck"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "lusik",
@@ -2890,7 +2986,8 @@
 			"wolf",
 			"stray/feral dog"
 		],
-		"notes": "Owned dogs are called <em>busk</em>"
+		"notes": "Owned dogs are called <em>busk</em>",
+		"categories": ["animal"]
 	},
 	{
 		"title": "maêr",
@@ -2898,7 +2995,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"mother"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "mafir",
@@ -2906,7 +3004,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"gang; group (of people)"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "maiusu",
@@ -2923,7 +3022,8 @@
 		"defList": [
 			"turtle",
 			"tortoise"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "malbnur",
@@ -2931,7 +3031,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"villain"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "mam",
@@ -2956,7 +3057,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"nose"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "mananuk",
@@ -2965,7 +3067,8 @@
 		"defList": [
 			"elephant",
 			"(chess) rook"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "manaz",
@@ -2981,7 +3084,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"blood"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "marama",
@@ -3015,7 +3119,8 @@
 		"cat": "v.",
 		"defList": [
 			"bleed"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "masêt",
@@ -3031,7 +3136,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"bull (male cow)"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "masturk",
@@ -3039,7 +3145,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"rabbit"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "mat",
@@ -3057,7 +3164,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"a parastitic flatworm used primarily in torture and occasionally medicinally for its behavior-altering effects"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "mi",
@@ -3172,7 +3280,8 @@
 			"ethnos, country, nation",
 			"mankind"
 		],
-		"notes": "This does not translate country or nation in all English uses. When referring to territory, use <i>da</i> instead."
+		"notes": "This does not translate country or nation in all English uses. When referring to territory, use <i>da</i> instead.",
+		"categories": ["person"]
 	},
 	{
 		"title": "morbik",
@@ -3180,7 +3289,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"ant"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "morôz",
@@ -3217,7 +3327,8 @@
 			"body of water",
 			"liquid, juice, fluid"
 		],
-		"notes": "mu is one of a handful of nouns ending in -u."
+		"notes": "mu is one of a handful of nouns ending in -u.",
+		"categories": ["drink"]
 	},
 	{
 		"title": "mudadalt",
@@ -3243,7 +3354,8 @@
 		"defList": [
 			"ice",
 			"hail"
-		]
+		],
+		"categories": ["weather"]
 	},
 	{
 		"title": "mumast",
@@ -3260,7 +3372,8 @@
 		"defList": [
 			"cup",
 			"pitcher"
-		]
+		],
+		"categories": ["drink"]
 	},
 	{
 		"title": "mumust",
@@ -3300,7 +3413,8 @@
 		"cat": "adj.",
 		"defList": [
 			"wet"
-		]
+		],
+		"notes": "not humid"
 	},
 	{
 		"title": "na",
@@ -3317,7 +3431,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"root"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "nad",
@@ -3334,7 +3449,8 @@
 		"defList": [
 			"eat",
 			"(<i>of non-alcoholic and non-poisoned beverages</i>) drink"
-		]
+		],
+		"categories": ["drink"]
 	},
 	{
 		"title": "nanau",
@@ -3372,7 +3488,8 @@
 		"defList": [
 			"carnivoran"
 		],
-		"notes": "Note: this word does not refer to carnivores in general, only carnivorans."
+		"notes": "Note: this word does not refer to carnivores in general, only carnivorans.",
+		"categories": ["animal"]
 	},
 	{
 		"title": "nasu",
@@ -3431,7 +3548,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"year"
-		]
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "nen",
@@ -3456,7 +3574,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"liver"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "nikôk",
@@ -3464,7 +3583,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"otter"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "nindat",
@@ -3488,7 +3608,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"louse"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "nod",
@@ -3547,7 +3668,8 @@
 		"defList": [
 			"infant",
 			"newlywed"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "nul",
@@ -3564,7 +3686,8 @@
 		"defList": [
 			"courier, messenger",
 			"(chess) bishop"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "numz",
@@ -3580,7 +3703,8 @@
 		"cat": "adj.",
 		"defList": [
 			"nude, naked"
-		]
+		],
+		"categories": ["sex"]
 	},
 	{
 		"title": "ô",
@@ -3621,7 +3745,8 @@
 		"defList": [
 			"bird",
 			"(vulgar) dick, cock"
-		]
+		],
+		"categories": ["sex"]
 	},
 	{
 		"title": "óidkaz",
@@ -3646,7 +3771,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"bone"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "okar",
@@ -3656,7 +3782,8 @@
 			"woman",
 			"wife",
 			"(chess) queen"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "ôkarinu",
@@ -3690,7 +3817,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"horn"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "ou",
@@ -3766,7 +3894,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"worm"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "pemik",
@@ -3774,7 +3903,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"snake"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "pemiz",
@@ -3798,7 +3928,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"sheep"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "pipibubu",
@@ -3806,7 +3937,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"lightning; thunder"
-		]
+		],
+		"categories": ["weather"]
 	},
 	{
 		"title": "pukusam",
@@ -3841,7 +3973,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"belly"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "rankenz",
@@ -3857,7 +3990,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"chef, cook"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "raratit",
@@ -3882,7 +4016,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"animal, creature"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "rau",
@@ -3890,7 +4025,8 @@
 		"cat": "adj.",
 		"defList": [
 			"cool, cold"
-		]
+		],
+		"categories": ["weather"]
 	},
 	{
 		"title": "raz",
@@ -3925,7 +4061,8 @@
 		"defList": [
 			"Namei",
 			"sunlight"
-		]
+		],
+		"categories": ["weather"]
 	},
 	{
 		"title": "rilm",
@@ -3934,7 +4071,8 @@
 		"defList": [
 			"day, sol (unit of time)",
 			"daytime"
-		]
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "rilu",
@@ -3958,7 +4096,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"tongue"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "rôm",
@@ -3984,7 +4123,8 @@
 		"defList": [
 			"cat"
 		],
-		"notes": "Perhaps due to a combination of its reduplication, and the unusual form of the interjection, the spelling is irregular from what might be expected (*raraok)."
+		"notes": "Perhaps due to a combination of its reduplication, and the unusual form of the interjection, the spelling is irregular from what might be expected (*raraok).",
+		"categories": ["animal"]
 	},
 	{
 		"title": "roradok",
@@ -3992,7 +4132,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"kitten"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "rôraz",
@@ -4019,7 +4160,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"a zothceng, a large, semi-intelligent symbiotic fungus-beehive beast"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "salim",
@@ -4079,7 +4221,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"eye"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "sauromat",
@@ -4125,7 +4268,8 @@
 		"defList": [
 			"grain",
 			"a unit of measurement equal to one-fifteenth of one edzam (~2.84 mm)"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "seba",
@@ -4133,7 +4277,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"flower"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "sedam",
@@ -4149,7 +4294,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"farm; (crop)field"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "sedu",
@@ -4158,7 +4304,8 @@
 		"defList": [
 			"sharp (not dull)",
 			"heterosexual, straight"
-		]
+		],
+		"categories": ["sex"]
 	},
 	{
 		"title": "sêdzak",
@@ -4166,7 +4313,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"rat"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "sesu",
@@ -4299,7 +4447,8 @@
 		"cat": "adj.",
 		"defList": [
 			"(colloquial) young"
-		]
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "skum",
@@ -4307,7 +4456,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"winter"
-		]
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "smad",
@@ -4323,7 +4473,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"cheek"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "som",
@@ -4331,7 +4482,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"warmth, heat"
-		]
+		],
+		"categories": ["weather"]
 	},
 	{
 		"title": "soni",
@@ -4339,7 +4491,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"hair"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "sou",
@@ -4347,7 +4500,8 @@
 		"cat": "adj.",
 		"defList": [
 			"warm, hot"
-		]
+		],
+		"categories": ["weather"]
 	},
 	{
 		"title": "spart",
@@ -4436,7 +4590,8 @@
 		"defList": [
 			"warrior, soldier",
 			"(chess) pawn"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "sudôz",
@@ -4491,7 +4646,8 @@
 			"(archaic) evergreen, esp. pine",
 			"tree",
 			"wood"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "talsu",
@@ -4507,7 +4663,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"mouth"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "tamaz",
@@ -4542,7 +4699,8 @@
 		"cat": "adv.",
 		"defList": [
 			"eventually"
-		]
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "tar",
@@ -4559,7 +4717,8 @@
 		"defList": [
 			"pine"
 		],
-		"notes": "tasusku is one of a handful of nouns ending in -u."
+		"notes": "tasusku is one of a handful of nouns ending in -u.",
+		"categories": ["plant"]
 	},
 	{
 		"title": "tasu",
@@ -4575,7 +4734,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"grass"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "taze dô kadôl",
@@ -4591,7 +4751,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"tea (leaf)"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "tekkat",
@@ -4600,7 +4761,8 @@
 		"defList": [
 			"tea (drink)"
 		],
-		"notes": "The color adjectives <em>kanut</em> (yellow), <em>siut</em> (white), and <em>tasut</em> (green) can be applied to <em>tekkat</em> with an identical meaning to English. However, <em>ulut</em> (blue/black) is used to refer to oolong, and <em>eret</em> (red) is used to refer to black tea, likely in reference to the color of the leaves. It is also important to note that <em>usiut</em> (black/dark) cannot be used interchangably with <em>ulut</em>; the former refers instead to fermented tea instead of oolong."
+		"notes": "The color adjectives <em>kanut</em> (yellow), <em>siut</em> (white), and <em>tasut</em> (green) can be applied to <em>tekkat</em> with an identical meaning to English. However, <em>ulut</em> (blue/black) is used to refer to oolong, and <em>eret</em> (red) is used to refer to black tea, likely in reference to the color of the leaves. It is also important to note that <em>usiut</em> (black/dark) cannot be used interchangably with <em>ulut</em>; the former refers instead to fermented tea instead of oolong.",
+		"categories": ["drink"]
 	},
 	{
 		"title": "temz",
@@ -4617,7 +4779,8 @@
 		"defList": [
 			"protector",
 			"father"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "temêmor",
@@ -4684,7 +4847,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"head"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "tobê",
@@ -4693,7 +4857,8 @@
 		"defList": [
 			"stick",
 			"staff"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "tokêu",
@@ -4825,7 +4990,8 @@
 		"defList": [
 			"soul",
 			"ghost; spirit"
-		]
+		],
+		"categories": ["animal", "person"]
 	},
 	{
 		"title": "tukilm",
@@ -4870,7 +5036,8 @@
 		"defList": [
 			"sky",
 			"set of objects visible overhead from a reference point"
-		]
+		],
+		"categories": ["weather"]
 	},
 	{
 		"title": "tutum",
@@ -4947,7 +5114,8 @@
 		"cat": "adj.",
 		"defList": [
 			"dry"
-		]
+		],
+		"categories": ["weather"]
 	},
 	{
 		"title": "ukuzesti",
@@ -5053,7 +5221,8 @@
 		"defList": [
 			"follower",
 			"sycophant, toady"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "urildom",
@@ -5071,7 +5240,8 @@
 			"darkness",
 			"shadow, shade, umbra",
 			"night"
-		]
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "urist",
@@ -5097,7 +5267,8 @@
 		"defList": [
 			"dull (not sharp)",
 			"gay"
-		]
+		],
+		"categories": ["sex"]
 	},
 	{
 		"title": "usiu",
@@ -5107,7 +5278,8 @@
 			"black",
 			"dim",
 			"(of the sky) overcast with storm clouds; having heavy cloud cover"
-		]
+		],
+		"categories": ["weather"]
 	},
 	{
 		"title": "utbak",
@@ -5115,7 +5287,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"bear"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "utôzdmu",
@@ -5158,7 +5331,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"lip"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "zadumu",
