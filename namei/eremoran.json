@@ -335,7 +335,8 @@
 			"native copper",
 			"tetrahedrite",
 			"malachite"
-		]
+		],
+		"categories": ["metal"]
 	},
 	{
 		"title": "aramaêr",
@@ -343,7 +344,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"metalsmith (more specifically, a coppersmith)"
-		]
+		],
+		"categories": ["metal"]
 	},
 	{
 		"title": "aramaêmat",
@@ -351,7 +353,8 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"smithy"
-		]
+		],
+		"categories": ["metal"]
 	},
 	{
 		"title": "aramafir",
@@ -367,7 +370,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"copper"
-		]
+		],
+		"categories": ["metal"]
 	},
 	{
 		"title": "ardo",
@@ -411,7 +415,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"native silver"
-		]
+		],
+		"categories": ["metal"]
 	},
 	{
 		"title": "ardzint",
@@ -419,7 +424,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"silver"
-		]
+		],
+		"categories": ["metal"]
 	},
 	{
 		"title": "arebaz",
@@ -1149,7 +1155,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"gold"
-		]
+		],
+		"categories": ["metal"]
 	},
 	{
 		"title": "daremat",
@@ -2982,7 +2989,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"iron ore"
-		]
+		],
+		"categories": ["metal"]
 	},
 	{
 		"title": "maramat",
@@ -2990,7 +2998,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"(refined) iron"
-		]
+		],
+		"categories": ["metal"]
 	},
 	{
 		"title": "markla",
@@ -4390,7 +4399,8 @@
 		"defList": [
 			"tin ore"
 		],
-		"notes": "stanu is one of a handful of nouns ending in -u."
+		"notes": "stanu is one of a handful of nouns ending in -u.",
+		"categories": ["metal"]
 	},
 	{
 		"title": "stanut",
@@ -4399,7 +4409,8 @@
 		"defList": [
 			"tin",
 			"a coin made of tin"
-		]
+		],
+		"categories": ["metal"]
 	},
 	{
 		"title": "su",
