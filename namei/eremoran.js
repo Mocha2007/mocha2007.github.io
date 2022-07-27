@@ -292,9 +292,11 @@ function computeStats(){
 	document.getElementById('chartMeaning').src = chartURL + histo(compileMeanings.data());
 	document.getElementById('chartClass').src = chartURL + histo(compileNounClass.data());
 	// do word histogram
-	const wordData = quotes.map(i => i[0].replace(/ [:\/]/g, '').toLowerCase()).join(' ').split(' ');
+	const wordData = (quotes.map(i => i[0]).join(' ') + ' '
+		+ Array.from(document.getElementsByClassName('corpus')).map(elem => elem.innerHTML).join(' ')
+		).replace(/ [:\/.,]/g, '').replace(/\s+/g, ' ').toLowerCase().split(' ');
 	// const filteredWordData = wordData.filter(word => wordData)
-	document.getElementById('chartWord').src = chartURL + histo(wordData, true, true, 3);
+	document.getElementById('chartWord').src = chartURL + histo(wordData, true, true, 4);
 	// add categories
 	/** @type {HTMLSelectElement} */
 	const categorySearch = document.getElementById('categorySearch');
