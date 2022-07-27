@@ -666,16 +666,28 @@ const phono = {
 		// misc allophones
 		o = o.replace(/nk/g, 'ŋk');
 		o = o.replace(/^k/, 'g');
-		o = o.replace(/(?<=[aeiouêô])b(?=[aeiouêô])/g, 'w');
-		o = o.replace(/(?<=[aeiouêô])d(?=[aeiouêô])/g, 'ɾ');
+		o = o.replace(/(?<=[aeiouəɛɪɔʊ])b(?=[aeiouəɛɪɔʊ])/g, 'w');
+		o = o.replace(/(?<=[aeiouəɛɪɔʊ])d(?=[aeiouəɛɪɔʊ])/g, 'ɾ');
 		o = o.replace(/(?<=[aɔ])ʀ(?![eiɛɪ])/g, 'ħ');
+		o = o.replace(/ɪ$/, 'i');
+		o = o.replace(/ʊ$/, 'u');
+		// syllabify
+		o = this.syllabifyPost(o).map((syll, i) =>
+			(syllables.length < 2 || i === syllables.length - 2
+				? 'ˈ' : i ? '.' : '') + syll
+		).join('');
 		return o;
 	},
 	/** @param {string} word */
 	syllabify(word){
 		const rev = word.split('').reverse().join('');
-		// eslint-disable-next-line max-len
-		const regex = /(([bdhklmnprstz])|([sz][mnpbtdk])|([pbtdk][sn])|([bdhkmnpstz][lr])|(tk))?[aeiouêô](([bdhklmnprstz])|(r[pbtdk])|([mpfntk]s)|(lk))?/g;
+		const regex = /[bdhklmnprstz]{0,2}[aeiouêô][bdhklmnprstz]{0,2}/g;
+		return rev.match(regex).reverse().map(s => s.split('').reverse().join(''));
+	},
+	/** @param {string} word */
+	syllabifyPost(word){
+		const rev = word.split('').reverse().join('');
+		const regex = /[^aeiouəɛɪɔʊ]{0,2}[aeiouəɛɪɔʊ][^aeiouəɛɪɔʊ]{0,2}/g;
 		return rev.match(regex).reverse().map(s => s.split('').reverse().join(''));
 	},
 	vowels: {

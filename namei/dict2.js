@@ -1,5 +1,5 @@
 /* exported getDict */
-/* global elements, titleCard */
+/* global elements, normalizeEremoran, phono, titleCard */
 'use strict';
 
 // eslint-disable-next-line no-undef
@@ -45,6 +45,11 @@ function printDict(){
 			imgdd.appendChild(img);
 			entryDiv.appendChild(imgdd);
 		}
+		// pron
+		const pronElement = document.createElement('dd');
+		pronElement.classList.add('lemmaPron');
+		pronElement.innerHTML = `IPA: [${phono.ipa(normalizeEremoran(obj.title))}]`;
+		entryDiv.appendChild(pronElement);
 		// etym
 		const etymElement = document.createElement('dd');
 		etymElement.classList.add('lemmaEtym');
