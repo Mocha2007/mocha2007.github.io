@@ -3490,6 +3490,15 @@
 		"notes": "See <em>be</em> for the verbal conjunction. cf. <em>id</em>."
 	},
 	{
+		"title": "narko",
+		"etym": "Proto-Eremo-Numoran *snarko",
+		"cat": "n., 4th",
+		"defList": [
+			"cheek"
+		],
+		"categories": ["body part"]
+	},
+	{
 		"title": "nasanu",
 		"etym": "nasu + hanu",
 		"cat": "adj.",
@@ -4340,14 +4349,6 @@
 		]
 	},
 	{
-		"title": "sfus",
-		"etym": "Proto-Eremo-Numoran *sɸuʃ 'tail'",
-		"cat": "n., 4th",
-		"defList": [
-			"tail"
-		]
-	},
-	{
 		"title": "sifaz",
 		"etym": "Proto-Eremo-Numoran *ʃiɸs \"hit\"",
 		"cat": "v.",
@@ -4467,23 +4468,6 @@
 		"categories": ["time"]
 	},
 	{
-		"title": "smad",
-		"etym": "Recent blend of su \"of\", mat \"house\", and ad \"at\"",
-		"cat": "post.",
-		"defList": [
-			"chez; at the house of"
-		]
-	},
-	{
-		"title": "snarko",
-		"etym": "Proto-Eremo-Numoran *snarko",
-		"cat": "n., 4th",
-		"defList": [
-			"cheek"
-		],
-		"categories": ["body part"]
-	},
-	{
 		"title": "som",
 		"etym": "<em>sou</em> 'warm; hot' + -m",
 		"cat": "n., 5th",
@@ -4601,6 +4585,14 @@
 		"categories": ["person"]
 	},
 	{
+		"title": "sud",
+		"etym": "Recent blend of -(i)sut \"&apos;s (house)\", and ad \"at\"",
+		"cat": "post.",
+		"defList": [
+			"chez; at the house of"
+		]
+	},
+	{
 		"title": "sudôz",
 		"etym": "Proto-Eremo-Numoran *sudôs 'do; make' from *su 'of; from' + *dôs 'do; make'.",
 		"cat": "v.",
@@ -4635,6 +4627,15 @@
 		"defList": [
 			"sew"
 		]
+	},
+	{
+		"title": "sus",
+		"etym": "Proto-Eremo-Numoran *sɸuʃ 'tail'",
+		"cat": "n., 4th",
+		"defList": [
+			"tail"
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "suz",
