@@ -647,24 +647,21 @@ const phono = {
 		const syllables = this.syllabify(word);
 		const ipaSyllables = syllables.map((syll, i) => {
 			// penultimate stress
-			console.debug(syll);
 			const stress = syllables.length < 2 || i === syllables.length - 2
 				? 'stressed' : 'unstressed';
 			this.vowels.ortho.forEach(
 				(v, j) => syll = syll.replace(v, this.vowels[stress][j]));
 			// consonants
-			console.debug(syll);
 			this.consonants.ortho.forEach(
 				(c, j) => syll = syll.replace(c, this.consonants.ipa[j]));
 			// coda liquids
-			console.debug(syll);
 			const divisions = this.divideSyllable(syll);
 			divisions[2] = divisions[2].replace('l', 'ʕʷ').replace('ʀ', 'ʀʷ');
 			// if (stress === 'stressed')
 			//	syll = 'ˈ' + syll;
 			return syll;
 		});
-		let o = ipaSyllables.join('');
+		let o = ipaSyllables.join(''); // '.'
 		// o = o.replace('.ˈ', 'ˈ');
 		// misc allophones
 		o = o.replace(/nk/g, 'ŋk');
@@ -678,7 +675,7 @@ const phono = {
 	syllabify(word){
 		const rev = word.split('').reverse().join('');
 		// eslint-disable-next-line max-len
-		const regex = /(([bdhklmnprstz])|([mnpbtdk][sz])|([sn][pbtdk])|([lr][bdhkmnpstz])|(kt))?[aeiouêô](([bdhklmnprstz])|([pbtdk]r)|(s[mpfntk])|(kl))?/g;
+		const regex = /(([bdhklmnprstz])|([sz][mnpbtdk])|([pbtdk][sn])|([bdhkmnpstz][lr])|(tk))?[aeiouêô](([bdhklmnprstz])|(r[pbtdk])|([mpfntk]s)|(lk))?/g;
 		return rev.match(regex).reverse().map(s => s.split('').reverse().join(''));
 	},
 	vowels: {
