@@ -127,7 +127,7 @@
 		]
 	},
 	{
-		"title": "addzalk",
+		"title": "adzalk",
 		"etym": "Proto-Eremo-Numoran *abdialx 'eel'",
 		"cat": "n., 2nd",
 		"defList": [
@@ -4917,7 +4917,7 @@
 		]
 	},
 	{
-		"title": "tôzdmu",
+		"title": "tôzmu",
 		"etym": "Proto-Eremo-Numoran *tôzdmu 'evitable'",
 		"cat": "adj.",
 		"defList": [
@@ -5298,8 +5298,8 @@
 		"categories": ["animal"]
 	},
 	{
-		"title": "utôzdmu",
-		"etym": "u- + tôzdmu 'evitable'",
+		"title": "utôzmu",
+		"etym": "u- + tôzmu 'evitable'",
 		"cat": "adj.",
 		"defList": [
 			"unavoidable, inevitable",
