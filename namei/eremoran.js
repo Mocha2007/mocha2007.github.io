@@ -641,10 +641,22 @@ const phono = {
 		return [onset, nucleus, coda];
 	},
 	/** @param {string} s */
-	ipa(s){
-		// main function
+	elem(s){
+		const span = document.createElement('span');
+		span.classList.add('ipa');
 		const word = normalizeEremoran(s);
 		const syllables = this.syllabify(word);
+		if (2 <= syllables.length)
+			syllables[syllables.length-2] = syllables[syllables.length-2].toUpperCase();
+		const ipa = this.ipa(word);
+		const syllabification = syllables.join('-');
+		span.innerHTML = `IPA: [${ipa}] &ndash; Syllabification: ${syllabification}`;
+		return span;
+	},
+	/** @param {string} s */
+	ipa(s){
+		// main function
+		const syllables = this.syllabify(s);
 		const ipaSyllables = syllables.map((syll, i) => {
 			// penultimate stress
 			const stress = syllables.length < 2 || i === syllables.length - 2
@@ -672,16 +684,18 @@ const phono = {
 		o = o.replace(/ɪ$/, 'i');
 		o = o.replace(/ʊ$/, 'u');
 		// syllabify
+		/*
 		o = this.syllabify(o).map((syll, i) =>
 			(i === syllables.length - 2
 				? 'ˈ' : i ? '.' : '') + syll
 		).join('');
+		*/
 		return o;
 	},
 	/** @param {string} word */
 	syllabify(word){
 		const rev = word.split('').reverse().join('');
-		const regex = /[^aeiouêôəɛɪɔʊ]{0,2}[aeiouêôəɛɪɔʊ][^aeiouêôəɛɪɔʊ]{0,2}/g;
+		const regex = /(([bdhklmnprstz])|([sz][bdkmnpt])|([bdkpt][sn])|([bdhkmnpstz][lr])|(tk))?[aeiouêô](([bdhklmnprstz])|(r[bdkpt])|([mpfntk]s|(lk)))?/g;
 		return rev.match(regex).reverse().map(s => s.split('').reverse().join(''));
 	},
 	vowels: {
