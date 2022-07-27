@@ -628,4 +628,61 @@ const search = {
 	},
 };
 
+/** tools to get pronounciation from normalized eremoran */
+const phono = {
+	consonants: {
+		ipa: 'bdfklmnpʀstz'.split(''),
+		ortho: 'bdhklmnprstz'.split(''),
+	},
+	/** @param {string} syll */
+	divideSyllable(syll){
+		const nucleus = syll.match(/[aeiouəɛɪɔʊ]/g)[0];
+		const [onset, coda] = syll.split(nucleus);
+		return [onset, nucleus, coda];
+	},
+	/** @param {string} s */
+	ipa(s){
+		// main function
+		const word = normalizeEremoran(s);
+		const syllables = this.syllabify(word);
+		const ipaSyllables = syllables.map((syll, i) => {
+			// penultimate stress
+			console.debug(syll);
+			const stress = syllables.length < 2 || i === syllables.length - 2
+				? 'stressed' : 'unstressed';
+			this.vowels.ortho.forEach(
+				(v, j) => syll = syll.replace(v, this.vowels[stress][j]));
+			// consonants
+			console.debug(syll);
+			this.consonants.ortho.forEach(
+				(c, j) => syll = syll.replace(c, this.consonants.ipa[j]));
+			// coda liquids
+			console.debug(syll);
+			const divisions = this.divideSyllable(syll);
+			divisions[2] = divisions[2].replace('l', 'ʕʷ').replace('ʀ', 'ʀʷ');
+			return syll;
+		});
+		let o = ipaSyllables.join('');
+		// misc allophones
+		o = o.replace('nk', 'ŋk');
+		o = o.replace(/^k/, 'g');
+		o = o.replace(/(?<=[aeiouêô])b(?=[aeiouêô])/g, 'w');
+		o = o.replace(/(?<=[aeiouêô])d(?=[aeiouêô])/g, 'ɾ');
+		o = o.replace(/(?<=[aɔ])ʀ(?![eiɛɪ])/g, 'ħ');
+		return o;
+	},
+	/** @param {string} word */
+	syllabify(word){
+		const rev = word.split('').reverse().join('');
+		// eslint-disable-next-line max-len
+		const regex = /(([bdhklmnprstz])|([mnpbtdk][sz])|([sn][pbtdk])|([lr][bdhkmnpstz])|(kt))?[aeiouêô](([bdhklmnprstz])|([pbtdk]r)|(s[mpfntk])|(kl))?/g;
+		return rev.match(regex).reverse().map(s => s.split('').reverse().join(''));
+	},
+	vowels: {
+		ortho: 'aeiouêô'.split(''),
+		stressed: 'aɛiɔueo'.split(''),
+		unstressed: 'əəɪəʊeo'.split(''),
+	},
+};
+
 // todo: function to create histogram of all words in .eremoran elements
