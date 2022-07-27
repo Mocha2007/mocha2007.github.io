@@ -651,6 +651,10 @@ const phono = {
 		const ipa = this.ipa(word);
 		const syllabification = syllables.join('-');
 		span.innerHTML = `IPA: [${ipa}] &ndash; Syllabification: ${syllabification}`;
+		// debug warning
+		const syllTest = syllabification.replace(/-/g, '').toLowerCase();
+		if (syllTest !== word)
+			console.warn(`${word} changed value to ${syllTest} during syllabification! (Is it valid Eremoran?)`);
 		return span;
 	},
 	/** @param {string} s */
