@@ -64,11 +64,7 @@ compileNounClass.data = () => new Array(...elements.d.getElementsByClassName('le
 
 /** f -> h &c to match font */
 function normalizeEremoran(s){
-	return s
-		.replace(/f/g, 'h')
-		.replace(/á/g, 'a')
-		.replace(/é/g, 'e')
-		.replace(/ó/g, 'o');
+	return s.replace(/f/g, 'h');
 }
 
 // learn eremoran!

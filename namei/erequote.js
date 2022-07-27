@@ -4,10 +4,10 @@
 const eremorans = {
 	aphorism: 'an Eremoran aphorism',
 	guild1: '<abbr title="Metalsmith\'s Guild">Aramaêsur Temêmor</abbr> motto',
-	guild2: 'common Enklár challenge and response',
+	guild2: 'common Enklar challenge and response',
 	philosopher1: 'Urisbazêsur Badmar, philosopher', // political
 	philosopher2: 'Temêsur Saiur, princess and philosopher', // infp
-	philosopher3: 'Mánikasur Hisklenar, philosopher', // serious/depresso
+	philosopher3: 'Manikasur Hisklenar, philosopher', // serious/depresso
 	poet1: 'Lusimarisur Siurisar, poet', // more abstract / misc
 	pun: 'an Eremoran pun',
 };

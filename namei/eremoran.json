@@ -119,8 +119,8 @@
 		"categories": ["time"]
 	},
 	{
-		"title": "addáukaz",
-		"etym": "ad + dáukaz",
+		"title": "addôkaz",
+		"etym": "ad + dôkaz",
 		"cat": "v.",
 		"defList": [
 			"happen"
@@ -852,7 +852,7 @@
 		]
 	},
 	{
-		"title": "bikém",
+		"title": "bikêm",
 		"etym": "Pre-Eremoran <em>apikkei</em>",
 		"cat": "n., 5th",
 		"defList": [
@@ -1230,15 +1230,6 @@
 		"notes": "adj."
 	},
 	{
-		"title": "dáukaz",
-		"etym": "Altered form of adafkaz, from ad 'to' + afkaz 'go'",
-		"cat": "v.",
-		"defList": [
-			"come; arrive"
-		],
-		"notes": "Replaced the now-obsolete <em>kunz</em>."
-	},
-	{
 		"title": "defôz",
 		"etym": "Proto-Eremo-Numoran *deɸôs 'be certain'",
 		"cat": "v.",
@@ -1323,8 +1314,8 @@
 		]
 	},
 	{
-		"title": "dindáukaz",
-		"etym": "din 'out of' + dáukaz 'come'",
+		"title": "dindôkaz",
+		"etym": "din 'out of' + dôkaz 'come'",
 		"cat": "v.",
 		"defList": [
 			"become"
@@ -1410,6 +1401,15 @@
 		"defList": [
 			"ask"
 		]
+	},
+	{
+		"title": "dôkaz",
+		"etym": "Altered form of adafkaz, from ad 'to' + afkaz 'go'",
+		"cat": "v.",
+		"defList": [
+			"come; arrive"
+		],
+		"notes": "Replaced the now-obsolete <em>kunz</em>."
 	},
 	{
 		"title": "dômo",
@@ -2114,11 +2114,29 @@
 		"notes": "See <em>be</em> for an or linking clauses. cf. <em>nanau</em>, inclusive or and \"quelque\" some. The choice of <em>hoki</em> vs. <em>ho</em> with the obviative mostly has to do with whether the person is close in relation or proximity to the listener"
 	},
 	{
+		"title": "idak",
+		"etym": "Proto-Eremo-Numoran *oidax 'bird'",
+		"cat": "n., 2nd",
+		"defList": [
+			"bird",
+			"(vulgar) dick, cock"
+		],
+		"categories": ["sex"]
+	},
+	{
 		"title": "idisu",
 		"etym": "id + -(i)su",
 		"cat": "adj.",
 		"defList": [
 			"first"
+		]
+	},
+	{
+		"title": "idkaz",
+		"etym": "Blend of idak and afkaz",
+		"cat": "v.",
+		"defList": [
+			"(of birds) fly"
 		]
 	},
 	{
@@ -2192,7 +2210,7 @@
 	},
 	{
 		"title": "itrôz",
-		"etym": "iát + rôz",
+		"etym": "it + rôz",
 		"cat": "v.",
 		"defList": [
 			"reply, answer"
@@ -2542,7 +2560,7 @@
 	},
 	{
 		"title": "kôbensu",
-		"etym": "kôbénk + -su.",
+		"etym": "kôbenk + -su.",
 		"cat": "adj.",
 		"defList": [
 			"<i>(literally)</i> murine",
@@ -2554,7 +2572,7 @@
 		"notes": "cf. en. <em>mousy</em> and la. <em>murinus</em>, mirroring senses 3-5."
 	},
 	{
-		"title": "kôbénk",
+		"title": "kôbenk",
 		"etym": "Pre-Eremoran <em>qōpena</em> 'mouse', from <em>qōp</em> 'love' + <em>ena</em> 'grain'",
 		"cat": "n., 2nd",
 		"defList": [
@@ -3743,24 +3761,6 @@
 		"cat": "adj.",
 		"defList": [
 			"away"
-		]
-	},
-	{
-		"title": "óidak",
-		"etym": "Proto-Eremo-Numoran *oidax 'bird'",
-		"cat": "n., 2nd",
-		"defList": [
-			"bird",
-			"(vulgar) dick, cock"
-		],
-		"categories": ["sex"]
-	},
-	{
-		"title": "óidkaz",
-		"etym": "Blend of óidak and afkaz",
-		"cat": "v.",
-		"defList": [
-			"(of birds) fly"
 		]
 	},
 	{
@@ -5188,7 +5188,7 @@
 		]
 	},
 	{
-		"title": "upiám",
+		"title": "upiam",
 		"etym": "Pre-Eremoran uppayāpa \"rune; glyph; symbol\", evidently loaned from <a href=\"vazcud.html#lemma-pagubu\">Važcud</a> pagubu \"writing\", nominalization of pagu \"write\".",
 		"cat": "n., 5th",
 		"defList": [
@@ -5198,8 +5198,8 @@
 		]
 	},
 	{
-		"title": "upiát",
-		"etym": "upiám + -t",
+		"title": "upiat",
+		"etym": "upiam + -t",
 		"cat": "n., 3rd",
 		"defList": [
 			"flag"
