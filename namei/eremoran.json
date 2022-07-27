@@ -3499,6 +3499,15 @@
 		]
 	},
 	{
+		"title": "nasdôk",
+		"etym": "nasu 'two' + dôkaz 'become'",
+		"cat": "n., 2nd",
+		"defList": [
+			"shapeshifter"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "nasisu",
 		"etym": "nasu + -isu",
 		"cat": "adj.",
