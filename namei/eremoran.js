@@ -648,11 +648,7 @@ const phono = {
 		const syllabification = syllables.join('-');
 		span.innerHTML = `IPA: [${ipa}] &ndash; Syllabification: ${syllabification}`;
 		// debug warning
-		const syllTest = syllabification.replace(/-/g, '').toLowerCase();
-		if (syllTest !== word.replace(/ /g, ''))
-			console.warn(`${word} changed value to ${syllTest} during syllabification! (Is it valid Eremoran?)`);
-		if ('bph'.includes(word[word.length-1]))
-			console.warn(`${word} ends in a labial`);
+		this.validate(word);
 		return span;
 	},
 	/** @param {string} s */
@@ -699,6 +695,15 @@ const phono = {
 		const rev = word.split('').reverse().join('');
 		const regex = /(([sz][bdkmnpt])|([kt][sn])|([bdhkmnpstz][lr])|(tk)|([bdhklmnprstz]))?[aeiouêô]((r[bdkpt])|([ptk]s|(lk)|([bdhklmnprstz])))?/g;
 		return rev.match(regex).reverse().map(s => s.split('').reverse().join(''));
+	},
+	/** @param {string} word */
+	validate(word){
+		// debug warnings
+		const syllTest = this.syllabify(word).join('');
+		if (syllTest !== word.replace(/ /g, ''))
+			console.warn(`${word} changed value to ${syllTest} during syllabification! (Is it valid Eremoran?)`);
+		if ('bph'.includes(word[word.length-1]))
+			console.warn(`${word} ends in a labial`);
 	},
 	vowels: {
 		ortho: 'aeiouêô'.split(''),
