@@ -10,24 +10,26 @@ function bar(){
 	/** @type {SVGElement} */
 	const barChart = document.getElementById('chart');
 	barChart.setAttribute('viewBox', `0 0 ${sizeX} ${sizeY}`);
-	/** @type {number} */
-	const len = data.x.length;
 	const spacingRatio = 0.5;
-	const width = sizeX / (len + spacingRatio*(len+1));
-	const spacing = sizeX / len;
 	const divisor = data.percent ? sum(data.y) / 100 : 1;
 	const maxY = Math.max(...data.y) / divisor;
 	const yScale = sizeY / maxY * 0.85;
 
 	/** @type {[*, number][]} */
 	let xxyy = data.x.map((x, i) => [x, round(data.y[i]/divisor, 1)]);
+	if (data.pruneY)
+		xxyy = xxyy.filter(xy => !(xy[1] < data.pruneY));
 	if (data.sort)
 		xxyy = xxyy.sort((a, b) => a[1] - b[1]);
-	else if (data.sortX)
+	else if (data.sortX) // these two are the only mutually exclusive ones
 		xxyy = xxyy.sort((a, b) => a[0] - b[0]);
 	if (data.reverse)
 		xxyy.reverse();
 	// console.debug(xxyy);
+
+	const len = xxyy.length;
+	const width = sizeX / (len + spacingRatio*(len+1));
+	const spacing = sizeX / len;
 
 	xxyy.forEach((xy, i) => {
 		/** @type {number} */
@@ -86,12 +88,20 @@ function getData(){
 	return fromURL(rawData);
 }
 
-/** @param {[]} d */
-function histo(d){
+/**
+ * @param {[]} d
+ * @param {boolean} sortY - whether to sort chart by Y (true) or X (false)
+ * @param {boolean} reverse - whether to reverse order of elements (after sorting)
+ * @param {number} pruneY - prune data with y < pruneY
+ */
+function histo(d, sort, reverse, pruneY){
 	const x = Array.from(new Set(Array.from(d)));
 	const y = x.map(char => d.filter(i => i === char).length);
 	const data = {
-		sortX: true,
+		pruneY,
+		reverse,
+		sort,
+		sortX: !sort,
 		type: 'bar',
 		x,
 		y,

@@ -280,8 +280,8 @@ function computeStats(){
 	// print dict length
 	document.getElementById('wordcount').innerHTML = EremoranTooltip.words.length;
 	// new graphs
-	const chartURL = 'https://mocha2007.github.io/tools/chart.svg?data=';
-	// const chartURL = '../tools/chart.svg?data=';
+	// const chartURL = 'https://mocha2007.github.io/tools/chart.svg?data=';
+	const chartURL = '../tools/chart.svg?data=';
 	document.getElementById('chartLetter').src = chartURL + charHisto(
 		normalizeEremoran(compileDict.data().replace(/\s/g, ''))
 	);
@@ -291,6 +291,10 @@ function computeStats(){
 	document.getElementById('chartLength').src = chartURL + histo(compileLength.data());
 	document.getElementById('chartMeaning').src = chartURL + histo(compileMeanings.data());
 	document.getElementById('chartClass').src = chartURL + histo(compileNounClass.data());
+	// do word histogram
+	const wordData = quotes.map(i => i[0].replace(/ [:\/]/g, '').toLowerCase()).join(' ').split(' ');
+	// const filteredWordData = wordData.filter(word => wordData)
+	document.getElementById('chartWord').src = chartURL + histo(wordData, true, true, 3);
 	// add categories
 	/** @type {HTMLSelectElement} */
 	const categorySearch = document.getElementById('categorySearch');
@@ -716,5 +720,3 @@ const phono = {
 		unstressed: 'əəɪəʊeo'.split(''),
 	},
 };
-
-// todo: function to create histogram of all words in .eremoran elements
