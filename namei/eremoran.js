@@ -7,7 +7,7 @@
 
 // tools for main
 const elements = {
-	/** @type {string} */
+	/** @type {string[]} */
 	categories: [],
 	/** @returns {HTMLDListElement} - the entire dictionary element*/
 	get d(){
@@ -298,6 +298,8 @@ function computeStats(){
 	// add categories
 	/** @type {HTMLSelectElement} */
 	const categorySearch = document.getElementById('categorySearch');
+	// sort first
+	elements.categories.sort();
 	elements.categories.forEach(category => {
 		const option = document.createElement('option');
 		option.value = option.innerHTML = category;
