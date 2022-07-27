@@ -660,11 +660,14 @@ const phono = {
 			console.debug(syll);
 			const divisions = this.divideSyllable(syll);
 			divisions[2] = divisions[2].replace('l', 'ʕʷ').replace('ʀ', 'ʀʷ');
+			// if (stress === 'stressed')
+			//	syll = 'ˈ' + syll;
 			return syll;
 		});
 		let o = ipaSyllables.join('');
+		// o = o.replace('.ˈ', 'ˈ');
 		// misc allophones
-		o = o.replace('nk', 'ŋk');
+		o = o.replace(/nk/g, 'ŋk');
 		o = o.replace(/^k/, 'g');
 		o = o.replace(/(?<=[aeiouêô])b(?=[aeiouêô])/g, 'w');
 		o = o.replace(/(?<=[aeiouêô])d(?=[aeiouêô])/g, 'ɾ');
