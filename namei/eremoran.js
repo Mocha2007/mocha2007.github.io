@@ -680,8 +680,11 @@ const phono = {
 			.replace(/(?<=[aeiouəɛɪɔʊ])b(?=[aeiouəɛɪɔʊ])/g, 'w')
 			.replace(/(?<=[aeiouəɛɪɔʊ])d(?=[aeiouəɛɪɔʊ])/g, 'ɾ')
 			.replace(/(?<=[aɔ])ʀ(?![eiɛɪ])/g, 'ħ')
-			.replace(/ɪ$/, 'i')
-			.replace(/ʊ$/, 'u');
+			.replace(/ɪ$/, 'i') // i/u do not reduce word-finally
+			.replace(/ʊ$/, 'u') // i/u do not reduce word-finally
+			.replace(/kz$/, 'ks') // fix verb ending weirdness
+			.replace(/pz$/, 'ps') // fix verb ending weirdness
+			.replace(/tz$/, 'ts'); // fix verb ending weirdness
 		// syllabify
 		/*
 		o = this.syllabify(o).map((syll, i) =>
