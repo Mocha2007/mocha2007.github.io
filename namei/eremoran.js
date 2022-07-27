@@ -701,7 +701,7 @@ const phono = {
 	/** @param {string} word */
 	syllabify(word){
 		const rev = word.split('').reverse().join('');
-		const regex = /(([sz][bdkmnpt])|([bdkpt][sn])|([bdhkmnpstz][lr])|(tk)|([bdhklmnprstz]))?[aeiouêô]((r[bdkpt])|([mpfntk]s|(lk)|([bdhklmnprstz])))?/g;
+		const regex = /(([sz][bdkmnpt])|([bdkpt][sn])|([bdhkmnpstz][lr])|(tk)|([bdhklmnprstz]))?[aeiouêô]((r[bdkpt])|([mphntk]s|(lk)|([bdhklmnprstz])))?/g;
 		return rev.match(regex).reverse().map(s => s.split('').reverse().join(''));
 	},
 	vowels: {
