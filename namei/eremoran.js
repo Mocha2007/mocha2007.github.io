@@ -653,7 +653,7 @@ const phono = {
 		span.innerHTML = `IPA: [${ipa}] &ndash; Syllabification: ${syllabification}`;
 		// debug warning
 		const syllTest = syllabification.replace(/-/g, '').toLowerCase();
-		if (syllTest !== word)
+		if (syllTest !== word.replace(/ /g, ''))
 			console.warn(`${word} changed value to ${syllTest} during syllabification! (Is it valid Eremoran?)`);
 		return span;
 	},
@@ -699,7 +699,7 @@ const phono = {
 	/** @param {string} word */
 	syllabify(word){
 		const rev = word.split('').reverse().join('');
-		const regex = /(([bdhklmnprstz])|([sz][bdkmnpt])|([bdkpt][sn])|([bdhkmnpstz][lr])|(tk))?[aeiouêô](([bdhklmnprstz])|(r[bdkpt])|([mpfntk]s|(lk)))?/g;
+		const regex = /(([sz][bdkmnpt])|([bdkpt][sn])|([bdhkmnpstz][lr])|(tk)|([bdhklmnprstz]))?[aeiouêô]((r[bdkpt])|([mpfntk]s|(lk)|([bdhklmnprstz])))?/g;
 		return rev.match(regex).reverse().map(s => s.split('').reverse().join(''));
 	},
 	vowels: {
