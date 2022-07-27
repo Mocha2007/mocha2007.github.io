@@ -675,6 +675,7 @@ const phono = {
 		// o = o.replace('.ˈ', 'ˈ');
 		// misc allophones
 		o = o.replace(/nk/g, 'ŋk');
+		o = o.replace(/^f/, 'h');
 		o = o.replace(/^k/, 'g');
 		o = o.replace(/(?<=[aeiouəɛɪɔʊ])b(?=[aeiouəɛɪɔʊ])/g, 'w');
 		o = o.replace(/(?<=[aeiouəɛɪɔʊ])d(?=[aeiouəɛɪɔʊ])/g, 'ɾ');
