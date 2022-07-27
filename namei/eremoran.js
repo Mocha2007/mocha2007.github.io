@@ -655,6 +655,8 @@ const phono = {
 		const syllTest = syllabification.replace(/-/g, '').toLowerCase();
 		if (syllTest !== word.replace(/ /g, ''))
 			console.warn(`${word} changed value to ${syllTest} during syllabification! (Is it valid Eremoran?)`);
+		if ('bph'.includes(word[word.length-1]))
+			console.warn(`${word} ends in a labial`);
 		return span;
 	},
 	/** @param {string} s */
