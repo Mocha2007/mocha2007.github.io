@@ -674,14 +674,14 @@ const phono = {
 		let o = ipaSyllables.join(''); // '.'
 		// o = o.replace('.ˈ', 'ˈ');
 		// misc allophones
-		o = o.replace(/nk/g, 'ŋk');
-		o = o.replace(/^f/, 'h');
-		o = o.replace(/^k/, 'g');
-		o = o.replace(/(?<=[aeiouəɛɪɔʊ])b(?=[aeiouəɛɪɔʊ])/g, 'w');
-		o = o.replace(/(?<=[aeiouəɛɪɔʊ])d(?=[aeiouəɛɪɔʊ])/g, 'ɾ');
-		o = o.replace(/(?<=[aɔ])ʀ(?![eiɛɪ])/g, 'ħ');
-		o = o.replace(/ɪ$/, 'i');
-		o = o.replace(/ʊ$/, 'u');
+		o = o.replace(/nk/g, 'ŋk')
+			.replace(/^f/, 'h')
+			.replace(/^k/, 'g')
+			.replace(/(?<=[aeiouəɛɪɔʊ])b(?=[aeiouəɛɪɔʊ])/g, 'w')
+			.replace(/(?<=[aeiouəɛɪɔʊ])d(?=[aeiouəɛɪɔʊ])/g, 'ɾ')
+			.replace(/(?<=[aɔ])ʀ(?![eiɛɪ])/g, 'ħ')
+			.replace(/ɪ$/, 'i')
+			.replace(/ʊ$/, 'u');
 		// syllabify
 		/*
 		o = this.syllabify(o).map((syll, i) =>
