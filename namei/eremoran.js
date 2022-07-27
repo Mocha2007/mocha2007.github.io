@@ -653,7 +653,7 @@ const phono = {
 				(v, j) => syll = syll.replace(v, this.vowels[stress][j]));
 			// consonants
 			this.consonants.ortho.forEach(
-				(c, j) => syll = syll.replace(c, this.consonants.ipa[j]));
+				(c, j) => syll = syll.replace(new RegExp(c, 'g'), this.consonants.ipa[j]));
 			// coda liquids
 			const divisions = this.divideSyllable(syll);
 			divisions[2] = divisions[2].replace('l', 'ʕʷ').replace('ʀ', 'ʀʷ');
