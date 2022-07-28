@@ -691,7 +691,9 @@ const phono = {
 			.replace(/ʊ$/, 'u') // i/u do not reduce word-finally
 			.replace(/kz$/, 'ks') // fix verb ending weirdness
 			.replace(/pz$/, 'ps') // fix verb ending weirdness
-			.replace(/tz$/, 'ts'); // fix verb ending weirdness
+			.replace(/tz$/, 'ts') // fix verb ending weirdness
+			.replace(/kʀ/g, 'qʀ') // velar + r
+			.replace(/gʀ/g, 'ɢʀ'); // velar + r
 		// syllabify
 		/*
 		o = this.syllabify(o).map((syll, i) =>
