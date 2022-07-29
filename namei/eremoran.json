@@ -1322,6 +1322,14 @@
 		]
 	},
 	{
+		"title": "dinfanuz",
+		"etym": "din 'out of' + hanuz 'hold",
+		"cat": "n., 5th",
+		"defList": [
+			"lend"
+		]
+	},
+	{
 		"title": "dinrôz",
 		"etym": "din 'out of' + rôz 'speak'",
 		"cat": "v.",
@@ -1818,6 +1826,14 @@
 		"categories": ["person"]
 	},
 	{
+		"title": "hanuz",
+		"etym": "Verbalization of hanum 'hold",
+		"cat": "v.",
+		"defList": [
+			"hold"
+		]
+	},
+	{
 		"title": "hêan",
 		"etym": "Proto-Eremo-Numoran *ɸêan 'chin'",
 		"cat": "n., 4th",
@@ -2137,6 +2153,14 @@
 		"cat": "adj.",
 		"defList": [
 			"any"
+		]
+	},
+	{
+		"title": "idz",
+		"etym": "id + -z",
+		"cat": "v.",
+		"defList": [
+			"be the same thing"
 		]
 	},
 	{
@@ -3006,6 +3030,14 @@
 		],
 		"notes": "Owned dogs are called <em>busk</em>",
 		"categories": ["animal"]
+	},
+	{
+		"title": "madinfanuz",
+		"etym": "mam 'home' + dinfanuz 'lend",
+		"cat": "n., 5th",
+		"defList": [
+			"let, lease"
+		]
 	},
 	{
 		"title": "maêr",
