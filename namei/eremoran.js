@@ -754,7 +754,8 @@ const gen = {
 				.replace(/ts/g, 's')
 				.replace(/[eo](?=.*[aeiouêô].*[aeiouêô])/g, 'a') // account for vowel reduction
 				.replace(/aa/g, 'a') // double-a reduction
-				.replace(/a[aeiouêô]{2,}/g, 'a'); // a-triphthong reduction
+				.replace(/a(?=[aeiouêô]{2,})/g, '') // a-triphthong reduction
+				.replace(/^a(?=.*[aeiouêô].*[aeiouêô])/g, 'a'); // ^a-V-V deletion
 			return pform;
 		},
 		gen(){

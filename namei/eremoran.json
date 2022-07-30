@@ -500,7 +500,7 @@
 	},
 	{
 		"title": "as",
-		"etym": "Proto-Eremo-Numoran *assa 'each other'",
+		"etym": "Reduced from ad-se 'to' + 'other'",
 		"cat": "adv.",
 		"defList": [
 			"each other (reciporical)"
@@ -3275,7 +3275,7 @@
 	{
 		"title": "mat",
 		"img": "../img/eremoran/mat.png",
-		"etym": "Proto-Eremo-Numoran *ma 'bearer, holder, container' + *-t (suffix for tools)",
+		"etym": "Proto-Eremo-Numoran *ma-t, from *ma 'bearer, holder, container' + *-t (suffix for tools)",
 		"cat": "n., 3rd",
 		"defList": [
 			"house",
@@ -4400,11 +4400,12 @@
 	},
 	{
 		"title": "se",
-		"etym": "Proto-Eremo-Numoran *sie 'grain'",
+		"etym": "Proto-Eremo-Numoran *sie 'grain'; Proto-Eremo-Numoran *ʃe 'other'",
 		"cat": "n., 4th",
 		"defList": [
 			"grain",
-			"a unit of measurement equal to one-fifteenth of one edzam (~2.84 mm)"
+			"a unit of measurement equal to one-fifteenth of one edzam (~2.84 mm)",
+			"(archaic) other"
 		],
 		"categories": ["plant"]
 	},
@@ -5483,7 +5484,7 @@
 	},
 	{
 		"title": "zadu",
-		"etym": "Proto-Eremo-Numoran *sadu 'lip'",
+		"etym": "Proto-Eremo-Numoran *asadu 'lip'",
 		"cat": "n., 4th",
 		"defList": [
 			"lip"
@@ -5518,7 +5519,7 @@
 	},
 	{
 		"title": "zeti",
-		"etym": "Proto-Eremo-Numoran *seti 'joint'",
+		"etym": "Proto-Eremo-Numoran *aseti 'joint'",
 		"cat": "n., 4th",
 		"defList": [
 			"joint"
@@ -5526,7 +5527,7 @@
 	},
 	{
 		"title": "zesti",
-		"etym": "Proto-Eremo-Numoran *sesetis 'angled', reduplicated from *seti 'joint'",
+		"etym": "Proto-Eremo-Numoran *aasetis 'angled', with partial reduplication of *aseti 'joint'",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"angled",
@@ -5545,7 +5546,7 @@
 	},
 	{
 		"title": "zurku",
-		"etym": "Proto-Eremo-Numoran *surgu 'bad'",
+		"etym": "Proto-Eremo-Numoran *asurgu 'bad'",
 		"cat": "adj.",
 		"defList": [
 			"bad",
