@@ -22,7 +22,7 @@
 	},
 	{
 		"title": "abbak",
-		"etym": "Proto-Eremo-Numoran <em>*aββax</em> 'bee'",
+		"etym": "Proto-Eremo-Numoran *aββax 'bee'",
 		"cat": "n., 2nd",
 		"defList": [
 			"bee"
@@ -39,7 +39,7 @@
 	},
 	{
 		"title": "abbakaz",
-		"etym": "Proto-Eremo-Numoran <em>*xêd-βakas</em> 'to' + 'get'",
+		"etym": "ad 'to' + bakaz 'get'",
 		"cat": "v.",
 		"defList": [
 			"gain (esp. by force)",
@@ -349,7 +349,7 @@
 	{
 		"title": "arama",
 		"img": "../img/eremoran/arama.png",
-		"etym": "Proto-Eremo-Numoran *xere 'fire' + *ma 'bearer, holder, container'. Compare Modern Eremoran <i>dare</i> 'gold', <i>ardo</i> 'fire', and <i>mat</i> 'house'.",
+		"etym": "Proto-Eremo-Numoran *xere-ma from *xere 'fire' + *ma 'bearer, holder, container'. Compare Modern Eremoran <i>dare</i> 'gold', <i>ardo</i> 'fire', and <i>mat</i> 'house'.",
 		"cat": "n., 4th",
 		"defList": [
 			"native copper",
@@ -434,7 +434,7 @@
 	{
 		"title": "ardzin",
 		"img": "../img/eremoran/ardzin.png",
-		"etym": "Proto-Eremo-Numoran *xeredo 'flame' + *in '???'",
+		"etym": "Proto-Eremo-Numoran *xeredo-in from *xeredo 'flame' + *in '???'",
 		"cat": "n., 4th",
 		"defList": [
 			"native silver"
