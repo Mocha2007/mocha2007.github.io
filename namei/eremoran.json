@@ -39,7 +39,7 @@
 	},
 	{
 		"title": "abbakaz",
-		"etym": "Proto-Eremo-Numoran <em>*xêdβakas</em> 'to' + 'get'",
+		"etym": "Proto-Eremo-Numoran <em>*xêd-βakas</em> 'to' + 'get'",
 		"cat": "v.",
 		"defList": [
 			"gain (esp. by force)",
@@ -921,7 +921,7 @@
 		]
 	},
 	{
-		"title": "biniam",
+		"title": "biniom",
 		"etym": "Proto-Eremo-Numoran *biniom 'imagination'",
 		"cat": "n., 5th",
 		"defList": [
@@ -972,7 +972,7 @@
 		"notes": "cf. <em>udou</em>, the adjective form, and <em>pukusam</em>, the opposite form"
 	},
 	{
-		"title": "bolant",
+		"title": "bolent",
 		"img": "../img/eremoran/bolent.png",
 		"etym": "Proto-Eremo-Numoran *βolent 'hammer'",
 		"cat": "n., 3rd",
@@ -1386,7 +1386,7 @@
 		]
 	},
 	{
-		"title": "dodar",
+		"title": "doder",
 		"etym": "Proto-Eremo-Numoran *doder 'guest'",
 		"cat": "n., 1st",
 		"defList": [
@@ -2190,7 +2190,7 @@
 		"categories": ["animal"]
 	},
 	{
-		"title": "irarz",
+		"title": "irerz",
 		"etym": "Proto-Eremo-Numoran *irers 'boil'",
 		"cat": "v.",
 		"defList": [
@@ -2623,7 +2623,7 @@
 		]
 	},
 	{
-		"title": "konaz",
+		"title": "konoz",
 		"etym": "Proto-Eremo-Numoran *gonos 'sing'",
 		"cat": "v.",
 		"defList": [
@@ -2977,7 +2977,7 @@
 		"categories": ["body part"]
 	},
 	{
-		"title": "libaz",
+		"title": "liboz",
 		"etym": "Proto-Eremo-Numoran *libos 'cry'",
 		"cat": "v.",
 		"defList": [
