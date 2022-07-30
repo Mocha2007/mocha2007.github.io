@@ -316,7 +316,7 @@
 	},
 	{
 		"title": "annumz",
-		"etym": "Proto-Eremo-Numoran *xênnums 'charge' from *xêd 'to' + *nums 'run'",
+		"etym": "Proto-Eremo-Numoran *xênnums 'charge', from *xêd 'to' + *nums 'run'",
 		"cat": "v.",
 		"defList": [
 			"charge; rush; skirmish"
@@ -349,7 +349,7 @@
 	{
 		"title": "arama",
 		"img": "../img/eremoran/arama.png",
-		"etym": "Proto-Eremo-Numoran *xere-ma from *xere 'fire' + *ma 'bearer, holder, container'. Compare Modern Eremoran <i>dare</i> 'gold', <i>ardo</i> 'fire', and <i>mat</i> 'house'.",
+		"etym": "Proto-Eremo-Numoran *xere-ma 'copper' from *xere 'fire' + *ma 'bearer, holder, container'. Compare Modern Eremoran <i>dare</i> 'gold', <i>ardo</i> 'fire', and <i>mat</i> 'house'.",
 		"cat": "n., 4th",
 		"defList": [
 			"native copper",
@@ -434,7 +434,7 @@
 	{
 		"title": "ardzin",
 		"img": "../img/eremoran/ardzin.png",
-		"etym": "Proto-Eremo-Numoran *xeredo-in from *xeredo 'flame' + *in '???'",
+		"etym": "Proto-Eremo-Numoran *xeredo-in 'silver' from *xeredo 'flame' + *in '???'",
 		"cat": "n., 4th",
 		"defList": [
 			"native silver"
@@ -470,7 +470,7 @@
 		"categories": ["animal"]
 	},
 	{
-		"title": "arlira",
+		"title": "arlire",
 		"img": "../img/eremoran/talira.png",
 		"etym": "Proto-Eremo-Numoran *erelire 'deciduous tree', from *ereu 'red' + *lire 'wood'. cf. lilira, talira.",
 		"cat": "n., 4th",
@@ -515,16 +515,6 @@
 		]
 	},
 	{
-		"title": "asmu",
-		"etym": "Proto-Eremo-Numoran *iasmu 'forearm'",
-		"cat": "n., 4th",
-		"defList": [
-			"forearm"
-		],
-		"notes": "asmu is one of a handful of nouns ending in -u.",
-		"categories": ["body part"]
-	},
-	{
 		"title": "astedu",
 		"etym": "Proto-Eremo-Numoran *astedu 'beautiful'",
 		"cat": "adj.",
@@ -549,6 +539,16 @@
 		"defList": [
 			"face"
 		],
+		"categories": ["body part"]
+	},
+	{
+		"title": "azmu",
+		"etym": "Proto-Eremo-Numoran *asmu 'forearm'",
+		"cat": "n., 4th",
+		"defList": [
+			"forearm"
+		],
+		"notes": "azmu is one of a handful of nouns ending in -u.",
 		"categories": ["body part"]
 	},
 	{
@@ -828,7 +828,7 @@
 	},
 	{
 		"title": "bibi",
-		"etym": "Proto-Eremo-Numoran *bibis 'eat'.",
+		"etym": "Proto-Eremo-Numoran *bibi 'breast'.",
 		"cat": "n., 4th",
 		"defList": [
 			"breast"
@@ -950,7 +950,7 @@
 		"categories": ["body part"]
 	},
 	{
-		"title": "biniom",
+		"title": "binom",
 		"etym": "Proto-Eremo-Numoran *biniom 'imagination'",
 		"cat": "n., 5th",
 		"defList": [
@@ -1225,7 +1225,7 @@
 	{
 		"title": "danôak",
 		"img": "../img/eremoran/danoak.png",
-		"etym": "Proto-Eremo-Numoran *da 'earth' + *nôax 'louse'",
+		"etym": "Proto-Eremo-Numoran *da-nôax 'bug' from *da 'earth' + *nôax 'louse'",
 		"cat": "n., 2nd",
 		"defList": [
 			"bug, insect"
@@ -1234,7 +1234,7 @@
 	},
 	{
 		"title": "dare",
-		"etym": "Proto-Eremo-Numoran *da 'earth' + *xere 'fire'. Compare arama.",
+		"etym": "Proto-Eremo-Numoran *da-xere 'gold', from *da 'earth' + *xere 'fire'. Compare arama.",
 		"cat": "n., 4th",
 		"defList": [
 			"gold"
@@ -1553,7 +1553,7 @@
 	},
 	{
 		"title": "ek",
-		"etym": "Proto-Eremo-Numoran *ex 'horse'",
+		"etym": "Proto-Eremo-Numoran *ex-x 'horse'",
 		"cat": "n., 2nd",
 		"defList": [
 			"horse",
@@ -2212,7 +2212,7 @@
 	},
 	{
 		"title": "iktêr",
-		"etym": "Proto-Eremo-Numoran *ikatêr, from *ikat- ??? + -êr",
+		"etym": "Proto-Eremo-Numoran *ikatêr 'girl', from *ikat- ??? + -êr",
 		"cat": "n., 1st",
 		"defList": [
 			"(archaic, non-southern) girl (older form of elaôr)"
@@ -3949,10 +3949,10 @@
 	},
 	{
 		"title": "ou",
-		"etym": "Old Eremoran *ɸo-, from Pre-Eremoran *po- [polite prefix]",
+		"etym": "Old Eremoran *ɸo- [polite prefix], from Pre-Eremoran *po- [polite prefix]",
 		"cat": "adj.",
 		"defList": [
-			"[polite affix]",
+			"[polite prefix]",
 			"[affix used to form first/second person personal pronouns, eg. <i>môk</i>]"
 		]
 	},

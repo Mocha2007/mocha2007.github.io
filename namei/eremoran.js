@@ -734,15 +734,16 @@ const gen = {
 		evolve(pform){
 			// todo
 			pform = pform
-				.replace(/x[eê]/g, 'a')
+				.replace(/x[eê]x?/g, 'a')
+				.replace(/[eê]x/g, 'a')
 				.replace(/x/g, 'k')
+				.replace(/(?<=[bdhklmnrstz])i(?=[aeiouêô])/g, 'j')
 				.replace(/^[ɸs](?=[aeiouêô])/g, 'h')
 				.replace(/(?<=[aeiouêôbdlmnrz])s(?=[aeiouêôbdlmnrz]|$)/g, 'z')
 				.replace(/(?<=[aeiouêôbdlmnrz])ss(?=[aeiouêôbdlmnrz]|$)/g, 's')
-				.replace(/(?<=^|[aeiouêô])ɸ(?=u)/g, '') // the lookbehind might be unnecessary
+				.replace(/(?<=[aeiouêô])ɸu/g, 'u') // the lookbehind might be unnecessary
 				.replace(/ɸ/g, 'f')
 				.replace(/β/g, 'b')
-				.replace(/(?<=[bdhklmnrstz])i(?=[aeiouêô])/g, 'j')
 				.replace(/sj/g, 'ʃ')
 				.replace(/zj/g, 'ʒ')
 				.replace(/tj/g, 'tʃ')
@@ -758,7 +759,7 @@ const gen = {
 		},
 		init(){
 			this.pforms = elements.raws.map(o => {
-				const matches = o.etym.match(/^Proto-Eremo-Numoran *[^ ]+(?= )/g);
+				const matches = o.etym.replace(/[;:,.]/g, '').match(/^Proto-Eremo-Numoran *[^ ]+(?= )/g);
 				if (matches)
 					return matches[0].slice(21);
 				return '';
@@ -779,8 +780,8 @@ const gen = {
 				if (!o.etym.includes(this.pforms[pformi]))
 					return; // continue
 				const pform = this.pforms[pformi];
-				const expected = o.title.replace(/kz$/g, 'ks').replace(/tz$/g, 'ts').replace('-', '');
-				const actual = phono.syllabify(this.evolve(pform)).join('');
+				const expected = normalizeEremoran(o.title).replace(/kz$/g, 'ks').replace(/tz$/g, 'ts').replace('-', '');
+				const actual = phono.syllabify(normalizeEremoran(this.evolve(pform))).join('');
 				if (expected !== actual)
 					console.warn(`${expected} expected, but ${pform} => ${actual}`);
 				pformi++;
