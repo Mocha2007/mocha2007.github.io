@@ -136,6 +136,14 @@
 		]
 	},
 	{
+		"title": "adzamarz",
+		"etym": "Proto-Eremo-Numoran *xêd-samars 'relax', from to + lie",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) relax"
+		]
+	},
+	{
 		"title": "afêkam",
 		"etym": "afêkz + -am",
 		"cat": "n., 5th",
@@ -425,9 +433,9 @@
 		"categories": ["drink"]
 	},
 	{
-		"title": "ardzin",
+		"title": "ardzên",
 		"img": "../img/eremoran/ardzin.png",
-		"etym": "Proto-Eremo-Numoran *xere-diin 'silver' from *xere 'fire' + *diin '???'",
+		"etym": "Proto-Eremo-Numoran *xere-diên 'silver' from *xere 'fire' + *diên '???'",
 		"cat": "n., 4th",
 		"defList": [
 			"native silver"
@@ -435,8 +443,8 @@
 		"categories": ["metal"]
 	},
 	{
-		"title": "ardzint",
-		"etym": "ardzin + -t",
+		"title": "ardzênt",
+		"etym": "ardzên + -t",
 		"cat": "n., 3rd",
 		"defList": [
 			"silver"
@@ -487,14 +495,6 @@
 		"cat": "adv.",
 		"defList": [
 			"each other (reciporical)"
-		]
-	},
-	{
-		"title": "asmarz",
-		"etym": "Proto-Eremo-Numoran *xêd-samars 'relax', from to + lie",
-		"cat": "v.",
-		"defList": [
-			"(intransitive) relax"
 		]
 	},
 	{

@@ -794,7 +794,7 @@ const gen = {
 					actual = actual.replace(/[sz]$/g, '');
 				// compare
 				if (expected !== actual)
-					console.warn(`${expected} expected, but ${pform} => ${actual}`);
+					console.warn(`${expected} found, but ${pform} => ${actual} expected`);
 				pformi++;
 			});
 			console.log('P-Form validation complete.');
