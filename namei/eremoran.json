@@ -515,6 +515,16 @@
 		]
 	},
 	{
+		"title": "asmu",
+		"etym": "Proto-Eremo-Numoran *iasmu 'forearm'",
+		"cat": "n., 4th",
+		"defList": [
+			"forearm"
+		],
+		"notes": "asmu is one of a handful of nouns ending in -u.",
+		"categories": ["body part"]
+	},
+	{
 		"title": "astedu",
 		"etym": "Proto-Eremo-Numoran *astedu 'beautiful'",
 		"cat": "adj.",
@@ -1130,6 +1140,15 @@
 		"defList": [
 			"potash"
 		]
+	},
+	{
+		"title": "dafê",
+		"etym": "Proto-Eremo-Numoran *daɸê 'shoulder'",
+		"cat": "n., 4th",
+		"defList": [
+			"shoulder"
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "daktarm",
@@ -1923,6 +1942,15 @@
 		"defList": [
 			"heal"
 		]
+	},
+	{
+		"title": "heri",
+		"etym": "Proto-Eremo-Numoran *seri 'palm'",
+		"cat": "n., 4th",
+		"defList": [
+			"palm"
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "hi",
@@ -2839,6 +2867,15 @@
 		]
 	},
 	{
+		"title": "kuma",
+		"etym": "Proto-Eremo-Numoran *xuma 'wrist'",
+		"cat": "n., 4th",
+		"defList": [
+			"wrist"
+		],
+		"categories": ["body part"]
+	},
+	{
 		"title": "kumboz",
 		"etym": "Intensive of kumz 'jump'",
 		"cat": "v.",
@@ -2982,6 +3019,15 @@
 		"defList": [
 			"stone, rock"
 		]
+	},
+	{
+		"title": "li",
+		"etym": "Proto-Eremo-Numoran *li 'ankle'",
+		"cat": "n., 4th",
+		"defList": [
+			"ankle"
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "liba",
@@ -4703,6 +4749,15 @@
 		]
 	},
 	{
+		"title": "suma",
+		"etym": "Proto-Eremo-Numoran *ʃuma 'navel'",
+		"cat": "n., 4th",
+		"defList": [
+			"navel"
+		],
+		"categories": ["body part"]
+	},
+	{
 		"title": "sus",
 		"etym": "Proto-Eremo-Numoran *sɸuʃ 'tail'",
 		"cat": "n., 4th",
@@ -4960,6 +5015,15 @@
 		]
 	},
 	{
+		"title": "tônkad",
+		"etym": "Proto-Eremo-Numoran *tônkad 'stomach'",
+		"cat": "n., 4th",
+		"defList": [
+			"stomach"
+		],
+		"categories": ["body part"]
+	},
+	{
 		"title": "tônu",
 		"etym": "Proto-Eremo-Numoran *tôn 'almost (adv.)' + *-u",
 		"cat": "adj.",
@@ -5189,6 +5253,15 @@
 		"defList": [
 			"without"
 		]
+	},
+	{
+		"title": "ukubo",
+		"etym": "Proto-Eremo-Numoran *ukubo 'throat'",
+		"cat": "n., 4th",
+		"defList": [
+			"throat"
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "ukumu",
