@@ -91,6 +91,15 @@
 		]
 	},
 	{
+		"title": "abzalk",
+		"etym": "Proto-Eremo-Numoran *abdialx 'eel'",
+		"cat": "n., 2nd",
+		"defList": [
+			"eel"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "ad",
 		"etym": "Proto-Eremo-Numoran *xêd 'to'",
 		"cat": "post./prep., adv.",
@@ -125,15 +134,6 @@
 		"defList": [
 			"happen"
 		]
-	},
-	{
-		"title": "adzalk",
-		"etym": "Proto-Eremo-Numoran *abdialx 'eel'",
-		"cat": "n., 2nd",
-		"defList": [
-			"eel"
-		],
-		"categories": ["animal"]
 	},
 	{
 		"title": "afêkam",
@@ -434,7 +434,7 @@
 	{
 		"title": "ardzin",
 		"img": "../img/eremoran/ardzin.png",
-		"etym": "Proto-Eremo-Numoran *xeredo-in 'silver' from *xeredo 'flame' + *in '???'",
+		"etym": "Proto-Eremo-Numoran *xere-diin 'silver' from *xere 'fire' + *diin '???'",
 		"cat": "n., 4th",
 		"defList": [
 			"native silver"
@@ -617,15 +617,6 @@
 		"notes": "Note: With causative, means kill."
 	},
 	{
-		"title": "balkaik",
-		"etym": "Proto-Eremo-Numoran *bloxaix 'shark'",
-		"cat": "n., 2nd",
-		"defList": [
-			"shark"
-		],
-		"categories": ["animal"]
-	},
-	{
 		"title": "bamz",
 		"etym": "Proto-Eremo-Numoran *βams 'throw'",
 		"cat": "v.",
@@ -785,7 +776,7 @@
 	},
 	{
 		"title": "berbaz",
-		"etym": "Proto-Eremo-Numoran *berbs 'leave'",
+		"etym": "Proto-Eremo-Numoran *berbas 'leave'",
 		"cat": "v.",
 		"defList": [
 			"leave (a location)",
@@ -1680,7 +1671,7 @@
 	},
 	{
 		"title": "erem",
-		"etym": "Nominalization of ereu",
+		"etym": "Proto-Eremo-Numoran *ere-m 'red'",
 		"cat": "n., 5th",
 		"defList": [
 			"redness",
@@ -1711,7 +1702,7 @@
 	},
 	{
 		"title": "ereu",
-		"etym": "Proto-Eremo-Numoran *ereu 'red'. Related to <i>ardo</i> 'fire'.",
+		"etym": "Adjectivalization of erem 'red'",
 		"cat": "adj.",
 		"defList": [
 			"red"
@@ -1727,10 +1718,18 @@
 	},
 	{
 		"title": "eto",
+		"etym": "Particlization of etoz 'believe; think'",
+		"cat": "adv.",
+		"defList": [
+			"believe; think (opinion evidential)"
+		]
+	},
+	{
+		"title": "etoz",
 		"etym": "Proto-Eremo-Numoran *etos 'believe'",
 		"cat": "v.",
 		"defList": [
-			"believe; think (opinion evidential)"
+			"(archaic) believe; think"
 		]
 	},
 	{
@@ -1779,18 +1778,10 @@
 	},
 	{
 		"title": "hai",
-		"etym": "Proto-Eremo-Numoran *sai ",
-		"cat": "adv.",
+		"etym": "Proto-Eremo-Numoran *sai, Proto-Eremo-Numoran *ɸai '[disappointment particle]'",
+		"cat": "adj., s-triggering, adv.",
 		"defList": [
-			"thick, wide"
-		],
-		"notes": "adj., s-triggering"
-	},
-	{
-		"title": "haia",
-		"etym": "Proto-Eremo-Numoran *ɸaia '[disappointment particle]'",
-		"cat": "adv.",
-		"defList": [
+			"thick, wide",
 			"[disappointment particle]"
 		]
 	},
@@ -2989,6 +2980,15 @@
 		]
 	},
 	{
+		"title": "lakaik",
+		"etym": "Proto-Eremo-Numoran *bloxaix 'shark'",
+		"cat": "n., 2nd",
+		"defList": [
+			"shark"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "laku",
 		"etym": "Proto-Eremo-Numoran *lagu 'good'",
 		"cat": "adj.",
@@ -3257,7 +3257,7 @@
 	},
 	{
 		"title": "masturk",
-		"etym": "Proto-Eremo-Numoran *mas 'contain' + *tur '???' + *-x [Animate suffix]",
+		"etym": "Proto-Eremo-Numoran *mas-tur-x, from *mas 'contain' + *tur '???' + *-x [Animate suffix]",
 		"cat": "n., 2nd",
 		"defList": [
 			"rabbit"
@@ -4776,6 +4776,14 @@
 		]
 	},
 	{
+		"title": "takêu",
+		"etym": "Proto-Eremo-Numoran *tokêu 'clockwise'",
+		"cat": "adj.",
+		"defList": [
+			"clockwise"
+		]
+	},
+	{
 		"title": "talire",
 		"img": "../img/eremoran/talira.png",
 		"etym": "Proto-Eremo-Numoran *talire 'evergreen', from older *taslire, from *tassu 'green' + *lire 'wood'. Related to taze, tasu, tasku. cf. arlira, lilira.",
@@ -4997,14 +5005,6 @@
 			"staff"
 		],
 		"categories": ["plant"]
-	},
-	{
-		"title": "tokêu",
-		"etym": "Proto-Eremo-Numoran *tokêu 'clockwise'",
-		"cat": "adj.",
-		"defList": [
-			"clockwise"
-		]
 	},
 	{
 		"title": "tômz",

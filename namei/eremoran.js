@@ -751,7 +751,10 @@ const gen = {
 				.replace(/ʃ/g, 's')
 				.replace(/ʒ/g, 'z')
 				.replace(/g/g, 'k')
-				.replace(/ts/g, 's');
+				.replace(/ts/g, 's')
+				.replace(/[eo](?=.*[aeiouêô].*[aeiouêô])/g, 'a') // account for vowel reduction
+				.replace(/aa/g, 'a') // double-a reduction
+				.replace(/a[aeiouêô]{2,}/g, 'a'); // a-triphthong reduction
 			return pform;
 		},
 		gen(){
@@ -759,9 +762,9 @@ const gen = {
 		},
 		init(){
 			this.pforms = elements.raws.map(o => {
-				const matches = o.etym.replace(/[;:,.]/g, '').match(/^Proto-Eremo-Numoran \*[^ ]+(?= )/g);
+				const matches = o.etym.replace(/[;:,.-]/g, '').match(/^ProtoEremoNumoran \*[^ ]+(?= )/g);
 				if (matches)
-					return matches[0].slice(21);
+					return matches[0].slice(19);
 				return '';
 			}).filter(x => x);
 			gen.markov.init(this.pforms, this.data);
@@ -778,10 +781,15 @@ const gen = {
 			let pformi = 0;
 			elements.raws.forEach(o => {
 				const pform = this.pforms[pformi];
-				if (!o.etym.replace(/[;:,.]/g, '').match(new RegExp(`^Proto-Eremo-Numoran \\*${pform}`)))
+				if (!o.etym.replace(/[;:,.-]/g, '').match(new RegExp(`^ProtoEremoNumoran \\*${pform}`)))
 					return; // continue
-				const expected = normalizeEremoran(o.title).replace(/kz$/g, 'ks').replace(/tz$/g, 'ts').replace('-', '');
-				const actual = phono.syllabify(normalizeEremoran(this.evolve(pform))).join('');
+				const expected = normalizeEremoran(o.title).replace(/kz$/g, 'ks').replace(/tz$/g, 'ts');
+				//generate 'evolved' proto-form
+				let actual = phono.syllabify(normalizeEremoran(this.evolve(pform))).join('');
+				// s-triggering adjectives lose final *-z
+				if (o.cat.includes('s-triggering'))
+					actual = actual.replace(/[sz]$/g, '');
+				// compare
 				if (expected !== actual)
 					console.warn(`${expected} expected, but ${pform} => ${actual}`);
 				pformi++;
