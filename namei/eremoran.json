@@ -236,23 +236,6 @@
 		]
 	},
 	{
-		"title": "akeu",
-		"etym": "Proto-Eremo-Numoran *akeu 'east'",
-		"cat": "adj.",
-		"defList": [
-			"east"
-		]
-	},
-	{
-		"title": "akili",
-		"etym": "Proto-Eremo-Numoran *akili 'heel'",
-		"cat": "n., 4th",
-		"defList": [
-			"heel"
-		],
-		"categories": ["body part"]
-	},
-	{
 		"title": "akkraz",
 		"etym": "ad 'to' + kraz 'step'",
 		"cat": "v.",
@@ -395,6 +378,16 @@
 		"categories": ["metal"]
 	},
 	{
+		"title": "arbaz",
+		"etym": "Proto-Eremo-Numoran *ereβas 'choose'",
+		"cat": "v.",
+		"defList": [
+			"choose, select",
+			"vote (for)",
+			"elect"
+		]
+	},
+	{
 		"title": "ardo",
 		"img": "../img/eremoran/ardo.png",
 		"etym": "Proto-Eremo-Numoran *xeredo 'flame', diminutive of *xere 'fire', from *x 'living; flickering(?)' + *ereu 'red'",
@@ -449,16 +442,6 @@
 			"silver"
 		],
 		"categories": ["metal"]
-	},
-	{
-		"title": "arebaz",
-		"etym": "Proto-Eremo-Numoran *ereβas 'choose'",
-		"cat": "v.",
-		"defList": [
-			"choose, select",
-			"vote (for)",
-			"elect"
-		]
 	},
 	{
 		"title": "arêôk",
@@ -2474,6 +2457,14 @@
 		]
 	},
 	{
+		"title": "keu",
+		"etym": "Proto-Eremo-Numoran *akeu 'east'",
+		"cat": "adj.",
+		"defList": [
+			"east"
+		]
+	},
+	{
 		"title": "ki",
 		"etym": "Proto-Eremo-Numoran *ki 'foot'.",
 		"cat": "n., 4th",
@@ -2517,6 +2508,15 @@
 			"here",
 			"available, at school/work"
 		]
+	},
+	{
+		"title": "kili",
+		"etym": "Proto-Eremo-Numoran *akili 'heel'",
+		"cat": "n., 4th",
+		"defList": [
+			"heel"
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "kim",
@@ -5483,8 +5483,8 @@
 		]
 	},
 	{
-		"title": "zadu",
-		"etym": "Proto-Eremo-Numoran *asadu 'lip'",
+		"title": "zedu",
+		"etym": "Proto-Eremo-Numoran *asedu 'lip'",
 		"cat": "n., 4th",
 		"defList": [
 			"lip"
@@ -5492,16 +5492,16 @@
 		"categories": ["body part"]
 	},
 	{
-		"title": "zadumu",
-		"etym": "zadu \"lip\" + mu \"water\"",
+		"title": "zedumu",
+		"etym": "zedu \"lip\" + mu \"water\"",
 		"cat": "n., 4th",
 		"defList": [
 			"spit, saliva"
 		]
 	},
 	{
-		"title": "zadumuz",
-		"etym": "zadumu \"saliva\" + -z",
+		"title": "zedumuz",
+		"etym": "zedumu \"saliva\" + -z",
 		"cat": "v.",
 		"defList": [
 			"spit",
@@ -5527,7 +5527,7 @@
 	},
 	{
 		"title": "zesti",
-		"etym": "Proto-Eremo-Numoran *aasetis 'angled', with partial reduplication of *aseti 'joint'",
+		"etym": "Proto-Eremo-Numoran *aseasetis 'angled', with partial reduplication of *aseti 'joint'",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"angled",

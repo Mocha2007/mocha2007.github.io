@@ -429,7 +429,7 @@ function toponym(){
 // todo: city/fort clearing
 toponym.either = ['bemmu', 'len', 'mura', 'nô', 'nul'];
 toponym.first = union(toponym.either,
-	['ake', 'end', 'ere', 'hai', 'huk', 'kan', 'kokin', 'ku', 'kure', 'lak', 'lib', 'muk',
+	['ke', 'end', 'ere', 'hai', 'huk', 'kan', 'kokin', 'ku', 'kure', 'lak', 'lib', 'muk',
 		'n', 'nats', 'sed', 'si', 'tar', 'tas']
 );
 toponym.last = union(toponym.either,
@@ -755,7 +755,8 @@ const gen = {
 				.replace(/[eo](?=.*[aeiouêô].*[aeiouêô])/g, 'a') // account for vowel reduction
 				.replace(/aa/g, 'a') // double-a reduction
 				.replace(/a(?=[aeiouêô]{2,})/g, '') // a-triphthong reduction
-				.replace(/^a(?=.*[aeiouêô].*[aeiouêô])/g, 'a'); // ^a-V-V deletion
+				.replace(/ar[aeo](?!$)/g, 'ar') // arV reduction
+				.replace(/^a(?=.*[eiouêô].*[eiouêô])(?![bdfklmnprstz]{2,})/g, ''); // a-V-V reduction
 			return pform;
 		},
 		gen(){
