@@ -732,8 +732,7 @@ const gen = {
 		data: {'^': {}},
 		/** @param {string} pform */
 		evolve(pform){
-			// todo
-			pform = pform
+			const o = pform
 				.replace(/x[eê]x?/g, 'a')
 				.replace(/[eê]x/g, 'a')
 				.replace(/x/g, 'k')
@@ -758,7 +757,8 @@ const gen = {
 				.replace(/a(?=[aeiouêô]{2,})/g, '') // a-triphthong reduction
 				.replace(/ar[aeo](?!$)/g, 'ar') // arV reduction
 				.replace(/^a(?=.*[eiouêô].*[eiouêô])(?![bdfklmnprstz]{2,})/g, ''); // a-V-V reduction
-			return pform;
+			console.info(`*${pform} -> ${o}`);
+			return o;
 		},
 		gen(){
 			return gen.markov.gen(this, this.evolve);
