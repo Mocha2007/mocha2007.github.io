@@ -727,50 +727,112 @@ const phono = {
 };
 
 const gen = {
+	proto: {
+		/** @type {{string: {string: number}}} */
+		data: {'^': {}},
+		/** @param {string} pform */
+		evolve(pform){
+			// todo
+			pform = pform
+				.replace(/x[eê]/g, 'a')
+				.replace(/x/g, 'k')
+				.replace(/^[ɸs](?=[aeiouêô])/g, 'h')
+				.replace(/(?<=[aeiouêôbdlmnrz])s(?=[aeiouêôbdlmnrz]|$)/g, 'z')
+				.replace(/(?<=[aeiouêôbdlmnrz])ss(?=[aeiouêôbdlmnrz]|$)/g, 's')
+				.replace(/(?<=^|[aeiouêô])ɸ(?=u)/g, '') // the lookbehind might be unnecessary
+				.replace(/ɸ(?=[aeiouêô])/g, 'f') // the lookahead might be unnecessary
+				.replace(/β/g, 'b')
+				.replace(/(?<=[bdhklmnrstz])i(?=[aeiouêô])/g, 'j')
+				.replace(/sj/g, 'ʃ')
+				.replace(/zj/g, 'ʒ')
+				.replace(/tj/g, 'tʃ')
+				.replace(/dj/g, 'dʒ')
+				.replace(/ʃ/g, 's')
+				.replace(/ʒ/g, 'z')
+				.replace(/g/g, 'k')
+				.replace(/ts/g, 's');
+			return pform;
+		},
+		gen(){
+			return gen.markov.gen(this, this.evolve);
+		},
+		init(){
+			this.pforms = elements.raws.map(o => {
+				const matches = o.etym.match(/^Proto-Eremo-Numoran *[^ ]+(?= )/g);
+				if (matches)
+					return matches[0].slice(21);
+				return '';
+			}).filter(x => x);
+			gen.markov.init(this.pforms, this.data);
+			this.initialized = true;
+		},
+		/** @type {string[]} */
+		pforms: [],
+		get prevalidationF(){
+			return this.evolve;
+		},
+		validatePforms(){
+			if (!this.initialized)
+				this.init();
+			let pformi = 0;
+			elements.raws.forEach(o => {
+				if (!o.etym.includes(this.pforms[pformi]))
+					return; // continue
+				const pform = this.pforms[pformi];
+				const expected = o.title;
+				const actual = this.evolve(pform);
+				if (expected !== actual)
+					console.warn(`${expected} expected, but ${pform} => ${actual}`);
+				pformi++;
+			});
+			console.log('P-Form validation complete.');
+		}
+	},
 	markov: {
 		/** @type {{string: {string: number}}} */
 		data: {'^': {}},
-		gen(){
-			if (!this.initialized){
-				this.init();
-				this.initialized = true;
-			}
+		gen(o = gen.markov){
+			if (!o.initialized)
+				o.init();
 			let choice = '^';
 			let str = '';
 			while (choice !== '$'){
 				// pick next char
-				const choices = Object.keys(this.data[choice]);
-				const weights = choices.map(c => this.data[choice][c]);
+				const choices = Object.keys(o.data[choice]);
+				const weights = choices.map(c => o.data[choice][c]);
 				const next = random.weightedChoice(choices, weights);
 				str += next;
 				choice = next;
 			}
 			str = str.slice(0, -1);
+			if (o.prevalidationF)
+				str = o.prevalidationF(str);
 			try {
 				if (phono.validate(normalizeEremoran(str)))
 					return str;
 			}
 			catch {} // retry
-			return this.gen(); // retry
+			return this.gen(o); // retry
 		},
-		init(){
-			this.data = {'^': {}}; // reset
-			elements.dict.forEach(word => {
+		init(corpus = elements.dict, output = this.data){
+			// this.data = {'^': {}}; // reset
+			corpus.forEach(word => {
 				word = `^${word}$`;
 				Array.from(word).forEach((char, i) => {
 					if (i === word.length-1)
 						return;
 					const next = word[i + 1];
 					// create source if nonexistent
-					if (!this.data[char])
-						this.data[char] = {};
+					if (!output[char])
+					output[char] = {};
 					// create target if nonexistent
-					if(this.data[char][next])
-						this.data[char][next]++;
+					if(output[char][next])
+						output[char][next]++;
 					else
-						this.data[char][next] = 1;
+						output[char][next] = 1;
 				});
 			});
+			this.initialized = true;
 		},
 	},
 };
