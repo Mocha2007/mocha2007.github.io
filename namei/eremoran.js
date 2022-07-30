@@ -714,13 +714,63 @@ const phono = {
 		// debug warnings
 		const syllTest = this.syllabify(word).join('');
 		if (syllTest !== word.replace(/ /g, ''))
-			console.warn(`${word} changed value to ${syllTest} during syllabification! (Is it valid Eremoran?)`);
+			return console.warn(`${word} changed value to ${syllTest} during syllabification! (Is it valid Eremoran?)`);
 		if ('bph'.includes(word[word.length-1]))
-			console.warn(`${word} ends in a labial`);
+			return console.warn(`${word} ends in a labial`);
+		return true;
 	},
 	vowels: {
 		ortho: 'aeiouêô'.split(''),
 		stressed: 'aɛiɔueo'.split(''),
 		unstressed: 'əəɪəʊeo'.split(''),
+	},
+};
+
+const gen = {
+	markov: {
+		/** @type {{string: {string: number}}} */
+		data: {'^': {}},
+		gen(){
+			if (!this.initialized){
+				this.init();
+				this.initialized = true;
+			}
+			let choice = '^';
+			let str = '';
+			while (choice !== '$'){
+				// pick next char
+				const choices = Object.keys(this.data[choice]);
+				const weights = choices.map(c => this.data[choice][c]);
+				const next = random.weightedChoice(choices, weights);
+				str += next;
+				choice = next;
+			}
+			str = str.slice(0, -1);
+			try {
+				if (phono.validate(normalizeEremoran(str)))
+					return str;
+			}
+			catch {} // retry
+			return this.gen(); // retry
+		},
+		init(){
+			this.data = {'^': {}}; // reset
+			elements.dict.forEach(word => {
+				word = `^${word}$`;
+				Array.from(word).forEach((char, i) => {
+					if (i === word.length-1)
+						return;
+					const next = word[i + 1];
+					// create source if nonexistent
+					if (!this.data[char])
+						this.data[char] = {};
+					// create target if nonexistent
+					if(this.data[char][next])
+						this.data[char][next]++;
+					else
+						this.data[char][next] = 1;
+				});
+			});
+		},
 	},
 };
