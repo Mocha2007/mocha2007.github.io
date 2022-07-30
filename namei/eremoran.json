@@ -3627,7 +3627,7 @@
 	},
 	{
 		"title": "nask",
-		"etym": "Proto-Eremo-Numoran *nassax 'carnivoran'",
+		"etym": "Proto-Eremo-Numoran *nasx 'carnivoran'",
 		"cat": "n., 2nd",
 		"defList": [
 			"carnivoran"
@@ -4498,14 +4498,6 @@
 		]
 	},
 	{
-		"title": "siou",
-		"etym": "Proto-Eremo-Numoran *tʃiou 'right'",
-		"cat": "adj.",
-		"defList": [
-			"right"
-		]
-	},
-	{
 		"title": "sipam",
 		"etym": "Pre-Eremoran <em>sipa</em>",
 		"cat": "n., 5th",
@@ -4611,10 +4603,11 @@
 	},
 	{
 		"title": "sou",
-		"etym": "Proto-Eremo-Numoran *tʃou 'hot'",
+		"etym": "Proto-Eremo-Numoran *tʃou 'hot'; Proto-Eremo-Numoran *tʃiou 'right'",
 		"cat": "adj.",
 		"defList": [
-			"warm, hot"
+			"warm, hot",
+			"right"
 		],
 		"categories": ["weather"]
 	},
@@ -5396,7 +5389,7 @@
 	{
 		"title": "urist",
 		"img": "../img/eremoran/urist.png",
-		"etym": "Proto-Eremo-Numoran *urissat 'dagger'",
+		"etym": "Proto-Eremo-Numoran *urist 'dagger'",
 		"cat": "n., 3rd",
 		"defList": [
 			"dagger"
