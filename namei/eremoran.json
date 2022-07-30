@@ -2195,7 +2195,7 @@
 	},
 	{
 		"title": "iktêr",
-		"etym": "Proto-Eremo-Numoran *ikatêr 'girl', from *ikat- ??? + -êr",
+		"etym": "Proto-Eremo-Numoran *iktêr 'girl', from *ikt- ??? + -êr",
 		"cat": "n., 1st",
 		"defList": [
 			"(archaic, non-southern) girl (older form of elaôr)"
@@ -2247,7 +2247,7 @@
 	},
 	{
 		"title": "it",
-		"etym": "Proto-Eremo-Numoran *iat 'rather than'",
+		"etym": "Proto-Eremo-Numoran *it 'rather than'",
 		"cat": "post.",
 		"defList": [
 			"instead"
@@ -2264,7 +2264,7 @@
 	},
 	{
 		"title": "iu",
-		"etym": "Proto-Eremo-Numoran *iu 'reverse'",
+		"etym": "Proto-Eremo-Numoran *iiu 'reverse'",
 		"cat": "adj.",
 		"defList": [
 			"reverse"
@@ -3637,11 +3637,12 @@
 	},
 	{
 		"title": "nasu",
-		"etym": "Proto-Eremo-Numoran *natiu 'two'",
+		"etym": "Proto-Eremo-Numoran *natiu 'two'; Proto-Eremo-Numoran *natsu 'north'",
 		"cat": "adj.",
 		"defList": [
 			"two",
-			"(+ plural det) considering each member of the determiner in pairs, eg. <em>nasu hans</em> = \"every pair\" specifically rather than all. (Distributive pronoun/determiner) "
+			"(+ plural det) considering each member of the determiner in pairs, eg. <em>nasu hans</em> = \"every pair\" specifically rather than all. (Distributive pronoun/determiner) ",
+			"north"
 		],
 		"notes": "While possible with greater numerals, it is rather rare."
 	},
@@ -3652,14 +3653,6 @@
 		"defList": [
 			"double",
 			"copy"
-		]
-	},
-	{
-		"title": "natsu",
-		"etym": "Proto-Eremo-Numoran *natsu 'north'",
-		"cat": "adj.",
-		"defList": [
-			"north"
 		]
 	},
 	{
@@ -4255,7 +4248,7 @@
 	},
 	{
 		"title": "roraok",
-		"etym": "Proto-Eremo-Numoran *raoraox 'cat', reduplicated from *rao 'meow'",
+		"etym": "Reduplicated from Proto-Eremo-Numoran *rao 'meow'",
 		"cat": "n., 2nd",
 		"defList": [
 			"cat"

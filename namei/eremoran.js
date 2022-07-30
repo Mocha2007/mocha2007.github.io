@@ -430,7 +430,7 @@ function toponym(){
 toponym.either = ['bemmu', 'len', 'mura', 'nô', 'nul'];
 toponym.first = union(toponym.either,
 	['ke', 'end', 'ere', 'hai', 'huk', 'kan', 'kokin', 'ku', 'kure', 'lak', 'lib', 'muk',
-		'n', 'nats', 'sed', 'si', 'tar', 'tas']
+		'n', 'nas', 'sed', 'si', 'tar', 'tas']
 );
 toponym.last = union(toponym.either,
 	['alika', 'ammut', 'da', 'damu', 'kokint', 'lira', 'mam', 'mamat', 'mor', 'saurom', 'seda',
@@ -737,7 +737,7 @@ const gen = {
 				.replace(/x[eê]x?/g, 'a')
 				.replace(/[eê]x/g, 'a')
 				.replace(/x/g, 'k')
-				.replace(/i(?=[aeiouêô])/g, 'j')
+				.replace(/i(?=[aeouêô])/g, 'j') // except i
 				.replace(/^[ɸs](?=[aeiouêô])/g, 'h')
 				.replace(/(?<=[aeiouêôbdlmnrz])s(?=[aeiouêôbdlmnrz]|$)/g, 'z')
 				.replace(/(?<=[aeiouêôbdlmnrz])ss(?=[aeiouêôbdlmnrz]|$)/g, 's')
@@ -752,6 +752,7 @@ const gen = {
 				.replace(/ʒ/g, 'z')
 				.replace(/g/g, 'k')
 				.replace(/ts/g, 's')
+				.replace(/j/g, '')
 				.replace(/[eo](?=.*[aeiouêô].*[aeiouêô])/g, 'a') // account for vowel reduction
 				.replace(/aa/g, 'a') // double-a reduction
 				.replace(/a(?=[aeiouêô]{2,})/g, '') // a-triphthong reduction
