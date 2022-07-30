@@ -737,7 +737,7 @@ const gen = {
 				.replace(/x[eê]x?/g, 'a')
 				.replace(/[eê]x/g, 'a')
 				.replace(/x/g, 'k')
-				.replace(/(?<=[bdhklmnrstz])i(?=[aeiouêô])/g, 'j')
+				.replace(/i(?=[aeiouêô])/g, 'j')
 				.replace(/^[ɸs](?=[aeiouêô])/g, 'h')
 				.replace(/(?<=[aeiouêôbdlmnrz])s(?=[aeiouêôbdlmnrz]|$)/g, 'z')
 				.replace(/(?<=[aeiouêôbdlmnrz])ss(?=[aeiouêôbdlmnrz]|$)/g, 's')

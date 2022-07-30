@@ -1637,7 +1637,7 @@
 	},
 	{
 		"title": "endum",
-		"etym": "Proto-Eremo-Numoran *endu 'high'",
+		"etym": "Nominalization of endu 'high'",
 		"cat": "n., 5th",
 		"defList": [
 			"height, depth, altitude",
@@ -1680,7 +1680,7 @@
 	},
 	{
 		"title": "erem",
-		"etym": "<i>ereu</i> + <i>-m</i>.",
+		"etym": "Nominalization of ereu",
 		"cat": "n., 5th",
 		"defList": [
 			"redness",
@@ -1692,7 +1692,7 @@
 	},
 	{
 		"title": "eremor",
-		"etym": "<i>ereu</i> + <i>mor</i>.",
+		"etym": "ereu 'red' + mor 'people'",
 		"cat": "n., 1st",
 		"defList": [
 			"an Eremoran",
@@ -1972,7 +1972,7 @@
 		"categories": ["weather"]
 	},
 	{
-		"title": "hilsiz",
+		"title": "hilsaz",
 		"etym": "Proto-Eremo-Numoran *ɸiltsias 'mix'",
 		"cat": "v.",
 		"defList": [
@@ -1980,8 +1980,8 @@
 		]
 	},
 	{
-		"title": "hilsiu",
-		"etym": "hilsiz",
+		"title": "hilsu",
+		"etym": "Adjectivalization of hilsaz",
 		"cat": "adj.",
 		"defList": [
 			"mixed, blended, hybrid"
@@ -2119,6 +2119,15 @@
 		"defList": [
 			"somewhat"
 		]
+	},
+	{
+		"title": "hus",
+		"etym": "Proto-Eremo-Numoran *sɸuʃ 'tail'",
+		"cat": "n., 4th",
+		"defList": [
+			"tail"
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "husaurz",
@@ -2447,7 +2456,7 @@
 	{
 		"title": "kasu",
 		"img": "../img/eremoran/ksu.png",
-		"etym": "Proto-Eremo-Numoran *xaʃua 'lung'",
+		"etym": "Proto-Eremo-Numoran *xaʃu 'lung'",
 		"cat": "n., 4th",
 		"defList": [
 			"lung"
@@ -2457,7 +2466,7 @@
 	},
 	{
 		"title": "kek",
-		"etym": "Proto-Eremo-Numoran *kex 'god'",
+		"etym": "Proto-Eremo-Numoran *kek-x 'god'",
 		"cat": "n., 2nd",
 		"defList": [
 			"god"
@@ -2783,12 +2792,13 @@
 	},
 	{
 		"title": "ku",
-		"etym": "Proto-Eremo-Numoran *gus 'big'",
+		"etym": "Proto-Eremo-Numoran *ku 'with' and *gus 'big'",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"and (clause-only: not nouns)",
 			"with (comitative)",
-			"(<i>math</i>) times, by"
+			"(<i>math</i>) times, by",
+			"(archaic) big"
 		],
 		"notes": "See <em>bo</em> for the instrumental. See <em>hans</em> for an and linking nominals."
 	},
@@ -3123,14 +3133,6 @@
 		"categories": ["person"]
 	},
 	{
-		"title": "maiusu",
-		"etym": "Proto-Eremo-Numoran *masiusiu 'stunned', from *mas 'contain' + *siusiu 'stunned, dazed', reduplicated from *siu 'bright'.",
-		"cat": "adj.",
-		"defList": [
-			"silly"
-		]
-	},
-	{
 		"title": "makanalk",
 		"etym": "unknown",
 		"cat": "n., 2nd",
@@ -3261,6 +3263,14 @@
 			"rabbit"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "masusu",
+		"etym": "Proto-Eremo-Numoran *masiusiu 'stunned', from *mas 'contain' + *siusiu 'stunned, dazed', reduplicated from *siu 'bright'.",
+		"cat": "adj.",
+		"defList": [
+			"silly"
+		]
 	},
 	{
 		"title": "mat",
@@ -4310,7 +4320,7 @@
 	},
 	{
 		"title": "samarz",
-		"etym": "Proto-Eremo-Numoran *samars 'lie', related to asmarz",
+		"etym": "Proto-Eremo-Numoran *siamars 'lie', related to asmarz",
 		"cat": "v.",
 		"defList": [
 			"lie (down)",
@@ -4361,7 +4371,7 @@
 	},
 	{
 		"title": "saurz",
-		"etym": "Proto-Eremo-Numoran *sim 'brightness' + *aurs 'sense???'",
+		"etym": "Proto-Eremo-Numoran *si-aurs, from *sim 'brightness' + *aurs 'sense???'",
 		"cat": "v.",
 		"defList": [
 			"see",
@@ -4445,7 +4455,7 @@
 	},
 	{
 		"title": "sêlai",
-		"etym": "Proto-Eremo-Numoran *sêlai 'thigh'",
+		"etym": "Proto-Eremo-Numoran *ʃêlai 'thigh'",
 		"cat": "n., 4th",
 		"defList": [
 			"thigh"
@@ -4453,19 +4463,19 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "ses",
+		"etym": "Proto-Eremo-Numoran *ʃets '~planet'",
+		"cat": "n., 4th",
+		"defList": [
+			"substellar object orbiting a star <ol> <li>(by extension) planet</li> <li>(by extension) minor planet</li> <li>(by extension) comet</li> </ol> "
+		]
+	},
+	{
 		"title": "sesu",
 		"etym": "Proto-Eremo-Numoran *sietiu 'hundred'",
 		"cat": "adj.",
 		"defList": [
 			"hundred"
-		]
-	},
-	{
-		"title": "sets",
-		"etym": "Proto-Eremo-Numoran *ʃets '~planet'",
-		"cat": "n., 4th",
-		"defList": [
-			"substellar object orbiting a star <ol> <li>(by extension) planet</li> <li>(by extension) minor planet</li> <li>(by extension) comet</li> </ol> "
 		]
 	},
 	{
@@ -4519,7 +4529,7 @@
 	},
 	{
 		"title": "sirez",
-		"etym": "Proto-Eremo-Numoran *sires, blend of *xere 'fire' + *sis 'shine'",
+		"etym": "Proto-Eremo-Numoran *ʃires, blend of *xere 'fire' + *sis 'shine'",
 		"cat": "v.",
 		"defList": [
 			"burn (intransitive)"
@@ -4527,7 +4537,7 @@
 	},
 	{
 		"title": "sisi",
-		"etym": "reduplicated from <em>siz</em> 'shine'",
+		"etym": "reduplicated from siz 'shine'",
 		"cat": "n., 4th",
 		"defList": [
 			"star"
@@ -4545,7 +4555,7 @@
 	},
 	{
 		"title": "siz",
-		"etym": "Proto-Eremo-Numoran *sis 'shine'",
+		"etym": "Proto-Eremo-Numoran *ʃis 'shine'",
 		"cat": "v.",
 		"defList": [
 			"(archaic) [causative]"
@@ -4679,7 +4689,7 @@
 	},
 	{
 		"title": "su",
-		"etym": "Proto-Eremo-Numoran *su 'of; from'. Related to the suffix -(i)su.",
+		"etym": "Proto-Eremo-Numoran *tʃu 'of; from'. Related to the suffix -(i)su.",
 		"cat": "post.",
 		"defList": [
 			"of; belonging to or made of"
@@ -4696,7 +4706,7 @@
 	},
 	{
 		"title": "subir",
-		"etym": "Proto-Eremo-Numoran *suβir 'warrior', from *su 'of' + *βim 'battle'",
+		"etym": "Proto-Eremo-Numoran *tʃu-βir 'warrior', from *su 'of' + *βim 'battle'",
 		"cat": "n., 1st",
 		"defList": [
 			"warrior, soldier",
@@ -4714,7 +4724,7 @@
 	},
 	{
 		"title": "sudôz",
-		"etym": "Proto-Eremo-Numoran *sudôs 'do; make' from *su 'of; from' + *dôs 'do; make'.",
+		"etym": "Proto-Eremo-Numoran *tʃu-dôs 'do; make' from *tʃu 'of; from' + *dôs 'do; make'.",
 		"cat": "v.",
 		"defList": [
 			"(<i>inanimate object</i>) do/make",
@@ -4734,7 +4744,7 @@
 	},
 	{
 		"title": "sukaz",
-		"etym": "Proto-Eremo-Numoran *sukas 'cut' from *su 'of; from' + *kas 'cut'.",
+		"etym": "Proto-Eremo-Numoran *tʃu-kas 'cut' from *tʃu 'of; from' + *kas 'cut'.",
 		"cat": "v.",
 		"defList": [
 			"cut, split"
@@ -4758,15 +4768,6 @@
 		"categories": ["body part"]
 	},
 	{
-		"title": "sus",
-		"etym": "Proto-Eremo-Numoran *sɸuʃ 'tail'",
-		"cat": "n., 4th",
-		"defList": [
-			"tail"
-		],
-		"categories": ["body part"]
-	},
-	{
 		"title": "suz",
 		"etym": "Proto-Eremo-Numoran *sius 'tie', likely related to <em>sukz</em> 'sew'",
 		"cat": "v.",
@@ -4775,7 +4776,7 @@
 		]
 	},
 	{
-		"title": "talira",
+		"title": "talire",
 		"img": "../img/eremoran/talira.png",
 		"etym": "Proto-Eremo-Numoran *talire 'evergreen', from older *taslire, from *tassu 'green' + *lire 'wood'. Related to taze, tasu, tasku. cf. arlira, lilira.",
 		"cat": "n., 4th",
@@ -4824,7 +4825,7 @@
 	},
 	{
 		"title": "tanaiz",
-		"etym": "Proto-Eremo-Numoran *tanaias 'sleep'",
+		"etym": "Proto-Eremo-Numoran *tanais 'sleep'",
 		"cat": "v.",
 		"defList": [
 			"sleep"
@@ -5025,7 +5026,7 @@
 	},
 	{
 		"title": "tônu",
-		"etym": "Proto-Eremo-Numoran *tôn 'almost (adv.)' + *-u",
+		"etym": "Proto-Eremo-Numoran *tôn-u 'almost (adj.), from 'almost (adv.)' + *-u",
 		"cat": "adj.",
 		"defList": [
 			"almost"
@@ -5149,7 +5150,7 @@
 	},
 	{
 		"title": "tukilz",
-		"etym": "Proto-Eremo-Numoran *tuxil 'wind; breath'",
+		"etym": "Verbalization of tukil 'wind'",
 		"cat": "v.",
 		"defList": [
 			"breathe",
@@ -5409,7 +5410,7 @@
 	},
 	{
 		"title": "urmam",
-		"etym": "Proto-Eremo-Numoran *urmama 'joke'",
+		"etym": "Proto-Eremo-Numoran *urmam 'joke'",
 		"cat": "n., 5th",
 		"defList": [
 			"joke"
