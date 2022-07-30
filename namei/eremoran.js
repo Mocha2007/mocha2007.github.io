@@ -759,7 +759,7 @@ const gen = {
 		},
 		init(){
 			this.pforms = elements.raws.map(o => {
-				const matches = o.etym.replace(/[;:,.]/g, '').match(/^Proto-Eremo-Numoran *[^ ]+(?= )/g);
+				const matches = o.etym.replace(/[;:,.]/g, '').match(/^Proto-Eremo-Numoran \*[^ ]+(?= )/g);
 				if (matches)
 					return matches[0].slice(21);
 				return '';
@@ -777,9 +777,9 @@ const gen = {
 				this.init();
 			let pformi = 0;
 			elements.raws.forEach(o => {
-				if (!o.etym.includes(this.pforms[pformi]))
-					return; // continue
 				const pform = this.pforms[pformi];
+				if (!o.etym.replace(/[;:,.]/g, '').match(new RegExp(`^Proto-Eremo-Numoran \\*${pform}`)))
+					return; // continue
 				const expected = normalizeEremoran(o.title).replace(/kz$/g, 'ks').replace(/tz$/g, 'ts').replace('-', '');
 				const actual = phono.syllabify(normalizeEremoran(this.evolve(pform))).join('');
 				if (expected !== actual)
