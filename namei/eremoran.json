@@ -2838,6 +2838,24 @@
 		]
 	},
 	{
+		"title": "kudom",
+		"etym": "Nominalization of kudoz 'flood'",
+		"cat": "n., 5th",
+		"defList": [
+			"flood",
+			"The third of three seasons of the Eremoran calendar"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "kudoz",
+		"etym": "Augmentive of koz 'float'",
+		"cat": "v.",
+		"defList": [
+			"flood"
+		]
+	},
+	{
 		"title": "kudôz",
 		"etym": "Proto-Eremo-Numoran *kudôs 'do; make' from *ku 'with' + *dôs 'do; make'.",
 		"cat": "v.",
@@ -4185,6 +4203,25 @@
 		]
 	},
 	{
+		"title": "reram",
+		"etym": "Nominalization of reraz 'harvest'",
+		"cat": "n., 5th",
+		"defList": [
+			"harvest",
+			"The second of three seasons of the Eremoran calendar"
+		],
+		"categories": ["plant", "time"]
+	},
+	{
+		"title": "reraz",
+		"etym": "Proto-Eremo-Numoran *reras 'harvest'",
+		"cat": "v.",
+		"defList": [
+			"harvest"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "ril",
 		"etym": "Proto-Eremo-Numoran *ril 'sun'",
 		"cat": "n., 4th",
@@ -4673,6 +4710,25 @@
 			"a coin made of tin"
 		],
 		"categories": ["metal"]
+	},
+	{
+		"title": "stum",
+		"etym": "Nominalization of stuz 'sow'",
+		"cat": "n., 5th",
+		"defList": [
+			"sowing, planting",
+			"The first of three seasons of the Eremoran calendar"
+		],
+		"categories": ["plant", "time"]
+	},
+	{
+		"title": "stuz",
+		"etym": "Proto-Eremo-Numoran *ʃtus 'sow'",
+		"cat": "v.",
+		"defList": [
+			"sow, plant"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "su",
