@@ -676,7 +676,7 @@ const phono = {
 			divisions[2] = divisions[2].replace('l', 'ʕʷ').replace('ʀ', 'ʀʷ');
 			// if (stress === 'stressed')
 			//	syll = 'ˈ' + syll;
-			return syll;
+			return divisions.join('');
 		});
 		let o = ipaSyllables.join(''); // '.'
 		// o = o.replace('.ˈ', 'ˈ');
