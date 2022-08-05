@@ -1,10 +1,14 @@
 /* eslint-disable no-var, prefer-arrow-callback */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
 'use strict';
-// Modelled on Bhavnagar, India
-var highs = [27.7, 30.2, 34.7, 37.6, 39.4, 34.5, 33, 32.2, 33, 34.2, 31.7, 28.6];
-var lows = [11.2, 14.7, 19.5, 23.8, 25.9, 27.1, 26, 24.8, 24.1, 22.4, 17.9, 14.1];
-var rains = [0, 0, 0, 0, 1/31, 6/30, 10/31, 8/31, 5/30, 1/31, 0, 0];
+// Modelled on Karachi, Pakistan
+// https://en.wikipedia.org/wiki/Karachi#Climate
+// Plant Hardiness zone 12 (but almost 11)
+// https://gilmour.com/planting-calendar-zone-12
+var highs = [25.9, 27.9, 31.7, 34.5, 35.3, 35.2, 33.1, 31.9, 32.8, 35.1, 32.2, 27.9];
+var lows = [10.8, 13, 17.7, 22.5, 26.2, 28.1, 27.5, 26.2, 25.4, 21.4, 16.3, 12.2];
+var rains = [0.7/31, 0.8/28.2425, 0.7/31, 0.2/30, 0.1/31, 0.9/30,
+	8/31, 3.3/31, 0.7/30, 0.3/31, 0.1/30, 0.7/31];
 var epoch =	1497151176; // SUN 2017 JUN 11 03:19:36 UTC
 var oday = 104148; // oneian
 var month =	6477407.605917404/12; // oneian
