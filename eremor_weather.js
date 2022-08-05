@@ -3,8 +3,6 @@
 'use strict';
 // Modelled on Karachi, Pakistan
 // https://en.wikipedia.org/wiki/Karachi#Climate
-// Plant Hardiness zone 12 (but almost 11)
-// https://gilmour.com/planting-calendar-zone-12
 var highs = [25.9, 27.9, 31.7, 34.5, 35.3, 35.2, 33.1, 31.9, 32.8, 35.1, 32.2, 27.9];
 var lows = [10.8, 13, 17.7, 22.5, 26.2, 28.1, 27.5, 26.2, 25.4, 21.4, 16.3, 12.2];
 var rains = [0.7/31, 0.8/28.2425, 0.7/31, 0.2/30, 0.1/31, 0.9/30,
