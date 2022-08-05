@@ -13,6 +13,8 @@ var constants = {
 		// eremoran timekeeping is conveniently decimal... :^)
 		base: 10,
 		places: 5,
+		seasons: ['Stum', 'Reram', 'Kudom'],
+		seasonsAlt: ['Sowing', 'Harvest', 'Flood'],
 	},
 	moon: {
 		epoch: 642900000, // ms; 7 Jan 1970 10:35:00 UTC
@@ -103,9 +105,17 @@ function oneiaTime(){
 	var remainder = Date.now()-constants.oneia.epoch;
 	var years = constants.oneia.atEpoch+Math.floor(remainder/constants.oneia.year);
 	remainder %= constants.oneia.year;
-	var days = Math.floor(remainder/constants.oneia.day) + 1;
+	var days = Math.floor(remainder/constants.oneia.day);
 	remainder %= constants.oneia.day;
-	var currentTimeString = years + ' AT, Day ' + days + ', ';
+	var days_per_season = Math.floor(constants.oneia.year
+		/ constants.oneia.day / constants.eremor.seasons.length);
+	var seasonId = Math.floor(days / days_per_season);
+	days %= days_per_season;
+	days++; // 1-indexed, not 0-indexed
+	var seasonString = constants.eremor.seasons[seasonId] + ' ('
+		+ constants.eremor.seasonsAlt[seasonId] + ')';
+	// console.log(seasonId, constants.eremor.seasons[seasonId], constants.eremor.seasonsAlt[seasonId]);
+	var currentTimeString = years + ' AT, ' + seasonString + ', Day ' + days + ', ';
 
 	for (var i = 1; i < constants.eremor.places+1; i += 1){
 		currentTimeString += Math.floor(remainder
