@@ -621,8 +621,15 @@ const search = {
 			// word class match
 			if (this.type !== 'any' && (!o.cat || !o.cat.match(new RegExp(`${this.type}\.(,|$)`))))
 				return false;
+			// property match
+			if (this.property !== 'any' && (!o.cat || !o.cat.match(this.property)))
+				return false;
 			return true;
 		}).forEach(o => this.appendResult(o.title));
+	},
+	/** @returns {string} */
+	get property(){
+		return document.getElementById('propertySearch').value;
 	},
 	resetResults(){
 		this.searchResults.innerHTML = '';
