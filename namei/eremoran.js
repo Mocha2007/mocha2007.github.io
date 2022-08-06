@@ -618,6 +618,9 @@ const search = {
 			// category match
 			if (this.category !== 'any' && (!o.categories || !o.categories.includes(this.category)))
 				return false;
+			// word class match
+			if (this.type !== 'any' && (!o.cat || !o.cat.match(new RegExp(`${this.type}\.(,|$)`))))
+				return false;
 			return true;
 		}).forEach(o => this.appendResult(o.title));
 	},
@@ -627,6 +630,10 @@ const search = {
 	/** @returns {HTMLUListElement} */
 	get searchResults(){
 		return document.getElementById('searchResults');
+	},
+	/** @returns {string} */
+	get type(){
+		return document.getElementById('typeSearch').value;
 	},
 };
 
