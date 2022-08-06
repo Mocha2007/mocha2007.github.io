@@ -1054,6 +1054,15 @@
 		]
 	},
 	{
+		"title": "buni",
+		"etym": "Proto-Eremo-Numoran *buni 'countryside'",
+		"cat": "n., 3rd",
+		"defList": [
+			"(archaic) countryside",
+			"province, prefecture, county"
+		]
+	},
+	{
 		"title": "busia",
 		"etym": "Pre-Eremoran *apusia 'ass, but'",
 		"cat": "n., 4th",
@@ -1339,6 +1348,15 @@
 		"cat": "n., 5th",
 		"defList": [
 			"lend"
+		]
+	},
+	{
+		"title": "dinkalz",
+		"etym": "Proto-Eremo-Numoran *dinkals 'ask', from *din 'out of' + *kals 'seek'",
+		"cat": "v.",
+		"defList": [
+			"consult, reference",
+			"ask for guidance, help, aid, etc"
 		]
 	},
 	{
@@ -4566,6 +4584,26 @@
 		"defList": [
 			"star"
 		]
+	},
+	{
+		"title": "sisikruêr",
+		"etym": "sisikrum 'astrology' + -êr '(agentive)'",
+		"cat": "n., 1st",
+		"defList": [
+			"astrologer",
+			"astronomer"
+		],
+		"notes": "In Eremoran times, these two roles are functioned by the same person"
+	},
+	{
+		"title": "sisikrum",
+		"etym": "sisi 'star' + krum 'study'",
+		"cat": "n., 5th",
+		"defList": [
+			"astrology",
+			"astronomy"
+		],
+		"notes": "In Eremoran times, these two roles are functioned by the same person"
 	},
 	{
 		"title": "siu",
