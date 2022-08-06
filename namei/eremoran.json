@@ -253,6 +253,15 @@
 		]
 	},
 	{
+		"title": "akku",
+		"etym": "ad 'at' + ku 'with'",
+		"cat": "post.",
+		"defList": [
+			"(dialectal) with, using (instrumental)"
+		],
+		"notes": "See <a href='#lemma-bo'>bo</a> for the standard instrumental"
+	},
+	{
 		"title": "ala",
 		"etym": "Proto-Eremo-Numoran *ala 'oak'",
 		"cat": "n., 4th",
@@ -2802,7 +2811,7 @@
 	{
 		"title": "ku",
 		"etym": "Proto-Eremo-Numoran *ku 'with' and *gus 'big'",
-		"cat": "adj., s-triggering",
+		"cat": "post., adj., s-triggering",
 		"defList": [
 			"and (clause-only: not nouns)",
 			"with (comitative)",
