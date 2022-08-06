@@ -624,6 +624,9 @@ const search = {
 			// property match
 			if (this.property !== 'any' && (!o.cat || !o.cat.match(this.property)))
 				return false;
+			// regex match
+			if (!o.title.match(new RegExp(this.regex)))
+				return false;
 			return true;
 		}).forEach(o => this.appendResult(o.title));
 	},
@@ -633,6 +636,10 @@ const search = {
 	},
 	resetResults(){
 		this.searchResults.innerHTML = '';
+	},
+	/** @returns {string} */
+	get regex(){
+		return document.getElementById('regexSearch').value;
 	},
 	/** @returns {HTMLUListElement} */
 	get searchResults(){
