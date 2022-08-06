@@ -2238,6 +2238,14 @@
 		]
 	},
 	{
+		"title": "imôkam",
+		"etym": "imô 'edge' + kam 'sound'",
+		"cat": "n., 5th",
+		"defList": [
+			"consonant"
+		]
+	},
+	{
 		"title": "ink",
 		"etym": "Proto-Eremo-Numoran *inx 'cow'",
 		"cat": "n., 2nd",
@@ -2323,7 +2331,7 @@
 	},
 	{
 		"title": "kakrem",
-		"etym": "Proto-Eremo-Numoran *kagrem 'tone'",
+		"etym": "Proto-Eremo-Numoran *kagrem 'tone', related somehow to kam 'sound'",
 		"cat": "n., 5th",
 		"defList": [
 			"music",
@@ -2365,6 +2373,14 @@
 		"cat": "v.",
 		"defList": [
 			"need"
+		]
+	},
+	{
+		"title": "kam",
+		"etym": "Proto-Eremo-Numoran *kam 'sound'",
+		"cat": "n., 5th",
+		"defList": [
+			"sound"
 		]
 	},
 	{
@@ -3096,6 +3112,15 @@
 			"center"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "libakam",
+		"etym": "liba 'center' + kam 'sound'",
+		"cat": "n., 5th",
+		"defList": [
+			"vowel",
+			"nucleus (of a syllable)"
+		]
 	},
 	{
 		"title": "liboz",
