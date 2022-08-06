@@ -3396,7 +3396,8 @@
 			"already",
 			"[Particle forming perfect aspect]",
 			"now",
-			"because, for, since"
+			"because, for, since",
+			"(+ ad) despite, although"
 		]
 	},
 	{
@@ -4839,7 +4840,9 @@
 		"etym": "Proto-Eremo-Numoran *tʃu-kas 'cut' from *tʃu 'of; from' + *kas 'cut'.",
 		"cat": "v.",
 		"defList": [
-			"cut, split"
+			"cut, split",
+			"separate",
+			"distinguish"
 		]
 	},
 	{
