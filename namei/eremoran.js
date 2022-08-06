@@ -294,7 +294,7 @@ function computeStats(){
 	// do word histogram
 	const wordData = (quotes.map(i => i[0]).join(' ') + ' '
 		+ Array.from(document.getElementsByClassName('corpus')).map(elem => elem.innerHTML).join(' ')
-		).replace(/ [:\/.,]/g, '').replace(/\s+/g, ' ').toLowerCase().split(' ');
+		).replace(/[:\/.,]/g, '').replace(/\s+/g, ' ').toLowerCase().split(' ');
 	// const filteredWordData = wordData.filter(word => wordData)
 	document.getElementById('chartWord').src = chartURL + histo(wordData, true, true, 4);
 	// add categories
