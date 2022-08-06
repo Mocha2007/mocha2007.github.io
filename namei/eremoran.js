@@ -614,7 +614,7 @@ const search = {
 	},
 	input(){
 		this.resetResults();
-		elements.raws.filter(o => {
+		const results = elements.raws.filter(o => {
 			// category match
 			if (this.category !== 'any' && (!o.categories || !o.categories.includes(this.category)))
 				return false;
@@ -628,7 +628,9 @@ const search = {
 			if (!o.title.match(new RegExp(this.regex)))
 				return false;
 			return true;
-		}).forEach(o => this.appendResult(o.title));
+		});
+		document.getElementById('searchResultN').innerHTML = results.length;
+		results.forEach(o => this.appendResult(o.title));
 	},
 	/** @returns {string} */
 	get property(){
