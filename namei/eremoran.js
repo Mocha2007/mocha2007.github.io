@@ -619,7 +619,7 @@ const search = {
 			if (this.category !== 'any' && (!o.categories || !o.categories.includes(this.category)))
 				return false;
 			// word class match
-			if (this.type !== 'any' && (!o.cat || !o.cat.match(new RegExp(`${this.type}\.(,|$)`))))
+			if (this.type !== 'any' && (!o.cat || !o.cat.match(new RegExp(`\\b${this.type}\.(,|$)`))))
 				return false;
 			// property match
 			if (this.property !== 'any' && (!o.cat || !o.cat.match(this.property)))
