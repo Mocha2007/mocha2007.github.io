@@ -731,6 +731,14 @@
 		]
 	},
 	{
+		"title": "befôz",
+		"etym": "Proto-Eremo-Numoran *beɸôs 'use'",
+		"cat": "v.",
+		"defList": [
+			"use"
+		]
+	},
+	{
 		"title": "beka",
 		"etym": "Proto-Eremo-Numoran *βega 'way'",
 		"cat": "n., 4th",
@@ -739,11 +747,11 @@
 		]
 	},
 	{
-		"title": "befôz",
-		"etym": "Proto-Eremo-Numoran *beɸôs 'use'",
-		"cat": "v.",
+		"title": "belaêr",
+		"etym": "Blend of bazêr 'king/queen' and elaêr 'child'",
+		"cat": "n., 1st",
 		"defList": [
-			"use"
+			"prince, princess"
 		]
 	},
 	{
@@ -1749,6 +1757,17 @@
 		"defList": [
 			"finger",
 			"toe"
+		],
+		"categories": ["body part"]
+	},
+	{
+		"title": "habinz",
+		"etym": "Verbalization of habin 'finger'",
+		"cat": "v.",
+		"defList": [
+			"point",
+			"indicate",
+			"designate, nominate, name"
 		],
 		"categories": ["body part"]
 	},
@@ -2837,11 +2856,21 @@
 		"notes": "See <em>bo</em> for the instrumental. See <em>hans</em> for an and linking nominals."
 	},
 	{
+		"title": "kuafkar",
+		"etym": "Nominalization of kuafkaz",
+		"cat": "n., 1st",
+		"defList": [
+			"escort",
+			"caravan"
+		]
+	},
+	{
 		"title": "kuafkaz",
 		"etym": "Proto-Eremo-Numoran *kuaɸkas 'join' from *ku 'with' + *aɸkas 'go'",
 		"cat": "v.",
 		"defList": [
-			"join"
+			"join",
+			"escort"
 		]
 	},
 	{
@@ -3361,6 +3390,16 @@
 			"a parastitic flatworm used primarily in torture and occasionally medicinally for its behavior-altering effects"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "mêur",
+		"etym": "Proto-Eremo-Numoran *miêur 'widow/heir'",
+		"cat": "n., 1st",
+		"defList": [
+			"widow",
+			"heir"
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "mi",
