@@ -62,6 +62,12 @@ compileNounClass.data = () => new Array(...elements.d.getElementsByClassName('le
 	.filter(x => x.innerHTML.slice(0, 3) === 'n.,')
 	.map(x => x.innerHTML[4]);
 
+const compileSequences = {
+	data(){
+		return elements.dict.map(word => Array.from(word).map((letter, i) => letter + word[i+1]).join(' ')).join(' ').replace(/ .undefined/g, '').split(' ');
+	}
+};
+
 /** f -> h &c to match font */
 function normalizeEremoran(s){
 	return s.replace(/f/g, 'h');
@@ -291,6 +297,7 @@ function computeStats(){
 	document.getElementById('chartLength').src = chartURL + histo(compileLength.data());
 	document.getElementById('chartMeaning').src = chartURL + histo(compileMeanings.data());
 	document.getElementById('chartClass').src = chartURL + histo(compileNounClass.data());
+	document.getElementById('chartSequence').src = chartURL + histo(compileSequences.data(), true, true, 25);
 	// do word histogram
 	const wordData = (quotes.map(i => i[0]).join(' ') + ' '
 		+ Array.from(document.getElementsByClassName('corpus')).map(elem => elem.innerHTML).join(' ')
