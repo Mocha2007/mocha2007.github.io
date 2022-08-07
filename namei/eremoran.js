@@ -726,6 +726,10 @@ const phono = {
 		*/
 		return o;
 	},
+	/** @param {string} s - sentence */
+	sentence(s){
+		return normalizeEremoran(s.toLowerCase()).split(' ').map(w => this.ipa(w)).join(' ');
+	},
 	/** @param {string} word */
 	syllabify(word){
 		const rev = word.split('').reverse().join('');
