@@ -65,7 +65,7 @@ compileNounClass.data = () => new Array(...elements.d.getElementsByClassName('le
 const compileSequences = {
 	data(){
 		return elements.dict.map(word => Array.from(word).map((letter, i) => letter + word[i+1]).join(' ')).join(' ').replace(/ .undefined/g, '').split(' ');
-	}
+	},
 };
 
 /** f -> h &c to match font */
@@ -729,7 +729,7 @@ const phono = {
 		Array.from('aeiouəɛɪɔʊ').forEach(v => {
 			o = o.replace(new RegExp(`${v}b(?=[aeiouəɛɪɔʊ])`, 'g'), `${v}w`);
 			o = o.replace(new RegExp(`${v}d(?=[aeiouəɛɪɔʊ])`, 'g'), `${v}ɾ`);
-		})
+		});
 		// syllabify
 		/*
 		o = this.syllabify(o).map((syll, i) =>
@@ -823,7 +823,7 @@ const gen = {
 		get prevalidationF(){
 			return this.evolve;
 		},
-		sets:{
+		sets: {
 			voiced: 'aeiouêôbdlmnrz'.split(''),
 			vowels: 'aeiouêô'.split(''),
 		},
@@ -847,7 +847,7 @@ const gen = {
 				pformi++;
 			});
 			console.log('P-Form validation complete.');
-		}
+		},
 	},
 	markov: {
 		/** @type {{string: {string: number}}} */
@@ -887,9 +887,9 @@ const gen = {
 					const next = word[i + 1];
 					// create source if nonexistent
 					if (!output[char])
-					output[char] = {};
+						output[char] = {};
 					// create target if nonexistent
-					if(output[char][next])
+					if (output[char][next])
 						output[char][next]++;
 					else
 						output[char][next] = 1;
