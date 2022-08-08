@@ -862,6 +862,7 @@ const gen = {
 			while (choice !== '$'){
 				// pick next char
 				const choices = Object.keys(o.data[choice]);
+				// eslint-disable-next-line no-loop-func
 				const weights = choices.map(c => o.data[choice][c]);
 				choice = random.weightedChoice(choices, weights);
 				if (choice !== '$')
