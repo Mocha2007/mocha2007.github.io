@@ -1,4 +1,5 @@
 /* eslint-disable no-var */
+/* eslint-env es3 */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
 /* global phoonsvg */
 /* exported holidayCSS, oneiaTime, oneiaTimeInitialize, playSound, stopSound */

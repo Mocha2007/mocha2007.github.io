@@ -1,4 +1,5 @@
 /* eslint-disable comma-dangle, no-var */
+/* eslint-env es3 */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
 /* exported bonus, playSound, stopSound */
 'use strict';

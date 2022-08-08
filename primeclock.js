@@ -1,4 +1,5 @@
 /* eslint-disable comma-dangle, no-var, prefer-arrow-callback */
+/* eslint-env es3 */
 /* jshint esversion: 3, strict: true, strict: global */
 /* globals a, currentyear, diff, events */
 /* exported primeclock, enableDebug */

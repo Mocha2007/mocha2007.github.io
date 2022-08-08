@@ -1,4 +1,5 @@
 /* eslint-disable no-var, prefer-arrow-callback */
+/* eslint-env es3 */
 /* jshint esversion: 3, strict: true, strict: global */
 /* exported tilde */
 'use strict';

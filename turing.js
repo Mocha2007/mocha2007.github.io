@@ -1,4 +1,5 @@
 /* eslint-disable no-var */
+/* eslint-env es3 */
 /* jshint esversion: 3, strict: true, strict: global */
 /* exported cclr, fstep100, reset, run */
 'use strict';

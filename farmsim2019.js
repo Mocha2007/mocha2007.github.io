@@ -1,4 +1,5 @@
 /* eslint-disable no-var */
+/* eslint-env es3 */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
 /* exported click, dodge, reset */
 'use strict';

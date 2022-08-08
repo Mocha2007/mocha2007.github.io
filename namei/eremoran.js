@@ -746,6 +746,7 @@ const phono = {
 	/** @param {string} word */
 	syllabify(word){
 		const rev = word.split('').reverse().join('');
+		// eslint-disable-next-line max-len
 		const regex = /(([sz][bdkmnpt])|([kt][sn])|([bdhkmnpstz][lr])|(tk)|([bdhklmnprstz]))?[aeiouêô]((r[bdkpt])|([ptk]s|(lk)|([bdhklmnprstz])))?/g;
 		return rev.match(regex).reverse().map(s => s.split('').reverse().join(''));
 	},
@@ -754,6 +755,7 @@ const phono = {
 		// debug warnings
 		const syllTest = this.syllabify(word).join('');
 		if (syllTest !== word.replace(/ /g, ''))
+			// eslint-disable-next-line max-len
 			return console.warn(`${word} changed value to ${syllTest} during syllabification! (Is it valid Eremoran?)`);
 		if ('bph'.includes(word[word.length-1]))
 			return console.warn(`${word} ends in a labial`);
