@@ -1,7 +1,7 @@
 /* exported adjTool, autoUp, compileDict, compileFinals, compileInitials,
 	compileLength, compileMeanings, compileMedials, compileNounClass,
 	computeStats, EremoranTooltip, numberTool, search, titleCard, wordle */
-/* global charHisto, commaNumber, histo, random, round, union */
+/* global charHisto, commaNumber, histo, quotes, random, round, union */
 
 'use strict';
 
@@ -301,7 +301,7 @@ function computeStats(){
 	// do word histogram
 	const wordData = (quotes.map(i => i[0]).join(' ') + ' '
 		+ Array.from(document.getElementsByClassName('corpus')).map(elem => elem.innerHTML).join(' ')
-		).replace(/[:\/.,]/g, '').replace(/\s+/g, ' ').toLowerCase().split(' ');
+	).replace(/[:\\/.,]/g, '').replace(/\s+/g, ' ').toLowerCase().split(' ');
 	// const filteredWordData = wordData.filter(word => wordData)
 	document.getElementById('chartWord').src = chartURL + histo(wordData, true, true, 4);
 	// add categories
@@ -626,7 +626,7 @@ const search = {
 			if (this.category !== 'any' && (!o.categories || !o.categories.includes(this.category)))
 				return false;
 			// word class match
-			if (this.type !== 'any' && (!o.cat || !o.cat.match(new RegExp(`\\b${this.type}\.(,|$)`))))
+			if (this.type !== 'any' && (!o.cat || !o.cat.match(new RegExp(`\\b${this.type}\\.(,|$)`))))
 				return false;
 			// property match
 			if (this.property !== 'any' && (!o.cat || !o.cat.match(this.property)))
@@ -714,9 +714,10 @@ const phono = {
 		o = o.replace(/nk/g, 'ŋk')
 			.replace(/^f/, 'h')
 			.replace(/^k/, 'g')
-			.replace(/(?<=[aeiouəɛɪɔʊ])b(?=[aeiouəɛɪɔʊ])/g, 'w')
-			.replace(/(?<=[aeiouəɛɪɔʊ])d(?=[aeiouəɛɪɔʊ])/g, 'ɾ')
-			.replace(/(?<=[aɔ])ʀ(?![eiɛɪ])/g, 'ħ')
+			// .replace(/(?<=[aeiouəɛɪɔʊ])b(?=[aeiouəɛɪɔʊ])/g, 'w')
+			// .replace(/(?<=[aeiouəɛɪɔʊ])d(?=[aeiouəɛɪɔʊ])/g, 'ɾ')
+			.replace(/aʀ(?![eiɛɪ])/g, 'aħ')
+			.replace(/ɔʀ(?![eiɛɪ])/g, 'ɔħ')
 			.replace(/ɪ$/, 'i') // i/u do not reduce word-finally
 			.replace(/ʊ$/, 'u') // i/u do not reduce word-finally
 			.replace(/kz$/, 'ks') // fix verb ending weirdness
@@ -724,6 +725,11 @@ const phono = {
 			.replace(/tz$/, 'ts') // fix verb ending weirdness
 			.replace(/kʀ/g, 'qʀ') // velar + r
 			.replace(/gʀ/g, 'ɢʀ'); // velar + r
+		// to get around having to use lookbehinds
+		Array.from('aeiouəɛɪɔʊ').forEach(v => {
+			o = o.replace(new RegExp(`${v}b(?=[aeiouəɛɪɔʊ])`, 'g'), `${v}w`);
+			o = o.replace(new RegExp(`${v}d(?=[aeiouəɛɪɔʊ])`, 'g'), `${v}ɾ`);
+		})
 		// syllabify
 		/*
 		o = this.syllabify(o).map((syll, i) =>
@@ -766,15 +772,20 @@ const gen = {
 		data: {'^': {}},
 		/** @param {string} pform */
 		evolve(pform){
-			const o = pform
+			let o = pform
 				.replace(/x[eê]x?/g, 'a')
 				.replace(/[eê]x/g, 'a')
 				.replace(/x/g, 'k')
 				.replace(/i(?=[aeouêô])/g, 'j') // except i
-				.replace(/^[ɸs](?=[aeiouêô])/g, 'h')
-				.replace(/(?<=[aeiouêôbdlmnrz])s(?=[aeiouêôbdlmnrz]|$)/g, 'z')
-				.replace(/(?<=[aeiouêôbdlmnrz])ss(?=[aeiouêôbdlmnrz]|$)/g, 's')
-				.replace(/(?<=[aeiouêô])ɸu/g, 'u') // the lookbehind might be unnecessary
+				.replace(/^[ɸs](?=[aeiouêô])/g, 'h');
+			this.sets.voiced.forEach(phone => {
+				o = o.replace(new RegExp(`${phone}s(?=[aeiouêôbdlmnrz]|$`, 'g'), `${phone}z`);
+				o = o.replace(new RegExp(`${phone}ss(?=[aeiouêôbdlmnrz]|$`, 'g'), `${phone}s`);
+			});
+			this.sets.vowels.forEach(phone => {
+				o = o.replace(new RegExp(`${phone}ɸu`, 'g'), `${phone}u`);
+			});
+			o = o
 				.replace(/ɸ/g, 'f')
 				.replace(/β/g, 'b')
 				.replace(/sj/g, 'ʃ')
@@ -811,6 +822,10 @@ const gen = {
 		pforms: [],
 		get prevalidationF(){
 			return this.evolve;
+		},
+		sets:{
+			voiced: 'aeiouêôbdlmnrz'.split(''),
+			vowels: 'aeiouêô'.split(''),
 		},
 		validatePforms(){
 			if (!this.initialized)
@@ -857,7 +872,9 @@ const gen = {
 				if (phono.validate(normalizeEremoran(str)))
 					return str;
 			}
-			catch {} // retry
+			catch (_){
+				// retry
+			}
 			return this.gen(o); // retry
 		},
 		init(corpus = elements.dict, output = this.data){
