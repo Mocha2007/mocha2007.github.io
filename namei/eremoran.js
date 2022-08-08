@@ -781,8 +781,8 @@ const gen = {
 				.replace(/i(?=[aeouêô])/g, 'j') // except i
 				.replace(/^[ɸs](?=[aeiouêô])/g, 'h');
 			this.sets.voiced.forEach(phone => {
-				o = o.replace(new RegExp(`${phone}s(?=[aeiouêôbdlmnrz]|$`, 'g'), `${phone}z`);
-				o = o.replace(new RegExp(`${phone}ss(?=[aeiouêôbdlmnrz]|$`, 'g'), `${phone}s`);
+				o = o.replace(new RegExp(`${phone}s(?=[aeiouêôbdlmnrz]|$)`, 'g'), `${phone}z`);
+				o = o.replace(new RegExp(`${phone}ss(?=[aeiouêôbdlmnrz]|$)`, 'g'), `${phone}s`);
 			});
 			this.sets.vowels.forEach(phone => {
 				o = o.replace(new RegExp(`${phone}ɸu`, 'g'), `${phone}u`);
@@ -863,11 +863,10 @@ const gen = {
 				// pick next char
 				const choices = Object.keys(o.data[choice]);
 				const weights = choices.map(c => o.data[choice][c]);
-				const next = random.weightedChoice(choices, weights);
-				str += next;
-				choice = next;
+				choice = random.weightedChoice(choices, weights);
+				if (choice !== '$')
+					str += choice;
 			}
-			str = str.slice(0, -1);
 			if (o.prevalidationF)
 				str = o.prevalidationF(str);
 			try {
