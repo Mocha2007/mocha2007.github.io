@@ -39,6 +39,7 @@ function phoonsvg(phase){
 	mask.id = 'mask';
 	svg.appendChild(mask);
 	var maskCircle = shadow.cloneNode();
+	maskCircle.style.fill = 'white'; // just in case
 	mask.appendChild(maskCircle);
 	// circle
 	var terminator = createSvgElement('ellipse');
