@@ -359,6 +359,15 @@
 		"categories": ["metal"]
 	},
 	{
+		"title": "aramaelat",
+		"etym": "Diminutive of aramat",
+		"cat": "n., 3rd",
+		"defList": [
+			"a small copper piece, worth a quarter aramat"
+		],
+		"categories": ["coin"]
+	},
+	{
 		"title": "aramaêr",
 		"etym": "arama + -êr",
 		"cat": "n., 1st",
@@ -390,9 +399,10 @@
 		"etym": "arama + -t",
 		"cat": "n., 3rd",
 		"defList": [
-			"copper"
+			"copper",
+			"a copper piece, worth four aramaelat"
 		],
-		"categories": ["metal"]
+		"categories": ["coin", "metal"]
 	},
 	{
 		"title": "arbaz",
@@ -452,13 +462,32 @@
 		"categories": ["metal"]
 	},
 	{
+		"title": "ardzênelat",
+		"etym": "Diminutive of ardzênt",
+		"cat": "n., 3rd",
+		"defList": [
+			"a small silver piece, worth four aramat"
+		],
+		"categories": ["coin"]
+	},
+	{
 		"title": "ardzênt",
 		"etym": "ardzên + -t",
 		"cat": "n., 3rd",
 		"defList": [
-			"silver"
+			"silver",
+			"a silver piece, worth four ardzênelat"
 		],
-		"categories": ["metal"]
+		"categories": ["coin", "metal"]
+	},
+	{
+		"title": "ardzênudot",
+		"etym": "Augementive of ardzênt",
+		"cat": "n., 3rd",
+		"defList": [
+			"a large silver piece, worth four ardzênt"
+		],
+		"categories": ["coin"]
 	},
 	{
 		"title": "arêôk",
@@ -1254,8 +1283,19 @@
 		"etym": "dare + -t",
 		"cat": "n., 3rd",
 		"defList": [
-			"money (especially gold money)"
-		]
+			"money (especially gold money)",
+			"a gold (actually, electrum) coin, worth four ardzênudot"
+		],
+		"categories": ["coin"]
+	},
+	{
+		"title": "dareudot",
+		"etym": "Augmentive of daret",
+		"cat": "n., 3rd",
+		"defList": [
+			"a large gold coin, worth four daret"
+		],
+		"categories": ["coin"]
 	},
 	{
 		"title": "dasu",
@@ -1536,6 +1576,15 @@
 			"less"
 		],
 		"notes": "cf. <em>pukusam</em>, the noun form"
+	},
+	{
+		"title": "drudot",
+		"etym": "Contraction of dareudot",
+		"cat": "n., 3rd",
+		"defList": [
+			"a large gold coin, worth four daret"
+		],
+		"categories": ["coin"]
 	},
 	{
 		"title": "eba",
@@ -3393,6 +3442,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "melat",
+		"etym": "Contraction of aramaelat",
+		"cat": "n., 3rd",
+		"defList": [
+			"a small copper piece, worth a quarter aramat"
+		],
+		"categories": ["coin"]
+	},
+	{
 		"title": "mêur",
 		"etym": "Proto-Eremo-Numoran *miêur 'widow/heir'",
 		"cat": "n., 1st",
@@ -3792,6 +3850,15 @@
 		]
 	},
 	{
+		"title": "nelat",
+		"etym": "Contraction of ardz&ecirc;nelat",
+		"cat": "n., 3rd",
+		"defList": [
+			"a small silver piece, worth four aramat"
+		],
+		"categories": ["coin"]
+	},
+	{
 		"title": "nem",
 		"etym": "Proto-Eremo-Numoran *nem",
 		"cat": "n., 5th",
@@ -3930,6 +3997,15 @@
 			"newlywed"
 		],
 		"categories": ["person"]
+	},
+	{
+		"title": "nudot",
+		"etym": "Contraction of ardz&ecirc;nudot",
+		"cat": "n., 3rd",
+		"defList": [
+			"a large silver piece, worth four ardzênt"
+		],
+		"categories": ["coin"]
 	},
 	{
 		"title": "nul",
