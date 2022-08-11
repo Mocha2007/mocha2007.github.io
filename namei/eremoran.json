@@ -898,8 +898,9 @@
 		"etym": "Pre-Eremoran <em>apikkei</em>",
 		"cat": "n., 5th",
 		"defList": [
-			"a period of two decades"
-		]
+			"a period of two decades (in Earth years: 4 yr 1 mo 7 d)"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "bikil",
@@ -1658,7 +1659,7 @@
 			"child",
 			"(more specifically) boy"
 		],
-		"categories": ["person"]
+		"categories": ["age", "person"]
 	},
 	{
 		"title": "elelak",
@@ -1899,6 +1900,15 @@
 			"important, serious",
 			"profound"
 		]
+	},
+	{
+		"title": "hanbikêr",
+		"etym": "hanu 'five' + bikêm 'two decades'",
+		"cat": "n., 1st",
+		"defList": [
+			"adult"
+		],
+		"categories": ["age", "person"]
 	},
 	{
 		"title": "hans",
@@ -2307,7 +2317,7 @@
 		"defList": [
 			"(archaic, non-southern) girl (older form of elaôr)"
 		],
-		"categories": ["person"]
+		"categories": ["age", "person"]
 	},
 	{
 		"title": "imô",
@@ -3877,7 +3887,7 @@
 		"etym": "Proto-Eremo-Numoran *nem",
 		"cat": "n., 5th",
 		"defList": [
-			"year"
+			"year (in Earth time: 2 mo 14 d)"
 		],
 		"categories": ["time"]
 	},
@@ -4010,7 +4020,7 @@
 			"infant",
 			"newlywed"
 		],
-		"categories": ["person"]
+		"categories": ["age", "person"]
 	},
 	{
 		"title": "nudot",
@@ -4420,7 +4430,7 @@
 		"etym": "ril + -m",
 		"cat": "n., 5th",
 		"defList": [
-			"day, sol (unit of time)",
+			"day, sol (in earth time: 28.93 h)",
 			"daytime"
 		],
 		"categories": ["time"]
@@ -5091,6 +5101,15 @@
 		]
 	},
 	{
+		"title": "tanasêr",
+		"etym": "tanasu 'twelve' + -êr (agentive)",
+		"cat": "n., 1st",
+		"defList": [
+			"elder"
+		],
+		"categories": ["age", "person"]
+	},
+	{
 		"title": "tantan",
 		"etym": "Reduplicated from tan",
 		"cat": "adv.",
@@ -5142,6 +5161,24 @@
 		"defList": [
 			"someone or something that stands out among the crowd in some positive aspect, especially beauty"
 		]
+	},
+	{
+		"title": "tazedo",
+		"etym": "Diminutive of taze",
+		"cat": "n., 4th",
+		"defList": [
+			"sprout"
+		],
+		"categories": ["plant"]
+	},
+	{
+		"title": "tazedor",
+		"etym": "First class of tazedo 'sprout'",
+		"cat": "n., 1st",
+		"defList": [
+			"teen, young adult"
+		],
+		"categories": ["age", "person"]
 	},
 	{
 		"title": "tekka",
