@@ -651,7 +651,8 @@
 		"cat": "adv.",
 		"defList": [
 			"(negative) hardly, barely, not at all, not even"
-		]
+		],
+		"categories": ["intensity"]
 	},
 	{
 		"title": "banbanz",
@@ -1863,8 +1864,10 @@
 		"cat": "adj., s-triggering, adv.",
 		"defList": [
 			"thick, wide",
+			"extremely",
 			"[disappointment particle]"
-		]
+		],
+		"categories": ["intensity"]
 	},
 	{
 		"title": "hakz",
@@ -2115,7 +2118,8 @@
 		"cat": "adv.",
 		"defList": [
 			"rather"
-		]
+		],
+		"categories": ["intensity"]
 	},
 	{
 		"title": "hod",
@@ -2190,7 +2194,8 @@
 		"cat": "adv.",
 		"defList": [
 			"somewhat"
-		]
+		],
+		"categories": ["intensity"]
 	},
 	{
 		"title": "hus",
@@ -5357,7 +5362,8 @@
 		"cat": "adv.",
 		"defList": [
 			"(negative) not very"
-		]
+		],
+		"categories": ["intensity"]
 	},
 	{
 		"title": "tukil",
