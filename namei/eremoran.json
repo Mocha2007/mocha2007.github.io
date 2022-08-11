@@ -1199,7 +1199,8 @@
 		"defList": [
 			"grey",
 			"(of the sky) having moderate cloud cover"
-		]
+		],
+		"categories": ["color"]
 	},
 	{
 		"title": "dam",
@@ -1738,7 +1739,8 @@
 		"cat": "adj.",
 		"defList": [
 			"orange"
-		]
+		],
+		"categories": ["color"]
 	},
 	{
 		"title": "erem",
@@ -1777,7 +1779,8 @@
 		"cat": "adj.",
 		"defList": [
 			"red"
-		]
+		],
+		"categories": ["color"]
 	},
 	{
 		"title": "ereulu",
@@ -1785,7 +1788,8 @@
 		"cat": "adj.",
 		"defList": [
 			"purple"
-		]
+		],
+		"categories": ["color"]
 	},
 	{
 		"title": "eto",
@@ -2498,7 +2502,8 @@
 		"cat": "adj.",
 		"defList": [
 			"yellow"
-		]
+		],
+		"categories": ["color"]
 	},
 	{
 		"title": "karm",
@@ -2536,7 +2541,8 @@
 		"cat": "adj.",
 		"defList": [
 			"brown"
-		]
+		],
+		"categories": ["color"]
 	},
 	{
 		"title": "kasraz",
@@ -3233,7 +3239,8 @@
 		"defList": [
 			"cyan",
 			"(of the sky) clear"
-		]
+		],
+		"categories": ["color"]
 	},
 	{
 		"title": "lolz",
@@ -4771,7 +4778,8 @@
 			"shining",
 			"white",
 			"(of the sky) overcast, but not with stormclouds (which would be <em>usiu</em>; cf. perlucidus and translucidus)"
-		]
+		],
+		"categories": ["color"]
 	},
 	{
 		"title": "siz",
@@ -5115,7 +5123,8 @@
 		"cat": "adj.",
 		"defList": [
 			"green"
-		]
+		],
+		"categories": ["color"]
 	},
 	{
 		"title": "taze",
@@ -5534,7 +5543,8 @@
 			"blue",
 			"black (considered a shade of blue)"
 		],
-		"notes": "For black specifically, see <em>usiu</em>"
+		"notes": "For black specifically, see <em>usiu</em>",
+		"categories": ["color"]
 	},
 	{
 		"title": "umonar",
@@ -5679,7 +5689,7 @@
 			"dim",
 			"(of the sky) overcast with storm clouds; having heavy cloud cover"
 		],
-		"categories": ["weather"]
+		"categories": ["color", "weather"]
 	},
 	{
 		"title": "utbak",
