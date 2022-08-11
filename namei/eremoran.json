@@ -694,7 +694,8 @@
 			"chess",
 			"(chess) check"
 		],
-		"notes": "n., 3rd"
+		"notes": "n., 3rd",
+		"categories": ["chess"]
 	},
 	{
 		"title": "bata",
@@ -711,7 +712,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"(chess) checkmate"
-		]
+		],
+		"categories": ["chess"]
 	},
 	{
 		"title": "batu",
@@ -739,7 +741,7 @@
 			"emperor, king",
 			"(chess) king"
 		],
-		"categories": ["person"]
+		"categories": ["chess", "person"]
 	},
 	{
 		"title": "be",
@@ -1617,7 +1619,7 @@
 			"horse",
 			"(chess) knight"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "chess"]
 	},
 	{
 		"title": "ekar",
@@ -3335,7 +3337,7 @@
 			"elephant",
 			"(chess) rook"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "chess"]
 	},
 	{
 		"title": "manaz",
@@ -4023,7 +4025,7 @@
 			"courier, messenger",
 			"(chess) bishop"
 		],
-		"categories": ["person"]
+		"categories": ["chess", "person"]
 	},
 	{
 		"title": "numz",
@@ -4101,7 +4103,7 @@
 			"wife",
 			"(chess) queen"
 		],
-		"categories": ["person"]
+		"categories": ["chess", "person"]
 	},
 	{
 		"title": "ôkarinu",
@@ -4946,7 +4948,7 @@
 			"warrior, soldier",
 			"(chess) pawn"
 		],
-		"categories": ["person"]
+		"categories": ["chess", "person"]
 	},
 	{
 		"title": "sud",
