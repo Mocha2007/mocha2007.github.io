@@ -5029,6 +5029,16 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "sumor",
+		"etym": "su 'of' + mor 'people; folk'",
+		"cat": "n., 1st",
+		"defList": [
+			"tribe",
+			"a (usually small) organized polity"
+		],
+		"categories": ["government"]
+	},
+	{
 		"title": "suz",
 		"etym": "Proto-Eremo-Numoran *sius 'tie', likely related to <em>sukz</em> 'sew'",
 		"cat": "v.",
