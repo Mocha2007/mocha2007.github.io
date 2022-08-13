@@ -711,7 +711,10 @@ const phono = {
 		let o = ipaSyllables.join(''); // '.'
 		// o = o.replace('.ˈ', 'ˈ');
 		// misc allophones
-		o = o.replace(/nk/g, 'ŋk')
+		o = o.replace(/[mn]k/g, 'ŋk')
+			.replace(/n(?=[bp])/, 'm')
+			.replace(/[mn]f/, 'ɱf')
+			.replace(/m(?=[sztd])/, 'n')
 			.replace(/^f/, 'h')
 			.replace(/^k/, 'g')
 			// .replace(/(?<=[aeiouəɛɪɔʊ])b(?=[aeiouəɛɪɔʊ])/g, 'w')
