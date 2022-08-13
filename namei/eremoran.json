@@ -244,6 +244,15 @@
 		]
 	},
 	{
+		"title": "aka",
+		"etym": "Proto-Eremo-Numoran *aka 'wheat'",
+		"cat": "n., 4th",
+		"defList": [
+			"wheat"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "akkraz",
 		"etym": "ad 'to' + kraz 'step'",
 		"cat": "v.",
@@ -615,6 +624,15 @@
 			"(transitive) teach"
 		],
 		"notes": "Unlike English, this is not used with subordinate clauses, including reporting knowledge of experiences - evidentials are used for that instead. cf. <em>bakaz</em>, a similar meaning with opposite transitivity. In addition, <em>bakaz</em> is telic and dynamic, while <em>afêkz</em> is atelic and stative."
+	},
+	{
+		"title": "bakoni",
+		"etym": "Proto-Eremo-Numoran *βagoni 'maize'",
+		"cat": "n., 4th",
+		"defList": [
+			"maize (corn)"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "baliz",
@@ -1817,6 +1835,15 @@
 		]
 	},
 	{
+		"title": "ha",
+		"etym": "Proto-Eremo-Numoran *ɸia 'barley'",
+		"cat": "n., 4th",
+		"defList": [
+			"barley"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "habin",
 		"etym": "Proto-Eremo-Numoran *ɸabin 'finger'. Related to <i>habu</i> 'fingernail'.",
 		"cat": "n., 4th",
@@ -2344,6 +2371,15 @@
 		]
 	},
 	{
+		"title": "indôn",
+		"etym": "Proto-Eremo-Numoran *indôn 'potato'",
+		"cat": "n., 4th",
+		"defList": [
+			"potato"
+		],
+		"categories": ["potato"]
+	},
+	{
 		"title": "ink",
 		"etym": "Proto-Eremo-Numoran *inx 'cow'",
 		"cat": "n., 2nd",
@@ -2402,6 +2438,15 @@
 		"defList": [
 			"reverse"
 		]
+	},
+	{
+		"title": "kabako",
+		"etym": "Proto-Eremo-Numoran *kabaxo 'rye'",
+		"cat": "n., 4th",
+		"defList": [
+			"rye"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "kadôl",
