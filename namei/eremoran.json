@@ -57,6 +57,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "abelk",
+		"etym": "Proto-Eremo-Numoran *aβe-lk 'otherwise', from *aβe- 'two' plus *-lk",
+		"cat": "adv.",
+		"defList": [
+			"otherwise"
+		],
+		"notes": "Often used in places where English would use 'would&apos;ve'."
+	},
+	{
 		"title": "abu",
 		"etym": "Proto-Eremo-Numoran *aβu 'ring'",
 		"cat": "n., 4th",
@@ -1168,6 +1177,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "busmat",
+		"etym": "busk 'dog' + mat 'house'",
+		"cat": "n., 3rd",
+		"defList": [
+			"doghouse",
+			"prison"
+		]
+	},
+	{
 		"title": "da",
 		"etym": "Proto-Eremo-Numoran *da 'earth'",
 		"img": "../img/eremoran/da.png",
@@ -1488,7 +1506,8 @@
 		"etym": "Proto-Eremo-Numoran *dô 'in'",
 		"cat": "post., adv.",
 		"defList": [
-			"in, on",
+			"in, inside (of)",
+			"on",
 			"(<i>math</i>) over, divided by",
 			"(informal, verb +) (forms continuous aspect)"
 		],
@@ -3275,6 +3294,14 @@
 		"defList": [
 			"vowel",
 			"nucleus (of a syllable)"
+		]
+	},
+	{
+		"title": "libam",
+		"etym": "Abstraction of liba 'heart'",
+		"cat": "n., 5th",
+		"defList": [
+			"mercy, forgiveness"
 		]
 	},
 	{
