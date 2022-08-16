@@ -1034,6 +1034,14 @@
 		]
 	},
 	{
+		"title": "bodôt",
+		"etym": "Proto-Eremo-Numoran *bo-dô-t 'gift', from *bo 'with' plus *dôs 'do'",
+		"cat": "n., 3rd",
+		"defList": [
+			"gift"
+		]
+	},
+	{
 		"title": "bôêt",
 		"etym": "Proto-Eremo-Numoran *bô-ê-t 'wagon', from *bôs 'carry' plus agentive",
 		"cat": "n., 3rd",
@@ -5582,6 +5590,22 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"ceiling"
+		]
+	},
+	{
+		"title": "tuu",
+		"etym": "tuz 'fry' + -u (adjective suffix)",
+		"cat": "adj.",
+		"defList": [
+			"fried"
+		]
+	},
+	{
+		"title": "tuz",
+		"etym": "Proto-Eremo-Numoran *tus 'fry'",
+		"cat": "v.",
+		"defList": [
+			"fry"
 		]
 	},
 	{
