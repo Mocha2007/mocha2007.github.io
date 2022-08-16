@@ -51,7 +51,7 @@
 		<input type="submit" value="P" onclick="Game.pause();" title="Pause game">
 		<input type="submit" value="Live" onclick="Game.speed = 1;" title="Set game speed to realtime">
 		<hr>
-		<select id="spectrum" title="Spectrum">
+		<select title="spectrum" id="spectrum" title="Spectrum">
 			<option value="ultraviolet">Ultraviolet</option>
 			<option value="visible" selected="selected">Visible</option>
 			<option value="ira">IR-A</option>
@@ -60,7 +60,7 @@
 			<option value="fir">Far infrared</option>
 			<option value="microwave">Microwave</option>
 		</select>
-		<select id="view" title="View">
+		<select title="view" id="view" title="View">
 			<option value="+x">+X</option>
 			<option value="-x">-X</option>
 			<option value="+y">+Y</option>
@@ -115,7 +115,7 @@
 		<table id="navy"></table>
 		<div id="orders">
 			Action:
-			<select id="input_order_type"></select><br>
+			<select title="input_order_type" id="input_order_type"></select><br>
 			Target: <span id="orderSelectionID"></span><br>
 			Ships Required: <table id="shipTable"></table>
 			<span id="orderAffordable"></span><br>
@@ -150,14 +150,14 @@
 					<input id="input_fps" type="number" min="1" max="30" value="20" onclick="updateFPS();">
 				</li>
 				<li>Use
-					<select id="input_asciiemoji" onclick="Game.settings.asciiEmoji = Number(document.getElementById('input_asciiemoji').value);wipeMap();">
+					<select title="input_asciiemoji" id="input_asciiemoji" onclick="Game.settings.asciiEmoji = Number(document.getElementById('input_asciiemoji').value);wipeMap();">
 						<option value="0">ascii</option>
 						<option value="1">emoji</option>
 					</select>
 					for icons.
 				</li>
 				<li>Use
-					<select id="input_selectionStyle" onclick="Game.settings.selectionStyle = Number(document.getElementById('input_selectionStyle').value);wipeMap();">
+					<select title="input_selectionStyle" id="input_selectionStyle" onclick="Game.settings.selectionStyle = Number(document.getElementById('input_selectionStyle').value);wipeMap();">
 						<option value="0">new</option>
 						<option value="1">old</option>
 					</select>

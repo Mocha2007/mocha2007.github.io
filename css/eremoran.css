@@ -5,6 +5,7 @@
 	cursor: pointer;
 	padding: 0 5px 0 5px;
 	user-select: none;
+	-webkit-user-select: none; /* Safari */
 }
 .button:hover {
 	opacity: 0.5;

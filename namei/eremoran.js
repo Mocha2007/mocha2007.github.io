@@ -314,6 +314,8 @@ function computeStats(){
 		option.value = option.innerHTML = category;
 		categorySearch.appendChild(option);
 	});
+	// add titles to iframes for accessibility
+	Array.from(document.getElementsByTagName('iframe')).forEach(e => e.title = e.id);
 }
 
 /**

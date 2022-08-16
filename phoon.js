@@ -36,7 +36,7 @@ function phoonsvg(phase){
 	svg.appendChild(shadow);
 	// mask
 	var mask = createSvgElement('mask');
-	mask.id = 'mask';
+	mask.id = 'mask' + phase;
 	svg.appendChild(mask);
 	var maskCircle = shadow.cloneNode();
 	maskCircle.style.fill = 'white'; // just in case
@@ -54,7 +54,7 @@ function phoonsvg(phase){
 	terminator2.setAttribute('y', -1);
 	terminator2.setAttribute('width', 1);
 	terminator2.setAttribute('height', 2);
-	terminator2.setAttribute('mask', 'url(#mask)');
+	terminator2.setAttribute('mask', 'url(#' + mask.id + ')');
 	terminator2.style.fill = terminator.style.fill = gibbous ? 'white' : 'black';
 	svg.appendChild(terminator2);
 	return svg;
