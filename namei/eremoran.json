@@ -1426,7 +1426,7 @@
 			"(<i>locational only</i>) (be) away from",
 			"(<i>math</i>) minus",
 			"~ give/take*: X i Y ad Z din = Z gives X to Y",
-			"(informal, <i>ardo i +</i>) ~ love*: Y ad Z din = Y loves Z",
+			"(informal, <i>ardo i +</i>) ~ (romantic) love*: Y ad Z din = Y loves Z",
 			"(verb +) just (recent past - cf. fr. <em>venir de</em>)"
 		],
 		"notes": "Note: * - There are many possible arrangements of this phrase. To emphasize the recipient, <i>ad</i> may even be replaced by <i>dir</i>. The most neutral phrasing is shown. ZE dialects use this prepositionally for translative senses."
@@ -1978,7 +1978,7 @@
 		"cat": "pron., det.",
 		"defList": [
 			"all, every",
-			"and* <ul> <li>  <i>Roraok su lusik su <b>dir hans</b> kopdoz.</i><br>  cat GEN dog GEN ABS all love-DIM<br>  I like <b>both</b> cats <b>and</b> dogs. </li> </ul> "
+			"and* <ul> <li>  <i>Roraok su lusik su <b>dir hans</b> i uzurkuk.</i><br>  cat GEN dog GEN ABS all TOP good<br>  I like <b>both</b> cats <b>and</b> dogs. </li> </ul> "
 		],
 		"pron": "hanz",
 		"notes": "Due to historical reasons, this word has an irregular spelling; *hanz would be expected. There also exist the rare conjunctions <em>unau</em> 'nor', <em>ufans</em> 'nand', and <em>unanau</em> 'xnor', generally only used in formal writing"
@@ -2323,7 +2323,7 @@
 		"defList": [
 			"one",
 			"some (fr. <i>certain</i>)",
-			"or (exclusive)* <ul> <li>  <i>Roraok su lusik su <b>dir id</b> kopdoz.</i><br>  cat GEN dog GEN ABS or love.DIM<br>  I like <b>either</b> cats <b>or</b> dogs. </li> </ul> ",
+			"or (exclusive)* <ul> <li>  <i>Roraok su lusik su <b>dir id</b> i uzurkuk.</i><br>  cat GEN dog GEN ABS or TOP good<br>  I like <b>either</b> cats <b>or</b> dogs. </li> </ul> ",
 			"(ko +) the same individual, the thing just mentioned: (cf. \"se\" in Latin, proximate pronoun) <ul> <li>  <i>Mor i lulz ku, <b>kor id</b> i libaz.</i><br>  person TOP laugh and, \"the same person\" TOP cry<br>  The person laughed, and then <b>they [same person]</b> cried. </li> </ul> ",
 			"(hoki/ho +) the other individual, the other thing recently mentioned: (cf. obviative pronoun) <ul> <li>  <i>Mor i lulz ku, <b>hor id</b> i libaz.</i><br>  person TOP laugh and, \"the other person\" TOP cry<br>  The person laughed, and then <b>they [another person]</b> cried. </li> </ul> ",
 			"(+ plural det) considering each member of the determiner equally, eg. <em>id hans</em> = \"every\" specifically rather than all. (Distributive pronoun/determiner) "
@@ -2899,7 +2899,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"love"
-		]
+		],
+		"notes": "See usage notes for kopz"
 	},
 	{
 		"title": "kopdam",
@@ -2923,8 +2924,9 @@
 		"etym": "Pre-Eremoran <em>qōp</em> 'love'",
 		"cat": "v.",
 		"defList": [
-			"love"
-		]
+			"like, love"
+		],
+		"notes": "Only for familial/romantic/friendly relations. Not used in the sense of 'I like this music' - you would use <em>X i ad Y uzurku</em> or similar."
 	},
 	{
 		"title": "kot",
@@ -3037,11 +3039,12 @@
 	{
 		"title": "kubatu",
 		"etym": "ku + batu",
-		"cat": "adv., conj.",
+		"cat": "adv., conj., post.",
 		"defList": [
 			"(verb +) but, however",
 			"(verb +) though",
-			"(+ adj) too (ie. \"too expensive\")"
+			"(+ adj) too (ie. \"too expensive\")",
+			"(noun +) despite, in spite of, notwithstanding"
 		],
 		"notes": "see <em>batu</em> for the verbal \"too\""
 	},
@@ -3869,7 +3872,7 @@
 		"defList": [
 			"some (fr. <i>quelque</i>)",
 			"something",
-			"or (inclusive)* <ul> <li>  <i>Roraok su lusik su <b>dir nanau</b> kopdoz.</i><br>  cat GEN dog GEN ABS or love.DIM<br>  I like <b>either</b> cats <b>or</b> dogs. </li> </ul> ",
+			"or (inclusive)* <ul> <li>  <i>Roraok su lusik su <b>dir nanauk</b> i uzurkuk.</i><br>  cat GEN dog GEN ABS or TOP good<br>  I like <b>either</b> cats <b>or</b> dogs. </li> </ul> ",
 			"(archaic) whatever; whoever"
 		],
 		"notes": "See <em>be</em> for the verbal conjunction. cf. <em>id</em>."
