@@ -308,6 +308,14 @@
 		]
 	},
 	{
+		"title": "amzralam",
+		"etym": "Nominalization of amzralz 'count'",
+		"cat": "n., 5th",
+		"defList": [
+			"number, numeral"
+		]
+	},
+	{
 		"title": "amzralz",
 		"etym": "Proto-Eremo-Numoran *amsrals 'count'",
 		"cat": "v.",
@@ -579,6 +587,15 @@
 			"face"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "attukum",
+		"etym": "ad + tukum",
+		"cat": "n., 5th",
+		"defList": [
+			"pronoun"
+		],
+		"categories": ["grammar"]
 	},
 	{
 		"title": "azmu",
@@ -1061,9 +1078,10 @@
 	{
 		"title": "bokusam",
 		"etym": "<em>bo</em> 'with' + Proto-Eremo-Numoran *kusam 'many'",
-		"cat": "n., 5th",
+		"cat": "n., 5th, pron.",
 		"defList": [
-			"a large quantity, many <ul> <li class=\"eremoran\"><ruby class=\"eremoranWord\">mor<rt>MOR</rt></ruby><span> </span><ruby class=\"eremoranWord\">i<rt>I</rt></ruby><span> </span><ruby class=\"eremoranWord\">bokusam<rt>BOKUSAM</rt></ruby></li> <li>There are many people.</li> </ul> "
+			"a large quantity, many <ul> <li class=\"eremoran\"><ruby class=\"eremoranWord\">mor<rt>MOR</rt></ruby><span> </span><ruby class=\"eremoranWord\">i<rt>I</rt></ruby><span> </span><ruby class=\"eremoranWord\">bokusam<rt>BOKUSAM</rt></ruby></li> <li>There are many people.</li> </ul>",
+			"(id +) most (pronoun)"
 		],
 		"notes": "cf. <em>udou</em>, the adjective form, and <em>pukusam</em>, the opposite form"
 	},
@@ -1999,6 +2017,7 @@
 		"cat": "n., 5th",
 		"defList": [
 			"hold, grasp, grip",
+			"power, influence",
 			"(+ ad) ready, prepared",
 			"(+ din) unready, unprepared, extemporaneous",
 			"(noun + su +) [used to indicate an outcome effected with the hands]; by hand, ahold <ul> <li>  <i>Sazam i afêst su <b>dir hanum</b> zestisudôz ômôrz.</i><br>  awe TOP shortsword GEN ABS hold bent-CAUS EXP.PL<br>  We were amazed to see him bend the shortsword <b>by hand</b>. </li> </ul> "
@@ -4378,9 +4397,10 @@
 	{
 		"title": "pukusam",
 		"etym": "<em>pu-</em> 'not' + Proto-Eremo-Numoran *kusam 'many'",
-		"cat": "n., 5th",
+		"cat": "n., 5th, pron.",
 		"defList": [
-			"a small quantity, few <ul> <li class=\"eremoran\"><ruby class=\"eremoranWord\">mor<rt>MOR</rt></ruby><span> </span><ruby class=\"eremoranWord\">i<rt>I</rt></ruby><span> </span><ruby class=\"eremoranWord\">pukusam<rt>PUKUSAM</rt></ruby></li> <li>There are few people.</li> </ul> "
+			"a small quantity, few <ul> <li class=\"eremoran\"><ruby class=\"eremoranWord\">mor<rt>MOR</rt></ruby><span> </span><ruby class=\"eremoranWord\">i<rt>I</rt></ruby><span> </span><ruby class=\"eremoranWord\">pukusam<rt>PUKUSAM</rt></ruby></li> <li>There are few people.</li> </ul>",
+			"(id +) least, fewest (pronoun)"
 		],
 		"notes": "cf. <em>dou</em>, the adjective form, and <em>bokusam</em>, the opposite form"
 	},
