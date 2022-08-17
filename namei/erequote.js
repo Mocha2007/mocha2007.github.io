@@ -1,4 +1,4 @@
-/* exported startEreQuote */
+/* exported startEreQuote, translationChallenges */
 /* global EremoranTooltip, random, range */
 
 const eremorans = {
@@ -86,3 +86,36 @@ function startEreQuote(){
 	nextQuote();
 	setInterval(nextQuote, ereQuoteT);
 }
+
+const translationChallenges = [
+	// AUGUST 2022
+	// https://www.reddit.com/r/conlangs/comments/wga92w/how_does_your_conlang_handle_recursive/iiz7ryn/
+	'Elaôr su kikir as su hanu ad dir zurkum sudôz din, nom ad kaflaz i elaôr ad kopbatômdoum.',
+	// https://www.reddit.com/r/conlangs/comments/wha5ws/world_color_survey_for_your_conlangs/ij4xwy9/
+	'Dir ereulum erem din sukaz i uzurkum, erem i uzurkudoid din, Eremorôm sukaz uid mok ad.',
+	// https://www.reddit.com/r/conlangs/comments/wha5ws/world_color_survey_for_your_conlangs/ij4zfrg/
+	'Tanasum erem ne?! Sazasudôsum obo! Ô imôkam su bokusam i rôz hoz ne???',
+	// https://www.reddit.com/r/conlangs/comments/wi1x8z/1721st_just_used_5_minutes_of_your_day/ijatb97/
+	'Dôkaz addam kasraz ku, ad Madan afkaz kasraz.',
+	// https://www.reddit.com/r/conlangs/comments/wi3het/write_a_scam_call_ad_in_your_conlang/ijay68s/
+	`Nadnekis dô belaêr i balitz mok ku,
+	saurêkair i sesusesut drudot su daret su mêur hal habinz mok.
+	Dir kuafkar balitamaz kubatu, kuafkar i id nudot.
+	Numêr bo dir nudot dinbamz hod tômz ku dir daret dinbamz batu.`,
+	// https://www.reddit.com/r/conlangs/comments/wiuemi/1722nd_just_used_5_minutes_of_your_day/ijdta4h/
+	'Nanaur buni su elaêr i kinam ad ne?!',
+	// https://www.reddit.com/r/conlangs/comments/wkjk9m/1722nd_just_used_5_minutes_of_your_day/ijpgkjk/
+	'Tar setemêmom su mumast i dôkaz mok.',
+	// https://www.reddit.com/r/conlangs/comments/wngky7/how_good_you_can_speakwrite_in_your_conlang/ik597ed/
+	'Eremorôm bo i saurz uku nanaum daktarm ad rôratômz kubatu, rômat i utôzmut mok.',
+	// https://www.reddit.com/r/conlangs/comments/wnspzt/1725th_just_used_5_minutes_of_your_day/ik97n6i/
+	'Tan, Anasir i dir libam dinkaltamaz, ad busmat dô sudôz abelk din.',
+	// https://www.reddit.com/r/conlangs/comments/wol6a6/1726th_just_used_5_minutes_of_your_day/ikdbr7n/
+	'Dir tuut nindat bodôt kubôz.',
+	// https://www.reddit.com/r/conlangs/comments/wqcxsd/write_a_short_description_about_your_conlang_in/ikn85y0/
+	`Eremorôm bo i Pankair su huku buni dô rôz.
+	Endum Nizitnôsum hanum din i temêmosur speudoid elaêr.
+	Imôkam i pukusam; tanid kul, buni hal.
+	Attukum i ad temêmor spez mok udoulk ku,
+	amzralam su id bokusam i ad Nizitnôr din`,
+];

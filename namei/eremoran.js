@@ -1,7 +1,8 @@
 /* exported adjTool, autoUp, compileDict, compileFinals, compileInitials,
 	compileLength, compileMeanings, compileMedials, compileNounClass,
 	computeStats, EremoranTooltip, numberTool, search, titleCard, wordle */
-/* global charHisto, commaNumber, histo, quotes, random, round, union */
+/* global charHisto, commaNumber, histo, quotes, random, round,
+	translationChallenges, union */
 
 'use strict';
 
@@ -15,6 +16,16 @@ const elements = {
 	},
 	/** @type {string[]} - array of words*/
 	dict: [],
+	/** @type {string[]} - array of words*/
+	get corpus(){
+		if (this.corpusCache)
+			return this.corpusCache;
+		return this.corpusCache = (translationChallenges.concat(quotes.map(i => i[0]))
+			.join(' ') + ' '
+			+ Array.from(document.getElementsByClassName('corpus'))
+				.map(elem => elem.innerHTML).join(' ')
+		).replace(/[:\\/.,]/g, '').replace(/\s+/g, ' ').toLowerCase().split(' ');
+	},
 	/** @returns {HTMLParagraphElement} - the element with the buttons*/
 	get p(){
 		return document.getElementById('wordlist');
@@ -299,11 +310,9 @@ function computeStats(){
 	document.getElementById('chartClass').src = chartURL + histo(compileNounClass.data());
 	document.getElementById('chartSequence').src = chartURL + histo(compileSequences.data(), true, true, 25);
 	// do word histogram
-	const wordData = (quotes.map(i => i[0]).join(' ') + ' '
-		+ Array.from(document.getElementsByClassName('corpus')).map(elem => elem.innerHTML).join(' ')
-	).replace(/[:\\/.,]/g, '').replace(/\s+/g, ' ').toLowerCase().split(' ');
+	const wordData = elements.corpus;
 	// const filteredWordData = wordData.filter(word => wordData)
-	document.getElementById('chartWord').src = chartURL + histo(wordData, true, true, 4);
+	document.getElementById('chartWord').src = chartURL + histo(wordData, true, true, 5);
 	// add categories
 	/** @type {HTMLSelectElement} */
 	const categorySearch = document.getElementById('categorySearch');
