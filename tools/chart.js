@@ -25,6 +25,8 @@ function bar(){
 		xxyy = xxyy.sort((a, b) => a[0] - b[0]);
 	if (data.reverse)
 		xxyy.reverse();
+	if (data.maxBars)
+		xxyy = xxyy.slice(0, data.maxBars);
 	// console.debug(xxyy);
 
 	const len = xxyy.length;
@@ -93,8 +95,9 @@ function getData(){
  * @param {boolean} sortY - whether to sort chart by Y (true) or X (false)
  * @param {boolean} reverse - whether to reverse order of elements (after sorting)
  * @param {number} pruneY - prune data with y < pruneY
+ * @param {number} maxBars - cull bars after this many
  */
-function histo(d, sort, reverse, pruneY){
+function histo(d, sort, reverse, pruneY, maxBars){
 	const x = Array.from(new Set(Array.from(d)));
 	const y = x.map(char => d.filter(i => i === char).length);
 	const data = {
@@ -105,6 +108,7 @@ function histo(d, sort, reverse, pruneY){
 		type: 'bar',
 		x,
 		y,
+		maxBars,
 	};
 	return toURL(data);
 }

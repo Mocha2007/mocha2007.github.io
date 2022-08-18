@@ -308,11 +308,11 @@ function computeStats(){
 	document.getElementById('chartLength').src = chartURL + histo(compileLength.data());
 	document.getElementById('chartMeaning').src = chartURL + histo(compileMeanings.data());
 	document.getElementById('chartClass').src = chartURL + histo(compileNounClass.data());
-	document.getElementById('chartSequence').src = chartURL + histo(compileSequences.data(), true, true, 25);
+	document.getElementById('chartSequence').src = chartURL + histo(compileSequences.data(), true, true, false, 25);
 	// do word histogram
 	const wordData = elements.corpus;
 	// const filteredWordData = wordData.filter(word => wordData)
-	document.getElementById('chartWord').src = chartURL + histo(wordData, true, true, 5);
+	document.getElementById('chartWord').src = chartURL + histo(wordData, true, true, false, 10);
 	// add categories
 	/** @type {HTMLSelectElement} */
 	const categorySearch = document.getElementById('categorySearch');
