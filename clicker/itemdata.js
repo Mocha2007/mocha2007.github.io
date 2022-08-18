@@ -97,6 +97,23 @@ const itemData = [
 		tags: ['Mineral'],
 		rarity: 1,
 	},
+	{
+		name: 'Magnetite',
+		mass: 0.1,
+		// density 5.175 g/cm^3 (specific gravity)
+		volume: 1.9e-5,
+		tags: ['Mineral'],
+		rarity: 2,
+	},
+	// Metals
+	{
+		name: 'Iron',
+		mass: 0.1,
+		// density 7.874 g/cm^3 (specific gravity)
+		volume: 1.3e-5,
+		tags: ['Metal'],
+		rarity: 2,
+	},
 	// complex
 	{
 		name: 'Stone Axehead',
@@ -229,5 +246,16 @@ const recipeData = [
 			['Tofu', 23],
 		],
 		time: 7, // https://www.foodnetwork.com/recipes/homemade-tofu-recipe-1949760
+	},
+	// smelting
+	{
+		reagents: [
+			['Magnetite', 2],
+			['Wood', 1],
+		],
+		products: [
+			['Iron', 1],
+		],
+		time: 10,
 	},
 ];

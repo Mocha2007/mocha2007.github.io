@@ -144,6 +144,9 @@ class Item extends Interactable {
 	get itemId(){
 		return items.indexOf(this);
 	}
+	get rarityWeight(){
+		return Math.pow(10, -this.rarity);
+	}
 	/** inline representation of an item */
 	get span(){
 		const elem = document.createElement('span');
@@ -361,7 +364,7 @@ const Game = {
 			const mineralTag = Tag.find('Mineral');
 			const minerals = items.filter(i => i.categories.includes(mineralTag));
 			// todo weights
-			Game.p.add(random.choice(minerals), 1);
+			Game.p.add(random.weightedChoice(minerals, minerals.map(m => m.rarityWeight)), 1);
 		},
 	},
 	clock(){
@@ -391,8 +394,7 @@ const Game = {
 		},
 		get weights(){
 			// rarity 0 -> weight 1; 1 -> 1/10, 2 -> 1/100, 3 -> 1/1000, ...
-			return this.items.map(c => c.categories.includes(whitelisted)
-				&& Math.pow(10, -c.rarity));
+			return this.items.map(c => c.categories.includes(whitelisted) && c.rarityWeight);
 		},
 	},
 	/** @param {string} string string to log */
