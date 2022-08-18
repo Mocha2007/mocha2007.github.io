@@ -317,7 +317,7 @@ class Tech extends Interactable {
 			li.id = elemId;
 			li.innerHTML = this.name;
 			li.onclick = () => this.unlock();
-			li.title = 'Buy this upgrade';
+			li.title = `Cost:\n${this.cost.map(inp => `${inp[1]} units of ${inp[0].name}`).join('\n')}`;
 			document.getElementById('techList').appendChild(li);
 		}
 		return li;
