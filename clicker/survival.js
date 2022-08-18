@@ -2,7 +2,7 @@
 /* exported main */
 /* globals itemData, random, recipeData, round, storage, unitString */
 'use strict';
-const version = 'a210413';
+const version = 'a220818';
 const clickerName = 'survival';
 // Willscrlt, public domain
 const defaultImgUrl = 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Question_Mark_Icon_-_Blue_Box_withoutQuestionmarkBlur.svg';
