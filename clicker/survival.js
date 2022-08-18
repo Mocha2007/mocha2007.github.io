@@ -27,6 +27,8 @@ class Particle {
 		setTimeout(() => {
 			try {
 				document.getElementById(element.id).remove();
+				// remove from list
+				Game.particles.splice(Game.particles.indexOf(this), 1);
 			}
 			catch (TypeError){
 				// if a click-removable particle is defined and clicked, this block triggers
