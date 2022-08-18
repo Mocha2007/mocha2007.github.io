@@ -101,16 +101,32 @@ const itemData = [
 		name: 'Magnetite',
 		mass: 0.1,
 		// density 5.175 g/cm^3 (specific gravity)
-		volume: 1.9e-5,
+		volume: 1.93e-5,
+		tags: ['Mineral'],
+		rarity: 2,
+	},
+	{
+		name: 'Hematite',
+		mass: 0.1,
+		// density 5.3 g/cm^3 (specific gravity)
+		volume: 1.89e-5,
+		tags: ['Mineral'],
+		rarity: 2,
+	},
+	{
+		name: 'Limonite',
+		mass: 0.1,
+		// density ~3.5 g/cm^3 (specific gravity)
+		volume: 2.9e-5,
 		tags: ['Mineral'],
 		rarity: 2,
 	},
 	// Metals
 	{
 		name: 'Iron',
-		mass: 0.1,
+		mass: 1,
 		// density 7.874 g/cm^3 (specific gravity)
-		volume: 1.3e-5,
+		volume: 1.27e-4,
 		tags: ['Metal'],
 		rarity: 2,
 	},
@@ -250,7 +266,33 @@ const recipeData = [
 	// smelting
 	{
 		reagents: [
-			['Magnetite', 2],
+			// 100g * 0.724 => 1000g
+			// 10 / 0.724
+			['Magnetite', 14],
+			['Wood', 1],
+		],
+		products: [
+			['Iron', 1],
+		],
+		time: 10,
+	},
+	{
+		reagents: [
+			// 100g * 0.724 => 1000g
+			// 10 / 0.699
+			['Hematite', 14],
+			['Wood', 1],
+		],
+		products: [
+			['Iron', 1],
+		],
+		time: 10,
+	},
+	{
+		reagents: [
+			// 100g * 0.724 => 1000g
+			// 10 / 0.55
+			['Limonite', 18],
 			['Wood', 1],
 		],
 		products: [
