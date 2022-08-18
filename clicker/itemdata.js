@@ -80,6 +80,13 @@ const itemData = [
 		tags: ['Whitelisted'],
 		rarity: 1,
 	},
+	{
+		name: 'Charcoal',
+		mass: 1,
+		// density 0.208 g/cm^3 (specific gravity)
+		volume: 4.8e-3,
+		rarity: 2,
+	},
 	// Minerals
 	{
 		name: 'Gypsum',
@@ -266,10 +273,19 @@ const recipeData = [
 	// smelting
 	{
 		reagents: [
+			['Wood', 3], // 2 turns into charcoal, 1 used in burning
+		],
+		products: [
+			['Charcoal', 1],
+		],
+		time: 10,
+	},
+	{
+		reagents: [
 			// 100g * 0.724 => 1000g
 			// 10 / 0.724
 			['Magnetite', 14],
-			['Wood', 1],
+			['Charcoal', 1],
 		],
 		products: [
 			['Iron', 1],
@@ -281,7 +297,7 @@ const recipeData = [
 			// 100g * 0.724 => 1000g
 			// 10 / 0.699
 			['Hematite', 14],
-			['Wood', 1],
+			['Charcoal', 1],
 		],
 		products: [
 			['Iron', 1],
@@ -293,7 +309,7 @@ const recipeData = [
 			// 100g * 0.724 => 1000g
 			// 10 / 0.55
 			['Limonite', 18],
-			['Wood', 1],
+			['Charcoal', 1],
 		],
 		products: [
 			['Iron', 1],
