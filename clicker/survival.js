@@ -363,7 +363,6 @@ const Game = {
 		mineralSplit(){
 			const mineralTag = Tag.find('Mineral');
 			const minerals = items.filter(i => i.categories.includes(mineralTag));
-			// todo weights
 			Game.p.add(random.weightedChoice(minerals, minerals.map(m => m.rarityWeight)), 1);
 		},
 	},
