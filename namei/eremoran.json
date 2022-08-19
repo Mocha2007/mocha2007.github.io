@@ -1869,7 +1869,8 @@
 		"cat": "adv.",
 		"defList": [
 			"believe; think (opinion evidential)"
-		]
+		],
+		"categories": ["evidential"]
 	},
 	{
 		"title": "etoz",
@@ -3739,7 +3740,8 @@
 		"cat": "v. (Evidential; secondhand knowledge)",
 		"defList": [
 			"[Specifies the speaker heard of the event mentioned]"
-		]
+		],
+		"categories": ["evidential"]
 	},
 	{
 		"title": "mosu",
@@ -4274,7 +4276,8 @@
 		"defList": [
 			"[Specifies the speaker, and others, saw the event mentioned]"
 		],
-		"notes": "cf. <i>umôrz</i> which implies the speaker was the sole witness"
+		"notes": "cf. <i>umôrz</i> which implies the speaker was the sole witness",
+		"categories": ["evidential"]
 	},
 	{
 		"title": "onod",
@@ -5224,7 +5227,8 @@
 			"in front of (in space)",
 			"after (in time)",
 			"[deductive evidential]"
-		]
+		],
+		"categories": ["evidential"]
 	},
 	{
 		"title": "tanaiz",
@@ -5748,7 +5752,8 @@
 		"defList": [
 			"[Specifies the speaker, but not others, saw the event mentioned]"
 		],
-		"notes": "cf. <i>ômôrz</i> which implies others witnessed the event too"
+		"notes": "cf. <i>ômôrz</i> which implies others witnessed the event too",
+		"categories": ["evidential"]
 	},
 	{
 		"title": "una",
