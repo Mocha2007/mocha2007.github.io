@@ -2848,6 +2848,17 @@
 		]
 	},
 	{
+		"title": "klu",
+		"etym": "Proto-Eremo-Numoran *xlu 'sticky'",
+		"cat": "adj., n. 4th",
+		"defList": [
+			"sticky, gooey",
+			"goo"
+		],
+		"notes": "klu is one of a handful of nouns ending in -u.",
+		"lore": "ty Greek phonoestheme"
+	},
+	{
 		"title": "ko",
 		"etym": "Proto-Eremo-Numoran *ko 'this'",
 		"cat": "adj.",
