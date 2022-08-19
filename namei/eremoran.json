@@ -1956,12 +1956,12 @@
 	},
 	{
 		"title": "hakz",
-		"etym": "Proto-Eremo-Numoran *ɸaks 'help'",
+		"etym": "Proto-Eremo-Numoran *ɸaks 'help', *sakz 'squeeze'",
 		"cat": "v.",
 		"defList": [
+			"help",
 			"squeeze"
-		],
-		"notes": "v."
+		]
 	},
 	{
 		"title": "hal",
@@ -4917,12 +4917,12 @@
 	},
 	{
 		"title": "siz",
-		"etym": "Proto-Eremo-Numoran *ʃis 'shine'",
+		"etym": "Proto-Eremo-Numoran *ʃis 'shine', *sis (causative)",
 		"cat": "v.",
 		"defList": [
+			"shine",
 			"(archaic) [causative]"
-		],
-		"notes": "v."
+		]
 	},
 	{
 		"title": "skiz",
@@ -5506,7 +5506,7 @@
 	{
 		"title": "tranzu",
 		"etym": "tranz 'hide (transitive)' + -u (adjectivalizer)",
-		"cat": "v.",
+		"cat": "adj.",
 		"defList": [
 			"hidden, secret, private"
 		],
