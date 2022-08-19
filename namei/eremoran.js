@@ -312,7 +312,7 @@ function computeStats(){
 	// do word histogram
 	const wordData = elements.corpus;
 	// const filteredWordData = wordData.filter(word => wordData)
-	document.getElementById('chartWord').src = chartURL + histo(wordData, true, true, false, 10);
+	document.getElementById('chartWord').src = chartURL + histo(wordData, true, true, false, 20);
 	// add categories
 	/** @type {HTMLSelectElement} */
 	const categorySearch = document.getElementById('categorySearch');
