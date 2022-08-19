@@ -44,6 +44,7 @@ function bar(){
 		const labelElem = createSvgElement('text');
 		labelElem.innerHTML = xy[0];
 		labelElem.classList.add('label');
+		labelElem.style['font-size'] = `${80/xy[0].length}`;
 		const valueElem = createSvgElement('text');
 		valueElem.innerHTML = y;
 		if (data.percent)
