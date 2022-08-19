@@ -503,6 +503,7 @@ const Game = {
 // Tier 0 - no reqs
 const whitelisted = new Tag('Whitelisted', [], 'Can be mined');
 new Tag('Mineral', [], 'Broken off from a larger stone');
+new Tag('Metal', [], 'Material smelted from ore');
 
 // read chemData, recipeData
 itemData.forEach(o => Item.fromJSON(o));
