@@ -175,14 +175,12 @@
 		"etym": "Proto-Eremo-Numoran *aɸêks 'know'",
 		"cat": "v.",
 		"defList": [
-			"(intransitive) be known (both savoir and connaitre)",
-			"(intransitive) be understood",
-			"(intransitive) be learned",
-			"(transitive) know (both savoir and connaitre)",
-			"(transitive) understand",
-			"(transitive) learn"
+			"(labile) be known (by) (both savoir and connaitre)",
+			"(labile) be understood (by)",
+			"(labile) be learned (by)"
 		],
-		"notes": "Unlike English, this is not used with subordinate clauses, including reporting knowledge of experiences - evidentials are used for that instead. In addition, <em>bakaz</em> is telic and dynamic, while <em>afêkz</em> is atelic and stative."
+		"notes": "Unlike English, this is not used with subordinate clauses, including reporting knowledge of experiences - evidentials are used for that instead. In addition, <em>bakaz</em> is telic and dynamic, while <em>afêkz</em> is atelic and stative.",
+		"categories": ["experiential"]
 	},
 	{
 		"title": "afês",
@@ -646,10 +644,11 @@
 		"etym": "Proto-Eremo-Numoran *βakas 'get; receive'",
 		"cat": "v.",
 		"defList": [
-			"(intransitive) understand",
-			"(transitive) teach"
+			"(labile) be understood (by)",
+			"(labile) be taught (by)"
 		],
-		"notes": "Unlike English, this is not used with subordinate clauses, including reporting knowledge of experiences - evidentials are used for that instead. cf. <em>bakaz</em>, a similar meaning with opposite transitivity. In addition, <em>bakaz</em> is telic and dynamic, while <em>afêkz</em> is atelic and stative."
+		"notes": "Unlike English, this is not used with subordinate clauses, including reporting knowledge of experiences - evidentials are used for that instead. cf. <em>bakaz</em>, a similar meaning with opposite transitivity. In addition, <em>bakaz</em> is telic and dynamic, while <em>afêkz</em> is atelic and stative.",
+		"categories": ["experiential"]
 	},
 	{
 		"title": "bakoni",
@@ -704,7 +703,8 @@
 		"cat": "v.",
 		"defList": [
 			"be emotionally moved"
-		]
+		],
+		"categories": ["experiential"]
 	},
 	{
 		"title": "bant",
@@ -720,7 +720,8 @@
 		"cat": "v.",
 		"defList": [
 			"feel"
-		]
+		],
+		"categories": ["experiential"]
 	},
 	{
 		"title": "barz",
@@ -1878,7 +1879,8 @@
 		"cat": "v.",
 		"defList": [
 			"(archaic) believe; think"
-		]
+		],
+		"categories": ["experiential"]
 	},
 	{
 		"title": "ha",
@@ -2555,7 +2557,8 @@
 			"miss; lack",
 			"want"
 		],
-		"notes": "Unlike English, this verb is not catenative, and only takes nouns as direct objects. To express <em>wanna</em>, one would use the optative."
+		"notes": "Unlike English, this verb is not catenative, and only takes nouns as direct objects. To express <em>wanna</em>, one would use the optative.",
+		"categories": ["experiential"]
 	},
 	{
 		"title": "kalz",
@@ -2563,7 +2566,8 @@
 		"cat": "v.",
 		"defList": [
 			"need"
-		]
+		],
+		"categories": ["experiential"]
 	},
 	{
 		"title": "kam",
@@ -3489,7 +3493,8 @@
 		"cat": "v.",
 		"defList": [
 			"(transitive) smell"
-		]
+		],
+		"categories": ["experiential"]
 	},
 	{
 		"title": "mara",
@@ -3988,7 +3993,8 @@
 		"cat": "v.",
 		"defList": [
 			"hear, listen (to)"
-		]
+		],
+		"categories": ["experiential"]
 	},
 	{
 		"title": "ne",
@@ -4730,7 +4736,8 @@
 			"watch",
 			"read",
 			"administrate"
-		]
+		],
+		"categories": ["experiential"]
 	},
 	{
 		"title": "sazam",
@@ -4747,7 +4754,8 @@
 		"defList": [
 			"fear"
 		],
-		"notes": "Note: with causative, means \"scare\"."
+		"notes": "Note: with causative, means \"scare\".",
+		"categories": ["experiential"]
 	},
 	{
 		"title": "se",
@@ -5088,7 +5096,8 @@
 		"defList": [
 			"experience"
 		],
-		"notes": "note: implies other people were present who also experienced something"
+		"notes": "note: implies other people were present who also experienced something",
+		"categories": ["experiential"]
 	},
 	{
 		"title": "subir",
