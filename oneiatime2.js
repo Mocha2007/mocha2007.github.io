@@ -97,6 +97,7 @@ function oneiaTimeInitialize(){
 	titleEre.appendChild(phoonsvg(cnikkiphase));
 	titleEre.innerHTML += ' Eremoran Time:';
 	document.getElementById('clock_eremor_progress').value = yearprogress;
+	updateEremoranDate(Date.now());
 	// earth time
 	var titleEarth = document.getElementById('clock_earth_title');
 	titleEarth.title = 'Moon Phase: ' + phases[moonphase];
@@ -106,8 +107,8 @@ function oneiaTimeInitialize(){
 		= (Date.now()-constants.earth.vernal) % constants.earth.year/constants.earth.year;
 }
 
-function oneiaTime(){
-	var remainder = Date.now()-constants.oneia.epoch;
+function updateEremoranDate(t){
+	var remainder = t-constants.oneia.epoch;
 	var years = constants.oneia.atEpoch+Math.floor(remainder/constants.oneia.year);
 	remainder %= constants.oneia.year;
 	var days = Math.floor(remainder/constants.oneia.day);
@@ -119,10 +120,12 @@ function oneiaTime(){
 	days++; // 1-indexed, not 0-indexed
 	var seasonString = constants.eremor.seasons[seasonId] + ' ('
 		+ constants.eremor.seasonsAlt[seasonId] + ')';
-	var currentTimeString = years + ' AT, ' + seasonString + ', Day ' + days + ', '
+	document.getElementById('clock_eremor_date').innerHTML = years
+		+ ' AT, ' + seasonString + ', Day ' + days + ', '
 		+ constants.timeOfDay[Math.floor(8*remainder/constants.oneia.day)];
+}
 
-	document.getElementById('clock_eremor_date').innerHTML = currentTimeString;
+function oneiaTime(){
 	document.getElementById('clock_earth_date').innerHTML = new Date().toLocaleString('en-US', {
 		weekday: 'short', year: 'numeric', month: 'short', day: '2-digit',
 		hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit',
@@ -273,5 +276,6 @@ function holidayCSS(){
 // run
 holidayCSS();
 oneiaTimeInitialize();
-setInterval(oneiaTime, 100);
+oneiaTime();
+setInterval(oneiaTime, 1000);
 // phoonTest();
