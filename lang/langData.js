@@ -172,6 +172,7 @@ const languageData = [
 	},
 	{
 		name: 'jp',
+		parent: 'proto-japonic',
 		location: 'japan',
 	},
 	{
