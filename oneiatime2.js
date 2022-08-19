@@ -82,14 +82,14 @@ function getChineseNewYear(year){
 			return d;
 }
 
-function oneiaTimeInitialize(){
-	var remainder = Date.now()-constants.oneia.epoch;
+function oneiaTimeInitialize(t){
+	var remainder = t-constants.oneia.epoch;
 	remainder %= constants.oneia.year;
 	var yearprogress = remainder/constants.oneia.year;
 	remainder %= constants.oneia.day;
 	var cnikkiphase = mod(remainder/constants.oneia.day-constants.nikki.epoch, 1);
 	var nikkiphase = mod(Math.round(8*cnikkiphase), 8); // needs another mod in case it rounds up to 8
-	var cmoonphase = moonPhase(Date.now());
+	var cmoonphase = moonPhase(t);
 	var moonphase = mod(Math.round(8*cmoonphase), 8);
 	// eremor time
 	var titleEre = document.getElementById('clock_eremor_title');
@@ -97,14 +97,14 @@ function oneiaTimeInitialize(){
 	titleEre.appendChild(phoonsvg(cnikkiphase));
 	titleEre.innerHTML += ' Eremoran Time:';
 	document.getElementById('clock_eremor_progress').value = yearprogress;
-	updateEremoranDate(Date.now());
+	updateEremoranDate(t);
 	// earth time
 	var titleEarth = document.getElementById('clock_earth_title');
 	titleEarth.title = 'Moon Phase: ' + phases[moonphase];
 	titleEarth.appendChild(phoonsvg(cmoonphase));
 	titleEarth.innerHTML += ' Earth Time:';
 	document.getElementById('clock_earth_progress').value
-		= (Date.now()-constants.earth.vernal) % constants.earth.year/constants.earth.year;
+		= (t-constants.earth.vernal) % constants.earth.year/constants.earth.year;
 }
 
 function updateEremoranDate(t){
@@ -275,7 +275,7 @@ function holidayCSS(){
 
 // run
 holidayCSS();
-oneiaTimeInitialize();
+oneiaTimeInitialize(Date.now());
 oneiaTime();
 setInterval(oneiaTime, 1000);
 // phoonTest();
