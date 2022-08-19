@@ -31,6 +31,10 @@ var constants = {
 		epoch: 1497151176000, // ms; SUN 2017 JUN 11 03:19:36 UTC
 		year: 7662598895.79935, // ms; oneian orbital period
 	},
+	timeOfDay: [
+		// each represents a 3h period on earth
+		'Dawn', 'Late Morning', 'Noon', 'Afternoon', 'Dusk', 'Evening', 'Midnight', 'Early Morning',
+	],
 	week: 7 * 24 * 60 * 60 * 1000, // ms
 };
 
@@ -115,16 +119,8 @@ function oneiaTime(){
 	days++; // 1-indexed, not 0-indexed
 	var seasonString = constants.eremor.seasons[seasonId] + ' ('
 		+ constants.eremor.seasonsAlt[seasonId] + ')';
-	// console.log(seasonId, constants.eremor.seasons[seasonId], constants.eremor.seasonsAlt[seasonId]);
-	var currentTimeString = years + ' AT, ' + seasonString + ', Day ' + days + ', ';
-
-	for (var i = 1; i < constants.eremor.places+1; i += 1){
-		currentTimeString += Math.floor(remainder
-			/ (constants.oneia.day/Math.pow(constants.eremor.base, i)));
-		if (i < constants.eremor.places)
-			currentTimeString += ':';
-		remainder %= constants.oneia.day / Math.pow(constants.eremor.base, i);
-	}
+	var currentTimeString = years + ' AT, ' + seasonString + ', Day ' + days + ', '
+		+ constants.timeOfDay[Math.floor(8*remainder/constants.oneia.day)];
 
 	document.getElementById('clock_eremor_date').innerHTML = currentTimeString;
 	document.getElementById('clock_earth_date').innerHTML = new Date().toLocaleString('en-US', {
