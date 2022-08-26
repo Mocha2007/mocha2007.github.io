@@ -1103,6 +1103,11 @@ const lifeData = [
 		'parent': 'cucumis',
 		'range': 'as',
 		'desc': 'Cucumber',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 14,
+			},
+		},
 	},
 	{
 		'name': 'cucurbita',
@@ -2733,6 +2738,12 @@ const lifeData = [
 		'desc': 'Orangutan',
 	},
 	{
+		'name': 'pooideae',
+		'rank': 'subfamily',
+		'parent': 'bop clade',
+		'range': 'ww',
+	},
+	{
 		'name': 'porifera',
 		'rank': 'phylum',
 		'parent': 'animalia',
@@ -3019,6 +3030,24 @@ const lifeData = [
 		'desc': 'Catshark',
 	},
 	{
+		'name': 'secale',
+		'rank': 'genus',
+		'parent': 'pooideae',
+		'range': 'ww',
+	},
+	{
+		'name': 'secale cereale',
+		'rank': 'species',
+		'parent': 'secale',
+		'range': 'as',
+		'desc': 'Rye',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 14,
+			},
+		},
+	},
+	{
 		'name': 'selachimorpha',
 		'rank': 'superorder',
 		'parent': 'chondrichthyes',
@@ -3270,7 +3299,7 @@ const lifeData = [
 	{
 		'name': 'triticum',
 		'rank': 'genus',
-		'parent': 'bop clade',
+		'parent': 'pooideae',
 		'range': 'as',
 		'desc': 'Wheat',
 	},
