@@ -201,6 +201,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[396e6, 'Earliest <a href="https://en.wikipedia.org/wiki/Insect">Insects</a>'],
 	[377.2e6, '<a href="https://en.wikipedia.org/wiki/Late_Devonian_extinction#The_Kellwasser_event">Kelwasser Event</a>'],
 	[367.5e6, '<a href="https://en.wikipedia.org/wiki/Late_Devonian_extinction">Late Devonian Extinction Event</a>'],
+	[360e6, '<a href="https://en.wikipedia.org/wiki/Romer%27s_gap">Romer&apos;s Gap</a>'],
 	[358.9e6, '<a href="https://en.wikipedia.org/wiki/Hangenberg_event">Hangenberg Event</a>'],
 	[335e6, '<a href="https://en.wikipedia.org/wiki/Pangaea">Pangaea</a> Forms'],
 	[335e6, '<a href="https://en.wikipedia.org/wiki/East_Kirkton_Quarry">East Kirkton Quarry</a> forms'],

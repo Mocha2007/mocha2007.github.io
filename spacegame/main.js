@@ -2344,7 +2344,7 @@ function main(){
 	// scroll
 	// https://stackoverflow.com/a/51276012/2579798
 	document.addEventListener('wheel', event => {
-		Game.keybinds[0 < Math.sign(event.deltaY) ? '+' : '-']();
+		Game.keybinds[0 < Math.sign(event.deltaY) ? '-' : '+']();
 	});
 	// save
 	Game.save.save();
