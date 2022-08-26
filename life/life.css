@@ -25,9 +25,18 @@ abbr{
 	font-size: small;
 	font-weight: bold;
 }
-.range {
+.genetic, .range {
 	font-size: x-small;
 	font-weight: bold;
+}
+.genetic {
+	margin-left: 5px;
+}
+.genetic::before {
+	content: 'χ('
+}
+.genetic::after {
+	content: ')';
 }
 /* taxonomic ranks */
 .domain {

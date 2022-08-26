@@ -19,7 +19,17 @@ const lifeData = [
 		'extinct': true,
 		'range': 'ww',
 		'age': 800,
-		'desc': 'This is an example of the format used on this page. The dagger indicates this clade is extinct. The two letters beside the name indicate the approximate combined native range of all extant members, or of all extinct members if no extant species exist. You can hover your cursor over the abbreviation to see a more detailed description. This clade diversified 800 mya.',
+		'desc': 'This is an example of the format used on this page. The dagger indicates this clade is extinct. The two letters beside the name indicate the approximate combined native range of all extant members, or of all extinct members if no extant species exist. You can hover your cursor over the abbreviation to see a more detailed description. This clade diversified 800 mya. This group has 22 pairs of autosomes and 2 sex chromosomes, and has an XY sex determination system.',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 22,
+				'allosomal': [2, 2], // female, male
+				'ploidy': 2,
+				// autosomal * ploidy + allosomal
+			},
+			// https://en.wikipedia.org/wiki/Sex-determination_system
+			'sex': 'XY',
+		},
 	},
 	// BEGIN ALPHABETICAL ORDERING
 	// A
@@ -1695,6 +1705,14 @@ const lifeData = [
 		'range': 'af',
 		'age': 0.35,
 		'desc': 'Human',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 22,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'hyaenidae',

@@ -197,6 +197,33 @@ function main(){
 			age.innerHTML = getAge(a);
 			title.appendChild(age);
 		}
+		// genetics
+		if (lifeData[i].hasOwnProperty('genetic')){
+			const genetic = document.createElement('span');
+			genetic.classList.add('genetic');
+			title.appendChild(genetic);
+			// chromosomes
+			if (lifeData[i].genetic.hasOwnProperty('chromosome')){
+				const chr = document.createElement('abbr');
+				genetic.appendChild(chr);
+				// eslint-disable-next-line no-loop-func
+				const [chrF, chrM] = lifeData[i].genetic.chromosome.allosomal.map(sex => sex
+					+ lifeData[i].genetic.chromosome.autosomal
+					* lifeData[i].genetic.chromosome.ploidy);
+				if (chrF === chrM)
+					chr.innerHTML = chrF;
+				else
+					chr.innerHTML = `♀${chrF}♂${chrM}`;
+				chr.title = 'Chromosome count';
+			}
+			// sex determination system
+			if (lifeData[i].genetic.hasOwnProperty('sex')){
+				const sds = document.createElement('abbr');
+				genetic.appendChild(sds);
+				sds.innerHTML = lifeData[i].genetic.sex;
+				sds.title = 'Sex determination system';
+			}
+		}
 		details.appendChild(title);
 		// desc
 		if (lifeData[i].hasOwnProperty('desc')){
