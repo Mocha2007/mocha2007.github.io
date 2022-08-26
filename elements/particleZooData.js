@@ -1228,9 +1228,10 @@ const reactionData = [
 	{
 		reagents: ['deuterium', 'deuterium'],
 		products: [
-			[1, ['helium-4', 'photon']], // https://en.wikipedia.org/wiki/Deuterium_fusion#Other_reactions
-			[1, ['helium-3', 'neutron']], // https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Baryon%E2%80%93photon_ratio
-			[1, ['tritium', 'protium']], // https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Baryon%E2%80%93photon_ratio
+			// https://physics.stackexchange.com/questions/724694/why-dont-deuterons-produce-a-helium-4-nucleus-when-they-fuse/724702#724702
+			[0.000001, ['helium-4', 'photon']], // https://en.wikipedia.org/wiki/Deuterium_fusion#Other_reactions
+			[0.55, ['helium-3', 'neutron']], // https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Baryon%E2%80%93photon_ratio
+			[0.45, ['tritium', 'protium']], // https://en.wikipedia.org/wiki/Big_Bang_nucleosynthesis#Baryon%E2%80%93photon_ratio
 		],
 	},
 	{ // https://physics.stackexchange.com/questions/403063/can-you-combine-protium-and-tritium-to-produce-helium-4
