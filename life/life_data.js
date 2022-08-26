@@ -154,6 +154,23 @@ const lifeData = [
 		'desc': 'Garlic',
 	},
 	{
+		'name': 'aloe',
+		'rank': 'genus',
+		'parent': 'asphodeloideae',
+		'range': 'ow',
+	},
+	{
+		'name': 'aloe vera',
+		'rank': 'species',
+		'parent': 'aloe',
+		'range': 'ow',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 14,
+			},
+		},
+	},
+	{
 		'name': 'amaranthaceae',
 		'rank': 'family',
 		'parent': 'caryophyllales',
@@ -427,6 +444,18 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'monocots',
 		'range': 'ww',
+	},
+	{
+		'name': 'asphodelaceae',
+		'rank': 'family',
+		'parent': 'asparagales',
+		'range': 'ww',
+	},
+	{
+		'name': 'asphodeloideae',
+		'rank': 'subfamily',
+		'parent': 'asphodelaceae',
+		'range': 'ow',
 	},
 	{
 		'name': 'astacoidea',
