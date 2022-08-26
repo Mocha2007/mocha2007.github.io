@@ -1766,6 +1766,24 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'hordeum',
+		'rank': 'genus',
+		'parent': 'pooideae',
+		'range': 'ww',
+	},
+	{
+		'name': 'hordeum vulgare',
+		'rank': 'species',
+		'parent': 'hordeum',
+		'range': 'as',
+		'desc': 'Barley',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 14,
+			},
+		},
+	},
+	{
 		'name': 'hyaenidae',
 		'rank': 'family',
 		'parent': 'feliformia',
@@ -2612,6 +2630,11 @@ const lifeData = [
 		'parent': 'pisum',
 		'range': 'ow',
 		'desc': 'Pea',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 14,
+			},
+		},
 	},
 	{
 		'name': 'pinaceae',
