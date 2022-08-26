@@ -3280,6 +3280,15 @@
 		"notes": "Displaced by synonym <i>uzurku</i> after <i>laku</i> became sarcastic"
 	},
 	{
+		"title": "lam",
+		"img": "../img/eremoran/len.png",
+		"etym": "Proto-Eremo-Numoran *lam 'stone', related to len 'stone'",
+		"cat": "n., 5th",
+		"defList": [
+			"(uncountable) stone, rock"
+		]
+	},
+	{
 		"title": "lan",
 		"etym": "Proto-Eremo-Numoran *lan 'cover'",
 		"cat": "n., 4th",
@@ -3306,10 +3315,10 @@
 	{
 		"title": "len",
 		"img": "../img/eremoran/len.png",
-		"etym": "Proto-Eremo-Numoran *len 'stone'",
+		"etym": "Proto-Eremo-Numoran *len 'stone', related to lam 'stone'",
 		"cat": "n., 4th",
 		"defList": [
-			"stone, rock"
+			"(countable) stone, rock"
 		]
 	},
 	{
