@@ -1260,11 +1260,45 @@ const lifeData = [
 		'age': 28,
 	},
 	{
+		'name': 'diptera',
+		'rank': 'order',
+		'parent': 'insecta',
+		'range': 'ww',
+		'desc': 'Fly',
+	},
+	{
 		'name': 'dromaeosauridae',
 		'rank': 'family',
 		'parent': 'paraves',
 		'extinct': true,
 		'range': 'ww',
+	},
+	{
+		'name': 'drosophilidae',
+		'rank': 'family',
+		'parent': 'diptera',
+		'range': 'ww',
+	},
+	{
+		'name': 'drosophila',
+		'rank': 'genus',
+		'parent': 'drosophilidae',
+		'range': 'ww',
+	},
+	{
+		'name': 'drosophila melanogaster',
+		'rank': 'genus',
+		'parent': 'drosophilidae',
+		'range': 'ww',
+		'desc': 'Fruit Fly',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 3,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	// E
 	{

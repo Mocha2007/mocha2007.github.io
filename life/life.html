@@ -7,13 +7,13 @@
 <title>Life</title>
 <div id="controls">
 	<button type="button" onclick="toggle();"><span id="toggle_button_inner"></span> all</button>
-	| <input type="text" id="control_clade">
-	&larr; <input type="submit" value="Open this" onclick="open_parents(objects[document.getElementById('control_clade').value]);">
-	| <input id="control_age" type="number" min="0" max="4600" value="540"> mya
-	&larr; <input type="submit" value="Open everything older than this" onclick="openAge(document.getElementById('control_age').value);">
-	<br> <input type="text" id="search_clade">
-	&larr; <input type="submit" value="Search" onclick="searchButton();">
-	<br><div id="search_div"><ol id="results"></ol></div>
+	<!-- | <input type="text" id="control_clade">
+	&larr; <input type="submit" value="Open this" onclick="openParents(objects[document.getElementById('control_clade').value]);"> -->
+	| <input type="text" id="search_clade">
+	<input type="submit" value="Search" onclick="searchButton();">
+	| <input type="submit" value="Open everything older than" onclick="openAge(document.getElementById('control_age').value);">
+	<input id="control_age" type="number" min="0" max="4600" value="540"> mya
+	<div id="search_div"><ol id="results"></ol></div>
 </div>
 <div id="root"></div>
 <script src="../common.js"></script>
