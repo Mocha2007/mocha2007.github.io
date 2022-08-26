@@ -206,14 +206,18 @@ function main(){
 			if (lifeData[i].genetic.hasOwnProperty('chromosome')){
 				const chr = document.createElement('abbr');
 				genetic.appendChild(chr);
-				// eslint-disable-next-line no-loop-func
-				const [chrF, chrM] = lifeData[i].genetic.chromosome.allosomal.map(sex => sex
-					+ lifeData[i].genetic.chromosome.autosomal
-					* lifeData[i].genetic.chromosome.ploidy);
-				if (chrF === chrM)
-					chr.innerHTML = chrF;
+				const ploidy = lifeData[i].genetic.chromosome.ploidy || 1;
+				const allo = lifeData[i].genetic.chromosome.autosomal * ploidy;
+				if (lifeData[i].genetic.chromosome.allosomal){
+					const [chrF, chrM] = lifeData[i].genetic.chromosome.allosomal
+						.map(sex => sex + allo);
+					if (chrF === chrM)
+						chr.innerHTML = chrF;
+					else
+						chr.innerHTML = `♀${chrF}♂${chrM}`;
+				}
 				else
-					chr.innerHTML = `♀${chrF}♂${chrM}`;
+					chr.innerHTML = allo;
 				chr.title = 'Chromosome count';
 			}
 			// sex determination system

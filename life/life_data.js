@@ -154,6 +154,12 @@ const lifeData = [
 		'desc': 'Garlic',
 	},
 	{
+		'name': 'amaranthaceae',
+		'rank': 'family',
+		'parent': 'caryophyllales',
+		'range': 'ww',
+	},
+	{
 		'name': 'amaryllidaceae',
 		'rank': 'family',
 		'parent': 'asparagales',
@@ -826,6 +832,12 @@ const lifeData = [
 		'desc': 'Pecan',
 	},
 	{
+		'name': 'caryophyllales',
+		'rank': 'order',
+		'parent': 'eudicots',
+		'range': 'ww',
+	},
+	{
 		'name': 'castor',
 		'rank': 'genus',
 		'parent': 'castoridae',
@@ -1287,8 +1299,8 @@ const lifeData = [
 	},
 	{
 		'name': 'drosophila melanogaster',
-		'rank': 'genus',
-		'parent': 'drosophilidae',
+		'rank': 'species',
+		'parent': 'drosophila',
 		'range': 'ww',
 		'desc': 'Fruit Fly',
 		'genetic': {
@@ -3079,6 +3091,24 @@ const lifeData = [
 		'parent': 'neoaves',
 		'range': 'sh',
 		'desc': 'Penguin',
+	},
+	{
+		'name': 'spinacia',
+		'rank': 'genus',
+		'parent': 'amaranthaceae',
+		'range': 'as',
+	},
+	{
+		'name': 'spinacia oleracea',
+		'rank': 'species',
+		'parent': 'spinacia',
+		'range': 'as',
+		'desc': 'Spinach',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 12,
+			},
+		},
 	},
 	{
 		'name': 'squamata',
