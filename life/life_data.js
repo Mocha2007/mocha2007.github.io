@@ -147,11 +147,30 @@ const lifeData = [
 		'desc': 'Onion',
 	},
 	{
+		'name': 'allium fistulosum',
+		'rank': 'species',
+		'parent': 'allium',
+		'range': 'as',
+		'desc': 'Welsh Onion',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 8,
+				'ploidy': 2,
+			},
+		},
+	},
+	{
 		'name': 'allium sativum',
 		'rank': 'species',
 		'parent': 'allium',
 		'range': 'ow',
 		'desc': 'Garlic',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 8,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'aloe',
@@ -710,6 +729,12 @@ const lifeData = [
 		'parent': 'brassica',
 		'range': 'eu',
 		'desc': 'Broccoli, Brussel Sprout, Cabbage, Cauliflower, Collard Greens, Kale, among others',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 9,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'brassica rapa',
@@ -781,6 +806,33 @@ const lifeData = [
 		'rank': 'subspecies',
 		'parent': 'canis lupus',
 		'desc': 'Dog',
+	},
+	{
+		'name': 'cannabaceae',
+		'rank': 'family',
+		'parent': 'rosales',
+		'range': 'as',
+	},
+	{
+		'name': 'cannabis',
+		'rank': 'genus',
+		'parent': 'cannabaceae',
+		'range': 'as',
+	},
+	{
+		'name': 'cannabis sativa',
+		'rank': 'species',
+		'parent': 'cannabis',
+		'range': 'as',
+		'desc': 'Marijuana',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 9,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'capra',
@@ -999,6 +1051,12 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'rutaceae',
 		'range': 'as',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 9,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'citrus latifola',
@@ -1135,7 +1193,8 @@ const lifeData = [
 		'desc': 'Cucumber',
 		'genetic': {
 			'chromosome': {
-				'autosomal': 14,
+				'autosomal': 7,
+				'ploidy': 2,
 			},
 		},
 	},
@@ -1235,6 +1294,12 @@ const lifeData = [
 		'parent': 'daucus carota',
 		'range': 'ea',
 		'desc': 'Carrot',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 9,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'decapoda',
@@ -1809,7 +1874,8 @@ const lifeData = [
 		'desc': 'Barley',
 		'genetic': {
 			'chromosome': {
-				'autosomal': 14,
+				'autosomal': 7,
+				'ploidy': 2,
 			},
 		},
 	},
@@ -2054,6 +2120,12 @@ const lifeData = [
 		'range': 'oc',
 		'age': 28,
 		'desc': 'Kangaroo',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 8,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'magnoliales',
@@ -2588,6 +2660,12 @@ const lifeData = [
 		'range': 'oc',
 		'age': 0.7,
 		'desc': 'Koala',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 8,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'phaseolus',
@@ -2662,7 +2740,8 @@ const lifeData = [
 		'desc': 'Pea',
 		'genetic': {
 			'chromosome': {
-				'autosomal': 14,
+				'autosomal': 7,
+				'ploidy': 2,
 			},
 		},
 	},
@@ -2936,6 +3015,12 @@ const lifeData = [
 		'parent': 'raphanus',
 		'range': 'ow',
 		'desc': 'Radish',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 9,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'reptilia',
@@ -3096,7 +3181,8 @@ const lifeData = [
 		'desc': 'Rye',
 		'genetic': {
 			'chromosome': {
-				'autosomal': 14,
+				'autosomal': 7,
+				'ploidy': 2,
 			},
 		},
 	},
@@ -3188,7 +3274,8 @@ const lifeData = [
 		'desc': 'Spinach',
 		'genetic': {
 			'chromosome': {
-				'autosomal': 12,
+				'autosomal': 6,
+				'ploidy': 2,
 			},
 		},
 	},
@@ -3501,6 +3588,12 @@ const lifeData = [
 		'parent': 'zea',
 		'range': 'na',
 		'desc': 'Maize',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 10,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'zingiber',
