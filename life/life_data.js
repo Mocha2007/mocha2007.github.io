@@ -166,7 +166,8 @@ const lifeData = [
 		'range': 'ow',
 		'genetic': {
 			'chromosome': {
-				'autosomal': 14,
+				'autosomal': 7,
+				'ploidy': 2,
 			},
 		},
 	},
