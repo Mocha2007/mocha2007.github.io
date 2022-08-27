@@ -423,6 +423,13 @@ const lifeData = [
 		'desc': 'Spider',
 	},
 	{
+		'name': 'archaea',
+		'rank': 'domain',
+		'parent': 'life',
+		'range': 'ww',
+		'age': 3420,
+	},
+	{
 		'name': 'archaeopterygidae',
 		'rank': 'family',
 		'parent': 'avialae',
