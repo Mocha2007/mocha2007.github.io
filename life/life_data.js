@@ -207,6 +207,12 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'alphaproteobacteria',
+		'rank': 'class',
+		'parent': 'proteobacteria',
+		'range': 'ww',
+	},
+	{
 		'name': 'amaranthaceae',
 		'rank': 'family',
 		'parent': 'caryophyllales',
@@ -1570,6 +1576,18 @@ const lifeData = [
 		'age': 540,
 	},
 	{
+		'name': 'ehrlichiaceae',
+		'rank': 'family',
+		'parent': 'rickettsiales',
+		'range': 'ww',
+	},
+	{
+		'name': 'ehrlichia',
+		'rank': 'genus',
+		'parent': 'ehrlichiaceae',
+		'range': 'ww',
+	},
+	{
 		'name': 'elephantidae',
 		'rank': 'family',
 		'parent': 'proboscidea',
@@ -1952,12 +1970,6 @@ const lifeData = [
 		'range': 'eq',
 		'desc': 'Cotton',
 	},
-	{
-		'name': 'gracilicutes',
-		'rank': 'clade',
-		'parent': 'bacteria',
-		'range': 'ww',
-	},
 	// H
 	{
 		'name': 'hexapoda',
@@ -2125,6 +2137,12 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+	},
+	{
+		'name': 'hydrobacteria',
+		'rank': 'clade',
+		'parent': 'bacteria',
+		'range': 'ww',
 	},
 	{
 		'name': 'hydrochoerus',
@@ -3233,7 +3251,7 @@ const lifeData = [
 	{
 		'name': 'proteobacteria',
 		'rank': 'phylum',
-		'parent': 'gracilicutes',
+		'parent': 'hydrobacteria',
 		'range': 'ww',
 	},
 	{
@@ -3395,6 +3413,12 @@ const lifeData = [
 		'parent': 'lepidoptera',
 		'range': 'ww',
 		'desc': 'Butterfly',
+	},
+	{
+		'name': 'rickettsiales',
+		'rank': 'order',
+		'parent': 'alphaproteobacteria',
+		'range': 'ww',
 	},
 	{
 		'name': 'rodentia',
