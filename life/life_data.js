@@ -2106,6 +2106,28 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'hydrochoerus',
+		'rank': 'genus',
+		'parent': 'caviidae',
+		'range': 'sa',
+		'age': 3.6,
+	},
+	{
+		'name': 'hydrochoerus hydrochaeris',
+		'rank': 'species',
+		'parent': 'hydrochoerus',
+		'range': 'sa',
+		'desc': 'Capybara',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 32,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
+	},
+	{
 		'name': 'hylobatidae',
 		'rank': 'family',
 		'parent': 'hominoidea',
