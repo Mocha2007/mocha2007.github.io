@@ -2335,6 +2335,13 @@ const lifeData = [
 		'parent': 'lactuca',
 		'range': 'ow',
 		'desc': 'Lettuce',
+		// https://onlinelibrary.wiley.com/doi/full/10.1111/j.2007.0018-0661.02012x
+		'genetic': {
+			'chromosome': {
+				'autosomal': 9,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'lagomorpha',
