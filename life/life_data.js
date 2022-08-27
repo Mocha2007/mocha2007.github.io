@@ -119,6 +119,14 @@ const lifeData = [
 		'parent': 'ailuropoda',
 		'range': 'as',
 		'desc': 'Panda Bear',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 20,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'ailurus',
@@ -132,6 +140,14 @@ const lifeData = [
 		'parent': 'ailurus',
 		'range': 'as',
 		'desc': 'Red Panda',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 17,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'allium',
@@ -245,6 +261,12 @@ const lifeData = [
 		'parent': 'ananas',
 		'range': 'sa',
 		'desc': 'Pineapple',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 25,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'anatidae',
@@ -339,6 +361,14 @@ const lifeData = [
 		'parent': 'apidae',
 		'range': 'ea',
 		'desc': 'Honey Bee',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 16,
+				'allosomal': [16, 0],
+				'ploidy': 1,
+			},
+			'sex': 'Haplodiploidy',
+		},
 	},
 	{
 		'name': 'apium',
@@ -364,6 +394,12 @@ const lifeData = [
 		'parent': 'arachis',
 		'range': 'sa',
 		'desc': 'Peanut',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 10,
+				'ploidy': 4,
+			},
+		},
 	},
 	{
 		'name': 'arachnida',
@@ -682,6 +718,14 @@ const lifeData = [
 		'parent': 'bos',
 		'range': 'as',
 		'desc': 'Yak',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 29,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'bos taurus',
@@ -689,6 +733,14 @@ const lifeData = [
 		'parent': 'bos',
 		'range': 'ww',
 		'desc': 'Cattle',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 29,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'bovidae',
@@ -793,6 +845,15 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'canidae',
 		'range': 'ww',
+		// all five canis species in list
+		'genetic': {
+			'chromosome': {
+				'autosomal': 38,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'canis lupus',
@@ -800,12 +861,28 @@ const lifeData = [
 		'parent': 'canis',
 		'range': 'nh',
 		'desc': 'Wolf',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 38,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'canis lupus familiaris',
 		'rank': 'subspecies',
 		'parent': 'canis lupus',
 		'desc': 'Dog',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 38,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'cannabaceae',
@@ -840,6 +917,15 @@ const lifeData = [
 		'parent': 'caprinae',
 		'range': 'ow',
 		'desc': 'Goat',
+		// capra hircus
+		'genetic': {
+			'chromosome': {
+				'autosomal': 29,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'caprinae',
@@ -944,6 +1030,14 @@ const lifeData = [
 		'parent': 'cavia',
 		'range': 'sa',
 		'desc': 'Guinea Pig',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 31,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'caviidae',
@@ -1131,6 +1225,14 @@ const lifeData = [
 		'parent': 'neoaves',
 		'range': 'ww',
 		'desc': 'Pigeon',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 39,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'commelinids',
@@ -1319,6 +1421,14 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'cetacea',
 		'range': 'ww',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 21,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'deuterostomia',
@@ -1341,6 +1451,12 @@ const lifeData = [
 		'range': 'nw',
 		'age': 20, // "early miocene"
 		'desc': 'Opossum',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 11,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'diplodocidae',
@@ -1427,6 +1543,14 @@ const lifeData = [
 		'range': 'ow',
 		'age': 5,
 		'desc': 'Elephant',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 22,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'enterobacteriaceae',
@@ -1464,6 +1588,14 @@ const lifeData = [
 		'parent': 'equus africanus',
 		'range': 'af',
 		'desc': 'Donkey',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 30,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'equus ferus',
@@ -1477,6 +1609,14 @@ const lifeData = [
 		'parent': 'equus ferus',
 		'range': 'ea',
 		'desc': 'Horse',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 31,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'erinaceidae',
@@ -1490,6 +1630,15 @@ const lifeData = [
 		'parent': 'erinaceidae',
 		'range': 'ow',
 		'desc': 'Hedgehog',
+		// erinaceus and atelerix
+		'genetic': {
+			'chromosome': {
+				'autosomal': 23,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'escherichia',
@@ -1595,6 +1744,13 @@ const lifeData = [
 		'parent': 'fagaceae',
 		'range': 'nh',
 		'desc': 'Beech',
+		// fagus sylvatica
+		'genetic': {
+			'chromosome': {
+				'autosomal': 12,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'felidae',
@@ -1631,6 +1787,14 @@ const lifeData = [
 		// 'important': true,
 		'range': 'af',
 		'desc': 'Cat',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 17,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'ferae',
@@ -1711,6 +1875,14 @@ const lifeData = [
 		'parent': 'gallus gallus',
 		'range': 'as',
 		'desc': 'Chicken',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 38,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'ZW',
+		},
 	},
 	{
 		'name': 'gammaproteobacteria',
@@ -1731,6 +1903,14 @@ const lifeData = [
 		'parent': 'homininae',
 		'range': 'af',
 		'desc': 'Gorilla',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 23,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'gossypium',
@@ -1886,6 +2066,14 @@ const lifeData = [
 		'range': 'ow',
 		'age': 26,
 		'desc': 'Hyena',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 19,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'hylobatidae',
@@ -2097,6 +2285,15 @@ const lifeData = [
 		'range': 'ww',
 		'age': 15,
 		'desc': 'Otter',
+		// enhydra lutris
+		'genetic': {
+			'chromosome': {
+				'autosomal': 17,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'lynx',
@@ -2261,6 +2458,14 @@ const lifeData = [
 		'parent': 'mus',
 		'range': 'ow',
 		'desc': 'House Mouse',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 19,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'musa',
@@ -2429,6 +2634,14 @@ const lifeData = [
 		'range': 'oc',
 		'age': 9,
 		'desc': 'Platypus',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 21,
+				'allosomal': [10, 10],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'oryza',
@@ -2442,6 +2655,12 @@ const lifeData = [
 		'parent': 'oryza',
 		'range': 'as',
 		'desc': 'Asian Rice',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 12,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'osteichthyes',
@@ -2463,6 +2682,14 @@ const lifeData = [
 		'parent': 'ovis',
 		'range': 'ea',
 		'desc': 'Sheep',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 21,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	// P
 	{
@@ -2484,6 +2711,14 @@ const lifeData = [
 		'parent': 'pan',
 		'range': 'af',
 		'desc': 'Chimpanzee',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 23,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'panarthropoda',
@@ -2517,6 +2752,14 @@ const lifeData = [
 		'parent': 'panthera',
 		'range': 'ow',
 		'desc': 'Lion',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 17,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'panthera onca',
@@ -2538,6 +2781,14 @@ const lifeData = [
 		'parent': 'panthera',
 		'range': 'as',
 		'desc': 'Tiger',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 17,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'panthera uncia',
@@ -2868,6 +3119,14 @@ const lifeData = [
 		'range': 'as',
 		'age': 2,
 		'desc': 'Orangutan',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 23,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'pooideae',
@@ -3002,6 +3261,19 @@ const lifeData = [
 		'range': 'nh',
 		'desc': 'Oak',
 	},
+	{
+		'name': 'quercus suber',
+		'rank': 'species',
+		'parent': 'quercus',
+		'range': 'ow',
+		'desc': 'Cork Oak',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 12,
+				'ploidy': 2,
+			},
+		},
+	},
 	// R
 	{
 		'name': 'raphanus',
@@ -3088,6 +3360,13 @@ const lifeData = [
 		'parent': 'panicoideae',
 		'range': 'ww',
 		'desc': 'Sugarcane',
+		// saccharum officianum
+		'genetic': {
+			'chromosome': {
+				'autosomal': 10,
+				'ploidy': 8,
+			},
+		},
 	},
 	{
 		'name': 'salmonidae',
@@ -3233,11 +3512,30 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'solanum elaeagnifolium',
+		'rank': 'species',
+		'parent': 'solanum',
+		'range': 'nw',
+		'desc': 'Silverleaf Nightshade',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 12,
+				'ploidy': 2,
+			},
+		},
+	},
+	{
 		'name': 'solanum lycopersicum',
 		'rank': 'species',
 		'parent': 'solanum',
 		'range': 'sa',
 		'desc': 'Tomato',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 12,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'solanum melongena',
@@ -3252,6 +3550,12 @@ const lifeData = [
 		'parent': 'solanum',
 		'range': 'sa',
 		'desc': 'Potato',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 12,
+				'ploidy': 4,
+			},
+		},
 	},
 	{
 		'name': 'sphenisciformes',
@@ -3324,6 +3628,14 @@ const lifeData = [
 		'parent': 'suidae',
 		'range': 'ow',
 		'desc': 'Pig',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 17,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	// T
 	{
@@ -3385,6 +3697,12 @@ const lifeData = [
 		'parent': 'theobroma',
 		'range': 'nw',
 		'desc': 'Cocoa',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 10,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'theria',
@@ -3442,6 +3760,12 @@ const lifeData = [
 		'parent': 'pooideae',
 		'range': 'as',
 		'desc': 'Wheat',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 7,
+				'ploidy': 6,
+			},
+		},
 	},
 	{
 		'name': 'tunicata',
@@ -3499,6 +3823,22 @@ const lifeData = [
 		'range': 'nh',
 		'age': 38,
 		'desc': 'Bear',
+	},
+	{
+		'name': 'ursus',
+		'rank': 'genus',
+		'parent': 'ursidae',
+		'range': 'nh',
+		'age': 5.333,
+		// all four ursus species in list
+		'genetic': {
+			'chromosome': {
+				'autosomal': 36,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'utahraptor',
@@ -3566,6 +3906,14 @@ const lifeData = [
 		'parent': 'vulpes',
 		'range': 'nh',
 		'desc': 'Red Fox',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 16,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	// Y
 	{
