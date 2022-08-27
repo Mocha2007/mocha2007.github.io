@@ -575,6 +575,9 @@ const lifeData = [
 		'parent': 'avialae',
 		'range': 'ww',
 		'desc': 'Bird',
+		'genetic': {
+			'sex': 'ZW',
+		},
 	},
 	{
 		'name': 'avialae',
