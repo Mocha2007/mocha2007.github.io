@@ -387,6 +387,13 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'apium',
 		'desc': 'Celery',
+		// https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/celery
+		'genetic': {
+			'chromosome': {
+				'autosomal': 11,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'arachis',
@@ -1383,6 +1390,13 @@ const lifeData = [
 		'parent': 'cuminum',
 		'range': 'as',
 		'desc': 'Cumin',
+		// https://www.taylorfrancis.com/chapters/mono/10.1201/9781482280531-12/genetics-breeding-vitro-production-cumin-kafi
+		'genetic': {
+			'chromosome': {
+				'autosomal': 7,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'curcuma',
@@ -3064,6 +3078,13 @@ const lifeData = [
 		'parent': 'petroselinum',
 		'range': 'ow',
 		'desc': 'Parsley',
+		// https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/parsley
+		'genetic': {
+			'chromosome': {
+				'autosomal': 11,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'phaeophyceae',
