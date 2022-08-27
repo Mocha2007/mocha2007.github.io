@@ -74,6 +74,13 @@ function openAge(age){
 }
 
 /** @param {HTMLDetailsElement} object */
+function openChildren(object){
+	// open object
+	object.open = true;
+	Array.from(object.children).filter(elem => elem.tagName === 'DETAILS').forEach(openChildren);
+}
+
+/** @param {HTMLDetailsElement} object */
 function openParents(object){
 	// open object
 	object.open = true;
@@ -81,9 +88,8 @@ function openParents(object){
 	/** @type {HTMLDetailsElement|HTMLDivElement} */
 	const parent = object.parentElement;
 	// if parent === details then call for parent
-	if (parent.tagName === 'DETAILS'){
+	if (parent.tagName === 'DETAILS')
 		openParents(parent);
-	}
 }
 
 function refreshButtons(){
@@ -156,6 +162,7 @@ function main(){
 		details.id = name;
 		// title
 		const title = document.createElement('summary');
+		details.appendChild(title);
 		/* important
 		if (isImportant(i)){
 			var important = document.createElement("span");
@@ -228,7 +235,13 @@ function main(){
 				sds.title = 'Sex determination system';
 			}
 		}
-		details.appendChild(title);
+		// "open all" button
+		const openAll = document.createElement('input');
+		openAll.type = 'submit';
+		openAll.value = 'Open All';
+		openAll.onclick = () => openChildren(details);
+		openAll.classList.add('openAll');
+		title.appendChild(openAll);
 		// desc
 		if (lifeData[i].hasOwnProperty('desc')){
 			const desc = document.createElement('p');
