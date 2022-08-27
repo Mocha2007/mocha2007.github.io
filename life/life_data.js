@@ -2019,6 +2019,15 @@ const lifeData = [
 		'range': 'as',
 		'age': 0.3, // appx.
 		'desc': 'Denisovan',
+		// https://www.thetech.org/ask-a-geneticist/denisovan-chromosome-2
+		'genetic': {
+			'chromosome': {
+				'autosomal': 22,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'homo erectus',
@@ -2055,6 +2064,15 @@ const lifeData = [
 		'range': 'ea',
 		'age': 0.25,
 		'desc': 'Neanderthal',
+		// https://www.thetech.org/ask-a-geneticist/denisovan-chromosome-2
+		'genetic': {
+			'chromosome': {
+				'autosomal': 22,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'homo sapiens',
