@@ -1013,6 +1013,36 @@ const lifeData = [
 		'desc': 'Beaver',
 	},
 	{
+		'name': 'castor canadensis',
+		'rank': 'species',
+		'parent': 'castor',
+		'range': 'na',
+		'desc': 'American Beaver',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 19,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
+	},
+	{
+		'name': 'castor fiber',
+		'rank': 'species',
+		'parent': 'castor',
+		'range': 'ea',
+		'desc': 'Eurasian Beaver',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 23,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
+	},
+	{
 		'name': 'castoridae',
 		'rank': 'family',
 		'parent': 'rodentia',
@@ -3418,6 +3448,15 @@ const lifeData = [
 		'parent': 'rodentia',
 		'range': 'ww',
 		'desc': 'Squirrel',
+		// https://www.cabi.org/isc/abstract/19670104028
+		'genetic': {
+			'chromosome': {
+				'autosomal': 19,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'scleractinia',
