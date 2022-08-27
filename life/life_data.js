@@ -295,7 +295,7 @@ const lifeData = [
 		'desc': 'Mallard',
 	},
 	{
-		'name': 'angiosperms',
+		'name': 'angiospermae',
 		'rank': 'clade',
 		'parent': 'plantae',
 		'range': 'ww',
@@ -1721,7 +1721,7 @@ const lifeData = [
 	{
 		'name': 'eudicots',
 		'rank': 'clade',
-		'parent': 'angiosperms',
+		'parent': 'angiospermae',
 		'range': 'ww',
 	},
 	{
@@ -1949,6 +1949,57 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'ginkgo',
+		'rank': 'genus',
+		'parent': 'ginkgoaceae',
+		'range': 'as',
+		'age': 170,
+	},
+	{
+		'name': 'ginkgo biloba',
+		'rank': 'species',
+		'parent': 'ginkgo',
+		'range': 'as',
+		'age': 51.5,
+		'genetic': {
+			'chromosome': {
+				// https://ginkgo.zju.edu.cn/genome/
+				'autosomal': 11,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			sex: 'XY',
+		},
+	},
+	{
+		'name': 'ginkgoaceae',
+		'rank': 'family',
+		'parent': 'ginkgoales',
+		'range': 'as',
+		'age': 280,
+	},
+	{
+		'name': 'ginkgoales',
+		'rank': 'order',
+		'parent': 'ginkgoopsida',
+		'range': 'as',
+		'age': 280,
+	},
+	{
+		'name': 'ginkgoopsida',
+		'rank': 'class',
+		'parent': 'ginkgophyta',
+		'range': 'as',
+		'age': 280,
+	},
+	{
+		'name': 'ginkgophyta',
+		'rank': 'division',
+		'parent': 'gymnospermae',
+		'range': 'as',
+		'age': 280,
+	},
+	{
 		'name': 'glires',
 		'rank': 'clade',
 		'parent': 'euarchontoglires',
@@ -1976,6 +2027,13 @@ const lifeData = [
 		'parent': 'malvaceae',
 		'range': 'eq',
 		'desc': 'Cotton',
+	},
+	{
+		'name': 'gymnospermae',
+		'rank': 'clade',
+		'parent': 'plantae',
+		'range': 'ww',
+		'age': 320,
 	},
 	// H
 	{
@@ -2431,7 +2489,7 @@ const lifeData = [
 	{
 		'name': 'magnoliids',
 		'rank': 'clade',
-		'parent': 'angiosperms',
+		'parent': 'angiospermae',
 		'range': 'ww',
 	},
 	{
@@ -2515,7 +2573,7 @@ const lifeData = [
 	{
 		'name': 'monocots',
 		'rank': 'clade',
-		'parent': 'angiosperms',
+		'parent': 'angiospermae',
 		'range': 'ww',
 	},
 	{
@@ -3109,7 +3167,7 @@ const lifeData = [
 	{
 		'name': 'pinophyta',
 		'rank': 'division',
-		'parent': 'plantae',
+		'parent': 'gymnospermae',
 		'range': 'ww',
 		'age': 300,
 		'desc': 'Conifer',
