@@ -2037,6 +2037,25 @@ const lifeData = [
 	},
 	// H
 	{
+		'name': 'helianthus',
+		'rank': 'genus',
+		'parent': 'asteraceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'helianthus annuus',
+		'rank': 'species',
+		'parent': 'helianthus',
+		'range': 'nw',
+		'desc': 'Common Sunflower',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 17,
+				'ploidy': 2,
+			},
+		},
+	},
+	{
 		'name': 'hexapoda',
 		'rank': 'subphylum',
 		'parent': 'pancrustacea',
