@@ -279,13 +279,6 @@ const lifeData = [
 		},
 	},
 	{
-		'name': 'anatidae',
-		'rank': 'family',
-		'parent': 'anseriformes',
-		'range': 'ww',
-		'desc': 'Waterfowl',
-	},
-	{
 		'name': 'anas',
 		'rank': 'genus',
 		'parent': 'anatidae',
@@ -297,6 +290,13 @@ const lifeData = [
 		'parent': 'anas',
 		'range': 'nh',
 		'desc': 'Mallard',
+	},
+	{
+		'name': 'anatidae',
+		'rank': 'family',
+		'parent': 'anseriformes',
+		'range': 'ww',
+		'desc': 'Waterfowl',
 	},
 	{
 		'name': 'angiospermae',
@@ -1595,12 +1595,6 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
-		'name': 'drosophilidae',
-		'rank': 'family',
-		'parent': 'diptera',
-		'range': 'ww',
-	},
-	{
 		'name': 'drosophila',
 		'rank': 'genus',
 		'parent': 'drosophilidae',
@@ -1621,6 +1615,12 @@ const lifeData = [
 			'sex': 'XY',
 		},
 	},
+	{
+		'name': 'drosophilidae',
+		'rank': 'family',
+		'parent': 'diptera',
+		'range': 'ww',
+	},
 	// E
 	{
 		'name': 'echinodermata',
@@ -1630,15 +1630,15 @@ const lifeData = [
 		'age': 540,
 	},
 	{
-		'name': 'ehrlichiaceae',
-		'rank': 'family',
-		'parent': 'rickettsiales',
-		'range': 'ww',
-	},
-	{
 		'name': 'ehrlichia',
 		'rank': 'genus',
 		'parent': 'ehrlichiaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'ehrlichiaceae',
+		'rank': 'family',
+		'parent': 'rickettsiales',
 		'range': 'ww',
 	},
 	{
@@ -2489,6 +2489,20 @@ const lifeData = [
 		'desc': 'Bay Laurel',
 	},
 	{
+		'name': 'leopardus',
+		'rank': 'genus',
+		'parent': 'felinae',
+		'range': 'nw',
+		'age': 2.5,
+	},
+	{
+		'name': 'leopardus pardalis',
+		'rank': 'species',
+		'parent': 'leopardus',
+		'range': 'nw',
+		'desc': 'Ocelot',
+	},
+	{
 		'name': 'lepidoptera',
 		'rank': 'order',
 		'parent': 'insecta',
@@ -2507,20 +2521,6 @@ const lifeData = [
 		'parent': 'cephalochordata',
 		'range': 'wo',
 		'age': 521,
-	},
-	{
-		'name': 'leopardus',
-		'rank': 'genus',
-		'parent': 'felinae',
-		'range': 'nw',
-		'age': 2.5,
-	},
-	{
-		'name': 'leopardus pardalis',
-		'rank': 'species',
-		'parent': 'leopardus',
-		'range': 'nw',
-		'desc': 'Ocelot',
 	},
 	{
 		'name': 'life',
@@ -3237,25 +3237,6 @@ const lifeData = [
 		'desc': 'Spruce',
 	},
 	{
-		'name': 'pisum',
-		'rank': 'genus',
-		'parent': 'fabaceae',
-		'range': 'ow',
-	},
-	{
-		'name': 'pisum sativum',
-		'rank': 'species',
-		'parent': 'pisum',
-		'range': 'ow',
-		'desc': 'Pea',
-		'genetic': {
-			'chromosome': {
-				'autosomal': 7,
-				'ploidy': 2,
-			},
-		},
-	},
-	{
 		'name': 'pinaceae',
 		'rank': 'family',
 		'parent': 'pinales',
@@ -3317,6 +3298,25 @@ const lifeData = [
 		'range': 'eq',
 	},
 	{
+		'name': 'pisum',
+		'rank': 'genus',
+		'parent': 'fabaceae',
+		'range': 'ow',
+	},
+	{
+		'name': 'pisum sativum',
+		'rank': 'species',
+		'parent': 'pisum',
+		'range': 'ow',
+		'desc': 'Pea',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 7,
+				'ploidy': 2,
+			},
+		},
+	},
+	{
 		'name': 'placentalia',
 		'rank': 'infraclass',
 		'parent': 'theria',
@@ -3355,17 +3355,17 @@ const lifeData = [
 		'desc': 'Plesiosaur',
 	},
 	{
-		'name': 'poales',
-		'rank': 'order',
-		'parent': 'commelinids',
-		'range': 'ww',
-	},
-	{
 		'name': 'poaceae',
 		'rank': 'family',
 		'parent': 'poales',
 		'range': 'ww',
 		'desc': 'Grass',
+	},
+	{
+		'name': 'poales',
+		'rank': 'order',
+		'parent': 'commelinids',
+		'range': 'ww',
 	},
 	{
 		'name': 'pollachius',
@@ -3439,13 +3439,6 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
-		'name': 'subg. prunus', // alphabetically treated as if subg. weren't there
-		'rank': 'subgenus',
-		'parent': 'prunus',
-		'range': 'as',
-		'desc': 'Plum',
-	},
-	{
 		'name': 'prunus armeniaca',
 		'rank': 'species',
 		'parent': 'prunus',
@@ -3465,6 +3458,13 @@ const lifeData = [
 		'parent': 'prunus',
 		'range': 'as',
 		'desc': 'Peach',
+	},
+	{
+		'name': 'prunus subg.',
+		'rank': 'subgenus',
+		'parent': 'prunus',
+		'range': 'as',
+		'desc': 'Plum',
 	},
 	{
 		'name': 'psittaciformes',

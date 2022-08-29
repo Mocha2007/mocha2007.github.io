@@ -147,17 +147,18 @@ function toggle(){
 // main program
 
 function main(){
-	let i, name;
 	// print appropriate text to toggle button
 	refreshButtons();
 	// first, add everything in lifeData to objects
-	for (i = 0; i < lifeData.length; i++){
+	for (let i = 0; i < lifeData.length; i++){
 		// create DOM object
 		const details = document.createElement('details');
 		details.open = openSetting;
 		const rank = lifeData[i].rank;
 		details.classList.add(rank);
-		name = lifeData[i].name;
+		const name = lifeData[i].name;
+		if (lifeData[i+1] && lifeData[i+1].name < name)
+			console.warn(`${name} out of order!`);
 		objects[name] = details;
 		details.id = name;
 		// title
@@ -253,9 +254,9 @@ function main(){
 		}
 	}
 	// next, nest everything accordingly. add * to root.
-	for (i = 0; i < lifeData.length; i++){
-		name = lifeData[i].name;
-		console.log('Loading ' + name + '...');
+	for (let i = 0; i < lifeData.length; i++){
+		const name = lifeData[i].name;
+		// console.log('Loading ' + name + '...');
 		const parentId = lifeData[i].parent;
 		const child = objects[name];
 		let parent = document.getElementById('root');
@@ -265,7 +266,7 @@ function main(){
 		parent.appendChild(child);
 	}
 	// next, if important, open every parent
-	for (i = 0; i < lifeData.length; i++){
+	for (let i = 0; i < lifeData.length; i++){
 		if (isImportant(i)){
 			openParents(objects[lifeData[i].name]);
 		}
