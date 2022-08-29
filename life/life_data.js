@@ -38,6 +38,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'abietoideae',
 		'range': 'nh',
+		'age': 49,
 		'desc': 'Fir',
 	},
 	{
@@ -45,12 +46,14 @@ const lifeData = [
 		'rank': 'subfamily',
 		'parent': 'pinaceae',
 		'range': 'nh',
+		'age': 113,
 	},
 	{
 		'name': 'acanthomorpha',
 		'rank': 'clade',
 		'parent': 'teleostei',
 		'range': 'wo',
+		'age': 100,
 	},
 	{
 		'name': 'acinonychini',
@@ -253,6 +256,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'leptocardii',
 		'range': 'wo',
+		'age': 521,
 		'desc': 'Lancelet',
 	},
 	{
@@ -693,6 +697,7 @@ const lifeData = [
 		'rank': 'superorder',
 		'parent': 'chondrichthyes',
 		'range': 'wo',
+		'age': 200,
 		'desc': 'Ray',
 	},
 	{
@@ -1103,6 +1108,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'abietoideae',
 		'range': 'ea',
+		'age': 113,
 		'desc': 'Cedar',
 	},
 	{
@@ -2292,6 +2298,7 @@ const lifeData = [
 		'parent': 'reptilia',
 		'extinct': true,
 		'range': 'ww',
+		'age': 250,
 		'desc': 'Ichthyosaur',
 	},
 	{
@@ -2452,6 +2459,7 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'cephalochordata',
 		'range': 'wo',
+		'age': 521,
 	},
 	{
 		'name': 'leopardus',
@@ -3178,6 +3186,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'pinaceae',
 		'range': 'nh',
+		'age': 139,
 		'desc': 'Spruce',
 	},
 	{
@@ -3204,6 +3213,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'pinales',
 		'range': 'nh',
+		'age': 200,
 	},
 	{
 		'name': 'pinales',
@@ -3216,7 +3226,7 @@ const lifeData = [
 		'rank': 'division',
 		'parent': 'gymnospermae',
 		'range': 'ww',
-		'age': 300,
+		'age': 307,
 		'desc': 'Conifer',
 	},
 	{
@@ -3224,12 +3234,14 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'pinophyta',
 		'range': 'ww',
+		'age': 307,
 	},
 	{
 		'name': 'pinus',
 		'rank': 'genus',
 		'parent': 'pinaceae',
 		'range': 'nh',
+		'age': 129,
 		'desc': 'Pine',
 	},
 	{
@@ -3582,12 +3594,14 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'salmoniformes',
 		'range': 'nh',
+		'age': 100,
 	},
 	{
 		'name': 'salmoniformes',
 		'rank': 'order',
 		'parent': 'teleostei',
 		'range': 'nh',
+		'age': 100,
 	},
 	{
 		'name': 'salmoninae',
@@ -3688,6 +3702,7 @@ const lifeData = [
 		'rank': 'superorder',
 		'parent': 'chondrichthyes',
 		'range': 'wo',
+		'age': 200,
 		'desc': 'Shark',
 	},
 	{
@@ -3702,6 +3717,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'teleostei',
 		'range': 'wo',
+		'age': 100,
 		'desc': 'Catfish',
 	},
 	{
@@ -3761,6 +3777,14 @@ const lifeData = [
 		'parent': 'solanum',
 		'range': 'ow',
 		'desc': 'Eggplant',
+		'emoji': '🍆',
+		// https://pubmed.ncbi.nlm.nih.gov/31409808/#&gid=article-figures&pid=figure-1-uid-0
+		'genetic': {
+			'chromosome': {
+				'autosomal': 12,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'solanum tuberosum',
@@ -3869,6 +3893,7 @@ const lifeData = [
 		'rank': 'infraclass',
 		'parent': 'actinopterygii',
 		'range': 'wo',
+		'age': 250,
 	},
 	{
 		'name': 'telluraves',
@@ -4153,7 +4178,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'zea',
 		'range': 'na',
-		'desc': 'Maize',
+		'desc': 'Maize (Corn)',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 10,

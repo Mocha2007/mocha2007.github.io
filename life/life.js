@@ -179,6 +179,9 @@ function main(){
 		if (lifeData[i].hasOwnProperty('extinct') && lifeData[i].hasOwnProperty('extinct')){
 			title.innerHTML += '&dagger; ';
 		}
+		// emoji?
+		if (lifeData[i].emoji)
+			title.innerHTML += lifeData[i].emoji + ' ';
 		// name
 		let a = document.createElement('a');
 		a.innerHTML = proper(name);
@@ -225,7 +228,7 @@ function main(){
 				}
 				else
 					chr.innerHTML = allo;
-				chr.title = 'Chromosome count';
+				chr.title = `Chromosome count ${ploidy}n = ${allo}, excl. sex chromosomes.`;
 			}
 			// sex determination system
 			if (lifeData[i].genetic.hasOwnProperty('sex')){
