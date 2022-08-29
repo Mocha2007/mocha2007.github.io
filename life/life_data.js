@@ -1658,6 +1658,19 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'elettaria',
+		'rank': 'genus',
+		'parent': 'zingiberaceae',
+		'range': 'as',
+	},
+	{
+		'name': 'elettaria cardamomum',
+		'rank': 'species',
+		'parent': 'elettaria',
+		'range': 'as',
+		'desc': 'True Cardamom',
+	},
+	{
 		'name': 'enterobacteriaceae',
 		'rank': 'family',
 		'parent': 'enterobacteriales',
