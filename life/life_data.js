@@ -1300,6 +1300,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'convovulaceae',
+		'rank': 'family',
+		'parent': 'solanales',
+		'range': 'ww',
+	},
+	{
 		'name': 'corvidae',
 		'rank': 'family',
 		'parent': 'passeriformes',
@@ -1444,6 +1450,7 @@ const lifeData = [
 		'range': 'ww',
 		'desc': 'Swan',
 	},
+	// D
 	{
 		'name': 'daucus',
 		'rank': 'genus',
@@ -1523,6 +1530,26 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+	},
+	{
+		'name': 'dioscorea',
+		'rank': 'genus',
+		'parent': 'dioscoreaceae',
+		'range': 'eq',
+		'desc': 'Wild Yam',
+	},
+	{
+		'name': 'dioscoreaceae',
+		'rank': 'family',
+		'parent': 'dioscoreales',
+		'range': 'eq',
+	},
+	{
+		'name': 'dioscoreales',
+		'rank': 'order',
+		'parent': 'monocots',
+		'range': 'eq',
+		'age': 116,
 	},
 	{
 		'name': 'diplodocidae',
@@ -2322,6 +2349,26 @@ const lifeData = [
 		'range': 'ww',
 		'age': 396,
 		'desc': 'Insects have a chitinous exoskeleton, a three-part body (head, thorax and abdomen), three pairs of jointed legs, compound eyes, and one pair of antennae.',
+	},
+	{
+		'name': 'ipomoea',
+		'rank': 'genus',
+		'parent': 'convovulaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'ipomoea batatas',
+		'rank': 'species',
+		'parent': 'ipomoea',
+		'range': 'nw',
+		'desc': 'Sweet Potato',
+		// https://pubmed.ncbi.nlm.nih.gov/30935381/
+		'genetic': {
+			'chromosome': {
+				'autosomal': 15,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'isopoda',
