@@ -2,8 +2,24 @@
 	background-color: white;
 	border-radius: 2vh;
 	color: black;
+	height: 50vh;
 	padding: 1vh;
 	position: relative;
+}
+
+#beeAnswers {
+	border: 1px solid silver;
+	border-radius: 1vh;
+	bottom: 0;
+	height: 80%;
+	margin: 1vh;
+	position: absolute;
+	right: 0;
+	width: 50%;
+}
+
+#beeAnswers li {
+	list-style: none;
 }
 
 #beeChars {
@@ -33,6 +49,13 @@
 
 #beeScoreCurrent {
 	display: inline-block;
+}
+
+#beeReset {
+	bottom: 0;
+	display: inline-block;
+	margin-bottom: 1vh;
+	position: absolute;
 }
 
 #spellingBeeScoreContainer {
