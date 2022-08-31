@@ -6,8 +6,17 @@
 	position: relative;
 }
 
-#beeChars *:nth-child(1) {
-	background-color: orange;
+#beeChars {
+	margin-top: 1vh;
+}
+
+#beeChars *, #beeScoreCurrent {
+	border-radius: 2vh;
+	padding: 1vh;
+}
+
+#beeChars *:nth-child(1), #beeScoreCurrent {
+	background-color: #F8CD05;
 }
 
 #beeChars *:nth-child(n+2){
@@ -16,6 +25,14 @@
 
 #beeChars *:hover {
 	opacity: 50%;
+}
+
+#spellingBeeScoreContainer {
+	width: 40%;
+}
+
+#beeScoreCurrent {
+	display: inline-block;
 }
 
 #spellingBeeScoreContainer {

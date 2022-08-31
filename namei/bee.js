@@ -58,7 +58,9 @@ const bee = {
 			li.innerHTML = word;
 			ul.appendChild(li);
 		});
-		document.getElementById('beeScoreCurrent').innerHTML = this.current.score;
+		const score = document.getElementById('beeScoreCurrent');
+		score.style.width = `calc(100% * ${this.current.score} / ${this.current.maxScore}`;
+		score.innerHTML = this.current.score;
 	},
 	restart(){
 		this.current.answers = [];
@@ -75,8 +77,7 @@ const bee = {
 			// alert();
 		}
 		// determine max score
-		document.getElementById('beeScoreMax').innerHTML
-			= this.current.maxScore
+		this.current.maxScore
 			= sum(this.current.solutions.map(word => this.score(word, this.current.letters)));
 		// put up letter hexes
 		document.getElementById('beeChars').innerHTML = '';
