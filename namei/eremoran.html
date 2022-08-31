@@ -6,6 +6,7 @@
 <link href="../simple.css" type="text/css" rel="stylesheet" title="Light">
 <link href="../css/wals.css" type="text/css" rel="stylesheet">
 <link href="../css/eremoran.css" type="text/css" rel="stylesheet"><!-- for learning game -->
+<link href="../css/bee.css" type="text/css" rel="stylesheet"><!-- for bee game -->
 <link href="../dark.css" type="text/css" rel="alternate stylesheet" title="Dark"> 
 <link href="../blend.css" type="text/css" rel="alternate stylesheet" title="Blend">
 <link href="../print.css" type="text/css" rel="stylesheet" media="print">
@@ -2865,17 +2866,26 @@ Review: <span id="review">0</span><br>
 
 <h3 id="Spelling_Bee">Spelling Bee</h3>
 
-<span id="beeScoreCurrent">0</span>
-/ <span id="beeScoreMax">0</span>
-<span class="button" onclick="bee.restart();">Reset...</span>
-<span id="beeChars" class="eremoran">Press Reset</span>
-~ <span id="beeChars2"></span>
-<ul id="beeAnswers" class="eremoran"></ul>
-<input type="text" id="beeAnswer">
-<span class="button" onclick="bee.validate();">Submit &rarr;</span>
-<br>
-<span class="button" onclick="bee.append('ê');">&ecirc;</span>
-<span class="button" onclick="bee.append('ô');">&ocirc;</span>
+
+<div id="spellingBeeContainer">
+	<div id="spellingBeeInputContainer">
+		<span class="button" onclick="bee.clearAnswer();">Delete</span>
+		<input type="text" id="beeAnswer">
+		<span class="button" onclick="bee.validate();">Enter</span>
+		<br>
+		<span class="button" onclick="bee.append('ê');">&ecirc;</span>
+		<span class="button" onclick="bee.append('ô');">&ocirc;</span>
+	</div>
+	<div id="spellingBeeScoreContainer">
+		<span id="beeScoreCurrent">0</span>
+		/ <span id="beeScoreMax">0</span>
+	</div>
+	<div id="beeChars">
+		Press Reset
+	</div>
+	<ul id="beeAnswers" class="eremoran"></ul>
+	<span class="button" onclick="bee.restart();">Reset...</span>
+</div>
 
 
 <h3 id="Memes">Memes</h3>

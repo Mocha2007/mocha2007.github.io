@@ -1,0 +1,25 @@
+#spellingBeeContainer {
+	background-color: white;
+	border-radius: 2vh;
+	color: black;
+	padding: 1vh;
+	position: relative;
+}
+
+#beeChars *:nth-child(1) {
+	background-color: orange;
+}
+
+#beeChars *:nth-child(n+2){
+	background-color: silver;
+}
+
+#beeChars *:hover {
+	opacity: 50%;
+}
+
+#spellingBeeScoreContainer {
+	position: absolute;
+	right: 1vh;
+	top: 1vh;
+}

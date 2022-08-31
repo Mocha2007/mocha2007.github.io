@@ -2,6 +2,8 @@
 /* global elements, isSubsetOf, normalizeEremoran, random, range, sum */
 'use strict';
 
+// based on https://nytimes-spellingbee.com/game/bee2/
+
 const bee = {
 	alphabet: 'abdehiklmnoprstuzêô',
 	current: {
@@ -77,8 +79,13 @@ const bee = {
 			= this.current.maxScore
 			= sum(this.current.solutions.map(word => this.score(word, this.current.letters)));
 		// put up letter hexes
-		document.getElementById('beeChars').innerHTML = this.current.letters.join(' ');
-		document.getElementById('beeChars2').innerHTML = this.current.letters.join(' ');
+		document.getElementById('beeChars').innerHTML = '';
+		this.current.letters.forEach(char => {
+			const elem = document.createElement('abbr');
+			elem.title = elem.innerHTML = char;
+			elem.classList.add('eremoran');
+			document.getElementById('beeChars').appendChild(elem);
+		});
 	},
 	score(word, letters){
 		let score = word.length - 3;
