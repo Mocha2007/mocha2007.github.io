@@ -45,6 +45,13 @@ const bee = {
 	clearAnswer(){
 		document.getElementById('beeAnswer').value = '';
 	},
+	clearAnswers(){
+		const answers = document.getElementById('beeAnswers');
+		answers.innerHTML = '';
+		const li = document.createElement('li');
+		li.innerHTML = 'You have found 0 words';
+		answers.appendChild(li);
+	},
 	randomLetters(){
 		// central - outer 1-6
 		const remainder = Array.from(random.shuffle(this.alphabet));
@@ -65,6 +72,8 @@ const bee = {
 	restart(){
 		this.current.answers = [];
 		this.current.score = 0;
+		this.current.solutions = [];
+		this.clearAnswers();
 		// keep generating letters until you get a workable prompt
 		while (!this.current.solutions.length){
 			this.current.letters = this.randomLetters();
