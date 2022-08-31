@@ -94,6 +94,7 @@ const bee = {
 			const elem = document.createElement('abbr');
 			elem.title = elem.innerHTML = char;
 			elem.classList.add('eremoran');
+			elem.onclick = () => this.append(char);
 			document.getElementById('beeChars').appendChild(elem);
 		});
 	},
