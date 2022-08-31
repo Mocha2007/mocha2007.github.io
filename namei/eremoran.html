@@ -2863,6 +2863,21 @@ Review: <span id="review">0</span><br>
 <span class="button" onclick="wordle.append('ô');">&ocirc;</span>
 
 
+<h3 id="Spelling_Bee">Spelling Bee</h3>
+
+<span id="beeScoreCurrent">0</span>
+/ <span id="beeScoreMax">0</span>
+<span class="button" onclick="bee.restart();">Reset...</span>
+<span id="beeChars" class="eremoran">Press Reset</span>
+~ <span id="beeChars2"></span>
+<ul id="beeAnswers" class="eremoran"></ul>
+<input type="text" id="beeAnswer">
+<span class="button" onclick="bee.validate();">Submit &rarr;</span>
+<br>
+<span class="button" onclick="bee.append('ê');">&ecirc;</span>
+<span class="button" onclick="bee.append('ô');">&ocirc;</span>
+
+
 <h3 id="Memes">Memes</h3>
 
 <img class="center" src="https://i.imgur.com/sKI6URJ.png" height="500" alt="">
@@ -3791,6 +3806,7 @@ Universals Violated:
 <script src="eremoran.js"></script>
 <script src="erequote.js"></script>
 <script src="dict2.js"></script>
+<script src="bee.js"></script>
 <script>
 	getDict('eremoran', computeStats); // needs to wait a second to download
 	EremoranTooltip.setup();

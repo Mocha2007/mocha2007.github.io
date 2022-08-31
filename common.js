@@ -54,6 +54,15 @@ function gcd(a, b){
 	return b ? gcd(b, mod(a, b)) : a;
 }
 
+/**
+ * returns true if A is a subset of B
+ * @param {Set} a
+ * @param {Set} b
+ */
+function isSubsetOf(a, b){
+	return Array.from(a).every(i => b.has(i));
+}
+
 /** Levenshtein distance
  * https://en.wikipedia.org/wiki/Levenshtein_distance
  * @param {string} a
@@ -229,6 +238,15 @@ function round(number, digits = 0){
 */
 function sd(x){
 	return Math.sqrt(variance(x));
+}
+
+/**
+ * tests whether two sets are equivalent
+ * @param {Set} a
+ * @param {Set} b
+ */
+function setEquality(a, b){
+	return a.size === b.size && isSubsetOf(a, b);
 }
 
 /** eg. sigFigs(pi, 3) = 3.14
