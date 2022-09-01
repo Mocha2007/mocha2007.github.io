@@ -4118,19 +4118,19 @@
 		]
 	},
 	{
-		"title": "nomz",
-		"etym": "nom + z",
-		"cat": "v.",
-		"defList": [
-			"play"
-		]
-	},
-	{
 		"title": "nost",
 		"etym": "Proto-Eremo-Numoran *noʃt 'below, under'",
 		"cat": "post.",
 		"defList": [
 			"below, under"
+		]
+	},
+	{
+		"title": "noz",
+		"etym": "nom + z",
+		"cat": "v.",
+		"defList": [
+			"play"
 		]
 	},
 	{
