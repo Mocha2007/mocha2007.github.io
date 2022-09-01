@@ -99,6 +99,9 @@ dl.dictionary dt{
 dl.dictionary img{
 	float: right;
 }
+dl.dictionary > div:hover {
+	background-color: #bbb;
+}
 .fliph{
 	transform:scale(-1, 1);
 }
