@@ -8,13 +8,19 @@ class Period {
 	 * @param {string} end
 	 * @param {string} href
 	 * @param {string} color
+	 * @param {string} textColor
+	 * @param {string} borderColor
+	 * @param {number} forceY
 	 */
-	constructor(name, start, end, href, color){
+	constructor(name, start, end, href, color, textColor, borderColor, forceY){
 		this.name = name;
 		this.start = new Date(start);
 		this.end = new Date(end);
 		this.href = href;
-		this.color = color;
+		this.color = color || 'silver';
+		this.borderColor = borderColor || 'white';
+		this.textColor = textColor || 'black';
+		this.forceY = forceY || false;
 	}
 	get a(){
 		if (this.a_cache)
@@ -25,6 +31,7 @@ class Period {
 		text.innerHTML = this.name;
 		text.setAttribute('x', timeline.settings.textXOffset);
 		text.setAttribute('y', timeline.settings.textYOffset);
+		text.setAttribute('fill', this.textColor);
 		e.appendChild(text);
 		return this.a_cache = e;
 	}
@@ -37,7 +44,7 @@ class Period {
 		e.appendChild(this.a);
 		// pos
 		const x = (this.start - timeline.settings.min) * timeline.settings.horizontalScale;
-		const y = this.id * timeline.settings.elemHeight;
+		const y = this.forceY || (this.id+1) * timeline.settings.elemHeight;
 		e.setAttribute('transform', `translate(${x},${y})`);
 		return this.g_cache = e;
 	}
@@ -56,6 +63,7 @@ class Period {
 		const e = createSvgElement('rect');
 		e.setAttribute('width', this.range * timeline.settings.horizontalScale);
 		e.setAttribute('fill', this.color);
+		e.setAttribute('stroke', this.borderColor);
 		return this.rect_cache = e;
 	}
 }
@@ -66,7 +74,8 @@ const timeline = {
 	main(){
 		// process data
 		timelineData.forEach(datum => {
-			const p = new Period(datum.name, datum.start, datum.end, datum.href, datum.color);
+			const p = new Period(datum.name, datum.start, datum.end, datum.href,
+				datum.color, datum.textColor, datum.borderColor, datum.forceY);
 			this.periods.push(p);
 			// get min/max data
 			if (p.start < this.settings.min)
@@ -75,7 +84,7 @@ const timeline = {
 				this.settings.max = +p.end;
 		});
 		// sort
-		this.periods.sort((a, b) => a.start - b.start);
+		// this.periods.sort((a, b) => a.start - b.start);
 		// background
 		const bg = createSvgElement('rect');
 		bg.id = 'bg';
