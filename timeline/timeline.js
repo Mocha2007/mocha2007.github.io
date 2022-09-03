@@ -45,7 +45,7 @@ class Period {
 		return timeline.periods.indexOf(this);
 	}
 	get img(){
-		// todo
+		return undefined; // todo
 	}
 	get range(){
 		return this.end - this.start;
