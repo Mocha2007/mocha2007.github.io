@@ -26,7 +26,7 @@ class Period {
 		if (this.a_cache)
 			return this.a_cache;
 		const e = createSvgElement('a');
-		e.setAttribute('xlink:href', this.href);
+		e.setAttribute('href', this.href);
 		const text = createSvgElement('text');
 		text.innerHTML = this.name;
 		text.setAttribute('x', timeline.settings.textXOffset);
