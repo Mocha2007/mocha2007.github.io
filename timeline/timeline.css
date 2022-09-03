@@ -1,0 +1,15 @@
+.period rect {
+	height: 20px;
+	stroke: white;
+	stroke-width: 1px;
+}
+
+text {
+	font-family: 'Futura', sans-serif;
+}
+
+#bg {
+	fill: black;
+	height: 100%;
+	width: 100%;
+}
