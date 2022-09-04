@@ -3891,7 +3891,7 @@
 	},
 	{
 		"title": "na",
-		"etym": "L/PEN/*na/ear; pronoun related to 'nau'",
+		"etym": "L/PEN/*na/ear//L/PEN/*na/what",
 		"cat": "n., 4th",
 		"defList": [
 			"ear (organ)",
@@ -3911,7 +3911,7 @@
 	},
 	{
 		"title": "nad",
-		"etym": "nau + ad",
+		"etym": "C/na/ad",
 		"cat": "prep.",
 		"defList": [
 			"as, in the capacity/form of"
@@ -3929,7 +3929,7 @@
 	},
 	{
 		"title": "nanau",
-		"etym": "Reduplicated from <i>nau</i>",
+		"etym": "R/nau",
 		"cat": "pron., det.",
 		"defList": [
 			"some (fr. <i>quelque</i>)",
@@ -3950,7 +3950,7 @@
 	},
 	{
 		"title": "nasanu",
-		"etym": "nasu + hanu",
+		"etym": "C/nasu/hanu",
 		"cat": "adj.",
 		"defList": [
 			"ten"
@@ -3958,7 +3958,7 @@
 	},
 	{
 		"title": "nasdôk",
-		"etym": "nasu 'two' + dôkaz 'become'",
+		"etym": "C/nasu/dôkaz",
 		"cat": "n., 2nd",
 		"defList": [
 			"shapeshifter"
@@ -3967,7 +3967,7 @@
 	},
 	{
 		"title": "nasisu",
-		"etym": "nasu + -isu",
+		"etym": "C/nasu/-isu",
 		"cat": "adj.",
 		"defList": [
 			"second",
@@ -3986,7 +3986,7 @@
 	},
 	{
 		"title": "nasu",
-		"etym": "L/PEN/*natiu/two; Proto-Eremo-Numoran *natsu 'north'",
+		"etym": "L/PEN/*natiu/two//L/PEN/*natsu/north",
 		"cat": "adj.",
 		"defList": [
 			"two",
@@ -3996,8 +3996,8 @@
 		"notes": "While possible with greater numerals, it is rather rare."
 	},
 	{
-		"title": "nasusudôz",
-		"etym": "nasu + sudôz",
+		"title": "nasudôz",
+		"etym": "B/nasu/sudôz",
 		"cat": "v.",
 		"defList": [
 			"double",
@@ -4006,7 +4006,7 @@
 	},
 	{
 		"title": "nau",
-		"etym": "L/PEN/*na-u/which, what'",
+		"etym": "L/PEN/*na-u/which, what",
 		"cat": "adj.",
 		"defList": [
 			"which, what"
@@ -4014,7 +4014,7 @@
 	},
 	{
 		"title": "naz",
-		"etym": "na + -z",
+		"etym": "C/na/-z",
 		"cat": "v.",
 		"defList": [
 			"hear, listen (to)"
@@ -4049,7 +4049,7 @@
 	},
 	{
 		"title": "nen",
-		"etym": "Reduplicated from <i>ne</i> [question particle]",
+		"etym": "R/ne",
 		"cat": "part.",
 		"defList": [
 			"\"Wouldn't it be interesting if...\""
@@ -4066,7 +4066,7 @@
 	},
 	{
 		"title": "nesfu",
-		"etym": "L/PEN/*nesɸu/lewd, possibly related to *nes 'bed'",
+		"etym": "L/PEN/*nesɸu/lewd//possibly related to *nes 'bed'",
 		"cat": "adj.",
 		"defList": [
 			"lewd"
@@ -4075,7 +4075,7 @@
 	},
 	{
 		"title": "nikiniki",
-		"etym": "L/PEN/*nikiniki/liver, reduplicated from *niki '???'",
+		"etym": "L/PEN/*niki-niki/liver",
 		"cat": "n., 4th",
 		"defList": [
 			"liver"
@@ -4135,7 +4135,7 @@
 	},
 	{
 		"title": "nost",
-		"etym": "L/PEN/*noʃt/below, under'",
+		"etym": "L/PEN/*noʃt/below, under",
 		"cat": "post.",
 		"defList": [
 			"below, under"
@@ -4143,7 +4143,7 @@
 	},
 	{
 		"title": "noz",
-		"etym": "nom + z",
+		"etym": "C/nom/-z",
 		"cat": "v.",
 		"defList": [
 			"play"
@@ -4170,7 +4170,7 @@
 	},
 	{
 		"title": "nubêr",
-		"etym": "nub + -êr",
+		"etym": "C/nub/-ê",
 		"cat": "n., 3rd",
 		"defList": [
 			"infant",
@@ -4189,7 +4189,7 @@
 	},
 	{
 		"title": "nul",
-		"etym": "L/PEN/*nouel/hill, from *nou 'mountain', + *el(a) 'DIM'",
+		"etym": "L/PEN/*nou-el/hill//from *nou 'mountain', + *el(a) 'DIM'",
 		"cat": "n., 4th",
 		"defList": [
 			"hill"
@@ -4197,7 +4197,7 @@
 	},
 	{
 		"title": "numêr",
-		"etym": "numz + -êr",
+		"etym": "C/numz/-ê",
 		"cat": "n., 1st",
 		"defList": [
 			"courier, messenger",
@@ -4215,7 +4215,7 @@
 	},
 	{
 		"title": "nuu",
-		"etym": "Pre-Eremoran <em>nuh</em> 'nude'",
+		"etym": "L/PRE/nuh/nude",
 		"cat": "adj.",
 		"defList": [
 			"nude, naked"
@@ -4232,7 +4232,7 @@
 	},
 	{
 		"title": "obo",
-		"etym": "L/PEN/*oβo/[excitement particle]'",
+		"etym": "L/PEN/*oβo/[excitement particle]",
 		"cat": "adv.",
 		"defList": [
 			"[excitement particle]"
@@ -4240,7 +4240,7 @@
 	},
 	{
 		"title": "odar",
-		"etym": "ou + da + -r",
+		"etym": "C/ou/da",
 		"cat": "n., 1st",
 		"defList": [
 			"one's deceased ancestors"
@@ -4285,7 +4285,7 @@
 	},
 	{
 		"title": "ôkarinu",
-		"etym": "Pre-Eremoran <em>ōkkarin</em> 'crazy'",
+		"etym": "L/PRE/ōkkarin/crazy",
 		"cat": "adj.",
 		"defList": [
 			"crazy"
@@ -4293,7 +4293,7 @@
 	},
 	{
 		"title": "omor",
-		"etym": "o + mor",
+		"etym": "C/o/mor",
 		"cat": "pron.",
 		"defList": [
 			"1st/2nd person pronoun"
@@ -4302,7 +4302,7 @@
 	},
 	{
 		"title": "ômôrz",
-		"etym": "r/<i>ou mor saurz</i> ~ \"People saw\"",
+		"etym": "r/ou mor saurz//~ \"People saw\"",
 		"cat": "v. (Evidential; visual knowledge)",
 		"defList": [
 			"[Specifies the speaker, and others, saw the event mentioned]"
@@ -4326,11 +4326,12 @@
 		"defList": [
 			"[polite prefix]",
 			"[affix used to form first/second person personal pronouns, eg. <i>môk</i>]"
-		]
+		],
+		"notes": "Irregular spelling; 'hou' would be expected, but apparently the lower-register pronounciation became dominant"
 	},
 	{
 		"title": "pabêm",
-		"etym": "Pre-Eremoran <em>pawē</em> 'work'",
+		"etym": "L/PRE/pawē/work",
 		"cat": "n., 5th",
 		"defList": [
 			"work; job"
@@ -4338,7 +4339,7 @@
 	},
 	{
 		"title": "pankudom",
-		"etym": "pankudoz + -m",
+		"etym": "C/pankudoz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"apathy"
@@ -4346,7 +4347,7 @@
 	},
 	{
 		"title": "pankudoz",
-		"etym": "D/<i>pankuz</i>",
+		"etym": "D/pankuz",
 		"cat": "v.",
 		"defList": [
 			"be apathetic"
@@ -4354,7 +4355,7 @@
 	},
 	{
 		"title": "pankum",
-		"etym": "pankuz + -m",
+		"etym": "C/pankuz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"happiness, joy"
