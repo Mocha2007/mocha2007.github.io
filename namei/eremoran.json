@@ -2540,15 +2540,15 @@
 	},
 	{
 		"title": "kalam",
-		"etym": "kalz + -am",
+		"etym": "C/kalz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"need"
 		]
 	},
 	{
-		"title": "kaldôm",
-		"etym": "kaldoz + -am",
+		"title": "kaldom",
+		"etym": "C/kaldoz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"search",
@@ -2558,7 +2558,7 @@
 	},
 	{
 		"title": "kaldoz",
-		"etym": "D/<i>kalz</i>",
+		"etym": "D/kalz",
 		"cat": "v.",
 		"defList": [
 			"seek; search for",
@@ -2596,7 +2596,7 @@
 	},
 	{
 		"title": "kamu",
-		"etym": "L/PEN/*xamu/left. Related to <em>kamurz</em> 'forbid'",
+		"etym": "L/PEN/*xamu/left//Related to <em>kamurz</em> 'forbid'",
 		"cat": "adj.",
 		"defList": [
 			"left (not right)"
@@ -2604,7 +2604,7 @@
 	},
 	{
 		"title": "kamurz",
-		"etym": "L/PEN/*xamurs/forbid. Related to <em>kamu</em> 'left'",
+		"etym": "L/PEN/*xamurs/forbid//Related to <em>kamu</em> 'left'",
 		"cat": "v.",
 		"defList": [
 			"forbid; prohibit"
@@ -2649,7 +2649,7 @@
 	{
 		"title": "kaspa",
 		"img": "../img/eremoran/kasp.png",
-		"etym": "Pre-Eremoran <em>kaspa</em> 'nut'",
+		"etym": "L/PRE/kaspa/nut",
 		"cat": "n., 4th",
 		"defList": [
 			"chestnut",
@@ -2659,7 +2659,7 @@
 	},
 	{
 		"title": "kaspasu",
-		"etym": "kaspa + -su",
+		"etym": "C/kaspa/-isu",
 		"cat": "adj.",
 		"defList": [
 			"brown"
@@ -2696,7 +2696,7 @@
 	},
 	{
 		"title": "ker",
-		"etym": "kek + -r",
+		"etym": "C/kek/-r",
 		"cat": "n., 1st",
 		"defList": [
 			"powerful person; aristocrat; noble",
@@ -2713,7 +2713,7 @@
 	},
 	{
 		"title": "ki",
-		"etym": "L/PEN/*ki/foot.",
+		"etym": "L/PEN/*ki/foot",
 		"cat": "n., 4th",
 		"defList": [
 			"foot",
@@ -2731,7 +2731,7 @@
 	},
 	{
 		"title": "kiêr",
-		"etym": "kit + -êr.",
+		"etym": "C/kit/-ê",
 		"cat": "n., 1st",
 		"defList": [
 			"axeman"
@@ -2740,7 +2740,7 @@
 	},
 	{
 		"title": "kika",
-		"etym": "Relatively recent blend of <i>ki</i> \"foot\" and <i>koka</i> \"arm\".",
+		"etym": "B/ki/koka",
 		"cat": "n., 4th",
 		"defList": [
 			"leg"
@@ -2749,7 +2749,7 @@
 	},
 	{
 		"title": "kikom",
-		"etym": "kim + ko",
+		"etym": "C/kim/ko",
 		"cat": "n., 5th, adj.",
 		"defList": [
 			"here",
@@ -2775,7 +2775,7 @@
 	},
 	{
 		"title": "kinam",
-		"etym": "kim + nau",
+		"etym": "C/kim/nau",
 		"cat": "n., 5th",
 		"defList": [
 			"where"
@@ -2803,7 +2803,7 @@
 	},
 	{
 		"title": "kikir",
-		"etym": "Reduplicated from kiu 'friendly'",
+		"etym": "R/kiu",
 		"cat": "n., 1st",
 		"defList": [
 			"friend"
@@ -2812,7 +2812,7 @@
 	},
 	{
 		"title": "kiom",
-		"etym": "kim + ho",
+		"etym": "C/kim/ho",
 		"cat": "n., 5th, adj.",
 		"defList": [
 			"there",
@@ -2830,7 +2830,7 @@
 	},
 	{
 		"title": "kit",
-		"etym": "L/PEN/*git/axe. Possibly related to <i>kot</i>.",
+		"etym": "L/PEN/*git/axe//Possibly related to <i>kot</i>.",
 		"cat": "n., 3rd",
 		"defList": [
 			"axe"
@@ -2854,7 +2854,7 @@
 	},
 	{
 		"title": "klimu",
-		"etym": "Pre-Eremoran <em>akalīnus</em> 'seven'",
+		"etym": "L/PRE/akalīnus/seven",
 		"cat": "adj.",
 		"defList": [
 			"seven"
@@ -2881,7 +2881,7 @@
 	},
 	{
 		"title": "kôbensu",
-		"etym": "kôbenk + -su.",
+		"etym": "C/kôbenk/-isu",
 		"cat": "adj.",
 		"defList": [
 			"<i>(literally)</i> murine",
@@ -2894,7 +2894,7 @@
 	},
 	{
 		"title": "kôbenk",
-		"etym": "Pre-Eremoran <em>qōpena</em> 'mouse', from <em>qōp</em> 'love' + <em>ena</em> 'grain'",
+		"etym": "L/PRE/qōpena/mouse//from <em>qōp</em> 'love' + <em>ena</em> 'grain'",
 		"cat": "n., 2nd",
 		"defList": [
 			"mouse",
@@ -2921,7 +2921,7 @@
 	},
 	{
 		"title": "kokoz",
-		"etym": "reduplicated from <em>koz</em> 'float'",
+		"etym": "R/koz",
 		"cat": "v.",
 		"defList": [
 			"flow"
@@ -2938,19 +2938,19 @@
 	{
 		"title": "kopam",
 		"img": "../img/eremoran/kopz.png",
-		"etym": "kopz + -am",
+		"etym": "C/kopz/-m",
 		"cat": "n., 5th",
 		"defList": [
-			"love"
+			"love, loving"
 		],
 		"notes": "See usage notes for kopz"
 	},
 	{
 		"title": "kopdam",
-		"etym": "kopdoz + -am",
+		"etym": "C/kopdoz/-m",
 		"cat": "n., 5th",
 		"defList": [
-			"like"
+			"like, liking"
 		]
 	},
 	{
@@ -2964,7 +2964,7 @@
 	{
 		"title": "kopz",
 		"img": "../img/eremoran/kopz.png",
-		"etym": "Pre-Eremoran <em>qōp</em> 'love'",
+		"etym": "L/PRE/qōp/love",
 		"cat": "v.",
 		"defList": [
 			"like, love"
@@ -2973,7 +2973,7 @@
 	},
 	{
 		"title": "kot",
-		"etym": "L/PEN/*got/shield. Possibly related to <i>kit</i>.",
+		"etym": "L/PEN/*got/shield//Possibly related to <i>kit</i>.",
 		"cat": "n., 3rd",
 		"defList": [
 			"shield"
@@ -3035,7 +3035,7 @@
 	},
 	{
 		"title": "kruz",
-		"etym": "krum + -z",
+		"etym": "C/krum/-z",
 		"cat": "v.",
 		"defList": [
 			"study"
@@ -3043,7 +3043,7 @@
 	},
 	{
 		"title": "ku",
-		"etym": "L/PEN/*ku/with and *gus 'big'",
+		"etym": "L/PEN/*ku/with//L/PEN/*gus/big",
 		"cat": "post., adj., s-triggering",
 		"defList": [
 			"and (clause-only: not nouns)",
@@ -3055,7 +3055,7 @@
 	},
 	{
 		"title": "kuafkar",
-		"etym": "Nominalization of kuafkaz",
+		"etym": "C/kuafkaz/-r",
 		"cat": "n., 1st",
 		"defList": [
 			"escort",
@@ -3064,7 +3064,7 @@
 	},
 	{
 		"title": "kuafkaz",
-		"etym": "L/PEN/*kuaɸkas/join from *ku 'with' + *aɸkas 'go'",
+		"etym": "C/ku/afkaz",
 		"cat": "v.",
 		"defList": [
 			"join",
@@ -3073,7 +3073,7 @@
 	},
 	{
 		"title": "kubarz",
-		"etym": "L/PEN/*kubars/gather, from *ku 'with' + *bars 'bind'",
+		"etym": "C/ku/barz",
 		"cat": "v.",
 		"defList": [
 			"gather"
@@ -3081,7 +3081,7 @@
 	},
 	{
 		"title": "kubatu",
-		"etym": "ku + batu",
+		"etym": "C/ku/batu",
 		"cat": "adv., conj., post.",
 		"defList": [
 			"(verb +) but, however",
@@ -3093,7 +3093,7 @@
 	},
 	{
 		"title": "kubôz",
-		"etym": "L/PEN/*kubôs/carry, from *ku 'with' + *bôs 'carry'",
+		"etym": "L/PEN/*ku-bôs/carry//from *ku 'with' + *bôs 'carry'",
 		"cat": "v.",
 		"defList": [
 			"carry, bear",
@@ -3111,7 +3111,7 @@
 	},
 	{
 		"title": "kudom",
-		"etym": "Nominalization of kudoz 'flood'",
+		"etym": "C/kudoz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"flood",
@@ -3121,7 +3121,7 @@
 	},
 	{
 		"title": "kudoz",
-		"etym": "A/koz 'float'",
+		"etym": "A/koz",
 		"cat": "v.",
 		"defList": [
 			"flood"
@@ -3129,7 +3129,7 @@
 	},
 	{
 		"title": "kudôz",
-		"etym": "L/PEN/*kudôs/do; make' from *ku 'with' + *dôs 'do; make'.",
+		"etym": "L/PEN/*ku-dôs/do together",
 		"cat": "v.",
 		"defList": [
 			"work together, conspire",
@@ -3193,7 +3193,7 @@
 	},
 	{
 		"title": "kumu",
-		"etym": "ku + mu",
+		"etym": "C/ku/mu",
 		"cat": "adj.",
 		"defList": [
 			"humid"
@@ -3202,7 +3202,7 @@
 	},
 	{
 		"title": "kumz",
-		"etym": "L/PEN/*gums/jump.",
+		"etym": "L/PEN/*gums/jump",
 		"cat": "v.",
 		"defList": [
 			"jump"
@@ -3227,7 +3227,7 @@
 	},
 	{
 		"title": "kunumz",
-		"etym": "L/PEN/*kunums/attack from *ku 'with' + *nums 'run'",
+		"etym": "C/ku/numz",
 		"cat": "v.",
 		"defList": [
 			"flock",
