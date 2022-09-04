@@ -93,15 +93,6 @@ div.colorbar{
 	text-align: center;
 	font-style: italic;
 }
-dl.dictionary dt{
-	border-top: 2px solid #444;
-}
-dl.dictionary img{
-	float: right;
-}
-dl.dictionary > div:hover {
-	background-color: #bbb;
-}
 .fliph{
 	transform:scale(-1, 1);
 }

@@ -143,6 +143,7 @@ function etymElement(etymString){
 			default: // custom
 				etymElement.stats.type.pop();
 				etymElement.stats.type.push('?');
+				etymElem.classList.add('warn');
 				console.warn(`custom etym format: ${etymology}`);
 				etymElem.innerHTML = etymology;
 		}

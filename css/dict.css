@@ -1,0 +1,13 @@
+dl.dictionary dt{
+	border-top: 2px solid #444;
+}
+dl.dictionary img{
+	float: right;
+}
+dl.dictionary > div:hover {
+	background-color: #bbb;
+}
+.warn {
+	background-color: #ffc;
+	color: #884;
+}
