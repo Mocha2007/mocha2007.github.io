@@ -6044,6 +6044,15 @@
 		]
 	},
 	{
+		"title": "zesti",
+		"etym": "L/PEN/*aseasetis/angled, with partial reduplication of *aseti 'joint'",
+		"cat": "adj., s-triggering",
+		"defList": [
+			"angled",
+			"bent"
+		]
+	},
+	{
 		"title": "zeti",
 		"etym": "L/PEN/*aseti/joint",
 		"cat": "n., 4th",
@@ -6052,12 +6061,11 @@
 		]
 	},
 	{
-		"title": "zesti",
-		"etym": "L/PEN/*aseasetis/angled, with partial reduplication of *aseti 'joint'",
-		"cat": "adj., s-triggering",
+		"title": "zetidot",
+		"etym": "D/zeti",
+		"cat": "n., 3rd",
 		"defList": [
-			"angled",
-			"bent"
+			"die, dice"
 		]
 	},
 	{
