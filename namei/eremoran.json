@@ -75,6 +75,14 @@
 		"notes": "abu is one of a handful of nouns ending in -u."
 	},
 	{
+		"title": "abubit",
+		"etym": "B/abubz/bit",
+		"cat": "n., 3rd",
+		"defList": [
+			"scroll"
+		]
+	},
+	{
 		"title": "abubut",
 		"etym": "R/abu",
 		"cat": "n., 3rd",
@@ -979,6 +987,14 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"pen"
+		]
+	},
+	{
+		"title": "bikut",
+		"etym": "C/bit/kum",
+		"cat": "n., 5th",
+		"defList": [
+			"book"
 		]
 	},
 	{
@@ -3174,6 +3190,14 @@
 		"cat": "adj.",
 		"defList": [
 			"near, close"
+		]
+	},
+	{
+		"title": "kum",
+		"etym": "C/ku/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"group, set, collection"
 		]
 	},
 	{
