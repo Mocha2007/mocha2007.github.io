@@ -1132,7 +1132,7 @@
 	},
 	{
 		"title": "breka",
-		"etym": "syncopated form of <i>dirabeka</i>",
+		"etym": "r/dirabeka",
 		"cat": "n., 4th",
 		"defList": [
 			"sea"
@@ -1416,8 +1416,8 @@
 		]
 	},
 	{
-		"title": "didirak",
-		"etym": "Reduplicated from dirak 'whale'",
+		"title": "didirat",
+		"etym": "R/dirak",
 		"cat": "n., 3rd",
 		"defList": [
 			"whale meat"
@@ -1425,7 +1425,7 @@
 	},
 	{
 		"title": "dimbibiz",
-		"etym": "din + bibiz",
+		"etym": "C/din/bibiz",
 		"cat": "v.",
 		"defList": [
 			"throw up, vomit, upchuck"
@@ -1433,7 +1433,7 @@
 	},
 	{
 		"title": "dimok",
-		"etym": "din 'out of' + mok 'now'",
+		"etym": "C/din/mok",
 		"cat": "adv.",
 		"defList": [
 			"from now on",
@@ -1460,7 +1460,7 @@
 	},
 	{
 		"title": "dinbamz",
-		"etym": "din 'out of' + bamz 'throw'",
+		"etym": "C/din/bamz",
 		"cat": "v.",
 		"defList": [
 			"send"
@@ -1468,7 +1468,7 @@
 	},
 	{
 		"title": "dindôz",
-		"etym": "L/PEN/*dindôs/appraise from *din 'with' + *dôs 'do; make'.",
+		"etym": "L/PEN/*din-dôs/appraise",
 		"cat": "v.",
 		"defList": [
 			"appraise",
@@ -1477,7 +1477,7 @@
 	},
 	{
 		"title": "dindôkaz",
-		"etym": "din 'out of' + dôkaz 'come'",
+		"etym": "C/din/dôkaz",
 		"cat": "v.",
 		"defList": [
 			"become"
@@ -1485,7 +1485,7 @@
 	},
 	{
 		"title": "dinfanuz",
-		"etym": "din 'out of' + hanuz 'hold",
+		"etym": "C/din/hanuz",
 		"cat": "n., 5th",
 		"defList": [
 			"lend"
@@ -1493,7 +1493,7 @@
 	},
 	{
 		"title": "dinkalz",
-		"etym": "L/PEN/*dinkals/ask, from *din 'out of' + *kals 'seek'",
+		"etym": "L/PEN/*din-kals/ask",
 		"cat": "v.",
 		"defList": [
 			"consult, reference",
@@ -1502,7 +1502,7 @@
 	},
 	{
 		"title": "dinrôz",
-		"etym": "din 'out of' + rôz 'speak'",
+		"etym": "C/din/rôz",
 		"cat": "v.",
 		"defList": [
 			"announce; declare",
@@ -1520,7 +1520,7 @@
 	},
 	{
 		"title": "dirabeka",
-		"etym": "dirak 'whale' + beka 'way'",
+		"etym": "C/dirak/beka",
 		"cat": "n., 4th",
 		"defList": [
 			"(archaic) sea, ocean"
@@ -1568,7 +1568,7 @@
 	},
 	{
 		"title": "dodamat",
-		"etym": "dodar 'guest' + mat 'house'",
+		"etym": "C/dodar/mat",
 		"cat": "n., 3rd",
 		"defList": [
 			"hotel"
@@ -1576,7 +1576,7 @@
 	},
 	{
 		"title": "dôkalz",
-		"etym": "L/PEN/*dôkals/ask, from *dô 'in' + *kals 'seek'",
+		"etym": "L/PEN/*dô-kals/ask",
 		"cat": "v.",
 		"defList": [
 			"ask"
@@ -1593,7 +1593,7 @@
 	},
 	{
 		"title": "dômo",
-		"etym": "dô 'in' + mo 'before'",
+		"etym": "C/dô/mo",
 		"cat": "adv.",
 		"defList": [
 			"again"
@@ -1602,7 +1602,7 @@
 	},
 	{
 		"title": "dômosaurz",
-		"etym": "dômo + saurz",
+		"etym": "C/dômo/saurz",
 		"cat": "v.",
 		"defList": [
 			"check, verify",
@@ -1611,7 +1611,7 @@
 	},
 	{
 		"title": "dômosôm",
-		"etym": "Blend of dômosaurz 'check' and rôm 'speech'",
+		"etym": "B/dômosaurz/rôm",
 		"cat": "n., 5th",
 		"defList": [
 			"password"
@@ -1628,7 +1628,7 @@
 	},
 	{
 		"title": "dônumz",
-		"etym": "L/PEN/*dônums/attack from *ad 'to' + *nums 'run'",
+		"etym": "L/PEN/*dô-nums/attack",
 		"cat": "v.",
 		"defList": [
 			"attack; invade"
@@ -1645,7 +1645,7 @@
 	},
 	{
 		"title": "dôsaurz",
-		"etym": "dô 'in' + saurz 'see'",
+		"etym": "C/dô/saurz",
 		"cat": "v.",
 		"defList": [
 			"act maliciously towards",
@@ -1664,7 +1664,7 @@
 	},
 	{
 		"title": "drudot",
-		"etym": "Contraction of dareudot",
+		"etym": "r/dareudot",
 		"cat": "n., 3rd",
 		"defList": [
 			"a large gold coin, worth four daret"
@@ -1706,7 +1706,7 @@
 	},
 	{
 		"title": "ekar",
-		"etym": "blend of ek 'horse' + êkar 'man'",
+		"etym": "B/ek/êkar",
 		"cat": "n., 1st",
 		"defList": [
 			"horseman, equestian"
@@ -1733,7 +1733,7 @@
 	},
 	{
 		"title": "elaêr",
-		"etym": "ela + -êr",
+		"etym": "C/ela/-ê",
 		"cat": "n., 1st",
 		"defList": [
 			"child",
@@ -1743,7 +1743,7 @@
 	},
 	{
 		"title": "elelak",
-		"etym": "Reduplicated from ela 'small'",
+		"etym": "R/ela",
 		"cat": "n., 2nd",
 		"defList": [
 			"young"
@@ -3611,7 +3611,7 @@
 	},
 	{
 		"title": "melat",
-		"etym": "Contraction of aramaelat",
+		"etym": "r/aramaelat",
 		"cat": "n., 3rd",
 		"defList": [
 			"a small copper piece, worth a quarter aramat"
@@ -3758,7 +3758,7 @@
 	},
 	{
 		"title": "morôz",
-		"etym": "Contraction of <i>mor rôz</i> ~ \"It was mentioned\"",
+		"etym": "r/<i>mor rôz</i> ~ \"It was mentioned\"",
 		"cat": "v. (Evidential; secondhand knowledge)",
 		"defList": [
 			"[Specifies the speaker heard of the event mentioned]"
@@ -4023,7 +4023,7 @@
 	},
 	{
 		"title": "nelat",
-		"etym": "Contraction of ardz&ecirc;nelat",
+		"etym": "r/ardz&ecirc;nelat",
 		"cat": "n., 3rd",
 		"defList": [
 			"a small silver piece, worth four aramat"
@@ -4172,7 +4172,7 @@
 	},
 	{
 		"title": "nudot",
-		"etym": "Contraction of ardz&ecirc;nudot",
+		"etym": "r/ardz&ecirc;nudot",
 		"cat": "n., 3rd",
 		"defList": [
 			"a large silver piece, worth four ardzênt"
@@ -4294,7 +4294,7 @@
 	},
 	{
 		"title": "ômôrz",
-		"etym": "Contraction of <i>ou mor saurz</i> ~ \"People saw\"",
+		"etym": "r/<i>ou mor saurz</i> ~ \"People saw\"",
 		"cat": "v. (Evidential; visual knowledge)",
 		"defList": [
 			"[Specifies the speaker, and others, saw the event mentioned]"
@@ -5773,7 +5773,7 @@
 	},
 	{
 		"title": "umôrz",
-		"etym": "Contraction of <i>uou mor saurz</i> ~ \"I saw\"",
+		"etym": "r/<i>uou mor saurz</i> ~ \"I saw\"",
 		"cat": "v. (Evidential; visual knowledge)",
 		"defList": [
 			"[Specifies the speaker, but not others, saw the event mentioned]"
