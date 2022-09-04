@@ -7,6 +7,10 @@ dl.dictionary img{
 dl.dictionary > div:hover {
 	background-color: #bbb;
 }
+.lemmaTitle a {
+	font-size: 150%;
+	text-decoration: none;
+}
 .warn {
 	background-color: #ffc;
 	color: #884;

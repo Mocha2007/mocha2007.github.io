@@ -612,7 +612,7 @@ function titleCard(s){
 	/** @type {HTMLAnchorElement} */
 	const anchor = document.createElement('a');
 	anchor.href = `#lemma-${s}`;
-	anchor.innerHTML = '*';
+	anchor.innerHTML = '^';
 	span.appendChild(anchor);
 	// entry title
 	const ereTitle = document.createElement('span');

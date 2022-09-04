@@ -54,7 +54,6 @@ symbols for 10-19 are lowercase a-j
 .eremoran rt {
 	font-family: sans-serif;
 	text-transform: none;
-	margin-top: 1.5vh; /* for firefox-based browsers */
 	user-select: none;
 }
 a.eremoran {
