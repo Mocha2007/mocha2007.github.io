@@ -843,7 +843,7 @@ const gen = {
 			this.pforms = elements.raws.map(o => {
 				const matches = o.etym.match(/^L\/PEN\/\*[^/]+/g);
 				if (matches)
-					return matches[0].slice(6);
+					return matches[0].slice(7);
 				return '';
 			}).filter(x => x);
 			gen.markov.init(this.pforms, this.data);
