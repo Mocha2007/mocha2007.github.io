@@ -114,13 +114,13 @@ function etymElement(etymString){
 			case 'B': // blend
 				etymElem.innerHTML = 'Blend of ';
 				etymElem.appendChild(linkCard(tokens[1]));
-				etymElem.innerHTML += ' and ';
+				etymElem.appendChild(document.createTextNode(' and '));
 				etymElem.appendChild(linkCard(tokens[2]));
 				break;
 			case 'C': // intralanguage compound
 				etymElem.innerHTML = 'Compound of ';
 				etymElem.appendChild(linkCard(tokens[1]));
-				etymElem.innerHTML += ' and ';
+				etymElem.appendChild(document.createTextNode(' and '));
 				etymElem.appendChild(linkCard(tokens[2]));
 				break;
 			case 'D': // diminutive
