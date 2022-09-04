@@ -132,6 +132,9 @@ function etymElement(etymString){
 				// eslint-disable-next-line max-len
 				etymElem.innerHTML = `From ${etymElement.languages[tokens[1]]} ${tokens[2]} &ldquo;${tokens[3]}&rdquo;`;
 				break;
+			case 'P': // phrase
+				etymElem.innerHTML = '(Phrase)';
+				break;
 			case 'R': // reduplication
 				etymElem.innerHTML = 'Reduplication of ';
 				etymElem.appendChild(linkCard(tokens[1]));

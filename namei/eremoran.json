@@ -1156,6 +1156,14 @@
 		"categories": ["drink"]
 	},
 	{
+		"title": "bôz",
+		"etym": "L/PEN/*bôs/carry",
+		"cat": "v.",
+		"defList": [
+			"(archaic) carry"
+		]
+	},
+	{
 		"title": "bra",
 		"etym": "L/PEN/*bra/eyebrow",
 		"cat": "n., 4th",
@@ -2273,7 +2281,7 @@
 	},
 	{
 		"title": "hoki",
-		"etym": "reduced from hókio, from ho + kiom",
+		"etym": "C/ho/kiom",
 		"cat": "adj.",
 		"defList": [
 			"that (by listener)"
@@ -2439,7 +2447,7 @@
 	},
 	{
 		"title": "iktêr",
-		"etym": "L/PEN/*ikt-êr/girl//from *ikt- ??? + -êr",
+		"etym": "L/PEN/*iktêr/girl",
 		"cat": "n., 1st",
 		"defList": [
 			"(archaic, non-southern) girl (older form of elaôr)"
@@ -3128,7 +3136,7 @@
 	},
 	{
 		"title": "kubôz",
-		"etym": "L/PEN/*ku-bôs/carry//from *ku 'with' + *bôs 'carry'",
+		"etym": "C/ku/bôz",
 		"cat": "v.",
 		"defList": [
 			"carry, bear",
@@ -3137,7 +3145,7 @@
 	},
 	{
 		"title": "kudam",
-		"etym": "-kudz + -am",
+		"etym": "C/kudz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"end",
@@ -3173,6 +3181,13 @@
 			"(<sup>1</sup>) be married"
 		],
 		"notes": "<sup>1</sup> Habitual aspect only"
+	},
+	{
+		"title": "kudz",
+		"etym": "L/PEN/kuds/end",
+		"cat": "v.",
+		"defList": [
+			"(archaic) end"		]
 	},
 	{
 		"title": "kul",
@@ -3494,7 +3509,7 @@
 	},
 	{
 		"title": "maêr",
-		"etym": "*ma + -êr",
+		"etym": "L/PEN/*maêr/mother",
 		"cat": "n., 1st",
 		"defList": [
 			"mother"
@@ -3671,7 +3686,7 @@
 	},
 	{
 		"title": "mekrak",
-		"etym": "Pre-Eremoran <em>mēkara</em>, loaned from Nuzdexax <em>megaraxu</em>, from Važcud <em>meguarakhu</em> \"tingle-worm\"",
+		"etym": "L/PRE/mēkara//loaned from Nuzdexax <em>megaraxu</em>, from Važcud <em>meguarakhu</em> \"tingle-worm\"",
 		"cat": "n., 2nd",
 		"defList": [
 			"a parastitic flatworm used primarily in torture and occasionally medicinally for its behavior-altering effects"
@@ -3827,7 +3842,7 @@
 	},
 	{
 		"title": "morôz",
-		"etym": "r/mor rôz//~\"It was mentioned\"",
+		"etym": "r/mor rôz",
 		"cat": "v. (Evidential; secondhand knowledge)",
 		"defList": [
 			"[Specifies the speaker heard of the event mentioned]"
@@ -4249,8 +4264,16 @@
 		"categories": ["coin"]
 	},
 	{
+		"title": "nuela",
+		"etym": "L/PEN/*nou-ela/hill",
+		"cat": "n., 4th",
+		"defList": [
+			"(archaic) hill"
+		]
+	},
+	{
 		"title": "nul",
-		"etym": "L/PEN/*nou-el/hill//from *nou 'mountain', + *el(a) 'DIM'",
+		"etym": "r/nula",
 		"cat": "n., 4th",
 		"defList": [
 			"hill"
@@ -4363,7 +4386,7 @@
 	},
 	{
 		"title": "ômôrz",
-		"etym": "r/ou mor saurz//~ \"People saw\"",
+		"etym": "r/ou mor saurz",
 		"cat": "v. (Evidential; visual knowledge)",
 		"defList": [
 			"[Specifies the speaker, and others, saw the event mentioned]"
@@ -4513,7 +4536,7 @@
 	},
 	{
 		"title": "purru",
-		"etym": "L/PRE/purru/expensive//negative form of <em>ru</em> 'cheap'",
+		"etym": "L/PRE/purru/expensive",
 		"cat": "adj.",
 		"defList": [
 			"costly, expensive, valuable",
@@ -4544,6 +4567,14 @@
 		"cat": "v.",
 		"defList": [
 			"rise"
+		]
+	},
+	{
+		"title": "rao",
+		"etym": "L/PEN/*rao/meow",
+		"cat": "interj.",
+		"defList": [
+			"meow"
 		]
 	},
 	{
@@ -4600,7 +4631,7 @@
 	},
 	{
 		"title": "razbakum",
-		"etym": "from Pre-Eremoran <em>resepakup</em>, evidently loaned from <a href=\"vazcud.html#lemma-zesepakubu\">Važcud</a> zesepakubu \"tilelaying\", from zese \"tile\" + paku \"lay; lie\". Present form influenced by <em>raz</em> 'paint'.",
+		"etym": "L/PRE/resepakup/pattern//evidently loaned from <a href=\"vazcud.html#lemma-zesepakubu\">Važcud</a> zesepakubu \"tilelaying\", from zese \"tile\" + paku \"lay; lie\". Present form influenced by <em>raz</em> 'paint'.",
 		"cat": "n., 5th",
 		"defList": [
 			"pattern"
@@ -4699,7 +4730,7 @@
 	},
 	{
 		"title": "roraok",
-		"etym": "Reduplicated from Proto-Eremo-Numoran *rao 'meow'",
+		"etym": "R/rao",
 		"cat": "n., 2nd",
 		"defList": [
 			"cat"
@@ -4708,11 +4739,11 @@
 		"categories": ["animal"]
 	},
 	{
-		"title": "roradok",
-		"etym": "Syncopated from <em>roraodok</em>, from Proto-Eremo-Numoran *raoraodox 'kitten', D/*raoraox 'cat'",
+		"title": "roraodok",
+		"etym": "D/roraok",
 		"cat": "n., 2nd",
 		"defList": [
-			"kitten"
+			"(archaic) kitten"
 		],
 		"categories": ["animal"]
 	},
@@ -4726,6 +4757,15 @@
 		]
 	},
 	{
+		"title": "rorodok",
+		"etym": "r/roraodok",
+		"cat": "n., 2nd",
+		"defList": [
+			"kitten"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "rôz",
 		"etym": "C/rôm/-z",
 		"cat": "v.",
@@ -4737,7 +4777,7 @@
 	},
 	{
 		"title": "ruskank",
-		"etym": "Pre-Eremoran <em>rūskan</em>, from Nuzdexax <em>ruthkang</em>, from <a href=\"#Vazcud\">Važcud</a> <em>zothceng</em>",
+		"etym": "L/PRE/rūskan//from Nuzdexax <em>ruthkang</em>, from <a href=\"#Vazcud\">Važcud</a> <em>zothceng</em>",
 		"cat": "n., 2nd",
 		"defList": [
 			"a zothceng, a large, semi-intelligent symbiotic fungus-beehive beast"
@@ -4764,7 +4804,7 @@
 	},
 	{
 		"title": "samarz",
-		"etym": "L/PEN/*siamars/lie//related to asmarz",
+		"etym": "L/PEN/*siamars/lie",
 		"cat": "v.",
 		"defList": [
 			"lie (down)",
@@ -4797,7 +4837,7 @@
 	},
 	{
 		"title": "saurz",
-		"etym": "L/PEN/*si-aurs//from *sim 'brightness' + *aurs 'sense???'",
+		"etym": "L/PEN/*siaurs",
 		"cat": "v.",
 		"defList": [
 			"see",
@@ -4810,7 +4850,7 @@
 	},
 	{
 		"title": "sazam",
-		"etym": "Appears to be Proto-Eremo-Numoran *siu 'bright' + *asa '???' + *-m (Intangible suffix)",
+		"etym": "Appears to be Proto-Eremo-Numoran *sim 'light' + *asa '???' + *-m (Intangible suffix)",
 		"cat": "n., 5th",
 		"defList": [
 			"awe, fear, shock"
@@ -4839,7 +4879,7 @@
 	},
 	{
 		"title": "seba",
-		"etym": "L/PEN/*ʃeβa/flower//poss. related to eba 'bark'",
+		"etym": "L/PEN/*ʃeβa/flower",
 		"cat": "n., 4th",
 		"defList": [
 			"flower"
@@ -4950,7 +4990,7 @@
 	},
 	{
 		"title": "sirez",
-		"etym": "L/PEN/*ʃires//blend of *xere 'fire' + *sis 'shine'",
+		"etym": "L/PEN/*ʃires//blend of *xere 'fire' + *ʃis 'shine'",
 		"cat": "v.",
 		"defList": [
 			"burn (intransitive)"
@@ -5180,7 +5220,7 @@
 	},
 	{
 		"title": "sud",
-		"etym": "Recent blend of -(i)sut \"&apos;s (house)\", and ad \"at\"",
+		"etym": "B/-isu/ad",
 		"cat": "post.",
 		"defList": [
 			"chez; at the house of"
@@ -5390,7 +5430,7 @@
 	},
 	{
 		"title": "taze dô kadôl",
-		"etym": "literally, \"a gem in grass\"",
+		"etym": "P",
 		"cat": "n., 4th, idiom",
 		"defList": [
 			"someone or something that stands out among the crowd in some positive aspect, especially beauty"
@@ -5851,7 +5891,7 @@
 	},
 	{
 		"title": "umôrz",
-		"etym": "r/<i>uou mor saurz</i>//~ \"I saw\"",
+		"etym": "r/uou mor saurz",
 		"cat": "v. (Evidential; visual knowledge)",
 		"defList": [
 			"[Specifies the speaker, but not others, saw the event mentioned]"
@@ -6024,7 +6064,7 @@
 	},
 	{
 		"title": "uzurkum urilm",
-		"etym": "uzurku urilm",
+		"etym": "P",
 		"cat": "phrase",
 		"defList": [
 			"goodnight",
