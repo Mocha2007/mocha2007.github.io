@@ -127,6 +127,14 @@
 		]
 	},
 	{
+		"title": "adafkaz",
+		"etym": "C/ad/afkaz",
+		"cat": "v.",
+		"defList": [
+			"(archaic) come; arrive"
+		]
+	},
+	{
 		"title": "addam",
 		"etym": "C/ad/dam",
 		"cat": "n., 5th; adv.",
@@ -184,7 +192,7 @@
 	},
 	{
 		"title": "afês",
-		"etym": "afêst, converted to 4th class",
+		"etym": "r/afêst",
 		"cat": "n., 4th",
 		"defList": [
 			"penis, dong, cock, dick"
@@ -525,7 +533,7 @@
 	{
 		"title": "arlire",
 		"img": "../img/eremoran/talira.png",
-		"etym": "L/PEN/*ere-lire/deciduous tree'//cf. lilira, talira.",
+		"etym": "C/ereu/lire",
 		"cat": "n., 4th",
 		"defList": [
 			"deciduous tree"
@@ -922,7 +930,7 @@
 	},
 	{
 		"title": "bibiz",
-		"etym": "L/PEN/*bi-bis/eat//reduplicated from *bis 'eat'",
+		"etym": "R/biz",
 		"cat": "v.",
 		"defList": [
 			"(<i>of poisoned food</i>) eat",
@@ -1043,6 +1051,15 @@
 		]
 	},
 	{
+		"title": "biz",
+		"etym": "L/PEN/*bis/eat",
+		"cat": "v.",
+		"defList": [
+			"(archaic) eat, drink"
+		],
+		"categories": ["drink"]
+	},
+	{
 		"title": "bo",
 		"etym": "L/PEN/*bo/with",
 		"cat": "post.",
@@ -1086,7 +1103,7 @@
 	},
 	{
 		"title": "bokusam",
-		"etym": "<em>bo</em> 'with' + Proto-Eremo-Numoran *kusam 'many'",
+		"etym": "C/bo/kusam",
 		"cat": "n., 5th, pron.",
 		"defList": [
 			"a large quantity, many <ul> <li class=\"eremoran\"><ruby class=\"eremoranWord\">mor<rt>MOR</rt></ruby><span> </span><ruby class=\"eremoranWord\">i<rt>I</rt></ruby><span> </span><ruby class=\"eremoranWord\">bokusam<rt>BOKUSAM</rt></ruby></li> <li>There are many people.</li> </ul>",
@@ -1584,7 +1601,7 @@
 	},
 	{
 		"title": "dôkaz",
-		"etym": "Altered form of adafkaz, from ad 'to' + afkaz 'go'",
+		"etym": "r/adafkaz",
 		"cat": "v.",
 		"defList": [
 			"come; arrive"
@@ -1948,7 +1965,7 @@
 	},
 	{
 		"title": "hafaz",
-		"etym": "Verbalized from hafa",
+		"etym": "C/hafa/-z",
 		"cat": "v.",
 		"defList": [
 			"(intransitive) rain"
@@ -3167,14 +3184,6 @@
 		"categories": ["body part"]
 	},
 	{
-		"title": "kumboz",
-		"etym": "Intensive of kumz 'jump'",
-		"cat": "v.",
-		"defList": [
-			"dance"
-		]
-	},
-	{
 		"title": "kumitaz",
 		"etym": "L/PEN/*ku-mitas/with-push",
 		"cat": "v.",
@@ -3199,6 +3208,14 @@
 			"humid"
 		],
 		"categories": ["weather"]
+	},
+	{
+		"title": "kumudoz",
+		"etym": "A/kumz",
+		"cat": "v.",
+		"defList": [
+			"dance"
+		]
 	},
 	{
 		"title": "kumz",
@@ -3249,6 +3266,14 @@
 		"cat": "adj.",
 		"defList": [
 			"west"
+		]
+	},
+	{
+		"title": "kusam",
+		"etym": "L/PEN/*kusa-m/many",
+		"cat": "n., 5th",
+		"defList": [
+			"(archaic) many, much"
 		]
 	},
 	{
@@ -3376,9 +3401,9 @@
 		]
 	},
 	{
-		"title": "lilira",
+		"title": "lilire",
 		"img": "../img/eremoran/talira.png",
-		"etym": "reduplicated from Proto-Eremo-Numoran *lire 'wood'. cf. arlira, talira.",
+		"etym": "R/lire",
 		"cat": "n., 4th",
 		"defList": [
 			"forest, a wood"
@@ -3394,6 +3419,16 @@
 			"(of the sky) clear"
 		],
 		"categories": ["color"]
+	},
+	{
+		"title": "lire",
+		"etym": "L/PEN/*lire/tree; wood",
+		"cat": "n., 4th",
+		"defList": [
+			"(archaic) tree",
+			"(archaic) wood"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "lolz",
@@ -3469,7 +3504,7 @@
 	},
 	{
 		"title": "malbnur",
-		"etym": "loan from a northern language, cf. Poltas",
+		"etym": "L/POL/ma&lstroke;b&oogonek;l",
 		"cat": "n., 1st",
 		"defList": [
 			"villain"
@@ -5219,7 +5254,7 @@
 	{
 		"title": "talire",
 		"img": "../img/eremoran/talira.png",
-		"etym": "L/PEN/*talire/evergreen, from older *taslire, from *tassu 'green' + *lire 'wood'. Related to taze, tasu, tasku. cf. arlira, lilira.",
+		"etym": "L/PEN/*talire/evergreen, from older *taslire, from *tassu 'green' + *lire 'wood'. Related to taze, tasu, tasku. cf. arlire, lilire.",
 		"cat": "n., 4th",
 		"defList": [
 			"(archaic) evergreen, esp. pine",
@@ -5311,7 +5346,7 @@
 	},
 	{
 		"title": "tasu",
-		"etym": "L/PEN/*tassu/green, from *tase 'grass' + *-su '-ish'. Related to talira, taze, and tasku.",
+		"etym": "L/PEN/*tassu/green, from *tase 'grass' + *-su '-ish'. Related to talire, taze, and tasku.",
 		"cat": "adj.",
 		"defList": [
 			"green"
@@ -5320,7 +5355,7 @@
 	},
 	{
 		"title": "taze",
-		"etym": "L/PEN/*tase/grass. Related to talira, tasu, and tasusku.",
+		"etym": "L/PEN/*tase/grass. Related to talire, tasu, and tasusku.",
 		"cat": "n., 4th",
 		"defList": [
 			"grass"

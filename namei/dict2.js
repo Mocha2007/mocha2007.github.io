@@ -153,6 +153,7 @@ function etymElement(etymString){
 }
 etymElement.languages = {
 	PEN: 'Proto-Eremo-Numoran',
+	POL: 'P&oacute;&lstroke;ta&sacute;',
 	PRE: 'Pre-Eremoran',
 	VAZ: 'Va&zcaron;cud',
 };
