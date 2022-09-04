@@ -2,8 +2,8 @@
 	compileLength, compileMeanings, compileMedials, compileNounClass,
 	computeStats, EremoranTooltip, linkCard, numberTool, search,
 	titleCard, wordle */
-/* global charHisto, commaNumber, histo, quotes, random, round,
-	translationChallenges, union */
+/* global charHisto, commaNumber, etymElement, histo, quotes, random,
+	round, translationChallenges, union */
 
 'use strict';
 
@@ -310,6 +310,8 @@ function computeStats(){
 	document.getElementById('chartMeaning').src = chartURL + histo(compileMeanings.data());
 	document.getElementById('chartClass').src = chartURL + histo(compileNounClass.data());
 	document.getElementById('chartSequence').src = chartURL + histo(compileSequences.data(), true, true, false, 25);
+	document.getElementById('chartEtymType').src = chartURL + charHisto(etymElement.stats.type.join(''));
+	document.getElementById('chartEtymSource').src = chartURL + histo(etymElement.stats.source, true, true);
 	// do word histogram
 	const wordData = elements.corpus;
 	// const filteredWordData = wordData.filter(word => wordData)

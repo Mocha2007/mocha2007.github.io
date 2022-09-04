@@ -105,6 +105,7 @@ function etymElement(etymString){
 	etymologies.forEach(etymology => {
 		const tokens = etymology.split('/');
 		const etymElem = document.createElement('span');
+		etymElement.stats.type.push(tokens[0]);
 		switch (tokens[0]){
 			case 'A': // augmentative
 				etymElem.innerHTML = 'Augmentative of ';
@@ -127,6 +128,7 @@ function etymElement(etymString){
 				etymElem.appendChild(linkCard(tokens[1]));
 				break;
 			case 'L': // loanword
+				etymElement.stats.source.push(tokens[1]);
 				// eslint-disable-next-line max-len
 				etymElem.innerHTML = `From ${etymElement.languages[tokens[1]]} ${tokens[2]} &ldquo;${tokens[3]}&rdquo;`;
 				break;
@@ -139,6 +141,8 @@ function etymElement(etymString){
 				etymElem.appendChild(linkCard(tokens[1]));
 				break;
 			default: // custom
+				etymElement.stats.type.pop();
+				etymElement.stats.type.push('?');
 				console.warn(`custom etym format: ${etymology}`);
 				etymElem.innerHTML = etymology;
 		}
@@ -151,6 +155,12 @@ etymElement.languages = {
 	PEN: 'Proto-Eremo-Numoran',
 	PRE: 'Pre-Eremoran',
 	VAZ: 'Va&zcaron;cud',
+};
+etymElement.stats = {
+	/** @type {string[]} */
+	source: [],
+	/** @type {string[]} */
+	type: [],
 };
 // todo: chart of etymology type distribution, and origin distribution
 // todo: link to vazcud words!!!
