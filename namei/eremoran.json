@@ -874,7 +874,7 @@
 		"defList": [
 			"river"
 		],
-		"note": "related to <em>beka</em> 'path' and <em>mu</em> 'water'"
+		"notes": "related to <em>beka</em> 'path' and <em>mu</em> 'water'"
 	},
 	{
 		"title": "berbaz",
@@ -1803,12 +1803,13 @@
 	{
 		"title": "empra",
 		"img": "../img/eremoran/empra.png",
-		"etym": "L/PRE/ēmperā/lemon//evidently loaned from <a href=\"vazcud.html#lemma-imphera\">Važcud</a> imphera \"lemon\", with numerous descendants, being a well-travelled wanderwort.",
+		"etym": "L/PRE/ēmperā/lemon//L/VAZ/imphera/lemon",
 		"cat": "n., 4th",
 		"defList": [
 			"lemon"
 		],
-		"categories": ["plant"]
+		"categories": ["plant"],
+		"notes": "wanderwort"
 	},
 	{
 		"title": "endu",
@@ -2630,7 +2631,7 @@
 	},
 	{
 		"title": "kamit",
-		"etym": "Unknown, possibly related to <em>kumitaz</em> 'push'",
+		"etym": "L/PRE/kami",
 		"cat": "n., 3rd",
 		"defList": [
 			"any drink brewed with hot water except tea (from <em>Camellia sinensis</em>), including herbal teas and coffee"
@@ -3535,7 +3536,7 @@
 	},
 	{
 		"title": "makanalk",
-		"etym": "unknown",
+		"etym": "L/VAZ/makanl/turtle; tortoise",
 		"cat": "n., 2nd",
 		"defList": [
 			"turtle",
@@ -3651,7 +3652,7 @@
 	},
 	{
 		"title": "masturk",
-		"etym": "L/PEN/*ma-stur-x//from *mas 'contain' + *stur '???' + *-x [Animate suffix]",
+		"etym": "L/VAZ/mastur",
 		"cat": "n., 2nd",
 		"defList": [
 			"rabbit"
@@ -3686,7 +3687,7 @@
 	},
 	{
 		"title": "mekrak",
-		"etym": "L/PRE/mēkara//loaned from Nuzdexax <em>megaraxu</em>, from Važcud <em>meguarakhu</em> \"tingle-worm\"",
+		"etym": "L/PRE/mēkara//L/NUZ/megaraxu//L/VAZ/meguarakhu/tingle-worm",
 		"cat": "n., 2nd",
 		"defList": [
 			"a parastitic flatworm used primarily in torture and occasionally medicinally for its behavior-altering effects"
@@ -3820,7 +3821,7 @@
 	{
 		"title": "mor",
 		"img": "../img/eremoran/mor.png",
-		"etym": "L/PEN/*mor/person//from Proto-Muran *mur 'person'",
+		"etym": "L/PEN/*mor/person//L/PMU/*mur/person",
 		"cat": "n., 1st",
 		"defList": [
 			"guy, person",
@@ -4508,7 +4509,7 @@
 	},
 	{
 		"title": "pidzak",
-		"etym": "Old Eremoran <em>pītsa</em> \"sheep\", from Pre-Eremoran pʰīdʒa, evidently loaned from <a href=\"vazcud.html#lemma-phijas\">Važcud</a> phijas.",
+		"etym": "L/PRE/pʰīdʒa//L/VAZ/phijas",
 		"cat": "n., 2nd",
 		"defList": [
 			"sheep"
@@ -4631,12 +4632,12 @@
 	},
 	{
 		"title": "razbakum",
-		"etym": "L/PRE/resepakup/pattern//evidently loaned from <a href=\"vazcud.html#lemma-zesepakubu\">Važcud</a> zesepakubu \"tilelaying\", from zese \"tile\" + paku \"lay; lie\". Present form influenced by <em>raz</em> 'paint'.",
+		"etym": "L/PRE/resepakup/pattern//L/VAZ/zesepakubu/tilelaying",
 		"cat": "n., 5th",
 		"defList": [
 			"pattern"
 		],
-		"notes": "esp. of interior wall painting patterns"
+		"notes": "esp. of interior wall painting patterns; present form influenced by <em>raz</em> 'paint'"
 	},
 	{
 		"title": "redz",
@@ -4777,7 +4778,7 @@
 	},
 	{
 		"title": "ruskank",
-		"etym": "L/PRE/rūskan//from Nuzdexax <em>ruthkang</em>, from <a href=\"#Vazcud\">Važcud</a> <em>zothceng</em>",
+		"etym": "L/PRE/rūskan//L/NUZ/ruthkang/L/VAZ/zothceng",
 		"cat": "n., 2nd",
 		"defList": [
 			"a zothceng, a large, semi-intelligent symbiotic fungus-beehive beast"
@@ -5063,7 +5064,7 @@
 	},
 	{
 		"title": "skuiku",
-		"etym": "L/PEN/*skui-x-u/young//from *skuix 'offspring' + *-u [Adjectival suffix].",
+		"etym": "L/PEN/*skuixu",
 		"cat": "adj.",
 		"defList": [
 			"(colloquial) young"
@@ -5928,7 +5929,7 @@
 	},
 	{
 		"title": "upiam",
-		"etym": "Pre-Eremoran uppayāpa \"rune; glyph; symbol\", evidently loaned from <a href=\"vazcud.html#lemma-pagubu\">Važcud</a> pagubu \"writing\", nominalization of pagu \"write\".",
+		"etym": "L/PRE/uppayāpa/rune; glyph; symbol//L/VAZ/pagubu/writing",
 		"cat": "n., 5th",
 		"defList": [
 			"symbol, character, glyph",

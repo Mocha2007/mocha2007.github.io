@@ -156,7 +156,10 @@ function etymElement(etymString){
 	return e;
 }
 etymElement.languages = {
+	ERE: 'Eremoran',
+	NUZ: 'Nuzdexax',
 	PEN: 'Proto-Eremo-Numoran',
+	PMU: 'Proto-Muran',
 	POL: 'P&oacute;&lstrok;ta&sacute;',
 	PRE: 'Pre-Eremoran',
 	VAZ: 'Va&zcaron;cud',
