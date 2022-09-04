@@ -841,9 +841,9 @@ const gen = {
 		},
 		init(){
 			this.pforms = elements.raws.map(o => {
-				const matches = o.etym.replace(/[;:,.-]/g, '').match(/^ProtoEremoNumoran \*[^ ]+(?= )/g);
+				const matches = o.etym.match(/^L\/PEN\/[^/]+/g);
 				if (matches)
-					return matches[0].slice(19);
+					return matches[0].slice(6);
 				return '';
 			}).filter(x => x);
 			gen.markov.init(this.pforms, this.data);
