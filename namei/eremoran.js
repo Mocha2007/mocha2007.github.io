@@ -645,6 +645,14 @@ const search = {
 	get category(){
 		return document.getElementById('categorySearch').value;
 	},
+	/** @returns {string} */
+	get etymSource(){
+		return document.getElementById('etymologySourceSearch').value;
+	},
+	/** @returns {string} */
+	get etymType(){
+		return document.getElementById('etymologyTypeSearch').value;
+	},
 	input(){
 		this.resetResults();
 		const results = elements.raws.filter(o => {
@@ -656,6 +664,12 @@ const search = {
 				return false;
 			// property match
 			if (this.property !== 'any' && (!o.cat || !o.cat.match(this.property)))
+				return false;
+			// etym source match
+			if (this.etymSource !== 'any' && (!o.etym || !o.etym.match(new RegExp(`^L/${this.etymSource}`))))
+				return false;
+			// etym type match
+			if (this.etymType !== 'any' && (!o.etym || !o.etym.match(new RegExp(`^${this.etymType}/`))))
 				return false;
 			// regex match
 			if (!o.title.match(new RegExp(this.regex)))
