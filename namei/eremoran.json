@@ -4363,7 +4363,7 @@
 	},
 	{
 		"title": "pankuz",
-		"etym": "Pre-Eremoran <em>panku</em> 'happy'",
+		"etym": "L/PRE/panku/happy",
 		"cat": "v.",
 		"defList": [
 			"be happy"
@@ -4371,7 +4371,7 @@
 	},
 	{
 		"title": "param",
-		"etym": "parz + -am",
+		"etym": "C/parz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"chop, cut, slice",
@@ -4380,7 +4380,7 @@
 	},
 	{
 		"title": "parz",
-		"etym": "Pre-Eremoran <em>par</em> 'cut'",
+		"etym": "L/PRE/par/cut",
 		"cat": "v.",
 		"defList": [
 			"chop, cut, slice",
@@ -4390,7 +4390,7 @@
 	},
 	{
 		"title": "pemidak",
-		"etym": "pemik \"snake\" + da \"earth\"",
+		"etym": "C/pemik/da",
 		"cat": "n., 2nd",
 		"defList": [
 			"worm"
@@ -4399,7 +4399,7 @@
 	},
 	{
 		"title": "pemik",
-		"etym": "Pre-Eremoran <em>pemi</em> 'snake'",
+		"etym": "L/PRE/pemi/snake",
 		"cat": "n., 2nd",
 		"defList": [
 			"snake"
@@ -4408,7 +4408,7 @@
 	},
 	{
 		"title": "pemiz",
-		"etym": "pemik 'snake' + -z",
+		"etym": "C/pemik/-z",
 		"cat": "v.",
 		"defList": [
 			"slither, crawl"
@@ -4416,7 +4416,7 @@
 	},
 	{
 		"title": "pi",
-		"etym": "Pre-Eremoran <em>pi</em>",
+		"etym": "L/PRE/pi",
 		"cat": "interjection",
 		"defList": [
 			"onomatopoeia for something sparkly or shiny"
@@ -4452,7 +4452,7 @@
 	},
 	{
 		"title": "purru",
-		"etym": "Pre-Eremoran <em>purru</em> 'expensive', negative form of <em>ru</em> 'cheap'",
+		"etym": "L/PRE/purru/expensive//negative form of <em>ru</em> 'cheap'",
 		"cat": "adj.",
 		"defList": [
 			"costly, expensive, valuable",
@@ -4461,7 +4461,7 @@
 	},
 	{
 		"title": "purrum",
-		"etym": "purru \"costly\" + -m",
+		"etym": "C/purru/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"cost, expense, value",
@@ -4487,7 +4487,7 @@
 	},
 	{
 		"title": "raratiêr",
-		"etym": "raratit 'food' + -êr (agentive)",
+		"etym": "C/raratit/-ê",
 		"cat": "n., 1st",
 		"defList": [
 			"chef, cook"
@@ -4496,7 +4496,7 @@
 	},
 	{
 		"title": "raratit",
-		"etym": "partial reduplication of ratik 'animal'",
+		"etym": "R/ratik",
 		"cat": "n., 3rd",
 		"defList": [
 			"meat (in general, including flesh and fish)",
@@ -4505,7 +4505,7 @@
 	},
 	{
 		"title": "rat",
-		"etym": "raz 'paint' + -t",
+		"etym": "C/raz/-t",
 		"cat": "n., 3rd",
 		"defList": [
 			"paint"
@@ -4557,7 +4557,7 @@
 	},
 	{
 		"title": "reram",
-		"etym": "Nominalization of reraz 'harvest'",
+		"etym": "C/reraz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"harvest",
@@ -4586,7 +4586,7 @@
 	},
 	{
 		"title": "rilm",
-		"etym": "ril + -m",
+		"etym": "C/ril/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"day, sol (in earth time: 28.93 h)",
@@ -4596,7 +4596,7 @@
 	},
 	{
 		"title": "rilu",
-		"etym": "ril + -u",
+		"etym": "C/ril/-u",
 		"cat": "adj.",
 		"defList": [
 			"bright"
@@ -4621,7 +4621,7 @@
 	},
 	{
 		"title": "rôm",
-		"etym": "rô + -m",
+		"etym": "C/rô/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"speech",
@@ -4630,7 +4630,7 @@
 	},
 	{
 		"title": "rômat",
-		"etym": "rôm + -ma + -t",
+		"etym": "C/rôm/ma",
 		"cat": "n., 3rd",
 		"defList": [
 			"dictionary"
@@ -4657,7 +4657,7 @@
 	},
 	{
 		"title": "rôraz",
-		"etym": "rôm + raz",
+		"etym": "C/rôm/raz",
 		"cat": "v.",
 		"defList": [
 			"write",
@@ -4666,7 +4666,7 @@
 	},
 	{
 		"title": "rôz",
-		"etym": "rôm + -z",
+		"etym": "C/rôm/-z",
 		"cat": "v.",
 		"defList": [
 			"speak; talk",
@@ -4685,7 +4685,7 @@
 	},
 	{
 		"title": "salim",
-		"etym": "saliz \"meet\" + -m",
+		"etym": "C/saliz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"finding, discovery",
@@ -4703,7 +4703,7 @@
 	},
 	{
 		"title": "samarz",
-		"etym": "L/PEN/*siamars/lie, related to asmarz",
+		"etym": "L/PEN/*siamars/lie//related to asmarz",
 		"cat": "v.",
 		"defList": [
 			"lie (down)",
@@ -4712,7 +4712,7 @@
 	},
 	{
 		"title": "sarm",
-		"etym": "sart + -m",
+		"etym": "C/sart/-m",
 		"cat": "n., 3rd",
 		"defList": [
 			"unit of area equivalent to 50 square labnim, or about 1.452 m<sup>2</sup>"
@@ -4728,33 +4728,15 @@
 	},
 	{
 		"title": "saurom",
-		"etym": "saurz + -om (rare variant of -am)",
+		"etym": "saurz + -om, a rare variant of -(a)m",
 		"cat": "n., 5th",
 		"defList": [
 			"sight, vision"
 		]
 	},
 	{
-		"title": "sauroma",
-		"img": "../img/eremoran/sauroma.png",
-		"etym": "saurom + -a",
-		"cat": "n., 4th",
-		"defList": [
-			"eye"
-		],
-		"categories": ["body part"]
-	},
-	{
-		"title": "sauromat",
-		"etym": "sauroma + -t",
-		"cat": "n., 3rd",
-		"defList": [
-			"window"
-		]
-	},
-	{
 		"title": "saurz",
-		"etym": "L/PEN/*si-aurs, from *sim 'brightness' + *aurs 'sense???'",
+		"etym": "L/PEN/*si-aurs//from *sim 'brightness' + *aurs 'sense???'",
 		"cat": "v.",
 		"defList": [
 			"see",
@@ -4775,7 +4757,7 @@
 	},
 	{
 		"title": "sazaz",
-		"etym": "sazam + -z",
+		"etym": "C/sazam/-z",
 		"cat": "v.",
 		"defList": [
 			"fear"
@@ -4785,7 +4767,7 @@
 	},
 	{
 		"title": "se",
-		"etym": "L/PEN/*sie/grain; Proto-Eremo-Numoran *ʃe 'other'",
+		"etym": "L/PEN/*sie/grain//L/PEN/*ʃe/other",
 		"cat": "n., 4th",
 		"defList": [
 			"grain",
@@ -4796,7 +4778,7 @@
 	},
 	{
 		"title": "seba",
-		"etym": "L/PEN/*ʃeβa/flower, poss. related to eba 'bark'",
+		"etym": "L/PEN/*ʃeβa/flower//poss. related to eba 'bark'",
 		"cat": "n., 4th",
 		"defList": [
 			"flower"
@@ -4805,7 +4787,7 @@
 	},
 	{
 		"title": "sedam",
-		"etym": "sedat + -m",
+		"etym": "C/sedat/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"unit of area about 3,100 m^2 or 0.76 acres"
@@ -4813,7 +4795,7 @@
 	},
 	{
 		"title": "sedat",
-		"etym": "se 'grain' + da 'earth' + -t",
+		"etym": "C/se/da",
 		"cat": "n., 3rd",
 		"defList": [
 			"farm; (crop)field"
@@ -4866,7 +4848,7 @@
 	},
 	{
 		"title": "sifaz",
-		"etym": "L/PEN/*ʃiɸs \"hit\"",
+		"etym": "L/PEN/*ʃiɸs/hit",
 		"cat": "v.",
 		"defList": [
 			"hit"
@@ -4874,7 +4856,7 @@
 	},
 	{
 		"title": "sim",
-		"etym": "siu + -m",
+		"etym": "C/siu/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"brightness",
@@ -4891,7 +4873,7 @@
 	},
 	{
 		"title": "sipam",
-		"etym": "Pre-Eremoran <em>sipa</em>",
+		"etym": "L/PRE/sipa",
 		"cat": "n., 5th",
 		"defList": [
 			"relationship"
@@ -4899,7 +4881,7 @@
 	},
 	{
 		"title": "sipaz",
-		"etym": "sipam + -z",
+		"etym": "C/sipam/-z",
 		"cat": "v.",
 		"defList": [
 			"relate"
@@ -4907,7 +4889,7 @@
 	},
 	{
 		"title": "sirez",
-		"etym": "L/PEN/*ʃires, blend of *xere 'fire' + *sis 'shine'",
+		"etym": "L/PEN/*ʃires//blend of *xere 'fire' + *sis 'shine'",
 		"cat": "v.",
 		"defList": [
 			"burn (intransitive)"
@@ -4915,7 +4897,7 @@
 	},
 	{
 		"title": "sisi",
-		"etym": "reduplicated from siz 'shine'",
+		"etym": "R/siz",
 		"cat": "n., 4th",
 		"defList": [
 			"star"
@@ -4923,7 +4905,7 @@
 	},
 	{
 		"title": "sisikruêr",
-		"etym": "sisikrum 'astrology' + -êr '(agentive)'",
+		"etym": "C/sisikrum/-ê",
 		"cat": "n., 1st",
 		"defList": [
 			"astrologer",
@@ -4933,7 +4915,7 @@
 	},
 	{
 		"title": "sisikrum",
-		"etym": "sisi 'star' + krum 'study'",
+		"etym": "C/sisi/krum",
 		"cat": "n., 5th",
 		"defList": [
 			"astrology",
@@ -4943,7 +4925,7 @@
 	},
 	{
 		"title": "siu",
-		"etym": "siz + -u",
+		"etym": "C/siz/-u",
 		"cat": "adj.",
 		"defList": [
 			"shining",
@@ -4954,7 +4936,7 @@
 	},
 	{
 		"title": "siz",
-		"etym": "L/PEN/*ʃis/shine, *sis (causative)",
+		"etym": "L/PEN/*ʃis/shine//L/PEN/sis/[causative]",
 		"cat": "v.",
 		"defList": [
 			"shine",
@@ -4980,7 +4962,7 @@
 	},
 	{
 		"title": "skuiku",
-		"etym": "L/PEN/*skuixu/young, from *skuix 'offspring' + *-u [Adjectival suffix].",
+		"etym": "L/PEN/*skui-x-u/young//from *skuix 'offspring' + *-u [Adjectival suffix].",
 		"cat": "adj.",
 		"defList": [
 			"(colloquial) young"
@@ -4999,7 +4981,7 @@
 	},
 	{
 		"title": "som",
-		"etym": "<em>sou</em> 'warm; hot' + -m",
+		"etym": "C/sou/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"warmth, heat"
@@ -5017,7 +4999,7 @@
 	},
 	{
 		"title": "sou",
-		"etym": "L/PEN/*tʃou/hot; Proto-Eremo-Numoran *tʃiou 'right'",
+		"etym": "L/PEN/*tʃou/hot//L/PEN/*tʃiou/right",
 		"cat": "adj.",
 		"defList": [
 			"warm, hot",
@@ -5027,7 +5009,7 @@
 	},
 	{
 		"title": "spart",
-		"etym": "Pre-Eremoran <em>aspar</em>",
+		"etym": "L/PRE/aspar",
 		"cat": "n., 3rd",
 		"defList": [
 			"base, foundation"
@@ -5035,7 +5017,7 @@
 	},
 	{
 		"title": "sparu",
-		"etym": "spart + -u",
+		"etym": "C/spart/-u",
 		"cat": "adj.",
 		"defList": [
 			"basic"
@@ -5043,7 +5025,7 @@
 	},
 	{
 		"title": "sparz",
-		"etym": "spart + -z",
+		"etym": "C/spart/-z",
 		"cat": "v.",
 		"defList": [
 			"base, support",
@@ -5052,7 +5034,7 @@
 	},
 	{
 		"title": "spez",
-		"etym": "Pre-Eremoran <em>aspe</em>",
+		"etym": "L/PRE/aspe",
 		"cat": "v.",
 		"defList": [
 			"(intransitive) change",
@@ -5061,7 +5043,7 @@
 	},
 	{
 		"title": "spem",
-		"etym": "spez + -m",
+		"etym": "C/spez/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"change, version, edition",
@@ -5080,7 +5062,7 @@
 	},
 	{
 		"title": "stanut",
-		"etym": "stanu + -t",
+		"etym": "C/stanu/-t",
 		"cat": "n., 3rd",
 		"defList": [
 			"tin",
@@ -5090,7 +5072,7 @@
 	},
 	{
 		"title": "stum",
-		"etym": "Nominalization of stuz 'sow'",
+		"etym": "C/stuz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"sowing, planting",
@@ -5109,7 +5091,7 @@
 	},
 	{
 		"title": "su",
-		"etym": "L/PEN/*tʃu/of; from'. Related to the suffix -(i)su.",
+		"etym": "L/PEN/*tʃu/of; from//Related to the suffix -(i)su.",
 		"cat": "post.",
 		"defList": [
 			"of; belonging to or made of"
@@ -5117,7 +5099,7 @@
 	},
 	{
 		"title": "subanbanz",
-		"etym": "su + banbanz",
+		"etym": "C/su/banbanz",
 		"cat": "v.",
 		"defList": [
 			"experience"
@@ -5127,7 +5109,7 @@
 	},
 	{
 		"title": "subir",
-		"etym": "L/PEN/*tʃu-βir/warrior, from *su 'of' + *βim 'battle'",
+		"etym": "L/PEN/*tʃu-βi-r/warrior",
 		"cat": "n., 1st",
 		"defList": [
 			"warrior, soldier",
@@ -5145,7 +5127,7 @@
 	},
 	{
 		"title": "sudôz",
-		"etym": "L/PEN/*tʃu-dôs/do; make' from *tʃu 'of; from' + *dôs 'do; make'.",
+		"etym": "L/PEN/*tʃu-dôs/do; make//from *tʃu 'of; from' + *dôs 'do; make'.",
 		"cat": "v.",
 		"defList": [
 			"(<i>inanimate object</i>) do/make",
@@ -5165,7 +5147,7 @@
 	},
 	{
 		"title": "sukaz",
-		"etym": "L/PEN/*tʃu-kas/cut from *tʃu 'of; from' + *kas 'cut'.",
+		"etym": "L/PEN/*tʃu-kas/cut//from *tʃu 'of; from' + *kas 'cut'.",
 		"cat": "v.",
 		"defList": [
 			"cut, split",
@@ -5175,7 +5157,7 @@
 	},
 	{
 		"title": "sukz",
-		"etym": "L/PEN/*siuxs/sew, likely related to <em>suz</em> 'tie'",
+		"etym": "L/PEN/*siuxs/sew//likely related to <em>suz</em> 'tie'",
 		"cat": "v.",
 		"defList": [
 			"sew"
@@ -5192,7 +5174,7 @@
 	},
 	{
 		"title": "sumor",
-		"etym": "su 'of' + mor 'people; folk'",
+		"etym": "C/su/mor",
 		"cat": "n., 1st",
 		"defList": [
 			"tribe",
@@ -5201,8 +5183,26 @@
 		"categories": ["government"]
 	},
 	{
+		"title": "suro",
+		"img": "../img/eremoran/sauroma.png",
+		"etym": "r/saurom",
+		"cat": "n., 4th",
+		"defList": [
+			"eye"
+		],
+		"categories": ["body part"]
+	},
+	{
+		"title": "surot",
+		"etym": "C/suro/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"window"
+		]
+	},
+	{
 		"title": "suz",
-		"etym": "L/PEN/*sius/tie, likely related to <em>sukz</em> 'sew'",
+		"etym": "L/PEN/*sius/tie//likely related to <em>sukz</em> 'sew'",
 		"cat": "v.",
 		"defList": [
 			"tie"
@@ -5230,7 +5230,7 @@
 	},
 	{
 		"title": "talsu",
-		"etym": "Pre-Eremoran <em>talnus</em> 'nine'",
+		"etym": "L/PRE/talnus",
 		"cat": "adj.",
 		"defList": [
 			"nine"
@@ -5275,7 +5275,7 @@
 	},
 	{
 		"title": "tanasêr",
-		"etym": "tanasu 'twelve' + -êr (agentive)",
+		"etym": "C/tanasu/-ê",
 		"cat": "n., 1st",
 		"defList": [
 			"elder"
@@ -5284,7 +5284,7 @@
 	},
 	{
 		"title": "tantan",
-		"etym": "Reduplicated from tan",
+		"etym": "R/tan",
 		"cat": "adv.",
 		"defList": [
 			"eventually"
@@ -5301,7 +5301,7 @@
 	},
 	{
 		"title": "tasku",
-		"etym": "tasu 'green' + skum 'winter'. Related to talira, taze, and tasu.",
+		"etym": "B/tasu/skum",
 		"cat": "n., 4th",
 		"defList": [
 			"pine"
@@ -5311,7 +5311,7 @@
 	},
 	{
 		"title": "tasu",
-		"etym": "L/PEN/*tassu/green, from *tase 'grass' + *-su '-ish'. Related to talira, taze, and tasusku.",
+		"etym": "L/PEN/*tassu/green, from *tase 'grass' + *-su '-ish'. Related to talira, taze, and tasku.",
 		"cat": "adj.",
 		"defList": [
 			"green"
@@ -5346,7 +5346,7 @@
 	},
 	{
 		"title": "tazedor",
-		"etym": "First class of tazedo 'sprout'",
+		"etym": "C/tazedo/-r",
 		"cat": "n., 1st",
 		"defList": [
 			"teen, young adult"
@@ -5364,7 +5364,7 @@
 	},
 	{
 		"title": "tekkat",
-		"etym": "tekka + -t",
+		"etym": "C/tekka/-t",
 		"cat": "n., 3rd",
 		"defList": [
 			"tea (drink)"
@@ -5382,7 +5382,7 @@
 	},
 	{
 		"title": "temêr",
-		"etym": "temz + -êr",
+		"etym": "C/temz/-êr",
 		"cat": "n., 1st",
 		"defList": [
 			"protector",
@@ -5392,7 +5392,7 @@
 	},
 	{
 		"title": "temêmor",
-		"etym": "temêr + mor",
+		"etym": "C/temêr/mor",
 		"cat": "n., 1st",
 		"defList": [
 			"clan, house",
@@ -5402,7 +5402,7 @@
 	},
 	{
 		"title": "temêmom",
-		"etym": "temêmor + -m",
+		"etym": "C/temêmor/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"type, kind, sort"
@@ -5418,7 +5418,7 @@
 	},
 	{
 		"title": "tiasu",
-		"etym": "tia + -(i)su",
+		"etym": "C/tia/-isu",
 		"cat": "adj.",
 		"defList": [
 			"salty"
@@ -5426,7 +5426,7 @@
 	},
 	{
 		"title": "tikam",
-		"etym": "tikt + -(a)m",
+		"etym": "C/tikt/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"precision, accuracy"
@@ -5442,7 +5442,7 @@
 	},
 	{
 		"title": "tiu",
-		"etym": "Pre-Eremoran <em>ti</em>",
+		"etym": "L/PRE/ti",
 		"cat": "adj.",
 		"defList": [
 			"far, distant",
@@ -5478,6 +5478,14 @@
 		]
 	},
 	{
+		"title": "tôn",
+		"etym": "L/PEN/*tôn/almost (adv.)",
+		"cat": "adv.",
+		"defList": [
+			"almost"
+		]
+	},
+	{
 		"title": "tônkad",
 		"etym": "L/PEN/*tônkad/stomach",
 		"cat": "n., 4th",
@@ -5488,7 +5496,7 @@
 	},
 	{
 		"title": "tônu",
-		"etym": "L/PEN/*tôn-u/almost (adj.), from 'almost (adv.)' + *-u",
+		"etym": "C/tôn/-u",
 		"cat": "adj.",
 		"defList": [
 			"almost"
@@ -5496,7 +5504,7 @@
 	},
 	{
 		"title": "tônurilm",
-		"etym": "tôn 'almost' + urilm 'shadow'",
+		"etym": "C/tôn/urilm",
 		"cat": "n., 5th",
 		"defList": [
 			"penumbra"
@@ -5504,7 +5512,7 @@
 	},
 	{
 		"title": "tôsu",
-		"etym": "tô + -(i)su",
+		"etym": "C/tô/-isu",
 		"cat": "adj.",
 		"defList": [
 			"chief, primary, main"
@@ -5544,7 +5552,7 @@
 	},
 	{
 		"title": "tranzu",
-		"etym": "tranz 'hide (transitive)' + -u (adjectivalizer)",
+		"etym": "C/tranz/-u",
 		"cat": "adj.",
 		"defList": [
 			"hidden, secret, private"
@@ -5553,7 +5561,7 @@
 	},
 	{
 		"title": "triksu",
-		"etym": "Pre-Eremoran <em>chiknus</em> 'eight'",
+		"etym": "L/PRE/chiknus",
 		"cat": "adj.",
 		"defList": [
 			"eight"
@@ -5577,7 +5585,7 @@
 	},
 	{
 		"title": "tu",
-		"etym": "L/PEN/*tu ",
+		"etym": "L/PEN/*tu",
 		"cat": "adv.",
 		"defList": [
 			"(negative) not very"
@@ -5595,7 +5603,7 @@
 	},
 	{
 		"title": "tukilk",
-		"etym": "tukil + -k",
+		"etym": "C/tukil/-k",
 		"cat": "n., 2nd",
 		"defList": [
 			"soul",
@@ -5605,7 +5613,7 @@
 	},
 	{
 		"title": "tukilm",
-		"etym": "tukil + -m",
+		"etym": "C/tukil/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"mood; spirit"
@@ -5613,7 +5621,7 @@
 	},
 	{
 		"title": "tukilz",
-		"etym": "Verbalization of tukil 'wind'",
+		"etym": "C/tukil/-z",
 		"cat": "v.",
 		"defList": [
 			"breathe",
@@ -5622,7 +5630,7 @@
 	},
 	{
 		"title": "tukum",
-		"etym": "tukuz + -m",
+		"etym": "C/tukuz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"name"
@@ -5651,7 +5659,7 @@
 	},
 	{
 		"title": "tutum",
-		"etym": "tutut + -m",
+		"etym": "C/tutut/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"upper bound"
@@ -5659,7 +5667,7 @@
 	},
 	{
 		"title": "tutut",
-		"etym": "Reduplicated from tum",
+		"etym": "R/tum",
 		"cat": "n., 3rd",
 		"defList": [
 			"ceiling"
@@ -5667,7 +5675,7 @@
 	},
 	{
 		"title": "tuu",
-		"etym": "tuz 'fry' + -u (adjective suffix)",
+		"etym": "C/tuz/-u",
 		"cat": "adj.",
 		"defList": [
 			"fried"
