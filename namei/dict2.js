@@ -50,10 +50,7 @@ function printDict(){
 		pronElement.classList.add('lemmaPron');
 		entryDiv.appendChild(pronElement);
 		// etym
-		const etymElement = document.createElement('dd');
-		etymElement.classList.add('lemmaEtym');
-		etymElement.innerHTML = 'Etymology: ' + obj.etym;
-		entryDiv.appendChild(etymElement);
+		entryDiv.appendChild(etymElement(obj.etym));
 		// type, eg. noun, verb, ...
 		const typeelement = document.createElement('dd');
 		typeelement.classList.add('lemmaType');
@@ -91,4 +88,12 @@ function printDict(){
 					elements.categories.push(category);
 			});
 	});
+}
+
+/** @param {string} etymString */
+function etymElement(etymString){
+	const e = document.createElement('dd');
+	e.classList.add('lemmaEtym');
+	e.innerHTML = 'Etymology: ' + etymString;
+	return e;
 }
