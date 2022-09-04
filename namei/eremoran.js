@@ -1,6 +1,7 @@
 /* exported adjTool, autoUp, compileDict, compileFinals, compileInitials,
 	compileLength, compileMeanings, compileMedials, compileNounClass,
-	computeStats, EremoranTooltip, numberTool, search, titleCard, wordle */
+	computeStats, EremoranTooltip, linkCard, numberTool, search,
+	titleCard, wordle */
 /* global charHisto, commaNumber, histo, quotes, random, round,
 	translationChallenges, union */
 
@@ -618,6 +619,18 @@ function titleCard(s){
 	EremoranTooltip.setupWord(ereTitle);
 	span.appendChild(ereTitle);
 	return span;
+}
+
+/** @param {string} s */
+function linkCard(s){
+	// hotlink to entry
+	/** @type {HTMLAnchorElement} */
+	const anchor = document.createElement('a');
+	anchor.href = `#lemma-${s}`;
+	anchor.innerHTML = s;
+	anchor.classList.add('eremoran');
+	EremoranTooltip.setupWord(anchor);
+	return anchor;
 }
 
 const search = {
