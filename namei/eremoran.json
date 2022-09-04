@@ -457,11 +457,12 @@
 	{
 		"title": "ardo",
 		"img": "../img/eremoran/ardo.png",
-		"etym": "L/PEN/*xere-do/flame//D/*xere 'fire', from *x 'living; flickering(?)' + *ereu 'red'",
+		"etym": "L/PEN/*xere-do/flame",
 		"cat": "n., 4th",
 		"defList": [
 			"(wild)fire"
-		]
+		],
+		"notes": "further etymology of *xere: *x [animacy particle] + *ere 'red'"
 	},
 	{
 		"title": "ardom",
