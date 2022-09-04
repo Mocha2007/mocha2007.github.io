@@ -2315,6 +2315,14 @@
 		]
 	},
 	{
+		"title": "hou",
+		"etym": "L/PRE/po-/[polite prefix]",
+		"cat": "adj.",
+		"defList": [
+			"(archaic) [polite prefix]"
+		]
+	},
+	{
 		"title": "hoz",
 		"etym": "L/PEN/*ɸos/how",
 		"cat": "adv.",
@@ -4414,7 +4422,7 @@
 	},
 	{
 		"title": "ou",
-		"etym": "Old Eremoran *ɸo- [polite prefix], from Pre-Eremoran *po- [polite prefix]",
+		"etym": "r/hou",
 		"cat": "adj.",
 		"defList": [
 			"[polite prefix]",
