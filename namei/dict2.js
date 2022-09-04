@@ -130,7 +130,9 @@ function etymElement(etymString){
 			case 'L': // loanword
 				etymElement.stats.source.push(tokens[1]);
 				// eslint-disable-next-line max-len
-				etymElem.innerHTML = `From ${etymElement.languages[tokens[1]]} ${tokens[2]} &ldquo;${tokens[3]}&rdquo;`;
+				etymElem.innerHTML = `From ${etymElement.languages[tokens[1]]} ${tokens[2]}`;
+				if (tokens[3])
+					etymElem.innerHTML += ` &ldquo;${tokens[3]}&rdquo;`;
 				break;
 			case 'P': // phrase
 				etymElem.innerHTML = '(Phrase)';
