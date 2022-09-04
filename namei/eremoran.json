@@ -5691,7 +5691,7 @@
 	},
 	{
 		"title": "ube",
-		"etym": "u- + be",
+		"etym": "C/u-/be",
 		"cat": "adv.",
 		"defList": [
 			"nor, neither"
@@ -5699,7 +5699,7 @@
 	},
 	{
 		"title": "udasu",
-		"etym": "u- + dasu",
+		"etym": "C/u-/dasu",
 		"cat": "adj.",
 		"defList": [
 			"slow"
@@ -5707,7 +5707,7 @@
 	},
 	{
 		"title": "udou",
-		"etym": "u- + dou",
+		"etym": "C/u-/dou",
 		"cat": "adj.",
 		"defList": [
 			"big, great, large",
@@ -5720,7 +5720,7 @@
 	},
 	{
 		"title": "uid",
-		"etym": "u- + id",
+		"etym": "C/u-/id",
 		"cat": "adv.",
 		"defList": [
 			"not"
@@ -5728,7 +5728,7 @@
 	},
 	{
 		"title": "uidu",
-		"etym": "u- + idu",
+		"etym": "C/u-/idu",
 		"cat": "adj.",
 		"defList": [
 			"no, none"
@@ -5736,7 +5736,7 @@
 	},
 	{
 		"title": "uku",
-		"etym": "u- + ku",
+		"etym": "C/u-/ku",
 		"cat": "post.",
 		"defList": [
 			"without"
@@ -5753,7 +5753,7 @@
 	},
 	{
 		"title": "ukumu",
-		"etym": "uku + mu",
+		"etym": "C/uku/mu",
 		"cat": "adj.",
 		"defList": [
 			"dry"
@@ -5762,7 +5762,7 @@
 	},
 	{
 		"title": "ukuzesti",
-		"etym": "uku- + zesti",
+		"etym": "C/uku/zesti",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"straight",
@@ -5782,7 +5782,7 @@
 	},
 	{
 		"title": "umonar",
-		"etym": "u- + monar",
+		"etym": "C/u-/monar",
 		"cat": "pron.",
 		"defList": [
 			"nobody"
@@ -5790,7 +5790,7 @@
 	},
 	{
 		"title": "umôrz",
-		"etym": "r/<i>uou mor saurz</i> ~ \"I saw\"",
+		"etym": "r/<i>uou mor saurz</i>//~ \"I saw\"",
 		"cat": "v. (Evidential; visual knowledge)",
 		"defList": [
 			"[Specifies the speaker, but not others, saw the event mentioned]"
@@ -5800,7 +5800,7 @@
 	},
 	{
 		"title": "una",
-		"etym": "u- + nau",
+		"etym": "C/u-/nau",
 		"cat": "pron.",
 		"defList": [
 			"nothing",
@@ -5809,7 +5809,7 @@
 	},
 	{
 		"title": "undu",
-		"etym": "u- + endu",
+		"etym": "C/u-/endu",
 		"cat": "adj.",
 		"defList": [
 			"shallow",
@@ -5819,7 +5819,7 @@
 	},
 	{
 		"title": "uod",
-		"etym": "u- + hod",
+		"etym": "C/u-/hod",
 		"cat": "conj.",
 		"defList": [
 			"unless"
@@ -5837,7 +5837,7 @@
 	},
 	{
 		"title": "upiat",
-		"etym": "upiam + -t",
+		"etym": "C/upiam/-t",
 		"cat": "n., 3rd",
 		"defList": [
 			"flag"
@@ -5853,7 +5853,7 @@
 	},
 	{
 		"title": "urarz",
-		"etym": "ur + arz",
+		"etym": "C/ur/arz",
 		"cat": "v.",
 		"defList": [
 			"[forms gnomic aspect]"
@@ -5861,7 +5861,7 @@
 	},
 	{
 		"title": "urilar",
-		"etym": "urilm 'shadow' + -(a)r",
+		"etym": "C/urilm/-r",
 		"cat": "n., 5th",
 		"defList": [
 			"follower",
@@ -5871,7 +5871,7 @@
 	},
 	{
 		"title": "urildom",
-		"etym": "D/<i>urilm</i>",
+		"etym": "D/urilm",
 		"cat": "n., 5th",
 		"defList": [
 			"solar eclipse"
@@ -5879,7 +5879,7 @@
 	},
 	{
 		"title": "urilm",
-		"etym": "u- + rilm",
+		"etym": "C/u-/rilm",
 		"cat": "n., 5th",
 		"defList": [
 			"darkness",
@@ -5907,7 +5907,7 @@
 	},
 	{
 		"title": "usedu",
-		"etym": "u- + sedu",
+		"etym": "C/u-/sedu",
 		"cat": "adj.",
 		"defList": [
 			"dull (not sharp)",
@@ -5917,7 +5917,7 @@
 	},
 	{
 		"title": "usiu",
-		"etym": "u- + siu",
+		"etym": "C/u-/siu",
 		"cat": "adj.",
 		"defList": [
 			"black",
@@ -5937,7 +5937,7 @@
 	},
 	{
 		"title": "utôzmu",
-		"etym": "u- + tôzmu 'evitable'",
+		"etym": "C/u-/tôzmu",
 		"cat": "adj.",
 		"defList": [
 			"unavoidable, inevitable",
@@ -5955,7 +5955,7 @@
 	},
 	{
 		"title": "uzurku",
-		"etym": "u- + zurku",
+		"etym": "C/u-/zurku",
 		"cat": "adj.",
 		"defList": [
 			"good"
@@ -5981,15 +5981,16 @@
 	},
 	{
 		"title": "zedumu",
-		"etym": "zedu \"lip\" + mu \"water\"",
+		"etym": "C/zedu/mu",
 		"cat": "n., 4th",
 		"defList": [
-			"spit, saliva"
+			"spit, saliva",
+			"drool"
 		]
 	},
 	{
 		"title": "zedumuz",
-		"etym": "zedumu \"saliva\" + -z",
+		"etym": "C/zedumu/-z",
 		"cat": "v.",
 		"defList": [
 			"spit",
@@ -5998,7 +5999,7 @@
 	},
 	{
 		"title": "zestim",
-		"etym": "zesti 'angled' + -m",
+		"etym": "C/zesti/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"angle",
@@ -6024,7 +6025,7 @@
 	},
 	{
 		"title": "zurkrôz",
-		"etym": "zurku 'bad' + rôz 'say'",
+		"etym": "C/zurku/rôz",
 		"cat": "v.",
 		"defList": [
 			"curse",
