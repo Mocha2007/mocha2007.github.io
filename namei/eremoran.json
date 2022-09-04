@@ -1752,7 +1752,7 @@
 	},
 	{
 		"title": "elmnu",
-		"etym": "Pre-Eremoran <em>ēlmenus</em> 'six'",
+		"etym": "L/PRE/ēlmenus/six",
 		"cat": "adj.",
 		"defList": [
 			"six"
@@ -1761,7 +1761,7 @@
 	{
 		"title": "empra",
 		"img": "../img/eremoran/empra.png",
-		"etym": "Pre-Eremoran ēmperā evidently loaned from <a href=\"vazcud.html#lemma-imphera\">Važcud</a> imphera \"lemon\", with numerous descendants, being a well-travelled wanderwort.",
+		"etym": "L/PRE/ēmperā/lemon//evidently loaned from <a href=\"vazcud.html#lemma-imphera\">Važcud</a> imphera \"lemon\", with numerous descendants, being a well-travelled wanderwort.",
 		"cat": "n., 4th",
 		"defList": [
 			"lemon"
@@ -1781,7 +1781,7 @@
 	},
 	{
 		"title": "endum",
-		"etym": "Nominalization of endu 'high'",
+		"etym": "C/endu/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"height, depth, altitude",
@@ -1790,7 +1790,7 @@
 	},
 	{
 		"title": "endur",
-		"etym": "nominalization of <em>endu</em> 'high'",
+		"etym": "C/endu/-r",
 		"cat": "n., 1st",
 		"defList": [
 			"aristocrat",
@@ -1799,7 +1799,7 @@
 	},
 	{
 		"title": "epeêr",
-		"etym": "epet + -êr.",
+		"etym": "C/epet/-ê",
 		"cat": "n., 1st",
 		"defList": [
 			"spearman"
@@ -1808,7 +1808,7 @@
 	},
 	{
 		"title": "epet",
-		"etym": "Pre-Eremoran <em>eppe</em> 'spear'",
+		"etym": "L/PRE/eppe/spear",
 		"cat": "n., 3rd",
 		"defList": [
 			"spear"
@@ -1816,7 +1816,7 @@
 	},
 	{
 		"title": "erekanu",
-		"etym": "ereu 'red' + kanu 'yellow'",
+		"etym": "C/ereu/kanu",
 		"cat": "adj.",
 		"defList": [
 			"orange"
@@ -1837,7 +1837,7 @@
 	},
 	{
 		"title": "eremor",
-		"etym": "ereu 'red' + mor 'people'",
+		"etym": "C/ereu/mor",
 		"cat": "n., 1st",
 		"defList": [
 			"an Eremoran",
@@ -1848,7 +1848,7 @@
 	},
 	{
 		"title": "eremorôm",
-		"etym": "<i>eremor</i> + <i>rôm</i>.",
+		"etym": "C/eremor/rôm",
 		"cat": "n., 5th",
 		"defList": [
 			"the Eremoran language"
@@ -1856,7 +1856,7 @@
 	},
 	{
 		"title": "ereu",
-		"etym": "Adjectivalization of erem 'red'",
+		"etym": "C/erem/-u",
 		"cat": "adj.",
 		"defList": [
 			"red"
@@ -1865,7 +1865,7 @@
 	},
 	{
 		"title": "ereulu",
-		"etym": "ereu 'red' + ulu 'blue'",
+		"etym": "C/ereu/ulu",
 		"cat": "adj.",
 		"defList": [
 			"purple"
@@ -1874,7 +1874,7 @@
 	},
 	{
 		"title": "eto",
-		"etym": "Particlization of etoz 'believe; think'",
+		"etym": "r/etoz",
 		"cat": "adv.",
 		"defList": [
 			"believe; think (opinion evidential)"
@@ -1911,7 +1911,7 @@
 	},
 	{
 		"title": "habinz",
-		"etym": "Verbalization of habin 'finger'",
+		"etym": "C/habin/-z",
 		"cat": "v.",
 		"defList": [
 			"point",
@@ -1922,7 +1922,7 @@
 	},
 	{
 		"title": "habiz",
-		"etym": "L/PEN/*ɸabis/live.",
+		"etym": "L/PEN/*ɸabis/live",
 		"cat": "v.",
 		"defList": [
 			"live (vivere, non habitare, quid est <em>~ dô momtantan</em>)"
@@ -1930,7 +1930,7 @@
 	},
 	{
 		"title": "habu",
-		"etym": "L/PEN/*ɸabɸu/fingernail. Related to <i>habin</i> 'finger'.",
+		"etym": "L/PEN/*ɸabɸu/fingernail//Related to <i>habin</i> 'finger'.",
 		"cat": "n., 4th",
 		"defList": [
 			"fingernail",
@@ -1940,7 +1940,7 @@
 	},
 	{
 		"title": "hafa",
-		"etym": "L/PEN/*ɸexɸex/rain, reduplicated from *ɸex [onomatopoeia for falling rain]",
+		"etym": "L/PEN/*ɸex-ɸex/rain//reduplicated from *ɸex [onomatopoeia for falling rain]",
 		"cat": "n., 4th",
 		"defList": [
 			"rain"
@@ -1956,7 +1956,7 @@
 	},
 	{
 		"title": "hai",
-		"etym": "L/PEN/*sai, Proto-Eremo-Numoran *ɸai '[disappointment particle]'",
+		"etym": "L/PEN/*sai/thick//L/PEN/*ɸai/[disappointment particle]",
 		"cat": "adj., s-triggering, adv.",
 		"defList": [
 			"thick, wide",
@@ -1967,7 +1967,7 @@
 	},
 	{
 		"title": "hakz",
-		"etym": "L/PEN/*ɸaks/help, *sakz 'squeeze'",
+		"etym": "L/PEN/*ɸaks/help//L/PEN/*sakz/squeeze",
 		"cat": "v.",
 		"defList": [
 			"help",
@@ -1976,7 +1976,7 @@
 	},
 	{
 		"title": "hal",
-		"etym": "L/PEN/*ɸal/according to'",
+		"etym": "L/PEN/*ɸal/according to",
 		"cat": "post.",
 		"defList": [
 			"according to, in accordance with"
@@ -1994,7 +1994,7 @@
 	},
 	{
 		"title": "hanbikêr",
-		"etym": "hanu 'five' + bikêm 'two decades'",
+		"etym": "C/hanu/bikêm",
 		"cat": "n., 1st",
 		"defList": [
 			"adult"
@@ -2024,7 +2024,7 @@
 	},
 	{
 		"title": "hanum",
-		"etym": "hanu + -m",
+		"etym": "C/hanu/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"hold, grasp, grip",
@@ -2036,7 +2036,7 @@
 	},
 	{
 		"title": "hanumor",
-		"etym": "hanu 'hand' + mor 'person'",
+		"etym": "C/hanu/mor",
 		"cat": "n., 1st",
 		"defList": [
 			"trusted person",
@@ -2046,7 +2046,7 @@
 	},
 	{
 		"title": "hanuz",
-		"etym": "Verbalization of hanum 'hold",
+		"etym": "C/hanum/-z",
 		"cat": "v.",
 		"defList": [
 			"hold"
@@ -2063,7 +2063,7 @@
 	},
 	{
 		"title": "hek",
-		"etym": "degrammaticalization of <em>hekz</em> 'curse'",
+		"etym": "r/hekz",
 		"cat": "interj.",
 		"defList": [
 			"curses! damn! etc."
@@ -2099,7 +2099,7 @@
 	},
 	{
 		"title": "henlôsu",
-		"etym": "henlôm 'health' + -su",
+		"etym": "C/henlôm/-isu",
 		"cat": "adj.",
 		"defList": [
 			"healthy",
@@ -2109,7 +2109,7 @@
 	},
 	{
 		"title": "henlôsudôêr",
-		"etym": "agentive of henlôsudôz 'heal'",
+		"etym": "C/henlôsudôz/-ê",
 		"cat": "n., 1st",
 		"defList": [
 			"healer, medic, doctor"
@@ -2118,7 +2118,7 @@
 	},
 	{
 		"title": "henlôsudôz",
-		"etym": "causative of henlôsu 'healthy' or henlôm 'health'",
+		"etym": "C/henlôm/sudôz",
 		"cat": "v.",
 		"defList": [
 			"heal"
@@ -2162,7 +2162,7 @@
 	},
 	{
 		"title": "hilsu",
-		"etym": "Adjectivalization of hilsaz",
+		"etym": "C/hilsaz/-u",
 		"cat": "adj.",
 		"defList": [
 			"mixed, blended, hybrid"
@@ -2220,7 +2220,7 @@
 	},
 	{
 		"title": "hô",
-		"etym": "L/PEN/*sô ",
+		"etym": "L/PEN/*sô/rather",
 		"cat": "adv.",
 		"defList": [
 			"rather"
@@ -2229,7 +2229,7 @@
 	},
 	{
 		"title": "hod",
-		"etym": "ho + dô",
+		"etym": "C/ho/dô",
 		"cat": "conj.",
 		"defList": [
 			"if",
@@ -2246,7 +2246,7 @@
 	},
 	{
 		"title": "holk",
-		"etym": "ho + -lk",
+		"etym": "C/ho/-ulk",
 		"cat": "adv.",
 		"defList": [
 			"(informal) yes"
@@ -2263,7 +2263,7 @@
 	},
 	{
 		"title": "hosoz",
-		"etym": "hoz + ho",
+		"etym": "C/hoz/ho",
 		"cat": "adv.",
 		"defList": [
 			"thus, so, in that way",
@@ -2288,7 +2288,7 @@
 	},
 	{
 		"title": "hulbe",
-		"etym": "blend of <em>ulu</em> 'black/blue' and <em>hilbe</em> 'cloud'",
+		"etym": "B/ulu/hilbe",
 		"cat": "n., 4th",
 		"defList": [
 			"smoke"
@@ -2296,7 +2296,7 @@
 	},
 	{
 		"title": "huri",
-		"etym": "L/PEN/*ɸuri ",
+		"etym": "L/PEN/*ɸuri",
 		"cat": "adv.",
 		"defList": [
 			"somewhat"
@@ -2314,7 +2314,7 @@
 	},
 	{
 		"title": "husaurz",
-		"etym": "hut \"bow\" + saurz \"see\"",
+		"etym": "C/hut/saurz",
 		"cat": "v.",
 		"defList": [
 			"hunt"
@@ -2339,7 +2339,7 @@
 	},
 	{
 		"title": "i",
-		"etym": "L/PEN/*i [topic particle]",
+		"etym": "L/PEN/*i/[topic particle]",
 		"cat": "post.",
 		"defList": [
 			"[topic particle]"
@@ -2372,7 +2372,7 @@
 	},
 	{
 		"title": "idisu",
-		"etym": "id + -(i)su",
+		"etym": "C/id/-isu",
 		"cat": "adj.",
 		"defList": [
 			"first"
@@ -2380,7 +2380,7 @@
 	},
 	{
 		"title": "idkaz",
-		"etym": "Blend of idak and afkaz",
+		"etym": "B/idak/afkaz",
 		"cat": "v.",
 		"defList": [
 			"(of birds) fly"
@@ -2388,7 +2388,7 @@
 	},
 	{
 		"title": "idu",
-		"etym": "id + -u",
+		"etym": "C/id/-u",
 		"cat": "adj.",
 		"defList": [
 			"any"
@@ -2396,7 +2396,7 @@
 	},
 	{
 		"title": "idz",
-		"etym": "id + -z",
+		"etym": "C/id/-z",
 		"cat": "v.",
 		"defList": [
 			"be the same thing"
@@ -2404,7 +2404,7 @@
 	},
 	{
 		"title": "iktêr",
-		"etym": "L/PEN/*iktêr/girl, from *ikt- ??? + -êr",
+		"etym": "L/PEN/*ikt-êr/girl//from *ikt- ??? + -êr",
 		"cat": "n., 1st",
 		"defList": [
 			"(archaic, non-southern) girl (older form of elaôr)"
@@ -2421,7 +2421,7 @@
 	},
 	{
 		"title": "imôkam",
-		"etym": "imô 'edge' + kam 'sound'",
+		"etym": "C/imô/kam",
 		"cat": "n., 5th",
 		"defList": [
 			"consonant"
@@ -2456,7 +2456,7 @@
 	},
 	{
 		"title": "irikam",
-		"etym": "Abstractized form of <em>irikar</em>",
+		"etym": "C/irikar/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"hoax"
@@ -2482,7 +2482,7 @@
 	},
 	{
 		"title": "itrôz",
-		"etym": "it + rôz",
+		"etym": "C/it/rôz",
 		"cat": "v.",
 		"defList": [
 			"reply, answer"
