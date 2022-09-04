@@ -12,7 +12,7 @@
 	},
 	{
 		"title": "abask",
-		"etym": "Proto-Eremo-Numoran *aβasx 'duck'",
+		"etym": "L/PEN/*aβasx/duck",
 		"cat": "n., 2nd",
 		"defList": [
 			"duck",
@@ -22,7 +22,7 @@
 	},
 	{
 		"title": "abbak",
-		"etym": "Proto-Eremo-Numoran *aββax 'bee'",
+		"etym": "L/PEN/*aββax/bee",
 		"cat": "n., 2nd",
 		"defList": [
 			"bee"
@@ -31,7 +31,7 @@
 	},
 	{
 		"title": "abbakarm",
-		"etym": "Blend of <i>abbakam</i> \"gains; earnings; winnings\" and <i>karm</i> \"war\"",
+		"etym": "B/abbakam/karm",
 		"cat": "v.",
 		"defList": [
 			"spoils of war"
@@ -39,7 +39,7 @@
 	},
 	{
 		"title": "abbakaz",
-		"etym": "ad 'to' + bakaz 'get'",
+		"etym": "C/ad/bakaz",
 		"cat": "v.",
 		"defList": [
 			"gain (esp. by force)",
@@ -49,7 +49,7 @@
 	},
 	{
 		"title": "abbra",
-		"etym": "ad + bra",
+		"etym": "C/ad/bra",
 		"cat": "n., 4th",
 		"defList": [
 			"forehead"
@@ -58,7 +58,7 @@
 	},
 	{
 		"title": "abelk",
-		"etym": "Proto-Eremo-Numoran *aβe-lk 'otherwise', from *aβe- 'two' plus *-lk",
+		"etym": "L/PEN/*aβe-lk/otherwise",
 		"cat": "adv.",
 		"defList": [
 			"otherwise"
@@ -67,7 +67,7 @@
 	},
 	{
 		"title": "abu",
-		"etym": "Proto-Eremo-Numoran *aβu 'ring'",
+		"etym": "L/PEN/*aβu/ring",
 		"cat": "n., 4th",
 		"defList": [
 			"ring"
@@ -76,7 +76,7 @@
 	},
 	{
 		"title": "abubut",
-		"etym": "reduplicated from <em>abu</em> 'ring'",
+		"etym": "R/abu",
 		"cat": "n., 3rd",
 		"defList": [
 			"wheel"
@@ -84,7 +84,7 @@
 	},
 	{
 		"title": "abubz",
-		"etym": "verbalization of <em>abubut</em> 'wheel'",
+		"etym": "C/abubut/-z",
 		"cat": "v.",
 		"defList": [
 			"turn"
@@ -92,7 +92,7 @@
 	},
 	{
 		"title": "abusu",
-		"etym": "<em>abu</em> 'ring' + <em>-(i)su</em> (adj suffix)",
+		"etym": "C/abu/-isu",
 		"cat": "adj.",
 		"defList": [
 			"round",
@@ -101,7 +101,7 @@
 	},
 	{
 		"title": "abzalk",
-		"etym": "Proto-Eremo-Numoran *abdialx 'eel'",
+		"etym": "L/PEN/*abdialx/eel",
 		"cat": "n., 2nd",
 		"defList": [
 			"eel"
@@ -110,7 +110,7 @@
 	},
 	{
 		"title": "ad",
-		"etym": "Proto-Eremo-Numoran *xêd 'to'",
+		"etym": "L/PEN/*xêd/to",
 		"cat": "post./prep., adv.",
 		"defList": [
 			"(<i>prep.</i>) to, towards (in both the dative and lative senses)",
@@ -128,7 +128,7 @@
 	},
 	{
 		"title": "addam",
-		"etym": "ad + dam",
+		"etym": "C/ad/dam",
 		"cat": "n., 5th; adv.",
 		"defList": [
 			"tomorrow",
@@ -138,7 +138,7 @@
 	},
 	{
 		"title": "addôkaz",
-		"etym": "ad + dôkaz",
+		"etym": "C/ad/dôkaz",
 		"cat": "v.",
 		"defList": [
 			"happen"
@@ -146,7 +146,7 @@
 	},
 	{
 		"title": "adzamarz",
-		"etym": "Proto-Eremo-Numoran *xêd-samars 'relax', from to + lie",
+		"etym": "L/PEN/*xêd-samars/relax",
 		"cat": "v.",
 		"defList": [
 			"(intransitive) relax"
@@ -154,7 +154,7 @@
 	},
 	{
 		"title": "afêkam",
-		"etym": "afêkz + -am",
+		"etym": "C/afêkz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"knowledge",
@@ -163,7 +163,7 @@
 	},
 	{
 		"title": "afêkkrum",
-		"etym": "afêkam 'knowledge' + krum 'study'",
+		"etym": "C/afêkam/krum",
 		"cat": "n., 5th",
 		"defList": [
 			"science",
@@ -172,7 +172,7 @@
 	},
 	{
 		"title": "afêkz",
-		"etym": "Proto-Eremo-Numoran *aɸêks 'know'",
+		"etym": "L/PEN/*aɸêks/know",
 		"cat": "v.",
 		"defList": [
 			"(labile) be known (by) (both savoir and connaitre)",
@@ -193,7 +193,7 @@
 	},
 	{
 		"title": "afêsêr",
-		"etym": "afêst + -êr.",
+		"etym": "C/afêst/-ê",
 		"cat": "n., 1st",
 		"defList": [
 			"shortswordsman"
@@ -202,7 +202,7 @@
 	},
 	{
 		"title": "afêsma",
-		"etym": "afês + mat",
+		"etym": "C/afês/mat",
 		"cat": "n., 4th",
 		"defList": [
 			"vagina"
@@ -211,7 +211,7 @@
 	},
 	{
 		"title": "afêst",
-		"etym": "Proto-Eremo-Numoran *xeɸêʃt 'shortsword'.",
+		"etym": "L/PEN/*xeɸêʃt/shortsword",
 		"cat": "n., 3rd",
 		"defList": [
 			"shortsword"
@@ -219,7 +219,7 @@
 	},
 	{
 		"title": "afêssaur",
-		"etym": "afêst 'shortsword' + saurz 'watch' construed as a 1st class noun",
+		"etym": "C/afêst/saurz",
 		"cat": "n., 1st",
 		"defList": [
 			"watchman, guard, policeman, officer"
@@ -228,7 +228,7 @@
 	},
 	{
 		"title": "afkam",
-		"etym": "Nominalization of afkaz 'go'",
+		"etym": "C/afkaz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"trip; going"
@@ -236,7 +236,7 @@
 	},
 	{
 		"title": "afkaudom",
-		"etym": "Augmentive of afkam 'trip'",
+		"etym": "A/afkam",
 		"cat": "n., 5th",
 		"defList": [
 			"journey"
@@ -244,7 +244,7 @@
 	},
 	{
 		"title": "afkaz",
-		"etym": "Proto-Eremo-Numoran *aɸkas 'go'",
+		"etym": "L/PEN/*aɸkas/go",
 		"cat": "v.",
 		"defList": [
 			"go"
@@ -252,7 +252,7 @@
 	},
 	{
 		"title": "aka",
-		"etym": "Proto-Eremo-Numoran *aka 'wheat'",
+		"etym": "L/PEN/*aka/wheat",
 		"cat": "n., 4th",
 		"defList": [
 			"wheat"
@@ -261,7 +261,7 @@
 	},
 	{
 		"title": "akkraz",
-		"etym": "ad 'to' + kraz 'step'",
+		"etym": "C/ad/kraz",
 		"cat": "v.",
 		"defList": [
 			"approach",
@@ -270,7 +270,7 @@
 	},
 	{
 		"title": "akku",
-		"etym": "ad 'at' + ku 'with'",
+		"etym": "C/ad/ku",
 		"cat": "post.",
 		"defList": [
 			"(dialectal) with, using (instrumental)"
@@ -279,7 +279,7 @@
 	},
 	{
 		"title": "ala",
-		"etym": "Proto-Eremo-Numoran *ala 'oak'",
+		"etym": "L/PEN/*ala/oak",
 		"cat": "n., 4th",
 		"defList": [
 			"oak"
@@ -289,7 +289,7 @@
 	{
 		"title": "alika",
 		"img": "../img/eremoran/alika.png",
-		"etym": "Proto-Eremo-Numoran *alika 'sand'",
+		"etym": "L/PEN/*alika/sand",
 		"cat": "n., 4th",
 		"defList": [
 			"sand",
@@ -299,7 +299,7 @@
 	},
 	{
 		"title": "ammut",
-		"etym": "Proto-Eremo-Numoran *xedmu 'port'",
+		"etym": "L/PEN/*xedmu/port",
 		"cat": "n., 3rd",
 		"defList": [
 			"port; harbor"
@@ -307,7 +307,7 @@
 	},
 	{
 		"title": "amzralam",
-		"etym": "Nominalization of amzralz 'count'",
+		"etym": "C/amzralz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"number, numeral"
@@ -315,7 +315,7 @@
 	},
 	{
 		"title": "amzralz",
-		"etym": "Proto-Eremo-Numoran *amsrals 'count'",
+		"etym": "L/PEN/*amsrals/count",
 		"cat": "v.",
 		"defList": [
 			"count"
@@ -323,7 +323,7 @@
 	},
 	{
 		"title": "andôt",
-		"etym": "Proto-Eremo-Numoran *andôt 'oven'",
+		"etym": "L/PEN/*andôt/oven",
 		"cat": "n., 3rd",
 		"defList": [
 			"oven"
@@ -331,7 +331,7 @@
 	},
 	{
 		"title": "annama",
-		"etym": "ad \"at; by\" + namz \"eat\"",
+		"etym": "C/ad/namz",
 		"cat": "n., 4th",
 		"defList": [
 			"fruit"
@@ -340,23 +340,23 @@
 	},
 	{
 		"title": "annumz",
-		"etym": "Proto-Eremo-Numoran *xênnums 'charge', from *xêd 'to' + *nums 'run'",
+		"etym": "L/PEN/*xêd-nums/charge",
 		"cat": "v.",
 		"defList": [
 			"charge; rush; skirmish"
 		]
 	},
 	{
-		"title": "anôm",
-		"etym": "anoz + -am",
+		"title": "anom",
+		"etym": "C/anoz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"thought; imagination"
 		]
 	},
 	{
-		"title": "anôt",
-		"etym": "anôm + -t",
+		"title": "anot",
+		"etym": "C/anom/-t",
 		"cat": "n., 3rd",
 		"defList": [
 			"painting, picture"
@@ -364,7 +364,7 @@
 	},
 	{
 		"title": "anoz",
-		"etym": "Proto-Eremo-Numoran *anos 'think'",
+		"etym": "L/PEN/*anos/think",
 		"cat": "v.",
 		"defList": [
 			"think; ponder; wonder; imagine"
@@ -373,7 +373,7 @@
 	{
 		"title": "arama",
 		"img": "../img/eremoran/arama.png",
-		"etym": "Proto-Eremo-Numoran *xere-ma 'copper' from *xere 'fire' + *ma 'bearer, holder, container'. Compare Modern Eremoran <i>dare</i> 'gold', <i>ardo</i> 'fire', and <i>mat</i> 'house'.",
+		"etym": "L/PEN/*xere-ma/copper//Compare Modern Eremoran <i>dare</i> 'gold', <i>ardo</i> 'fire', and <i>mat</i> 'house'.",
 		"cat": "n., 4th",
 		"defList": [
 			"native copper",
@@ -384,7 +384,7 @@
 	},
 	{
 		"title": "aramaelat",
-		"etym": "Diminutive of aramat",
+		"etym": "D/aramat",
 		"cat": "n., 3rd",
 		"defList": [
 			"a small copper piece, worth a quarter aramat"
@@ -393,7 +393,7 @@
 	},
 	{
 		"title": "aramaêr",
-		"etym": "arama + -êr",
+		"etym": "C/arama/-ê",
 		"cat": "n., 1st",
 		"defList": [
 			"metalsmith (more specifically, a coppersmith)"
@@ -402,7 +402,7 @@
 	},
 	{
 		"title": "aramaêmat",
-		"etym": "aramaêr \"metalsmith\" + mat \"house\"",
+		"etym": "C/aramaêr/mat",
 		"cat": "n., 2nd",
 		"defList": [
 			"smithy"
@@ -411,7 +411,7 @@
 	},
 	{
 		"title": "aramafir",
-		"etym": "arama 'copper' + hi 'tooth'",
+		"etym": "C/arama/hi",
 		"cat": "n., 1st",
 		"defList": [
 			"military officer"
@@ -420,7 +420,7 @@
 	},
 	{
 		"title": "aramat",
-		"etym": "arama + -t",
+		"etym": "C/arama/-t",
 		"cat": "n., 3rd",
 		"defList": [
 			"copper",
@@ -430,7 +430,7 @@
 	},
 	{
 		"title": "arbaz",
-		"etym": "Proto-Eremo-Numoran *ereβas 'choose'",
+		"etym": "L/PEN/*ereβas/choose",
 		"cat": "v.",
 		"defList": [
 			"choose, select",
@@ -441,7 +441,7 @@
 	{
 		"title": "ardo",
 		"img": "../img/eremoran/ardo.png",
-		"etym": "Proto-Eremo-Numoran *xeredo 'flame', diminutive of *xere 'fire', from *x 'living; flickering(?)' + *ereu 'red'",
+		"etym": "L/PEN/*xere-do/flame//D/*xere 'fire', from *x 'living; flickering(?)' + *ereu 'red'",
 		"cat": "n., 4th",
 		"defList": [
 			"(wild)fire"
@@ -449,7 +449,7 @@
 	},
 	{
 		"title": "ardom",
-		"etym": "ardo + -m",
+		"etym": "C/ardo/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"passion",
@@ -459,7 +459,7 @@
 	{
 		"title": "ardomut",
 		"img": "../img/eremoran/ardomut.png",
-		"etym": "ardo 'fire' + mu 'water' + -t",
+		"etym": "C/ardo/mu",
 		"cat": "n., 3rd",
 		"defList": [
 			"wine"
@@ -468,7 +468,7 @@
 	},
 	{
 		"title": "ardomukaskrut",
-		"etym": "ardomut 'wine' + kaskru 'apple'",
+		"etym": "C/ardomut/kaskru",
 		"cat": "n., 3rd",
 		"defList": [
 			"cider"
@@ -478,7 +478,7 @@
 	{
 		"title": "ardzên",
 		"img": "../img/eremoran/ardzin.png",
-		"etym": "Proto-Eremo-Numoran *xere-diên 'silver' from *xere 'fire' + *diên '???'",
+		"etym": "L/PEN/*xere-diên/silver//from *xere 'fire' + *diên '???'",
 		"cat": "n., 4th",
 		"defList": [
 			"native silver"
@@ -487,7 +487,7 @@
 	},
 	{
 		"title": "ardzênelat",
-		"etym": "Diminutive of ardzênt",
+		"etym": "D/ardzênt",
 		"cat": "n., 3rd",
 		"defList": [
 			"a small silver piece, worth four aramat"
@@ -496,7 +496,7 @@
 	},
 	{
 		"title": "ardzênt",
-		"etym": "ardzên + -t",
+		"etym": "C/ardzên/-t",
 		"cat": "n., 3rd",
 		"defList": [
 			"silver",
@@ -506,7 +506,7 @@
 	},
 	{
 		"title": "ardzênudot",
-		"etym": "Augementive of ardzênt",
+		"etym": "A/ardzênt",
 		"cat": "n., 3rd",
 		"defList": [
 			"a large silver piece, worth four ardzênt"
@@ -515,7 +515,7 @@
 	},
 	{
 		"title": "arêôk",
-		"etym": "Proto-Eremo-Numoran *arêôx",
+		"etym": "L/PEN/*arêôx",
 		"cat": "n., 2nd",
 		"defList": [
 			"cattle; cow"
@@ -525,7 +525,7 @@
 	{
 		"title": "arlire",
 		"img": "../img/eremoran/talira.png",
-		"etym": "Proto-Eremo-Numoran *erelire 'deciduous tree', from *ereu 'red' + *lire 'wood'. cf. lilira, talira.",
+		"etym": "L/PEN/*ere-lire/deciduous tree'//cf. lilira, talira.",
 		"cat": "n., 4th",
 		"defList": [
 			"deciduous tree"
@@ -534,7 +534,7 @@
 	},
 	{
 		"title": "arm",
-		"etym": "Nominalization of arz 'stand'",
+		"etym": "C/arz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"standing; status"
@@ -542,7 +542,7 @@
 	},
 	{
 		"title": "arz",
-		"etym": "Proto-Eremo-Numoran *ars 'stand'",
+		"etym": "L/PEN/*ars/stand",
 		"cat": "v.",
 		"defList": [
 			"stand",
@@ -553,15 +553,23 @@
 	},
 	{
 		"title": "as",
-		"etym": "Reduced from ad-se 'to' + 'other'",
+		"etym": "r/asse",
 		"cat": "adv.",
 		"defList": [
 			"each other (reciporical)"
 		]
 	},
 	{
+		"title": "asse",
+		"etym": "C/ad/se",
+		"cat": "adv.",
+		"defList": [
+			"(archaic) each other (reciporical)"
+		]
+	},
+	{
 		"title": "astedu",
-		"etym": "Proto-Eremo-Numoran *astedu 'beautiful'",
+		"etym": "L/PEN/*astedu/beautiful",
 		"cat": "adj.",
 		"defList": [
 			"(southern, of a non-person) pretty, beautiful",
@@ -571,7 +579,7 @@
 	},
 	{
 		"title": "asuz",
-		"etym": "Proto-Eremo-Numoran *asius 'freeze'",
+		"etym": "L/PEN/*asius/freeze",
 		"cat": "v.",
 		"defList": [
 			"freeze"
@@ -579,7 +587,7 @@
 	},
 	{
 		"title": "attô",
-		"etym": "at + tô",
+		"etym": "C/at/tô",
 		"cat": "n., 4th",
 		"defList": [
 			"face"
@@ -588,7 +596,7 @@
 	},
 	{
 		"title": "attukum",
-		"etym": "ad + tukum",
+		"etym": "C/ad/tukum",
 		"cat": "n., 5th",
 		"defList": [
 			"pronoun"
@@ -597,7 +605,7 @@
 	},
 	{
 		"title": "azmu",
-		"etym": "Proto-Eremo-Numoran *asmu 'forearm'",
+		"etym": "L/PEN/*asmu/forearm",
 		"cat": "n., 4th",
 		"defList": [
 			"forearm"
@@ -607,7 +615,7 @@
 	},
 	{
 		"title": "babzu",
-		"etym": "Proto-Eremo-Numoran *babsu 'four'",
+		"etym": "L/PEN/*babsu/four",
 		"cat": "adj.",
 		"defList": [
 			"four"
@@ -616,7 +624,7 @@
 	{
 		"title": "badmak",
 		"img": "../img/eremoran/bartonk.png",
-		"etym": "Proto-Eremo-Numoran *badmax 'fox'",
+		"etym": "L/PEN/*badmax/fox",
 		"cat": "n., 2nd",
 		"defList": [
 			"fox"
@@ -625,7 +633,7 @@
 	},
 	{
 		"title": "badu",
-		"etym": "Proto-Eremo-Numoran *badu 'smooth'",
+		"etym": "L/PEN/*badu/smooth",
 		"cat": "adj.",
 		"defList": [
 			"smooth"
@@ -633,7 +641,7 @@
 	},
 	{
 		"title": "baim",
-		"etym": "Proto-Eremo-Numoran *βaim 'reason'",
+		"etym": "L/PEN/*βaim/reason",
 		"cat": "n., 5th",
 		"defList": [
 			"reason; excuse"
@@ -641,7 +649,7 @@
 	},
 	{
 		"title": "bakaz",
-		"etym": "Proto-Eremo-Numoran *βakas 'get; receive'",
+		"etym": "L/PEN/*βakas/get; receive'",
 		"cat": "v.",
 		"defList": [
 			"(labile) be understood (by)",
@@ -652,7 +660,7 @@
 	},
 	{
 		"title": "bakoni",
-		"etym": "Proto-Eremo-Numoran *βagoni 'maize'",
+		"etym": "L/PEN/*βagoni/maize",
 		"cat": "n., 4th",
 		"defList": [
 			"maize (corn)"
@@ -661,7 +669,7 @@
 	},
 	{
 		"title": "baliz",
-		"etym": "Proto-Eremo-Numoran *balis 'buy'",
+		"etym": "L/PEN/*balis/buy",
 		"cat": "v.",
 		"defList": [
 			"trade, buy, sell, exchange"
@@ -670,7 +678,7 @@
 	},
 	{
 		"title": "balitz",
-		"etym": "Proto-Eremo-Numoran *balits 'die'",
+		"etym": "L/PEN/*balits/die",
 		"cat": "v.",
 		"defList": [
 			"die",
@@ -682,7 +690,7 @@
 	},
 	{
 		"title": "bamz",
-		"etym": "Proto-Eremo-Numoran *βams 'throw'",
+		"etym": "L/PEN/*βams/throw",
 		"cat": "v.",
 		"defList": [
 			"throw"
@@ -690,7 +698,7 @@
 	},
 	{
 		"title": "ban",
-		"etym": "Proto-Eremo-Numoran *βan",
+		"etym": "L/PEN/*βan",
 		"cat": "adv.",
 		"defList": [
 			"(negative) hardly, barely, not at all, not even"
@@ -699,7 +707,7 @@
 	},
 	{
 		"title": "banbanz",
-		"etym": "reduplcated form of banz",
+		"etym": "R/banz",
 		"cat": "v.",
 		"defList": [
 			"be emotionally moved"
@@ -708,7 +716,7 @@
 	},
 	{
 		"title": "bant",
-		"etym": "Proto-Eremo-Numoran *βankt 'knife'",
+		"etym": "L/PEN/*βankt/knife",
 		"cat": "n., 3rd",
 		"defList": [
 			"knife"
@@ -716,7 +724,7 @@
 	},
 	{
 		"title": "banz",
-		"etym": "Proto-Eremo-Numoran *βans 'feel'",
+		"etym": "L/PEN/*βans/feel",
 		"cat": "v.",
 		"defList": [
 			"feel"
@@ -725,7 +733,7 @@
 	},
 	{
 		"title": "barz",
-		"etym": "Proto-Eremo-Numoran *bars 'bind'",
+		"etym": "L/PEN/*bars/bind",
 		"cat": "v.",
 		"defList": [
 			"bind",
@@ -734,7 +742,7 @@
 	},
 	{
 		"title": "bat",
-		"etym": "Proto-Eremo-Numoran *βat 'rope'",
+		"etym": "L/PEN/*βat/rope",
 		"cat": "n., 3rd",
 		"defList": [
 			"chess",
@@ -745,7 +753,7 @@
 	},
 	{
 		"title": "bata",
-		"etym": "Proto-Eremo-Numoran *βata 'intestines'",
+		"etym": "L/PEN/*βata/intestines",
 		"cat": "n., 4th",
 		"defList": [
 			"intestines, guts"
@@ -754,7 +762,7 @@
 	},
 	{
 		"title": "batlitam",
-		"etym": "blend of bat 'chess; check' + balitam 'death'",
+		"etym": "B/bat/balitam",
 		"cat": "n., 5th",
 		"defList": [
 			"(chess) checkmate"
@@ -763,7 +771,7 @@
 	},
 	{
 		"title": "batu",
-		"etym": "Proto-Eremo-Numoran *batu 'also'",
+		"etym": "L/PEN/*batu/also",
 		"cat": "adv.",
 		"defList": [
 			"also, too"
@@ -771,7 +779,7 @@
 	},
 	{
 		"title": "baz",
-		"etym": "Proto-Eremo-Numoran *βas 'lead'",
+		"etym": "L/PEN/*βas/lead",
 		"cat": "v.",
 		"defList": [
 			"lead"
@@ -780,7 +788,7 @@
 	{
 		"title": "bazêr",
 		"img": "../img/eremoran/wazer.png",
-		"etym": "baz + -êr",
+		"etym": "C/baz/-ê",
 		"cat": "n., 1st",
 		"defList": [
 			"leader, ruler",
@@ -791,7 +799,7 @@
 	},
 	{
 		"title": "be",
-		"etym": "Proto-Eremo-Numoran *βe 'or'",
+		"etym": "L/PEN/*βe/or",
 		"cat": "conj.",
 		"defList": [
 			"or, either",
@@ -801,7 +809,7 @@
 	},
 	{
 		"title": "bebekat",
-		"etym": "Reduplicated from beka 'way'",
+		"etym": "R/beka",
 		"cat": "n., 3rd",
 		"defList": [
 			"road, street"
@@ -809,7 +817,7 @@
 	},
 	{
 		"title": "befôz",
-		"etym": "Proto-Eremo-Numoran *beɸôs 'use'",
+		"etym": "L/PEN/*beɸôs/use",
 		"cat": "v.",
 		"defList": [
 			"use"
@@ -817,7 +825,7 @@
 	},
 	{
 		"title": "beka",
-		"etym": "Proto-Eremo-Numoran *βega 'way'",
+		"etym": "L/PEN/*βega/way",
 		"cat": "n., 4th",
 		"defList": [
 			"way, path"
@@ -825,7 +833,7 @@
 	},
 	{
 		"title": "belaêr",
-		"etym": "Blend of bazêr 'king/queen' and elaêr 'child'",
+		"etym": "B/bazêr/elaêr",
 		"cat": "n., 1st",
 		"defList": [
 			"prince, princess"
@@ -833,7 +841,7 @@
 	},
 	{
 		"title": "bêm",
-		"etym": "Proto-Eremo-Numoran *βêm 'period'",
+		"etym": "L/PEN/*βêm/period",
 		"cat": "n., 5th",
 		"defList": [
 			"period, interval",
@@ -845,7 +853,7 @@
 	},
 	{
 		"title": "bemmu",
-		"etym": "Proto-Eremo-Numoran *βegmu 'river', related to <em>beka</em> 'path' and <em>mu</em> 'water'",
+		"etym": "L/PEN/*βegmu/river//related to <em>beka</em> 'path' and <em>mu</em> 'water'",
 		"cat": "n., 4th",
 		"defList": [
 			"river"
@@ -853,7 +861,7 @@
 	},
 	{
 		"title": "berbaz",
-		"etym": "Proto-Eremo-Numoran *berbas 'leave'",
+		"etym": "L/PEN/*berbas/leave",
 		"cat": "v.",
 		"defList": [
 			"leave (a location)",
@@ -862,7 +870,7 @@
 	},
 	{
 		"title": "betlaêr",
-		"etym": "betlat + -êr.",
+		"etym": "C/betlat/-ê",
 		"cat": "n., 1st",
 		"defList": [
 			"longswordsman"
@@ -871,7 +879,7 @@
 	},
 	{
 		"title": "betlat",
-		"etym": "Proto-Eremo-Numoran *betlext 'sword'.",
+		"etym": "L/PEN/*betlext/sword",
 		"cat": "n., 3rd",
 		"defList": [
 			"longsword"
@@ -879,7 +887,7 @@
 	},
 	{
 		"title": "bêtu",
-		"etym": "Proto-Eremo-Numoran *bêtu 'loyal'.",
+		"etym": "L/PEN/*bêtu/loyal",
 		"cat": "adj.",
 		"defList": [
 			"loyal"
@@ -887,7 +895,7 @@
 	},
 	{
 		"title": "bi",
-		"etym": "Proto-Eremo-Numoran *βi 'leaf'.",
+		"etym": "L/PEN/*βi/leaf",
 		"cat": "n., 4th",
 		"defList": [
 			"leaf"
@@ -896,7 +904,7 @@
 	},
 	{
 		"title": "bibi",
-		"etym": "Proto-Eremo-Numoran *bibi 'breast'.",
+		"etym": "L/PEN/*bibi/breast",
 		"cat": "n., 4th",
 		"defList": [
 			"breast"
@@ -905,7 +913,7 @@
 	},
 	{
 		"title": "bibimat",
-		"etym": "bibiz \"drink\" + mat \"house\"",
+		"etym": "C/bibiz/mat",
 		"cat": "n., 2nd",
 		"defList": [
 			"bar, pub"
@@ -914,7 +922,7 @@
 	},
 	{
 		"title": "bibiz",
-		"etym": "Proto-Eremo-Numoran *bibis 'eat', reduplicated from *bis 'eat'",
+		"etym": "L/PEN/*bi-bis/eat//reduplicated from *bis 'eat'",
 		"cat": "v.",
 		"defList": [
 			"(<i>of poisoned food</i>) eat",
@@ -924,7 +932,7 @@
 	},
 	{
 		"title": "bidzam",
-		"etym": "Loan from Važcud <a href='vazcud.html#lemma-binž'>binž</a> 'small' with 5th class nominalization as *bidʒam",
+		"etym": "L/VAZ/binž",
 		"cat": "n., 5th",
 		"defList": [
 			"euphony, pretty/beautiful sound"
@@ -932,7 +940,7 @@
 	},
 	{
 		"title": "bidzau",
-		"etym": "Adjectivalization of <a href='#lemma-bidzam'>bidzam</a> 'euphony'",
+		"etym": "C/bidzam/-u",
 		"cat": "adj.",
 		"defList": [
 			"euphonic, pretty/beautiful sound"
@@ -940,7 +948,7 @@
 	},
 	{
 		"title": "bikêm",
-		"etym": "Pre-Eremoran <em>apikkei</em>",
+		"etym": "L/PRE/apikkei",
 		"cat": "n., 5th",
 		"defList": [
 			"a period of two decades (in Earth years: 4 yr 1 mo 7 d)"
@@ -949,7 +957,7 @@
 	},
 	{
 		"title": "bikil",
-		"etym": "Proto-Eremo-Numoran *βikil 'feather'",
+		"etym": "L/PEN/*βikil/feather",
 		"cat": "n., 4th",
 		"defList": [
 			"feather"
@@ -958,7 +966,7 @@
 	},
 	{
 		"title": "bikilat",
-		"etym": "bikil + -t",
+		"etym": "C/bikil/-t",
 		"cat": "n., 3rd",
 		"defList": [
 			"pen"
@@ -966,7 +974,7 @@
 	},
 	{
 		"title": "bilu",
-		"etym": "Proto-Eremo-Numoran *βilu 'fat'",
+		"etym": "L/PEN/*βilu/fat",
 		"cat": "n., 4th",
 		"defList": [
 			"fat (substance)"
@@ -976,7 +984,7 @@
 	},
 	{
 		"title": "bim",
-		"etym": "Proto-Eremo-Numoran *βim 'battle'",
+		"etym": "L/PEN/*βim/battle",
 		"cat": "n., 5th",
 		"defList": [
 			"battle",
@@ -986,7 +994,7 @@
 	},
 	{
 		"title": "bima",
-		"etym": "bi 'leaf' + -ma 'plant'",
+		"etym": "C/bi/ma",
 		"cat": "n., 4th",
 		"defList": [
 			"plant"
@@ -995,7 +1003,7 @@
 	},
 	{
 		"title": "bimam",
-		"etym": "bim \"battle\" + mam \"place\"",
+		"etym": "C/bim/mam",
 		"cat": "n., 5th",
 		"defList": [
 			"battleground"
@@ -1003,7 +1011,7 @@
 	},
 	{
 		"title": "bimat",
-		"etym": "bim \"battle\" + mat \"house\"",
+		"etym": "C/bim/mat",
 		"cat": "n., 2nd",
 		"defList": [
 			"brothel"
@@ -1011,7 +1019,7 @@
 	},
 	{
 		"title": "binas",
-		"etym": "Proto-Eremo-Numoran *βinaʃ 'elbow'",
+		"etym": "L/PEN/*βinaʃ/elbow",
 		"cat": "n., 4th",
 		"defList": [
 			"elbow"
@@ -1020,7 +1028,7 @@
 	},
 	{
 		"title": "binom",
-		"etym": "Proto-Eremo-Numoran *biniom 'imagination'",
+		"etym": "L/PEN/*biniom/imagination",
 		"cat": "n., 5th",
 		"defList": [
 			"(archaic, non-southern) imagination"
@@ -1028,7 +1036,7 @@
 	},
 	{
 		"title": "bit",
-		"etym": "bi \"leaf\" + -t",
+		"etym": "C/bi/-t",
 		"cat": "n., 3rd",
 		"defList": [
 			"page"
@@ -1036,7 +1044,7 @@
 	},
 	{
 		"title": "bo",
-		"etym": "Proto-Eremo-Numoran *bo 'with'",
+		"etym": "L/PEN/*bo/with",
 		"cat": "post.",
 		"defList": [
 			"with (instrumental)"
@@ -1045,7 +1053,7 @@
 	},
 	{
 		"title": "bôbôt",
-		"etym": "Reduplicated from bôk 'chicken'",
+		"etym": "R/bôk",
 		"cat": "n., 3rd",
 		"defList": [
 			"chicken (meat)"
@@ -1053,7 +1061,7 @@
 	},
 	{
 		"title": "bodôt",
-		"etym": "Proto-Eremo-Numoran *bo-dô-t 'gift', from *bo 'with' plus *dôs 'do'",
+		"etym": "L/PEN/*bo-dô-t/gift",
 		"cat": "n., 3rd",
 		"defList": [
 			"gift"
@@ -1061,7 +1069,7 @@
 	},
 	{
 		"title": "bôêt",
-		"etym": "Proto-Eremo-Numoran *bô-ê-t 'wagon', from *bôs 'carry' plus agentive",
+		"etym": "L/PEN/*bô-ê-t/wagon",
 		"cat": "n., 3rd",
 		"defList": [
 			"wagon"
@@ -1069,7 +1077,7 @@
 	},
 	{
 		"title": "bôk",
-		"etym": "Proto-Eremo-Numoran *βôx 'chicken'",
+		"etym": "L/PEN/*βôx/chicken",
 		"cat": "n., 2nd",
 		"defList": [
 			"(live) chicken"
@@ -1089,7 +1097,7 @@
 	{
 		"title": "bolent",
 		"img": "../img/eremoran/bolent.png",
-		"etym": "Proto-Eremo-Numoran *βolent 'hammer'",
+		"etym": "L/PEN/*βolent/hammer",
 		"cat": "n., 3rd",
 		"defList": [
 			"hammer"
@@ -1097,7 +1105,7 @@
 	},
 	{
 		"title": "bonz",
-		"etym": "Proto-Eremo-Numoran *bons 'poke'",
+		"etym": "L/PEN/*bons/poke",
 		"cat": "v.",
 		"defList": [
 			"poke",
@@ -1106,7 +1114,7 @@
 	},
 	{
 		"title": "bornakt",
-		"etym": "Proto-Eremo-Numoran *βornaxt 'beer'",
+		"etym": "L/PEN/*βornaxt/beer",
 		"cat": "n., 3rd",
 		"defList": [
 			"beer"
@@ -1115,7 +1123,7 @@
 	},
 	{
 		"title": "bra",
-		"etym": "Proto-Eremo-Numoran *bra 'eyebrow'",
+		"etym": "L/PEN/*bra/eyebrow",
 		"cat": "n., 4th",
 		"defList": [
 			"eyebrow"
@@ -1133,7 +1141,7 @@
 	},
 	{
 		"title": "brekink",
-		"etym": "breka + ink",
+		"etym": "C/breka/ink",
 		"cat": "n., 2nd",
 		"defList": [
 			"sea cow, manatee"
@@ -1142,7 +1150,7 @@
 	},
 	{
 		"title": "bu",
-		"etym": "Proto-Eremo-Numoran *bu 'boom'",
+		"etym": "L/PEN/*bu/boom",
 		"cat": "interjection",
 		"defList": [
 			"boom, bang"
@@ -1150,7 +1158,7 @@
 	},
 	{
 		"title": "bukeba",
-		"etym": "bukt 'clothing' + eba 'skin'",
+		"etym": "C/bukt/eba",
 		"cat": "n., 4th",
 		"defList": [
 			"foreskin"
@@ -1159,7 +1167,7 @@
 	},
 	{
 		"title": "bukt",
-		"etym": "Proto-Eremo-Numoran *bugt 'clothing'",
+		"etym": "L/PEN/*bugt/clothing",
 		"cat": "n., 3rd",
 		"defList": [
 			"clothing"
@@ -1167,7 +1175,7 @@
 	},
 	{
 		"title": "buni",
-		"etym": "Proto-Eremo-Numoran *buni 'countryside'",
+		"etym": "L/PEN/*buni/countryside",
 		"cat": "n., 3rd",
 		"defList": [
 			"(archaic) countryside",
@@ -1176,7 +1184,7 @@
 	},
 	{
 		"title": "busia",
-		"etym": "Pre-Eremoran *apusia 'ass, but'",
+		"etym": "L/PRE/apusia/ass, but",
 		"cat": "n., 4th",
 		"defList": [
 			"ass, butt"
@@ -1185,7 +1193,7 @@
 	},
 	{
 		"title": "busisudôz",
-		"etym": "busia \"ass\" + sudôz \"do\"",
+		"etym": "C/busia/sudôz",
 		"cat": "v.",
 		"defList": [
 			"have anal sex"
@@ -1194,7 +1202,7 @@
 	},
 	{
 		"title": "busk",
-		"etym": "Proto-Eremo-Numoran *busx 'dog'",
+		"etym": "L/PEN/*busx/dog",
 		"cat": "n., 2nd",
 		"defList": [
 			"an owned dog (specifically, one that is not feral or stray)",
@@ -1205,7 +1213,7 @@
 	},
 	{
 		"title": "busmat",
-		"etym": "busk 'dog' + mat 'house'",
+		"etym": "C/busk/mat",
 		"cat": "n., 3rd",
 		"defList": [
 			"doghouse",
@@ -1214,7 +1222,7 @@
 	},
 	{
 		"title": "da",
-		"etym": "Proto-Eremo-Numoran *da 'earth'",
+		"etym": "L/PEN/*da/earth",
 		"img": "../img/eremoran/da.png",
 		"cat": "n., 4th",
 		"defList": [
@@ -1228,7 +1236,7 @@
 	{
 		"title": "dadal",
 		"img": "../img/eremoran/dadal.png",
-		"etym": "Proto-Eremo-Numoran *dadal 'ash', reduplicated from *dalu 'grey'",
+		"etym": "R/dalu",
 		"cat": "n., 4th",
 		"defList": [
 			"ash",
@@ -1239,7 +1247,7 @@
 	{
 		"title": "dadalire",
 		"img": "../img/eremoran/dadalire.png",
-		"etym": "Proto-Eremo-Numoran *dadalire 'potash', from *dadal 'ash' + *lire 'wood'",
+		"etym": "L/PEN/*dada-lire/potash//from *dadal 'ash' + *lire 'wood'",
 		"cat": "n., 4th",
 		"defList": [
 			"potash"
@@ -1247,7 +1255,7 @@
 	},
 	{
 		"title": "dafê",
-		"etym": "Proto-Eremo-Numoran *daɸê 'shoulder'",
+		"etym": "L/PEN/*daɸê/shoulder",
 		"cat": "n., 4th",
 		"defList": [
 			"shoulder"
@@ -1256,7 +1264,7 @@
 	},
 	{
 		"title": "daktarm",
-		"etym": "Proto-Eremo-Numoran *daktarm 'time'",
+		"etym": "L/PEN/*daktarm/time",
 		"cat": "n., 5th",
 		"defList": [
 			"time"
@@ -1266,7 +1274,7 @@
 	{
 		"title": "dalu",
 		"img": "../img/eremoran/dalu.png",
-		"etym": "Proto-Eremo-Numoran *dalu 'grey'",
+		"etym": "L/PEN/*dalu/grey",
 		"cat": "adj.",
 		"defList": [
 			"grey",
@@ -1276,7 +1284,7 @@
 	},
 	{
 		"title": "dam",
-		"etym": "Proto-Eremo-Numoran *dam 'morning'",
+		"etym": "L/PEN/*dam/morning",
 		"cat": "n., 5th",
 		"defList": [
 			"morning"
@@ -1285,7 +1293,7 @@
 	},
 	{
 		"title": "dammam",
-		"etym": "addam 'yesterday/tomorrow' + mo 'before'",
+		"etym": "C/addam/mo",
 		"cat": "n., 5th; adv.",
 		"defList": [
 			"ereyesterday, the day before yesterday, two days ago"
@@ -1294,7 +1302,7 @@
 	},
 	{
 		"title": "damu",
-		"etym": "Proto-Eremo-Numoran *damu 'ford'",
+		"etym": "L/PEN/*damu/ford",
 		"cat": "n., 4th",
 		"defList": [
 			"ford"
@@ -1302,7 +1310,7 @@
 	},
 	{
 		"title": "dan",
-		"etym": "Proto-Eremo-Numoran *dan 'often'",
+		"etym": "L/PEN/*dan/often",
 		"cat": "adv.",
 		"defList": [
 			"often; usually"
@@ -1311,7 +1319,7 @@
 	},
 	{
 		"title": "dantam",
-		"etym": "addam 'yesterday/tomorrow' + tan 'after'",
+		"etym": "C/addam/tan",
 		"cat": "n., 5th; adv.",
 		"defList": [
 			"overmorrow, the day after tomorrow, two days hence"
@@ -1320,7 +1328,7 @@
 	},
 	{
 		"title": "danlikz",
-		"etym": "Proto-Eremo-Numoran *danliks 'suck'",
+		"etym": "L/PEN/*danliks/suck",
 		"cat": "v.",
 		"defList": [
 			"suck"
@@ -1330,7 +1338,7 @@
 	{
 		"title": "danôak",
 		"img": "../img/eremoran/danoak.png",
-		"etym": "Proto-Eremo-Numoran *da-nôax 'bug' from *da 'earth' + *nôax 'louse'",
+		"etym": "L/PEN/*da-nôax/bug//from *da 'earth' + *nôax 'louse'",
 		"cat": "n., 2nd",
 		"defList": [
 			"bug, insect"
@@ -1339,7 +1347,7 @@
 	},
 	{
 		"title": "dare",
-		"etym": "Proto-Eremo-Numoran *da-xere 'gold', from *da 'earth' + *xere 'fire'. Compare arama.",
+		"etym": "L/PEN/*da-xere/gold//from *da 'earth' + *xere 'fire'. Compare arama.",
 		"cat": "n., 4th",
 		"defList": [
 			"gold"
@@ -1348,7 +1356,7 @@
 	},
 	{
 		"title": "daremat",
-		"etym": "dare + -mat",
+		"etym": "C/dare/mat",
 		"cat": "n., 3rd",
 		"defList": [
 			"bank"
@@ -1356,7 +1364,7 @@
 	},
 	{
 		"title": "daret",
-		"etym": "dare + -t",
+		"etym": "C/dare/-t",
 		"cat": "n., 3rd",
 		"defList": [
 			"money (especially gold money)",
@@ -1366,7 +1374,7 @@
 	},
 	{
 		"title": "dareudot",
-		"etym": "Augmentive of daret",
+		"etym": "A/daret",
 		"cat": "n., 3rd",
 		"defList": [
 			"a large gold coin, worth four daret"
@@ -1375,7 +1383,7 @@
 	},
 	{
 		"title": "dasu",
-		"etym": "Proto-Eremo-Numoran *daʃu 'fast' and da-(i)su respectively",
+		"etym": "L/PEN/*daʃu/fast//L/PEN/*da-isu/dirty",
 		"cat": "adj.",
 		"defList": [
 			"fast",
@@ -1385,7 +1393,7 @@
 	},
 	{
 		"title": "defôz",
-		"etym": "Proto-Eremo-Numoran *deɸôs 'be certain'",
+		"etym": "L/PEN/*deɸôs/be certain'",
 		"cat": "v.",
 		"defList": [
 			"[particle assuring the listener of what has been said]"
@@ -1393,7 +1401,7 @@
 	},
 	{
 		"title": "did",
-		"etym": "reduplicated from <i>id</i> 'one'",
+		"etym": "R/id",
 		"cat": "adj.",
 		"defList": [
 			"only"
@@ -1435,7 +1443,7 @@
 	},
 	{
 		"title": "din",
-		"etym": "Proto-Eremo-Numoran *din",
+		"etym": "L/PEN/*din",
 		"cat": "post., adv.",
 		"defList": [
 			"out of",
@@ -1460,7 +1468,7 @@
 	},
 	{
 		"title": "dindôz",
-		"etym": "Proto-Eremo-Numoran *dindôs 'appraise' from *din 'with' + *dôs 'do; make'.",
+		"etym": "L/PEN/*dindôs/appraise from *din 'with' + *dôs 'do; make'.",
 		"cat": "v.",
 		"defList": [
 			"appraise",
@@ -1485,7 +1493,7 @@
 	},
 	{
 		"title": "dinkalz",
-		"etym": "Proto-Eremo-Numoran *dinkals 'ask', from *din 'out of' + *kals 'seek'",
+		"etym": "L/PEN/*dinkals/ask, from *din 'out of' + *kals 'seek'",
 		"cat": "v.",
 		"defList": [
 			"consult, reference",
@@ -1521,7 +1529,7 @@
 	},
 	{
 		"title": "dirak",
-		"etym": "Proto-Eremo-Numoran *dirax 'whale'",
+		"etym": "L/PEN/*dirax/whale",
 		"cat": "n., 2nd",
 		"defList": [
 			"whale"
@@ -1530,7 +1538,7 @@
 	},
 	{
 		"title": "dô",
-		"etym": "Proto-Eremo-Numoran *dô 'in'",
+		"etym": "L/PEN/*dô/in",
 		"cat": "post., adv.",
 		"defList": [
 			"in, inside (of)",
@@ -1542,7 +1550,7 @@
 	},
 	{
 		"title": "dôafkaz",
-		"etym": "Proto-Eremo-Numoran *dôaɸkas 'charge' from *dô 'in' + *aɸkas 'go'",
+		"etym": "L/PEN/*dôaɸkas/charge from *dô 'in' + *aɸkas 'go'",
 		"cat": "v.",
 		"defList": [
 			"enter",
@@ -1551,7 +1559,7 @@
 	},
 	{
 		"title": "doder",
-		"etym": "Proto-Eremo-Numoran *doder 'guest'",
+		"etym": "L/PEN/*doder/guest",
 		"cat": "n., 1st",
 		"defList": [
 			"guest"
@@ -1568,7 +1576,7 @@
 	},
 	{
 		"title": "dôkalz",
-		"etym": "Proto-Eremo-Numoran *dôkals 'ask', from *dô 'in' + *kals 'seek'",
+		"etym": "L/PEN/*dôkals/ask, from *dô 'in' + *kals 'seek'",
 		"cat": "v.",
 		"defList": [
 			"ask"
@@ -1611,7 +1619,7 @@
 	},
 	{
 		"title": "dono",
-		"etym": "Proto-Eremo-Numoran *dono 'knee'",
+		"etym": "L/PEN/*dono/knee",
 		"cat": "n., 4th",
 		"defList": [
 			"knee"
@@ -1620,7 +1628,7 @@
 	},
 	{
 		"title": "dônumz",
-		"etym": "Proto-Eremo-Numoran *dônums 'attack' from *ad 'to' + *nums 'run'",
+		"etym": "L/PEN/*dônums/attack from *ad 'to' + *nums 'run'",
 		"cat": "v.",
 		"defList": [
 			"attack; invade"
@@ -1628,7 +1636,7 @@
 	},
 	{
 		"title": "dorfaz",
-		"etym": "Proto-Eremo-Numoran *dorɸas 'dig'",
+		"etym": "L/PEN/*dorɸas/dig",
 		"cat": "v.",
 		"defList": [
 			"dig",
@@ -1646,7 +1654,7 @@
 	},
 	{
 		"title": "dou",
-		"etym": "Proto-Eremo-Numoran *dou 'few'",
+		"etym": "L/PEN/*dou/few",
 		"cat": "adj.",
 		"defList": [
 			"few",
@@ -1665,7 +1673,7 @@
 	},
 	{
 		"title": "eba",
-		"etym": "Proto-Eremo-Numoran *eβa 'bark; skin; peel'",
+		"etym": "L/PEN/*eβa/bark; skin; peel'",
 		"cat": "n., 4th",
 		"defList": [
 			"bark (of a tree)",
@@ -1677,7 +1685,7 @@
 	{
 		"title": "edzam",
 		"img": "../img/eremoran/edzam.png",
-		"etym": "Proto-Eremo-Numoran *ediam 'part'",
+		"etym": "L/PEN/*ediam/part",
 		"cat": "n., 5th",
 		"defList": [
 			"part",
@@ -1688,7 +1696,7 @@
 	},
 	{
 		"title": "ek",
-		"etym": "Proto-Eremo-Numoran *ek-x 'horse'",
+		"etym": "L/PEN/*ek-x/horse",
 		"cat": "n., 2nd",
 		"defList": [
 			"horse",
@@ -1707,7 +1715,7 @@
 	},
 	{
 		"title": "êkar",
-		"etym": "Proto-Eremo-Numoran *êkar 'man'",
+		"etym": "L/PEN/*êkar/man",
 		"cat": "n., 1st",
 		"defList": [
 			"man",
@@ -1717,7 +1725,7 @@
 	},
 	{
 		"title": "ela",
-		"etym": "Proto-Eremo-Numoran *elas 'little'",
+		"etym": "L/PEN/*elas/little",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"little, small, tiny"
@@ -1762,7 +1770,7 @@
 	},
 	{
 		"title": "endu",
-		"etym": "Proto-Eremo-Numoran *endu 'high'",
+		"etym": "L/PEN/*endu/high",
 		"cat": "adj.",
 		"defList": [
 			"high, up",
@@ -1817,7 +1825,7 @@
 	},
 	{
 		"title": "erem",
-		"etym": "Proto-Eremo-Numoran *ere-m 'red'",
+		"etym": "L/PEN/*ere-m/red",
 		"cat": "n., 5th",
 		"defList": [
 			"redness",
@@ -1875,7 +1883,7 @@
 	},
 	{
 		"title": "etoz",
-		"etym": "Proto-Eremo-Numoran *etos 'believe'",
+		"etym": "L/PEN/*etos/believe",
 		"cat": "v.",
 		"defList": [
 			"(archaic) believe; think"
@@ -1884,7 +1892,7 @@
 	},
 	{
 		"title": "ha",
-		"etym": "Proto-Eremo-Numoran *ɸia 'barley'",
+		"etym": "L/PEN/*ɸia/barley",
 		"cat": "n., 4th",
 		"defList": [
 			"barley"
@@ -1893,7 +1901,7 @@
 	},
 	{
 		"title": "habin",
-		"etym": "Proto-Eremo-Numoran *ɸabin 'finger'. Related to <i>habu</i> 'fingernail'.",
+		"etym": "L/PEN/*ɸabin/finger. Related to <i>habu</i> 'fingernail'.",
 		"cat": "n., 4th",
 		"defList": [
 			"finger",
@@ -1914,7 +1922,7 @@
 	},
 	{
 		"title": "habiz",
-		"etym": "Proto-Eremo-Numoran *ɸabis 'live'.",
+		"etym": "L/PEN/*ɸabis/live.",
 		"cat": "v.",
 		"defList": [
 			"live (vivere, non habitare, quid est <em>~ dô momtantan</em>)"
@@ -1922,7 +1930,7 @@
 	},
 	{
 		"title": "habu",
-		"etym": "Proto-Eremo-Numoran *ɸabɸu 'fingernail'. Related to <i>habin</i> 'finger'.",
+		"etym": "L/PEN/*ɸabɸu/fingernail. Related to <i>habin</i> 'finger'.",
 		"cat": "n., 4th",
 		"defList": [
 			"fingernail",
@@ -1932,7 +1940,7 @@
 	},
 	{
 		"title": "hafa",
-		"etym": "Proto-Eremo-Numoran *ɸexɸex 'rain', reduplicated from *ɸex [onomatopoeia for falling rain]",
+		"etym": "L/PEN/*ɸexɸex/rain, reduplicated from *ɸex [onomatopoeia for falling rain]",
 		"cat": "n., 4th",
 		"defList": [
 			"rain"
@@ -1948,7 +1956,7 @@
 	},
 	{
 		"title": "hai",
-		"etym": "Proto-Eremo-Numoran *sai, Proto-Eremo-Numoran *ɸai '[disappointment particle]'",
+		"etym": "L/PEN/*sai, Proto-Eremo-Numoran *ɸai '[disappointment particle]'",
 		"cat": "adj., s-triggering, adv.",
 		"defList": [
 			"thick, wide",
@@ -1959,7 +1967,7 @@
 	},
 	{
 		"title": "hakz",
-		"etym": "Proto-Eremo-Numoran *ɸaks 'help', *sakz 'squeeze'",
+		"etym": "L/PEN/*ɸaks/help, *sakz 'squeeze'",
 		"cat": "v.",
 		"defList": [
 			"help",
@@ -1968,7 +1976,7 @@
 	},
 	{
 		"title": "hal",
-		"etym": "Proto-Eremo-Numoran *ɸal 'according to'",
+		"etym": "L/PEN/*ɸal/according to'",
 		"cat": "post.",
 		"defList": [
 			"according to, in accordance with"
@@ -1976,7 +1984,7 @@
 	},
 	{
 		"title": "halk",
-		"etym": "Proto-Eremo-Numoran *ɸalks 'heavy'",
+		"etym": "L/PEN/*ɸalks/heavy",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"heavy",
@@ -1995,7 +2003,7 @@
 	},
 	{
 		"title": "hans",
-		"etym": "Proto-Eremo-Numoran *ɸants 'all'",
+		"etym": "L/PEN/*ɸants/all",
 		"cat": "pron., det.",
 		"defList": [
 			"all, every",
@@ -2006,7 +2014,7 @@
 	},
 	{
 		"title": "hanu",
-		"etym": "Proto-Eremo-Numoran *ɸanu 'hand'",
+		"etym": "L/PEN/*ɸanu/hand",
 		"cat": "n., 4th, adj.",
 		"defList": [
 			"hand",
@@ -2046,7 +2054,7 @@
 	},
 	{
 		"title": "hêan",
-		"etym": "Proto-Eremo-Numoran *ɸêan 'chin'",
+		"etym": "L/PEN/*ɸêan/chin",
 		"cat": "n., 4th",
 		"defList": [
 			"chin"
@@ -2063,7 +2071,7 @@
 	},
 	{
 		"title": "hekz",
-		"etym": "Proto-Eremo-Numoran *ɸeks 'curse'",
+		"etym": "L/PEN/*ɸeks/curse",
 		"cat": "v.",
 		"defList": [
 			"(archaic, regional) curse"
@@ -2072,7 +2080,7 @@
 	},
 	{
 		"title": "hema",
-		"etym": "Proto-Eremo-Numoran *ɸema 'rose'",
+		"etym": "L/PEN/*ɸema/rose",
 		"cat": "n., 4th",
 		"defList": [
 			"rose"
@@ -2081,7 +2089,7 @@
 	},
 	{
 		"title": "henlôm",
-		"etym": "Proto-Eremo-Numoran *senlôm 'health'",
+		"etym": "L/PEN/*senlôm/health",
 		"cat": "n., 5th",
 		"defList": [
 			"health",
@@ -2118,7 +2126,7 @@
 	},
 	{
 		"title": "heri",
-		"etym": "Proto-Eremo-Numoran *seri 'palm'",
+		"etym": "L/PEN/*seri/palm",
 		"cat": "n., 4th",
 		"defList": [
 			"palm"
@@ -2127,7 +2135,7 @@
 	},
 	{
 		"title": "hi",
-		"etym": "Proto-Eremo-Numoran *ɸi 'tooth'",
+		"etym": "L/PEN/*ɸi/tooth",
 		"cat": "n., 4th",
 		"defList": [
 			"tooth"
@@ -2136,7 +2144,7 @@
 	},
 	{
 		"title": "hilbe",
-		"etym": "Proto-Eremo-Numoran *ɸilβe 'cloud'",
+		"etym": "L/PEN/*ɸilβe/cloud",
 		"cat": "n., 4th",
 		"defList": [
 			"cloud",
@@ -2146,7 +2154,7 @@
 	},
 	{
 		"title": "hilsaz",
-		"etym": "Proto-Eremo-Numoran *ɸiltsias 'mix'",
+		"etym": "L/PEN/*ɸiltsias/mix",
 		"cat": "v.",
 		"defList": [
 			"mix, blend"
@@ -2162,7 +2170,7 @@
 	},
 	{
 		"title": "himaz",
-		"etym": "Proto-Eremo-Numoran *simas 'swim'",
+		"etym": "L/PEN/*simas/swim",
 		"cat": "v.",
 		"defList": [
 			"swim"
@@ -2170,7 +2178,7 @@
 	},
 	{
 		"title": "himbu",
-		"etym": "Proto-Eremo-Numoran *ɸimbu 'full'",
+		"etym": "L/PEN/*ɸimbu/full",
 		"cat": "adj.",
 		"defList": [
 			"full"
@@ -2178,7 +2186,7 @@
 	},
 	{
 		"title": "hirak",
-		"etym": "Proto-Eremo-Numoran *ɸira-x 'milk'",
+		"etym": "L/PEN/*ɸira-x/milk",
 		"cat": "n., 2nd",
 		"defList": [
 			"milk"
@@ -2187,7 +2195,7 @@
 	},
 	{
 		"title": "hisk",
-		"etym": "Proto-Eremo-Numoran *ɸiʃx 'crow'",
+		"etym": "L/PEN/*ɸiʃx/crow",
 		"cat": "n., 2nd",
 		"defList": [
 			"crow; raven"
@@ -2196,7 +2204,7 @@
 	},
 	{
 		"title": "hiu",
-		"etym": "Proto-Eremo-Numoran *ɸiu 'rotten'",
+		"etym": "L/PEN/*ɸiu/rotten",
 		"cat": "adj.",
 		"defList": [
 			"rotten"
@@ -2204,7 +2212,7 @@
 	},
 	{
 		"title": "ho",
-		"etym": "Proto-Eremo-Numoran *so 'that'",
+		"etym": "L/PEN/*so/that",
 		"cat": "adj.",
 		"defList": [
 			"that, those (away from speaker and listener)"
@@ -2212,7 +2220,7 @@
 	},
 	{
 		"title": "hô",
-		"etym": "Proto-Eremo-Numoran *sô ",
+		"etym": "L/PEN/*sô ",
 		"cat": "adv.",
 		"defList": [
 			"rather"
@@ -2246,7 +2254,7 @@
 	},
 	{
 		"title": "hona",
-		"etym": "Proto-Eremo-Numoran *ɸona 'indeed'",
+		"etym": "L/PEN/*ɸona/indeed",
 		"cat": "adv.",
 		"defList": [
 			"indeed",
@@ -2264,7 +2272,7 @@
 	},
 	{
 		"title": "hoz",
-		"etym": "Proto-Eremo-Numoran *ɸos 'how'",
+		"etym": "L/PEN/*ɸos/how",
 		"cat": "adv.",
 		"defList": [
 			"how"
@@ -2272,7 +2280,7 @@
 	},
 	{
 		"title": "huku",
-		"etym": "Proto-Eremo-Numoran *ɸugu 'south'",
+		"etym": "L/PEN/*ɸugu/south",
 		"cat": "adj.",
 		"defList": [
 			"south"
@@ -2288,7 +2296,7 @@
 	},
 	{
 		"title": "huri",
-		"etym": "Proto-Eremo-Numoran *ɸuri ",
+		"etym": "L/PEN/*ɸuri ",
 		"cat": "adv.",
 		"defList": [
 			"somewhat"
@@ -2297,7 +2305,7 @@
 	},
 	{
 		"title": "hus",
-		"etym": "Proto-Eremo-Numoran *sɸuʃ 'tail'",
+		"etym": "L/PEN/*sɸuʃ/tail",
 		"cat": "n., 4th",
 		"defList": [
 			"tail"
@@ -2314,7 +2322,7 @@
 	},
 	{
 		"title": "hut",
-		"etym": "Proto-Eremo-Numoran *ɸut",
+		"etym": "L/PEN/*ɸut",
 		"cat": "n., 3rd",
 		"defList": [
 			"bow"
@@ -2322,7 +2330,7 @@
 	},
 	{
 		"title": "hutaz",
-		"etym": "Proto-Eremo-Numoran *ɸutas 'blow'",
+		"etym": "L/PEN/*ɸutas/blow",
 		"cat": "v.",
 		"defList": [
 			"blow (of the mouth)"
@@ -2331,7 +2339,7 @@
 	},
 	{
 		"title": "i",
-		"etym": "Proto-Eremo-Numoran *i [topic particle]",
+		"etym": "L/PEN/*i [topic particle]",
 		"cat": "post.",
 		"defList": [
 			"[topic particle]"
@@ -2340,7 +2348,7 @@
 	},
 	{
 		"title": "id",
-		"etym": "Proto-Eremo-Numoran *id 'one'",
+		"etym": "L/PEN/*id/one",
 		"cat": "adj.",
 		"defList": [
 			"one",
@@ -2354,7 +2362,7 @@
 	},
 	{
 		"title": "idak",
-		"etym": "Proto-Eremo-Numoran *oidax 'bird'",
+		"etym": "L/PEN/*oidax/bird",
 		"cat": "n., 2nd",
 		"defList": [
 			"bird",
@@ -2396,7 +2404,7 @@
 	},
 	{
 		"title": "iktêr",
-		"etym": "Proto-Eremo-Numoran *iktêr 'girl', from *ikt- ??? + -êr",
+		"etym": "L/PEN/*iktêr/girl, from *ikt- ??? + -êr",
 		"cat": "n., 1st",
 		"defList": [
 			"(archaic, non-southern) girl (older form of elaôr)"
@@ -2405,7 +2413,7 @@
 	},
 	{
 		"title": "imô",
-		"etym": "Proto-Eremo-Numoran *imô 'edge'",
+		"etym": "L/PEN/*imô/edge",
 		"cat": "n., 4th",
 		"defList": [
 			"edge"
@@ -2421,7 +2429,7 @@
 	},
 	{
 		"title": "indôn",
-		"etym": "Proto-Eremo-Numoran *indôn 'potato'",
+		"etym": "L/PEN/*indôn/potato",
 		"cat": "n., 4th",
 		"defList": [
 			"potato"
@@ -2430,7 +2438,7 @@
 	},
 	{
 		"title": "ink",
-		"etym": "Proto-Eremo-Numoran *inx 'cow'",
+		"etym": "L/PEN/*inx/cow",
 		"cat": "n., 2nd",
 		"defList": [
 			"cow"
@@ -2439,7 +2447,7 @@
 	},
 	{
 		"title": "irerz",
-		"etym": "Proto-Eremo-Numoran *irers 'boil'",
+		"etym": "L/PEN/*irers/boil",
 		"cat": "v.",
 		"defList": [
 			"cook food/drink by boiling"
@@ -2465,7 +2473,7 @@
 	},
 	{
 		"title": "it",
-		"etym": "Proto-Eremo-Numoran *it 'rather than'",
+		"etym": "L/PEN/*it/rather than'",
 		"cat": "post.",
 		"defList": [
 			"instead"
@@ -2482,7 +2490,7 @@
 	},
 	{
 		"title": "iu",
-		"etym": "Proto-Eremo-Numoran *iiu 'reverse'",
+		"etym": "L/PEN/*iiu/reverse",
 		"cat": "adj.",
 		"defList": [
 			"reverse"
@@ -2490,7 +2498,7 @@
 	},
 	{
 		"title": "kabako",
-		"etym": "Proto-Eremo-Numoran *kabaxo 'rye'",
+		"etym": "L/PEN/*kabaxo/rye",
 		"cat": "n., 4th",
 		"defList": [
 			"rye"
@@ -2499,7 +2507,7 @@
 	},
 	{
 		"title": "kadôl",
-		"etym": "Proto-Eremo-Numoran *kadôl 'gem'",
+		"etym": "L/PEN/*kadôl/gem",
 		"cat": "n., 4th",
 		"defList": [
 			"gem"
@@ -2507,7 +2515,7 @@
 	},
 	{
 		"title": "kadu",
-		"etym": "Proto-Eremo-Numoran *kadu 'hard'",
+		"etym": "L/PEN/*kadu/hard",
 		"cat": "adj.",
 		"defList": [
 			"hard"
@@ -2515,7 +2523,7 @@
 	},
 	{
 		"title": "kaflam",
-		"etym": "Proto-Eremo-Numoran *kaɸlam 'victory'",
+		"etym": "L/PEN/*kaɸlam/victory",
 		"cat": "n., 5th",
 		"defList": [
 			"victory"
@@ -2523,7 +2531,7 @@
 	},
 	{
 		"title": "kakrem",
-		"etym": "Proto-Eremo-Numoran *kagrem 'tone', related somehow to kam 'sound'",
+		"etym": "L/PEN/*kagrem/tone, related somehow to kam 'sound'",
 		"cat": "n., 5th",
 		"defList": [
 			"music",
@@ -2550,7 +2558,7 @@
 	},
 	{
 		"title": "kaldoz",
-		"etym": "diminutive of <i>kalz</i>",
+		"etym": "D/<i>kalz</i>",
 		"cat": "v.",
 		"defList": [
 			"seek; search for",
@@ -2562,7 +2570,7 @@
 	},
 	{
 		"title": "kalz",
-		"etym": "Proto-Eremo-Numoran *kals 'ask'",
+		"etym": "L/PEN/*kals/ask",
 		"cat": "v.",
 		"defList": [
 			"need"
@@ -2571,7 +2579,7 @@
 	},
 	{
 		"title": "kam",
-		"etym": "Proto-Eremo-Numoran *kam 'sound'",
+		"etym": "L/PEN/*kam/sound",
 		"cat": "n., 5th",
 		"defList": [
 			"sound"
@@ -2588,7 +2596,7 @@
 	},
 	{
 		"title": "kamu",
-		"etym": "Proto-Eremo-Numoran *xamu 'left'. Related to <em>kamurz</em> 'forbid'",
+		"etym": "L/PEN/*xamu/left. Related to <em>kamurz</em> 'forbid'",
 		"cat": "adj.",
 		"defList": [
 			"left (not right)"
@@ -2596,7 +2604,7 @@
 	},
 	{
 		"title": "kamurz",
-		"etym": "Proto-Eremo-Numoran *xamurs 'forbid'. Related to <em>kamu</em> 'left'",
+		"etym": "L/PEN/*xamurs/forbid. Related to <em>kamu</em> 'left'",
 		"cat": "v.",
 		"defList": [
 			"forbid; prohibit"
@@ -2604,7 +2612,7 @@
 	},
 	{
 		"title": "kanat",
-		"etym": "Proto-Eremo-Numoran *kanat 'chain'",
+		"etym": "L/PEN/*kanat/chain",
 		"cat": "n., 2nd",
 		"defList": [
 			"chain, link"
@@ -2612,7 +2620,7 @@
 	},
 	{
 		"title": "kanu",
-		"etym": "Proto-Eremo-Numoran *ganu 'yellow'",
+		"etym": "L/PEN/*ganu/yellow",
 		"cat": "adj.",
 		"defList": [
 			"yellow"
@@ -2621,7 +2629,7 @@
 	},
 	{
 		"title": "karm",
-		"etym": "Proto-Eremo-Numoran *xarm 'war'",
+		"etym": "L/PEN/*xarm/war",
 		"cat": "n., 5th",
 		"defList": [
 			"war"
@@ -2630,7 +2638,7 @@
 	{
 		"title": "kaskru",
 		"img": "../img/eremoran/kaskru.png",
-		"etym": "Proto-Eremo-Numoran *xaʃxru 'apple'",
+		"etym": "L/PEN/*xaʃxru/apple",
 		"cat": "n., 4th",
 		"defList": [
 			"apple"
@@ -2660,7 +2668,7 @@
 	},
 	{
 		"title": "kasraz",
-		"etym": "Proto-Eremo-Numoran *kaʃras 'maybe'",
+		"etym": "L/PEN/*kaʃras/maybe",
 		"cat": "v.",
 		"defList": [
 			"maybe"
@@ -2669,7 +2677,7 @@
 	{
 		"title": "kasu",
 		"img": "../img/eremoran/ksu.png",
-		"etym": "Proto-Eremo-Numoran *xaʃu 'lung'",
+		"etym": "L/PEN/*xaʃu/lung",
 		"cat": "n., 4th",
 		"defList": [
 			"lung"
@@ -2679,7 +2687,7 @@
 	},
 	{
 		"title": "kek",
-		"etym": "Proto-Eremo-Numoran *kek-x 'god'",
+		"etym": "L/PEN/*kek-x/god",
 		"cat": "n., 2nd",
 		"defList": [
 			"god"
@@ -2697,7 +2705,7 @@
 	},
 	{
 		"title": "keu",
-		"etym": "Proto-Eremo-Numoran *akeu 'east'",
+		"etym": "L/PEN/*akeu/east",
 		"cat": "adj.",
 		"defList": [
 			"east"
@@ -2705,7 +2713,7 @@
 	},
 	{
 		"title": "ki",
-		"etym": "Proto-Eremo-Numoran *ki 'foot'.",
+		"etym": "L/PEN/*ki/foot.",
 		"cat": "n., 4th",
 		"defList": [
 			"foot",
@@ -2715,7 +2723,7 @@
 	},
 	{
 		"title": "kidôu",
-		"etym": "Proto-Eremo-Numoran *kidôu 'counterclockwise'",
+		"etym": "L/PEN/*kidôu/counterclockwise",
 		"cat": "adj.",
 		"defList": [
 			"counterclockwise"
@@ -2750,7 +2758,7 @@
 	},
 	{
 		"title": "kili",
-		"etym": "Proto-Eremo-Numoran *akili 'heel'",
+		"etym": "L/PEN/*akili/heel",
 		"cat": "n., 4th",
 		"defList": [
 			"heel"
@@ -2759,7 +2767,7 @@
 	},
 	{
 		"title": "kim",
-		"etym": "Proto-Eremo-Numoran *kim 'place'",
+		"etym": "L/PEN/*kim/place",
 		"cat": "n., 5th",
 		"defList": [
 			"place, location"
@@ -2776,7 +2784,7 @@
 	{
 		"title": "kinê",
 		"img": "../img/eremoran/kine.png",
-		"etym": "Proto-Eremo-Numoran *kinê 'reed'",
+		"etym": "L/PEN/*kinê/reed",
 		"cat": "n., 4th",
 		"defList": [
 			"reed",
@@ -2786,7 +2794,7 @@
 	},
 	{
 		"title": "kink",
-		"etym": "Proto-Eremo-Numoran *kinx 'weasel'",
+		"etym": "L/PEN/*kinx/weasel",
 		"cat": "n., 2nd",
 		"defList": [
 			"weasel"
@@ -2813,7 +2821,7 @@
 	},
 	{
 		"title": "kiskana",
-		"etym": "Proto-Eremo-Numoran *giʃkana 'birch'",
+		"etym": "L/PEN/*giʃkana/birch",
 		"cat": "n., 4th",
 		"defList": [
 			"birch"
@@ -2822,7 +2830,7 @@
 	},
 	{
 		"title": "kit",
-		"etym": "Proto-Eremo-Numoran *git 'axe'. Possibly related to <i>kot</i>.",
+		"etym": "L/PEN/*git/axe. Possibly related to <i>kot</i>.",
 		"cat": "n., 3rd",
 		"defList": [
 			"axe"
@@ -2830,7 +2838,7 @@
 	},
 	{
 		"title": "kiu",
-		"etym": "Proto-Eremo-Numoran *kiu 'friendly'",
+		"etym": "L/PEN/*kiu/friendly",
 		"cat": "adj.",
 		"defList": [
 			"friendly"
@@ -2838,7 +2846,7 @@
 	},
 	{
 		"title": "klaz",
-		"etym": "Proto-Eremo-Numoran *klas 'scratch'",
+		"etym": "L/PEN/*klas/scratch",
 		"cat": "v.",
 		"defList": [
 			"scratch"
@@ -2854,7 +2862,7 @@
 	},
 	{
 		"title": "klu",
-		"etym": "Proto-Eremo-Numoran *xlu 'sticky'",
+		"etym": "L/PEN/*xlu/sticky",
 		"cat": "adj., n. 4th",
 		"defList": [
 			"sticky, gooey",
@@ -2865,7 +2873,7 @@
 	},
 	{
 		"title": "ko",
-		"etym": "Proto-Eremo-Numoran *ko 'this'",
+		"etym": "L/PEN/*ko/this",
 		"cat": "adj.",
 		"defList": [
 			"this, these"
@@ -2896,7 +2904,7 @@
 	},
 	{
 		"title": "koka",
-		"etym": "Proto-Eremo-Numoran *koga 'arm'",
+		"etym": "L/PEN/*koga/arm",
 		"cat": "n., 4th",
 		"defList": [
 			"arm"
@@ -2905,7 +2913,7 @@
 	},
 	{
 		"title": "kokint",
-		"etym": "Proto-Eremo-Numoran *xoximu 'bridge'",
+		"etym": "L/PEN/*xoximu/bridge",
 		"cat": "n., 3rd",
 		"defList": [
 			"bridge"
@@ -2921,7 +2929,7 @@
 	},
 	{
 		"title": "konoz",
-		"etym": "Proto-Eremo-Numoran *gonos 'sing'",
+		"etym": "L/PEN/*gonos/sing",
 		"cat": "v.",
 		"defList": [
 			"sing"
@@ -2947,7 +2955,7 @@
 	},
 	{
 		"title": "kopdoz",
-		"etym": "diminutive of kopz",
+		"etym": "D/kopz",
 		"cat": "v.",
 		"defList": [
 			"like"
@@ -2965,7 +2973,7 @@
 	},
 	{
 		"title": "kot",
-		"etym": "Proto-Eremo-Numoran *got 'shield'. Possibly related to <i>kit</i>.",
+		"etym": "L/PEN/*got/shield. Possibly related to <i>kit</i>.",
 		"cat": "n., 3rd",
 		"defList": [
 			"shield"
@@ -2973,7 +2981,7 @@
 	},
 	{
 		"title": "kotaz",
-		"etym": "Proto-Eremo-Numoran *kotas 'shoot'",
+		"etym": "L/PEN/*kotas/shoot",
 		"cat": "v.",
 		"defList": [
 			"launch",
@@ -2983,7 +2991,7 @@
 	},
 	{
 		"title": "kotik",
-		"etym": "Proto-Eremo-Numoran *gotix 'fish'",
+		"etym": "L/PEN/*gotix/fish",
 		"cat": "n., 2nd",
 		"defList": [
 			"fish"
@@ -2992,7 +3000,7 @@
 	},
 	{
 		"title": "koz",
-		"etym": "Proto-Eremo-Numoran *gos 'float'",
+		"etym": "L/PEN/*gos/float",
 		"cat": "v.",
 		"defList": [
 			"float"
@@ -3000,7 +3008,7 @@
 	},
 	{
 		"title": "kraz",
-		"etym": "Proto-Eremo-Numoran *gras 'walk'",
+		"etym": "L/PEN/*gras/walk",
 		"cat": "v.",
 		"defList": [
 			"walk",
@@ -3009,7 +3017,7 @@
 	},
 	{
 		"title": "krifan",
-		"etym": "Proto-Eremo-Numoran *griɸan 'wing'",
+		"etym": "L/PEN/*griɸan/wing",
 		"cat": "n., 4th",
 		"defList": [
 			"wing"
@@ -3018,7 +3026,7 @@
 	},
 	{
 		"title": "krum",
-		"etym": "Proto-Eremo-Numoran *grum 'study'",
+		"etym": "L/PEN/*grum/study",
 		"cat": "n., 5th",
 		"defList": [
 			"study",
@@ -3035,7 +3043,7 @@
 	},
 	{
 		"title": "ku",
-		"etym": "Proto-Eremo-Numoran *ku 'with' and *gus 'big'",
+		"etym": "L/PEN/*ku/with and *gus 'big'",
 		"cat": "post., adj., s-triggering",
 		"defList": [
 			"and (clause-only: not nouns)",
@@ -3056,7 +3064,7 @@
 	},
 	{
 		"title": "kuafkaz",
-		"etym": "Proto-Eremo-Numoran *kuaɸkas 'join' from *ku 'with' + *aɸkas 'go'",
+		"etym": "L/PEN/*kuaɸkas/join from *ku 'with' + *aɸkas 'go'",
 		"cat": "v.",
 		"defList": [
 			"join",
@@ -3065,7 +3073,7 @@
 	},
 	{
 		"title": "kubarz",
-		"etym": "Proto-Eremo-Numoran *kubars 'gather', from *ku 'with' + *bars 'bind'",
+		"etym": "L/PEN/*kubars/gather, from *ku 'with' + *bars 'bind'",
 		"cat": "v.",
 		"defList": [
 			"gather"
@@ -3085,7 +3093,7 @@
 	},
 	{
 		"title": "kubôz",
-		"etym": "Proto-Eremo-Numoran *kubôs 'carry', from *ku 'with' + *bôs 'carry'",
+		"etym": "L/PEN/*kubôs/carry, from *ku 'with' + *bôs 'carry'",
 		"cat": "v.",
 		"defList": [
 			"carry, bear",
@@ -3113,7 +3121,7 @@
 	},
 	{
 		"title": "kudoz",
-		"etym": "Augmentive of koz 'float'",
+		"etym": "A/koz 'float'",
 		"cat": "v.",
 		"defList": [
 			"flood"
@@ -3121,7 +3129,7 @@
 	},
 	{
 		"title": "kudôz",
-		"etym": "Proto-Eremo-Numoran *kudôs 'do; make' from *ku 'with' + *dôs 'do; make'.",
+		"etym": "L/PEN/*kudôs/do; make' from *ku 'with' + *dôs 'do; make'.",
 		"cat": "v.",
 		"defList": [
 			"work together, conspire",
@@ -3133,7 +3141,7 @@
 	},
 	{
 		"title": "kul",
-		"etym": "Proto-Eremo-Numoran *gul 'around'",
+		"etym": "L/PEN/*gul/around",
 		"cat": "post.",
 		"defList": [
 			"around, about",
@@ -3151,7 +3159,7 @@
 	},
 	{
 		"title": "kuma",
-		"etym": "Proto-Eremo-Numoran *xuma 'wrist'",
+		"etym": "L/PEN/*xuma/wrist",
 		"cat": "n., 4th",
 		"defList": [
 			"wrist"
@@ -3168,7 +3176,7 @@
 	},
 	{
 		"title": "kumitaz",
-		"etym": "Proto-Eremo-Numoran *ku-mitas 'with-push'",
+		"etym": "L/PEN/*ku-mitas/with-push",
 		"cat": "v.",
 		"defList": [
 			"push"
@@ -3177,7 +3185,7 @@
 	{
 		"title": "kumku",
 		"img": "../img/eremoran/kumku.png",
-		"etym": "Proto-Eremo-Numoran *kumku 'three'",
+		"etym": "L/PEN/*kumku/three",
 		"cat": "adj.",
 		"defList": [
 			"three"
@@ -3194,7 +3202,7 @@
 	},
 	{
 		"title": "kumz",
-		"etym": "Proto-Eremo-Numoran *gums 'jump'.",
+		"etym": "L/PEN/*gums/jump.",
 		"cat": "v.",
 		"defList": [
 			"jump"
@@ -3202,7 +3210,7 @@
 	},
 	{
 		"title": "kun",
-		"etym": "Proto-Eremo-Numoran *xun 'snow'",
+		"etym": "L/PEN/*xun/snow",
 		"cat": "n., 4th",
 		"defList": [
 			"snow"
@@ -3211,7 +3219,7 @@
 	},
 	{
 		"title": "kunôz",
-		"etym": "Proto-Eremo-Numoran *xunôs 'probably'",
+		"etym": "L/PEN/*xunôs/probably",
 		"cat": "v.",
 		"defList": [
 			"probably"
@@ -3219,7 +3227,7 @@
 	},
 	{
 		"title": "kunumz",
-		"etym": "Proto-Eremo-Numoran *kunums 'attack' from *ku 'with' + *nums 'run'",
+		"etym": "L/PEN/*kunums/attack from *ku 'with' + *nums 'run'",
 		"cat": "v.",
 		"defList": [
 			"flock",
@@ -3229,7 +3237,7 @@
 	},
 	{
 		"title": "kunz",
-		"etym": "Proto-Eremo-Numoran *kuns 'wash'",
+		"etym": "L/PEN/*kuns/wash",
 		"cat": "v.",
 		"defList": [
 			"wash"
@@ -3237,7 +3245,7 @@
 	},
 	{
 		"title": "kureu",
-		"etym": "Proto-Eremo-Numoran *kureu 'west'",
+		"etym": "L/PEN/*kureu/west",
 		"cat": "adj.",
 		"defList": [
 			"west"
@@ -3254,7 +3262,7 @@
 	{
 		"title": "labnit",
 		"img": "../img/eremoran/labnit.png",
-		"etym": "Proto-Eremo-Numoran *labnit 'brick'",
+		"etym": "L/PEN/*labnit/brick",
 		"cat": "n., 3rd",
 		"defList": [
 			"brick",
@@ -3263,7 +3271,7 @@
 	},
 	{
 		"title": "lakaik",
-		"etym": "Proto-Eremo-Numoran *bloxaix 'shark'",
+		"etym": "L/PEN/*bloxaix/shark",
 		"cat": "n., 2nd",
 		"defList": [
 			"shark"
@@ -3272,7 +3280,7 @@
 	},
 	{
 		"title": "laku",
-		"etym": "Proto-Eremo-Numoran *lagu 'good'",
+		"etym": "L/PEN/*lagu/good",
 		"cat": "adj.",
 		"defList": [
 			"(archaic) good"
@@ -3282,7 +3290,7 @@
 	{
 		"title": "lam",
 		"img": "../img/eremoran/len.png",
-		"etym": "Proto-Eremo-Numoran *lam 'stone', related to len 'stone'",
+		"etym": "L/PEN/*lam/stone, related to len 'stone'",
 		"cat": "n., 5th",
 		"defList": [
 			"(uncountable) stone, rock"
@@ -3290,7 +3298,7 @@
 	},
 	{
 		"title": "lan",
-		"etym": "Proto-Eremo-Numoran *lan 'cover'",
+		"etym": "L/PEN/*lan/cover",
 		"cat": "n., 4th",
 		"defList": [
 			"cover"
@@ -3306,7 +3314,7 @@
 	},
 	{
 		"title": "lanz",
-		"etym": "Proto-Eremo-Numoran *lans 'pull'",
+		"etym": "L/PEN/*lans/pull",
 		"cat": "v.",
 		"defList": [
 			"pull"
@@ -3315,7 +3323,7 @@
 	{
 		"title": "len",
 		"img": "../img/eremoran/len.png",
-		"etym": "Proto-Eremo-Numoran *len 'stone', related to lam 'stone'",
+		"etym": "L/PEN/*len/stone, related to lam 'stone'",
 		"cat": "n., 4th",
 		"defList": [
 			"(countable) stone, rock"
@@ -3323,7 +3331,7 @@
 	},
 	{
 		"title": "li",
-		"etym": "Proto-Eremo-Numoran *li 'ankle'",
+		"etym": "L/PEN/*li/ankle",
 		"cat": "n., 4th",
 		"defList": [
 			"ankle"
@@ -3333,7 +3341,7 @@
 	{
 		"title": "liba",
 		"img": "../img/eremoran/lib.png",
-		"etym": "Proto-Eremo-Numoran *liba 'heart'",
+		"etym": "L/PEN/*liba/heart",
 		"cat": "n., 4th",
 		"defList": [
 			"heart",
@@ -3361,7 +3369,7 @@
 	},
 	{
 		"title": "liboz",
-		"etym": "Proto-Eremo-Numoran *libos 'cry'",
+		"etym": "L/PEN/*libos/cry",
 		"cat": "v.",
 		"defList": [
 			"cry, tear"
@@ -3379,7 +3387,7 @@
 	},
 	{
 		"title": "linku",
-		"etym": "Proto-Eremo-Numoran *lingu 'cyan'",
+		"etym": "L/PEN/*lingu/cyan",
 		"cat": "adj.",
 		"defList": [
 			"cyan",
@@ -3389,7 +3397,7 @@
 	},
 	{
 		"title": "lolz",
-		"etym": "Proto-Eremo-Numoran *lols 'laugh'",
+		"etym": "L/PEN/*lols/laugh",
 		"cat": "v.",
 		"defList": [
 			"laugh"
@@ -3397,7 +3405,7 @@
 	},
 	{
 		"title": "luksa",
-		"etym": "Proto-Eremo-Numoran *luksa 'neck'",
+		"etym": "L/PEN/*luksa/neck",
 		"cat": "n., 4th",
 		"defList": [
 			"neck"
@@ -3406,7 +3414,7 @@
 	},
 	{
 		"title": "lusik",
-		"etym": "Proto-Eremo-Numoran *lussix 'wolf'",
+		"etym": "L/PEN/*lussix/wolf",
 		"cat": "n., 2nd",
 		"defList": [
 			"wolf",
@@ -3434,7 +3442,7 @@
 	},
 	{
 		"title": "mafir",
-		"etym": "Proto-Eremo-Numoran *maɸir 'gang; group'",
+		"etym": "L/PEN/*maɸir/gang; group'",
 		"cat": "n., 1st",
 		"defList": [
 			"gang; group (of people)"
@@ -3479,7 +3487,7 @@
 	},
 	{
 		"title": "mana",
-		"etym": "Proto-Eremo-Numoran *mana 'nose'",
+		"etym": "L/PEN/*mana/nose",
 		"cat": "n., 4th",
 		"defList": [
 			"nose"
@@ -3507,7 +3515,7 @@
 	},
 	{
 		"title": "mara",
-		"etym": "Proto-Eremo-Numoran *mara 'blood'",
+		"etym": "L/PEN/*mara/blood",
 		"cat": "n., 4th",
 		"defList": [
 			"blood"
@@ -3534,7 +3542,7 @@
 	},
 	{
 		"title": "markla",
-		"etym": "Proto-Eremo-Numoran *markla 'thing'",
+		"etym": "L/PEN/*markla/thing",
 		"cat": "n., 4th",
 		"defList": [
 			"thing"
@@ -3542,7 +3550,7 @@
 	},
 	{
 		"title": "marz",
-		"etym": "Proto-Eremo-Numoran *mars 'bleed'",
+		"etym": "L/PEN/*mars/bleed",
 		"cat": "v.",
 		"defList": [
 			"bleed"
@@ -3558,7 +3566,7 @@
 	},
 	{
 		"title": "mask",
-		"etym": "Proto-Eremo-Numoran *mas-x 'bull'",
+		"etym": "L/PEN/*mas-x/bull",
 		"cat": "n., 2nd",
 		"defList": [
 			"bull (male cow)"
@@ -3567,7 +3575,7 @@
 	},
 	{
 		"title": "masturk",
-		"etym": "Proto-Eremo-Numoran *mas-tur-x, from *mas 'contain' + *tur '???' + *-x [Animate suffix]",
+		"etym": "L/PEN/*mas-tur-x, from *mas 'contain' + *tur '???' + *-x [Animate suffix]",
 		"cat": "n., 2nd",
 		"defList": [
 			"rabbit"
@@ -3576,7 +3584,7 @@
 	},
 	{
 		"title": "masusu",
-		"etym": "Proto-Eremo-Numoran *masiusiu 'stunned', from *mas 'contain' + *siusiu 'stunned, dazed', reduplicated from *siu 'bright'.",
+		"etym": "L/PEN/*masiusiu/stunned, from *mas 'contain' + *siusiu 'stunned, dazed', reduplicated from *siu 'bright'.",
 		"cat": "adj.",
 		"defList": [
 			"silly"
@@ -3585,7 +3593,7 @@
 	{
 		"title": "mat",
 		"img": "../img/eremoran/mat.png",
-		"etym": "Proto-Eremo-Numoran *ma-t, from *ma 'bearer, holder, container' + *-t (suffix for tools)",
+		"etym": "L/PEN/*ma-t, from *ma 'bearer, holder, container' + *-t (suffix for tools)",
 		"cat": "n., 3rd",
 		"defList": [
 			"house",
@@ -3612,7 +3620,7 @@
 	},
 	{
 		"title": "mêur",
-		"etym": "Proto-Eremo-Numoran *miêur 'widow/heir'",
+		"etym": "L/PEN/*miêur/widow/heir",
 		"cat": "n., 1st",
 		"defList": [
 			"widow",
@@ -3622,7 +3630,7 @@
 	},
 	{
 		"title": "mi",
-		"etym": "Proto-Eremo-Numoran *mi [reflexive particle]",
+		"etym": "L/PEN/*mi [reflexive particle]",
 		"cat": "adv.",
 		"defList": [
 			"[reflexive particle]"
@@ -3638,7 +3646,7 @@
 	},
 	{
 		"title": "mim",
-		"etym": "Proto-Eremo-Numoran *mim 'idea'",
+		"etym": "L/PEN/*mim/idea",
 		"cat": "n., 5th",
 		"defList": [
 			"idea",
@@ -3647,7 +3655,7 @@
 	},
 	{
 		"title": "minibak",
-		"etym": "Proto-Eremo-Numoran *minibax 'egg'",
+		"etym": "L/PEN/*minibax/egg",
 		"cat": "n., 2nd",
 		"defList": [
 			"egg"
@@ -3664,7 +3672,7 @@
 	},
 	{
 		"title": "mo",
-		"etym": "Proto-Eremo-Numoran *mo",
+		"etym": "L/PEN/*mo",
 		"cat": "post.",
 		"defList": [
 			"back"
@@ -3687,7 +3695,7 @@
 	},
 	{
 		"title": "môlz",
-		"etym": "Proto-Eremo-Numoran *môls 'wake up'",
+		"etym": "L/PEN/*môls/wake up'",
 		"cat": "v.",
 		"defList": [
 			"wake up"
@@ -3728,7 +3736,7 @@
 	{
 		"title": "mor",
 		"img": "../img/eremoran/mor.png",
-		"etym": "Proto-Eremo-Numoran *mor 'person' from Proto-Muran *mur 'person'",
+		"etym": "L/PEN/*mor/person from Proto-Muran *mur 'person'",
 		"cat": "n., 1st",
 		"defList": [
 			"guy, person",
@@ -3741,7 +3749,7 @@
 	},
 	{
 		"title": "morbik",
-		"etym": "Proto-Eremo-Numoran *morβix 'ant'",
+		"etym": "L/PEN/*morβix/ant",
 		"cat": "n., 2nd",
 		"defList": [
 			"ant"
@@ -3777,7 +3785,7 @@
 	{
 		"title": "mu",
 		"img": "../img/eremoran/mu.png",
-		"etym": "Proto-Eremo-Numoran *mu 'water'",
+		"etym": "L/PEN/*mu/water",
 		"cat": "n., 4th",
 		"defList": [
 			"water",
@@ -3797,7 +3805,7 @@
 	},
 	{
 		"title": "muk",
-		"etym": "Proto-Eremo-Numoran *mugs 'old'",
+		"etym": "L/PEN/*mugs/old",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"(<i>of inanimates</i>) old",
@@ -3816,7 +3824,7 @@
 	},
 	{
 		"title": "mumast",
-		"etym": "Proto-Eremo-Numoran *mumast 'ship', from *mu 'water' + *mas 'container' + *-t",
+		"etym": "L/PEN/*mumast/ship, from *mu 'water' + *mas 'container' + *-t",
 		"cat": "n., 3rd",
 		"defList": [
 			"ship, boat"
@@ -3875,7 +3883,7 @@
 	},
 	{
 		"title": "na",
-		"etym": "Proto-Eremo-Numoran *na 'ear'; pronoun related to 'nau'",
+		"etym": "L/PEN/*na/ear; pronoun related to 'nau'",
 		"cat": "n., 4th",
 		"defList": [
 			"ear (organ)",
@@ -3886,7 +3894,7 @@
 	},
 	{
 		"title": "naba",
-		"etym": "Proto-Eremo-Numoran *naβa 'root'",
+		"etym": "L/PEN/*naβa/root",
 		"cat": "n., 4th",
 		"defList": [
 			"root"
@@ -3903,7 +3911,7 @@
 	},
 	{
 		"title": "namz",
-		"etym": "Proto-Eremo-Numoran *nams 'eat'",
+		"etym": "L/PEN/*nams/eat",
 		"cat": "v.",
 		"defList": [
 			"eat",
@@ -3925,7 +3933,7 @@
 	},
 	{
 		"title": "narko",
-		"etym": "Proto-Eremo-Numoran *snarko",
+		"etym": "L/PEN/*snarko",
 		"cat": "n., 4th",
 		"defList": [
 			"cheek"
@@ -3960,7 +3968,7 @@
 	},
 	{
 		"title": "nask",
-		"etym": "Proto-Eremo-Numoran *nasx 'carnivoran'",
+		"etym": "L/PEN/*nasx/carnivoran",
 		"cat": "n., 2nd",
 		"defList": [
 			"carnivoran"
@@ -3970,7 +3978,7 @@
 	},
 	{
 		"title": "nasu",
-		"etym": "Proto-Eremo-Numoran *natiu 'two'; Proto-Eremo-Numoran *natsu 'north'",
+		"etym": "L/PEN/*natiu/two; Proto-Eremo-Numoran *natsu 'north'",
 		"cat": "adj.",
 		"defList": [
 			"two",
@@ -3990,7 +3998,7 @@
 	},
 	{
 		"title": "nau",
-		"etym": "Proto-Eremo-Numoran *na-u 'which, what'",
+		"etym": "L/PEN/*na-u/which, what'",
 		"cat": "adj.",
 		"defList": [
 			"which, what"
@@ -4007,7 +4015,7 @@
 	},
 	{
 		"title": "ne",
-		"etym": "Proto-Eremo-Numoran *ne",
+		"etym": "L/PEN/*ne",
 		"cat": "adv.",
 		"defList": [
 			"[question particle]"
@@ -4024,7 +4032,7 @@
 	},
 	{
 		"title": "nem",
-		"etym": "Proto-Eremo-Numoran *nem",
+		"etym": "L/PEN/*nem",
 		"cat": "n., 5th",
 		"defList": [
 			"year (in Earth time: 2 mo 14 d)"
@@ -4041,7 +4049,7 @@
 	},
 	{
 		"title": "nes",
-		"etym": "Proto-Eremo-Numoran *nes",
+		"etym": "L/PEN/*nes",
 		"cat": "n., 4th",
 		"defList": [
 			"typical place of sleep"
@@ -4050,7 +4058,7 @@
 	},
 	{
 		"title": "nesfu",
-		"etym": "Proto-Eremo-Numoran *nesɸu 'lewd', possibly related to *nes 'bed'",
+		"etym": "L/PEN/*nesɸu/lewd, possibly related to *nes 'bed'",
 		"cat": "adj.",
 		"defList": [
 			"lewd"
@@ -4059,7 +4067,7 @@
 	},
 	{
 		"title": "nikiniki",
-		"etym": "Proto-Eremo-Numoran *nikiniki 'liver', reduplicated from *niki '???'",
+		"etym": "L/PEN/*nikiniki/liver, reduplicated from *niki '???'",
 		"cat": "n., 4th",
 		"defList": [
 			"liver"
@@ -4068,7 +4076,7 @@
 	},
 	{
 		"title": "nikôk",
-		"etym": "Proto-Eremo-Numoran *nikôx 'otter'",
+		"etym": "L/PEN/*nikôx/otter",
 		"cat": "n., 2nd",
 		"defList": [
 			"otter"
@@ -4077,7 +4085,7 @@
 	},
 	{
 		"title": "nindat",
-		"etym": "Proto-Eremo-Numoran *nindat 'bread'",
+		"etym": "L/PEN/*nindat/bread",
 		"cat": "n., 3rd",
 		"defList": [
 			"bread"
@@ -4085,7 +4093,7 @@
 	},
 	{
 		"title": "nô",
-		"etym": "Proto-Eremo-Numoran *nou 'mountain'",
+		"etym": "L/PEN/*nou/mountain",
 		"cat": "n., 4th",
 		"defList": [
 			"mountain"
@@ -4093,7 +4101,7 @@
 	},
 	{
 		"title": "nôak",
-		"etym": "Proto-Eremo-Numoran *nôax 'louse'",
+		"etym": "L/PEN/*nôax/louse",
 		"cat": "n., 2nd",
 		"defList": [
 			"louse"
@@ -4102,7 +4110,7 @@
 	},
 	{
 		"title": "nod",
-		"etym": "Proto-Eremo-Numoran *nod 'moon'",
+		"etym": "L/PEN/*nod/moon",
 		"cat": "n., 4th",
 		"defList": [
 			"Nikki (Moon of Oneia)",
@@ -4111,7 +4119,7 @@
 	},
 	{
 		"title": "nom",
-		"etym": "Proto-Eremo-Numoran *nom 'game'",
+		"etym": "L/PEN/*nom/game",
 		"cat": "n., 5th",
 		"defList": [
 			"game"
@@ -4119,7 +4127,7 @@
 	},
 	{
 		"title": "nost",
-		"etym": "Proto-Eremo-Numoran *noʃt 'below, under'",
+		"etym": "L/PEN/*noʃt/below, under'",
 		"cat": "post.",
 		"defList": [
 			"below, under"
@@ -4135,7 +4143,7 @@
 	},
 	{
 		"title": "nu",
-		"etym": "Proto-Eremo-Numoran *nu 'low'",
+		"etym": "L/PEN/*nu/low",
 		"cat": "adj.",
 		"defList": [
 			"low",
@@ -4144,7 +4152,7 @@
 	},
 	{
 		"title": "nub",
-		"etym": "Proto-Eremo-Numoran *nubs 'young'",
+		"etym": "L/PEN/*nubs/young",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"(animate only) young"
@@ -4173,7 +4181,7 @@
 	},
 	{
 		"title": "nul",
-		"etym": "Proto-Eremo-Numoran *nouel 'hill', from *nou 'mountain', + *el(a) 'DIM'",
+		"etym": "L/PEN/*nouel/hill, from *nou 'mountain', + *el(a) 'DIM'",
 		"cat": "n., 4th",
 		"defList": [
 			"hill"
@@ -4191,7 +4199,7 @@
 	},
 	{
 		"title": "numz",
-		"etym": "Proto-Eremo-Numoran *nums 'run'",
+		"etym": "L/PEN/*nums/run",
 		"cat": "v.",
 		"defList": [
 			"run"
@@ -4208,7 +4216,7 @@
 	},
 	{
 		"title": "ô",
-		"etym": "Proto-Eremo-Numoran *ô 'anyways'",
+		"etym": "L/PEN/*ô/anyways",
 		"cat": "interjection",
 		"defList": [
 			"Anyways..., so... (used similarly to jp. <i>ja</i>, fr. <i>alors</i>)"
@@ -4216,7 +4224,7 @@
 	},
 	{
 		"title": "obo",
-		"etym": "Proto-Eremo-Numoran *oβo '[excitement particle]'",
+		"etym": "L/PEN/*oβo/[excitement particle]'",
 		"cat": "adv.",
 		"defList": [
 			"[excitement particle]"
@@ -4232,7 +4240,7 @@
 	},
 	{
 		"title": "ôdu",
-		"etym": "Proto-Eremo-Numoran *ôdu 'away'",
+		"etym": "L/PEN/*ôdu/away",
 		"cat": "adj.",
 		"defList": [
 			"away"
@@ -4249,7 +4257,7 @@
 	},
 	{
 		"title": "oka",
-		"etym": "Proto-Eremo-Numoran *oka 'bone'",
+		"etym": "L/PEN/*oka/bone",
 		"cat": "n., 4th",
 		"defList": [
 			"bone"
@@ -4258,7 +4266,7 @@
 	},
 	{
 		"title": "okar",
-		"etym": "Proto-Eremo-Numoran *okar 'woman'",
+		"etym": "L/PEN/*okar/woman",
 		"cat": "n., 1st",
 		"defList": [
 			"woman",
@@ -4296,7 +4304,7 @@
 	},
 	{
 		"title": "onod",
-		"etym": "Proto-Eremo-Numoran *onod 'horn'",
+		"etym": "L/PEN/*onod/horn",
 		"cat": "n., 4th",
 		"defList": [
 			"horn"
@@ -4330,7 +4338,7 @@
 	},
 	{
 		"title": "pankudoz",
-		"etym": "diminutive of <i>pankuz</i>",
+		"etym": "D/<i>pankuz</i>",
 		"cat": "v.",
 		"defList": [
 			"be apathetic"
@@ -4453,7 +4461,7 @@
 	},
 	{
 		"title": "raba",
-		"etym": "Proto-Eremo-Numoran *raba 'belly'",
+		"etym": "L/PEN/*raba/belly",
 		"cat": "n., 4th",
 		"defList": [
 			"belly"
@@ -4462,7 +4470,7 @@
 	},
 	{
 		"title": "rankenz",
-		"etym": "Proto-Eremo-Numoran *ɸrankens 'rise'",
+		"etym": "L/PEN/*ɸrankens/rise",
 		"cat": "v.",
 		"defList": [
 			"rise"
@@ -4496,7 +4504,7 @@
 	},
 	{
 		"title": "ratik",
-		"etym": "Proto-Eremo-Numoran *ratix 'animal; creature'",
+		"etym": "L/PEN/*ratix/animal; creature'",
 		"cat": "n., 2nd",
 		"defList": [
 			"animal, creature"
@@ -4505,7 +4513,7 @@
 	},
 	{
 		"title": "rau",
-		"etym": "Proto-Eremo-Numoran *ɸrau 'cold'",
+		"etym": "L/PEN/*ɸrau/cold",
 		"cat": "adj.",
 		"defList": [
 			"cool, cold"
@@ -4514,7 +4522,7 @@
 	},
 	{
 		"title": "raz",
-		"etym": "Proto-Eremo-Numoran *ras 'paint'",
+		"etym": "L/PEN/*ras/paint",
 		"cat": "v.",
 		"defList": [
 			"paint"
@@ -4531,7 +4539,7 @@
 	},
 	{
 		"title": "redz",
-		"etym": "Proto-Eremo-Numoran *reds 'rub'",
+		"etym": "L/PEN/*reds/rub",
 		"cat": "v.",
 		"defList": [
 			"rub",
@@ -4550,7 +4558,7 @@
 	},
 	{
 		"title": "reraz",
-		"etym": "Proto-Eremo-Numoran *reras 'harvest'",
+		"etym": "L/PEN/*reras/harvest",
 		"cat": "v.",
 		"defList": [
 			"harvest"
@@ -4559,7 +4567,7 @@
 	},
 	{
 		"title": "ril",
-		"etym": "Proto-Eremo-Numoran *ril 'sun'",
+		"etym": "L/PEN/*ril/sun",
 		"cat": "n., 4th",
 		"defList": [
 			"Namei",
@@ -4587,7 +4595,7 @@
 	},
 	{
 		"title": "rinz",
-		"etym": "Proto-Eremo-Numoran *rins 'order'",
+		"etym": "L/PEN/*rins/order",
 		"cat": "v.",
 		"defList": [
 			"order, command, direct"
@@ -4595,7 +4603,7 @@
 	},
 	{
 		"title": "rô",
-		"etym": "Proto-Eremo-Numoran *rô 'tongue'",
+		"etym": "L/PEN/*rô/tongue",
 		"cat": "n., 4th",
 		"defList": [
 			"tongue"
@@ -4631,7 +4639,7 @@
 	},
 	{
 		"title": "roradok",
-		"etym": "Syncopated from <em>roraodok</em>, from Proto-Eremo-Numoran *raoraodox 'kitten', diminutive of *raoraox 'cat'",
+		"etym": "Syncopated from <em>roraodok</em>, from Proto-Eremo-Numoran *raoraodox 'kitten', D/*raoraox 'cat'",
 		"cat": "n., 2nd",
 		"defList": [
 			"kitten"
@@ -4677,7 +4685,7 @@
 	},
 	{
 		"title": "saliz",
-		"etym": "Proto-Eremo-Numoran *sialis 'find'",
+		"etym": "L/PEN/*sialis/find",
 		"cat": "v.",
 		"defList": [
 			"find, discover",
@@ -4686,7 +4694,7 @@
 	},
 	{
 		"title": "samarz",
-		"etym": "Proto-Eremo-Numoran *siamars 'lie', related to asmarz",
+		"etym": "L/PEN/*siamars/lie, related to asmarz",
 		"cat": "v.",
 		"defList": [
 			"lie (down)",
@@ -4703,7 +4711,7 @@
 	},
 	{
 		"title": "sart",
-		"etym": "Proto-Eremo-Numoran *ʃart 'mat'",
+		"etym": "L/PEN/*ʃart/mat",
 		"cat": "n., 3rd",
 		"defList": [
 			"mat, typically in the dimensions of 5-by-10 labnim"
@@ -4737,7 +4745,7 @@
 	},
 	{
 		"title": "saurz",
-		"etym": "Proto-Eremo-Numoran *si-aurs, from *sim 'brightness' + *aurs 'sense???'",
+		"etym": "L/PEN/*si-aurs, from *sim 'brightness' + *aurs 'sense???'",
 		"cat": "v.",
 		"defList": [
 			"see",
@@ -4768,7 +4776,7 @@
 	},
 	{
 		"title": "se",
-		"etym": "Proto-Eremo-Numoran *sie 'grain'; Proto-Eremo-Numoran *ʃe 'other'",
+		"etym": "L/PEN/*sie/grain; Proto-Eremo-Numoran *ʃe 'other'",
 		"cat": "n., 4th",
 		"defList": [
 			"grain",
@@ -4779,7 +4787,7 @@
 	},
 	{
 		"title": "seba",
-		"etym": "Proto-Eremo-Numoran *ʃeβa 'flower', poss. related to eba 'bark'",
+		"etym": "L/PEN/*ʃeβa/flower, poss. related to eba 'bark'",
 		"cat": "n., 4th",
 		"defList": [
 			"flower"
@@ -4805,7 +4813,7 @@
 	},
 	{
 		"title": "sedu",
-		"etym": "Proto-Eremo-Numoran *tʃedu 'sharp'",
+		"etym": "L/PEN/*tʃedu/sharp",
 		"cat": "adj.",
 		"defList": [
 			"sharp (not dull)",
@@ -4815,7 +4823,7 @@
 	},
 	{
 		"title": "sêdzak",
-		"etym": "Proto-Eremo-Numoran *ʃêdiax 'rat'",
+		"etym": "L/PEN/*ʃêdiax/rat",
 		"cat": "n., 2nd",
 		"defList": [
 			"rat"
@@ -4824,7 +4832,7 @@
 	},
 	{
 		"title": "sêlai",
-		"etym": "Proto-Eremo-Numoran *ʃêlai 'thigh'",
+		"etym": "L/PEN/*ʃêlai/thigh",
 		"cat": "n., 4th",
 		"defList": [
 			"thigh"
@@ -4833,7 +4841,7 @@
 	},
 	{
 		"title": "ses",
-		"etym": "Proto-Eremo-Numoran *ʃets '~planet'",
+		"etym": "L/PEN/*ʃets/~planet",
 		"cat": "n., 4th",
 		"defList": [
 			"substellar object orbiting a star <ol> <li>(by extension) planet</li> <li>(by extension) minor planet</li> <li>(by extension) comet</li> </ol> "
@@ -4841,7 +4849,7 @@
 	},
 	{
 		"title": "sesu",
-		"etym": "Proto-Eremo-Numoran *sietiu 'hundred'",
+		"etym": "L/PEN/*sietiu/hundred",
 		"cat": "adj.",
 		"defList": [
 			"hundred"
@@ -4849,7 +4857,7 @@
 	},
 	{
 		"title": "sifaz",
-		"etym": "Proto-Eremo-Numoran *ʃiɸs \"hit\"",
+		"etym": "L/PEN/*ʃiɸs \"hit\"",
 		"cat": "v.",
 		"defList": [
 			"hit"
@@ -4866,7 +4874,7 @@
 	},
 	{
 		"title": "simbun",
-		"etym": "Proto-Eremo-Numoran *ʃimbuns 'new'",
+		"etym": "L/PEN/*ʃimbuns/new",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"(inanimate only) young"
@@ -4890,7 +4898,7 @@
 	},
 	{
 		"title": "sirez",
-		"etym": "Proto-Eremo-Numoran *ʃires, blend of *xere 'fire' + *sis 'shine'",
+		"etym": "L/PEN/*ʃires, blend of *xere 'fire' + *sis 'shine'",
 		"cat": "v.",
 		"defList": [
 			"burn (intransitive)"
@@ -4937,7 +4945,7 @@
 	},
 	{
 		"title": "siz",
-		"etym": "Proto-Eremo-Numoran *ʃis 'shine', *sis (causative)",
+		"etym": "L/PEN/*ʃis/shine, *sis (causative)",
 		"cat": "v.",
 		"defList": [
 			"shine",
@@ -4946,7 +4954,7 @@
 	},
 	{
 		"title": "skiz",
-		"etym": "Proto-Eremo-Numoran *skis 'show'",
+		"etym": "L/PEN/*skis/show",
 		"cat": "v.",
 		"defList": [
 			"show"
@@ -4954,7 +4962,7 @@
 	},
 	{
 		"title": "skôkiz",
-		"etym": "Proto-Eremo-Numoran *ʃkôkis 'fly'",
+		"etym": "L/PEN/*ʃkôkis/fly",
 		"cat": "v.",
 		"defList": [
 			"(of non-birds) fly"
@@ -4963,7 +4971,7 @@
 	},
 	{
 		"title": "skuiku",
-		"etym": "Proto-Eremo-Numoran *skuixu 'young', from *skuix 'offspring' + *-u [Adjectival suffix].",
+		"etym": "L/PEN/*skuixu/young, from *skuix 'offspring' + *-u [Adjectival suffix].",
 		"cat": "adj.",
 		"defList": [
 			"(colloquial) young"
@@ -4972,7 +4980,7 @@
 	},
 	{
 		"title": "skum",
-		"etym": "Proto-Eremo-Numoran *ʃxum",
+		"etym": "L/PEN/*ʃxum",
 		"cat": "n., 5th",
 		"defList": [
 			"(archaic) winter",
@@ -4991,7 +4999,7 @@
 	},
 	{
 		"title": "soni",
-		"etym": "Proto-Eremo-Numoran *tʃoni 'hair'",
+		"etym": "L/PEN/*tʃoni/hair",
 		"cat": "n., 4th",
 		"defList": [
 			"hair"
@@ -5000,7 +5008,7 @@
 	},
 	{
 		"title": "sou",
-		"etym": "Proto-Eremo-Numoran *tʃou 'hot'; Proto-Eremo-Numoran *tʃiou 'right'",
+		"etym": "L/PEN/*tʃou/hot; Proto-Eremo-Numoran *tʃiou 'right'",
 		"cat": "adj.",
 		"defList": [
 			"warm, hot",
@@ -5053,7 +5061,7 @@
 	},
 	{
 		"title": "stanu",
-		"etym": "Proto-Eremo-Numoran *stanu 'tin'",
+		"etym": "L/PEN/*stanu/tin",
 		"cat": "n., 4th",
 		"defList": [
 			"tin ore"
@@ -5083,7 +5091,7 @@
 	},
 	{
 		"title": "stuz",
-		"etym": "Proto-Eremo-Numoran *ʃtus 'sow'",
+		"etym": "L/PEN/*ʃtus/sow",
 		"cat": "v.",
 		"defList": [
 			"sow, plant"
@@ -5092,7 +5100,7 @@
 	},
 	{
 		"title": "su",
-		"etym": "Proto-Eremo-Numoran *tʃu 'of; from'. Related to the suffix -(i)su.",
+		"etym": "L/PEN/*tʃu/of; from'. Related to the suffix -(i)su.",
 		"cat": "post.",
 		"defList": [
 			"of; belonging to or made of"
@@ -5110,7 +5118,7 @@
 	},
 	{
 		"title": "subir",
-		"etym": "Proto-Eremo-Numoran *tʃu-βir 'warrior', from *su 'of' + *βim 'battle'",
+		"etym": "L/PEN/*tʃu-βir/warrior, from *su 'of' + *βim 'battle'",
 		"cat": "n., 1st",
 		"defList": [
 			"warrior, soldier",
@@ -5128,7 +5136,7 @@
 	},
 	{
 		"title": "sudôz",
-		"etym": "Proto-Eremo-Numoran *tʃu-dôs 'do; make' from *tʃu 'of; from' + *dôs 'do; make'.",
+		"etym": "L/PEN/*tʃu-dôs/do; make' from *tʃu 'of; from' + *dôs 'do; make'.",
 		"cat": "v.",
 		"defList": [
 			"(<i>inanimate object</i>) do/make",
@@ -5148,7 +5156,7 @@
 	},
 	{
 		"title": "sukaz",
-		"etym": "Proto-Eremo-Numoran *tʃu-kas 'cut' from *tʃu 'of; from' + *kas 'cut'.",
+		"etym": "L/PEN/*tʃu-kas/cut from *tʃu 'of; from' + *kas 'cut'.",
 		"cat": "v.",
 		"defList": [
 			"cut, split",
@@ -5158,7 +5166,7 @@
 	},
 	{
 		"title": "sukz",
-		"etym": "Proto-Eremo-Numoran *siuxs 'sew', likely related to <em>suz</em> 'tie'",
+		"etym": "L/PEN/*siuxs/sew, likely related to <em>suz</em> 'tie'",
 		"cat": "v.",
 		"defList": [
 			"sew"
@@ -5166,7 +5174,7 @@
 	},
 	{
 		"title": "suma",
-		"etym": "Proto-Eremo-Numoran *ʃuma 'navel'",
+		"etym": "L/PEN/*ʃuma/navel",
 		"cat": "n., 4th",
 		"defList": [
 			"navel"
@@ -5185,7 +5193,7 @@
 	},
 	{
 		"title": "suz",
-		"etym": "Proto-Eremo-Numoran *sius 'tie', likely related to <em>sukz</em> 'sew'",
+		"etym": "L/PEN/*sius/tie, likely related to <em>sukz</em> 'sew'",
 		"cat": "v.",
 		"defList": [
 			"tie"
@@ -5193,7 +5201,7 @@
 	},
 	{
 		"title": "takêu",
-		"etym": "Proto-Eremo-Numoran *tokêu 'clockwise'",
+		"etym": "L/PEN/*tokêu/clockwise",
 		"cat": "adj.",
 		"defList": [
 			"clockwise"
@@ -5202,7 +5210,7 @@
 	{
 		"title": "talire",
 		"img": "../img/eremoran/talira.png",
-		"etym": "Proto-Eremo-Numoran *talire 'evergreen', from older *taslire, from *tassu 'green' + *lire 'wood'. Related to taze, tasu, tasku. cf. arlira, lilira.",
+		"etym": "L/PEN/*talire/evergreen, from older *taslire, from *tassu 'green' + *lire 'wood'. Related to taze, tasu, tasku. cf. arlira, lilira.",
 		"cat": "n., 4th",
 		"defList": [
 			"(archaic) evergreen, esp. pine",
@@ -5221,7 +5229,7 @@
 	},
 	{
 		"title": "tamal",
-		"etym": "Proto-Eremo-Numoran *tamal 'mouth'",
+		"etym": "L/PEN/*tamal/mouth",
 		"cat": "n., 4th",
 		"defList": [
 			"mouth"
@@ -5230,7 +5238,7 @@
 	},
 	{
 		"title": "tamaz",
-		"etym": "Proto-Eremo-Numoran *tamas 'must'",
+		"etym": "L/PEN/*tamas/must",
 		"cat": "v.",
 		"defList": [
 			"must, have to",
@@ -5239,7 +5247,7 @@
 	},
 	{
 		"title": "tan",
-		"etym": "Proto-Eremo-Numoran *tan 'after'",
+		"etym": "L/PEN/*tan/after",
 		"cat": "post.",
 		"defList": [
 			"in front of (in space)",
@@ -5250,7 +5258,7 @@
 	},
 	{
 		"title": "tanaiz",
-		"etym": "Proto-Eremo-Numoran *tanais 'sleep'",
+		"etym": "L/PEN/*tanais/sleep",
 		"cat": "v.",
 		"defList": [
 			"sleep"
@@ -5276,7 +5284,7 @@
 	},
 	{
 		"title": "tar",
-		"etym": "Proto-Eremo-Numoran *tars 'new'",
+		"etym": "L/PEN/*tars/new",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"(<i>of inanimates</i>) new"
@@ -5294,7 +5302,7 @@
 	},
 	{
 		"title": "tasu",
-		"etym": "Proto-Eremo-Numoran *tassu 'green', from *tase 'grass' + *-su '-ish'. Related to talira, taze, and tasusku.",
+		"etym": "L/PEN/*tassu/green, from *tase 'grass' + *-su '-ish'. Related to talira, taze, and tasusku.",
 		"cat": "adj.",
 		"defList": [
 			"green"
@@ -5303,7 +5311,7 @@
 	},
 	{
 		"title": "taze",
-		"etym": "Proto-Eremo-Numoran *tase 'grass'. Related to talira, tasu, and tasusku.",
+		"etym": "L/PEN/*tase/grass. Related to talira, tasu, and tasusku.",
 		"cat": "n., 4th",
 		"defList": [
 			"grass"
@@ -5320,7 +5328,7 @@
 	},
 	{
 		"title": "tazedo",
-		"etym": "Diminutive of taze",
+		"etym": "D/taze",
 		"cat": "n., 4th",
 		"defList": [
 			"sprout"
@@ -5338,7 +5346,7 @@
 	},
 	{
 		"title": "tekka",
-		"etym": "Proto-Eremo-Numoran *tegxa 'tea'",
+		"etym": "L/PEN/*tegxa/tea",
 		"cat": "n., 4th",
 		"defList": [
 			"tea (leaf)"
@@ -5357,7 +5365,7 @@
 	},
 	{
 		"title": "temz",
-		"etym": "Proto-Eremo-Numoran *tems 'defend'",
+		"etym": "L/PEN/*tems/defend",
 		"cat": "v.",
 		"defList": [
 			"defend, protect"
@@ -5417,7 +5425,7 @@
 	},
 	{
 		"title": "tikt",
-		"etym": "Proto-Eremo-Numoran *tixt 'arrow'",
+		"etym": "L/PEN/*tixt/arrow",
 		"cat": "n., 3rd",
 		"defList": [
 			"arrow"
@@ -5434,7 +5442,7 @@
 	},
 	{
 		"title": "tô",
-		"etym": "Proto-Eremo-Numoran *tô 'head'",
+		"etym": "L/PEN/*tô/head",
 		"cat": "n., 4th",
 		"defList": [
 			"head"
@@ -5443,7 +5451,7 @@
 	},
 	{
 		"title": "tobê",
-		"etym": "Proto-Eremo-Numoran *toβê 'stick'",
+		"etym": "L/PEN/*toβê/stick",
 		"cat": "n., 4th",
 		"defList": [
 			"stick",
@@ -5453,7 +5461,7 @@
 	},
 	{
 		"title": "tômz",
-		"etym": "Proto-Eremo-Numoran *tôms 'can'",
+		"etym": "L/PEN/*tôms/can",
 		"cat": "v.",
 		"defList": [
 			"can, be able",
@@ -5462,7 +5470,7 @@
 	},
 	{
 		"title": "tônkad",
-		"etym": "Proto-Eremo-Numoran *tônkad 'stomach'",
+		"etym": "L/PEN/*tônkad/stomach",
 		"cat": "n., 4th",
 		"defList": [
 			"stomach"
@@ -5471,7 +5479,7 @@
 	},
 	{
 		"title": "tônu",
-		"etym": "Proto-Eremo-Numoran *tôn-u 'almost (adj.), from 'almost (adv.)' + *-u",
+		"etym": "L/PEN/*tôn-u/almost (adj.), from 'almost (adv.)' + *-u",
 		"cat": "adj.",
 		"defList": [
 			"almost"
@@ -5495,7 +5503,7 @@
 	},
 	{
 		"title": "tôu",
-		"etym": "Proto-Eremo-Numoran *tôiu 'such'",
+		"etym": "L/PEN/*tôiu/such",
 		"cat": "adj.",
 		"defList": [
 			"such"
@@ -5503,7 +5511,7 @@
 	},
 	{
 		"title": "tôzmu",
-		"etym": "Proto-Eremo-Numoran *tôzdmu 'evitable'",
+		"etym": "L/PEN/*tôzdmu/evitable",
 		"cat": "adj.",
 		"defList": [
 			"avoidable, evitable"
@@ -5511,7 +5519,7 @@
 	},
 	{
 		"title": "trabz",
-		"etym": "Proto-Eremo-Numoran *trabs 'swell'",
+		"etym": "L/PEN/*trabs/swell",
 		"cat": "v.",
 		"defList": [
 			"swell"
@@ -5519,7 +5527,7 @@
 	},
 	{
 		"title": "tranz",
-		"etym": "Proto-Eremo-Numoran *trans 'hide'",
+		"etym": "L/PEN/*trans/hide",
 		"cat": "v.",
 		"defList": [
 			"(intransitive) hide"
@@ -5544,7 +5552,7 @@
 	},
 	{
 		"title": "trikz",
-		"etym": "Proto-Eremo-Numoran *triks 'bite'",
+		"etym": "L/PEN/*triks/bite",
 		"cat": "v.",
 		"defList": [
 			"bite"
@@ -5552,7 +5560,7 @@
 	},
 	{
 		"title": "tritaiz",
-		"etym": "Proto-Eremo-Numoran *tritais 'fall'",
+		"etym": "L/PEN/*tritais/fall",
 		"cat": "v.",
 		"defList": [
 			"fall"
@@ -5560,7 +5568,7 @@
 	},
 	{
 		"title": "tu",
-		"etym": "Proto-Eremo-Numoran *tu ",
+		"etym": "L/PEN/*tu ",
 		"cat": "adv.",
 		"defList": [
 			"(negative) not very"
@@ -5569,7 +5577,7 @@
 	},
 	{
 		"title": "tukil",
-		"etym": "Proto-Eremo-Numoran *tuxil 'wind'",
+		"etym": "L/PEN/*tuxil/wind",
 		"cat": "n., 4th",
 		"defList": [
 			"wind",
@@ -5613,7 +5621,7 @@
 	},
 	{
 		"title": "tukuz",
-		"etym": "Proto-Eremo-Numoran *tuxus 'shout'",
+		"etym": "L/PEN/*tuxus/shout",
 		"cat": "v.",
 		"defList": [
 			"call",
@@ -5624,7 +5632,7 @@
 	{
 		"title": "tum",
 		"img": "../img/eremoran/tum.png",
-		"etym": "Proto-Eremo-Numoran *tum 'sky'",
+		"etym": "L/PEN/*tum/sky",
 		"cat": "n., 5th",
 		"defList": [
 			"sky",
@@ -5658,7 +5666,7 @@
 	},
 	{
 		"title": "tuz",
-		"etym": "Proto-Eremo-Numoran *tus 'fry'",
+		"etym": "L/PEN/*tus/fry",
 		"cat": "v.",
 		"defList": [
 			"fry"
@@ -5719,7 +5727,7 @@
 	},
 	{
 		"title": "ukubo",
-		"etym": "Proto-Eremo-Numoran *ukubo 'throat'",
+		"etym": "L/PEN/*ukubo/throat",
 		"cat": "n., 4th",
 		"defList": [
 			"throat"
@@ -5746,7 +5754,7 @@
 	},
 	{
 		"title": "ulu",
-		"etym": "Proto-Eremo-Numoran *ulu 'blue'",
+		"etym": "L/PEN/*ulu/blue",
 		"cat": "adj.",
 		"defList": [
 			"blue",
@@ -5820,7 +5828,7 @@
 	},
 	{
 		"title": "ur",
-		"etym": "Proto-Eremo-Numoran *ur 'so'",
+		"etym": "L/PEN/*ur/so",
 		"cat": "adv.",
 		"defList": [
 			"therefore, thus, so, for this/that reason"
@@ -5846,7 +5854,7 @@
 	},
 	{
 		"title": "urildom",
-		"etym": "diminutive of <i>urilm</i>",
+		"etym": "D/<i>urilm</i>",
 		"cat": "n., 5th",
 		"defList": [
 			"solar eclipse"
@@ -5866,7 +5874,7 @@
 	{
 		"title": "urist",
 		"img": "../img/eremoran/urist.png",
-		"etym": "Proto-Eremo-Numoran *urist 'dagger'",
+		"etym": "L/PEN/*urist/dagger",
 		"cat": "n., 3rd",
 		"defList": [
 			"dagger"
@@ -5874,7 +5882,7 @@
 	},
 	{
 		"title": "urmam",
-		"etym": "Proto-Eremo-Numoran *urmam 'joke'",
+		"etym": "L/PEN/*urmam/joke",
 		"cat": "n., 5th",
 		"defList": [
 			"joke"
@@ -5903,7 +5911,7 @@
 	},
 	{
 		"title": "utbak",
-		"etym": "Proto-Eremo-Numoran *utba-x 'bear'",
+		"etym": "L/PEN/*utba-x/bear",
 		"cat": "n., 2nd",
 		"defList": [
 			"bear"
@@ -5921,7 +5929,7 @@
 	},
 	{
 		"title": "uzurkelau",
-		"etym": "diminutive of uzurku",
+		"etym": "D/uzurku",
 		"cat": "adj.",
 		"defList": [
 			"(southern, of a person) pretty, beautiful",
@@ -5947,7 +5955,7 @@
 	},
 	{
 		"title": "zedu",
-		"etym": "Proto-Eremo-Numoran *asedu 'lip'",
+		"etym": "L/PEN/*asedu/lip",
 		"cat": "n., 4th",
 		"defList": [
 			"lip"
@@ -5982,7 +5990,7 @@
 	},
 	{
 		"title": "zeti",
-		"etym": "Proto-Eremo-Numoran *aseti 'joint'",
+		"etym": "L/PEN/*aseti/joint",
 		"cat": "n., 4th",
 		"defList": [
 			"joint"
@@ -5990,7 +5998,7 @@
 	},
 	{
 		"title": "zesti",
-		"etym": "Proto-Eremo-Numoran *aseasetis 'angled', with partial reduplication of *aseti 'joint'",
+		"etym": "L/PEN/*aseasetis/angled, with partial reduplication of *aseti 'joint'",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"angled",
@@ -6009,7 +6017,7 @@
 	},
 	{
 		"title": "zurku",
-		"etym": "Proto-Eremo-Numoran *asurgu 'bad'",
+		"etym": "L/PEN/*asurgu/bad",
 		"cat": "adj.",
 		"defList": [
 			"bad",

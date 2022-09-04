@@ -54,7 +54,7 @@ function printDict(){
 			entryDiv.appendChild(etymElement(obj.etym));
 		}
 		catch (e){
-			console.debug(e);
+			console.error(`${obj.title}\n\t=> ${e}`);
 		}
 		// type, eg. noun, verb, ...
 		const typeelement = document.createElement('dd');
@@ -150,7 +150,22 @@ function etymElement(etymString){
 				// eslint-disable-next-line max-len
 				etymElem.innerHTML = `From ${etymElement.languages[tokens[1]]} ${tokens[2]} &ldquo;${tokens[3]}&rdquo;`;
 				break;
+			case 'R': // reduplication
+				a1.classList.add('eremoran');
+				a1.innerHTML = tokens[1];
+				a1.href = `#lemma-${tokens[1]}`;
+				etymElem.innerHTML = 'Reduplication of ';
+				etymElem.appendChild(a1);
+				break;
+			case 'r': // reduction
+				a1.classList.add('eremoran');
+				a1.innerHTML = tokens[1];
+				a1.href = `#lemma-${tokens[1]}`;
+				etymElem.innerHTML = 'Reduction of ';
+				etymElem.appendChild(a1);
+				break;
 			default: // custom
+				console.warn(`custom etym format: ${etymology}`);
 				etymElem.innerHTML = etymology;
 		}
 		e.appendChild(etymElem);
@@ -163,3 +178,5 @@ etymElement.languages = {
 	PRE: 'Pre-Eremoran',
 	VAZ: 'Va&zcaron;cud',
 };
+// todo: chart of etymology type distribution, and origin distribution
+// todo: link to vazcud words!!!
