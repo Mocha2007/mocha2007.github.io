@@ -52,6 +52,11 @@ const bee = {
 		li.innerHTML = 'You have found 0 words';
 		answers.appendChild(li);
 	},
+	/** @param {KeyboardEvent} event */
+	keyHandler(event){
+		if (event.key === 'Enter')
+			this.validate();
+	},
 	randomLetters(){
 		// central - outer 1-6
 		const remainder = Array.from(random.shuffle(this.alphabet));

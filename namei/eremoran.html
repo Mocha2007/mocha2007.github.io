@@ -1522,7 +1522,7 @@ The following remarks apply to the Zestim-Embemmu (Bend-Highbrook) dialect:
 	</select>
 	<br>
 	<label for="regex">Regex:</label>
-	<input name="regex" type="text" id="regexSearch">
+	<input name="regex" type="text" id="regexSearch" onkeypress="event => event.key === 'Enter' ? search.input() : undefined">
 	<br>
 	<span class="button" onclick="search.input();">Search &rarr;</span>
 </div>
@@ -2890,7 +2890,7 @@ Review: <span id="review">0</span><br>
 
 <span class="button" onclick="wordle.init();">Reset...</span>
 <ul id="wordle_history" class="eremoran"></ul>
-<input type="text" id="wordle_input">
+<input type="text" id="wordle_input" onkeypress="event => event.key === 'Enter' ? wordle.submit() : undefined;">
 <span class="button" onclick="wordle.submit();">Submit &rarr;</span>
 <br>
 <span class="button" onclick="wordle.append('ê');">&ecirc;</span>
@@ -2903,7 +2903,7 @@ Review: <span id="review">0</span><br>
 <div id="spellingBeeContainer">
 	<div id="spellingBeeInputContainer">
 		<span class="button" onclick="bee.clearAnswer();">Delete</span>
-		<input type="text" id="beeAnswer">
+		<input type="text" id="beeAnswer" onkeypress="bee.keyHandler(event);">
 		<span class="button" onclick="bee.validate();">Enter</span>
 	</div>
 	<div id="spellingBeeScoreContainer">
