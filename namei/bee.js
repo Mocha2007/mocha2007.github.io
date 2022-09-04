@@ -8,7 +8,7 @@ const bee = {
 	alphabet: 'abdehiklmnoprstuzêô',
 	current: {
 		get answer(){
-			return document.getElementById('beeAnswer').value;
+			return normalizeEremoran(document.getElementById('beeAnswer').value.toLowerCase());
 		},
 		answers: [],
 		letters: [],
