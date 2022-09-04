@@ -381,7 +381,7 @@
 	{
 		"title": "arama",
 		"img": "../img/eremoran/arama.png",
-		"etym": "L/PEN/*xere-ma/copper//Compare Modern Eremoran <i>dare</i> 'gold', <i>ardo</i> 'fire', and <i>mat</i> 'house'.",
+		"etym": "L/PEN/*xere-ma/copper",
 		"cat": "n., 4th",
 		"defList": [
 			"native copper",
@@ -861,11 +861,12 @@
 	},
 	{
 		"title": "bemmu",
-		"etym": "L/PEN/*βegmu/river//related to <em>beka</em> 'path' and <em>mu</em> 'water'",
+		"etym": "L/PEN/*βegmu/river",
 		"cat": "n., 4th",
 		"defList": [
 			"river"
-		]
+		],
+		"note": "related to <em>beka</em> 'path' and <em>mu</em> 'water'"
 	},
 	{
 		"title": "berbaz",
@@ -1264,7 +1265,7 @@
 	{
 		"title": "dadalire",
 		"img": "../img/eremoran/dadalire.png",
-		"etym": "L/PEN/*dada-lire/potash//from *dadal 'ash' + *lire 'wood'",
+		"etym": "C/dadal/lire",
 		"cat": "n., 4th",
 		"defList": [
 			"potash"
@@ -1355,7 +1356,7 @@
 	{
 		"title": "danôak",
 		"img": "../img/eremoran/danoak.png",
-		"etym": "L/PEN/*da-nôax/bug//from *da 'earth' + *nôax 'louse'",
+		"etym": "C/da/nôak",
 		"cat": "n., 2nd",
 		"defList": [
 			"bug, insect"
@@ -1364,7 +1365,7 @@
 	},
 	{
 		"title": "dare",
-		"etym": "L/PEN/*da-xere/gold//from *da 'earth' + *xere 'fire'. Compare arama.",
+		"etym": "L/PEN/*da-xere/gold",
 		"cat": "n., 4th",
 		"defList": [
 			"gold"
@@ -1909,10 +1910,11 @@
 	},
 	{
 		"title": "ha",
-		"etym": "L/PEN/*ɸia/barley",
-		"cat": "n., 4th",
+		"etym": "L/PEN/*ɸia/barley//L/PEN/*ɸex/[onomatopoeia for falling rain]",
+		"cat": "n., 4th, interj.",
 		"defList": [
-			"barley"
+			"barley",
+			"[onomatopoeia for falling rain]"
 		],
 		"categories": ["plant"]
 	},
@@ -1957,7 +1959,7 @@
 	},
 	{
 		"title": "hafa",
-		"etym": "L/PEN/*ɸex-ɸex/rain//reduplicated from *ɸex [onomatopoeia for falling rain]",
+		"etym": "R/ha",
 		"cat": "n., 4th",
 		"defList": [
 			"rain"
@@ -2911,7 +2913,7 @@
 	},
 	{
 		"title": "kôbenk",
-		"etym": "L/PRE/qōpena/mouse//from <em>qōp</em> 'love' + <em>ena</em> 'grain'",
+		"etym": "L/PRE/qōpena/mouse",
 		"cat": "n., 2nd",
 		"defList": [
 			"mouse",
@@ -3909,7 +3911,7 @@
 	},
 	{
 		"title": "mus",
-		"etym": "Nominalization of musu 'wet'",
+		"etym": "r/musu",
 		"cat": "n., 4th",
 		"defList": [
 			"flotsam"
@@ -4291,12 +4293,12 @@
 	},
 	{
 		"title": "ok",
-		"etym": "Eye-dialect spelling of <i>holk</i> in L-dropping dialects",
+		"etym": "r/holk",
 		"cat": "adv.",
 		"defList": [
 			"(informal) yeah"
 		],
-		"notes": "The <i>k</i> is occasionally pronounced as a glottal stop."
+		"notes": "Eye-dialect spelling of <i>holk</i> in L-dropping dialects. The <i>k</i> is occasionally pronounced as a glottal stop."
 	},
 	{
 		"title": "oka",
@@ -4477,7 +4479,7 @@
 	},
 	{
 		"title": "pukusam",
-		"etym": "<em>pu-</em> 'not' + Proto-Eremo-Numoran *kusam 'many'",
+		"etym": "C/pu-/kusam",
 		"cat": "n., 5th, pron.",
 		"defList": [
 			"a small quantity, few <ul> <li class=\"eremoran\"><ruby class=\"eremoranWord\">mor<rt>MOR</rt></ruby><span> </span><ruby class=\"eremoranWord\">i<rt>I</rt></ruby><span> </span><ruby class=\"eremoranWord\">pukusam<rt>PUKUSAM</rt></ruby></li> <li>There are few people.</li> </ul>",
