@@ -2574,8 +2574,8 @@
 		]
 	},
 	{
-		"title": "kakrem",
-		"etym": "L/PEN/*kagrem/tone//related somehow to kam 'sound'",
+		"title": "kakram",
+		"etym": "C/kam/kram",
 		"cat": "n., 5th",
 		"defList": [
 			"music",
@@ -3048,6 +3048,14 @@
 		"cat": "v.",
 		"defList": [
 			"float"
+		]
+	},
+	{
+		"title": "kram",
+		"etym": "C/kraz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"step"
 		]
 	},
 	{
