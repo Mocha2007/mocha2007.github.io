@@ -99,6 +99,7 @@ function printDict(){
 function etymElement(etymString){
 	const e = document.createElement('dd');
 	e.classList.add('lemmaEtym');
+	e.innerHTML = 'Etymology: ';
 	// begin etym format parsing
 	const etymologies = etymString.split('//');
 	etymologies.forEach(etymology => {
@@ -147,7 +148,7 @@ function etymElement(etymString){
 				break;
 			case 'L': // loanword
 				// eslint-disable-next-line max-len
-				etymElem.innerHTML = `Loan of ${etymElement.languages[tokens[1]]} ${tokens[2]} &ldquo;${tokens[3]}&rdquo;`;
+				etymElem.innerHTML = `From ${etymElement.languages[tokens[1]]} ${tokens[2]} &ldquo;${tokens[3]}&rdquo;`;
 				break;
 			default: // custom
 				etymElem.innerHTML = etymology;
@@ -155,7 +156,6 @@ function etymElement(etymString){
 		e.appendChild(etymElem);
 	});
 	// end
-	e.innerHTML = 'Etymology: ' + etymString;
 	return e;
 }
 etymElement.languages = {
