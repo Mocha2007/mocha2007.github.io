@@ -841,7 +841,7 @@ const gen = {
 		},
 		init(){
 			this.pforms = elements.raws.map(o => {
-				const matches = o.etym.match(/^L\/PEN\/[^/]+/g);
+				const matches = o.etym.match(/^L\/PEN\/\*[^/]+/g);
 				if (matches)
 					return matches[0].slice(6);
 				return '';
@@ -864,7 +864,7 @@ const gen = {
 			let pformi = 0;
 			elements.raws.forEach(o => {
 				const pform = this.pforms[pformi];
-				if (!o.etym.replace(/[;:,.-]/g, '').match(new RegExp(`^ProtoEremoNumoran \\*${pform}`)))
+				if (!o.etym.replace(/[;:,.-]/g, '').match(new RegExp(`^L\\/PEN\\/\\*${pform}`)))
 					return; // continue
 				const expected = normalizeEremoran(o.title).replace(/kz$/g, 'ks').replace(/tz$/g, 'ts');
 				//generate 'evolved' proto-form
