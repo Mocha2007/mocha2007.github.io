@@ -15,3 +15,17 @@ dl.dictionary > div:hover {
 	background-color: #ffc;
 	color: #884;
 }
+
+.glossList {
+	list-style: none;
+}
+.glossList li:not([class]) {
+	background-color: black;
+	border-radius: 1em;
+	color: silver;
+	font-family: Consolas, 'Courier New', monospace;
+	padding: 0 1em 0 1em;
+}
+.glossList .eremoran {
+	line-height: 2.5em;
+}
