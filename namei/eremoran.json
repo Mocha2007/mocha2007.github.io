@@ -2752,6 +2752,15 @@
 		"notes": "kasu is one of a handful of nouns ending in -u.",
 		"categories": ["body part"]
 	},
+	},
+	{
+		"title": "kaz",
+		"etym": "L/PEN/*kas",
+		"cat": "n., 4th",
+		"defList": [
+			"(archaic) cut"
+		]
+	},
 	{
 		"title": "kek",
 		"etym": "L/PEN/*kek-x/god",
@@ -5262,7 +5271,7 @@
 	},
 	{
 		"title": "sudôz",
-		"etym": "L/PEN/*tʃu-dôs/do; make//from *tʃu 'of; from' + *dôs 'do; make'.",
+		"etym": "L/PEN/*tʃu-dôs/do; make",
 		"cat": "v.",
 		"defList": [
 			"(<i>inanimate object</i>) do/make",
@@ -5278,11 +5287,11 @@
 			"(<i>animate subject, inanimate object, of a consumable</i><sup>1</sup>) enjoy",
 			"(<i>inanimate subject, human object</i>) be a cause of termination for"
 		],
-		"notes": "<sup>1</sup> Habitual aspect only"
+		"notes": "<sup>1</sup> Habitual aspect only; supplanted the now-archaic dôz in most senses"
 	},
 	{
 		"title": "sukaz",
-		"etym": "L/PEN/*tʃu-kas/cut//from *tʃu 'of; from' + *kas 'cut'.",
+		"etym": "C/su/kaz",
 		"cat": "v.",
 		"defList": [
 			"cut, split",
