@@ -4539,12 +4539,13 @@
 	},
 	{
 		"title": "pipibubu",
-		"etym": "reduplicated pi + reduplicated bu",
+		"etym": "C/pi/bu",
 		"cat": "n., 4th",
 		"defList": [
 			"lightning; thunder"
 		],
-		"categories": ["weather"]
+		"categories": ["weather"],
+		"notes": "(specifically, a compound of their reduplications - *pibu is unattested)"
 	},
 	{
 		"title": "pukusam",
