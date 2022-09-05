@@ -3396,7 +3396,7 @@
 	{
 		"title": "lam",
 		"img": "../img/eremoran/len.png",
-		"etym": "L/PEN/*lam/stone//related to len 'stone'",
+		"etym": "L/PEN/*lam/stone",
 		"cat": "n., 5th",
 		"defList": [
 			"(uncountable) stone, rock"
@@ -3429,10 +3429,20 @@
 	{
 		"title": "len",
 		"img": "../img/eremoran/len.png",
-		"etym": "L/PEN/*len/stone//related to lam 'stone'",
+		"etym": "r/lel",
 		"cat": "n., 4th",
 		"defList": [
 			"(countable) stone, rock"
+		],
+		"notes": "Apparently dissimilated from lel"
+	},
+	{
+		"title": "lel",
+		"img": "../img/eremoran/len.png",
+		"etym": "B/lan/ela",
+		"cat": "n., 4th",
+		"defList": [
+			"(archaic, dialectal, countable) stone, rock"
 		]
 	},
 	{
