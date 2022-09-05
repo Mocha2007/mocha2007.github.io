@@ -621,6 +621,16 @@
 		"categories": ["grammar"]
 	},
 	{
+		"title": "azaz",
+		"etym": "L/PEN/*asas/stun",
+		"cat": "v.",
+		"defList": [
+			"stun, shock"
+		],
+		"notes": "azmu is one of a handful of nouns ending in -u.",
+		"categories": ["body part"]
+	},
+	{
 		"title": "azmu",
 		"etym": "L/PEN/*asmu/forearm",
 		"cat": "n., 4th",
@@ -4873,7 +4883,7 @@
 	},
 	{
 		"title": "sazam",
-		"etym": "Appears to be Proto-Eremo-Numoran *sim 'light' + *asa '???' + *-m (Intangible suffix)",
+		"etym": "B/sim/azaz",
 		"cat": "n., 5th",
 		"defList": [
 			"awe, fear, shock"
