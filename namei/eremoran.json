@@ -2378,8 +2378,10 @@
 		"etym": "L/PEN/*ɸut",
 		"cat": "n., 3rd",
 		"defList": [
-			"bow"
-		]
+			"bow",
+			"cock (cf. English 'tool')"
+		],
+		"categories": ["sex"]
 	},
 	{
 		"title": "hutaz",
@@ -4162,7 +4164,7 @@
 	},
 	{
 		"title": "nesfu",
-		"etym": "L/PEN/*nesɸu/lewd//possibly related to *nes 'bed'",
+		"etym": "C/nes/hut",
 		"cat": "adj.",
 		"defList": [
 			"lewd"
