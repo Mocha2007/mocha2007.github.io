@@ -2652,8 +2652,10 @@
 		"etym": "L/PEN/*xamu/left//Related to <em>kamurz</em> 'forbid'",
 		"cat": "adj.",
 		"defList": [
-			"left (not right)"
-		]
+			"left (not right)",
+			"gynephilic (ie. heterosexual male or lesbian)"
+		],
+		"categories": ["sex"]
 	},
 	{
 		"title": "kamurz",
@@ -4926,10 +4928,8 @@
 		"etym": "L/PEN/*tʃedu/sharp",
 		"cat": "adj.",
 		"defList": [
-			"sharp (not dull)",
-			"heterosexual, straight"
-		],
-		"categories": ["sex"]
+			"sharp (not dull)"
+		]
 	},
 	{
 		"title": "sêdzak",
@@ -5122,9 +5122,10 @@
 		"cat": "adj.",
 		"defList": [
 			"warm, hot",
-			"right"
+			"right (ie. not left)",
+			"androphilic (ie. gay male or heterosexual female)"
 		],
-		"categories": ["weather"]
+		"categories": ["weather", "sex"]
 	},
 	{
 		"title": "spart",
@@ -6037,10 +6038,8 @@
 		"etym": "C/u-/sedu",
 		"cat": "adj.",
 		"defList": [
-			"dull (not sharp)",
-			"gay"
-		],
-		"categories": ["sex"]
+			"dull (not sharp)"
+		]
 	},
 	{
 		"title": "usiu",
