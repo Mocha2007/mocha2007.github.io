@@ -356,7 +356,7 @@
 	},
 	{
 		"title": "annumz",
-		"etym": "L/PEN/*xêd-nums/charge",
+		"etym": "C/ad/numz",
 		"cat": "v.",
 		"defList": [
 			"charge; rush; skirmish"
@@ -1426,7 +1426,7 @@
 	},
 	{
 		"title": "dasu",
-		"etym": "L/PEN/*daʃu/fast//L/PEN/*da-isu/dirty",
+		"etym": "L/PEN/*daʃu/fast//C/da/-isu",
 		"cat": "adj.",
 		"defList": [
 			"fast",
@@ -1536,7 +1536,7 @@
 	},
 	{
 		"title": "dinkalz",
-		"etym": "L/PEN/*din-kals/ask",
+		"etym": "C/din/kalz",
 		"cat": "v.",
 		"defList": [
 			"consult, reference",
@@ -1619,7 +1619,7 @@
 	},
 	{
 		"title": "dôkalz",
-		"etym": "L/PEN/*dô-kals/ask",
+		"etym": "C/dô/kalz",
 		"cat": "v.",
 		"defList": [
 			"ask"
@@ -1671,7 +1671,7 @@
 	},
 	{
 		"title": "dônumz",
-		"etym": "L/PEN/*dô-nums/attack",
+		"etym": "C/dô/numz",
 		"cat": "v.",
 		"defList": [
 			"attack; invade"
@@ -5211,11 +5211,12 @@
 	},
 	{
 		"title": "su",
-		"etym": "L/PEN/*tʃu/of; from//Related to the suffix -(i)su.",
+		"etym": "L/PEN/*tʃu/of; from",
 		"cat": "post.",
 		"defList": [
 			"of; belonging to or made of"
-		]
+		],
+		"notes": "Related to the suffix -(i)su"
 	},
 	{
 		"title": "subanbanz",
@@ -5229,7 +5230,7 @@
 	},
 	{
 		"title": "subir",
-		"etym": "L/PEN/*tʃu-βi-r/warrior",
+		"etym": "C/su/bim",
 		"cat": "n., 1st",
 		"defList": [
 			"warrior, soldier",
@@ -5431,7 +5432,7 @@
 	},
 	{
 		"title": "tasu",
-		"etym": "L/PEN/*tassu/green, from *tase 'grass' + *-su '-ish'. Related to talire, taze, and tasku.",
+		"etym": "L/PEN/*tassu/green, from *tase 'grass' + *-isu '-ish'. Related to talire, taze, and tasku.",
 		"cat": "adj.",
 		"defList": [
 			"green"
