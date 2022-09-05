@@ -495,7 +495,7 @@
 	{
 		"title": "ardzên",
 		"img": "../img/eremoran/ardzin.png",
-		"etym": "L/PEN/*xere-diên/silver//from *xere 'fire' + *diên '???'",
+		"etym": "L/PEN/*xerediên/silver",
 		"cat": "n., 4th",
 		"defList": [
 			"native silver"
@@ -6122,6 +6122,14 @@
 		"defList": [
 			"spit",
 			"salivate, drool"
+		]
+	},
+	{
+		"title": "zên",
+		"etym": "L/PEN/*diên",
+		"cat": "v.",
+		"defList": [
+			"metal"
 		]
 	},
 	{
