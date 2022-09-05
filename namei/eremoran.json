@@ -1946,7 +1946,7 @@
 	},
 	{
 		"title": "habin",
-		"etym": "L/PEN/*ɸabin/finger. Related to <i>habu</i> 'fingernail'.",
+		"etym": "L/PEN/*ɸabin/finger",
 		"cat": "n., 4th",
 		"defList": [
 			"finger",
@@ -1975,7 +1975,7 @@
 	},
 	{
 		"title": "habu",
-		"etym": "L/PEN/*ɸabɸu/fingernail//Related to <i>habin</i> 'finger'.",
+		"etym": "B/habin/hut",
 		"cat": "n., 4th",
 		"defList": [
 			"fingernail",
