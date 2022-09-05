@@ -4870,11 +4870,12 @@
 	},
 	{
 		"title": "saurom",
-		"etym": "saurz + -om, a rare variant of -(a)m",
+		"etym": "C/saurz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"sight, vision"
-		]
+		],
+		"notes": "irregular spelling; 'sauram' would be expected, but it was likely influenced by <em>suro</em> 'eye'"
 	},
 	{
 		"title": "saurz",
@@ -5328,7 +5329,7 @@
 	{
 		"title": "suro",
 		"img": "../img/eremoran/sauroma.png",
-		"etym": "r/saurom",
+		"etym": "L/PEN/*siuro",
 		"cat": "n., 4th",
 		"defList": [
 			"eye"
