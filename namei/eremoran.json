@@ -2651,7 +2651,7 @@
 	},
 	{
 		"title": "kamu",
-		"etym": "L/PEN/*xamu/left//Related to <em>kamurz</em> 'forbid'",
+		"etym": "L/PEN/*xamu/left",
 		"cat": "adj.",
 		"defList": [
 			"left (not right)",
@@ -2661,7 +2661,7 @@
 	},
 	{
 		"title": "kamurz",
-		"etym": "L/PEN/*xamurs/forbid//Related to <em>kamu</em> 'left'",
+		"etym": "B/kamu/rôz",
 		"cat": "v.",
 		"defList": [
 			"forbid; prohibit"
