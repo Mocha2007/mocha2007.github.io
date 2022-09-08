@@ -716,13 +716,15 @@ const phono = {
 	elem(s){
 		const span = document.createElement('span');
 		span.classList.add('ipa');
+		const irr = elements.raws.find(w => w.title === s).pron; // irregular pron?
+		if (irr === 0) // todo fix affixes
+			return span;
 		const word = normalizeEremoran(s);
 		const syllables = this.syllabify(word);
 		if (2 <= syllables.length)
 			syllables[syllables.length-2] = syllables[syllables.length-2].toUpperCase();
 		const ipa = this.ipa(word);
 		const syllabification = syllables.join('-');
-		const irr = elements.raws.find(w => w.title === s).pron; // irregular pron?
 		span.innerHTML = `IPA: [${irr || ipa}] &ndash; Syllabification: ${syllabification}`;
 		// debug warning
 		this.validate(word);
