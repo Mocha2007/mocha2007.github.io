@@ -1,5 +1,14 @@
 [
 	{
+		"title": "-z",
+		"etym": "L/PEN/*-z",
+		"cat": "v., adv.",
+		"defList": [
+			"(verb suffix)",
+			"turns a time noun (eg. <em>dam</em> morning) into a habitual time adverb (eg. <em>daz</em> every morning)"
+		]
+	},
+	{
 		"title": "abakt",
 		"img": "../img/eremoran/abakt.png",
 		"etym": "L/PEN/*abakt/board",
