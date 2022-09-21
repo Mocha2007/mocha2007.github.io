@@ -1621,6 +1621,23 @@
 		]
 	},
 	{
+		"title": "dôdaêt",
+		"etym": "C/dôdaz/-ê",
+		"cat": "n., 3rd",
+		"defList": [
+			"stylus",
+			"(dialectal) pen"
+		]
+	},
+	{
+		"title": "dôdaz",
+		"etym": "C/dô/da",
+		"cat": "v.",
+		"defList": [
+			"carve, inscribe (esp. on clay)"
+		]
+	},
+	{
 		"title": "doder",
 		"etym": "L/PEN/*doder/guest",
 		"cat": "n., 1st",
@@ -1782,9 +1799,9 @@
 		"cat": "n., 1st",
 		"defList": [
 			"man",
-			"husband"
+			"husband (in monogamous relationships)"
 		],
-		"categories": ["person"]
+		"categories": ["family", "person"]
 	},
 	{
 		"title": "ela",
@@ -1800,9 +1817,20 @@
 		"cat": "n., 1st",
 		"defList": [
 			"child",
-			"(more specifically) boy"
+			"(more specifically) boy",
+			"(more specifically) son"
 		],
-		"categories": ["age", "person"]
+		"categories": ["age", "family", "person"]
+	},
+	{
+		"title": "elaôr",
+		"etym": "C/elaêr/-ô",
+		"cat": "n., 1st",
+		"defList": [
+			"girl",
+			"daughter"
+		],
+		"categories": ["family", "person"]
 	},
 	{
 		"title": "elelak",
@@ -3574,7 +3602,7 @@
 		"defList": [
 			"mother"
 		],
-		"categories": ["person"]
+		"categories": ["family", "person"]
 	},
 	{
 		"title": "maêt",
@@ -4388,7 +4416,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"one's deceased ancestors"
-		]
+		],
+		"categories": ["family"]
 	},
 	{
 		"title": "ôdu",
@@ -4422,10 +4451,10 @@
 		"cat": "n., 1st",
 		"defList": [
 			"woman",
-			"wife",
+			"wife (in monogamous relationships)",
 			"(chess) queen"
 		],
-		"categories": ["chess", "person"]
+		"categories": ["chess", "family", "person"]
 	},
 	{
 		"title": "ôkarinu",
@@ -5561,7 +5590,7 @@
 			"protector",
 			"father"
 		],
-		"categories": ["person"]
+		"categories": ["family", "person"]
 	},
 	{
 		"title": "temêmor",
@@ -5978,6 +6007,24 @@
 		],
 		"notes": "cf. <i>ômôrz</i> which implies others witnessed the event too",
 		"categories": ["evidential"]
+	},
+	{
+		"title": "umfêlar",
+		"etym": "L/VAZ/???/husband",
+		"cat": "pron.",
+		"defList": [
+			"husband / brother-in-law (in polygamous relationships)"
+		],
+		"categories": ["family"]
+	},
+	{
+		"title": "umfolar",
+		"etym": "L/VAZ/???/wife",
+		"cat": "pron.",
+		"defList": [
+			"wife / sister-in-law (in polygamous relationships)"
+		],
+		"categories": ["family"]
 	},
 	{
 		"title": "una",
