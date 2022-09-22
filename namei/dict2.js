@@ -86,6 +86,17 @@ function printDict(){
 			entryDiv.appendChild(noteElement);
 		}
 		list.appendChild(entryDiv);
+		// anagram list
+		const anagramElement = document.createElement('dd');
+		anagramElement.innerHTML = '(Find Anagrams)';
+		anagramElement.classList.add('button');
+		anagramElement.onclick = () => {
+			anagramElement.classList.remove('button');
+			anagramElement.innerHTML = '';
+			elements.dict.filter(other => obj.title !== other && isAnagram(obj.title, other))
+				.map(linkCard).forEach(elem => anagramElement.appendChild(elem));
+		};
+		entryDiv.appendChild(anagramElement);
 		// add categories
 		if (obj.categories)
 			obj.categories.forEach(category => {
@@ -173,5 +184,18 @@ etymElement.stats = {
 	/** @type {string[]} */
 	type: [],
 };
-// todo: chart of etymology type distribution, and origin distribution
+
+function isAnagram(a, b){
+	if (a === b)
+		return true;
+	const aa = Array.from(a);
+	const ba = Array.from(b);
+	const i = aa.indexOf(ba.pop());
+	if (i < 0)
+		return false;
+	aa.splice(i, 1);
+	// console.debug(aa, ba, i);
+	return isAnagram(aa.join(''), ba.join(''));
+}
+
 // todo: link to vazcud words!!!
