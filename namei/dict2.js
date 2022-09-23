@@ -186,9 +186,7 @@ etymElement.stats = {
 };
 
 function isAnagram(a, b){
-	const as = Array.from(a).sort();
-	const bs = Array.from(b).sort();
-	return as.length === bs.length && as.every((c, i) => c === bs[i]);
+	return Array.from(a).sort().join('') === Array.from(b).sort().join('');
 }
 
 // todo: link to vazcud words!!!
