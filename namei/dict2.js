@@ -185,6 +185,10 @@ etymElement.stats = {
 	type: [],
 };
 
+/** compares two strings and returns true if the count of each character matches exactly
+ * @param {string} a
+ * @param {string} b
+ */
 function isAnagram(a, b){
 	return Array.from(a).sort().join('') === Array.from(b).sort().join('');
 }
