@@ -4987,6 +4987,15 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "sebakok",
+		"etym": "C/seba/kot",
+		"cat": "n., 2nd",
+		"defList": [
+			"butterfly"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "sedam",
 		"etym": "C/sedat/-m",
 		"cat": "n., 5th",
