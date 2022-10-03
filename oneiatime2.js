@@ -260,7 +260,7 @@ function holidayCSS(){
 	img.title = title;
 	if (src !== defaultSrc)
 		img.src = 'img/'+src+'.png';
-	else { // THE PINKENING
+	else if (!img.classList.length){ // THE PINKENING
 		// compute
 		var pinkeningFactor = Math.max(0, Math.min(1,
 			(Date.now() - new Date(2022, 5, 1))/constants.earth.year
