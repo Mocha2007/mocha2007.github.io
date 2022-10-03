@@ -233,6 +233,8 @@ function holidayCSS(){
 			}
 			else if (day === 14)
 				title = '<3';
+			else if (day === 20) // TDoR
+				img.classList.add('trans');
 			break;
 		case 12:
 			src = 'mochristmas';

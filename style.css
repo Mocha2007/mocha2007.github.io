@@ -15,3 +15,12 @@ abbr{text-decoration:none;animation:strobe 1s linear alternate infinite;cursor: 
 	0% {border-bottom:1px solid transparent;}
 	100% {border-bottom:1px solid cyan;}
 }
+.trans {animation: trans 10s infinite;}
+@keyframes trans{
+	0% {filter: none;} /* cyan */
+	30% {filter: none;}
+	33% {filter: hue-rotate(120deg)} /* magenta */
+	63% {filter: hue-rotate(120deg)}
+	66% {filter: saturate(0)} /* white */
+	96% {filter: saturate(0)}
+}
