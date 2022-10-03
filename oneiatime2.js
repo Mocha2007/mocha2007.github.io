@@ -189,6 +189,8 @@ function holidayCSS(){
 			}
 			else if (day === 5)
 				title = 'Live long and prosper. 2063 - Forever';
+			else if (day === 27)
+				img.outerHTML = '<img id="m" src="img/mopril.png" width="200" alt="Mochadian Birthday Squiggle" onmouseover="playSound(\'sfx\')" onmouseout="stopSound(\'sfx\')"> <audio id="sfx" src="snd/partyhorn.mp3"/>';
 			break;
 		case 5:
 			if (day === 29)
@@ -270,9 +272,6 @@ function holidayCSS(){
 		var p2 = 100 + 25*pinkeningFactor;
 		document.getElementById('top').style.filter = 'hue-rotate(' + p1 + 'deg) brightness(' + p2 + '%)';
 	}
-
-	if (day === 11*month-17 && day === month*month + 3*month - 1)
-		img.outerHTML = '<img id="m" src="img/mopril.png" width="200" alt="Mochadian Birthday Squiggle" onmouseover="playSound(\'sfx\')" onmouseout="stopSound(\'sfx\')"> <audio id="sfx" src="snd/partyhorn.mp3"/>';
 }
 
 // run
