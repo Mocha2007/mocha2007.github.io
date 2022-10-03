@@ -220,7 +220,8 @@ function holidayCSS(){
 				title = 'Happy autumnal equinox ' + year + '!';
 			break;
 		case 10:
-			src = 'mochaween';
+			// src = 'mochaween';
+			img.style.filter = 'hue-rotate(-180deg) saturate(3)';
 			if (day === 18)
 				title = 'Memorial Day for the Victims of the Bombing of Łódź';
 			else
