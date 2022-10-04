@@ -39,7 +39,7 @@ const data = [
 	},
 	{
 		p: 'You feel a thousand needles poking at your skin&mdash;but when you look, nothing is there.',
-		choices: ['&ldquo;This is how everyone feels.&rdquo;', '&ldquo;Something is wrong with my body.&rdquo;'],
+		choices: ['&ldquo;This is how I&apos;ve always felt anyways.&rdquo;', '&ldquo;Something is wrong with my body.&rdquo;'],
 	},
 ];
 
