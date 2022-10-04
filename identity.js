@@ -24,6 +24,10 @@ const data = [
 		p: 'Your existence disgusts your family.',
 		choices: ['Accept their will', 'Struggle to retain your individuality'],
 	},
+	{
+		p: 'Your breath is weak. Your body is exhausted. The depression is getting worse.',
+		choices: ['No one understands', 'Where is hope?'],
+	},
 ];
 
 function identity(){
