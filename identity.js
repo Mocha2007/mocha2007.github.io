@@ -18,7 +18,16 @@ const data = [
 		p: 'You feel mold growing on your face.',
 	},
 	{
+		p: 'The mold has spread to your arms and legs.',
+	},
+	{
 		p: 'Your feel your clothes burning your skin.',
+	},
+	{
+		p: 'Your try to speak, but you only hear incoherent scratching noises.',
+	},
+	{
+		p: 'Your chest is melting into a amorphous, waxy blob.',
 	},
 	{
 		p: 'Your existence disgusts your family.',
