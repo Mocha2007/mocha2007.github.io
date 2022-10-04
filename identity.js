@@ -5,7 +5,7 @@ const data = [
 	},
 	{
 		p: 'You hear the voices of your colleagues around you, whispering behind your back&mdash;they are disgusted by your appearance.',
-		choices: ['They&apos;re right&mdash;I&apos;m a freak.', 'But... they&apos;re wrong! I can&apos;t help who I am!'],
+		choices: ['&ldquo;They&apos;re right&mdash;I&apos;m a freak.&rdquo;', '&ldquo;But... they&apos;re wrong! I can&apos;t help who I am!&rdquo;'],
 	},
 	{
 		p: 'You see your body morphing in front of your very eyes, into a new, grotesque form.',
@@ -35,7 +35,11 @@ const data = [
 	},
 	{
 		p: 'Your breath is weak. Your body is exhausted. The depression is getting worse.',
-		choices: ['No one understands', 'Where is hope?'],
+		choices: ['&ldquo;No one understands.&rdquo;', '&ldquo;Where is hope?&rdquo;'],
+	},
+	{
+		p: 'You feel a thousand needles poking at your skin&mdash;but when you look, nothing is there.',
+		choices: ['&ldquo;This is how everyone feels.&rdquo;', '&ldquo;Something is wrong with my body.&rdquo;'],
 	},
 ];
 
