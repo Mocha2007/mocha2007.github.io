@@ -4,8 +4,8 @@ const data = [
 		choices: ['Accept incongruity', 'Fight back'],
 	},
 	{
-		p: 'You hear the voices of your colleagues around you, whispering behind your backs&mdash;they are disgusted by your appearance.',
-		choices: ['They&apos;re right&mdash;I&apos;m a freak.', 'But... they&apos;re wrong! I can&apos; help who I am!'],
+		p: 'You hear the voices of your colleagues around you, whispering behind your back&mdash;they are disgusted by your appearance.',
+		choices: ['They&apos;re right&mdash;I&apos;m a freak.', 'But... they&apos;re wrong! I can&apos;t help who I am!'],
 	},
 	{
 		p: 'You see your body morphing in front of your very eyes, into a new, grotesque form.',
