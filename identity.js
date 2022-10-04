@@ -44,7 +44,9 @@ const data = [
 ];
 
 function identity(){
-	if (0.1 < Math.random())
+	if (new Date().getMonth() !== 9) // October
+		return;
+	if (0.2 < Math.random())
 		return;
 	// import CSS
 	const style = document.createElement('link');
