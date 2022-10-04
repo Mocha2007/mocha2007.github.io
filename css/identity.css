@@ -1,0 +1,24 @@
+#identity {
+	background-color: black;
+	color: silver;
+	height: 100vh;
+	left: 0;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	width: 100vw;
+}
+#identity span {
+	color: cyan;
+	cursor: pointer;
+	margin: 1vw;
+}
+#identity span:nth-child(2) {
+	color: orange;
+}
+#identity span:hover {
+	opacity: 0.5;
+}
+.noOverflow {
+	overflow: hidden;
+}
