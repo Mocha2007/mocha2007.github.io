@@ -862,25 +862,25 @@ const game = {
 			// cute music only pls
 			// 0
 			new Video('Ekg7fH2t40U', 1, 'gneurshk'),
-			new Video('rXMB5WSCVks', 87, 'bad moew', 'Bongo Cat', ['music'], 0, 80),
-			new Video('AeENh1TqsKY', 88, 'ＭａｙｕｒｉＷａｖｅ', 'Stost', ['music']),
+			// new Video('rXMB5WSCVks', 87, 'bad moew', 'Bongo Cat', ['music'], 0, 80),
+			// new Video('AeENh1TqsKY', 88, 'ＭａｙｕｒｉＷａｖｅ', 'Stost', ['music']),
 			new Video('9wnNW4HyDtg', 56, 'Ayaya! Ayaya! Intensifies', 'No. 8', ['music']),
-			new Video('9Gj47G2e1Jc', 476, 'Plastic Love', 'Mariya Takeuchi', ['music']), // exempt from music rules
+			// new Video('9Gj47G2e1Jc', 476, 'Plastic Love', 'Mariya Takeuchi', ['music']), // exempt from music rules
 			new Video('yQm4CnHMwxc', 14, 'Snow leopard purr', '', ['cat']),
 			new Video('dAUpL62-FLM', 44, 'Cougar Talk...', '', ['cat']),
 			new Video('W461djpQl2s', 19, 'Purring Cougar Kneading & Sucking', '', ['cat']),
-			new Video('mNrXMOSkBas', 202, 'Smile', 'Pinkie Pie', ['music']),
-			new Video('fZ2f6lFH5cg', 70, 'Laughter', 'Pinkie Pie', ['music']),
+			// new Video('mNrXMOSkBas', 202, 'Smile', 'Pinkie Pie', ['music']),
+			// new Video('fZ2f6lFH5cg', 70, 'Laughter', 'Pinkie Pie', ['music']),
 			// 10
 			new Video('b9EqoWzTKRY', 23, 'Cupcakes', 'Pinkie Pie', ['music']),
-			new Video('ncN8JeG-dZ0', 95, 'DDU-DU DDU-DU', 'Bongo Cat', ['music'], 0, 92),
-			new Video('zoAQfKb42ig', 140, 'See You Again', 'Bongo Cat', ['music'], 5, 130),
-			new Video('4atH_Km4KaQ', 25, 'Golden Ticket', 'South Park', ['music']),
+			// new Video('ncN8JeG-dZ0', 95, 'DDU-DU DDU-DU', 'Bongo Cat', ['music'], 0, 92),
+			// new Video('zoAQfKb42ig', 140, 'See You Again', 'Bongo Cat', ['music'], 5, 130),
+			// new Video('4atH_Km4KaQ', 25, 'Golden Ticket', 'South Park', ['music']),
 			new Video('s-DQM-1atK0', 80, 'Kyle\'s Mom\'s a Bitch', 'South Park', ['music']),
 			new Video('bOR38552MJA', 124, 'Blame Canada', 'South Park', ['music'], 0, 95),
 			new Video('E1UEDulwWkY', 131, 'Minorities in my Waterpark', 'South Park', ['music']),
 			new Video('MtN1YnoL46Q', 191, 'The Duck Song', 'Bryant Oden', ['music'], 3, 190),
-			new Video('Dc-RRLKeilk', 139, 'Fresh Prince Of Dickbutt Bel Air', 'A.COE', ['music']),
+			// new Video('Dc-RRLKeilk', 139, 'Fresh Prince Of Dickbutt Bel Air', 'A.COE', ['music']),
 			new Video('IKxzI4LuNSU', 38, 'Intensify Forward Firepower', '', [], 12, 22),
 			// 20
 		],
