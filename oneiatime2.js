@@ -118,8 +118,8 @@ function updateEremoranDate(t){
 	var seasonId = Math.floor(days / days_per_season);
 	days %= days_per_season;
 	days++; // 1-indexed, not 0-indexed
-	var seasonString = constants.eremor.seasons[seasonId] + ' ('
-		+ constants.eremor.seasonsAlt[seasonId] + ')';
+	var seasonString = (constants.eremor.seasons[seasonId] || '') + ' ('
+		+ (constants.eremor.seasonsAlt[seasonId] || 'Intercalary Day') + ')';
 	document.getElementById('clock_eremor_date').innerHTML = years
 		+ ' AT, ' + seasonString + ', Day ' + days + ', '
 		+ constants.timeOfDay[Math.floor(8*remainder/constants.oneia.day)];
