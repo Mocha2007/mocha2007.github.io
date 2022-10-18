@@ -178,6 +178,8 @@ function holidayCSS(){
 				title = 'Drink, ye bastard!';
 			else if (day === 20)
 				title = 'Happy vernal equinox ' + year + '! Happy Nowruz!';
+			else if (day === 31) // TDoV
+				img.classList.add('trans');
 			break;
 		case 4:
 			if (day === 1){
