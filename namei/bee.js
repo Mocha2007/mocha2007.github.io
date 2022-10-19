@@ -102,6 +102,8 @@ const bee = {
 			elem.onclick = () => this.append(char);
 			document.getElementById('beeChars').appendChild(elem);
 		});
+		// reset score
+		this.refreshAnswers();
 	},
 	score(word, letters){
 		let score = word.length - 3;
