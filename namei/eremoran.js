@@ -204,14 +204,14 @@ const LE = {
 			['$c', '$c'],
 			// ['$c uid', '$c not'],
 		],
-		understood(was_it){
-			this.score.change(was_it ? 1 : -1);
-			if (was_it)
-				this.review.remove();
-			else
-				this.review.add();
-			this.new(was_it);
-		},
+	},
+	understood(was_it){
+		this.score.change(was_it ? 1 : -1);
+		if (was_it)
+			this.review.remove();
+		else
+			this.review.add();
+		this.new(was_it);
 	},
 };
 // replace each word in eremoran class span with <span ... >
