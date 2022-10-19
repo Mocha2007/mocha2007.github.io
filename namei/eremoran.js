@@ -90,6 +90,7 @@ function normalizeEremoran(s){
 const LE = {
 	learn: document.getElementById('learn'),
 	new(canIUseReview = true){
+		console.debug('LE.new', this);
 		// blank
 		this.learn.innerHTML = '';
 		// old or new?
@@ -180,26 +181,36 @@ const LE = {
 	},
 	shapes: {
 		clause: [
-			['$subj i ad $obj afkaz', '$subj goes to $obj'],
-			['$subj i dir $obj namz', '$subj eats $obj'],
-			['$subj i dir $obj saurz', '$subj sees $obj'],
+			['$subj i ad $obj afkaz', '$subj go to $obj'],
+			['$subj i dir $obj namz', '$subj eat $obj'],
+			['$subj i dir $obj saurz', '$subj see $obj'],
+			['$subj su purrum i naum ne', 'how much do $subj cost'],
+			['$subj i kusanam ne', 'how many $subj are there'],
 		],
 		noun: [
-			['arêôk', 'the cow'],
-			['badmak', 'the fox'],
-			['bôk', 'the chicken'],
-			['danôak', 'the bug'],
-			['dirak', 'the whale'],
-			['ek', 'the horse'],
-			['hisk', 'the crow'],
-			['lusik', 'the dog'],
-			['mor', 'the person'],
-			['roraok', 'the cat'],
+			['arêôk', 'the cows'],
+			['badmak', 'the foxes'],
+			['bôk', 'the chickens'],
+			['danôak', 'the bugs'],
+			['dirak', 'the whales'],
+			['ek', 'the horses'],
+			['hisk', 'the crows'],
+			['lusik', 'the dogs'],
+			['mor', 'the people'],
+			['roraok', 'the cats'],
 		],
 		supraclause: [
 			['$c', '$c'],
-			['$c uid', '$c not'],
+			// ['$c uid', '$c not'],
 		],
+		understood(was_it){
+			this.score.change(was_it ? 1 : -1);
+			if (was_it)
+				this.review.remove();
+			else
+				this.review.add();
+			this.new(was_it);
+		},
 	},
 };
 // replace each word in eremoran class span with <span ... >
