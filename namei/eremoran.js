@@ -181,6 +181,7 @@ const LE = {
 	},
 	shapes: {
 		clause: [
+			// todo: use noun tags in dict to determine which nouns are appropriate
 			['$subj i ad $obj afkaz', '$subj go to $obj'],
 			['$subj i dir $obj namz', '$subj eat $obj'],
 			['$subj i dir $obj saurz', '$subj see $obj'],
