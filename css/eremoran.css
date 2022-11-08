@@ -75,6 +75,9 @@ a.eremoran {
 	background-color: silver;
 	border-radius: 2vh;
 }
+#eremoran_tooltip .button {
+	display: none;
+}
 .eremoranWord {
 	padding: 0.4vh;
 }

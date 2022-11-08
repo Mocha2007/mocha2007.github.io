@@ -512,6 +512,15 @@
 		"categories": ["drink"]
 	},
 	{
+		"title": "ardonask",
+		"etym": "C/ardo/nask",
+		"cat": "n., 2nd",
+		"defList": [
+			"red panda"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "ardzên",
 		"img": "../img/eremoran/ardzin.png",
 		"etym": "L/PEN/*xerediên/silver",
@@ -673,7 +682,7 @@
 		"etym": "L/PEN/*badmax/fox",
 		"cat": "n., 2nd",
 		"defList": [
-			"fox"
+			"fox (esp. vulpes vulpes, vulpes cana, &amp; vulpes ruepellii)"
 		],
 		"categories": ["animal"]
 	},
@@ -1383,6 +1392,15 @@
 		"categories": ["color"]
 	},
 	{
+		"title": "dalusik",
+		"etym": "C/da/lusik",
+		"cat": "n., 2nd",
+		"defList": [
+			"golden jackal"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "dam",
 		"etym": "L/PEN/*dam/morning",
 		"cat": "n., 5th",
@@ -1932,6 +1950,15 @@
 		],
 		"categories": ["plant"],
 		"notes": "wanderwort"
+	},
+	{
+		"title": "endlusik",
+		"etym": "C/endu/lusik",
+		"cat": "n., 2nd",
+		"defList": [
+			"dire wolf"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "endu",
@@ -3003,8 +3030,9 @@
 		"defList": [
 			"weasel",
 			"ferret",
-			"marten",
-			"polecat"
+			"marten (esp. martes foina &amp; martes flavigula)",
+			"polecat",
+			"mink"
 		],
 		"categories": ["animal"]
 	},
@@ -3711,7 +3739,7 @@
 		"etym": "C/lire/sêdzak",
 		"cat": "n., 2nd",
 		"defList": [
-			"dormouse"
+			"dormouse (esp. dryomys)"
 		],
 		"categories": ["animal"]
 	},
@@ -3750,6 +3778,16 @@
 			"stray/feral dog"
 		],
 		"notes": "Owned dogs are called <em>busk</em>",
+		"categories": ["animal"]
+	},
+	{
+		"title": "lutbak",
+		"etym": "B/lusik/utbak",
+		"cat": "n., 2nd",
+		"defList": [
+			"hemicyon",
+			"phoberogale"
+		],
 		"categories": ["animal"]
 	},
 	{
