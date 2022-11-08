@@ -324,6 +324,15 @@
 		]
 	},
 	{
+		"title": "alikanask",
+		"etym": "C/alika/nask",
+		"cat": "n., 2nd",
+		"defList": [
+			"leopard"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "ammut",
 		"etym": "L/PEN/*xedmu/port",
 		"cat": "n., 3rd",
@@ -924,6 +933,15 @@
 		]
 	},
 	{
+		"title": "betlek",
+		"etym": "B/betlat/ek",
+		"cat": "n., 2nd",
+		"defList": [
+			"rhinoceros"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "bêtu",
 		"etym": "L/PEN/*bêtu/loyal",
 		"cat": "adj.",
@@ -1159,6 +1177,15 @@
 		]
 	},
 	{
+		"title": "bômak",
+		"etym": "C/bôz/mat",
+		"cat": "n., 2nd",
+		"defList": [
+			"(northern) snail"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "bonz",
 		"etym": "L/PEN/*bons/poke",
 		"cat": "v.",
@@ -1292,7 +1319,8 @@
 			"earth, dirt, ground, soil",
 			"clay",
 			"land, territory, country, nation",
-			"Oneia"
+			"Oneia",
+			"(esp. in compounds) sienna"
 		],
 		"notes": "This does not translate country or nation in all English uses. When referring to an ethnos, use <i>mor</i> instead."
 	},
@@ -1324,6 +1352,15 @@
 			"shoulder"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "dakink",
+		"etym": "C/da/kink",
+		"cat": "n., 2nd",
+		"defList": [
+			"stoat"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "daktarm",
@@ -1364,6 +1401,15 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "damok",
+		"etym": "C/da/mor",
+		"cat": "n., 2nd",
+		"defList": [
+			"monkey (esp. the rhesus macaque)"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "damu",
 		"etym": "L/PEN/*damu/ford",
 		"cat": "n., 4th",
@@ -1379,6 +1425,15 @@
 			"often; usually"
 		],
 		"categories": ["time"]
+	},
+	{
+		"title": "danask",
+		"etym": "C/da/nask",
+		"cat": "n., 2nd",
+		"defList": [
+			"dhole"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "danealm",
@@ -1770,6 +1825,15 @@
 			"skin, peel (of a fruit)"
 		],
 		"categories": ["body part", "plant"]
+	},
+	{
+		"title": "ebakrifank",
+		"etym": "C/eba/krifan",
+		"cat": "n., 2nd",
+		"defList": [
+			"bat (chiropteran)"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "edzam",
@@ -2255,6 +2319,15 @@
 		"categories": ["weather"]
 	},
 	{
+		"title": "hilbenask",
+		"etym": "C/hilbe/nask",
+		"cat": "n., 2nd",
+		"defList": [
+			"snow leopard"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "hilsaz",
 		"etym": "L/PEN/*ɸiltsias/mix",
 		"cat": "v.",
@@ -2429,6 +2502,15 @@
 		"defList": [
 			"hunt"
 		]
+	},
+	{
+		"title": "husêdzak",
+		"etym": "B/hus/sêdzak",
+		"cat": "n., 2nd",
+		"defList": [
+			"squirrel"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "hut",
@@ -2919,7 +3001,10 @@
 		"etym": "L/PEN/*kinx/weasel",
 		"cat": "n., 2nd",
 		"defList": [
-			"weasel"
+			"weasel",
+			"ferret",
+			"marten",
+			"polecat"
 		],
 		"categories": ["animal"]
 	},
@@ -3032,6 +3117,15 @@
 			"arm"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "kokink",
+		"etym": "C/kot/kink",
+		"cat": "n., 2nd",
+		"defList": [
+			"pangolin"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "kokint",
@@ -3153,6 +3247,15 @@
 			"wing"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "krifansêdzak",
+		"etym": "C/krifan/sêdzak",
+		"cat": "n., 2nd",
+		"defList": [
+			"pigeon"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "krum",
@@ -3363,6 +3466,15 @@
 		"categories": ["weather"]
 	},
 	{
+		"title": "kunk",
+		"etym": "B/kun/kink",
+		"cat": "n., 2nd",
+		"defList": [
+			"honey badger; ratel"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "kunôz",
 		"etym": "L/PEN/*xunôs/probably",
 		"cat": "v.",
@@ -3492,6 +3604,15 @@
 		"notes": "Apparently dissimilated from lel"
 	},
 	{
+		"title": "lensêdzak",
+		"etym": "C/len/sêdzak",
+		"cat": "n., 2nd",
+		"defList": [
+			"hamster (esp. cricetulus migratorius)"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "lel",
 		"img": "../img/eremoran/len.png",
 		"etym": "B/lan/ela",
@@ -3539,6 +3660,15 @@
 		]
 	},
 	{
+		"title": "liboêdk",
+		"etym": "C/libo/-ê",
+		"cat": "n., 2nd",
+		"defList": [
+			"dove"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "liboz",
 		"etym": "L/PEN/*libos/cry",
 		"cat": "v.",
@@ -3577,6 +3707,24 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "liresêdzak",
+		"etym": "C/lire/sêdzak",
+		"cat": "n., 2nd",
+		"defList": [
+			"dormouse"
+		],
+		"categories": ["animal"]
+	},
+	{
+		"title": "lolnask",
+		"etym": "C/lolz/nask",
+		"cat": "n., 2nd",
+		"defList": [
+			"hyena"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "lolz",
 		"etym": "L/PEN/*lols/laugh",
 		"cat": "v.",
@@ -3602,6 +3750,15 @@
 			"stray/feral dog"
 		],
 		"notes": "Owned dogs are called <em>busk</em>",
+		"categories": ["animal"]
+	},
+	{
+		"title": "mabôêk",
+		"etym": "C/mat/bôêt",
+		"cat": "n., 2nd",
+		"defList": [
+			"(southern) snail"
+		],
 		"categories": ["animal"]
 	},
 	{
@@ -3694,6 +3851,15 @@
 		"categories": ["animal", "chess"]
 	},
 	{
+		"title": "manasêdzak",
+		"etym": "C/mana/sêdzak",
+		"cat": "n., 2nd",
+		"defList": [
+			"shrew"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "manaz",
 		"etym": "C/mana/-z",
 		"cat": "v.",
@@ -3760,6 +3926,15 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"rabbit"
+		],
+		"categories": ["animal"]
+	},
+	{
+		"title": "mastursêdzak",
+		"etym": "C/masturk/sêdzak",
+		"cat": "n., 2nd",
+		"defList": [
+			"jerboa"
 		],
 		"categories": ["animal"]
 	},
@@ -4002,6 +4177,15 @@
 		]
 	},
 	{
+		"title": "mukink",
+		"etym": "C/mu/kink",
+		"cat": "n., 2nd",
+		"defList": [
+			"otter"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "mulen",
 		"etym": "C/mu/len",
 		"cat": "n., 4th",
@@ -4107,6 +4291,15 @@
 			"(<i>of non-alcoholic and non-poisoned beverages</i>) drink"
 		],
 		"categories": ["drink"]
+	},
+	{
+		"title": "nanask",
+		"etym": "C/na/nask",
+		"cat": "n., 2nd",
+		"defList": [
+			"caracal"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "nanau",
@@ -4287,6 +4480,15 @@
 		"defList": [
 			"mountain"
 		]
+	},
+	{
+		"title": "nôsêdzak",
+		"etym": "C/nô/sêdzak",
+		"cat": "n., 2nd",
+		"defList": [
+			"marmot"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "nôak",
@@ -4508,6 +4710,16 @@
 			"horn"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "onodlusik",
+		"etym": "C/onod/lusik",
+		"cat": "n., 2nd",
+		"defList": [
+			"deer (esp. muntiacus muntjak)",
+			"gazelle"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "ou",
@@ -4783,6 +4995,23 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "rêrisêdzak",
+		"etym": "C/rêrit/sêdzak",
+		"cat": "n., 2nd",
+		"defList": [
+			"porcupine (esp. hystrix indica)"
+		],
+		"categories": ["animal"]
+	},
+	{
+		"title": "rêrit",
+		"etym": "L/VAZ/???/needle",
+		"cat": "n., 2nd",
+		"defList": [
+			"(sewing) needle"
+		]
+	},
+	{
 		"title": "ril",
 		"etym": "L/PEN/*ril/sun",
 		"cat": "n., 4th",
@@ -4852,6 +5081,16 @@
 			"cat"
 		],
 		"notes": "Perhaps due to a combination of its reduplication, and the unusual form of the interjection, the spelling is irregular from what might be expected (*raraok).",
+		"categories": ["animal"]
+	},
+	{
+		"title": "roraokink",
+		"etym": "C/roraok/kink",
+		"cat": "n., 2nd",
+		"defList": [
+			"civet",
+			"mongoose"
+		],
 		"categories": ["animal"]
 	},
 	{
@@ -4926,6 +5165,15 @@
 			"lie (down)",
 			"sit"
 		]
+	},
+	{
+		"title": "sanik",
+		"etym": "L/POL/???/hedgehog",
+		"cat": "n., 2nd",
+		"defList": [
+			"hedgehog"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "sarm",
