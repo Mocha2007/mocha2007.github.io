@@ -50,7 +50,6 @@ var subtitles =	[
 	// etc gaming
 	'The med curse is real',
 	'Hok-Seng Lau is innocent!',
-	// I was never satisfied with this one... 'contown retarded; gg maf',
 	'Certified Elf-Kosher',
 	'More struts and boosters than the leading brand!',
 	'We can finally invade the heart of Eremor.<br/>Unfortunately for you, your adventure ends here.',
@@ -92,6 +91,7 @@ var subtitles =	[
 	'Temer guide us!',
 	'Rubri Eremorae donum requirunt',
 	'<abbr title="Eremoran smith guild motto">Som ardo din, ardo som din.</abbr>',
+	'The worldbuilding speaks for itself.', // or maybe this counts as a chess reference?
 	// mochisms
 	'slash-me huggu',
 	'Enkl&aacute;r&rsquo;s Stead, by Enkl&aacute;r&rsquo;s Head',
