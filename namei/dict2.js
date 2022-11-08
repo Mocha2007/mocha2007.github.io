@@ -104,7 +104,7 @@ function printDict(){
 		compoundElement.onclick = () => {
 			compoundElement.classList.remove('button');
 			compoundElement.innerHTML = '';
-			elements.raws.filter(otherRaw => otherRaw.etym[0] === 'C' && otherRaw.etym.includes(obj.title))
+			elements.raws.filter(otherRaw => otherRaw.etym.split('/').includes(obj.title))
 				.map(otherRaw => linkCard(otherRaw.title))
 				.forEach(elem => compoundElement.appendChild(elem));
 		};
