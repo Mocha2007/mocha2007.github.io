@@ -97,6 +97,18 @@ function printDict(){
 				.map(linkCard).forEach(elem => anagramElement.appendChild(elem));
 		};
 		entryDiv.appendChild(anagramElement);
+		// compound list
+		const compoundElement = document.createElement('dd');
+		compoundElement.innerHTML = '(Find Compounds)';
+		compoundElement.classList.add('button');
+		compoundElement.onclick = () => {
+			compoundElement.classList.remove('button');
+			compoundElement.innerHTML = '';
+			elements.raws.filter(otherRaw => otherRaw.etym[0] === 'C' && otherRaw.etym.includes(obj.title))
+				.map(otherRaw => linkCard(otherRaw.title))
+				.forEach(elem => compoundElement.appendChild(elem));
+		};
+		entryDiv.appendChild(compoundElement);
 		// add categories
 		if (obj.categories)
 			obj.categories.forEach(category => {
