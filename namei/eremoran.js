@@ -651,6 +651,10 @@ const search = {
 	appendResult(s){
 		const li = document.createElement('li');
 		li.appendChild(titleCard(s));
+		const gloss = document.createElement('q');
+		gloss.innerHTML = elements.raws.find(entry => entry.title === s).defList[0]
+			.replace(/\(.+\)/g, ''); // remove parentheticals from glosses
+		li.appendChild(gloss);
 		this.searchResults.appendChild(li);
 	},
 	/** @returns {string} */
