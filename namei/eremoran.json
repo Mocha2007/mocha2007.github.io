@@ -418,6 +418,15 @@
 		"categories": ["metal"]
 	},
 	{
+		"title": "aramabokusar",
+		"etym": "C/arama/bokusam",
+		"cat": "n., 1st",
+		"defList": [
+			"high-ranking officer"
+		],
+		"categories": ["person"]
+	},
+	{
 		"title": "aramaelat",
 		"etym": "D/aramat",
 		"cat": "n., 3rd",
