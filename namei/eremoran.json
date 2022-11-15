@@ -1,5 +1,13 @@
 [
 	{
+		"title": "-ê",
+		"etym": "L/PEN/-ê/-er",
+		"cat": "aff.",
+		"defList": [
+			"-er (agentive suffix)"
+		]
+	},
+	{
 		"title": "-isu",
 		"etym": "a/su",
 		"cat": "aff.",
@@ -7,6 +15,15 @@
 			"-ish, -ic (turns words into adjectives)"
 		],
 		"notes": "has the alternate form -su after a vowel"
+	},
+	{
+		"title": "-ulk",
+		"etym": "L/PEN/-ulk/-ly",
+		"cat": "aff.",
+		"defList": [
+			"-ly (turns adjectives into adverbs)"
+		],
+		"notes": "has the alternate form -lk after a vowel"
 	},
 	{
 		"title": "-z",
@@ -6380,7 +6397,7 @@
 	},
 	{
 		"title": "temêr",
-		"etym": "C/temz/-êr",
+		"etym": "C/temz/-ê",
 		"cat": "n., 1st",
 		"defList": [
 			"(archaic) protector",
