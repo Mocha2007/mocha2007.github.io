@@ -3,6 +3,7 @@
 		"title": "-isu",
 		"etym": "a/su",
 		"cat": "adj.",
+		"pron": "i.su",
 		"defList": [
 			"-ish, -ic (turns words into adjectives)"
 		],
@@ -12,7 +13,7 @@
 		"title": "-z",
 		"etym": "L/PEN/*-z",
 		"cat": "v., adv.",
-		"pron": 0,
+		"pron": "z",
 		"defList": [
 			"(verb suffix)",
 			"turns a time noun (eg. <em>dam</em> morning) into a habitual time adverb (eg. <em>daz</em> every morning)"
@@ -429,7 +430,7 @@
 		"etym": "L/PEN/*anos/think",
 		"cat": "v.",
 		"defList": [
-			"think; ponder; wonder; imagine"
+			"think, ponder, wonder, imagine"
 		]
 	},
 	{
@@ -1089,7 +1090,7 @@
 		"etym": "L/PRE/apikkei",
 		"cat": "n., 5th",
 		"defList": [
-			"a period of two decades (in Earth years: 4 yr 1 mo 7 d)"
+			"two decades (in Earth years: 4 yr 1 mo 7 d)"
 		],
 		"categories": ["time"]
 	},
@@ -4840,7 +4841,7 @@
 		"etym": "L/PEN/*nes",
 		"cat": "n., 4th",
 		"defList": [
-			"typical place of sleep"
+			"bedroom (but more broadly, one's typical place of sleep)"
 		],
 		"notes": "Typically refers to where the speaker usually sleeps, often a bedroom."
 	},
@@ -6084,7 +6085,7 @@
 		"etym": "L/PEN/*tʃu/of; from",
 		"cat": "post.",
 		"defList": [
-			"of; belonging to or made of"
+			"of, belonging to or made of"
 		]
 	},
 	{
