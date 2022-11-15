@@ -49,6 +49,16 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "abbakam",
+		"etym": "C/abbakaz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"gain",
+			"earnings",
+			"winnings"
+		]
+	},
+	{
 		"title": "abbakarm",
 		"etym": "B/abbakam/karm",
 		"cat": "v.",
@@ -178,15 +188,6 @@
 		"defList": [
 			"happen"
 		]
-	},
-	{
-		"title": "adramor",
-		"etym": "M/ardomor",
-		"cat": "n., 1st",
-		"defList": [
-			"male or female given name"
-		],
-		"categories": ["female given name", "male given name"]
 	},
 	{
 		"title": "adzamarz",
@@ -775,6 +776,15 @@
 			"trade, buy, sell, exchange"
 		],
 		"notes": "X trades Y for Z's A - X dir Y ad A Z ad baliz"
+	},
+	{
+		"title": "balitam",
+		"etym": "B/bat/balitam",
+		"cat": "n., 5th",
+		"defList": [
+			"death",
+			"end"
+		]
 	},
 	{
 		"title": "balitz",
@@ -1820,8 +1830,8 @@
 		"categories": ["person"]
 	},
 	{
-		"title": "dodamat",
-		"etym": "C/dodar/mat",
+		"title": "dodemat",
+		"etym": "C/doder/mat",
 		"cat": "n., 3rd",
 		"defList": [
 			"hotel"
@@ -3936,7 +3946,7 @@
 	},
 	{
 		"title": "liboêk",
-		"etym": "C/libo/-ê",
+		"etym": "C/liboz/-ê",
 		"cat": "n., 2nd",
 		"defList": [
 			"dove"
@@ -4075,6 +4085,14 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "ma",
+		"etym": "L/PEN/*ma/container",
+		"cat": "n., 4th",
+		"defList": [
+			"container"
+		]
+	},
+	{
 		"title": "mabôêk",
 		"etym": "C/mat/bôêt",
 		"cat": "n., 2nd",
@@ -4138,7 +4156,7 @@
 	},
 	{
 		"title": "mam",
-		"etym": "C/mat/-m",
+		"etym": "C/ma/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"home",
@@ -4995,7 +5013,7 @@
 	},
 	{
 		"title": "nul",
-		"etym": "r/nula",
+		"etym": "r/nuela",
 		"cat": "n., 4th",
 		"defList": [
 			"hill"
@@ -6264,6 +6282,14 @@
 		"categories": ["age", "person"]
 	},
 	{
+		"title": "tanasu",
+		"etym": "C/tan/nasu",
+		"cat": "adj.",
+		"defList": [
+			"twelve"
+		]
+	},
+	{
 		"title": "tantan",
 		"etym": "R/tan",
 		"cat": "adv.",
@@ -6287,7 +6313,7 @@
 		"defList": [
 			"pine"
 		],
-		"notes": "tasusku is one of a handful of nouns ending in -u.",
+		"notes": "tasku is one of a handful of nouns ending in -u.",
 		"categories": ["plant"]
 	},
 	{
@@ -6301,7 +6327,7 @@
 	},
 	{
 		"title": "taze",
-		"etym": "L/PEN/*tase/grass//~/talire//~/tasu//~/tasusku",
+		"etym": "L/PEN/*tase/grass//~/talire//~/tasu//~/tasku",
 		"cat": "n., 4th",
 		"defList": [
 			"grass"
