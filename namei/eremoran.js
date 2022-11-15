@@ -336,6 +336,22 @@ function computeStats(){
 	});
 	// add titles to iframes for accessibility
 	Array.from(document.getElementsByTagName('iframe')).forEach(e => e.title = e.id);
+	// verify etymology hyperlinks
+	Array.from(document.querySelectorAll('a.eremoran')).forEach(e => {
+		const href = e.href.match(/#.+/)[0]
+			.replace(/%20/g, ' ')
+			.replace(/%C3%AA/g, 'ê')
+			.replace(/%C3%B4/g, 'ô');
+		// try to get hyperlink target
+		try {
+			const target = document.querySelectorAll(href);
+			if (!target.length)
+				console.warn(`Link points to non-existent entry: ${href}`);
+		}
+		catch (e){
+			console.error(`${e} while analyzing link to ${href}`)
+		}
+	});
 }
 
 /**
