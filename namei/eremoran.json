@@ -1222,6 +1222,16 @@
 		"categories": ["drink"]
 	},
 	{
+		"title": "boru",
+		"etym": "L/PEN/*boru/abdomen",
+		"cat": "n., 4th",
+		"defList": [
+			"abdomen",
+			"belly"
+		],
+		"categories": ["body part"]
+	},
+	{
 		"title": "bôz",
 		"etym": "L/PEN/*bôs/carry",
 		"cat": "v.",
@@ -2102,12 +2112,30 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "habeka",
+		"etym": "B/habin/beka",
+		"cat": "n., 4th",
+		"defList": [
+			"index finger"
+		],
+		"categories": ["body part"]
+	},
+	{
 		"title": "habin",
 		"etym": "L/PEN/*ɸabin/finger",
 		"cat": "n., 4th",
 		"defList": [
 			"finger",
 			"toe"
+		],
+		"categories": ["body part"]
+	},
+	{
+		"title": "habindo",
+		"etym": "D/habin",
+		"cat": "n., 4th",
+		"defList": [
+			"pinky"
 		],
 		"categories": ["body part"]
 	},
@@ -2665,6 +2693,15 @@
 		"defList": [
 			"consonant"
 		]
+	},
+	{
+		"title": "in",
+		"etym": "L/PEN/*in/sole",
+		"cat": "n., 4th",
+		"defList": [
+			"sole"
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "indôn",
@@ -3689,6 +3726,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "libabin",
+		"etym": "B/liba/habin",
+		"cat": "n., 4th",
+		"defList": [
+			"middle finger"
+		],
+		"categories": ["body part"]
+	},
+	{
 		"title": "libakam",
 		"etym": "C/liba/kam",
 		"cat": "n., 5th",
@@ -3743,6 +3789,15 @@
 		"categories": ["color"]
 	},
 	{
+		"title": "lira",
+		"etym": "L/PEN/*lira/hock",
+		"cat": "n., 4th",
+		"defList": [
+			"shin, hock, calf"
+		],
+		"categories": ["body part"]
+	},
+	{
 		"title": "lire",
 		"etym": "L/PEN/*lire/tree; wood",
 		"cat": "n., 4th",
@@ -3760,6 +3815,15 @@
 			"dormouse (esp. dryomys)"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "lisu",
+		"etym": "L/PEN/*liʃu/chest",
+		"cat": "n., 4th",
+		"defList": [
+			"chest"
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "lolnask",
@@ -3930,6 +3994,15 @@
 		"cat": "n., 4th",
 		"defList": [
 			"blood"
+		],
+		"categories": ["body part"]
+	},
+	{
+		"title": "marabin",
+		"etym": "B/mara/habin",
+		"cat": "n., 4th",
+		"defList": [
+			"ring finger"
 		],
 		"categories": ["body part"]
 	},
