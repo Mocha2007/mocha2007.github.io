@@ -677,15 +677,6 @@
 		]
 	},
 	{
-		"title": "attô",
-		"etym": "C/at/tô",
-		"cat": "n., 4th",
-		"defList": [
-			"face"
-		],
-		"categories": ["body part"]
-	},
-	{
 		"title": "attukum",
 		"etym": "C/ad/tukum",
 		"cat": "n., 5th",
@@ -2920,6 +2911,15 @@
 		]
 	},
 	{
+		"title": "ittô",
+		"etym": "C/it/tô",
+		"cat": "n., 4th",
+		"defList": [
+			"face"
+		],
+		"categories": ["body part"]
+	},
+	{
 		"title": "iu",
 		"etym": "L/PEN/*iiu/reverse",
 		"cat": "adj.",
@@ -4542,8 +4542,8 @@
 		"etym": "L/PEN/*mugs/old",
 		"cat": "adj., s-triggering",
 		"defList": [
-			"(<i>of inanimates</i>) old",
-			"(<i>of inanimates</i>) original"
+			"(of inanimates) old",
+			"(of inanimates) original"
 		]
 	},
 	{
@@ -4567,7 +4567,7 @@
 	},
 	{
 		"title": "mumast",
-		"etym": "C/mu/mas",
+		"etym": "r/mumust",
 		"cat": "n., 3rd",
 		"defList": [
 			"ship, boat"
