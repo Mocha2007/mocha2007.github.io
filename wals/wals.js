@@ -18,6 +18,7 @@ class WALSDatum {
 		const a = document.createElement('a');
 		a.href = this.url;
 		a.innerHTML = this.id;
+		a.title = this.name;
 		elem.appendChild(a);
 		return elem;
 	}
