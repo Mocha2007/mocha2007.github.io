@@ -931,7 +931,7 @@
 		"defList": [
 			"male given name"
 		],
-		"notes": "cf. Agamemnon",
+		"lore": "cf. Agamemnon",
 		"categories": ["male given name"]
 	},
 	{
@@ -1731,7 +1731,7 @@
 	},
 	{
 		"title": "dir",
-		"etym": "1st class ending of Old Eremoran *diu [polite affix] (nowadays replaced by <i>ou</i>), Proto-Eremo-Numoran *diu, reanalyzed as a preposition.",
+		"etym": "C/diu/-r",
 		"cat": "prep.",
 		"defList": [
 			"[Absolutive Particle]"
@@ -1754,6 +1754,15 @@
 			"whale"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "diu",
+		"etym": "L/PEN/*diu/[polite adjective]",
+		"cat": "adj.",
+		"defList": [
+			"(archaic, regional) [polite adjective]"
+		],
+		"notes": "Nowadays replaced by <em>ou</em>. Reanalyzed as a preposition in most dialects, including the standard."
 	},
 	{
 		"title": "dô",
@@ -2867,9 +2876,10 @@
 	},
 	{
 		"title": "irikar",
-		"etym": "derived from the proper noun <em>Irikar</em>, a people in the near part of the western mountains who are stereotyped to be hoaxsters.",
+		"etym": "L/IRI/???",
 		"cat": "n., 1st",
 		"defList": [
+			"the Irikar (a people in the near part of the western mountains who are stereotyped to be hoaxsters)",
 			"hoaxster"
 		],
 		"categories": ["person"]

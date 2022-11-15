@@ -190,6 +190,7 @@ function etymElement(etymString){
 }
 etymElement.languages = {
 	ERE: 'Eremoran',
+	IRI: 'Irikar',
 	NEK: 'Nekaŋ',
 	NUZ: 'Nuzdexax',
 	OER: 'Old Eremoran',
