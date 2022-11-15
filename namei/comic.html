@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="description" content="Eremor Comic">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link href="../simple.css" type="text/css" rel="stylesheet" title="Light">
+<link href="../css/comic.css" type="text/css" rel="stylesheet">
+<link href="../css/eremoran.css" type="text/css" rel="stylesheet">
+<script src="../common.js"></script>
+<script src="eremoran.js"></script>
+<script src="dict2.js"></script>
+<script src="comicData.js"></script>
+<script src="comic.js"></script>
+<title>Eremor Comic</title>
+<h1>Eremor Comic</h1>
+<p>
+	Eremor Comic.
+</p>
+
+<div id="comicControls">
+	<span class="button" onclick="comic.previous();" title="Previous Frame">&larr;</span>
+	<span class="button" onclick="comic.next();" title="Next Frame">&rarr;</span>
+	<div id="langButtons">
+		<span class="button eremoran" onclick="comic.changeLang('ERE');" title="Next Frame">ere</span>
+		<span class="button" onclick="comic.changeLang('ere');" title="Next Frame">ere</span>
+		<span class="button" onclick="comic.changeLang('en');" title="Next Frame">en</span>
+	</div>
+</div>
+<div id="comicBox"></div>
+
+<dl id="dictionary" style="display:none;"></dl>
+
+<script>
+	getDict('eremoran'); // needs to wait a second to download
+	comic.init();
+</script>
+</html>

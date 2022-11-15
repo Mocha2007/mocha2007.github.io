@@ -1,0 +1,20 @@
+.comicContainer {
+	position: relative;
+}
+.comicImg {
+	width: 100%;
+}
+.textBox {
+	align-items: center;
+	background-color: rgba(255, 0, 0, 0.1);
+	border: 2px dashed maroon;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+}
+#langButtons {
+	background-color: beige;
+	border: 0.1vw solid black;
+	border-radius: 1vw;
+	float: right;
+}
