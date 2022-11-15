@@ -20,6 +20,7 @@
 		"title": "-k",
 		"etym": "L/PEN/-x",
 		"cat": "aff.",
+		"pron": 0,
 		"defList": [
 			"(2nd class noun suffix)"
 		]
@@ -28,6 +29,7 @@
 		"title": "-m",
 		"etym": "L/PEN/-m//~/ma",
 		"cat": "aff.",
+		"pron": 0,
 		"defList": [
 			"(5th class noun suffix)"
 		]
@@ -36,6 +38,7 @@
 		"title": "-r",
 		"etym": "L/PEN/-r//L/PEN/-rre",
 		"cat": "aff.",
+		"pron": 0,
 		"defList": [
 			"(1st class noun suffix)"
 		],
@@ -45,6 +48,7 @@
 		"title": "-t",
 		"etym": "L/PEN/-t",
 		"cat": "aff.",
+		"pron": 0,
 		"defList": [
 			"(3rd class noun suffix)"
 		]
