@@ -90,7 +90,11 @@ function fractionhurricane(date, m, n){
 		});
 		maxcatname = Math.round(hurricanesondate/stormsondate*100);
 	}
-	return '<td class=\'p'+Math.floor(maxcatname/10)+'\'>'+maxcatname+'%</td>';
+	var td = document.createElement('td');
+	td.innerHTML = maxcatname + '%';
+	var color = 255 - 1.5*maxcatname;
+	td.style.backgroundColor = 'rgb(255, ' + color + ', ' + color + ')';
+	return td.outerHTML;
 }
 
 function yearsContaining(date){
@@ -108,7 +112,11 @@ function yearsContaining(date){
 		});
 	});
 	var ratio = Math.floor(stormsondate / yearCount*100);
-	return '<td class=\'p'+Math.floor(ratio/10)+'\'>'+ratio+'%</td>';
+	var td = document.createElement('td');
+	td.innerHTML = ratio + '%';
+	var color = 255 - 1.5*ratio;
+	td.style.backgroundColor = 'rgb(255, ' + color + ', ' + color + ')';
+	return td.outerHTML;
 }
 
 function avgDuration(category){
