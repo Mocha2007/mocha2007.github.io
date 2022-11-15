@@ -341,6 +341,14 @@
 		]
 	},
 	{
+		"title": "amu",
+		"etym": "L/PEN/*amu/sweet",
+		"cat": "adj.",
+		"defList": [
+			"sweet"
+		]
+	},
+	{
 		"title": "amzralam",
 		"etym": "C/amzralz/-m",
 		"cat": "n., 5th",
@@ -796,6 +804,14 @@
 		"categories": ["experiential"]
 	},
 	{
+		"title": "bart",
+		"etym": "C/barz/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"rope"
+		]
+	},
+	{
 		"title": "barz",
 		"etym": "L/PEN/*bars/bind",
 		"cat": "v.",
@@ -806,7 +822,7 @@
 	},
 	{
 		"title": "bat",
-		"etym": "L/PEN/*βat/rope",
+		"etym": "L/VAZ/???/chess",
 		"cat": "n., 3rd",
 		"defList": [
 			"chess",
@@ -2307,6 +2323,14 @@
 			"(archaic, regional) curse"
 		],
 		"notes": "See <em>zurkrôz</em>"
+	},
+	{
+		"title": "helsu",
+		"etym": "L/PEN/*seltʃu/bitter",
+		"cat": "adj.",
+		"defList": [
+			"bitter"
+		]
 	},
 	{
 		"title": "hema",
@@ -4165,12 +4189,13 @@
 	},
 	{
 		"title": "mo",
-		"etym": "L/PEN/*mo",
-		"cat": "post.",
+		"etym": "L/PEN/*mo/back, behind",
+		"cat": "post.; n., 4th",
 		"defList": [
-			"back"
-		],
-		"notes": "n., 4th"
+			"back",
+			"behind",
+			"before"
+		]
 	},
 	{
 		"title": "mok",
@@ -5453,7 +5478,7 @@
 		"etym": "L/PEN/*ʃiɸs/hit",
 		"cat": "v.",
 		"defList": [
-			"hit"
+			"hit, beat"
 		]
 	},
 	{
@@ -5773,7 +5798,7 @@
 		"etym": "L/PEN/*ʃuma/navel",
 		"cat": "n., 4th",
 		"defList": [
-			"navel"
+			"navel, bellybutton"
 		],
 		"categories": ["body part"]
 	},
@@ -5811,6 +5836,15 @@
 		"cat": "v.",
 		"defList": [
 			"tie"
+		]
+	},
+	{
+		"title": "tabaz",
+		"etym": "L/PEN/*tabias/crush",
+		"cat": "v.",
+		"defList": [
+			"crush",
+			"grind"
 		]
 	},
 	{
