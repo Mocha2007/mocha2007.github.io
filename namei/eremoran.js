@@ -654,19 +654,35 @@ function linkCard(s){
 	const anchor = document.createElement('a');
 	anchor.href = `#lemma-${s}`;
 	anchor.innerHTML = s;
+	anchor.title = gloss(s);
 	anchor.classList.add('eremoran');
 	EremoranTooltip.setupWord(anchor);
 	return anchor;
+}
+
+/** @returns {string} */
+function gloss(s){
+	try {
+		const o = elements.raws.find(entry => entry.title === s).defList[0]
+			.replace(/\(.+\)/g, '') // remove parentheticals from glosses
+			.replace(/,.+/, ''); // remove secondary glosses
+		if (20 < o.length)
+			console.warn(`long gloss: ${s} = "${o}"`);
+		return o;
+	}
+	catch (e){
+		// console.error(`unable to gloss ${s}`);
+		return '???';
+	}
 }
 
 const search = {
 	appendResult(s){
 		const li = document.createElement('li');
 		li.appendChild(titleCard(s));
-		const gloss = document.createElement('q');
-		gloss.innerHTML = elements.raws.find(entry => entry.title === s).defList[0]
-			.replace(/\(.+\)/g, ''); // remove parentheticals from glosses
-		li.appendChild(gloss);
+		const g = document.createElement('q');
+		g.innerHTML = gloss(s);
+		li.appendChild(g);
 		this.searchResults.appendChild(li);
 	},
 	/** @returns {string} */
