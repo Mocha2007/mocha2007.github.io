@@ -1955,24 +1955,6 @@
 		"categories": ["animal"]
 	},
 	{
-		"title": "ebbazêr",
-		"etym": "R/epebazêr",
-		"cat": "n., 1st",
-		"defList": [
-			"male given name"
-		],
-		"categories": ["male given name"]
-	},
-	{
-		"title": "ebbazôr",
-		"etym": "a/ebbazêr",
-		"cat": "n., 1st",
-		"defList": [
-			"female given name"
-		],
-		"categories": ["female given name"]
-	},
-	{
 		"title": "edzam",
 		"img": "../img/eremoran/edzam.png",
 		"etym": "L/PEN/*ediam/part",
@@ -5350,6 +5332,15 @@
 		"notes": "(specifically, a compound of their reduplications - *pibu is unattested)"
 	},
 	{
+		"title": "pu-",
+		"etym": "L/PRE/pu-/un-",
+		"cat": "pref.",
+		"defList": [
+			"un-, non-, anti-"
+		],
+		"notes": "cf. u-, the older, non-productive form"
+	},
+	{
 		"title": "pukusam",
 		"etym": "C/pu-/kusam",
 		"cat": "n., 5th, pron.",
@@ -6714,6 +6705,15 @@
 		"defList": [
 			"fry"
 		]
+	},
+	{
+		"title": "u-",
+		"etym": "L/PEN/u-/un-",
+		"cat": "pref.",
+		"defList": [
+			"(archaic) un-, non-, anti-"
+		],
+		"notes": "cf. pu-, the newer, productive form"
 	},
 	{
 		"title": "ube",
