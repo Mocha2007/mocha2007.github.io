@@ -841,6 +841,8 @@ const phono = {
 	},
 	/** @param {string} word */
 	validate(word){
+		if (word.includes('-'))
+			return true; // ignore
 		// debug warnings
 		const syllTest = this.syllabify(word).join('');
 		if (syllTest !== word.replace(/ /g, ''))
