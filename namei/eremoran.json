@@ -4036,11 +4036,12 @@
 	},
 	{
 		"title": "lôtor",
-		"etym": "L/PEN/*ɸlôtor//Related to Numoran <i>Flotwer</i> and <i>Lotwer</i>",
+		"etym": "L/PEN/*ɸlôtor",
 		"cat": "n., 1st",
 		"defList": [
 			"male given name"
 		],
+		"notes": "Related to Numoran <i>Flotwer</i> and <i>Lotwer</i>",
 		"categories": ["male given name"]
 	},
 	{
