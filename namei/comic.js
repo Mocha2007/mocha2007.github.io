@@ -43,7 +43,6 @@ class ComicFrame {
 			const [left, top, width, height] = nums;
 			const div = document.createElement('div');
 			div.classList.add('textBox');
-			console.debug(this.scale);
 			div.style.top = top*this.scaleV + '%';
 			div.style.left = left*this.scaleH + '%';
 			div.style.width = width*this.scaleH + '%';
