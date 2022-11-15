@@ -2,7 +2,7 @@
 	{
 		"title": "-isu",
 		"etym": "a/su",
-		"cat": "adj.",
+		"cat": "aff.",
 		"defList": [
 			"-ish, -ic (turns words into adjectives)"
 		],
@@ -11,7 +11,7 @@
 	{
 		"title": "-z",
 		"etym": "L/PEN/*-z",
-		"cat": "v., adv.",
+		"cat": "aff.",
 		"pron": 0,
 		"defList": [
 			"(verb suffix)",
@@ -5334,7 +5334,7 @@
 	{
 		"title": "pu-",
 		"etym": "L/PRE/pu-/un-",
-		"cat": "pref.",
+		"cat": "aff.",
 		"defList": [
 			"un-, non-, anti-"
 		],
@@ -6709,7 +6709,7 @@
 	{
 		"title": "u-",
 		"etym": "L/PEN/u-/un-",
-		"cat": "pref.",
+		"cat": "aff.",
 		"defList": [
 			"(archaic) un-, non-, anti-"
 		],
