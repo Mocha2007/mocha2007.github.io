@@ -3277,7 +3277,7 @@
 	},
 	{
 		"title": "kit",
-		"etym": "L/PEN/*git/axe//Possibly related to <i>kot</i>.",
+		"etym": "L/PEN/*git/axe//Related to <i>kot</i>.",
 		"cat": "n., 3rd",
 		"defList": [
 			"axe"
@@ -3429,7 +3429,7 @@
 	},
 	{
 		"title": "kot",
-		"etym": "L/PEN/*got/shield//Possibly related to <i>kit</i>.",
+		"etym": "L/PEN/*got/shield//Related to <i>kit</i>.",
 		"cat": "n., 3rd",
 		"defList": [
 			"shield"
@@ -6121,7 +6121,7 @@
 	},
 	{
 		"title": "sukz",
-		"etym": "L/PEN/*siuxs/sew//likely related to <em>suz</em> 'tie'",
+		"etym": "L/PEN/*siuxs/sew//Related to <em>suz</em> 'tie'",
 		"cat": "v.",
 		"defList": [
 			"sew"
@@ -6166,7 +6166,7 @@
 	},
 	{
 		"title": "suz",
-		"etym": "L/PEN/*sius/tie//likely related to <em>sukz</em> 'sew'",
+		"etym": "L/PEN/*sius/tie//Related to <em>sukz</em> 'sew'",
 		"cat": "v.",
 		"defList": [
 			"tie"
