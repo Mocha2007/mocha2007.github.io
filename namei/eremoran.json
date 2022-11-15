@@ -171,6 +171,15 @@
 		]
 	},
 	{
+		"title": "adramor",
+		"etym": "M/ardomor",
+		"cat": "n., 1st",
+		"defList": [
+			"male or female given name"
+		],
+		"categories": ["female given name", "male given name"]
+	},
+	{
 		"title": "adzamarz",
 		"etym": "L/PEN/*xêd-samars/relax",
 		"cat": "v.",
@@ -603,6 +612,16 @@
 		]
 	},
 	{
+		"title": "arrôr",
+		"etym": "L/PEN/*Xêrr&ocirc;r",
+		"cat": "n., 1st",
+		"defList": [
+			"male given name"
+		],
+		"notes": "PEN is a nominalization of <i>*xêrr&ocirc;s</i> from <i>*xêd</i> 'to' + <i>*r&ocirc;s</i> 'speak'; Related to Numoran <i>Xerror</i>",
+		"categories": ["male given name"]
+	},
+	{
 		"title": "arz",
 		"etym": "L/PEN/*ars/stand",
 		"cat": "v.",
@@ -878,6 +897,16 @@
 		"categories": ["chess", "person"]
 	},
 	{
+		"title": "baztur",
+		"etym": "L/VAZ/Važcud",
+		"cat": "n., 1st",
+		"defList": [
+			"Važcud (the people and country, but not the language)"
+		],
+		"notes": "A popular folk etymology derives this word from <em>baz&ecirc;r</em> 'leader' + <em>tum</em> 'sky' - 'sky leader' - and this belief is reinforced by the ancient claim that the royalty descends from planet Don, where they were exiled after a power struggle. This leads to occasional hypercorrection to <em>*Baz&ecirc;tur</em>.",
+		"categories": ["toponym"]
+	},
+	{
 		"title": "be",
 		"etym": "L/PEN/*βe/or",
 		"cat": "conj.",
@@ -894,6 +923,16 @@
 		"defList": [
 			"road, street"
 		]
+	},
+	{
+		"title": "bêbêtur",
+		"etym": "R/bêtu",
+		"cat": "n., 1st",
+		"defList": [
+			"male given name"
+		],
+		"notes": "cf. Agamemnon",
+		"categories": ["male given name"]
 	},
 	{
 		"title": "befôz",
@@ -1869,6 +1908,15 @@
 		"categories": ["coin"]
 	},
 	{
+		"title": "êasur",
+		"etym": "L/PRE/&emacr;gas//L/VAZ/Egas",
+		"cat": "n., 1st",
+		"defList": [
+			"female given name"
+		],
+		"categories": ["female given name"]
+	},
+	{
 		"title": "eba",
 		"etym": "L/PEN/*eβa/bark; skin; peel'",
 		"cat": "n., 4th",
@@ -1887,6 +1935,24 @@
 			"bat (chiropteran)"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "ebbazêr",
+		"etym": "R/epebazêr",
+		"cat": "n., 1st",
+		"defList": [
+			"male given name"
+		],
+		"categories": ["male given name"]
+	},
+	{
+		"title": "ebbazôr",
+		"etym": "a/ebbazêr",
+		"cat": "n., 1st",
+		"defList": [
+			"female given name"
+		],
+		"categories": ["female given name"]
 	},
 	{
 		"title": "edzam",
@@ -2064,6 +2130,7 @@
 	},
 	{
 		"title": "eremor",
+		"img": "../img/eremoran/eremor.png",
 		"etym": "C/ereu/mor",
 		"cat": "n., 1st",
 		"defList": [
@@ -2071,7 +2138,7 @@
 			"the city Eremora",
 			"the country Eremor"
 		],
-		"categories": ["person"]
+		"categories": ["person", "toponym"]
 	},
 	{
 		"title": "eremorôm",
@@ -2098,6 +2165,15 @@
 			"purple"
 		],
 		"categories": ["color"]
+	},
+	{
+		"title": "esur",
+		"etym": "r/êasur",
+		"cat": "n., 1st",
+		"defList": [
+			"female given name"
+		],
+		"categories": ["female given name"]
 	},
 	{
 		"title": "eto",
@@ -2191,6 +2267,24 @@
 		"defList": [
 			"rain"
 		]
+	},
+	{
+		"title": "hafaelar",
+		"etym": "D/hafa",
+		"cat": "n., 1st",
+		"defList": [
+			"female given name"
+		],
+		"categories": ["female given name"]
+	},
+	{
+		"title": "haffelar",
+		"etym": "r/hafaelar",
+		"cat": "n., 1st",
+		"defList": [
+			"female given name"
+		],
+		"categories": ["female given name"]
 	},
 	{
 		"title": "hafaz",
@@ -2525,6 +2619,15 @@
 		]
 	},
 	{
+		"title": "hor",
+		"etym": "L/PRE/For&omacr;//L/VAZ/Folel",
+		"cat": "n., 1st",
+		"defList": [
+			"female given name"
+		],
+		"categories": ["female given name"]
+	},
+	{
 		"title": "hosoz",
 		"etym": "C/hoz/ho",
 		"cat": "adv.",
@@ -2797,6 +2900,15 @@
 		]
 	},
 	{
+		"title": "iur",
+		"etym": "L/PRE/Yurah//L/VAZ/Ilak/happy",
+		"cat": "n., 1st",
+		"defList": [
+			"male or female given name"
+		],
+		"categories": ["female given name", "male given name"]
+	},
+	{
 		"title": "kabako",
 		"etym": "L/PEN/*kabaxo/rye",
 		"cat": "n., 4th",
@@ -3002,7 +3114,7 @@
 		"defList": [
 			"god"
 		],
-		"categories": ["animal", "person"]
+		"categories": ["animal", "god", "person"]
 	},
 	{
 		"title": "ker",
@@ -3010,8 +3122,10 @@
 		"cat": "n., 1st",
 		"defList": [
 			"powerful person; aristocrat; noble",
-			"skilled person; expert; master"
-		]
+			"skilled person; expert; master",
+			"male given name"
+		],
+		"categories": ["male given name", "person"]
 	},
 	{
 		"title": "keu",
@@ -3056,6 +3170,15 @@
 			"leg"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "kikbil",
+		"etym": "L/PRE/kʷikwil",
+		"cat": "n., 4th",
+		"defList": [
+			"A city on the foothills of the Nadnekis, or the small nation it controls."
+		],
+		"categories": ["toponym"]
 	},
 	{
 		"title": "kikom",
@@ -3640,6 +3763,15 @@
 		]
 	},
 	{
+		"title": "kutoker",
+		"etym": "L/PRE/???",
+		"cat": "n., 1st",
+		"defList": [
+			"female given name"
+		],
+		"categories": ["female given name"]
+	},
+	{
 		"title": "labnit",
 		"img": "../img/eremoran/labnit.png",
 		"etym": "L/PEN/*labnit/brick",
@@ -3759,6 +3891,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "libada",
+		"etym": "C/liba/da",
+		"cat": "n., 4th",
+		"defList": [
+			"The central, hilly cultural region of Eremor, often portrayed as rustic and uncultured."
+		],
+		"categories": ["toponym"]
+	},
+	{
 		"title": "libakam",
 		"etym": "C/liba/kam",
 		"cat": "n., 5th",
@@ -3791,6 +3932,15 @@
 		"defList": [
 			"cry, tear"
 		]
+	},
+	{
+		"title": "lidôr",
+		"etym": "L/PRE/Lid&omacr;n&omacr;//L/VAZ/Lidunon/fire-heart",
+		"cat": "n., 1st",
+		"defList": [
+			"female given name"
+		],
+		"categories": ["female given name"]
 	},
 	{
 		"title": "lilire",
@@ -3865,6 +4015,15 @@
 		"defList": [
 			"laugh"
 		]
+	},
+	{
+		"title": "lôtor",
+		"etym": "L/PEN/*ɸlôtor//Related to Numoran <i>Flotwer</i> and <i>Lotwer</i>",
+		"cat": "n., 1st",
+		"defList": [
+			"male given name"
+		],
+		"categories": ["male given name"]
 	},
 	{
 		"title": "luksa",
@@ -4013,6 +4172,16 @@
 		"categories": ["experiential"]
 	},
 	{
+		"title": "manikar",
+		"etym": "L/PRE/???//L/VAZ/Manik/wise",
+		"cat": "n., 1st",
+		"defList": [
+			"female given name",
+			"(archaic) male given name"
+		],
+		"categories": ["female given name", "male given name"]
+	},
+	{
 		"title": "mara",
 		"etym": "L/PEN/*mara/blood",
 		"cat": "n., 4th",
@@ -4055,6 +4224,16 @@
 		"defList": [
 			"thing"
 		]
+	},
+	{
+		"title": "marnamêr",
+		"etym": "C/mara/namz",
+		"cat": "n., 1st",
+		"defList": [
+			"god of war",
+			"male given name"
+		],
+		"categories": ["god", "male given name"]
 	},
 	{
 		"title": "marz",
@@ -4437,6 +4616,15 @@
 		]
 	},
 	{
+		"title": "nadnekis",
+		"etym": "L/NEK/Nednegiz//L/VAZ/Niknik Již/great mountain range",
+		"cat": "n., 4th",
+		"defList": [
+			"Nadnekis, the great east mountain range."
+		],
+		"categories": ["toponym"]
+	},
+	{
 		"title": "namz",
 		"etym": "L/PEN/*nams/eat",
 		"cat": "v.",
@@ -4466,6 +4654,15 @@
 			"(archaic) whatever; whoever"
 		],
 		"notes": "See <em>be</em> for the verbal conjunction. cf. <em>id</em>."
+	},
+	{
+		"title": "napaker",
+		"etym": "L/PRE/???",
+		"cat": "n., 1st",
+		"defList": [
+			"female given name"
+		],
+		"categories": ["female given name"]
 	},
 	{
 		"title": "narko",
@@ -4533,6 +4730,15 @@
 		]
 	},
 	{
+		"title": "nasum abbakarm",
+		"etym": "P/nasu/abbakarm",
+		"cat": "n., 5th",
+		"defList": [
+			"The north plains, a cultural region of Eremor, often portrayed as excessively warlike (even by Eremoran standards); outsiders belive everyone from the region is a soldier-turned-farmer - and they are largely correct. In terms of speech, they are mocked as 'always breathy', as they are one of the few regions to retain /h/, but also merge /r/ into /h/."
+		],
+		"categories": ["toponym"]
+	},
+	{
 		"title": "nau",
 		"etym": "L/PEN/*na-u/which, what",
 		"cat": "adj.",
@@ -4556,6 +4762,15 @@
 		"defList": [
 			"[question particle]"
 		]
+	},
+	{
+		"title": "nakanar",
+		"etym": "L/NEK/Nekaŋ",
+		"cat": "n., 1st",
+		"defList": [
+			"Nekang (the people and country, but not the language)"
+		],
+		"categories": ["toponym"]
 	},
 	{
 		"title": "nelat",
@@ -4602,6 +4817,15 @@
 		"categories": ["sex"]
 	},
 	{
+		"title": "netar",
+		"etym": "L/PRE/???//L/VAZ/Nit/(female given name)",
+		"cat": "n., 1st",
+		"defList": [
+			"female given name"
+		],
+		"categories": ["female given name"]
+	},
+	{
 		"title": "nikiniki",
 		"etym": "L/PEN/*niki-niki/liver",
 		"cat": "n., 4th",
@@ -4626,6 +4850,24 @@
 		"defList": [
 			"bread"
 		]
+	},
+	{
+		"title": "nizinar",
+		"etym": "L/VAZ/Nižinat//L/PRE/Nishitn&omacr;",
+		"cat": "n., 1st",
+		"defList": [
+			"(formal/academic/compounds) Pre-Eremoran"
+		],
+		"categories": ["toponym"]
+	},
+	{
+		"title": "nizitnôr",
+		"etym": "L/PRE/Nishitn&omacr;/Pre-Eremorans",
+		"cat": "n., 1st",
+		"defList": [
+			"Pre-Eremoran (the people and country, but not the language)"
+		],
+		"categories": ["toponym"]
 	},
 	{
 		"title": "nô",
@@ -4768,6 +5010,15 @@
 		"categories": ["sex"]
 	},
 	{
+		"title": "nuzderar",
+		"etym": "L/NUZ/Nuzdexax",
+		"cat": "n., 1st",
+		"defList": [
+			"Nuzderar (the people and country, but not the language)"
+		],
+		"categories": ["toponym"]
+	},
+	{
 		"title": "ô",
 		"etym": "L/PEN/*ô/anyways",
 		"cat": "interjection",
@@ -4801,6 +5052,15 @@
 		]
 	},
 	{
+		"title": "oddomsumor",
+		"etym": "L/TAI/Oddom/Oddomsumor",
+		"cat": "n., 1st",
+		"defList": [
+			"A conquered tribe (sumor) in the mid-east of Eremor."
+		],
+		"categories": ["toponym"]
+	},
+	{
 		"title": "ok",
 		"etym": "r/holk",
 		"cat": "adv.",
@@ -4828,6 +5088,16 @@
 			"(chess) queen"
 		],
 		"categories": ["chess", "family", "person"]
+	},
+	{
+		"title": "ôkar",
+		"etym": "C/ou/okar",
+		"cat": "n., 1st",
+		"defList": [
+			"(polite) woman",
+			"wife (in monogamous relationships; esp. someone else's)"
+		],
+		"categories": ["family", "person"]
 	},
 	{
 		"title": "ôkarinu",
@@ -4903,6 +5173,24 @@
 		"categories": ["sex"]
 	},
 	{
+		"title": "pamor",
+		"etym": "L/PRE/???/(female given name)",
+		"cat": "n., 1st",
+		"defList": [
+			"female given name"
+		],
+		"categories": ["female given name"]
+	},
+	{
+		"title": "pankair",
+		"etym": "L/PRE/P&amacr;nakkay//L/NUZ/Panakagaθ//L/VAZ/Penek Gath/Land of Penek",
+		"cat": "n., 1st",
+		"defList": [
+			"Pankair, the continent on which lies Eremor."
+		],
+		"categories": ["toponym"]
+	},
+	{
 		"title": "pankudom",
 		"etym": "C/pankudoz/-m",
 		"cat": "n., 5th",
@@ -4942,6 +5230,24 @@
 			"chop, cut, slice",
 			"indentation, notch"
 		]
+	},
+	{
+		"title": "parôkar",
+		"etym": "C/parz/ôkar",
+		"cat": "n., 1st",
+		"defList": [
+			"female given name"
+		],
+		"categories": ["female given name"]
+	},
+	{
+		"title": "parônar",
+		"etym": "a/parôkar",
+		"cat": "n., 1st",
+		"defList": [
+			"male or female given name"
+		],
+		"categories": ["female given name", "male given name"]
 	},
 	{
 		"title": "parz",
@@ -5294,6 +5600,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "saiur",
+		"etym": "L/PRE/S&amacr;y&umacr;//L/VAZ/Sagub/beloved",
+		"cat": "n., 1st",
+		"defList": [
+			"female given name"
+		],
+		"categories": ["female given name"]
+	},
+	{
 		"title": "salim",
 		"etym": "C/saliz/-m",
 		"cat": "n., 5th",
@@ -5497,6 +5812,15 @@
 		"defList": [
 			"(inanimate only) young"
 		]
+	},
+	{
+		"title": "sioker",
+		"etym": "L/PRE/???",
+		"cat": "n., 1st",
+		"defList": [
+			"female given name"
+		],
+		"categories": ["female given name"]
 	},
 	{
 		"title": "sipam",
@@ -6024,10 +6348,11 @@
 		"etym": "C/temz/-êr",
 		"cat": "n., 1st",
 		"defList": [
-			"protector",
-			"father"
+			"(archaic) protector",
+			"father",
+			"(archaic) male given name"
 		],
-		"categories": ["family", "person"]
+		"categories": ["family", "male given name", "person"]
 	},
 	{
 		"title": "temêmor",
@@ -6115,6 +6440,15 @@
 			"staff"
 		],
 		"categories": ["plant"]
+	},
+	{
+		"title": "tôda",
+		"etym": "C/tô/da",
+		"cat": "n., 4th",
+		"defList": [
+			"The southern, coastal cultural region of Eremor, associated with the so-called <em>kadr&ecirc;m</em> 'hard R' sounds."
+		],
+		"categories": ["toponym"]
 	},
 	{
 		"title": "tômz",
@@ -6710,6 +7044,16 @@
 		"defList": [
 			"die, dice"
 		]
+	},
+	{
+		"title": "zikrômbor",
+		"etym": "L/OER/Zikarônaborre",
+		"cat": "n., 1st",
+		"defList": [
+			"Goddess of Manners and Disease, she curses those who do not practice good manners with various afflictions. It is never used as a given name. It is used in the interjection <i>Zikr&ocirc;mbor berbkaldoz</i> (gesundheit; bless you; literally \"May Zikr&ocirc;mbor leave you.\")."
+		],
+		"notes": "possibly related to zurku",
+		"categories": ["female given name", "god"]
 	},
 	{
 		"title": "zurkrôz",

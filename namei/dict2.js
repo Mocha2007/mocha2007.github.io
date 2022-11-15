@@ -134,6 +134,10 @@ function etymElement(etymString){
 				etymElem.innerHTML = 'Augmentative of ';
 				etymElem.appendChild(linkCard(tokens[1]));
 				break;
+			case 'a': // alteration
+				etymElem.innerHTML = 'Alteration of ';
+				etymElem.appendChild(linkCard(tokens[1]));
+				break;
 			case 'B': // blend
 				etymElem.innerHTML = 'Blend of ';
 				etymElem.appendChild(linkCard(tokens[1]));
@@ -156,6 +160,10 @@ function etymElement(etymString){
 				etymElem.innerHTML = `From ${etymElement.languages[tokens[1]]} ${tokens[2]}`;
 				if (tokens[3])
 					etymElem.innerHTML += ` &ldquo;${tokens[3]}&rdquo;`;
+				break;
+			case 'M': // metathesis
+				etymElem.innerHTML = 'Metathesis from ';
+				etymElem.appendChild(linkCard(tokens[1]));
 				break;
 			case 'P': // phrase
 				etymElem.innerHTML = '(Phrase)';
@@ -182,12 +190,14 @@ function etymElement(etymString){
 }
 etymElement.languages = {
 	ERE: 'Eremoran',
+	NEK: 'Nekaŋ',
 	NUZ: 'Nuzdexax',
 	OER: 'Old Eremoran',
 	PEN: 'Proto-Eremo-Numoran',
 	PMU: 'Proto-Muran',
 	POL: 'P&oacute;&lstrok;ta&sacute;',
 	PRE: 'Pre-Eremoran',
+	TAI: 'Taika',
 	VAZ: 'Va&zcaron;cud',
 };
 etymElement.stats = {

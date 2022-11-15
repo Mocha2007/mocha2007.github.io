@@ -222,10 +222,6 @@ const EremoranTooltip = {
 	/** @type {HTMLDivElement} */
 	tooltip: undefined,
 	visible: true,
-	/** @type {HTMLElement[]} */
-	get words(){
-		return Array.from(document.getElementsByTagName('dt'));
-	},
 	clearTooltip(){
 		this.tooltip.innerHTML = '';
 		this.tooltip.style.display = 'none';
@@ -308,7 +304,7 @@ const EremoranTooltip = {
 
 function computeStats(){
 	// print dict length
-	document.getElementById('wordcount').innerHTML = EremoranTooltip.words.length;
+	document.getElementById('wordcount').innerHTML = elements.dict.length;
 	// new graphs
 	// const chartURL = 'https://mocha2007.github.io/tools/chart.svg?data=';
 	const chartURL = '../tools/chart.svg?data=';
@@ -419,10 +415,10 @@ namegen.vowels = 'aeiouêô';
 namegen.either = ['afês', 'ardo', 'badm', 'bi', 'kafl', 'ko', 'lib',
 	'lusi', 'mar', 'mas', 'tem', 'uris'];
 namegen.first = union(namegen.either,
-	['bêt', 'dare', 'end', 'ere', 'hem', 'his', 'ku', 'lak', 'maram', 'saz', 'si', 'tranz']
+	['bêt', 'dare', 'end', 'epe', 'ere', 'hem', 'his', 'ku', 'lak', 'maram', 'saz', 'si', 'tranz']
 );
 namegen.last = union(namegen.either,
-	['bazê', 'fem', 'fis', 'ke', 'kiki', 'labni', 'len', 'mo', 'subi']
+	['bazê', 'fem', 'fis', 'ke', 'kiki', 'kop', 'labni', 'len', 'mo', 'subi']
 );
 namegen.endsWithVowel = s => namegen.vowels.includes(s[s.length-1]);
 namegen.startsWithVowel = s => namegen.vowels.includes(s[0]);
