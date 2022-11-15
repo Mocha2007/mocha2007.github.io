@@ -1,5 +1,13 @@
 [
 	{
+		"title": "-(i)su",
+		"etym": "a/su",
+		"cat": "adj.",
+		"defList": [
+			"-ish, -ic (turns words into adjectives)"
+		]
+	},
+	{
 		"title": "-z",
 		"etym": "L/PEN/*-z",
 		"cat": "v., adv.",
@@ -972,12 +980,11 @@
 	},
 	{
 		"title": "bemmu",
-		"etym": "L/PEN/*βegmu/river",
+		"etym": "L/PEN/*βegmu/river//~/beka//~/mu",
 		"cat": "n., 4th",
 		"defList": [
 			"river"
-		],
-		"notes": "related to <em>beka</em> 'path' and <em>mu</em> 'water'"
+		]
 	},
 	{
 		"title": "berbaz",
@@ -3277,7 +3284,7 @@
 	},
 	{
 		"title": "kit",
-		"etym": "L/PEN/*git/axe//Related to <i>kot</i>.",
+		"etym": "L/PEN/*git/axe//~/kot",
 		"cat": "n., 3rd",
 		"defList": [
 			"axe"
@@ -3429,7 +3436,7 @@
 	},
 	{
 		"title": "kot",
-		"etym": "L/PEN/*got/shield//Related to <i>kit</i>.",
+		"etym": "L/PEN/*got/shield//~/kit",
 		"cat": "n., 3rd",
 		"defList": [
 			"shield"
@@ -6058,8 +6065,7 @@
 		"cat": "post.",
 		"defList": [
 			"of; belonging to or made of"
-		],
-		"notes": "Related to the suffix -(i)su"
+		]
 	},
 	{
 		"title": "subanbanz",
@@ -6121,7 +6127,7 @@
 	},
 	{
 		"title": "sukz",
-		"etym": "L/PEN/*siuxs/sew//Related to <em>suz</em> 'tie'",
+		"etym": "L/PEN/*siuxs/sew//~/suz",
 		"cat": "v.",
 		"defList": [
 			"sew"
@@ -6166,7 +6172,7 @@
 	},
 	{
 		"title": "suz",
-		"etym": "L/PEN/*sius/tie//Related to <em>sukz</em> 'sew'",
+		"etym": "L/PEN/*sius/tie//~/sukz",
 		"cat": "v.",
 		"defList": [
 			"tie"
@@ -6192,7 +6198,7 @@
 	{
 		"title": "talire",
 		"img": "../img/eremoran/talira.png",
-		"etym": "L/PEN/*talire/evergreen, from older *taslire, from *tassu 'green' + *lire 'wood'. Related to taze, tasu, tasku. cf. arlire, lilire.",
+		"etym": "L/OER/taslire//L/PEN/*tassu-lire/evergreen//~/taze//~/tasu//~/tasku",
 		"cat": "n., 4th",
 		"defList": [
 			"(archaic) evergreen, esp. pine",
@@ -6284,7 +6290,7 @@
 	},
 	{
 		"title": "tasu",
-		"etym": "L/PEN/*tassu/green, from *tase 'grass' + *-isu '-ish'. Related to talire, taze, and tasku.",
+		"etym": "L/PEN/*tas(e)-su/green//~/talire//~/taze//~/tasku",
 		"cat": "adj.",
 		"defList": [
 			"green"
@@ -6293,7 +6299,7 @@
 	},
 	{
 		"title": "taze",
-		"etym": "L/PEN/*tase/grass. Related to talire, tasu, and tasusku.",
+		"etym": "L/PEN/*tase/grass//~/talire//~/tasu//~/tasusku",
 		"cat": "n., 4th",
 		"defList": [
 			"grass"

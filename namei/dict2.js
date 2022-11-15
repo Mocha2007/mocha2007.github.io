@@ -176,6 +176,10 @@ function etymElement(etymString){
 				etymElem.innerHTML = 'Reduction of ';
 				etymElem.appendChild(linkCard(tokens[1]));
 				break;
+			case '~': // related to
+				etymElem.innerHTML = 'Related to ';
+				etymElem.appendChild(linkCard(tokens[1]));
+				break;
 			default: // custom
 				etymElement.stats.type.pop();
 				etymElement.stats.type.push('?');
