@@ -348,8 +348,8 @@ function computeStats(){
 			if (!target.length)
 				console.warn(`Link points to non-existent entry: ${href}`);
 		}
-		catch (e){
-			console.error(`${e} while analyzing link to ${href}`)
+		catch (err){
+			console.error(`${err} while analyzing link to ${href}`);
 		}
 	});
 }
