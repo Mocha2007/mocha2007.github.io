@@ -313,7 +313,7 @@ sinku=v, 2=spell
 -ar=v; suff, 4=diminutive verbal suffix
 megu=v, 3=sting
 meguar=v, 4=tingle
-meguarakhu=n, n=parasitic worm similar to the Werm from Parasite Infection
+meguarakhu=n, n=parasitic worm
 -wu=suff, =turns correlative roots into how-words
 -'uk=adj; n; suff, 1k=turns correlative roots into how much-words
 -wenz=adj; n; suff, 2z=turns correlative roots into whether-words; turns wh-words into other-words
@@ -349,3 +349,4 @@ esokhu=v, 1=approach, attempt, try;!e + sokhu
 lessoj=v, 4=curse, maledict;!lens + soj
 pag=adj;num, 1g=half
 šema=n, n=grain
+sanicu=n, n=a large yellow mammal related and similar in appearance to echidnas that, among other abilities, can detect muscle contractions of prey with electromagnetic sensory organs
