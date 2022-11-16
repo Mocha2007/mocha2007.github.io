@@ -27,6 +27,7 @@
 }
 .dialectMapText {
 	color: white;
+	font-size: 75%;
 	position: absolute;
 	text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black;
 }

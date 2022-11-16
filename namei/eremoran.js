@@ -1029,9 +1029,9 @@ const dialectMap = {
 			'[o]', '[o]', '[(h)o]', '[(h)o]', '[ho]',
 			'[hɔ]'
 		], // ho
-		['uzurkelau', 'uzurkelau', 'uzurkelau', 'uzurkelau',
-			'astedu', 'astedu', 'astedu', 'astedu', 'astedu',
-			'astedu'
+		['[ʊ.zʊʀʷ.kəˈla.ʊʀʷ]', '[ʊ.zʊʁʷ.kəˈla.ʊʀʷ]', '[ʊ.zʊʁʷ.kəˈla.ʊʀʷ]', '[ʊ.zʊxʷ.kəˈla.ʊʀʷ]',
+			'[əsˈtʃe.ɾuxʷ]', '[əsˈtʃe.ɾuʁʷ]', '[əsˈtʃe.ɾuʀʷ]', '[əsˈtʃe.ɾuxʷ]', '[əsˈtʃe.ɾuhʷ]',
+			'[əs.təˈdur.rə]'
 		], // beautiful
 	],
 	display(mode = 0){
@@ -1063,7 +1063,7 @@ const dialectMap = {
 			'Primary form of the rhotic.',
 			'<a class="eremoran" href="#lemma-barz" title="barz \'bind\'">barz</a>',
 			'<a class="eremoran" href="#lemma-ho" title="ho \'that\'">ho</a>',
-			'The standard word for "beautiful" when referring to a person',
+			'The standard word for "beautiful" when referring to a person (in the case of ZE, specifically a woman).',
 		],
 		/* place radio button elements */
 		init(){
