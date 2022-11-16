@@ -1076,6 +1076,22 @@
 		]
 	},
 	{
+		"title": "berêt",
+		"etym": "C/berz/-ê",
+		"cat": "v.",
+		"defList": [
+			"spindle (tool to spin wool)"
+		]
+	},
+	{
+		"title": "berz",
+		"etym": "L/PEN/*βers/spin",
+		"cat": "v.",
+		"defList": [
+			"(transitive) spin (ie. spin wool)"
+		]
+	},
+	{
 		"title": "betlaêr",
 		"etym": "C/betlat/-ê",
 		"cat": "n., 1st",
