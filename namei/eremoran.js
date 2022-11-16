@@ -1025,6 +1025,10 @@ const dialectMap = {
 			'[maxʷs]', '[maʁʷz]', '[maʀʷz]', '[maxʷs]', '[mahʷs]',
 			'[barz]'
 		], // barz
+		['[(h)ɔ]', '[ɔ]', '[ɔ]', '[ɔ]',
+			'[o]', '[o]', '[(h)o]', '[(h)o]', '[ho]',
+			'[hɔ]'
+		], // ho
 	],
 	display(mode = 0){
 		// clear
@@ -1065,7 +1069,7 @@ const dialectMap = {
 			});
 			dialectMap.display(1);
 		},
-		names: ['debug_id', 'Names', '/r/', 'barz'],
+		names: ['debug_id', 'Names', '/r/', 'barz', 'ho'],
 	},
 	/**
 	 * @param {string} s text
