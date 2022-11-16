@@ -4521,7 +4521,8 @@
 		"defList": [
 			"egg"
 		],
-		"notes": "Note: despite being animate, this refers to unfertilized eggs, too."
+		"notes": "Note: despite being animate, this refers to unfertilized eggs, too.",
+		"categories": ["body part"]
 	},
 	{
 		"title": "mimit",
