@@ -1803,7 +1803,8 @@
 			"(<i>math</i>) minus",
 			"~ give/take*: X i Y ad Z din = Z gives X to Y",
 			"(informal, <i>ardo i +</i>) ~ (romantic) love*: Y ad Z din = Y loves Z",
-			"(verb +) just (recent past - cf. fr. <em>venir de</em>)"
+			"(verb +) just (recent past - cf. fr. <em>venir de</em>)",
+			"(prefix) dis-, un- (verbal prefix showing undoing/removal of a state)"
 		],
 		"notes": "Note: * - There are many possible arrangements of this phrase. To emphasize the recipient, <i>ad</i> may even be replaced by <i>dir</i>. The most neutral phrasing is shown. ZE dialects use this prepositionally for translative senses."
 	},
@@ -1839,6 +1840,15 @@
 		"defList": [
 			"lend"
 		]
+	},
+	{
+		"title": "dinitbiz",
+		"etym": "C/din/itbiz",
+		"cat": "v.",
+		"defList": [
+			"sober up"
+		],
+		"categories": ["drink"]
 	},
 	{
 		"title": "dinkalz",
