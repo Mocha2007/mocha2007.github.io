@@ -1834,21 +1834,21 @@
 		]
 	},
 	{
+		"title": "dinfalbiz",
+		"etym": "C/din/halbiz",
+		"cat": "v.",
+		"defList": [
+			"sober up"
+		],
+		"categories": ["drink"]
+	},
+	{
 		"title": "dinfanuz",
 		"etym": "C/din/hanuz",
 		"cat": "n., 5th",
 		"defList": [
 			"lend"
 		]
-	},
-	{
-		"title": "dinitbiz",
-		"etym": "C/din/itbiz",
-		"cat": "v.",
-		"defList": [
-			"sober up"
-		],
-		"categories": ["drink"]
 	},
 	{
 		"title": "dinkalz",
@@ -2449,8 +2449,18 @@
 		"etym": "L/PEN/*ɸal/according to",
 		"cat": "post.",
 		"defList": [
-			"according to, in accordance with"
+			"according to, in accordance with",
+			"(prefix) (verbal prefix denoting the &ldquo;natural consequence&rdquo; of an action)"
 		]
+	},
+	{
+		"title": "halbiz",
+		"etym": "C/hal/biz",
+		"cat": "v.",
+		"defList": [
+			"get drunk"
+		],
+		"categories": ["drink"]
 	},
 	{
 		"title": "halk",
@@ -2460,6 +2470,14 @@
 			"heavy",
 			"important, serious",
 			"profound"
+		]
+	},
+	{
+		"title": "halrôz",
+		"etym": "C/hal/rôz",
+		"cat": "v.",
+		"defList": [
+			"reply, answer"
 		]
 	},
 	{
@@ -3020,25 +3038,7 @@
 		"cat": "post., adv., aff.",
 		"defList": [
 			"against",
-			"instead",
-			"(prefix) (verbal prefix denoting the &ldquo;natural consequence&rdquo; of an action)"
-		]
-	},
-	{
-		"title": "itbiz",
-		"etym": "C/it/biz",
-		"cat": "v.",
-		"defList": [
-			"get drunk"
-		],
-		"categories": ["drink"]
-	},
-	{
-		"title": "itrôz",
-		"etym": "C/it/rôz",
-		"cat": "v.",
-		"defList": [
-			"reply, answer"
+			"instead"
 		]
 	},
 	{
