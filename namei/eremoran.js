@@ -1041,6 +1041,10 @@ const dialectMap = {
 			'[əsˈtʃe.ɾuxʷ]', '[əsˈtʃe.ɾuʁʷ]', '[əsˈtʃe.ɾuʀʷ]', '[əsˈtʃe.ɾuxʷ]', '[əsˈtʃe.ɾuhʷ]',
 			'[əs.təˈdur.rə]', '[ahˈtei.dur.re]', '[ˈas.tɛ.du]', '[ˈas.sɛ.zu]'
 		], // beautiful
+		['[əˈla.oʀʷ]', '[əˈla.oʁʷ]', '[əˈla.oʁʷ]', '[əˈla.oxʷ]',
+			'[ˈik.tʃexʷ]', '[ˈik.tʃeʁʷ]', '[ˈik.tʃeʀʷ]', '[ˈik.tʃexʷ]', '[ˈik.tʃehʷ]',
+			'[ˈik.ter]', '[ˈik.ter.re]', '[ˈi.teɾ]', '[ˈi.seɾ]'
+		], // girl
 		['[ˈu.ɪd]', '[ˈu.ɪd]', '[ˈu.ɪd]', '[ˈu.ɪd]',
 			'[u]', '[u]', '[u]', '[u]', '[u]',
 			'[u-]', '[u]', '[ˈɛ.dʒi]', '[ˈɛ.ʒi]' // *edia rel. to eremoran edzam
@@ -1081,8 +1085,9 @@ const dialectMap = {
 			'<a class="eremoran" href="#lemma-barz" title="barz \'bind\'">barz</a>',
 			'<a class="eremoran" href="#lemma-ho" title="ho \'that\'">ho</a>',
 			'The standard word for "beautiful" when referring to a person (in the case of ZE, specifically a woman).',
+			'The standard word for girl.',
 			'The standard verb negator.',
-			'The common word for the numeral six.',
+			'The standard word for the numeral six.',
 		],
 		/* place radio button elements */
 		init(){
@@ -1104,7 +1109,10 @@ const dialectMap = {
 			});
 			dialectMap.display(1);
 		},
-		names: ['debug_id', 'Names', 'Noun Classes', '/r/', 'barz', 'ho', 'beautiful', 'not', 'six'],
+		names: [
+			'debug_id', 'Names', 'Noun Classes', '/r/', 'barz', 'ho',
+			'beautiful', 'girl', 'not', 'six'
+		],
 	},
 	/**
 	 * @param {string} s text
