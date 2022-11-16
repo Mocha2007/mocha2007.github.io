@@ -1058,7 +1058,7 @@ const dialectMap = {
 				radio.name = 'map_mode';
 				label.innerHTML = radio.value = name;
 				label.setAttribute('for', radio.id = `dialectMapSelector-${name}`);
-				radio.checked = !i;
+				radio.checked = i === 1;
 				radio.onclick = label.onclick = () => dialectMap.display(i);
 				this.elem.appendChild(radio);
 				this.elem.appendChild(label);
