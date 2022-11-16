@@ -1049,6 +1049,8 @@ const dialectMap = {
 			console.debug('xxx');
 			// todo
 			this.names.forEach((name, i) => {
+				if (!i)
+					return;
 				console.debug(name, i);
 				const radio = document.createElement('input');
 				const label = document.createElement('label');
@@ -1061,7 +1063,7 @@ const dialectMap = {
 				this.elem.appendChild(radio);
 				this.elem.appendChild(label);
 			});
-			dialectMap.display();
+			dialectMap.display(1);
 		},
 		names: ['debug_id', 'Names', '/r/', 'barz'],
 	},
