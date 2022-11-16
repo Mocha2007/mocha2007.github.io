@@ -998,15 +998,15 @@ const dialectMap = {
 	coords: [
 		// ...range(0, 100, 10).map(x => [x, x]) // fake debug coords
 		// SOUTHERN DIALECTS
-		[15, 75], // Capital
+		[16, 75], // Capital
 		[7, 68], // Kurramut
-		[26, 70], // LRS
+		[27, 70], // LRS
 		[23, 50], // HRS
 		// NORTHERN DIALECTS
-		[37, 50], // LN
+		[39, 51], // LN
 		[50, 35], // UN
-		[55, 28], // Deftei
-		[80, 12], // Abbakarm
+		[55, 29], // Deftei
+		[80, 13], // Abbakarm
 		[93, 5], // Lake
 		// WEST DIALECT
 		[35, 30], // ZE
