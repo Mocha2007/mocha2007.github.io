@@ -6,11 +6,12 @@
 }
 .textBox {
 	align-items: center;
-	background-color: rgba(255, 0, 0, 0.1);
-	border: 2px dashed maroon;
+	/*background-color: rgba(255, 0, 0, 0.1);
+	border: 2px dashed maroon;*/
 	display: flex;
 	justify-content: center;
 	position: absolute;
+	text-align: center;
 }
 #langButtons {
 	background-color: beige;

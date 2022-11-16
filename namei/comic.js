@@ -46,8 +46,8 @@ class ComicFrame {
 			div.style.top = top*this.scaleV + '%';
 			div.style.left = left*this.scaleH + '%';
 			div.style.width = width*this.scaleH + '%';
-			div.style.lineHeight = div.style.height = height*this.scaleV + '%';
-			div.innerHTML = this.texts[i][lang];
+			div.style.height = height*this.scaleV + '%';
+			div.innerHTML = this.texts[i][lang.toLowerCase()];
 			if (lang === 'ERE')
 				div.classList.add('eremoran');
 			return div;

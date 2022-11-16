@@ -9,12 +9,12 @@ const comicData = [
 		],
 		texts: [
 			{
-				ere: ['test eremoran 1'],
-				en: ['test english 1'],
+				ere: ['epet i mid'],
+				en: ['I have a sword!'],
 			},
 			{
-				ere: ['test eremoran 2'],
-				en: ['test english 2'],
+				ere: ['sazaz mok tan'],
+				en: ['I bet they&rsquo;re scared now!'],
 			},
 		],
 	},
