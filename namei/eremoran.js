@@ -1043,7 +1043,7 @@ const dialectMap = {
 		], // beautiful
 		['[əˈla.oʀʷ]', '[əˈla.oʁʷ]', '[əˈla.oʁʷ]', '[əˈla.oxʷ]',
 			'[ˈik.tʃexʷ]', '[ˈik.tʃeʁʷ]', '[ˈik.tʃeʀʷ]', '[ˈik.tʃexʷ]', '[ˈik.tʃehʷ]',
-			'[ˈik.ter]', '[ˈik.ter.re]', '[ˈi.teɾ]', '[ˈi.seɾ]'
+			'[ɪkˈter.rɛ]', '[ˈik.ter.re]', '[ˈi.tɛɾ]', '[ˈi.sɛɾ]'
 		], // girl
 		['[ˈu.ɪd]', '[ˈu.ɪd]', '[ˈu.ɪd]', '[ˈu.ɪd]',
 			'[u]', '[u]', '[u]', '[u]', '[u]',
