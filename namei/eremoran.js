@@ -1017,6 +1017,14 @@ const dialectMap = {
 			'LN', 'UN', 'Deftei', 'Abbakarm', 'Lake',
 			'ZE'
 		], // names
+		['[ʀ]', '[ʁ ~ χ]', '[ʁ ~ χ]', '[x]',
+			'[x]', '[ʁ]', '[ʀ]', '[x]', '[h]',
+			'[ʁ ~ r]'
+		], // /r/
+		['[baħʷs]', '[baħʷs]', '[baħʷs]', '[baħʷs]',
+			'[maxʷs]', '[maʁʷz]', '[maʀʷz]', '[maxʷs]', '[mahʷs]',
+			'[barz]'
+		], // barz
 	],
 	display(mode = 0){
 		// clear
@@ -1055,7 +1063,7 @@ const dialectMap = {
 			});
 			dialectMap.display();
 		},
-		names: ['debug_id', 'Names'],
+		names: ['debug_id', 'Names', '/r/', 'barz'],
 	},
 	/**
 	 * @param {string} s text
