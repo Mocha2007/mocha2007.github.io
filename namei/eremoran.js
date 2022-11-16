@@ -3,7 +3,7 @@
 	computeStats, EremoranTooltip, linkCard, numberTool, search,
 	titleCard, wordle */
 /* global charHisto, commaNumber, etymElement, histo, quotes, random,
-	round, translationChallenges, union */
+	range, round, translationChallenges, union */
 
 'use strict';
 
@@ -1018,41 +1018,50 @@ const dialectMap = {
 	],
 	data: [
 		range(11), // ids
-		['Capital', 'Kurramut', 'LRS', 'HRS',
+		[
+			'Capital', 'Kurramut', 'LRS', 'HRS',
 			'LN', 'UN', 'Deftei', 'Abbakarm', 'Lake',
-			'ZE', 'Numoran', 'Timuran', 'Simuran'
+			'ZE', 'Numoran', 'Timuran', 'Simuran',
 		], // names
-		['5', '5', '5', '5',
+		[
+			'5', '5', '5', '5',
 			'5', '5', '5', '5', '5',
-			'MFAN', 'MFAN', 'Ø', 'Ø'
+			'MFAN', 'MFAN', 'Ø', 'Ø',
 		], // names
-		['[ʀ]', '[ʁ ~ χ]', '[ʁ ~ χ]', '[x]',
+		[
+			'[ʀ]', '[ʁ ~ χ]', '[ʁ ~ χ]', '[x]',
 			'[x]', '[ʁ]', '[ʀ]', '[x]', '[h]',
-			'[ʁ ~ r]', '[ɾ]', '[ɾ]', '[ɾ]'
+			'[ʁ ~ r]', '[ɾ]', '[ɾ]', '[ɾ]',
 		], // /r/
-		['[baħʷs]', '[baħʷs]', '[baħʷs]', '[baħʷs]',
+		[
+			'[baħʷs]', '[baħʷs]', '[baħʷs]', '[baħʷs]',
 			'[maxʷs]', '[maʁʷz]', '[maħʷs]', '[maxʷs]', '[mahʷs]',
-			'[barz]', '[baɾh]', '[a baɾ]', '[a baɾ]'
+			'[barz]', '[baɾh]', '[a baɾ]', '[a baɾ]',
 		], // barz
-		['[(h)ɔ]', '[ɔ]', '[ɔ]', '[ɔ]',
+		[
+			'[(h)ɔ]', '[ɔ]', '[ɔ]', '[ɔ]',
 			'[o]', '[o]', '[(h)o]', '[(h)o]', '[ho]',
-			'[hɔ]', '[swe]', '[su]', '[su]'
+			'[hɔ]', '[swe]', '[su]', '[su]',
 		], // ho
-		['[ʊ.zʊʀʷ.kəˈla.ʊʀʷ]', '[ʊ.zʊʁʷ.kəˈla.ʊʁʷ]', '[ʊ.zʊʁʷ.kəˈla.ʊʁʷ]', '[ʊ.zʊxʷ.kəˈla.ʊxʷ]',
+		[
+			'[ʊ.zʊʀʷ.kəˈla.ʊʀʷ]', '[ʊ.zʊʁʷ.kəˈla.ʊʁʷ]', '[ʊ.zʊʁʷ.kəˈla.ʊʁʷ]', '[ʊ.zʊxʷ.kəˈla.ʊxʷ]',
 			'[əsˈtʃe.ɾuxʷ]', '[əsˈtʃe.ɾuʁʷ]', '[əsˈtʃe.ɾuʀʷ]', '[əsˈtʃe.ɾuxʷ]', '[əsˈtʃe.ɾuhʷ]',
-			'[əs.təˈdur.rə]', '[ahˈtei.dur.re]', '[ˈas.tɛ.du]', '[ˈas.sɛ.zu]'
+			'[əs.təˈdur.rə]', '[ahˈtei.dur.re]', '[ˈas.tɛ.du]', '[ˈas.sɛ.zu]',
 		], // beautiful
-		['[əˈla.oʀʷ]', '[əˈla.oʁʷ]', '[əˈla.oʁʷ]', '[əˈla.oxʷ]',
+		[
+			'[əˈla.oʀʷ]', '[əˈla.oʁʷ]', '[əˈla.oʁʷ]', '[əˈla.oxʷ]',
 			'[ˈik.tʃexʷ]', '[ˈik.tʃeʁʷ]', '[ˈik.tʃeʀʷ]', '[ˈik.tʃexʷ]', '[ˈik.tʃehʷ]',
-			'[ɪkˈter.rɛ]', '[ˈik.ter.re]', '[ˈi.tɛɾ]', '[ˈi.sɛɾ]'
+			'[ɪkˈter.rɛ]', '[ˈik.ter.re]', '[ˈi.tɛɾ]', '[ˈi.sɛɾ]',
 		], // girl
-		['[ˈu.ɪd]', '[ˈu.ɪd]', '[ˈu.ɪd]', '[ˈu.ɪd]',
+		[
+			'[ˈu.ɪd]', '[ˈu.ɪd]', '[ˈu.ɪd]', '[ˈu.ɪd]',
 			'[u]', '[u]', '[u]', '[u]', '[u]',
-			'[u-]', '[u]', '[ˈɛ.dʒi]', '[ˈɛ.ʒi]' // *edia rel. to eremoran edzam
+			'[u-]', '[u]', '[ˈɛ.dʒi]', '[ˈɛ.ʒi]', // *edia rel. to eremoran edzam
 		], // not
-		['[ˈɛʕʷm.nu]', '[ˈɛʕʷm.nu]', '[ˈɛʕʷm.nu]', '[ˈɛʕʷm.nu]',
+		[
+			'[ˈɛʕʷm.nu]', '[ˈɛʕʷm.nu]', '[ˈɛʕʷm.nu]', '[ˈɛʕʷm.nu]',
 			'[ˈewm.nu]', '[ˈewm.nu]', '[ˈewm.nu]', '[ˈewm.nu]', '[ˈewm.nu]',
-			'[ɛʟ̠ʷm.nu]', '[ˈxa.jo]', '[ˈa.ju]', '[ˈa.gu]' // *edia rel. to eremoran edzam
+			'[ɛʟ̠ʷm.nu]', '[ˈxa.jo]', '[ˈa.ju]', '[ˈa.gu]', // *edia rel. to eremoran edzam
 		], // six
 	],
 	display(mode = 0){
@@ -1112,7 +1121,7 @@ const dialectMap = {
 		},
 		names: [
 			'debug_id', 'Names', 'Noun Classes', '/r/', 'barz', 'ho',
-			'beautiful', 'girl', 'not', 'six'
+			'beautiful', 'girl', 'not', 'six',
 		],
 	},
 	/**
