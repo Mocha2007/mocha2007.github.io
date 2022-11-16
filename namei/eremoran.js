@@ -1038,6 +1038,7 @@ const dialectMap = {
 			const [x, y] = this.coords[i];
 			this.putText(datum, x, y);
 		});
+		this.mode.descElem.innerHTML = this.mode.descs[mode];
 	},
 	/** @returns {HTMLDivElement} */
 	get elem(){
@@ -1045,9 +1046,20 @@ const dialectMap = {
 	},
 	mode: {
 		/** @returns {HTMLDivElement} */
+		get descElem(){
+			return document.getElementById('dialectMapDesc');
+		},
+		/** @returns {HTMLDivElement} */
 		get elem(){
 			return document.getElementById('dialectMapSelector');
 		},
+		descs: [
+			'debug',
+			'Main Eremoran dialect groups.',
+			'Primary form of the rhotic.',
+			'<a class="eremoran" href="#lemma-barz" title="barz \'bind\'">barz</a>',
+			'<a class="eremoran" href="#lemma-ho" title="ho \'that\'">ho</a>',
+		],
 		/* place radio button elements */
 		init(){
 			console.debug('xxx');
