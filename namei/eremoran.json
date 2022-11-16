@@ -6769,11 +6769,20 @@
 		]
 	},
 	{
+		"title": "u",
+		"etym": "a/u-",
+		"cat": "adv.",
+		"defList": [
+			"(northern) not"
+		]
+	},
+	{
 		"title": "u-",
 		"etym": "L/PEN/u-/un-",
 		"cat": "aff.",
 		"defList": [
-			"(archaic) un-, non-, anti-"
+			"(archaic) un-, non-, anti-",
+			"(ZE) (verb negator)"
 		],
 		"notes": "cf. pu-, the newer, productive form"
 	},
@@ -6819,7 +6828,7 @@
 		"etym": "C/u-/id",
 		"cat": "adv.",
 		"defList": [
-			"not"
+			"(southern) not"
 		]
 	},
 	{

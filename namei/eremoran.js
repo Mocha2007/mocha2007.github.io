@@ -1033,6 +1033,10 @@ const dialectMap = {
 			'[əsˈtʃe.ɾuxʷ]', '[əsˈtʃe.ɾuʁʷ]', '[əsˈtʃe.ɾuʀʷ]', '[əsˈtʃe.ɾuxʷ]', '[əsˈtʃe.ɾuhʷ]',
 			'[əs.təˈdur.rə]'
 		], // beautiful
+		['[ˈu.ɪd]', '[ˈu.ɪd]', '[ˈu.ɪd]', '[ˈu.ɪd]',
+			'[u]', '[u]', '[u]', '[u]', '[u]',
+			'[u-]'
+		], // not
 	],
 	display(mode = 0){
 		// clear
@@ -1064,6 +1068,7 @@ const dialectMap = {
 			'<a class="eremoran" href="#lemma-barz" title="barz \'bind\'">barz</a>',
 			'<a class="eremoran" href="#lemma-ho" title="ho \'that\'">ho</a>',
 			'The standard word for "beautiful" when referring to a person (in the case of ZE, specifically a woman).',
+			'The standard verb negator.',
 		],
 		/* place radio button elements */
 		init(){
@@ -1086,7 +1091,7 @@ const dialectMap = {
 			});
 			dialectMap.display(1);
 		},
-		names: ['debug_id', 'Names', '/r/', 'barz', 'ho', 'beautiful'],
+		names: ['debug_id', 'Names', '/r/', 'barz', 'ho', 'beautiful', 'not'],
 	},
 	/**
 	 * @param {string} s text
