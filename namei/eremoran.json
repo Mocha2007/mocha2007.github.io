@@ -6896,8 +6896,10 @@
 		"etym": "C/tukuz/-m",
 		"cat": "n., 5th",
 		"defList": [
-			"name"
-		]
+			"name",
+			"noun"
+		],
+		"categories": ["language"]
 	},
 	{
 		"title": "tukuz",
