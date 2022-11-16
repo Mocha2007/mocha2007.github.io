@@ -992,3 +992,82 @@ const gen = {
 		},
 	},
 };
+
+const dialectMap = {
+	/** @type {[number, number][]} */
+	coords: [
+		// ...range(0, 100, 10).map(x => [x, x]) // fake debug coords
+		// SOUTHERN DIALECTS
+		[15, 75], // Capital
+		[7, 68], // Kurramut
+		[26, 70], // LRS
+		[25, 50], // HRS
+		// NORTHERN DIALECTS
+		[37, 50], // LN
+		[50, 35], // UN
+		[55, 28], // Deftei
+		[80, 12], // Abbakarm
+		[93, 5], // Lake
+		// WEST DIALECT
+		[35, 30], // ZE
+	],
+	data: [
+		range(10), // ids
+		['Capital', 'Kurramut', 'LRS', 'HRS',
+			'LN', 'UN', 'Deftei', 'Abbakarm', 'Lake',
+			'ZE'
+		], // names
+	],
+	display(mode = 0){
+		// clear
+		this.elem.innerHTML = '';
+		// put
+		this.data[mode].forEach((datum, i) => {
+			const [x, y] = this.coords[i];
+			this.putText(datum, x, y);
+		});
+	},
+	/** @returns {HTMLDivElement} */
+	get elem(){
+		return document.getElementById('dialectMap');
+	},
+	mode: {
+		/** @returns {HTMLDivElement} */
+		get elem(){
+			return document.getElementById('dialectMapSelector');
+		},
+		/* place radio button elements */
+		init(){
+			console.debug('xxx');
+			// todo
+			this.names.forEach((name, i) => {
+				console.debug(name, i);
+				const radio = document.createElement('input');
+				const label = document.createElement('label');
+				radio.type = 'radio';
+				radio.name = 'map_mode';
+				label.innerHTML = radio.value = name;
+				label.setAttribute('for', radio.id = `dialectMapSelector-${name}`);
+				radio.checked = !i;
+				radio.onclick = label.onclick = () => dialectMap.display(i);
+				this.elem.appendChild(radio);
+				this.elem.appendChild(label);
+			});
+			dialectMap.display();
+		},
+		names: ['debug_id', 'Names'],
+	},
+	/**
+	 * @param {string} s text
+	 * @param {number} x % from left [0, 100]
+	 * @param {number} y % from top [0, 100]
+	 */
+	putText(s, x, y){
+		const e = document.createElement('div');
+		e.classList.add('dialectMapText');
+		e.style.left = x + '%';
+		e.style.top = y + '%';
+		e.innerHTML = s;
+		this.elem.appendChild(e);
+	},
+};
