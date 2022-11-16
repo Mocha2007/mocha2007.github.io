@@ -1010,32 +1010,36 @@ const dialectMap = {
 		[93, 5], // Lake
 		// WEST DIALECT
 		[35, 30], // ZE
+		// Other langs in family (if available)
+		[2, 7], // Numoran
+		[16, 2], // Timuran
+		[36, 6], // Simuran
 	],
 	data: [
-		range(10), // ids
+		range(11), // ids
 		['Capital', 'Kurramut', 'LRS', 'HRS',
 			'LN', 'UN', 'Deftei', 'Abbakarm', 'Lake',
-			'ZE'
+			'ZE', 'Numoran', 'Timuran', 'Simuran'
 		], // names
 		['[ʀ]', '[ʁ ~ χ]', '[ʁ ~ χ]', '[x]',
 			'[x]', '[ʁ]', '[ʀ]', '[x]', '[h]',
-			'[ʁ ~ r]'
+			'[ʁ ~ r]', '[ɾ]'
 		], // /r/
 		['[baħʷs]', '[baħʷs]', '[baħʷs]', '[baħʷs]',
 			'[maxʷs]', '[maʁʷz]', '[maʀʷz]', '[maxʷs]', '[mahʷs]',
-			'[barz]'
+			'[barz]', '[baɾs]'
 		], // barz
 		['[(h)ɔ]', '[ɔ]', '[ɔ]', '[ɔ]',
 			'[o]', '[o]', '[(h)o]', '[(h)o]', '[ho]',
-			'[hɔ]'
+			'[hɔ]', '[swe]'
 		], // ho
 		['[ʊ.zʊʀʷ.kəˈla.ʊʀʷ]', '[ʊ.zʊʁʷ.kəˈla.ʊʁʷ]', '[ʊ.zʊʁʷ.kəˈla.ʊʁʷ]', '[ʊ.zʊxʷ.kəˈla.ʊxʷ]',
 			'[əsˈtʃe.ɾuxʷ]', '[əsˈtʃe.ɾuʁʷ]', '[əsˈtʃe.ɾuʀʷ]', '[əsˈtʃe.ɾuxʷ]', '[əsˈtʃe.ɾuhʷ]',
-			'[əs.təˈdur.rə]'
+			'[əs.təˈdur.rə]', '[asˈtei.dur.re]'
 		], // beautiful
 		['[ˈu.ɪd]', '[ˈu.ɪd]', '[ˈu.ɪd]', '[ˈu.ɪd]',
 			'[u]', '[u]', '[u]', '[u]', '[u]',
-			'[u-]'
+			'[u-]', '[u]'
 		], // not
 	],
 	display(mode = 0){
@@ -1063,7 +1067,7 @@ const dialectMap = {
 		},
 		descs: [
 			'debug',
-			'Main Eremoran dialect groups.',
+			'Main Eremoran dialect groups, along with nearby Muran languages.',
 			'Primary form of the rhotic.',
 			'<a class="eremoran" href="#lemma-barz" title="barz \'bind\'">barz</a>',
 			'<a class="eremoran" href="#lemma-ho" title="ho \'that\'">ho</a>',
@@ -1072,12 +1076,10 @@ const dialectMap = {
 		],
 		/* place radio button elements */
 		init(){
-			console.debug('xxx');
 			// todo
 			this.names.forEach((name, i) => {
 				if (!i)
 					return;
-				console.debug(name, i);
 				const radio = document.createElement('input');
 				const label = document.createElement('label');
 				radio.type = 'radio';
