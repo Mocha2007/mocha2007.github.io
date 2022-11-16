@@ -3014,6 +3014,15 @@
 		"notes": "adv."
 	},
 	{
+		"title": "itbiz",
+		"etym": "C/it/biz",
+		"cat": "v.",
+		"defList": [
+			"get drunk"
+		],
+		"categories": ["drink"]
+	},
+	{
 		"title": "itrôz",
 		"etym": "C/it/rôz",
 		"cat": "v.",
