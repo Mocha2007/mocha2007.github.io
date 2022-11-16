@@ -6434,11 +6434,19 @@
 		"etym": "L/OER/taslire//L/PEN/*tassu-lire/evergreen//~/taze//~/tasu//~/tasku",
 		"cat": "n., 4th",
 		"defList": [
-			"(archaic) evergreen, esp. pine",
 			"tree",
-			"wood"
+			"(archaic) evergreen, esp. pine",
+			"(archaic) a forest, a wood"
 		],
 		"categories": ["plant"]
+	},
+	{
+		"title": "talirem",
+		"etym": "C/talire/-m",
+		"cat": "n., 4th",
+		"defList": [
+			"(uncountable) wood"
+		]
 	},
 	{
 		"title": "talsu",
