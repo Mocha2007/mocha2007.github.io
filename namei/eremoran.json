@@ -582,6 +582,14 @@
 		"notes": "further etymology of *xere: *x [animacy particle] + *ere 'red'"
 	},
 	{
+		"title": "ardolam",
+		"etym": "C/ardo/lam",
+		"cat": "n., 5th",
+		"defList": [
+			"(uncountable) flint"
+		]
+	},
+	{
 		"title": "ardom",
 		"etym": "C/ardo/-m",
 		"cat": "n., 5th",
@@ -766,6 +774,14 @@
 		],
 		"notes": "azmu is one of a handful of nouns ending in -u.",
 		"categories": ["body part"]
+	},
+	{
+		"title": "ba",
+		"etym": "L/PEN/*βa/chickpea",
+		"cat": "n., 4th",
+		"defList": [
+			"chickpea"
+		]
 	},
 	{
 		"title": "babzu",
@@ -1091,6 +1107,14 @@
 		"cat": "adj.",
 		"defList": [
 			"loyal"
+		]
+	},
+	{
+		"title": "beu",
+		"etym": "L/PEN/*βeu/common bean",
+		"cat": "n., 4th",
+		"defList": [
+			"common bean (phaseolus vulgaris)"
 		]
 	},
 	{
@@ -2104,6 +2128,14 @@
 		]
 	},
 	{
+		"title": "emam",
+		"etym": "L/PEN/*emam/silt",
+		"cat": "n., 5th",
+		"defList": [
+			"silt"
+		]
+	},
+	{
 		"title": "empra",
 		"img": "../img/eremoran/empra.png",
 		"etym": "L/PRE/ēmperā/lemon//L/VAZ/imphera/lemon",
@@ -2452,6 +2484,14 @@
 		"cat": "v.",
 		"defList": [
 			"hold"
+		]
+	},
+	{
+		"title": "hat",
+		"etym": "L/PEN/*ɸat/loom",
+		"cat": "n., 3rd",
+		"defList": [
+			"loom"
 		]
 	},
 	{
@@ -3329,6 +3369,14 @@
 		]
 	},
 	{
+		"title": "kiram",
+		"etym": "L/PEN/*giram/loam",
+		"cat": "n., 5th",
+		"defList": [
+			"loam"
+		]
+	},
+	{
 		"title": "kiskana",
 		"etym": "L/PEN/*giʃkana/birch",
 		"cat": "n., 4th",
@@ -3905,6 +3953,15 @@
 		]
 	},
 	{
+		"title": "lel",
+		"img": "../img/eremoran/len.png",
+		"etym": "B/lam/ela",
+		"cat": "n., 4th",
+		"defList": [
+			"(archaic, dialectal, countable) stone, rock"
+		]
+	},
+	{
 		"title": "len",
 		"img": "../img/eremoran/len.png",
 		"etym": "r/lel",
@@ -3922,15 +3979,6 @@
 			"hamster (esp. cricetulus migratorius)"
 		],
 		"categories": ["animal"]
-	},
-	{
-		"title": "lel",
-		"img": "../img/eremoran/len.png",
-		"etym": "B/lan/ela",
-		"cat": "n., 4th",
-		"defList": [
-			"(archaic, dialectal, countable) stone, rock"
-		]
 	},
 	{
 		"title": "li",
@@ -4600,8 +4648,8 @@
 		"categories": ["animal"]
 	},
 	{
-		"title": "mulen",
-		"etym": "C/mu/len",
+		"title": "mulam",
+		"etym": "C/mu/lam",
 		"cat": "n., 4th",
 		"defList": [
 			"ice",
