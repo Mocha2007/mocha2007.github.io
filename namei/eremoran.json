@@ -2128,7 +2128,7 @@
 	},
 	{
 		"title": "elaôr",
-		"etym": "C/elaêr/-ô",
+		"etym": "a/elaêr",
 		"cat": "n., 1st",
 		"defList": [
 			"girl",
@@ -4618,7 +4618,7 @@
 	},
 	{
 		"title": "morôz",
-		"etym": "r/mor rôz",
+		"etym": "C/mor/rôz",
 		"cat": "v. (Evidential; secondhand knowledge)",
 		"defList": [
 			"[Specifies the speaker heard of the event mentioned]"
@@ -7075,7 +7075,7 @@
 	},
 	{
 		"title": "umôrz",
-		"etym": "r/uou mor saurz",
+		"etym": "C/umor/saurz",
 		"cat": "v. (Evidential; visual knowledge)",
 		"defList": [
 			"[Specifies the speaker, but not others, saw the event mentioned]"
