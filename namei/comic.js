@@ -1,5 +1,5 @@
 /* exported comic */
-/* global comicData */
+/* global comicData, normalizeEremoran */
 /** eremoran comic thingy
  * reads a list of images, along with rectangles where text can go and the text to be placed there
  * text will automatically be sized to the speech bubbles
@@ -47,9 +47,12 @@ class ComicFrame {
 			div.style.left = left*this.scaleH + '%';
 			div.style.width = width*this.scaleH + '%';
 			div.style.height = height*this.scaleV + '%';
-			div.innerHTML = this.texts[i][lang.toLowerCase()];
-			if (lang === 'ERE')
+			if (lang === 'ERE'){
 				div.classList.add('eremoran');
+				div.innerHTML = normalizeEremoran(this.texts.ere[i].replace(/[.!?,;:]/g, ''));
+			}
+			else
+				div.innerHTML = this.texts[lang.toLowerCase()][i].replace(/`/g, '&rsquo;'); // apostrophes
 			return div;
 		});
 	}

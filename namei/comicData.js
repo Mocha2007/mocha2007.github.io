@@ -7,15 +7,9 @@ const comicData = [
 			[100, 40, 270, 100], // left, top, width, height
 			[550, 315, 200, 110],
 		],
-		texts: [
-			{
-				ere: ['epet i mid'],
-				en: ['I have a sword!'],
-			},
-			{
-				ere: ['sazaz mok tan'],
-				en: ['I bet they&rsquo;re scared now!'],
-			},
-		],
+		texts: {
+			ere: ['Epet i mid!', 'Sazaz mok tan!'],
+			en: ['I have a spear!', 'I bet they`re scared now!'],
+		},
 	},
 ];
