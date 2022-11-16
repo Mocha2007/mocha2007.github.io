@@ -1001,7 +1001,7 @@ const dialectMap = {
 		[15, 75], // Capital
 		[7, 68], // Kurramut
 		[26, 70], // LRS
-		[25, 50], // HRS
+		[23, 50], // HRS
 		// NORTHERN DIALECTS
 		[37, 50], // LN
 		[50, 35], // UN
@@ -1029,6 +1029,10 @@ const dialectMap = {
 			'[o]', '[o]', '[(h)o]', '[(h)o]', '[ho]',
 			'[hɔ]'
 		], // ho
+		['uzurkelau', 'uzurkelau', 'uzurkelau', 'uzurkelau',
+			'astedu', 'astedu', 'astedu', 'astedu', 'astedu',
+			'astedu'
+		], // beautiful
 	],
 	display(mode = 0){
 		// clear
@@ -1059,6 +1063,7 @@ const dialectMap = {
 			'Primary form of the rhotic.',
 			'<a class="eremoran" href="#lemma-barz" title="barz \'bind\'">barz</a>',
 			'<a class="eremoran" href="#lemma-ho" title="ho \'that\'">ho</a>',
+			'The standard word for "beautiful" when referring to a person',
 		],
 		/* place radio button elements */
 		init(){
@@ -1081,7 +1086,7 @@ const dialectMap = {
 			});
 			dialectMap.display(1);
 		},
-		names: ['debug_id', 'Names', '/r/', 'barz', 'ho'],
+		names: ['debug_id', 'Names', '/r/', 'barz', 'ho', 'beautiful'],
 	},
 	/**
 	 * @param {string} s text
