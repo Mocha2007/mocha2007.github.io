@@ -1092,6 +1092,7 @@ const dialectMap = {
 					return;
 				const radio = document.createElement('input');
 				const label = document.createElement('label');
+				label.classList.add('button');
 				radio.type = 'radio';
 				radio.name = 'map_mode';
 				label.innerHTML = radio.value = name;
