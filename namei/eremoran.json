@@ -1690,6 +1690,15 @@
 		]
 	},
 	{
+		"title": "di",
+		"etym": "L/PEN/*di/[polite adjective]",
+		"cat": "adj.",
+		"defList": [
+			"(archaic, regional) [polite adjective]"
+		],
+		"notes": "Nowadays replaced by <em>ou</em>. Reanalyzed as a preposition in most dialects, including the standard."
+	},
+	{
 		"title": "did",
 		"etym": "R/id",
 		"cat": "adj.",
@@ -1802,7 +1811,7 @@
 	},
 	{
 		"title": "dir",
-		"etym": "C/diu/-r",
+		"etym": "C/di/-r",
 		"cat": "prep.",
 		"defList": [
 			"[Absolutive Particle]"
@@ -1825,15 +1834,6 @@
 			"whale"
 		],
 		"categories": ["animal"]
-	},
-	{
-		"title": "diu",
-		"etym": "L/PEN/*diu/[polite adjective]",
-		"cat": "adj.",
-		"defList": [
-			"(archaic, regional) [polite adjective]"
-		],
-		"notes": "Nowadays replaced by <em>ou</em>. Reanalyzed as a preposition in most dialects, including the standard."
 	},
 	{
 		"title": "dô",
