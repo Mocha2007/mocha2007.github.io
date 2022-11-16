@@ -753,7 +753,7 @@
 		"defList": [
 			"pronoun"
 		],
-		"categories": ["grammar"]
+		"categories": ["language"]
 	},
 	{
 		"title": "azaz",
@@ -2947,7 +2947,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"consonant"
-		]
+		],
+		"categories": ["language"]
 	},
 	{
 		"title": "in",
@@ -4060,7 +4061,8 @@
 		"defList": [
 			"vowel",
 			"nucleus (of a syllable)"
-		]
+		],
+		"categories": ["language"]
 	},
 	{
 		"title": "libam",
@@ -5720,7 +5722,8 @@
 		"defList": [
 			"speech",
 			"language"
-		]
+		],
+		"categories": ["language"]
 	},
 	{
 		"title": "rômat",
