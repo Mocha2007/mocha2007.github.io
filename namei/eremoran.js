@@ -1007,7 +1007,7 @@ const dialectMap = {
 		[50, 35], // UN
 		[55, 29], // Deftei
 		[80, 13], // Abbakarm
-		[93, 5], // Lake
+		[92, 6], // Lake
 		// WEST DIALECT
 		[35, 30], // ZE
 		// Other langs in family (if available)
