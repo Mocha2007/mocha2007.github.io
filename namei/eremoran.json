@@ -1443,6 +1443,14 @@
 		]
 	},
 	{
+		"title": "bukat",
+		"etym": "L/PEN/*buxat/adze",
+		"cat": "n., 3rd",
+		"defList": [
+			"adze"
+		]
+	},
+	{
 		"title": "bukeba",
 		"etym": "C/bukt/eba",
 		"cat": "n., 4th",
@@ -3160,6 +3168,14 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"chain, link"
+		]
+	},
+	{
+		"title": "kanda",
+		"etym": "C/kanu/da",
+		"cat": "n., 4th",
+		"defList": [
+			"ochre"
 		]
 	},
 	{
@@ -5583,6 +5599,22 @@
 		"notes": "esp. of interior wall painting patterns; present form influenced by <em>raz</em> 'paint'"
 	},
 	{
+		"title": "redêfut",
+		"etym": "C/redêt/hus",
+		"cat": "n., 3rd",
+		"defList": [
+			"(threshing) flail"
+		]
+	},
+	{
+		"title": "redêt",
+		"etym": "C/redz/-ê",
+		"cat": "n., 3rd",
+		"defList": [
+			"threshing sledge, threshing board"
+		]
+	},
+	{
 		"title": "redz",
 		"etym": "L/PEN/*reds/rub",
 		"cat": "v.",
@@ -5671,6 +5703,14 @@
 			"tongue"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "rôlent",
+		"etym": "C/rôm/len",
+		"cat": "n., 3rd",
+		"defList": [
+			"stele, obelisk"
+		]
 	},
 	{
 		"title": "rôm",
@@ -5920,6 +5960,22 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "sekaêt",
+		"etym": "C/sekaz/-ê",
+		"cat": "n., 3rd",
+		"defList": [
+			"sickle, scythe"
+		]
+	},
+	{
+		"title": "sekaz",
+		"etym": "C/se/kaz",
+		"cat": "v.",
+		"defList": [
+			"mow"
+		]
+	},
+	{
 		"title": "sêlai",
 		"etym": "L/PEN/*ʃêlai/thigh",
 		"cat": "n., 4th",
@@ -5943,6 +5999,15 @@
 		"defList": [
 			"hundred"
 		]
+	},
+	{
+		"title": "set",
+		"etym": "C/se/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"crop (ie. plant used to produce goods)"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "sifaz",
@@ -6095,6 +6160,14 @@
 			"warmth, heat"
 		],
 		"categories": ["weather"]
+	},
+	{
+		"title": "sonat",
+		"etym": "L/PEN/*ʃonat/mortar",
+		"cat": "n., 3rd",
+		"defList": [
+			"mortar (ie. w/ pestle)"
+		]
 	},
 	{
 		"title": "soni",
@@ -6327,6 +6400,14 @@
 		]
 	},
 	{
+		"title": "tabaêt",
+		"etym": "C/tabaz/-ê",
+		"cat": "n., 3rd",
+		"defList": [
+			"pestle"
+		]
+	},
+	{
 		"title": "takêu",
 		"etym": "L/PEN/*tokêu/clockwise",
 		"cat": "adj.",
@@ -6409,6 +6490,14 @@
 		]
 	},
 	{
+		"title": "tanêt",
+		"etym": "C/tanz/-ê",
+		"cat": "n., 3rd",
+		"defList": [
+			"quern, metate"
+		]
+	},
+	{
 		"title": "tantan",
 		"etym": "R/tan",
 		"cat": "adv.",
@@ -6416,6 +6505,14 @@
 			"eventually"
 		],
 		"categories": ["time"]
+	},
+	{
+		"title": "tanz",
+		"etym": "L/PEN/*tans/mill",
+		"cat": "v.",
+		"defList": [
+			"mill"
+		]
 	},
 	{
 		"title": "tar",
