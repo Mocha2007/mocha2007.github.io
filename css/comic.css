@@ -1,3 +1,6 @@
+html, body {
+	user-select: none;
+}
 .comicContainer {
 	position: relative;
 }
