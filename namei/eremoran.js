@@ -1021,6 +1021,10 @@ const dialectMap = {
 			'LN', 'UN', 'Deftei', 'Abbakarm', 'Lake',
 			'ZE', 'Numoran', 'Timuran', 'Simuran'
 		], // names
+		['5', '5', '5', '5',
+			'5', '5', '5', '5', '5',
+			'MFAN', 'MFAN', 'Ø', 'Ø'
+		], // names
 		['[ʀ]', '[ʁ ~ χ]', '[ʁ ~ χ]', '[x]',
 			'[x]', '[ʁ]', '[ʀ]', '[x]', '[h]',
 			'[ʁ ~ r]', '[ɾ]', '[ɾ]', '[ɾ]'
@@ -1068,6 +1072,7 @@ const dialectMap = {
 		descs: [
 			'debug',
 			'Main Eremoran dialect groups, along with nearby Muran languages.',
+			'The existence of noun classes within the dialect/language:<br>5 - Standard five (see below)<br>MFAN - Human Masculine, Human Feminine, Nonhuman Animate, Neuter<br>Ø - None',
 			'Primary form of the rhotic.',
 			'<a class="eremoran" href="#lemma-barz" title="barz \'bind\'">barz</a>',
 			'<a class="eremoran" href="#lemma-ho" title="ho \'that\'">ho</a>',
@@ -1093,7 +1098,7 @@ const dialectMap = {
 			});
 			dialectMap.display(1);
 		},
-		names: ['debug_id', 'Names', '/r/', 'barz', 'ho', 'beautiful', 'not'],
+		names: ['debug_id', 'Names', 'Noun Classes', '/r/', 'barz', 'ho', 'beautiful', 'not'],
 	},
 	/**
 	 * @param {string} s text
