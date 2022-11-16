@@ -104,6 +104,19 @@ a.eremoran {
 	box-shadow: 0 0 1vh rgba(0, 0, 0, 0.7);
 	color: black;
 }
+.gloss {
+	font-size: 80%;
+	margin: 0 0 0 0.7vw;
+}
+#searchResults {
+	background-color: #bbb;
+	border: 2px solid #444;
+	border-radius: 1vw;
+	column-count: 3;
+	column-rule: 2px solid #444;
+	list-style: none;
+	padding: 1vw;
+}
 /* wordle */
 #wordle_history {
 	list-style: none;

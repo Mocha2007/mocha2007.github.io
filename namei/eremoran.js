@@ -681,6 +681,7 @@ const search = {
 		const li = document.createElement('li');
 		li.appendChild(titleCard(s));
 		const g = document.createElement('q');
+		g.classList.add('gloss');
 		g.innerHTML = gloss(s);
 		li.appendChild(g);
 		this.searchResults.appendChild(li);
