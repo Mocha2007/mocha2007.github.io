@@ -3017,11 +3017,12 @@
 	{
 		"title": "it",
 		"etym": "L/PEN/*it/rather than'",
-		"cat": "post.",
+		"cat": "post., adv., aff.",
 		"defList": [
-			"instead"
-		],
-		"notes": "adv."
+			"against",
+			"instead",
+			"(prefix) (verbal prefix denoting the &ldquo;natural consequence&rdquo; of an action)"
+		]
 	},
 	{
 		"title": "itbiz",
