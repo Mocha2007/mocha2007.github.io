@@ -5926,8 +5926,17 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "seda",
+		"etym": "C/se/da",
+		"cat": "n., 4th",
+		"defList": [
+			"field"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "sedam",
-		"etym": "C/sedat/-m",
+		"etym": "C/seda/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"unit of area about 3,100 m^2 or 0.76 acres"
@@ -5935,10 +5944,10 @@
 	},
 	{
 		"title": "sedat",
-		"etym": "C/se/da",
+		"etym": "C/seda/-t",
 		"cat": "n., 3rd",
 		"defList": [
-			"farm; (crop)field"
+			"farm, (crop)field"
 		],
 		"categories": ["plant"]
 	},
