@@ -1,0 +1,18 @@
+.s{text-shadow: 0 0 0 #c00}
+.a{text-shadow: 0 0 0 #a00}
+.b{text-shadow: 0 0 0 #800}
+.c{text-shadow: 0 0 0 #600}
+.d{text-shadow: 0 0 0 #400}
+.f{text-shadow: 0 0 0 #000}
+.s, .a, .b, .c, .d, .f {
+	color: transparent;
+}
+.vowel {
+	font-family: monospace;
+	color: black;
+	background-color: AliceBlue;
+	text-align: center;
+}
+.vowel td {
+	border: none;
+}
