@@ -1,5 +1,4 @@
-/* exported adj, computeStats, EremoranTooltip, ereNum, linkCard,
-	search, titleCard, wordle */
+/* exported adj, ereNum, linkCard, main, search, titleCard, wordle */
 /* global charHisto, commaNumber, etymElement, histo, quotes, random,
 	range, round, translationChallenges, union */
 
@@ -1058,6 +1057,7 @@ const dialectMap = {
 
 // keep computeStats at the VERY BOTTOM
 
+/** this function is used to run generate statistics DEPENDENT ON the dictionary already existing */
 function computeStats(){
 	// print dict length
 	document.getElementById('wordcount').innerHTML = elements.dict.length;
@@ -1090,8 +1090,6 @@ function computeStats(){
 		option.value = option.innerHTML = category;
 		categorySearch.appendChild(option);
 	});
-	// add titles to iframes for accessibility
-	Array.from(document.getElementsByTagName('iframe')).forEach(e => e.title = e.id);
 	// verify etymology hyperlinks
 	Array.from(document.querySelectorAll('a.eremoran')).forEach(e => {
 		const href = e.href.match(/#.+/)[0]
@@ -1108,4 +1106,18 @@ function computeStats(){
 			console.error(`${err} while analyzing link to ${href}`);
 		}
 	});
+}
+
+/** this is run at the end of eremoran.html */
+function main(){
+	// needs to wait a second to download, so put this first
+	getDict('eremoran', computeStats);
+	// scrolling quotes
+	startEreQuote();
+	// tooltip for hovering over eremoran words
+	EremoranTooltip.setup();
+	// print radio buttons
+	dialectMap.mode.init();
+	// add titles to iframes for accessibility
+	Array.from(document.getElementsByTagName('iframe')).forEach(e => e.title = e.id);
 }
