@@ -1,5 +1,5 @@
-/* exported adjTool, autoUp, computeStats, EremoranTooltip, linkCard,
-	numberTool, search, titleCard, wordle */
+/* exported adjTool, computeStats, EremoranTooltip, ereNum, linkCard,
+	search, titleCard, wordle */
 /* global charHisto, commaNumber, etymElement, histo, quotes, random,
 	range, round, translationChallenges, union */
 
@@ -369,70 +369,72 @@ function computeStats(){
 	});
 }
 
-/**
- * @param {number} x
- * @returns {string}
- */
-function ereNum(x){
-	if (x < 15)
-		return ereNum.first[x];
-	if (x < 80){
-		const fives = Math.floor(x / 5);
-		const remainder = x % 5;
-		const fivesWord = `${ereNum(fives).replace(/u$/g, '')}anu`;
-		const onesWord = ereNum.first[remainder];
-		return `${fivesWord} ${onesWord}`.replace(/ $/g, '');
-	}
-	if (x < 100)
-		return `kumkananu ${ereNum(x-75)}`;
-	if (x < 200)
-		return `sesu ${ereNum(x-100)}`.replace(/ $/g, '');
-	const hundreds = Math.floor(x / 100);
-	const remainder = x % 100;
-	const hundredsWord = `${ereNum(hundreds)}sesu`.replace(' ', 'sesu ').replace('idsesu', 'sesu ');
-	const onesWord = ereNum(remainder);
-	return `${hundredsWord} ${onesWord}`.replace(/ $/g, '');
-}
-ereNum.first = [
-	'',
-	'id',
-	'nasu',
-	'kumku',
-	'babzu',
-	'hanu',
-	'elmnu',
-	'klimu',
-	'triksu',
-	'talsu',
-	'nasanu',
-	'tanid',
-	'tanasu',
-	'tankumku',
-	'tambabzu',
-];
-
-function numberTool(){
-	/** @type {number} */
-	const input = document.getElementById('eremoranNumberInput').value;
-	/** @type {HTMLQuoteElement} */
-	const o = document.getElementById('eremoranNumberOutput');
-	// main
-	o.innerHTML = ereNum(input);
-	// recompute tooltips
-	EremoranTooltip.setupWord(o);
-}
-
-/** toggle eremoran number tool auto-up */
-function autoUp(){
-	autoUp.on = !autoUp.on;
-	if (autoUp.on)
-		autoUp.interval = setInterval(() => {
-			document.getElementById('eremoranNumberInput').value++;
-			numberTool();
-		}, 100);
-	else
-		clearInterval(autoUp.interval);
-}
+const ereNum = {
+	/** toggle eremoran number tool auto-up */
+	autoUp(){
+		this.on = !this.on;
+		if (this.on)
+			this.interval = setInterval(() => {
+				document.getElementById('eremoranNumberInput').value++;
+				this.numberTool();
+			}, 100);
+		else
+			clearInterval(this.interval);
+	},
+	first: [
+		'',
+		'id',
+		'nasu',
+		'kumku',
+		'babzu',
+		'hanu',
+		'elmnu',
+		'klimu',
+		'triksu',
+		'talsu',
+		'nasanu',
+		'tanid',
+		'tanasu',
+		'tankumku',
+		'tambabzu',
+	],
+	interval: 0,
+	/**
+	 * @param {number} x
+	 * @returns {string}
+	 */
+	num(x){
+		if (x < 15)
+			return this.first[x];
+		if (x < 80){
+			const fives = Math.floor(x / 5);
+			const remainder = x % 5;
+			const fivesWord = `${this.num(fives).replace(/u$/g, '')}anu`;
+			const onesWord = this.first[remainder];
+			return `${fivesWord} ${onesWord}`.replace(/ $/g, '');
+		}
+		if (x < 100)
+			return `kumkananu ${this.num(x-75)}`;
+		if (x < 200)
+			return `sesu ${this.num(x-100)}`.replace(/ $/g, '');
+		const hundreds = Math.floor(x / 100);
+		const remainder = x % 100;
+		const hundredsWord = `${this.num(hundreds)}sesu`.replace(' ', 'sesu ').replace('idsesu', 'sesu ');
+		const onesWord = this.num(remainder);
+		return `${hundredsWord} ${onesWord}`.replace(/ $/g, '');
+	},
+	numberTool(){
+		/** @type {number} */
+		const input = document.getElementById('eremoranNumberInput').value;
+		/** @type {HTMLQuoteElement} */
+		const o = document.getElementById('eremoranNumberOutput');
+		// main
+		o.innerHTML = this.num(input);
+		// recompute tooltips
+		EremoranTooltip.setupWord(o);
+	},
+	on: false,
+};
 
 function namegen(){
 	const elem = document.getElementById('namegen_out');
