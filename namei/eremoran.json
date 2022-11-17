@@ -5387,6 +5387,16 @@
 		"etym": "C/ou/mor",
 		"cat": "pron.",
 		"defList": [
+			"(to equal) I, we, 1st person pronoun",
+			"(to equal) you, 2nd person pronoun"
+		],
+		"notes": "see <a href=\"#Pronouns\">Pronouns</a> for more details"
+	},
+	{
+		"title": "omôr",
+		"etym": "C/omor/ou",
+		"cat": "pron.",
+		"defList": [
 			"(to inferior) I, we, 1st person pronoun",
 			"(to superior) you, 2nd person pronoun"
 		],
@@ -7156,6 +7166,35 @@
 		"notes": "cf. <em>bokusam</em>, the noun form"
 	},
 	{
+		"title": "ufomor",
+		"etym": "C/ufou/mor",
+		"cat": "pron.",
+		"defList": [
+			"(to superior) I, we, 1st person pronoun",
+			"(to inferior) you, 2nd person pronoun"
+		],
+		"notes": "see <a href=\"#Pronouns\">Pronouns</a> for more details"
+	},
+	{
+		"title": "ufomôrz",
+		"etym": "C/ufomor/saurz",
+		"cat": "v. (Evidential; visual knowledge)",
+		"defList": [
+			"[Specifies the speaker, but not others, saw the event mentioned]"
+		],
+		"notes": "cf. <i>omôrz</i> which implies others witnessed the event too",
+		"categories": ["evidential"]
+	},
+	{
+		"title": "ufou",
+		"etym": "C/u-/hou",
+		"cat": "adj.",
+		"defList": [
+			"[impolite prefix]",
+			"[affix used to form first/second person personal pronouns]"
+		]
+	},
+	{
 		"title": "uid",
 		"etym": "C/u-/id",
 		"cat": "adv.",
@@ -7224,16 +7263,6 @@
 		"defList": [
 			"nobody"
 		]
-	},
-	{
-		"title": "umôrz",
-		"etym": "C/umor/saurz",
-		"cat": "v. (Evidential; visual knowledge)",
-		"defList": [
-			"[Specifies the speaker, but not others, saw the event mentioned]"
-		],
-		"notes": "cf. <i>omôrz</i> which implies others witnessed the event too",
-		"categories": ["evidential"]
 	},
 	{
 		"title": "umfêlar",
