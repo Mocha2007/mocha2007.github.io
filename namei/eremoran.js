@@ -5,7 +5,7 @@
 
 'use strict';
 
-// tools for main
+// dictionary databases
 const elements = {
 	/** @type {string[]} */
 	categories: [],
@@ -28,6 +28,62 @@ const elements = {
 	/** @type {Array} */
 	raws: [],
 };
+
+// utilities
+
+/**
+ * @param {string} s eremoran word 
+ * @returns {string} */
+function gloss(s){
+	try {
+		const o = elements.raws.find(entry => entry.title === s).defList[0]
+			.replace(/ ?\(.+\) ?/g, '') // remove parentheticals from glosses
+			.replace(/,.+/, ''); // remove secondary glosses
+		if (20 < o.length)
+			console.warn(`long gloss: ${s} = "${o}"`);
+		return o;
+	}
+	catch (e){
+		console.error(`unable to gloss ${s}`);
+		return '???';
+	}
+}
+
+/** @param {string} s */
+function linkCard(s){
+	// hotlink to entry
+	/** @type {HTMLAnchorElement} */
+	const anchor = document.createElement('a');
+	anchor.href = `#lemma-${s}`;
+	anchor.innerHTML = s;
+	anchor.title = gloss(s);
+	anchor.classList.add('eremoran');
+	EremoranTooltip.setupWord(anchor);
+	return anchor;
+}
+
+/** f -> h &c to match font */
+function normalizeEremoran(s){
+	return s.replace(/f/g, 'h');
+}
+
+/** @param {string} s */
+function titleCard(s){
+	const span = document.createElement('span');
+	// hotlink to entry
+	/** @type {HTMLAnchorElement} */
+	const anchor = document.createElement('a');
+	anchor.href = `#lemma-${s}`;
+	anchor.innerHTML = '^';
+	span.appendChild(anchor);
+	// entry title
+	const ereTitle = document.createElement('span');
+	ereTitle.innerHTML = s;
+	ereTitle.classList.add('eremoran');
+	EremoranTooltip.setupWord(ereTitle);
+	span.appendChild(ereTitle);
+	return span;
+}
 
 // main
 
@@ -62,11 +118,6 @@ const compile = {
 			.join(' ').replace(/ .undefined/g, '').split(' ');
 	}
 };
-
-/** f -> h &c to match font */
-function normalizeEremoran(s){
-	return s.replace(/f/g, 'h');
-}
 
 // learn eremoran!
 
@@ -592,55 +643,6 @@ const wordle = {
 		return /[abdehiklmnoprstuzêô]{5}/.test(guess);
 	},
 };
-
-/** @param {string} s */
-function titleCard(s){
-	const span = document.createElement('span');
-	// hotlink to entry
-	/** @type {HTMLAnchorElement} */
-	const anchor = document.createElement('a');
-	anchor.href = `#lemma-${s}`;
-	anchor.innerHTML = '^';
-	span.appendChild(anchor);
-	// entry title
-	const ereTitle = document.createElement('span');
-	ereTitle.innerHTML = s;
-	ereTitle.classList.add('eremoran');
-	EremoranTooltip.setupWord(ereTitle);
-	span.appendChild(ereTitle);
-	return span;
-}
-
-/** @param {string} s */
-function linkCard(s){
-	// hotlink to entry
-	/** @type {HTMLAnchorElement} */
-	const anchor = document.createElement('a');
-	anchor.href = `#lemma-${s}`;
-	anchor.innerHTML = s;
-	anchor.title = gloss(s);
-	anchor.classList.add('eremoran');
-	EremoranTooltip.setupWord(anchor);
-	return anchor;
-}
-
-/**
- * @param {string} s eremoran word 
- * @returns {string} */
-function gloss(s){
-	try {
-		const o = elements.raws.find(entry => entry.title === s).defList[0]
-			.replace(/ ?\(.+\) ?/g, '') // remove parentheticals from glosses
-			.replace(/,.+/, ''); // remove secondary glosses
-		if (20 < o.length)
-			console.warn(`long gloss: ${s} = "${o}"`);
-		return o;
-	}
-	catch (e){
-		console.error(`unable to gloss ${s}`);
-		return '???';
-	}
-}
 
 const search = {
 	appendResult(s){
