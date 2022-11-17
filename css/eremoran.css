@@ -1,3 +1,6 @@
+body, html {
+	overflow-x: hidden;
+}
 .button {
 	background-color: silver;
 	border: 0.2vh solid black;
