@@ -31,6 +31,7 @@ const elements = {
 	get p(){
 		return document.getElementById('wordlist');
 	},
+	/** @type {Array} */
 	raws: [],
 };
 
@@ -90,13 +91,13 @@ function normalizeEremoran(s){
 const LE = {
 	learn: document.getElementById('learn'),
 	new(canIUseReview = true){
-		console.debug('LE.new', this);
+		// console.debug('LE.new', this);
 		// blank
 		this.learn.innerHTML = '';
 		// old or new?
 		const [question, answer] = canIUseReview && this.review.list.length && random.random() < 0.5
 			? random.choice(this.review.list) // old
-			: this.random.supraclause(); // new
+			: this.random.clause(); // new
 		this.review.current = [question, answer];
 		// eremoran script
 		const elemQe = document.createElement('span');
@@ -121,26 +122,26 @@ const LE = {
 	random: {
 		clause(){
 			/** @type {[string, string]} */
-			const choice = random.choice(LE.shapes.clause);
+			const choice = random.choice(LE.shapes);
 			/** @type {[string, string]} */
-			const subj = this.noun();
-			const obj = this.noun();
-			choice[0] = choice[0].replace('$subj', subj[0]).replace('$obj', obj[0]);
-			choice[1] = choice[1].replace('$subj', subj[1]).replace('$obj', obj[1]);
-			return choice;
+			const o = choice.map(x => x); // copy
+			choice[0].match(/{.+?}/g).forEach(match => {
+				const tag = match.replace(/{|}/g, '');
+				const raw = this.noun(tag);
+				const ere = raw.title;
+				const en = gloss(ere);
+				o[0] = o[0].replace(match, ere);
+				o[1] = o[1].replace(match, en);
+			});
+			return o;
 		},
-		/** @returns {[string, string]} */
-		noun(){
-			return random.choice(LE.shapes.noun);
-		},
-		supraclause(){
-			/** @type {[string, string]} */
-			const choice = random.choice(LE.shapes.supraclause);
-			/** @type {[string, string]} */
-			const c = this.clause();
-			choice[0] = choice[0].replace('$c', c[0]);
-			choice[1] = choice[1].replace('$c', c[1]);
-			return choice;
+		/** 
+		 * @param {string} tag
+		 * @returns {[string, string]}
+		 */
+		noun(tag){
+			return random.choice(elements.raws.filter(
+				x => x.categories && x.categories.includes(tag)));
 		},
 	},
 	review: {
@@ -179,32 +180,13 @@ const LE = {
 		},
 		wrong: 0,
 	},
-	shapes: {
-		clause: [
-			// todo: use noun tags in dict to determine which nouns are appropriate
-			['$subj i ad $obj afkaz', '$subj go to $obj'],
-			['$subj i dir $obj namz', '$subj eat $obj'],
-			['$subj i dir $obj saurz', '$subj see $obj'],
-			['$subj su purrum i naum ne', 'how much do $subj cost'],
-			['$subj i kusanam ne', 'how many $subj are there'],
-		],
-		noun: [
-			['arêôk', 'the cows'],
-			['badmak', 'the foxes'],
-			['bôk', 'the chickens'],
-			['danôak', 'the bugs'],
-			['dirak', 'the whales'],
-			['ek', 'the horses'],
-			['hisk', 'the crows'],
-			['lusik', 'the dogs'],
-			['mor', 'the people'],
-			['roraok', 'the cats'],
-		],
-		supraclause: [
-			['$c', '$c'],
-			// ['$c uid', '$c not'],
-		],
-	},
+	shapes: [
+		['{person} i ad {toponym} afkaz', 'The {person} goes to {toponym}.'],
+		['{person} i dir {plant} namz', 'The {person} eats the {plant}.'],
+		['{person} i dir {animal} saurz', 'The {person} sees the {animal}.'],
+		['{plant} su purrum i naum ne', 'How much does a {plant} cost?'],
+		['{animal} i kusanam ne', 'How many {animal}s are there?'],
+	],
 	understood(was_it){
 		this.score.change(was_it ? 1 : -1);
 		if (was_it)
@@ -660,7 +642,9 @@ function linkCard(s){
 	return anchor;
 }
 
-/** @returns {string} */
+/**
+ * @param {string} s eremoran word 
+ * @returns {string} */
 function gloss(s){
 	try {
 		const o = elements.raws.find(entry => entry.title === s).defList[0]
@@ -671,7 +655,7 @@ function gloss(s){
 		return o;
 	}
 	catch (e){
-		// console.error(`unable to gloss ${s}`);
+		console.error(`unable to gloss ${s}`);
 		return '???';
 	}
 }
