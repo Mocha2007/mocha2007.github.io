@@ -768,6 +768,13 @@ const phono = {
 };
 
 const gen = {
+	/** eg. try gen.proto.gen(w => gen.endsWith(w, 'k'));
+	 * @param {string} s 
+	 * @param {string} char
+	 */
+	endsWith(s, char){
+		return s[s.length-1] === char;
+	},
 	proto: {
 		/** @type {{string: {string: number}}} */
 		data: {'^': {}},
@@ -806,8 +813,8 @@ const gen = {
 			console.info(`*${pform} -> ${o}`);
 			return o;
 		},
-		gen(){
-			return gen.markov.gen(this, this.evolve);
+		gen(filter = () => true){
+			return gen.markov.gen(this, filter);
 		},
 		init(){
 			this.pforms = elements.raws.map(o => {
@@ -853,7 +860,7 @@ const gen = {
 	markov: {
 		/** @type {{string: {string: number}}} */
 		data: {'^': {}},
-		gen(o = gen.markov){
+		gen(o = gen.markov, filter = () => true){
 			if (!o.initialized)
 				o.init();
 			let choice = '^';
@@ -861,7 +868,6 @@ const gen = {
 			while (choice !== '$'){
 				// pick next char
 				const choices = Object.keys(o.data[choice]);
-				// eslint-disable-next-line no-loop-func
 				const weights = choices.map(c => o.data[choice][c]);
 				choice = random.weightedChoice(choices, weights);
 				if (choice !== '$')
@@ -870,13 +876,13 @@ const gen = {
 			if (o.prevalidationF)
 				str = o.prevalidationF(str);
 			try {
-				if (phono.validate(normalizeEremoran(str)))
+				if (filter(str) && phono.validate(normalizeEremoran(str)))
 					return str;
 			}
 			catch (_){
 				// retry
 			}
-			return this.gen(o); // retry
+			return this.gen(o, filter); // retry
 		},
 		init(corpus = elements.dict, output = this.data){
 			// this.data = {'^': {}}; // reset
