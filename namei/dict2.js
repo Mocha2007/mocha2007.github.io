@@ -7,15 +7,14 @@ const reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
 /** @param {string} name */
 function getDict(name, onComplete = () => undefined){
 	reader.open('get', `https://mocha2007.github.io/namei/${name}.json`, true);
-	reader.onreadystatechange = printDict; // generates dict
-	reader.onload = onComplete; // stuff to do after
+	reader.onload = () => {
+		printDict(); // generates dict
+		onComplete(); // stuff to do after
+	};
 	reader.send(null);
 }
 
 function printDict(){
-	// this is required to prevent it from double-posting
-	if (reader.readyState !== 4)
-		return;
 	/** @type {HTMLDListElement} */
 	const list = document.getElementById('dictionary');
 	/** @type {[]} */
