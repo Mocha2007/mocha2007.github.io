@@ -1,9 +1,9 @@
 .button {
 	background-color: silver;
-	border: 1px solid black;
-	border-radius: 10px;
+	border: 0.2vh solid black;
+	border-radius: 1vh;
 	cursor: pointer;
-	padding: 0 5px;
+	padding: 0 0.5vh;
 	user-select: none;
 	-webkit-user-select: none; /* Safari */
 }
@@ -29,7 +29,7 @@
 	color: white;
 	font-size: 75%;
 	position: absolute;
-	text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black;
+	text-shadow: 0 0 0.5vh black, 0 0 0.5vh black, 0 0 0.5vh black;
 }
 /* for spoilers in game */
 .hidden {
@@ -110,18 +110,18 @@ a.eremoran {
 }
 .revealedButton {
 	background-color: silver;
-	border: 1px solid black;
-	border-radius: 10px;
-	padding: 0.5vw;
+	border: 0.2vh solid black;
+	border-radius: 1vh;
+	padding: 0.5vh;
 }
 #searchResults {
 	background-color: #bbb;
-	border: 2px solid #444;
-	border-radius: 1vw;
+	border: 0.3vh solid #444;
+	border-radius: 2vh;
 	column-count: 3;
-	column-rule: 2px solid #444;
+	column-rule: 0.3vh solid #444;
 	list-style: none;
-	padding: 1vw;
+	padding: 2vh;
 }
 /* wordle */
 #wordle_history {
