@@ -19,10 +19,8 @@ function printDict(){
 	const list = document.getElementById('dictionary');
 	/** @type {[]} */
 	const dictionary = elements.raws = JSON.parse(reader.responseText);
-	// console.debug(dictionary);
-	elements.dict = dictionary.map(o => o.title);
 	dictionary.forEach(obj => {
-		// const [index, type, defs] = line.split('=');
+		elements.dict.push(obj.title);
 		// entry div - for organization!
 		// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl#wrapping_name-value_groups_in_div_elements
 		const entryDiv = document.createElement('div');
