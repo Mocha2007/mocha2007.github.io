@@ -63,7 +63,7 @@ function linkCard(s){
 
 /** f -> h &c to match font */
 function normalizeEremoran(s){
-	return s.replace(/f/g, 'h');
+	return s.replace(/f/g, 'h').replace(/-/g, '');
 }
 
 /** @param {string} s */
