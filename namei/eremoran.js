@@ -699,16 +699,19 @@ const phono = {
 			// penultimate stress
 			const stress = syllables.length < 2 || i === syllables.length - 2
 				? 'stressed' : 'unstressed';
-			this.vowels.ortho.forEach(
-				(v, j) => syll = syll.replace(v, this.vowels[stress][j]));
-			// consonants
-			this.consonants.ortho.forEach(
-				(c, j) => syll = syll.replace(new RegExp(c, 'g'), this.consonants.ipa[j]));
+			// replace letters with sounds
+			Array.from(syll).forEach(char => {
+				let i = this.vowels.ortho.indexOf(char);
+				if (0 <= i)
+					syll = syll.replace(char, this.vowels[stress][i])
+				else {
+					i = this.consonants.ortho.indexOf(char);
+					syll = syll.replace(char, this.consonants.ipa[i])
+				}
+			});
 			// coda liquids
 			const divisions = this.divideSyllable(syll);
 			divisions[2] = divisions[2].replace('l', 'ʕʷ').replace('ʀ', 'ʀʷ');
-			// if (stress === 'stressed')
-			//	syll = 'ˈ' + syll;
 			return divisions.join('');
 		});
 		let o = ipaSyllables.join(''); // '.'
