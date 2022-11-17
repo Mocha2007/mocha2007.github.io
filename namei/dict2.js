@@ -156,10 +156,7 @@ function etymElement(etymString){
 				break;
 			case 'L': // loanword
 				etymElement.stats.source.push(tokens[1]);
-				// eslint-disable-next-line max-len
-				etymElem.innerHTML = `From ${etymElement.languages[tokens[1]]} ${tokens[2]}`;
-				if (tokens[3])
-					etymElem.innerHTML += ` &ldquo;${tokens[3]}&rdquo;`;
+				etymElem.appendChild(loanElem(...tokens.splice(1)));
 				break;
 			case 'M': // metathesis
 				etymElem.innerHTML = 'Metathesis from ';
@@ -193,17 +190,50 @@ function etymElement(etymString){
 	return e;
 }
 etymElement.languages = {
-	ERE: 'Eremoran',
-	IRI: 'Irikar',
-	NEK: 'Nekaŋ',
-	NUZ: 'Nuzdexax',
-	OER: 'Old Eremoran',
-	PEN: 'Proto-Eremo-Numoran',
-	PMU: 'Proto-Muran',
-	POL: 'P&oacute;&lstrok;ta&sacute;',
-	PRE: 'Pre-Eremoran',
-	TAI: 'Taika',
-	VAZ: 'Va&zcaron;cud',
+	ERE: {
+		name: 'Eremoran',
+		lemma: '#lemma-{0}',
+		url: 'eremoran.html',
+	},
+	IRI: {
+		name: 'Irikar',
+	},
+	NEK: {
+		name: 'Nekaŋ',
+	},
+	NUZ: {
+		name: 'Nuzdexax',
+	},
+	OER: {
+		name: 'Old Eremoran',
+		url: 'eremoran.html#History',
+	},
+	PEN: {
+		name: 'Proto-Eremo-Numoran',
+		url: 'eremoran.html#History',
+	},
+	PMU: {
+		name: 'Proto-Muran',
+	},
+	POL: {
+		name: 'P&oacute;&lstrok;ta&sacute;',
+		url: 'poltas.html',
+	},
+	POR: {
+		name: 'Por&ouml;n',
+		url: 'poron.html',
+	},
+	PRE: {
+		name: 'Pre-Eremoran',
+	},
+	TAI: {
+		name: 'Taika',
+	},
+	VAZ: {
+		name: 'Va&zcaron;cud',
+		lemma: '#lemma-{0}',
+		url: 'vazcud.html',
+	},
 };
 etymElement.stats = {
 	/** @type {string[]} */
@@ -212,6 +242,36 @@ etymElement.stats = {
 	type: [],
 };
 
+/**
+ * @param {string} id 
+ * @param {string} word 
+ */
+ function loanElem(id, word, gloss = ''){
+	const span = document.createElement('span');
+	span.innerHTML = 'From ';
+	const lang = etymElement.languages[id];
+	if (lang.url){
+		const a = document.createElement('a');
+		a.innerHTML = lang.name;
+		a.href = lang.url;
+		span.appendChild(a);
+	}
+	else
+		span.appendChild(document.createTextNode(lang.name));
+	span.appendChild(document.createTextNode(' '));
+	if (lang.lemma){
+		const a = document.createElement('a');
+		a.innerHTML = word;
+		a.href = lang.url + lang.lemma.replace(/\{0\}/g, word);
+		span.appendChild(a);
+	}
+	else
+		span.appendChild(document.createTextNode(word));
+	if (gloss)
+		span.appendChild(document.createTextNode(` “${gloss}”`));
+	return span;
+}
+
 /** compares two strings and returns true if the count of each character matches exactly
  * @param {string} a
  * @param {string} b
@@ -219,5 +279,3 @@ etymElement.stats = {
 function isAnagram(a, b){
 	return Array.from(a).sort().join('') === Array.from(b).sort().join('');
 }
-
-// todo: link to vazcud words!!!
