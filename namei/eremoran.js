@@ -1,4 +1,4 @@
-/* exported adjTool, computeStats, EremoranTooltip, ereNum, linkCard,
+/* exported adj, computeStats, EremoranTooltip, ereNum, linkCard,
 	search, titleCard, wordle */
 /* global charHisto, commaNumber, etymElement, histo, quotes, random,
 	range, round, translationChallenges, union */
@@ -449,73 +449,72 @@ toponym.last = union(toponym.either,
 toponym.updateCombos = () => document.getElementById('toponym_combos').innerHTML
 	= commaNumber(toponym.first.length * toponym.last.length);
 
-/** @param {string} indexForm */
-function adjDecline(indexForm){
-	const gendered = indexForm[indexForm.length-1] === 'u';
-	const stem = gendered ? indexForm.slice(0, indexForm.length - 1) : indexForm;
-	const [comparative, superlative, equative] = [
-		stem + 'udou',
-		stem + 'udoid',
-		stem + 'osaz',
-	];
-	const positive = gendered
-		? adjClasses(indexForm) : adjClassless(indexForm);
-	const ee = [
-		{name: 'Positive', elem: positive},
-		{name: 'Comparative', elem: adjClasses(comparative)},
-		{name: 'Superlative', elem: adjClassless(superlative)},
-		{name: 'Equative', elem: adjClassless(equative)},
-	];
-	// TODO pu- + adj = negative
-	// make table
-	const table = document.createElement('table');
-	ee.forEach(data => {
-		const name = data.name;
-		const elem = data.elem;
-		const row = document.createElement('tr');
-		const th = document.createElement('th');
-		const td = document.createElement('td');
-		th.innerHTML = name;
-		td.appendChild(elem);
-		row.appendChild(th);
-		row.appendChild(td);
-		table.appendChild(row);
-	});
-	return table;
-}
-
-/** @param {string} adj */
-function adjClassless(adj){
-	const elem = document.createElement('span');
-	elem.innerHTML = adj;
-	return elem;
-}
-
-/** @param {string} adj */
-function adjClasses(adj){
-	const forms = [adj + 'r', adj + 'k', adj + 't', adj, adj + 'm'];
-	const table = document.createElement('table');
-	// create rows...
-	forms.forEach((form, i) => {
-		const row = document.createElement('tr');
-		const label = document.createElement('th');
-		label.innerHTML = `Class ${i+1}`;
-		const entry = document.createElement('td');
-		entry.innerHTML = form;
-		row.appendChild(label);
-		row.appendChild(entry);
-		table.appendChild(row);
-	});
-	return table;
-}
-
-function adjTool(){
-	/** @type {string} */
-	const adj = document.getElementById('adjInput').value;
-	const output = document.getElementById('adjOutput');
-	output.innerHTML = '';
-	output.appendChild(adjDecline(adj));
-}
+const adj = {
+	/** @param {string} adj */
+	classes(adj){
+		const forms = [adj + 'r', adj + 'k', adj + 't', adj, adj + 'm'];
+		const table = document.createElement('table');
+		// create rows...
+		forms.forEach((form, i) => {
+			const row = document.createElement('tr');
+			const label = document.createElement('th');
+			label.innerHTML = `Class ${i+1}`;
+			const entry = document.createElement('td');
+			entry.innerHTML = form;
+			row.appendChild(label);
+			row.appendChild(entry);
+			table.appendChild(row);
+		});
+		return table;
+	},
+	/** @param {string} adj */
+	classless(adj){
+		const elem = document.createElement('span');
+		elem.innerHTML = adj;
+		return elem;
+	},
+	/** @param {string} indexForm */
+	decline(indexForm){
+		const gendered = indexForm[indexForm.length-1] === 'u';
+		const stem = gendered ? indexForm.slice(0, indexForm.length - 1) : indexForm;
+		const [comparative, superlative, equative] = [
+			stem + 'udou',
+			stem + 'udoid',
+			stem + 'osaz',
+		];
+		const positive = gendered
+			? this.classes(indexForm) : this.classless(indexForm);
+		const ee = [
+			{name: 'Positive', elem: positive},
+			{name: 'Comparative', elem: this.classes(comparative)},
+			{name: 'Superlative', elem: this.classless(superlative)},
+			{name: 'Equative', elem: this.classless(equative)},
+		];
+		// TODO pu- + adj = negative
+		// make table
+		const table = document.createElement('table');
+		ee.forEach(data => {
+			const name = data.name;
+			const elem = data.elem;
+			const row = document.createElement('tr');
+			const th = document.createElement('th');
+			const td = document.createElement('td');
+			th.innerHTML = name;
+			td.appendChild(elem);
+			row.appendChild(th);
+			row.appendChild(td);
+			table.appendChild(row);
+		});
+		return table;
+	},
+	tool(){
+		/** @type {string} */
+		const adj = document.getElementById('adjInput').value;
+		const output = document.getElementById('adjOutput');
+		output.innerHTML = '';
+		output.appendChild(this.decline(adj));
+	},
+};
 
 const wordle = {
 	/** @type {string} */
