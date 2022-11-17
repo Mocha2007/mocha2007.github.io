@@ -334,6 +334,25 @@
 		"categories": ["person"]
 	},
 	{
+		"title": "afik",
+		"etym": "L/PEN/*aɸix",
+		"cat": "n., 2nd",
+		"defList": [
+			"beast, wild animal"
+		],
+		"categories": ["animal"]
+	},
+	{
+		"title": "afisu",
+		"etym": "C/afik/-isu",
+		"cat": "adj.",
+		"defList": [
+			"wild",
+			"brutal, savage"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "afkam",
 		"etym": "C/afkaz/-m",
 		"cat": "n., 5th",
@@ -966,6 +985,15 @@
 		]
 	},
 	{
+		"title": "bau",
+		"etym": "L/PEN/*bau/bark",
+		"cat": "interj.",
+		"defList": [
+			"bark, woof, arf"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "baz",
 		"etym": "L/PEN/*βas/lead",
 		"cat": "v.",
@@ -1437,7 +1465,7 @@
 	{
 		"title": "bu",
 		"etym": "L/PEN/*bu/boom",
-		"cat": "interjection",
+		"cat": "interj.",
 		"defList": [
 			"boom, bang"
 		]
@@ -1535,6 +1563,7 @@
 		"cat": "n., 4th",
 		"defList": [
 			"ash",
+			"soot",
 			"dust",
 			"(informal) no"
 		]
@@ -2516,7 +2545,7 @@
 		"cat": "n., 5th",
 		"defList": [
 			"hold, grasp, grip",
-			"power, influence",
+			"power, might, influence",
 			"(+ ad) ready, prepared",
 			"(+ din) unready, unprepared, extemporaneous",
 			"(noun + su +) [used to indicate an outcome effected with the hands]; by hand, ahold <ul> <li>  <i>Sazam i afêst su <b>dir hanum</b> zestisudôz ômôrz.</i><br>  awe TOP shortsword GEN ABS hold bent-CAUS EXP.PL<br>  We were amazed to see him bend the shortsword <b>by hand</b>. </li> </ul> "
@@ -2850,6 +2879,14 @@
 			"tail"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "husaurêr",
+		"etym": "C/husaurz/-ê",
+		"cat": "n., 1st",
+		"defList": [
+			"hunter"
+		]
 	},
 	{
 		"title": "husaurz",
@@ -5207,7 +5244,7 @@
 	{
 		"title": "ô",
 		"etym": "L/PEN/*ô/anyways",
-		"cat": "interjection",
+		"cat": "interj.",
 		"defList": [
 			"Anyways..., so... (used similarly to jp. <i>ja</i>, fr. <i>alors</i>)"
 		]
@@ -5475,7 +5512,7 @@
 	{
 		"title": "pi",
 		"etym": "L/PRE/pi",
-		"cat": "interjection",
+		"cat": "interj.",
 		"defList": [
 			"onomatopoeia for something sparkly or shiny"
 		]
@@ -5761,7 +5798,7 @@
 		"defList": [
 			"cat"
 		],
-		"notes": "Perhaps due to a combination of its reduplication, and the unusual form of the interjection, the spelling is irregular from what might be expected (*raraok).",
+		"notes": "Perhaps due to a combination of its reduplication, and the unusual form of the interj., the spelling is irregular from what might be expected (*raraok).",
 		"categories": ["animal"]
 	},
 	{
@@ -6912,6 +6949,16 @@
 		]
 	},
 	{
+		"title": "tukiludo",
+		"etym": "A/tukil",
+		"cat": "n., 4th",
+		"defList": [
+			"tropical storm, hurricane, typhoon",
+			"tornado, twister",
+			"whirlwind"
+		]
+	},
+	{
 		"title": "tukilz",
 		"etym": "C/tukil/-z",
 		"cat": "v.",
@@ -7380,7 +7427,7 @@
 		"etym": "L/OER/Zikarônaborre",
 		"cat": "n., 1st",
 		"defList": [
-			"Goddess of Manners and Disease, she curses those who do not practice good manners with various afflictions. It is never used as a given name. It is used in the interjection <i>Zikrômbor berbkaldoz</i> (gesundheit; bless you; literally \"May Zikrômbor leave you.\")."
+			"Goddess of Manners and Disease, she curses those who do not practice good manners with various afflictions. It is never used as a given name. It is used in the interj. <i>Zikrômbor berbkaldoz</i> (gesundheit; bless you; literally \"May Zikrômbor leave you.\")."
 		],
 		"notes": "possibly related to zurku",
 		"categories": ["female given name", "god"]
