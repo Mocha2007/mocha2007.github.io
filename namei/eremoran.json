@@ -465,6 +465,15 @@
 		]
 	},
 	{
+		"title": "anam",
+		"etym": "C/anu/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"anger, madness, rage, fury"
+		],
+		"categories": ["emotion"]
+	},
+	{
 		"title": "andôt",
 		"etym": "L/PEN/*andôt/oven",
 		"cat": "n., 3rd",
@@ -512,6 +521,15 @@
 		"defList": [
 			"think, ponder, wonder, imagine"
 		]
+	},
+	{
+		"title": "anu",
+		"etym": "L/PEN/*anu/angry",
+		"cat": "adj.",
+		"defList": [
+			"angry, mad, furious"
+		],
+		"categories": ["emotion"]
 	},
 	{
 		"title": "arama",
@@ -613,7 +631,7 @@
 		"etym": "C/ardo/-m",
 		"cat": "n., 5th",
 		"defList": [
-			"passion",
+			"passion, fervor, zeal",
 			"fever"
 		]
 	},
@@ -1755,7 +1773,7 @@
 		"etym": "L/PEN/*daʃu/fast//C/da/-isu",
 		"cat": "adj.",
 		"defList": [
-			"fast",
+			"fast, swift, quick",
 			"dirty"
 		],
 		"notes": "adj."
@@ -2545,7 +2563,7 @@
 		"cat": "n., 5th",
 		"defList": [
 			"hold, grasp, grip",
-			"power, might, influence",
+			"strength, power, might, influence",
 			"(+ ad) ready, prepared",
 			"(+ din) unready, unprepared, extemporaneous",
 			"(noun + su +) [used to indicate an outcome effected with the hands]; by hand, ahold <ul> <li>  <i>Sazam i afêst su <b>dir hanum</b> zestisudôz ômôrz.</i><br>  awe TOP shortsword GEN ABS hold bent-CAUS EXP.PL<br>  We were amazed to see him bend the shortsword <b>by hand</b>. </li> </ul> "
@@ -2838,6 +2856,15 @@
 		]
 	},
 	{
+		"title": "hubska",
+		"etym": "L/PEN/*ɸubska/pearl",
+		"cat": "n., 4th",
+		"defList": [
+			"pearl"
+		],
+		"categories": ["body part"]
+	},
+	{
 		"title": "huku",
 		"etym": "L/PEN/*ɸugu/south",
 		"cat": "adj.",
@@ -2987,6 +3014,15 @@
 		"cat": "v.",
 		"defList": [
 			"be the same thing"
+		]
+	},
+	{
+		"title": "iklu",
+		"etym": "L/PEN/*iklu/valley",
+		"cat": "n., 2nd",
+		"defList": [
+			"valley",
+			"glen, dale"
 		]
 	},
 	{
@@ -3782,6 +3818,14 @@
 		"defList": [
 			"end",
 			"(proscribed) Kudom, the third of three seasons of the Eremoran calendar"
+		]
+	},
+	{
+		"title": "kudim",
+		"etym": "L/PEN/giudim",
+		"cat": "n., 5th",
+		"defList": [
+			"spot (shape)"
 		]
 	},
 	{
@@ -4654,6 +4698,14 @@
 		]
 	},
 	{
+		"title": "monz",
+		"etym": "L/PEN/*mons/be hungry",
+		"cat": "v.",
+		"defList": [
+			"be hungry"
+		]
+	},
+	{
 		"title": "mor",
 		"img": "../img/eremoran/mor.png",
 		"etym": "L/PEN/*mor/person//L/PMU/*mur/person",
@@ -5351,6 +5403,15 @@
 		"categories": ["evidential"]
 	},
 	{
+		"title": "onkuk",
+		"etym": "L/PEN/*onxux/fly",
+		"cat": "n., 2nd",
+		"defList": [
+			"fly (bug)"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "onod",
 		"etym": "L/PEN/*onod/horn",
 		"cat": "n., 4th",
@@ -5525,6 +5586,15 @@
 			"sheep"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "pidzamor",
+		"etym": "C/pidzak/mor",
+		"cat": "n., 1st",
+		"defList": [
+			"shepherd"
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "pipibubu",

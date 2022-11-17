@@ -433,7 +433,7 @@ function toponym(){
 	toponym.updateCombos();
 }
 // todo: city/fort clearing
-toponym.either = ['bemmu', 'len', 'mura', 'nô', 'nul'];
+toponym.either = ['bemmu', 'iklu', 'len', 'mura', 'nô', 'nul'];
 toponym.first = union(toponym.either,
 	['ke', 'end', 'ere', 'hai', 'huk', 'kan', 'kokin', 'ku', 'kure', 'lak', 'lib', 'muk',
 		'n', 'nas', 'sed', 'si', 'tar', 'tas']
@@ -768,12 +768,11 @@ const phono = {
 };
 
 const gen = {
-	/** eg. try gen.proto.gen(w => gen.endsWith(w, 'k'));
-	 * @param {string} s 
+	/** eg. try gen.proto.gen(gen.endsWith('k'));
 	 * @param {string} char
 	 */
-	endsWith(s, char){
-		return s[s.length-1] === char;
+	endsWith(char){
+		return w => w[w.length-1] === char;
 	},
 	proto: {
 		/** @type {{string: {string: number}}} */
