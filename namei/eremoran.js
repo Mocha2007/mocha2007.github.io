@@ -12,11 +12,6 @@ const elements = {
 	/** @type {string[]} */
 	categories: [],
 	/** @returns {HTMLDListElement} - the entire dictionary element*/
-	get d(){
-		return document.getElementsByClassName('dictionary')[0];
-	},
-	/** @type {string[]} - array of words*/
-	dict: [],
 	/** @type {string[]} - array of words*/
 	get corpus(){
 		if (this.corpusCache)
@@ -27,59 +22,52 @@ const elements = {
 				.map(elem => elem.innerHTML).join(' ')
 		).replace(/[:\\/.,]/g, '').replace(/\s+/g, ' ').toLowerCase().split(' ');
 	},
-	/** @returns {HTMLParagraphElement} - the element with the buttons*/
-	get p(){
-		return document.getElementById('wordlist');
+	get d(){
+		return document.getElementById('dictionary');
 	},
+	/** @type {string[]} - array of words*/
+	dict: [],
 	/** @type {Array} */
 	raws: [],
 };
 
 // main
 function compileDict(){
-	elements.p.innerHTML = compileDict.data();
+	return elements.dict.join(' ');
 }
-compileDict.data = () => elements.dict.join(' ');
 
 function compileFinals(){
-	elements.p.innerHTML = compileFinals.data();
+	return elements.dict.map(w => w[w.length-1]).join('');
 }
-compileFinals.data = () => elements.dict.map(w => w[w.length-1]).join('');
 
 function compileInitials(){
-	elements.p.innerHTML = compileInitials.data();
+	return elements.dict.map(w => w[0]).join('');
 }
-compileInitials.data = () => elements.dict.map(w => w[0]).join('');
 
 function compileLength(){
-	elements.p.innerHTML = compileLength.data().join(' ');
+	return elements.dict.map(w => w.length);
 }
-compileLength.data = () => elements.dict.map(w => w.length);
 
 function compileMeanings(){
-	elements.p.innerHTML = compileMeanings.data().join(' ');
+	return new Array(...elements.d.getElementsByTagName('dd'))
+		.filter(x => 0 < x.getElementsByTagName('ol').length)
+		.map(x => x.getElementsByTagName('ol')[0].children.length);
 }
-compileMeanings.data = () => new Array(...elements.d.getElementsByTagName('dd'))
-	.filter(x => 0 < x.getElementsByTagName('ol').length)
-	.map(x => x.getElementsByTagName('ol')[0].children.length);
 
 function compileMedials(){
-	elements.p.innerHTML = compileMedials.data();
+	return elements.dict.map(w => w.slice(1, -1)).join('').replace(/\s/g, '');
 }
-compileMedials.data = () => elements.dict.map(w => w.slice(1, -1)).join('').replace(/\s/g, '');
 
 function compileNounClass(){
-	elements.p.innerHTML = compileNounClass.data().join(' ');
+	return new Array(...elements.d.getElementsByClassName('lemmaType'))
+		.filter(x => x.innerHTML.slice(0, 3) === 'n.,')
+		.map(x => x.innerHTML[4]);
 }
-compileNounClass.data = () => new Array(...elements.d.getElementsByClassName('lemmaType'))
-	.filter(x => x.innerHTML.slice(0, 3) === 'n.,')
-	.map(x => x.innerHTML[4]);
 
-const compileSequences = {
-	data(){
-		return elements.dict.map(word => Array.from(word).map((letter, i) => letter + word[i+1]).join(' ')).join(' ').replace(/ .undefined/g, '').split(' ');
-	},
-};
+function compileSequences(){
+	return elements.dict.map(word => Array.from(word).map((letter, i) => letter + word[i+1]).join(' '))
+		.join(' ').replace(/ .undefined/g, '').split(' ');
+}
 
 /** f -> h &c to match font */
 function normalizeEremoran(s){
@@ -291,15 +279,15 @@ function computeStats(){
 	// const chartURL = 'https://mocha2007.github.io/tools/chart.svg?data=';
 	const chartURL = '../tools/chart.svg?data=';
 	document.getElementById('chartLetter').src = chartURL + charHisto(
-		normalizeEremoran(compileDict.data().replace(/\s/g, ''))
+		normalizeEremoran(compileDict().replace(/\s/g, ''))
 	);
-	document.getElementById('chartInitial').src = chartURL + charHisto(normalizeEremoran(compileInitials.data()));
-	document.getElementById('chartMedial').src = chartURL + charHisto(normalizeEremoran(compileMedials.data()));
-	document.getElementById('chartFinal').src = chartURL + charHisto(normalizeEremoran(compileFinals.data()));
-	document.getElementById('chartLength').src = chartURL + histo(compileLength.data());
-	document.getElementById('chartMeaning').src = chartURL + histo(compileMeanings.data());
-	document.getElementById('chartClass').src = chartURL + histo(compileNounClass.data());
-	document.getElementById('chartSequence').src = chartURL + histo(compileSequences.data(), true, true, false, 25);
+	document.getElementById('chartInitial').src = chartURL + charHisto(normalizeEremoran(compileInitials()));
+	document.getElementById('chartMedial').src = chartURL + charHisto(normalizeEremoran(compileMedials()));
+	document.getElementById('chartFinal').src = chartURL + charHisto(normalizeEremoran(compileFinals()));
+	document.getElementById('chartLength').src = chartURL + histo(compileLength());
+	document.getElementById('chartMeaning').src = chartURL + histo(compileMeanings());
+	document.getElementById('chartClass').src = chartURL + histo(compileNounClass());
+	document.getElementById('chartSequence').src = chartURL + histo(compileSequences(), true, true, false, 25);
 	document.getElementById('chartEtymType').src = chartURL + charHisto(etymElement.stats.type.join(''));
 	document.getElementById('chartEtymSource').src = chartURL + histo(etymElement.stats.source, true, true);
 	// do word histogram
