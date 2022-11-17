@@ -1,0 +1,12 @@
+a img {
+	border: 2px solid blue;
+}
+.day {
+	background: linear-gradient(#18233D,#2D3751,#5F5B63,#BB9691,#F4B929);
+	color: #ccc;
+}
+.night {
+	background-color: #000;
+	background-image: url("https://cdn.pixabay.com/photo/2017/05/08/08/35/star-field-2294797_960_720.jpg");
+	color: #ccc;
+}
