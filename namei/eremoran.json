@@ -573,7 +573,7 @@
 	{
 		"title": "aramaêmat",
 		"etym": "C/aramaêr/mat",
-		"cat": "n., 2nd",
+		"cat": "n., 3rd",
 		"defList": [
 			"smithy"
 		],
@@ -1202,7 +1202,7 @@
 	{
 		"title": "bibimat",
 		"etym": "C/bibiz/mat",
-		"cat": "n., 2nd",
+		"cat": "n., 3rd",
 		"defList": [
 			"bar, pub"
 		],
@@ -1263,7 +1263,7 @@
 	{
 		"title": "bikut",
 		"etym": "C/bit/kum",
-		"cat": "n., 5th",
+		"cat": "n., 3rd",
 		"defList": [
 			"book"
 		]
@@ -1308,7 +1308,7 @@
 	{
 		"title": "bimat",
 		"etym": "C/bim/mat",
-		"cat": "n., 2nd",
+		"cat": "n., 3rd",
 		"defList": [
 			"brothel"
 		]
@@ -1516,7 +1516,7 @@
 	{
 		"title": "buni",
 		"etym": "L/PEN/*buni/countryside",
-		"cat": "n., 3rd",
+		"cat": "n., 4th",
 		"defList": [
 			"(archaic) countryside",
 			"province, prefecture, county"
@@ -1892,7 +1892,7 @@
 	{
 		"title": "dinfanuz",
 		"etym": "C/din/hanuz",
-		"cat": "n., 5th",
+		"cat": "v.",
 		"defList": [
 			"lend"
 		]
@@ -3019,7 +3019,7 @@
 	{
 		"title": "iklu",
 		"etym": "L/PEN/*iklu/valley",
-		"cat": "n., 2nd",
+		"cat": "n., 4th",
 		"defList": [
 			"valley",
 			"glen, dale"
@@ -3259,7 +3259,7 @@
 	{
 		"title": "kanat",
 		"etym": "L/PEN/*kanat/chain",
-		"cat": "n., 2nd",
+		"cat": "n., 3rd",
 		"defList": [
 			"chain, link"
 		]
@@ -4333,7 +4333,7 @@
 	{
 		"title": "madinfanuz",
 		"etym": "C/mam/dinfanuz",
-		"cat": "n., 5th",
+		"cat": "v.",
 		"defList": [
 			"let, lease"
 		]
@@ -5225,7 +5225,7 @@
 	{
 		"title": "nubêr",
 		"etym": "C/nub/-ê",
-		"cat": "n., 3rd",
+		"cat": "n., 1st",
 		"defList": [
 			"infant",
 			"newlywed"
@@ -5785,7 +5785,7 @@
 	{
 		"title": "rêrit",
 		"etym": "L/VAZ/???/needle",
-		"cat": "n., 2nd",
+		"cat": "n., 3rd",
 		"defList": [
 			"(sewing) needle"
 		]
@@ -5975,7 +5975,7 @@
 	{
 		"title": "sarm",
 		"etym": "C/sart/-m",
-		"cat": "n., 3rd",
+		"cat": "n., 5th",
 		"defList": [
 			"unit of area equivalent to 50 square labnim, or about 1.452 m<sup>2</sup>"
 		]
@@ -7317,7 +7317,7 @@
 	{
 		"title": "urilar",
 		"etym": "C/urilm/-r",
-		"cat": "n., 5th",
+		"cat": "n., 1st",
 		"defList": [
 			"follower",
 			"sycophant, toady"

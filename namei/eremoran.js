@@ -1102,6 +1102,29 @@ function computeStats(){
 			console.error(`${err} while analyzing link to ${href}`);
 		}
 	});
+	// verify word forms
+	elements.raws.forEach(o => {
+		const [word, n] = [o.title, (x => x && x[0])(o.cat.match(/\d/))];
+		const last = word[word.length-1];
+		switch (n){
+			case '1':
+				if (last !== 'r')
+					console.error(`${word} does not end in r!`);
+				break;
+			case '2':
+				if (last !== 'k')
+					console.error(`${word} does not end in k!`);
+				break;
+			case '3':
+				if (last !== 't')
+					console.error(`${word} does not end in t!`);
+				break;
+			case '5':
+				if (last !== 'm')
+					console.error(`${word} does not end in m!`);
+				break;
+		}
+	});
 }
 
 /** this is run at the end of eremoran.html */
