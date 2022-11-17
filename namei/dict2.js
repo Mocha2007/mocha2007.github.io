@@ -125,7 +125,9 @@ function etymElement(etymString){
 	e.innerHTML = 'Etymology: ';
 	// begin etym format parsing
 	const etymologies = etymString.split('//');
-	etymologies.forEach(etymology => {
+	etymologies.forEach((etymology, i) => {
+		if (i)
+			e.appendChild(document.createTextNode(', '));
 		const tokens = etymology.split('/');
 		const etymElem = document.createElement('span');
 		etymElement.stats.type.push(tokens[0]);
