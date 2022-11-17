@@ -1125,6 +1125,8 @@ function computeStats(){
 				break;
 		}
 	});
+	// print success message
+	console.info(`eremoran.js successfully parsed ${elements.dict.length} words and recorded statistics.`);
 }
 
 /** this is run at the end of eremoran.html */
