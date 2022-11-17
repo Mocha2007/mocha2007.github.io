@@ -680,15 +680,18 @@ const phono = {
 		const irr = elements.raws.find(w => w.title === s).pron; // irregular pron?
 		if (irr === 0) // todo fix affixes
 			return span;
-		const word = normalizeEremoran(s);
-		const syllables = this.syllabify(word);
-		if (2 <= syllables.length)
-			syllables[syllables.length-2] = syllables[syllables.length-2].toUpperCase();
-		const ipa = this.ipa(word);
-		const syllabification = syllables.join('-');
-		span.innerHTML = `IPA: [${irr || ipa}] &ndash; Syllabification: ${syllabification}`;
-		// debug warning
-		this.validate(word);
+		if (!irr){
+			const word = normalizeEremoran(s);
+			const [ipa, syllables] = this.ipa(word);
+			if (2 <= syllables.length)
+				syllables[syllables.length-2] = syllables[syllables.length-2].toUpperCase();
+			const syllabification = syllables.join('-');
+			span.innerHTML = `IPA: [${ipa}] &ndash; Syllabification: ${syllabification}`;
+			// debug warning
+			this.validate(word);
+		}
+		else
+			span.innerHTML = `IPA: [${irr}]`;
 		return span;
 	},
 	/** @param {string} s */
@@ -736,14 +739,7 @@ const phono = {
 			o = o.replace(new RegExp(`${v}b(?=[aeiouəɛɪɔʊ])`, 'g'), `${v}w`);
 			o = o.replace(new RegExp(`${v}d(?=[aeiouəɛɪɔʊ])`, 'g'), `${v}ɾ`);
 		});
-		// syllabify
-		/*
-		o = this.syllabify(o).map((syll, i) =>
-			(i === syllables.length - 2
-				? 'ˈ' : i ? '.' : '') + syll
-		).join('');
-		*/
-		return o;
+		return [o, syllables];
 	},
 	/** @param {string} s - sentence */
 	sentence(s){
