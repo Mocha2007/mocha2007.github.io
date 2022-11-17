@@ -86,7 +86,8 @@ function printDict(){
 		anagramElement.innerHTML = '(Find Anagrams)';
 		anagramElement.classList.add('button');
 		anagramElement.onclick = () => {
-			// anagramElement.classList.remove('button');
+			anagramElement.classList.remove('button');
+			anagramElement.classList.add('revealedButton');
 			anagramElement.innerHTML = '';
 			elements.dict.filter(other => obj.title !== other && isAnagram(obj.title, other))
 				.map(linkCard).forEach(elem => anagramElement.appendChild(elem));
@@ -97,7 +98,8 @@ function printDict(){
 		compoundElement.innerHTML = '(Find Compounds)';
 		compoundElement.classList.add('button');
 		compoundElement.onclick = () => {
-			// compoundElement.classList.remove('button');
+			compoundElement.classList.remove('button');
+			compoundElement.classList.add('revealedButton');
 			compoundElement.innerHTML = '';
 			elements.raws.filter(otherRaw => otherRaw.etym.split('/').includes(obj.title))
 				.map(otherRaw => linkCard(otherRaw.title))

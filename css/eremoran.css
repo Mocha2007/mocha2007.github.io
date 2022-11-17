@@ -3,7 +3,7 @@
 	border: 1px solid black;
 	border-radius: 10px;
 	cursor: pointer;
-	padding: 0 5px 0 5px;
+	padding: 0 5px;
 	user-select: none;
 	-webkit-user-select: none; /* Safari */
 }
@@ -92,7 +92,7 @@ a.eremoran {
 	background-color: silver;
 	border-radius: 2vh;
 }
-#eremoran_tooltip .button {
+#eremoran_tooltip .button, #eremoran_tooltip .revealedButton {
 	display: none;
 }
 .eremoranWord {
@@ -107,6 +107,12 @@ a.eremoran {
 .gloss {
 	font-size: 80%;
 	margin: 0 0 0 0.7vw;
+}
+.revealedButton {
+	background-color: silver;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 0.5vw;
 }
 #searchResults {
 	background-color: #bbb;
