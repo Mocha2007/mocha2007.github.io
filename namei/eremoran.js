@@ -317,58 +317,6 @@ const EremoranTooltip = {
 	},
 };
 
-function computeStats(){
-	// print dict length
-	document.getElementById('wordcount').innerHTML = elements.dict.length;
-	// new graphs
-	// const chartURL = 'https://mocha2007.github.io/tools/chart.svg?data=';
-	const chartURL = '../tools/chart.svg?data=';
-	document.getElementById('chartLetter').src = chartURL + charHisto(
-		normalizeEremoran(compile.dict().replace(/\s/g, ''))
-	);
-	document.getElementById('chartInitial').src = chartURL + charHisto(normalizeEremoran(compile.initials()));
-	document.getElementById('chartMedial').src = chartURL + charHisto(normalizeEremoran(compile.medials()));
-	document.getElementById('chartFinal').src = chartURL + charHisto(normalizeEremoran(compile.finals()));
-	document.getElementById('chartLength').src = chartURL + histo(compile.length());
-	document.getElementById('chartMeaning').src = chartURL + histo(compile.meanings());
-	document.getElementById('chartClass').src = chartURL + histo(compile.nounClass());
-	document.getElementById('chartSequence').src = chartURL + histo(compile.sequences(), true, true, false, 25);
-	document.getElementById('chartEtymType').src = chartURL + charHisto(etymElement.stats.type.join(''));
-	document.getElementById('chartEtymSource').src = chartURL + histo(etymElement.stats.source, true, true);
-	// do word histogram
-	const wordData = elements.corpus;
-	// const filteredWordData = wordData.filter(word => wordData)
-	document.getElementById('chartWord').src = chartURL + histo(wordData, true, true, false, 20);
-	// add categories
-	/** @type {HTMLSelectElement} */
-	const categorySearch = document.getElementById('categorySearch');
-	// sort first
-	elements.categories.sort();
-	elements.categories.forEach(category => {
-		const option = document.createElement('option');
-		option.value = option.innerHTML = category;
-		categorySearch.appendChild(option);
-	});
-	// add titles to iframes for accessibility
-	Array.from(document.getElementsByTagName('iframe')).forEach(e => e.title = e.id);
-	// verify etymology hyperlinks
-	Array.from(document.querySelectorAll('a.eremoran')).forEach(e => {
-		const href = e.href.match(/#.+/)[0]
-			.replace(/%20/g, ' ')
-			.replace(/%C3%AA/g, 'ê')
-			.replace(/%C3%B4/g, 'ô');
-		// try to get hyperlink target
-		try {
-			const target = document.querySelectorAll(href);
-			if (!target.length)
-				console.warn(`Link points to non-existent entry: ${href}`);
-		}
-		catch (err){
-			console.error(`${err} while analyzing link to ${href}`);
-		}
-	});
-}
-
 const ereNum = {
 	/** toggle eremoran number tool auto-up */
 	autoUp(){
@@ -1108,3 +1056,57 @@ const dialectMap = {
 		this.elem.appendChild(e);
 	},
 };
+
+// keep computeStats at the VERY BOTTOM
+
+function computeStats(){
+	// print dict length
+	document.getElementById('wordcount').innerHTML = elements.dict.length;
+	// new graphs
+	// const chartURL = 'https://mocha2007.github.io/tools/chart.svg?data=';
+	const chartURL = '../tools/chart.svg?data=';
+	document.getElementById('chartLetter').src = chartURL + charHisto(
+		normalizeEremoran(compile.dict().replace(/\s/g, ''))
+	);
+	document.getElementById('chartInitial').src = chartURL + charHisto(normalizeEremoran(compile.initials()));
+	document.getElementById('chartMedial').src = chartURL + charHisto(normalizeEremoran(compile.medials()));
+	document.getElementById('chartFinal').src = chartURL + charHisto(normalizeEremoran(compile.finals()));
+	document.getElementById('chartLength').src = chartURL + histo(compile.length());
+	document.getElementById('chartMeaning').src = chartURL + histo(compile.meanings());
+	document.getElementById('chartClass').src = chartURL + histo(compile.nounClass());
+	document.getElementById('chartSequence').src = chartURL + histo(compile.sequences(), true, true, false, 25);
+	document.getElementById('chartEtymType').src = chartURL + charHisto(etymElement.stats.type.join(''));
+	document.getElementById('chartEtymSource').src = chartURL + histo(etymElement.stats.source, true, true);
+	// do word histogram
+	const wordData = elements.corpus;
+	// const filteredWordData = wordData.filter(word => wordData)
+	document.getElementById('chartWord').src = chartURL + histo(wordData, true, true, false, 20);
+	// add categories
+	/** @type {HTMLSelectElement} */
+	const categorySearch = document.getElementById('categorySearch');
+	// sort first
+	elements.categories.sort();
+	elements.categories.forEach(category => {
+		const option = document.createElement('option');
+		option.value = option.innerHTML = category;
+		categorySearch.appendChild(option);
+	});
+	// add titles to iframes for accessibility
+	Array.from(document.getElementsByTagName('iframe')).forEach(e => e.title = e.id);
+	// verify etymology hyperlinks
+	Array.from(document.querySelectorAll('a.eremoran')).forEach(e => {
+		const href = e.href.match(/#.+/)[0]
+			.replace(/%20/g, ' ')
+			.replace(/%C3%AA/g, 'ê')
+			.replace(/%C3%B4/g, 'ô');
+		// try to get hyperlink target
+		try {
+			const target = document.querySelectorAll(href);
+			if (!target.length)
+				console.warn(`Link points to non-existent entry: ${href}`);
+		}
+		catch (err){
+			console.error(`${err} while analyzing link to ${href}`);
+		}
+	});
+}
