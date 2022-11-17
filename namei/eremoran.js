@@ -274,11 +274,8 @@ const EremoranTooltip = {
 		const words = elem.innerHTML.split(' ');
 		elem.innerHTML = '';
 		words.forEach((word, i) => {
-			if (i){
-				const sp = document.createElement('span');
-				sp.innerHTML = ' ';
-				elem.appendChild(sp);
-			}
+			if (i)
+				elem.appendChild(document.createTextNode(' '));
 			const span = document.createElement('ruby');
 			const rt = document.createElement('rt'); // ruby top
 			rt.innerHTML = word.toUpperCase();
@@ -287,8 +284,8 @@ const EremoranTooltip = {
 			span.classList.add('eremoranWord');
 			span.onmouseover = () => EremoranTooltip.showTooltip(fixedword, span);
 			span.onmouseout = () => EremoranTooltip.clearTooltip();
-			elem.appendChild(span);
 			span.appendChild(rt);
+			elem.appendChild(span);
 		});
 	},
 	/**
