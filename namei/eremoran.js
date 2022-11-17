@@ -714,17 +714,17 @@ const phono = {
 			divisions[2] = divisions[2].replace('l', 'ʕʷ').replace('ʀ', 'ʀʷ');
 			return divisions.join('');
 		});
-		let o = ipaSyllables.join(''); // '.'
-		// o = o.replace('.ˈ', 'ˈ');
-		// misc allophones
-		o = o.replace(/[mn]k/g, 'ŋk')
+		const o = ipaSyllables.join('')
+			// misc allophones
+			.replace(/[mn]k/g, 'ŋk')
 			.replace(/n(?=[bp])/, 'm')
 			.replace(/[mn]f/, 'ɱf')
 			.replace(/m(?=[sztd])/, 'n')
 			.replace(/^f/, 'h')
 			.replace(/^k/, 'g')
-			// .replace(/(?<=[aeiouəɛɪɔʊ])b(?=[aeiouəɛɪɔʊ])/g, 'w')
-			// .replace(/(?<=[aeiouəɛɪɔʊ])d(?=[aeiouəɛɪɔʊ])/g, 'ɾ')
+			// to get around having to use lookbehinds
+			.replace(/[aeiouəɛɪɔʊ](b)(?=[aeiouəɛɪɔʊ])/g, (a, b) => a.replace(b, 'w'))
+			.replace(/[aeiouəɛɪɔʊ](d)(?=[aeiouəɛɪɔʊ])/g, (a, b) => a.replace(b, 'ɾ'))
 			.replace(/aʀ(?![eiɛɪ])/g, 'aħ')
 			.replace(/ɔʀ(?![eiɛɪ])/g, 'ɔħ')
 			.replace(/ɪ$/, 'i') // i/u do not reduce word-finally
@@ -734,11 +734,6 @@ const phono = {
 			.replace(/tz$/, 'ts') // fix verb ending weirdness
 			.replace(/kʀ/g, 'qʀ') // velar + r
 			.replace(/gʀ/g, 'ɢʀ'); // velar + r
-		// to get around having to use lookbehinds
-		Array.from('aeiouəɛɪɔʊ').forEach(v => {
-			o = o.replace(new RegExp(`${v}b(?=[aeiouəɛɪɔʊ])`, 'g'), `${v}w`);
-			o = o.replace(new RegExp(`${v}d(?=[aeiouəɛɪɔʊ])`, 'g'), `${v}ɾ`);
-		});
 		return [o, syllables];
 	},
 	/** @param {string} s - sentence */
