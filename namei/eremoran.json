@@ -353,19 +353,19 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "afkakum",
+		"etym": "A/afkam",
+		"cat": "n., 5th",
+		"defList": [
+			"journey"
+		]
+	},
+	{
 		"title": "afkam",
 		"etym": "C/afkaz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"trip; going"
-		]
-	},
-	{
-		"title": "afkaudom",
-		"etym": "A/afkam",
-		"cat": "n., 5th",
-		"defList": [
-			"journey"
 		]
 	},
 	{
@@ -683,6 +683,15 @@
 		"categories": ["coin"]
 	},
 	{
+		"title": "ardzênkut",
+		"etym": "A/ardzênt",
+		"cat": "n., 3rd",
+		"defList": [
+			"a large silver piece, worth four ardzênt"
+		],
+		"categories": ["coin"]
+	},
+	{
 		"title": "ardzênt",
 		"etym": "C/ardzên/-t",
 		"cat": "n., 3rd",
@@ -691,15 +700,6 @@
 			"a silver piece, worth four ardzênelat"
 		],
 		"categories": ["coin", "metal"]
-	},
-	{
-		"title": "ardzênudot",
-		"etym": "A/ardzênt",
-		"cat": "n., 3rd",
-		"defList": [
-			"a large silver piece, worth four ardzênt"
-		],
-		"categories": ["coin"]
 	},
 	{
 		"title": "arêôk",
@@ -1742,6 +1742,15 @@
 		"categories": ["metal"]
 	},
 	{
+		"title": "darekut",
+		"etym": "A/daret",
+		"cat": "n., 3rd",
+		"defList": [
+			"a large gold coin, worth four daret"
+		],
+		"categories": ["coin"]
+	},
+	{
 		"title": "daremat",
 		"etym": "C/dare/mat",
 		"cat": "n., 3rd",
@@ -1755,16 +1764,7 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"money (especially gold money)",
-			"a gold (actually, electrum) coin, worth four ardzênudot"
-		],
-		"categories": ["coin"]
-	},
-	{
-		"title": "dareudot",
-		"etym": "A/daret",
-		"cat": "n., 3rd",
-		"defList": [
-			"a large gold coin, worth four daret"
+			"a gold (actually, electrum) coin, worth four ardzênkut"
 		],
 		"categories": ["coin"]
 	},
@@ -2086,8 +2086,8 @@
 		"notes": "cf. <em>pukusam</em>, the noun form"
 	},
 	{
-		"title": "drudot",
-		"etym": "r/dareudot",
+		"title": "drekut",
+		"etym": "r/darekut",
 		"cat": "n., 3rd",
 		"defList": [
 			"a large gold coin, worth four daret"
@@ -3622,6 +3622,24 @@
 		]
 	},
 	{
+		"title": "kokum",
+		"etym": "C/kudoz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"flood",
+			"The third of three seasons of the Eremoran calendar"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "kokuz",
+		"etym": "A/koz",
+		"cat": "v.",
+		"defList": [
+			"flood"
+		]
+	},
+	{
 		"title": "konoz",
 		"etym": "L/PEN/*gonos/sing",
 		"cat": "v.",
@@ -3816,8 +3834,7 @@
 		"etym": "C/kudz/-m",
 		"cat": "n., 5th",
 		"defList": [
-			"end",
-			"(proscribed) Kudom, the third of three seasons of the Eremoran calendar"
+			"end"
 		]
 	},
 	{
@@ -3826,24 +3843,6 @@
 		"cat": "n., 5th",
 		"defList": [
 			"spot (shape)"
-		]
-	},
-	{
-		"title": "kudom",
-		"etym": "C/kudoz/-m",
-		"cat": "n., 5th",
-		"defList": [
-			"flood",
-			"The third of three seasons of the Eremoran calendar"
-		],
-		"categories": ["time"]
-	},
-	{
-		"title": "kudoz",
-		"etym": "A/koz",
-		"cat": "v.",
-		"defList": [
-			"flood"
 		]
 	},
 	{
@@ -3918,6 +3917,14 @@
 		]
 	},
 	{
+		"title": "kumkuz",
+		"etym": "A/kumz",
+		"cat": "v.",
+		"defList": [
+			"dance"
+		]
+	},
+	{
 		"title": "kumu",
 		"etym": "C/ku/mu",
 		"cat": "adj.",
@@ -3925,14 +3932,6 @@
 			"humid"
 		],
 		"categories": ["weather"]
-	},
-	{
-		"title": "kumudoz",
-		"etym": "A/kumz",
-		"cat": "v.",
-		"defList": [
-			"dance"
-		]
 	},
 	{
 		"title": "kumz",
@@ -5231,15 +5230,6 @@
 			"newlywed"
 		],
 		"categories": ["age", "person"]
-	},
-	{
-		"title": "nudot",
-		"etym": "r/ardzênudot",
-		"cat": "n., 3rd",
-		"defList": [
-			"a large silver piece, worth four ardzênt"
-		],
-		"categories": ["coin"]
 	},
 	{
 		"title": "nuela",
@@ -7021,21 +7011,21 @@
 		"categories": ["animal", "person"]
 	},
 	{
-		"title": "tukilm",
-		"etym": "C/tukil/-m",
-		"cat": "n., 5th",
-		"defList": [
-			"mood; spirit"
-		]
-	},
-	{
-		"title": "tukiludo",
+		"title": "tukilku",
 		"etym": "A/tukil",
 		"cat": "n., 4th",
 		"defList": [
 			"tropical storm, hurricane, typhoon",
 			"tornado, twister",
 			"whirlwind"
+		]
+	},
+	{
+		"title": "tukilm",
+		"etym": "C/tukil/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"mood; spirit"
 		]
 	},
 	{
@@ -7486,6 +7476,15 @@
 		"defList": [
 			"metal"
 		]
+	},
+	{
+		"title": "zênkut",
+		"etym": "r/ardzênkut",
+		"cat": "n., 3rd",
+		"defList": [
+			"a large silver piece, worth four ardzênt"
+		],
+		"categories": ["coin"]
 	},
 	{
 		"title": "zestim",

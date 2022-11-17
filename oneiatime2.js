@@ -14,7 +14,7 @@ var constants = {
 		// eremoran timekeeping is conveniently decimal... :^)
 		base: 10,
 		places: 5,
-		seasons: ['Stum', 'Reram', 'Kudom'],
+		seasons: ['Stum', 'Reram', 'Kokum'],
 		seasonsAlt: ['Sowing', 'Harvest', 'Flood'],
 	},
 	moon: {
