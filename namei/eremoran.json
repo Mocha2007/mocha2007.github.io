@@ -72,7 +72,7 @@
 	},
 	{
 		"title": "-z",
-		"etym": "L/PEN/*-z",
+		"etym": "L/PEN/*-s",
 		"cat": "aff.",
 		"pron": 0,
 		"defList": [
@@ -6820,7 +6820,7 @@
 	},
 	{
 		"title": "tôzmu",
-		"etym": "L/PEN/*tôzdmu/evitable",
+		"etym": "L/PEN/*tôsdmu/evitable",
 		"cat": "adj.",
 		"defList": [
 			"avoidable, evitable"
