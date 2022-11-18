@@ -163,3 +163,8 @@ td.tintblue, td.tintgreen, td.tintred, td.tintsky, td.tintyellow{
 	width: 25%;
   }
 }
+@media print {
+	#nav{
+		display: none;
+	}
+}
