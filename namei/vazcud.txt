@@ -350,3 +350,4 @@ lessoj=v, 4=curse, maledict;!lens + soj
 pag=adj;num, 1g=half
 šema=n, n=grain
 sanicu=n, n=a large yellow mammal related and similar in appearance to echidnas that, among other abilities, can detect muscle contractions of prey with electromagnetic sensory organs
+yafi=n, n=opium

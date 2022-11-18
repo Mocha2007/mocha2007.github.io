@@ -157,6 +157,15 @@
 		"notes": "Often used in places where English would use 'would&apos;ve'."
 	},
 	{
+		"title": "aberet",
+		"etym": "B/eba/erem",
+		"cat": "n., 3rd",
+		"defList": [
+			"dye"
+		],
+		"categories": ["v3_trade"]
+	},
+	{
 		"title": "abu",
 		"etym": "L/PEN/*aβu/ring",
 		"cat": "n., 4th",
@@ -334,6 +343,15 @@
 		"categories": ["person"]
 	},
 	{
+		"title": "afi",
+		"etym": "L/VAZ/yafi/opium",
+		"cat": "n., 4th",
+		"defList": [
+			"opium"
+		],
+		"categories": ["plant", "v3_trade"]
+	},
+	{
 		"title": "afik",
 		"etym": "L/PEN/*aɸix",
 		"cat": "n., 2nd",
@@ -488,7 +506,7 @@
 		"defList": [
 			"fruit"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "v3_trade"]
 	},
 	{
 		"title": "annumz",
@@ -643,7 +661,7 @@
 		"defList": [
 			"wine"
 		],
-		"categories": ["drink"]
+		"categories": ["drink", "v3_trade"]
 	},
 	{
 		"title": "ardomukaskrut",
@@ -1032,6 +1050,15 @@
 		"categories": ["chess", "person"]
 	},
 	{
+		"title": "baztumimit",
+		"etym": "C/baztu/mimit",
+		"cat": "n., 3rd",
+		"defList": [
+			"porcelain"
+		],
+		"categories": ["v3_trade"]
+	},
+	{
 		"title": "baztur",
 		"etym": "L/VAZ/Važcud",
 		"cat": "n., 1st",
@@ -1198,6 +1225,15 @@
 			"breast"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "bibit",
+		"etym": "C/bibiz/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"alcohol, liquor"
+		],
+		"categories": ["drink", "v3_trade"]
 	},
 	{
 		"title": "bibimat",
@@ -1489,6 +1525,15 @@
 		]
 	},
 	{
+		"title": "bubim",
+		"etym": "L/PEN/*βiuβim/silk",
+		"cat": "n., 5th",
+		"defList": [
+			"silk"
+		],
+		"categories": ["v3_trade"]
+	},
+	{
 		"title": "bueba",
 		"etym": "C/but/eba",
 		"cat": "n., 4th",
@@ -1513,6 +1558,15 @@
 			"(archaic) countryside",
 			"province, prefecture, county"
 		]
+	},
+	{
+		"title": "bunt",
+		"etym": "L/PEN/*bunt/cloth//~/but",
+		"cat": "n., 3rd",
+		"defList": [
+			"cloth, fabric, textile"
+		],
+		"categories": ["v3_trade"]
 	},
 	{
 		"title": "busia",
@@ -1554,11 +1608,12 @@
 	},
 	{
 		"title": "but",
-		"etym": "L/PEN/*bugt/clothing",
+		"etym": "L/PEN/*bugt/clothing//~/bunt",
 		"cat": "n., 3rd",
 		"defList": [
-			"clothing"
-		]
+			"clothing, clothes"
+		],
+		"categories": ["v3_trade"]
 	},
 	{
 		"title": "da",
@@ -1739,7 +1794,7 @@
 		"defList": [
 			"gold"
 		],
-		"categories": ["metal"]
+		"categories": ["metal", "v3_trade"]
 	},
 	{
 		"title": "darekut",
@@ -2076,6 +2131,15 @@
 		]
 	},
 	{
+		"title": "dôt",
+		"etym": "L/PEN/*dô-t/tool",
+		"cat": "n., 3rd",
+		"defList": [
+			"tool"
+		],
+		"categories": ["v3_trade"]
+	},
+	{
 		"title": "dou",
 		"etym": "L/PEN/*dou/few",
 		"cat": "adj.",
@@ -2390,6 +2454,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "habi",
+		"etym": "L/IRI/xabi/coffee",
+		"cat": "n., 4th",
+		"defList": [
+			"coffee (plant)"
+		],
+		"categories": ["plant", "v3_trade"]
+	},
+	{
 		"title": "habin",
 		"etym": "L/PEN/*ɸabin/finger",
 		"cat": "n., 4th",
@@ -2418,6 +2491,15 @@
 			"designate, nominate, name"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "habit",
+		"etym": "C/habi/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"coffee (drink)"
+		],
+		"categories": ["drink"]
 	},
 	{
 		"title": "habiz",
@@ -3150,6 +3232,23 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "kada",
+		"etym": "L/PEN/*gada",
+		"cat": "n., 4th",
+		"defList": [
+			"sugarcane"
+		]
+	},
+	{
+		"title": "kadat",
+		"etym": "C/kada/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"sugar"
+		],
+		"categories": ["v3_trade"]
+	},
+	{
 		"title": "kadôl",
 		"etym": "L/PEN/*kadôl/gem",
 		"cat": "n., 4th",
@@ -3164,6 +3263,15 @@
 		"defList": [
 			"hard"
 		]
+	},
+	{
+		"title": "kadlirem",
+		"etym": "C/kadu/lire",
+		"cat": "n., 4th",
+		"defList": [
+			"hardwood"
+		],
+		"categories": ["v3_trade"]
 	},
 	{
 		"title": "kaflam",
@@ -3488,6 +3596,15 @@
 		"categories": ["person"]
 	},
 	{
+		"title": "kin",
+		"etym": "L/PEN/*kin/sulfur",
+		"cat": "n., 1st",
+		"defList": [
+			"sulfur, brimstone"
+		],
+		"categories": ["v3_trade"]
+	},
+	{
 		"title": "kiom",
 		"etym": "C/kim/ho",
 		"cat": "n., 5th, adj.",
@@ -3708,7 +3825,7 @@
 		"defList": [
 			"fish"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "v3_trade"]
 	},
 	{
 		"title": "koz",
@@ -4037,6 +4154,25 @@
 		]
 	},
 	{
+		"title": "laibô",
+		"etym": "L/POL/lojło/olive",
+		"cat": "n., 4th",
+		"defList": [
+			"olive"
+		],
+		"categories": ["plant"]
+	},
+	{
+		"title": "laibôst",
+		"etym": "C/laibô/-isu",
+		"cat": "n., 3rd",
+		"defList": [
+			"olive oil",
+			"oil"
+		],
+		"categories": ["v3_trade"]
+	},
+	{
 		"title": "lakaik",
 		"etym": "L/PEN/*bloxaix/shark",
 		"cat": "n., 2nd",
@@ -4238,6 +4374,15 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "liremimit",
+		"etym": "C/lire/mimit",
+		"cat": "n., 3rd",
+		"defList": [
+			"furniture"
+		],
+		"categories": ["v3_trade"]
+	},
+	{
 		"title": "liresêdzak",
 		"etym": "C/lire/sêdzak",
 		"cat": "n., 2nd",
@@ -4283,6 +4428,14 @@
 		"categories": ["male given name"]
 	},
 	{
+		"title": "lu",
+		"etym": "L/PEN/*lu/galena",
+		"cat": "n., 4th",
+		"defList": [
+			"galena"
+		]
+	},
+	{
 		"title": "luksa",
 		"etym": "L/PEN/*luksa/neck",
 		"cat": "n., 4th",
@@ -4301,6 +4454,15 @@
 		],
 		"notes": "Owned dogs are called <em>busk</em>",
 		"categories": ["animal"]
+	},
+	{
+		"title": "lut",
+		"etym": "C/lu/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"lead"
+		],
+		"categories": ["v3_trade"]
 	},
 	{
 		"title": "lutbak",
@@ -4480,7 +4642,7 @@
 		"defList": [
 			"(refined) iron"
 		],
-		"categories": ["metal"]
+		"categories": ["metal", "v3_trade"]
 	},
 	{
 		"title": "markla",
@@ -4630,7 +4792,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"craft (object), work of art"
-		]
+		],
+		"categories": ["v3_trade"]
 	},
 	{
 		"title": "mo",
@@ -5684,7 +5847,8 @@
 		"defList": [
 			"meat (in general, including flesh and fish)",
 			"food"
-		]
+		],
+		"categories": ["v3_trade"]
 	},
 	{
 		"title": "rat",
@@ -6037,7 +6201,7 @@
 			"a unit of measurement equal to one-fifteenth of one edzam (~2.84 mm)",
 			"(archaic) other"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "v3_trade"]
 	},
 	{
 		"title": "seba",
@@ -6176,6 +6340,15 @@
 		]
 	},
 	{
+		"title": "simum",
+		"etym": "C/siz/mu",
+		"cat": "n., 5th",
+		"defList": [
+			"glass"
+		],
+		"categories": ["v3_trade"]
+	},
+	{
 		"title": "sioker",
 		"etym": "L/PRE/???",
 		"cat": "n., 1st",
@@ -6256,6 +6429,15 @@
 			"shine",
 			"(archaic) [causative]"
 		]
+	},
+	{
+		"title": "skam",
+		"etym": "L/PEN/*ʃkam/coal",
+		"cat": "n., 5th",
+		"defList": [
+			"coal"
+		],
+		"categories": ["v3_trade"]
 	},
 	{
 		"title": "skiz",
@@ -6574,7 +6756,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"(uncountable) wood"
-		]
+		],
+		"categories": ["v3_trade"]
 	},
 	{
 		"title": "talsu",
@@ -6672,6 +6855,15 @@
 		]
 	},
 	{
+		"title": "tasfut",
+		"etym": "L/PEN/*tasɸut/paper",
+		"cat": "n., 4th",
+		"defList": [
+			"paper"
+		],
+		"categories": ["v3_trade"]
+	},
+	{
 		"title": "tasku",
 		"etym": "B/tasu/skum",
 		"cat": "n., 4th",
@@ -6732,7 +6924,7 @@
 		"defList": [
 			"tea (leaf)"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "v3_trade"]
 	},
 	{
 		"title": "tekkat",

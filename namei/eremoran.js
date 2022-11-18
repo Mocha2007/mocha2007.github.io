@@ -863,7 +863,7 @@ const gen = {
 	markov: {
 		/** @type {{string: {string: number}}} */
 		data: {'^': {}},
-		gen(o = gen.markov, filter = () => true){
+		gen(o = this, filter = () => true){
 			if (!o.initialized)
 				o.init();
 			let choice = '^';
