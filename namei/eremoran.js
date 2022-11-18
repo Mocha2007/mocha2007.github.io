@@ -221,7 +221,9 @@ const LE = {
 		['{person} i ad {toponym} afkaz', 'The {person} goes to {toponym}.'],
 		['{person} i dir {plant} namz', 'The {person} eats the {plant}.'],
 		['{person} i dir {animal} saurz', 'The {person} sees the {animal}.'],
-		['{plant} su purrum i naum ne', 'How much does a {plant} cost?'],
+		['{v3_trade} su purrum i naum ne', 'How much does {v3_trade} cost?'],
+		['kikom i dir {v3_trade} sudôz', 'We produce {v3_trade} here.'],
+		['dir {v3_trade} ad dare baliz', 'I trade {v3_trade} for gold.'],
 		['{animal} i kusanam ne', 'How many {animal}s are there?'],
 	],
 	understood(was_it){
