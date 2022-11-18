@@ -1,4 +1,4 @@
-/* eslint-disable no-var */
+/* eslint-disable no-var, prefer-arrow-callback */
 /* eslint-env es3 */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
 /* exported click, dodge, reset */
@@ -152,7 +152,7 @@ function dodge(){
 
 function damage(){
 	targetHealth -= enemyatt;
-	healthElement.classList = ['red'];
+	healthElement.classList.add('red');
 	if (targetHealth<=0){
 		new Audio('https://www.myinstants.com/media/sounds/roblox-death-sound_1.mp3').play();
 		new Audio('https://www.myinstants.com/media/sounds/export_4.mp3').play();
@@ -163,31 +163,25 @@ function damage(){
 }
 
 function main(){
-	if (targetHealth <= 0){
+	if (targetHealth <= 0)
 		topElement.innerHTML = '<h1 class="red">YOU LOSE!</h1><h1>Score: '+score+'</h1>';
-	}
 	else if (!paused){
 		// increment the clock
 		clock+=1;
 
 		// hp flash disable
-		if (targetHealth!==health && Math.abs(targetHealth-health)<1){
+		if (targetHealth!==health && Math.abs(targetHealth-health)<1)
 			health = targetHealth;
-		}
-		else if (targetHealth<health){
+		else if (targetHealth<health)
 			health -= 1;
-		}
-		else if (targetHealth>health){
+		else if (targetHealth>health)
 			health += 1;
-		}
-		else {
-			healthElement.classList = [];
-		}
+		else
+			healthElement.classList.remove('red');
 
 		// make new enemy
-		if (!enemyhp){
+		if (!enemyhp)
 			newenemy();
-		}
 
 		// if no dodge, deal damage to player
 		else if (enemyAttacking && (clock-lastatttime)/fps > atttime){
@@ -202,7 +196,10 @@ function main(){
 		}
 
 		// set enemy hp color
-		enemyhealthElement.classList = [3*enemyhp>2*maxenemyhp?'gre':3*enemyhp>maxenemyhp?'yel':'red'];
+		['gre', 'yel', 'red'].forEach(function(c){
+			return enemyhealthElement.classList.remove(c);
+		});
+		enemyhealthElement.classList.add(3*enemyhp>2*maxenemyhp?'gre':3*enemyhp>maxenemyhp?'yel':'red');
 
 		// ONLY update if absolutely necessary!
 		if (pauseElement.value !== 'Pause'){
