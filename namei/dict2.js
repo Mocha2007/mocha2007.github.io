@@ -245,10 +245,10 @@ etymElement.stats = {
 };
 
 /**
- * @param {string} id 
- * @param {string} word 
+ * @param {string} id
+ * @param {string} word
  */
- function loanElem(id, word, gloss = ''){
+function loanElem(id, word, gloss = ''){
 	const span = document.createElement('span');
 	span.innerHTML = 'From ';
 	const lang = etymElement.languages[id];
