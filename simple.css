@@ -148,9 +148,8 @@ table.lefttable td{
 td.tintblue, td.tintgreen, td.tintred, td.tintsky, td.tintyellow{
 	border-width: 2px;
 }
-div.titlelinks a, .trans {
+.titlelinks a {
 	/* titles of books, films, etc. should ONLY be used if <cite> is impossible */
-	/* translation/gloss */
 	font-style: italic;
 }
 .nav2::before{content:'┕';}
