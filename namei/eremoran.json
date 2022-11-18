@@ -81,17 +81,6 @@
 		]
 	},
 	{
-		"title": "abakt",
-		"img": "../img/eremoran/abakt.png",
-		"etym": "L/PEN/*abakt/board",
-		"cat": "n., 3rd",
-		"defList": [
-			"board, plank",
-			"table",
-			"tablet, map, document"
-		]
-	},
-	{
 		"title": "abask",
 		"etym": "L/PEN/*aβasx/duck",
 		"cat": "n., 2nd",
@@ -100,6 +89,17 @@
 			"(metaphorically) idiot"
 		],
 		"categories": ["animal", "person"]
+	},
+	{
+		"title": "abat",
+		"img": "../img/eremoran/abakt.png",
+		"etym": "L/PEN/*abakt/board",
+		"cat": "n., 3rd",
+		"defList": [
+			"board, plank",
+			"table",
+			"tablet, map, document"
+		]
 	},
 	{
 		"title": "abbak",
