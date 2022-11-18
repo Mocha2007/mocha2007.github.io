@@ -7,7 +7,7 @@ const eremorans = {
 	guild2: 'common Enklar challenge and response',
 	philosopher1: 'Urisbazêsur Badmar, philosopher', // political
 	philosopher2: 'Ôkar Temêsur Saur, philosopher', // infp
-	philosopher3: 'Manikasur Hisklenar, philosopher', // serious/depresso
+	philosopher3: 'Manikasur Hislenar, philosopher', // serious/depresso
 	poet1: 'Lusimarisur Siurisar, poet', // more abstract / misc
 	pun: 'an Eremoran pun',
 };
