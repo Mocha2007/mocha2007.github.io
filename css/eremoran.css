@@ -28,6 +28,9 @@ body, html {
 	padding: 0;
 	position: relative;
 }
+#dialectMapContainer img {
+	width: 100%;
+}
 .dialectMapText {
 	color: white;
 	font-size: 75%;
