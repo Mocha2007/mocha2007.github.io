@@ -326,14 +326,6 @@
 		"categories": ["body part"]
 	},
 	{
-		"title": "afêst",
-		"etym": "L/PEN/*xeɸêʃt/shortsword",
-		"cat": "n., 3rd",
-		"defList": [
-			"shortsword"
-		]
-	},
-	{
 		"title": "afêssaur",
 		"etym": "C/afêst/saurz",
 		"cat": "n., 1st",
@@ -341,6 +333,14 @@
 			"watchman, guard, policeman, officer"
 		],
 		"categories": ["person"]
+	},
+	{
+		"title": "afêst",
+		"etym": "L/PEN/*xeɸêʃt/shortsword",
+		"cat": "n., 3rd",
+		"defList": [
+			"shortsword"
+		]
 	},
 	{
 		"title": "afi",
@@ -580,15 +580,6 @@
 		"categories": ["coin"]
 	},
 	{
-		"title": "aramaêr",
-		"etym": "C/arama/-ê",
-		"cat": "n., 1st",
-		"defList": [
-			"metalsmith (more specifically, a coppersmith)"
-		],
-		"categories": ["metal", "person"]
-	},
-	{
 		"title": "aramaêmat",
 		"etym": "C/aramaêr/mat",
 		"cat": "n., 3rd",
@@ -596,6 +587,15 @@
 			"smithy"
 		],
 		"categories": ["metal"]
+	},
+	{
+		"title": "aramaêr",
+		"etym": "C/arama/-ê",
+		"cat": "n., 1st",
+		"defList": [
+			"metalsmith (more specifically, a coppersmith)"
+		],
+		"categories": ["metal", "person"]
 	},
 	{
 		"title": "aramafir",
@@ -654,6 +654,15 @@
 		]
 	},
 	{
+		"title": "ardomukaskrut",
+		"etym": "C/ardomut/kaskru",
+		"cat": "n., 3rd",
+		"defList": [
+			"cider"
+		],
+		"categories": ["drink"]
+	},
+	{
 		"title": "ardomut",
 		"img": "../img/eremoran/ardomut.png",
 		"etym": "C/ardo/mu",
@@ -662,15 +671,6 @@
 			"wine"
 		],
 		"categories": ["drink", "v3_trade"]
-	},
-	{
-		"title": "ardomukaskrut",
-		"etym": "C/ardomut/kaskru",
-		"cat": "n., 3rd",
-		"defList": [
-			"cider"
-		],
-		"categories": ["drink"]
 	},
 	{
 		"title": "ardonask",
@@ -894,15 +894,6 @@
 		"categories": ["plant"]
 	},
 	{
-		"title": "baliz",
-		"etym": "L/PEN/*balis/buy",
-		"cat": "v.",
-		"defList": [
-			"trade, buy, sell, exchange"
-		],
-		"notes": "X trades Y for Z's A - X dir Y ad A Z ad baliz"
-	},
-	{
 		"title": "balitam",
 		"etym": "B/bat/balitam",
 		"cat": "n., 5th",
@@ -922,6 +913,15 @@
 			"(of food) go bad"
 		],
 		"notes": "Note: With causative, means kill."
+	},
+	{
+		"title": "baliz",
+		"etym": "L/PEN/*balis/buy",
+		"cat": "v.",
+		"defList": [
+			"trade, buy, sell, exchange"
+		],
+		"notes": "X trades Y for Z's A - X dir Y ad A Z ad baliz"
 	},
 	{
 		"title": "bamz",
@@ -1227,15 +1227,6 @@
 		"categories": ["body part"]
 	},
 	{
-		"title": "bibit",
-		"etym": "C/bibiz/-t",
-		"cat": "n., 3rd",
-		"defList": [
-			"alcohol, liquor"
-		],
-		"categories": ["drink", "v3_trade"]
-	},
-	{
 		"title": "bibimat",
 		"etym": "C/bibiz/mat",
 		"cat": "n., 3rd",
@@ -1243,6 +1234,15 @@
 			"bar, pub"
 		],
 		"categories": ["drink"]
+	},
+	{
+		"title": "bibit",
+		"etym": "C/bibiz/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"alcohol, liquor"
+		],
+		"categories": ["drink", "v3_trade"]
 	},
 	{
 		"title": "bibiz",
@@ -1760,15 +1760,6 @@
 		]
 	},
 	{
-		"title": "dantam",
-		"etym": "C/addam/tan",
-		"cat": "n., 5th; adv.",
-		"defList": [
-			"overmorrow, the day after tomorrow, two days hence"
-		],
-		"categories": ["time"]
-	},
-	{
 		"title": "danlikz",
 		"etym": "L/PEN/*danliks/suck",
 		"cat": "v.",
@@ -1786,6 +1777,15 @@
 			"bug, insect"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "dantam",
+		"etym": "C/addam/tan",
+		"cat": "n., 5th; adv.",
+		"defList": [
+			"overmorrow, the day after tomorrow, two days hence"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "dare",
@@ -1859,19 +1859,19 @@
 		]
 	},
 	{
-		"title": "didulk",
-		"etym": "C/did/-ulk",
-		"cat": "adv.",
-		"defList": [
-			"only; merely"
-		]
-	},
-	{
 		"title": "didirat",
 		"etym": "R/dirak",
 		"cat": "n., 3rd",
 		"defList": [
 			"whale meat"
+		]
+	},
+	{
+		"title": "didulk",
+		"etym": "C/did/-ulk",
+		"cat": "adv.",
+		"defList": [
+			"only; merely"
 		]
 	},
 	{
@@ -1919,20 +1919,20 @@
 		]
 	},
 	{
+		"title": "dindôkaz",
+		"etym": "C/din/dôkaz",
+		"cat": "v.",
+		"defList": [
+			"become"
+		]
+	},
+	{
 		"title": "dindôz",
 		"etym": "L/PEN/*din-dôs/appraise",
 		"cat": "v.",
 		"defList": [
 			"appraise",
 			"interpret, translate"
-		]
-	},
-	{
-		"title": "dindôkaz",
-		"etym": "C/din/dôkaz",
-		"cat": "v.",
-		"defList": [
-			"become"
 		]
 	},
 	{
@@ -2036,6 +2036,14 @@
 		]
 	},
 	{
+		"title": "dodemat",
+		"etym": "C/doder/mat",
+		"cat": "n., 3rd",
+		"defList": [
+			"hotel"
+		]
+	},
+	{
 		"title": "doder",
 		"etym": "L/PEN/*doder/guest",
 		"cat": "n., 1st",
@@ -2043,14 +2051,6 @@
 			"guest"
 		],
 		"categories": ["person"]
-	},
-	{
-		"title": "dodemat",
-		"etym": "C/doder/mat",
-		"cat": "n., 3rd",
-		"defList": [
-			"hotel"
-		]
 	},
 	{
 		"title": "dôkalz",
@@ -2294,15 +2294,6 @@
 		"notes": "wanderwort"
 	},
 	{
-		"title": "enlusik",
-		"etym": "C/endu/lusik",
-		"cat": "n., 2nd",
-		"defList": [
-			"dire wolf"
-		],
-		"categories": ["animal"]
-	},
-	{
 		"title": "endu",
 		"etym": "L/PEN/*endu/high",
 		"cat": "adj.",
@@ -2330,6 +2321,15 @@
 			"aristocrat",
 			"aristocracy"
 		]
+	},
+	{
+		"title": "enlusik",
+		"etym": "C/endu/lusik",
+		"cat": "n., 2nd",
+		"defList": [
+			"dire wolf"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "epeêr",
@@ -2537,6 +2537,14 @@
 		"categories": ["female given name"]
 	},
 	{
+		"title": "hafaz",
+		"etym": "C/hafa/-z",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) rain"
+		]
+	},
+	{
 		"title": "haffelar",
 		"etym": "r/hafaelar",
 		"cat": "n., 1st",
@@ -2544,14 +2552,6 @@
 			"female given name"
 		],
 		"categories": ["female given name"]
-	},
-	{
-		"title": "hafaz",
-		"etym": "C/hafa/-z",
-		"cat": "v.",
-		"defList": [
-			"(intransitive) rain"
-		]
 	},
 	{
 		"title": "hai",
@@ -3249,6 +3249,15 @@
 		"categories": ["v3_trade"]
 	},
 	{
+		"title": "kadlirem",
+		"etym": "C/kadu/lire",
+		"cat": "n., 4th",
+		"defList": [
+			"hardwood"
+		],
+		"categories": ["v3_trade"]
+	},
+	{
 		"title": "kadôl",
 		"etym": "L/PEN/*kadôl/gem",
 		"cat": "n., 4th",
@@ -3263,15 +3272,6 @@
 		"defList": [
 			"hard"
 		]
-	},
-	{
-		"title": "kadlirem",
-		"etym": "C/kadu/lire",
-		"cat": "n., 4th",
-		"defList": [
-			"hardwood"
-		],
-		"categories": ["v3_trade"]
 	},
 	{
 		"title": "kaflam",
@@ -3682,6 +3682,16 @@
 		]
 	},
 	{
+		"title": "kôbenk",
+		"etym": "L/PRE/qōpena/mouse",
+		"cat": "n., 2nd",
+		"defList": [
+			"mouse",
+			"Any species of the suborder <i>Myomorpha</i>"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "kôbensu",
 		"etym": "C/kôbenk/-isu",
 		"cat": "adj.",
@@ -3693,16 +3703,6 @@
 			"grey; greyish brown (like mice)"
 		],
 		"notes": "cf. en. <em>mousy</em> and la. <em>murinus</em>, mirroring senses 3-5."
-	},
-	{
-		"title": "kôbenk",
-		"etym": "L/PRE/qōpena/mouse",
-		"cat": "n., 2nd",
-		"defList": [
-			"mouse",
-			"Any species of the suborder <i>Myomorpha</i>"
-		],
-		"categories": ["animal"]
 	},
 	{
 		"title": "koka",
@@ -4777,6 +4777,15 @@
 		]
 	},
 	{
+		"title": "mimit",
+		"etym": "R/mim",
+		"cat": "n., 3rd",
+		"defList": [
+			"craft (object), work of art"
+		],
+		"categories": ["v3_trade"]
+	},
+	{
 		"title": "minibak",
 		"etym": "L/PEN/*minibax/egg",
 		"cat": "n., 2nd",
@@ -4785,15 +4794,6 @@
 		],
 		"notes": "Note: despite being animate, this refers to unfertilized eggs, too.",
 		"categories": ["body part"]
-	},
-	{
-		"title": "mimit",
-		"etym": "R/mim",
-		"cat": "n., 3rd",
-		"defList": [
-			"craft (object), work of art"
-		],
-		"categories": ["v3_trade"]
 	},
 	{
 		"title": "mo",
@@ -5000,14 +5000,6 @@
 		]
 	},
 	{
-		"title": "mut",
-		"etym": "C/mu/-t",
-		"cat": "n., 3rd",
-		"defList": [
-			"extract, essential oil, stock"
-		]
-	},
-	{
 		"title": "mus",
 		"etym": "r/musu",
 		"cat": "n., 4th",
@@ -5023,6 +5015,14 @@
 			"wet"
 		],
 		"notes": "not humid"
+	},
+	{
+		"title": "mut",
+		"etym": "C/mu/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"extract, essential oil, stock"
+		]
 	},
 	{
 		"title": "na",
@@ -5058,6 +5058,15 @@
 		"cat": "n., 4th",
 		"defList": [
 			"Nadnekis, the great east mountain range."
+		],
+		"categories": ["toponym"]
+	},
+	{
+		"title": "nakanar",
+		"etym": "L/NEK/Nekaŋ",
+		"cat": "n., 1st",
+		"defList": [
+			"Nekang (the people and country, but not the language)"
 		],
 		"categories": ["toponym"]
 	},
@@ -5201,15 +5210,6 @@
 		]
 	},
 	{
-		"title": "nakanar",
-		"etym": "L/NEK/Nekaŋ",
-		"cat": "n., 1st",
-		"defList": [
-			"Nekang (the people and country, but not the language)"
-		],
-		"categories": ["toponym"]
-	},
-	{
 		"title": "nelat",
 		"etym": "r/arzênelat",
 		"cat": "n., 3rd",
@@ -5315,15 +5315,6 @@
 		]
 	},
 	{
-		"title": "nôsêdzak",
-		"etym": "C/nô/sêdzak",
-		"cat": "n., 2nd",
-		"defList": [
-			"marmot"
-		],
-		"categories": ["animal"]
-	},
-	{
 		"title": "nôak",
 		"etym": "L/PEN/*nôax/louse",
 		"cat": "n., 2nd",
@@ -5348,6 +5339,15 @@
 		"defList": [
 			"game"
 		]
+	},
+	{
+		"title": "nôsêdzak",
+		"etym": "C/nô/sêdzak",
+		"cat": "n., 2nd",
+		"defList": [
+			"marmot"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "nost",
@@ -5472,14 +5472,6 @@
 		"categories": ["family"]
 	},
 	{
-		"title": "ôdu",
-		"etym": "L/PEN/*ôdu/away",
-		"cat": "adj.",
-		"defList": [
-			"away"
-		]
-	},
-	{
 		"title": "oddomsumor",
 		"etym": "L/TAI/Oddom/Oddomsumor",
 		"cat": "n., 1st",
@@ -5487,6 +5479,14 @@
 			"A conquered tribe (sumor) in the mid-east of Eremor."
 		],
 		"categories": ["toponym"]
+	},
+	{
+		"title": "ôdu",
+		"etym": "L/PEN/*ôdu/away",
+		"cat": "adj.",
+		"defList": [
+			"away"
+		]
 	},
 	{
 		"title": "ok",
@@ -6026,6 +6026,15 @@
 		]
 	},
 	{
+		"title": "roraodok",
+		"etym": "D/roraok",
+		"cat": "n., 2nd",
+		"defList": [
+			"(archaic) kitten"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "roraok",
 		"etym": "R/rao",
 		"cat": "n., 2nd",
@@ -6042,15 +6051,6 @@
 		"defList": [
 			"civet",
 			"mongoose"
-		],
-		"categories": ["animal"]
-	},
-	{
-		"title": "roraodok",
-		"etym": "D/roraok",
-		"cat": "n., 2nd",
-		"defList": [
-			"(archaic) kitten"
 		],
 		"categories": ["animal"]
 	},
@@ -6090,15 +6090,6 @@
 			"zothceng (a large, semi-intelligent symbiotic fungus-beehive beast)"
 		],
 		"categories": ["animal"]
-	},
-	{
-		"title": "saur",
-		"etym": "L/PRE/Sāyū//L/VAZ/Sagub/beloved",
-		"cat": "n., 1st",
-		"defList": [
-			"female given name"
-		],
-		"categories": ["female given name"]
 	},
 	{
 		"title": "salim",
@@ -6151,6 +6142,15 @@
 		"defList": [
 			"mat, typically in the dimensions of 5-by-10 labnim"
 		]
+	},
+	{
+		"title": "saur",
+		"etym": "L/PRE/Sāyū//L/VAZ/Sagub/beloved",
+		"cat": "n., 1st",
+		"defList": [
+			"female given name"
+		],
+		"categories": ["female given name"]
 	},
 	{
 		"title": "saurom",
@@ -6538,21 +6538,21 @@
 		]
 	},
 	{
-		"title": "spez",
-		"etym": "L/PRE/aspe",
-		"cat": "v.",
-		"defList": [
-			"(intransitive) change",
-			"be edited, redacted"
-		]
-	},
-	{
 		"title": "spem",
 		"etym": "C/spez/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"change, version, edition",
 			"setting(s), configuration"
+		]
+	},
+	{
+		"title": "spez",
+		"etym": "L/PRE/aspe",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) change",
+			"be edited, redacted"
 		]
 	},
 	{
@@ -6714,20 +6714,20 @@
 		]
 	},
 	{
+		"title": "tabaêt",
+		"etym": "C/tabaz/-ê",
+		"cat": "n., 3rd",
+		"defList": [
+			"pestle"
+		]
+	},
+	{
 		"title": "tabaz",
 		"etym": "L/PEN/*tabias/crush",
 		"cat": "v.",
 		"defList": [
 			"crush",
 			"grind"
-		]
-	},
-	{
-		"title": "tabaêt",
-		"etym": "C/tabaz/-ê",
-		"cat": "n., 3rd",
-		"defList": [
-			"pestle"
 		]
 	},
 	{
@@ -6937,11 +6937,21 @@
 		"categories": ["drink"]
 	},
 	{
-		"title": "temz",
-		"etym": "L/PEN/*tems/defend",
-		"cat": "v.",
+		"title": "temêmom",
+		"etym": "C/temêmor/-m",
+		"cat": "n., 5th",
 		"defList": [
-			"defend, protect"
+			"type, kind, sort"
+		]
+	},
+	{
+		"title": "temêmor",
+		"etym": "C/temêr/mor",
+		"cat": "n., 1st",
+		"defList": [
+			"clan, house",
+			"(extended) family",
+			"guild"
 		]
 	},
 	{
@@ -6956,21 +6966,11 @@
 		"categories": ["family", "male given name", "person"]
 	},
 	{
-		"title": "temêmor",
-		"etym": "C/temêr/mor",
-		"cat": "n., 1st",
+		"title": "temz",
+		"etym": "L/PEN/*tems/defend",
+		"cat": "v.",
 		"defList": [
-			"clan, house",
-			"(extended) family",
-			"guild"
-		]
-	},
-	{
-		"title": "temêmom",
-		"etym": "C/temêmor/-m",
-		"cat": "n., 5th",
-		"defList": [
-			"type, kind, sort"
+			"defend, protect"
 		]
 	},
 	{
@@ -7439,14 +7439,6 @@
 		"categories": ["color"]
 	},
 	{
-		"title": "umonar",
-		"etym": "C/u-/monar",
-		"cat": "pron.",
-		"defList": [
-			"nobody"
-		]
-	},
-	{
 		"title": "umfêlar",
 		"etym": "L/VAZ/???/husband",
 		"cat": "pron.",
@@ -7463,6 +7455,14 @@
 			"wife / sister-in-law (in polygamous relationships)"
 		],
 		"categories": ["family"]
+	},
+	{
+		"title": "umonar",
+		"etym": "C/u-/monar",
+		"cat": "pron.",
+		"defList": [
+			"nobody"
+		]
 	},
 	{
 		"title": "una",
@@ -7679,21 +7679,21 @@
 		"categories": ["coin"]
 	},
 	{
-		"title": "zestim",
-		"etym": "C/zesti/-m",
-		"cat": "n., 5th",
-		"defList": [
-			"angle",
-			"bend"
-		]
-	},
-	{
 		"title": "zesti",
 		"etym": "L/PEN/*aseasetis/angled, with partial reduplication of *aseti 'joint'",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"angled",
 			"bent"
+		]
+	},
+	{
+		"title": "zestim",
+		"etym": "C/zesti/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"angle",
+			"bend"
 		]
 	},
 	{

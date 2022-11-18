@@ -1111,7 +1111,7 @@ function computeStats(){
 	// verify word forms
 	elements.raws.forEach((o, i) => {
 		const [word, n] = [o.title, (x => x && x[0])(o.cat.match(/\d/))];
-		if (i && removeAccents(word) <= removeAccents(elements.raws[i-1].title))
+		if (i && removeAccents(word) < removeAccents(elements.raws[i-1].title))
 			console.warn(`${word} out of order!`);
 		const last = word[word.length-1];
 		switch (n){
