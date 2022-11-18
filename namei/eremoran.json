@@ -1489,16 +1489,8 @@
 		]
 	},
 	{
-		"title": "bukat",
-		"etym": "L/PEN/*buxat/adze",
-		"cat": "n., 3rd",
-		"defList": [
-			"adze"
-		]
-	},
-	{
-		"title": "bukeba",
-		"etym": "C/bukt/eba",
+		"title": "bueba",
+		"etym": "C/but/eba",
 		"cat": "n., 4th",
 		"defList": [
 			"foreskin"
@@ -1506,11 +1498,11 @@
 		"categories": ["body part"]
 	},
 	{
-		"title": "bukt",
-		"etym": "L/PEN/*bugt/clothing",
+		"title": "bukat",
+		"etym": "L/PEN/*buxat/adze",
 		"cat": "n., 3rd",
 		"defList": [
-			"clothing"
+			"adze"
 		]
 	},
 	{
@@ -1558,6 +1550,14 @@
 		"defList": [
 			"doghouse",
 			"prison"
+		]
+	},
+	{
+		"title": "but",
+		"etym": "L/PEN/*bugt/clothing",
+		"cat": "n., 3rd",
+		"defList": [
+			"clothing"
 		]
 	},
 	{
