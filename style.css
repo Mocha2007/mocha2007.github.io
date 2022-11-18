@@ -6,7 +6,6 @@ a:hover{text-shadow:0 0 10px #0ff;}
 #top,#bottom{text-align:center;}
 .new{list-style-image:url('img/new.png');}
 .up{list-style-image:url('img/up.png');}
-.title{font-style: italic;}
 .highlight,.highlight a{background-color: #630; color: #f90;}
 .highlight:hover,.highlight a:hover{text-shadow:0 0 10px #f90;}
 p{text-indent:45px;}
