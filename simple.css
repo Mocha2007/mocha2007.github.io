@@ -177,6 +177,10 @@ div.titlelinks a{
 	position: fixed;
 	text-align: left;
 	top: 0;
+	width: min(210px, calc(50% - 370px));
+}
+#nav summary {
+	text-align: center;
 }
 #top, #bottom, .center{
 	text-align:center;
@@ -185,4 +189,10 @@ div.titlelinks a{
 @keyframes strobe{
 	0% {border-bottom:1px solid transparent;}
 	100% {border-bottom:1px solid black;}
+}
+/* mobile */
+@media (max-width: 750px) {
+  #nav{
+	width: 25%;
+  }
 }
