@@ -664,44 +664,6 @@
 		"categories": ["animal"]
 	},
 	{
-		"title": "ardzên",
-		"img": "../img/eremoran/ardzin.png",
-		"etym": "L/PEN/*xerediên/silver",
-		"cat": "n., 4th",
-		"defList": [
-			"native silver"
-		],
-		"categories": ["metal"]
-	},
-	{
-		"title": "ardzênelat",
-		"etym": "D/ardzênt",
-		"cat": "n., 3rd",
-		"defList": [
-			"a small silver piece, worth four aramat"
-		],
-		"categories": ["coin"]
-	},
-	{
-		"title": "ardzênkut",
-		"etym": "A/ardzênt",
-		"cat": "n., 3rd",
-		"defList": [
-			"a large silver piece, worth four ardzênt"
-		],
-		"categories": ["coin"]
-	},
-	{
-		"title": "ardzênt",
-		"etym": "C/ardzên/-t",
-		"cat": "n., 3rd",
-		"defList": [
-			"silver",
-			"a silver piece, worth four ardzênelat"
-		],
-		"categories": ["coin", "metal"]
-	},
-	{
 		"title": "arêôk",
 		"etym": "L/PEN/*arêôx",
 		"cat": "n., 2nd",
@@ -748,6 +710,44 @@
 			"stop, halt, cease",
 			"be stiff, still, stubborn"
 		]
+	},
+	{
+		"title": "arzên",
+		"img": "../img/eremoran/ardzin.png",
+		"etym": "L/PEN/*xerediên/silver",
+		"cat": "n., 4th",
+		"defList": [
+			"native silver"
+		],
+		"categories": ["metal"]
+	},
+	{
+		"title": "arzênelat",
+		"etym": "D/arzênt",
+		"cat": "n., 3rd",
+		"defList": [
+			"a small silver piece, worth four aramat"
+		],
+		"categories": ["coin"]
+	},
+	{
+		"title": "arzênkut",
+		"etym": "A/arzênt",
+		"cat": "n., 3rd",
+		"defList": [
+			"a large silver piece, worth four arzênt"
+		],
+		"categories": ["coin"]
+	},
+	{
+		"title": "arzênt",
+		"etym": "C/arzên/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"silver",
+			"a silver piece, worth four arzênelat"
+		],
+		"categories": ["coin", "metal"]
 	},
 	{
 		"title": "as",
@@ -1764,7 +1764,7 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"money (especially gold money)",
-			"a gold (actually, electrum) coin, worth four ardzênkut"
+			"a gold (actually, electrum) coin, worth four arzênkut"
 		],
 		"categories": ["coin"]
 	},
@@ -5048,7 +5048,7 @@
 	},
 	{
 		"title": "nelat",
-		"etym": "r/ardzênelat",
+		"etym": "r/arzênelat",
 		"cat": "n., 3rd",
 		"defList": [
 			"a small silver piece, worth four aramat"
@@ -7479,10 +7479,10 @@
 	},
 	{
 		"title": "zênkut",
-		"etym": "r/ardzênkut",
+		"etym": "r/arzênkut",
 		"cat": "n., 3rd",
 		"defList": [
-			"a large silver piece, worth four ardzênt"
+			"a large silver piece, worth four arzênt"
 		],
 		"categories": ["coin"]
 	},
