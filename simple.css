@@ -37,7 +37,7 @@ details{
 details a{
 	font-size: 16px;
 }
-h1, h2, h3{
+h1, h2, h3, #top, #bottom, .center, #nav summary {
 	text-align: center;
 }
 q{
@@ -148,16 +148,8 @@ table.lefttable td{
 td.tintblue, td.tintgreen, td.tintred, td.tintsky, td.tintyellow{
 	border-width: 2px;
 }
-.title{
-	/* titles of books, films, etc. */
-	font-style: italic;
-}
-div.titlelinks a{
-	/* div class where ALL links are titles;
-	easier than using .title over and over*/
-	font-style:italic;
-}
-.trans{
+div.titlelinks a, .trans {
+	/* titles of books, films, etc. should ONLY be used if <cite> is impossible */
 	/* translation/gloss */
 	font-style: italic;
 }
@@ -178,12 +170,6 @@ div.titlelinks a{
 	text-align: left;
 	top: 0;
 	width: min(210px, calc(50% - 370px));
-}
-#nav summary {
-	text-align: center;
-}
-#top, #bottom, .center{
-	text-align:center;
 }
 /* Text Animations */
 @keyframes strobe{

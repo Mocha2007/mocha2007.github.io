@@ -396,7 +396,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[28.5e3, 'Settlement of <a href="https://en.wikipedia.org/wiki/New_Guinea">New Guinea</a>'],
 	[27e3, 'Age of <a href="https://en.wikipedia.org/wiki/Haplogroup_R_(Y-DNA)">Haplogroup R</a>\'s common ancestor'],
 	[25.7715e3, 'The Earth has undergone one <a href="https://en.wikipedia.org/wiki/Axial_precession">axial precession</a> since this point'],
-	[24e3, 'Extinction of the <a class="title" href="https://en.wikipedia.org/wiki/Cave_bear">Cave Bear</a> and <a class="title" href="https://en.wikipedia.org/wiki/Panthera_pardus_spelaea">European Ice Age Leopard</a>'],
+	[24e3, 'Extinction of the <a href="https://en.wikipedia.org/wiki/Cave_bear">Cave Bear</a> and <a href="https://en.wikipedia.org/wiki/Panthera_pardus_spelaea">European Ice Age Leopard</a>'],
 	[24e3, 'The <a href="https://en.wikipedia.org/wiki/Heinrich_event">H2 Heinrich Event</a>'],
 	[22.8e3, 'Age of <a href="https://en.wikipedia.org/wiki/Haplogroup_R1">Haplogroup R1</a>\'s common ancestor'],
 	[21.4e3, '<a href="https://en.wikipedia.org/wiki/Tenoumer_crater">Tenoumer Impact</a>'],
@@ -418,7 +418,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	// HOLOCENE 11.7 kya; 1 yr ~ 2 mins
 	[11.7e3, '<a href="https://en.wikipedia.org/wiki/Last_glacial_period">Last Glacial Period</a> Ends'],
 	[11.1e3, '<a href="https://en.wikipedia.org/wiki/Bond_event">11.1 Kiloyear Event</a>'],
-	[11e3, 'Extinction of <a class="title" href="https://en.wikipedia.org/wiki/Glyptodon">Glyptodon</a> and the <a class="title" href="https://en.wikipedia.org/wiki/Cave_hyena">Cave Hyena</a>'],
+	[11e3, 'Extinction of <a href="https://en.wikipedia.org/wiki/Glyptodon">Glyptodon</a> and the <a href="https://en.wikipedia.org/wiki/Cave_hyena">Cave Hyena</a>'],
 	[10.5e3, '<a href="https://en.wikipedia.org/wiki/Cattle">Cattle</a> Domesticated'],
 	[10.303e3, 'Approximate beginning of the <a href="https://en.wikipedia.org/wiki/Astrological_age#Age_of_Cancer_(Cancerian_Age)">age of Cancer</a>'],
 	[10.3e3, '<a href="https://en.wikipedia.org/wiki/Bond_event">10.3 Kiloyear Event</a>'],
