@@ -915,7 +915,6 @@ function randomSeason(){
 		.children // select cells of first row
 		).slice(1) // deselect first cell (the year)
 		.map(function(e){ return e.innerHTML; }); // select innerHTML of all cells
-	/* eslint-enable */
 	starts.forEach(function(x){
 		var category = Math.round(random.uniform(-1, maxcatduring(x)));
 		var end = x + Math.max(1, Math.round(

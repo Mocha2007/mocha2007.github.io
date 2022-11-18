@@ -14,7 +14,7 @@ function onLoggedIn(){
 }
 
 function onLoginFailed(){
-	console.log('There was a problem logging in: ' . ngio.login_error.message);
+	console.log('There was a problem logging in: '.ngio.login_error.message);
 }
 
 function onLoginCancelled(){
@@ -27,7 +27,7 @@ function onLoginCancelled(){
  * already saved locally.
  */
 function initSession(){
-	ngio.getValidSession(function(){
+	ngio.getValidSession(() => {
 		if (ngio.user){
 			/*
              * If we have a saved session, and it has not expired,
@@ -64,12 +64,14 @@ let medals, scoreboards;
 
 /* handle loaded medals */
 function onMedalsLoaded(result){
-	if (result.success) medals = result.medals;
+	if (result.success)
+		medals = result.medals;
 }
 
 /* handle loaded scores */
 function onScoreboardsLoaded(result){
-	if (result.success) scoreboards = result.scoreboards;
+	if (result.success)
+		scoreboards = result.scoreboards;
 }
 
 /* load our medals and scoreboards from the server */
@@ -85,7 +87,8 @@ function onMedalUnlocked(medal){
 
 function unlockMedal(medalName){
 	/* If there is no user attached to our ngio object, it means the user isn't logged in and we can't unlock anything */
-	if (!ngio.user) return;
+	if (!ngio.user)
+		return;
 	for (let i = 0; i < medals.length; i++){
 		const medal = medals[i];
 		/* look for a matching medal name */
@@ -94,8 +97,9 @@ function unlockMedal(medalName){
 			if (!medal.unlocked){
 				/* unlock the medal from the server */
 				console.log('Attempting to unlock', medal);
-				ngio.callComponent('Medal.unlock', {id: medal.id}, function(result){
-					if (result.success) onMedalUnlocked(result.medal);
+				ngio.callComponent('Medal.unlock', {id: medal.id}, result => {
+					if (result.success)
+						onMedalUnlocked(result.medal);
 				});
 			}
 			return;
@@ -109,7 +113,8 @@ function onPostScore(scoreValue, result){
 
 function postScore(boardName, scoreValue){
 	/* If there is no user attached to our ngio object, it means the user isn't logged in and we can't post anything */
-	if (!ngio.user) return;
+	if (!ngio.user)
+		return;
 	for (let i = 0; i < scoreboards.length; i++){
 		const scoreboard = scoreboards[i];
 		if (boardName === scoreboard.name)
