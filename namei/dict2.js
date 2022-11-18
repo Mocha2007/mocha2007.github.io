@@ -36,7 +36,6 @@ function printDict(){
 			imgdd.classList.add('lemmaImage');
 			const img = document.createElement('img');
 			img.src = obj.img;
-			img.width = 64;
 			imgdd.appendChild(img);
 			entryDiv.appendChild(imgdd);
 		}

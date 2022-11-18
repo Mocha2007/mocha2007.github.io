@@ -3,6 +3,7 @@ dl.dictionary dt{
 }
 dl.dictionary img{
 	float: right;
+	height: 64px;
 }
 dl.dictionary > div:hover {
 	background-color: #bbb;
