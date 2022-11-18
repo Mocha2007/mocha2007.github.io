@@ -1,6 +1,6 @@
 /* exported main */
 /* global authorData, categoryData, entryData, intersect, languageData, lev, mean, meaningData,
-	replacementDate, round, sourceData, union, unique */
+	removeAccents, replacementDate, round, sourceData, union, unique */
 'use strict';
 
 /** @type {HTMLBodyElement} */
@@ -675,8 +675,7 @@ class Replacement {
 	}
 	/** @param {string} char */
 	targets(char){
-		return this.from.includes(
-			char.normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
+		return this.from.includes(removeAccents(char));
 	}
 	static forThis(char){
 		return Replacement.list.find(r => r.from.includes(char));
@@ -692,11 +691,11 @@ class Replacement {
 			if (r.targets(l))
 				test.delete(l);
 		}));
-		console.debug(new Array(...test).sort());
+		// console.debug(new Array(...test).sort());
 	}
 	static transform(s){
 		const output = [];
-		s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').split('').forEach(char => {
+		removeAccents(s).split('').forEach(char => {
 			const to = Replacement.forThis(char);
 			if (to)
 				output.push(to.to);
