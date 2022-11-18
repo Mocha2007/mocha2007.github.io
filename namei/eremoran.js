@@ -187,7 +187,9 @@ const LE = {
 		/** @type {[string, string]} */
 		current: undefined,
 		/** @type {HTMLSpanElement} */
-		element: document.getElementById('review'),
+		get element(){
+			return document.getElementById('review');
+		},
 		/** @type {[string, string][]} */
 		list: [],
 		remove(){
