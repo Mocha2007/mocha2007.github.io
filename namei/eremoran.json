@@ -906,11 +906,18 @@
 	},
 	{
 		"title": "balim",
-		"etym": "C/balis/-m//C/baliz/-m",
+		"etym": "C/balis/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"death",
-			"end",
+			"end"
+		]
+	},
+	{
+		"title": "balim",
+		"etym": "C/baliz/-m",
+		"cat": "n., 5th",
+		"defList": [
 			"trade, purchase, sale, exchange"
 		]
 	},
@@ -1838,13 +1845,19 @@
 	},
 	{
 		"title": "dasu",
-		"etym": "L/PEN/*daʃu/fast//C/da/-isu",
+		"etym": "L/PEN/*daʃu/fast",
 		"cat": "adj.",
 		"defList": [
-			"fast, swift, quick",
+			"fast, swift, quick"
+		]
+	},
+	{
+		"title": "dasu",
+		"etym": "C/da/-isu",
+		"cat": "adj.",
+		"defList": [
 			"dirty"
-		],
-		"notes": "adj."
+		]
 	},
 	{
 		"title": "defôz",
@@ -2450,13 +2463,20 @@
 	},
 	{
 		"title": "ha",
-		"etym": "L/PEN/*ɸia/barley//L/PEN/*ɸex/[onomatopoeia for falling rain]",
-		"cat": "n., 4th, interj.",
+		"etym": "L/PEN/*ɸia/barley",
+		"cat": "n., 4th",
 		"defList": [
-			"barley",
-			"[onomatopoeia for falling rain]"
+			"barley"
 		],
 		"categories": ["plant"]
+	},
+	{
+		"title": "ha",
+		"etym": "L/PEN/*ɸex/[onomatopoeia for falling rain]",
+		"cat": "interj.",
+		"defList": [
+			"[onomatopoeia for falling rain]"
+		]
 	},
 	{
 		"title": "habeka",
@@ -2569,21 +2589,36 @@
 	},
 	{
 		"title": "hai",
-		"etym": "L/PEN/*sai/thick//L/PEN/*ɸai/[disappointment particle]",
+		"etym": "L/PEN/*sai/thick",
 		"cat": "adj., s-triggering, adv.",
 		"defList": [
 			"thick, wide",
-			"extremely",
-			"[disappointment particle]"
+			"extremely"
 		],
+		"notes": "Can ONLY modify adjectives/adverbs, not verbs.",
 		"categories": ["intensity"]
 	},
 	{
+		"title": "hai",
+		"etym": "L/PEN/*ɸai/[disappointment particle]",
+		"cat": "adv.",
+		"defList": [
+			"[disappointment particle]"
+		]
+	},
+	{
 		"title": "hakz",
-		"etym": "L/PEN/*ɸaks/help//L/PEN/*sakz/squeeze",
+		"etym": "L/PEN/*ɸaks/help",
 		"cat": "v.",
 		"defList": [
-			"help",
+			"help"
+		]
+	},
+	{
+		"title": "hakz",
+		"etym": "L/PEN/*sakz/squeeze",
+		"cat": "v.",
+		"defList": [
 			"squeeze"
 		]
 	},
@@ -3914,15 +3949,22 @@
 	},
 	{
 		"title": "ku",
-		"etym": "L/PEN/*ku/with//L/PEN/*gus/big",
-		"cat": "post., adj., s-triggering",
+		"etym": "L/PEN/*ku/with",
+		"cat": "post.",
 		"defList": [
 			"and (clause-only: not nouns)",
 			"with (comitative)",
-			"(<i>math</i>) times, by",
-			"(archaic) big"
+			"(<i>math</i>) times, by"
 		],
 		"notes": "See <em>bo</em> for the instrumental. See <em>hans</em> for an and linking nominals."
+	},
+	{
+		"title": "ku",
+		"etym": "L/PEN/*gus/big",
+		"cat": "adj., s-triggering",
+		"defList": [
+			"(archaic) big"
+		]
 	},
 	{
 		"title": "kuafkar",
@@ -5070,14 +5112,21 @@
 	},
 	{
 		"title": "na",
-		"etym": "L/PEN/*na/ear//L/PEN/*na/what",
+		"etym": "L/PEN/*na/ear",
 		"cat": "n., 4th",
 		"defList": [
-			"ear (organ)",
+			"ear (organ)"
+		],
+		"categories": ["body part"]
+	},
+	{
+		"title": "na",
+		"etym": "L/PEN/*na/what",
+		"cat": "pron., det.",
+		"defList": [
 			"(archaic) which, what"
 		],
-		"notes": "Modern Eremoran uses <i>nau</i>, which was originally just the determiner form.",
-		"categories": ["body part"]
+		"notes": "Modern Eremoran uses <i>nau</i>, which was originally just the determiner form."
 	},
 	{
 		"title": "naba",
@@ -5212,15 +5261,22 @@
 	},
 	{
 		"title": "nasu",
-		"etym": "L/PEN/*natiu/two//L/PEN/*natsu/north",
+		"etym": "L/PEN/*natiu/two",
 		"cat": "adj.",
 		"defList": [
 			"two",
-			"(+ plural det) considering each member of the determiner in pairs, eg. <em>nasu hans</em> = \"every pair\" specifically rather than all. (Distributive pronoun/determiner) ",
-			"north"
+			"(+ plural det) considering each member of the determiner in pairs, eg. <em>nasu hans</em> = \"every pair\" specifically rather than all. (Distributive pronoun/determiner) "
 		],
 		"notes": "While possible with greater numerals, it is rather rare.",
 		"categories": ["number"]
+	},
+	{
+		"title": "nasu",
+		"etym": "L/PEN/*natsu/north",
+		"cat": "adj.",
+		"defList": [
+			"north"
+		]
 	},
 	{
 		"title": "nasudôz",
@@ -6251,14 +6307,21 @@
 	},
 	{
 		"title": "se",
-		"etym": "L/PEN/*sie/grain//L/PEN/*ʃe/other",
+		"etym": "L/PEN/*sie/grain",
 		"cat": "n., 4th",
 		"defList": [
 			"grain",
-			"a unit of measurement equal to one-fifteenth of one edzam (~2.84 mm)",
-			"(archaic) other"
+			"a unit of measurement equal to one-fifteenth of one edzam (~2.84 mm)"
 		],
 		"categories": ["plant", "v3_trade"]
+	},
+	{
+		"title": "se",
+		"etym": "L/PEN/*ʃe/other",
+		"cat": "pron., det.",
+		"defList": [
+			"(archaic) other"
+		]
 	},
 	{
 		"title": "seba",
@@ -6490,10 +6553,17 @@
 	},
 	{
 		"title": "siz",
-		"etym": "L/PEN/*ʃis/shine//L/PEN/sis/[causative]",
+		"etym": "L/PEN/*ʃis/shine",
 		"cat": "v.",
 		"defList": [
-			"shine",
+			"shine"
+		]
+	},
+	{
+		"title": "siz",
+		"etym": "L/PEN/sis/[causative]",
+		"cat": "v.",
+		"defList": [
 			"(archaic) [causative]"
 		]
 	},
@@ -6570,14 +6640,22 @@
 	},
 	{
 		"title": "sou",
-		"etym": "L/PEN/*tʃou/hot//L/PEN/*tʃiou/right",
+		"etym": "L/PEN/*tʃou/hot",
 		"cat": "adj.",
 		"defList": [
-			"warm, hot",
-			"right (ie. not left)",
+			"warm, hot"
+		],
+		"categories": ["weather"]
+	},
+	{
+		"title": "sou",
+		"etym": "L/PEN/*tʃiou/right",
+		"cat": "adj.",
+		"defList": [
+			"right (ie. the opposite of left, rather than the opposite of wrong)",
 			"androphilic (ie. gay male or heterosexual female)"
 		],
-		"categories": ["weather", "sex"]
+		"categories": ["sex"]
 	},
 	{
 		"title": "spart",
