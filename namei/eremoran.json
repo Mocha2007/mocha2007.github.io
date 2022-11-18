@@ -1051,7 +1051,7 @@
 	},
 	{
 		"title": "baztumimit",
-		"etym": "C/baztu/mimit",
+		"etym": "C/baztur/mimit",
 		"cat": "n., 3rd",
 		"defList": [
 			"porcelain"
@@ -3529,6 +3529,15 @@
 		"categories": ["toponym"]
 	},
 	{
+		"title": "kikir",
+		"etym": "R/kiu",
+		"cat": "n., 1st",
+		"defList": [
+			"friend"
+		],
+		"categories": ["person"]
+	},
+	{
 		"title": "kikom",
 		"etym": "C/kim/ko",
 		"cat": "n., 5th, adj.",
@@ -3553,6 +3562,15 @@
 		"defList": [
 			"place, location"
 		]
+	},
+	{
+		"title": "kin",
+		"etym": "L/PEN/*kin/sulfur",
+		"cat": "n., 4th",
+		"defList": [
+			"sulfur, brimstone"
+		],
+		"categories": ["v3_trade"]
 	},
 	{
 		"title": "kinam",
@@ -3585,24 +3603,6 @@
 			"mink"
 		],
 		"categories": ["animal"]
-	},
-	{
-		"title": "kikir",
-		"etym": "R/kiu",
-		"cat": "n., 1st",
-		"defList": [
-			"friend"
-		],
-		"categories": ["person"]
-	},
-	{
-		"title": "kin",
-		"etym": "L/PEN/*kin/sulfur",
-		"cat": "n., 1st",
-		"defList": [
-			"sulfur, brimstone"
-		],
-		"categories": ["v3_trade"]
 	},
 	{
 		"title": "kiom",
