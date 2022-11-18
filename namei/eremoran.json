@@ -472,7 +472,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"number, numeral"
-		]
+		],
+		"categories": ["number"]
 	},
 	{
 		"title": "amzralz",
@@ -840,12 +841,22 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "babzanu",
+		"etym": "C/babzu/hanu",
+		"cat": "adj.",
+		"defList": [
+			"twenty"
+		],
+		"categories": ["number"]
+	},
+	{
 		"title": "babzu",
 		"etym": "L/PEN/*babsu/four",
 		"cat": "adj.",
 		"defList": [
 			"four"
-		]
+		],
+		"categories": ["number"]
 	},
 	{
 		"title": "badmak",
@@ -2272,7 +2283,8 @@
 		"cat": "adj.",
 		"defList": [
 			"six"
-		]
+		],
+		"categories": ["number"]
 	},
 	{
 		"title": "emam",
@@ -2610,6 +2622,15 @@
 		]
 	},
 	{
+		"title": "hananu",
+		"etym": "C/hanu/hanu",
+		"cat": "adj.",
+		"defList": [
+			"twenty-five"
+		],
+		"categories": ["number"]
+	},
+	{
 		"title": "hanbikêr",
 		"etym": "C/hanu/bikêm",
 		"cat": "n., 1st",
@@ -2637,7 +2658,7 @@
 			"hand",
 			"five"
 		],
-		"categories": ["body part"]
+		"categories": ["body part", "number"]
 	},
 	{
 		"title": "hanum",
@@ -3054,7 +3075,8 @@
 			"(hoki/ho +) the other individual, the other thing recently mentioned: (cf. obviative pronoun) <ul> <li>  <i>Mor i lulz ku, <b>hor id</b> i libaz.</i><br>  person TOP laugh and, \"the other person\" TOP cry<br>  The person laughed, and then <b>they [another person]</b> cried. </li> </ul> ",
 			"(+ plural det) considering each member of the determiner equally, eg. <em>id hans</em> = \"every\" specifically rather than all. (Distributive pronoun/determiner) "
 		],
-		"notes": "See <em>be</em> for an or linking clauses. cf. <em>nanau</em>, inclusive or and \"quelque\" some. The choice of <em>hoki</em> vs. <em>ho</em> with the obviative mostly has to do with whether the person is close in relation or proximity to the listener"
+		"notes": "See <em>be</em> for an or linking clauses. cf. <em>nanau</em>, inclusive or and \"quelque\" some. The choice of <em>hoki</em> vs. <em>ho</em> with the obviative mostly has to do with whether the person is close in relation or proximity to the listener",
+		"categories": ["number"]
 	},
 	{
 		"title": "idak",
@@ -3660,7 +3682,8 @@
 		"cat": "adj.",
 		"defList": [
 			"seven"
-		]
+		],
+		"categories": ["number"]
 	},
 	{
 		"title": "klu",
@@ -4025,13 +4048,32 @@
 		]
 	},
 	{
+		"title": "kumkananu",
+		"etym": "C/kumkanu/hanu",
+		"cat": "adj.",
+		"defList": [
+			"seventy-five"
+		],
+		"categories": ["number"]
+	},
+	{
+		"title": "kumkanu",
+		"etym": "C/kumku/hanu",
+		"cat": "adj.",
+		"defList": [
+			"fifteen"
+		],
+		"categories": ["number"]
+	},
+	{
 		"title": "kumku",
 		"img": "../img/eremoran/kumku.png",
 		"etym": "L/PEN/*kumku/three",
 		"cat": "adj.",
 		"defList": [
 			"three"
-		]
+		],
+		"categories": ["number"]
 	},
 	{
 		"title": "kumkuz",
@@ -5120,12 +5162,22 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "nasananu",
+		"etym": "C/nasanu/hanu",
+		"cat": "adj.",
+		"defList": [
+			"fifty"
+		],
+		"categories": ["number"]
+	},
+	{
 		"title": "nasanu",
 		"etym": "C/nasu/hanu",
 		"cat": "adj.",
 		"defList": [
 			"ten"
-		]
+		],
+		"categories": ["number"]
 	},
 	{
 		"title": "nasdôk",
@@ -5143,7 +5195,8 @@
 		"defList": [
 			"second",
 			"(an)other"
-		]
+		],
+		"categories": ["number"]
 	},
 	{
 		"title": "nask",
@@ -5164,7 +5217,8 @@
 			"(+ plural det) considering each member of the determiner in pairs, eg. <em>nasu hans</em> = \"every pair\" specifically rather than all. (Distributive pronoun/determiner) ",
 			"north"
 		],
-		"notes": "While possible with greater numerals, it is rather rare."
+		"notes": "While possible with greater numerals, it is rather rare.",
+		"categories": ["number"]
 	},
 	{
 		"title": "nasudôz",
@@ -6303,7 +6357,17 @@
 		"cat": "adj.",
 		"defList": [
 			"hundred"
-		]
+		],
+		"categories": ["number"]
+	},
+	{
+		"title": "sesusesu",
+		"etym": "R/sesu",
+		"cat": "adj.",
+		"defList": [
+			"ten thousand"
+		],
+		"categories": ["number"]
 	},
 	{
 		"title": "set",
@@ -6765,7 +6829,8 @@
 		"cat": "adj.",
 		"defList": [
 			"nine"
-		]
+		],
+		"categories": ["number"]
 	},
 	{
 		"title": "tamal",
@@ -6784,6 +6849,15 @@
 			"must, have to",
 			"should"
 		]
+	},
+	{
+		"title": "tambabzu",
+		"etym": "C/tan/babzu",
+		"cat": "adj.",
+		"defList": [
+			"fourteen"
+		],
+		"categories": ["number"]
 	},
 	{
 		"title": "tan",
@@ -6819,7 +6893,8 @@
 		"cat": "adj.",
 		"defList": [
 			"twelve"
-		]
+		],
+		"categories": ["number"]
 	},
 	{
 		"title": "tanêt",
@@ -6828,6 +6903,24 @@
 		"defList": [
 			"quern, metate"
 		]
+	},
+	{
+		"title": "tanid",
+		"etym": "C/tan/id",
+		"cat": "adj.",
+		"defList": [
+			"eleven"
+		],
+		"categories": ["number"]
+	},
+	{
+		"title": "tankumku",
+		"etym": "C/tan/kumku",
+		"cat": "adj.",
+		"defList": [
+			"thirteen"
+		],
+		"categories": ["number"]
 	},
 	{
 		"title": "tantan",
@@ -7156,7 +7249,8 @@
 		"cat": "adj.",
 		"defList": [
 			"eight"
-		]
+		],
+		"categories": ["number"]
 	},
 	{
 		"title": "trikz",
