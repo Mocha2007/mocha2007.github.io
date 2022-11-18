@@ -2647,7 +2647,7 @@
 		"cat": "pron., det.",
 		"defList": [
 			"all, every",
-			"and* <ul> <li>  <i>Roraok su lusik su <b>dir hans</b> i uzurkuk.</i><br>  cat GEN dog GEN ABS all TOP good<br>  I like <b>both</b> cats <b>and</b> dogs. </li> </ul> "
+			"and* <ul> <li>  <i>Rurauk su lusik su <b>dir hans</b> i uzurkuk.</i><br>  cat GEN dog GEN ABS all TOP good<br>  I like <b>both</b> cats <b>and</b> dogs. </li> </ul> "
 		],
 		"pron": "hanz",
 		"notes": "Due to historical reasons, this word has an irregular spelling; *hanz would be expected. There also exist the rare conjunctions <em>unau</em> 'nor', <em>ufans</em> 'nand', and <em>unanau</em> 'xnor', generally only used in formal writing"
@@ -3072,7 +3072,7 @@
 		"defList": [
 			"one",
 			"some (fr. <i>certain</i>)",
-			"or (exclusive)* <ul> <li>  <i>Roraok su lusik su <b>dir id</b> i uzurkuk.</i><br>  cat GEN dog GEN ABS or TOP good<br>  I like <b>either</b> cats <b>or</b> dogs. </li> </ul> ",
+			"or (exclusive)* <ul> <li>  <i>Rurauk su lusik su <b>dir id</b> i uzurkuk.</i><br>  cat GEN dog GEN ABS or TOP good<br>  I like <b>either</b> cats <b>or</b> dogs. </li> </ul> ",
 			"(ko +) the same individual, the thing just mentioned: (cf. \"se\" in Latin, proximate pronoun) <ul> <li>  <i>Mor i lulz ku, <b>kor id</b> i libaz.</i><br>  person TOP laugh and, \"the same person\" TOP cry<br>  The person laughed, and then <b>they [same person]</b> cried. </li> </ul> ",
 			"(hoki/ho +) the other individual, the other thing recently mentioned: (cf. obviative pronoun) <ul> <li>  <i>Mor i lulz ku, <b>hor id</b> i libaz.</i><br>  person TOP laugh and, \"the other person\" TOP cry<br>  The person laughed, and then <b>they [another person]</b> cried. </li> </ul> ",
 			"(+ plural det) considering each member of the determiner equally, eg. <em>id hans</em> = \"every\" specifically rather than all. (Distributive pronoun/determiner) "
@@ -5140,7 +5140,7 @@
 		"defList": [
 			"some (fr. <i>quelque</i>)",
 			"something",
-			"or (inclusive)* <ul> <li>  <i>Roraok su lusik su <b>dir nanauk</b> i uzurkuk.</i><br>  cat GEN dog GEN ABS or TOP good<br>  I like <b>either</b> cats <b>or</b> dogs. </li> </ul> ",
+			"or (inclusive)* <ul> <li>  <i>Rurauk su lusik su <b>dir nanauk</b> i uzurkuk.</i><br>  cat GEN dog GEN ABS or TOP good<br>  I like <b>either</b> cats <b>or</b> dogs. </li> </ul> ",
 			"(archaic) whatever; whoever"
 		],
 		"notes": "See <em>be</em> for the verbal conjunction. cf. <em>id</em>."
@@ -5881,14 +5881,6 @@
 		]
 	},
 	{
-		"title": "rao",
-		"etym": "L/PEN/*rao/meow",
-		"cat": "interj.",
-		"defList": [
-			"meow"
-		]
-	},
-	{
 		"title": "raratiêr",
 		"etym": "C/raratit/-ê",
 		"cat": "n., 1st",
@@ -5921,6 +5913,15 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"animal, creature"
+		],
+		"categories": ["animal"]
+	},
+	{
+		"title": "rau",
+		"etym": "L/PEN/*rau/meow",
+		"cat": "interj.",
+		"defList": [
+			"meow"
 		],
 		"categories": ["animal"]
 	},
@@ -6083,35 +6084,6 @@
 		]
 	},
 	{
-		"title": "roraodok",
-		"etym": "D/roraok",
-		"cat": "n., 2nd",
-		"defList": [
-			"(archaic) kitten"
-		],
-		"categories": ["animal"]
-	},
-	{
-		"title": "roraok",
-		"etym": "R/rao",
-		"cat": "n., 2nd",
-		"defList": [
-			"cat"
-		],
-		"notes": "Perhaps due to a combination of its reduplication, and the unusual form of the interj., the spelling is irregular from what might be expected (*raraok).",
-		"categories": ["animal"]
-	},
-	{
-		"title": "roraokink",
-		"etym": "C/roraok/kink",
-		"cat": "n., 2nd",
-		"defList": [
-			"civet",
-			"mongoose"
-		],
-		"categories": ["animal"]
-	},
-	{
 		"title": "rôraz",
 		"etym": "C/rôm/raz",
 		"cat": "v.",
@@ -6122,7 +6094,7 @@
 	},
 	{
 		"title": "rorodok",
-		"etym": "r/roraodok",
+		"etym": "r/ruraudok",
 		"cat": "n., 2nd",
 		"defList": [
 			"kitten"
@@ -6138,6 +6110,34 @@
 			"say"
 		],
 		"notes": "Unlike English, the direct object is the person being spoken to/with, and the content being spoken is construed with <em>bo</em> \"with; using\"."
+	},
+	{
+		"title": "ruraudok",
+		"etym": "D/rurauk",
+		"cat": "n., 2nd",
+		"defList": [
+			"(archaic) kitten"
+		],
+		"categories": ["animal"]
+	},
+	{
+		"title": "rurauk",
+		"etym": "R/rau",
+		"cat": "n., 2nd",
+		"defList": [
+			"cat"
+		],
+		"categories": ["animal"]
+	},
+	{
+		"title": "ruraukink",
+		"etym": "C/rurauk/kink",
+		"cat": "n., 2nd",
+		"defList": [
+			"civet",
+			"mongoose"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "ruskank",
@@ -7439,7 +7439,7 @@
 			"big, great, large",
 			"many, much",
 			"more (incl. comparative)",
-			"(with <i>id</i>) (the) most (incl. superlative) <ul> <li>  <i>Roraok i id -udou kopdoz.</i><br>  cat TOP most like<br>  I like cats the most. </li> </ul> ",
+			"(with <i>id</i>) (the) most (incl. superlative) <ul> <li>  <i>Rurauk i id -udou kopdoz.</i><br>  cat TOP most like<br>  I like cats the most. </li> </ul> ",
 			"[optional plurality marker]"
 		],
 		"notes": "cf. <em>bokusam</em>, the noun form"
