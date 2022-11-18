@@ -5896,7 +5896,7 @@
 		"cat": "v.",
 		"defList": [
 			"write",
-			"(+<i>dir tikt ad X</i>) hone X (a skill or weapon)"
+			"(+<i>dir tikat ad X</i>) hone X (a skill or weapon)"
 		]
 	},
 	{
@@ -6816,15 +6816,15 @@
 	},
 	{
 		"title": "tikam",
-		"etym": "C/tikt/-m",
+		"etym": "C/tikat/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"precision, accuracy"
 		]
 	},
 	{
-		"title": "tikt",
-		"etym": "L/PEN/*tixt/arrow",
+		"title": "tikat",
+		"etym": "L/PEN/*tixat/arrow",
 		"cat": "n., 3rd",
 		"defList": [
 			"arrow"
