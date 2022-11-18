@@ -93,12 +93,6 @@ div.colorbar{
 	text-align: center;
 	font-style: italic;
 }
-.fliph{
-	transform:scale(-1, 1);
-}
-.flipv{
-	transform:scale(1, -1);
-}
 table.imagetable tr td{
 	border: none;
 }
@@ -107,18 +101,6 @@ table.lefttable td{
 }
 .invisible{
 	display: none;
-}
-.rotaround{
-	/* rotate something 180 degrees */
-	transform:rotate(180deg);
-}
-.rotccw{
-	/* rotate something 270 degrees clockwise */
-	transform:rotate(270deg);
-}
-.rotcw{
-	/* rotate something 90 degrees clockwise */
-	transform:rotate(90deg);
 }
 .tintblue{
 	background-color: #ccf;
