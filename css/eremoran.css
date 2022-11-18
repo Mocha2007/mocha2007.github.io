@@ -152,10 +152,10 @@ a.eremoran {
 /* ereQuote */
 #ereQuote {
 	background-color: #bbb;
-	border: 0.5vh solid #444;
-	border-radius: 4vh;
-	height: 25vh;
-	line-height: 25vh;
+	border: 2px solid #444;
+	border-radius: 50px;
+	height: 200px;
+	line-height: 200px;
 	padding-bottom: 25px;
 }
 #ereQuote > * {
