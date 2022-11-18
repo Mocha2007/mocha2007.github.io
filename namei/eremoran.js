@@ -1,6 +1,6 @@
 /* exported adj, ereNum, linkCard, main, search, titleCard, wordle */
-/* global charHisto, commaNumber, etymElement, histo, quotes, random,
-	range, round, translationChallenges, union */
+/* global charHisto, commaNumber, etymElement, getDict, histo,
+	quotes, random, range, round, startEreQuote, translationChallenges, union */
 
 'use strict';
 
@@ -31,7 +31,7 @@ const elements = {
 // utilities
 
 /**
- * @param {string} s eremoran word 
+ * @param {string} s eremoran word
  * @returns {string} */
 function gloss(s){
 	try {
@@ -115,13 +115,15 @@ const compile = {
 	sequences(){
 		return elements.dict.map(word => Array.from(word).map((letter, i) => letter + word[i+1]).join(' '))
 			.join(' ').replace(/ .undefined/g, '').split(' ');
-	}
+	},
 };
 
 // learn eremoran!
 
 const LE = {
-	learn: document.getElementById('learn'),
+	get learn(){
+		return document.getElementById('learn');
+	},
 	new(canIUseReview = true){
 		// console.debug('LE.new', this);
 		// blank
@@ -167,7 +169,7 @@ const LE = {
 			});
 			return o;
 		},
-		/** 
+		/**
 		 * @param {string} tag
 		 * @returns {[string, string]}
 		 */
@@ -446,9 +448,9 @@ toponym.updateCombos = () => document.getElementById('toponym_combos').innerHTML
 	= commaNumber(toponym.first.length * toponym.last.length);
 
 const adj = {
-	/** @param {string} adj */
-	classes(adj){
-		const forms = [adj + 'r', adj + 'k', adj + 't', adj, adj + 'm'];
+	/** @param {string} a */
+	classes(a){
+		const forms = [a + 'r', a + 'k', a + 't', a, a + 'm'];
 		const table = document.createElement('table');
 		// create rows...
 		forms.forEach((form, i) => {
@@ -463,10 +465,10 @@ const adj = {
 		});
 		return table;
 	},
-	/** @param {string} adj */
-	classless(adj){
+	/** @param {string} a */
+	classless(a){
 		const elem = document.createElement('span');
-		elem.innerHTML = adj;
+		elem.innerHTML = a;
 		return elem;
 	},
 	/** @param {string} indexForm */
@@ -505,10 +507,10 @@ const adj = {
 	},
 	tool(){
 		/** @type {string} */
-		const adj = document.getElementById('adjInput').value;
+		const a = document.getElementById('adjInput').value;
 		const output = document.getElementById('adjOutput');
 		output.innerHTML = '';
-		output.appendChild(this.decline(adj));
+		output.appendChild(this.decline(a));
 	},
 };
 
@@ -701,12 +703,12 @@ const phono = {
 				? 'stressed' : 'unstressed';
 			// replace letters with sounds
 			Array.from(syll).forEach(char => {
-				let i = this.vowels.ortho.indexOf(char);
-				if (0 <= i)
-					syll = syll.replace(char, this.vowels[stress][i])
+				let j = this.vowels.ortho.indexOf(char);
+				if (0 <= j)
+					syll = syll.replace(char, this.vowels[stress][j]);
 				else {
-					i = this.consonants.ortho.indexOf(char);
-					syll = syll.replace(char, this.consonants.ipa[i])
+					j = this.consonants.ortho.indexOf(char);
+					syll = syll.replace(char, this.consonants.ipa[j]);
 				}
 			});
 			// coda liquids
@@ -867,6 +869,7 @@ const gen = {
 			while (choice !== '$'){
 				// pick next char
 				const choices = Object.keys(o.data[choice]);
+				// eslint-disable-next-line no-loop-func
 				const weights = choices.map(c => o.data[choice][c]);
 				choice = random.weightedChoice(choices, weights);
 				if (choice !== '$')
@@ -1126,6 +1129,7 @@ function computeStats(){
 		}
 	});
 	// print success message
+	// eslint-disable-next-line max-len
 	console.info(`eremoran.js successfully parsed ${elements.dict.length} words and recorded statistics.`);
 }
 
