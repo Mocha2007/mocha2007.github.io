@@ -905,16 +905,18 @@
 		"categories": ["plant"]
 	},
 	{
-		"title": "balitam",
-		"etym": "B/bat/balitam",
+		"title": "balim",
+		"etym": "C/balis/-m//C/baliz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"death",
-			"end"
+			"end",
+			"trade, purchase, sale, exchange"
 		]
 	},
 	{
-		"title": "balitz",
+		"title": "balis",
+		"pron": "balɪz",
 		"etym": "L/PEN/*balits/die",
 		"cat": "v.",
 		"defList": [
