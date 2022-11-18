@@ -748,7 +748,7 @@ const phono = {
 	syllabify(word){
 		const rev = word.split('').reverse().join('');
 		// eslint-disable-next-line max-len
-		const regex = /(([sz][bdkmnpt])|([kt][sn])|([bdhkmnpstz][lr])|(tk)|([bdhklmnprstz]))?[aeiouêô]((r[bdkpt])|([ptk]s|(lk)|([bdhklmnprstz])))?/g;
+		const regex = /(([sz][bdkmnpt])|([kt][sn])|([mbtdzk][lr])|(tk)|([bdhklmnprstz]))?[aeiouêô]((r[bdkpt])|([ptk]s|(lk)|([bdhklmnprstz])))?/g;
 		return rev.match(regex).reverse().map(s => s.split('').reverse().join(''));
 	},
 	/** @param {string} word */
