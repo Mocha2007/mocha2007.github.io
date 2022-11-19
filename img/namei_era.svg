@@ -57,6 +57,11 @@
 		</symbol>
 		<symbol id="timeline2" style="overflow: visible;">
 			<text x="31.5">✞</text><!-- Crucifixion -->
+			<text x="960">宋</text><!-- Song -->
+			<text x="1271">元</text><!-- Yuan -->
+			<text x="1368">明</text><!-- Ming -->
+			<text x="1492">🌎</text><!-- European knowledge of the Americas -->
+			<text x="1644">清</text><!-- Qing -->
 			<text x="1781.25">⛢</text><!-- Uranus -->
 			<text x="1801">⚳</text><!-- Ceres -->
 			<text x="1846.75">♆</text><!-- Neptune -->
