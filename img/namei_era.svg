@@ -65,6 +65,11 @@
 			<text x="1930.2">♇</text><!-- Pluto -->
 			<text x="1939.7">II</text><!-- WWII -->
 		</symbol>
+		<symbol id="timeline3" style="overflow: visible;">
+			<text x="-2300" style="fill:#880">I</text><!-- Iwemälre -->
+			<text x="-1400" style="fill:#008">V</text><!-- Važcud -->
+			<text x="-500" style="fill:#800">E</text><!-- Eremor -->
+		</symbol>
 		<clipPath id="trim_top">
 			<rect x="0" y="0" width="650" height="1000" />
 		</clipPath>
@@ -95,6 +100,7 @@
 		<use xlink:href="#timeline" x="0" y="290" transform="translate(-1950 0)"/>
 		<use xlink:href="#timeline" x="0" y="420" transform="translate(-1850 0)"/>
 		<use xlink:href="#timeline" x="0" y="550" transform="translate(50 0)"/> <!-- = 50 BCE -->
+			<use xlink:href="#timeline3" x="0" y="550" transform="translate(50 -5)"/>
 	</g></g>
 	<g id="labels">
 		<text x="75" y="20">Earth</text>
