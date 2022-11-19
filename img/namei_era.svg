@@ -68,13 +68,13 @@
 
 	<!-- main -->
 	<g transform="translate(0 30)" clip-path="url(#trim_top)">
-	<g transform="rotate(-90) translate(-1000 0)" style="overflow: visible;">
-		<use xlink:href="#timeline" x="0" y="25" transform="translate(-1020 0)"/>
-			<use xlink:href="#timeline2" x="0" y="25" transform="translate(-1020 -5)"/>
-		<use xlink:href="#timeline" x="0" y="160" transform="translate(-1250 0)"/>
-		<use xlink:href="#timeline" x="0" y="290" transform="translate(-950 0)"/>
-		<use xlink:href="#timeline" x="0" y="420" transform="translate(-850 0)"/>
-		<use xlink:href="#timeline" x="0" y="550" transform="translate(1500 0)"/>
+	<g transform="rotate(-90)" style="overflow: visible;">
+		<use xlink:href="#timeline" x="0" y="25" transform="translate(-2020 0)"/>
+			<use xlink:href="#timeline2" x="0" y="25" transform="translate(-2020 -5)"/>
+		<use xlink:href="#timeline" x="0" y="160" transform="translate(-2250 0)"/>
+		<use xlink:href="#timeline" x="0" y="290" transform="translate(-1950 0)"/>
+		<use xlink:href="#timeline" x="0" y="420" transform="translate(-1850 0)"/>
+		<use xlink:href="#timeline" x="0" y="550" transform="translate(350 0)"/> <!-- = 350 BCE -->
 	</g></g>
 	<g id="labels">
 		<text x="75" y="20">Earth</text>

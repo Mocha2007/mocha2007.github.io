@@ -26,7 +26,7 @@ var constants = {
 	},
 	oneia: {
 		// 00:00 is at roughly local noon
-		atEpoch: 1150,
+		atEpoch: 1750,
 		day: 105583056.7402678, // ms; solar day; the sideral day is 104148 s
 		epoch: 1497151176000, // ms; SUN 2017 JUN 11 03:19:36 UTC
 		year: 7662598895.79935, // ms; oneian orbital period
