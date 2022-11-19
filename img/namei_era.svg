@@ -68,7 +68,9 @@
 		<symbol id="timeline3" style="overflow: visible;">
 			<text x="-2300" style="fill:#880">I</text><!-- Iwemälre -->
 			<text x="-1400" style="fill:#008">V</text><!-- Važcud -->
-			<text x="-500" style="fill:#800">E</text><!-- Eremor -->
+			<text x="-500" style="fill:#800">E₁</text><!-- Eremor Kingdom -->
+			<text x="-368" style="fill:#800">E₂</text><!-- Eremor Republic -->
+			<text x="-50" style="fill:#800">E₃</text><!-- New Eremor Kingdom -->
 		</symbol>
 		<clipPath id="trim_top">
 			<rect x="0" y="0" width="650" height="1000" />
