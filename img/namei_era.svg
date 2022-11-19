@@ -1,10 +1,17 @@
 <?xml version="1.0" standalone="no"?>
-<svg width="650" height="530" version="1.1"
+<svg width="650" height="1030" version="1.1"
 	xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<desc>Nameian Eras</desc>
 	<style>
 		#labels text, #timeline text, #timeline2 text {
 			text-anchor:middle;
+		}
+		.minorRule {
+			stroke: grey;
+			stroke-width: 1px;
+		}
+		text {
+			text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white;
 		}
 	</style>
 	<defs>
@@ -56,7 +63,7 @@
 			<text x="1930.2">♇</text><!-- Pluto -->
 		</symbol>
 		<clipPath id="trim_top">
-			<rect x="0" y="0" width="650" height="500" />
+			<rect x="0" y="0" width="650" height="1000" />
 		</clipPath>
 	</defs>
 	<!-- lines
@@ -65,10 +72,16 @@
 		maian year = roughly 5 earth years so not incl.
 	-->
 
-	<line x1="0" y1="130" x2="650" y2="130" style="stroke:grey;stroke-width:1"/>
-	<line x1="0" y1="230" x2="650" y2="230" style="stroke:grey;stroke-width:1"/>
-	<line x1="0" y1="330" x2="650" y2="330" style="stroke:grey;stroke-width:1"/>
-	<line x1="0" y1="430" x2="650" y2="430" style="stroke:grey;stroke-width:1"/>
+	<line x1="0" y1="130" x2="650" y2="130" class="minorRule"/>
+	<line x1="0" y1="230" x2="650" y2="230" class="minorRule"/>
+	<line x1="0" y1="330" x2="650" y2="330" class="minorRule"/>
+	<line x1="0" y1="430" x2="650" y2="430" class="minorRule"/>
+
+	<line x1="0" y1="530" x2="650" y2="530" class="minorRule"/>
+	<line x1="0" y1="630" x2="650" y2="630" class="minorRule"/>
+	<line x1="0" y1="730" x2="650" y2="730" class="minorRule"/>
+	<line x1="0" y1="830" x2="650" y2="830" class="minorRule"/>
+	<line x1="0" y1="930" x2="650" y2="930" class="minorRule"/>
 
 	<!-- main -->
 	<g transform="translate(0 30)" clip-path="url(#trim_top)">
@@ -89,6 +102,6 @@
 	</g>
 	<line x1="0" y1="30" x2="650" y2="30" style="stroke:black;stroke-width:2" />
 	<text x="0" y="25" style="text-anchor:left;font-size:80%">now</text>
-	<line x1="0" y1="530" x2="650" y2="530" style="stroke:black;stroke-width:2" />
-	<text x="0" y="525" style="text-anchor:left;font-size:67%">500 ya = 2059 Eremoran = 103 Maian</text>
+	<line x1="0" y1="1030" x2="650" y2="1030" style="stroke:black;stroke-width:2" />
+	<text x="0" y="1025" style="text-anchor:left;font-size:67%">1000 ya = 4118 Eremoran = 206 Maian</text>
 </svg>
