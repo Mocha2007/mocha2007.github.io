@@ -28,10 +28,13 @@
 			<rect x="2020" width="1000" height="100" style="fill:magenta"/>
 			<text transform="translate(2030 50) rotate(90)">Future Era</text>
 			<g transform="translate(0 -5)">
+				<text x="-3500">Sn</text><!-- Tin -->
+				<text x="-2737">🍵</text><!-- Tea (highly speculative) -->
 				<text x="-2000">S</text><!-- Sulfur -->
 				<text x="-1500">Hg</text><!-- Mercury -->
 				<text x="-1000">Zn</text><!-- Zinc -->
 				<text x="-600">Pt</text><!-- Platinum -->
+				<text x="-200">📝</text><!-- Paper -->
 				<text x="815">As Sb</text><!-- Arsenic and Antimony -->
 				<text x="1000">Bi</text><!-- Bismuth -->
 				<text x="1608">🔭</text><!-- Telescope; representing astronomy -->
@@ -46,6 +49,7 @@
 			</g>
 		</symbol>
 		<symbol id="timeline2" style="overflow: visible;">
+			<text x="31.5">✞</text><!-- Crucifixion -->
 			<text x="1781.25">⛢</text><!-- Uranus -->
 			<text x="1801">⚳</text><!-- Ceres -->
 			<text x="1846.75">♆</text><!-- Neptune -->
@@ -74,7 +78,7 @@
 		<use xlink:href="#timeline" x="0" y="160" transform="translate(-2250 0)"/>
 		<use xlink:href="#timeline" x="0" y="290" transform="translate(-1950 0)"/>
 		<use xlink:href="#timeline" x="0" y="420" transform="translate(-1850 0)"/>
-		<use xlink:href="#timeline" x="0" y="550" transform="translate(350 0)"/> <!-- = 350 BCE -->
+		<use xlink:href="#timeline" x="0" y="550" transform="translate(50 0)"/> <!-- = 50 BCE -->
 	</g></g>
 	<g id="labels">
 		<text x="75" y="20">Earth</text>
