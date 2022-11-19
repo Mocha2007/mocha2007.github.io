@@ -41,6 +41,7 @@
 				<text x="-1500">Hg</text><!-- Mercury -->
 				<text x="-1000">Zn</text><!-- Zinc -->
 				<text x="-600">Pt</text><!-- Platinum -->
+				<text x="-250">π</text><!-- https://en.wikipedia.org/wiki/Pi#Polygon_approximation_era -->
 				<text x="-200">📝</text><!-- Paper -->
 				<text x="815">As Sb</text><!-- Arsenic and Antimony -->
 				<text x="1000">Bi</text><!-- Bismuth -->
@@ -60,7 +61,9 @@
 			<text x="1781.25">⛢</text><!-- Uranus -->
 			<text x="1801">⚳</text><!-- Ceres -->
 			<text x="1846.75">♆</text><!-- Neptune -->
+			<text x="1914.6">I</text><!-- WWI -->
 			<text x="1930.2">♇</text><!-- Pluto -->
+			<text x="1939.7">II</text><!-- WWII -->
 		</symbol>
 		<clipPath id="trim_top">
 			<rect x="0" y="0" width="650" height="1000" />
