@@ -50,9 +50,6 @@
 				<text x="1788">ə</text><!-- PIE; representing linguistics -->
 				<text x="1945.5">☢</text><!-- Nuclear Bomb -->
 				<text x="1957.75">🛰️</text><!-- Artificial Satellite -->
-				<!-- Sources
-					https://www.humanmars.net/p/mars-colonization-timeline.html
-				<text x="2031.5">♂α</text> Mars Base Alpha -->
 			</g>
 		</symbol>
 		<symbol id="timeline2" style="overflow: visible;">
@@ -68,6 +65,8 @@
 			<text x="1914.6">I</text><!-- WWI -->
 			<text x="1930.2">♇</text><!-- Pluto -->
 			<text x="1939.7">II</text><!-- WWII -->
+			<!-- Mars Base Alpha https://www.humanmars.net/p/mars-colonization-timeline.html -->
+			<text x="2031.5">♂α</text>
 		</symbol>
 		<symbol id="timeline3" style="overflow: visible;">
 			<text x="-2300" style="fill:#880">I</text><!-- Iwemälre -->
