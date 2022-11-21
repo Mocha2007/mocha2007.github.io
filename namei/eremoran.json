@@ -6742,10 +6742,11 @@
 	},
 	{
 		"title": "su",
-		"etym": "L/PEN/*tʃu/of; from",
+		"etym": "L/PEN/*tʃu/[ERG-GEN marker]",
 		"cat": "post.",
 		"defList": [
-			"of, belonging to or made of"
+			"of, belonging to or made of",
+			"(archaic or ZE dialect) [Ergative marker]"
 		]
 	},
 	{

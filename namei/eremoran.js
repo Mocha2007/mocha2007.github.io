@@ -983,6 +983,11 @@ const dialectMap = {
 			'[ˈewm.nu]', '[ˈewm.nu]', '[ˈewm.nu]', '[ˈewm.nu]', '[ˈewm.nu]',
 			'[ɛʟ̠ʷm.nu]', '[ˈxa.jo]', '[ˈa.ju]', '[ˈa.gu]', // *edia rel. to eremoran edzam
 		], // six
+		[
+			'Ø dir', 'Ø dir', 'Ø dir', 'Ø dir',
+			'Ø dir', 'Ø dir', 'Ø dir', 'Ø dir', 'Ø dir',
+			'tsu di', 'chu Ø', 'chu Ø', 'shu Ø', // *edia rel. to eremoran edzam
+		], // erg-abs markers
 	],
 	display(mode = 0){
 		// clear
@@ -1018,6 +1023,7 @@ const dialectMap = {
 			'The standard word for girl.',
 			'The standard verb negator.',
 			'The standard word for the numeral six.',
+			'The standard ergative and absolutive markers, respectively.',
 		],
 		/* place radio button elements */
 		init(){
@@ -1041,7 +1047,7 @@ const dialectMap = {
 		},
 		names: [
 			'debug_id', 'Names', 'Noun Classes', '/r/', 'barz', 'ho',
-			'beautiful', 'girl', 'not', 'six',
+			'beautiful', 'girl', 'not', 'six', 'ERG-ABS',
 		],
 	},
 	/**
