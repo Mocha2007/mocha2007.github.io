@@ -2029,7 +2029,7 @@
 		"cat": "post., adv.",
 		"defList": [
 			"in, inside (of)",
-			"on",
+			"on (ie. 'on a wall' but not 'on a table')",
 			"above, over",
 			"more than",
 			"(<i>math</i>) over, divided by",
@@ -6723,6 +6723,15 @@
 			"a coin made of tin"
 		],
 		"categories": ["metal"]
+	},
+	{
+		"title": "stôd",
+		"etym": "C/tô/ad",
+		"cat": "post.",
+		"defList": [
+			"atop, upon, on top of"
+		],
+		"notes": "Full derivation: <em>su tô ad</em>"
 	},
 	{
 		"title": "stum",
