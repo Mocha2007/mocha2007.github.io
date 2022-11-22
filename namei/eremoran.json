@@ -225,8 +225,8 @@
 			"(<i>prep.</i>) for",
 			"(<i>prep.</i>) into, onto",
 			"(<i>prep.</i>) until, up to",
-			"(<i>prep.</i>) than",
 			"(<i>prep.</i>) in comparison to, relative to",
+			"(<i>prep., archaic or ZE dialect</i>) than",
 			"(<i>post.</i>) at, by",
 			"(<i>post.</i>) during, while",
 			"(<i>post., inanimate only</i>) have: X Y ad = Y has X",
@@ -2030,6 +2030,8 @@
 		"defList": [
 			"in, inside (of)",
 			"on",
+			"above, over",
+			"more than",
 			"(<i>math</i>) over, divided by",
 			"(informal, verb +) (forms continuous aspect)"
 		],
@@ -5467,7 +5469,8 @@
 		"etym": "L/PEN/*noʃt/below, under",
 		"cat": "post.",
 		"defList": [
-			"below, under"
+			"below, under",
+			"less than"
 		]
 	},
 	{
