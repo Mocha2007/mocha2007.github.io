@@ -22,7 +22,7 @@ function makeTOC(){
 		// console.log('\t'.repeat(parseInt(depth, 10)-1), formattedname);
 	}
 	text += '</details>';
-	document.getElementById('nav').innerHTML = text;
+	document.getElementsByTagName('nav')[0].innerHTML = text;
 }
 
 window.onload = makeTOC;

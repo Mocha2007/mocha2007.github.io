@@ -4,4 +4,4 @@ h1,h2{text-shadow:none;}
 .up{list-style-image:url('img/upprint.png');}
 abbr{border-bottom:1px solid black;}
 #m{filter:brightness(0);}
-#nav{display:none;}
+nav{display:none;}

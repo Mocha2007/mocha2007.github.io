@@ -37,7 +37,7 @@ details{
 details a{
 	font-size: 16px;
 }
-h1, h2, h3, #top, #bottom, .center, #nav summary {
+h1, h2, h3, #top, #bottom, .center, nav summary {
 	text-align: center;
 }
 q{
@@ -139,7 +139,7 @@ td.tintblue, td.tintgreen, td.tintred, td.tintsky, td.tintyellow{
 .nav4::before{content:'┃┃┕';}
 .nav5::before{content:'┃┃┃┕';}
 .nav6::before{content:'┃┃┃┃┕';}
-#nav{
+nav{
 	background: #999;
 	border: 2px solid #444;
 	color: #222;
@@ -159,12 +159,12 @@ td.tintblue, td.tintgreen, td.tintred, td.tintsky, td.tintyellow{
 }
 /* mobile */
 @media (max-width: 750px) {
-  #nav{
+  nav{
 	width: 25%;
   }
 }
 @media print {
-	#nav{
+	nav{
 		display: none;
 	}
 }
