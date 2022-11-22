@@ -481,15 +481,15 @@ const adj = {
 		const gendered = indexForm[indexForm.length-1] === 'u';
 		const stem = gendered ? indexForm.slice(0, indexForm.length - 1) : indexForm;
 		const [comparative, superlative, equative] = [
-			stem + 'udou',
-			stem + 'udoid',
+			stem + 'uku',
+			stem + 'id',
 			stem + 'osaz',
 		];
 		const positive = gendered
 			? this.classes(indexForm) : this.classless(indexForm);
 		const ee = [
 			{name: 'Positive', elem: positive},
-			{name: 'Comparative', elem: this.classes(comparative)},
+			{name: 'Comparative (ZE)', elem: this.classes(comparative)},
 			{name: 'Superlative', elem: this.classless(superlative)},
 			{name: 'Equative', elem: this.classless(equative)},
 		];
