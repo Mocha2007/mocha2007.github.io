@@ -2030,6 +2030,8 @@
 		"defList": [
 			"in, inside (of)",
 			"on",
+			"above, over",
+			"more than",
 			"(<i>math</i>) over, divided by",
 			"(informal, verb +) (forms continuous aspect)"
 		],
@@ -5467,7 +5469,8 @@
 		"etym": "L/PEN/*noʃt/below, under",
 		"cat": "post.",
 		"defList": [
-			"below, under"
+			"below, under",
+			"less than"
 		]
 	},
 	{
