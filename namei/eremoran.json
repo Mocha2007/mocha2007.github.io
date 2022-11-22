@@ -2030,9 +2030,6 @@
 		"defList": [
 			"in, inside (of)",
 			"on (ie. 'on a wall' but not 'on a table')",
-			"above, over",
-			"more than",
-			"(<i>math</i>) over, divided by",
 			"(informal, verb +) (forms continuous aspect)"
 		],
 		"notes": "ZE dialects use this prepositionally for translative senses."
@@ -6729,7 +6726,10 @@
 		"etym": "C/tô/ad",
 		"cat": "post.",
 		"defList": [
-			"atop, upon, on top of"
+			"atop, upon, on top of",
+			"above, over",
+			"more than",
+			"(math) over, divided by"
 		],
 		"notes": "Full derivation: <em>su tô ad</em>"
 	},
