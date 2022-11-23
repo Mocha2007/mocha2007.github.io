@@ -11,10 +11,15 @@ const shiritori = {
 	},
 	// computer plays...
 	ai(){
-		if (this.currentGame.length)
-			this.add(this.random.continuation);
-		else
-			this.add(this.random.start);
+		const play = this.currentGame.length ? this.random.continuation : this.random.start;
+		if (play)
+			this.add(play);
+		else {
+			alert(`You beat the AI! Score: ${this.elem.score.innerHTML}`);
+			// console.debug(this.elem.answers.children.length, this.currentGame);
+			this.restart();
+		}
+		return !!play;
 	},
 	/** @type {string} */
 	get currentChar(){
