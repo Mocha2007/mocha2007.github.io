@@ -578,7 +578,7 @@
 		"etym": "D/aramat",
 		"cat": "n., 3rd",
 		"defList": [
-			"a small copper piece, worth a quarter aramat"
+			"small copper piece, worth a quarter aramat"
 		],
 		"categories": ["coin"]
 	},
@@ -615,7 +615,7 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"copper",
-			"a copper piece, worth four aramaelat"
+			"copper piece, worth four aramaelat"
 		],
 		"categories": ["coin", "metal"]
 	},
@@ -759,7 +759,7 @@
 		"etym": "D/arzênt",
 		"cat": "n., 3rd",
 		"defList": [
-			"a small silver piece, worth four aramat"
+			"small silver piece, worth four aramat"
 		],
 		"categories": ["coin"]
 	},
@@ -768,7 +768,7 @@
 		"etym": "A/arzênt",
 		"cat": "n., 3rd",
 		"defList": [
-			"a large silver piece, worth four arzênt"
+			"large silver piece, worth four arzênt"
 		],
 		"categories": ["coin"]
 	},
@@ -778,7 +778,7 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"silver",
-			"a silver piece, worth four arzênelat"
+			"silver piece, worth four arzênelat"
 		],
 		"categories": ["coin", "metal"]
 	},
@@ -1626,7 +1626,7 @@
 		"etym": "L/PEN/*busx/dog",
 		"cat": "n., 2nd",
 		"defList": [
-			"an owned dog (specifically, one that is not feral or stray)",
+			"owned dog (specifically, one that is not feral or stray)",
 			"(archaic) any dog, feral or stray"
 		],
 		"notes": "Feral/stray dogs are called <em>lusik</em> 'wolf'",
@@ -1836,7 +1836,7 @@
 		"etym": "A/daret",
 		"cat": "n., 3rd",
 		"defList": [
-			"a large gold coin, worth four daret"
+			"large gold coin, worth four daret"
 		],
 		"categories": ["coin"]
 	},
@@ -1854,7 +1854,7 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"money (especially gold money)",
-			"a gold (actually, electrum) coin, worth four arzênkut"
+			"gold (actually, electrum) coin, worth four arzênkut"
 		],
 		"categories": ["coin"]
 	},
@@ -2195,7 +2195,7 @@
 		"etym": "r/darekut",
 		"cat": "n., 3rd",
 		"defList": [
-			"a large gold coin, worth four daret"
+			"large gold coin, worth four daret"
 		],
 		"categories": ["coin"]
 	},
@@ -2237,7 +2237,7 @@
 			"part",
 			"section, segment, chapter",
 			"sector, district",
-			"a unit of measurement equal to one-quarter of one labnim (~42.6 mm)"
+			"unit of measurement equal to one-quarter of one labnim (~42.6 mm)"
 		]
 	},
 	{
@@ -2417,7 +2417,7 @@
 		"etym": "C/ereu/mor",
 		"cat": "n., 1st",
 		"defList": [
-			"an Eremoran",
+			"Eremoran (person)",
 			"the city Eremora",
 			"the country Eremor"
 		],
@@ -3040,7 +3040,7 @@
 		"etym": "L/PRE/sūniku//L/NUZ/suniku/L/VAZ/sanicu",
 		"cat": "n., 2nd",
 		"defList": [
-			"a hunik (large yellow mammal related to the echidna)"
+			"hunik (large yellow mammal related to the echidna)"
 		],
 		"categories": ["animal"]
 	},
@@ -3607,7 +3607,7 @@
 		"etym": "L/PRE/kʷikwil",
 		"cat": "n., 4th",
 		"defList": [
-			"A city on the foothills of the Nadnekis, or the small nation it controls."
+			"city on the foothills of the Nadnekis, or the small nation it controls."
 		],
 		"categories": ["toponym"]
 	},
@@ -4857,7 +4857,7 @@
 		"etym": "r/aramaelat",
 		"cat": "n., 3rd",
 		"defList": [
-			"a small copper piece, worth a quarter aramat"
+			"small copper piece, worth a quarter aramat"
 		],
 		"categories": ["coin"]
 	},
@@ -5360,7 +5360,7 @@
 		"etym": "r/arzênelat",
 		"cat": "n., 3rd",
 		"defList": [
-			"a small silver piece, worth four aramat"
+			"small silver piece, worth four aramat"
 		],
 		"categories": ["coin"]
 	},
@@ -5623,7 +5623,7 @@
 		"etym": "L/TAI/Oddom/Oddomsumor",
 		"cat": "n., 1st",
 		"defList": [
-			"A conquered tribe (sumor) in the mid-east of Eremor."
+			"Oddomsumor, a conquered tribe (sumor) in the mid-east of Eremor."
 		],
 		"categories": ["toponym"]
 	},
@@ -6350,7 +6350,7 @@
 		"cat": "n., 4th",
 		"defList": [
 			"grain",
-			"a unit of measurement equal to one-fifteenth of one edzam (~2.84 mm)"
+			"unit of measurement equal to one-fifteenth of one edzam (~2.84 mm)"
 		],
 		"categories": ["plant", "v3_trade"]
 	},
@@ -6755,7 +6755,7 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"tin",
-			"a coin made of tin"
+			"coin made of tin"
 		],
 		"categories": ["metal"]
 	},
@@ -6880,7 +6880,7 @@
 		"cat": "n., 1st",
 		"defList": [
 			"tribe",
-			"a (usually small) organized polity"
+			"organized polity (usually small)"
 		],
 		"categories": ["government"]
 	},
@@ -7901,7 +7901,7 @@
 		"etym": "r/arzênkut",
 		"cat": "n., 3rd",
 		"defList": [
-			"a large silver piece, worth four arzênt"
+			"large silver piece, worth four arzênt"
 		],
 		"categories": ["coin"]
 	},
