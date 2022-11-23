@@ -1,6 +1,5 @@
 /* exported shiritori */
 /* global elements, normalizeEremoran, random */
-/** shiritori */
 
 const shiritori = {
 	/** @param {string} word */
