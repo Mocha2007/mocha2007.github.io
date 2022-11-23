@@ -36,7 +36,7 @@ const shiritori = {
 		get answers(){
 			return document.getElementById('shiritoriAnswers');
 		},
-		/** @returns {HTMLDivElement} */
+		/** @returns {HTMLSpanElement} */
 		get score(){
 			return document.getElementById('shiritoriScore');
 		},
