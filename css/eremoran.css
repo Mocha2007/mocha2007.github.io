@@ -120,7 +120,7 @@ a.eremoran {
 	border-radius: 1vh;
 	padding: 0.5vh;
 }
-#searchResults {
+#searchResults, #shiritoriAnswers {
 	background-color: #bbb;
 	border: 0.3vh solid #444;
 	border-radius: 2vh;
@@ -175,4 +175,8 @@ a.eremoran {
 }
 .quoteAuthor::before {
 	content: '—';
+}
+#shiritoriAnswers *:last-child {
+	color: maroon;
+	font-weight: bold;
 }

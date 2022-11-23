@@ -14,6 +14,7 @@
 <script src="erequote.js" async></script>
 <script src="dict2.js" async></script>
 <script src="bee.js" async></script>
+<script src="shiritori.js" async></script>
 <script src="../toc.js" defer></script>
 <title>Eremoran Language</title>
 <nav></nav>
@@ -2834,6 +2835,20 @@ Review: <span id="review">0</span><br>
 	<div id="beeReset" class="button" onclick="bee.restart();">Reset...</div>
 </div>
 
+<h3 id="Shiritori">Shiritori</h3>
+
+
+<div id="shiritoriContainer">
+	<div id="shiritoriInputContainer">
+		<input type="text" id="shiritoriAnswer" onkeypress="shiritori.keyHandler(event);">
+		<span class="button" onclick="shiritori.validate();">Enter</span>
+	</div>
+	<div id="shiritoriScoreContainer">
+		<div id="shiritoriScore">0</div>
+	</div>
+	<ul id="shiritoriAnswers"></ul>
+	<div id="shiritoriReset" class="button" onclick="shiritori.restart();">Reset...</div>
+</div>
 
 <h3 id="Memes">Memes</h3>
 
