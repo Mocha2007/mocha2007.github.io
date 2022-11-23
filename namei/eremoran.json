@@ -2021,7 +2021,8 @@
 		"etym": "L/PEN/*dirax/whale",
 		"cat": "n., 2nd",
 		"defList": [
-			"whale"
+			"whale",
+			"dolphin (esp. delphinus delphis, lagendodelphis hosei, platanista, sousa plumbea, stenella, and tursiops)"
 		],
 		"categories": ["animal"]
 	},
@@ -3914,6 +3915,15 @@
 		]
 	},
 	{
+		"title": "krarnok",
+		"etym": "L/PEN/grarnôx/pig",
+		"cat": "n., 2nd",
+		"defList": [
+			"pig (esp. sus scrofa and porcula salvania)"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "kraz",
 		"etym": "L/PEN/*gras/walk",
 		"cat": "v.",
@@ -5713,8 +5723,12 @@
 		"etym": "C/onod/lusik",
 		"cat": "n., 2nd",
 		"defList": [
-			"deer (esp. muntiacus muntjak)",
-			"gazelle"
+			"deer (esp. axis porcinus, cervus hanglu hanglu, rucervus duvaucelii, and to a lesser extent muntiacus muntjak, axis axis, and rusa unicolor)",
+			"elk, wapiti (esp. cervus canadensis wallichi)",
+			"musk deer (esp. moschus cupreus and moschus leucogaster)",
+			"antelope (esp. antilope cervicapra)",
+			"gazelle (esp. gazella bennettii, and to a lesser extent gazella subgutturosa)",
+			"chevrotain (esp. moschiola indica)"
 		],
 		"categories": ["animal"]
 	},
