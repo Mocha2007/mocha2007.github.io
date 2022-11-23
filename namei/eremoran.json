@@ -3042,7 +3042,7 @@
 		"defList": [
 			"hunik (large yellow mammal related to the echidna)"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "fantasy"]
 	},
 	{
 		"title": "huri",
@@ -4850,7 +4850,7 @@
 		"defList": [
 			"mekrak (a parastitic flatworm used primarily in torture and occasionally medicinally for its behavior-altering effects)"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "fantasy"]
 	},
 	{
 		"title": "melat",
@@ -5271,7 +5271,7 @@
 		"defList": [
 			"shapeshifter"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "fantasy"]
 	},
 	{
 		"title": "nasisu",
@@ -6241,7 +6241,7 @@
 		"defList": [
 			"zothceng (a large, semi-intelligent symbiotic fungus-beehive beast)"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "fantasy"]
 	},
 	{
 		"title": "salim",
