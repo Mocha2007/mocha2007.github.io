@@ -2842,16 +2842,15 @@ Review: <span id="review">0</span><br>
 	<div id="shiritoriInputContainer">
 		<input type="text" id="shiritoriAnswer" onkeypress="shiritori.keyHandler(event);">
 		<span class="button" onclick="shiritori.validate();">Enter</span>
-		<br>
 		<span class="button" onclick="shiritori.elem.answer.value += 'ê';">&ecirc;</span>
 		<span class="button" onclick="shiritori.elem.answer.value += 'ô';">&ocirc;</span>
+		<div id="shiritoriScoreContainer">
+			Score:
+			<span id="shiritoriScore">0</span>
+		</div>
 	</div>
-	<div id="shiritoriScoreContainer">
-		Score:
-		<span id="shiritoriScore">0</span>
-	</div>
-	<ul id="shiritoriAnswers"></ul>
-	<div id="shiritoriReset" class="button" onclick="shiritori.restart();">Reset...</div>
+	<ul id="shiritoriAnswers">Press Reset</ul>
+	<span id="shiritoriReset" class="button" onclick="shiritori.restart();">Reset...</span>
 </div>
 
 <h3 id="Memes">Memes</h3>
