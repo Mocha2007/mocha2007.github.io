@@ -1,7 +1,7 @@
 [
 	{
 		"title": "-ê",
-		"etym": "L/PEN/-ê/-er",
+		"etym": "L/PEN/*-ê/-er",
 		"cat": "aff.",
 		"defList": [
 			"-er (agentive suffix)"
@@ -18,7 +18,7 @@
 	},
 	{
 		"title": "-k",
-		"etym": "L/PEN/-x",
+		"etym": "L/PEN/*-x",
 		"cat": "aff.",
 		"pron": 0,
 		"defList": [
@@ -27,7 +27,7 @@
 	},
 	{
 		"title": "-m",
-		"etym": "L/PEN/-m//~/ma",
+		"etym": "L/PEN/*-m//~/ma",
 		"cat": "aff.",
 		"pron": 0,
 		"defList": [
@@ -36,7 +36,7 @@
 	},
 	{
 		"title": "-r",
-		"etym": "L/PEN/-r//L/PEN/-rre",
+		"etym": "L/PEN/*-r//L/PEN/*-rre",
 		"cat": "aff.",
 		"pron": 0,
 		"defList": [
@@ -46,7 +46,7 @@
 	},
 	{
 		"title": "-t",
-		"etym": "L/PEN/-t",
+		"etym": "L/PEN/*-t",
 		"cat": "aff.",
 		"pron": 0,
 		"defList": [
@@ -55,7 +55,7 @@
 	},
 	{
 		"title": "-u",
-		"etym": "L/PEN/-u",
+		"etym": "L/PEN/*-u",
 		"cat": "aff.",
 		"defList": [
 			"(adjective suffix)",
@@ -64,7 +64,7 @@
 	},
 	{
 		"title": "-ulk",
-		"etym": "L/PEN/-ulk/-ly",
+		"etym": "L/PEN/*-ulk/-ly",
 		"cat": "aff.",
 		"defList": [
 			"-ly (turns adjectives into adverbs)"
@@ -694,6 +694,18 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "arkik",
+		"etym": "L/PEN/*ere-kix",
+		"cat": "n., 2nd",
+		"defList": [
+			"donkey (equus asinus)",
+			"kiang (equus kiang)",
+			"onager (esp. equus hemionus khur)",
+			"tarpan (equus ferus ferus)"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "arlire",
 		"img": "../img/eremoran/talira.png",
 		"etym": "C/ereu/lire",
@@ -1209,7 +1221,7 @@
 		"etym": "B/betlat/ek",
 		"cat": "n., 2nd",
 		"defList": [
-			"rhinoceros"
+			"rhinoceros (esp. rhinoceros unicornis)"
 		],
 		"categories": ["animal"]
 	},
@@ -1534,7 +1546,8 @@
 		"etym": "C/breka/ink",
 		"cat": "n., 2nd",
 		"defList": [
-			"sea cow, manatee"
+			"dugong (dugong dugon)",
+			"manatee, sea cow (esp. trichechus senegalensis)"
 		],
 		"categories": ["animal"]
 	},
@@ -3916,7 +3929,7 @@
 	},
 	{
 		"title": "krarnok",
-		"etym": "L/PEN/grarnôx/pig",
+		"etym": "L/PEN/*grarnôx/pig",
 		"cat": "n., 2nd",
 		"defList": [
 			"pig (esp. sus scrofa and porcula salvania)"
@@ -4044,7 +4057,7 @@
 	},
 	{
 		"title": "kudim",
-		"etym": "L/PEN/giudim",
+		"etym": "L/PEN/*giudim",
 		"cat": "n., 5th",
 		"defList": [
 			"spot (shape)"
@@ -4064,7 +4077,7 @@
 	},
 	{
 		"title": "kudz",
-		"etym": "L/PEN/kuds/end",
+		"etym": "L/PEN/*kuds/end",
 		"cat": "v.",
 		"defList": [
 			"(archaic) end"		]
@@ -6587,7 +6600,7 @@
 	},
 	{
 		"title": "siz",
-		"etym": "L/PEN/sis/[causative]",
+		"etym": "L/PEN/*sis/[causative]",
 		"cat": "v.",
 		"defList": [
 			"(archaic) [causative]"
@@ -7516,7 +7529,7 @@
 	},
 	{
 		"title": "u-",
-		"etym": "L/PEN/u-/un-",
+		"etym": "L/PEN/*u-/un-",
 		"cat": "aff.",
 		"defList": [
 			"(archaic) un-, non-, anti-",
