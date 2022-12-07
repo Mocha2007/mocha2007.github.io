@@ -12,13 +12,15 @@ class Period {
 		/** @type {string} */
 		this.href = datum.href;
 		/** @type {string} */
-		this.color = datum.color || 'silver';
+		this.color = datum.color || timeline.default.color;
 		/** @type {string} */
-		this.borderColor = datum.borderColor || 'white';
+		this.borderColor = datum.borderColor || timeline.default.borderColor;
 		/** @type {string} */
-		this.textColor = datum.textColor || 'black';
+		this.textColor = datum.textColor || timeline.default.textColor;
 		/** @type {Number} */
 		this.forceY = datum.forceY;
+		/** @type {Array} */
+		this.insets = datum.insets || [];
 	}
 	get a(){
 		if (this.a_cache)
@@ -39,6 +41,7 @@ class Period {
 		const e = createSvgElement('g');
 		e.classList.add('period');
 		e.appendChild(this.rect);
+		this.insetRects.forEach(r => e.appendChild(r));
 		e.appendChild(this.a);
 		// pos
 		const x = (this.start - timeline.settings.min) * timeline.settings.horizontalScale;
@@ -64,9 +67,28 @@ class Period {
 		e.setAttribute('stroke', this.borderColor);
 		return this.rect_cache = e;
 	}
+	get insetRects(){
+		if (this.insetRects_cache)
+			return this.insetRects_cache;
+		return this.rect_cache = this.insets.map(inset => {
+			const e = createSvgElement('rect');
+			const x = new Date(inset.start) - this.start;
+			const range = new Date(inset.end) - new Date(inset.start);
+			e.setAttribute('width', range * timeline.settings.horizontalScale);
+			e.setAttribute('fill', inset.color || timeline.default.color);
+			e.setAttribute('stroke', inset.borderColor || timeline.default.borderColor);
+			e.setAttribute('x', x * timeline.settings.horizontalScale);
+			return e;
+		});
+	}
 }
 
 const timeline = {
+	default: {
+		color: 'silver',
+		borderColor: 'white',
+		textColor: 'black',
+	},
 	/** @type {Period[]} */
 	periods: [],
 	main(){

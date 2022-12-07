@@ -8,6 +8,28 @@ const timelineTest = [
 		end: '18 Jun 1925',
 		color: 'pink',
 		href: 'https://en.wikipedia.org/wiki/Robert_M._La_Follette',
+		insets: [
+			{
+				start: '4 Mar 1885',
+				end: '3 Mar 1891',
+				color: 'red',
+			},
+			{
+				start: '7 Jan 1901',
+				end: '1 Jan 1906',
+				color: 'red',
+			},
+			{
+				start: '4 Jan 1906',
+				end: '18 Jun 1925',
+				color: 'red',
+			},
+			{
+				start: '1 Jan 1924',
+				end: '31 Dec 1924',
+				color: 'green',
+			},
+		],
 	},
 	{
 		name: 'George W. Norris',
