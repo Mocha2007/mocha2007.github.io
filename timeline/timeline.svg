@@ -3,7 +3,7 @@
 	<desc>MochaTimeline</desc>
 	<script xlink:href="../common.js"/>
 	<script xlink:href="../tools/chart.js"/>
-	<script xlink:href="timelineData.js"/>
+	<script xlink:href="timelineDataParty.js"/>
 	<script xlink:href="timeline.js"/>
 	<link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="timeline.css" type="text/css"/>
 	<script>timeline.main();</script>
