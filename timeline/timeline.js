@@ -78,7 +78,7 @@ class Period {
 			const range = new Date(inset.end) - new Date(inset.start);
 			e.setAttribute('width', range * timeline.settings.horizontalScale);
 			e.setAttribute('fill', inset.color || timeline.default.color);
-			e.setAttribute('stroke', inset.borderColor || timeline.default.borderColor);
+			// e.setAttribute('stroke', inset.borderColor || timeline.default.borderColor);
 			e.setAttribute('x', x * timeline.settings.horizontalScale);
 			e.setAttribute('rx', timeline.settings.insetBorderRadius);
 			return e;
