@@ -2,25 +2,23 @@
 /* global createSvgElement, getData, range, timelineTest */
 
 class Period {
-	/**
-	 * @param {string} name
-	 * @param {string} start
-	 * @param {string} end
-	 * @param {string} href
-	 * @param {string} color
-	 * @param {string} textColor
-	 * @param {string} borderColor
-	 * @param {number} forceY
-	 */
-	constructor(name, start, end, href, color, textColor, borderColor, forceY){
-		this.name = name;
-		this.start = new Date(start);
-		this.end = new Date(end);
-		this.href = href;
-		this.color = color || 'silver';
-		this.borderColor = borderColor || 'white';
-		this.textColor = textColor || 'black';
-		this.forceY = forceY || false;
+	constructor(datum){
+		/** @type {string} */
+		this.name = datum.name;
+		/** @type {Date} */
+		this.start = new Date(datum.start);
+		/** @type {Date} */
+		this.end = new Date(datum.end);
+		/** @type {string} */
+		this.href = datum.href;
+		/** @type {string} */
+		this.color = datum.color || 'silver';
+		/** @type {string} */
+		this.borderColor = datum.borderColor || 'white';
+		/** @type {string} */
+		this.textColor = datum.textColor || 'black';
+		/** @type {Number} */
+		this.forceY = datum.forceY;
 	}
 	get a(){
 		if (this.a_cache)
@@ -77,11 +75,8 @@ const timeline = {
 		const start = this.settings.min = Math.min(...timelineData.map(o => new Date(o.start)));
 		const end = this.settings.max = Math.max(...timelineData.map(o => new Date(o.end)));
 		// process data
-		timelineData.concat(this.rules(start, end)).forEach(datum => {
-			const p = new Period(datum.name, datum.start, datum.end, datum.href,
-				datum.color, datum.textColor, datum.borderColor, datum.forceY);
-			this.periods.push(p);
-		});
+		timelineData.concat(this.rules(start, end))
+			.forEach(datum => this.periods.push(new Period(datum)));
 		// sort
 		// this.periods.sort((a, b) => a.start - b.start);
 		// background
