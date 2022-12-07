@@ -1,13 +1,12 @@
 /* exported timelineTest */
 
 const colors = {
-	d: '#33F', // Democratic
-	dr: '#008000', // Democratic-Republican
-	federalist: '#EA9978',
-	nr: '#FFE6B0', // National Republican
+	d: '#33F', // Democratic; also Jacksonians
+	dr: '#008000', // Democratic-Republican; also Anti-Administration
+	f: '#EA9978', // Federalist; also Pro-Administration
 	nu: '#B22222', // National Union
 	r: '#E81B23',
-	whig: '#F0C862',
+	whig: '#F0C862', // also National Republican & Anti-Jacksonians
 };
 
 const timelineTest = [
@@ -23,7 +22,7 @@ const timelineTest = [
 		name: 'John Adams',
 		start: '4 Mar 1797',
 		end: '4 Mar 1801',
-		color: colors.federalist,
+		color: colors.f,
 		href: true,
 		forceY: 1,
 	},
@@ -62,7 +61,7 @@ const timelineTest = [
 			{
 				start: '1828',
 				end: '4 Mar 1829',
-				color: colors.nr,
+				color: colors.whig,
 			},
 		],
 	},
@@ -398,5 +397,336 @@ const timelineTest = [
 		color: colors.d,
 		href: true,
 		forceY: 1,
+	},
+	// US Congress (overall picture)
+	{
+		name: 'United States Congress',
+		start: '4 Mar 1789',
+		end: '2025', // todo
+		href: true,
+		forceY: 2,
+		insets: [
+			// todo
+		],
+	},
+	// US Senate
+	{
+		name: 'United States Senate',
+		start: '4 Mar 1789',
+		end: '2025', // todo
+		href: true,
+		forceY: 3,
+		insets: [
+			{
+				start: '4 Mar 1789',
+				end: '4 Mar 1801',
+				color: colors.f,
+			},
+			{
+				start: '4 Mar 1801',
+				end: '4 Mar 1825',
+				color: colors.dr,
+			},
+			{
+				start: '4 Mar 1825',
+				end: '4 Mar 1833',
+				color: colors.d,
+			},
+			{
+				start: '4 Mar 1833',
+				end: '4 Mar 1835',
+				color: colors.whig,
+			},
+			{
+				start: '4 Mar 1835',
+				end: '4 Mar 1841',
+				color: colors.d,
+			},
+			{
+				start: '4 Mar 1841',
+				end: '4 Mar 1845',
+				color: colors.whig,
+			},
+			{
+				start: '4 Mar 1845',
+				end: '4 Feb 1861',
+				color: colors.d,
+			},
+			{
+				start: '4 Feb 1861',
+				end: '4 Mar 1879',
+				color: colors.r,
+			},
+			{
+				start: '4 Mar 1879',
+				end: '18 Mar 1881',
+				color: colors.d,
+			},
+			{
+				start: '18 Mar 1881',
+				end: '16 May 1881',
+				color: colors.r,
+			},
+			{
+				start: '16 May 1881',
+				end: '2 Aug 1881',
+				color: colors.d,
+			},
+			{
+				start: '2 Aug 1881',
+				end: '4 Mar 1893',
+				color: colors.r,
+			},
+			{
+				start: '4 Mar 1893',
+				end: '4 Mar 1895',
+				color: colors.d,
+			},
+			{
+				start: '4 Mar 1895',
+				end: '4 Mar 1913',
+				color: colors.r,
+			},
+			{
+				start: '4 Mar 1913',
+				end: '4 Mar 1919',
+				color: colors.d,
+			},
+			{
+				start: '4 Mar 1919',
+				end: '4 Mar 1933',
+				color: colors.r,
+			},
+			{
+				start: '4 Mar 1933',
+				end: '3 Jan 1947',
+				color: colors.d,
+			},
+			{
+				start: '3 Jan 1947',
+				end: '3 Jan 1949',
+				color: colors.r,
+			},
+			{
+				start: '3 Jan 1949',
+				end: '3 Jan 1953',
+				color: colors.d,
+			},
+			{
+				start: '3 Jan 1953',
+				end: '3 Jan 1955',
+				color: colors.r,
+			},
+			{
+				start: '3 Jan 1955',
+				end: '3 Jan 1981',
+				color: colors.d,
+			},
+			{
+				start: '3 Jan 1981',
+				end: '3 Jan 1987',
+				color: colors.r,
+			},
+			{
+				start: '3 Jan 1987',
+				end: '3 Jan 1995',
+				color: colors.d,
+			},
+			{
+				start: '3 Jan 1995',
+				end: '3 Jan 2001',
+				color: colors.r,
+			},
+			{
+				start: '3 Jan 2001',
+				end: '20 Jan 2001',
+				color: colors.d,
+			},
+			{
+				start: '20 Jan 2001',
+				end: '6 Jun 2001',
+				color: colors.r,
+			},
+			{
+				start: '6 Jun 2001',
+				end: '23 Nov 2002',
+				color: colors.d,
+			},
+			{
+				start: '23 Nov 2002',
+				end: '3 Jan 2007',
+				color: colors.r,
+			},
+			{
+				start: '3 Jan 2007',
+				end: '3 Jan 2015',
+				color: colors.d,
+			},
+			{
+				start: '3 Jan 2015',
+				end: '3 Jan 2021',
+				color: colors.r,
+			},
+			{
+				start: '20 Jan 2021',
+				end: '3 Jan 2025',
+				color: colors.d,
+			},
+		],
+	},
+	// US House
+	{
+		name: 'United States House of Representatives',
+		start: '4 Mar 1789',
+		end: '2025', // todo
+		href: true,
+		forceY: 4,
+		insets: [
+			{
+				start: '4 Mar 1789',
+				end: '4 Mar 1793',
+				color: colors.f,
+			},
+			{
+				start: '4 Mar 1793',
+				end: '4 Mar 1797',
+				color: colors.dr,
+			},
+			{
+				start: '4 Mar 1797',
+				end: '4 Mar 1801',
+				color: colors.f,
+			},
+			{
+				start: '4 Mar 1801',
+				end: '4 Mar 1825',
+				color: colors.dr,
+			},
+			{
+				start: '4 Mar 1825',
+				end: '4 Mar 1827',
+				color: colors.whig,
+			},
+			{
+				start: '4 Mar 1827',
+				end: '4 Mar 1841',
+				color: colors.d,
+			},
+			{
+				start: '4 Mar 1841',
+				end: '4 Mar 1843',
+				color: colors.whig,
+			},
+			{
+				start: '4 Mar 1843',
+				end: '4 Mar 1847',
+				color: colors.d,
+			},
+			{
+				start: '4 Mar 1847',
+				end: '4 Mar 1849',
+				color: colors.whig,
+			},
+			{
+				start: '4 Mar 1849',
+				end: '4 Mar 1859',
+				color: colors.d,
+			},
+			{
+				start: '4 Mar 1859',
+				end: '4 Mar 1875',
+				color: colors.r,
+			},
+			{
+				start: '4 Mar 1875',
+				end: '4 Mar 1881',
+				color: colors.d,
+			},
+			{
+				start: '4 Mar 1881',
+				end: '4 Mar 1883',
+				color: colors.r,
+			},
+			{
+				start: '4 Mar 1883',
+				end: '4 Mar 1889',
+				color: colors.d,
+			},
+			{
+				start: '4 Mar 1889',
+				end: '4 Mar 1891',
+				color: colors.r,
+			},
+			{
+				start: '4 Mar 1891',
+				end: '4 Mar 1895',
+				color: colors.d,
+			},
+			{
+				start: '4 Mar 1895',
+				end: '4 Mar 1911',
+				color: colors.r,
+			},
+			{
+				start: '4 Mar 1911',
+				end: '4 Mar 1919',
+				color: colors.d,
+			},
+			{
+				start: '4 Mar 1919',
+				end: '22 Oct 1931',
+				color: colors.r,
+			},
+			{
+				start: '22 Oct 1931',
+				end: '3 Jan 1947',
+				color: colors.d,
+			},
+			{
+				start: '3 Jan 1947',
+				end: '3 Jan 1949',
+				color: colors.r,
+			},
+			{
+				start: '3 Jan 1949',
+				end: '3 Jan 1953',
+				color: colors.d,
+			},
+			{
+				start: '3 Jan 1953',
+				end: '3 Jan 1955',
+				color: colors.r,
+			},
+			{
+				start: '3 Jan 1955',
+				end: '3 Jan 1995',
+				color: colors.d,
+			},
+			{
+				start: '3 Jan 1995',
+				end: '3 Jan 2007',
+				color: colors.r,
+			},
+			{
+				start: '3 Jan 2007',
+				end: '3 Jan 2011',
+				color: colors.d,
+			},
+			{
+				start: '3 Jan 2011',
+				end: '3 Jan 2019',
+				color: colors.r,
+			},
+			{
+				start: '3 Jan 2019',
+				end: '3 Jan 2023',
+				color: colors.d,
+			},
+			{
+				start: '3 Jan 2023',
+				end: '3 Jan 2025',
+				color: colors.r,
+			},
+		],
 	},
 ];
