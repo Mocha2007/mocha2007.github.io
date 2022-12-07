@@ -98,21 +98,49 @@ const timelineTest = [
 		name: 'Gerald Nye',
 		start: '19 Dec 1892',
 		end: '17 Jul 1971',
-		color: 'pink',
 		href: 'https://en.wikipedia.org/wiki/Gerald_Nye',
+		insets: [
+			{
+				start: '14 Nov 1925',
+				end: '3 Jan 1945',
+				color: 'red',
+			},
+		],
 	},
 	{
 		name: 'Huey Long',
 		start: '30 Aug 1893',
 		end: '10 Sep 1935',
-		color: 'aliceblue',
 		href: 'https://en.wikipedia.org/wiki/Huey_Long',
+		insets: [
+			{
+				start: '21 May 1928',
+				end: '25 Jan 1932',
+				color: 'blue',
+			},
+			{
+				start: '25 Jan 1932',
+				end: '10 Sep 1935',
+				color: 'blue',
+			},
+		],
 	},
 	{
 		name: 'Robert M. La Follette Jr.',
 		start: '6 Feb 1895',
 		end: '24 Feb 1953',
-		color: 'pink',
 		href: 'https://en.wikipedia.org/wiki/Robert_M._La_Follette_Jr.',
+		insets: [
+			{
+				start: '30 Sep 1925',
+				end: '1934',
+				color: 'red',
+			},
+			{
+				start: '1934',
+				end: '3 Jan 1947',
+				color: 'green',
+			},
+		],
 	},
 ];
