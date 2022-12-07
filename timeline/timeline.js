@@ -10,7 +10,9 @@ class Period {
 		/** @type {Date} */
 		this.end = new Date(datum.end);
 		/** @type {string} */
-		this.href = datum.href;
+		this.href = datum.href === true
+			? `https://en.wikipedia.org/wiki/${datum.name.replace(' ', '_')}`
+			: datum.href;
 		/** @type {string} */
 		this.color = datum.color || timeline.default.color;
 		/** @type {string} */
@@ -119,7 +121,7 @@ const timeline = {
 		const startYear = new Date(start).getFullYear();
 		const endYear = new Date(end).getFullYear();
 		const modifiedStartYear = Math.ceil(startYear/interval)*interval;
-		const modifiedEndYear = Math.floor(endYear/interval)*interval;
+		const modifiedEndYear = Math.ceil(endYear/interval)*interval;
 		// markers
 		return range(modifiedStartYear, modifiedEndYear, 10).map(i => {
 			const p = {
