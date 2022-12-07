@@ -1,5 +1,4 @@
 /* exported timelineTest */
-/* global range */
 
 const timelineTest = [
 	// people
