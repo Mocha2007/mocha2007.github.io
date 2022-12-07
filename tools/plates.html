@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<meta name="description" content="Plate Generator">
+<meta name="theme-color" content="#00FFFF">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link href="plates.css" type="text/css" rel="stylesheet">
+<script src="../common.js"></script>
+<script src="chart.js"></script>
+<script src="plates.js"></script>
+<title>Plate Generator</title>
+<svg id="plates"></svg>
+<div id="controls">
+	<div>
+		<h2>Controls</h2>
+		ZOOM <button onClick="plates.zoom(1);">+</button> <button onClick="plates.zoom(-1);">-</button>
+		<br>
+		PAN <button onClick="plates.pan(0, -1);">&uarr;</button>
+		<br><button onClick="plates.pan(-1, 0);">&larr;</button><button onClick="plates.pan(0, 1);">&darr;</button><button onClick="plates.pan(1, 0);">&rarr;</button>
+	</div>
+	<div>
+		<h2>Attributes</h2>
+		ID: <span id="id">____</span>
+		<br>
+		IMG.SRC: <input type="text" id="img_src"> <button onClick="plates.setSrc();">Set</button>
+		<br>
+		PARENT: <button id="parentButton" onClick="plates.parent();">[root]</button>
+		<br>
+		TITLE: <input type="text" id="title"> <button onClick="plates.setTitle();">Set</button>
+		<br>
+	</div>
+	<div>
+		<h2>Children</h2>
+		<button onClick="plates.addChild();">New</button>
+		<ul></ul>
+	</div>
+</div>
+<script>plates.setup();</script>
+</html>

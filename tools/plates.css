@@ -1,0 +1,28 @@
+body, html {
+	background-color: black;
+	color: silver;
+	font-family: Consolas, 'Courier New', Courier, monospace;
+	margin: 0;
+}
+h2 {
+	margin: 0;
+	text-align: center;
+}
+ul {
+	list-style: none;
+}
+#controls {
+	background-color: #222;
+	border: 2px solid silver;
+	bottom: 0;
+	height: 30%;
+	position: absolute;
+	width: calc(100% - 2*2px);
+}
+#controls > div {
+	border-right: 1px solid silver;
+	display: inline-block;
+	position: relative;
+	top: 0;
+	width: calc(100% / 3 - 10px);
+}
