@@ -17,7 +17,7 @@ class Period {
 		this.borderColor = datum.borderColor || timeline.default.borderColor;
 		/** @type {string} */
 		this.textColor = datum.textColor || timeline.default.textColor;
-		/** @type {Number} */
+		/** @type {Number|false} */
 		this.forceY = datum.forceY;
 		/** @type {Array} */
 		this.insets = datum.insets || [];
@@ -45,7 +45,7 @@ class Period {
 		e.appendChild(this.a);
 		// pos
 		const x = (this.start - timeline.settings.min) * timeline.settings.horizontalScale;
-		const y = this.forceY || (this.id+1) * timeline.settings.elemHeight;
+		const y = (this.forceY !== false ? this.forceY : this.id+1) * timeline.settings.elemHeight;
 		e.setAttribute('transform', `translate(${x},${y})`);
 		return this.g_cache = e;
 	}
@@ -118,8 +118,8 @@ const timeline = {
 	rules(start, end, interval = 10){
 		const startYear = new Date(start).getFullYear();
 		const endYear = new Date(end).getFullYear();
-		const modifiedStartYear = Math.floor(startYear/interval)*interval;
-		const modifiedEndYear = Math.ceil(endYear/interval)*interval;
+		const modifiedStartYear = Math.ceil(startYear/interval)*interval;
+		const modifiedEndYear = Math.floor(endYear/interval)*interval;
 		// markers
 		return range(modifiedStartYear, modifiedEndYear, 10).map(i => {
 			const p = {
@@ -130,7 +130,7 @@ const timeline = {
 				borderColor: 'white',
 				textColor: 'white',
 				href: `https://en.wikipedia.org/wiki/${i}`,
-				forceY: 1,
+				forceY: 0,
 			};
 			return p;
 		});
