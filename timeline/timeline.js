@@ -1,5 +1,5 @@
 /* exported timeline */
-/* global createSvgElement, timelineData */
+/* global createSvgElement, getData, range, timelineTest */
 
 class Period {
 	/**
@@ -72,16 +72,15 @@ const timeline = {
 	/** @type {Period[]} */
 	periods: [],
 	main(){
+		/** @type {Array} */
+		const timelineData = getData() || timelineTest;
+		const start = this.settings.min = Math.min(...timelineData.map(o => new Date(o.start)));
+		const end = this.settings.max = Math.max(...timelineData.map(o => new Date(o.end)));
 		// process data
-		timelineData.forEach(datum => {
+		timelineData.concat(this.rules(start, end)).forEach(datum => {
 			const p = new Period(datum.name, datum.start, datum.end, datum.href,
 				datum.color, datum.textColor, datum.borderColor, datum.forceY);
 			this.periods.push(p);
-			// get min/max data
-			if (p.start < this.settings.min)
-				this.settings.min = +p.start;
-			if (this.settings.max < p.end)
-				this.settings.max = +p.end;
 		});
 		// sort
 		// this.periods.sort((a, b) => a.start - b.start);
@@ -91,6 +90,32 @@ const timeline = {
 		document.getElementById('canvas').appendChild(bg);
 		// draw all
 		this.periods.forEach(p => document.getElementById('canvas').appendChild(p.g));
+	},
+	/** create vertical rules every [interval]
+	 * @param {number} start unix time
+	 * @param {number} end unix time
+	 * @param {number} interval in years
+	 * @returns {Array}
+	 */
+	rules(start, end, interval = 10){
+		const startYear = new Date(start).getFullYear();
+		const endYear = new Date(end).getFullYear();
+		const modifiedStartYear = Math.floor(startYear/interval)*interval;
+		const modifiedEndYear = Math.ceil(endYear/interval)*interval;
+		// markers
+		return range(modifiedStartYear, modifiedEndYear, 10).map(i => {
+			const p = {
+				name: i,
+				start: `1 January ${i}`,
+				end: `2 January ${i}`,
+				color: 'black',
+				borderColor: 'white',
+				textColor: 'white',
+				href: `https://en.wikipedia.org/wiki/${i}`,
+				forceY: 1,
+			};
+			return p;
+		});
 	},
 	settings: {
 		get elemHeight(){

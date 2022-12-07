@@ -1,7 +1,7 @@
-/* exported timelineData */
+/* exported timelineTest */
 /* global range */
 
-const timelineData = [
+const timelineTest = [
 	// people
 	{
 		name: 'Vladimir Lenin',
@@ -88,18 +88,3 @@ const timelineData = [
 		href: 'https://en.wikipedia.org/wiki/Mikhail_Gorbachev',
 	},
 ];
-
-// markers
-range(1870, 2031, 10).forEach(i => {
-	const p = {
-		name: i,
-		start: `1 January ${i}`,
-		end: `2 January ${i}`,
-		color: 'black',
-		borderColor: 'white',
-		textColor: 'white',
-		href: `https://en.wikipedia.org/wiki/${i}`,
-		forceY: 1,
-	};
-	timelineData.push(p);
-});

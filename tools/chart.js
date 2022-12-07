@@ -87,8 +87,13 @@ function fromURL(s){
 }
 
 function getData(){
-	const rawData = window.location.href.match(/\?.+/g)[0].replace('?data=', '');
-	return fromURL(rawData);
+	try {
+		const rawData = window.location.href.match(/\?.+/g)[0].replace('?data=', '');
+		return fromURL(rawData);
+	}
+	catch (_){
+		// return undefined
+	}
 }
 
 /**
