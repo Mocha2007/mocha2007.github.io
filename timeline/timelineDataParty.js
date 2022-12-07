@@ -10,13 +10,63 @@ const colors = {
 };
 
 const timelineTest = [
+	// Party Systems
+	{
+		name: 'First Party System',
+		start: '1792',
+		end: '1816',
+		href: true,
+		forceY: 1,
+	},
+	{
+		name: 'Second Party System',
+		start: '1828',
+		end: '1854',
+		href: true,
+		forceY: 1,
+	},
+	{
+		name: 'Third Party System',
+		start: '1854',
+		end: '1894',
+		href: true,
+		forceY: 1,
+	},
+	{
+		name: 'Fourth Party System',
+		start: '1894',
+		end: '1932',
+		href: true,
+		forceY: 1,
+	},
+	{
+		name: 'Fifth Party System',
+		start: '1932',
+		end: '1980',
+		href: true,
+		forceY: 1,
+	},
+	{
+		name: 'Sixth Party System',
+		start: '1980',
+		end: '2016',
+		href: true,
+		forceY: 1,
+	},
+	{
+		name: 'Seventh Party System',
+		start: '2016',
+		end: '2025',
+		href: true,
+		forceY: 1,
+	},
 	// presidents
 	{
 		name: 'George Washington',
 		start: '30 Apr 1789',
 		end: '4 Mar 1797',
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'John Adams',
@@ -24,7 +74,7 @@ const timelineTest = [
 		end: '4 Mar 1801',
 		color: colors.f,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Thomas Jefferson',
@@ -32,7 +82,7 @@ const timelineTest = [
 		end: '4 Mar 1809',
 		color: colors.dr,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'James Madison',
@@ -40,7 +90,7 @@ const timelineTest = [
 		end: '4 Mar 1817',
 		color: colors.dr,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'James Monroe',
@@ -48,7 +98,7 @@ const timelineTest = [
 		end: '4 Mar 1825',
 		color: colors.dr,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'John Quincy Adams',
@@ -56,7 +106,7 @@ const timelineTest = [
 		end: '4 Mar 1829',
 		color: colors.dr,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 		insets: [
 			{
 				start: '1828',
@@ -71,7 +121,7 @@ const timelineTest = [
 		end: '4 Mar 1837',
 		color: colors.d,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Martin Van Buren',
@@ -79,7 +129,7 @@ const timelineTest = [
 		end: '4 Mar 1841',
 		color: colors.d,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'William Henry Harrison',
@@ -87,14 +137,14 @@ const timelineTest = [
 		end: '4 Apr 1841',
 		color: colors.whig,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'John Tyler',
 		start: '4 Apr 1841',
 		end: '4 Mar 1845',
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'James K. Polk',
@@ -102,7 +152,7 @@ const timelineTest = [
 		end: '4 Mar 1849',
 		color: colors.d,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Zachary Taylor',
@@ -110,7 +160,7 @@ const timelineTest = [
 		end: '9 Jul 1850',
 		color: colors.whig,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Millard Fillmore',
@@ -118,7 +168,7 @@ const timelineTest = [
 		end: '4 Mar 1853',
 		color: colors.whig,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Franklin Pierce',
@@ -126,7 +176,7 @@ const timelineTest = [
 		end: '4 Mar 1857',
 		color: colors.d,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'James Buchanan',
@@ -134,7 +184,7 @@ const timelineTest = [
 		end: '4 Mar 1861',
 		color: colors.d,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Abraham Lincoln',
@@ -142,7 +192,7 @@ const timelineTest = [
 		end: '15 Apr 1865',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 		insets: [
 			{
 				start: '1864',
@@ -157,7 +207,7 @@ const timelineTest = [
 		end: '4 Mar 1869',
 		color: colors.nu,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 		insets: [
 			{
 				start: '1868',
@@ -172,7 +222,7 @@ const timelineTest = [
 		end: '4 Mar 1877',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Rutherford B. Hayes',
@@ -180,7 +230,7 @@ const timelineTest = [
 		end: '4 Mar 1881',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'James A. Garfield',
@@ -188,7 +238,7 @@ const timelineTest = [
 		end: '19 Sep 1881',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Chester A. Arthur',
@@ -196,7 +246,7 @@ const timelineTest = [
 		end: '4 Mar 1885',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Grover Cleveland',
@@ -204,7 +254,7 @@ const timelineTest = [
 		end: '4 Mar 1889',
 		color: colors.d,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Benjamin Harrison',
@@ -212,7 +262,7 @@ const timelineTest = [
 		end: '4 Mar 1893',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Grover Cleveland',
@@ -220,7 +270,7 @@ const timelineTest = [
 		end: '4 Mar 1897',
 		color: colors.d,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Wiliam McKinley',
@@ -228,7 +278,7 @@ const timelineTest = [
 		end: '14 Sep 1901',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Theodore Roosevelt',
@@ -236,7 +286,7 @@ const timelineTest = [
 		end: '4 Mar 1909',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'William Howard Taft',
@@ -244,7 +294,7 @@ const timelineTest = [
 		end: '4 Mar 1913',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Woodrow Wilson',
@@ -252,7 +302,7 @@ const timelineTest = [
 		end: '4 Mar 1921',
 		color: colors.d,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Warren G. Harding',
@@ -260,7 +310,7 @@ const timelineTest = [
 		end: '2 Aug 1923',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Calvin Coolidge',
@@ -268,7 +318,7 @@ const timelineTest = [
 		end: '4 Mar 1929',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Herbert Hoover',
@@ -276,7 +326,7 @@ const timelineTest = [
 		end: '4 Mar 1933',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Franklin D. Roosevelt',
@@ -284,7 +334,7 @@ const timelineTest = [
 		end: '12 Apr 1945',
 		color: colors.d,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Harry S. Truman',
@@ -292,7 +342,7 @@ const timelineTest = [
 		end: '20 Jan 1953',
 		color: colors.d,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Dwight D. Eisenhower',
@@ -300,7 +350,7 @@ const timelineTest = [
 		end: '20 Jan 1961',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'John F. Kennedy',
@@ -308,7 +358,7 @@ const timelineTest = [
 		end: '22 Nov 1963',
 		color: colors.d,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Lyndon B. Johnson',
@@ -316,7 +366,7 @@ const timelineTest = [
 		end: '20 Jan 1969',
 		color: colors.d,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Richard Nixon',
@@ -324,7 +374,7 @@ const timelineTest = [
 		end: '9 Aug 1974',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Gerald Ford',
@@ -332,7 +382,7 @@ const timelineTest = [
 		end: '20 Jan 1977',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Jimmy Carter',
@@ -340,7 +390,7 @@ const timelineTest = [
 		end: '20 Jan 1981',
 		color: colors.d,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Ronald Reagan',
@@ -348,7 +398,7 @@ const timelineTest = [
 		end: '20 Jan 1989',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'George H. W. Bush',
@@ -356,7 +406,7 @@ const timelineTest = [
 		end: '20 Jan 1993',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Bill Clinton',
@@ -364,7 +414,7 @@ const timelineTest = [
 		end: '20 Jan 2001',
 		color: colors.d,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'George W. Bush',
@@ -372,7 +422,7 @@ const timelineTest = [
 		end: '20 Jan 2009',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Barack Obama',
@@ -380,7 +430,7 @@ const timelineTest = [
 		end: '20 Jan 2017',
 		color: colors.d,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Donald Trump',
@@ -388,7 +438,7 @@ const timelineTest = [
 		end: '20 Jan 2021',
 		color: colors.r,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	{
 		name: 'Joe Biden',
@@ -396,7 +446,7 @@ const timelineTest = [
 		end: '20 Jan 2025',
 		color: colors.d,
 		href: true,
-		forceY: 1,
+		forceY: 3,
 	},
 	// US Congress (overall picture)
 	{
@@ -404,9 +454,153 @@ const timelineTest = [
 		start: '4 Mar 1789',
 		end: '2025', // todo
 		href: true,
-		forceY: 2,
+		forceY: 5,
 		insets: [
-			// todo
+			{
+				start: '4 Mar 1789',
+				end: '4 Mar 1793',
+				color: colors.f,
+			},
+			{
+				start: '4 Mar 1797',
+				end: '4 Mar 1801',
+				color: colors.f,
+			},
+			{
+				start: '4 Mar 1801',
+				end: '4 Mar 1825',
+				color: colors.dr,
+			},
+			{
+				start: '4 Mar 1827',
+				end: '4 Mar 1833',
+				color: colors.d,
+			},
+			{
+				start: '4 Mar 1835',
+				end: '4 Mar 1841',
+				color: colors.d,
+			},
+			{
+				start: '4 Mar 1841',
+				end: '4 Mar 1843',
+				color: colors.whig,
+			},
+			{
+				start: '4 Mar 1845',
+				end: '4 Mar 1847',
+				color: colors.d,
+			},
+			{
+				start: '4 Mar 1849',
+				end: '4 Mar 1859',
+				color: colors.d,
+			},
+			{
+				start: '4 Mar 1861',
+				end: '4 Mar 1875',
+				color: colors.r,
+			},
+			{
+				start: '4 Mar 1879',
+				end: '18 Mar 1881',
+				color: colors.d,
+			},
+			{
+				start: '18 Mar 1881',
+				end: '16 May 1881',
+				color: colors.r,
+			},
+			{
+				start: '2 Aug 1881',
+				end: '4 Mar 1883',
+				color: colors.r,
+			},
+			{
+				start: '4 Mar 1889',
+				end: '4 Mar 1891',
+				color: colors.r,
+			},
+			{
+				start: '4 Mar 1893',
+				end: '4 Mar 1895',
+				color: colors.d,
+			},
+			{
+				start: '4 Mar 1895',
+				end: '4 Mar 1911',
+				color: colors.r,
+			},
+			{
+				start: '4 Mar 1913',
+				end: '4 Mar 1919',
+				color: colors.d,
+			},
+			{
+				start: '4 Mar 1919',
+				end: '4 Mar 1931',
+				color: colors.r,
+			},
+			{
+				start: '4 Mar 1933',
+				end: '3 Jan 1947',
+				color: colors.d,
+			},
+			{
+				start: '3 Jan 1947',
+				end: '3 Jan 1949',
+				color: colors.r,
+			},
+			{
+				start: '3 Jan 1949',
+				end: '3 Jan 1953',
+				color: colors.d,
+			},
+			{
+				start: '3 Jan 1953',
+				end: '3 Jan 1955',
+				color: colors.r,
+			},
+			{
+				start: '3 Jan 1955',
+				end: '3 Jan 1981',
+				color: colors.d,
+			},
+			{
+				start: '3 Jan 1987',
+				end: '3 Jan 1995',
+				color: colors.d,
+			},
+			{
+				start: '3 Jan 1995',
+				end: '3 Jan 2001',
+				color: colors.r,
+			},
+			{
+				start: '20 Jan 2001',
+				end: '6 Jun 2001',
+				color: colors.r,
+			},
+			{
+				start: '23 Nov 2002',
+				end: '3 Jan 2007',
+				color: colors.r,
+			},
+			{
+				start: '3 Jan 2007',
+				end: '3 Jan 2011',
+				color: colors.d,
+			},
+			{
+				start: '3 Jan 2015',
+				end: '3 Jan 2019',
+				color: colors.r,
+			},
+			{
+				start: '3 Jan 2021',
+				end: '3 Jan 2023',
+				color: colors.d,
+			},
 		],
 	},
 	// US Senate
@@ -415,7 +609,7 @@ const timelineTest = [
 		start: '4 Mar 1789',
 		end: '2025', // todo
 		href: true,
-		forceY: 3,
+		forceY: 6,
 		insets: [
 			{
 				start: '4 Mar 1789',
@@ -580,7 +774,7 @@ const timelineTest = [
 		start: '4 Mar 1789',
 		end: '2025', // todo
 		href: true,
-		forceY: 4,
+		forceY: 7,
 		insets: [
 			{
 				start: '4 Mar 1789',
