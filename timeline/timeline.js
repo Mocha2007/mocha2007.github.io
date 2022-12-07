@@ -78,6 +78,7 @@ class Period {
 			e.setAttribute('fill', inset.color || timeline.default.color);
 			e.setAttribute('stroke', inset.borderColor || timeline.default.borderColor);
 			e.setAttribute('x', x * timeline.settings.horizontalScale);
+			e.setAttribute('rx', timeline.settings.insetBorderRadius);
 			return e;
 		});
 	}
@@ -143,6 +144,7 @@ const timeline = {
 		get horizontalScale(){
 			return this.width / this.range;
 		},
+		insetBorderRadius: 0,
 		min: Infinity,
 		max: -Infinity,
 		get range(){

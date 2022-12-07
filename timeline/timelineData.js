@@ -6,7 +6,6 @@ const timelineTest = [
 		name: 'Robert M. La Follette',
 		start: '14 Jun 1855',
 		end: '18 Jun 1925',
-		color: 'pink',
 		href: 'https://en.wikipedia.org/wiki/Robert_M._La_Follette',
 		insets: [
 			{
@@ -25,8 +24,8 @@ const timelineTest = [
 				color: 'red',
 			},
 			{
-				start: '1 Jan 1924',
-				end: '31 Dec 1924',
+				start: '1924',
+				end: '1925',
 				color: 'green',
 			},
 		],
@@ -35,22 +34,65 @@ const timelineTest = [
 		name: 'George W. Norris',
 		start: '11 Jul 1861',
 		end: '2 Sep 1944',
-		color: 'pink',
 		href: 'https://en.wikipedia.org/wiki/George_W._Norris',
+		insets: [
+			{
+				start: '4 Mar 1903',
+				end: '3 Mar 1913',
+				color: 'red',
+			},
+			{
+				start: '4 Mar 1913',
+				end: '31 Dec 1935',
+				color: 'red',
+			},
+			{
+				start: '1 Jan 1936',
+				end: '3 Jan 1943',
+				color: 'white',
+			},
+		],
 	},
 	{
 		name: 'William Borah',
 		start: '29 Jun 1865',
 		end: '19 Jan 1940',
-		color: 'pink',
 		href: 'https://en.wikipedia.org/wiki/William_Borah',
+		insets: [
+			{
+				start: '4 Mar 1907',
+				end: '19 Jan 1940',
+				color: 'red',
+			},
+		],
 	},
 	{
 		name: 'Burton K. Wheeler',
 		start: '27 Feb 1882',
 		end: '6 Jan 1975',
-		color: 'aliceblue',
 		href: 'https://en.wikipedia.org/wiki/Burton_K._Wheeler',
+		insets: [
+			{
+				start: '1910',
+				end: '1912',
+				color: 'blue',
+			},
+			{
+				start: '1912',
+				end: '1 Oct 1918',
+				color: 'blue',
+			},
+			{
+				start: '4 Mar 1923',
+				end: '3 Jan 1947',
+				color: 'blue',
+			},
+			{
+				start: '1924',
+				end: '1925',
+				color: 'green',
+			},
+		],
 	},
 	{
 		name: 'Gerald Nye',
