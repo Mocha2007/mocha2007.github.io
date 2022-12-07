@@ -188,7 +188,7 @@ const timelineTest = [
 	},
 	{
 		name: 'Abraham Lincoln',
-		start: '4 Mar 1857',
+		start: '4 Mar 1861',
 		end: '15 Apr 1865',
 		color: colors.r,
 		href: true,
@@ -919,6 +919,76 @@ const timelineTest = [
 			{
 				start: '3 Jan 2023',
 				end: '3 Jan 2025',
+				color: colors.r,
+			},
+		],
+	},
+	// US Supreme Court - partisanship determined by appointer
+	{
+		name: 'United States Supreme Court',
+		start: '4 Mar 1789',
+		end: '2025', // todo
+		href: true,
+		forceY: 9,
+		insets: [
+			{
+				start: '4 Mar 1789',
+				end: '13 Sep 1810',
+				color: colors.f,
+			},
+			{
+				start: '19 Jun 1811',
+				end: '14 Jan 1835',
+				color: colors.dr,
+			},
+			{
+				start: '28 Mar 1836',
+				end: '21 Jul 1862',
+				color: colors.d,
+			},
+			{
+				start: '30 May 1865',
+				end: '9 Jul 1938',
+				color: colors.r,
+			},
+			{
+				start: '17 Apr 1939',
+				end: '14 Oct 1958',
+				color: colors.d,
+			},
+			{
+				start: '14 Oct 1958',
+				end: '16 Apr 1962',
+				color: colors.r,
+			},
+			{
+				start: '16 Apr 1962',
+				end: '25 Jul 1965',
+				color: colors.d,
+			},
+			{
+				start: '25 Jul 1965',
+				end: '4 Oct 1965',
+				color: colors.r,
+			},
+			{
+				start: '4 Oct 1965',
+				end: '12 Jun 1967',
+				color: colors.d,
+			},
+			{
+				start: '12 Jun 1967',
+				end: '2 Oct 1967',
+				color: colors.r,
+			},
+			{
+				start: '2 Oct 1967',
+				end: '14 May 1969',
+				color: colors.d,
+			},
+			{
+				start: '14 May 1969',
+				end: '2023',
 				color: colors.r,
 			},
 		],
