@@ -68,11 +68,20 @@ class Plate {
 	get string(){
 		return `<[${this.id}] "${this.title}">`;
 	}
+	addToParent(){
+		this.parent.elem.appendChild(this.elem);
+	}
 	move(dx = 0, dy = 0){
-		const ratio = plates.window.size / 10;
+		const ratio = plates.window.size / 100;
 		this.x += dx * ratio;
 		this.y += dy * ratio;
 		this.elem.setAttribute('transform', `translate(${this.x}, ${this.y})`);
+	}
+	scale(widthMul = 1, heightMul = 1){
+		this.elem.children[0].setAttribute('height', this.h *= heightMul);
+		this.elem.children[0].setAttribute('width', this.w *= widthMul);
+		this.elem.children[1].setAttribute('height', this.h *= heightMul);
+		this.elem.children[1].setAttribute('width', this.w *= widthMul);
 	}
 }
 /** @type {Plate[]} */
@@ -87,7 +96,7 @@ const plates = {
 			h: this.window.size,
 		});
 		this.current.children.push(np);
-		this.current.elem.appendChild(np.elem);
+		np.addToParent();
 		this.current = np;
 	},
 	/** @type {Plate} */
@@ -136,6 +145,8 @@ const plates = {
 		document.getElementById('plates').innerHTML = '';
 		this.current = this.root = new Plate(JSON.parse(prompt('Paste code here:')));
 		document.getElementById('plates').appendChild(this.current.elem);
+		// make sure child elements work
+		this.root.children.forEach(child => child.addToParent());
 	},
 	pan(dx = 0, dy = 0){
 		const ratio = this.window.size / 10;
