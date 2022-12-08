@@ -30,6 +30,15 @@ const pi = Math.PI;
 /** degree / radian */
 const deg = pi/180;
 
+/** force a number to lie within an interval
+ * @param {number} x
+ * @param {number} min
+ * @param {number} max
+ */
+function clamp(x, min, max){
+	return Math.min(max, Math.max(min, x));
+}
+
 /**
  * @param {number} n
  * @return {number}
@@ -394,7 +403,7 @@ function proper(str){
  * @param {string} str
  */
 function removeAccents(str){
-	return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+	return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
 /** https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API */
