@@ -8,7 +8,7 @@ class Plate {
 		/** @type {string} */
 		this.title = o.title;
 		/** @type {string} */
-		this.imgSrc = o.imgSrc;
+		this._imgSrc = o.imgSrc;
 		/** @type {Plate[]} */
 		this.children = [];
 		this.x = o.x || 0;
@@ -36,6 +36,14 @@ class Plate {
 	}
 	get id(){
 		return Plate.plates.indexOf(this);
+	}
+	get imgSrc(){
+		return this._imgSrc;
+	}
+	/** @param {string} x */
+	set imgSrc(x){
+		this._imgSrc = x;
+		this.elem.children[1].setAttribute('href', x);
 	}
 	get link(){
 		const button = document.createElement('button');
