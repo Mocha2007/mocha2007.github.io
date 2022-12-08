@@ -4,7 +4,7 @@
 class Plate {
 	constructor(o){
 		/** @type {Plate} */
-		this.parent = o.parent;
+		// this.parent = o.parent;
 		/** @type {string} */
 		this.title = o.title;
 		/** @type {string} */
@@ -16,6 +16,9 @@ class Plate {
 		this.w = o.w || 0;
 		this.h = o.h || 0;
 		Plate.plates.push(this);
+	}
+	get parent(){
+		return Plate.plates.find(plate => plate.children.includes(this));
 	}
 	get elem(){
 		if (this.elem_cache)
@@ -35,7 +38,6 @@ class Plate {
 	}
 	get export(){
 		return {
-			parent: this.parent,
 			title: this.title,
 			imgSrc: this._imgSrc,
 			children: this.children.map(child => child.export),
@@ -79,7 +81,6 @@ Plate.plates = [];
 const plates = {
 	addChild(){
 		const np = new Plate({
-			parent: this.current,
 			// x: this.window.x,
 			// y: this.window.y,
 			w: this.window.size,
@@ -198,3 +199,6 @@ const plates = {
 		document.getElementById('plates').setAttribute('viewBox', vb);
 	},
 };
+/*
+{"title":"earth","imgSrc":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Blue_Marble_2002.png/1024px-Blue_Marble_2002.png","children":[{"title":"catgirl","imgSrc":"https://catgirlsare.sexy/images/meow.png","children":[],"x":362.5,"y":300,"w":125,"h":125}],"x":0,"y":0,"w":1000,"h":1000}
+*/
