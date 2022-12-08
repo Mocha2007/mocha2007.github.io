@@ -21,8 +21,7 @@ class Plate {
 		if (this.elem_cache)
 			return this.elem_cache;
 		const e = createSvgElement('g');
-		e.setAttribute('x', this.x);
-		e.setAttribute('y', this.y);
+		e.setAttribute('transform', `translate(${this.x}, ${this.y})`);
 		const border = createSvgElement('rect');
 		border.setAttribute('height', this.h);
 		border.setAttribute('width', this.w);
@@ -55,14 +54,27 @@ class Plate {
 	get string(){
 		return `<[${this.id}] "${this.title}">`;
 	}
+	move(dx = 0, dy = 0){
+		const ratio = plates.window.size / 10;
+		this.x += dx * ratio;
+		this.y += dy * ratio;
+		this.elem.setAttribute('transform', `translate(${this.x}, ${this.y})`);
+	}
 }
 /** @type {Plate[]} */
 Plate.plates = [];
 
 const plates = {
 	addChild(){
-		const np = new Plate({parent: this.current});
+		const np = new Plate({
+			parent: this.current,
+			// x: this.window.x,
+			// y: this.window.y,
+			w: this.window.size,
+			h: this.window.size,
+		});
 		this.current.children.push(np);
+		this.current.elem.appendChild(np.elem);
 		this.current = np;
 	},
 	/** @type {Plate} */
@@ -114,6 +126,7 @@ const plates = {
 		this.zoom();
 		this.current = this.root = new Plate({
 			title: 'root',
+			imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Blue_Marble_2002.png/1024px-Blue_Marble_2002.png',
 			w: this.window.size,
 			h: this.window.size,
 		});
@@ -148,6 +161,15 @@ const plates = {
 	},
 	zoom(delta = 0){
 		this.window.size /= Math.pow(2, delta);
+		// compensate for zoom
+		if (delta === 1){
+			this.window.x += this.window.size / 2;
+			this.window.y += this.window.size / 2;
+		}
+		else if (delta === -1){
+			this.window.x -= this.window.size / 4;
+			this.window.y -= this.window.size / 4;
+		}
 		const vb = `${this.window.x} ${this.window.y} ${this.window.size} ${this.window.size}`;
 		console.info('viewBox =>', vb);
 		// reset
