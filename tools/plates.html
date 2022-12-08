@@ -16,17 +16,17 @@
 		ZOOM <button onClick="plates.zoom(1);">+</button> <button onClick="plates.zoom(-1);">-</button>
 		<br>
 		PAN <button onClick="plates.pan(0, -1);">&uarr;</button>
-		<br><button onClick="plates.pan(-1, 0);">&larr;</button><button onClick="plates.pan(0, 1);">&darr;</button><button onClick="plates.pan(1, 0);">&rarr;</button>
+		<br><button onClick="plates.pan(-1);">&larr;</button><button onClick="plates.pan(0, 1);">&darr;</button><button onClick="plates.pan(1);">&rarr;</button>
 	</div>
 	<div>
 		<h2>Attributes</h2>
 		ID: <span id="id">____</span>
 		<br>
-		IMG.SRC: <input type="text" id="img_src"> <button onClick="plates.setSrc();">Set</button>
+		IMG.SRC: <input type="text" id="img_src"> <button onClick="plates.current.imgSrc = plates.elem.imgSrc.value;">Set</button>
 		<br>
-		PARENT: <button id="parentButton" onClick="plates.parent();">[root]</button>
+		PARENT: <button id="parentButton" onClick="plates.current = plates.current.parent;">[root]</button>
 		<br>
-		TITLE: <input type="text" id="title"> <button onClick="plates.setTitle();">Set</button>
+		TITLE: <input type="text" id="title"> <button onClick="plates.current.title = plates.elem.title.value;">Set</button>
 		<br>
 	</div>
 	<div>
