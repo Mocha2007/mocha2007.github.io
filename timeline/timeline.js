@@ -1,5 +1,5 @@
 /* exported timeline */
-/* global createSvgElement, getData, range, timelineTest */
+/* global clamp, createSvgElement, getData, range, timelineTest */
 
 class Period {
 	constructor(datum){
@@ -31,9 +31,12 @@ class Period {
 		e.setAttribute('href', this.href);
 		const text = createSvgElement('text');
 		text.innerHTML = this.name;
-		text.setAttribute('x', timeline.settings.textXOffset);
-		text.setAttribute('y', timeline.settings.textYOffset);
 		text.setAttribute('fill', this.textColor);
+		const r = clamp(Math.min(1, this.rectWidth / this.textWidth) || 1, 0.5, 1); // || 1 to prevent NaN
+		if (r < 1)
+			text.setAttribute('font-size', `${r*100}%`);
+		text.setAttribute('x', timeline.settings.textXOffset * r);
+		text.setAttribute('y', timeline.settings.textYOffset * (1+r)/2);
 		e.appendChild(text);
 		return this.a_cache = e;
 	}
@@ -57,18 +60,6 @@ class Period {
 	get img(){
 		return undefined; // todo
 	}
-	get range(){
-		return this.end - this.start;
-	}
-	get rect(){
-		if (this.rect_cache)
-			return this.rect_cache;
-		const e = createSvgElement('rect');
-		e.setAttribute('width', this.range * timeline.settings.horizontalScale);
-		e.setAttribute('fill', this.color);
-		e.setAttribute('stroke', this.borderColor);
-		return this.rect_cache = e;
-	}
 	get insetRects(){
 		if (this.insetRects_cache)
 			return this.insetRects_cache;
@@ -83,6 +74,25 @@ class Period {
 			e.setAttribute('rx', timeline.settings.insetBorderRadius);
 			return e;
 		});
+	}
+	get range(){
+		return this.end - this.start;
+	}
+	get rect(){
+		if (this.rect_cache)
+			return this.rect_cache;
+		const e = createSvgElement('rect');
+		e.setAttribute('width', this.rectWidth);
+		e.setAttribute('fill', this.color);
+		e.setAttribute('stroke', this.borderColor);
+		return this.rect_cache = e;
+	}
+	get rectWidth(){
+		return this.range * timeline.settings.horizontalScale;
+	}
+	/** estimated */
+	get textWidth(){
+		return 9 * this.name.length;
 	}
 }
 
@@ -153,7 +163,7 @@ const timeline = {
 			return this.max - this.min;
 		},
 		textXOffset: 5,
-		textYOffset: 15,
+		textYOffset: 16, // identical to font size
 		width: 1920,
 	},
 };
