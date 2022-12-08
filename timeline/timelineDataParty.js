@@ -938,12 +938,12 @@ const timelineTest = [
 			},
 			{
 				start: '19 Jun 1811',
-				end: '14 Jan 1835',
+				end: '4 Aug 1834',
 				color: colors.dr,
 			},
 			{
 				start: '28 Mar 1836',
-				end: '21 Jul 1862',
+				end: '20 May 1863',
 				color: colors.d,
 			},
 			{
