@@ -11,12 +11,27 @@ class Plate {
 		this.imgSrc = o.imgSrc;
 		/** @type {Plate[]} */
 		this.children = [];
+		this.x = o.x || 0;
+		this.y = o.y || 0;
+		this.w = o.w || 0;
+		this.h = o.h || 0;
 		Plate.plates.push(this);
 	}
 	get elem(){
 		if (this.elem_cache)
 			return this.elem_cache;
-		const e = createSvgElement('rect');
+		const e = createSvgElement('g');
+		e.setAttribute('x', this.x);
+		e.setAttribute('y', this.y);
+		const border = createSvgElement('rect');
+		border.setAttribute('height', this.h);
+		border.setAttribute('width', this.w);
+		e.appendChild(border);
+		const image = createSvgElement('image');
+		image.setAttribute('href', this.imgSrc);
+		image.setAttribute('height', this.h);
+		image.setAttribute('width', this.w);
+		e.appendChild(image);
 		return this.elem_cache = e;
 	}
 	get id(){
@@ -80,14 +95,23 @@ const plates = {
 		},
 	},
 	pan(dx = 0, dy = 0){
-		// todo
+		const ratio = this.window.size / 100;
+		this.window.x += dx * ratio;
+		this.window.y += dy * ratio;
+		this.zoom();
 	},
 	/** @type {Plate} */
 	root: undefined,
 	setup(){
-		this.current = this.root = new Plate({title: 'root'});
+		this.zoom();
+		this.current = this.root = new Plate({
+			title: 'root',
+			w: this.window.size,
+			h: this.window.size,
+		});
+		document.getElementById('plates').appendChild(this.current.elem);
 		console.info('Plates by Mocha loaded.');
-		console.debug(this.current);
+		// console.debug(this.current);
 	},
 	updateDisplay(){
 		this.current.elem.classList.add('selected');
@@ -110,11 +134,15 @@ const plates = {
 		});
 	},
 	window: {
+		size: 1000,
 		x: 0,
 		y: 0,
-		zoom: 1,
 	},
-	zoom(delta){
-		// todo
+	zoom(delta = 0){
+		this.window.size /= Math.pow(2, delta);
+		const vb = `${this.window.x} ${this.window.y} ${this.window.size} ${this.window.size}`;
+		console.info('viewBox =>', vb);
+		// reset
+		document.getElementById('plates').setAttribute('viewBox', vb);
 	},
 };

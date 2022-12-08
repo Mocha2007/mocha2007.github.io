@@ -26,10 +26,11 @@ ul {
 	top: 0;
 	width: calc(100% / 3 - 10px);
 }
-.selected {
-	animation: selected 1s linear alternate infinite;
+.selected > rect {
+	stroke: red;
+	stroke-width: 5;
 }
-@keyframes selected {
-	0% {stroke: orange}
-	100% {stroke: blue}
+#plates {
+	height: 500px;
+	width: 500px;
 }
