@@ -967,19 +967,9 @@ const timelineTest = [
 				color: colors.d,
 			},
 			{
-				start: '25 Jul 1965',
-				end: '4 Oct 1965',
-				color: colors.r,
-			},
-			{
 				start: '4 Oct 1965',
 				end: '12 Jun 1967',
 				color: colors.d,
-			},
-			{
-				start: '12 Jun 1967',
-				end: '2 Oct 1967',
-				color: colors.r,
 			},
 			{
 				start: '2 Oct 1967',
@@ -987,7 +977,17 @@ const timelineTest = [
 				color: colors.d,
 			},
 			{
-				start: '14 May 1969',
+				start: '23 Jun 1969',
+				end: '13 Feb 2016',
+				color: colors.r,
+			},
+			{
+				start: '10 Apr 2017',
+				end: '31 Jul 2018',
+				color: colors.r,
+			},
+			{
+				start: '6 Oct 2018',
 				end: '2023',
 				color: colors.r,
 			},
