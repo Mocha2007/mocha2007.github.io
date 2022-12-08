@@ -27,10 +27,11 @@ ul {
 	width: calc(100% / 3 - 10px);
 }
 .selected > rect {
+	fill: rgba(255, 0, 0, 0.1);
 	stroke: red;
-	stroke-width: 5;
+	stroke-width: 1;
 }
 #plates {
-	height: 500px;
-	width: 500px;
+	height: 700px;
+	width: 700px;
 }

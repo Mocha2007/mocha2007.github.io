@@ -95,7 +95,7 @@ const plates = {
 		},
 	},
 	pan(dx = 0, dy = 0){
-		const ratio = this.window.size / 100;
+		const ratio = this.window.size / 10;
 		this.window.x += dx * ratio;
 		this.window.y += dy * ratio;
 		this.zoom();
