@@ -10,7 +10,7 @@ class Plate {
 		/** @type {string} */
 		this._imgSrc = o.imgSrc;
 		/** @type {Plate[]} */
-		this.children = [];
+		this.children = o.children ? o.children.map(q => new Plate(q)) : [];
 		this.x = o.x || 0;
 		this.y = o.y || 0;
 		this.w = o.w || 0;
@@ -32,6 +32,18 @@ class Plate {
 		image.setAttribute('width', this.w);
 		e.appendChild(image);
 		return this.elem_cache = e;
+	}
+	get export(){
+		return {
+			parent: this.parent,
+			title: this.title,
+			imgSrc: this._imgSrc,
+			children: this.children.map(child => child.export),
+			x: this.x,
+			y: this.y,
+			w: this.w,
+			h: this.h,
+		};
 	}
 	get id(){
 		return Plate.plates.indexOf(this);
@@ -113,6 +125,16 @@ const plates = {
 		get title(){
 			return document.getElementById('title');
 		},
+	},
+	export(){
+		const text = JSON.stringify(this.root.export);
+		navigator.clipboard.writeText(text)
+			.then(() => alert('Copied!'), () => alert('Could not copy...'));
+	},
+	import(){
+		document.getElementById('plates').innerHTML = '';
+		this.current = this.root = new Plate(JSON.parse(prompt('Paste code here:')));
+		document.getElementById('plates').appendChild(this.current.elem);
 	},
 	pan(dx = 0, dy = 0){
 		const ratio = this.window.size / 10;
