@@ -24,7 +24,7 @@
 		<br>
 		IMG.SRC: <input type="text" id="img_src"> <button onClick="plates.current.imgSrc = plates.elem.imgSrc.value;">Set</button>
 		<br>
-		PARENT: <button id="parentButton" onClick="plates.current = plates.current.parent;">[root]</button>
+		PARENT: <span id="parent"></span>
 		<br>
 		TITLE: <input type="text" id="title"> <button onClick="plates.current.title = plates.elem.title.value;">Set</button>
 		<br>
@@ -32,7 +32,7 @@
 	<div>
 		<h2>Children</h2>
 		<button onClick="plates.addChild();">New</button>
-		<ul></ul>
+		<ul id="children"></ul>
 	</div>
 </div>
 <script>plates.setup();</script>

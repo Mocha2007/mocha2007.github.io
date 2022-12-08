@@ -22,6 +22,13 @@ class Plate {
 	get id(){
 		return Plate.plates.indexOf(this);
 	}
+	get link(){
+		const button = document.createElement('button');
+		button.id = 'parentButton';
+		button.onclick = () => plates.current = this;
+		button.innerHTML = this.string;
+		return button;
+	}
 	get string(){
 		return `<[${this.id}] "${this.title}">`;
 	}
@@ -30,6 +37,11 @@ class Plate {
 Plate.plates = [];
 
 const plates = {
+	addChild(){
+		const np = new Plate({parent: this.current});
+		this.current.children.push(np);
+		this.current = np;
+	},
 	/** @type {Plate} */
 	_current: undefined,
 	get current(){
@@ -46,6 +58,10 @@ const plates = {
 		this.updateDisplay();
 	},
 	elem: {
+		/** @returns {HTMLUListElement} */
+		get children(){
+			return document.getElementById('children');
+		},
 		/** @returns {HTMLSpanElement} */
 		get id(){
 			return document.getElementById('id');
@@ -56,7 +72,7 @@ const plates = {
 		},
 		/** @returns {HTMLButtonElement} */
 		get parent(){
-			return document.getElementById('parentButton');
+			return document.getElementById('parent');
 		},
 		/** @returns {HTMLInputElement} */
 		get title(){
@@ -77,8 +93,21 @@ const plates = {
 		this.current.elem.classList.add('selected');
 		this.elem.id.innerHTML = this.current.id;
 		this.elem.imgSrc.value = this.current.imgSrc;
-		this.elem.parent.innerHTML = this.current.string;
+		// parent link
+		this.elem.parent.innerHTML = '';
+		if (this.current.parent)
+			this.elem.parent.appendChild(this.current.parent.link);
+		else
+			this.elem.parent.innerHTML = 'None';
+		// title
 		this.elem.title.value = this.current.title;
+		// child list
+		this.elem.children.innerHTML = '';
+		this.current.children.forEach(child => {
+			const li = document.createElement('li');
+			li.appendChild(child.link);
+			this.elem.children.appendChild(li);
+		});
 	},
 	window: {
 		x: 0,
