@@ -211,5 +211,5 @@ const plates = {
 	},
 };
 /*
-{"title":"earth","imgSrc":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Blue_Marble_2002.png/1024px-Blue_Marble_2002.png","children":[{"title":"catgirl","imgSrc":"https://catgirlsare.sexy/images/meow.png","children":[],"x":362.5,"y":300,"w":125,"h":125}],"x":0,"y":0,"w":1000,"h":1000}
+{"title":"earth","imgSrc":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Blue_Marble_2002.png/1024px-Blue_Marble_2002.png","children":[{"title":"catgirl","imgSrc":"https://catgirlsare.sexy/images/meow.png","children":[],"x":540,"y":347.5,"w":18.149613276972854,"h":20.891741876860433}],"x":0,"y":0,"w":1000,"h":1000}
 */
