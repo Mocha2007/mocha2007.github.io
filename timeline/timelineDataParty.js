@@ -1136,4 +1136,128 @@ const timelineTest = [
 		href: true,
 		forceY: 10,
 	},
+	// US Governorships (overall picture)
+	{
+		name: 'State Governorships',
+		start: '7 Dec 1787',
+		end: '2024', // after 2023 elections dems might tie it
+		// href: true,
+		forceY: 12,
+		insets: [
+			// Prior to this, no party had a majority,
+			// although in 1797 and 1789 Federalists had exactly half
+			{
+				start: '1798',
+				end: '1802',
+				color: colors.f,
+			},
+			{
+				start: '1802',
+				end: '1812',
+				color: colors.dr,
+			},
+			// no data between 1812 and 1885
+			// https://en.wikipedia.org/wiki/1885_United_States_gubernatorial_elections
+			{
+				start: '1885',
+				end: '1889',
+				color: colors.d,
+			},
+			// 19-19 tie
+			{
+				start: '1890',
+				end: '1895',
+				color: colors.d,
+			},
+			{
+				start: '1895',
+				end: '1911',
+				color: colors.r,
+			},
+			{
+				start: '1911',
+				end: '1919',
+				color: colors.d,
+			},
+			{
+				start: '1919',
+				end: '1923',
+				color: colors.r,
+			},
+			{
+				start: '1923',
+				end: '1925',
+				color: colors.d,
+			},
+			// 24-24 tie
+			{
+				start: '1927',
+				end: '1931',
+				color: colors.r,
+			},
+			{
+				start: '1931',
+				end: '1943',
+				color: colors.d,
+			},
+			// 24-24 tie
+			{
+				start: '1944',
+				end: '1945',
+				color: colors.r,
+			},
+			{
+				start: '1945',
+				end: '1947',
+				color: colors.d,
+			},
+			{
+				start: '1947',
+				end: '1948',
+				color: colors.r,
+			},
+			// 24-24 tie
+			{
+				start: '1949',
+				end: '1951',
+				color: colors.d,
+			},
+			{
+				start: '1951',
+				end: '1955',
+				color: colors.r,
+			},
+			{
+				start: '1955',
+				end: '1967',
+				color: colors.d,
+			},
+			// 25-25 tie
+			{
+				start: '1968',
+				end: '1971',
+				color: colors.r,
+			},
+			{
+				start: '1971',
+				end: '1995',
+				color: colors.d,
+			},
+			{
+				start: '1995',
+				end: '2007',
+				color: colors.r,
+			},
+			{
+				start: '2007',
+				end: '2011',
+				color: colors.d,
+			},
+			{
+				start: '2011',
+				end: '2024',
+				color: colors.r,
+			},
+		],
+	},
 ];
