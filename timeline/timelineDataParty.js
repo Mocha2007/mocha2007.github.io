@@ -4,6 +4,7 @@ const colors = {
 	d: '#33F', // Democratic; also Jacksonians
 	dr: '#008000', // Democratic-Republican; also Anti-Administration
 	f: '#EA9978', // Federalist; also Pro-Administration
+	kn: '#D99FE8', // Know-Nothing AKA American Party
 	nu: '#B22222', // National Union
 	r: '#E81B23',
 	whig: '#F0C862', // also National Republican & Anti-Jacksonians
@@ -1257,6 +1258,161 @@ const timelineTest = [
 				start: '2011',
 				end: '2024',
 				color: colors.r,
+			},
+		],
+	},
+	// Delaware Governorship
+	{
+		name: 'Governor of Delaware',
+		start: '7 Dec 1787',
+		end: '21 Jan 2025',
+		href: true,
+		forceY: 13,
+		insets: [
+			{
+				start: '2 Jun 1789',
+				end: '19 Jan 1802',
+				color: colors.f,
+			},
+			{
+				start: '19 Jan 1802',
+				end: '15 Jan 1805',
+				color: colors.dr,
+			},
+			{
+				start: '15 Jan 1805',
+				end: '15 Jan 1811',
+				color: colors.f,
+			},
+			{
+				start: '15 Jan 1811',
+				end: '18 Jan 1814',
+				color: colors.dr,
+			},
+			{
+				start: '18 Jan 1814',
+				end: '16 Jan 1821',
+				color: colors.f,
+			},
+			{
+				start: '16 Jan 1821',
+				end: '16 Apr 1822',
+				color: colors.dr,
+			},
+			{
+				start: '16 Apr 1822',
+				end: '21 Jan 1823',
+				color: colors.f,
+			},
+			{
+				start: '21 Jan 1823',
+				end: '20 Jan 1824',
+				color: colors.dr,
+			},
+			{
+				start: '20 Jan 1824',
+				end: '19 Jan 1830',
+				color: colors.f,
+			},
+			{
+				start: '19 Jan 1830',
+				end: '15 Jan 1833',
+				color: colors.whig, // National Republican
+			},
+			{
+				start: '15 Jan 1833',
+				end: '9 May 1836',
+				color: colors.d,
+			},
+			{
+				start: '9 May 1836',
+				end: '19 Jan 1847',
+				color: colors.whig,
+			},
+			{
+				start: '19 Jan 1847',
+				end: '16 Jan 1855',
+				color: colors.d,
+			},
+			{
+				start: '16 Jan 1855',
+				end: '18 Jan 1859',
+				color: colors.kn,
+			},
+			{
+				start: '18 Jan 1859',
+				end: '20 Jan 1863',
+				color: colors.d,
+			},
+			{
+				start: '20 Jan 1863',
+				end: '1 Mar 1865',
+				color: colors.r,
+			},
+			{
+				start: '1 Mar 1865',
+				end: '15 Jan 1895',
+				color: colors.d,
+			},
+			{
+				start: '15 Jan 1895',
+				end: '8 Apr 1895',
+				color: colors.r,
+			},
+			{
+				start: '8 Apr 1895',
+				end: '15 Jan 1901',
+				color: colors.d,
+			},
+			{
+				start: '15 Jan 1901',
+				end: '19 Jan 1937',
+				color: colors.r,
+			},
+			{
+				start: '19 Jan 1937',
+				end: '21 Jan 1941',
+				color: colors.d,
+			},
+			{
+				start: '21 Jan 1941',
+				end: '18 Jan 1949',
+				color: colors.r,
+			},
+			{
+				start: '18 Jan 1949',
+				end: '20 Jan 1953',
+				color: colors.d,
+			},
+			{
+				start: '20 Jan 1953',
+				end: '17 Jan 1961',
+				color: colors.r,
+			},
+			{
+				start: '17 Jan 1961',
+				end: '21 Jan 1969',
+				color: colors.d,
+			},
+			{
+				start: '21 Jan 1969',
+				end: '16 Jan 1973',
+				color: colors.r,
+			},
+			{
+				start: '16 Jan 1973',
+				end: '18 Jan 1977',
+				color: colors.d,
+			},
+			{
+				start: '18 Jan 1977',
+				end: '19 Jan 1993',
+				color: colors.r,
+			},
+			{
+				start: '19 Jan 1993',
+				end: '21 Jan 2025',
+				color: colors.d,
 			},
 		],
 	},
