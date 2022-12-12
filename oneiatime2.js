@@ -7,7 +7,7 @@
 
 var constants = {
 	earth: {
-		vernal: 6884100000, // ms after first vernal equinox 20 Mar 16:15 (2018)
+		winter: 1513873380000, // ms winter solstace 21 Dec 2017 @ 16:23 UTC
 		year: 31556952000, // ms
 	},
 	eremor: {
@@ -104,7 +104,7 @@ function oneiaTimeInitialize(t){
 	titleEarth.appendChild(phoonsvg(cmoonphase));
 	titleEarth.innerHTML += ' Earth Time:';
 	document.getElementById('clock_earth_progress').value
-		= (t-constants.earth.vernal) % constants.earth.year/constants.earth.year;
+		= (t-constants.earth.winter) % constants.earth.year/constants.earth.year;
 }
 
 function updateEremoranDate(t){
