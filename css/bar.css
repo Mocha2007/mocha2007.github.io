@@ -15,11 +15,11 @@ progress[role]:after {
  */
 
 /* Firefox and Polyfill */
-progress {
+progress#clock_earth_progress {
 	background: url("../img/progress0.png"); /* !important */
 }
 /* Chrome */
-progress::-webkit-progress-bar {
+progress#clock_earth_progress::-webkit-progress-bar {
 	background: url("../img/progress0.png");
 }
 
@@ -28,14 +28,27 @@ progress::-webkit-progress-bar {
  */
 
 /* Firefox */
-progress::-moz-progress-bar {
+progress#clock_earth_progress::-moz-progress-bar {
 	background: url("../img/progress1.png");
 }
 /* Chrome */
-progress::-webkit-progress-value {
+progress#clock_earth_progress::-webkit-progress-value {
 	background: url("../img/progress1.png");
 }
 /* Polyfill */
-progress[aria-valuenow]:before {
+progress#clock_earth_progress[aria-valuenow]:before {
 	background: url("../img/progress1.png");
+}
+
+/* new ones */
+
+progress#clock_eremor_progress,
+progress#clock_earth_progress::-webkit-progress-bar {
+	background: url("../img/progress2.png");
+}
+
+progress#clock_eremor_progress::-moz-progress-bar,
+progress#clock_eremor_progress::-webkit-progress-value,
+progress#clock_eremor_progress[aria-valuenow]:before {
+	background: url("../img/progress3.png");
 }
