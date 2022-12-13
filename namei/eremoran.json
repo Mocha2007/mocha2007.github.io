@@ -1019,6 +1019,15 @@
 		"categories": ["experiential"]
 	},
 	{
+		"title": "barsum",
+		"etym": "L/VAZ/???",
+		"cat": "n., 5th",
+		"defList": [
+			"Don, the fifth planet from Namei"
+		],
+		"categories": ["astronomy", "toponym"]
+	},
+	{
 		"title": "bart",
 		"etym": "C/barz/-t",
 		"cat": "n., 3rd",
@@ -1680,7 +1689,8 @@
 			"Oneia",
 			"(esp. in compounds) sienna"
 		],
-		"notes": "This does not translate country or nation in all English uses. When referring to an ethnos, use <i>mor</i> instead."
+		"notes": "This does not translate country or nation in all English uses. When referring to an ethnos, use <i>mor</i> instead.",
+		"categories": ["astronomy"]
 	},
 	{
 		"title": "dadal",
@@ -5494,7 +5504,8 @@
 		"defList": [
 			"Nikki (Moon of Oneia)",
 			"moon"
-		]
+		],
+		"categories": ["astronomy"]
 	},
 	{
 		"title": "nom",
@@ -6133,7 +6144,7 @@
 			"Namei",
 			"sunlight"
 		],
-		"categories": ["weather"]
+		"categories": ["astronomy", "weather"]
 	},
 	{
 		"title": "rilm",
@@ -6472,7 +6483,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"substellar object orbiting a star <ol> <li>(by extension) planet</li> <li>(by extension) minor planet</li> <li>(by extension) comet</li> </ol> "
-		]
+		],
+		"categories": ["astronomy"]
 	},
 	{
 		"title": "sesu",
