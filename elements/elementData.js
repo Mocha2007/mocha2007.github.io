@@ -3622,7 +3622,7 @@ const elementData = [
 				actinide: true,
 			},
 			crystal: 'hP',
-			density: 16100,
+			density: 14400,
 			discovery: 1961,
 			modelColor: 'rgb(199, 0, 102)',
 			temperatures: {
@@ -3639,7 +3639,7 @@ const elementData = [
 		period: 7,
 		properties: {
 			crystal: 'hP',
-			density: 23200,
+			density: 17000,
 			discovery: 1969,
 			modelColor: 'rgb(204, 0, 89)',
 			temperatures: {
@@ -3657,7 +3657,7 @@ const elementData = [
 		period: 7,
 		properties: {
 			crystal: 'cI',
-			density: 29300,
+			density: 21600,
 			discovery: 1970,
 			modelColor: 'rgb(209, 0, 79)',
 		},
@@ -3671,7 +3671,7 @@ const elementData = [
 		period: 7,
 		properties: {
 			crystal: 'cI',
-			density: 35000,
+			density: 23500,
 			discovery: 1974,
 			modelColor: 'rgb(217, 0, 69)',
 		},
@@ -3685,7 +3685,7 @@ const elementData = [
 		period: 7,
 		properties: {
 			crystal: 'hP',
-			density: 37100,
+			density: 26500,
 			discovery: 1981,
 			modelColor: 'rgb(224, 0, 56)',
 			nobleMetal: 5,
@@ -3700,7 +3700,7 @@ const elementData = [
 		period: 7,
 		properties: {
 			crystal: 'hP',
-			density: 41000,
+			density: 28000,
 			discovery: 1984,
 			modelColor: 'rgb(230, 0, 46)',
 			nobleMetal: 5,
@@ -3715,7 +3715,7 @@ const elementData = [
 		period: 7,
 		properties: {
 			crystal: 'cF',
-			density: 37400,
+			density: 27500,
 			discovery: 1982,
 			modelColor: 'rgb(235, 0, 38)',
 			nobleMetal: 5,
@@ -3730,7 +3730,7 @@ const elementData = [
 		period: 7,
 		properties: {
 			crystal: 'cI',
-			density: 34800,
+			density: 26500,
 			discovery: 1994,
 			modelColor: 'rgb(239, 0, 29)', // extrapolation
 			nobleMetal: 5,
@@ -3745,7 +3745,7 @@ const elementData = [
 		period: 7,
 		properties: {
 			crystal: 'cI',
-			density: 28700,
+			density: 23000,
 			discovery: 1994,
 			modelColor: 'rgb(242, 0, 19)', // extrapolation
 			nobleMetal: 5,
@@ -3797,13 +3797,14 @@ const elementData = [
 		group: 14,
 		period: 7,
 		properties: {
-			density: 9928,
+			crystal: 'cF', // https://en.wikipedia.org/wiki/Flerovium#Atomic_and_physical
+			density: 11400,
 			discovery: 1999,
 			modelColor: 'rgb(62, 50, 66)', // extrapolation
 			nobleMetal: 5,
 			temperatures: {
 				boil: 380, // predicted
-				melt: 200, // predicted
+				melt: 284, // predicted
 			},
 		},
 	},
@@ -3880,7 +3881,7 @@ const elementData = [
 				nobleGas: true,
 			},
 			crystal: 'cF',
-			density: 7000,
+			density: 7200,
 			discovery: 2002,
 			modelColor: 'rgb(66, 102, 124)', // extrapolation
 			temperatures: {
