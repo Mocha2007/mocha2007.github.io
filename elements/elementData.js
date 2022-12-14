@@ -3902,7 +3902,12 @@ const elementData = [
 			categories: {
 				alkaliMetal: true,
 			},
+			crystal: 'cI',
 			density: 3000,
+			temperatures: {
+				boil: 903, // predicted
+				melt: 288, // predicted
+			},
 		},
 	},
 	{
@@ -3916,7 +3921,12 @@ const elementData = [
 			categories: {
 				aem: true,
 			},
+			crystal: 'cI',
 			density: 7000,
+			temperatures: {
+				boil: 1973, // predicted
+				melt: 953, // predicted
+			},
 		},
 	},
 	{
