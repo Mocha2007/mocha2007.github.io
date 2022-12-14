@@ -50,7 +50,7 @@ class ChemElement {
 	 * @param {number} mass
 	 * @param {number} group - used in determining coord x
 	 * @param {number} period - used in determining coord y
-	 * @param {{rgb: string}} properties
+	 * @param {*} properties
 	*/
 	constructor(z, name, symbol, mass, group, period, properties){
 		this.z = z;
@@ -68,6 +68,8 @@ class ChemElement {
 			this.biologicalHalfLife = properties.biologicalHalfLife;
 			/** string => true|false|0.5 */
 			this.categories = properties.categories;
+			/** @type {string} */
+			this.crystal = properties.crystal;
 			/** @type {number} - kg/m^3; divide by 1000 to get g/cm^3 */
 			this.density = properties.density;
 			/** @type {number} - year CE/BCE */
@@ -304,6 +306,22 @@ class ChemElement {
 			case 'category':
 				c = this.color;
 				break;
+			case 'crystal':{
+				if (this.crystal)
+					c = {
+						//	color		*white		*black		*grey
+						aP: '#f00',
+						mP: '#f80', mS: '#fc8',
+						oP: '#ff0', oS: '#ffc', oI: '#880', oF: '#cc4',
+						tP: '#0f0',				tI: '#080',
+						hR: '#0ff',
+						hP: '#00f',
+						cP: '#f0f',				cI: '#808', cF: '#c4c',
+					}[this.crystal];
+				else
+					c = 'grey';
+				break;
+			}
 			case 'density':{
 				const densest = Math.sqrt(
 					Math.max(...elements.filter(e => e.density).map(e => e.density)));
