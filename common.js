@@ -99,6 +99,21 @@ function linspace(from = 0, to = 1, points = 1){
 	return new Array(points).fill(0).map((_, i) => i/points * (to-from) + from);
 }
 
+/**
+ * returns a function representing an interpolation between the two given points that is linear on a log-log plot
+ * @param {number} x0
+ * @param {number} y0
+ * @param {number} x1
+ * @param {number} y1
+ * @returns {(x: number) => number} interpolation
+ */
+function logLogInterpolate(x0, y0, x1, y1){
+	const b = (Math.log(x1)*Math.log(y0) - Math.log(x0)*Math.log(y1))
+		/ (Math.log(x1) - Math.log(x0));
+	const a = (Math.log(y0) - b) / Math.log(x0);
+	return x => Math.exp(a*Math.log(x) + b);
+}
+
 /** find the mean of an array
  * @param {number[]} x
 */

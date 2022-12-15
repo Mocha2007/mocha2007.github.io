@@ -83,7 +83,9 @@ const elementData = [
 			production: 50e6,
 			temperatures: {
 				boil: 20.28,
+				crit: [32.938, 1.2858e6],
 				melt: 14.01,
+				trip: [13.8033, 7.041e3],
 			},
 		},
 	},

@@ -1,12 +1,13 @@
 /* jshint esversion: 6, strict: true, strict: global, laxbreak: true, nonew: false */
-/* globals createSvgElement, day, deg, elementData, hour, isotopeData, mean, minute,
-	nobleMetalColors, nucleosynthesisColors, nucleus, nutritionColors, range, remap,
-	round, sum, trace, unitString, year */
+/* globals createSvgElement, day, deg, elementData, hour, isotopeData, logLogInterpolate,
+	mean, minute, nobleMetalColors, nucleosynthesisColors, nucleus, nutritionColors,
+	range, remap, round, sum, trace, unitString, year */
 /* exported highlightCategory, highlightFunction, hlCull, setDecayChainLength, tableColor */
 'use strict';
 
 const eV = 1.602176634e-19; // J; exact; electronvolt
 const standardTemperature = 273.15; // K; exact; melting point of water
+const stp = [273.15, 1e5]; // [K, Pa]
 
 const minX = 1; // constant used to determine origin of x-values
 const maxZ = 100; // Z of top of charts
@@ -242,6 +243,39 @@ class ChemElement {
 		return this.categories && this.categories.hasOwnProperty(category)
 			? this.categories[category]
 			: false;
+	}
+	/**
+	 * Like stateAt but tries to extrapolate a 2D phase diagram from four data
+	 * @param {number} t - temperature (K)
+	 * @param {number} p - pressure (Pa)
+	 */
+	phaseAt(t, p){
+		if (this.temperatures.crit[0] < t){
+			if (this.temperatures.crit[1] < p)
+				return 'Supercritical Fluid';
+			return 'Gas';
+		}
+		const boilCritLine = logLogInterpolate(
+			this.temperatures.boil, stp[1], ...this.temperatures.crit);
+		const meltTripLine = logLogInterpolate(
+			this.temperatures.melt, stp[1], ...this.temperatures.trip);
+		const boilTripLine = logLogInterpolate(
+			this.temperatures.boil, stp[1], ...this.temperatures.trip);
+		// above SP?
+		if (stp[1] < p){
+			if (meltTripLine(t) < p)
+				return 'Solid';
+			if (p < boilCritLine(t))
+				return 'Gas';
+			return 'Liquid';
+		}
+		// below boil-trip line?
+		if (p < boilTripLine(t))
+			return 'Gas';
+		// below melt-trip line?
+		if (p < meltTripLine(t))
+			return 'Liquid';
+		return 'Solid';
 	}
 	/** @param {number} t */
 	stateAt(t){
