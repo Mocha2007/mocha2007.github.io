@@ -83,8 +83,8 @@ const elementData = [
 			production: 50e6,
 			temperatures: {
 				boil: 20.28,
-				crit: [32.938, 1.2858e6],
 				melt: 14.01,
+				crit: [32.938, 1.2858e6],
 				trip: [13.8033, 7.041e3],
 			},
 		},
@@ -119,6 +119,8 @@ const elementData = [
 			production: 32e3,
 			temperatures: {
 				boil: 4.22, // does not solidify at SP
+				crit: [5.1953, 0.22746e6],
+				trip: [2.177, 5.043e3],
 			},
 		},
 	},
