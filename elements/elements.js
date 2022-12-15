@@ -250,6 +250,12 @@ class ChemElement {
 	 * @param {number} p - pressure (Pa)
 	 */
 	phaseAt(t, p){
+		const meltTripLine = logLogInterpolate(
+			this.temperatures.melt, stp[1], ...this.temperatures.trip);
+		// p > melt-trip line anywhere? if so, then solid
+		if (meltTripLine(t) < p)
+			return 'Solid';
+		// above critical temp?
 		if (this.temperatures.crit[0] < t){
 			if (this.temperatures.crit[1] < p)
 				return 'Supercritical Fluid';
@@ -257,14 +263,10 @@ class ChemElement {
 		}
 		const boilCritLine = logLogInterpolate(
 			this.temperatures.boil, stp[1], ...this.temperatures.crit);
-		const meltTripLine = logLogInterpolate(
-			this.temperatures.melt, stp[1], ...this.temperatures.trip);
 		const boilTripLine = logLogInterpolate(
 			this.temperatures.boil, stp[1], ...this.temperatures.trip);
 		// above SP?
 		if (stp[1] < p){
-			if (meltTripLine(t) < p)
-				return 'Solid';
 			if (p < boilCritLine(t))
 				return 'Gas';
 			return 'Liquid';
