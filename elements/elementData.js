@@ -233,6 +233,7 @@ const elementData = [
 				boil: 4200,
 				melt: 2349,
 			},
+			toxicity: 6e-3, // LD50
 		},
 	},
 	{
@@ -382,6 +383,7 @@ const elementData = [
 				boil: 85.03,
 				melt: 53.53,
 			},
+			toxicity: 25e-6, // significant irritation of the eyes and respiratory system as well as liver and kidney damage occur above 25 ppm, which is the immediately dangerous to life and health value for fluorine
 		},
 	},
 	{
@@ -822,6 +824,7 @@ const elementData = [
 				boil: 3109,
 				melt: 1814,
 			},
+			toxicity: 4e-3, // LD50, oral, rat
 		},
 	},
 	{
@@ -1058,6 +1061,7 @@ const elementData = [
 				boil: 3200,
 				melt: 1768,
 			},
+			toxicity: 325e-6, // The LD50 value for soluble cobalt salts has been estimated to be between 150 and 500 mg/kg
 		},
 	},
 	{
@@ -1192,6 +1196,7 @@ const elementData = [
 				human: 7e-6,
 				universe: 1e-8,
 			},
+			biologicalHalfLife: 25*hour, // Excretion of gallium occurs in two phases: the first phase has a biological half-life of 1 hour, while the second has a biological half-life of 25 hours.
 			categories: {
 				preciousMetal: 0.5,
 				tech: true,
@@ -1328,6 +1333,7 @@ const elementData = [
 				boil: 958,
 				melt: 453,
 			},
+			toxicity: 3000e-6 / 65e3, // The chronic toxic dose of selenite for humans is about 2400 to 3000 micrograms of selenium per day.
 		},
 	},
 	{
@@ -1433,6 +1439,7 @@ const elementData = [
 				boil: 961,
 				melt: 312.46,
 			},
+			toxicity: 0.36 / 70e3 * 100, // a 70 kg person contains on average 0.36 g of rubidium, and an increase in this value by 50 to 100 times did not show negative effects in test persons
 		},
 	},
 	{
@@ -1577,6 +1584,7 @@ const elementData = [
 				boil: 5017,
 				melt: 2750,
 			},
+			toxicity: 940e-6, // LD50, oral, rat
 		},
 	},
 	{
@@ -1727,6 +1735,7 @@ const elementData = [
 				boil: 3968,
 				melt: 2237,
 			},
+			toxicity: 198e-6, // LD50, rat, rhodium chloride
 		},
 	},
 	{
@@ -1766,6 +1775,7 @@ const elementData = [
 				boil: 3236,
 				melt: 1828.05,
 			},
+			toxicity: 200e-6, // LD50, oral, mouse, soluble palladium compounds
 		},
 	},
 	{
@@ -2035,6 +2045,7 @@ const elementData = [
 				boil: 457.4,
 				melt: 386.85,
 			},
+			toxicity: 30e-6, // LD50, oral, adult human
 		},
 	},
 	{
