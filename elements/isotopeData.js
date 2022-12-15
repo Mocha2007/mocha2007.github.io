@@ -2679,6 +2679,13 @@ const isotopeData = [
 		abundance: trace,
 	},
 	{
+		name: 'Pb-200',
+		decayTypes: [
+			['b+', 1],
+		],
+		halfLife: 21.5*hour,
+	},
+	{
 		name: 'Pb-202',
 		decayTypes: [
 			['ec', 0.99],
@@ -2982,6 +2989,14 @@ const isotopeData = [
 		abundance: trace,
 	},
 	{
+		name: 'Rn-211',
+		decayTypes: [
+			['a', 0.726],
+			['b+', 0.274],
+		],
+		halfLife: 14.6*hour,
+	},
+	{
 		name: 'Rn-216',
 		decayTypes: [
 			['a', 1],
@@ -3239,6 +3254,14 @@ const isotopeData = [
 			['b-', 1],
 		],
 		halfLife: 37.5*minute,
+	},
+	{
+		name: 'Pa-228',
+		decayTypes: [
+			['b+', 0.9815],
+			['a', 0.0185],
+		],
+		halfLife: 22*hour,
 	},
 	{
 		name: 'Pa-229',
