@@ -110,7 +110,7 @@ const isotopeData = [
 			['b+', 0.9686],
 			['ec', 0.0314],
 		],
-		halfLife: 109.739*day,
+		halfLife: 109.771*minute,
 		abundance: trace,
 	},
 	{
