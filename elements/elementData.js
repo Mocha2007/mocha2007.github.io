@@ -612,6 +612,7 @@ const elementData = [
 				2019: 2.69,
 			},
 			production: 910e3,
+			resistivity: 1e-7, // https://periodictable.com/Elements/015/data.html
 			rgb: 'rgb(255, 235, 186)',
 			temperatures: {
 				boil: 550,
@@ -2043,6 +2044,7 @@ const elementData = [
 				2019: 63.5,
 			},
 			production: 122,
+			resistivity: 1e-4, // https://periodictable.com/Elements/052/data.html
 			temperatures: {
 				boil: 1261,
 				melt: 722.66,
