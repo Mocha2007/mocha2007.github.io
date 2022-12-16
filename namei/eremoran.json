@@ -8,6 +8,24 @@
 		]
 	},
 	{
+		"title": "-idinu",
+		"etym": "C/din/-u",
+		"cat": "aff.",
+		"defList": [
+			"(archaic) -en (indicates item is made from a substance, cf. la. <cite>-eus</cite>)"
+		],
+		"notes": "has the alternate form -dinu after a vowel"
+	},
+	{
+		"title": "-idzu",
+		"etym": "r/-idinu",
+		"cat": "aff.",
+		"defList": [
+			"-en (indicates item is made from a substance, cf. la. <cite>-eus</cite>)"
+		],
+		"notes": "has the alternate form -dzu after a vowel"
+	},
+	{
 		"title": "-isu",
 		"etym": "a/su",
 		"cat": "aff.",
