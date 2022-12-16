@@ -199,7 +199,7 @@ class ChemElement {
 		div.style.backgroundColor = this.color;
 		// place element
 		const [x, y] = this.coords;
-		/** @type {HTMLTableDataCellElement} */
+		/** @type {HTMLTableCellElement} */
 		const cell = document.getElementById(`cell${x}-${y}`);
 		cell.appendChild(div);
 	}
@@ -933,6 +933,19 @@ function main(){
 	updateTemperature();
 	// draw nucleus
 	nucleus.update();
+	// add oxidation state buttons
+	range(-4, 9).forEach(n => {
+		const label = document.createElement('label');
+		label.onclick = () => highlightFunction(
+			e => e.oxidation !== undefined && e.oxidation.includes(n));
+		// <input name="category" type="radio">
+		const input = document.createElement('input');
+		input.name = 'category';
+		input.type = 'radio';
+		label.appendChild(input);
+		label.appendChild(document.createTextNode((0 < n ? '+' : '') + n));
+		document.getElementById('oxidationStateRadio').appendChild(label);
+	});
 	// log
 	console.info('elements.js successfully loaded.');
 }

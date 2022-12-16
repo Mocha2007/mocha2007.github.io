@@ -53,7 +53,7 @@
 	<label onclick="highlightCategory('lanthanide')">
 		<input name="category" type="radio">
 		Lanthanide</label>
-	<label onclick="highlightFunction(e => e.density < 5000 && e.category !== 'Reactive nonmetal' && e.category != 'Noble gas')">
+	<label onclick="highlightFunction(e => e.density < 5000 && e.category !== 'Reactive nonmetal' && e.category !== 'Noble gas')">
 		<input name="category" type="radio">
 		Light Metal</label>
 	<label onclick="highlightCategory('metalloid')">
@@ -92,6 +92,9 @@
 	<label onclick="highlightCategory('tech')">
 		<input name="category" type="radio">
 		Technology-critical</label>
+	<br>
+	Oxidation States:
+	<div id="oxidationStateRadio"></div>
 </div>
 <h2>Table Type</h2>
 <table id="tableControls">
