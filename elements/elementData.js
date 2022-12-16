@@ -1354,6 +1354,7 @@ const elementData = [
 				2019: 21.4,
 			},
 			production: 2e3,
+			resistivity: 106e-6, // https://www.espimetals.com/index.php/component/content/article/422-online-catalog/selenium-se/435-selenium-se?Itemid=135
 			temperatures: {
 				boil: 958,
 				melt: 453,
