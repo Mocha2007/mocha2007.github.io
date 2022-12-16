@@ -156,6 +156,7 @@ const elementData = [
 				2018: 16.5,
 			},
 			production: 55e3,
+			resistivity: 92.8e-9,
 			rgb: 'rgb(249, 255, 252)',
 			temperatures: {
 				boil: 1560,
@@ -192,6 +193,7 @@ const elementData = [
 				2020: 857,
 			},
 			production: 200,
+			resistivity: 36e-9,
 			rgb: 'rgb(255, 255, 255)',
 			temperatures: {
 				boil: 2742,
@@ -228,6 +230,7 @@ const elementData = [
 				2019: 3.68,
 			},
 			production: 1.8e6,
+			resistivity: 1e6,
 			rgb: 'rgb(255, 232, 219)',
 			temperatures: {
 				boil: 4200,
@@ -268,6 +271,7 @@ const elementData = [
 				2018: 0.122,
 			},
 			production: 1.03e6,
+			resistivity: 7.837e-6,
 			rgb: 'rgb(255, 251, 239)',
 			temperatures: {
 				boil: 3915,
@@ -450,6 +454,7 @@ const elementData = [
 				2020: 3,
 			},
 			production: 100e3,
+			resistivity: 47.7e-9,
 			rgb: 'rgb(252, 255, 249)',
 			temperatures: {
 				boil: 1156,
@@ -489,6 +494,7 @@ const elementData = [
 				2019: 2.32,
 			},
 			production: 748e3,
+			resistivity: 43.9e-9,
 			rgb: 'rgb(255, 251, 234)',
 			temperatures: {
 				boil: 1363,
@@ -527,6 +533,7 @@ const elementData = [
 				2019: 1.79,
 			},
 			production: 44.1e6,
+			resistivity: 26.5e-9,
 			rgb: 'rgb(244, 251, 255)',
 			temperatures: {
 				boil: 2792,
@@ -565,6 +572,7 @@ const elementData = [
 				2019: 1.7,
 			},
 			production: 8e6,
+			resistivity: 2.3e3,
 			rgb: 'rgb(234, 241, 255)',
 			temperatures: {
 				boil: 3538,
@@ -643,6 +651,7 @@ const elementData = [
 				2019: 0.0926,
 			},
 			production: 69e6,
+			resistivity: 1e15,
 			rgb: 'rgb(255, 218, 86)',
 			temperatures: {
 				boil: 717.87,
@@ -751,6 +760,7 @@ const elementData = [
 			prices: {
 				2020: 12.85,
 			},
+			resistivity: 72e-9,
 			temperatures: {
 				boil: 1032,
 				melt: 336.53,
@@ -786,6 +796,7 @@ const elementData = [
 			prices: {
 				2020: 2.28,
 			},
+			resistivity: 33.6e-9,
 			temperatures: {
 				boil: 1757,
 				melt: 1115,
@@ -820,6 +831,7 @@ const elementData = [
 				2020: 3460,
 			},
 			production: 2,
+			resistivity: 562e-9,
 			temperatures: {
 				boil: 3109,
 				melt: 1814,
@@ -859,6 +871,7 @@ const elementData = [
 				2018: 4.8,
 			},
 			production: 6.7e6,
+			resistivity: 420e-9,
 			temperatures: {
 				boil: 3560,
 				melt: 1941,
@@ -896,6 +909,7 @@ const elementData = [
 				2020: 371,
 			},
 			production: 73e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-vanadium.pdf
+			resistivity: 197e-9,
 			temperatures: {
 				boil: 3680,
 				melt: 2183,
@@ -935,6 +949,7 @@ const elementData = [
 				2019: 9.4,
 			},
 			production: 4.4e6,
+			resistivity: 125e-9,
 			temperatures: {
 				boil: 2944,
 				melt: 2180,
@@ -977,6 +992,7 @@ const elementData = [
 				2018: 2.06,
 			},
 			production: 19e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-manganese.pdf
+			resistivity: 1.44e-6,
 			temperatures: {
 				boil: 2334,
 				melt: 1519,
@@ -1016,6 +1032,7 @@ const elementData = [
 				2020: 0.424,
 			},
 			production: 1544e6,
+			resistivity: 96.1e-9,
 			rgb: 'rgb(255, 252, 252)',
 			temperatures: {
 				boil: 3134,
@@ -1056,6 +1073,7 @@ const elementData = [
 				2019: 32.8,
 			},
 			production: 140e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cobalt.pdf
+			resistivity: 62.4e-9,
 			rgb: 'rgb(255, 249, 244)',
 			temperatures: {
 				boil: 3200,
@@ -1096,6 +1114,7 @@ const elementData = [
 				2019: 13.9,
 			},
 			production: 1.8e6,
+			resistivity: 69.3e-9,
 			rgb: 'rgb(255, 245, 224)',
 			temperatures: {
 				boil: 3186,
@@ -1137,6 +1156,7 @@ const elementData = [
 				2019: 6,
 			},
 			production: 15.1e6,
+			resistivity: 16.78e-9,
 			rgb: 'rgb(255, 121, 76)',
 			temperatures: {
 				boil: 2835,
@@ -1177,6 +1197,7 @@ const elementData = [
 				2019: 2.55,
 			},
 			production: 11.2e6,
+			resistivity: 59e-9,
 			temperatures: {
 				boil: 1180,
 				melt: 692.88,
@@ -1212,6 +1233,7 @@ const elementData = [
 				2020: 148,
 			},
 			production: 184,
+			resistivity: 270e-9,
 			temperatures: {
 				boil: 2673,
 				melt: 692.88,
@@ -1249,6 +1271,7 @@ const elementData = [
 				2020: 962,
 			},
 			production: 118,
+			resistivity: 1,
 			temperatures: {
 				boil: 3106,
 				melt: 1211.4,
@@ -1286,6 +1309,7 @@ const elementData = [
 			prices: {
 				2020: 1.15,
 			},
+			resistivity: 333e-9,
 			production: 33e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-arsenic.pdf
 			temperatures: {
 				boil: 887,
@@ -1365,6 +1389,7 @@ const elementData = [
 				2019: 4.39,
 			},
 			production: 556e3,
+			resistivity: 7.8e10,
 			rgb: 'rgb(255, 94, 35)',
 			temperatures: {
 				boil: 332,
@@ -1435,6 +1460,7 @@ const elementData = [
 				2018: 15500,
 			},
 			production: 2,
+			resistivity: 128e-9,
 			temperatures: {
 				boil: 961,
 				melt: 312.46,
@@ -1472,6 +1498,7 @@ const elementData = [
 				2019: 6.61,
 			},
 			production: 220e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-strontium.pdf
+			resistivity: 132e-9,
 			temperatures: {
 				boil: 1655,
 				melt: 1050,
@@ -1506,6 +1533,7 @@ const elementData = [
 				2019: 31,
 			},
 			production: 200,
+			resistivity: 596e-9,
 			temperatures: {
 				boil: 3609,
 				melt: 1799,
@@ -1542,6 +1570,7 @@ const elementData = [
 				2020: 36.4,
 			},
 			production: 900e3,
+			resistivity: 421e-9,
 			temperatures: {
 				boil: 4682,
 				melt: 2128,
@@ -1580,6 +1609,7 @@ const elementData = [
 				2020: 73.5,
 			},
 			production: 44.5e3,
+			resistivity: 152e-9,
 			temperatures: {
 				boil: 5017,
 				melt: 2750,
@@ -1621,6 +1651,7 @@ const elementData = [
 				2019: 40.1,
 			},
 			production: 250e3,
+			resistivity: 53.4e-9,
 			temperatures: {
 				boil: 4912,
 				melt: 2896,
@@ -1650,6 +1681,7 @@ const elementData = [
 			prices: {
 				2004: 1e5,
 			},
+			resistivity: 200e-9,
 			temperatures: {
 				boil: 4538,
 				melt: 2430,
@@ -1691,6 +1723,7 @@ const elementData = [
 				2020: 10500,
 			},
 			production: 12,
+			resistivity: 71e-9,
 			temperatures: {
 				boil: 4423,
 				melt: 2607,
@@ -1731,6 +1764,7 @@ const elementData = [
 				2019: 147e3,
 			},
 			production: 25,
+			resistivity: 43.3e-9,
 			temperatures: {
 				boil: 3968,
 				melt: 2237,
@@ -1771,6 +1805,7 @@ const elementData = [
 				2019: 49.5e3,
 			},
 			production: 210, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-platinum.pdf
+			resistivity: 105.4e-9,
 			temperatures: {
 				boil: 3236,
 				melt: 1828.05,
@@ -1812,6 +1847,7 @@ const elementData = [
 				2019: 521,
 			},
 			production: 322e3,
+			resistivity: 15.9e-9,
 			rgb: 'rgb(255, 248, 239)',
 			temperatures: {
 				boil: 2435,
@@ -1850,6 +1886,7 @@ const elementData = [
 				2019: 2.73,
 			},
 			production: 25e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cadmium.pdf
+			resistivity: 72.7e-9,
 			temperatures: {
 				boil: 1040,
 				melt: 594.22,
@@ -1887,6 +1924,7 @@ const elementData = [
 				2019: 167,
 			},
 			production: 476,
+			resistivity: 83.7e-9,
 			temperatures: {
 				boil: 2345,
 				melt: 429.75,
@@ -1926,6 +1964,7 @@ const elementData = [
 				2019: 18.7,
 			},
 			production: 340e3,
+			resistivity: 115e-9,
 			temperatures: {
 				boil: 2875,
 				melt: 505.08,
@@ -1965,6 +2004,7 @@ const elementData = [
 				2019: 5.79,
 			},
 			production: 150e3,
+			resistivity: 417e-9,
 			temperatures: {
 				boil: 1860,
 				melt: 903.78,
@@ -2040,6 +2080,7 @@ const elementData = [
 				2019: 35,
 			},
 			production: 28e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-iodine.pdf
+			resistivity: 1.3e7,
 			rgb: 'rgb(216, 229, 255)',
 			temperatures: {
 				boil: 457.4,
@@ -2111,6 +2152,7 @@ const elementData = [
 			prices: {
 				2018: 61.8e3,
 			},
+			resistivity: 205e-9,
 			rgb: 'rgb(255, 212, 153)',
 			temperatures: {
 				boil: 944,
@@ -2147,6 +2189,7 @@ const elementData = [
 			prices: {
 				2016: 0.261,
 			},
+			resistivity: 332e-9,
 			temperatures: {
 				boil: 2170,
 				melt: 1000,
@@ -2182,6 +2225,7 @@ const elementData = [
 			prices: {
 				2020: 4.85,
 			},
+			resistivity: 615e-9,
 			temperatures: {
 				boil: 3737,
 				melt: 1193,
@@ -2217,6 +2261,7 @@ const elementData = [
 			prices: {
 				2020: 31.4,
 			},
+			resistivity: 828e-9,
 			temperatures: {
 				boil: 3716,
 				melt: 1068,
@@ -2251,6 +2296,7 @@ const elementData = [
 			prices: {
 				2019: 103,
 			},
+			resistivity: 700e-9,
 			temperatures: {
 				boil: 3793,
 				melt: 1208,
@@ -2286,6 +2332,7 @@ const elementData = [
 				2019: 57.5,
 			},
 			production: 7000,
+			resistivity: 643e-9,
 			temperatures: {
 				boil: 3347,
 				melt: 1297,
@@ -2314,6 +2361,7 @@ const elementData = [
 			prices: {
 				2003: 460e3,
 			},
+			resistivity: 750e-9,
 			temperatures: {
 				boil: 3273,
 				melt: 1315,
@@ -2350,6 +2398,7 @@ const elementData = [
 				2019: 13.9,
 			},
 			production: 700,
+			resistivity: 940e-9,
 			temperatures: {
 				boil: 2067,
 				melt: 1345,
@@ -2383,6 +2432,7 @@ const elementData = [
 			prices: {
 				2020: 31.4,
 			},
+			resistivity: 900e-9,
 			temperatures: {
 				boil: 1802,
 				melt: 1099,
@@ -2417,6 +2467,7 @@ const elementData = [
 			prices: {
 				2020: 28.6,
 			},
+			resistivity: 1.31e-6,
 			temperatures: {
 				boil: 3546,
 				melt: 1585,
@@ -2451,6 +2502,7 @@ const elementData = [
 			prices: {
 				2019: 658,
 			},
+			resistivity: 1.15e-6,
 			temperatures: {
 				boil: 3503,
 				melt: 1629,
@@ -2485,6 +2537,7 @@ const elementData = [
 				2019: 307,
 			},
 			production: 100,
+			resistivity: 926e-9,
 			temperatures: {
 				boil: 2840,
 				melt: 1680,
@@ -2519,6 +2572,7 @@ const elementData = [
 			prices: {
 				2020: 57.1,
 			},
+			resistivity: 814e-9,
 			temperatures: {
 				boil: 2993,
 				melt: 1734,
@@ -2552,6 +2606,7 @@ const elementData = [
 			prices: {
 				2020: 26.4,
 			},
+			resistivity: 860e-9,
 			temperatures: {
 				boil: 3141,
 				melt: 1734,
@@ -2585,6 +2640,7 @@ const elementData = [
 			prices: {
 				2003: 3000,
 			},
+			resistivity: 676e-9,
 			temperatures: {
 				boil: 2223,
 				melt: 1818,
@@ -2618,6 +2674,7 @@ const elementData = [
 			prices: {
 				2020: 17.1,
 			},
+			resistivity: 250e-9,
 			temperatures: {
 				boil: 1469,
 				melt: 1097,
@@ -2652,6 +2709,7 @@ const elementData = [
 			prices: {
 				2020: 643,
 			},
+			resistivity: 582e-9,
 			temperatures: {
 				boil: 3675,
 				melt: 1925,
@@ -2687,6 +2745,7 @@ const elementData = [
 				2017: 900,
 			},
 			production: 10,
+			resistivity: 331e-9,
 			temperatures: {
 				boil: 4876,
 				melt: 2506,
@@ -2725,6 +2784,7 @@ const elementData = [
 				2018: 151.8,
 			},
 			production: 1.8e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-tantalum.pdf
+			resistivity: 131e-9,
 			temperatures: {
 				boil: 5731,
 				melt: 3290,
@@ -2764,6 +2824,7 @@ const elementData = [
 				2018: 30.3,
 			},
 			production: 37400,
+			resistivity: 52.8e-9,
 			temperatures: {
 				boil: 5828,
 				melt: 3695,
@@ -2803,6 +2864,7 @@ const elementData = [
 				2020: 3580,
 			},
 			production: 45,
+			resistivity: 193e-9,
 			temperatures: {
 				boil: 5869,
 				melt: 3459,
@@ -2844,6 +2906,7 @@ const elementData = [
 				2016: 12e3,
 			},
 			production: 1,
+			resistivity: 81.2e-9,
 			temperatures: {
 				boil: 5285,
 				melt: 3306,
@@ -2885,6 +2948,7 @@ const elementData = [
 				2020: 55850,
 			},
 			production: 3,
+			resistivity: 47.1e-9,
 			temperatures: {
 				boil: 4701,
 				melt: 2719,
@@ -2924,6 +2988,7 @@ const elementData = [
 				2020: 27800,
 			},
 			production: 239,
+			resistivity: 105e-9,
 			temperatures: {
 				boil: 4098,
 				melt: 2041.4,
@@ -2965,6 +3030,7 @@ const elementData = [
 				2020: 44800,
 			},
 			production: 2310,
+			resistivity: 24.4e-9,
 			rgb: 'rgb(255, 211, 109)',
 			temperatures: {
 				boil: 3129,
@@ -3003,6 +3069,7 @@ const elementData = [
 				2017: 30.2,
 			},
 			production: 4e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-mercury.pdf
+			resistivity: 961e-9,
 			temperatures: {
 				boil: 629.88,
 				melt: 234.43,
@@ -3034,6 +3101,7 @@ const elementData = [
 				2017: 4200,
 			},
 			production: 10,
+			resistivity: 180e-9,
 			rgb: 'rgb(255, 252, 253)',
 			temperatures: {
 				boil: 1746,
@@ -3073,6 +3141,7 @@ const elementData = [
 				2019: 2,
 			},
 			production: 8725e3,
+			resistivity: 208e-9,
 			rgb: 'rgb(255, 255, 255)',
 			temperatures: {
 				boil: 2022,
@@ -3111,6 +3180,7 @@ const elementData = [
 				2019: 6.36,
 			},
 			production: 15e3,
+			resistivity: 1.29e-6,
 			rgb: 'rgb(255, 245, 232)',
 			temperatures: {
 				boil: 1837,
@@ -3146,6 +3216,7 @@ const elementData = [
 				2004: 49.2e12,
 			}, */
 			production: 100e-6,
+			resistivity: 400e-9,
 			rgb: 'rgb(234, 242, 255)',
 			temperatures: {
 				boil: 1235,
@@ -3231,6 +3302,7 @@ const elementData = [
 			nucleosynthesis: {
 				decay: 1,
 			},
+			resistivity: 3e-6,
 			temperatures: {
 				boil: 950,
 				melt: 300,
@@ -3260,6 +3332,7 @@ const elementData = [
 			nucleosynthesis: {
 				decay: 1,
 			},
+			resistivity: 1e-6,
 			rgb: 'rgb(255, 233, 198)',
 			temperatures: {
 				boil: 2010,
@@ -3322,6 +3395,7 @@ const elementData = [
 				2010: 287,
 			},
 			production: 1.2e3, // US, est. https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-thorium.pdf
+			resistivity: 157e-9,
 			rgb: 'rgb(255, 229, 216)',
 			temperatures: {
 				boil: 5061,
@@ -3353,6 +3427,7 @@ const elementData = [
 			prices: {
 				2011: 280e3,
 			},
+			resistivity: 177e-9,
 			temperatures: {
 				boil: 4300,
 				melt: 1841,
@@ -3387,6 +3462,7 @@ const elementData = [
 				2018: 101,
 			},
 			production: 50572,
+			resistivity: 280e-9,
 			rgb: 'rgb(255, 251, 242)',
 			temperatures: {
 				boil: 4404,
@@ -3417,6 +3493,7 @@ const elementData = [
 			prices: {
 				2020: 660e3,
 			},
+			resistivity: 1.22e-6,
 			temperatures: {
 				boil: 4273,
 				melt: 917,
@@ -3447,6 +3524,7 @@ const elementData = [
 			nucleosynthesis: {
 				rProcess: 1,
 			},
+			resistivity: 1.46e-6,
 			rgb: 'rgb(255, 226, 249)',
 			temperatures: {
 				boil: 3501,
@@ -3473,6 +3551,7 @@ const elementData = [
 			prices: {
 				1998: 728e3,
 			},
+			resistivity: 690e-9,
 			rgb: 'rgb(255, 233, 224)',
 			temperatures: {
 				boil: 2880,
@@ -3497,6 +3576,7 @@ const elementData = [
 			/* prices: {
 				2004: 185e6,
 			}, */
+			resistivity: 1.25e-6,
 			rgb: 'rgb(255, 255, 216)',
 			temperatures: {
 				boil: 3383,

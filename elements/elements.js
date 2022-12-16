@@ -87,6 +87,8 @@ class ChemElement {
 			this.prices = properties.prices;
 			/** @type {number} t/yr */
 			this.production = properties.production;
+			/** @type {number} Ωm @ STP */
+			this.resistivity = properties.resistivity;
 			/** @type {string}
 			 * Normalized Color:
 			 * - A photograph of the element is taken.
@@ -458,6 +460,18 @@ class ChemElement {
 				const maxProd = Math.max(...elements.filter(e => e.production)
 					.map(e => Math.log(e.production)));
 				c = gradient1(remap(Math.max(0, Math.log(this.production)), [0, maxProd], [0, 1]));
+				break;
+			}
+			case 'resistivity':{
+				const maxRes = Math.log(1.5e-6);
+				if (maxRes < Math.log(this.resistivity)){
+					c = '#979';
+					break;
+				}
+				const rr = elements.filter(e => e.resistivity)
+					.map(e => Math.log(e.resistivity));
+				const mm = [Math.min(...rr), maxRes];
+				c = gradient1(remap(Math.log(this.resistivity), mm, [0, 1]));
 				break;
 			}
 			case 'stability':
@@ -886,3 +900,4 @@ function main(){
 }
 
 main();
+tableColor('resistivity');
