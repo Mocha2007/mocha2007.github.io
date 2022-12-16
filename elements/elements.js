@@ -183,8 +183,9 @@ class ChemElement {
 		const div = document.createElement('div');
 		div.id = this.name;
 		// name
-		const name = document.createElement('span');
+		const name = document.createElement('a');
 		name.innerHTML = this.name;
+		name.href = `https://en.wikipedia.org/wiki/${this.name}`;
 		div.appendChild(name);
 		// Z and symbol
 		div.innerHTML += `<br>${this.z}<br>${this.symbol}<br>`;

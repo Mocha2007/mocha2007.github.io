@@ -41,11 +41,13 @@ td div {
 	text-align: center;
 	width: calc(100% / 18);
 }
-#table td span:first-child {
+#table td a {
+	color: black;
 	font-size: 0.8vw;
 	font-stretch: condensed;
+	text-decoration: none;
 }
-#table td span:nth-of-type(2) {
+#table td span {
 	font-size: 1vw;
 }
 /* legend */
