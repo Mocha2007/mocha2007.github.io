@@ -370,6 +370,21 @@
 	</tr>
 	<tr>
 		<td>
+			<label onclick="tableColor('state')">
+			<input name="table" type="radio"><span title="Or sublimation point, if applicable.">
+			State @ <span id="selectedTemperature">300</span> K</span></label><br>
+			<span class="button" onmouseup="updateTemperature(-1);tableColor('state')">-</span>
+			<input type="range" min="0" max="6000" value="300" class="slider" id="temperatureSelector" onmouseup="updateTemperature();tableColor('state')">
+			<span class="button" onmouseup="updateTemperature(1);tableColor('state')">+</span>
+		</td>
+		<td><ul>
+			<li><span class="legend" style="background-color: cyan;"></span> Gas</li>
+			<li><span class="legend" style="background-color: blue;"></span> Liquid</li>
+			<li><span class="legend" style="background-color: white;"></span> Solid</li>
+		</ul></td>
+	</tr>
+	<tr>
+		<td>
 			<label onclick="tableColor('nucleosynthesis')" title="Primary source of element">
 			<input name="table" type="radio">
 			Stellar Nucleosynthesis</label>
@@ -422,21 +437,6 @@
 			<li><span class="legend" style="background-color: hsl(300, 100%, 35%);"></span> High ...
 			<span class="legend" style="background-color: hsl(240, 100%, 67.5%);"></span> Mid ...
 			<span class="legend" style="background-color: white;"></span> Low</li>
-		</ul></td>
-	</tr>
-	<tr>
-		<td>
-			<label onclick="tableColor('state')">
-			<input name="table" type="radio"><span title="Or sublimation point, if applicable.">
-			State @ <span id="selectedTemperature">300</span> K</span></label><br>
-			<span class="button" onmouseup="updateTemperature(-1);tableColor('state')">-</span>
-			<input type="range" min="0" max="6000" value="300" class="slider" id="temperatureSelector" onmouseup="updateTemperature();tableColor('state')">
-			<span class="button" onmouseup="updateTemperature(1);tableColor('state')">+</span>
-		</td>
-		<td><ul>
-			<li><span class="legend" style="background-color: cyan;"></span> Gas</li>
-			<li><span class="legend" style="background-color: blue;"></span> Liquid</li>
-			<li><span class="legend" style="background-color: white;"></span> Solid</li>
 		</ul></td>
 	</tr>
 	<tr>
