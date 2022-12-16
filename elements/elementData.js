@@ -2387,6 +2387,7 @@ const elementData = [
 				boil: 1802,
 				melt: 1099,
 			},
+			toxicity: 5e-3, // LD50, oral, europium chloride and nitrate
 		},
 	},
 	{
@@ -2420,6 +2421,7 @@ const elementData = [
 				boil: 3546,
 				melt: 1585,
 			},
+			toxicity: 150e-6, // LD50, mice
 		},
 	},
 	{
@@ -2487,6 +2489,7 @@ const elementData = [
 				boil: 2840,
 				melt: 1680,
 			},
+			toxicity: 0.5 / 65, // it is estimated that the ingestion of 500 grams or more could be fatal to a human
 		},
 	},
 	{
