@@ -900,4 +900,4 @@ function main(){
 }
 
 main();
-tableColor('resistivity');
+// tableColor('resistivity');
