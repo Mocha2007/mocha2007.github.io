@@ -83,6 +83,8 @@ class ChemElement {
 			this.nucleosynthesis = properties.nucleosynthesis;
 			/** @type {number} */
 			this.nutrition = properties.nutrition;
+			/** @type {number[]} */
+			this.oxidation = properties.oxidation;
 			/** year => $/kg inflation-adjusted */
 			this.prices = properties.prices;
 			/** @type {number} t/yr */
@@ -447,6 +449,41 @@ class ChemElement {
 			case 'nutrition':
 				c = this.nutrition === undefined ? 'white' : nutritionColors[this.nutrition];
 				break;
+			case 'oxidation':{
+				if (this.oxidation){
+					const l = this.oxidation.length;
+					let [red, gre, blu] = [0, 0, 0];
+					const co = {
+						'-5': [213, 230, 247],
+						'-4': [223, 223, 223],
+						'-3': [255, 192, 203],
+						'-2': [255, 236, 211],
+						'-1': [245, 222, 179],
+						'0': [224, 255, 255],
+						'1': [255, 160, 122],
+						'2': [255, 222, 173],
+						'3': [255, 191, 254],
+						'4': [203, 203, 203],
+						'5': [204, 204, 152],
+						'6': [160, 254, 194],
+						'7': [230, 254, 142],
+						'8': [209, 221, 255],
+						'9': [198, 221, 157],
+					};
+					this.oxidation.forEach(n => {
+						red += co[n][0]/l;
+						gre += co[n][1]/l;
+						blu += co[n][2]/l;
+					});
+					console.debug(this.name, [red, gre, blu]);
+					c = '#' + Math.round(red).toString(16)
+						+ Math.round(gre).toString(16)
+						+ Math.round(blu).toString(16);
+				}
+				else
+					c = 'grey';
+				break;
+			}
 			case 'price':
 				if (!this.prices)
 					c = '#ccc';
@@ -901,4 +938,4 @@ function main(){
 }
 
 main();
-// tableColor('resistivity');
+// tableColor('oxidation');

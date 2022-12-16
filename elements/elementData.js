@@ -77,6 +77,7 @@ const elementData = [
 				bigBang: 1,
 			},
 			nutrition: 0,
+			oxidation: [-1, 1],
 			prices: {
 				2012: 1.39,
 			},
@@ -113,6 +114,7 @@ const elementData = [
 				ppChain: 0.05,
 				sProcess: 0.04,
 			},
+			oxidation: [0],
 			prices: {
 				2018: 24,
 			},
@@ -151,6 +153,7 @@ const elementData = [
 				sProcess: 0.64,
 			},
 			nutrition: 3,
+			oxidation: [1],
 			prices: {
 				2020: 83.5,
 				2018: 16.5,
@@ -189,6 +192,7 @@ const elementData = [
 			nucleosynthesis: {
 				spallation: 1,
 			},
+			oxidation: [2],
 			prices: {
 				2020: 857,
 			},
@@ -226,6 +230,7 @@ const elementData = [
 				spallation: 1,
 			},
 			nutrition: 3,
+			oxidation: [3],
 			prices: {
 				2019: 3.68,
 			},
@@ -267,6 +272,7 @@ const elementData = [
 				alphaProcess: 0.011, // C-13; guess
 			},
 			nutrition: 0,
+			oxidation: [-4, -3, -2, -1, 0, 1, 2, 3, 4],
 			prices: {
 				2018: 0.122,
 			},
@@ -304,6 +310,7 @@ const elementData = [
 				cnoCycle: 1,
 			},
 			nutrition: 0,
+			oxidation: [-3, 3, 5],
 			prices: {
 				2001: 0.14,
 			},
@@ -341,6 +348,7 @@ const elementData = [
 				cnoCycle: 0.0004, // O-17
 			},
 			nutrition: 0,
+			oxidation: [-2],
 			prices: {
 				2001: 0.154,
 			},
@@ -378,6 +386,7 @@ const elementData = [
 				cnoCycle: 1,
 			},
 			nutrition: 3,
+			oxidation: [-1],
 			prices: {
 				2017: 2,
 			},
@@ -413,6 +422,7 @@ const elementData = [
 				carbonBurningProcess: 0.9075, // Ne-20, Ne-21
 				alphaProcess: 0.0925, // Ne-22
 			},
+			oxidation: [0],
 			prices: {
 				1999: 240,
 			},
@@ -450,6 +460,7 @@ const elementData = [
 				carbonBurningProcess: 1, // guess
 			},
 			nutrition: 1,
+			oxidation: [1],
 			prices: {
 				2020: 3,
 			},
@@ -490,6 +501,7 @@ const elementData = [
 				neonBurningProcess: 0.21, // Mg-25, Mg-26
 			},
 			nutrition: 1,
+			oxidation: [2],
 			prices: {
 				2019: 2.32,
 			},
@@ -528,6 +540,7 @@ const elementData = [
 				neonBurningProcess: 1,
 			},
 			nutrition: 4,
+			oxidation: [3],
 			prices: {
 				2021: 0.975/pound,
 				2019: 1.79,
@@ -568,6 +581,7 @@ const elementData = [
 				neonBurningProcess: 0.08,
 			},
 			nutrition: 3,
+			oxidation: [-4, 4],
 			prices: {
 				2019: 1.7,
 			},
@@ -608,6 +622,7 @@ const elementData = [
 				neonBurningProcess: 1,
 			},
 			nutrition: 1,
+			oxidation: [-3, 3, 5],
 			prices: {
 				2019: 2.69,
 			},
@@ -648,6 +663,7 @@ const elementData = [
 				alphaProcess: 0.0034,
 			},
 			nutrition: 1,
+			oxidation: [-2, 2, 4, 6],
 			prices: {
 				2019: 0.0926,
 			},
@@ -687,6 +703,7 @@ const elementData = [
 				rpProcess: 1, // "explosive nucleosynthesis"
 			},
 			nutrition: 1,
+			oxidation: [-1, 1, 3, 5, 7],
 			prices: {
 				2013: 0.082,
 			},
@@ -721,6 +738,7 @@ const elementData = [
 				alphaProcess: 0.00334, // Ar-38
 				sProcess: 0.99604, // Ar-40
 			},
+			oxidation: [0],
 			prices: {
 				2019: 0.931,
 			},
@@ -758,6 +776,7 @@ const elementData = [
 				sProcess: 0.00012, // K-40
 			},
 			nutrition: 1,
+			oxidation: [1],
 			prices: {
 				2020: 12.85,
 			},
@@ -794,6 +813,7 @@ const elementData = [
 				alphaProcess: 1,
 			},
 			nutrition: 1,
+			oxidation: [2],
 			prices: {
 				2020: 2.28,
 			},
@@ -828,6 +848,7 @@ const elementData = [
 			nucleosynthesis: {
 				rpProcess: 1, // guess
 			},
+			oxidation: [3],
 			prices: {
 				2020: 3460,
 			},
@@ -867,6 +888,7 @@ const elementData = [
 			nucleosynthesis: {
 				alphaProcess: 1,
 			},
+			oxidation: [2, 3, 4],
 			prices: {
 				2020: 11.4,
 				2018: 4.8,
@@ -906,6 +928,7 @@ const elementData = [
 				rpProcess: 1, // guess
 			},
 			nutrition: 3,
+			oxidation: [2, 3, 4, 5],
 			prices: {
 				2020: 371,
 			},
@@ -946,6 +969,7 @@ const elementData = [
 				alphaProcess: 1,
 			},
 			nutrition: 2,
+			oxidation: [2, 3, 6],
 			prices: {
 				2019: 9.4,
 			},
@@ -988,6 +1012,7 @@ const elementData = [
 				rpProcess: 1, // guess
 			},
 			nutrition: 2,
+			oxidation: [2, 3, 4, 6, 7],
 			prices: {
 				2019: 1.82,
 				2018: 2.06,
@@ -1028,6 +1053,7 @@ const elementData = [
 				alphaProcess: 1,
 			},
 			nutrition: 2,
+			oxidation: [2, 3],
 			prices: {
 				2021: 164.41/1000,
 				2020: 0.424,
@@ -1069,6 +1095,7 @@ const elementData = [
 				rpProcess: 1, // guess
 			},
 			nutrition: 2,
+			oxidation: [2, 3],
 			prices: {
 				2021: 25.18/pound,
 				2019: 32.8,
@@ -1110,6 +1137,7 @@ const elementData = [
 				alphaProcess: 1,
 			},
 			nutrition: 3,
+			oxidation: [2],
 			prices: {
 				2021: 7.2756/pound,
 				2019: 13.9,
@@ -1152,6 +1180,7 @@ const elementData = [
 				rpProcess: 1, // guess
 			},
 			nutrition: 2,
+			oxidation: [1, 2],
 			prices: {
 				2021: 4.0547/pound,
 				2019: 6,
@@ -1193,6 +1222,7 @@ const elementData = [
 				alphaProcess: 1, // unsure
 			},
 			nutrition: 2,
+			oxidation: [2],
 			prices: {
 				2021: 1.2474/pound,
 				2019: 2.55,
@@ -1230,6 +1260,7 @@ const elementData = [
 			nucleosynthesis: {
 				sProcess: 1,
 			},
+			oxidation: [3],
 			prices: {
 				2020: 148,
 			},
@@ -1268,6 +1299,7 @@ const elementData = [
 				sProcess: 0.4797, // Ge-70, Ge-72
 			},
 			nutrition: 4,
+			oxidation: [-4, 2, 4],
 			prices: {
 				2020: 962,
 			},
@@ -1307,6 +1339,7 @@ const elementData = [
 				rProcess: 1,
 			},
 			nutrition: 4,
+			oxidation: [-3, 3, 5],
 			prices: {
 				2020: 1.15,
 			},
@@ -1350,6 +1383,7 @@ const elementData = [
 				rProcess: 0.8891, // other
 			},
 			nutrition: 2,
+			oxidation: [-2, 2, 4, 6],
 			prices: {
 				2019: 21.4,
 			},
@@ -1387,6 +1421,7 @@ const elementData = [
 				rProcess: 1,
 			},
 			nutrition: 3,
+			oxidation: [-1, 1, 3, 5],
 			prices: {
 				2019: 4.39,
 			},
@@ -1423,6 +1458,7 @@ const elementData = [
 				sProcess: 0.3116, // Kr-80, Kr-82, Kr-86
 				rProcess: 0.6849, // Kr-83, Kr-84
 			},
+			oxidation: [0],
 			prices: {
 				1999: 290,
 			},
@@ -1458,6 +1494,7 @@ const elementData = [
 				sProcess: 0.2783, // Rb-87
 			},
 			nutrition: 4,
+			oxidation: [1],
 			prices: {
 				2018: 15500,
 			},
@@ -1496,6 +1533,7 @@ const elementData = [
 				sProcess: 0.9944, // rest
 			},
 			nutrition: 3,
+			oxidation: [2],
 			prices: {
 				2019: 6.61,
 			},
@@ -1531,6 +1569,7 @@ const elementData = [
 			nucleosynthesis: {
 				sProcess: 1,
 			},
+			oxidation: [3],
 			prices: {
 				2019: 31,
 			},
@@ -1568,6 +1607,7 @@ const elementData = [
 				sProcess: 0.972, // rest
 				rProcess: 0.028, // Zr-96
 			},
+			oxidation: [4],
 			prices: {
 				2020: 36.4,
 			},
@@ -1606,6 +1646,7 @@ const elementData = [
 				sProcess: 0.87,
 				rProcess: 0.13,
 			},
+			oxidation: [5],
 			prices: {
 				2018: 42.28,
 				2020: 73.5,
@@ -1648,6 +1689,7 @@ const elementData = [
 				rProcess: 0.37,
 			},
 			nutrition: 2,
+			oxidation: [4, 6],
 			prices: {
 				2021: 12.28/pound,
 				2019: 40.1,
@@ -1680,6 +1722,7 @@ const elementData = [
 			discovery: 1937,
 			modelColor: 'rgb(59, 158, 158)',
 			nobleMetal: 4,
+			oxidation: [4, 7],
 			prices: {
 				2004: 1e5,
 			},
@@ -1720,6 +1763,7 @@ const elementData = [
 				sProcess: 0.32,
 				rProcess: 0.68,
 			},
+			oxidation: [3, 4],
 			prices: {
 				2021: 370/ounce,
 				2020: 10500,
@@ -1761,6 +1805,7 @@ const elementData = [
 				sProcess: 0.13,
 				rProcess: 0.87,
 			},
+			oxidation: [3],
 			prices: {
 				2021: 25700/ounce,
 				2019: 147e3,
@@ -1802,6 +1847,7 @@ const elementData = [
 				sProcess: 0.45,
 				rProcess: 0.55,
 			},
+			oxidation: [0, 2, 4],
 			prices: {
 				2021: 2350/ounce,
 				2019: 49.5e3,
@@ -1844,6 +1890,7 @@ const elementData = [
 				sProcess: 0.19,
 				rProcess: 0.81,
 			},
+			oxidation: [1],
 			prices: {
 				2021: 25.645/ounce,
 				2019: 521,
@@ -1884,6 +1931,7 @@ const elementData = [
 				rProcess: 0.48,
 			},
 			nutrition: 5,
+			oxidation: [2],
 			prices: {
 				2019: 2.73,
 			},
@@ -1922,6 +1970,7 @@ const elementData = [
 				sProcess: 0.36,
 				rProcess: 0.64,
 			},
+			oxidation: [3],
 			prices: {
 				2019: 167,
 			},
@@ -1961,6 +2010,7 @@ const elementData = [
 				rProcess: 0.31,
 			},
 			nutrition: 4,
+			oxidation: [-4, 2, 4],
 			prices: {
 				2021: 12.565/pound,
 				2019: 18.7,
@@ -2002,6 +2052,7 @@ const elementData = [
 				sProcess: 0.25,
 				rProcess: 0.75,
 			},
+			oxidation: [-3, 3, 5],
 			prices: {
 				2019: 5.79,
 			},
@@ -2041,6 +2092,7 @@ const elementData = [
 				sProcess: 0.57,
 				rProcess: 0.43,
 			},
+			oxidation: [-2, 2, 4, 6],
 			prices: {
 				2019: 63.5,
 			},
@@ -2079,6 +2131,7 @@ const elementData = [
 				rProcess: 0.95,
 			},
 			nutrition: 2,
+			oxidation: [-1, 1, 3, 5, 7],
 			prices: {
 				2019: 35,
 			},
@@ -2115,6 +2168,7 @@ const elementData = [
 				sProcess: 0.17,
 				rProcess: 0.83,
 			},
+			oxidation: [0],
 			prices: {
 				1999: 1800,
 			},
@@ -2152,6 +2206,7 @@ const elementData = [
 				sProcess: 0.15,
 				rProcess: 0.85,
 			},
+			oxidation: [1],
 			prices: {
 				2018: 61.8e3,
 			},
@@ -2189,6 +2244,7 @@ const elementData = [
 				sProcess: 0.82,
 				rProcess: 0.18,
 			},
+			oxidation: [2],
 			prices: {
 				2016: 0.261,
 			},
@@ -2225,6 +2281,7 @@ const elementData = [
 				rProcess: 0.38,
 			},
 			nutrition: 5,
+			oxidation: [3],
 			prices: {
 				2020: 4.85,
 			},
@@ -2261,6 +2318,7 @@ const elementData = [
 				rProcess: 0.24,
 			},
 			nutrition: 5,
+			oxidation: [3, 4],
 			prices: {
 				2020: 31.4,
 			},
@@ -2296,6 +2354,7 @@ const elementData = [
 				rProcess: 0.48,
 			},
 			nutrition: 5,
+			oxidation: [3],
 			prices: {
 				2019: 103,
 			},
@@ -2331,6 +2390,7 @@ const elementData = [
 				rProcess: 0.40,
 			},
 			nutrition: 5,
+			oxidation: [3],
 			prices: {
 				2019: 57.5,
 			},
@@ -2361,6 +2421,7 @@ const elementData = [
 			density: 7260,
 			discovery: 1945,
 			modelColor: 'rgb(163, 255, 199)',
+			oxidation: [3],
 			prices: {
 				2003: 460e3,
 			},
@@ -2397,6 +2458,7 @@ const elementData = [
 				rProcess: 0.71,
 			},
 			nutrition: 5,
+			oxidation: [3],
 			prices: {
 				2019: 13.9,
 			},
@@ -2432,6 +2494,7 @@ const elementData = [
 				sProcess: 0.05,
 				rProcess: 0.95,
 			},
+			oxidation: [2, 3],
 			prices: {
 				2020: 31.4,
 			},
@@ -2467,6 +2530,7 @@ const elementData = [
 				sProcess: 0.15,
 				rProcess: 0.85,
 			},
+			oxidation: [3],
 			prices: {
 				2020: 28.6,
 			},
@@ -2502,6 +2566,7 @@ const elementData = [
 				sProcess: 0.07,
 				rProcess: 0.93,
 			},
+			oxidation: [3],
 			prices: {
 				2019: 658,
 			},
@@ -2536,6 +2601,7 @@ const elementData = [
 				sProcess: 0.14,
 				rProcess: 0.86,
 			},
+			oxidation: [3],
 			prices: {
 				2019: 307,
 			},
@@ -2572,6 +2638,7 @@ const elementData = [
 				sProcess: 0.07,
 				rProcess: 0.93,
 			},
+			oxidation: [3],
 			prices: {
 				2020: 57.1,
 			},
@@ -2606,6 +2673,7 @@ const elementData = [
 				sProcess: 0.16,
 				rProcess: 0.84,
 			},
+			oxidation: [3],
 			prices: {
 				2020: 26.4,
 			},
@@ -2640,6 +2708,7 @@ const elementData = [
 				sProcess: 0.12,
 				rProcess: 0.88,
 			},
+			oxidation: [3],
 			prices: {
 				2003: 3000,
 			},
@@ -2674,6 +2743,7 @@ const elementData = [
 				sProcess: 0.32,
 				rProcess: 0.68,
 			},
+			oxidation: [3],
 			prices: {
 				2020: 17.1,
 			},
@@ -2709,6 +2779,7 @@ const elementData = [
 				sProcess: 0.20,
 				rProcess: 0.80,
 			},
+			oxidation: [3],
 			prices: {
 				2020: 643,
 			},
@@ -2744,6 +2815,7 @@ const elementData = [
 				sProcess: 0.55,
 				rProcess: 0.45,
 			},
+			oxidation: [4],
 			prices: {
 				2017: 900,
 			},
@@ -2782,6 +2854,7 @@ const elementData = [
 				sProcess: 0.41,
 				rProcess: 0.49,
 			},
+			oxidation: [5],
 			prices: {
 				2019: 305,
 				2018: 151.8,
@@ -2822,6 +2895,7 @@ const elementData = [
 				rProcess: 0.43,
 			},
 			nutrition: 5,
+			oxidation: [4, 6],
 			prices: {
 				2019: 35.3,
 				2018: 30.3,
@@ -2863,6 +2937,7 @@ const elementData = [
 				sProcess: 0.08,
 				rProcess: 0.92,
 			},
+			oxidation: [4, 7],
 			prices: {
 				2020: 3580,
 			},
@@ -2904,6 +2979,7 @@ const elementData = [
 				sProcess: 0.10,
 				rProcess: 0.90,
 			},
+			oxidation: [4],
 			prices: {
 				2018: 400/ounce,
 				2016: 12e3,
@@ -2946,6 +3022,7 @@ const elementData = [
 				sProcess: 0.01,
 				rProcess: 0.99,
 			},
+			oxidation: [3, 4],
 			prices: {
 				2021: 5500/ounce,
 				2020: 55850,
@@ -2986,6 +3063,7 @@ const elementData = [
 				sProcess: 0.05,
 				rProcess: 0.95,
 			},
+			oxidation: [2, 4],
 			prices: {
 				2021: 1227/ounce,
 				2020: 27800,
@@ -3028,6 +3106,7 @@ const elementData = [
 				sProcess: 0.06,
 				rProcess: 0.94,
 			},
+			oxidation: [1, 3],
 			prices: {
 				2021: 1711.5/ounce,
 				2020: 44800,
@@ -3068,6 +3147,7 @@ const elementData = [
 				sProcess: 0.62,
 				rProcess: 0.38,
 			},
+			oxidation: [1, 2],
 			prices: {
 				2017: 30.2,
 			},
@@ -3100,6 +3180,7 @@ const elementData = [
 				sProcess: 0.77,
 				rProcess: 0.23,
 			},
+			oxidation: [1, 3],
 			prices: {
 				2017: 4200,
 			},
@@ -3139,6 +3220,7 @@ const elementData = [
 				tech: 0.5,
 			},
 			nutrition: 4,
+			oxidation: [2, 4],
 			prices: {
 				2021: 0.8729/pound,
 				2019: 2,
@@ -3179,6 +3261,7 @@ const elementData = [
 				sProcess: 0.005,
 				rProcess: 0.995,
 			},
+			oxidation: [3],
 			prices: {
 				2019: 6.36,
 			},
@@ -3215,6 +3298,7 @@ const elementData = [
 			nucleosynthesis: {
 				decay: 1,
 			},
+			oxidation: [-2, 2, 4],
 			/* prices: {
 				2004: 49.2e12,
 			}, */
@@ -3251,6 +3335,7 @@ const elementData = [
 			nucleosynthesis: {
 				decay: 1,
 			},
+			oxidation: [-1, 1],
 			temperatures: {
 				boil: 610,
 				melt: 575,
@@ -3278,6 +3363,7 @@ const elementData = [
 			nucleosynthesis: {
 				decay: 1,
 			},
+			oxidation: [0],
 			temperatures: {
 				boil: 211.5,
 				melt: 202,
@@ -3305,6 +3391,7 @@ const elementData = [
 			nucleosynthesis: {
 				decay: 1,
 			},
+			oxidation: [1],
 			resistivity: 3e-6,
 			temperatures: {
 				boil: 950,
@@ -3335,6 +3422,7 @@ const elementData = [
 			nucleosynthesis: {
 				decay: 1,
 			},
+			oxidation: [2],
 			resistivity: 1e-6,
 			rgb: 'rgb(255, 233, 198)',
 			temperatures: {
@@ -3363,6 +3451,7 @@ const elementData = [
 			nucleosynthesis: {
 				decay: 1,
 			},
+			oxidation: [3],
 			/* prices: {
 				2004: 29e12,
 			}, */
@@ -3394,6 +3483,7 @@ const elementData = [
 			nucleosynthesis: {
 				rProcess: 1,
 			},
+			oxidation: [4],
 			prices: {
 				2010: 287,
 			},
@@ -3427,6 +3517,7 @@ const elementData = [
 			nucleosynthesis: {
 				decay: 1,
 			},
+			oxidation: [5],
 			prices: {
 				2011: 280e3,
 			},
@@ -3461,6 +3552,7 @@ const elementData = [
 			nucleosynthesis: {
 				rProcess: 1,
 			},
+			oxidation: [4, 6],
 			prices: {
 				2018: 101,
 			},
@@ -3493,6 +3585,7 @@ const elementData = [
 			nucleosynthesis: {
 				rProcess: 1,
 			},
+			oxidation: [5],
 			prices: {
 				2020: 660e3,
 			},
@@ -3527,6 +3620,7 @@ const elementData = [
 			nucleosynthesis: {
 				rProcess: 1,
 			},
+			oxidation: [4],
 			resistivity: 1.46e-6,
 			rgb: 'rgb(255, 226, 249)',
 			temperatures: {
@@ -3554,6 +3648,7 @@ const elementData = [
 			prices: {
 				1998: 728e3,
 			},
+			oxidation: [3],
 			resistivity: 690e-9,
 			rgb: 'rgb(255, 233, 224)',
 			temperatures: {
@@ -3576,6 +3671,7 @@ const elementData = [
 			density: 13510,
 			discovery: 1944,
 			modelColor: 'rgb(120, 92, 227)',
+			oxidation: [3],
 			/* prices: {
 				2004: 185e6,
 			}, */
@@ -3601,6 +3697,7 @@ const elementData = [
 			density: 14790,
 			discovery: 1949,
 			modelColor: 'rgb(138, 79, 227)',
+			oxidation: [3],
 			/* prices: {
 				2004: 185e9,
 			}, */
@@ -3624,6 +3721,7 @@ const elementData = [
 			density: 15100,
 			discovery: 1950,
 			modelColor: 'rgb(161, 54, 212)',
+			oxidation: [3],
 			/* prices: {
 				2004: 906e9,
 			}, */
@@ -3648,6 +3746,7 @@ const elementData = [
 			density: 8840,
 			discovery: 1952,
 			modelColor: 'rgb(179, 31, 212)',
+			oxidation: [3],
 			temperatures: {
 				boil: 1269, // estimate
 				melt: 1133,
@@ -3668,6 +3767,7 @@ const elementData = [
 			density: 9700,
 			discovery: 1952,
 			modelColor: 'rgb(179, 31, 186)',
+			oxidation: [3],
 			temperatures: {
 				melt: 1800, // predicted
 			},
@@ -3687,6 +3787,7 @@ const elementData = [
 			density: 10300,
 			discovery: 1955,
 			modelColor: 'rgb(179, 13, 166)',
+			oxidation: [3],
 			temperatures: {
 				melt: 1100, // predicted
 			},
@@ -3706,6 +3807,7 @@ const elementData = [
 			density: 9900,
 			discovery: 1966,
 			modelColor: 'rgb(189, 13, 135)',
+			oxidation: [2],
 			temperatures: {
 				melt: 1100, // predicted
 			},
@@ -3726,6 +3828,7 @@ const elementData = [
 			density: 14400,
 			discovery: 1961,
 			modelColor: 'rgb(199, 0, 102)',
+			oxidation: [3],
 			temperatures: {
 				melt: 1900, // predicted
 			},
@@ -3743,6 +3846,7 @@ const elementData = [
 			density: 17000,
 			discovery: 1969,
 			modelColor: 'rgb(204, 0, 89)',
+			oxidation: [3, 4],
 			temperatures: {
 				boil: 5800, // predicted
 				melt: 2400, // predicted
@@ -3761,6 +3865,7 @@ const elementData = [
 			density: 21600,
 			discovery: 1970,
 			modelColor: 'rgb(209, 0, 79)',
+			oxidation: [5],
 		},
 	},
 	{
@@ -3775,6 +3880,7 @@ const elementData = [
 			density: 23500,
 			discovery: 1974,
 			modelColor: 'rgb(217, 0, 69)',
+			oxidation: [4, 6],
 		},
 	},
 	{
@@ -3790,6 +3896,7 @@ const elementData = [
 			discovery: 1981,
 			modelColor: 'rgb(224, 0, 56)',
 			nobleMetal: 5,
+			oxidation: [3, 4, 5, 7],
 		},
 	},
 	{
@@ -3805,6 +3912,7 @@ const elementData = [
 			discovery: 1984,
 			modelColor: 'rgb(230, 0, 46)',
 			nobleMetal: 5,
+			oxidation: [3, 4, 8],
 		},
 	},
 	{
@@ -3820,6 +3928,7 @@ const elementData = [
 			discovery: 1982,
 			modelColor: 'rgb(235, 0, 38)',
 			nobleMetal: 5,
+			oxidation: [1, 3, 6],
 		},
 	},
 	{
@@ -3835,6 +3944,7 @@ const elementData = [
 			discovery: 1994,
 			modelColor: 'rgb(239, 0, 29)', // extrapolation
 			nobleMetal: 5,
+			oxidation: [0, 2, 8],
 		},
 	},
 	{
@@ -3850,6 +3960,7 @@ const elementData = [
 			discovery: 1994,
 			modelColor: 'rgb(242, 0, 19)', // extrapolation
 			nobleMetal: 5,
+			oxidation: [3],
 		},
 	},
 	{
@@ -3865,6 +3976,7 @@ const elementData = [
 			discovery: 1996,
 			modelColor: 'rgb(244, 0, 9)', // extrapolation
 			nobleMetal: 5,
+			oxidation: [0, 2],
 			temperatures: {
 				boil: 340, // predicted
 				melt: 283, // predicted
@@ -3884,6 +3996,7 @@ const elementData = [
 			discovery: 2003,
 			modelColor: 'rgb(166, 51, 39)', // extrapolation
 			nobleMetal: 5,
+			oxidation: [1, 3],
 			temperatures: {
 				boil: 1430, // predicted
 				melt: 700, // predicted
@@ -3903,6 +4016,7 @@ const elementData = [
 			discovery: 1999,
 			modelColor: 'rgb(62, 50, 66)', // extrapolation
 			nobleMetal: 5,
+			oxidation: [2],
 			temperatures: {
 				boil: 380, // predicted
 				melt: 284, // predicted
@@ -3923,6 +4037,7 @@ const elementData = [
 			density: 13500,
 			discovery: 2003,
 			modelColor: 'rgb(158, 59, 181)', // extrapolation
+			oxidation: [1, 3],
 			temperatures: {
 				boil: 1400, // predicted
 				melt: 670, // predicted
@@ -3944,6 +4059,7 @@ const elementData = [
 			discovery: 2000,
 			modelColor: 'rgb(130, 60, 0)', // extrapolation
 			nobleMetal: 5,
+			oxidation: [2],
 			temperatures: {
 				boil: 1085, // extrapolated
 				melt: 708.5, // extrapolated
@@ -3964,6 +4080,7 @@ const elementData = [
 			density: 7200,
 			discovery: 2009,
 			modelColor: 'rgb(94, 63, 55)', // extrapolation
+			oxidation: [1, 3],
 			temperatures: {
 				boil: 883, // predicted
 				melt: 723, // predicted
@@ -3985,6 +4102,7 @@ const elementData = [
 			density: 7200,
 			discovery: 2002,
 			modelColor: 'rgb(66, 102, 124)', // extrapolation
+			oxidation: [2, 4],
 			temperatures: {
 				boil: 450, // predicted
 				melt: 325, // predicted
@@ -4005,6 +4123,7 @@ const elementData = [
 			},
 			crystal: 'cI',
 			density: 3000,
+			oxidation: [1],
 			temperatures: {
 				boil: 903, // predicted
 				melt: 288, // predicted
@@ -4024,6 +4143,7 @@ const elementData = [
 			},
 			crystal: 'cI',
 			density: 7000,
+			oxidation: [2],
 			temperatures: {
 				boil: 1973, // predicted
 				melt: 953, // predicted
@@ -4036,6 +4156,12 @@ const elementData = [
 		symbol: 'Ubu',
 		mass: 319, // predicted to be the most stable
 		period: 8,
+		properties: {
+			categories: {
+				superactinide: true,
+			},
+			oxidation: [3],
+		},
 	},
 	{
 		z: 122,
@@ -4043,6 +4169,12 @@ const elementData = [
 		symbol: 'Ubb',
 		mass: 321, // predicted to be the most stable
 		period: 8,
+		properties: {
+			categories: {
+				superactinide: true,
+			},
+			oxidation: [4],
+		},
 	},
 	{
 		z: 123,
@@ -4051,6 +4183,12 @@ const elementData = [
 		mass: 321, // predicted to be the most stable
 		period: 8,
 	},
+		properties: {
+			categories: {
+				superactinide: true,
+			},
+			oxidation: [5],
+		},
 	{
 		z: 124,
 		name: 'Unbiquadium',
@@ -4058,12 +4196,24 @@ const elementData = [
 		mass: 323, // predicted to be the most stable
 		period: 8,
 	},
+		properties: {
+			categories: {
+				superactinide: true,
+			},
+			oxidation: [6],
+		},
 	{
 		z: 125,
 		name: 'Unbipentium',
 		symbol: 'Ubp',
 		mass: 325, // predicted to be the most stable
 		period: 8,
+		properties: {
+			categories: {
+				superactinide: true,
+			},
+			oxidation: [7], // ???
+		},
 	},
 	{
 		z: 126,
@@ -4071,6 +4221,12 @@ const elementData = [
 		symbol: 'Ubh',
 		mass: 325, // predicted to be the most stable
 		period: 8,
+		properties: {
+			categories: {
+				superactinide: true,
+			},
+			oxidation: [4, 6, 8],
+		},
 	},
 	{
 		z: 139,
