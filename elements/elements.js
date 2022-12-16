@@ -222,6 +222,23 @@ class ChemElement {
 			svg.appendChild(text);
 		});
 	}
+	/**
+	 * using the previous three periods, extrapolate this period's data
+	 * @param {string} propertyName property to extrapolate
+	 */
+	extrapolate(propertyName){
+		const p = this.period;
+		const y0 = elements.find(e => e.group === this.group
+			&& e.period === this.period-1)[propertyName];
+		const y1 = elements.find(e => e.group === this.group
+			&& e.period === this.period-2)[propertyName];
+		const y2 = elements.find(e => e.group === this.group
+			&& e.period === this.period-3)[propertyName];
+		const a = (y2-y1)/(5-6*p);
+		const b = -2*a*p + 3*a + y0 - y1;
+		const c = -a*(p-1)*(p-1) - b*(p-2) + y0;
+		return a*p*p + b*p + c;
+	}
 	/** @param {string} category */
 	highlightCategory(category){
 		this.highlightFunction(e => e.inCategory(category));
