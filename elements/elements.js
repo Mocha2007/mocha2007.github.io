@@ -198,6 +198,13 @@ class ChemElement {
 		return Object.keys(this.nucleosynthesis)
 			.sort((a, b) => this.nucleosynthesis[b] - this.nucleosynthesis[a])[0];
 	}
+	/** rough estimate; m/s
+	 * https://en.wikipedia.org/wiki/Speed_of_sound#Equations
+	*/
+	get speedOfSound(){
+		// used Tungsten to guess constant
+		return Math.sqrt(411e9 / this.density);
+	}
 	get stable(){
 		return this.isotopes.some(i => i.stable);
 	}
