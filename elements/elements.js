@@ -159,6 +159,19 @@ class ChemElement {
 	get element(){
 		return document.getElementById(this.name);
 	}
+	/** rough estimate; J/(K*mol)
+	 * https://en.wikipedia.org/wiki/Trouton%27s_rule
+	*/
+	get heatOfFusion(){
+		// used Tungsten to guess constant
+		return 14.16 * this.temperatures.melt;
+	}
+	/** rough estimate; J/(K*mol)
+	 * https://en.wikipedia.org/wiki/Trouton%27s_rule
+	*/
+	get heatOfVaporization(){
+		return 86.5 * this.temperatures.boil;
+	}
 	/** @return {Isotope[]} this element's isotopes */
 	get isotopes(){
 		return isotopes.filter(i => i.element === this);
@@ -170,6 +183,13 @@ class ChemElement {
 		years.sort((a, b) => b-a);
 		// return most recent year's price
 		return this.prices[years[0]];
+	}
+	/** rough estimate; J/(K*mol)
+	 * https://en.wikipedia.org/wiki/Molar_heat_capacity#Dulong%E2%80%93Petit_law
+	*/
+	get molarHeatCapacity(){
+		// used Tungsten to guess constant
+		return 467198 / this.density;
 	}
 	/** most common stellar nucleosynthesis process */
 	get nucleoMax(){
