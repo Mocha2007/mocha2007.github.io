@@ -437,7 +437,7 @@ class ChemElement {
 				break;
 			case 'electronegativityMelt':
 				if (!this.electronegativity || !this.temperatures || !this.temperatures.melt)
-					c = 'grey';
+					c = '#666';
 				else {
 					const ee = elements
 						.filter(e => e.electronegativity)
@@ -449,7 +449,7 @@ class ChemElement {
 						[Math.min(...ee), Math.max(...ee)], [0, 1]);
 					const mmm = remap(this.temperatures.melt,
 						[Math.min(...mm), Math.max(...mm)], [0, 1]);
-					c = `rgb(${127*eee+128}, ${95*mmm+96}, ${127*mmm+128})`;
+					c = `rgb(${127*eee+128}, ${63*eee+64 + 63*mmm+64}, ${127*mmm+128})`;
 				}
 				break;
 			case 'halflife':
