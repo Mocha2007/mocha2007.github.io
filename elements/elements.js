@@ -226,7 +226,10 @@ class ChemElement {
 	}
 	/** based on regressions I did */
 	get predictedBulkModulus(){
-		return 0.118499 * Math.pow(this.density, 1.0677) * Math.pow(this.ionization[0], 1.30755);
+		return 3.2288e-31
+			* Math.pow(this.density, 1.39202)
+			* Math.pow(this.ionization[0], -2.39998)
+			* Math.pow(this.covalentRadius, -5.08269);
 	}
 	get stable(){
 		return this.isotopes.some(i => i.stable);
@@ -499,18 +502,17 @@ class ChemElement {
 				break;
 			case 'electronegativityMelt':
 				if (!this.mullikenElectronegativity
-						|| !this.temperatures || !this.temperatures.melt
-						|| !this.bulkModulus)
+						|| !this.temperatures || !this.temperatures.melt)
 					c = '#666';
 				else {
 					const set = elements.filter(e => e.mullikenElectronegativity
-						&& e.temperatures && e.temperatures.melt && e.bulkModulus);
+						&& e.temperatures && e.temperatures.melt);
 					const ee = set.map(e => e.mullikenElectronegativity);
-					const bb = set.map(e => e.bulkModulus);
+					const bb = set.map(e => e.bulkModulus || e.predictedBulkModulus);
 					const mm = set.map(e => e.temperatures.melt);
 					const eee = remap(this.mullikenElectronegativity,
 						[Math.min(...ee), Math.max(...ee)], [0, 1]);
-					const bbb = remap(this.bulkModulus,
+					const bbb = remap(this.bulkModulus || this.predictedBulkModulus,
 						[Math.min(...bb), Math.max(...bb)], [0, 1]);
 					const mmm = remap(this.temperatures.melt,
 						[Math.min(...mm), Math.max(...mm)], [0, 1]);
