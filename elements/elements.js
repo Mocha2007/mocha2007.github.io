@@ -75,6 +75,8 @@ class ChemElement {
 			this.density = properties.density;
 			/** @type {number} - year CE/BCE */
 			this.discovery = properties.discovery;
+			/** @type {number} - Pauling */
+			this.electronegativity = properties.electronegativity;
 			/** @type {string} - color used in models */
 			this.modelColor = properties.modelColor;
 			/** @type {number} */
@@ -421,6 +423,35 @@ class ChemElement {
 					[Math.min(...ages), Math.max(...ages)], [0, 1]));
 				break;
 			}
+			case 'electronegativity':
+				if (!this.electronegativity)
+					c = 'grey';
+				else {
+					const ee = elements
+						.filter(e => e.electronegativity)
+						.map(e => e.electronegativity);
+					c = gradient1(remap(
+						this.electronegativity,
+						[Math.min(...ee), Math.max(...ee)], [0, 1]));
+				}
+				break;
+			case 'electronegativityMelt':
+				if (!this.electronegativity || !this.temperatures || !this.temperatures.melt)
+					c = 'grey';
+				else {
+					const ee = elements
+						.filter(e => e.electronegativity)
+						.map(e => e.electronegativity);
+					const mm = elements
+						.filter(e => e.temperatures && e.temperatures.melt)
+						.map(e => e.temperatures.melt);
+					const eee = remap(this.electronegativity,
+						[Math.min(...ee), Math.max(...ee)], [0, 1]);
+					const mmm = remap(this.temperatures.melt,
+						[Math.min(...mm), Math.max(...mm)], [0, 1]);
+					c = `rgb(${127*eee+128}, ${95*mmm+96}, ${127*mmm+128})`;
+				}
+				break;
 			case 'halflife':
 				if (this.stable)
 					c = '#f0f';
@@ -995,4 +1026,4 @@ function main(){
 }
 
 main();
-// tableColor('oxidation');
+// tableColor('electronegativityMelt');

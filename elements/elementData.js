@@ -72,6 +72,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 0.08988,
 			discovery: 1500,
+			electronegativity: 2.2,
 			modelColor: 'white',
 			nucleosynthesis: {
 				bigBang: 1,
@@ -146,6 +147,7 @@ const elementData = [
 			crystal: 'cI',
 			density: 534,
 			discovery: 1821,
+			electronegativity: 0.98,
 			modelColor: 'rgb(204, 128, 255)',
 			nucleosynthesis: {
 				bigBang: 0.23,
@@ -188,6 +190,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 1850,
 			discovery: 1828,
+			electronegativity: 1.57,
 			modelColor: 'rgb(194, 255, 0)',
 			nucleosynthesis: {
 				spallation: 1,
@@ -225,6 +228,7 @@ const elementData = [
 			crystal: 'hR',
 			density: 2340,
 			discovery: 1808,
+			electronegativity: 2.04,
 			modelColor: 'rgb(255, 181, 181)',
 			nucleosynthesis: {
 				spallation: 1,
@@ -266,6 +270,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 2267,
 			discovery: -3750,
+			electronegativity: 2.55,
 			modelColor: 'rgb(144, 144, 144)',
 			nucleosynthesis: {
 				tripleAlphaProcess: 0.989, // C-12
@@ -305,6 +310,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 1.2506,
 			discovery: 1772,
+			electronegativity: 3.04,
 			modelColor: 'rgb(48, 80, 248)',
 			nucleosynthesis: {
 				cnoCycle: 1,
@@ -342,6 +348,7 @@ const elementData = [
 			crystal: 'tP',
 			density: 1.429,
 			discovery: 1604,
+			electronegativity: 3.44,
 			modelColor: 'rgb(255, 13, 13)',
 			nucleosynthesis: {
 				alphaProcess: 0.9996, // O-16, O-18
@@ -381,6 +388,7 @@ const elementData = [
 			crystal: 'tP',
 			density: 1.696,
 			discovery: 1886,
+			electronegativity: 3.98,
 			modelColor: 'rgb(144, 224, 80)',
 			nucleosynthesis: {
 				cnoCycle: 1,
@@ -455,6 +463,7 @@ const elementData = [
 			crystal: 'cI',
 			density: 971,
 			discovery: 1807,
+			electronegativity: 0.93,
 			modelColor: 'rgb(171, 92, 242)',
 			nucleosynthesis: {
 				carbonBurningProcess: 1, // guess
@@ -495,6 +504,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 1738,
 			discovery: 1808,
+			electronegativity: 1.31,
 			modelColor: 'rgb(138, 255, 0)',
 			nucleosynthesis: {
 				alphaProcess: 0.79, // Mg-24
@@ -535,6 +545,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 2698,
 			discovery: 1825,
+			electronegativity: 1.61,
 			modelColor: 'rgb(191, 166, 166)',
 			nucleosynthesis: {
 				neonBurningProcess: 1,
@@ -575,6 +586,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 2329.6,
 			discovery: 1823,
+			electronegativity: 1.9,
 			modelColor: 'rgb(240, 200, 160)',
 			nucleosynthesis: {
 				oxygenBurningProcess: 0.92,
@@ -617,6 +629,7 @@ const elementData = [
 			// 1155 d according to http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			density: 1820,
 			discovery: 1669,
+			electronegativity: 2.19,
 			modelColor: 'rgb(255, 128, 0)',
 			nucleosynthesis: {
 				neonBurningProcess: 1,
@@ -657,6 +670,7 @@ const elementData = [
 			crystal: 'oP',
 			density: 2067,
 			discovery: -2000,
+			electronegativity: 2.58,
 			modelColor: 'rgb(255, 255, 48)',
 			nucleosynthesis: { // best guess
 				oxygenBurningProcess: 0.9924,
@@ -698,6 +712,7 @@ const elementData = [
 			crystal: 'oP',
 			density: 3.214,
 			discovery: 1774,
+			electronegativity: 3.16,
 			modelColor: 'rgb(31, 240, 31)',
 			nucleosynthesis: {
 				rpProcess: 1, // "explosive nucleosynthesis"
@@ -770,6 +785,7 @@ const elementData = [
 			crystal: 'cI',
 			density: 862,
 			discovery: 1807,
+			electronegativity: 0.82,
 			modelColor: 'rgb(143, 64, 212)',
 			nucleosynthesis: {
 				rpProcess: 1, // guess; K-39, K-41
@@ -808,6 +824,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 1540,
 			discovery: 1808,
+			electronegativity: 1,
 			modelColor: 'rgb(61, 255, 0)',
 			nucleosynthesis: {
 				alphaProcess: 1,
@@ -844,6 +861,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 2989,
 			discovery: 1879,
+			electronegativity: 1.36,
 			modelColor: 'rgb(230, 230, 230)',
 			nucleosynthesis: {
 				rpProcess: 1, // guess
@@ -883,6 +901,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 4540,
 			discovery: 1825,
+			electronegativity: 1.54,
 			modelColor: 'rgb(191, 194, 199)',
 			nobleMetal: 0,
 			nucleosynthesis: {
@@ -922,6 +941,7 @@ const elementData = [
 			crystal: 'cI',
 			density: 6110,
 			discovery: 1867,
+			electronegativity: 1.63,
 			modelColor: 'rgb(166, 166, 171)',
 			nobleMetal: 0,
 			nucleosynthesis: {
@@ -963,6 +983,7 @@ const elementData = [
 			crystal: 'cI',
 			density: 7150,
 			discovery: 1797,
+			electronegativity: 1.66,
 			modelColor: 'rgb(138, 153, 199)',
 			nobleMetal: 0,
 			nucleosynthesis: {
@@ -1007,6 +1028,7 @@ const elementData = [
 			crystal: 'cI',
 			density: 7440,
 			discovery: 1774,
+			electronegativity: 1.55,
 			modelColor: 'rgb(156, 122, 199)',
 			nucleosynthesis: {
 				rpProcess: 1, // guess
@@ -1048,6 +1070,7 @@ const elementData = [
 			crystal: 'cI',
 			density: 7874,
 			discovery: -5000,
+			electronegativity: 1.83,
 			modelColor: 'rgb(224, 102, 51)',
 			nucleosynthesis: {
 				alphaProcess: 1,
@@ -1090,6 +1113,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 8860,
 			discovery: 1735,
+			electronegativity: 1.88,
 			modelColor: 'rgb(240, 144, 160)',
 			nucleosynthesis: {
 				rpProcess: 1, // guess
@@ -1132,6 +1156,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 8912,
 			discovery: 1751,
+			electronegativity: 1.91,
 			modelColor: 'rgb(80, 208, 80)',
 			nucleosynthesis: {
 				alphaProcess: 1,
@@ -1174,6 +1199,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 8960,
 			discovery: -9000,
+			electronegativity: 1.9,
 			modelColor: 'rgb(200, 128, 51)',
 			nobleMetal: 2,
 			nucleosynthesis: {
@@ -1217,6 +1243,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 7134,
 			discovery: -1000,
+			electronegativity: 1.65,
 			modelColor: 'rgb(125, 128, 176)',
 			nucleosynthesis: {
 				alphaProcess: 1, // unsure
@@ -1256,6 +1283,7 @@ const elementData = [
 			crystal: 'oP',
 			density: 5907,
 			discovery: 1875,
+			electronegativity: 1.81,
 			modelColor: 'rgb(194, 143, 143)',
 			nucleosynthesis: {
 				sProcess: 1,
@@ -1293,6 +1321,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 5323,
 			discovery: 1886,
+			electronegativity: 2.01,
 			modelColor: 'rgb(102, 143, 143)',
 			nucleosynthesis: {
 				rpProcess: 0.5203, // guess; Ge-73, Ge-74, Ge-76
@@ -1333,6 +1362,7 @@ const elementData = [
 			crystal: 'hR',
 			density: 5776,
 			discovery: 815,
+			electronegativity: 2.18,
 			modelColor: 'rgb(189, 128, 227)',
 			nobleMetal: 3,
 			nucleosynthesis: {
@@ -1375,6 +1405,7 @@ const elementData = [
 			crystal: 'hR',
 			density: 4809,
 			discovery: 1817,
+			electronegativity: 2.55,
 			modelColor: 'rgb(255, 161, 0)',
 			nobleMetal: 3,
 			nucleosynthesis: {
@@ -1416,6 +1447,7 @@ const elementData = [
 			crystal: 'oP',
 			density: 3122,
 			discovery: 1825,
+			electronegativity: 2.96,
 			modelColor: 'rgb(166, 41, 41)',
 			nucleosynthesis: {
 				rProcess: 1,
@@ -1452,6 +1484,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 3.733,
 			discovery: 1898,
+			electronegativity: 3,
 			modelColor: 'rgb(92, 184, 209)',
 			nucleosynthesis: {
 				pProcess: 0.0036, // Kr-78
@@ -1488,6 +1521,7 @@ const elementData = [
 			crystal: 'cI',
 			density: 1532,
 			discovery: 1861,
+			electronegativity: 0.82,
 			modelColor: 'rgb(112, 46, 176)',
 			nucleosynthesis: {
 				rProcess: 0.7217, // Rb-85
@@ -1527,6 +1561,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 2640,
 			discovery: 1808,
+			electronegativity: 0.95,
 			modelColor: 'rgb(0, 255, 0)',
 			nucleosynthesis: {
 				pProcess: 0.0056, // Sr-84
@@ -1565,6 +1600,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 4469,
 			discovery: 1843,
+			electronegativity: 1.22,
 			modelColor: 'rgb(148, 255, 255)',
 			nucleosynthesis: {
 				sProcess: 1,
@@ -1601,6 +1637,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 6506,
 			discovery: 1824,
+			electronegativity: 1.33,
 			modelColor: 'rgb(148, 224, 224)',
 			nobleMetal: 0,
 			nucleosynthesis: {
@@ -1640,6 +1677,7 @@ const elementData = [
 			crystal: 'cI',
 			density: 8570,
 			discovery: 1864,
+			electronegativity: 1.6,
 			modelColor: 'rgb(115, 194, 201)',
 			nobleMetal: 0,
 			nucleosynthesis: {
@@ -1682,6 +1720,7 @@ const elementData = [
 			crystal: 'cI',
 			density: 10220,
 			discovery: 1781,
+			electronegativity: 2.16,
 			modelColor: 'rgb(84, 181, 181)',
 			nobleMetal: 0,
 			nucleosynthesis: {
@@ -1720,6 +1759,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 11500,
 			discovery: 1937,
+			electronegativity: 1.9,
 			modelColor: 'rgb(59, 158, 158)',
 			nobleMetal: 4,
 			oxidation: [4, 7],
@@ -1757,6 +1797,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 12370,
 			discovery: 1844,
+			electronegativity: 2.2,
 			modelColor: 'rgb(36, 143, 143)',
 			nobleMetal: 1,
 			nucleosynthesis: {
@@ -1799,6 +1840,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 12410,
 			discovery: 1804,
+			electronegativity: 2.28,
 			modelColor: 'rgb(10, 125, 140)',
 			nobleMetal: 1,
 			nucleosynthesis: {
@@ -1841,6 +1883,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 12020,
 			discovery: 1802,
+			electronegativity: 2.2,
 			modelColor: 'rgb(0, 105, 133)',
 			nobleMetal: 1,
 			nucleosynthesis: {
@@ -1884,6 +1927,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 10501,
 			discovery: -5000,
+			electronegativity: 1.93,
 			modelColor: 'rgb(192, 192, 192)',
 			nobleMetal: 2,
 			nucleosynthesis: {
@@ -1925,6 +1969,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 8690,
 			discovery: 1817,
+			electronegativity: 1.69,
 			modelColor: 'rgb(255, 217, 143)',
 			nucleosynthesis: {
 				sProcess: 0.52,
@@ -1965,6 +2010,7 @@ const elementData = [
 			crystal: 'tI',
 			density: 7310,
 			discovery: 1867,
+			electronegativity: 1.78,
 			modelColor: 'rgb(166, 117, 115)',
 			nucleosynthesis: {
 				sProcess: 0.36,
@@ -2004,6 +2050,7 @@ const elementData = [
 			crystal: 'tI',
 			density: 7287,
 			discovery: -3500,
+			electronegativity: 1.96,
 			modelColor: 'rgb(102, 128, 128)',
 			nucleosynthesis: {
 				sProcess: 0.69,
@@ -2046,6 +2093,7 @@ const elementData = [
 			crystal: 'hR',
 			density: 6685,
 			discovery: 815,
+			electronegativity: 2.05,
 			modelColor: 'rgb(158, 99, 181)',
 			nobleMetal: 3,
 			nucleosynthesis: {
@@ -2086,6 +2134,7 @@ const elementData = [
 			crystal: 'hR',
 			density: 6232,
 			discovery: 1782,
+			electronegativity: 2.1,
 			modelColor: 'rgb(212, 122, 0)',
 			nobleMetal: 3,
 			nucleosynthesis: {
@@ -2125,6 +2174,7 @@ const elementData = [
 			crystal: 'oS',
 			density: 4930,
 			discovery: 1811,
+			electronegativity: 2.66,
 			modelColor: 'rgb(148, 0, 148)',
 			nucleosynthesis: {
 				sProcess: 0.05,
@@ -2163,6 +2213,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 5.887,
 			discovery: 1898,
+			electronegativity: 2.6,
 			modelColor: 'rgb(66, 158, 176)',
 			nucleosynthesis: {
 				sProcess: 0.17,
@@ -2201,6 +2252,7 @@ const elementData = [
 			crystal: 'cI',
 			density: 1873,
 			discovery: 1882,
+			electronegativity: 0.79,
 			modelColor: 'rgb(87, 23, 143)',
 			nucleosynthesis: {
 				sProcess: 0.15,
@@ -2239,6 +2291,7 @@ const elementData = [
 			crystal: 'cI',
 			density: 3594,
 			discovery: 1808,
+			electronegativity: 0.89,
 			modelColor: 'rgb(0, 201, 0)',
 			nucleosynthesis: {
 				sProcess: 0.82,
@@ -2275,6 +2328,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 6145,
 			discovery: 1841,
+			electronegativity: 1.1,
 			modelColor: 'rgb(112, 212, 255)',
 			nucleosynthesis: {
 				sProcess: 0.62,
@@ -2312,6 +2366,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 6770,
 			discovery: 1838,
+			electronegativity: 1.12,
 			modelColor: 'rgb(255, 255, 199)',
 			nucleosynthesis: {
 				sProcess: 0.76,
@@ -2348,6 +2403,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 6773,
 			discovery: 1885,
+			electronegativity: 1.13,
 			modelColor: 'rgb(217, 255, 199)',
 			nucleosynthesis: {
 				sProcess: 0.52,
@@ -2384,6 +2440,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 7007,
 			discovery: 1885,
+			electronegativity: 1.14,
 			modelColor: 'rgb(199, 255, 199)',
 			nucleosynthesis: {
 				sProcess: 0.60,
@@ -2420,6 +2477,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 7260,
 			discovery: 1945,
+			electronegativity: 1.15,
 			modelColor: 'rgb(163, 255, 199)',
 			oxidation: [3],
 			prices: {
@@ -2452,6 +2510,7 @@ const elementData = [
 			crystal: 'hR',
 			density: 7520,
 			discovery: 1879,
+			electronegativity: 1.17,
 			modelColor: 'rgb(143, 255, 199)',
 			nucleosynthesis: {
 				sProcess: 0.29,
@@ -2489,6 +2548,7 @@ const elementData = [
 			crystal: 'cI',
 			density: 5243,
 			discovery: 1901,
+			electronegativity: 1.15,
 			modelColor: 'rgb(97, 255, 199)',
 			nucleosynthesis: {
 				sProcess: 0.05,
@@ -2525,6 +2585,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 7895,
 			discovery: 1886,
+			electronegativity: 1.2,
 			modelColor: 'rgb(69, 255, 199)',
 			nucleosynthesis: {
 				sProcess: 0.15,
@@ -2561,6 +2622,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 8229,
 			discovery: 1886,
+			electronegativity: 1.1,
 			modelColor: 'rgb(48, 255, 199)',
 			nucleosynthesis: {
 				sProcess: 0.07,
@@ -2596,6 +2658,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 8550,
 			discovery: 1886,
+			electronegativity: 1.22,
 			modelColor: 'rgb(31, 255, 199)',
 			nucleosynthesis: {
 				sProcess: 0.14,
@@ -2633,6 +2696,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 8795,
 			discovery: 1879,
+			electronegativity: 1.23,
 			modelColor: 'rgb(0, 255, 156)',
 			nucleosynthesis: {
 				sProcess: 0.07,
@@ -2668,6 +2732,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 9066,
 			discovery: 1879,
+			electronegativity: 1.24,
 			modelColor: 'rgb(0, 230, 117)',
 			nucleosynthesis: {
 				sProcess: 0.16,
@@ -2703,6 +2768,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 9321,
 			discovery: 1879,
+			electronegativity: 1.25,
 			modelColor: 'rgb(0, 212, 82)',
 			nucleosynthesis: {
 				sProcess: 0.12,
@@ -2738,6 +2804,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 6965,
 			discovery: 1906,
+			electronegativity: 1.15,
 			modelColor: 'rgb(0, 191, 56)',
 			nucleosynthesis: {
 				sProcess: 0.32,
@@ -2774,6 +2841,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 9840,
 			discovery: 1906,
+			electronegativity: 1.27,
 			modelColor: 'rgb(0, 171, 36)',
 			nucleosynthesis: {
 				sProcess: 0.20,
@@ -2809,6 +2877,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 13310,
 			discovery: 1922,
+			electronegativity: 1.3,
 			modelColor: 'rgb(77, 194, 255)',
 			nobleMetal: 0,
 			nucleosynthesis: {
@@ -2848,6 +2917,7 @@ const elementData = [
 			crystal: 'cI',
 			density: 16654,
 			discovery: 1802,
+			electronegativity: 1.5,
 			modelColor: 'rgb(77, 166, 255)',
 			nobleMetal: 0,
 			nucleosynthesis: {
@@ -2888,6 +2958,7 @@ const elementData = [
 			crystal: 'cI',
 			density: 19250,
 			discovery: 1783,
+			electronegativity: 2.36,
 			modelColor: 'rgb(33, 148, 214)',
 			nobleMetal: 0,
 			nucleosynthesis: {
@@ -2931,6 +3002,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 21020,
 			discovery: 1919,
+			electronegativity: 1.9,
 			modelColor: 'rgb(38, 125, 171)',
 			nobleMetal: 2,
 			nucleosynthesis: {
@@ -2973,6 +3045,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 22590,
 			discovery: 1803,
+			electronegativity: 2.2,
 			modelColor: 'rgb(38, 102, 150)',
 			nobleMetal: 1,
 			nucleosynthesis: {
@@ -3016,6 +3089,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 22560,
 			discovery: 1803,
+			electronegativity: 2.2,
 			modelColor: 'rgb(22, 84, 135)',
 			nobleMetal: 1,
 			nucleosynthesis: {
@@ -3057,6 +3131,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 21460,
 			discovery: 1735,
+			electronegativity: 2.28,
 			modelColor: 'rgb(208, 208, 224)',
 			nobleMetal: 1,
 			nucleosynthesis: {
@@ -3100,6 +3175,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 19282,
 			discovery: -6000,
+			electronegativity: 2.54,
 			modelColor: 'rgb(255, 209, 35)',
 			nobleMetal: 2,
 			nucleosynthesis: {
@@ -3141,6 +3217,7 @@ const elementData = [
 			crystal: 'hR',
 			density: 13533.6,
 			discovery: -1500,
+			electronegativity: 2,
 			modelColor: 'rgb(184, 184, 208)',
 			nobleMetal: 2,
 			nucleosynthesis: {
@@ -3175,6 +3252,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 11850,
 			discovery: 1862,
+			electronegativity: 1.62,
 			modelColor: 'rgb(166, 84, 77)',
 			nucleosynthesis: {
 				sProcess: 0.77,
@@ -3213,6 +3291,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 11342,
 			discovery: -7000,
+			electronegativity: 1.87,
 			modelColor: 'rgb(87, 89, 97)',
 			nucleosynthesis: {
 				sProcess: 0.47,
@@ -3255,6 +3334,7 @@ const elementData = [
 			crystal: 'hR',
 			density: 9807,
 			discovery: 1000,
+			electronegativity: 2.02,
 			modelColor: 'rgb(158, 79, 181)',
 			nobleMetal: 3,
 			nucleosynthesis: {
@@ -3293,6 +3373,7 @@ const elementData = [
 			crystal: 'cP',
 			density: 9320,
 			discovery: 1902,
+			electronegativity: 2,
 			modelColor: 'rgb(171, 92, 0)',
 			nobleMetal: 4,
 			nucleosynthesis: {
@@ -3330,6 +3411,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 8930,
 			discovery: 1940,
+			electronegativity: 2.2,
 			modelColor: 'rgb(117, 79, 69)',
 			nobleMetal: 4,
 			nucleosynthesis: {
@@ -3359,6 +3441,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 9.73,
 			discovery: 1910,
+			electronegativity: 2.2,
 			modelColor: 'rgb(66, 130, 150)',
 			nucleosynthesis: {
 				decay: 1,
@@ -3387,6 +3470,7 @@ const elementData = [
 			crystal: 'cI',
 			density: 2480,
 			discovery: 1939,
+			electronegativity: 0.8,
 			modelColor: 'rgb(66, 0, 102)',
 			nucleosynthesis: {
 				decay: 1,
@@ -3418,6 +3502,7 @@ const elementData = [
 			crystal: 'cI',
 			density: 5500,
 			discovery: 1902,
+			electronegativity: 0.9,
 			modelColor: 'rgb(0, 125, 0)',
 			nucleosynthesis: {
 				decay: 1,
@@ -3447,6 +3532,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 10070,
 			discovery: 1902,
+			electronegativity: 1.1,
 			modelColor: 'rgb(112, 171, 250)',
 			nucleosynthesis: {
 				decay: 1,
@@ -3479,6 +3565,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 11720,
 			discovery: 1914,
+			electronegativity: 1.3,
 			modelColor: 'rgb(0, 185, 255)',
 			nucleosynthesis: {
 				rProcess: 1,
@@ -3513,6 +3600,7 @@ const elementData = [
 			crystal: 'tI',
 			density: 15370,
 			discovery: 1927,
+			electronegativity: 1.5,
 			modelColor: 'rgb(0, 161, 255)',
 			nucleosynthesis: {
 				decay: 1,
@@ -3548,6 +3636,7 @@ const elementData = [
 			crystal: 'oP',
 			density: 18950,
 			discovery: 1841,
+			electronegativity: 1.38,
 			modelColor: 'rgb(0, 143, 255)',
 			nucleosynthesis: {
 				rProcess: 1,
@@ -3581,6 +3670,7 @@ const elementData = [
 			crystal: 'oP',
 			density: 20450,
 			discovery: 1940,
+			electronegativity: 1.36,
 			modelColor: 'rgb(0, 128, 255)',
 			nucleosynthesis: {
 				rProcess: 1,
@@ -3616,6 +3706,7 @@ const elementData = [
 			crystal: 'mP',
 			density: 19850,
 			discovery: 1940,
+			electronegativity: 1.28,
 			modelColor: 'rgb(0, 107, 255)',
 			nucleosynthesis: {
 				rProcess: 1,
@@ -3644,6 +3735,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 13690,
 			discovery: 1944,
+			electronegativity: 1.13,
 			modelColor: 'rgb(84, 92, 242)',
 			prices: {
 				1998: 728e3,
@@ -3670,6 +3762,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 13510,
 			discovery: 1944,
+			electronegativity: 1.28,
 			modelColor: 'rgb(120, 92, 227)',
 			oxidation: [3],
 			/* prices: {
@@ -3696,6 +3789,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 14790,
 			discovery: 1949,
+			electronegativity: 1.3,
 			modelColor: 'rgb(138, 79, 227)',
 			oxidation: [3],
 			/* prices: {
@@ -3720,6 +3814,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 15100,
 			discovery: 1950,
+			electronegativity: 1.3,
 			modelColor: 'rgb(161, 54, 212)',
 			oxidation: [3],
 			/* prices: {
@@ -3745,6 +3840,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 8840,
 			discovery: 1952,
+			electronegativity: 1.3,
 			modelColor: 'rgb(179, 31, 212)',
 			oxidation: [3],
 			temperatures: {
@@ -3766,6 +3862,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 9700,
 			discovery: 1952,
+			electronegativity: 1.3,
 			modelColor: 'rgb(179, 31, 186)',
 			oxidation: [3],
 			temperatures: {
@@ -3786,6 +3883,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 10300,
 			discovery: 1955,
+			electronegativity: 1.3,
 			modelColor: 'rgb(179, 13, 166)',
 			oxidation: [3],
 			temperatures: {
@@ -3806,6 +3904,7 @@ const elementData = [
 			crystal: 'cF',
 			density: 9900,
 			discovery: 1966,
+			electronegativity: 1.3,
 			modelColor: 'rgb(189, 13, 135)',
 			oxidation: [2],
 			temperatures: {
@@ -3827,6 +3926,7 @@ const elementData = [
 			crystal: 'hP',
 			density: 14400,
 			discovery: 1961,
+			electronegativity: 1.3,
 			modelColor: 'rgb(199, 0, 102)',
 			oxidation: [3],
 			temperatures: {
