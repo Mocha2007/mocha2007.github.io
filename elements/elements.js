@@ -90,6 +90,8 @@ class ChemElement {
 			this.density = properties.density;
 			/** @type {number} - year CE/BCE */
 			this.discovery = properties.discovery;
+			/** @type {number} - J/mol */
+			this.electronAffinity = properties.electronAffinity;
 			/** @type {number} - Pauling */
 			this.electronegativity = properties.electronegativity;
 			/** @type {string} - color used in models */
@@ -438,6 +440,18 @@ class ChemElement {
 					[Math.min(...ages), Math.max(...ages)], [0, 1]));
 				break;
 			}
+			case 'electronAffinity':
+				if (!this.electronAffinity)
+					c = 'grey';
+				else {
+					const ee = elements
+						.filter(e => e.electronAffinity)
+						.map(e => e.electronAffinity);
+					c = gradient1(remap(
+						this.electronAffinity,
+						[Math.min(...ee), Math.max(...ee)], [0, 1]));
+				}
+				break;
 			case 'electronegativity':
 				if (!this.electronegativity)
 					c = 'grey';
