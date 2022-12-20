@@ -459,13 +459,13 @@ class ChemElement {
 					const set = elements.filter(e => e.electronegativity
 						&& e.temperatures && e.temperatures.melt && e.bulkModulus);
 					const ee = set.map(e => e.electronegativity);
-					const bb = set.map(e => Math.log(e.bulkModulus));
-					const mm = set.map(e => Math.log(e.temperatures.melt));
+					const bb = set.map(e => e.bulkModulus);
+					const mm = set.map(e => e.temperatures.melt);
 					const eee = remap(this.electronegativity,
 						[Math.min(...ee), Math.max(...ee)], [0, 1]);
-					const bbb = remap(Math.log(this.bulkModulus),
+					const bbb = remap(this.bulkModulus,
 						[Math.min(...bb), Math.max(...bb)], [0, 1]);
-					const mmm = remap(Math.log(this.temperatures.melt),
+					const mmm = remap(this.temperatures.melt,
 						[Math.min(...mm), Math.max(...mm)], [0, 1]);
 					c = `rgb(${127*eee+128}, ${127*bbb+128}, ${127*mmm+128})`;
 				}
