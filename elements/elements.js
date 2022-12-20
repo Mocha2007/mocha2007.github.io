@@ -69,19 +69,19 @@ class ChemElement {
 			this.biologicalHalfLife = properties.biologicalHalfLife;
 			/** @type {number} */
 			this.speedOfSound = properties.speedOfSound;
-			if (!properties.speedOfSound && properties.density)
-				/** rough estimate; m/s
-				 * https://en.wikipedia.org/wiki/Speed_of_sound#Equations
-				 * used Tungsten to guess constant
-				*/
-				this.speedOfSound = Math.sqrt(411e9 / properties.density);
 			/** @type {number} - in Pa */
 			this.bulkModulus = properties.bulkModulus;
-			if (!properties.bulkModulus && properties.density && this.speedOfSound
-					&& properties.temperatures && (properties.temperatures.melt < stp[0]
-					|| properties.temperatures.boil < stp[0])) // seems to only work for fluids...
+			if (!properties.bulkModulus && properties.density && this.speedOfSound){
 				this.bulkModulus = properties.density
 					* this.speedOfSound * this.speedOfSound; // https://www.engineeringtoolbox.com/speed-sound-d_82.html
+				// eslint-disable-next-line max-len
+				console.warn(`Had to compute ${this.name}'s bulk modulus from its density and speed of sound`);
+			}
+			if (!properties.speedOfSound && properties.density && this.bulkModulus){
+				this.speedOfSound = Math.sqrt(this.bulkModulus / properties.density); // https://www.engineeringtoolbox.com/speed-sound-d_82.html
+				// eslint-disable-next-line max-len
+				console.warn(`Had to compute ${this.name}'s speed of sound from its density and bulk modulus`);
+			}
 			/** string => true|false|0.5 */
 			this.categories = properties.categories;
 			/** @type {string} */

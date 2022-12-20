@@ -166,6 +166,7 @@ const elementData = [
 			production: 55e3,
 			resistivity: 92.8e-9,
 			rgb: 'rgb(249, 255, 252)',
+			speedOfSound: 6000,
 			temperatures: {
 				boil: 1560,
 				melt: 453.69,
@@ -206,6 +207,7 @@ const elementData = [
 			production: 200,
 			resistivity: 36e-9,
 			rgb: 'rgb(255, 255, 255)',
+			speedOfSound: 12890,
 			temperatures: {
 				boil: 2742,
 				melt: 1560,
@@ -246,6 +248,7 @@ const elementData = [
 			production: 1.8e6,
 			resistivity: 1e6,
 			rgb: 'rgb(255, 232, 219)',
+			speedOfSound: 16200,
 			temperatures: {
 				boil: 4200,
 				melt: 2349,
@@ -290,6 +293,7 @@ const elementData = [
 			production: 1.03e6,
 			resistivity: 7.837e-6,
 			rgb: 'rgb(255, 251, 239)',
+			speedOfSound: 1470, // graphite
 			temperatures: {
 				boil: 3915,
 				melt: 3915,
@@ -487,6 +491,7 @@ const elementData = [
 			production: 100e3,
 			resistivity: 47.7e-9,
 			rgb: 'rgb(252, 255, 249)',
+			speedOfSound: 3200,
 			temperatures: {
 				boil: 1156,
 				melt: 370.87,
@@ -530,6 +535,7 @@ const elementData = [
 			production: 748e3,
 			resistivity: 43.9e-9,
 			rgb: 'rgb(255, 251, 234)',
+			speedOfSound: 4940,
 			temperatures: {
 				boil: 1363,
 				melt: 923,
@@ -572,6 +578,7 @@ const elementData = [
 			production: 44.1e6,
 			resistivity: 26.5e-9,
 			rgb: 'rgb(244, 251, 255)',
+			speedOfSound: 5000,
 			temperatures: {
 				boil: 2792,
 				melt: 933.47,
@@ -614,6 +621,7 @@ const elementData = [
 			production: 8e6,
 			resistivity: 2.3e3,
 			rgb: 'rgb(234, 241, 255)',
+			speedOfSound: 8433,
 			temperatures: {
 				boil: 3538,
 				melt: 1687,
@@ -816,6 +824,7 @@ const elementData = [
 				2020: 12.85,
 			},
 			resistivity: 72e-9,
+			speedOfSound: 2000,
 			temperatures: {
 				boil: 1032,
 				melt: 336.53,
@@ -855,6 +864,7 @@ const elementData = [
 				2020: 2.28,
 			},
 			resistivity: 33.6e-9,
+			speedOfSound: 3810,
 			temperatures: {
 				boil: 1757,
 				melt: 1115,
@@ -936,6 +946,7 @@ const elementData = [
 			},
 			production: 6.7e6,
 			resistivity: 420e-9,
+			speedOfSound: 5090,
 			temperatures: {
 				boil: 3560,
 				melt: 1941,
@@ -977,6 +988,7 @@ const elementData = [
 			},
 			production: 73e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-vanadium.pdf
 			resistivity: 197e-9,
+			speedOfSound: 4560,
 			temperatures: {
 				boil: 3680,
 				melt: 2183,
@@ -1020,6 +1032,7 @@ const elementData = [
 			},
 			production: 4.4e6,
 			resistivity: 125e-9,
+			speedOfSound: 5940,
 			temperatures: {
 				boil: 2944,
 				melt: 2180,
@@ -1066,6 +1079,7 @@ const elementData = [
 			},
 			production: 19e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-manganese.pdf
 			resistivity: 1.44e-6,
+			speedOfSound: 5150,
 			temperatures: {
 				boil: 2334,
 				melt: 1519,
@@ -1110,6 +1124,7 @@ const elementData = [
 			production: 1544e6,
 			resistivity: 96.1e-9,
 			rgb: 'rgb(255, 252, 252)',
+			speedOfSound: 5120,
 			temperatures: {
 				boil: 3134,
 				melt: 1811,
@@ -1154,6 +1169,7 @@ const elementData = [
 			production: 140e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cobalt.pdf
 			resistivity: 62.4e-9,
 			rgb: 'rgb(255, 249, 244)',
+			speedOfSound: 4720,
 			temperatures: {
 				boil: 3200,
 				melt: 1768,
@@ -1198,6 +1214,7 @@ const elementData = [
 			production: 1.8e6,
 			resistivity: 69.3e-9,
 			rgb: 'rgb(255, 245, 224)',
+			speedOfSound: 4900,
 			temperatures: {
 				boil: 3186,
 				melt: 1728,
@@ -1243,6 +1260,7 @@ const elementData = [
 			production: 15.1e6,
 			resistivity: 16.78e-9,
 			rgb: 'rgb(255, 121, 76)',
+			speedOfSound: 3810,
 			temperatures: {
 				boil: 2835,
 				melt: 1357.77,
@@ -1286,6 +1304,7 @@ const elementData = [
 			},
 			production: 11.2e6,
 			resistivity: 59e-9,
+			speedOfSound: 3850,
 			temperatures: {
 				boil: 1180,
 				melt: 692.88,
@@ -1325,6 +1344,7 @@ const elementData = [
 			},
 			production: 184,
 			resistivity: 270e-9,
+			speedOfSound: 2740,
 			temperatures: {
 				boil: 2673,
 				melt: 692.88,
@@ -1366,6 +1386,7 @@ const elementData = [
 			},
 			production: 118,
 			resistivity: 1,
+			speedOfSound: 5400,
 			temperatures: {
 				boil: 3106,
 				melt: 1211.4,
@@ -1454,6 +1475,7 @@ const elementData = [
 			},
 			production: 2e3,
 			resistivity: 106e-6, // https://www.espimetals.com/index.php/component/content/article/422-online-catalog/selenium-se/435-selenium-se?Itemid=135
+			speedOfSound: 3350,
 			temperatures: {
 				boil: 958,
 				melt: 453,
@@ -1571,6 +1593,7 @@ const elementData = [
 			},
 			production: 2,
 			resistivity: 128e-9,
+			speedOfSound: 1300,
 			temperatures: {
 				boil: 961,
 				melt: 312.46,
@@ -1650,6 +1673,7 @@ const elementData = [
 			},
 			production: 200,
 			resistivity: 596e-9,
+			speedOfSound: 3350,
 			temperatures: {
 				boil: 3609,
 				melt: 1799,
@@ -1690,6 +1714,7 @@ const elementData = [
 			},
 			production: 900e3,
 			resistivity: 421e-9,
+			speedOfSound: 3800,
 			temperatures: {
 				boil: 4682,
 				melt: 2128,
@@ -1732,6 +1757,7 @@ const elementData = [
 			},
 			production: 44.5e3,
 			resistivity: 152e-9,
+			speedOfSound: 3480,
 			temperatures: {
 				boil: 5017,
 				melt: 2750,
@@ -1777,6 +1803,7 @@ const elementData = [
 			},
 			production: 250e3,
 			resistivity: 53.4e-9,
+			speedOfSound: 5400,
 			temperatures: {
 				boil: 4912,
 				melt: 2896,
@@ -1855,6 +1882,7 @@ const elementData = [
 			},
 			production: 12,
 			resistivity: 71e-9,
+			speedOfSound: 5970,
 			temperatures: {
 				boil: 4423,
 				melt: 2607,
@@ -1899,6 +1927,7 @@ const elementData = [
 			},
 			production: 25,
 			resistivity: 43.3e-9,
+			speedOfSound: 4700,
 			temperatures: {
 				boil: 3968,
 				melt: 2237,
@@ -1943,6 +1972,7 @@ const elementData = [
 			},
 			production: 210, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-platinum.pdf
 			resistivity: 105.4e-9,
+			speedOfSound: 3070,
 			temperatures: {
 				boil: 3236,
 				melt: 1828.05,
@@ -1989,6 +2019,7 @@ const elementData = [
 			production: 322e3,
 			resistivity: 15.9e-9,
 			rgb: 'rgb(255, 248, 239)',
+			speedOfSound: 2680,
 			temperatures: {
 				boil: 2435,
 				melt: 1234.93,
@@ -2030,6 +2061,7 @@ const elementData = [
 			},
 			production: 25e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cadmium.pdf
 			resistivity: 72.7e-9,
+			speedOfSound: 2310,
 			temperatures: {
 				boil: 1040,
 				melt: 594.22,
@@ -2071,6 +2103,7 @@ const elementData = [
 			},
 			production: 476,
 			resistivity: 83.7e-9,
+			speedOfSound: 1215,
 			temperatures: {
 				boil: 2345,
 				melt: 429.75,
@@ -2114,6 +2147,7 @@ const elementData = [
 			},
 			production: 340e3,
 			resistivity: 115e-9,
+			speedOfSound: 2730,
 			temperatures: {
 				boil: 2875,
 				melt: 505.08,
@@ -2157,6 +2191,7 @@ const elementData = [
 			},
 			production: 150e3,
 			resistivity: 417e-9,
+			speedOfSound: 3420,
 			temperatures: {
 				boil: 1860,
 				melt: 903.78,
@@ -2199,6 +2234,7 @@ const elementData = [
 			},
 			production: 122,
 			resistivity: 1e-4, // https://periodictable.com/Elements/052/data.html
+			speedOfSound: 2610,
 			temperatures: {
 				boil: 1261,
 				melt: 722.66,
@@ -2358,6 +2394,7 @@ const elementData = [
 				2016: 0.261,
 			},
 			resistivity: 332e-9,
+			speedOfSound: 1620,
 			temperatures: {
 				boil: 2170,
 				melt: 1000,
@@ -2397,6 +2434,7 @@ const elementData = [
 				2020: 4.85,
 			},
 			resistivity: 615e-9,
+			speedOfSound: 2475,
 			temperatures: {
 				boil: 3737,
 				melt: 1193,
@@ -2436,6 +2474,7 @@ const elementData = [
 				2020: 31.4,
 			},
 			resistivity: 828e-9,
+			speedOfSound: 2100,
 			temperatures: {
 				boil: 3716,
 				melt: 1068,
@@ -2474,6 +2513,7 @@ const elementData = [
 				2019: 103,
 			},
 			resistivity: 700e-9,
+			speedOfSound: 2280,
 			temperatures: {
 				boil: 3793,
 				melt: 1208,
@@ -2513,6 +2553,7 @@ const elementData = [
 			},
 			production: 7000,
 			resistivity: 643e-9,
+			speedOfSound: 2330,
 			temperatures: {
 				boil: 3347,
 				melt: 1297,
@@ -2585,6 +2626,7 @@ const elementData = [
 			},
 			production: 700,
 			resistivity: 940e-9,
+			speedOfSound: 2130,
 			temperatures: {
 				boil: 2067,
 				melt: 1345,
@@ -2660,6 +2702,7 @@ const elementData = [
 				2020: 28.6,
 			},
 			resistivity: 1.31e-6,
+			speedOfSound: 2680,
 			temperatures: {
 				boil: 3546,
 				melt: 1585,
@@ -2698,6 +2741,7 @@ const elementData = [
 				2019: 658,
 			},
 			resistivity: 1.15e-6,
+			speedOfSound: 2620,
 			temperatures: {
 				boil: 3503,
 				melt: 1629,
@@ -2736,6 +2780,7 @@ const elementData = [
 			},
 			production: 100,
 			resistivity: 926e-9,
+			speedOfSound: 2710,
 			temperatures: {
 				boil: 2840,
 				melt: 1680,
@@ -2774,6 +2819,7 @@ const elementData = [
 				2020: 57.1,
 			},
 			resistivity: 814e-9,
+			speedOfSound: 2760,
 			temperatures: {
 				boil: 2993,
 				melt: 1734,
@@ -2811,6 +2857,7 @@ const elementData = [
 				2020: 26.4,
 			},
 			resistivity: 860e-9,
+			speedOfSound: 2830,
 			temperatures: {
 				boil: 3141,
 				melt: 1734,
@@ -2885,6 +2932,7 @@ const elementData = [
 				2020: 17.1,
 			},
 			resistivity: 250e-9,
+			speedOfSound: 1590,
 			temperatures: {
 				boil: 1469,
 				melt: 1097,
@@ -2962,6 +3010,7 @@ const elementData = [
 			},
 			production: 10,
 			resistivity: 331e-9,
+			speedOfSound: 1590,
 			temperatures: {
 				boil: 4876,
 				melt: 2506,
@@ -3004,6 +3053,7 @@ const elementData = [
 			},
 			production: 1.8e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-tantalum.pdf
 			resistivity: 131e-9,
+			speedOfSound: 3400,
 			temperatures: {
 				boil: 5731,
 				melt: 3290,
@@ -3047,6 +3097,7 @@ const elementData = [
 			},
 			production: 37400,
 			resistivity: 52.8e-9,
+			speedOfSound: 4620,
 			temperatures: {
 				boil: 5828,
 				melt: 3695,
@@ -3090,6 +3141,7 @@ const elementData = [
 			},
 			production: 45,
 			resistivity: 193e-9,
+			speedOfSound: 4940,
 			temperatures: {
 				boil: 5869,
 				melt: 3459,
@@ -3180,6 +3232,7 @@ const elementData = [
 			},
 			production: 3,
 			resistivity: 47.1e-9,
+			speedOfSound: 4825,
 			temperatures: {
 				boil: 4701,
 				melt: 2719,
@@ -3223,6 +3276,7 @@ const elementData = [
 			},
 			production: 239,
 			resistivity: 105e-9,
+			speedOfSound: 2800,
 			temperatures: {
 				boil: 4098,
 				melt: 2041.4,
@@ -3269,6 +3323,7 @@ const elementData = [
 			production: 2310,
 			resistivity: 24.4e-9,
 			rgb: 'rgb(255, 211, 109)',
+			speedOfSound: 2030,
 			temperatures: {
 				boil: 3129,
 				melt: 1337.33,
@@ -3346,6 +3401,7 @@ const elementData = [
 			production: 10,
 			resistivity: 180e-9,
 			rgb: 'rgb(255, 252, 253)',
+			speedOfSound: 818,
 			temperatures: {
 				boil: 1746,
 				melt: 577,
@@ -3389,6 +3445,7 @@ const elementData = [
 			production: 8725e3,
 			resistivity: 208e-9,
 			rgb: 'rgb(255, 255, 255)',
+			speedOfSound: 1190,
 			temperatures: {
 				boil: 2022,
 				melt: 600.61,
@@ -3431,6 +3488,7 @@ const elementData = [
 			production: 15e3,
 			resistivity: 1.29e-6,
 			rgb: 'rgb(255, 245, 232)',
+			speedOfSound: 1790,
 			temperatures: {
 				boil: 1837,
 				melt: 544.7,
@@ -3662,6 +3720,7 @@ const elementData = [
 			production: 1.2e3, // US, est. https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-thorium.pdf
 			resistivity: 157e-9,
 			rgb: 'rgb(255, 229, 216)',
+			speedOfSound: 2490,
 			temperatures: {
 				boil: 5061,
 				melt: 2115,
@@ -3734,6 +3793,7 @@ const elementData = [
 			production: 50572,
 			resistivity: 280e-9,
 			rgb: 'rgb(255, 251, 242)',
+			speedOfSound: 3155,
 			temperatures: {
 				boil: 4404,
 				melt: 1405.3,
@@ -3802,6 +3862,7 @@ const elementData = [
 			oxidation: [4],
 			resistivity: 1.46e-6,
 			rgb: 'rgb(255, 226, 249)',
+			speedOfSound: 2260,
 			temperatures: {
 				boil: 3501,
 				melt: 912.5,
