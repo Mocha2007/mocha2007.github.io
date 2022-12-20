@@ -85,6 +85,8 @@ class ChemElement {
 			/** string => true|false|0.5 */
 			this.categories = properties.categories;
 			/** @type {string} */
+			this.covalentRadius = properties.covalentRadius;
+			/** @type {string} */
 			this.crystal = properties.crystal;
 			/** @type {number} - kg/m^3; divide by 1000 to get g/cm^3 */
 			this.density = properties.density;
@@ -221,6 +223,10 @@ class ChemElement {
 			return 'artificial';
 		return Object.keys(this.nucleosynthesis)
 			.sort((a, b) => this.nucleosynthesis[b] - this.nucleosynthesis[a])[0];
+	}
+	/** based on regressions I did */
+	get predictedBulkModulus(){
+		return 0.118499 * Math.pow(this.density, 1.0677) * Math.pow(this.ionization[0], 1.30755);
 	}
 	get stable(){
 		return this.isotopes.some(i => i.stable);
@@ -409,12 +415,22 @@ class ChemElement {
 				c = gradient1(this.bulkModulus/bm);
 				break;
 			}
-			case 'color': // normalized color
-				c = this.rgb ? this.rgb : 'grey';
-				break;
 			case 'category':
 				c = this.color;
 				break;
+			case 'color': // normalized color
+				c = this.rgb ? this.rgb : 'grey';
+				break;
+			case 'covalent':{
+				if (!this.covalentRadius)
+					c = 'grey';
+				else {
+					const cr = elements.filter(e => e.covalentRadius).map(e => e.covalentRadius);
+					c = gradient1(remap(this.covalentRadius,
+						[Math.min(...cr), Math.max(...cr)], [0, 1]));
+				}
+				break;
+			}
 			case 'crystal':{
 				if (this.crystal)
 					c = {
@@ -1091,4 +1107,4 @@ function main(){
 }
 
 main();
-// tableColor('ionization1');
+// tableColor('covalent');
