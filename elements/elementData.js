@@ -4613,6 +4613,7 @@ const elementData = [
 			},
 			crystal: 'cI',
 			density: 3000,
+			ionization: [463.1e3, 1700e3],
 			oxidation: [1],
 			temperatures: {
 				boil: 903, // predicted
@@ -4633,6 +4634,7 @@ const elementData = [
 			},
 			crystal: 'cI',
 			density: 7000,
+			ionization: [563.3e3, (919e3+895e3)/2],
 			oxidation: [2],
 			temperatures: {
 				boil: 1973, // predicted
@@ -4650,6 +4652,7 @@ const elementData = [
 			categories: {
 				superactinide: true,
 			},
+			ionization: [429.4e3, 1110e3, 1710e3, 4270e3],
 			oxidation: [3],
 		},
 	},
@@ -4663,6 +4666,7 @@ const elementData = [
 			categories: {
 				superactinide: true,
 			},
+			ionization: [545, 1090, 1848, 2520],
 			oxidation: [4],
 		},
 	},
