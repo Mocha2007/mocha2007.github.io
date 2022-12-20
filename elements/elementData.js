@@ -3674,6 +3674,7 @@ const elementData = [
 				earth: 0.2e-2 * 9e-13, // https://en.wikipedia.org/wiki/Polonium#Occurrence_and_production
 			},
 			biologicalHalfLife: 40*day, // 30-50 d
+			bulkModulus: 26e9, // https://www.knowledgedoor.com/2/elements_handbook/isothermal_bulk_modulus.html
 			categories: {
 				chalcogen: true,
 				metalloid: 0.5,
@@ -3779,6 +3780,7 @@ const elementData = [
 			abundance: {
 				earth: 1e-18 * 2e-9, // https://en.wikipedia.org/wiki/Francium#Occurrence
 			},
+			bulkModulus: 2e9, // https://www.knowledgedoor.com/2/elements_handbook/isothermal_bulk_modulus.html
 			categories: {
 				alkaliMetal: true,
 			},
@@ -3813,6 +3815,7 @@ const elementData = [
 				human: 1e-19,
 			},
 			biologicalHalfLife: 1.6e4*day, // Ra-226; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			bulkModulus: 13.2e9, // https://www.knowledgedoor.com/2/elements_handbook/isothermal_bulk_modulus.html
 			categories: {
 				aem: true,
 			},
@@ -3845,6 +3848,7 @@ const elementData = [
 			abundance: {
 				earth: 2e-7 * 2e-9, // https://en.wikipedia.org/wiki/Actinium#Occurrence_and_synthesis
 			},
+			bulkModulus: 25e9, // https://www.knowledgedoor.com/2/elements_handbook/isothermal_bulk_modulus.html
 			categories: {
 				actinide: true,
 			},
