@@ -3738,6 +3738,7 @@ const elementData = [
 				earth: 1.4e-12,
 			},
 			biologicalHalfLife: 25*day, // appx.; https://en.wikipedia.org/wiki/Protactinium#Precautions
+			bulkModulus: 157e9, // https://www.matweb.com/search/DataSheet.aspx?MatGUID=5008398b32234120a1d10ab3303788bf
 			categories: {
 				actinide: true,
 			},
@@ -3878,6 +3879,7 @@ const elementData = [
 		period: 7,
 		properties: {
 			biologicalHalfLife: 7*day, // "If consumed, most of the americium is excreted within a few days,"
+			bulkModulus: 45e9, // https://www.matweb.com/search/datasheet.aspx?matguid=20003a10845d4b97ba300b9e7fe50bc5&ckck=1
 			categories: {
 				actinide: true,
 			},
@@ -3905,6 +3907,7 @@ const elementData = [
 		mass: 247,
 		period: 7,
 		properties: {
+			bulkModulus: 37e9, // https://www.matweb.com/search/DataSheet.aspx?MatGUID=656675e27bab42d19fcc4d600a52de49
 			categories: {
 				actinide: true,
 			},
@@ -3932,6 +3935,7 @@ const elementData = [
 		mass: 247,
 		period: 7,
 		properties: {
+			bulkModulus: 52e9, // https://www.matweb.com/search/DataSheet.aspx?MatGUID=17bfc4cdbfd24550b8ecf9038881b27d
 			categories: {
 				actinide: true,
 			},
@@ -3957,6 +3961,7 @@ const elementData = [
 		mass: 251,
 		period: 7,
 		properties: {
+			bulkModulus: 50e9, // https://www.matweb.com/search/DataSheet.aspx?MatGUID=a2d1c04f5ba140d6ac8934564d716513
 			categories: {
 				actinide: true,
 			},
@@ -3983,6 +3988,7 @@ const elementData = [
 		mass: 252,
 		period: 7,
 		properties: {
+			bulkModulus: 15e9, // https://www.matweb.com/search/DataSheet.aspx?MatGUID=07746507cfdc4f10a68657963161957a
 			categories: {
 				actinide: true,
 			},
@@ -4005,6 +4011,7 @@ const elementData = [
 		mass: 257,
 		period: 7,
 		properties: {
+			bulkModulus: 15e9, // https://www.matweb.com/search/DataSheet.aspx?MatGUID=6f7e439602524a21b27dbbdc98cd4e1b
 			categories: {
 				actinide: true,
 			},
