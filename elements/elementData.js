@@ -223,6 +223,7 @@ const elementData = [
 				human: 3e-8,
 				universe: 1e-9,
 			},
+			bulkModulus: 320e9, // https://periodictable.com/Properties/A/BulkModulus.al.html
 			categories: {
 				metalloid: true,
 				tech: 0.5,
@@ -264,7 +265,7 @@ const elementData = [
 				universe: 4600e-6,
 			},
 			biologicalHalfLife: 40*day, // C-14; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
-			bulkModulus: 442e9,
+			bulkModulus: 33e9, // graphite; diamond is 442 https://periodictable.com/Properties/A/BulkModulus.al.html
 			categories: {
 				coinageMetal: 0.5, // various russian coins
 				reactiveNonmetal: true,
@@ -1297,6 +1298,7 @@ const elementData = [
 				universe: 1e-8,
 			},
 			biologicalHalfLife: 25*hour, // Excretion of gallium occurs in two phases: the first phase has a biological half-life of 1 hour, while the second has a biological half-life of 25 hours.
+			bulkModulus: (44e9 + 68e9)/2, // https://www.azom.com/properties.aspx?ArticleID=1132
 			categories: {
 				preciousMetal: 0.5,
 				tech: true,
@@ -1580,6 +1582,7 @@ const elementData = [
 				universe: 4e-8,
 			},
 			biologicalHalfLife: 1.8e4*day, // Sr-90; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			bulkModulus: 12e9, // https://pilgaardelements.com/Strontium/Physicals.htm
 			categories: {
 				aem: true,
 			},
@@ -1782,6 +1785,7 @@ const elementData = [
 				earth: 0.003e-12, // https://en.wikipedia.org/wiki/Technetium#Occurrence_and_production
 			},
 			biologicalHalfLife: day, // Tc-99m; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			bulkModulus: 281e9, // https://pilgaardelements.com/Technetium/Physicals.htm
 			categories: {
 				refractoryMetal: 0.5,
 			},
@@ -2036,6 +2040,7 @@ const elementData = [
 				human: 4e-10,
 				universe: 3e-10,
 			},
+			bulkModulus: 40e9, // https://pilgaardelements.com/Strontium/Physicals.htm
 			categories: {
 				nativeMetal: 0.5,
 				preciousMetal: 0.5,
@@ -3273,6 +3278,7 @@ const elementData = [
 				universe: 1e-9,
 			},
 			biologicalHalfLife: 65*day, // as methylmercury; in blood
+			bulkModulus: 25e9, // https://periodictable.com/Properties/A/BulkModulus.al.html
 			categories: {
 				nativeMetal: 0.5,
 				nobleMetal: 0.5,
@@ -3732,6 +3738,7 @@ const elementData = [
 			abundance: {
 				earth: 3e-18,
 			},
+			bulkModulus: 118e9, // https://pilgaardelements.com/Neptunium/Physicals.htm
 			categories: {
 				actinide: true,
 			},
@@ -3765,6 +3772,7 @@ const elementData = [
 				earth: 3e-17,
 			},
 			biologicalHalfLife: 40*year, // in liver
+			bulkModulus: 40e9, // https://pilgaardelements.com/Plutonium/Physicals.htm
 			/* prices: {
 				2019: 6.49e6,
 			}, */
