@@ -67,8 +67,21 @@ class ChemElement {
 			this.abundance = properties.abundance;
 			/** @type {number} - in seconds */
 			this.biologicalHalfLife = properties.biologicalHalfLife;
+			/** @type {number} */
+			this.speedOfSound = properties.speedOfSound;
+			if (!properties.speedOfSound && properties.density)
+				/** rough estimate; m/s
+				 * https://en.wikipedia.org/wiki/Speed_of_sound#Equations
+				 * used Tungsten to guess constant
+				*/
+				this.speedOfSound = Math.sqrt(411e9 / properties.density);
 			/** @type {number} - in Pa */
 			this.bulkModulus = properties.bulkModulus;
+			if (!properties.bulkModulus && properties.density && this.speedOfSound
+					&& properties.temperatures && (properties.temperatures.melt < stp[0]
+					|| properties.temperatures.boil < stp[0])) // seems to only work for fluids...
+				this.bulkModulus = properties.density
+					* this.speedOfSound * this.speedOfSound; // https://www.engineeringtoolbox.com/speed-sound-d_82.html
 			/** string => true|false|0.5 */
 			this.categories = properties.categories;
 			/** @type {string} */
@@ -201,13 +214,6 @@ class ChemElement {
 			return 'artificial';
 		return Object.keys(this.nucleosynthesis)
 			.sort((a, b) => this.nucleosynthesis[b] - this.nucleosynthesis[a])[0];
-	}
-	/** rough estimate; m/s
-	 * https://en.wikipedia.org/wiki/Speed_of_sound#Equations
-	*/
-	get speedOfSound(){
-		// used Tungsten to guess constant
-		return Math.sqrt(411e9 / this.density);
 	}
 	get stable(){
 		return this.isotopes.some(i => i.stable);
@@ -597,6 +603,11 @@ class ChemElement {
 					.map(e => Math.log(e.resistivity));
 				const mm = [Math.min(...rr), maxRes];
 				c = gradient1(remap(Math.log(this.resistivity), mm, [0, 1]));
+				break;
+			}
+			case 'speedOfSound':{
+				const ee = elements.filter(e => e.speedOfSound).map(e => e.speedOfSound);
+				c = gradient1(remap(this.speedOfSound, [Math.min(...ee), Math.max(...ee)], [0, 1]));
 				break;
 			}
 			case 'stability':

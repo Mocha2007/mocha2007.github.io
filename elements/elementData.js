@@ -83,6 +83,7 @@ const elementData = [
 				2012: 1.39,
 			},
 			production: 50e6,
+			speedOfSound: 1310,
 			temperatures: {
 				boil: 20.28,
 				melt: 14.01,
@@ -120,6 +121,7 @@ const elementData = [
 				2018: 24,
 			},
 			production: 32e3,
+			speedOfSound: 972,
 			temperatures: {
 				boil: 4.22, // does not solidify at SP
 				crit: [5.1953, 0.22746e6],
@@ -325,6 +327,7 @@ const elementData = [
 				2001: 0.14,
 			},
 			production: 131e6,
+			speedOfSound: 353,
 			temperatures: {
 				boil: 77.36,
 				melt: 63.15,
@@ -364,6 +367,7 @@ const elementData = [
 				2001: 0.154,
 			},
 			production: 100e6,
+			speedOfSound: 330,
 			temperatures: {
 				boil: 90.2,
 				melt: 54.36,
@@ -404,6 +408,7 @@ const elementData = [
 			},
 			production: 5.5e6,
 			rgb: 'rgb(255, 207, 112)',
+			speedOfSound: 332,
 			temperatures: {
 				boil: 85.03,
 				melt: 53.53,
@@ -439,6 +444,7 @@ const elementData = [
 				1999: 240,
 			},
 			production: 500,
+			speedOfSound: 435,
 			temperatures: {
 				boil: 27.07,
 				melt: 24.56,
@@ -733,6 +739,7 @@ const elementData = [
 				2013: 0.082,
 			},
 			rgb: 'rgb(246, 255, 188)',
+			speedOfSound: 206,
 			temperatures: {
 				boil: 239.11,
 				melt: 171.6,
@@ -768,6 +775,7 @@ const elementData = [
 				2019: 0.931,
 			},
 			production: 700e3,
+			speedOfSound: 323,
 			temperatures: {
 				boil: 87.3,
 				melt: 83.8,
@@ -1486,6 +1494,7 @@ const elementData = [
 			production: 556e3,
 			resistivity: 7.8e10,
 			rgb: 'rgb(255, 94, 35)',
+			speedOfSound: 206,
 			temperatures: {
 				boil: 332,
 				melt: 265.8,
@@ -1521,6 +1530,7 @@ const elementData = [
 			prices: {
 				1999: 290,
 			},
+			speedOfSound: 221,
 			temperatures: {
 				boil: 119.93,
 				melt: 115.79,
@@ -2267,6 +2277,7 @@ const elementData = [
 				1999: 1800,
 			},
 			production: 40,
+			speedOfSound: 178,
 			temperatures: {
 				boil: 165.03,
 				melt: 161.4,
@@ -3519,6 +3530,7 @@ const elementData = [
 				decay: 1,
 			},
 			oxidation: [0],
+			speedOfSound: 2*178-221, // extrapolated from Xenon and Krypton
 			temperatures: {
 				boil: 211.5,
 				melt: 202,
