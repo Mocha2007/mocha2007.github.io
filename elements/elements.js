@@ -482,7 +482,7 @@ class ChemElement {
 				}
 				break;
 			case 'electronegativityMelt':
-				if (!this.electronegativity
+				if (!this.mullikenElectronegativity
 						|| !this.temperatures || !this.temperatures.melt
 						|| !this.bulkModulus)
 					c = '#666';
