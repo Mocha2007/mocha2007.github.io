@@ -445,20 +445,23 @@ class ChemElement {
 				}
 				break;
 			case 'electronegativityMelt':
-				if (!this.electronegativity || !this.temperatures || !this.temperatures.melt)
+				if (!this.electronegativity
+						|| !this.temperatures || !this.temperatures.melt
+						|| !this.bulkModulus)
 					c = '#666';
 				else {
-					const ee = elements
-						.filter(e => e.electronegativity)
-						.map(e => e.electronegativity);
-					const mm = elements
-						.filter(e => e.temperatures && e.temperatures.melt)
-						.map(e => e.temperatures.melt);
+					const set = elements.filter(e => e.electronegativity
+						&& e.temperatures && e.temperatures.melt && e.bulkModulus);
+					const ee = set.map(e => e.electronegativity);
+					const bb = set.map(e => Math.log(e.bulkModulus));
+					const mm = set.map(e => Math.log(e.temperatures.melt));
 					const eee = remap(this.electronegativity,
 						[Math.min(...ee), Math.max(...ee)], [0, 1]);
-					const mmm = remap(this.temperatures.melt,
+					const bbb = remap(Math.log(this.bulkModulus),
+						[Math.min(...bb), Math.max(...bb)], [0, 1]);
+					const mmm = remap(Math.log(this.temperatures.melt),
 						[Math.min(...mm), Math.max(...mm)], [0, 1]);
-					c = `rgb(${127*eee+128}, ${63*eee+64 + 63*mmm+64}, ${127*mmm+128})`;
+					c = `rgb(${127*eee+128}, ${127*bbb+128}, ${127*mmm+128})`;
 				}
 				break;
 			case 'halflife':
