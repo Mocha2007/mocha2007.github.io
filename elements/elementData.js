@@ -140,6 +140,7 @@ const elementData = [
 				human: 1.5e-8,
 				universe: 6e-9,
 			},
+			bulkModulus: 11e9,
 			categories: {
 				alkaliMetal: true,
 				tech: true,
@@ -182,6 +183,7 @@ const elementData = [
 				human: 4.5e-10,
 				universe: 1e-9,
 			},
+			bulkModulus: 130e9,
 			categories: {
 				aem: true,
 				preciousMetal: 0.5,
@@ -262,6 +264,7 @@ const elementData = [
 				universe: 4600e-6,
 			},
 			biologicalHalfLife: 40*day, // C-14; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			bulkModulus: 442e9,
 			categories: {
 				coinageMetal: 0.5, // various russian coins
 				reactiveNonmetal: true,
@@ -455,6 +458,7 @@ const elementData = [
 				universe: 33e-6,
 			},
 			biologicalHalfLife: 69*day, // personal estimate; 100 g sodium per person, 1 mg/day per person
+			bulkModulus: 6.3e9,
 			// 11 d according to http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			categories: {
 				alkaliMetal: true,
@@ -496,6 +500,7 @@ const elementData = [
 				universe: 580e-6,
 			},
 			biologicalHalfLife: 44*day, // personal estimate; 19 g magnesium per person, 300 mg/day per person
+			bulkModulus: 35.4e9,
 			categories: {
 				aem: true,
 				rockForming: true,
@@ -537,6 +542,7 @@ const elementData = [
 				human: 1.5e-7,
 				universe: 58e-6,
 			},
+			bulkModulus: 76e9,
 			categories: {
 				coinageMetal: 0.5, // 1 yen coin
 				nativeMetal: 0.5,
@@ -578,6 +584,7 @@ const elementData = [
 				human: 5.8e-5,
 				universe: 650e-6,
 			},
+			bulkModulus: 97.6e9,
 			categories: {
 				metalloid: true,
 				rockForming: true,
@@ -620,6 +627,7 @@ const elementData = [
 				universe: 7e-6,
 			},
 			biologicalHalfLife: 932*day, // personal estimate; 780 g phosphorus per person, 580 mg/day per person
+			bulkModulus: 5e9, // white
 			categories: {
 				pnictogen: true,
 				reactiveNonmetal: true,
@@ -662,6 +670,7 @@ const elementData = [
 				universe: 440e-6,
 			},
 			biologicalHalfLife: 90*day, // S-35; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			bulkModulus: 7.7e9,
 			categories: {
 				chalcogen: true,
 				reactiveNonmetal: true,
@@ -778,6 +787,7 @@ const elementData = [
 				universe: 3e-6,
 			},
 			biologicalHalfLife: 20*day, // personal estimate; 140 g potassium per person, 4.7 mg/day per person
+			bulkModulus: 3.1e9,
 			categories: {
 				alkaliMetal: true,
 				rockForming: true,
@@ -817,6 +827,7 @@ const elementData = [
 				universe: 60e-6,
 			},
 			biologicalHalfLife: 693*day, // personal estimate; 1kg calcium per person, 1 g/day per person
+			bulkModulus: 17e9,
 			categories: {
 				aem: true,
 				rockForming: true,
@@ -854,6 +865,7 @@ const elementData = [
 				human: 4e-10,
 				universe: 3e-8,
 			},
+			bulkModulus: 56.6e9,
 			categories: {
 				rem: true,
 				tech: true,
@@ -892,6 +904,7 @@ const elementData = [
 				human: 4e-8,
 				universe: 3e-6,
 			},
+			bulkModulus: 110e9,
 			categories: {
 				nativeMetal: 0.5,
 				refractoryMetal: 0.5,
@@ -933,6 +946,7 @@ const elementData = [
 				human: 1.2e-10,
 				universe: 1e-6,
 			},
+			bulkModulus: 160e9,
 			categories: {
 				nativeMetal: 0.5,
 				refractoryMetal: 0.5,
@@ -974,6 +988,7 @@ const elementData = [
 				universe: 1.5e-5,
 			},
 			biologicalHalfLife: 320*day, // personal estimate; 14 mg chromium per person, 0.03 mg/day per person
+			bulkModulus: 160e9,
 			categories: {
 				ironGroup: 0.5,
 				nativeMetal: 0.5,
@@ -1017,6 +1032,7 @@ const elementData = [
 				universe: 8e-6,
 			},
 			biologicalHalfLife: 3.8*day, // personal estimate; 12 mg manganese per person, 2 mg/day per person
+			bulkModulus: 120e9,
 			categories: {
 				coinageMetal: 0.5, // $1 coin
 				ironGroup: 0.5,
@@ -1061,6 +1077,7 @@ const elementData = [
 				universe: 1.09e-3,
 			},
 			biologicalHalfLife: 485*day, // personal estimate; 4.2g iron per person, 6 mg/day per person; 0.5^(1/L) = 1 - 0.006/4.2
+			bulkModulus: 170e9,
 			categories: {
 				coinageMetal: 0.5, // various russian coins
 				ironGroup: true,
@@ -1105,6 +1122,7 @@ const elementData = [
 				universe: 3e-6,
 			},
 			biologicalHalfLife: 10*day, // Co-60; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			bulkModulus: 180e9,
 			categories: {
 				ironGroup: true,
 				nativeMetal: 0.5,
@@ -1147,6 +1165,7 @@ const elementData = [
 				human: 1.5e-8,
 				universe: 49e-6,
 			},
+			bulkModulus: 180e9,
 			categories: {
 				coinageMetal: 0.5, // us coins
 				ironGroup: true,
@@ -1190,6 +1209,7 @@ const elementData = [
 				universe: 6e-8,
 			},
 			biologicalHalfLife: 55*day, // personal estimate; 72 mg copper per person, 0.9 mg/day per person
+			bulkModulus: 140e9,
 			categories: {
 				coinageMetal: true,
 				nativeMetal: true,
@@ -1235,6 +1255,7 @@ const elementData = [
 				universe: 3e-7,
 			},
 			biologicalHalfLife: 200*day, // personal estimate; 2.3 g zinc per person, 8 mg/day per person
+			bulkModulus: 70e9,
 			categories: {
 				coinageMetal: 0.5, // us coins
 				nativeMetal: 0.5,
@@ -1313,6 +1334,7 @@ const elementData = [
 				human: 6e-10,
 				universe: 2e-7,
 			},
+			bulkModulus: 75e9,
 			categories: {
 				metalloid: true,
 				preciousMetal: 0.5,
@@ -1353,6 +1375,7 @@ const elementData = [
 				human: 8.9e-10,
 				universe: 8e-9,
 			},
+			bulkModulus: 22e9,
 			categories: {
 				metalloid: true,
 				nativeMetal: 0.5,
@@ -1396,6 +1419,7 @@ const elementData = [
 				universe: 3e-8,
 			},
 			biologicalHalfLife: 190*day, // personal estimate; 15 mg selenium per person, 0.055 mg/day per person
+			bulkModulus: 8.3e9,
 			categories: {
 				chalcogen: true,
 				nativeMetal: 0.5,
@@ -1515,6 +1539,7 @@ const elementData = [
 				universe: 1e-8,
 			},
 			biologicalHalfLife: 45*day, // Rb-86; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			bulkModulus: 2.5e9,
 			categories: {
 				alkaliMetal: true,
 			},
@@ -1593,6 +1618,7 @@ const elementData = [
 				human: 6e-10,
 				universe: 7e-9,
 			},
+			bulkModulus: 41.2e9,
 			categories: {
 				rem: true,
 				tech: true,
@@ -1630,6 +1656,7 @@ const elementData = [
 				human: 3e-9,
 				universe: 5e-8,
 			},
+			bulkModulus: 91.1e9,
 			categories: {
 				refractoryMetal: 0.5,
 				tech: 0.5,
@@ -1669,6 +1696,7 @@ const elementData = [
 				human: 1e-10,
 				universe: 2e-9,
 			},
+			bulkModulus: 170e9,
 			categories: {
 				nativeMetal: 0.5,
 				refractoryMetal: true,
@@ -1712,6 +1740,7 @@ const elementData = [
 				universe: 5e-9,
 			},
 			biologicalHalfLife: 77*day, // personal estimate; 5 mg molybdenum per person, 0.045 mg/day per person
+			bulkModulus: 230e9,
 			categories: {
 				nativeMetal: 0.5,
 				refractoryMetal: true,
@@ -1786,6 +1815,7 @@ const elementData = [
 				human: 7.6e-11, // appx
 				universe: 4e-9,
 			},
+			bulkModulus: 220e9,
 			categories: {
 				nativeMetal: true,
 				nobleMetal: true,
@@ -1829,6 +1859,7 @@ const elementData = [
 				earth: 61e-9,
 				universe: 6e-10,
 			},
+			bulkModulus: 275e9,
 			categories: {
 				nativeMetal: true,
 				nobleMetal: true,
@@ -1873,6 +1904,7 @@ const elementData = [
 				earth: 240e-9,
 				universe: 2e-9,
 			},
+			bulkModulus: 180e9,
 			categories: {
 				nativeMetal: true,
 				nobleMetal: true,
@@ -1917,6 +1949,7 @@ const elementData = [
 				human: 2e-9,
 				universe: 6e-10,
 			},
+			bulkModulus: 100e9,
 			categories: {
 				coinageMetal: true,
 				nativeMetal: true,
@@ -1962,6 +1995,7 @@ const elementData = [
 				universe: 2e-9,
 			},
 			biologicalHalfLife: 30*year, // in bone
+			bulkModulus: 42e9,
 			categories: {
 				nativeMetal: 0.5,
 				tech: 0.5,
@@ -2042,6 +2076,7 @@ const elementData = [
 				universe: 4e-9,
 			},
 			biologicalHalfLife: 3.5*day, // rats; oral; diethyltin chloride; https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/biological-half-life
+			bulkModulus: 58e9,
 			categories: {
 				coinageMetal: true,
 				nativeMetal: 0.5,
@@ -2084,6 +2119,7 @@ const elementData = [
 				human: 6e-10,
 				universe: 4e-10,
 			},
+			bulkModulus: 42e9,
 			categories: {
 				metalloid: true,
 				nativeMetal: 0.5,
@@ -2125,6 +2161,7 @@ const elementData = [
 				human: 2e-10,
 				universe: 9e-9,
 			},
+			bulkModulus: 65e9,
 			categories: {
 				chalcogen: true,
 				metalloid: true,
@@ -2167,6 +2204,7 @@ const elementData = [
 				universe: 1e-9,
 			},
 			biologicalHalfLife: 66.1*day, // https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/biological-half-life
+			bulkModulus: 7.7e9,
 			categories: {
 				halogen: true,
 				reactiveNonmetal: true,
@@ -2245,6 +2283,7 @@ const elementData = [
 				universe: 8e-10,
 			},
 			biologicalHalfLife: 2.5*month, // 1-4 mos
+			bulkModulus: 1.6e9,
 			categories: {
 				alkaliMetal: true,
 				tech: 0.5,
@@ -2285,6 +2324,7 @@ const elementData = [
 				universe: 1e-8,
 			},
 			biologicalHalfLife: 65*day, // Ba-140; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			bulkModulus: 9.6e9,
 			categories: {
 				aem: true,
 			},
@@ -2320,6 +2360,7 @@ const elementData = [
 				human: 4e-10,
 				universe: 2e-9,
 			},
+			bulkModulus: 27.9e9,
 			categories: {
 				lanthanide: true,
 				rem: true,
@@ -2358,6 +2399,7 @@ const elementData = [
 				human: 2e-8,
 				universe: 1e-8,
 			},
+			bulkModulus: 21.5e9,
 			categories: {
 				lanthanide: true,
 				rem: true,
@@ -2395,6 +2437,7 @@ const elementData = [
 				earth: 31e-9,
 				universe: 2e-9,
 			},
+			bulkModulus: 28.8e9,
 			categories: {
 				lanthanide: true,
 				rem: true,
@@ -2432,6 +2475,7 @@ const elementData = [
 				earth: 150e-9,
 				universe: 1e-8,
 			},
+			bulkModulus: 31.8e9,
 			categories: {
 				lanthanide: true,
 				rem: true,
@@ -2469,6 +2513,7 @@ const elementData = [
 			abundance: {
 				earth: 2e-23,
 			},
+			bulkModulus: 33e9,
 			categories: {
 				lanthanide: true,
 				rem: true,
@@ -2502,6 +2547,7 @@ const elementData = [
 				human: 3e-11,
 				universe: 5e-9,
 			},
+			bulkModulus: 37.8e9,
 			categories: {
 				lanthanide: true,
 				rem: true,
@@ -2540,6 +2586,7 @@ const elementData = [
 				earth: 17e-9,
 				universe: 5e-10,
 			},
+			bulkModulus: 8.3e9,
 			categories: {
 				lanthanide: true,
 				rem: true,
@@ -2577,6 +2624,7 @@ const elementData = [
 				earth: 61e-9,
 				universe: 2e-9,
 			},
+			bulkModulus: 37.9e9,
 			categories: {
 				lanthanide: true,
 				rem: true,
@@ -2614,6 +2662,7 @@ const elementData = [
 				earth: 11e-9,
 				universe: 5e-10,
 			},
+			bulkModulus: 38.7e9,
 			categories: {
 				lanthanide: true,
 				rem: true,
@@ -2650,6 +2699,7 @@ const elementData = [
 				earth: 74e-9,
 				universe: 2e-9,
 			},
+			bulkModulus: 40.5e9,
 			categories: {
 				lanthanide: true,
 				rem: true,
@@ -2688,6 +2738,7 @@ const elementData = [
 				earth: 16e-9,
 				universe: 5e-10,
 			},
+			bulkModulus: 40.2e9,
 			categories: {
 				lanthanide: true,
 				rem: true,
@@ -2724,6 +2775,7 @@ const elementData = [
 				earth: 47e-9,
 				universe: 2e-9,
 			},
+			bulkModulus: 44.4e9,
 			categories: {
 				lanthanide: true,
 				rem: true,
@@ -2760,6 +2812,7 @@ const elementData = [
 				earth: 7e-9,
 				universe: 1e-10,
 			},
+			bulkModulus: 44.5e9,
 			categories: {
 				lanthanide: true,
 				rem: true,
@@ -2796,6 +2849,7 @@ const elementData = [
 				earth: 45e-9,
 				universe: 2e-9,
 			},
+			bulkModulus: 30.5e9,
 			categories: {
 				lanthanide: true,
 				rem: true,
@@ -2833,6 +2887,7 @@ const elementData = [
 				earth: 7e-9,
 				universe: 1e-10,
 			},
+			bulkModulus: 47.6e9,
 			categories: {
 				lanthanide: true,
 				rem: true,
@@ -2870,6 +2925,7 @@ const elementData = [
 				earth: 28e-9,
 				universe: 7e-10,
 			},
+			bulkModulus: 110e9,
 			categories: {
 				refractoryMetal: 0.5,
 				tech: 0.5,
@@ -2909,6 +2965,7 @@ const elementData = [
 				human: 3e-9,
 				universe: 8e-11,
 			},
+			bulkModulus: 200e9,
 			categories: {
 				nativeMetal: 0.5,
 				refractoryMetal: true,
@@ -2950,6 +3007,7 @@ const elementData = [
 				human: 3e-10,
 				universe: 5e-10,
 			},
+			bulkModulus: 310e9,
 			categories: {
 				nativeMetal: 0.5,
 				refractoryMetal: true,
@@ -2992,6 +3050,7 @@ const elementData = [
 				earth: 10e-9,
 				universe: 2e-10,
 			},
+			bulkModulus: 370e9,
 			categories: {
 				nativeMetal: 0.5,
 				nobleMetal: 0.5,
@@ -3034,6 +3093,7 @@ const elementData = [
 				earth: 120e-9,
 				universe: 3e-9,
 			},
+			bulkModulus: 462e9,
 			categories: {
 				nativeMetal: true,
 				nobleMetal: true,
@@ -3078,6 +3138,7 @@ const elementData = [
 				human: 20e-12, // https://en.wikipedia.org/wiki/Iridium#Precautions
 				universe: 2e-9,
 			},
+			bulkModulus: 320e9,
 			categories: {
 				nativeMetal: true,
 				nobleMetal: true,
@@ -3121,6 +3182,7 @@ const elementData = [
 				earth: 250e-9,
 				universe: 5e-9,
 			},
+			bulkModulus: 230e9,
 			categories: {
 				nativeMetal: true,
 				nobleMetal: true,
@@ -3165,6 +3227,7 @@ const elementData = [
 				universe: 6e-10,
 			},
 			biologicalHalfLife: 280*day, // Au-198; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			bulkModulus: 180e9,
 			categories: {
 				nativeMetal: true,
 				nobleMetal: true,
@@ -3249,6 +3312,7 @@ const elementData = [
 				human: 7e-11,
 				universe: 5e-10,
 			},
+			bulkModulus: 43e9,
 			crystal: 'hP',
 			density: 11850,
 			discovery: 1862,
@@ -3285,6 +3349,7 @@ const elementData = [
 				universe: 1e-8,
 			},
 			biologicalHalfLife: 32*day, // 28-36 d in blood
+			bulkModulus: 46e9,
 			categories: {
 				nativeMetal: 0.5,
 			},
@@ -3327,6 +3392,7 @@ const elementData = [
 				universe: 7e-10,
 			},
 			biologicalHalfLife: 5*day, // https://en.wikipedia.org/wiki/Bismuth#Toxicology_and_ecotoxicology
+			bulkModulus: 31e9,
 			categories: {
 				nativeMetal: 0.5,
 				pnictogen: true,
@@ -3559,6 +3625,7 @@ const elementData = [
 				human: 3e-11,
 				universe: 4e-10,
 			},
+			bulkModulus: 54e9,
 			categories: {
 				actinide: true,
 			},
@@ -3630,6 +3697,7 @@ const elementData = [
 				universe: 2e-10,
 			},
 			biologicalHalfLife: 15*day, // U-235; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
+			bulkModulus: 100e9,
 			categories: {
 				actinide: true,
 			},

@@ -67,6 +67,8 @@ class ChemElement {
 			this.abundance = properties.abundance;
 			/** @type {number} - in seconds */
 			this.biologicalHalfLife = properties.biologicalHalfLife;
+			/** @type {number} - in Pa */
+			this.bulkModulus = properties.bulkModulus;
 			/** string => true|false|0.5 */
 			this.categories = properties.categories;
 			/** @type {string} */
@@ -387,6 +389,13 @@ class ChemElement {
 						[Math.min(...boils), Math.max(...boils)], [0, 1]));
 				}
 				break;
+			case 'bulkModulus':{
+				const bm = Math.max(...elements
+					.filter(e => e.bulkModulus)
+					.map(e => e.bulkModulus));
+				c = gradient1(this.bulkModulus/bm);
+				break;
+			}
 			case 'color': // normalized color
 				c = this.rgb ? this.rgb : 'grey';
 				break;
