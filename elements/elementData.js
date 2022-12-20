@@ -3803,6 +3803,7 @@ const elementData = [
 				halogen: true,
 				metalloid: 0.5,
 			},
+			covalentRadius: 147e-12,
 			crystal: 'cF',
 			density: 8930,
 			discovery: 1940,
@@ -4231,6 +4232,7 @@ const elementData = [
 			categories: {
 				actinide: true,
 			},
+			covalentRadius: 168e-12,
 			crystal: 'hP',
 			density: 14790,
 			discovery: 1949,
@@ -4259,6 +4261,7 @@ const elementData = [
 			categories: {
 				actinide: true,
 			},
+			covalentRadius: 168e-12,
 			crystal: 'hP',
 			density: 15100,
 			discovery: 1950,
@@ -4288,6 +4291,7 @@ const elementData = [
 			categories: {
 				actinide: true,
 			},
+			covalentRadius: 165e-12,
 			crystal: 'cF',
 			density: 8840,
 			discovery: 1952,
@@ -4313,6 +4317,7 @@ const elementData = [
 			categories: {
 				actinide: true,
 			},
+			covalentRadius: 167e-12,
 			crystal: 'cF',
 			density: 9700,
 			discovery: 1952,
@@ -4336,6 +4341,7 @@ const elementData = [
 			categories: {
 				actinide: true,
 			},
+			covalentRadius: 173e-12,
 			crystal: 'cF',
 			density: 10300,
 			discovery: 1955,
@@ -4359,6 +4365,7 @@ const elementData = [
 			categories: {
 				actinide: true,
 			},
+			covalentRadius: 176e-12,
 			crystal: 'cF',
 			density: 9900,
 			discovery: 1966,
@@ -4383,6 +4390,7 @@ const elementData = [
 			categories: {
 				actinide: true,
 			},
+			covalentRadius: 161e-12,
 			crystal: 'hP',
 			density: 14400,
 			discovery: 1961,
