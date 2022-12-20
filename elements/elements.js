@@ -94,6 +94,8 @@ class ChemElement {
 			this.electronAffinity = properties.electronAffinity;
 			/** @type {number} - Pauling */
 			this.electronegativity = properties.electronegativity;
+			/** @type {number[]} - J/mol */
+			this.ionization = properties.ionization;
 			/** @type {string} - color used in models */
 			this.modelColor = properties.modelColor;
 			/** @type {number} */
@@ -482,6 +484,17 @@ class ChemElement {
 					const mmm = remap(this.temperatures.melt,
 						[Math.min(...mm), Math.max(...mm)], [0, 1]);
 					c = `rgb(${127*eee+128}, ${127*bbb+128}, ${127*mmm+128})`;
+				}
+				break;
+			case 'ionization1':
+				if (!this.ionization)
+					c = '#ccc';
+				else {
+					const elems = elements.filter(e => e.ionization)
+						.map(e => e.ionization[0]);
+					c = gradient1(remap(
+						this.ionization[0],
+						[Math.min(...elems), Math.max(...elems)], [0, 1]));
 				}
 				break;
 			case 'halflife':
@@ -1063,4 +1076,4 @@ function main(){
 }
 
 main();
-// tableColor('electronegativityMelt');
+// tableColor('ionization1');
