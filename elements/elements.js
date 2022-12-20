@@ -212,6 +212,9 @@ class ChemElement {
 		// used Tungsten to guess constant
 		return 467198 / this.density;
 	}
+	get mullikenElectronegativity(){
+		return 1.97e-6*(this.ionization[0] + this.electronAffinity) + 0.19;
+	}
 	/** most common stellar nucleosynthesis process */
 	get nucleoMax(){
 		if (!this.nucleosynthesis)
@@ -466,18 +469,30 @@ class ChemElement {
 						[Math.min(...ee), Math.max(...ee)], [0, 1]));
 				}
 				break;
+			case 'electronegativity2':
+				if (!this.mullikenElectronegativity)
+					c = 'grey';
+				else {
+					const ee = elements
+						.filter(e => e.mullikenElectronegativity)
+						.map(e => e.mullikenElectronegativity);
+					c = gradient1(remap(
+						this.mullikenElectronegativity,
+						[Math.min(...ee), Math.max(...ee)], [0, 1]));
+				}
+				break;
 			case 'electronegativityMelt':
 				if (!this.electronegativity
 						|| !this.temperatures || !this.temperatures.melt
 						|| !this.bulkModulus)
 					c = '#666';
 				else {
-					const set = elements.filter(e => e.electronegativity
+					const set = elements.filter(e => e.mullikenElectronegativity
 						&& e.temperatures && e.temperatures.melt && e.bulkModulus);
-					const ee = set.map(e => e.electronegativity);
+					const ee = set.map(e => e.mullikenElectronegativity);
 					const bb = set.map(e => e.bulkModulus);
 					const mm = set.map(e => e.temperatures.melt);
-					const eee = remap(this.electronegativity,
+					const eee = remap(this.mullikenElectronegativity,
 						[Math.min(...ee), Math.max(...ee)], [0, 1]);
 					const bbb = remap(this.bulkModulus,
 						[Math.min(...bb), Math.max(...bb)], [0, 1]);
