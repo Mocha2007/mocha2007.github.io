@@ -2638,6 +2638,7 @@ const elementData = [
 			nutrition: 5,
 			oxidation: [3],
 			prices: {
+				2022: 5.09,
 				2020: 4.85,
 			},
 			resistivity: 615e-9,
@@ -3059,6 +3060,7 @@ const elementData = [
 			},
 			oxidation: [3],
 			prices: {
+				2022: 58.72,
 				2020: 57.1,
 			},
 			resistivity: 814e-9,
@@ -3689,6 +3691,9 @@ const elementData = [
 			},
 			oxidation: [1, 3],
 			prices: {
+				2021: 8400,
+				2020: 8200,
+				2019: 7600,
 				2017: 4200,
 			},
 			production: 10,
@@ -4043,6 +4048,9 @@ const elementData = [
 			},
 			oxidation: [4],
 			prices: {
+				2019: 72,
+				2018: 72,
+				2017: 73,
 				2010: 287,
 			},
 			production: 1.2e3, // US, est. https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-thorium.pdf
