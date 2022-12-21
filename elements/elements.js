@@ -133,8 +133,6 @@ class ChemElement {
 	get aufbau(){
 		if (this.period === 1)
 			return '1s' + this.z;
-		// otherwise use last noble gas as a shorthand
-		// const lng = elements.find(e => e.group === 18 && e.period === this.period-1);
 		let valence = this.z; // - lng.z
 		let s = '';
 		for (let diag = 0; diag < 8 && 0 < valence; diag++){
@@ -149,6 +147,11 @@ class ChemElement {
 			});
 		}
 		return s.slice(1);
+	}
+	get aufbauConcise(){
+		// use last noble gas as a shorthand
+		const lng = elements.find(e => e.group === 18 && e.period === this.period-1);
+		return this.aufbau.replace(lng.aufbau, `[${lng.symbol}]`);
 	}
 	get category(){
 		if ([1, 6, 7, 8, 9, 15, 16, 17, 34, 35, 53].includes(this.z))
