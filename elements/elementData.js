@@ -216,6 +216,7 @@ const elementData = [
 			},
 			oxidation: [2],
 			prices: {
+				2021: 610,
 				2020: 857,
 			},
 			production: 200,
@@ -568,6 +569,7 @@ const elementData = [
 			nutrition: 1,
 			oxidation: [2],
 			prices: {
+				2022: 3.27,
 				2019: 2.32,
 			},
 			production: 748e3,
@@ -1010,6 +1012,7 @@ const elementData = [
 			},
 			oxidation: [2, 3, 4],
 			prices: {
+				2022: 9,
 				2020: 11.4,
 				2018: 4.8,
 			},
@@ -1489,6 +1492,7 @@ const elementData = [
 			nutrition: 4,
 			oxidation: [-4, 2, 4],
 			prices: {
+				2022: 1124,
 				2020: 962,
 			},
 			production: 118,
@@ -1535,6 +1539,7 @@ const elementData = [
 			nutrition: 4,
 			oxidation: [-3, 3, 5],
 			prices: {
+				2021: 1.11,
 				2020: 1.15,
 			},
 			resistivity: 333e-9,
@@ -2223,6 +2228,8 @@ const elementData = [
 			nutrition: 5,
 			oxidation: [2],
 			prices: {
+				2022: 1.9,
+				2021: 2.49,
 				2019: 2.73,
 			},
 			production: 25e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cadmium.pdf
@@ -2364,6 +2371,7 @@ const elementData = [
 			},
 			oxidation: [-3, 3, 5],
 			prices: {
+				2022: 11.3,
 				2019: 5.79,
 			},
 			production: 150e3,
@@ -2541,6 +2549,7 @@ const elementData = [
 			},
 			oxidation: [1],
 			prices: {
+				2021: 69.9e3,
 				2018: 61.8e3,
 			},
 			resistivity: 205e-9,
@@ -2757,6 +2766,7 @@ const elementData = [
 			nutrition: 5,
 			oxidation: [3],
 			prices: {
+				2022: 135,
 				2019: 57.5,
 			},
 			production: 7000,
@@ -3003,6 +3013,7 @@ const elementData = [
 			},
 			oxidation: [3],
 			prices: {
+				2022: 647.1,
 				2019: 307,
 			},
 			production: 100,
@@ -3087,6 +3098,7 @@ const elementData = [
 			},
 			oxidation: [3],
 			prices: {
+				2022: 21,
 				2020: 26.4,
 			},
 			resistivity: 860e-9,
@@ -3767,6 +3779,7 @@ const elementData = [
 			},
 			oxidation: [3],
 			prices: {
+				2022: 3.925/pound,
 				2019: 6.36,
 			},
 			production: 15e3,
