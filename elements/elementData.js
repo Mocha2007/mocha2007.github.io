@@ -1107,6 +1107,7 @@ const elementData = [
 			nutrition: 2,
 			oxidation: [2, 3, 6],
 			prices: {
+				2021: 5.65/pound,
 				2019: 9.4,
 			},
 			production: 4.4e6,
@@ -2972,6 +2973,7 @@ const elementData = [
 			},
 			oxidation: [3],
 			prices: {
+				2022: 3993.2,
 				2019: 658,
 			},
 			resistivity: 1.15e-6,
@@ -3263,6 +3265,7 @@ const elementData = [
 			},
 			oxidation: [4],
 			prices: {
+				2022: 4560,
 				2017: 900,
 			},
 			production: 10,
@@ -3403,6 +3406,7 @@ const elementData = [
 			},
 			oxidation: [4, 7],
 			prices: {
+				2022: 1590.8,
 				2020: 3580,
 			},
 			production: 45,
