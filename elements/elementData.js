@@ -170,6 +170,7 @@ const elementData = [
 			nutrition: 3,
 			oxidation: [1],
 			prices: {
+				2022: 79.42,
 				2020: 83.5,
 				2018: 16.5,
 			},
@@ -612,6 +613,7 @@ const elementData = [
 			nutrition: 4,
 			oxidation: [3],
 			prices: {
+				2022: 1.078/pound,
 				2021: 0.975/pound,
 				2019: 1.79,
 			},
@@ -1246,6 +1248,7 @@ const elementData = [
 			nutrition: 2,
 			oxidation: [2, 3],
 			prices: {
+				2022: 23.566/pound,
 				2021: 25.18/pound,
 				2019: 32.8,
 			},
@@ -1294,6 +1297,7 @@ const elementData = [
 			nutrition: 3,
 			oxidation: [2],
 			prices: {
+				2022: 12.28/pound,
 				2021: 7.2756/pound,
 				2019: 13.9,
 			},
@@ -1344,6 +1348,7 @@ const elementData = [
 			nutrition: 2,
 			oxidation: [1, 2],
 			prices: {
+				2022: 3.794/pound,
 				2021: 4.0547/pound,
 				2019: 6,
 			},
@@ -1392,6 +1397,7 @@ const elementData = [
 			nutrition: 2,
 			oxidation: [2],
 			prices: {
+				2022: 1.3962/pound,
 				2021: 1.2474/pound,
 				2019: 2.55,
 			},
@@ -2064,6 +2070,7 @@ const elementData = [
 			},
 			oxidation: [3],
 			prices: {
+				2022: 12300/ounce,
 				2021: 25700/ounce,
 				2019: 147e3,
 			},
@@ -2113,6 +2120,7 @@ const elementData = [
 			},
 			oxidation: [0, 2, 4],
 			prices: {
+				2022: 1733.38/ounce,
 				2021: 2350/ounce,
 				2019: 49.5e3,
 			},
@@ -2163,6 +2171,7 @@ const elementData = [
 			},
 			oxidation: [1],
 			prices: {
+				2022: 23.74/ounce,
 				2021: 25.645/ounce,
 				2019: 521,
 			},
@@ -3470,6 +3479,7 @@ const elementData = [
 			},
 			oxidation: [3, 4],
 			prices: {
+				2022: 4900/ounce,
 				2021: 5500/ounce,
 				2020: 55850,
 			},
@@ -3518,6 +3528,7 @@ const elementData = [
 			},
 			oxidation: [2, 4],
 			prices: {
+				2022: 1010.10/ounce,
 				2021: 1227/ounce,
 				2020: 27800,
 			},
@@ -3568,6 +3579,7 @@ const elementData = [
 			},
 			oxidation: [1, 3],
 			prices: {
+				2022: 1806.35/ounce,
 				2021: 1711.5/ounce,
 				2020: 44800,
 			},
@@ -3699,6 +3711,7 @@ const elementData = [
 			nutrition: 4,
 			oxidation: [2, 4],
 			prices: {
+				2022: 0.9857/pound,
 				2021: 0.8729/pound,
 				2019: 2,
 			},
@@ -4087,6 +4100,7 @@ const elementData = [
 			},
 			oxidation: [4, 6],
 			prices: {
+				2022: 48.1/pound,
 				2018: 101,
 			},
 			production: 50572,
