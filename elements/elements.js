@@ -552,7 +552,7 @@ class ChemElement {
 				const mmm = remap(this.temperatures && this.temperatures.melt
 					|| this.predictedMelt,
 				[Math.min(...mm), Math.max(...mm)], [0, 1]);
-				c = `rgb(${127*eee+128}, ${127*bbb+128}, ${127*mmm+128})`;
+				c = `rgb(${127*mmm+128}, ${127*bbb+128}, ${127*eee+128})`;
 				break;
 			}
 			case 'ionization1':
