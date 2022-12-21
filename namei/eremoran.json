@@ -614,7 +614,7 @@
 		"etym": "D/aramat",
 		"cat": "n., 3rd",
 		"defList": [
-			"small copper piece, worth a quarter aramat"
+			"(obsolete) small copper piece, worth a quarter aramat"
 		],
 		"categories": ["coin"]
 	},
@@ -651,7 +651,7 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"copper",
-			"copper piece, worth four aramaelat"
+			"copper piece, worth one quarter of a nelat"
 		],
 		"categories": ["coin", "metal"]
 	},
@@ -796,15 +796,6 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"small silver piece, worth four aramat"
-		],
-		"categories": ["coin"]
-	},
-	{
-		"title": "arzênkut",
-		"etym": "A/arzênt",
-		"cat": "n., 3rd",
-		"defList": [
-			"large silver piece, worth four arzênt"
 		],
 		"categories": ["coin"]
 	},
@@ -1900,7 +1891,7 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"money (especially gold money)",
-			"gold (actually, electrum) coin, worth four arzênkut"
+			"gold coin, worth four arzênt"
 		],
 		"categories": ["coin"]
 	},
@@ -4903,7 +4894,8 @@
 		"etym": "r/aramaelat",
 		"cat": "n., 3rd",
 		"defList": [
-			"small copper piece, worth a quarter aramat"
+			"(obsolete) small copper piece, worth a quarter aramat",
+			"(colloquial) something worthless"
 		],
 		"categories": ["coin"]
 	},
@@ -7943,15 +7935,6 @@
 		"defList": [
 			"metal"
 		]
-	},
-	{
-		"title": "zênkut",
-		"etym": "r/arzênkut",
-		"cat": "n., 3rd",
-		"defList": [
-			"large silver piece, worth four arzênt"
-		],
-		"categories": ["coin"]
 	},
 	{
 		"title": "zesti",
