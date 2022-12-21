@@ -7,6 +7,7 @@
 // also https://periodictable.com/Properties/A/UniverseAbundance.html
 // metal prices from https://www.dailymetalprice.com/ and https://www.metalary.com
 // other prices from https://en.wikipedia.org/wiki/Prices_of_chemical_elements
+// detailed platinum group metal price history https://matthey.com/products-and-markets/pgms-and-circularity/pgm-management
 /* sources for technology-critical
 	1	https://en.wikipedia.org/wiki/Technology-critical_element#List_of_technology-critical_elements
 	2	https://www.sciencedirect.com/science/article/pii/S0921344919305750 p. 2
@@ -2039,9 +2040,9 @@ const elementData = [
 			},
 			oxidation: [3, 4],
 			prices: {
-				2022: 620/ounce,
-				2021: 370/ounce,
-				2020: 10500,
+				2022: 553.49/ounce, // year average
+				2021: 566.85/ounce, // year average
+				2020: 264.94/ounce, // year average
 			},
 			production: 12,
 			resistivity: 71e-9,
@@ -2089,8 +2090,9 @@ const elementData = [
 			},
 			oxidation: [3],
 			prices: {
-				2022: 12300/ounce,
-				2021: 25700/ounce,
+				2022: 15560.66/ounce, // year average
+				2021: 20064.59/ounce, // year average
+				2020: 11235.95/ounce, // year average
 				2019: 147e3,
 			},
 			production: 25,
@@ -2139,8 +2141,9 @@ const elementData = [
 			},
 			oxidation: [0, 2, 4],
 			prices: {
-				2022: 1733.38/ounce,
-				2021: 2350/ounce,
+				2022: 2133.95/ounce, // year average
+				2021: 2407.67/ounce, // year average
+				2020: 2209.99/ounce, // year average
 				2019: 49.5e3,
 			},
 			production: 210, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-platinum.pdf
@@ -3523,9 +3526,9 @@ const elementData = [
 			},
 			oxidation: [3, 4],
 			prices: {
-				2022: 4900/ounce,
-				2021: 5500/ounce,
-				2020: 55850,
+				2022: 4455.78/ounce, // year average
+				2021: 5081.52/ounce, // year average
+				2020: 1628.06/ounce, // year average
 			},
 			production: 3,
 			resistivity: 47.1e-9,
@@ -3572,9 +3575,9 @@ const elementData = [
 			},
 			oxidation: [2, 4],
 			prices: {
-				2022: 1010.10/ounce,
-				2021: 1227/ounce,
-				2020: 27800,
+				2022: 966.03/ounce, // year average
+				2021: 1095.32/ounce, // year average
+				2020: 887.94/ounce, // year average
 			},
 			production: 239,
 			resistivity: 105e-9,
