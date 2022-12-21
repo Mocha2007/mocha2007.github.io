@@ -94,6 +94,8 @@ class ChemElement {
 			this.discovery = properties.discovery;
 			/** @type {number} - J/mol */
 			this.electronAffinity = properties.electronAffinity;
+			/** @type {string} */
+			this._electronConfiguration = properties.electronConfiguration;
 			/** @type {number} - Pauling */
 			this.electronegativity = properties.electronegativity;
 			/** @type {number[]} - J/mol */
@@ -192,6 +194,9 @@ class ChemElement {
 		}
 		// most elements
 		return [this.group - 1, this.period - 1];
+	}
+	get electronConfiguration(){
+		return this._electronConfiguration || this.aufbauConcise;
 	}
 	get electronShell(){
 		if (this.group < 3 || this.z === 2)
