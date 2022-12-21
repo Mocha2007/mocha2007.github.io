@@ -767,6 +767,13 @@ class ChemElement {
 	static fromZ(z){
 		return elements.filter(e => e.z === z)[0];
 	}
+	/**
+	 * @param {number} n number of rows
+	 * @returns {number} number of elements in periodic table with n rows
+	 */
+	static periodic(n){
+		return sum(range(1, n+1).map(i => 2*Math.pow(Math.floor(i/2 + 1), 2)));
+	}
 }
 
 /** @type {Decay[]} */
