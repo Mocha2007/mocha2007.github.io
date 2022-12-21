@@ -414,27 +414,45 @@ class ChemElement {
 		switch (type){
 			case 'abundanceEarth':
 				if (!this.abundance || !this.abundance.earth)
-					c = 'white';
+					c = '#ccc';
 				else if (this.abundance.earth < 1e-9) // trace
-					c = 'magenta';
-				else // 13 * -9 = -117 ~ -120
-					c = `hsl(${120+13*Math.log10(this.abundance.earth)}, 100%, 50%)`;
+					c = '#fc8';
+				else {
+					const abundances = elements
+						.filter(e => e.abundance && 1e-9 < e.abundance.earth)
+						.map(e => Math.log(e.abundance.earth));
+					c = gradient1(remap(
+						Math.log(this.abundance.earth),
+						[Math.min(...abundances), Math.max(...abundances)], [0, 1]));
+				}
 				break;
 			case 'abundanceHuman':
 				if (!this.abundance || !this.abundance.human)
-					c = 'white';
+					c = '#ccc';
 				else if (this.abundance.human < 1e-9) // trace
-					c = 'magenta';
-				else
-					c = `hsl(${120+13*Math.log10(this.abundance.human)}, 100%, 50%)`;
+					c = '#fc8';
+				else {
+					const abundances = elements
+						.filter(e => e.abundance && 1e-9 < e.abundance.human)
+						.map(e => Math.log(e.abundance.human));
+					c = gradient1(remap(
+						Math.log(this.abundance.human),
+						[Math.min(...abundances), Math.max(...abundances)], [0, 1]));
+				}
 				break;
 			case 'abundanceUniverse':
 				if (!this.abundance || !this.abundance.universe)
-					c = 'white';
+					c = '#ccc';
 				else if (this.abundance.universe < 1e-9) // trace
-					c = 'magenta';
-				else
-					c = `hsl(${120+13*Math.log10(this.abundance.universe)}, 100%, 50%)`;
+					c = '#fc8';
+				else {
+					const abundances = elements
+						.filter(e => e.abundance && 1e-9 < e.abundance.universe)
+						.map(e => Math.log(e.abundance.universe));
+					c = gradient1(remap(
+						Math.log(this.abundance.universe),
+						[Math.min(...abundances), Math.max(...abundances)], [0, 1]));
+				}
 				break;
 			case 'block':
 				c = '#'+{s: 'f99', p: 'ff8', d: '9cf', f: '9f9', g: 'f9f'}[this.electronShell];
