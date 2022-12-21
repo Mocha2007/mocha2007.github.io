@@ -130,6 +130,26 @@ class ChemElement {
 		elements.push(this);
 		this.createElement();
 	}
+	get aufbau(){
+		if (this.period === 1)
+			return '1s' + this.z;
+		// otherwise use last noble gas as a shorthand
+		// const lng = elements.find(e => e.group === 18 && e.period === this.period-1);
+		let valence = this.z; // - lng.z
+		let s = '';
+		for (let diag = 0; diag < 8 && 0 < valence; diag++){
+			// eslint-disable-next-line no-loop-func
+			Array.from('gfdps'.slice(4-Math.floor(diag/2))).forEach((char, i, a) => {
+				if (!valence)
+					return;
+				const l = a.length-i-1;
+				const e = Math.min(valence, 4*l+2);
+				valence -= e;
+				s += ` ${diag-l+1}${char}${e}`;
+			});
+		}
+		return s.slice(1);
+	}
 	get category(){
 		if ([1, 6, 7, 8, 9, 15, 16, 17, 34, 35, 53].includes(this.z))
 			return 'Reactive nonmetal';
