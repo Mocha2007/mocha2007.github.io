@@ -231,6 +231,9 @@ class ChemElement {
 			* Math.pow(this.ionization[0], -2.39998)
 			* Math.pow(this.covalentRadius, -5.08269);
 	}
+	get predictedElectronegativity(){
+		return 2.41602e-6 * this.ionization[0] - 6.12342e-2;
+	}
 	/** based on regressions I did; R^2 = 0.6188 */
 	get predictedMelt(){
 		return 6.3232e-9
@@ -508,25 +511,22 @@ class ChemElement {
 						[Math.min(...ee), Math.max(...ee)], [0, 1]));
 				}
 				break;
-			case 'electronegativityMelt':
-				if (!this.mullikenElectronegativity)
-					c = '#666';
-				else {
-					const set = elements.filter(e => e.mullikenElectronegativity);
-					const ee = set.map(e => e.mullikenElectronegativity);
-					const bb = set.map(e => e.bulkModulus || e.predictedBulkModulus);
-					const mm = set.map(e => e.temperatures && e.temperatures.melt
-						|| e.predictedMelt);
-					const eee = remap(this.mullikenElectronegativity,
-						[Math.min(...ee), Math.max(...ee)], [0, 1]);
-					const bbb = remap(this.bulkModulus || this.predictedBulkModulus,
-						[Math.min(...bb), Math.max(...bb)], [0, 1]);
-					const mmm = remap(this.temperatures && this.temperatures.melt
-						|| this.predictedMelt,
-					[Math.min(...mm), Math.max(...mm)], [0, 1]);
-					c = `rgb(${127*eee+128}, ${127*bbb+128}, ${127*mmm+128})`;
-				}
+			case 'electronegativityMelt':{
+				const set = elements.filter(e => e.mullikenElectronegativity);
+				const ee = set.map(e => e.electronegativity || e.predictedElectronegativity);
+				const bb = set.map(e => e.bulkModulus || e.predictedBulkModulus);
+				const mm = set.map(e => e.temperatures && e.temperatures.melt
+					|| e.predictedMelt);
+				const eee = remap(this.electronegativity || this.predictedElectronegativity,
+					[Math.min(...ee), Math.max(...ee)], [0, 1]);
+				const bbb = remap(this.bulkModulus || this.predictedBulkModulus,
+					[Math.min(...bb), Math.max(...bb)], [0, 1]);
+				const mmm = remap(this.temperatures && this.temperatures.melt
+					|| this.predictedMelt,
+				[Math.min(...mm), Math.max(...mm)], [0, 1]);
+				c = `rgb(${127*eee+128}, ${127*bbb+128}, ${127*mmm+128})`;
 				break;
+			}
 			case 'ionization1':
 				if (!this.ionization)
 					c = '#ccc';
