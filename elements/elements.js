@@ -224,12 +224,20 @@ class ChemElement {
 		return Object.keys(this.nucleosynthesis)
 			.sort((a, b) => this.nucleosynthesis[b] - this.nucleosynthesis[a])[0];
 	}
-	/** based on regressions I did */
+	/** based on regressions I did; R^2 = 0.7302 */
 	get predictedBulkModulus(){
 		return 3.2288e-31
 			* Math.pow(this.density, 1.39202)
 			* Math.pow(this.ionization[0], -2.39998)
 			* Math.pow(this.covalentRadius, -5.08269);
+	}
+	/** based on regressions I did; R^2 = 0.6188 */
+	get predictedMelt(){
+		return 6.3232e-9
+			* Math.pow(this.z, -0.518875)
+			* Math.pow(this.density, 0.914663)
+			* Math.pow(this.ionization[0], -1.28273)
+			* Math.pow(this.covalentRadius, -1.64164);
 	}
 	get stable(){
 		return this.isotopes.some(i => i.stable);
