@@ -774,7 +774,7 @@ class ChemElement {
 	static periodic(n){
 		return sum(range(1, n+1).map(i => 2*Math.pow(Math.floor(i/2 + 1), 2)));
 	}
-	/** DOES NOT WORK FULLY YET; GROUPS BROKEN
+	/**
 	 * get period and group from z programmatically
 	 * @param {number} z
 	 * @returns {[number, number]} - period, group - group is 0 if N/A (eg. lanthanoid)
@@ -783,8 +783,23 @@ class ChemElement {
 		const p_max = Math.ceil(Math.pow(z, 0.41)); // turns out, this is a really good approximation!
 		const row_sizes = range(p_max+1).map(this.periodic);
 		const p = row_sizes.findIndex(x => z <= x);
-		const g = z-this.periodic(p-1);
-		// todo fix group #
+		let g = z-this.periodic(p-1);
+		// fix group #
+		const this_row_size = 2 * Math.pow(Math.floor(p/2 + 1), 2);
+		const rowDiff = 18-this_row_size;
+		if (rowDiff === 16 && 1 < g)
+			g -= 16;
+		else if (rowDiff === 10 && 2 < g)
+			g -= 10;
+		else if (rowDiff < 0){
+			if (g < 3){
+				// pass
+			}
+			else if (this_row_size - g < 18)
+				g += rowDiff;
+			else
+				g = 0;
+		}
 		return [p, g];
 	}
 }
