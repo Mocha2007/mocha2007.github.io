@@ -676,8 +676,12 @@ class ChemElement {
 			case 'price':
 				if (!this.prices)
 					c = '#ccc';
+				else if (1e6 <= this.latestPrice)
+					c = '#f0f';
 				else {
-					const prices = elements.filter(e => e.prices).map(e => Math.log(e.latestPrice));
+					const prices = elements
+						.filter(e => e.prices && e.latestPrice < 1e6)
+						.map(e => Math.log(e.latestPrice));
 					c = gradient1(remap(
 						Math.log(this.latestPrice),
 						[Math.min(...prices), Math.max(...prices)], [0, 1]));

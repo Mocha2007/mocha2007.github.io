@@ -1059,6 +1059,7 @@ const elementData = [
 			nutrition: 3,
 			oxidation: [2, 3, 4, 5],
 			prices: {
+				2021: 34.27,
 				2020: 371,
 			},
 			production: 73e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-vanadium.pdf
@@ -1157,6 +1158,7 @@ const elementData = [
 			nutrition: 2,
 			oxidation: [2, 3, 4, 6, 7],
 			prices: {
+				2021: 3.92875,
 				2019: 1.82,
 				2018: 2.06,
 			},
@@ -1590,6 +1592,7 @@ const elementData = [
 			nutrition: 2,
 			oxidation: [-2, 2, 4, 6],
 			prices: {
+				2021: 22.87,
 				2019: 21.4,
 			},
 			production: 2e3,
@@ -1803,6 +1806,7 @@ const elementData = [
 			},
 			oxidation: [3],
 			prices: {
+				2021: 37.18,
 				2019: 31,
 			},
 			production: 200,
@@ -1893,8 +1897,9 @@ const elementData = [
 			},
 			oxidation: [5],
 			prices: {
-				2018: 42.28,
+				2021: 36.64,
 				2020: 73.5,
+				2018: 42.28,
 			},
 			production: 44.5e3,
 			resistivity: 152e-9,
@@ -2726,6 +2731,7 @@ const elementData = [
 			oxidation: [3],
 			prices: {
 				2022: 135.59,
+				2021: 112.23,
 				2019: 103,
 			},
 			resistivity: 700e-9,
@@ -2769,6 +2775,7 @@ const elementData = [
 			oxidation: [3],
 			prices: {
 				2022: 135,
+				2021: 120.8,
 				2019: 57.5,
 			},
 			production: 7000,
@@ -2848,6 +2855,7 @@ const elementData = [
 			nutrition: 5,
 			oxidation: [3],
 			prices: {
+				2021: 13.94,
 				2019: 13.9,
 			},
 			production: 700,
@@ -2975,6 +2983,7 @@ const elementData = [
 			oxidation: [3],
 			prices: {
 				2022: 3993.2,
+				2021: 1681.75,
 				2019: 658,
 			},
 			resistivity: 1.15e-6,
@@ -3017,6 +3026,7 @@ const elementData = [
 			oxidation: [3],
 			prices: {
 				2022: 647.1,
+				2021: 518.12,
 				2019: 307,
 			},
 			production: 100,
@@ -3313,6 +3323,7 @@ const elementData = [
 			},
 			oxidation: [5],
 			prices: {
+				2021: 209.29,
 				2019: 305,
 				2018: 151.8,
 			},
@@ -3360,6 +3371,7 @@ const elementData = [
 			nutrition: 5,
 			oxidation: [4, 6],
 			prices: {
+				2021: 37.94,
 				2019: 35.3,
 				2018: 30.3,
 			},
@@ -3831,9 +3843,9 @@ const elementData = [
 				decay: 1,
 			},
 			oxidation: [-2, 2, 4],
-			/* prices: {
+			prices: {
 				2004: 49.2e12,
-			}, */
+			},
 			production: 100e-6,
 			resistivity: 400e-9,
 			rgb: 'rgb(234, 242, 255)',
@@ -4009,9 +4021,9 @@ const elementData = [
 				decay: 1,
 			},
 			oxidation: [3],
-			/* prices: {
+			prices: {
 				2004: 29e12,
-			}, */
+			},
 			temperatures: {
 				boil: 3471,
 				melt: 1323,
@@ -4174,7 +4186,7 @@ const elementData = [
 			},
 			oxidation: [5],
 			prices: {
-				2020: 660e3,
+				2003: 660e3,
 			},
 			resistivity: 1.22e-6,
 			temperatures: {
@@ -4195,9 +4207,9 @@ const elementData = [
 			},
 			biologicalHalfLife: 40*year, // in liver
 			bulkModulus: 40e9, // https://pilgaardelements.com/Plutonium/Physicals.htm
-			/* prices: {
+			prices: {
 				2019: 6.49e6,
-			}, */
+			},
 			categories: {
 				actinide: true,
 			},
@@ -4244,6 +4256,7 @@ const elementData = [
 			ionization: [578e3, 1158e3, 2132e3, 3493e3],
 			modelColor: 'rgb(84, 92, 242)',
 			prices: {
+				2004: 750e3,
 				1998: 728e3,
 			},
 			oxidation: [3],
@@ -4276,9 +4289,9 @@ const elementData = [
 			ionization: [581e3, 1196e3, 2026e3, 3550e3],
 			modelColor: 'rgb(120, 92, 227)',
 			oxidation: [3],
-			/* prices: {
+			prices: {
 				2004: 185e6,
-			}, */
+			},
 			resistivity: 1.25e-6,
 			rgb: 'rgb(255, 255, 216)',
 			temperatures: {
@@ -4307,9 +4320,9 @@ const elementData = [
 			ionization: [601e3, 1186e3, 2152e3, 3434e3],
 			modelColor: 'rgb(138, 79, 227)',
 			oxidation: [3],
-			/* prices: {
+			prices: {
 				2004: 185e9,
-			}, */
+			},
 			temperatures: {
 				boil: 2900,
 				melt: 1259,
@@ -4336,9 +4349,9 @@ const elementData = [
 			ionization: [608e3, 1206e3, 2267e3, 3599e3],
 			modelColor: 'rgb(161, 54, 212)',
 			oxidation: [3],
-			/* prices: {
+			prices: {
 				2004: 906e9,
-			}, */
+			},
 			production: 0.275e-6,
 			temperatures: {
 				boil: 1743, // estimate
