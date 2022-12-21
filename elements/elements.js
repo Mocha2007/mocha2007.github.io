@@ -509,21 +509,21 @@ class ChemElement {
 				}
 				break;
 			case 'electronegativityMelt':
-				if (!this.mullikenElectronegativity
-						|| !this.temperatures || !this.temperatures.melt)
+				if (!this.mullikenElectronegativity)
 					c = '#666';
 				else {
-					const set = elements.filter(e => e.mullikenElectronegativity
-						&& e.temperatures && e.temperatures.melt);
+					const set = elements.filter(e => e.mullikenElectronegativity);
 					const ee = set.map(e => e.mullikenElectronegativity);
 					const bb = set.map(e => e.bulkModulus || e.predictedBulkModulus);
-					const mm = set.map(e => e.temperatures.melt);
+					const mm = set.map(e => e.temperatures && e.temperatures.melt
+						|| e.predictedMelt);
 					const eee = remap(this.mullikenElectronegativity,
 						[Math.min(...ee), Math.max(...ee)], [0, 1]);
 					const bbb = remap(this.bulkModulus || this.predictedBulkModulus,
 						[Math.min(...bb), Math.max(...bb)], [0, 1]);
-					const mmm = remap(this.temperatures.melt,
-						[Math.min(...mm), Math.max(...mm)], [0, 1]);
+					const mmm = remap(this.temperatures && this.temperatures.melt
+						|| this.predictedMelt,
+					[Math.min(...mm), Math.max(...mm)], [0, 1]);
 					c = `rgb(${127*eee+128}, ${127*bbb+128}, ${127*mmm+128})`;
 				}
 				break;
