@@ -352,6 +352,7 @@ const elementData = [
 			nutrition: 0,
 			oxidation: [-3, 3, 5],
 			prices: {
+				2013: 2.77,
 				2001: 0.14,
 			},
 			production: 131e6,
@@ -395,6 +396,7 @@ const elementData = [
 			nutrition: 0,
 			oxidation: [-2],
 			prices: {
+				2013: 0.64,
 				2001: 0.154,
 			},
 			production: 100e6,
@@ -478,6 +480,7 @@ const elementData = [
 			},
 			oxidation: [0],
 			prices: {
+				2016: 629.9,
 				1999: 240,
 			},
 			production: 500,
@@ -1678,6 +1681,7 @@ const elementData = [
 			},
 			oxidation: [0],
 			prices: {
+				2016: 1.4,
 				1999: 290,
 			},
 			speedOfSound: 221,
@@ -2511,6 +2515,7 @@ const elementData = [
 			},
 			oxidation: [0],
 			prices: {
+				2016: 9.2,
 				1999: 1800,
 			},
 			production: 40,
@@ -3154,6 +3159,7 @@ const elementData = [
 			},
 			oxidation: [3],
 			prices: {
+				2016: 6200,
 				2003: 3000,
 			},
 			resistivity: 676e-9,
@@ -3666,6 +3672,7 @@ const elementData = [
 			oxidation: [1, 2],
 			prices: {
 				2017: 30.2,
+				2016: 38.44,
 			},
 			production: 4e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-mercury.pdf
 			resistivity: 961e-9,
@@ -4063,6 +4070,7 @@ const elementData = [
 				2019: 72,
 				2018: 72,
 				2017: 73,
+				2016: 176,
 				2010: 287,
 			},
 			production: 1.2e3, // US, est. https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-thorium.pdf
