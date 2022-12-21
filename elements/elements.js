@@ -729,8 +729,7 @@ class ChemElement {
 				}
 				break;
 			case 'stable':
-				x = this.isotopes.filter(i => i.stable).length / 10 * 255;
-				c = `rgb(255, ${255-x}, 255)`;
+				c = gradient1(this.isotopes.filter(i => i.stable).length / 10);
 				break;
 			case 'state':{
 				/** @type {number} */
@@ -749,8 +748,7 @@ class ChemElement {
 				break;
 			}
 			case 'weight':
-				x = 255*this.mass/ChemElement.maxWeight;
-				c = `rgb(255, ${255-x}, ${255-x})`;
+				c = gradient1(this.mass/ChemElement.maxWeight);
 				break;
 			default:
 				c = 'white';
