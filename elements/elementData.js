@@ -4749,9 +4749,10 @@ const elementData = [
 			categories: {
 				alkaliMetal: true,
 			},
+			covalentRadius: 272e-12,
 			crystal: 'cI',
 			density: 3000,
-			ionization: [463.1e3, 1700e3],
+			ionization: [463.1e3, 1698.1e3],
 			oxidation: [1],
 			temperatures: {
 				boil: 903, // predicted
@@ -4770,6 +4771,7 @@ const elementData = [
 			categories: {
 				aem: true,
 			},
+			covalentRadius: 208e-12,
 			crystal: 'cI',
 			density: 7000,
 			ionization: [563.3e3, (919e3+895e3)/2],
@@ -4790,6 +4792,7 @@ const elementData = [
 			categories: {
 				superactinide: true,
 			},
+			electronConfiguration: '[Og] 8s2 8p1',
 			ionization: [429.4e3, 1110e3, 1710e3, 4270e3],
 			oxidation: [3],
 		},
@@ -4804,6 +4807,7 @@ const elementData = [
 			categories: {
 				superactinide: true,
 			},
+			electronConfiguration: '[Og] 7d1 8s2 8p1',
 			ionization: [545, 1090, 1848, 2520],
 			oxidation: [4],
 		},
@@ -4814,26 +4818,26 @@ const elementData = [
 		symbol: 'Ubt',
 		mass: 321, // predicted to be the most stable
 		period: 8,
-	},
 		properties: {
 			categories: {
 				superactinide: true,
 			},
 			oxidation: [5],
 		},
+	},
 	{
 		z: 124,
 		name: 'Unbiquadium',
 		symbol: 'Ubq',
 		mass: 323, // predicted to be the most stable
 		period: 8,
-	},
 		properties: {
 			categories: {
 				superactinide: true,
 			},
 			oxidation: [6],
 		},
+	},
 	{
 		z: 125,
 		name: 'Unbipentium',
@@ -4857,22 +4861,31 @@ const elementData = [
 			categories: {
 				superactinide: true,
 			},
+			electronConfiguration: '[Og] 5g2 6f3 8s2 8p1',
 			oxidation: [4, 6, 8],
 		},
 	},
 	{
-		z: 139,
-		name: 'Untriennium',
-		symbol: 'Ute',
-		mass: 343, // 10/7 z + 145
+		z: 146,
+		name: 'Unquadhexium',
+		symbol: 'Uqh',
+		mass: 380, // guess
 		period: 8,
 	},
 	{
-		z: 153,
-		name: 'Unpenttrium',
-		symbol: 'Upt',
-		mass: 365, // 10/7 z + 145
-		group: 3,
+		z: 165,
+		name: 'Unhexpentium',
+		symbol: 'Uhp',
+		mass: 429, // guess
+		group: 11,
+		period: 8,
+	},
+	{
+		z: 172,
+		name: 'Unseptbium',
+		symbol: 'Usb',
+		mass: 447, // guess
+		group: 18,
 		period: 8,
 	},
 	*/
