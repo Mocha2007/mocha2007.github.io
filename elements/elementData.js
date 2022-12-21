@@ -1200,6 +1200,7 @@ const elementData = [
 			nutrition: 2,
 			oxidation: [2, 3],
 			prices: {
+				2022: 0.1099,
 				2021: 164.41/1000,
 				2020: 0.424,
 			},
@@ -1442,6 +1443,7 @@ const elementData = [
 			},
 			oxidation: [3],
 			prices: {
+				2022: 218.82,
 				2020: 148,
 			},
 			production: 184,
@@ -1935,6 +1937,7 @@ const elementData = [
 			nutrition: 2,
 			oxidation: [4, 6],
 			prices: {
+				2022: 46.5,
 				2021: 12.28/pound,
 				2019: 40.1,
 			},
@@ -2021,6 +2024,7 @@ const elementData = [
 			},
 			oxidation: [3, 4],
 			prices: {
+				2022: 620/ounce,
 				2021: 370/ounce,
 				2020: 10500,
 			},
@@ -2264,6 +2268,7 @@ const elementData = [
 			},
 			oxidation: [3],
 			prices: {
+				2022: 205.9,
 				2019: 167,
 			},
 			production: 476,
@@ -2310,6 +2315,7 @@ const elementData = [
 			nutrition: 4,
 			oxidation: [-4, 2, 4],
 			prices: {
+				2022: 23.307,
 				2021: 12.565/pound,
 				2019: 18.7,
 			},
@@ -2404,6 +2410,7 @@ const elementData = [
 			},
 			oxidation: [-2, 2, 4, 6],
 			prices: {
+				2022: 78.559,
 				2019: 63.5,
 			},
 			production: 122,
@@ -2707,6 +2714,7 @@ const elementData = [
 			nutrition: 5,
 			oxidation: [3],
 			prices: {
+				2022: 135.59,
 				2019: 103,
 			},
 			resistivity: 700e-9,
