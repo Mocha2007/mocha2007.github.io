@@ -5409,7 +5409,8 @@
 		"defList": [
 			"year (in Earth time: 2 mo 14 d)"
 		],
-		"categories": ["time"]
+		"categories": ["time"],
+		"notes": "not used for giving the ages of people; skum is used instead"
 	},
 	{
 		"title": "nen",
