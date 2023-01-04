@@ -786,7 +786,8 @@
 		"etym": "L/PEN/*xerediên/silver",
 		"cat": "n., 4th",
 		"defList": [
-			"native silver"
+			"native silver",
+			"horn silver"
 		],
 		"categories": ["metal"]
 	},
@@ -2435,6 +2436,24 @@
 			"orange"
 		],
 		"categories": ["color"]
+	},
+	{
+		"title": "erelika",
+		"etym": "B/ereu/alika",
+		"cat": "n., 4th",
+		"defList": [
+			"cinnabar"
+		],
+		"categories": ["metal"]
+	},
+	{
+		"title": "erelikat",
+		"etym": "C/erelika/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"mercury (metal)"
+		],
+		"categories": ["metal"]
 	},
 	{
 		"title": "erem",
@@ -4599,7 +4618,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"galena"
-		]
+		],
+		"categories": ["metal"]
 	},
 	{
 		"title": "luksa",
@@ -4628,7 +4648,7 @@
 		"defList": [
 			"lead"
 		],
-		"categories": ["v3_trade"]
+		"categories": ["metal", "v3_trade"]
 	},
 	{
 		"title": "lutbak",
