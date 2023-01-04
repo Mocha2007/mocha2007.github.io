@@ -4225,6 +4225,15 @@
 		"categories": ["weather"]
 	},
 	{
+		"title": "kunaba",
+		"etym": "C/ku/naba",
+		"cat": "n., 4th",
+		"defList": [
+			"radish"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "kunk",
 		"etym": "B/kun/kink",
 		"cat": "n., 2nd",
