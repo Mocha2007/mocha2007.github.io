@@ -4817,7 +4817,7 @@
 		"etym": "B/mara/arama",
 		"cat": "n., 4th",
 		"defList": [
-			"iron ore"
+			"iron ore (esp. hematite, limonite, and magnetite)"
 		],
 		"categories": ["metal"]
 	},
@@ -6814,7 +6814,7 @@
 		"etym": "L/PEN/*stanu/tin",
 		"cat": "n., 4th",
 		"defList": [
-			"tin ore"
+			"cassiterite"
 		],
 		"notes": "stanu is one of a handful of nouns ending in -u.",
 		"categories": ["metal"]
