@@ -1311,6 +1311,8 @@ const elementData = [
 				2022: 12.28/pound,
 				2021: 7.2756/pound,
 				2019: 13.9,
+				2017: 0.31/ounce,
+				2007: 1.47/ounce,
 			},
 			production: 1.8e6,
 			resistivity: 69.3e-9,
