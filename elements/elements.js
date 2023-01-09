@@ -458,19 +458,23 @@ class ChemElement {
 				break;
 			case 'appearance':
 				c = {
-					'black': '#444',
+					// colors
 					'black brown': '#840',
 					'bluish metallic': '#88c',
-					'colorless': '#fff',
 					'pale yellow': '#ff8',
 					'pale yellow green': '#cf8',
+					'yellow': '#ff0',
+					// greys
+					'black': '#444',
+					'dull grey': '#777',
 					'shiny grey': '#999',
-					'silvery grey metallic': '#ccc',
+					'silvery grey metallic': '#aaa',
+					'silvery grey white metallic': '#ccc',
 					'silvery white': '#ddd',
 					'silvery white metallic': '#eee',
-					'white grey metallic': '#888',
+					'white grey metallic': '#eee',
 					'white': '#ffd',
-					'yellow': '#ff0',
+					'colorless': '#fff',
 				}[this.appearance] || '#f0f';
 				break;
 			case 'block':

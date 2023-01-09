@@ -873,6 +873,7 @@ const elementData = [
 				human: 3.3e-4,
 				universe: 3e-6,
 			},
+			appearance: 'silvery white',
 			biologicalHalfLife: 20*day, // personal estimate; 140 g potassium per person, 4.7 mg/day per person
 			bulkModulus: 3.1e9,
 			categories: {
@@ -917,6 +918,7 @@ const elementData = [
 				human: 0.0022,
 				universe: 60e-6,
 			},
+			appearance: 'dull grey',
 			biologicalHalfLife: 693*day, // personal estimate; 1kg calcium per person, 1 g/day per person
 			bulkModulus: 17e9,
 			categories: {
@@ -960,6 +962,7 @@ const elementData = [
 				human: 4e-10,
 				universe: 3e-8,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 56.6e9,
 			categories: {
 				rem: true,
@@ -1002,6 +1005,7 @@ const elementData = [
 				human: 4e-8,
 				universe: 3e-6,
 			},
+			appearance: 'silvery grey white metallic',
 			bulkModulus: 110e9,
 			categories: {
 				nativeMetal: 0.5,
