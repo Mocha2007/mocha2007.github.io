@@ -65,6 +65,8 @@ class ChemElement {
 		if (properties){
 			/** @type {number} */
 			this.abundance = properties.abundance;
+			/** @type {string} */
+			this.appearance = properties.appearance;
 			/** @type {number} - in seconds */
 			this.biologicalHalfLife = properties.biologicalHalfLife;
 			/** @type {number} */
@@ -454,6 +456,21 @@ class ChemElement {
 						[Math.min(...abundances), Math.max(...abundances)], [0, 1]));
 				}
 				break;
+			case 'appearance':
+				c = {
+					'black': '#444',
+					'black brown': '#840',
+					'bluish metallic': '#88c',
+					'colorless': '#fff',
+					'pale yellow': '#ff8',
+					'shiny grey': '#999',
+					'silvery grey metallic': '#ccc',
+					'silvery white': '#ddd',
+					'silvery white metallic': '#eee',
+					'white grey metallic': '#888',
+					'white': '#ffd',
+				}[this.appearance] || '#f0f';
+				break;
 			case 'block':
 				c = '#'+{s: 'f99', p: 'ff8', d: '9cf', f: '9f9', g: 'f9f'}[this.electronShell];
 				break;
@@ -477,9 +494,6 @@ class ChemElement {
 			}
 			case 'category':
 				c = this.color;
-				break;
-			case 'color': // normalized color
-				c = this.rgb ? this.rgb : 'grey';
 				break;
 			case 'covalent':{
 				if (!this.covalentRadius)

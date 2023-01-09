@@ -66,6 +66,7 @@ const elementData = [
 				human: 0.62,
 				universe: 0.739,
 			},
+			appearance: 'colorless',
 			biologicalHalfLife: 12*day, // tritium; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			categories: {
 				reactiveNonmetal: true,
@@ -109,6 +110,7 @@ const elementData = [
 				earth: 0.008e-6,
 				universe: 0.24,
 			},
+			appearance: 'colorless',
 			categories: {
 				nobleGas: true,
 			},
@@ -150,6 +152,7 @@ const elementData = [
 				human: 1.5e-8,
 				universe: 6e-9,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 11e9,
 			categories: {
 				alkaliMetal: true,
@@ -177,7 +180,6 @@ const elementData = [
 			},
 			production: 55e3,
 			resistivity: 92.8e-9,
-			rgb: 'rgb(249, 255, 252)',
 			speedOfSound: 6000,
 			temperatures: {
 				boil: 1560,
@@ -198,6 +200,7 @@ const elementData = [
 				human: 4.5e-10,
 				universe: 1e-9,
 			},
+			appearance: 'white grey metallic',
 			bulkModulus: 130e9,
 			categories: {
 				aem: true,
@@ -222,7 +225,6 @@ const elementData = [
 			},
 			production: 200,
 			resistivity: 36e-9,
-			rgb: 'rgb(255, 255, 255)',
 			speedOfSound: 12890,
 			temperatures: {
 				boil: 2742,
@@ -243,6 +245,7 @@ const elementData = [
 				human: 3e-8,
 				universe: 1e-9,
 			},
+			appearance: 'black brown',
 			bulkModulus: 320e9, // https://periodictable.com/Properties/A/BulkModulus.al.html
 			categories: {
 				metalloid: true,
@@ -266,7 +269,6 @@ const elementData = [
 			},
 			production: 1.8e6,
 			resistivity: 1e6,
-			rgb: 'rgb(255, 232, 219)',
 			speedOfSound: 16200,
 			temperatures: {
 				boil: 4200,
@@ -288,6 +290,7 @@ const elementData = [
 				human: 0.12,
 				universe: 4600e-6,
 			},
+			appearance: 'black',
 			biologicalHalfLife: 40*day, // C-14; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			bulkModulus: 33e9, // graphite; diamond is 442 https://periodictable.com/Properties/A/BulkModulus.al.html
 			categories: {
@@ -314,7 +317,6 @@ const elementData = [
 			},
 			production: 1.03e6,
 			resistivity: 7.837e-6,
-			rgb: 'rgb(255, 251, 239)',
 			speedOfSound: 1470, // graphite
 			temperatures: {
 				boil: 3915,
@@ -335,6 +337,7 @@ const elementData = [
 				human: 0.011,
 				universe: 960e-6,
 			},
+			appearance: 'colorless',
 			categories: {
 				pnictogen: true,
 				reactiveNonmetal: true,
@@ -377,6 +380,7 @@ const elementData = [
 				human: 0.24,
 				universe: 10400e-6,
 			},
+			appearance: 'colorless',
 			categories: {
 				chalcogen: true,
 				reactiveNonmetal: true,
@@ -421,6 +425,7 @@ const elementData = [
 				human: 1.2e-5,
 				universe: 4e-7,
 			},
+			appearance: 'pale yellow',
 			biologicalHalfLife: 450*day, // personal estimate; 2.6 g fluorine per person, 4 mg/day per person
 			categories: {
 				halogen: true,
@@ -444,7 +449,6 @@ const elementData = [
 				2017: 2,
 			},
 			production: 5.5e6,
-			rgb: 'rgb(255, 207, 112)',
 			speedOfSound: 332,
 			temperatures: {
 				boil: 85.03,
@@ -465,6 +469,7 @@ const elementData = [
 				earth: 0.0051e-6,
 				universe: 1340e-6,
 			},
+			appearance: 'colorless',
 			categories: {
 				nobleGas: true,
 			},
@@ -505,6 +510,7 @@ const elementData = [
 				human: 3.7e-4,
 				universe: 33e-6,
 			},
+			appearance: 'silvery white metallic',
 			biologicalHalfLife: 69*day, // personal estimate; 100 g sodium per person, 1 mg/day per person
 			bulkModulus: 6.3e9,
 			// 11 d according to http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
@@ -530,7 +536,6 @@ const elementData = [
 			},
 			production: 100e3,
 			resistivity: 47.7e-9,
-			rgb: 'rgb(252, 255, 249)',
 			speedOfSound: 3200,
 			temperatures: {
 				boil: 1156,
@@ -551,6 +556,7 @@ const elementData = [
 				human: 7e-5,
 				universe: 580e-6,
 			},
+			appearance: 'shiny grey',
 			biologicalHalfLife: 44*day, // personal estimate; 19 g magnesium per person, 300 mg/day per person
 			bulkModulus: 35.4e9,
 			categories: {
@@ -578,7 +584,6 @@ const elementData = [
 			},
 			production: 748e3,
 			resistivity: 43.9e-9,
-			rgb: 'rgb(255, 251, 234)',
 			speedOfSound: 4940,
 			temperatures: {
 				boil: 1363,
@@ -599,6 +604,7 @@ const elementData = [
 				human: 1.5e-7,
 				universe: 58e-6,
 			},
+			appearance: 'silvery grey metallic',
 			bulkModulus: 76e9,
 			categories: {
 				coinageMetal: 0.5, // 1 yen coin
@@ -626,7 +632,6 @@ const elementData = [
 			},
 			production: 44.1e6,
 			resistivity: 26.5e-9,
-			rgb: 'rgb(244, 251, 255)',
 			speedOfSound: 5000,
 			temperatures: {
 				boil: 2792,
@@ -647,6 +652,7 @@ const elementData = [
 				human: 5.8e-5,
 				universe: 650e-6,
 			},
+			appearance: 'bluish metallic',
 			bulkModulus: 97.6e9,
 			categories: {
 				metalloid: true,
@@ -672,7 +678,6 @@ const elementData = [
 			},
 			production: 8e6,
 			resistivity: 2.3e3,
-			rgb: 'rgb(234, 241, 255)',
 			speedOfSound: 8433,
 			temperatures: {
 				boil: 3538,
@@ -693,6 +698,7 @@ const elementData = [
 				human: 0.0022,
 				universe: 7e-6,
 			},
+			appearance: 'white',
 			biologicalHalfLife: 932*day, // personal estimate; 780 g phosphorus per person, 580 mg/day per person
 			bulkModulus: 5e9, // white
 			categories: {
@@ -719,7 +725,6 @@ const elementData = [
 			},
 			production: 910e3,
 			resistivity: 1e-7, // https://periodictable.com/Elements/015/data.html
-			rgb: 'rgb(255, 235, 186)',
 			temperatures: {
 				boil: 550,
 				melt: 317.3,
@@ -765,7 +770,6 @@ const elementData = [
 			},
 			production: 69e6,
 			resistivity: 1e15,
-			rgb: 'rgb(255, 218, 86)',
 			temperatures: {
 				boil: 717.87,
 				melt: 388.36,
@@ -807,7 +811,6 @@ const elementData = [
 			prices: {
 				2013: 0.082,
 			},
-			rgb: 'rgb(246, 255, 188)',
 			speedOfSound: 206,
 			temperatures: {
 				boil: 239.11,
@@ -1218,7 +1221,6 @@ const elementData = [
 			},
 			production: 1544e6,
 			resistivity: 96.1e-9,
-			rgb: 'rgb(255, 252, 252)',
 			speedOfSound: 5120,
 			temperatures: {
 				boil: 3134,
@@ -1267,7 +1269,6 @@ const elementData = [
 			},
 			production: 140e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cobalt.pdf
 			resistivity: 62.4e-9,
-			rgb: 'rgb(255, 249, 244)',
 			speedOfSound: 4720,
 			temperatures: {
 				boil: 3200,
@@ -1319,7 +1320,6 @@ const elementData = [
 			},
 			production: 1.8e6,
 			resistivity: 69.3e-9,
-			rgb: 'rgb(255, 245, 224)',
 			speedOfSound: 4900,
 			temperatures: {
 				boil: 3186,
@@ -1371,7 +1371,6 @@ const elementData = [
 			},
 			production: 15.1e6,
 			resistivity: 16.78e-9,
-			rgb: 'rgb(255, 121, 76)',
 			speedOfSound: 3810,
 			temperatures: {
 				boil: 2835,
@@ -1651,7 +1650,6 @@ const elementData = [
 			},
 			production: 556e3,
 			resistivity: 7.8e10,
-			rgb: 'rgb(255, 94, 35)',
 			speedOfSound: 206,
 			temperatures: {
 				boil: 332,
@@ -2207,7 +2205,6 @@ const elementData = [
 			},
 			production: 322e3,
 			resistivity: 15.9e-9,
-			rgb: 'rgb(255, 248, 239)',
 			speedOfSound: 2680,
 			temperatures: {
 				boil: 2435,
@@ -2490,7 +2487,6 @@ const elementData = [
 			},
 			production: 28e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-iodine.pdf
 			resistivity: 1.3e7,
-			rgb: 'rgb(216, 229, 255)',
 			temperatures: {
 				boil: 457.4,
 				melt: 386.85,
@@ -2576,7 +2572,6 @@ const elementData = [
 				2018: 61.8e3,
 			},
 			resistivity: 205e-9,
-			rgb: 'rgb(255, 212, 153)',
 			temperatures: {
 				boil: 944,
 				melt: 301.59,
@@ -3643,7 +3638,6 @@ const elementData = [
 			},
 			production: 2310,
 			resistivity: 24.4e-9,
-			rgb: 'rgb(255, 211, 109)',
 			speedOfSound: 2030,
 			temperatures: {
 				boil: 3129,
@@ -3731,7 +3725,6 @@ const elementData = [
 			},
 			production: 10,
 			resistivity: 180e-9,
-			rgb: 'rgb(255, 252, 253)',
 			speedOfSound: 818,
 			temperatures: {
 				boil: 1746,
@@ -3780,7 +3773,6 @@ const elementData = [
 			},
 			production: 8725e3,
 			resistivity: 208e-9,
-			rgb: 'rgb(255, 255, 255)',
 			speedOfSound: 1190,
 			temperatures: {
 				boil: 2022,
@@ -3828,7 +3820,6 @@ const elementData = [
 			},
 			production: 15e3,
 			resistivity: 1.29e-6,
-			rgb: 'rgb(255, 245, 232)',
 			speedOfSound: 1790,
 			temperatures: {
 				boil: 1837,
@@ -3871,7 +3862,6 @@ const elementData = [
 			},
 			production: 100e-6,
 			resistivity: 400e-9,
-			rgb: 'rgb(234, 242, 255)',
 			temperatures: {
 				boil: 1235,
 				melt: 527,
@@ -4010,7 +4000,6 @@ const elementData = [
 			},
 			oxidation: [2],
 			resistivity: 1e-6,
-			rgb: 'rgb(255, 233, 198)',
 			temperatures: {
 				boil: 2010,
 				melt: 973,
@@ -4091,7 +4080,6 @@ const elementData = [
 			},
 			production: 1.2e3, // US, est. https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-thorium.pdf
 			resistivity: 157e-9,
-			rgb: 'rgb(255, 229, 216)',
 			speedOfSound: 2490,
 			temperatures: {
 				boil: 5061,
@@ -4174,7 +4162,6 @@ const elementData = [
 			},
 			production: 50572,
 			resistivity: 280e-9,
-			rgb: 'rgb(255, 251, 242)',
 			speedOfSound: 3155,
 			temperatures: {
 				boil: 4404,
@@ -4250,7 +4237,6 @@ const elementData = [
 			},
 			oxidation: [4],
 			resistivity: 1.46e-6,
-			rgb: 'rgb(255, 226, 249)',
 			speedOfSound: 2260,
 			temperatures: {
 				boil: 3501,
@@ -4285,7 +4271,6 @@ const elementData = [
 			},
 			oxidation: [3],
 			resistivity: 690e-9,
-			rgb: 'rgb(255, 233, 224)',
 			temperatures: {
 				boil: 2880,
 				melt: 1449,
@@ -4317,7 +4302,6 @@ const elementData = [
 				2004: 185e6,
 			},
 			resistivity: 1.25e-6,
-			rgb: 'rgb(255, 255, 216)',
 			temperatures: {
 				boil: 3383,
 				melt: 1613,
