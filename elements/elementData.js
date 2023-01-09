@@ -2587,6 +2587,7 @@ const elementData = [
 				human: 1e-9,
 				universe: 8e-10,
 			},
+			appearance: 'pale gold',
 			biologicalHalfLife: 2.5*month, // 1-4 mos
 			bulkModulus: 1.6e9,
 			categories: {
@@ -2631,6 +2632,7 @@ const elementData = [
 				human: 1.2e-8,
 				universe: 1e-8,
 			},
+			appearance: 'silvery grey',
 			biologicalHalfLife: 65*day, // Ba-140; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			bulkModulus: 9.6e9,
 			categories: {
@@ -2672,6 +2674,7 @@ const elementData = [
 				human: 4e-10,
 				universe: 2e-9,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 27.9e9,
 			categories: {
 				lanthanide: true,
@@ -2717,6 +2720,7 @@ const elementData = [
 				human: 2e-8,
 				universe: 1e-8,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 21.5e9,
 			categories: {
 				lanthanide: true,
@@ -2760,6 +2764,7 @@ const elementData = [
 				earth: 31e-9,
 				universe: 2e-9,
 			},
+			appearance: 'greyish white',
 			bulkModulus: 28.8e9,
 			categories: {
 				lanthanide: true,
@@ -2804,6 +2809,7 @@ const elementData = [
 				earth: 150e-9,
 				universe: 1e-8,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 31.8e9,
 			categories: {
 				lanthanide: true,
@@ -2848,6 +2854,7 @@ const elementData = [
 			abundance: {
 				earth: 2e-23,
 			},
+			appearance: 'silvery white', // probable
 			bulkModulus: 33e9,
 			categories: {
 				lanthanide: true,
@@ -2885,6 +2892,7 @@ const elementData = [
 				human: 3e-11,
 				universe: 5e-9,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 37.8e9,
 			categories: {
 				lanthanide: true,
@@ -2929,6 +2937,7 @@ const elementData = [
 				earth: 17e-9,
 				universe: 5e-10,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 8.3e9,
 			categories: {
 				lanthanide: true,
@@ -2970,6 +2979,7 @@ const elementData = [
 				earth: 61e-9,
 				universe: 2e-9,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 37.9e9,
 			categories: {
 				lanthanide: true,
@@ -3013,6 +3023,7 @@ const elementData = [
 				earth: 11e-9,
 				universe: 5e-10,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 38.7e9,
 			categories: {
 				lanthanide: true,
@@ -3056,6 +3067,7 @@ const elementData = [
 				earth: 74e-9,
 				universe: 2e-9,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 40.5e9,
 			categories: {
 				lanthanide: true,
@@ -3101,6 +3113,7 @@ const elementData = [
 				earth: 16e-9,
 				universe: 5e-10,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 40.2e9,
 			categories: {
 				lanthanide: true,
@@ -3143,6 +3156,7 @@ const elementData = [
 				earth: 47e-9,
 				universe: 2e-9,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 44.4e9,
 			categories: {
 				lanthanide: true,
@@ -3185,6 +3199,7 @@ const elementData = [
 				earth: 7e-9,
 				universe: 1e-10,
 			},
+			appearance: 'silvery grey',
 			bulkModulus: 44.5e9,
 			categories: {
 				lanthanide: true,
@@ -3226,6 +3241,7 @@ const elementData = [
 				earth: 45e-9,
 				universe: 2e-9,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 30.5e9,
 			categories: {
 				lanthanide: true,
@@ -3268,6 +3284,7 @@ const elementData = [
 				earth: 7e-9,
 				universe: 1e-10,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 47.6e9,
 			categories: {
 				lanthanide: true,
@@ -3309,6 +3326,7 @@ const elementData = [
 				earth: 28e-9,
 				universe: 7e-10,
 			},
+			appearance: 'silvery grey',
 			bulkModulus: 110e9,
 			categories: {
 				refractoryMetal: 0.5,
@@ -3354,6 +3372,7 @@ const elementData = [
 				human: 3e-9,
 				universe: 8e-11,
 			},
+			appearance: 'blue grey',
 			bulkModulus: 200e9,
 			categories: {
 				nativeMetal: 0.5,
@@ -3401,6 +3420,7 @@ const elementData = [
 				human: 3e-10,
 				universe: 5e-10,
 			},
+			appearance: 'greyish white',
 			bulkModulus: 310e9,
 			categories: {
 				nativeMetal: 0.5,
@@ -3449,6 +3469,7 @@ const elementData = [
 				earth: 10e-9,
 				universe: 2e-10,
 			},
+			appearance: 'silvery grey',
 			bulkModulus: 370e9,
 			categories: {
 				nativeMetal: 0.5,
@@ -3497,6 +3518,7 @@ const elementData = [
 				earth: 120e-9,
 				universe: 3e-9,
 			},
+			appearance: 'silvery blue',
 			bulkModulus: 462e9,
 			categories: {
 				nativeMetal: true,
@@ -3545,6 +3567,7 @@ const elementData = [
 				human: 20e-12, // https://en.wikipedia.org/wiki/Iridium#Precautions
 				universe: 2e-9,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 320e9,
 			categories: {
 				nativeMetal: true,
@@ -3594,6 +3617,7 @@ const elementData = [
 				earth: 250e-9,
 				universe: 5e-9,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 230e9,
 			categories: {
 				df: true,
@@ -3645,6 +3669,7 @@ const elementData = [
 				human: 3e-9,
 				universe: 6e-10,
 			},
+			appearance: 'gold',
 			biologicalHalfLife: 280*day, // Au-198; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			bulkModulus: 180e9,
 			categories: {
@@ -3697,6 +3722,7 @@ const elementData = [
 				human: 8.9e-10,
 				universe: 1e-9,
 			},
+			appearance: 'silvery',
 			biologicalHalfLife: 65*day, // as methylmercury; in blood
 			bulkModulus: 25e9, // https://periodictable.com/Properties/A/BulkModulus.al.html
 			categories: {
@@ -3742,6 +3768,7 @@ const elementData = [
 				human: 7e-11,
 				universe: 5e-10,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 43e9,
 			covalentRadius: 190e-12,
 			crystal: 'hP',
@@ -3784,6 +3811,7 @@ const elementData = [
 				human: 4.5e-8,
 				universe: 1e-8,
 			},
+			appearance: 'grey',
 			biologicalHalfLife: 32*day, // 28-36 d in blood
 			bulkModulus: 46e9,
 			categories: {
@@ -3832,6 +3860,7 @@ const elementData = [
 				human: 2e-10,
 				universe: 7e-10,
 			},
+			appearance: 'brownish silver',
 			biologicalHalfLife: 5*day, // https://en.wikipedia.org/wiki/Bismuth#Toxicology_and_ecotoxicology
 			bulkModulus: 31e9,
 			categories: {
@@ -3877,6 +3906,7 @@ const elementData = [
 			abundance: {
 				earth: 0.2e-2 * 9e-13, // https://en.wikipedia.org/wiki/Polonium#Occurrence_and_production
 			},
+			appearance: 'silvery',
 			biologicalHalfLife: 40*day, // 30-50 d
 			bulkModulus: 26e9, // https://www.knowledgedoor.com/2/elements_handbook/isothermal_bulk_modulus.html
 			categories: {
@@ -3953,6 +3983,7 @@ const elementData = [
 			abundance: {
 				earth: 4e-17,
 			},
+			appearance: 'colorless',
 			categories: {
 				nobleGas: true,
 			},
@@ -4021,6 +4052,7 @@ const elementData = [
 				earth: 9e-13, // https://en.wikipedia.org/wiki/Radium#Occurrence
 				human: 1e-19,
 			},
+			appearance: 'silvery white metallic',
 			biologicalHalfLife: 1.6e4*day, // Ra-226; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			bulkModulus: 13.2e9, // https://www.knowledgedoor.com/2/elements_handbook/isothermal_bulk_modulus.html
 			categories: {
@@ -4055,6 +4087,7 @@ const elementData = [
 			abundance: {
 				earth: 2e-7 * 2e-9, // https://en.wikipedia.org/wiki/Actinium#Occurrence_and_synthesis
 			},
+			appearance: 'silvery white',
 			bulkModulus: 25e9, // https://www.knowledgedoor.com/2/elements_handbook/isothermal_bulk_modulus.html
 			categories: {
 				actinide: true,
@@ -4093,6 +4126,7 @@ const elementData = [
 				human: 3e-11,
 				universe: 4e-10,
 			},
+			appearance: 'silvery',
 			bulkModulus: 54e9,
 			categories: {
 				actinide: true,
@@ -4136,6 +4170,7 @@ const elementData = [
 			abundance: {
 				earth: 1.4e-12,
 			},
+			appearance: 'silvery',
 			biologicalHalfLife: 25*day, // appx.; https://en.wikipedia.org/wiki/Protactinium#Precautions
 			bulkModulus: 157e9, // https://www.matweb.com/search/DataSheet.aspx?MatGUID=5008398b32234120a1d10ab3303788bf
 			categories: {
@@ -4177,6 +4212,7 @@ const elementData = [
 				human: 3e-11,
 				universe: 2e-10,
 			},
+			appearance: 'silvery grey metallic',
 			biologicalHalfLife: 15*day, // U-235; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			bulkModulus: 100e9,
 			categories: {
@@ -4218,6 +4254,7 @@ const elementData = [
 			abundance: {
 				earth: 3e-18,
 			},
+			appearance: 'silvery metallic',
 			bulkModulus: 118e9, // https://pilgaardelements.com/Neptunium/Physicals.htm
 			categories: {
 				actinide: true,
@@ -4255,6 +4292,7 @@ const elementData = [
 			abundance: {
 				earth: 3e-17,
 			},
+			appearance: 'silvery white',
 			biologicalHalfLife: 40*year, // in liver
 			bulkModulus: 40e9, // https://pilgaardelements.com/Plutonium/Physicals.htm
 			prices: {
@@ -4291,6 +4329,7 @@ const elementData = [
 		mass: 243,
 		period: 7,
 		properties: {
+			appearance: 'silvery white',
 			biologicalHalfLife: 7*day, // "If consumed, most of the americium is excreted within a few days,"
 			bulkModulus: 45e9, // https://www.matweb.com/search/datasheet.aspx?matguid=20003a10845d4b97ba300b9e7fe50bc5&ckck=1
 			categories: {
@@ -4323,6 +4362,7 @@ const elementData = [
 		mass: 247,
 		period: 7,
 		properties: {
+			appearance: 'silvery metallic',
 			bulkModulus: 37e9, // https://www.matweb.com/search/DataSheet.aspx?MatGUID=656675e27bab42d19fcc4d600a52de49
 			categories: {
 				actinide: true,
@@ -4354,6 +4394,7 @@ const elementData = [
 		mass: 247,
 		period: 7,
 		properties: {
+			appearance: 'silvery',
 			bulkModulus: 52e9, // https://www.matweb.com/search/DataSheet.aspx?MatGUID=17bfc4cdbfd24550b8ecf9038881b27d
 			categories: {
 				actinide: true,
@@ -4383,6 +4424,7 @@ const elementData = [
 		mass: 251,
 		period: 7,
 		properties: {
+			appearance: 'silvery',
 			bulkModulus: 50e9, // https://www.matweb.com/search/DataSheet.aspx?MatGUID=a2d1c04f5ba140d6ac8934564d716513
 			categories: {
 				actinide: true,
@@ -4413,6 +4455,7 @@ const elementData = [
 		mass: 252,
 		period: 7,
 		properties: {
+			appearance: 'silvery',
 			bulkModulus: 15e9, // https://www.matweb.com/search/DataSheet.aspx?MatGUID=07746507cfdc4f10a68657963161957a
 			categories: {
 				actinide: true,
@@ -4513,6 +4556,7 @@ const elementData = [
 		group: 3,
 		period: 7,
 		properties: {
+			appearance: 'silvery',
 			categories: {
 				actinide: true,
 			},
@@ -4803,6 +4847,7 @@ const elementData = [
 		group: 17,
 		period: 7,
 		properties: {
+			appearance: 'semimetallic',
 			categories: {
 				halogen: true,
 			},
@@ -4827,6 +4872,7 @@ const elementData = [
 		group: 18,
 		period: 7,
 		properties: {
+			appearance: 'metallic',
 			categories: {
 				nobleGas: true,
 			},
