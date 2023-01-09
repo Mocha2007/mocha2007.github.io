@@ -602,6 +602,7 @@ const elementData = [
 			bulkModulus: 76e9,
 			categories: {
 				coinageMetal: 0.5, // 1 yen coin
+				df: true,
 				nativeMetal: 0.5,
 				rockForming: true,
 			},
@@ -1192,6 +1193,7 @@ const elementData = [
 			bulkModulus: 170e9,
 			categories: {
 				coinageMetal: 0.5, // various russian coins
+				df: true,
 				ironGroup: true,
 				nativeMetal: 0.5,
 				rockForming: true,
@@ -1290,6 +1292,7 @@ const elementData = [
 			bulkModulus: 180e9,
 			categories: {
 				coinageMetal: 0.5, // us coins
+				df: true,
 				ironGroup: true,
 				nativeMetal: 0.5,
 				tech: 0.5,
@@ -1341,6 +1344,7 @@ const elementData = [
 			bulkModulus: 140e9,
 			categories: {
 				coinageMetal: true,
+				df: true,
 				nativeMetal: true,
 				nobleMetal: 0.5,
 				tech: 0.5,
@@ -1393,6 +1397,7 @@ const elementData = [
 			bulkModulus: 70e9,
 			categories: {
 				coinageMetal: 0.5, // us coins
+				df: true,
 				nativeMetal: 0.5,
 				tech: 0.5,
 			},
@@ -2174,6 +2179,7 @@ const elementData = [
 			bulkModulus: 100e9,
 			categories: {
 				coinageMetal: true,
+				df: true,
 				nativeMetal: true,
 				nobleMetal: 0.5,
 				preciousMetal: true,
@@ -2319,6 +2325,7 @@ const elementData = [
 			bulkModulus: 58e9,
 			categories: {
 				coinageMetal: true,
+				df: true,
 				nativeMetal: 0.5,
 				tech: 0.5,
 			},
@@ -3555,6 +3562,7 @@ const elementData = [
 			},
 			bulkModulus: 230e9,
 			categories: {
+				df: true,
 				nativeMetal: true,
 				nobleMetal: true,
 				platinumGroup: true,
@@ -3606,6 +3614,7 @@ const elementData = [
 			biologicalHalfLife: 280*day, // Au-198; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			bulkModulus: 180e9,
 			categories: {
+				df: true,
 				nativeMetal: true,
 				nobleMetal: true,
 				coinageMetal: true,
@@ -3746,6 +3755,7 @@ const elementData = [
 			biologicalHalfLife: 32*day, // 28-36 d in blood
 			bulkModulus: 46e9,
 			categories: {
+				df: true,
 				nativeMetal: 0.5,
 			},
 			covalentRadius: 180e-12,
@@ -3794,6 +3804,7 @@ const elementData = [
 			biologicalHalfLife: 5*day, // https://en.wikipedia.org/wiki/Bismuth#Toxicology_and_ecotoxicology
 			bulkModulus: 31e9,
 			categories: {
+				df: true,
 				nativeMetal: 0.5,
 				pnictogen: true,
 			},
