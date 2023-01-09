@@ -463,12 +463,14 @@ class ChemElement {
 					'bluish metallic': '#88c',
 					'colorless': '#fff',
 					'pale yellow': '#ff8',
+					'pale yellow green': '#cf8',
 					'shiny grey': '#999',
 					'silvery grey metallic': '#ccc',
 					'silvery white': '#ddd',
 					'silvery white metallic': '#eee',
 					'white grey metallic': '#888',
 					'white': '#ffd',
+					'yellow': '#ff0',
 				}[this.appearance] || '#f0f';
 				break;
 			case 'block':

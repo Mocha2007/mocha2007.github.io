@@ -744,6 +744,7 @@ const elementData = [
 				human: 3.8e-4,
 				universe: 440e-6,
 			},
+			appearance: 'yellow',
 			biologicalHalfLife: 90*day, // S-35; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			bulkModulus: 7.7e9,
 			categories: {
@@ -789,6 +790,7 @@ const elementData = [
 				human: 2.4e-4,
 				universe: 1e-6,
 			},
+			appearance: 'pale yellow green',
 			biologicalHalfLife: 29*day, // Cl-36; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			categories: {
 				halogen: true,
@@ -830,6 +832,7 @@ const elementData = [
 				earth: 3.5e-6,
 				universe: 77e-6,
 			},
+			appearance: 'colorless',
 			categories: {
 				nobleGas: true,
 			},
