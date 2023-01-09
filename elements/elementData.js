@@ -1731,6 +1731,7 @@ const elementData = [
 				human: 3.3e-7,
 				universe: 1e-8,
 			},
+			appearance: 'grey white',
 			biologicalHalfLife: 45*day, // Rb-86; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			bulkModulus: 2.5e9,
 			categories: {
@@ -1776,6 +1777,7 @@ const elementData = [
 				human: 3.3e-7,
 				universe: 4e-8,
 			},
+			appearance: 'gold silvery grey metallic',
 			biologicalHalfLife: 1.8e4*day, // Sr-90; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			bulkModulus: 12e9, // https://pilgaardelements.com/Strontium/Physicals.htm
 			categories: {
@@ -1819,6 +1821,7 @@ const elementData = [
 				human: 6e-10,
 				universe: 7e-9,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 41.2e9,
 			categories: {
 				rem: true,
@@ -1862,6 +1865,7 @@ const elementData = [
 				human: 3e-9,
 				universe: 5e-8,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 91.1e9,
 			categories: {
 				refractoryMetal: 0.5,
@@ -1906,6 +1910,7 @@ const elementData = [
 				human: 1e-10,
 				universe: 2e-9,
 			},
+			appearance: 'grey metallic',
 			bulkModulus: 170e9,
 			categories: {
 				nativeMetal: 0.5,
@@ -1955,6 +1960,7 @@ const elementData = [
 				human: 4.5e-10,
 				universe: 5e-9,
 			},
+			appearance: 'grey metallic',
 			biologicalHalfLife: 77*day, // personal estimate; 5 mg molybdenum per person, 0.045 mg/day per person
 			bulkModulus: 230e9,
 			categories: {
@@ -2003,6 +2009,7 @@ const elementData = [
 			abundance: {
 				earth: 0.003e-12, // https://en.wikipedia.org/wiki/Technetium#Occurrence_and_production
 			},
+			appearance: 'shiny grey',
 			biologicalHalfLife: day, // Tc-99m; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			bulkModulus: 281e9, // https://pilgaardelements.com/Technetium/Physicals.htm
 			categories: {
@@ -2041,6 +2048,7 @@ const elementData = [
 				human: 7.6e-11, // appx
 				universe: 4e-9,
 			},
+			appearance: 'silvery white metallic',
 			bulkModulus: 220e9,
 			categories: {
 				nativeMetal: true,
@@ -2091,6 +2099,7 @@ const elementData = [
 				earth: 61e-9,
 				universe: 6e-10,
 			},
+			appearance: 'silvery white metallic',
 			bulkModulus: 275e9,
 			categories: {
 				nativeMetal: true,
@@ -2143,6 +2152,7 @@ const elementData = [
 				earth: 240e-9,
 				universe: 2e-9,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 180e9,
 			categories: {
 				nativeMetal: true,
@@ -2195,6 +2205,7 @@ const elementData = [
 				human: 2e-9,
 				universe: 6e-10,
 			},
+			appearance: 'silvery white',
 			bulkModulus: 100e9,
 			categories: {
 				coinageMetal: true,
@@ -2246,6 +2257,7 @@ const elementData = [
 				human: 4.5e-8,
 				universe: 2e-9,
 			},
+			appearance: 'blue silvery grey metallic',
 			biologicalHalfLife: 30*year, // in bone
 			bulkModulus: 42e9,
 			categories: {
@@ -2294,6 +2306,7 @@ const elementData = [
 				human: 4e-10,
 				universe: 3e-10,
 			},
+			appearance: 'silvery grey',
 			bulkModulus: 40e9, // https://pilgaardelements.com/Strontium/Physicals.htm
 			categories: {
 				nativeMetal: 0.5,
@@ -2339,6 +2352,7 @@ const elementData = [
 				human: 6e-9,
 				universe: 4e-9,
 			},
+			appearance: 'silvery white',
 			biologicalHalfLife: 3.5*day, // rats; oral; diethyltin chloride; https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/biological-half-life
 			bulkModulus: 58e9,
 			categories: {
@@ -2389,6 +2403,7 @@ const elementData = [
 				human: 6e-10,
 				universe: 4e-10,
 			},
+			appearance: 'silvery grey',
 			bulkModulus: 42e9,
 			categories: {
 				metalloid: true,
@@ -2436,6 +2451,7 @@ const elementData = [
 				human: 2e-10,
 				universe: 9e-9,
 			},
+			appearance: 'silvery grey',
 			bulkModulus: 65e9,
 			categories: {
 				chalcogen: true,
@@ -2483,6 +2499,7 @@ const elementData = [
 				human: 7.5e-9,
 				universe: 1e-9,
 			},
+			appearance: 'grey metallic',
 			biologicalHalfLife: 66.1*day, // https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/biological-half-life
 			bulkModulus: 7.7e9,
 			categories: {
@@ -2527,6 +2544,7 @@ const elementData = [
 				earth: 0.00003e-6,
 				universe: 1e-8,
 			},
+			appearance: 'colorless',
 			categories: {
 				nobleGas: true,
 			},

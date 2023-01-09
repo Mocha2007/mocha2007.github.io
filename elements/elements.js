@@ -480,6 +480,7 @@ class ChemElement {
 					'silvery grey': '#999',
 					'silvery grey metallic': '#aaa',
 					'silvery grey white metallic': '#ccc',
+					'grey white': '#ddd',
 					'greyish white': '#ddd',
 					'silvery white': '#ddd',
 					'silvery metallic': '#eee',
