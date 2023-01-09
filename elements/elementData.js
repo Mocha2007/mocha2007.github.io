@@ -1053,6 +1053,7 @@ const elementData = [
 				human: 1.2e-10,
 				universe: 1e-6,
 			},
+			appearance: 'blue silvery grey metallic',
 			bulkModulus: 160e9,
 			categories: {
 				nativeMetal: 0.5,
@@ -1099,6 +1100,7 @@ const elementData = [
 				human: 1.9e-10,
 				universe: 1.5e-5,
 			},
+			appearance: 'silvery metallic',
 			biologicalHalfLife: 320*day, // personal estimate; 14 mg chromium per person, 0.03 mg/day per person
 			bulkModulus: 160e9,
 			categories: {
@@ -1149,6 +1151,7 @@ const elementData = [
 				human: 1.5e-8,
 				universe: 8e-6,
 			},
+			appearance: 'silvery metallic',
 			biologicalHalfLife: 3.8*day, // personal estimate; 12 mg manganese per person, 2 mg/day per person
 			bulkModulus: 120e9,
 			categories: {
@@ -1199,6 +1202,7 @@ const elementData = [
 				human: 6.7e-6,
 				universe: 1.09e-3,
 			},
+			appearance: 'grey metallic',
 			biologicalHalfLife: 485*day, // personal estimate; 4.2g iron per person, 6 mg/day per person; 0.5^(1/L) = 1 - 0.006/4.2
 			bulkModulus: 170e9,
 			categories: {
@@ -1249,6 +1253,7 @@ const elementData = [
 				human: 3e-9,
 				universe: 3e-6,
 			},
+			appearance: 'blue grey metallic',
 			biologicalHalfLife: 10*day, // Co-60; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
 			bulkModulus: 180e9,
 			categories: {
@@ -1297,6 +1302,7 @@ const elementData = [
 				human: 1.5e-8,
 				universe: 49e-6,
 			},
+			appearance: 'gold silvery grey metallic',
 			bulkModulus: 180e9,
 			categories: {
 				coinageMetal: 0.5, // us coins
@@ -1347,6 +1353,7 @@ const elementData = [
 				human: 1.04e-7,
 				universe: 6e-8,
 			},
+			appearance: 'red orange metallic',
 			biologicalHalfLife: 55*day, // personal estimate; 72 mg copper per person, 0.9 mg/day per person
 			bulkModulus: 140e9,
 			categories: {
@@ -1399,6 +1406,7 @@ const elementData = [
 				human: 3.1e-6,
 				universe: 3e-7,
 			},
+			appearance: 'silvery grey',
 			biologicalHalfLife: 200*day, // personal estimate; 2.3 g zinc per person, 8 mg/day per person
 			bulkModulus: 70e9,
 			categories: {
@@ -1447,6 +1455,7 @@ const elementData = [
 				human: 7e-6,
 				universe: 1e-8,
 			},
+			appearance: 'silvery blue',
 			biologicalHalfLife: 25*hour, // Excretion of gallium occurs in two phases: the first phase has a biological half-life of 1 hour, while the second has a biological half-life of 25 hours.
 			bulkModulus: (44e9 + 68e9)/2, // https://www.azom.com/properties.aspx?ArticleID=1132
 			categories: {
@@ -1491,6 +1500,7 @@ const elementData = [
 				human: 6e-10,
 				universe: 2e-7,
 			},
+			appearance: 'greyish white',
 			bulkModulus: 75e9,
 			categories: {
 				metalloid: true,
@@ -1537,6 +1547,7 @@ const elementData = [
 				human: 8.9e-10,
 				universe: 8e-9,
 			},
+			appearance: 'grey',
 			bulkModulus: 22e9,
 			categories: {
 				metalloid: true,
@@ -1584,6 +1595,7 @@ const elementData = [
 				human: 4.5e-10,
 				universe: 3e-8,
 			},
+			appearance: 'grey metallic',
 			biologicalHalfLife: 190*day, // personal estimate; 15 mg selenium per person, 0.055 mg/day per person
 			bulkModulus: 8.3e9,
 			categories: {
@@ -1635,6 +1647,7 @@ const elementData = [
 				human: 3e-7,
 				universe: 7e-9,
 			},
+			appearance: 'reddish brown',
 			categories: {
 				halogen: true,
 				reactiveNonmetal: true,
@@ -1676,6 +1689,7 @@ const elementData = [
 				earth: 0.0001e-6,
 				universe: 4e-8,
 			},
+			appearance: 'colorless',
 			categories: {
 				nobleGas: true,
 			},
