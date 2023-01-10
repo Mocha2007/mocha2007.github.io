@@ -987,6 +987,11 @@ const elementData = [
 			prices: {
 				2020: 12.85,
 			},
+			radius: {
+				atomic: 227e-12,
+				covalent: 203e-12,
+				vanDerWaals: 275e-12,
+			},
 			resistivity: 72e-9,
 			speedOfSound: 2000,
 			temperatures: {
@@ -1032,6 +1037,11 @@ const elementData = [
 			prices: {
 				2020: 2.28,
 			},
+			radius: {
+				atomic: 197e-12,
+				covalent: 176e-12,
+				vanDerWaals: 231e-12,
+			},
 			resistivity: 33.6e-9,
 			speedOfSound: 3810,
 			temperatures: {
@@ -1076,6 +1086,11 @@ const elementData = [
 				2020: 3460,
 			},
 			production: 2,
+			radius: {
+				atomic: 162e-12,
+				covalent: 170e-12,
+				vanDerWaals: 211e-12,
+			},
 			resistivity: 562e-9,
 			temperatures: {
 				boil: 3109,
@@ -1125,6 +1140,10 @@ const elementData = [
 				2018: 4.8,
 			},
 			production: 6.7e6,
+			radius: {
+				atomic: 147e-12,
+				covalent: 160e-12,
+			},
 			resistivity: 420e-9,
 			speedOfSound: 5090,
 			temperatures: {
@@ -1173,6 +1192,10 @@ const elementData = [
 				2020: 371,
 			},
 			production: 73e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-vanadium.pdf
+			radius: {
+				atomic: 134e-12,
+				covalent: 153e-12,
+			},
 			resistivity: 197e-9,
 			speedOfSound: 4560,
 			temperatures: {
@@ -1224,6 +1247,10 @@ const elementData = [
 				2019: 9.4,
 			},
 			production: 4.4e6,
+			radius: {
+				atomic: 128e-12,
+				covalent: 139e-12,
+			},
 			resistivity: 125e-9,
 			speedOfSound: 5940,
 			temperatures: {
@@ -1277,6 +1304,10 @@ const elementData = [
 				2018: 2.06,
 			},
 			production: 19e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-manganese.pdf
+			radius: {
+				atomic: 127e-12,
+				covalent: (139e-12 + 161e-12)/2,
+			},
 			resistivity: 1.44e-6,
 			speedOfSound: 5150,
 			temperatures: {
@@ -1383,6 +1414,10 @@ const elementData = [
 				2019: 32.8,
 			},
 			production: 140e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cobalt.pdf
+			radius: {
+				atomic: 125e-12,
+				covalent: (126e-12 + 150e-12)/2,
+			},
 			resistivity: 62.4e-9,
 			speedOfSound: 4720,
 			temperatures: {
@@ -1436,6 +1471,11 @@ const elementData = [
 				2007: 1.47/ounce,
 			},
 			production: 1.8e6,
+			radius: {
+				atomic: 124e-12,
+				covalent: 124e-12,
+				vanDerWaals: 163e-12,
+			},
 			resistivity: 69.3e-9,
 			speedOfSound: 4900,
 			temperatures: {
@@ -1489,6 +1529,11 @@ const elementData = [
 				2019: 6,
 			},
 			production: 15.1e6,
+			radius: {
+				atomic: 128e-12,
+				covalent: 132e-12,
+				vanDerWaals: 140e-12,
+			},
 			resistivity: 16.78e-9,
 			speedOfSound: 3810,
 			temperatures: {
@@ -1540,6 +1585,11 @@ const elementData = [
 				2019: 2.55,
 			},
 			production: 11.2e6,
+			radius: {
+				atomic: 134e-12,
+				covalent: 122e-12,
+				vanDerWaals: 139e-12,
+			},
 			resistivity: 59e-9,
 			speedOfSound: 3850,
 			temperatures: {
@@ -1586,6 +1636,11 @@ const elementData = [
 				2020: 148,
 			},
 			production: 184,
+			radius: {
+				atomic: 135e-12,
+				covalent: 122e-12,
+				vanDerWaals: 187e-12,
+			},
 			resistivity: 270e-9,
 			speedOfSound: 2740,
 			temperatures: {
@@ -1634,6 +1689,11 @@ const elementData = [
 				2020: 962,
 			},
 			production: 118,
+			radius: {
+				atomic: 122e-12,
+				covalent: 122e-12,
+				vanDerWaals: 211e-12,
+			},
 			resistivity: 1,
 			speedOfSound: 5400,
 			temperatures: {
@@ -1681,6 +1741,11 @@ const elementData = [
 			prices: {
 				2021: 1.11,
 				2020: 1.15,
+			},
+			radius: {
+				atomic: 119e-12,
+				covalent: 119e-12,
+				vanDerWaals: 185e-12,
 			},
 			resistivity: 333e-9,
 			production: 33e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-arsenic.pdf
@@ -1735,6 +1800,11 @@ const elementData = [
 				2019: 21.4,
 			},
 			production: 2e3,
+			radius: {
+				atomic: 120e-12,
+				covalent: 120e-12,
+				vanDerWaals: 190e-12,
+			},
 			resistivity: 106e-6, // https://www.espimetals.com/index.php/component/content/article/422-online-catalog/selenium-se/435-selenium-se?Itemid=135
 			speedOfSound: 3350,
 			temperatures: {
@@ -1780,6 +1850,11 @@ const elementData = [
 				2019: 4.39,
 			},
 			production: 556e3,
+			radius: {
+				atomic: 120e-12,
+				covalent: 120e-12,
+				vanDerWaals: 185e-12,
+			},
 			resistivity: 7.8e10,
 			speedOfSound: 206,
 			temperatures: {
@@ -1821,6 +1896,10 @@ const elementData = [
 			prices: {
 				2016: 1.4,
 				1999: 290,
+			},
+			radius: {
+				covalent: 116e-12,
+				vanDerWaals: 202e-12,
 			},
 			speedOfSound: 221,
 			temperatures: {
