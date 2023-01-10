@@ -185,6 +185,7 @@ const elementData = [
 				boil: 1560,
 				melt: 453.69,
 			},
+			youngsModulus: 4.9e9,
 		},
 	},
 	{
@@ -230,6 +231,7 @@ const elementData = [
 				boil: 2742,
 				melt: 1560,
 			},
+			youngsModulus: 287e9,
 		},
 	},
 	{
@@ -292,7 +294,7 @@ const elementData = [
 			},
 			appearance: 'black',
 			biologicalHalfLife: 40*day, // C-14; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
-			bulkModulus: 33e9, // graphite; diamond is 442 https://periodictable.com/Properties/A/BulkModulus.al.html
+			bulkModulus: 442e9, // diamond; graphite is 33 https://periodictable.com/Properties/A/BulkModulus.al.html ; using diamond because idk the youngsModulus for graphite
 			categories: {
 				coinageMetal: 0.5, // various russian coins
 				reactiveNonmetal: true,
@@ -322,6 +324,7 @@ const elementData = [
 				boil: 3915,
 				melt: 3915,
 			},
+			youngsModulus: 1050e9, // diamond
 		},
 	},
 	{
@@ -541,6 +544,7 @@ const elementData = [
 				boil: 1156,
 				melt: 370.87,
 			},
+			youngsModulus: 10e9,
 		},
 	},
 	{
@@ -589,6 +593,7 @@ const elementData = [
 				boil: 1363,
 				melt: 923,
 			},
+			youngsModulus: 45e9,
 		},
 	},
 	{
@@ -637,6 +642,7 @@ const elementData = [
 				boil: 2792,
 				melt: 933.47,
 			},
+			youngsModulus: 70e9,
 		},
 	},
 	{
@@ -683,6 +689,7 @@ const elementData = [
 				boil: 3538,
 				melt: 1687,
 			},
+			youngsModulus: (130e9 + 188e9)/2,
 		},
 	},
 	{
@@ -903,6 +910,7 @@ const elementData = [
 				boil: 1032,
 				melt: 336.53,
 			},
+			youngsModulus: 3.53e9,
 		},
 	},
 	{
@@ -947,6 +955,7 @@ const elementData = [
 				boil: 1757,
 				melt: 1115,
 			},
+			youngsModulus: 20e9,
 		},
 	},
 	{
@@ -990,6 +999,7 @@ const elementData = [
 				melt: 1814,
 			},
 			toxicity: 4e-3, // LD50, oral, rat
+			youngsModulus: 74.4e9,
 		},
 	},
 	{
@@ -1038,6 +1048,7 @@ const elementData = [
 				boil: 3560,
 				melt: 1941,
 			},
+			youngsModulus: 116e9,
 		},
 	},
 	{
@@ -1085,6 +1096,7 @@ const elementData = [
 				boil: 3680,
 				melt: 2183,
 			},
+			youngsModulus: 128e9,
 		},
 	},
 	{
@@ -1136,6 +1148,7 @@ const elementData = [
 				melt: 2180,
 			},
 			toxicity: 50e-6, // Chromium(VI) human, min est. LD50
+			youngsModulus: 279e9,
 		},
 	},
 	{
@@ -1187,6 +1200,7 @@ const elementData = [
 				boil: 2334,
 				melt: 1519,
 			},
+			youngsModulus: 198e9,
 		},
 	},
 	{
@@ -1238,6 +1252,7 @@ const elementData = [
 				melt: 1811,
 			},
 			toxicity: 50e-6, // "Ingestions of more than 50 mg/kg of elemental iron are associated with severe toxicity"
+			youngsModulus: 211e9,
 		},
 	},
 	{
@@ -1287,6 +1302,7 @@ const elementData = [
 				melt: 1768,
 			},
 			toxicity: 325e-6, // The LD50 value for soluble cobalt salts has been estimated to be between 150 and 500 mg/kg
+			youngsModulus: 209e9,
 		},
 	},
 	{
@@ -1338,6 +1354,7 @@ const elementData = [
 				boil: 3186,
 				melt: 1728,
 			},
+			youngsModulus: 200e9,
 		},
 	},
 	{
@@ -1391,6 +1408,7 @@ const elementData = [
 				melt: 1357.77,
 			},
 			toxicity: 30e-6, // Copper sulfate, rat
+			youngsModulus: (110e9 + 128e9)/2,
 		},
 	},
 	{
@@ -1440,6 +1458,7 @@ const elementData = [
 				boil: 1180,
 				melt: 692.88,
 			},
+			youngsModulus: 108e9,
 		},
 	},
 	{
@@ -1485,6 +1504,7 @@ const elementData = [
 				boil: 2673,
 				melt: 692.88,
 			},
+			youngsModulus: 9.8e9,
 		},
 	},
 	{
@@ -1532,6 +1552,7 @@ const elementData = [
 				boil: 3106,
 				melt: 1211.4,
 			},
+			youngsModulus: 103e9,
 		},
 	},
 	{
@@ -1580,6 +1601,7 @@ const elementData = [
 				melt: 887, // sublimates
 			},
 			toxicity: 763e-6, // rat, oral
+			youngsModulus: 8e9,
 		},
 	},
 	{
@@ -1632,6 +1654,7 @@ const elementData = [
 				melt: 453,
 			},
 			toxicity: 3000e-6 / 65e3, // The chronic toxic dose of selenite for humans is about 2400 to 3000 micrograms of selenium per day.
+			youngsModulus: 10e9,
 		},
 	},
 	{

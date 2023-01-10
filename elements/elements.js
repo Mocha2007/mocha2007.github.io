@@ -129,6 +129,8 @@ class ChemElement {
 			this.temperatures = properties.temperatures;
 			/** @type {number} LD50, as close to humans as possible, (0, 1) */
 			this.toxicity = properties.toxicity;
+			/** @type {number} - in Pa */
+			this.youngsModulus = properties.youngsModulus;
 		}
 		// push to element list and create cell
 		elements.push(this);
@@ -254,6 +256,10 @@ class ChemElement {
 		return Object.keys(this.nucleosynthesis)
 			.sort((a, b) => this.nucleosynthesis[b] - this.nucleosynthesis[a])[0];
 	}
+	get poissonRatio(){
+		// https://en.wikipedia.org/wiki/Shear_modulus#Explanation
+		return this.youngsModulus / (-6*this.bulkModulus) + 0.5;
+	}
 	/** based on regressions I did; R^2 = 0.7302 */
 	get predictedBulkModulus(){
 		return 3.2288e-31
@@ -271,6 +277,10 @@ class ChemElement {
 			* Math.pow(this.density, 0.914663)
 			* Math.pow(this.ionization[0], -1.28273)
 			* Math.pow(this.covalentRadius, -1.64164);
+	}
+	get shearModulus(){
+		// https://en.wikipedia.org/wiki/Shear_modulus#Explanation
+		return 0.5 * this.youngsModulus / (1 + this.poissonRatio);
 	}
 	get stable(){
 		return this.isotopes.some(i => i.stable);
@@ -731,6 +741,15 @@ class ChemElement {
 					c = 'grey';
 				break;
 			}
+			case 'poisson':
+				if (!this.poissonRatio)
+					c = 'silver';
+				else {
+					const ee = elements.filter(e => e.poissonRatio).map(e => e.poissonRatio);
+					c = gradient1(remap(this.poissonRatio,
+						[Math.min(...ee), Math.max(...ee)], [0, 1]));
+				}
+				break;
 			case 'price':
 				if (!this.prices)
 					c = '#ccc';
@@ -1240,4 +1259,4 @@ function main(){
 }
 
 main();
-// tableColor('covalent');
+// tableColor('poisson');
