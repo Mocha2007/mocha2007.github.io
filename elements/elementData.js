@@ -4483,6 +4483,10 @@ const elementData = [
 				decay: 1,
 			},
 			oxidation: [1],
+			radius: {
+				covalent: 260e-12,
+				vanDerWaals: 348e-12,
+			},
 			resistivity: 3e-6,
 			temperatures: {
 				boil: 950,
@@ -4520,6 +4524,10 @@ const elementData = [
 				decay: 1,
 			},
 			oxidation: [2],
+			radius: {
+				covalent: 221e-12,
+				vanDerWaals: 283e-12,
+			},
 			resistivity: 1e-6,
 			temperatures: {
 				boil: 2010,
@@ -4557,6 +4565,9 @@ const elementData = [
 			oxidation: [3],
 			prices: {
 				2004: 29e12,
+			},
+			radius: {
+				covalent: 215e-12,
 			},
 			temperatures: {
 				boil: 3471,
@@ -4602,6 +4613,10 @@ const elementData = [
 				2010: 287,
 			},
 			production: 1.2e3, // US, est. https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-thorium.pdf
+			radius: {
+				atomic: 179.8e-12,
+				covalent: 206e-12,
+			},
 			resistivity: 157e-9,
 			speedOfSound: 2490,
 			temperatures: {
@@ -4642,6 +4657,10 @@ const elementData = [
 			oxidation: [5],
 			prices: {
 				2011: 280e3,
+			},
+			radius: {
+				atomic: 163e-12,
+				covalent: 200e-12,
 			},
 			resistivity: 177e-9,
 			temperatures: {
@@ -4687,6 +4706,11 @@ const elementData = [
 				2018: 101,
 			},
 			production: 50572,
+			radius: {
+				atomic: 156e-12,
+				covalent: 196e-12,
+				vanDerWaals: 186e-12,
+			},
 			resistivity: 280e-9,
 			speedOfSound: 3155,
 			temperatures: {
@@ -4727,6 +4751,10 @@ const elementData = [
 			prices: {
 				2003: 660e3,
 			},
+			radius: {
+				atomic: 155e-12,
+				covalent: 190e-12,
+			},
 			resistivity: 1.22e-6,
 			temperatures: {
 				boil: 4273,
@@ -4766,6 +4794,10 @@ const elementData = [
 				rProcess: 1,
 			},
 			oxidation: [4],
+			radius: {
+				atomic: 159e-12,
+				covalent: 187e-12,
+			},
 			resistivity: 1.46e-6,
 			speedOfSound: 2260,
 			temperatures: {
@@ -4802,6 +4834,10 @@ const elementData = [
 				1998: 728e3,
 			},
 			oxidation: [3],
+			radius: {
+				atomic: 173e-12,
+				covalent: 180e-12,
+			},
 			resistivity: 690e-9,
 			temperatures: {
 				boil: 2284, // CRC
@@ -4834,6 +4870,10 @@ const elementData = [
 			prices: {
 				2004: 185e6,
 			},
+			radius: {
+				atomic: 174e-12,
+				covalent: 169e-12,
+			},
 			resistivity: 1.25e-6,
 			temperatures: {
 				boil: 3383,
@@ -4864,6 +4904,9 @@ const elementData = [
 			oxidation: [3],
 			prices: {
 				2004: 185e9,
+			},
+			radius: {
+				atomic: 170e-12,
 			},
 			temperatures: {
 				boil: 2900,
@@ -5044,6 +5087,10 @@ const elementData = [
 			ionization: [580e3, 1390e3, 2300e3, 3080e3],
 			modelColor: 'rgb(204, 0, 89)',
 			oxidation: [3, 4],
+			radius: {
+				atomic: 150e-12,
+				covalent: 157e-12,
+			},
 			temperatures: {
 				boil: 5800, // predicted
 				melt: 2400, // predicted
@@ -5065,6 +5112,10 @@ const elementData = [
 			ionization: [665e3, 1547e3, 2378e3, 3299e3, 4305e3],
 			modelColor: 'rgb(209, 0, 79)',
 			oxidation: [5],
+			radius: {
+				atomic: 139e-12,
+				covalent: 149e-12,
+			},
 		},
 	},
 	{
@@ -5082,6 +5133,10 @@ const elementData = [
 			ionization: [757e3, 1733e3, 2484e3, 3416e3, 4562e3, 5716e3],
 			modelColor: 'rgb(217, 0, 69)',
 			oxidation: [4, 6],
+			radius: {
+				atomic: 132e-12,
+				covalent: 143e-12,
+			},
 		},
 	},
 	{
@@ -5100,6 +5155,10 @@ const elementData = [
 			modelColor: 'rgb(224, 0, 56)',
 			nobleMetal: 5,
 			oxidation: [3, 4, 5, 7],
+			radius: {
+				atomic: 128e-12,
+				covalent: 141e-12,
+			},
 		},
 	},
 	{
@@ -5118,6 +5177,10 @@ const elementData = [
 			modelColor: 'rgb(230, 0, 46)',
 			nobleMetal: 5,
 			oxidation: [3, 4, 8],
+			radius: {
+				atomic: 126e-12,
+				covalent: 134e-12,
+			},
 		},
 	},
 	{
@@ -5136,6 +5199,10 @@ const elementData = [
 			modelColor: 'rgb(235, 0, 38)',
 			nobleMetal: 5,
 			oxidation: [1, 3, 6],
+			radius: {
+				atomic: 128e-12,
+				covalent: 129e-12,
+			},
 		},
 	},
 	{
@@ -5154,6 +5221,10 @@ const elementData = [
 			modelColor: 'rgb(239, 0, 29)', // extrapolation
 			nobleMetal: 5,
 			oxidation: [0, 2, 8],
+			radius: {
+				atomic: 132e-12,
+				covalent: 128e-12,
+			},
 		},
 	},
 	{
@@ -5173,6 +5244,10 @@ const elementData = [
 			modelColor: 'rgb(242, 0, 19)', // extrapolation
 			nobleMetal: 5,
 			oxidation: [3],
+			radius: {
+				atomic: 138e-12,
+				covalent: 121e-12,
+			},
 		},
 	},
 	{
@@ -5192,6 +5267,10 @@ const elementData = [
 			modelColor: 'rgb(244, 0, 9)', // extrapolation
 			nobleMetal: 5,
 			oxidation: [0, 2],
+			radius: {
+				atomic: 147e-12,
+				covalent: 122e-12,
+			},
 			temperatures: {
 				boil: 340, // predicted
 				melt: 283, // predicted
@@ -5215,6 +5294,10 @@ const elementData = [
 			modelColor: 'rgb(166, 51, 39)', // extrapolation
 			nobleMetal: 5,
 			oxidation: [1, 3],
+			radius: {
+				atomic: 170e-12,
+				covalent: (172e-12 + 180e-12)/2,
+			},
 			temperatures: {
 				boil: 1430, // predicted
 				melt: 700, // predicted
@@ -5238,6 +5321,10 @@ const elementData = [
 			modelColor: 'rgb(62, 50, 66)', // extrapolation
 			nobleMetal: 5,
 			oxidation: [2],
+			radius: {
+				atomic: 180e-12,
+				covalent: (171e-12 + 177e-12)/2,
+			},
 			temperatures: {
 				boil: 380, // predicted
 				melt: 284, // predicted
@@ -5262,6 +5349,10 @@ const elementData = [
 			ionization: [538.3e3, 1760e3, 2650e3, 4680e3, 5720e3],
 			modelColor: 'rgb(158, 59, 181)', // extrapolation
 			oxidation: [1, 3],
+			radius: {
+				atomic: 187e-12,
+				covalent: 157e-12,
+			},
 			temperatures: {
 				boil: 1400, // predicted
 				melt: 670, // predicted
@@ -5287,6 +5378,10 @@ const elementData = [
 			modelColor: 'rgb(130, 60, 0)', // extrapolation
 			nobleMetal: 5,
 			oxidation: [2],
+			radius: {
+				atomic: 183e-12,
+				covalent: 164e-12,
+			},
 			temperatures: {
 				boil: 1085, // extrapolated
 				melt: 708.5, // extrapolated
@@ -5312,6 +5407,10 @@ const elementData = [
 			ionization: [736.9e3, 1435.4e3, 2161.9e3, 4012.9e3, 5076.4e3],
 			modelColor: 'rgb(94, 63, 55)', // extrapolation
 			oxidation: [1, 3],
+			radius: {
+				atomic: 138e-12,
+				covalent: 156.5e-12,
+			},
 			temperatures: {
 				boil: 883, // predicted
 				melt: 723, // predicted
@@ -5338,6 +5437,10 @@ const elementData = [
 			ionization: [860.1e3, 1560e3],
 			modelColor: 'rgb(66, 102, 124)', // extrapolation
 			oxidation: [2, 4],
+			radius: {
+				atomic: 152e-12,
+				covalent: 157e-12,
+			},
 			temperatures: {
 				boil: 450, // predicted
 				melt: 325, // predicted
