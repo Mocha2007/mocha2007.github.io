@@ -104,6 +104,8 @@ class ChemElement {
 			this.ionization = properties.ionization;
 			/** @type {string} - color used in models */
 			this.modelColor = properties.modelColor;
+			/** @type {boolean} - used to override elements with stable nuclear isomers (currently only tantalum) */
+			this.monisotopic = properties.monisotopic;
 			/** @type {number} */
 			this.nobleMetal = properties.nobleMetal;
 			/** string => [0, 1] */
