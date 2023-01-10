@@ -738,6 +738,7 @@ const elementData = [
 				boil: 550,
 				melt: 317.3,
 			},
+			youngsModulus: 6e9, // based on data from https://arxiv.org/pdf/1211.3512.pdf => v = 0.3 for black
 		},
 	},
 	{
