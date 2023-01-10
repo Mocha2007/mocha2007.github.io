@@ -277,6 +277,7 @@ const elementData = [
 				melt: 2349,
 			},
 			toxicity: 6e-3, // LD50
+			youngsModulus: 710.4e9, // "The Poisson's ratio of boron fibers is 0.13"
 		},
 	},
 	{
