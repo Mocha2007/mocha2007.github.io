@@ -1830,6 +1830,7 @@ const elementData = [
 				boil: 1655,
 				melt: 1050,
 			},
+			youngsModulus: 15.7e9,
 		},
 	},
 	{
@@ -1874,6 +1875,7 @@ const elementData = [
 				boil: 3609,
 				melt: 1799,
 			},
+			youngsModulus: 63.5e9,
 		},
 	},
 	{
@@ -1919,6 +1921,7 @@ const elementData = [
 				boil: 4682,
 				melt: 2128,
 			},
+			youngsModulus: 88e9,
 		},
 	},
 	{
@@ -1969,6 +1972,7 @@ const elementData = [
 				melt: 2750,
 			},
 			toxicity: 940e-6, // LD50, oral, rat
+			youngsModulus: 105e9,
 		},
 	},
 	{
@@ -2020,6 +2024,7 @@ const elementData = [
 				boil: 4912,
 				melt: 2896,
 			},
+			youngsModulus: 329e9,
 		},
 	},
 	{
@@ -2109,6 +2114,7 @@ const elementData = [
 				boil: 4423,
 				melt: 2607,
 			},
+			youngsModulus: 447e9,
 		},
 	},
 	{
@@ -2162,6 +2168,7 @@ const elementData = [
 				melt: 2237,
 			},
 			toxicity: 198e-6, // LD50, rat, rhodium chloride
+			youngsModulus: 380e9,
 		},
 	},
 	{
@@ -2214,6 +2221,7 @@ const elementData = [
 				melt: 1828.05,
 			},
 			toxicity: 200e-6, // LD50, oral, mouse, soluble palladium compounds
+			youngsModulus: 121e9,
 		},
 	},
 	{
@@ -2266,6 +2274,7 @@ const elementData = [
 				boil: 2435,
 				melt: 1234.93,
 			},
+			youngsModulus: 83e9,
 		},
 	},
 	{
@@ -2315,6 +2324,7 @@ const elementData = [
 				melt: 594.22,
 			},
 			toxicity: 225e-6, // rat, oral
+			youngsModulus: 50e9,
 		},
 	},
 	{
@@ -2361,6 +2371,7 @@ const elementData = [
 				boil: 2345,
 				melt: 429.75,
 			},
+			youngsModulus: 11e9,
 		},
 	},
 	{
@@ -2412,6 +2423,7 @@ const elementData = [
 				melt: 505.08,
 			},
 			toxicity: 200e-6, // "Nausea, vomiting and diarrhea have been reported after ingesting canned food containing 200 mg/kg of tin."
+			youngsModulus: 50e9,
 		},
 	},
 	{
@@ -2460,6 +2472,7 @@ const elementData = [
 				boil: 1860,
 				melt: 903.78,
 			},
+			youngsModulus: 55e9,
 		},
 	},
 	{
@@ -2508,6 +2521,7 @@ const elementData = [
 				boil: 1261,
 				melt: 722.66,
 			},
+			youngsModulus: 43e9,
 		},
 	},
 	{
@@ -2641,6 +2655,7 @@ const elementData = [
 				melt: 301.59,
 			},
 			toxicity: 2.3e-3, // https://en.wikipedia.org/wiki/Caesium#Health_and_safety_hazards
+			youngsModulus: 1.7e9,
 		},
 	},
 	{
@@ -2684,6 +2699,7 @@ const elementData = [
 				boil: 2170,
 				melt: 1000,
 			},
+			youngsModulus: 13e9,
 		},
 	},
 	{
@@ -2730,6 +2746,7 @@ const elementData = [
 				boil: 3737,
 				melt: 1193,
 			},
+			youngsModulus: 36.6e9,
 		},
 	},
 	{
@@ -2775,6 +2792,7 @@ const elementData = [
 				boil: 3716,
 				melt: 1068,
 			},
+			youngsModulus: 33.6e9,
 		},
 	},
 	{
@@ -2820,6 +2838,7 @@ const elementData = [
 				boil: 3793,
 				melt: 1208,
 			},
+			youngsModulus: 37.3e9,
 		},
 	},
 	{
@@ -2866,6 +2885,7 @@ const elementData = [
 				boil: 3347,
 				melt: 1297,
 			},
+			youngsModulus: 41.4e9,
 		},
 	},
 	{
@@ -2902,6 +2922,7 @@ const elementData = [
 				boil: 3273,
 				melt: 1315,
 			},
+			youngsModulus: 46e9,
 		},
 	},
 	{
@@ -2948,6 +2969,7 @@ const elementData = [
 				boil: 2067,
 				melt: 1345,
 			},
+			youngsModulus: 49.7e9,
 		},
 	},
 	{
@@ -2990,6 +3012,7 @@ const elementData = [
 				melt: 1099,
 			},
 			toxicity: 5e-3, // LD50, oral, europium chloride and nitrate
+			youngsModulus: 18.2e9,
 		},
 	},
 	{
@@ -3034,6 +3057,7 @@ const elementData = [
 				melt: 1585,
 			},
 			toxicity: 150e-6, // LD50, mice
+			youngsModulus: 54.8e9,
 		},
 	},
 	{
@@ -3078,6 +3102,7 @@ const elementData = [
 				boil: 3503,
 				melt: 1629,
 			},
+			youngsModulus: 55.7e9,
 		},
 	},
 	{
@@ -3124,6 +3149,7 @@ const elementData = [
 				melt: 1680,
 			},
 			toxicity: 0.5 / 65, // it is estimated that the ingestion of 500 grams or more could be fatal to a human
+			youngsModulus: 61.4e9,
 		},
 	},
 	{
@@ -3167,6 +3193,7 @@ const elementData = [
 				boil: 2993,
 				melt: 1734,
 			},
+			youngsModulus: 64.8e9,
 		},
 	},
 	{
@@ -3210,6 +3237,7 @@ const elementData = [
 				boil: 3141,
 				melt: 1734,
 			},
+			youngsModulus: 69.9e9,
 		},
 	},
 	{
@@ -3252,6 +3280,7 @@ const elementData = [
 				boil: 2223,
 				melt: 1818,
 			},
+			youngsModulus: 74e9,
 		},
 	},
 	{
@@ -3294,6 +3323,7 @@ const elementData = [
 				boil: 1469,
 				melt: 1097,
 			},
+			youngsModulus: 23.9e9,
 		},
 	},
 	{
@@ -3336,6 +3366,7 @@ const elementData = [
 				boil: 3675,
 				melt: 1925,
 			},
+			youngsModulus: 68.6e9,
 		},
 	},
 	{
@@ -3381,6 +3412,7 @@ const elementData = [
 				boil: 4876,
 				melt: 2506,
 			},
+			youngsModulus: 78e9,
 		},
 	},
 	{
@@ -3429,6 +3461,7 @@ const elementData = [
 				boil: 5731,
 				melt: 3290,
 			},
+			youngsModulus: 186e9,
 		},
 	},
 	{
@@ -3479,6 +3512,7 @@ const elementData = [
 				melt: 3695,
 			},
 			toxicity: 59e-6, // https://en.wikipedia.org/wiki/Tungsten#Health_factors
+			youngsModulus: 411e9,
 		},
 	},
 	{
@@ -3528,6 +3562,7 @@ const elementData = [
 				melt: 3459,
 			},
 			toxicity: 280e-6, // https://en.wikipedia.org/wiki/Rhenium#Precautions
+			youngsModulus: 463e9,
 		},
 	},
 	{
@@ -3576,6 +3611,7 @@ const elementData = [
 				boil: 5285,
 				melt: 3306,
 			},
+			youngsModulus: 555e9, // computed from poisson ratio + shear modulus
 		},
 	},
 	{
@@ -3627,6 +3663,7 @@ const elementData = [
 				boil: 4701,
 				melt: 2719,
 			},
+			youngsModulus: 528e9,
 		},
 	},
 	{
@@ -3678,6 +3715,7 @@ const elementData = [
 				boil: 4098,
 				melt: 2041.4,
 			},
+			youngsModulus: 168e9,
 		},
 	},
 	{
@@ -3731,6 +3769,7 @@ const elementData = [
 				boil: 3129,
 				melt: 1337.33,
 			},
+			youngsModulus: 79e9,
 		},
 	},
 	{
@@ -3820,6 +3859,7 @@ const elementData = [
 				boil: 1746,
 				melt: 577,
 			},
+			youngsModulus: 8e9,
 		},
 	},
 	{
@@ -3869,6 +3909,7 @@ const elementData = [
 				boil: 2022,
 				melt: 600.61,
 			},
+			youngsModulus: 16e9,
 		},
 	},
 	{
@@ -3917,6 +3958,7 @@ const elementData = [
 				boil: 1837,
 				melt: 544.7,
 			},
+			youngsModulus: 32e9,
 		},
 	},
 	{
@@ -4182,6 +4224,7 @@ const elementData = [
 				boil: 5061,
 				melt: 2115,
 			},
+			youngsModulus: 79e9,
 		},
 	},
 	{
@@ -4266,6 +4309,7 @@ const elementData = [
 				boil: 4404,
 				melt: 1405.3,
 			},
+			youngsModulus: 208e9,
 		},
 	},
 	{
@@ -4344,6 +4388,7 @@ const elementData = [
 				melt: 912.5,
 			},
 			toxicity: 5e-6, // "Animal studies found that a few milligrams of plutonium per kilogram of tissue is a lethal dose."
+			youngsModulus: 96e9,
 		},
 	},
 	{
