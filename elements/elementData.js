@@ -20,6 +20,7 @@
 	4	https://web.archive.org/web/20190104023431/http://www.cosmic-origins.org/
 			https://web.archive.org/web/20181228175648/http://www.cosmic-origins.org/PAGES/chartnuc.html
 */
+// also used: CRC 97th ed.
 const nucleosynthesisColors = {
 	artificial: '#fff', // the rest
 	decay: '#ccb', // Po-Ac; Pa
