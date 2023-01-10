@@ -369,6 +369,7 @@ const elementData = [
 				boil: 77.36,
 				melt: 63.15,
 			},
+			youngsModulus: 239455.7512, // derived from https://www.arcjournals.org/pdfs/ijarps/v4-i5/3.pdf
 		},
 	},
 	{
