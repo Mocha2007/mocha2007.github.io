@@ -1945,6 +1945,11 @@ const elementData = [
 				2018: 15500,
 			},
 			production: 2,
+			radius: {
+				atomic: 248e-12,
+				covalent: 220e-12,
+				vanDerWaals: 303e-12,
+			},
 			resistivity: 128e-9,
 			speedOfSound: 1300,
 			temperatures: {
@@ -1992,6 +1997,11 @@ const elementData = [
 				2019: 6.61,
 			},
 			production: 220e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-strontium.pdf
+			radius: {
+				atomic: 215e-12,
+				covalent: 195e-12,
+				vanDerWaals: 249e-12,
+			},
 			resistivity: 132e-9,
 			temperatures: {
 				boil: 1655,
@@ -2036,6 +2046,10 @@ const elementData = [
 				2019: 31,
 			},
 			production: 200,
+			radius: {
+				atomic: 180e-12,
+				covalent: 190e-12,
+			},
 			resistivity: 596e-9,
 			speedOfSound: 3350,
 			temperatures: {
@@ -2082,6 +2096,10 @@ const elementData = [
 				2020: 36.4,
 			},
 			production: 900e3,
+			radius: {
+				atomic: 160e-12,
+				covalent: 175e-12,
+			},
 			resistivity: 421e-9,
 			speedOfSound: 3800,
 			temperatures: {
@@ -2132,6 +2150,10 @@ const elementData = [
 				2018: 42.28,
 			},
 			production: 44.5e3,
+			radius: {
+				atomic: 146e-12,
+				covalent: 164e-12,
+			},
 			resistivity: 152e-9,
 			speedOfSound: 3480,
 			temperatures: {
@@ -2185,6 +2207,10 @@ const elementData = [
 				2019: 40.1,
 			},
 			production: 250e3,
+			radius: {
+				atomic: 139e-12,
+				covalent: 154e-12,
+			},
 			resistivity: 53.4e-9,
 			speedOfSound: 5400,
 			temperatures: {
@@ -2223,6 +2249,10 @@ const elementData = [
 			oxidation: [4, 7],
 			prices: {
 				2004: 1e5,
+			},
+			radius: {
+				atomic: 136e-12,
+				covalent: 147e-12,
 			},
 			resistivity: 200e-9,
 			temperatures: {
@@ -2276,6 +2306,10 @@ const elementData = [
 				2020: 264.94/ounce, // year average
 			},
 			production: 12,
+			radius: {
+				atomic: 134e-12,
+				covalent: 146e-12,
+			},
 			resistivity: 71e-9,
 			speedOfSound: 5970,
 			temperatures: {
@@ -2329,6 +2363,10 @@ const elementData = [
 				2019: 147e3,
 			},
 			production: 25,
+			radius: {
+				atomic: 134e-12,
+				covalent: 142e-12,
+			},
 			resistivity: 43.3e-9,
 			speedOfSound: 4700,
 			temperatures: {
@@ -2382,6 +2420,11 @@ const elementData = [
 				2019: 49.5e3,
 			},
 			production: 210, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-platinum.pdf
+			radius: {
+				atomic: 137e-12,
+				covalent: 139e-12,
+				vanDerWaals: 163e-12,
+			},
 			resistivity: 105.4e-9,
 			speedOfSound: 3070,
 			temperatures: {
@@ -2436,6 +2479,11 @@ const elementData = [
 				2019: 521,
 			},
 			production: 322e3,
+			radius: {
+				atomic: 144e-12,
+				covalent: 145e-12,
+				vanDerWaals: 172e-12,
+			},
 			resistivity: 15.9e-9,
 			speedOfSound: 2680,
 			temperatures: {
@@ -2485,6 +2533,11 @@ const elementData = [
 				2019: 2.73,
 			},
 			production: 25e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-cadmium.pdf
+			radius: {
+				atomic: 151e-12,
+				covalent: 144e-12,
+				vanDerWaals: 158e-12,
+			},
 			resistivity: 72.7e-9,
 			speedOfSound: 2310,
 			temperatures: {
@@ -2533,6 +2586,11 @@ const elementData = [
 				2019: 167,
 			},
 			production: 476,
+			radius: {
+				atomic: 167e-12,
+				covalent: 142e-12,
+				vanDerWaals: 193e-12,
+			},
 			resistivity: 83.7e-9,
 			speedOfSound: 1215,
 			temperatures: {
@@ -2584,6 +2642,11 @@ const elementData = [
 				2019: 18.7,
 			},
 			production: 340e3,
+			radius: {
+				atomic: 140e-12,
+				covalent: 139e-12,
+				vanDerWaals: 217e-12,
+			},
 			resistivity: 115e-9,
 			speedOfSound: 2730,
 			temperatures: {
@@ -2634,6 +2697,11 @@ const elementData = [
 				2019: 5.79,
 			},
 			production: 150e3,
+			radius: {
+				atomic: 140e-12,
+				covalent: 139e-12,
+				vanDerWaals: 206e-12,
+			},
 			resistivity: 417e-9,
 			speedOfSound: 3420,
 			temperatures: {
@@ -2683,6 +2751,11 @@ const elementData = [
 				2019: 63.5,
 			},
 			production: 122,
+			radius: {
+				atomic: 140e-12,
+				covalent: 138e-12,
+				vanDerWaals: 206e-12,
+			},
 			resistivity: 1e-4, // https://periodictable.com/Elements/052/data.html
 			speedOfSound: 2610,
 			temperatures: {
@@ -2730,6 +2803,11 @@ const elementData = [
 				2019: 35,
 			},
 			production: 28e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-iodine.pdf
+			radius: {
+				atomic: 140e-12,
+				covalent: 139e-12,
+				vanDerWaals: 198e-12,
+			},
 			resistivity: 1.3e7,
 			temperatures: {
 				boil: 457.4,
@@ -2772,6 +2850,10 @@ const elementData = [
 				1999: 1800,
 			},
 			production: 40,
+			radius: {
+				covalent: 140e-12,
+				vanDerWaals: 216e-12,
+			},
 			speedOfSound: 178,
 			temperatures: {
 				boil: 165.03,
