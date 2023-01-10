@@ -667,6 +667,18 @@ class ChemElement {
 						[Math.min(...melts), Math.max(...melts)], [0, 1]));
 				}
 				break;
+			case 'meltBoil':
+				if (!this.temperatures)
+					c = '#ccc';
+				else {
+					const mbs = elements.filter(e => e.temperatures
+							&& e.temperatures.melt && e.temperatures.boil)
+						.map(e => e.temperatures.melt/e.temperatures.boil);
+					c = gradient1(remap(
+						this.temperatures.melt/this.temperatures.boil,
+						[Math.min(...mbs), Math.max(...mbs)], [0, 1]));
+				}
+				break;
 			case 'msi%4':
 				if (this.stable){
 					if (new Set(this.isotopes.filter(i => i.stable).map(
