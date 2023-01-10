@@ -782,6 +782,13 @@ class ChemElement {
 				c = gradient1(remap(Math.log(this.resistivity), mm, [0, 1]));
 				break;
 			}
+			case 'shearModulus':{
+				const bm = Math.max(...elements
+					.filter(e => e.shearModulus)
+					.map(e => e.shearModulus));
+				c = gradient1(this.shearModulus/bm);
+				break;
+			}
 			case 'speedOfSound':{
 				const ee = elements.filter(e => e.speedOfSound).map(e => e.speedOfSound);
 				c = gradient1(remap(this.speedOfSound, [Math.min(...ee), Math.max(...ee)], [0, 1]));
@@ -827,6 +834,13 @@ class ChemElement {
 			case 'weight':
 				c = gradient1(this.mass/ChemElement.maxWeight);
 				break;
+			case 'youngsModulus':{
+				const bm = Math.max(...elements
+					.filter(e => e.youngsModulus)
+					.map(e => e.youngsModulus));
+				c = gradient1(this.youngsModulus/bm);
+				break;
+			}
 			default:
 				c = 'white';
 		}
