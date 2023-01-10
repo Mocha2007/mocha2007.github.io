@@ -4413,7 +4413,7 @@ const elementData = [
 			},
 			covalentRadius: 180e-12,
 			crystal: 'hP',
-			density: 13690,
+			density: 12000,
 			discovery: 1944,
 			electronAffinity: 10e3,
 			electronegativity: 1.13,
@@ -4426,7 +4426,7 @@ const elementData = [
 			oxidation: [3],
 			resistivity: 690e-9,
 			temperatures: {
-				boil: 2880,
+				boil: 2284, // CRC
 				melt: 1449,
 			},
 		},
