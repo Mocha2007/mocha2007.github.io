@@ -2065,6 +2065,7 @@ const elementData = [
 				boil: 4538,
 				melt: 2430,
 			},
+			youngsModulus: (382e9 + 430e9)/2,
 		},
 	},
 	{
@@ -4352,6 +4353,7 @@ const elementData = [
 				boil: 4273,
 				melt: 917,
 			},
+			youngsModulus: 80e9,
 		},
 	},
 	{
