@@ -294,7 +294,7 @@ const elementData = [
 			},
 			appearance: 'black',
 			biologicalHalfLife: 40*day, // C-14; http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
-			bulkModulus: 442e9, // diamond; graphite is 33 https://periodictable.com/Properties/A/BulkModulus.al.html ; using diamond because idk the youngsModulus for graphite
+			bulkModulus: 33e9, // diamond is 442; graphite is 33 https://periodictable.com/Properties/A/BulkModulus.al.html
 			categories: {
 				coinageMetal: 0.5, // various russian coins
 				reactiveNonmetal: true,
@@ -324,7 +324,7 @@ const elementData = [
 				boil: 3915,
 				melt: 3915,
 			},
-			youngsModulus: 1050e9, // diamond
+			youngsModulus: 11.5e9, // diamond is 1050; graphite is 11.5 https://material-properties.org/graphite-density-strength-hardness-melting-point/
 		},
 	},
 	{
@@ -1785,6 +1785,7 @@ const elementData = [
 				melt: 312.46,
 			},
 			toxicity: 0.36 / 70e3 * 100, // a 70 kg person contains on average 0.36 g of rubidium, and an increase in this value by 50 to 100 times did not show negative effects in test persons
+			youngsModulus: 2.4e9,
 		},
 	},
 	{
