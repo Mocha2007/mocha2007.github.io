@@ -90,6 +90,10 @@ const elementData = [
 				2012: 1.39,
 			},
 			production: 50e6,
+			radius: {
+				covalent: 31e-12,
+				vanDerWaals: 120e-12,
+			},
 			speedOfSound: 1310,
 			temperatures: {
 				boil: 20.28,
@@ -132,6 +136,10 @@ const elementData = [
 				2018: 24,
 			},
 			production: 32e3,
+			radius: {
+				covalent: 28e-12,
+				vanDerWaals: 140e-12,
+			},
 			speedOfSound: 972,
 			temperatures: {
 				boil: 4.22, // does not solidify at SP
@@ -180,6 +188,11 @@ const elementData = [
 				2018: 16.5,
 			},
 			production: 55e3,
+			radius: {
+				atomic: 152e-12,
+				covalent: 128e-12,
+				vanDerWaals: 182e-12,
+			},
 			resistivity: 92.8e-9,
 			speedOfSound: 6000,
 			temperatures: {
@@ -226,6 +239,11 @@ const elementData = [
 				2020: 857,
 			},
 			production: 200,
+			radius: {
+				atomic: 112e-12,
+				covalent: 96e-12,
+				vanDerWaals: 153e-12,
+			},
 			resistivity: 36e-9,
 			speedOfSound: 12890,
 			temperatures: {
@@ -271,6 +289,11 @@ const elementData = [
 				2019: 3.68,
 			},
 			production: 1.8e6,
+			radius: {
+				atomic: 90e-12,
+				covalent: 84e-12,
+				vanDerWaals: 192e-12,
+			},
 			resistivity: 1e6,
 			speedOfSound: 16200,
 			temperatures: {
@@ -320,6 +343,10 @@ const elementData = [
 				2018: 0.122,
 			},
 			production: 1.03e6,
+			radius: {
+				covalent: (77e-12 + 73e-12 + 69e-12)/3,
+				vanDerWaals: 170e-12,
+			},
 			resistivity: 7.837e-6,
 			speedOfSound: 1470, // graphite
 			temperatures: {
@@ -365,6 +392,10 @@ const elementData = [
 				2001: 0.14,
 			},
 			production: 131e6,
+			radius: {
+				covalent: 71e-12,
+				vanDerWaals: 155e-12,
+			},
 			speedOfSound: 353,
 			temperatures: {
 				boil: 77.36,
@@ -411,6 +442,10 @@ const elementData = [
 				2001: 0.154,
 			},
 			production: 100e6,
+			radius: {
+				covalent: 66e-12,
+				vanDerWaals: 152e-12,
+			},
 			speedOfSound: 330,
 			temperatures: {
 				boil: 90.2,
@@ -455,6 +490,10 @@ const elementData = [
 				2017: 2,
 			},
 			production: 5.5e6,
+			radius: {
+				covalent: 64e-12,
+				vanDerWaals: 135e-12,
+			},
 			speedOfSound: 332,
 			temperatures: {
 				boil: 85.03,
@@ -496,6 +535,10 @@ const elementData = [
 				1999: 240,
 			},
 			production: 500,
+			radius: {
+				covalent: 58e-12,
+				vanDerWaals: 154e-12,
+			},
 			speedOfSound: 435,
 			temperatures: {
 				boil: 27.07,
@@ -541,6 +584,11 @@ const elementData = [
 				2020: 3,
 			},
 			production: 100e3,
+			radius: {
+				atomic: 186e-12,
+				covalent: 166e-12,
+				vanDerWaals: 227e-12,
+			},
 			resistivity: 47.7e-9,
 			speedOfSound: 3200,
 			temperatures: {
@@ -590,6 +638,11 @@ const elementData = [
 				2019: 2.32,
 			},
 			production: 748e3,
+			radius: {
+				atomic: 160e-12,
+				covalent: 141e-12,
+				vanDerWaals: 173e-12,
+			},
 			resistivity: 43.9e-9,
 			speedOfSound: 4940,
 			temperatures: {
@@ -639,6 +692,11 @@ const elementData = [
 				2019: 1.79,
 			},
 			production: 44.1e6,
+			radius: {
+				atomic: 143e-12,
+				covalent: 121e-12,
+				vanDerWaals: 184e-12,
+			},
 			resistivity: 26.5e-9,
 			speedOfSound: 5000,
 			temperatures: {
@@ -686,6 +744,11 @@ const elementData = [
 				2019: 1.7,
 			},
 			production: 8e6,
+			radius: {
+				atomic: 111e-12,
+				covalent: 111e-12,
+				vanDerWaals: 210e-12,
+			},
 			resistivity: 2.3e3,
 			speedOfSound: 8433,
 			temperatures: {
@@ -734,6 +797,10 @@ const elementData = [
 				2019: 2.69,
 			},
 			production: 910e3,
+			radius: {
+				covalent: 107e-12,
+				vanDerWaals: 180e-12,
+			},
 			resistivity: 1e-7, // https://periodictable.com/Elements/015/data.html
 			temperatures: {
 				boil: 550,
@@ -781,6 +848,10 @@ const elementData = [
 				2019: 0.0926,
 			},
 			production: 69e6,
+			radius: {
+				covalent: 105e-12,
+				vanDerWaals: 180e-12,
+			},
 			resistivity: 1e15,
 			temperatures: {
 				boil: 717.87,
@@ -824,6 +895,10 @@ const elementData = [
 			prices: {
 				2013: 0.082,
 			},
+			radius: {
+				covalent: 102e-12,
+				vanDerWaals: 175e-12,
+			},
 			speedOfSound: 206,
 			temperatures: {
 				boil: 239.11,
@@ -864,6 +939,10 @@ const elementData = [
 				2019: 0.931,
 			},
 			production: 700e3,
+			radius: {
+				covalent: 106e-12,
+				vanDerWaals: 188e-12,
+			},
 			speedOfSound: 323,
 			temperatures: {
 				boil: 87.3,
@@ -1249,6 +1328,11 @@ const elementData = [
 				2020: 0.424,
 			},
 			production: 1544e6,
+			radius: {
+				atomic: 126e-12,
+				covalent: 142e-12,
+				vanDerWaals: 194e-12,
+			},
 			resistivity: 96.1e-9,
 			speedOfSound: 5120,
 			temperatures: {

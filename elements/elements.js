@@ -118,6 +118,8 @@ class ChemElement {
 			this.prices = properties.prices;
 			/** @type {number} t/yr */
 			this.production = properties.production;
+			/** @type {*} atomic/empirical, covalent, vanDerWaals - all are in pm */
+			this.radius = properties.radius;
 			/** @type {number} Ωm @ STP */
 			this.resistivity = properties.resistivity;
 			/** @type {string}
@@ -160,6 +162,20 @@ class ChemElement {
 		// use last noble gas as a shorthand
 		const lng = elements.find(e => e.group === 18 && e.period === this.period-1);
 		return this.aufbau.replace(lng.aufbau, `[${lng.symbol}]`);
+	}
+	/** @returns {number|undefined} - avg. ratio to Iron (thus dimensionless) */
+	get avgRadius(){
+		if (!this.radius)
+			return undefined;
+		const ratios = [];
+		// iron has all the values we test - the specific element doesn't matter for our purposes as long as it does have all
+		if (this.radius.atomic)
+			ratios.push(this.radius.atomic / ChemElement.fromZ(26).radius.atomic);
+		if (this.radius.covalent)
+			ratios.push(this.radius.covalent / ChemElement.fromZ(26).radius.covalent);
+		if (this.radius.vanDerWaals)
+			ratios.push(this.radius.vanDerWaals / ChemElement.fromZ(26).radius.vanDerWaals);
+		return mean(ratios);
 	}
 	get category(){
 		if ([1, 6, 7, 8, 9, 15, 16, 17, 34, 35, 53].includes(this.z))
@@ -784,6 +800,11 @@ class ChemElement {
 				c = gradient1(remap(Math.max(0, Math.log(this.production)), [0, maxProd], [0, 1]));
 				break;
 			}
+			case 'radius':{
+				const rr = elements.filter(e => e.avgRadius).map(e => e.avgRadius);
+				c = gradient1(remap(this.avgRadius, [Math.min(...rr), Math.max(...rr)], [0, 1]));
+				break;
+			}
 			case 'resistivity':{
 				const maxRes = Math.log(1.5e-6);
 				if (maxRes < Math.log(this.resistivity)){
@@ -1287,4 +1308,4 @@ function main(){
 }
 
 main();
-// tableColor('poisson');
+tableColor('radius');
