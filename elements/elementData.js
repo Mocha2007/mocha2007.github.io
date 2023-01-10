@@ -2899,6 +2899,11 @@ const elementData = [
 				2021: 69.9e3,
 				2018: 61.8e3,
 			},
+			radius: {
+				atomic: 265e-12,
+				covalent: 244e-12,
+				vanDerWaals: 343e-12,
+			},
 			resistivity: 205e-9,
 			temperatures: {
 				boil: 944,
@@ -2942,6 +2947,11 @@ const elementData = [
 			oxidation: [2],
 			prices: {
 				2016: 0.261,
+			},
+			radius: {
+				atomic: 222e-12,
+				covalent: 215e-12,
+				vanDerWaals: 268e-12,
 			},
 			resistivity: 332e-9,
 			speedOfSound: 1620,
@@ -2990,6 +3000,10 @@ const elementData = [
 				2022: 5.09,
 				2020: 4.85,
 			},
+			radius: {
+				atomic: 187e-12,
+				covalent: 207e-12,
+			},
 			resistivity: 615e-9,
 			speedOfSound: 2475,
 			temperatures: {
@@ -3036,6 +3050,10 @@ const elementData = [
 			prices: {
 				2020: 31.4,
 			},
+			radius: {
+				atomic: 181.8e-12,
+				covalent: 204e-12,
+			},
 			resistivity: 828e-9,
 			speedOfSound: 2100,
 			temperatures: {
@@ -3081,6 +3099,10 @@ const elementData = [
 				2022: 135.59,
 				2021: 112.23,
 				2019: 103,
+			},
+			radius: {
+				atomic: 182e-12,
+				covalent: 203e-12,
 			},
 			resistivity: 700e-9,
 			speedOfSound: 2280,
@@ -3129,6 +3151,10 @@ const elementData = [
 				2019: 57.5,
 			},
 			production: 7000,
+			radius: {
+				atomic: 181e-12,
+				covalent: 201e-12,
+			},
 			resistivity: 643e-9,
 			speedOfSound: 2330,
 			temperatures: {
@@ -3166,6 +3192,10 @@ const elementData = [
 			oxidation: [3],
 			prices: {
 				2003: 460e3,
+			},
+			radius: {
+				atomic: 183e-12,
+				covalent: 199e-12,
 			},
 			resistivity: 750e-9,
 			temperatures: {
@@ -3213,6 +3243,10 @@ const elementData = [
 				2019: 13.9,
 			},
 			production: 700,
+			radius: {
+				atomic: 180e-12,
+				covalent: 198e-12,
+			},
 			resistivity: 940e-9,
 			speedOfSound: 2130,
 			temperatures: {
@@ -3255,6 +3289,10 @@ const elementData = [
 			oxidation: [2, 3],
 			prices: {
 				2020: 31.4,
+			},
+			radius: {
+				atomic: 180e-12,
+				covalent: 198e-12,
 			},
 			resistivity: 900e-9,
 			temperatures: {
@@ -3299,6 +3337,10 @@ const elementData = [
 			oxidation: [3],
 			prices: {
 				2020: 28.6,
+			},
+			radius: {
+				atomic: 180e-12,
+				covalent: 196e-12,
 			},
 			resistivity: 1.31e-6,
 			speedOfSound: 2680,
@@ -3346,6 +3388,10 @@ const elementData = [
 				2021: 1681.75,
 				2019: 658,
 			},
+			radius: {
+				atomic: 177e-12,
+				covalent: 194e-12,
+			},
 			resistivity: 1.15e-6,
 			speedOfSound: 2620,
 			temperatures: {
@@ -3392,6 +3438,10 @@ const elementData = [
 				2019: 307,
 			},
 			production: 100,
+			radius: {
+				atomic: 178e-12,
+				covalent: 192e-12,
+			},
 			resistivity: 926e-9,
 			speedOfSound: 2710,
 			temperatures: {
@@ -3437,6 +3487,10 @@ const elementData = [
 				2022: 58.72,
 				2020: 57.1,
 			},
+			radius: {
+				atomic: 176e-12,
+				covalent: 192e-12,
+			},
 			resistivity: 814e-9,
 			speedOfSound: 2760,
 			temperatures: {
@@ -3480,6 +3534,10 @@ const elementData = [
 			prices: {
 				2022: 21,
 				2020: 26.4,
+			},
+			radius: {
+				atomic: 176e-12,
+				covalent: 189e-12,
 			},
 			resistivity: 860e-9,
 			speedOfSound: 2830,
@@ -3525,6 +3583,10 @@ const elementData = [
 				2016: 6200,
 				2003: 3000,
 			},
+			radius: {
+				atomic: 176e-12,
+				covalent: 190e-12,
+			},
 			resistivity: 676e-9,
 			temperatures: {
 				boil: 2223,
@@ -3566,6 +3628,10 @@ const elementData = [
 			oxidation: [3],
 			prices: {
 				2020: 17.1,
+			},
+			radius: {
+				atomic: 176e-12,
+				covalent: 187e-12,
 			},
 			resistivity: 250e-9,
 			speedOfSound: 1590,
@@ -3610,6 +3676,10 @@ const elementData = [
 			oxidation: [3],
 			prices: {
 				2020: 643,
+			},
+			radius: {
+				atomic: 174e-12,
+				covalent: 187e-12,
 			},
 			resistivity: 582e-9,
 			temperatures: {
@@ -3656,6 +3726,10 @@ const elementData = [
 				2017: 900,
 			},
 			production: 10,
+			radius: {
+				atomic: 159e-12,
+				covalent: 175e-12,
+			},
 			resistivity: 331e-9,
 			speedOfSound: 1590,
 			temperatures: {
@@ -3706,6 +3780,10 @@ const elementData = [
 				2018: 151.8,
 			},
 			production: 1.8e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-tantalum.pdf
+			radius: {
+				atomic: 146e-12,
+				covalent: 170e-12,
+			},
 			resistivity: 131e-9,
 			speedOfSound: 3400,
 			temperatures: {
@@ -3756,6 +3834,10 @@ const elementData = [
 				2018: 30.3,
 			},
 			production: 37400,
+			radius: {
+				atomic: 139e-12,
+				covalent: 162e-12,
+			},
 			resistivity: 52.8e-9,
 			speedOfSound: 4620,
 			temperatures: {
@@ -3806,6 +3888,10 @@ const elementData = [
 				2020: 3580,
 			},
 			production: 45,
+			radius: {
+				atomic: 137e-12,
+				covalent: 151e-12,
+			},
 			resistivity: 193e-9,
 			speedOfSound: 4940,
 			temperatures: {
@@ -3857,6 +3943,10 @@ const elementData = [
 				2016: 12e3,
 			},
 			production: 1,
+			radius: {
+				atomic: 135e-12,
+				covalent: 144e-12,
+			},
 			resistivity: 81.2e-9,
 			temperatures: {
 				boil: 5285,
@@ -3908,6 +3998,10 @@ const elementData = [
 				2020: 1628.06/ounce, // year average
 			},
 			production: 3,
+			radius: {
+				atomic: 136e-12,
+				covalent: 141e-12,
+			},
 			resistivity: 47.1e-9,
 			speedOfSound: 4825,
 			temperatures: {
@@ -3960,6 +4054,11 @@ const elementData = [
 				2020: 887.94/ounce, // year average
 			},
 			production: 239,
+			radius: {
+				atomic: 139e-12,
+				covalent: 136e-12,
+				vanDerWaals: 175e-12,
+			},
 			resistivity: 105e-9,
 			speedOfSound: 2800,
 			temperatures: {
@@ -4014,6 +4113,11 @@ const elementData = [
 				2020: 44800,
 			},
 			production: 2310,
+			radius: {
+				atomic: 144e-12,
+				covalent: 136e-12,
+				vanDerWaals: 166e-12,
+			},
 			resistivity: 24.4e-9,
 			speedOfSound: 2030,
 			temperatures: {
@@ -4062,6 +4166,11 @@ const elementData = [
 				2016: 38.44,
 			},
 			production: 4e6, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-mercury.pdf
+			radius: {
+				atomic: 151e-12,
+				covalent: 132e-12,
+				vanDerWaals: 155e-12,
+			},
 			resistivity: 961e-9,
 			temperatures: {
 				boil: 629.88,
@@ -4104,6 +4213,11 @@ const elementData = [
 				2017: 4200,
 			},
 			production: 10,
+			radius: {
+				atomic: 170e-12,
+				covalent: 145e-12,
+				vanDerWaals: 196e-12,
+			},
 			resistivity: 180e-9,
 			speedOfSound: 818,
 			temperatures: {
@@ -4154,6 +4268,11 @@ const elementData = [
 				2019: 2,
 			},
 			production: 8725e3,
+			radius: {
+				atomic: 175e-12,
+				covalent: 146e-12,
+				vanDerWaals: 202e-12,
+			},
 			resistivity: 208e-9,
 			speedOfSound: 1190,
 			temperatures: {
@@ -4203,6 +4322,11 @@ const elementData = [
 				2019: 6.36,
 			},
 			production: 15e3,
+			radius: {
+				atomic: 156e-12,
+				covalent: 148e-12,
+				vanDerWaals: 207e-12,
+			},
 			resistivity: 1.29e-6,
 			speedOfSound: 1790,
 			temperatures: {
@@ -4247,6 +4371,11 @@ const elementData = [
 				2004: 49.2e12,
 			},
 			production: 100e-6,
+			radius: {
+				atomic: 168e-12,
+				covalent: 140e-12,
+				vanDerWaals: 197e-12,
+			},
 			resistivity: 400e-9,
 			temperatures: {
 				boil: 1235,
@@ -4316,6 +4445,10 @@ const elementData = [
 				decay: 1,
 			},
 			oxidation: [0],
+			radius: {
+				covalent: 150e-12,
+				vanDerWaals: 220e-12,
+			},
 			speedOfSound: 2*178-221, // extrapolated from Xenon and Krypton
 			temperatures: {
 				boil: 211.5,
