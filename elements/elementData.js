@@ -3444,7 +3444,7 @@ const elementData = [
 			electronegativity: 1.5,
 			ionization: [761e3, 1500e3],
 			modelColor: 'rgb(77, 166, 255)',
-			monisotopic: false,
+			monoisotopic: false,
 			nobleMetal: 0,
 			nucleosynthesis: {
 				sProcess: 0.41,
