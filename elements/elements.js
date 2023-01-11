@@ -237,6 +237,7 @@ class ChemElement {
 		// https://en.wikipedia.org/wiki/Bohr_model#Electron_energy_levels
 		const re = this.radius.atomic || this.radius.covalent || this.radius.vanDerWaals; // atomic should be most accurate
 		return Math.sqrt(this.z * k_e * eV * eV / (electron_mass * re));
+		// see also the answers on https://physics.stackexchange.com/questions/20187/how-fast-do-electrons-travel-in-an-atomic-orbital
 	}
 	/** @return {HTMLDivElement} DOM element */
 	get element(){
