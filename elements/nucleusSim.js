@@ -8,11 +8,13 @@ const fps = 30;
 const particle_count = 100;
 
 class Particle {
-	constructor(mass, charge, color, radius){
+	constructor(mass, charge, nucleon, color, radius){
 		/** @type {number} Mass in kg */
 		this.mass = mass;
 		/** @type {number} Charge in electrons */
 		this.charge = charge;
+		/** @type {boolean} is it a nucleon? */
+		this.nucleon = nucleon;
 		/** @type {string} color, purely aesthetic */
 		this.color = color;
 		/** @type {number} radius, purely aesthetic */
@@ -27,9 +29,9 @@ class Particle {
 	}
 	/** @type {Particle[]} */
 	static particles = [];
-	static proton = new Particle(1.67262192369e-27, elementary_charge, 'red', 5);
-	static neutron = new Particle(1.67492749804e-27, 0, 'grey', 5);
-	static electron = new Particle(9.1093837015e-31, -elementary_charge, 'blue', 1);
+	static proton = new Particle(1.67262192369e-27, elementary_charge, true, 'red', 5);
+	static neutron = new Particle(1.67492749804e-27, 0, true, 'grey', 5);
+	static electron = new Particle(9.1093837015e-31, -elementary_charge, false, 'blue', 1);
 }
 
 class ParticleInstance {
@@ -76,6 +78,16 @@ class ParticleInstance {
 				const accVector = splitForceXY(acc, Math.atan2(...dx));
 				this.future_v = this.future_v.map((x, i) => x + accVector[i]);
 			});
+		// (3) nuclear force
+		// rough estimate
+		if (this.particle.nucleon)
+			ParticleInstance.particles.filter(p => this !== p && p.particle.nucleon).forEach(p => {
+				const d2 = Math.sqrt(this.distSquared(p));
+				const acc = -reidForce(d2) / this.particle.mass * timestep;
+				const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
+				const accVector = splitForceXY(acc, Math.atan2(...dx));
+				this.future_v = this.future_v.map((x, i) => x + accVector[i]);
+			});
 		// todo make sure v < c
 		// now, update future coords
 		this.future_coords = this.coords.map((x, i) => x + this.v[i]*timestep);
@@ -93,6 +105,19 @@ class ParticleInstance {
 	}
 	/** @type {ParticleInstance[]} */
 	static particles = [];
+}
+
+/**
+ * EXTREMELY approximate; based on
+ * https://en.wikipedia.org/wiki/File:ReidForce2.jpg
+ * https://www.desmos.com/calculator/o9grawqkdo
+ * @param {number} x - distance in meters
+ */
+function reidForce(x){
+	x *= 1e15; // convert from m to fm
+	x = 3.2*x-4.2; // shift graph
+	const y = -2.25*Math.exp(-x) + 0.5*Math.exp(-2*x);
+	return y * 1e4; // convert from units of 10 kN to units of N
 }
 
 function randomCoords(){
