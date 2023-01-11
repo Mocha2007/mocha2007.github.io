@@ -62,12 +62,14 @@ class ParticleInstance {
 		// F = G m1m2 / r^2
 		// a = F/m
 		// a = G m(other) / r^2
+		/*
 		ParticleInstance.particles.filter(p => this !== p).forEach(p => {
 			const acc = grav * p.particle.mass / this.distSquared(p) * timestep;
 			const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
 			const accVector = splitForceXY(acc, Math.atan2(...dx));
 			this.future_v = this.future_v.map((x, i) => x + accVector[i]);
 		});
+		*/
 		// (2) electromagnetic force
 		// https://en.wikipedia.org/wiki/Coulomb%27s_law
 		// VERY similar to gravity...
