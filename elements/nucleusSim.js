@@ -1,8 +1,9 @@
-const timestep = 1; // in seconds
+const timestep = 1e-4; // in seconds
 const width_abs = 1e-9; // 1 nanometer
 const grav = 6.6743e-11; // N m^2 kg
 const c = 299792458;
-const EM_FORCE_CONST = 1e-36; // wild guess
+const coulomb_const = 8.988e9; // N m^2 / C^2
+const elementary_charge = 1.602176634e-19; // C
 const fps = 30;
 const particle_count = 100;
 
@@ -26,9 +27,9 @@ class Particle {
 	}
 	/** @type {Particle[]} */
 	static particles = [];
-	static proton = new Particle(1.67262192369e-27, 1, 'red', 5);
+	static proton = new Particle(1.67262192369e-27, elementary_charge, 'red', 5);
 	static neutron = new Particle(1.67492749804e-27, 0, 'grey', 5);
-	static electron = new Particle(9.1093837015e-31, -1, 'blue', 1);
+	static electron = new Particle(9.1093837015e-31, -elementary_charge, 'blue', 1);
 }
 
 class ParticleInstance {
@@ -66,11 +67,11 @@ class ParticleInstance {
 			this.future_v = this.future_v.map((x, i) => x + accVector[i]);
 		});
 		// (2) electromagnetic force
-		// https://en.wikipedia.org/wiki/Electromagnetism
-		// todo - this formula is a total guess and is certainly wrong!
+		// https://en.wikipedia.org/wiki/Coulomb%27s_law
+		// VERY similar to gravity...
 		if (this.particle.charge)
 			ParticleInstance.particles.filter(p => this !== p && p.particle.charge).forEach(p => {
-				const acc = EM_FORCE_CONST * p.particle.charge * -this.particle.charge / this.distSquared(p) * timestep;
+				const acc = coulomb_const * p.particle.charge * -this.particle.charge / this.distSquared(p) * timestep;
 				const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
 				const accVector = splitForceXY(acc, Math.atan2(...dx));
 				this.future_v = this.future_v.map((x, i) => x + accVector[i]);
