@@ -1,0 +1,27 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+<script href="../common.js"></script>
+<script href="nucleusSim.js"></script>
+<style>
+svg {
+	background-color: black;
+	user-select: none;
+}
+text {
+	fill: white;
+}
+.button, .char, .overline {
+	font-size: 30px;
+}
+</style>
+<!-- BEGINNING -->
+<!--
+<text class="button" onclick="onlyNucleons = !onlyNucleons;" y="25">Only p, n, e</text>
+<text class="button" onclick="stellarFuel = !stellarFuel;" y="50">Only stellar Fuel</text>
+-->
+<g id="canvas">
+</g>
+<!-- END -->
+<script>
+	init();
+</script>
+</svg>
