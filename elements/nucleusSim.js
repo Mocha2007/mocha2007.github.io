@@ -82,8 +82,8 @@ class ParticleInstance {
 		// rough estimate
 		if (this.particle.nucleon)
 			ParticleInstance.particles.filter(p => this !== p && p.particle.nucleon).forEach(p => {
-				const d2 = Math.sqrt(this.distSquared(p));
-				const acc = reidForce(d2) / this.particle.mass * timestep;
+				const d = Math.sqrt(this.distSquared(p));
+				const acc = reidForce(d) / this.particle.mass * timestep;
 				const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
 				const accVector = splitForceXY(acc, Math.atan2(...dx));
 				this.future_v = this.future_v.map((x, i) => x + accVector[i]);
