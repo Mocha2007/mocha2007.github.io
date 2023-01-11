@@ -86,7 +86,7 @@ class ChemElement {
 			}
 			/** string => true|false|0.5 */
 			this.categories = properties.categories;
-			/** @type {string} */
+			/** @type {number} */
 			this.covalentRadius = properties.covalentRadius;
 			/** @type {string} */
 			this.crystal = properties.crystal;
@@ -579,6 +579,13 @@ class ChemElement {
 				const densest = Math.sqrt(
 					Math.max(...elements.filter(e => e.density).map(e => e.density)));
 				c = gradient1(Math.sqrt(this.density)/densest);
+				break;
+			}
+			case 'density2':{
+				const rr = elements.filter(e => e.avgRadius)
+					.map(e => Math.pow(e.mass/Math.pow(e.avgRadius, 3), 1));
+				c = gradient1(remap(Math.pow(this.mass/Math.pow(this.avgRadius, 3), 1),
+					[Math.min(...rr), Math.max(...rr)], [0, 1]));
 				break;
 			}
 			case 'discovery':{
@@ -1308,4 +1315,4 @@ function main(){
 }
 
 main();
-tableColor('radius');
+// tableColor('density2');
