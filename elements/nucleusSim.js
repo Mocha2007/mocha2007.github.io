@@ -28,7 +28,7 @@ class Particle {
 	static particles = [];
 	static proton = new Particle(1, 1, true, 'red', 5);
 	static neutron = new Particle(1, 0, true, 'grey', 5);
-	static electron = new Particle(1e-3, -1, false, 'blue', 1);
+	static electron = new Particle(1e-3, -1, false, '#8ff', 1);
 }
 
 class ParticleInstance {
