@@ -39,7 +39,7 @@ class ParticleInstance {
 		/** @type {Particle} */
 		this.particle = particle;
 		this.coords = randomCoords();
-		this.v = [0, 0];
+		this.v = [random.uniform(-1, 1), random.uniform(-1, 1)].map(x => 0*1e-10*x);
 		this.future_coords = [,];
 		this.future_v = [,];
 		ParticleInstance.particles.push(this);
