@@ -1,4 +1,4 @@
-const timestep = 1e-4; // in seconds
+const timestep = 1e-4; // elapsed seconds per tick
 const width_abs = 1e-9; // 1 nanometer
 const grav = 6.6743e-11; // N m^2 kg
 const c = 299792458;
