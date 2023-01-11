@@ -1,9 +1,6 @@
 const timestep = 1e-4; // elapsed seconds per tick
 const width_abs = 1e-9; // 1 nanometer
-const grav = 6.6743e-11; // N m^2 kg
 const c = 299792458;
-const coulomb_const = 8.988e9; // N m^2 / C^2
-const elementary_charge = 1.602176634e-19; // C
 const fps = 30;
 const particle_count = 100;
 
@@ -29,9 +26,9 @@ class Particle {
 	}
 	/** @type {Particle[]} */
 	static particles = [];
-	static proton = new Particle(1.67262192369e-27, elementary_charge, true, 'red', 5);
-	static neutron = new Particle(1.67492749804e-27, 0, true, 'grey', 5);
-	static electron = new Particle(9.1093837015e-31, -elementary_charge, false, 'blue', 1);
+	static proton = new Particle(1, 1, true, 'red', 5);
+	static neutron = new Particle(1, 0, true, 'grey', 5);
+	static electron = new Particle(1e-3, -1, false, 'blue', 1);
 }
 
 class ParticleInstance {
@@ -56,18 +53,13 @@ class ParticleInstance {
 	distSquared(other){
 		return sum(this.coords.map((x, i) => (x-other.coords[i])**2));
 	}
-	/** @param {ParticleInstance} other */
-	vSquared(other){
-		return sum(this.v.map((x, i) => (x-other.v[i])**2));
-	}
 	pre_tick(){
 		this.future_v = this.v.map(x => x); // copy
-		// (1) electromagnetic force
-		// https://en.wikipedia.org/wiki/Coulomb%27s_law
-		// VERY similar to gravity...
+		// (1) "electromagnetic force"
 		if (this.particle.charge)
-			ParticleInstance.particles.filter(p => this !== p && p.particle.charge).forEach(p => {
-				const acc = coulomb_const * p.particle.charge * -this.particle.charge / this.distSquared(p) * timestep;
+			ParticleInstance.particles.filter(p => this !== p).forEach(p => {
+				const d2 = this.distSquared(p);
+				const acc = -1e-1 * this.particle.charge * p.particle.charge * stayCloseishForce(d2, 30e-15) / (this.particle.mass) * timestep;
 				const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
 				const accVector = splitForceXY(acc, Math.atan2(...dx));
 				this.future_v = this.future_v.map((x, i) => x + accVector[i]);
@@ -76,15 +68,13 @@ class ParticleInstance {
 		if (this.particle.nucleon)
 			ParticleInstance.particles.filter(p => this !== p).forEach(p => {
 				const d2 = this.distSquared(p);
-				const v2 = this.vSquared(p);
-				const acc = stayCloseishForce(d2, 10e-15) / (this.particle.mass) * timestep;
-				// debugger;
+				const acc = stayCloseishForce(d2, 1e-15) / (this.particle.mass) * timestep;
 				const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
 				const accVector = splitForceXY(acc, Math.atan2(...dx));
 				this.future_v = this.future_v.map((x, i) => x + accVector[i]);
 			});
 		// (3) "YOU'RE GOING TOO FAST" universal force
-		const MEDIUM_DECEL_CONST = -1e9;
+		const MEDIUM_DECEL_CONST = -1e10;
 		this.future_v = this.future_v.map(x => x + Math.sign(x)*MEDIUM_DECEL_CONST*timestep*x**2);
 		// make sure v < c
 		this.future_v = this.future_v.map(x => clamp(x, -c, c));
@@ -120,7 +110,7 @@ function reidForce(x){
 }
 
 function stayCloseishForce(dist, r){
-	return 1e-19 * -Math.atan(dist-r);
+	return 1e8 * -Math.atan(dist-r);
 }
 
 function randomCoords(){
