@@ -2,7 +2,6 @@ const timestep = 1e-4; // elapsed seconds per tick
 const width_abs = 1e-9; // 1 nanometer
 const c = 299792458;
 const fps = 30;
-const particle_count = 100;
 
 class Particle {
 	constructor(mass, charge, nucleon, color, radius){
@@ -123,8 +122,12 @@ function splitForceXY(force, angle){
 
 function init(){
 	console.info("Atom Bullshit");
-	// randomly generate shit
-	range(particle_count).forEach(_ => new ParticleInstance(random.choice(Particle.particles)));
+	// Fe-56
+	range(30).forEach(_ => new ParticleInstance(Particle.neutron));
+	range(26).forEach(_ => {
+		new ParticleInstance(Particle.proton);
+		new ParticleInstance(Particle.electron);
+	});
 	// sim
 	setInterval(() => {
 		ParticleInstance.particles.forEach(p => p.pre_tick());
