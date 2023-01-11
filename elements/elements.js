@@ -583,8 +583,8 @@ class ChemElement {
 			}
 			case 'density2':{
 				const rr = elements.filter(e => e.avgRadius)
-					.map(e => Math.pow(e.mass/Math.pow(e.avgRadius, 3), 1));
-				c = gradient1(remap(Math.pow(this.mass/Math.pow(this.avgRadius, 3), 1),
+					.map(e => e.mass/Math.pow(e.avgRadius, 3));
+				c = gradient1(remap(this.mass/Math.pow(this.avgRadius, 3),
 					[Math.min(...rr), Math.max(...rr)], [0, 1]));
 				break;
 			}
