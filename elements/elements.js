@@ -5,7 +5,10 @@
 /* exported highlightCategory, highlightFunction, hlCull, setDecayChainLength, tableColor */
 'use strict';
 
+const electron_mass = 9.1093837015e-31; // kg; appx; electron mass
 const eV = 1.602176634e-19; // J; exact; electronvolt
+const k_e = 8.9875517923e9; // N m^2 / C^2; appx; Coulomb constant
+const lightSpeed = 299792458; // m/s; exact; speed of light in a vacuum
 const standardTemperature = 273.15; // K; exact; melting point of water
 const stp = [273.15, 1e5]; // [K, Pa]
 
@@ -227,6 +230,13 @@ class ChemElement {
 			return 'p';
 		// this is correct up to z = 170, highly unlikely I'll be around to ever see this table broken
 		return this.group ? 'd' : 120 < this.z && this.z < 139 ? 'g' : 'f';
+	}
+	get electronSpeed(){
+		if (!this.radius)
+			return undefined;
+		// https://en.wikipedia.org/wiki/Bohr_model#Electron_energy_levels
+		const re = this.radius.atomic || this.radius.covalent || this.radius.vanDerWaals; // atomic should be most accurate
+		return Math.sqrt(this.z * k_e * eV * eV / (electron_mass * re));
 	}
 	/** @return {HTMLDivElement} DOM element */
 	get element(){
