@@ -27,7 +27,7 @@ class Particle {
 	/** @type {Particle[]} */
 	static particles = [];
 	static proton = new Particle(1, 1, true, 'red', 5);
-	static neutron = new Particle(1, 0, true, 'grey', 5);
+	// static neutron = new Particle(1, 0, true, 'grey', 5);
 	static electron = new Particle(1e-3, -1, false, 'blue', 1);
 }
 
@@ -59,7 +59,7 @@ class ParticleInstance {
 		if (this.particle.charge)
 			ParticleInstance.particles.filter(p => this !== p).forEach(p => {
 				const d2 = this.distSquared(p);
-				const acc = -1e-1 * this.particle.charge * p.particle.charge * stayCloseishForce(d2, 30e-15) / (this.particle.mass) * timestep;
+				const acc = -1e-8 * this.particle.charge * p.particle.charge * stayCloseishForce(d2, 10e-15) / (this.particle.mass) * timestep;
 				const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
 				const accVector = splitForceXY(acc, Math.atan2(...dx));
 				this.future_v = this.future_v.map((x, i) => x + accVector[i]);
@@ -68,7 +68,7 @@ class ParticleInstance {
 		if (this.particle.nucleon)
 			ParticleInstance.particles.filter(p => this !== p).forEach(p => {
 				const d2 = this.distSquared(p);
-				const acc = stayCloseishForce(d2, 1e-15) / (this.particle.mass) * timestep;
+				const acc = 1e-7 * stayCloseishForce(d2, 1e-15) / (this.particle.mass) * timestep;
 				const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
 				const accVector = splitForceXY(acc, Math.atan2(...dx));
 				this.future_v = this.future_v.map((x, i) => x + accVector[i]);
@@ -110,7 +110,8 @@ function reidForce(x){
 }
 
 function stayCloseishForce(dist, r){
-	return 1e8 * -Math.atan(dist-r);
+	dist /= r;
+	return (-Math.exp(-Math.pow(5/3 * dist - 5/6, 2)) + 0.5)/dist;
 }
 
 function randomCoords(){
