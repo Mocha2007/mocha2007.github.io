@@ -314,6 +314,11 @@ class ChemElement {
 	get stable(){
 		return this.isotopes.some(i => i.stable);
 	}
+	get valence(){
+		if (this.z <= 2)
+			return this.z;
+		return this.z - elements.find(e => e.group === 18 && e.period === this.period-1).z;
+	}
 	createElement(){
 		const div = document.createElement('div');
 		div.id = this.name;
