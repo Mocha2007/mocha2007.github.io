@@ -1,6 +1,8 @@
 const timestep = 1; // in seconds
 const width_abs = 1e-9; // 1 nanometer
 const grav = 6.6743e-11; // N m^2 kg
+const c = 299792458;
+const EM_FORCE_CONST = 1e-36; // wild guess
 const fps = 30;
 const particle_count = 100;
 
@@ -64,8 +66,16 @@ class ParticleInstance {
 			this.future_v = this.future_v.map((x, i) => x + accVector[i]);
 		});
 		// (2) electromagnetic force
-		// todo
 		// https://en.wikipedia.org/wiki/Electromagnetism
+		// todo - this formula is a total guess and is certainly wrong!
+		if (this.particle.charge)
+			ParticleInstance.particles.filter(p => this !== p && p.particle.charge).forEach(p => {
+				const acc = EM_FORCE_CONST * p.particle.charge * -this.particle.charge / this.distSquared(p) * timestep;
+				const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
+				const accVector = splitForceXY(acc, Math.atan2(...dx));
+				this.future_v = this.future_v.map((x, i) => x + accVector[i]);
+			});
+		// todo make sure v < c
 		// now, update future coords
 		this.future_coords = this.coords.map((x, i) => x + this.v[i]*timestep);
 	}
