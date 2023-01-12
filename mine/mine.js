@@ -95,16 +95,15 @@ const mine = {
 				return Block.FromName('dirt');
 			return Block.FromName('grass');
 		})));
-		range(50).forEach(_ => w.createVein(
-			Block.FromName('coal'),
-			this.random.x,
-			Math.floor(random.normal(16, 16)),
-			8));
-		range(25).forEach(_ => w.createVein(
-			Block.FromName('iron_ore'),
-			this.random.x,
-			Math.floor(random.normal(48, 16)),
-			4));
+		['coal', 'copper_ore', 'iron_ore'].forEach((s, i) => {
+			range(Math.ceil(50/(i+1)))
+				.forEach(_ => w.createVein(
+					Block.FromName(s),
+					this.random.x,
+					Math.floor(random.normal(16*(i+1), 16)),
+					Math.ceil((16/(i+1))))
+				);
+		});
 		return w;
 	},
 	init(){
