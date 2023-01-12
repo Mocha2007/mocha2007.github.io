@@ -1,0 +1,18 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+<script href="../common.js"></script>
+<script href="mine.js"></script>
+<script href="mineData.js"></script>
+<style>
+svg {
+	background-color: black;
+	user-select: none;
+}
+text {
+	fill: white;
+}
+</style>
+<g id="canvas"></g>
+<script>
+	mine.init();
+</script>
+</svg>
