@@ -98,7 +98,7 @@ const mine = {
 		['coal', 'copper_ore', 'tin_ore', 'iron_ore',
 		'silver_ore', 'gold_ore', 'platinum_ore'].forEach((s, i) => {
 			const veins = Math.ceil(50/(i+1));
-			const veinSize = Math.ceil((16/(i+1)));
+			const veinSize = Math.ceil((8/(i+1)**0.5));
 			console.log(`generating ${veins} ${veinSize}-block %c${s}%cveins (total: ${veins*veinSize})`,
 				`background-color:grey;color: ${Block.FromName(s).color};text-shadow: 0 0 1vw black, 0 0 1vw black, 0 0 1vw black`);
 			range(veins)
