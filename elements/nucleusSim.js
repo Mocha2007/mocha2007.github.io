@@ -2,12 +2,12 @@ const timestep = 1e-4; // elapsed seconds per tick
 const width_abs = 1e-9; // 1 nanometer
 const fps = 60;
 const FORCE_CUTOFF_RATIO = 0; // prevent yeeting
-const DESIRED_E_DIST = 20e-12;
-const DESIRED_2_DIST = 5e-12;
-const FORCE_E_STRENGTH = 1e-30; // electromagnetic force analogue
-const FORCE_2_STRENGTH = 1e10; // nuclear force analogue
+const MAX_E = 1e-1;
+const MAX_2 = 1e-1;
+const FORCE_E_STRENGTH = 1e-7; // electromagnetic force analogue
+const FORCE_2_STRENGTH = 1e-8; // nuclear force analogue
 const MEDIUM_DECEL_CONST = -1e10;
-const MAX_V = 3.5e-8; // any slower and electrons get trapped
+const MAX_V = 1e-7; // any slower and electrons get trapped
 
 class Particle {
 	constructor(mass, charge, nucleon, color, radius){
@@ -64,10 +64,8 @@ class ParticleInstance {
 		if (this.particle.charge)
 			ParticleInstance.particles.filter(p => this !== p && p.particle.charge).forEach(p => {
 				let d2 = this.distSquared(p);
-				if (d2 < Math.pow(DESIRED_E_DIST * FORCE_CUTOFF_RATIO, 2))
-					d2 = Math.pow(DESIRED_E_DIST * FORCE_CUTOFF_RATIO, 2); // don't break pls
 				const acc = FORCE_E_STRENGTH * -this.particle.charge * p.particle.charge
-					/ d2
+					/ stayCloseishForce(d2, MAX_E)
 					/ this.particle.mass * timestep;
 				const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
 				const accVector = splitForceXY(acc, Math.atan2(...dx));
@@ -77,10 +75,8 @@ class ParticleInstance {
 		if (this.particle.nucleon)
 			ParticleInstance.particles.filter(p => this !== p && p.particle.nucleon).forEach(p => {
 				let d2 = this.distSquared(p);
-				if (d2 < Math.pow(DESIRED_2_DIST * FORCE_CUTOFF_RATIO, 2))
-					d2 = Math.pow(DESIRED_2_DIST * FORCE_CUTOFF_RATIO, 2); // don't break pls
 				const acc = FORCE_2_STRENGTH
-					* d2
+					* stayCloseishForce(d2, MAX_2)
 					/ this.particle.mass * timestep;
 				const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
 				const accVector = splitForceXY(acc, Math.atan2(...dx));
@@ -109,10 +105,11 @@ class ParticleInstance {
 }
 
 /** Attractive force beyond r; repulsive force within r 
- * the maximum of this function is (sqrt(2)r, 1/(4r^2)) and the root is (r, 0)
+ * the maximum of this function is (0, ???) and there are no roots
 */
 function stayCloseishForce(dist, r){
-	return -Math.pow(r/dist, 2) + 1/dist;
+	dist += r;
+	return 1/dist - r/4 * Math.pow(dist, -2);
 }
 
 function randomCoords(){
