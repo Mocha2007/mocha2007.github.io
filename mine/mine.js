@@ -15,7 +15,6 @@ class Block {
 		rect.setAttribute('height', mine.tileSize);
 		rect.setAttribute('width', mine.tileSize);
 		rect.setAttribute('fill', this.color);
-		rect.setAttribute('title', this.name);
 		rect.classList.add(`b${this.name}`);
 		return rect;
 	}
