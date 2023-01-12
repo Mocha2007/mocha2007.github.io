@@ -96,12 +96,16 @@ const mine = {
 			return Block.FromName('grass');
 		})));
 		['coal', 'copper_ore', 'iron_ore', 'silver_ore', 'gold_ore', 'platinum_ore'].forEach((s, i) => {
-			range(Math.ceil(50/(i+1)))
+			const veins = Math.ceil(50/(i+1));
+			const veinSize = Math.ceil((16/(i+1)));
+			console.log(`generating ${veins} ${veinSize}-block %c${s}%cveins (total: ${veins*veinSize})`,
+				`background-color:grey;color: ${Block.FromName(s).color}`);
+			range(veins)
 				.forEach(_ => w.createVein(
 					Block.FromName(s),
 					this.random.x,
 					Math.floor(random.normal(16*(i+1), 16)),
-					Math.ceil((16/(i+1))))
+					veinSize)
 				);
 		});
 		return w;
