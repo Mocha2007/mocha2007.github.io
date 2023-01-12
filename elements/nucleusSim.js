@@ -109,7 +109,7 @@ class ParticleInstance {
 }
 
 /** Attractive force beyond r; repulsive force within r 
- * the maximum of this function is (sqrt(2)r, 1/(4z^2)) and the root is x = 0
+ * the maximum of this function is (sqrt(2)r, 1/(4r^2)) and the root is x = 0
 */
 function stayCloseishForce(dist, r){
 	return -Math.pow(r/dist, 2) + 1/dist;
