@@ -89,10 +89,11 @@ const mine = {
 			if (y < 5 && y/5 < random.random())
 				return Block.FromName('bedrock');
 			if (y < this.worldSettings.height-4)
-				return Block.FromName('stone')
+				return Block.FromName('stone');
 			if (y < this.worldSettings.height-1)
-				return Block.FromName('dirt')
-			return Block.FromName('grass');
+				return Block.FromName('dirt');
+			if (y < this.worldSettings.height)
+				return Block.FromName('grass');
 		})));
 		range(50).forEach(_ => w.createVein(
 			Block.FromName('coal'),
