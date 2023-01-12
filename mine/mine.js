@@ -116,9 +116,9 @@ const mine = {
 		Block.blocks.forEach(b => this.style.insertRule(`.b${b.name}{fill:${b.color}}`));
 		// generate world
 		const w = this.gen();
-		console.info('World Generated.');
+		console.log('World Generated.');
 		w.reloadTiles();
-		console.info('World Rendered.');
+		console.log('World Rendered.');
 	},
 	player: {
 		x: 64,
