@@ -1,7 +1,7 @@
 const timestep = 1e-4; // elapsed seconds per tick
 const width_abs = 1e-9; // 1 nanometer
 const fps = 30;
-const FORCE_CUTOFF_RATIO = 0.8; // prevent yeeting
+const FORCE_CUTOFF_RATIO = 0; // prevent yeeting
 const DESIRED_E_DIST = 400e-15;
 const DESIRED_2_DIST = 10e-15;
 const FORCE_E_STRENGTH = 1e-3; // electromagnetic force analogue
@@ -120,9 +120,9 @@ function splitForceXY(force, angle){
 
 function init(){
 	console.info("Atom Bullshit");
-	// Fe-56
-	range(30).forEach(_ => new ParticleInstance(Particle.neutron));
-	range(26).forEach(_ => {
+	// Ag-109
+	range(62).forEach(_ => new ParticleInstance(Particle.neutron));
+	range(47).forEach(_ => {
 		new ParticleInstance(Particle.proton);
 		new ParticleInstance(Particle.electron);
 	});
