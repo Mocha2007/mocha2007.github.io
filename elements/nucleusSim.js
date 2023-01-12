@@ -8,6 +8,7 @@ const FORCE_E_STRENGTH = 1e-7; // electromagnetic force analogue
 const FORCE_2_STRENGTH = 1e-8; // nuclear force analogue
 const MEDIUM_DECEL_CONST = -2e9;
 const MAX_V = 1;
+const DEBUG = false;
 
 class Particle {
 	constructor(mass, charge, nucleon, color, radius){
@@ -54,6 +55,10 @@ class ParticleInstance {
 		}
 		return this._elem;
 	}
+	get screenCoords(){
+		const scale = window.outerWidth / width_abs; // px / m
+		return this.coords.map(x => x * scale);
+	}
 	/** @param {ParticleInstance} other */
 	distSquared(other){
 		return sum(this.coords.map((x, i) => (x-other.coords[i])**2));
@@ -94,10 +99,21 @@ class ParticleInstance {
 		this.v = this.future_v;
 		// update element
 		this.updateElemCoords();
+		// trail
+		if (DEBUG && ParticleInstance.particles[ParticleInstance.particles.length-1] === this)
+			this.trail();
+	}
+	trail(){
+		let trail = document.getElementById('trail');
+		const s = trail.getAttribute('points');
+		const [x, y] = this.screenCoords;
+		if (s)
+			trail.setAttribute('points', `${s} ${x},${y}`);
+		else
+			trail.setAttribute('points', `${x},${y}`);
 	}
 	updateElemCoords(){
-		const scale = window.outerWidth / width_abs; // px / m
-		const [x, y] = this.coords.map(x => x * scale);
+		const [x, y] = this.screenCoords;
 		this._elem.setAttribute('transform', `translate(${x}, ${y})`);
 	}
 	/** @type {ParticleInstance[]} */

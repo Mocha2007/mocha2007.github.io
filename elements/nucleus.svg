@@ -12,6 +12,10 @@ text {
 .button, .char, .overline {
 	font-size: 30px;
 }
+#trail {
+	fill: none;
+	stroke: magenta;
+}
 </style>
 <!-- BEGINNING -->
 <!--
@@ -19,6 +23,7 @@ text {
 <text class="button" onclick="stellarFuel = !stellarFuel;" y="50">Only stellar Fuel</text>
 -->
 <g id="canvas">
+	<polyline id="trail"/>
 </g>
 <!-- END -->
 <script>
