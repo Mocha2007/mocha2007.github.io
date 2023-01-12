@@ -2292,7 +2292,12 @@ function main(){
 	console.info('%cMocha\'s Space Game Alpha',
 		'background-color: black; border-radius: 20px; color: cyan; font-size: 4.5em; font-weight: bolder; padding: 0 10px 0 10px;');
 	// load
-	Game.save.load(storage.read('spacegame')); // sadly can't specify as default cause VSC bitches about it
+	try {
+		Game.save.load(storage.read('spacegame')); // sadly can't specify as default cause VSC bitches about it
+	}
+	catch (_){
+		// ignore
+	}
 	document.getElementById('input_fps').value = Game.settings.fps;
 	// set up RNG
 	Game.rng.init();
