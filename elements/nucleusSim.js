@@ -2,11 +2,11 @@ const timestep = 1e-4; // elapsed seconds per tick
 const width_abs = 1e-9; // 1 nanometer
 const fps = 60;
 const FORCE_CUTOFF_RATIO = 0; // prevent yeeting
-const DESIRED_E_DIST = 100e-12;
+const DESIRED_E_DIST = 20e-12;
 const DESIRED_2_DIST = 5e-12;
-const FORCE_E_STRENGTH = 1e-32; // electromagnetic force analogue
-const FORCE_2_STRENGTH = 1e-28; // nuclear force analogue
-const MEDIUM_DECEL_CONST = -1e11;
+const FORCE_E_STRENGTH = 1e-30; // electromagnetic force analogue
+const FORCE_2_STRENGTH = 1e10; // nuclear force analogue
+const MEDIUM_DECEL_CONST = -1e10;
 const MAX_V = 3.5e-8; // any slower and electrons get trapped
 
 class Particle {
@@ -66,8 +66,8 @@ class ParticleInstance {
 				let d2 = this.distSquared(p);
 				if (d2 < Math.pow(DESIRED_E_DIST * FORCE_CUTOFF_RATIO, 2))
 					d2 = Math.pow(DESIRED_E_DIST * FORCE_CUTOFF_RATIO, 2); // don't break pls
-				const acc = FORCE_E_STRENGTH * this.particle.charge * p.particle.charge
-					* stayCloseishForce(d2, DESIRED_E_DIST)
+				const acc = FORCE_E_STRENGTH * -this.particle.charge * p.particle.charge
+					/ d2
 					/ this.particle.mass * timestep;
 				const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
 				const accVector = splitForceXY(acc, Math.atan2(...dx));
@@ -80,7 +80,7 @@ class ParticleInstance {
 				if (d2 < Math.pow(DESIRED_2_DIST * FORCE_CUTOFF_RATIO, 2))
 					d2 = Math.pow(DESIRED_2_DIST * FORCE_CUTOFF_RATIO, 2); // don't break pls
 				const acc = FORCE_2_STRENGTH
-					* stayCloseishForce(d2, DESIRED_2_DIST)
+					* d2
 					/ this.particle.mass * timestep;
 				const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
 				const accVector = splitForceXY(acc, Math.atan2(...dx));
