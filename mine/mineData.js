@@ -6,6 +6,7 @@ new Block('stone', 'grey');
 new Block('wood', 'brown');
 new Block('coal', '#222');
 new Block('copper_ore', '#f80');
+new Block('tin_ore', '#999');
 new Block('iron_ore', '#fa8');
 new Block('silver_ore', '#ccc');
 new Block('gold_ore', '#fc0');

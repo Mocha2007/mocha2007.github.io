@@ -95,7 +95,8 @@ const mine = {
 				return Block.FromName('dirt');
 			return Block.FromName('grass');
 		})));
-		['coal', 'copper_ore', 'iron_ore', 'silver_ore', 'gold_ore', 'platinum_ore'].forEach((s, i) => {
+		['coal', 'copper_ore', 'tin_ore', 'iron_ore',
+		'silver_ore', 'gold_ore', 'platinum_ore'].forEach((s, i) => {
 			const veins = Math.ceil(50/(i+1));
 			const veinSize = Math.ceil((16/(i+1)));
 			console.log(`generating ${veins} ${veinSize}-block %c${s}%cveins (total: ${veins*veinSize})`,
