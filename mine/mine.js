@@ -15,6 +15,7 @@ class Block {
 		rect.setAttribute('height', mine.tileSize);
 		rect.setAttribute('width', mine.tileSize);
 		rect.setAttribute('fill', this.color);
+		rect.setAttribute('title', this.name);
 		rect.classList.add(`b${this.name}`);
 		return rect;
 	}
@@ -77,7 +78,7 @@ class World {
 			const blockElem = b.elem;
 			blockElem.classList.add(`x${x}`);
 			blockElem.classList.add(`y${y}`);
-			blockElem.setAttribute('transform', `translate(${x*mine.tileSize}, ${(mine.worldSettings.height-y)*mine.tileSize})`);
+			blockElem.setAttribute('transform', `translate(${x*mine.tileSize}, ${(y)*mine.tileSize})`);
 			this.elem.appendChild(blockElem);
 		}));
 	}
@@ -85,25 +86,24 @@ class World {
 
 const mine = {
 	gen(){
-		const w = new World(range(this.worldSettings.height).map(y => range(this.worldSettings.width).map(x => {
-			if (y < 5 && y/5 < random.random())
+		const w = new World(range(this.worldSettings.depth).map(y => range(this.worldSettings.width).map(x => {
+			if (this.worldSettings.depth - 5 < y && (this.worldSettings.depth - y - 1)/5 < random.random())
 				return Block.FromName('bedrock');
-			if (y < this.worldSettings.height-4)
+			if (5 < y)
 				return Block.FromName('stone');
-			if (y < this.worldSettings.height-1)
+			if (2 < y)
 				return Block.FromName('dirt');
-			if (y < this.worldSettings.height)
-				return Block.FromName('grass');
+			return Block.FromName('grass');
 		})));
 		range(50).forEach(_ => w.createVein(
 			Block.FromName('coal'),
-			random.randint(0, this.worldSettings.width-1),
-			Math.floor(random.normal(48, 16)),
+			this.random.x,
+			Math.floor(random.normal(16, 16)),
 			8));
 		range(25).forEach(_ => w.createVein(
 			Block.FromName('iron_ore'),
-			random.randint(0, this.worldSettings.width-1),
-			Math.floor(random.normal(16, 16)),
+			this.random.x,
+			Math.floor(random.normal(48, 16)),
 			4));
 		return w;
 	},
@@ -118,9 +118,14 @@ const mine = {
 		x: 64,
 		y: 64,
 	},
-	tileSize: 12,
+	random: {
+		get x(){
+			return random.randint(0, mine.worldSettings.width-1);
+		},
+	},
+	tileSize: 4,
 	worldSettings: {
-		height: 64,
-		width: 128,
+		depth: 64*3,
+		width: 64*2,
 	},
 };
