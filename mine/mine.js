@@ -42,6 +42,25 @@ class World {
 	constructor(data){
 		this.data = data;
 	}
+	get elem(){
+		if (!this._elem){
+			const g = createSvgElement('g');
+			g.id = 'world';
+			document.getElementById('canvas').appendChild(g);
+			this._elem = g;
+		}
+		return this._elem;
+	}
+	reloadTiles(){
+		this.elem.innerHTML = '';
+		this.data.forEach((r, y) => r.forEach((b, x) => {
+			const blockElem = b.elem;
+			blockElem.classList.add(`x${x}`);
+			blockElem.classList.add(`y${y}`);
+			blockElem.setAttribute('transform', `translate(${x*mine.tileSize}, ${(mine.worldSettings.height-y)*mine.tileSize})`);
+			this.elem.appendChild(blockElem);
+		}));
+	}
 }
 
 const mine = {
@@ -58,15 +77,16 @@ const mine = {
 	},
 	init(){
 		console.info('MoMine');
-		this.gen();
+		const w = this.gen();
 		console.info('World Generated.');
-		// todo
+		w.reloadTiles();
+		console.info('World Rendered.');
 	},
 	player: {
-		x: 0,
+		x: 64,
 		y: 64,
 	},
-	tileSize: 32,
+	tileSize: 16,
 	worldSettings: {
 		height: 64,
 		width: 128,
