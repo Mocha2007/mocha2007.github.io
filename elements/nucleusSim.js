@@ -2,12 +2,12 @@ const timestep = 1e-4; // elapsed seconds per tick
 const width_abs = 1e-9; // 1 nanometer
 const fps = 30;
 const FORCE_CUTOFF_RATIO = 0; // prevent yeeting
-const DESIRED_E_DIST = 400e-15;
-const DESIRED_2_DIST = 10e-15;
-const FORCE_E_STRENGTH = 1e-3; // electromagnetic force analogue
-const FORCE_2_STRENGTH = 1e1; // nuclear force analogue
+const DESIRED_E_DIST = 100e-12;
+const DESIRED_2_DIST = 5e-12;
+const FORCE_E_STRENGTH = 1e-32; // electromagnetic force analogue
+const FORCE_2_STRENGTH = 1e-28; // nuclear force analogue
 const MEDIUM_DECEL_CONST = -1e11;
-const MAX_V = 1e-8;
+const MAX_V = 3.5e-8; // any slower and electrons get trapped
 
 class Particle {
 	constructor(mass, charge, nucleon, color, radius){
@@ -41,7 +41,7 @@ class ParticleInstance {
 		/** @type {Particle} */
 		this.particle = particle;
 		this.coords = randomCoords();
-		this.v = [random.uniform(-1, 1), random.uniform(-1, 1)].map(x => 1e-8*x);
+		this.v = [random.uniform(-1, 1), random.uniform(-1, 1)].map(x => 1e-9*x);
 		this.future_coords = [,];
 		this.future_v = [,];
 		ParticleInstance.particles.push(this);
@@ -63,10 +63,12 @@ class ParticleInstance {
 		// (1) "electromagnetic force"
 		if (this.particle.charge)
 			ParticleInstance.particles.filter(p => this !== p).forEach(p => {
-				let d = Math.sqrt(this.distSquared(p));
+				let d = this.distSquared(p);
 				if (d < DESIRED_E_DIST * FORCE_CUTOFF_RATIO)
 					d = DESIRED_E_DIST * FORCE_CUTOFF_RATIO; // don't break pls
-				const acc = FORCE_E_STRENGTH * -this.particle.charge * p.particle.charge * stayCloseishForce(d, DESIRED_E_DIST) / (this.particle.mass) * timestep;
+				const acc = FORCE_E_STRENGTH * this.particle.charge * p.particle.charge
+					* stayCloseishForce(d, DESIRED_E_DIST)
+					/ this.particle.mass * timestep;
 				const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
 				const accVector = splitForceXY(acc, Math.atan2(...dx));
 				this.future_v = this.future_v.map((x, i) => x + accVector[i]);
@@ -74,10 +76,12 @@ class ParticleInstance {
 		// (2) the "stay kinda close but not too close" force
 		if (this.particle.nucleon)
 			ParticleInstance.particles.filter(p => this !== p).forEach(p => {
-				let d = Math.sqrt(this.distSquared(p));
+				let d = this.distSquared(p);
 				if (d < DESIRED_2_DIST * FORCE_CUTOFF_RATIO)
 					d = DESIRED_2_DIST * FORCE_CUTOFF_RATIO; // don't break pls
-				const acc = FORCE_2_STRENGTH * stayCloseishForce(d, DESIRED_2_DIST) / (this.particle.mass) * timestep;
+				const acc = FORCE_2_STRENGTH
+					* stayCloseishForce(d, DESIRED_2_DIST)
+					/ this.particle.mass * timestep;
 				const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
 				const accVector = splitForceXY(acc, Math.atan2(...dx));
 				this.future_v = this.future_v.map((x, i) => x + accVector[i]);
@@ -106,8 +110,7 @@ class ParticleInstance {
 
 /** Attractive force beyond r; repulsive force within r */
 function stayCloseishForce(dist, r){
-	dist /= r; // want the zero to be at r
-	return -Math.pow(dist, -3) + Math.pow(dist, -2);
+	return -Math.pow(r/dist, 2) + 1/dist;
 }
 
 function randomCoords(){
@@ -120,9 +123,9 @@ function splitForceXY(force, angle){
 
 function init(){
 	console.info("Atom Bullshit");
-	// Ag-109
-	range(62).forEach(_ => new ParticleInstance(Particle.neutron));
-	range(47).forEach(_ => {
+	// Zn-64
+	range(34).forEach(_ => new ParticleInstance(Particle.neutron));
+	range(30).forEach(_ => {
 		new ParticleInstance(Particle.proton);
 		new ParticleInstance(Particle.electron);
 	});
