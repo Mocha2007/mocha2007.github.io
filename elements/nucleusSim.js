@@ -6,8 +6,8 @@ const MAX_E = 1e-1;
 const MAX_2 = 1e-1;
 const FORCE_E_STRENGTH = 1e-7; // electromagnetic force analogue
 const FORCE_2_STRENGTH = 1e-8; // nuclear force analogue
-const MEDIUM_DECEL_CONST = -1e10;
-const MAX_V = 1e-7; // any slower and electrons get trapped
+const MEDIUM_DECEL_CONST = -2e9;
+const MAX_V = 1;
 
 class Particle {
 	constructor(mass, charge, nucleon, color, radius){
