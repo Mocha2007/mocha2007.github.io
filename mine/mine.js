@@ -99,7 +99,7 @@ const mine = {
 			const veins = Math.ceil(50/(i+1));
 			const veinSize = Math.ceil((16/(i+1)));
 			console.log(`generating ${veins} ${veinSize}-block %c${s}%cveins (total: ${veins*veinSize})`,
-				`background-color:grey;color: ${Block.FromName(s).color}`);
+				`background-color:grey;color: ${Block.FromName(s).color};text-shadow: 0 0 1vw black, 0 0 1vw black, 0 0 1vw black`);
 			range(veins)
 				.forEach(_ => w.createVein(
 					Block.FromName(s),
