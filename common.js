@@ -348,6 +348,15 @@ function createStyleSheet(){
 	return style.sheet;
 }
 
+/** https://stackoverflow.com/a/49531759
+ * @return {CSSStyleSheet}
+ */
+function createSvgStyleSheet(){
+	const style = createSvgElement('style');
+	document.documentElement.appendChild(style);
+	return style.sheet;
+}
+
 /**
  * run before and after a function to determine the time taken
  *

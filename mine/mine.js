@@ -14,7 +14,6 @@ class Block {
 		const rect = createSvgElement('rect');
 		rect.setAttribute('height', mine.tileSize);
 		rect.setAttribute('width', mine.tileSize);
-		rect.setAttribute('fill', this.color);
 		rect.classList.add(`b${this.name}`);
 		return rect;
 	}
@@ -88,9 +87,9 @@ const mine = {
 		const w = new World(range(this.worldSettings.depth).map(y => range(this.worldSettings.width).map(x => {
 			if (this.worldSettings.depth - 5 < y && (this.worldSettings.depth - y - 1)/5 < random.random())
 				return Block.FromName('bedrock');
-			if (5 < y)
+			if (3 < y)
 				return Block.FromName('stone');
-			if (2 < y)
+			if (0 < y)
 				return Block.FromName('dirt');
 			return Block.FromName('grass');
 		})));
@@ -112,6 +111,10 @@ const mine = {
 	},
 	init(){
 		console.info('MoMine');
+		// load block styling
+		this.style = createSvgStyleSheet();
+		Block.blocks.forEach(b => this.style.insertRule(`.b${b.name}{fill:${b.color}}`));
+		// generate world
 		const w = this.gen();
 		console.info('World Generated.');
 		w.reloadTiles();
@@ -126,6 +129,8 @@ const mine = {
 			return random.randint(0, mine.worldSettings.width-1);
 		},
 	},
+	/** @type {CSSStyleSheet} */
+	style: undefined,
 	tileSize: 6,
 	worldSettings: {
 		depth: 64*2,
