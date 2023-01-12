@@ -63,11 +63,11 @@ class ParticleInstance {
 		// (1) "electromagnetic force"
 		if (this.particle.charge)
 			ParticleInstance.particles.filter(p => this !== p).forEach(p => {
-				let d = this.distSquared(p);
-				if (d < DESIRED_E_DIST * FORCE_CUTOFF_RATIO)
-					d = DESIRED_E_DIST * FORCE_CUTOFF_RATIO; // don't break pls
+				let d2 = this.distSquared(p);
+				if (d2 < Math.pow(DESIRED_E_DIST * FORCE_CUTOFF_RATIO, 2))
+					d2 = Math.pow(DESIRED_E_DIST * FORCE_CUTOFF_RATIO, 2); // don't break pls
 				const acc = FORCE_E_STRENGTH * this.particle.charge * p.particle.charge
-					* stayCloseishForce(d, DESIRED_E_DIST)
+					* stayCloseishForce(d2, DESIRED_E_DIST)
 					/ this.particle.mass * timestep;
 				const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
 				const accVector = splitForceXY(acc, Math.atan2(...dx));
@@ -76,11 +76,11 @@ class ParticleInstance {
 		// (2) the "stay kinda close but not too close" force
 		if (this.particle.nucleon)
 			ParticleInstance.particles.filter(p => this !== p).forEach(p => {
-				let d = this.distSquared(p);
-				if (d < DESIRED_2_DIST * FORCE_CUTOFF_RATIO)
-					d = DESIRED_2_DIST * FORCE_CUTOFF_RATIO; // don't break pls
+				let d2 = this.distSquared(p);
+				if (d2 < Math.pow(DESIRED_2_DIST * FORCE_CUTOFF_RATIO, 2))
+					d2 = Math.pow(DESIRED_2_DIST * FORCE_CUTOFF_RATIO, 2); // don't break pls
 				const acc = FORCE_2_STRENGTH
-					* stayCloseishForce(d, DESIRED_2_DIST)
+					* stayCloseishForce(d2, DESIRED_2_DIST)
 					/ this.particle.mass * timestep;
 				const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
 				const accVector = splitForceXY(acc, Math.atan2(...dx));
