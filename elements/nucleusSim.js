@@ -1,7 +1,13 @@
 const timestep = 1e-4; // elapsed seconds per tick
 const width_abs = 1e-9; // 1 nanometer
-const c = 299792458;
 const fps = 30;
+const FORCE_CUTOFF_RATIO = 0.8; // prevent yeeting
+const DESIRED_E_DIST = 400e-15;
+const DESIRED_2_DIST = 10e-15;
+const FORCE_E_STRENGTH = 1e-3; // electromagnetic force analogue
+const FORCE_2_STRENGTH = 1e1; // nuclear force analogue
+const MEDIUM_DECEL_CONST = -1e11;
+const MAX_V = 1e-8;
 
 class Particle {
 	constructor(mass, charge, nucleon, color, radius){
@@ -57,8 +63,10 @@ class ParticleInstance {
 		// (1) "electromagnetic force"
 		if (this.particle.charge)
 			ParticleInstance.particles.filter(p => this !== p).forEach(p => {
-				const d2 = this.distSquared(p);
-				const acc = -1e-1 * this.particle.charge * p.particle.charge * stayCloseishForce(d2, 30e-15) / (this.particle.mass) * timestep;
+				let d = Math.sqrt(this.distSquared(p));
+				if (d < DESIRED_E_DIST * FORCE_CUTOFF_RATIO)
+					d = DESIRED_E_DIST * FORCE_CUTOFF_RATIO; // don't break pls
+				const acc = FORCE_E_STRENGTH * -this.particle.charge * p.particle.charge * stayCloseishForce(d, DESIRED_E_DIST) / (this.particle.mass) * timestep;
 				const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
 				const accVector = splitForceXY(acc, Math.atan2(...dx));
 				this.future_v = this.future_v.map((x, i) => x + accVector[i]);
@@ -66,17 +74,18 @@ class ParticleInstance {
 		// (2) the "stay kinda close but not too close" force
 		if (this.particle.nucleon)
 			ParticleInstance.particles.filter(p => this !== p).forEach(p => {
-				const d2 = this.distSquared(p);
-				const acc = stayCloseishForce(d2, 1e-15) / (this.particle.mass) * timestep;
+				let d = Math.sqrt(this.distSquared(p));
+				if (d < DESIRED_2_DIST * FORCE_CUTOFF_RATIO)
+					d = DESIRED_2_DIST * FORCE_CUTOFF_RATIO; // don't break pls
+				const acc = FORCE_2_STRENGTH * stayCloseishForce(d, DESIRED_2_DIST) / (this.particle.mass) * timestep;
 				const dx = [p.coords[1] - this.coords[1], p.coords[0] - this.coords[0]];
 				const accVector = splitForceXY(acc, Math.atan2(...dx));
 				this.future_v = this.future_v.map((x, i) => x + accVector[i]);
 			});
 		// (3) "YOU'RE GOING TOO FAST" universal force
-		const MEDIUM_DECEL_CONST = -1e10;
 		this.future_v = this.future_v.map(x => x + Math.sign(x)*MEDIUM_DECEL_CONST*timestep*x**2);
 		// make sure v < c
-		this.future_v = this.future_v.map(x => clamp(x, -c, c));
+		this.future_v = this.future_v.map(x => clamp(x, -MAX_V, MAX_V));
 		// now, update future coords
 		this.future_coords = this.coords.map((x, i) => x + this.v[i]*timestep);
 	}
@@ -95,21 +104,10 @@ class ParticleInstance {
 	static particles = [];
 }
 
-/**
- * EXTREMELY approximate; based on
- * https://en.wikipedia.org/wiki/File:ReidForce2.jpg
- * https://www.desmos.com/calculator/o9grawqkdo
- * @param {number} x - distance in meters
- */
-function reidForce(x){
-	x *= 1e15; // convert from m to fm
-	x = 3.2*x-4.2; // shift graph
-	const y = -2.25*Math.exp(-x) + 0.5*Math.exp(-2*x);
-	return y * 1e4; // convert from units of 10 kN to units of N
-}
-
+/** Attractive force beyond r; repulsive force within r */
 function stayCloseishForce(dist, r){
-	return 1e8 * -Math.atan(dist-r);
+	dist /= r; // want the zero to be at r
+	return -Math.pow(dist, -3) + Math.pow(dist, -2);
 }
 
 function randomCoords(){
