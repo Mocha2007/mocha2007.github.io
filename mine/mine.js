@@ -126,9 +126,9 @@ const mine = {
 			return random.randint(0, mine.worldSettings.width-1);
 		},
 	},
-	tileSize: 4,
+	tileSize: 6,
 	worldSettings: {
-		depth: 64*3,
-		width: 64*2,
+		depth: 64*2,
+		width: 64,
 	},
 };
