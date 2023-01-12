@@ -62,6 +62,7 @@ class World {
 		// console.info(`creating ${max_size}-block ${ore.name} vein`);
 		range(max_size).forEach(_ => {
 			try {
+				if (this.data[y][x].name === 'stone')
 				this.data[y][x] = ore;
 				// console.warn(`could not place ${ore.name} @ (${x}, ${y})`);
 			}
@@ -96,12 +97,12 @@ const mine = {
 		range(50).forEach(_ => w.createVein(
 			Block.FromName('coal'),
 			random.randint(0, this.worldSettings.width-1),
-			random.randint(5, this.worldSettings.height-5),
+			Math.floor(random.normal(48, 16)),
 			8));
 		range(25).forEach(_ => w.createVein(
 			Block.FromName('iron_ore'),
 			random.randint(0, this.worldSettings.width-1),
-			random.randint(5, this.worldSettings.height-5),
+			Math.floor(random.normal(16, 16)),
 			4));
 		return w;
 	},
