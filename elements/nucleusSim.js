@@ -1,6 +1,6 @@
 const timestep = 1e-4; // elapsed seconds per tick
 const width_abs = 1e-9; // 1 nanometer
-const fps = 30;
+const fps = 60;
 const FORCE_CUTOFF_RATIO = 0; // prevent yeeting
 const DESIRED_E_DIST = 100e-12;
 const DESIRED_2_DIST = 5e-12;
