@@ -62,7 +62,7 @@ class ParticleInstance {
 		this.future_v = this.v.map(x => x); // copy
 		// (1) "electromagnetic force"
 		if (this.particle.charge)
-			ParticleInstance.particles.filter(p => this !== p).forEach(p => {
+			ParticleInstance.particles.filter(p => this !== p && p.particle.charge).forEach(p => {
 				let d2 = this.distSquared(p);
 				if (d2 < Math.pow(DESIRED_E_DIST * FORCE_CUTOFF_RATIO, 2))
 					d2 = Math.pow(DESIRED_E_DIST * FORCE_CUTOFF_RATIO, 2); // don't break pls
@@ -75,7 +75,7 @@ class ParticleInstance {
 			});
 		// (2) the "stay kinda close but not too close" force
 		if (this.particle.nucleon)
-			ParticleInstance.particles.filter(p => this !== p).forEach(p => {
+			ParticleInstance.particles.filter(p => this !== p && p.particle.nucleon).forEach(p => {
 				let d2 = this.distSquared(p);
 				if (d2 < Math.pow(DESIRED_2_DIST * FORCE_CUTOFF_RATIO, 2))
 					d2 = Math.pow(DESIRED_2_DIST * FORCE_CUTOFF_RATIO, 2); // don't break pls
