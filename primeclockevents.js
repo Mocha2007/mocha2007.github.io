@@ -412,6 +412,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[21.4e3, '<a href="https://en.wikipedia.org/wiki/Tenoumer_crater">Tenoumer Impact</a>'],
 	[20.4e3, 'Age of <a href="https://en.wikipedia.org/wiki/Haplogroup_R1b">Haplogroup R1b</a>\'s common ancestor'],
 	[17e3, '<a href="https://en.wikipedia.org/wiki/Lascaux">Lascaux</a> cave paintings'],
+	[15e3, '<a href="https://en.wikipedia.org/wiki/Proxima_Centauri">Proxima Centauri</a> overtakes <a href="https://en.wikipedia.org/wiki/Wolf_359">Wolf 359</a> as the closest star to the sun'],
 	[14.85e3, '<a href="https://en.wikipedia.org/wiki/Domestic_pig">Pigs Domesticated</a>'],
 	[14.7e3, '<a href="https://en.wikipedia.org/wiki/Bølling-Allerød_warming">Bølling-Allerød Warming</a>'],
 	[14.6e3, 'Beginning of the <a href="https://en.wikipedia.org/wiki/https://en.wikipedia.org/wiki/African_humid_period">African humid period</a>'],
