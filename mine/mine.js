@@ -15,6 +15,7 @@ class Block {
 		rect.setAttribute('height', mine.tileSize);
 		rect.setAttribute('width', mine.tileSize);
 		rect.setAttribute('fill', this.color);
+		rect.classList.add(`b${this.name}`);
 		return rect;
 	}
 	/** @type {Block[]} */
@@ -51,6 +52,24 @@ class World {
 		}
 		return this._elem;
 	}
+	/**
+	 * @param {Block} ore 
+	 * @param {number} x 
+	 * @param {number} y 
+	 * @param {number} max_size 
+	 */
+	createVein(ore, x, y, max_size = 8){
+		// console.info(`creating ${max_size}-block ${ore.name} vein`);
+		range(max_size).forEach(_ => {
+			try {
+				this.data[y][x] = ore;
+				// console.warn(`could not place ${ore.name} @ (${x}, ${y})`);
+			}
+			catch (_){}
+			x += random.randint(-1, 1);
+			y += random.randint(-1, 1);
+		});
+	}
 	reloadTiles(){
 		this.elem.innerHTML = '';
 		this.data.forEach((r, y) => r.forEach((b, x) => {
@@ -65,15 +84,26 @@ class World {
 
 const mine = {
 	gen(){
-		return new World(range(this.worldSettings.height).map(y => range(this.worldSettings.width).map(x => {
+		const w = new World(range(this.worldSettings.height).map(y => range(this.worldSettings.width).map(x => {
 			if (y < 5 && y/5 < random.random())
 				return Block.FromName('bedrock');
-			if (y < 60)
+			if (y < this.worldSettings.height-4)
 				return Block.FromName('stone')
-			if (y < 63)
+			if (y < this.worldSettings.height-1)
 				return Block.FromName('dirt')
 			return Block.FromName('grass');
 		})));
+		range(50).forEach(_ => w.createVein(
+			Block.FromName('coal'),
+			random.randint(0, this.worldSettings.width-1),
+			random.randint(5, this.worldSettings.height-5),
+			8));
+		range(25).forEach(_ => w.createVein(
+			Block.FromName('iron_ore'),
+			random.randint(0, this.worldSettings.width-1),
+			random.randint(5, this.worldSettings.height-5),
+			4));
+		return w;
 	},
 	init(){
 		console.info('MoMine');
@@ -86,7 +116,7 @@ const mine = {
 		x: 64,
 		y: 64,
 	},
-	tileSize: 16,
+	tileSize: 12,
 	worldSettings: {
 		height: 64,
 		width: 128,
