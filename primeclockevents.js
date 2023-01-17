@@ -111,6 +111,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[3.938e9, 'Formation of <a href="https://en.wikipedia.org/wiki/Mare_Imbrium">Mare Imbrium</a>'],
 	[3.92e9, 'Impact creates the <a href="https://en.wikipedia.org/wiki/Nectaris_Basin">Nectaris Basin</a> on the Moon'],
 	[3.9e9, 'Impact creates <a href="https://en.wikipedia.org/wiki/Rembrandt_(crater)">Rembrandt Crater</a> on Mercury, the second-largest crater on Mercury'],
+	[3.88e9, 'Formation of <a href="https://en.wikipedia.org/wiki/HD_162826">HD 162826</a> in the same open cluster as the sun: the first discovered <a href="https://en.wikipedia.org/wiki/Solar_analog#Solar_twin">solar sibling</a>'],
 	[3.85e9, 'Impact creates <a href="https://en.wikipedia.org/wiki/Caloris_Planitia">Caloris Planitia</a> on Mercury, the largest crater on Mercury'],
 	[3.84e9, 'Impact creates the <a href="https://en.wikipedia.org/wiki/Orientale_Basin">Orientale Basin</a> on the Moon'],
 	[3.8e9, 'End of the <a href="https://en.wikipedia.org/wiki/Late_Heavy_Bombardment">Late Heavy Bombardment</a>'],
