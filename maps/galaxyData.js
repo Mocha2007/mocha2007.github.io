@@ -151,6 +151,14 @@ const data = [
 		dec: [9, 3, 24.4255],
 	},
 	{
+		name: 'HD 162826',
+		type: 'star',
+		dist: 110*ly,
+		ra: [17, 51, 14.02244],
+		dec: [40, 4, 20.8772],
+		desc: 'First discovered solar sibling: a star born from the same stellar nursery.',
+	},
+	{
 		name: 'Cor Caroli',
 		type: 'star',
 		dist: 115*ly,
