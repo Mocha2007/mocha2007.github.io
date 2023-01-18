@@ -264,6 +264,14 @@ const data = [
 		dec: [15, 16, 47.5005],
 	},
 	{
+		name: 'Pi 1 Gruis',
+		type: 'star',
+		dist: 530*ly,
+		ra: [22, 22, 44.20571],
+		dec: [-45, 56, 52.6115],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/d/df/The_surface_of_the_red_giant_star_%CF%801_Gruis_from_PIONIER_on_the_VLT.jpg',
+	},
+	{
 		name: 'Betelgeuse',
 		type: 'star',
 		dist: 548*ly,
