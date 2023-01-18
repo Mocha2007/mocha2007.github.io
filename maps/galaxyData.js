@@ -374,6 +374,14 @@ const data = [
 		dec: [-29, 34, 48.3199],
 	},
 	{
+		name: 'Theta 1 Orionis C',
+		type: 'star',
+		dist: 410*pc, // ~1337 ly
+		ra: [5, 35, 16.46375],
+		dec: [-5, 23, 22.8486],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/5/5b/Theta1-Orionis-C.png',
+	},
+	{
 		name: 'Y Sagittarii',
 		type: 'star',
 		dist: 1500*ly,
