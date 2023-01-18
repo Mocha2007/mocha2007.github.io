@@ -121,6 +121,14 @@ const data = [
 		desc: 'Said to be home to the Vulcan homeworld',
 	},
 	{
+		name: 'Altair',
+		type: 'star',
+		dist: 16.73*ly,
+		ra: [19, 50, 46.99855],
+		dec: [8, 52, 5.9563],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Altair_PR_image6_%28white%29.jpg',
+	},
+	{
 		name: 'Gamma2 Sagittarii',
 		type: 'star',
 		dist: 96.9*ly,
