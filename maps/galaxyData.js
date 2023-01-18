@@ -205,6 +205,14 @@ const data = [
 		dec: [-40, 36, 57.3705],
 	},
 	{
+		name: 'Mira',
+		type: 'star',
+		dist: 300*ly,
+		ra: [2, 19, 20.79210],
+		dec: [-2, 58, 39.4956],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/e/e8/Mira_1997.jpg',
+	},
+	{
 		name: 'Beta1 Sagittarii',
 		type: 'star',
 		dist: 310*ly,
