@@ -506,6 +506,14 @@ const data = [
 		dec: [64, 45, 35.4011],
 	},
 	{
+		name: 'HR 5171',
+		type: 'star',
+		dist: 13e3*ly,
+		ra: [13, 47, 10],
+		dec: [-62, 35, 20],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/0/0d/HR_5171_A_potw1740a.png',
+	},
+	{
 		name: 'Great Annihilator',
 		type: 'star',
 		dist: 5e3*pc, // ~16,308 ly
