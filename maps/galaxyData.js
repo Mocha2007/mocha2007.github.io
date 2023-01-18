@@ -320,6 +320,14 @@ const data = [
 		dec: [-40, 0, 11.6],
 	},
 	{
+		name: 'T Leporis',
+		type: 'star',
+		dist: 1100*ly,
+		ra: [5, 4, 50.85],
+		dec: [-21, 54, 16.5],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/5/5f/T_Leporis.jpg',
+	},
+	{
 		name: 'Mintaka',
 		type: 'star',
 		dist: 1200*ly,
