@@ -483,6 +483,14 @@ const data = [
 		img: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/SN1572.Companion.jpg',
 	},
 	{
+		name: 'Eta Carinae',
+		type: 'star',
+		dist: 7500*ly,
+		ra: [10, 45, 3.591],
+		dec: [-59, 41, 4.26],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/f/fc/Eta_Carinae.jpg',
+	},
+	{
 		name: 'WR 102',
 		type: 'star',
 		dist: 9400*ly,
