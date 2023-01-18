@@ -214,6 +214,7 @@ const data = [
 		dist: 471*ly,
 		ra: [4, 21, 59.43445],
 		dec: [19, 32, 6.4182],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/Ngc1555.jpg',
 	},
 	{
 		name: '19 Arietis',
