@@ -221,7 +221,7 @@ const Game = {
 	scale: 16384*ly,
 	redraw(){
 		canvas.innerHTML = '';
-		Body.list.forEach(b => b.createElement());
+		Body.list.reverse().forEach(b => b.createElement());
 	},
 	rotate(direction=0){
 		const i = mod(rotations.map(x => x[0]).indexOf(xIndex) + direction, rotations.length);

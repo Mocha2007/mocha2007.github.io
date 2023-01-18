@@ -209,6 +209,13 @@ const data = [
 		dec: [-53, 27, 59.0081],
 	},
 	{
+		name: 'T Tauri',
+		type: 'star',
+		dist: 471*ly,
+		ra: [4, 21, 59.43445],
+		dec: [19, 32, 6.4182],
+	},
+	{
 		name: '19 Arietis',
 		type: 'star',
 		dist: 480*ly,
