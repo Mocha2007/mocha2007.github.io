@@ -277,6 +277,7 @@ const data = [
 		dist: 548*ly,
 		ra: [5, 55, 10.30536],
 		dec: [7, 24, 25.4304],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/5/57/Betelgeuse_captured_by_ALMA.jpg',
 	},
 	{
 		name: 'Antares',
@@ -284,6 +285,7 @@ const data = [
 		dist: 550*ly,
 		ra: [16, 29, 24.4597],
 		dec: [-26, 25, 55.2094],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/f/f4/VLTI_reconstructed_view_of_the_surface_of_Antares.jpg',
 	},
 	{
 		name: 'Lambda Scorpii',
