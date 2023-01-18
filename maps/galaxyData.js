@@ -129,6 +129,14 @@ const data = [
 		img: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Altair_PR_image6_%28white%29.jpg',
 	},
 	{
+		name: 'Algol',
+		type: 'star',
+		dist: 90*ly,
+		ra: [3, 8, 10.13245],
+		dec: [40, 57, 20.3280],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Algol_AB_movie_imaged_with_the_CHARA_interferometer_-_labeled.gif',
+	},
+	{
 		name: 'Gamma2 Sagittarii',
 		type: 'star',
 		dist: 96.9*ly,
