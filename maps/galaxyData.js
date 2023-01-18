@@ -182,6 +182,14 @@ const data = [
 		desc: 'Said to be home to the Klingon homeworld QoʼnoS',
 	},
 	{
+		name: 'R Doradus',
+		type: 'star',
+		dist: 178*ly,
+		ra: [4, 36, 45.59127],
+		dec: [-62, 4, 37.7974],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/R_Doradus_ESO.jpg',
+	},
+	{
 		name: 'Rukbat',
 		type: 'star',
 		dist: 182*ly,
