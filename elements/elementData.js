@@ -4775,7 +4775,7 @@ const elementData = [
 			},
 			appearance: 'silvery white',
 			biologicalHalfLife: 40*year, // in liver
-			bulkModulus: 40e9, // https://pilgaardelements.com/Plutonium/Physicals.htm
+			bulkModulus: 32e9, // https://www.pnas.org/doi/pdf/10.1073/pnas.1918281117
 			prices: {
 				2019: 6.49e6,
 			},
