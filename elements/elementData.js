@@ -4775,7 +4775,8 @@ const elementData = [
 			},
 			appearance: 'silvery white',
 			biologicalHalfLife: 40*year, // in liver
-			bulkModulus: 32e9, // https://www.pnas.org/doi/pdf/10.1073/pnas.1918281117
+			bulkModulus: 55e9, // https://pilgaardelements.com/Plutonium/Physicals.htm claims 40 GPa but that must be too low
+			// is https://www.pnas.org/doi/pdf/10.1073/pnas.1918281117 more accurate???
 			prices: {
 				2019: 6.49e6,
 			},
