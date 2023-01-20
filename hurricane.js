@@ -753,6 +753,24 @@ hurricanelist[2021] = [
 	[272, 277, 0, 'Victor'],
 	[304, 311, 0, 'Wanda']
 ];
+hurricanelist[2022] = [
+	[156, 157, 0, 'Alex'],
+	[182, 183, 0, 'Bonnie'],
+	[182, 183, 0, 'Colin'],
+	[244, 251, 1, 'Danielle'],
+	[246, 253, 2, 'Earl'],
+	[257, 267, 4, 'Fiona'],
+	[263, 269, 0, 'Gaston'],
+	[266, 268, 0, 'Hermine'],
+	[266, 273, 4, 'Ian'],
+	[271, 272, -1, 'Eleven'],
+	[277, 280, -1, 'Twelve'],
+	[280, 282, 1, 'Julia'],
+	[284, 288, 0, 'Karl'],
+	[304, 308, 1, 'Lisa'],
+	[305, 307, 1, 'Martin'],
+	[311, 315, 1, 'Nicole']
+];
 /*
 0	1 Jan
 31	1 Feb (So leap years are incl.)
