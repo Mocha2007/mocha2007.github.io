@@ -153,6 +153,7 @@ function holidayCSS(){
 		img.style.borderRadius = '30px';
 		img.style.backgroundColor = '#082';
 		img.style.maskImage = 'linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0))';
+		img.classList.add('cny'); // so it remains unaffected by the pinkening
 		title = 'Year of the ' + animal;
 		// to counteract valentines:
 		src = defaultSrc;
