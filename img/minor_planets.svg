@@ -654,11 +654,6 @@
 			<mpath href="#UranusPath"/>
 		</animateMotion>
 	</a>
-
-	<a href="https://en.wikipedia.org/wiki/ʻOumuamua"><!-- ʻOumuamua @ 2022 --> <!-- https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=1I%2F2017%20U1 -->
-		<text x="2872" y="107" font-size="8" fill="white">ʻOumuamua</text>
-		<image href="https://upload.wikimedia.org/wikipedia/commons/1/1c/Artist%27s_impression_of_%CA%BBOumuamua.jpg" x="2872" y="88" height="12"/>
-	</a>
 	
 	<path d="M 0 100 L 0 -100" id="OuterPath"/>
 
@@ -682,9 +677,14 @@
 
 	<!-- TNOs -->
 	<g id='tnos'>
-		<a href="https://en.wikipedia.org/wiki/Halley's_Comet"><!-- Halley's Comet @ 2022 --> <!-- https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?des=1P -->
-			<text x="3504" y="120">Halley's Comet</text>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Lspn_comet_halley.jpg" x="3504" y="88" height="24"/>
+		<a href="https://en.wikipedia.org/wiki/ʻOumuamua"><!-- ʻOumuamua @ 2023 --> <!-- https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=1I%2F2017%20U1 -->
+			<text x="3356" y="107" font-size="8" fill="white">ʻOumuamua</text>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/1/1c/Artist%27s_impression_of_%CA%BBOumuamua.jpg" x="3356" y="88" height="12"/>
+		</a>
+
+		<a href="https://en.wikipedia.org/wiki/Halley's_Comet"><!-- Halley's Comet @ 2023 --> <!-- https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?des=1P -->
+			<text x="3526" y="120">Halley's Comet</text>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Lspn_comet_halley.jpg" x="3526" y="88" height="24"/>
 		</a>
 
 		<circle class='mo' r="3940"/><!-- Orcus orbit -->
@@ -741,10 +741,10 @@
 			</animateMotion>
 		</a>
 
-		<circle class='mo' r="4454"/><!-- 2014 MU69 orbit -->
+		<circle class='mo' r="4458"/><!-- 2014 MU69 orbit -->
 		<a href='https://en.wikipedia.org/wiki/486958_Arrokoth'><!-- 2014 MU69 -->
-			<text x="4464" y="103">Arrokoth</text>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/8/8c/UltimaThule_CA06_color_vertical.png" x="4448" y="92" height="16"/>
+			<text x="4468" y="103">Arrokoth</text>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/8/8c/UltimaThule_CA06_color_vertical.png" x="4452" y="92" height="16"/>
 			<animateMotion dur="10.47s" repeatCount="indefinite"> <!-- appx. based on orbital velocity -->
 				<mpath href="#OuterPath"/>
 			</animateMotion>
@@ -759,9 +759,9 @@
 			</animateMotion>
 		</a>
 
-		<a href="https://en.wikipedia.org/wiki/New_Horizons"><!-- New Horizons @ 2022 http://pluto.jhuapl.edu/Mission/Where-is-New-Horizons.php -->
-			<text x="5272" y="120" font-size="8" fill="white">New Horizons</text>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/e/ee/New_Horizons_spacecraft_model_1.png" x="5272" y="88" height="24"/>
+		<a href="https://en.wikipedia.org/wiki/New_Horizons"><!-- New Horizons @ 2023 http://pluto.jhuapl.edu/Mission/Where-is-New-Horizons.php -->
+			<text x="5514" y="120" font-size="8" fill="white">New Horizons</text>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/e/ee/New_Horizons_spacecraft_model_1.png" x="5514" y="88" height="24"/>
 		</a>
 
 		<circle class='mo' r="6706"/><!-- 2007 OR10 orbit -->
