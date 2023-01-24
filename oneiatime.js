@@ -27,6 +27,10 @@ var signs = [
 	'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
 	'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'
 ];
+var signpolarity = [
+	'Positive (active, yang, expressive, masculine)',
+	'Negative (passive, yin, receptive, feminine)'
+];
 var signelements = [
 	'Fire (Enthusiasm; drive to express self; faith)',
 	'Earth (Practicality; caution; material world)',
@@ -40,7 +44,7 @@ var signqualities= [
 ];
 var signrulers= [
 	'Mars', 'Venus', 'Mercury', 'Moon', 'Sun', 'Mercury',
-	'Venus', 'Mars', 'Jupiter', 'Saturn', 'Saturn', 'Jupiter'
+	'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus/Saturn', 'Neptune/Jupiter'
 ];
 var marsmonths = [
 	'Sagittarius', 'Dhanus', 'Capricornus', 'Makara', 'Aquarius', 'Kumbha',
@@ -117,10 +121,13 @@ function china(){
 
 function zodiac(){
 	var n = Math.floor(mod(new Date()-vernal, 31556952000)/2629746000); // sign number 0-11
-	return '<abbr title="Element: '+signelements[mod(n, 4)]+'&#013;Quality: '
-		+ signqualities[mod(n, 3)]+'&#013;Ruler: '+signrulers[n]
+	return '<abbr title="Element: ' + signelements[mod(n, 4)]
+		+ '&#013;Polarity: ' + signpolarity[mod(n, 3)]
+		+ '&#013;Modality: ' + signqualities[mod(n, 3)]
+		+ '&#013;Ruler: '+signrulers[n]
 		+ ' (this planet\'s influence heightens when inside this constellation)&#013;Detriment: '
-		+ signrulers[mod(n+6, 12)] + ' (this planet\'s influence weakens when inside this constellation)">'
+		+ signrulers[mod(n+6, 12)]
+		+ ' (this planet\'s influence weakens when inside this constellation)">'
 		+ signs[n]+'</abbr>';
 }
 
