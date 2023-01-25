@@ -35,11 +35,26 @@ class Blogpost {
 		const h = document.createElement('h2');
 		h.innerHTML = this.title;
 		div.appendChild(h);
+		// date
+		const dateContainer = document.createElement('div');
 		const date = document.createElement('time');
 		date.dateTime = formatDate(this.date);
 		date.innerHTML = this.date.toString();
-		div.appendChild(date);
-		div.appendChild(document.createElement('br'));
+		dateContainer.appendChild(date);
+		dateContainer.appendChild(document.createElement('br'));
+		dateContainer.appendChild(document.createTextNode('most posts from... '));
+		dateContainer.appendChild(link(new Period(
+			new Date(`${this.date.getFullYear()}-${this.date.getMonth()+1}`),
+			new Date(`${this.date.getFullYear()}-${this.date.getMonth()+2}`),
+			'this month'
+		)));
+		dateContainer.appendChild(link(new Period(
+			new Date(`${this.date.getFullYear()}`),
+			new Date(`${this.date.getFullYear()+1}`),
+			'this year'
+		)));
+		div.appendChild(dateContainer);
+		// tags
 		div.appendChild(Tag.tagList(this.tags));
 		div.appendChild(document.createElement('hr'));
 		this.sections.forEach(s => div.appendChild(s.elem));
@@ -200,6 +215,43 @@ class Section {
 }
 /** @type {Section[]} */
 Section.sections = [];
+
+class Period {
+	/**
+	 * @param {Date} start inclusive
+	 * @param {Date} end exclusive
+	 * @param {string} title
+	 */
+	constructor(start, end, title){
+		this.start = start;
+		this.end = end;
+		this.title = title;
+	}
+	get elem(){
+		const div = document.createElement('div');
+		const h = document.createElement('h2');
+		h.innerHTML = this.title;
+		div.appendChild(h);
+		const p = document.createElement('p');
+		p.innerHTML = `from ${this.start.toDateString()} to ${this.end.toDateString()}`;
+		div.appendChild(p);
+		// get posts
+		const h_ = document.createElement('h3');
+		h_.innerHTML = 'Posts';
+		div.appendChild(h_);
+		const ul = document.createElement('ul');
+		div.appendChild(ul);
+		Blogpost.blogposts.filter(b => this.start <= b.date && b.date < this.end).forEach(b => {
+			const li = document.createElement('li');
+			li.appendChild(b.link);
+			ul.appendChild(li);
+		});
+		return div;
+	}
+	get link(){
+		return link(this);
+	}
+}
 
 const blog = {
 	current: 0,
