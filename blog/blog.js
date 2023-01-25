@@ -45,7 +45,8 @@ class Blogpost {
 	get elem(){
 		const div = document.createElement('div');
 		const h = document.createElement('h2');
-		h.innerHTML = this.title;
+		h.appendChild(this.permalink);
+		h.appendChild(document.createTextNode(this.title));
 		div.appendChild(h);
 		// date
 		const dateContainer = document.createElement('div');
@@ -81,6 +82,14 @@ class Blogpost {
 	}
 	get link(){
 		return link(this, this.date.toString());
+	}
+	get permalink(){
+		const a = document.createElement('a');
+		const baseUrl = window.location.href.match(/[^?]+/)[0];
+		a.href = `${baseUrl}?i=${this.id}`;
+		a.innerHTML = '^';
+		a.title = 'Permalink';
+		return a;
 	}
 	static get latest(){
 		const max = Math.max(...Blogpost.blogposts.map(b => b.date));
@@ -319,11 +328,15 @@ const blog = {
 		this.set(Blogpost.blogposts[this.current = i].elem);
 	},
 	init(){
-		// todo
 		blogData.forEach(Blogpost.parse);
 		const latest = Blogpost.latest;
 		this.current = latest.id;
-		this.set(latest.elem);
+		// url contains id?
+		const url = window.location.href.match(/\?.+/g);
+		if (url)
+			this.goto(+url[0].replace('?i=', ''));
+		else
+			this.set(latest.elem);
 	},
 	/** @param {number} diff amount of posts to move by */
 	move(diff){
