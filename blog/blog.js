@@ -173,6 +173,7 @@ class Tag {
 		Blogpost.blogposts.filter(b => b.tags.includes(this)).forEach(b => {
 			const li = document.createElement('li');
 			li.appendChild(b.link);
+			li.appendChild(document.createTextNode(`(${b.date.toDateString()})`));
 			ul.appendChild(li);
 		});
 		// get sections
@@ -183,7 +184,9 @@ class Tag {
 		div.appendChild(ul2);
 		Section.sections.filter(s => s.tags.includes(this)).forEach(s => {
 			const li = document.createElement('li');
-			li.appendChild(s.post.link);
+			const post = s.post;
+			li.appendChild(post.link);
+			li.appendChild(document.createTextNode(`(${post.date.toDateString()}): `));
 			const q = document.createElement('q');
 			q.appendChild(s.p);
 			li.appendChild(q);
