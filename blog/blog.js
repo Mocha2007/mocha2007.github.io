@@ -67,7 +67,8 @@ class Blogpost {
 						o.date = new Date(rest);
 						break;
 					case 'tags':
-						o.tags = o.tags.concat(words.slice(1).map(Tag.getTag));
+						o.tags.push(...words.slice(1).map(Tag.getTag));
+						debugger;
 						break;
 					case 'p':
 						body = true;
@@ -80,7 +81,7 @@ class Blogpost {
 						o.currentP = {tags: [], innerHTML: ''};
 						break;
 					case 'tags':
-						o.currentP.tags = o.currentP.tags.concat(words.slice(1).map(Tag.getTag));
+						o.currentP.tags.push(...words.slice(1).map(Tag.getTag));
 						break;
 					default:
 						o.currentP.innerHTML += `\n${rest}`;
