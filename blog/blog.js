@@ -41,7 +41,7 @@ class Blogpost {
 		div.appendChild(h);
 		const date = document.createElement('time');
 		date.dateTime = formatDate(this.date);
-		date.innerHTML = this.date.toLocaleString();
+		date.innerHTML = this.date.toString();
 		div.appendChild(date);
 		div.appendChild(document.createElement('br'));
 		div.appendChild(Tag.tagList(this.tags));
@@ -88,7 +88,7 @@ class Blogpost {
 						o.title = rest;
 						break;
 					case 'date':
-						o.date = new Date(rest);
+						o.date = new Date(+rest);
 						break;
 					case 'tags':
 						o.tags.push(...words.slice(1).map(Tag.getTag));
@@ -209,6 +209,6 @@ const blog = {
 		document.getElementById('main').appendChild(Blogpost.latest.elem);
 	},
 	get timestamp(){
-		return formatDate(new Date()).replace('Z', '').replace('T', ' ');
+		return +new Date();
 	},
 };

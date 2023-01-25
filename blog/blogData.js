@@ -2,7 +2,7 @@
 const blogData = [
 	`
 	@title I made a blog!
-	@date 2023-01-25 15:08:57
+	@date 1674659869714
 	@tags meta dev
 	I made a blog tool that allows me to assign custom tags to specific sections of text.
 	
