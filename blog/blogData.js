@@ -48,7 +48,6 @@ const blogData = [
 	@tags ukraine russia war
 	I was also reminded of the ongoing Russo-Ukrainian war today.
 	I read <a href="https://time.com/6244330/russia-ukraine-war-nuclear-threat/">an article in Time</a> reiterating the looming nuclear threats.
-	I have to wonder about the wisdom of supporting a stalemate in a war that could easily go nuclear in a stalemate.
 	It appears little progress has been made from Ukraine in the past couple months, which would strengthen the likelihood of a stalemate.
 	However, Ukraine did recapture Kherson a couple months ago, so I suppose the front line isn't totally frozen.
 
