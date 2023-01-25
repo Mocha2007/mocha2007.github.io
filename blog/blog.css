@@ -5,6 +5,9 @@ body {
 	margin: 40px auto;
 	max-width: 700px;
 }
+.center {
+	text-align: center;
+}
 .tag {
 	color: #8ff;
 	cursor: pointer;

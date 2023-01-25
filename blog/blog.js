@@ -11,11 +11,7 @@ function formatDate(d){
 function link(o){
 	const e = document.createElement('span');
 	e.classList.add('tag');
-	e.onclick = () => {
-		const main = document.getElementById('main');
-		main.innerHTML = '';
-		main.appendChild(o.elem);
-	};
+	e.onclick = () => blog.set(o.elem);
 	e.innerHTML = o.title;
 	return e;
 }
@@ -48,6 +44,9 @@ class Blogpost {
 		div.appendChild(document.createElement('hr'));
 		this.sections.forEach(s => div.appendChild(s.elem));
 		return div;
+	}
+	get id(){
+		return Blogpost.blogposts.indexOf(this);
 	}
 	get link(){
 		return link(this);
@@ -203,10 +202,26 @@ class Section {
 Section.sections = [];
 
 const blog = {
+	current: 0,
 	init(){
 		// todo
 		blogData.forEach(Blogpost.parse);
-		document.getElementById('main').appendChild(Blogpost.latest.elem);
+		const latest = Blogpost.latest;
+		this.current = latest.id;
+		this.set(latest.elem);
+	},
+	/** @param {number} diff amount of posts to move by */
+	move(diff){
+		const i = this.current + diff;
+		if (0 <= i && i < Blogpost.blogposts.length){
+			this.set(Blogpost.blogposts[i]);
+			this.current = i;
+		}
+	},
+	/** @param {HTMLElement} */
+	set(elem){
+		document.getElementById('main').innerHTML = '';
+		document.getElementById('main').appendChild(elem);
 	},
 	get timestamp(){
 		return +new Date();
