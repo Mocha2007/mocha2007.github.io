@@ -267,10 +267,15 @@ class Section {
 	}
 	get elem(){
 		const div = document.createElement('div');
+		div.id = this.id;
 		if (this.tags.length)
 			div.appendChild(Tag.tagList(this.tags, this.post));
 		div.appendChild(this.p);
 		return div;
+	}
+	get id(){
+		const i = this.post.sections.indexOf(this);
+		return `s${i}`;
 	}
 	get p(){
 		const p = document.createElement('p');
