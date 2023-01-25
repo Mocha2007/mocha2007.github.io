@@ -11,6 +11,8 @@ const blogData = [
 	For example, in this paragraph, I'm talking about JS, so I tagged it JS.
 	I hate JS. :(
 	@p
-	Anyways, that's all for now...
+	Later on this morning I also added prev/next/first/last buttons.
+	I eventually want to have better search and exploration options,
+	but I suppose the best mechanism to allow that will only be obvious after I use this more...
 	`,
 ];
