@@ -1,5 +1,5 @@
 /* exported blog */
-/* global blogData, clamp */
+/* global blogData, clamp, random */
 
 /** @param {Date} d */
 function formatDate(d){
@@ -203,6 +203,10 @@ Section.sections = [];
 
 const blog = {
 	current: 0,
+	/** @param {number} i */
+	goto(i){
+		this.set(Blogpost.blogposts[this.current = i].elem);
+	},
 	init(){
 		// todo
 		blogData.forEach(Blogpost.parse);
@@ -212,9 +216,10 @@ const blog = {
 	},
 	/** @param {number} diff amount of posts to move by */
 	move(diff){
-		const i = clamp(this.current + diff, 0, Blogpost.blogposts.length-1);
-		this.set(Blogpost.blogposts[i].elem);
-		this.current = i;
+		this.goto(clamp(this.current + diff, 0, Blogpost.blogposts.length-1));
+	},
+	random(){
+		this.goto(random.randint(0, Blogpost.blogposts.length-1));
 	},
 	/** @param {HTMLElement} */
 	set(elem){
