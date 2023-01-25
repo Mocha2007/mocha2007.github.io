@@ -17,6 +17,14 @@ function link(o, hover='', titleOverride=''){
 	return e;
 }
 
+/**
+ * @param {string} a
+ * @param {string} b
+ */
+function sortText(a, b){
+	return a < b ? -1 : a > b ? 1 : 0;
+}
+
 class Blogpost {
 	/**
 	 * @param {string} title
@@ -201,6 +209,21 @@ class Tag {
 			container.appendChild(link(next, `next mention of ${this.title}`, '&raquo;'));
 		return container;
 	}
+	static get allElemLink(){
+		const o = {
+			get elem(){
+				const ul = document.createElement('ul');
+				Tag.tags.sort((a, b) => sortText(a.title, b.title)).forEach(t => {
+					const li = document.createElement('li');
+					li.appendChild(t.link);
+					ul.appendChild(li);
+				});
+				return ul;
+			},
+			title: 'Tags:',
+		};
+		return link(o, 'see all tags');
+	}
 	/**
 	 * @param {Tag[]} tags
 	 * @param {Blogpost} post
@@ -208,7 +231,7 @@ class Tag {
 	static tagList(tags, post){
 		const span = document.createElement('span');
 		span.classList.add('tagList');
-		span.innerHTML = 'Tags: ';
+		span.appendChild(Tag.allElemLink);
 		tags.forEach(t => span.appendChild(t.link2(post)));
 		return span;
 	}

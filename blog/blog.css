@@ -17,6 +17,9 @@ q p {
 	display: inline;
 	font-style: italic;
 }
+ul {
+	list-style: none;
+}
 /* classes */
 .dateContainer {
 	background-color: #224;
@@ -58,6 +61,9 @@ q p {
 .tagList {
 	background-color: #423;
 	border: 2px solid #f8c;
+	color: #f8c;
+}
+.tagList > .tag:nth-child(1) {
 	color: #f8c;
 }
 /* mobile */
