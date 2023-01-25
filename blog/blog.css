@@ -16,6 +16,14 @@ hr {
 	border-color: grey;
 	border-radius: 1px;
 }
+*:target {
+	background-color: #342;
+	border: 2px solid #8f0;
+	color: #8f0;
+}
+*:target p::before {
+	content: "► ";
+}
 q p {
 	display: inline;
 	font-style: italic;
@@ -29,7 +37,7 @@ ul {
 	border: 2px solid #66c;
 	color: #66c;
 }
-.dateContainer, .tagList {
+.dateContainer, .tagList, *:target {
 	border-radius: 10px;
 	display: block;
 	margin: 5px auto;

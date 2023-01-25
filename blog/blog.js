@@ -279,8 +279,19 @@ class Section {
 	}
 	get p(){
 		const p = document.createElement('p');
-		p.innerHTML = this.innerHTML;
+		p.appendChild(this.permalink);
+		const span = document.createElement('span');
+		span.innerHTML = this.innerHTML;
+		p.appendChild(span);
 		return p;
+	}
+	get permalink(){
+		const a = document.createElement('a');
+		const baseUrl = window.location.href.match(/[^#?]+/)[0];
+		a.href = `${baseUrl}?i=${this.post.id}#${this.id}`;
+		a.innerHTML = '^';
+		a.title = 'Permalink';
+		return a;
 	}
 	get post(){
 		return Blogpost.blogposts.find(b => b.sections.includes(this));
@@ -337,7 +348,7 @@ const blog = {
 		const latest = Blogpost.latest;
 		this.current = latest.id;
 		// url contains id?
-		const url = window.location.href.match(/\?.+/g);
+		const url = window.location.href.match(/\?[^#]+/g);
 		if (url)
 			this.goto(+url[0].replace('?i=', ''));
 		else
