@@ -68,7 +68,6 @@ class Blogpost {
 						break;
 					case 'tags':
 						o.tags.push(...words.slice(1).map(Tag.getTag));
-						debugger;
 						break;
 					case 'p':
 						body = true;
@@ -83,10 +82,10 @@ class Blogpost {
 					case 'tags':
 						o.currentP.tags.push(...words.slice(1).map(Tag.getTag));
 						break;
-					default:
-						o.currentP.innerHTML += `\n${rest}`;
 				}
 			}
+			else
+				o.currentP.innerHTML += `\n${line}`.replace(/\s+/, ' ');
 		});
 		return new Blogpost(o.title, o.date, o.tags, o.sections);
 	}
@@ -117,7 +116,7 @@ class Tag {
 	}
 	/** @param {string} s */
 	static getTag(s){
-		Tag.tags.find(t => t.name === s) || new Tag(s);
+		return Tag.tags.find(t => t.name === s) || new Tag(s);
 	}
 }
 /** @type {Tag[]} */
