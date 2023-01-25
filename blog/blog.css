@@ -29,6 +29,12 @@ hr {
 .footer {
 	text-align: center;
 }
+.linkContainer {
+	background-color: #244;
+	border: 2px solid #8ff;
+	border-radius: 10px;
+	padding-left: 0.5em;
+}
 .shorterHr {
 	border-color: #444;
 	width: 80%;

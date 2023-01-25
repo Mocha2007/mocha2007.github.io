@@ -186,6 +186,7 @@ class Tag {
 	/** @param {Blogpost} post */
 	link2(post){
 		const container = document.createElement('span');
+		container.classList.add('linkContainer');
 		const prev = Blogpost.blogposts.slice(0, post.id)
 			.reverse().find(p => p.allTags.includes(this));
 		const next = Blogpost.blogposts.slice(post.id+1)
