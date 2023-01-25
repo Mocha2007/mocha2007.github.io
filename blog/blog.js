@@ -8,11 +8,11 @@ function formatDate(d){
 	return `${d.getUTCFullYear()}-${d.getUTCMonth()+1}-${d.getUTCDate()}T${d.getUTCHours()}:${d.getUTCMinutes()}:${d.getUTCSeconds()}Z`;
 }
 
-function link(o, hover=''){
+function link(o, hover='', titleOverride=''){
 	const e = document.createElement('span');
 	e.classList.add('tag');
 	e.onclick = () => blog.set(o.elem);
-	e.innerHTML = o.title;
+	e.innerHTML = titleOverride || o.title;
 	e.title = hover;
 	return e;
 }
@@ -30,6 +30,9 @@ class Blogpost {
 		this.tags = tags;
 		this.sections = sections;
 		Blogpost.blogposts.push(this);
+	}
+	get allTags(){
+		return this.tags.concat(...this.sections.map(s => s.tags));
 	}
 	get elem(){
 		const div = document.createElement('div');
@@ -58,7 +61,7 @@ class Blogpost {
 		div.appendChild(dateContainer);
 		// tags
 		if (this.tags.length)
-			div.appendChild(Tag.tagList(this.tags));
+			div.appendChild(Tag.tagList(this.tags, this));
 		const hr = document.createElement('hr');
 		hr.classList.add('shorterHr');
 		div.appendChild(hr);
@@ -180,12 +183,29 @@ class Tag {
 	get link(){
 		return link(this);
 	}
-	/** @param {Tag[]} tags */
-	static tagList(tags){
+	/** @param {Blogpost} post */
+	link2(post){
+		const container = document.createElement('span');
+		const prev = Blogpost.blogposts.slice(0, post.id)
+			.reverse().find(p => p.allTags.includes(this));
+		const next = Blogpost.blogposts.slice(post.id+1)
+			.find(p => p.allTags.includes(this));
+		if (prev)
+			container.appendChild(link(prev, `previous mention of ${this.title}`, '&laquo;'));
+		container.appendChild(this.link);
+		if (next)
+			container.appendChild(link(next, `next mention of ${this.title}`, '&raquo;'));
+		return container;
+	}
+	/**
+	 * @param {Tag[]} tags
+	 * @param {Blogpost} post
+	 */
+	static tagList(tags, post){
 		const span = document.createElement('span');
 		span.classList.add('tagList');
 		span.innerHTML = 'Tags: ';
-		tags.forEach(t => span.appendChild(t.link));
+		tags.forEach(t => span.appendChild(t.link2(post)));
 		return span;
 	}
 	/** @param {string} s */
@@ -209,7 +229,7 @@ class Section {
 	get elem(){
 		const div = document.createElement('div');
 		if (this.tags.length)
-			div.appendChild(Tag.tagList(this.tags));
+			div.appendChild(Tag.tagList(this.tags, this.post));
 		const p = document.createElement('p');
 		p.innerHTML = this.innerHTML;
 		div.appendChild(p);
