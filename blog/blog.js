@@ -8,6 +8,18 @@ function formatDate(d){
 	return `${d.getUTCFullYear()}-${d.getUTCMonth()}-${d.getUTCDate()}T${d.getUTCHours()}:${d.getUTCMinutes()}:${d.getUTCSeconds()}Z`;
 }
 
+function link(o){
+	const e = document.createElement('span');
+	e.classList.add('tag');
+	e.onclick = () => {
+		const main = document.getElementById('main');
+		main.innerHTML = '';
+		main.appendChild(o.elem);
+	};
+	e.innerHTML = o.title;
+	return e;
+}
+
 class Blogpost {
 	/**
 	 * @param {string} title
@@ -32,6 +44,9 @@ class Blogpost {
 		div.appendChild(Tag.tagList(this.tags));
 		this.sections.forEach(s => div.appendChild(s.elem));
 		return div;
+	}
+	get link(){
+		return link(this);
 	}
 	static get latest(){
 		const max = Math.max(...Blogpost.blogposts.map(b => b.date));
@@ -98,17 +113,28 @@ class Blogpost {
 Blogpost.blogposts = [];
 
 class Tag {
-	/** @param {string} name */
-	constructor(name){
-		this.name = name;
+	/** @param {string} title */
+	constructor(title){
+		this.title = title;
 		Tag.tags.push(this);
 	}
+	get elem(){
+		const div = document.createElement('div');
+		const h = document.createElement('h2');
+		h.innerHTML = this.title;
+		div.appendChild(h);
+		// get listing
+		const ul = document.createElement('ul');
+		div.appendChild(ul);
+		Blogpost.blogposts.filter(b => b.tags.includes(this)).forEach(b => {
+			const li = document.createElement('li');
+			li.appendChild(b.link);
+			ul.appendChild(li);
+		});
+		return div;
+	}
 	get link(){
-		const e = document.createElement('span');
-		e.classList.add('tag');
-		// e.onclick = () =>
-		e.innerHTML = this.name;
-		return e;
+		return link(this);
 	}
 	/** @param {Tag[]} tags */
 	static tagList(tags){
@@ -120,7 +146,7 @@ class Tag {
 	}
 	/** @param {string} s */
 	static getTag(s){
-		return Tag.tags.find(t => t.name === s) || new Tag(s);
+		return Tag.tags.find(t => t.title === s) || new Tag(s);
 	}
 }
 /** @type {Tag[]} */
