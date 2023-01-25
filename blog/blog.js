@@ -1,4 +1,5 @@
 /* exported blog */
+/* global blogData */
 
 /** @param {Date} d */
 function formatDate(d){
@@ -19,6 +20,7 @@ class Blogpost {
 		this.date = date;
 		this.tags = tags;
 		this.sections = sections;
+		Blogpost.blogposts.push(this);
 	}
 	get elem(){
 		const div = document.createElement('div');
@@ -33,14 +35,62 @@ class Blogpost {
 	}
 	/** @param {string} s */
 	static parse(s){
-		// todo
+		const o = {
+			title: '',
+			date: 0,
+			tags: [],
+			sections: [],
+			currentP: {
+				tags: [],
+				innerHTML: '',
+			},
+		};
+		let body = false;
+		s.split('\n').forEach(line => {
+			const words = line.split(/\s/g);
+			if (words[0][0] === '@'){
+				const kw = words[0].slice(1);
+				const rest = words.slice(1).join(' ');
+				// eslint-disable-next-line nonblock-statement-body-position
+				if (!body) switch (kw){
+					case 'title':
+						o.title = rest;
+						break;
+					case 'date':
+						o.date = new Date(rest);
+						break;
+					case 'tags':
+						o.tags = o.tags.concat(words.slice(1).map(Tag.getTag));
+						break;
+					case 'p':
+						body = true;
+						break;
+				}
+				// eslint-disable-next-line nonblock-statement-body-position
+				else switch (kw){
+					case 'p':
+						o.sections.push(new Section(o.currentP.tags, o.currentP.innerHTML));
+						o.currentP = {tags: [], innerHTML: ''};
+						break;
+					case 'tags':
+						o.currentP.tags = o.currentP.tags.concat(words.slice(1).map(Tag.getTag));
+						break;
+					default:
+						o.currentP.innerHTML += `\n${rest}`;
+				}
+			}
+		});
+		return new Blogpost(o.title, o.date, o.tags, o.sections);
 	}
 }
+/** @type {Blogpost[]} */
+Blogpost.blogposts = [];
 
 class Tag {
 	/** @param {string} name */
 	constructor(name){
 		this.name = name;
+		Tag.tags.push(this);
 	}
 	get elem(){
 		const e = document.createElement('span');
@@ -57,7 +107,13 @@ class Tag {
 		tags.forEach(t => span.appendChild(t.innerHTML));
 		return span;
 	}
+	/** @param {string} s */
+	static getTag(s){
+		Tag.tags.find(t => t.name === s) || new Tag(s);
+	}
 }
+/** @type {Tag[]} */
+Tag.tags = [];
 
 class Section {
 	/**
@@ -67,6 +123,7 @@ class Section {
 	constructor(tags, innerHTML){
 		this.tags = tags;
 		this.innerHTML = innerHTML;
+		Section.sections.push(this);
 	}
 	get elem(){
 		const div = document.createElement('div');
@@ -77,9 +134,12 @@ class Section {
 		return div;
 	}
 }
+/** @type {Section[]} */
+Section.sections = [];
 
 const blog = {
 	init(){
 		// todo
+		blogData.forEach(Blogpost.parse);
 	},
 };
