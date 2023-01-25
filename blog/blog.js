@@ -1,5 +1,5 @@
 /* exported blog */
-/* global blogData */
+/* global blogData, clamp */
 
 /** @param {Date} d */
 function formatDate(d){
@@ -212,11 +212,9 @@ const blog = {
 	},
 	/** @param {number} diff amount of posts to move by */
 	move(diff){
-		const i = this.current + diff;
-		if (0 <= i && i < Blogpost.blogposts.length){
-			this.set(Blogpost.blogposts[i]);
-			this.current = i;
-		}
+		const i = clamp(this.current + diff, 0, Blogpost.blogposts.length-1);
+		this.set(Blogpost.blogposts[i].elem);
+		this.current = i;
 	},
 	/** @param {HTMLElement} */
 	set(elem){
