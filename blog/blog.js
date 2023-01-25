@@ -47,10 +47,17 @@ class Blogpost {
 		};
 		let body = false;
 		s.split('\n').forEach(line => {
+			// console.debug('line', line);
 			const words = line.split(/\s/g);
-			if (words[0][0] === '@'){
+			// remove leading whitespace
+			while (words[0] === '')
+				words.shift();
+			// console.debug('words', words);
+			// keyword?
+			if (words.length && words[0][0] === '@'){
 				const kw = words[0].slice(1);
 				const rest = words.slice(1).join(' ');
+				// console.debug(kw, rest);
 				// eslint-disable-next-line nonblock-statement-body-position
 				if (!body) switch (kw){
 					case 'title':
