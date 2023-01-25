@@ -2,6 +2,7 @@ body {
 	background-color: black;
 	color: silver;
 	font-family: Consolas, 'Courier New', Courier, monospace;
+	padding: 0 20px;
 	margin: 40px auto;
 	max-width: 700px;
 }
