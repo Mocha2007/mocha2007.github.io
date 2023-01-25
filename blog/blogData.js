@@ -67,6 +67,10 @@ const blogData = [
 	Anyways, until and unless they fix the whitespace issues, I think I'll stick with the classic look.
 
 	@p
+	@tags earworm
+	All day I have had <a href="https://youtu.be/XXlZfc1TrD0"><cite>Banana Brain</cite> by Die Antwoord</a> stuck in my head.
+
+	@p
 	@tags meta
 	I have to say, I think I will enjoy writing this blog.
 	I have long wanted to continue putting my thoughts to paper since I stopped journaling a decade ago.
