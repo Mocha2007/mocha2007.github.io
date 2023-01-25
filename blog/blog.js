@@ -122,7 +122,7 @@ class Blogpost {
 				// eslint-disable-next-line nonblock-statement-body-position
 				else switch (kw){
 					case 'p':
-						o.sections.push(new Section(o.currentP.tags, o.currentP.innerHTML));
+						o.sections.push(new Section(o.currentP.tags, o.currentP.innerHTML.replace(/^\s+/g, '')));
 						o.currentP = {tags: [], innerHTML: ''};
 						break;
 					case 'tags':
@@ -176,6 +176,9 @@ class Tag {
 		Section.sections.filter(s => s.tags.includes(this)).forEach(s => {
 			const li = document.createElement('li');
 			li.appendChild(s.post.link);
+			const q = document.createElement('q');
+			q.appendChild(s.p);
+			li.appendChild(q);
 			ul2.appendChild(li);
 		});
 		return div;
@@ -231,10 +234,13 @@ class Section {
 		const div = document.createElement('div');
 		if (this.tags.length)
 			div.appendChild(Tag.tagList(this.tags, this.post));
+		div.appendChild(this.p);
+		return div;
+	}
+	get p(){
 		const p = document.createElement('p');
 		p.innerHTML = this.innerHTML;
-		div.appendChild(p);
-		return div;
+		return p;
 	}
 	get post(){
 		return Blogpost.blogposts.find(b => b.sections.includes(this));

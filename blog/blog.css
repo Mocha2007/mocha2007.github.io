@@ -13,6 +13,10 @@ hr {
 	border-color: grey;
 	border-radius: 1px;
 }
+q p {
+	display: inline;
+	font-style: italic;
+}
 /* classes */
 .dateContainer {
 	background-color: #224;
