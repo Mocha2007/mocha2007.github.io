@@ -103,7 +103,7 @@ class Tag {
 		this.name = name;
 		Tag.tags.push(this);
 	}
-	get elem(){
+	get link(){
 		const e = document.createElement('span');
 		e.classList.add('tag');
 		// e.onclick = () =>
@@ -115,7 +115,7 @@ class Tag {
 		const span = document.createElement('span');
 		span.classList.add('tagList');
 		span.innerHTML = 'Tags: ';
-		tags.forEach(t => span.appendChild(t.elem));
+		tags.forEach(t => span.appendChild(t.link));
 		return span;
 	}
 	/** @param {string} s */
