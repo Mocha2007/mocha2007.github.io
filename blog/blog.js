@@ -221,7 +221,7 @@ const blog = {
 	random(){
 		this.goto(random.randint(0, Blogpost.blogposts.length-1));
 	},
-	/** @param {HTMLElement} */
+	/** @param {HTMLElement} elem */
 	set(elem){
 		document.getElementById('main').innerHTML = '';
 		document.getElementById('main').appendChild(elem);
