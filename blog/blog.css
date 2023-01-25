@@ -1,0 +1,6 @@
+html, body {
+	background-color: black;
+	color: silver;
+	font-family: Consolas, 'Courier New', Courier, monospace;
+	max-width: 700px;
+}
