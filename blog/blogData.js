@@ -1,14 +1,16 @@
 /* exported blogData */
 const blogData = [
 	`
-	@title Title of Post
-	@date 2023-01-24
-	@tags tag1 tag2 all_tags_must_use_underscores
-	Blah blah blah.
+	@title I made a blog!
+	@date 2023-01-25 15:08:57
+	@tags meta dev
+	I made a blog tool that allows me to assign custom tags to specific sections of text.
+	
 	@p
-	@tags geometry
-	Here I talk about geometry
+	@tags js
+	For example, in this paragraph, I'm talking about JS, so I tagged it JS.
+	I hate JS. :(
 	@p
-	Okay, neutral paragraph...
+	Anyways, that's all for now...
 	`,
 ];

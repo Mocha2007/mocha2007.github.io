@@ -5,7 +5,7 @@
 function formatDate(d){
 	// 2011-11-18T14:54:39.929-0400
 	// eslint-disable-next-line max-len
-	return `${d.getUTCFullYear()}-${d.getUTCMonth()}-${d.getUTCDate()}T${d.getUTCHours()}:${d.getUTCMinutes()}:${d.getUTCSeconds()}Z`;
+	return `${d.getUTCFullYear()}-${d.getUTCMonth()+1}-${d.getUTCDate()}T${d.getUTCHours()}:${d.getUTCMinutes()}:${d.getUTCSeconds()}Z`;
 }
 
 function link(o){
@@ -45,6 +45,7 @@ class Blogpost {
 		div.appendChild(date);
 		div.appendChild(document.createElement('br'));
 		div.appendChild(Tag.tagList(this.tags));
+		div.appendChild(document.createElement('hr'));
 		this.sections.forEach(s => div.appendChild(s.elem));
 		return div;
 	}
@@ -59,7 +60,7 @@ class Blogpost {
 	static parse(s){
 		const o = {
 			title: '',
-			date: 0,
+			date: new Date(0),
 			tags: [],
 			sections: [],
 			currentP: {
@@ -69,7 +70,8 @@ class Blogpost {
 		};
 		let body = false;
 		s.split('\n').forEach(line => {
-			// console.debug('line', line);
+			if (!line)
+				return;
 			const words = line.split(/\s/g);
 			// remove leading whitespace
 			while (words[0] === '')
@@ -106,9 +108,15 @@ class Blogpost {
 						break;
 				}
 			}
-			else
+			else {
 				o.currentP.innerHTML += `\n${line}`.replace(/\s+/, ' ');
+				body = true;
+			}
 		});
+		// make sure last section is added
+		if (o.currentP.innerHTML)
+			o.sections.push(new Section(o.currentP.tags, o.currentP.innerHTML));
+		// done
 		return new Blogpost(o.title, o.date, o.tags, o.sections);
 	}
 }
@@ -199,5 +207,8 @@ const blog = {
 		// todo
 		blogData.forEach(Blogpost.parse);
 		document.getElementById('main').appendChild(Blogpost.latest.elem);
+	},
+	get timestamp(){
+		return formatDate(new Date()).replace('Z', '').replace('T', ' ');
 	},
 };
