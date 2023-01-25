@@ -73,6 +73,8 @@ ul {
 	background-color: #423;
 	border: 2px solid #f8c;
 	color: #f8c;
+	max-width: 80%;
+	text-align: center;
 }
 .tagList > .tag:nth-child(1) {
 	color: #f8c;

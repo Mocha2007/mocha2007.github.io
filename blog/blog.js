@@ -249,7 +249,11 @@ class Tag {
 		const span = document.createElement('span');
 		span.classList.add('tagList');
 		span.appendChild(Tag.allElemLink);
-		tags.forEach(t => span.appendChild(t.link2(post)));
+		tags.forEach((t, i) => {
+			if (i)
+				span.appendChild(document.createElement('wbr'));
+			span.appendChild(t.link2(post));
+		});
 		return span;
 	}
 	/** @param {string} s */
