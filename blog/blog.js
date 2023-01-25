@@ -37,21 +37,22 @@ class Blogpost {
 		div.appendChild(h);
 		// date
 		const dateContainer = document.createElement('div');
+		dateContainer.classList.add('dateContainer');
 		const date = document.createElement('time');
 		date.dateTime = formatDate(this.date);
 		date.innerHTML = this.date.toString();
 		dateContainer.appendChild(date);
 		dateContainer.appendChild(document.createElement('br'));
-		dateContainer.appendChild(document.createTextNode('most posts from... '));
+		dateContainer.appendChild(document.createTextNode('more posts from... '));
 		dateContainer.appendChild(link(new Period(
 			new Date(`${this.date.getFullYear()}-${this.date.getMonth()+1}`),
 			new Date(`${this.date.getFullYear()}-${this.date.getMonth()+2}`),
-			'this month'
+			'month'
 		)));
 		dateContainer.appendChild(link(new Period(
 			new Date(`${this.date.getFullYear()}`),
 			new Date(`${this.date.getFullYear()+1}`),
-			'this year'
+			'year'
 		)));
 		div.appendChild(dateContainer);
 		// tags
