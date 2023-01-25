@@ -2,7 +2,6 @@ body {
 	background-color: black;
 	color: silver;
 	font-family: Consolas, 'Courier New', Courier, monospace;
-	padding: 0 20px;
 	margin: 40px auto;
 	max-width: 700px;
 }
@@ -36,4 +35,11 @@ hr {
 }
 .tagList {
 	color: #f8c;
+}
+/* mobile */
+@media only screen and (max-width: 750px) {
+	body {
+		font-size: 112.5%;
+		padding: 0 30px;
+	}
 }
