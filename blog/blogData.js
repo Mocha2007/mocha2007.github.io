@@ -64,6 +64,11 @@ const blogData = [
 	but that's not <em>that</em> bad.
 	The sole positive change is them moving the table of contents into the sidebar.
 	On a sidenote, I am completely baffled as to how Wikipedia is the only major website to not even have considered a dark mode.
-	However, until and unless they fix the whitespace issues, I think I'll stick with the classic look.
+	Anyways, until and unless they fix the whitespace issues, I think I'll stick with the classic look.
+
+	@p
+	@tags meta
+	I have to say, I think I will enjoy writing this blog.
+	I have long wanted to continue putting my thoughts to paper since I stopped journaling a decade ago.
 	`,
 ];
