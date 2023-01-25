@@ -56,7 +56,9 @@ class Blogpost {
 		div.appendChild(dateContainer);
 		// tags
 		div.appendChild(Tag.tagList(this.tags));
-		div.appendChild(document.createElement('hr'));
+		const hr = document.createElement('hr');
+		hr.classList.add('shorterHr');
+		div.appendChild(hr);
 		this.sections.forEach(s => div.appendChild(s.elem));
 		return div;
 	}
@@ -203,7 +205,8 @@ class Section {
 	}
 	get elem(){
 		const div = document.createElement('div');
-		div.appendChild(Tag.tagList(this.tags));
+		if (this.tags.length)
+			div.appendChild(Tag.tagList(this.tags));
 		const p = document.createElement('p');
 		p.innerHTML = this.innerHTML;
 		div.appendChild(p);

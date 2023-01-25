@@ -10,11 +10,16 @@ h1, h2, h3 {
 }
 hr {
 	border: 1px solid silver;
+	border-color: grey;
 	border-radius: 1px;
 }
 /* classes */
 .center {
 	text-align: center;
+}
+.shorterHr {
+	border-color: #444;
+	width: 80%;
 }
 .tag {
 	color: #8ff;
