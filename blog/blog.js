@@ -123,13 +123,27 @@ class Tag {
 		const h = document.createElement('h2');
 		h.innerHTML = this.title;
 		div.appendChild(h);
-		// get listing
+		// get posts
+		const h_ = document.createElement('h3');
+		h_.innerHTML = 'Posts';
+		div.appendChild(h_);
 		const ul = document.createElement('ul');
 		div.appendChild(ul);
 		Blogpost.blogposts.filter(b => b.tags.includes(this)).forEach(b => {
 			const li = document.createElement('li');
 			li.appendChild(b.link);
 			ul.appendChild(li);
+		});
+		// get sections
+		const h_2 = document.createElement('h3');
+		h_.innerHTML = 'Sections';
+		div.appendChild(h_2);
+		const ul2 = document.createElement('ul');
+		div.appendChild(ul2);
+		Section.sections.filter(s => s.tags.includes(this)).forEach(s => {
+			const li = document.createElement('li');
+			li.appendChild(s.post.link);
+			ul2.appendChild(li);
 		});
 		return div;
 	}
@@ -169,6 +183,9 @@ class Section {
 		p.innerHTML = this.innerHTML;
 		div.appendChild(p);
 		return div;
+	}
+	get post(){
+		return Blogpost.blogposts.find(b => b.sections.includes(this));
 	}
 }
 /** @type {Section[]} */
