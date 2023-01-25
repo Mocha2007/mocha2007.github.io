@@ -6,5 +6,14 @@ body {
 	max-width: 700px;
 }
 .tag {
+	color: #8ff;
+	cursor: pointer;
 	margin-right: 0.5em;
+	user-select: none;
+}
+.tag:hover {
+	opacity: 0.5;
+}
+.tag:active {
+	opacity: 0.25;
 }
