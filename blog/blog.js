@@ -33,6 +33,10 @@ class Blogpost {
 		this.sections.forEach(s => div.appendChild(s.elem));
 		return div;
 	}
+	static get latest(){
+		const max = Math.max(...Blogpost.blogposts.map(b => b.date));
+		return Blogpost.blogposts.find(b => +b.date === max);
+	}
 	/** @param {string} s */
 	static parse(s){
 		const o = {
@@ -111,7 +115,7 @@ class Tag {
 		const span = document.createElement('span');
 		span.classList.add('tagList');
 		span.innerHTML = 'Tags: ';
-		tags.forEach(t => span.appendChild(t.innerHTML));
+		tags.forEach(t => span.appendChild(t.elem));
 		return span;
 	}
 	/** @param {string} s */
@@ -148,5 +152,6 @@ const blog = {
 	init(){
 		// todo
 		blogData.forEach(Blogpost.parse);
+		document.getElementById('main').appendChild(Blogpost.latest.elem);
 	},
 };
