@@ -8,11 +8,12 @@ function formatDate(d){
 	return `${d.getUTCFullYear()}-${d.getUTCMonth()+1}-${d.getUTCDate()}T${d.getUTCHours()}:${d.getUTCMinutes()}:${d.getUTCSeconds()}Z`;
 }
 
-function link(o){
+function link(o, hover=''){
 	const e = document.createElement('span');
 	e.classList.add('tag');
 	e.onclick = () => blog.set(o.elem);
 	e.innerHTML = o.title;
+	e.title = hover;
 	return e;
 }
 
@@ -56,7 +57,8 @@ class Blogpost {
 		)));
 		div.appendChild(dateContainer);
 		// tags
-		div.appendChild(Tag.tagList(this.tags));
+		if (this.tags.length)
+			div.appendChild(Tag.tagList(this.tags));
 		const hr = document.createElement('hr');
 		hr.classList.add('shorterHr');
 		div.appendChild(hr);
@@ -67,7 +69,7 @@ class Blogpost {
 		return Blogpost.blogposts.indexOf(this);
 	}
 	get link(){
-		return link(this);
+		return link(this, this.date.toString());
 	}
 	static get latest(){
 		const max = Math.max(...Blogpost.blogposts.map(b => b.date));
