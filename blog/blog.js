@@ -17,6 +17,16 @@ function link(o, hover='', titleOverride=''){
 	return e;
 }
 
+/** @param {string} suburl */
+function permalink(suburl){
+	const a = document.createElement('a');
+	const baseUrl = window.location.href.match(/[^?#]+/)[0];
+	a.href = `${baseUrl}${suburl}`;
+	a.innerHTML = '^';
+	a.title = 'Permalink';
+	return a;
+}
+
 /**
  * @param {string} a
  * @param {string} b
@@ -84,12 +94,7 @@ class Blogpost {
 		return link(this, this.date.toString());
 	}
 	get permalink(){
-		const a = document.createElement('a');
-		const baseUrl = window.location.href.match(/[^?]+/)[0];
-		a.href = `${baseUrl}?i=${this.id}`;
-		a.innerHTML = '^';
-		a.title = 'Permalink';
-		return a;
+		return permalink(`?i=${this.id}`);
 	}
 	static get latest(){
 		const max = Math.max(...Blogpost.blogposts.map(b => b.date));
@@ -286,12 +291,7 @@ class Section {
 		return p;
 	}
 	get permalink(){
-		const a = document.createElement('a');
-		const baseUrl = window.location.href.match(/[^#?]+/)[0];
-		a.href = `${baseUrl}?i=${this.post.id}#${this.id}`;
-		a.innerHTML = '^';
-		a.title = 'Permalink';
-		return a;
+		return permalink(`?i=${this.post.id}#${this.id}`);
 	}
 	get post(){
 		return Blogpost.blogposts.find(b => b.sections.includes(this));
