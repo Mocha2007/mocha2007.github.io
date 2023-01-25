@@ -26,7 +26,8 @@ const blogData = [
 	@tags weather
 	I have been thinking about the weather recently.
 	It has not snowed yet this winter here, although it did drop below freezing a few times.
-	It rained this morning, and is currently 49&deg;F.
+	It rained this morning, and then stopped around noon.
+	Then the rain picked up again a few hours later and contined into the evening.
 	It has been in the 40s and 50s so far this week, as far as I recall.
 	I wonder if I should add weather analysis tools to my to-do list...
 
