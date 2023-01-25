@@ -147,7 +147,7 @@ class Tag {
 		});
 		// get sections
 		const h_2 = document.createElement('h3');
-		h_.innerHTML = 'Sections';
+		h_2.innerHTML = 'Sections';
 		div.appendChild(h_2);
 		const ul2 = document.createElement('ul');
 		div.appendChild(ul2);
