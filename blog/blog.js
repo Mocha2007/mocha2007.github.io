@@ -53,7 +53,7 @@ class Blogpost {
 		return this.tags.concat(...this.sections.map(s => s.tags));
 	}
 	get elem(){
-		const div = document.createElement('div');
+		const div = document.createElement('article');
 		const h = document.createElement('h2');
 		h.appendChild(this.permalink);
 		h.appendChild(document.createTextNode(this.title));
@@ -174,7 +174,7 @@ class Tag {
 		Tag.tags.push(this);
 	}
 	get elem(){
-		const div = document.createElement('div');
+		const div = document.createElement('article');
 		const h = document.createElement('h2');
 		h.innerHTML = this.title;
 		div.appendChild(h);
@@ -316,7 +316,7 @@ class Period {
 		this.title = title;
 	}
 	get elem(){
-		const div = document.createElement('div');
+		const div = document.createElement('article');
 		const h = document.createElement('h2');
 		h.innerHTML = this.title;
 		div.appendChild(h);
