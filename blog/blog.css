@@ -14,7 +14,7 @@ hr {
 	border-radius: 1px;
 }
 /* classes */
-.center {
+.footer {
 	text-align: center;
 }
 .shorterHr {
@@ -41,5 +41,8 @@ hr {
 	body {
 		font-size: 112.5%;
 		padding: 0 30px;
+	}
+	.footer {
+		font-size: 16px;
 	}
 }
