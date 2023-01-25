@@ -5,3 +5,6 @@ body {
 	margin: 40px auto;
 	max-width: 700px;
 }
+.tag {
+	margin-right: 0.5em;
+}
