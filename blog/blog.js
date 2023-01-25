@@ -275,7 +275,7 @@ class Section {
 		Section.sections.push(this);
 	}
 	get elem(){
-		const div = document.createElement('div');
+		const div = document.createElement('section');
 		div.id = this.id;
 		if (this.tags.length)
 			div.appendChild(Tag.tagList(this.tags, this.post));
