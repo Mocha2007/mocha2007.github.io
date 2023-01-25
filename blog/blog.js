@@ -41,6 +41,9 @@ class Blogpost {
 		div.appendChild(h);
 		const date = document.createElement('time');
 		date.dateTime = formatDate(this.date);
+		date.innerHTML = this.date.toLocaleString();
+		div.appendChild(date);
+		div.appendChild(document.createElement('br'));
 		div.appendChild(Tag.tagList(this.tags));
 		this.sections.forEach(s => div.appendChild(s.elem));
 		return div;
