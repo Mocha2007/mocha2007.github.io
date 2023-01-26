@@ -173,7 +173,8 @@ Blogpost.blogposts = [];
 class Tag {
 	/** @param {string} name */
 	constructor(name){
-		this.title = name; // title(name.toLowerCase().replace('_', ' '))
+		this.name = name;
+		this.title = title(name.toLowerCase().replace('_', ' '));
 		Tag.tags.push(this);
 	}
 	get elem(){
@@ -261,7 +262,7 @@ class Tag {
 	}
 	/** @param {string} s */
 	static getTag(s){
-		return Tag.tags.find(t => t.title === s) || new Tag(s);
+		return Tag.tags.find(t => t.name === s) || new Tag(s);
 	}
 }
 /** @type {Tag[]} */
