@@ -38,7 +38,7 @@ ul {
 	color: #66c;
 }
 .dateContainer, .tagList, *:target {
-	border-radius: 10px;
+	border-radius: 15px;
 	display: block;
 	margin: 5px auto;
 	padding: 0 10px;
@@ -50,7 +50,7 @@ ul {
 .linkContainer {
 	background-color: #244;
 	border: 2px solid #8ff;
-	border-radius: 10px;
+	border-radius: 15px;
 	padding-left: 0.5em;
 }
 .shorterHr {
