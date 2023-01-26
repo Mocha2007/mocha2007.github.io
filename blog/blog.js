@@ -343,6 +343,9 @@ class Period {
 
 const blog = {
 	current: 0,
+	get debug(){
+		return window.location.href.slice(0, 4) === 'file';
+	},
 	/** @param {number} i */
 	goto(i){
 		this.set(Blogpost.blogposts[this.current = i].elem);
@@ -374,7 +377,8 @@ const blog = {
 			document.getElementById('main').appendChild(elem);
 		}
 		catch (e){
-			notif.catch(e);
+			if (this.debug)
+				notif.catch(e);
 		}
 	},
 	get timestamp(){
