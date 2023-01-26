@@ -102,6 +102,10 @@ class Blogpost {
 	}
 	/** @param {string} s */
 	static parse(s){
+		const newP = () => {
+			o.sections.push(new Section(o.currentP.tags, o.currentP.innerHTML.replace(/^\s+/g, '')));
+			o.currentP = {tags: [], innerHTML: ''};
+		};
 		const o = {
 			title: '',
 			date: new Date(0),
@@ -144,8 +148,7 @@ class Blogpost {
 				// eslint-disable-next-line nonblock-statement-body-position
 				else switch (kw){
 					case 'p':
-						o.sections.push(new Section(o.currentP.tags, o.currentP.innerHTML.replace(/^\s+/g, '')));
-						o.currentP = {tags: [], innerHTML: ''};
+						newP();
 						break;
 					case 'tags':
 						o.currentP.tags.push(...words.slice(1).map(Tag.getTag));
@@ -159,7 +162,7 @@ class Blogpost {
 		});
 		// make sure last section is added
 		if (o.currentP.innerHTML)
-			o.sections.push(new Section(o.currentP.tags, o.currentP.innerHTML));
+			newP();
 		// done
 		return new Blogpost(o.title, o.date, o.tags, o.sections);
 	}
