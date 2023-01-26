@@ -1,5 +1,5 @@
 /* exported blog */
-/* global blogData, clamp, loadScript, notif, random */
+/* global blogData, clamp, loadScript, notif, random, title */
 
 /** @param {Date} d */
 function formatDate(d){
@@ -171,9 +171,9 @@ class Blogpost {
 Blogpost.blogposts = [];
 
 class Tag {
-	/** @param {string} title */
-	constructor(title){
-		this.title = title;
+	/** @param {string} name */
+	constructor(name){
+		this.title = title(name.toLowerCase().replace('_', ' '));
 		Tag.tags.push(this);
 	}
 	get elem(){
