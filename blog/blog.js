@@ -173,7 +173,7 @@ Blogpost.blogposts = [];
 class Tag {
 	/** @param {string} name */
 	constructor(name){
-		this.title = title(name.toLowerCase().replace('_', ' '));
+		this.title = name; // title(name.toLowerCase().replace('_', ' '))
 		Tag.tags.push(this);
 	}
 	get elem(){
