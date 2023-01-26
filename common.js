@@ -408,6 +408,18 @@ function intersect(a, b){
 	return a.filter(e => -1 < b.indexOf(e)).filter((e, i, c) => c.indexOf(e) === i);
 }
 
+/** https://stackoverflow.com/a/14521482
+ * load js file using js
+ * @param {string} url
+ * @param {() => void} onload
+ */
+function loadScript(url, onload){
+	const script = document.createElement('script');
+	script.onload = onload;
+	script.src = url;
+	document.head.appendChild(script);
+}
+
 /** @param {string} filename of audio to play */
 function play(filename){
 	new Audio(filename).play();

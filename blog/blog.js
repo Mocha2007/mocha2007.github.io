@@ -1,5 +1,5 @@
 /* exported blog */
-/* global blogData, clamp, random */
+/* global blogData, clamp, loadScript, notif, random */
 
 /** @param {Date} d */
 function formatDate(d){
@@ -357,6 +357,8 @@ const blog = {
 			this.goto(+url[0].replace('?i=', ''));
 		else
 			this.set(latest.elem);
+		// try loading error notif
+		loadScript('../tools/notif.js');
 	},
 	/** @param {number} diff amount of posts to move by */
 	move(diff){
@@ -367,8 +369,13 @@ const blog = {
 	},
 	/** @param {HTMLElement} elem */
 	set(elem){
-		document.getElementById('main').innerHTML = '';
-		document.getElementById('main').appendChild(elem);
+		try {
+			document.getElementById('main').innerHTML = '';
+			document.getElementById('main').appendChild(elem);
+		}
+		catch (e){
+			notif.catch(e);
+		}
 	},
 	get timestamp(){
 		return +new Date();
