@@ -75,4 +75,46 @@ const blogData = [
 	I have to say, I think I will enjoy writing this blog.
 	I have long wanted to continue putting my thoughts to paper since I stopped journaling a decade ago.
 	`,
+	`
+	@title 26 Jan 2023
+	@date 1674763626258
+	@p
+	@tags site dev js
+	Today I made a neat JS tool that allows me to have an error popup in the corner,
+	so I know when there's been an error without checking the console.
+
+	@p
+	@tags cwc
+	Someone posted on the CWC subreddit that Barb is throwing out a lot of Chris' old stuff
+	(although, honestly, it all looks like trash to me).
+	It's reminded me that one day I <em>would</em> actually like to take the pilgramage to CWCville and see the sights.
+	From a distance, of course. No way in hell am I getting anywhere near Barb.
+
+	@p
+	@tags space_exploration uranus
+	Recently I read about the <a href="https://en.wikipedia.org/wiki/Uranus_Orbiter_and_Probe">Uranus Orbiter and Probe</a> mission,
+	which sounds cool, although it wouldn't even launch for another eight years at earliest and wouldn't arrive for twenty-one years...
+
+	@p
+	@tags space_exploration venus
+	I also read about the <a href="https://en.wikipedia.org/wiki/DAVINCI">DAVINCI</a> and
+	<a href="https://en.wikipedia.org/wiki/VERITAS_(spacecraft)">VERITAS</a> NASA Discovery Program missions,
+	which would launch in 2029 and 2031, respectively.
+	Again, kinda sucks that it'll take years to see to fruition, but at least these'll arrive within a decade...
+
+	@p
+	@tags space_exploration titan
+	There is also the <a href="https://en.wikipedia.org/wiki/Dragonfly_(spacecraft)">Dragonfly</a> mission to Saturn's moon Titan,
+	which would land a helicopter much like <a href="https://en.wikipedia.org/wiki/Perseverance_(rover)">Perseverance</a>'s
+	<a href="https://en.wikipedia.org/wiki/Ingenuity_(helicopter)">Ingenuity</a>.
+	This one I'm particularly excited for, because much less is known about the surface of Titan than, say, Mars.
+	Will it find signs of life on Titan? Probably not. But the possibility is exciting nevertheless.
+
+	@p
+	@tags dev flash
+	I spent some time mulling about flash games again.
+	One game I have always wanted to remake with more content is Cellcraft.
+	The developer open-sourced it many years ago, so I shouldn't have to hunt too far for the mechanics.
+	That's at the very bottom of my priority list, though...
+	`,
 ];
