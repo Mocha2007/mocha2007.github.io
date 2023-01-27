@@ -182,13 +182,22 @@ const sudoku = {
 	difficulty: 0,
 	difficultyCurve: [55, 90, 1000], // abt. 50%, 40%, 30% full respectively
 	gen(){
-		const [puzzle, solution] = Sudoku.randomUnsolved(this.difficultyCurve[this.difficulty]);
+		const [solution, puzzle] = Sudoku.randomUnsolved(this.difficultyCurve[this.difficulty]);
 		// elems
 		const main = document.getElementById('main');
 		main.appendChild(puzzle.elem);
-		main.appendChild(solution.elem);
+		main.appendChild(this.spoiler(solution.elem));
 		// for debugging purposes
 		this.puzzle = puzzle;
 		this.solution = solution;
+	},
+	/** @param {HTMLElement} elem */
+	spoiler(elem){
+		const details = document.createElement('details');
+		const summary = document.createElement('summary');
+		summary.innerHTML = 'SOLUTION';
+		details.appendChild(summary);
+		details.appendChild(elem);
+		return details;
 	},
 };
