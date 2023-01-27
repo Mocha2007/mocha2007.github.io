@@ -188,6 +188,7 @@ const sudoku = {
 		const [solution, puzzle] = Sudoku.randomUnsolved(this.difficultyCurve[this.difficulty]);
 		// elems
 		const main = document.getElementById('main');
+		main.innerHTML = '';
 		main.appendChild(puzzle.elem);
 		main.appendChild(this.spoiler(solution.elem));
 		// for debugging purposes
