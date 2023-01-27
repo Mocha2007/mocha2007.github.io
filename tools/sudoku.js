@@ -154,7 +154,7 @@ class Sudoku {
 	/** @returns {Sudoku} */
 	static randomSolved(squareSize = 3){
 		const size = squareSize * squareSize;
-		let board = new Sudoku(range(size)
+		const board = new Sudoku(range(size)
 			.map(() => range(size)
 				.map(() => undefined)), squareSize);
 		// seed the board by filling the three diagonal 3x3 squares...
@@ -172,11 +172,8 @@ class Sudoku {
 		// add to board until solved
 		while (board.hasEmpty){
 			// try adding a random # to board
-			const copy = board.copy;
 			try {
-				copy.addAllRandom();
-				//if (copy.solved) // if solvable...
-				board = copy;
+				board.addAllRandom();
 			}
 			catch (_){ // no solution
 				return this.randomSolved(squareSize);
