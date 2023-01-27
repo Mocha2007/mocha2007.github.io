@@ -6,7 +6,7 @@ table {
 	border-collapse: collapse;
 }
 td {
-	border: 2px solid black;
+	border: 1px solid black;
 	height: 2em;
 	text-align: center;
 	width: 2em;
