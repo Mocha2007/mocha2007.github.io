@@ -14,10 +14,14 @@ class Sudoku {
 	}
 	/** add random legal int to blank cell */
 	addRandom(){
+		const mps = this.minPencilSize;
 		for (let i = 0; i < this.size; i++)
 			for (let j = 0; j < this.size; j++)
-				if (this.data[i][j] === undefined)
-					return this.data[i][j] = random.choice(Array.from(this.pencil(i, j)));
+				if (this.data[i][j] === undefined){
+					const p = this.pencil(i, j);
+					if (p.size === mps)
+						return this.data[i][j] = random.choice(Array.from(p));
+				}
 	}
 	/** @returns {number[]} */
 	col(c){
@@ -66,6 +70,17 @@ class Sudoku {
 		// all checks passed
 		return true;
 	}
+	get minPencilSize(){
+		let o = this.size;
+		for (let i = 0; i < this.size; i++)
+			for (let j = 0; j < this.size; j++)
+				if (this.data[i][j] === undefined){
+					const p = this.pencil(i, j).size;
+					if (p < o)
+						o = p;
+				}
+		return o;
+	}
 	/** @returns {Set<number>} */
 	pencil(row_n, col_n){
 		const missing = new Set(range(this.size));
@@ -113,6 +128,9 @@ class Sudoku {
 				.forEach(col_id => o.push(this.data[row_id][col_id])));
 		return o;
 	}
+	get string(){
+		return this.data.map(row => row.replace(undefined, ' ').join(' ')).join('\n');
+	}
 	/** @returns {Sudoku} */
 	static randomSolved(squareSize = 3, max_tries = 1000){
 		const size = squareSize * squareSize;
@@ -136,8 +154,10 @@ class Sudoku {
 				board = copy;
 			max_tries--;
 		}
-		if (!max_tries)
-			throw new Error(board);
+		if (!max_tries){
+			console.error(board.string);
+			throw new Error();
+		}
 		return board.solved;
 	}
 	/** @returns {Sudoku} */
