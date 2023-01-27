@@ -3,7 +3,7 @@ body {
 }
 table {
 	border: 4px solid black;
-	border-collapse:collapse;
+	border-collapse: collapse;
 }
 td {
 	border: 2px solid black;
