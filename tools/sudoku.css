@@ -3,10 +3,12 @@ body {
 }
 table {
 	border: 4px solid black;
-	border-collapse: collapse;
+	border-collapse:collapse;
 }
 td {
 	border: 2px solid black;
+	height: 2em;
 	text-align: center;
-	width: 1em;
+	width: 2em;
+	vertical-align: middle;
 }

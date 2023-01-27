@@ -41,7 +41,8 @@ class Sudoku {
 			row.forEach((cell, j) => {
 				const td = document.createElement('td');
 				td.id = `cell_${i}_${j}`;
-				td.innerHTML = cell+1; // convert from 0-indexed to 1-indexed
+				if (cell !== undefined)
+					td.innerHTML = cell+1; // convert from 0-indexed to 1-indexed
 				table.appendChild(td);
 			});
 		});
@@ -161,23 +162,26 @@ class Sudoku {
 		return board.solved;
 	}
 	/** @returns {[Sudoku, Sudoku]} */
-	static randomUnsolved(){
+	static randomUnsolved(max_tries = 100){
 		// https://stackoverflow.com/a/7280517
 		const solved = this.randomSolved();
 		let o = solved;
-		while (true){
+		while (0 < max_tries){
 			const copy = o.copy;
 			copy.deleteRandom();
-			if (copy.solved === true)
-				return [solved, o];
-			o = copy;
+			if (copy.solved !== true)
+				o = copy;
+			max_tries--;
 		}
+		return [solved, o];
 	}
 }
 
 const sudoku = {
+	difficulty: 0,
+	difficultyCurve: [50, 100, 1000],
 	gen(){
-		const [puzzle, solution] = Sudoku.randomUnsolved();
+		const [puzzle, solution] = Sudoku.randomUnsolved(this.difficultyCurve[this.difficulty]);
 		// elems
 		const main = document.getElementById('main');
 		main.appendChild(puzzle.elem);
