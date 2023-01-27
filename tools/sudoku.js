@@ -14,6 +14,7 @@ class Sudoku {
 	}
 	/** add random legal int to blank cell */
 	addRandom(){
+		// eslint-disable-next-line no-unused-vars
 		const [_, i, j, p] = this.minPencilSize;
 		this.data[i][j] = random.choice(Array.from(p));
 	}
