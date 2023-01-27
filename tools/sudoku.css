@@ -1,0 +1,12 @@
+body {
+	font-family: Consolas, 'Courier New', Courier, monospace;
+}
+table {
+	border: 4px solid black;
+	border-collapse: collapse;
+}
+td {
+	border: 2px solid black;
+	text-align: center;
+	width: 1em;
+}
