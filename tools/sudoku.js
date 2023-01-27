@@ -1,0 +1,148 @@
+/* exported sudoku */
+/* global random, range */
+
+/** @param {[]} arr */
+function isUniqueArr(arr){
+	arr = arr.filter(x => x !== undefined);
+	return new Set(arr).size === arr.length;
+}
+
+class Sudoku {
+	constructor(data, squareSize=3){
+		this.data = data;
+		this.squareSize = squareSize;
+	}
+	/** add random legal int to blank cell */
+	addRandom(){
+		for (let i = 0; i < this.size; i++)
+			for (let j = 0; j < this.size; j++)
+				if (this.data[i][j] === undefined)
+					return this.data[i][j] = random.choice(Array.from(this.pencil(i, j)));
+	}
+	/** @returns {number[]} */
+	col(c){
+		return this.data.map(row => row[c]);
+	}
+	get copy(){
+		return new Sudoku(this.data.map(row => row.map(cell => cell)));
+	}
+	get elem(){
+		const table = document.createElement('table');
+		this.data.forEach((row, i) => {
+			const tr = document.createElement('tr');
+			table.appendChild(tr);
+			row.forEach((cell, j) => {
+				const td = document.createElement('td');
+				td.id = `cell_${i}_${j}`;
+				td.innerHTML = cell;
+				table.appendChild(td);
+			});
+		});
+		return table;
+	}
+	get hasEmpty(){
+		for (let i = i; i < this.size; i++)
+			if (this.row(i).includes(undefined))
+				return true;
+		return false;
+	}
+	get legal(){
+		// check rows
+		for (let i = 0; i < this.size; i++)
+			if (!isUniqueArr(this.row(i)))
+				return false;
+		// check cols
+		for (let i = 0; i < this.size; i++)
+			if (!isUniqueArr(this.col(i)))
+				return false;
+		// check squares
+		for (let i = 0; i < this.squareSize; i++)
+			for (let j = 0; j < this.squareSize; j++)
+				if (!isUniqueArr(this.square(i, j)))
+					return false;
+		// all checks passed
+		return true;
+	}
+	/** @returns {Set<number>} */
+	pencil(row_n, col_n){
+		const missing = new Set(this.size);
+		const row = this.row(row_n);
+		const col = this.col(col_n);
+		const square = this.square(Math.floor(row_n/3), Math.floor(col_n/3));
+		row.forEach(n => missing.delete(n));
+		col.forEach(n => missing.delete(n));
+		square.forEach(n => missing.delete(n));
+		return missing;
+	}
+	/** @returns {number[]} */
+	row(r){
+		return this.data[r];
+	}
+	get size(){
+		return this.squareSize * this.squareSize;
+	}
+	/** @returns {boolean|Sudoku} */
+	get solved(){
+		if (!this.hasEmpty)
+			return this;
+		let more_information = false;
+		let solvable = true;
+		const copy = this.copy;
+		this.data.forEach((row, i) => row.forEach((cell, j) => {
+			if (!solvable)
+				return;
+			const missing = this.pencil(i, j);
+			if (missing.size === 0)
+				solvable = false;
+			if (missing.size === 1){
+				copy.data[i][j] = Array.from(missing)[0];
+				more_information = true;
+			}
+		}));
+		if (!more_information)
+			return true; // multiple solutions
+		return copy.solved;
+	}
+	square(r, c){
+		const o = [];
+		range(this.squareSize*r, this.squareSize*r+this.squareSize)
+			.forEach(row_id => range(this.squareSize*c, this.squareSize*c+this.squareSize)
+				.forEach(col_id => o.push(this.data[row_id][col_id])));
+		return o;
+	}
+	/** @returns {Sudoku} */
+	static randomSolved(squareSize = 3, max_tries = 1000){
+		const size = squareSize * squareSize;
+		let board = new Sudoku(range(size)
+			.map(() => range(size)
+				.map(() => undefined)), squareSize);
+		while (0 < max_tries && typeof board.solved === 'boolean'){
+			// try adding a random # to board
+			const copy = board.copy;
+			copy.addRandom();
+			if (copy.solved) // if solvable...
+				board = copy;
+			max_tries--;
+		}
+		if (!max_tries)
+			throw new Error(board);
+		return board.solved;
+	}
+	/** @returns {Sudoku} */
+	static randomUnsolved(){
+		// https://stackoverflow.com/a/7280517
+
+	}
+}
+
+const sudoku = {
+	gen(){
+		const puzzle = Sudoku.randomUnsolved();
+		/** @type {Sudoku} */
+		const solution = puzzle.solved;
+		// elems
+		const main = document.getElementById('main');
+		main.appendChild(puzzle.elem);
+		main.appendChild(solution.elem);
+	},
+};
