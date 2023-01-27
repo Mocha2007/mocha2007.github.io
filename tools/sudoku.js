@@ -43,6 +43,9 @@ class Sudoku {
 				td.id = `cell_${i}_${j}`;
 				if (cell !== undefined)
 					td.innerHTML = cell+1; // convert from 0-indexed to 1-indexed
+				const darkSquare = (Math.floor(i/3) + Math.floor(j/3)) % 2;
+				if (darkSquare)
+					td.classList.add('dark');
 				table.appendChild(td);
 			});
 		});
