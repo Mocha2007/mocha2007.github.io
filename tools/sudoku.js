@@ -160,15 +160,16 @@ class Sudoku {
 		}
 		return board.solved;
 	}
-	/** @returns {Sudoku} */
+	/** @returns {[Sudoku, Sudoku]} */
 	static randomUnsolved(){
 		// https://stackoverflow.com/a/7280517
-		let o = this.randomSolved();
+		const solved = this.randomSolved();
+		let o = solved;
 		while (true){
 			const copy = o.copy;
 			copy.deleteRandom();
 			if (copy.solved === true)
-				return o;
+				return [solved, o];
 			o = copy;
 		}
 	}
@@ -176,12 +177,13 @@ class Sudoku {
 
 const sudoku = {
 	gen(){
-		const puzzle = Sudoku.randomUnsolved();
-		/** @type {Sudoku} */
-		const solution = puzzle.solved;
+		const [puzzle, solution] = Sudoku.randomUnsolved();
 		// elems
 		const main = document.getElementById('main');
 		main.appendChild(puzzle.elem);
 		main.appendChild(solution.elem);
+		// for debugging purposes
+		this.puzzle = puzzle;
+		this.solution = solution;
 	},
 };
