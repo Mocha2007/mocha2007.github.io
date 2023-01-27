@@ -68,6 +68,11 @@ class Blogpost {
 		dateContainer.appendChild(document.createElement('br'));
 		dateContainer.appendChild(document.createTextNode('more posts from... '));
 		dateContainer.appendChild(link(new Period(
+			blog.week.start(this.date),
+			new Date(+blog.week.start(this.date) + blog.week.size),
+			'week'
+		)));
+		dateContainer.appendChild(link(new Period(
 			new Date(`${this.date.getFullYear()}-${this.date.getMonth()+1}`),
 			new Date(`${this.date.getFullYear()}-${this.date.getMonth()+2}`),
 			'month'
@@ -387,5 +392,21 @@ const blog = {
 	},
 	get timestamp(){
 		return +new Date();
+	},
+	week: {
+		get epoch(){
+			return new Date(1969, 11, 28); // Week 0
+		},
+		/** @param {Date|number} unix */
+		number(unix){
+			return Math.floor((unix - this.epoch)/this.size);
+		},
+		/** @param {Date|number} unix */
+		start(unix){
+			return new Date(this.number(unix) * this.size + +this.epoch);
+		},
+		get size(){
+			return 1000*60*60*24*7;
+		},
 	},
 };
