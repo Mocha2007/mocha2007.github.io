@@ -212,7 +212,7 @@ class Sudoku {
 
 const sudoku = {
 	difficulty: 0,
-	difficultyCurve: [55/81, 90/81, 1000/81], // abt. 50%, 40%, 30% full respectively
+	difficultyCurve: [0.6, 1, 2], // abt. 50%, 40%, 30% full respectively
 	gen(){
 		const t_start = +new Date();
 		const tries = Math.round(this.difficultyCurve[this.difficulty] * Math.pow(this.size, 4));
