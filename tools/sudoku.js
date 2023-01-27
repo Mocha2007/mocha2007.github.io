@@ -17,6 +17,23 @@ class Sudoku {
 		const [_, i, j, p] = this.minPencilSize;
 		this.data[i][j] = random.choice(Array.from(p));
 	}
+	/** IF there are cells with only one possibility, change them all. otherwise, do the same as addRandom */
+	addAllRandom(){
+		let changed = false;
+		for (let i = 0; i < this.size; i++)
+			for (let j = 0; j < this.size; j++)
+				if (this.data[i][j] === undefined){
+					const p = this.pencil(i, j);
+					if (p.size === 1){
+						this.data[i][j] = random.choice(Array.from(p));
+						changed = true;
+					}
+					else if (p.size === 0)
+						throw Error('this error should never be thrown');
+				}
+		if (!changed)
+			this.addRandom();
+	}
 	/** @returns {number[]} */
 	col(c){
 		return this.data.map(row => row[c]);
@@ -135,8 +152,7 @@ class Sudoku {
 		return this.data.map(row => row.map(x => x === undefined ? ' ' : x).join(' ')).join('\n');
 	}
 	/** @returns {Sudoku} */
-	static randomSolved(squareSize = 3, max_try_mul = 0.75){
-		let max_tries = Math.pow(squareSize, 4) * max_try_mul;
+	static randomSolved(squareSize = 3){
 		const size = squareSize * squareSize;
 		let board = new Sudoku(range(size)
 			.map(() => range(size)
@@ -154,20 +170,18 @@ class Sudoku {
 		while (board.minPencilSize[0] === 0)
 			seed();
 		// add to board until solved
-		while (0 < max_tries && typeof board.solved === 'boolean'){
+		while (board.hasEmpty){
 			// try adding a random # to board
 			const copy = board.copy;
-			copy.addRandom();
-			if (copy.solved) // if solvable...
+			try {
+				copy.addAllRandom();
+				//if (copy.solved) // if solvable...
 				board = copy;
-			max_tries--;
+			}
+			catch (_){ // no solution
+				return this.randomSolved(squareSize);
+			}
 		}
-		if (max_tries <= 0){
-			// console.error(board.string);
-			console.error('Failure');
-			return this.randomSolved(squareSize);
-		}
-		// console.debug(max_tries);
 		return board.solved;
 	}
 	/** @returns {[Sudoku, Sudoku]} */
