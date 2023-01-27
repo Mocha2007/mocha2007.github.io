@@ -24,20 +24,21 @@ class Sudoku {
 	}
 	/** IF there are cells with only one possibility, change them all. otherwise, do the same as addRandom */
 	addAllRandom(){
-		let changed = false;
+		let forced_move = false;
 		for (let i = 0; i < this.size; i++)
 			for (let j = 0; j < this.size; j++)
 				if (this.data[i][j] === undefined){
 					const p = this.pencil(i, j);
 					if (p.length === 1){
 						this.data[i][j] = random.choice(p);
-						changed = true;
+						forced_move = true;
 					}
 					else if (p.length === 0)
 						throw Error('this error should never be thrown');
 				}
-		if (!changed)
+		if (!forced_move)
 			this.addRandom();
+		return forced_move;
 	}
 	/** @returns {number[]} */
 	col(c){
@@ -155,7 +156,7 @@ class Sudoku {
 		return this.data.map(row => row.map(x => x === undefined ? ' ' : x).join(' ')).join('\n');
 	}
 	/** @returns {Sudoku} */
-	static randomSolved(squareSize = 3){
+	static randomSolved(squareSize = 3, attempts = 10){
 		const size = squareSize * squareSize;
 		const board = new Sudoku(Array(size).fill(0).map(() => Array(size)), squareSize);
 		// seed the board by filling the three diagonal 3x3 squares...
@@ -171,13 +172,32 @@ class Sudoku {
 		while (board.minPencilSize[0] === 0)
 			seed();
 		// add to board until solved
+		const hist = [board];
+		const forced_move = [undefined];
+		const undo = () => {
+			hist.pop();
+			forced_move.pop();
+			// console.warn('undo');
+		};
 		while (board.hasEmpty){
 			// try adding a random # to board
+			const next = hist[hist.length-1].copy;
 			try {
-				board.addAllRandom();
+				forced_move.push(next.addAllRandom());
+				hist.push(next);
 			}
 			catch (_){ // no solution
-				return this.randomSolved(squareSize);
+				if (!next.hasEmpty)
+					return next;
+				if (attempts <= 0){
+					// console.warn('reseeding...');
+					return this.randomSolved(squareSize);
+				}
+				// console.info(attempts, hist.length, forced_move);
+				while (forced_move[forced_move.length-1]) // try to undo forced moves until last optional move
+					undo();
+				undo();
+				attempts--;
 			}
 		}
 		return board.solved;
