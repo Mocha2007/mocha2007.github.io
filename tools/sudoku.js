@@ -158,24 +158,7 @@ class Sudoku {
 		while (board.minPencilSize === 0){
 			seed();
 		}
-		// POSTSEED: try to fill the remaining squares in the same way, if possible
-		// this is not strictly necessary, but should make generation much faster
-		/*
-		for (let ii = 0; ii < squareSize; ii++)
-			for (let jj = 0; jj < squareSize; jj++){
-				if (ii === jj)
-					continue;
-				const order = random.shuffle(range(size));
-				const copy = board.copy;
-				for (let i = 0; i < squareSize; i++)
-					for (let j = 0; j < squareSize; j++)
-						copy.data[squareSize*ii+i][squareSize*jj+j] = order[squareSize*i+j];
-				if (copy.legal && copy.solved)
-					board = copy;
-			}
-		console.debug(board.string);
-		*/
-		// todo
+		// add to board until solved
 		while (0 < max_tries && typeof board.solved === 'boolean'){
 			// try adding a random # to board
 			const copy = board.copy;
