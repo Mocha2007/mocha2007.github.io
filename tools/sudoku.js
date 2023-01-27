@@ -141,7 +141,8 @@ class Sudoku {
 		return this.data.map(row => row.map(x => x === undefined ? ' ' : x).join(' ')).join('\n');
 	}
 	/** @returns {Sudoku} */
-	static randomSolved(squareSize = 3, max_tries = 1000){
+	static randomSolved(squareSize = 3, max_try_mul = 1){
+		let max_tries = Math.pow(squareSize, 4) * max_try_mul;
 		const size = squareSize * squareSize;
 		let board = new Sudoku(range(size)
 			.map(() => range(size)
@@ -187,6 +188,7 @@ class Sudoku {
 		}
 		if (!max_tries){
 			// console.error(board.string);
+			console.error('Failure');
 			return this.randomSolved(squareSize);
 		}
 		return board.solved;
