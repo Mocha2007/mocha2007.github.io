@@ -26,6 +26,9 @@ class Sudoku {
 	get copy(){
 		return new Sudoku(this.data.map(row => row.map(cell => cell)));
 	}
+	deleteRandom(){
+		this.data[random.randint(0, this.size-1)][random.randint(0, this.size-1)] = undefined;
+	}
 	get elem(){
 		const table = document.createElement('table');
 		this.data.forEach((row, i) => {
@@ -41,7 +44,7 @@ class Sudoku {
 		return table;
 	}
 	get hasEmpty(){
-		for (let i = i; i < this.size; i++)
+		for (let i = 0; i < this.size; i++)
 			if (this.row(i).includes(undefined))
 				return true;
 		return false;
@@ -140,7 +143,14 @@ class Sudoku {
 	/** @returns {Sudoku} */
 	static randomUnsolved(){
 		// https://stackoverflow.com/a/7280517
-
+		let o = this.randomSolved();
+		while (true){
+			const copy = o.copy;
+			copy.deleteRandom();
+			if (copy.solved === true)
+				return o;
+			o = copy;
+		}
 	}
 }
 
