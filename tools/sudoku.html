@@ -4,5 +4,8 @@
 <script src="../common.js"></script>
 <script src="sudoku.js"></script>
 <title>Sudoku</title>
+<span class="button" onclick="sudoku.difficulty=0;sudoku.gen()">Easy</span>
+<span class="button" onclick="sudoku.difficulty=1;sudoku.gen()">Medium</span>
+<span class="button" onclick="sudoku.difficulty=2;sudoku.gen()">Hard</span>
 <div id="main"></div>
 <script>sudoku.gen();</script>
