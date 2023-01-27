@@ -28,7 +28,7 @@ class Sudoku {
 		return this.data.map(row => row[c]);
 	}
 	get copy(){
-		return new Sudoku(this.data.map(row => row.map(cell => cell)));
+		return new Sudoku(this.data.map(row => row.map(cell => cell)), this.squareSize);
 	}
 	deleteRandom(){
 		this.data[random.randint(0, this.size-1)][random.randint(0, this.size-1)] = undefined;
@@ -160,14 +160,14 @@ class Sudoku {
 		}
 		if (!max_tries){
 			// console.error(board.string);
-			return this.randomSolved();
+			return this.randomSolved(squareSize);
 		}
 		return board.solved;
 	}
 	/** @returns {[Sudoku, Sudoku]} */
-	static randomUnsolved(max_tries = 100){
+	static randomUnsolved(squareSize = 3, max_tries = 100){
 		// https://stackoverflow.com/a/7280517
-		const solved = this.randomSolved();
+		const solved = this.randomSolved(squareSize);
 		let o = solved;
 		while (0 < max_tries){
 			const copy = o.copy;
@@ -175,6 +175,7 @@ class Sudoku {
 			if (copy.solved !== true)
 				o = copy;
 			max_tries--;
+			debugger;
 		}
 		// console.debug(1-sum(o.data.map(row => row.filter(x => x === undefined).length))/81);
 		return [solved, o];
@@ -185,7 +186,7 @@ const sudoku = {
 	difficulty: 0,
 	difficultyCurve: [55, 90, 1000], // abt. 50%, 40%, 30% full respectively
 	gen(){
-		const [solution, puzzle] = Sudoku.randomUnsolved(this.difficultyCurve[this.difficulty]);
+		const [solution, puzzle] = Sudoku.randomUnsolved(3, this.difficultyCurve[this.difficulty]);
 		// elems
 		const main = document.getElementById('main');
 		main.innerHTML = '';
