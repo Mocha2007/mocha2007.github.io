@@ -37,7 +37,7 @@ class Sudoku {
 			row.forEach((cell, j) => {
 				const td = document.createElement('td');
 				td.id = `cell_${i}_${j}`;
-				td.innerHTML = cell;
+				td.innerHTML = cell+1; // convert from 0-indexed to 1-indexed
 				table.appendChild(td);
 			});
 		});
@@ -68,7 +68,7 @@ class Sudoku {
 	}
 	/** @returns {Set<number>} */
 	pencil(row_n, col_n){
-		const missing = new Set(this.size);
+		const missing = new Set(range(this.size));
 		const row = this.row(row_n);
 		const col = this.col(col_n);
 		const square = this.square(Math.floor(row_n/3), Math.floor(col_n/3));
