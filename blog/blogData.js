@@ -117,4 +117,14 @@ const blogData = [
 	The developer open-sourced it many years ago, so I shouldn't have to hunt too far for the mechanics.
 	That's at the very bottom of my priority list, though...
 	`,
+	`
+	@title 27 Jan 2023
+	@date 1674843828443
+	@p
+	@tags site dev meta
+	I added a "week" option to the blog post time range filter.
+	I've been thinking about adding topic/post freequency charts using my chart tool,
+	but I think I'll need to wait for more good data before testing it out.
+	I also added a sudoku generator to my site.
+	`,
 ];
