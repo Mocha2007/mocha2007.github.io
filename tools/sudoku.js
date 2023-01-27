@@ -124,6 +124,8 @@ class Sudoku {
 				more_information = true;
 			}
 		}));
+		if (solvable === false)
+			return false;
 		if (!more_information)
 			return true; // multiple solutions
 		return copy.solved;
@@ -157,7 +159,23 @@ class Sudoku {
 		while (board.minPencilSize === 0){
 			seed();
 		}
-		// console.debug(board);
+		// POSTSEED: try to fill the remaining squares in the same way, if possible
+		// this is not strictly necessary, but should make generation much faster
+		/*
+		for (let ii = 0; ii < squareSize; ii++)
+			for (let jj = 0; jj < squareSize; jj++){
+				if (ii === jj)
+					break;
+				const order = random.shuffle(range(size));
+				const copy = board.copy;
+				for (let i = 0; i < squareSize; i++)
+					for (let j = 0; j < squareSize; j++)
+						copy.data[squareSize*ii+i][squareSize*jj+j] = order[squareSize*i+j];
+				if (copy.legal && copy.solved)
+					board = copy;
+			}
+		console.debug(board.string);
+		*/
 		// todo
 		while (0 < max_tries && typeof board.solved === 'boolean'){
 			// try adding a random # to board
@@ -194,6 +212,7 @@ const sudoku = {
 	difficulty: 0,
 	difficultyCurve: [55/81, 90/81, 1000/81], // abt. 50%, 40%, 30% full respectively
 	gen(){
+		const t_start = +new Date();
 		const tries = Math.round(this.difficultyCurve[this.difficulty] * Math.pow(this.size, 4));
 		const [solution, puzzle] = Sudoku.randomUnsolved(this.size, tries);
 		// elems
@@ -204,6 +223,7 @@ const sudoku = {
 		// for debugging purposes
 		this.puzzle = puzzle;
 		this.solution = solution;
+		console.info(`${new Date() - t_start} ms`);
 	},
 	size: 3,
 	/** @param {HTMLElement} elem */
