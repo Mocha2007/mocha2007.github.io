@@ -107,7 +107,7 @@ class Sudoku {
 		let solvable = true;
 		const copy = this.copy;
 		this.data.forEach((row, i) => row.forEach((cell, j) => {
-			if (!solvable)
+			if (cell !== undefined || !solvable)
 				return;
 			const missing = this.pencil(i, j);
 			if (missing.size === 0)
