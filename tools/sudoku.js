@@ -43,7 +43,8 @@ class Sudoku {
 				td.id = `cell_${i}_${j}`;
 				if (cell !== undefined)
 					td.innerHTML = cell+1; // convert from 0-indexed to 1-indexed
-				const darkSquare = (Math.floor(i/3) + Math.floor(j/3)) % 2;
+				const darkSquare = (Math.floor(i/this.squareSize)
+					+ Math.floor(j/this.squareSize)) % 2;
 				if (darkSquare)
 					td.classList.add('dark');
 				table.appendChild(td);
@@ -90,7 +91,9 @@ class Sudoku {
 		const missing = new Set(range(this.size));
 		const row = this.row(row_n);
 		const col = this.col(col_n);
-		const square = this.square(Math.floor(row_n/3), Math.floor(col_n/3));
+		const square = this.square(
+			Math.floor(row_n/this.squareSize),
+			Math.floor(col_n/this.squareSize));
 		row.forEach(n => missing.delete(n));
 		col.forEach(n => missing.delete(n));
 		square.forEach(n => missing.delete(n));
@@ -142,11 +145,17 @@ class Sudoku {
 			.map(() => range(size)
 				.map(() => undefined)), squareSize);
 		// seed the board by filling the three diagonal 3x3 squares...
-		for (let diag = 0; diag < squareSize; diag++){
-			const order = random.shuffle(range(size));
-			for (let i = 0; i < squareSize; i++)
-				for (let j = 0; j < squareSize; j++)
-					board.data[squareSize*diag+i][squareSize*diag+j] = order[squareSize*i+j];
+		const seed = () => {
+			for (let diag = 0; diag < squareSize; diag++){
+				const order = random.shuffle(range(size));
+				for (let i = 0; i < squareSize; i++)
+					for (let j = 0; j < squareSize; j++)
+						board.data[squareSize*diag+i][squareSize*diag+j] = order[squareSize*i+j];
+			}
+		};
+		seed();
+		while (board.minPencilSize === 0){
+			seed();
 		}
 		// console.debug(board);
 		// todo
@@ -175,7 +184,6 @@ class Sudoku {
 			if (copy.solved !== true)
 				o = copy;
 			max_tries--;
-			debugger;
 		}
 		// console.debug(1-sum(o.data.map(row => row.filter(x => x === undefined).length))/81);
 		return [solved, o];
@@ -184,9 +192,10 @@ class Sudoku {
 
 const sudoku = {
 	difficulty: 0,
-	difficultyCurve: [55, 90, 1000], // abt. 50%, 40%, 30% full respectively
+	difficultyCurve: [55/81, 90/81, 1000/81], // abt. 50%, 40%, 30% full respectively
 	gen(){
-		const [solution, puzzle] = Sudoku.randomUnsolved(3, this.difficultyCurve[this.difficulty]);
+		const tries = Math.round(this.difficultyCurve[this.difficulty] * Math.pow(this.size, 4));
+		const [solution, puzzle] = Sudoku.randomUnsolved(this.size, tries);
 		// elems
 		const main = document.getElementById('main');
 		main.innerHTML = '';
@@ -196,6 +205,7 @@ const sudoku = {
 		this.puzzle = puzzle;
 		this.solution = solution;
 	},
+	size: 3,
 	/** @param {HTMLElement} elem */
 	spoiler(elem){
 		const details = document.createElement('details');
