@@ -1,10 +1,14 @@
 /* exported sudoku */
-/* global random, range */
+/* global random */
 
 /** @param {[]} arr */
 function isUniqueArr(arr){
 	arr = arr.filter(x => x !== undefined);
 	return new Set(arr).size === arr.length;
+}
+
+function range2(n){
+	return [...Array(n).keys()];
 }
 
 class Sudoku {
@@ -102,7 +106,7 @@ class Sudoku {
 	}
 	/** @returns {Set<number>} */
 	pencil(row_n, col_n){
-		const missing = new Set(range(this.size));
+		const missing = new Set(range2(this.size));
 		const row = this.row(row_n);
 		const col = this.col(col_n);
 		const square = this.square(
@@ -144,9 +148,10 @@ class Sudoku {
 	}
 	square(r, c){
 		const o = [];
-		range(this.squareSize*r, this.squareSize*r+this.squareSize)
-			.forEach(row_id => range(this.squareSize*c, this.squareSize*c+this.squareSize)
-				.forEach(col_id => o.push(this.data[row_id][col_id])));
+		for (let row_id = this.squareSize*r; row_id < this.squareSize*r+this.squareSize; row_id++)
+			// eslint-disable-next-line max-len
+			for (let col_id = this.squareSize*c; col_id < this.squareSize*c+this.squareSize; col_id++)
+				o.push(this.data[row_id][col_id]);
 		return o;
 	}
 	get string(){
@@ -155,13 +160,13 @@ class Sudoku {
 	/** @returns {Sudoku} */
 	static randomSolved(squareSize = 3){
 		const size = squareSize * squareSize;
-		const board = new Sudoku(range(size)
-			.map(() => range(size)
+		const board = new Sudoku(range2(size)
+			.map(() => range2(size)
 				.map(() => undefined)), squareSize);
 		// seed the board by filling the three diagonal 3x3 squares...
 		const seed = () => {
 			for (let diag = 0; diag < squareSize; diag++){
-				const order = random.shuffle(range(size));
+				const order = random.shuffle(range2(size));
 				for (let i = 0; i < squareSize; i++)
 					for (let j = 0; j < squareSize; j++)
 						board.data[squareSize*diag+i][squareSize*diag+j] = order[squareSize*i+j];
