@@ -156,7 +156,7 @@ class Sudoku {
 		return this.data.map(row => row.map(x => x === undefined ? ' ' : x).join(' ')).join('\n');
 	}
 	/** @returns {Sudoku} */
-	static randomSolved(squareSize = 3, attempts = 10){
+	static randomSolved(squareSize = 3, attempts = 20){
 		const size = squareSize * squareSize;
 		const board = new Sudoku(Array(size).fill(0).map(() => Array(size)), squareSize);
 		// seed the board by filling the three diagonal 3x3 squares...
