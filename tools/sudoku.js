@@ -107,14 +107,15 @@ class Sudoku {
 	/** @returns {Set<number>} */
 	pencil(row_n, col_n){
 		const missing = new Set(range2(this.size));
-		const row = this.row(row_n);
-		const col = this.col(col_n);
-		const square = this.square(
+		// row
+		this.data[row_n].forEach(n => missing.delete(n));
+		// col
+		this.col(col_n).forEach(n => missing.delete(n));
+		// square
+		this.square(
 			Math.floor(row_n/this.squareSize),
-			Math.floor(col_n/this.squareSize));
-		row.forEach(n => missing.delete(n));
-		col.forEach(n => missing.delete(n));
-		square.forEach(n => missing.delete(n));
+			Math.floor(col_n/this.squareSize))
+			.forEach(n => missing.delete(n));
 		return missing;
 	}
 	/** @returns {number[]} */
