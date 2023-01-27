@@ -156,7 +156,7 @@ class Sudoku {
 			max_tries--;
 		}
 		if (!max_tries){
-			console.error(board.string);
+			// console.error(board.string);
 			return this.randomSolved();
 		}
 		return board.solved;
@@ -173,13 +173,14 @@ class Sudoku {
 				o = copy;
 			max_tries--;
 		}
+		// console.debug(1-sum(o.data.map(row => row.filter(x => x === undefined).length))/81);
 		return [solved, o];
 	}
 }
 
 const sudoku = {
 	difficulty: 0,
-	difficultyCurve: [50, 100, 1000],
+	difficultyCurve: [55, 90, 1000], // abt. 50%, 40%, 30% full respectively
 	gen(){
 		const [puzzle, solution] = Sudoku.randomUnsolved(this.difficultyCurve[this.difficulty]);
 		// elems
