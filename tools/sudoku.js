@@ -116,6 +116,15 @@ class Sudoku {
 		let board = new Sudoku(range(size)
 			.map(() => range(size)
 				.map(() => undefined)), squareSize);
+		// seed the board by filling the three diagonal 3x3 squares...
+		for (let diag = 0; diag < squareSize; diag++){
+			const order = random.shuffle(range(size));
+			for (let i = 0; i < squareSize; i++)
+				for (let j = 0; j < squareSize; j++)
+					board.data[squareSize*diag+i][squareSize*diag+j] = order[squareSize*i+j];
+		}
+		console.debug(board);
+		// todo
 		while (0 < max_tries && typeof board.solved === 'boolean'){
 			// try adding a random # to board
 			const copy = board.copy;
