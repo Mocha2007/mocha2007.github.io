@@ -111,21 +111,19 @@ class Sudoku {
 		if (!this.hasEmpty)
 			return this;
 		let more_information = false;
-		let solvable = true;
 		const copy = this.copy;
-		this.data.forEach((row, i) => row.forEach((cell, j) => {
-			if (cell !== undefined || !solvable)
-				return;
-			const missing = this.pencil(i, j);
-			if (missing.size === 0)
-				solvable = false;
-			if (missing.size === 1){
-				copy.data[i][j] = Array.from(missing)[0];
-				more_information = true;
+		for (let i = 0; i < this.size; i++)
+			for (let j = 0; j < this.size; j++){
+				if (this.data[i][j] !== undefined)
+					continue;
+				const missing = this.pencil(i, j);
+				if (missing.size === 0)
+					return false;
+				if (missing.size === 1){
+					copy.data[i][j] = Array.from(missing)[0];
+					more_information = true;
+				}
 			}
-		}));
-		if (solvable === false)
-			return false;
 		if (!more_information)
 			return true; // multiple solutions
 		return copy.solved;
@@ -141,7 +139,7 @@ class Sudoku {
 		return this.data.map(row => row.map(x => x === undefined ? ' ' : x).join(' ')).join('\n');
 	}
 	/** @returns {Sudoku} */
-	static randomSolved(squareSize = 3, max_try_mul = 1){
+	static randomSolved(squareSize = 3, max_try_mul = 0.8){
 		let max_tries = Math.pow(squareSize, 4) * max_try_mul;
 		const size = squareSize * squareSize;
 		let board = new Sudoku(range(size)
@@ -166,7 +164,7 @@ class Sudoku {
 		for (let ii = 0; ii < squareSize; ii++)
 			for (let jj = 0; jj < squareSize; jj++){
 				if (ii === jj)
-					break;
+					continue;
 				const order = random.shuffle(range(size));
 				const copy = board.copy;
 				for (let i = 0; i < squareSize; i++)
@@ -186,11 +184,12 @@ class Sudoku {
 				board = copy;
 			max_tries--;
 		}
-		if (!max_tries){
+		if (max_tries <= 0){
 			// console.error(board.string);
 			console.error('Failure');
 			return this.randomSolved(squareSize);
 		}
+		// console.debug(max_tries);
 		return board.solved;
 	}
 	/** @returns {[Sudoku, Sudoku]} */
