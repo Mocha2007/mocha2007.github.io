@@ -14,14 +14,8 @@ class Sudoku {
 	}
 	/** add random legal int to blank cell */
 	addRandom(){
-		const mps = this.minPencilSize;
-		for (let i = 0; i < this.size; i++)
-			for (let j = 0; j < this.size; j++)
-				if (this.data[i][j] === undefined){
-					const p = this.pencil(i, j);
-					if (p.size === mps)
-						return this.data[i][j] = random.choice(Array.from(p));
-				}
+		const [_, i, j, p] = this.minPencilSize;
+		this.data[i][j] = random.choice(Array.from(p));
 	}
 	/** @returns {number[]} */
 	col(c){
@@ -76,13 +70,15 @@ class Sudoku {
 		return true;
 	}
 	get minPencilSize(){
-		let o = this.size;
+		let o = [this.size];
 		for (let i = 0; i < this.size; i++)
 			for (let j = 0; j < this.size; j++)
 				if (this.data[i][j] === undefined){
-					const p = this.pencil(i, j).size;
-					if (p < o)
-						o = p;
+					const p = this.pencil(i, j);
+					if (p.size < o[0])
+						o = [p.size, i, j, p];
+					if (o[0] === 0)
+						return o;
 				}
 		return o;
 	}
@@ -139,7 +135,7 @@ class Sudoku {
 		return this.data.map(row => row.map(x => x === undefined ? ' ' : x).join(' ')).join('\n');
 	}
 	/** @returns {Sudoku} */
-	static randomSolved(squareSize = 3, max_try_mul = 0.8){
+	static randomSolved(squareSize = 3, max_try_mul = 0.75){
 		let max_tries = Math.pow(squareSize, 4) * max_try_mul;
 		const size = squareSize * squareSize;
 		let board = new Sudoku(range(size)
@@ -155,9 +151,8 @@ class Sudoku {
 			}
 		};
 		seed();
-		while (board.minPencilSize === 0){
+		while (board.minPencilSize[0] === 0)
 			seed();
-		}
 		// add to board until solved
 		while (0 < max_tries && typeof board.solved === 'boolean'){
 			// try adding a random # to board
