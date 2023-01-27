@@ -161,9 +161,7 @@ class Sudoku {
 	/** @returns {Sudoku} */
 	static randomSolved(squareSize = 3){
 		const size = squareSize * squareSize;
-		const board = new Sudoku(range2(size)
-			.map(() => range2(size)
-				.map(() => undefined)), squareSize);
+		const board = new Sudoku(Array(size).fill(0).map(() => Array(size)), squareSize);
 		// seed the board by filling the three diagonal 3x3 squares...
 		const seed = () => {
 			for (let diag = 0; diag < squareSize; diag++){
