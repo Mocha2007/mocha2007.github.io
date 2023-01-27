@@ -70,14 +70,14 @@ class Sudoku {
 	}
 	get hasEmpty(){
 		for (let i = 0; i < this.size; i++)
-			if (this.row(i).includes(undefined))
+			if (this.data[i].includes(undefined))
 				return true;
 		return false;
 	}
 	get legal(){
 		// check rows
 		for (let i = 0; i < this.size; i++)
-			if (!isUniqueArr(this.row(i)))
+			if (!isUniqueArr(this.data[i]))
 				return false;
 		// check cols
 		for (let i = 0; i < this.size; i++)
@@ -117,10 +117,6 @@ class Sudoku {
 		return range2(this.size).filter(n => !row.includes(n)
 			&& !col.includes(n)
 			&& !sq.includes(n));
-	}
-	/** @returns {number[]} */
-	row(r){
-		return this.data[r];
 	}
 	get size(){
 		return this.squareSize * this.squareSize;
