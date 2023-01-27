@@ -20,7 +20,7 @@ class Sudoku {
 	addRandom(){
 		// eslint-disable-next-line no-unused-vars
 		const [_, i, j, p] = this.minPencilSize;
-		this.data[i][j] = random.choice(Array.from(p));
+		this.data[i][j] = random.choice(p);
 	}
 	/** IF there are cells with only one possibility, change them all. otherwise, do the same as addRandom */
 	addAllRandom(){
@@ -29,11 +29,11 @@ class Sudoku {
 			for (let j = 0; j < this.size; j++)
 				if (this.data[i][j] === undefined){
 					const p = this.pencil(i, j);
-					if (p.size === 1){
-						this.data[i][j] = random.choice(Array.from(p));
+					if (p.length === 1){
+						this.data[i][j] = random.choice(p);
 						changed = true;
 					}
-					else if (p.size === 0)
+					else if (p.length === 0)
 						throw Error('this error should never be thrown');
 				}
 		if (!changed)
@@ -97,26 +97,26 @@ class Sudoku {
 			for (let j = 0; j < this.size; j++)
 				if (this.data[i][j] === undefined){
 					const p = this.pencil(i, j);
-					if (p.size < o[0])
-						o = [p.size, i, j, p];
+					if (p.length < o[0])
+						o = [p.length, i, j, p];
 					if (o[0] === 0)
 						return o;
 				}
 		return o;
 	}
-	/** @returns {Set<number>} */
+	/** @returns {number[]} */
 	pencil(row_n, col_n){
-		const missing = new Set(range2(this.size));
 		// row
-		this.data[row_n].forEach(n => missing.delete(n));
+		const row = this.data[row_n];
 		// col
-		this.col(col_n).forEach(n => missing.delete(n));
+		const col = this.col(col_n);
 		// square
-		this.square(
+		const sq = this.square(
 			Math.floor(row_n/this.squareSize),
-			Math.floor(col_n/this.squareSize))
-			.forEach(n => missing.delete(n));
-		return missing;
+			Math.floor(col_n/this.squareSize));
+		return range2(this.size).filter(n => !row.includes(n)
+			&& !col.includes(n)
+			&& !sq.includes(n));
 	}
 	/** @returns {number[]} */
 	row(r){
@@ -136,10 +136,10 @@ class Sudoku {
 				if (this.data[i][j] !== undefined)
 					continue;
 				const missing = this.pencil(i, j);
-				if (missing.size === 0)
+				if (missing.length === 0)
 					return false;
-				if (missing.size === 1){
-					copy.data[i][j] = Array.from(missing)[0];
+				if (missing.length === 1){
+					copy.data[i][j] = missing[0];
 					more_information = true;
 				}
 			}
