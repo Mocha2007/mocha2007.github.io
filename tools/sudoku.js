@@ -129,7 +129,7 @@ class Sudoku {
 		return o;
 	}
 	get string(){
-		return this.data.map(row => row.replace(undefined, ' ').join(' ')).join('\n');
+		return this.data.map(row => row.map(x => x === undefined ? ' ' : x).join(' ')).join('\n');
 	}
 	/** @returns {Sudoku} */
 	static randomSolved(squareSize = 3, max_tries = 1000){
@@ -144,7 +144,7 @@ class Sudoku {
 				for (let j = 0; j < squareSize; j++)
 					board.data[squareSize*diag+i][squareSize*diag+j] = order[squareSize*i+j];
 		}
-		console.debug(board);
+		// console.debug(board);
 		// todo
 		while (0 < max_tries && typeof board.solved === 'boolean'){
 			// try adding a random # to board
@@ -156,7 +156,7 @@ class Sudoku {
 		}
 		if (!max_tries){
 			console.error(board.string);
-			throw new Error();
+			return this.randomSolved();
 		}
 		return board.solved;
 	}
