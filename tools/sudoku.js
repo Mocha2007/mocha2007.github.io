@@ -1,5 +1,5 @@
 /* exported sudoku */
-/* global random */
+/* global gcd, random */
 
 function range2(n){
 	return [...Array(n).keys()];
@@ -205,10 +205,58 @@ class Sudoku {
 		}
 		return hist[hist.length-1];
 	}
+	/** this generator cheats a bit by using cyclical transpositions of regions
+	 * if the player know this then they can unfortunately use this to cheat,
+	 * however, if they don't... :^)
+	 * @returns {Sudoku} */
+	static randomSolved2(squareSize = 3){
+		const size = squareSize * squareSize;
+		const board = new Sudoku(Array(size).fill(0).map(() => Array(size)), squareSize);
+		// generate order
+		const order = random.shuffle(range2(size));
+		// generate a, b such that gcd(a, squareSize) = 1; I don't think there are limits on b...
+		// this is to try to make it less obvious that all regions are the same but with transposition of rows/cols
+		let ai, aj;
+		while (gcd(ai, squareSize) !== 1)
+			ai = random.randint(0, squareSize);
+		while (gcd(aj, squareSize) !== 1)
+			aj = random.randint(0, squareSize);
+		const bi = random.randint(0, squareSize);
+		const bj = random.randint(0, squareSize);
+		// console.log(`I: ${ai}x + ${bi}\nJ: ${aj}x + ${bj}`);
+		for (let ii = 0; ii < squareSize; ii++)
+			for (let jj = 0; jj < squareSize; jj++)
+				for (let i = 0; i < squareSize; i++)
+					for (let j = 0; j < squareSize; j++)
+						board.data[squareSize*ii+i][squareSize*jj+j]
+							= order[squareSize*((i+jj*ai+bi)%squareSize)+((j+ii*aj+bj)%squareSize)];
+		// phase 2: attempt to introduce randomness by deleting every other tile
+		for (let i = 0; i < size; i++)
+			for (let j = 0; j < size; j++)
+				if ((i+j+1) % 2)
+					board.data[i][j] = undefined;
+		// add to board until solved
+		while (board.hasEmpty){
+			// console.debug(board.string);
+			// try adding a random # to board
+			try {
+				board.addAllRandom();
+				//if (!forced_move[forced_move.length-1])
+				//	console.debug('AHA TRICKED YA BETCHA THOUGHT IT WAS TOTALLY CYCLICAL EH');
+			}
+			catch (_){ // no solution
+				// console.warn('reseeding...');
+				return this.randomSolved2(squareSize);
+			}
+		}
+		return board;
+	}
 	/** @returns {[Sudoku, Sudoku]} */
 	static randomUnsolved(squareSize = 3, max_tries = 100){
 		// https://stackoverflow.com/a/7280517
-		const solved = this.randomSolved(squareSize);
+		const solved = 4 < squareSize
+			? this.randomSolved2(squareSize) // this algo generates lower-quality puzzles but it much faster above 4x4 region size
+			: this.randomSolved(squareSize);
 		let o = solved;
 		// console.debug(solved.string);
 		while (0 < max_tries){
@@ -225,7 +273,7 @@ class Sudoku {
 
 const sudoku = {
 	benchmark(trials = 100){
-		[2, 3, 4].forEach(n => {
+		[2, 3, 4, 5].forEach(n => {
 			this.size = n;
 			const t_start = performance.now();
 			for (let i = 0; i < trials; i++)
@@ -261,5 +309,10 @@ const sudoku = {
 		details.appendChild(summary);
 		details.appendChild(elem);
 		return details;
+	},
+	test(){
+		const main = document.getElementById('main');
+		main.innerHTML = '';
+		main.appendChild(Sudoku.randomSolved2(5).elem);
 	},
 };
