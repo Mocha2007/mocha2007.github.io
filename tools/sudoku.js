@@ -30,7 +30,7 @@ class Sudoku {
 				if (this.data[i][j] === undefined){
 					const p = this.pencil(i, j);
 					if (p.length === 1){
-						this.data[i][j] = random.choice(p);
+						this.data[i][j] = p[0];
 						forced_move = true;
 					}
 					else if (p.length === 0)
