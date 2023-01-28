@@ -252,7 +252,7 @@ class Sudoku {
 		return board;
 	}
 	/** @returns {[Sudoku, Sudoku]} */
-	static randomUnsolved(squareSize = 3, max_tries = 100){
+	static randomUnsolved(squareSize = 3, max_tries = 5){
 		// https://stackoverflow.com/a/7280517
 		const solved = 4 < squareSize
 			? this.randomSolved2(squareSize) // this algo generates lower-quality puzzles but it much faster above 4x4 region size
@@ -261,7 +261,7 @@ class Sudoku {
 		// console.debug(solved.string);
 		while (0 < max_tries){
 			const copy = o.copy;
-			for (let i = 0; i < squareSize; i++) // we want to work faster for bigger copies...
+			for (let i = 0; i < squareSize*squareSize; i++) // we want to work faster for bigger copies...
 				copy.deleteRandom();
 			if (copy.solved !== true)
 				o = copy;
@@ -284,10 +284,11 @@ const sudoku = {
 		});
 	},
 	difficulty: 0,
-	difficultyCurve: [0.7, 1.2, 3], // abt. 50%, 40%, 35% full respectively on 3x3
+	difficultyCurve: [1, 2, 4], // abt. 50%, 40%, 35% full respectively (at least on 3x3)
 	gen(debug = true){
 		const t_start = performance.now();
-		const tries = Math.round(this.difficultyCurve[this.difficulty] * Math.pow(this.size, 3)); // only cubed because we delete multiple times as a function of size, 4-1=3
+		// only squared because we delete multiple times as a function of size^2, 4-2=2
+		const tries = this.difficultyCurve[this.difficulty] * Math.pow(this.size, 2);
 		const [solution, puzzle] = Sudoku.randomUnsolved(this.size, tries);
 		// elems
 		const main = document.getElementById('main');
