@@ -227,20 +227,20 @@ class Sudoku {
 }
 
 const sudoku = {
-	benchmark(trials = 20){
+	benchmark(trials = 100){
 		[2, 3, 4].forEach(n => {
 			this.size = n;
-			const t_start = +new Date();
+			const t_start = performance.now();
 			for (let i = 0; i < trials; i++)
 				this.gen(false);
-			const t = (+new Date() - t_start)/trials;
+			const t = (performance.now() - t_start)/trials;
 			console.debug(`${n} took ${t} ms avg.`);
 		});
 	},
 	difficulty: 0,
 	difficultyCurve: [0.6, 1, 2], // abt. 50%, 40%, 30% full respectively
 	gen(debug = true){
-		const t_start = +new Date();
+		const t_start = performance.now();
 		const tries = Math.round(this.difficultyCurve[this.difficulty] * Math.pow(this.size, 4));
 		const [solution, puzzle] = Sudoku.randomUnsolved(this.size, tries);
 		// elems
@@ -252,7 +252,7 @@ const sudoku = {
 		if (debug){
 			this.puzzle = puzzle;
 			this.solution = solution;
-			console.info(`${new Date() - t_start} ms`);
+			console.info(`${performance.now() - t_start} ms`);
 		}
 	},
 	size: 3,
