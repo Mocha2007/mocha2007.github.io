@@ -220,6 +220,16 @@ class Sudoku {
 }
 
 const sudoku = {
+	benchmark(trials = 10){
+		[2, 3, 4, 5].forEach(n => {
+			this.size = n;
+			const t_start = +new Date();
+			for (let i = 0; i < trials; i++)
+				this.gen();
+			const t = (+new Date() - t_start)/trials;
+			console.debug(`${n} took ${t} ms avg.`);
+		});
+	},
 	difficulty: 0,
 	difficultyCurve: [0.6, 1, 2], // abt. 50%, 40%, 30% full respectively
 	gen(){
