@@ -261,12 +261,13 @@ class Sudoku {
 		// console.debug(solved.string);
 		while (0 < max_tries){
 			const copy = o.copy;
-			copy.deleteRandom();
+			for (let i = 0; i < squareSize; i++) // we want to work faster for bigger copies...
+				copy.deleteRandom();
 			if (copy.solved !== true)
 				o = copy;
 			max_tries--;
 		}
-		// console.debug(1-sum(o.data.map(row => row.filter(x => x === undefined).length))/81);
+		// console.debug(1-sum(o.data.map(row => row.filter(x => x === undefined).length))/Math.pow(squareSize, 4));
 		return [solved, o];
 	}
 }
@@ -283,10 +284,10 @@ const sudoku = {
 		});
 	},
 	difficulty: 0,
-	difficultyCurve: [0.6, 1, 2], // abt. 50%, 40%, 30% full respectively
+	difficultyCurve: [0.7, 1.2, 3], // abt. 50%, 40%, 35% full respectively on 3x3
 	gen(debug = true){
 		const t_start = performance.now();
-		const tries = Math.round(this.difficultyCurve[this.difficulty] * Math.pow(this.size, 4));
+		const tries = Math.round(this.difficultyCurve[this.difficulty] * Math.pow(this.size, 3)); // only cubed because we delete multiple times as a function of size, 4-1=3
 		const [solution, puzzle] = Sudoku.randomUnsolved(this.size, tries);
 		// elems
 		const main = document.getElementById('main');
