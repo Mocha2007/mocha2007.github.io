@@ -36,7 +36,7 @@ class Sudoku {
 					else if (p.length === 0)
 						throw Error('this error should never be thrown');
 				}
-		if (!forced_move)
+		if (!forced_move) // false ~73% of the time based on observation
 			this.addRandom();
 		return forced_move;
 	}
