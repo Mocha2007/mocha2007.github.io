@@ -259,13 +259,12 @@ class Sudoku {
 			: this.randomSolved(squareSize);
 		let o = solved;
 		// console.debug(solved.string);
-		while (0 < max_tries){
+		for (let i = 0; i < max_tries; i++){
 			const copy = o.copy;
-			for (let i = 0; i < squareSize*squareSize; i++) // we want to work faster for bigger copies...
+			for (let j = 0; j < squareSize*squareSize; j++) // we want to work faster for bigger copies...
 				copy.deleteRandom();
-			if (copy.solved !== true)
+			if (copy.solved !== true) // true means multiple solutions
 				o = copy;
-			max_tries--;
 		}
 		// console.debug(1-sum(o.data.map(row => row.filter(x => x === undefined).length))/Math.pow(squareSize, 4));
 		return [solved, o];
@@ -288,7 +287,7 @@ const sudoku = {
 	gen(debug = true){
 		const t_start = performance.now();
 		// only squared because we delete multiple times as a function of size^2, 4-2=2
-		const tries = this.difficultyCurve[this.difficulty] * Math.pow(this.size, 2);
+		const tries = this.difficultyCurve[this.difficulty] * this.size*this.size;
 		const [solution, puzzle] = Sudoku.randomUnsolved(this.size, tries);
 		// elems
 		const main = document.getElementById('main');
