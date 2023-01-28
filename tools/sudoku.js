@@ -25,6 +25,7 @@ class Sudoku {
 	/** IF there are cells with only one possibility, change them all. otherwise, do the same as addRandom */
 	addAllRandom(){
 		let forced_move = false;
+		const pp = Array(this.size);
 		for (let i = 0; i < this.size; i++)
 			for (let j = 0; j < this.size; j++)
 				if (this.data[i][j] === undefined){
@@ -35,9 +36,15 @@ class Sudoku {
 					}
 					else if (p.length === 0)
 						throw Error('this error should never be thrown');
+					else
+						pp[p.length] = [i, j, p];
 				}
 		if (!forced_move) // false ~73% of the time based on observation
-			this.addRandom();
+			for (let i = 2; i < this.size; i++) // since there aren't any squares with one choice, what about 2? 3? etc
+				if (pp[i]){
+					this.data[pp[i][0]][pp[i][1]] = random.choice(pp[i][2]);
+					break;
+				}
 		return forced_move;
 	}
 	/** @returns {number[]} */
@@ -193,6 +200,7 @@ class Sudoku {
 				hist.push(next);
 			}
 			catch (_){ // no solution
+				// console.debug(_);
 				if (!next.hasEmpty)
 					return next;
 				if (attempts <= 0){
