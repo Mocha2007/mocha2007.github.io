@@ -100,9 +100,15 @@ class Sudoku {
 		const sq = this.square(
 			Math.floor(row_n/this.squareSize),
 			Math.floor(col_n/this.squareSize));
-		return range2(this.size).filter(n => !row.includes(n)
-			&& !col.includes(n)
+		return range2(this.size).filter(n => !col.includes(n)
+			&& !row.includes(n)
 			&& !sq.includes(n));
+		/* out of a shitton of tests, I have found it fails with this frequency:
+			c:  55995899 (ie. there is another in the same col)
+			r:  50262264 (ie. there is another in the same row)
+			sq: 32881597 (ie. there is another in the same square)
+			therefore I have ordered this such as to give the greatest odds of it breaking first
+		*/
 	}
 	get size(){
 		return this.squareSize * this.squareSize;
