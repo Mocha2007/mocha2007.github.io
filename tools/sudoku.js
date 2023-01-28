@@ -110,23 +110,20 @@ class Sudoku {
 	 * @param {number} col_n
 	 */
 	pencil(row_n, col_n){
+		const possibilities = Array(this.size).fill(true);
 		// row
-		const row = this.data[row_n];
+		this.data[row_n].forEach(n => possibilities[n] = false);
 		// col
-		const col = this.col(col_n);
+		this.col(col_n).forEach(n => possibilities[n] = false);
+		// try to return early
+		if (possibilities.indexOf(true) === -1)
+			return [];
 		// square
-		let sq;
-		const o = [];
-		for (let i = 0; i < this.size; i++)
-			if (!col.includes(i) && !row.includes(i)){
-				if (!sq)
-					sq = this.square(
-						Math.floor(row_n/this.squareSize),
-						Math.floor(col_n/this.squareSize));
-				if (!sq.includes(i))
-					o.push(i);
-			}
-		return o;
+		this.square(
+			Math.floor(row_n/this.squareSize),
+			Math.floor(col_n/this.squareSize))
+			.forEach(n => possibilities[n] = false);
+		return possibilities.map((b, n) => b && n).filter(xx => xx !== false);
 		/* out of a shitton of tests, I have found it fails with this frequency:
 			c:  55995899 (ie. there is another in the same col)
 			r:  50262264 (ie. there is another in the same row)
