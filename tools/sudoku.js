@@ -229,7 +229,7 @@ class Sudoku {
 				for (let i = 0; i < squareSize; i++)
 					for (let j = 0; j < squareSize; j++)
 						board.data[squareSize*ii+i][squareSize*jj+j]
-							= order[squareSize*((i+jj*ai+bi)%squareSize)+((j+ii*aj+bj)%squareSize)];
+							= order[squareSize*((i+jj*ai+bi)%squareSize) + (j+ii*aj+bj)%squareSize];
 		// phase 2: attempt to introduce randomness by deleting every other tile
 		for (let i = 0; i < size; i++)
 			for (let j = 0; j < size; j++)
