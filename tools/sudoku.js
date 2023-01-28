@@ -223,7 +223,7 @@ class Sudoku {
 
 const sudoku = {
 	benchmark(trials = 10){
-		[2, 3, 4, 5].forEach(n => {
+		[2, 3, 4].forEach(n => {
 			this.size = n;
 			const t_start = +new Date();
 			for (let i = 0; i < trials; i++)
