@@ -12,15 +12,12 @@ function range2(n){
 }
 
 class Sudoku {
+	/** @param {number[][]} data */
 	constructor(data, squareSize=3){
+		/** @type {number[][]} */
 		this.data = data;
+		/** @type {number} */
 		this.squareSize = squareSize;
-	}
-	/** add random legal int to blank cell */
-	addRandom(){
-		// eslint-disable-next-line no-unused-vars
-		const [_, i, j, p] = this.minPencilSize;
-		this.data[i][j] = random.choice(p);
 	}
 	/** IF there are cells with only one possibility, change them all. otherwise, do the same as addRandom */
 	addAllRandom(){
@@ -47,7 +44,7 @@ class Sudoku {
 				}
 		return forced_move;
 	}
-	/** @returns {number[]} */
+	/** @param {number} c */
 	col(c){
 		return this.data.map(row => row[c]);
 	}
@@ -82,27 +79,6 @@ class Sudoku {
 				return true;
 		return false;
 	}
-	get histo(){
-		const f = this.data.flat();
-		return range2(this.size).map(n => f.filter(x => x === n).length);
-	}
-	get legal(){
-		// check rows
-		for (let i = 0; i < this.size; i++)
-			if (!isUniqueArr(this.data[i]))
-				return false;
-		// check cols
-		for (let i = 0; i < this.size; i++)
-			if (!isUniqueArr(this.col(i)))
-				return false;
-		// check squares
-		for (let i = 0; i < this.squareSize; i++)
-			for (let j = 0; j < this.squareSize; j++)
-				if (!isUniqueArr(this.square(i, j)))
-					return false;
-		// all checks passed
-		return true;
-	}
 	/** @returns {[number, number, number, number[]]} */
 	get minPencilSize(){
 		let o = [this.size];
@@ -117,7 +93,10 @@ class Sudoku {
 				}
 		return o;
 	}
-	/** @returns {number[]} */
+	/**
+	 * @param {number} row_n
+	 * @param {number} col_n
+	 */
 	pencil(row_n, col_n){
 		// row
 		const row = this.data[row_n];
@@ -156,6 +135,10 @@ class Sudoku {
 			return true; // multiple solutions
 		return copy.solved;
 	}
+	/**
+	 * @param {number} r
+	 * @param {number} c
+	 */
 	square(r, c){
 		const o = [];
 		for (let row_id = this.squareSize*r; row_id < this.squareSize*r+this.squareSize; row_id++)
