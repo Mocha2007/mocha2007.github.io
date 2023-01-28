@@ -305,14 +305,18 @@ class Sudoku {
 
 const sudoku = {
 	benchmark(trials = 100){
-		[2, 3, 4, 5].forEach(n => {
-			this.size = n;
-			const t_start = performance.now();
-			for (let i = 0; i < trials; i++)
-				this.gen(false);
-			const t = (performance.now() - t_start)/trials;
-			console.debug(`${n} took ${t} ms avg.`);
+		[0, 1, 2].forEach(difficulty => {
+			this.difficulty = difficulty;
+			[1, 2, 3, 4, 5].forEach(n => {
+				this.size = n;
+				const t_start = performance.now();
+				for (let i = 0; i < trials; i++)
+					this.gen(false);
+				const t = (performance.now() - t_start)/trials;
+				console.debug(`d${difficulty} s${n} took ${t} ms avg.`);
+			});
 		});
+		console.debug('DONE!');
 	},
 	difficulty: 0,
 	difficultyCurve: [1, 2, 4], // abt. 50%, 40%, 35% full respectively (at least on 3x3)
