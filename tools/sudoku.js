@@ -179,7 +179,8 @@ class Sudoku {
 			forced_move.pop();
 			// console.warn('undo');
 		};
-		while (board.hasEmpty){
+		while (hist[hist.length-1].hasEmpty){
+			// console.debug(hist[hist.length-1].string);
 			// try adding a random # to board
 			const next = hist[hist.length-1].copy;
 			try {
@@ -200,13 +201,14 @@ class Sudoku {
 				attempts--;
 			}
 		}
-		return board.solved;
+		return hist[hist.length-1];
 	}
 	/** @returns {[Sudoku, Sudoku]} */
 	static randomUnsolved(squareSize = 3, max_tries = 100){
 		// https://stackoverflow.com/a/7280517
 		const solved = this.randomSolved(squareSize);
 		let o = solved;
+		// console.debug(solved.string);
 		while (0 < max_tries){
 			const copy = o.copy;
 			copy.deleteRandom();
