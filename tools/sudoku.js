@@ -75,6 +75,10 @@ class Sudoku {
 				return true;
 		return false;
 	}
+	get histo(){
+		const f = this.data.flat();
+		return range2(this.size).map(n => f.filter(x => x === n).length);
+	}
 	get legal(){
 		// check rows
 		for (let i = 0; i < this.size; i++)
@@ -92,6 +96,7 @@ class Sudoku {
 		// all checks passed
 		return true;
 	}
+	/** @returns {[number, number, number, number[]]} */
 	get minPencilSize(){
 		let o = [this.size];
 		for (let i = 0; i < this.size; i++)
@@ -227,14 +232,14 @@ const sudoku = {
 			this.size = n;
 			const t_start = +new Date();
 			for (let i = 0; i < trials; i++)
-				this.gen();
+				this.gen(false);
 			const t = (+new Date() - t_start)/trials;
 			console.debug(`${n} took ${t} ms avg.`);
 		});
 	},
 	difficulty: 0,
 	difficultyCurve: [0.6, 1, 2], // abt. 50%, 40%, 30% full respectively
-	gen(debug = false){
+	gen(debug = true){
 		const t_start = +new Date();
 		const tries = Math.round(this.difficultyCurve[this.difficulty] * Math.pow(this.size, 4));
 		const [solution, puzzle] = Sudoku.randomUnsolved(this.size, tries);
