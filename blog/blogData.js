@@ -127,4 +127,12 @@ const blogData = [
 	but I think I'll need to wait for more good data before testing it out.
 	I also added a sudoku generator to my site.
 	`,
+	`
+	@title 28 Jan 2023
+	@date 1674932595245
+	@p
+	@tags site dev js
+	I optimized the sudoku generator as much as I think I can realistically within the limitations of javascript.
+	I think I will leave it for now.
+	`,
 ];
