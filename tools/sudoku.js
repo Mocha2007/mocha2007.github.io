@@ -1,8 +1,12 @@
 /* exported sudoku */
-/* global gcd, random */
+/* global gcd, random, sum */
 
 function range2(n){
 	return [...Array(n).keys()];
+}
+
+function triangular(n){
+	return Math.round(n*(n+1)/2);
 }
 
 class Sudoku {
@@ -12,6 +16,8 @@ class Sudoku {
 		this.data = data;
 		/** @type {number} */
 		this.squareSize = squareSize;
+		/** @type {number} */
+		this.sum = triangular(this.squareSize*this.squareSize-1);
 	}
 	/** IF there are cells with only one possibility, change them all. otherwise, do the same as addRandom */
 	addAllRandom(){
@@ -125,11 +131,23 @@ class Sudoku {
 			return this;
 		let more_information = false;
 		const copy = this.copy;
-		for (let i = 0; i < this.size; i++)
+		for (let i = 0; i < this.size; i++){
+			// before fucking around check if there is only one undefined in the row
+			const undefineds = copy.data[i].filter(x => x === undefined).length;
+			if (undefineds === 0)
+				continue;
+			if (undefineds === 1){
+				// copy.data[i][j] = range2(this.size).find(x => !copy.data[i].includes(x));
+				copy.data[i][copy.data[i].indexOf(undefined)]
+					= this.sum - sum(copy.data[i].filter(x => x));
+				more_information = true;
+				continue;
+			}
+			// okay now waste time with the stupid fucking pencil
 			for (let j = 0; j < this.size; j++){
-				if (this.data[i][j] !== undefined)
+				if (copy.data[i][j] !== undefined)
 					continue;
-				const missing = this.pencil(i, j);
+				const missing = copy.pencil(i, j);
 				if (missing.length === 0)
 					return false;
 				if (missing.length === 1){
@@ -137,6 +155,7 @@ class Sudoku {
 					more_information = true;
 				}
 			}
+		}
 		if (!more_information)
 			return true; // multiple solutions
 		return copy.solved;
