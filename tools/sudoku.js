@@ -12,6 +12,8 @@ class Sudoku {
 		this.data = data;
 		/** @type {number} */
 		this.squareSize = squareSize;
+		/** @type {number[]} */
+		this.pencilSquareCache = Array(squareSize*squareSize);
 	}
 	/** IF there are cells with only one possibility, change them all. otherwise, do the same as addRandom */
 	addAllRandom(){
@@ -24,6 +26,7 @@ class Sudoku {
 					if (p.length === 1){
 						this.data[i][j] = p[0];
 						forced_move = true;
+						this.resetPencilSquareCache(i, j);
 					}
 					else if (p.length === 0)
 						throw Error('this error should never be thrown');
@@ -101,10 +104,14 @@ class Sudoku {
 		const o = [];
 		for (let i = 0; i < this.size; i++)
 			if (!col.includes(i) && !row.includes(i)){
-				if (!sq)
-					sq = this.square(
-						Math.floor(row_n/this.squareSize),
-						Math.floor(col_n/this.squareSize));
+				if (!sq){
+					const sr = Math.floor(row_n/this.squareSize);
+					const sc = Math.floor(col_n/this.squareSize);
+					const psci = this.squareSize*sr+sc;
+					if (!this.pencilSquareCache[psci])
+						this.pencilSquareCache[psci] = this.square(sr, sc);
+					sq = this.pencilSquareCache[psci];
+				}
 				if (!sq.includes(i))
 					o.push(i);
 			}
@@ -115,6 +122,14 @@ class Sudoku {
 			sq: 32881597 (ie. there is another in the same square)
 			therefore I have ordered this such as to give the greatest odds of it breaking first
 		*/
+	}
+	/**
+	 * @param {number} i row of the cell to reset
+	 * @param {number} j col of the cell to reset
+	 */
+	resetPencilSquareCache(i, j){
+		// eslint-disable-next-line max-len
+		this.pencilSquareCache[Math.floor(i/this.squareSize)*this.squareSize + Math.floor(j/this.squareSize)] = undefined;
 	}
 	get size(){
 		return this.squareSize * this.squareSize;
@@ -135,6 +150,7 @@ class Sudoku {
 				if (missing.length === 1){
 					copy.data[i][j] = missing[0];
 					more_information = true;
+					this.resetPencilSquareCache(i, j);
 				}
 			}
 		if (!more_information)
