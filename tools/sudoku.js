@@ -222,7 +222,7 @@ class Sudoku {
 }
 
 const sudoku = {
-	benchmark(trials = 10){
+	benchmark(trials = 20){
 		[2, 3, 4].forEach(n => {
 			this.size = n;
 			const t_start = +new Date();
@@ -234,7 +234,7 @@ const sudoku = {
 	},
 	difficulty: 0,
 	difficultyCurve: [0.6, 1, 2], // abt. 50%, 40%, 30% full respectively
-	gen(){
+	gen(debug = false){
 		const t_start = +new Date();
 		const tries = Math.round(this.difficultyCurve[this.difficulty] * Math.pow(this.size, 4));
 		const [solution, puzzle] = Sudoku.randomUnsolved(this.size, tries);
@@ -244,9 +244,11 @@ const sudoku = {
 		main.appendChild(puzzle.elem);
 		main.appendChild(this.spoiler(solution.elem));
 		// for debugging purposes
-		this.puzzle = puzzle;
-		this.solution = solution;
-		console.info(`${new Date() - t_start} ms`);
+		if (debug){
+			this.puzzle = puzzle;
+			this.solution = solution;
+			console.info(`${new Date() - t_start} ms`);
+		}
 	},
 	size: 3,
 	/** @param {HTMLElement} elem */
