@@ -97,12 +97,18 @@ class Sudoku {
 		// col
 		const col = this.col(col_n);
 		// square
-		const sq = this.square(
-			Math.floor(row_n/this.squareSize),
-			Math.floor(col_n/this.squareSize));
-		return range2(this.size).filter(n => !col.includes(n)
-			&& !row.includes(n)
-			&& !sq.includes(n));
+		let sq;
+		const o = [];
+		for (let i = 0; i < this.size; i++)
+			if (!col.includes(i) && !row.includes(i)){
+				if (!sq)
+					sq = this.square(
+						Math.floor(row_n/this.squareSize),
+						Math.floor(col_n/this.squareSize));
+				if (!sq.includes(i))
+					o.push(i);
+			}
+		return o;
 		/* out of a shitton of tests, I have found it fails with this frequency:
 			c:  55995899 (ie. there is another in the same col)
 			r:  50262264 (ie. there is another in the same row)
