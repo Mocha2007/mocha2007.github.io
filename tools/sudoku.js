@@ -1,12 +1,6 @@
 /* exported sudoku */
 /* global random */
 
-/** @param {[]} arr */
-function isUniqueArr(arr){
-	arr = arr.filter(x => x !== undefined);
-	return new Set(arr).size === arr.length;
-}
-
 function range2(n){
 	return [...Array(n).keys()];
 }
