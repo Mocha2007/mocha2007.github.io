@@ -23,7 +23,18 @@ class Sudoku {
 	addAllRandom(){
 		let forced_move = false;
 		const pp = Array(this.size);
-		for (let i = 0; i < this.size; i++)
+		for (let i = 0; i < this.size; i++){
+			// before fucking around check if there is only one undefined in the row
+			const undefineds = this.data[i].filter(x => x === undefined).length;
+			if (undefineds === 0)
+				continue;
+			if (undefineds === 1){
+				// copy.data[i][j] = range2(this.size).find(x => !copy.data[i].includes(x));
+				this.data[i][this.data[i].indexOf(undefined)]
+					= this.sum - sum(this.data[i].filter(x => x));
+				forced_move = true;
+				continue;
+			}
 			for (let j = 0; j < this.size; j++)
 				if (this.data[i][j] === undefined){
 					const p = this.pencil(i, j);
@@ -36,6 +47,7 @@ class Sudoku {
 					else
 						pp[p.length] = [i, j, p];
 				}
+		}
 		if (!forced_move) // false ~73% of the time based on observation
 			for (let i = 2; i < this.size; i++) // since there aren't any squares with one choice, what about 2? 3? etc
 				if (pp[i]){
@@ -175,10 +187,13 @@ class Sudoku {
 	get string(){
 		return this.data.map(row => row.map(x => x === undefined ? ' ' : x).join(' ')).join('\n');
 	}
+	static empty(ss){
+		return new Sudoku(Array(ss*ss).fill().map(() => Array(ss*ss).fill()), ss);
+	}
 	/** @returns {Sudoku} */
 	static randomSolved(squareSize = 3, attempts = 20){
 		const size = squareSize * squareSize;
-		const board = new Sudoku(Array(size).fill(0).map(() => Array(size)), squareSize);
+		const board = this.empty(squareSize);
 		// seed the board by filling the three diagonal 3x3 squares...
 		const seed = () => {
 			for (let diag = 0; diag < squareSize; diag++){
@@ -230,7 +245,7 @@ class Sudoku {
 	 * @returns {Sudoku} */
 	static randomSolved2(squareSize = 3){
 		const size = squareSize * squareSize;
-		const board = new Sudoku(Array(size).fill(0).map(() => Array(size)), squareSize);
+		const board = this.empty(squareSize);
 		// generate order
 		const order = random.shuffle(range2(size));
 		// generate a, b such that gcd(a, squareSize) = 1; I don't think there are limits on b...
