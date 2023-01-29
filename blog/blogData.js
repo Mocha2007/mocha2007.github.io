@@ -129,10 +129,16 @@ const blogData = [
 	`,
 	`
 	@title 28 Jan 2023
-	@date 1674932595245
+	@date 1674965139633
 	@p
 	@tags site dev js
 	I optimized the sudoku generator as much as I think I can realistically within the limitations of javascript.
 	I think I will leave it for now.
+
+	@p
+	@tags game_changer
+	This evening I discovered the show <cite>Game Changer</cite> and have become totally enthralled, binge-watching as many episodes as I can.
+	The musical episode in particular had me splitting my sides the entire time.
+	I would definitely recommend a watch!
 	`,
 ];
