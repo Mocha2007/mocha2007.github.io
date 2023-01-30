@@ -1525,6 +1525,23 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "bonrôm",
+		"etym": "C/bonrôz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"bonrôm, a traditional artform characterized by rhythmic performance of poetry (cf. spoken word, rap)"
+		],
+		"categories": ["art", "music"]
+	},
+	{
+		"title": "bonrôz",
+		"etym": "C/bonz/rôz",
+		"cat": "v.",
+		"defList": [
+			"perform bonrôm"
+		]
+	},
+	{
 		"title": "bonz",
 		"etym": "L/PEN/*bons/poke",
 		"cat": "v.",
