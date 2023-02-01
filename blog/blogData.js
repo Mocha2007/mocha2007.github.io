@@ -141,4 +141,12 @@ const blogData = [
 	The musical episode in particular had me splitting my sides the entire time.
 	I would definitely recommend a watch!
 	`,
+	`
+	@title 01 Feb 2023
+	@date 1675280393178
+	@p
+	@tags kenken
+	I've been trying out kenken puzzles. Mostly 8x8 ones... they're pretty addictive.
+	I'm tempted to try a 10x10 one but I'm worried they'll be unmanageable...
+	`,
 ];
