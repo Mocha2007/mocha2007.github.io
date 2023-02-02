@@ -149,4 +149,14 @@ const blogData = [
 	I've been trying out kenken puzzles. Mostly 8x8 ones... they're pretty addictive.
 	I'm tempted to try a 10x10 one but I'm worried they'll be unmanageable...
 	`,
+	`
+	@title 02 Feb 2023
+	@date 1675353379131
+	@p
+	@tags twitter dev
+	Twitter has now announced API access will be a paid feature in a week.
+	I guess I'm not gonna be making my Eremor bot anymore.
+	On one hand I wish I did, but on the other I suppose it's nice to know I didn't waste my time.
+	It's still amazing to me how fast Twitter has collapsed since Musk's acquisition.
+	`,
 ];
