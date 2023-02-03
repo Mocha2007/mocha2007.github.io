@@ -160,7 +160,7 @@ const blogData = [
 	It's still amazing to me how fast Twitter has collapsed since Musk's acquisition.
 	@p
 	@tags duolingo japanese
-	Today I completed unit 7 of Japanese. 🇯🇵
+	Today I completed unit 7 of Japanese on Duolingo. 🇯🇵
 	@p
 	@tags math
 	On a whim I decided to try to figure out the group of rotations of a tetrahedron.
