@@ -214,4 +214,11 @@ const blogData = [
 	Since they are period-2, I <em>suppose</em> they are rotations by 180&deg; (at least, that is my only rationalization),
 	but I have some doubt about that and perhaps there is some other weird movement going on instead.
 	`,
+	`
+	@title 03 Feb 2023
+	@date 1675434363640
+	@p
+	@tags site namei
+	To the <a href="../namei/namei.html#Eras">Pankairan color synesthesia table</a> I added solids for the elements.
+	`,
 ];

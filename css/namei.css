@@ -68,3 +68,22 @@ table.mid{margin-left:auto;margin-right: auto;}
 	height: calc((700px - 2px*6)/5);
 	width: calc((700px - 2px*6)/5);
 }
+.eraTable img {
+	height: 130px; /* =width */
+}
+.tintRed {
+	filter: sepia() hue-rotate(-30deg);
+	transform: rotate(90deg);
+}
+.tintYellow {
+	filter: sepia() hue-rotate(20deg);
+}
+.tintGreen {
+	filter: sepia() hue-rotate(80deg);
+}
+.tintBlue {
+	filter: sepia() hue-rotate(180deg);
+}
+.tintWhite {
+	filter: grayscale() brightness(1.5);
+}
