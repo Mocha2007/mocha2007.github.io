@@ -180,7 +180,7 @@ const blogData = [
 			All combinations of different letters are counterexamples.
 			eg. A<sub>1</sub>*B<sub>1</sub> = C<sub>2</sub> but B<sub>1</sub>*A<sub>1</sub> = D<sub>2</sub>.
 			If the two operands have the same letter, they are commutative,
-			and the result also has the same letter.
+			and the result also has the same letter, or is 0.
 		</li>
 		<li>
 			Rotation by the identity rotation is period-1 (obviously),
