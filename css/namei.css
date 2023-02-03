@@ -72,17 +72,17 @@ table.mid{margin-left:auto;margin-right: auto;}
 	height: 130px; /* =width */
 }
 .tintRed {
-	filter: sepia() hue-rotate(-30deg);
+	filter: sepia() hue-rotate(-45deg) contrast(2);
 	transform: rotate(90deg);
 }
 .tintYellow {
-	filter: sepia() hue-rotate(20deg);
+	filter: sepia() hue-rotate(20deg) contrast(2);
 }
 .tintGreen {
-	filter: sepia() hue-rotate(80deg);
+	filter: sepia() hue-rotate(70deg) contrast(2);
 }
 .tintBlue {
-	filter: sepia() hue-rotate(180deg);
+	filter: sepia() hue-rotate(200deg) contrast(2);
 }
 .tintWhite {
 	filter: grayscale() brightness(1.5);
