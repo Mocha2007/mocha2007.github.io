@@ -173,7 +173,7 @@ const blogData = [
 	but after writing it out I realized that would only cover 9 rotations.
 	I then decided to name the remaining rotations X<sub>1</sub>, X<sub>2</sub>,
 	and X<sub>3</sub> in order of when I first encountered them.
-	Two interesting properties I learned:
+	Interesting properties I found:
 	<ol>
 		<li>
 			The rotations are not commutative.
@@ -187,6 +187,18 @@ const blogData = [
 			rotation by a _<sub>n</sub> rotation is period-3,
 			but rotation by X<sub>n</sub> is period-2 -
 			ie. X<sub>1</sub>, X<sub>2</sub>, and X<sub>3</sub> are their own inverses.
+		</li>
+		<li>
+			_<sub>1</sub>&middot;_<sub>1</sub> = _<sub>2</sub>
+		</li>
+		<li>
+			_<sub>2</sub>&middot;_<sub>2</sub> = _<sub>1</sub>
+		</li>
+		<li>
+			_<sub>1</sub>&middot;_<sub>2</sub> <em>or</em> _<sub>2</sub>&middot;_<sub>1</sub> = X<sub>n</sub> <em>or</em> 0
+		</li>
+		<li>
+			X<sub>n</sub>&middot;_<sub>m</sub> <em>or</em> _<sub>m</sub>&middot;X<sub>n</sub> = _<sub>m</sub>
 		</li>
 	</ol>
 	Unfortunately I do not yet know the deeper reason behind some of these properties,
