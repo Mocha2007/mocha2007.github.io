@@ -203,6 +203,8 @@ const blogData = [
 		<li>
 			A generating set of the group is {A<sub>1</sub>, B<sub>1</sub>}.
 			In fact, every set of two elements with different letters is a generating set.
+			Intuitively it makes sense the minimal generating set would need two elements of different axes,
+			since it is similar to geographic coordinates on a sphere.
 		</li>
 	</ol>
 	Unfortunately I do not yet know the deeper reason behind some of these properties,
