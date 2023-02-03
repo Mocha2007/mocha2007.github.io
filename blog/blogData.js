@@ -191,5 +191,9 @@ const blogData = [
 	</ol>
 	Unfortunately I do not yet know the deeper reason behind some of these properties,
 	but I will definitely keep thinking about them in the back of my mind.
+	The period-3 rotations are and obviously must be rotations by 120&deg;,
+	but the period-2 rotations are less clear when I try to visualize them.
+	Since they are period-2, I <em>suppose</em> they are rotations by 180&deg; (at least, that is my only rationalization),
+	but I have some doubt about that and perhaps there is some other weird movement going on instead.
 	`,
 ];
