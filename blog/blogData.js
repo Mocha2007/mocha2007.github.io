@@ -200,6 +200,10 @@ const blogData = [
 		<li>
 			X<sub>n</sub>&middot;_<sub>m</sub> <em>or</em> _<sub>m</sub>&middot;X<sub>n</sub> = _<sub>m</sub>
 		</li>
+		<li>
+			A generating set of the group is {A<sub>1</sub>, B<sub>1</sub>}.
+			In fact, every set of two elements with different letters is a generating set.
+		</li>
 	</ol>
 	Unfortunately I do not yet know the deeper reason behind some of these properties,
 	but I will definitely keep thinking about them in the back of my mind.
