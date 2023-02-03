@@ -151,12 +151,45 @@ const blogData = [
 	`,
 	`
 	@title 02 Feb 2023
-	@date 1675353379131
+	@date 1675383358819
 	@p
 	@tags twitter dev
 	Twitter has now announced API access will be a paid feature in a week.
 	I guess I'm not gonna be making my Eremor bot anymore.
 	On one hand I wish I did, but on the other I suppose it's nice to know I didn't waste my time.
 	It's still amazing to me how fast Twitter has collapsed since Musk's acquisition.
+	@p
+	@tags duolingo japanese
+	Today I completed unit 7 of Japanese. 🇯🇵
+	@p
+	@tags math
+	On a whim I decided to try to figure out the group of rotations of a tetrahedron.
+	Obviously there are twelve orientations (4 faces * 3 sides per face),
+	but I wasn't sure how to name them.
+	I decided to arbitrarily name three axes (going from a vertex through the center of a face) A, B, C, and D,
+	and to call a clockwise rotation along the axis "_<sub>1</sub>" and a counterclockwise rotation "_<sub>2</sub>".
+	I also decided to name the identity rotation "0".
+	Beforehand, I thought this would be everything,
+	but after writing it out I realized that would only cover 9 rotations.
+	I then decided to name the remaining rotations X<sub>1</sub>, X<sub>2</sub>,
+	and X<sub>3</sub> in order of when I first encountered them.
+	Two interesting properties I learned:
+	<ol>
+		<li>
+			The rotations are not commutative.
+			All combinations of different letters are counterexamples.
+			eg. A<sub>1</sub>*B<sub>1</sub> = C<sub>2</sub> but B<sub>1</sub>*A<sub>1</sub> = D<sub>2</sub>.
+			If the two operands have the same letter, they are commutative,
+			and the result also has the same letter.
+		</li>
+		<li>
+			Rotation by the identity rotation is period-1 (obviously),
+			rotation by a _<sub>n</sub> rotation is period-3,
+			but rotation by X<sub>n</sub> is period-2 -
+			ie. X<sub>1</sub>, X<sub>2</sub>, and X<sub>3</sub> are their own inverses.
+		</li>
+	</ol>
+	Unfortunately I do not yet know the deeper reason behind some of these properties,
+	but I will definitely keep thinking about them in the back of my mind.
 	`,
 ];
