@@ -232,6 +232,14 @@ const blogData = [
 	although I don't think I <em>quite</em> have all the information I need yet,
 	and I still need to define the scope of the project more clearly (something I have always had problems with).
 	@p
+	@tags math
+	As part of this research I tried making an <a href="https://en.wikipedia.org/wiki/Order-5_square_tiling">Order-5 square tiling</a> out of paper squares.
+	I was worried it wouldn't be physically possible, but it turned out to be easy,
+	and required no stretching or contortion of the paper whatsoever,
+	but did require it to stretch into the third dimension in parts.
+	When holding it, the joints bend and contort weirdly.
+	The closest thing I can compare it to is a planar Jacob's ladder.
+	@p
 	@tags weather
 	Despite it being midwinter, it was warm enough today for me to have to turn on the AC in the afternoon - lol.
 	`,
