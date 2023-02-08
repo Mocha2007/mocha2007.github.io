@@ -221,4 +221,18 @@ const blogData = [
 	@tags site namei
 	To the <a href="../namei/namei.html#Eras">Pankairan color synesthesia table</a> I added solids for the elements.
 	`,
+	`
+	@title 08 Feb 2023
+	@date 1675897960761
+	@p
+	@tags math
+	I've continued reading about polyhedra, hyperbolic tilings, etc.
+	It's interested me enough to where I've been thinking about making
+	some sort of tool to automatically generate diagrams similar to what exists on wikipedia,
+	although I don't think I <em>quite</em> have all the information I need yet,
+	and I still need to define the scope of the project more clearly (something I have always had problems with).
+	@p
+	@tags weather
+	Despite it being midwinter, it was warm enough today for me to have to turn on the AC in the afternoon - lol.
+	`,
 ];
