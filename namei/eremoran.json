@@ -546,7 +546,7 @@
 		"defList": [
 			"fruit"
 		],
-		"categories": ["plant", "v3_trade"]
+		"categories": ["fruit", "plant", "v3_trade"]
 	},
 	{
 		"title": "annumz",
@@ -2432,7 +2432,7 @@
 		"defList": [
 			"lemon"
 		],
-		"categories": ["plant"],
+		"categories": ["fruit", "plant"],
 		"notes": "wanderwort"
 	},
 	{
@@ -2556,7 +2556,7 @@
 		"defList": [
 			"rambutan"
 		],
-		"categories": ["plant"]
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "ereu",
@@ -3626,7 +3626,7 @@
 			"apple"
 		],
 		"notes": "kaskru is one of a handful of nouns ending in -u.",
-		"categories": ["plant"]
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "kaspa",
@@ -4436,7 +4436,7 @@
 		"defList": [
 			"olive"
 		],
-		"categories": ["plant"]
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "laibôst",
