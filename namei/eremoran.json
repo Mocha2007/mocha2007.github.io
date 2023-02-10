@@ -425,20 +425,20 @@
 		"categories": ["plant"]
 	},
 	{
-		"title": "akkapa",
-		"etym": "L/PRE/aka-kapa",
-		"cat": "n, 4th",
-		"defList": [
-			"Akkapa (the major Eremoran river)"
-		],
-		"categories": ["toponym"]
-	},
-	{
 		"title": "akaban",
 		"etym": "L/PRE/aka-wan",
 		"cat": "n, 4th",
 		"defList": [
 			"Akaban (the bay at the mouth of the Akkapa)"
+		],
+		"categories": ["toponym"]
+	},
+	{
+		"title": "akkapa",
+		"etym": "L/PRE/aka-kapa",
+		"cat": "n, 4th",
+		"defList": [
+			"Akkapa (the major Eremoran river)"
 		],
 		"categories": ["toponym"]
 	},
