@@ -1484,6 +1484,15 @@
 		]
 	},
 	{
+		"title": "bilô",
+		"etym": "L/PEN/*βilô/spice",
+		"cat": "n., 4th",
+		"defList": [
+			"spice"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "bilu",
 		"etym": "L/PEN/*βilu/fat",
 		"cat": "n., 4th",
@@ -2444,6 +2453,15 @@
 			"bat (chiropteran)"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "ebilô",
+		"etym": "B/eba/bilô",
+		"cat": "n., 4th",
+		"defList": [
+			"cinnamon"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "edzam",
@@ -3757,6 +3775,15 @@
 		"categories": ["color"]
 	},
 	{
+		"title": "karê",
+		"etym": "L/PEN/*karê/cardamom",
+		"cat": "n., 4th",
+		"defList": [
+			"cardamom"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "karm",
 		"etym": "L/PEN/*xarm/war",
 		"cat": "n., 5th",
@@ -4534,6 +4561,15 @@
 		]
 	},
 	{
+		"title": "kuril",
+		"etym": "L/PEN/*guril/onion",
+		"cat": "n., 4th",
+		"defList": [
+			"onion"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "kusam",
 		"etym": "L/PEN/*kusa-m/many",
 		"cat": "n., 5th",
@@ -4957,6 +4993,15 @@
 			"gang; group (of people)"
 		],
 		"categories": ["person"]
+	},
+	{
+		"title": "mai",
+		"etym": "L/PEN/*mai/clove",
+		"cat": "n., 4th",
+		"defList": [
+			"clove (spice)"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "makanalk",
@@ -6868,6 +6913,15 @@
 		"defList": [
 			"relate"
 		]
+	},
+	{
+		"title": "sira",
+		"etym": "L/PEN/*ʃira/garlic",
+		"cat": "n., 4th",
+		"defList": [
+			"garlic"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "sirez",
