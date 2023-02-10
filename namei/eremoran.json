@@ -3318,6 +3318,14 @@
 		]
 	},
 	{
+		"title": "hulbez",
+		"etym": "C/hulbe/-z",
+		"cat": "v.",
+		"defList": [
+			"be smoked"
+		]
+	},
+	{
 		"title": "hunik",
 		"etym": "L/PRE/sūniku//L/NUZ/suniku/L/VAZ/sanicu",
 		"cat": "n., 2nd",
@@ -6443,6 +6451,15 @@
 		]
 	},
 	{
+		"title": "rênaz",
+		"etym": "L/PEN/*rênas/be pickled",
+		"cat": "v.",
+		"defList": [
+			"be pickled"
+		],
+		"notes": "Can be used with the causative to mean 'pickle'. Can be used as an adjective to mean 'pickled'."
+	},
+	{
 		"title": "reram",
 		"etym": "C/reraz/-m",
 		"cat": "n., 5th",
@@ -7594,6 +7611,14 @@
 		"cat": "adj.",
 		"defList": [
 			"salty"
+		]
+	},
+	{
+		"title": "tiaz",
+		"etym": "C/tia/-z",
+		"cat": "v.",
+		"defList": [
+			"be salted"
 		]
 	},
 	{
