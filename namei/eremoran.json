@@ -313,6 +313,7 @@
 		"defList": [
 			"(labile) be known (by) (both savoir and connaitre)",
 			"(labile) be understood (by)",
+			"(labile) be recognized (by)",
 			"(labile) be learned (by)"
 		],
 		"notes": "Unlike English, this is not used with subordinate clauses, including reporting knowledge of experiences - evidentials are used for that instead. In addition, <em>bakaz</em> is telic and dynamic, while <em>afêkz</em> is atelic and stative.",
@@ -2050,6 +2051,14 @@
 		]
 	},
 	{
+		"title": "dinbôz",
+		"etym": "C/din/bôz",
+		"cat": "v.",
+		"defList": [
+			"give birth, bear"
+		]
+	},
+	{
 		"title": "dindôkaz",
 		"etym": "C/din/dôkaz",
 		"cat": "v.",
@@ -2761,6 +2770,7 @@
 		"cat": "post.",
 		"defList": [
 			"according to, in accordance with",
+			"like, similar to",
 			"(prefix) (verbal prefix denoting the &ldquo;natural consequence&rdquo; of an action)"
 		]
 	},
@@ -3385,7 +3395,16 @@
 		"cat": "post., adv., aff.",
 		"defList": [
 			"against",
-			"instead"
+			"instead",
+			"(prefix) re-"
+		]
+	},
+	{
+		"title": "itkunz",
+		"etym": "C/it/kunz",
+		"cat": "v.",
+		"defList": [
+			"return, come back"
 		]
 	},
 	{
@@ -7923,6 +7942,14 @@
 			"night"
 		],
 		"categories": ["time"]
+	},
+	{
+		"title": "urilz",
+		"etym": "C/urilm/-z",
+		"cat": "n., 5th",
+		"defList": [
+			"follow"
+		]
 	},
 	{
 		"title": "urist",
