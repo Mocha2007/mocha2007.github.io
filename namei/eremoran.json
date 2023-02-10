@@ -159,6 +159,32 @@
 		]
 	},
 	{
+		"title": "abbaliêr",
+		"etym": "C/abbaliz/-ê",
+		"cat": "n., 1st",
+		"defList": [
+			"competitor",
+			"athlete"
+		]
+	},
+	{
+		"title": "abbalim",
+		"etym": "C/ad/balim",
+		"cat": "n., 5th",
+		"defList": [
+			"competition",
+			"prize"
+		]
+	},
+	{
+		"title": "abbaliz",
+		"etym": "C/abbalim/-z",
+		"cat": "v.",
+		"defList": [
+			"compete"
+		]
+	},
+	{
 		"title": "abbra",
 		"etym": "C/ad/bra",
 		"cat": "n., 4th",
@@ -1888,6 +1914,14 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "dam",
+		"etym": "C/daz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"tire, exhaustion"
+		]
+	},
+	{
 		"title": "dammam",
 		"etym": "C/addam/mo",
 		"cat": "n., 5th; adv.",
@@ -2019,6 +2053,15 @@
 		"defList": [
 			"dirty"
 		]
+	},
+	{
+		"title": "daz",
+		"etym": "L/PEN/*das/be tired",
+		"cat": "v.",
+		"defList": [
+			"be tired"
+		],
+		"notes": "be tired of X: X kul daz"
 	},
 	{
 		"title": "defôz",
