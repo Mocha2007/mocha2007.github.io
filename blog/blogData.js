@@ -243,4 +243,17 @@ const blogData = [
 	@tags weather
 	Despite it being midwinter, it was warm enough today for me to have to turn on the AC in the afternoon - lol.
 	`,
+	`
+	@title 10 Feb 2023
+	@date 1676045672307
+	@p
+	@tags site eremoran
+	I added several new words (mostly fruit) to Eremoran today, including the 900th word - <em>eresoni</em> 'rambutan'.
+	Afterwards, I was curious as to the average number of words added per day:
+	it turns out to have been about 0.46 words per day so far.
+	I decided that, since I want that number to be 1 word per day,
+	I should add at least 4-5 new words per day for the rest of the year,
+	so that by the end of the year that number should reach one word per day average.
+	Let's see if I can actually stick to this goal - lol.
+	`,
 ];
