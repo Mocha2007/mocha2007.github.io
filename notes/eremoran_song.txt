@@ -109,26 +109,26 @@ numbers below indicate verses per section
 
 ----- start -----
 
-7 intro
+11 intro
 
 5 pre-chorus
 
-4 chorus (ABAC)
+3 chorus (ABAC)
 
-3 story development
-
-5 pre-chorus
+4 story development
 
 ----- halfway -----
 
-4 chorus (ABAC)
+5 pre-chorus
 
-8 more repetitive story development
+3 chorus (ABAC)
 
-4 chorus (ABAC)
+4 more repetitive story development
+
+3 chorus (ABAC)
 
 4 more repetitive story development repeated
 
-4 chorus (ABAC)
+3 chorus (ABAC)
 
 ----- end -----
