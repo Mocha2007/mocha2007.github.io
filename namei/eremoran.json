@@ -481,6 +481,15 @@
 		]
 	},
 	{
+		"title": "alikabo",
+		"etym": "C/alika/bo",
+		"cat": "n., 4th",
+		"defList": [
+			"sand pear"
+		],
+		"categories": ["fruit", "plant"]
+	},
+	{
 		"title": "alikanask",
 		"etym": "C/alika/nask",
 		"cat": "n., 2nd",
@@ -488,6 +497,44 @@
 			"leopard"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "amaru",
+		"etym": "L/PEN/*emaru/cherry",
+		"cat": "n., 4th",
+		"defList": [
+			"cherry"
+		],
+		"categories": ["fruit", "plant"]
+	},
+	{
+		"title": "amfabin",
+		"etym": "C/amu/habin",
+		"cat": "n., 4th",
+		"defList": [
+			"banana, plantain"
+		],
+		"categories": ["fruit", "plant"]
+	},
+	{
+		"title": "amma",
+		"etym": "B/amu/abbak",
+		"cat": "n., 4th",
+		"defList": [
+			"honey"
+		]
+	},
+	{
+		"title": "ammakama",
+		"etym": "C/amma/kama",
+		"cat": "n., 4th",
+		"defList": [
+			"orange",
+			"bitter orange",
+			"mandarin orange",
+			"kumquat"
+		],
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "ammut",
@@ -928,8 +975,17 @@
 		]
 	},
 	{
+		"title": "baka",
+		"etym": "L/PEN/*baka/mango",
+		"cat": "n., 4th",
+		"defList": [
+			"mango"
+		],
+		"categories": ["fruit", "plant"]
+	},
+	{
 		"title": "bakaz",
-		"etym": "L/PEN/*βakas/get; receive'",
+		"etym": "L/PEN/*βakas/get; receive",
 		"cat": "v.",
 		"defList": [
 			"(labile) be understood (by)",
@@ -1082,6 +1138,15 @@
 			"intestines, guts"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "batabata",
+		"etym": "r/bata",
+		"cat": "n., 4th",
+		"defList": [
+			"pomegranate"
+		],
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "batlim",
@@ -1479,6 +1544,15 @@
 			"with (instrumental)"
 		],
 		"notes": "see <i>ku</i> for the comitative"
+	},
+	{
+		"title": "bo",
+		"etym": "L/PEN/*βo/pear",
+		"cat": "n., 4th",
+		"defList": [
+			"pear"
+		],
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "bôbôt",
@@ -2554,7 +2628,8 @@
 		"etym": "C/ereu/soni",
 		"cat": "n., 4th",
 		"defList": [
-			"rambutan"
+			"rambutan",
+			"lychee"
 		],
 		"categories": ["fruit", "plant"]
 	},
@@ -2827,6 +2902,15 @@
 			"adult"
 		],
 		"categories": ["age", "person"]
+	},
+	{
+		"title": "hannama",
+		"etym": "C/hanu/annama",
+		"cat": "n., 4th",
+		"defList": [
+			"carambola, star fruit"
+		],
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "hans",
@@ -3556,6 +3640,26 @@
 		"defList": [
 			"sound"
 		]
+	},
+	{
+		"title": "kama",
+		"etym": "L/PEN/*kama/citrus",
+		"cat": "n., 4th",
+		"defList": [
+			"citrus (genus)",
+			"citron",
+			"pomelo"
+		],
+		"categories": ["fruit", "plant"]
+	},
+	{
+		"title": "kamela",
+		"etym": "D/kama",
+		"cat": "n., 4th",
+		"defList": [
+			"lime"
+		],
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "kamit",
@@ -4517,6 +4621,15 @@
 			"(countable) stone, rock"
 		],
 		"notes": "Apparently dissimilated from lel"
+	},
+	{
+		"title": "lennama",
+		"etym": "B/len/annama",
+		"cat": "n., 4th",
+		"defList": [
+			"prunus (subgenus; incl. plums, peaches, nectarines, apricots, and almonds)"
+		],
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "lensêdzak",
@@ -6127,6 +6240,15 @@
 			"belly"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "rakulka",
+		"etym": "L/PEN/*rekulka/persimmon",
+		"cat": "n., 4th",
+		"defList": [
+			"persimmon"
+		],
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "rankenz",
