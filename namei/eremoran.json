@@ -1538,6 +1538,15 @@
 		]
 	},
 	{
+		"title": "bimuk",
+		"etym": "L/PEN/*βimux/ram",
+		"cat": "n., 2nd",
+		"defList": [
+			"ram"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "binas",
 		"etym": "L/PEN/*βinaʃ/elbow",
 		"cat": "n., 4th",
@@ -1545,6 +1554,15 @@
 			"elbow"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "bink",
+		"etym": "r/bimuk",
+		"cat": "n., 2nd",
+		"defList": [
+			"lamb (young sheep)"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "binom",
@@ -1749,6 +1767,15 @@
 		"categories": ["v3_trade"]
 	},
 	{
+		"title": "bubuk",
+		"etym": "R/buk",
+		"cat": "n., 2nd",
+		"defList": [
+			"mutton, lamb (meat)"
+		],
+		"notes": "irregular; expected form would be *pipidzak, but pidzak is a loanword"
+	},
+	{
 		"title": "bueba",
 		"etym": "C/but/eba",
 		"cat": "n., 4th",
@@ -1756,6 +1783,16 @@
 			"foreskin"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "buk",
+		"etym": "L/PEN/*βux/sheep",
+		"cat": "n., 2nd",
+		"defList": [
+			"ewe",
+			"(archaic) sheep"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "bukat",
