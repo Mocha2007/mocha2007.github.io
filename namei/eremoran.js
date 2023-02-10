@@ -1144,6 +1144,9 @@ function computeStats(){
 	// print success message
 	// eslint-disable-next-line max-len
 	console.info(`eremoran.js successfully parsed ${elements.dict.length} words and recorded statistics.`);
+	const days = (new Date() - 1504561680000)/(1000*60*60*24);
+	console.info(`avg. ${round(elements.dict.length/days, 2)} w/d`);
+	console.info(`target of 1 w/d would require ${Math.ceil(days)} words.`);
 }
 
 /** this is run at the end of eremoran.html */
