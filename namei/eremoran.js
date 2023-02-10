@@ -775,11 +775,36 @@ const phono = {
 };
 
 const gen = {
-	/** eg. try gen.proto.gen(gen.endsWith('k'));
-	 * @param {string} char
-	 */
-	endsWith(char){
-		return w => w[w.length-1] === char;
+	filter: {
+		/** returns true if this matches what we would expect from a class 4 noun
+		 * eg. try gen.proto.gen(gen.filter.c('n1'));
+		 * @param {number} type eg 'v' or 'n1' or 'adj' */
+		c(type){
+			function output(w){
+				switch (w[w.length-1]){
+					case 'r':
+						return type === 'n1';
+					case 'k':
+						return type === 'n2';
+					case 't':
+						return type === 'n3';
+					case 'm':
+						return type === 'n5';
+					case 'u':
+						return type === 'adj';
+					case 'z':
+						return type === 'v';
+				}
+				return true;
+			}
+			return output;
+		},
+		/** eg. try gen.proto.gen(gen.filter.endsWith('k'));
+		 * @param {string} char
+		 */
+		endsWith(char){
+			return w => w[w.length-1] === char;
+		},
 	},
 	proto: {
 		/** @type {{string: {string: number}}} */
