@@ -2455,6 +2455,14 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "ebaz",
+		"etym": "L/PEN/*eβas/ferment",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) ferment"
+		]
+	},
+	{
 		"title": "ebilô",
 		"etym": "B/eba/bilô",
 		"cat": "n., 4th",
@@ -5847,6 +5855,14 @@
 			"moon"
 		],
 		"categories": ["astronomy"]
+	},
+	{
+		"title": "nokin",
+		"etym": "L/PEN/*nokin/mushroom",
+		"cat": "n., 4th",
+		"defList": [
+			"mushroom"
+		]
 	},
 	{
 		"title": "nom",
