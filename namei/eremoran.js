@@ -781,19 +781,19 @@ const gen = {
 		 * @param {number} type eg 'v' or 'n1' or 'adj' */
 		c(type){
 			function output(w){
-				switch (w[w.length-1]){
-					case 'r':
-						return type === 'n1';
-					case 'k':
-						return type === 'n2';
-					case 't':
-						return type === 'n3';
-					case 'm':
-						return type === 'n5';
-					case 'u':
-						return type === 'adj';
-					case 'z':
-						return type === 'v';
+				switch (type){
+					case 'n1':
+						return w[w.length-1] === 'r';
+					case 'n2':
+						return w[w.length-1] === 'k';
+					case 'n3':
+						return w[w.length-1] === 't';
+					case 'n5':
+						return w[w.length-1] === 'm';
+					case 'v':
+						return w[w.length-1] === 'z';
+					case 'adj':
+						return w[w.length-1] === 'u';
 				}
 				return true;
 			}
