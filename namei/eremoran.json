@@ -1624,6 +1624,15 @@
 		]
 	},
 	{
+		"title": "bôelak",
+		"etym": "D/bôk",
+		"cat": "n., 2nd",
+		"defList": [
+			"chick"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "bôêt",
 		"etym": "L/PEN/*bô-ê-t/wagon",
 		"cat": "n., 3rd",
@@ -3068,6 +3077,15 @@
 		"defList": [
 			"hold"
 		]
+	},
+	{
+		"title": "hask",
+		"etym": "L/PEN/*ɸasx/cock",
+		"cat": "n., 2nd",
+		"defList": [
+			"cock, rooster"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "hat",
@@ -7083,6 +7101,15 @@
 			"coal"
 		],
 		"categories": ["v3_trade"]
+	},
+	{
+		"title": "skik",
+		"etym": "L/PEN/*ʃkix/hen",
+		"cat": "n., 2nd",
+		"defList": [
+			"hen"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "skiz",
