@@ -1796,7 +1796,7 @@
 	{
 		"title": "bubut",
 		"etym": "R/buk",
-		"cat": "n., 2nd",
+		"cat": "n., 3rd",
 		"defList": [
 			"mutton, lamb (meat)"
 		],
@@ -7807,15 +7807,6 @@
 		"categories": ["body part"]
 	},
 	{
-		"title": "tôk",
-		"etym": "L/PEN/*tôx/foal",
-		"cat": "n., 2nd",
-		"defList": [
-			"foal (young horse)"
-		],
-		"categories": ["animal"]
-	},
-	{
 		"title": "tobê",
 		"etym": "L/PEN/*toβê/stick",
 		"cat": "n., 4th",
@@ -7833,6 +7824,15 @@
 			"The southern, coastal cultural region of Eremor, associated with the so-called <em>kadrêm</em> 'hard R' sounds."
 		],
 		"categories": ["toponym"]
+	},
+	{
+		"title": "tôk",
+		"etym": "L/PEN/*tôx/foal",
+		"cat": "n., 2nd",
+		"defList": [
+			"foal (young horse)"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "tômz",
