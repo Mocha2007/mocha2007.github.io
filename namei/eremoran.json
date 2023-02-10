@@ -986,6 +986,14 @@
 		"notes": "X trades Y for Z's A - X dir Y ad A Z ad baliz"
 	},
 	{
+		"title": "bam",
+		"etym": "C/bau/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"freedom, liberty"
+		]
+	},
+	{
 		"title": "bamz",
 		"etym": "L/PEN/*βams/throw",
 		"cat": "v.",
@@ -1089,6 +1097,14 @@
 		"cat": "adv.",
 		"defList": [
 			"also, too"
+		]
+	},
+	{
+		"title": "bau",
+		"etym": "L/PEN/*βau/free",
+		"cat": "adj.",
+		"defList": [
+			"free (ie. not trapped/enslaved)"
 		]
 	},
 	{
@@ -3674,6 +3690,7 @@
 		"cat": "n., 4th",
 		"defList": [
 			"foot",
+			"(+ ad) standing still, standing stiff, in place",
 			"(archaic) leg"
 		],
 		"categories": ["body part"]
@@ -7542,6 +7559,7 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"soul",
+			"mind",
 			"ghost; spirit"
 		],
 		"categories": ["animal", "person"]
