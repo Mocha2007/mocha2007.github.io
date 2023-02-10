@@ -442,6 +442,15 @@
 		]
 	},
 	{
+		"title": "ak",
+		"etym": "L/PEN/*ax/mare",
+		"cat": "n., 2nd",
+		"defList": [
+			"mare (female horse)"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "aka",
 		"etym": "L/PEN/*aka/wheat",
 		"cat": "n., 4th",
@@ -999,6 +1008,15 @@
 		"defList": [
 			"reason; excuse"
 		]
+	},
+	{
+		"title": "bak",
+		"etym": "L/PEN/*βax/stallion",
+		"cat": "n., 2nd",
+		"defList": [
+			"stallion, steed"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "baka",
@@ -3017,6 +3035,15 @@
 			"adult"
 		],
 		"categories": ["age", "person"]
+	},
+	{
+		"title": "handak",
+		"etym": "L/PEN/*ɸandax/filly",
+		"cat": "n., 2nd",
+		"defList": [
+			"filly"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "hannama",
@@ -5937,6 +5964,15 @@
 		]
 	},
 	{
+		"title": "nomak",
+		"etym": "L/PEN/*nomax/colt",
+		"cat": "n., 2nd",
+		"defList": [
+			"colt"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "nôsêdzak",
 		"etym": "C/nô/sêdzak",
 		"cat": "n., 2nd",
@@ -7771,6 +7807,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "tôk",
+		"etym": "L/PEN/*tôx/foal",
+		"cat": "n., 2nd",
+		"defList": [
+			"foal (young horse)"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "tobê",
 		"etym": "L/PEN/*toβê/stick",
 		"cat": "n., 4th",
@@ -7915,6 +7960,15 @@
 		"categories": ["intensity"]
 	},
 	{
+		"title": "tuk",
+		"etym": "L/PEN/*tux/mature horse",
+		"cat": "n., 2nd",
+		"defList": [
+			"mature horse (ie. an adult horse of either sex; a stallion or mare)"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "tukil",
 		"etym": "L/PEN/*tuxil/wind",
 		"cat": "n., 4th",
@@ -7999,6 +8053,23 @@
 			"set of objects visible overhead from a reference point"
 		],
 		"categories": ["weather"]
+	},
+	{
+		"title": "tunbak",
+		"etym": "C/tunz/bak",
+		"cat": "n., 2nd",
+		"defList": [
+			"gelding (gelded stallion)"
+		],
+		"categories": ["animal"]
+	},
+	{
+		"title": "tunz",
+		"etym": "L/PEN/*tuns/plow",
+		"cat": "v.",
+		"defList": [
+			"plow"
+		]
 	},
 	{
 		"title": "tutum",
