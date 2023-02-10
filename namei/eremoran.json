@@ -3380,6 +3380,15 @@
 		"categories": ["animal", "fantasy"]
 	},
 	{
+		"title": "hurak",
+		"etym": "L/PEN/*ɸurax/calf",
+		"cat": "n., 2nd",
+		"defList": [
+			"calf (young cattle)"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "huri",
 		"etym": "L/PEN/*ɸuri",
 		"cat": "adv.",
@@ -6932,6 +6941,15 @@
 		"defList": [
 			"hit, beat"
 		]
+	},
+	{
+		"title": "sik",
+		"etym": "L/PEN/*tʃix/ox",
+		"cat": "n., 2nd",
+		"defList": [
+			"ox, steer, nowt (gelded bull)"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "sim",
