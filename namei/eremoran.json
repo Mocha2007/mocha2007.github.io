@@ -2289,7 +2289,8 @@
 		"defList": [
 			"bark (of a tree)",
 			"skin, hide, leather",
-			"skin, peel (of a fruit)"
+			"skin, peel (of a fruit)",
+			"body, corpse (esp. of a person)"
 		],
 		"categories": ["body part", "plant"]
 	},
@@ -7570,6 +7571,14 @@
 		"defList": [
 			"breathe",
 			"blow (of wind)"
+		]
+	},
+	{
+		"title": "tukirôz",
+		"etym": "B/tukil/rôz",
+		"cat": "v.",
+		"defList": [
+			"whisper"
 		]
 	},
 	{
