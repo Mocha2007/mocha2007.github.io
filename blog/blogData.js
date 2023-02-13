@@ -256,4 +256,30 @@ const blogData = [
 	so that by the end of the year that number should reach one word per day average.
 	Let's see if I can actually stick to this goal - lol.
 	`,
+	`
+	@title 12 Feb 2023
+	@date 1676296395888
+	@p
+	@tags math
+	I've long known about the old trick of "cancelling out" the sixes in 16/64 to get the correct simplification of 1/4,
+	but I wondered to myself if there were other fractions like that.
+	Excluding trivial forms like 11/11, etc., I was able to construct a proof -
+	to my level of satisfaction, at least -
+	that there are exactly four non-trivial solutions:
+	<ul>
+		<li>19/95 &rarr; 1/5</li>
+		<li>49/98 &rarr; 4/8</li>
+		<li>16/64 &rarr; 1/4</li>
+		<li>26/65 &rarr; 2/5</li>
+	</ul>
+	Unfortunately, I realized my little trick for this wouldn't work for 3-digit fractions -
+	or, if it can, I couldn't figure it out.
+	@p
+	@tags math js
+	So instead, I wrote a script to find these - and as it turns out, there are dozens and dozens of non-trivial solutions.
+	One such solution is 334/835 &rarr; 34/85.
+	Although I tried to use as many clever tricks to make computation as fast as possible,
+	I ended up giving up trying to find a clever algorithm to find all the factors of a number.
+	Yet another script to add to my useless library of hundreds of single-use scripts... lol.
+	`,
 ];
