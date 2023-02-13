@@ -4495,6 +4495,16 @@
 		"notes": "see <em>batu</em> for the verbal \"too\""
 	},
 	{
+		"title": "kubbaz",
+		"etym": "B/ku/ukubbaz",
+		"cat": "v.",
+		"defList": [
+			"devoice (of phones: consonants and vowels)"
+		],
+		"categories": ["language"],
+		"notes": "formed by ku/uku analogy with ukubbaz; as if it were formed uku + *bbaz"
+	},
+	{
 		"title": "kubôz",
 		"etym": "C/ku/bôz",
 		"cat": "v.",
@@ -8248,6 +8258,25 @@
 		"defList": [
 			"without"
 		]
+	},
+	{
+		"title": "ukubbam",
+		"etym": "C/ukubo/abbak",
+		"cat": "n., 5th",
+		"defList": [
+			"voice (of the throat, not of verbs)",
+			"voicing (of phones: consonants and vowels)"
+		],
+		"categories": ["language"]
+	},
+	{
+		"title": "ukubbaz",
+		"etym": "C/ukubo/abbak",
+		"cat": "v.",
+		"defList": [
+			"voice (of phones: consonants and vowels)"
+		],
+		"categories": ["language"]
 	},
 	{
 		"title": "ukubo",
