@@ -1172,6 +1172,9 @@ function computeStats(){
 	const days = (new Date() - 1504561680000)/(1000*60*60*24); // https://github.com/Mocha2007/mocha2007.github.io/commit/e0c066b3adcba427b5301c43ba5f5a0eab8556c6
 	console.info(`avg. ${round(elements.dict.length/days, 2)} w/d`);
 	console.info(`target of 1 w/d would require ${Math.ceil(days)} words.`);
+	const _2024 = (new Date(2024, 0, 1) - 1504561680000)/(1000*60*60*24);
+	const goal = (_2024 - elements.dict.length)/(new Date(2024, 0, 1) - new Date()) * 1000*60*60*24;
+	console.info(`${goal} w/d required to reach 2024 goal`);
 }
 
 /** this is run at the end of eremoran.html */
