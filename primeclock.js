@@ -103,29 +103,9 @@ function factorize(n){
 }
 
 /** @param {number[][]} factorization */
-function issphenic(factorization){
-	if (factorization.length === 3
-			&& factorization[0][1]+factorization[1][1]+factorization[2][1] === 3){
-		return true;
-	}
-	if (factorization.length === 2 && factorization[0][1]+factorization[1][1] === 3){
-		return true;
-	}
-	if (factorization.length === 1 && factorization[0][1] === 3){
-		return true;
-	}
-	return false;
-}
-
-/** @param {number[][]} factorization */
-function issemiprime(factorization){
-	if (factorization.length === 2 && factorization[0][1]+factorization[1][1] === 2){
-		return true;
-	}
-	if (factorization.length === 1 && factorization[0][1] === 2){
-		return true;
-	}
-	return false;
+function getFactorN(factorization){
+	// eslint-disable-next-line brace-style
+	return factorization.map(function(xn){return xn[1];}).reduce(function(a, b){return a+b;}, 0);
 }
 
 /**
@@ -239,9 +219,9 @@ function header(){
 	title.innerHTML = sec;
 	title.className = isprime
 		? 'prime'
-		: issemiprime(str)
+		: getFactorN(str) === 2
 			? 'semiprime'
-			: issphenic(str)
+			: getFactorN(str) === 3
 				? 'sphenic' : 'composite';
 	document.getElementById('c2Inner').innerHTML = factorization;
 }
