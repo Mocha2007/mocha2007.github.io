@@ -278,6 +278,13 @@ const blogData = [
 	@tags math js
 	So instead, I wrote a script to find these - and as it turns out, there are dozens and dozens of non-trivial solutions.
 	One such solution is 334/835 &rarr; 34/85.
+	But interestingly enough, all four of the previous solutions have a corresponding three-digit solution:
+	<ul>
+		<li>199/995 &rarr; 19/95</li>
+		<li>499/998 &rarr; 49/98</li>
+		<li>166/664 &rarr; 16/64</li>
+		<li>266/665 &rarr; 26/65</li>
+	</ul>
 	Although I tried to use as many clever tricks to make computation as fast as possible,
 	I ended up giving up trying to find a clever algorithm to find all the factors of a number.
 	Yet another script to add to my useless library of hundreds of single-use scripts... lol.
