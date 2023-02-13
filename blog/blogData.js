@@ -257,7 +257,7 @@ const blogData = [
 	Let's see if I can actually stick to this goal - lol.
 	`,
 	`
-	@title 12 Feb 2023
+	@title 13 Feb 2023
 	@date 1676296395888
 	@p
 	@tags math
