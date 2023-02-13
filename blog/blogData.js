@@ -278,7 +278,7 @@ const blogData = [
 	@tags math js
 	So instead, I wrote a script to find these - and as it turns out, there are dozens and dozens of non-trivial solutions.
 	One such solution is 334/835 &rarr; 34/85.
-	But interestingly enough, all four of the previous solutions have a corresponding three-digit solution:
+	But interestingly enough, all four of the previous solutions have one (and, as far as I can tell, <em>only</em> one) corresponding three-digit solution:
 	<ul>
 		<li>199/995 &rarr; 19/95</li>
 		<li>499/998 &rarr; 49/98</li>
