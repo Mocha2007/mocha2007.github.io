@@ -194,15 +194,15 @@ function header(){
 	var str = factorize(sec);
 	var factorization = commaconvert(String(str)).replace(/\^1/g, '')
 		.replace(/\^/g, '<sup>').replace(/\s&times;/g, '</sup> &times;');
-	var isprime = factorization.length === String(sec).length;
+	var factors = getFactorN(str);
 
 	var title = document.getElementById('c1');
 	title.innerHTML = sec;
-	title.className = isprime
+	title.className = factors === 1
 		? 'prime'
-		: getFactorN(str) === 2
+		: factors === 2
 			? 'semiprime'
-			: getFactorN(str) === 3
+			: factors === 3
 				? 'sphenic' : 'composite';
 	document.getElementById('c2Inner').innerHTML = factorization;
 }
