@@ -2410,15 +2410,6 @@
 		"notes": "Replaced the now-obsolete <em>kunz</em>."
 	},
 	{
-		"title": "dômo",
-		"etym": "C/dô/mo",
-		"cat": "adv.",
-		"defList": [
-			"again"
-		],
-		"notes": "Always sentence-initial"
-	},
-	{
 		"title": "dômim",
 		"etym": "C/dô/mim",
 		"cat": "n., 5th",
@@ -2435,6 +2426,15 @@
 			"inflect (conjugate or decline)"
 		],
 		"categories": ["language"]
+	},
+	{
+		"title": "dômo",
+		"etym": "C/dô/mo",
+		"cat": "adv.",
+		"defList": [
+			"again"
+		],
+		"notes": "Always sentence-initial"
 	},
 	{
 		"title": "dômosaurz",
