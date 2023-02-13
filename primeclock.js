@@ -81,24 +81,19 @@ function factorize(n){
 	var t = 2;
 	while (t*t <= n){
 		if (n%t===0){
-			if (pf.length && pf[pf.length-1][0]===t){
-				pf[pf.length-1][1]+=1;
-			}
-			else {
+			if (pf.length && pf[pf.length-1][0]===t)
+				pf[pf.length-1][1]++;
+			else
 				pf.push([t, 1]);
-			}
 			n /= t;
 		}
-		else {
-			t+=t===2?1:2;
-		}
+		else
+			t += t === 2 ? 1 : 2;
 	}
-	if (pf.length && pf[pf.length-1][0]===n){
-		pf[pf.length-1][1]+=1;
-	}
-	else {
+	if (pf.length && pf[pf.length-1][0]===n)
+		pf[pf.length-1][1]++;
+	else
 		pf.push([n, 1]);
-	}
 	return pf;
 }
 
@@ -115,17 +110,9 @@ function getFactorN(factorization){
 function commaconvert(s){
 	s = s.split('');
 	var n = 0;
-	for (var i=0; i<s.length; i+=1){
-		if (s[i]===','){
-			if (n%2===0){
-				s[i]='^';
-			}
-			else {
-				s[i]=' &times; ';
-			}
-			n+=1;
-		}
-	}
+	for (var i=0; i<s.length; i++)
+		if (s[i]===',')
+			s[i]= n++ % 2 ? ' &times; ' : '^';
 	return s.join('');
 }
 /*
@@ -159,13 +146,10 @@ function ialc(y){
  * @return {string}
 */
 function getClass(age){
-	if (color){
-		for (var i=0; i<geoera.length; i+=1){
-			if (geoera[i][0] < age){
+	if (color)
+		for (var i=0; i<geoera.length; i++)
+			if (geoera[i][0] < age)
 				return geoera[i-1][1];
-			}
-		}
-	}
 	return 'none';
 }
 
@@ -173,14 +157,12 @@ function alc(){
 	var x = timeSinceYear(); // seconds since year beginning
 	var y = Math.pow(a, 1-x/year);
 	var str = '';
-	for (var i=0; i<events.length; i+=1){
-		if (debug || events[i][0]>y){
+	for (var i=0; i<events.length; i++){
+		if (debug || events[i][0]>y)
 			str += '<div class="' + getClass(events[i][0]) + '">'
 				+ ialc(events[i][0]) + ' - ' + events[i][1] + '</div>';
-		}
-		else {
+		else
 			break;
-		}
 	}
 	var alcElem = document.getElementById('alc');
 	alcElem.innerHTML = str;
@@ -188,7 +170,7 @@ function alc(){
 	nowTime.id = 'nowtime';
 	alcElem.appendChild(nowTime);
 	// now create key
-	for (var j=0; j<geoera.length-1; j+=1){
+	for (var j=0; j<geoera.length-1; j++){
 		// create div
 		var elem = document.createElement('div');
 		// add class
@@ -198,9 +180,8 @@ function alc(){
 		// create link
 		var link = document.createElement('a');
 		link.href = 'https://en.wikipedia.org/wiki/' + name;
-		if (j === 0 || 24 < j){
+		if (j === 0 || 24 < j)
 			link.href += '_era';
-		}
 		link.innerHTML = name;
 		elem.appendChild(link);
 		// add as child to #key
