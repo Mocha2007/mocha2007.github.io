@@ -276,7 +276,7 @@ const blogData = [
 	or, if it can, I couldn't figure it out.
 	@p
 	@tags math js
-	So instead, I wrote a script to find these - and as it turns out, there are dozens and dozens of non-trivial solutions.
+	So instead, I wrote a script to find these - and as it turns out, there are dozens and dozens of non-trivial solutions (my program found 220, but there may be others).
 	One such solution is 334/835 &rarr; 34/85.
 	But interestingly enough, all four of the previous solutions have one (and, as far as I can tell, <em>only</em> one) corresponding three-digit solution:
 	<ul>
