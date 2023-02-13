@@ -65,32 +65,13 @@ var geoera = [
 ];
 
 /**
- * @param {Array} arr1
- * @param {Array} arr2
- */
-function arraysEqual(arr1, arr2){
-	if (arr1.length !== arr2.length){
-		return false;
-	}
-	for (var i=0; i<arr1.length; i+=1){
-		if (arr1[i] !== arr2[i]){
-			return false;
-		}
-	}
-	return true;
-}
-
-/**
  * @param {number} a
  * @param {number} b
  * @return {number}
- */
+ *
 function gcd(a, b){
-	if (b === 0){
-		return a;
-	}
-	return gcd(b, a % b);
-}
+	return b ? gcd(b, a % b) : a;
+}*/
 
 /** @param {number} n */
 function factorize(n){
@@ -122,23 +103,18 @@ function factorize(n){
 }
 
 /** @param {number[][]} factorization */
-function ispower(factorization){
-	var powertable = factorization.map(function(x){
-		return x[1];
-	});
-	var gggcd = 0;
-	for (var i=0; i<powertable.length; i+=1){
-		if (gggcd){
-			gggcd = gcd(gggcd, powertable[i]);
-		}
-		else {
-			gggcd = powertable[i];
-		}
-		if (gggcd===1){
-			return false;
-		}
+function issphenic(factorization){
+	if (factorization.length === 3
+			&& factorization[0][1]+factorization[1][1]+factorization[2][1] === 3){
+		return true;
 	}
-	return arraysEqual(new Array(factorization.length).fill(factorization[0][1]), powertable);
+	if (factorization.length === 2 && factorization[0][1]+factorization[1][1] === 3){
+		return true;
+	}
+	if (factorization.length === 1 && factorization[0][1] === 3){
+		return true;
+	}
+	return false;
 }
 
 /** @param {number[][]} factorization */
@@ -263,10 +239,10 @@ function header(){
 	title.innerHTML = sec;
 	title.className = isprime
 		? 'prime'
-		: ispower(str)
-			? 'ppower'
-			: issemiprime(str)
-				? 'semiprime' : 'composite';
+		: issemiprime(str)
+			? 'semiprime'
+			: issphenic(str)
+				? 'sphenic' : 'composite';
 	document.getElementById('c2Inner').innerHTML = factorization;
 }
 
