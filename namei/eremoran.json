@@ -430,7 +430,7 @@
 		"etym": "C/afkaz/-m",
 		"cat": "n., 5th",
 		"defList": [
-			"trip; going"
+			"trip, travel"
 		]
 	},
 	{
@@ -1153,6 +1153,16 @@
 		"defList": [
 			"rope"
 		]
+	},
+	{
+		"title": "baruz",
+		"etym": "L/PEN/*baxerus/sort",
+		"cat": "v.",
+		"defList": [
+			"sort, order",
+			"spell"
+		],
+		"categories": ["language"]
 	},
 	{
 		"title": "barz",
@@ -2407,6 +2417,24 @@
 			"again"
 		],
 		"notes": "Always sentence-initial"
+	},
+	{
+		"title": "dômim",
+		"etym": "C/dô/mim",
+		"cat": "n., 5th",
+		"defList": [
+			"inflection (conjugation or declension)"
+		],
+		"categories": ["language"]
+	},
+	{
+		"title": "dômiz",
+		"etym": "C/dômim/-z",
+		"cat": "v.",
+		"defList": [
+			"inflect (conjugate or decline)"
+		],
+		"categories": ["language"]
 	},
 	{
 		"title": "dômosaurz",
@@ -4675,6 +4703,16 @@
 			"onion"
 		],
 		"categories": ["plant"]
+	},
+	{
+		"title": "kurôm",
+		"etym": "C/ku/rôm",
+		"cat": "n., 5th",
+		"defList": [
+			"personality, character",
+			"declension, case"
+		],
+		"categories": ["language"]
 	},
 	{
 		"title": "kusam",
