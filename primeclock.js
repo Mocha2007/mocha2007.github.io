@@ -271,7 +271,7 @@ function checkDates(){
 	});
 	console.info('Missing days:');
 	s.forEach(function(x){
-		var date = new Date(currentyear, 0, x);
+		var date = new Date(currentyear, 0, x, 12);
 		console.info(date);
 		var dateYear = currentyear
 			- Math.pow(a, 1-(date - new Date(currentyear, 0, 1))/1000/seconds);

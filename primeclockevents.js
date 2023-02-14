@@ -67,6 +67,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[7.3e9, 'Formation of <a href="https://en.wikipedia.org/wiki/HD_10180">HD 10180</a>'],
 	[7.1e9, 'Formation of <a href="https://en.wikipedia.org/wiki/Arcturus">Arcturus</a>'],
 	[7e9, 'Formation of the <a href="https://en.wikipedia.org/wiki/Murchison_meteorite">Murchison meteorite</a>'],
+	[6.8e9, 'Formation of <a href="https://en.wikipedia.org/wiki/NGC_188">NGC 188</a>'],
 	[6.4e9, 'Formation of <a href="https://en.wikipedia.org/wiki/Aldebaran">Aldebaran</a>'],
 	[6.1e9, 'Formation of the <a href="https://en.wikipedia.org/wiki/61_Cygni">61 Cygni</a> and <a href="https://en.wikipedia.org/wiki/51_Pegasi">51 Pegasi</a> systems'],
 	[6e9, 'Beginning of the <a href="https://en.wikipedia.org/wiki/Dark-energy_dominated_era">Dark-energy Dominated Era</a>'],
