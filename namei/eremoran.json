@@ -418,6 +418,16 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "afkaêt",
+		"etym": "C/afkaz/-ê",
+		"cat": "n., 3rd",
+		"defList": [
+			"drift (blacksmithing)",
+			"punch (blacksmithing)"
+		],
+		"categories": ["tool"]
+	},
+	{
 		"title": "afkakum",
 		"etym": "A/afkam",
 		"cat": "n., 5th",
@@ -2489,6 +2499,15 @@
 		]
 	},
 	{
+		"title": "dôsifat",
+		"etym": "C/dô/sifaz",
+		"cat": "n., 3rd",
+		"defList": [
+			"anvil"
+		],
+		"categories": ["tool"]
+	},
+	{
 		"title": "dôt",
 		"etym": "L/PEN/*dô-t/tool",
 		"cat": "n., 3rd",
@@ -3124,6 +3143,15 @@
 			"second-in-command, right-hand man"
 		],
 		"categories": ["person"]
+	},
+	{
+		"title": "hanut",
+		"etym": "C/hanu/-t",
+		"cat": "n., 3rd.",
+		"defList": [
+			"vise (BrE vice)"
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "hanuz",
@@ -5223,6 +5251,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "manat",
+		"etym": "L/PEN/*manat/workshop",
+		"cat": "n., 3rd",
+		"defList": [
+			"(archaic) workshop",
+			"forge, furnace"
+		]
+	},
+	{
 		"title": "manaz",
 		"etym": "C/mana/-z",
 		"cat": "v.",
@@ -7258,6 +7295,16 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "sonit",
+		"etym": "C/soni/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"brush",
+			"paintbrush"
+		],
+		"categories": ["tool"]
+	},
+	{
 		"title": "sou",
 		"etym": "L/PEN/*tʃou/hot",
 		"cat": "adj.",
@@ -7438,6 +7485,15 @@
 		]
 	},
 	{
+		"title": "sukaêt",
+		"etym": "C/sukaz/-ê",
+		"cat": "n., 3rd",
+		"defList": [
+			"chisel"
+		],
+		"categories": ["tool"]
+	},
+	{
 		"title": "sukz",
 		"etym": "L/PEN/*siuxs/sew//~/suz",
 		"cat": "v.",
@@ -7571,6 +7627,15 @@
 			"fourteen"
 		],
 		"categories": ["number"]
+	},
+	{
+		"title": "tamelat",
+		"etym": "B/tamal/elau",
+		"cat": "n., 3rd",
+		"defList": [
+			"tongs"
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "tan",
