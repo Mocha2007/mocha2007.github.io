@@ -157,17 +157,16 @@ function getFactorN(factorization){
 	return factorization.map(function(xn){return xn[1];}).reduce(function(a, b){return a+b;}, 0);
 }
 
-/**
+/** convert [2,1,3,2] to 2^1 * 3^2
  * @param {string} s
  * @return {string}
 */
 function commaconvert(s){
-	s = s.split('');
-	var n = 0;
-	for (var i=0; i<s.length; i++)
-		if (s[i]===',')
-			s[i]= n++ % 2 ? ' &times; ' : '^';
-	return s.join('');
+	s = s.split(',');
+	var o = [];
+	for (var i = 0; i < s.length; i += 2)
+		o.push(s[i] + '^' + s[i+1]);
+	return o.join(' &times; ');
 }
 
 /**
