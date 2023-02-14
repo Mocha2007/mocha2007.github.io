@@ -7475,6 +7475,15 @@
 		"notes": "<sup>1</sup> Habitual aspect only; supplanted the now-archaic dôz in most senses"
 	},
 	{
+		"title": "sukaêt",
+		"etym": "C/sukaz/-ê",
+		"cat": "n., 3rd",
+		"defList": [
+			"chisel"
+		],
+		"categories": ["tool"]
+	},
+	{
 		"title": "sukaz",
 		"etym": "C/su/kaz",
 		"cat": "v.",
@@ -7483,15 +7492,6 @@
 			"separate",
 			"distinguish"
 		]
-	},
-	{
-		"title": "sukaêt",
-		"etym": "C/sukaz/-ê",
-		"cat": "n., 3rd",
-		"defList": [
-			"chisel"
-		],
-		"categories": ["tool"]
 	},
 	{
 		"title": "sukz",
@@ -7630,7 +7630,7 @@
 	},
 	{
 		"title": "tamelat",
-		"etym": "B/tamal/elau",
+		"etym": "B/tamal/ela",
 		"cat": "n., 3rd",
 		"defList": [
 			"tongs"
