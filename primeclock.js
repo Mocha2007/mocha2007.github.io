@@ -89,8 +89,20 @@ function factorize(n){
 				pf.push([t, 1]);
 			n /= t;
 		}
-		else
-			t += t === 2 ? 1 : 2;
+		// eslint-disable-next-line nonblock-statement-body-position
+		else switch (t % 30){
+			case 1:
+			case 23:
+				t += 6;
+				break;
+			case 7:
+			case 13:
+			case 19:
+				t += 4;
+				break;
+			default:
+				t += t === 2 ? 1 : 2;
+		}
 	}
 	if (pf.length && pf[pf.length-1][0]===n)
 		pf[pf.length-1][1]++;
