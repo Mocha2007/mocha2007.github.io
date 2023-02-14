@@ -5,8 +5,10 @@
 /* exported primeclock, enableDebug */
 'use strict';
 var isLeapYear = new Date(currentyear, 1, 29).getDate() === 29;
-/** @type {31622400|31536000} number of seconds in this year, eg. 31622400 = 366 * 86400*/
-var year = 86400*(isLeapYear?366:365);
+/** @type {365|366} number of days this year */
+var days = isLeapYear ? 366 : 365;
+/** @type {31622400|31536000} number of seconds this year, eg. 31622400 = 366 * 86400 */
+var seconds = 86400*(isLeapYear?366:365);
 var cye = new Date(currentyear+'-01-01T00:00:00')/1000; // current year epoch - jan 1 XXXX 00:00 local
 // new Date("2020-01-01T00:00:00")
 var debug = false; // enable to see all events at any time
@@ -115,6 +117,16 @@ function commaconvert(s){
 			s[i]= n++ % 2 ? ' &times; ' : '^';
 	return s.join('');
 }
+
+/**
+ * @param {number} n max (exclusive)
+ * @returns {number[]}
+ * */
+function range(n){
+	// eslint-disable-next-line prefer-spread
+	return Array.apply(null, {length: n}).map(Number.call, Number);
+}
+
 /*
 x is seconds since 1 Jan
 y is seconds before 2018
@@ -135,7 +147,7 @@ function timeSinceYear(){
 function ialc(y){
 	// logarithmically maps time from the beginning (1 Jan) to 1 yr ago (31 Dec)
 	var otherx = timeSinceYear(); // REAL seconds since year beginning
-	var x = Math.floor(year*(1-Math.log(y)/Math.log(a))); // FAKE seconds after beginning of year
+	var x = Math.floor(seconds*(1-Math.log(y)/Math.log(a))); // FAKE seconds after beginning of year
 	var wannadate = new Date(Date.now()-1000*(otherx-x)); // convert FAKE 2 DATE
 	return String(wannadate).slice(4, 24)
 		.replace(new Date().getFullYear()+' ', '');
@@ -155,7 +167,7 @@ function getClass(age){
 
 function alc(){
 	var x = timeSinceYear(); // seconds since year beginning
-	var y = Math.pow(a, 1-x/year);
+	var y = Math.pow(a, 1-x/seconds);
 	var str = '';
 	for (var i=0; i<events.length; i++){
 		if (debug || events[i][0]>y)
@@ -229,7 +241,7 @@ function getDateBeforeNow(r){
 }
 
 function footer(){
-	var y = Math.pow(a, 1-timeSinceYear()/year);
+	var y = Math.pow(a, 1-timeSinceYear()/seconds);
 	var yprime = Math.round(y*Math.log(a)).toLocaleString();
 	var dateString = String(getDateBeforeNow(y)).slice(4, 24) + ' ';
 
@@ -239,9 +251,34 @@ function footer(){
 		+ '('+Math.round(y).toLocaleString()+' Years Ago, '+yprime+'x Speed)';
 }
 
+/** find dates without events */
+function checkDates(){
+	// https://stackoverflow.com/a/8619946
+	function getDay(now){
+		var start = new Date(now.getFullYear(), 0, 0);
+		var diff = now - start
+			+ (start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000;
+		var oneDay = 1000 * 60 * 60 * 24;
+		return Math.floor(diff / oneDay);
+	}
+	var s = range(days).map(function(x){
+		return x+1;
+	});
+	events.forEach(function(e){
+		var i = s.indexOf(getDay(new Date(currentyear + ' ' + ialc(e[0]))));
+		if (-1 < i)
+			s.splice(i, 1);
+	});
+	console.info('Missing days:');
+	s.forEach(function(x){
+		console.info(new Date(currentyear, 0, x));
+	});
+}
+
 function enableDebug(){
 	debug = true;
 	alc();
+	checkDates();
 }
 
 alc();
