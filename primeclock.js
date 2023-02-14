@@ -80,9 +80,16 @@ function factorize(n){
 	// only works for natual numbers greater than one
 	/** @type {number[][]} */
 	var pf = [];
-	var t = 2;
+	while (n % 2 === 0){
+		if (pf.length)
+			pf[0][1]++;
+		else
+			pf.push([2, 1]);
+		n /= 2;
+	}
+	var t = 3;
 	while (t*t <= n){
-		if (n%t===0){
+		if (n % t === 0){
 			if (pf.length && pf[pf.length-1][0]===t)
 				pf[pf.length-1][1]++;
 			else
@@ -90,18 +97,50 @@ function factorize(n){
 			n /= t;
 		}
 		// eslint-disable-next-line nonblock-statement-body-position
-		else switch (t % 30){
+		else switch (t % 210){
 			case 1:
+			case 199:
+				t += 10;
+				break;
+			case 89:
+			case 113:
+				t += 8;
+				break;
 			case 23:
+			case 31:
+			case 47:
+			case 53:
+			case 61:
+			case 73:
+			case 83:
+			case 121:
+			case 131:
+			case 143:
+			case 151:
+			case 157:
+			case 173:
+			case 181:
 				t += 6;
 				break;
-			case 7:
 			case 13:
 			case 19:
+			case 37:
+			case 43:
+			case 67:
+			case 79:
+			case 97:
+			case 103:
+			case 109:
+			case 127:
+			case 139:
+			case 163:
+			case 169:
+			case 187:
+			case 193:
 				t += 4;
 				break;
 			default:
-				t += t === 2 ? 1 : 2;
+				t += 2;
 		}
 	}
 	if (pf.length && pf[pf.length-1][0]===n)
