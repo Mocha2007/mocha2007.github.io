@@ -143,6 +143,7 @@ function factorize(n){
 				t += 2;
 		}
 	}
+	// push remainder onto array
 	if (pf.length && pf[pf.length-1][0]===n)
 		pf[pf.length-1][1]++;
 	else
