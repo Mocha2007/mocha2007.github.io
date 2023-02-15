@@ -2594,6 +2594,13 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: '-oHom',
+		meanings: 'GEN',
+		source: 'wiktionary',
+		notes: 'genitive plural ending',
+	},
+	{
+		language: 'pie',
 		word: 'oḱtṓw',
 		meanings: 'eight',
 		etymology: 'pie:(H)oḱto-',
@@ -2970,6 +2977,14 @@ const entryData = [
 	},
 	{
 		language: 'la',
+		word: '-um',
+		meanings: 'GEN',
+		etymology: 'pie:-oHom',
+		source: 'wiktionary',
+		notes: 'Genitive plural ending.',
+	},
+	{
+		language: 'la',
 		word: 'ūnus',
 		meanings: 'one;single;alone',
 		etymology: 'pie:óynos',
@@ -2994,6 +3009,14 @@ const entryData = [
 		word: 'mêlon',
 		meanings: 'apple;fruit;breast;cheek',
 		source: 'wiktionary',
+	},
+	{
+		language: 'ancient-greek',
+		word: '-ōn',
+		meanings: 'GEN',
+		etymology: 'pie:-oHom',
+		source: 'wiktionary',
+		notes: 'Genitive plural ending.',
 	},
 	// proto-germanic
 	{
@@ -3065,6 +3088,14 @@ const entryData = [
 		meanings: 'NEG',
 		etymology: 'pie:ne',
 		source: 'wiktionary',
+	},
+	{
+		language: 'pger',
+		word: '-ǫ̂',
+		meanings: 'GEN',
+		etymology: 'pie:-oHom',
+		source: 'wiktionary',
+		notes: 'Genitive plural ending.',
 	},
 	{
 		language: 'pger',
@@ -3202,6 +3233,14 @@ const entryData = [
 		source: 'wiktionary',
 	},
 	// OE
+	{
+		language: 'oe',
+		word: '-a',
+		meanings: 'GEN',
+		etymology: 'pger:-ǫ̂',
+		source: 'wiktionary',
+		notes: 'Genitive plural ending.',
+	},
 	{
 		language: 'oe',
 		word: 'ān',
