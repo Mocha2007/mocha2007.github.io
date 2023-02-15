@@ -389,6 +389,20 @@ class Meaning extends Clickable {
 			elem.appendChild(h24);
 			elem.appendChild(this.hyponymList);
 		}
+		// missing list
+		const h25 = document.createElement('h2');
+		h25.innerHTML = 'Missing Languages';
+		elem.appendChild(h25);
+		const ul4 = document.createElement('ul');
+		/** @type {Meaning[]} entries including this meaning */
+		Language.list.filter(l => l.vocab.findIndex(v => v.meanings.includes(this)) === -1)
+			.forEach(l => {
+				// language: word
+				const li = document.createElement('li');
+				li.appendChild(l.span);
+				ul4.appendChild(li);
+			});
+		elem.appendChild(ul4);
 		return elem;
 	}
 	get hypernymList(){
