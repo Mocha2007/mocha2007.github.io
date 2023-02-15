@@ -1918,6 +1918,10 @@ const meaningData = [
 		name: 'v>n.agent', // v. -> agent n.
 		categories: 'affix',
 	},
+	{
+		name: 'v>v',
+		categories: 'affix',
+	},
 ];
 
 const entryData = [
@@ -2564,6 +2568,13 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: '-mh₁nos',
+		meanings: 'v>v',
+		source: 'wiktionary',
+		notes: 'forms the middle participle',
+	},
+	{
+		language: 'pie',
 		word: '-mō',
 		meanings: 'v>n.agent',
 		source: 'wiktionary',
@@ -2956,6 +2967,14 @@ const entryData = [
 	// latin
 	{
 		language: 'la',
+		word: '-bō',
+		meanings: 'v>v',
+		etymology: 'pie:bʰuH-',
+		source: 'wiktionary',
+		notes: 'Forms the future and imperfect conjugations',
+	},
+	{
+		language: 'la',
 		word: 'leo',
 		meanings: 'lion',
 		etymology: 'ancient-greek:léōn',
@@ -2967,6 +2986,14 @@ const entryData = [
 		meanings: 'apple',
 		etymology: 'ancient-greek:mêlon',
 		source: 'wiktionary',
+	},
+	{
+		language: 'la',
+		word: '-mini',
+		meanings: 'v>v',
+		etymology: 'pie:-mh₁nos',
+		source: 'wiktionary',
+		notes: 'second person plural passive ending',
 	},
 	{
 		language: 'la',
