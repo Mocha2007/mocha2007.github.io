@@ -7199,7 +7199,7 @@ const entryData = [
 	{
 		language: 'burushaski',
 		word: '-(a)r',
-		meanings: 'DAT',
+		meanings: 'DAT;ALL',
 		source: 'wiktionary',
 	},
 	{
@@ -7217,7 +7217,7 @@ const entryData = [
 	{
 		language: 'burushaski',
 		word: '-e',
-		meanings: 'ERG;OBL',
+		meanings: 'ERG;OBL;GEN',
 		source: 'wiktionary',
 	},
 	{
@@ -7289,7 +7289,7 @@ const entryData = [
 	{
 		language: 'burushaski',
 		word: '-mo',
-		meanings: 'OBL',
+		meanings: 'OBL;GEN',
 		source: 'wiktionary',
 		notes: 'Feminine oblique',
 	},
