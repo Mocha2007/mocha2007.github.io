@@ -3188,6 +3188,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "hêfer",
+		"etym": "R/hêr",
+		"cat": "n., 1st",
+		"defList": [
+			"maternal grandfather"
+		],
+		"categories": ["family", "person"]
+	},
+	{
 		"title": "hek",
 		"etym": "r/hekz",
 		"cat": "interj.",
@@ -3259,6 +3268,15 @@
 		]
 	},
 	{
+		"title": "hêr",
+		"etym": "L/PEN/*ɸêr",
+		"cat": "n., 1st",
+		"defList": [
+			"(archaic) father"
+		],
+		"categories": ["family", "person"]
+	},
+	{
 		"title": "heri",
 		"etym": "L/PEN/*seri/palm",
 		"cat": "n., 4th",
@@ -3328,6 +3346,15 @@
 		]
 	},
 	{
+		"title": "hirafêr",
+		"etym": "C/hira/hêr",
+		"cat": "n., 1st",
+		"defList": [
+			"paternal grandfather"
+		],
+		"categories": ["family", "person"]
+	},
+	{
 		"title": "hirak",
 		"etym": "L/PEN/*ɸira-x/milk",
 		"cat": "n., 2nd",
@@ -3335,6 +3362,15 @@
 			"milk"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "hirmaêr",
+		"etym": "B/hira/maêr",
+		"cat": "n., 1st",
+		"defList": [
+			"paternal grandmother"
+		],
+		"categories": ["family", "person"]
 	},
 	{
 		"title": "hisk",
@@ -5411,6 +5447,15 @@
 			"(colloquial) something worthless"
 		],
 		"categories": ["coin"]
+	},
+	{
+		"title": "memêr",
+		"etym": "L/PEN/*memêrre/maternal grandmother",
+		"cat": "n., 1st",
+		"defList": [
+			"maternal grandmother"
+		],
+		"categories": ["family", "person"]
 	},
 	{
 		"title": "mêur",
