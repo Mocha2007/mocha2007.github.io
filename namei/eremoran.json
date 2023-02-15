@@ -97,7 +97,8 @@
 		"defList": [
 			"(verb suffix)",
 			"turns a time noun (eg. <em>dam</em> morning) into a habitual time adverb (eg. <em>daz</em> every morning)",
-			"turns a direction adjective into an adverb, (eg. <em>keu</em> 'east' &rarr; <em>kez</em> 'eastward'"
+			"turns a direction adjective into an adverb, (eg. <em>keu</em> 'east' &rarr; <em>kez</em> 'eastward'",
+			"turns an ordinal numeral into an adverbial numeral, (eg. <em>nasu</em> 'two' &rarr; <em>nasuz</em> 'twice'"
 		]
 	},
 	{
