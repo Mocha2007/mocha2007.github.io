@@ -461,6 +461,10 @@ const meaningData = [
 		categories: 'article',
 	},
 	{
+		name: 'how many',
+		categories: 'determiner',
+	},
+	{
 		name: 'some.certain',
 		categories: 'determiner',
 	},
@@ -604,12 +608,18 @@ const meaningData = [
 	},
 	// pronouns
 	{
+		name: '1',
+		categories: 'pronoun',
+	},
+	{
 		name: '1s;I',
 		categories: 'pronoun',
+		hypernyms: '1',
 	},
 	{
 		name: '1pl;we',
 		categories: 'pronoun',
+		hypernyms: '1',
 	},
 	{
 		name: '1excl',
@@ -839,12 +849,28 @@ const meaningData = [
 	},
 	// adverbs
 	{
+		name: 'again',
+		categories: 'adverb',
+	},
+	{
+		name: 'also',
+		categories: 'adverb',
+	},
+	{
+		name: 'now',
+		categories: 'adverb',
+	},
+	{
 		name: 'very',
 		categories: 'adverb',
 	},
 	{
 		name: 'yesterday',
 		categories: 'adverb;time',
+	},
+	{
+		name: 'yet',
+		categories: 'adverb',
 	},
 	// nouns
 	{
@@ -7569,7 +7595,7 @@ const entryData = [
 	},
 	{
 		language: 'jp',
-		word: 'ichi',
+		word: 'hito',
 		meanings: 'one',
 		etymology: 'proto-japonic:pitə',
 		source: 'wiktionary',
@@ -7597,13 +7623,6 @@ const entryData = [
 	},
 	{
 		language: 'jp',
-		word: 'o',
-		meanings: 'ACC',
-		etymology: 'proto-japonic:wo',
-		source: 'wiktionary',
-	},
-	{
-		language: 'jp',
 		word: 'te',
 		meanings: 'and',
 		source: 'wiktionary',
@@ -7616,6 +7635,13 @@ const entryData = [
 		etymology: 'proto-japonic:pa',
 		source: 'wiktionary',
 	},
+	{
+		language: 'jp',
+		word: 'wo',
+		meanings: 'ACC',
+		etymology: 'proto-japonic:wo',
+		source: 'wiktionary',
+	},
 	// Proto-Japonic
 	{
 		language: 'proto-japonic',
@@ -7626,8 +7652,86 @@ const entryData = [
 	},
 	{
 		language: 'proto-japonic',
+		word: 'a',
+		meanings: '1s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'eku',
+		meanings: 'how many',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'etu',
+		meanings: 'five',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'ima',
+		meanings: 'now',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'imanta',
+		meanings: 'yet',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
 		word: 'kara',
 		meanings: 'way',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'kəkənə',
+		meanings: 'nine',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'mata',
+		meanings: 'again',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'mi',
+		meanings: 'three',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'mu',
+		meanings: 'six',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'mə',
+		meanings: 'also',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'na',
+		meanings: 'NEG;name',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'nana',
+		meanings: 'seven',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'nanu',
+		meanings: 'what',
 		source: 'wiktionary',
 	},
 	{
@@ -7651,6 +7755,12 @@ const entryData = [
 	},
 	{
 		language: 'proto-japonic',
+		word: 'patu',
+		meanings: 'first',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
 		word: 'pe1',
 		meanings: 'LAT;place.n',
 		source: 'wiktionary',
@@ -7663,8 +7773,50 @@ const entryData = [
 	},
 	{
 		language: 'proto-japonic',
+		word: 'puta',
+		meanings: 'two',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'təwə',
+		meanings: 'ten',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'u',
+		meanings: '2s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'uya',
+		meanings: '2pl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'wa',
+		meanings: '1',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
 		word: 'wo',
-		meanings: 'ACC;ABL',
+		meanings: 'ACC;ABL;man',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'yə',
+		meanings: 'four',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-japonic',
+		word: 'ya',
+		meanings: 'eight',
 		source: 'wiktionary',
 	},
 ];
