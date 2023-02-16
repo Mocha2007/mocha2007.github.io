@@ -295,7 +295,7 @@ const blogData = [
 	@p
 	@tags eremoran math
 	I added several new math terms to Eremoran today.
-	I was curious to see how other languages translate the platonic solids,
+	I was curious to see how other languages translate the <a href="https://en.wikipedia.org/wiki/Platonic_solid">platonic solids</a>,
 	but disappointingly they are all essentially English calques.
 	I, however, have another idea: instead of classifying polygons by their faces,
 	what about their vertices?
