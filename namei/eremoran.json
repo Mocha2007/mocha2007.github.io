@@ -977,6 +977,15 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "babz",
+		"etym": "B/babzu/-z",
+		"cat": "adv.",
+		"defList": [
+			"four times"
+		],
+		"categories": ["number"]
+	},
+	{
 		"title": "babzanu",
 		"etym": "C/babzu/hanu",
 		"cat": "adj.",
@@ -984,6 +993,24 @@
 			"twenty"
 		],
 		"categories": ["number"]
+	},
+	{
+		"title": "babzimôm",
+		"etym": "C/babzu/imôm",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) quadrilateral (esp. square)"
+		],
+		"categories": ["math"]
+	},
+	{
+		"title": "babzkumkimôm",
+		"etym": "B/babz/kumkimôm",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) octahedron"
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "babzu",
@@ -3094,6 +3121,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "hanimôm",
+		"etym": "B/hanu/imôm",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) pentagon"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "hannama",
 		"etym": "C/hanu/annama",
 		"cat": "n., 4th",
@@ -3161,6 +3197,24 @@
 		"defList": [
 			"hold"
 		]
+	},
+	{
+		"title": "hanuz",
+		"etym": "C/hanu/-z",
+		"cat": "adv.",
+		"defList": [
+			"five times"
+		],
+		"categories": ["number"]
+	},
+	{
+		"title": "hanuzkumkimôm",
+		"etym": "C/hanuz/kumkimôm",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) icosahedron"
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "hask",
@@ -3692,7 +3746,7 @@
 	{
 		"title": "imôm",
 		"etym": "C/imô/-m",
-		"cat": "n., 4th",
+		"cat": "n., 5th",
 		"defList": [
 			"(mathematics) edge",
 			"(mathematics, suffix) -gon"
@@ -4685,6 +4739,15 @@
 		"categories": ["number"]
 	},
 	{
+		"title": "kumkimôm",
+		"etym": "C/kumku/imôm",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) triangle"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "kumku",
 		"img": "../img/eremoran/kumku.png",
 		"etym": "L/PEN/*kumku/three",
@@ -4701,6 +4764,42 @@
 		"defList": [
 			"dance"
 		]
+	},
+	{
+		"title": "kumkuz",
+		"etym": "C/kumku/-z",
+		"cat": "adv.",
+		"defList": [
+			"thrice, three times"
+		],
+		"categories": ["number"]
+	},
+	{
+		"title": "kumkuzbabzimôm",
+		"etym": "C/kumkuz/babzimôm",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) cube"
+		],
+		"categories": ["math"]
+	},
+	{
+		"title": "kumkuzfanimôm",
+		"etym": "C/kumkuz/hanimôm",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) dodecahedron"
+		],
+		"categories": ["math"]
+	},
+	{
+		"title": "kumkuzkumkimôm",
+		"etym": "C/kumkuz/kumkimôm",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) tetrahedron"
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "kumu",
