@@ -289,4 +289,29 @@ const blogData = [
 	I ended up giving up trying to find a clever algorithm to find all the factors of a number.
 	Yet another script to add to my useless library of hundreds of single-use scripts... lol.
 	`,
+	`
+	@title 16 Feb 2023
+	@date 1676573482819
+	@p
+	@tags eremoran math
+	I added several new math terms to Eremoran today.
+	I was curious to see how other languages translate the platonic solids,
+	but disappointingly they are all essentially English calques.
+	I, however, have another idea: instead of classifying polygons by their faces,
+	what about their vertices?
+	And so now, in Eremoran, <a href="https://en.wikipedia.org/wiki/Isogonal_figure">isogonal polyhedra</a> are defined by their vertex behavior.
+	For example, the <a href="https://en.wikipedia.org/wiki/Regular_icosahedron">icosahedron</a> is <em>hanuzkumkimôm</em> -
+	in other words "triangles, five times [around the vertex]".
+	This is sufficient to uniquely identify it as an icosahedron.
+	But furthermore, this isn't just some random property of the polyhedron -
+	if you turn the solid so you face a vertex, this is <em>exactly what you see</em> -
+	five triangles around a single point.
+	I imagine, with the level of technology available,
+	it would be rather challenging to produce many of these solids -
+	practically relegating them to drawings or the imagination, where this is all that would be visible!
+	Theoretically, this could also be extended to non-platonic solids:
+	for example, a <a href="https://en.wikipedia.org/wiki/Rhombicuboctahedron">rhombicuboctahedron</a> could be a <em>kumkimôkumkuzbabzimôm</em>.
+	As a pleasant surprise, the Eremoran terms tend to use roughly the same amount of syllables as in English,
+	so I don't have to worry about these being unrealistically unwieldy.
+	`,
 ];
