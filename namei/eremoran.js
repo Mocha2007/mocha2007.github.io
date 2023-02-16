@@ -387,71 +387,6 @@ const ereNum = {
 	on: false,
 };
 
-function namegen(){
-	const elem = document.getElementById('namegen_out');
-	elem.innerHTML = `${ngTemplate(namegen.first, namegen.last, 'a', 'i', 'sur')} ${ngTemplate(namegen.first, namegen.last, 'a', 'a', 'r')}`;
-	// recompute tooltips
-	EremoranTooltip.setupWord(elem);
-	namegen.updateCombos();
-}
-// todo: bold? army? fame? fortress bear gift
-namegen.vowels = 'aeiouêô';
-namegen.either = ['afês', 'ardo', 'badm', 'bi', 'kafl', 'ko', 'lib',
-	'lusi', 'mar', 'mas', 'tem', 'uris'];
-namegen.first = union(namegen.either,
-	['bêt', 'dare', 'end', 'epe', 'ere', 'hem', 'his', 'ku', 'lak', 'maram', 'saz', 'si', 'tranz']
-);
-namegen.last = union(namegen.either,
-	['bazê', 'fem', 'fis', 'ke', 'kiki', 'kop', 'labni', 'len', 'mo', 'subi']
-);
-namegen.endsWithVowel = s => namegen.vowels.includes(s[s.length-1]);
-namegen.startsWithVowel = s => namegen.vowels.includes(s[0]);
-namegen.updateCombos = () => document.getElementById('namegen_combos').innerHTML
-	= commaNumber(Math.pow(namegen.first.length * namegen.last.length, 2));
-
-/**
- * @param {string[]} firsts acceptable first components
- * @param {string[]} lasts acceptable last components
- * @param {string} midAnaptyxis vowel to insert between first and last components if necessary
- * @param {string} endAnaptyxis vowel to insert between suffix and last component if necessary
- * @param {string} suffix
- */
-function ngTemplate(firsts, lasts, midAnaptyxis = '', endAnaptyxis = '', suffix = ''){
-	/** @type {string} */
-	let name = random.choice(firsts);
-	/** @type {string} */
-	const last = random.choice(lasts);
-	if (!namegen.endsWithVowel(name)
-			&& !namegen.startsWithVowel(last))
-		name += midAnaptyxis;
-	name += last;
-	// generate name
-	if (!namegen.endsWithVowel(name))
-		name += endAnaptyxis;
-	name += suffix;
-	return name;
-}
-
-function toponym(){
-	const elem = document.getElementById('toponym_out');
-	elem.innerHTML = ngTemplate(toponym.first, toponym.last, 'a');
-	// recompute tooltips
-	EremoranTooltip.setupWord(elem);
-	toponym.updateCombos();
-}
-// todo: city/fort clearing
-toponym.either = ['bemmu', 'iklu', 'len', 'mura', 'nô', 'nul'];
-toponym.first = union(toponym.either,
-	['ke', 'end', 'ere', 'hai', 'huk', 'kan', 'kokin', 'ku', 'kure', 'lak', 'lib', 'muk',
-		'n', 'nas', 'sed', 'si', 'tar', 'tas']
-);
-toponym.last = union(toponym.either,
-	['alika', 'ammut', 'da', 'damu', 'kokint', 'lira', 'mam', 'mamat', 'mor', 'saurom', 'seda',
-		'sedat']
-);
-toponym.updateCombos = () => document.getElementById('toponym_combos').innerHTML
-	= commaNumber(toponym.first.length * toponym.last.length);
-
 const adj = {
 	/** @param {string} a */
 	classes(a){
@@ -804,6 +739,85 @@ const gen = {
 		 */
 		endsWith(char){
 			return w => w[w.length-1] === char;
+		},
+	},
+	name: {
+		vowels: 'aeiouêô',
+		/** @param {string} s */
+		endsWithVowel(s){
+			return this.vowels.includes(s[s.length-1]);
+		},
+		/** @param {string} s */
+		startsWithVowel(s){
+			return this.vowels.includes(s[0]);
+		},
+		/**
+		 * @param {string[]} firsts acceptable first components
+		 * @param {string[]} lasts acceptable last components
+		 * @param {string} midAnaptyxis vowel to insert between first and last components if necessary
+		 * @param {string} endAnaptyxis vowel to insert between suffix and last component if necessary
+		 * @param {string} suffix
+		 */
+		template(firsts, lasts, midAnaptyxis = '', endAnaptyxis = '', suffix = ''){
+			/** @type {string} */
+			let name = random.choice(firsts);
+			/** @type {string} */
+			const last = random.choice(lasts);
+			if (!this.endsWithVowel(name)
+					&& !this.startsWithVowel(last))
+				name += midAnaptyxis;
+			name += last;
+			// generate name
+			if (!this.endsWithVowel(name))
+				name += endAnaptyxis;
+			name += suffix;
+			return name;
+		},
+		name: {
+			gen(){
+				const elem = document.getElementById('namegen_out');
+				elem.innerHTML = `${gen.name.template(this.first, this.last, 'a', 'i', 'sur')} ${gen.name.template(this.first, this.last, 'a', 'a', 'r')}`;
+				// recompute tooltips
+				EremoranTooltip.setupWord(elem);
+				this.updateCombos();
+			},
+			either: ['afês', 'ardo', 'badm', 'bi', 'kafl', 'ko', 'lib',
+				'lusi', 'mar', 'mas', 'tem', 'uris'],
+			first_: ['bêt', 'dare', 'end', 'epe', 'ere', 'hem', 'his', 'ku', 'lak', 'maram', 'saz', 'si', 'tranz'],
+			get first(){
+				return union(this.either, this.first_);
+			},
+			last_: ['bazê', 'fem', 'fis', 'ke', 'kiki', 'kop', 'labni', 'len', 'mo', 'subi'],
+			get last(){
+				return union(this.either, this.last_);
+			},
+			updateCombos(){
+				document.getElementById('namegen_combos').innerHTML
+					= commaNumber(Math.pow(this.first.length * this.last.length, 2));
+			},
+		},
+		topo: {
+			gen(){
+				const elem = document.getElementById('toponym_out');
+				elem.innerHTML = gen.name.template(this.first, this.last, 'a');
+				// recompute tooltips
+				EremoranTooltip.setupWord(elem);
+				this.updateCombos();
+			},
+			// todo: city/fort clearing
+			either: ['bemmu', 'iklu', 'len', 'mura', 'nô', 'nul'],
+			first_: ['ke', 'end', 'ere', 'hai', 'huk', 'kan', 'kokin', 'ku', 'kure', 'lak', 'lib', 'muk', 'n', 'nas', 'sed', 'si', 'tar', 'tas'],
+			get first(){
+				return union(this.either, this.first_);
+			},
+			last_: ['alika', 'ammut', 'da', 'damu', 'kokint', 'lira', 'mam', 'mamat', 'mor', 'saurom', 'seda', 'sedat'],
+			get last(){
+				return union(this.either, this.last_);
+			},
+			updateCombos(){
+				document.getElementById('toponym_combos').innerHTML
+					= commaNumber(this.first.length * this.last.length);
+			},
 		},
 	},
 	proto: {
