@@ -8103,6 +8103,26 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "tôkaz",
+		"etym": "C/tôm/kaz",
+		"cat": "v.",
+		"defList": [
+			"(gemcutting) facet",
+			"(mathematics, of a polytope) truncate"
+		],
+		"categories": ["math"]
+	},
+	{
+		"title": "tôm",
+		"etym": "C/tô/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"(gemcutting) facet",
+			"(mathematics) vertex"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "tômz",
 		"etym": "L/PEN/*tôms/can",
 		"cat": "v.",
