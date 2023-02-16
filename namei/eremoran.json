@@ -3681,6 +3681,15 @@
 		]
 	},
 	{
+		"title": "imôkam",
+		"etym": "C/imô/kam",
+		"cat": "n., 5th",
+		"defList": [
+			"consonant"
+		],
+		"categories": ["language"]
+	},
+	{
 		"title": "imôm",
 		"etym": "C/imô/-m",
 		"cat": "n., 4th",
@@ -3689,15 +3698,6 @@
 			"(mathematics, suffix) -gon"
 		],
 		"categories": ["math"]
-	},
-	{
-		"title": "imôkam",
-		"etym": "C/imô/kam",
-		"cat": "n., 5th",
-		"defList": [
-			"consonant"
-		],
-		"categories": ["language"]
 	},
 	{
 		"title": "in",
