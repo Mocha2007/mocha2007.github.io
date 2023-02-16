@@ -7554,6 +7554,15 @@
 		"notes": "Full derivation: <em>su tô ad</em>"
 	},
 	{
+		"title": "stôdidz",
+		"etym": "C/stôd/idz",
+		"cat": "v.",
+		"defList": [
+			"(math) be congruent"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "stum",
 		"etym": "C/stuz/-m",
 		"cat": "n., 5th",
