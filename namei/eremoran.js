@@ -1,6 +1,6 @@
 /* exported adj, ereNum, linkCard, main, search, titleCard, wordle */
 /* global charHisto, commaNumber, etymElement, getDict, histo,
-	quotes, random, range, removeAccents, round, startEreQuote,
+	quotes, random, removeAccents, round, startEreQuote,
 	translationChallenges, union */
 
 'use strict';
@@ -976,7 +976,7 @@ const dialectMap = {
 		[36, 6], // Simuran
 	],
 	data: [
-		range(11), // ids
+		[...Array(10).keys()], // ids - can't use range() because idk if that's loaded yet.
 		[
 			'Capital', 'Kurramut', 'LRS', 'HRS',
 			'LN', 'UN', 'Deftei', 'Abbakarm', 'Lake',
