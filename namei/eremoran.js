@@ -1179,6 +1179,9 @@ function computeStats(){
 					console.error(`${word} does not end in m!`);
 				break;
 		}
+		// check verbs
+		if (o.cat === 'v.' && last !== 'z' && !o.pron)
+			console.error(`${word} does not end in z!`);
 	});
 	// print success message
 	// eslint-disable-next-line max-len
