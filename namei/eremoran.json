@@ -2448,6 +2448,16 @@
 		"notes": "Replaced the now-obsolete <em>kunz</em>."
 	},
 	{
+		"title": "dôm",
+		"etym": "C/dô/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"surface",
+			"(mathematics) face"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "dômim",
 		"etym": "C/dô/mim",
 		"cat": "n., 5th",
