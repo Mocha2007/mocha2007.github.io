@@ -1195,7 +1195,7 @@ function computeStats(){
 }
 
 /** this is run at the end of eremoran.html */
-function main(){
+function eremoranMain(){
 	// needs to wait a second to download, so put this first
 	getDict('eremoran', computeStats);
 	// scrolling quotes
