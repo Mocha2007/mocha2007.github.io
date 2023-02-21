@@ -1,4 +1,4 @@
-/* exported adj, ereNum, linkCard, main, search, titleCard, wordle */
+/* exported adj, eremoranMain, ereNum, linkCard, search, titleCard, wordle */
 /* global charHisto, commaNumber, etymElement, getDict, histo,
 	quotes, random, removeAccents, round, startEreQuote,
 	translationChallenges, union */
