@@ -186,6 +186,15 @@
 		]
 	},
 	{
+		"title": "abbarm",
+		"etym": "C/ad/barm",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) line segment"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "abbra",
 		"etym": "C/ad/bra",
 		"cat": "n., 4th",
@@ -242,8 +251,10 @@
 		"etym": "C/abubut/-z",
 		"cat": "v.",
 		"defList": [
-			"turn"
-		]
+			"(intransitive) turn",
+			"(mathematics, intransitive) rotate"
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "abusu",
@@ -1174,6 +1185,15 @@
 			"feel"
 		],
 		"categories": ["experiential"]
+	},
+	{
+		"title": "barm",
+		"etym": "C/bart/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) line"
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "barsum",
@@ -3104,6 +3124,15 @@
 		]
 	},
 	{
+		"title": "halsifaz",
+		"etym": "C/hal/sifaz",
+		"cat": "v.",
+		"defList": [
+			"reflect"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "hananu",
 		"etym": "C/hanu/hanu",
 		"cat": "adj.",
@@ -3926,7 +3955,7 @@
 		"cat": "n., 5th",
 		"defList": [
 			"music",
-			"tonality"
+			"tone, musical note"
 		]
 	},
 	{
@@ -4537,8 +4566,10 @@
 		"cat": "v.",
 		"defList": [
 			"walk",
-			"step"
-		]
+			"step",
+			"(mathematics) translate"
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "krifan",
@@ -4665,8 +4696,10 @@
 		"etym": "L/PEN/*giudim",
 		"cat": "n., 5th",
 		"defList": [
-			"spot (shape)"
-		]
+			"spot (shape)",
+			"(mathematics) point"
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "kudôz",
@@ -4686,6 +4719,14 @@
 		"cat": "v.",
 		"defList": [
 			"(archaic) end"		]
+	},
+	{
+		"title": "kukram",
+		"etym": "B/ku/kakram",
+		"cat": "n., 5th",
+		"defList": [
+			"(music) chord"
+		]
 	},
 	{
 		"title": "kul",
@@ -7243,7 +7284,7 @@
 		"etym": "L/PEN/*ʃiɸs/hit",
 		"cat": "v.",
 		"defList": [
-			"hit, beat"
+			"hit, beat, strike"
 		]
 	},
 	{
@@ -7559,7 +7600,7 @@
 			"atop, upon, on top of",
 			"above, over",
 			"more than",
-			"(math) over, divided by"
+			"(mathematics) over, divided by"
 		],
 		"notes": "Full derivation: <em>su tô ad</em>"
 	},
@@ -7568,7 +7609,7 @@
 		"etym": "C/stôd/idz",
 		"cat": "v.",
 		"defList": [
-			"(math) be congruent"
+			"(mathematics) be congruent"
 		],
 		"categories": ["math"]
 	},
@@ -8828,9 +8869,10 @@
 		"etym": "C/zesti/-m",
 		"cat": "n., 5th",
 		"defList": [
-			"angle",
-			"bend"
-		]
+			"bend, bight",
+			"(mathematics) angle"
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "zeti",
