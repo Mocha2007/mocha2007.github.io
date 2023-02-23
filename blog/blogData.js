@@ -248,7 +248,7 @@ const blogData = [
 	@date 1676045672307
 	@p
 	@tags site eremoran
-	I added several new words (mostly fruit) to Eremoran today, including the 900th word - <em>eresoni</em> 'rambutan'.
+	I added several new words (mostly fruit) to Eremoran today, including the 900th word - <em>eresoni</em> "rambutan".
 	Afterwards, I was curious as to the average number of words added per day:
 	it turns out to have been about 0.46 words per day so far.
 	I decided that, since I want that number to be 1 word per day,
@@ -324,5 +324,10 @@ const blogData = [
 	The average so far has at least been within that range, which is good.
 	Some days I have no problem coming up with dozens of missing words, others I struggle to think of even one.
 	It's very haphazard, unfortunately.
+	@p
+	@tags meta js site dev
+	I also added a js tool for me to get word frequency statistics from my blog:
+	<pre>"blog.corpus.stats();"</pre>
+	It's imperfect to be sure, but it's still pretty neat to see my blog unsurprisingly conform to normal English word frequency!
 	`,
 ];

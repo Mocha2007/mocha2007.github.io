@@ -1,5 +1,5 @@
 /* exported blog */
-/* global blogData, clamp, loadScript, notif, random, title */
+/* global blogData, clamp, loadScript, notif, random, sum, title */
 
 /** @param {Date} d */
 function formatDate(d){
@@ -309,6 +309,13 @@ class Section {
 	get post(){
 		return Blogpost.blogposts.find(b => b.sections.includes(this));
 	}
+	get rawText(){
+		return this.innerHTML.toLowerCase()
+			.replace(/\s+/g, ' ') // simplify whitespace
+			.replace(/<[^>]+?>/g, '') // remove html tags
+			.replace(/&[^;]+?;/g, '') // remove escape chars
+			.replace(/[^a-z' ]/g, ''); // remove everything but a-z, apostrophe, and space
+	}
 }
 /** @type {Section[]} */
 Section.sections = [];
@@ -351,6 +358,38 @@ class Period {
 }
 
 const blog = {
+	corpus: {
+		get initialized(){
+			return Object.keys(this.set).length;
+		},
+		set: {},
+		get size(){
+			return sum(Object.keys(this.set).map(word => this.set[word]));
+		},
+		init(){
+			this.set = {};
+			Section.sections.forEach(s => {
+				s.rawText.split(' ').forEach(word => {
+					if (blog.corpus.set[word])
+						blog.corpus.set[word]++;
+					else
+						blog.corpus.set[word] = 1;
+				});
+			});
+			// delete blank
+			delete this.set[''];
+		},
+		stats(){
+			if (!this.initialized)
+				this.init();
+			console.log(this.size);
+			Object.keys(this.set)
+				.sort((a, b) => this.set[b] - this.set[a])
+				.slice(0, 25).forEach((word, i) => {
+					console.log(`#${i+1} ${this.set[word]} - ${word}`);
+				});
+		},
+	},
 	current: 0,
 	get debug(){
 		return window.location.href.slice(0, 4) === 'file';
