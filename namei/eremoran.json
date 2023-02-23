@@ -2287,7 +2287,8 @@
 		"etym": "L/PEN/*din",
 		"cat": "post., adv.",
 		"defList": [
-			"out of",
+			"out (of), outside",
+			"off (of)",
 			"beyond",
 			"because of",
 			"(archaic) in a ~ way, ~-wise",
@@ -2357,6 +2358,14 @@
 		"defList": [
 			"consult, reference",
 			"ask for guidance, help, aid, etc"
+		]
+	},
+	{
+		"title": "dinklaz",
+		"etym": "C/din/klaz",
+		"cat": "v.",
+		"defList": [
+			"erase"
 		]
 	},
 	{
@@ -4358,7 +4367,7 @@
 		"etym": "L/PEN/*klas/scratch",
 		"cat": "v.",
 		"defList": [
-			"scratch"
+			"scratch, scrape"
 		]
 	},
 	{
@@ -5059,7 +5068,8 @@
 		"etym": "L/PEN/*lans/pull",
 		"cat": "v.",
 		"defList": [
-			"pull"
+			"pull",
+			"drag"
 		]
 	},
 	{
@@ -7614,6 +7624,22 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "stôdlanz",
+		"etym": "C/stôd/lanz",
+		"cat": "post.",
+		"defList": [
+			"draw (a picture)"
+		]
+	},
+	{
+		"title": "stôdinklaz",
+		"etym": "B/stôd/dinklaz",
+		"cat": "v.",
+		"defList": [
+			"subject to damnatio memoriae (strike from all official records)"
+		]
+	},
+	{
 		"title": "stum",
 		"etym": "C/stuz/-m",
 		"cat": "n., 5th",
@@ -8659,6 +8685,22 @@
 			"shallow",
 			"short",
 			"thin"
+		]
+	},
+	{
+		"title": "unskam",
+		"etym": "C/unskaz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"feeling, sensation"
+		]
+	},
+	{
+		"title": "unskaz",
+		"etym": "L/PEN/*unsxas",
+		"cat": "v.",
+		"defList": [
+			"touch, feel"
 		]
 	},
 	{
