@@ -314,4 +314,15 @@ const blogData = [
 	As a pleasant surprise, the Eremoran terms tend to use roughly the same amount of syllables as in English,
 	so I don't have to worry about these being unrealistically unwieldy.
 	`,
+	`
+	@title 23 Feb 2023
+	@date 1677174924910
+	@p
+	@tags eremoran
+	It's been almost two weeks since I made my commitment to expanding Eremoran.
+	Although I haven't strictly kept to my "4-5 words a day" goals,
+	The average so far has at least been within that range, which is good.
+	Some days I have no problem coming up with dozens of missing words, others I struggle to think of even one.
+	It's very haphazard, unfortunately.
+	`,
 ];
