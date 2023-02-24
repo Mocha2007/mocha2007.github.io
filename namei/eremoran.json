@@ -2818,6 +2818,15 @@
 		"categories": ["animal", "chess"]
 	},
 	{
+		"title": "eka",
+		"etym": "L/PEN/*ega/spruce",
+		"cat": "n., 4th",
+		"defList": [
+			"spruce"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "ekar",
 		"etym": "B/ek/êkar",
 		"cat": "n., 1st",
@@ -3864,6 +3873,14 @@
 		"categories": ["sex"]
 	},
 	{
+		"title": "huz",
+		"etym": "L/PEN/*ɸus/let",
+		"cat": "v.",
+		"defList": [
+			"let, allow, permit"
+		]
+	},
+	{
 		"title": "i",
 		"etym": "L/PEN/*i/[topic particle]",
 		"cat": "post.",
@@ -4432,6 +4449,14 @@
 		"categories": ["animal", "god", "person"]
 	},
 	{
+		"title": "keliz",
+		"etym": "L/PEN/*gelis/keep",
+		"cat": "v.",
+		"defList": [
+			"keep, retain"
+		]
+	},
+	{
 		"title": "ker",
 		"etym": "C/kek/-r",
 		"cat": "n., 1st",
@@ -4658,6 +4683,15 @@
 		"defList": [
 			"this, these"
 		]
+	},
+	{
+		"title": "ko",
+		"etym": "L/PEN/*ko/palm",
+		"cat": "n., 4th",
+		"defList": [
+			"palm (tree)"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "kôbenk",
@@ -5627,6 +5661,14 @@
 		"cat": "n., 4th",
 		"defList": [
 			"container"
+		]
+	},
+	{
+		"title": "mablaz",
+		"etym": "L/PEN/*mablas/put",
+		"cat": "v.",
+		"defList": [
+			"put, place"
 		]
 	},
 	{
