@@ -1802,6 +1802,15 @@
 		]
 	},
 	{
+		"title": "bodô",
+		"etym": "C/bo/dô",
+		"cat": "post.",
+		"defList": [
+			"between",
+			"(ad +) through, across"
+		]
+	},
+	{
 		"title": "bodôt",
 		"etym": "L/PEN/*bo-dô-t/gift",
 		"cat": "n., 3rd",
@@ -3360,6 +3369,32 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "hanla",
+		"etym": "L/PEN/*ɸanla/plain",
+		"cat": "n., 4th",
+		"defList": [
+			"plain"
+		]
+	},
+	{
+		"title": "hanlam",
+		"etym": "C/hanla/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) plane"
+		],
+		"categories": ["math"]
+	},
+	{
+		"title": "hanlasu",
+		"etym": "C/hanlam/-isu",
+		"cat": "adj.",
+		"defList": [
+			"(mathematics) planar"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "hannama",
 		"etym": "C/hanu/annama",
 		"cat": "n., 4th",
@@ -3629,6 +3664,16 @@
 		"defList": [
 			"full"
 		]
+	},
+	{
+		"title": "himbum",
+		"etym": "C/himbu/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"fullness, completion",
+			"(mathematics) shape (area enclosed by lines)"
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "hirafêr",
