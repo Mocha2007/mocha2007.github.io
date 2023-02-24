@@ -2678,14 +2678,6 @@
 		]
 	},
 	{
-		"title": "dômosôm",
-		"etym": "B/dômosaurz/rôm",
-		"cat": "n., 5th",
-		"defList": [
-			"password"
-		]
-	},
-	{
 		"title": "dono",
 		"etym": "L/PEN/*dono/knee",
 		"cat": "n., 4th",
@@ -3304,6 +3296,15 @@
 			"heavy",
 			"important, serious",
 			"profound"
+		]
+	},
+	{
+		"title": "halrôm",
+		"etym": "B/halrôz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"reply, answer",
+			"password"
 		]
 	},
 	{
