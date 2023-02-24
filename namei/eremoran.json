@@ -1025,6 +1025,15 @@
 		"categories": ["number"]
 	},
 	{
+		"title": "babzidimôm",
+		"etym": "C/babzu/idimôm",
+		"cat": "n, 5th",
+		"defList": [
+			"(mathematics) rhombus"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "babzimôm",
 		"etym": "C/babzu/imôm",
 		"cat": "n., 5th",
@@ -2831,6 +2840,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "enz",
+		"etym": "C/endu/-z",
+		"cat": "post., adv.",
+		"defList": [
+			"up",
+			"(prefix) (shows action was completed fully and successfully)"
+		]
+	},
+	{
 		"title": "epeêr",
 		"etym": "C/epet/-ê",
 		"cat": "n., 1st",
@@ -3736,6 +3754,14 @@
 		"notes": "Used to make have/give constructions like <i>ad</i> when the possessor is animate"
 	},
 	{
+		"title": "ibbeka",
+		"etym": "C/id/beka",
+		"cat": "adv.",
+		"defList": [
+			"together"
+		]
+	},
+	{
 		"title": "id",
 		"etym": "L/PEN/*id/one",
 		"cat": "adj.",
@@ -3765,7 +3791,7 @@
 		"etym": "C/idz/imôm",
 		"cat": "n, 5th",
 		"defList": [
-			"(mathematics) regular polygon, isotoxal figure"
+			"(mathematics) isotoxal figure"
 		],
 		"categories": ["math"]
 	},
@@ -3944,6 +3970,23 @@
 			"face"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "ittôsidam",
+		"etym": "C/ittôsu/id",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) parallelogram"
+		],
+		"categories": ["math"]
+	},
+	{
+		"title": "ittôsu",
+		"etym": "C/ittô/isu",
+		"cat": "adj.",
+		"defList": [
+			"opposite"
+		]
 	},
 	{
 		"title": "iu",
