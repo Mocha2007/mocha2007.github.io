@@ -261,7 +261,8 @@
 		"etym": "C/abu/-m",
 		"cat": "n., 5th",
 		"defList": [
-			"(mathematics) circle (the line, NOT the disk)"
+			"(mathematics) circle (the line, NOT the disk)",
+			"(mathematics) circumference"
 		],
 		"categories": ["math"]
 	},
@@ -976,6 +977,23 @@
 			"pronoun"
 		],
 		"categories": ["language"]
+	},
+	{
+		"title": "aum",
+		"etym": "C/aut/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) perimeter"
+		],
+		"categories": ["math"]
+	},
+	{
+		"title": "aut",
+		"etym": "L/PEN/*axeut/fence",
+		"cat": "n., 3rd",
+		"defList": [
+			"fence"
+		]
 	},
 	{
 		"title": "azaz",
@@ -2415,6 +2433,34 @@
 		"notes": "In the sense of \"mean\", what is the direct object in English would be construed with lative <i>ad</i> \"to\"."
 	},
 	{
+		"title": "dintukum",
+		"etym": "C/dintukuz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"declaration",
+			"definition",
+			"determination"
+		]
+	},
+	{
+		"title": "dintukubaim",
+		"etym": "C/dintukuz/baim",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) proof, theorem"
+		]
+	},
+	{
+		"title": "dintukuz",
+		"etym": "C/din/tukuz",
+		"cat": "v.",
+		"defList": [
+			"declare",
+			"define",
+			"determine"
+		]
+	},
+	{
 		"title": "dir",
 		"etym": "C/di/-r",
 		"cat": "prep.",
@@ -2451,6 +2497,15 @@
 			"(informal, verb +) (forms continuous aspect)"
 		],
 		"notes": "ZE dialects use this prepositionally for translative senses."
+	},
+	{
+		"title": "dôabuz",
+		"etym": "C/dô/abum",
+		"cat": "v.",
+		"defList": [
+			"(mathematics) inscribe"
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "dôafkaz",
@@ -3196,6 +3251,15 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "halturôm",
+		"etym": "B/hal/turôm",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) lemma"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "hananu",
 		"etym": "C/hanu/hanu",
 		"cat": "adj.",
@@ -3762,6 +3826,15 @@
 		]
 	},
 	{
+		"title": "ibbekanumz",
+		"etym": "C/ibbeka/numz",
+		"cat": "v.",
+		"defList": [
+			"(mathematics) be parallel"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "id",
 		"etym": "L/PEN/*id/one",
 		"cat": "adj.",
@@ -3982,7 +4055,7 @@
 	},
 	{
 		"title": "ittôsu",
-		"etym": "C/ittô/isu",
+		"etym": "C/ittô/-isu",
 		"cat": "adj.",
 		"defList": [
 			"opposite"
@@ -4852,6 +4925,15 @@
 			"about, concerning",
 			"near, next to"
 		]
+	},
+	{
+		"title": "kulabuz",
+		"etym": "C/kul/abum",
+		"cat": "v.",
+		"defList": [
+			"(mathematics) circumscribe"
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "kulu",
@@ -8569,6 +8651,15 @@
 		"defList": [
 			"plow"
 		]
+	},
+	{
+		"title": "turôm",
+		"etym": "B/tukum/rôm",
+		"cat": "n., 5th",
+		"defList": [
+			"word"
+		],
+		"categories": ["language"]
 	},
 	{
 		"title": "tutukumkimôm",
