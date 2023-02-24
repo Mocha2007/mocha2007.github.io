@@ -330,4 +330,16 @@ const blogData = [
 	<pre>"blog.corpus.stats();"</pre>
 	It's imperfect to be sure, but it's still pretty neat to see my blog unsurprisingly conform to normal English word frequency!
 	`,
+	`
+	@title 1000 Eremoran Words
+	@date 1677253519365
+	@p
+	@tags eremoran
+	I have just added the one thousandth word to Eremoran - <em>adz</em>,
+	a respectful title for elders.
+	<em>Adz</em> is a fairly recent loan to Eremoran.
+	It comes directly from Vazcud <em>adj</em>, with similar meaning and usage.
+	It was originally used by Eremoran scholars towards masters of their field (cf. English "doctor"),
+	but has since spread out of academia and into semi-common usage.
+	`,
 ];
