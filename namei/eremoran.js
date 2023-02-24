@@ -418,7 +418,7 @@ const adj = {
 		const [comparative, superlative, equative] = [
 			stem + 'uku',
 			stem + 'id',
-			stem + 'osaz',
+			stem + 'ofaz',
 		];
 		const positive = gendered
 			? this.classes(indexForm) : this.classless(indexForm);

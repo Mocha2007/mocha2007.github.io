@@ -3747,6 +3747,15 @@
 		]
 	},
 	{
+		"title": "hofoz",
+		"etym": "C/hoz/ho",
+		"cat": "adv.",
+		"defList": [
+			"thus, so, in that way",
+			"anyways [filler word]"
+		]
+	},
+	{
 		"title": "hoki",
 		"etym": "C/ho/kiom",
 		"cat": "adj.",
@@ -3779,15 +3788,6 @@
 			"female given name"
 		],
 		"categories": ["female given name"]
-	},
-	{
-		"title": "hosoz",
-		"etym": "C/hoz/ho",
-		"cat": "adv.",
-		"defList": [
-			"thus, so, in that way",
-			"anyways [filler word]"
-		]
 	},
 	{
 		"title": "hou",
