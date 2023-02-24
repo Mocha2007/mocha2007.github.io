@@ -382,7 +382,8 @@ const blog = {
 		stats(){
 			if (!this.initialized)
 				this.init();
-			console.log(this.size);
+			console.log('Total: ' + this.size);
+			console.log('Unique: ' + Object.keys(this.set).length);
 			Object.keys(this.set)
 				.sort((a, b) => this.set[b] - this.set[a])
 				.slice(0, 25).forEach((word, i) => {

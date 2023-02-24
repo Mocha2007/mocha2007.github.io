@@ -341,5 +341,19 @@ const blogData = [
 	It comes directly from Vazcud <em>adj</em>, with similar meaning and usage.
 	It was originally used by Eremoran scholars towards masters of their field (cf. English "doctor"),
 	but has since spread out of academia and into semi-common usage.
+	@p
+	@tags eremoran math
+	Much of the new vocabulary recently, however, has been math.
+	I've been reading Euclid's Elements to give me an idea of the mathematical knowledge available at the time,
+	and trying to add as much vocabulary from that as reasonable.
+	The style of writing is enticing me to make an Eremoran translation,
+	but for Eremoran I have tried to shy away from translations of our world's books since it wouldn't make any in-universe sense.
+	@p
+	@tags weather
+	In other news, it has been excessively warm recently.
+	Yesterday it approached 80&deg;F and poured in the late afternoon.
+	Today the temperature is forecast to fall all day,
+	and reach the 40s at night.
+	Well, I guess I had <em>one</em> day of summer...
 	`,
 ];
