@@ -1025,14 +1025,14 @@
 		"categories": ["plant"]
 	},
 	{
-		"title": "bab",
+		"title": "ba",
 		"etym": "L/PEN/*bab/sponge",
 		"cat": "n., 4th",
 		"defList": [
 			"sponge"
 		],
 		"categories": ["animal"],
-		"notes": "Although sponges are technically animals, they do not fall under the Eremoran classification of animate since they are sessile."
+		"notes": "Although sponges are technically animals, they do not fall under the Eremoran classification of animate since they are sessile. This word is sometimes suffixed with -t to distinguish it from ba 'chickpea' when necessary."
 	},
 	{
 		"title": "babz",
@@ -6955,7 +6955,7 @@
 		"etym": "L/PRE/pi",
 		"cat": "interj.",
 		"defList": [
-			"onomatopoeia for something sparkly or shiny"
+			"[onomatopoeia for something sparkly or shiny]"
 		]
 	},
 	{
