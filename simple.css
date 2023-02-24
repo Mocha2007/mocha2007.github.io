@@ -31,10 +31,10 @@ td ul, th ul{
 	text-align: left;
 	padding-right: 20px;
 }
-details{
+nav details{
 	line-height: 17px;
 }
-details a{
+nav details a{
 	font-size: 16px;
 }
 h1, h2, h3, #top, #bottom, .center, nav summary {
