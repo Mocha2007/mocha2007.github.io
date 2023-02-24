@@ -703,6 +703,14 @@
 		"categories": ["emotion"]
 	},
 	{
+		"title": "anz",
+		"etym": "L/VAZ/anj/an elder",
+		"cat": "v. ",
+		"defList": [
+			"elder (only used as a title of respect, like 'Mister' or 'Miss', not as a normal noun/adjective)"
+		]
+	},
+	{
 		"title": "arama",
 		"img": "../img/eremoran/arama.png",
 		"etym": "L/PEN/*xere-ma/copper",
@@ -1667,6 +1675,14 @@
 		"cat": "n., 5th",
 		"defList": [
 			"(archaic, non-southern) imagination"
+		]
+	},
+	{
+		"title": "bintim",
+		"etym": "L/VAZ/vinthin/thousand",
+		"cat": "n., 5th",
+		"defList": [
+			"one thousand of something"
 		]
 	},
 	{
@@ -2768,6 +2784,15 @@
 		"notes": "wanderwort"
 	},
 	{
+		"title": "endimôm",
+		"etym": "C/endu/imôm",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) rectangle (esp. oblong)"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "endu",
 		"etym": "L/PEN/*endu/high",
 		"cat": "adj.",
@@ -3741,6 +3766,15 @@
 		"cat": "n, 5th",
 		"defList": [
 			"(mathematics) regular polygon, isotoxal figure"
+		],
+		"categories": ["math"]
+	},
+	{
+		"title": "idimôsu",
+		"etym": "C/idimôm/-isu",
+		"cat": "adj.",
+		"defList": [
+			"(mathematics) equilateral, isotoxal"
 		],
 		"categories": ["math"]
 	},
@@ -8494,6 +8528,15 @@
 		]
 	},
 	{
+		"title": "tutukumkimôm",
+		"etym": "C/tutut/kumkimôm",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) isoceles triangle"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "tutum",
 		"etym": "C/tutut/-m",
 		"cat": "n., 5th",
@@ -8506,7 +8549,8 @@
 		"etym": "R/tum",
 		"cat": "n., 3rd",
 		"defList": [
-			"ceiling"
+			"ceiling",
+			"roof"
 		]
 	},
 	{
