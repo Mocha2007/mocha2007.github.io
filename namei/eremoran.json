@@ -257,6 +257,15 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "abum",
+		"etym": "C/abu/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) circle (the line, NOT the disk)"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "abusu",
 		"etym": "C/abu/-isu",
 		"cat": "adj.",
@@ -882,8 +891,10 @@
 			"stand",
 			"stay, remain",
 			"stop, halt, cease",
-			"be stiff, still, stubborn"
-		]
+			"be stiff, still, stubborn",
+			"(mathematics) be right (angle)"
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "arzên",
@@ -3725,6 +3736,15 @@
 		"categories": ["sex"]
 	},
 	{
+		"title": "idimôm",
+		"etym": "C/idz/imôm",
+		"cat": "n, 5th",
+		"defList": [
+			"(mathematics) regular polygon, isotoxal figure"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "idisu",
 		"etym": "C/id/-isu",
 		"cat": "adj.",
@@ -3755,6 +3775,15 @@
 		"defList": [
 			"be the same thing"
 		]
+	},
+	{
+		"title": "idzesti",
+		"etym": "C/idz/zesti",
+		"cat": "adj., s-triggering",
+		"defList": [
+			"(mathematics) equiangular, isogonal"
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "iklu",
@@ -3796,7 +3825,7 @@
 		"etym": "C/imô/-m",
 		"cat": "n., 5th",
 		"defList": [
-			"(mathematics) edge",
+			"(mathematics) edge, side",
 			"(mathematics, suffix) -gon"
 		],
 		"categories": ["math"]
@@ -5656,6 +5685,23 @@
 		]
 	},
 	{
+		"title": "midarim",
+		"etym": "C/midarit/-m",
+		"cat": "n., 3rd",
+		"defList": [
+			"(mathematics) disk (circle)"
+		],
+		"categories": ["math"]
+	},
+	{
+		"title": "midarit",
+		"etym": "L/PRE/???",
+		"cat": "n., 3rd",
+		"defList": [
+			"dish, plate, saucer"
+		]
+	},
+	{
 		"title": "mim",
 		"etym": "L/PEN/*mim/idea",
 		"cat": "n., 5th",
@@ -7216,8 +7262,10 @@
 		"etym": "L/PEN/*tʃedu/sharp",
 		"cat": "adj.",
 		"defList": [
-			"sharp (not dull)"
-		]
+			"sharp (not dull)",
+			"(mathematics) acute"
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "sêdzak",
@@ -8628,8 +8676,10 @@
 		"cat": "adj., s-triggering",
 		"defList": [
 			"straight",
-			"flat"
-		]
+			"flat",
+			"(mathematics) straight (angle; ie. a 180 degree angle)"
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "ulu",
@@ -8804,8 +8854,10 @@
 		"etym": "C/u-/sedu",
 		"cat": "adj.",
 		"defList": [
-			"dull (not sharp)"
-		]
+			"dull, blunt (not sharp)",
+			"(mathematics) obtuse"
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "usiu",
