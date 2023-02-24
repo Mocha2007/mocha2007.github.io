@@ -1626,6 +1626,15 @@
 		]
 	},
 	{
+		"title": "bil",
+		"etym": "L/PEN/*βiɸil/berry",
+		"cat": "n., 4th",
+		"defList": [
+			"berry"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "bilô",
 		"etym": "L/PEN/*βilô/spice",
 		"cat": "n., 4th",
@@ -1720,6 +1729,15 @@
 		"cat": "n., 5th",
 		"defList": [
 			"one thousand of something"
+		]
+	},
+	{
+		"title": "bisu",
+		"etym": "L/PEN/*βiʃu/wool",
+		"cat": "n., adj.",
+		"defList": [
+			"wool",
+			"woolen"
 		]
 	},
 	{
@@ -3521,7 +3539,7 @@
 		"etym": "L/PEN/*seri/palm",
 		"cat": "n., 4th",
 		"defList": [
-			"palm"
+			"palm (of the hand)"
 		],
 		"categories": ["body part"]
 	},
@@ -3993,10 +4011,11 @@
 	},
 	{
 		"title": "indôn",
-		"etym": "L/PEN/*indôn/potato",
+		"etym": "L/PEN/*indôn/yam",
 		"cat": "n., 4th",
 		"defList": [
-			"potato"
+			"yam",
+			"taro"
 		],
 		"categories": ["plant", "potato"]
 	},
@@ -4105,6 +4124,14 @@
 			"rye"
 		],
 		"categories": ["plant"]
+	},
+	{
+		"title": "kad",
+		"etym": "L/PEN/*kad/hoof",
+		"cat": "n., 4th",
+		"defList": [
+			"hoof"
+		]
 	},
 	{
 		"title": "kada",
@@ -4299,6 +4326,15 @@
 		"cat": "n., 5th",
 		"defList": [
 			"war"
+		]
+	},
+	{
+		"title": "karo",
+		"etym": "L/PEN/*karo/claw",
+		"cat": "n., 4th",
+		"defList": [
+			"claw",
+			"talon"
 		]
 	},
 	{
@@ -6165,10 +6201,19 @@
 	},
 	{
 		"title": "naba",
-		"etym": "L/PEN/*naβa/root",
+		"etym": "L/PEN/*naβa/root//~/nabi",
 		"cat": "n., 4th",
 		"defList": [
 			"root"
+		],
+		"categories": ["plant"]
+	},
+	{
+		"title": "nabi",
+		"etym": "L/PEN/*naβi/branch//~/naba",
+		"cat": "n., 4th",
+		"defList": [
+			"branch, stick, twig"
 		],
 		"categories": ["plant"]
 	},
