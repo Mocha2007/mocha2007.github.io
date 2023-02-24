@@ -5721,7 +5721,7 @@
 	{
 		"title": "midarim",
 		"etym": "C/midarit/-m",
-		"cat": "n., 3rd",
+		"cat": "n., 5th",
 		"defList": [
 			"(mathematics) disk (circle)"
 		],
@@ -7706,19 +7706,19 @@
 		"categories": ["math"]
 	},
 	{
-		"title": "stôdlanz",
-		"etym": "C/stôd/lanz",
-		"cat": "post.",
-		"defList": [
-			"draw (a picture)"
-		]
-	},
-	{
 		"title": "stôdinklaz",
 		"etym": "B/stôd/dinklaz",
 		"cat": "v.",
 		"defList": [
 			"subject to damnatio memoriae (strike from all official records)"
+		]
+	},
+	{
+		"title": "stôdlanz",
+		"etym": "C/stôd/lanz",
+		"cat": "post.",
+		"defList": [
+			"draw (a picture)"
 		]
 	},
 	{
