@@ -1025,6 +1025,16 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "bab",
+		"etym": "L/PEN/*bab/sponge",
+		"cat": "n., 4th",
+		"defList": [
+			"sponge"
+		],
+		"categories": ["animal"],
+		"notes": "Although sponges are technically animals, they do not fall under the Eremoran classification of animate since they are sessile."
+	},
+	{
 		"title": "babz",
 		"etym": "B/babzu/-z",
 		"cat": "adv.",
@@ -2549,6 +2559,15 @@
 			"guest"
 		],
 		"categories": ["person"]
+	},
+	{
+		"title": "dôk",
+		"etym": "L/PEN/*dôx/shellfish",
+		"cat": "n., 2nd",
+		"defList": [
+			"shellfish (eg. clam, oyster)"
+		],
+		"categories": ["animal", "seafood"]
 	},
 	{
 		"title": "dôkalz",
@@ -5209,6 +5228,15 @@
 		"categories": ["v3_trade"]
 	},
 	{
+		"title": "lak",
+		"etym": "L/PEN/*lax/crab",
+		"cat": "n., 2nd",
+		"defList": [
+			"crab"
+		],
+		"categories": ["animal", "seafood"]
+	},
+	{
 		"title": "lakaik",
 		"etym": "L/PEN/*bloxaix/shark",
 		"cat": "n., 2nd",
@@ -6886,6 +6914,15 @@
 		]
 	},
 	{
+		"title": "pidarsank",
+		"etym": "L/PRE/pʰīdʒa-arsan/lobster",
+		"cat": "n., 2nd",
+		"defList": [
+			"lobster"
+		],
+		"categories": ["animal", "seafood"]
+	},
+	{
 		"title": "pidzak",
 		"etym": "L/PRE/pʰīdʒa//L/VAZ/phijas",
 		"cat": "n., 2nd",
@@ -7901,6 +7938,15 @@
 		"defList": [
 			"chez; at the house of"
 		]
+	},
+	{
+		"title": "sudik",
+		"etym": "L/PEN/*ʃudix/spider",
+		"cat": "n., 2nd",
+		"defList": [
+			"spider"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "sudôz",
