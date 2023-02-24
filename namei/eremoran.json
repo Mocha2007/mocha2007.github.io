@@ -474,6 +474,15 @@
 		]
 	},
 	{
+		"title": "ai",
+		"etym": "L/PEN/*ai/cedar",
+		"cat": "n., 4th",
+		"defList": [
+			"cedar"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "ak",
 		"etym": "L/PEN/*ax/mare",
 		"cat": "n., 2nd",
@@ -1679,6 +1688,15 @@
 		"defList": [
 			"battleground"
 		]
+	},
+	{
+		"title": "biman",
+		"etym": "L/PEN/*βiman/bush",
+		"cat": "n., 4th",
+		"defList": [
+			"bush, shrub"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "bimat",
@@ -4514,6 +4532,15 @@
 		]
 	},
 	{
+		"title": "kima",
+		"etym": "L/PEN/*kima/stump",
+		"cat": "n., 4th",
+		"defList": [
+			"stump"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "kin",
 		"etym": "L/PEN/*kin/sulfur",
 		"cat": "n., 4th",
@@ -4706,6 +4733,15 @@
 		"defList": [
 			"flood"
 		]
+	},
+	{
+		"title": "kona",
+		"etym": "L/PEN/*gona/beech",
+		"cat": "n., 4th",
+		"defList": [
+			"beech (esp. fagus orientalis)"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "konoz",
@@ -5961,6 +5997,16 @@
 			"behind",
 			"before"
 		]
+	},
+	{
+		"title": "moda",
+		"etym": "L/PEN/*moda/trunk",
+		"cat": "n., 4th",
+		"defList": [
+			"trunk (of a tree)",
+			"stem (of a plant)"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "mok",
