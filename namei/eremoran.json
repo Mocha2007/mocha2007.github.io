@@ -2433,6 +2433,14 @@
 		"notes": "In the sense of \"mean\", what is the direct object in English would be construed with lative <i>ad</i> \"to\"."
 	},
 	{
+		"title": "dintukubaim",
+		"etym": "C/dintukuz/baim",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) proof, theorem"
+		]
+	},
+	{
 		"title": "dintukum",
 		"etym": "C/dintukuz/-m",
 		"cat": "n., 5th",
@@ -2440,14 +2448,6 @@
 			"declaration",
 			"definition",
 			"determination"
-		]
-	},
-	{
-		"title": "dintukubaim",
-		"etym": "C/dintukuz/baim",
-		"cat": "n., 5th",
-		"defList": [
-			"(mathematics) proof, theorem"
 		]
 	},
 	{
