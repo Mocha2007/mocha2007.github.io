@@ -356,4 +356,30 @@ const blogData = [
 	and reach the 40s at night.
 	Well, I guess I had <em>one</em> day of summer...
 	`,
+	`
+	@title Rewnewables in Factorio
+	@date 1677517880255
+	@p
+	@tags factorio
+	I've recently been into Factorio again, and I realized something interesting.
+	There are few renewable resources, but one of the ones that is? Crude oil.
+	Yes, crude oil is renewable in factorio.
+	Pumpjacks bottom out at 2 crude oil per second, and never deplete.
+	This means oil products are among the handful of truly renewable resources:
+	<ul>
+		<li>Energy, Water, Crude Oil</li>
+		<li>Heavy Oil, Light Oil, Petroleum Gas</li>
+		<li>Steam</li>
+		<li>Sulfur</li>
+		<li>Lubricant</li>
+		<li>Solid Fuel</li>
+		<li>Rocket Fuel</li>
+	</ul>
+	However, in order to acquire any of these,
+	you will need a <em>small</em> quanitity of non-renewables to kickstart production,
+	but after that, everything is automatic.
+	A small base focused on crude oil extraction,
+	with flamethrowers and laser turrets,
+	could run indefinitely without maintenance.
+	`,
 ];
