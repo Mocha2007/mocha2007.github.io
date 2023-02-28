@@ -561,17 +561,21 @@ const blogData = [
 	@tags math
 	Honorable mentions:
 
-	Maximum minimum (95):
+	Maximum minimum (100):
 	<ul>
-		<li>Modulus: 2</li>
+		<li>Modulus: 6</li>
 		<li>Formula for remainders:
 		<ol>
-			<li value="0">n &rarr; n/2</li>
-			<li>n &rarr; 3n + 25</li>
+			<li value="0">n &rarr; n/6</li>
+			<li>n &rarr; 5n + 7</li>
+			<li>n &rarr; 5n + 2</li>
+			<li>n &rarr; 5n + 15</li>
+			<li>n &rarr; 7n + 2</li>
+			<li>n &rarr; 5n + 53</li>
 		</ol>
 		</li>
 	</ul>
-	Cycle minima: {5, 7, 17, 25, 95, &infin;}
+	Cycle minima: {2, 7, 15, 22, 52, 53, 100}
 	<hr>
 
 	Most finite positive cycles (9):
