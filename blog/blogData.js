@@ -448,7 +448,7 @@ const blogData = [
 	and 17/64 of the first sixty-four do.
 	@p
 	@tags math
-	There is also this interesting rule that has three cycles and one path I suspect goes to infinity:
+	There is also this interesting rule that has three cycles and some paths I suspect go to infinity:
 	<ul>
 		<li>Modulus: 2</li>
 		<li>Formula for remainders:
@@ -464,6 +464,8 @@ const blogData = [
 		<li>13 &rarr; 66 &rarr; 33 &rarr; 166 &rarr; 83 &rarr; 416 &rarr; 208 &rarr; 104 &rarr; 52 &rarr; 26 &rarr; 13</li>
 		<li>17 &rarr; 86 &rarr; 43 &rarr; 216 &rarr; 108 &rarr; 54 &rarr; 27 &rarr; 136 &rarr; 68 &rarr; 34 &rarr; 17</li>
 		<li>7 &rarr; ... &rarr; &infin;</li>
+		<li>21 &rarr; ... &rarr; &infin; (this appears to be distinct from the above path)</li>
+		<li>??? Possibly others ??? </li>
 	</ul>
 	There seems to be a pattern with the 7 path - the remainder modulo 10 of terms is 8, then 9, then 6,
 	then one pair of 3-6. The next time around, it becomes two pairs of 3-6. Then three, then four...
