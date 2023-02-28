@@ -591,7 +591,7 @@ const blogData = [
 		</ol>
 		</li>
 	</ul>
-	Cycle minima: {1, 3, 7, 8, 11, 14, 16, 28, 52, 76, 94}
+	Cycle minima: {1, 2, 7, 11, 13, 21, 22, 27, 57, 76, 81, 88, 93}
 	<br><br>
 	Minor modifications of this also lead to rules with many cycles.
 	`,
