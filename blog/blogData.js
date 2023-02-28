@@ -577,27 +577,22 @@ const blogData = [
 	</ul>
 	Cycle minima: {2, 7, 15, 22, 52, 53, 100}
 	<br><br>
-	Most finite positive cycles (9):
+	Most finite positive cycles (11):
 	<ul>
 		<li>Modulus: 6</li>
 		<li>Formula for remainders:
 		<ol>
 			<li value="0">n &rarr; n/6</li>
 			<li>n &rarr; 5n + 7</li>
-			<li>n &rarr; 5n + 2</li>
-			<li>n &rarr; 7n + 3</li>
-			<li>n &rarr; 5n + 4</li>
-			<li>n &rarr; 5n + 5</li>
+			<li>n &rarr; 5n + 14</li>
+			<li>n &rarr; 5n + 3</li>
+			<li>n &rarr; 7n + 2</li>
+			<li>n &rarr; 5n + 11</li>
 		</ol>
 		</li>
 	</ul>
-	Cycle minima: {2, 4, 5, 7, 9, 27, 39, 45, 57}
+	Cycle minima: {1, 3, 7, 8, 11, 14, 16, 28, 52, 76, 94}
 	<br><br>
-	A minor modification of this with two changes:
-	<ol>
-		<li>n &rarr; 5n + 19</li>
-		<li>n &rarr; 7n + 4</li>
-	</ol>
-	Also leads to a (different) set of 9 cycles.
+	Minor modifications of this also lead to rules with many cycles.
 	`,
 ];
