@@ -516,5 +516,46 @@ const blogData = [
 		<li>E = "everything is a 2-cycle of odds and their n-uples"</li>
 	</ul>
 	It is the behavior of the rules below the diagonal that is most interesting.
+	@p
+	@tags math
+	Here is a table of outcomes of rules for n congruent to 1 mod 2:
+	<table>
+		<tr><th colspan=2 rowspan=2></th><th colspan=4>b in an+b</th></tr>
+		<tr>
+			<th>1</th>
+			<th>3</th>
+			<th>5</th>
+			<th>7</th>
+		</tr>
+		<tr>
+			<th rowspan=4 style="transform:rotate(-90deg);">a in an+b</th>
+			<th>3</th>
+			<td><abbr title="Collatz Problem">{1}</abbr></td>
+			<td>{3}</td>
+			<td>{1, 5, 19, 23}</td>
+			<td>{5, 7}</td>
+		</tr>
+		<tr>
+			<th>5</th>
+			<td>{1, 13, &infin;}</td>
+			<td>{1, 3, 39, 43, 51, 53, 61, &infin;}</td>
+			<td>{5, 65, 85, &infin;}</td>
+			<td>{1, 7, 9, 57, 91, &infin;}</td>
+		</tr>
+		<tr>
+			<th>7</th>
+			<td>{1, &infin;}</td>
+			<td>{3, &infin;}</td>
+			<td>{3, 5, 27 &infin;}</td>
+			<td>{7, &infin;}</td>
+		</tr>
+		<tr>
+			<th>9</th>
+			<td>{&infin;}</td>
+			<td>{&infin;}</td>
+			<td>{&infin;}</td>
+			<td>{1, &infin;}</td>
+		</tr>
+	</table>
 	`,
 ];
