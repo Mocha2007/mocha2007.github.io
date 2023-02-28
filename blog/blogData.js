@@ -382,4 +382,69 @@ const blogData = [
 	with flamethrowers and laser turrets,
 	could run indefinitely without maintenance.
 	`,
+	`
+	@title Exploring the Generalized Collatz Problem
+	@date 1677598875664
+	@p
+	@tags math js
+	This morning I wondered what would happen if you replaced the coefficients in the
+	<a href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz problem</a> with others.
+	So I wrote a quick program in JS to allow me to experiment with this.
+	@p
+	@tags math
+	After some experimenting, I came across a really interesting variant:
+	<ul>
+		<li>Modulus: 5</li>
+		<li>Formula for remainders:
+		<ol>
+			<li value="0">n &rarr; n/5</li>
+			<li>n &rarr; 2n + 3</li>
+			<li>n &rarr; 3n + 4</li>
+			<li>n &rarr; 4n + 3</li>
+			<li>n &rarr; 6n + 1</li>
+		</ol>
+		</li>
+	</ul>
+	This rule has four different positive cycles:
+	<ul>
+		<li>1 &harr; 5</li>
+		<li>2 &harr; 10</li>
+		<li>3 &harr; 15</li>
+		<li>19 &rarr; 115 &rarr; 23 &rarr; 95 &rarr; 19</li>
+	</ul>
+	The distribution of which numbers falls into the cycles is interesting.
+	Although most fall into the 1 cycle, quite a few fall into the 19 cycle.
+	And although there are many stretches of integers that fall only into the 1 cycle,
+	there are also a few stretches of integers which never fall into the 1 cycle, but instead fall into one of the others.
+	For example, the range 90 to 95 inclusive all falls into 3 or 19,
+	but that range is immediately preceded by a range of seven integers that all converge to 1.
+	@p
+	@tags math
+	At this point you might just assume in all rules the majority of positive integers converge to 1.
+	However, this is far from the truth. Consider:
+	<ul>
+		<li>Modulus: 3</li>
+		<li>Formula for remainders:
+		<ol>
+			<li value="0">n &rarr; n/3</li>
+			<li>n &rarr; 4n + 2</li>
+			<li>n &rarr; 4n + 1</li>
+		</ol>
+		</li>
+	</ul>
+	This rule has two different positive cycles:
+	<ul>
+		<li>1 &rarr; 6 &rarr; 2 &rarr; 9 &rarr; 3 &rarr; 1</li>
+		<li>7 &rarr; 30 &rarr; 10 &rarr; 42 &rarr; 14 &rarr; 57 &rarr;
+		19 &rarr; 78 &rarr; 26 &rarr; 105 &rarr; 35 &rarr; 141 &rarr;
+		47 &rarr; 189 &rarr; 63 &rarr; 21 &rarr; 7</li>
+	</ul>
+	The majority of positive integers falls into the latter cycle.
+	In fact, the fraction that do seems to only increase with the range of integers considered.
+	The first four positive integers all fall into the first cycle,
+	5/8 of the first eight do,
+	8/16 of the first sixteen do,
+	12/32 of the first thirty-two do,
+	and 17/64 of the first sixty-four do.
+	`,
 ];
