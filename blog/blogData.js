@@ -557,5 +557,37 @@ const blogData = [
 			<td>{1, &infin;}</td>
 		</tr>
 	</table>
+	@p
+	@tags math
+	Honorable mentions:
+
+	Maximum minimum (95):
+	<ul>
+		<li>Modulus: 2</li>
+		<li>Formula for remainders:
+		<ol>
+			<li value="0">n &rarr; n/2</li>
+			<li>n &rarr; 3n + 25</li>
+		</ol>
+		</li>
+	</ul>
+	Cycle minima: {5, 7, 17, 25, 95 &infin;}
+	<hr>
+
+	Most finite positive cycles (9):
+	<ul>
+		<li>Modulus: 6</li>
+		<li>Formula for remainders:
+		<ol>
+			<li value="0">n &rarr; n/6</li>
+			<li>n &rarr; 5n + 7</li>
+			<li>n &rarr; 5n + 2</li>
+			<li>n &rarr; 7n + 3</li>
+			<li>n &rarr; 5n + 4</li>
+			<li>n &rarr; 5n + 5</li>
+		</ol>
+		</li>
+	</ul>
+	Cycle minima: {2, 4, 5, 7, 9, 27, 39, 45, 57}
 	`,
 ];
