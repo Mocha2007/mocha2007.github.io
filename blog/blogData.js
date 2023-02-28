@@ -559,39 +559,26 @@ const blogData = [
 	</table>
 	@p
 	@tags math
-	Honorable mentions:
-
-	Maximum minimum (100):
-	<ul>
-		<li>Modulus: 6</li>
-		<li>Formula for remainders:
-		<ol>
-			<li value="0">n &rarr; n/6</li>
-			<li>n &rarr; 5n + 7</li>
-			<li>n &rarr; 5n + 2</li>
-			<li>n &rarr; 5n + 15</li>
-			<li>n &rarr; 7n + 2</li>
-			<li>n &rarr; 5n + 53</li>
-		</ol>
-		</li>
-	</ul>
-	Cycle minima: {2, 7, 15, 22, 52, 53, 100}
+	THE COOLEST RULE OF ALL
 	<br><br>
-	Most finite positive cycles (13):
+	Maximum minimum (3419):
+	Most finite positive cycles (33):
 	<ul>
 		<li>Modulus: 6</li>
 		<li>Formula for remainders:
 		<ol>
 			<li value="0">n &rarr; n/6</li>
-			<li>n &rarr; 5n + 13</li>
+			<li>n &rarr; 37n + 5</li>
 			<li>n &rarr; 5n + 2</li>
 			<li>n &rarr; 7n + 3</li>
-			<li>n &rarr; 7n + 2</li>
-			<li>n &rarr; 5n + 11</li>
+			<li>n &rarr; 5n + 4</li>
+			<li>n &rarr; 7n + 13</li>
 		</ol>
 		</li>
 	</ul>
-	Cycle minima: {1, 2, 7, 11, 13, 21, 22, 27, 57, 76, 81, 88, 93}
+	Cycle minima: {2, 4, 19, 27, 39, 77, 89, 181, 337, 367, 409, 451,
+	577, 637, 697, 709, 727, 777, 811, 849, 997, 1129, 1137, 1147, 1367,
+	1429, 1569, 1579, 2627, 2699, 2947, 2987, 3379, 3419, &infin;}
 	<br><br>
 	Minor modifications of this also lead to rules with many cycles.
 	`,
