@@ -571,7 +571,7 @@ const blogData = [
 		</ol>
 		</li>
 	</ul>
-	Cycle minima: {5, 7, 17, 25, 95 &infin;}
+	Cycle minima: {5, 7, 17, 25, 95, &infin;}
 	<hr>
 
 	Most finite positive cycles (9):
