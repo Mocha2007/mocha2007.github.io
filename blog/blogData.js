@@ -577,15 +577,15 @@ const blogData = [
 	</ul>
 	Cycle minima: {2, 7, 15, 22, 52, 53, 100}
 	<br><br>
-	Most finite positive cycles (11):
+	Most finite positive cycles (13):
 	<ul>
 		<li>Modulus: 6</li>
 		<li>Formula for remainders:
 		<ol>
 			<li value="0">n &rarr; n/6</li>
-			<li>n &rarr; 5n + 7</li>
-			<li>n &rarr; 5n + 14</li>
-			<li>n &rarr; 5n + 3</li>
+			<li>n &rarr; 5n + 13</li>
+			<li>n &rarr; 5n + 2</li>
+			<li>n &rarr; 7n + 3</li>
 			<li>n &rarr; 7n + 2</li>
 			<li>n &rarr; 5n + 11</li>
 		</ol>
