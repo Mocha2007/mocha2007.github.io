@@ -576,8 +576,7 @@ const blogData = [
 		</li>
 	</ul>
 	Cycle minima: {2, 7, 15, 22, 52, 53, 100}
-	<hr>
-
+	<br><br>
 	Most finite positive cycles (9):
 	<ul>
 		<li>Modulus: 6</li>
@@ -593,5 +592,12 @@ const blogData = [
 		</li>
 	</ul>
 	Cycle minima: {2, 4, 5, 7, 9, 27, 39, 45, 57}
+	<br><br>
+	A minor modification of this with two changes:
+	<ol>
+		<li>n &rarr; 5n + 19</li>
+		<li>n &rarr; 7n + 4</li>
+	</ol>
+	Also leads to a (different) set of 9 cycles.
 	`,
 ];
