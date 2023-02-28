@@ -470,5 +470,51 @@ const blogData = [
 	There seems to be a pattern with the 7 path - the remainder modulo 10 of terms is 8, then 9, then 6,
 	then one pair of 3-6. The next time around, it becomes two pairs of 3-6. Then three, then four...
 	The numbers only seem to get bigger.
+	@p
+	@tags math
+	Here is a table of outcomes of Collatz-like rules
+	(ie. b should be as small as possible to make an congruent to 0 mod 2):
+	<table>
+		<tr><th colspan=2 rowspan=2></th><th colspan=4>Divisor</th></tr>
+		<tr>
+			<th>2</th>
+			<th>3</th>
+			<th>4</th>
+			<th>5</th>
+		</tr>
+		<tr>
+			<th rowspan=4 style="transform:rotate(-90deg);">a in an+b</th>
+			<th>2</th>
+			<td>E</td>
+			<td>{1, 2}</td>
+			<td>{1}</td>
+			<td>{1}</td>
+		</tr>
+		<tr>
+			<th>3</th>
+			<td><abbr title="Collatz Problem">{1}</abbr></td>
+			<td>E</td>
+			<td>{1, 2, 3}</td>
+			<td>{1, 2}</td>
+		</tr>
+		<tr>
+			<th>4</th>
+			<td>E</td>
+			<td>{1, 7}</td>
+			<td>E</td>
+			<td>{1, 2, 3, 4}</td>
+		</tr>
+		<tr>
+			<th>5</th>
+			<td>{1, 13, &infin;}</td>
+			<td>{4, 8, &infin;}</td>
+			<td>{1, 23}</td>
+			<td>E</td>
+		</tr>
+	</table>
+	<ul>
+		<li>E = "everything is a 2-cycle of odds and their n-uples"</li>
+	</ul>
+	It is the behavior of the rules below the diagonal that is most interesting.
 	`,
 ];
