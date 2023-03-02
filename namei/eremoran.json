@@ -1167,7 +1167,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"death",
-			"end"
+			"end",
+			"border"
 		]
 	},
 	{
@@ -5291,6 +5292,15 @@
 		]
 	},
 	{
+		"title": "kuramat",
+		"etym": "B/kuru/aramat",
+		"cat": "n., 3rd",
+		"defList": [
+			"copper alloy (esp. brass)"
+		],
+		"categories": ["metal"]
+	},
+	{
 		"title": "kureu",
 		"etym": "L/PEN/*kureu/west",
 		"cat": "adj.",
@@ -5316,6 +5326,14 @@
 			"declension, case"
 		],
 		"categories": ["language"]
+	},
+	{
+		"title": "kuru",
+		"etym": "L/PEN/*guru",
+		"cat": "adj.",
+		"defList": [
+			"pale"
+		]
 	},
 	{
 		"title": "kusam",
@@ -6995,7 +7013,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"apathy"
-		]
+		],
+		"categories": ["emotion"]
 	},
 	{
 		"title": "pankudoz",
@@ -7003,7 +7022,8 @@
 		"cat": "v.",
 		"defList": [
 			"be apathetic"
-		]
+		],
+		"categories": ["emotion"]
 	},
 	{
 		"title": "pankum",
@@ -7011,7 +7031,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"happiness, joy"
-		]
+		],
+		"categories": ["emotion"]
 	},
 	{
 		"title": "pankuz",
@@ -7019,7 +7040,8 @@
 		"cat": "v.",
 		"defList": [
 			"be happy"
-		]
+		],
+		"categories": ["emotion"]
 	},
 	{
 		"title": "param",
@@ -7963,6 +7985,16 @@
 		"categories": ["sex"]
 	},
 	{
+		"title": "sparm",
+		"etym": "C/sparu/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"simplicity",
+			"(mathematics) prime number"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "spart",
 		"etym": "L/PRE/aspar",
 		"cat": "n., 3rd",
@@ -7975,7 +8007,7 @@
 		"etym": "C/spart/-u",
 		"cat": "adj.",
 		"defList": [
-			"basic"
+			"basic, simple"
 		]
 	},
 	{
@@ -8749,12 +8781,30 @@
 		]
 	},
 	{
+		"title": "trim",
+		"etym": "C/triz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"sadness"
+		],
+		"categories": ["emotion"]
+	},
+	{
 		"title": "tritaiz",
 		"etym": "L/PEN/*tritais/fall",
 		"cat": "v.",
 		"defList": [
 			"fall"
 		]
+	},
+	{
+		"title": "triz",
+		"etym": "L/PEN/*tris/be sad",
+		"cat": "v.",
+		"defList": [
+			"be sad"
+		],
+		"categories": ["emotion"]
 	},
 	{
 		"title": "tu",
