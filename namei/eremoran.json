@@ -1233,7 +1233,7 @@
 		"defList": [
 			"be emotionally moved"
 		],
-		"categories": ["experiential"]
+		"categories": ["emotion", "experiential"]
 	},
 	{
 		"title": "bant",
@@ -1874,6 +1874,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "bonam",
+		"etym": "C/bonz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"interest"
+		],
+		"categories": ["emotion"]
+	},
+	{
 		"title": "bonrôm",
 		"etym": "C/bonrôz/-m",
 		"cat": "n., 5th",
@@ -1896,8 +1905,10 @@
 		"cat": "v.",
 		"defList": [
 			"poke",
-			"stab"
-		]
+			"stab",
+			"interest"
+		],
+		"categories": ["emotion"]
 	},
 	{
 		"title": "bornat",
@@ -6396,6 +6407,15 @@
 		"categories": ["toponym"]
 	},
 	{
+		"title": "nam",
+		"etym": "C/naz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"shame"
+		],
+		"categories": ["emotion"]
+	},
+	{
 		"title": "namz",
 		"etym": "L/PEN/*nams/eat",
 		"cat": "v.",
@@ -6544,6 +6564,15 @@
 			"hear, listen (to)"
 		],
 		"categories": ["experiential"]
+	},
+	{
+		"title": "naz",
+		"etym": "L/PEN/*nas/be ashamed",
+		"cat": "v.",
+		"defList": [
+			"be ashamed"
+		],
+		"categories": ["emotion"]
 	},
 	{
 		"title": "ne",
@@ -6783,6 +6812,25 @@
 			"(chess) bishop"
 		],
 		"categories": ["chess", "person"]
+	},
+	{
+		"title": "numsudôm",
+		"etym": "C/numsudôz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"emotion"
+		],
+		"categories": ["emotion"]
+	},
+	{
+		"title": "numsudôz",
+		"etym": "L/PEN/*nums/run",
+		"cat": "v.",
+		"defList": [
+			"drive",
+			"upset (ie. cause a negative emotion)"
+		],
+		"categories": ["emotion"]
 	},
 	{
 		"title": "numz",
@@ -7580,7 +7628,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"awe, fear, shock"
-		]
+		],
+		"categories": ["emotion"]
 	},
 	{
 		"title": "sazaz",
@@ -7590,7 +7639,7 @@
 			"fear"
 		],
 		"notes": "Note: with causative, means \"scare\".",
-		"categories": ["experiential"]
+		"categories": ["emotion", "experiential"]
 	},
 	{
 		"title": "se",
