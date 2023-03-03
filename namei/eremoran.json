@@ -1279,6 +1279,15 @@
 		]
 	},
 	{
+		"title": "bartka",
+		"etym": "L/POL/vartka/chicory",
+		"cat": "n., 4th",
+		"defList": [
+			"chicory"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "baruz",
 		"etym": "L/PEN/*baxerus/sort",
 		"cat": "v.",
@@ -4217,6 +4226,14 @@
 			"rye"
 		],
 		"categories": ["plant"]
+	},
+	{
+		"title": "kabasa",
+		"etym": "L/POL/kvas/cheese",
+		"cat": "n., 4th",
+		"defList": [
+			"cheese"
+		]
 	},
 	{
 		"title": "kad",
@@ -7899,6 +7916,14 @@
 		"notes": "In Eremoran times, these two roles are functioned by the same person"
 	},
 	{
+		"title": "sisima",
+		"etym": "C/sisi/ma",
+		"cat": "n., 4th",
+		"defList": [
+			"constellation"
+		]
+	},
+	{
 		"title": "siu",
 		"etym": "C/siz/-u",
 		"cat": "adj.",
@@ -8987,6 +9012,15 @@
 		"categories": ["language"]
 	},
 	{
+		"title": "turpat",
+		"etym": "L/POL/turps/wine",
+		"cat": "n., 4th",
+		"defList": [
+			"Poltas wine (white)"
+		],
+		"categories": ["drink"]
+	},
+	{
 		"title": "tutukumkimôm",
 		"etym": "C/tutut/kumkimôm",
 		"cat": "n., 5th",
@@ -9496,6 +9530,15 @@
 		],
 		"notes": "possibly related to zurku",
 		"categories": ["female given name", "god"]
+	},
+	{
+		"title": "zirta",
+		"etym": "L/POL/zirte/parsnip",
+		"cat": "n., 4th",
+		"defList": [
+			"parsnip"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "zurkrôz",
