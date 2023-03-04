@@ -1336,6 +1336,14 @@
 		"categories": ["fruit", "plant"]
 	},
 	{
+		"title": "batlam",
+		"etym": "L/PEN/*batlam/honor",
+		"cat": "n., 5th",
+		"defList": [
+			"honor"
+		]
+	},
+	{
 		"title": "batlim",
 		"etym": "B/bat/balim",
 		"cat": "n., 5th",
@@ -5038,6 +5046,22 @@
 		"cat": "v.",
 		"defList": [
 			"gather"
+		]
+	},
+	{
+		"title": "kubatalk",
+		"etym": "B/kubatlam/-ulk",
+		"cat": "adv.",
+		"defList": [
+			"honorably"
+		]
+	},
+	{
+		"title": "kubatlam",
+		"etym": "C/ku/batlam",
+		"cat": "n., 5th",
+		"defList": [
+			"honorable action"
 		]
 	},
 	{
@@ -9168,6 +9192,22 @@
 		"cat": "post.",
 		"defList": [
 			"without"
+		]
+	},
+	{
+		"title": "ukubatalk",
+		"etym": "B/ukubatlam/-ulk",
+		"cat": "adv.",
+		"defList": [
+			"dishonorably"
+		]
+	},
+	{
+		"title": "ukubatlam",
+		"etym": "C/uku/batlam",
+		"cat": "adv.",
+		"defList": [
+			"dishonorable action"
 		]
 	},
 	{
