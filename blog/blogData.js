@@ -602,7 +602,21 @@ const blogData = [
 	This means each year has 354, 355, 384, or 385 days in a cycle repeating only every 19 years,
 	with a cycle totalling 6940 days.
 	I suppose to make it more precise, the leap day could have similar rules
-	to how the gregorian calendar doesn't have leap years when the year mod 400 is 100, 200, or 300,
-	but might be overkill since we're trying to align to both the sideral year <em>and</em> the lunar synodic period.
+	to how the gregorian calendar doesn't have leap years when the year mod 400 is 100, 200, or 300.
+	If so, our target would be to have an accuracy similar to the Gregorian calendar - an error of about one day per 3030 years.
+	Since 19 tropical years is 6939.602 days,
+	and since 235 synodic months is 6939.689 days,
+	perhaps we could split the difference and say we're targetting about ~6939.6455.
+	Well, that's pretty close to 6939.6r,
+	so perhaps we can say that in the first 19-year cycle of three, the leap day is ignored.
+	That would mean, in the same 3030-year period,
+	this calendar would lose about 10.3 days wrt. the tropical year,
+	and an error of about 3.6 days wrt. the synodic month.
+	This is a bit more than I'd like,
+	but we have to remember that no matter what we set the average cycle length to,
+	the total error between the two is going to add to about 13.9 days.
+	We could say "use 5 out of 8 cycles" (the next best), or 7 out of 11 cycles,
+	9 out of 14, etc., but ultimately the error for one of them will be at least 7 days when rounded.
+	Therefore, using the three-cycle rule seems sufficient - certainly better than a 63 day error without!
 	`,
 ];
