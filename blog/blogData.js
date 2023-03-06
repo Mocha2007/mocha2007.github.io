@@ -602,7 +602,7 @@ const blogData = [
 	This means each year has 354, 355, 384, or 385 days in a cycle repeating only every 19 years,
 	with a cycle totalling 6940 days.
 	I suppose to make it more precise, the leap day could have similar rules
-	to how the gregorian calendar doesn't have leap years when the year mod 400 is 100, 200, or 300.
+	to how the Gregorian calendar doesn't have leap years when the year mod 400 is 100, 200, or 300.
 	If so, our target would be to have an accuracy similar to the Gregorian calendar - an error of about one day per 3030 years.
 	Since 19 tropical years is 6939.602 days,
 	and since 235 synodic months is 6939.689 days,
