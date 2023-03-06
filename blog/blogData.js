@@ -582,4 +582,27 @@ const blogData = [
 	<br><br>
 	Minor modifications of this also lead to rules with many cycles.
 	`,
+	`
+	@title C# Binge
+	@date 1678111176704
+	@p
+	@tags dev c#
+	Over the weekend I wrote a quick unit conversion utility in C#,
+	and also created a calendar system based on the Metonic cycle with an application to convert
+	between that system and the Gregorian calendar.
+	@p
+	@tags calendar
+	The system is as follows:
+	<ul>
+		<li>Normal years have twelve months of 29 or 30 days.</li>
+		<li>Even-indexed months (starting with 0) have 30 days, while odd-indexed months have 29.</li>
+		<li>If the year mod 19 mod 4 is 0, the second month (index 1) has a leap day, totalling 30 days instead of 29.</li>
+		<li>If the year mod 19 mod 3 is 0, there is a leap month at the end of the year.</li>
+	</ul>
+	This means each year has 354, 355, 384, or 385 days in a cycle repeating only every 19 years,
+	with a cycle totalling 6940 days.
+	I suppose to make it more precise, the leap day could have similar rules
+	to how the gregorian calendar doesn't have leap years when the year mod 400 is 100, 200, or 300,
+	but might be overkill since we're trying to align to both the sideral year <em>and</em> the lunar synodic period.
+	`,
 ];
