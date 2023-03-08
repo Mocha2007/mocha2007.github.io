@@ -537,6 +537,14 @@
 		"notes": "See <a href='#lemma-bo'>bo</a> for the standard instrumental"
 	},
 	{
+		"title": "akranu",
+		"etym": "L/PEN/*egranu/stream",
+		"cat": "post.",
+		"defList": [
+			"stream, brook, creek"
+		]
+	},
+	{
 		"title": "ala",
 		"etym": "L/PEN/*ala/oak",
 		"cat": "n., 4th",
@@ -890,6 +898,15 @@
 		"defList": [
 			"standing; status"
 		]
+	},
+	{
+		"title": "arrilm",
+		"etym": "C/arz/rilm",
+		"cat": "n., 5th",
+		"defList": [
+			"noon"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "arrôr",
@@ -2517,6 +2534,23 @@
 		"notes": "In the sense of \"mean\", what is the direct object in English would be construed with lative <i>ad</i> \"to\"."
 	},
 	{
+		"title": "dinsukam",
+		"etym": "C/dinsukaz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"defecation, shit"
+		],
+		"categories": ["body part"]
+	},
+	{
+		"title": "dinsukaz",
+		"etym": "C/din/sukaz",
+		"cat": "v.",
+		"defList": [
+			"defecate, shit"
+		]
+	},
+	{
 		"title": "dintukubaim",
 		"etym": "C/dintukuz/baim",
 		"cat": "n., 5th",
@@ -2599,6 +2633,15 @@
 			"enter",
 			"begin"
 		]
+	},
+	{
+		"title": "dôam",
+		"etym": "L/PEN/*dôxem/evening",
+		"cat": "n., 5th",
+		"defList": [
+			"evening"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "dôdaêt",
@@ -3832,6 +3875,14 @@
 		"cat": "adv.",
 		"defList": [
 			"how"
+		]
+	},
+	{
+		"title": "hu",
+		"etym": "L/PEN/*ɸiu/air",
+		"cat": "n., 4th",
+		"defList": [
+			"air"
 		]
 	},
 	{
@@ -5422,6 +5473,14 @@
 		"categories": ["female given name"]
 	},
 	{
+		"title": "labafi",
+		"etym": "L/PEN/*labaɸi/island",
+		"cat": "post.",
+		"defList": [
+			"island"
+		]
+	},
+	{
 		"title": "labnit",
 		"img": "../img/eremoran/labnit.png",
 		"etym": "L/PEN/*labnit/brick",
@@ -6351,6 +6410,14 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"raft"
+		]
+	},
+	{
+		"title": "muna",
+		"etym": "L/PEN/*muna/source",
+		"cat": "n., 4th",
+		"defList": [
+			"source, spring, well"
 		]
 	},
 	{
@@ -7634,6 +7701,15 @@
 		]
 	},
 	{
+		"title": "sarz",
+		"etym": "B/saurz/arz",
+		"cat": "v.",
+		"defList": [
+			"appear, seem"
+		],
+		"categories": ["experiential"]
+	},
+	{
 		"title": "saur",
 		"etym": "L/PRE/Sāyū//L/VAZ/Sagub/beloved",
 		"cat": "n., 1st",
@@ -8459,6 +8535,15 @@
 		"defList": [
 			"sleep"
 		]
+	},
+	{
+		"title": "tanarrilm",
+		"etym": "C/tan/arrilm",
+		"cat": "n., 5th",
+		"defList": [
+			"afternoon"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "tanasêr",

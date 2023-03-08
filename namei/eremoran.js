@@ -805,12 +805,12 @@ const gen = {
 				this.updateCombos();
 			},
 			// todo: city/fort clearing
-			either: ['bemmu', 'iklu', 'len', 'mura', 'nô', 'nul'],
+			either: ['akranu', 'bemmu', 'iklu', 'len', 'muna', 'mura', 'nô', 'nul'],
 			first_: ['ke', 'end', 'ere', 'hai', 'huk', 'kan', 'kokin', 'ku', 'kure', 'lak', 'lib', 'muk', 'n', 'nas', 'sed', 'si', 'tar', 'tas'],
 			get first(){
 				return union(this.either, this.first_);
 			},
-			last_: ['alika', 'ammut', 'da', 'damu', 'kokint', 'lira', 'mam', 'mamat', 'mor', 'saurom', 'seda', 'sedat'],
+			last_: ['alika', 'ammut', 'da', 'damu', 'kokint', 'labafi', 'lira', 'mam', 'mamat', 'mor', 'saurom', 'seda', 'sedat'],
 			get last(){
 				return union(this.either, this.last_);
 			},
