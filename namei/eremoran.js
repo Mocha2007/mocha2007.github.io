@@ -1109,7 +1109,7 @@ const dialectMap = {
 /** this function is used to run generate statistics DEPENDENT ON the dictionary already existing */
 function computeStats(){
 	// print dict length (for comparison, Verdurian has 6,757)
-	document.getElementById('wordcount').innerHTML = elements.dict.length;
+	document.getElementById('wordcount').innerHTML = commaNumber(elements.dict.length);
 	// new graphs
 	// const chartURL = 'https://mocha2007.github.io/tools/chart.svg?data=';
 	const chartURL = '../tools/chart.svg?data=';

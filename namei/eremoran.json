@@ -1866,7 +1866,7 @@
 	},
 	{
 		"title": "bodôbêkum",
-		"etym": "C/bodô/bêmkum",
+		"etym": "C/bodô/bêkum",
 		"cat": "n., 5th",
 		"defList": [
 			"intercalary day"
@@ -9551,28 +9551,11 @@
 		]
 	},
 	{
-		"title": "urm",
-		"etym": "C/urz/-m",
-		"cat": "v.",
-		"defList": [
-			"time, occasion (instance of time - cf. fr. <em>fois</em>)"
-		],
-		"categories": ["time"]
-	},
-	{
 		"title": "ur",
 		"etym": "L/PEN/*ur/so",
 		"cat": "adv.",
 		"defList": [
 			"therefore, thus, so, for this/that reason"
-		]
-	},
-	{
-		"title": "urz",
-		"etym": "L/PEN/*urs/fold",
-		"cat": "v.",
-		"defList": [
-			"(intransitive) fold"
 		]
 	},
 	{
@@ -9630,11 +9613,28 @@
 		]
 	},
 	{
+		"title": "urm",
+		"etym": "C/urz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"time, occasion (instance of time - cf. fr. <em>fois</em>)"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "urmam",
 		"etym": "L/PEN/*urmam/joke",
 		"cat": "n., 5th",
 		"defList": [
 			"joke"
+		]
+	},
+	{
+		"title": "urz",
+		"etym": "L/PEN/*urs/fold",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) fold"
 		]
 	},
 	{
