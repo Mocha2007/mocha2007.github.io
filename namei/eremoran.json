@@ -8,6 +8,15 @@
 		]
 	},
 	{
+		"title": "-idint",
+		"etym": "C/-idinu/-t",
+		"cat": "aff.",
+		"defList": [
+			"plant extract, sauce, oil (suffix denoting a substance derived from a plant)"
+		],
+		"notes": "has the alternate form -dint after a vowel"
+	},
+	{
 		"title": "-idinu",
 		"etym": "C/din/-u",
 		"cat": "aff.",
@@ -4353,6 +4362,15 @@
 		]
 	},
 	{
+		"title": "kaik",
+		"etym": "L/PEN/*gaix/moth",
+		"cat": "n., 2nd",
+		"defList": [
+			"moth"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "kakram",
 		"etym": "C/kam/kram",
 		"cat": "n., 5th",
@@ -5138,6 +5156,23 @@
 		"notes": "formed by ku/uku analogy with ukubbaz; as if it were formed uku + *bbaz"
 	},
 	{
+		"title": "kubeu",
+		"etym": "C/ku/beu",
+		"cat": "n., 4th",
+		"defList": [
+			"soybean"
+		],
+		"categories": ["plant"]
+	},
+	{
+		"title": "kubeudint",
+		"etym": "C/kubeu/-dint",
+		"cat": "n., 3rd",
+		"defList": [
+			"soy sauce"
+		]
+	},
+	{
 		"title": "kubôz",
 		"etym": "C/ku/bôz",
 		"cat": "v.",
@@ -5500,8 +5535,8 @@
 		"categories": ["fruit", "plant"]
 	},
 	{
-		"title": "laibôst",
-		"etym": "C/laibô/-isu",
+		"title": "laibôdint",
+		"etym": "C/laibô/-idint",
 		"cat": "n., 3rd",
 		"defList": [
 			"olive oil",
@@ -9664,6 +9699,15 @@
 			"parsnip"
 		],
 		"categories": ["plant"]
+	},
+	{
+		"title": "zulunk",
+		"etym": "L/PEN/*asulunx/silkworm",
+		"cat": "n., 2nd",
+		"defList": [
+			"silkworm"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "zurkrôz",
