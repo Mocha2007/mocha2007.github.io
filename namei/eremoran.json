@@ -4597,7 +4597,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"soy sauce"
-		]
+		],
+		"categories": ["soy"]
 	},
 	{
 		"title": "kebat",
@@ -4605,7 +4606,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"fermented soybeans, natt&omacr;"
-		]
+		],
+		"categories": ["soy"]
 	},
 	{
 		"title": "kebibit",
@@ -4614,7 +4616,7 @@
 		"defList": [
 			"alcoholic beverage made from soybeans"
 		],
-		"categories": ["drink"]
+		"categories": ["drink", "soy"]
 	},
 	{
 		"title": "kek",
@@ -5187,7 +5189,7 @@
 		"defList": [
 			"soybean"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "soy"]
 	},
 	{
 		"title": "kubeudint",
@@ -5195,7 +5197,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"soybean oil"
-		]
+		],
+		"categories": ["soy"]
 	},
 	{
 		"title": "kubôz",
@@ -5212,7 +5215,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"tofu"
-		]
+		],
+		"categories": ["soy"]
 	},
 	{
 		"title": "kubrerut",
@@ -5221,7 +5225,7 @@
 		"defList": [
 			"soymilk"
 		],
-		"categories": ["drink"]
+		"categories": ["drink", "soy"]
 	},
 	{
 		"title": "kudam",
