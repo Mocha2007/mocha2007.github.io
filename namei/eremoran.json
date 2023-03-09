@@ -4203,7 +4203,7 @@
 		"etym": "L/PEN/*irers/boil",
 		"cat": "v.",
 		"defList": [
-			"cook food/drink by boiling"
+			"(of food/drink) cook by boiling"
 		],
 		"notes": "used of the final product, NOT ingredients - cf. en. <em>brew</em> - used esp. of tea"
 	},
@@ -4593,7 +4593,7 @@
 	},
 	{
 		"title": "kebadint",
-		"etym": "C/kebat/-dint",
+		"etym": "C/kebat/-idint",
 		"cat": "n., 3rd",
 		"defList": [
 			"soy sauce"
@@ -5193,7 +5193,7 @@
 	},
 	{
 		"title": "kubeudint",
-		"etym": "C/kubeu/-dint",
+		"etym": "C/kubeu/-idint",
 		"cat": "n., 3rd",
 		"defList": [
 			"soybean oil"
