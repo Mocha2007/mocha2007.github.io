@@ -1487,6 +1487,15 @@
 		]
 	},
 	{
+		"title": "bêkum",
+		"etym": "C/bêm/kum",
+		"cat": "n., 5th",
+		"defList": [
+			"calendar"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "belaêr",
 		"etym": "B/bazêr/elaêr",
 		"cat": "n., 1st",
@@ -1502,7 +1511,8 @@
 			"period, interval",
 			"duration",
 			"era, age",
-			"cycle"
+			"cycle",
+			"week (a period of six sols, four of which comprise one month)"
 		],
 		"categories": ["time"]
 	},
@@ -1855,6 +1865,15 @@
 		]
 	},
 	{
+		"title": "bodôbêkum",
+		"etym": "C/bodô/bêmkum",
+		"cat": "n., 5th",
+		"defList": [
+			"intercalary day"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "bodôt",
 		"etym": "L/PEN/*bo-dô-t/gift",
 		"cat": "n., 3rd",
@@ -2185,7 +2204,7 @@
 		"etym": "L/PEN/*daktarm/time",
 		"cat": "n., 5th",
 		"defList": [
-			"time"
+			"time (in general, like 'time and space', cf. fr. <em>temps</em>)"
 		],
 		"categories": ["time"]
 	},
@@ -6827,6 +6846,15 @@
 		"categories": ["female given name"]
 	},
 	{
+		"title": "neurm",
+		"etym": "C/nem/urm",
+		"cat": "n., 5th",
+		"defList": [
+			"season (one third of the year = 24 sols)"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "nikiniki",
 		"etym": "L/PEN/*niki-niki/liver",
 		"cat": "n., 4th",
@@ -9523,11 +9551,28 @@
 		]
 	},
 	{
+		"title": "urm",
+		"etym": "C/urz/-m",
+		"cat": "v.",
+		"defList": [
+			"time, occasion (instance of time - cf. fr. <em>fois</em>)"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "ur",
 		"etym": "L/PEN/*ur/so",
 		"cat": "adv.",
 		"defList": [
 			"therefore, thus, so, for this/that reason"
+		]
+	},
+	{
+		"title": "urz",
+		"etym": "L/PEN/*urs/fold",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) fold"
 		]
 	},
 	{
