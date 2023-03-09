@@ -4592,6 +4592,31 @@
 		"notes": "Always comes directly after the word modified."
 	},
 	{
+		"title": "kebadint",
+		"etym": "C/kebat/-dint",
+		"cat": "n., 3rd",
+		"defList": [
+			"soy sauce"
+		]
+	},
+	{
+		"title": "kebat",
+		"etym": "B/kubeu/ebaz",
+		"cat": "n., 3rd",
+		"defList": [
+			"fermented soybeans, natt&omacr;"
+		]
+	},
+	{
+		"title": "kebibit",
+		"etym": "B/kebat/bibit",
+		"cat": "n., 3rd",
+		"defList": [
+			"alcoholic beverage made from soybeans"
+		],
+		"categories": ["drink"]
+	},
+	{
 		"title": "kek",
 		"etym": "L/PEN/*kek-x/god",
 		"cat": "n., 2nd",
@@ -5169,7 +5194,7 @@
 		"etym": "C/kubeu/-dint",
 		"cat": "n., 3rd",
 		"defList": [
-			"soy sauce"
+			"soybean oil"
 		]
 	},
 	{
@@ -5180,6 +5205,23 @@
 			"carry, bear",
 			"bring"
 		]
+	},
+	{
+		"title": "kubrasat",
+		"etym": "B/kubrerut/kabasa",
+		"cat": "n., 3rd",
+		"defList": [
+			"tofu"
+		]
+	},
+	{
+		"title": "kubrerut",
+		"etym": "B/kubeu/irerz",
+		"cat": "n., 3rd",
+		"defList": [
+			"soymilk"
+		],
+		"categories": ["drink"]
 	},
 	{
 		"title": "kudam",
