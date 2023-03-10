@@ -67,6 +67,11 @@ a[href^="https://en.wiki"] {
 	padding-right: 20px;
 	white-space: nowrap;
 }
+a[href^="https://en.wikt"] {
+	background: transparent url('img/wt.png') no-repeat right center;
+	padding-right: 20px;
+	white-space: nowrap;
+}
 /* classes */
 .also, .note{
 	/* see also: this

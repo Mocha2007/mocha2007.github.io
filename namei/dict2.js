@@ -289,6 +289,6 @@ function defFormat(def){
 	// templates
 	// eg. {{wt|la|-eus}}
 	[...def.matchAll(/{{wt\|(\w+?)\|([^}]+?)}}/g)]
-		.forEach(m => def = def.replace(m[0], `<cite>${m[1]}. <a href="https://en.wiktionary.org/wiki/${m[2]}>${m[2]}</a></cite>`));
+		.forEach(m => def = def.replace(m[0], `<cite>${m[1]}. <a href="https://en.wiktionary.org/wiki/${m[2]}">${m[2]}</a></cite>`));
 	return def;
 }
