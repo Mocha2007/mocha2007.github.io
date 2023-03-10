@@ -69,7 +69,7 @@ function printDict(){
 				return;
 			}
 			const d = document.createElement('li');
-			d.innerHTML = def;
+			d.innerHTML = defFormat(def);
 			deflist.appendChild(d);
 		});
 		// notes
@@ -279,4 +279,22 @@ function loanElem(id, word, gloss = ''){
  */
 function isAnagram(a, b){
 	return Array.from(a).sort().join('') === Array.from(b).sort().join('');
+}
+
+/** @param {string} def */
+function defFormat(def){
+	// bold
+	[...def.matchAll(/'''([^']+?)'''/g)]
+		.forEach(m => def = def.replace(m[0], `<strong>${m[1]}</strong>`));
+	// italics
+	[...def.matchAll(/''([^']+?)''/g)]
+		.forEach(m => def = def.replace(m[0], `<em>${m[1]}</em>`));
+	// links
+	[...def.matchAll(/\[\[([^\]]+?)\]\]/g)]
+		.forEach(m => def = def.replace(m[0], linkCard(m[1]).innerHTML));
+	// templates
+	// eg. {{wt|la|-eus}}
+	[...def.matchAll(/{{wt\|(\w+?)\|([^}]+?)}}/g)]
+		.forEach(m => def = def.replace(m[0], `<cite>${m[1]}. <a href="https://en.wiktionary.org/wiki/${m[2]}>${m[2]}</a></cite>`));
+	return def;
 }
