@@ -105,9 +105,9 @@
 		"pron": 0,
 		"defList": [
 			"(verb suffix)",
-			"turns a time noun (eg. <em>dam</em> morning) into a habitual time adverb (eg. <em>daz</em> every morning)",
-			"turns a direction adjective into an adverb, (eg. <em>keu</em> 'east' &rarr; <em>kez</em> 'eastward'",
-			"turns an ordinal numeral into an adverbial numeral, (eg. <em>nasu</em> 'two' &rarr; <em>nasuz</em> 'twice'"
+			"turns a time noun (eg. ''dam'' morning) into a habitual time adverb (eg. ''daz'' every morning)",
+			"turns a direction adjective into an adverb, (eg. ''keu'' 'east' &rarr; ''kez'' 'eastward'",
+			"turns an ordinal numeral into an adverbial numeral, (eg. ''nasu'' 'two' &rarr; ''nasuz'' 'twice'"
 		]
 	},
 	{
@@ -298,17 +298,17 @@
 		"etym": "L/PEN/*xêd/to",
 		"cat": "post./prep., adv.",
 		"defList": [
-			"(<i>prep.</i>) to, towards (in both the dative and lative senses)",
-			"(<i>prep.</i>) for",
-			"(<i>prep.</i>) into, onto",
-			"(<i>prep.</i>) until, up to",
-			"(<i>prep.</i>) in comparison to, relative to",
-			"(<i>prep., archaic or ZE dialect</i>) than",
-			"(<i>post.</i>) at, by",
-			"(<i>post.</i>) during, while",
-			"(<i>post., inanimate only</i>) have: X Y ad = Y has X",
-			"(<i>ambipositional, math</i>) plus",
-			"(<i>adverb</i>) about to, going to, (forms near future aspect)"
+			"(''prep.'') to, towards (in both the dative and lative senses)",
+			"(''prep.'') for",
+			"(''prep.'') into, onto",
+			"(''prep.'') until, up to",
+			"(''prep.'') in comparison to, relative to",
+			"(''prep., archaic or ZE dialect'') than",
+			"(''post.'') at, by",
+			"(''post.'') during, while",
+			"(''post., inanimate only'') have: X Y ad = Y has X",
+			"(''ambipositional, math'') plus",
+			"(''adverb'') about to, going to, (forms near future aspect)"
 		]
 	},
 	{
@@ -373,7 +373,7 @@
 			"(labile) be recognized (by)",
 			"(labile) be learned (by)"
 		],
-		"notes": "Unlike English, this is not used with subordinate clauses, including reporting knowledge of experiences - evidentials are used for that instead. In addition, <em>bakaz</em> is telic and dynamic, while <em>afêkz</em> is atelic and stative.",
+		"notes": "Unlike English, this is not used with subordinate clauses, including reporting knowledge of experiences - evidentials are used for that instead. In addition, ''bakaz'' is telic and dynamic, while ''afêkz'' is atelic and stative.",
 		"categories": ["experiential"]
 	},
 	{
@@ -543,7 +543,7 @@
 		"defList": [
 			"(dialectal) with, using (instrumental)"
 		],
-		"notes": "See <a href='#lemma-bo'>bo</a> for the standard instrumental"
+		"notes": "See [[bo]] for the standard instrumental"
 	},
 	{
 		"title": "akranu",
@@ -924,7 +924,7 @@
 		"defList": [
 			"male given name"
 		],
-		"notes": "PEN is a nominalization of <i>*xêrrôs</i> from <i>*xêd</i> 'to' + <i>*rôs</i> 'speak'; Related to Numoran <i>Xerror</i>",
+		"notes": "PEN is a nominalization of ''*xêrrôs'' from ''*xêd'' 'to' + ''*rôs'' 'speak'; Related to Numoran ''Xerror''",
 		"categories": ["male given name"]
 	},
 	{
@@ -994,7 +994,7 @@
 			"(southern, of a non-person) pretty, beautiful",
 			"(northern, of anything) pretty, beautiful"
 		],
-		"notes": "Cf. <span class='eremoran'>uzurkelau</span>."
+		"notes": "Cf. [[uzurkelau]]."
 	},
 	{
 		"title": "asuz",
@@ -1175,7 +1175,7 @@
 			"(labile) be understood (by)",
 			"(labile) be taught (by)"
 		],
-		"notes": "Unlike English, this is not used with subordinate clauses, including reporting knowledge of experiences - evidentials are used for that instead. cf. <em>bakaz</em>, a similar meaning with opposite transitivity. In addition, <em>bakaz</em> is telic and dynamic, while <em>afêkz</em> is atelic and stative.",
+		"notes": "Unlike English, this is not used with subordinate clauses, including reporting knowledge of experiences - evidentials are used for that instead. cf. ''bakaz'', a similar meaning with opposite transitivity. In addition, ''bakaz'' is telic and dynamic, while ''afêkz'' is atelic and stative.",
 		"categories": ["experiential"]
 	},
 	{
@@ -1439,7 +1439,7 @@
 		"defList": [
 			"Važcud (the people and country, but not the language)"
 		],
-		"notes": "A popular folk etymology derives this word from <em>bazêr</em> 'leader' + <em>tum</em> 'sky' - 'sky leader' - and this belief is reinforced by the ancient claim that the royalty descends from planet Don, where they were exiled after a power struggle. This leads to occasional hypercorrection to <em>*Bazêtur</em>.",
+		"notes": "A popular folk etymology derives this word from ''bazêr'' 'leader' + ''tum'' 'sky' - 'sky leader' - and this belief is reinforced by the ancient claim that the royalty descends from planet Don, where they were exiled after a power struggle. This leads to occasional hypercorrection to ''*Bazêtur''.",
 		"categories": ["toponym"]
 	},
 	{
@@ -1450,7 +1450,7 @@
 			"or, either",
 			"(informal) [polar question particle]"
 		],
-		"notes": "see <em>id</em> and <em>nanau</em> for ors linking nominals"
+		"notes": "see ''id'' and ''nanau'' for ors linking nominals"
 	},
 	{
 		"title": "bebekat",
@@ -1633,8 +1633,8 @@
 		"etym": "R/biz",
 		"cat": "v.",
 		"defList": [
-			"(<i>of poisoned food</i>) eat",
-			"(<i>of alcoholic or poisoned beverages</i>) drink"
+			"(''of poisoned food'') eat",
+			"(''of alcoholic or poisoned beverages'') drink"
 		],
 		"categories": ["drink"]
 	},
@@ -1836,7 +1836,7 @@
 		"defList": [
 			"with (instrumental)"
 		],
-		"notes": "see <i>ku</i> for the comitative"
+		"notes": "see ''ku'' for the comitative"
 	},
 	{
 		"title": "bo",
@@ -1915,7 +1915,7 @@
 			"much, many, a large quantity <ul><li class=\"eremoran\"><ruby class=\"eremoranWord\">mor<rt>MOR</rt></ruby><span> </span><ruby class=\"eremoranWord\">i<rt>I</rt></ruby><span> </span><ruby class=\"eremoranWord\">bokusam<rt>BOKUSAM</rt></ruby></li> <li>There are many people.</li> </ul>",
 			"(id +) most (pronoun)"
 		],
-		"notes": "cf. <em>udou</em>, the adjective form, and <em>pukusam</em>, the opposite form"
+		"notes": "cf. ''udou'', the adjective form, and ''pukusam'', the opposite form"
 	},
 	{
 		"title": "bolent",
@@ -2015,7 +2015,7 @@
 		"defList": [
 			"sea"
 		],
-		"notes": "Synonym: <i>dirabeka</i>"
+		"notes": "Synonym: ''dirabeka''"
 	},
 	{
 		"title": "brekink",
@@ -2124,7 +2124,7 @@
 			"owned dog (specifically, one that is not feral or stray)",
 			"(archaic) any dog, feral or stray"
 		],
-		"notes": "Feral/stray dogs are called <em>lusik</em> 'wolf'",
+		"notes": "Feral/stray dogs are called ''lusik'' 'wolf'",
 		"categories": ["animal"]
 	},
 	{
@@ -2157,7 +2157,7 @@
 			"Oneia",
 			"(esp. in compounds) sienna"
 		],
-		"notes": "This does not translate country or nation in all English uses. When referring to an ethnos, use <i>mor</i> instead.",
+		"notes": "This does not translate country or nation in all English uses. When referring to an ethnos, use ''mor'' instead.",
 		"categories": ["astronomy"]
 	},
 	{
@@ -2204,7 +2204,7 @@
 		"etym": "L/PEN/*daktarm/time",
 		"cat": "n., 5th",
 		"defList": [
-			"time (in general, like 'time and space', cf. fr. <em>temps</em>)"
+			"time (in general, like 'time and space', cf. fr. ''temps'')"
 		],
 		"categories": ["time"]
 	},
@@ -2402,7 +2402,7 @@
 		"defList": [
 			"(archaic, regional) [polite adjective]"
 		],
-		"notes": "Nowadays replaced by <em>ou</em>. Reanalyzed as a preposition in most dialects, including the standard."
+		"notes": "Nowadays replaced by ''ou''. Reanalyzed as a preposition in most dialects, including the standard."
 	},
 	{
 		"title": "did",
@@ -2475,14 +2475,14 @@
 			"beyond",
 			"because of",
 			"(archaic) in a ~ way, ~-wise",
-			"(<i>locational only</i>) (be) away from",
-			"(<i>math</i>) minus",
+			"(''locational only'') (be) away from",
+			"(''math'') minus",
 			"~ give/take*: X i Y ad Z din = Z gives X to Y",
-			"(informal, <i>ardo i +</i>) ~ (romantic) love*: Y ad Z din = Y loves Z",
-			"(verb +) just (recent past - cf. fr. <em>venir de</em>)",
+			"(informal, ''ardo i +'') ~ (romantic) love*: Y ad Z din = Y loves Z",
+			"(verb +) just (recent past - cf. fr. ''venir de'')",
 			"(prefix) dis-, un- (verbal prefix showing undoing/removal of a state)"
 		],
-		"notes": "Note: * - There are many possible arrangements of this phrase. To emphasize the recipient, <i>ad</i> may even be replaced by <i>dir</i>. The most neutral phrasing is shown. ZE dialects use this prepositionally for translative senses."
+		"notes": "Note: * - There are many possible arrangements of this phrase. To emphasize the recipient, ''ad'' may even be replaced by ''dir''. The most neutral phrasing is shown. ZE dialects use this prepositionally for translative senses."
 	},
 	{
 		"title": "dinbamz",
@@ -2559,7 +2559,7 @@
 			"announce; declare",
 			"(+ LAT) mean; intend"
 		],
-		"notes": "In the sense of \"mean\", what is the direct object in English would be construed with lative <i>ad</i> \"to\"."
+		"notes": "In the sense of \"mean\", what is the direct object in English would be construed with lative ''ad'' \"to\"."
 	},
 	{
 		"title": "dinsukam",
@@ -2621,7 +2621,7 @@
 		"defList": [
 			"(archaic) sea, ocean"
 		],
-		"notes": "Synonym: <i>breka</i>"
+		"notes": "Synonym: ''breka''"
 	},
 	{
 		"title": "dirak",
@@ -2729,7 +2729,7 @@
 		"defList": [
 			"come; arrive"
 		],
-		"notes": "Replaced the now-obsolete <em>kunz</em>."
+		"notes": "Replaced the now-obsolete ''kunz''."
 	},
 	{
 		"title": "dôm",
@@ -2838,7 +2838,7 @@
 			"few",
 			"less"
 		],
-		"notes": "cf. <em>pukusam</em>, the noun form"
+		"notes": "cf. ''pukusam'', the noun form"
 	},
 	{
 		"title": "drekut",
@@ -3122,7 +3122,7 @@
 			"color",
 			"twilight"
 		],
-		"notes": "Note: used with <i>tar</i> (tar seerem) and <i>muk</i> (muk seerem) for dawn and dusk, respectively."
+		"notes": "Note: used with ''tar'' (tar seerem) and ''muk'' (muk seerem) for dawn and dusk, respectively."
 	},
 	{
 		"title": "eremor",
@@ -3278,7 +3278,7 @@
 		"etym": "L/PEN/*ɸabis/live",
 		"cat": "v.",
 		"defList": [
-			"live (vivere, non habitare, quid est <em>~ dô momtantan</em>)"
+			"live (vivere, non habitare, quid est ''~ dô momtantan'')"
 		]
 	},
 	{
@@ -3510,10 +3510,10 @@
 		"cat": "pron., det.",
 		"defList": [
 			"all, every",
-			"and* <ul> <li>  <i>Rurauk su lusik su <b>dir hans</b> i uzurkuk.</i><br>  cat GEN dog GEN ABS all TOP good<br>  I like <b>both</b> cats <b>and</b> dogs. </li> </ul> "
+			"and* <ul> <li>  ''Rurauk su lusik su <b>dir hans</b> i uzurkuk.''<br>  cat GEN dog GEN ABS all TOP good<br>  I like <b>both</b> cats <b>and</b> dogs. </li> </ul> "
 		],
 		"pron": "hanz",
-		"notes": "Due to historical reasons, this word has an irregular spelling; *hanz would be expected. There also exist the rare conjunctions <em>unau</em> 'nor', <em>ufans</em> 'nand', and <em>unanau</em> 'xnor', generally only used in formal writing"
+		"notes": "Due to historical reasons, this word has an irregular spelling; *hanz would be expected. There also exist the rare conjunctions ''unau'' 'nor', ''ufans'' 'nand', and ''unanau'' 'xnor', generally only used in formal writing"
 	},
 	{
 		"title": "hanu",
@@ -3534,7 +3534,7 @@
 			"strength, power, might, influence",
 			"(+ ad) ready, prepared",
 			"(+ din) unready, unprepared, extemporaneous",
-			"(noun + su +) [used to indicate an outcome effected with the hands]; by hand, ahold <ul> <li>  <i>Sazam i afêst su <b>dir hanum</b> zestisudôz ômôrz.</i><br>  awe TOP shortsword GEN ABS hold bent-CAUS EXP.PL<br>  We were amazed to see him bend the shortsword <b>by hand</b>. </li> </ul> "
+			"(noun + su +) [used to indicate an outcome effected with the hands]; by hand, ahold <ul> <li>  ''Sazam i afêst su <b>dir hanum</b> zestisudôz ômôrz.''<br>  awe TOP shortsword GEN ABS hold bent-CAUS EXP.PL<br>  We were amazed to see him bend the shortsword <b>by hand</b>. </li> </ul> "
 		]
 	},
 	{
@@ -3632,7 +3632,7 @@
 		"defList": [
 			"(archaic, regional) curse"
 		],
-		"notes": "See <em>zurkrôz</em>"
+		"notes": "See ''zurkrôz''"
 	},
 	{
 		"title": "helsu",
@@ -3658,7 +3658,7 @@
 		"defList": [
 			"health",
 			"truth",
-			"hello, goodbye, gesundheit, cheers (also <i>ukumut mumat</i>)"
+			"hello, goodbye, gesundheit, cheers (also ''ukumut mumat'')"
 		]
 	},
 	{
@@ -4041,7 +4041,7 @@
 		"defList": [
 			"[topic particle]"
 		],
-		"notes": "Used to make have/give constructions like <i>ad</i> when the possessor is animate"
+		"notes": "Used to make have/give constructions like ''ad'' when the possessor is animate"
 	},
 	{
 		"title": "ibbeka",
@@ -4066,13 +4066,13 @@
 		"cat": "adj.",
 		"defList": [
 			"one",
-			"some (fr. <i>certain</i>)",
-			"or (exclusive)* <ul> <li>  <i>Rurauk su lusik su <b>dir id</b> i uzurkuk.</i><br>  cat GEN dog GEN ABS or TOP good<br>  I like <b>either</b> cats <b>or</b> dogs. </li> </ul> ",
-			"(ko +) the same individual, the thing just mentioned: (cf. \"se\" in Latin, proximate pronoun) <ul> <li>  <i>Mor i lulz ku, <b>kor id</b> i libaz.</i><br>  person TOP laugh and, \"the same person\" TOP cry<br>  The person laughed, and then <b>they [same person]</b> cried. </li> </ul> ",
-			"(hoki/ho +) the other individual, the other thing recently mentioned: (cf. obviative pronoun) <ul> <li>  <i>Mor i lulz ku, <b>hor id</b> i libaz.</i><br>  person TOP laugh and, \"the other person\" TOP cry<br>  The person laughed, and then <b>they [another person]</b> cried. </li> </ul> ",
-			"(+ plural det) considering each member of the determiner equally, eg. <em>id hans</em> = \"every\" specifically rather than all. (Distributive pronoun/determiner) "
+			"some (fr. ''certain'')",
+			"or (exclusive)* <ul> <li>  ''Rurauk su lusik su <b>dir id</b> i uzurkuk.''<br>  cat GEN dog GEN ABS or TOP good<br>  I like <b>either</b> cats <b>or</b> dogs. </li> </ul> ",
+			"(ko +) the same individual, the thing just mentioned: (cf. \"se\" in Latin, proximate pronoun) <ul> <li>  ''Mor i lulz ku, <b>kor id</b> i libaz.''<br>  person TOP laugh and, \"the same person\" TOP cry<br>  The person laughed, and then <b>they [same person]</b> cried. </li> </ul> ",
+			"(hoki/ho +) the other individual, the other thing recently mentioned: (cf. obviative pronoun) <ul> <li>  ''Mor i lulz ku, <b>hor id</b> i libaz.''<br>  person TOP laugh and, \"the other person\" TOP cry<br>  The person laughed, and then <b>they [another person]</b> cried. </li> </ul> ",
+			"(+ plural det) considering each member of the determiner equally, eg. ''id hans'' = \"every\" specifically rather than all. (Distributive pronoun/determiner) "
 		],
-		"notes": "See <em>be</em> for an or linking clauses. cf. <em>nanau</em>, inclusive or and \"quelque\" some. The choice of <em>hoki</em> vs. <em>ho</em> with the obviative mostly has to do with whether the person is close in relation or proximity to the listener",
+		"notes": "See ''be'' for an or linking clauses. cf. ''nanau'', inclusive or and \"quelque\" some. The choice of ''hoki'' vs. ''ho'' with the obviative mostly has to do with whether the person is close in relation or proximity to the listener",
 		"categories": ["number"]
 	},
 	{
@@ -4224,7 +4224,7 @@
 		"defList": [
 			"(of food/drink) cook by boiling"
 		],
-		"notes": "used of the final product, NOT ingredients - cf. en. <em>brew</em> - used esp. of tea"
+		"notes": "used of the final product, NOT ingredients - cf. en. ''brew'' - used esp. of tea"
 	},
 	{
 		"title": "irikam",
@@ -4425,7 +4425,7 @@
 			"miss; lack",
 			"want"
 		],
-		"notes": "Unlike English, this verb is not catenative, and only takes nouns as direct objects. To express <em>wanna</em>, one would use the optative.",
+		"notes": "Unlike English, this verb is not catenative, and only takes nouns as direct objects. To express ''wanna'', one would use the optative.",
 		"categories": ["experiential"]
 	},
 	{
@@ -4470,7 +4470,7 @@
 		"etym": "L/PRE/kami",
 		"cat": "n., 3rd",
 		"defList": [
-			"any drink brewed with hot water except tea (from <em>Camellia sinensis</em>), including herbal teas and coffee"
+			"any drink brewed with hot water except tea (from ''Camellia sinensis''), including herbal teas and coffee"
 		],
 		"categories": ["drink"]
 	},
@@ -4897,7 +4897,7 @@
 		"cat": "n., 2nd",
 		"defList": [
 			"mouse",
-			"Any species of the suborder <i>Myomorpha</i>"
+			"Any species of the suborder ''Myomorpha''"
 		],
 		"categories": ["animal"]
 	},
@@ -4906,13 +4906,13 @@
 		"etym": "C/kôbenk/-isu",
 		"cat": "adj.",
 		"defList": [
-			"<i>(literally)</i> murine",
+			"''(literally)'' murine",
 			"cute",
 			"shy, timid",
 			"quiet, stealthy",
 			"grey; greyish brown (like mice)"
 		],
-		"notes": "cf. en. <em>mousy</em> and la. <em>murinus</em>, mirroring senses 3-5."
+		"notes": "cf. en. ''mousy'' and la. ''murinus'', mirroring senses 3-5."
 	},
 	{
 		"title": "koka",
@@ -5017,7 +5017,7 @@
 		"defList": [
 			"like, love"
 		],
-		"notes": "Only for familial/romantic/friendly relations. Not used in the sense of 'I like this music' - you would use <em>X i ad Y uzurku</em> or similar."
+		"notes": "Only for familial/romantic/friendly relations. Not used in the sense of 'I like this music' - you would use ''X i ad Y uzurku'' or similar."
 	},
 	{
 		"title": "kot",
@@ -5124,9 +5124,9 @@
 		"defList": [
 			"and (clause-only: not nouns)",
 			"with (comitative)",
-			"(<i>math</i>) times, by"
+			"(''math'') times, by"
 		],
-		"notes": "See <em>bo</em> for the instrumental. See <em>hans</em> for an and linking nominals."
+		"notes": "See ''bo'' for the instrumental. See ''hans'' for an and linking nominals."
 	},
 	{
 		"title": "ku",
@@ -5189,7 +5189,7 @@
 			"(+ adj) too (ie. \"too expensive\")",
 			"(noun +) despite, in spite of, notwithstanding"
 		],
-		"notes": "see <em>batu</em> for the verbal \"too\""
+		"notes": "see ''batu'' for the verbal \"too\""
 	},
 	{
 		"title": "kubbaz",
@@ -5260,7 +5260,7 @@
 		"cat": "n., 5th",
 		"defList": [
 			"spot (shape)",
-			"nevus (sp. like pt. <em>pinta</em>)",
+			"nevus (sp. like pt. ''pinta'')",
 			"(mathematics) point"
 		],
 		"categories": ["body part", "math"]
@@ -5634,7 +5634,7 @@
 		"defList": [
 			"(archaic) good"
 		],
-		"notes": "Displaced by synonym <i>uzurku</i> after <i>laku</i> became sarcastic"
+		"notes": "Displaced by synonym ''uzurku'' after ''laku'' became sarcastic"
 	},
 	{
 		"title": "lam",
@@ -5880,7 +5880,7 @@
 		"defList": [
 			"male given name"
 		],
-		"notes": "Related to Numoran <i>Flotwer</i> and <i>Lotwer</i>",
+		"notes": "Related to Numoran ''Flotwer'' and ''Lotwer''",
 		"categories": ["male given name"]
 	},
 	{
@@ -5909,7 +5909,7 @@
 			"wolf",
 			"stray/feral dog"
 		],
-		"notes": "Owned dogs are called <em>busk</em>",
+		"notes": "Owned dogs are called ''busk''",
 		"categories": ["animal"]
 	},
 	{
@@ -6338,7 +6338,7 @@
 			"because, for, since",
 			"(+ ad) despite, although"
 		],
-		"notes": "Roughly equivalent to 'is/has at/since some time previous...'; cf. la. <em>iam</em>"
+		"notes": "Roughly equivalent to 'is/has at/since some time previous...'; cf. la. ''iam''"
 	},
 	{
 		"title": "môlz",
@@ -6399,7 +6399,7 @@
 			"ethnos, country, nation",
 			"mankind"
 		],
-		"notes": "This does not translate country or nation in all English uses. When referring to territory, use <i>da</i> instead.",
+		"notes": "This does not translate country or nation in all English uses. When referring to territory, use ''da'' instead.",
 		"categories": ["person"]
 	},
 	{
@@ -6569,7 +6569,7 @@
 		"defList": [
 			"(archaic) which, what"
 		],
-		"notes": "Modern Eremoran uses <i>nau</i>, which was originally just the determiner form."
+		"notes": "Modern Eremoran uses ''nau'', which was originally just the determiner form."
 	},
 	{
 		"title": "naba",
@@ -6630,7 +6630,7 @@
 		"cat": "v.",
 		"defList": [
 			"eat",
-			"(<i>of non-alcoholic and non-poisoned beverages</i>) drink"
+			"(''of non-alcoholic and non-poisoned beverages'') drink"
 		],
 		"categories": ["drink"]
 	},
@@ -6648,12 +6648,12 @@
 		"etym": "R/nau",
 		"cat": "pron., det.",
 		"defList": [
-			"some (fr. <i>quelque</i>)",
+			"some (fr. ''quelque'')",
 			"something",
-			"or (inclusive)* <ul> <li>  <i>Rurauk su lusik su <b>dir nanauk</b> i uzurkuk.</i><br>  cat GEN dog GEN ABS or TOP good<br>  I like <b>either</b> cats <b>or</b> dogs. </li> </ul> ",
+			"or (inclusive)* <ul> <li>  ''Rurauk su lusik su <b>dir nanauk</b> i uzurkuk.''<br>  cat GEN dog GEN ABS or TOP good<br>  I like <b>either</b> cats <b>or</b> dogs. </li> </ul> ",
 			"(archaic) whatever; whoever"
 		],
-		"notes": "See <em>be</em> for the verbal conjunction. cf. <em>id</em>."
+		"notes": "See ''be'' for the verbal conjunction. cf. ''id''."
 	},
 	{
 		"title": "napaker",
@@ -6726,7 +6726,7 @@
 		"cat": "adj.",
 		"defList": [
 			"two",
-			"(+ plural det) considering each member of the determiner in pairs, eg. <em>nasu hans</em> = \"every pair\" specifically rather than all. (Distributive pronoun/determiner) "
+			"(+ plural det) considering each member of the determiner in pairs, eg. ''nasu hans'' = \"every pair\" specifically rather than all. (Distributive pronoun/determiner) "
 		],
 		"notes": "While possible with greater numerals, it is rather rare.",
 		"categories": ["number"]
@@ -7081,7 +7081,7 @@
 		"etym": "L/PEN/*ô/anyways",
 		"cat": "interj.",
 		"defList": [
-			"Anyways..., so... (used similarly to jp. <i>ja</i>, fr. <i>alors</i>)"
+			"Anyways..., so... (used similarly to jp. ''ja'', fr. ''alors'')"
 		]
 	},
 	{
@@ -7125,7 +7125,7 @@
 		"defList": [
 			"(informal) yeah"
 		],
-		"notes": "Eye-dialect spelling of <i>holk</i> in L-dropping dialects. The <i>k</i> is occasionally pronounced as a glottal stop."
+		"notes": "Eye-dialect spelling of ''holk'' in L-dropping dialects. The ''k'' is occasionally pronounced as a glottal stop."
 	},
 	{
 		"title": "oka",
@@ -7193,7 +7193,7 @@
 		"defList": [
 			"[Specifies the speaker, and others, saw the event mentioned]"
 		],
-		"notes": "cf. <i>umôrz</i> which implies the speaker was the sole witness",
+		"notes": "cf. ''umôrz'' which implies the speaker was the sole witness",
 		"categories": ["evidential"]
 	},
 	{
@@ -7234,7 +7234,7 @@
 		"cat": "adj.",
 		"defList": [
 			"[polite prefix]",
-			"[affix used to form first/second person personal pronouns, eg. <i>môk</i>]"
+			"[affix used to form first/second person personal pronouns, eg. ''môk'']"
 		],
 		"notes": "Irregular spelling; 'hou' would be expected, but apparently the lower-register pronounciation became dominant"
 	},
@@ -7434,7 +7434,7 @@
 			"a small quantity, few <ul> <li class=\"eremoran\"><ruby class=\"eremoranWord\">mor<rt>MOR</rt></ruby><span> </span><ruby class=\"eremoranWord\">i<rt>I</rt></ruby><span> </span><ruby class=\"eremoranWord\">pukusam<rt>PUKUSAM</rt></ruby></li> <li>There are few people.</li> </ul>",
 			"(id +) least, fewest (pronoun)"
 		],
-		"notes": "cf. <em>dou</em>, the adjective form, and <em>bokusam</em>, the opposite form"
+		"notes": "cf. ''dou'', the adjective form, and ''bokusam'', the opposite form"
 	},
 	{
 		"title": "purru",
@@ -7549,7 +7549,7 @@
 		"defList": [
 			"pattern"
 		],
-		"notes": "esp. of interior wall painting patterns; present form influenced by <em>raz</em> 'paint'"
+		"notes": "esp. of interior wall painting patterns; present form influenced by ''raz'' 'paint'"
 	},
 	{
 		"title": "redêfut",
@@ -7698,7 +7698,7 @@
 		"cat": "v.",
 		"defList": [
 			"write",
-			"(+<i>dir tikat ad X</i>) hone X (a skill or weapon)"
+			"(+''dir tikat ad X'') hone X (a skill or weapon)"
 		]
 	},
 	{
@@ -7718,7 +7718,7 @@
 			"speak; talk",
 			"say"
 		],
-		"notes": "Unlike English, the direct object is the person being spoken to/with, and the content being spoken is construed with <em>bo</em> \"with; using\"."
+		"notes": "Unlike English, the direct object is the person being spoken to/with, and the content being spoken is construed with ''bo'' \"with; using\"."
 	},
 	{
 		"title": "ruraudok",
@@ -7834,7 +7834,7 @@
 		"defList": [
 			"sight, vision"
 		],
-		"notes": "irregular spelling; 'sauram' would be expected, but it was likely influenced by <em>suro</em> 'eye'"
+		"notes": "irregular spelling; 'sauram' would be expected, but it was likely influenced by ''suro'' 'eye'"
 	},
 	{
 		"title": "saurz",
@@ -8139,7 +8139,7 @@
 		"defList": [
 			"white",
 			"bright, shining",
-			"(of the sky) overcast, but not with stormclouds (which would be <em>usiu</em>; cf. perlucidus and translucidus)"
+			"(of the sky) overcast, but not with stormclouds (which would be ''usiu''; cf. perlucidus and translucidus)"
 		],
 		"categories": ["color"]
 	},
@@ -8351,7 +8351,7 @@
 			"more than",
 			"(mathematics) over, divided by"
 		],
-		"notes": "Full derivation: <em>su tô ad</em>"
+		"notes": "Full derivation: ''su tô ad''"
 	},
 	{
 		"title": "stôdidz",
@@ -8448,18 +8448,18 @@
 		"etym": "L/PEN/*tʃu-dôs/do; make",
 		"cat": "v.",
 		"defList": [
-			"(<i>inanimate object</i>) do/make",
-			"(<i>inanimate object</i>) wear, be covered in",
-			"(<i>inanimate object</i>) endure, last",
-			"(<i>intangible object</i>) wait for",
-			"(<i>human subject, inanimate object</i>) cook",
-			"(<i>human subject and object</i><sup>1</sup>) work as",
-			"(<i>human subject</i><sup>1</sup>) work at/for",
-			"(<i>human subject and object</i>) draw/paint/etc., depict",
-			"(<i>animate subject and object</i>) kill",
-			"(<i>animate subject and object</i>) fuck; have sex with",
-			"(<i>animate subject, inanimate object, of a consumable</i><sup>1</sup>) enjoy",
-			"(<i>inanimate subject, human object</i>) be a cause of termination for"
+			"(''inanimate object'') do/make",
+			"(''inanimate object'') wear, be covered in",
+			"(''inanimate object'') endure, last",
+			"(''intangible object'') wait for",
+			"(''human subject, inanimate object'') cook",
+			"(''human subject and object''<sup>1</sup>) work as",
+			"(''human subject''<sup>1</sup>) work at/for",
+			"(''human subject and object'') draw/paint/etc., depict",
+			"(''animate subject and object'') kill",
+			"(''animate subject and object'') fuck; have sex with",
+			"(''animate subject, inanimate object, of a consumable''<sup>1</sup>) enjoy",
+			"(''inanimate subject, human object'') be a cause of termination for"
 		],
 		"notes": "<sup>1</sup> Habitual aspect only; supplanted the now-archaic dôz in most senses"
 	},
@@ -8720,7 +8720,7 @@
 		"etym": "L/PEN/*tars/new",
 		"cat": "adj., s-triggering",
 		"defList": [
-			"(<i>of inanimates</i>) new"
+			"(''of inanimates'') new"
 		]
 	},
 	{
@@ -8802,7 +8802,7 @@
 		"defList": [
 			"tea (drink)"
 		],
-		"notes": "The color adjectives <em>kanut</em> (yellow), <em>siut</em> (white), and <em>tasut</em> (green) can be applied to <em>tekkat</em> with an identical meaning to English. However, <em>ulut</em> (blue/black) is used to refer to oolong, and <em>eret</em> (red) is used to refer to black tea, likely in reference to the color of the leaves. It is also important to note that <em>usiut</em> (black/dark) cannot be used interchangably with <em>ulut</em>; the former refers instead to fermented tea instead of oolong.",
+		"notes": "The color adjectives ''kanut'' (yellow), ''siut'' (white), and ''tasut'' (green) can be applied to ''tekkat'' with an identical meaning to English. However, ''ulut'' (blue/black) is used to refer to oolong, and ''eret'' (red) is used to refer to black tea, likely in reference to the color of the leaves. It is also important to note that ''usiut'' (black/dark) cannot be used interchangably with ''ulut''; the former refers instead to fermented tea instead of oolong.",
 		"categories": ["drink"]
 	},
 	{
@@ -8932,7 +8932,7 @@
 		"etym": "C/tô/da",
 		"cat": "n., 4th",
 		"defList": [
-			"The southern, coastal cultural region of Eremor, associated with the so-called <em>kadrêm</em> 'hard R' sounds."
+			"The southern, coastal cultural region of Eremor, associated with the so-called ''kadrêm'' 'hard R' sounds."
 		],
 		"categories": ["toponym"]
 	},
@@ -9330,10 +9330,10 @@
 			"big, great, large",
 			"many, much",
 			"more (incl. comparative)",
-			"(with <i>id</i>) (the) most (incl. superlative) <ul> <li>  <i>Rurauk i id -udou kopdoz.</i><br>  cat TOP most like<br>  I like cats the most. </li> </ul> ",
+			"(with ''id'') (the) most (incl. superlative) <ul> <li>  ''Rurauk i id -udou kopdoz.''<br>  cat TOP most like<br>  I like cats the most. </li> </ul> ",
 			"[optional plurality marker]"
 		],
-		"notes": "cf. <em>bokusam</em>, the noun form"
+		"notes": "cf. ''bokusam'', the noun form"
 	},
 	{
 		"title": "ufomor",
@@ -9352,7 +9352,7 @@
 		"defList": [
 			"[Specifies the speaker, but not others, saw the event mentioned]"
 		],
-		"notes": "cf. <i>omôrz</i> which implies others witnessed the event too",
+		"notes": "cf. ''omôrz'' which implies others witnessed the event too",
 		"categories": ["evidential"]
 	},
 	{
@@ -9460,7 +9460,7 @@
 			"blue",
 			"black (considered a shade of blue)"
 		],
-		"notes": "For black specifically, see <em>usiu</em>",
+		"notes": "For black specifically, see ''usiu''",
 		"categories": ["color"]
 	},
 	{
@@ -9617,7 +9617,7 @@
 		"etym": "C/urz/-m",
 		"cat": "n., 5th",
 		"defList": [
-			"time, occasion (instance of time - cf. fr. <em>fois</em>)"
+			"time, occasion (instance of time - cf. fr. ''fois'')"
 		],
 		"categories": ["time"]
 	},
@@ -9777,7 +9777,7 @@
 		"etym": "L/OER/Zikarônaborre",
 		"cat": "n., 1st",
 		"defList": [
-			"Goddess of Manners and Disease, she curses those who do not practice good manners with various afflictions. It is never used as a given name. It is used in the interj. <i>Zikrômbor berbkaldoz</i> (gesundheit; bless you; literally \"May Zikrômbor leave you.\")."
+			"Goddess of Manners and Disease, she curses those who do not practice good manners with various afflictions. It is never used as a given name. It is used in the interj. ''Zikrômbor berbkaldoz'' (gesundheit; bless you; literally \"May Zikrômbor leave you.\")."
 		],
 		"notes": "possibly related to zurku",
 		"categories": ["female given name", "god"]
@@ -9808,7 +9808,7 @@
 			"curse",
 			"badmouth"
 		],
-		"notes": "See <em>hekz</em>"
+		"notes": "See ''hekz''"
 	},
 	{
 		"title": "zurku",
