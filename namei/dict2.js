@@ -62,12 +62,6 @@ function printDict(){
 		entryelement.appendChild(deflist);
 		entryDiv.appendChild(entryelement);
 		obj.defList.forEach(def => {
-			if (def[0] === '!'){ // note
-				const noteElement = document.createElement('dd');
-				noteElement.innerHTML = def.slice(1);
-				entryDiv.appendChild(noteElement);
-				return;
-			}
 			const d = document.createElement('li');
 			d.innerHTML = defFormat(def);
 			deflist.appendChild(d);
@@ -76,7 +70,7 @@ function printDict(){
 		if (obj.notes){
 			const noteElement = document.createElement('dd');
 			noteElement.classList.add('lemmaNotes');
-			noteElement.innerHTML = obj.notes;
+			noteElement.innerHTML = defFormat(obj.notes);
 			entryDiv.appendChild(noteElement);
 		}
 		list.appendChild(entryDiv);
