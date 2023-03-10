@@ -277,18 +277,18 @@ function isAnagram(a, b){
 
 /** @param {string} def */
 function defFormat(def){
-	// bold
-	[...def.matchAll(/'''([^']+?)'''/g)]
-		.forEach(m => def = def.replace(m[0], `<strong>${m[1]}</strong>`));
-	// italics
-	[...def.matchAll(/''([^']+?)''/g)]
-		.forEach(m => def = def.replace(m[0], `<em>${m[1]}</em>`));
-	// links
-	[...def.matchAll(/\[\[([^\]]+?)\]\]/g)]
-		.forEach(m => def = def.replace(m[0], linkCard(m[1]).innerHTML));
-	// templates
-	// eg. {{wt|la|-eus}}
-	[...def.matchAll(/{{wt\|(\w+?)\|([^}]+?)}}/g)]
-		.forEach(m => def = def.replace(m[0], `<cite>${m[1]}. <a href="https://en.wiktionary.org/wiki/${m[2]}">${m[2]}</a></cite>`));
+	defFormat.re.forEach(a => [...def.matchAll(a[0])]
+		.forEach(m => def = def.replace(m[0], a[1](m))));
 	return def;
 }
+defFormat.re = [
+	// bold
+	[/'''([^']+?)'''/g, m => `<strong>${m[1]}</strong>`],
+	// italics
+	[/''([^']+?)''/g, m => `<em>${m[1]}</em>`],
+	// links
+	[/\[\[([^\]]+?)\]\]/g, m => linkCard(m[1]).innerHTML],
+	// templates
+	// eg. {{wt|la|-eus}}
+	[/{{wt\|(\w+?)\|([^}]+?)}}/g, m => `<cite>${m[1]}. <a href="https://en.wiktionary.org/wiki/${m[2]}">${m[2]}</a></cite>`],
+];
