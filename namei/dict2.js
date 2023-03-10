@@ -290,7 +290,7 @@ defFormat.re = [
 	[/\[\[([^\]]+?)\]\]/g, m => linkCard(m[1]).innerHTML],
 	// templates
 	// eg. {{w|orange|Orange (fruit)}}
-	[/{{w\|([^}]+?)}}/g, m => `<a href="https://en.wikipedia.org/wiki/${m[2] || m[1]}">${m[1]}</a>`],
+	[/{{w\|([^|}]+)\|?([^}]+?)?}}/g, m => `<a href="https://en.wikipedia.org/wiki/${m[2] || m[1]}">${m[1]}</a>`],
 	// eg. {{wt|la|-eus}}
 	[/{{wt\|(\w+?)\|([^}]+?)}}/g, m => `<cite>${m[1]}. <a href="https://en.wiktionary.org/wiki/${m[2]}">${m[2]}</a></cite>`],
 ];
