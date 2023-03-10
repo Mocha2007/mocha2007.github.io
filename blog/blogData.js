@@ -619,4 +619,15 @@ const blogData = [
 	9 out of 14, etc., but ultimately the error for one of them will be at least 7 days when rounded.
 	Therefore, using the three-cycle rule seems sufficient - certainly better than a 63 day error without!
 	`,
+	`
+	@title Eremoran Expansion Project: Month 2
+	@date 1678457848993
+	@p
+	@tags eremoran site
+	It's been exactly one month since my pledge to expand Eremoran at a rate of 4-5 words per day.
+	Then, I apparently had 900 words.
+	This morning (although I am yet to add new words) I have 1,085.
+	This amounts to an average of 6.6 words per day, much more than my plan!
+	I'm pleased to have made this a workable habit!
+	`,
 ];
