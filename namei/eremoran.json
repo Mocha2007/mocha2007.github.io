@@ -8408,7 +8408,10 @@
 		"etym": "L/PEN/*ʃets/~planet",
 		"cat": "n., 4th",
 		"defList": [
-			"substellar object orbiting a star <ol> <li>(by extension) planet</li> <li>(by extension) minor planet</li> <li>(by extension) comet</li> </ol> "
+			"stellar companion",
+			"(by extension) planet",
+			"(by extension) minor planet",
+			"(by extension) comet"
 		],
 		"categories": ["astronomy"]
 	},
