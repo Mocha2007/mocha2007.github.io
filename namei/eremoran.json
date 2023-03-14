@@ -1762,11 +1762,20 @@
 		"categories": ["time"]
 	},
 	{
-		"title": "bikêm",
+		"title": "bikê",
 		"etym": "L/PRE/apikkei",
 		"cat": "n., 5th",
 		"defList": [
-			"two decades (in Earth years: 4 yr 1 mo 7 d)"
+			"Eisen, the sixth planet from Namei"
+		],
+		"categories": ["astronomy", "toponym"]
+	},
+	{
+		"title": "bikêm",
+		"etym": "C/bikê/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"two decades, approximately Eisen's synodic period (in Earth years: 4 yr 1 mo 7 d)"
 		],
 		"categories": ["time"]
 	},
@@ -5222,6 +5231,15 @@
 		]
 	},
 	{
+		"title": "kopkê",
+		"etym": "L/PRE/qōpkei",
+		"cat": "n., 4th",
+		"defList": [
+			"Falto, the second planet from Namei"
+		],
+		"categories": ["astronomy", "toponym"]
+	},
+	{
 		"title": "kopz",
 		"img": "../img/eremoran/kopz.png",
 		"etym": "L/PRE/qōp/love",
@@ -5230,6 +5248,15 @@
 			"like, love"
 		],
 		"notes": "Only for familial/romantic/friendly relations. Not used in the sense of 'I like this music' - you would use ''X i ad Y uzurku'' or similar."
+	},
+	{
+		"title": "kosum",
+		"etym": "L/VAZ/???",
+		"cat": "n., 5th",
+		"defList": [
+			"Bau, the third planet from Namei"
+		],
+		"categories": ["astronomy", "toponym"]
 	},
 	{
 		"title": "kot",
@@ -7893,6 +7920,15 @@
 		"categories": ["v3_trade"]
 	},
 	{
+		"title": "rasum",
+		"etym": "L/VAZ/???",
+		"cat": "n., 5th",
+		"defList": [
+			"Ara, the first planet from Namei"
+		],
+		"categories": ["astronomy", "toponym"]
+	},
+	{
 		"title": "rat",
 		"etym": "C/raz/-t",
 		"cat": "n., 3rd",
@@ -8375,6 +8411,15 @@
 			"substellar object orbiting a star <ol> <li>(by extension) planet</li> <li>(by extension) minor planet</li> <li>(by extension) comet</li> </ol> "
 		],
 		"categories": ["astronomy"]
+	},
+	{
+		"title": "sesela",
+		"etym": "D/ses",
+		"cat": "n., 4th",
+		"defList": [
+			"Tata, the dwarf planet"
+		],
+		"categories": ["astronomy", "toponym"]
 	},
 	{
 		"title": "sesu",
