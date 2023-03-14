@@ -324,8 +324,7 @@
 		"etym": "C/ad/dam",
 		"cat": "n., 5th; adv.",
 		"defList": [
-			"tomorrow",
-			"yesterday"
+			"tomorrow"
 		],
 		"categories": ["time"]
 	},
@@ -2248,10 +2247,11 @@
 	},
 	{
 		"title": "dam",
-		"etym": "L/PEN/*dam/morning",
+		"etym": "L/PEN/*dam/day",
 		"cat": "n., 5th",
 		"defList": [
-			"morning"
+			"morning",
+			"(archaic) day (ie. the duration of one local sol)"
 		],
 		"categories": ["time"]
 	},
@@ -2262,15 +2262,6 @@
 		"defList": [
 			"tire, exhaustion"
 		]
-	},
-	{
-		"title": "dammam",
-		"etym": "C/addam/mo",
-		"cat": "n., 5th; adv.",
-		"defList": [
-			"ereyesterday, the day before yesterday, two days ago"
-		],
-		"categories": ["time"]
 	},
 	{
 		"title": "damok",
@@ -4190,6 +4181,15 @@
 		"categories": ["age", "person"]
 	},
 	{
+		"title": "immodam",
+		"etym": "C/id/modam",
+		"cat": "n., 5th; adv.",
+		"defList": [
+			"ereyesterday, the day before yesterday, two days ago"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "imô",
 		"etym": "L/PEN/*imô/edge",
 		"cat": "n., 4th",
@@ -4956,6 +4956,15 @@
 			"grey; greyish brown (like mice)"
 		],
 		"notes": "cf. en. ''mousy'' and la. ''murinus'', mirroring senses 3-5."
+	},
+	{
+		"title": "dakom",
+		"etym": "C/dam/kom",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"today"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "koka",
@@ -6370,6 +6379,15 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "modam",
+		"etym": "C/mo/dam",
+		"cat": "n., 5th; adv.",
+		"defList": [
+			"yesterday"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "mok",
 		"etym": "C/mo/ko",
 		"cat": "adv., conj.",
@@ -6835,6 +6853,15 @@
 		]
 	},
 	{
+		"title": "nekom",
+		"etym": "C/nem/kom",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"this year"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "nelat",
 		"etym": "r/arzênelat",
 		"cat": "n., 3rd",
@@ -6887,6 +6914,15 @@
 			"female given name"
 		],
 		"categories": ["female given name"]
+	},
+	{
+		"title": "neurkom",
+		"etym": "C/neurm/kom",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"(archaic) this season"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "neurm",
@@ -7100,6 +7136,15 @@
 		"defList": [
 			"run"
 		]
+	},
+	{
+		"title": "nurkom",
+		"etym": "r/neurkom",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"this season"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "nuu",
