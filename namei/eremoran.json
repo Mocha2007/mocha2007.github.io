@@ -2199,6 +2199,15 @@
 		]
 	},
 	{
+		"title": "dafansam",
+		"etym": "C/dam/hans",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"every day"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "dafê",
 		"etym": "L/PEN/*daɸê/shoulder",
 		"cat": "n., 4th",
@@ -6365,7 +6374,8 @@
 		"defList": [
 			"back",
 			"behind",
-			"before"
+			"before",
+			"yester-"
 		]
 	},
 	{
@@ -6853,6 +6863,15 @@
 		]
 	},
 	{
+		"title": "nefansam",
+		"etym": "C/nem/kom",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"every year"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "nekom",
 		"etym": "C/nem/kom",
 		"cat": "n., 5th, adv.",
@@ -6879,6 +6898,15 @@
 		],
 		"categories": ["time"],
 		"notes": "not used for giving the ages of people; skum is used instead"
+	},
+	{
+		"title": "nemom",
+		"etym": "C/nem/mo",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"yesteryear, last year"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "nen",
@@ -6914,6 +6942,15 @@
 			"female given name"
 		],
 		"categories": ["female given name"]
+	},
+	{
+		"title": "neurfansam",
+		"etym": "C/neurm/hans",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"(archaic) every season"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "neurkom",
@@ -7136,6 +7173,15 @@
 		"defList": [
 			"run"
 		]
+	},
+	{
+		"title": "nurfansam",
+		"etym": "r/neurkom",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"every season"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "nurkom",
