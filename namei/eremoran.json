@@ -1479,6 +1479,15 @@
 		"categories": ["male given name"]
 	},
 	{
+		"title": "bêfansam",
+		"etym": "C/bêm/hans",
+		"cat": "n., 5th",
+		"defList": [
+			"every week"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "befôz",
 		"etym": "L/PEN/*beɸôs/use",
 		"cat": "v.",
@@ -1493,15 +1502,6 @@
 		"defList": [
 			"way, path"
 		]
-	},
-	{
-		"title": "bêfansam",
-		"etym": "C/bêm/hans",
-		"cat": "n., 5th",
-		"defList": [
-			"every week"
-		],
-		"categories": ["time"]
 	},
 	{
 		"title": "bêikkum",
@@ -2326,7 +2326,7 @@
 	},
 	{
 		"title": "daimmom",
-		"etym": "C/id/modam",
+		"etym": "C/dam/immo",
 		"cat": "n., 5th; adv.",
 		"defList": [
 			"(archaic) ereyesterday, the day before yesterday, two days ago"
@@ -7425,20 +7425,20 @@
 		"categories": ["time"]
 	},
 	{
-		"title": "nurkunam",
-		"etym": "r/neurkunam",
-		"cat": "n., 5th, adv.",
-		"defList": [
-			"next season"
-		],
-		"categories": ["time"]
-	},
-	{
 		"title": "nurkom",
 		"etym": "r/neurkom",
 		"cat": "n., 5th, adv.",
 		"defList": [
 			"this season"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "nurkunam",
+		"etym": "r/neurkunam",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"next season"
 		],
 		"categories": ["time"]
 	},
@@ -8588,21 +8588,21 @@
 		"notes": "With the causative suffix, means 'hurl' or 'send'."
 	},
 	{
-		"title": "skuiku",
-		"etym": "L/PEN/*skuixu",
-		"cat": "adj.",
-		"defList": [
-			"(colloquial) young"
-		],
-		"categories": ["time"]
-	},
-	{
 		"title": "skufansam",
 		"etym": "C/skum/hans",
 		"cat": "n., 5th",
 		"defList": [
 			"(archaic) every winter",
 			"(metaphorically) every year (of age)"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "skuiku",
+		"etym": "L/PEN/*skuixu",
+		"cat": "adj.",
+		"defList": [
+			"(colloquial) young"
 		],
 		"categories": ["time"]
 	},
