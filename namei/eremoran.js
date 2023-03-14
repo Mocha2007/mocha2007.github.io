@@ -1199,8 +1199,10 @@ function expansionProject(){
 	const _2024 = (new Date(2024, 0, 1) - epoch)/day;
 	const goal = (_2024 - w)/(new Date(2024, 0, 1) - new Date()) * day;
 	console.info(`${goal} w/d required to reach 2024 goal`);
-	const eta = new Date(+new Date() + day*(days - w)/(4.5-1));
-	console.info(`ETA @ 4.5 w/d = ${eta}`);
+	[7, 5, 4.5, 4].forEach(target => {
+		const eta = new Date(+new Date() + day*(days - w)/(target-1));
+		console.info(`ETA @ ${target} w/d = ${eta}`);
+	});
 }
 
 /** this is run at the end of eremoran.html */
