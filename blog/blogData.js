@@ -630,4 +630,29 @@ const blogData = [
 	This amounts to an average of 6.6 words per day, much more than my plan!
 	I'm pleased to have made this a workable habit!
 	`,
+	`
+	@title Uranian Moon Names
+	@date 1678819743211
+	@p
+	@tags uranus
+	Remembering that Uranian moons are named after characters of Shakespearean plays
+	and characters in Alexander Pope's <cite>The Rape of the Lock</cite>,
+	I set about trying to find what the most interesting or humorous potential moon names would be,
+	and found eleven of interest:
+	<ul>
+		<li><strong>Dick</strong> - named after the character <em>Dick the Butcher</em> in <cite>Henry VI, Part 2</cite>,
+			famous for the line <q>Let's kill all the lawyers</q>.</li>
+		<li><strong>Jupiter</strong> - who has a single line in <cite>Cymbeline</cite>, Act V, Scene IV</li>
+		<li><strong>Moth</strong> - one of two characters from <cite>Love's Labour's Lost</cite> or <cite>A Midsummer Night's Dream</cite></li>
+		<li><strong>Mustardseed</strong> - a fairy in <cite>A Midsummer Night's Dream</cite></li>
+		<li><strong>Orlando</strong> - of <cite>As You Like It</cite></li>
+		<li><strong>Paris</strong> - characters of this name appear in three of Shakespeare's plays</li>
+		<li><strong>Pinch</strong> - doctor in <cite>The Comedy of Errors</cite></li>
+		<li><strong>Quickly</strong> - appears in four of Shakespeare's plays</li>
+		<li><strong>Regan</strong> - of <cite>King Lear</cite></li>
+		<li><strong>Rugby</strong> - servant to Caius in <cite>The Merry Wives of Windsor</cite></li>
+		<li><strong>Silence</strong> - name of a judge who appears in Acts III and V of <cite>Henry IV, Part 2</cite></li>
+	</ul>
+	I doubt <em>Jupiter</em> would fly, but I wonder if the rest would be found acceptable by the IAU.
+	`,
 ];
