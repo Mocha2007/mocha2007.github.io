@@ -654,5 +654,6 @@ const blogData = [
 		<li><strong>Silence</strong> - name of a judge who appears in Acts III and V of <cite>Henry IV, Part 2</cite></li>
 	</ul>
 	I doubt <em>Jupiter</em> would fly, but I wonder if the rest would be found acceptable by the IAU.
+	Dick and Paris are already the names of asteroids, so that would be another hinderance.
 	`,
 ];
