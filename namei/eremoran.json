@@ -1495,11 +1495,56 @@
 		]
 	},
 	{
+		"title": "bêfansam",
+		"etym": "C/bêm/hans",
+		"cat": "n., 5th",
+		"defList": [
+			"every week"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "bêikkum",
+		"etym": "C/bêm/ikku",
+		"cat": "n., 5th",
+		"defList": [
+			"the week after next"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "bêimmom",
+		"etym": "C/bêm/immo",
+		"cat": "n., 5th",
+		"defList": [
+			"the week before last"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "bêkom",
+		"etym": "C/bêm/ko",
+		"cat": "n., 5th",
+		"defList": [
+			"this week"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "bêkum",
 		"etym": "C/bêm/kum",
 		"cat": "n., 5th",
 		"defList": [
 			"calendar"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "bêkunam",
+		"etym": "C/bêm/kunz",
+		"cat": "n., 5th",
+		"defList": [
+			"next week"
 		],
 		"categories": ["time"]
 	},
@@ -1531,6 +1576,15 @@
 		"defList": [
 			"river"
 		]
+	},
+	{
+		"title": "bêmom",
+		"etym": "C/bêm/mo",
+		"cat": "n., 5th",
+		"defList": [
+			"last week"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "berbaz",
@@ -1663,11 +1717,65 @@
 		]
 	},
 	{
+		"title": "bikêfansam",
+		"etym": "C/bikêm/hans",
+		"cat": "n., 5th",
+		"defList": [
+			"every bikêm"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "bikêikkum",
+		"etym": "C/bikêm/ikku",
+		"cat": "n., 5th",
+		"defList": [
+			"the bikêm after next"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "bikêimmom",
+		"etym": "C/bikêm/immo",
+		"cat": "n., 5th",
+		"defList": [
+			"the bikêm before last"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "bikêkom",
+		"etym": "C/bikêm/ko",
+		"cat": "n., 5th",
+		"defList": [
+			"this bikêm"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "bikêkunam",
+		"etym": "C/bikêm/kunz",
+		"cat": "n., 5th",
+		"defList": [
+			"next bikêm"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "bikêm",
 		"etym": "L/PRE/apikkei",
 		"cat": "n., 5th",
 		"defList": [
 			"two decades (in Earth years: 4 yr 1 mo 7 d)"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "bikêmom",
+		"etym": "C/bikêm/mo",
+		"cat": "n., 5th",
+		"defList": [
+			"last bikêm"
 		],
 		"categories": ["time"]
 	},
@@ -2784,6 +2892,15 @@
 			"come; arrive"
 		],
 		"notes": "Replaced the now-obsolete ''kunz''."
+	},
+	{
+		"title": "dôkom",
+		"etym": "C/dôam/ko",
+		"cat": "n., 5th",
+		"defList": [
+			"this evening"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "dôkunak",
@@ -6827,6 +6944,14 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "nasmo",
+		"etym": "C/nasu/mo",
+		"cat": "pron., det.",
+		"defList": [
+			"two before the previous, three ago (usually a prefix)"
+		]
+	},
+	{
 		"title": "nasu",
 		"etym": "L/PEN/*natiu/two",
 		"cat": "adj.",
@@ -8472,12 +8597,72 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "skufansam",
+		"etym": "C/skum/hans",
+		"cat": "n., 5th",
+		"defList": [
+			"(archaic) every winter",
+			"(metaphorically) every year (of age)"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "skuikkum",
+		"etym": "C/skum/ikku",
+		"cat": "n., 5th",
+		"defList": [
+			"(archaic) the winter after next",
+			"(metaphorically) the year after next (of age)"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "skuimmom",
+		"etym": "C/skum/immo",
+		"cat": "n., 5th",
+		"defList": [
+			"(archaic) the winter before last",
+			"(metaphorically) the year before last (of age)"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "skukom",
+		"etym": "C/skum/ko",
+		"cat": "n., 5th",
+		"defList": [
+			"(archaic) every winter",
+			"(metaphorically) every year (of age)"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "skukunam",
+		"etym": "C/skum/kunz",
+		"cat": "n., 5th",
+		"defList": [
+			"(archaic) next winter",
+			"(metaphorically) next year (of age)"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "skum",
 		"etym": "L/PEN/*ʃxum",
 		"cat": "n., 5th",
 		"defList": [
 			"(archaic) winter",
 			"(metaphorically) year (of age)"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "skumom",
+		"etym": "C/skum/mo",
+		"cat": "n., 5th",
+		"defList": [
+			"(archaic) last winter",
+			"(metaphorically) last year (of age)"
 		],
 		"categories": ["time"]
 	},
