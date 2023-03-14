@@ -1717,6 +1717,15 @@
 		]
 	},
 	{
+		"title": "bikê",
+		"etym": "L/PRE/apikkei",
+		"cat": "n., 4th",
+		"defList": [
+			"Eisen, the sixth planet from Namei"
+		],
+		"categories": ["astronomy", "toponym"]
+	},
+	{
 		"title": "bikêfansam",
 		"etym": "C/bikêm/hans",
 		"cat": "n., 5th",
@@ -1760,15 +1769,6 @@
 			"next bikêm"
 		],
 		"categories": ["time"]
-	},
-	{
-		"title": "bikê",
-		"etym": "L/PRE/apikkei",
-		"cat": "n., 5th",
-		"defList": [
-			"Eisen, the sixth planet from Namei"
-		],
-		"categories": ["astronomy", "toponym"]
 	},
 	{
 		"title": "bikêm",
