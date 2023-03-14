@@ -1333,6 +1333,15 @@
 		]
 	},
 	{
+		"title": "bask",
+		"etym": "L/PEN/*βasx/goose",
+		"cat": "n., 2nd",
+		"defList": [
+			"goose (esp. {{w|anser anser|greylag goose}} and {{w|nettapus coromandelianus coromandelianus|cotton pygmy goose}})"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "bat",
 		"etym": "L/VAZ/???/chess",
 		"cat": "n., 3rd",
@@ -2090,6 +2099,15 @@
 		]
 	},
 	{
+		"title": "bunk",
+		"etym": "L/PEN/*βunx/goose",
+		"cat": "n., 2nd",
+		"defList": [
+			"duck"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "bunt",
 		"etym": "L/PEN/*bunt/cloth//~/but",
 		"cat": "n., 3rd",
@@ -2730,6 +2748,15 @@
 			"come; arrive"
 		],
 		"notes": "Replaced the now-obsolete ''kunz''."
+	},
+	{
+		"title": "dôkunak",
+		"etym": "L/PEN/*dôkunax/swan",
+		"cat": "n., 2nd",
+		"defList": [
+			"swan (esp. {{w|cygnus cygnus|whooper swan}} and {{w|cygnus columbianus|tundra swan}})"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "dôm",
@@ -4218,6 +4245,14 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "irerêt",
+		"etym": "C/irerz/-ê",
+		"cat": "v.",
+		"defList": [
+			"kettle"
+		]
+	},
+	{
 		"title": "irerz",
 		"etym": "L/PEN/*irers/boil",
 		"cat": "v.",
@@ -4388,6 +4423,14 @@
 			"moth"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "kakaz",
+		"etym": "L/PEN/*kaxas/pour",
+		"cat": "v.",
+		"defList": [
+			"(of liquid or container) pour"
+		]
 	},
 	{
 		"title": "kakram",
