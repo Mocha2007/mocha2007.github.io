@@ -1201,7 +1201,7 @@ function expansionProject(){
 	console.info(`${goal} w/d required to reach 2024 goal`);
 	[7, 5, 4.5, 4].forEach(target => {
 		const eta = new Date(+new Date() + day*(days - w)/(target-1));
-		console.info(`ETA @ ${target} w/d = ${eta}`);
+		console.info(`ETA @ ${target} w/d = ${eta.toDateString()}`);
 	});
 }
 
