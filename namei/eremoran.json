@@ -2217,6 +2217,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "dakom",
+		"etym": "C/dam/ko",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"today"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "daktarm",
 		"etym": "L/PEN/*daktarm/time",
 		"cat": "n., 5th",
@@ -4956,15 +4965,6 @@
 			"grey; greyish brown (like mice)"
 		],
 		"notes": "cf. en. ''mousy'' and la. ''murinus'', mirroring senses 3-5."
-	},
-	{
-		"title": "dakom",
-		"etym": "C/dam/kom",
-		"cat": "n., 5th, adv.",
-		"defList": [
-			"today"
-		],
-		"categories": ["time"]
 	},
 	{
 		"title": "koka",
