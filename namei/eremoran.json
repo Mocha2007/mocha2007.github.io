@@ -2217,6 +2217,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "daimmom",
+		"etym": "C/id/modam",
+		"cat": "n., 5th; adv.",
+		"defList": [
+			"(archaic) ereyesterday, the day before yesterday, two days ago"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "dakink",
 		"etym": "C/da/kink",
 		"cat": "n., 2nd",
@@ -2289,6 +2298,15 @@
 			"monkey (esp. the rhesus macaque)"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "damom",
+		"etym": "C/dam/mo",
+		"cat": "n., 5th; adv.",
+		"defList": [
+			"yesterday"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "damu",
@@ -2421,6 +2439,15 @@
 		"defList": [
 			"[particle assuring the listener of what has been said]"
 		]
+	},
+	{
+		"title": "dêm",
+		"etym": "r/daimmom",
+		"cat": "n., 5th; adv.",
+		"defList": [
+			"ereyesterday, the day before yesterday, two days ago"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "di",
@@ -4181,6 +4208,14 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "ikku",
+		"etym": "C/id/kunz",
+		"cat": "pron., det.",
+		"defList": [
+			"the one after the next (usually a prefix)"
+		]
+	},
+	{
 		"title": "iklu",
 		"etym": "L/PEN/*iklu/valley",
 		"cat": "n., 4th",
@@ -4199,13 +4234,12 @@
 		"categories": ["age", "person"]
 	},
 	{
-		"title": "immodam",
-		"etym": "C/id/modam",
-		"cat": "n., 5th; adv.",
+		"title": "immo",
+		"etym": "C/id/mo",
+		"cat": "pron., det.",
 		"defList": [
-			"ereyesterday, the day before yesterday, two days ago"
-		],
-		"categories": ["time"]
+			"the one before last (usually a prefix)"
+		]
 	},
 	{
 		"title": "imô",
@@ -5553,6 +5587,15 @@
 		"etym": "L/PEN/*kuns/wash",
 		"cat": "v.",
 		"defList": [
+			"(archaic) come",
+			"next ~ (time word)"
+		]
+	},
+	{
+		"title": "kunz",
+		"etym": "L/PEN/*kuns/wash",
+		"cat": "v.",
+		"defList": [
 			"wash"
 		]
 	},
@@ -6370,12 +6413,13 @@
 	{
 		"title": "mo",
 		"etym": "L/PEN/*mo/back, behind",
-		"cat": "post.; n., 4th",
+		"cat": "pron., det., post.; n., 4th",
 		"defList": [
 			"back",
 			"behind",
 			"before",
-			"yester-"
+			"yester-",
+			"the previous one"
 		]
 	},
 	{
@@ -6387,15 +6431,6 @@
 			"stem (of a plant)"
 		],
 		"categories": ["plant"]
-	},
-	{
-		"title": "modam",
-		"etym": "C/mo/dam",
-		"cat": "n., 5th; adv.",
-		"defList": [
-			"yesterday"
-		],
-		"categories": ["time"]
 	},
 	{
 		"title": "mok",
@@ -6872,11 +6907,38 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "neikkum",
+		"etym": "C/nem/ikku",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"the year after next"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "neimmom",
+		"etym": "C/nem/immo",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"the year before last"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "nekom",
 		"etym": "C/nem/ko",
 		"cat": "n., 5th, adv.",
 		"defList": [
 			"this year"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "nekunam",
+		"etym": "C/nem/kunz",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"next year"
 		],
 		"categories": ["time"]
 	},
@@ -6953,6 +7015,24 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "neurikkum",
+		"etym": "C/neurm/ikku",
+		"cat": "n., 5th",
+		"defList": [
+			"(archaic) the season after next"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "neurimmom",
+		"etym": "C/neurm/immo",
+		"cat": "n., 5th",
+		"defList": [
+			"(archaic) the season before last"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "neurkom",
 		"etym": "C/neurm/ko",
 		"cat": "n., 5th, adv.",
@@ -6962,11 +7042,29 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "neurkunam",
+		"etym": "C/neurm/kunz",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"(archaic) next season"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "neurm",
 		"etym": "C/nem/urm",
 		"cat": "n., 5th",
 		"defList": [
 			"season (one third of the year = 24 sols)"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "neurmom",
+		"etym": "C/neurm/mo",
+		"cat": "n., 5th",
+		"defList": [
+			"(archaic) last season"
 		],
 		"categories": ["time"]
 	},
@@ -7184,11 +7282,47 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "nurikkum",
+		"etym": "r/neurikkum",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"the season after next"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "nurimmom",
+		"etym": "r/neurimmom",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"the season before last"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "nurkunam",
+		"etym": "r/neurkunam",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"next season"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "nurkom",
 		"etym": "r/neurkom",
 		"cat": "n., 5th, adv.",
 		"defList": [
 			"this season"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "nurmom",
+		"etym": "r/neurmom",
+		"cat": "n., 5th, adv.",
+		"defList": [
+			"last season"
 		],
 		"categories": ["time"]
 	},
