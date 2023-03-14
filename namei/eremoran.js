@@ -1185,13 +1185,18 @@ function computeStats(){
 	});
 	// print success message
 	// eslint-disable-next-line max-len
+	console.info(`eremoran.js successfully parsed ${elements.dict.length} words and recorded statistics.`);
+	expansionProject();
+}
+
+function expansionProject(){
+	const epoch = 1504561680000;
 	const w = elements.dict.length;
 	const day = 1000*60*60*24;
-	console.info(`eremoran.js successfully parsed ${w} words and recorded statistics.`);
-	const days = (new Date() - 1504561680000)/day; // https://github.com/Mocha2007/mocha2007.github.io/commit/e0c066b3adcba427b5301c43ba5f5a0eab8556c6
+	const days = (new Date() - epoch)/day; // https://github.com/Mocha2007/mocha2007.github.io/commit/e0c066b3adcba427b5301c43ba5f5a0eab8556c6
 	console.info(`avg. ${round(w/days, 2)} w/d`);
 	console.info(`target of 1 w/d would require ${Math.ceil(days)} words.`);
-	const _2024 = (new Date(2024, 0, 1) - 1504561680000)/day;
+	const _2024 = (new Date(2024, 0, 1) - epoch)/day;
 	const goal = (_2024 - w)/(new Date(2024, 0, 1) - new Date()) * day;
 	console.info(`${goal} w/d required to reach 2024 goal`);
 	const eta = new Date(+new Date() + day*(days - w)/(4.5-1));
