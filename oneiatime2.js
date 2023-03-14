@@ -110,7 +110,7 @@ function oneiaTimeInitialize(t){
 function updateEremoranDate(t){
 	var remainder = t-constants.oneia.epoch;
 	var years = constants.oneia.atEpoch+Math.floor(remainder/constants.oneia.year);
-	remainder %= constants.oneia.year;
+	remainder = mod(remainder, constants.oneia.year); // this first mod needs the better command in case year < 2017
 	var days = Math.floor(remainder/constants.oneia.day);
 	remainder %= constants.oneia.day;
 	var days_per_season = Math.floor(constants.oneia.year
