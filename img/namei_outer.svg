@@ -26,6 +26,7 @@
 		.hoverrange text{text-shadow:#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px,#fff 0 0 2px;}
 		.i{font-style:italic;}
 		.range,.line,#kirkwood circle{fill:none;cx:0px;cy:100px;}
+		.hill{stroke:rgba(255, 128, 128, 0.5);fill:rgba(255, 128, 128, 0.25);cy:100px;}
 		.line,#kirkwood circle{stroke-width:1;}
 		.range{stroke-opacity:0.5;}
 		#kirkwood circle{stroke:pink;}
@@ -102,6 +103,7 @@
 
 	<circle class='po' r="250"/><!-- Eisen orbit -->
 	<a class='gas' href='https://mocha2007.github.io/namei/namei.html#Eisen'><!-- Eisen -->
+		<circle cx="250" r="36.94" class="hill"/>
 		<text x="258" y="110">Eisen</text>
 		<path d="M -250 250 A 1 1 0 0 0 -250 -250" id="EisenPath"/>
 		<circle cx="250" class='moc' style="fill:darkkhaki"/>
@@ -109,6 +111,7 @@
 
 	<circle class='po' r="646"/><!-- Neuve orbit -->
 	<a class='gas' href='https://mocha2007.github.io/namei/namei.html#Neuve'><!-- Neuve -->
+		<circle cx="646" r="21.60" class="hill"/>
 		<text x="652" y="110">Neuve</text>
 		<path d="M -646 646 A 1 1 0 0 0 -646 -646" id="NeuvePath"/>
 		<circle cx="646" class='moc' style="fill:#7ca1ae"/>
@@ -116,6 +119,7 @@
 
 	<circle class='po' r="1273"/><!-- Dicito orbit -->
 	<a class='gas' href='https://mocha2007.github.io/namei/namei.html#Dicito'><!-- Dicito -->
+		<circle cx="1273" r="5.75" class="hill"/>
 		<text x="1281" y="110">Dicito</text>
 		<path d="M -1273 1273 A 1 1 0 0 0 -1273 -1273" id="DicitoPath"/>
 		<circle cx="1273" class='moc' style="fill:sienna"/>
@@ -123,6 +127,7 @@
 
 	<circle class='po' r="2180"/><!-- Mannu orbit -->
 	<a class='gas' href='https://mocha2007.github.io/namei/namei.html#Mannu'><!-- Mannu -->
+		<circle cx="2180" r="143.76" class="hill"/>
 		<text x="2188" y="110">Mannu</text>
 		<path d="M -2180 2180 A 1 1 0 0 0 -2180 -2180" id="NeuvePath"/>
 		<circle cx="2180" class='moc' style="fill:darkseagreen"/>
