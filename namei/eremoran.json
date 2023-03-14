@@ -1496,14 +1496,6 @@
 		]
 	},
 	{
-		"title": "beka",
-		"etym": "L/PEN/*βega/way",
-		"cat": "n., 4th",
-		"defList": [
-			"way, path"
-		]
-	},
-	{
 		"title": "bêikkum",
 		"etym": "C/bêm/ikku",
 		"cat": "n., 5th",
@@ -1520,6 +1512,14 @@
 			"the week before last"
 		],
 		"categories": ["time"]
+	},
+	{
+		"title": "beka",
+		"etym": "L/PEN/*βega/way",
+		"cat": "n., 4th",
+		"defList": [
+			"way, path"
+		]
 	},
 	{
 		"title": "bêkom",
@@ -8598,21 +8598,21 @@
 		"categories": ["time"]
 	},
 	{
-		"title": "skuiku",
-		"etym": "L/PEN/*skuixu",
-		"cat": "adj.",
-		"defList": [
-			"(colloquial) young"
-		],
-		"categories": ["time"]
-	},
-	{
 		"title": "skuikkum",
 		"etym": "C/skum/ikku",
 		"cat": "n., 5th",
 		"defList": [
 			"(archaic) the winter after next",
 			"(metaphorically) the year after next (of age)"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "skuiku",
+		"etym": "L/PEN/*skuixu",
+		"cat": "adj.",
+		"defList": [
+			"(colloquial) young"
 		],
 		"categories": ["time"]
 	},
