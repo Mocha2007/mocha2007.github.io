@@ -746,6 +746,14 @@
 		]
 	},
 	{
+		"title": "arafkaz",
+		"etym": "C/arz/afkaz",
+		"cat": "v.",
+		"defList": [
+			"stand up"
+		]
+	},
+	{
 		"title": "arama",
 		"img": "../img/eremoran/arama.png",
 		"etym": "L/PEN/*xere-ma/copper",
@@ -885,14 +893,6 @@
 			"cattle; cow"
 		],
 		"categories": ["animal"]
-	},
-	{
-		"title": "arfkaz",
-		"etym": "C/arz/afkaz",
-		"cat": "v.",
-		"defList": [
-			"stand up"
-		]
 	},
 	{
 		"title": "arkik",
