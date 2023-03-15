@@ -1,5 +1,5 @@
 /* exported adj, eremoranMain, ereNum, linkCard, search, titleCard, wordle */
-/* global charHisto, commaNumber, etymElement, getDict, histo,
+/* global charHisto, commaNumber, etymElement, getDict, histo, isAnagram
 	quotes, random, removeAccents, round, startEreQuote,
 	translationChallenges, union */
 
@@ -7,6 +7,9 @@
 
 // dictionary databases
 const elements = {
+	get anagrams(){
+		return this.dict.filter(w1 => this.dict.some(w2 => w1 !== w2 && isAnagram(w1, w2)));
+	},
 	/** @type {string[]} */
 	categories: [],
 	/** @type {string[]} - array of words*/
