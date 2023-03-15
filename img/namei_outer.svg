@@ -109,12 +109,12 @@
 		<circle cx="250" class='moc' style="fill:darkkhaki"/>
 	</a>
 
-	<circle class='po' r="646"/><!-- Neuve orbit -->
+	<circle class='po' r="660"/><!-- Neuve orbit -->
 	<a class='gas' href='https://mocha2007.github.io/namei/namei.html#Neuve'><!-- Neuve -->
-		<circle cx="646" r="21.60" class="hill"/>
-		<text x="652" y="110">Neuve</text>
-		<path d="M -646 646 A 1 1 0 0 0 -646 -646" id="NeuvePath"/>
-		<circle cx="646" class='moc' style="fill:#7ca1ae"/>
+		<circle cx="660" r="22.06" class="hill"/>
+		<text x="668" y="110">Neuve</text>
+		<path d="M -660 660 A 1 1 0 0 0 -660 -660" id="NeuvePath"/>
+		<circle cx="660" class='moc' style="fill:#7ca1ae"/>
 	</a>
 
 	<circle class='po' r="1373"/><!-- Dicito orbit -->
