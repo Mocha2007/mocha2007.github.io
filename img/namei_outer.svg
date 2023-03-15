@@ -117,12 +117,12 @@
 		<circle cx="646" class='moc' style="fill:#7ca1ae"/>
 	</a>
 
-	<circle class='po' r="1273"/><!-- Dicito orbit -->
+	<circle class='po' r="1373"/><!-- Dicito orbit -->
 	<a class='gas' href='https://mocha2007.github.io/namei/namei.html#Dicito'><!-- Dicito -->
-		<circle cx="1273" r="5.75" class="hill"/>
-		<text x="1281" y="110">Dicito</text>
-		<path d="M -1273 1273 A 1 1 0 0 0 -1273 -1273" id="DicitoPath"/>
-		<circle cx="1273" class='moc' style="fill:sienna"/>
+		<circle cx="1373" r="6.20" class="hill"/>
+		<text x="1381" y="110">Dicito</text>
+		<path d="M -1373 1373 A 1 1 0 0 0 -1373 -1373" id="DicitoPath"/>
+		<circle cx="1373" class='moc' style="fill:sienna"/>
 	</a>
 
 	<circle class='po' r="2180"/><!-- Mannu orbit -->
