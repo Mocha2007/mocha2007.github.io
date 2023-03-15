@@ -7,6 +7,9 @@
 
 // dictionary databases
 const elements = {
+	get anadromes(){
+		return this.dict.filter(w => this.dict.includes(w.split('').reverse().join('')));
+	},
 	get anagrams(){
 		return this.dict.filter(w1 => this.dict.some(w2 => w1 !== w2 && isAnagram(w1, w2)));
 	},
@@ -28,6 +31,9 @@ const elements = {
 	},
 	/** @type {string[]} - array of words*/
 	dict: [],
+	get palindromes(){
+		return this.dict.filter(w => w === w.split('').reverse().join(''));
+	},
 	/** @type {Array} */
 	raws: [],
 };
