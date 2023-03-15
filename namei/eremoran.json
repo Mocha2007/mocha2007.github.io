@@ -320,6 +320,14 @@
 		]
 	},
 	{
+		"title": "adarz",
+		"etym": "C/ad/arz",
+		"cat": "v.",
+		"defList": [
+			"support"
+		]
+	},
+	{
 		"title": "addam",
 		"etym": "C/ad/dam",
 		"cat": "n., 5th; adv.",
@@ -531,9 +539,10 @@
 		"etym": "C/ad/kraz",
 		"cat": "v.",
 		"defList": [
-			"approach",
+			"approach (incl. math sense)",
 			"attempt, try"
-		]
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "akku",
@@ -878,6 +887,14 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "arfkaz",
+		"etym": "C/arz/afkaz",
+		"cat": "v.",
+		"defList": [
+			"stand up"
+		]
+	},
+	{
 		"title": "arkik",
 		"etym": "L/PEN/*ere-kix",
 		"cat": "n., 2nd",
@@ -933,7 +950,7 @@
 		"defList": [
 			"stand",
 			"stay, remain",
-			"stop, halt, cease",
+			"exist",
 			"be stiff, still, stubborn",
 			"(mathematics) be right (angle)"
 		],
@@ -2661,6 +2678,16 @@
 		"cat": "v.",
 		"defList": [
 			"send"
+		]
+	},
+	{
+		"title": "dinbarz",
+		"etym": "C/din/barz",
+		"cat": "v.",
+		"defList": [
+			"filter out",
+			"conscript, enroll, levy",
+			"cull"
 		]
 	},
 	{
@@ -4468,6 +4495,24 @@
 		]
 	},
 	{
+		"title": "itarz",
+		"etym": "C/it/arz",
+		"cat": "v.",
+		"defList": [
+			"stop, halt, cease",
+			"oppose"
+		]
+	},
+	{
+		"title": "itbarz",
+		"etym": "C/it/barz",
+		"cat": "v.",
+		"defList": [
+			"obligate",
+			"offer as collateral (ie. for a loan)"
+		]
+	},
+	{
 		"title": "itkunz",
 		"etym": "C/it/kunz",
 		"cat": "v.",
@@ -5100,7 +5145,8 @@
 		"etym": "L/PEN/*ko/this",
 		"cat": "adj.",
 		"defList": [
-			"this, these"
+			"this, these",
+			"(late Eremoran or dialectal) the (the definite article)"
 		]
 	},
 	{
@@ -5399,7 +5445,7 @@
 		"etym": "C/ku/barz",
 		"cat": "v.",
 		"defList": [
-			"gather"
+			"gather, collect, assemble"
 		]
 	},
 	{
