@@ -287,7 +287,7 @@ defFormat.re = [
 	// italics
 	[/''([^']+?)''/g, m => `<em>${m[1]}</em>`],
 	// links
-	[/\[\[([^\]]+?)\]\]/g, m => linkCard(m[1]).innerHTML],
+	[/\[\[([^\]]+?)\]\]/g, m => linkCard(m[1]).outerHTML],
 	// templates
 	// eg. {{w|orange|Orange (fruit)}}
 	[/{{w\|([^|}]+)\|?([^}]+?)?}}/g, m => `<a href="https://en.wikipedia.org/wiki/${m[2] || m[1]}">${m[1]}</a>`],
