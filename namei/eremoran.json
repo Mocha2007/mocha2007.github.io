@@ -2760,6 +2760,15 @@
 		"notes": "In the sense of \"mean\", what is the direct object in English would be construed with lative ''ad'' \"to\"."
 	},
 	{
+		"title": "dinsisi",
+		"etym": "C/din/sisi",
+		"cat": "n., 4th",
+		"defList": [
+			"(astronomy) opposition"
+		],
+		"categories": ["astronomy"]
+	},
+	{
 		"title": "dinsukam",
 		"etym": "C/dinsukaz/-m",
 		"cat": "n., 5th",
@@ -5858,6 +5867,15 @@
 		]
 	},
 	{
+		"title": "kusisi",
+		"etym": "C/ku/sisi",
+		"cat": "n., 4th",
+		"defList": [
+			"(astronomy) conjunction"
+		],
+		"categories": ["astronomy"]
+	},
+	{
 		"title": "kutoker",
 		"etym": "L/PRE/???",
 		"cat": "n., 1st",
@@ -8107,6 +8125,15 @@
 		"categories": ["astronomy", "weather"]
 	},
 	{
+		"title": "rilabum",
+		"etym": "C/ril/abum",
+		"cat": "n., 5th",
+		"defList": [
+			"zodiac"
+		],
+		"categories": ["astronomy"]
+	},
+	{
 		"title": "rilm",
 		"etym": "C/ril/-m",
 		"cat": "n., 5th",
@@ -8620,6 +8647,15 @@
 		]
 	},
 	{
+		"title": "sisiurm",
+		"etym": "C/sisi/urm",
+		"cat": "n., 5th",
+		"defList": [
+			"horoscope"
+		],
+		"categories": ["astronomy"]
+	},
+	{
 		"title": "siu",
 		"etym": "C/siz/-u",
 		"cat": "adj.",
@@ -8645,6 +8681,15 @@
 		"defList": [
 			"(archaic) [causative]"
 		]
+	},
+	{
+		"title": "sizensum",
+		"etym": "L/NUZ/sijensume//L/VAZ/swijinn-silme/sea-god star",
+		"cat": "n., 5th",
+		"defList": [
+			"Neuve, the seventh planet from Namei"
+		],
+		"categories": ["astronomy", "toponym"]
 	},
 	{
 		"title": "skam",
