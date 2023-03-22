@@ -1,4 +1,4 @@
-# a small script to check which files are new or modified in the past 30 days
+"""a small script to check which files are new or modified in the past 30 days"""
 from glob import glob
 from os.path import abspath, dirname, getctime, getmtime
 from time import time
