@@ -16,6 +16,8 @@ var constants = {
 		places: 5,
 		seasons: ['Stum', 'Reram', 'Kokum'],
 		seasonsAlt: ['Sowing', 'Harvest', 'Flood'],
+		week: ['Nodrilm', 'Rilrilm', 'Kopkêrilm', 'Kosurilm', 'Bikêrilm', 'Samarrilm'],
+		weekdayCycle: [0, 1, 1, 2, 2, 3, 3, 4, 5, 5, 0, 0, 1, 1, 2, 3, 3, 4, 4, 5, 5],
 	},
 	moon: {
 		epoch: 642900000, // ms; 7 Jan 1970 10:35:00 UTC
@@ -107,6 +109,15 @@ function oneiaTimeInitialize(t){
 		= (t-constants.earth.winter) % constants.earth.year/constants.earth.year;
 }
 
+/**
+ * @param {number} y year
+ * @param {number} d day of the season (seasons all start on the same DoW)
+ * @returns {string}
+*/
+function eremoranWeekday(y, d){
+	return constants.eremor.week[(constants.eremor.weekdayCycle[y % 21] + d) % 6];
+}
+
 function updateEremoranDate(t){
 	var remainder = t-constants.oneia.epoch;
 	var years = constants.oneia.atEpoch+Math.floor(remainder/constants.oneia.year);
@@ -121,7 +132,7 @@ function updateEremoranDate(t){
 	var seasonString = (constants.eremor.seasons[seasonId] || '') + ' ('
 		+ (constants.eremor.seasonsAlt[seasonId] || 'Intercalary Day') + ')';
 	document.getElementById('clock_eremor_date').innerHTML = years
-		+ ' AT, ' + seasonString + ', Day ' + days + ', '
+		+ ' AT, ' + seasonString + ',  Day ' + days + ' (' + eremoranWeekday(years, days) + '), '
 		+ constants.timeOfDay[Math.floor(8*remainder/constants.oneia.day)];
 }
 
