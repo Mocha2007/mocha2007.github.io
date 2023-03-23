@@ -346,9 +346,10 @@
 	},
 	{
 		"title": "adzamarz",
-		"etym": "L/PEN/*xêd-samars/relax",
+		"etym": "L/PEN/*xêd-samars/rest",
 		"cat": "v.",
 		"defList": [
+			"rest",
 			"(intransitive) relax"
 		]
 	},
@@ -1621,6 +1622,15 @@
 		]
 	},
 	{
+		"title": "bêrilm",
+		"etym": "C/bêm/rilm",
+		"cat": "n., 5th",
+		"defList": [
+			"day of the week"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "berz",
 		"etym": "L/PEN/*βers/spin",
 		"cat": "v.",
@@ -1802,6 +1812,15 @@
 		"cat": "n., 5th",
 		"defList": [
 			"last bikêm"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "bikêrilm",
+		"etym": "C/bikê/rilm",
+		"cat": "n., 5th",
+		"defList": [
+			"The fifth day of the 6-day week"
 		],
 		"categories": ["time"]
 	},
@@ -5295,6 +5314,15 @@
 		"categories": ["astronomy", "toponym"]
 	},
 	{
+		"title": "kopkêrilm",
+		"etym": "C/kopkê/rilm",
+		"cat": "n., 5th",
+		"defList": [
+			"The third day of the 6-day week"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "kopz",
 		"img": "../img/eremoran/kopz.png",
 		"etym": "L/PRE/qōp/love",
@@ -5312,6 +5340,15 @@
 			"Bau, the third planet from Namei"
 		],
 		"categories": ["astronomy", "toponym"]
+	},
+	{
+		"title": "kosurilm",
+		"etym": "C/kosum/rilm",
+		"cat": "n., 5th",
+		"defList": [
+			"The fourth day of the 6-day week"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "kot",
@@ -7356,6 +7393,15 @@
 		"categories": ["astronomy"]
 	},
 	{
+		"title": "nodrilm",
+		"etym": "C/nod/rilm",
+		"cat": "n., 5th",
+		"defList": [
+			"The first day of the 6-day week"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "nokin",
 		"etym": "L/PEN/*nokin/mushroom",
 		"cat": "n., 4th",
@@ -8144,12 +8190,39 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "rilrilm",
+		"etym": "C/ril/rilm",
+		"cat": "n., 5th",
+		"defList": [
+			"The second day of the 6-day week"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "rilu",
 		"etym": "C/ril/-u",
 		"cat": "adj.",
 		"defList": [
 			"bright"
 		]
+	},
+	{
+		"title": "rilupiabêm",
+		"etym": "C/rilupiam/bêm",
+		"cat": "n., 5th",
+		"defList": [
+			"21-year dominical letter cycle"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "rilupiam",
+		"etym": "C/ril/upiam",
+		"cat": "n., 5th",
+		"defList": [
+			"{{w|dominical letter}}"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "rinz",
@@ -8276,6 +8349,15 @@
 			"find, discover",
 			"encounter, meet"
 		]
+	},
+	{
+		"title": "samarrilm",
+		"etym": "C/samarz/rilm",
+		"cat": "n., 5th",
+		"defList": [
+			"The sixth day of the 6-day week"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "samarz",
@@ -8944,6 +9026,15 @@
 			"(mathematics) over, divided by"
 		],
 		"notes": "Full derivation: ''su tô ad''"
+	},
+	{
+		"title": "stôdbêkum",
+		"etym": "C/stôd/bêkum",
+		"cat": "n., 5th",
+		"defList": [
+			"calendrical cycle (any kind in general)"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "stôdidz",
@@ -10129,7 +10220,7 @@
 		"etym": "L/PRE/uppayāpa/rune; glyph; symbol//L/VAZ/pagubu/writing",
 		"cat": "n., 5th",
 		"defList": [
-			"symbol, character, glyph",
+			"symbol, character, letter, glyph",
 			"logo, emblem",
 			"cover art"
 		]
