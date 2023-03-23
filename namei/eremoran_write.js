@@ -36,8 +36,6 @@ const ereWrite = {
 	removeLast(){
 		this.elem.canvas.children[this.elem.canvas.children.length-1].remove();
 		this.words.pop();
-		if (this.words.length) // remove space
-			this.elem.canvas.children[this.elem.canvas.children.length-1].remove();
 	},
 	reset(){
 		this.words = [];
