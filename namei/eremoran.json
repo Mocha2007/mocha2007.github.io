@@ -8477,6 +8477,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "semasum",
+		"etym": "L/VAZ/šemasilme/grain-star",
+		"cat": "n., 4th",
+		"defList": [
+			"Tata, the dwarf planet"
+		],
+		"categories": ["astronomy", "toponym"]
+	},
+	{
 		"title": "ses",
 		"etym": "L/PEN/*ʃets/~planet",
 		"cat": "n., 4th",
@@ -8487,15 +8496,6 @@
 			"(by extension) comet"
 		],
 		"categories": ["astronomy"]
-	},
-	{
-		"title": "sesela",
-		"etym": "D/ses",
-		"cat": "n., 4th",
-		"defList": [
-			"Tata, the dwarf planet"
-		],
-		"categories": ["astronomy", "toponym"]
 	},
 	{
 		"title": "sesu",
