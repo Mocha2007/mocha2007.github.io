@@ -17,7 +17,6 @@ var constants = {
 		seasons: ['Stum', 'Reram', 'Kokum'],
 		seasonsAlt: ['Sowing', 'Harvest', 'Flood'],
 		week: ['Nodrilm', 'Rilrilm', 'Kopkêrilm', 'Kosurilm', 'Bikêrilm', 'Samarrilm'],
-		weekdayCycle: [0, 1, 1, 2, 2, 3, 3, 4, 5, 5, 0, 0, 1, 1, 2, 3, 3, 4, 4, 5, 5],
 	},
 	moon: {
 		epoch: 642900000, // ms; 7 Jan 1970 10:35:00 UTC
@@ -31,7 +30,7 @@ var constants = {
 		atEpoch: 1750,
 		day: 105583056.7402678, // ms; solar day; the sideral day is 104148 s
 		epoch: 1497151176000, // ms; SUN 2017 JUN 11 03:19:36 UTC
-		year: 7662598895.79935, // ms; oneian orbital period
+		year: 7656856407.307186, // ms; oneian tropical year
 	},
 	timeOfDay: [
 		// each represents a 3h period on earth
@@ -115,7 +114,9 @@ function oneiaTimeInitialize(t){
  * @returns {string}
 */
 function eremoranWeekday(y, d){
-	return constants.eremor.week[(constants.eremor.weekdayCycle[y % 21] + d) % 6];
+	y %= 150; // just in case...
+	var dominical = Math.round(0.52*y + (Math.floor((y-1)/25) % 2 ? 0 : 1 - y%2)); // would be % 6 but that's redundant
+	return constants.eremor.week[(dominical + d) % 6];
 }
 
 function updateEremoranDate(t){
