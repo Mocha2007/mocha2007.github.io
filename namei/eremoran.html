@@ -15,6 +15,7 @@
 <script src="dict2.js" async></script>
 <script src="bee.js" async></script>
 <script src="shiritori.js" async></script>
+<script src="eremoran_write.js" async></script>
 <script src="../toc.js" defer></script>
 <title>Eremoran Language</title>
 <nav></nav>
@@ -2814,6 +2815,22 @@ Circumcize therefore the foreskin of your heart,
 		<td>crow TOP some ABS rock-DIM DAT water-container-[class 3] fall&lt;CAUS> and ABS water DAT edge rise&lt;CAUS></td>
 	</tr>
 </table>
+
+
+<h3 id="Write_Eremoran">Eremoran Writing Utility</h3>
+<input type="text" id="erewrite_input" onkeypress="ereWrite.update();">
+<table>
+	<tr>
+		<td>Suggestions:</td>
+		<td><span class="button" onclick="ereWrite.addRaw();">Add raw</span></td>
+	</tr>
+	<tr>
+		<td colspan="2"><ul id="erewrite_suggest"></ul></td>
+	</tr>
+</table>
+<span class="button" onclick="ereWrite.removeLast();">Backspace</span>
+<span class="button" onclick="ereWrite.reset();">Clear</span>
+<div id="erewrite_canvas"></div>
 
 
 <h3 id="Learn_Eremoran">Learn Eremoran</h3>
