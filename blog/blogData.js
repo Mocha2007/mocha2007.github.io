@@ -656,4 +656,26 @@ const blogData = [
 	I doubt <em>Jupiter</em> would fly, but I wonder if the rest would be found acceptable by the IAU.
 	Dick and Paris are already the names of asteroids, so that would be another hinderance.
 	`,
+	`
+	@title Month-and-a-half Eremoran Expansion Update
+	@date 1679682301927
+	@tags eremoran
+	It has been six weeks since I started adding new vocab.
+	In that time, I have added 265 words,
+	leading to an average of 6.3 words per day.
+	I am currently on track to finish my goal likely sometime from September to November,
+	by which time the dictionary size will be somewhere on the order of 2,200 words.
+	@p
+	@tags calendar eremoran
+	I also had to tweak the Eremoran calendar yesterday,
+	since I realized the axial precession rate for Oneia was much more than I anticipated -
+	one complete precession would occur about once every 320 earth years,
+	leading to a tropical year substantially shorter than a sideral year.
+	So now leap days are determined as follows: if the year is odd or divisible by fifty, it is a leap year.
+	@p
+	@tags weather
+	It went from 19F Sunday to 86F today.
+	I guess I don't need a jacket anymore.
+	I've had a headache all day; I wonder if it's related?
+	`,
 ];
