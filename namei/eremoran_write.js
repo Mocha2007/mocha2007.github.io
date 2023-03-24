@@ -28,7 +28,7 @@ const ereWrite = {
 		get input(){
 			return document.getElementById('erewrite_input');
 		},
-		/** @returns {HTMLUListElement} */
+		/** @returns {HTMLTableCellElement} */
 		get list(){
 			return document.getElementById('erewrite_suggest');
 		},
@@ -45,15 +45,21 @@ const ereWrite = {
 		this.elem.list.innerHTML = '';
 		// update suggestions...
 		const search = this.elem.input.value;
-		const re = new RegExp(search, 'g');
+		let re;
+		try {
+			re = new RegExp(search, 'g');
+		}
+		catch (_){
+			return;
+		}
 		const results = elements.raws.filter(raw => raw.defList.some(def => re.test(def)));
-		results.slice(0, 10).forEach(raw => {
-			const li = document.createElement('li');
+		results.slice(0, 10).forEach((raw, i) => {
 			const linkElem = linkCard(raw.title);
 			linkElem.href = '#Write_Eremoran';
 			linkElem.onclick = () => this.add(raw.title);
-			li.appendChild(linkElem);
-			this.elem.list.appendChild(li);
+			if (i) // add space beforehand
+				this.elem.list.appendChild(document.createTextNode(' '));
+			this.elem.list.appendChild(linkElem);
 		});
 	},
 	/** @type {string[]} */
