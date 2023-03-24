@@ -39,7 +39,7 @@ const ereWrite = {
 	},
 	reset(){
 		this.words = [];
-		this.elem.canvas.innerHTML = '';
+		this.elem.input.value = this.elem.list.innerHTML = this.elem.canvas.innerHTML = '';
 	},
 	update(){
 		this.elem.list.innerHTML = '';
