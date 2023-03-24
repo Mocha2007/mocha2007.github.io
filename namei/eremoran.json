@@ -6418,6 +6418,14 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "manam",
+		"etym": "C/manaz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"smell, scent, fragrance, odor"
+		]
+	},
+	{
 		"title": "mananuk",
 		"etym": "C/mana/hanu",
 		"cat": "n., 2nd",
@@ -6435,14 +6443,6 @@
 			"shrew"
 		],
 		"categories": ["animal"]
-	},
-	{
-		"title": "manam",
-		"etym": "C/manaz/-m",
-		"cat": "n., 5th",
-		"defList": [
-			"smell, scent, fragrance, odor"
-		]
 	},
 	{
 		"title": "manat",
