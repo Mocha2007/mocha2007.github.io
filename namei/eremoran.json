@@ -2692,6 +2692,14 @@
 		"notes": "Note: * - There are many possible arrangements of this phrase. To emphasize the recipient, ''ad'' may even be replaced by ''dir''. The most neutral phrasing is shown. ZE dialects use this prepositionally for translative senses."
 	},
 	{
+		"title": "dinastedz",
+		"etym": "C/din/astedu",
+		"cat": "v.",
+		"defList": [
+			"charm, influence by charisma"
+		]
+	},
+	{
 		"title": "dinbamz",
 		"etym": "C/din/bamz",
 		"cat": "v.",
@@ -5432,6 +5440,14 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "kru",
+		"etym": "L/PEN/*gru/soft",
+		"cat": "adj.",
+		"defList": [
+			"soft, gentle"
+		]
+	},
+	{
 		"title": "krum",
 		"etym": "L/PEN/*grum/study",
 		"cat": "n., 5th",
@@ -5666,6 +5682,14 @@
 			"wrist"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "kumanat",
+		"etym": "C/ku/manam",
+		"cat": "n., 3rd",
+		"defList": [
+			"perfume"
+		]
 	},
 	{
 		"title": "kumitaz",
@@ -6411,6 +6435,14 @@
 			"shrew"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "manam",
+		"etym": "C/manaz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"smell, scent, fragrance, odor"
+		]
 	},
 	{
 		"title": "manat",
@@ -8487,6 +8519,15 @@
 			"butterfly"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "sebaz",
+		"etym": "C/seba/-z",
+		"cat": "v.",
+		"defList": [
+			"bloom, flower, blossom"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "seda",

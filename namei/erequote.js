@@ -118,4 +118,9 @@ const translationChallenges = [
 	Imôkam i pukusam; tanid kul, buni hal.
 	Attukum i ad temêmor spez mok udoulk ku,
 	amzralam su id bokusam i ad Nizitnôr din`,
+	// https://en.wikipedia.org/wiki/Reiwa_era#Origin_and_meaning
+	`Tar sumstum i astedum neurm mok,
+	hu i linku ku tukil i kru,
+	lennama su seba i astedum ku dinastedz sim ad sebaz ku,
+	sebasum manam i amut kumanat.`,
 ];
