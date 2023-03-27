@@ -214,10 +214,12 @@
 		"etym": "C/ad/bakaz",
 		"cat": "v.",
 		"defList": [
-			"gain (esp. by force)",
-			"earn",
-			"win"
-		]
+			"(intransitive) (lower status) gets/receives X from (higher status)",
+			"(transitive) gain (esp. by force)",
+			"(transitive) earn",
+			"(transitive) win"
+		],
+		"categories": ["giving"]
 	},
 	{
 		"title": "abbaliêr",
@@ -253,6 +255,15 @@
 			"(mathematics) line segment"
 		],
 		"categories": ["math"]
+	},
+	{
+		"title": "abbôz",
+		"etym": "C/ad/bôz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) (lower status) gives (higher status) X"
+		],
+		"categories": ["giving"]
 	},
 	{
 		"title": "abbra",
@@ -360,7 +371,8 @@
 			"(''post., inanimate only'') have: X Y ad = Y has X",
 			"(''ambipositional, math'') plus",
 			"(''adverb'') about to, going to, (forms near future aspect)"
-		]
+		],
+		"categories": ["giving"]
 	},
 	{
 		"title": "adafkaz",
@@ -2124,7 +2136,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"gift"
-		]
+		],
+		"categories": ["giving"]
 	},
 	{
 		"title": "bôelak",
@@ -2773,7 +2786,8 @@
 			"(verb +) just (recent past - cf. fr. ''venir de'')",
 			"(prefix) dis-, un- (verbal prefix showing undoing/removal of a state)"
 		],
-		"notes": "Note: * - There are many possible arrangements of this phrase. To emphasize the recipient, ''ad'' may even be replaced by ''dir''. The most neutral phrasing is shown. ZE dialects use this prepositionally for translative senses."
+		"notes": "Note: * - There are many possible arrangements of this phrase. To emphasize the recipient, ''ad'' may even be replaced by ''dir''. The most neutral phrasing is shown. ZE dialects use this prepositionally for translative senses.",
+		"categories": ["giving"]
 	},
 	{
 		"title": "dinarz",
@@ -2790,6 +2804,15 @@
 		"defList": [
 			"charm, influence by charisma"
 		]
+	},
+	{
+		"title": "dinbakaz",
+		"etym": "C/din/bakaz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) (higher status) gets/receives X from (lower status)"
+		],
+		"categories": ["giving"]
 	},
 	{
 		"title": "dinbamz",
@@ -2810,20 +2833,13 @@
 		]
 	},
 	{
-		"title": "dinbôm",
-		"etym": "C/dinbôz/-m",
-		"cat": "n., 5th",
-		"defList": [
-			"birthday"
-		]
-	},
-	{
 		"title": "dinbôz",
 		"etym": "C/din/bôz",
 		"cat": "v.",
 		"defList": [
-			"give birth, bear"
-		]
+			"(intransitive) (higher status) gives (lower status) X"
+		],
+		"categories": ["giving"]
 	},
 	{
 		"title": "dindôbat",
@@ -4258,6 +4274,15 @@
 		]
 	},
 	{
+		"title": "hokibôz",
+		"etym": "C/hoki/bôz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive, irrealis only) I give you X"
+		],
+		"categories": ["giving"]
+	},
+	{
 		"title": "holk",
 		"etym": "C/ho/-ulk",
 		"cat": "adv.",
@@ -5392,6 +5417,15 @@
 			"grey; greyish brown (like mice)"
 		],
 		"notes": "cf. en. ''mousy'' and la. ''murinus'', mirroring senses 3-5."
+	},
+	{
+		"title": "kobôz",
+		"etym": "C/ko/bôz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive, imperative only) you give me X"
+		],
+		"categories": ["giving"]
 	},
 	{
 		"title": "koka",
@@ -7973,8 +8007,8 @@
 		]
 	},
 	{
-		"title": "olol dinbôm",
-		"etym": "P/olol/dinbôm",
+		"title": "olol subôm",
+		"etym": "P/olol/subôm",
 		"cat": "interj.",
 		"defList": [
 			"happy birthday!"
@@ -9436,6 +9470,22 @@
 			"(chess) pawn"
 		],
 		"categories": ["chess", "person"]
+	},
+	{
+		"title": "subôm",
+		"etym": "C/subôz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"birthday"
+		]
+	},
+	{
+		"title": "subôz",
+		"etym": "C/su/bôz",
+		"cat": "v.",
+		"defList": [
+			"give birth, bear"
+		]
 	},
 	{
 		"title": "sud",
