@@ -680,7 +680,7 @@ const blogData = [
 	`,
 	`
 	@title Eremoran Expansion Update Afterthought
-	@date
+	@date 1679929974475
 	@tags eremoran
 	It just occured to me: at the current rate I am expanding the vocab,
 	I could easily have it done on Eremoran's sixth anniversary.
