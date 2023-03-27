@@ -3705,6 +3705,14 @@
 		]
 	},
 	{
+		"title": "halbefôz",
+		"etym": "C/hal/befôz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) run out, deplete"
+		]
+	},
+	{
 		"title": "halbiz",
 		"etym": "C/hal/biz",
 		"cat": "v.",
@@ -3886,7 +3894,8 @@
 		"etym": "C/hanum/-z",
 		"cat": "v.",
 		"defList": [
-			"hold"
+			"hold",
+			"maintain"
 		]
 	},
 	{
@@ -4806,9 +4815,9 @@
 		"etym": "D/kalz",
 		"cat": "v.",
 		"defList": [
-			"seek; search for",
-			"miss; lack",
-			"want"
+			"be sought; be searched for",
+			"be missed; be lacked",
+			"be wanted"
 		],
 		"notes": "Unlike English, this verb is not catenative, and only takes nouns as direct objects. To express ''wanna'', one would use the optative.",
 		"categories": ["experiential"]
@@ -4818,7 +4827,7 @@
 		"etym": "L/PEN/*kals/ask",
 		"cat": "v.",
 		"defList": [
-			"need"
+			"be needed, be required"
 		],
 		"categories": ["experiential"]
 	},
@@ -7592,6 +7601,14 @@
 		]
 	},
 	{
+		"title": "nostôz",
+		"etym": "B/nost/sudôz",
+		"cat": "post.",
+		"defList": [
+			"suffice, be sufficient/enough"
+		]
+	},
+	{
 		"title": "noz",
 		"etym": "C/nom/-z",
 		"cat": "v.",
@@ -8148,6 +8165,25 @@
 			"persimmon"
 		],
 		"categories": ["fruit", "plant"]
+	},
+	{
+		"title": "rankensudôm",
+		"etym": "C/rankensudôz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"raise",
+			"substitution (the action, not the object)"
+		]
+	},
+	{
+		"title": "rankensudôz",
+		"etym": "C/rankenz/sudôz",
+		"cat": "v.",
+		"defList": [
+			"raise",
+			"substitute"
+		],
+		"notes": "X substitutes Y for Z ~ X dir Y Z it rankensudôz"
 	},
 	{
 		"title": "rankenz",
@@ -10234,6 +10270,15 @@
 		"defList": [
 			"no, none"
 		]
+	},
+	{
+		"title": "ukalz",
+		"etym": "C/u/kalz",
+		"cat": "v.",
+		"defList": [
+			"be unneeded, be unnecessary, superfluous"
+		],
+		"categories": ["experiential"]
 	},
 	{
 		"title": "uku",
