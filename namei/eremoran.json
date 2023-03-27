@@ -96,6 +96,14 @@
 		]
 	},
 	{
+		"title": "-okuz",
+		"etym": "L/VAZ/okhu/be",
+		"cat": "aff.",
+		"defList": [
+			"(polite verb suffix)"
+		]
+	},
+	{
 		"title": "-r",
 		"etym": "L/PEN/*-r//L/PEN/*-rre",
 		"cat": "aff.",
@@ -393,6 +401,14 @@
 		"cat": "v.",
 		"defList": [
 			"be destroyed, be annihilated, be decimated"
+		]
+	},
+	{
+		"title": "adzamarm",
+		"etym": "C/adzamarz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"break"
 		]
 	},
 	{
@@ -1105,6 +1121,15 @@
 		"defList": [
 			"fence"
 		]
+	},
+	{
+		"title": "az",
+		"etym": "L/PEN/*as/pass",
+		"cat": "v.",
+		"defList": [
+			"pass, (attributively) past"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "azaz",
@@ -3036,6 +3061,15 @@
 			"shellfish (eg. clam, oyster)"
 		],
 		"categories": ["animal", "seafood"]
+	},
+	{
+		"title": "dôkam",
+		"etym": "C/dôkaz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"future"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "dôkalz",
@@ -5163,6 +5197,15 @@
 		"defList": [
 			"presence"
 		]
+	},
+	{
+		"title": "kikosêu",
+		"etym": "C/kikosêm/-u",
+		"cat": "adj.",
+		"defList": [
+			"present (time)"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "kili",
