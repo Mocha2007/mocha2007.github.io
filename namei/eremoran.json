@@ -1,5 +1,22 @@
 [
 	{
+		"title": "-ba",
+		"etym": "L/PEN/-ba",
+		"cat": "aff.",
+		"defList": [
+			"patientive suffix"
+		]
+	},
+	{
+		"title": "-ddi",
+		"etym": "r/-zdin",
+		"cat": "aff.",
+		"pron": 0,
+		"defList": [
+			"(dialectal, colloquial) past tense marker (esp. recent past)"
+		]
+	},
+	{
 		"title": "-ê",
 		"etym": "L/PEN/*-ê/-er",
 		"cat": "aff.",
@@ -35,6 +52,15 @@
 		"notes": "has the alternate form ''-dzu'' after a vowel"
 	},
 	{
+		"title": "-isêm",
+		"etym": "C/-isu/-ê",
+		"cat": "aff.",
+		"defList": [
+			"-ness, -hood, -ity"
+		],
+		"notes": "has the alternate form -sêm after a vowel"
+	},
+	{
 		"title": "-isu",
 		"etym": "a/su",
 		"cat": "aff.",
@@ -50,6 +76,14 @@
 		"pron": 0,
 		"defList": [
 			"(2nd class noun suffix)"
+		]
+	},
+	{
+		"title": "-kair",
+		"etym": "L/PEN/*-xair",
+		"cat": "aff.",
+		"defList": [
+			"(polite suffix for human referents, cf. {{wt|jp|さん}}"
 		]
 	},
 	{
@@ -108,6 +142,15 @@
 			"turns a time noun (eg. ''dam'' morning) into a habitual time adverb (eg. ''daz'' every morning)",
 			"turns a direction adjective into an adverb, (eg. ''keu'' 'east' &rarr; ''kez'' 'eastward'",
 			"turns an ordinal numeral into an adverbial numeral, (eg. ''nasu'' 'two' &rarr; ''nasuz'' 'twice'"
+		]
+	},
+	{
+		"title": "-zdin",
+		"etym": "C/-z/din",
+		"cat": "aff.",
+		"pron": 0,
+		"defList": [
+			"(archaic, colloquial) past tense marker (esp. recent past)"
 		]
 	},
 	{
@@ -342,6 +385,14 @@
 		"cat": "v.",
 		"defList": [
 			"happen"
+		]
+	},
+	{
+		"title": "adunaz",
+		"etym": "C/ad/una",
+		"cat": "v.",
+		"defList": [
+			"be destroyed, be annihilated, be decimated"
 		]
 	},
 	{
@@ -2700,6 +2751,14 @@
 		]
 	},
 	{
+		"title": "dinarz",
+		"etym": "C/din/arz",
+		"cat": "v.",
+		"defList": [
+			"materialize, appear"
+		]
+	},
+	{
 		"title": "dinbamz",
 		"etym": "C/din/bamz",
 		"cat": "v.",
@@ -2723,6 +2782,15 @@
 		"cat": "v.",
 		"defList": [
 			"give birth, bear"
+		]
+	},
+	{
+		"title": "dindôbat",
+		"etym": "C/dindôz/-ba",
+		"cat": "v.",
+		"defList": [
+			"appraisal",
+			"interpretation, translatation"
 		]
 	},
 	{
@@ -2773,7 +2841,8 @@
 		"etym": "C/din/klaz",
 		"cat": "v.",
 		"defList": [
-			"erase"
+			"vanish",
+			"be erased"
 		]
 	},
 	{
@@ -2827,7 +2896,9 @@
 		"defList": [
 			"declaration",
 			"definition",
-			"determination"
+			"determination",
+			"summoning",
+			"invention (the act, not the object)"
 		]
 	},
 	{
@@ -2837,7 +2908,9 @@
 		"defList": [
 			"declare",
 			"define",
-			"determine"
+			"determine",
+			"summon",
+			"invent"
 		]
 	},
 	{
@@ -5031,6 +5104,14 @@
 		"categories": ["person"]
 	},
 	{
+		"title": "kikosêm",
+		"etym": "C/kikom/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"presence"
+		]
+	},
+	{
 		"title": "kikom",
 		"etym": "C/kim/ko",
 		"cat": "n., 5th, adj.",
@@ -5107,12 +5188,20 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "kiosêm",
+		"etym": "C/kiom/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"absence"
+		]
+	},
+	{
 		"title": "kiom",
 		"etym": "C/kim/ho",
 		"cat": "n., 5th, adj.",
 		"defList": [
 			"there",
-			"unavailable, away/off (work/school)"
+			"unavailable, absent, away/off (work/school)"
 		]
 	},
 	{
