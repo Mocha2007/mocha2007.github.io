@@ -3063,6 +3063,14 @@
 		"categories": ["animal", "seafood"]
 	},
 	{
+		"title": "dôkalz",
+		"etym": "C/dô/kalz",
+		"cat": "v.",
+		"defList": [
+			"ask"
+		]
+	},
+	{
 		"title": "dôkam",
 		"etym": "C/dôkaz/-m",
 		"cat": "n., 5th",
@@ -3070,14 +3078,6 @@
 			"future"
 		],
 		"categories": ["time"]
-	},
-	{
-		"title": "dôkalz",
-		"etym": "C/dô/kalz",
-		"cat": "v.",
-		"defList": [
-			"ask"
-		]
 	},
 	{
 		"title": "dôkaz",
