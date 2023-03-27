@@ -3623,6 +3623,12 @@ const entryData = [
 	},
 	{
 		language: 'proto-vasconic',
+		word: '(h)ili',
+		meanings: 'city;town',
+		source: 'wiktionary',
+	},
+	{
+		language: 'proto-vasconic',
 		word: '[h]irur',
 		meanings: 'three',
 		source: shortcuts.edob,
@@ -3632,6 +3638,12 @@ const entryData = [
 		word: '[h]itz',
 		meanings: 'word',
 		source: shortcuts.edob,
+	},
+	{
+		language: 'proto-vasconic',
+		word: '-i',
+		meanings: 'DAT;v>v;n>adj',
+		source: 'wiktionary',
 	},
 	{
 		language: 'proto-vasconic',
