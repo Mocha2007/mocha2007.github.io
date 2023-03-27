@@ -8034,3 +8034,6 @@ const entryData = [
 		source: 'wiktionary',
 	},
 ];
+/* samples
+new Comparison(Language.list[23], Language.list[13]).span.click()
+*/
