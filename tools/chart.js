@@ -1,4 +1,4 @@
-/* exported charHisto, histo, main */
+/* exported charHisto, histo, histo2, main */
 /* global createSvgElement, remap, round, sum */
 
 const sizeX = 700;
@@ -106,6 +106,29 @@ function getData(){
 function histo(d, sort, reverse, pruneY, maxBars){
 	const x = Array.from(new Set(Array.from(d)));
 	const y = x.map(char => d.filter(i => i === char).length);
+	const data = {
+		pruneY,
+		reverse,
+		sort,
+		sortX: !sort,
+		type: 'bar',
+		x,
+		y,
+		maxBars,
+	};
+	return toURL(data);
+}
+
+/**
+ * @param {[]} d
+ * @param {boolean} sortY - whether to sort chart by Y (true) or X (false)
+ * @param {boolean} reverse - whether to reverse order of elements (after sorting)
+ * @param {number} pruneY - prune data with y < pruneY
+ * @param {number} maxBars - cull bars after this many
+ */
+function histo2(xy, sort, reverse, pruneY, maxBars){
+	const x = xy.map(datum => datum[0]);
+	const y = xy.map(datum => datum[1]);
 	const data = {
 		pruneY,
 		reverse,

@@ -1,5 +1,5 @@
 /* exported adj, eremoranMain, ereNum, linkCard, search, titleCard, wordle */
-/* global charHisto, commaNumber, etymElement, getDict, histo, isAnagram
+/* global charHisto, commaNumber, etymElement, getDict, histo, histo2, isAnagram
 	quotes, random, removeAccents, round, startEreQuote,
 	translationChallenges, union */
 
@@ -97,6 +97,12 @@ function titleCard(s){
 // main
 
 const compile = {
+	adpPrefix(){
+		return elements.raws
+			.filter(raw => raw.cat.includes('prep.') || raw.cat.includes('post.'))
+			.map(raw => [raw.title, elements.raws.filter(otherRaw => otherRaw.etym.split('/').includes(raw.title)).length])
+			.filter(xy => xy[1]);
+	},
 	dict(){
 		return elements.dict.join(' ');
 	},
@@ -1134,6 +1140,7 @@ function computeStats(){
 	document.getElementById('chartSequence').src = chartURL + histo(compile.sequences(), true, true, false, 25);
 	document.getElementById('chartEtymType').src = chartURL + charHisto(etymElement.stats.type.join(''));
 	document.getElementById('chartEtymSource').src = chartURL + histo(etymElement.stats.source, true, true);
+	document.getElementById('chartAdpPrefix').src = chartURL + histo2(compile.adpPrefix(), true, true);
 	// do word histogram
 	const wordData = elements.corpus;
 	// const filteredWordData = wordData.filter(word => wordData)
