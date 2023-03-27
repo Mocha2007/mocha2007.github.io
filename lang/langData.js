@@ -2626,6 +2626,13 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'n̥smé',
+		meanings: '1pl',
+		source: 'wiktionary',
+		notes: 'Accusative.',
+	},
+	{
+		language: 'pie',
 		word: '-oHom',
 		meanings: 'GEN',
 		source: 'wiktionary',
@@ -2944,6 +2951,13 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'uswé',
+		meanings: '2pl',
+		source: 'wiktionary',
+		notes: 'Accusative.',
+	},
+	{
+		language: 'pie',
 		word: '-wē',
 		meanings: 'or',
 		source: 'wiktionary',
@@ -2996,6 +3010,13 @@ const entryData = [
 	},
 	{
 		language: 'la',
+		word: 'ego',
+		meanings: '1s',
+		etymology: 'pie:éǵh₂',
+		source: 'wiktionary',
+	},
+	{
+		language: 'la',
 		word: 'leo',
 		meanings: 'lion',
 		etymology: 'ancient-greek:léōn',
@@ -3018,9 +3039,23 @@ const entryData = [
 	},
 	{
 		language: 'la',
+		word: 'nōs',
+		meanings: '1pl',
+		etymology: 'pie:n̥smé',
+		source: 'wiktionary',
+	},
+	{
+		language: 'la',
 		word: 'sol',
 		meanings: 'sun',
 		etymology: 'pie:sóh₂wl̥',
+		source: 'wiktionary',
+	},
+	{
+		language: 'la',
+		word: 'tū',
+		meanings: '2s',
+		etymology: 'pie:túh₂',
 		source: 'wiktionary',
 	},
 	{
@@ -3036,6 +3071,13 @@ const entryData = [
 		word: 'ūnus',
 		meanings: 'one;single;alone',
 		etymology: 'pie:óynos',
+		source: 'wiktionary',
+	},
+	{
+		language: 'la',
+		word: 'vōs',
+		meanings: '2pl',
+		etymology: 'pie:uswé',
 		source: 'wiktionary',
 	},
 	// ancient greek
