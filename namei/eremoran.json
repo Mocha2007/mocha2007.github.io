@@ -4014,6 +4014,16 @@
 		]
 	},
 	{
+		"title": "henz",
+		"etym": "L/PEN/*fens",
+		"cat": "v.",
+		"defList": [
+			"differ",
+			"vary"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "hêr",
 		"etym": "L/PEN/*ɸêr",
 		"cat": "n., 1st",
@@ -6993,6 +7003,14 @@
 		]
 	},
 	{
+		"title": "munam",
+		"etym": "C/muna/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"source, origin"
+		]
+	},
+	{
 		"title": "mura",
 		"etym": "C/mu/arz",
 		"cat": "n., 4th",
@@ -7502,6 +7520,14 @@
 			"louse"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "nobz",
+		"etym": "L/PEN/*nobs/climb",
+		"cat": "v.",
+		"defList": [
+			"climb"
+		]
 	},
 	{
 		"title": "nod",
@@ -9073,11 +9099,19 @@
 		"categories": ["sex"]
 	},
 	{
+		"title": "sparisêm",
+		"etym": "C/sparu/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"simplicity"
+		]
+	},
+	{
 		"title": "sparm",
 		"etym": "C/sparu/-m",
 		"cat": "n., 5th",
 		"defList": [
-			"simplicity",
+			"basis",
 			"(mathematics) prime number"
 		],
 		"categories": ["math"]
@@ -9189,6 +9223,14 @@
 		"cat": "post.",
 		"defList": [
 			"draw (a picture)"
+		]
+	},
+	{
+		"title": "stôdnobz",
+		"etym": "C/stôd/nobz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) develop, evolve"
 		]
 	},
 	{
