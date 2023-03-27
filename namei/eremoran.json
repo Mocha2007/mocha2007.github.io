@@ -2743,19 +2743,19 @@
 		"notes": "Note: * - There are many possible arrangements of this phrase. To emphasize the recipient, ''ad'' may even be replaced by ''dir''. The most neutral phrasing is shown. ZE dialects use this prepositionally for translative senses."
 	},
 	{
-		"title": "dinastedz",
-		"etym": "C/din/astedu",
-		"cat": "v.",
-		"defList": [
-			"charm, influence by charisma"
-		]
-	},
-	{
 		"title": "dinarz",
 		"etym": "C/din/arz",
 		"cat": "v.",
 		"defList": [
 			"materialize, appear"
+		]
+	},
+	{
+		"title": "dinastedz",
+		"etym": "C/din/astedu",
+		"cat": "v.",
+		"defList": [
+			"charm, influence by charisma"
 		]
 	},
 	{
@@ -2787,7 +2787,7 @@
 	{
 		"title": "dindôbat",
 		"etym": "C/dindôz/-ba",
-		"cat": "v.",
+		"cat": "n., 3rd",
 		"defList": [
 			"appraisal",
 			"interpretation, translatation"
@@ -5104,20 +5104,20 @@
 		"categories": ["person"]
 	},
 	{
-		"title": "kikosêm",
-		"etym": "C/kikom/-isêm",
-		"cat": "n., 5th",
-		"defList": [
-			"presence"
-		]
-	},
-	{
 		"title": "kikom",
 		"etym": "C/kim/ko",
 		"cat": "n., 5th, adj.",
 		"defList": [
 			"here",
 			"available, at school/work"
+		]
+	},
+	{
+		"title": "kikosêm",
+		"etym": "C/kikom/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"presence"
 		]
 	},
 	{
@@ -5188,20 +5188,20 @@
 		"categories": ["animal"]
 	},
 	{
-		"title": "kiosêm",
-		"etym": "C/kiom/-isêm",
-		"cat": "n., 5th",
-		"defList": [
-			"absence"
-		]
-	},
-	{
 		"title": "kiom",
 		"etym": "C/kim/ho",
 		"cat": "n., 5th, adj.",
 		"defList": [
 			"there",
 			"unavailable, absent, away/off (work/school)"
+		]
+	},
+	{
+		"title": "kiosêm",
+		"etym": "C/kiom/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"absence"
 		]
 	},
 	{
