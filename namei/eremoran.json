@@ -7713,14 +7713,6 @@
 		]
 	},
 	{
-		"title": "nostôz",
-		"etym": "B/nost/sudôz",
-		"cat": "v.",
-		"defList": [
-			"suffice, be sufficient/enough"
-		]
-	},
-	{
 		"title": "noz",
 		"etym": "C/nom/-z",
 		"cat": "v.",
@@ -9544,6 +9536,14 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"window"
+		]
+	},
+	{
+		"title": "sustôz",
+		"etym": "B/stôd/sudôz",
+		"cat": "v.",
+		"defList": [
+			"suffice, be sufficient/enough"
 		]
 	},
 	{
