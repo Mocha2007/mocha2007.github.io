@@ -229,7 +229,9 @@ function holidayCSS(){
 				title = 'Слава Україні';
 			break;
 		case 9:
-			if (day === 19)
+			if (day === 4)
+				title = 'Eremorôm ad olol dinbôm!~\n' + (year-2016) + ' years of Eremoran';
+			else if (day === 19)
 				title = 'Yarrrr!';
 			else if (day === 22 + (1 < year % 4))
 				title = 'Happy autumnal equinox ' + year + '!';

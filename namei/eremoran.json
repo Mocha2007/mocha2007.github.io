@@ -2785,6 +2785,14 @@
 		]
 	},
 	{
+		"title": "dinbôm",
+		"etym": "C/dinbôz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"birthday"
+		]
+	},
+	{
 		"title": "dinbôz",
 		"etym": "C/din/bôz",
 		"cat": "v.",
@@ -6379,6 +6387,24 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "lolkum",
+		"etym": "A/lolm",
+		"cat": "n., 5th",
+		"defList": [
+			"celebration"
+		]
+	},
+	{
+		"title": "lolm",
+		"etym": "C/lolz/-m",
+		"cat": "v.",
+		"defList": [
+			"laugh",
+			"smile",
+			"(archaic) happiness"
+		]
+	},
+	{
 		"title": "lolnask",
 		"etym": "C/lolz/nask",
 		"cat": "n., 2nd",
@@ -6392,7 +6418,9 @@
 		"etym": "L/PEN/*lols/laugh",
 		"cat": "v.",
 		"defList": [
-			"laugh"
+			"laugh",
+			"smile",
+			"(archaic) be happy"
 		]
 	},
 	{
@@ -7899,6 +7927,22 @@
 		"cat": "adj.",
 		"defList": [
 			"crazy"
+		]
+	},
+	{
+		"title": "olol",
+		"etym": "C/ou/lolm",
+		"cat": "interj.",
+		"defList": [
+			"congratulations!"
+		]
+	},
+	{
+		"title": "olol dinbôm",
+		"etym": "P/olol/dinbôm",
+		"cat": "interj.",
+		"defList": [
+			"happy birthday!"
 		]
 	},
 	{

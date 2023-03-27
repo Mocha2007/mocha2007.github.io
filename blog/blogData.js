@@ -678,4 +678,14 @@ const blogData = [
 	I guess I don't need a jacket anymore.
 	I've had a headache all day; I wonder if it's related?
 	`,
+	`
+	@title Eremoran Expansion Update Afterthought
+	@date
+	@tags eremoran
+	It just occured to me: at the current rate I am expanding the vocab,
+	I could easily have it done on Eremoran's sixth anniversary.
+	Although I am not sure exactly when I first started developing it,
+	I first published it on September 4th of 2017,
+	so I suppose that's as good a time as any to celebrate its anniversary.
+	`,
 ];
