@@ -171,6 +171,11 @@ const languageData = [
 		period: 'c. 2000 BCE',
 	},
 	{
+		name: 'iberian',
+		location: 'iberia',
+		period: 'c. 400 BCE',
+	},
+	{
 		name: 'jp',
 		parent: 'proto-japonic',
 		location: 'japan',
@@ -1017,11 +1022,19 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'city;town',
+		categories: 'noun',
+	},
+	{
 		name: 'claw',
 		categories: 'noun;anatomy',
 	},
 	{
 		name: 'clay',
+		categories: 'noun',
+	},
+	{
+		name: 'coin',
 		categories: 'noun',
 	},
 	{
@@ -1301,6 +1314,10 @@ const meaningData = [
 		categories: 'noun;animal',
 	},
 	{
+		name: 'money',
+		categories: 'noun',
+	},
+	{
 		name: 'month',
 		categories: 'noun;time',
 	},
@@ -1527,6 +1544,10 @@ const meaningData = [
 	{
 		name: 'tongue',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'tomb',
+		categories: 'noun',
 	},
 	{
 		name: 'tooth',
@@ -7883,6 +7904,79 @@ const entryData = [
 		language: 'proto-japonic',
 		word: 'ya',
 		meanings: 'eight',
+		source: 'wiktionary',
+	},
+	// Iberian
+	{
+		language: 'iberian',
+		word: '-ar',
+		meanings: 'GEN',
+		source: 'wiktionary',
+	},
+	{
+		language: 'iberian',
+		word: '-en',
+		meanings: 'GEN',
+		source: 'wiktionary',
+	},
+	{
+		language: 'iberian',
+		word: '-k',
+		meanings: 'PL',
+		source: 'wiktionary',
+	},
+	{
+		language: 'iberian',
+		word: '-ka',
+		meanings: 'DAT',
+		source: 'wiktionary',
+	},
+	{
+		language: 'iberian',
+		word: '-ku',
+		meanings: 'ABL',
+		source: 'wiktionary',
+	},
+	{
+		language: 'iberian',
+		word: '-te',
+		meanings: 'ERG',
+		source: 'wiktionary',
+	},
+	{
+		language: 'iberian',
+		word: 'ekiar',
+		meanings: 'do;make',
+		source: 'wiktionary',
+	},
+	{
+		language: 'iberian',
+		word: 'iltiŕ',
+		meanings: 'city',
+		source: 'wiktionary',
+	},
+	{
+		language: 'iberian',
+		word: 'iltun',
+		meanings: 'city',
+		source: 'wiktionary',
+	},
+	{
+		language: 'iberian',
+		word: 'śalir',
+		meanings: 'coin;money',
+		source: 'wiktionary',
+	},
+	{
+		language: 'iberian',
+		word: 'seltar',
+		meanings: 'tomb',
+		source: 'wiktionary',
+	},
+	{
+		language: 'iberian',
+		word: 'siltar',
+		meanings: 'tomb',
 		source: 'wiktionary',
 	},
 ];
