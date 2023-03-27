@@ -973,7 +973,7 @@
 		"etym": "C/arz/-m",
 		"cat": "n., 5th",
 		"defList": [
-			"standing; status"
+			"standing, status, condition"
 		]
 	},
 	{
@@ -1052,6 +1052,14 @@
 		"cat": "adv.",
 		"defList": [
 			"(archaic) each other (reciporical)"
+		]
+	},
+	{
+		"title": "assêz",
+		"etym": "C/as/-isêm",
+		"cat": "v.",
+		"defList": [
+			"mutual, reciporical"
 		]
 	},
 	{
@@ -4888,6 +4896,14 @@
 		]
 	},
 	{
+		"title": "kanam",
+		"etym": "C/kanat/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"connection"
+		]
+	},
+	{
 		"title": "kanat",
 		"etym": "L/PEN/*kanat/chain",
 		"cat": "n., 3rd",
@@ -5612,6 +5628,14 @@
 		]
 	},
 	{
+		"title": "kuarm",
+		"etym": "C/ku/arm",
+		"cat": "n., 5th",
+		"defList": [
+			"system"
+		]
+	},
+	{
 		"title": "kubarz",
 		"etym": "C/ku/barz",
 		"cat": "v.",
@@ -5739,6 +5763,22 @@
 		"cat": "v.",
 		"defList": [
 			"(archaic) end"		]
+	},
+	{
+		"title": "kuidam",
+		"etym": "C/kuidz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"relation"
+		]
+	},
+	{
+		"title": "kuidz",
+		"etym": "C/ku/idz",
+		"cat": "v.",
+		"defList": [
+			"be related"
+		]
 	},
 	{
 		"title": "kukram",
