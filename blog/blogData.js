@@ -659,6 +659,7 @@ const blogData = [
 	`
 	@title Month-and-a-half Eremoran Expansion Update
 	@date 1679682301927
+	@p
 	@tags eremoran
 	It has been six weeks since I started adding new vocab.
 	In that time, I have added 265 words,
