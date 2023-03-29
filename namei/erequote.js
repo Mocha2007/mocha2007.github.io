@@ -31,6 +31,7 @@ const quotes = [
 	['Mor su uid hod nau su i kekisuk tukilk ne', 'Of what is the soul of gods if not man?', eremorans.poet1],
 	['Rurauk i mor mo id', 'Only cats are above man.', eremorans.poet1],
 	['Som ardo din ardo som din', 'Heat from fire; fire from heat.', eremorans.guild1],
+	['Da dir mor tamaz i mor dir da numsudôtamaz', 'Those who own the country should control it.', eremorans.philosopher3],
 ];
 
 /** ms */

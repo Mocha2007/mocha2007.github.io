@@ -7824,6 +7824,7 @@
 		"cat": "v.",
 		"defList": [
 			"drive",
+			"control",
 			"upset (ie. cause a negative emotion)"
 		],
 		"categories": ["emotion"]
@@ -9670,12 +9671,16 @@
 	},
 	{
 		"title": "tamaz",
-		"etym": "L/PEN/*tamas/must",
+		"etym": "L/PEN/*tamas/owe",
 		"cat": "v.",
 		"defList": [
+			"(experiential) owe",
+			"(intransitive) be owned",
 			"must, have to",
 			"should"
-		]
+		],
+		"notes": "Key constructions: X owes Y Z = Y dir X Z ad tamaz; X owns Y = dir Y X ad tamaz",
+		"categories": ["experiential"]
 	},
 	{
 		"title": "tambabzu",
