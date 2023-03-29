@@ -721,6 +721,10 @@ const blogData = [
 	If that is the case, there must be glyphs that are identical under rotation.
 	Indeed, hama, kasu, yama, and tsila are one such group.
 	@p
+	There is one caveat: the bit about rotations is only true for blocky fonts.
+	In calligraphy, stroke order would subtly change the appearance of, eg.,
+	a <em>hama</em> glyph versus a rotated <em>kasu</em> glyph.
+	@p
 	Not only is this writing system aesthetic,
 	It is also easy to write a script to render glyphs (at least, in a blocky form).
 	I'm tempted to perhaps borrow this idea, perhaps in a modified form... :^)
