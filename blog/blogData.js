@@ -713,7 +713,7 @@ const blogData = [
 	The author has devised a method of organizing the glyphs by radical;
 	however, an alternative could be to instead convert the state (on/off) of all the edges to binary, and then to decimal.
 	For example, this glyph:
-	<img src="https://imgur.com/cGHp4kd.png"><br>
+	<img src="https://imgur.com/cGHp4kd.png">
 	could be transcribed (edges from top to bottom, left to right) 111010010000<sub>2</sub>, or 3728<sub>10</sub>.
 	@p
 	The grammar document seems to imply about 1200 of these have already been assigned -
