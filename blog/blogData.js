@@ -695,9 +695,9 @@ const blogData = [
 	@p
 	@tags conlang math
 	I recently read a <a href="https://footballbatsandmore.wordpress.com/">conlang blog</a>
-	with an interesting writing system (Omyatloko) -
-	it appears to comprise glyphs are all of the same form,
-	that is, taking a 3 by 3 square grid of vertices and drawing edges between some of the orthogonal vertices.
+	with an interesting writing system (Omyatloko).
+	It appears to comprise glyphs of a certain form -
+	taking a 3 by 3 square grid of vertices and drawing edges between some of the orthogonal vertices.
 	It reminds me of <a href="https://commons.wikimedia.org/wiki/File:Genji_chapter_symbols_groupings_of_5_elements.svg">Genji chapter symbols</a>.
 	I do not know if its creator calculated the number of possible glyphs,
 	but I certainly have: since there are 12 vertices, there must be 2<sup>12</sup> = 4096 possible glyphs,
