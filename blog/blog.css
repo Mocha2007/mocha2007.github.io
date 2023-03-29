@@ -6,7 +6,11 @@ body {
 	max-width: 700px;
 }
 a {
+	color: #06C;
 	text-decoration: none;
+}
+a:hover {
+	color: #08F;
 }
 h1, h2, h3 {
 	text-align: center;

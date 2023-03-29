@@ -689,4 +689,39 @@ const blogData = [
 	I first published it on September 4th of 2017,
 	so I suppose that's as good a time as any to celebrate its anniversary.
 	`,
+	`
+	@title Math behind a Conscript
+	@date 1680100237142
+	@p
+	@tags conlang math
+	I recently read a <a href="https://footballbatsandmore.wordpress.com/">conlang blog</a>
+	with an interesting writing system (Omyatloko) -
+	it appears to comprise glyphs are all of the same form,
+	that is, taking a 3 by 3 square grid of vertices and drawing edges between some of the orthogonal vertices.
+	I do not know if its creator calculated the number of possible glyphs,
+	but I certainly have: since there are 12 vertices, there must be 2<sup>12</sup> = 4096 possible glyphs,
+	or 1024 glyphs excluding rotations, or 512 excluding rotations and reflections.
+	But more generally, for a glyph grid of size n:
+	<ul>
+		<li>Vertices: n<sup>2</sup></li>
+		<li>Edges: 2n(n-1)</li>
+		<li>Unique Glyphs: 2<sup>2n(n-1)</sup></li>
+		<li>Unique Glyphs (excl. rotations): 2<sup>2n(n-1)-2</sup></li>
+		<li>Unique Glyphs (excl. rotations and reflections): 2<sup>2n(n-1)-3</sup></li>
+	</ul>
+	@p
+	The author has devised a method of organizing the glyphs by radical;
+	however, an alternative could be to instead convert the state (on/off) of all the edges to binary, and then to decimal.
+	For example, this glyph:
+	<img src="https://imgur.com/cGHp4kd.png"><br>
+	could be transcribed (edges from top to bottom, left to right) 111010010000<sub>2</sub>, or 3728<sub>10</sub>.
+	@p
+	The grammar document seems to imply about 1200 of these have already been assigned -
+	If that is the case, there must be glyphs that are identical under rotation.
+	Indeed, hama, kasu, yama, and tsila are one such group.
+	@p
+	Not only is this writing system aesthetic,
+	It is also easy to write a script to render glyphs (at least, in a blocky form).
+	I'm tempted to perhaps borrow this idea, perhaps in a modified form... :^)
+	`,
 ];
