@@ -739,5 +739,9 @@ const blogData = [
 	<a href="blog.html?i=21#s0">here</a> are actually lower bounds that do not account for symmetrical glyphs.
 	The actual values are 1044 and 570, instead of 1024 and 512.
 	376 glyphs have two symmetries, 20 have four, and 4 have all eight.
+	@p
+	@tags math
+	570 though is still much higher than the figure for a 2x2 square -
+	excluding symmetries, there would only by 5 unique glyphs.
 	`,
 ];
