@@ -716,6 +716,7 @@ const blogData = [
 	For example, this glyph:
 	<img src="https://imgur.com/cGHp4kd.png">
 	could be transcribed (edges from top to bottom, left to right) 111010010000<sub>2</sub>, or 3728<sub>10</sub>.
+	This system has the added bonus that, if you reverse the binary, you get the 180&deg; rotation of that glyph.
 	@p
 	The grammar document seems to imply about 1200 of these have already been assigned -
 	If that is the case, there must be glyphs that are identical under rotation.
