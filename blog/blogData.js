@@ -742,6 +742,6 @@ const blogData = [
 	@p
 	@tags math
 	570 though is still much higher than the figure for a 2x2 square -
-	excluding symmetries, there would only by 5 unique glyphs.
+	excluding symmetries, there would only by 5 unique glyphs (6 including the empty glyph).
 	`,
 ];
