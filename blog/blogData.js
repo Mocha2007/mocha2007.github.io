@@ -749,5 +749,7 @@ const blogData = [
 	One with completely distinct glyphs, with difficulty of writing the glyphs proportional to their phonemic frequency
 	(which I use <a href="https://cmloegcmluin.wordpress.com/2012/11/10/relative-frequencies-of-english-phonemes/">this</a> as a source for).
 	<img src="../img/eo2.png">
+	Here is how I would transcribe "Mocha":
+	<img src="../img/eo2_mocha.png">
 	`,
 ];
