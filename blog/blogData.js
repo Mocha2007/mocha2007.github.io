@@ -738,5 +738,6 @@ const blogData = [
 	I realized the figures I gave for rotationally/reflectionally unique glyphs I give
 	<a href="blog.html?i=21#s0">here</a> are actually lower bounds that do not account for symmetrical glyphs.
 	The actual values are 1044 and 570, instead of 1024 and 512.
+	376 glyphs have two symmetries, 20 have four, and 4 have all eight.
 	`,
 ];
