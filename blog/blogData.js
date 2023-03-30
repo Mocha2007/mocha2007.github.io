@@ -743,5 +743,11 @@ const blogData = [
 	@tags math
 	570 though is still much higher than the figure for a 2x2 square -
 	excluding symmetries, there would only by 5 unique glyphs (6 including the empty glyph).
+	@p
+	@tags english orthography
+	Anyways, I used the script I wrote to compute these figures to try to develop the "ultimate" English orthography.
+	One with completely distinct glyphs, with difficulty of writing the glyphs proportional to their phonemic frequency
+	(which I use <a href="https://cmloegcmluin.wordpress.com/2012/11/10/relative-frequencies-of-english-phonemes/">this</a> as a source for).
+	<img src="../img/eo2.png">
 	`,
 ];
