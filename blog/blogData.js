@@ -730,4 +730,13 @@ const blogData = [
 	It is also easy to write a script to render glyphs (at least, in a blocky form).
 	I'm tempted to perhaps borrow this idea, perhaps in a modified form... :^)
 	`,
+	`
+	@title Math behind a Conscript (Addendum)
+	@date 1680200717469
+	@p
+	@tags conlang math
+	I realized the figures I gave for rotationally/reflectionally unique glyphs I give
+	<a href="blog.html?i=21#s0">here</a> are actually lower bounds that do not account for symmetrical glyphs.
+	The actual values are 1044 and 570, instead of 1024 and 512.
+	`,
 ];
