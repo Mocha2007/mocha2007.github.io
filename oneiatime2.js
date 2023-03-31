@@ -186,7 +186,8 @@ function holidayCSS(){
 				title = 'Day of the Republic. Wiwie Erdeka! Long live the RTC!';
 			break;
 		case 3:
-			src = 'mochricks';
+			if (day < 31)
+				src = 'mochricks';
 			if (day === 17)
 				title = 'Drink, ye bastard!';
 			else if (day === 20)
