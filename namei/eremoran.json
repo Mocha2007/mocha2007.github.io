@@ -533,6 +533,15 @@
 		"categories": ["person"]
 	},
 	{
+		"title": "afêsir",
+		"etym": "B/afêsêr/siz",
+		"cat": "n., 1st",
+		"defList": [
+			"god of thunder, husband of Siraur"
+		],
+		"categories": ["god", "male given name"]
+	},
+	{
 		"title": "afêsma",
 		"etym": "C/afês/mat",
 		"cat": "n., 4th",
@@ -4087,6 +4096,15 @@
 		"notes": "Due to historical reasons, this word has an irregular spelling; *hanz would be expected. There also exist the rare conjunctions ''unau'' 'nor', ''ufans'' 'nand', and ''unanau'' 'xnor', generally only used in formal writing"
 	},
 	{
+		"title": "hanskek",
+		"etym": "C/hans/kek",
+		"cat": "n., 2nd",
+		"defList": [
+			"pantheon"
+		],
+		"categories": ["god"]
+	},
+	{
 		"title": "hanu",
 		"etym": "L/PEN/*ɸanu/hand",
 		"cat": "n., 4th, adj.",
@@ -4729,6 +4747,15 @@
 		"defList": [
 			"(of birds) fly"
 		]
+	},
+	{
+		"title": "idkek",
+		"etym": "C/id/kek",
+		"cat": "n., 2nd",
+		"defList": [
+			"first generation of deities"
+		],
+		"categories": ["god"]
 	},
 	{
 		"title": "idu",
@@ -7691,6 +7718,15 @@
 		]
 	},
 	{
+		"title": "nasukek",
+		"etym": "C/nasu/kek",
+		"cat": "n., 2nd",
+		"defList": [
+			"second generation of deities"
+		],
+		"categories": ["god"]
+	},
+	{
 		"title": "nasum abbakarm",
 		"etym": "P/nasu/abbakarm",
 		"cat": "n., 5th",
@@ -9397,6 +9433,16 @@
 			"garlic"
 		],
 		"categories": ["plant"]
+	},
+	{
+		"title": "siraur",
+		"etym": "C/siu/rau",
+		"cat": "n., 1st",
+		"defList": [
+			"goddess of law and custom, family, and femininity, chief of the gods",
+			"female given name"
+		],
+		"categories": ["god", "female given name"]
 	},
 	{
 		"title": "sirez",
