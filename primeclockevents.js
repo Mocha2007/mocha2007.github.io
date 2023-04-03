@@ -292,6 +292,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[35.5e6, '<a href="https://en.wikipedia.org/wiki/Chesapeake_Bay_impact_crater">Chesepeake Bay Impact</a>'],
 	[33.9e6, '<a href="https://en.wikipedia.org/wiki/Eocene–Oligocene_extinction_event">Eocene-Oligocene</a> Extinction Event'],
 	[33e6, '<a href="https://en.wikipedia.org/wiki/Emory_Caldera">Kneeling Nun Tuff</a> Eruption'],
+	[31.5e6, '<a href="https://en.wikipedia.org/wiki/Haughton_impact_crater">Haughton Impact</a>'],
 	[31.4e6, '<a href="https://en.wikipedia.org/wiki/Mid-Tertiary_ignimbrite_flare-up">Windows Butte Tuff</a> Eruption'],
 	[31.0e6, 'Earliest <a href="https://en.wikipedia.org/wiki/Catarrhini">Catarrhini</a>'],
 	[28.2e6, '<a href="https://en.wikipedia.org/wiki/San_Juan_volcanic_field">Platoro-Chiquito Peak Tuff</a> Eruption'],
