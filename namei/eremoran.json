@@ -791,7 +791,7 @@
 		"defList": [
 			"number, numeral"
 		],
-		"categories": ["number"]
+		"categories": ["extent", "number"]
 	},
 	{
 		"title": "amzralz",
@@ -2224,7 +2224,8 @@
 			"much, many, a large quantity <ul><li class=\"eremoran\"><ruby class=\"eremoranWord\">mor<rt>MOR</rt></ruby><span> </span><ruby class=\"eremoranWord\">i<rt>I</rt></ruby><span> </span><ruby class=\"eremoranWord\">bokusam<rt>BOKUSAM</rt></ruby></li> <li>There are many people.</li> </ul>",
 			"(id +) most (pronoun)"
 		],
-		"notes": "cf. ''udou'', the adjective form, and ''pukusam'', the opposite form"
+		"notes": "cf. ''udou'', the adjective form, and ''pukusam'', the opposite form",
+		"categories": ["extent"]
 	},
 	{
 		"title": "bolent",
@@ -3394,7 +3395,8 @@
 		"cat": "adj., s-triggering",
 		"defList": [
 			"little, small, tiny"
-		]
+		],
+		"categories": ["extent"]
 	},
 	{
 		"title": "elaêr",
@@ -3472,7 +3474,8 @@
 			"expensive",
 			"tall, deep",
 			"long"
-		]
+		],
+		"categories": ["extent"]
 	},
 	{
 		"title": "endum",
@@ -3481,7 +3484,8 @@
 		"defList": [
 			"height, depth, altitude",
 			"length"
-		]
+		],
+		"categories": ["extent"]
 	},
 	{
 		"title": "endur",
@@ -3776,7 +3780,7 @@
 			"extremely"
 		],
 		"notes": "Can ONLY modify adjectives/adverbs, not verbs.",
-		"categories": ["intensity"]
+		"categories": ["extent", "intensity"]
 	},
 	{
 		"title": "hai",
@@ -3846,7 +3850,8 @@
 			"heavy",
 			"important, serious",
 			"profound"
-		]
+		],
+		"categories": ["extent"]
 	},
 	{
 		"title": "halrôm",
@@ -4934,7 +4939,8 @@
 			"search",
 			"lack",
 			"desire"
-		]
+		],
+		"categories": ["extent"]
 	},
 	{
 		"title": "kaldoz",
@@ -5759,7 +5765,8 @@
 		"defList": [
 			"(archaic) big",
 			"(in titles) the great"
-		]
+		],
+		"categories": ["extent"]
 	},
 	{
 		"title": "kuafkar",
@@ -6210,7 +6217,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"(archaic) many, much"
-		]
+		],
+		"categories": ["extent"]
 	},
 	{
 		"title": "kusan",
@@ -8363,10 +8371,11 @@
 		"etym": "C/pu-/kusam",
 		"cat": "n., 5th, pron.",
 		"defList": [
-			"a small quantity, few <ul> <li class=\"eremoran\"><ruby class=\"eremoranWord\">mor<rt>MOR</rt></ruby><span> </span><ruby class=\"eremoranWord\">i<rt>I</rt></ruby><span> </span><ruby class=\"eremoranWord\">pukusam<rt>PUKUSAM</rt></ruby></li> <li>There are few people.</li> </ul>",
+			"a small quantity, few, little <ul> <li class=\"eremoran\"><ruby class=\"eremoranWord\">mor<rt>MOR</rt></ruby><span> </span><ruby class=\"eremoranWord\">i<rt>I</rt></ruby><span> </span><ruby class=\"eremoranWord\">pukusam<rt>PUKUSAM</rt></ruby></li> <li>There are few people.</li> </ul>",
 			"(id +) least, fewest (pronoun)"
 		],
-		"notes": "cf. ''dou'', the adjective form, and ''bokusam'', the opposite form"
+		"notes": "cf. ''dou'', the adjective form, and ''bokusam'', the opposite form",
+		"categories": ["extent"]
 	},
 	{
 		"title": "purru",
@@ -9678,7 +9687,8 @@
 		"cat": "v.",
 		"defList": [
 			"suffice, be sufficient/enough"
-		]
+		],
+		"categories": ["extent"]
 	},
 	{
 		"title": "suz",
@@ -10490,7 +10500,8 @@
 			"(with ''id'') (the) most (incl. superlative) <ul> <li>  ''Rurauk i id -udou kopdoz.''<br>  cat TOP most like<br>  I like cats the most. </li> </ul> ",
 			"[optional plurality marker]"
 		],
-		"notes": "cf. ''bokusam'', the noun form"
+		"notes": "cf. ''bokusam'', the noun form",
+		"categories": ["extent"]
 	},
 	{
 		"title": "ufomor",
@@ -10671,8 +10682,9 @@
 		"defList": [
 			"shallow",
 			"short",
-			"thin"
-		]
+			"thin, narrow"
+		],
+		"categories": ["extent"]
 	},
 	{
 		"title": "unskam",
