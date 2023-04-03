@@ -3340,7 +3340,7 @@
 	},
 	{
 		"title": "ebasêm",
-		"etym": "C/eba/-sêm",
+		"etym": "C/eba/-isêm",
 		"cat": "n., 5th",
 		"defList": [
 			"volume (space)"
@@ -3817,7 +3817,7 @@
 	},
 	{
 		"title": "haisêm",
-		"etym": "C/hai/-sêm",
+		"etym": "C/hai/-isêm",
 		"cat": "n., 5th",
 		"defList": [
 			"thickness, width"
@@ -9050,21 +9050,21 @@
 		"categories": ["plant"]
 	},
 	{
-		"title": "sedasêm",
-		"etym": "C/seda/-sêm",
-		"cat": "n., 5th",
-		"defList": [
-			"area"
-		],
-		"categories": ["extent", "math"]
-	},
-	{
 		"title": "sedam",
 		"etym": "C/seda/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"unit of area about 3,100 m^2 or 0.76 acres",
 			"(archaic) area"
+		],
+		"categories": ["extent", "math"]
+	},
+	{
+		"title": "sedasêm",
+		"etym": "C/seda/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"area"
 		],
 		"categories": ["extent", "math"]
 	},
