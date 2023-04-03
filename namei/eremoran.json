@@ -87,6 +87,14 @@
 		]
 	},
 	{
+		"title": "-kiz",
+		"etym": "L/PEN/*-xis",
+		"cat": "aff.",
+		"defList": [
+			"(verbal affix of intent)"
+		]
+	},
+	{
 		"title": "-m",
 		"etym": "L/PEN/*-m//~/ma",
 		"cat": "aff.",
@@ -5350,6 +5358,22 @@
 		]
 	},
 	{
+		"title": "klam",
+		"etym": "B/klamz/-m",
+		"cat": "n, 5th.",
+		"defList": [
+			"hug"
+		]
+	},
+	{
+		"title": "klamz",
+		"etym": "L/PEN/*glams/dream",
+		"cat": "v.",
+		"defList": [
+			"hug"
+		]
+	},
+	{
 		"title": "klaz",
 		"etym": "L/PEN/*klas/scratch",
 		"cat": "v.",
@@ -6725,6 +6749,22 @@
 			"(archaic) male given name"
 		],
 		"categories": ["female given name", "male given name"]
+	},
+	{
+		"title": "mankam",
+		"etym": "L/PEN/*manxam",
+		"cat": "n, 5th.",
+		"defList": [
+			"dream"
+		]
+	},
+	{
+		"title": "mankaz",
+		"etym": "C/mankaz/-z",
+		"cat": "v.",
+		"defList": [
+			"dream"
+		]
 	},
 	{
 		"title": "mara",
