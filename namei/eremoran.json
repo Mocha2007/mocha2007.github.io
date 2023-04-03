@@ -3309,6 +3309,15 @@
 		]
 	},
 	{
+		"title": "dosêm",
+		"etym": "C/dou/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"scarcity"
+		],
+		"categories": ["extent"]
+	},
+	{
 		"title": "dôsifat",
 		"etym": "C/dô/sifaz",
 		"cat": "n., 3rd",
@@ -3584,6 +3593,15 @@
 			"(intransitive) exceed (comparand takes postpositional [[ad]])"
 		],
 		"categories": ["extent"]
+	},
+	{
+		"title": "enzkunz",
+		"etym": "C/enz/kunz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) increase"
+		],
+		"categories": ["extent", "math"]
 	},
 	{
 		"title": "epeêr",
@@ -6101,6 +6119,15 @@
 		]
 	},
 	{
+		"title": "kuku",
+		"etym": "R/ku",
+		"cat": "adj., s-triggering",
+		"defList": [
+			"huge, immense, giant, colossal"
+		],
+		"categories": ["extent"]
+	},
+	{
 		"title": "kul",
 		"etym": "L/PEN/*gul/around",
 		"cat": "post.",
@@ -8189,6 +8216,15 @@
 		"categories": ["toponym"]
 	},
 	{
+		"title": "nuzkunz",
+		"etym": "C/nuz/kunz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) decrease, reduce"
+		],
+		"categories": ["extent", "math"]
+	},
+	{
 		"title": "ô",
 		"etym": "L/PEN/*ô/anyways",
 		"cat": "interj.",
@@ -8769,6 +8805,14 @@
 			"porcupine (esp. hystrix indica)"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "rêrisêz",
+		"etym": "C/rêrit/-isêz",
+		"cat": "v.",
+		"defList": [
+			"be accurate"
+		]
 	},
 	{
 		"title": "rêrit",
