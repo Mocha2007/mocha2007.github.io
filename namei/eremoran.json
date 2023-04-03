@@ -25,6 +25,14 @@
 		]
 	},
 	{
+		"title": "-id",
+		"etym": "r/id",
+		"cat": "aff.",
+		"defList": [
+			"-est (superlative)"
+		]
+	},
+	{
 		"title": "-idint",
 		"etym": "C/-idinu/-t",
 		"cat": "aff.",
@@ -59,6 +67,15 @@
 			"-ness, -hood, -ity"
 		],
 		"notes": "has the alternate form -sêm after a vowel"
+	},
+	{
+		"title": "-isêz",
+		"etym": "C/-isêm/-z",
+		"cat": "aff.",
+		"defList": [
+			"-ate (noun verbalizing affix meaning to do something related to the noun)"
+		],
+		"notes": "has the alternate form -sêz after a vowel"
 	},
 	{
 		"title": "-isu",
@@ -104,6 +121,15 @@
 		]
 	},
 	{
+		"title": "-ofaz",
+		"etym": "r/hofoz",
+		"cat": "aff.",
+		"defList": [
+			"(adjective equative)"
+		],
+		"notes": "has the alternate form -faz after a vowel"
+	},
+	{
 		"title": "-okuz",
 		"etym": "L/VAZ/okhu/be",
 		"cat": "aff.",
@@ -131,12 +157,29 @@
 		]
 	},
 	{
+		"title": "-tônz",
+		"etym": "C/tôn/-z",
+		"cat": "aff.",
+		"pron": 0,
+		"defList": [
+			"to almost ~"
+		]
+	},
+	{
 		"title": "-u",
 		"etym": "L/PEN/*-u",
 		"cat": "aff.",
 		"defList": [
 			"(adjective suffix)",
 			"(archaic) verbal suffix used to form relative clauses"
+		]
+	},
+	{
+		"title": "-ubz",
+		"etym": "L/PEN/*-ubs",
+		"cat": "aff.",
+		"defList": [
+			"to accidentally ~"
 		]
 	},
 	{
