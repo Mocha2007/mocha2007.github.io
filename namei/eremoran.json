@@ -1205,6 +1205,26 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "azlisêm",
+		"etym": "C/azlu/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"weakness",
+			"softness (of a material)"
+		],
+		"categories": ["extent"]
+	},
+	{
+		"title": "azlu",
+		"etym": "L/PEN/*aslu",
+		"cat": "adj.",
+		"defList": [
+			"weak",
+			"soft (of a material)"
+		],
+		"categories": ["extent"]
+	},
+	{
 		"title": "azmu",
 		"etym": "L/PEN/*asmu/forearm",
 		"cat": "n., 4th",
@@ -4261,12 +4281,32 @@
 		]
 	},
 	{
+		"title": "hilsêm",
+		"etym": "L/PEN/*silu",
+		"cat": "n., 5th",
+		"defList": [
+			"strength",
+			"hardness, firmness, rigidity (of a material)"
+		],
+		"categories": ["extent"]
+	},
+	{
 		"title": "hilsu",
 		"etym": "C/hilsaz/-u",
 		"cat": "adj.",
 		"defList": [
 			"mixed, blended, hybrid"
 		]
+	},
+	{
+		"title": "hilu",
+		"etym": "L/PEN/*silu",
+		"cat": "adj.",
+		"defList": [
+			"strong",
+			"hard, firm, rigid (of a material)"
+		],
+		"categories": ["extent"]
 	},
 	{
 		"title": "himaz",
@@ -11075,6 +11115,14 @@
 			"(mathematics) angle"
 		],
 		"categories": ["math"]
+	},
+	{
+		"title": "zestiz",
+		"etym": "C/zesti/-z",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) bend"
+		]
 	},
 	{
 		"title": "zeti",
