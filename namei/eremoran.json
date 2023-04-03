@@ -1533,6 +1533,15 @@
 		]
 	},
 	{
+		"title": "basêz",
+		"etym": "C/bau/-isêz",
+		"cat": "v.",
+		"defList": [
+			"be loose"
+		],
+		"categories": ["extent"]
+	},
+	{
 		"title": "bask",
 		"etym": "L/PEN/*βasx/goose",
 		"cat": "n., 2nd",
@@ -3566,6 +3575,15 @@
 			"up",
 			"(prefix) (shows action was completed fully and successfully)"
 		]
+	},
+	{
+		"title": "enzarz",
+		"etym": "C/enz/arz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) exceed (comparand takes postpositional [[ad]])"
+		],
+		"categories": ["extent"]
 	},
 	{
 		"title": "epeêr",
@@ -8145,6 +8163,23 @@
 		"categories": ["sex"]
 	},
 	{
+		"title": "nuz",
+		"etym": "C/nu/-z",
+		"cat": "adv., post.",
+		"defList": [
+			"down"
+		]
+	},
+	{
+		"title": "nuzarz",
+		"etym": "C/nuz/arz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) not exceed, stay within bounds (comparand takes postpositional [[ad]])"
+		],
+		"categories": ["extent"]
+	},
+	{
 		"title": "nuzderar",
 		"etym": "L/NUZ/Nuzdexax",
 		"cat": "n., 1st",
@@ -10814,6 +10849,15 @@
 			"throat"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "ukudaz",
+		"etym": "B/uku/kudam",
+		"cat": "n., 5th",
+		"defList": [
+			"be unbounded, be boundless"
+		],
+		"categories": ["extent", "math"]
 	},
 	{
 		"title": "ukumu",
