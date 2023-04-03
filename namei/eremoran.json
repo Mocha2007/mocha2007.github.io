@@ -3888,6 +3888,24 @@
 		"categories": ["extent"]
 	},
 	{
+		"title": "halkam",
+		"etym": "C/halk/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"weight"
+		],
+		"categories": ["extent"]
+	},
+	{
+		"title": "halkaz",
+		"etym": "C/halkam/-z",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) weigh"
+		],
+		"categories": ["extent"]
+	},
+	{
 		"title": "halrôm",
 		"etym": "C/halrôz/-m",
 		"cat": "n., 5th",
@@ -4812,6 +4830,16 @@
 		"defList": [
 			"return, come back"
 		]
+	},
+	{
+		"title": "itsarsêm",
+		"etym": "C/it/sarsêm",
+		"cat": "n., 5th",
+		"defList": [
+			"rate",
+			"ratio"
+		],
+		"categories": ["extent", "math"]
 	},
 	{
 		"title": "ittô",
@@ -8893,6 +8921,14 @@
 		]
 	},
 	{
+		"title": "sarsêm",
+		"etym": "C/sarz/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"appearance"
+		]
+	},
+	{
 		"title": "sart",
 		"etym": "L/PEN/*ʃart/mat",
 		"cat": "n., 3rd",
@@ -10589,6 +10625,15 @@
 			"[optional plurality marker]"
 		],
 		"notes": "cf. ''bokusam'', the noun form",
+		"categories": ["extent"]
+	},
+	{
+		"title": "ufalkaz",
+		"etym": "C/u-/halkaz",
+		"cat": "v.",
+		"defList": [
+			"be light, be lightweight"
+		],
 		"categories": ["extent"]
 	},
 	{
