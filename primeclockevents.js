@@ -552,19 +552,20 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[currentyear-1715, 'Beginning of the <a href="https://en.wikipedia.org/wiki/Age_of_Enlightenment">Age of Enlightenment</a>'],
 	[currentyear-1733, 'The <a href="https://en.wikipedia.org/wiki/War_of_the_Polish_Succession">War of the Polish Succession</a> breaks out'],
 	[currentyear-1752, 'The British Empire <a href="https://en.wikipedia.org/wiki/Calendar_(New_Style)_Act_1750">switches to the Gregorian calendar</a>'],
-	[currentyear-1776-7/12-4/365, '<a href="https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence">Declaration of independence of the United States</a>'],
-	[currentyear-1781-3/12-13/365, '<a href="https://en.wikipedia.org/wiki/Uranus">Uranus</a> discovered'],
+	[currentyear-1776+7/12+4/365, '<a href="https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence">Declaration of independence of the United States</a>'],
+	[currentyear-1781+3/12+13/365, '<a href="https://en.wikipedia.org/wiki/Uranus">Uranus</a> discovered'],
 	// include months and days aft. 1800
 	[currentyear-1801, '<a href="https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)">Ceres</a> discovered'], // 1 jan
-	[currentyear-1803-7/12-4/365, '<a href="https://en.wikipedia.org/wiki/Louisiana_Purchase">Louisiana Purchase</a>'],
-	[currentyear-1808-11/12, '<a href="https://en.wikipedia.org/wiki/1808_mystery_eruption">1808 Mystery Eruption</a>'],
-	[currentyear-1812-6/12-18/365, 'Beginning of the <a href="https://en.wikipedia.org/wiki/War_of_1812">War of 1812</a>'],
+	[currentyear-1803+7/12+4/365, '<a href="https://en.wikipedia.org/wiki/Louisiana_Purchase">Louisiana Purchase</a>'],
+	[currentyear-1808+11/12, '<a href="https://en.wikipedia.org/wiki/1808_mystery_eruption">1808 Mystery Eruption</a>'],
+	[currentyear-1812+6/12+18/365, 'Beginning of the <a href="https://en.wikipedia.org/wiki/War_of_1812">War of 1812</a>'],
 	[currentyear-1826, 'The <a href="https://en.wikipedia.org/wiki/View_from_the_Window_at_Le_Gras">first photograph</a> is taken'],
-	[currentyear-1838-6/12-27/365, '<a href="https://en.wikipedia.org/wiki/Coronation_of_Queen_Victoria">Coronation of Queen Victoria</a>'],
-	[currentyear-1846-4/12-25/365, 'Beginning of the <a href="https://en.wikipedia.org/wiki/Mexican–American_War">Mexican-American War</a>'],
-	[currentyear-1846-9/12-23/365, '<a href="https://en.wikipedia.org/wiki/Neptune">Neptune</a> discovered'],
-	[currentyear-1861-4/12-12/365, 'Beginning of the <a href="https://en.wikipedia.org/wiki/American_Civil_War">American Civil War</a>'],
-	[currentyear-1865-4/12-14/365, 'The <a href="https://en.wikipedia.org/wiki/Assassination_of_Abraham Lincoln">Assassination of Abraham Lincoln</a>'],
+	[currentyear-1838+6/12+27/365, '<a href="https://en.wikipedia.org/wiki/Coronation_of_Queen_Victoria">Coronation of Queen Victoria</a>'],
+	[currentyear-1846+4/12+25/365, 'Beginning of the <a href="https://en.wikipedia.org/wiki/Mexican–American_War">Mexican-American War</a>'],
+	[currentyear-1846+9/12+23/365, '<a href="https://en.wikipedia.org/wiki/Neptune">Neptune</a> discovered'],
+	[currentyear-1859+9/12, 'The <a href="https://en.wikipedia.org/wiki/Carrington_Event">Carrington Event</a>'],
+	[currentyear-1861+4/12+12/365, 'Beginning of the <a href="https://en.wikipedia.org/wiki/American_Civil_War">American Civil War</a>'],
+	[currentyear-1865+4/12+14/365, 'The <a href="https://en.wikipedia.org/wiki/Assassination_of_Abraham_Lincoln">Assassination of Abraham Lincoln</a>'],
 	// Pushing back epoch precision to 1870 https://www.epochconverter.com/
 	// 1870
 	[diff(-3138480000), 'Start of the <a href="https://en.wikipedia.org/wiki/Franco-Prussian_War">Franco-Prussian War</a>'],
@@ -638,6 +639,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[diff(495432000), '<a href="https://en.wikipedia.org/wiki/Super_Mario_Bros.">Super Mario Bros.</a> Released'],
 	[diff(560059200), 'Michael Jackson\'s album <a href="https://en.wikipedia.org/wiki/Bad_(album)">Bad</a> is released'],
 	[diff(594450000), 'The <a href="https://en.wikipedia.org/wiki/Morris_worm">Morris worm</a>, one of the first internet worms'],
+	[diff(605410000), 'The <a href="https://en.wikipedia.org/wiki/March_1989_geomagnetic_storm">March 1989 Geomagnetic Storm</a>'],
 	[diff(626590800), '<a href="https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall">Fall of the Berlin Wall</a>'],
 	// 1990
 	[diff(654926400), '<a href="https://en.wikipedia.org/wiki/German_reunification">German reunification</a>'],
