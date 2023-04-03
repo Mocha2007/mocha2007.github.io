@@ -1356,9 +1356,7 @@
 		"etym": "C/balis/-m",
 		"cat": "n., 5th",
 		"defList": [
-			"death",
-			"end",
-			"border"
+			"death"
 		]
 	},
 	{
@@ -1450,6 +1448,24 @@
 			"(mathematics) line"
 		],
 		"categories": ["math"]
+	},
+	{
+		"title": "barsêm",
+		"etym": "C/seda/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"extent"
+		],
+		"categories": ["extent", "math"]
+	},
+	{
+		"title": "barsêz",
+		"etym": "C/barsêm/-z",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) extend"
+		],
+		"categories": ["extent", "math"]
 	},
 	{
 		"title": "barsum",
@@ -3321,6 +3337,15 @@
 			"bat (chiropteran)"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "ebasêm",
+		"etym": "C/eba/-sêm",
+		"cat": "n., 5th",
+		"defList": [
+			"volume (space)"
+		],
+		"categories": ["extent", "math"]
 	},
 	{
 		"title": "ebaz",
@@ -5899,8 +5924,30 @@
 		"etym": "C/kudz/-m",
 		"cat": "n., 5th",
 		"defList": [
-			"end"
-		]
+			"end",
+			"border",
+			"sum, total"
+		],
+		"categories": ["extent", "math"]
+	},
+	{
+		"title": "kudasêm",
+		"etym": "C/kudasêz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"measurement, measure",
+			"amount"
+		],
+		"categories": ["extent", "math"]
+	},
+	{
+		"title": "kudasêz",
+		"etym": "C/kudam/-isêz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) measure"
+		],
+		"categories": ["extent", "math"]
 	},
 	{
 		"title": "kudim",
@@ -5930,7 +5977,10 @@
 		"etym": "L/PEN/*kuds/end",
 		"cat": "v.",
 		"defList": [
-			"(archaic) end"		]
+			"(intransitive) border",
+			"(intransitive) sum, add up",
+			"(intransitive, archaic) end"
+		]
 	},
 	{
 		"title": "kuidam",
