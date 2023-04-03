@@ -64,7 +64,7 @@
 		"etym": "C/-isu/-ê",
 		"cat": "aff.",
 		"defList": [
-			"-ness, -hood, -ity"
+			"-ness, -hood, -ity, -someness"
 		],
 		"notes": "has the alternate form -sêm after a vowel"
 	},
@@ -73,7 +73,7 @@
 		"etym": "C/-isêm/-z",
 		"cat": "aff.",
 		"defList": [
-			"-ate (noun verbalizing affix meaning to do something related to the noun)"
+			"-ate, be -some (noun verbalizing affix meaning to do something related to the noun)"
 		],
 		"notes": "has the alternate form -sêz after a vowel"
 	},
@@ -2744,6 +2744,14 @@
 			"gold coin, worth four arzênt"
 		],
 		"categories": ["coin"]
+	},
+	{
+		"title": "dasambam",
+		"etym": "C/da/sambam",
+		"cat": "n., 5th",
+		"defList": [
+			"earthquake"
+		]
 	},
 	{
 		"title": "dasu",
@@ -8944,6 +8952,31 @@
 		]
 	},
 	{
+		"title": "sambam",
+		"etym": "C/sambaz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"shake, quake, quiver"
+		]
+	},
+	{
+		"title": "sambasêz",
+		"etym": "C/sambaz/-isêz",
+		"cat": "v.",
+		"defList": [
+			"be shaky"
+		],
+		"categories": ["extent"]
+	},
+	{
+		"title": "sambaz",
+		"etym": "L/PEN/*tʃambas/shake",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) shake, quake, quiver"
+		]
+	},
+	{
 		"title": "sanik",
 		"etym": "L/POL/???/hedgehog",
 		"cat": "n., 2nd",
@@ -11115,6 +11148,15 @@
 			"(mathematics) angle"
 		],
 		"categories": ["math"]
+	},
+	{
+		"title": "zestisêz",
+		"etym": "C/zestiz/-isêz",
+		"cat": "v.",
+		"defList": [
+			"be flexible"
+		],
+		"categories": ["extent"]
 	},
 	{
 		"title": "zestiz",
