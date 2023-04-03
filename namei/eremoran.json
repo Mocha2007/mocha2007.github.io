@@ -8175,7 +8175,7 @@
 		"etym": "C/nuz/arz",
 		"cat": "v.",
 		"defList": [
-			"(intransitive) not exceed, stay within bounds (comparand takes postpositional [[ad]])"
+			"(intransitive) not exceed, fall short, stay within bounds (comparand takes postpositional [[ad]])"
 		],
 		"categories": ["extent"]
 	},
@@ -10853,7 +10853,7 @@
 	{
 		"title": "ukudaz",
 		"etym": "B/uku/kudam",
-		"cat": "n., 5th",
+		"cat": "v.",
 		"defList": [
 			"be unbounded, be boundless"
 		],
