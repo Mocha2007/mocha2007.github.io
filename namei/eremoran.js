@@ -1219,6 +1219,9 @@ function expansionProject(){
 		const eta = new Date(+new Date() + day*(days - w)/(target-1));
 		console.info(`ETA @ ${target} w/d = ${eta.toDateString()}`);
 	});
+	const _super = (new Date(2023, 8, 4) - epoch)/day;
+	const supergoal = (_super - w)/(new Date(2023, 8, 4) - new Date()) * day;
+	console.info(`${round(supergoal, 2)} w/d required to reach anniversary supergoal`);
 }
 
 /** this is run at the end of eremoran.html */
