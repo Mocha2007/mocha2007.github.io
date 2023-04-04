@@ -326,8 +326,16 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "abe-",
+		"etym": "L/PEN/*aβe/double",
+		"cat": "aff.",
+		"defList": [
+			"double-"
+		]
+	},
+	{
 		"title": "abelk",
-		"etym": "L/PEN/*aβe-lk/otherwise",
+		"etym": "C/abe-/-lk",
 		"cat": "adv.",
 		"defList": [
 			"otherwise"
@@ -1480,6 +1488,22 @@
 		"categories": ["experiential"]
 	},
 	{
+		"title": "barelat",
+		"etym": "D/bart",
+		"cat": "n., 3rd",
+		"defList": [
+			"string, twine, wire"
+		]
+	},
+	{
+		"title": "barliret",
+		"etym": "C/barm/lire",
+		"cat": "n., 3rd",
+		"defList": [
+			"beam"
+		]
+	},
+	{
 		"title": "barm",
 		"etym": "C/bart/-m",
 		"cat": "n., 5th",
@@ -2460,6 +2484,14 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"adze"
+		]
+	},
+	{
+		"title": "bulklat",
+		"etym": "L/PEN/*bulglat/knot",
+		"cat": "n., 3rd",
+		"defList": [
+			"knot"
 		]
 	},
 	{
@@ -3776,6 +3808,14 @@
 		"cat": "interj.",
 		"defList": [
 			"(onomatopoeia for falling rain)"
+		]
+	},
+	{
+		"title": "ha-",
+		"etym": "L/PEN/*ɸa/half",
+		"cat": "aff.",
+		"defList": [
+			"semi-, half-"
 		]
 	},
 	{
@@ -10546,8 +10586,9 @@
 		"etym": "L/PEN/*toβê/stick",
 		"cat": "n., 4th",
 		"defList": [
-			"stick",
-			"staff"
+			"stick (usually not wooden)",
+			"staff, rod",
+			"pole"
 		],
 		"categories": ["plant"]
 	},
