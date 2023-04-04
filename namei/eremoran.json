@@ -3495,6 +3495,15 @@
 		]
 	},
 	{
+		"title": "ebela",
+		"etym": "D/eba",
+		"cat": "n., 4th",
+		"defList": [
+			"strip (of material)",
+			"ribbon"
+		]
+	},
+	{
 		"title": "ebilô",
 		"etym": "B/eba/bilô",
 		"cat": "n., 4th",
@@ -6132,6 +6141,14 @@
 		]
 	},
 	{
+		"title": "kubarm",
+		"etym": "C/ku/barm",
+		"cat": "n., 5th",
+		"defList": [
+			"row"
+		]
+	},
+	{
 		"title": "kubarz",
 		"etym": "C/ku/barz",
 		"cat": "v.",
@@ -6284,6 +6301,14 @@
 			"(intransitive) border",
 			"(intransitive) sum, add up",
 			"(intransitive, archaic) end"
+		]
+	},
+	{
+		"title": "kufanlat",
+		"etym": "C/ku/hanlam",
+		"cat": "n., 3rd",
+		"defList": [
+			"platform, podium"
 		]
 	},
 	{
@@ -8252,6 +8277,22 @@
 		"defList": [
 			"below, under",
 			"less than"
+		]
+	},
+	{
+		"title": "nôtô",
+		"etym": "C/nô/tô",
+		"cat": "n., 4th",
+		"defList": [
+			"summit, peak, apex"
+		]
+	},
+	{
+		"title": "nôtôelat",
+		"etym": "D/nôtô",
+		"cat": "n., 3rd",
+		"defList": [
+			"column"
 		]
 	},
 	{
