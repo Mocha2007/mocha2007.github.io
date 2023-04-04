@@ -2394,6 +2394,14 @@
 	},
 	{
 		"title": "bu",
+		"etym": "L/PEN/*βiu/hollow",
+		"cat": "adj.",
+		"defList": [
+			"hollow"
+		]
+	},
+	{
+		"title": "bu",
 		"etym": "L/PEN/*bu/boom",
 		"cat": "interj.",
 		"defList": [
@@ -4393,7 +4401,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"fullness, completion",
-			"(mathematics) shape (area enclosed by lines)"
+			"(mathematics) shape (area enclosed by lines)",
+			"form (eg. word form)"
 		],
 		"categories": ["math"]
 	},
@@ -4577,6 +4586,16 @@
 		]
 	},
 	{
+		"title": "hum",
+		"etym": "C/hut/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"arc",
+			"curve"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "hunik",
 		"etym": "L/PRE/sūniku//L/NUZ/suniku/L/VAZ/sanicu",
 		"cat": "n., 2nd",
@@ -4662,6 +4681,15 @@
 		"cat": "v.",
 		"defList": [
 			"let, allow, permit"
+		]
+	},
+	{
+		"title": "huz",
+		"etym": "C/hum/-z",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) arc",
+			"(intransitive) curve, be curved"
 		]
 	},
 	{
@@ -6065,7 +6093,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"end",
-			"border",
+			"border, rim, brim",
+			"limit",
 			"sum, total"
 		],
 		"categories": ["extent", "math"]
@@ -6175,6 +6204,15 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "kulbarm",
+		"etym": "C/kul/barm",
+		"cat": "n., 5th",
+		"defList": [
+			"outline"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "kulu",
 		"etym": "C/kul/-u",
 		"cat": "adj.",
@@ -6232,6 +6270,15 @@
 			"fifteen"
 		],
 		"categories": ["number"]
+	},
+	{
+		"title": "kumkek",
+		"etym": "B/kum/kek",
+		"cat": "n., 2nd",
+		"defList": [
+			"third generation of deities"
+		],
+		"categories": ["god"]
 	},
 	{
 		"title": "kumkimôm",
@@ -11280,6 +11327,7 @@
 		"cat": "n., 5th",
 		"defList": [
 			"bend, bight",
+			"corner",
 			"(mathematics) angle"
 		],
 		"categories": ["math"]
