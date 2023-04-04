@@ -4344,6 +4344,23 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "hilda",
+		"etym": "B/hilbe/da",
+		"cat": "n., 4th",
+		"defList": [
+			"pile (esp. of dirt)",
+			"lump"
+		]
+	},
+	{
+		"title": "hildasu",
+		"etym": "C/hilda/-isu",
+		"cat": "n., 4th",
+		"defList": [
+			"lumpy"
+		]
+	},
+	{
 		"title": "hilsaz",
 		"etym": "L/PEN/*ɸiltsias/mix",
 		"cat": "v.",
@@ -4810,6 +4827,15 @@
 			"(mathematics) equiangular, isogonal"
 		],
 		"categories": ["math"]
+	},
+	{
+		"title": "ifimbum",
+		"etym": "C/i/himbum",
+		"cat": "n., 5th",
+		"defList": [
+			"diamond (shape)"
+		],
+		"notes": "the first component refers to an archaic variant shape of the glyph"
 	},
 	{
 		"title": "ikku",
@@ -8351,6 +8377,15 @@
 		]
 	},
 	{
+		"title": "ôfimbum",
+		"etym": "C/ô/himbum",
+		"cat": "n., 5th",
+		"defList": [
+			"cross"
+		],
+		"notes": "the first component refers to the shape of the glyph"
+	},
+	{
 		"title": "ok",
 		"etym": "r/holk",
 		"cat": "adv.",
@@ -10113,6 +10148,14 @@
 			"(uncountable) wood"
 		],
 		"categories": ["v3_trade"]
+	},
+	{
+		"title": "taliret",
+		"etym": "C/talire/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"(uncountable) lumber, blocks (cut wood)"
+		]
 	},
 	{
 		"title": "talsu",
