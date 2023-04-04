@@ -124,4 +124,8 @@ const translationChallenges = [
 	hu i linku ku tukil i kru,
 	lennama su seba i astedum ku dinastedz sim ad sebaz ku,
 	sebasum manam i amut kumanat.`,
+	// iacta alea esto
+	'Dir zetidot bamkaldoz.',
+	// In the end, it is impossible not to become what others believe you are.
+	'Nami i nasisur hal nanaur eto i kudam ad dindôkaz uid tômz uid.',
 ];
