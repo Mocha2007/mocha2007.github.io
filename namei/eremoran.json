@@ -381,7 +381,7 @@
 		"etym": "C/abubut/-z",
 		"cat": "v.",
 		"defList": [
-			"(intransitive) turn",
+			"(intransitive) turn, twist",
 			"(mathematics, intransitive) rotate"
 		],
 		"categories": ["math"]
@@ -396,6 +396,14 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "abukut",
+		"etym": "A/abu",
+		"cat": "n., 3rd",
+		"defList": [
+			"band, armband, bracelet, anklet"
+		]
+	},
+	{
 		"title": "abum",
 		"etym": "C/abu/-m",
 		"cat": "n., 5th",
@@ -404,6 +412,14 @@
 			"(mathematics) circumference"
 		],
 		"categories": ["math"]
+	},
+	{
+		"title": "aburt",
+		"etym": "B/abubz/bart",
+		"cat": "n., 3rd",
+		"defList": [
+			"thread"
+		]
 	},
 	{
 		"title": "abusu",
@@ -1442,6 +1458,15 @@
 		"cat": "n., 5th",
 		"defList": [
 			"freedom, liberty"
+		]
+	},
+	{
+		"title": "bamat",
+		"etym": "L/PEN/*bamat",
+		"cat": "n., 3rd",
+		"defList": [
+			"stake, post",
+			"peg"
 		]
 	},
 	{
@@ -2488,8 +2513,16 @@
 		]
 	},
 	{
+		"title": "bulbult",
+		"etym": "L/PEN/*bult/net",
+		"cat": "n., 3rd",
+		"defList": [
+			"net"
+		]
+	},
+	{
 		"title": "bulklat",
-		"etym": "L/PEN/*bulglat/knot",
+		"etym": "L/PEN/*bul-glat/knot",
 		"cat": "n., 3rd",
 		"defList": [
 			"knot"
@@ -5372,6 +5405,14 @@
 		"defList": [
 			"claw",
 			"talon"
+		]
+	},
+	{
+		"title": "karot",
+		"etym": "C/karo/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"hook"
 		]
 	},
 	{
