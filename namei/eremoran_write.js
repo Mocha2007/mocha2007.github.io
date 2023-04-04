@@ -55,7 +55,6 @@ const ereWrite = {
 		const wholeWord = this.elem.wholeword.checked;
 		const search = wholeWord ? '\\b' + this.elem.input.value + '\\b' : this.elem.input.value;
 		const matchCase = this.elem.matchcase.checked;
-		console.debug(search);
 		let re;
 		try {
 			re = new RegExp(search, matchCase ? 'g' : 'gi');
