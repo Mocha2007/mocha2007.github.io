@@ -2409,6 +2409,7 @@
 		"defList": [
 			"poke",
 			"stab",
+			"prick",
 			"interest"
 		],
 		"categories": ["emotion"]
@@ -3249,6 +3250,14 @@
 			"evening"
 		],
 		"categories": ["time"]
+	},
+	{
+		"title": "dôbonz",
+		"etym": "C/dô/bonz",
+		"cat": "v.",
+		"defList": [
+			"pierce, breach"
+		]
 	},
 	{
 		"title": "dôdaêt",
@@ -5150,6 +5159,15 @@
 		]
 	},
 	{
+		"title": "itdôz",
+		"etym": "C/it/sudôz",
+		"cat": "v.",
+		"defList": [
+			"redo",
+			"renovate, renew"
+		]
+	},
+	{
 		"title": "itkunz",
 		"etym": "C/it/kunz",
 		"cat": "v.",
@@ -5863,6 +5881,14 @@
 		"lore": "ty Greek phonoestheme"
 	},
 	{
+		"title": "kluz",
+		"etym": "C/klu/-z",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) stick together, glue together"
+		]
+	},
+	{
 		"title": "ko",
 		"etym": "L/PEN/*ko/this",
 		"cat": "adj.",
@@ -6212,6 +6238,14 @@
 		"cat": "n., 5th",
 		"defList": [
 			"row"
+		]
+	},
+	{
+		"title": "kubarsêz",
+		"etym": "C/kubarz/-isêz",
+		"cat": "v.",
+		"defList": [
+			"be tight"
 		]
 	},
 	{
@@ -7989,6 +8023,14 @@
 		"cat": "adj.",
 		"defList": [
 			"north"
+		]
+	},
+	{
+		"title": "nasudôm",
+		"etym": "C/nasudôz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"copy"
 		]
 	},
 	{
