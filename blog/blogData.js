@@ -752,4 +752,13 @@ const blogData = [
 	Here is how I would transcribe "Mocha":
 	<img src="../img/eo2_mocha.png">
 	`,
+	`
+	@title Random Eremoran Expansion Update
+	@date 1680622654847
+	@tags eremoran
+	The past two days I added an absolute ton of words to Eremoran,
+	and also clarified some points and fixed some minor discrepancies.
+	At this point, I've now been averaging over 7 new words per day (375 words in 53 days) -
+	a feat I am quite happy with!
+	`,
 ];
