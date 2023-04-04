@@ -2843,7 +2843,11 @@ Circumcize therefore the foreskin of your heart,
 
 
 <h3 id="Write_Eremoran">Eremoran Writing Utility</h3>
-<input type="text" id="erewrite_input" onkeypress="ereWrite.update();">
+<input type="text" id="erewrite_input" onkeyup="ereWrite.update();">
+<input type="checkbox" id="erewrite_case" name="erewrite_case">
+<label for="erewrite_case">Match Case</label>
+<input type="checkbox" id="erewrite_wholeword" name="erewrite_wholeword">
+<label for="erewrite_wholeword">Whole Words</label>
 <table>
 	<tr>
 		<td>Suggestions:</td>

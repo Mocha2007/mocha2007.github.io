@@ -32,6 +32,14 @@ const ereWrite = {
 		get list(){
 			return document.getElementById('erewrite_suggest');
 		},
+		/** @returns {HTMLInputElement} */
+		get matchcase(){
+			return document.getElementById('erewrite_case');
+		},
+		/** @returns {HTMLInputElement} */
+		get wholeword(){
+			return document.getElementById('erewrite_wholeword');
+		},
 	},
 	removeLast(){
 		this.elem.canvas.children[this.elem.canvas.children.length-1].remove();
@@ -44,10 +52,13 @@ const ereWrite = {
 	update(){
 		this.elem.list.innerHTML = '';
 		// update suggestions...
-		const search = this.elem.input.value;
+		const wholeWord = this.elem.wholeword.checked;
+		const search = wholeWord ? '\\b' + this.elem.input.value + '\\b' : this.elem.input.value;
+		const matchCase = this.elem.matchcase.checked;
+		console.debug(search);
 		let re;
 		try {
-			re = new RegExp(search, 'g');
+			re = new RegExp(search, matchCase ? 'g' : 'gi');
 		}
 		catch (_){
 			return;
