@@ -381,7 +381,7 @@
 		"etym": "C/abubut/-z",
 		"cat": "v.",
 		"defList": [
-			"(intransitive) turn, twist",
+			"(intransitive) turn, twist, wind, be twisted, be windy",
 			"(mathematics, intransitive) rotate"
 		],
 		"categories": ["math"]
@@ -4451,6 +4451,14 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "hi",
+		"etym": "L/PEN/*si/hole",
+		"cat": "n., 4th",
+		"defList": [
+			"hole"
+		]
+	},
+	{
 		"title": "hilbe",
 		"etym": "L/PEN/*ɸilβe/cloud",
 		"cat": "n., 4th",
@@ -4990,6 +4998,15 @@
 		]
 	},
 	{
+		"title": "iklum",
+		"etym": "C/iklu/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"trench, ditch, gully",
+			"groove"
+		]
+	},
+	{
 		"title": "iktêr",
 		"etym": "L/PEN/*iktêr/girl",
 		"cat": "n., 1st",
@@ -5278,6 +5295,14 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "kak",
+		"etym": "r/kakz",
+		"cat": "n., 4th",
+		"defList": [
+			"crack"
+		]
+	},
+	{
 		"title": "kakaz",
 		"etym": "L/PEN/*kaxas/pour",
 		"cat": "v.",
@@ -5292,6 +5317,14 @@
 		"defList": [
 			"music",
 			"tone, musical note"
+		]
+	},
+	{
+		"title": "kakz",
+		"etym": "O",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) crack"
 		]
 	},
 	{
@@ -8233,6 +8266,14 @@
 			"Pre-Eremoran (the people and country, but not the language)"
 		],
 		"categories": ["toponym"]
+	},
+	{
+		"title": "no",
+		"etym": "L/PEN/*no/stain",
+		"cat": "n., 4th",
+		"defList": [
+			"stain"
+		]
 	},
 	{
 		"title": "nô",
