@@ -157,6 +157,9 @@ function etymElement(etymString){
 				etymElem.innerHTML = 'Metathesis from ';
 				etymElem.appendChild(linkCard(tokens[1]));
 				break;
+			case 'O': // onomatopoeia
+				etymElem.innerHTML = 'Onomatopoeia';
+				break;
 			case 'P': // phrase
 				etymElem.innerHTML = '(Phrase)';
 				break;
