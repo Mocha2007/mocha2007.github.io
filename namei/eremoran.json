@@ -1,7 +1,7 @@
 [
 	{
 		"title": "-ba",
-		"etym": "L/PEN/-ba",
+		"etym": "L/PEN/*-ba",
 		"cat": "aff.",
 		"defList": [
 			"patientive suffix"
@@ -1738,6 +1738,23 @@
 			"(informal) [polar question particle]"
 		],
 		"notes": "see ''id'' and ''nanau'' for ors linking nominals"
+	},
+	{
+		"title": "bê",
+		"etym": "L/PEN/*βê/shell",
+		"cat": "n., 4th",
+		"defList": [
+			"shell"
+		],
+		"categories": ["body part"]
+	},
+	{
+		"title": "bêt",
+		"etym": "C/bê/-t",
+		"cat": "n., 4th",
+		"defList": [
+			"hulk (watercraft)"
+		]
 	},
 	{
 		"title": "bebekat",
@@ -4326,6 +4343,14 @@
 		]
 	},
 	{
+		"title": "heka",
+		"etym": "L/PEN/*ɸega",
+		"cat": "n., 4th",
+		"defList": [
+			"wrinkle (as on skin or cloth)"
+		]
+	},
+	{
 		"title": "hekz",
 		"etym": "L/PEN/*ɸeks/curse",
 		"cat": "v.",
@@ -5079,6 +5104,14 @@
 			"against",
 			"instead",
 			"(prefix) re-"
+		]
+	},
+	{
+		"title": "itarêt",
+		"etym": "C/itarz/-ê",
+		"cat": "n., 3rd",
+		"defList": [
+			"plug, stopper"
 		]
 	},
 	{
@@ -6704,6 +6737,14 @@
 		"defList": [
 			"brick",
 			"(metaphorically) a refined, tasteful person"
+		]
+	},
+	{
+		"title": "lada",
+		"etym": "L/PEN/*lixêda",
+		"cat": "n., 4th",
+		"defList": [
+			"flaw"
 		]
 	},
 	{
