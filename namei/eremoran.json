@@ -379,6 +379,15 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "abufimbasêm",
+		"etym": "C/abum/himbasêm",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) sphere, ball"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "abum",
 		"etym": "C/abu/-m",
 		"cat": "n., 5th",
@@ -3845,6 +3854,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "habufimbasêm",
+		"etym": "C/ha-/abufimbasêm",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) hemisphere"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "hafa",
 		"etym": "R/ha",
 		"cat": "n., 4th",
@@ -4355,7 +4373,7 @@
 	{
 		"title": "hildasu",
 		"etym": "C/hilda/-isu",
-		"cat": "n., 4th",
+		"cat": "adj.",
 		"defList": [
 			"lumpy"
 		]
@@ -4403,6 +4421,15 @@
 		"defList": [
 			"swim"
 		]
+	},
+	{
+		"title": "himbasêm",
+		"etym": "B/himbum/ebasêm",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) solid"
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "himbu",
@@ -10121,6 +10148,15 @@
 		]
 	},
 	{
+		"title": "tafimbasêm",
+		"etym": "C/tat/himbasêm",
+		"cat": "n., 5th",
+		"defList": [
+			"(mathematics) pyramid"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "takêu",
 		"etym": "L/PEN/*tokêu/clockwise",
 		"cat": "adj.",
@@ -10330,6 +10366,14 @@
 			"green"
 		],
 		"categories": ["color"]
+	},
+	{
+		"title": "tat",
+		"etym": "L/PEN/*tat",
+		"cat": "adj.",
+		"defList": [
+			"stair, stairs"
+		]
 	},
 	{
 		"title": "taze",
