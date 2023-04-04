@@ -1216,7 +1216,8 @@ function expansionProject(){
 	const _2024 = (new Date(2024, 0, 1) - epoch)/day;
 	const goal = (_2024 - w)/(new Date(2024, 0, 1) - new Date()) * day;
 	console.info(`${round(goal, 2)} w/d required to reach 2024 goal`);
-	[7, 5, 4.5, 4].forEach(target => {
+	const currentRate = (w - 900) * day / (new Date() - new Date(2023, 1, 10));
+	[currentRate, 5, 4.5, 4].forEach(target => {
 		const eta = new Date(+new Date() + day*(days - w)/(target-1));
 		console.info(`ETA @ ${target} w/d = ${eta.toDateString()}`);
 	});
