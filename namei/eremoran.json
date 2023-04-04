@@ -335,7 +335,7 @@
 	},
 	{
 		"title": "abelk",
-		"etym": "C/abe-/-lk",
+		"etym": "C/abe-/-ulk",
 		"cat": "adv.",
 		"defList": [
 			"otherwise"
@@ -1544,7 +1544,8 @@
 		"etym": "C/barz/-t",
 		"cat": "n., 3rd",
 		"defList": [
-			"rope"
+			"rope, cord",
+			"belt"
 		]
 	},
 	{
@@ -9392,7 +9393,7 @@
 		"etym": "C/seda/-m",
 		"cat": "n., 5th",
 		"defList": [
-			"unit of area about 0.31 ha, or 0.76 acres",
+			"unit of area, about 0.31 ha or 0.76 acres",
 			"(archaic) area"
 		],
 		"categories": ["extent", "math"]
