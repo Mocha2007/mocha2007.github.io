@@ -3373,6 +3373,14 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "dômablaz",
+		"etym": "C/dô/mablaz",
+		"cat": "v.",
+		"defList": [
+			"insert, stick in, put in, input"
+		]
+	},
+	{
 		"title": "dômim",
 		"etym": "C/dô/mim",
 		"cat": "n., 5th",
@@ -6490,6 +6498,14 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "kulmablaz",
+		"etym": "C/kul/mablaz",
+		"cat": "v.",
+		"defList": [
+			"frame, surround with"
+		]
+	},
+	{
 		"title": "kulu",
 		"etym": "C/kul/-u",
 		"cat": "adj.",
@@ -6513,6 +6529,15 @@
 			"wrist"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "kumablaz",
+		"etym": "C/ku/mablaz",
+		"cat": "v.",
+		"defList": [
+			"arrange",
+			"decorate"
+		]
 	},
 	{
 		"title": "kumanat",
@@ -6907,6 +6932,7 @@
 		"cat": "v.",
 		"defList": [
 			"pull",
+			"tug",
 			"drag"
 		]
 	},
@@ -9761,7 +9787,7 @@
 		"etym": "L/PEN/*ʃiɸs/hit",
 		"cat": "v.",
 		"defList": [
-			"hit, beat, strike"
+			"hit, beat, strike, punch"
 		]
 	},
 	{
@@ -10230,6 +10256,14 @@
 		]
 	},
 	{
+		"title": "stôdmablaz",
+		"etym": "C/stôd/mablaz",
+		"cat": "v.",
+		"defList": [
+			"put on top of, juxtapose"
+		]
+	},
+	{
 		"title": "stôdnobz",
 		"etym": "C/stôd/nobz",
 		"cat": "v.",
@@ -10434,6 +10468,14 @@
 		"defList": [
 			"crush",
 			"grind"
+		]
+	},
+	{
+		"title": "tabinz",
+		"etym": "B/tabaz/habin",
+		"cat": "v.",
+		"defList": [
+			"pinch (esp. between the thumb and index finger)"
 		]
 	},
 	{
