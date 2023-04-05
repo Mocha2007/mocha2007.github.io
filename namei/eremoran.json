@@ -2574,6 +2574,14 @@
 		"categories": ["v3_trade"]
 	},
 	{
+		"title": "buralz",
+		"etym": "L/PEN/*βurals",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) tear, rip"
+		]
+	},
+	{
 		"title": "busia",
 		"etym": "L/PRE/apusia/ass, but",
 		"cat": "n., 4th",
@@ -3184,6 +3192,14 @@
 			"determine",
 			"summon",
 			"invent"
+		]
+	},
+	{
+		"title": "dinurz",
+		"etym": "C/din/urz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) unfold"
 		]
 	},
 	{
@@ -7979,6 +7995,15 @@
 		"categories": ["animal", "fantasy"]
 	},
 	{
+		"title": "nasisêr",
+		"etym": "C/nasi/-isêm",
+		"cat": "n., 1st",
+		"defList": [
+			"twin"
+		],
+		"categories": ["person"]
+	},
+	{
 		"title": "nasisu",
 		"etym": "C/nasu/-isu",
 		"cat": "adj.",
@@ -8649,6 +8674,22 @@
 		"cat": "adj.",
 		"defList": [
 			"away"
+		]
+	},
+	{
+		"title": "ôdz",
+		"etym": "C/ôdu/-z",
+		"cat": "adv., post.",
+		"defList": [
+			"away (from)"
+		]
+	},
+	{
+		"title": "ôdzbôz",
+		"etym": "C/ôdz/bôz",
+		"cat": "adv., post.",
+		"defList": [
+			"lose (an item)"
 		]
 	},
 	{
