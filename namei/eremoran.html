@@ -12,7 +12,7 @@
 <script src="../common.js" async></script><!-- for learning game -->
 <script src="../tools/chart.js" async></script><!-- for dynamic charts -->
 <script src="erequote.js" async></script>
-<script src="dict2.js" async></script>
+<script src="dict2.js" async id="dictScript"></script>
 <script src="bee.js" async></script>
 <script src="shiritori.js" async></script>
 <script src="eremoran_write.js" async></script>
@@ -3861,14 +3861,10 @@ Universals Violated:
 <div id="bottom"></div>
 <script src="eremoran.js"></script>
 <script>
-try {
+// Vivaldi and some mobile browsers do not correctly handle async so I have to wait for it to load...
+if (window.hasOwnProperty('dictScriptIsLoaded'))
 	eremoranMain();
-}
-catch {
-	if(confirm('Certain browsers do not correctly handly async. Use another browser or press OK to try again.'))
-		location.reload();
-	else
-		window.location.replace('https://www.mozilla.org/en-US/firefox/new/');
-}
+else
+	document.getElementById('dictScript').addEventListener('load', eremoranMain);
 </script>
 </html>

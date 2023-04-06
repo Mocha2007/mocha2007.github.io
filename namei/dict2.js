@@ -297,3 +297,5 @@ defFormat.re = [
 	// eg. {{wt|la|-eus}}
 	[/{{wt\|(\w+?)\|([^}]+?)}}/g, m => `<cite>${m[1]}. <a href="https://en.wiktionary.org/wiki/${m[2]}">${m[2]}</a></cite>`],
 ];
+
+const dictScriptIsLoaded = true;
