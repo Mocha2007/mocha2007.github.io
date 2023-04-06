@@ -3862,7 +3862,7 @@ Universals Violated:
 <script src="eremoran.js"></script>
 <script>
 // Vivaldi and some mobile browsers do not correctly handle async so I have to wait for it to load...
-if (window.hasOwnProperty('dictScriptIsLoaded'))
+if (typeof dictScriptIsLoaded !== 'undefined')
 	eremoranMain();
 else
 	document.getElementById('dictScript').addEventListener('load', eremoranMain);

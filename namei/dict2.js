@@ -1,4 +1,4 @@
-/* exported getDict */
+/* exported dictScriptIsLoaded, getDict */
 /* global elements, linkCard, phono, titleCard */
 'use strict';
 
@@ -298,4 +298,4 @@ defFormat.re = [
 	[/{{wt\|(\w+?)\|([^}]+?)}}/g, m => `<cite>${m[1]}. <a href="https://en.wiktionary.org/wiki/${m[2]}">${m[2]}</a></cite>`],
 ];
 
-const dictScriptIsLoaded = true;
+const dictScriptIsLoaded = true; // used to determine if the script is loaded
