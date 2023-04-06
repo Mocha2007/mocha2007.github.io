@@ -5951,7 +5951,8 @@
 			"quiet, stealthy",
 			"grey; greyish brown (like mice)"
 		],
-		"notes": "cf. en. ''mousy'' and la. ''murinus'', mirroring senses 3-5."
+		"notes": "cf. en. ''mousy'' and la. ''murinus'', mirroring senses 3-5.",
+		"categories": ["color"]
 	},
 	{
 		"title": "kobôz",
@@ -8113,7 +8114,7 @@
 	},
 	{
 		"title": "nau",
-		"etym": "L/PEN/*na-u/which, what",
+		"etym": "C/na/-u",
 		"cat": "adj.",
 		"defList": [
 			"which, what"
