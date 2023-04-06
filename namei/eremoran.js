@@ -1,5 +1,5 @@
 /* exported adj, eremoranMain, ereNum, linkCard, search, titleCard, wordle */
-/* global charHisto, commaNumber, etymElement, getDict, histo, histo2, isAnagram
+/* global charHisto, commaNumber, defFormat, etymElement, getDict, histo, histo2, isAnagram
 	quotes, random, removeAccents, round, startEreQuote,
 	translationChallenges, union */
 
@@ -50,7 +50,7 @@ function gloss(s){
 			.replace(/,.+/, ''); // remove secondary glosses
 		if (23 < o.length)
 			console.warn(`long gloss: ${s} = "${o}"`);
-		return o;
+		return defFormat(o);
 	}
 	catch (e){
 		console.error(`unable to gloss ${s}`);
