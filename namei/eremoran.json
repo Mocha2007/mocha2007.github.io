@@ -279,7 +279,8 @@
 		"defList": [
 			"competitor",
 			"athlete"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "abbalim",
@@ -331,7 +332,8 @@
 		"cat": "aff.",
 		"defList": [
 			"double-"
-		]
+		],
+		"categories": ["number"]
 	},
 	{
 		"title": "abelk",
@@ -358,7 +360,8 @@
 		"defList": [
 			"ring"
 		],
-		"notes": "abu is one of a handful of nouns ending in -u."
+		"notes": "abu is one of a handful of nouns ending in -u.",
+		"categories": ["clothing"]
 	},
 	{
 		"title": "abubit",
@@ -401,7 +404,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"band, armband, bracelet, anklet"
-		]
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "abum",
@@ -796,7 +800,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"honey"
-		]
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "ammakama",
@@ -833,7 +838,7 @@
 		"defList": [
 			"number, numeral"
 		],
-		"categories": ["extent", "number"]
+		"categories": ["extent", "math"]
 	},
 	{
 		"title": "amzralz",
@@ -841,7 +846,8 @@
 		"cat": "v.",
 		"defList": [
 			"count"
-		]
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "anam",
@@ -891,7 +897,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"painting, picture"
-		]
+		],
+		"categories": ["art"]
 	},
 	{
 		"title": "anoz",
@@ -1501,7 +1508,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"knife"
-		]
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "banz",
@@ -1571,7 +1579,8 @@
 		"defList": [
 			"rope, cord",
 			"belt"
-		]
+		],
+		"categories": ["clothing", "tool"]
 	},
 	{
 		"title": "bartka",
@@ -1842,7 +1851,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"prince, princess"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "bêm",
@@ -1889,7 +1899,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"spindle (tool to spin wool)"
-		]
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "bêrilm",
@@ -2117,7 +2128,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"pen"
-		]
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "bikut",
@@ -2180,7 +2192,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"battleground"
-		]
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "biman",
@@ -2249,7 +2262,8 @@
 		"defList": [
 			"wool",
 			"woolen"
-		]
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "bit",
@@ -2292,7 +2306,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"chicken (meat)"
-		]
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "bodô",
@@ -2365,7 +2380,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"hammer"
-		]
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "bômak",
@@ -2400,7 +2416,8 @@
 		"cat": "v.",
 		"defList": [
 			"perform bonrôm"
-		]
+		],
+		"categories": ["art", "music"]
 	},
 	{
 		"title": "bonz",
@@ -2528,7 +2545,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"adze"
-		]
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "bulbult",
@@ -2536,7 +2554,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"net"
-		]
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "bulklat",
@@ -2579,7 +2598,8 @@
 		"cat": "v.",
 		"defList": [
 			"(intransitive) tear, rip"
-		]
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "busia",
@@ -2946,7 +2966,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"whale meat"
-		]
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "didulk",
@@ -3054,7 +3075,8 @@
 			"filter out",
 			"conscript, enroll, levy",
 			"cull"
-		]
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "dinbôz",
@@ -3168,7 +3190,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"(mathematics) proof, theorem"
-		]
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "dintukum",
@@ -3282,7 +3305,8 @@
 		"defList": [
 			"stylus",
 			"(dialectal) pen"
-		]
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "dôdaz",
@@ -3431,7 +3455,8 @@
 		"cat": "v.",
 		"defList": [
 			"attack; invade"
-		]
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "dorfaz",
@@ -3542,7 +3567,8 @@
 		"cat": "v.",
 		"defList": [
 			"(intransitive) ferment"
-		]
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "ebela",
@@ -3717,7 +3743,8 @@
 		"defList": [
 			"aristocrat",
 			"aristocracy"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "enlusik",
@@ -3770,7 +3797,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"spear"
-		]
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "erekanu",
@@ -3909,7 +3937,8 @@
 		"cat": "aff.",
 		"defList": [
 			"semi-, half-"
-		]
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "habeka",
@@ -4347,7 +4376,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"loom"
-		]
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "hêan",
@@ -4830,7 +4860,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"hunter"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "husaurz",
@@ -4960,7 +4991,8 @@
 		"cat": "adj.",
 		"defList": [
 			"first"
-		]
+		],
+		"categories": ["number"]
 	},
 	{
 		"title": "idkaz",
@@ -5117,7 +5149,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"kettle"
-		]
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "irerz",
@@ -5162,7 +5195,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"plug, stopper"
-		]
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "itarz",
@@ -5267,7 +5301,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"cheese"
-		]
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "kad",
@@ -5275,7 +5310,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"hoof"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "kada",
@@ -5283,7 +5319,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"sugarcane"
-		]
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "kadat",
@@ -5292,7 +5329,7 @@
 		"defList": [
 			"sugar"
 		],
-		"categories": ["v3_trade"]
+		"categories": ["food", "v3_trade"]
 	},
 	{
 		"title": "kadlirem",
@@ -5325,7 +5362,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"victory"
-		]
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "kaik",
@@ -5359,7 +5397,8 @@
 		"defList": [
 			"music",
 			"tone, musical note"
-		]
+		],
+		"categories": ["art", "music"]
 	},
 	{
 		"title": "kakz",
@@ -5416,7 +5455,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"sound"
-		]
+		],
+		"categories": ["music"]
 	},
 	{
 		"title": "kama",
@@ -5513,7 +5553,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"war"
-		]
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "karo",
@@ -5522,7 +5563,8 @@
 		"defList": [
 			"claw",
 			"talon"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "karot",
@@ -5530,7 +5572,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"hook"
-		]
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "kaskru",
@@ -5850,7 +5893,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"axe"
-		]
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "kiu",
@@ -6030,7 +6074,8 @@
 		"cat": "v.",
 		"defList": [
 			"sing"
-		]
+		],
+		"categories": ["art", "music"]
 	},
 	{
 		"title": "kopam",
@@ -6110,7 +6155,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"shield"
-		]
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "kotaz",
@@ -6120,7 +6166,8 @@
 			"launch",
 			"shoot"
 		],
-		"notes": "Note: this verb forms many compounds. (TODO; Will add soon!)"
+		"notes": "Note: this verb forms many compounds. (TODO; Will add soon!)",
+		"categories": ["war"]
 	},
 	{
 		"title": "kotik",
@@ -6426,7 +6473,8 @@
 			"(intransitive) border",
 			"(intransitive) sum, add up",
 			"(intransitive, archaic) end"
-		]
+		],
+		"categories": ["math"]
 	},
 	{
 		"title": "kufanlat",
@@ -6459,7 +6507,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"(music) chord"
-		]
+		],
+		"categories": ["music"]
 	},
 	{
 		"title": "kuku",
@@ -6608,7 +6657,8 @@
 		"cat": "v.",
 		"defList": [
 			"dance"
-		]
+		],
+		"categories": ["art"]
 	},
 	{
 		"title": "kumkuz",
@@ -6925,7 +6975,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"undergarment"
-		]
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "lanz",
@@ -7462,7 +7513,8 @@
 		"cat": "v.",
 		"defList": [
 			"bleed"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "mask",
@@ -7740,7 +7792,8 @@
 		"defList": [
 			"popular, democratic",
 			"ethnic, national"
-		]
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "mourilm",
@@ -8341,7 +8394,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"bread"
-		]
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "nizinar",
@@ -8367,7 +8421,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"stain"
-		]
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "nô",
@@ -8419,7 +8474,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"mushroom"
-		]
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "nom",
@@ -8996,7 +9052,8 @@
 		"cat": "v.",
 		"defList": [
 			"slither, crawl"
-		]
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "pi",
@@ -9160,7 +9217,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"paint"
-		]
+		],
+		"categories": ["art"]
 	},
 	{
 		"title": "ratik",
@@ -9195,7 +9253,8 @@
 		"cat": "v.",
 		"defList": [
 			"paint"
-		]
+		],
+		"categories": ["art"]
 	},
 	{
 		"title": "razbakum",
@@ -9212,7 +9271,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"(threshing) flail"
-		]
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "redêt",
@@ -9220,7 +9280,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"threshing sledge, threshing board"
-		]
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "redz",
@@ -9282,7 +9343,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"(sewing) needle"
-		]
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "ril",
@@ -9716,7 +9778,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"sickle, scythe"
-		]
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "sekaz",
@@ -9789,7 +9852,8 @@
 		"cat": "v.",
 		"defList": [
 			"hit, beat, strike, punch"
-		]
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "sik",
@@ -9885,7 +9949,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"star"
-		]
+		],
+		"categories": ["astronomy"]
 	},
 	{
 		"title": "sisikruêr",
@@ -9895,7 +9960,8 @@
 			"astrologer",
 			"astronomer"
 		],
-		"notes": "In Eremoran times, these two roles are functioned by the same person"
+		"notes": "In Eremoran times, these two roles are functioned by the same person",
+		"categories": ["astronomy"]
 	},
 	{
 		"title": "sisikrum",
@@ -9905,7 +9971,8 @@
 			"astrology",
 			"astronomy"
 		],
-		"notes": "In Eremoran times, these two roles are functioned by the same person"
+		"notes": "In Eremoran times, these two roles are functioned by the same person",
+		"categories": ["astronomy"]
 	},
 	{
 		"title": "sisima",
@@ -9913,7 +9980,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"constellation"
-		]
+		],
+		"categories": ["astronomy"]
 	},
 	{
 		"title": "sisiurm",
@@ -9993,7 +10061,8 @@
 		"defList": [
 			"(of non-birds) fly"
 		],
-		"notes": "With the causative suffix, means 'hurl' or 'send'."
+		"notes": "With the causative suffix, means 'hurl' or 'send'.",
+		"categories": ["animal"]
 	},
 	{
 		"title": "skufansam",
@@ -10089,7 +10158,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"mortar (ie. w/ pestle)"
-		]
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "soni",
@@ -10254,7 +10324,8 @@
 		"cat": "v.",
 		"defList": [
 			"draw (a picture)"
-		]
+		],
+		"categories": ["art"]
 	},
 	{
 		"title": "stôdmablaz",
@@ -10371,7 +10442,8 @@
 			"(''animate subject, inanimate object, of a consumable''<sup>1</sup>) enjoy",
 			"(''inanimate subject, human object'') be a cause of termination for"
 		],
-		"notes": "<sup>1</sup> Habitual aspect only; supplanted the now-archaic dôz in most senses"
+		"notes": "<sup>1</sup> Habitual aspect only; supplanted the now-archaic dôz in most senses",
+		"categories": ["art", "food", "sex"]
 	},
 	{
 		"title": "sukaêt",
@@ -10398,7 +10470,8 @@
 		"cat": "v.",
 		"defList": [
 			"sew"
-		]
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "suma",
@@ -10452,7 +10525,8 @@
 		"cat": "v.",
 		"defList": [
 			"tie"
-		]
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "tabaêt",
@@ -10460,7 +10534,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"pestle"
-		]
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "tabaz",
@@ -10796,7 +10871,8 @@
 		"cat": "v.",
 		"defList": [
 			"defend, protect"
-		]
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "tia",
@@ -10804,7 +10880,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"salt"
-		]
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "tiasu",
@@ -10812,15 +10889,17 @@
 		"cat": "adj.",
 		"defList": [
 			"salty"
-		]
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "tiaz",
 		"etym": "C/tia/-z",
 		"cat": "v.",
 		"defList": [
-			"be salted"
-		]
+			"(transitive) salt"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "tifabin",
@@ -10837,7 +10916,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"thimble"
-		]
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "tikam",
@@ -10853,7 +10933,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"arrow"
-		]
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "tiu",
@@ -10962,7 +11043,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"penumbra"
-		]
+		],
+		"categories": ["astronomy"]
 	},
 	{
 		"title": "tôsu",
@@ -11227,7 +11309,8 @@
 		"cat": "adj.",
 		"defList": [
 			"fried"
-		]
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "tuz",
@@ -11235,7 +11318,8 @@
 		"cat": "v.",
 		"defList": [
 			"fry"
-		]
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "u",
@@ -11577,7 +11661,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"solar eclipse"
-		]
+		],
+		"categories": ["astronomy"]
 	},
 	{
 		"title": "urilm",
@@ -11605,7 +11690,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"dagger"
-		]
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "urm",
@@ -11630,7 +11716,8 @@
 		"cat": "v.",
 		"defList": [
 			"(intransitive) fold"
-		]
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "usedu",
@@ -11694,7 +11781,7 @@
 		"cat": "phrase",
 		"defList": [
 			"goodnight",
-			"scatter, hide"
+			"scatter!, hide!"
 		]
 	},
 	{
@@ -11713,7 +11800,8 @@
 		"defList": [
 			"spit, saliva",
 			"drool"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "zedumuz",
@@ -11722,7 +11810,8 @@
 		"defList": [
 			"spit",
 			"salivate, drool"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "zên",
@@ -11775,7 +11864,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"joint"
-		]
+		],
+		"categories": ["body part"]
 	},
 	{
 		"title": "zetidot",

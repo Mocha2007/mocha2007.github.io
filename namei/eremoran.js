@@ -31,6 +31,10 @@ const elements = {
 	},
 	/** @type {string[]} - array of words*/
 	dict: [],
+	/** @type {string[]} */
+	get nocat(){
+		return this.raws.filter(o => !o.categories).map(o => o.title);
+	},
 	get palindromes(){
 		return this.dict.filter(w => w === w.split('').reverse().join(''));
 	},
