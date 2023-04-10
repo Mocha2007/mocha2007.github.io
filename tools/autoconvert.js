@@ -36,6 +36,7 @@ const autoconvert = {
 	convertElemWrapper(elem){
 		try {
 			this.convertElem(elem);
+			this.count++;
 		}
 		catch (e){
 			console.warn(`Error converting ${elem.innerHTML}\n${e}`);
@@ -69,6 +70,7 @@ const autoconvert = {
 		const f = Math.round(1.8*n - 459.67);
 		elem.innerHTML = `<abbr title="${c}°C; ${f}°F">${elem.innerHTML}</abbr>`;
 	},
+	count: 0,
 	fractions: {
 		'⅕': '0.2',
 		'¼': '0.25',
@@ -80,6 +82,7 @@ const autoconvert = {
 	run(){
 		Array.from(document.getElementsByClassName(this.className.unconverted))
 			.forEach(elem => this.convertElemWrapper(elem));
+		console.info(`Autoconvert provided unit conversions for ${this.count} elements`);
 	},
 	units: {
 		// example translation: IF m THEN USE ft @ RATE 0.3048
