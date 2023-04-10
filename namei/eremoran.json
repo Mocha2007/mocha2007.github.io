@@ -3068,6 +3068,22 @@
 		]
 	},
 	{
+		"title": "dinbarum",
+		"etym": "C/dinbaruz/-m",
+		"cat": "n.",
+		"defList": [
+			"disorder"
+		]
+	},
+	{
+		"title": "dinbaruz",
+		"etym": "C/din/baruz",
+		"cat": "v.",
+		"defList": [
+			"fall into disorder"
+		]
+	},
+	{
 		"title": "dinbarz",
 		"etym": "C/din/barz",
 		"cat": "v.",
@@ -8919,6 +8935,30 @@
 			"[affix used to form first/second person personal pronouns, eg. ''môk'']"
 		],
 		"notes": "Irregular spelling; 'hou' would be expected, but apparently the lower-register pronounciation became dominant"
+	},
+	{
+		"title": "palentiêr",
+		"etym": "C/palentiz/-ê",
+		"cat": "n., 1st",
+		"defList": [
+			"diviner, fortune teller"
+		]
+	},
+	{
+		"title": "palentiêt",
+		"etym": "C/palentiz/-ê",
+		"cat": "n., 3rd",
+		"defList": [
+			"crystal ball"
+		]
+	},
+	{
+		"title": "palentiz",
+		"etym": "L/VAZ/???/scry",
+		"cat": "v.",
+		"defList": [
+			"scry"
+		]
 	},
 	{
 		"title": "pabêm",
