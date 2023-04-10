@@ -3359,6 +3359,14 @@
 		"categories": ["person"]
 	},
 	{
+		"title": "dôfilsaz",
+		"etym": "C/dô/hilsaz",
+		"cat": "v.",
+		"defList": [
+			"swap, switch"
+		]
+	},
+	{
 		"title": "dôk",
 		"etym": "L/PEN/*dôx/shellfish",
 		"cat": "n., 2nd",
@@ -3366,14 +3374,6 @@
 			"shellfish (eg. clam, oyster)"
 		],
 		"categories": ["animal", "seafood"]
-	},
-	{
-		"title": "dôfilsaz",
-		"etym": "C/dô/hilsaz",
-		"cat": "v.",
-		"defList": [
-			"swap, switch"
-		]
 	},
 	{
 		"title": "dôkalz",
