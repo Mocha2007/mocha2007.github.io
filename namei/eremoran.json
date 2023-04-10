@@ -1193,6 +1193,14 @@
 		]
 	},
 	{
+		"title": "assoz",
+		"etym": "C/ad/soz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) enclose, confine, include (+kul)"
+		]
+	},
+	{
 		"title": "astedu",
 		"etym": "L/PEN/*astedu/beautiful",
 		"cat": "adj.",
@@ -3197,7 +3205,8 @@
 		"cat": "v.",
 		"defList": [
 			"misplace",
-			"shuffle (like a deck of cards)"
+			"shuffle (like a deck of cards)",
+			"remove"
 		]
 	},
 	{
@@ -3234,6 +3243,14 @@
 		"cat": "v.",
 		"defList": [
 			"defecate, shit"
+		]
+	},
+	{
+		"title": "dinsuz",
+		"etym": "C/din/suz",
+		"cat": "v.",
+		"defList": [
+			"untie"
 		]
 	},
 	{
@@ -3477,7 +3494,8 @@
 		"etym": "C/dô/mablaz",
 		"cat": "v.",
 		"defList": [
-			"insert, stick in, put in, input"
+			"insert, stick in, put in, input",
+			"attach"
 		]
 	},
 	{
@@ -8596,6 +8614,28 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "nokam",
+		"etym": "C/nokaz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"incline",
+			"(language) declension"
+		],
+		"categories": ["language"]
+	},
+	{
+		"title": "nokaz",
+		"etym": "L/PEN/*nokas/lean",
+		"cat": "v.",
+		"defList": [
+			"lean",
+			"incline",
+			"recline",
+			"(language) decline"
+		],
+		"categories": ["language"]
+	},
+	{
 		"title": "nokin",
 		"etym": "L/PEN/*nokin/mushroom",
 		"cat": "n., 4th",
@@ -10352,7 +10392,7 @@
 	},
 	{
 		"title": "soz",
-		"etym": "L/PEN/*uns",
+		"etym": "L/PEN/*ʃos",
 		"cat": "v.",
 		"defList": [
 			"(intransitive) close"
@@ -10528,6 +10568,14 @@
 			"pelt (violetly hit with projectiles)"
 		],
 		"categories": ["war"]
+	},
+	{
+		"title": "stôdunz",
+		"etym": "C/stôd/unz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) overhang, hang over"
+		]
 	},
 	{
 		"title": "stum",
