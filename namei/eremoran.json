@@ -3156,12 +3156,28 @@
 		]
 	},
 	{
+		"title": "dinkaz",
+		"etym": "C/din/kaz",
+		"cat": "v.",
+		"defList": [
+			"sever, cut off (ie. separate a small part from a larger part)"
+		]
+	},
+	{
 		"title": "dinklaz",
 		"etym": "C/din/klaz",
 		"cat": "v.",
 		"defList": [
 			"vanish",
 			"be erased"
+		]
+	},
+	{
+		"title": "dinkunuz",
+		"etym": "C/din/kunuz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) break off"
 		]
 	},
 	{
@@ -3357,6 +3373,14 @@
 			"guest"
 		],
 		"categories": ["person"]
+	},
+	{
+		"title": "dôdorfaz",
+		"etym": "C/dô/dorfaz",
+		"cat": "v.",
+		"defList": [
+			"bury"
+		]
 	},
 	{
 		"title": "dôfilsaz",
@@ -6797,6 +6821,22 @@
 			"flock",
 			"coincide",
 			"agree; concur"
+		]
+	},
+	{
+		"title": "kunusêz",
+		"etym": "C/kunuz/-isêz",
+		"cat": "v.",
+		"defList": [
+			"be fragile"
+		]
+	},
+	{
+		"title": "kunuz",
+		"etym": "L/PEN/*xunus/break",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) break"
 		]
 	},
 	{
