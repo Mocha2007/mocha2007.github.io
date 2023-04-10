@@ -3165,6 +3165,15 @@
 		]
 	},
 	{
+		"title": "dinmablaz",
+		"etym": "C/din/mablaz",
+		"cat": "v.",
+		"defList": [
+			"misplace",
+			"shuffle (like a deck of cards)"
+		]
+	},
+	{
 		"title": "dinrôz",
 		"etym": "C/din/rôz",
 		"cat": "v.",
@@ -3357,6 +3366,14 @@
 			"shellfish (eg. clam, oyster)"
 		],
 		"categories": ["animal", "seafood"]
+	},
+	{
+		"title": "dôfilsaz",
+		"etym": "C/dô/hilsaz",
+		"cat": "v.",
+		"defList": [
+			"swap, switch"
+		]
 	},
 	{
 		"title": "dôkalz",
@@ -3797,6 +3814,14 @@
 			"(intransitive) increase"
 		],
 		"categories": ["extent", "math"]
+	},
+	{
+		"title": "enzmablaz",
+		"etym": "C/enz/mablaz",
+		"cat": "v.",
+		"defList": [
+			"clean up, tidy up"
+		]
 	},
 	{
 		"title": "epeêr",
@@ -7698,6 +7723,14 @@
 		]
 	},
 	{
+		"title": "moarz",
+		"etym": "C/mo/arz",
+		"cat": "v.",
+		"defList": [
+			"precede"
+		]
+	},
+	{
 		"title": "moda",
 		"etym": "L/PEN/*moda/trunk",
 		"cat": "n., 4th",
@@ -10716,6 +10749,14 @@
 			"afternoon"
 		],
 		"categories": ["time"]
+	},
+	{
+		"title": "tanarz",
+		"etym": "C/tan/arz",
+		"cat": "v.",
+		"defList": [
+			"come after, follow"
+		]
 	},
 	{
 		"title": "tanasêr",
