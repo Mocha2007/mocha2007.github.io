@@ -24,6 +24,8 @@ const autoconvert = {
 			return this.convertHeight(n, elem);
 		if (unit in this.eremoranUnits)
 			return this.convertEre(n, unit, elem);
+		if (unit === 'K') // treat as temp
+			return this.convertTemp(n, elem);
 		const [ratio, newUnit] = this.units[unit];
 		const decimals = n.split('.')[1];
 		const precision = decimals !== undefined ? decimals.length : 0;
@@ -50,13 +52,22 @@ const autoconvert = {
 		elem.innerHTML = `<abbr title="${round(n*u[0], u[2])} ${u[1]}; ${round(n*u[3], u[5])} ${u[4]}">${elem.innerHTML}</abbr>`;
 	},
 	/**
-	 * @param {number} n
+	 * @param {number} n in centimeters
 	 * @param {HTMLElement} elem
 	 */
 	convertHeight(n, elem){
 		const ft = Math.floor(n/30.48);
 		const inches = Math.round((n - ft*30.48)/2.54);
-		elem.innerHTML = `<abbr title="${ft}′${inches}″">${elem.innerHTML}</abbr>`;
+		elem.innerHTML = `<abbr title="${ft}′ ${inches}″">${elem.innerHTML}</abbr>`;
+	},
+	/**
+	 * @param {number} n in Kelvins
+	 * @param {HTMLElement} elem
+	 */
+	convertTemp(n, elem){
+		const c = Math.round(n - 273.15);
+		const f = Math.round(1.8*n - 459.67);
+		elem.innerHTML = `<abbr title="${c}°C; ${f}°F">${elem.innerHTML}</abbr>`;
 	},
 	fractions: {
 		'⅕': '0.2',
@@ -74,9 +85,15 @@ const autoconvert = {
 		// example translation: IF m THEN USE ft @ RATE 0.3048
 		m: [0.3048, 'ft'],
 		// rest in alphabetical order
+		a: [0.0009290304, 'ft²'],
 		cm: [2.54, 'in'],
+		ha: [0.40468564224, 'ac'],
 		kg: [0.45359237, 'lbs'],
 		km: [1.609344, 'mi'],
+		'km/h': [1.609344, 'mi/h'],
+		mm: [25.4, 'in'],
+		mL: [236.6, 'cp'],
+		'm²': [0.3048*0.3048, 'ft²'],
 	},
 	eremoranUnits: {
 		// special eremoran units
