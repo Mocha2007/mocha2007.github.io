@@ -10,8 +10,8 @@
 
 const autoconvert = {
 	className: {
-		converted: 'autoconvert-converted',
-		unconverted: 'autoconvert-unconverted',
+		converted: 'autoconvert-c',
+		unconverted: 'autoconvert-u',
 	},
 	/** @param {HTMLElement} elem */
 	convertElem(elem){

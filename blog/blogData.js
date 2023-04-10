@@ -761,4 +761,18 @@ const blogData = [
 	At this point, I've now been averaging over 7 new words per day (375 words in 53 days) -
 	a feat I am quite happy with!
 	`,
+	`
+	@title Unit Autoconversion Script
+	@date 1681139692647
+	@tags js
+	I wrote a script to automatically do the unit conversion &lt;abbr> tags for me.
+	It even does human heights properly (ie. writing it like 5&prime; 6&Prime; instead of 5.5 ft).
+	Literally all I have to do is place this at the start of the page:
+	<code>&lt;script src="../tools/autoconvert.js" defer>&lt;/script></code>
+	And then use this class in the HTML:
+	<code>&lt;span class="autoconvert-u">19 cm&lt;span></code>
+	And the code will automatically change that HTML to this:
+	<code>&lt;span class="autoconvert-c">&lt;abbr title="7 in">19 cm&lt;abbr>&lt;span></code>
+	Pretty convenient, eh?
+	`,
 ];

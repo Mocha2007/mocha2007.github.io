@@ -12,6 +12,11 @@ a {
 a:hover {
 	color: #08F;
 }
+code {
+	border: 2px solid #899;
+	background-color: #033;
+	color: #899;
+}
 h1, h2, h3 {
 	text-align: center;
 }
@@ -47,7 +52,7 @@ ul {
 	border: 2px solid #66c;
 	color: #66c;
 }
-.dateContainer, .tagList, *:target {
+code, .dateContainer, .tagList, *:target {
 	border-radius: 15px;
 	display: block;
 	margin: 5px auto;
