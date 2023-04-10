@@ -97,6 +97,7 @@ const autoconvert = {
 		mm: [25.4, 'in'],
 		mL: [236.6, 'cp'],
 		'm²': [0.3048*0.3048, 'ft²'],
+		'°C': [5/9, '°F'],
 	},
 	eremoranUnits: {
 		// special eremoran units
