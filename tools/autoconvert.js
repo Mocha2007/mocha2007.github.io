@@ -30,7 +30,7 @@ const autoconvert = {
 		const decimals = n.split('.')[1];
 		const precision = decimals !== undefined ? decimals.length : 0;
 		// eslint-disable-next-line max-len
-		elem.innerHTML = `<abbr title="${round(n/ratio, precision)} ${newUnit}">${elem.innerHTML}</abbr>`;
+		elem.innerHTML = `<abbr title="${this.round(n/ratio, precision)} ${newUnit}">${elem.innerHTML}</abbr>`;
 	},
 	/** @param {HTMLElement} elem */
 	convertElemWrapper(elem){
@@ -50,7 +50,7 @@ const autoconvert = {
 	convertEre(n, unit, elem){
 		const u = this.eremoranUnits[unit];
 		// eslint-disable-next-line max-len
-		elem.innerHTML = `<abbr title="${round(n*u[0], u[2])} ${u[1]}; ${round(n*u[3], u[5])} ${u[4]}">${elem.innerHTML}</abbr>`;
+		elem.innerHTML = `<abbr title="${this.round(n*u[0], u[2])} ${u[1]}; ${this.round(n*u[3], u[5])} ${u[4]}">${elem.innerHTML}</abbr>`;
 	},
 	/**
 	 * @param {number} n in centimeters
@@ -79,6 +79,12 @@ const autoconvert = {
 		'¾': '0.75',
 		'⅘': '0.8',
 		'1½': '1.5',
+	},
+	/** use Mocha round if available */
+	round(...args){
+		if (typeof round !== 'undefined')
+			return round(...args);
+		return Math.round(...args);
 	},
 	run(){
 		Array.from(document.getElementsByClassName(this.className.unconverted))
