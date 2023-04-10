@@ -59,7 +59,8 @@ const autoconvert = {
 	convertHeight(n, elem){
 		const ft = Math.floor(n/30.48);
 		const inches = Math.round((n - ft*30.48)/2.54);
-		elem.innerHTML = `<abbr title="${ft}′ ${inches}″">${elem.innerHTML}</abbr>`;
+		const inner = elem.innerHTML.replace(' height', '');
+		elem.innerHTML = `<abbr title="${ft}′ ${inches}″">${inner}</abbr>`;
 	},
 	/**
 	 * @param {number} n in Kelvins
