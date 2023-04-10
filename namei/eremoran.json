@@ -8937,6 +8937,23 @@
 		"notes": "Irregular spelling; 'hou' would be expected, but apparently the lower-register pronounciation became dominant"
 	},
 	{
+		"title": "pabêm",
+		"etym": "L/PRE/pawē/work",
+		"cat": "n., 5th",
+		"defList": [
+			"work; job"
+		]
+	},
+	{
+		"title": "pabôm",
+		"etym": "L/PRE/pawō/orgy",
+		"cat": "n., 5th",
+		"defList": [
+			"orgy"
+		],
+		"categories": ["sex"]
+	},
+	{
 		"title": "palentiêr",
 		"etym": "C/palentiz/-ê",
 		"cat": "n., 1st",
@@ -8959,23 +8976,6 @@
 		"defList": [
 			"scry"
 		]
-	},
-	{
-		"title": "pabêm",
-		"etym": "L/PRE/pawē/work",
-		"cat": "n., 5th",
-		"defList": [
-			"work; job"
-		]
-	},
-	{
-		"title": "pabôm",
-		"etym": "L/PRE/pawō/orgy",
-		"cat": "n., 5th",
-		"defList": [
-			"orgy"
-		],
-		"categories": ["sex"]
 	},
 	{
 		"title": "pamor",
