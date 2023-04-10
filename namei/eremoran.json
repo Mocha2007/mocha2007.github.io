@@ -384,7 +384,8 @@
 		"etym": "C/abubut/-z",
 		"cat": "v.",
 		"defList": [
-			"(intransitive) turn, twist, wind, be twisted, be windy",
+			"(intransitive) turn, twist, wind, coil",
+			"be twisted, be windy",
 			"(mathematics, intransitive) rotate"
 		],
 		"categories": ["math"]
@@ -3035,6 +3036,15 @@
 		"categories": ["giving"]
 	},
 	{
+		"title": "dinabubz",
+		"etym": "C/din/abubz",
+		"cat": "v.",
+		"defList": [
+			"uncoil, unroll, unwind",
+			"unwrap, peel, husk, shell"
+		]
+	},
+	{
 		"title": "dinarz",
 		"etym": "C/din/arz",
 		"cat": "v.",
@@ -3064,7 +3074,8 @@
 		"etym": "C/din/bamz",
 		"cat": "v.",
 		"defList": [
-			"send"
+			"send",
+			"fling (like water being flung off a dog drying itself, an outward motion)"
 		]
 	},
 	{
@@ -6595,10 +6606,19 @@
 		]
 	},
 	{
+		"title": "kulabut",
+		"etym": "C/kul/abum",
+		"cat": "n., 3rd",
+		"defList": [
+			"bandage"
+		]
+	},
+	{
 		"title": "kulabuz",
 		"etym": "C/kul/abum",
 		"cat": "v.",
 		"defList": [
+			"(intransitive) wrap (around)",
 			"(mathematics) circumscribe"
 		],
 		"categories": ["math"]
@@ -7809,6 +7829,16 @@
 		"defList": [
 			"a long time ago"
 		]
+	},
+	{
+		"title": "momablaz",
+		"etym": "C/mo/mablaz",
+		"cat": "n., 5th",
+		"defList": [
+			"prepare",
+			"(language) prefix, prepone"
+		],
+		"categories": ["language"]
 	},
 	{
 		"title": "momam",
@@ -10406,6 +10436,14 @@
 		"notes": "Full derivation: ''su tô ad''"
 	},
 	{
+		"title": "stôdbamz",
+		"etym": "C/stôd/bamz",
+		"cat": "v.",
+		"defList": [
+			"hurl, hurtle, catapult (violetly launch)"
+		]
+	},
+	{
 		"title": "stôdbêkum",
 		"etym": "C/stôd/bêkum",
 		"cat": "n., 5th",
@@ -10455,6 +10493,15 @@
 		"defList": [
 			"(intransitive) develop, evolve"
 		]
+	},
+	{
+		"title": "stôdsifaz",
+		"etym": "C/stôd/sifaz",
+		"cat": "v.",
+		"defList": [
+			"pelt (violetly hit with projectiles)"
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "stum",
@@ -11197,6 +11244,14 @@
 		"cat": "v.",
 		"defList": [
 			"swell"
+		]
+	},
+	{
+		"title": "tranbeka",
+		"etym": "C/tranz/beka",
+		"cat": "n., 4th",
+		"defList": [
+			"tunnel"
 		]
 	},
 	{
