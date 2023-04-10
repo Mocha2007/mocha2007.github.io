@@ -3343,6 +3343,14 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "dôbefôz",
+		"etym": "C/dô/befôz",
+		"cat": "v.",
+		"defList": [
+			"waste"
+		]
+	},
+	{
 		"title": "dôbonz",
 		"etym": "C/dô/bonz",
 		"cat": "v.",
@@ -7833,7 +7841,7 @@
 	{
 		"title": "momablaz",
 		"etym": "C/mo/mablaz",
-		"cat": "n., 5th",
+		"cat": "v.",
 		"defList": [
 			"prepare",
 			"(language) prefix, prepone"
@@ -10343,6 +10351,14 @@
 		"categories": ["sex"]
 	},
 	{
+		"title": "soz",
+		"etym": "L/PEN/*uns",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) close"
+		]
+	},
+	{
 		"title": "sparisêm",
 		"etym": "C/sparu/-isêm",
 		"cat": "n., 5th",
@@ -10441,6 +10457,16 @@
 		"cat": "v.",
 		"defList": [
 			"hurl, hurtle, catapult (violetly launch)"
+		]
+	},
+	{
+		"title": "stôdbefôz",
+		"etym": "C/stôd/befôz",
+		"cat": "v.",
+		"defList": [
+			"overuse",
+			"deplete",
+			"abuse"
 		]
 	},
 	{
@@ -11777,6 +11803,14 @@
 		"cat": "v.",
 		"defList": [
 			"touch, feel"
+		]
+	},
+	{
+		"title": "unz",
+		"etym": "L/PEN/*uns",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) hang, suspend"
 		]
 	},
 	{
