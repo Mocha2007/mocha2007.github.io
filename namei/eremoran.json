@@ -507,11 +507,27 @@
 		]
 	},
 	{
+		"title": "adunskaz",
+		"etym": "C/ad/unskaz",
+		"cat": "v.",
+		"defList": [
+			"reach, attain"
+		]
+	},
+	{
+		"title": "adzamarkim",
+		"etym": "C/adzamarz/kim",
+		"cat": "n., 5th",
+		"defList": [
+			"camp"
+		]
+	},
+	{
 		"title": "adzamarm",
 		"etym": "C/adzamarz/-m",
 		"cat": "n., 5th",
 		"defList": [
-			"break"
+			"rest"
 		]
 	},
 	{
@@ -2367,6 +2383,22 @@
 			"intercalary day"
 		],
 		"categories": ["time"]
+	},
+	{
+		"title": "bodôsêm",
+		"etym": "C/bodô/-isêm",
+		"cat": "n, 5th",
+		"defList": [
+			"pause, break"
+		]
+	},
+	{
+		"title": "bodôsêz",
+		"etym": "C/bodôsêm/-z",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) pause, go on break/vacation"
+		]
 	},
 	{
 		"title": "bodôt",
@@ -7882,6 +7914,14 @@
 		],
 		"notes": "Note: despite being animate, this refers to unfertilized eggs, too.",
 		"categories": ["body part"]
+	},
+	{
+		"title": "miz",
+		"etym": "L/PEN/*mis",
+		"cat": "v.",
+		"defList": [
+			"be lost (ie. be unsure of one's way)"
+		]
 	},
 	{
 		"title": "mo",
