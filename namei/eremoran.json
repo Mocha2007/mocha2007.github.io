@@ -644,6 +644,14 @@
 		"categories": ["tool"]
 	},
 	{
+		"title": "afkafkaz",
+		"etym": "R/afkaz",
+		"cat": "v.",
+		"defList": [
+			"set out, start to go, start to move"
+		]
+	},
+	{
 		"title": "afkakum",
 		"etym": "A/afkam",
 		"cat": "n., 5th",
@@ -666,6 +674,14 @@
 		"defList": [
 			"go",
 			"(intransitive) move"
+		]
+	},
+	{
+		"title": "afskiz",
+		"etym": "B/afkaz/skiz",
+		"cat": "v.",
+		"defList": [
+			"guide"
 		]
 	},
 	{
@@ -1825,7 +1841,7 @@
 		"etym": "L/PEN/*βega/way",
 		"cat": "n., 4th",
 		"defList": [
-			"way, path"
+			"way, path, trail, track, course, route, passage"
 		]
 	},
 	{
@@ -3121,6 +3137,14 @@
 			"cull"
 		],
 		"categories": ["war"]
+	},
+	{
+		"title": "dinberbaz",
+		"etym": "C/din/berbaz",
+		"cat": "v.",
+		"defList": [
+			"depart"
+		]
 	},
 	{
 		"title": "dinbôz",
@@ -7842,11 +7866,20 @@
 		]
 	},
 	{
+		"title": "moafkaz",
+		"etym": "C/mo/afkaz",
+		"cat": "v.",
+		"defList": [
+			"retreat, turn around"
+		],
+		"categories": ["motion", "war"]
+	},
+	{
 		"title": "moarz",
 		"etym": "C/mo/arz",
 		"cat": "v.",
 		"defList": [
-			"precede"
+			"precede, forego, go before"
 		]
 	},
 	{
@@ -7894,6 +7927,7 @@
 		"etym": "C/mo/mablaz",
 		"cat": "v.",
 		"defList": [
+			"leave behind, deposit",
 			"prepare",
 			"(language) prefix, prepone"
 		],
@@ -10935,6 +10969,15 @@
 			"[deductive evidential]"
 		],
 		"categories": ["evidential"]
+	},
+	{
+		"title": "tanafkaz",
+		"etym": "C/tan/afkaz",
+		"cat": "v.",
+		"defList": [
+			"advance"
+		],
+		"categories": ["motion", "war"]
 	},
 	{
 		"title": "tanaiz",
