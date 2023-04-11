@@ -909,6 +909,15 @@
 		]
 	},
 	{
+		"title": "anitêr",
+		"etym": "L/PRE/???",
+		"cat": "n., 1st",
+		"defList": [
+			"madman, crazy person"
+		],
+		"categories": ["person"]
+	},
+	{
 		"title": "annama",
 		"etym": "C/ad/namz",
 		"cat": "n., 4th",
@@ -1428,10 +1437,18 @@
 	},
 	{
 		"title": "baim",
-		"etym": "I/PEN/*βaim/reason",
+		"etym": "I/PEN/*βaim/conviction",
 		"cat": "n., 5th",
 		"defList": [
 			"reason; excuse"
+		]
+	},
+	{
+		"title": "baiz",
+		"etym": "I/PEN/*βais/convince",
+		"cat": "v.",
+		"defList": [
+			"cheat, swindle"
 		]
 	},
 	{
@@ -1971,6 +1988,15 @@
 		"defList": [
 			"(transitive) spin (ie. spin wool)"
 		]
+	},
+	{
+		"title": "bet",
+		"etym": "I/PEN/*bet",
+		"cat": "n., 3rd",
+		"defList": [
+			"key"
+		],
+		"categories": ["tool"]
 	},
 	{
 		"title": "bêt",
@@ -2850,6 +2876,15 @@
 		"defList": [
 			"tire, exhaustion"
 		]
+	},
+	{
+		"title": "dambêr",
+		"etym": "L/PRE/???",
+		"cat": "n., 1st",
+		"defList": [
+			"troublemaker, rascal, hooligan"
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "damok",
@@ -6442,6 +6477,15 @@
 			"pigeon"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "krôpêr",
+		"etym": "L/PRE/???",
+		"cat": "n., 1st",
+		"defList": [
+			"blind person"
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "kru",
