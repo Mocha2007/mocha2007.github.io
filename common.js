@@ -100,6 +100,15 @@ function linspace(from = 0, to = 1, points = 1){
 }
 
 /**
+ * compute the log of a number in an arbitrary base
+ * @param {number} n
+ * @param {number} b base
+ */
+function log(n, b = Math.E){
+	return Math.log(n) / Math.log(b);
+}
+
+/**
  * returns a function representing an interpolation between the two given points that is linear on a log-log plot
  * @param {number} x0
  * @param {number} y0

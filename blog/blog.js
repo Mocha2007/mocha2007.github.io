@@ -1,5 +1,5 @@
 /* exported blog */
-/* global blogData, clamp, loadScript, notif, random, sum, title */
+/* global blogData, clamp, loadScript, log, notif, random, sum, title */
 
 /** @param {Date} d */
 function formatDate(d){
@@ -399,7 +399,7 @@ const blog = {
 					lower = midpoint;
 			}
 			const n = 1/upper; // upper = lower at this point so it doesn't matter
-			return Math.log(n) / Math.log(n-1);
+			return log(n, n-1);
 		},
 		set: {},
 		/** @type {number} */

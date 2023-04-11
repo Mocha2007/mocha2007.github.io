@@ -1,6 +1,6 @@
 /* jshint esversion: 6, strict: true, strict: global */
 /* exported fstep, fstep100, reset, rprog */
-/* globals factorial, gcd, intersect, mod, nCr, nPr, union */
+/* globals factorial, gcd, intersect, log, mod, nCr, nPr, union */
 'use strict';
 
 const versionno = '1.6.7';
@@ -341,7 +341,7 @@ function fstep(){
 						stack.push(a);
 						return err('nonpositive log');
 					}
-					stack.push(Math.log(b)/Math.log(a));
+					stack.push(log(b, a));
 				}
 				else {
 					return err('stack too small');
