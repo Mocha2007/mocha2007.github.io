@@ -910,7 +910,7 @@
 	},
 	{
 		"title": "anitêr",
-		"etym": "L/PRE/???",
+		"etym": "L/PRE/anitē",
 		"cat": "n., 1st",
 		"defList": [
 			"madman, crazy person"
@@ -2879,7 +2879,7 @@
 	},
 	{
 		"title": "dambêr",
-		"etym": "L/PRE/???",
+		"etym": "L/VAZ/???",
 		"cat": "n., 1st",
 		"defList": [
 			"troublemaker, rascal, hooligan"
@@ -5414,7 +5414,7 @@
 	},
 	{
 		"title": "irikar",
-		"etym": "L/IRI/???",
+		"etym": "L/IRI/irykəd/Irikar",
 		"cat": "n., 1st",
 		"defList": [
 			"the Irikar (a people in the near part of the western mountains who are stereotyped to be hoaxsters)",
@@ -6512,7 +6512,7 @@
 	},
 	{
 		"title": "krôpêr",
-		"etym": "L/PRE/???",
+		"etym": "L/VAZ/???",
 		"cat": "n., 1st",
 		"defList": [
 			"blind person"
@@ -7203,8 +7203,8 @@
 		"categories": ["astronomy"]
 	},
 	{
-		"title": "kutoker",
-		"etym": "L/PRE/???",
+		"title": "kutokar",
+		"etym": "L/PRE/quttok",
 		"cat": "n., 1st",
 		"defList": [
 			"female given name"
@@ -7760,7 +7760,7 @@
 	},
 	{
 		"title": "manikar",
-		"etym": "L/PRE/???//L/VAZ/Manik/wise",
+		"etym": "L/PRE/Manik//L/VAZ/Manik/wise",
 		"cat": "n., 1st",
 		"defList": [
 			"female given name",
@@ -7966,7 +7966,7 @@
 	},
 	{
 		"title": "midarit",
-		"etym": "L/PRE/???",
+		"etym": "L/PRE/mitari",
 		"cat": "n., 3rd",
 		"defList": [
 			"dish, plate, saucer"
@@ -8398,8 +8398,8 @@
 		"notes": "See ''be'' for the verbal conjunction. cf. ''id''."
 	},
 	{
-		"title": "napaker",
-		"etym": "L/PRE/???",
+		"title": "napakar",
+		"etym": "L/PRE/Nappak",
 		"cat": "n., 1st",
 		"defList": [
 			"female given name"
@@ -8668,7 +8668,7 @@
 	},
 	{
 		"title": "netar",
-		"etym": "L/PRE/???//L/VAZ/Nit/(female given name)",
+		"etym": "L/PRE/Net//L/VAZ/Nit/(female given name)",
 		"cat": "n., 1st",
 		"defList": [
 			"female given name"
@@ -9355,7 +9355,7 @@
 	},
 	{
 		"title": "pamor",
-		"etym": "L/PRE/???/(female given name)",
+		"etym": "L/PRE/Pam/(female given name)//L/VAZ/???/(female given name)",
 		"cat": "n., 1st",
 		"defList": [
 			"female given name"
@@ -10308,8 +10308,8 @@
 		"categories": ["v3_trade"]
 	},
 	{
-		"title": "sioker",
-		"etym": "L/PRE/???",
+		"title": "siokar",
+		"etym": "L/PRE/Siok",
 		"cat": "n., 1st",
 		"defList": [
 			"female given name"
