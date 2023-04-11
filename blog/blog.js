@@ -367,6 +367,8 @@ const blog = {
 			return sum(Object.keys(this.set).map(word => this.set[word]));
 		},
 		init(){
+			if (this.initialized)
+				return;
 			this.set = {};
 			Section.sections.forEach(s => {
 				s.rawText.split(' ').forEach(word => {
@@ -380,8 +382,7 @@ const blog = {
 			delete this.set[''];
 		},
 		stats(){
-			if (!this.initialized)
-				this.init();
+			this.init();
 			console.log('Total: ' + this.size);
 			console.log('Unique: ' + Object.keys(this.set).length);
 			Object.keys(this.set)
