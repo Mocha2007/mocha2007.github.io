@@ -1202,6 +1202,9 @@ function computeStats(){
 		// check verbs
 		if (o.cat === 'v.' && last !== 'z' && !o.pron)
 			console.error(`${word} does not end in z!`);
+		// ensure PEN and OER are not incorrectly marked as loans
+		if (o.etym.includes('L/PEN') || o.etym.includes('L/OER'))
+			console.error(`${word} incorrectly marked as loan (L) rather than inheritance (I)`);
 	});
 	// print success message
 	// eslint-disable-next-line max-len
