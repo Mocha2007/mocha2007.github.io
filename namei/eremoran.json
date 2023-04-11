@@ -688,7 +688,7 @@
 		"etym": "B/afkaz/skiz",
 		"cat": "v.",
 		"defList": [
-			"guide"
+			"guide, direct"
 		],
 		"categories": ["motion"]
 	},
@@ -745,7 +745,7 @@
 			"approach (incl. math sense)",
 			"attempt, try"
 		],
-		"categories": ["math"]
+		"categories": ["math", "motion"]
 	},
 	{
 		"title": "akku",
@@ -7900,7 +7900,8 @@
 		"etym": "C/mo/afkaz",
 		"cat": "v.",
 		"defList": [
-			"retreat, turn around"
+			"turn around/back",
+			"retreat, withdraw"
 		],
 		"categories": ["motion", "war"]
 	},
@@ -11034,7 +11035,7 @@
 		"etym": "C/tan/arz",
 		"cat": "v.",
 		"defList": [
-			"come after, follow"
+			"be after, follow"
 		]
 	},
 	{
