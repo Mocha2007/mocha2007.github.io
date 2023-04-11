@@ -201,7 +201,8 @@
 			"turns a time noun (eg. ''dam'' morning) into a habitual time adverb (eg. ''daz'' every morning)",
 			"turns a direction adjective into an adverb, (eg. ''keu'' 'east' &rarr; ''kez'' 'eastward'",
 			"turns an ordinal numeral into an adverbial numeral, (eg. ''nasu'' 'two' &rarr; ''nasuz'' 'twice'"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "-zdin",
@@ -469,7 +470,8 @@
 		"cat": "v.",
 		"defList": [
 			"(archaic) come; arrive"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "adarz",
@@ -603,7 +605,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"shortsword"
-		]
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "afi",
@@ -649,7 +652,8 @@
 		"cat": "v.",
 		"defList": [
 			"set out, start to go, start to move"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "afkakum",
@@ -657,7 +661,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"journey"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "afkam",
@@ -665,7 +670,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"trip, travel"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "afkaz",
@@ -674,7 +680,8 @@
 		"defList": [
 			"go",
 			"(intransitive) move"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "afskiz",
@@ -682,7 +689,8 @@
 		"cat": "v.",
 		"defList": [
 			"guide"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "ai",
@@ -899,7 +907,8 @@
 		"cat": "v.",
 		"defList": [
 			"charge; rush; skirmish"
-		]
+		],
+		"categories": ["motion", "war"]
 	},
 	{
 		"title": "anom",
@@ -1731,7 +1740,8 @@
 		"cat": "v.",
 		"defList": [
 			"lead"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "bazêr",
@@ -1842,7 +1852,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"way, path, trail, track, course, route, passage"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "bêkom",
@@ -1968,7 +1979,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"longsword"
-		]
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "betlek",
@@ -2048,7 +2060,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"euphony, pretty/beautiful sound"
-		]
+		],
+		"categories": ["music"]
 	},
 	{
 		"title": "bidzau",
@@ -2056,7 +2069,8 @@
 		"cat": "adj.",
 		"defList": [
 			"euphonic, pretty/beautiful sound"
-		]
+		],
+		"categories": ["music"]
 	},
 	{
 		"title": "bikê",
@@ -2201,7 +2215,7 @@
 			"battle",
 			"(euphemistic) sex"
 		],
-		"categories": ["sex"]
+		"categories": ["sex", "war"]
 	},
 	{
 		"title": "bima",
@@ -2236,7 +2250,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"brothel"
-		]
+		],
+		"categories": ["sex"]
 	},
 	{
 		"title": "bimuk",
@@ -2377,7 +2392,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"wagon"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "bôk",
@@ -2482,7 +2498,8 @@
 		"cat": "v.",
 		"defList": [
 			"(archaic) carry"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "bra",
@@ -2634,7 +2651,7 @@
 		"defList": [
 			"ass, butt"
 		],
-		"categories": ["body part"]
+		"categories": ["body part", "sex"]
 	},
 	{
 		"title": "busisudôz",
@@ -2933,7 +2950,8 @@
 		"cat": "adj.",
 		"defList": [
 			"fast, swift, quick"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "dasu",
@@ -3075,7 +3093,8 @@
 		"cat": "v.",
 		"defList": [
 			"go out, venture out, explore"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "dinarz",
@@ -3109,7 +3128,8 @@
 		"defList": [
 			"send",
 			"fling (like water being flung off a dog drying itself, an outward motion)"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "dinbarum",
@@ -3144,7 +3164,8 @@
 		"cat": "v.",
 		"defList": [
 			"depart"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "dinbôz",
@@ -3381,7 +3402,8 @@
 		"defList": [
 			"enter",
 			"begin"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "dôam",
@@ -3492,7 +3514,8 @@
 		"defList": [
 			"come; arrive"
 		],
-		"notes": "Replaced the now-obsolete ''kunz''."
+		"notes": "Replaced the now-obsolete ''kunz''.",
+		"categories": ["motion"]
 	},
 	{
 		"title": "dôkom",
@@ -3628,7 +3651,7 @@
 		"defList": [
 			"tool"
 		],
-		"categories": ["v3_trade"]
+		"categories": ["tool", "v3_trade"]
 	},
 	{
 		"title": "dou",
@@ -4734,7 +4757,8 @@
 		"cat": "v.",
 		"defList": [
 			"swim"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "himbasêm",
@@ -5135,7 +5159,8 @@
 		"cat": "v.",
 		"defList": [
 			"(of birds) fly"
-		]
+		],
+		"categories": ["animal", "motion"]
 	},
 	{
 		"title": "idkek",
@@ -5435,7 +5460,8 @@
 		"cat": "v.",
 		"defList": [
 			"(transitive) move"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "kabako",
@@ -6140,7 +6166,7 @@
 		"etym": "C/kôbenk/-isu",
 		"cat": "adj.",
 		"defList": [
-			"''(literally)'' murine",
+			"(''literally'') murine",
 			"cute",
 			"shy, timid",
 			"quiet, stealthy",
@@ -6190,7 +6216,8 @@
 		"cat": "v.",
 		"defList": [
 			"flow"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "kokum",
@@ -6704,7 +6731,8 @@
 		"cat": "v.",
 		"defList": [
 			"wander"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "kulbarm",
@@ -6879,7 +6907,8 @@
 		"cat": "v.",
 		"defList": [
 			"jump"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "kun",
@@ -8659,7 +8688,8 @@
 		"cat": "v.",
 		"defList": [
 			"climb"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "nod",
@@ -8851,7 +8881,8 @@
 		"cat": "v.",
 		"defList": [
 			"run"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "nurfansam",
@@ -9439,7 +9470,8 @@
 		"cat": "v.",
 		"defList": [
 			"rise"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "raratiêr",
@@ -10320,7 +10352,7 @@
 			"(of non-birds) fly"
 		],
 		"notes": "With the causative suffix, means 'hurl' or 'send'.",
-		"categories": ["animal"]
+		"categories": ["motion"]
 	},
 	{
 		"title": "skufansam",
@@ -11462,7 +11494,8 @@
 		"cat": "v.",
 		"defList": [
 			"fall"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "triz",
@@ -11696,7 +11729,8 @@
 		"cat": "adj.",
 		"defList": [
 			"slow"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "udou",
@@ -12024,7 +12058,8 @@
 		"cat": "v.",
 		"defList": [
 			"follow"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "urist",
