@@ -5291,6 +5291,14 @@
 		"categories": ["person"]
 	},
 	{
+		"title": "isêz",
+		"etym": "C/iz/-isêz",
+		"cat": "v.",
+		"defList": [
+			"be movable"
+		]
+	},
+	{
 		"title": "it",
 		"etym": "L/PEN/*it/rather than'",
 		"cat": "post., adv., aff.",
@@ -5396,14 +5404,6 @@
 			"male or female given name"
 		],
 		"categories": ["female given name", "male given name"]
-	},
-	{
-		"title": "isêz",
-		"etym": "C/iz/-isêz",
-		"cat": "v.",
-		"defList": [
-			"be movable"
-		]
 	},
 	{
 		"title": "iz",
