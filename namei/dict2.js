@@ -149,6 +149,7 @@ function etymElement(etymString){
 				etymElem.innerHTML = 'Diminutive of ';
 				etymElem.appendChild(linkCard(tokens[1]));
 				break;
+			case 'I': // inheritance
 			case 'L': // loanword
 				etymElement.stats.source.push(tokens[1]);
 				etymElem.appendChild(loanElem(...tokens.splice(1)));

@@ -1,7 +1,7 @@
 [
 	{
 		"title": "-ba",
-		"etym": "L/PEN/*-ba",
+		"etym": "I/PEN/*-ba",
 		"cat": "aff.",
 		"defList": [
 			"patientive suffix"
@@ -18,7 +18,7 @@
 	},
 	{
 		"title": "-ê",
-		"etym": "L/PEN/*-ê/-er",
+		"etym": "I/PEN/*-ê/-er",
 		"cat": "aff.",
 		"defList": [
 			"-er (agentive suffix)"
@@ -88,7 +88,7 @@
 	},
 	{
 		"title": "-k",
-		"etym": "L/PEN/*-x",
+		"etym": "I/PEN/*-x",
 		"cat": "aff.",
 		"pron": 0,
 		"defList": [
@@ -97,7 +97,7 @@
 	},
 	{
 		"title": "-kair",
-		"etym": "L/PEN/*-xair",
+		"etym": "I/PEN/*-xair",
 		"cat": "aff.",
 		"defList": [
 			"(polite suffix for human referents, cf. {{wt|jp|さん}})"
@@ -105,7 +105,7 @@
 	},
 	{
 		"title": "-kiz",
-		"etym": "L/PEN/*-xis",
+		"etym": "I/PEN/*-xis",
 		"cat": "aff.",
 		"defList": [
 			"(verbal affix of intent)"
@@ -113,7 +113,7 @@
 	},
 	{
 		"title": "-m",
-		"etym": "L/PEN/*-m//~/ma",
+		"etym": "I/PEN/*-m//~/ma",
 		"cat": "aff.",
 		"pron": 0,
 		"defList": [
@@ -139,7 +139,7 @@
 	},
 	{
 		"title": "-r",
-		"etym": "L/PEN/*-r//L/PEN/*-rre",
+		"etym": "I/PEN/*-r//I/PEN/*-rre",
 		"cat": "aff.",
 		"pron": 0,
 		"defList": [
@@ -149,7 +149,7 @@
 	},
 	{
 		"title": "-t",
-		"etym": "L/PEN/*-t",
+		"etym": "I/PEN/*-t",
 		"cat": "aff.",
 		"pron": 0,
 		"defList": [
@@ -167,7 +167,7 @@
 	},
 	{
 		"title": "-u",
-		"etym": "L/PEN/*-u",
+		"etym": "I/PEN/*-u",
 		"cat": "aff.",
 		"defList": [
 			"(adjective suffix)",
@@ -176,7 +176,7 @@
 	},
 	{
 		"title": "-ubz",
-		"etym": "L/PEN/*-ubs",
+		"etym": "I/PEN/*-ubs",
 		"cat": "aff.",
 		"defList": [
 			"to accidentally ~"
@@ -184,7 +184,7 @@
 	},
 	{
 		"title": "-ulk",
-		"etym": "L/PEN/*-ulk/-ly",
+		"etym": "I/PEN/*-ulk/-ly",
 		"cat": "aff.",
 		"defList": [
 			"-ly (turns adjectives into adverbs)"
@@ -193,7 +193,7 @@
 	},
 	{
 		"title": "-z",
-		"etym": "L/PEN/*-s",
+		"etym": "I/PEN/*-s",
 		"cat": "aff.",
 		"pron": 0,
 		"defList": [
@@ -215,7 +215,7 @@
 	},
 	{
 		"title": "abask",
-		"etym": "L/PEN/*aβasx/duck",
+		"etym": "I/PEN/*aβasx/duck",
 		"cat": "n., 2nd",
 		"defList": [
 			"duck",
@@ -226,7 +226,7 @@
 	{
 		"title": "abat",
 		"img": "../img/eremoran/abakt.png",
-		"etym": "L/PEN/*abakt/board",
+		"etym": "I/PEN/*abakt/board",
 		"cat": "n., 3rd",
 		"defList": [
 			"board, plank",
@@ -236,7 +236,7 @@
 	},
 	{
 		"title": "abbak",
-		"etym": "L/PEN/*aββax/bee",
+		"etym": "I/PEN/*aββax/bee",
 		"cat": "n., 2nd",
 		"defList": [
 			"bee"
@@ -329,7 +329,7 @@
 	},
 	{
 		"title": "abe-",
-		"etym": "L/PEN/*aβe/double",
+		"etym": "I/PEN/*aβe/double",
 		"cat": "aff.",
 		"defList": [
 			"double-"
@@ -356,7 +356,7 @@
 	},
 	{
 		"title": "abu",
-		"etym": "L/PEN/*aβu/ring",
+		"etym": "I/PEN/*aβu/ring",
 		"cat": "n., 4th",
 		"defList": [
 			"ring"
@@ -438,7 +438,7 @@
 	},
 	{
 		"title": "abzalk",
-		"etym": "L/PEN/*abdialx/eel",
+		"etym": "I/PEN/*abdialx/eel",
 		"cat": "n., 2nd",
 		"defList": [
 			"eel"
@@ -447,7 +447,7 @@
 	},
 	{
 		"title": "ad",
-		"etym": "L/PEN/*xêd/to",
+		"etym": "I/PEN/*xêd/to",
 		"cat": "post./prep., adv.",
 		"defList": [
 			"(''prep.'') to, towards (in both the dative and lative senses)",
@@ -532,7 +532,7 @@
 	},
 	{
 		"title": "adzamarz",
-		"etym": "L/PEN/*xêd-samars/rest",
+		"etym": "I/PEN/*xêd-samars/rest",
 		"cat": "v.",
 		"defList": [
 			"rest",
@@ -559,7 +559,7 @@
 	},
 	{
 		"title": "afêkz",
-		"etym": "L/PEN/*aɸêks/know",
+		"etym": "I/PEN/*aɸêks/know",
 		"cat": "v.",
 		"defList": [
 			"(labile) be known (by) (both savoir and connaitre)",
@@ -617,7 +617,7 @@
 	},
 	{
 		"title": "afêst",
-		"etym": "L/PEN/*xeɸêʃt/shortsword",
+		"etym": "I/PEN/*xeɸêʃt/shortsword",
 		"cat": "n., 3rd",
 		"defList": [
 			"shortsword"
@@ -635,7 +635,7 @@
 	},
 	{
 		"title": "afik",
-		"etym": "L/PEN/*aɸix",
+		"etym": "I/PEN/*aɸix",
 		"cat": "n., 2nd",
 		"defList": [
 			"beast, wild animal"
@@ -691,7 +691,7 @@
 	},
 	{
 		"title": "afkaz",
-		"etym": "L/PEN/*aɸkas/go",
+		"etym": "I/PEN/*aɸkas/go",
 		"cat": "v.",
 		"defList": [
 			"go",
@@ -710,7 +710,7 @@
 	},
 	{
 		"title": "ai",
-		"etym": "L/PEN/*ai/cedar",
+		"etym": "I/PEN/*ai/cedar",
 		"cat": "n., 4th",
 		"defList": [
 			"cedar"
@@ -719,7 +719,7 @@
 	},
 	{
 		"title": "ak",
-		"etym": "L/PEN/*ax/mare",
+		"etym": "I/PEN/*ax/mare",
 		"cat": "n., 2nd",
 		"defList": [
 			"mare (female horse)"
@@ -728,7 +728,7 @@
 	},
 	{
 		"title": "aka",
-		"etym": "L/PEN/*aka/wheat",
+		"etym": "I/PEN/*aka/wheat",
 		"cat": "n., 4th",
 		"defList": [
 			"wheat"
@@ -774,7 +774,7 @@
 	},
 	{
 		"title": "akranu",
-		"etym": "L/PEN/*egranu/stream",
+		"etym": "I/PEN/*egranu/stream",
 		"cat": "n., 4th",
 		"defList": [
 			"stream, brook, creek"
@@ -782,7 +782,7 @@
 	},
 	{
 		"title": "ala",
-		"etym": "L/PEN/*ala/oak",
+		"etym": "I/PEN/*ala/oak",
 		"cat": "n., 4th",
 		"defList": [
 			"oak"
@@ -792,7 +792,7 @@
 	{
 		"title": "alika",
 		"img": "../img/eremoran/alika.png",
-		"etym": "L/PEN/*alika/sand",
+		"etym": "I/PEN/*alika/sand",
 		"cat": "n., 4th",
 		"defList": [
 			"sand",
@@ -820,7 +820,7 @@
 	},
 	{
 		"title": "amaru",
-		"etym": "L/PEN/*emaru/cherry",
+		"etym": "I/PEN/*emaru/cherry",
 		"cat": "n., 4th",
 		"defList": [
 			"cherry"
@@ -859,7 +859,7 @@
 	},
 	{
 		"title": "ammut",
-		"etym": "L/PEN/*xedmu/port",
+		"etym": "I/PEN/*xedmu/port",
 		"cat": "n., 3rd",
 		"defList": [
 			"port; harbor"
@@ -867,7 +867,7 @@
 	},
 	{
 		"title": "amu",
-		"etym": "L/PEN/*amu/sweet",
+		"etym": "I/PEN/*amu/sweet",
 		"cat": "adj.",
 		"defList": [
 			"sweet"
@@ -884,7 +884,7 @@
 	},
 	{
 		"title": "amzralz",
-		"etym": "L/PEN/*amsrals/count",
+		"etym": "I/PEN/*amsrals/count",
 		"cat": "v.",
 		"defList": [
 			"count"
@@ -902,7 +902,7 @@
 	},
 	{
 		"title": "andôt",
-		"etym": "L/PEN/*andôt/oven",
+		"etym": "I/PEN/*andôt/oven",
 		"cat": "n., 3rd",
 		"defList": [
 			"oven"
@@ -945,7 +945,7 @@
 	},
 	{
 		"title": "anoz",
-		"etym": "L/PEN/*anos/think",
+		"etym": "I/PEN/*anos/think",
 		"cat": "v.",
 		"defList": [
 			"think, ponder, wonder, imagine"
@@ -953,7 +953,7 @@
 	},
 	{
 		"title": "anu",
-		"etym": "L/PEN/*anu/angry",
+		"etym": "I/PEN/*anu/angry",
 		"cat": "adj.",
 		"defList": [
 			"angry, mad, furious"
@@ -979,7 +979,7 @@
 	{
 		"title": "arama",
 		"img": "../img/eremoran/arama.png",
-		"etym": "L/PEN/*xere-ma/copper",
+		"etym": "I/PEN/*xere-ma/copper",
 		"cat": "n., 4th",
 		"defList": [
 			"native copper",
@@ -1045,7 +1045,7 @@
 	},
 	{
 		"title": "arbaz",
-		"etym": "L/PEN/*ereβas/choose",
+		"etym": "I/PEN/*ereβas/choose",
 		"cat": "v.",
 		"defList": [
 			"choose, select",
@@ -1056,7 +1056,7 @@
 	{
 		"title": "ardo",
 		"img": "../img/eremoran/ardo.png",
-		"etym": "L/PEN/*xere-do/flame",
+		"etym": "I/PEN/*xere-do/flame",
 		"cat": "n., 4th",
 		"defList": [
 			"(wild)fire"
@@ -1110,7 +1110,7 @@
 	},
 	{
 		"title": "arêôk",
-		"etym": "L/PEN/*arêôx",
+		"etym": "I/PEN/*arêôx",
 		"cat": "n., 2nd",
 		"defList": [
 			"cattle; cow"
@@ -1119,7 +1119,7 @@
 	},
 	{
 		"title": "arkik",
-		"etym": "L/PEN/*ere-kix",
+		"etym": "I/PEN/*ere-kix",
 		"cat": "n., 2nd",
 		"defList": [
 			"donkey (equus asinus)",
@@ -1158,7 +1158,7 @@
 	},
 	{
 		"title": "arrôr",
-		"etym": "L/PEN/*xêrrôr",
+		"etym": "I/PEN/*xêrrôr",
 		"cat": "n., 1st",
 		"defList": [
 			"male given name"
@@ -1168,7 +1168,7 @@
 	},
 	{
 		"title": "arz",
-		"etym": "L/PEN/*ars/stand",
+		"etym": "I/PEN/*ars/stand",
 		"cat": "v.",
 		"defList": [
 			"stand",
@@ -1182,7 +1182,7 @@
 	{
 		"title": "arzên",
 		"img": "../img/eremoran/ardzin.png",
-		"etym": "L/PEN/*xerediên/silver",
+		"etym": "I/PEN/*xerediên/silver",
 		"cat": "n., 4th",
 		"defList": [
 			"native silver",
@@ -1244,7 +1244,7 @@
 	},
 	{
 		"title": "astedu",
-		"etym": "L/PEN/*astedu/beautiful",
+		"etym": "I/PEN/*astedu/beautiful",
 		"cat": "adj.",
 		"defList": [
 			"(southern, of a non-person) pretty, beautiful",
@@ -1254,7 +1254,7 @@
 	},
 	{
 		"title": "asuz",
-		"etym": "L/PEN/*asius/freeze",
+		"etym": "I/PEN/*asius/freeze",
 		"cat": "v.",
 		"defList": [
 			"freeze"
@@ -1280,7 +1280,7 @@
 	},
 	{
 		"title": "aut",
-		"etym": "L/PEN/*axeut/fence",
+		"etym": "I/PEN/*axeut/fence",
 		"cat": "n., 3rd",
 		"defList": [
 			"fence"
@@ -1288,7 +1288,7 @@
 	},
 	{
 		"title": "az",
-		"etym": "L/PEN/*as/pass",
+		"etym": "I/PEN/*as/pass",
 		"cat": "v.",
 		"defList": [
 			"pass, (attributively) past"
@@ -1297,7 +1297,7 @@
 	},
 	{
 		"title": "azaz",
-		"etym": "L/PEN/*asas/stun",
+		"etym": "I/PEN/*asas/stun",
 		"cat": "v.",
 		"defList": [
 			"stun, shock"
@@ -1317,7 +1317,7 @@
 	},
 	{
 		"title": "azlu",
-		"etym": "L/PEN/*aslu",
+		"etym": "I/PEN/*aslu",
 		"cat": "adj.",
 		"defList": [
 			"weak",
@@ -1327,7 +1327,7 @@
 	},
 	{
 		"title": "azmu",
-		"etym": "L/PEN/*asmu/forearm",
+		"etym": "I/PEN/*asmu/forearm",
 		"cat": "n., 4th",
 		"defList": [
 			"forearm"
@@ -1337,7 +1337,7 @@
 	},
 	{
 		"title": "ba",
-		"etym": "L/PEN/*βa/chickpea",
+		"etym": "I/PEN/*βa/chickpea",
 		"cat": "n., 4th",
 		"defList": [
 			"chickpea"
@@ -1346,7 +1346,7 @@
 	},
 	{
 		"title": "ba",
-		"etym": "L/PEN/*bab/sponge",
+		"etym": "I/PEN/*bab/sponge",
 		"cat": "n., 4th",
 		"defList": [
 			"sponge"
@@ -1401,7 +1401,7 @@
 	},
 	{
 		"title": "babzu",
-		"etym": "L/PEN/*babsu/four",
+		"etym": "I/PEN/*babsu/four",
 		"cat": "adj.",
 		"defList": [
 			"four"
@@ -1411,7 +1411,7 @@
 	{
 		"title": "badmak",
 		"img": "../img/eremoran/bartonk.png",
-		"etym": "L/PEN/*badmax/fox",
+		"etym": "I/PEN/*badmax/fox",
 		"cat": "n., 2nd",
 		"defList": [
 			"fox (esp. vulpes vulpes, vulpes cana, &amp; vulpes ruepellii)"
@@ -1420,7 +1420,7 @@
 	},
 	{
 		"title": "badu",
-		"etym": "L/PEN/*badu/smooth",
+		"etym": "I/PEN/*badu/smooth",
 		"cat": "adj.",
 		"defList": [
 			"smooth"
@@ -1428,7 +1428,7 @@
 	},
 	{
 		"title": "baim",
-		"etym": "L/PEN/*βaim/reason",
+		"etym": "I/PEN/*βaim/reason",
 		"cat": "n., 5th",
 		"defList": [
 			"reason; excuse"
@@ -1436,7 +1436,7 @@
 	},
 	{
 		"title": "bak",
-		"etym": "L/PEN/*βax/stallion",
+		"etym": "I/PEN/*βax/stallion",
 		"cat": "n., 2nd",
 		"defList": [
 			"stallion, steed"
@@ -1445,7 +1445,7 @@
 	},
 	{
 		"title": "baka",
-		"etym": "L/PEN/*baka/mango",
+		"etym": "I/PEN/*baka/mango",
 		"cat": "n., 4th",
 		"defList": [
 			"mango"
@@ -1454,7 +1454,7 @@
 	},
 	{
 		"title": "bakaz",
-		"etym": "L/PEN/*βakas/get; receive",
+		"etym": "I/PEN/*βakas/get; receive",
 		"cat": "v.",
 		"defList": [
 			"(labile) be understood (by)",
@@ -1465,7 +1465,7 @@
 	},
 	{
 		"title": "bakoni",
-		"etym": "L/PEN/*βagoni/maize",
+		"etym": "I/PEN/*βagoni/maize",
 		"cat": "n., 4th",
 		"defList": [
 			"maize (corn)"
@@ -1491,7 +1491,7 @@
 	{
 		"title": "balis",
 		"pron": "balɪz",
-		"etym": "L/PEN/*balits/die",
+		"etym": "I/PEN/*balits/die",
 		"cat": "v.",
 		"defList": [
 			"die",
@@ -1503,7 +1503,7 @@
 	},
 	{
 		"title": "baliz",
-		"etym": "L/PEN/*balis/buy",
+		"etym": "I/PEN/*balis/buy",
 		"cat": "v.",
 		"defList": [
 			"trade, buy, sell, exchange"
@@ -1520,7 +1520,7 @@
 	},
 	{
 		"title": "bamat",
-		"etym": "L/PEN/*bamat",
+		"etym": "I/PEN/*bamat",
 		"cat": "n., 3rd",
 		"defList": [
 			"stake, post",
@@ -1529,7 +1529,7 @@
 	},
 	{
 		"title": "bamz",
-		"etym": "L/PEN/*βams/throw",
+		"etym": "I/PEN/*βams/throw",
 		"cat": "v.",
 		"defList": [
 			"throw"
@@ -1537,7 +1537,7 @@
 	},
 	{
 		"title": "ban",
-		"etym": "L/PEN/*βan",
+		"etym": "I/PEN/*βan",
 		"cat": "adv.",
 		"defList": [
 			"(negative) hardly, barely, not at all, not even"
@@ -1555,7 +1555,7 @@
 	},
 	{
 		"title": "bant",
-		"etym": "L/PEN/*βankt/knife",
+		"etym": "I/PEN/*βankt/knife",
 		"cat": "n., 3rd",
 		"defList": [
 			"knife"
@@ -1564,7 +1564,7 @@
 	},
 	{
 		"title": "banz",
-		"etym": "L/PEN/*βans/feel",
+		"etym": "I/PEN/*βans/feel",
 		"cat": "v.",
 		"defList": [
 			"feel"
@@ -1644,7 +1644,7 @@
 	},
 	{
 		"title": "baruz",
-		"etym": "L/PEN/*baxerus/sort",
+		"etym": "I/PEN/*baxerus/sort",
 		"cat": "v.",
 		"defList": [
 			"sort, order",
@@ -1654,7 +1654,7 @@
 	},
 	{
 		"title": "barz",
-		"etym": "L/PEN/*bars/bind",
+		"etym": "I/PEN/*bars/bind",
 		"cat": "v.",
 		"defList": [
 			"bind",
@@ -1672,7 +1672,7 @@
 	},
 	{
 		"title": "bask",
-		"etym": "L/PEN/*βasx/goose",
+		"etym": "I/PEN/*βasx/goose",
 		"cat": "n., 2nd",
 		"defList": [
 			"goose (esp. {{w|anser anser|greylag goose}} and {{w|nettapus coromandelianus coromandelianus|cotton pygmy goose}})"
@@ -1692,7 +1692,7 @@
 	},
 	{
 		"title": "bata",
-		"etym": "L/PEN/*βata/intestines",
+		"etym": "I/PEN/*βata/intestines",
 		"cat": "n., 4th",
 		"defList": [
 			"intestines, guts"
@@ -1710,7 +1710,7 @@
 	},
 	{
 		"title": "batlam",
-		"etym": "L/PEN/*batlam/honor",
+		"etym": "I/PEN/*batlam/honor",
 		"cat": "n., 5th",
 		"defList": [
 			"honor"
@@ -1727,7 +1727,7 @@
 	},
 	{
 		"title": "batu",
-		"etym": "L/PEN/*batu/also",
+		"etym": "I/PEN/*batu/also",
 		"cat": "adv.",
 		"defList": [
 			"also, too"
@@ -1735,7 +1735,7 @@
 	},
 	{
 		"title": "bau",
-		"etym": "L/PEN/*βau/free",
+		"etym": "I/PEN/*βau/free",
 		"cat": "adj.",
 		"defList": [
 			"free (ie. not trapped/enslaved)"
@@ -1752,7 +1752,7 @@
 	},
 	{
 		"title": "baz",
-		"etym": "L/PEN/*βas/lead",
+		"etym": "I/PEN/*βas/lead",
 		"cat": "v.",
 		"defList": [
 			"lead"
@@ -1792,7 +1792,7 @@
 	},
 	{
 		"title": "be",
-		"etym": "L/PEN/*βe/or",
+		"etym": "I/PEN/*βe/or",
 		"cat": "conj.",
 		"defList": [
 			"or, either",
@@ -1802,7 +1802,7 @@
 	},
 	{
 		"title": "bê",
-		"etym": "L/PEN/*βê/shell",
+		"etym": "I/PEN/*βê/shell",
 		"cat": "n., 4th",
 		"defList": [
 			"shell"
@@ -1838,7 +1838,7 @@
 	},
 	{
 		"title": "befôz",
-		"etym": "L/PEN/*beɸôs/use",
+		"etym": "I/PEN/*beɸôs/use",
 		"cat": "v.",
 		"defList": [
 			"use"
@@ -1864,7 +1864,7 @@
 	},
 	{
 		"title": "beka",
-		"etym": "L/PEN/*βega/way",
+		"etym": "I/PEN/*βega/way",
 		"cat": "n., 4th",
 		"defList": [
 			"way, path, trail, track, course, route, passage"
@@ -1909,7 +1909,7 @@
 	},
 	{
 		"title": "bêm",
-		"etym": "L/PEN/*βêm/period",
+		"etym": "I/PEN/*βêm/period",
 		"cat": "n., 5th",
 		"defList": [
 			"period, interval",
@@ -1922,7 +1922,7 @@
 	},
 	{
 		"title": "bemmu",
-		"etym": "L/PEN/*βegmu/river//~/beka//~/mu",
+		"etym": "I/PEN/*βegmu/river//~/beka//~/mu",
 		"cat": "n., 4th",
 		"defList": [
 			"river"
@@ -1939,7 +1939,7 @@
 	},
 	{
 		"title": "berbaz",
-		"etym": "L/PEN/*berbas/leave",
+		"etym": "I/PEN/*berbas/leave",
 		"cat": "v.",
 		"defList": [
 			"leave (a location)",
@@ -1966,7 +1966,7 @@
 	},
 	{
 		"title": "berz",
-		"etym": "L/PEN/*βers/spin",
+		"etym": "I/PEN/*βers/spin",
 		"cat": "v.",
 		"defList": [
 			"(transitive) spin (ie. spin wool)"
@@ -1991,7 +1991,7 @@
 	},
 	{
 		"title": "betlat",
-		"etym": "L/PEN/*betlext/sword",
+		"etym": "I/PEN/*betlext/sword",
 		"cat": "n., 3rd",
 		"defList": [
 			"longsword"
@@ -2009,7 +2009,7 @@
 	},
 	{
 		"title": "bêtu",
-		"etym": "L/PEN/*bêtu/loyal",
+		"etym": "I/PEN/*bêtu/loyal",
 		"cat": "adj.",
 		"defList": [
 			"loyal"
@@ -2017,7 +2017,7 @@
 	},
 	{
 		"title": "beu",
-		"etym": "L/PEN/*βeu/common bean",
+		"etym": "I/PEN/*βeu/common bean",
 		"cat": "n., 4th",
 		"defList": [
 			"common bean (phaseolus vulgaris)"
@@ -2026,7 +2026,7 @@
 	},
 	{
 		"title": "bi",
-		"etym": "L/PEN/*βi/leaf",
+		"etym": "I/PEN/*βi/leaf",
 		"cat": "n., 4th",
 		"defList": [
 			"leaf"
@@ -2035,7 +2035,7 @@
 	},
 	{
 		"title": "bibi",
-		"etym": "L/PEN/*bibi/breast",
+		"etym": "I/PEN/*bibi/breast",
 		"cat": "n., 4th",
 		"defList": [
 			"breast"
@@ -2171,7 +2171,7 @@
 	},
 	{
 		"title": "bikil",
-		"etym": "L/PEN/*βikil/feather",
+		"etym": "I/PEN/*βikil/feather",
 		"cat": "n., 4th",
 		"defList": [
 			"feather"
@@ -2197,7 +2197,7 @@
 	},
 	{
 		"title": "bil",
-		"etym": "L/PEN/*βiɸil/berry",
+		"etym": "I/PEN/*βiɸil/berry",
 		"cat": "n., 4th",
 		"defList": [
 			"berry"
@@ -2206,7 +2206,7 @@
 	},
 	{
 		"title": "bilô",
-		"etym": "L/PEN/*βilô/spice",
+		"etym": "I/PEN/*βilô/spice",
 		"cat": "n., 4th",
 		"defList": [
 			"spice"
@@ -2215,7 +2215,7 @@
 	},
 	{
 		"title": "bilu",
-		"etym": "L/PEN/*βilu/fat",
+		"etym": "I/PEN/*βilu/fat",
 		"cat": "n., 4th",
 		"defList": [
 			"fat (substance)"
@@ -2225,7 +2225,7 @@
 	},
 	{
 		"title": "bim",
-		"etym": "L/PEN/*βim/battle",
+		"etym": "I/PEN/*βim/battle",
 		"cat": "n., 5th",
 		"defList": [
 			"battle",
@@ -2253,7 +2253,7 @@
 	},
 	{
 		"title": "biman",
-		"etym": "L/PEN/*βiman/bush",
+		"etym": "I/PEN/*βiman/bush",
 		"cat": "n., 4th",
 		"defList": [
 			"bush, shrub"
@@ -2271,7 +2271,7 @@
 	},
 	{
 		"title": "bimuk",
-		"etym": "L/PEN/*βimux/ram",
+		"etym": "I/PEN/*βimux/ram",
 		"cat": "n., 2nd",
 		"defList": [
 			"ram"
@@ -2280,7 +2280,7 @@
 	},
 	{
 		"title": "binas",
-		"etym": "L/PEN/*βinaʃ/elbow",
+		"etym": "I/PEN/*βinaʃ/elbow",
 		"cat": "n., 4th",
 		"defList": [
 			"elbow"
@@ -2298,7 +2298,7 @@
 	},
 	{
 		"title": "binom",
-		"etym": "L/PEN/*biniom/imagination",
+		"etym": "I/PEN/*biniom/imagination",
 		"cat": "n., 5th",
 		"defList": [
 			"(archaic, non-southern) imagination"
@@ -2314,7 +2314,7 @@
 	},
 	{
 		"title": "bisu",
-		"etym": "L/PEN/*βiʃu/wool",
+		"etym": "I/PEN/*βiʃu/wool",
 		"cat": "adj., n., 4th",
 		"defList": [
 			"wool",
@@ -2332,7 +2332,7 @@
 	},
 	{
 		"title": "biz",
-		"etym": "L/PEN/*bis/eat",
+		"etym": "I/PEN/*bis/eat",
 		"cat": "v.",
 		"defList": [
 			"(archaic) eat, drink"
@@ -2341,7 +2341,7 @@
 	},
 	{
 		"title": "bo",
-		"etym": "L/PEN/*bo/with",
+		"etym": "I/PEN/*bo/with",
 		"cat": "post.",
 		"defList": [
 			"with (instrumental)"
@@ -2350,7 +2350,7 @@
 	},
 	{
 		"title": "bo",
-		"etym": "L/PEN/*βo/pear",
+		"etym": "I/PEN/*βo/pear",
 		"cat": "n., 4th",
 		"defList": [
 			"pear"
@@ -2402,7 +2402,7 @@
 	},
 	{
 		"title": "bodôt",
-		"etym": "L/PEN/*bo-dô-t/gift",
+		"etym": "I/PEN/*bo-dô-t/gift",
 		"cat": "n., 3rd",
 		"defList": [
 			"gift"
@@ -2420,7 +2420,7 @@
 	},
 	{
 		"title": "bôêt",
-		"etym": "L/PEN/*bô-ê-t/wagon",
+		"etym": "I/PEN/*bô-ê-t/wagon",
 		"cat": "n., 3rd",
 		"defList": [
 			"wagon"
@@ -2429,7 +2429,7 @@
 	},
 	{
 		"title": "bôk",
-		"etym": "L/PEN/*βôx/chicken",
+		"etym": "I/PEN/*βôx/chicken",
 		"cat": "n., 2nd",
 		"defList": [
 			"(live) chicken"
@@ -2450,7 +2450,7 @@
 	{
 		"title": "bolent",
 		"img": "../img/eremoran/bolent.png",
-		"etym": "L/PEN/*βolent/hammer",
+		"etym": "I/PEN/*βolent/hammer",
 		"cat": "n., 3rd",
 		"defList": [
 			"hammer"
@@ -2495,7 +2495,7 @@
 	},
 	{
 		"title": "bonz",
-		"etym": "L/PEN/*bons/poke",
+		"etym": "I/PEN/*bons/poke",
 		"cat": "v.",
 		"defList": [
 			"poke",
@@ -2507,7 +2507,7 @@
 	},
 	{
 		"title": "bornat",
-		"etym": "L/PEN/*βornaxt/beer",
+		"etym": "I/PEN/*βornaxt/beer",
 		"cat": "n., 3rd",
 		"defList": [
 			"beer"
@@ -2516,7 +2516,7 @@
 	},
 	{
 		"title": "boru",
-		"etym": "L/PEN/*boru/abdomen",
+		"etym": "I/PEN/*boru/abdomen",
 		"cat": "n., 4th",
 		"defList": [
 			"abdomen",
@@ -2526,7 +2526,7 @@
 	},
 	{
 		"title": "bôz",
-		"etym": "L/PEN/*bôs/carry",
+		"etym": "I/PEN/*bôs/carry",
 		"cat": "v.",
 		"defList": [
 			"(archaic) carry"
@@ -2535,7 +2535,7 @@
 	},
 	{
 		"title": "bra",
-		"etym": "L/PEN/*bra/eyebrow",
+		"etym": "I/PEN/*bra/eyebrow",
 		"cat": "n., 4th",
 		"defList": [
 			"eyebrow"
@@ -2563,7 +2563,7 @@
 	},
 	{
 		"title": "bu",
-		"etym": "L/PEN/*βiu/hollow",
+		"etym": "I/PEN/*βiu/hollow",
 		"cat": "adj.",
 		"defList": [
 			"hollow"
@@ -2579,7 +2579,7 @@
 	},
 	{
 		"title": "bubim",
-		"etym": "L/PEN/*βiuβim/silk",
+		"etym": "I/PEN/*βiuβim/silk",
 		"cat": "n., 5th",
 		"defList": [
 			"silk"
@@ -2606,7 +2606,7 @@
 	},
 	{
 		"title": "buk",
-		"etym": "L/PEN/*βux/sheep",
+		"etym": "I/PEN/*βux/sheep",
 		"cat": "n., 2nd",
 		"defList": [
 			"ewe",
@@ -2616,7 +2616,7 @@
 	},
 	{
 		"title": "bukat",
-		"etym": "L/PEN/*buxat/adze",
+		"etym": "I/PEN/*buxat/adze",
 		"cat": "n., 3rd",
 		"defList": [
 			"adze"
@@ -2625,7 +2625,7 @@
 	},
 	{
 		"title": "bulbult",
-		"etym": "L/PEN/*bult/net",
+		"etym": "I/PEN/*bult/net",
 		"cat": "n., 3rd",
 		"defList": [
 			"net"
@@ -2634,7 +2634,7 @@
 	},
 	{
 		"title": "bulklat",
-		"etym": "L/PEN/*bul-glat/knot",
+		"etym": "I/PEN/*bul-glat/knot",
 		"cat": "n., 3rd",
 		"defList": [
 			"knot"
@@ -2642,7 +2642,7 @@
 	},
 	{
 		"title": "buni",
-		"etym": "L/PEN/*buni/countryside",
+		"etym": "I/PEN/*buni/countryside",
 		"cat": "n., 4th",
 		"defList": [
 			"(archaic) countryside",
@@ -2651,7 +2651,7 @@
 	},
 	{
 		"title": "bunk",
-		"etym": "L/PEN/*βunx/goose",
+		"etym": "I/PEN/*βunx/goose",
 		"cat": "n., 2nd",
 		"defList": [
 			"duck"
@@ -2660,7 +2660,7 @@
 	},
 	{
 		"title": "bunt",
-		"etym": "L/PEN/*bunt/cloth//~/but",
+		"etym": "I/PEN/*bunt/cloth//~/but",
 		"cat": "n., 3rd",
 		"defList": [
 			"cloth, fabric, textile"
@@ -2669,7 +2669,7 @@
 	},
 	{
 		"title": "buralz",
-		"etym": "L/PEN/*βurals",
+		"etym": "I/PEN/*βurals",
 		"cat": "v.",
 		"defList": [
 			"(intransitive) tear, rip"
@@ -2696,7 +2696,7 @@
 	},
 	{
 		"title": "busk",
-		"etym": "L/PEN/*busx/dog",
+		"etym": "I/PEN/*busx/dog",
 		"cat": "n., 2nd",
 		"defList": [
 			"owned dog (specifically, one that is not feral or stray)",
@@ -2716,7 +2716,7 @@
 	},
 	{
 		"title": "but",
-		"etym": "L/PEN/*bugt/clothing//~/bunt",
+		"etym": "I/PEN/*bugt/clothing//~/bunt",
 		"cat": "n., 3rd",
 		"defList": [
 			"clothing, clothes"
@@ -2725,7 +2725,7 @@
 	},
 	{
 		"title": "da",
-		"etym": "L/PEN/*da/earth",
+		"etym": "I/PEN/*da/earth",
 		"img": "../img/eremoran/da.png",
 		"cat": "n., 4th",
 		"defList": [
@@ -2770,7 +2770,7 @@
 	},
 	{
 		"title": "dafê",
-		"etym": "L/PEN/*daɸê/shoulder",
+		"etym": "I/PEN/*daɸê/shoulder",
 		"cat": "n., 4th",
 		"defList": [
 			"shoulder"
@@ -2806,7 +2806,7 @@
 	},
 	{
 		"title": "daktarm",
-		"etym": "L/PEN/*daktarm/time",
+		"etym": "I/PEN/*daktarm/time",
 		"cat": "n., 5th",
 		"defList": [
 			"time (in general, like 'time and space', cf. fr. ''temps'')"
@@ -2816,7 +2816,7 @@
 	{
 		"title": "dalu",
 		"img": "../img/eremoran/dalu.png",
-		"etym": "L/PEN/*dalu/grey",
+		"etym": "I/PEN/*dalu/grey",
 		"cat": "adj.",
 		"defList": [
 			"grey",
@@ -2835,7 +2835,7 @@
 	},
 	{
 		"title": "dam",
-		"etym": "L/PEN/*dam/day",
+		"etym": "I/PEN/*dam/day",
 		"cat": "n., 5th",
 		"defList": [
 			"morning",
@@ -2871,7 +2871,7 @@
 	},
 	{
 		"title": "damu",
-		"etym": "L/PEN/*damu/ford",
+		"etym": "I/PEN/*damu/ford",
 		"cat": "n., 4th",
 		"defList": [
 			"ford"
@@ -2879,7 +2879,7 @@
 	},
 	{
 		"title": "dan",
-		"etym": "L/PEN/*dan/often",
+		"etym": "I/PEN/*dan/often",
 		"cat": "adv.",
 		"defList": [
 			"often; usually"
@@ -2906,7 +2906,7 @@
 	},
 	{
 		"title": "danlikz",
-		"etym": "L/PEN/*danliks/suck",
+		"etym": "I/PEN/*danliks/suck",
 		"cat": "v.",
 		"defList": [
 			"suck"
@@ -2934,7 +2934,7 @@
 	},
 	{
 		"title": "dare",
-		"etym": "L/PEN/*da-xere/gold",
+		"etym": "I/PEN/*da-xere/gold",
 		"cat": "n., 4th",
 		"defList": [
 			"gold"
@@ -2978,7 +2978,7 @@
 	},
 	{
 		"title": "dasu",
-		"etym": "L/PEN/*daʃu/fast",
+		"etym": "I/PEN/*daʃu/fast",
 		"cat": "adj.",
 		"defList": [
 			"fast, swift, quick"
@@ -2995,7 +2995,7 @@
 	},
 	{
 		"title": "daz",
-		"etym": "L/PEN/*das/be tired",
+		"etym": "I/PEN/*das/be tired",
 		"cat": "v.",
 		"defList": [
 			"be tired"
@@ -3004,7 +3004,7 @@
 	},
 	{
 		"title": "defôz",
-		"etym": "L/PEN/*deɸôs/be certain'",
+		"etym": "I/PEN/*deɸôs/be certain'",
 		"cat": "v.",
 		"defList": [
 			"[particle assuring the listener of what has been said]"
@@ -3021,7 +3021,7 @@
 	},
 	{
 		"title": "di",
-		"etym": "L/PEN/*di/[polite adjective]",
+		"etym": "I/PEN/*di/[polite adjective]",
 		"cat": "adj.",
 		"defList": [
 			"(archaic, regional) [polite adjective]"
@@ -3092,7 +3092,7 @@
 	},
 	{
 		"title": "din",
-		"etym": "L/PEN/*din",
+		"etym": "I/PEN/*din",
 		"cat": "post., adv.",
 		"defList": [
 			"out (of), outside",
@@ -3227,7 +3227,7 @@
 	},
 	{
 		"title": "dindôz",
-		"etym": "L/PEN/*din-dôs/appraise",
+		"etym": "I/PEN/*din-dôs/appraise",
 		"cat": "v.",
 		"defList": [
 			"appraise",
@@ -3399,7 +3399,7 @@
 	},
 	{
 		"title": "dirak",
-		"etym": "L/PEN/*dirax/whale",
+		"etym": "I/PEN/*dirax/whale",
 		"cat": "n., 2nd",
 		"defList": [
 			"whale",
@@ -3409,7 +3409,7 @@
 	},
 	{
 		"title": "dô",
-		"etym": "L/PEN/*dô/in",
+		"etym": "I/PEN/*dô/in",
 		"cat": "post., adv.",
 		"defList": [
 			"in, inside (of)",
@@ -3429,7 +3429,7 @@
 	},
 	{
 		"title": "dôafkaz",
-		"etym": "L/PEN/*dôaɸkas/charge from *dô 'in' + *aɸkas 'go'",
+		"etym": "I/PEN/*dôaɸkas/charge from *dô 'in' + *aɸkas 'go'",
 		"cat": "v.",
 		"defList": [
 			"enter",
@@ -3439,7 +3439,7 @@
 	},
 	{
 		"title": "dôam",
-		"etym": "L/PEN/*dôxem/evening",
+		"etym": "I/PEN/*dôxem/evening",
 		"cat": "n., 5th",
 		"defList": [
 			"evening"
@@ -3490,7 +3490,7 @@
 	},
 	{
 		"title": "doder",
-		"etym": "L/PEN/*doder/guest",
+		"etym": "I/PEN/*doder/guest",
 		"cat": "n., 1st",
 		"defList": [
 			"guest"
@@ -3515,7 +3515,7 @@
 	},
 	{
 		"title": "dôk",
-		"etym": "L/PEN/*dôx/shellfish",
+		"etym": "I/PEN/*dôx/shellfish",
 		"cat": "n., 2nd",
 		"defList": [
 			"shellfish (eg. clam, oyster)"
@@ -3560,7 +3560,7 @@
 	},
 	{
 		"title": "dôkunak",
-		"etym": "L/PEN/*dôkunax/swan",
+		"etym": "I/PEN/*dôkunax/swan",
 		"cat": "n., 2nd",
 		"defList": [
 			"swan (esp. {{w|cygnus cygnus|whooper swan}} and {{w|cygnus columbianus|tundra swan}})"
@@ -3624,7 +3624,7 @@
 	},
 	{
 		"title": "dono",
-		"etym": "L/PEN/*dono/knee",
+		"etym": "I/PEN/*dono/knee",
 		"cat": "n., 4th",
 		"defList": [
 			"knee"
@@ -3642,7 +3642,7 @@
 	},
 	{
 		"title": "dorfaz",
-		"etym": "L/PEN/*dorɸas/dig",
+		"etym": "I/PEN/*dorɸas/dig",
 		"cat": "v.",
 		"defList": [
 			"dig",
@@ -3678,7 +3678,7 @@
 	},
 	{
 		"title": "dôt",
-		"etym": "L/PEN/*dô-t/tool",
+		"etym": "I/PEN/*dô-t/tool",
 		"cat": "n., 3rd",
 		"defList": [
 			"tool"
@@ -3687,7 +3687,7 @@
 	},
 	{
 		"title": "dou",
-		"etym": "L/PEN/*dou/few",
+		"etym": "I/PEN/*dou/few",
 		"cat": "adj.",
 		"defList": [
 			"few",
@@ -3715,7 +3715,7 @@
 	},
 	{
 		"title": "eba",
-		"etym": "L/PEN/*eβa/bark; skin; peel'",
+		"etym": "I/PEN/*eβa/bark; skin; peel'",
 		"cat": "n., 4th",
 		"defList": [
 			"bark (of a tree)",
@@ -3745,7 +3745,7 @@
 	},
 	{
 		"title": "ebaz",
-		"etym": "L/PEN/*eβas/ferment",
+		"etym": "I/PEN/*eβas/ferment",
 		"cat": "v.",
 		"defList": [
 			"(intransitive) ferment"
@@ -3773,7 +3773,7 @@
 	{
 		"title": "edzam",
 		"img": "../img/eremoran/edzam.png",
-		"etym": "L/PEN/*ediam/part",
+		"etym": "I/PEN/*ediam/part",
 		"cat": "n., 5th",
 		"defList": [
 			"part",
@@ -3784,7 +3784,7 @@
 	},
 	{
 		"title": "ek",
-		"etym": "L/PEN/*ek-x/horse",
+		"etym": "I/PEN/*ek-x/horse",
 		"cat": "n., 2nd",
 		"defList": [
 			"horse",
@@ -3794,7 +3794,7 @@
 	},
 	{
 		"title": "eka",
-		"etym": "L/PEN/*ega/spruce",
+		"etym": "I/PEN/*ega/spruce",
 		"cat": "n., 4th",
 		"defList": [
 			"spruce"
@@ -3812,7 +3812,7 @@
 	},
 	{
 		"title": "êkar",
-		"etym": "L/PEN/*êkar/man",
+		"etym": "I/PEN/*êkar/man",
 		"cat": "n., 1st",
 		"defList": [
 			"man",
@@ -3822,7 +3822,7 @@
 	},
 	{
 		"title": "ela",
-		"etym": "L/PEN/*elas/little",
+		"etym": "I/PEN/*elas/little",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"little, small, tiny"
@@ -3870,7 +3870,7 @@
 	},
 	{
 		"title": "emam",
-		"etym": "L/PEN/*emam/silt",
+		"etym": "I/PEN/*emam/silt",
 		"cat": "n., 5th",
 		"defList": [
 			"silt"
@@ -3898,7 +3898,7 @@
 	},
 	{
 		"title": "endu",
-		"etym": "L/PEN/*endu/high",
+		"etym": "I/PEN/*endu/high",
 		"cat": "adj.",
 		"defList": [
 			"high, up",
@@ -4019,7 +4019,7 @@
 	},
 	{
 		"title": "erem",
-		"etym": "L/PEN/*ere-m/red",
+		"etym": "I/PEN/*ere-m/red",
 		"cat": "n., 5th",
 		"defList": [
 			"redness",
@@ -4097,7 +4097,7 @@
 	},
 	{
 		"title": "etoz",
-		"etym": "L/PEN/*etos/believe",
+		"etym": "I/PEN/*etos/believe",
 		"cat": "v.",
 		"defList": [
 			"(archaic) believe; think"
@@ -4106,7 +4106,7 @@
 	},
 	{
 		"title": "ha",
-		"etym": "L/PEN/*ɸia/barley",
+		"etym": "I/PEN/*ɸia/barley",
 		"cat": "n., 4th",
 		"defList": [
 			"barley"
@@ -4123,7 +4123,7 @@
 	},
 	{
 		"title": "ha-",
-		"etym": "L/PEN/*ɸa/half",
+		"etym": "I/PEN/*ɸa/half",
 		"cat": "aff.",
 		"defList": [
 			"semi-, half-"
@@ -4150,7 +4150,7 @@
 	},
 	{
 		"title": "habin",
-		"etym": "L/PEN/*ɸabin/finger",
+		"etym": "I/PEN/*ɸabin/finger",
 		"cat": "n., 4th",
 		"defList": [
 			"finger",
@@ -4189,7 +4189,7 @@
 	},
 	{
 		"title": "habiz",
-		"etym": "L/PEN/*ɸabis/live",
+		"etym": "I/PEN/*ɸabis/live",
 		"cat": "v.",
 		"defList": [
 			"live (vivere, non habitare, quid est ''~ dô momtantan'')"
@@ -4250,7 +4250,7 @@
 	},
 	{
 		"title": "hai",
-		"etym": "L/PEN/*sai/thick",
+		"etym": "I/PEN/*sai/thick",
 		"cat": "adj., s-triggering, adv.",
 		"defList": [
 			"thick, wide",
@@ -4261,7 +4261,7 @@
 	},
 	{
 		"title": "hai",
-		"etym": "L/PEN/*ɸai/[disappointment particle]",
+		"etym": "I/PEN/*ɸai/[disappointment particle]",
 		"cat": "adv.",
 		"defList": [
 			"[disappointment particle]"
@@ -4278,7 +4278,7 @@
 	},
 	{
 		"title": "hakiz",
-		"etym": "L/PEN/*ɸakis/confuse",
+		"etym": "I/PEN/*ɸakis/confuse",
 		"cat": "v.",
 		"defList": [
 			"be confused",
@@ -4287,7 +4287,7 @@
 	},
 	{
 		"title": "hakz",
-		"etym": "L/PEN/*ɸaks/help",
+		"etym": "I/PEN/*ɸaks/help",
 		"cat": "v.",
 		"defList": [
 			"help"
@@ -4295,7 +4295,7 @@
 	},
 	{
 		"title": "hakz",
-		"etym": "L/PEN/*sakz/squeeze",
+		"etym": "I/PEN/*sakz/squeeze",
 		"cat": "v.",
 		"defList": [
 			"squeeze"
@@ -4303,7 +4303,7 @@
 	},
 	{
 		"title": "hal",
-		"etym": "L/PEN/*ɸal/according to",
+		"etym": "I/PEN/*ɸal/according to",
 		"cat": "post.",
 		"defList": [
 			"according to, in accordance with",
@@ -4330,7 +4330,7 @@
 	},
 	{
 		"title": "halk",
-		"etym": "L/PEN/*ɸalks/heavy",
+		"etym": "I/PEN/*ɸalks/heavy",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"heavy",
@@ -4412,7 +4412,7 @@
 	},
 	{
 		"title": "handak",
-		"etym": "L/PEN/*ɸandax/filly",
+		"etym": "I/PEN/*ɸandax/filly",
 		"cat": "n., 2nd",
 		"defList": [
 			"filly"
@@ -4430,7 +4430,7 @@
 	},
 	{
 		"title": "hanla",
-		"etym": "L/PEN/*ɸanla/plain",
+		"etym": "I/PEN/*ɸanla/plain",
 		"cat": "n., 4th",
 		"defList": [
 			"plain"
@@ -4465,7 +4465,7 @@
 	},
 	{
 		"title": "hans",
-		"etym": "L/PEN/*ɸants/all",
+		"etym": "I/PEN/*ɸants/all",
 		"cat": "pron., det.",
 		"defList": [
 			"all, every",
@@ -4485,7 +4485,7 @@
 	},
 	{
 		"title": "hanu",
-		"etym": "L/PEN/*ɸanu/hand",
+		"etym": "I/PEN/*ɸanu/hand",
 		"cat": "n., 4th, adj.",
 		"defList": [
 			"hand",
@@ -4553,7 +4553,7 @@
 	},
 	{
 		"title": "hask",
-		"etym": "L/PEN/*ɸasx/cock",
+		"etym": "I/PEN/*ɸasx/cock",
 		"cat": "n., 2nd",
 		"defList": [
 			"cock, rooster"
@@ -4562,7 +4562,7 @@
 	},
 	{
 		"title": "hat",
-		"etym": "L/PEN/*ɸat/loom",
+		"etym": "I/PEN/*ɸat/loom",
 		"cat": "n., 3rd",
 		"defList": [
 			"loom"
@@ -4571,7 +4571,7 @@
 	},
 	{
 		"title": "hêan",
-		"etym": "L/PEN/*ɸêan/chin",
+		"etym": "I/PEN/*ɸêan/chin",
 		"cat": "n., 4th",
 		"defList": [
 			"chin"
@@ -4597,7 +4597,7 @@
 	},
 	{
 		"title": "heka",
-		"etym": "L/PEN/*ɸega",
+		"etym": "I/PEN/*ɸega",
 		"cat": "n., 4th",
 		"defList": [
 			"wrinkle (as on skin or cloth)"
@@ -4605,7 +4605,7 @@
 	},
 	{
 		"title": "hekz",
-		"etym": "L/PEN/*ɸeks/curse",
+		"etym": "I/PEN/*ɸeks/curse",
 		"cat": "v.",
 		"defList": [
 			"(archaic, regional) curse"
@@ -4614,7 +4614,7 @@
 	},
 	{
 		"title": "helsu",
-		"etym": "L/PEN/*seltʃu/bitter",
+		"etym": "I/PEN/*seltʃu/bitter",
 		"cat": "adj.",
 		"defList": [
 			"bitter"
@@ -4622,7 +4622,7 @@
 	},
 	{
 		"title": "hema",
-		"etym": "L/PEN/*ɸema/rose",
+		"etym": "I/PEN/*ɸema/rose",
 		"cat": "n., 4th",
 		"defList": [
 			"rose"
@@ -4631,7 +4631,7 @@
 	},
 	{
 		"title": "henlôm",
-		"etym": "L/PEN/*senlôm/health",
+		"etym": "I/PEN/*senlôm/health",
 		"cat": "n., 5th",
 		"defList": [
 			"health",
@@ -4668,7 +4668,7 @@
 	},
 	{
 		"title": "henz",
-		"etym": "L/PEN/*fens",
+		"etym": "I/PEN/*fens",
 		"cat": "v.",
 		"defList": [
 			"differ",
@@ -4678,7 +4678,7 @@
 	},
 	{
 		"title": "hêr",
-		"etym": "L/PEN/*ɸêr",
+		"etym": "I/PEN/*ɸêr",
 		"cat": "n., 1st",
 		"defList": [
 			"(archaic) father"
@@ -4687,7 +4687,7 @@
 	},
 	{
 		"title": "heri",
-		"etym": "L/PEN/*seri/palm",
+		"etym": "I/PEN/*seri/palm",
 		"cat": "n., 4th",
 		"defList": [
 			"palm (of the hand)"
@@ -4696,7 +4696,7 @@
 	},
 	{
 		"title": "hi",
-		"etym": "L/PEN/*ɸi/tooth",
+		"etym": "I/PEN/*ɸi/tooth",
 		"cat": "n., 4th",
 		"defList": [
 			"tooth"
@@ -4705,7 +4705,7 @@
 	},
 	{
 		"title": "hi",
-		"etym": "L/PEN/*si/hole",
+		"etym": "I/PEN/*si/hole",
 		"cat": "n., 4th",
 		"defList": [
 			"hole"
@@ -4713,7 +4713,7 @@
 	},
 	{
 		"title": "hilbe",
-		"etym": "L/PEN/*ɸilβe/cloud",
+		"etym": "I/PEN/*ɸilβe/cloud",
 		"cat": "n., 4th",
 		"defList": [
 			"cloud",
@@ -4749,7 +4749,7 @@
 	},
 	{
 		"title": "hilsaz",
-		"etym": "L/PEN/*ɸiltsias/mix",
+		"etym": "I/PEN/*ɸiltsias/mix",
 		"cat": "v.",
 		"defList": [
 			"mix, blend"
@@ -4757,7 +4757,7 @@
 	},
 	{
 		"title": "hilsêm",
-		"etym": "L/PEN/*silu",
+		"etym": "I/PEN/*silu",
 		"cat": "n., 5th",
 		"defList": [
 			"strength",
@@ -4775,7 +4775,7 @@
 	},
 	{
 		"title": "hilu",
-		"etym": "L/PEN/*silu",
+		"etym": "I/PEN/*silu",
 		"cat": "adj.",
 		"defList": [
 			"strong",
@@ -4785,7 +4785,7 @@
 	},
 	{
 		"title": "himaz",
-		"etym": "L/PEN/*simas/swim",
+		"etym": "I/PEN/*simas/swim",
 		"cat": "v.",
 		"defList": [
 			"swim"
@@ -4803,7 +4803,7 @@
 	},
 	{
 		"title": "himbu",
-		"etym": "L/PEN/*ɸimbu/full",
+		"etym": "I/PEN/*ɸimbu/full",
 		"cat": "adj.",
 		"defList": [
 			"full"
@@ -4831,7 +4831,7 @@
 	},
 	{
 		"title": "hirak",
-		"etym": "L/PEN/*ɸira-x/milk",
+		"etym": "I/PEN/*ɸira-x/milk",
 		"cat": "n., 2nd",
 		"defList": [
 			"milk"
@@ -4849,7 +4849,7 @@
 	},
 	{
 		"title": "hisk",
-		"etym": "L/PEN/*ɸiʃx/crow",
+		"etym": "I/PEN/*ɸiʃx/crow",
 		"cat": "n., 2nd",
 		"defList": [
 			"crow; raven"
@@ -4858,7 +4858,7 @@
 	},
 	{
 		"title": "hiu",
-		"etym": "L/PEN/*ɸiu/rotten",
+		"etym": "I/PEN/*ɸiu/rotten",
 		"cat": "adj.",
 		"defList": [
 			"rotten"
@@ -4866,7 +4866,7 @@
 	},
 	{
 		"title": "ho",
-		"etym": "L/PEN/*so/that",
+		"etym": "I/PEN/*so/that",
 		"cat": "adj.",
 		"defList": [
 			"that, those (away from speaker and listener)"
@@ -4874,7 +4874,7 @@
 	},
 	{
 		"title": "hô",
-		"etym": "L/PEN/*sô/rather",
+		"etym": "I/PEN/*sô/rather",
 		"cat": "adv.",
 		"defList": [
 			"rather"
@@ -4926,7 +4926,7 @@
 	},
 	{
 		"title": "hona",
-		"etym": "L/PEN/*ɸona/indeed",
+		"etym": "I/PEN/*ɸona/indeed",
 		"cat": "adv.",
 		"defList": [
 			"indeed",
@@ -4952,7 +4952,7 @@
 	},
 	{
 		"title": "hoz",
-		"etym": "L/PEN/*ɸos/how",
+		"etym": "I/PEN/*ɸos/how",
 		"cat": "adv.",
 		"defList": [
 			"how"
@@ -4960,7 +4960,7 @@
 	},
 	{
 		"title": "hu",
-		"etym": "L/PEN/*ɸiu/air",
+		"etym": "I/PEN/*ɸiu/air",
 		"cat": "n., 4th",
 		"defList": [
 			"air"
@@ -4968,7 +4968,7 @@
 	},
 	{
 		"title": "hubska",
-		"etym": "L/PEN/*ɸubska/pearl",
+		"etym": "I/PEN/*ɸubska/pearl",
 		"cat": "n., 4th",
 		"defList": [
 			"pearl"
@@ -4977,7 +4977,7 @@
 	},
 	{
 		"title": "huku",
-		"etym": "L/PEN/*ɸugu/south",
+		"etym": "I/PEN/*ɸugu/south",
 		"cat": "adj.",
 		"defList": [
 			"south"
@@ -5020,7 +5020,7 @@
 	},
 	{
 		"title": "hurak",
-		"etym": "L/PEN/*ɸurax/calf",
+		"etym": "I/PEN/*ɸurax/calf",
 		"cat": "n., 2nd",
 		"defList": [
 			"calf (young cattle)"
@@ -5029,7 +5029,7 @@
 	},
 	{
 		"title": "huri",
-		"etym": "L/PEN/*ɸuri",
+		"etym": "I/PEN/*ɸuri",
 		"cat": "adv.",
 		"defList": [
 			"somewhat"
@@ -5038,7 +5038,7 @@
 	},
 	{
 		"title": "hus",
-		"etym": "L/PEN/*sɸuʃ/tail",
+		"etym": "I/PEN/*sɸuʃ/tail",
 		"cat": "n., 4th",
 		"defList": [
 			"tail"
@@ -5073,7 +5073,7 @@
 	},
 	{
 		"title": "hut",
-		"etym": "L/PEN/*ɸut",
+		"etym": "I/PEN/*ɸut",
 		"cat": "n., 3rd",
 		"defList": [
 			"bow",
@@ -5083,7 +5083,7 @@
 	},
 	{
 		"title": "hutaz",
-		"etym": "L/PEN/*ɸutas/blow",
+		"etym": "I/PEN/*ɸutas/blow",
 		"cat": "v.",
 		"defList": [
 			"blow (of the mouth)"
@@ -5092,7 +5092,7 @@
 	},
 	{
 		"title": "huz",
-		"etym": "L/PEN/*ɸus/let",
+		"etym": "I/PEN/*ɸus/let",
 		"cat": "v.",
 		"defList": [
 			"let, allow, permit"
@@ -5109,7 +5109,7 @@
 	},
 	{
 		"title": "i",
-		"etym": "L/PEN/*i/[topic particle]",
+		"etym": "I/PEN/*i/[topic particle]",
 		"cat": "post.",
 		"defList": [
 			"[topic particle]"
@@ -5135,7 +5135,7 @@
 	},
 	{
 		"title": "id",
-		"etym": "L/PEN/*id/one",
+		"etym": "I/PEN/*id/one",
 		"cat": "adj.",
 		"defList": [
 			"one",
@@ -5150,7 +5150,7 @@
 	},
 	{
 		"title": "idak",
-		"etym": "L/PEN/*oidax/bird",
+		"etym": "I/PEN/*oidax/bird",
 		"cat": "n., 2nd",
 		"defList": [
 			"bird",
@@ -5247,7 +5247,7 @@
 	},
 	{
 		"title": "iklu",
-		"etym": "L/PEN/*iklu/valley",
+		"etym": "I/PEN/*iklu/valley",
 		"cat": "n., 4th",
 		"defList": [
 			"valley",
@@ -5265,7 +5265,7 @@
 	},
 	{
 		"title": "iktêr",
-		"etym": "L/PEN/*iktêr/girl",
+		"etym": "I/PEN/*iktêr/girl",
 		"cat": "n., 1st",
 		"defList": [
 			"(archaic, non-southern) girl (older form of elaôr)"
@@ -5282,7 +5282,7 @@
 	},
 	{
 		"title": "imô",
-		"etym": "L/PEN/*imô/edge",
+		"etym": "I/PEN/*imô/edge",
 		"cat": "n., 4th",
 		"defList": [
 			"edge"
@@ -5309,7 +5309,7 @@
 	},
 	{
 		"title": "in",
-		"etym": "L/PEN/*in/sole",
+		"etym": "I/PEN/*in/sole",
 		"cat": "n., 4th",
 		"defList": [
 			"sole"
@@ -5318,7 +5318,7 @@
 	},
 	{
 		"title": "indôn",
-		"etym": "L/PEN/*indôn/yam",
+		"etym": "I/PEN/*indôn/yam",
 		"cat": "n., 4th",
 		"defList": [
 			"yam",
@@ -5328,7 +5328,7 @@
 	},
 	{
 		"title": "ink",
-		"etym": "L/PEN/*inx/cow",
+		"etym": "I/PEN/*inx/cow",
 		"cat": "n., 2nd",
 		"defList": [
 			"cow"
@@ -5346,7 +5346,7 @@
 	},
 	{
 		"title": "irerz",
-		"etym": "L/PEN/*irers/boil",
+		"etym": "I/PEN/*irers/boil",
 		"cat": "v.",
 		"defList": [
 			"(of food/drink) cook by boiling"
@@ -5381,7 +5381,7 @@
 	},
 	{
 		"title": "it",
-		"etym": "L/PEN/*it/rather than'",
+		"etym": "I/PEN/*it/rather than'",
 		"cat": "post., adv., aff.",
 		"defList": [
 			"against",
@@ -5471,7 +5471,7 @@
 	},
 	{
 		"title": "iu",
-		"etym": "L/PEN/*iiu/reverse",
+		"etym": "I/PEN/*iiu/reverse",
 		"cat": "adj.",
 		"defList": [
 			"reverse"
@@ -5488,7 +5488,7 @@
 	},
 	{
 		"title": "iz",
-		"etym": "L/PEN/*is/move",
+		"etym": "I/PEN/*is/move",
 		"cat": "v.",
 		"defList": [
 			"(transitive) move"
@@ -5497,7 +5497,7 @@
 	},
 	{
 		"title": "kabako",
-		"etym": "L/PEN/*kabaxo/rye",
+		"etym": "I/PEN/*kabaxo/rye",
 		"cat": "n., 4th",
 		"defList": [
 			"rye"
@@ -5515,7 +5515,7 @@
 	},
 	{
 		"title": "kad",
-		"etym": "L/PEN/*kad/hoof",
+		"etym": "I/PEN/*kad/hoof",
 		"cat": "n., 4th",
 		"defList": [
 			"hoof"
@@ -5524,7 +5524,7 @@
 	},
 	{
 		"title": "kada",
-		"etym": "L/PEN/*gada",
+		"etym": "I/PEN/*gada",
 		"cat": "n., 4th",
 		"defList": [
 			"sugarcane"
@@ -5551,7 +5551,7 @@
 	},
 	{
 		"title": "kadôl",
-		"etym": "L/PEN/*kadôl/gem",
+		"etym": "I/PEN/*kadôl/gem",
 		"cat": "n., 4th",
 		"defList": [
 			"gem"
@@ -5559,7 +5559,7 @@
 	},
 	{
 		"title": "kadu",
-		"etym": "L/PEN/*kadu/hard",
+		"etym": "I/PEN/*kadu/hard",
 		"cat": "adj.",
 		"defList": [
 			"hard"
@@ -5567,7 +5567,7 @@
 	},
 	{
 		"title": "kaflam",
-		"etym": "L/PEN/*kaɸlam/victory",
+		"etym": "I/PEN/*kaɸlam/victory",
 		"cat": "n., 5th",
 		"defList": [
 			"victory"
@@ -5576,7 +5576,7 @@
 	},
 	{
 		"title": "kaik",
-		"etym": "L/PEN/*gaix/moth",
+		"etym": "I/PEN/*gaix/moth",
 		"cat": "n., 2nd",
 		"defList": [
 			"moth"
@@ -5593,7 +5593,7 @@
 	},
 	{
 		"title": "kakaz",
-		"etym": "L/PEN/*kaxas/pour",
+		"etym": "I/PEN/*kaxas/pour",
 		"cat": "v.",
 		"defList": [
 			"(of liquid or container) pour"
@@ -5651,7 +5651,7 @@
 	},
 	{
 		"title": "kalz",
-		"etym": "L/PEN/*kals/ask",
+		"etym": "I/PEN/*kals/ask",
 		"cat": "v.",
 		"defList": [
 			"be needed, be required"
@@ -5660,7 +5660,7 @@
 	},
 	{
 		"title": "kam",
-		"etym": "L/PEN/*kam/sound",
+		"etym": "I/PEN/*kam/sound",
 		"cat": "n., 5th",
 		"defList": [
 			"sound"
@@ -5669,7 +5669,7 @@
 	},
 	{
 		"title": "kama",
-		"etym": "L/PEN/*kama/citrus",
+		"etym": "I/PEN/*kama/citrus",
 		"cat": "n., 4th",
 		"defList": [
 			"citrus (genus)",
@@ -5698,7 +5698,7 @@
 	},
 	{
 		"title": "kamu",
-		"etym": "L/PEN/*xamu/left",
+		"etym": "I/PEN/*xamu/left",
 		"cat": "adj.",
 		"defList": [
 			"left (not right)",
@@ -5724,7 +5724,7 @@
 	},
 	{
 		"title": "kanat",
-		"etym": "L/PEN/*kanat/chain",
+		"etym": "I/PEN/*kanat/chain",
 		"cat": "n., 3rd",
 		"defList": [
 			"chain, link"
@@ -5740,7 +5740,7 @@
 	},
 	{
 		"title": "kanu",
-		"etym": "L/PEN/*ganu/yellow",
+		"etym": "I/PEN/*ganu/yellow",
 		"cat": "adj.",
 		"defList": [
 			"yellow"
@@ -5749,7 +5749,7 @@
 	},
 	{
 		"title": "karê",
-		"etym": "L/PEN/*karê/cardamom",
+		"etym": "I/PEN/*karê/cardamom",
 		"cat": "n., 4th",
 		"defList": [
 			"cardamom"
@@ -5758,7 +5758,7 @@
 	},
 	{
 		"title": "karm",
-		"etym": "L/PEN/*xarm/war",
+		"etym": "I/PEN/*xarm/war",
 		"cat": "n., 5th",
 		"defList": [
 			"war"
@@ -5767,7 +5767,7 @@
 	},
 	{
 		"title": "karo",
-		"etym": "L/PEN/*karo/claw",
+		"etym": "I/PEN/*karo/claw",
 		"cat": "n., 4th",
 		"defList": [
 			"claw",
@@ -5787,7 +5787,7 @@
 	{
 		"title": "kaskru",
 		"img": "../img/eremoran/kaskru.png",
-		"etym": "L/PEN/*xaʃxru/apple",
+		"etym": "I/PEN/*xaʃxru/apple",
 		"cat": "n., 4th",
 		"defList": [
 			"apple"
@@ -5817,7 +5817,7 @@
 	},
 	{
 		"title": "kasraz",
-		"etym": "L/PEN/*kaʃras/maybe",
+		"etym": "I/PEN/*kaʃras/maybe",
 		"cat": "v.",
 		"defList": [
 			"maybe"
@@ -5826,7 +5826,7 @@
 	{
 		"title": "kasu",
 		"img": "../img/eremoran/ksu.png",
-		"etym": "L/PEN/*xaʃu/lung",
+		"etym": "I/PEN/*xaʃu/lung",
 		"cat": "n., 4th",
 		"defList": [
 			"lung"
@@ -5836,7 +5836,7 @@
 	},
 	{
 		"title": "kaz",
-		"etym": "L/PEN/*kas",
+		"etym": "I/PEN/*kas",
 		"cat": "n., 4th",
 		"defList": [
 			"(archaic) cut"
@@ -5844,7 +5844,7 @@
 	},
 	{
 		"title": "ke",
-		"etym": "L/PEN/*ge/[emphatic particle]",
+		"etym": "I/PEN/*ge/[emphatic particle]",
 		"cat": "adv., post.",
 		"defList": [
 			"specifically, namely, exactly (stresses/emphasizes a word)"
@@ -5880,7 +5880,7 @@
 	},
 	{
 		"title": "kek",
-		"etym": "L/PEN/*kek-x/god",
+		"etym": "I/PEN/*kek-x/god",
 		"cat": "n., 2nd",
 		"defList": [
 			"god"
@@ -5889,7 +5889,7 @@
 	},
 	{
 		"title": "keliz",
-		"etym": "L/PEN/*gelis/keep",
+		"etym": "I/PEN/*gelis/keep",
 		"cat": "v.",
 		"defList": [
 			"keep, retain"
@@ -5908,7 +5908,7 @@
 	},
 	{
 		"title": "keu",
-		"etym": "L/PEN/*akeu/east",
+		"etym": "I/PEN/*akeu/east",
 		"cat": "adj.",
 		"defList": [
 			"east"
@@ -5916,7 +5916,7 @@
 	},
 	{
 		"title": "ki",
-		"etym": "L/PEN/*ki/foot",
+		"etym": "I/PEN/*ki/foot",
 		"cat": "n., 4th",
 		"defList": [
 			"foot",
@@ -5927,7 +5927,7 @@
 	},
 	{
 		"title": "kidôu",
-		"etym": "L/PEN/*kidôu/counterclockwise",
+		"etym": "I/PEN/*kidôu/counterclockwise",
 		"cat": "adj.",
 		"defList": [
 			"counterclockwise"
@@ -5997,7 +5997,7 @@
 	},
 	{
 		"title": "kili",
-		"etym": "L/PEN/*akili/heel",
+		"etym": "I/PEN/*akili/heel",
 		"cat": "n., 4th",
 		"defList": [
 			"heel"
@@ -6006,7 +6006,7 @@
 	},
 	{
 		"title": "kim",
-		"etym": "L/PEN/*kim/place",
+		"etym": "I/PEN/*kim/place",
 		"cat": "n., 5th",
 		"defList": [
 			"place, location"
@@ -6014,7 +6014,7 @@
 	},
 	{
 		"title": "kima",
-		"etym": "L/PEN/*kima/stump",
+		"etym": "I/PEN/*kima/stump",
 		"cat": "n., 4th",
 		"defList": [
 			"stump"
@@ -6023,7 +6023,7 @@
 	},
 	{
 		"title": "kin",
-		"etym": "L/PEN/*kin/sulfur",
+		"etym": "I/PEN/*kin/sulfur",
 		"cat": "n., 4th",
 		"defList": [
 			"sulfur, brimstone"
@@ -6041,7 +6041,7 @@
 	{
 		"title": "kinê",
 		"img": "../img/eremoran/kine.png",
-		"etym": "L/PEN/*kinê/reed",
+		"etym": "I/PEN/*kinê/reed",
 		"cat": "n., 4th",
 		"defList": [
 			"reed",
@@ -6051,7 +6051,7 @@
 	},
 	{
 		"title": "kink",
-		"etym": "L/PEN/*kinx/weasel",
+		"etym": "I/PEN/*kinx/weasel",
 		"cat": "n., 2nd",
 		"defList": [
 			"weasel",
@@ -6081,7 +6081,7 @@
 	},
 	{
 		"title": "kiram",
-		"etym": "L/PEN/*giram/loam",
+		"etym": "I/PEN/*giram/loam",
 		"cat": "n., 5th",
 		"defList": [
 			"loam"
@@ -6089,7 +6089,7 @@
 	},
 	{
 		"title": "kiskana",
-		"etym": "L/PEN/*giʃkana/birch",
+		"etym": "I/PEN/*giʃkana/birch",
 		"cat": "n., 4th",
 		"defList": [
 			"birch"
@@ -6098,7 +6098,7 @@
 	},
 	{
 		"title": "kit",
-		"etym": "L/PEN/*git/axe//~/kot",
+		"etym": "I/PEN/*git/axe//~/kot",
 		"cat": "n., 3rd",
 		"defList": [
 			"axe"
@@ -6107,7 +6107,7 @@
 	},
 	{
 		"title": "kiu",
-		"etym": "L/PEN/*kiu/friendly",
+		"etym": "I/PEN/*kiu/friendly",
 		"cat": "adj.",
 		"defList": [
 			"friendly"
@@ -6123,7 +6123,7 @@
 	},
 	{
 		"title": "klamz",
-		"etym": "L/PEN/*glams/dream",
+		"etym": "I/PEN/*glams/dream",
 		"cat": "v.",
 		"defList": [
 			"hug"
@@ -6131,7 +6131,7 @@
 	},
 	{
 		"title": "klaz",
-		"etym": "L/PEN/*klas/scratch",
+		"etym": "I/PEN/*klas/scratch",
 		"cat": "v.",
 		"defList": [
 			"scratch, scrape"
@@ -6148,7 +6148,7 @@
 	},
 	{
 		"title": "klu",
-		"etym": "L/PEN/*xlu/sticky",
+		"etym": "I/PEN/*xlu/sticky",
 		"cat": "adj., n. 4th",
 		"defList": [
 			"sticky, gooey",
@@ -6167,7 +6167,7 @@
 	},
 	{
 		"title": "ko",
-		"etym": "L/PEN/*ko/this",
+		"etym": "I/PEN/*ko/this",
 		"cat": "adj.",
 		"defList": [
 			"this, these",
@@ -6176,7 +6176,7 @@
 	},
 	{
 		"title": "ko",
-		"etym": "L/PEN/*ko/palm",
+		"etym": "I/PEN/*ko/palm",
 		"cat": "n., 4th",
 		"defList": [
 			"palm (tree)"
@@ -6218,7 +6218,7 @@
 	},
 	{
 		"title": "koka",
-		"etym": "L/PEN/*koga/arm",
+		"etym": "I/PEN/*koga/arm",
 		"cat": "n., 4th",
 		"defList": [
 			"arm"
@@ -6236,7 +6236,7 @@
 	},
 	{
 		"title": "kokint",
-		"etym": "L/PEN/*xoximu/bridge",
+		"etym": "I/PEN/*xoximu/bridge",
 		"cat": "n., 3rd",
 		"defList": [
 			"bridge"
@@ -6271,7 +6271,7 @@
 	},
 	{
 		"title": "kona",
-		"etym": "L/PEN/*gona/beech",
+		"etym": "I/PEN/*gona/beech",
 		"cat": "n., 4th",
 		"defList": [
 			"beech (esp. fagus orientalis)"
@@ -6280,7 +6280,7 @@
 	},
 	{
 		"title": "konoz",
-		"etym": "L/PEN/*gonos/sing",
+		"etym": "I/PEN/*gonos/sing",
 		"cat": "v.",
 		"defList": [
 			"sing"
@@ -6361,7 +6361,7 @@
 	},
 	{
 		"title": "kot",
-		"etym": "L/PEN/*got/shield//~/kit",
+		"etym": "I/PEN/*got/shield//~/kit",
 		"cat": "n., 3rd",
 		"defList": [
 			"shield"
@@ -6370,7 +6370,7 @@
 	},
 	{
 		"title": "kotaz",
-		"etym": "L/PEN/*kotas/shoot",
+		"etym": "I/PEN/*kotas/shoot",
 		"cat": "v.",
 		"defList": [
 			"launch",
@@ -6381,7 +6381,7 @@
 	},
 	{
 		"title": "kotik",
-		"etym": "L/PEN/*gotix/fish",
+		"etym": "I/PEN/*gotix/fish",
 		"cat": "n., 2nd",
 		"defList": [
 			"fish"
@@ -6390,7 +6390,7 @@
 	},
 	{
 		"title": "koz",
-		"etym": "L/PEN/*gos/float",
+		"etym": "I/PEN/*gos/float",
 		"cat": "v.",
 		"defList": [
 			"float"
@@ -6407,7 +6407,7 @@
 	},
 	{
 		"title": "krarnok",
-		"etym": "L/PEN/*grarnôx/pig",
+		"etym": "I/PEN/*grarnôx/pig",
 		"cat": "n., 2nd",
 		"defList": [
 			"pig (esp. sus scrofa and porcula salvania)"
@@ -6416,7 +6416,7 @@
 	},
 	{
 		"title": "kraz",
-		"etym": "L/PEN/*gras/walk",
+		"etym": "I/PEN/*gras/walk",
 		"cat": "v.",
 		"defList": [
 			"walk",
@@ -6427,7 +6427,7 @@
 	},
 	{
 		"title": "krifan",
-		"etym": "L/PEN/*griɸan/wing",
+		"etym": "I/PEN/*griɸan/wing",
 		"cat": "n., 4th",
 		"defList": [
 			"wing"
@@ -6445,7 +6445,7 @@
 	},
 	{
 		"title": "kru",
-		"etym": "L/PEN/*gru/soft",
+		"etym": "I/PEN/*gru/soft",
 		"cat": "adj.",
 		"defList": [
 			"soft, gentle"
@@ -6453,7 +6453,7 @@
 	},
 	{
 		"title": "krum",
-		"etym": "L/PEN/*grum/study",
+		"etym": "I/PEN/*grum/study",
 		"cat": "n., 5th",
 		"defList": [
 			"study",
@@ -6470,7 +6470,7 @@
 	},
 	{
 		"title": "ku",
-		"etym": "L/PEN/*ku/with",
+		"etym": "I/PEN/*ku/with",
 		"cat": "post.",
 		"defList": [
 			"and (clause-only: not nouns)",
@@ -6481,7 +6481,7 @@
 	},
 	{
 		"title": "ku",
-		"etym": "L/PEN/*gus/big",
+		"etym": "I/PEN/*gus/big",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"(archaic) big",
@@ -6655,7 +6655,7 @@
 	},
 	{
 		"title": "kudim",
-		"etym": "L/PEN/*giudim",
+		"etym": "I/PEN/*giudim",
 		"cat": "n., 5th",
 		"defList": [
 			"spot (shape)",
@@ -6666,7 +6666,7 @@
 	},
 	{
 		"title": "kudôz",
-		"etym": "L/PEN/*ku-dôs/do together",
+		"etym": "I/PEN/*ku-dôs/do together",
 		"cat": "v.",
 		"defList": [
 			"work together, conspire",
@@ -6678,7 +6678,7 @@
 	},
 	{
 		"title": "kudz",
-		"etym": "L/PEN/*kuds/end",
+		"etym": "I/PEN/*kuds/end",
 		"cat": "v.",
 		"defList": [
 			"(intransitive) border",
@@ -6732,7 +6732,7 @@
 	},
 	{
 		"title": "kul",
-		"etym": "L/PEN/*gul/around",
+		"etym": "I/PEN/*gul/around",
 		"cat": "post.",
 		"defList": [
 			"around, about",
@@ -6802,7 +6802,7 @@
 	},
 	{
 		"title": "kuma",
-		"etym": "L/PEN/*xuma/wrist",
+		"etym": "I/PEN/*xuma/wrist",
 		"cat": "n., 4th",
 		"defList": [
 			"wrist"
@@ -6828,7 +6828,7 @@
 	},
 	{
 		"title": "kumitaz",
-		"etym": "L/PEN/*ku-mitas/with-push",
+		"etym": "I/PEN/*ku-mitas/with-push",
 		"cat": "v.",
 		"defList": [
 			"push"
@@ -6873,7 +6873,7 @@
 	{
 		"title": "kumku",
 		"img": "../img/eremoran/kumku.png",
-		"etym": "L/PEN/*kumku/three",
+		"etym": "I/PEN/*kumku/three",
 		"cat": "adj.",
 		"defList": [
 			"three"
@@ -6936,7 +6936,7 @@
 	},
 	{
 		"title": "kumz",
-		"etym": "L/PEN/*gums/jump",
+		"etym": "I/PEN/*gums/jump",
 		"cat": "v.",
 		"defList": [
 			"jump"
@@ -6945,7 +6945,7 @@
 	},
 	{
 		"title": "kun",
-		"etym": "L/PEN/*xun/snow",
+		"etym": "I/PEN/*xun/snow",
 		"cat": "n., 4th",
 		"defList": [
 			"snow"
@@ -6972,7 +6972,7 @@
 	},
 	{
 		"title": "kunôz",
-		"etym": "L/PEN/*xunôs/probably",
+		"etym": "I/PEN/*xunôs/probably",
 		"cat": "v.",
 		"defList": [
 			"probably"
@@ -6998,7 +6998,7 @@
 	},
 	{
 		"title": "kunuz",
-		"etym": "L/PEN/*xunus/break",
+		"etym": "I/PEN/*xunus/break",
 		"cat": "v.",
 		"defList": [
 			"(intransitive) break"
@@ -7006,7 +7006,7 @@
 	},
 	{
 		"title": "kunz",
-		"etym": "L/PEN/*kuns/wash",
+		"etym": "I/PEN/*kuns/wash",
 		"cat": "v.",
 		"defList": [
 			"(archaic) come",
@@ -7015,7 +7015,7 @@
 	},
 	{
 		"title": "kunz",
-		"etym": "L/PEN/*kuns/wash",
+		"etym": "I/PEN/*kuns/wash",
 		"cat": "v.",
 		"defList": [
 			"wash"
@@ -7032,7 +7032,7 @@
 	},
 	{
 		"title": "kureu",
-		"etym": "L/PEN/*kureu/west",
+		"etym": "I/PEN/*kureu/west",
 		"cat": "adj.",
 		"defList": [
 			"west"
@@ -7040,7 +7040,7 @@
 	},
 	{
 		"title": "kuril",
-		"etym": "L/PEN/*guril/onion",
+		"etym": "I/PEN/*guril/onion",
 		"cat": "n., 4th",
 		"defList": [
 			"onion"
@@ -7059,7 +7059,7 @@
 	},
 	{
 		"title": "kuru",
-		"etym": "L/PEN/*guru",
+		"etym": "I/PEN/*guru",
 		"cat": "adj.",
 		"defList": [
 			"pale"
@@ -7067,7 +7067,7 @@
 	},
 	{
 		"title": "kusam",
-		"etym": "L/PEN/*kusa-m/many",
+		"etym": "I/PEN/*kusa-m/many",
 		"cat": "n., 5th",
 		"defList": [
 			"(archaic) many, much"
@@ -7128,7 +7128,7 @@
 	},
 	{
 		"title": "labafi",
-		"etym": "L/PEN/*labaɸi/island",
+		"etym": "I/PEN/*labaɸi/island",
 		"cat": "n., 4th",
 		"defList": [
 			"island"
@@ -7137,7 +7137,7 @@
 	{
 		"title": "labnit",
 		"img": "../img/eremoran/labnit.png",
-		"etym": "L/PEN/*labnit/brick",
+		"etym": "I/PEN/*labnit/brick",
 		"cat": "n., 3rd",
 		"defList": [
 			"brick",
@@ -7146,7 +7146,7 @@
 	},
 	{
 		"title": "lada",
-		"etym": "L/PEN/*lixêda",
+		"etym": "I/PEN/*lixêda",
 		"cat": "n., 4th",
 		"defList": [
 			"flaw"
@@ -7173,7 +7173,7 @@
 	},
 	{
 		"title": "lak",
-		"etym": "L/PEN/*lax/crab",
+		"etym": "I/PEN/*lax/crab",
 		"cat": "n., 2nd",
 		"defList": [
 			"crab"
@@ -7182,7 +7182,7 @@
 	},
 	{
 		"title": "lakaik",
-		"etym": "L/PEN/*bloxaix/shark",
+		"etym": "I/PEN/*bloxaix/shark",
 		"cat": "n., 2nd",
 		"defList": [
 			"shark"
@@ -7191,7 +7191,7 @@
 	},
 	{
 		"title": "laku",
-		"etym": "L/PEN/*lagu/good",
+		"etym": "I/PEN/*lagu/good",
 		"cat": "adj.",
 		"defList": [
 			"(archaic) good"
@@ -7201,7 +7201,7 @@
 	{
 		"title": "lam",
 		"img": "../img/eremoran/len.png",
-		"etym": "L/PEN/*lam/stone",
+		"etym": "I/PEN/*lam/stone",
 		"cat": "n., 5th",
 		"defList": [
 			"(uncountable) stone, rock"
@@ -7209,7 +7209,7 @@
 	},
 	{
 		"title": "lan",
-		"etym": "L/PEN/*lan/cover",
+		"etym": "I/PEN/*lan/cover",
 		"cat": "n., 4th",
 		"defList": [
 			"cover"
@@ -7226,7 +7226,7 @@
 	},
 	{
 		"title": "lanz",
-		"etym": "L/PEN/*lans/pull",
+		"etym": "I/PEN/*lans/pull",
 		"cat": "v.",
 		"defList": [
 			"pull",
@@ -7273,7 +7273,7 @@
 	},
 	{
 		"title": "li",
-		"etym": "L/PEN/*li/ankle",
+		"etym": "I/PEN/*li/ankle",
 		"cat": "n., 4th",
 		"defList": [
 			"ankle"
@@ -7283,7 +7283,7 @@
 	{
 		"title": "liba",
 		"img": "../img/eremoran/lib.png",
-		"etym": "L/PEN/*liba/heart",
+		"etym": "I/PEN/*liba/heart",
 		"cat": "n., 4th",
 		"defList": [
 			"heart",
@@ -7339,7 +7339,7 @@
 	},
 	{
 		"title": "liboz",
-		"etym": "L/PEN/*libos/cry",
+		"etym": "I/PEN/*libos/cry",
 		"cat": "v.",
 		"defList": [
 			"cry, tear"
@@ -7366,7 +7366,7 @@
 	},
 	{
 		"title": "linku",
-		"etym": "L/PEN/*lingu/cyan",
+		"etym": "I/PEN/*lingu/cyan",
 		"cat": "adj.",
 		"defList": [
 			"cyan",
@@ -7376,7 +7376,7 @@
 	},
 	{
 		"title": "lira",
-		"etym": "L/PEN/*lira/hock",
+		"etym": "I/PEN/*lira/hock",
 		"cat": "n., 4th",
 		"defList": [
 			"shin, hock, calf"
@@ -7385,7 +7385,7 @@
 	},
 	{
 		"title": "lire",
-		"etym": "L/PEN/*lire/tree; wood",
+		"etym": "I/PEN/*lire/tree; wood",
 		"cat": "n., 4th",
 		"defList": [
 			"(archaic) tree",
@@ -7413,7 +7413,7 @@
 	},
 	{
 		"title": "lisu",
-		"etym": "L/PEN/*liʃu/chest",
+		"etym": "I/PEN/*liʃu/chest",
 		"cat": "n., 4th",
 		"defList": [
 			"chest"
@@ -7449,7 +7449,7 @@
 	},
 	{
 		"title": "lolz",
-		"etym": "L/PEN/*lols/laugh",
+		"etym": "I/PEN/*lols/laugh",
 		"cat": "v.",
 		"defList": [
 			"laugh",
@@ -7459,7 +7459,7 @@
 	},
 	{
 		"title": "lôtor",
-		"etym": "L/PEN/*ɸlôtor",
+		"etym": "I/PEN/*ɸlôtor",
 		"cat": "n., 1st",
 		"defList": [
 			"male given name"
@@ -7469,7 +7469,7 @@
 	},
 	{
 		"title": "lu",
-		"etym": "L/PEN/*lu/galena",
+		"etym": "I/PEN/*lu/galena",
 		"cat": "n., 4th",
 		"defList": [
 			"galena"
@@ -7478,7 +7478,7 @@
 	},
 	{
 		"title": "luksa",
-		"etym": "L/PEN/*luksa/neck",
+		"etym": "I/PEN/*luksa/neck",
 		"cat": "n., 4th",
 		"defList": [
 			"neck"
@@ -7487,7 +7487,7 @@
 	},
 	{
 		"title": "lusik",
-		"etym": "L/PEN/*lussix/wolf",
+		"etym": "I/PEN/*lussix/wolf",
 		"cat": "n., 2nd",
 		"defList": [
 			"wolf",
@@ -7517,7 +7517,7 @@
 	},
 	{
 		"title": "ma",
-		"etym": "L/PEN/*ma/container",
+		"etym": "I/PEN/*ma/container",
 		"cat": "n., 4th",
 		"defList": [
 			"container"
@@ -7525,7 +7525,7 @@
 	},
 	{
 		"title": "mablaz",
-		"etym": "L/PEN/*mablas/put",
+		"etym": "I/PEN/*mablas/put",
 		"cat": "v.",
 		"defList": [
 			"put, place"
@@ -7550,7 +7550,7 @@
 	},
 	{
 		"title": "maêr",
-		"etym": "L/PEN/*maêr/mother",
+		"etym": "I/PEN/*maêr/mother",
 		"cat": "n., 1st",
 		"defList": [
 			"mother"
@@ -7567,7 +7567,7 @@
 	},
 	{
 		"title": "mafir",
-		"etym": "L/PEN/*maɸir/gang; group'",
+		"etym": "I/PEN/*maɸir/gang; group'",
 		"cat": "n., 1st",
 		"defList": [
 			"gang; group (of people)"
@@ -7576,7 +7576,7 @@
 	},
 	{
 		"title": "mai",
-		"etym": "L/PEN/*mai/clove",
+		"etym": "I/PEN/*mai/clove",
 		"cat": "n., 4th",
 		"defList": [
 			"clove (spice)"
@@ -7621,7 +7621,7 @@
 	},
 	{
 		"title": "mana",
-		"etym": "L/PEN/*mana/nose",
+		"etym": "I/PEN/*mana/nose",
 		"cat": "n., 4th",
 		"defList": [
 			"nose"
@@ -7657,7 +7657,7 @@
 	},
 	{
 		"title": "manat",
-		"etym": "L/PEN/*manat/workshop",
+		"etym": "I/PEN/*manat/workshop",
 		"cat": "n., 3rd",
 		"defList": [
 			"(archaic) workshop",
@@ -7685,7 +7685,7 @@
 	},
 	{
 		"title": "mankam",
-		"etym": "L/PEN/*manxam",
+		"etym": "I/PEN/*manxam",
 		"cat": "n, 5th",
 		"defList": [
 			"dream"
@@ -7701,7 +7701,7 @@
 	},
 	{
 		"title": "mara",
-		"etym": "L/PEN/*mara/blood",
+		"etym": "I/PEN/*mara/blood",
 		"cat": "n., 4th",
 		"defList": [
 			"blood"
@@ -7737,7 +7737,7 @@
 	},
 	{
 		"title": "markla",
-		"etym": "L/PEN/*markla/thing",
+		"etym": "I/PEN/*markla/thing",
 		"cat": "n., 4th",
 		"defList": [
 			"thing"
@@ -7755,7 +7755,7 @@
 	},
 	{
 		"title": "marz",
-		"etym": "L/PEN/*mars/bleed",
+		"etym": "I/PEN/*mars/bleed",
 		"cat": "v.",
 		"defList": [
 			"bleed"
@@ -7764,7 +7764,7 @@
 	},
 	{
 		"title": "mask",
-		"etym": "L/PEN/*mas-x/bull",
+		"etym": "I/PEN/*mas-x/bull",
 		"cat": "n., 2nd",
 		"defList": [
 			"bull (male cow)"
@@ -7791,7 +7791,7 @@
 	},
 	{
 		"title": "masusu",
-		"etym": "L/PEN/*ma-siusiu/stunned, from *mas 'contain' + *siusiu 'stunned, dazed', reduplicated from *siu 'bright'.",
+		"etym": "I/PEN/*ma-siusiu/stunned, from *mas 'contain' + *siusiu 'stunned, dazed', reduplicated from *siu 'bright'.",
 		"cat": "adj.",
 		"defList": [
 			"silly"
@@ -7836,7 +7836,7 @@
 	},
 	{
 		"title": "memêr",
-		"etym": "L/PEN/*memêrre/maternal grandmother",
+		"etym": "I/PEN/*memêrre/maternal grandmother",
 		"cat": "n., 1st",
 		"defList": [
 			"maternal grandmother"
@@ -7845,7 +7845,7 @@
 	},
 	{
 		"title": "mêur",
-		"etym": "L/PEN/*miêur/widow/heir",
+		"etym": "I/PEN/*miêur/widow/heir",
 		"cat": "n., 1st",
 		"defList": [
 			"widow",
@@ -7855,7 +7855,7 @@
 	},
 	{
 		"title": "mi",
-		"etym": "L/PEN/*mi/[reflexive particle]",
+		"etym": "I/PEN/*mi/[reflexive particle]",
 		"cat": "adv.",
 		"defList": [
 			"[reflexive particle]",
@@ -7889,7 +7889,7 @@
 	},
 	{
 		"title": "mim",
-		"etym": "L/PEN/*mim/idea",
+		"etym": "I/PEN/*mim/idea",
 		"cat": "n., 5th",
 		"defList": [
 			"idea",
@@ -7907,7 +7907,7 @@
 	},
 	{
 		"title": "minibak",
-		"etym": "L/PEN/*minibax/egg",
+		"etym": "I/PEN/*minibax/egg",
 		"cat": "n., 2nd",
 		"defList": [
 			"egg"
@@ -7917,7 +7917,7 @@
 	},
 	{
 		"title": "miz",
-		"etym": "L/PEN/*mis",
+		"etym": "I/PEN/*mis",
 		"cat": "v.",
 		"defList": [
 			"be lost (ie. be unsure of one's way)"
@@ -7925,7 +7925,7 @@
 	},
 	{
 		"title": "mo",
-		"etym": "L/PEN/*mo/back, behind",
+		"etym": "I/PEN/*mo/back, behind",
 		"cat": "pron., det., post.; n., 4th",
 		"defList": [
 			"back",
@@ -7955,7 +7955,7 @@
 	},
 	{
 		"title": "moda",
-		"etym": "L/PEN/*moda/trunk",
+		"etym": "I/PEN/*moda/trunk",
 		"cat": "n., 4th",
 		"defList": [
 			"trunk (of a tree)",
@@ -7979,7 +7979,7 @@
 	},
 	{
 		"title": "môlz",
-		"etym": "L/PEN/*môls/wake up'",
+		"etym": "I/PEN/*môls/wake up'",
 		"cat": "v.",
 		"defList": [
 			"wake up"
@@ -8030,7 +8030,7 @@
 	},
 	{
 		"title": "monz",
-		"etym": "L/PEN/*mons/be hungry",
+		"etym": "I/PEN/*mons/be hungry",
 		"cat": "v.",
 		"defList": [
 			"be hungry"
@@ -8039,7 +8039,7 @@
 	{
 		"title": "mor",
 		"img": "../img/eremoran/mor.png",
-		"etym": "L/PEN/*mor/person//L/PMU/*mur/person",
+		"etym": "I/PEN/*mor/person//L/PMU/*mur/person",
 		"cat": "n., 1st",
 		"defList": [
 			"guy, person",
@@ -8052,7 +8052,7 @@
 	},
 	{
 		"title": "morbik",
-		"etym": "L/PEN/*morβix/ant",
+		"etym": "I/PEN/*morβix/ant",
 		"cat": "n., 2nd",
 		"defList": [
 			"ant"
@@ -8089,7 +8089,7 @@
 	{
 		"title": "mu",
 		"img": "../img/eremoran/mu.png",
-		"etym": "L/PEN/*mu/water",
+		"etym": "I/PEN/*mu/water",
 		"cat": "n., 4th",
 		"defList": [
 			"water",
@@ -8109,7 +8109,7 @@
 	},
 	{
 		"title": "muk",
-		"etym": "L/PEN/*mugs/old",
+		"etym": "I/PEN/*mugs/old",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"(of inanimates) old",
@@ -8163,7 +8163,7 @@
 	},
 	{
 		"title": "muna",
-		"etym": "L/PEN/*muna/source",
+		"etym": "I/PEN/*muna/source",
 		"cat": "n., 4th",
 		"defList": [
 			"source, spring, well"
@@ -8212,7 +8212,7 @@
 	},
 	{
 		"title": "na",
-		"etym": "L/PEN/*na/ear",
+		"etym": "I/PEN/*na/ear",
 		"cat": "n., 4th",
 		"defList": [
 			"ear (organ)"
@@ -8221,7 +8221,7 @@
 	},
 	{
 		"title": "na",
-		"etym": "L/PEN/*na/what",
+		"etym": "I/PEN/*na/what",
 		"cat": "pron., det.",
 		"defList": [
 			"(archaic) which, what"
@@ -8230,7 +8230,7 @@
 	},
 	{
 		"title": "naba",
-		"etym": "L/PEN/*naβa/root//~/nabi",
+		"etym": "I/PEN/*naβa/root//~/nabi",
 		"cat": "n., 4th",
 		"defList": [
 			"root"
@@ -8239,7 +8239,7 @@
 	},
 	{
 		"title": "nabi",
-		"etym": "L/PEN/*naβi/branch//~/naba",
+		"etym": "I/PEN/*naβi/branch//~/naba",
 		"cat": "n., 4th",
 		"defList": [
 			"branch, stick, twig"
@@ -8283,7 +8283,7 @@
 	},
 	{
 		"title": "namz",
-		"etym": "L/PEN/*nams/eat",
+		"etym": "I/PEN/*nams/eat",
 		"cat": "v.",
 		"defList": [
 			"eat",
@@ -8323,7 +8323,7 @@
 	},
 	{
 		"title": "narko",
-		"etym": "L/PEN/*snarko",
+		"etym": "I/PEN/*snarko",
 		"cat": "n., 4th",
 		"defList": [
 			"cheek"
@@ -8378,7 +8378,7 @@
 	},
 	{
 		"title": "nask",
-		"etym": "L/PEN/*nasx/carnivoran",
+		"etym": "I/PEN/*nasx/carnivoran",
 		"cat": "n., 2nd",
 		"defList": [
 			"carnivoran"
@@ -8396,7 +8396,7 @@
 	},
 	{
 		"title": "nasu",
-		"etym": "L/PEN/*natiu/two",
+		"etym": "I/PEN/*natiu/two",
 		"cat": "adj.",
 		"defList": [
 			"two",
@@ -8407,7 +8407,7 @@
 	},
 	{
 		"title": "nasu",
-		"etym": "L/PEN/*natsu/north",
+		"etym": "I/PEN/*natsu/north",
 		"cat": "adj.",
 		"defList": [
 			"north"
@@ -8467,7 +8467,7 @@
 	},
 	{
 		"title": "naz",
-		"etym": "L/PEN/*nas/be ashamed",
+		"etym": "I/PEN/*nas/be ashamed",
 		"cat": "v.",
 		"defList": [
 			"be ashamed"
@@ -8476,7 +8476,7 @@
 	},
 	{
 		"title": "ne",
-		"etym": "L/PEN/*ne",
+		"etym": "I/PEN/*ne",
 		"cat": "adv.",
 		"defList": [
 			"[question particle]"
@@ -8538,7 +8538,7 @@
 	},
 	{
 		"title": "nem",
-		"etym": "L/PEN/*nem",
+		"etym": "I/PEN/*nem",
 		"cat": "n., 5th",
 		"defList": [
 			"year (in Earth time: 2 mo 14 d)"
@@ -8565,7 +8565,7 @@
 	},
 	{
 		"title": "nes",
-		"etym": "L/PEN/*nes",
+		"etym": "I/PEN/*nes",
 		"cat": "n., 4th",
 		"defList": [
 			"bedroom (but more broadly, one's typical place of sleep)"
@@ -8655,7 +8655,7 @@
 	},
 	{
 		"title": "nikiniki",
-		"etym": "L/PEN/*niki-niki/liver",
+		"etym": "I/PEN/*niki-niki/liver",
 		"cat": "n., 4th",
 		"defList": [
 			"liver"
@@ -8664,7 +8664,7 @@
 	},
 	{
 		"title": "nikôk",
-		"etym": "L/PEN/*nikôx/otter",
+		"etym": "I/PEN/*nikôx/otter",
 		"cat": "n., 2nd",
 		"defList": [
 			"otter"
@@ -8673,7 +8673,7 @@
 	},
 	{
 		"title": "nindat",
-		"etym": "L/PEN/*nindat/bread",
+		"etym": "I/PEN/*nindat/bread",
 		"cat": "n., 3rd",
 		"defList": [
 			"bread"
@@ -8700,7 +8700,7 @@
 	},
 	{
 		"title": "no",
-		"etym": "L/PEN/*no/stain",
+		"etym": "I/PEN/*no/stain",
 		"cat": "n., 4th",
 		"defList": [
 			"stain"
@@ -8709,7 +8709,7 @@
 	},
 	{
 		"title": "nô",
-		"etym": "L/PEN/*nou/mountain",
+		"etym": "I/PEN/*nou/mountain",
 		"cat": "n., 4th",
 		"defList": [
 			"mountain"
@@ -8717,7 +8717,7 @@
 	},
 	{
 		"title": "nôak",
-		"etym": "L/PEN/*nôax/louse",
+		"etym": "I/PEN/*nôax/louse",
 		"cat": "n., 2nd",
 		"defList": [
 			"louse"
@@ -8726,7 +8726,7 @@
 	},
 	{
 		"title": "nobz",
-		"etym": "L/PEN/*nobs/climb",
+		"etym": "I/PEN/*nobs/climb",
 		"cat": "v.",
 		"defList": [
 			"climb"
@@ -8735,7 +8735,7 @@
 	},
 	{
 		"title": "nod",
-		"etym": "L/PEN/*nod/moon",
+		"etym": "I/PEN/*nod/moon",
 		"cat": "n., 4th",
 		"defList": [
 			"Nikki (Moon of Oneia)",
@@ -8764,7 +8764,7 @@
 	},
 	{
 		"title": "nokaz",
-		"etym": "L/PEN/*nokas/lean",
+		"etym": "I/PEN/*nokas/lean",
 		"cat": "v.",
 		"defList": [
 			"lean",
@@ -8776,7 +8776,7 @@
 	},
 	{
 		"title": "nokin",
-		"etym": "L/PEN/*nokin/mushroom",
+		"etym": "I/PEN/*nokin/mushroom",
 		"cat": "n., 4th",
 		"defList": [
 			"mushroom"
@@ -8785,7 +8785,7 @@
 	},
 	{
 		"title": "nom",
-		"etym": "L/PEN/*nom/game",
+		"etym": "I/PEN/*nom/game",
 		"cat": "n., 5th",
 		"defList": [
 			"game"
@@ -8793,7 +8793,7 @@
 	},
 	{
 		"title": "nomak",
-		"etym": "L/PEN/*nomax/colt",
+		"etym": "I/PEN/*nomax/colt",
 		"cat": "n., 2nd",
 		"defList": [
 			"colt"
@@ -8811,7 +8811,7 @@
 	},
 	{
 		"title": "nost",
-		"etym": "L/PEN/*noʃt/below, under",
+		"etym": "I/PEN/*noʃt/below, under",
 		"cat": "post.",
 		"defList": [
 			"below, under",
@@ -8844,7 +8844,7 @@
 	},
 	{
 		"title": "nu",
-		"etym": "L/PEN/*nu/low",
+		"etym": "I/PEN/*nu/low",
 		"cat": "adj.",
 		"defList": [
 			"low",
@@ -8853,7 +8853,7 @@
 	},
 	{
 		"title": "nub",
-		"etym": "L/PEN/*nubs/young",
+		"etym": "I/PEN/*nubs/young",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"(animate only) young"
@@ -8873,7 +8873,7 @@
 	},
 	{
 		"title": "nuela",
-		"etym": "L/PEN/*nou-ela/hill",
+		"etym": "I/PEN/*nou-ela/hill",
 		"cat": "n., 4th",
 		"defList": [
 			"(archaic) hill"
@@ -8908,7 +8908,7 @@
 	},
 	{
 		"title": "numsudôz",
-		"etym": "L/PEN/*nums/run",
+		"etym": "I/PEN/*nums/run",
 		"cat": "v.",
 		"defList": [
 			"drive",
@@ -8919,7 +8919,7 @@
 	},
 	{
 		"title": "numz",
-		"etym": "L/PEN/*nums/run",
+		"etym": "I/PEN/*nums/run",
 		"cat": "v.",
 		"defList": [
 			"run"
@@ -9026,7 +9026,7 @@
 	},
 	{
 		"title": "ô",
-		"etym": "L/PEN/*ô/anyways",
+		"etym": "I/PEN/*ô/anyways",
 		"cat": "interj.",
 		"defList": [
 			"Anyways..., so... (used similarly to jp. ''ja'', fr. ''alors'')"
@@ -9034,7 +9034,7 @@
 	},
 	{
 		"title": "obo",
-		"etym": "L/PEN/*oβo/[excitement particle]",
+		"etym": "I/PEN/*oβo/[excitement particle]",
 		"cat": "adv.",
 		"defList": [
 			"[excitement particle]"
@@ -9060,7 +9060,7 @@
 	},
 	{
 		"title": "ôdu",
-		"etym": "L/PEN/*ôdu/away",
+		"etym": "I/PEN/*ôdu/away",
 		"cat": "adj.",
 		"defList": [
 			"away"
@@ -9102,7 +9102,7 @@
 	},
 	{
 		"title": "oka",
-		"etym": "L/PEN/*oka/bone",
+		"etym": "I/PEN/*oka/bone",
 		"cat": "n., 4th",
 		"defList": [
 			"bone"
@@ -9111,7 +9111,7 @@
 	},
 	{
 		"title": "okar",
-		"etym": "L/PEN/*okar/woman",
+		"etym": "I/PEN/*okar/woman",
 		"cat": "n., 1st",
 		"defList": [
 			"woman",
@@ -9187,7 +9187,7 @@
 	},
 	{
 		"title": "onkuk",
-		"etym": "L/PEN/*onxux/fly",
+		"etym": "I/PEN/*onxux/fly",
 		"cat": "n., 2nd",
 		"defList": [
 			"fly (bug)"
@@ -9196,7 +9196,7 @@
 	},
 	{
 		"title": "onod",
-		"etym": "L/PEN/*onod/horn",
+		"etym": "I/PEN/*onod/horn",
 		"cat": "n., 4th",
 		"defList": [
 			"horn"
@@ -9471,7 +9471,7 @@
 	},
 	{
 		"title": "raba",
-		"etym": "L/PEN/*raba/belly",
+		"etym": "I/PEN/*raba/belly",
 		"cat": "n., 4th",
 		"defList": [
 			"belly"
@@ -9480,7 +9480,7 @@
 	},
 	{
 		"title": "rakulka",
-		"etym": "L/PEN/*rekulka/persimmon",
+		"etym": "I/PEN/*rekulka/persimmon",
 		"cat": "n., 4th",
 		"defList": [
 			"persimmon"
@@ -9508,7 +9508,7 @@
 	},
 	{
 		"title": "rankenz",
-		"etym": "L/PEN/*ɸrankens/rise",
+		"etym": "I/PEN/*ɸrankens/rise",
 		"cat": "v.",
 		"defList": [
 			"rise"
@@ -9554,7 +9554,7 @@
 	},
 	{
 		"title": "ratik",
-		"etym": "L/PEN/*ratix/animal; creature'",
+		"etym": "I/PEN/*ratix/animal; creature'",
 		"cat": "n., 2nd",
 		"defList": [
 			"animal, creature"
@@ -9572,7 +9572,7 @@
 	},
 	{
 		"title": "rau",
-		"etym": "L/PEN/*ɸrau/cold",
+		"etym": "I/PEN/*ɸrau/cold",
 		"cat": "adj.",
 		"defList": [
 			"cool, cold"
@@ -9581,7 +9581,7 @@
 	},
 	{
 		"title": "raz",
-		"etym": "L/PEN/*ras/paint",
+		"etym": "I/PEN/*ras/paint",
 		"cat": "v.",
 		"defList": [
 			"paint"
@@ -9617,7 +9617,7 @@
 	},
 	{
 		"title": "redz",
-		"etym": "L/PEN/*reds/rub",
+		"etym": "I/PEN/*reds/rub",
 		"cat": "v.",
 		"defList": [
 			"rub",
@@ -9626,7 +9626,7 @@
 	},
 	{
 		"title": "rênaz",
-		"etym": "L/PEN/*rênas/be pickled",
+		"etym": "I/PEN/*rênas/be pickled",
 		"cat": "v.",
 		"defList": [
 			"be pickled"
@@ -9645,7 +9645,7 @@
 	},
 	{
 		"title": "reraz",
-		"etym": "L/PEN/*reras/harvest",
+		"etym": "I/PEN/*reras/harvest",
 		"cat": "v.",
 		"defList": [
 			"harvest"
@@ -9680,7 +9680,7 @@
 	},
 	{
 		"title": "ril",
-		"etym": "L/PEN/*ril/sun",
+		"etym": "I/PEN/*ril/sun",
 		"cat": "n., 4th",
 		"defList": [
 			"Namei",
@@ -9744,7 +9744,7 @@
 	},
 	{
 		"title": "rinz",
-		"etym": "L/PEN/*rins/order",
+		"etym": "I/PEN/*rins/order",
 		"cat": "v.",
 		"defList": [
 			"order, command, direct"
@@ -9752,7 +9752,7 @@
 	},
 	{
 		"title": "rô",
-		"etym": "L/PEN/*rô/tongue",
+		"etym": "I/PEN/*rô/tongue",
 		"cat": "n., 4th",
 		"defList": [
 			"tongue"
@@ -9861,7 +9861,7 @@
 	},
 	{
 		"title": "saliz",
-		"etym": "L/PEN/*sialis/find",
+		"etym": "I/PEN/*sialis/find",
 		"cat": "v.",
 		"defList": [
 			"find, discover",
@@ -9879,7 +9879,7 @@
 	},
 	{
 		"title": "samarz",
-		"etym": "L/PEN/*siamars/lie",
+		"etym": "I/PEN/*siamars/lie",
 		"cat": "v.",
 		"defList": [
 			"lie (down)",
@@ -9905,7 +9905,7 @@
 	},
 	{
 		"title": "sambaz",
-		"etym": "L/PEN/*tʃambas/shake",
+		"etym": "I/PEN/*tʃambas/shake",
 		"cat": "v.",
 		"defList": [
 			"(intransitive) shake, quake, quiver"
@@ -9938,7 +9938,7 @@
 	},
 	{
 		"title": "sart",
-		"etym": "L/PEN/*ʃart/mat",
+		"etym": "I/PEN/*ʃart/mat",
 		"cat": "n., 3rd",
 		"defList": [
 			"mat, typically in the dimensions of 5-by-10 labnim"
@@ -9973,7 +9973,7 @@
 	},
 	{
 		"title": "saurz",
-		"etym": "L/PEN/*siaurs",
+		"etym": "I/PEN/*siaurs",
 		"cat": "v.",
 		"defList": [
 			"see",
@@ -10005,7 +10005,7 @@
 	},
 	{
 		"title": "se",
-		"etym": "L/PEN/*sie/grain",
+		"etym": "I/PEN/*sie/grain",
 		"cat": "n., 4th",
 		"defList": [
 			"grain",
@@ -10015,7 +10015,7 @@
 	},
 	{
 		"title": "se",
-		"etym": "L/PEN/*ʃe/other",
+		"etym": "I/PEN/*ʃe/other",
 		"cat": "pron., det.",
 		"defList": [
 			"(archaic) other"
@@ -10023,7 +10023,7 @@
 	},
 	{
 		"title": "seba",
-		"etym": "L/PEN/*ʃeβa/flower",
+		"etym": "I/PEN/*ʃeβa/flower",
 		"cat": "n., 4th",
 		"defList": [
 			"flower"
@@ -10087,7 +10087,7 @@
 	},
 	{
 		"title": "sedu",
-		"etym": "L/PEN/*tʃedu/sharp",
+		"etym": "I/PEN/*tʃedu/sharp",
 		"cat": "adj.",
 		"defList": [
 			"sharp (not dull)",
@@ -10097,7 +10097,7 @@
 	},
 	{
 		"title": "sêdzak",
-		"etym": "L/PEN/*ʃêdiax/rat",
+		"etym": "I/PEN/*ʃêdiax/rat",
 		"cat": "n., 2nd",
 		"defList": [
 			"rat"
@@ -10123,7 +10123,7 @@
 	},
 	{
 		"title": "sêlai",
-		"etym": "L/PEN/*ʃêlai/thigh",
+		"etym": "I/PEN/*ʃêlai/thigh",
 		"cat": "n., 4th",
 		"defList": [
 			"thigh"
@@ -10141,7 +10141,7 @@
 	},
 	{
 		"title": "ses",
-		"etym": "L/PEN/*ʃets/~planet",
+		"etym": "I/PEN/*ʃets/~planet",
 		"cat": "n., 4th",
 		"defList": [
 			"stellar companion",
@@ -10153,7 +10153,7 @@
 	},
 	{
 		"title": "sesu",
-		"etym": "L/PEN/*sietiu/hundred",
+		"etym": "I/PEN/*sietiu/hundred",
 		"cat": "adj.",
 		"defList": [
 			"hundred"
@@ -10180,7 +10180,7 @@
 	},
 	{
 		"title": "sifaz",
-		"etym": "L/PEN/*ʃiɸs/hit",
+		"etym": "I/PEN/*ʃiɸs/hit",
 		"cat": "v.",
 		"defList": [
 			"hit, beat, strike, punch"
@@ -10189,7 +10189,7 @@
 	},
 	{
 		"title": "sik",
-		"etym": "L/PEN/*tʃix/ox",
+		"etym": "I/PEN/*tʃix/ox",
 		"cat": "n., 2nd",
 		"defList": [
 			"ox, steer, nowt (gelded bull)"
@@ -10207,7 +10207,7 @@
 	},
 	{
 		"title": "simbun",
-		"etym": "L/PEN/*ʃimbuns/new",
+		"etym": "I/PEN/*ʃimbuns/new",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"(inanimate only) young"
@@ -10249,7 +10249,7 @@
 	},
 	{
 		"title": "sira",
-		"etym": "L/PEN/*ʃira/garlic",
+		"etym": "I/PEN/*ʃira/garlic",
 		"cat": "n., 4th",
 		"defList": [
 			"garlic"
@@ -10337,7 +10337,7 @@
 	},
 	{
 		"title": "siz",
-		"etym": "L/PEN/*ʃis/shine",
+		"etym": "I/PEN/*ʃis/shine",
 		"cat": "v.",
 		"defList": [
 			"shine"
@@ -10345,7 +10345,7 @@
 	},
 	{
 		"title": "siz",
-		"etym": "L/PEN/*sis/[causative]",
+		"etym": "I/PEN/*sis/[causative]",
 		"cat": "v.",
 		"defList": [
 			"(archaic) [causative]"
@@ -10362,7 +10362,7 @@
 	},
 	{
 		"title": "skam",
-		"etym": "L/PEN/*ʃkam/coal",
+		"etym": "I/PEN/*ʃkam/coal",
 		"cat": "n., 5th",
 		"defList": [
 			"coal"
@@ -10371,7 +10371,7 @@
 	},
 	{
 		"title": "skik",
-		"etym": "L/PEN/*ʃkix/hen",
+		"etym": "I/PEN/*ʃkix/hen",
 		"cat": "n., 2nd",
 		"defList": [
 			"hen"
@@ -10380,7 +10380,7 @@
 	},
 	{
 		"title": "skiz",
-		"etym": "L/PEN/*skis/show",
+		"etym": "I/PEN/*skis/show",
 		"cat": "v.",
 		"defList": [
 			"show"
@@ -10388,7 +10388,7 @@
 	},
 	{
 		"title": "skôkiz",
-		"etym": "L/PEN/*ʃkôkis/fly",
+		"etym": "I/PEN/*ʃkôkis/fly",
 		"cat": "v.",
 		"defList": [
 			"(of non-birds) fly"
@@ -10418,7 +10418,7 @@
 	},
 	{
 		"title": "skuiku",
-		"etym": "L/PEN/*skuixu",
+		"etym": "I/PEN/*skuixu",
 		"cat": "adj.",
 		"defList": [
 			"(colloquial) young"
@@ -10457,7 +10457,7 @@
 	},
 	{
 		"title": "skum",
-		"etym": "L/PEN/*ʃxum",
+		"etym": "I/PEN/*ʃxum",
 		"cat": "n., 5th",
 		"defList": [
 			"(archaic) winter",
@@ -10486,7 +10486,7 @@
 	},
 	{
 		"title": "sonat",
-		"etym": "L/PEN/*ʃonat/mortar",
+		"etym": "I/PEN/*ʃonat/mortar",
 		"cat": "n., 3rd",
 		"defList": [
 			"mortar (ie. w/ pestle)"
@@ -10495,7 +10495,7 @@
 	},
 	{
 		"title": "soni",
-		"etym": "L/PEN/*tʃoni/hair",
+		"etym": "I/PEN/*tʃoni/hair",
 		"cat": "n., 4th",
 		"defList": [
 			"hair"
@@ -10514,7 +10514,7 @@
 	},
 	{
 		"title": "sou",
-		"etym": "L/PEN/*tʃou/hot",
+		"etym": "I/PEN/*tʃou/hot",
 		"cat": "adj.",
 		"defList": [
 			"warm, hot"
@@ -10523,7 +10523,7 @@
 	},
 	{
 		"title": "sou",
-		"etym": "L/PEN/*tʃiou/right",
+		"etym": "I/PEN/*tʃiou/right",
 		"cat": "adj.",
 		"defList": [
 			"right (ie. the opposite of left, rather than the opposite of wrong)",
@@ -10533,7 +10533,7 @@
 	},
 	{
 		"title": "soz",
-		"etym": "L/PEN/*ʃos",
+		"etym": "I/PEN/*ʃos",
 		"cat": "v.",
 		"defList": [
 			"(intransitive) close"
@@ -10602,7 +10602,7 @@
 	},
 	{
 		"title": "stanu",
-		"etym": "L/PEN/*stanu/tin",
+		"etym": "I/PEN/*stanu/tin",
 		"cat": "n., 4th",
 		"defList": [
 			"cassiterite"
@@ -10739,7 +10739,7 @@
 	},
 	{
 		"title": "stuz",
-		"etym": "L/PEN/*ʃtus/sow",
+		"etym": "I/PEN/*ʃtus/sow",
 		"cat": "v.",
 		"defList": [
 			"sow, plant"
@@ -10748,7 +10748,7 @@
 	},
 	{
 		"title": "su",
-		"etym": "L/PEN/*tʃu/[ERG-GEN marker]",
+		"etym": "I/PEN/*tʃu/[ERG-GEN marker]",
 		"cat": "post.",
 		"defList": [
 			"of, belonging to or made of",
@@ -10801,7 +10801,7 @@
 	},
 	{
 		"title": "sudik",
-		"etym": "L/PEN/*ʃudix/spider",
+		"etym": "I/PEN/*ʃudix/spider",
 		"cat": "n., 2nd",
 		"defList": [
 			"spider"
@@ -10810,7 +10810,7 @@
 	},
 	{
 		"title": "sudôz",
-		"etym": "L/PEN/*tʃu-dôs/do; make",
+		"etym": "I/PEN/*tʃu-dôs/do; make",
 		"cat": "v.",
 		"defList": [
 			"(''inanimate object'') do/make",
@@ -10850,7 +10850,7 @@
 	},
 	{
 		"title": "sukz",
-		"etym": "L/PEN/*siuxs/sew//~/suz",
+		"etym": "I/PEN/*siuxs/sew//~/suz",
 		"cat": "v.",
 		"defList": [
 			"sew"
@@ -10859,7 +10859,7 @@
 	},
 	{
 		"title": "suma",
-		"etym": "L/PEN/*ʃuma/navel",
+		"etym": "I/PEN/*ʃuma/navel",
 		"cat": "n., 4th",
 		"defList": [
 			"navel, bellybutton"
@@ -10879,7 +10879,7 @@
 	{
 		"title": "suro",
 		"img": "../img/eremoran/sauroma.png",
-		"etym": "L/PEN/*siuro",
+		"etym": "I/PEN/*siuro",
 		"cat": "n., 4th",
 		"defList": [
 			"eye"
@@ -10905,7 +10905,7 @@
 	},
 	{
 		"title": "suz",
-		"etym": "L/PEN/*sius/tie//~/sukz",
+		"etym": "I/PEN/*sius/tie//~/sukz",
 		"cat": "v.",
 		"defList": [
 			"tie"
@@ -10923,7 +10923,7 @@
 	},
 	{
 		"title": "tabaz",
-		"etym": "L/PEN/*tabias/crush",
+		"etym": "I/PEN/*tabias/crush",
 		"cat": "v.",
 		"defList": [
 			"crush",
@@ -10949,7 +10949,7 @@
 	},
 	{
 		"title": "takêu",
-		"etym": "L/PEN/*tokêu/clockwise",
+		"etym": "I/PEN/*tokêu/clockwise",
 		"cat": "adj.",
 		"defList": [
 			"clockwise"
@@ -10958,7 +10958,7 @@
 	{
 		"title": "talire",
 		"img": "../img/eremoran/talira.png",
-		"etym": "L/OER/taslire//L/PEN/*tassu-lire/evergreen//~/taze//~/tasu//~/tasku",
+		"etym": "I/OER/taslire//I/PEN/*tassu-lire/evergreen//~/taze//~/tasu//~/tasku",
 		"cat": "n., 4th",
 		"defList": [
 			"tree",
@@ -10995,7 +10995,7 @@
 	},
 	{
 		"title": "tamal",
-		"etym": "L/PEN/*tamal/mouth",
+		"etym": "I/PEN/*tamal/mouth",
 		"cat": "n., 4th",
 		"defList": [
 			"mouth"
@@ -11004,7 +11004,7 @@
 	},
 	{
 		"title": "tamaz",
-		"etym": "L/PEN/*tamas/owe",
+		"etym": "I/PEN/*tamas/owe",
 		"cat": "v.",
 		"defList": [
 			"(experiential) owe",
@@ -11035,7 +11035,7 @@
 	},
 	{
 		"title": "tan",
-		"etym": "L/PEN/*tan/after",
+		"etym": "I/PEN/*tan/after",
 		"cat": "post.",
 		"defList": [
 			"in front of (in space)",
@@ -11055,7 +11055,7 @@
 	},
 	{
 		"title": "tanaiz",
-		"etym": "L/PEN/*tanais/sleep",
+		"etym": "I/PEN/*tanais/sleep",
 		"cat": "v.",
 		"defList": [
 			"sleep"
@@ -11133,7 +11133,7 @@
 	},
 	{
 		"title": "tanz",
-		"etym": "L/PEN/*tans/mill",
+		"etym": "I/PEN/*tans/mill",
 		"cat": "v.",
 		"defList": [
 			"mill"
@@ -11141,7 +11141,7 @@
 	},
 	{
 		"title": "tar",
-		"etym": "L/PEN/*tars/new",
+		"etym": "I/PEN/*tars/new",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"(''of inanimates'') new"
@@ -11149,7 +11149,7 @@
 	},
 	{
 		"title": "tasfut",
-		"etym": "L/PEN/*tasɸut/paper",
+		"etym": "I/PEN/*tasɸut/paper",
 		"cat": "n., 4th",
 		"defList": [
 			"paper"
@@ -11168,7 +11168,7 @@
 	},
 	{
 		"title": "tasu",
-		"etym": "L/PEN/*tas(e)-su/green//~/talire//~/taze//~/tasku",
+		"etym": "I/PEN/*tas(e)-su/green//~/talire//~/taze//~/tasku",
 		"cat": "adj.",
 		"defList": [
 			"green"
@@ -11177,7 +11177,7 @@
 	},
 	{
 		"title": "tat",
-		"etym": "L/PEN/*tat",
+		"etym": "I/PEN/*tat",
 		"cat": "adj.",
 		"defList": [
 			"stair, stairs"
@@ -11185,7 +11185,7 @@
 	},
 	{
 		"title": "taze",
-		"etym": "L/PEN/*tase/grass//~/talire//~/tasu//~/tasku",
+		"etym": "I/PEN/*tase/grass//~/talire//~/tasu//~/tasku",
 		"cat": "n., 4th",
 		"defList": [
 			"grass"
@@ -11220,7 +11220,7 @@
 	},
 	{
 		"title": "tekka",
-		"etym": "L/PEN/*tegxa/tea",
+		"etym": "I/PEN/*tegxa/tea",
 		"cat": "n., 4th",
 		"defList": [
 			"tea (leaf)"
@@ -11268,7 +11268,7 @@
 	},
 	{
 		"title": "temz",
-		"etym": "L/PEN/*tems/defend",
+		"etym": "I/PEN/*tems/defend",
 		"cat": "v.",
 		"defList": [
 			"defend, protect"
@@ -11330,7 +11330,7 @@
 	},
 	{
 		"title": "tikat",
-		"etym": "L/PEN/*tixat/arrow",
+		"etym": "I/PEN/*tixat/arrow",
 		"cat": "n., 3rd",
 		"defList": [
 			"arrow"
@@ -11348,7 +11348,7 @@
 	},
 	{
 		"title": "tô",
-		"etym": "L/PEN/*tô/head",
+		"etym": "I/PEN/*tô/head",
 		"cat": "n., 4th",
 		"defList": [
 			"head"
@@ -11357,7 +11357,7 @@
 	},
 	{
 		"title": "tobê",
-		"etym": "L/PEN/*toβê/stick",
+		"etym": "I/PEN/*toβê/stick",
 		"cat": "n., 4th",
 		"defList": [
 			"stick (usually not wooden)",
@@ -11377,7 +11377,7 @@
 	},
 	{
 		"title": "tôk",
-		"etym": "L/PEN/*tôx/foal",
+		"etym": "I/PEN/*tôx/foal",
 		"cat": "n., 2nd",
 		"defList": [
 			"foal (young horse)"
@@ -11406,7 +11406,7 @@
 	},
 	{
 		"title": "tômz",
-		"etym": "L/PEN/*tôms/can",
+		"etym": "I/PEN/*tôms/can",
 		"cat": "v.",
 		"defList": [
 			"can, be able",
@@ -11415,7 +11415,7 @@
 	},
 	{
 		"title": "tôn",
-		"etym": "L/PEN/*tôn/almost (adv.)",
+		"etym": "I/PEN/*tôn/almost (adv.)",
 		"cat": "adv.",
 		"defList": [
 			"almost"
@@ -11423,7 +11423,7 @@
 	},
 	{
 		"title": "tônkad",
-		"etym": "L/PEN/*tônkad/stomach",
+		"etym": "I/PEN/*tônkad/stomach",
 		"cat": "n., 4th",
 		"defList": [
 			"stomach"
@@ -11457,7 +11457,7 @@
 	},
 	{
 		"title": "tôu",
-		"etym": "L/PEN/*tôiu/such",
+		"etym": "I/PEN/*tôiu/such",
 		"cat": "adj.",
 		"defList": [
 			"such"
@@ -11465,7 +11465,7 @@
 	},
 	{
 		"title": "tôzmu",
-		"etym": "L/PEN/*tôsdmu/evitable",
+		"etym": "I/PEN/*tôsdmu/evitable",
 		"cat": "adj.",
 		"defList": [
 			"avoidable, evitable"
@@ -11473,7 +11473,7 @@
 	},
 	{
 		"title": "trabz",
-		"etym": "L/PEN/*trabs/swell",
+		"etym": "I/PEN/*trabs/swell",
 		"cat": "v.",
 		"defList": [
 			"swell"
@@ -11489,7 +11489,7 @@
 	},
 	{
 		"title": "tranz",
-		"etym": "L/PEN/*trans/hide",
+		"etym": "I/PEN/*trans/hide",
 		"cat": "v.",
 		"defList": [
 			"(intransitive) hide"
@@ -11515,7 +11515,7 @@
 	},
 	{
 		"title": "trikz",
-		"etym": "L/PEN/*triks/bite",
+		"etym": "I/PEN/*triks/bite",
 		"cat": "v.",
 		"defList": [
 			"bite"
@@ -11532,7 +11532,7 @@
 	},
 	{
 		"title": "tritaiz",
-		"etym": "L/PEN/*tritais/fall",
+		"etym": "I/PEN/*tritais/fall",
 		"cat": "v.",
 		"defList": [
 			"fall"
@@ -11541,7 +11541,7 @@
 	},
 	{
 		"title": "triz",
-		"etym": "L/PEN/*tris/be sad",
+		"etym": "I/PEN/*tris/be sad",
 		"cat": "v.",
 		"defList": [
 			"be sad"
@@ -11550,7 +11550,7 @@
 	},
 	{
 		"title": "tu",
-		"etym": "L/PEN/*tu",
+		"etym": "I/PEN/*tu",
 		"cat": "adv.",
 		"defList": [
 			"(negative) not very"
@@ -11559,7 +11559,7 @@
 	},
 	{
 		"title": "tuk",
-		"etym": "L/PEN/*tux/mature horse",
+		"etym": "I/PEN/*tux/mature horse",
 		"cat": "n., 2nd",
 		"defList": [
 			"mature horse (ie. an adult horse of either sex; a stallion or mare)"
@@ -11568,7 +11568,7 @@
 	},
 	{
 		"title": "tukil",
-		"etym": "L/PEN/*tuxil/wind",
+		"etym": "I/PEN/*tuxil/wind",
 		"cat": "n., 4th",
 		"defList": [
 			"wind",
@@ -11633,7 +11633,7 @@
 	},
 	{
 		"title": "tukuz",
-		"etym": "L/PEN/*tuxus/shout",
+		"etym": "I/PEN/*tuxus/shout",
 		"cat": "v.",
 		"defList": [
 			"call",
@@ -11644,7 +11644,7 @@
 	{
 		"title": "tum",
 		"img": "../img/eremoran/tum.png",
-		"etym": "L/PEN/*tum/sky",
+		"etym": "I/PEN/*tum/sky",
 		"cat": "n., 5th",
 		"defList": [
 			"sky",
@@ -11663,7 +11663,7 @@
 	},
 	{
 		"title": "tunz",
-		"etym": "L/PEN/*tuns/plow",
+		"etym": "I/PEN/*tuns/plow",
 		"cat": "v.",
 		"defList": [
 			"plow"
@@ -11724,7 +11724,7 @@
 	},
 	{
 		"title": "tuz",
-		"etym": "L/PEN/*tus/fry",
+		"etym": "I/PEN/*tus/fry",
 		"cat": "v.",
 		"defList": [
 			"fry"
@@ -11741,7 +11741,7 @@
 	},
 	{
 		"title": "u-",
-		"etym": "L/PEN/*u-/un-",
+		"etym": "I/PEN/*u-/un-",
 		"cat": "aff.",
 		"defList": [
 			"(archaic) un-, non-, anti-",
@@ -11759,7 +11759,7 @@
 	},
 	{
 		"title": "ubu",
-		"etym": "L/PEN/*uβu",
+		"etym": "I/PEN/*uβu",
 		"cat": "adv.",
 		"defList": [
 			"[enjoyment/contentment particle]"
@@ -11896,7 +11896,7 @@
 	},
 	{
 		"title": "ukubo",
-		"etym": "L/PEN/*ukubo/throat",
+		"etym": "I/PEN/*ukubo/throat",
 		"cat": "n., 4th",
 		"defList": [
 			"throat"
@@ -11943,7 +11943,7 @@
 	},
 	{
 		"title": "ulu",
-		"etym": "L/PEN/*ulu/blue",
+		"etym": "I/PEN/*ulu/blue",
 		"cat": "adj.",
 		"defList": [
 			"blue",
@@ -12008,7 +12008,7 @@
 	},
 	{
 		"title": "unskaz",
-		"etym": "L/PEN/*unsxas",
+		"etym": "I/PEN/*unsxas",
 		"cat": "v.",
 		"defList": [
 			"touch, feel"
@@ -12016,7 +12016,7 @@
 	},
 	{
 		"title": "unz",
-		"etym": "L/PEN/*uns",
+		"etym": "I/PEN/*uns",
 		"cat": "v.",
 		"defList": [
 			"(intransitive) hang, suspend"
@@ -12050,7 +12050,7 @@
 	},
 	{
 		"title": "ur",
-		"etym": "L/PEN/*ur/so",
+		"etym": "I/PEN/*ur/so",
 		"cat": "adv.",
 		"defList": [
 			"therefore, thus, so, for this/that reason"
@@ -12106,7 +12106,7 @@
 	{
 		"title": "urist",
 		"img": "../img/eremoran/urist.png",
-		"etym": "L/PEN/*urist/dagger",
+		"etym": "I/PEN/*urist/dagger",
 		"cat": "n., 3rd",
 		"defList": [
 			"dagger"
@@ -12124,7 +12124,7 @@
 	},
 	{
 		"title": "urmam",
-		"etym": "L/PEN/*urmam/joke",
+		"etym": "I/PEN/*urmam/joke",
 		"cat": "n., 5th",
 		"defList": [
 			"joke"
@@ -12132,7 +12132,7 @@
 	},
 	{
 		"title": "urz",
-		"etym": "L/PEN/*urs/fold",
+		"etym": "I/PEN/*urs/fold",
 		"cat": "v.",
 		"defList": [
 			"(intransitive) fold"
@@ -12162,7 +12162,7 @@
 	},
 	{
 		"title": "utbak",
-		"etym": "L/PEN/*utba-x/bear",
+		"etym": "I/PEN/*utba-x/bear",
 		"cat": "n., 2nd",
 		"defList": [
 			"bear (sp. ursus thibetanus, and to a lesser extent ursus arctos and melursus ursinus)"
@@ -12206,7 +12206,7 @@
 	},
 	{
 		"title": "zedu",
-		"etym": "L/PEN/*asedu/lip",
+		"etym": "I/PEN/*asedu/lip",
 		"cat": "n., 4th",
 		"defList": [
 			"lip"
@@ -12235,7 +12235,7 @@
 	},
 	{
 		"title": "zên",
-		"etym": "L/PEN/*diên",
+		"etym": "I/PEN/*diên",
 		"cat": "n., 4th",
 		"defList": [
 			"metal"
@@ -12243,7 +12243,7 @@
 	},
 	{
 		"title": "zesti",
-		"etym": "L/PEN/*aseasetis/angled, with partial reduplication of *aseti 'joint'",
+		"etym": "I/PEN/*aseasetis/angled, with partial reduplication of *aseti 'joint'",
 		"cat": "adj., s-triggering",
 		"defList": [
 			"angled",
@@ -12280,7 +12280,7 @@
 	},
 	{
 		"title": "zeti",
-		"etym": "L/PEN/*aseti/joint",
+		"etym": "I/PEN/*aseti/joint",
 		"cat": "n., 4th",
 		"defList": [
 			"joint"
@@ -12297,7 +12297,7 @@
 	},
 	{
 		"title": "zikrômbor",
-		"etym": "L/OER/Zikarônaborre",
+		"etym": "I/OER/Zikarônaborre",
 		"cat": "n., 1st",
 		"defList": [
 			"Goddess of Manners and Disease, she curses those who do not practice good manners with various afflictions. It is never used as a given name. It is used in the interj. ''Zikrômbor berbkaldoz'' (gesundheit; bless you; literally \"May Zikrômbor leave you.\")."
@@ -12316,7 +12316,7 @@
 	},
 	{
 		"title": "zulunk",
-		"etym": "L/PEN/*asulunx/silkworm",
+		"etym": "I/PEN/*asulunx/silkworm",
 		"cat": "n., 2nd",
 		"defList": [
 			"silkworm"
@@ -12335,7 +12335,7 @@
 	},
 	{
 		"title": "zurku",
-		"etym": "L/PEN/*asurgu/bad",
+		"etym": "I/PEN/*asurgu/bad",
 		"cat": "adj.",
 		"defList": [
 			"bad",
