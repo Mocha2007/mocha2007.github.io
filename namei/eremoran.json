@@ -4856,6 +4856,22 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "hipam",
+		"etym": "C/hipz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"robbery"
+		]
+	},
+	{
+		"title": "hipz",
+		"etym": "L/PRE/hīp/steal",
+		"cat": "v.",
+		"defList": [
+			"rob"
+		]
+	},
+	{
 		"title": "hirafêr",
 		"etym": "C/hirak/hêr",
 		"cat": "n., 1st",
@@ -5617,6 +5633,22 @@
 			"moth"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "kaipam",
+		"etym": "C/kaipz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"note"
+		]
+	},
+	{
+		"title": "kaipz",
+		"etym": "L/PRE/kayp/write",
+		"cat": "v.",
+		"defList": [
+			"note, take notes"
+		]
 	},
 	{
 		"title": "kak",
@@ -6486,6 +6518,15 @@
 			"blind person"
 		],
 		"categories": ["person"]
+	},
+	{
+		"title": "krôpz",
+		"etym": "a/krôpêr",
+		"cat": "v.",
+		"defList": [
+			"be blind"
+		],
+		"notes": "back-formation"
 	},
 	{
 		"title": "kru",
