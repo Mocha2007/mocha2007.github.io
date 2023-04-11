@@ -664,7 +664,8 @@
 		"etym": "L/PEN/*aɸkas/go",
 		"cat": "v.",
 		"defList": [
-			"go"
+			"go",
+			"(intransitive) move"
 		]
 	},
 	{
@@ -3053,6 +3054,14 @@
 		]
 	},
 	{
+		"title": "dinafkaz",
+		"etym": "C/din/afkaz",
+		"cat": "v.",
+		"defList": [
+			"go out, venture out, explore"
+		]
+	},
+	{
 		"title": "dinarz",
 		"etym": "C/din/arz",
 		"cat": "v.",
@@ -5389,6 +5398,22 @@
 		"categories": ["female given name", "male given name"]
 	},
 	{
+		"title": "isêz",
+		"etym": "C/iz/-isêz",
+		"cat": "v.",
+		"defList": [
+			"be movable"
+		]
+	},
+	{
+		"title": "iz",
+		"etym": "L/PEN/*is/move",
+		"cat": "v.",
+		"defList": [
+			"(transitive) move"
+		]
+	},
+	{
 		"title": "kabako",
 		"etym": "L/PEN/*kabaxo/rye",
 		"cat": "n., 4th",
@@ -6648,6 +6673,14 @@
 			"(mathematics) circumscribe"
 		],
 		"categories": ["math"]
+	},
+	{
+		"title": "kulafkaz",
+		"etym": "C/kul/afkaz",
+		"cat": "v.",
+		"defList": [
+			"wander"
+		]
 	},
 	{
 		"title": "kulbarm",
@@ -10517,6 +10550,15 @@
 			"calendrical cycle (any kind in general)"
 		],
 		"categories": ["time"]
+	},
+	{
+		"title": "stôdburalz",
+		"etym": "C/stôd/buralz",
+		"cat": "v.",
+		"defList": [
+			"ruin, destroy"
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "stôdidz",
