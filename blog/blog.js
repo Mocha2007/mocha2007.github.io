@@ -362,10 +362,6 @@ const blog = {
 		get initialized(){
 			return Object.keys(this.set).length;
 		},
-		set: {},
-		get size(){
-			return sum(Object.keys(this.set).map(word => this.set[word]));
-		},
 		init(){
 			if (this.initialized)
 				return;
@@ -381,6 +377,35 @@ const blog = {
 			// delete blank
 			delete this.set[''];
 		},
+		/** @param {number} fraction */
+		pareto(fraction = 0.2){
+			this.init();
+			/** @type {number[]} */
+			const vals = Object.keys(this.set).map(x => this.set[x]);
+			return vals
+				.sort((a, b) => a-b)
+				.slice(-Math.round(fraction * vals.length))
+				.reduce((a, b) => a+b, 0)
+				/ this.size;
+		},
+		get paretoIndex(){
+			let upper = 1; // too big
+			let lower = 0; // too small
+			while (1e-10 < upper - lower){
+				const midpoint = (upper + lower)/2;
+				if (1 < midpoint + this.pareto(midpoint))
+					upper = midpoint;
+				else
+					lower = midpoint;
+			}
+			const n = 1/upper; // upper = lower at this point so it doesn't matter
+			return Math.log(n) / Math.log(n-1);
+		},
+		set: {},
+		/** @type {number} */
+		get size(){
+			return sum(Object.keys(this.set).map(word => this.set[word]));
+		},
 		stats(){
 			this.init();
 			console.log('Total: ' + this.size);
@@ -390,6 +415,9 @@ const blog = {
 				.slice(0, 25).forEach((word, i) => {
 					console.log(`#${i+1} ${this.set[word]} - ${word}`);
 				});
+			// eslint-disable-next-line max-len
+			console.log(`Top 20% most common words make up ${Math.round(100*this.pareto())}% total`);
+			console.log('Pareto index: ' + this.paretoIndex);
 		},
 	},
 	current: 0,
