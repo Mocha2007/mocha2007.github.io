@@ -6370,7 +6370,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"step"
-		]
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "krarnok",
@@ -6390,7 +6391,7 @@
 			"step",
 			"(mathematics) translate"
 		],
-		"categories": ["math"]
+		"categories": ["math", "motion"]
 	},
 	{
 		"title": "krifan",
