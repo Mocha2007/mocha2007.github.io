@@ -63,6 +63,14 @@ function gcd(a, b){
 	return b ? gcd(b, mod(a, b)) : a;
 }
 
+// https://stackoverflow.com/a/47147597
+const getAllSubsets = theArray => theArray.reduce(
+	(subsets, value) => subsets.concat(
+		subsets.map(set => [value, ...set])
+	),
+	[[]]
+);
+
 /**
  * returns true if A is a subset of B
  * @param {Set} a
@@ -155,6 +163,26 @@ function nCr(n, k){
 function nPr(n, k){
 	return factorial(n)/factorial(n-k);
 }
+
+// https://stackoverflow.com/a/20871714
+const permutator = inputArr => {
+	const result = [];
+
+	const permute = (arr, m = []) => {
+		if (arr.length === 0)
+			result.push(m);
+		else
+			for (let i = 0; i < arr.length; i++){
+				const curr = arr.slice();
+				const next = curr.splice(i, 1);
+				permute(curr.slice(), m.concat(next));
+			}
+	};
+
+	permute(inputArr);
+
+	return result;
+};
 
 /** NOT seeded like in spacegame, but based off its code... */
 const random = {

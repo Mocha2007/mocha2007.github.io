@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="description" content="NYT Digits Solver">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<script src="../common.js" defer></script>
+<script src="nytDigits.js" defer></script>
+<style>
+.button {
+	background-color: silver;
+	border: 1px solid black;
+	border-radius: 10px;
+	cursor: pointer;
+	padding: 0 5px 0 5px;
+}
+</style>
+<title>NYT Digits Solver</title>
+<textarea id="input"></textarea>
+<textarea id="output"></textarea>
+<br>
+<span class="button" onclick="nytDigits.button();">compute &rarr;</span>
+<br>
+<p>
+	Type the target number, followed by every number option separated by a space.
+	For example:
+</p>
+<q>
+	62 1 2 3 4 5 10
+</q>
+<p>
+	... tries to make 62 using the numbers 1, 2, 3, 4, 5, and 10.
+</p>
+</html>
