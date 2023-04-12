@@ -5,14 +5,14 @@
 const nytDigits = {
 	button(){
 		const i = document.getElementById('input').value.split(' ').map(n => +n);
-		const o = this.solve(i[0], i.slice(1));
+		const o = this.solve(...i);
 		document.getElementById('output').value = `${this.stitch(...o)}`;
 	},
 	/**
 	 * @param {number} target
 	 * @param  {number[]} nset available numbers
 	 */
-	solve(target, nset){
+	solve(target, ...nset){
 		let ops;
 		const solutionSet = getAllSubsets(nset)
 			.find(set => permutator(set).some(arr => ops = this.testSet(target, arr)));
