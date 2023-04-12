@@ -5,9 +5,7 @@
 const nytDigits = {
 	button(){
 		const i = document.getElementById('input').value.split(' ');
-		const target = +i[0];
-		const nset = i.slice(1).map(n => +n);
-		const o = this.solve(target, nset);
+		const o = this.solve(+i[0], i.slice(1).map(n => +n));
 		document.getElementById('output').value = `${this.stitch(...o)}`;
 	},
 	/**
@@ -26,28 +24,17 @@ const nytDigits = {
 	 */
 	testSet(target, set){
 		// we need to test every operation here
-		if (set === undefined || set.length === 0)
-			return;
-		if (set.length === 1)
+		if (set.length < 2)
 			return set[0] === target ? [] : undefined;
 		const ops = this.getOpCombos(set.length - 1);
-		return ops.find(o => {
-			try {
-				// eslint-disable-next-line no-eval
-				return eval(this.stitch(set, o)) === target;
-			}
-			catch (_){
-				return false;
-			}
-		});
+		// eslint-disable-next-line no-eval
+		return ops.find(o => eval(this.stitch(set, o)) === target);
 	},
 	/**
 	 * @param {number} n number of operators
 	 * @returns {string[][]}
 	 */
 	getOpCombos(n){
-		if (n === 0)
-			return [];
 		if (n === 1)
 			return this.ops.map(o => [o]);
 		const o = [];
