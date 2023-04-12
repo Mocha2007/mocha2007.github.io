@@ -1,5 +1,5 @@
 /* exported blog */
-/* global blogData, clamp, loadScript, log, notif, random, sum, title */
+/* global blogData, clamp, copyToClipboard, loadScript, log, notif, random, sum, title */
 
 /** @param {Date} d */
 function formatDate(d){
@@ -359,6 +359,13 @@ class Period {
 
 const blog = {
 	corpus: {
+		csvCopy(){
+			// copy csv to clipboard
+			this.init();
+			const s = Object.keys(this.set).map(word => `${this.set[word]}\t${word}`).join('\n');
+			console.debug('Now quickly go back to the document so I can copy to your clipboard!');
+			setTimeout(() => copyToClipboard(s), 1000);
+		},
 		get initialized(){
 			return Object.keys(this.set).length;
 		},
@@ -412,7 +419,7 @@ const blog = {
 			console.log('Unique: ' + Object.keys(this.set).length);
 			Object.keys(this.set)
 				.sort((a, b) => this.set[b] - this.set[a])
-				.slice(0, 25).forEach((word, i) => {
+				.slice(0).forEach((word, i) => {
 					console.log(`#${i+1} ${this.set[word]} - ${word}`);
 				});
 			// eslint-disable-next-line max-len

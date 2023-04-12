@@ -368,6 +368,12 @@ const cookie = {
 	},
 };
 
+/** @param {string} s */
+function copyToClipboard(s){
+	navigator.clipboard.writeText(s)
+		.then(() => alert('Copied!'), () => alert('Could not copy...'));
+}
+
 /** https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
  * @param {string} name
  * @return {HTMLUnknownElement}

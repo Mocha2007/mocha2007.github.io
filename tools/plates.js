@@ -1,5 +1,5 @@
 /* exported plates */
-/* global createSvgElement */
+/* global createSvgElement, copyToClipboard */
 
 class Plate {
 	constructor(o){
@@ -137,9 +137,7 @@ const plates = {
 		},
 	},
 	export(){
-		const text = JSON.stringify(this.root.export);
-		navigator.clipboard.writeText(text)
-			.then(() => alert('Copied!'), () => alert('Could not copy...'));
+		copyToClipboard(JSON.stringify(this.root.export));
 	},
 	import(){
 		document.getElementById('plates').innerHTML = '';
