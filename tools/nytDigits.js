@@ -4,8 +4,8 @@
 
 const nytDigits = {
 	button(){
-		const i = document.getElementById('input').value.split(' ');
-		const o = this.solve(+i[0], i.slice(1).map(n => +n));
+		const i = document.getElementById('input').value.split(' ').map(n => +n);
+		const o = this.solve(i[0], i.slice(1));
 		document.getElementById('output').value = `${this.stitch(...o)}`;
 	},
 	/**
