@@ -775,4 +775,12 @@ const blogData = [
 	<code>&lt;span class="autoconvert-c">&lt;abbr title="7 in">19 cm&lt;abbr>&lt;span></code>
 	Pretty convenient, eh?
 	`,
+	`
+	@title NYT Digits Solver
+	@date 1681308919560
+	@tags site js math
+	Today the New York Times released a new math puzzle called <a href="https://www.nytimes.com/games/digits">Digits</a>.
+	It was therefore inevitable that I made a tool to solve this puzzle:
+	<a href="../tools/nytDigits.html">nytDigits solver</a>
+	`,
 ];
