@@ -84,6 +84,11 @@ code, .dateContainer, .tagList, *:target {
 .tag:active {
 	opacity: 0.25;
 }
+.tag.greyedOut {
+	color: silver;
+	cursor: auto;
+	opacity: 1;
+}
 .tagList {
 	background-color: #423;
 	border: 2px solid #f8c;

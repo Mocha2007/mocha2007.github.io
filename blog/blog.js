@@ -358,6 +358,16 @@ class Period {
 }
 
 const blog = {
+	button: {
+		/** @returns {HTMLSpanElement} */
+		get next(){
+			return document.getElementById('buttonNext');
+		},
+		/** @returns {HTMLSpanElement} */
+		get prev(){
+			return document.getElementById('buttonPrev');
+		},
+	},
 	corpus: {
 		csvCopy(){
 			// copy csv to clipboard
@@ -448,12 +458,15 @@ const blog = {
 		// try loading error notif
 		loadScript('../tools/notif.js');
 	},
+	get max(){
+		return Blogpost.blogposts.length-1;
+	},
 	/** @param {number} diff amount of posts to move by */
 	move(diff){
-		this.goto(clamp(this.current + diff, 0, Blogpost.blogposts.length-1));
+		this.goto(clamp(this.current + diff, 0, this.max));
 	},
 	random(){
-		this.goto(random.randint(0, Blogpost.blogposts.length-1));
+		this.goto(random.randint(0, this.max));
 	},
 	/** @param {HTMLElement} elem */
 	set(elem){
@@ -465,6 +478,15 @@ const blog = {
 			if (this.debug)
 				notif.catch(e);
 		}
+		// grey out buttons...
+		if (this.current === 0)
+			this.button.prev.classList.add('greyedOut');
+		else
+			this.button.prev.classList.remove('greyedOut');
+		if (this.current === this.max)
+			this.button.next.classList.add('greyedOut');
+		else
+			this.button.next.classList.remove('greyedOut');
 	},
 	get timestamp(){
 		return +new Date();
