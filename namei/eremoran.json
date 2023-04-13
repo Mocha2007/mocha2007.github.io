@@ -1845,6 +1845,15 @@
 		"categories": ["male given name"]
 	},
 	{
+		"title": "bedut",
+		"etym": "I/PEN/*βedut",
+		"cat": "n., 3rd",
+		"defList": [
+			"stew"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "bêfansam",
 		"etym": "C/bêm/hans",
 		"cat": "n., 5th",
@@ -7601,6 +7610,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "luzot",
+		"etym": "I/PEN/*lusot",
+		"cat": "n., 3rd",
+		"defList": [
+			"broth, stock"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "ma",
 		"etym": "I/PEN/*ma/container",
 		"cat": "n., 4th",
@@ -8358,6 +8376,15 @@
 		"categories": ["toponym"]
 	},
 	{
+		"title": "naluz",
+		"etym": "I/PEN/*nalus",
+		"cat": "v.",
+		"defList": [
+			"cook"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "nam",
 		"etym": "C/naz/-m",
 		"cat": "n., 5th",
@@ -8755,6 +8782,15 @@
 			"otter"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "nildat",
+		"etym": "B/nindat/hilda",
+		"cat": "n., 3rd",
+		"defList": [
+			"cake"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "nindat",
@@ -12233,6 +12269,15 @@
 			"(mathematics) obtuse"
 		],
 		"categories": ["math"]
+	},
+	{
+		"title": "usit",
+		"etym": "I/PEN/*usit",
+		"cat": "n., 3rd",
+		"defList": [
+			"soup"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "usiu",
