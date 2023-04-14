@@ -13,10 +13,10 @@ const nytDigits = {
 	 * @param  {number[]} nset available numbers
 	 */
 	solve(target, ...nset){
-		let ops;
-		const solutionSet = getAllSubsets(nset)
-			.find(set => permutator(set).some(arr => ops = this.testSet(target, arr)));
-		return [solutionSet, ops];
+		let a, ops;
+		getAllSubsets(nset)
+			.find(set => permutator(set).some(arr => ops = this.testSet(target, a = arr)));
+		return [a, ops];
 	},
 	/**
 	 * @param {number} target
