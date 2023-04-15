@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="description" content="Shuggerlain Battle Optimizer">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link href="tool.css" type="text/css" rel="stylesheet">
+<script src="../common.js" defer></script>
+<script src="shuggerlainBattle.js" defer></script>
+<title>Shuggerlain Battle Optimizer</title>
+
+<label for="ap">AP</label>
+<input type="number" id="ap" name="ap" min="0" max="4">
+
+<label for="mana">Mana</label>
+<input type="number" id="mana" name="mana" min="0" max="1000">
+
+<br>
+
+<div id="characterContainer"></div>
+
+<br>
+
+<span class="button" onclick="shuggerlain.button();">compute &rarr;</span>
+
+<br>
+
+Best choice:
+<span id="output"></b>
+</html>
