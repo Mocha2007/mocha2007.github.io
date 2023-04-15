@@ -356,3 +356,7 @@ swijinnsilme=n, n=sea god star (neuve)
 šemasilme=n, n=grain star (tata)
 muka=n, n=adze
 gukažu=n, n=footwear, shoe, boot
+kitha=n, n=plucked string instrument
+vu'u=n, n=flute (related to ERE. bu < PEN *βiu)
+tup=v, 4=hit, strike, beat (related to ERE. sifaz)
+tupažu=n, n=drum

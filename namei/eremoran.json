@@ -1964,6 +1964,15 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "bent",
+		"etym": "L/VAZ/weng/tongue",
+		"cat": "n., 3rd",
+		"defList": [
+			"mouthpiece (of an instrument)"
+		],
+		"categories": ["music"]
+	},
+	{
 		"title": "berbaz",
 		"etym": "I/PEN/*berbas/leave",
 		"cat": "v.",
@@ -2757,6 +2766,15 @@
 			"clothing, clothes"
 		],
 		"categories": ["v3_trade"]
+	},
+	{
+		"title": "buut",
+		"etym": "L/VAZ/vu'u/flute",
+		"cat": "n., 3rd",
+		"defList": [
+			"flute, clarinet, pipe"
+		],
+		"categories": ["music"]
 	},
 	{
 		"title": "da",
@@ -3902,6 +3920,14 @@
 			"young"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "elkin",
+		"etym": "I/PEN/*elgin",
+		"cat": "n., 4th",
+		"defList": [
+			"flax"
+		]
 	},
 	{
 		"title": "elkut",
@@ -6197,6 +6223,15 @@
 			"axe"
 		],
 		"categories": ["war"]
+	},
+	{
+		"title": "kitat",
+		"etym": "L/VAZ/kitha",
+		"cat": "n., 3rd",
+		"defList": [
+			"plucked string instrument (eg. guitar, lute, lyre, harp)"
+		],
+		"categories": ["music"]
 	},
 	{
 		"title": "kiu",
@@ -11833,6 +11868,15 @@
 		"defList": [
 			"plow"
 		]
+	},
+	{
+		"title": "tupazut",
+		"etym": "L/VAZ/tupažu/drum",
+		"cat": "n., 3rd",
+		"defList": [
+			"drum"
+		],
+		"categories": ["music"]
 	},
 	{
 		"title": "turôm",
