@@ -21,6 +21,9 @@ class Action {
 	get d_avg(){
 		return (this.d_max + this.d_min)/2;
 	}
+	get string(){
+		return `${this.name} (${this.character.name})`;
+	}
 }
 /** @type {Action[]} */
 Action.actions = [];
@@ -92,8 +95,9 @@ const shuggerlain = {
 		const maxDamage = Math.max(...actionSets.map(aa => sum(aa.map(a => a.d_avg))));
 		/** @type {Action[]} */
 		const bestSet = actionSets.find(aa => maxDamage === sum(aa.map(a => a.d_avg)));
-		const s = bestSet.map(a => a.name).join(' + ');
-		this.elem.output.innerHTML = s;
+		const s = bestSet.map(a => a.string).join(' + ');
+		// eslint-disable-next-line max-len
+		this.elem.output.innerHTML = `${s} (${sum(bestSet.map(a => a.d_min))} - ${sum(bestSet.map(a => a.d_max))} damage, avg. ${maxDamage})`;
 	},
 	elem: {
 		/** @returns {HTMLInputElement} */
