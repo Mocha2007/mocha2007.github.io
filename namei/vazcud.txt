@@ -354,3 +354,5 @@ yafi=n, n=opium
 swijinn=n, m=sea god
 swijinnsilme=n, n=sea god star (neuve)
 šemasilme=n, n=grain star (tata)
+muka=n, n=adze
+gukažu=n, n=footwear, shoe, boot

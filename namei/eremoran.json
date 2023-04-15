@@ -3904,6 +3904,14 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "elkut",
+		"etym": "L/VAZ/elgu/sit",
+		"cat": "n., 3rd",
+		"defList": [
+			"chair, bench, seat"
+		]
+	},
+	{
 		"title": "elmnu",
 		"etym": "L/PRE/ēlmenus/six",
 		"cat": "adj.",
@@ -5331,6 +5339,15 @@
 			"(archaic, non-southern) girl (older form of elaôr)"
 		],
 		"categories": ["age", "person"]
+	},
+	{
+		"title": "im",
+		"etym": "L/VAZ/inb/weather",
+		"cat": "n., 5th",
+		"defList": [
+			"weather"
+		],
+		"categories": ["weather"]
 	},
 	{
 		"title": "immo",
@@ -6807,6 +6824,15 @@
 		]
 	},
 	{
+		"title": "kukazut",
+		"etym": "L/VAZ/gukažu/footwear",
+		"cat": "n., 3rd",
+		"defList": [
+			"boot"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "kukram",
 		"etym": "B/ku/kakram",
 		"cat": "n., 5th",
@@ -8218,6 +8244,24 @@
 			"(of inanimates) old",
 			"(of inanimates) original"
 		]
+	},
+	{
+		"title": "mukamukar",
+		"etym": "R/mukat",
+		"cat": "n., 1st",
+		"defList": [
+			"army"
+		],
+		"categories": ["war"]
+	},
+	{
+		"title": "mukat",
+		"etym": "L/VAZ/adze",
+		"cat": "n., 3rd",
+		"defList": [
+			"weapon"
+		],
+		"categories": ["tool", "war"]
 	},
 	{
 		"title": "mukink",
