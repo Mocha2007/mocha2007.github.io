@@ -33,8 +33,9 @@ class Character {
 	 * @param {string} name
 	 * @param {Action[]} actions
 	 */
-	constructor(name, actions){
+	constructor(name, actions, color = 'white'){
 		this.name = name;
+		this.color = color;
 		this.actions = actions;
 		Character.characters.push(this);
 	}
@@ -45,6 +46,7 @@ class Character {
 	get elem(){
 		const label = document.createElement('label');
 		label.innerHTML = this.name;
+		label.style.color = this.color;
 		const input = document.createElement('input');
 		label.appendChild(input);
 		input.type = 'checkbox';
@@ -71,11 +73,11 @@ new Character('Nulkan', [
 new Character('Dynae', [
 	new Action('Arcane Pulse', 340, 390, 20),
 	new Action('Lightning Bolt', 820, 910, 120, 2),
-]);
+], '#5df');
 new Character('Nadine', [
 	new Action('Cavalry Attack', 320, 380),
 	new Action('Final Stomp', 470, 560, 85),
-]);
+], '#ff7');
 
 const shuggerlain = {
 	/** @param {Action[]} actions */
