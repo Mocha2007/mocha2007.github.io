@@ -40,6 +40,10 @@ const elements = {
 	},
 	/** @type {Array} */
 	raws: [],
+	/** @type {string[]} */
+	testList(wordlist){
+		return wordlist.filter(w => !elements.raws.some(raw => raw.defList.some(def => new RegExp(w, 'gi').test(def))));
+	},
 };
 
 // utilities
