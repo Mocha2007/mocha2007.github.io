@@ -2805,6 +2805,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'h₁nómn̥',
+		meanings: 'name',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'n̥smé',
 		meanings: '1pl',
 		source: 'wiktionary',
