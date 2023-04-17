@@ -82,6 +82,10 @@ new Character('Vex', [
 	new Action('From Above', 270, 330),
 	new Action('Distraction', 0, 0, 55, 0), // 33% chance of causing enemy to miss turn
 ], '#dce');
+new Character('Yraselle', [
+	new Action('Eldrien\'s Rain', 300, 400),
+	new Action('Spirit Arrow', 570, 650, 100),
+], '#9fe');
 
 const shuggerlain = {
 	/** @param {Action[]} actions */
