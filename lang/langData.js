@@ -2685,6 +2685,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'móri',
+		meanings: 'sea',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'mosgʰós',
 		meanings: 'marrow;brain',
 		source: 'wiktionary',
@@ -2990,6 +2996,12 @@ const entryData = [
 		language: 'pie',
 		word: 'tréyes',
 		meanings: 'three',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'trh₂os',
+		meanings: 'PROL',
 		source: 'wiktionary',
 	},
 	{
