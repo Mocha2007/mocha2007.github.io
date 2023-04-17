@@ -2696,6 +2696,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'kʷoti',
+		meanings: 'how many',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'kréwh₂s',
 		meanings: 'blood',
 		source: 'wiktionary',
@@ -2803,6 +2809,12 @@ const entryData = [
 		meanings: '1pl',
 		source: 'wiktionary',
 		notes: 'Accusative.',
+	},
+	{
+		language: 'pie',
+		word: 'nu',
+		meanings: 'now',
+		source: 'wiktionary',
 	},
 	{
 		language: 'pie',
@@ -2962,6 +2974,12 @@ const entryData = [
 		language: 'pie',
 		word: 'pos',
 		meanings: 'POSTE',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'pr̥h₃wós',
+		meanings: 'first',
 		source: 'wiktionary',
 	},
 	{
