@@ -1514,6 +1514,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'snow',
+		categories: 'noun;verb;weather',
+	},
+	{
 		name: 'soul;spirit',
 		categories: 'noun;religion',
 	},
@@ -1645,6 +1649,10 @@ const meaningData = [
 	{
 		name: 'wing',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'winter',
+		categories: 'noun;time',
 	},
 	{
 		name: 'woman;lady',
@@ -2247,6 +2255,12 @@ const entryData = [
 		word: 'ǵʰésōr',
 		meanings: 'hand',
 		etymology: 'pie:ǵʰes-;pie:-ōr',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'ǵʰéyōm',
+		meanings: 'winter;year;snow',
 		source: 'wiktionary',
 	},
 	{
@@ -3159,6 +3173,18 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'werdʰh₁om',
+		meanings: 'word',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'wétos',
+		meanings: 'year',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'wéy',
 		meanings: '1pl',
 		source: 'wiktionary',
@@ -3186,6 +3212,12 @@ const entryData = [
 		language: 'pie',
 		word: 'yókʷr̥',
 		meanings: 'liver',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'yóh₁r̥',
+		meanings: 'year',
 		source: 'wiktionary',
 	},
 	{
