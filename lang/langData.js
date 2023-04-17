@@ -1216,6 +1216,10 @@ const meaningData = [
 		categories: 'noun;anatomy',
 	},
 	{
+		name: 'heron',
+		categories: 'noun;animal',
+	},
+	{
 		name: 'hill',
 		categories: 'noun;landform',
 	},
@@ -1998,6 +2002,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'bʰérǵʰos',
+		meanings: 'mountain',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: '-bʰi',
 		meanings: 'INS',
 		source: 'wiktionary',
@@ -2093,6 +2103,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'dṓm',
+		meanings: 'house',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'dóws',
 		meanings: 'arm',
 		source: 'wiktionary',
@@ -2173,6 +2189,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'gʷḗn',
+		meanings: 'woman',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'ǵénus',
 		meanings: 'cheek;jaw;chin',
 		source: 'wiktionary',
@@ -2187,6 +2209,24 @@ const entryData = [
 		language: 'pie',
 		word: 'gʷerh₃-',
 		meanings: 'swallow;devour;eat',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'gerh₂ḗn',
+		meanings: 'crane;heron',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'gerh₂ōws',
+		meanings: 'crane',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'ǵʰh₂éns',
+		meanings: 'goose',
 		source: 'wiktionary',
 	},
 	{
@@ -2324,6 +2364,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'h₂ékʷeh₂',
+		meanings: 'water',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'h₁én',
 		meanings: 'INE',
 		source: 'wiktionary',
@@ -2371,6 +2417,12 @@ const entryData = [
 		word: 'h₂entíos',
 		meanings: 'front;forehead',
 		etymology: 'pie:h₂ent-',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'h₂ep-',
+		meanings: 'water',
 		source: 'wiktionary',
 	},
 	{
@@ -2563,6 +2615,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'ḱeh₂s-',
+		meanings: 'hare',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'ḱel-',
 		meanings: 'cover',
 		source: 'wiktionary',
@@ -2626,6 +2684,12 @@ const entryData = [
 		language: 'pie',
 		word: 'kréwh₂s',
 		meanings: 'blood',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'ḱruH-',
+		meanings: 'leg',
 		source: 'wiktionary',
 	},
 	{
@@ -2831,6 +2895,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'peysḱ-',
+		meanings: 'fish',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'ph₂tḗr',
 		meanings: 'father',
 		source: 'wiktionary',
@@ -2852,6 +2922,12 @@ const entryData = [
 		word: 'pléwmō',
 		meanings: 'lung',
 		etymology: 'pie:plew-;pie:-mō',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'pl̥h₂(e)meh₂',
+		meanings: 'palm.hand',
 		source: 'wiktionary',
 	},
 	{
@@ -3085,6 +3161,18 @@ const entryData = [
 		language: 'pie',
 		word: 'wéy',
 		meanings: '1pl',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'wódr̥',
+		meanings: 'water',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'wréh₂ds',
+		meanings: 'root',
 		source: 'wiktionary',
 	},
 	{
