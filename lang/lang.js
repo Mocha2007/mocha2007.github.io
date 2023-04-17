@@ -649,6 +649,9 @@ class Comparison extends Clickable {
 		div.appendChild(table);
 		// table header
 		const tr = document.createElement('tr');
+		const th0 = document.createElement('th');
+		th0.innerHTML = 'Gloss';
+		tr.appendChild(th0);
 		const th1 = document.createElement('th');
 		th1.appendChild(this.a.span);
 		tr.appendChild(th1);
@@ -661,6 +664,9 @@ class Comparison extends Clickable {
 			.sort((a, b) => a.name < b.name ? -1 : 1)
 			.forEach(e => {
 				const row = document.createElement('tr');
+				const td0 = document.createElement('td');
+				td0.innerHTML = e.meanings.map(m => m.name).join(', ');
+				row.appendChild(td0);
 				const td1 = document.createElement('td');
 				td1.appendChild(e.span);
 				row.appendChild(td1);
