@@ -310,6 +310,22 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "abbarsêm",
+		"etym": "C/abbarz/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"rescue"
+		]
+	},
+	{
+		"title": "abbarz",
+		"etym": "C/ad/barz",
+		"cat": "v.",
+		"defList": [
+			"save, rescue"
+		]
+	},
+	{
 		"title": "abbôz",
 		"etym": "C/ad/bôz",
 		"cat": "v.",
@@ -8153,6 +8169,14 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "mofanuz",
+		"etym": "C/mo/hanuz",
+		"cat": "v.",
+		"defList": [
+			"catch"
+		]
+	},
+	{
 		"title": "mok",
 		"etym": "C/mo/ko",
 		"cat": "adv., conj.",
@@ -8216,6 +8240,15 @@
 		"defList": [
 			"who"
 		]
+	},
+	{
+		"title": "monumz",
+		"etym": "C/mo/numz",
+		"cat": "v.",
+		"defList": [
+			"pursue, chase"
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "monz",
@@ -12154,6 +12187,15 @@
 			"be unbounded, be boundless"
 		],
 		"categories": ["extent", "math"]
+	},
+	{
+		"title": "ukufanuz",
+		"etym": "C/uku/hanuz",
+		"cat": "v.",
+		"defList": [
+			"flee, escape (with causative: unleash)"
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "ukumu",
