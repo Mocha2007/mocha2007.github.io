@@ -78,6 +78,10 @@ new Character('Nadine', [
 	new Action('Cavalry Attack', 320, 380),
 	new Action('Final Stomp', 470, 560, 85),
 ], '#ff7');
+new Character('Vex', [
+	new Action('From Above', 270, 330),
+	new Action('Distraction', 0, 0, 55, 0), // 33% chance of causing enemy to miss turn
+], '#dce');
 
 const shuggerlain = {
 	/** @param {Action[]} actions */
