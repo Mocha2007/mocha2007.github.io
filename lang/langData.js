@@ -516,6 +516,10 @@ const meaningData = [
 		categories: 'inflectional',
 	},
 	{
+		name: 'ANTE;before',
+		categories: 'inflectional',
+	},
+	{
 		name: 'ASS',
 		categories: 'inflectional',
 	},
@@ -568,6 +572,10 @@ const meaningData = [
 		categories: 'inflectional',
 	},
 	{
+		name: 'ITRT;between;among',
+		categories: 'inflectional',
+	},
+	{
 		name: 'LAT;to',
 		categories: 'inflectional',
 	},
@@ -592,6 +600,10 @@ const meaningData = [
 		categories: 'inflectional',
 	},
 	{
+		name: 'POSTE;after',
+		categories: 'inflectional',
+	},
+	{
 		name: 'PROH',
 		categories: 'inflectional',
 	},
@@ -604,7 +616,11 @@ const meaningData = [
 		categories: 'inflectional',
 	},
 	{
-		name: 'SUPE;on',
+		name: 'SUBE;below;under;beneath',
+		categories: 'inflectional',
+	},
+	{
+		name: 'SUPE;on;above',
 		categories: 'inflectional',
 	},
 	{
@@ -1970,6 +1986,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'bʰeǵʰ',
+		meanings: 'ABE',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'bʰeh₂ǵʰús',
 		meanings: 'arm',
 		source: 'wiktionary',
@@ -2005,6 +2027,12 @@ const entryData = [
 		word: 'dáḱru',
 		meanings: 'tear.eye',
 		etymology: 'pie:derḱ-;pie:h₂éḱru',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'de',
+		meanings: 'LAT',
 		source: 'wiktionary',
 	},
 	{
@@ -2055,6 +2083,12 @@ const entryData = [
 		language: 'pie',
 		word: 'dn̥ǵʰwéh₂s',
 		meanings: 'tongue',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'do',
+		meanings: 'LAT',
 		source: 'wiktionary',
 	},
 	{
@@ -2296,6 +2330,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'h₂en',
+		meanings: 'SUPE',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'h₁engʷ-',
 		meanings: 'burn;fire',
 		source: 'wiktionary',
@@ -2310,6 +2350,13 @@ const entryData = [
 		language: 'pie',
 		word: 'h₂ent-',
 		meanings: 'face;forehead;front',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'h₂enti',
+		meanings: 'ANTE',
+		etymology: 'pie:h₂ent-;pie:-i',
 		source: 'wiktionary',
 	},
 	{
@@ -2331,6 +2378,12 @@ const entryData = [
 		word: 'h₁epi',
 		meanings: 'on;at;near',
 		etymology: 'pie:h₁eps',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'h₁epo',
+		meanings: 'ABL',
 		source: 'wiktionary',
 	},
 	{
@@ -2559,6 +2612,12 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: 'kom',
+		meanings: 'COM',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
 		word: 'ḱoph₂ós',
 		meanings: 'hoof',
 		source: 'wiktionary',
@@ -2573,6 +2632,12 @@ const entryData = [
 		language: 'pie',
 		word: '-m',
 		meanings: 'ACC',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'medʰi',
+		meanings: 'ITRT',
 		source: 'wiktionary',
 	},
 	{
@@ -2640,6 +2705,12 @@ const entryData = [
 		language: 'pie',
 		word: 'néh₂s',
 		meanings: 'nose',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'ni',
+		meanings: 'SUBE',
 		source: 'wiktionary',
 	},
 	{
@@ -2789,6 +2860,12 @@ const entryData = [
 		word: 'pornóm',
 		meanings: 'feather;wing;fern;leaf',
 		etymology: 'pie:p(t)erH-',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'pos',
+		meanings: 'POSTE',
 		source: 'wiktionary',
 	},
 	{
@@ -2959,6 +3036,12 @@ const entryData = [
 		language: 'pie',
 		word: 'uksḗn',
 		meanings: 'bull',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: 'up',
+		meanings: 'SUBE',
 		source: 'wiktionary',
 	},
 	{
