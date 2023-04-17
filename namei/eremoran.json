@@ -4346,6 +4346,14 @@
 		]
 	},
 	{
+		"title": "haifkaz",
+		"etym": "B/hai/afkaz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) spread"
+		]
+	},
+	{
 		"title": "haisêm",
 		"etym": "C/hai/-isêm",
 		"cat": "n., 5th",
@@ -6525,6 +6533,15 @@
 		]
 	},
 	{
+		"title": "krakudam",
+		"etym": "C/kraz/kudam",
+		"cat": "n., 5th",
+		"defList": [
+			"destination"
+		],
+		"categories": ["motion"]
+	},
+	{
 		"title": "kram",
 		"etym": "C/kraz/-m",
 		"cat": "n., 5th",
@@ -6775,7 +6792,7 @@
 		"defList": [
 			"end",
 			"border, rim, brim",
-			"limit",
+			"limit, limitation, restraint, constraint",
 			"sum, total"
 		],
 		"categories": ["extent", "math"]
@@ -6798,6 +6815,14 @@
 			"(intransitive) measure"
 		],
 		"categories": ["extent", "math"]
+	},
+	{
+		"title": "kudat",
+		"etym": "C/kudam/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"restraints, bonds, shackles"
+		]
 	},
 	{
 		"title": "kudim",
@@ -9290,6 +9315,15 @@
 			"cross"
 		],
 		"notes": "the first component refers to the shape of the glyph"
+	},
+	{
+		"title": "ôfimbuz",
+		"etym": "C/ôfimbum/-z",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) cross"
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "ok",
@@ -12138,6 +12172,15 @@
 			"be cramped"
 		],
 		"categories": ["extent"]
+	},
+	{
+		"title": "ukusifaz",
+		"etym": "C/uku/sifaz",
+		"cat": "v.",
+		"defList": [
+			"miss (eg. a target)"
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "ukuzesti",
