@@ -536,6 +536,10 @@ const meaningData = [
 		categories: 'inflectional',
 	},
 	{
+		name: 'DU',
+		categories: 'inflectional',
+	},
+	{
 		name: 'ELA;out',
 		categories: 'inflectional',
 	},
@@ -1972,6 +1976,13 @@ const entryData = [
 	},
 	{
 		language: 'pie',
+		word: '-bʰi',
+		meanings: 'INS',
+		source: 'wiktionary',
+		notes: 'common suffix',
+	},
+	{
+		language: 'pie',
 		word: 'bʰleh₃-',
 		meanings: 'bloom;flower',
 		source: 'wiktionary',
@@ -2194,6 +2205,13 @@ const entryData = [
 		meanings: 'heavy',
 		etymology: 'pie:gʷreh₂-;pie:-us',
 		source: 'wiktionary',
+	},
+	{
+		language: 'pie',
+		word: '-h₁',
+		meanings: 'DU;INS',
+		source: 'wiktionary',
+		notes: 'common suffix',
 	},
 	{
 		language: 'pie',
