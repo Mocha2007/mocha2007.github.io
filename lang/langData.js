@@ -8268,5 +8268,7 @@ const entryData = [
 	},
 ];
 /* samples
-new Comparison(Language.list[23], Language.list[13]).span.click()
+new Comparison(Language.list[23], Language.list[13]).span.click();
+PJAP AND PIE
+new Comparison(Language.list[16], Language.list[11]).span.click();
 */
