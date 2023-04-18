@@ -1,3 +1,0 @@
-bungus=n=a disease of the test;two diseases of the test;three muahahah
-foo=adv=bar
-bing=v=bong

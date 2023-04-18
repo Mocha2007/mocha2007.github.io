@@ -2382,6 +2382,14 @@
 		]
 	},
 	{
+		"title": "binun",
+		"etym": "L/MUR/vinyun/river",
+		"cat": "n., 4th",
+		"defList": [
+			"arroyo, wash"
+		]
+	},
+	{
 		"title": "bisu",
 		"etym": "I/PEN/*βiʃu/wool",
 		"cat": "adj., n., 4th",
@@ -4731,6 +4739,22 @@
 		]
 	},
 	{
+		"title": "hekô",
+		"etym": "I/PEN/*segôb",
+		"cat": "n., 4th",
+		"defList": [
+			"downpour (heavy rain)"
+		]
+	},
+	{
+		"title": "hekôz",
+		"etym": "C/hekô/-z",
+		"cat": "v.",
+		"defList": [
+			"downpour (heavy rain)"
+		]
+	},
+	{
 		"title": "hekz",
 		"etym": "I/PEN/*ɸeks/curse",
 		"cat": "v.",
@@ -4925,6 +4949,16 @@
 			"hard, firm, rigid (of a material)"
 		],
 		"categories": ["extent"]
+	},
+	{
+		"title": "himak",
+		"etym": "I/PEN/*ɸima-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"cobra",
+			"(archaic) snake"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "himaz",
@@ -7265,6 +7299,15 @@
 		"defList": [
 			"wash"
 		]
+	},
+	{
+		"title": "kunz",
+		"etym": "C/kun/-z",
+		"cat": "v.",
+		"defList": [
+			"snow"
+		],
+		"categories": ["weather"]
 	},
 	{
 		"title": "kuramat",

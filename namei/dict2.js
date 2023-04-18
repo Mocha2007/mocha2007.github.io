@@ -197,6 +197,9 @@ etymElement.languages = {
 	IRI: {
 		name: 'Irikar',
 	},
+	MUR: {
+		name: 'Muran',
+	},
 	NEK: {
 		name: 'Nekaŋ',
 	},
