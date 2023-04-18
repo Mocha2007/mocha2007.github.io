@@ -7705,14 +7705,6 @@
 		"categories": ["metal"]
 	},
 	{
-		"title": "lumaz",
-		"etym": "I/PEN/*lumas",
-		"cat": "v.",
-		"defList": [
-			"(transitive) swing"
-		]
-	},
-	{
 		"title": "luksa",
 		"etym": "I/PEN/*luksa/neck",
 		"cat": "n., 4th",
@@ -7720,6 +7712,14 @@
 			"neck"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "lumaz",
+		"etym": "I/PEN/*lumas",
+		"cat": "v.",
+		"defList": [
+			"(transitive) swing"
+		]
 	},
 	{
 		"title": "lusik",
