@@ -716,6 +716,14 @@
 		"categories": ["motion"]
 	},
 	{
+		"title": "afkelaz",
+		"etym": "D/afkaz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) wiggle, vibrate, oscillate"
+		]
+	},
+	{
 		"title": "afskiz",
 		"etym": "B/afkaz/skiz",
 		"cat": "v.",
@@ -4032,6 +4040,14 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "enuz",
+		"etym": "B/enz/nuz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) turn upside-down, be upside-down"
+		]
+	},
+	{
 		"title": "enz",
 		"etym": "C/endu/-z",
 		"cat": "post., adv.",
@@ -4811,6 +4827,22 @@
 		"cat": "n., 4th",
 		"defList": [
 			"hole"
+		]
+	},
+	{
+		"title": "hifi",
+		"etym": "O",
+		"cat": "interj.",
+		"defList": [
+			"[flutter noise]"
+		]
+	},
+	{
+		"title": "hifiz",
+		"etym": "C/hifi/-z",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) flutter (like fabric in wind)"
 		]
 	},
 	{
@@ -7671,6 +7703,14 @@
 			"galena"
 		],
 		"categories": ["metal"]
+	},
+	{
+		"title": "lumaz",
+		"etym": "I/PEN/*lumas",
+		"cat": "v.",
+		"defList": [
+			"(transitive) swing"
+		]
 	},
 	{
 		"title": "luksa",
