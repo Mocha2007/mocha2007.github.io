@@ -3064,6 +3064,14 @@
 		]
 	},
 	{
+		"title": "dasisêm",
+		"etym": "C/dasu/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"speed"
+		]
+	},
+	{
 		"title": "dasu",
 		"etym": "I/PEN/*daʃu/fast",
 		"cat": "adj.",
@@ -5583,6 +5591,14 @@
 		"defList": [
 			"redo",
 			"renovate, renew"
+		]
+	},
+	{
+		"title": "itkumz",
+		"etym": "C/it/kumz",
+		"cat": "v.",
+		"defList": [
+			"bounce"
 		]
 	},
 	{
@@ -9280,6 +9296,15 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "nusifaz",
+		"etym": "B/nuz/sifaz",
+		"cat": "v.",
+		"defList": [
+			"tumble, trip down, be knocked down"
+		],
+		"categories": ["motion"]
+	},
+	{
 		"title": "nuu",
 		"etym": "L/PRE/nuh/nude",
 		"cat": "adj.",
@@ -9315,6 +9340,15 @@
 		"categories": ["toponym"]
 	},
 	{
+		"title": "nuzkumz",
+		"etym": "C/nuz/kumz",
+		"cat": "v.",
+		"defList": [
+			"land (from a fall or jump)"
+		],
+		"categories": ["motion"]
+	},
+	{
 		"title": "nuzkunz",
 		"etym": "C/nuz/kunz",
 		"cat": "v.",
@@ -9322,6 +9356,15 @@
 			"(intransitive) decrease, reduce"
 		],
 		"categories": ["extent", "math"]
+	},
+	{
+		"title": "nuznobz",
+		"etym": "C/nuz/nobz",
+		"cat": "v.",
+		"defList": [
+			"descend, climb down"
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "ô",
