@@ -86,6 +86,10 @@ new Character('Yraselle', [
 	new Action('Eldrien\'s Rain', 300, 400),
 	new Action('Spirit Arrow', 570, 650, 100),
 ], '#9fe');
+new Character('Atzi', [
+	new Action('Impale Them', 300, 350),
+	new Action('Fernia\'s Justice', 0, 0, 50), // "Defends and reflects boosted damage"
+], '#4d3');
 
 const shuggerlain = {
 	/** @param {Action[]} actions */
