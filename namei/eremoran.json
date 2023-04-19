@@ -10920,15 +10920,6 @@
 		"categories": ["time"]
 	},
 	{
-		"title": "slabz",
-		"etym": "I/PEN/*slaβs",
-		"cat": "v.",
-		"defList": [
-			"squat"
-		],
-		"categories": ["motion"]
-	},
-	{
 		"title": "sokum",
 		"etym": "C/sokuz/-m",
 		"cat": "n., 5th",
@@ -12719,6 +12710,15 @@
 			"goodnight",
 			"scatter!, hide!"
 		]
+	},
+	{
+		"title": "zabz",
+		"etym": "I/PEN/*slaβs",
+		"cat": "v.",
+		"defList": [
+			"squat"
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "zedu",
