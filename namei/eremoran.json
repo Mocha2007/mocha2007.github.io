@@ -453,6 +453,15 @@
 		]
 	},
 	{
+		"title": "abuz",
+		"etym": "C/abum/-z",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) circle"
+		],
+		"categories": ["motion"]
+	},
+	{
 		"title": "abzalk",
 		"etym": "I/PEN/*abdialx/eel",
 		"cat": "n., 2nd",
@@ -10911,6 +10920,33 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "slabz",
+		"etym": "I/PEN/*slaβs",
+		"cat": "v.",
+		"defList": [
+			"squat"
+		],
+		"categories": ["motion"]
+	},
+	{
+		"title": "sokum",
+		"etym": "C/sokuz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"pace"
+		],
+		"categories": ["motion"]
+	},
+	{
+		"title": "sokuz",
+		"etym": "L/VAZ/sokhu/walk",
+		"cat": "v.",
+		"defList": [
+			"march, parade"
+		],
+		"categories": ["motion", "war"]
+	},
+	{
 		"title": "som",
 		"etym": "C/sou/-m",
 		"cat": "n., 5th",
@@ -11282,6 +11318,15 @@
 			"separate",
 			"distinguish"
 		]
+	},
+	{
+		"title": "sukuz",
+		"etym": "L/NUZ/suxu/walk",
+		"cat": "v.",
+		"defList": [
+			"stroll, promenade"
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "sukz",
