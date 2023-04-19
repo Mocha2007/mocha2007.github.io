@@ -3924,6 +3924,14 @@
 		"categories": ["family", "person"]
 	},
 	{
+		"title": "eket",
+		"etym": "I/PEN/*eget",
+		"cat": "n., 3rd",
+		"defList": [
+			"sled"
+		]
+	},
+	{
 		"title": "ela",
 		"etym": "I/PEN/*elas/little",
 		"cat": "adj., s-triggering",
@@ -7653,6 +7661,15 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "limaz",
+		"etym": "I/PEN/*limas",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) swing"
+		],
+		"categories": ["motion"]
+	},
+	{
 		"title": "linku",
 		"etym": "I/PEN/*lingu/cyan",
 		"cat": "adj.",
@@ -8118,6 +8135,30 @@
 		"cat": "v.",
 		"defList": [
 			"house, store"
+		]
+	},
+	{
+		"title": "mazrakut",
+		"etym": "A/mazrat",
+		"cat": "n., 3rd",
+		"defList": [
+			"carriage"
+		]
+	},
+	{
+		"title": "mazrat",
+		"etym": "I/PEN/*masrat",
+		"cat": "n., 3rd",
+		"defList": [
+			"cart, wheelbarrow"
+		]
+	},
+	{
+		"title": "mazreket",
+		"etym": "B/mazrakut/eket",
+		"cat": "n., 3rd",
+		"defList": [
+			"sleigh"
 		]
 	},
 	{
@@ -9343,7 +9384,7 @@
 		"etym": "B/nuz/sifaz",
 		"cat": "v.",
 		"defList": [
-			"tumble, trip down, be knocked down"
+			"tumble, stumble, trip down, be knocked down"
 		],
 		"categories": ["motion"]
 	},
