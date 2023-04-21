@@ -1478,6 +1478,10 @@ const meaningData = [
 		categories: 'noun;religion',
 	},
 	{
+		name: 'sand',
+		categories: 'noun',
+	},
+	{
 		name: 'scarlet.fever',
 		categories: 'noun;disease',
 	},
@@ -1512,6 +1516,10 @@ const meaningData = [
 	{
 		name: 'skin',
 		categories: 'noun;anatomy',
+	},
+	{
+		name: 'smoke',
+		categories: 'noun',
 	},
 	{
 		name: 'snow',
@@ -6715,6 +6723,19 @@ const entryData = [
 	},
 	{
 		language: 'pst',
+		word: 'kǝw',
+		meanings: 'smoke',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'ley',
+		meanings: 'earth',
+		source: 'wiktionary',
+		note: 'poss. *lǝy',
+	},
+	{
+		language: 'pst',
 		word: 'l/bŋa',
 		meanings: 'five',
 		source: 'wiktionary',
@@ -6727,8 +6748,21 @@ const entryData = [
 	},
 	{
 		language: 'pst',
+		word: 'luŋ',
+		meanings: 'stone',
+		source: 'wiktionary',
+		note: 'poss. *luk',
+	},
+	{
+		language: 'pst',
 		word: 'ma',
 		meanings: 'NEG',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'mey',
+		meanings: 'fire',
 		source: 'wiktionary',
 	},
 	{
@@ -6766,6 +6800,12 @@ const entryData = [
 		word: 'qhā-',
 		meanings: 'what',
 		source: 'starling',
+	},
+	{
+		language: 'pst',
+		word: 'sa',
+		meanings: 'sand',
+		source: 'wiktionary',
 	},
 	{
 		language: 'pst',
