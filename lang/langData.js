@@ -671,12 +671,18 @@ const meaningData = [
 		hypernyms: '2',
 	},
 	{
+		name: '3',
+		categories: 'pronoun',
+	},
+	{
 		name: '3s',
 		categories: 'pronoun',
+		hypernyms: '2',
 	},
 	{
 		name: '3pl;they',
 		categories: 'pronoun',
+		hypernyms: '2',
 	},
 	{
 		name: 'REFL',
@@ -6896,6 +6902,18 @@ const entryData = [
 		language: 'pst',
 		word: 'sriŋ',
 		meanings: 'live;alive;green;raw;give.birth',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'sr(j)ak',
+		meanings: 'day',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'su',
+		meanings: '3;who',
 		source: 'wiktionary',
 	},
 	{
