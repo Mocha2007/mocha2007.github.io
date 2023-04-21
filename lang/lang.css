@@ -3,7 +3,7 @@ html {
 	color: silver;
 }
 .button, .clickable {
-	color: blue;
+	color: #08f;
 	cursor: pointer;
 	margin-right: 10px;
 }
