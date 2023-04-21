@@ -1596,6 +1596,14 @@
 		"categories": ["intensity"]
 	},
 	{
+		"title": "banaz",
+		"etym": "I/PEN/*βanas",
+		"cat": "v.",
+		"defList": [
+			"slip"
+		]
+	},
+	{
 		"title": "banbanz",
 		"etym": "R/banz",
 		"cat": "v.",
@@ -4464,6 +4472,14 @@
 		]
 	},
 	{
+		"title": "halaz",
+		"etym": "I/PEN/*salas",
+		"cat": "v.",
+		"defList": [
+			"slide"
+		]
+	},
+	{
 		"title": "halbefôz",
 		"etym": "C/hal/befôz",
 		"cat": "v.",
@@ -4720,6 +4736,14 @@
 			"loom"
 		],
 		"categories": ["tool"]
+	},
+	{
+		"title": "haz",
+		"etym": "I/PEN/*ɸas",
+		"cat": "v.",
+		"defList": [
+			"stretch"
+		]
 	},
 	{
 		"title": "hêan",
@@ -5175,6 +5199,15 @@
 		"defList": [
 			"air"
 		]
+	},
+	{
+		"title": "hubiz",
+		"etym": "I/PEN/*ɸubis",
+		"cat": "v.",
+		"defList": [
+			"slink (like a worm)"
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "hubska",
@@ -7256,6 +7289,14 @@
 			"root vegetable (esp. radishes, but also carrots and parsnips)"
 		],
 		"categories": ["plant"]
+	},
+	{
+		"title": "kunaz",
+		"etym": "I/PEN/*gunas",
+		"cat": "v.",
+		"defList": [
+			"squirm"
+		]
 	},
 	{
 		"title": "kunk",
