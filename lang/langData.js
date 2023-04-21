@@ -6663,14 +6663,44 @@ const entryData = [
 	},
 	{
 		language: 'pst',
+		word: 'dbus',
+		meanings: 'head',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'dkʷəjn',
+		meanings: 'dog',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
 		word: 'dkruk',
 		meanings: 'six',
 		source: 'wiktionary',
 	},
 	{
 		language: 'pst',
+		word: 'dŋa',
+		meanings: 'tooth',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
 		word: 'd/skəw',
 		meanings: 'nine',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'duŋ',
+		meanings: 'navel',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'dwam',
+		meanings: 'bear.n',
 		source: 'wiktionary',
 	},
 	{
@@ -6729,7 +6759,13 @@ const entryData = [
 	},
 	{
 		language: 'pst',
-		word: 'ley',
+		word: 'la',
+		meanings: 'moon',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'lej',
 		meanings: 'earth',
 		source: 'wiktionary',
 		note: 'poss. *lǝy',
@@ -6761,7 +6797,7 @@ const entryData = [
 	},
 	{
 		language: 'pst',
-		word: 'mey',
+		word: 'mej',
 		meanings: 'fire',
 		source: 'wiktionary',
 	},
@@ -6787,6 +6823,12 @@ const entryData = [
 		language: 'pst',
 		word: 'naŋ',
 		meanings: '2s',
+		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'nǝj',
+		meanings: 'sun',
 		source: 'wiktionary',
 	},
 	{
@@ -6818,6 +6860,13 @@ const entryData = [
 		word: 'sg(r)u',
 		meanings: 'elbow;cubit',
 		source: 'wiktionary',
+	},
+	{
+		language: 'pst',
+		word: 'slaj',
+		meanings: 'tongue',
+		source: 'wiktionary',
+		note: 'could be *slej',
 	},
 	{
 		language: 'pst',
