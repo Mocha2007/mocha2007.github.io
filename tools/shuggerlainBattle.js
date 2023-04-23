@@ -90,6 +90,7 @@ new Character('Atzi', [
 	new Action('Impale Them', 300, 350),
 	new Action('Fernia\'s Justice', 0, 0, 50), // "Defends and reflects boosted damage"
 ], '#4d3');
+new Character('Night Queen', [], '#a09');
 
 const shuggerlain = {
 	/** @param {Action[]} actions */
