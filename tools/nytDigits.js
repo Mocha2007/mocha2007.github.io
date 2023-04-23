@@ -42,7 +42,7 @@ const nytDigits = {
 			.forEach(ops => this.getOpCombos(1).forEach(o_ => o.push(ops.concat(o_))));
 		return o;
 	},
-	ops: '+-*/'.split(''),
+	ops: '*+-/'.split(''),
 	/**
 	 * @param {Array} a1 outside set
 	 * @param {Array} a2 inside set
