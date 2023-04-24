@@ -2744,6 +2744,12 @@ const lifeData = [
 		'parent': 'musaceae',
 		'range': 'as',
 		'desc': 'Banana',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 11,
+				'ploidy': 3,
+			},
+		},
 	},
 	{
 		'name': 'musaceae',
