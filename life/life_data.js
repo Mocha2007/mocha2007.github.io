@@ -2123,6 +2123,28 @@ const lifeData = [
 		'age': 411,
 	},
 	{
+		'name': 'hippopotamidae',
+		'rank': 'family',
+		'parent': 'artiodactyla',
+		'range': 'af',
+		'age': 7.4,
+	},
+	{
+		'name': 'hippopotamus',
+		'rank': 'genus',
+		'parent': 'hippopotamidae',
+		'range': 'af',
+		'age': 5,
+	},
+	{
+		'name': 'hippopotamus amphibius',
+		'rank': 'species',
+		'parent': 'hippopotamus',
+		'range': 'af',
+		'age': 2,
+		'desc': 'Hippo',
+	},
+	{
 		'name': 'hippotigris',
 		'rank': 'subgenus',
 		'parent': 'equus',
