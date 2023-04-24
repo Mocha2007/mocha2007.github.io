@@ -2335,7 +2335,7 @@ const lifeData = [
 		'name': 'hyracoidea',
 		'rank': 'order',
 		'parent': 'paenungulata',
-		'range': 'ow', // AF + middle east
+		'range': 'af;me', // AF + middle east
 		'desc': 'Hyrax',
 	},
 	// I

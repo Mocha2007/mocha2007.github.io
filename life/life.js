@@ -18,6 +18,7 @@ const regions = {
 			'AF': 'Africa',
 			'EA': 'Eurasia',
 				'AS': 'Asia',
+					'ME': 'Middle East', // excl. Africa
 				'EU': 'Europe',
 		// alternatively
 		'NH': 'Northern Hemisphere',
@@ -144,6 +145,16 @@ function toggle(){
 	);
 }
 
+/** @param {string} s */
+function rangeElem(s){
+	const rangeAbbrs = s.toUpperCase().split(';');
+	const range = document.createElement('abbr');
+	range.classList.add('range');
+	range.title = rangeAbbrs.map(r => regions[r]).join(', ');
+	range.innerHTML = rangeAbbrs.join(' ');
+	return range;
+}
+
 // main program
 
 function main(){
@@ -190,13 +201,8 @@ function main(){
 		title.appendChild(a);
 		// range
 		if (lifeData[i].hasOwnProperty('range')){
-			const rangeAbbr = lifeData[i].range.toUpperCase();
 			title.innerHTML += ' ';
-			const range = document.createElement('abbr');
-			range.classList.add('range');
-			range.title = regions[rangeAbbr];
-			range.innerHTML = rangeAbbr;
-			title.appendChild(range);
+			title.appendChild(rangeElem(lifeData[i].range));
 		}
 		// age
 		if (lifeData[i].hasOwnProperty('age')){
