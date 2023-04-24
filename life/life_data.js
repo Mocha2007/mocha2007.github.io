@@ -2152,6 +2152,15 @@ const lifeData = [
 		'range': 'af',
 		'age': 2,
 		'desc': 'Hippo',
+		// https://repository.up.ac.za/bitstream/handle/2263/56649/6gerneke1965.pdf?sequence=1
+		'genetic': {
+			'chromosome': {
+				'autosomal': 17,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'hippotigris',
