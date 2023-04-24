@@ -660,6 +660,15 @@ const lifeData = [
 		'parent': 'balaenoptera',
 		'range': 'ww',
 		'desc': 'Blue Whale',
+		// https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1601-5223.1974.tb01351.x
+		'genetic': {
+			'chromosome': {
+				'autosomal': 21,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'balaenopteridae',
@@ -1149,7 +1158,7 @@ const lifeData = [
 	{
 		'name': 'cetacea',
 		'rank': 'infraorder',
-		'parent': 'cetruminantia',
+		'parent': 'whippomorpha',
 		'range': 'ww',
 	},
 	{
@@ -2125,7 +2134,7 @@ const lifeData = [
 	{
 		'name': 'hippopotamidae',
 		'rank': 'family',
-		'parent': 'artiodactyla',
+		'parent': 'whippomorpha',
 		'range': 'af',
 		'age': 7.4,
 	},
@@ -4133,6 +4142,15 @@ const lifeData = [
 		'parent': 'delphinidae',
 		'range': 'ww',
 		'desc': 'Bottlenose Dolphin',
+		// https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1601-5223.1974.tb01351.x
+		'genetic': {
+			'chromosome': {
+				'autosomal': 21,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'tylopoda',
@@ -4266,6 +4284,14 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+	},
+	// W
+	{
+		'name': 'whippomorpha',
+		'rank': 'suborder',
+		'parent': 'cetruminantia',
+		'range': 'af',
+		'age': 50, // "early eocene"
 	},
 	// Y
 	{
