@@ -2331,6 +2331,13 @@ const lifeData = [
 		'extinct': true,
 		'range': 'nh',
 	},
+	{
+		'name': 'hyracoidea',
+		'rank': 'order',
+		'parent': 'paenungulata',
+		'range': 'ow', // AF + middle east
+		'desc': 'Hyrax',
+	},
 	// I
 	{
 		'name': 'ichthyosauria',
@@ -2963,6 +2970,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'paenungulata',
+		'rank': 'clade',
+		'parent': 'afrotheria',
+		'range': 'ww',
+	},
+	{
 		'name': 'pan',
 		'rank': 'genus',
 		'parent': 'hominini',
@@ -3428,7 +3441,7 @@ const lifeData = [
 	{
 		'name': 'proboscidea',
 		'rank': 'order',
-		'parent': 'afrotheria',
+		'parent': 'tethytheria',
 		'range': 'ow',
 		'age': 60,
 	},
@@ -3783,7 +3796,7 @@ const lifeData = [
 	{
 		'name': 'sirenia',
 		'rank': 'order',
-		'parent': 'afrotheria',
+		'parent': 'tethytheria',
 		'range': 'eq',
 		'age': 55.8,
 	},
@@ -3965,6 +3978,12 @@ const lifeData = [
 		'name': 'terrabacteria',
 		'rank': 'clade',
 		'parent': 'bacteria',
+		'range': 'ww',
+	},
+	{
+		'name': 'tethytheria',
+		'rank': 'clade',
+		'parent': 'paenungulata',
 		'range': 'ww',
 	},
 	{
