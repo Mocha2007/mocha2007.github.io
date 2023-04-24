@@ -1452,6 +1452,14 @@
 		"categories": ["number"]
 	},
 	{
+		"title": "badanu",
+		"etym": "L/NUZ/bedan/old//L/VAZ/baydenn/old",
+		"cat": "adj. ",
+		"defList": [
+			"senile"
+		]
+	},
+	{
 		"title": "badmak",
 		"img": "../img/eremoran/bartonk.png",
 		"etym": "I/PEN/*badmax/fox",
