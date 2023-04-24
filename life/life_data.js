@@ -1160,6 +1160,15 @@ const lifeData = [
 		'rank': 'infraorder',
 		'parent': 'whippomorpha',
 		'range': 'ww',
+		// https://en.wikipedia.org/wiki/Cetacea#Chromosomes
+		'genetic': {
+			'chromosome': {
+				'autosomal': 21,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'cetruminantia',
