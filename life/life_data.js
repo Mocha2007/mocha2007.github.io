@@ -2336,6 +2336,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'paenungulata',
 		'range': 'af;me', // AF + middle east
+		'age': 55.8,
 		'desc': 'Hyrax',
 	},
 	// I
@@ -2980,6 +2981,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'afrotheria',
 		'range': 'ww',
+		'age': 61,
 	},
 	{
 		'name': 'pan',
