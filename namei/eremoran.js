@@ -873,6 +873,7 @@ const gen = {
 				.replace(/g/g, 'k')
 				.replace(/ts/g, 's')
 				.replace(/j/g, '')
+				.replace(/^sl/g, 'z') // word-initial sl -> z
 				.replace(/[eo](?=.*[aeiouêô].*[aeiouêô])/g, 'a') // account for vowel reduction
 				.replace(/aa/g, 'a') // double-a reduction
 				.replace(/a(?=[aeiouêô]{2,})/g, '') // a-triphthong reduction

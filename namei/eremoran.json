@@ -10673,6 +10673,14 @@
 		"categories": ["war"]
 	},
 	{
+		"title": "sifêz",
+		"etym": "I/PEN/*tʃiɸês",
+		"cat": "v.",
+		"defList": [
+			"be for sale"
+		]
+	},
+	{
 		"title": "sik",
 		"etym": "I/PEN/*tʃix/ox",
 		"cat": "n., 2nd",
@@ -12750,6 +12758,14 @@
 		"defList": [
 			"goodnight",
 			"scatter!, hide!"
+		]
+	},
+	{
+		"title": "za",
+		"etym": "I/PEN/*sla",
+		"cat": "interj.",
+		"defList": [
+			"come on, let's, now now"
 		]
 	},
 	{
