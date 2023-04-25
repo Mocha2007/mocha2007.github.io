@@ -364,3 +364,7 @@ baydenn=adj=old
 klun'=v, 4=drink
 laku=v, 2=be Xable, be able to be Xed
 klun'laku=v, 2=be drinkable, be potable
+vol=v, 4=eat
+vollaku=v, 2=be edible
+gu=v, 4=end, stop Xing
+volgu=v, 4=fast (stop eating)

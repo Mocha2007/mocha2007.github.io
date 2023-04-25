@@ -1598,6 +1598,15 @@
 		"notes": "X trades Y for Z's A - X dir Y ad A Z ad baliz"
 	},
 	{
+		"title": "ballaku",
+		"etym": "L/VAZ/vollaku/be edible",
+		"cat": "adj.",
+		"defList": [
+			"edible"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "bam",
 		"etym": "C/bau/-m",
 		"cat": "n., 5th",
@@ -2460,6 +2469,14 @@
 		]
 	},
 	{
+		"title": "bira",
+		"etym": "I/PEN/*bira/poison",
+		"cat": "n, 4th",
+		"defList": [
+			"poison"
+		]
+	},
+	{
 		"title": "bisu",
 		"etym": "I/PEN/*βiʃu/wool",
 		"cat": "adj., n., 4th",
@@ -2605,6 +2622,24 @@
 		"categories": ["tool"]
 	},
 	{
+		"title": "bolkuz",
+		"etym": "L/VAZ/volgu/fast",
+		"cat": "v.",
+		"defList": [
+			"fast (stop eating)"
+		],
+		"categories": ["food"]
+	},
+	{
+		"title": "bolz",
+		"etym": "L/VAZ/vol/eat",
+		"cat": "v.",
+		"defList": [
+			"pig out on, gorge on"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "bômak",
 		"etym": "C/bôz/mat",
 		"cat": "n., 2nd",
@@ -2670,6 +2705,15 @@
 			"belly"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "boz",
+		"etym": "I/PEN/*bos/ripen",
+		"cat": "v.",
+		"defList": [
+			"ripen, be ripe"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "bôz",
