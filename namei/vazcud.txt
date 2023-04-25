@@ -374,3 +374,5 @@ phoyni=n, n=date (fruit)
 suko=n, n=fig
 blomo=n, n=rye
 alewo=n, n=flour
+sinapi=n, n=mustard
+wazafi=n, n=horseradish

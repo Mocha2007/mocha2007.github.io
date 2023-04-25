@@ -1247,6 +1247,15 @@
 		"categories": ["male given name"]
 	},
 	{
+		"title": "aruba",
+		"etym": "I/PEN/*aruβa",
+		"cat": "n., 4th",
+		"defList": [
+			"oregano"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "arz",
 		"etym": "I/PEN/*ars/stand",
 		"cat": "v.",
@@ -4685,6 +4694,15 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "hanafi",
+		"etym": "I/PEN/*sonaɸi",
+		"cat": "n., 4th",
+		"defList": [
+			"mustard"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "hananu",
 		"etym": "C/hanu/hanu",
 		"cat": "adj.",
@@ -6281,11 +6299,20 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "kaêr",
+		"etym": "C/kaz/-ê",
+		"cat": "n., 1st",
+		"defList": [
+			"butcher"
+		]
+	},
+	{
 		"title": "kaz",
 		"etym": "I/PEN/*kas",
-		"cat": "n., 4th",
+		"cat": "v.",
 		"defList": [
-			"(archaic) cut"
+			"(archaic) cut",
+			"butcher"
 		]
 	},
 	{
@@ -8455,6 +8482,15 @@
 		"categories": ["family", "person"]
 	},
 	{
+		"title": "ment",
+		"etym": "I/PEN/*men-t/noodle",
+		"cat": "n., 3rd",
+		"defList": [
+			"noodle, pasta"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "mêur",
 		"etym": "I/PEN/*miêur/widow/heir",
 		"cat": "n., 1st",
@@ -10314,6 +10350,15 @@
 			"paint"
 		],
 		"categories": ["art"]
+	},
+	{
+		"title": "razabi",
+		"etym": "I/PEN/*rasabi",
+		"cat": "n., 4th",
+		"defList": [
+			"horseradish, wasabi"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "razbakum",
