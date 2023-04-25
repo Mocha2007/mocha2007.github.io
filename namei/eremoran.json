@@ -5028,6 +5028,15 @@
 		]
 	},
 	{
+		"title": "hibo",
+		"etym": "I/PEN/*siβo",
+		"cat": "n., 4th",
+		"defList": [
+			"fig"
+		],
+		"categories": ["fruit", "plant"]
+	},
+	{
 		"title": "hifi",
 		"etym": "O",
 		"cat": "interj.",
@@ -5256,6 +5265,15 @@
 			"if",
 			"(+ tômz) please"
 		]
+	},
+	{
+		"title": "hofo",
+		"etym": "I/PEN/*ɸoɸo",
+		"cat": "n., 4th",
+		"defList": [
+			"melon"
+		],
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "hofoz",
@@ -5975,6 +5993,15 @@
 			"moth"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "kaini",
+		"etym": "I/PEN/*ɸxoini",
+		"cat": "n., 4th",
+		"defList": [
+			"date (fruit)"
+		],
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "kaipam",
@@ -7773,7 +7800,7 @@
 		"etym": "B/len/annama",
 		"cat": "n., 4th",
 		"defList": [
-			"prunus (subgenus; incl. plums, peaches, nectarines, apricots, and almonds)"
+			"prunus (subgenus; incl. plum, peach, nectarine, apricot, and almond)"
 		],
 		"categories": ["fruit", "plant"]
 	},
@@ -11944,6 +11971,15 @@
 		"categories": ["age", "person"]
 	},
 	{
+		"title": "tazu",
+		"etym": "L/VAZ/tazu/grape",
+		"cat": "n., 4th",
+		"defList": [
+			"raisin"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "tekka",
 		"etym": "I/PEN/*tegxa/tea",
 		"cat": "n., 4th",
@@ -12692,6 +12728,15 @@
 			"(mathematics) straight (angle; ie. a 180 degree angle)"
 		],
 		"categories": ["math"]
+	},
+	{
+		"title": "ula",
+		"etym": "B/ulu/ela",
+		"cat": "n., 4th",
+		"defList": [
+			"blueberry"
+		],
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "ulu",

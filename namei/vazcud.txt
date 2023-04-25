@@ -368,3 +368,7 @@ vol=v, 4=eat
 vollaku=v, 2=be edible
 gu=v, 4=end, stop Xing
 volgu=v, 4=fast (stop eating)
+tazu=n, n=grape
+pepo=n, n=melon
+phoyni=n, n=date (fruit)
+suko=n, n=fig
