@@ -2021,6 +2021,14 @@
 		"categories": ["person"]
 	},
 	{
+		"title": "beliz",
+		"etym": "I/PEN/*belis",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) drip"
+		]
+	},
+	{
 		"title": "bêm",
 		"etym": "I/PEN/*βêm/period",
 		"cat": "n., 5th",
@@ -5008,6 +5016,15 @@
 		"defList": [
 			"lumpy"
 		]
+	},
+	{
+		"title": "hilsabat",
+		"etym": "C/hilsaz/-ba",
+		"cat": "n., 3rd",
+		"defList": [
+			"cocktail"
+		],
+		"categories": ["drink"]
 	},
 	{
 		"title": "hilsaz",
@@ -9535,6 +9552,23 @@
 			"(intransitive) not exceed, fall short, stay within bounds (comparand takes postpositional [[ad]])"
 		],
 		"categories": ["extent"]
+	},
+	{
+		"title": "nuzbelibat",
+		"etym": "C/nuzbeliz/-ba",
+		"cat": "n., 3rd",
+		"defList": [
+			"liquor, spirits"
+		],
+		"categories": ["drink"]
+	},
+	{
+		"title": "nuzbeliz",
+		"etym": "C/nuz/beliz",
+		"cat": "v.",
+		"defList": [
+			"distill"
+		]
 	},
 	{
 		"title": "nuzderar",
