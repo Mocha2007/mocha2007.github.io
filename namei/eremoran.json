@@ -6004,6 +6004,14 @@
 		]
 	},
 	{
+		"title": "kaêr",
+		"etym": "C/kaz/-ê",
+		"cat": "n., 1st",
+		"defList": [
+			"butcher"
+		]
+	},
+	{
 		"title": "kaflam",
 		"etym": "I/PEN/*kaɸlam/victory",
 		"cat": "n., 5th",
@@ -6297,14 +6305,6 @@
 		],
 		"notes": "kasu is one of a handful of nouns ending in -u.",
 		"categories": ["body part"]
-	},
-	{
-		"title": "kaêr",
-		"etym": "C/kaz/-ê",
-		"cat": "n., 1st",
-		"defList": [
-			"butcher"
-		]
 	},
 	{
 		"title": "kaz",
