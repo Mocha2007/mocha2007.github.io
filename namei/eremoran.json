@@ -879,6 +879,15 @@
 		"categories": ["food"]
 	},
 	{
+		"title": "ammadint",
+		"etym": "C/amma/-idint",
+		"cat": "n., 3rd",
+		"defList": [
+			"mead"
+		],
+		"categories": ["drink"]
+	},
+	{
 		"title": "ammakama",
 		"etym": "C/amma/kama",
 		"cat": "n., 4th",
@@ -1012,6 +1021,15 @@
 		]
 	},
 	{
+		"title": "aô",
+		"etym": "I/PEN/*aô",
+		"cat": "n., 4th",
+		"defList": [
+			"vine"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "arafkaz",
 		"etym": "C/arz/afkaz",
 		"cat": "v.",
@@ -1122,6 +1140,16 @@
 			"passion, fervor, zeal",
 			"fever"
 		]
+	},
+	{
+		"title": "ardomêr",
+		"img": "../img/eremoran/ardomut.png",
+		"etym": "B/ardomut/-ê",
+		"cat": "n., 1st",
+		"defList": [
+			"winemaker, vintner"
+		],
+		"categories": ["drink", "v3_trade"]
 	},
 	{
 		"title": "ardomukaskrut",
@@ -1866,6 +1894,15 @@
 			"(informal) [polar question particle]"
 		],
 		"notes": "see ''id'' and ''nanau'' for ors linking nominals"
+	},
+	{
+		"title": "be",
+		"etym": "I/PEN/*be/hops",
+		"cat": "n., 4th",
+		"defList": [
+			"hops"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "bê",
@@ -4754,6 +4791,15 @@
 		]
 	},
 	{
+		"title": "hê",
+		"etym": "I/PEN/*ɸê/juice",
+		"cat": "n., 4th",
+		"defList": [
+			"juice"
+		],
+		"categories": ["drink"]
+	},
+	{
 		"title": "hêan",
 		"etym": "I/PEN/*ɸêan/chin",
 		"cat": "n., 4th",
@@ -6451,6 +6497,15 @@
 		"lore": "ty Greek phonoestheme"
 	},
 	{
+		"title": "klulaku",
+		"etym": "L/VAZ/klun'laku/be drinkable",
+		"cat": "adj.",
+		"defList": [
+			"drinkable, potable"
+		],
+		"categories": ["drink"]
+	},
+	{
 		"title": "kluz",
 		"etym": "C/klu/-z",
 		"cat": "v.",
@@ -7589,6 +7644,15 @@
 		]
 	},
 	{
+		"title": "laz",
+		"etym": "I/PEN/*las/brew",
+		"cat": "v.",
+		"defList": [
+			"brew alcohol"
+		],
+		"categories": ["drink"]
+	},
+	{
 		"title": "lel",
 		"img": "../img/eremoran/len.png",
 		"etym": "B/lam/ela",
@@ -8515,7 +8579,7 @@
 		"defList": [
 			"water",
 			"body of water",
-			"liquid, juice, fluid"
+			"liquid, fluid"
 		],
 		"notes": "mu is one of a handful of nouns ending in -u.",
 		"categories": ["drink"]
@@ -10495,6 +10559,15 @@
 		],
 		"notes": "Note: with causative, means \"scare\".",
 		"categories": ["emotion", "experiential"]
+	},
+	{
+		"title": "sazi",
+		"etym": "I/PEN/*ʃasi",
+		"cat": "n., 4th",
+		"defList": [
+			"grape"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "se",

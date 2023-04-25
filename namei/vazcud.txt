@@ -361,3 +361,6 @@ vu'u=n, n=flute (related to ERE. bu < PEN *βiu)
 tup=v, 4=hit, strike, beat (related to ERE. sifaz)
 tupažu=n, n=drum
 baydenn=adj=old
+klun'=v, 4=drink
+laku=v, 2=be Xable, be able to be Xed
+klun'laku=v, 2=be drinkable, be potable
