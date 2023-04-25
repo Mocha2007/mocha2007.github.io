@@ -2531,6 +2531,15 @@
 		"categories": ["fruit", "plant"]
 	},
 	{
+		"title": "bô",
+		"etym": "I/PEN/*βô/rye",
+		"cat": "n., 4th",
+		"defList": [
+			"rye"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "bôbôt",
 		"etym": "R/bôk",
 		"cat": "n., 3rd",
@@ -6110,7 +6119,8 @@
 		"defList": [
 			"citrus (genus)",
 			"citron",
-			"pomelo"
+			"pomelo",
+			"grapefruit"
 		],
 		"categories": ["fruit", "plant"]
 	},
@@ -8007,6 +8017,15 @@
 			"smile",
 			"(archaic) be happy"
 		]
+	},
+	{
+		"title": "lorot",
+		"etym": "I/PEN/*aloro-t/flour",
+		"cat": "n., 3rd",
+		"defList": [
+			"flour"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "lôtor",
@@ -10559,6 +10578,15 @@
 		"categories": ["animal", "fantasy"]
 	},
 	{
+		"title": "saist",
+		"etym": "I/PEN/*ʃais-t/dough",
+		"cat": "n., 3rd",
+		"defList": [
+			"dough"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "salim",
 		"etym": "C/saliz/-m",
 		"cat": "n., 5th",
@@ -10896,6 +10924,15 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "si",
+		"etym": "I/PEN/*ʃi/seed",
+		"cat": "n., 4th",
+		"defList": [
+			"seed"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "sifaz",
 		"etym": "I/PEN/*ʃiɸs/hit",
 		"cat": "v.",
@@ -10920,6 +10957,15 @@
 			"ox, steer, nowt (gelded bull)"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "siku",
+		"etym": "A/si",
+		"cat": "n., 4th",
+		"defList": [
+			"pit (of fruit)"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "sim",
@@ -12734,7 +12780,9 @@
 		"etym": "B/ulu/ela",
 		"cat": "n., 4th",
 		"defList": [
-			"blueberry"
+			"blueberry",
+			"bilberry",
+			"whortleberry"
 		],
 		"categories": ["fruit", "plant"]
 	},
