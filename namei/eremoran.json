@@ -1030,6 +1030,15 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "aôbil",
+		"etym": "C/aô/bil",
+		"cat": "n., 4th",
+		"defList": [
+			"cranberry"
+		],
+		"categories": ["fruit", "plant"]
+	},
+	{
 		"title": "arafkaz",
 		"etym": "C/arz/afkaz",
 		"cat": "v.",
@@ -2937,6 +2946,15 @@
 		],
 		"notes": "This does not translate country or nation in all English uses. When referring to an ethnos, use ''mor'' instead.",
 		"categories": ["astronomy"]
+	},
+	{
+		"title": "dabil",
+		"etym": "C/da/bil",
+		"cat": "n., 4th",
+		"defList": [
+			"strawberry"
+		],
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "dadal",
@@ -6844,6 +6862,24 @@
 		"categories": ["math", "motion"]
 	},
 	{
+		"title": "krebil",
+		"etym": "C/krek/bil",
+		"cat": "n., 4th",
+		"defList": [
+			"raspberry"
+		],
+		"categories": ["fruit", "plant"]
+	},
+	{
+		"title": "krek",
+		"etym": "I/PEN/*kre-x/roe",
+		"cat": "n., 2nd",
+		"defList": [
+			"roe, caviar (regardless of fertilization)"
+		],
+		"categories": ["animal", "body part", "seafood"]
+	},
+	{
 		"title": "krifan",
 		"etym": "I/PEN/*griɸan/wing",
 		"cat": "n., 4th",
@@ -8920,6 +8956,16 @@
 			"ten"
 		],
 		"categories": ["number"]
+	},
+	{
+		"title": "nasazi",
+		"etym": "B/nasu/sazi",
+		"cat": "n., 4th",
+		"defList": [
+			"gooseberry"
+		],
+		"categories": ["fruit", "plant"],
+		"notes": "'North grape'"
 	},
 	{
 		"title": "nasdôk",
