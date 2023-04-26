@@ -260,7 +260,7 @@ enk=n, m=maternal uncle
 kunceš=adv, =reciporically (used in place of each other)
 sote=n, n=beaver
 niph=n, f=name
-ble=conj, =or
+ve=conj, =or
 mas=conj, =but
 šitho=adv, =also, too
 e=adposition, =to, towards
@@ -372,7 +372,10 @@ tazu=n, n=grape
 pepo=n, n=melon
 phoyni=n, n=date (fruit)
 suko=n, n=fig
-blomo=n, n=rye
+vomo=n, n=rye
 alewo=n, n=flour
 sinapi=n, n=mustard
 wazafi=n, n=horseradish
+chacha=n, n=pepper
+pazo=n, n=leek
+tuphonz=adj., 2s=sour

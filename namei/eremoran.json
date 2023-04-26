@@ -1359,6 +1359,15 @@
 		"categories": ["language"]
 	},
 	{
+		"title": "au",
+		"etym": "I/PEN/*iau/spicy",
+		"cat": "adj.",
+		"defList": [
+			"spicy"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "aum",
 		"etym": "C/aut/-m",
 		"cat": "n., 5th",
@@ -4886,6 +4895,15 @@
 		"defList": [
 			"stretch"
 		]
+	},
+	{
+		"title": "hazo",
+		"etym": "I/PEN/*ɸaso/leek",
+		"cat": "n., 4th",
+		"defList": [
+			"leek"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "hê",
@@ -9211,6 +9229,15 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "neki",
+		"etym": "I/PEN/*negi/green onion",
+		"cat": "n., 4th",
+		"defList": [
+			"green onion, scallion"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "nekom",
 		"etym": "C/nem/ko",
 		"cat": "n., 5th, adv.",
@@ -11662,6 +11689,24 @@
 		],
 		"notes": "<sup>1</sup> Habitual aspect only; supplanted the now-archaic dôz in most senses",
 		"categories": ["art", "food", "sex"]
+	},
+	{
+		"title": "sufkazit",
+		"etym": "B/sufkôz/sazi",
+		"cat": "n., 3rd",
+		"defList": [
+			"vinegar"
+		],
+		"categories": ["food"]
+	},
+	{
+		"title": "sufkôz",
+		"etym": "I/PEN/*ʃuɸxôz/be sour",
+		"cat": "v.",
+		"defList": [
+			"be sour"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "sukaêt",
