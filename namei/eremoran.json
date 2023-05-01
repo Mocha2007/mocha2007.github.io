@@ -775,7 +775,7 @@
 		"defList": [
 			"wheat"
 		],
-		"categories": ["plant"]
+		"categories": ["grain", "plant"]
 	},
 	{
 		"title": "akaban",
@@ -1262,7 +1262,7 @@
 		"defList": [
 			"oregano"
 		],
-		"categories": ["plant"]
+		"categories": ["herb", "plant"]
 	},
 	{
 		"title": "arz",
@@ -1449,7 +1449,7 @@
 		"defList": [
 			"chickpea"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "vegetable"]
 	},
 	{
 		"title": "ba",
@@ -1593,7 +1593,7 @@
 		"defList": [
 			"maize (corn)"
 		],
-		"categories": ["plant"]
+		"categories": ["grain", "plant"]
 	},
 	{
 		"title": "balim",
@@ -1780,7 +1780,7 @@
 		"defList": [
 			"chicory"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "vegetable"]
 	},
 	{
 		"title": "baruz",
@@ -2207,7 +2207,7 @@
 			"common bean ({{w|phaseolus vulgaris}})",
 			"pea ({{w|pisum sativum}})"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "vegetable"]
 	},
 	{
 		"title": "bi",
@@ -2280,7 +2280,7 @@
 		"defList": [
 			"herb"
 		],
-		"categories": ["plant"]
+		"categories": ["herb", "plant"]
 	},
 	{
 		"title": "bikê",
@@ -2396,7 +2396,7 @@
 		"defList": [
 			"berry"
 		],
-		"categories": ["plant"]
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "bilô",
@@ -2405,7 +2405,7 @@
 		"defList": [
 			"spice"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "spice"]
 	},
 	{
 		"title": "bilu",
@@ -2574,7 +2574,7 @@
 		"defList": [
 			"rye"
 		],
-		"categories": ["plant"]
+		"categories": ["grain", "plant"]
 	},
 	{
 		"title": "bôbôt",
@@ -4424,7 +4424,7 @@
 		"defList": [
 			"barley"
 		],
-		"categories": ["plant"]
+		"categories": ["grain", "plant"]
 	},
 	{
 		"title": "ha",
@@ -4728,7 +4728,7 @@
 		"defList": [
 			"mustard"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "spice"]
 	},
 	{
 		"title": "hananu",
@@ -4922,7 +4922,7 @@
 		"defList": [
 			"leek"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "vegetable"]
 	},
 	{
 		"title": "hê",
@@ -5007,7 +5007,7 @@
 		"defList": [
 			"rose"
 		],
-		"categories": ["plant"]
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "henlôm",
@@ -5123,7 +5123,7 @@
 		"defList": [
 			"cucumber"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "vegetable"]
 	},
 	{
 		"title": "hilazai",
@@ -5995,7 +5995,7 @@
 		"defList": [
 			"rye"
 		],
-		"categories": ["plant"]
+		"categories": ["grain", "plant"]
 	},
 	{
 		"title": "kabasa",
@@ -6132,7 +6132,7 @@
 		"defList": [
 			"lentil"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "vegetable"]
 	},
 	{
 		"title": "kakram",
@@ -7076,7 +7076,7 @@
 		"defList": [
 			"cabbage"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "vegetable"]
 	},
 	{
 		"title": "kruz",
@@ -9310,7 +9310,7 @@
 		"defList": [
 			"turnip"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "vegetable"]
 	},
 	{
 		"title": "ne",
@@ -9354,7 +9354,7 @@
 		"defList": [
 			"green onion, scallion"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "vegetable"]
 	},
 	{
 		"title": "nekom",
@@ -10504,7 +10504,7 @@
 		"defList": [
 			"horseradish, wasabi"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "vegetable"]
 	},
 	{
 		"title": "razbakum",
@@ -10675,7 +10675,7 @@
 		"defList": [
 			"lettuce"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "vegetable"]
 	},
 	{
 		"title": "rô",
@@ -10693,7 +10693,7 @@
 		"defList": [
 			"parsley"
 		],
-		"categories": ["plant"]
+		"categories": ["herb", "plant"]
 	},
 	{
 		"title": "rôlent",
@@ -10955,7 +10955,7 @@
 		"defList": [
 			"grape"
 		],
-		"categories": ["plant"]
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "se",
@@ -10982,7 +10982,7 @@
 		"defList": [
 			"flower"
 		],
-		"categories": ["plant"]
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "sebakok",
@@ -11000,7 +11000,7 @@
 		"defList": [
 			"bloom, flower, blossom"
 		],
-		"categories": ["plant"]
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "seda",
@@ -11174,7 +11174,7 @@
 		"defList": [
 			"pit (of fruit)"
 		],
-		"categories": ["plant"]
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "sim",
@@ -11234,7 +11234,7 @@
 		"defList": [
 			"garlic"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "vegetable"]
 	},
 	{
 		"title": "siraur",
@@ -11625,7 +11625,7 @@
 		"defList": [
 			"pepper (any capsaicin-bearing plant, incl. black and chili)"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "spice", "vegetable"]
 	},
 	{
 		"title": "stôd",
@@ -12206,7 +12206,7 @@
 		"defList": [
 			"asparagus"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "vegetable"]
 	},
 	{
 		"title": "tasfut",
@@ -12433,8 +12433,7 @@
 			"stick (usually not wooden)",
 			"staff, rod",
 			"pole"
-		],
-		"categories": ["plant"]
+		]
 	},
 	{
 		"title": "tôda",
@@ -13455,7 +13454,7 @@
 		"defList": [
 			"parsnip"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "vegetable"]
 	},
 	{
 		"title": "zulunk",
