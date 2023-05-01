@@ -6462,6 +6462,15 @@
 		"categories": ["male given name", "person"]
 	},
 	{
+		"title": "kêsara",
+		"etym": "L/PRE/kēsara/saffron",
+		"cat": "n., 4th",
+		"defList": [
+			"saffron"
+		],
+		"categories": ["plant", "spice"]
+	},
+	{
 		"title": "keu",
 		"etym": "I/PEN/*akeu/east",
 		"cat": "adj.",
@@ -10926,6 +10935,24 @@
 		"categories": ["plant", "spice"]
 	},
 	{
+		"title": "satifa",
+		"etym": "I/PEN/*tʃatiɸa",
+		"cat": "n., 4th",
+		"defList": [
+			"nutmeg"
+		],
+		"categories": ["plant", "tree", "spice"]
+	},
+	{
+		"title": "saua",
+		"etym": "L/VAZ/sawuwa/ginger",
+		"cat": "n., 4th",
+		"defList": [
+			"ginger"
+		],
+		"categories": ["plant", "spice"]
+	},
+	{
 		"title": "saur",
 		"etym": "L/PRE/Sāyū//L/VAZ/Sagub/beloved",
 		"cat": "n., 1st",
@@ -12517,6 +12544,15 @@
 			"(mathematics, of a polytope) truncate"
 		],
 		"categories": ["math"]
+	},
+	{
+		"title": "tôkno",
+		"etym": "I/PEN/*taɸxno",
+		"cat": "n., 4th",
+		"defList": [
+			"bay ({{w|laurus nobilis}})"
+		],
+		"categories": ["herb", "plant", "tree"]
 	},
 	{
 		"title": "tôm",
