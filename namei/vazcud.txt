@@ -142,7 +142,7 @@ okso=n, n=tear
 anginž=n, f=ankle
 unbyi=n, n=elbow
 thadong=n, f=hip
-dethaw=n, n=knee
+detha=n, n=knee
 lunkhem=n, m=knuckle
 mišphuk=n, f=shoulder
 an=n, m=wrist

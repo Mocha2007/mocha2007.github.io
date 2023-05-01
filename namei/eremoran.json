@@ -4977,16 +4977,16 @@
 		]
 	},
 	{
-		"title": "hekô",
-		"etym": "I/PEN/*segôb",
+		"title": "heka",
+		"etym": "I/PEN/*segab",
 		"cat": "n., 4th",
 		"defList": [
 			"downpour (heavy rain)"
 		]
 	},
 	{
-		"title": "hekôz",
-		"etym": "C/hekô/-z",
+		"title": "hekaz",
+		"etym": "C/heka/-z",
 		"cat": "v.",
 		"defList": [
 			"downpour (heavy rain)"
@@ -8610,8 +8610,8 @@
 		"categories": ["family", "person"]
 	},
 	{
-		"title": "ment",
-		"etym": "I/PEN/*men-t/noodle",
+		"title": "mêt",
+		"etym": "I/PEN/*mê-t/noodle",
 		"cat": "n., 3rd",
 		"defList": [
 			"noodle, pasta"
