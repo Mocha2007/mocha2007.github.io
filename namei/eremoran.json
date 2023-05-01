@@ -4890,6 +4890,15 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "harira",
+		"etym": "I/PEN/*sarira/turmeric",
+		"cat": "n., 4th",
+		"defList": [
+			"turmeric"
+		],
+		"categories": ["plant", "spice"]
+	},
+	{
 		"title": "hask",
 		"etym": "I/PEN/*ɸasx/cock",
 		"cat": "n., 2nd",
@@ -10899,6 +10908,24 @@
 		"categories": ["experiential"]
 	},
 	{
+		"title": "sasau",
+		"etym": "I/PEN/*siaʃaɸu/fennel",
+		"cat": "n., 4th",
+		"defList": [
+			"laserwort"
+		],
+		"categories": ["plant", "spice"]
+	},
+	{
+		"title": "satapu",
+		"etym": "L/PRE/shatapu",
+		"cat": "n., 4th",
+		"defList": [
+			"fennel"
+		],
+		"categories": ["plant", "spice"]
+	},
+	{
 		"title": "saur",
 		"etym": "L/PRE/Sāyū//L/VAZ/Sagub/beloved",
 		"cat": "n., 1st",
@@ -10974,6 +11001,16 @@
 		"defList": [
 			"(archaic) other"
 		]
+	},
+	{
+		"title": "sea",
+		"etym": "I/PEN/*ʃaeia/coriander, cilantro",
+		"cat": "n., 4th",
+		"defList": [
+			"coriander",
+			"(archaic) cilantro"
+		],
+		"categories": ["herb", "plant", "spice"]
 	},
 	{
 		"title": "seba",
@@ -11235,6 +11272,15 @@
 			"garlic"
 		],
 		"categories": ["plant", "vegetable"]
+	},
+	{
+		"title": "siraka",
+		"etym": "L/PRE/tsiraka",
+		"cat": "n., 4th",
+		"defList": [
+			"cumin"
+		],
+		"categories": ["plant", "spice"]
 	},
 	{
 		"title": "siraur",
@@ -12147,6 +12193,15 @@
 			"twelve"
 		],
 		"categories": ["number"]
+	},
+	{
+		"title": "tanea",
+		"etym": "L/PRE/tānea/coriander",
+		"cat": "n., 4th",
+		"defList": [
+			"cilantro"
+		],
+		"categories": ["herb", "plant"]
 	},
 	{
 		"title": "tanêt",
