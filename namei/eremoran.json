@@ -5117,6 +5117,15 @@
 		]
 	},
 	{
+		"title": "hikro",
+		"etym": "I/PEN/*sixro/cucumber",
+		"cat": "n., 4th",
+		"defList": [
+			"cucumber"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "hilbe",
 		"etym": "I/PEN/*ɸilβe/cloud",
 		"cat": "n., 4th",
@@ -6108,6 +6117,15 @@
 		]
 	},
 	{
+		"title": "kako",
+		"etym": "I/PEN/*ɸxaxo/lentil",
+		"cat": "n., 4th",
+		"defList": [
+			"lentil"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "kakram",
 		"etym": "C/kam/kram",
 		"cat": "n., 5th",
@@ -6283,6 +6301,15 @@
 			"talon"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "karo",
+		"etym": "I/PEN/*xaro/carrot",
+		"cat": "n., 4th",
+		"defList": [
+			"carrot"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "karot",
@@ -7034,6 +7061,15 @@
 		]
 	},
 	{
+		"title": "krus",
+		"etym": "I/PEN/*xruʃ/cabbage",
+		"cat": "n., 4th",
+		"defList": [
+			"cabbage"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "kruz",
 		"etym": "C/krum/-z",
 		"cat": "v.",
@@ -7061,6 +7097,15 @@
 			"(in titles) the great"
 		],
 		"categories": ["extent"]
+	},
+	{
+		"title": "ku",
+		"etym": "L/VAZ/ku/cauliflower",
+		"cat": "n., 4th",
+		"defList": [
+			"cauliflower"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "kuafkar",

@@ -380,3 +380,7 @@ chacha=n, n=pepper
 pazo=n, n=leek
 tuphonz=adj., 2s=sour
 thida=n, n=lettuce
+phako=n, n=lentil
+kawo=n, n=carrot
+sikwo=n, n=cucumber
+ku=n, n=cauliflower
