@@ -381,6 +381,15 @@
 		"categories": ["clothing"]
 	},
 	{
+		"title": "abubbat",
+		"etym": "C/abubz/-ba",
+		"cat": "n., 3rd",
+		"defList": [
+			"bread roll"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "abubit",
 		"etym": "B/abubz/bit",
 		"cat": "n., 3rd",
@@ -2262,6 +2271,15 @@
 			"euphonic, pretty/beautiful sound"
 		],
 		"categories": ["music"]
+	},
+	{
+		"title": "biela",
+		"etym": "D/bi",
+		"cat": "n., 4th",
+		"defList": [
+			"herb"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "bikê",
@@ -7558,6 +7576,16 @@
 		]
 	},
 	{
+		"title": "kunulat",
+		"etym": "D/kunuz",
+		"cat": "n., 3rd",
+		"defList": [
+			"cracker",
+			"hardtack"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "kunumz",
 		"etym": "C/ku/numz",
 		"cat": "v.",
@@ -8971,6 +8999,15 @@
 			"Nekang (the people and country, but not the language)"
 		],
 		"categories": ["toponym"]
+	},
+	{
+		"title": "nalubat",
+		"etym": "C/naluz/-ba",
+		"cat": "n., 3rd",
+		"defList": [
+			"cookie, biscuit, scone, or similarly baked pastry"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "naluz",
@@ -11480,6 +11517,15 @@
 			"coin made of tin"
 		],
 		"categories": ["metal"]
+	},
+	{
+		"title": "sti",
+		"etym": "I/PEN/*sti/pepper",
+		"cat": "n., 4th",
+		"defList": [
+			"pepper (any capsaicin-bearing plant, incl. black and chili)"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "stôd",
