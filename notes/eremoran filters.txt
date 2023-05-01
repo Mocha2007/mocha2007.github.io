@@ -1,0 +1,3 @@
+eg. get all plant words that are not fruit
+
+elements.raws.filter(w => w.categories && w.categories.includes('plant') && !w.categories.includes('fruit')).map(w => w.title).join(' ');

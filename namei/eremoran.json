@@ -757,7 +757,7 @@
 		"defList": [
 			"cedar"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "tree"]
 	},
 	{
 		"title": "ak",
@@ -829,7 +829,7 @@
 		"defList": [
 			"oak"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "tree"]
 	},
 	{
 		"title": "alika",
@@ -849,7 +849,7 @@
 		"defList": [
 			"sand pear"
 		],
-		"categories": ["fruit", "plant"]
+		"categories": ["fruit", "plant", "tree"]
 	},
 	{
 		"title": "alikanask",
@@ -867,7 +867,7 @@
 		"defList": [
 			"cherry"
 		],
-		"categories": ["fruit", "plant"]
+		"categories": ["fruit", "plant", "tree"]
 	},
 	{
 		"title": "amfabin",
@@ -876,7 +876,7 @@
 		"defList": [
 			"banana, plantain"
 		],
-		"categories": ["fruit", "plant"]
+		"categories": ["fruit", "plant", "tree"]
 	},
 	{
 		"title": "amma",
@@ -906,7 +906,7 @@
 			"{{w|mandarin orange}}",
 			"{{w|kumquat}}"
 		],
-		"categories": ["fruit", "plant"]
+		"categories": ["fruit", "plant", "tree"]
 	},
 	{
 		"title": "ammut",
@@ -1226,7 +1226,7 @@
 		"defList": [
 			"deciduous tree"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "tree"]
 	},
 	{
 		"title": "arm",
@@ -1573,7 +1573,7 @@
 		"defList": [
 			"mango"
 		],
-		"categories": ["fruit", "plant"]
+		"categories": ["fruit", "plant", "tree"]
 	},
 	{
 		"title": "bakaz",
@@ -1846,7 +1846,7 @@
 		"defList": [
 			"pomegranate"
 		],
-		"categories": ["fruit", "plant"]
+		"categories": ["fruit", "plant", "tree"]
 	},
 	{
 		"title": "batlam",
@@ -2565,7 +2565,7 @@
 		"defList": [
 			"pear"
 		],
-		"categories": ["fruit", "plant"]
+		"categories": ["fruit", "plant", "tree"]
 	},
 	{
 		"title": "bô",
@@ -4049,7 +4049,7 @@
 		"defList": [
 			"cinnamon"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "spice", "tree"]
 	},
 	{
 		"title": "edzam",
@@ -4080,7 +4080,7 @@
 		"defList": [
 			"spruce"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "tree"]
 	},
 	{
 		"title": "ekar",
@@ -4189,7 +4189,7 @@
 		"defList": [
 			"lemon"
 		],
-		"categories": ["fruit", "plant"],
+		"categories": ["fruit", "plant", "tree"],
 		"notes": "wanderwort"
 	},
 	{
@@ -4370,7 +4370,7 @@
 			"rambutan",
 			"lychee"
 		],
-		"categories": ["fruit", "plant"]
+		"categories": ["fruit", "plant", "tree"]
 	},
 	{
 		"title": "ereu",
@@ -4459,7 +4459,7 @@
 		"defList": [
 			"coffee (plant)"
 		],
-		"categories": ["plant", "v3_trade"]
+		"categories": ["plant", "tree", "v3_trade"]
 	},
 	{
 		"title": "habin",
@@ -4799,7 +4799,7 @@
 		"defList": [
 			"carambola, star fruit"
 		],
-		"categories": ["fruit", "plant"]
+		"categories": ["fruit", "plant", "tree"]
 	},
 	{
 		"title": "hans",
@@ -5098,7 +5098,7 @@
 		"defList": [
 			"fig"
 		],
-		"categories": ["fruit", "plant"]
+		"categories": ["fruit", "plant", "tree"]
 	},
 	{
 		"title": "hifi",
@@ -6091,7 +6091,7 @@
 		"defList": [
 			"date (fruit)"
 		],
-		"categories": ["fruit", "plant"]
+		"categories": ["fruit", "plant", "tree"]
 	},
 	{
 		"title": "kaipam",
@@ -6212,7 +6212,7 @@
 			"pomelo",
 			"grapefruit"
 		],
-		"categories": ["fruit", "plant"]
+		"categories": ["fruit", "plant", "tree"]
 	},
 	{
 		"title": "kamela",
@@ -6221,7 +6221,7 @@
 		"defList": [
 			"lime"
 		],
-		"categories": ["fruit", "plant"]
+		"categories": ["fruit", "plant", "tree"]
 	},
 	{
 		"title": "kamit",
@@ -6290,7 +6290,7 @@
 		"defList": [
 			"cardamom"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "spice"]
 	},
 	{
 		"title": "karm",
@@ -6318,7 +6318,7 @@
 		"defList": [
 			"carrot"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "vegetable"]
 	},
 	{
 		"title": "karot",
@@ -6338,7 +6338,7 @@
 			"apple"
 		],
 		"notes": "kaskru is one of a handful of nouns ending in -u.",
-		"categories": ["fruit", "plant"]
+		"categories": ["fruit", "plant", "tree"]
 	},
 	{
 		"title": "kaspa",
@@ -6349,7 +6349,7 @@
 			"chestnut",
 			"nut (in general)"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "tree"]
 	},
 	{
 		"title": "kaspasu",
@@ -6640,7 +6640,7 @@
 		"defList": [
 			"birch"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "tree"]
 	},
 	{
 		"title": "kit",
@@ -6745,7 +6745,7 @@
 		"defList": [
 			"palm (tree)"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "tree"]
 	},
 	{
 		"title": "kôbenk",
@@ -6840,7 +6840,7 @@
 		"defList": [
 			"beech (esp. fagus orientalis)"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "tree"]
 	},
 	{
 		"title": "konoz",
@@ -7114,7 +7114,7 @@
 		"defList": [
 			"cauliflower"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "vegetable"]
 	},
 	{
 		"title": "kuafkar",
@@ -7603,7 +7603,7 @@
 		"defList": [
 			"root vegetable (esp. radishes, but also carrots and parsnips)"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "vegetable"]
 	},
 	{
 		"title": "kunaz",
@@ -7716,7 +7716,7 @@
 		"defList": [
 			"onion"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "vegetable"]
 	},
 	{
 		"title": "kurôm",
@@ -7830,7 +7830,7 @@
 		"defList": [
 			"olive"
 		],
-		"categories": ["fruit", "plant"]
+		"categories": ["fruit", "plant", "tree"]
 	},
 	{
 		"title": "laibôdint",
@@ -7949,7 +7949,7 @@
 		"defList": [
 			"prunus (subgenus; incl. plum, peach, nectarine, apricot, and almond)"
 		],
-		"categories": ["fruit", "plant"]
+		"categories": ["fruit", "plant", "tree"]
 	},
 	{
 		"title": "lensêdzak",
@@ -8089,7 +8089,7 @@
 			"(archaic) tree",
 			"(archaic) wood"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "tree"]
 	},
 	{
 		"title": "liremimit",
@@ -8305,7 +8305,7 @@
 		"defList": [
 			"clove (spice)"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "spice", "tree"]
 	},
 	{
 		"title": "makanalk",
@@ -10394,7 +10394,7 @@
 		"defList": [
 			"persimmon"
 		],
-		"categories": ["fruit", "plant"]
+		"categories": ["fruit", "plant", "tree"]
 	},
 	{
 		"title": "rankensudôm",
@@ -12017,7 +12017,7 @@
 			"(archaic) evergreen, esp. pine",
 			"(archaic) a forest, a wood"
 		],
-		"categories": ["plant"]
+		"categories": ["plant", "tree"]
 	},
 	{
 		"title": "talirem",
@@ -12225,7 +12225,7 @@
 			"pine"
 		],
 		"notes": "tasku is one of a handful of nouns ending in -u.",
-		"categories": ["plant"]
+		"categories": ["plant", "tree"]
 	},
 	{
 		"title": "tasu",
@@ -12295,7 +12295,7 @@
 		"defList": [
 			"tea (leaf)"
 		],
-		"categories": ["plant", "v3_trade"]
+		"categories": ["plant", "v3_trade", "tree"]
 	},
 	{
 		"title": "tekkat",
