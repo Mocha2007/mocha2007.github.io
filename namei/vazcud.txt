@@ -379,3 +379,4 @@ wazafi=n, n=horseradish
 chacha=n, n=pepper
 pazo=n, n=leek
 tuphonz=adj., 2s=sour
+thida=n, n=lettuce

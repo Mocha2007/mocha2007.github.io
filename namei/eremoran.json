@@ -2204,7 +2204,8 @@
 		"etym": "I/PEN/*βeu/common bean",
 		"cat": "n., 4th",
 		"defList": [
-			"common bean (phaseolus vulgaris)"
+			"common bean ({{w|phaseolus vulgaris}})",
+			"pea ({{w|pisum sativum}})"
 		],
 		"categories": ["plant"]
 	},
@@ -8657,6 +8658,15 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "modela",
+		"etym": "D/moda",
+		"cat": "n., 4th",
+		"defList": [
+			"shoot (of a plant)"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "mofanuz",
 		"etym": "C/mo/hanuz",
 		"cat": "v.",
@@ -9229,6 +9239,15 @@
 			"be ashamed"
 		],
 		"categories": ["emotion"]
+	},
+	{
+		"title": "naza",
+		"etym": "I/PEN/*nasa/turnip",
+		"cat": "n., 4th",
+		"defList": [
+			"turnip"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "ne",
@@ -10587,6 +10606,15 @@
 		]
 	},
 	{
+		"title": "rita",
+		"etym": "I/PEN/*rita/lettuce",
+		"cat": "n., 4th",
+		"defList": [
+			"lettuce"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "rô",
 		"etym": "I/PEN/*rô/tongue",
 		"cat": "n., 4th",
@@ -10594,6 +10622,15 @@
 			"tongue"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "rôbi",
+		"etym": "C/rô/bi",
+		"cat": "n., 4th",
+		"defList": [
+			"parsley"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "rôlent",
@@ -12080,6 +12117,15 @@
 		"defList": [
 			"(''of inanimates'') new"
 		]
+	},
+	{
+		"title": "tardela",
+		"etym": "B/tar/modela",
+		"cat": "n., 4th",
+		"defList": [
+			"asparagus"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "tasfut",
