@@ -177,7 +177,7 @@ uncoy=n, n=plant~vegetation
 lethfo=n, n=bush~shrub
 banltho=n, n=grass
 yu=n, n=beech (Fagus engleriana)
-uga=n, n=birch
+ugana=n, n=birch
 la=n, n=oak
 vu=n, n=pine
 uy=n, n=spruce (particularly Picea crassifolia and Picea retroflexa)
