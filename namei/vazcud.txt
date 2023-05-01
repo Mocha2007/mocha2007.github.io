@@ -384,3 +384,6 @@ phako=n, n=lentil
 kawo=n, n=carrot
 sikwo=n, n=cucumber
 ku=n, n=cauliflower
+sulazay=n, n=magic mushroom
+šamu=n, n;v, 4=study
+sulazayšamu=n, n=study of the cultivation of magic mushrooms

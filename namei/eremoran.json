@@ -5126,6 +5126,15 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "hilazai",
+		"etym": "I/PEN/*silasai/magic mushrooms",
+		"cat": "n., 4th",
+		"defList": [
+			"(archaic) magic mushrooms"
+		],
+		"categories": ["fungus"]
+	},
+	{
 		"title": "hilbe",
 		"etym": "I/PEN/*ɸilβe/cloud",
 		"cat": "n., 4th",
@@ -7897,6 +7906,15 @@
 		]
 	},
 	{
+		"title": "lasi",
+		"etym": "L/MUR/šlasi",
+		"cat": "n., 4th",
+		"defList": [
+			"Muran cultivar of magic mushrooms"
+		],
+		"categories": ["fungus"]
+	},
+	{
 		"title": "laz",
 		"etym": "I/PEN/*las/brew",
 		"cat": "v.",
@@ -9619,7 +9637,7 @@
 		"defList": [
 			"mushroom"
 		],
-		"categories": ["food"]
+		"categories": ["fungus"]
 	},
 	{
 		"title": "nom",
@@ -11745,6 +11763,15 @@
 		]
 	},
 	{
+		"title": "suaza",
+		"etym": "L/NUZ/suaze//I/VAZ/sulazay",
+		"cat": "n., 4th",
+		"defList": [
+			"Nuzdexalk cultivar of magic mushrooms"
+		],
+		"categories": ["fungus"]
+	},
+	{
 		"title": "subanbanz",
 		"etym": "C/su/banbanz",
 		"cat": "v.",
@@ -11872,6 +11899,15 @@
 			"sew"
 		],
 		"categories": ["clothing"]
+	},
+	{
+		"title": "sulazêsam",
+		"etym": "L/VAZ/sulazay-šamu",
+		"cat": "n., 4th",
+		"defList": [
+			"mycology (specifically, the study of the cultivation of magic mushrooms)"
+		],
+		"categories": ["fungus"]
 	},
 	{
 		"title": "suma",
@@ -13301,6 +13337,15 @@
 			"squat"
 		],
 		"categories": ["motion"]
+	},
+	{
+		"title": "zai",
+		"etym": "r/hilazai",
+		"cat": "n., 4th",
+		"defList": [
+			"magic mushrooms"
+		],
+		"categories": ["fungus"]
 	},
 	{
 		"title": "zedu",
