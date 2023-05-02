@@ -902,7 +902,7 @@
 		"etym": "C/amma/kama",
 		"cat": "n., 4th",
 		"defList": [
-			"{{w|orange|Citrus × sinensis}}",
+			"orange ({{w|Citrus × sinensis}})",
 			"{{w|bitter orange}}",
 			"{{w|mandarin orange}}",
 			"{{w|kumquat}}"
@@ -4708,8 +4708,8 @@
 		"categories": ["extent"]
 	},
 	{
-		"title": "halkisdinsi",
-		"etym": "C/halkidint/-si",
+		"title": "halkidinsi",
+		"etym": "C/halkidint/si",
 		"cat": "n., 4th",
 		"defList": [
 			"sesame"
