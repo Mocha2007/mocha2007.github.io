@@ -39,7 +39,8 @@
 		"defList": [
 			"plant extract, sauce, oil (suffix denoting a substance derived from a plant)"
 		],
-		"notes": "has the alternate form -dint after a vowel"
+		"notes": "has the alternate form -dint after a vowel",
+		"categories": ["oil"]
 	},
 	{
 		"title": "-idinu",
@@ -932,6 +933,16 @@
 		"defList": [
 			"sweet"
 		]
+	},
+	{
+		"title": "amunaba",
+		"etym": "C/amu/naba",
+		"cat": "n., 4th",
+		"defList": [
+			"licorice"
+		],
+		"categories": ["plant", "spice"],
+		"notes": "categorizing this as a spice instead of an herb as its extract comes from the root"
 	},
 	{
 		"title": "amzralam",
@@ -4162,8 +4173,9 @@
 		"etym": "I/PEN/*elgin",
 		"cat": "n., 4th",
 		"defList": [
-			"flax"
-		]
+			"flax, linseed"
+		],
+		"categories": ["fiber", "plant", "oil"]
 	},
 	{
 		"title": "elkut",
@@ -4694,6 +4706,24 @@
 			"(intransitive) weigh"
 		],
 		"categories": ["extent"]
+	},
+	{
+		"title": "halkisdinsi",
+		"etym": "C/halkidint/-si",
+		"cat": "n., 4th",
+		"defList": [
+			"sesame"
+		],
+		"categories": ["oil", "plant"]
+	},
+	{
+		"title": "halkidint",
+		"etym": "C/halk/-idint",
+		"cat": "n., 3rd",
+		"defList": [
+			"oil"
+		],
+		"categories": ["oil", "v3_trade"]
 	},
 	{
 		"title": "halrôm",
@@ -6287,6 +6317,15 @@
 		]
 	},
 	{
+		"title": "kanabi",
+		"etym": "I/PEN/*xanabi",
+		"cat": "n., 4th",
+		"defList": [
+			"hemp"
+		],
+		"categories": ["fiber", "plant"]
+	},
+	{
 		"title": "kanam",
 		"etym": "C/kanat/-m",
 		"cat": "n., 5th",
@@ -6423,6 +6462,15 @@
 			"(archaic) cut",
 			"butcher"
 		]
+	},
+	{
+		"title": "kazi",
+		"etym": "I/PEN/*gasi",
+		"cat": "n., 4th",
+		"defList": [
+			"cotton"
+		],
+		"categories": ["fiber", "plant", "oil"]
 	},
 	{
 		"title": "ke",
@@ -6790,7 +6838,7 @@
 		"defList": [
 			"palm (tree)"
 		],
-		"categories": ["plant", "tree"]
+		"categories": ["plant", "oil", "tree"]
 	},
 	{
 		"title": "kôbenk",
@@ -7256,7 +7304,7 @@
 		"defList": [
 			"soybean"
 		],
-		"categories": ["plant", "soy"]
+		"categories": ["plant", "oil", "soy"]
 	},
 	{
 		"title": "kubeudint",
@@ -7265,7 +7313,7 @@
 		"defList": [
 			"soybean oil"
 		],
-		"categories": ["soy"]
+		"categories": ["oil", "soy"]
 	},
 	{
 		"title": "kubôz",
@@ -7875,17 +7923,16 @@
 		"defList": [
 			"olive"
 		],
-		"categories": ["fruit", "plant", "tree"]
+		"categories": ["fruit", "oil", "plant", "tree"]
 	},
 	{
 		"title": "laibôdint",
 		"etym": "C/laibô/-idint",
 		"cat": "n., 3rd",
 		"defList": [
-			"olive oil",
-			"oil"
+			"olive oil"
 		],
-		"categories": ["v3_trade"]
+		"categories": ["oil"]
 	},
 	{
 		"title": "lak",
@@ -9049,14 +9096,6 @@
 		"notes": "not humid"
 	},
 	{
-		"title": "mut",
-		"etym": "C/mu/-t",
-		"cat": "n., 3rd",
-		"defList": [
-			"extract, essential oil, stock"
-		]
-	},
-	{
 		"title": "na",
 		"etym": "I/PEN/*na/ear",
 		"cat": "n., 4th",
@@ -9193,6 +9232,15 @@
 			"cheek"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "nasa",
+		"etym": "I/PEN/*naʃa",
+		"cat": "n., 4th",
+		"defList": [
+			"rapeseed"
+		],
+		"categories": ["plant", "oil"]
 	},
 	{
 		"title": "nasananu",
