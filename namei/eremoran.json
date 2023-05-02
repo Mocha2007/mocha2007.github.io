@@ -909,6 +909,15 @@
 		"categories": ["fruit", "plant", "tree"]
 	},
 	{
+		"title": "ammakeba",
+		"etym": "B/ammakama/eba",
+		"cat": "n., 4th",
+		"defList": [
+			"dried orange peel (used as a spice)"
+		],
+		"categories": ["spice"]
+	},
+	{
 		"title": "ammut",
 		"etym": "I/PEN/*xedmu/port",
 		"cat": "n., 3rd",
@@ -5848,6 +5857,15 @@
 		"notes": "used of the final product, NOT ingredients - cf. en. ''brew'' - used esp. of tea"
 	},
 	{
+		"title": "irikaba",
+		"etym": "B/irikar/kaba",
+		"cat": "n., 4th",
+		"defList": [
+			"fenugreek"
+		],
+		"categories": ["plant", "spice"]
+	},
+	{
 		"title": "irikam",
 		"etym": "C/irikar/-m",
 		"cat": "n., 5th",
@@ -5996,6 +6014,15 @@
 			"(transitive) move"
 		],
 		"categories": ["motion"]
+	},
+	{
+		"title": "kaba",
+		"etym": "I/PEN/*xaβia/hay",
+		"cat": "n., 4th",
+		"defList": [
+			"hay"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "kabako",
@@ -9564,6 +9591,15 @@
 		"categories": ["toponym"]
 	},
 	{
+		"title": "nizinsaua",
+		"etym": "B/nizinar/saua",
+		"cat": "n., 4th",
+		"defList": [
+			"galangal"
+		],
+		"categories": ["plant", "spice"]
+	},
+	{
 		"title": "nizitnôr",
 		"etym": "L/PRE/Nishitnō/Pre-Eremorans",
 		"cat": "n., 1st",
@@ -12663,6 +12699,15 @@
 			"hidden, secret, private"
 		],
 		"notes": "Irregular. Expected form *tranu unattested."
+	},
+	{
+		"title": "triksi",
+		"etym": "B/triksu/si",
+		"cat": "n., 4th",
+		"defList": [
+			"star anise"
+		],
+		"categories": ["plant", "spice", "tree"]
 	},
 	{
 		"title": "triksu",
