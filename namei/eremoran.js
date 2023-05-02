@@ -606,6 +606,14 @@ const search = {
 	get property(){
 		return document.getElementById('propertySearch').value;
 	},
+	reset(){
+		[
+			'categorySearch', 'typeSearch', 'propertySearch',
+			'etymologySourceSearch', 'etymologyTypeSearch',
+		].forEach(s => document.getElementById(s).value = 'any');
+		document.getElementById('regexSearch').value = '';
+		this.resetResults();
+	},
 	resetResults(){
 		this.searchResults.innerHTML = '';
 	},
@@ -1183,6 +1191,24 @@ function computeStats(){
 	// verify word forms
 	elements.raws.forEach((o, i) => {
 		const [word, n] = [o.title, (x => x && x[0])(o.cat.match(/\d/))];
+		// add categories to lemmas FIRST AND THEN VERIFY
+		if (o.categories && o.categories.length){
+			const catdd = document.createElement('dd');
+			catdd.innerHTML = 'Categories: ';
+			o.categories.forEach(catName => {
+				const elem = document.createElement('a');
+				elem.href = '#Vocab_Search';
+				elem.onclick = () => {
+					search.reset();
+					document.getElementById('categorySearch').value = catName;
+					search.input();
+				};
+				elem.innerHTML = catName;
+				catdd.appendChild(elem);
+			});
+			document.getElementById(`lemma-${word}`).appendChild(catdd);
+		}
+		// ok now verify
 		if (i && removeAccents(word) < removeAccents(elements.raws[i-1].title))
 			console.warn(`${word} out of order!`);
 		const last = word[word.length-1];
