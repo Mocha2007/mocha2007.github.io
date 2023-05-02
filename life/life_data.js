@@ -604,6 +604,26 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'avena',
+		'rank': 'genus',
+		'parent': 'pooideae',
+		'range': 'ow',
+	},
+	{
+		'name': 'avena sativa',
+		'rank': 'species',
+		'parent': 'avena',
+		'range': 'me',
+		'desc': 'Oat',
+		// https://en.wikipedia.org/wiki/List_of_organisms_by_chromosome_count
+		'genetic': {
+			'chromosome': {
+				'autosomal': 7,
+				'ploidy': 6,
+			},
+		},
+	},
+	{
 		'name': 'avialae',
 		'rank': 'clade',
 		'parent': 'paraves',
@@ -1121,6 +1141,19 @@ const lifeData = [
 		'desc': 'Cedar',
 	},
 	{
+		'name': 'cenchrus',
+		'rank': 'genus',
+		'parent': 'paniceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'cenchrus americanus',
+		'rank': 'species',
+		'parent': 'cenchrus',
+		'range': 'af;as',
+		'desc': 'Pearl Millet',
+	},
+	{
 		'name': 'cephalochordata',
 		'rank': 'subphylum',
 		'parent': 'chordata',
@@ -1553,6 +1586,13 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+	},
+	{
+		'name': 'digitaria',
+		'rank': 'genus',
+		'parent': 'paniceae',
+		'range': 'eq',
+		'desc': 'Fonio',
 	},
 	{
 		'name': 'dioscorea',
@@ -2330,7 +2370,7 @@ const lifeData = [
 	{
 		'name': 'hordeum',
 		'rank': 'genus',
-		'parent': 'pooideae',
+		'parent': 'triticeae',
 		'range': 'ww',
 	},
 	{
@@ -3112,10 +3152,36 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'paniceae',
+		'rank': 'tribe',
+		'parent': 'panicoideae',
+		'range': 'ww',
+	},
+	{
 		'name': 'panicoideae',
 		'rank': 'subfamily',
 		'parent': 'pacmad clade',
 		'range': 'ww',
+	},
+	{
+		'name': 'panicum',
+		'rank': 'genus',
+		'parent': 'paniceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'panicum miliaceum',
+		'rank': 'species',
+		'parent': 'panicum',
+		'range': 'as',
+		'desc': 'Proso Millet',
+	},
+	{
+		'name': 'panicum sumatrense',
+		'rank': 'species',
+		'parent': 'panicum',
+		'range': 'as',
+		'desc': 'Little Millet',
 	},
 	{
 		'name': 'panthera',
@@ -3856,7 +3922,7 @@ const lifeData = [
 	{
 		'name': 'secale',
 		'rank': 'genus',
-		'parent': 'pooideae',
+		'parent': 'triticeae',
 		'range': 'ww',
 	},
 	{
@@ -3886,6 +3952,19 @@ const lifeData = [
 		'parent': 'squamata',
 		'range': 'ww',
 		'desc': 'Snake',
+	},
+	{
+		'name': 'setaria',
+		'rank': 'genus',
+		'parent': 'paniceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'setaria italica',
+		'rank': 'species',
+		'parent': 'setaria',
+		'range': 'as',
+		'desc': 'Foxtail Millet',
 	},
 	{
 		'name': 'siluriformes',
@@ -4199,9 +4278,15 @@ const lifeData = [
 		'desc': 'Trilobite',
 	},
 	{
+		'name': 'triticeae',
+		'rank': 'tribe',
+		'parent': 'pooideae',
+		'range': 'ww',
+	},
+	{
 		'name': 'triticum',
 		'rank': 'genus',
-		'parent': 'pooideae',
+		'parent': 'triticeae',
 		'range': 'as',
 		'desc': 'Wheat',
 		'genetic': {

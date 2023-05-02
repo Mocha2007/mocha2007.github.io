@@ -235,7 +235,7 @@ function main(){
 				}
 				else
 					chr.innerHTML = allo;
-				chr.title = `Chromosome count ${ploidy}n = ${allo}, excl. sex chromosomes.`;
+				chr.title = `Chromosome count ${ploidy}x = ${allo}, excl. sex chromosomes.`;
 			}
 			// sex determination system
 			if (lifeData[i].genetic.hasOwnProperty('sex')){
