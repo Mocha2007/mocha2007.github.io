@@ -1177,6 +1177,11 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'chloridoideae',
+		'rank': 'subfamily',
+		'parent': 'pacmad clade',
+	},
+	{
 		'name': 'chondrichthyes',
 		'rank': 'class',
 		'parent': 'vertebrata',
@@ -1689,6 +1694,19 @@ const lifeData = [
 		'desc': 'True Cardamom',
 	},
 	{
+		'name': 'eleusine',
+		'rank': 'genus',
+		'parent': 'chloridoideae',
+		'range': 'as;af;sa',
+	},
+	{
+		'name': 'eleusine coracana',
+		'rank': 'species',
+		'parent': 'eleusine',
+		'range': 'af',
+		'desc': 'Finger Millet',
+	},
+	{
 		'name': 'enterobacteriaceae',
 		'rank': 'family',
 		'parent': 'enterobacteriales',
@@ -1753,6 +1771,19 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+	},
+	{
+		'name': 'eragrostis',
+		'rank': 'genus',
+		'parent': 'chloridoideae',
+		'range': 'ww',
+	},
+	{
+		'name': 'eragrostis tef',
+		'rank': 'species',
+		'parent': 'eragrostis',
+		'range': 'af',
+		'desc': 'Teff',
 	},
 	{
 		'name': 'erinaceidae',
@@ -2973,8 +3004,15 @@ const lifeData = [
 	{
 		'name': 'oryza',
 		'rank': 'genus',
-		'parent': 'bop clade',
+		'parent': 'oryzoideae',
 		'range': 'ww',
+	},
+	{
+		'name': 'oryza glaberrima',
+		'rank': 'species',
+		'parent': 'oryza',
+		'range': 'af',
+		'desc': 'African Rice',
 	},
 	{
 		'name': 'oryza sativa',
@@ -2988,6 +3026,12 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+	},
+	{
+		'name': 'oryzoideae',
+		'rank': 'subfamily',
+		'parent': 'bop clade',
+		'range': 'ww',
 	},
 	{
 		'name': 'osteichthyes',
@@ -3442,6 +3486,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'poales',
 		'range': 'ww',
+		'age': 110, // https://en.wikipedia.org/wiki/Poaceae#Evolutionary_history
 		'desc': 'Grass',
 	},
 	{
@@ -3930,6 +3975,26 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'sorghum',
+		'rank': 'genus',
+		'parent': 'panicoideae',
+		'range': 'ow',
+	},
+	{
+		'name': 'sorghum bicolor',
+		'rank': 'species',
+		'parent': 'sorghum',
+		'range': 'af',
+		'desc': 'Sorghum',
+		// https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4246720/
+		'genetic': {
+			'chromosome': {
+				'autosomal': 10,
+				'ploidy': 2,
+			},
+		},
+	},
+	{
 		'name': 'sphenisciformes',
 		'rank': 'order',
 		'parent': 'neoaves',
@@ -4363,5 +4428,12 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'commelinids',
 		'range': 'eq',
+	},
+	{
+		'name': 'zizania',
+		'rank': 'genus',
+		'parent': 'oryzoideae',
+		'range': 'na;as',
+		'desc': 'Wild Rice',
 	},
 ];
