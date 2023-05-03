@@ -2256,6 +2256,14 @@ const lifeData = [
 		'range': 'ow',
 		'age': 15.7,
 		'desc': 'Great Apes',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 23,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'homininae',
@@ -2264,6 +2272,14 @@ const lifeData = [
 		'range': 'af',
 		'age': 8.8,
 		'desc': 'African Apes',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 23,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'hominini',
@@ -2271,6 +2287,14 @@ const lifeData = [
 		'parent': 'homininae',
 		'range': 'af',
 		'age': 6.3,
+		'genetic': {
+			'chromosome': {
+				'autosomal': 23,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'hominoidea',
@@ -2368,6 +2392,21 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'hoolock',
+		'rank': 'genus',
+		'parent': 'hylobatidae',
+		'range': 'as',
+		// https://www.nature.com/articles/nature13679
+		'genetic': {
+			'chromosome': {
+				'autosomal': 18,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
+	},
+	{
 		'name': 'hordeum',
 		'rank': 'genus',
 		'parent': 'triticeae',
@@ -2424,6 +2463,21 @@ const lifeData = [
 		'genetic': {
 			'chromosome': {
 				'autosomal': 32,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
+	},
+	{
+		'name': 'hylobates',
+		'rank': 'genus',
+		'parent': 'hylobatidae',
+		'range': 'as',
+		// https://www.nature.com/articles/nature13679
+		'genetic': {
+			'chromosome': {
+				'autosomal': 21,
 				'allosomal': [2, 2],
 				'ploidy': 2,
 			},
@@ -2957,6 +3011,21 @@ const lifeData = [
 		'range': 'wo',
 		'desc': 'Lobster',
 	},
+	{
+		'name': 'nomascus',
+		'rank': 'genus',
+		'parent': 'hylobatidae',
+		'range': 'as',
+		// https://www.nature.com/articles/nature13679
+		'genetic': {
+			'chromosome': {
+				'autosomal': 25,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
+	},
 	// O
 	{
 		'name': 'ochrophyta',
@@ -3122,6 +3191,14 @@ const lifeData = [
 		'parent': 'hominini',
 		'range': 'af',
 		'age': 4,
+		'genetic': {
+			'chromosome': {
+				'autosomal': 23,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'pan troglodytes',
@@ -4147,6 +4224,37 @@ const lifeData = [
 		'genetic': {
 			'chromosome': {
 				'autosomal': 17,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
+	},
+	{
+		'name': 'symphalangus',
+		'rank': 'genus',
+		'parent': 'hylobatidae',
+		'range': 'as',
+		// https://www.nature.com/articles/nature13679
+		'genetic': {
+			'chromosome': {
+				'autosomal': 24,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
+	},
+	{
+		'name': 'symphalangus syndactylus',
+		'rank': 'species',
+		'parent': 'symphalangus',
+		'range': 'as',
+		'desc': 'Siamang',
+		// https://www.nature.com/articles/nature13679
+		'genetic': {
+			'chromosome': {
+				'autosomal': 24,
 				'allosomal': [2, 2],
 				'ploidy': 2,
 			},
