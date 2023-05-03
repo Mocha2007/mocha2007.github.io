@@ -598,6 +598,7 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'avialae',
 		'range': 'ww',
+		'age': 72,
 		'desc': 'Bird',
 		'genetic': {
 			'sex': 'ZW',
@@ -2256,6 +2257,7 @@ const lifeData = [
 		'range': 'ow',
 		'age': 15.7,
 		'desc': 'Great Apes',
+		// http://eknygos.lsmuni.lt/springer/671/133-152.pdf
 		'genetic': {
 			'chromosome': {
 				'autosomal': 23,
@@ -2303,6 +2305,15 @@ const lifeData = [
 		'range': 'ow',
 		'age': 20.4,
 		'desc': 'Ape',
+		// http://eknygos.lsmuni.lt/springer/671/133-152.pdf
+		'genetic': {
+			'chromosome': {
+				'autosomal': 23,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'homo',
@@ -2491,6 +2502,15 @@ const lifeData = [
 		'range': 'as',
 		'age': 8,
 		'desc': 'Gibbon',
+		// http://eknygos.lsmuni.lt/springer/671/133-152.pdf
+		'genetic': {
+			'chromosome': {
+				'autosomal': 24,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'hymenoptera',
@@ -2827,6 +2847,15 @@ const lifeData = [
 		'range': 'ww',
 		'age': 225,
 		'desc': 'Mammals are characterized by the presence of mammary glands, a neocortex, fur or hair, and three middle ear bones.',
+		// http://eknygos.lsmuni.lt/springer/671/133-152.pdf
+		'genetic': {
+			'chromosome': {
+				'autosomal': 22,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'mammuthus',
@@ -3682,6 +3711,15 @@ const lifeData = [
 		'range': 'eq',
 		'age': 55,
 		'desc': 'Primate characteristics include large brains, visual acuity, color vision, altered shoulder girdle, and dextrous hands.',
+		// http://eknygos.lsmuni.lt/springer/671/133-152.pdf
+		'genetic': {
+			'chromosome': {
+				'autosomal': 24,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'proboscidea',
