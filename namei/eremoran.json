@@ -824,6 +824,24 @@
 		]
 	},
 	{
+		"title": "aksibi",
+		"etym": "C/aksik/bi",
+		"cat": "n., 4th",
+		"defList": [
+			"celery"
+		],
+		"categories": ["plant", "vegetable"]
+	},
+	{
+		"title": "aksik",
+		"etym": "I/PEN/*xeksi-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"goat"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "ala",
 		"etym": "I/PEN/*ala/oak",
 		"cat": "n., 4th",
@@ -2382,6 +2400,23 @@
 			"The fifth day of the 6-day week"
 		],
 		"categories": ["time"]
+	},
+	{
+		"title": "bikaldoêr",
+		"etym": "C/bikaldom/-ê",
+		"cat": "n., 1st",
+		"defList": [
+			"one overtaken by [[bikaldom]]"
+		],
+		"categories": ["person"]
+	},
+	{
+		"title": "bikaldom",
+		"etym": "B/bikut/kaldom",
+		"cat": "n., 5th",
+		"defList": [
+			"paralytic desire to rediscover ''the book''"
+		]
 	},
 	{
 		"title": "bikil",
@@ -6516,6 +6551,15 @@
 			"god"
 		],
 		"categories": ["animal", "god", "person"]
+	},
+	{
+		"title": "kela",
+		"etym": "I/PEN/*kela",
+		"cat": "n., 4th",
+		"defList": [
+			"coconut"
+		],
+		"categories": ["fruit", "oil", "plant"]
 	},
 	{
 		"title": "keliz",
