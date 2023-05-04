@@ -2321,6 +2321,23 @@
 		"categories": ["herb", "plant"]
 	},
 	{
+		"title": "bikaldoêr",
+		"etym": "C/bikaldom/-ê",
+		"cat": "n., 1st",
+		"defList": [
+			"one overtaken by [[bikaldom]]"
+		],
+		"categories": ["person"]
+	},
+	{
+		"title": "bikaldom",
+		"etym": "B/bikut/kaldom",
+		"cat": "n., 5th",
+		"defList": [
+			"bikaldom, paralytic desire to rediscover ''the book''"
+		]
+	},
+	{
 		"title": "bikê",
 		"etym": "L/PRE/apikkei",
 		"cat": "n., 4th",
@@ -2400,23 +2417,6 @@
 			"The fifth day of the 6-day week"
 		],
 		"categories": ["time"]
-	},
-	{
-		"title": "bikaldoêr",
-		"etym": "C/bikaldom/-ê",
-		"cat": "n., 1st",
-		"defList": [
-			"one overtaken by [[bikaldom]]"
-		],
-		"categories": ["person"]
-	},
-	{
-		"title": "bikaldom",
-		"etym": "B/bikut/kaldom",
-		"cat": "n., 5th",
-		"defList": [
-			"paralytic desire to rediscover ''the book''"
-		]
 	},
 	{
 		"title": "bikil",
