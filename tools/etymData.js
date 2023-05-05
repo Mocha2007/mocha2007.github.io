@@ -278,7 +278,7 @@ const etymData = [
 		head: 'anus',
 		lang: EDS.latin,
 		gloss: 'ring',
-		forms: ['ann', 'an'],
+		forms: ['an', 'ann'], // irregular ann- in annelid
 	},
 	{
 		head: 'avis',
@@ -456,6 +456,12 @@ const etymData = [
 		forms: ['an', 'a'],
 	},
 	{
+		head: 'aná',
+		lang: EDS.greek,
+		gloss: 'up',
+		forms: ['ana'],
+	},
+	{
 		head: 'amníon',
 		lang: EDS.greek,
 		gloss: 'bowl',
@@ -586,6 +592,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'within',
 		forms: ['endo', 'ento'],
+	},
+	{
+		head: 'epí',
+		lang: EDS.greek,
+		gloss: 'on',
+		forms: ['epi', 'ep'],
 	},
 	{
 		head: 'étumon',
@@ -1120,6 +1132,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'wing',
 		forms: ['pteryg'],
+	},
+	{
+		head: 'ptússō',
+		lang: EDS.greek,
+		gloss: 'fold',
+		forms: ['ptyxis$'],
 	},
 	{
 		head: 'rhipídion',
