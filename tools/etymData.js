@@ -585,7 +585,7 @@ const etymData = [
 		head: 'ḗlektron',
 		lang: EDS.greek,
 		gloss: 'amber',
-		forms: ['electron', 'electro'],
+		forms: ['electron', 'electro', 'electr'],
 	},
 	{
 		head: 'en',
