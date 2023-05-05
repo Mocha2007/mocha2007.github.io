@@ -17,7 +17,7 @@ const etymData = [
 		head: '-ish',
 		lang: EDS.english,
 		gloss: '(ADJ)',
-		forms: ['ish'],
+		forms: ['ish$'],
 	},
 	{
 		head: '-ly',
@@ -759,7 +759,7 @@ const etymData = [
 		head: 'kruptós',
 		lang: EDS.greek,
 		gloss: 'hidden',
-		forms: ['crypto'],
+		forms: ['crypto', 'crypt'],
 	},
 	{
 		head: 'kteís',
