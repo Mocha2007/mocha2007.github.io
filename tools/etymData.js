@@ -77,6 +77,12 @@ const etymData = [
 		forms: ['ia$'],
 	},
 	{
+		head: '-icus',
+		lang: EDS.latin,
+		gloss: '(ADJ)',
+		forms: ['ic$'],
+	},
+	{
 		head: '-ida',
 		lang: EDS.latin,
 		gloss: '(taxon)',
@@ -161,6 +167,12 @@ const etymData = [
 		forms: ['flagell'],
 	},
 	// ANCIENT GREEK
+	{
+		head: '-ikós',
+		lang: EDS.greek,
+		gloss: '(ADJ)',
+		forms: ['ic$'],
+	},
 	{
 		head: '-ṓtēs',
 		lang: EDS.greek,
@@ -492,6 +504,18 @@ const etymData = [
 		forms: ['stom'],
 	},
 	{
+		head: 'sún',
+		lang: EDS.greek,
+		gloss: 'with',
+		forms: ['syn', 'sym'],
+	},
+	{
+		head: 'tainíā',
+		lang: EDS.greek,
+		gloss: 'band',
+		forms: ['teny$'], // synteny
+	},
+	{
 		head: 'téleios',
 		lang: EDS.greek,
 		gloss: 'complete',
@@ -502,6 +526,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'four',
 		forms: ['tetra'],
+	},
+	{
+		head: 'títhēmi',
+		lang: EDS.greek,
+		gloss: 'put',
+		forms: ['thesis$', 'thet'],
 	},
 	{
 		head: 'thēríon',
