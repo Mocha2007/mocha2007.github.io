@@ -91,8 +91,8 @@ const etymData = [
 	{
 		head: '-alis',
 		lang: EDS.latin,
-		gloss: '(N)',
-		forms: ['alis$', 'ales$', 'alia$'],
+		gloss: '(ADJ)',
+		forms: ['alis$', 'ales$', 'alia$', 'al'],
 	},
 	{
 		head: '-anae',
@@ -153,12 +153,6 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: '(taxon)',
 		forms: ['ia$'],
-	},
-	{
-		head: '-icalis',
-		lang: EDS.latin,
-		gloss: '(ADJ)',
-		forms: ['ical'],
 	},
 	{
 		head: '-icus',
@@ -1173,7 +1167,7 @@ const etymData = [
 		head: 'sôma',
 		lang: EDS.greek,
 		gloss: 'body',
-		forms: ['somat', 'some$'], // somatic chromosome
+		forms: ['somat', 'some$', 'som'], // somatic chromosome
 	},
 	{
 		head: 'sophía',
