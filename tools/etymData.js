@@ -47,6 +47,18 @@ const etymData = [
 		forms: ['aria$'],
 	},
 	{
+		head: '-atus',
+		lang: EDS.latin,
+		gloss: '(past participle)',
+		forms: ['ate$', 'at'], // eg. choano-flagell-at-ea
+	},
+	{
+		head: '-ea',
+		lang: EDS.latin,
+		gloss: '(taxon)',
+		forms: ['ea$'],
+	},
+	{
 		head: '-eae',
 		lang: EDS.latin,
 		gloss: '(tribe of non-animal)',
@@ -141,6 +153,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: '(taxon)',
 		forms: ['us$'],
+	},
+	{
+		head: 'flagellum',
+		lang: EDS.latin,
+		gloss: 'whip',
+		forms: ['flagell'],
 	},
 	// ANCIENT GREEK
 	{
