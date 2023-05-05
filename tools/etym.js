@@ -41,7 +41,7 @@ const etym = {
 			return document.getElementById('result');
 		},
 	},
-	debug: true,
+	debug: window.location.origin[0] === 'f', // http://mocha2007.github.io, or file://?
 	go(){
 		this.init();
 		const s = this.elem.input.value.toLowerCase().replace(/[^a-z]/, '');
