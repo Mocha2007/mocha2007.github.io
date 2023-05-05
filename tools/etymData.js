@@ -414,6 +414,12 @@ const etymData = [
 		forms: ['ion$'],
 	},
 	{
+		head: '-ismós',
+		lang: EDS.greek,
+		gloss: '(N)',
+		forms: ['ism'],
+	},
+	{
 		head: '-îtis',
 		lang: EDS.greek,
 		gloss: '(disease)',
@@ -864,6 +870,12 @@ const etymData = [
 		forms: ['mastigo'],
 	},
 	{
+		head: 'mēkhanḗ',
+		lang: EDS.greek,
+		gloss: 'machine',
+		forms: ['mechan'],
+	},
+	{
 		head: 'meíōn',
 		lang: EDS.greek,
 		gloss: 'less',
@@ -963,7 +975,7 @@ const etymData = [
 		head: 'odṓn',
 		lang: EDS.greek,
 		gloss: 'tooth',
-		forms: ['odon'],
+		forms: ['odont', 'odon'],
 	},
 	{
 		head: 'oîstros',
@@ -1012,6 +1024,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'beside',
 		forms: ['para'],
+	},
+	{
+		head: 'perí',
+		lang: EDS.greek,
+		gloss: 'around',
+		forms: ['peri'],
 	},
 	{
 		head: 'phílos',
@@ -1180,6 +1198,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'darkness',
 		forms: ['scoto'],
+	},
+	{
+		head: 'skopéō',
+		lang: EDS.greek,
+		gloss: 'examine',
+		forms: ['scope$', 'scopy$'],
 	},
 	{
 		head: 'sôma',
