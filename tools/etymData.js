@@ -14,6 +14,30 @@ const etymData = [
 	// make these alphabetical
 	// ENGLISH
 	{
+		head: '-ish',
+		lang: EDS.english,
+		gloss: '(ADJ)',
+		forms: ['ish'],
+	},
+	{
+		head: '-ly',
+		lang: EDS.english,
+		gloss: '(ADV)',
+		forms: ['ly$'],
+	},
+	{
+		head: '-ness',
+		lang: EDS.english,
+		gloss: '(N)',
+		forms: ['ness'],
+	},
+	{
+		head: '-s',
+		lang: EDS.english,
+		gloss: '(PL)',
+		forms: ['s$', 'es$'],
+	},
+	{
 		head: 'ribo-',
 		lang: EDS.english,
 		gloss: 'ribose', // the word ribose is an alteration of arabinose, which comes from arabi-
@@ -125,10 +149,16 @@ const etymData = [
 		forms: ['ia$'],
 	},
 	{
+		head: '-icalis',
+		lang: EDS.latin,
+		gloss: '(ADJ)',
+		forms: ['ical'],
+	},
+	{
 		head: '-icus',
 		lang: EDS.latin,
 		gloss: '(ADJ)',
-		forms: ['ic$'],
+		forms: ['ic'],
 	},
 	{
 		head: '-ida',
@@ -480,6 +510,12 @@ const etymData = [
 		forms: ['boreo'],
 	},
 	{
+		head: 'botánē',
+		lang: EDS.greek,
+		gloss: 'herb',
+		forms: ['botany$', 'botan'],
+	},
+	{
 		head: 'brakhíōn',
 		lang: EDS.greek,
 		gloss: 'arm',
@@ -804,6 +840,12 @@ const etymData = [
 		forms: ['monad', 'mono'],
 	},
 	{
+		head: 'mōrós',
+		lang: EDS.greek,
+		gloss: 'slow',
+		forms: ['moron', 'more$'],
+	},
+	{
 		head: 'morphḗ',
 		lang: EDS.greek,
 		gloss: 'shape',
@@ -906,6 +948,12 @@ const etymData = [
 		forms: ['para'],
 	},
 	{
+		head: 'phílos',
+		lang: EDS.greek,
+		gloss: 'loving',
+		forms: ['phile$', 'philo', 'phil'],
+	},
+	{
 		head: 'Phorōnís',
 		lang: EDS.greek,
 		gloss: 'Phoronis',
@@ -996,6 +1044,12 @@ const etymData = [
 		forms: ['proto'],
 	},
 	{
+		head: 'psukhḗ',
+		lang: EDS.greek,
+		gloss: 'soul',
+		forms: ['psycho'],
+	},
+	{
 		head: 'ptéris',
 		lang: EDS.greek,
 		gloss: 'male fern',
@@ -1060,6 +1114,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'body',
 		forms: ['somat', 'some$'], // somatic chromosome
+	},
+	{
+		head: 'sophía',
+		lang: EDS.greek,
+		gloss: 'wisdom',
+		forms: ['sophy$', 'sopho', 'soph'], // philoSOPHY, SOPHOmore, philoSOPHic
 	},
 	{
 		head: 'spérma',
