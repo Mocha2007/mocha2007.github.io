@@ -558,6 +558,18 @@ const etymData = [
 		forms: ['echino'],
 	},
 	{
+		head: 'ḗlektron',
+		lang: EDS.greek,
+		gloss: 'amber',
+		forms: ['electron', 'electro'],
+	},
+	{
+		head: 'en',
+		lang: EDS.greek,
+		gloss: 'in',
+		forms: ['en'],
+	},
+	{
 		head: 'entós',
 		lang: EDS.greek,
 		gloss: 'within',
@@ -682,6 +694,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'down',
 		forms: ['cata'],
+	},
+	{
+		head: 'kephalḗ',
+		lang: EDS.greek,
+		gloss: 'head',
+		forms: ['cephalo'],
 	},
 	{
 		head: 'kéras',
