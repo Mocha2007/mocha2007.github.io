@@ -926,6 +926,12 @@ const etymData = [
 		forms: ['meio'],
 	},
 	{
+		head: 'métron',
+		lang: EDS.greek,
+		gloss: 'measure',
+		forms: ['meter', 'metr'],
+	},
+	{
 		head: 'méros',
 		lang: EDS.greek,
 		gloss: 'part',
