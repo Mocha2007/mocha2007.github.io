@@ -14,6 +14,12 @@ const etymData = [
 	// make these alphabetical
 	// ENGLISH
 	{
+		head: '-er',
+		lang: EDS.english,
+		gloss: '(agent)',
+		forms: ['er'],
+	},
+	{
 		head: '-ish',
 		lang: EDS.english,
 		gloss: '(ADJ)',
@@ -492,6 +498,12 @@ const etymData = [
 		forms: ['arthro', 'arthr'],
 	},
 	{
+		head: 'autós',
+		lang: EDS.greek,
+		gloss: 'self',
+		forms: ['auto'],
+	},
+	{
 		head: 'baktēríā',
 		lang: EDS.greek,
 		gloss: 'rod',
@@ -514,6 +526,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'herb',
 		forms: ['botany$', 'botan'],
+	},
+	{
+		head: 'bradús',
+		lang: EDS.greek,
+		gloss: 'slow',
+		forms: ['brady'],
 	},
 	{
 		head: 'brakhíōn',
@@ -576,6 +594,12 @@ const etymData = [
 		forms: ['endo', 'ento'],
 	},
 	{
+		head: 'étumon',
+		lang: EDS.greek,
+		gloss: 'true meaning',
+		forms: ['etymo'],
+	},
+	{
 		head: 'eǘs',
 		lang: EDS.greek,
 		gloss: 'good',
@@ -616,6 +640,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'jaw',
 		forms: ['gnatho', 'gnath'],
+	},
+	{
+		head: 'grámma',
+		lang: EDS.greek,
+		gloss: 'letter',
+		forms: ['gram$'],
 	},
 	{
 		head: 'graphḗ',
@@ -682,6 +712,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'equal',
 		forms: ['iso'],
+	},
+	{
+		head: 'kardía',
+		lang: EDS.greek,
+		gloss: 'heart',
+		forms: ['cardio', 'cardia'],
 	},
 	{
 		head: 'káruon',
@@ -1168,6 +1204,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'with',
 		forms: ['syn', 'sym'],
+	},
+	{
+		head: 'takhús',
+		lang: EDS.greek,
+		gloss: 'fast',
+		forms: ['tachy'],
 	},
 	{
 		head: 'tainíā',
