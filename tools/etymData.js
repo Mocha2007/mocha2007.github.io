@@ -209,6 +209,12 @@ const etymData = [
 		forms: ['ista$', 'ist$'],
 	},
 	{
+		head: '-itas',
+		lang: EDS.latin,
+		gloss: '(N)',
+		forms: ['ity$', 'itie(?=s$)'],
+	},
+	{
 		head: '-ites',
 		lang: EDS.latin,
 		gloss: '(taxon)',
