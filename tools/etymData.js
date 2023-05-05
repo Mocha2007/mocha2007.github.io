@@ -2,6 +2,7 @@
 
 // shortcuts
 const EDS = {
+	german: 'German',
 	greek: 'Ancient Greek',
 	latin: 'Latin',
 	mocha: '(mochanoises)',
@@ -9,6 +10,13 @@ const EDS = {
 
 const etymData = [
 	// make these alphabetical
+	// GERMAN
+	{
+		head: 'ur-',
+		lang: EDS.german,
+		gloss: 'primitive',
+		forms: ['ur'],
+	},
 	// LATIN
 	{
 		head: '-acea',
@@ -125,6 +133,12 @@ const etymData = [
 		forms: ['ites$'],
 	},
 	{
+		head: '-nus',
+		lang: EDS.latin,
+		gloss: '(ADJ)',
+		forms: ['n$'],
+	},
+	{
 		head: '-odes',
 		lang: EDS.latin,
 		gloss: '(taxon)',
@@ -172,6 +186,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: '(ADJ)',
 		forms: ['ic$'],
+	},
+	{
+		head: '-nos',
+		lang: EDS.greek,
+		gloss: '(ADJ)',
+		forms: ['n$'],
 	},
 	{
 		head: '-ṓtēs',
