@@ -14,6 +14,12 @@ const etymData = [
 	// make these alphabetical
 	// ENGLISH
 	{
+		head: 'ribo-',
+		lang: EDS.english,
+		gloss: 'ribose', // the word ribose is an alteration of arabinose, which comes from arabi-
+		forms: ['ribo'],
+	},
+	{
 		head: 'rna',
 		lang: EDS.english,
 		gloss: 'RNA',
@@ -1053,7 +1059,7 @@ const etymData = [
 		head: 'sôma',
 		lang: EDS.greek,
 		gloss: 'body',
-		forms: ['some'], // chromosome
+		forms: ['somat', 'some$'], // somatic chromosome
 	},
 	{
 		head: 'spérma',
