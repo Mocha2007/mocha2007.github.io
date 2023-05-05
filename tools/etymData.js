@@ -1064,6 +1064,12 @@ const etymData = [
 		forms: ['phile$', 'philo', 'phil'],
 	},
 	{
+		head: 'phóbos',
+		lang: EDS.greek,
+		gloss: 'fear',
+		forms: ['phobe$', 'phob'],
+	},
+	{
 		head: 'Phorōnís',
 		lang: EDS.greek,
 		gloss: 'Phoronis',
