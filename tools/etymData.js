@@ -53,10 +53,10 @@ const etymData = [
 		forms: ['aceae$'],
 	},
 	{
-		head: '-ales',
+		head: '-alis',
 		lang: EDS.latin,
-		gloss: '(order)',
-		forms: ['ales$'],
+		gloss: '(N)',
+		forms: ['alis$', 'ales$', 'alia$'],
 	},
 	{
 		head: '-anae',
@@ -80,7 +80,7 @@ const etymData = [
 		head: '-atus',
 		lang: EDS.latin,
 		gloss: '(PP)',
-		forms: ['ate$', 'at'], // eg. choano-flagell-at-ea
+		forms: ['ate$', 'ato', 'at'], // eg. choano-flagell-at-ea
 	},
 	{
 		head: '-ea',
@@ -143,6 +143,12 @@ const etymData = [
 		forms: ['iformes$'],
 	},
 	{
+		head: '-ilis',
+		lang: EDS.latin,
+		gloss: '-ile',
+		forms: ['ile$', 'il'],
+	},
+	{
 		head: '-ina',
 		lang: EDS.latin,
 		gloss: '(subtribe or superorder of animal)',
@@ -171,6 +177,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: '(taxon)',
 		forms: ['ites$'],
+	},
+	{
+		head: '-ius',
+		lang: EDS.latin,
+		gloss: '(N)',
+		forms: ['ius$', 'ii$'],
 	},
 	{
 		head: '-nus',
@@ -233,10 +245,22 @@ const etymData = [
 		forms: ['ann', 'an'],
 	},
 	{
+		head: 'avis',
+		lang: EDS.latin,
+		gloss: 'bird',
+		forms: ['av'],
+	},
+	{
 		head: 'colo',
 		lang: EDS.latin,
 		gloss: 'strain',
 		forms: ['colo', 'col'],
+	},
+	{
+		head: 'conus',
+		lang: EDS.latin,
+		gloss: 'cone',
+		forms: ['con'],
 	},
 	{
 		head: 'flagellum',
@@ -263,6 +287,12 @@ const etymData = [
 		forms: ['loric'],
 	},
 	{
+		head: 'mamma',
+		lang: EDS.latin,
+		gloss: 'breast',
+		forms: ['mamm'],
+	},
+	{
 		head: 'mollusca',
 		lang: EDS.latin,
 		gloss: 'a kind of soft nut with a thin shell',
@@ -287,6 +317,12 @@ const etymData = [
 		forms: ['por'],
 	},
 	{
+		head: 'repo',
+		lang: EDS.latin,
+		gloss: 'creep',
+		forms: ['rept'],
+	},
+	{
 		head: 'rota',
 		lang: EDS.latin,
 		gloss: 'wheel',
@@ -297,6 +333,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: 'slow',
 		forms: ['tardi', 'tard'],
+	},
+	{
+		head: 'viridis',
+		lang: EDS.latin,
+		gloss: 'green',
+		forms: ['viridi'],
 	},
 	{
 		head: 'virus',
@@ -324,6 +366,12 @@ const etymData = [
 		forms: ['ic$'],
 	},
 	{
+		head: '-íon',
+		lang: EDS.greek,
+		gloss: '(N)',
+		forms: ['ion$'],
+	},
+	{
 		head: '-îtis',
 		lang: EDS.greek,
 		gloss: '(disease)',
@@ -334,6 +382,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: '(ADJ)',
 		forms: ['n$'],
+	},
+	{
+		head: '-ōsis',
+		lang: EDS.greek,
+		gloss: '(state)',
+		forms: ['osis$', 'sis$'],
 	},
 	{
 		head: '-ṓtēs',
@@ -348,6 +402,12 @@ const etymData = [
 		forms: ['phor'],
 	},
 	{
+		head: 'aktís',
+		lang: EDS.greek,
+		gloss: 'ray',
+		forms: ['actino'],
+	},
+	{
 		head: 'an-',
 		lang: EDS.greek,
 		gloss: 'un-',
@@ -360,10 +420,22 @@ const etymData = [
 		forms: ['amnio'],
 	},
 	{
+		head: 'amphí',
+		lang: EDS.greek,
+		gloss: 'both',
+		forms: ['amphi'],
+	},
+	{
 		head: 'angeîon',
 		lang: EDS.greek,
 		gloss: 'receptacle',
 		forms: ['angio'],
+	},
+	{
+		head: 'ánthos',
+		lang: EDS.greek,
+		gloss: 'flower',
+		forms: ['antho'],
 	},
 	{
 		head: 'arkhaîos',
@@ -384,6 +456,12 @@ const etymData = [
 		forms: ['bacteri'],
 	},
 	{
+		head: 'bíos',
+		lang: EDS.greek,
+		gloss: 'life',
+		forms: ['bio', 'bi'],
+	},
+	{
 		head: 'Boréās',
 		lang: EDS.greek,
 		gloss: 'north',
@@ -400,6 +478,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'moss',
 		forms: ['bryo'],
+	},
+	{
+		head: 'deinós',
+		lang: EDS.greek,
+		gloss: 'terrible',
+		forms: ['deino', 'dino'], // dinosaur was coined very early and uses an older romanization
 	},
 	{
 		head: 'dérma',
@@ -442,6 +526,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'belly',
 		forms: ['gastro'],
+	},
+	{
+		head: 'génesis',
+		lang: EDS.greek,
+		gloss: 'birth',
+		forms: ['genesis$', 'geny$', 'genet'],
 	},
 	{
 		head: 'génos',
@@ -498,6 +588,18 @@ const etymData = [
 		forms: ['hydro'],
 	},
 	{
+		head: 'hupér',
+		lang: EDS.greek,
+		gloss: 'over',
+		forms: ['hyper'],
+	},
+	{
+		head: 'hupó',
+		lang: EDS.greek,
+		gloss: 'under',
+		forms: ['hypo'],
+	},
+	{
 		head: 'ikhthū́s',
 		lang: EDS.greek,
 		gloss: 'fish',
@@ -522,6 +624,12 @@ const etymData = [
 		forms: ['cata'],
 	},
 	{
+		head: 'kéras',
+		lang: EDS.greek,
+		gloss: 'horn',
+		forms: ['ceroto', 'ceros$'],
+	},
+	{
 		head: 'khaítē',
 		lang: EDS.greek,
 		gloss: 'flowing hair',
@@ -538,6 +646,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'funnel',
 		forms: ['choano'],
+	},
+	{
+		head: 'khóndros',
+		lang: EDS.greek,
+		gloss: 'grain',
+		forms: ['chondr'],
 	},
 	{
 		head: 'khordḗ',
@@ -618,6 +732,12 @@ const etymData = [
 		forms: ['mastigo'],
 	},
 	{
+		head: 'meíōn',
+		lang: EDS.greek,
+		gloss: 'less',
+		forms: ['meio'],
+	},
+	{
 		head: 'méros',
 		lang: EDS.greek,
 		gloss: 'part',
@@ -634,6 +754,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'small',
 		forms: ['micro'],
+	},
+	{
+		head: 'mítos',
+		lang: EDS.greek,
+		gloss: 'thread',
+		forms: ['mito'],
 	},
 	{
 		head: 'mónos',
@@ -756,6 +882,12 @@ const etymData = [
 		forms: ['phyco', 'phyc'],
 	},
 	{
+		head: 'phûlon',
+		lang: EDS.greek,
+		gloss: 'tribe',
+		forms: ['phylo'],
+	},
+	{
 		head: 'phutón',
 		lang: EDS.greek,
 		gloss: 'plant',
@@ -786,10 +918,16 @@ const etymData = [
 		forms: ['po'],
 	},
 	{
+		head: 'polús',
+		lang: EDS.greek,
+		gloss: 'many',
+		forms: ['poly'],
+	},
+	{
 		head: 'poús',
 		lang: EDS.greek,
 		gloss: 'foot',
-		forms: ['podo', 'puso', 'pod'], // eg. isopod, apusozoa
+		forms: ['podio', 'podo', 'puso', 'pod'], // eg. polypodiophyta, isopod, apusozoa
 	},
 	{
 		head: 'Príapos',
@@ -814,6 +952,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'first',
 		forms: ['proto'],
+	},
+	{
+		head: 'ptéris',
+		lang: EDS.greek,
+		gloss: 'male fern',
+		forms: ['pterido'],
 	},
 	{
 		head: 'pterón',
@@ -856,6 +1000,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'flesh',
 		forms: ['sarco'],
+	},
+	{
+		head: 'saûros',
+		lang: EDS.greek,
+		gloss: 'lizard',
+		forms: ['saur'],
 	},
 	{
 		head: 'skótos',
@@ -928,6 +1078,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'hair',
 		forms: ['thrich', 'trich'], // gastrotrica drops the h for some reason
+	},
+	{
+		head: 'tópos',
+		lang: EDS.greek,
+		gloss: 'place',
+		forms: ['topo', 'top'],
 	},
 	{
 		head: 'xénos',
