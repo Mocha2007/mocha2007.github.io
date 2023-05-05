@@ -21,10 +21,10 @@ class Root {
 	 * @returns {false | [string, string]}
 	 */
 	matches(s){
-		let match;
-		if (!this.forms.some(f => new RegExp(`^${match = f}`).test(s)))
+		let match, re;
+		if (!this.forms.some(f => (re = new RegExp(`^${match = f}`)).test(s)))
 			return false;
-		return [this, match, s.replace(match, '')];
+		return [this, match, s.replace(re, '')];
 	}
 }
 /** @type {Root[]} */
@@ -44,13 +44,15 @@ const etym = {
 	debug: true,
 	go(){
 		this.init();
-		this.solve(this.elem.input.value);
+		const s = this.elem.input.value.toLowerCase().replace(/[^a-z]/, '');
+		if (s)
+			this.solve(s);
 	},
 	init(){
 		if (this.initialized)
 			return;
 		etymData.forEach(x => new Root(x));
-		Root.roots.sort(r => -r.forms[0].length);
+		Root.roots.sort((a, b) => b.forms[0].length - a.forms[0].length);
 		this.initialized = true;
 	},
 	reset(){
@@ -91,6 +93,8 @@ const etym = {
 					solution2.push(o[1]);
 					word = o[2];
 					some = true;
+					if (this.debug)
+						console.debug(`${word} matches ${r.head}!`);
 					break;
 				}
 			}

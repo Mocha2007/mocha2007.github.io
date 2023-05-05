@@ -9,23 +9,151 @@ const EDS = {
 
 const etymData = [
 	// make these alphabetical
+	// LATIN
+	{
+		head: '-acea',
+		lang: EDS.latin,
+		gloss: '(suborder of animal or superfamily of non-animal)',
+		forms: ['acea$'],
+	},
+	{
+		head: '-aceae',
+		lang: EDS.latin,
+		gloss: '(family of non-animal)',
+		forms: ['aceae$'],
+	},
+	{
+		head: '-ales',
+		lang: EDS.latin,
+		gloss: '(order)',
+		forms: ['ales$'],
+	},
+	{
+		head: '-anae',
+		lang: EDS.latin,
+		gloss: '(superorder of non-animal)',
+		forms: ['ales$'],
+	},
+	{
+		head: '-ara',
+		lang: EDS.latin,
+		gloss: '(nothogenus)',
+		forms: ['ara$'],
+	},
+	{
+		head: '-aria',
+		lang: EDS.latin,
+		gloss: '(taxon)',
+		forms: ['aria$'],
+	},
+	{
+		head: '-eae',
+		lang: EDS.latin,
+		gloss: '(tribe of non-animal)',
+		forms: ['eae$'],
+	},
+	{
+		head: '-ella',
+		lang: EDS.latin,
+		gloss: '(genus of bacteria)',
+		forms: ['ella$'],
+	},
+	{
+		head: '-ia',
+		lang: EDS.latin,
+		gloss: '(taxon)',
+		forms: ['ia$'],
+	},
+	{
+		head: '-ida',
+		lang: EDS.latin,
+		gloss: '(taxon)',
+		forms: ['ida$'],
+	},
+	{
+		head: '-idae',
+		lang: EDS.latin,
+		gloss: '(family of animal or subclass of plant)',
+		forms: ['idae$'],
+	},
+	{
+		head: '-iformes',
+		lang: EDS.latin,
+		gloss: '(order of animal)',
+		forms: ['iformes$'],
+	},
+	{
+		head: '-ina',
+		lang: EDS.latin,
+		gloss: '(subtribe or superorder of animal)',
+		forms: ['ina$'],
+	},
+	{
+		head: '-inae',
+		lang: EDS.latin,
+		gloss: '(superfamily of animal or subtribe of non-animal)',
+		forms: ['inae$'],
+	},
+	{
+		head: '-ini',
+		lang: EDS.latin,
+		gloss: '(tribe of animal)',
+		forms: ['ini$'],
+	},
+	{
+		head: '-ites',
+		lang: EDS.latin,
+		gloss: '(taxon)',
+		forms: ['ites$'],
+	},
+	{
+		head: '-odes',
+		lang: EDS.latin,
+		gloss: '(taxon)',
+		forms: ['odes$'],
+	},
+	{
+		head: '-oida',
+		lang: EDS.latin,
+		gloss: '(taxon)',
+		forms: ['oida$'],
+	},
+	{
+		head: '-oidea',
+		lang: EDS.latin,
+		gloss: '(superfamily of animal)',
+		forms: ['oidea$'],
+	},
+	{
+		head: '-oides',
+		lang: EDS.latin,
+		gloss: '(taxon)',
+		forms: ['oides$'],
+	},
+	{
+		head: '-ulus',
+		lang: EDS.latin,
+		gloss: '(genus)',
+		forms: ['ulus$'],
+	},
+	{
+		head: '-us',
+		lang: EDS.latin,
+		gloss: '(taxon)',
+		forms: ['us$'],
+	},
+	// ANCIENT GREEK
+	{
+		head: '-ṓtēs',
+		lang: EDS.greek,
+		gloss: '(noun-forming suffix)',
+		forms: ['ota$', 'ta$'],
+	},
 	{
 		head: '-árkhēs',
 		lang: EDS.greek,
 		gloss: 'leader',
 		forms: ['arch'],
-	},
-	{
-		head: '-íā',
-		lang: EDS.greek,
-		gloss: '(noun-forming suffix)',
-		forms: ['ia'],
-	},
-	{
-		head: '-ṓtēs',
-		lang: EDS.greek,
-		gloss: '(noun-forming suffix)',
-		forms: ['ota', 'ta'],
 	},
 	{
 		head: 'an-',
@@ -112,6 +240,18 @@ const etymData = [
 		forms: ['kary'],
 	},
 	{
+		head: 'katá',
+		lang: EDS.greek,
+		gloss: 'down',
+		forms: ['cata'],
+	},
+	{
+		head: 'khlōrós',
+		lang: EDS.greek,
+		gloss: 'pale green',
+		forms: ['chloro'],
+	},
+	{
 		head: 'khoánē',
 		lang: EDS.greek,
 		gloss: 'funnel',
@@ -130,16 +270,16 @@ const etymData = [
 		forms: ['chord'],
 	},
 	{
-		head: 'katá',
-		lang: EDS.greek,
-		gloss: 'down',
-		forms: ['cata'],
-	},
-	{
 		head: 'kontós',
 		lang: EDS.greek,
 		gloss: 'pole',
 		forms: ['kont'],
+	},
+	{
+		head: 'kotulēdṓn',
+		lang: EDS.greek,
+		gloss: 'cup-shaped cavity',
+		forms: ['cotyledon'],
 	},
 	{
 		head: 'lúsis',
@@ -160,10 +300,22 @@ const etymData = [
 		forms: ['meta'],
 	},
 	{
+		head: 'mónos',
+		lang: EDS.greek,
+		gloss: 'single',
+		forms: ['mono'],
+	},
+	{
 		head: 'morphḗ',
 		lang: EDS.greek,
 		gloss: 'shape',
 		forms: ['morph'],
+	},
+	{
+		head: 'múkēs',
+		lang: EDS.greek,
+		gloss: 'fungus',
+		forms: ['mycetes$', 'mycet', 'myco'],
 	},
 	{
 		head: 'néos',
@@ -184,6 +336,12 @@ const etymData = [
 		forms: ['nitro'],
 	},
 	{
+		head: 'odṓn',
+		lang: EDS.greek,
+		gloss: 'tooth',
+		forms: ['odon'],
+	},
+	{
 		head: 'oîstros',
 		lang: EDS.greek,
 		gloss: 'madness',
@@ -194,6 +352,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'rear',
 		forms: ['opistho'],
+	},
+	{
+		head: 'ópsis',
+		lang: EDS.greek,
+		gloss: 'appearance',
+		forms: ['opsida$', 'ops$'],
 	},
 	{
 		head: 'orthós',
@@ -220,10 +384,28 @@ const etymData = [
 		forms: ['para'],
 	},
 	{
+		head: 'phûkos',
+		lang: EDS.greek,
+		gloss: 'seaweed',
+		forms: ['phyco', 'phyc'],
+	},
+	{
+		head: 'phutón',
+		lang: EDS.greek,
+		gloss: 'plant',
+		forms: ['phyta$', 'phyte$', 'phyto', 'phyt'],
+	},
+	{
 		head: 'pnoḗ',
 		lang: EDS.greek,
 		gloss: 'breath',
 		forms: ['pno'],
+	},
+	{
+		head: 'póa',
+		lang: EDS.greek,
+		gloss: 'fodder',
+		forms: ['po'],
 	},
 	{
 		head: 'poús',
