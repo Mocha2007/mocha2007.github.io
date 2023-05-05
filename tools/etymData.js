@@ -5,6 +5,7 @@ const EDS = {
 	english: 'English',
 	german: 'German',
 	greek: 'Ancient Greek',
+	italian: 'Italian',
 	latin: 'Latin',
 	mocha: '(mochanoises)',
 	spanish: 'Spanish',
@@ -61,6 +62,13 @@ const etymData = [
 		lang: EDS.german,
 		gloss: 'primitive',
 		forms: ['ur'],
+	},
+	// ITALIAN
+	{
+		head: '-ino',
+		lang: EDS.italian,
+		gloss: '(DIM)',
+		forms: ['ino'],
 	},
 	// SPANISH
 	{
@@ -341,6 +349,12 @@ const etymData = [
 		forms: ['mollusc'],
 	},
 	{
+		head: 'neuter',
+		lang: EDS.latin,
+		gloss: 'neither',
+		forms: ['neuter', 'neutr'],
+	},
+	{
 		head: 'per',
 		lang: EDS.latin,
 		gloss: 'through',
@@ -411,7 +425,7 @@ const etymData = [
 		head: '-ikós',
 		lang: EDS.greek,
 		gloss: '(ADJ)',
-		forms: ['ic$'],
+		forms: ['ic'],
 	},
 	{
 		head: '-íon',
@@ -436,6 +450,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: '(ADJ)',
 		forms: ['n$'],
+	},
+	{
+		head: '-on',
+		lang: EDS.greek,
+		gloss: '(N)',
+		forms: ['on'],
 	},
 	{
 		head: '-ōsis',
