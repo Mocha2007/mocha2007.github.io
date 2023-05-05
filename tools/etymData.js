@@ -1,10 +1,12 @@
+/* exported etymData */
+
 // shortcuts
 const EDS = {
 	greek: 'Ancient Greek',
 };
 
 const etymData = [
-	// Osteichthyes
+	// make these alphabetical
 	{
 		head: 'ikhthū́s',
 		lang: EDS.greek,
