@@ -67,6 +67,7 @@ const etym = {
 		elem.classList.add('bubble');
 		elem.style.textAlign = 'center';
 		elem.style.display = 'inline-block';
+		elem.style.backgroundColor = '#222';
 		// eslint-disable-next-line max-len
 		elem.innerHTML = `<em>${match}</em><br><strong>${title}</strong><br><q>${gloss}</q><br>${lang}`;
 		return elem;

@@ -8,6 +8,18 @@ const EDS = {
 const etymData = [
 	// make these alphabetical
 	{
+		head: '-ṓtēs',
+		lang: EDS.greek,
+		gloss: '(noun-forming suffix)',
+		forms: ['ota'],
+	},
+	{
+		head: 'arkhaîos',
+		lang: EDS.greek,
+		gloss: 'ancient',
+		forms: ['archaeo', 'archae'],
+	},
+	{
 		head: 'ikhthū́s',
 		lang: EDS.greek,
 		gloss: 'fish',
@@ -18,5 +30,11 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'bone',
 		forms: ['osteo', 'oste', 'ost'], // osteoarthritis, osteichthyes, teleost
+	},
+	{
+		head: 'Prōteús',
+		lang: EDS.greek,
+		gloss: 'Proteus',
+		forms: ['proteo'],
 	},
 ];
