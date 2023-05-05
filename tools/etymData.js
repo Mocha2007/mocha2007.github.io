@@ -1,4 +1,4 @@
-/* exported etymData */
+/* exported etymData, etymLangData */
 
 // shortcuts
 const EDS = {
@@ -524,3 +524,12 @@ const etymData = [
 	},
 	*/
 ];
+
+// compile langs automatically
+
+const etymLangData = [];
+etymData.forEach(o => {
+	if (etymLangData.includes(o.lang))
+		return;
+	etymLangData.push(o.lang);
+});

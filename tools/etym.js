@@ -1,5 +1,5 @@
 /* exported etym */
-/* global etymData */
+/* global etymData, etymLangData */
 
 class Root {
 	constructor(o){
@@ -31,10 +31,18 @@ class Root {
 Root.roots = [];
 
 const etym = {
+	get acceptableLangs(){
+		return Array.from(this.elem.langs.children).map(e => e.children[0])
+			.filter(e => e.checked).map(e => e.id.slice(5));
+	},
 	elem: {
 		/** @type {HTMLTextAreaElement} */
 		get input(){
 			return document.getElementById('input');
+		},
+		/** @type {HTMLDivElement} */
+		get langs(){
+			return document.getElementById('langs');
 		},
 		/** @type {HTMLDivElement} */
 		get result(){
@@ -43,7 +51,6 @@ const etym = {
 	},
 	debug: window.location.origin[0] === 'f', // http://mocha2007.github.io, or file://?
 	go(){
-		this.init();
 		const s = this.elem.input.value.toLowerCase().replace(/[^a-z]/, '');
 		if (s)
 			this.solve(s);
@@ -51,7 +58,22 @@ const etym = {
 	init(){
 		if (this.initialized)
 			return;
+		// make lang buttons
+		etymLangData.forEach(l => {
+			const label = document.createElement('label');
+			label.classList.add('bubble');
+			label.style.backgroundColor = '#004';
+			label.innerHTML = l;
+			const input = document.createElement('input');
+			label.appendChild(input);
+			input.type = 'checkbox';
+			input.checked = true;
+			label.for = input.id = input.name = `lang-${l}`;
+			etym.elem.langs.appendChild(label);
+		});
+		// import
 		etymData.forEach(x => new Root(x));
+		// sort etyms
 		Root.roots.sort((a, b) => b.forms[0].length - a.forms[0].length);
 		this.initialized = true;
 	},
@@ -82,9 +104,12 @@ const etym = {
 		/** @type {string[]} */
 		const solution2 = [];
 		let some = true;
+		const langs = this.acceptableLangs;
 		while (some){
 			some = false;
 			for (const r of Root.roots){
+				if (!langs.includes(r.lang))
+					continue;
 				if (this.debug)
 					console.debug(`testing ${word} for root ${r.head}...`);
 				const o = r.matches(word);
@@ -106,3 +131,5 @@ const etym = {
 			this.elem.result.appendChild(this.residual(word));
 	},
 };
+
+document.getElementById('etymData').onload = etym.init;
