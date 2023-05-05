@@ -19,6 +19,12 @@ const etymData = [
 	},
 	// LATIN
 	{
+		head: '-a',
+		lang: EDS.latin,
+		gloss: '(taxon)',
+		forms: ['a$'],
+	},
+	{
 		head: '-acea',
 		lang: EDS.latin,
 		gloss: '(suborder of animal or superfamily of non-animal)',
@@ -57,7 +63,7 @@ const etymData = [
 	{
 		head: '-atus',
 		lang: EDS.latin,
-		gloss: '(past participle)',
+		gloss: '(PP)',
 		forms: ['ate$', 'at'], // eg. choano-flagell-at-ea
 	},
 	{
@@ -73,10 +79,22 @@ const etymData = [
 		forms: ['eae$'],
 	},
 	{
-		head: '-ella',
+		head: '-ell-',
 		lang: EDS.latin,
-		gloss: '(genus of bacteria)',
-		forms: ['ella$'],
+		gloss: '(DIM)',
+		forms: ['ell', 'el'],
+	},
+	{
+		head: '-es',
+		lang: EDS.latin,
+		gloss: '(taxon)',
+		forms: ['es$'],
+	},
+	{
+		head: '-fer',
+		lang: EDS.latin,
+		gloss: 'bearing',
+		forms: ['ifer', 'fer'], // loric-ifera
 	},
 	{
 		head: '-ia',
@@ -94,7 +112,7 @@ const etymData = [
 		head: '-ida',
 		lang: EDS.latin,
 		gloss: '(taxon)',
-		forms: ['ida$'],
+		forms: ['ida$', 'oda$', 'da$'],
 	},
 	{
 		head: '-idae',
@@ -163,10 +181,10 @@ const etymData = [
 		forms: ['oides$'],
 	},
 	{
-		head: '-ulus',
+		head: '-ul-',
 		lang: EDS.latin,
-		gloss: '(genus)',
-		forms: ['ulus$'],
+		gloss: '(DIM)',
+		forms: ['ul'],
 	},
 	{
 		head: '-us',
@@ -175,17 +193,71 @@ const etymData = [
 		forms: ['us$'],
 	},
 	{
+		head: 'anus',
+		lang: EDS.latin,
+		gloss: 'ring',
+		forms: ['ann', 'an'],
+	},
+	{
 		head: 'flagellum',
 		lang: EDS.latin,
 		gloss: 'whip',
 		forms: ['flagell'],
 	},
+	{
+		head: 'gradior',
+		lang: EDS.latin,
+		gloss: 'step',
+		forms: ['grad'],
+	},
+	{
+		head: 'lorica',
+		lang: EDS.latin,
+		gloss: 'breastplate',
+		forms: ['loric'],
+	},
+	{
+		head: 'mollusca',
+		lang: EDS.latin,
+		gloss: 'a kind of soft nut with a thin shell',
+		forms: ['mollusc'],
+	},
+	{
+		head: 'porus',
+		lang: EDS.latin,
+		gloss: 'pore',
+		forms: ['por'],
+	},
+	{
+		head: 'rota',
+		lang: EDS.latin,
+		gloss: 'wheel',
+		forms: ['rot'],
+	},
+	{
+		head: 'tardus',
+		lang: EDS.latin,
+		gloss: 'slow',
+		forms: ['tardi', 'tard'],
+	},
 	// ANCIENT GREEK
+	{
+		head: '-árkhēs',
+		lang: EDS.greek,
+		gloss: 'leader',
+		forms: ['arch'],
+	},
 	{
 		head: '-ikós',
 		lang: EDS.greek,
 		gloss: '(ADJ)',
 		forms: ['ic$'],
+	},
+	{
+		head: '-îtis',
+		lang: EDS.greek,
+		gloss: '(disease)',
+		forms: ['itis$'],
 	},
 	{
 		head: '-nos',
@@ -200,10 +272,10 @@ const etymData = [
 		forms: ['ota$', 'ta$'],
 	},
 	{
-		head: '-árkhēs',
+		head: '-phóros',
 		lang: EDS.greek,
-		gloss: 'leader',
-		forms: ['arch'],
+		gloss: 'bearing',
+		forms: ['phor'],
 	},
 	{
 		head: 'an-',
@@ -224,10 +296,34 @@ const etymData = [
 		forms: ['archaeo', 'archae'],
 	},
 	{
+		head: 'árthron',
+		lang: EDS.greek,
+		gloss: 'joint',
+		forms: ['arthro', 'arthr'],
+	},
+	{
 		head: 'Boréās',
 		lang: EDS.greek,
 		gloss: 'north',
 		forms: ['boreo'],
+	},
+	{
+		head: 'brakhíōn',
+		lang: EDS.greek,
+		gloss: 'arm',
+		forms: ['brachio'],
+	},
+	{
+		head: 'brúon',
+		lang: EDS.greek,
+		gloss: 'moss',
+		forms: ['bryo'],
+	},
+	{
+		head: 'dérma',
+		lang: EDS.greek,
+		gloss: 'skin',
+		forms: ['derm'],
 	},
 	{
 		head: 'deúteros',
@@ -242,10 +338,28 @@ const etymData = [
 		forms: ['di'],
 	},
 	{
+		head: 'ekhînos',
+		lang: EDS.greek,
+		gloss: 'hedgehog',
+		forms: ['echino'],
+	},
+	{
+		head: 'entós',
+		lang: EDS.greek,
+		gloss: 'within',
+		forms: ['endo', 'ento'],
+	},
+	{
 		head: 'eǘs',
 		lang: EDS.greek,
 		gloss: 'good',
 		forms: ['eu'],
+	},
+	{
+		head: 'gastḗr',
+		lang: EDS.greek,
+		gloss: 'belly',
+		forms: ['gastro'],
 	},
 	{
 		head: 'génos',
@@ -264,6 +378,18 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'single',
 		forms: ['haplo'],
+	},
+	{
+		head: 'hélmins',
+		lang: EDS.greek,
+		gloss: 'parasitic worm',
+		forms: ['helminth'],
+	},
+	{
+		head: 'hḗmisus',
+		lang: EDS.greek,
+		gloss: 'half',
+		forms: ['hemi'],
 	},
 	{
 		head: 'hólos',
@@ -296,6 +422,12 @@ const etymData = [
 		forms: ['cata'],
 	},
 	{
+		head: 'khaítē',
+		lang: EDS.greek,
+		gloss: 'flowing hair',
+		forms: ['chaeto'],
+	},
+	{
 		head: 'khlōrós',
 		lang: EDS.greek,
 		gloss: 'pale green',
@@ -308,16 +440,16 @@ const etymData = [
 		forms: ['choano'],
 	},
 	{
-		head: 'khrôma',
-		lang: EDS.greek,
-		gloss: 'color',
-		forms: ['chromo'], // chromosome
-	},
-	{
 		head: 'khordḗ',
 		lang: EDS.greek,
 		gloss: 'guts',
 		forms: ['chord'],
+	},
+	{
+		head: 'knídē',
+		lang: EDS.greek,
+		gloss: 'nettle',
+		forms: ['cnid'],
 	},
 	{
 		head: 'kontós',
@@ -330,6 +462,36 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'cup-shaped cavity',
 		forms: ['cotyledon'],
+	},
+	{
+		head: 'khrôma',
+		lang: EDS.greek,
+		gloss: 'color',
+		forms: ['chromo'], // chromosome
+	},
+	{
+		head: 'kinéō',
+		lang: EDS.greek,
+		gloss: 'move',
+		forms: ['kino'],
+	},
+	{
+		head: 'koîlos',
+		lang: EDS.greek,
+		gloss: 'hollow',
+		forms: ['coelo'],
+	},
+	{
+		head: 'kteís',
+		lang: EDS.greek,
+		gloss: 'comb',
+		forms: ['cteno'],
+	},
+	{
+		head: 'kúklos',
+		lang: EDS.greek,
+		gloss: 'circle',
+		forms: ['cyclio'], // cycliophora
 	},
 	{
 		head: 'lúsis',
@@ -350,6 +512,12 @@ const etymData = [
 		forms: ['meta'],
 	},
 	{
+		head: 'mikrós',
+		lang: EDS.greek,
+		gloss: 'small',
+		forms: ['micro'],
+	},
+	{
 		head: 'mónos',
 		lang: EDS.greek,
 		gloss: 'single',
@@ -366,6 +534,24 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'fungus',
 		forms: ['mycetes$', 'mycet', 'myco'],
+	},
+	{
+		head: 'nêma',
+		lang: EDS.greek,
+		gloss: 'thread',
+		forms: ['nemato'],
+	},
+	{
+		head: 'Nēmertḗs',
+		lang: EDS.greek,
+		gloss: 'Nemertes',
+		forms: ['nemert'],
+	},
+	{
+		head: 'néō',
+		lang: EDS.greek,
+		gloss: 'swim',
+		forms: ['nect'],
 	},
 	{
 		head: 'néos',
@@ -396,6 +582,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'madness',
 		forms: ['oestro', 'estro'],
+	},
+	{
+		head: 'ónukhos',
+		lang: EDS.greek,
+		gloss: 'claw',
+		forms: ['onycho'],
 	},
 	{
 		head: 'opísthios',
@@ -434,6 +626,12 @@ const etymData = [
 		forms: ['para'],
 	},
 	{
+		head: 'Phorōnís',
+		lang: EDS.greek,
+		gloss: 'Phoronis',
+		forms: ['phoron'],
+	},
+	{
 		head: 'phûkos',
 		lang: EDS.greek,
 		gloss: 'seaweed',
@@ -444,6 +642,18 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'plant',
 		forms: ['phyta$', 'phyte$', 'phyto', 'phyt'],
+	},
+	{
+		head: 'platús',
+		lang: EDS.greek,
+		gloss: 'flat',
+		forms: ['platy'],
+	},
+	{
+		head: 'pláx',
+		lang: EDS.greek,
+		gloss: 'plate',
+		forms: ['placo'],
 	},
 	{
 		head: 'pnoḗ',
@@ -462,6 +672,18 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'foot',
 		forms: ['podo', 'pod'],
+	},
+	{
+		head: 'Príapos',
+		lang: EDS.greek,
+		gloss: 'Priapus',
+		forms: ['priap'],
+	},
+	{
+		head: 'prōktós',
+		lang: EDS.greek,
+		gloss: 'anus',
+		forms: ['proct'],
 	},
 	{
 		head: 'Prōteús',
@@ -498,6 +720,18 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'nose',
 		forms: ['rhino'],
+	},
+	{
+		head: 'rhómbos',
+		lang: EDS.greek,
+		gloss: 'rhombus',
+		forms: ['rhombo'],
+	},
+	{
+		head: 'rhúnkhos',
+		lang: EDS.greek,
+		gloss: 'snout',
+		forms: ['rhynch'],
 	},
 	{
 		head: 'sárx',
@@ -558,6 +792,18 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'beast',
 		forms: ['theria'],
+	},
+	{
+		head: 'thríx',
+		lang: EDS.greek,
+		gloss: 'hair',
+		forms: ['thrich', 'trich'], // gastrotrica drops the h for some reason
+	},
+	{
+		head: 'xénos',
+		lang: EDS.greek,
+		gloss: 'alien',
+		forms: ['xeno', 'xen'],
 	},
 	{
 		head: 'zôion',
