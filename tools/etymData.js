@@ -774,6 +774,12 @@ const etymData = [
 		forms: ['cyclio'], // cycliophora
 	},
 	{
+		head: 'lípos',
+		lang: EDS.greek,
+		gloss: 'fat',
+		forms: ['lipo'],
+	},
+	{
 		head: 'lógos',
 		lang: EDS.greek,
 		gloss: 'word',
