@@ -323,6 +323,12 @@ const etymData = [
 		forms: ['rept'],
 	},
 	{
+		head: 'ros',
+		lang: EDS.latin,
+		gloss: 'rose',
+		forms: ['ros'],
+	},
+	{
 		head: 'rota',
 		lang: EDS.latin,
 		gloss: 'wheel',
@@ -528,6 +534,12 @@ const etymData = [
 		forms: ['gastro'],
 	},
 	{
+		head: 'geneá',
+		lang: EDS.greek,
+		gloss: 'birth',
+		forms: ['genea'],
+	},
+	{
 		head: 'génesis',
 		lang: EDS.greek,
 		gloss: 'birth',
@@ -550,6 +562,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'jaw',
 		forms: ['gnatho', 'gnath'],
+	},
+	{
+		head: 'graphḗ',
+		lang: EDS.greek,
+		gloss: 'writing',
+		forms: ['graphy$', 'graph'],
 	},
 	{
 		head: 'haplóos',
@@ -717,7 +735,13 @@ const etymData = [
 		head: 'lógos',
 		lang: EDS.greek,
 		gloss: 'word',
-		forms: ['logy$'],
+		forms: ['logy$', 'logo'],
+	},
+	{
+		head: 'lúkos',
+		lang: EDS.greek,
+		gloss: 'wolf',
+		forms: ['lyco', 'lyc'],
 	},
 	{
 		head: 'lúsis',
@@ -760,6 +784,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'thread',
 		forms: ['mito'],
+	},
+	{
+		head: 'mítra',
+		lang: EDS.greek,
+		gloss: 'girdle',
+		forms: ['mitri'], // Haplomitriopsida
 	},
 	{
 		head: 'mónos',
@@ -843,7 +873,7 @@ const etymData = [
 		head: 'ópsis',
 		lang: EDS.greek,
 		gloss: 'appearance',
-		forms: ['opsida$', 'ops$'],
+		forms: ['o?psida$', 'ops$'],
 	},
 	{
 		head: 'orthós',
@@ -874,6 +904,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'Phoronis',
 		forms: ['phoron'],
+	},
+	{
+		head: 'phôs',
+		lang: EDS.greek,
+		gloss: 'light',
+		forms: ['photo', 'phos'],
 	},
 	{
 		head: 'phûkos',
@@ -1024,6 +1060,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'seed',
 		forms: ['sperm'],
+	},
+	{
+		head: 'sphágnos',
+		lang: EDS.greek,
+		gloss: 'kind of moss',
+		forms: ['sphagn'],
 	},
 	{
 		head: 'stóma',
