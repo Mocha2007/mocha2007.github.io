@@ -45,6 +45,12 @@ const etymData = [
 		forms: ['s$', 'es$'],
 	},
 	{
+		head: '-y',
+		lang: EDS.english,
+		gloss: '(N) or (ADJ)',
+		forms: ['y$', 'ie(?=s$)'],
+	},
+	{
 		head: 'ribo-',
 		lang: EDS.english,
 		gloss: 'ribose', // the word ribose is an alteration of arabinose, which comes from arabi-
@@ -557,7 +563,7 @@ const etymData = [
 		head: 'botánē',
 		lang: EDS.greek,
 		gloss: 'herb',
-		forms: ['botany$', 'botan'],
+		forms: ['botan'],
 	},
 	{
 		head: 'bradús',
@@ -576,6 +582,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'moss',
 		forms: ['bryo'],
+	},
+	{
+		head: 'dáktulos',
+		lang: EDS.greek,
+		gloss: 'finger',
+		forms: ['dactyl'],
 	},
 	{
 		head: 'deinós',
@@ -600,6 +612,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'twice',
 		forms: ['di'],
+	},
+	{
+		head: 'drósos',
+		lang: EDS.greek,
+		gloss: 'dew',
+		forms: ['droso'],
 	},
 	{
 		head: 'ekhînos',
@@ -659,7 +677,7 @@ const etymData = [
 		head: 'génesis',
 		lang: EDS.greek,
 		gloss: 'birth',
-		forms: ['genesis$', 'geny$', 'genet'],
+		forms: ['genesis$', 'genet'],
 	},
 	{
 		head: 'génos',
@@ -689,7 +707,7 @@ const etymData = [
 		head: 'graphḗ',
 		lang: EDS.greek,
 		gloss: 'writing',
-		forms: ['graphy$', 'graph'],
+		forms: ['graph'],
 	},
 	{
 		head: 'haplóos',
@@ -875,7 +893,7 @@ const etymData = [
 		head: 'lógos',
 		lang: EDS.greek,
 		gloss: 'word',
-		forms: ['logy$', 'logo'],
+		forms: ['logue$', 'logo', 'log'],
 	},
 	{
 		head: 'lúkos',
@@ -1175,7 +1193,7 @@ const etymData = [
 		head: 'pterón',
 		lang: EDS.greek,
 		gloss: 'feather',
-		forms: ['ptero'],
+		forms: ['ptero', 'ptera'],
 	},
 	{
 		head: 'ptérux',
@@ -1235,7 +1253,7 @@ const etymData = [
 		head: 'skopéō',
 		lang: EDS.greek,
 		gloss: 'examine',
-		forms: ['scope$', 'scopy$'],
+		forms: ['scope$', 'scop'],
 	},
 	{
 		head: 'sôma',
@@ -1247,7 +1265,7 @@ const etymData = [
 		head: 'sophía',
 		lang: EDS.greek,
 		gloss: 'wisdom',
-		forms: ['sophy$', 'sopho', 'soph'], // philoSOPHY, SOPHOmore, philoSOPHic
+		forms: ['sopho', 'soph'], // philoSOPHY, SOPHOmore, philoSOPHic
 	},
 	{
 		head: 'spérma',
@@ -1283,7 +1301,7 @@ const etymData = [
 		head: 'tainíā',
 		lang: EDS.greek,
 		gloss: 'band',
-		forms: ['teny$'], // synteny
+		forms: ['ten'], // synteny
 	},
 	{
 		head: 'téleios',
