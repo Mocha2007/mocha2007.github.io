@@ -70,6 +70,12 @@ const etymData = [
 		forms: ['eu'],
 	},
 	{
+		head: 'génos',
+		lang: EDS.greek,
+		gloss: 'birth',
+		forms: ['gen'],
+	},
+	{
 		head: 'gnáthos',
 		lang: EDS.greek,
 		gloss: 'jaw',
@@ -86,6 +92,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'whole',
 		forms: ['holo'],
+	},
+	{
+		head: 'húdōr',
+		lang: EDS.greek,
+		gloss: 'water',
+		forms: ['hydro'],
 	},
 	{
 		head: 'ikhthū́s',
@@ -106,6 +118,12 @@ const etymData = [
 		forms: ['choano'],
 	},
 	{
+		head: 'khrôma',
+		lang: EDS.greek,
+		gloss: 'color',
+		forms: ['chromo'], // chromosome
+	},
+	{
 		head: 'khordḗ',
 		lang: EDS.greek,
 		gloss: 'guts',
@@ -122,6 +140,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'pole',
 		forms: ['kont'],
+	},
+	{
+		head: 'lúsis',
+		lang: EDS.greek,
+		gloss: 'loosening',
+		forms: ['lysis', 'lyso', 'lys'],
 	},
 	{
 		head: 'méros',
@@ -154,6 +178,18 @@ const etymData = [
 		forms: ['nephro'],
 	},
 	{
+		head: 'nítron',
+		lang: EDS.greek,
+		gloss: 'washing soda',
+		forms: ['nitro'],
+	},
+	{
+		head: 'oîstros',
+		lang: EDS.greek,
+		gloss: 'madness',
+		forms: ['oestro', 'estro'],
+	},
+	{
 		head: 'opísthios',
 		lang: EDS.greek,
 		gloss: 'rear',
@@ -170,6 +206,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'bone',
 		forms: ['osteo', 'oste', 'ost'], // osteoarthritis, osteichthyes, teleost
+	},
+	{
+		head: 'oxús',
+		lang: EDS.greek,
+		gloss: 'sharp',
+		forms: ['oxy'],
 	},
 	{
 		head: 'pará',
@@ -236,6 +278,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'darkness',
 		forms: ['scoto'],
+	},
+	{
+		head: 'sôma',
+		lang: EDS.greek,
+		gloss: 'body',
+		forms: ['some'], // chromosome
 	},
 	{
 		head: 'stóma',
