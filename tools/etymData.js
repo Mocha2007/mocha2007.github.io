@@ -524,6 +524,12 @@ const etymData = [
 		forms: ['antho'],
 	},
 	{
+		head: 'ánthrōpos',
+		lang: EDS.greek,
+		gloss: 'human',
+		forms: ['anthropo', 'anthrope$'],
+	},
+	{
 		head: 'arkhaîos',
 		lang: EDS.greek,
 		gloss: 'ancient',
@@ -984,6 +990,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'fungus',
 		forms: ['mycetes$', 'mycet', 'myco'],
+	},
+	{
+		head: 'nânos',
+		lang: EDS.greek,
+		gloss: 'dwarf',
+		forms: ['nano'],
 	},
 	{
 		head: 'nêma',
