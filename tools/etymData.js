@@ -512,6 +512,12 @@ const etymData = [
 		forms: ['amphi'],
 	},
 	{
+		head: 'anḗr',
+		lang: EDS.greek,
+		gloss: 'man',
+		forms: ['andro'],
+	},
+	{
 		head: 'angeîon',
 		lang: EDS.greek,
 		gloss: 'receptacle',
@@ -714,6 +720,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'writing',
 		forms: ['graph'],
+	},
+	{
+		head: 'gunḗ',
+		lang: EDS.greek,
+		gloss: 'woman',
+		forms: ['gyneco', 'gyn'],
 	},
 	{
 		head: 'haplóos',
