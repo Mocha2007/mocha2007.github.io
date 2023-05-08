@@ -17,6 +17,7 @@ body {
 	border-color: #444;
 	color: #444;
 	cursor: pointer;
+	user-select: none;
 }
 .button:hover {
 	opacity: 0.5;
