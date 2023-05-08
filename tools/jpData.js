@@ -143,10 +143,10 @@ const jpData = [
 				cat: 'interj',
 			},
 			{
-				lemma: '-半',
+				lemma: '半',
 				reading: 'はん',
 				gloss: 'half',
-				cat: 'suff',
+				cat: 'n',
 			},
 			{
 				lemma: '番号',
