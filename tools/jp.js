@@ -31,11 +31,13 @@ Category.categories = [];
 class Lemma {
 	/**
 	 * @param {string} lemma
+	 * @param {string} reading
 	 * @param {string} gloss
 	 * @param {Category} cat
 	 */
-	constructor(lemma, gloss, cat){
+	constructor(lemma, reading, gloss, cat){
 		this.lemma = lemma;
+		this.reading = reading;
 		this.gloss = gloss;
 		this.cat = cat;
 		this.wins = 0;
@@ -54,7 +56,7 @@ class Lemma {
 	/** @param {() => {}} onclick */
 	jpElem(onclick){
 		// todo
-		return jp.create.card(this.lemma, onclick);
+		return jp.create.card(this.lemma, this.reading, onclick);
 	}
 	lose(){
 		play('https://www.myinstants.com/media/sounds/donald-trump-wrong-sound-effect.mp3');
@@ -67,7 +69,8 @@ class Lemma {
 		jp.test.next();
 	}
 	static fromObject(o){
-		return new Lemma(o.lemma, o.gloss, Category.fromString(o.cat));
+		const reading = o.reading || o.lemma;
+		return new Lemma(o.lemma, reading, o.gloss, Category.fromString(o.cat));
 	}
 }
 /** @type {Lemma[]} */
@@ -110,10 +113,11 @@ const jp = {
 		 * @param {string} s
 		 * @param {() => {}} onclick
 		 */
-		card(s, onclick){
+		card(s, hover, onclick){
 			const div = document.createElement('div');
 			div.classList.add('button');
 			div.innerHTML = s;
+			div.title = hover;
 			div.onclick = onclick;
 			return div;
 		},
