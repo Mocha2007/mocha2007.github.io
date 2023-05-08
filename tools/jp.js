@@ -51,7 +51,7 @@ class Lemma {
 	/** @param {() => {}} onclick */
 	enElem(onclick){
 		// todo
-		return jp.create.card(this.gloss, onclick);
+		return jp.create.card(this.gloss, undefined, onclick);
 	}
 	/** @param {() => {}} onclick */
 	jpElem(onclick){
@@ -114,12 +114,18 @@ const jp = {
 		 * @param {() => {}} onclick
 		 */
 		card(s, hover, onclick){
-			const div = document.createElement('div');
-			div.classList.add('button');
-			div.innerHTML = s;
-			div.title = hover;
-			div.onclick = onclick;
-			return div;
+			const elem = document.createElement('ruby');
+			elem.classList.add('button');
+			elem.innerHTML = s;
+			if (hover){
+				const rt = document.createElement('rt');
+				rt.innerHTML = hover;
+				elem.appendChild(rt);
+				elem.style.paddingTop = '10px';
+				elem.title = hover;
+			}
+			elem.onclick = onclick;
+			return elem;
 		},
 		/** @param {string} s innerHTML */
 		checkbox(s){
