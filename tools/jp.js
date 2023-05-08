@@ -178,7 +178,7 @@ const jp = {
 		// finally
 		this.initialized = true;
 		this.test.next();
-		console.log('Successfully loaded JP.');
+		console.log(`Successfully loaded JP (${Lemma.lemmas.length} lemmas).`);
 	},
 	initialized: false,
 	test: {
