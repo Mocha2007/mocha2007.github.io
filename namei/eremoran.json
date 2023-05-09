@@ -2970,6 +2970,15 @@
 		"categories": ["tool"]
 	},
 	{
+		"title": "bukz",
+		"etym": "I/PEN/*bugs/clothe oneself",
+		"cat": "v.",
+		"defList": [
+			"(archaic, intransitive) clothe oneself (bo + clothing), wear"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "bulbult",
 		"etym": "I/PEN/*bult/net",
 		"cat": "n., 3rd",
@@ -3067,7 +3076,7 @@
 		"defList": [
 			"clothing, clothes"
 		],
-		"categories": ["v3_trade"]
+		"categories": ["clothing", "v3_trade"]
 	},
 	{
 		"title": "buut",
@@ -3590,6 +3599,15 @@
 		"categories": ["giving"]
 	},
 	{
+		"title": "dinbukz",
+		"etym": "C/din/bukz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) disrobe, remove clothing (din + clothing)"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "dindôbat",
 		"etym": "C/dindôz/-ba",
 		"cat": "n., 3rd",
@@ -3842,6 +3860,16 @@
 		"defList": [
 			"pierce, breach"
 		]
+	},
+	{
+		"title": "dôbukz",
+		"etym": "C/dô/bukz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) clothe one's torso (bo + clothing), wear",
+			"(intransitive) wear accessories, like armbands or rings (bo + clothing)"
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "dôdaêt",
@@ -4368,6 +4396,15 @@
 			"(intransitive) exceed (comparand takes postpositional [[ad]])"
 		],
 		"categories": ["extent"]
+	},
+	{
+		"title": "enzbukz",
+		"etym": "C/enz/bukz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) clothe one's legs/feet (bo + clothing), wear"
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "enzkunz",
@@ -10160,6 +10197,15 @@
 		"defList": [
 			"distill"
 		]
+	},
+	{
+		"title": "nuzbukz",
+		"etym": "C/nuz/bukz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) clothe one's head (bo + clothing), wear a hat or mask"
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "nuzderar",
