@@ -2006,6 +2006,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "bêbat",
+		"etym": "I/PEN/*βê-ba-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"pickle"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "bebekat",
 		"etym": "R/beka",
 		"cat": "n., 3rd",
@@ -2022,6 +2031,15 @@
 		],
 		"lore": "cf. Agamemnon",
 		"categories": ["male given name"]
+	},
+	{
+		"title": "bêdôz",
+		"etym": "I/PEN/*βê-dôs",
+		"cat": "v.",
+		"defList": [
+			"pickle"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "bedut",
@@ -6213,6 +6231,15 @@
 		"categories": ["fruit", "plant", "tree"]
 	},
 	{
+		"title": "kainz",
+		"etym": "I/PEN/*kains",
+		"cat": "v.",
+		"defList": [
+			"knead"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "kaipam",
 		"etym": "C/kaipz/-m",
 		"cat": "n., 5th",
@@ -8666,6 +8693,25 @@
 			"jerboa"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "masu",
+		"etym": "I/PEN/*bors",
+		"cat": "n., 4th, adj",
+		"defList": [
+			"grease",
+			"greasy, be greased"
+		],
+		"categories": ["food"]
+	},
+	{
+		"title": "masudôz",
+		"etym": "B/masu/sudôz",
+		"cat": "v.",
+		"defList": [
+			"(transitive) grease"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "masusu",
