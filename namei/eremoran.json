@@ -842,6 +842,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "aku",
+		"etym": "I/PEN/*aku",
+		"cat": "n., 4th",
+		"defList": [
+			"coconut"
+		],
+		"categories": ["fruit", "plant", "tree"]
+	},
+	{
 		"title": "ala",
 		"etym": "I/PEN/*ala/oak",
 		"cat": "n., 4th",
@@ -2815,6 +2824,15 @@
 			"belly"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "borz",
+		"etym": "I/PEN/*bors",
+		"cat": "v.",
+		"defList": [
+			"roast, broil"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "boz",
@@ -8866,6 +8884,15 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "môêr",
+		"etym": "C/môz/-ê",
+		"cat": "n., 1st",
+		"defList": [
+			"baker"
+		],
+		"categories": ["person"]
+	},
+	{
 		"title": "mofanuz",
 		"etym": "C/mo/hanuz",
 		"cat": "v.",
@@ -9004,6 +9031,15 @@
 		"defList": [
 			"antumbra"
 		]
+	},
+	{
+		"title": "môz",
+		"etym": "I/PEN/*môs",
+		"cat": "v.",
+		"defList": [
+			"bake, be baked"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "mu",
@@ -11266,6 +11302,15 @@
 		"defList": [
 			"mow"
 		]
+	},
+	{
+		"title": "sêkaz",
+		"etym": "I/PEN/*ʃêgas",
+		"cat": "v.",
+		"defList": [
+			"boil, be boiled"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "sêlai",
