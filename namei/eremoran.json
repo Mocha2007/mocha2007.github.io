@@ -2632,6 +2632,15 @@
 		"categories": ["drink"]
 	},
 	{
+		"title": "biz",
+		"etym": "I/PEN/*βis",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) toast, be toasted (like bread)"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "bo",
 		"etym": "I/PEN/*bo/with",
 		"cat": "post.",
@@ -5518,6 +5527,24 @@
 			"indeed",
 			"(formal) yes"
 		]
+	},
+	{
+		"title": "hônt",
+		"etym": "C/hônz/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"seasoning"
+		],
+		"categories": ["food"]
+	},
+	{
+		"title": "hônz",
+		"etym": "I/PEN/*ɸôns",
+		"cat": "v.",
+		"defList": [
+			"season"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "hor",
@@ -9289,6 +9316,24 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"cookie, biscuit, scone, or similarly baked pastry"
+		],
+		"categories": ["food"]
+	},
+	{
+		"title": "nalubekam",
+		"etym": "C/naluz/beka",
+		"cat": "n., 5th",
+		"defList": [
+			"recipe"
+		],
+		"categories": ["food"]
+	},
+	{
+		"title": "nalubekaz",
+		"etym": "C/nalubekam/-z",
+		"cat": "v.",
+		"defList": [
+			"follow a recipe"
 		],
 		"categories": ["food"]
 	},
