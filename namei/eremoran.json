@@ -898,6 +898,15 @@
 		"categories": ["fruit", "plant", "tree"]
 	},
 	{
+		"title": "amelat",
+		"etym": "D/amu",
+		"cat": "n., 3rd",
+		"defList": [
+			"confection, sweet"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "amfabin",
 		"etym": "C/amu/habin",
 		"cat": "n., 4th",
@@ -1301,6 +1310,15 @@
 		],
 		"notes": "PEN is a nominalization of ''*xêrrôs'' from ''*xêd'' 'to' + ''*rôs'' 'speak'; Related to Numoran ''Xerror''",
 		"categories": ["male given name"]
+	},
+	{
+		"title": "art",
+		"etym": "I/PEN/*art",
+		"cat": "n., 3rd",
+		"defList": [
+			"porridge"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "aruba",
@@ -4736,6 +4754,15 @@
 		"categories": ["extent"]
 	},
 	{
+		"title": "hakaunt",
+		"etym": "I/PEN/*ɸekaiunt",
+		"cat": "n., 3rd",
+		"defList": [
+			"flatcake"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "hakiz",
 		"etym": "I/PEN/*ɸakis/confuse",
 		"cat": "v.",
@@ -5547,6 +5574,15 @@
 			"(intransitive, irrealis only) I give you X"
 		],
 		"categories": ["giving"]
+	},
+	{
+		"title": "hôladum",
+		"etym": "I/PEN/*ɸôliadum",
+		"cat": "n., 5th",
+		"defList": [
+			"starch"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "holk",
@@ -10742,6 +10778,15 @@
 			"rise"
 		],
 		"categories": ["motion"]
+	},
+	{
+		"title": "raratelat",
+		"etym": "D/raratit",
+		"cat": "n., 3rd",
+		"defList": [
+			"dessert"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "raratiêr",
