@@ -783,4 +783,32 @@ const blogData = [
 	It was therefore inevitable that I made a tool to solve this puzzle:
 	<a href="../tools/nytDigits.html">nytDigits solver</a>
 	`,
+	`
+	@title Eremoran Expansion Project: Month 4
+	@date 1683641647117
+	@p
+	@tags eremoran site
+	It's been almost three months since my pledge to expand Eremoran at a rate of 4-5 words per day.
+	Then, I had 900 words.
+	Currently, I have 1,530.
+	This amounts to an average of 7.1 words per day, or 50 words per week,
+	putting me on track for reaching my goal in another three months.
+	I am about halfway there already!
+	@p
+	@tags site js japanese
+	Since my last post, I have created three new tools:
+	a <a href="../tools/shuggerlainBattle.html">Shuggerlain battle optimizer</a>,
+	an <a href="../tools/etym.html">Etymology guesser</a> for taxon names,
+	and a <a href="../tools/jp.html">Japanese study tool</a> to help me remember vocabulary.
+	@p
+	@tags duolingo japanese
+	Out of frustration with Duolingo's increasingly worse design, I have abandoned it,
+	after over 10 years of usage, including a 1279-day streak and 80 weeks in Diamond league.
+	It was a difficult decision that was the culmination of repeated frustration with
+	Duolingo redesigns progressively removing features from the course.
+	It has come to the point where the frustration of dealing with Duolingo nonsense tainted my enjoyment of learning Japanese.
+	So - I abandoned it.
+	I will be experimenting with several platforms - Lingodeer, Clozemaster, and Anki -
+	to see if any are a viable replacement, or if I'm better off studying alone.
+	`,
 ];
