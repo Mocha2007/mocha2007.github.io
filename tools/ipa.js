@@ -87,13 +87,6 @@ const ipa = {
 };
 
 // wait for other modules to load first
-/*
-if (typeof random !== 'object'){
-	console.debug('Waiting on common.js');
-	jp.waitingOn++;
-	document.getElementById('common').onload = () => jp.wait();
-}
-*/
 if (typeof ipaData !== 'object'){
 	console.debug('Waiting on ipaData.js');
 	ipa.waitingOn++;
