@@ -44,6 +44,30 @@ const ipaData = [
 			// else...
 			['ą', 'ɔ̃'],
 			['ę', 'ɛ̃'],
+			// https://en.wikipedia.org/wiki/Polish_phonology#Voicing_and_devoicing
+			// voicing
+			['p(?=[bvdzʐʑg])', 'b'],
+			['f(?=[bvdzʐʑg])', 'v'],
+			['t(?=[bvdzʐʑg])', 'd'],
+			['t͡s(?=[bvdzʐʑg])', 'd͡z'],
+			['s(?=[bvdzʐʑg])', 'z'],
+			['t͡ʂ(?=[bvdzʐʑg])', 'd͡ʐ'],
+			['ʂ(?=[bvdzʐʑg])', 'ʐ'],
+			['t͡ɕ(?=[bvdzʐʑg])', 'd͡ʑ'],
+			['ɕ(?=[bvdzʐʑg])', 'ʑ'],
+			['k(?=[bvdzʐʑg])', 'g'],
+			['x(?=[bvdzʐʑg])', 'ɣ'],
+			// devoicing
+			['b(?=[pftsʂɕkx])', 'p'],
+			['v(?=[pftsʂɕkx])', 'f'],
+			['d(?=[pftsʂɕkx])', 't'],
+			['d͡z(?=[pftsʂɕkx])', 't͡s'],
+			['z(?=[pftsʂɕkx])', 's'],
+			['d͡ʐ(?=[pftsʂɕkx])', 't͡ʂ'],
+			['ʐ(?=[pftsʂɕkx])', 'ʂ'],
+			['d͡ʑ(?=[pftsʂɕkx])', 't͡ɕ'],
+			['ʑ(?=[pftsʂɕkx])', 'ɕ'],
+			['g(?=[pftsʂɕkx])', 'k'],
 		],
 	},
 ];
