@@ -2695,6 +2695,14 @@
 		"categories": ["food"]
 	},
 	{
+		"title": "bobu",
+		"etym": "C/bo/bu",
+		"cat": "adj.",
+		"defList": [
+			"easy"
+		]
+	},
+	{
 		"title": "bodô",
 		"etym": "C/bo/dô",
 		"cat": "post.",
@@ -2927,10 +2935,11 @@
 	},
 	{
 		"title": "bu",
-		"etym": "I/PEN/*βiu/hollow",
+		"etym": "I/PEN/*βiu/quiet",
 		"cat": "adj.",
 		"defList": [
-			"hollow"
+			"hollow",
+			"(archaic) quiet, peaceful"
 		]
 	},
 	{
@@ -2986,6 +2995,23 @@
 			"adze"
 		],
 		"categories": ["tool"]
+	},
+	{
+		"title": "buku",
+		"etym": "A/bu",
+		"cat": "adj.",
+		"defList": [
+			"quiet, peaceful"
+		]
+	},
+	{
+		"title": "bukum",
+		"etym": "C/buku/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"peace"
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "bukz",
@@ -6139,6 +6165,15 @@
 		]
 	},
 	{
+		"title": "itkarz",
+		"etym": "C/it/karz",
+		"cat": "v.",
+		"defList": [
+			"rebel"
+		],
+		"categories": ["war"]
+	},
+	{
 		"title": "itkumz",
 		"etym": "C/it/kumz",
 		"cat": "v.",
@@ -6549,7 +6584,7 @@
 	},
 	{
 		"title": "karm",
-		"etym": "I/PEN/*xarm/war",
+		"etym": "I/PEN/*xar-m/war",
 		"cat": "n., 5th",
 		"defList": [
 			"war"
@@ -6583,6 +6618,15 @@
 			"hook"
 		],
 		"categories": ["tool"]
+	},
+	{
+		"title": "karz",
+		"etym": "C/karm/-z",
+		"cat": "v.",
+		"defList": [
+			"wage war"
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "kaskru",
