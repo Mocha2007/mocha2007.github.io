@@ -2869,6 +2869,23 @@
 		"categories": ["drink"]
 	},
 	{
+		"title": "borôm",
+		"etym": "C/bo/rôm",
+		"cat": "n., 5th",
+		"defList": [
+			"law"
+		]
+	},
+	{
+		"title": "borôsu",
+		"etym": "C/borôm/-isu",
+		"cat": "adj.",
+		"defList": [
+			"subjugated, conquered"
+		],
+		"categories": ["war"]
+	},
+	{
 		"title": "boru",
 		"etym": "I/PEN/*boru/abdomen",
 		"cat": "n., 4th",
@@ -10227,6 +10244,24 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "nusaurêr",
+		"etym": "C/nusaurz/-ê",
+		"cat": "n., 1st",
+		"defList": [
+			"spy"
+		],
+		"categories": ["person", "war"]
+	},
+	{
+		"title": "nusaurz",
+		"etym": "C/nu/saurz",
+		"cat": "v.",
+		"defList": [
+			"spy"
+		],
+		"categories": ["war"]
+	},
+	{
 		"title": "nusifaz",
 		"etym": "B/nuz/sifaz",
 		"cat": "v.",
@@ -12295,6 +12330,15 @@
 			"spider"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "sudoêr",
+		"etym": "C/sudôz/-ê",
+		"cat": "n., 1st",
+		"defList": [
+			"doer, actor, agent"
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "sudôz",
