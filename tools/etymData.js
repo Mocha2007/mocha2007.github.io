@@ -76,6 +76,12 @@ const etymData = [
 		gloss: '(DIM)',
 		forms: ['ino'],
 	},
+	{
+		head: '-one',
+		lang: EDS.italian,
+		gloss: '(AUG)',
+		forms: ['one?'],
+	},
 	// SPANISH
 	{
 		head: 'pico',
@@ -329,6 +335,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: 'breast',
 		forms: ['mamm'],
+	},
+	{
+		head: 'mille',
+		lang: EDS.latin,
+		gloss: 'thousand',
+		forms: ['mill[ei]?'],
 	},
 	{
 		head: 'mollusca',
@@ -1212,6 +1224,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'fodder',
 		forms: ['po'],
+	},
+	{
+		head: 'pólis',
+		lang: EDS.greek,
+		gloss: 'city',
+		forms: ['polis$', 'polit'],
 	},
 	{
 		head: 'polús',
