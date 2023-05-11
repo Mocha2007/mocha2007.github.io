@@ -13,7 +13,7 @@ class PaleoMap {
 		PaleoMap.maps.push(this);
 	}
 	get score(){
-		return Math.abs(this.mya + paleomap.year);
+		return Math.abs(this.mya - paleomap.year);
 	}
 }
 /** @type {PaleoMap[]} */
@@ -92,7 +92,7 @@ const paleomap = {
 		this.elem.img.src = map.src;
 	},
 	get year(){
-		return +this.elem.slider.children[0].value;
+		return -this.elem.slider.children[0].value;
 	},
 };
 
