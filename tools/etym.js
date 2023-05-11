@@ -132,7 +132,7 @@ const etym = {
 	},
 };
 
-if (typeof etymData !== 'object')
+if (typeof etymLangData !== 'object')
 	document.getElementById('etymData').onload = etym.init;
 else
 	etym.init();
