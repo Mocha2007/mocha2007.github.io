@@ -244,7 +244,7 @@ const etymData = [
 		head: '-nus',
 		lang: EDS.latin,
 		gloss: '(ADJ)',
-		forms: ['n$'],
+		forms: ['(i?a)?n$'],
 	},
 	{
 		head: '-odes',
@@ -277,10 +277,10 @@ const etymData = [
 		forms: ['amoebo'],
 	},
 	{
-		head: 'anus',
+		head: 'anellus',
 		lang: EDS.latin,
-		gloss: 'ring',
-		forms: ['an', 'ann'], // irregular ann- in annelid
+		gloss: 'little ring',
+		forms: ['ann?ell?'],
 	},
 	{
 		head: 'avis',
@@ -443,7 +443,7 @@ const etymData = [
 		head: '-nos',
 		lang: EDS.greek,
 		gloss: '(ADJ)',
-		forms: ['n$'],
+		forms: ['a?n$'],
 	},
 	{
 		head: '-on',
@@ -632,6 +632,12 @@ const etymData = [
 		forms: ['echino'],
 	},
 	{
+		head: 'éktasis',
+		lang: EDS.greek,
+		gloss: 'extension',
+		forms: ['ectas'],
+	},
+	{
 		head: 'ḗlektron',
 		lang: EDS.greek,
 		gloss: 'amber',
@@ -648,6 +654,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'within',
 		forms: ['endo', 'ento'],
+	},
+	{
+		head: 'ēṓs',
+		lang: EDS.greek,
+		gloss: 'dawn',
+		forms: ['eo'],
 	},
 	{
 		head: 'epí',
@@ -788,6 +800,12 @@ const etymData = [
 		forms: ['iso'],
 	},
 	{
+		head: 'kálymma',
+		lang: EDS.greek,
+		gloss: 'cover',
+		forms: ['calymm'],
+	},
+	{
 		head: 'kardía',
 		lang: EDS.greek,
 		gloss: 'heart',
@@ -884,6 +902,12 @@ const etymData = [
 		forms: ['coelo'],
 	},
 	{
+		head: 'krúos',
+		lang: EDS.greek,
+		gloss: 'cold',
+		forms: ['cryo'],
+	},
+	{
 		head: 'kruptós',
 		lang: EDS.greek,
 		gloss: 'hidden',
@@ -954,6 +978,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'part',
 		forms: ['mere', 'mero'], // telomere, meronym
+	},
+	{
+		head: 'mésos',
+		lang: EDS.greek,
+		gloss: 'middle',
+		forms: ['meso'],
 	},
 	{
 		head: 'metá',
@@ -1076,6 +1106,12 @@ const etymData = [
 		forms: ['o?psida$', 'ops$'],
 	},
 	{
+		head: 'oroseirá',
+		lang: EDS.greek,
+		gloss: 'mountain range',
+		forms: ['orosir'],
+	},
+	{
 		head: 'orthós',
 		lang: EDS.greek,
 		gloss: 'straight',
@@ -1092,6 +1128,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'sharp',
 		forms: ['oxy'],
+	},
+	{
+		head: 'palaiós',
+		lang: EDS.greek,
+		gloss: 'old',
+		forms: ['paleo'],
 	},
 	{
 		head: 'pará',
@@ -1196,6 +1238,12 @@ const etymData = [
 		forms: ['proct'],
 	},
 	{
+		head: 'próteros',
+		lang: EDS.greek,
+		gloss: 'anterior',
+		forms: ['protero'],
+	},
+	{
 		head: 'Prōteús',
 		lang: EDS.greek,
 		gloss: 'Proteus',
@@ -1256,6 +1304,12 @@ const etymData = [
 		forms: ['rhombo'],
 	},
 	{
+		head: 'rhúax',
+		lang: EDS.greek,
+		gloss: 'lava flow',
+		forms: ['rhyac'],
+	},
+	{
 		head: 'rhúnkhos',
 		lang: EDS.greek,
 		gloss: 'snout',
@@ -1272,6 +1326,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'lizard',
 		forms: ['saur'],
+	},
+	{
+		head: 'sídēros',
+		lang: EDS.greek,
+		gloss: 'iron',
+		forms: ['sider'],
 	},
 	{
 		head: 'skótos',
@@ -1308,6 +1368,24 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'kind of moss',
 		forms: ['sphagn'],
+	},
+	{
+		head: 'sphaîra',
+		lang: EDS.greek,
+		gloss: 'ball',
+		forms: ['sphere?'],
+	},
+	{
+		head: 'statherós',
+		lang: EDS.greek,
+		gloss: 'stable',
+		forms: ['stather'],
+	},
+	{
+		head: 'stenós',
+		lang: EDS.greek,
+		gloss: 'narrow',
+		forms: ['steno?'],
 	},
 	{
 		head: 'stóma',
@@ -1368,6 +1446,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'hair',
 		forms: ['thrich', 'trich'], // gastrotrica drops the h for some reason
+	},
+	{
+		head: 'tónos',
+		lang: EDS.greek,
+		gloss: 'stretch',
+		forms: ['ton'],
 	},
 	{
 		head: 'tópos',
