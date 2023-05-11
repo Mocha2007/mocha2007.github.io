@@ -2302,6 +2302,15 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "bibekam",
+		"etym": "C/bim/beka",
+		"cat": "n., 5th",
+		"defList": [
+			"battle plan, battle tactic"
+		],
+		"categories": ["war"]
+	},
+	{
 		"title": "bibi",
 		"etym": "I/PEN/*bibi/breast",
 		"cat": "n., 4th",
@@ -2364,6 +2373,15 @@
 			"herb"
 		],
 		"categories": ["herb", "plant"]
+	},
+	{
+		"title": "bifkakum",
+		"etym": "B/bim/afkakum",
+		"cat": "n., 5th",
+		"defList": [
+			"military campaign"
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "bikaldoêr",
@@ -2482,6 +2500,15 @@
 		"categories": ["tool"]
 	},
 	{
+		"title": "bikrum",
+		"etym": "C/bim/krum",
+		"cat": "n., 5th",
+		"defList": [
+			"military science"
+		],
+		"categories": ["war"]
+	},
+	{
 		"title": "bikut",
 		"etym": "C/bit/kum",
 		"cat": "n., 3rd",
@@ -2523,7 +2550,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"battle",
-			"(euphemistic) sex"
+			"(euphemistic) sex",
+			"(prefix) military"
 		],
 		"categories": ["sex", "war"]
 	},
@@ -2639,6 +2667,15 @@
 		"defList": [
 			"page"
 		]
+	},
+	{
+		"title": "bittôm",
+		"etym": "C/bim/ittô",
+		"cat": "n., 5th",
+		"defList": [
+			"(war) front"
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "biz",
@@ -5056,6 +5093,16 @@
 			"five"
 		],
 		"categories": ["body part", "number"]
+	},
+	{
+		"title": "hanufkaz",
+		"etym": "C/hanu/afkaz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) give oneself up, surrender oneself, turn oneself in",
+			"(transitive) give sth up, surrender sth, turn sth in"
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "hanum",
