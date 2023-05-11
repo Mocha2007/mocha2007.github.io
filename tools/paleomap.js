@@ -32,6 +32,9 @@ new PaleoMap(372, 'https://upload.wikimedia.org/wikipedia/commons/5/57/Late_Devo
 new PaleoMap(440, 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Silurian_plate_tectonics.png');
 new PaleoMap(458, 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Map_showing_the_paleogeography_of_the_Middle_Ordovician_%28approximately_458_million_years_ago%29._Most_researchers_place_western_%282de3cd16-15cc-4d0c-b553-71cbbeb4c7e3%29.jpg');
 new PaleoMap(500, 'https://upload.wikimedia.org/wikipedia/commons/9/96/%E0%A6%95%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%AE%E0%A7%8D%E0%A6%AC%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%AF%E0%A6%BC%E0%A6%BE%E0%A6%A8%E0%A7%AB%E0%A7%A6.png');
+new PaleoMap(600, 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Ediacaran-Cambrian_boundary_plate_tectonics.png');
+new PaleoMap(720, 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Earth_720Ma.gif');
+new PaleoMap(2050, 'https://upload.wikimedia.org/wikipedia/commons/d/d5/2050ma.png');
 
 
 const paleomap = {
