@@ -1,0 +1,17 @@
+#paleomap_container {
+	background-color: silver;
+	border: 2px solid black;
+	box-sizing: border-box; /* to prevent the border from pushing the size out of bounds */
+	display: inline-block;
+}
+
+#paleomap_img {
+	height: 20vh;
+}
+
+#paleomap_super {
+	bottom: 0;
+	position: fixed;
+	text-align: center;
+	width: 100%;
+}
