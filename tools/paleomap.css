@@ -1,5 +1,5 @@
 #paleomap_container {
-	background-color: silver;
+	background-color: #ccf;
 	border: 2px solid black;
 	box-sizing: border-box; /* to prevent the border from pushing the size out of bounds */
 	display: inline-block;
@@ -14,4 +14,24 @@
 	position: fixed;
 	text-align: center;
 	width: 100%;
+}
+
+.button {
+	background-color: #aac;
+	border-color: #444;
+	border-radius: 15px;
+	border-style: solid;
+	border-width: 2px;
+	color: #444;
+	cursor: pointer;
+	font-size: 2em;
+	padding: 0 10px;
+	user-select: none;
+	width: fit-content;
+}
+.button:hover {
+	opacity: 0.5;
+}
+.button:active {
+	opacity: 0.25;
 }

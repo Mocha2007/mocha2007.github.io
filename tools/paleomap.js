@@ -21,11 +21,28 @@ PaleoMap.maps = [];
 
 new PaleoMap(0, 'https://upload.wikimedia.org/wikipedia/commons/7/78/Mollweide-projection.jpg');
 new PaleoMap((385 + 359)/2, 'https://upload.wikimedia.org/wikipedia/commons/5/57/Late_Devonian_palaeogeographic_map.jpg');
+new PaleoMap(500, 'https://upload.wikimedia.org/wikipedia/commons/9/96/%E0%A6%95%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%AE%E0%A7%8D%E0%A6%AC%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%AF%E0%A6%BC%E0%A6%BE%E0%A6%A8%E0%A7%AB%E0%A7%A6.png');
 
 
 const paleomap = {
 	ageOfTheEarth: 4540,
 	create: {
+		get buttonLeft(){
+			const e = document.createElement('span');
+			e.id = 'paleomap_buttonLeft';
+			e.classList.add('button');
+			e.innerHTML = '&lt;';
+			e.onclick = () => paleomap.move(-10);
+			return e;
+		},
+		get buttonRight(){
+			const e = document.createElement('span');
+			e.id = 'paleomap_buttonRight';
+			e.classList.add('button');
+			e.innerHTML = '&gt;';
+			e.onclick = () => paleomap.move(10);
+			return e;
+		},
 		get container(){
 			const container = document.createElement('div');
 			container.id = 'paleomap_container';
@@ -44,6 +61,7 @@ const paleomap = {
 			// todo
 			const label = document.createElement('label');
 			label.innerHTML = '&nbsp;MYA';
+			label.appendChild(this.buttonLeft);
 			const input = document.createElement('input');
 			input.type = 'range';
 			input.min = -paleomap.ageOfTheEarth;
@@ -51,6 +69,7 @@ const paleomap = {
 			label.id = label.for = input.name = 'paleomap_slider';
 			label.appendChild(input);
 			label.onclick = () => paleomap.update();
+			label.appendChild(this.buttonRight);
 			return label;
 		},
 		get year(){
@@ -84,15 +103,21 @@ const paleomap = {
 		document.body.appendChild(cC);
 		this.update();
 	},
+	/** @param {number} delta */
+	move(delta){
+		const v = +this.elem.slider.children[1].value;
+		this.elem.slider.children[1].value = v + delta;
+		this.update();
+	},
 	update(){
 		this.elem.year.innerHTML = this.year;
-		this.elem.img.alt = `Map of the Earth circa ${this.year} MYA`;
 		// find closest year...
 		const map = PaleoMap.maps.sort((a, b) => a.score - b.score)[0];
 		this.elem.img.src = map.src;
+		this.elem.img.alt = `Map of the Earth circa ${map.mya} MYA`;
 	},
 	get year(){
-		return -this.elem.slider.children[0].value;
+		return -this.elem.slider.children[1].value;
 	},
 };
 
