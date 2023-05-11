@@ -20,7 +20,17 @@ class PaleoMap {
 PaleoMap.maps = [];
 
 new PaleoMap(0, 'https://upload.wikimedia.org/wikipedia/commons/7/78/Mollweide-projection.jpg');
-new PaleoMap((385 + 359)/2, 'https://upload.wikimedia.org/wikipedia/commons/5/57/Late_Devonian_palaeogeographic_map.jpg');
+new PaleoMap(10, 'https://upload.wikimedia.org/wikipedia/commons/2/26/Mapa_amb_distibuci%C3%B3_al_Eoc%C3%A8.png');
+new PaleoMap(90, 'https://upload.wikimedia.org/wikipedia/commons/d/d0/90_Ma_-_Late_Cretaceous_paleogeography_with_known_distribution_of_Arcellites_disciformis_indicated.jpg');
+new PaleoMap(122.5, 'https://upload.wikimedia.org/wikipedia/commons/a/a3/The_distribution_of_paraves_in_Early_Cretaceous.png');
+new PaleoMap(170, 'https://upload.wikimedia.org/wikipedia/commons/b/b3/MiddleJurassicMap.jpg');
+new PaleoMap(220, 'https://upload.wikimedia.org/wikipedia/commons/e/ec/220Ma_Paleomap.svg');
+new PaleoMap(250, 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Triassic_250.png');
+new PaleoMap(270, 'https://upload.wikimedia.org/wikipedia/commons/9/90/Distribution_of_caseid_synapsids_in_late_Paleozoic_Pangea.jpg');
+new PaleoMap(300, 'https://upload.wikimedia.org/wikipedia/commons/9/96/Karoo_Glaciation.png');
+new PaleoMap(372, 'https://upload.wikimedia.org/wikipedia/commons/5/57/Late_Devonian_palaeogeographic_map.jpg');
+new PaleoMap(440, 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Silurian_plate_tectonics.png');
+new PaleoMap(458, 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Map_showing_the_paleogeography_of_the_Middle_Ordovician_%28approximately_458_million_years_ago%29._Most_researchers_place_western_%282de3cd16-15cc-4d0c-b553-71cbbeb4c7e3%29.jpg');
 new PaleoMap(500, 'https://upload.wikimedia.org/wikipedia/commons/9/96/%E0%A6%95%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%AE%E0%A7%8D%E0%A6%AC%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%AF%E0%A6%BC%E0%A6%BE%E0%A6%A8%E0%A7%AB%E0%A7%A6.png');
 
 
