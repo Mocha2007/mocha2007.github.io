@@ -76,6 +76,7 @@ const etym = {
 		// sort etyms
 		Root.roots.sort((a, b) => b.forms[0].length - a.forms[0].length);
 		this.initialized = true;
+		console.log(`etym: ${Root.roots.length} roots loaded`);
 	},
 	reset(){
 		this.elem.result.innerHTML = '';
