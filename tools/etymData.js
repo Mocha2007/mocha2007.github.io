@@ -253,24 +253,6 @@ const etymData = [
 		forms: ['odes$'],
 	},
 	{
-		head: '-oida',
-		lang: EDS.latin,
-		gloss: '(taxon)',
-		forms: ['oida$'],
-	},
-	{
-		head: '-oidea',
-		lang: EDS.latin,
-		gloss: '(superfamily of animal)',
-		forms: ['oidea$'],
-	},
-	{
-		head: '-oides',
-		lang: EDS.latin,
-		gloss: '(taxon)',
-		forms: ['oides$'],
-	},
-	{
 		head: '-um',
 		lang: EDS.latin,
 		gloss: '(N)',
@@ -428,6 +410,12 @@ const etymData = [
 		forms: ['arche', 'arch'],
 	},
 	{
+		head: '-eidḗs',
+		lang: EDS.greek,
+		gloss: '(ADJ)',
+		forms: ['o?id'],
+	},
+	{
 		head: '-ikós',
 		lang: EDS.greek,
 		gloss: '(ADJ)',
@@ -488,10 +476,16 @@ const etymData = [
 		forms: ['actino'],
 	},
 	{
+		head: 'a-',
+		lang: EDS.greek,
+		gloss: 'un-',
+		forms: ['a'],
+	},
+	{
 		head: 'an-',
 		lang: EDS.greek,
 		gloss: 'un-',
-		forms: ['an', 'a'],
+		forms: ['an(?=[aehiou])'], // "any-" impossible since no greek word starts y-, it's always hy-
 	},
 	{
 		head: 'aná',
@@ -738,6 +732,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'touch',
 		forms: ['hapto', 'hapt'],
+	},
+	{
+		head: 'hēdonḗ',
+		lang: EDS.greek,
+		gloss: 'pleasure',
+		forms: ['hedon'],
 	},
 	{
 		head: 'hélmins',
