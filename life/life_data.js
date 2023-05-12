@@ -2900,7 +2900,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'yinotheria',
 		'range': 'oc',
-		'age': 145, // "early cretaceous"
+		'age': 125, // Barremian
 	},
 	{
 		'name': 'mosasauroidea',
@@ -4378,7 +4378,7 @@ const lifeData = [
 		'rank': 'subclass',
 		'parent': 'mammalia',
 		'range': 'ww',
-		'age': 160,
+		'age': 161,
 	},
 	{
 		'name': 'theropoda',
@@ -4612,8 +4612,8 @@ const lifeData = [
 		'name': 'yinotheria',
 		'rank': 'subclass',
 		'parent': 'mammalia',
-		'range': 'oc',
-		'age': 165,
+		'range': 'oc;ow',
+		'age': 170, // "Middle Jurassic"
 	},
 	// Z
 	{
