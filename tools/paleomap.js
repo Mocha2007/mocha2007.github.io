@@ -127,7 +127,7 @@ const paleomap = {
 		// find closest year...
 		const map = PaleoMap.maps.sort((a, b) => a.score - b.score)[0];
 		this.elem.img.src = map.src;
-		this.elem.img.alt = `Map of the Earth circa ${map.mya} MYA`;
+		this.elem.img.title = this.elem.img.alt = `Map of the Earth circa ${map.mya} MYA`;
 	},
 	get year(){
 		return -this.elem.slider.children[1].value;
