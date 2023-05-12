@@ -308,7 +308,7 @@ const lifeData = [
 	{
 		'name': 'animalia',
 		'rank': 'kingdom',
-		'parent': 'opisthokonta',
+		'parent': 'choanozoa',
 		'range': 'ww',
 		'age': 760,
 		'desc': 'Animals consume organic material, breathe oxygen, are able to move, can reproduce sexually, and grow from a blastula during embryonic development.',
@@ -1214,6 +1214,21 @@ const lifeData = [
 		'name': 'chloridoideae',
 		'rank': 'subfamily',
 		'parent': 'pacmad clade',
+	},
+	{
+		'name': 'choanoflagellatea',
+		'rank': 'class',
+		'parent': 'choanozoa',
+		'range': 'wo',
+		'age': 100.5,
+		'desc': 'Choanoflagellate',
+	},
+	{
+		'name': 'choanozoa',
+		'rank': 'clade',
+		'parent': 'opisthokonta',
+		'range': 'ww',
+		'age': 1000,
 	},
 	{
 		'name': 'chondrichthyes',
