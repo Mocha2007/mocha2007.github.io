@@ -268,7 +268,7 @@ const etymData = [
 		head: '-oidae',
 		lang: EDS.latin,
 		gloss: '(epifamily of animal)',
-		forms: ['oidea$'],
+		forms: ['oidae$'],
 	},
 	{
 		head: '-oidea',
