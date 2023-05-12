@@ -2787,6 +2787,15 @@
 		"categories": ["food"]
 	},
 	{
+		"title": "bizilur",
+		"etym": "I/PEN/*βi-silu-r",
+		"cat": "n., 1st",
+		"defList": [
+			"veteran"
+		],
+		"categories": ["war"]
+	},
+	{
 		"title": "bo",
 		"etym": "I/PEN/*bo/with",
 		"cat": "post.",
@@ -5227,6 +5236,15 @@
 		]
 	},
 	{
+		"title": "hanumat",
+		"etym": "C/hanu/mat",
+		"cat": "n., 3rd",
+		"defList": [
+			"headquarters"
+		],
+		"categories": ["war"]
+	},
+	{
 		"title": "hanumor",
 		"etym": "C/hanu/mor",
 		"cat": "n., 1st",
@@ -5790,6 +5808,23 @@
 		"cat": "adv.",
 		"defList": [
 			"(informal) yes"
+		]
+	},
+	{
+		"title": "holkelat",
+		"etym": "D/holkit",
+		"cat": "n., 3rd",
+		"defList": [
+			"castle, fort, fortress"
+		],
+		"categories": ["war"]
+	},
+	{
+		"title": "holkit",
+		"etym": "I/PEN/*ʃɸolxi-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"city, town, village, settlement"
 		]
 	},
 	{
@@ -12847,6 +12882,15 @@
 			"twelve"
 		],
 		"categories": ["number"]
+	},
+	{
+		"title": "tanbimafir",
+		"etym": "C/tan/bimafir",
+		"cat": "n., 1st",
+		"defList": [
+			"vanguard"
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "tanea",
