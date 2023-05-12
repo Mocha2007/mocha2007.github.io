@@ -439,6 +439,7 @@ const lifeData = [
 		'parent': 'life',
 		'range': 'ww',
 		'age': 3420,
+		'desc': 'Archaea',
 	},
 	{
 		'name': 'archaeopterygidae',
@@ -453,6 +454,13 @@ const lifeData = [
 		'parent': 'archaeopterygidae',
 		'extinct': true,
 		'range': 'eu',
+	},
+	{
+		'name': 'archaeplastida',
+		'rank': 'clade',
+		'parent': 'diaphoretickes',
+		'range': 'ww',
+		'age': 1600,
 	},
 	{
 		'name': 'archosauria',
@@ -1892,7 +1900,7 @@ const lifeData = [
 	{
 		'name': 'eukaryota',
 		'rank': 'domain',
-		'parent': 'life',
+		'parent': 'archaea',
 		'range': 'ww',
 		'age': 1850,
 		'desc': 'Eukaryotes are organisms which have cells with a nucleus enclosed within membranes, unlike prokaryotes, which have no membrane-bound organelles.',
@@ -3640,7 +3648,7 @@ const lifeData = [
 	{
 		'name': 'plantae',
 		'rank': 'kingdom',
-		'parent': 'diaphoretickes',
+		'parent': 'archaeplastida',
 		'range': 'ww',
 		'age': 1200,
 		'desc': 'Plant',
@@ -3897,7 +3905,7 @@ const lifeData = [
 	{
 		'name': 'rhodophyta',
 		'rank': 'division',
-		'parent': 'diaphoretickes',
+		'parent': 'archaeplastida',
 		'range': 'wo',
 		'age': 1300, // +/- 300
 		'desc': 'Red Algae',
