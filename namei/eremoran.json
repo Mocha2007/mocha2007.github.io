@@ -1627,7 +1627,7 @@
 		"etym": "I/PEN/*βax/stallion",
 		"cat": "n., 2nd",
 		"defList": [
-			"stallion, steed"
+			"stallion, steed (male horse)"
 		],
 		"categories": ["animal"]
 	},
@@ -2348,6 +2348,15 @@
 		"categories": ["drink"]
 	},
 	{
+		"title": "bidir",
+		"etym": "C/bim/dir",
+		"cat": "n., 1st",
+		"defList": [
+			"enemy army, host"
+		],
+		"categories": ["war"]
+	},
+	{
 		"title": "bidzam",
 		"etym": "L/VAZ/binž",
 		"cat": "n., 5th",
@@ -2505,6 +2514,15 @@
 		"cat": "n., 5th",
 		"defList": [
 			"military science"
+		],
+		"categories": ["war"]
+	},
+	{
+		"title": "bikrumat",
+		"etym": "C/bi/krumat",
+		"cat": "n., 3rd",
+		"defList": [
+			"military school, military academy"
 		],
 		"categories": ["war"]
 	},
@@ -2692,6 +2710,15 @@
 		"cat": "n., 5th",
 		"defList": [
 			"(war) front"
+		],
+		"categories": ["war"]
+	},
+	{
+		"title": "bituk",
+		"etym": "C/bim/tuk",
+		"cat": "n., 2nd",
+		"defList": [
+			"warhorse, cavalry"
 		],
 		"categories": ["war"]
 	},
@@ -3911,6 +3938,16 @@
 		"defList": [
 			"[Absolutive Particle]"
 		]
+	},
+	{
+		"title": "dir",
+		"etym": "C/dim/-r",
+		"cat": "n., 1st",
+		"defList": [
+			"stranger, foreigner, alien",
+			"enemy"
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "dirabeka",
@@ -7487,6 +7524,14 @@
 		]
 	},
 	{
+		"title": "krumat",
+		"etym": "C/krum/mat",
+		"cat": "n., 3rd",
+		"defList": [
+			"school"
+		]
+	},
+	{
 		"title": "krus",
 		"etym": "I/PEN/*xruʃ/cabbage",
 		"cat": "n., 4th",
@@ -9357,7 +9402,8 @@
 		"etym": "R/mukat",
 		"cat": "n., 1st",
 		"defList": [
-			"army"
+			"army",
+			"(specifically) infantry"
 		],
 		"categories": ["war"]
 	},
@@ -13361,7 +13407,7 @@
 		"etym": "C/tunz/bak",
 		"cat": "n., 2nd",
 		"defList": [
-			"gelding (gelded stallion)"
+			"gelding (gelded stallion, horse)"
 		],
 		"categories": ["animal"]
 	},
