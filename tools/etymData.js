@@ -39,6 +39,12 @@ const etymData = [
 		forms: ['ness'],
 	},
 	{
+		head: '-odd',
+		lang: EDS.english,
+		gloss: '(infrafamily of animal)',
+		forms: ['odd$'],
+	},
+	{
 		head: '-s',
 		lang: EDS.english,
 		gloss: '(PL)',
@@ -183,7 +189,7 @@ const etymData = [
 	{
 		head: '-ida',
 		lang: EDS.latin,
-		gloss: '(taxon)',
+		gloss: '(order of animal)',
 		forms: ['ida$', 'oda$', 'da$'],
 	},
 	{
@@ -215,6 +221,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: '(superfamily of animal or subtribe of non-animal)',
 		forms: ['inae$'],
+	},
+	{
+		head: '-ineae',
+		lang: EDS.latin,
+		gloss: '(suborder of non-animal)',
+		forms: ['ineae$'],
 	},
 	{
 		head: '-ini',
@@ -251,6 +263,18 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: '(ADJ)',
 		forms: ['(i?a)?n$'],
+	},
+	{
+		head: '-oidae',
+		lang: EDS.latin,
+		gloss: '(epifamily of animal)',
+		forms: ['oidea$'],
+	},
+	{
+		head: '-oidea',
+		lang: EDS.latin,
+		gloss: '(superfamily of animal)',
+		forms: ['oidea$'],
 	},
 	{
 		head: '-odes',
