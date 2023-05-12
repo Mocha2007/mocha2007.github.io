@@ -12,8 +12,8 @@
 #paleomap_super {
 	bottom: 0;
 	position: fixed;
+	right: 0;
 	text-align: center;
-	width: 100%;
 }
 
 .button {
