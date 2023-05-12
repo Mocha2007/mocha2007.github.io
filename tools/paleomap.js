@@ -39,7 +39,10 @@ new PaleoMap(500, 'https://upload.wikimedia.org/wikipedia/commons/9/96/%E0%A6%95
 new PaleoMap(520, 'http://www.scotese.com/images/Y520_zonef.jpg');
 new PaleoMap(540, 'http://www.scotese.com/images/Z540_zonef.jpg');
 new PaleoMap(600, 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Ediacaran-Cambrian_boundary_plate_tectonics.png');
+new PaleoMap(650, 'http://www.scotese.com/images/650.jpg');
 new PaleoMap(720, 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Earth_720Ma.gif');
+new PaleoMap(750, 'https://www.lyellcollection.org/cms/10.1144/SP326.4/asset/72e565b5-40b8-46bb-8606-4bfc11526e74/assets/images/large/1697ch04f04.jpg');
+new PaleoMap(1200, 'https://static.wikia.nocookie.net/dimensionscollide/images/d/d0/1200Marect.png/revision/latest?cb=20170109052233');
 new PaleoMap(1600, 'https://upload.wikimedia.org/wikipedia/commons/5/58/Columbia1600.png');
 new PaleoMap(2050, 'https://upload.wikimedia.org/wikipedia/commons/d/d5/2050ma.png');
 
