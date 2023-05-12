@@ -1689,6 +1689,15 @@
 		"categories": ["grain", "plant"]
 	},
 	{
+		"title": "baliêr",
+		"etym": "C/baliz/-ê",
+		"cat": "n., 1st",
+		"defList": [
+			"merchant, buyer, seller"
+		],
+		"categories": ["person"]
+	},
+	{
 		"title": "balim",
 		"etym": "C/balis/-m",
 		"cat": "n., 5th",
@@ -2328,6 +2337,15 @@
 			"leaf"
 		],
 		"categories": ["plant"]
+	},
+	{
+		"title": "bibaz",
+		"etym": "C/bim/baz",
+		"cat": "v.",
+		"defList": [
+			"lead an army"
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "bibekam",
@@ -3761,6 +3779,15 @@
 		"categories": ["motion"]
 	},
 	{
+		"title": "dinbarbar",
+		"etym": "C/dinbarz/-ba",
+		"cat": "n., 1st",
+		"defList": [
+			"conscript, levy, recruit"
+		],
+		"categories": ["war"]
+	},
+	{
 		"title": "dinbarum",
 		"etym": "C/dinbaruz/-m",
 		"cat": "n.",
@@ -3782,7 +3809,7 @@
 		"cat": "v.",
 		"defList": [
 			"filter out",
-			"conscript, enroll, levy",
+			"conscript, enroll, levy, recruit",
 			"cull"
 		],
 		"categories": ["war"]
@@ -9479,6 +9506,15 @@
 		]
 	},
 	{
+		"title": "mukabalir",
+		"etym": "C/muka/baliz",
+		"cat": "n., 1st",
+		"defList": [
+			"mercenary"
+		],
+		"categories": ["person", "war"]
+	},
+	{
 		"title": "mukamukar",
 		"etym": "R/mukat",
 		"cat": "n., 1st",
@@ -13416,6 +13452,14 @@
 		]
 	},
 	{
+		"title": "tukilbunt",
+		"etym": "C/tukil/bunt",
+		"cat": "n., 3rd",
+		"defList": [
+			"banner, flag"
+		]
+	},
+	{
 		"title": "tukilk",
 		"etym": "C/tukil/-k",
 		"cat": "n., 2nd",
@@ -13914,7 +13958,7 @@
 		"cat": "n., 5th",
 		"defList": [
 			"symbol, character, letter, glyph",
-			"logo, emblem",
+			"logo, emblem, insignia",
 			"cover art"
 		]
 	},
