@@ -2565,6 +2565,15 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "bimafir",
+		"etym": "C/bim/mafir",
+		"cat": "n., 1st",
+		"defList": [
+			"military group (a subdivision of [[mukamukar]] 'army', like a legion, squadron, or corps)"
+		],
+		"categories": ["war"]
+	},
+	{
 		"title": "bimam",
 		"etym": "C/bim/mam",
 		"cat": "n., 5th",
@@ -2599,6 +2608,15 @@
 			"ram"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "bimumast",
+		"etym": "C/bim/mumast",
+		"cat": "n., 3rd",
+		"defList": [
+			"warship"
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "binas",
@@ -2986,6 +3004,15 @@
 			"manatee, sea cow (esp. trichechus senegalensis)"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "brukam",
+		"etym": "B/breka/mukat",
+		"cat": "n., 5th",
+		"defList": [
+			"navy"
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "bu",
@@ -10585,6 +10612,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "onodam",
+		"etym": "C/onodz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"(military) flank"
+		],
+		"categories": ["war"]
+	},
+	{
 		"title": "onod",
 		"etym": "I/PEN/*onod/horn",
 		"cat": "n., 4th",
@@ -10606,6 +10642,15 @@
 			"chevrotain (esp. moschiola indica)"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "onodz",
+		"etym": "C/onod/-z",
+		"cat": "v.",
+		"defList": [
+			"(military) flank (all senses)"
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "ou",
