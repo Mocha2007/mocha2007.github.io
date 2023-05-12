@@ -259,8 +259,18 @@
 		"etym": "B/abbakam/karm",
 		"cat": "n., 5th",
 		"defList": [
-			"spoils of war"
-		]
+			"spoils of war, loot, pillage, plunder"
+		],
+		"categories": ["war"]
+	},
+	{
+		"title": "abbakarz",
+		"etym": "C/abbakarm/-z",
+		"cat": "v.",
+		"defList": [
+			"loot, pillage, plunder"
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "abbakaz",
@@ -532,6 +542,24 @@
 		"defList": [
 			"happen"
 		]
+	},
+	{
+		"title": "adebam",
+		"etym": "C/adebaz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"rape (all senses)"
+		],
+		"categories": ["sex", "war"]
+	},
+	{
+		"title": "adebaz",
+		"etym": "C/ad/eba",
+		"cat": "v.",
+		"defList": [
+			"rape (all senses)"
+		],
+		"categories": ["sex", "war"]
 	},
 	{
 		"title": "adunaz",
@@ -2382,6 +2410,24 @@
 			"herb"
 		],
 		"categories": ["herb", "plant"]
+	},
+	{
+		"title": "bifanum",
+		"etym": "B/bim/hanum",
+		"cat": "n., 5th",
+		"defList": [
+			"captured territory"
+		],
+		"categories": ["war"]
+	},
+	{
+		"title": "bifanuz",
+		"etym": "B/bim/hanuz",
+		"cat": "v.",
+		"defList": [
+			"capture territory"
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "bifkakum",
@@ -5204,7 +5250,7 @@
 		"etym": "C/hanum/-z",
 		"cat": "v.",
 		"defList": [
-			"hold",
+			"hold, grasp, grip",
 			"maintain"
 		]
 	},
