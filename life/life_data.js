@@ -228,6 +228,13 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'ambulacraria',
+		'rank': 'clade',
+		'parent': 'deuterostomia',
+		'range': 'wo',
+		'age': 526,
+	},
+	{
 		'name': 'ammonoidea',
 		'rank': 'subclass',
 		'parent': 'cephalopoda',
@@ -754,7 +761,7 @@ const lifeData = [
 	{
 		'name': 'bilateria',
 		'rank': 'clade',
-		'parent': 'parahoxozoa',
+		'parent': 'planulozoa',
 		'range': 'ww',
 		'age': 560,
 		'desc': 'Bilaterians are animals with bilateral symmetry as an embryo.',
@@ -1327,7 +1334,7 @@ const lifeData = [
 	{
 		'name': 'cnidaria',
 		'rank': 'phylum',
-		'parent': 'parahoxozoa',
+		'parent': 'planulozoa',
 		'range': 'wo',
 		'age': 580,
 	},
@@ -1586,7 +1593,7 @@ const lifeData = [
 	{
 		'name': 'deuterostomia',
 		'rank': 'superphylum',
-		'parent': 'bilateria',
+		'parent': 'nephrozoa',
 		'range': 'ww',
 		'age': 540,
 		'desc': 'In deuterostomes, the first opening, the blastopore, becomes the anus, while in protostomes, it becomes the mouth.',
@@ -1712,7 +1719,7 @@ const lifeData = [
 	{
 		'name': 'echinodermata',
 		'rank': 'phylum',
-		'parent': 'deuterostomia',
+		'parent': 'ambulacraria',
 		'range': 'wo',
 		'age': 540,
 	},
@@ -2227,6 +2234,13 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+	},
+	{
+		'name': 'hemichordata',
+		'rank': 'phylum',
+		'parent': 'ambulacraria',
+		'range': 'wo',
+		'age': 500, // "Miaolingian"
 	},
 	{
 		'name': 'hexapoda',
@@ -3064,6 +3078,13 @@ const lifeData = [
 		'desc': 'Lobster',
 	},
 	{
+		'name': 'nephrozoa',
+		'rank': 'clade',
+		'parent': 'bilateria',
+		'range': 'ww',
+		'age': 650,
+	},
+	{
 		'name': 'nomascus',
 		'rank': 'genus',
 		'parent': 'hylobatidae',
@@ -3646,12 +3667,25 @@ const lifeData = [
 		'age': 66,
 	},
 	{
+		'name': 'placozoa',
+		'rank': 'phylum',
+		'parent': 'parahoxozoa',
+		'range': 'wo',
+	},
+	{
 		'name': 'plantae',
 		'rank': 'kingdom',
 		'parent': 'archaeplastida',
 		'range': 'ww',
 		'age': 1200,
 		'desc': 'Plant',
+	},
+	{
+		'name': 'planulozoa',
+		'rank': 'clade',
+		'parent': 'parahoxozoa',
+		'range': 'ww',
+		'age': 680,
 	},
 	{
 		'name': 'platyhelminthes',
@@ -3760,7 +3794,7 @@ const lifeData = [
 	{
 		'name': 'protostomia',
 		'rank': 'superphylum',
-		'parent': 'bilateria',
+		'parent': 'nephrozoa',
 		'range': 'ww',
 		'age': 610,
 	},
@@ -4629,6 +4663,14 @@ const lifeData = [
 		'parent': 'cetruminantia',
 		'range': 'af',
 		'age': 50, // "early eocene"
+	},
+	// X
+	{
+		'name': 'xenacoelomorpha',
+		'rank': 'phylum',
+		'parent': 'bilateria',
+		'range': 'wo',
+		'age': 635, // "Ediacaran"
 	},
 	// Y
 	{
