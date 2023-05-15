@@ -277,5 +277,5 @@ function main(){
 			openParents(objects[lifeData[i].name]);
 		}
 	}
-	console.log('Loaded.');
+	console.log(`Loaded ${lifeData.length} entries.`);
 }
