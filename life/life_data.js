@@ -11,6 +11,7 @@
     desc?: string;
 }[]} */
 const lifeData = [
+	/*
 	{
 		'name': 'example',
 		'rank': 'rank',
@@ -31,6 +32,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 	},
+	*/
 	// BEGIN ALPHABETICAL ORDERING
 	// A
 	{
@@ -1432,6 +1434,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'conoidasida',
+		'rank': 'class',
+		'parent': 'apicomplexa',
+		'range': 'ww',
+	},
+	{
 		'name': 'convovulaceae',
 		'rank': 'family',
 		'parent': 'solanales',
@@ -1960,6 +1968,12 @@ const lifeData = [
 		'parent': 'boreoeutheria',
 		'range': 'ww',
 		'age': 65,
+	},
+	{
+		'name': 'eucoccidiorida',
+		'rank': 'order',
+		'parent': 'conoidasida',
+		'range': 'ww',
 	},
 	{
 		'name': 'eudicots',
@@ -4148,6 +4162,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'sarcocystidae',
+		'rank': 'family',
+		'parent': 'eucoccidiorida',
+		'range': 'ww',
+	},
+	{
 		'name': 'sauria',
 		'rank': 'clade',
 		'parent': 'reptilia',
@@ -4573,6 +4593,19 @@ const lifeData = [
 		'parent': 'scombridae',
 		'range': 'wo',
 		'desc': 'Tuna',
+	},
+	{
+		'name': 'toxoplasma',
+		'rank': 'genus',
+		'parent': 'sarcocystidae',
+		'range': 'ww',
+	},
+	{
+		'name': 'toxoplasma gondii',
+		'rank': 'species',
+		'parent': 'toxoplasma',
+		'range': 'ww',
+		'desc': 'Toxoplasmosis-causing parasitic protozoan.',
 	},
 	{
 		'name': 'triceratops',
