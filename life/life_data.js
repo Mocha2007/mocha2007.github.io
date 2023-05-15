@@ -1607,7 +1607,7 @@ const lifeData = [
 	{
 		'name': 'diaphoretickes',
 		'rank': 'clade',
-		'parent': 'eukaryota',
+		'parent': 'orthokaryotes',
 		'range': 'ww',
 	},
 	{
@@ -1686,6 +1686,18 @@ const lifeData = [
 		'parent': 'insecta',
 		'range': 'ww',
 		'desc': 'Fly',
+	},
+	{
+		'name': 'discicristata',
+		'rank': 'superphylum',
+		'parent': 'discoba',
+		'range': 'ww',
+	},
+	{
+		'name': 'discoba',
+		'rank': 'clade',
+		'parent': 'eukaryota',
+		'range': 'ww',
 	},
 	{
 		'name': 'dromaeosauridae',
@@ -2259,6 +2271,12 @@ const lifeData = [
 		'parent': 'ambulacraria',
 		'range': 'wo',
 		'age': 500, // "Miaolingian"
+	},
+	{
+		'name': 'heterolobosea',
+		'rank': 'class',
+		'parent': 'percolozoa',
+		'range': 'ww',
 	},
 	{
 		'name': 'hexapoda',
@@ -3070,6 +3088,19 @@ const lifeData = [
 	},
 	// N
 	{
+		'name': 'naegleria',
+		'rank': 'genus',
+		'parent': 'vahlkampfiidae',
+		'range': 'ww',
+	},
+	{
+		'name': 'naegleria fowleri',
+		'rank': 'species',
+		'parent': 'naegleria',
+		'range': 'ww',
+		'desc': 'Brain-eating Amoeba',
+	},
+	{
 		'name': 'neoaves',
 		'rank': 'clade',
 		'parent': 'aves',
@@ -3147,7 +3178,7 @@ const lifeData = [
 	{
 		'name': 'opisthokonta',
 		'rank': 'clade',
-		'parent': 'eukaryota',
+		'parent': 'orthokaryotes',
 		'range': 'ww',
 		'age': 1300,
 		'desc': 'In opisthokonts, flagellate cells propel themselves with a single posterior flagellum.',
@@ -3200,6 +3231,12 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+	},
+	{
+		'name': 'orthokaryotes',
+		'rank': 'clade',
+		'parent': 'eukaryota',
+		'range': 'ww',
 	},
 	{
 		'name': 'oryza',
@@ -3469,6 +3506,12 @@ const lifeData = [
 		'range': 'wo',
 		'age': 540,
 		'desc': 'Sea Pen',
+	},
+	{
+		'name': 'percolozoa',
+		'rank': 'phylum',
+		'parent': 'discicristata',
+		'range': 'ww',
 	},
 	{
 		'name': 'percomorpha',
@@ -4079,6 +4122,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'schizopyrenida',
+		'rank': 'order',
+		'parent': 'heterolobosea',
+		'range': 'ww',
+	},
+	{
 		'name': 'sciuridae',
 		'rank': 'family',
 		'parent': 'rodentia',
@@ -4626,6 +4675,12 @@ const lifeData = [
 		'range': 'na',
 	},
 	// V
+	{
+		'name': 'vahlkampfiidae',
+		'rank': 'family',
+		'parent': 'schizopyrenida',
+		'range': 'ww',
+	},
 	{
 		'name': 'vanilla',
 		'rank': 'genus',
