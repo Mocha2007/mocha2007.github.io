@@ -1495,6 +1495,19 @@ const lifeData = [
 		'desc': 'Tangerine',
 	},
 	{
+		'name': 'claviceps',
+		'rank': 'genus',
+		'parent': 'clavicipitaceae',
+		'range': 'ww',
+		'desc': 'Ergot',
+	},
+	{
+		'name': 'clavicipitaceae',
+		'rank': 'family',
+		'parent': 'hypocreales',
+		'range': 'ww',
+	},
+	{
 		'name': 'clostridia',
 		'rank': 'class',
 		'parent': 'bacillota',
@@ -2853,6 +2866,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'hypocreales',
+		'rank': 'order',
+		'parent': 'sordariomycetes',
+		'range': 'ww',
+	},
+	{
 		'name': 'hyracodontidae',
 		'rank': 'family',
 		'parent': 'perissodactyla',
@@ -3472,6 +3491,25 @@ const lifeData = [
 		'parent': 'chordata',
 		'range': 'ww',
 		'age': 535,
+	},
+	{
+		'name': 'omphalotaceae',
+		'rank': 'family',
+		'parent': 'agaricales',
+		'range': 'ww',
+	},
+	{
+		'name': 'omphalotus',
+		'rank': 'genus',
+		'parent': 'omphalotaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'omphalotus nidiformis',
+		'rank': 'species',
+		'parent': 'omphalotus',
+		'range': 'oc',
+		'desc': 'Ghost Fungus',
 	},
 	{
 		'name': 'opisthokonta',
@@ -4660,6 +4698,12 @@ const lifeData = [
 				'ploidy': 4,
 			},
 		},
+	},
+	{
+		'name': 'sordariomycetes',
+		'rank': 'class',
+		'parent': 'ascomycota',
+		'range': 'ww',
 	},
 	{
 		'name': 'sorghum',
