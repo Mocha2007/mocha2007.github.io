@@ -374,7 +374,7 @@ const lifeData = [
 	{
 		'name': 'anthocerotophyta',
 		'rank': 'division',
-		'parent': 'stomatophyta',
+		'parent': 'bryophyta',
 		'range': 'ww',
 		'age': 90,
 		'desc': 'Hornwort',
@@ -959,7 +959,7 @@ const lifeData = [
 	{
 		'name': 'bryophyta',
 		'rank': 'division',
-		'parent': 'stomatophyta',
+		'parent': 'embryophyta',
 		'range': 'ww',
 		'age': 340,
 		'desc': 'Moss',
@@ -1964,6 +1964,12 @@ const lifeData = [
 		'parent': 'eleusine',
 		'range': 'af',
 		'desc': 'Finger Millet',
+	},
+	{
+		'name': 'embryophyta',
+		'rank': 'clade',
+		'parent': 'plantae',
+		'range': 'ww',
 	},
 	{
 		'name': 'enterobacterales',
@@ -3132,7 +3138,7 @@ const lifeData = [
 	{
 		'name': 'marchantiophyta',
 		'rank': 'division',
-		'parent': 'plantae',
+		'parent': 'bryophyta',
 		'range': 'ww',
 		'age': 472,
 		'desc': 'Liverwort',
@@ -4600,12 +4606,6 @@ const lifeData = [
 		'range': 'nh',
 	},
 	{
-		'name': 'stomatophyta',
-		'rank': 'clade',
-		'parent': 'plantae',
-		'range': 'ww',
-	},
-	{
 		'name': 'strigiformes',
 		'rank': 'order',
 		'parent': 'telluraves',
@@ -4781,7 +4781,7 @@ const lifeData = [
 	{
 		'name': 'tracheophyta',
 		'rank': 'clade',
-		'parent': 'stomatophyta',
+		'parent': 'embryophyta',
 		'range': 'ww',
 		'age': 425,
 	},
