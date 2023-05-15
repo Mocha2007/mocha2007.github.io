@@ -623,6 +623,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'asteroideae',
+		'rank': 'subfamily',
+		'parent': 'asteraceae',
+		'range': 'ww',
+	},
+	{
 		'name': 'asteroidea',
 		'rank': 'class',
 		'parent': 'echinodermata',
@@ -1379,6 +1385,12 @@ const lifeData = [
 		'range': 'ww',
 		'age': 535,
 		'desc': 'During some period of their life cycle, chordates possess a notochord, a dorsal nerve cord, pharyngeal slits, an endostyle, and a post-anal tail. These five anatomical features define this phylum.',
+	},
+	{
+		'name': 'chrysanthemum',
+		'rank': 'genus',
+		'parent': 'asteroideae',
+		'range': 'ea',
 	},
 	{
 		'name': 'cinnamomum',
@@ -2460,8 +2472,8 @@ const lifeData = [
 	{
 		'name': 'helianthus',
 		'rank': 'genus',
-		'parent': 'asteraceae',
-		'range': 'ww',
+		'parent': 'asteroideae',
+		'range': 'nw',
 	},
 	{
 		'name': 'helianthus annuus',
