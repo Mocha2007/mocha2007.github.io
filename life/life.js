@@ -324,11 +324,14 @@ function main(){
 }
 
 function stats(){
-	console.log(`Loaded ${lifeData.length} entries.`);
+	const total = lifeData.length;
+	console.log(`Loaded ${total} entries.`);
 	['animalia', 'plantae', 'fungi', 'other'].forEach(s => {
 		const t = Taxon.fromString(s);
-		console.info(`${Taxon.taxa.filter(x => x.kingdom === t).length} taxa in kingdom ${s}`);
+		const n = Taxon.taxa.filter(x => x.kingdom === t).length;
+		console.info(`${n} taxa (${Math.round(100*n/total)}%) in kingdom ${s}`);
 	});
+	/*
 	const ranks = {};
 	Taxon.taxa.forEach(t => {
 		if (ranks[t.rank])
@@ -337,4 +340,5 @@ function stats(){
 			ranks[t.rank] = 1;
 	});
 	Object.keys(ranks).sort().forEach(key => console.info(`${ranks[key]} of rank ${key}`));
+	*/
 }
