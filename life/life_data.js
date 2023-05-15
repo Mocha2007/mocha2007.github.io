@@ -4226,6 +4226,18 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'salmonella',
+		'rank': 'genus',
+		'parent': 'enterobacteriaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'salmonella enterica',
+		'rank': 'species',
+		'parent': 'salmonella',
+		'range': 'ww',
+	},
+	{
 		'name': 'salmonidae',
 		'rank': 'family',
 		'parent': 'salmoniformes',
