@@ -1982,6 +1982,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'euglenozoa',
+		'rank': 'phylum',
+		'parent': 'discicristata',
+		'range': 'ww',
+	},
+	{
 		'name': 'eukaryota',
 		'rank': 'domain',
 		'parent': 'archaea',
@@ -2736,6 +2742,13 @@ const lifeData = [
 		'parent': 'juglandaceae',
 		'range': 'ww',
 		'desc': 'Walnut',
+	},
+	// K
+	{
+		'name': 'kinetoplastea',
+		'rank': 'class',
+		'parent': 'euglenozoa',
+		'range': 'ww',
 	},
 	// L
 	{
@@ -4162,6 +4175,13 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'sar supergroup',
+		'rank': 'clade',
+		'parent': 'diaphoretickes',
+		'range': 'ww',
+		'age': 736,
+	},
+	{
 		'name': 'sarcocystidae',
 		'rank': 'family',
 		'parent': 'eucoccidiorida',
@@ -4657,11 +4677,29 @@ const lifeData = [
 		},
 	},
 	{
-		'name': 'sar supergroup',
-		'rank': 'clade',
-		'parent': 'diaphoretickes',
+		'name': 'trypanosoma',
+		'rank': 'genus',
+		'parent': 'trypanosomatidae',
 		'range': 'ww',
-		'age': 736,
+	},
+	{
+		'name': 'trypanosoma bruccei',
+		'rank': 'species',
+		'parent': 'trypanosoma',
+		'range': 'ww',
+		'desc': 'African sleeping sickness-causing parasitic kinoplastid.',
+	},
+	{
+		'name': 'trypanosomatida',
+		'rank': 'order',
+		'parent': 'kinetoplastea',
+		'range': 'ww',
+	},
+	{
+		'name': 'trypanosomatidae',
+		'rank': 'family',
+		'parent': 'trypanosomatida',
+		'range': 'ww',
 	},
 	{
 		'name': 'tunicata',
