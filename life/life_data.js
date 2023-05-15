@@ -1882,11 +1882,11 @@ const lifeData = [
 	{
 		'name': 'enterobacteriaceae',
 		'rank': 'family',
-		'parent': 'enterobacteriales',
+		'parent': 'enterobacterales',
 		'range': 'ww',
 	},
 	{
-		'name': 'enterobacteriales',
+		'name': 'enterobacterales',
 		'rank': 'order',
 		'parent': 'gammaproteobacteria',
 		'range': 'ww',
@@ -4912,6 +4912,25 @@ const lifeData = [
 		'age': 635, // "Ediacaran"
 	},
 	// Y
+	{
+		'name': 'yersinia',
+		'rank': 'genus',
+		'parent': 'yersiniaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'yersinia pestis',
+		'rank': 'species',
+		'parent': 'yersinia',
+		'range': 'ww',
+		'desc': 'Bubonic Plague',
+	},
+	{
+		'name': 'yersiniaceae',
+		'rank': 'family',
+		'parent': 'enterobacterales',
+		'range': 'ww',
+	},
 	{
 		'name': 'yinotheria',
 		'rank': 'subclass',
