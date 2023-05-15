@@ -218,7 +218,7 @@ const lifeData = [
 		},
 	},
 	{
-		'name': 'alphapseudomonadota',
+		'name': 'alphaproteobacteria',
 		'rank': 'class',
 		'parent': 'pseudomonadota',
 		'range': 'ww',
@@ -1888,7 +1888,7 @@ const lifeData = [
 	{
 		'name': 'enterobacteriales',
 		'rank': 'order',
-		'parent': 'gammapseudomonadota',
+		'parent': 'gammaproteobacteria',
 		'range': 'ww',
 	},
 	{
@@ -2237,7 +2237,7 @@ const lifeData = [
 		},
 	},
 	{
-		'name': 'gammapseudomonadota',
+		'name': 'gammaproteobacteria',
 		'rank': 'class',
 		'parent': 'pseudomonadota',
 		'range': 'ww',
@@ -4130,7 +4130,7 @@ const lifeData = [
 	{
 		'name': 'rickettsiales',
 		'rank': 'order',
-		'parent': 'alphapseudomonadota',
+		'parent': 'alphaproteobacteria',
 		'range': 'ww',
 	},
 	{
