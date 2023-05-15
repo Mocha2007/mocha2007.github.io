@@ -265,11 +265,14 @@ function main(){
 		// console.log('Loading ' + name + '...');
 		const parentId = lifeData[i].parent;
 		const child = objects[name];
-		let parent = document.getElementById('root');
-		if (parentId !== '*'){
-			parent = objects[parentId];
+		const parent = parentId === '*' ? document.getElementById('root') : objects[parentId];
+		try {
+			parent.appendChild(child);
 		}
-		parent.appendChild(child);
+		catch (_){
+			console.error(`error nesting ${name} under ${parentId}`);
+			throw _;
+		}
 	}
 	// next, if important, open every parent
 	for (let i = 0; i < lifeData.length; i++){
