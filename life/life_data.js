@@ -391,7 +391,7 @@ const lifeData = [
 	{
 		'name': 'apicomplexa',
 		'rank': 'phylum',
-		'parent': 'tsar clade',
+		'parent': 'sar supergroup',
 		'range': 'ww',
 	},
 	{
@@ -2295,7 +2295,7 @@ const lifeData = [
 	{
 		'name': 'gyrista',
 		'rank': 'phylum',
-		'parent': 'tsar clade',
+		'parent': 'sar supergroup',
 		'range': 'ww',
 	},
 	// H
@@ -4657,11 +4657,11 @@ const lifeData = [
 		},
 	},
 	{
-		'name': 'tsar clade',
+		'name': 'sar supergroup',
 		'rank': 'clade',
 		'parent': 'diaphoretickes',
 		'range': 'ww',
-		'age': 736, // SAR
+		'age': 736,
 	},
 	{
 		'name': 'tunicata',
