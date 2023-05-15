@@ -120,6 +120,18 @@ const lifeData = [
 		'age': 65,
 	},
 	{
+		'name': 'agaricales',
+		'rank': 'order',
+		'parent': 'agaricomycetes',
+		'range': 'ww',
+	},
+	{
+		'name': 'agaricomycetes',
+		'rank': 'class',
+		'parent': 'basidiomycota',
+		'range': 'ww',
+	},
+	{
 		'name': 'ailuridae',
 		'rank': 'family',
 		'parent': 'caniformia',
@@ -230,6 +242,25 @@ const lifeData = [
 		'name': 'alphaproteobacteria',
 		'rank': 'class',
 		'parent': 'pseudomonadota',
+		'range': 'ww',
+	},
+	{
+		'name': 'amanita',
+		'rank': 'genus',
+		'parent': 'amanitaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'amanita muscaria',
+		'rank': 'species',
+		'parent': 'amanita',
+		'range': 'nh',
+		'desc': 'Fly Agaric',
+	},
+	{
+		'name': 'amanitaceae',
+		'rank': 'family',
+		'parent': 'agaricales',
 		'range': 'ww',
 	},
 	{
@@ -812,6 +843,12 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'rhodophyta',
 		'range': 'wo',
+	},
+	{
+		'name': 'basidiomycota',
+		'rank': 'division',
+		'parent': 'fungi',
+		'range': 'ww',
 	},
 	{
 		'name': 'batoidea',
@@ -2826,7 +2863,7 @@ const lifeData = [
 		'name': 'hyracoidea',
 		'rank': 'order',
 		'parent': 'paenungulata',
-		'range': 'af;me', // AF + middle east
+		'range': 'af;me',
 		'age': 55.8,
 		'desc': 'Hyrax',
 	},
