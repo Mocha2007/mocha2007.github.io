@@ -623,18 +623,18 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
-		'name': 'asteroideae',
-		'rank': 'subfamily',
-		'parent': 'asteraceae',
-		'range': 'ww',
-	},
-	{
 		'name': 'asteroidea',
 		'rank': 'class',
 		'parent': 'echinodermata',
 		'range': 'wo',
 		'age': 250,
 		'desc': 'Starfish',
+	},
+	{
+		'name': 'asteroideae',
+		'rank': 'subfamily',
+		'parent': 'asteraceae',
+		'range': 'ww',
 	},
 	{
 		'name': 'australopithecina',
@@ -4304,6 +4304,13 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'glires',
 		'range': 'ww',
+	},
+	{
+		'name': 'rosa',
+		'rank': 'genus',
+		'parent': 'rosaceae',
+		'range': 'ww',
+		'desc': 'Rose',
 	},
 	{
 		'name': 'rosaceae',
