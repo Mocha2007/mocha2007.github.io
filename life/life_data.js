@@ -1,5 +1,8 @@
 /* exported lifeData */
 'use strict';
+// sources
+// https://upload.wikimedia.org/wikipedia/commons/e/e3/Timeline_of_life.png
+// (x - 2932 px)(1000 yr / 626 px)
 /** @type {{
     name: string;
     rank: string;
@@ -1282,6 +1285,42 @@ const lifeData = [
 		'name': 'cetruminantia',
 		'rank': 'clade',
 		'parent': 'artiofabula',
+		'range': 'ww',
+	},
+	{
+		'name': 'chlamydia',
+		'rank': 'genus',
+		'parent': 'chlamydiaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'chlamydia trachomatis',
+		'rank': 'species',
+		'parent': 'chlamydia',
+		'range': 'ww',
+	},
+	{
+		'name': 'chlamydiaceae',
+		'rank': 'family',
+		'parent': 'chlamydiales',
+		'range': 'ww',
+	},
+	{
+		'name': 'chlamydiales',
+		'rank': 'order',
+		'parent': 'chlamydiia',
+		'range': 'ww',
+	},
+	{
+		'name': 'chlamydiia',
+		'rank': 'class',
+		'parent': 'chlamydiota',
+		'range': 'ww',
+	},
+	{
+		'name': 'chlamydiota',
+		'rank': 'phylum',
+		'parent': 'hydrobacteria',
 		'range': 'ww',
 	},
 	{
@@ -2633,6 +2672,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'bacteria',
 		'range': 'ww',
+		'age': 3000, // https://en.wikipedia.org/wiki/File:Timeline_of_life.png
 	},
 	{
 		'name': 'hydrochoerus',
@@ -4585,6 +4625,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'bacteria',
 		'range': 'ww',
+		'age': 2900, // https://en.wikipedia.org/wiki/File:Timeline_of_life.png
 	},
 	{
 		'name': 'tethytheria',
