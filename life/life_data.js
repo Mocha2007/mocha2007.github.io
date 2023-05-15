@@ -339,7 +339,7 @@ const lifeData = [
 	{
 		'name': 'angiospermae',
 		'rank': 'clade',
-		'parent': 'plantae',
+		'parent': 'tracheophyta',
 		'range': 'ww',
 		'age': 130,
 	},
@@ -370,6 +370,14 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'galloanserae',
 		'range': 'ww',
+	},
+	{
+		'name': 'anthocerotophyta',
+		'rank': 'division',
+		'parent': 'stomatophyta',
+		'range': 'ww',
+		'age': 90,
+		'desc': 'Hornwort',
 	},
 	{
 		'name': 'anthozoa',
@@ -947,6 +955,14 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'poales',
 		'range': 'nw',
+	},
+	{
+		'name': 'bryophyta',
+		'rank': 'division',
+		'parent': 'stomatophyta',
+		'range': 'ww',
+		'age': 340,
+		'desc': 'Moss',
 	},
 	// C
 	{
@@ -2395,7 +2411,7 @@ const lifeData = [
 	{
 		'name': 'gymnospermae',
 		'rank': 'clade',
-		'parent': 'plantae',
+		'parent': 'tracheophyta',
 		'range': 'ww',
 		'age': 320,
 	},
@@ -3112,6 +3128,14 @@ const lifeData = [
 		'range': 'nh',
 		'age': 5,
 		'desc': 'Mammoth',
+	},
+	{
+		'name': 'marchantiophyta',
+		'rank': 'division',
+		'parent': 'plantae',
+		'range': 'ww',
+		'age': 472,
+		'desc': 'Liverwort',
 	},
 	{
 		'name': 'marsupialia',
@@ -4576,6 +4600,12 @@ const lifeData = [
 		'range': 'nh',
 	},
 	{
+		'name': 'stomatophyta',
+		'rank': 'clade',
+		'parent': 'plantae',
+		'range': 'ww',
+	},
+	{
 		'name': 'strigiformes',
 		'rank': 'order',
 		'parent': 'telluraves',
@@ -4747,6 +4777,13 @@ const lifeData = [
 		'parent': 'toxoplasma',
 		'range': 'ww',
 		'desc': 'Toxoplasmosis-causing parasitic protozoan.',
+	},
+	{
+		'name': 'tracheophyta',
+		'rank': 'clade',
+		'parent': 'stomatophyta',
+		'range': 'ww',
+		'age': 425,
 	},
 	{
 		'name': 'triceratops',
