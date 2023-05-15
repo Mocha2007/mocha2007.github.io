@@ -716,7 +716,7 @@ const lifeData = [
 		'rank': 'domain',
 		'parent': 'life',
 		'range': 'ww',
-		'age': 3800,
+		'age': 3500,
 	},
 	{
 		'name': 'balaenoptera',
@@ -1490,6 +1490,13 @@ const lifeData = [
 		'desc': 'Crow',
 	},
 	{
+		'name': 'cpr group',
+		'rank': 'infrakingdom',
+		'parent': 'bacteria',
+		'range': 'ww',
+		'desc': 'Candidate phyla radiation',
+	},
+	{
 		'name': 'cricetidae',
 		'rank': 'family',
 		'parent': 'muroidea',
@@ -1599,7 +1606,7 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'terrabacteria',
 		'range': 'ww',
-		'age': 2100,
+		'age': 3500,
 	},
 	{
 		'name': 'cyanocitta',
