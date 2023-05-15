@@ -329,4 +329,12 @@ function stats(){
 		const t = Taxon.fromString(s);
 		console.info(`${Taxon.taxa.filter(x => x.kingdom === t).length} taxa in kingdom ${s}`);
 	});
+	const ranks = {};
+	Taxon.taxa.forEach(t => {
+		if (ranks[t.rank])
+			ranks[t.rank]++;
+		else
+			ranks[t.rank] = 1;
+	});
+	Object.keys(ranks).sort().forEach(key => console.info(`${ranks[key]} of rank ${key}`));
 }
