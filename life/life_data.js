@@ -341,7 +341,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'spermatophyta',
 		'range': 'ww',
-		'age': 130,
+		'age': 134,
 	},
 	{
 		'name': 'animalia',
@@ -2131,6 +2131,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'angiospermae',
 		'range': 'ww',
+		'age': 125,
 	},
 	{
 		'name': 'euglenozoa',
@@ -3208,6 +3209,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'angiospermae',
 		'range': 'ww',
+		'age': 125,
 	},
 	{
 		'name': 'monotremata',
