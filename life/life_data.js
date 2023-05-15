@@ -85,15 +85,15 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
-		'name': 'actinobacteria',
-		'rank': 'phylum',
-		'parent': 'terrabacteria',
+		'name': 'actinomycetales',
+		'rank': 'order',
+		'parent': 'actinomycetota',
 		'range': 'ww',
 	},
 	{
-		'name': 'actinomycetales',
-		'rank': 'order',
-		'parent': 'actinobacteria',
+		'name': 'actinomycetota',
+		'rank': 'phylum',
+		'parent': 'terrabacteria',
 		'range': 'ww',
 	},
 	{
@@ -218,9 +218,9 @@ const lifeData = [
 		},
 	},
 	{
-		'name': 'alphaproteobacteria',
+		'name': 'alphapseudomonadota',
 		'rank': 'class',
-		'parent': 'proteobacteria',
+		'parent': 'pseudomonadota',
 		'range': 'ww',
 	},
 	{
@@ -1888,7 +1888,7 @@ const lifeData = [
 	{
 		'name': 'enterobacteriales',
 		'rank': 'order',
-		'parent': 'gammaproteobacteria',
+		'parent': 'gammapseudomonadota',
 		'range': 'ww',
 	},
 	{
@@ -2237,9 +2237,9 @@ const lifeData = [
 		},
 	},
 	{
-		'name': 'gammaproteobacteria',
+		'name': 'gammapseudomonadota',
 		'rank': 'class',
-		'parent': 'proteobacteria',
+		'parent': 'pseudomonadota',
 		'range': 'ww',
 	},
 	{
@@ -3962,12 +3962,6 @@ const lifeData = [
 		'age': 60,
 	},
 	{
-		'name': 'proteobacteria',
-		'rank': 'phylum',
-		'parent': 'hydrobacteria',
-		'range': 'ww',
-	},
-	{
 		'name': 'protostomia',
 		'rank': 'superphylum',
 		'parent': 'nephrozoa',
@@ -4007,6 +4001,12 @@ const lifeData = [
 		'parent': 'prunus',
 		'range': 'as',
 		'desc': 'Plum',
+	},
+	{
+		'name': 'pseudomonadota',
+		'rank': 'phylum',
+		'parent': 'hydrobacteria',
+		'range': 'ww',
 	},
 	{
 		'name': 'psittaciformes',
@@ -4130,7 +4130,7 @@ const lifeData = [
 	{
 		'name': 'rickettsiales',
 		'rank': 'order',
-		'parent': 'alphaproteobacteria',
+		'parent': 'alphapseudomonadota',
 		'range': 'ww',
 	},
 	{
