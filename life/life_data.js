@@ -258,6 +258,20 @@ const lifeData = [
 		'desc': 'Amniotes lay their eggs on land or retain the fertilized egg within the mother, and are distinguished from anamniotes, which typically lay their eggs in water.',
 	},
 	{
+		'name': 'amoebozoa',
+		'rank': 'phylum',
+		'parent': 'amorphea',
+		'range': 'ww',
+		'age': 1000,
+	},
+	{
+		'name': 'amorphea',
+		'rank': 'clade',
+		'parent': 'orthokaryota',
+		'range': 'ww',
+		'age': 1500,
+	},
+	{
 		'name': 'amphibia',
 		'rank': 'class',
 		'parent': 'tetrapoda',
@@ -725,6 +739,25 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'balamuthia',
+		'rank': 'genus',
+		'parent': 'balamuthiidae',
+		'range': 'ww',
+	},
+	{
+		'name': 'balamuthia mandrillaris',
+		'rank': 'species',
+		'parent': 'balamuthia',
+		'range': 'ww',
+		'desc': 'Brain-Eating Amoeba',
+	},
+	{
+		'name': 'balamuthiidae',
+		'rank': 'family',
+		'parent': 'centramoebida',
+		'range': 'ww',
+	},
+	{
 		'name': 'bambusoideae',
 		'rank': 'subfamily',
 		'parent': 'bop clade',
@@ -1182,6 +1215,12 @@ const lifeData = [
 		'desc': 'Pearl Millet',
 	},
 	{
+		'name': 'centramoebida',
+		'rank': 'order',
+		'parent': 'discosea',
+		'range': 'ww',
+	},
+	{
 		'name': 'cephalochordata',
 		'rank': 'subphylum',
 		'parent': 'chordata',
@@ -1607,7 +1646,7 @@ const lifeData = [
 	{
 		'name': 'diaphoretickes',
 		'rank': 'clade',
-		'parent': 'orthokaryotes',
+		'parent': 'orthokaryota',
 		'range': 'ww',
 	},
 	{
@@ -1697,6 +1736,12 @@ const lifeData = [
 		'name': 'discoba',
 		'rank': 'clade',
 		'parent': 'eukaryota',
+		'range': 'ww',
+	},
+	{
+		'name': 'discosea',
+		'rank': 'class',
+		'parent': 'amoebozoa',
 		'range': 'ww',
 	},
 	{
@@ -3178,7 +3223,7 @@ const lifeData = [
 	{
 		'name': 'opisthokonta',
 		'rank': 'clade',
-		'parent': 'orthokaryotes',
+		'parent': 'amorphea',
 		'range': 'ww',
 		'age': 1300,
 		'desc': 'In opisthokonts, flagellate cells propel themselves with a single posterior flagellum.',
@@ -3233,7 +3278,7 @@ const lifeData = [
 		},
 	},
 	{
-		'name': 'orthokaryotes',
+		'name': 'orthokaryota',
 		'rank': 'clade',
 		'parent': 'eukaryota',
 		'range': 'ww',
