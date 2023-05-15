@@ -339,7 +339,7 @@ const lifeData = [
 	{
 		'name': 'angiospermae',
 		'rank': 'clade',
-		'parent': 'tracheophyta',
+		'parent': 'spermatophyta',
 		'range': 'ww',
 		'age': 130,
 	},
@@ -1701,6 +1701,28 @@ const lifeData = [
 		'desc': 'Blue Jay',
 	},
 	{
+		'name': 'cycadales',
+		'rank': 'order',
+		'parent': 'cycadopsida',
+		'range': 'ww',
+		'age': 300,
+		'desc': 'Cycads',
+	},
+	{
+		'name': 'cycadophyta',
+		'rank': 'division',
+		'parent': 'gymnospermae',
+		'range': 'ww',
+		'age': 300,
+	},
+	{
+		'name': 'cycadopsida',
+		'rank': 'class',
+		'parent': 'cycadophyta',
+		'range': 'ww',
+		'age': 300,
+	},
+	{
 		'name': 'cygnus',
 		'rank': 'genus',
 		'parent': 'anatidae',
@@ -2417,7 +2439,7 @@ const lifeData = [
 	{
 		'name': 'gymnospermae',
 		'rank': 'clade',
-		'parent': 'tracheophyta',
+		'parent': 'spermatophyta',
 		'range': 'ww',
 		'age': 320,
 	},
@@ -4030,6 +4052,14 @@ const lifeData = [
 		'desc': 'Pollock',
 	},
 	{
+		'name': 'polypodiopsida',
+		'rank': 'class',
+		'parent': 'tracheophyta',
+		'range': 'ww',
+		'age': 390,
+		'desc': 'Ferns',
+	},
+	{
 		'name': 'pongo',
 		'rank': 'genus',
 		'parent': 'hominidae',
@@ -4573,6 +4603,13 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+	},
+	{
+		'name': 'spermatophyta',
+		'rank': 'clade',
+		'parent': 'tracheophyta',
+		'range': 'ww',
+		'age': 370,
 	},
 	{
 		'name': 'sphenisciformes',
