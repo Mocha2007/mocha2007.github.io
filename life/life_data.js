@@ -4745,6 +4745,14 @@ const lifeData = [
 	},
 	// T
 	{
+		'name': 'taraxacum',
+		'rank': 'genus',
+		'parent': 'asteraceae',
+		'range': 'ea;na',
+		'age': 23, // miocene
+		'desc': 'Dandelion',
+	},
+	{
 		'name': 'tardigrada',
 		'rank': 'phylum',
 		'parent': 'panarthropoda',
