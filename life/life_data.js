@@ -77,6 +77,12 @@ const lifeData = [
 		'desc': 'Cheetah',
 	},
 	{
+		'name': 'aconoidasida',
+		'rank': 'class',
+		'parent': 'apicomplexa',
+		'range': 'ww',
+	},
+	{
 		'name': 'actinobacteria',
 		'rank': 'phylum',
 		'parent': 'terrabacteria',
@@ -364,6 +370,12 @@ const lifeData = [
 		'name': 'apiales',
 		'rank': 'order',
 		'parent': 'campanulids',
+		'range': 'ww',
+	},
+	{
+		'name': 'apicomplexa',
+		'rank': 'phylum',
+		'parent': 'tsar clade',
 		'range': 'ww',
 	},
 	{
@@ -1261,12 +1273,6 @@ const lifeData = [
 		'desc': 'During some period of their life cycle, chordates possess a notochord, a dorsal nerve cord, pharyngeal slits, an endostyle, and a post-anal tail. These five anatomical features define this phylum.',
 	},
 	{
-		'name': 'chromista',
-		'rank': 'kingdom',
-		'parent': 'diaphoretickes',
-		'range': 'ww',
-	},
-	{
 		'name': 'cinnamomum',
 		'rank': 'genus',
 		'parent': 'lauraceae',
@@ -2059,7 +2065,7 @@ const lifeData = [
 		'rank': 'kingdom',
 		'parent': 'opisthokonta',
 		'range': 'ww',
-		'age': 410,
+		'age': 1200, // https://en.wikipedia.org/wiki/Evolution_of_fungi#Early_evolution
 	},
 	// G
 	{
@@ -2215,7 +2221,19 @@ const lifeData = [
 		'range': 'ww',
 		'age': 320,
 	},
+	{
+		'name': 'gyrista',
+		'rank': 'phylum',
+		'parent': 'tsar clade',
+		'range': 'ww',
+	},
 	// H
+	{
+		'name': 'haemospororida',
+		'rank': 'order',
+		'parent': 'aconoidasida',
+		'range': 'ww',
+	},
 	{
 		'name': 'helianthus',
 		'rank': 'genus',
@@ -3101,9 +3119,9 @@ const lifeData = [
 	},
 	// O
 	{
-		'name': 'ochrophyta',
-		'rank': 'phylum',
-		'parent': 'chromista',
+		'name': 'ochrophytina',
+		'rank': 'subphylum',
+		'parent': 'gyrista',
 		'range': 'ww',
 	},
 	{
@@ -3131,7 +3149,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'eukaryota',
 		'range': 'ww',
-		'age': 1010,
+		'age': 1300,
 		'desc': 'In opisthokonts, flagellate cells propel themselves with a single posterior flagellum.',
 	},
 	{
@@ -3439,7 +3457,7 @@ const lifeData = [
 		'desc': 'Peafowl',
 	},
 	{
-		'name': 'penicillum',
+		'name': 'penicillium',
 		'rank': 'genus',
 		'parent': 'trichocomaceae',
 		'range': 'ww',
@@ -3487,7 +3505,7 @@ const lifeData = [
 	{
 		'name': 'phaeophyceae',
 		'rank': 'class',
-		'parent': 'ochrophyta',
+		'parent': 'ochrophytina',
 		'range': 'wo',
 		'age': 150,
 		'desc': 'Brown Algae',
@@ -3686,6 +3704,18 @@ const lifeData = [
 		'parent': 'parahoxozoa',
 		'range': 'ww',
 		'age': 680,
+	},
+	{
+		'name': 'plasmodiidae',
+		'rank': 'family',
+		'parent': 'haemospororida',
+		'range': 'ww',
+	},
+	{
+		'name': 'plasmodium',
+		'rank': 'genus',
+		'parent': 'plasmodiidae',
+		'range': 'ww',
 	},
 	{
 		'name': 'platyhelminthes',
@@ -4498,6 +4528,13 @@ const lifeData = [
 				'ploidy': 6,
 			},
 		},
+	},
+	{
+		'name': 'tsar clade',
+		'rank': 'clade',
+		'parent': 'diaphoretickes',
+		'range': 'ww',
+		'age': 736, // SAR
 	},
 	{
 		'name': 'tunicata',
