@@ -1385,6 +1385,31 @@ const lifeData = [
 		'desc': 'Tangerine',
 	},
 	{
+		'name': 'clostridia',
+		'rank': 'class',
+		'parent': 'bacillota',
+		'range': 'ww',
+	},
+	{
+		'name': 'clostridiaceae',
+		'rank': 'family',
+		'parent': 'eubacteriales',
+		'range': 'ww',
+	},
+	{
+		'name': 'clostridium',
+		'rank': 'genus',
+		'parent': 'clostridiaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'clostridium botulinum',
+		'rank': 'species',
+		'parent': 'clostridium',
+		'range': 'ww',
+		'desc': 'Botulism-causing bacterium',
+	},
+	{
 		'name': 'cnidaria',
 		'rank': 'phylum',
 		'parent': 'planulozoa',
@@ -1974,6 +1999,12 @@ const lifeData = [
 		'parent': 'boreoeutheria',
 		'range': 'ww',
 		'age': 65,
+	},
+	{
+		'name': 'eubacteriales',
+		'rank': 'order',
+		'parent': 'clostridia',
+		'range': 'ww',
 	},
 	{
 		'name': 'eucoccidiorida',
