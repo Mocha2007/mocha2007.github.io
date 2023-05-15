@@ -3537,6 +3537,13 @@ const lifeData = [
 		'desc': 'Ghost Fungus',
 	},
 	{
+		'name': 'oomycetes',
+		'rank': 'class',
+		'parent': 'pseudofungi',
+		'range': 'ww',
+		'desc': 'Water Molds',
+	},
+	{
 		'name': 'opisthokonta',
 		'rank': 'clade',
 		'parent': 'amorphea',
@@ -4279,6 +4286,12 @@ const lifeData = [
 		'parent': 'prunus',
 		'range': 'as',
 		'desc': 'Plum',
+	},
+	{
+		'name': 'pseudofungi',
+		'rank': 'subphylum',
+		'parent': 'gyrista',
+		'range': 'ww',
 	},
 	{
 		'name': 'pseudomonadota',
