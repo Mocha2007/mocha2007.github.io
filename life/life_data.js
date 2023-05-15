@@ -3031,6 +3031,21 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'lycophyta',
+		'rank': 'clade',
+		'parent': 'tracheophyta',
+		'range': 'ww',
+		'age': 428,
+	},
+	{
+		'name': 'lycopodiopsida',
+		'rank': 'class',
+		'parent': 'lycophyta',
+		'range': 'ww',
+		'age': 400, // "devonian"
+		'desc': 'Clubmosses, Firmosses, Spikemosses, Quillworts',
+	},
+	{
 		'name': 'lynx',
 		'rank': 'genus',
 		'parent': 'felinae',
