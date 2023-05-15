@@ -90,6 +90,12 @@ const lifeData = [
 	{
 		'name': 'actinomycetales',
 		'rank': 'order',
+		'parent': 'actinomycetia',
+		'range': 'ww',
+	},
+	{
+		'name': 'actinomycetia',
+		'rank': 'class',
 		'parent': 'actinomycetota',
 		'range': 'ww',
 	},
@@ -1529,6 +1535,24 @@ const lifeData = [
 		'desc': 'Crow',
 	},
 	{
+		'name': 'corynebacteriaceae',
+		'rank': 'family',
+		'parent': 'mycobacteriales',
+		'range': 'ww',
+	},
+	{
+		'name': 'corynebacterium',
+		'rank': 'genus',
+		'parent': 'corynebacteriaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'corynebacterium diphtheriae',
+		'rank': 'species',
+		'parent': 'corynebacterium',
+		'range': 'ww',
+	},
+	{
 		'name': 'cpr group',
 		'rank': 'infrakingdom',
 		'parent': 'bacteria',
@@ -1926,15 +1950,15 @@ const lifeData = [
 		'desc': 'Finger Millet',
 	},
 	{
-		'name': 'enterobacteriaceae',
-		'rank': 'family',
-		'parent': 'enterobacterales',
-		'range': 'ww',
-	},
-	{
 		'name': 'enterobacterales',
 		'rank': 'order',
 		'parent': 'gammaproteobacteria',
+		'range': 'ww',
+	},
+	{
+		'name': 'enterobacteriaceae',
+		'rank': 'family',
+		'parent': 'enterobacterales',
 		'range': 'ww',
 	},
 	{
@@ -3202,6 +3226,12 @@ const lifeData = [
 		'name': 'mycobacteriaceae',
 		'rank': 'family',
 		'parent': 'actinomycetales',
+		'range': 'ww',
+	},
+	{
+		'name': 'mycobacteriales',
+		'rank': 'order',
+		'parent': 'actinomycetia',
 		'range': 'ww',
 	},
 	{
