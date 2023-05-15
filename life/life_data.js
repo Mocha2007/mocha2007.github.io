@@ -1106,6 +1106,25 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'cantharellaceae',
+		'rank': 'family',
+		'parent': 'cantharellales',
+		'range': 'ww',
+	},
+	{
+		'name': 'cantharellales',
+		'rank': 'order',
+		'parent': 'agaricomycetes',
+		'range': 'ww',
+	},
+	{
+		'name': 'cantharellus',
+		'rank': 'genus',
+		'parent': 'cantharellaceae',
+		'range': 'ww',
+		'desc': 'Chanterelles',
+	},
+	{
 		'name': 'capra',
 		'rank': 'genus',
 		'parent': 'caprinae',
@@ -3882,6 +3901,18 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'pezizales',
+		'rank': 'order',
+		'parent': 'pezizomycetes',
+		'range': 'ww',
+	},
+	{
+		'name': 'pezizomycetes',
+		'rank': 'class',
+		'parent': 'ascomycota',
+		'range': 'ww',
+	},
+	{
 		'name': 'phaeophyceae',
 		'rank': 'class',
 		'parent': 'ochrophytina',
@@ -5039,6 +5070,27 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'trypanosomatida',
 		'range': 'ww',
+	},
+	{
+		'name': 'tuber',
+		'rank': 'genus',
+		'parent': 'tuberaceae',
+		'range': 'ww',
+		'age': 156,
+	},
+	{
+		'name': 'tuber melanosporum',
+		'rank': 'species',
+		'parent': 'tuber',
+		'range': 'eu',
+		'desc': 'Black Truffle',
+	},
+	{
+		'name': 'tuberaceae',
+		'rank': 'family',
+		'parent': 'pezizales',
+		'range': 'ww',
+		'age': 160, // 140 - 180 mya
 	},
 	{
 		'name': 'tunicata',
