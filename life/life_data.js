@@ -4904,6 +4904,31 @@ const lifeData = [
 		'age': 520,
 	},
 	{
+		'name': 'vibrio',
+		'rank': 'genus',
+		'parent': 'vibrionaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'vibrio cholerae',
+		'rank': 'species',
+		'parent': 'vibrio',
+		'range': 'ww',
+		'desc': 'Cholera-causing bacterium',
+	},
+	{
+		'name': 'vibrionaceae',
+		'rank': 'family',
+		'parent': 'vibrionales',
+		'range': 'ww',
+	},
+	{
+		'name': 'vibrionales',
+		'rank': 'order',
+		'parent': 'gammaproteobacteria',
+		'range': 'ww',
+	},
+	{
 		'name': 'vitaceae',
 		'rank': 'family',
 		'parent': 'vitales',
