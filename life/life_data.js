@@ -4175,6 +4175,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'psittacidae',
+		'rank': 'family',
+		'parent': 'psittaciformes',
+		'range': 'eq',
+	},
+	{
 		'name': 'psittaciformes',
 		'rank': 'order',
 		'parent': 'psittacopasserae',
@@ -4186,6 +4192,19 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'telluraves',
 		'range': 'ww',
+	},
+	{
+		'name': 'psittacus',
+		'rank': 'genus',
+		'parent': 'psittacidae',
+		'range': 'af',
+	},
+	{
+		'name': 'psittacus erithacus',
+		'rank': 'species',
+		'parent': 'psittacus',
+		'range': 'af',
+		'desc': 'Grey Parrot',
 	},
 	{
 		'name': 'pterosauria',
