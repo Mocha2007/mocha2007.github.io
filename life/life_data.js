@@ -2879,6 +2879,12 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'hymenogastraceae',
+		'rank': 'family',
+		'parent': 'agaricales',
+		'range': 'ww',
+	},
+	{
 		'name': 'hymenoptera',
 		'rank': 'order',
 		'parent': 'insecta',
@@ -3527,7 +3533,7 @@ const lifeData = [
 		'name': 'omphalotus nidiformis',
 		'rank': 'species',
 		'parent': 'omphalotus',
-		'range': 'oc',
+		'range': 'au',
 		'desc': 'Ghost Fungus',
 	},
 	{
@@ -3568,14 +3574,14 @@ const lifeData = [
 		'name': 'ornithorhynchidae',
 		'rank': 'family',
 		'parent': 'monotremata',
-		'range': 'oc',
+		'range': 'au',
 		'age': 61,
 	},
 	{
 		'name': 'ornithorhynchus',
 		'rank': 'genus',
 		'parent': 'ornithorhynchidae',
-		'range': 'oc',
+		'range': 'au',
 		'age': 9,
 		'desc': 'Platypus',
 		'genetic': {
@@ -3924,20 +3930,20 @@ const lifeData = [
 		'name': 'phascolarctidae',
 		'rank': 'family',
 		'parent': 'diprotodontia',
-		'range': 'oc',
+		'range': 'au',
 		'age': 25, // chattian
 	},
 	{
 		'name': 'phascolarctos',
 		'rank': 'genus',
 		'parent': 'phascolarctidae',
-		'range': 'oc',
+		'range': 'au',
 	},
 	{
 		'name': 'phascolarctos cinereus',
 		'rank': 'species',
 		'parent': 'phascolarctos',
-		'range': 'oc',
+		'range': 'au',
 		'age': 0.7,
 		'desc': 'Koala',
 		'genetic': {
@@ -4278,6 +4284,12 @@ const lifeData = [
 		'name': 'pseudomonadota',
 		'rank': 'phylum',
 		'parent': 'hydrobacteria',
+		'range': 'ww',
+	},
+	{
+		'name': 'psilocybe',
+		'rank': 'genus',
+		'parent': 'hymenogastraceae',
 		'range': 'ww',
 	},
 	{

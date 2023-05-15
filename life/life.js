@@ -146,6 +146,7 @@ const regions = {
 			'NA': 'North America',
 			'SA': 'South America',
 		'OC': 'Oceania',
+			'AU': 'Australia',
 		'OW': 'Old World',
 			'AF': 'Africa',
 			'EA': 'Eurasia',
