@@ -689,7 +689,13 @@ const lifeData = [
 	{
 		'name': 'bacilli',
 		'rank': 'class',
-		'parent': 'firmicutes',
+		'parent': 'bacillota',
+		'range': 'ww',
+	},
+	{
+		'name': 'bacillota',
+		'rank': 'phylum',
+		'parent': 'terrabacteria',
 		'range': 'ww',
 	},
 	{
@@ -2123,12 +2129,6 @@ const lifeData = [
 		'parent': 'laurasiatheria',
 		'range': 'ww',
 		'age': 78.9,
-	},
-	{
-		'name': 'firmicutes',
-		'rank': 'phylum',
-		'parent': 'terrabacteria',
-		'range': 'ww',
 	},
 	{
 		'name': 'formicidae',
