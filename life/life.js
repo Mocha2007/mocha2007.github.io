@@ -4,6 +4,138 @@
 /* exported openAge, searchButton, toggle, main */
 'use strict';
 
+class Taxon {
+	constructor(o){
+		/** @type {string} */
+		this.name = o.name;
+		/** @type {string} */
+		this.rank = o.rank;
+		/** @type {string} */
+		this.parent_id = o.parent;
+		Taxon.taxa.push(this);
+	}
+	get elem(){
+		const i = this.i;
+		const details = document.createElement('details');
+		details.open = openSetting;
+		const rank = lifeData[i].rank;
+		details.classList.add(rank);
+		const name = lifeData[i].name;
+		if (lifeData[i+1] && lifeData[i+1].name < name)
+			console.warn(`${name} out of order!`);
+		objects[name] = details;
+		details.id = name;
+		// title
+		const title = document.createElement('summary');
+		details.appendChild(title);
+		/* important
+		if (isImportant(i)){
+			var important = document.createElement("span");
+			important.classList.add('important');
+			important.innerHTML = '(!) ';
+			title.appendChild(important);
+		}
+		*/
+		// rank
+		const b = document.createElement('b');
+		b.innerHTML = proper(rank) + ' ';
+		title.appendChild(b);
+		// extinct?
+		if (lifeData[i].hasOwnProperty('extinct') && lifeData[i].hasOwnProperty('extinct')){
+			title.innerHTML += '&dagger; ';
+		}
+		// emoji?
+		if (lifeData[i].emoji)
+			title.innerHTML += lifeData[i].emoji + ' ';
+		// name
+		let a = document.createElement('a');
+		a.innerHTML = proper(name);
+		a.href = 'https://en.wikipedia.org/wiki/' + proper(name);
+		title.appendChild(a);
+		// range
+		if (lifeData[i].hasOwnProperty('range')){
+			title.innerHTML += ' ';
+			title.appendChild(rangeElem(lifeData[i].range));
+		}
+		// age
+		if (lifeData[i].hasOwnProperty('age')){
+			a = lifeData[i].age; // mya
+			title.innerHTML += ' ';
+			const age = document.createElement('abbr');
+			age.classList.add('age');
+			age.title = getEra(a);
+			age.innerHTML = getAge(a);
+			title.appendChild(age);
+		}
+		// genetics
+		if (lifeData[i].hasOwnProperty('genetic')){
+			const genetic = document.createElement('span');
+			genetic.classList.add('genetic');
+			title.appendChild(genetic);
+			// chromosomes
+			if (lifeData[i].genetic.hasOwnProperty('chromosome')){
+				const chr = document.createElement('abbr');
+				genetic.appendChild(chr);
+				const ploidy = lifeData[i].genetic.chromosome.ploidy || 1;
+				const allo = lifeData[i].genetic.chromosome.autosomal * ploidy;
+				if (lifeData[i].genetic.chromosome.allosomal){
+					const [chrF, chrM] = lifeData[i].genetic.chromosome.allosomal
+						.map(sex => sex + allo);
+					if (chrF === chrM)
+						chr.innerHTML = chrF;
+					else
+						chr.innerHTML = `♀${chrF}♂${chrM}`;
+				}
+				else
+					chr.innerHTML = allo;
+				chr.title = `Chromosome count ${ploidy}x = ${allo}, excl. sex chromosomes.`;
+			}
+			// sex determination system
+			if (lifeData[i].genetic.hasOwnProperty('sex')){
+				const sds = document.createElement('abbr');
+				genetic.appendChild(sds);
+				sds.innerHTML = lifeData[i].genetic.sex;
+				sds.title = 'Sex determination system';
+			}
+		}
+		// "open all" button
+		const openAll = document.createElement('input');
+		openAll.type = 'submit';
+		openAll.value = 'Open All';
+		openAll.onclick = () => openChildren(details);
+		openAll.classList.add('openAll');
+		title.appendChild(openAll);
+		// desc
+		if (lifeData[i].hasOwnProperty('desc')){
+			const desc = document.createElement('p');
+			desc.innerHTML = lifeData[i].desc;
+			details.appendChild(desc);
+		}
+		return details;
+	}
+	get i(){
+		return lifeData.findIndex(o => o.name === this.name);
+	}
+	/** @returns {string|undefined} */
+	get kingdom(){
+		if (this.rank === 'kingdom')
+			return this;
+		const p = this.parent;
+		if (p)
+			return p.kingdom;
+		return undefined;
+	}
+	get parent(){
+		return Taxon.fromString(this.parent_id);
+	}
+	/** @param {string} s */
+	static fromString(s){
+		return Taxon.taxa.find(t => t.name === s);
+	}
+}
+/** @type {Taxon[]} */
+Taxon.taxa = [];
+
 /** @type {Object<string, HTMLDetailsElement>} */
 const objects = {}; // string -> DOM object map
 let openSetting = false; // default setting
@@ -158,106 +290,14 @@ function rangeElem(s){
 // main program
 
 function main(){
+	console.log('Loading life.js ...');
 	// print appropriate text to toggle button
 	refreshButtons();
 	// first, add everything in lifeData to objects
 	for (let i = 0; i < lifeData.length; i++){
+		const taxon = new Taxon(lifeData[i]);
 		// create DOM object
-		const details = document.createElement('details');
-		details.open = openSetting;
-		const rank = lifeData[i].rank;
-		details.classList.add(rank);
-		const name = lifeData[i].name;
-		if (lifeData[i+1] && lifeData[i+1].name < name)
-			console.warn(`${name} out of order!`);
-		objects[name] = details;
-		details.id = name;
-		// title
-		const title = document.createElement('summary');
-		details.appendChild(title);
-		/* important
-		if (isImportant(i)){
-			var important = document.createElement("span");
-			important.classList.add('important');
-			important.innerHTML = '(!) ';
-			title.appendChild(important);
-		}
-		*/
-		// rank
-		const b = document.createElement('b');
-		b.innerHTML = proper(rank) + ' ';
-		title.appendChild(b);
-		// extinct?
-		if (lifeData[i].hasOwnProperty('extinct') && lifeData[i].hasOwnProperty('extinct')){
-			title.innerHTML += '&dagger; ';
-		}
-		// emoji?
-		if (lifeData[i].emoji)
-			title.innerHTML += lifeData[i].emoji + ' ';
-		// name
-		let a = document.createElement('a');
-		a.innerHTML = proper(name);
-		a.href = 'https://en.wikipedia.org/wiki/' + proper(name);
-		title.appendChild(a);
-		// range
-		if (lifeData[i].hasOwnProperty('range')){
-			title.innerHTML += ' ';
-			title.appendChild(rangeElem(lifeData[i].range));
-		}
-		// age
-		if (lifeData[i].hasOwnProperty('age')){
-			a = lifeData[i].age; // mya
-			title.innerHTML += ' ';
-			const age = document.createElement('abbr');
-			age.classList.add('age');
-			age.title = getEra(a);
-			age.innerHTML = getAge(a);
-			title.appendChild(age);
-		}
-		// genetics
-		if (lifeData[i].hasOwnProperty('genetic')){
-			const genetic = document.createElement('span');
-			genetic.classList.add('genetic');
-			title.appendChild(genetic);
-			// chromosomes
-			if (lifeData[i].genetic.hasOwnProperty('chromosome')){
-				const chr = document.createElement('abbr');
-				genetic.appendChild(chr);
-				const ploidy = lifeData[i].genetic.chromosome.ploidy || 1;
-				const allo = lifeData[i].genetic.chromosome.autosomal * ploidy;
-				if (lifeData[i].genetic.chromosome.allosomal){
-					const [chrF, chrM] = lifeData[i].genetic.chromosome.allosomal
-						.map(sex => sex + allo);
-					if (chrF === chrM)
-						chr.innerHTML = chrF;
-					else
-						chr.innerHTML = `♀${chrF}♂${chrM}`;
-				}
-				else
-					chr.innerHTML = allo;
-				chr.title = `Chromosome count ${ploidy}x = ${allo}, excl. sex chromosomes.`;
-			}
-			// sex determination system
-			if (lifeData[i].genetic.hasOwnProperty('sex')){
-				const sds = document.createElement('abbr');
-				genetic.appendChild(sds);
-				sds.innerHTML = lifeData[i].genetic.sex;
-				sds.title = 'Sex determination system';
-			}
-		}
-		// "open all" button
-		const openAll = document.createElement('input');
-		openAll.type = 'submit';
-		openAll.value = 'Open All';
-		openAll.onclick = () => openChildren(details);
-		openAll.classList.add('openAll');
-		title.appendChild(openAll);
-		// desc
-		if (lifeData[i].hasOwnProperty('desc')){
-			const desc = document.createElement('p');
-			desc.innerHTML = lifeData[i].desc;
-			details.appendChild(desc);
-		}
+		taxon.elem;
 	}
 	// next, nest everything accordingly. add * to root.
 	for (let i = 0; i < lifeData.length; i++){
@@ -280,5 +320,13 @@ function main(){
 			openParents(objects[lifeData[i].name]);
 		}
 	}
+	stats();
+}
+
+function stats(){
 	console.log(`Loaded ${lifeData.length} entries.`);
+	['animalia', 'plantae', 'fungi', 'other'].forEach(s => {
+		const t = Taxon.fromString(s);
+		console.info(`${Taxon.taxa.filter(x => x.kingdom === t).length} taxa in kingdom ${s}`);
+	});
 }
