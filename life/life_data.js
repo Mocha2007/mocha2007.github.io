@@ -421,6 +421,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'anthoathecata',
+		'rank': 'order',
+		'parent': 'hydrozoa',
+		'range': 'ww',
+	},
+	{
 		'name': 'anthocerotophyta',
 		'rank': 'division',
 		'parent': 'bryophyta',
@@ -2836,6 +2842,18 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'hydra',
+		'rank': 'genus',
+		'parent': 'hydridae',
+		'range': 'eq',
+	},
+	{
+		'name': 'hydridae',
+		'rank': 'family',
+		'parent': 'anthoathecata',
+		'range': 'eq',
+	},
+	{
 		'name': 'hydrobacteria',
 		'rank': 'clade',
 		'parent': 'bacteria',
@@ -2863,6 +2881,13 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+	},
+	{
+		'name': 'hydrozoa',
+		'rank': 'class',
+		'parent': 'medusozoa',
+		'range': 'ww',
+		'age': 575,
 	},
 	{
 		'name': 'hylobates',
