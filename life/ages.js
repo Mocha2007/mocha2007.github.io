@@ -127,10 +127,34 @@ const ages = [
 					{
 						'name': 'Carboniferous',
 						'start': 358.9,
+						'divisions': [
+							{
+								'name': 'Mississippian',
+								'start': 358.9,
+							},
+							{
+								'name': 'Pennsylvanian',
+								'start': 323.2,
+							},
+						],
 					},
 					{
 						'name': 'Permian',
 						'start': 298.9,
+						'divisions': [
+							{
+								'name': 'Cisuralian',
+								'start': 298.9,
+							},
+							{
+								'name': 'Guadalupian',
+								'start': 273.01,
+							},
+							{
+								'name': 'Lopingian',
+								'start': 259.51,
+							},
+						],
 					},
 				],
 			},
