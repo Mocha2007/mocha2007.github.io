@@ -32,7 +32,7 @@ const ages = [
 			},
 			{
 				'name': 'Neoarchean',
-				'start': 2700,
+				'start': 2800,
 			},
 		],
 	},
@@ -90,7 +90,7 @@ const ages = [
 					},
 					{
 						'name': 'Cryogenian',
-						'start': 850,
+						'start': 720,
 					},
 					{
 						'name': 'Ediacaran',
@@ -102,15 +102,15 @@ const ages = [
 	},
 	{
 		'name': 'Phanerozoic',
-		'start': 541,
+		'start': 538.8,
 		'divisions': [
 			{
 				'name': 'Paleozoic',
-				'start': 541,
+				'start': 538.8,
 				'divisions': [
 					{
 						'name': 'Cambrian',
-						'start': 541,
+						'start': 538.8,
 					},
 					{
 						'name': 'Ordovician',
