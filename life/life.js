@@ -159,7 +159,8 @@ const regions = {
 		'SH': 'Southern Hemisphere',
 		// oceans
 		'WO': 'World Ocean',
-			'AL': 'Atlantic',
+			'AL': 'Atlantic Ocean',
+			'PA': 'Pacific Ocean',
 	'XX': 'Extinct',
 };
 

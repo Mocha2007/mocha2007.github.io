@@ -1786,6 +1786,25 @@ const lifeData = [
 		'desc': 'Turmeric',
 	},
 	{
+		'name': 'cyanea',
+		'rank': 'genus',
+		'parent': 'cyaneidae',
+		'range': 'wo',
+	},
+	{
+		'name': 'cyanea capillata',
+		'rank': 'species',
+		'parent': 'cyanea',
+		'range': 'wo',
+		'desc': 'Lion\'s Mane Jellyfish, among the largest jellyfish',
+	},
+	{
+		'name': 'cyaneidae',
+		'rank': 'family',
+		'parent': 'semaeostomeae',
+		'range': 'wo',
+	},
+	{
 		'name': 'cyanobacteria',
 		'rank': 'phylum',
 		'parent': 'terrabacteria',
@@ -3519,6 +3538,19 @@ const lifeData = [
 		'desc': 'Brain-eating Amoeba',
 	},
 	{
+		'name': 'nemopilema',
+		'rank': 'genus',
+		'parent': 'rhizostomatidae',
+		'range': 'pa',
+	},
+	{
+		'name': 'nemopilema nomurai',
+		'rank': 'species',
+		'parent': 'nemopilema',
+		'range': 'pa',
+		'desc': 'Nomura\'s Jellyfish, among the largest jellyfish',
+	},
+	{
 		'name': 'neoaves',
 		'rank': 'clade',
 		'parent': 'aves',
@@ -4505,6 +4537,18 @@ const lifeData = [
 		'age': 416,
 	},
 	{
+		'name': 'rhizostomatidae',
+		'rank': 'family',
+		'parent': 'rhizostomeae',
+		'range': 'wo',
+	},
+	{
+		'name': 'rhizostomeae',
+		'rank': 'order',
+		'parent': 'scyphozoa',
+		'range': 'wo',
+	},
+	{
 		'name': 'rhodophyta',
 		'rank': 'division',
 		'parent': 'archaeplastida',
@@ -4698,6 +4742,13 @@ const lifeData = [
 		'desc': 'Catshark',
 	},
 	{
+		'name': 'scyphozoa',
+		'rank': 'class',
+		'parent': 'medusozoa',
+		'range': 'wo',
+		'age': 530,
+	},
+	{
 		'name': 'secale',
 		'rank': 'genus',
 		'parent': 'triticeae',
@@ -4723,6 +4774,12 @@ const lifeData = [
 		'range': 'wo',
 		'age': 200,
 		'desc': 'Shark',
+	},
+	{
+		'name': 'semaeostomeae',
+		'rank': 'order',
+		'parent': 'scyphozoa',
+		'range': 'wo',
 	},
 	{
 		'name': 'serpentes',
@@ -4916,6 +4973,19 @@ const lifeData = [
 		'parent': 'telluraves',
 		'range': 'ww',
 		'desc': 'Owl',
+	},
+	{
+		'name': 'stygiomedusa',
+		'rank': 'genus',
+		'parent': 'ulmaridae',
+		'range': 'wo',
+	},
+	{
+		'name': 'stygiomedusa gigantea',
+		'rank': 'species',
+		'parent': 'stygiomedusa',
+		'range': 'wo',
+		'desc': 'Giant Phantom Jelly, among the largest jellyfish',
 	},
 	{
 		'name': 'suidae',
@@ -5245,6 +5315,12 @@ const lifeData = [
 		'range': 'na',
 	},
 	// U
+	{
+		'name': 'ulmaridae',
+		'rank': 'family',
+		'parent': 'semaeostomeae',
+		'range': 'wo',
+	},
 	{
 		'name': 'ungulata',
 		'rank': 'clade',
