@@ -1825,6 +1825,13 @@ const lifeData = [
 		'desc': 'Blue Jay',
 	},
 	{
+		'name': 'cyanophyceae',
+		'rank': 'class',
+		'parent': 'cyanobacteria',
+		'range': 'ww',
+		'age': 3500,
+	},
+	{
 		'name': 'cycadales',
 		'rank': 'order',
 		'parent': 'cycadopsida',
@@ -2538,6 +2545,12 @@ const lifeData = [
 		'parent': 'euarchontoglires',
 		'range': 'ww',
 		'age': 60,
+	},
+	{
+		'name': 'gloeomargaritales',
+		'rank': 'order',
+		'parent': 'cyanophyceae',
+		'range': 'ww',
 	},
 	{
 		'name': 'gorilla',
@@ -4355,6 +4368,40 @@ const lifeData = [
 		'age': 60,
 	},
 	{
+		'name': 'prochloraceae',
+		'rank': 'family',
+		'parent': 'synechococcales',
+		'range': 'ww',
+	},
+	{
+		'name': 'prochlorococcus',
+		'rank': 'genus',
+		'parent': 'prochloraceae',
+		'range': 'wo',
+	},
+	{
+		'name': 'prochlorococcus marinus',
+		'rank': 'species',
+		'parent': 'prochlorococcus',
+		'range': 'wo',
+	},
+	{
+		'name': 'proto-chloroplast',
+		'rank': 'species',
+		'parent': 'gloeomargaritales',
+		'range': 'ww',
+		'age': 1650, // "Gloeomargarita's relative would have ended up in an ancestral archaeplastid ... 1900-1400 million years ago"
+		'extinct': true,
+	},
+	{
+		'name': 'proto-mitochondrion',
+		'rank': 'species',
+		'parent': 'rickettsiales',
+		'range': 'ww',
+		'age': 1850, // "This symbiotic relationship probably developed 1.7 to 2 billion years ago."
+		'extinct': true,
+	},
+	{
 		'name': 'protostomia',
 		'rank': 'superphylum',
 		'parent': 'nephrozoa',
@@ -5044,6 +5091,12 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+	},
+	{
+		'name': 'synechococcales',
+		'rank': 'order',
+		'parent': 'cyanophyceae',
+		'range': 'ww',
 	},
 	// T
 	{
