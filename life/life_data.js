@@ -403,6 +403,7 @@ const lifeData = [
 		'range': 'ww',
 		'age': 760,
 		'desc': 'Animals consume organic material, breathe oxygen, are able to move, can reproduce sexually, and grow from a blastula during embryonic development.',
+		'develop': 'centrosome',
 	},
 	{
 		'name': 'ankylosauridae',
@@ -2282,7 +2283,7 @@ const lifeData = [
 		'range': 'ww',
 		'age': 1850,
 		'desc': 'Eukaryotes are organisms which have cells with a nucleus enclosed within membranes, unlike prokaryotes, which have no membrane-bound organelles.',
-		'develop': 'nucleus, mitochondrion',
+		'develop': 'nucleus, mitochondrion, peroxisome',
 	},
 	{
 		'name': 'eulipotyphla',
@@ -2741,6 +2742,7 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'loss': 'tail',
 	},
 	{
 		'name': 'homo',
@@ -2748,6 +2750,7 @@ const lifeData = [
 		'parent': 'hominini',
 		'range': 'af',
 		'age': 2.8,
+		'loss': 'baculum',
 	},
 	{
 		'name': 'homo denisova',
