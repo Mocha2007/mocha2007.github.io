@@ -640,6 +640,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'asgard',
+		'rank': 'superphylum',
+		'parent': 'proteoarchaeota',
+		'range': 'ww',
+	},
+	{
 		'name': 'asparagales',
 		'rank': 'order',
 		'parent': 'monocots',
@@ -2279,7 +2285,7 @@ const lifeData = [
 	{
 		'name': 'eukaryota',
 		'rank': 'domain',
-		'parent': 'archaea',
+		'parent': 'asgard',
 		'range': 'ww',
 		'age': 1850,
 		'desc': 'Eukaryotes are organisms which have cells with a nucleus enclosed within membranes, unlike prokaryotes, which have no membrane-bound organelles.',
@@ -4398,6 +4404,12 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'prochlorococcus',
 		'range': 'wo',
+	},
+	{
+		'name': 'proteoarchaeota',
+		'rank': 'kingdom',
+		'parent': 'archaea',
+		'range': 'ww',
 	},
 	{
 		'name': 'proto-chloroplast',
