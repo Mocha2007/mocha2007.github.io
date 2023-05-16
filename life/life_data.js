@@ -1955,6 +1955,19 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'diantamoeba',
+		'rank': 'genus',
+		'parent': 'monocercomonadidae',
+		'range': 'ww',
+	},
+	{
+		'name': 'diantamoeba fragilis',
+		'rank': 'species',
+		'parent': 'diantamoeba',
+		'range': 'ww',
+		'desc': 'Diantamoebiasis-causing protozoan',
+	},
+	{
 		'name': 'digitaria',
 		'rank': 'genus',
 		'parent': 'paniceae',
@@ -3403,6 +3416,12 @@ const lifeData = [
 		'desc': 'Mollusk',
 	},
 	{
+		'name': 'monocercomonadidae',
+		'rank': 'family',
+		'parent': 'trichomonadida',
+		'range': 'ww',
+	},
+	{
 		'name': 'monocots',
 		'rank': 'clade',
 		'parent': 'angiospermae',
@@ -3960,6 +3979,12 @@ const lifeData = [
 		'parent': 'felidae',
 		'range': 'ww',
 		'age': 10,
+	},
+	{
+		'name': 'parabasalia',
+		'rank': 'clade',
+		'parent': 'eukaryota',
+		'range': 'ww',
 	},
 	{
 		'name': 'paraceratherium',
@@ -5271,6 +5296,31 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'eurotiales',
 		'range': 'ww',
+	},
+	{
+		'name': 'trichomonadida',
+		'rank': 'order',
+		'parent': 'parabasalia',
+		'range': 'ww',
+	},
+	{
+		'name': 'trichomonadidae',
+		'rank': 'family',
+		'parent': 'trichomonadida',
+		'range': 'ww',
+	},
+	{
+		'name': 'trichomonas',
+		'rank': 'genus',
+		'parent': 'trichomonadidae',
+		'range': 'ww',
+	},
+	{
+		'name': 'trichomonas vaginalis',
+		'rank': 'species',
+		'parent': 'trichomonas',
+		'range': 'ww',
+		'desc': 'Trichomoniasis-causing anaerobic flagellated protozoan parasite',
 	},
 	{
 		'name': 'trilobita',
