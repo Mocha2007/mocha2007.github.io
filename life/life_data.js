@@ -333,7 +333,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'orthokaryota',
 		'range': 'ww',
-		'age': 1500,
+		'age': 1400,
 	},
 	{
 		'name': 'amphibia',
@@ -401,7 +401,7 @@ const lifeData = [
 		'rank': 'kingdom',
 		'parent': 'choanozoa',
 		'range': 'ww',
-		'age': 760,
+		'age': 720,
 		'desc': 'Animals consume organic material, breathe oxygen, are able to move, can reproduce sexually, and grow from a blastula during embryonic development.',
 		'develop': 'centrosome',
 	},
@@ -552,6 +552,7 @@ const lifeData = [
 		'range': 'ww',
 		'age': 3420,
 		'desc': 'Archaea',
+		'develop': 'methionine protein synthesis initiation, sensitive to diphtheria toxin',
 	},
 	{
 		'name': 'archaeopterygidae',
@@ -1475,7 +1476,7 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'deuterostomia',
 		'range': 'ww',
-		'age': 535,
+		'age': 518,
 		'develop': 'notochord, dorsal nerve cord, pharyngeal slits, endostyle, post-anal tail',
 	},
 	{
@@ -2287,9 +2288,9 @@ const lifeData = [
 		'rank': 'domain',
 		'parent': 'asgard',
 		'range': 'ww',
-		'age': 1850,
+		'age': 2100,
 		'desc': 'Eukaryotes are organisms which have cells with a nucleus enclosed within membranes, unlike prokaryotes, which have no membrane-bound organelles.',
-		'develop': 'nucleus, mitochondrion, peroxisome',
+		'develop': 'nucleus, mitochondrion, peroxisome, linear chromosomes',
 	},
 	{
 		'name': 'eulipotyphla',
@@ -2689,7 +2690,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'hominoidea',
 		'range': 'ow',
-		'age': 15.7,
+		'age': 17,
 		'desc': 'Great Apes',
 		// http://eknygos.lsmuni.lt/springer/671/133-152.pdf
 		'genetic': {
@@ -2706,7 +2707,7 @@ const lifeData = [
 		'rank': 'subfamily',
 		'parent': 'hominidae',
 		'range': 'af',
-		'age': 8.8,
+		'age': 12.5,
 		'desc': 'African Apes',
 		'genetic': {
 			'chromosome': {
@@ -2722,7 +2723,7 @@ const lifeData = [
 		'rank': 'tribe',
 		'parent': 'homininae',
 		'range': 'af',
-		'age': 6.3,
+		'age': 7,
 		'genetic': {
 			'chromosome': {
 				'autosomal': 23,
@@ -2737,7 +2738,7 @@ const lifeData = [
 		'rank': 'superfamily',
 		'parent': 'primates',
 		'range': 'ow',
-		'age': 20.4,
+		'age': 23,
 		'desc': 'Ape',
 		// http://eknygos.lsmuni.lt/springer/671/133-152.pdf
 		'genetic': {
@@ -2809,7 +2810,7 @@ const lifeData = [
 		'parent': 'homo',
 		'extinct': true,
 		'range': 'ea',
-		'age': 0.25,
+		'age': 0.43,
 		'desc': 'Neanderthal',
 		// https://www.thetech.org/ask-a-geneticist/denisovan-chromosome-2
 		'genetic': {
@@ -2827,7 +2828,7 @@ const lifeData = [
 		'parent': 'homo',
 		'important': true,
 		'range': 'af',
-		'age': 0.35,
+		'age': 0.315,
 		'desc': 'Human',
 		'genetic': {
 			'chromosome': {
@@ -3610,7 +3611,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'bilateria',
 		'range': 'ww',
-		'age': 650,
+		'age': 558,
 		'develop': 'nephridia (proto-kidneys)',
 	},
 	{
@@ -3653,7 +3654,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'chordata',
 		'range': 'ww',
-		'age': 535,
+		'age': 518,
 		'develop': 'olfactory system',
 	},
 	{
@@ -3782,7 +3783,7 @@ const lifeData = [
 		'rank': 'superclass',
 		'parent': 'vertebrata',
 		'range': 'ww',
-		'age': 420,
+		'age': 425,
 		'desc': 'Bony Fish',
 	},
 	{
@@ -4245,7 +4246,7 @@ const lifeData = [
 		'rank': 'infraclass',
 		'parent': 'theria',
 		'range': 'ww',
-		'age': 66,
+		'age': 66.043,
 	},
 	{
 		'name': 'placozoa',
@@ -4368,7 +4369,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'euarchontoglires',
 		'range': 'eq',
-		'age': 55,
+		'age': 65.9,
 		'desc': 'Primate characteristics include large brains, visual acuity, color vision, altered shoulder girdle, and dextrous hands.',
 		// http://eknygos.lsmuni.lt/springer/671/133-152.pdf
 		'genetic': {
@@ -5186,7 +5187,7 @@ const lifeData = [
 		'rank': 'superclass',
 		'parent': 'rhipidistia',
 		'range': 'ww',
-		'age': 370,
+		'age': 360,
 		'desc': 'Tetrapods are four-limbed animals.',
 		'develop': 'legs',
 	},
@@ -5472,7 +5473,7 @@ const lifeData = [
 		'rank': 'subphylum',
 		'parent': 'olfactores',
 		'range': 'ww',
-		'age': 520,
+		'age': 518,
 		'develop': 'vertebra',
 	},
 	{
