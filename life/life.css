@@ -25,11 +25,11 @@ abbr{
 	font-size: small;
 	font-weight: bold;
 }
-.genetic, .openAll, .range {
+.develop, .genetic, .openAll, .range {
 	font-size: x-small;
 	font-weight: bold;
 }
-.genetic, .openAll {
+.develop, .genetic, .openAll {
 	margin-left: 5px;
 }
 .genetic::before {

@@ -49,8 +49,9 @@ class Taxon {
 			title.innerHTML += lifeData[i].emoji + ' ';
 		// name
 		let a = document.createElement('a');
-		a.innerHTML = proper(name);
-		a.href = 'https://en.wikipedia.org/wiki/' + proper(name);
+		const pName = proper(name);
+		a.innerHTML = pName;
+		a.href = 'https://en.wikipedia.org/wiki/' + pName;
 		title.appendChild(a);
 		// range
 		if (lifeData[i].hasOwnProperty('range')){
@@ -97,6 +98,21 @@ class Taxon {
 				sds.innerHTML = lifeData[i].genetic.sex;
 				sds.title = 'Sex determination system';
 			}
+		}
+		// development
+		if (lifeData[i].hasOwnProperty('develop')){
+			const develop = document.createElement('abbr');
+			develop.classList.add('develop');
+			title.appendChild(develop);
+			develop.innerHTML = '*';
+			develop.title = `${pName} innovated: ${lifeData[i].develop}`;
+		}
+		if (lifeData[i].hasOwnProperty('loss')){
+			const loss = document.createElement('abbr');
+			loss.classList.add('develop');
+			title.appendChild(loss);
+			loss.innerHTML = '+';
+			loss.title = `${pName} lost: ${lifeData[i].loss}`;
 		}
 		// "open all" button
 		const openAll = document.createElement('input');

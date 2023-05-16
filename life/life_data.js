@@ -12,6 +12,8 @@
     range?: string;
     age?: number;
     desc?: string;
+    develop?: string;
+    loss?: string;
 }[]} */
 const lifeData = [
 	/*
@@ -34,6 +36,8 @@ const lifeData = [
 			// https://en.wikipedia.org/wiki/Sex-determination_system
 			'sex': 'XY',
 		},
+		'develop': 'neoplastid';
+		'loss': 'archaeoplastid';
 	},
 	*/
 	// BEGIN ALPHABETICAL ORDERING
@@ -2277,6 +2281,7 @@ const lifeData = [
 		'range': 'ww',
 		'age': 1850,
 		'desc': 'Eukaryotes are organisms which have cells with a nucleus enclosed within membranes, unlike prokaryotes, which have no membrane-bound organelles.',
+		'develop': 'nucleus, mitochondrion',
 	},
 	{
 		'name': 'eulipotyphla',
