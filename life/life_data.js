@@ -4308,6 +4308,13 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'plasmodium falciparum',
+		'rank': 'species',
+		'parent': 'plasmodium',
+		'range': 'ww',
+		'desc': 'Malaria-causing unicellular protozoan parasite',
+	},
+	{
 		'name': 'platyhelminthes',
 		'rank': 'phylum',
 		'parent': 'platytrochozoa',
