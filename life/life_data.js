@@ -919,6 +919,7 @@ const lifeData = [
 		'parent': 'placentalia',
 		'range': 'ww',
 		'age': 65,
+		'develop': 'scrotum',
 	},
 	{
 		'name': 'bos',
@@ -1468,7 +1469,7 @@ const lifeData = [
 		'parent': 'deuterostomia',
 		'range': 'ww',
 		'age': 535,
-		'desc': 'During some period of their life cycle, chordates possess a notochord, a dorsal nerve cord, pharyngeal slits, an endostyle, and a post-anal tail. These five anatomical features define this phylum.',
+		'develop': 'notochord, dorsal nerve cord, pharyngeal slits, endostyle, post-anal tail',
 	},
 	{
 		'name': 'chrysanthemum',
@@ -3339,7 +3340,8 @@ const lifeData = [
 		'parent': 'amniota',
 		'range': 'ww',
 		'age': 225,
-		'desc': 'Mammals are characterized by the presence of mammary glands, a neocortex, fur or hair, and three middle ear bones.',
+		'desc': 'Mammals',
+		'develop': 'mammary glands, neocortex, fur or hair, three middle ear bones',
 		// http://eknygos.lsmuni.lt/springer/671/133-152.pdf
 		'genetic': {
 			'chromosome': {
@@ -3600,6 +3602,7 @@ const lifeData = [
 		'parent': 'bilateria',
 		'range': 'ww',
 		'age': 650,
+		'develop': 'nephridia (proto-kidneys)',
 	},
 	{
 		'name': 'nomascus',
@@ -3642,6 +3645,7 @@ const lifeData = [
 		'parent': 'chordata',
 		'range': 'ww',
 		'age': 535,
+		'develop': 'olfactory system',
 	},
 	{
 		'name': 'omphalotaceae',
@@ -3960,6 +3964,7 @@ const lifeData = [
 		'parent': 'eumetazoa',
 		'range': 'ww',
 		'age': 605.2,
+		'develop': 'Hox genes',
 	},
 	{
 		'name': 'paraves',
@@ -4253,6 +4258,7 @@ const lifeData = [
 		'parent': 'parahoxozoa',
 		'range': 'ww',
 		'age': 680,
+		'develop': 'Zoc and ZF-NC gene domains',
 	},
 	{
 		'name': 'plasmodiidae',
@@ -4587,6 +4593,7 @@ const lifeData = [
 		'parent': 'osteichthyes',
 		'range': 'ww',
 		'age': 416,
+		'develop': 'lungs',
 	},
 	{
 		'name': 'rhizostomatidae',
@@ -5166,6 +5173,7 @@ const lifeData = [
 		'range': 'ww',
 		'age': 370,
 		'desc': 'Tetrapods are four-limbed animals.',
+		'develop': 'legs',
 	},
 	{
 		'name': 'theobroma',
@@ -5192,6 +5200,7 @@ const lifeData = [
 		'parent': 'mammalia',
 		'range': 'ww',
 		'age': 161,
+		'develop': 'viviparity',
 	},
 	{
 		'name': 'theropoda',
@@ -5449,6 +5458,7 @@ const lifeData = [
 		'parent': 'olfactores',
 		'range': 'ww',
 		'age': 520,
+		'develop': 'vertebra',
 	},
 	{
 		'name': 'vibrio',
