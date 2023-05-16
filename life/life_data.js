@@ -120,6 +120,12 @@ const lifeData = [
 		'age': 65,
 	},
 	{
+		'name': 'agaricaceae',
+		'rank': 'family',
+		'parent': 'agaricales',
+		'range': 'ww',
+	},
+	{
 		'name': 'agaricales',
 		'rank': 'order',
 		'parent': 'agaricomycetes',
@@ -130,6 +136,18 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'basidiomycota',
 		'range': 'ww',
+	},
+	{
+		'name': 'agaricus',
+		'rank': 'genus',
+		'parent': 'agaricaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'agaricus bisporus',
+		'rank': 'species',
+		'parent': 'agaricus',
+		'range': 'nh',
 	},
 	{
 		'name': 'ailuridae',
@@ -3089,6 +3107,19 @@ const lifeData = [
 		'desc': 'Bay Laurel',
 	},
 	{
+		'name': 'lentinula',
+		'rank': 'genus',
+		'parent': 'omphalotaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'lentinula edodes',
+		'rank': 'species',
+		'parent': 'lentinula',
+		'range': 'as',
+		'desc': 'Shitake',
+	},
+	{
 		'name': 'leopardus',
 		'rank': 'genus',
 		'parent': 'felinae',
@@ -3310,6 +3341,26 @@ const lifeData = [
 		'parent': 'yinotheria',
 		'range': 'oc',
 		'age': 125, // Barremian
+	},
+	{
+		'name': 'morchella',
+		'rank': 'genus',
+		'parent': 'morchellaceae',
+		'range': 'nh',
+		'desc': 'Morels',
+	},
+	{
+		'name': 'morchella esculenta',
+		'rank': 'species',
+		'parent': 'morchella',
+		'range': 'nh',
+		'desc': 'Common Morel',
+	},
+	{
+		'name': 'morchellaceae',
+		'rank': 'family',
+		'parent': 'pezizales',
+		'range': 'ww',
 	},
 	{
 		'name': 'mosasauroidea',
