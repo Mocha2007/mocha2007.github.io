@@ -2939,6 +2939,15 @@
 		"categories": ["extent"]
 	},
 	{
+		"title": "bolbat",
+		"etym": "C/bolz/-ba",
+		"cat": "n., 3rd",
+		"defList": [
+			"feast"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "bolent",
 		"img": "../img/eremoran/bolent.png",
 		"etym": "I/PEN/*βolent/hammer",
@@ -9727,6 +9736,15 @@
 		"categories": ["emotion"]
 	},
 	{
+		"title": "nambat",
+		"etym": "C/namz/-ba",
+		"cat": "n., 3rd",
+		"defList": [
+			"meal"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "namz",
 		"etym": "I/PEN/*nams/eat",
 		"cat": "v.",
@@ -12218,6 +12236,24 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "sobêr",
+		"etym": "C/sobz/-ê",
+		"cat": "n., 1st",
+		"defList": [
+			"servant, butler, waiter, attendant"
+		],
+		"categories": ["person"]
+	},
+	{
+		"title": "sobz",
+		"etym": "I/PEN/*sobs",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) serve, submit to ([[ad]] + master)",
+			"(intransitive) be submissive"
+		]
+	},
+	{
 		"title": "sokum",
 		"etym": "C/sokuz/-m",
 		"cat": "n., 5th",
@@ -13032,6 +13068,15 @@
 		"defList": [
 			"stair, stairs"
 		]
+	},
+	{
+		"title": "taut",
+		"etym": "I/PEN/*tau-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"pie"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "taze",
