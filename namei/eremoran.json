@@ -507,7 +507,7 @@
 			"(''ambipositional, math'') plus",
 			"(''adverb'') about to, going to, (forms near future aspect)"
 		],
-		"categories": ["giving"]
+		"categories": ["assimilatory affix", "giving"]
 	},
 	{
 		"title": "adafkaz",
@@ -6111,8 +6111,8 @@
 			"(hoki/ho +) the other individual, the other thing recently mentioned: (cf. obviative pronoun) <ul> <li>  ''Mor i lulz ku, <b>hor id</b> i libaz.''<br>  person TOP laugh and, \"the other person\" TOP cry<br>  The person laughed, and then <b>they [another person]</b> cried. </li> </ul> ",
 			"(+ plural det) considering each member of the determiner equally, eg. ''id hans'' = \"every\" specifically rather than all. (Distributive pronoun/determiner) "
 		],
-		"notes": "See ''be'' for an or linking clauses. cf. ''nanau'', inclusive or and \"quelque\" some. The choice of ''hoki'' vs. ''ho'' with the obviative mostly has to do with whether the person is close in relation or proximity to the listener",
-		"categories": ["number"]
+		"notes": "Assimilates in compounds. See ''be'' for an or linking clauses. cf. ''nanau'', inclusive or and \"quelque\" some. The choice of ''hoki'' vs. ''ho'' with the obviative mostly has to do with whether the person is close in relation or proximity to the listener",
+		"categories": ["assimilatory affix", "number"]
 	},
 	{
 		"title": "idak",
@@ -6161,15 +6161,6 @@
 		"categories": ["animal", "motion"]
 	},
 	{
-		"title": "idkek",
-		"etym": "C/id/kek",
-		"cat": "n., 2nd",
-		"defList": [
-			"first generation of deities"
-		],
-		"categories": ["god"]
-	},
-	{
 		"title": "idu",
 		"etym": "C/id/-u",
 		"cat": "adj.",
@@ -6202,6 +6193,15 @@
 			"diamond (shape)"
 		],
 		"notes": "the first component refers to an archaic variant shape of the glyph"
+	},
+	{
+		"title": "ikkek",
+		"etym": "C/id/kek",
+		"cat": "n., 2nd",
+		"defList": [
+			"first generation of deities"
+		],
+		"categories": ["god"]
 	},
 	{
 		"title": "ikku",
@@ -9222,7 +9222,8 @@
 		"cat": "adv.",
 		"defList": [
 			"in one's possession, on one's person"
-		]
+		],
+		"categories": ["assimilatory affix"]
 	},
 	{
 		"title": "midarim",
@@ -9670,7 +9671,8 @@
 		"cat": "post.",
 		"defList": [
 			"as, in the capacity/form of"
-		]
+		],
+		"categories": ["assimilatory affix"]
 	},
 	{
 		"title": "nadnekis",
@@ -12426,19 +12428,7 @@
 		"categories": ["plant", "spice", "vegetable"]
 	},
 	{
-		"title": "stôd",
-		"etym": "C/tô/ad",
-		"cat": "post.",
-		"defList": [
-			"atop, upon, on top of",
-			"above, over",
-			"more than",
-			"(mathematics) over, divided by"
-		],
-		"notes": "Full derivation: ''su tô ad''"
-	},
-	{
-		"title": "stôdbamz",
+		"title": "stôbbamz",
 		"etym": "C/stôd/bamz",
 		"cat": "v.",
 		"defList": [
@@ -12446,7 +12436,7 @@
 		]
 	},
 	{
-		"title": "stôdbefôz",
+		"title": "stôbbefôz",
 		"etym": "C/stôd/befôz",
 		"cat": "v.",
 		"defList": [
@@ -12456,7 +12446,7 @@
 		]
 	},
 	{
-		"title": "stôdbêkum",
+		"title": "stôbbêkum",
 		"etym": "C/stôd/bêkum",
 		"cat": "n., 5th",
 		"defList": [
@@ -12465,13 +12455,34 @@
 		"categories": ["time"]
 	},
 	{
-		"title": "stôdburalz",
+		"title": "stôbburalz",
 		"etym": "C/stôd/buralz",
 		"cat": "v.",
 		"defList": [
 			"ruin, destroy"
 		],
 		"categories": ["war"]
+	},
+	{
+		"title": "stôd",
+		"etym": "C/tô/ad",
+		"cat": "post.",
+		"defList": [
+			"atop, upon, on top of",
+			"above, over",
+			"more than",
+			"(mathematics) over, divided by"
+		],
+		"notes": "Full derivation: ''su tô ad''",
+		"categories": ["assimilatory affix"]
+	},
+	{
+		"title": "stôddinklaz",
+		"etym": "B/stôd/dinklaz",
+		"cat": "v.",
+		"defList": [
+			"subject to damnatio memoriae (strike from all official records)"
+		]
 	},
 	{
 		"title": "stôdidz",
@@ -12483,15 +12494,15 @@
 		"categories": ["math"]
 	},
 	{
-		"title": "stôdinklaz",
-		"etym": "B/stôd/dinklaz",
+		"title": "stôdunz",
+		"etym": "C/stôd/unz",
 		"cat": "v.",
 		"defList": [
-			"subject to damnatio memoriae (strike from all official records)"
+			"(intransitive) overhang, hang over"
 		]
 	},
 	{
-		"title": "stôdlanz",
+		"title": "stôllanz",
 		"etym": "C/stôd/lanz",
 		"cat": "v.",
 		"defList": [
@@ -12500,7 +12511,7 @@
 		"categories": ["art"]
 	},
 	{
-		"title": "stôdmablaz",
+		"title": "stômmablaz",
 		"etym": "C/stôd/mablaz",
 		"cat": "v.",
 		"defList": [
@@ -12508,7 +12519,7 @@
 		]
 	},
 	{
-		"title": "stôdnobz",
+		"title": "stônnobz",
 		"etym": "C/stôd/nobz",
 		"cat": "v.",
 		"defList": [
@@ -12516,21 +12527,13 @@
 		]
 	},
 	{
-		"title": "stôdsifaz",
+		"title": "stôssifaz",
 		"etym": "C/stôd/sifaz",
 		"cat": "v.",
 		"defList": [
 			"pelt (violetly hit with projectiles)"
 		],
 		"categories": ["war"]
-	},
-	{
-		"title": "stôdunz",
-		"etym": "C/stôd/unz",
-		"cat": "v.",
-		"defList": [
-			"(intransitive) overhang, hang over"
-		]
 	},
 	{
 		"title": "stum",
