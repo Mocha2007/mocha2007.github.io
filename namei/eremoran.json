@@ -4099,6 +4099,33 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "dôanambam",
+		"etym": "C/rilnambat/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"dinnertime, suppertime"
+		],
+		"categories": ["food", "time"]
+	},
+	{
+		"title": "dôanambat",
+		"etym": "C/dôam/nambat",
+		"cat": "n., 3rd",
+		"defList": [
+			"dinner, supper"
+		],
+		"categories": ["food"]
+	},
+	{
+		"title": "dôanamz",
+		"etym": "C/dôam/namz",
+		"cat": "v.",
+		"defList": [
+			"eat dinner, eat supper"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "dôbefôz",
 		"etym": "C/dô/befôz",
 		"cat": "v.",
@@ -6309,6 +6336,33 @@
 			"cow"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "innambam",
+		"etym": "C/innambat/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"breakfast time"
+		],
+		"categories": ["food", "time"]
+	},
+	{
+		"title": "innambat",
+		"etym": "C/id/nambat",
+		"cat": "n., 3rd",
+		"defList": [
+			"breakfast"
+		],
+		"categories": ["food"]
+	},
+	{
+		"title": "innamz",
+		"etym": "C/id/namz",
+		"cat": "v.",
+		"defList": [
+			"eat breakfast"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "irerêt",
@@ -9125,7 +9179,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"house",
-			"housing; casing"
+			"housing; casing",
+			"(suffix) -ary, -arium"
 		]
 	},
 	{
@@ -11344,6 +11399,33 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "rilnambam",
+		"etym": "C/rilnambat/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"lunchtime"
+		],
+		"categories": ["food", "time"]
+	},
+	{
+		"title": "rilnambat",
+		"etym": "C/rilm/nambat",
+		"cat": "n., 3rd",
+		"defList": [
+			"lunch"
+		],
+		"categories": ["food"]
+	},
+	{
+		"title": "rilnamz",
+		"etym": "C/rilm/namz",
+		"cat": "v.",
+		"defList": [
+			"eat lunch"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "rilrilm",
 		"etym": "C/ril/rilm",
 		"cat": "n., 5th",
@@ -11865,6 +11947,15 @@
 			"Tata, the dwarf planet"
 		],
 		"categories": ["astronomy", "toponym"]
+	},
+	{
+		"title": "semat",
+		"etym": "C/se/mat",
+		"cat": "n., 3rd",
+		"defList": [
+			"granary"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "ses",
