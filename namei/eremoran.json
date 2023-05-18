@@ -1462,6 +1462,24 @@
 		]
 	},
 	{
+		"title": "asuzik",
+		"etym": "C/asuz/-zik",
+		"cat": "n., 2nd",
+		"defList": [
+			"paralysis"
+		],
+		"categories": ["disease"]
+	},
+	{
+		"title": "asuzikuk",
+		"etym": "A/asuzik",
+		"cat": "n., 2nd",
+		"defList": [
+			"polio"
+		],
+		"categories": ["disease"]
+	},
+	{
 		"title": "attukum",
 		"etym": "C/ad/tukum",
 		"cat": "n., 5th",
@@ -4084,6 +4102,15 @@
 		"cat": "v.",
 		"defList": [
 			"wither, waste away"
+		],
+		"categories": ["disease"]
+	},
+	{
+		"title": "dirazik",
+		"etym": "C/diraz/-zik",
+		"cat": "n., 2nd",
+		"defList": [
+			"tuberculosis, consumption"
 		],
 		"categories": ["disease"]
 	},
@@ -11342,6 +11369,15 @@
 		"notes": "esp. of interior wall painting patterns; present form influenced by ''raz'' 'paint'"
 	},
 	{
+		"title": "razik",
+		"etym": "C/rau/zik",
+		"cat": "n., 2nd",
+		"defList": [
+			"(disease) cold"
+		],
+		"categories": ["disease"]
+	},
+	{
 		"title": "redêfut",
 		"etym": "C/redêt/hus",
 		"cat": "n., 3rd",
@@ -12507,6 +12543,15 @@
 		"defList": [
 			"(intransitive) close"
 		]
+	},
+	{
+		"title": "sozik",
+		"etym": "C/sou/zik",
+		"cat": "n., 2nd",
+		"defList": [
+			"influenza, the flu"
+		],
+		"categories": ["disease"]
 	},
 	{
 		"title": "sparisêm",
