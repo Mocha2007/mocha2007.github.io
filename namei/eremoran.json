@@ -4079,6 +4079,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "diraz",
+		"etym": "I/PEN/*diras",
+		"cat": "v.",
+		"defList": [
+			"wither, waste away"
+		],
+		"categories": ["disease"]
+	},
+	{
 		"title": "dô",
 		"etym": "I/PEN/*dô/in",
 		"cat": "post., adv.",
@@ -8476,6 +8485,23 @@
 		]
 	},
 	{
+		"title": "ladôkaz",
+		"etym": "C/lam/dôkaz",
+		"cat": "v.",
+		"defList": [
+			"(intransitive) petrify"
+		]
+	},
+	{
+		"title": "ladôkazik",
+		"etym": "C/ladôkaz/-zik",
+		"cat": "n., 2nd",
+		"defList": [
+			"leprosy"
+		],
+		"categories": ["disease"]
+	},
+	{
 		"title": "laibô",
 		"etym": "L/POL/lojło/olive",
 		"cat": "n., 4th",
@@ -11949,6 +11975,15 @@
 		]
 	},
 	{
+		"title": "sêka",
+		"etym": "a/sêkaz",
+		"cat": "n., 4th",
+		"defList": [
+			"pock"
+		],
+		"categories": ["disease"]
+	},
+	{
 		"title": "sêkaz",
 		"etym": "I/PEN/*ʃêgas",
 		"cat": "v.",
@@ -11956,6 +11991,15 @@
 			"boil, be boiled"
 		],
 		"categories": ["food"]
+	},
+	{
+		"title": "sêkazik",
+		"etym": "C/sêkaz/-zik",
+		"cat": "n., 2nd",
+		"defList": [
+			"pox (any disease causing pockmarks)"
+		],
+		"categories": ["disease"]
 	},
 	{
 		"title": "sêlai",
