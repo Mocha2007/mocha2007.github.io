@@ -9173,6 +9173,33 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "marako",
+		"etym": "B/mara/muko",
+		"cat": "n., 4th",
+		"defList": [
+			"bloody diarrhea"
+		],
+		"categories": ["body part", "disease"]
+	},
+	{
+		"title": "marakoz",
+		"etym": "B/mara/mukoz",
+		"cat": "v.",
+		"defList": [
+			"have bloody diarrhea"
+		],
+		"categories": ["disease"]
+	},
+	{
+		"title": "marakozik",
+		"etym": "C/marakoz/-zik",
+		"cat": "n., 2nd",
+		"defList": [
+			"dysentery"
+		],
+		"categories": ["disease"]
+	},
+	{
 		"title": "marama",
 		"etym": "B/mara/arama",
 		"cat": "n., 4th",
@@ -9705,6 +9732,24 @@
 			"otter (sp. lutra lutra, lutrogale perspicillata, and to a lesser extent aonyx cinereus)"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "muko",
+		"etym": "B/mu/kuko",
+		"cat": "n., 4th",
+		"defList": [
+			"diarrhea"
+		],
+		"categories": ["body part", "disease"]
+	},
+	{
+		"title": "mukoz",
+		"etym": "C/muko/-z",
+		"cat": "v.",
+		"defList": [
+			"have diarrhea"
+		],
+		"categories": ["disease"]
 	},
 	{
 		"title": "mulam",
