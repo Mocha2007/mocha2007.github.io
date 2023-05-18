@@ -215,6 +215,16 @@
 		]
 	},
 	{
+		"title": "-zik",
+		"etym": "r/zikrômbor",
+		"cat": "aff.",
+		"defList": [
+			"-itis, disease"
+		],
+		"notes": "Usually attackes to verb stems. Creates a class 2 noun, usually denoting an animal, despite the typical western perception of disease.",
+		"categories": ["disease"]
+	},
+	{
 		"title": "abask",
 		"etym": "I/PEN/*aβasx/duck",
 		"cat": "n., 2nd",
@@ -3744,6 +3754,15 @@
 		]
 	},
 	{
+		"title": "dinabubzik",
+		"etym": "C/dinabubz/-zik",
+		"cat": "n., 2nd",
+		"defList": [
+			"dinabubzik, a disease affecting [[temêmuk]] wherein the sex-determining characteristic suddenly vanishes and is slowly replaced, possibly by the opposite sex"
+		],
+		"categories": ["disease"]
+	},
+	{
 		"title": "dinafkaz",
 		"etym": "C/din/afkaz",
 		"cat": "v.",
@@ -6404,7 +6423,7 @@
 		"etym": "L/IRI/irykəd/Irikar",
 		"cat": "n., 1st",
 		"defList": [
-			"the Irikar (a people in the near part of the western mountains who are stereotyped to be hoaxsters)",
+			"the Irikar (a people in the near part of the [[sinônô]] mountains who are stereotyped to be hoaxsters)",
 			"hoaxster"
 		],
 		"categories": ["person"]
@@ -10376,6 +10395,14 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "nônô",
+		"etym": "R/nô",
+		"cat": "n., 4th",
+		"defList": [
+			"mountain range"
+		]
+	},
+	{
 		"title": "nôsêdzak",
 		"etym": "C/nô/sêdzak",
 		"cat": "n., 2nd",
@@ -12067,6 +12094,15 @@
 		"categories": ["v3_trade"]
 	},
 	{
+		"title": "sinônô",
+		"etym": "C/siu/nônô",
+		"cat": "n., 4th",
+		"defList": [
+			"The Sinônô, the western mountain range"
+		],
+		"categories": ["toponym"]
+	},
+	{
 		"title": "siokar",
 		"etym": "L/PRE/Siok",
 		"cat": "n., 1st",
@@ -13240,7 +13276,7 @@
 		"etym": "C/temêmor/-m",
 		"cat": "n., 5th",
 		"defList": [
-			"type, kind, sort"
+			"type, kind, sort, gender"
 		]
 	},
 	{
@@ -13252,6 +13288,15 @@
 			"(extended) family",
 			"guild"
 		]
+	},
+	{
+		"title": "temêmuk",
+		"etym": "B/temêmom/uku",
+		"cat": "n., 2nd",
+		"defList": [
+			"An ''ukutemêmor'', or 'the genderless', a kind living in the [[sinônô]] that rely on a symbiotic protozoan to give them their sexual characteristics"
+		],
+		"categories": ["animal", "fantasy"]
 	},
 	{
 		"title": "temêr",
@@ -14399,7 +14444,7 @@
 			"Goddess of Manners and Disease, she curses those who do not practice good manners with various afflictions. It is never used as a given name. It is used in the interj. ''Zikrômbor berbkaldoz'' (gesundheit; bless you; literally \"May Zikrômbor leave you.\")."
 		],
 		"notes": "possibly related to zurku",
-		"categories": ["female given name", "god"]
+		"categories": ["disease", "female given name", "god"]
 	},
 	{
 		"title": "zirta",
