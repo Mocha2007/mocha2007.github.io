@@ -11442,7 +11442,7 @@
 	},
 	{
 		"title": "razik",
-		"etym": "C/rau/zik",
+		"etym": "C/rau/-zik",
 		"cat": "n., 2nd",
 		"defList": [
 			"(disease) cold"
@@ -12066,6 +12066,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "sêka",
+		"etym": "a/sêkaz",
+		"cat": "n., 4th",
+		"defList": [
+			"pock"
+		],
+		"categories": ["disease"]
+	},
+	{
 		"title": "sekaêt",
 		"etym": "C/sekaz/-ê",
 		"cat": "n., 3rd",
@@ -12081,15 +12090,6 @@
 		"defList": [
 			"mow"
 		]
-	},
-	{
-		"title": "sêka",
-		"etym": "a/sêkaz",
-		"cat": "n., 4th",
-		"defList": [
-			"pock"
-		],
-		"categories": ["disease"]
 	},
 	{
 		"title": "sêkaz",
@@ -12628,7 +12628,7 @@
 	},
 	{
 		"title": "sozik",
-		"etym": "C/sou/zik",
+		"etym": "C/sou/-zik",
 		"cat": "n., 2nd",
 		"defList": [
 			"influenza, the flu"
