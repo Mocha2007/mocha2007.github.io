@@ -3994,11 +3994,11 @@
 		"categories": ["astronomy"]
 	},
 	{
-		"title": "dinsukam",
-		"etym": "C/dinsukaz/-m",
-		"cat": "n., 5th",
+		"title": "dinsuka",
+		"etym": "a/dinsukaz",
+		"cat": "n., 4th",
 		"defList": [
-			"defecation, shit"
+			"(polite) defecation, shit"
 		],
 		"categories": ["body part"]
 	},
@@ -4007,7 +4007,7 @@
 		"etym": "C/din/sukaz",
 		"cat": "v.",
 		"defList": [
-			"defecate, shit"
+			"(polite) defecate, shit"
 		]
 	},
 	{
@@ -4862,6 +4862,16 @@
 			"purple"
 		],
 		"categories": ["color"]
+	},
+	{
+		"title": "erezik",
+		"etym": "C/ereu/-zik",
+		"cat": "n., 2nd",
+		"defList": [
+			"measles",
+			"rubella"
+		],
+		"categories": ["disease"]
 	},
 	{
 		"title": "esur",
@@ -8043,6 +8053,23 @@
 			"boot"
 		],
 		"categories": ["clothing"]
+	},
+	{
+		"title": "kuko",
+		"etym": "I/PEN/*kuko",
+		"cat": "n., 4th",
+		"defList": [
+			"(rude) defecation, shit"
+		],
+		"categories": ["body part"]
+	},
+	{
+		"title": "kukoz",
+		"etym": "C/kuko/-z",
+		"cat": "v.",
+		"defList": [
+			"(rude) defecate, shit"
+		]
 	},
 	{
 		"title": "kukram",
@@ -12518,6 +12545,16 @@
 		"categories": ["tool"]
 	},
 	{
+		"title": "sorazik",
+		"etym": "C/sou/rau",
+		"cat": "n., 2nd",
+		"defList": [
+			"malaria"
+		],
+		"categories": ["disease"],
+		"notes": "Literally, 'hot-cold-disease'"
+	},
+	{
 		"title": "sou",
 		"etym": "I/PEN/*tʃou/hot",
 		"cat": "adj.",
@@ -12552,6 +12589,16 @@
 			"influenza, the flu"
 		],
 		"categories": ["disease"]
+	},
+	{
+		"title": "sozluzik",
+		"etym": "B/sou/azlu",
+		"cat": "n., 2nd",
+		"defList": [
+			"typhoid fever"
+		],
+		"categories": ["disease"],
+		"notes": "Literally, 'hot-weak-disease'"
 	},
 	{
 		"title": "sparisêm",
