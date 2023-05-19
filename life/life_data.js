@@ -2406,6 +2406,12 @@ const lifeData = [
 		'parent': 'ascomycota',
 		'range': 'ww',
 	},
+	{
+		'name': 'euryarchaeota',
+		'rank': 'kingdom',
+		'parent': 'archaea',
+		'range': 'ww',
+	},
 	// F
 	{
 		'name': 'fabaceae',
@@ -3517,6 +3523,30 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'methanomicrobia',
+		'rank': 'class',
+		'parent': 'euryarchaeota',
+		'range': 'ww',
+	},
+	{
+		'name': 'methanosarcina',
+		'rank': 'genus',
+		'parent': 'methanosarcinaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'methanosarcinaceae',
+		'rank': 'family',
+		'parent': 'methanosarcinales',
+		'range': 'ww',
+	},
+	{
+		'name': 'methanosarcinales',
+		'rank': 'order',
+		'parent': 'methanomicrobia',
+		'range': 'ww',
+	},
+	{
 		'name': 'mollusca',
 		'rank': 'phylum',
 		'parent': 'platytrochozoa',
@@ -3680,6 +3710,26 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'magnoliales',
 		'range': 'ww',
+	},
+	{
+		'name': 'myxococcales',
+		'rank': 'order',
+		'parent': 'myxococcia',
+		'range': 'ww',
+		'desc': 'Slime Bacteria',
+	},
+	{
+		'name': 'myxococcia',
+		'rank': 'class',
+		'parent': 'myxococcota',
+		'range': 'ww',
+	},
+	{
+		'name': 'myxococcota',
+		'rank': 'phylum',
+		'parent': 'hydrobacteria',
+		'range': 'ww',
+		'desc': 'Fruiting Gliding Bacteria',
 	},
 	{
 		'name': 'myzozoa',
