@@ -468,7 +468,7 @@ const lifeData = [
 	{
 		'name': 'apicomplexa',
 		'rank': 'phylum',
-		'parent': 'sar supergroup',
+		'parent': 'myzozoa',
 		'range': 'ww',
 	},
 	{
@@ -794,6 +794,14 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'bacilli',
 		'range': 'ww',
+	},
+	{
+		'name': 'bacillariophyceae',
+		'rank': 'class',
+		'parent': 'ochrophytina',
+		'range': 'wo',
+		'age': 200, // "jurassic"
+		'desc': 'Diatom',
 	},
 	{
 		'name': 'bacilli',
@@ -2020,6 +2028,14 @@ const lifeData = [
 		'desc': 'Fonio',
 	},
 	{
+		'name': 'dinoflagellata',
+		'rank': 'superclass',
+		'parent': 'myzozoa',
+		'range': 'ww',
+		'age': 240,
+		'desc': 'Dinoflagellate',
+	},
+	{
 		'name': 'dioscorea',
 		'rank': 'genus',
 		'parent': 'dioscoreaceae',
@@ -2480,6 +2496,13 @@ const lifeData = [
 		'age': 78.9,
 	},
 	{
+		'name': 'foraminifera',
+		'rank': 'infraphylum',
+		'parent': 'retaria',
+		'range': 'ww',
+		'age': 542,
+	},
+	{
 		'name': 'formicidae',
 		'rank': 'family',
 		'parent': 'hymenoptera',
@@ -2663,7 +2686,7 @@ const lifeData = [
 	{
 		'name': 'gyrista',
 		'rank': 'phylum',
-		'parent': 'sar supergroup',
+		'parent': 'harosa',
 		'range': 'ww',
 	},
 	// H
@@ -2672,6 +2695,14 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'aconoidasida',
 		'range': 'ww',
+	},
+	{
+		'name': 'harosa',
+		'rank': 'subkingdom',
+		'parent': 'diaphoretickes',
+		'range': 'ww',
+		'age': 736,
+		'desc': 'SAR supergroup',
 	},
 	{
 		'name': 'helianthus',
@@ -3637,6 +3668,12 @@ const lifeData = [
 		'parent': 'magnoliales',
 		'range': 'ww',
 	},
+	{
+		'name': 'myzozoa',
+		'rank': 'phylum',
+		'parent': 'harosa',
+		'range': 'ww',
+	},
 	// N
 	{
 		'name': 'naegleria',
@@ -4596,6 +4633,14 @@ const lifeData = [
 		'desc': 'Plum',
 	},
 	{
+		'name': 'prymnesiophyceae',
+		'rank': 'class',
+		'parent': 'diaphoretickes',
+		'range': 'wo',
+		'age': 205, // "rhaetian"
+		'desc': 'Coccolithophore',
+	},
+	{
 		'name': 'pseudofungi',
 		'rank': 'subphylum',
 		'parent': 'gyrista',
@@ -4704,6 +4749,13 @@ const lifeData = [
 	},
 	// R
 	{
+		'name': 'radiolaria',
+		'rank': 'subphylum',
+		'parent': 'retaria',
+		'range': 'ww',
+		'age': 538, // 'cambrian'
+	},
+	{
 		'name': 'raphanus',
 		'rank': 'genus',
 		'parent': 'brassicaceae',
@@ -4728,6 +4780,12 @@ const lifeData = [
 		'parent': 'amniota',
 		'range': 'ww',
 		'age': 312,
+	},
+	{
+		'name': 'retaria',
+		'rank': 'phylum',
+		'parent': 'harosa',
+		'range': 'ww',
 	},
 	{
 		'name': 'rhipidistia',
@@ -4860,13 +4918,6 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'malvids',
 		'range': 'ww',
-	},
-	{
-		'name': 'sar supergroup',
-		'rank': 'clade',
-		'parent': 'diaphoretickes',
-		'range': 'ww',
-		'age': 736,
 	},
 	{
 		'name': 'sarcocystidae',
