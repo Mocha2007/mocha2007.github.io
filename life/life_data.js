@@ -331,7 +331,7 @@ const lifeData = [
 	{
 		'name': 'amorphea',
 		'rank': 'clade',
-		'parent': 'orthokaryota',
+		'parent': 'eukaryota',
 		'range': 'ww',
 		'age': 1400,
 	},
@@ -953,6 +953,13 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'fagales',
 		'range': 'ww',
+	},
+	{
+		'name': 'bikonta',
+		'rank': 'clade',
+		'parent': 'eukaryota',
+		'range': 'ww',
+		'age': 1600, // "mesoproterozoic"
 	},
 	{
 		'name': 'bilateria',
@@ -2003,7 +2010,7 @@ const lifeData = [
 	{
 		'name': 'diaphoretickes',
 		'rank': 'clade',
-		'parent': 'orthokaryota',
+		'parent': 'bikonta',
 		'range': 'ww',
 	},
 	{
@@ -2100,7 +2107,7 @@ const lifeData = [
 	{
 		'name': 'discoba',
 		'rank': 'clade',
-		'parent': 'eukaryota',
+		'parent': 'bikonta',
 		'range': 'ww',
 	},
 	{
@@ -3504,6 +3511,12 @@ const lifeData = [
 		'desc': 'Colossal Squid',
 	},
 	{
+		'name': 'metamonada',
+		'rank': 'phylum',
+		'parent': 'bikonta',
+		'range': 'ww',
+	},
+	{
 		'name': 'mollusca',
 		'rank': 'phylum',
 		'parent': 'platytrochozoa',
@@ -3891,12 +3904,6 @@ const lifeData = [
 		},
 	},
 	{
-		'name': 'orthokaryota',
-		'rank': 'clade',
-		'parent': 'eukaryota',
-		'range': 'ww',
-	},
-	{
 		'name': 'oryza',
 		'rank': 'genus',
 		'parent': 'oryzoideae',
@@ -4114,7 +4121,7 @@ const lifeData = [
 	{
 		'name': 'parabasalia',
 		'rank': 'clade',
-		'parent': 'eukaryota',
+		'parent': 'metamonada',
 		'range': 'ww',
 	},
 	{
