@@ -132,7 +132,7 @@ class Taxon {
 	get i(){
 		return lifeData.findIndex(o => o.name === this.name);
 	}
-	/** @returns {string|undefined} */
+	/** @returns {Taxon|undefined} */
 	get kingdom(){
 		if (this.rank === 'kingdom')
 			return this;
@@ -345,10 +345,19 @@ function main(){
 function stats(){
 	const total = lifeData.length;
 	console.log(`Loaded ${total} entries.`);
-	['animalia', 'plantae', 'fungi', 'other'].forEach(s => {
-		const t = Taxon.fromString(s);
-		const n = Taxon.taxa.filter(x => x.kingdom === t).length;
-		console.info(`${n} taxa (${Math.round(100*n/total)}%) in kingdom ${s}`);
+	const kingdoms = {};
+	Taxon.taxa.forEach(t => {
+		let key = 'N/A';
+		if (t.kingdom)
+			key = t.kingdom.name;
+		if (kingdoms[key])
+			kingdoms[key]++;
+		else
+			kingdoms[key] = 1;
+	});
+	Object.keys(kingdoms).forEach(ks => {
+		const n = kingdoms[ks];
+		console.info(`${n} taxa (${Math.round(100*n/total)}%) in kingdom ${ks}`);
 	});
 	/*
 	const ranks = {};
