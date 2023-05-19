@@ -867,18 +867,38 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'bangiales',
 		'range': 'wo',
+		'age': 1047, // bangiomorpha
 	},
 	{
 		'name': 'bangiales',
 		'rank': 'order',
 		'parent': 'bangiophyceae',
 		'range': 'wo',
+		'age': 1600, // rafatazmia
+	},
+	{
+		'name': 'bangiomorpha',
+		'rank': 'genus',
+		'parent': 'bangiaceae',
+		'range': 'na',
+		'age': 1047,
+		'extinct': true,
+	},
+	{
+		'name': 'bangiomorpha pubescens',
+		'rank': 'species',
+		'parent': 'bangiomorpha',
+		'range': 'na',
+		'age': 1047,
+		'extinct': true,
+		'desc': 'First known sexually reproducing organism',
 	},
 	{
 		'name': 'bangiophyceae',
 		'rank': 'class',
 		'parent': 'rhodophyta',
 		'range': 'wo',
+		'age': 1600, // Rafatazmia
 	},
 	{
 		'name': 'basidiomycota',
@@ -4660,7 +4680,7 @@ const lifeData = [
 		'rank': 'division',
 		'parent': 'archaeplastida',
 		'range': 'wo',
-		'age': 1300, // +/- 300
+		'age': 1600, // 'mesoproterozoic'
 		'desc': 'Red Algae',
 	},
 	{
