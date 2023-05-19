@@ -177,6 +177,7 @@ const regions = {
 		'WO': 'World Ocean',
 			'AL': 'Atlantic Ocean',
 			'PA': 'Pacific Ocean',
+			'SO': 'Southern Ocean',
 	'XX': 'Extinct',
 };
 

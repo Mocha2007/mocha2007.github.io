@@ -576,6 +576,25 @@ const lifeData = [
 		'age': 1600,
 	},
 	{
+		'name': 'architeuthidae',
+		'rank': 'family',
+		'parent': 'oegopsida',
+		'range': 'wo',
+	},
+	{
+		'name': 'architeuthis',
+		'rank': 'genus',
+		'parent': 'architeuthidae',
+		'range': 'wo',
+	},
+	{
+		'name': 'architeuthis dux',
+		'rank': 'species',
+		'parent': 'architeuthis',
+		'range': 'wo',
+		'desc': 'Giant Squid',
+	},
+	{
 		'name': 'archosauria',
 		'rank': 'clade',
 		'parent': 'sauria',
@@ -1714,6 +1733,12 @@ const lifeData = [
 		'desc': 'Candidate phyla radiation',
 	},
 	{
+		'name': 'cranchiidae',
+		'rank': 'family',
+		'parent': 'oegopsida',
+		'range': 'wo',
+	},
+	{
 		'name': 'cricetidae',
 		'rank': 'family',
 		'parent': 'muroidea',
@@ -1955,6 +1980,19 @@ const lifeData = [
 		'desc': 'In deuterostomes, the first opening, the blastopore, becomes the anus, while in protostomes, it becomes the mouth.',
 	},
 	{
+		'name': 'diantamoeba',
+		'rank': 'genus',
+		'parent': 'monocercomonadidae',
+		'range': 'ww',
+	},
+	{
+		'name': 'diantamoeba fragilis',
+		'rank': 'species',
+		'parent': 'diantamoeba',
+		'range': 'ww',
+		'desc': 'Diantamoebiasis-causing protozoan',
+	},
+	{
 		'name': 'diaphoretickes',
 		'rank': 'clade',
 		'parent': 'orthokaryota',
@@ -1973,19 +2011,6 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
-	},
-	{
-		'name': 'diantamoeba',
-		'rank': 'genus',
-		'parent': 'monocercomonadidae',
-		'range': 'ww',
-	},
-	{
-		'name': 'diantamoeba fragilis',
-		'rank': 'species',
-		'parent': 'diantamoeba',
-		'range': 'ww',
-		'desc': 'Diantamoebiasis-causing protozoan',
 	},
 	{
 		'name': 'digitaria',
@@ -3428,6 +3453,19 @@ const lifeData = [
 		'desc': 'Jellyfish',
 	},
 	{
+		'name': 'mesonychoteuthis',
+		'rank': 'genus',
+		'parent': 'cranchiidae',
+		'range': 'so',
+	},
+	{
+		'name': 'mesonychoteuthis hamiltoni',
+		'rank': 'species',
+		'parent': 'mesonychoteuthis',
+		'range': 'so',
+		'desc': 'Colossal Squid',
+	},
+	{
 		'name': 'mollusca',
 		'rank': 'phylum',
 		'parent': 'platytrochozoa',
@@ -3687,6 +3725,12 @@ const lifeData = [
 		'parent': 'ocimum',
 		'range': 'ow',
 		'desc': 'Basil',
+	},
+	{
+		'name': 'oegopsida',
+		'rank': 'order',
+		'parent': 'cephalopoda',
+		'range': 'wo',
 	},
 	{
 		'name': 'olfactores',
