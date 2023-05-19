@@ -2561,6 +2561,13 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'gastropoda',
+		'rank': 'class',
+		'parent': 'mollusca',
+		'range': 'ww',
+		'desc': 'Slugs and Snails',
+	},
+	{
 		'name': 'ginkgo',
 		'rank': 'genus',
 		'parent': 'ginkgoaceae',
@@ -3645,6 +3652,21 @@ const lifeData = [
 		'desc': 'Brain-eating Amoeba',
 	},
 	{
+		'name': 'nautilida',
+		'rank': 'order',
+		'parent': 'cephalopoda',
+		'range': 'wo',
+		'age': 419, // "devonian"
+	},
+	{
+		'name': 'nautilidae',
+		'rank': 'family',
+		'parent': 'nautilida',
+		'range': 'wo',
+		'age': 230,
+		'desc': 'Nautilus',
+	},
+	{
 		'name': 'nemopilema',
 		'rank': 'genus',
 		'parent': 'rhizostomatidae',
@@ -3725,6 +3747,14 @@ const lifeData = [
 		'parent': 'ocimum',
 		'range': 'ow',
 		'desc': 'Basil',
+	},
+	{
+		'name': 'octopoda',
+		'rank': 'order',
+		'parent': 'cephalopoda',
+		'range': 'wo',
+		'age': 175, // "middle jurassic"
+		'desc': 'Octopus',
 	},
 	{
 		'name': 'oegopsida',
@@ -4951,6 +4981,14 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'scyphozoa',
 		'range': 'wo',
+	},
+	{
+		'name': 'sepiida',
+		'rank': 'order',
+		'parent': 'cephalopoda',
+		'range': 'wo',
+		'age': 72, // "maastrichtian"
+		'desc': 'Cuttlefish',
 	},
 	{
 		'name': 'serpentes',
