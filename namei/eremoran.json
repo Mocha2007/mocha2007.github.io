@@ -7123,6 +7123,23 @@
 		]
 	},
 	{
+		"title": "kenz",
+		"etym": "I/PEN/*kens",
+		"cat": "v.",
+		"defList": [
+			"be empty"
+		]
+	},
+	{
+		"title": "kenzik",
+		"etym": "C/kenz/-zik",
+		"cat": "n., 2nd",
+		"defList": [
+			"kenzik, a disease affecting [[temêmuk]] wherein the sex-determining characteristic fails to materialize"
+		],
+		"categories": ["disease"]
+	},
+	{
 		"title": "ker",
 		"etym": "C/kek/-r",
 		"cat": "n., 1st",
@@ -14207,6 +14224,24 @@
 		"categories": ["war"]
 	},
 	{
+		"title": "ukutukilz",
+		"etym": "C/uku/tukilk",
+		"cat": "v.",
+		"defList": [
+			"be mindless, be possessed"
+		],
+		"categories": ["disease"]
+	},
+	{
+		"title": "ukutukilzik",
+		"etym": "C/ukutukilz/-zik",
+		"cat": "n., 2nd",
+		"defList": [
+			"rabies"
+		],
+		"categories": ["disease"]
+	},
+	{
 		"title": "ukuzesti",
 		"etym": "C/uku/zesti",
 		"cat": "adj., s-triggering",
@@ -14238,6 +14273,15 @@
 		],
 		"notes": "For black specifically, see ''usiu''",
 		"categories": ["color"]
+	},
+	{
+		"title": "ulzik",
+		"etym": "C/ulu/-zik",
+		"cat": "n., 2nd",
+		"defList": [
+			"anthrax"
+		],
+		"categories": ["disease"]
 	},
 	{
 		"title": "umfêlar",
