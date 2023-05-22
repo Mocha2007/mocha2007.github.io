@@ -4250,6 +4250,23 @@
 		]
 	},
 	{
+		"title": "dôêsurozik",
+		"etym": "C/dôêz/surozik",
+		"cat": "n., 2nd",
+		"defList": [
+			"trachoma"
+		],
+		"categories": ["disease"]
+	},
+	{
+		"title": "dôêz",
+		"etym": "I/PEN/*daôês",
+		"cat": "v.",
+		"defList": [
+			"be rough (as opposed to smooth)"
+		]
+	},
+	{
 		"title": "dôfilsaz",
 		"etym": "C/dô/hilsaz",
 		"cat": "v.",
@@ -8159,6 +8176,15 @@
 		"defList": [
 			"frame, surround with"
 		]
+	},
+	{
+		"title": "kulsurozik",
+		"etym": "C/kulu/surozik",
+		"cat": "n., 2nd",
+		"defList": [
+			"myopia, nearsightedness"
+		],
+		"categories": ["disease"]
 	},
 	{
 		"title": "kulu",
@@ -13082,6 +13108,15 @@
 		]
 	},
 	{
+		"title": "surozik",
+		"etym": "C/suro/-zik",
+		"cat": "n., 2nd",
+		"defList": [
+			"an eye disease"
+		],
+		"categories": ["disease"]
+	},
+	{
 		"title": "sustôz",
 		"etym": "B/stôd/sudôz",
 		"cat": "v.",
@@ -13577,6 +13612,15 @@
 			"arrow"
 		],
 		"categories": ["war"]
+	},
+	{
+		"title": "tisurozik",
+		"etym": "C/tiu/surozik",
+		"cat": "n., 2nd",
+		"defList": [
+			"hyperopia, farsightedness"
+		],
+		"categories": ["disease"]
 	},
 	{
 		"title": "tiu",
