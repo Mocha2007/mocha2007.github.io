@@ -1573,14 +1573,24 @@
 		"categories": ["plant", "vegetable"]
 	},
 	{
-		"title": "ba",
+		"title": "bab",
 		"etym": "I/PEN/*bab/sponge",
 		"cat": "n., 4th",
 		"defList": [
 			"sponge"
 		],
 		"categories": ["animal"],
-		"notes": "Although sponges are technically animals, they do not fall under the Eremoran classification of animate since they are sessile. This word is sometimes suffixed with -t to distinguish it from ba 'chickpea' when necessary."
+		"pron": "ba",
+		"notes": "Due to historical reasons, this word has an irregular spelling; *nu would be expected. Although sponges are technically animals, they do not fall under the Eremoran classification of animate since they are sessile. This word is sometimes pronounced ''bat'' to distinguish it from ba 'chickpea' when necessary."
+	},
+	{
+		"title": "bablibelzik",
+		"etym": "C/bab/libelzik",
+		"cat": "n., 2nd",
+		"defList": [
+			"scurvy"
+		],
+		"categories": ["disease"]
 	},
 	{
 		"title": "babz",
@@ -1731,7 +1741,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"death"
-		]
+		],
+		"categories": ["disease"]
 	},
 	{
 		"title": "balim",
@@ -1752,7 +1763,8 @@
 			"(intransitive) extinguish",
 			"(of food) go bad"
 		],
-		"notes": "Note: With causative, means kill."
+		"notes": "Note: With causative, means kill.",
+		"categories": ["disease"]
 	},
 	{
 		"title": "baliz",
@@ -3122,6 +3134,15 @@
 			"eyebrow"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "bradz",
+		"etym": "I/PEN/*βrads",
+		"cat": "v.",
+		"defList": [
+			"starve"
+		],
+		"categories": ["disease", "food"]
 	},
 	{
 		"title": "breka",
@@ -8792,6 +8813,24 @@
 		]
 	},
 	{
+		"title": "libel",
+		"etym": "I/PEN/*libel",
+		"cat": "n., 4th",
+		"defList": [
+			"gums (of the mouth)"
+		],
+		"categories": ["body part"]
+	},
+	{
+		"title": "libelzik",
+		"etym": "C/libel/-zik",
+		"cat": "n., 2nd",
+		"defList": [
+			"gum disease"
+		],
+		"categories": ["disease"]
+	},
+	{
 		"title": "liboêk",
 		"etym": "C/liboz/-ê",
 		"cat": "n., 2nd",
@@ -10988,6 +11027,15 @@
 		"defList": [
 			"crazy"
 		]
+	},
+	{
+		"title": "okazik",
+		"etym": "C/oka/-zik",
+		"cat": "n., 2nd",
+		"defList": [
+			"bone disease (eg. rickets or osteoporosis)"
+		],
+		"categories": ["disease"]
 	},
 	{
 		"title": "olol",
