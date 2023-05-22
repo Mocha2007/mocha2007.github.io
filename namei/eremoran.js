@@ -1194,8 +1194,9 @@ function computeStats(){
 		// add categories to lemmas FIRST AND THEN VERIFY
 		if (o.categories && o.categories.length){
 			const catdd = document.createElement('dd');
-			catdd.innerHTML = 'Categories: ';
+			catdd.innerHTML = 'Categories:';
 			o.categories.forEach(catName => {
+				catdd.appendChild(document.createTextNode(' '));
 				const elem = document.createElement('a');
 				elem.href = '#Vocab_Search';
 				elem.onclick = () => {
