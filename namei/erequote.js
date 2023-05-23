@@ -129,4 +129,6 @@ const translationChallenges = [
 	'Dir zetidot bamkaldoz.',
 	// In the end, it is impossible not to become what others believe you are.
 	'Nami i nasisur hal nanaur eto i kudam ad dindôkaz uid tômz uid.',
+	// https://old.reddit.com/r/conlangs/comments/13ivbek/translate_this_into_your_best_conlang/
+	'Kinam ad ne? Mam ad mok ne? Uid, komba ad busk ku.',
 ];

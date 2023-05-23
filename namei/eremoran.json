@@ -7447,6 +7447,15 @@
 		"categories": ["number"]
 	},
 	{
+		"title": "klôbat",
+		"etym": "I/PEN/*klôβa-t",
+		"cat": "adj.",
+		"defList": [
+			"garden"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "klu",
 		"etym": "I/PEN/*xlu/sticky",
 		"cat": "adj., n. 4th",
@@ -7576,6 +7585,14 @@
 		"cat": "v.",
 		"defList": [
 			"flood"
+		]
+	},
+	{
+		"title": "komba",
+		"etym": "L/VAZ/komwa/park, garden",
+		"cat": "n., 4th",
+		"defList": [
+			"park"
 		]
 	},
 	{
@@ -9078,6 +9095,14 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "madim",
+		"etym": "C/mat/dim",
+		"cat": "n., 5th",
+		"defList": [
+			"yard"
+		]
+	},
+	{
 		"title": "madinfanuz",
 		"etym": "C/mam/dinfanuz",
 		"cat": "v.",
@@ -9620,6 +9645,15 @@
 			"(+ ad) despite, although"
 		],
 		"notes": "Roughly equivalent to 'is/has at/since some time previous...'; cf. la. ''iam''"
+	},
+	{
+		"title": "mokar",
+		"etym": "B/mam/okar",
+		"cat": "n., 1st",
+		"defList": [
+			"housewife"
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "môlz",
@@ -11036,6 +11070,14 @@
 			"bone disease (eg. rickets or osteoporosis)"
 		],
 		"categories": ["disease"]
+	},
+	{
+		"title": "ôlê",
+		"etym": "L/VAZ/awle/courtyard",
+		"cat": "n., 4th",
+		"defList": [
+			"courtyard"
+		]
 	},
 	{
 		"title": "olol",

@@ -389,3 +389,5 @@ sulazay=n, n=magic mushroom
 sulazayšamu=n, n=study of the cultivation of magic mushrooms
 daphne=n, n=bay laurel
 catupa=n, n=ginger
+komwa=n, n=park, garden
+awle=n, n=courtyard
