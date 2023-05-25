@@ -65,6 +65,12 @@ const lifeData = [
 		'age': 100,
 	},
 	{
+		'name': 'acetabularia',
+		'rank': 'genus',
+		'parent': 'polyphysaceae',
+		'range': 'ww',
+	},
+	{
 		'name': 'acinonychini',
 		'rank': 'tribe',
 		'parent': 'felinae',
@@ -264,6 +270,12 @@ const lifeData = [
 		'name': 'alphaproteobacteria',
 		'rank': 'class',
 		'parent': 'pseudomonadota',
+		'range': 'ww',
+	},
+	{
+		'name': 'alveolata',
+		'rank': 'clade',
+		'parent': 'harosa',
 		'range': 'ww',
 	},
 	{
@@ -723,6 +735,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'astrorhizida',
+		'rank': 'order',
+		'parent': 'monothalamea',
+		'range': 'wo',
+	},
+	{
 		'name': 'australopithecina',
 		'rank': 'subtribe',
 		'parent': 'hominini',
@@ -1098,6 +1116,12 @@ const lifeData = [
 		'age': 340,
 		'desc': 'Moss',
 	},
+	{
+		'name': 'bryopsidales',
+		'rank': 'order',
+		'parent': 'ulvophyceae',
+		'range': 'ww',
+	},
 	// C
 	{
 		'name': 'camelidae',
@@ -1353,6 +1377,18 @@ const lifeData = [
 		'range': 'nh',
 	},
 	{
+		'name': 'caulerpa',
+		'rank': 'genus',
+		'parent': 'caulerpaceae',
+		'range': 'eq',
+	},
+	{
+		'name': 'caulerpaceae',
+		'rank': 'family',
+		'parent': 'bryopsidales',
+		'range': 'ww',
+	},
+	{
 		'name': 'cavia',
 		'rank': 'genus',
 		'parent': 'caviidae',
@@ -1435,6 +1471,12 @@ const lifeData = [
 		'range': 'na',
 	},
 	{
+		'name': 'cercozoa',
+		'rank': 'phylum',
+		'parent': 'rhizaria',
+		'range': 'ww',
+	},
+	{
 		'name': 'cervidae',
 		'rank': 'family',
 		'parent': 'cetruminantia',
@@ -1504,6 +1546,12 @@ const lifeData = [
 		'parent': 'pacmad clade',
 	},
 	{
+		'name': 'chlorophyta',
+		'rank': 'division',
+		'parent': 'plantae',
+		'range': 'ww',
+	},
+	{
 		'name': 'choanoflagellatea',
 		'rank': 'class',
 		'parent': 'choanozoa',
@@ -1538,6 +1586,12 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'asteroideae',
 		'range': 'ea',
+	},
+	{
+		'name': 'ciliophora',
+		'rank': 'phylum',
+		'parent': 'alveolata',
+		'range': 'ww',
 	},
 	{
 		'name': 'cinnamomum',
@@ -1934,6 +1988,12 @@ const lifeData = [
 		'desc': 'Swan',
 	},
 	// D
+	{
+		'name': 'dasycladales',
+		'rank': 'order',
+		'parent': 'ulvophyceae',
+		'range': 'ww',
+	},
 	{
 		'name': 'daucus',
 		'rank': 'genus',
@@ -2690,6 +2750,36 @@ const lifeData = [
 		'desc': 'Cotton',
 	},
 	{
+		'name': 'gromia',
+		'rank': 'genus',
+		'parent': 'gromiidae',
+		'range': 'ww',
+	},
+	{
+		'name': 'gromia sphaerica',
+		'rank': 'genus',
+		'parent': 'gromiidae',
+		'range': 'ww',
+	},
+	{
+		'name': 'gromiida',
+		'rank': 'order',
+		'parent': 'gromiidea',
+		'range': 'ww',
+	},
+	{
+		'name': 'gromiidae',
+		'rank': 'family',
+		'parent': 'gromiida',
+		'range': 'ww',
+	},
+	{
+		'name': 'gromiidea',
+		'rank': 'class',
+		'parent': 'cercozoa',
+		'range': 'ww',
+	},
+	{
 		'name': 'gymnospermae',
 		'rank': 'clade',
 		'parent': 'spermatophyta',
@@ -2747,6 +2837,18 @@ const lifeData = [
 		'name': 'heterolobosea',
 		'rank': 'class',
 		'parent': 'percolozoa',
+		'range': 'ww',
+	},
+	{
+		'name': 'heterotrichea',
+		'rank': 'class',
+		'parent': 'ciliophora',
+		'range': 'ww',
+	},
+	{
+		'name': 'heterotrichida',
+		'rank': 'order',
+		'parent': 'heterotrichea',
 		'range': 'ww',
 	},
 	{
@@ -3568,6 +3670,12 @@ const lifeData = [
 		'age': 125,
 	},
 	{
+		'name': 'monothalamea',
+		'rank': 'class',
+		'parent': 'foraminifera',
+		'range': 'wo',
+	},
+	{
 		'name': 'monotremata',
 		'rank': 'order',
 		'parent': 'yinotheria',
@@ -3734,7 +3842,7 @@ const lifeData = [
 	{
 		'name': 'myzozoa',
 		'rank': 'phylum',
-		'parent': 'harosa',
+		'parent': 'alveolata',
 		'range': 'ww',
 	},
 	// N
@@ -4547,6 +4655,12 @@ const lifeData = [
 		'desc': 'Pollock',
 	},
 	{
+		'name': 'polyphysaceae',
+		'rank': 'family',
+		'parent': 'dasycladales',
+		'range': 'ww',
+	},
+	{
 		'name': 'polypodiopsida',
 		'rank': 'class',
 		'parent': 'tracheophyta',
@@ -4841,7 +4955,7 @@ const lifeData = [
 	{
 		'name': 'retaria',
 		'rank': 'phylum',
-		'parent': 'harosa',
+		'parent': 'rhizaria',
 		'range': 'ww',
 	},
 	{
@@ -4851,6 +4965,12 @@ const lifeData = [
 		'range': 'ww',
 		'age': 416,
 		'develop': 'lungs',
+	},
+	{
+		'name': 'rhizaria',
+		'rank': 'clade',
+		'parent': 'harosa',
+		'range': 'ww',
 	},
 	{
 		'name': 'rhizostomatidae',
@@ -5246,6 +5366,18 @@ const lifeData = [
 		'desc': 'Penguin',
 	},
 	{
+		'name': 'spiculosiphon',
+		'rank': 'genus',
+		'parent': 'stegnamminidae',
+		'range': 'wo',
+	},
+	{
+		'name': 'spiculosiphon oceana',
+		'rank': 'species',
+		'parent': 'spiculosiphon',
+		'range': 'wo',
+	},
+	{
 		'name': 'spinacia',
 		'rank': 'genus',
 		'parent': 'amaranthaceae',
@@ -5271,6 +5403,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'stegnamminidae',
+		'rank': 'family',
+		'parent': 'astrorhizida',
+		'range': 'wo',
+	},
+	{
 		'name': 'stegosauridae',
 		'rank': 'family',
 		'parent': 'ornithischia',
@@ -5283,6 +5421,24 @@ const lifeData = [
 		'parent': 'stegosauridae',
 		'extinct': true,
 		'range': 'nh',
+	},
+	{
+		'name': 'stentor',
+		'rank': 'genus',
+		'parent': 'stentoridae',
+		'range': 'ww',
+	},
+	{
+		'name': 'stentor coeruleus',
+		'rank': 'species',
+		'parent': 'stentor',
+		'range': 'ww',
+	},
+	{
+		'name': 'stentoridae',
+		'rank': 'family',
+		'parent': 'heterotrichida',
+		'range': 'ww',
 	},
 	{
 		'name': 'strigiformes',
@@ -5670,6 +5826,12 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'semaeostomeae',
 		'range': 'wo',
+	},
+	{
+		'name': 'ulvophyceae',
+		'rank': 'class',
+		'parent': 'chlorophyta',
+		'range': 'ww',
 	},
 	{
 		'name': 'ungulata',
