@@ -3327,6 +3327,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "bufut",
+		"etym": "L/VAZ/vu'u/flute",
+		"cat": "n., 3rd",
+		"defList": [
+			"flute, clarinet, pipe"
+		],
+		"categories": ["music"]
+	},
+	{
 		"title": "buk",
 		"etym": "I/PEN/*βux/sheep",
 		"cat": "n., 2nd",
@@ -3488,15 +3497,6 @@
 			"clothing, clothes"
 		],
 		"categories": ["clothing", "v3_trade"]
-	},
-	{
-		"title": "buut",
-		"etym": "L/VAZ/vu'u/flute",
-		"cat": "n., 3rd",
-		"defList": [
-			"flute, clarinet, pipe"
-		],
-		"categories": ["music"]
 	},
 	{
 		"title": "da",
@@ -4961,7 +4961,7 @@
 		]
 	},
 	{
-		"title": "epeêr",
+		"title": "epêr",
 		"etym": "C/epet/-ê",
 		"cat": "n., 1st",
 		"defList": [
@@ -11058,8 +11058,8 @@
 		"categories": ["toponym"]
 	},
 	{
-		"title": "nizinsaua",
-		"etym": "B/nizinar/saua",
+		"title": "nizinsau",
+		"etym": "B/nizinar/sau",
 		"cat": "n., 4th",
 		"defList": [
 			"galangal"
@@ -11265,6 +11265,15 @@
 		]
 	},
 	{
+		"title": "nufu",
+		"etym": "L/PRE/nuh/nude",
+		"cat": "adj.",
+		"defList": [
+			"nude, naked"
+		],
+		"categories": ["sex"]
+	},
+	{
 		"title": "nul",
 		"etym": "r/nuela",
 		"cat": "n., 4th",
@@ -11400,15 +11409,6 @@
 			"tumble, stumble, trip down, be knocked down"
 		],
 		"categories": ["motion"]
-	},
-	{
-		"title": "nuu",
-		"etym": "L/PRE/nuh/nude",
-		"cat": "adj.",
-		"defList": [
-			"nude, naked"
-		],
-		"categories": ["sex"]
 	},
 	{
 		"title": "nuz",
@@ -12635,7 +12635,7 @@
 		"categories": ["plant", "tree", "spice"]
 	},
 	{
-		"title": "saua",
+		"title": "sau",
 		"etym": "L/VAZ/sawuwa/ginger",
 		"cat": "n., 4th",
 		"defList": [
@@ -14794,6 +14794,15 @@
 		"categories": ["drink"]
 	},
 	{
+		"title": "tut",
+		"etym": "C/tuz/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"fried food"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "tutukumkimôm",
 		"etym": "C/tutut/kumkimôm",
 		"cat": "n., 5th",
@@ -14820,20 +14829,12 @@
 		]
 	},
 	{
-		"title": "tuu",
-		"etym": "C/tuz/-u",
-		"cat": "adj.",
-		"defList": [
-			"fried"
-		],
-		"categories": ["food"]
-	},
-	{
 		"title": "tuz",
 		"etym": "I/PEN/*tus/fry",
 		"cat": "v.",
 		"defList": [
-			"fry"
+			"fry",
+			"be fried"
 		],
 		"categories": ["food"]
 	},
