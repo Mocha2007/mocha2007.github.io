@@ -8684,15 +8684,6 @@
 		]
 	},
 	{
-		"title": "kuska",
-		"etym": "I/PEN/*kutʃka",
-		"cat": "n., 4th",
-		"defList": [
-			"moss"
-		],
-		"categories": ["plant"]
-	},
-	{
 		"title": "kusedaz",
 		"etym": "C/ku/sedam",
 		"cat": "v.",
@@ -8718,6 +8709,15 @@
 			"(astronomy) conjunction"
 		],
 		"categories": ["astronomy"]
+	},
+	{
+		"title": "kuska",
+		"etym": "I/PEN/*kutʃka",
+		"cat": "n., 4th",
+		"defList": [
+			"moss"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "kutokar",
