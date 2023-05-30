@@ -1563,6 +1563,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "azik",
+		"etym": "I/PEN/*asi-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"warbler"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "azlisêm",
 		"etym": "C/azlu/-isêm",
 		"cat": "n., 5th",
@@ -5761,6 +5770,15 @@
 		]
 	},
 	{
+		"title": "hêkatok",
+		"etym": "I/PEN/*ɸêkato-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"starling"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "hekaz",
 		"etym": "C/heka/-z",
 		"cat": "v.",
@@ -6935,6 +6953,15 @@
 		"categories": ["motion"]
 	},
 	{
+		"title": "ka-",
+		"etym": "I/PEN/*xaiu/ten",
+		"cat": "aff.",
+		"defList": [
+			"(archaic) ten"
+		],
+		"categories": ["number"]
+	},
+	{
 		"title": "kaba",
 		"etym": "I/PEN/*xaβia/hay",
 		"cat": "n., 4th",
@@ -7404,6 +7431,16 @@
 		],
 		"notes": "kasu is one of a handful of nouns ending in -u.",
 		"categories": ["body part"]
+	},
+	{
+		"title": "kasunk",
+		"etym": "I/PEN/*xaʃun-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"swallow"
+		],
+		"categories": ["animal", "bird"],
+		"notes": "Possibly derived from [[kasu]]"
 	},
 	{
 		"title": "kaz",
@@ -13959,6 +13996,15 @@
 			"tongs"
 		],
 		"categories": ["tool"]
+	},
+	{
+		"title": "tamunilk",
+		"etym": "I/PEN/*tomunil-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"lark"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "tan",
