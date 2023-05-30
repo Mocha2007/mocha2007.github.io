@@ -101,8 +101,10 @@
 		"etym": "I/PEN/*-xair",
 		"cat": "aff.",
 		"defList": [
-			"(polite suffix for human referents, cf. {{wt|jp|さん}})"
-		]
+			"(polite suffix for human referents, cf. {{wt|jp|さん}})",
+			"polite 1st/2nd person pronoun"
+		],
+		"categories": ["personal pronoun"]
 	},
 	{
 		"title": "-kiz",
@@ -9262,6 +9264,15 @@
 		]
 	},
 	{
+		"title": "mar",
+		"etym": "C/mat/-r",
+		"cat": "pron.",
+		"defList": [
+			"1st/2nd person informal pronoun"
+		],
+		"categories": ["personal pronoun"]
+	},
+	{
 		"title": "mara",
 		"etym": "I/PEN/*mara/blood",
 		"cat": "n., 4th",
@@ -9458,6 +9469,15 @@
 		"categories": ["animal", "fantasy"]
 	},
 	{
+		"title": "melar",
+		"etym": "C/mor/ela",
+		"cat": "pron.",
+		"defList": [
+			"1st/2nd person informal pronoun"
+		],
+		"categories": ["personal pronoun"]
+	},
+	{
 		"title": "melat",
 		"etym": "r/aramaelat",
 		"cat": "n., 3rd",
@@ -9645,6 +9665,15 @@
 			"(+ ad) despite, although"
 		],
 		"notes": "Roughly equivalent to 'is/has at/since some time previous...'; cf. la. ''iam''"
+	},
+	{
+		"title": "môk",
+		"etym": "C/mor/ou",
+		"cat": "pron.",
+		"defList": [
+			"1st/2nd person pronoun for communing with divines as clergy"
+		],
+		"categories": ["personal pronoun"]
 	},
 	{
 		"title": "mokar",
@@ -11050,9 +11079,10 @@
 		"defList": [
 			"(polite) woman",
 			"miss (like Ms., Mrs.)",
-			"wife (in monogamous relationships; esp. someone else's)"
+			"wife (in monogamous relationships; esp. someone else's)",
+			"1st/2nd person female pronoun"
 		],
-		"categories": ["family", "person"]
+		"categories": ["family", "person", "personal pronoun"]
 	},
 	{
 		"title": "ôkarinu",
@@ -11070,6 +11100,24 @@
 			"bone disease (eg. rickets or osteoporosis)"
 		],
 		"categories": ["disease"]
+	},
+	{
+		"title": "okek",
+		"etym": "C/ou/kek",
+		"cat": "pron.",
+		"defList": [
+			"1st/2nd person pronoun for communing with deities as layfolk"
+		],
+		"categories": ["personal pronoun"]
+	},
+	{
+		"title": "oker",
+		"etym": "C/ou/ker",
+		"cat": "pron.",
+		"defList": [
+			"1st/2nd person formal pronoun"
+		],
+		"categories": ["personal pronoun"]
 	},
 	{
 		"title": "ôlê",
@@ -11103,7 +11151,8 @@
 			"(to equal) I, we, 1st person pronoun",
 			"(to equal) you, 2nd person pronoun"
 		],
-		"notes": "see <a href=\"#Pronouns\">Pronouns</a> for more details"
+		"notes": "see <a href=\"#Pronouns\">Pronouns</a> for more details",
+		"categories": ["personal pronoun"]
 	},
 	{
 		"title": "omôr",
@@ -11113,7 +11162,8 @@
 			"(to inferior) I, we, 1st person pronoun",
 			"(to superior) you, 2nd person pronoun"
 		],
-		"notes": "see <a href=\"#Pronouns\">Pronouns</a> for more details"
+		"notes": "see <a href=\"#Pronouns\">Pronouns</a> for more details",
+		"categories": ["personal pronoun"]
 	},
 	{
 		"title": "omôrz",
@@ -14642,6 +14692,15 @@
 			"bear (sp. ursus thibetanus, and to a lesser extent ursus arctos and melursus ursinus)"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "utôzmêr",
+		"etym": "C/utôzmu/-ê",
+		"cat": "pron.",
+		"defList": [
+			"1st/2nd person pronoun; suggests unwelcome presence"
+		],
+		"categories": ["personal pronoun"]
 	},
 	{
 		"title": "utôzmu",
