@@ -3108,6 +3108,15 @@
 		"categories": ["emotion"]
 	},
 	{
+		"title": "bonk",
+		"etym": "I/PEN/*bon-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"boobie (esp. {{w|Sula dactylatra}})"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "bonrôm",
 		"etym": "C/bonrôz/-m",
 		"cat": "n., 5th",
@@ -6245,6 +6254,15 @@
 		]
 	},
 	{
+		"title": "hubesk",
+		"etym": "I/PEN/*ɸubetʃ-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"gannet"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "hubiz",
 		"etym": "I/PEN/*ɸubis",
 		"cat": "v.",
@@ -8184,6 +8202,15 @@
 		]
 	},
 	{
+		"title": "kuank",
+		"etym": "I/PEN/*xuxên-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"heron"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "kuarm",
 		"etym": "C/ku/arm",
 		"cat": "n., 5th",
@@ -9143,6 +9170,15 @@
 			"gum disease"
 		],
 		"categories": ["disease"]
+	},
+	{
+		"title": "libik",
+		"etym": "I/PEN/*liβi-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"pelican"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "liboêk",
@@ -10730,6 +10766,15 @@
 		"defList": [
 			"\"Wouldn't it be interesting if...\""
 		]
+	},
+	{
+		"title": "nenstak",
+		"etym": "I/PEN/*nensta-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"comorant"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "nes",
