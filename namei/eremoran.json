@@ -1883,6 +1883,14 @@
 		"categories": ["experiential"]
 	},
 	{
+		"title": "barelat",
+		"etym": "D/bart",
+		"cat": "n., 3rd",
+		"defList": [
+			"string, twine, wire"
+		]
+	},
+	{
 		"title": "barka",
 		"etym": "I/PEN/*bareka",
 		"cat": "n., 4th",
@@ -1890,14 +1898,6 @@
 			"tulip"
 		],
 		"categories": ["flower", "plant"]
-	},
-	{
-		"title": "barelat",
-		"etym": "D/bart",
-		"cat": "n., 3rd",
-		"defList": [
-			"string, twine, wire"
-		]
 	},
 	{
 		"title": "barliret",
@@ -5965,6 +5965,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "histral",
+		"etym": "I/PEN/*ɸistral",
+		"cat": "n., 4th",
+		"defList": [
+			"mold"
+		],
+		"categories": ["fungus"]
+	},
+	{
 		"title": "hiu",
 		"etym": "I/PEN/*ɸiu/rotten",
 		"cat": "adj.",
@@ -7887,6 +7896,15 @@
 		"categories": ["animal", "body part", "seafood"]
 	},
 	{
+		"title": "kren",
+		"etym": "I/PEN/*gren",
+		"cat": "n., 4th",
+		"defList": [
+			"clover"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "krifan",
 		"etym": "I/PEN/*griɸan/wing",
 		"cat": "n., 4th",
@@ -8664,6 +8682,15 @@
 		"defList": [
 			"how many, how much"
 		]
+	},
+	{
+		"title": "kuska",
+		"etym": "I/PEN/*kutʃka",
+		"cat": "n., 4th",
+		"defList": [
+			"moss"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "kusedaz",
@@ -11298,6 +11325,22 @@
 		],
 		"notes": "cf. ''umôrz'' which implies the speaker was the sole witness",
 		"categories": ["evidential"]
+	},
+	{
+		"title": "ona",
+		"etym": "I/PEN/*ona",
+		"cat": "n., 4th",
+		"defList": [
+			"rot"
+		]
+	},
+	{
+		"title": "onaz",
+		"etym": "C/ona/-z",
+		"cat": "v.",
+		"defList": [
+			"rot"
+		]
 	},
 	{
 		"title": "onkuk",
