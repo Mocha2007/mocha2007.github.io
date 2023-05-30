@@ -2615,6 +2615,15 @@
 		"categories": ["tool"]
 	},
 	{
+		"title": "bikno",
+		"etym": "I/PEN/*βixno",
+		"cat": "n., 4th",
+		"defList": [
+			"weed"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "bikrum",
 		"etym": "C/bim/krum",
 		"cat": "n., 5th",
@@ -7289,6 +7298,15 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "kilaz",
+		"etym": "I/PEN/*kilas",
+		"cat": "v.",
+		"defList": [
+			"fertilize"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "kili",
 		"etym": "I/PEN/*akili/heel",
 		"cat": "n., 4th",
@@ -9336,6 +9354,15 @@
 		"categories": ["metal", "v3_trade"]
 	},
 	{
+		"title": "marka",
+		"etym": "I/PEN/*marka",
+		"cat": "n., 4th",
+		"defList": [
+			"acorn"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "markla",
 		"etym": "I/PEN/*markla/thing",
 		"cat": "n., 4th",
@@ -9622,7 +9649,7 @@
 		"cat": "n., 4th",
 		"defList": [
 			"trunk (of a tree)",
-			"stem (of a plant)"
+			"stalk, stem (of a plant)"
 		],
 		"categories": ["plant"]
 	},
@@ -13334,7 +13361,8 @@
 		"etym": "C/talire/-m",
 		"cat": "n., 4th",
 		"defList": [
-			"(uncountable) wood"
+			"(uncountable) wood",
+			"(countable) log"
 		],
 		"categories": ["v3_trade"]
 	},
@@ -14309,6 +14337,15 @@
 			"be unneeded, be unnecessary, superfluous"
 		],
 		"categories": ["experiential"]
+	},
+	{
+		"title": "uki",
+		"etym": "I/PEN/*auki",
+		"cat": "n., 4th",
+		"defList": [
+			"pollen"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "uku",
