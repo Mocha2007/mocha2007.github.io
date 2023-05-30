@@ -6248,6 +6248,15 @@
 		]
 	},
 	{
+		"title": "honark",
+		"etym": "I/PEN/*ɸonar-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"oriole ({{w|Oriolus}})"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "hônt",
 		"etym": "C/hônz/-t",
 		"cat": "n., 3rd",
@@ -7930,6 +7939,15 @@
 		]
 	},
 	{
+		"title": "koldik",
+		"etym": "I/PEN/*goldi-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"shrike"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "komba",
 		"etym": "L/VAZ/komwa/park, garden",
 		"cat": "n., 4th",
@@ -8988,6 +9006,15 @@
 			"female given name"
 		],
 		"categories": ["female given name"]
+	},
+	{
+		"title": "kuzalk",
+		"etym": "I/PEN/*kusal-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"magpie"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "labafi",
@@ -12151,6 +12178,15 @@
 		]
 	},
 	{
+		"title": "rênak",
+		"etym": "I/PEN/*rêna-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"jay"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "rênaz",
 		"etym": "I/PEN/*rênas/be pickled",
 		"cat": "v.",
@@ -14218,6 +14254,15 @@
 			"defend, protect"
 		],
 		"categories": ["war"]
+	},
+	{
+		"title": "tenok",
+		"etym": "I/PEN/*tenio-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"tit ({{w|Paridae}})"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "tia",
