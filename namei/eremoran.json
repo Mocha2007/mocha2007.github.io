@@ -3282,15 +3282,6 @@
 		"categories": ["body part"]
 	},
 	{
-		"title": "buma",
-		"etym": "I/PEN/*βuma",
-		"cat": "n., 4th",
-		"defList": [
-			"milkweed"
-		],
-		"categories": ["flower", "plant"]
-	},
-	{
 		"title": "buk",
 		"etym": "I/PEN/*βux/sheep",
 		"cat": "n., 2nd",
@@ -3351,6 +3342,15 @@
 		"defList": [
 			"knot"
 		]
+	},
+	{
+		"title": "buma",
+		"etym": "I/PEN/*βuma",
+		"cat": "n., 4th",
+		"defList": [
+			"milkweed"
+		],
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "buni",
