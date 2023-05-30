@@ -1182,15 +1182,6 @@
 		"categories": ["person"]
 	},
 	{
-		"title": "aramaelat",
-		"etym": "D/aramat",
-		"cat": "n., 3rd",
-		"defList": [
-			"(obsolete) small copper piece, worth a quarter aramat"
-		],
-		"categories": ["coin"]
-	},
-	{
 		"title": "aramaêmat",
 		"etym": "C/aramaêr/mat",
 		"cat": "n., 3rd",
@@ -1226,6 +1217,15 @@
 			"copper piece, worth one quarter of a nelat"
 		],
 		"categories": ["coin", "metal"]
+	},
+	{
+		"title": "aramelat",
+		"etym": "D/aramat",
+		"cat": "n., 3rd",
+		"defList": [
+			"(obsolete) small copper piece, worth a quarter aramat"
+		],
+		"categories": ["coin"]
 	},
 	{
 		"title": "arbaz",
@@ -5230,15 +5230,6 @@
 		]
 	},
 	{
-		"title": "hafaelar",
-		"etym": "D/hafa",
-		"cat": "n., 1st",
-		"defList": [
-			"female given name"
-		],
-		"categories": ["female given name"]
-	},
-	{
 		"title": "hafaz",
 		"etym": "C/hafa/-z",
 		"cat": "v.",
@@ -5247,8 +5238,17 @@
 		]
 	},
 	{
-		"title": "haffelar",
-		"etym": "r/hafaelar",
+		"title": "hafelar",
+		"etym": "D/hafa",
+		"cat": "n., 1st",
+		"defList": [
+			"female given name"
+		],
+		"categories": ["female given name"]
+	},
+	{
+		"title": "haflar",
+		"etym": "r/hafelar",
 		"cat": "n., 1st",
 		"defList": [
 			"female given name"
