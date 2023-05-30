@@ -5630,8 +5630,17 @@
 		"categories": ["plant", "spice"]
 	},
 	{
+		"title": "hasfak",
+		"etym": "I/PEN/*ɸas-ɸa-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"egret"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "hask",
-		"etym": "I/PEN/*ɸasx/cock",
+		"etym": "I/PEN/*ɸas-x/cock",
 		"cat": "n., 2nd",
 		"defList": [
 			"cock, rooster"
@@ -7814,6 +7823,15 @@
 		"categories": ["giving"]
 	},
 	{
+		"title": "kôk",
+		"etym": "I/PEN/*kô-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"hawk"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "koka",
 		"etym": "I/PEN/*koga/arm",
 		"cat": "n., 4th",
@@ -8406,6 +8424,15 @@
 			"platform, level, stage",
 			"podium"
 		]
+	},
+	{
+		"title": "kufluk",
+		"etym": "I/PEN/*kuɸliu-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"osprey"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "kuidam",
@@ -9040,6 +9067,15 @@
 			"tug",
 			"drag"
 		]
+	},
+	{
+		"title": "larôlk",
+		"etym": "I/PEN/*larôl-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"spoonbill"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "lasi",
@@ -14182,6 +14218,15 @@
 			"thimble"
 		],
 		"categories": ["tool"]
+	},
+	{
+		"title": "tik",
+		"etym": "I/PEN/*ti-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"eagle"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "tikam",
