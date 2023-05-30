@@ -811,4 +811,19 @@ const blogData = [
 	I will be experimenting with several platforms - Lingodeer, Clozemaster, and Anki -
 	to see if any are a viable replacement, or if I'm better off studying alone.
 	`,
+	`
+	@title Eremoran Expansion Project: Four-and-a-Half Month Update
+	@date 1685460440778
+	@p
+	@tags eremoran site
+	It's been about 4.5 months since my pledge to expand Eremoran at a rate of 4-5 words per day.
+	Then, I had 900 words.
+	Currently, I have 1,685.
+	This amounts to an average of 7.2 words per day, or 50 words per week,
+	putting me on track for reaching my goal in another two months - August 4th, to be specific.
+	Even if it takes me longer than usual to come up with vocab, I expect to finish in August or September.
+	Last week I added quite a few herbs and spices, and today I added several flowers and birds.
+	I will probably continue adding birds for a while.
+	I even created a new bird category, which currently has 29 entries.
+	`,
 ];
