@@ -231,7 +231,7 @@
 		"etym": "I/PEN/*aβasx/duck",
 		"cat": "n., 2nd",
 		"defList": [
-			"duck (female)",
+			"duck",
 			"(metaphorically) idiot"
 		],
 		"categories": ["animal", "bird", "person"]
@@ -2294,6 +2294,15 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "bemak",
+		"etym": "I/PEN/*βema-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"rock partridge ({{w|Alectoris}}, but esp. {{w|Alectoris chukar}})"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "bemmu",
 		"etym": "I/PEN/*βegmu/river//~/beka//~/mu",
 		"cat": "n., 4th",
@@ -3366,7 +3375,7 @@
 		"etym": "I/PEN/*βunx/goose",
 		"cat": "n., 2nd",
 		"defList": [
-			"duck (of either sex)"
+			"shelduck ({{w|Tadorna}})"
 		],
 		"categories": ["animal", "bird"]
 	},
@@ -5794,6 +5803,15 @@
 		"categories": ["plant", "vegetable"]
 	},
 	{
+		"title": "hilak",
+		"etym": "I/PEN/*ɸila-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"partridge"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "hilazai",
 		"etym": "I/PEN/*silasai/magic mushrooms",
 		"cat": "n., 4th",
@@ -6171,6 +6189,15 @@
 			"pearl"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "huk",
+		"etym": "I/PEN/*ɸu-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"peafowl"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "huku",
@@ -9720,6 +9747,15 @@
 		]
 	},
 	{
+		"title": "mik",
+		"etym": "I/PEN/*mi-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"quail"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "mim",
 		"etym": "I/PEN/*mim/idea",
 		"cat": "n., 5th",
@@ -10426,6 +10462,15 @@
 			"double",
 			"copy"
 		]
+	},
+	{
+		"title": "nasuk",
+		"etym": "I/PEN/*natʃu-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"teal"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "nasukek",
