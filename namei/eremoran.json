@@ -231,10 +231,10 @@
 		"etym": "I/PEN/*aβasx/duck",
 		"cat": "n., 2nd",
 		"defList": [
-			"duck",
+			"duck (female)",
 			"(metaphorically) idiot"
 		],
-		"categories": ["animal", "person"]
+		"categories": ["animal", "bird", "person"]
 	},
 	{
 		"title": "abat",
@@ -3003,7 +3003,7 @@
 		"defList": [
 			"chick"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "bôêt",
@@ -3021,7 +3021,7 @@
 		"defList": [
 			"(live) chicken"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "bokusam",
@@ -3348,9 +3348,9 @@
 		"etym": "I/PEN/*βunx/goose",
 		"cat": "n., 2nd",
 		"defList": [
-			"duck"
+			"duck (of either sex)"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "bunt",
@@ -4403,7 +4403,7 @@
 		"defList": [
 			"swan (esp. {{w|cygnus cygnus|whooper swan}} and {{w|cygnus columbianus|tundra swan}})"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "dôm",
@@ -5546,7 +5546,7 @@
 		"defList": [
 			"cock, rooster"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "hat",
@@ -5962,7 +5962,7 @@
 		"defList": [
 			"crow; raven"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "histral",
@@ -7920,7 +7920,7 @@
 		"defList": [
 			"pigeon"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "krôpêr",
@@ -8989,7 +8989,7 @@
 		"defList": [
 			"dove"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "liboz",
@@ -12794,7 +12794,7 @@
 		"defList": [
 			"hen"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "skiz",
