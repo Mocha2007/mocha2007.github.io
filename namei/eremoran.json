@@ -1865,6 +1865,15 @@
 		"categories": ["experiential"]
 	},
 	{
+		"title": "barka",
+		"etym": "I/PEN/*bareka",
+		"cat": "n., 4th",
+		"defList": [
+			"tulip"
+		],
+		"categories": ["flower", "plant"]
+	},
+	{
 		"title": "barelat",
 		"etym": "D/bart",
 		"cat": "n., 3rd",
@@ -7058,6 +7067,31 @@
 			"wage war"
 		],
 		"categories": ["war"]
+	},
+	{
+		"title": "kasi",
+		"etym": "I/PEN/*katsi",
+		"cat": "n., 4th",
+		"defList": [
+			"cork oak ({{w|Quercus suber}})"
+		],
+		"categories": ["plant", "tree"]
+	},
+	{
+		"title": "kasim",
+		"etym": "C/kasi/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"(uncountable) cork (substance)"
+		]
+	},
+	{
+		"title": "kasit",
+		"etym": "C/kasim/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"(countable) cork (stopper)"
+		]
 	},
 	{
 		"title": "kaskru",
@@ -13909,6 +13943,15 @@
 			"(mathematics) vertex"
 		],
 		"categories": ["math"]
+	},
+	{
+		"title": "tomu",
+		"etym": "I/PEN/*tomu",
+		"cat": "n., 4th",
+		"defList": [
+			"carnation"
+		],
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "tômz",
