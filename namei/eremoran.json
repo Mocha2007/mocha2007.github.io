@@ -1838,6 +1838,15 @@
 		"categories": ["emotion", "experiential"]
 	},
 	{
+		"title": "banliska",
+		"etym": "I/PEN/*bonliʃka/maple",
+		"cat": "n., 4th",
+		"defList": [
+			"maple"
+		],
+		"categories": ["plant", "tree"]
+	},
+	{
 		"title": "bant",
 		"etym": "I/PEN/*βankt/knife",
 		"cat": "n., 3rd",
@@ -2273,6 +2282,15 @@
 			"mouthpiece (of an instrument)"
 		],
 		"categories": ["music"]
+	},
+	{
+		"title": "bênzin",
+		"etym": "I/PEN/*βênsin/fir",
+		"cat": "n., 4th",
+		"defList": [
+			"fir"
+		],
+		"categories": ["plant", "tree"]
 	},
 	{
 		"title": "berbaz",
@@ -11171,6 +11189,15 @@
 		]
 	},
 	{
+		"title": "omod",
+		"etym": "B/onod/moda",
+		"cat": "n., 4th",
+		"defList": [
+			"thorn"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "omor",
 		"etym": "C/ou/mor",
 		"cat": "pron.",
@@ -12202,6 +12229,15 @@
 		"categories": ["flower", "plant"]
 	},
 	{
+		"title": "sebakil",
+		"etym": "B/seba/bikil",
+		"cat": "n., 4th",
+		"defList": [
+			"petal"
+		],
+		"categories": ["flower", "plant"]
+	},
+	{
 		"title": "sebakok",
 		"etym": "C/seba/kot",
 		"cat": "n., 2nd",
@@ -12318,6 +12354,15 @@
 			"pox (any disease causing pockmarks)"
 		],
 		"categories": ["disease"]
+	},
+	{
+		"title": "sela",
+		"etym": "B/seba/ela",
+		"cat": "n., 4th",
+		"defList": [
+			"bud"
+		],
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "sêlai",
