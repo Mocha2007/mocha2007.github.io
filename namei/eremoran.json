@@ -4597,6 +4597,15 @@
 		"categories": ["coin"]
 	},
 	{
+		"title": "dumuk",
+		"etym": "I/PEN/*dumu-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"snipe"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "êasur",
 		"etym": "L/PRE/Ēgas//L/VAZ/Egas",
 		"cat": "n., 1st",
@@ -5022,6 +5031,15 @@
 		"categories": ["disease"]
 	},
 	{
+		"title": "esuk",
+		"etym": "I/PEN/*etiu-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"stork"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "esur",
 		"etym": "r/êasur",
 		"cat": "n., 1st",
@@ -5414,6 +5432,15 @@
 			"twenty-five"
 		],
 		"categories": ["number"]
+	},
+	{
+		"title": "hanazik",
+		"etym": "I/PEN/*ɸanasi-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"petrel"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "hanbikêr",
@@ -7837,6 +7864,15 @@
 			"beech (esp. fagus orientalis)"
 		],
 		"categories": ["plant", "tree"]
+	},
+	{
+		"title": "kônduk",
+		"etym": "I/PEN/*xôndu-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"loon"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "konoz",
@@ -11083,6 +11119,15 @@
 			"run"
 		],
 		"categories": ["motion"]
+	},
+	{
+		"title": "nunk",
+		"etym": "I/PEN/*nun-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"gull"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "nurfansam",
