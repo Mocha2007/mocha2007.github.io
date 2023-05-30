@@ -3310,6 +3310,15 @@
 		"categories": ["tool"]
 	},
 	{
+		"title": "buktok",
+		"etym": "I/PEN/*bukto-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"grouse"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "buku",
 		"etym": "A/bu",
 		"cat": "adj.",
@@ -4217,6 +4226,15 @@
 			"tuberculosis, consumption"
 		],
 		"categories": ["disease"]
+	},
+	{
+		"title": "disk",
+		"etym": "I/PEN/*diʃ-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"grebe"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "dô",
@@ -7159,6 +7177,15 @@
 		"categories": ["war"]
 	},
 	{
+		"title": "kasank",
+		"etym": "I/PEN/*kaʃan-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"bustard"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "kasi",
 		"etym": "I/PEN/*katsi",
 		"cat": "n., 4th",
@@ -7349,6 +7376,15 @@
 			"saffron"
 		],
 		"categories": ["plant", "spice"]
+	},
+	{
+		"title": "ketuk",
+		"etym": "I/PEN/*getu-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"flamingo"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "keu",
@@ -12566,6 +12602,15 @@
 			"thigh"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "selilk",
+		"etym": "I/PEN/*ʃelil-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"junglefowl"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "semasum",
