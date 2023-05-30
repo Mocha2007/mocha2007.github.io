@@ -1440,6 +1440,15 @@
 		]
 	},
 	{
+		"title": "ask",
+		"etym": "I/PEN/*atsx",
+		"cat": "n., 2nd",
+		"defList": [
+			"sandpiper"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "asse",
 		"etym": "C/ad/se",
 		"cat": "adv.",
@@ -3271,6 +3280,15 @@
 			"foreskin"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "buma",
+		"etym": "I/PEN/*βuma",
+		"cat": "n., 4th",
+		"defList": [
+			"milkweed"
+		],
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "buk",
@@ -8244,6 +8262,15 @@
 		]
 	},
 	{
+		"title": "kuk",
+		"etym": "I/PEN/*xux",
+		"cat": "n., 2nd",
+		"defList": [
+			"kite"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "kukazut",
 		"etym": "L/VAZ/gukažu/footwear",
 		"cat": "n., 3rd",
@@ -12514,6 +12541,15 @@
 		"categories": ["food"]
 	},
 	{
+		"title": "semuk",
+		"etym": "I/PEN/*tʃemux",
+		"cat": "n., 2nd",
+		"defList": [
+			"ibis"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "ses",
 		"etym": "I/PEN/*ʃets/~planet",
 		"cat": "n., 4th",
@@ -13974,6 +14010,15 @@
 			"head"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "tôak",
+		"etym": "I/PEN/*tôxe-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"tern"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "tobê",
