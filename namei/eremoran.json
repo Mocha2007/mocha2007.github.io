@@ -522,6 +522,15 @@
 		"categories": ["assimilatory affix", "giving"]
 	},
 	{
+		"title": "ada",
+		"etym": "I/PEN/*ada",
+		"cat": "n., 4th",
+		"defList": [
+			"gorse"
+		],
+		"categories": ["flower", "plant"]
+	},
+	{
 		"title": "adafkaz",
 		"etym": "C/ad/afkaz",
 		"cat": "v.",
@@ -1359,6 +1368,15 @@
 			"porridge"
 		],
 		"categories": ["food"]
+	},
+	{
+		"title": "aru",
+		"etym": "I/PEN/*aru",
+		"cat": "n., 4th",
+		"defList": [
+			"lilac"
+		],
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "aruba",
@@ -4461,6 +4479,15 @@
 		"categories": ["war"]
 	},
 	{
+		"title": "dôre",
+		"etym": "I/PEN/*dôre",
+		"cat": "n., 4th",
+		"defList": [
+			"heather"
+		],
+		"categories": ["flower", "plant"]
+	},
+	{
 		"title": "dorfaz",
 		"etym": "I/PEN/*dorɸas/dig",
 		"cat": "v.",
@@ -5306,6 +5333,15 @@
 			"(mathematics) lemma"
 		],
 		"categories": ["math"]
+	},
+	{
+		"title": "hame",
+		"etym": "I/PEN/*ɸame",
+		"cat": "n., 4th",
+		"defList": [
+			"ivy"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "hanafi",
@@ -11312,6 +11348,15 @@
 			"(military) flank (all senses)"
 		],
 		"categories": ["war"]
+	},
+	{
+		"title": "oro",
+		"etym": "I/PEN/*oro",
+		"cat": "n., 4th",
+		"defList": [
+			"fern"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "ou",
