@@ -5273,6 +5273,15 @@
 		]
 	},
 	{
+		"title": "halak",
+		"etym": "I/PEN/*ɸala-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"plover"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "halaz",
 		"etym": "I/PEN/*salas",
 		"cat": "v.",
@@ -5618,6 +5627,15 @@
 			"leek"
 		],
 		"categories": ["plant", "vegetable"]
+	},
+	{
+		"title": "hazuk",
+		"etym": "I/PEN/*ɸasu-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"nightjar"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "hê",
@@ -6131,6 +6149,15 @@
 		]
 	},
 	{
+		"title": "homak",
+		"etym": "I/PEN/*ɸoma-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"crane"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "hona",
 		"etym": "I/PEN/*ɸona/indeed",
 		"cat": "adv.",
@@ -6207,6 +6234,15 @@
 			"pearl"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "hudzuk",
+		"etym": "I/PEN/*ɸudiu-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"swift"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "huk",
@@ -15220,6 +15256,15 @@
 			"parsnip"
 		],
 		"categories": ["plant", "vegetable"]
+	},
+	{
+		"title": "zôêsk",
+		"etym": "I/PEN/*ʃlôêʃx",
+		"cat": "n., 2nd",
+		"defList": [
+			"cuckoo"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "zulunk",
