@@ -391,3 +391,4 @@ daphne=n, n=bay laurel
 catupa=n, n=ginger
 komwa=n, n=park, garden
 awle=n, n=courtyard
+nawn=adposition, =than
