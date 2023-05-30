@@ -1892,6 +1892,15 @@
 		"categories": ["experiential"]
 	},
 	{
+		"title": "barak",
+		"etym": "I/PEN/*βara-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"kingfisher"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "barelat",
 		"etym": "D/bart",
 		"cat": "n., 3rd",
@@ -3291,6 +3300,15 @@
 		"notes": "irregular; expected form would be *pipidzak, but pidzak is a loanword"
 	},
 	{
+		"title": "budik",
+		"etym": "I/PEN/*βudi-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"woodpecker"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "bueba",
 		"etym": "C/but/eba",
 		"cat": "n., 4th",
@@ -4615,6 +4633,15 @@
 		"categories": ["animal", "bird"]
 	},
 	{
+		"title": "duôk",
+		"etym": "I/PEN/*duô-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"owl"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "êasur",
 		"etym": "L/PRE/Ēgas//L/VAZ/Egas",
 		"cat": "n., 1st",
@@ -5875,6 +5902,15 @@
 		]
 	},
 	{
+		"title": "hik",
+		"etym": "I/PEN/*si-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"falcon"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "hikro",
 		"etym": "I/PEN/*sixro/cucumber",
 		"cat": "n., 4th",
@@ -6933,6 +6969,15 @@
 			"sugarcane"
 		],
 		"categories": ["plant"]
+	},
+	{
+		"title": "kadanôk",
+		"etym": "I/PEN/*gedanô-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"parakeet"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "kadat",
