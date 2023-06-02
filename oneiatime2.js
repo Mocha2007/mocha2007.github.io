@@ -285,7 +285,7 @@ function holidayCSS(){
 	else if (!img.classList.length){ // THE PINKENING
 		// compute
 		var pinkeningFactor = Math.max(0, Math.min(1,
-			(Date.now() - new Date(2022, 5, 1))/constants.earth.year
+			(Date.now() - new Date(2023, 5, 14))/(2*constants.earth.year)
 		));
 		// pinkeningFactor = 1; // debug
 		var p1 = 120*pinkeningFactor;
