@@ -837,6 +837,15 @@
 		"categories": ["toponym"]
 	},
 	{
+		"title": "akak",
+		"etym": "I/PEN/*aga-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"sardine"
+		],
+		"categories": ["animal", "seafood"]
+	},
+	{
 		"title": "akkapa",
 		"etym": "L/PRE/aka-kapa",
 		"cat": "n, 4th",
@@ -1821,6 +1830,15 @@
 			"trade, buy, sell, exchange"
 		],
 		"notes": "X trades Y for Z's A - X dir Y ad A Z ad baliz"
+	},
+	{
+		"title": "balkirk",
+		"etym": "I/PEN/*balkir-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"carp"
+		],
+		"categories": ["animal", "seafood"]
 	},
 	{
 		"title": "ballaku",
@@ -3078,6 +3096,15 @@
 		"categories": ["animal", "bird"]
 	},
 	{
+		"title": "bôkrik",
+		"etym": "I/PEN/*abôxri-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"bream"
+		],
+		"categories": ["animal", "seafood"]
+	},
+	{
 		"title": "bokusam",
 		"etym": "C/bo/kusam",
 		"cat": "n., 5th, pron.",
@@ -3589,6 +3616,15 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "dak",
+		"etym": "I/PEN/*da-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"catfish"
+		],
+		"categories": ["animal", "seafood"]
+	},
+	{
 		"title": "dakink",
 		"etym": "C/da/kink",
 		"cat": "n., 2nd",
@@ -3871,6 +3907,15 @@
 		"defList": [
 			"only; merely"
 		]
+	},
+	{
+		"title": "diklank",
+		"etym": "I/PEN/*diklan-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"ray (fish)"
+		],
+		"categories": ["animal"]
 	},
 	{
 		"title": "dim",
@@ -5308,6 +5353,15 @@
 			"thickness, width"
 		],
 		"categories": ["extent"]
+	},
+	{
+		"title": "hakark",
+		"etym": "I/PEN/*ɸoxara-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"sole"
+		],
+		"categories": ["animal", "seafood"]
 	},
 	{
 		"title": "hakaunt",
@@ -7942,6 +7996,15 @@
 		"categories": ["giving"]
 	},
 	{
+		"title": "kok",
+		"etym": "I/PEN/*xo-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"grouper (fish)"
+		],
+		"categories": ["animal", "seafood"]
+	},
+	{
 		"title": "kôk",
 		"etym": "I/PEN/*kô-x",
 		"cat": "n., 2nd",
@@ -9518,6 +9581,15 @@
 			"galena"
 		],
 		"categories": ["metal"]
+	},
+	{
+		"title": "lubak",
+		"etym": "I/PEN/*luβa-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"trout"
+		],
+		"categories": ["animal", "seafood"]
 	},
 	{
 		"title": "luksa",
@@ -12241,6 +12313,15 @@
 			"rub",
 			"wipe"
 		]
+	},
+	{
+		"title": "rêklôlk",
+		"etym": "I/PEN/*rêklôl-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"scad"
+		],
+		"categories": ["animal", "seafood"]
 	},
 	{
 		"title": "rênak",
@@ -15002,6 +15083,15 @@
 			"be unneeded, be unnecessary, superfluous"
 		],
 		"categories": ["experiential"]
+	},
+	{
+		"title": "ukask",
+		"etym": "I/PEN/*ugias-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"herring"
+		],
+		"categories": ["animal", "seafood"]
 	},
 	{
 		"title": "uki",
