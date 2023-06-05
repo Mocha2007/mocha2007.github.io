@@ -1483,6 +1483,15 @@
 		"notes": "Cf. [[uzurkelau]]."
 	},
 	{
+		"title": "asuk",
+		"etym": "I/PEN/*asiu-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"finch"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "asuz",
 		"etym": "I/PEN/*asius/freeze",
 		"cat": "v.",
@@ -1916,6 +1925,15 @@
 		"defList": [
 			"string, twine, wire"
 		]
+	},
+	{
+		"title": "bark",
+		"etym": "I/PEN/*βara-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"sparrow"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "barka",
@@ -5308,6 +5326,15 @@
 			"be confused",
 			"be dizzy"
 		]
+	},
+	{
+		"title": "hakok",
+		"etym": "I/PEN/*ɸakô-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"bunting (bird)"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "hakz",
@@ -12960,6 +12987,15 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "setak",
+		"etym": "I/PEN/*ʃeta-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"wren"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "si",
 		"etym": "I/PEN/*ʃi/seed",
 		"cat": "n., 4th",
@@ -13518,6 +13554,15 @@
 			"pepper (any capsaicin-bearing plant, incl. black and chili)"
 		],
 		"categories": ["plant", "spice", "vegetable"]
+	},
+	{
+		"title": "stôak",
+		"etym": "I/PEN/*stôxêa-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"thrush"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "stôbbamz",
