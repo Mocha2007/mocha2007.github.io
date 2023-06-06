@@ -1430,15 +1430,6 @@
 		"categories": ["metal"]
 	},
 	{
-		"title": "arzênk",
-		"etym": "C/arzên/-k",
-		"cat": "n., 2nd",
-		"defList": [
-			"silverfish"
-		],
-		"categories": ["animal", "bug"]
-	},
-	{
 		"title": "arzênelat",
 		"etym": "D/arzênt",
 		"cat": "n., 3rd",
@@ -1446,6 +1437,15 @@
 			"small silver piece, worth four aramat"
 		],
 		"categories": ["coin"]
+	},
+	{
+		"title": "arzênk",
+		"etym": "C/arzên/-k",
+		"cat": "n., 2nd",
+		"defList": [
+			"silverfish"
+		],
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "arzênt",
@@ -12461,7 +12461,7 @@
 		"categories": ["time"]
 	},
 	{
-		"title": "rilmonumk",
+		"title": "rilmonunk",
 		"etym": "C/ril/monumz",
 		"cat": "n., 2nd",
 		"defList": [
