@@ -956,6 +956,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "amabbak",
+		"etym": "C/amz/abbak",
+		"cat": "v.",
+		"defList": [
+			"bumblebee"
+		],
+		"categories": ["animal", "bug"]
+	},
+	{
 		"title": "amaru",
 		"etym": "I/PEN/*emaru/cherry",
 		"cat": "n., 4th",
@@ -1336,6 +1345,15 @@
 			"red panda"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "ardonôak",
+		"etym": "C/ardo/nôak",
+		"cat": "n., 2nd",
+		"defList": [
+			"firefly"
+		],
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "arêôk",
@@ -5860,6 +5878,15 @@
 		"defList": [
 			"stretch"
 		]
+	},
+	{
+		"title": "hazak",
+		"etym": "I/PEN/*ɸasa-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"maggot"
+		],
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "hazo",
@@ -13269,6 +13296,7 @@
 		"etym": "C/siu/-m",
 		"cat": "n., 5th",
 		"defList": [
+			"light",
 			"brightness",
 			"white"
 		]
@@ -13360,6 +13388,14 @@
 			"burn (intransitive)"
 		],
 		"notes": "a rather old blend; it retains ar(e)do's central vowel"
+	},
+	{
+		"title": "sisêm",
+		"etym": "C/sim/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"brightness"
+		]
 	},
 	{
 		"title": "sisi",
@@ -14933,6 +14969,15 @@
 			"fall"
 		],
 		"categories": ["motion"]
+	},
+	{
+		"title": "tritriz",
+		"etym": "O",
+		"cat": "v.",
+		"defList": [
+			"warble"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "triz",
