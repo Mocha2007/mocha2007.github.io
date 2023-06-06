@@ -254,7 +254,7 @@
 		"defList": [
 			"bee"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "abbakam",
@@ -3159,7 +3159,7 @@
 		"defList": [
 			"(northern) snail"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "bonam",
@@ -3768,7 +3768,7 @@
 		"defList": [
 			"bug, insect"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "dantam",
@@ -7155,7 +7155,7 @@
 		"defList": [
 			"moth"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "kaini",
@@ -9670,7 +9670,7 @@
 		"defList": [
 			"(southern) snail"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "madim",
@@ -10367,7 +10367,7 @@
 		"defList": [
 			"ant"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "morôz",
@@ -11198,7 +11198,7 @@
 		"defList": [
 			"louse"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "nobz",
@@ -11828,7 +11828,7 @@
 		"defList": [
 			"fly (bug)"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "onod",
@@ -12029,7 +12029,7 @@
 		"defList": [
 			"worm"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "pemik",
@@ -12863,7 +12863,7 @@
 		"defList": [
 			"butterfly"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "sebaz",
@@ -13841,7 +13841,7 @@
 		"defList": [
 			"spider"
 		],
-		"categories": ["animal"]
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "sudoêr",
