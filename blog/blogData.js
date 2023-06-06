@@ -826,4 +826,54 @@ const blogData = [
 	I will probably continue adding birds for a while.
 	I even created a new bird category, which currently has 29 entries.
 	`,
+	`
+	@title EU4 and Plums
+	@date 1686064362944
+	@p
+	@tags eu4
+	I've been playing Majapahit in EU4 the past few days.
+	Even though I haven't played EU4 in ages, I seem to still be managing pretty well.
+	It's currently 1535 ingame and I just finished conquering the last of Indonesia.
+	I'm not sure where to expand further, but I tried Taiwan and Wu since Ming exploded,
+	and got Taiwan and a few port provinces.
+	@p
+	@tags botany
+	I recently discovered the mysterious fruit trees outside my office are chinese plums (prunus mume).
+	They are likely safe for consumption, but I'm not taking any chances.
+	@p
+	@tags weather news ukraine
+	I like recording little snippets of the current climate (both literal and otherwise) here,
+	because they are fun to look back on.
+	The weather lately has been fairly nice, staying in the 70s much of the day, often cloudy or clear.
+	In terms of news, early this morning, a dam was blown up in Ukraine.
+	Yesterday, it was reported Ukraine began a counteroffensive.
+	Three days ago, there was a major rail accident in India, with >200 deaths and >900 injuries.
+	The latest on that is that it is a suspected signal failure.
+	@p
+	@tags news 2024_election
+	Over the past month or so, several more Republican candidates have started campaigning,
+	including Pence and Chris Christie.
+	I honestly don't know why they even bother - this is clearly a race between Trump and DeSantis.
+	Perhaps there will be a surge for someone like Nikki Haley or Tim Scott,
+	but last I checked, the polling for these other Republicans has been pathetic at best.
+	Did Chris Christie ever regularly poll much past, say, 1-2% in 2016? I doubt it.
+	Florida has been steadily growing fashier.
+	If DeSantis actually wins the presidency, I may quite literally have to flee the country.
+	`,
+	// PUSH THIS FRIDAY JUNE 9TH
+	/*
+	`
+	@title Eremoran Expansion Project: Five Month Update
+	@date 1686326400000
+	@p
+	@tags eremoran site
+	It's been about 5 months since my pledge to expand Eremoran at a rate of 4-5 words per day.
+	Then, I had 900 words.
+	Currently, I have 1,765.
+	This amounts to an average of 7.3 words per day, or 51 words per week,
+	putting me on track for reaching my goal in eight weeks.
+	Recently I have been adding vocabulary for birds, fish, and bugs.
+	I expect to finish in August, or September at the latest.
+	`,
+	*/
 ];
