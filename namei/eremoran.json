@@ -3105,6 +3105,15 @@
 		"categories": ["animal", "bird"]
 	},
 	{
+		"title": "bôênôak",
+		"etym": "C/bôêt/nôak",
+		"cat": "n., 2nd",
+		"defList": [
+			"millipede"
+		],
+		"categories": ["animal", "bug"]
+	},
+	{
 		"title": "bôêt",
 		"etym": "I/PEN/*bô-ê-t/wagon",
 		"cat": "n., 3rd",
@@ -3171,11 +3180,20 @@
 		"categories": ["food"]
 	},
 	{
+		"title": "bolnôak",
+		"etym": "C/bolz/nôak",
+		"cat": "n., 2nd",
+		"defList": [
+			"aphid"
+		],
+		"categories": ["animal", "bug"]
+	},
+	{
 		"title": "bolz",
 		"etym": "L/VAZ/vol/eat",
 		"cat": "v.",
 		"defList": [
-			"pig out on, gorge on"
+			"pig out on, gorge on, devour"
 		],
 		"categories": ["food"]
 	},
@@ -9545,6 +9563,15 @@
 		"categories": ["v3_trade"]
 	},
 	{
+		"title": "lirenôak",
+		"etym": "C/lire/nôak",
+		"cat": "n., 2nd",
+		"defList": [
+			"roly-poly, wood louse"
+		],
+		"categories": ["animal", "bug"]
+	},
+	{
 		"title": "liresêdzak",
 		"etym": "C/lire/sêdzak",
 		"cat": "n., 2nd",
@@ -11241,7 +11268,8 @@
 		"etym": "I/PEN/*nôax/louse",
 		"cat": "n., 2nd",
 		"defList": [
-			"louse"
+			"louse",
+			"(in compounds) bug, insect"
 		],
 		"categories": ["animal", "bug"]
 	},
@@ -14597,6 +14625,24 @@
 			"hyperopia, farsightedness"
 		],
 		"categories": ["disease"]
+	},
+	{
+		"title": "titinôak",
+		"etym": "C/titiz/nôak",
+		"cat": "n., 2nd",
+		"defList": [
+			"cricket"
+		],
+		"categories": ["animal", "bug"]
+	},
+	{
+		"title": "titiz",
+		"etym": "O",
+		"cat": "v.",
+		"defList": [
+			"chirp"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "tiu",
