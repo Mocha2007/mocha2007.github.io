@@ -909,6 +909,15 @@
 		"categories": ["fruit", "plant", "tree"]
 	},
 	{
+		"title": "akulak",
+		"etym": "I/PEN/*axula-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"termite"
+		],
+		"categories": ["animal", "bug"]
+	},
+	{
 		"title": "ala",
 		"etym": "I/PEN/*ala/oak",
 		"cat": "n., 4th",
@@ -2061,6 +2070,15 @@
 			"goose (esp. {{w|anser anser|greylag goose}} and {{w|nettapus coromandelianus coromandelianus|cotton pygmy goose}})"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "basuk",
+		"etym": "I/PEN/*basu-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"mosquito"
+		],
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "bat",
@@ -4694,6 +4712,15 @@
 			"large gold coin, worth four daret"
 		],
 		"categories": ["coin"]
+	},
+	{
+		"title": "duk",
+		"etym": "I/PEN/*du-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"flea"
+		],
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "dumuk",
@@ -12613,6 +12640,15 @@
 		"categories": ["food"]
 	},
 	{
+		"title": "sak",
+		"etym": "I/PEN/*tia-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"bedbug"
+		],
+		"categories": ["animal", "bug"]
+	},
+	{
 		"title": "salim",
 		"etym": "C/saliz/-m",
 		"cat": "n., 5th",
@@ -12681,6 +12717,15 @@
 			"hedgehog"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "sanzonk",
+		"etym": "I/PEN/*ʃaianson-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"cockroach"
+		],
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "sarm",
