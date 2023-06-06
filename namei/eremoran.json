@@ -1001,6 +1001,15 @@
 		"categories": ["drink"]
 	},
 	{
+		"title": "ammak",
+		"etym": "B/abbak/amma",
+		"cat": "n., 2nd",
+		"defList": [
+			"honey bee"
+		],
+		"categories": ["animal", "bug"]
+	},
+	{
 		"title": "ammakama",
 		"etym": "C/amma/kama",
 		"cat": "n., 4th",
@@ -1046,6 +1055,14 @@
 		],
 		"categories": ["plant", "spice"],
 		"notes": "categorizing this as a spice instead of an herb as its extract comes from the root"
+	},
+	{
+		"title": "amz",
+		"etym": "O",
+		"cat": "v.",
+		"defList": [
+			"humm"
+		]
 	},
 	{
 		"title": "amzralam",
@@ -2307,6 +2324,15 @@
 			"the week before last"
 		],
 		"categories": ["time"]
+	},
+	{
+		"title": "bek",
+		"etym": "I/PEN/*be-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"wasp"
+		],
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "beka",
@@ -7684,6 +7710,24 @@
 			"male given name"
 		],
 		"categories": ["male given name", "person"]
+	},
+	{
+		"title": "kerôlak",
+		"etym": "D/kerôz",
+		"cat": "n., 2nd",
+		"defList": [
+			"mantis"
+		],
+		"categories": ["animal", "bug"]
+	},
+	{
+		"title": "kerôz",
+		"etym": "C/kek/rôz",
+		"cat": "v.",
+		"defList": [
+			"pray"
+		],
+		"categories": ["god"]
 	},
 	{
 		"title": "kêsara",
