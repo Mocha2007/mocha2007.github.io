@@ -715,18 +715,14 @@ const phono = {
 	},
 	/** @param {string} word */
 	syllabify(word){
-		// sometimes a word is a valid spelling, but the letters are pronounced abnormally
-		this.sylReplacements.forEach(xy => word = word.replace(new RegExp(xy[0], 'g'), xy[1]));
 		// reverse word
 		const rev = word.split('').reverse().join('');
+		// this m is necessary for words like rilmonumk where the base form uses /-nk/ but derived forms use /-m-/
+		//										|
 		// eslint-disable-next-line max-len
-		const regex = /(([sz][bdkmnpt])|([kt][sn])|([mtzk][lr])|([bdhklmnprstz]))?[aeiouêô]((r[bdkpt])|([ptk]s|(lk)|([bdhklmnprstz])))?/g;
+		const regex = /(([sz][bdkmnpt])|([kt][snm])|([mtzk][lr])|([bdhklmnprstz]))?[aeiouêô]((r[bdkpt])|([ptk]s|(lk)|([bdhklmnprstz])))?/g;
 		return rev.match(regex).reverse().map(s => s.split('').reverse().join(''));
 	},
-	sylReplacements: [
-		['b$', ''],
-		['mk$', 'nk'],
-	],
 	/** @param {string} word */
 	validate(word){
 		if (word.includes('-'))
