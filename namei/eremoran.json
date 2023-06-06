@@ -1430,6 +1430,15 @@
 		"categories": ["metal"]
 	},
 	{
+		"title": "arzênk",
+		"etym": "C/arzên/-k",
+		"cat": "n., 2nd",
+		"defList": [
+			"silverfish"
+		],
+		"categories": ["animal", "bug"]
+	},
+	{
 		"title": "arzênelat",
 		"etym": "D/arzênt",
 		"cat": "n., 3rd",
@@ -7731,6 +7740,15 @@
 		"categories": ["toponym"]
 	},
 	{
+		"title": "kikik",
+		"etym": "R/ki",
+		"cat": "n., 2nd",
+		"defList": [
+			"centipede"
+		],
+		"categories": ["animal", "bug"]
+	},
+	{
 		"title": "kikir",
 		"etym": "R/kiu",
 		"cat": "n., 1st",
@@ -12443,6 +12461,15 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "rilmonumk",
+		"etym": "C/ril/monumz",
+		"cat": "n., 2nd",
+		"defList": [
+			"ladybug"
+		],
+		"categories": ["animal", "bug"]
+	},
+	{
 		"title": "rilnambam",
 		"etym": "C/rilnambat/-m",
 		"cat": "n., 5th",
@@ -14160,6 +14187,15 @@
 		"categories": ["number"]
 	},
 	{
+		"title": "tamelak",
+		"etym": "C/tamelat/-k",
+		"cat": "n., 2nd",
+		"defList": [
+			"earwig"
+		],
+		"categories": ["animal", "bug"]
+	},
+	{
 		"title": "tamelat",
 		"etym": "B/tamal/ela",
 		"cat": "n., 3rd",
@@ -14607,6 +14643,15 @@
 			"The southern, coastal cultural region of Eremor, associated with the so-called ''kadrêm'' 'hard R' sounds."
 		],
 		"categories": ["toponym"]
+	},
+	{
+		"title": "tok",
+		"etym": "I/PEN/*to-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"tick (insect)"
+		],
+		"categories": ["animal", "bug"]
 	},
 	{
 		"title": "tôk",
