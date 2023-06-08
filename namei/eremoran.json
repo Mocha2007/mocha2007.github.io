@@ -2515,6 +2515,14 @@
 		]
 	},
 	{
+		"title": "bêtisêm",
+		"etym": "C/bêtu/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"loyalty"
+		]
+	},
+	{
 		"title": "betlaêr",
 		"etym": "C/betlat/-ê",
 		"cat": "n., 1st",
@@ -4890,6 +4898,22 @@
 		]
 	},
 	{
+		"title": "êdzêsêm",
+		"etym": "C/êdzêz/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"honesty, truthfulness"
+		]
+	},
+	{
+		"title": "êdzêz",
+		"etym": "I/PEN/*êdiês",
+		"cat": "v.",
+		"defList": [
+			"be honest, truthful"
+		]
+	},
+	{
 		"title": "ek",
 		"etym": "I/PEN/*ek-x/horse",
 		"cat": "n., 2nd",
@@ -6854,6 +6878,22 @@
 			"(archaic, non-southern) girl (older form of elaôr)"
 		],
 		"categories": ["age", "person"]
+	},
+	{
+		"title": "iliêr",
+		"etym": "C/ilim/-ê",
+		"cat": "n., 1st",
+		"defList": [
+			"magician, mage, sorcerer, wizard"
+		]
+	},
+	{
+		"title": "ilim",
+		"etym": "I/PEN/*ailim",
+		"cat": "n., 5th",
+		"defList": [
+			"magic, sorcery, wizardry"
+		]
 	},
 	{
 		"title": "im",
@@ -12323,6 +12363,14 @@
 		"categories": ["motion"]
 	},
 	{
+		"title": "rarasêm",
+		"etym": "C/raraz/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"generosity"
+		]
+	},
+	{
 		"title": "raratelat",
 		"etym": "D/raratit",
 		"cat": "n., 3rd",
@@ -12349,6 +12397,14 @@
 			"food"
 		],
 		"categories": ["v3_trade"]
+	},
+	{
+		"title": "raraz",
+		"etym": "I/PEN/*raras",
+		"cat": "v.",
+		"defList": [
+			"be generous"
+		]
 	},
 	{
 		"title": "rasum",
@@ -12757,6 +12813,15 @@
 		"categories": ["animal", "fantasy"]
 	},
 	{
+		"title": "saisêm",
+		"etym": "C/saiz/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"kindness, niceness",
+			"(countable) favor"
+		]
+	},
+	{
 		"title": "saist",
 		"etym": "I/PEN/*ʃais-t/dough",
 		"cat": "n., 3rd",
@@ -12764,6 +12829,14 @@
 			"dough"
 		],
 		"categories": ["food"]
+	},
+	{
+		"title": "saiz",
+		"etym": "I/PEN/*ʃais",
+		"cat": "v.",
+		"defList": [
+			"be kind, nice"
+		]
 	},
 	{
 		"title": "sak",
@@ -15586,6 +15659,14 @@
 		"cat": "adv.",
 		"defList": [
 			"therefore, thus, so, for this/that reason"
+		]
+	},
+	{
+		"title": "uraraz",
+		"etym": "C/u-/raraz",
+		"cat": "v.",
+		"defList": [
+			"be stingy, cheap, selfish"
 		]
 	},
 	{
