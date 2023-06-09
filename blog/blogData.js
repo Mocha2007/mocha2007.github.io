@@ -860,20 +860,17 @@ const blogData = [
 	Florida has been steadily growing fashier.
 	If DeSantis actually wins the presidency, I may quite literally have to flee the country.
 	`,
-	// PUSH THIS FRIDAY JUNE 9TH
-	/*
 	`
 	@title Eremoran Expansion Project: Five Month Update
-	@date 1686326400000
+	@date 1686314956562
 	@p
 	@tags eremoran site
 	It's been about 5 months since my pledge to expand Eremoran at a rate of 4-5 words per day.
 	Then, I had 900 words.
-	Currently, I have 1,765.
+	Currently, I have 1,770 - nearly double!
 	This amounts to an average of 7.3 words per day, or 51 words per week,
-	putting me on track for reaching my goal in eight weeks.
+	putting me on track for reaching my goal in under eight weeks.
 	Recently I have been adding vocabulary for birds, fish, and bugs.
-	I expect to finish in August, or September at the latest.
+	I expect to finish in early August - September at the latest.
 	`,
-	*/
 ];
