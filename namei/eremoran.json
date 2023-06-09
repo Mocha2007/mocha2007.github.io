@@ -15289,6 +15289,22 @@
 		]
 	},
 	{
+		"title": "ubêtisêm",
+		"etym": "C/ubêtu/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"disloyal"
+		]
+	},
+	{
+		"title": "ubêtu",
+		"etym": "C/u-/bêtu",
+		"cat": "adj.",
+		"defList": [
+			"disloyal"
+		]
+	},
+	{
 		"title": "ubu",
 		"etym": "I/PEN/*uβu",
 		"cat": "adv.",
@@ -15317,6 +15333,15 @@
 			"[optional plurality marker]"
 		],
 		"notes": "cf. ''bokusam'', the noun form",
+		"categories": ["extent"]
+	},
+	{
+		"title": "ufalkasêm",
+		"etym": "C/ufalkaz/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"lightness (mass)"
+		],
 		"categories": ["extent"]
 	},
 	{
@@ -15594,12 +15619,23 @@
 	},
 	{
 		"title": "undu",
-		"etym": "C/u-/endu",
+		"etym": "B/u-/endu",
 		"cat": "adj.",
 		"defList": [
 			"shallow",
 			"short",
 			"thin, narrow"
+		],
+		"categories": ["extent"]
+	},
+	{
+		"title": "undusêm",
+		"etym": "C/undu/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"shallowness",
+			"shortness",
+			"thinness, narrowness"
 		],
 		"categories": ["extent"]
 	},
@@ -15659,6 +15695,14 @@
 		"cat": "adv.",
 		"defList": [
 			"therefore, thus, so, for this/that reason"
+		]
+	},
+	{
+		"title": "urarasêm",
+		"etym": "C/uraraz/-isêm",
+		"cat": "v.",
+		"defList": [
+			"stinginess, cheapness, selfishness"
 		]
 	},
 	{
