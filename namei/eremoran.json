@@ -3302,7 +3302,8 @@
 			"poke",
 			"stab",
 			"prick",
-			"interest"
+			"interest",
+			"(of a body part) be painful, pained, in pain"
 		],
 		"categories": ["emotion"]
 	},
@@ -3846,6 +3847,23 @@
 		"defList": [
 			"source of secondhand embarassment",
 			"secondhand embarassment"
+		]
+	},
+	{
+		"title": "danlikêk",
+		"etym": "C/danlikz/-ê",
+		"cat": "n., 2nd",
+		"defList": [
+			"leech"
+		],
+		"categories": ["bug"]
+	},
+	{
+		"title": "danlikêsêm",
+		"etym": "C/danlikêk/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"bloodletting"
 		]
 	},
 	{
@@ -6880,6 +6898,14 @@
 		"categories": ["age", "person"]
 	},
 	{
+		"title": "ikuks",
+		"etym": "I/PEN/*aikugs",
+		"cat": "n., 4th",
+		"defList": [
+			"ulcer, sore"
+		]
+	},
+	{
 		"title": "iliêr",
 		"etym": "C/ilim/-ê",
 		"cat": "n., 1st",
@@ -8475,6 +8501,23 @@
 			"pigeon"
 		],
 		"categories": ["animal", "bird"]
+	},
+	{
+		"title": "krizar",
+		"etym": "I/PEN/*grisar",
+		"cat": "n., 1st",
+		"defList": [
+			"witch"
+		],
+		"categories": ["person"]
+	},
+	{
+		"title": "krizasêm",
+		"etym": "C/krizar/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"witchcraft"
+		]
 	},
 	{
 		"title": "krôpêr",
