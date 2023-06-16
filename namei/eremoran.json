@@ -3399,6 +3399,22 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "brabam",
+		"etym": "C/brabz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"burp"
+		]
+	},
+	{
+		"title": "brabz",
+		"etym": "O",
+		"cat": "v.",
+		"defList": [
+			"burp"
+		]
+	},
+	{
 		"title": "bradz",
 		"etym": "I/PEN/*βrads",
 		"cat": "v.",
@@ -5444,6 +5460,14 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "habz",
+		"etym": "O",
+		"cat": "v.",
+		"defList": [
+			"fart"
+		]
+	},
+	{
 		"title": "hafa",
 		"etym": "R/ha",
 		"cat": "n., 4th",
@@ -6187,6 +6211,15 @@
 		"categories": ["animal", "bird"]
 	},
 	{
+		"title": "hikam",
+		"etym": "C/hikz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"hiccup"
+		],
+		"categories": ["disease"]
+	},
+	{
 		"title": "hikro",
 		"etym": "I/PEN/*sixro/cucumber",
 		"cat": "n., 4th",
@@ -6194,6 +6227,15 @@
 			"cucumber"
 		],
 		"categories": ["plant", "vegetable"]
+	},
+	{
+		"title": "hikz",
+		"etym": "O",
+		"cat": "v.",
+		"defList": [
+			"hiccup"
+		],
+		"categories": ["disease"]
 	},
 	{
 		"title": "hilak",
