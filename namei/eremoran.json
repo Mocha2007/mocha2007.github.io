@@ -1589,6 +1589,24 @@
 		"categories": ["language"]
 	},
 	{
+		"title": "atutum",
+		"etym": "O",
+		"cat": "n., 5th",
+		"defList": [
+			"sneeze"
+		],
+		"categories": ["disease"]
+	},
+	{
+		"title": "atutuz",
+		"etym": "C/atutum/-z",
+		"cat": "v.",
+		"defList": [
+			"sneeze"
+		],
+		"categories": ["disease"]
+	},
+	{
 		"title": "au",
 		"etym": "I/PEN/*iau/spicy",
 		"cat": "adj.",
@@ -3263,9 +3281,10 @@
 		"etym": "C/bonz/-m",
 		"cat": "n., 5th",
 		"defList": [
-			"interest"
+			"interest",
+			"pain"
 		],
-		"categories": ["emotion"]
+		"categories": ["disease", "emotion"]
 	},
 	{
 		"title": "bonk",
@@ -3305,7 +3324,7 @@
 			"interest",
 			"(of a body part) be painful, pained, in pain"
 		],
-		"categories": ["emotion"]
+		"categories": ["disease", "emotion"]
 	},
 	{
 		"title": "bornat",
@@ -6134,6 +6153,15 @@
 		"categories": ["fruit", "plant", "tree"]
 	},
 	{
+		"title": "hibonam",
+		"etym": "C/hi/bonam",
+		"cat": "n., 5th",
+		"defList": [
+			"toothache"
+		],
+		"categories": ["disease"]
+	},
+	{
 		"title": "hifi",
 		"etym": "O",
 		"cat": "interj.",
@@ -8529,13 +8557,22 @@
 		"categories": ["person"]
 	},
 	{
+		"title": "krôpsudôz",
+		"etym": "C/krôpz/sudôz",
+		"cat": "v.",
+		"defList": [
+			"blind"
+		]
+	},
+	{
 		"title": "krôpz",
 		"etym": "a/krôpêr",
 		"cat": "v.",
 		"defList": [
 			"be blind"
 		],
-		"notes": "back-formation"
+		"notes": "back-formation",
+		"categories": ["disease"]
 	},
 	{
 		"title": "kru",
@@ -15519,6 +15556,15 @@
 			"throat"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "ukubonam",
+		"etym": "B/ukubo/bonam",
+		"cat": "n., 5th",
+		"defList": [
+			"sore throat"
+		],
+		"categories": ["disease"]
 	},
 	{
 		"title": "ukudaz",
