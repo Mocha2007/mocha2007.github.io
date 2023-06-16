@@ -3630,6 +3630,22 @@
 		"categories": ["clothing"]
 	},
 	{
+		"title": "burôfkaz",
+		"etym": "C/burôz/afkaz",
+		"cat": "v.",
+		"defList": [
+			"take a vow of silence"
+		]
+	},
+	{
+		"title": "burôz",
+		"etym": "C/bu/rôz",
+		"cat": "v.",
+		"defList": [
+			"be in a vow of silence"
+		]
+	},
+	{
 		"title": "busia",
 		"etym": "L/PRE/apusia/ass, but",
 		"cat": "n., 4th",
@@ -5893,6 +5909,14 @@
 		"categories": ["person"]
 	},
 	{
+		"title": "hanusêm",
+		"etym": "C/hanu/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"gesture, hand signal"
+		]
+	},
+	{
 		"title": "hanut",
 		"etym": "C/hanu/-t",
 		"cat": "n., 3rd",
@@ -6065,6 +6089,22 @@
 		"cat": "v.",
 		"defList": [
 			"downpour (heavy rain)"
+		]
+	},
+	{
+		"title": "hekusêm",
+		"etym": "B/hekz/hanusêm",
+		"cat": "n., 5th",
+		"defList": [
+			"hand curse"
+		]
+	},
+	{
+		"title": "hekusêz",
+		"etym": "C/hekusêm/-z",
+		"cat": "n., 5th",
+		"defList": [
+			"curse with the hands"
 		]
 	},
 	{
