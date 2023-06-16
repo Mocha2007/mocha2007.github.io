@@ -5376,6 +5376,14 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "habam",
+		"etym": "C/habz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"fart"
+		]
+	},
+	{
 		"title": "habeka",
 		"etym": "B/habin/beka",
 		"cat": "n., 4th",
@@ -9256,6 +9264,32 @@
 		]
 	},
 	{
+		"title": "kunu",
+		"etym": "C/ku/nubêr",
+		"cat": "adj.",
+		"defList": [
+			"pregnant"
+		],
+		"notes": "Occasionally spelt [[kunub]]."
+	},
+	{
+		"title": "kunub",
+		"etym": "C/ku/nubêr",
+		"cat": "adj.",
+		"defList": [
+			"pregnant"
+		],
+		"notes": "Spelling variant of [[kunu]]."
+	},
+	{
+		"title": "kunufkaz",
+		"etym": "C/kunu/afkaz",
+		"cat": "v.",
+		"defList": [
+			"get pregnant"
+		]
+	},
+	{
 		"title": "kunulat",
 		"etym": "D/kunuz",
 		"cat": "n., 3rd",
@@ -9273,6 +9307,14 @@
 			"flock",
 			"coincide",
 			"agree; concur"
+		]
+	},
+	{
+		"title": "kunusêm",
+		"etym": "C/kunu/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"pregnancy"
 		]
 	},
 	{
