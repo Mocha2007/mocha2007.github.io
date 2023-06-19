@@ -5790,6 +5790,14 @@
 		"categories": ["plant", "spice"]
 	},
 	{
+		"title": "hanam",
+		"etym": "C/hanz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"snort"
+		]
+	},
+	{
 		"title": "hananu",
 		"etym": "C/hanu/hanu",
 		"cat": "adj.",
@@ -5983,6 +5991,14 @@
 			"(mathematics) icosahedron"
 		],
 		"categories": ["math"]
+	},
+	{
+		"title": "hanz",
+		"etym": "O",
+		"cat": "v.",
+		"defList": [
+			"snort"
+		]
 	},
 	{
 		"title": "harira",
@@ -12641,6 +12657,14 @@
 		"categories": ["motion"]
 	},
 	{
+		"title": "raram",
+		"etym": "C/rarz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"growl"
+		]
+	},
+	{
 		"title": "rarasêm",
 		"etym": "C/raraz/-isêm",
 		"cat": "n., 5th",
@@ -12682,6 +12706,23 @@
 		"cat": "v.",
 		"defList": [
 			"be generous"
+		]
+	},
+	{
+		"title": "rarêt",
+		"etym": "C/rarz/-ê",
+		"cat": "n., 3rd",
+		"defList": [
+			"guiro"
+		],
+		"categories": ["music"]
+	},
+	{
+		"title": "rarz",
+		"etym": "O",
+		"cat": "v.",
+		"defList": [
+			"growl"
 		]
 	},
 	{
