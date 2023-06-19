@@ -6523,6 +6523,22 @@
 		"categories": ["family", "person"]
 	},
 	{
+		"title": "hisim",
+		"etym": "C/hisiz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"hiss"
+		]
+	},
+	{
+		"title": "hisiz",
+		"etym": "O",
+		"cat": "v.",
+		"defList": [
+			"hiss"
+		]
+	},
+	{
 		"title": "hisk",
 		"etym": "I/PEN/*ɸiʃx/crow",
 		"cat": "n., 2nd",
@@ -13121,6 +13137,31 @@
 			"mongoose"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "ruruêk",
+		"etym": "C/ruruz/-ê",
+		"cat": "n., 2nd",
+		"defList": [
+			"(affectionate) cat"
+		],
+		"categories": ["animal"]
+	},
+	{
+		"title": "rurum",
+		"etym": "C/ruruz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"purr"
+		]
+	},
+	{
+		"title": "ruruz",
+		"etym": "O",
+		"cat": "v.",
+		"defList": [
+			"purr"
+		]
 	},
 	{
 		"title": "ruskank",
