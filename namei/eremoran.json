@@ -1511,6 +1511,14 @@
 		"categories": ["animal", "bird"]
 	},
 	{
+		"title": "askit",
+		"etym": "I/PEN/*aʃki-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"hinge"
+		]
+	},
+	{
 		"title": "asse",
 		"etym": "C/ad/se",
 		"cat": "adv.",
@@ -8022,6 +8030,14 @@
 		"categories": ["animal", "bug"]
 	},
 	{
+		"title": "kikim",
+		"etym": "C/kikiz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"creak"
+		]
+	},
+	{
 		"title": "kikir",
 		"etym": "R/kiu",
 		"cat": "n., 1st",
@@ -8029,6 +8045,14 @@
 			"friend"
 		],
 		"categories": ["person"]
+	},
+	{
+		"title": "kikiz",
+		"etym": "O",
+		"cat": "v.",
+		"defList": [
+			"creak"
+		]
 	},
 	{
 		"title": "kikom",
@@ -10627,11 +10651,28 @@
 		"categories": ["person"]
 	},
 	{
+		"title": "mofa",
+		"etym": "r/mofaz",
+		"cat": "n., 4th",
+		"defList": [
+			"tuft, hairball"
+		],
+		"categories": ["body part"]
+	},
+	{
 		"title": "mofanuz",
 		"etym": "C/mo/hanuz",
 		"cat": "v.",
 		"defList": [
 			"catch"
+		]
+	},
+	{
+		"title": "mofaz",
+		"etym": "O",
+		"cat": "v.",
+		"defList": [
+			"fluff, puff up (hair, a pillow, etc.), pet (an animal)"
 		]
 	},
 	{
@@ -14998,7 +15039,7 @@
 		"etym": "O",
 		"cat": "v.",
 		"defList": [
-			"chirp"
+			"chirp, squeak"
 		],
 		"categories": ["animal", "bird"]
 	},
