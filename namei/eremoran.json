@@ -3954,6 +3954,30 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "daradam",
+		"etym": "C/daradz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"knock"
+		]
+	},
+	{
+		"title": "daradêt",
+		"etym": "C/daradz/-ê",
+		"cat": "n., 3rd",
+		"defList": [
+			"door knocker"
+		]
+	},
+	{
+		"title": "daradz",
+		"etym": "O",
+		"cat": "v.",
+		"defList": [
+			"knock"
+		]
+	},
+	{
 		"title": "dare",
 		"etym": "I/PEN/*da-xere/gold",
 		"cat": "n., 4th",
@@ -7718,6 +7742,14 @@
 			"hook"
 		],
 		"categories": ["tool"]
+	},
+	{
+		"title": "karôz",
+		"etym": "O",
+		"cat": "v.",
+		"defList": [
+			"croak (as a frog)"
+		]
 	},
 	{
 		"title": "karz",
@@ -16269,6 +16301,14 @@
 			"parsnip"
 		],
 		"categories": ["plant", "vegetable"]
+	},
+	{
+		"title": "ziziz",
+		"etym": "O",
+		"cat": "v.",
+		"defList": [
+			"buzz"
+		]
 	},
 	{
 		"title": "zôêsk",
