@@ -5621,6 +5621,14 @@
 		]
 	},
 	{
+		"title": "hakku",
+		"etym": "O",
+		"cat": "interj.",
+		"defList": [
+			"achoo"
+		]
+	},
+	{
 		"title": "hakok",
 		"etym": "I/PEN/*ɸakô-x",
 		"cat": "n., 2nd",
@@ -6765,6 +6773,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "hududu",
+		"etym": "O",
+		"cat": "interj.",
+		"defList": [
+			"[dove vocalization] (sp. {{w|Streptopelia decaocto}} and {{w|Spilopelia senegalensis}})"
+		],
+		"categories": ["animal", "bird"]
+	},
+	{
 		"title": "hudzuk",
 		"etym": "I/PEN/*ɸudiu-x",
 		"cat": "n., 2nd",
@@ -7887,6 +7904,15 @@
 		"notes": "Possibly derived from [[kasu]]"
 	},
 	{
+		"title": "katakata",
+		"etym": "O",
+		"cat": "interj.",
+		"defList": [
+			"clip-clip"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "kaz",
 		"etym": "I/PEN/*kas",
 		"cat": "v.",
@@ -8427,6 +8453,15 @@
 			"arm"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "kokikuru",
+		"etym": "O",
+		"cat": "interj.",
+		"defList": [
+			"cock-a-doodle-doo (a rooster's cry)"
+		],
+		"categories": ["animal", "bird"]
 	},
 	{
 		"title": "kokink",
@@ -15275,6 +15310,15 @@
 		"defList": [
 			"almost"
 		]
+	},
+	{
+		"title": "tonk",
+		"etym": "O",
+		"cat": "interj.",
+		"defList": [
+			"[drum sound]"
+		],
+		"categories": ["music"]
 	},
 	{
 		"title": "tônkad",
