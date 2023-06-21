@@ -1728,6 +1728,15 @@
 		"notes": "Due to historical reasons, this word has an irregular spelling; *nu would be expected. Although sponges are technically animals, they do not fall under the Eremoran classification of animate since they are sessile. This word is sometimes pronounced ''bat'' to distinguish it from ba 'chickpea' when necessary."
 	},
 	{
+		"title": "babeku",
+		"etym": "I/PEN/*βabegu",
+		"cat": "n., 4th",
+		"defList": [
+			"amaryllis"
+		],
+		"categories": ["flower"]
+	},
+	{
 		"title": "bablibelzik",
 		"etym": "C/bab/libelzik",
 		"cat": "n., 2nd",
@@ -2238,6 +2247,15 @@
 			"bark, woof, arf"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "baul",
+		"etym": "I/PEN/*baul",
+		"cat": "n., 4th",
+		"defList": [
+			"marigold"
+		],
+		"categories": ["flower"]
 	},
 	{
 		"title": "baz",
@@ -6144,6 +6162,15 @@
 		"categories": ["animal", "bird"]
 	},
 	{
+		"title": "hasumazi",
+		"etym": "I/PEN/*ɸaʃumasi",
+		"cat": "n., 4th",
+		"defList": [
+			"gladiolus (flower)"
+		],
+		"categories": ["flower"]
+	},
+	{
 		"title": "hat",
 		"etym": "I/PEN/*ɸat/loom",
 		"cat": "n., 3rd",
@@ -7521,6 +7548,15 @@
 			"(transitive) move"
 		],
 		"categories": ["motion"]
+	},
+	{
+		"title": "izardômu",
+		"etym": "I/PEN/*iseredômu",
+		"cat": "n., 4th",
+		"defList": [
+			"anemone"
+		],
+		"categories": ["flower"]
 	},
 	{
 		"title": "ka-",
@@ -11413,6 +11449,15 @@
 			"(archaic) whatever; whoever"
 		],
 		"notes": "See ''be'' for the verbal conjunction. cf. ''id''."
+	},
+	{
+		"title": "nano",
+		"etym": "I/PEN/*nano",
+		"cat": "n., 4th",
+		"defList": [
+			"begonia"
+		],
+		"categories": ["flower"]
 	},
 	{
 		"title": "napakar",
