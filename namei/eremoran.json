@@ -846,6 +846,15 @@
 		"categories": ["animal", "seafood"]
 	},
 	{
+		"title": "akat",
+		"etym": "L/VAZ/???",
+		"cat": "n., 3rd",
+		"defList": [
+			"cloak"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "akkapa",
 		"etym": "L/PRE/aka-kapa",
 		"cat": "n, 4th",
@@ -898,15 +907,6 @@
 			"goat"
 		],
 		"categories": ["animal"]
-	},
-	{
-		"title": "akt",
-		"etym": "L/VAZ/???",
-		"cat": "n., 3rd",
-		"defList": [
-			"cloak"
-		],
-		"categories": ["clothing"]
 	},
 	{
 		"title": "aku",
@@ -1851,6 +1851,15 @@
 		"categories": ["fruit", "plant", "tree"]
 	},
 	{
+		"title": "bakat",
+		"etym": "L/VAZ/???",
+		"cat": "n., 3rd",
+		"defList": [
+			"coat"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "bakaz",
 		"etym": "I/PEN/*βakas/get; receive",
 		"cat": "v.",
@@ -1869,15 +1878,6 @@
 			"maize (corn)"
 		],
 		"categories": ["grain", "plant"]
-	},
-	{
-		"title": "bakt",
-		"etym": "L/VAZ/???",
-		"cat": "n., 3rd",
-		"defList": [
-			"coat"
-		],
-		"categories": ["clothing"]
 	},
 	{
 		"title": "baliêr",
