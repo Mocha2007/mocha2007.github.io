@@ -744,27 +744,48 @@ const phono = {
 };
 
 const gen = {
+	json(cat){
+		const template = `
+		{
+			"title": "TITLE",
+			"etym": "I/PEN/*PROTO",
+			"cat": "CAT",
+			"defList": [
+				"DEF"
+			],
+			"categories": [CATEGORIES]
+		},`;
+		const filter = this.filter.c(cat);
+		const catString = {
+			n1: 'n., 1st', n2: 'n., 2nd', n3: 'n., 3rd', n4: 'n., 4th', n5: 'n., 5th',
+			v: 'v.', adj: 'adj.',
+		}[cat];
+		const word = this.proto.gen(filter);
+		return template.replace('TITLE', word).replace('CAT', catString);
+	},
 	filter: {
 		/** returns true if this matches what we would expect from a class 4 noun
 		 * eg. try gen.proto.gen(gen.filter.c('n1'));
 		 * @param {number} type eg 'v' or 'n1' or 'adj' */
 		c(type){
 			function output(w){
+				const reserved = 'rktmz'.split('');
+				const last = w[w.length-1];
 				switch (type){
 					case 'n1':
-						return w[w.length-1] === 'r';
+						return last === 'r';
 					case 'n2':
-						return w[w.length-1] === 'k';
+						return last === 'k';
 					case 'n3':
-						return w[w.length-1] === 't';
+						return last === 't';
 					case 'n5':
-						return w[w.length-1] === 'm';
+						return last === 'm';
 					case 'v':
-						return w[w.length-1] === 'z';
+						return last === 'z';
 					case 'adj':
-						return w[w.length-1] === 'u';
+						return last === 'u';
 				}
-				return true;
+				return !reserved.includes(last);
 			}
 			return output;
 		},
@@ -940,6 +961,7 @@ const gen = {
 	markov: {
 		/** @type {{string: {string: number}}} */
 		data: {'^': {}},
+		/** @returns {string} */
 		gen(o = this, filter = () => true){
 			if (!o.initialized)
 				o.init();
