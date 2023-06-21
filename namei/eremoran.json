@@ -6107,6 +6107,15 @@
 		"categories": ["animal", "bug"]
 	},
 	{
+		"title": "hazant",
+		"etym": "L/MUR/???",
+		"cat": "n., 3rd",
+		"defList": [
+			"turban"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "hazo",
 		"etym": "I/PEN/*ɸaso/leek",
 		"cat": "n., 4th",
@@ -9312,6 +9321,15 @@
 		]
 	},
 	{
+		"title": "kumelat",
+		"etym": "D/kuma",
+		"cat": "n., 3rd",
+		"defList": [
+			"bracelet"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "kumitaz",
 		"etym": "I/PEN/*ku-mitas/with-push",
 		"cat": "v.",
@@ -9990,6 +10008,15 @@
 		"categories": ["female given name"]
 	},
 	{
+		"title": "lielat",
+		"etym": "D/li",
+		"cat": "n., 3rd",
+		"defList": [
+			"anklet"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "lilire",
 		"img": "../img/eremoran/talira.png",
 		"etym": "R/lire",
@@ -10155,6 +10182,15 @@
 			"neck"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "lukselat",
+		"etym": "D/luksa",
+		"cat": "n., 3rd",
+		"defList": [
+			"necklace, collar, choker"
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "lumaz",
@@ -15282,6 +15318,15 @@
 			"The southern, coastal cultural region of Eremor, associated with the so-called ''kadrêm'' 'hard R' sounds."
 		],
 		"categories": ["toponym"]
+	},
+	{
+		"title": "tôelat",
+		"etym": "D/tô",
+		"cat": "n., 3rd",
+		"defList": [
+			"headdress"
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "tok",
