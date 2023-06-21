@@ -3362,6 +3362,15 @@
 		"categories": ["disease", "emotion"]
 	},
 	{
+		"title": "bôra",
+		"etym": "I/PEN/*βôra",
+		"cat": "n., 4th",
+		"defList": [
+			"daisy"
+		],
+		"categories": ["flower"]
+	},
+	{
 		"title": "bornat",
 		"etym": "I/PEN/*βornaxt/beer",
 		"cat": "n., 3rd",
@@ -3610,6 +3619,15 @@
 			"net"
 		],
 		"categories": ["tool"]
+	},
+	{
+		"title": "bulkan",
+		"etym": "I/PEN/*bulxan",
+		"cat": "n., 4th",
+		"defList": [
+			"lily"
+		],
+		"categories": ["flower"]
 	},
 	{
 		"title": "bulklat",
@@ -4964,6 +4982,15 @@
 			"owl"
 		],
 		"categories": ["animal", "bird"]
+	},
+	{
+		"title": "duti",
+		"etym": "I/PEN/*duti",
+		"cat": "n., 4th",
+		"defList": [
+			"orchid"
+		],
+		"categories": ["flower"]
 	},
 	{
 		"title": "êasur",
@@ -8544,6 +8571,15 @@
 		"categories": ["motion"]
 	},
 	{
+		"title": "koku",
+		"etym": "I/PEN/*kuro",
+		"cat": "n., 4th",
+		"defList": [
+			"peony"
+		],
+		"categories": ["flower"]
+	},
+	{
 		"title": "kokum",
 		"etym": "C/kokuz/-m",
 		"cat": "n., 5th",
@@ -9611,6 +9647,15 @@
 			"onion"
 		],
 		"categories": ["plant", "vegetable"]
+	},
+	{
+		"title": "kuro",
+		"etym": "I/PEN/*kuro",
+		"cat": "n., 4th",
+		"defList": [
+			"chrysanthemum"
+		],
+		"categories": ["flower"]
 	},
 	{
 		"title": "kurôm",
