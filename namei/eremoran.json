@@ -3019,6 +3019,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "bino",
+		"etym": "I/PEN/*eβino",
+		"cat": "n., 4th",
+		"defList": [
+			"buttercup"
+		],
+		"categories": ["flower"]
+	},
+	{
 		"title": "binom",
 		"etym": "I/PEN/*biniom/imagination",
 		"cat": "n., 5th",
@@ -4948,6 +4957,15 @@
 		"notes": "cf. ''pukusam'', the noun form"
 	},
 	{
+		"title": "dôzuka",
+		"etym": "I/PEN/*dôsuka",
+		"cat": "n., 4th",
+		"defList": [
+			"hydrangea"
+		],
+		"categories": ["flower"]
+	},
+	{
 		"title": "drekut",
 		"etym": "r/darekut",
 		"cat": "n., 3rd",
@@ -4973,6 +4991,15 @@
 			"snipe"
 		],
 		"categories": ["animal", "bird"]
+	},
+	{
+		"title": "dunzo",
+		"etym": "I/PEN/*dunso",
+		"cat": "n., 4th",
+		"defList": [
+			"daffodil"
+		],
+		"categories": ["flower"]
 	},
 	{
 		"title": "duôk",
@@ -6079,6 +6106,15 @@
 		"defList": [
 			"snort"
 		]
+	},
+	{
+		"title": "harba",
+		"etym": "I/PEN/*ɸaraβa",
+		"cat": "n., 4th",
+		"defList": [
+			"iris"
+		],
+		"categories": ["flower"]
 	},
 	{
 		"title": "harira",
@@ -8569,6 +8605,15 @@
 			"flow"
 		],
 		"categories": ["motion"]
+	},
+	{
+		"title": "koktô",
+		"etym": "I/PEN/*goxtô",
+		"cat": "n., 4th",
+		"defList": [
+			"dahlia"
+		],
+		"categories": ["flower"]
 	},
 	{
 		"title": "koku",
