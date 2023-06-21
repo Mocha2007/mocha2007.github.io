@@ -900,6 +900,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "akt",
+		"etym": "L/VAZ/???",
+		"cat": "n., 3rd",
+		"defList": [
+			"cloak"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "aku",
 		"etym": "I/PEN/*aku",
 		"cat": "n., 4th",
@@ -1862,6 +1871,15 @@
 		"categories": ["grain", "plant"]
 	},
 	{
+		"title": "bakt",
+		"etym": "L/VAZ/???",
+		"cat": "n., 3rd",
+		"defList": [
+			"coat"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "baliêr",
 		"etym": "C/baliz/-ê",
 		"cat": "n., 1st",
@@ -2514,6 +2532,15 @@
 			"day of the week"
 		],
 		"categories": ["time"]
+	},
+	{
+		"title": "bert",
+		"etym": "I/PEN/*ber-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"shawl"
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "berz",
@@ -4748,6 +4775,15 @@
 		"categories": ["animal", "bird"]
 	},
 	{
+		"title": "dôlt",
+		"etym": "L/VAZ/???",
+		"cat": "n., 3rd",
+		"defList": [
+			"tunic"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "dôm",
 		"etym": "C/dô/-m",
 		"cat": "n., 5th",
@@ -4837,6 +4873,15 @@
 			"dig",
 			"mine"
 		]
+	},
+	{
+		"title": "dôrt",
+		"etym": "I/PEN/*dôr-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"skirt"
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "dôsaurz",
