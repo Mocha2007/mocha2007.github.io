@@ -1734,7 +1734,7 @@
 		"defList": [
 			"amaryllis"
 		],
-		"categories": ["flower"]
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "bablibelzik",
@@ -2255,7 +2255,7 @@
 		"defList": [
 			"marigold"
 		],
-		"categories": ["flower"]
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "baz",
@@ -3061,7 +3061,7 @@
 		"defList": [
 			"buttercup"
 		],
-		"categories": ["flower"]
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "binom",
@@ -3413,7 +3413,7 @@
 		"defList": [
 			"daisy"
 		],
-		"categories": ["flower"]
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "bornat",
@@ -3672,7 +3672,7 @@
 		"defList": [
 			"lily"
 		],
-		"categories": ["flower"]
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "bulklat",
@@ -4999,7 +4999,7 @@
 		"defList": [
 			"hydrangea"
 		],
-		"categories": ["flower"]
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "drekut",
@@ -5035,7 +5035,7 @@
 		"defList": [
 			"daffodil"
 		],
-		"categories": ["flower"]
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "duôk",
@@ -5053,7 +5053,7 @@
 		"defList": [
 			"orchid"
 		],
-		"categories": ["flower"]
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "êasur",
@@ -6150,7 +6150,7 @@
 		"defList": [
 			"iris"
 		],
-		"categories": ["flower"]
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "harira",
@@ -6160,6 +6160,14 @@
 			"turmeric"
 		],
 		"categories": ["plant", "spice"]
+	},
+	{
+		"title": "harmaim",
+		"etym": "C/harmaiz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"smirk"
+		]
 	},
 	{
 		"title": "harmaiz",
@@ -6194,7 +6202,7 @@
 		"defList": [
 			"gladiolus (flower)"
 		],
-		"categories": ["flower"]
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "hat",
@@ -7582,7 +7590,7 @@
 		"defList": [
 			"anemone"
 		],
-		"categories": ["flower"]
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "ka-",
@@ -7926,6 +7934,15 @@
 		"categories": ["color"]
 	},
 	{
+		"title": "kara",
+		"etym": "I/PEN/*kara/type of flower",
+		"cat": "n., 4th",
+		"defList": [
+			"petunia"
+		],
+		"categories": ["flower", "plant"]
+	},
+	{
 		"title": "karê",
 		"etym": "I/PEN/*karê/cardamom",
 		"cat": "n., 4th",
@@ -7978,6 +7995,15 @@
 		"defList": [
 			"croak (as a frog)"
 		]
+	},
+	{
+		"title": "karrarbas",
+		"etym": "I/PEN/*kara-rereβatʃ",
+		"cat": "n., 4th",
+		"defList": [
+			"azalea"
+		],
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "karz",
@@ -8675,7 +8701,7 @@
 		"defList": [
 			"dahlia"
 		],
-		"categories": ["flower"]
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "koku",
@@ -8684,7 +8710,7 @@
 		"defList": [
 			"peony"
 		],
-		"categories": ["flower"]
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "kokum",
@@ -9762,7 +9788,7 @@
 		"defList": [
 			"chrysanthemum"
 		],
-		"categories": ["flower"]
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "kurôm",
@@ -10566,6 +10592,15 @@
 			"(archaic) male given name"
 		],
 		"categories": ["female given name", "male given name"]
+	},
+	{
+		"title": "maninan",
+		"etym": "I/PEN/*maninan",
+		"cat": "n., 4th",
+		"defList": [
+			"pansy (flower)"
+		],
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "mankam",
@@ -11483,7 +11518,7 @@
 		"defList": [
 			"begonia"
 		],
-		"categories": ["flower"]
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "napakar",
@@ -13763,6 +13798,15 @@
 			"butterfly"
 		],
 		"categories": ["animal", "bug"]
+	},
+	{
+		"title": "sebasebat",
+		"etym": "R/seba",
+		"cat": "n., 4th",
+		"defList": [
+			"bouquet"
+		],
+		"categories": ["flower", "plant"]
 	},
 	{
 		"title": "sebaz",
