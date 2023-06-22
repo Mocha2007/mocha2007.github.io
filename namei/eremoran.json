@@ -2552,6 +2552,24 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "berim",
+		"etym": "C/beriz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"blink",
+			"(metaphorically) a moment, a second"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "beriz",
+		"etym": "I/PEN/*beris",
+		"cat": "v.",
+		"defList": [
+			"blink"
+		]
+	},
+	{
 		"title": "bert",
 		"etym": "I/PEN/*ber-t",
 		"cat": "n., 3rd",
@@ -6142,6 +6160,14 @@
 			"turmeric"
 		],
 		"categories": ["plant", "spice"]
+	},
+	{
+		"title": "harmaiz",
+		"etym": "I/PEN/*ɸermais",
+		"cat": "v.",
+		"defList": [
+			"smirk"
+		]
 	},
 	{
 		"title": "hasfak",
@@ -12123,6 +12149,24 @@
 		"cat": "n., 4th",
 		"defList": [
 			"hill"
+		]
+	},
+	{
+		"title": "nulum",
+		"etym": "C/nuluz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"wink",
+			"(metaphorically) a moment, a second"
+		],
+		"categories": ["time"]
+	},
+	{
+		"title": "nuluz",
+		"etym": "I/PEN/*nulus",
+		"cat": "v.",
+		"defList": [
+			"wink"
 		]
 	},
 	{
