@@ -828,6 +828,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "ak",
+		"etym": "O",
+		"cat": "interj.",
+		"defList": [
+			"argh!, ach!, ugh!"
+		],
+		"notes": "often [a:x] or [a:g]"
+	},
+	{
 		"title": "aka",
 		"etym": "I/PEN/*aka/wheat",
 		"cat": "n., 4th",
@@ -1735,6 +1744,14 @@
 		"categories": ["plant", "vegetable"]
 	},
 	{
+		"title": "ba",
+		"etym": "O",
+		"cat": "interj.",
+		"defList": [
+			"bah!"
+		]
+	},
+	{
 		"title": "bab",
 		"etym": "I/PEN/*bab/sponge",
 		"cat": "n., 4th",
@@ -2368,6 +2385,15 @@
 			"hops"
 		],
 		"categories": ["plant"]
+	},
+	{
+		"title": "be",
+		"etym": "L/VAZ/ve'/go",
+		"cat": "interj.",
+		"defList": [
+			"[interjection of excitement]"
+		],
+		"notes": "Often repeated (eg. 'bebebebe...'). Can use [β] and even [ʔ], depending on how knowledgable the speaker is of the source word. Sometimes spelt [[beb]] or [[bek]]."
 	},
 	{
 		"title": "bê",
@@ -12695,6 +12721,14 @@
 		"categories": ["motion"]
 	},
 	{
+		"title": "ôi",
+		"etym": "O",
+		"cat": "interj.",
+		"defList": [
+			"oy!, hey!"
+		]
+	},
+	{
 		"title": "ok",
 		"etym": "r/holk",
 		"cat": "adv.",
@@ -16256,6 +16290,15 @@
 			"(ZE) (verb negator)"
 		],
 		"notes": "cf. pu-, the newer, productive form"
+	},
+	{
+		"title": "ua",
+		"etym": "O",
+		"cat": "interj.",
+		"defList": [
+			"wow!, whoa!"
+		],
+		"notes": "The A usually has a strong pronounciation, ie. [ua:], as if spelt [[uaa]]."
 	},
 	{
 		"title": "ube",
