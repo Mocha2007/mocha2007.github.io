@@ -4947,6 +4947,15 @@
 		]
 	},
 	{
+		"title": "dôrkut",
+		"etym": "A/dôrt",
+		"cat": "n., 3rd",
+		"defList": [
+			"sarong, dhoti"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "dôrt",
 		"etym": "I/PEN/*dôr-t",
 		"cat": "n., 3rd",
@@ -5296,6 +5305,24 @@
 		],
 		"categories": ["fruit", "plant", "tree"],
 		"notes": "wanderwort"
+	},
+	{
+		"title": "ên",
+		"etym": "I/PEN/*ên",
+		"cat": "n., 4th",
+		"defList": [
+			"crotch, loins"
+		],
+		"categories": ["body part"]
+	},
+	{
+		"title": "ênbunt",
+		"etym": "C/ên/bunt",
+		"cat": "n., 3rd",
+		"defList": [
+			"loincloth, underwear"
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "endimôm",
@@ -12136,6 +12163,15 @@
 		]
 	},
 	{
+		"title": "nont",
+		"etym": "I/PEN/*non-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"shoe"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "nôsêdzak",
 		"etym": "C/nô/sêdzak",
 		"cat": "n., 2nd",
@@ -14486,6 +14522,15 @@
 			"paintbrush"
 		],
 		"categories": ["tool"]
+	},
+	{
+		"title": "sorat",
+		"etym": "I/PEN/*ʃora-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"robe, sari"
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "sorazik",
