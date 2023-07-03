@@ -3665,6 +3665,14 @@
 		"categories": ["v3_trade"]
 	},
 	{
+		"title": "bubombêl",
+		"etym": "L/VAZ/wuwon vel/eat shit",
+		"cat": "interj.",
+		"defList": [
+			"[insult]"
+		]
+	},
+	{
 		"title": "bubut",
 		"etym": "R/buk",
 		"cat": "n., 3rd",
@@ -11203,6 +11211,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "mittunurat",
+		"etym": "C/mid/tunurat",
+		"cat": "adv.",
+		"defList": [
+			"in one's pocket"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "miz",
 		"etym": "I/PEN/*mis",
 		"cat": "v.",
@@ -16239,6 +16256,31 @@
 			"gelding (gelded stallion, horse)"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "tunudaret",
+		"etym": "B/tunurat/daret",
+		"cat": "n., 3rd",
+		"defList": [
+			"spare change, pocket money"
+		]
+	},
+	{
+		"title": "tunurat",
+		"etym": "I/PEN/*atunura-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"pocket"
+		],
+		"categories": ["clothing"]
+	},
+	{
+		"title": "tunuratit",
+		"etym": "B/tunurat/raratit",
+		"cat": "n., 3rd",
+		"defList": [
+			"tchotchke, knick-knack"
+		]
 	},
 	{
 		"title": "tunz",

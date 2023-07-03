@@ -392,3 +392,4 @@ catupa=n, n=ginger
 komwa=n, n=park, garden
 awle=n, n=courtyard
 nawn=adposition, =than
+wuwo=n, n=shit, excement, feces
