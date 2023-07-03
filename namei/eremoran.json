@@ -2077,6 +2077,15 @@
 		]
 	},
 	{
+		"title": "barlut",
+		"etym": "C/bart/lum",
+		"cat": "n., 3rd",
+		"defList": [
+			"beltloop"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "barm",
 		"etym": "C/bart/-m",
 		"cat": "n., 5th",
@@ -2167,6 +2176,14 @@
 			"goose (esp. {{w|anser anser|greylag goose}} and {{w|nettapus coromandelianus coromandelianus|cotton pygmy goose}})"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "baskas",
+		"etym": "I/PEN/*βatʃkatʃ",
+		"cat": "n., 4th",
+		"defList": [
+			"pit, hole"
+		]
 	},
 	{
 		"title": "basuk",
@@ -8182,6 +8199,14 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "katril",
+		"etym": "I/PEN/*katril",
+		"cat": "n., 4th",
+		"defList": [
+			"perforation, hole"
+		]
+	},
+	{
 		"title": "kaz",
 		"etym": "I/PEN/*kas",
 		"cat": "v.",
@@ -10460,6 +10485,14 @@
 			"necklace, collar, choker"
 		],
 		"categories": ["clothing"]
+	},
+	{
+		"title": "lum",
+		"etym": "I/PEN/*lu-m",
+		"cat": "n., 5th",
+		"defList": [
+			"loop"
+		]
 	},
 	{
 		"title": "lumaz",
@@ -12813,6 +12846,15 @@
 			"(military) flank (all senses)"
 		],
 		"categories": ["war"]
+	},
+	{
+		"title": "ont",
+		"etym": "I/PEN/*on-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"button"
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "oro",
