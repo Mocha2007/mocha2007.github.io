@@ -810,6 +810,15 @@
 		"categories": ["plant", "tree"]
 	},
 	{
+		"title": "aia",
+		"etym": "O",
+		"cat": "interj.",
+		"defList": [
+			"sheesh, gosh, geez"
+		],
+		"notes": "Both As typically retain the strong pronounciation /a/, as opposed to reducing to schwa."
+	},
+	{
 		"title": "ak",
 		"etym": "I/PEN/*ax/mare",
 		"cat": "n., 2nd",
@@ -2025,6 +2034,15 @@
 		"categories": ["plant", "tree"]
 	},
 	{
+		"title": "banot",
+		"etym": "I/PEN/*baniot",
+		"cat": "n., 3rd",
+		"defList": [
+			"garment similar to a chador"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "bant",
 		"etym": "I/PEN/*βankt/knife",
 		"cat": "n., 3rd",
@@ -2139,6 +2157,15 @@
 			"belt"
 		],
 		"categories": ["clothing", "tool"]
+	},
+	{
+		"title": "bartint",
+		"etym": "I/PEN/*βaratint",
+		"cat": "n., 3rd",
+		"defList": [
+			"blouse, choli"
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "bartka",
@@ -13458,6 +13485,15 @@
 		"categories": ["tool"]
 	},
 	{
+		"title": "rikôt",
+		"etym": "I/PEN/*arikôt",
+		"cat": "n., 3rd",
+		"defList": [
+			"long coat, sherwani"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "ril",
 		"etym": "I/PEN/*ril/sun",
 		"cat": "n., 4th",
@@ -16337,6 +16373,14 @@
 		"cat": "adj.",
 		"defList": [
 			"no, none"
+		]
+	},
+	{
+		"title": "uk",
+		"etym": "O",
+		"cat": "interj.",
+		"defList": [
+			"oof"
 		]
 	},
 	{
