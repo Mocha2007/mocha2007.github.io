@@ -3710,6 +3710,15 @@
 		"categories": ["animal", "bird"]
 	},
 	{
+		"title": "bunkit",
+		"etym": "C/bunt/ki",
+		"cat": "n., 3rd",
+		"defList": [
+			"sock"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "bunt",
 		"etym": "I/PEN/*bunt/cloth//~/but",
 		"cat": "n., 3rd",
@@ -5077,6 +5086,15 @@
 		"categories": ["body part", "plant"]
 	},
 	{
+		"title": "ebakit",
+		"etym": "C/eba/ki",
+		"cat": "n., 3rd",
+		"defList": [
+			"sandal"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "ebakrifank",
 		"etym": "C/eba/krifan",
 		"cat": "n., 2nd",
@@ -6049,6 +6067,15 @@
 			"five"
 		],
 		"categories": ["body part", "number"]
+	},
+	{
+		"title": "hanuelat",
+		"etym": "D/hanu",
+		"cat": "n., 3rd",
+		"defList": [
+			"glove, mitten"
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "hanufkaz",
@@ -8289,6 +8316,15 @@
 		]
 	},
 	{
+		"title": "kielat",
+		"etym": "D/ki",
+		"cat": "n., 3rd",
+		"defList": [
+			"footwear"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "kiêr",
 		"etym": "C/kit/-ê",
 		"cat": "n., 1st",
@@ -8374,6 +8410,15 @@
 			"present (time)"
 		],
 		"categories": ["time"]
+	},
+	{
+		"title": "kikut",
+		"etym": "A/ki",
+		"cat": "n., 3rd",
+		"defList": [
+			"boot"
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "kilaz",
