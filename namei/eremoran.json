@@ -2405,6 +2405,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "beb",
+		"etym": "a/be",
+		"cat": "interj.",
+		"defList": [
+			"[interjection of excitement]"
+		],
+		"notes": "Uncommon alternate form of [[be]]."
+	},
+	{
 		"title": "bêbat",
 		"etym": "I/PEN/*βê-ba-t",
 		"cat": "n., 3rd",
@@ -2492,6 +2501,15 @@
 			"wasp"
 		],
 		"categories": ["animal", "bug"]
+	},
+	{
+		"title": "bek",
+		"etym": "a/be",
+		"cat": "interj.",
+		"defList": [
+			"[interjection of excitement]"
+		],
+		"notes": "Uncommon alternate form of [[be]]."
 	},
 	{
 		"title": "beka",
@@ -7754,6 +7772,24 @@
 		"categories": ["flower", "plant"]
 	},
 	{
+		"title": "k",
+		"etym": "a/be",
+		"cat": "interj.",
+		"defList": [
+			"[interjection of mild unexpected shock]"
+		],
+		"notes": "Commonly also pronounced [gə], can be repeated."
+	},
+	{
+		"title": "ka",
+		"etym": "O",
+		"cat": "interj.",
+		"defList": [
+			"gah!"
+		],
+		"notes": "Commonly also pronounced [ga]."
+	},
+	{
 		"title": "ka-",
 		"etym": "I/PEN/*xaiu/ten",
 		"cat": "aff.",
@@ -10620,6 +10656,14 @@
 			"broth, stock"
 		],
 		"categories": ["food"]
+	},
+	{
+		"title": "m",
+		"etym": "O",
+		"cat": "interj.",
+		"defList": [
+			"hmm"
+		]
 	},
 	{
 		"title": "ma",
@@ -16298,7 +16342,7 @@
 		"defList": [
 			"wow!, whoa!"
 		],
-		"notes": "The A usually has a strong pronounciation, ie. [ua:], as if spelt [[uaa]]."
+		"notes": "The A usually has a strong pronounciation, ie. [ua:]."
 	},
 	{
 		"title": "ube",
