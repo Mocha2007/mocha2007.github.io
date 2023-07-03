@@ -4095,6 +4095,15 @@
 		"categories": ["coin"]
 	},
 	{
+		"title": "darelat",
+		"etym": "D/daret",
+		"cat": "n., 3rd",
+		"defList": [
+			"coinpurse"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "daremat",
 		"etym": "C/dare/mat",
 		"cat": "n., 3rd",
@@ -5227,7 +5236,8 @@
 		"etym": "I/PEN/*elas/little",
 		"cat": "adj., s-triggering",
 		"defList": [
-			"little, small, tiny"
+			"little, small, tiny",
+			"(suffix) used to form clothing and accessories for a body part/item"
 		],
 		"categories": ["extent"]
 	},
@@ -10351,6 +10361,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "lisuelat",
+		"etym": "D/lisu",
+		"cat": "n., 3rd",
+		"defList": [
+			"shirt"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "lolkum",
 		"etym": "A/lolm",
 		"cat": "n., 5th",
@@ -11145,6 +11164,16 @@
 			"housewife"
 		],
 		"categories": ["person"]
+	},
+	{
+		"title": "molat",
+		"etym": "D/mo",
+		"cat": "n., 3rd",
+		"defList": [
+			"backpack"
+		],
+		"categories": ["clothing"],
+		"notes": "Expected form [[melat]]; but since that form already exists, this was dissimilated."
 	},
 	{
 		"title": "môlz",
@@ -12725,6 +12754,15 @@
 		"defList": [
 			"rot"
 		]
+	},
+	{
+		"title": "onkat",
+		"etym": "I/PEN/*onga-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"purse"
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "onkuk",
@@ -15558,6 +15596,15 @@
 			"arrow"
 		],
 		"categories": ["war"]
+	},
+	{
+		"title": "tikelat",
+		"etym": "D/tikat",
+		"cat": "n., 3rd",
+		"defList": [
+			"quiver"
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "tisurozik",
