@@ -846,6 +846,15 @@
 		"categories": ["animal", "seafood"]
 	},
 	{
+		"title": "akalôt",
+		"etym": "I/PEN/*xêkalô-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"strap"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "akat",
 		"etym": "L/VAZ/???",
 		"cat": "n., 3rd",
@@ -3916,6 +3925,15 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "dakrarit",
+		"etym": "I/PEN/*dagraxerai-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"stirrup"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "daktarm",
 		"etym": "I/PEN/*daktarm/time",
 		"cat": "n., 5th",
@@ -6257,6 +6275,15 @@
 		"defList": [
 			"smirk"
 		]
+	},
+	{
+		"title": "harnazit",
+		"etym": "I/PEN/*ɸaronasi-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"saddle"
+		],
+		"categories": ["clothing"]
 	},
 	{
 		"title": "hasfak",
@@ -12225,6 +12252,15 @@
 		]
 	},
 	{
+		"title": "nonôt",
+		"etym": "I/PEN/*nonô-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"buckle"
+		],
+		"categories": ["clothing"]
+	},
+	{
 		"title": "nont",
 		"etym": "I/PEN/*non-t",
 		"cat": "n., 3rd",
@@ -12794,6 +12830,15 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"purse"
+		],
+		"categories": ["clothing"]
+	},
+	{
+		"title": "onkatrilt",
+		"etym": "C/ont/katril",
+		"cat": "n., 3rd",
+		"defList": [
+			"buttonhole"
 		],
 		"categories": ["clothing"]
 	},
