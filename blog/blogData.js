@@ -903,7 +903,7 @@ const blogData = [
 		Many other countries use the more logical naming of "liberal" and "conservative", respectively, for similar parties,
 		although "liberal" has its own problems.
 		If it were up to me, though, I would either choose the existing "left-right" terminology,
-		or invent a new meaning for "evolutionary" or "mutationary" to contrast with "conservative".
+		or invent a new meaning for "evolutionary" or "mutational" to contrast with "conservative".
 		Don't even get me started on the backwards colors...</li>
 		<li><b>quiet quitting</b> - not even remotely quitting. It is quiet, though. A better term might be "jaded compliance".</li>
 		<li><b>social distancing</b> - on the surface, appears to contrast with physical distancing - yet the two are one and the same.
