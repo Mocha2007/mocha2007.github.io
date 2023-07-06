@@ -884,6 +884,20 @@ const blogData = [
 	A list of terms that, in my opinion, don't make sense:
 	<ul>
 		<li>antisemitism - is generally only applied to jews, not to any other semitic group. Should be "antijudaism".</li>
+		<li>caucasian - generally applied to people and cultures with no ties to the Caucasus.
+		Ironically, many Caucasians would not be considered caucasian by American standards.
+		The common synonym "white" is (slightly) more logical.</li>
+		<li>(math) closed & open - unlike in literally any other context, in math, these are not mutually exclusive.
+		Unfortunately, there are no obvious replacements - perhaps "limit-containing" and "limit-bounded", respectively?</li>
+		<li>(American politics) democrat & republican - if you know nothing of American politics, you would assume
+		democrats are anti-republic and pro-democracy, and republicans are ant-democracy and pro-republic.
+		Snide comments aside, both largely support the continuance of the current system of power vesture (ie., a democratic republic).
+		Many other countries use the more logical naming of "liberal" and "conservative", respectively, for similar parties,
+		although "liberal" has its own problems.
+		If it were up to me, though, I would either choose the existing "left-right" terminology,
+		or invent a new meaning for "evolutionary" or "mutationary" to contrast with "conservative".
+		Don't even get me started on the backwards colors...</li>
+		<li>quiet quitting - not even remotely quitting. It is quiet, though. A better term might be "jaded compliance".</li>
 		<li>social distancing - on the surface, appears to contrast with physical distancing - yet the two are one and the same.
 		Perhaps a better alternative would be something like "hygienic distancing".</li>
 	</ul>
