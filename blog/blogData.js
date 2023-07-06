@@ -899,7 +899,7 @@ const blogData = [
 		"Intellectual property rights" or the less obvious but shorter "uncopiability" may be suitable alternatives.</li>
 		<li>(American politics) <b>democrat & republican</b> - if you know nothing of American politics, you would assume
 		democrats are anti-republic and pro-democracy, and republicans are ant-democracy and pro-republic.
-		Snide comments aside, both largely support the continuance of the current system of power vesture (ie., a democratic republic).
+		Snide comments aside, both largely support the continuance of the current system of power investiture (ie., a democratic republic).
 		Many other countries use the more logical naming of "liberal" and "conservative", respectively, for similar parties,
 		although "liberal" has its own problems.
 		If it were up to me, though, I would either choose the existing "left-right" terminology,
