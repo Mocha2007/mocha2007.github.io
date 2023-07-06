@@ -873,4 +873,21 @@ const blogData = [
 	Recently I have been adding vocabulary for birds, fish, and bugs.
 	I expect to finish in early August - September at the latest.
 	`,
+	/*
+	publish when large enough
+	`
+	@title Subtle but Unfortunate Misnomers
+	@date -
+	@p
+	@tags language
+	(Note: not prescribing any linguistic change. Just pointing out some counterintuitive word formations.)
+	A list of terms that, in my opinion, don't make sense:
+	<ul>
+		<li>antisemitism - is generally only applied to jews, not to any other semitic group. Should be "antijudaism".</li>
+		<li>social distancing - on the surface, appears to contrast with physical distancing - yet the two are one and the same.
+		Perhaps a better alternative would be something like "hygienic distancing".</li>
+	</ul>
+	I don't see these talked about often. I guess most folks just take these terms for granted.
+	`
+	*/
 ];
