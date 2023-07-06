@@ -881,7 +881,9 @@ const blogData = [
 	Here I have compiled a list of terms that, in my opinion, don't make sense.
 	I am deliberately excluding well-documented misnomers like "french dip" (a Californian invention),
 	metaphors like "purple state" (which is not a state aligning to a hypothetical "purple party", but rather a "neutral" state),
-	and metonyms of any sort, such as "fly fishing" (which involves no real flies, but is named because it mimics flies).
+	metonyms of any sort, such as "fly fishing" (which involves no real flies, but is named because it mimics flies),
+	redundant formations like "ATM machine",
+	or illogical syntax, such as the countable use of "DLC".
 	Note also that I am not prescribing any linguistic change,
 	but merely pointing out some counterintuitive word formations,
 	along with providing hypothetical "logical" alternatives.
