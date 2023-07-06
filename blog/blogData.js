@@ -905,6 +905,8 @@ const blogData = [
 		If it were up to me, though, I would either choose the existing "left-right" terminology,
 		or invent a new meaning for "evolutionary" or "mutational" to contrast with "conservative".
 		Don't even get me started on the backwards colors...</li>
+		<li><b>preferred pronoun</b> - an unfortunate continuance of the same trivializing anti-queer attitudes that spawned terms like "sexual preference".
+		Thankfully, the simple "pronoun" alone is already gaining ground without any prescriptivist intervention.</li>
 		<li><b>quiet quitting</b> - not even remotely quitting. It is quiet, though. A better term might be "jaded compliance".</li>
 		<li><b>social distancing</b> - on the surface, appears to contrast with physical distancing - yet the two are one and the same.
 		Perhaps a better alternative would be something like "hygienic distancing".</li>
