@@ -873,23 +873,31 @@ const blogData = [
 	Recently I have been adding vocabulary for birds, fish, and bugs.
 	I expect to finish in early August - September at the latest.
 	`,
-	/*
-	publish when large enough
 	`
 	@title Subtle but Unfortunate Misnomers
-	@date -
+	@date 1688672359277
 	@p
 	@tags language
-	(Note: not prescribing any linguistic change. Just pointing out some counterintuitive word formations.)
-	A list of terms that, in my opinion, don't make sense:
-	<ul>
-		<li>antisemitism - is generally only applied to jews, not to any other semitic group. Should be "antijudaism".</li>
-		<li>caucasian - generally applied to people and cultures with no ties to the Caucasus.
+	Here I have compiled a list of terms that, in my opinion, don't make sense.
+	I am deliberately excluding well-documented misnomers like "french dip" (a Californian invention),
+	metaphors like "purple state" (which is not a state aligning to a hypothetical "purple party", but rather a "neutral" state),
+	and metonyms of any sort, such as "fly fishing" (which involves no real flies, but is named because it mimics flies).
+	Note also that I am not prescribing any linguistic change,
+	but merely pointing out some counterintuitive word formations,
+	along with providing hypothetical "logical" alternatives.
+	<ol>
+		<li><b>antisemitism</b> - is generally only applied to jews, not to any other semitic group.
+		Should therefore be "antijudaism".</li>
+		<li><b>caucasian</b> - generally applied to people and cultures with no ties to the Caucasus.
 		Ironically, many Caucasians would not be considered caucasian by American standards.
-		The common synonym "white" is (slightly) more logical.</li>
-		<li>(math) closed & open - unlike in literally any other context, in math, these are not mutually exclusive.
+		The common synonym "white" is (slightly) more logical,
+		although ideally one would avoid this outdated and arbitrary racial classification system entirely.</li>
+		<li>(math) <b>closed & open</b> - unlike in literally any other context, in math, these are not mutually exclusive.
 		Unfortunately, there are no obvious replacements - perhaps "limit-containing" and "limit-bounded", respectively?</li>
-		<li>(American politics) democrat & republican - if you know nothing of American politics, you would assume
+		<li><b>copyright</b> - on its surface, appears to indicate one's right to copy.
+		In actuality, it is the opposite.
+		"Intellectual property rights" or the less obvious but shorter "uncopiability" may be suitable alternatives.</li>
+		<li>(American politics) <b>democrat & republican</b> - if you know nothing of American politics, you would assume
 		democrats are anti-republic and pro-democracy, and republicans are ant-democracy and pro-republic.
 		Snide comments aside, both largely support the continuance of the current system of power vesture (ie., a democratic republic).
 		Many other countries use the more logical naming of "liberal" and "conservative", respectively, for similar parties,
@@ -897,11 +905,10 @@ const blogData = [
 		If it were up to me, though, I would either choose the existing "left-right" terminology,
 		or invent a new meaning for "evolutionary" or "mutationary" to contrast with "conservative".
 		Don't even get me started on the backwards colors...</li>
-		<li>quiet quitting - not even remotely quitting. It is quiet, though. A better term might be "jaded compliance".</li>
-		<li>social distancing - on the surface, appears to contrast with physical distancing - yet the two are one and the same.
+		<li><b>quiet quitting</b> - not even remotely quitting. It is quiet, though. A better term might be "jaded compliance".</li>
+		<li><b>social distancing</b> - on the surface, appears to contrast with physical distancing - yet the two are one and the same.
 		Perhaps a better alternative would be something like "hygienic distancing".</li>
-	</ul>
+	</ol>
 	I don't see these talked about often. I guess most folks just take these terms for granted.
-	`
-	*/
+	`,
 ];
