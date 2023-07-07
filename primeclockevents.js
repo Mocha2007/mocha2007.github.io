@@ -715,7 +715,11 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[diff(1628985600), 'The <a href="https://en.wikipedia.org/wiki/Fall_of_Kabul_(2021)">Fall of Kabul</a>'],
 	// 2022
 	[diff(1645668000), 'The <a href="https://en.wikipedia.org/wiki/2022_Russian_invasion_of_Ukraine">Russia invades Ukraine</a>'],
-	[diff(1657247400), 'The <a href="https://en.wikipedia.org/wiki/Assassination_of_Shinzo_Abe">Assassination of Shinzo Abe</a>']
+	[diff(1657247400), 'The <a href="https://en.wikipedia.org/wiki/Assassination_of_Shinzo_Abe">Assassination of Shinzo Abe</a>'],
+	[diff(1669809600), 'The launch of <a href="https://en.wikipedia.org/wiki/ChatGPT">ChatGPT</a>'],
+	// 2023
+	[diff(1674950400), 'The <a href="https://en.wikipedia.org/wiki/2023_Chinese_balloon_incident">Chinese Balloon Incident</a>'],
+	[diff(1675475700), 'The <a href="https://en.wikipedia.org/wiki/2023_Ohio_train_derailment">2023 Ohio Train Derailment</a>']
 // 2020
 // https://en.wikipedia.org/wiki/Timelines_of_world_history
 // https://www.epochconverter.com/
