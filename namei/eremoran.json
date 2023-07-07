@@ -5475,6 +5475,14 @@
 		"notes": "wanderwort"
 	},
 	{
+		"title": "emzot",
+		"etym": "I/PEN/*emso-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"tray"
+		]
+	},
+	{
 		"title": "ên",
 		"etym": "I/PEN/*ên",
 		"cat": "n., 4th",
@@ -16656,6 +16664,14 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "ukrit",
+		"etym": "I/PEN/*ugri-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"rack"
+		]
+	},
+	{
 		"title": "uku",
 		"etym": "C/u-/ku",
 		"cat": "post.",
@@ -17111,6 +17127,14 @@
 		]
 	},
 	{
+		"title": "uzibez",
+		"etym": "C/u-/zibez",
+		"cat": "v.",
+		"defList": [
+			"unlock, be unlocked"
+		]
+	},
+	{
 		"title": "uzurkelau",
 		"etym": "D/uzurku",
 		"cat": "adj.",
@@ -17251,6 +17275,22 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"die, dice"
+		]
+	},
+	{
+		"title": "zibet",
+		"etym": "I/PEN/*asiβe-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"lock"
+		]
+	},
+	{
+		"title": "zibez",
+		"etym": "C/zibet/-z",
+		"cat": "v.",
+		"defList": [
+			"lock, be locked"
 		]
 	},
 	{
