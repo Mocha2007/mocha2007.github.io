@@ -5179,6 +5179,14 @@
 		"categories": ["animal", "bug"]
 	},
 	{
+		"title": "dumbat",
+		"etym": "I/PEN/*dumba-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"pot, vase"
+		]
+	},
+	{
 		"title": "dumuk",
 		"etym": "I/PEN/*dumu-x",
 		"cat": "n., 2nd",
@@ -5288,6 +5296,15 @@
 			"cinnamon"
 		],
 		"categories": ["plant", "spice", "tree"]
+	},
+	{
+		"title": "ebza",
+		"etym": "I/PEN/*ebsa",
+		"cat": "n., 4th",
+		"defList": [
+			"beak"
+		],
+		"categories": ["animal", "bird", "body part"]
 	},
 	{
 		"title": "edzam",
@@ -11604,7 +11621,6 @@
 		"etym": "C/mu/ma",
 		"cat": "n., 3rd",
 		"defList": [
-			"cup",
 			"pitcher"
 		],
 		"categories": ["drink"]
@@ -12138,6 +12154,15 @@
 			"lewd"
 		],
 		"categories": ["sex"]
+	},
+	{
+		"title": "nêt",
+		"etym": "I/PEN/*nê-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"cup, mug"
+		],
+		"categories": ["drink"]
 	},
 	{
 		"title": "netar",
@@ -15713,6 +15738,24 @@
 			"tea (leaf)"
 		],
 		"categories": ["plant", "v3_trade", "tree"]
+	},
+	{
+		"title": "tekkamat",
+		"etym": "C/tekka/mat",
+		"cat": "n., 3rd",
+		"defList": [
+			"teapot, gaiwan"
+		],
+		"categories": ["drink"]
+	},
+	{
+		"title": "tekkanêt",
+		"etym": "C/tekka/nêt",
+		"cat": "n., 3rd",
+		"defList": [
+			"teacup"
+		],
+		"categories": ["drink"]
 	},
 	{
 		"title": "tekkat",
