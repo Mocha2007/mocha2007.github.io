@@ -5179,6 +5179,15 @@
 		"categories": ["animal", "bug"]
 	},
 	{
+		"title": "dult",
+		"etym": "I/PEN/*dul-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"yogurt"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "dumbat",
 		"etym": "I/PEN/*dumba-t",
 		"cat": "n., 3rd",
@@ -5752,6 +5761,15 @@
 			"(archaic) believe; think"
 		],
 		"categories": ["experiential"]
+	},
+	{
+		"title": "eunt",
+		"etym": "I/PEN/*eun-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"cream"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "ha",
@@ -13437,6 +13455,15 @@
 		"categories": ["person"]
 	},
 	{
+		"title": "raratimat",
+		"etym": "C/raratit/mat",
+		"cat": "n., 3rd",
+		"defList": [
+			"restaurant"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "raratit",
 		"etym": "R/ratik",
 		"cat": "n., 3rd",
@@ -13990,6 +14017,15 @@
 			"lie (down)",
 			"sit"
 		]
+	},
+	{
+		"title": "samat",
+		"etym": "I/PEN/*ʃama-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"sauce"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "sambam",
@@ -14578,6 +14614,15 @@
 			"burn (intransitive)"
 		],
 		"notes": "a rather old blend; it retains ar(e)do's central vowel"
+	},
+	{
+		"title": "sisat",
+		"etym": "I/PEN/*tsiʃa-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"butter"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "sisêm",
