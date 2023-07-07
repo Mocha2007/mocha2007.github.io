@@ -756,7 +756,7 @@ const gen = {
 			"categories": [CATEGORIES]
 		},`;
 		const filter = w => 3 < w.length && w.length < 10
-			&& this.filter.c(cat)(w) && !elements.corpus.includes(w);
+			&& this.filter.c(cat)(w) && !elements.dict.includes(w);
 		const catString = {
 			n1: 'n., 1st', n2: 'n., 2nd', n3: 'n., 3rd', n4: 'n., 4th', n5: 'n., 5th',
 			v: 'v.', adj: 'adj.',

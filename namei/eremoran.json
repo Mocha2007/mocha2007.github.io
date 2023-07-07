@@ -5307,6 +5307,15 @@
 		"categories": ["animal", "bird", "body part"]
 	},
 	{
+		"title": "ebzat",
+		"etym": "C/ebza/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"chopstick"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "edzam",
 		"img": "../img/eremoran/edzam.png",
 		"etym": "I/PEN/*ediam/part",
@@ -13060,6 +13069,16 @@
 		"categories": ["war"]
 	},
 	{
+		"title": "onotorut",
+		"etym": "B/onod/torut",
+		"cat": "n., 3rd",
+		"defList": [
+			"(fire) poker",
+			"meat fork"
+		],
+		"categories": ["food", "metal"]
+	},
+	{
 		"title": "ont",
 		"etym": "I/PEN/*on-t",
 		"cat": "n., 3rd",
@@ -13749,6 +13768,15 @@
 			"lettuce"
 		],
 		"categories": ["plant", "vegetable"]
+	},
+	{
+		"title": "rizit",
+		"etym": "I/PEN/*risi-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"spoon"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "rô",
@@ -16094,6 +16122,15 @@
 		"categories": ["astronomy"]
 	},
 	{
+		"title": "torut",
+		"etym": "I/PEN/*toru-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"fork"
+		],
+		"categories": ["food"]
+	},
+	{
 		"title": "tôsu",
 		"etym": "C/tô/-isu",
 		"cat": "adj.",
@@ -17036,6 +17073,15 @@
 			"(of the sky) overcast with storm clouds; having heavy cloud cover"
 		],
 		"categories": ["color", "weather"]
+	},
+	{
+		"title": "usizit",
+		"etym": "B/usit/rizit",
+		"cat": "n., 3rd",
+		"defList": [
+			"soup spoon, ladle"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "utbak",
