@@ -992,6 +992,23 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "amabasêz",
+		"etym": "C/amabaz/-isêz",
+		"cat": "v.",
+		"defList": [
+			"(Southern) annoying, intolerable, insufferable",
+			"(Northern) repulsive, unsightly, ugly"
+		]
+	},
+	{
+		"title": "amabaz",
+		"etym": "I/PEN/*amabas",
+		"cat": "v.",
+		"defList": [
+			"avoid"
+		]
+	},
+	{
 		"title": "amabbak",
 		"etym": "C/amz/abbak",
 		"cat": "n., 2nd",
@@ -14710,6 +14727,14 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "skunt",
+		"etym": "I/PEN/*tʃkunt",
+		"cat": "n., 3rd",
+		"defList": [
+			"soap"
+		]
+	},
+	{
 		"title": "sobêr",
 		"etym": "C/sobz/-ê",
 		"cat": "n., 1st",
@@ -15617,6 +15642,14 @@
 		"cat": "adj.",
 		"defList": [
 			"stair, stairs"
+		]
+	},
+	{
+		"title": "taunz",
+		"etym": "I/PEN/*tauns",
+		"cat": "v.",
+		"defList": [
+			"wash"
 		]
 	},
 	{
@@ -16547,7 +16580,16 @@
 		"etym": "C/u-/ku",
 		"cat": "post.",
 		"defList": [
-			"without"
+			"without",
+			"(prefix) -less"
+		]
+	},
+	{
+		"title": "ukuamabaz",
+		"etym": "C/uku/amabaz",
+		"cat": "v.",
+		"defList": [
+			"(Southern) tolerable"
 		]
 	},
 	{
