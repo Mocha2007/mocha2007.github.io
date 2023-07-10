@@ -873,6 +873,15 @@
 		"categories": ["clothing"]
 	},
 	{
+		"title": "akama",
+		"etym": "I/PEN/*egama",
+		"cat": "n., 4th",
+		"defList": [
+			"kratom"
+		],
+		"categories": ["herb", "plant", "tree"]
+	},
+	{
 		"title": "akat",
 		"etym": "L/VAZ/???",
 		"cat": "n., 3rd",
@@ -1939,6 +1948,15 @@
 			"maize (corn)"
 		],
 		"categories": ["grain", "plant"]
+	},
+	{
+		"title": "bakrandi",
+		"etym": "I/PEN/*begrandi",
+		"cat": "n., 4th",
+		"defList": [
+			"honeybush"
+		],
+		"categories": ["herb", "plant"]
 	},
 	{
 		"title": "baliêr",
@@ -3290,6 +3308,15 @@
 			"(intransitive) toast, be toasted (like bread)"
 		],
 		"categories": ["food"]
+	},
+	{
+		"title": "biziba",
+		"etym": "I/PEN/*bisiba",
+		"cat": "n., 4th",
+		"defList": [
+			"hibiscus"
+		],
+		"categories": ["flower", "herb", "plant"]
 	},
 	{
 		"title": "bizilur",
@@ -5266,6 +5293,15 @@
 			"owl"
 		],
 		"categories": ["animal", "bird"]
+	},
+	{
+		"title": "duruku",
+		"etym": "I/PEN/*durugu",
+		"cat": "n., 4th",
+		"defList": [
+			"elderberry"
+		],
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "duti",
@@ -12559,6 +12595,15 @@
 			"The first day of the 6-day week"
 		],
 		"categories": ["time"]
+	},
+	{
+		"title": "nodzi",
+		"etym": "I/PEN/*nodsi",
+		"cat": "n., 4th",
+		"defList": [
+			"echinacea"
+		],
+		"categories": ["flower", "herb", "plant"]
 	},
 	{
 		"title": "nokam",
