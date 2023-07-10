@@ -4140,6 +4140,15 @@
 		]
 	},
 	{
+		"title": "dankino",
+		"etym": "L/VAZ/dankino",
+		"cat": "n., 4th",
+		"defList": [
+			"water chestnut"
+		],
+		"categories": ["plant", "vegetable"]
+	},
+	{
 		"title": "danlikêk",
 		"etym": "C/danlikz/-ê",
 		"cat": "n., 2nd",
@@ -13282,6 +13291,15 @@
 		"categories": ["emotion"]
 	},
 	{
+		"title": "pantuku",
+		"etym": "L/VAZ/panntugu",
+		"cat": "n., 4th",
+		"defList": [
+			"bamboo shoot"
+		],
+		"categories": ["plant", "vegetable"]
+	},
+	{
 		"title": "param",
 		"etym": "C/parz/-m",
 		"cat": "n., 5th",
@@ -14116,6 +14134,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "sanon",
+		"etym": "L/ULM/sanon",
+		"cat": "n., 4th",
+		"defList": [
+			"senna"
+		],
+		"categories": ["flower", "plant"]
+	},
+	{
 		"title": "sanzonk",
 		"etym": "I/PEN/*ʃaianson-x",
 		"cat": "n., 2nd",
@@ -14588,6 +14615,15 @@
 		"defList": [
 			"(inanimate only) young"
 		]
+	},
+	{
+		"title": "simi",
+		"etym": "L/VAZ/shimi",
+		"cat": "n., 4th",
+		"defList": [
+			"ginseng"
+		],
+		"categories": ["plant", "spice"]
 	},
 	{
 		"title": "simum",
@@ -16462,6 +16498,15 @@
 		"defList": [
 			"whisper"
 		]
+	},
+	{
+		"title": "tuku",
+		"etym": "L/VAZ/tugu",
+		"cat": "n., 4th",
+		"defList": [
+			"bamboo"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "tukum",
