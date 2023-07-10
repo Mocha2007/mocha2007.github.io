@@ -2247,6 +2247,15 @@
 		"categories": ["plant", "vegetable"]
 	},
 	{
+		"title": "baruma",
+		"etym": "I/PEN/*βaruma",
+		"cat": "n., 4th",
+		"defList": [
+			"nettle"
+		],
+		"categories": ["herb", "plant"]
+	},
+	{
 		"title": "baruz",
 		"etym": "I/PEN/*baxerus/sort",
 		"cat": "v.",
@@ -8381,6 +8390,15 @@
 		"categories": ["plant", "spice"]
 	},
 	{
+		"title": "karinu",
+		"etym": "I/PEN/*karinu",
+		"cat": "n., 4th",
+		"defList": [
+			"neem"
+		],
+		"categories": ["plant", "tree"]
+	},
+	{
 		"title": "karm",
 		"etym": "I/PEN/*xar-m/war",
 		"cat": "n., 5th",
@@ -8571,6 +8589,15 @@
 			"cotton"
 		],
 		"categories": ["fiber", "plant", "oil"]
+	},
+	{
+		"title": "kazlu",
+		"etym": "I/PEN/*gaslu",
+		"cat": "n., 4th",
+		"defList": [
+			"rosemary"
+		],
+		"categories": ["herb", "plant"]
 	},
 	{
 		"title": "ke",
@@ -12362,6 +12389,15 @@
 		]
 	},
 	{
+		"title": "nêna",
+		"etym": "I/PEN/*nênia",
+		"cat": "n., 4th",
+		"defList": [
+			"red clover"
+		],
+		"categories": ["flower", "herb", "plant"]
+	},
+	{
 		"title": "nenstak",
 		"etym": "I/PEN/*nensta-x",
 		"cat": "n., 2nd",
@@ -14072,6 +14108,15 @@
 		"defList": [
 			"stele, obelisk"
 		]
+	},
+	{
+		"title": "rôlire",
+		"etym": "C/rô/lire",
+		"cat": "n., 4th",
+		"defList": [
+			"moringa"
+		],
+		"categories": ["plant", "tree"]
 	},
 	{
 		"title": "rôm",
