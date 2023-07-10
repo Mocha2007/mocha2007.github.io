@@ -812,11 +812,11 @@ const blogData = [
 	to see if any are a viable replacement, or if I'm better off studying alone.
 	`,
 	`
-	@title Eremoran Expansion Project: Four-and-a-Half Month Update
+	@title Eremoran Expansion Project: Three-and-a-Half Month Update
 	@date 1685460440778
 	@p
 	@tags eremoran site
-	It's been about 4.5 months since my pledge to expand Eremoran at a rate of 4-5 words per day.
+	It's been about 3.5 months since my pledge to expand Eremoran at a rate of 4-5 words per day.
 	Then, I had 900 words.
 	Currently, I have 1,685.
 	This amounts to an average of 7.2 words per day, or 50 words per week,
@@ -861,11 +861,11 @@ const blogData = [
 	If DeSantis actually wins the presidency, I may quite literally have to flee the country.
 	`,
 	`
-	@title Eremoran Expansion Project: Five Month Update
+	@title Eremoran Expansion Project: Four Month Update
 	@date 1686314956562
 	@p
 	@tags eremoran site
-	It's been about 5 months since my pledge to expand Eremoran at a rate of 4-5 words per day.
+	It's been about 4 months since my pledge to expand Eremoran at a rate of 4-5 words per day.
 	Then, I had 900 words.
 	Currently, I have 1,770 - nearly double!
 	This amounts to an average of 7.3 words per day, or 51 words per week,
@@ -917,11 +917,11 @@ const blogData = [
 	I don't see these talked about often. I guess most folks just take these terms for granted.
 	`,
 	`
-	@title Eremoran Expansion Project: Six Month Update
+	@title Eremoran Expansion Project: Five Month Update
 	@date 1689003152776
 	@p
 	@tags eremoran site
-	It's been 6 months since my pledge to expand Eremoran at a rate of 4-5 words per day.
+	It's been 5 months since my pledge to expand Eremoran at a rate of 4-5 words per day.
 	Then, I had 900 words.
 	Currently, I have 1,970.
 	This amounts to an average of 7.1 words per day, or 50 words per week,
