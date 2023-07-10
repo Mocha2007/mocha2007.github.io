@@ -2016,6 +2016,15 @@
 		]
 	},
 	{
+		"title": "bamarku",
+		"etym": "I/PEN/*βemarku",
+		"cat": "n., 4th",
+		"defList": [
+			"rooibos"
+		],
+		"categories": ["herb", "plant"]
+	},
+	{
 		"title": "bamat",
 		"etym": "I/PEN/*bamat",
 		"cat": "n., 3rd",
@@ -3395,6 +3404,15 @@
 			"(live) chicken"
 		],
 		"categories": ["animal", "bird"]
+	},
+	{
+		"title": "boka",
+		"etym": "I/PEN/*boka",
+		"cat": "n., 4th",
+		"defList": [
+			"bergamot"
+		],
+		"categories": ["flower", "herb", "plant"]
 	},
 	{
 		"title": "bôkrik",
@@ -10745,6 +10763,15 @@
 		"categories": ["animal", "seafood"]
 	},
 	{
+		"title": "luka",
+		"etym": "I/PEN/*luxa",
+		"cat": "n., 4th",
+		"defList": [
+			"artichoke"
+		],
+		"categories": ["plant", "vegetable"]
+	},
+	{
 		"title": "luksa",
 		"etym": "I/PEN/*luksa/neck",
 		"cat": "n., 4th",
@@ -11781,6 +11808,15 @@
 		"defList": [
 			"lake"
 		]
+	},
+	{
+		"title": "murai",
+		"etym": "I/PEN/*murai",
+		"cat": "n., 4th",
+		"defList": [
+			"bael"
+		],
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "mus",
@@ -14598,6 +14634,15 @@
 			"wren"
 		],
 		"categories": ["animal", "bird"]
+	},
+	{
+		"title": "sêtikuna",
+		"etym": "I/PEN/*ʃêtikunex",
+		"cat": "n., 4th",
+		"defList": [
+			"asiatic pennywort"
+		],
+		"categories": ["herb", "plant"]
 	},
 	{
 		"title": "si",
