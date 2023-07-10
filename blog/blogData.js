@@ -814,7 +814,6 @@ const blogData = [
 	`
 	@title Eremoran Expansion Project: Three-and-a-Half Month Update
 	@date 1685460440778
-	@p
 	@tags eremoran site
 	It's been about 3.5 months since my pledge to expand Eremoran at a rate of 4-5 words per day.
 	Then, I had 900 words.
@@ -863,7 +862,6 @@ const blogData = [
 	`
 	@title Eremoran Expansion Project: Four Month Update
 	@date 1686314956562
-	@p
 	@tags eremoran site
 	It's been about 4 months since my pledge to expand Eremoran at a rate of 4-5 words per day.
 	Then, I had 900 words.
@@ -876,7 +874,6 @@ const blogData = [
 	`
 	@title Subtle but Unfortunate Misnomers
 	@date 1688672359277
-	@p
 	@tags language
 	Here I have compiled a list of terms that, in my opinion, don't make sense.
 	I am deliberately excluding well-documented misnomers like "french dip" (a Californian invention),
@@ -919,7 +916,6 @@ const blogData = [
 	`
 	@title Eremoran Expansion Project: Five Month Update
 	@date 1689003152776
-	@p
 	@tags eremoran site
 	It's been 5 months since my pledge to expand Eremoran at a rate of 4-5 words per day.
 	Then, I had 900 words.
