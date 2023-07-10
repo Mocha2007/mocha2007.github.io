@@ -2077,6 +2077,15 @@
 		"categories": ["plant", "tree"]
 	},
 	{
+		"title": "banon",
+		"etym": "L/ULM/banon",
+		"cat": "n., 4th",
+		"defList": [
+			"caraway"
+		],
+		"categories": ["herb", "plant"]
+	},
+	{
 		"title": "banot",
 		"etym": "I/PEN/*baniot",
 		"cat": "n., 3rd",
@@ -2237,6 +2246,15 @@
 			"bind",
 			"unite"
 		]
+	},
+	{
+		"title": "basalu",
+		"etym": "I/PEN/*betsialu",
+		"cat": "n., 4th",
+		"defList": [
+			"burdock"
+		],
+		"categories": ["herb", "plant"]
 	},
 	{
 		"title": "basêz",
@@ -5587,6 +5605,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "enon",
+		"etym": "L/ULM/enon",
+		"cat": "n., 4th",
+		"defList": [
+			"catnip"
+		],
+		"categories": ["herb", "plant"]
+	},
+	{
 		"title": "enuz",
 		"etym": "B/enz/nuz",
 		"cat": "v.",
@@ -8784,6 +8811,15 @@
 			"heel"
 		],
 		"categories": ["body part"]
+	},
+	{
+		"title": "kilu",
+		"etym": "I/PEN/*gilu",
+		"cat": "n., 4th",
+		"defList": [
+			"dill"
+		],
+		"categories": ["herb", "plant"]
 	},
 	{
 		"title": "kim",
@@ -13749,6 +13785,15 @@
 			"rub",
 			"wipe"
 		]
+	},
+	{
+		"title": "reki",
+		"etym": "I/PEN/*reki",
+		"cat": "n., 4th",
+		"defList": [
+			"dandelion"
+		],
+		"categories": ["flower", "herb", "plant"]
 	},
 	{
 		"title": "rêklôlk",
