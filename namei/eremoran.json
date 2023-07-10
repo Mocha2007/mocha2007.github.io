@@ -2408,6 +2408,15 @@
 		"categories": ["motion"]
 	},
 	{
+		"title": "baza",
+		"etym": "I/PEN/*basa",
+		"cat": "n., 4th",
+		"defList": [
+			"sage"
+		],
+		"categories": ["herb", "plant"]
+	},
+	{
 		"title": "bazêr",
 		"img": "../img/eremoran/wazer.png",
 		"etym": "C/baz/-ê",
@@ -8196,6 +8205,15 @@
 		"categories": ["plant", "vegetable"]
 	},
 	{
+		"title": "kakonô",
+		"etym": "I/PEN/*kaxonô",
+		"cat": "n., 4th",
+		"defList": [
+			"St. John's wort"
+		],
+		"categories": ["flower", "herb", "plant"]
+	},
+	{
 		"title": "kakram",
 		"etym": "C/kam/kram",
 		"cat": "n., 5th",
@@ -9347,6 +9365,15 @@
 		"categories": ["war"]
 	},
 	{
+		"title": "kôta",
+		"etym": "I/PEN/*xôta",
+		"cat": "n., 4th",
+		"defList": [
+			"thyme"
+		],
+		"categories": ["herb", "plant"]
+	},
+	{
 		"title": "kotaz",
 		"etym": "I/PEN/*kotas/shoot",
 		"cat": "v.",
@@ -9988,6 +10015,15 @@
 		"defList": [
 			"perfume"
 		]
+	},
+	{
+		"title": "kumanuta",
+		"etym": "I/PEN/*kaxonô",
+		"cat": "n., 4th",
+		"defList": [
+			"valerian"
+		],
+		"categories": ["flower", "herb", "plant"]
 	},
 	{
 		"title": "kumelat",
@@ -12549,6 +12585,15 @@
 			"bread"
 		],
 		"categories": ["food"]
+	},
+	{
+		"title": "nirai",
+		"etym": "I/PEN/*anirai",
+		"cat": "n., 4th",
+		"defList": [
+			"sassafras"
+		],
+		"categories": ["plant", "tree"]
 	},
 	{
 		"title": "nizinar",
