@@ -6497,6 +6497,15 @@
 		"categories": ["clothing"]
 	},
 	{
+		"title": "hazize",
+		"etym": "I/PEN/*ɸosise",
+		"cat": "n., 4th",
+		"defList": [
+			"mistletoe"
+		],
+		"categories": ["flower", "fruit", "plant"]
+	},
+	{
 		"title": "hazo",
 		"etym": "I/PEN/*ɸaso/leek",
 		"cat": "n., 4th",
@@ -8208,6 +8217,15 @@
 			"yellow"
 		],
 		"categories": ["color"]
+	},
+	{
+		"title": "kanzi",
+		"etym": "I/PEN/*kansi",
+		"cat": "n., 4th",
+		"defList": [
+			"betel nut"
+		],
+		"categories": ["plant", "tree"]
 	},
 	{
 		"title": "kara",
@@ -15768,6 +15786,23 @@
 		"categories": ["food"]
 	},
 	{
+		"title": "tazbikno",
+		"etym": "C/tasu/bikno",
+		"cat": "n., 4th",
+		"defList": [
+			"broom (natural green dye)"
+		],
+		"categories": ["flower", "plant"]
+	},
+	{
+		"title": "tazbiknodint",
+		"etym": "C/tazbikno/-idint",
+		"cat": "n., 3rd",
+		"defList": [
+			"dyer's green"
+		]
+	},
+	{
 		"title": "taze",
 		"etym": "I/PEN/*tase/grass//~/talire//~/tasu//~/tasku",
 		"cat": "n., 4th",
@@ -17373,6 +17408,15 @@
 			"cuckoo"
 		],
 		"categories": ["animal", "bird"]
+	},
+	{
+		"title": "zolak",
+		"etym": "I/PEN/*asole-x",
+		"cat": "n., 2nd",
+		"defList": [
+			"squid"
+		],
+		"categories": ["animal", "seafood"]
 	},
 	{
 		"title": "zulunk",
