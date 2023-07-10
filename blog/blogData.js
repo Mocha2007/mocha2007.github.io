@@ -916,4 +916,17 @@ const blogData = [
 	</ol>
 	I don't see these talked about often. I guess most folks just take these terms for granted.
 	`,
+	`
+	@title Eremoran Expansion Project: Six Month Update
+	@date 1689003152776
+	@p
+	@tags eremoran site
+	It's been 6 months since my pledge to expand Eremoran at a rate of 4-5 words per day.
+	Then, I had 900 words.
+	Currently, I have 1,970.
+	This amounts to an average of 7.1 words per day, or 50 words per week,
+	putting me on track for reaching my goal in four weeks.
+	Thus, my next update will probably be the announcement of the completion of this project
+	in early August.
+	`,
 ];
