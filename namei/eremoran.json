@@ -7896,6 +7896,15 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "kabakaba",
+		"etym": "L/VAZ/kawa",
+		"cat": "n., 4th",
+		"defList": [
+			"kava"
+		],
+		"categories": ["plant"]
+	},
+	{
 		"title": "kabako",
 		"etym": "I/PEN/*kabaxo/rye",
 		"cat": "n., 4th",
@@ -9202,6 +9211,15 @@
 		"defList": [
 			"float"
 		]
+	},
+	{
+		"title": "krafôla",
+		"etym": "I/PEN/*graɸôla",
+		"cat": "n., 4th",
+		"defList": [
+			"khat"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "krakudam",
@@ -11138,6 +11156,15 @@
 		]
 	},
 	{
+		"title": "maukon",
+		"etym": "L/ULM/maukon",
+		"cat": "n., 4th",
+		"defList": [
+			"mistletoe"
+		],
+		"categories": ["flower", "fruit", "plant"]
+	},
+	{
 		"title": "maz",
 		"etym": "C/ma/-z",
 		"cat": "v.",
@@ -12288,6 +12315,15 @@
 			"(archaic) last season"
 		],
 		"categories": ["time"]
+	},
+	{
+		"title": "nia",
+		"etym": "L/VAZ/nin'a",
+		"cat": "n., 4th",
+		"defList": [
+			"ginkgo"
+		],
+		"categories": ["plant", "tree"]
 	},
 	{
 		"title": "nikiniki",
@@ -16045,6 +16081,15 @@
 			"chirp, squeak"
 		],
 		"categories": ["animal", "bird"]
+	},
+	{
+		"title": "titu",
+		"etym": "I/PEN/*titu",
+		"cat": "n., 4th",
+		"defList": [
+			"hawthorn"
+		],
+		"categories": ["plant"]
 	},
 	{
 		"title": "tiu",

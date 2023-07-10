@@ -393,3 +393,5 @@ komwa=n, n=park, garden
 awle=n, n=courtyard
 nawn=adposition, =than
 wuwo=n, n=shit, excement, feces
+nin'a=n, n=ginkgo
+kawa=n, n=kava

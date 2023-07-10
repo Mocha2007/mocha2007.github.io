@@ -231,6 +231,9 @@ etymElement.languages = {
 	TAI: {
 		name: 'Taika',
 	},
+	ULM: { // Proto-Plains
+		name: 'Ulmellan',
+	},
 	VAZ: {
 		name: 'Va&zcaron;cud',
 		lemma: '#lemma-{0}',
