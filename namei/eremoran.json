@@ -6708,6 +6708,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "hêtu",
+		"etym": "I/PEN/*ɸêtu",
+		"cat": "n., 4th",
+		"defList": [
+			"lemongrass"
+		],
+		"categories": ["plant", "herb"]
+	},
+	{
 		"title": "hi",
 		"etym": "I/PEN/*ɸi/tooth",
 		"cat": "n., 4th",
@@ -7024,6 +7033,15 @@
 		"defList": [
 			"rotten"
 		]
+	},
+	{
+		"title": "hizlanzi",
+		"etym": "I/PEN/*ɸêtu",
+		"cat": "n., 4th",
+		"defList": [
+			"blackcurrant"
+		],
+		"categories": ["fruit", "plant"]
 	},
 	{
 		"title": "ho",
@@ -8070,6 +8088,15 @@
 		]
 	},
 	{
+		"title": "kakiri",
+		"etym": "I/PEN/*kekiri",
+		"cat": "n., 4th",
+		"defList": [
+			"mint"
+		],
+		"categories": ["plant", "herb"]
+	},
+	{
 		"title": "kako",
 		"etym": "I/PEN/*ɸxaxo/lentil",
 		"cat": "n., 4th",
@@ -8226,6 +8253,15 @@
 		"defList": [
 			"ochre"
 		]
+	},
+	{
+		"title": "kanodo",
+		"etym": "I/PEN/*kanodo",
+		"cat": "n., 4th",
+		"defList": [
+			"peppermint"
+		],
+		"categories": ["plant", "herb"]
 	},
 	{
 		"title": "kanu",
@@ -13928,6 +13964,15 @@
 		"defList": [
 			"dictionary"
 		]
+	},
+	{
+		"title": "rônuku",
+		"etym": "I/PEN/*rônuxu",
+		"cat": "n., 4th",
+		"defList": [
+			"chamomile"
+		],
+		"categories": ["flower", "plant", "herb"]
 	},
 	{
 		"title": "rôraz",
