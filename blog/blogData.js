@@ -930,4 +930,61 @@ const blogData = [
 	@date 1690331469945
 	Why does everything feel half as old as it is?
 	`,
+	`
+	@title The Future of Eremoran
+	@date 1690810269367
+	@p
+	@tags eremoran site
+	A couple weeks ago I stopped updating Eremoran vocabulary and instead focused on a new code project -
+	a text adventure life simulation.
+	Although I'm <i>technically</i> 200 words away from my original goal...
+	I feel being 90% of the way there is close enough.
+	When I return to Namei, I will probably focus on Eremoran's descendants after a millennium of evolution.
+	@p
+	@tags c# dev
+	So, the game I've been working on.
+	It's actually semi-playable now, although there isn't much to play with.
+	I think before I release a public alpha, I need to add more events,
+	missions, and more locations outside the city.
+	Ideally, I would also like to create an interface for modders to create their own events and missions.
+	The game already has support for modding in new NPCs, locations, and items,
+	and I think event and mission mods would REALLY increase the replayability potential.
+	I'm also thinking about using SadConsole again for this project,
+	and maybe having an actual interface alongside the text console,
+	but I'm not sure about that yet.
+	@p
+	@tags c# dev
+	The NPCs in this game feel very solid.
+	I can throw potions at them and have them be affected,
+	they have opinions of the player that change through actions,
+	and they move around on a "schedule" as if they're actually being controlled by another player.
+	I've tried to make it so anything the player can do, NPCs can do, and vice versa.
+	So far I've been making the game take place in a society like today,
+	but I've been considering changing the setting to a post-scarcity near future.
+	Oh well, more stuff to think about.
+	@p
+	@tags news 2024_election
+	Alright, now a little snapshot of the present news to reflect on in the future.
+	DeSantis's polling has been falling, and Kennedy's polling has been rising.
+	At this point, Biden vs. Kennedy polls and Trump vs. DeSantis polls look like mirrors of each other -
+	they both seem to be hovering around 55% vs. 15%.
+	Sadly, Williamson is hovering around 6% and doesn't currently seem to have much of a chance.
+	I tried to think if there are any republicans I would even consider voting for.
+	But no, after researching every minor candidate, <i>literally every last one</i> is anti-LGBT.
+	So, I think the flowchart for how I'll end up voting in 2024 will look like this:
+	<br><br>
+	<b>*</b> &rarr; Who is the Democratic nominee?
+	<ul>
+		<li><b>Williamson</b> &rarr; vote Dem.</li>
+		<li><b>Biden</b> &rarr; Is my state projected to be a close vote? (Likely)
+			<ul>
+				<li><b>Yes</b> &rarr; vote Dem.</li>
+				<li><b>No</b> &rarr; vote Green.</li>
+			</ul>
+		</li>
+		<li><b>Kennedy</b> &rarr; vote Green.</li>
+	</ul>
+	Alternatively, if a left-wing (or at this point, even a centrist) third-party candidate seems to be gaining traction,
+	I might take the risk and vote for them.
+	`,
 ];
