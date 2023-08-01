@@ -1921,6 +1921,14 @@
 		"categories": ["fruit", "plant", "tree"]
 	},
 	{
+		"title": "bakabonam",
+		"etym": "C/bakaz/bonam",
+		"cat": "n., 5th",
+		"defList": [
+			"bakabonam; a situation where victory brings unforseen negative consequences (distinct from a pyrrhic victory in that the victory still outweighs the consequences)"
+		]
+	},
+	{
 		"title": "bakat",
 		"etym": "L/VAZ/???",
 		"cat": "n., 3rd",
