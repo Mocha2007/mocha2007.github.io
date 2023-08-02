@@ -7198,7 +7198,7 @@
 		"etym": "C/hoz/ho",
 		"cat": "adv.",
 		"defList": [
-			"thus, so, in that way",
+			"thus, so, in this/that way",
 			"anyways [filler word]"
 		]
 	},
@@ -7272,6 +7272,14 @@
 		]
 	},
 	{
+		"title": "honanaz",
+		"etym": "C/hoz/nana",
+		"cat": "adv.",
+		"defList": [
+			"somehow"
+		]
+	},
+	{
 		"title": "honark",
 		"etym": "I/PEN/*ɸonar-x",
 		"cat": "n., 2nd",
@@ -7279,6 +7287,14 @@
 			"oriole ({{w|Oriolus}})"
 		],
 		"categories": ["animal", "bird"]
+	},
+	{
+		"title": "hônaz",
+		"etym": "C/hoz/una",
+		"cat": "adv.",
+		"defList": [
+			"in no way"
+		]
 	},
 	{
 		"title": "hônt",
@@ -11755,14 +11771,6 @@
 		"cat": "adv.",
 		"defList": [
 			"all the time [habitual aspect marker]"
-		]
-	},
-	{
-		"title": "monar",
-		"etym": "C/mor/nau",
-		"cat": "n., 1st",
-		"defList": [
-			"who"
 		]
 	},
 	{
