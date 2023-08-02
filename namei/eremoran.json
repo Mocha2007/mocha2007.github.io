@@ -4962,6 +4962,15 @@
 		]
 	},
 	{
+		"title": "dôbôz",
+		"etym": "C/dô/bôz",
+		"cat": "v.",
+		"defList": [
+			"catch (a disease)"
+		],
+		"categories": ["disease"]
+	},
+	{
 		"title": "dôbukz",
 		"etym": "C/dô/bukz",
 		"cat": "v.",
@@ -17368,14 +17377,6 @@
 			"wife / sister-in-law (in polygamous relationships)"
 		],
 		"categories": ["family"]
-	},
-	{
-		"title": "umonar",
-		"etym": "C/u-/monar",
-		"cat": "pron.",
-		"defList": [
-			"nobody"
-		]
 	},
 	{
 		"title": "una",
