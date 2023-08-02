@@ -17635,6 +17635,22 @@
 		"categories": ["fungus"]
 	},
 	{
+		"title": "zalk",
+		"etym": "B/zalu/-lk",
+		"cat": "adv.",
+		"defList": [
+			"early, soon"
+		]
+	},
+	{
+		"title": "zalu",
+		"etym": "I/PEN/*slalu",
+		"cat": "adj.",
+		"defList": [
+			"early, soon"
+		]
+	},
+	{
 		"title": "zedu",
 		"etym": "I/PEN/*asedu/lip",
 		"cat": "n., 4th",
