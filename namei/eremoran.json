@@ -1895,6 +1895,14 @@
 		]
 	},
 	{
+		"title": "bainam",
+		"etym": "C/baim/na",
+		"cat": "n., 5th",
+		"defList": [
+			"why"
+		]
+	},
+	{
 		"title": "baiz",
 		"etym": "I/PEN/*βais/convince",
 		"cat": "v.",
@@ -8945,6 +8953,14 @@
 		]
 	},
 	{
+		"title": "kinanam",
+		"etym": "C/kim/nana",
+		"cat": "n., 5th",
+		"defList": [
+			"somewhere"
+		]
+	},
+	{
 		"title": "kinê",
 		"img": "../img/eremoran/kine.png",
 		"etym": "I/PEN/*kinê/reed",
@@ -8967,6 +8983,14 @@
 			"mink"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "kiokim",
+		"etym": "C/kim/hoki",
+		"cat": "n., 5th",
+		"defList": [
+			"there (medial)"
+		]
 	},
 	{
 		"title": "kiom",
@@ -9026,6 +9050,14 @@
 		"cat": "adj.",
 		"defList": [
 			"friendly"
+		]
+	},
+	{
+		"title": "kiunam",
+		"etym": "C/kim/una",
+		"cat": "n., 5th",
+		"defList": [
+			"nowhere"
 		]
 	},
 	{
@@ -12107,6 +12139,18 @@
 		"categories": ["drink"]
 	},
 	{
+		"title": "nana",
+		"etym": "R/na",
+		"cat": "pron., det.",
+		"defList": [
+			"some (fr. ''quelque'')",
+			"something",
+			"or (inclusive)* <ul> <li>  ''Rurauk su lusik su <b>dir nanak</b> i uzurkuk.''<br>  cat GEN dog GEN ABS or TOP good<br>  I like <b>either</b> cats <b>or</b> dogs. </li> </ul> ",
+			"(archaic) whatever; whoever"
+		],
+		"notes": "See ''be'' for the verbal conjunction. cf. ''id''."
+	},
+	{
 		"title": "nanask",
 		"etym": "C/na/nask",
 		"cat": "n., 2nd",
@@ -12114,18 +12158,6 @@
 			"caracal"
 		],
 		"categories": ["animal"]
-	},
-	{
-		"title": "nanau",
-		"etym": "R/nau",
-		"cat": "pron., det.",
-		"defList": [
-			"some (fr. ''quelque'')",
-			"something",
-			"or (inclusive)* <ul> <li>  ''Rurauk su lusik su <b>dir nanauk</b> i uzurkuk.''<br>  cat GEN dog GEN ABS or TOP good<br>  I like <b>either</b> cats <b>or</b> dogs. </li> </ul> ",
-			"(archaic) whatever; whoever"
-		],
-		"notes": "See ''be'' for the verbal conjunction. cf. ''id''."
 	},
 	{
 		"title": "nano",
@@ -12254,6 +12286,14 @@
 		"cat": "adj.",
 		"defList": [
 			"north"
+		]
+	},
+	{
+		"title": "nasu",
+		"etym": "C/na/su",
+		"cat": "n., 5th",
+		"defList": [
+			"whose"
 		]
 	},
 	{
@@ -16240,6 +16280,14 @@
 		"cat": "n., 5th",
 		"defList": [
 			"type, kind, sort, gender"
+		]
+	},
+	{
+		"title": "temêmonam",
+		"etym": "C/temêmom/na",
+		"cat": "n., 5th",
+		"defList": [
+			"what kind of"
 		]
 	},
 	{
