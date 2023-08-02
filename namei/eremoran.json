@@ -17640,7 +17640,8 @@
 		"cat": "adv.",
 		"defList": [
 			"early, soon"
-		]
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "zalu",
@@ -17648,7 +17649,8 @@
 		"cat": "adj.",
 		"defList": [
 			"early, soon"
-		]
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "zedu",
