@@ -1,0 +1,12 @@
+.button {
+	background-color: silver;
+	border: 0.2vh solid black;
+	border-radius: 1vh;
+	cursor: pointer;
+	padding: 0 0.5vh;
+	user-select: none;
+	-webkit-user-select: none; /* Safari */
+}
+.button:hover {
+	opacity: 0.5;
+}
