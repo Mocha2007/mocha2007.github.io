@@ -123,12 +123,12 @@ new Language('Proto-Germanic', [DITHEMATIC],
 			'haila', 'haima', 'hamara', 'haruga', 'hardu', 'harja', 'hildi', 'helta', 'himina', 'heru', 'heruta', 'hlūda', 'hrōþi',
 			'kōni', 'kunja', 'kunþa', 'kwikwa',
 			'mērija', 'rīki', 'sinþa', 'sega', 'swinþa',
-			'wandila', 'wala', 'wini', 'wulfa'],
+			'wandila', 'wala', 'walda', 'wini', 'wulfa'],
 		['balþaz', 'berhtaz', 'brandaz', 'burgz', 'dagaz', 'fardiz', 'friþuz', 'fulką',
 			'gangaz', 'gaizaz', 'gardaz', 'gulþą', 'giftiz', 'gunþiz',
 			'hailaz', 'harduz', 'harjaz', 'hildiz', 'hrōþiz',
 			'mērijaz', 'rīks', 'sinþaz', 'segaz', 'stainaz', 'swinþaz',
-			'winiz', 'wulfaz'],
+			'waldą', 'winiz', 'wulfaz'],
 	]
 );
 
