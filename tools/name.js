@@ -95,14 +95,16 @@ new Language('Tragedeigh', [DITHEMATIC],
 	/*
 		SOURCES
 		https://www.reddit.com/r/tragedeigh/comments/14dkpz0/posted_in_my_due_date_group/
+		https://i.imgur.com/XpvLXFM.jpg
+		https://www.reddit.com/gallery/149zi68
 	*/
 	[
-		['at', 'brax', 'bray', 'brex', 'brin', 'bry', 'car', 'ever', 'fyn', 'gray', 'had',
-			'hud', 'hunt', 'hux', 'jae', 'jax', 'kash', 'kay', 'kort', 'ky', 'lox', 'oak',
-			'pais', 'pay', 'say', 'zay'],
-		['cyn', 'don', 'dyn', 'lan', 'lea', 'lee', 'lei', 'leigh', 'ler', 'ley', 'lie', 'lii',
+		['at', 'brax', 'bray', 'brex', 'brin', 'bry', 'bryght', 'car', 'ever', 'fyn', 'gray', 'had',
+			'hud', 'hunt', 'hux', 'jae', 'jax', 'kash', 'kay', 'khay', 'khyn', 'kort', 'ky', 'lox', 'oak',
+			'pais', 'pay', 'reign', 'qwin', 'say', 'zay'],
+		['beaux', 'bryn', 'cyn', 'cynn', 'don', 'dyn', 'lan', 'lea', 'lee', 'lei', 'leigh', 'ler', 'ley', 'lie', 'lii',
 			'lin', 'lyn', 'lynn', 'reigh', 'sen', 'sleigh', 'son', 'ster', 'syn', 'ton', 'tyn',
-			'ven', 'zen', 'zlee'],
+			'ven', 'zen', 'zlee', 'zleigh'],
 	]
 );
 
