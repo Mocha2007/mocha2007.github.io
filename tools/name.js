@@ -1,5 +1,5 @@
 /* exported name */
-/* global random, title */
+/* global random, sum, title */
 
 class Language {
 	constructor(name, forms, sets){
@@ -13,6 +13,12 @@ class Language {
 	}
 	addRadioButton(){
 		namegen.elem.langs.appendChild(this.elem);
+	}
+	get count(){
+		return sum(this.forms.map(
+			form => form.map(
+				setIds => sum(setIds.map(
+					setId => this.sets[setId].length))).reduce((a, b) => a * b, 1)));
 	}
 	get elem(){
 		if (this.elem_)
@@ -60,6 +66,10 @@ Language.languages = [];
 const namegen = {
 	elem: {
 		/** @returns {HTMLDivElement} */
+		get count(){
+			return document.getElementById('count');
+		},
+		/** @returns {HTMLDivElement} */
 		get langs(){
 			return document.getElementById('langs');
 		},
@@ -73,6 +83,9 @@ const namegen = {
 	},
 	run(){
 		this.elem.result.innerHTML = title(this.lang.gen());
+	},
+	updateCount(){
+		this.elem.count.innerHTML = this.lang.count + ' possible names';
 	},
 };
 
@@ -93,4 +106,5 @@ new Language('Tragedeigh', [DITHEMATIC],
 	]
 );
 
-// todo list count of possible names
+// finally
+namegen.updateCount();
