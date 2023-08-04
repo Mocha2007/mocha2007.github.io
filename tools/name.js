@@ -1,5 +1,5 @@
 /* exported name */
-/* global random */
+/* global random, title */
 
 class Language {
 	constructor(name, forms, sets){
@@ -23,16 +23,18 @@ class Language {
 		radio.type = 'radio';
 		radio.name = 'langs';
 		radio.classList.add('langChoice');
-		container.appendChild(radio);
+		if (!Language.languages.length)
+			radio.checked = 'checked';
 		// label
 		const label = document.createElement('label');
-		label.innerHTML = label.for = radio.id = radio.value = this.name;
+		label.innerHTML = this.name;
+		label.appendChild(radio);
 		container.appendChild(label);
 		return this.elem_ = container;
 	}
 	/** @returns {boolean} */
 	get selected(){
-		return Array.from(this.elem.children)[0].checked || false && true;
+		return Language.languages[0].elem.children[0].children[0].checked;
 	}
 	gen(){
 		return this.randomForm().map(x => this.randomComponent(x)).join('');
@@ -70,7 +72,7 @@ const namegen = {
 		return Language.languages.find(l => l.selected);
 	},
 	run(){
-		this.elem.result.innerHTML = this.lang.gen();
+		this.elem.result.innerHTML = title(this.lang.gen());
 	},
 };
 
