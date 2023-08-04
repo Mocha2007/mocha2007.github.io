@@ -79,8 +79,18 @@ const namegen = {
 const DITHEMATIC = [[0], [1]];
 
 new Language('Tragedeigh', [DITHEMATIC],
+	/*
+		SOURCES
+		https://www.reddit.com/r/tragedeigh/comments/14dkpz0/posted_in_my_due_date_group/
+	*/
 	[
-		['brax', 'bry'],
-		['eigh', 'ler', 'syn', 'tyn'],
+		['at', 'brax', 'bray', 'brex', 'brin', 'bry', 'car', 'ever', 'fyn', 'gray', 'had',
+			'hud', 'hunt', 'hux', 'jae', 'jax', 'kash', 'kay', 'kort', 'ky', 'lox', 'oak',
+			'pais', 'pay', 'say', 'zay'],
+		['cyn', 'don', 'dyn', 'lan', 'lea', 'lee', 'lei', 'leigh', 'ler', 'ley', 'lie', 'lii',
+			'lin', 'lyn', 'lynn', 'reigh', 'sen', 'sleigh', 'son', 'ster', 'syn', 'ton', 'tyn',
+			'ven', 'zen', 'zlee'],
 	]
 );
+
+// todo list count of possible names
