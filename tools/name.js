@@ -40,7 +40,7 @@ class Language {
 	}
 	/** @returns {boolean} */
 	get selected(){
-		return Language.languages[0].elem.children[0].children[0].checked;
+		return this.elem.children[0].children[0].checked;
 	}
 	gen(){
 		return this.randomForm().map(x => this.randomComponent(x)).join('');
@@ -108,6 +108,27 @@ new Language('Tragedeigh', [DITHEMATIC, [[2]].concat(DITHEMATIC)],
 			'lin', 'lyn', 'lynn', 'reigh', 'sen', 'sleigh', 'son', 'ster', 'syn', 'ton', 'tyn',
 			'ven', 'zen', 'zlee', 'zleigh'],
 		['mac', 'mc'],
+	]
+);
+
+new Language('Proto-Germanic', [DITHEMATIC],
+	// source https://en.wikipedia.org/wiki/Germanic_name#Dithematic_names
+	// https://en.wiktionary.org/wiki/Category:Proto-Germanic_male_given_names
+	[
+		['aga', 'agi', 'ala', 'albi', 'ald', 'anô', 'ans', 'ar', 'auda', 'aþala',
+			'balþa', 'band', 'berhta', 'berô', 'branda', 'brūna', 'burg',
+			'daga', 'deuza', 'dōma', 'druhti', 'ebura', 'erkna',
+			'fardi', 'fastu', 'friþu', 'frōda', 'fulka',
+			'ganga', 'gaiza', 'garda', 'gulþa', 'gifti', 'gōda', 'gunþi',
+			'haila', 'haima', 'hamara', 'haruga', 'hardu', 'harja', 'hildi', 'helta', 'himina', 'heru', 'heruta', 'hlūda', 'hrōþi',
+			'kōni', 'kunja', 'kunþa', 'kwikwa',
+			'mērija', 'rīki', 'sinþa', 'sega', 'swinþa',
+			'wandila', 'wala', 'wini', 'wulfa'],
+		['balþaz', 'berhtaz', 'brandaz', 'burgz', 'dagaz', 'fardiz', 'friþuz', 'fulką',
+			'gangaz', 'gaizaz', 'gardaz', 'gulþą', 'giftiz', 'gunþiz',
+			'hailaz', 'harduz', 'harjaz', 'hildiz', 'hrōþiz',
+			'mērijaz', 'rīks', 'sinþaz', 'segaz', 'stainaz', 'swinþaz',
+			'winiz', 'wulfaz'],
 	]
 );
 
