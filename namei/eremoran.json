@@ -541,6 +541,14 @@
 		"categories": ["motion"]
 	},
 	{
+		"title": "adarrez",
+		"etym": "C/ad/arret",
+		"cat": "v.",
+		"defList": [
+			"board (a ship, peacefully)"
+		]
+	},
+	{
 		"title": "adarz",
 		"etym": "C/ad/arz",
 		"cat": "v.",
@@ -1474,6 +1482,14 @@
 		"cat": "n., 5th",
 		"defList": [
 			"standing, status, condition"
+		]
+	},
+	{
+		"title": "arret",
+		"etym": "I/PEN/*ereret",
+		"cat": "n., 3rd",
+		"defList": [
+			"deck (of a ship)"
 		]
 	},
 	{
@@ -7969,6 +7985,15 @@
 		"categories": ["tool"]
 	},
 	{
+		"title": "itarrez",
+		"etym": "C/it/arret",
+		"cat": "v.",
+		"defList": [
+			"board (a ship, in combat)"
+		],
+		"categories": ["war"]
+	},
+	{
 		"title": "itarz",
 		"etym": "C/it/arz",
 		"cat": "v.",
@@ -12017,6 +12042,24 @@
 			"hail"
 		],
 		"categories": ["weather"]
+	},
+	{
+		"title": "mumanuz",
+		"etym": "B/mumast/hanuz",
+		"cat": "v.",
+		"defList": [
+			"capture a ship"
+		],
+		"categories": ["war"]
+	},
+	{
+		"title": "mumaskum",
+		"etym": "C/mumast/kum",
+		"cat": "n., 5th",
+		"defList": [
+			"fleet"
+		],
+		"categories": ["war"]
 	},
 	{
 		"title": "mumast",
