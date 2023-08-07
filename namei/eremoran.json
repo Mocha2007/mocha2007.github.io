@@ -1617,6 +1617,14 @@
 		]
 	},
 	{
+		"title": "asmom",
+		"etym": "C/as/mor",
+		"cat": "n., 5th",
+		"defList": [
+			"kin-duty (duty and loyalty to one's kin)"
+		]
+	},
+	{
 		"title": "asse",
 		"etym": "C/ad/se",
 		"cat": "adv.",
@@ -3425,6 +3433,15 @@
 		"categories": ["grain", "plant"]
 	},
 	{
+		"title": "bôbar",
+		"etym": "C/bôz/-ba",
+		"cat": "n., 1st",
+		"defList": [
+			"offspring, progeny"
+		],
+		"categories": ["person"]
+	},
+	{
 		"title": "bôbôt",
 		"etym": "R/bôk",
 		"cat": "n., 3rd",
@@ -3770,6 +3787,15 @@
 		"notes": "Synonym: ''dirabeka''"
 	},
 	{
+		"title": "brekabim",
+		"etym": "C/breka/bim",
+		"cat": "n., 5th",
+		"defList": [
+			"naval battle"
+		],
+		"categories": ["war"]
+	},
+	{
 		"title": "brekaêr",
 		"etym": "C/breka/-ê",
 		"cat": "n., 1st",
@@ -4096,6 +4122,24 @@
 			"strawberry"
 		],
 		"categories": ["fruit", "plant"]
+	},
+	{
+		"title": "dabôbam",
+		"etym": "C/dabôbar/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"humanity, mankind, humankind, man"
+		],
+		"categories": ["person"]
+	},
+	{
+		"title": "dabôbar",
+		"etym": "C/da/bôbar",
+		"cat": "n., 1st",
+		"defList": [
+			"human"
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "dadal",
