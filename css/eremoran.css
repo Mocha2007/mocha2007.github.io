@@ -43,6 +43,10 @@ body, html {
 	color: transparent;
 	user-select: none;
 }
+.tallTable tr {
+	font-size: 1.5em;
+	height: 2em;
+}
 /* Eremoran Font OwO
 https://stackoverflow.com/a/24990647/2579798
 https://fontstruct.com/fontstructions/show/1995779/eremoran
@@ -78,6 +82,19 @@ symbols for 10-19 are lowercase a-j
 	font-family: sans-serif;
 	text-transform: none;
 	user-select: none;
+}
+/* eremoran apostrophe */
+.eremoran sup {
+	margin-right: -0.5em;
+	position: relative;
+	top: -0.7em;
+}
+/* kerning */
+.eremoran sup.left {
+	margin-left: -0.1em;
+	margin-right: -0.5em;
+	position: relative;
+	top: -0.7em;
 }
 a.eremoran {
 	text-decoration: none;
