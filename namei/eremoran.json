@@ -584,6 +584,15 @@
 		"categories": ["sex", "war"]
 	},
 	{
+		"title": "adimaz",
+		"etym": "B/ad/himaz",
+		"cat": "v.",
+		"defList": [
+			"(naval combat) ram"
+		],
+		"categories": ["motion", "war"]
+	},
+	{
 		"title": "adunaz",
 		"etym": "C/ad/una",
 		"cat": "v.",
@@ -1179,6 +1188,16 @@
 			"madman, crazy person"
 		],
 		"categories": ["person"]
+	},
+	{
+		"title": "ankaz",
+		"etym": "I/PEN/*anxas",
+		"cat": "v.",
+		"defList": [
+			"sink",
+			"(intransitive) dip"
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "annama",
@@ -4473,6 +4492,16 @@
 		]
 	},
 	{
+		"title": "dimaz",
+		"etym": "B/din/himaz",
+		"cat": "v.",
+		"defList": [
+			"swim away",
+			"(naval combat) flee"
+		],
+		"categories": ["motion", "war"]
+	},
+	{
 		"title": "dimbibiz",
 		"etym": "C/din/bibiz",
 		"cat": "v.",
@@ -4543,6 +4572,15 @@
 		"cat": "v.",
 		"defList": [
 			"go out, venture out, explore"
+		],
+		"categories": ["motion"]
+	},
+	{
+		"title": "dinankaz",
+		"etym": "C/din/ankaz",
+		"cat": "v.",
+		"defList": [
+			"emerge, exit water"
 		],
 		"categories": ["motion"]
 	},
@@ -4945,6 +4983,15 @@
 			"eat dinner, eat supper"
 		],
 		"categories": ["food"]
+	},
+	{
+		"title": "dôankaz",
+		"etym": "C/dô/ankaz",
+		"cat": "v.",
+		"defList": [
+			"dive, enter water"
+		],
+		"categories": ["motion"]
 	},
 	{
 		"title": "dôbefôz",
