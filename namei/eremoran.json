@@ -3754,6 +3754,15 @@
 		"notes": "Synonym: ''dirabeka''"
 	},
 	{
+		"title": "brekaêr",
+		"etym": "C/breka/-ê",
+		"cat": "n., 1st",
+		"defList": [
+			"sailor"
+		],
+		"categories": ["person", "war"]
+	},
+	{
 		"title": "brekink",
 		"etym": "C/breka/ink",
 		"cat": "n., 2nd",
@@ -3762,6 +3771,15 @@
 			"manatee, sea cow (esp. trichechus senegalensis)"
 		],
 		"categories": ["animal"]
+	},
+	{
+		"title": "brezêr",
+		"etym": "B/breka/bazêr",
+		"cat": "n., 1st",
+		"defList": [
+			"admiral"
+		],
+		"categories": ["person", "war"]
 	},
 	{
 		"title": "brukam",
@@ -15207,6 +15225,30 @@
 			"hen"
 		],
 		"categories": ["animal", "bird"]
+	},
+	{
+		"title": "skimolkut",
+		"etym": "C/skimolt/kum",
+		"cat": "n., 3rd",
+		"defList": [
+			"galley"
+		]
+	},
+	{
+		"title": "skimolt",
+		"etym": "I/PEN/*skimol-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"oar"
+		]
+	},
+	{
+		"title": "skimolz",
+		"etym": "C/skimolt/-z",
+		"cat": "v.",
+		"defList": [
+			"row"
+		]
 	},
 	{
 		"title": "skiz",
