@@ -987,4 +987,60 @@ const blogData = [
 	Alternatively, if a left-wing (or at this point, even a centrist) third-party candidate seems to be gaining traction,
 	I might take the risk and vote for them.
 	`,
+	`
+	@title Ancient Cuisine
+	@date 1691515988714
+	@tags cooking history
+	Today I read Apicius' <cite>De re culinaria</cite> to see the methods and ingredients used in ancient cuisine.
+	The book's recipes can be summarized as follows:
+	<q>To cook [ingredient], boil it. Season with pepper and laserwort.</q>
+	No, literally - out of the hundred-plus vegetable recipes, almost all are boiled,
+	except a few that resemble salads, and even many of the meat-based dishes are boiled.
+	@p
+	That said, I want to take note of ingredient usage:
+	<ul>
+		<li>Broth - 8 recipes</li>
+		<li>Caraway - 1 recipe</li>
+		<li>Cardamom - 1 recipe</li>
+		<li>Cheese - 1 recipe</li>
+		<li>Citrus leaves - 1 recipe</li>
+		<li>Coriander - 2 recipes</li>
+		<li>Costmary - 1 recipe</li>
+		<li>Cumin - 4 recipes</li>
+		<li>Dates - 1 recipe</li>
+		<li>Date stones - 1 recipe</li>
+		<li>Date wine - 1 recipe</li>
+		<li>Elecampane - 1 recipe</li>
+		<li>Fennel - 1 recipe</li>
+		<li>Ginger - 1 recipe</li>
+		<li>Honey - 14 recipes</li>
+		<li>Laserwort - 1 recipe</li>
+		<li>Laurel - 2 recipes</li>
+		<li>Leaves (unspecified) - 1 recipe</li>
+		<li>Lovage - 6 recipes</li>
+		<li>Malabar spinach - 1 recipe</li>
+		<li>Mastic - 2 recipes</li>
+		<li>Mint - 5 recipes</li>
+		<li>Must - 1 recipe</li>
+		<li>Nard - 2 recipes</li>
+		<li>Oil - 4 recipes</li>
+		<li>Parsley - 3 recipes</li>
+		<li>Pepper - 11 recipes</li>
+		<li>Pine nuts - 1 recipe</li>
+		<li>Raisins - 1 recipe</li>
+		<li>Rose Petals - 1 recipe</li>
+		<li>Rue - 3 recipes</li>
+		<li>Rush - 1 recipe</li>
+		<li>Saffron - 2 recipes</li>
+		<li>Salt - 1 recipe</li>
+		<li>Saltpeter - 1 recipe</li>
+		<li>Satury - 1 recipe</li>
+		<li>Thyme - 1 recipe</li>
+		<li>Vinegar - 7 recipes</li>
+		<li>Violets - 1 recipe</li>
+		<li>Wine - 7 recipes</li>
+		<li>Wormwood - 1 recipe</li>
+	</ul>
+	So far I have only counted the instances in the first book, but I plan to count the other recipes later.
+	`,
 ];
