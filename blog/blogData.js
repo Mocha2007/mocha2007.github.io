@@ -999,48 +999,96 @@ const blogData = [
 	@p
 	That said, I want to take note of ingredient usage:
 	<ul>
-		<li>Broth - 8 recipes</li>
+		<li>Almonds - 1 recipe</li>
+		<li>Brain (unspecified) - 2 recipes</li>
+		<li>Breadcrumbs - 1 recipe</li>
+		<li>Broth - 19 recipes</li>
 		<li>Caraway - 1 recipe</li>
 		<li>Cardamom - 1 recipe</li>
+		<li>Celery - 1 recipe</li>
+		<li>Celery seed - 1 recipe</li>
 		<li>Cheese - 1 recipe</li>
+		<li>Chicken - 3 recipes</li>
 		<li>Citrus leaves - 1 recipe</li>
 		<li>Coriander - 2 recipes</li>
 		<li>Costmary - 1 recipe</li>
-		<li>Cumin - 4 recipes</li>
+		<li>Crab - 2 recipes</li>
+		<li>Cumin - 6 recipes</li>
+		<li>Cuttlefish - 2 recipes</li>
 		<li>Dates - 1 recipe</li>
 		<li>Date stones - 1 recipe</li>
 		<li>Date wine - 1 recipe</li>
+		<li>Dill - 2 recipes</li>
 		<li>Elecampane - 1 recipe</li>
+		<li>Eggs - 4 recipes</li>
+		<li>Egg yolk - 1 recipe</li>
 		<li>Fennel - 1 recipe</li>
-		<li>Ginger - 1 recipe</li>
-		<li>Honey - 14 recipes</li>
-		<li>Laserwort - 1 recipe</li>
-		<li>Laurel - 2 recipes</li>
+		<li>Fig Wine - 1 recipe</li>
+		<li>Fruit (unspecified) - 1 recipe</li>
+		<li>Garum - 1 recipe</li>
+		<li>Ginger - 2 recipes</li>
+		<li>Gravy - 2 recipes</li>
+		<li>Honey - 15 recipes</li>
+		<li>Laserwort / Laser / Silphium - 4 recipes</li>
+		<li>Laurel - 3 recipes</li>
+		<li>Laurel berries - 1 recipe</li>
 		<li>Leaves (unspecified) - 1 recipe</li>
-		<li>Lovage - 6 recipes</li>
+		<li>Leek - 4 recipes</li>
+		<li>Lobster - 2 recipes</li>
+		<li>Lovage - 11 recipes</li>
 		<li>Malabar spinach - 1 recipe</li>
 		<li>Mastic - 2 recipes</li>
 		<li>Mint - 5 recipes</li>
-		<li>Must - 1 recipe</li>
+		<li>Must - 3 recipes</li>
+		<li>Mustard - 1 recipe (Mustard seed?)</li>
+		<li>Myrtle berries - 1 recipe</li>
 		<li>Nard - 2 recipes</li>
-		<li>Oil - 4 recipes</li>
-		<li>Parsley - 3 recipes</li>
-		<li>Pepper - 11 recipes</li>
-		<li>Pine nuts - 1 recipe</li>
-		<li>Raisins - 1 recipe</li>
+		<li>Nuts (unspecified) - 3 recipes (Prob. Almond or Walnut)</li>
+		<li>Oil (unspecified) - 6 recipes (Olive oil?)</li>
+		<li>Onion - 1 recipe</li>
+		<li>Oregano - 2 recipes</li>
+		<li>Oysters - 2 recipes</li>
+		<li>Parsley - 4 recipes</li>
+		<li>Pheasant - mentioned</li>
+		<li>Pellitory - 1 recipe</li>
+		<li>Pepper - 31 recipes (Black pepper?)</li>
+		<li>Pheasant - 1 recipe</li>
+		<li>Pine nuts - 7 recipes</li>
+		<li>Pine, "raw ground" - 1 recipe</li>
+		<li>Pork (unspecified) - 4 recipes</li>
+		<li>Pork bacon - 1 recipe</li>
+		<li>Pork intestines - 1 recipe</li>
+		<li>Pork liver - 1 recipe</li>
+		<li>Pork vulva - 1 recipe</li>
+		<li>Quince Cider - 1 recipe</li>
+		<li>Rabbit - mentioned</li>
+		<li>Raisins - 2 recipes</li>
+		<li>Raisin wine - 2 recipes</li>
+		<li>Rice - 1 recipe</li>
+		<li>Rice Flour - 1 recipe</li>
 		<li>Rose Petals - 1 recipe</li>
-		<li>Rue - 3 recipes</li>
+		<li>Roux - 1 recipe</li>
+		<li>Rue - 6 recipes</li>
 		<li>Rush - 1 recipe</li>
 		<li>Saffron - 2 recipes</li>
-		<li>Salt - 1 recipe</li>
+		<li>Salt - 2 recipes</li>
 		<li>Saltpeter - 1 recipe</li>
 		<li>Satury - 1 recipe</li>
+		<li>Savory - 1 recipe</li>
+		<li>"Sea Onion" - 1 recipe</li>
+		<li>Scallops - 2 recipes</li>
+		<li>Spelt - 4 recipes</li>
+		<li>Squid - 1 recipe</li>
+		<li>Stock - 9 recipes</li>
 		<li>Thyme - 1 recipe</li>
 		<li>Vinegar - 7 recipes</li>
 		<li>Violets - 1 recipe</li>
-		<li>Wine - 7 recipes</li>
+		<li>Water - 5 recipes</li>
+		<li>Water, salt - 1 recipe</li>
+		<li>Wine - 11 recipes</li>
+		<li>Wheat, cream of - 1 recipe</li>
 		<li>Wormwood - 1 recipe</li>
 	</ul>
-	So far I have only counted the instances in the first book, but I plan to count the other recipes later.
+	So far I have only counted the instances in the first two books, but I plan to count the other recipes later.
 	`,
 ];
