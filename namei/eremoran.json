@@ -2129,6 +2129,15 @@
 		"categories": ["intensity"]
 	},
 	{
+		"title": "banamuma",
+		"etym": "I/PEN/*βanamuma",
+		"cat": "n., 4th",
+		"defList": [
+			"elecampane"
+		],
+		"categories": ["herb", "plant"]
+	},
+	{
 		"title": "banaz",
 		"etym": "I/PEN/*βanas",
 		"cat": "v.",
@@ -2250,6 +2259,15 @@
 			"(mathematics) line"
 		],
 		"categories": ["math"]
+	},
+	{
+		"title": "barreki",
+		"etym": "I/PEN/*βararegi",
+		"cat": "n., 4th",
+		"defList": [
+			"lovage"
+		],
+		"categories": ["herb", "plant"]
 	},
 	{
 		"title": "barsêm",
@@ -3332,6 +3350,15 @@
 		"defList": [
 			"poison"
 		]
+	},
+	{
+		"title": "birzi",
+		"etym": "I/PEN/*birsi",
+		"cat": "n., 4th",
+		"defList": [
+			"black stone flower"
+		],
+		"categories": ["fungus", "spice"]
 	},
 	{
 		"title": "bisu",
@@ -9178,6 +9205,15 @@
 		]
 	},
 	{
+		"title": "kisi",
+		"etym": "I/PEN/*kiʃi",
+		"cat": "n., 4th",
+		"defList": [
+			"costmary"
+		],
+		"categories": ["herb", "plant"]
+	},
+	{
 		"title": "kiskana",
 		"etym": "I/PEN/*giʃkana/birch",
 		"cat": "n., 4th",
@@ -14678,6 +14714,15 @@
 		"cat": "n., 4th",
 		"defList": [
 			"fennel"
+		],
+		"categories": ["plant", "spice"]
+	},
+	{
+		"title": "satapuku",
+		"etym": "A/satapu",
+		"cat": "n., 4th",
+		"defList": [
+			"laserwort, laser, silphium"
 		],
 		"categories": ["plant", "spice"]
 	},
