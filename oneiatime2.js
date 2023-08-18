@@ -226,8 +226,10 @@ function holidayCSS(){
 				title = 'King Witold\'s Birthday';
 			break;
 		case 8:
-			if (day === 24)
-				title = 'Слава Україні';
+			if (day === 16){
+				var dy = year - 2023;
+				title = dy + ' year' + (dy === 1 ? '' : 's') + ' HRT!!! :D';
+			}
 			break;
 		case 9:
 			if (day === 4)
@@ -285,7 +287,7 @@ function holidayCSS(){
 	else if (!img.classList.length){ // THE PINKENING
 		// compute
 		var pinkeningFactor = Math.max(0, Math.min(1,
-			(Date.now() - new Date(2023, 5, 14))/(2*constants.earth.year)
+			(Date.now() - new Date(2023, 7, 16))/(2*constants.earth.year) // 2 years hrt OwO
 		));
 		// pinkeningFactor = 1; // debug
 		var p1 = 120*pinkeningFactor;
