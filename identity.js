@@ -4,7 +4,7 @@ const data = [
 	},
 	{
 		p: 'You hear the voices of your colleagues around you, whispering behind your back&mdash;they are disgusted by your appearance.',
-		choices: ['&ldquo;They&apos;re right&mdash;I&apos;m a freak.&rdquo;', '&ldquo;But... they&apos;re wrong! I can&apos;t help who I am!&rdquo;'],
+		choices: ['&ldquo;They&rsquo;re right&mdash;I&rsquo;m a freak.&rdquo;', '&ldquo;But... they&rsquo;re wrong! I can&rsquo;t help who I am!&rdquo;'],
 	},
 	{
 		p: 'You see your body morphing in front of your very eyes, into a new, grotesque form.',
@@ -31,6 +31,19 @@ const data = [
 		id: 'mold1',
 		p: 'The mold has spread to your arms and legs.',
 		canbechosen: false,
+		choices: ['&ldquo;This is how everyone feels.&rdquo;', '&ldquo;Something is wrong with my body.&rdquo;'],
+	},
+	{
+		id: 'worms0',
+		p: 'You feel worms writhing inside your cheeks.',
+		choices: ['Notice your body'],
+		links: ['worms1'],
+	},
+	{
+		id: 'worms1',
+		p: 'The worms are in your arms and legs, too.',
+		canbechosen: false,
+		choices: ['&ldquo;This is how everyone feels.&rdquo;', '&ldquo;Something is wrong with my body.&rdquo;'],
 	},
 	{
 		p: 'You feel your clothes burning your skin.',
@@ -40,7 +53,7 @@ const data = [
 	},
 	{
 		p: 'You try to speak, but hear silence instead of your familiar voice.',
-		choices: ['&ldquo;Why can\'t I speak?&rdquo;', '&ldquo;It was never <em>my</em> voice.&rdquo;'],
+		choices: ['&ldquo;Why can&rsquo;t I speak?&rdquo;', '&ldquo;It was never <em>my</em> voice.&rdquo;'],
 	},
 	{
 		p: 'Your chest is melting into a amorphous, waxy blob.',
@@ -54,8 +67,12 @@ const data = [
 		choices: ['&ldquo;I am simply delusional.&rdquo;', '&ldquo;My experiences are real; no one understands.&rdquo;'],
 	},
 	{
+		p: 'Your depression is worsening. Life is such a chore. How does everyone else smile?',
+		choices: ['&ldquo;Everyone else is pretending; they&rsquo;re suffering too.&rdquo;', '&ldquo;Something is wrong, but I don&rsquo;t know what.&rdquo;'],
+	},
+	{
 		p: 'You feel a thousand needles poking at your skin&mdash;but when you look, nothing is there.',
-		choices: ['&ldquo;This is how I&apos;ve always felt anyways.&rdquo;', '&ldquo;Something is wrong with my body.&rdquo;'],
+		choices: ['&ldquo;This is how I&rsquo;ve always felt anyways.&rdquo;', '&ldquo;Something is wrong with my body.&rdquo;'],
 	},
 	{
 		p: 'You realize it is no longer you who controls your body, but someone else.',
@@ -63,7 +80,7 @@ const data = [
 	},
 	{
 		p: 'You no longer see as yourself, but see youself from afar.',
-		choices: ['&ldquo;Why have I been thrown out of my own body?&rdquo;', '&ldquo;That\'s not my body; it\'s someone else\'s.&rdquo;'],
+		choices: ['&ldquo;Why have I been thrown out of my own body?&rdquo;', '&ldquo;That&rsquo;s not my body; it&rsquo;s someone else&rsquo;s.&rdquo;'],
 	},
 ];
 
