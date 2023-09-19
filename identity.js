@@ -1,5 +1,15 @@
 const data = [
+	// if stuff has a CW then you need an ID for the CW to link to
+	// if canbechosen is true DONT add a second cw, that's pointless...
 	{
+		id: 'begone',
+		p: 'Your worries fade into silence.',
+		choices: ['Peace...'],
+		canbechosen: false,
+	},
+	{
+		cw: 'Suicide',
+		id: 'death',
 		p: 'Death calls.',
 	},
 	{
@@ -7,6 +17,8 @@ const data = [
 		choices: ['&ldquo;They&rsquo;re right&mdash;I&rsquo;m a freak.&rdquo;', '&ldquo;But... they&rsquo;re wrong! I can&rsquo;t help who I am!&rdquo;'],
 	},
 	{
+		cw: 'Body Horror',
+		id: 'grotesque',
 		p: 'You see your body morphing in front of your very eyes, into a new, grotesque form.',
 		choices: ['Accept transformation', 'Remember your true self'],
 	},
@@ -22,6 +34,7 @@ const data = [
 		canbechosen: false,
 	},
 	{
+		cw: 'Body Horror',
 		id: 'mold0',
 		p: 'You feel mold growing on your face.',
 		choices: ['Check your body'],
@@ -34,6 +47,7 @@ const data = [
 		choices: ['&ldquo;This is how everyone feels.&rdquo;', '&ldquo;Something is wrong with my body.&rdquo;'],
 	},
 	{
+		cw: 'Body Horror',
 		id: 'worms0',
 		p: 'You feel worms writhing inside your cheeks.',
 		choices: ['Notice your body'],
@@ -56,6 +70,8 @@ const data = [
 		choices: ['&ldquo;Why can&rsquo;t I speak?&rdquo;', '&ldquo;It was never <em>my</em> voice.&rdquo;'],
 	},
 	{
+		cw: 'Body Horror',
+		id: 'wax',
 		p: 'Your chest is melting into a amorphous, waxy blob.',
 	},
 	{
@@ -101,7 +117,8 @@ const data = [
 ];
 
 class HEvent {
-	constructor(id, prompt, choices = undefined, links = undefined, canbechosen = true){
+	constructor(id, prompt, choices = undefined, links = undefined,
+		canbechosen = true, cw = undefined){
 		/** @type {string} */
 		this.id = id;
 		/** @type {string} */
@@ -112,6 +129,11 @@ class HEvent {
 		this.links = links || [];
 		/** @type {boolean} */
 		this.canbechosen = canbechosen;
+		/** @type {string?} */
+		this.cw = cw;
+	}
+	get cwElem(){
+		return new HEvent('', `CW: ${this.cw}`, ['Look Away', 'Confront the darkness'], ['begone', this.id], false).elem;
 	}
 	get elem(){
 		const div = document.createElement('div');
@@ -124,7 +146,7 @@ class HEvent {
 			if (this.haslinks)
 				span.onclick = () => {
 					div.remove();
-					HEvent.fromID(this.links[i]).show();
+					HEvent.fromID(this.links[i]).show(true);
 				};
 			else
 				span.onclick = () => {
@@ -139,9 +161,9 @@ class HEvent {
 	get haslinks(){
 		return this.choices.length === this.links.length;
 	}
-	show(){
+	show(ignoreCW = false){
 		document.body.classList.add('noOverflow');
-		document.body.appendChild(this.elem);
+		document.body.appendChild(this.cw && !ignoreCW ? this.cwElem : this.elem);
 		if (OCTOBER_DEBUG)
 			console.debug(this);
 	}
@@ -153,7 +175,7 @@ class HEvent {
 		return this.hevents.find(he => he.id === id);
 	}
 	static fromObject(o){
-		return new HEvent(o.id, o.p, o.choices, o.links, o.canbechosen);
+		return new HEvent(o.id, o.p, o.choices, o.links, o.canbechosen, o.cw);
 	}
 	static random(){
 		const choice = this.hevents[Math.floor(Math.random() * this.hevents.length)];
