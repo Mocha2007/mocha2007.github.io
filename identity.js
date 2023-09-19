@@ -129,7 +129,7 @@ const data = [
 
 class HEvent {
 	constructor(id, prompt, choices = undefined, links = undefined,
-		canbechosen = true, cw = undefined){
+		canbechosen = true, ccw = undefined){
 		/** @type {string} */
 		this.id = id;
 		/** @type {string} */
@@ -141,7 +141,7 @@ class HEvent {
 		/** @type {boolean} */
 		this.canbechosen = canbechosen;
 		/** @type {string?} */
-		this.cw = cw;
+		this.cw = ccw;
 	}
 	get cwElem(){
 		return new HEvent('', `CW: ${this.cw}`, ['Look Away', 'Confront the darkness'], ['begone', this.id], false).elem;
