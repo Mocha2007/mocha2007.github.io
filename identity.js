@@ -8,7 +8,7 @@ const data = [
 	},
 	{
 		p: 'You see your body morphing in front of your very eyes, into a new, grotesque form.',
-		choices: ['Accept transformation', 'Search for your true self'],
+		choices: ['Accept transformation', 'Remember your true self'],
 	},
 	{
 		id: 'mirror0',
@@ -39,6 +39,10 @@ const data = [
 		p: 'You try to speak, but you only hear incoherent scratching noises.',
 	},
 	{
+		p: 'You try to speak, but hear silence instead of your familiar voice.',
+		choices: ['&ldquo;Why can\'t I speak?&rdquo;', '&ldquo;It was never <em>my</em> voice.&rdquo;'],
+	},
+	{
 		p: 'Your chest is melting into a amorphous, waxy blob.',
 	},
 	{
@@ -47,11 +51,19 @@ const data = [
 	},
 	{
 		p: 'Your breath is weak. Your body is exhausted. The depression is getting worse.',
-		choices: ['&ldquo;No one understands.&rdquo;', '&ldquo;Where is hope?&rdquo;'],
+		choices: ['&ldquo;I am simply delusional.&rdquo;', '&ldquo;My experiences are real; no one understands.&rdquo;'],
 	},
 	{
 		p: 'You feel a thousand needles poking at your skin&mdash;but when you look, nothing is there.',
 		choices: ['&ldquo;This is how I&apos;ve always felt anyways.&rdquo;', '&ldquo;Something is wrong with my body.&rdquo;'],
+	},
+	{
+		p: 'You realize it is no longer you who controls your body, but someone else.',
+		choices: ['&ldquo;Who am I?&rdquo;', '&ldquo;It was never my body to begin with.&rdquo;'],
+	},
+	{
+		p: 'You no longer see as yourself, but see youself from afar.',
+		choices: ['&ldquo;Why have I been thrown out of my own body?&rdquo;', '&ldquo;That\'s not my body; it\'s someone else\'s.&rdquo;'],
 	},
 ];
 
