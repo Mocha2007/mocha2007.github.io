@@ -63,29 +63,35 @@ class HEvent {
 		const p = document.createElement('p');
 		p.innerHTML = this.prompt;
 		div.appendChild(p);
-		this.choices.forEach(choice => {
+		this.choices.forEach((choice, i) => {
 			const span = document.createElement('span');
-			span.onclick = () => {
-				div.remove();
-				document.body.classList.remove('noOverflow');
-			};
+			if (this.haslinks)
+				span.onclick = () => HEvent.fromID(this.links[i]).show();
+			else
+				span.onclick = () => {
+					div.remove();
+					document.body.classList.remove('noOverflow');
+				};
 			span.innerHTML = choice;
 			div.appendChild(span);
 		});
 		return div;
 	}
-	link(str = this.id){
-		const span = document.createElement('span');
-		span.onclick = () => {
-			this.show();
-			document.body.classList.remove('noOverflow');
-		};
-		span.innerHTML = str;
-		return span;
+	get haslinks(){
+		return this.choices.length === this.links.length;
 	}
 	show(){
 		document.body.classList.add('noOverflow');
 		document.body.appendChild(this.elem);
+		if (OCTOBER_DEBUG)
+			console.debug(this);
+	}
+	/**
+	 * @param {string} id
+	 * @returns {HEvent}
+	 */
+	static fromID(id){
+		return this.hevents.find(he => he.id === id);
 	}
 	static fromObject(o){
 		return new HEvent(o.id, o.p, o.choices, o.links);
