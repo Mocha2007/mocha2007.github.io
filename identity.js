@@ -13,6 +13,12 @@ const data = [
 		canbechosen: false,
 	},
 	{
+		id: 'redPill',
+		p: '&ldquo;Who <em>am</em> I</em>?&rdquo;',
+		choices: ['&ldquo;Someone else, perhaps?&rdquo;'],
+		canbechosen: false,
+	},
+	{
 		cw: cw.s,
 		id: 'death',
 		p: 'Death calls.',
@@ -131,7 +137,7 @@ class HEvent {
 		/** @type {string[]} */
 		this.choices = choices || HEvent.defaultChoices;
 		/** @type {string[]} */
-		this.links = links || [];
+		this.links = links || HEvent.links;
 		/** @type {boolean} */
 		this.canbechosen = canbechosen;
 		/** @type {string?} */
@@ -188,6 +194,7 @@ class HEvent {
 	}
 }
 HEvent.defaultChoices = ['Accept incongruity', 'Fight back'];
+HEvent.links = ['begone', 'redPill'];
 HEvent.hevents = data.map(HEvent.fromObject);
 
 const OCTOBER_DEBUG = false;
