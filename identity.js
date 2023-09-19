@@ -82,6 +82,14 @@ const data = [
 		p: 'You no longer see as yourself, but see youself from afar.',
 		choices: ['&ldquo;Why have I been thrown out of my own body?&rdquo;', '&ldquo;That&rsquo;s not my body; it&rsquo;s someone else&rsquo;s.&rdquo;'],
 	},
+	{
+		p: 'They just called you the wrong name&mdash;so why are you so happy about it?',
+		choices: ['&ldquo;I must be a masochistic freak.&rdquo;', '&ldquo;Was that me all along?&rdquo;'],
+	},
+	{
+		p: 'They just referred to you with the opposite pronoun&mdash;so why are you so happy about it?',
+		choices: ['&ldquo;I must be a masochistic freak.&rdquo;', '&ldquo;Was that me all along?&rdquo;'],
+	},
 ];
 
 class HEvent {
