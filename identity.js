@@ -15,9 +15,12 @@ const data = [
 		p: 'You look into the mirror, but do not recognize your reflection.',
 	},
 	{
+		id: 'mold0',
 		p: 'You feel mold growing on your face.',
+		links: ['mold1', 'mold1'],
 	},
 	{
+		id: 'mold1',
 		p: 'The mold has spread to your arms and legs.',
 	},
 	{
@@ -43,6 +46,57 @@ const data = [
 	},
 ];
 
+class HEvent {
+	constructor(id, prompt, choices = undefined, links = undefined){
+		/** @type {string} */
+		this.id = id;
+		/** @type {string} */
+		this.prompt = prompt;
+		/** @type {string[]} */
+		this.choices = choices || HEvent.defaultChoices;
+		/** @type {string[]} */
+		this.links = links || [];
+	}
+	get elem(){
+		const div = document.createElement('div');
+		div.id = 'identity';
+		const p = document.createElement('p');
+		p.innerHTML = this.prompt;
+		div.appendChild(p);
+		this.choices.forEach(choice => {
+			const span = document.createElement('span');
+			span.onclick = () => {
+				div.remove();
+				document.body.classList.remove('noOverflow');
+			};
+			span.innerHTML = choice;
+			div.appendChild(span);
+		});
+		return div;
+	}
+	link(str = this.id){
+		const span = document.createElement('span');
+		span.onclick = () => {
+			this.show();
+			document.body.classList.remove('noOverflow');
+		};
+		span.innerHTML = str;
+		return span;
+	}
+	show(){
+		document.body.classList.add('noOverflow');
+		document.body.appendChild(this.elem);
+	}
+	static fromObject(o){
+		return new HEvent(o.id, o.p, o.choices, o.links);
+	}
+	static random(){
+		return this.hevents[Math.floor(Math.random() * this.hevents.length)];
+	}
+}
+HEvent.defaultChoices = ['Accept incongruity', 'Fight back'];
+HEvent.hevents = data.map(HEvent.fromObject);
+
 const OCTOBER_DEBUG = false;
 
 function identity(){
@@ -56,23 +110,7 @@ function identity(){
 	style.rel = 'stylesheet';
 	document.head.appendChild(style);
 	// block rest of doc
-	document.body.classList.add('noOverflow');
-	const div = document.createElement('div');
-	div.id = 'identity';
-	const datum = data[Math.floor(Math.random() * data.length)];
-	const p = document.createElement('p');
-	p.innerHTML = datum.p;
-	div.appendChild(p);
-	const choices = datum.choices || data[0].choices;
-	choices.forEach(choice => {
-		const span = document.createElement('span');
-		span.onclick = () => {
-			div.remove();
-			document.body.classList.remove('noOverflow');
-		};
-		span.innerHTML = choice;
-		div.appendChild(span);
-	});
-	document.body.appendChild(div);
+	HEvent.random().show();
 }
+
 identity();
