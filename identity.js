@@ -1,3 +1,8 @@
+const cw = {
+	bh: 'Body Horror',
+	s: 'Suicide',
+};
+
 const data = [
 	// if stuff has a CW then you need an ID for the CW to link to
 	// if canbechosen is true DONT add a second cw, that's pointless...
@@ -8,7 +13,7 @@ const data = [
 		canbechosen: false,
 	},
 	{
-		cw: 'Suicide',
+		cw: cw.s,
 		id: 'death',
 		p: 'Death calls.',
 	},
@@ -17,7 +22,7 @@ const data = [
 		choices: ['&ldquo;They&rsquo;re right&mdash;I&rsquo;m a freak.&rdquo;', '&ldquo;But... they&rsquo;re wrong! I can&rsquo;t help who I am!&rdquo;'],
 	},
 	{
-		cw: 'Body Horror',
+		cw: cw.bh,
 		id: 'grotesque',
 		p: 'You see your body morphing in front of your very eyes, into a new, grotesque form.',
 		choices: ['Accept transformation', 'Remember your true self'],
@@ -34,7 +39,7 @@ const data = [
 		canbechosen: false,
 	},
 	{
-		cw: 'Body Horror',
+		cw: cw.bh,
 		id: 'mold0',
 		p: 'You feel mold growing on your face.',
 		choices: ['Check your body'],
@@ -47,7 +52,7 @@ const data = [
 		choices: ['&ldquo;This is how everyone feels.&rdquo;', '&ldquo;Something is wrong with my body.&rdquo;'],
 	},
 	{
-		cw: 'Body Horror',
+		cw: cw.bh,
 		id: 'worms0',
 		p: 'You feel worms writhing inside your cheeks.',
 		choices: ['Notice your body'],
@@ -70,7 +75,7 @@ const data = [
 		choices: ['&ldquo;Why can&rsquo;t I speak?&rdquo;', '&ldquo;It was never <em>my</em> voice.&rdquo;'],
 	},
 	{
-		cw: 'Body Horror',
+		cw: cw.bh,
 		id: 'wax',
 		p: 'Your chest is melting into a amorphous, waxy blob.',
 	},
