@@ -43,11 +43,13 @@ const data = [
 	},
 ];
 
+const OCTOBER_DEBUG = false;
+
 function identity(){
-	if (new Date().getMonth() !== 9) // October
+	if (!OCTOBER_DEBUG && (new Date().getMonth() !== 9 || 0.2 < Math.random())) // 20% chance of happening during October
 		return;
-	if (0.2 < Math.random())
-		return;
+	// scroll to top
+	window.scrollTo(0, 0);
 	// import CSS
 	const style = document.createElement('link');
 	style.href = 'css/identity.css';
