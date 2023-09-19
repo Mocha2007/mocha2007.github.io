@@ -25,7 +25,7 @@ const data = [
 	},
 	{
 		p: 'You hear the voices of your colleagues around you, whispering behind your back&mdash;they are disgusted by your appearance.',
-		choices: ['&ldquo;They&rsquo;re right&mdash;I&rsquo;m a freak.&rdquo;', '&ldquo;But... they&rsquo;re wrong! I can&rsquo;t help who I am!&rdquo;'],
+		choices: ['&ldquo;They&rsquo;re right&mdash;I&rsquo;m a freak.&rdquo;', '&ldquo;Are those <em>really</em> the voices of others, or myself?&rdquo;'],
 	},
 	{
 		cw: cw.bh,
@@ -106,7 +106,7 @@ const data = [
 		choices: ['&ldquo;Who am I?&rdquo;', '&ldquo;It was never my body to begin with.&rdquo;'],
 	},
 	{
-		p: 'You no longer see as yourself, but see youself from afar.',
+		p: 'You no longer see as yourself, but instead see youself from afar.',
 		choices: ['&ldquo;Why have I been thrown out of my own body?&rdquo;', '&ldquo;That&rsquo;s not my body; it&rsquo;s someone else&rsquo;s.&rdquo;'],
 	},
 	{
