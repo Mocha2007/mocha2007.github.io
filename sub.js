@@ -40,7 +40,7 @@ var subtitles =	[
 	'The G in GIF is pronounced like the G in <em>gigantic</em> or <em>suggest</em>.',
 	'roses are red / violets are blue / singular they / predates singular you',
 	// mat
-	'I have created a truly marvelous conworld,<br/>which this randomly generated subtitle is too small to contain.',
+	'I have created a truly marvelous conworld,<br/>which this randomly chosen subtitle is too small to contain.',
 	'Mocha &isin; UwUers',
 	'&lambda;x.x is Mocha',
 	// his
