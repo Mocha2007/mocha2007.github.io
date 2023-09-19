@@ -84,11 +84,19 @@ const data = [
 	},
 	{
 		p: 'They just called you the wrong name&mdash;so why are you so happy about it?',
-		choices: ['&ldquo;I must be a masochistic freak.&rdquo;', '&ldquo;Was that my name all along?&rdquo;'],
+		choices: ['&ldquo;I must be a masochistic freak.&rdquo;', '&ldquo;Was <em>that</em> my name all along...?&rdquo;'],
 	},
 	{
 		p: 'They just referred to you with the opposite pronoun&mdash;so why are you so happy about it?',
-		choices: ['&ldquo;I must be a masochistic freak.&rdquo;', '&ldquo;Is <em>that</em> me?&rdquo;'],
+		choices: ['&ldquo;I must be a masochistic freak.&rdquo;', '&ldquo;Is <em>that</em> me...?&rdquo;'],
+	},
+	{
+		p: 'You just woke from a dream where you were in someone else&rsquo;s body&mdash;so why were you so happy about it?',
+		choices: ['&ldquo;It must be my unnatural perversions.&rdquo;', '&ldquo;Is <em>that</em> who I want to be...?&rdquo;'],
+	},
+	{
+		p: 'You noticed yourself staring at a member of the opposite sex&mdash;but it wasn&rsquo;t attraction, was it?',
+		choices: ['&ldquo;It <em>must</em> be lust... I&rsquo;m just confused.&rdquo;', '&ldquo;Was that... <em>envy</em>?!&rdquo;'],
 	},
 ];
 
