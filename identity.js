@@ -84,11 +84,11 @@ const data = [
 	},
 	{
 		p: 'They just called you the wrong name&mdash;so why are you so happy about it?',
-		choices: ['&ldquo;I must be a masochistic freak.&rdquo;', '&ldquo;Was that me all along?&rdquo;'],
+		choices: ['&ldquo;I must be a masochistic freak.&rdquo;', '&ldquo;Was that my name all along?&rdquo;'],
 	},
 	{
 		p: 'They just referred to you with the opposite pronoun&mdash;so why are you so happy about it?',
-		choices: ['&ldquo;I must be a masochistic freak.&rdquo;', '&ldquo;Was that me all along?&rdquo;'],
+		choices: ['&ldquo;I must be a masochistic freak.&rdquo;', '&ldquo;Is <em>that</em> me?&rdquo;'],
 	},
 ];
 
