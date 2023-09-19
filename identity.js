@@ -1,7 +1,6 @@
 const data = [
 	{
 		p: 'Death calls.',
-		choices: ['Accept incongruity', 'Fight back'],
 	},
 	{
 		p: 'You hear the voices of your colleagues around you, whispering behind your back&mdash;they are disgusted by your appearance.',
@@ -12,16 +11,26 @@ const data = [
 		choices: ['Accept transformation', 'Search for your true self'],
 	},
 	{
+		id: 'mirror0',
 		p: 'You look into the mirror, but do not recognize your reflection.',
+		choices: ['Look closer'],
+		links: ['mirror1'],
+	},
+	{
+		id: 'mirror1',
+		p: 'Your reflection laughs at your disgusting body.',
+		canbechosen: false,
 	},
 	{
 		id: 'mold0',
 		p: 'You feel mold growing on your face.',
-		links: ['mold1', 'mold1'],
+		choices: ['Check your body'],
+		links: ['mold1'],
 	},
 	{
 		id: 'mold1',
 		p: 'The mold has spread to your arms and legs.',
+		canbechosen: false,
 	},
 	{
 		p: 'You feel your clothes burning your skin.',
@@ -47,7 +56,7 @@ const data = [
 ];
 
 class HEvent {
-	constructor(id, prompt, choices = undefined, links = undefined){
+	constructor(id, prompt, choices = undefined, links = undefined, canbechosen = true){
 		/** @type {string} */
 		this.id = id;
 		/** @type {string} */
@@ -56,6 +65,8 @@ class HEvent {
 		this.choices = choices || HEvent.defaultChoices;
 		/** @type {string[]} */
 		this.links = links || [];
+		/** @type {boolean} */
+		this.canbechosen = canbechosen;
 	}
 	get elem(){
 		const div = document.createElement('div');
@@ -66,7 +77,10 @@ class HEvent {
 		this.choices.forEach((choice, i) => {
 			const span = document.createElement('span');
 			if (this.haslinks)
-				span.onclick = () => HEvent.fromID(this.links[i]).show();
+				span.onclick = () => {
+					div.remove();
+					HEvent.fromID(this.links[i]).show();
+				};
 			else
 				span.onclick = () => {
 					div.remove();
@@ -94,10 +108,11 @@ class HEvent {
 		return this.hevents.find(he => he.id === id);
 	}
 	static fromObject(o){
-		return new HEvent(o.id, o.p, o.choices, o.links);
+		return new HEvent(o.id, o.p, o.choices, o.links, o.canbechosen);
 	}
 	static random(){
-		return this.hevents[Math.floor(Math.random() * this.hevents.length)];
+		const choice = this.hevents[Math.floor(Math.random() * this.hevents.length)];
+		return choice.canbechosen ? choice : this.random();
 	}
 }
 HEvent.defaultChoices = ['Accept incongruity', 'Fight back'];
