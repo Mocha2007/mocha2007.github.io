@@ -1092,4 +1092,51 @@ const blogData = [
 	</ul>
 	So far I have only counted the instances in the first two books, but I plan to count the other recipes later.
 	`,
+	`
+	@title The Death of Escapism
+	@date 1695667681570
+	@tags namei site dev meta
+	Almost six weeks ago, my life underwent a massive shift.
+	Colossal. Indescribably large.
+	@p
+	No longer do I have any urge to add to Namei,
+	aside from minor additions stemming from fixing problems with preexisting content.
+	@p
+	(In terms of practical changes for this site:
+	I will still update it, but very, very irregularly...)
+	@p
+	Moreover, my seemingly incessant desire to code something... <em>anything</em>...
+	that has persisted for over a decade has also come to a halt.
+	@p
+	I didn't even notice until someone pointed it out to me.
+	Strangely though, losing what have been core parts of my identity half my life hasn't bothered me at all.
+	I was, however, baffled as to the cause.
+	I mean, <em>other than the E</em>, of course :^).
+	But after a month of thinking, it came to me.
+	@p
+	Escapism.
+	I desperately wanted to leave my reality.
+	No, <em>needed</em>.
+	I created fantasy worlds so I wouldn't have to think of my own.
+	Alternate history? Another Earth? Futurism?
+	Didn't matter. Anything <em>but</em> here.
+	@p
+	I entered barely-conscious trances where my only reality was <em>code</em>.
+	Where I would wake up, code for 16, 18, 20 hours, until I was so hungry I couldn't code anymore,
+	so thirsty I couldn't code anymore, or so drowsy I couldn't code anymore.
+	Then I would reluctantly take care of my body's bothersome <em>nagging</em>, but only <em>just enough</em> to keep me working.
+	It didn't matter what I was making. It didn't matter if I would ever use it.
+	It just had to give me enough of its own problems to distract me from my own.
+	@p
+	That sounds like self-torture, now that I write that down, but it didn't feel like it.
+	<em>Reality</em> was self-torture.
+	Now that I see clearly, <em>it was there</em>.
+	Half my life, <em>it was there</em>.
+	My need for escapism kept growing, and growing, and growing.
+	@p
+	Well, not anymore.
+	I can't roll back the clock and relive my life how I always wanted,
+	but I <em>can</em> forge a new path ahead.
+	A good path. <em>My</em> good path.
+	`,
 ];
