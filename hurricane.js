@@ -7,7 +7,7 @@
 
 var months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun',
 	'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
-var offset = [-1, 30, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+var offset = [-1, 30, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 999];
 
 /** @param {string} name */
 function n2n(name){ // name to number
@@ -44,6 +44,22 @@ function avgduring(date){
 			if (y[1] >= date && date >= y[0]){
 				n += 1;
 			}
+		});
+	});
+	return n/years;
+}
+
+function avgduringMonth(month){
+	var n = 0;
+	var years = realsize(hurricanelist);
+	// date is an integer between 0 and 365
+	hurricanelist.forEach(function(x){ // for each year
+		x.forEach(function(y){ // for each hurricane
+			var monthStart = offset[month];
+			var monthEnd = offset[month+1];
+			if (monthStart <= y[0] && y[0] <= monthEnd // hurricane started during the month
+				|| monthStart <= y[1] && y[1] <= monthEnd) // ... or ended during the month
+				n++;
 		});
 	});
 	return n/years;
@@ -152,7 +168,7 @@ function range1(n){
 }
 
 function avgprint(){
-	range1(356).forEach(function(x){
+	range1(366).forEach(function(x){
 		console.log(x, avgduring(x));
 	});
 }
@@ -164,8 +180,16 @@ function getMaxOfArray(numArray){
 
 function maxyear(){
 	var wholeyear = [];
-	range1(356).forEach(function(x){
+	range1(366).forEach(function(x){
 		wholeyear.push(avgduring(x));
+	});
+	return getMaxOfArray(wholeyear);
+}
+
+function maxyearM(){
+	var wholeyear = [];
+	range1(12).forEach(function(x){
+		wholeyear.push(avgduringMonth(x));
 	});
 	return getMaxOfArray(wholeyear);
 }
@@ -173,6 +197,7 @@ function maxyear(){
 function avgyear(){
 	var wholeyear = [];
 	var maxinyear = maxyear();
+	var maxinyearM = maxyearM();
 	// reset
 	document.getElementById('avgByDate').innerHTML = '<tr><th>Date</th><th>Quantity</th><th>Visual</th><th>Max</th><th>%D</th><th>%H</th><th>%M</th></tr>';
 	range1(366).forEach(function(x){
@@ -183,6 +208,15 @@ function avgyear(){
 		var datestring = n2n2(x);
 		newrow.innerHTML = '<td>'+datestring+'</td><td>'+Math.round(newval*100)/100+'</td><td><progress value='+newval+' max='+maxinyear+'></progress></td>'+maxcathtml(x)+yearsContaining(x)+fractionhurricane(x, -1, 1)+fractionhurricane(x, 1, 3);
 		document.getElementById('avgByDate').appendChild(newrow);
+	});
+	document.getElementById('avgByMonth').innerHTML = '<tr><th>Month</th><th>Quantity</th><th>Visual</th>';
+	range1(12).forEach(function(x){
+		x--;
+		var newrow = document.createElement('tr');
+		var newval = avgduringMonth(x);
+		var datestring = months[x].toUpperCase();
+		newrow.innerHTML = '<td>'+datestring+'</td><td>'+Math.round(newval*100)/100+'</td><td><progress value='+newval+' max='+maxinyearM+'></progress></td>';
+		document.getElementById('avgByMonth').appendChild(newrow);
 	});
 	return wholeyear;
 }
