@@ -66,7 +66,7 @@ var subtitles =	[
 	'Beavaria&rsquo;s most obedient human slave',
 	'Non-acidic plutonics, glaciation, fjords, biome-aware migratory automata, and fluvial sediment dispersal - everything marshmallows hate!',
 	// quotations
-	'In theory, theory and practice are the same. In practice, they are not.',
+	// 'In theory, theory and practice are the same. In practice, they are not.',
 	'Sail Hatan!',
 	// media allusion
 	'Gluten-free Mocha: now with real sugar!',
@@ -124,6 +124,7 @@ var subtitles =	[
 	'^ (realest girl)',
 	'Egg? Who, me?',
 	'Self-initiated <a href="namei/eremoran.html#lemma-dinabubzik">Dinabubzik</a>-haver',
+	'(Literally) a self-made woman',
 ];
 
 function sub(){
