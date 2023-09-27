@@ -70,8 +70,8 @@ var subtitles =	[
 	'Sail Hatan!',
 	// media allusion
 	'Gluten-free Mocha: now with real sugar!',
-	'The fruitiest of all fruity-ass fruitbowls!',
-	'"Gay and Fake" - NYT review',
+	// 'The fruitiest of all fruity-ass fruitbowls!',
+	// '"Gay and Fake" - NYT review',
 	'Zen and the Art of Conworlding',
 	'You spice?',
 	'<em>Real</em> News.',
