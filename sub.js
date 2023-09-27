@@ -119,8 +119,11 @@ var subtitles =	[
 	'Not a scam artist situation',
 	'Let&rsquo;s have us a pizza bungus',
 	'The Mocha / She destroyed her cage / Yes / YES / The Mocha is out',
+	// 🥚
 	'Heat from fire, fire from heat.',
 	'^ (realest girl)',
+	'Egg? Who, me?',
+	'Self-initiated <a href="namei/eremoran.html#lemma-dinabubzik">Dinabubzik</a>-haver',
 ];
 
 function sub(){
