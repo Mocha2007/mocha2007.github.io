@@ -83,7 +83,6 @@ var subtitles =	[
 	'Patterns are traps.',
 	'Kiss me under the kissing fern!~',
 	// namei/oneia/eremor
-	'Make Namei Great Again',
 	'But I would walk <abbr title="878 km, 546 mi">200 abakêum</abbr>, and I would walk 200 more!',
 	'Namei crawling through my windowpane',
 	'Invest in Eremor! 💎🙌',
@@ -100,7 +99,7 @@ var subtitles =	[
 	'Drink me.',
 	'gib snuggu',
 	'insert dong',
-	'It is easier for a camel to find a needle in a haystack than one to simply enter Mordor.',
+	'It is easier for a camel to find a needle in a haystack than for one to simply enter Mordor.',
 	// furry
 	'Update Furrygram',
 	'MOW! MOW! MOW!',
@@ -119,8 +118,9 @@ var subtitles =	[
 	'This individual, however, <em>is</em> firing on all cinderblocks situation.',
 	'Not a scam artist situation',
 	'Let&rsquo;s have us a pizza bungus',
-	'The Mocha / They destroyed their cage / Yes / YES / The Mocha is out',
+	'The Mocha / She destroyed her cage / Yes / YES / The Mocha is out',
 	'Heat from fire, fire from heat.',
+	'^ (realest girl)',
 ];
 
 function sub(){
