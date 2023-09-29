@@ -105,7 +105,7 @@ var subtitles =	[
 	'MOW! MOW! MOW!',
 	'That post-con depression feels real today',
 	// etc allusion
-	'The pizza doesn&rsquo;t scream when you put it in the oven.',
+	// 'The pizza doesn&rsquo;t scream when you put it in the oven.',
 	'/mo(ch|k|hx|\\u0125)[aeiou]r?/gi',
 	'Perihelion * Date of perihelion passage * 3.14',
 	'Looks like we got ourselves a li&rsquo;l Mike-Oscar-Charlie-Hotel-Alfa!',
