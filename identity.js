@@ -158,11 +158,15 @@ class HEvent {
 				span.onclick = () => {
 					div.remove();
 					HEvent.fromID(this.links[i]).show(true);
+					if (i)
+						secret.enable();
 				};
 			else
 				span.onclick = () => {
 					div.remove();
 					document.body.classList.remove('noOverflow');
+					if (i)
+						secret.enable();
 				};
 			span.innerHTML = choice;
 			div.appendChild(span);
@@ -199,11 +203,36 @@ HEvent.hevents = data.map(HEvent.fromObject);
 
 const OCTOBER_DEBUG = false;
 
+// https://stackoverflow.com/a/44670818
+function onVisible(element, callback){
+	new IntersectionObserver((entries, observer) => {
+		entries.forEach(entry => {
+			if (entry.intersectionRatio > 0){
+				callback(element);
+				observer.disconnect();
+			}
+		});
+	}).observe(element);
+}
+
+function secret(){
+	if (!secret.enabled)
+		return;
+	document.getElementById('title').innerHTML = 'Luna’s Site';
+	// console.info('I am myself now.');
+}
+secret.enable = () => {
+	secret.enabled = true;
+	// console.info('Am I myself now?');
+};
+
 function identity(){
 	if (!OCTOBER_DEBUG && (new Date().getMonth() !== 9 || 0.2 < Math.random())) // 20% chance of happening during October
 		return;
 	// scroll to top
 	window.scrollTo(0, 0);
+	// add secret
+	onVisible(document.getElementById('bottom'), secret);
 	// import CSS
 	const style = document.createElement('link');
 	style.href = 'css/identity.css';
