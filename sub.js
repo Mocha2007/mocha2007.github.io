@@ -126,6 +126,7 @@ var subtitles =	[
 	'Self-initiated <a href="namei/eremoran.html#lemma-dinabubzik">Dinabubzik</a>-haver',
 	'(Literally) a self-made woman',
 ];
+subtitles.push(`${subtitles.length+1} unique subtitles - collect them all!`);
 
 function sub(){
 	var index = Math.floor(Math.random()*subtitles.length);
