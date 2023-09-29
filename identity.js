@@ -1,3 +1,5 @@
+/* global playSound */
+
 const cw = {
 	bh: 'Body Horror',
 	s: 'Suicide',
@@ -218,7 +220,8 @@ function onVisible(element, callback){
 function secret(){
 	if (!secret.enabled)
 		return;
-	document.getElementById('title').innerHTML = 'Luna’s Site';
+	document.getElementById('title').innerHTML = 'Luna’s Site<audio id="sfx" src="snd/egg.mp3"/>';
+	playSound('sfx');
 	// console.info('I am myself now.');
 }
 secret.enable = () => {
