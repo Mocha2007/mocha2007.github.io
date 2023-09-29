@@ -15,7 +15,7 @@ var subtitles =	[
 	'<a href="https://en.wikipedia.org/wiki/Bet_(letter)">Bet</a>, <a href="https://en.wikipedia.org/wiki/Click_consonant">clicks</a>, and <a href="https://en.wikipedia.org/wiki/Trill_consonant">trills</a>?',
 	'#ThingsISayBeforeSex: <em>quinque</em>',
 	'The Senate and Poplar of Rome',
-	'Mentula Culusque Moechi',
+	'Mentula Culusque Moechae',
 	'I neither misspell nor use bad grammar;<br/>I just use a different style guide.',
 	'Hey man, at least <em>my</em> conlangs don&rsquo;t use words like <em>boato</em> and <em>farmo</em>',
 	'Je transforme les plan&egrave;tes en mondes.',
