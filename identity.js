@@ -221,6 +221,7 @@ function secret(){
 	if (!secret.enabled)
 		return;
 	document.getElementById('title').innerHTML = 'Luna’s Site<audio id="sfx" src="snd/egg.mp3"/>';
+	document.title = 'Luna’s Site';
 	playSound('sfx');
 	// console.info('I am myself now.');
 }
