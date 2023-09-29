@@ -876,7 +876,7 @@ const game = {
 			// new Video('ncN8JeG-dZ0', 95, 'DDU-DU DDU-DU', 'Bongo Cat', ['music'], 0, 92),
 			// new Video('zoAQfKb42ig', 140, 'See You Again', 'Bongo Cat', ['music'], 5, 130),
 			// new Video('4atH_Km4KaQ', 25, 'Golden Ticket', 'South Park', ['music']),
-			new Video('s-DQM-1atK0', 80, 'Kyle\'s Mom\'s a Bitch', 'South Park', ['music']),
+			// new Video('s-DQM-1atK0', 80, 'Kyle\'s Mom\'s a Bitch', 'South Park', ['music']),
 			new Video('bOR38552MJA', 124, 'Blame Canada', 'South Park', ['music'], 0, 95),
 			new Video('E1UEDulwWkY', 131, 'Minorities in my Waterpark', 'South Park', ['music']),
 			new Video('MtN1YnoL46Q', 191, 'The Duck Song', 'Bryant Oden', ['music'], 3, 190),
