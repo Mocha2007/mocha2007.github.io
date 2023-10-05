@@ -1,4 +1,4 @@
-/* exported adj, eremoranMain, ereNum, linkCard, search, titleCard, wordle */
+/* exported adj, eremoranMain, ereNum, expansionProject, linkCard, search, titleCard, wordle */
 /* global charHisto, commaNumber, defFormat, etymElement, getDict, histo, histo2, isAnagram
 	quotes, random, removeAccents, round, startEreQuote,
 	translationChallenges, union */
@@ -1267,7 +1267,7 @@ function computeStats(){
 	// print success message
 	// eslint-disable-next-line max-len
 	console.info(`eremoran.js successfully parsed ${elements.dict.length} words and recorded statistics.`);
-	expansionProject();
+	// expansionProject();
 }
 
 function expansionProject(){
