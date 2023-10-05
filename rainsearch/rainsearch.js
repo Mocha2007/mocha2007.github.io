@@ -77,8 +77,9 @@ class Comic {
 	 * @param {Char[]} chars
 	 * @param {string[]} settings
 	 * @param {string[]} tags
+	 * @param {number} year
 	 */
-	constructor(url, src, title, chapter, chars, settings, tags){
+	constructor(url, src, title, chapter, chars, settings, tags, year){
 		Comic.comics.push(this);
 		/** @type {string} */
 		this.url = url;
@@ -94,6 +95,8 @@ class Comic {
 		this.settings = settings;
 		/** @type {string[]} */
 		this.tags = tags;
+		/** @type {number} */
+		this.year = year;
 	}
 	get id(){
 		return Comic.comics.indexOf(this);
@@ -122,7 +125,8 @@ class Comic {
 		return new Comic(o.url, o.src, o.title, o.chapter,
 			o.chars.map(Char.fromId) || [],
 			o.settings || [],
-			o.tags || []);
+			o.tags || [],
+			o.year);
 	}
 }
 /** @type {Comic[]} */
