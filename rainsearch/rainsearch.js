@@ -41,6 +41,10 @@ class Char {
 	get elem(){
 		const label = document.createElement('label');
 		label.innerHTML = this.name.replace(' ', '&nbsp;');
+		const count = document.createElement('span');
+		count.id = this.checkboxId + '_count';
+		count.innerHTML = ` (${Comic.comics.filter(comic => comic.chars.includes(this)).length})`;
+		label.appendChild(count);
 		// label.style.color = this.color; todo gender? sexuality????
 		const input = document.createElement('input');
 		label.appendChild(input);

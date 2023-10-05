@@ -6,7 +6,6 @@ const raindata = [
 		title: 'RAIN',
 		chapter: 'Unchaptered',
 		chars: ['rain'],
-		// setting: ['a', 'b']
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/2#content-start',
@@ -15,6 +14,37 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl ',
 		chars: ['mom', 'aiken', 'kellen', 'rain'],
 		setting: ['old_home'],
+	},
+	{
+		url: 'https://rain.thecomicseries.com/comics/3#content-start',
+		src: 'https://img.comicfury.com/comics/3714ae7b21d6a4f3e73d74088cbf6de61332828526.png',
+		title: 'Prologue 2',
+		chapter: 'Ch 1: The New Girl ',
+		chars: ['mom', 'rain', 'aiken', 'kellen'],
+		setting: ['old_home'],
+	},
+	{
+		url: 'https://rain.thecomicseries.com/comics/4#content-start',
+		src: 'https://img.comicfury.com/comics/c2b8141e64b94ce5031968192e44ef0b1125474994.png',
+		title: 'Prologue 3',
+		chapter: 'Ch 1: The New Girl ',
+		chars: ['rain'],
+		setting: ['old_home'],
+	},
+	{
+		url: 'https://rain.thecomicseries.com/comics/5#content-start',
+		src: 'https://img.comicfury.com/comics/08b927540b54cb4adf7e20ff9e061298435475647.png',
+		title: 'Morning Routine',
+		chapter: 'Ch 1: The New Girl ',
+		chars: ['rain'],
+		setting: ['home'],
+	},
+	{
+		url: 'https://rain.thecomicseries.com/comics/6#content-start',
+		src: 'https://img.comicfury.com/comics/c8f813e19a0aae0f2a0b57a6b36ceec52058036413.png',
+		title: 'Chapter 1 - The New Girl',
+		chapter: 'Ch 1: The New Girl ',
+		chars: ['gavin', 'maria', 'rain', 'rudy'],
 	},
 ];
 
@@ -46,5 +76,26 @@ const chardata = [
 		'age': 46,
 		'gender': 'f',
 		'sexuality': 'straight',
+	},
+	{
+		'id': 'gavin',
+		'name': 'Gavin Kurz',
+		'age': 17,
+		'gender': 'm',
+		'sexuality': 'straight',
+	},
+	{
+		'id': 'maria',
+		'name': 'Maria Strongwell',
+		'age': 17,
+		'gender': 'f',
+		'sexuality': 'lesbian',
+	},
+	{
+		'id': 'rudy',
+		'name': 'Rudy Strongwell',
+		'age': 15,
+		'gender': 'm',
+		'sexuality': 'gay',
 	},
 ];
