@@ -95,9 +95,23 @@ class Comic {
 		/** @type {string[]} */
 		this.tags = tags;
 	}
+	get id(){
+		return Comic.comics.indexOf(this);
+	}
+	get img(){
+		const a = document.createElement('a');
+		a.href = this.url;
+		const elem = document.createElement('img');
+		elem.height = 100;
+		elem.src = this.src;
+		a.appendChild(elem);
+		return a;
+	}
 	get li(){
 		const elem = document.createElement('li');
-		elem.innerHTML = `${this.chapter} - `;
+		elem.value = this.id;
+		elem.appendChild(this.img);
+		elem.appendChild(document.createTextNode(`${this.chapter} - `));
 		const a = document.createElement('a');
 		a.href = this.url;
 		a.innerHTML = this.title;
@@ -149,5 +163,6 @@ main();
 /**
  * todo:
  * - tag filtring
+ * - setting filtering
  * - result count
  */
