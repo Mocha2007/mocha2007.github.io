@@ -70,6 +70,7 @@ const raindata = [
 		title: 'Blending In',
 		chapter: 'Ch 1: The New Girl ',
 		chars: ['rain', 'fara', 'maria', 'gavin'],
+		setting: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/10/#content-start',
@@ -77,6 +78,7 @@ const raindata = [
 		title: 'The Bet',
 		chapter: 'Ch 1: The New Girl ',
 		chars: ['maria', 'gavin', 'rain'],
+		setting: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/11/#content-start',
@@ -84,13 +86,23 @@ const raindata = [
 		title: 'Squeak',
 		chapter: 'Ch 1: The New Girl ',
 		chars: ['arthur', 'emily', 'maria', 'gavin', 'rain'],
+		setting: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/12/#content-start',
 		src: 'https://img.comicfury.com/comics/b2eb13bbd9645c22e31c3c463eacea1a2135437039.png',
 		title: 'High School in a Nutshell',
 		chapter: 'Ch 1: The New Girl ',
-		chars: ['devon', 'rain', 'drew', 'robert'],
+		chars: ['devon', 'rain', 'drew', 'robert', 'holly', 'emily', 'debbie', 'maria', 'gavin'],
+		setting: ['school'],
+	},
+	{
+		url: 'https://rain.thecomicseries.com/comics/13/#content-start',
+		src: 'https://img.comicfury.com/comics/4697dcd9d750f2479302cdfd6aa377f71767843488.png',
+		title: 'Oh, the Irony...',
+		chapter: 'Ch 1: The New Girl ',
+		chars: ['maria', 'gavin'],
+		setting: ['school'],
 	},
 ];
 
@@ -184,6 +196,20 @@ const chardata = [
 		'name': 'Robert Roberts',
 		'age': 17,
 		'gender': 'm',
+		'sexuality': 'straight',
+	},
+	{
+		'id': 'holly',
+		'name': 'Holly O\'Neill',
+		'age': 17,
+		'gender': 'f',
+		'sexuality': 'straight',
+	},
+	{
+		'id': 'debbie',
+		'name': 'Debbie Gero',
+		'age': 17,
+		'gender': 'f',
 		'sexuality': 'straight',
 	},
 ];
