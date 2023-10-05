@@ -76,8 +76,9 @@ class Comic {
 	 * @param {string} chapter
 	 * @param {Char[]} chars
 	 * @param {string[]} settings
+	 * @param {string[]} tags
 	 */
-	constructor(url, src, title, chapter, chars, settings){
+	constructor(url, src, title, chapter, chars, settings, tags){
 		Comic.comics.push(this);
 		/** @type {string} */
 		this.url = url;
@@ -91,6 +92,8 @@ class Comic {
 		this.chars = chars;
 		/** @type {string[]} */
 		this.settings = settings;
+		/** @type {string[]} */
+		this.tags = tags;
 	}
 	get li(){
 		const elem = document.createElement('li');
@@ -103,7 +106,9 @@ class Comic {
 	}
 	static fromObj(o){
 		return new Comic(o.url, o.src, o.title, o.chapter,
-			o.chars.map(Char.fromId) || [], o.settings || []);
+			o.chars.map(Char.fromId) || [],
+			o.settings || [],
+			o.tags || []);
 	}
 }
 /** @type {Comic[]} */
@@ -141,3 +146,8 @@ function updateResults(){
 }
 
 main();
+/**
+ * todo:
+ * - tag filtring
+ * - result count
+ */

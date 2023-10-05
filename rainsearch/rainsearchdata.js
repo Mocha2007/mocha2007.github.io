@@ -14,6 +14,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl ',
 		chars: ['mom', 'aiken', 'kellen', 'rain'],
 		setting: ['old_home'],
+		tags: ['flashback'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/3#content-start',
@@ -22,6 +23,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl ',
 		chars: ['mom', 'rain', 'aiken', 'kellen'],
 		setting: ['old_home'],
+		tags: ['flashback'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/4#content-start',
@@ -30,6 +32,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl ',
 		chars: ['rain'],
 		setting: ['old_home'],
+		tags: ['flashback'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/5#content-start',
