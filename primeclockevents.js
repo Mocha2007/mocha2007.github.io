@@ -690,7 +690,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	// 2016
 	[diff(1478667600), 'Donald Trump <a href="https://en.wikipedia.org/wiki/2016_United_States_presidential_election">elected</a> president of the US in upset election'], // roughly when it became certain; 00:00 EST 9 NOV 2016
 	// 2017
-	[diff(1494907200), '<a href="https://mocha2007.github.io">Mocha\'s Site</a> Launched'],
+	[diff(1494942600), '<a href="https://mocha2007.github.io">Mocha\'s Site</a> <a href="https://github.com/Mocha2007/mocha2007.github.io/commit/4e1bbc0bc41c4f75681c539cd09e164594e6ba7c">Launched</a>'],
 	[diff(1503705600), '<a href="https://en.wikipedia.org/wiki/Hurricane_Harvey">Hurricane Harvey</a> makes landfall in Texas'],
 	[diff(1506920400), 'The <a href="https://en.wikipedia.org/wiki/2017_Las_Vegas_shooting">2017 Las Vegas Shooting</a>, the deadliest mass shooting committed by a single person in American history'],
 	[diff(1508371200), '<abbr title="The first known insterstellar object to enter the solar system"><a href="https://en.wikipedia.org/wiki/ʻOumuamua">ʻOumuamua</a></abbr> discovered'],
