@@ -13,6 +13,8 @@
 /* exported updateResults */
 /* global chardata, raindata */
 
+const NBSP = String.fromCharCode(160);
+
 /**
  * @param {string} id
  * @param {boolean} checked
@@ -23,6 +25,7 @@ function checkbox(id, checked = false, innerNode = undefined){
 	if (innerNode)
 		label.appendChild(innerNode);
 	// label.style.color = this.color; todo gender? sexuality????
+	label.appendChild(document.createTextNode(NBSP));
 	const input = document.createElement('input');
 	label.appendChild(input);
 	input.type = 'checkbox';
@@ -59,8 +62,8 @@ class Char {
 	}
 	get elem(){
 		const innerNode = document.createElement('span');
-		innerNode.innerHTML = this.name.replace(' ', '&nbsp;')
-			+ ` (${Comic.comics.filter(comic => comic.chars.includes(this)).length})`;
+		innerNode.innerHTML = this.name.replace(/ /g, '&nbsp;') + NBSP
+			+ `(${Comic.comics.filter(comic => comic.chars.includes(this)).length})`;
 		return checkbox(this.checkboxId, false, innerNode);
 	}
 	/** @returns {boolean} */
