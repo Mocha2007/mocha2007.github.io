@@ -184,6 +184,12 @@ function main(){
 	console.info(`rainsearch.js collated ${Data.tags.length} tags`);
 	// todo settings
 	Data.settings.sort();
+	const settings = document.getElementById('settings');
+	Data.settings.forEach(s => {
+		const elem = checkbox('s_' + s.replace(' ', '_'), true, document.createTextNode(s));
+		settings.appendChild(elem);
+		settings.appendChild(document.createTextNode(' '));
+	});
 	console.info(`rainsearch.js collated ${Data.settings.length} settings`);
 }
 
@@ -217,7 +223,9 @@ function updateResults(){
 		// must include at least one checked chapter
 		.filter(comic => Data.selected.chapters.includes(comic.chapter))
 		// must include every checked tag
-		.filter(comic => Data.selected.tags.every(t => comic.tags.includes(t)));
+		.filter(comic => Data.selected.tags.every(t => comic.tags.includes(t)))
+		// must include at least one checked setting
+		.filter(comic => Data.selected.settings.some(s => comic.settings.includes(s)));
 	const resultElem = document.getElementById('results');
 	resultElem.innerHTML = '';
 	results.forEach(r => resultElem.appendChild(r.li));

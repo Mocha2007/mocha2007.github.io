@@ -15,7 +15,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2010,
 		chars: ['mom', 'aiken', 'kellen', 'rain'],
-		settings: ['old_home'],
+		settings: ['old home'],
 		tags: ['flashback'],
 	},
 	{
@@ -25,7 +25,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2010,
 		chars: ['mom', 'rain', 'aiken', 'kellen'],
-		settings: ['old_home'],
+		settings: ['old home'],
 		tags: ['flashback'],
 	},
 	{
@@ -35,7 +35,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2010,
 		chars: ['rain'],
-		settings: ['old_home'],
+		settings: ['old home'],
 		tags: ['flashback'],
 	},
 	{
