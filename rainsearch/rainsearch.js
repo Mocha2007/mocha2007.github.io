@@ -157,14 +157,14 @@ function main(){
 	console.info(`rainsearch.js parsed ${Char.chars.length} chars`);
 	raindata.forEach(Comic.fromObj);
 	console.info(`rainsearch.js parsed ${Comic.comics.length} comics`);
-	// todo create UI
+	// create UI
 	// chars
 	const charFilters = document.getElementById('chars');
 	Char.chars.forEach(c => {
 		charFilters.appendChild(c.elem);
 		charFilters.appendChild(document.createTextNode(' '));
 	});
-	// todo chapters
+	// chapters
 	Data.chapters.sort();
 	const chapters = document.getElementById('chapters');
 	Data.chapters.forEach(c => {
@@ -173,8 +173,14 @@ function main(){
 		chapters.appendChild(document.createTextNode(' '));
 	});
 	console.info(`rainsearch.js collated ${Data.chapters.length} chapters`);
-	// todo tags
+	// tags
 	Data.tags.sort();
+	const tags = document.getElementById('tags');
+	Data.tags.forEach(t => {
+		const elem = checkbox('t_' + t.replace(' ', '_'), false, document.createTextNode(t));
+		tags.appendChild(elem);
+		tags.appendChild(document.createTextNode(' '));
+	});
 	console.info(`rainsearch.js collated ${Data.tags.length} tags`);
 	// todo settings
 	Data.settings.sort();
@@ -191,6 +197,12 @@ const Data = {
 		get chapters(){
 			return Data.chapters.filter(c => document.getElementById('ch_' + c.replace(' ', '_')).checked);
 		},
+		get settings(){
+			return Data.settings.filter(c => document.getElementById('s_' + c.replace(' ', '_')).checked);
+		},
+		get tags(){
+			return Data.tags.filter(c => document.getElementById('t_' + c.replace(' ', '_')).checked);
+		},
 	},
 	/** @type {string[]} */
 	settings: [],
@@ -203,7 +215,9 @@ function updateResults(){
 		// must include every checked char
 		.filter(comic => Data.selected.chars.every(char => comic.chars.includes(char)))
 		// must include at least one checked chapter
-		.filter(comic => Data.selected.chapters.includes(comic.chapter));
+		.filter(comic => Data.selected.chapters.includes(comic.chapter))
+		// must include every checked tag
+		.filter(comic => Data.selected.tags.every(t => comic.tags.includes(t)));
 	const resultElem = document.getElementById('results');
 	resultElem.innerHTML = '';
 	results.forEach(r => resultElem.appendChild(r.li));
