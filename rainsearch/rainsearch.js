@@ -141,6 +141,7 @@ class Comic {
 		a.href = this.url;
 		a.innerHTML = this.title;
 		elem.appendChild(a);
+		elem.appendChild(document.createTextNode(` (${this.year})`));
 		return elem;
 	}
 	static fromObj(o){
