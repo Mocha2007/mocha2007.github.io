@@ -13,6 +13,25 @@
 /* exported updateResults */
 /* global chardata, raindata */
 
+/**
+ * @param {string} id
+ * @param {boolean} checked
+ * @param {HTMLElement} innerNode
+ */
+function checkbox(id, checked = false, innerNode = undefined){
+	const label = document.createElement('label');
+	if (innerNode)
+		label.appendChild(innerNode);
+	// label.style.color = this.color; todo gender? sexuality????
+	const input = document.createElement('input');
+	label.appendChild(input);
+	input.type = 'checkbox';
+	input.checked = checked;
+	label.for = input.id = input.name = id;
+	label.classList.add('button');
+	return label;
+}
+
 class Char {
 	/**
 	 * https://rain.thecomicseries.com/characters/
@@ -39,20 +58,10 @@ class Char {
 		return 'char_' + this.id;
 	}
 	get elem(){
-		const label = document.createElement('label');
-		label.innerHTML = this.name.replace(' ', '&nbsp;');
-		const count = document.createElement('span');
-		count.id = this.checkboxId + '_count';
-		count.innerHTML = ` (${Comic.comics.filter(comic => comic.chars.includes(this)).length})`;
-		label.appendChild(count);
-		// label.style.color = this.color; todo gender? sexuality????
-		const input = document.createElement('input');
-		label.appendChild(input);
-		input.type = 'checkbox';
-		// input.checked = true;
-		label.for = input.id = input.name = this.checkboxId;
-		label.classList.add('button');
-		return label;
+		const innerNode = document.createElement('span');
+		innerNode.innerHTML = this.name.replace(' ', '&nbsp;')
+			+ ` (${Comic.comics.filter(comic => comic.chars.includes(this)).length})`;
+		return checkbox(this.checkboxId, false, innerNode);
 	}
 	/** @returns {boolean} */
 	get selected(){
@@ -89,12 +98,22 @@ class Comic {
 		this.title = title;
 		/** @type {string} */
 		this.chapter = chapter;
+		if (!Data.chapters.includes(chapter))
+			Data.chapters.push(chapter);
 		/** @type {Char[]} */
 		this.chars = chars;
 		/** @type {string[]} */
 		this.settings = settings;
+		settings.forEach(s => {
+			if (!Data.settings.includes(s))
+				Data.settings.push(s);
+		});
 		/** @type {string[]} */
 		this.tags = tags;
+		tags.forEach(t => {
+			if (!Data.tags.includes(t))
+				Data.tags.push(t);
+		});
 		/** @type {number} */
 		this.year = year;
 	}
@@ -139,25 +158,52 @@ function main(){
 	raindata.forEach(Comic.fromObj);
 	console.info(`rainsearch.js parsed ${Comic.comics.length} comics`);
 	// todo create UI
+	// chars
 	const charFilters = document.getElementById('chars');
 	Char.chars.forEach(c => {
 		charFilters.appendChild(c.elem);
 		charFilters.appendChild(document.createTextNode(' '));
 	});
+	// todo chapters
+	Data.chapters.sort();
+	const chapters = document.getElementById('chapters');
+	Data.chapters.forEach(c => {
+		const elem = checkbox('ch_' + c.replace(' ', '_'), true, document.createTextNode(c));
+		chapters.appendChild(elem);
+		chapters.appendChild(document.createTextNode(' '));
+	});
+	console.info(`rainsearch.js collated ${Data.chapters.length} chapters`);
+	// todo tags
+	Data.tags.sort();
+	console.info(`rainsearch.js collated ${Data.tags.length} tags`);
+	// todo settings
+	Data.settings.sort();
+	console.info(`rainsearch.js collated ${Data.settings.length} settings`);
 }
 
 const Data = {
+	/** @type {string[]} */
+	chapters: [],
 	selected: {
 		get chars(){
 			return Char.chars.filter(c => c.selected);
 		},
+		get chapters(){
+			return Data.chapters.filter(c => document.getElementById('ch_' + c.replace(' ', '_')).checked);
+		},
 	},
+	/** @type {string[]} */
+	settings: [],
+	/** @type {string[]} */
+	tags: [],
 };
 
 function updateResults(){
 	const results = Comic.comics
 		// must include every checked char
-		.filter(comic => Data.selected.chars.every(char => comic.chars.includes(char)));
+		.filter(comic => Data.selected.chars.every(char => comic.chars.includes(char)))
+		// must include at least one checked chapter
+		.filter(comic => Data.selected.chapters.includes(comic.chapter));
 	const resultElem = document.getElementById('results');
 	resultElem.innerHTML = '';
 	results.forEach(r => resultElem.appendChild(r.li));

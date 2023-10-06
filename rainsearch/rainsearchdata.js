@@ -15,7 +15,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2010,
 		chars: ['mom', 'aiken', 'kellen', 'rain'],
-		setting: ['old_home'],
+		settings: ['old_home'],
 		tags: ['flashback'],
 	},
 	{
@@ -25,7 +25,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2010,
 		chars: ['mom', 'rain', 'aiken', 'kellen'],
-		setting: ['old_home'],
+		settings: ['old_home'],
 		tags: ['flashback'],
 	},
 	{
@@ -35,7 +35,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2010,
 		chars: ['rain'],
-		setting: ['old_home'],
+		settings: ['old_home'],
 		tags: ['flashback'],
 	},
 	{
@@ -45,7 +45,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2010,
 		chars: ['rain'],
-		setting: ['home'],
+		settings: ['home'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/6#content-start',
@@ -62,7 +62,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2010,
 		chars: ['rain', 'fara'],
-		setting: ['home'],
+		settings: ['home'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/8#content-start',
@@ -79,7 +79,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2010,
 		chars: ['rain', 'fara', 'maria', 'gavin'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/10/#content-start',
@@ -88,7 +88,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2010,
 		chars: ['maria', 'gavin', 'rain'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/11/#content-start',
@@ -97,7 +97,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2010,
 		chars: ['arthur', 'emily', 'maria', 'gavin', 'rain'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/12/#content-start',
@@ -106,7 +106,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2010,
 		chars: ['devon', 'rain', 'drew', 'robert', 'holly', 'emily', 'debbie', 'maria', 'gavin'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/13/#content-start',
@@ -115,7 +115,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2010,
 		chars: ['maria', 'gavin'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/14/#content-start',
@@ -124,7 +124,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2010,
 		chars: ['fara', 'rain'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/15/#content-start',
@@ -133,7 +133,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2010,
 		chars: ['fara', 'rain', 'maria'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/16/#content-start',
@@ -142,7 +142,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2010,
 		chars: ['maria', 'rain', 'gavin'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/17/#content-start',
@@ -151,7 +151,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2010,
 		chars: ['maria', 'gavin', 'rain'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/18/#content-start',
@@ -160,7 +160,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2010,
 		chars: ['gavin', 'rain', 'rudy'],
-		setting: ['school'],
+		settings: ['school'],
 		tags: ['flashback'],
 	},
 	{
@@ -170,7 +170,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2011,
 		chars: ['rain', 'rudy', 'gavin', 'maria'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/20/#content-start',
@@ -179,7 +179,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2011,
 		chars: ['gavin', 'maria', 'rudy', 'rain'],
-		setting: ['school'],
+		settings: ['school'],
 		tags: ['flashback'],
 	},
 	{
@@ -189,7 +189,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2011,
 		chars: ['rudy', 'maria', 'gavin'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/22/#content-start',
@@ -198,7 +198,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2011,
 		chars: ['fara', 'rain', 'maria', 'gavin', 'rudy'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/23/#content-start',
@@ -207,7 +207,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2011,
 		chars: ['rain', 'gavin', 'fara', 'maria', 'rudy'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/24/#content-start',
@@ -216,7 +216,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2011,
 		chars: ['fara', 'gavin', 'maria', 'rain', 'rudy'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/25/#content-start',
@@ -225,7 +225,7 @@ const raindata = [
 		chapter: 'Ch 1: The New Girl',
 		year: 2011,
 		chars: ['gavin', 'rain', 'fara', 'maria', 'rudy'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/26/#content-start',
@@ -242,7 +242,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['rain', 'maria', 'rudy', 'randy'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/28/#content-start',
@@ -251,7 +251,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['gavin', 'rain', 'debbie'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/29/#content-start',
@@ -260,7 +260,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['rudy', 'rain', 'maria'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/30/#content-start',
@@ -269,7 +269,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['maria', 'rain', 'rudy', 'quenton'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/31/#content-start',
@@ -278,7 +278,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['fara', 'kellen', 'ellen'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/32/#content-start',
@@ -287,7 +287,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['fara', 'ellen'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/33/#content-start',
@@ -296,7 +296,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['rain', 'maria', 'kaminari'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/34/#content-start',
@@ -305,7 +305,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['rain', 'maria', 'ellen'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/35/#content-start',
@@ -314,7 +314,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['rain', 'ellen', 'maria'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/36/#content-start',
@@ -323,7 +323,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['maria', 'rain'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/37/#content-start',
@@ -332,7 +332,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['devon', 'gavin', 'drew', 'robert', 'maria', 'rain'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/38/#content-start',
@@ -341,7 +341,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['gavin', 'holly', 'debbie', 'emily', 'rain', 'maria'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/39/#content-start',
@@ -350,7 +350,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['maria', 'gavin', 'holly', 'debbie', 'emily', 'devon', 'drew', 'robert', 'rain', 'ellen'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/40/#content-start',
@@ -359,7 +359,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['rain', 'madison', 'rudy'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/41/#content-start',
@@ -368,7 +368,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['rain', 'rudy'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/42/#content-start',
@@ -377,7 +377,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['mrs_strongwell', 'mr_strongwell', 'rudy', 'maria', 'rain'],
-		setting: ['school'],
+		settings: ['school'],
 		tags: ['flashback'],
 	},
 	{
@@ -387,7 +387,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['rudy', 'quenton', 'maria', 'rain', 'gavin'],
-		setting: ['school'],
+		settings: ['school'],
 		tags: ['flashback'],
 	},
 	{
@@ -397,7 +397,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['maria', 'rudy', 'gavin', 'debbie'],
-		setting: ['school'],
+		settings: ['school'],
 		tags: ['flashback'],
 	},
 	{
@@ -423,7 +423,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['fara', 'kellen'],
-		setting: ['home'],
+		settings: ['home'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/48/#content-start',
@@ -432,7 +432,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['fara', 'kellen', 'rain', 'puddle'],
-		setting: ['home'],
+		settings: ['home'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/49/#content-start',
@@ -441,7 +441,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['rain', 'puddle', 'fara', 'kellen'],
-		setting: ['home'],
+		settings: ['home'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/50/#content-start',
@@ -450,7 +450,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['rain', 'puddle', 'fara'],
-		setting: ['home'],
+		settings: ['home'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/51/#content-start',
@@ -459,7 +459,7 @@ const raindata = [
 		chapter: 'Ch 2: Secrets and Lies',
 		year: 2011,
 		chars: ['rain', 'puddle', 'fara'],
-		setting: ['home'],
+		settings: ['home'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/52/#content-start',
@@ -468,7 +468,7 @@ const raindata = [
 		chapter: 'Rain Delay',
 		year: 2011,
 		chars: ['fara', 'randy', 'ellen', 'arthur'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/53/#content-start',
@@ -477,7 +477,7 @@ const raindata = [
 		chapter: 'Rain Delay',
 		year: 2011,
 		chars: ['rain', 'rudy', 'maria'],
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/54/#content-start',
@@ -486,7 +486,7 @@ const raindata = [
 		chapter: 'Rain Delay',
 		year: 2011,
 		chars: ['debbie', 'holly', 'emily', 'gavin', 'rudy'], // todo unsure of identity of third girl
-		setting: ['school'],
+		settings: ['school'],
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/55/#content-start',
@@ -495,7 +495,7 @@ const raindata = [
 		chapter: 'Rain Delay',
 		year: 2011,
 		chars: ['puddle', 'rain', 'maria', 'gavin', 'rudy'], // todo unsure of identity of third girl
-		setting: ['school'],
+		settings: ['school'],
 	},
 ];
 
