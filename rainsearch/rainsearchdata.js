@@ -624,7 +624,7 @@ const raindata = [
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/70/#content-start',
-		src: 'https://img.comicfury.com/comics/742378a4c3ee2a45e4efd5885d4264881044022977.png',
+		src: 'https://img.comicfury.com/comics/9c968a7744e8fc577ed3a221b05a4dbf1680251758.png',
 		title: 'Two People',
 		chapter: 'Ch 3: Normal People',
 		year: 2011,
