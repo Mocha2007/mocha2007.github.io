@@ -680,7 +680,7 @@ const raindata = [
 	{
 		url: 'https://rain.thecomicseries.com/comics/76/#content-start',
 		src: 'https://img.comicfury.com/comics/3a69455c89c377e4c40927a196133962487484479.png',
-		title: 'Ky(lie)',
+		title: 'Transwhatever',
 		chapter: 'Ch 3: Normal People',
 		year: 2011,
 		chars: ['heather', 'fara', 'ky'],
@@ -688,15 +688,6 @@ const raindata = [
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/77/#content-start',
-		src: 'https://img.comicfury.com/comics/64b1d382bad63a7866664df166cf4ac3770432748.png',
-		title: 'Decision',
-		chapter: 'Ch 3: Normal People',
-		year: 2011,
-		chars: ['rudy', 'gavin'],
-		settings: ['mall'],
-	},
-	{
-		url: 'https://rain.thecomicseries.com/comics/78/#content-start',
 		src: 'https://img.comicfury.com/comics/64b1d382bad63a7866664df166cf4ac3770432748.png',
 		title: 'Decision',
 		chapter: 'Ch 3: Normal People',
@@ -724,7 +715,7 @@ const raindata = [
 	},
 	{
 		url: 'https://rain.thecomicseries.com/comics/80/#content-start',
-		src: 'https://img.comicfury.com/comics/48326f61bc9082b56fd9794061e5b82b558479134.png',
+		src: 'https://img.comicfury.com/comics/d9857a6523a3bbd5e15f7f03412ce20b678137074.png',
 		title: 'Difficult',
 		chapter: 'Ch 3: Normal People',
 		year: 2011,

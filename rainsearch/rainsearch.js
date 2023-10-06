@@ -194,6 +194,14 @@ function main(){
 		settings.appendChild(document.createTextNode(' '));
 	});
 	console.info(`rainsearch.js collated ${Data.settings.length} settings`);
+	// duplicate image checker
+	const srcSet = [];
+	Comic.comics.forEach(c => {
+		if (srcSet.includes(c.src))
+			console.warn(`DUPLICATE SRC: ${c.title}`);
+		else
+			srcSet.push(c.src);
+	});
 }
 
 const Data = {
