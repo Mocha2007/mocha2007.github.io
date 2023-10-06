@@ -461,6 +461,42 @@ const raindata = [
 		chars: ['rain', 'puddle', 'fara'],
 		setting: ['home'],
 	},
+	{
+		url: 'https://rain.thecomicseries.com/comics/52/#content-start',
+		src: 'https://img.comicfury.com/comics/873281ab2f8488e641f19952adc79b812032100213.png',
+		title: 'Rain Delay 2',
+		chapter: 'Rain Delay',
+		year: 2011,
+		chars: ['fara', 'randy', 'ellen', 'arthur'],
+		setting: ['school'],
+	},
+	{
+		url: 'https://rain.thecomicseries.com/comics/53/#content-start',
+		src: 'https://img.comicfury.com/comics/cc313c18863385179fd3bdcc39d5276e1236846452.png',
+		title: 'Rain Delay 1',
+		chapter: 'Rain Delay',
+		year: 2011,
+		chars: ['rain', 'rudy', 'maria'],
+		setting: ['school'],
+	},
+	{
+		url: 'https://rain.thecomicseries.com/comics/54/#content-start',
+		src: 'https://img.comicfury.com/comics/8231fd276794577780bb025a9053888f2134984399.png',
+		title: 'Rain Delay 3',
+		chapter: 'Rain Delay',
+		year: 2011,
+		chars: ['debbie', 'holly', 'emily', 'gavin', 'rudy'], // todo unsure of identity of third girl
+		setting: ['school'],
+	},
+	{
+		url: 'https://rain.thecomicseries.com/comics/55/#content-start',
+		src: 'https://img.comicfury.com/comics/4a283efab9cce7844ad28d583206e568476713378.png',
+		title: 'Rain Delay 4',
+		chapter: 'Rain Delay',
+		year: 2011,
+		chars: ['puddle', 'rain', 'maria', 'gavin', 'rudy'], // todo unsure of identity of third girl
+		setting: ['school'],
+	},
 ];
 
 const chardata = [
