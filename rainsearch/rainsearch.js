@@ -232,12 +232,8 @@ function updateResults(){
 	const resultElem = document.getElementById('results');
 	resultElem.innerHTML = '';
 	results.forEach(r => resultElem.appendChild(r.li));
+	// result count
+	document.getElementById('count').innerHTML = results.length;
 }
 
 main();
-/**
- * todo:
- * - tag filtring
- * - setting filtering
- * - result count
- */
