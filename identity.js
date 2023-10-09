@@ -222,6 +222,8 @@ function secret(){
 		return;
 	document.getElementById('title').innerHTML = 'Luna’s Site<audio id="sfx" src="snd/egg.mp3"/>';
 	document.title = 'Luna’s Site';
+	const sub = document.getElementById('subtitle');
+	sub.innerHTML = sub.innerHTML.replace(/Mocha/g, 'Luna');
 	playSound('sfx');
 	// console.info('I am myself now.');
 }
