@@ -292,8 +292,8 @@ function holidayCSS(){
 		));
 		// pinkeningFactor = 1; // debug
 		var p1 = 120*pinkeningFactor;
-		var p2 = 100 + 25*pinkeningFactor;
-		document.getElementById('top').style.filter = 'hue-rotate(' + p1 + 'deg) brightness(' + p2 + '%)';
+		var p2 = 100 - 50*pinkeningFactor;
+		document.getElementById('top').style.filter = 'hue-rotate(' + p1 + 'deg) saturate(' + p2 + '%)';
 	}
 }
 
