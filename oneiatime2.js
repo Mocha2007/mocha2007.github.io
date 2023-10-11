@@ -229,6 +229,7 @@ function holidayCSS(){
 			if (day === 16){
 				var dy = year - 2023;
 				title = dy + ' year' + (dy === 1 ? '' : 's') + ' HRT!!! :D';
+				img.classList.add('trans');
 			}
 			break;
 		case 9:
@@ -257,7 +258,7 @@ function holidayCSS(){
 			}
 			else if (day === 14)
 				title = '<3';
-			else if (day === 20) // TDoR
+			else if (13 <= day && day <= 20) // Trans Awareness Week and TDoR
 				img.classList.add('trans');
 			break;
 		case 12:
