@@ -73,11 +73,11 @@ class ProgressItem {
 		td_max.innerHTML = Math.round(max*100) + '%';
 		tr.appendChild(td_max);
 		const td_progress = document.createElement('td');
-		const progress = document.createElement('progress');
-		progress.value = avg;
-		progress.max = 1;
-		progress.innerHTML = `${Math.round(avg*100)}%`; // I think this only shows up for eg. screen readers
-		td_progress.appendChild(progress);
+		const progress_elem = document.createElement('progress');
+		progress_elem.value = avg;
+		progress_elem.max = 1;
+		progress_elem.innerHTML = `${Math.round(avg*100)}%`; // I think this only shows up for eg. screen readers
+		td_progress.appendChild(progress_elem);
 		tr.appendChild(td_progress);
 		return tr;
 	}
