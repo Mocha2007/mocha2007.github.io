@@ -405,7 +405,8 @@ function hrt(){
 	var d = dt.getDate();
 	var h = dt.getHours();
 	var doses = Math.floor((new Date() - hrt_epoch)/(12*60*60*1000));
-	return yr + ' years, ' + m + ' months, ' + d + ' days, ' + h + ' hours HRT (' + doses + ' doses)';
+	return '<span class="trans">' + yr + ' years, ' + m + ' months, ' + d + ' days, '
+		+ h + ' hours HRT (' + doses + ' doses)</span>';
 }
 
 function bonus(){
