@@ -150,7 +150,7 @@ function main(){
 	const elem = document.getElementById('hrt');
 	elem.appendChild(hrt());
 	refresh();
-	setInterval(refresh, 500);
+	setInterval(refresh, 200);
 }
 
 function refresh(){
