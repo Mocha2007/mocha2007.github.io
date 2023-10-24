@@ -91,6 +91,10 @@ function get_dose_t(){
 	return new Date() - 1692227700000; // 7:15 is when I normally take my doses
 }
 
+function get_laser_t(){
+	return new Date() - 1694782800000; // iirc
+}
+
 function unit(x, name){
 	return `${x} ${name}${x === 1 ? '' : 's'}`;
 }
@@ -106,9 +110,12 @@ function time_elem_inner(){
 	const min = dt.getMinutes();
 	const s = dt.getSeconds();
 	const doses = Math.floor(get_dose_t()/(12*60*60*1000)) + 1; // dose count starts at 1 for t=0
+	const laser = Math.floor(get_laser_t()/(35*24*60*60*1000)) + 1; // laser count starts at 1 for t=0
 	// elem
 	return `${unit(yr, 'year')}, ${unit(m, 'month')}, ${unit(d, 'day')},
-		${unit(h, 'hour')}, ${unit(min, 'minute')}, ${unit(s, 'second')} (${unit(doses, 'dose')})`;
+		${unit(h, 'hour')}, ${unit(min, 'minute')}, ${unit(s, 'second')}<br>
+		${unit(doses, 'dose')} of E<br>
+		${unit(laser, 'laser session')}`;
 }
 
 const progress_items = [
