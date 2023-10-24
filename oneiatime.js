@@ -395,7 +395,20 @@ function hebrew(){
 	return `${day} ${monthName} ${year}`;
 }
 
+function hrt(){
+	var hrt_epoch = 1692227700000; // 7:15 is when I normally take my doses; first dose was actually 1692216960000 (2023 Aug 16 @ 4:16 PM EDT)
+	var dt = new Date(new Date() - (24*60*60*1000 * 15 + 60*60*1000 * 16 + 60*1000 * 16));
+	var mo = dt.getMonth() - 7 + (dt.getFullYear() - 2023)*12;
+	var yr = Math.floor(mo / 12);
+	var m = mo % 12;
+	var d = dt.getDate();
+	var h = dt.getHours();
+	var doses = Math.floor((new Date() - hrt_epoch)/(12*60*60*1000));
+	return yr + ' years, ' + m + ' months, ' + d + ' days, ' + h + ' hours HRT (' + doses + ' doses)';
+}
+
 function bonus(){
-	document.getElementById('clockbonus').innerHTML = [zodiac(), china(), egypt(), hebrew(),
-		japan(), romanFULL(), maya(), 'JD '+jd().toFixed(3), darian(), dorf()].join('<br>');
+	document.getElementById('clockbonus').innerHTML = [hrt(), zodiac(), china(),
+		egypt(), hebrew(), japan(), romanFULL(), maya(), 'JD '+jd().toFixed(3),
+		darian(), dorf()].join('<br>');
 }
