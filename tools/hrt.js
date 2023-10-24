@@ -155,6 +155,7 @@ function main(){
 	elem.appendChild(hrt());
 	refresh();
 	setInterval(refresh, 200);
+	setTimeout(() => location.reload(), 1000 * 60 * 60 * 24);
 }
 
 function refresh(){
