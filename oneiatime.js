@@ -396,17 +396,28 @@ function hebrew(){
 }
 
 function hrt(){
+	var t = new Date();
 	var hrt_epoch = 1692227700000; // 7:15 is when I normally take my doses; first dose was actually 1692216960000 (2023 Aug 16 @ 4:16 PM EDT)
+	var t_ = t - hrt_epoch;
 	// I subtract 16d 16h 16min from the time, shifting the epoch to August 1st. This allows me to easily count months, whether they were 31 days, 30 days, etc.
-	var dt = new Date(new Date() - (24*60*60*1000 * 15 + 60*60*1000 * 16 + 60*1000 * 16));
+	var dt = new Date(t - (24*60*60*1000 * 15 + 60*60*1000 * 16 + 60*1000 * 16));
 	var mo = dt.getMonth() - 7 + (dt.getFullYear() - 2023)*12;
+	// https://transfemscience.org/articles/transfem-intro/#timeline-of-effects
+	// "2 to 3 years"
+	var TIDDIES_MIN = Math.round(100 * t_/(1000*60*60*24*365.2425*3));
+	var TIDDIES_MAX = Math.round(100 * t_/(1000*60*60*24*365.2425*2));
+	// My lasering started after 30 days HRT. 6-10 Sessions every 5 weeks. Thus 30-50 weeks.
+	var LASER = Math.floor(t_/(1000*60*60*24*7*5) - 30/35 + 1); // 5-week periods, 1-indexed
+	var LASER_MIN = Math.round(100 * LASER/10);
+	var LASER_MAX = Math.round(100 * LASER/6);
 	var yr = Math.floor(mo / 12);
 	var m = mo % 12;
 	var d = dt.getDate();
 	var h = dt.getHours();
-	var doses = Math.floor((new Date() - hrt_epoch)/(12*60*60*1000)) + 1; // dose count starts at 1 for t=0
+	var doses = Math.floor(t_/(12*60*60*1000)) + 1; // dose count starts at 1 for t=0
 	return '<span class="trans">' + yr + ' years, ' + m + ' months, ' + d + ' days, '
-		+ h + ' hours HRT (' + doses + ' doses)</span>';
+		+ h + ' hours HRT (' + doses + ' doses; <abbr title="Theoretically...\nBreast Development = '
+		+ TIDDIES_MIN + '% to ' + TIDDIES_MAX + '%\nFacial Hair Loss = ' + LASER_MIN + '% to ' + LASER_MAX + '%">%</abbr>)</span>';
 }
 
 function bonus(){
