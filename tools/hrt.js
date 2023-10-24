@@ -91,6 +91,10 @@ function get_dose_t(){
 	return new Date() - 1692227700000; // 7:15 is when I normally take my doses
 }
 
+function unit(x, name){
+	return `${x} ${name}${x === 1 ? '' : 's'}`;
+}
+
 function time_elem_inner(){
 	// I subtract 16d 16h 16min from the time, shifting the epoch to August 1st. This allows me to easily count months, whether they were 31 days, 30 days, etc.
 	const dt = new Date(new Date() - (24*60*60*1000 * 15 + 60*60*1000 * 16 + 60*1000 * 16));
@@ -103,7 +107,8 @@ function time_elem_inner(){
 	const s = dt.getSeconds();
 	const doses = Math.floor(get_dose_t()/(12*60*60*1000)) + 1; // dose count starts at 1 for t=0
 	// elem
-	return `${yr} years, ${m} months, ${d} days, ${h} hours, ${min} minutes, ${s} seconds (${doses} doses)`;
+	return `${unit(yr, 'year')}, ${unit(m, 'month')}, ${unit(d, 'day')},
+		${unit(h, 'hour')}, ${unit(min, 'minute')}, ${unit(s, 'second')} (${unit(doses, 'dose')})`;
 }
 
 const progress_items = [
