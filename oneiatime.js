@@ -404,7 +404,7 @@ function hrt(){
 	var mo = dt.getMonth() - 7 + (dt.getFullYear() - 2023)*12;
 	var yr = Math.floor(mo / 12);
 	var m = mo % 12;
-	var d = dt.getDate();
+	var d = dt.getDate()-1;
 	var h = dt.getHours();
 	var doses = Math.floor(t_/(12*60*60*1000)) + 1; // dose count starts at 1 for t=0
 	// https://transfemscience.org/articles/transfem-intro/#timeline-of-effects
