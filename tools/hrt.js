@@ -167,7 +167,7 @@ function main(){
 	elem.appendChild(hrt());
 	refresh();
 	setInterval(refresh, 200);
-	setTimeout(() => location.reload(), 1000 * 60 * 60 * 24);
+	setTimeout(() => location.reload(), 1000 * 60 * 60); // refresh every hour in case dose counter increases
 }
 
 function refresh(){
