@@ -84,7 +84,11 @@ class ProgressItem {
 }
 
 function get_t(){
-	return new Date() - 1692227700000; // 7:15 is when I normally take my doses; first dose was actually 1692216960000 (2023 Aug 16 @ 4:16 PM EDT)
+	return new Date() - 1692216960000; // first dose = 2023 Aug 16 @ 4:16 PM EDT
+}
+
+function get_dose_t(){
+	return new Date() - 1692227700000; // 7:15 is when I normally take my doses
 }
 
 function time_elem_inner(){
@@ -97,7 +101,7 @@ function time_elem_inner(){
 	const h = dt.getHours();
 	const min = dt.getMinutes();
 	const s = dt.getSeconds();
-	const doses = Math.floor(get_t()/(12*60*60*1000)) + 1; // dose count starts at 1 for t=0
+	const doses = Math.floor(get_dose_t()/(12*60*60*1000)) + 1; // dose count starts at 1 for t=0
 	// elem
 	return `${yr} years, ${m} months, ${d} days, ${h} hours, ${min} minutes, ${s} seconds (${doses} doses)`;
 }
