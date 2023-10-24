@@ -71,7 +71,7 @@ function main(){
 	const elem = document.getElementById('hrt');
 	elem.appendChild(hrt());
 	refresh();
-	setInterval(refresh, 1000);
+	setInterval(refresh, 500);
 }
 
 function refresh(){
