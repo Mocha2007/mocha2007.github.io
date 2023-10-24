@@ -415,9 +415,18 @@ function hrt(){
 	var LASER = Math.floor(t_/(1000*60*60*24*7*5) - 30/35 + 1); // 5-week periods, 1-indexed
 	var LASER_MIN = Math.round(100 * LASER/10);
 	var LASER_MAX = Math.round(100 * LASER/6);
+	// Skin - "3 to 6 months"
+	var SKIN_MIN = Math.round(100 * t_/(1000*60*60*24*365.2425/2));
+	var SKIN_MAX = Math.round(100 * t_/(1000*60*60*24*365.2425/4));
+	// Body Fat Redist. - "2 to 5 years"
+	var BF_MIN = Math.round(100 * t_/(1000*60*60*24*365.2425*5));
 	return '<span class="trans">' + yr + ' years, ' + m + ' months, ' + d + ' days, '
-		+ h + ' hours HRT (' + doses + ' doses; <abbr title="Theoretically...\nBreast Development = '
-		+ TIDDIES_MIN + '% to ' + TIDDIES_MAX + '%\nFacial Hair Loss = ' + LASER_MIN + '% to ' + LASER_MAX + '%">%</abbr>)</span>';
+		+ h + ' hours HRT (' + doses
+		+ ' doses; <abbr title="Theoretically...\nBreast Development = ' + TIDDIES_MIN + '% to ' + TIDDIES_MAX
+		+ '%\nBody Fat Redistribution = ' + BF_MIN + '% to ' + TIDDIES_MAX
+		+ '%\nBody Hair Loss = ' + TIDDIES_MIN
+		+ '%\nFacial Hair Loss = ' + LASER_MIN + '% to ' + LASER_MAX
+		+ '%\nImproved Skin = ' + SKIN_MIN + '% to ' + SKIN_MAX + '%">%</abbr>)</span>';
 }
 
 function bonus(){
