@@ -40,12 +40,13 @@ const sources = [
 
 class ProgressItem {
 	/** all times are measured in MONTHS. */
-	constructor(name, min_onset, max_onset, min_completion, max_completion){
+	constructor(name, min_onset, max_onset, min_completion, max_completion, notes){
 		this.name = name;
 		this.min_onset = min_onset;
 		this.max_onset = max_onset;
 		this.min_completion = min_completion;
 		this.max_completion = max_completion;
+		this.notes = notes;
 	}
 	/** @param {number} t (in months) */
 	range(t){
@@ -79,6 +80,9 @@ class ProgressItem {
 		progress_elem.innerHTML = `${Math.round(avg*100)}%`; // I think this only shows up for eg. screen readers
 		td_progress.appendChild(progress_elem);
 		tr.appendChild(td_progress);
+		const td_notes = document.createElement('td');
+		td_notes.innerHTML = this.notes;
+		tr.appendChild(td_notes);
 		return tr;
 	}
 }
@@ -119,11 +123,11 @@ function time_elem_inner(){
 }
 
 const progress_items = [
-	new ProgressItem('Breast Development', 0.5, 6, 24, 72), // DIYHRT TFS TFS DIYHRT
-	new ProgressItem('Reduced body hair', 1, 12, 6, 36), // DIYHRT TFS DIYHRT TFS
-	new ProgressItem('Reduced facial hair', 0, 0, 6 * 35/30.5, 10 * 35/30.5), // I am lasering!
-	new ProgressItem('Improved skin', 0, 2, 3, 24), // TFS DIYHRT TFS DIYHRT
-	new ProgressItem('Body Fat Redistribution', 1, 6, 24, 60), // DIYHRT TFS TFS TFS
+	new ProgressItem('Breast Development', 0.5, 6, 24, 72, 'upper estimate'), // DIYHRT TFS TFS DIYHRT
+	new ProgressItem('Reduced body hair', 1, 12, 6, 36, 'lower estimate'), // DIYHRT TFS DIYHRT TFS
+	new ProgressItem('Reduced facial hair', 0, 0, 6 * 35/30.5, 10 * 35/30.5, 'lower estimate'), // I am lasering!
+	new ProgressItem('Improved skin', 0, 2, 3, 24, 'upper estimate'), // TFS DIYHRT TFS DIYHRT
+	new ProgressItem('Body Fat Redistribution', 1, 6, 24, 60, 'yet unsure'), // DIYHRT TFS TFS TFS
 ];
 
 function progress(){
@@ -132,7 +136,7 @@ function progress(){
 	const elem = document.createElement('div');
 	const table = document.createElement('table');
 	const tr = document.createElement('tr');
-	['Effect', 'Min. Progress', 'Max. Progress', 'Visualization'].forEach(header => {
+	['Effect', 'Min. Progress', 'Max. Progress', 'Visualization', 'Apparent Progress'].forEach(header => {
 		const th = document.createElement('th');
 		th.innerHTML = header;
 		tr.appendChild(th);
