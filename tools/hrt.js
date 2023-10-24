@@ -116,7 +116,8 @@ function time_elem_inner(){
 	const doses = Math.floor(get_dose_t()/(12*60*60*1000)) + 1; // dose count starts at 1 for t=0
 	const laser = Math.floor(get_laser_t()/(35*24*60*60*1000)) + 1; // laser count starts at 1 for t=0
 	// elem
-	return `${unit(yr, 'year')}, ${unit(m, 'month')}, ${unit(d, 'day')},
+	const str = 0 < yr ? `${unit(yr, 'year')}, ` : '';
+	return str + `${unit(m, 'month')}, ${unit(d, 'day')},
 		${unit(h, 'hour')}, ${unit(min, 'minute')}, ${unit(s, 'second')}<br>
 		${unit(doses, 'dose')} of E<br>
 		${unit(laser, 'laser session')}`;
