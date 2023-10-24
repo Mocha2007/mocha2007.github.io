@@ -1,5 +1,88 @@
 /* eslint-disable max-len */
 
+class Source {
+	constructor(url, title = '(no title)', author = '(no author)',
+		publisher = '(no publisher)', year = '(undated)'){
+		this.url = url;
+		this.title = title;
+		this.author = author;
+		this.publisher = publisher;
+		this.year = year;
+	}
+	get elem(){
+		const container = document.createElement('span');
+		container.classList.add('source');
+		container.innerHTML = `${this.author} (${this.year}). "${this.title}". <cite>${this.publisher}</cite>. `;
+		const link = document.createElement('a');
+		link.href = this.url;
+		link.innerHTML = '[*]';
+		container.appendChild(link);
+		return container;
+	}
+	get li(){
+		const elem = document.createElement('li');
+		elem.appendChild(this.elem);
+		return elem;
+	}
+}
+const sources = [
+	new Source('https://transfemscience.org/articles/transfem-intro/#timeline-of-effects',
+		'An Introduction to Hormone Therapy for Transfeminine People',
+		'Aly',
+		'Transfeminine Science',
+		'2018'),
+	new Source('https://diyhrt.wiki/transfem#what_does_it_do',
+		'Transfeminine DIY HRT: the Ultimate Guide',
+		undefined,
+		'The DIY HRT Directory',
+		'2023'),
+];
+
+class ProgressItem {
+	/** all times are measured in MONTHS. */
+	constructor(name, min_onset, max_onset, min_completion, max_completion){
+		this.name = name;
+		this.min_onset = min_onset;
+		this.max_onset = max_onset;
+		this.min_completion = min_completion;
+		this.max_completion = max_completion;
+	}
+	/** @param {number} t (in months) */
+	range(t){
+		const min = t < this.max_onset ? 0
+			: this.max_completion < t ? 1
+				: (t - this.max_onset) / (this.max_completion - this.max_onset);
+		const max = t < this.min_onset ? 0
+			: this.min_completion < t ? 1
+				: (t - this.min_onset) / (this.min_completion - this.min_onset);
+		return [min, max];
+	}
+	/** @param {number} t (in months) */
+	tr(t){
+		const tr = document.createElement('tr');
+		const td_name = document.createElement('td');
+		td_name.innerHTML = this.name;
+		tr.appendChild(td_name);
+		// min/max
+		const [min, max] = this.range(t);
+		const avg = (min + max)/2;
+		const td_min = document.createElement('td');
+		td_min.innerHTML = Math.round(min*100) + '%';
+		tr.appendChild(td_min);
+		const td_max = document.createElement('td');
+		td_max.innerHTML = Math.round(max*100) + '%';
+		tr.appendChild(td_max);
+		const td_progress = document.createElement('td');
+		const progress = document.createElement('progress');
+		progress.value = avg;
+		progress.max = 1;
+		progress.innerHTML = `${Math.round(avg*100)}%`; // I think this only shows up for eg. screen readers
+		td_progress.appendChild(progress);
+		tr.appendChild(td_progress);
+		return tr;
+	}
+}
+
 function get_t(){
 	return new Date() - 1692227700000; // 7:15 is when I normally take my doses; first dose was actually 1692216960000 (2023 Aug 16 @ 4:16 PM EDT)
 }
@@ -19,47 +102,43 @@ function time_elem_inner(){
 	return `${yr} years, ${m} months, ${d} days, ${h} hours, ${min} minutes, ${s} seconds (${doses} doses)`;
 }
 
+const progress_items = [
+	new ProgressItem('Breast Development', 0.5, 6, 24, 72), // DIYHRT TFS TFS DIYHRT
+	new ProgressItem('Reduced body hair', 1, 12, 6, 36), // DIYHRT TFS DIYHRT TFS
+	new ProgressItem('Reduced facial hair', 0, 0, 6 * 35/30.5, 10 * 35/30.5), // I am lasering!
+	new ProgressItem('Improved skin', 0, 2, 3, 24), // TFS DIYHRT TFS DIYHRT
+	new ProgressItem('Body Fat Redistribution', 1, 6, 24, 60), // DIYHRT TFS TFS TFS
+];
+
 function progress(){
-	const t_ = get_t();
-	// https://transfemscience.org/articles/transfem-intro/#timeline-of-effects
-	// "2 to 3 years"
-	const TIDDIES_MIN = Math.round(100 * t_/(1000*60*60*24*365.2425*3));
-	const TIDDIES_MAX = Math.round(100 * t_/(1000*60*60*24*365.2425*2));
-	// My lasering started after 30 days HRT. 6-10 Sessions every 5 weeks. Thus 30-50 weeks.
-	const LASER = Math.floor(t_/(1000*60*60*24*7*5) - 30/35 + 1); // 5-week periods, 1-indexed
-	const LASER_MIN = Math.round(100 * LASER/10);
-	const LASER_MAX = Math.round(100 * LASER/6);
-	// Skin - "3 to 6 months"
-	const SKIN_MIN = Math.round(100 * t_/(1000*60*60*24*365.2425/2));
-	const SKIN_MAX = Math.round(100 * t_/(1000*60*60*24*365.2425/4));
-	// Body Fat Redist. - "2 to 5 years"
-	const BF_MIN = Math.round(100 * t_/(1000*60*60*24*365.2425*5));
+	const months = get_t() / (1000*60*60*24*365.2425/12);
 	// elem
 	const elem = document.createElement('div');
-	elem.innerHTML = `Theoretically...<br>
-		Breast Development = ${TIDDIES_MIN}% to ${TIDDIES_MAX}%<br>
-		Body Fat Redistribution = ${BF_MIN}% to ${TIDDIES_MAX}%<br>
-		Body Hair Loss = ${TIDDIES_MIN}%<br>
-		Facial Hair Loss = ${LASER_MIN}% to ${LASER_MAX}%<br>
-		Improved Skin = ${SKIN_MIN}% to ${SKIN_MAX}%<br><br>`;
-	// source
-	const source_container = document.createElement('span');
-	source_container.innerHTML = 'Source: ';
-	const source = document.createElement('cite');
-	source.innerHTML = 'Transfeminine Science - ';
-	const source_a = document.createElement('a');
-	source_a.href = 'https://transfemscience.org/articles/transfem-intro/#timeline-of-effects';
-	source_a.innerHTML = 'An Introduction to Hormone Therapy for Transfeminine People';
-	source.appendChild(source_a);
-	source_container.appendChild(source);
-	elem.appendChild(source_container);
+	const table = document.createElement('table');
+	const tr = document.createElement('tr');
+	['Effect', 'Min. Progress', 'Max. Progress', 'Visualization'].forEach(header => {
+		const th = document.createElement('th');
+		th.innerHTML = header;
+		tr.appendChild(th);
+	});
+	table.appendChild(tr);
+	progress_items.forEach(x => table.appendChild(x.tr(months)));
+	elem.appendChild(table);
+	// sources
+	elem.appendChild(document.createElement('hr'));
+	const source_header = document.createElement('h2');
+	source_header.innerHTML = 'Sources:';
+	elem.appendChild(source_header);
+	const source_list = document.createElement('ul');
+	sources.forEach(source => source_list.appendChild(source.li));
+	elem.appendChild(source_list);
 	return elem;
 }
 
 function hrt(){
 	// html
 	const container = document.createElement('div');
-	const time = document.createElement('span');
+	const time = document.createElement('h2');
 	time.id = 'time';
 	container.appendChild(time);
 	container.appendChild(document.createElement('hr'));
@@ -79,5 +158,3 @@ function refresh(){
 }
 
 main();
-
-// todo https://www.w3schools.com/tags/tag_progress.asp
