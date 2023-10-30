@@ -125,6 +125,7 @@ var subtitles =	[
 	'Egg? Who, me?',
 	'Self-initiated <a href="namei/eremoran.html#lemma-dinabubzik">Dinabubzik</a>-haver',
 	'(Literally) a self-made woman',
+	'<a href="https://youtu.be/sYf64O-tsy4"><cite>Polka is Magic</cite></a> &rarr; (several intermediate steps) &rarr; Eremoran', // The Spore community was a secondary reason, but Isoraq's MLP chess is what really did it.
 ];
 subtitles.push(`${subtitles.length+1} unique subtitles - collect them all!`);
 
