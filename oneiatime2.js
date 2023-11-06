@@ -256,8 +256,6 @@ function holidayCSS(){
 				img.style.filter = 'hue-rotate(180deg)';
 				src = 'Mo'; // to prevent the pinkening but preserve the image
 			}
-			else if (day === 14)
-				title = '<3';
 			else if (13 <= day && day <= 20) // Trans Awareness Week and TDoR
 				img.classList.add('trans');
 			break;
