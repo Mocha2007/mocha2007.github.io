@@ -132,6 +132,12 @@ const progress_items = [
 	new ProgressItem('Body fat redistribution', 1, 6, 24, 60, 'yet unsure'), // DIYHRT TFS TFS TFS
 ];
 
+const notes = [
+	'16 Aug 2023 - 7 Nov 2023: twice daily 1 mg E subL, 50 mg spiro oral',
+	'7 Nov 2023 onward: twice daily 2 mg E subL, 50 mg spiro oral',
+	'Lasering started 15 Sep 2023',
+];
+
 function progress(){
 	const months = get_t() / (1000*60*60*24*365.2425/12);
 	// elem
@@ -146,6 +152,18 @@ function progress(){
 	table.appendChild(tr);
 	progress_items.forEach(x => table.appendChild(x.tr(months)));
 	elem.appendChild(table);
+	// notes
+	elem.appendChild(document.createElement('hr'));
+	const note_header = document.createElement('h2');
+	note_header.innerHTML = 'Notes:';
+	elem.appendChild(note_header);
+	const note_list = document.createElement('ul');
+	notes.forEach(note => {
+		const li = document.createElement('li');
+		li.innerHTML = note;
+		note_list.appendChild(li);
+	});
+	elem.appendChild(note_list);
 	// sources
 	elem.appendChild(document.createElement('hr'));
 	const source_header = document.createElement('h2');
