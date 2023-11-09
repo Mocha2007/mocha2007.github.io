@@ -124,11 +124,12 @@ function time_elem_inner(){
 }
 
 const progress_items = [
-	new ProgressItem('Breast Development', 0.5, 6, 24, 72, 'upper estimate'), // DIYHRT TFS TFS DIYHRT
-	new ProgressItem('Reduced body hair', 1, 12, 6, 36, 'lower estimate'), // DIYHRT TFS DIYHRT TFS
-	new ProgressItem('Reduced facial hair', 0, 0, 6 * 35/30.5, 10 * 35/30.5, 'lower estimate'), // I am lasering!
 	new ProgressItem('Improved skin', 0, 2, 3, 24, 'upper estimate'), // TFS DIYHRT TFS DIYHRT
-	new ProgressItem('Body Fat Redistribution', 1, 6, 24, 60, 'yet unsure'), // DIYHRT TFS TFS TFS
+	new ProgressItem('Reduced facial hair', 0, 0, 6 * 35/30.5, 10 * 35/30.5, 'lower estimate'), // I am lasering!
+	new ProgressItem('Reduced body hair', 1, 12, 6, 36, 'lower estimate'), // DIYHRT TFS DIYHRT TFS
+	new ProgressItem('Decreased muscle mass', 1, 6, 12, 24, 'yet unsure'), // DIYHRT TFS TFS TFS
+	new ProgressItem('Breast development', 0.5, 6, 24, 72, 'upper estimate'), // DIYHRT TFS TFS DIYHRT
+	new ProgressItem('Body fat redistribution', 1, 6, 24, 60, 'yet unsure'), // DIYHRT TFS TFS TFS
 ];
 
 function progress(){
