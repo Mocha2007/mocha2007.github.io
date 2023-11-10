@@ -1,26 +1,77 @@
-<!doctype html>
-<html lang="en-US">
-<meta charset="utf-8">
-<meta name="description" content="Twine save editor">
-<link rel="shortcut icon" href="../img/favicon.ico">
-<script src="https://cdn.rawgit.com/pieroxy/lz-string/master/libs/lz-string.min.js"></script>
-<link href="tool.css" type="text/css" rel="stylesheet">
-<title>Twine Save Editor</title>
-<textarea id="compressed"></textarea>
-<textarea id="decompressed"></textarea>
-<br>
-<span class="button" onclick="decompress();">decompress &rarr;</span>
-<span class="button" onclick="compress();">&larr; compress</span>
-<br>
-<p>edit with a json editor like <a href="https://jsoneditoronline.org/">jsoneditoronline.org</a> or manually</p>
-<script>
-var compressBox = document.getElementById('compressed');
-var decompressBox = document.getElementById('decompressed');
-function compress(){
-	compressBox.value = LZString.compressToBase64(decompressBox.value);
-}
-function decompress(){
-	decompressBox.value = LZString.decompressFromBase64(compressBox.value);
-}
-</script>
+<!DOCTYPE html>
+<html lang="en-US" class="oqswjtrle idc0_349">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="description" content="Twine save editor" />
+    <link
+      rel="shortcut icon"
+      href="https://mocha2007.github.io/img/favicon.ico"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.5.0/lz-string.min.js"></script>
+    <link
+      href="tool.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      data-name="vs/editor/editor.main"
+      href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.20.0/min/vs/editor/editor.main.min.css"
+    />
+    <title>Twine Save Editor</title>
+  </head>
+  <body style="height: 95vh; display: flex; flex-flow: column">
+    <div>
+      <span id="btn-decompress" class="button">decompress</span>
+      <span id="btn-compress" class="button">compress</span>
+    </div>
+    <p>
+      Paste the save into the field (you can open it with notepad or any other
+      text editor) and press decompress. Compress when you're done and paste
+      back into your save file. Don't forget to make backups.
+    </p>
+
+    <div id="div-editor" style="flex: 1 1 auto" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.26.1/min/vs/loader.min.js"></script>
+    <script>
+      // require is provided by loader.min.js.
+      require.config({
+        paths: {
+          vs: "https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.26.1/min/vs",
+        },
+      });
+      require(["vs/editor/editor.main"], () => {
+        const editor = monaco.editor.create(
+          document.getElementById("div-editor"),
+          {
+            language: "json",
+            theme: "vs-dark",
+            wordWrap: "on",
+            autoIndent: true,
+            formatOnType: true,
+          }
+        );
+        function compress() {
+          editor.setValue(
+            LZString.compressToBase64(
+              JSON.stringify(JSON.parse(editor.getValue()))
+            )
+          );
+        }
+        function decompress() {
+          editor.setValue(LZString.decompressFromBase64(editor.getValue()));
+          editor.getAction("editor.action.formatDocument").run();
+          editor.getAction("actions.find").run();
+          //   editor.trigger("actions.find");
+        }
+        document
+          .getElementById("btn-compress")
+          .addEventListener("click", compress);
+        document
+          .getElementById("btn-decompress")
+          .addEventListener("click", decompress);
+      });
+    </script>
+  </body>
 </html>
