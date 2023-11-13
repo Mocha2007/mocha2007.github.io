@@ -459,15 +459,19 @@ function solarDay(){
 function elderscrolls(){
 	var d = new Date();
 	// 2011 = 4E 201... therefore 1810 is the offset
-	var year = ' 4E ' + (d.getFullYear() - 1810);
+	var year = d.getFullYear() - 1810;
 	var month = [
 		'Morning Star', 'Sun\'s Dawn', 'First Seed',
 		'Rain\'s Hand', 'Second Seed', 'Midyear',
 		'Sun\'s Height', 'Last Seed', 'Hearthfire',
 		'Frostfall', 'Sun\'s Dusk', 'Evening Star'
 	][d.getMonth()];
+	var sign = [
+		'Ritual', 'Lover', 'Lord', 'Mage', 'Shadow', 'Steed',
+		'Apprentice', 'Warrior', 'Lady', 'Tower', 'Atronach', 'Thief'
+	][d.getMonth()];
 	var weekday = ['Sundas', 'Morndas', 'Tirdas', 'Middas', 'Turdas', 'Fredas', 'Loredas'][d.getDay()];
-	return weekday + ', ' + d.getDate() + ' ' + month + year;
+	return weekday + ', ' + d.getDate() + ' <abbr title="Sign: The ' + sign + '">' + month + '</abbr> 4E ' + year;
 }
 
 function bonus(){
