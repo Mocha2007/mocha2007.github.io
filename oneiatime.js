@@ -190,7 +190,7 @@ function darian(){
 function dorf(){
 	var dorfMonths = [
 		'Granite', 'Slate', 'Felsite', 'Hematite', 'Malachite', 'Galena',
-		'Limestone', 'Sandstone', 'Timber', 'Moonstone', 'Opal', 'Obsidian',
+		'Limestone', 'Sandstone', 'Timber', 'Moonstone', 'Opal', 'Obsidian'
 	];
 	var dorfSeasons = ['Spring', 'Summer', 'Autumn', 'Winter'];
 	var dorfCaravans = ['Elven', 'Human', 'Dwarven', 'No'];
@@ -225,7 +225,7 @@ function japan(){
 	var eras = [ // older ones included in case some weirdo sets their system time to 1970
 		[2019, '令和', 'Reiwa', 'Naruhito', 'れいわ'],
 		[1989, '平成', 'Heisei', 'Akihito', 'へいせい'],
-		[1926, '昭和', 'Shōwa', 'Hirohito', 'しょうわ'],
+		[1926, '昭和', 'Shōwa', 'Hirohito', 'しょうわ']
 	];
 	var y = new Date().getFullYear();
 	var i; // need this outside the for scope
@@ -250,7 +250,7 @@ function romanDOTW(){
 		'mercuriī',
 		'iovis',
 		'veneris',
-		'saturnī',
+		'saturnī'
 	];
 	var daysABBR = [
 		'Sol.', // Sunday
@@ -259,7 +259,7 @@ function romanDOTW(){
 		'Mer.',
 		'Iov.',
 		'Ven.',
-		'Sat.',
+		'Sat.'
 	];
 	var dotw = new Date().getDay(); // 0=sun
 	return '<abbr title="diēs ' + days[dotw] + '">' + daysABBR[dotw] + '</abbr>';
@@ -278,7 +278,7 @@ function roman(){
 		'septembribus',
 		'octōbribus',
 		'novembribus',
-		'decembribus',
+		'decembribus'
 	];
 	var monthsAcc = [ // f pl acc; used before the day
 		'iānuāriās',
@@ -292,7 +292,7 @@ function roman(){
 		'septembrēs',
 		'octōbrēs',
 		'novembrēs',
-		'decembrēs',
+		'decembrēs'
 	];
 	var monthAbbreviations = ['Ian', 'Feb', 'Mar', 'Apr', 'Mai', 'Iun',
 		'Iul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -313,7 +313,7 @@ function roman(){
 		'sextum decimum',
 		'septimum decimum',
 		'duodēvīcēsimum',
-		'ūndēvīcēsimum',
+		'ūndēvīcēsimum'
 	];
 	var numeralAbbreviations = ['III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII',
 		'XIII', 'XIV', 'XV', 'XVI', 'XVII', 'XVIII', 'XIX'];
@@ -360,13 +360,13 @@ function hebrew(){
 	// maybe stick to https://www.hebcal.com/home/40/displaying-todays-hebrew-date-on-your-website
 	var monthNames = [
 		'Tishrei', 'Cheshvan', 'Kislev', 'Tevet', 'Shevat', 'Adar',
-		'Nisan', 'Iyar', 'Sivan', 'Tammuz', 'Av', 'Elul',
+		'Nisan', 'Iyar', 'Sivan', 'Tammuz', 'Av', 'Elul'
 	];
 	var monthLengths = [30, 29, 30, 29, 30, 29, 30, 29, 30, 29, 30, 29];
 	var leapMonthNames = [
 		'Tishrei', 'Cheshvan', 'Kislev', 'Tevet', 'Shevat', 'Adar I',
 		'Adar II',
-		'Nisan', 'Iyar', 'Sivan', 'Tammuz', 'Av', 'Elul',
+		'Nisan', 'Iyar', 'Sivan', 'Tammuz', 'Av', 'Elul'
 	];
 	var leapMonthLengths = [30, 29, 30, 29, 30, 30, 29, 30, 29, 30, 29, 30, 29];
 	// year advances on tishrei
