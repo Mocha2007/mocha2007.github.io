@@ -392,11 +392,72 @@ function hebrew(){
 	var afterSunset = 16 <= new Date().getHours(); // approximation
 	var day = Math.floor(remainder / (1000*60*60*24))
 		+ afterSunset;
-	return `${day} ${monthName} ${year}`;
+	return day + ' ' + monthName + ' ' + year;
+}
+
+function solarDay(){
+	var dayms = 24*60*60*1000;
+	var current_day = (new Date() - new Date(new Date().getFullYear(), 0))/dayms;
+	// based on 2024 times for current location
+	// all times UTC+0
+	// https://www.timeanddate.com/sun
+	var dawn_min_time = 4 + 5 + 59/60; // 5:59 AM UTC-4
+	// var dawn_min_date = new Date(2024, 5, 12); // 12 Jun
+	var dawn_max_time = 5 + 7 + 27/60; // 7:27 AM UTC-5
+	var dawn_max_date = new Date(2024, 0, 7); // 7 Jan
+	var dusk_min_time = 5 + 17 + 1/60; // 5:01 PM UTC-5
+	// var dusk_min_date = new Date(2024, 11, 4); // 4 Dec
+	var dusk_max_time = 4 + 20 + 36/60; // 8:36 PM UTC-4
+	var dusk_max_date = new Date(2024, 5, 28); // 28 Jun
+	var dawn_date_offset = (dawn_max_date - new Date(2024, 0, 1))/dayms; // in days
+	var dawn_amp = (dawn_max_time - dawn_min_time)/2; // in hours
+	var dawn_avg = (dawn_max_time + dawn_min_time)/2; // in hours
+	var dusk_date_offset = (dusk_max_date - new Date(2024, 0, 1))/dayms; // in days
+	var dusk_amp = (dusk_max_time - dusk_min_time)/2; // in hours
+	var dusk_avg = (dusk_max_time + dusk_min_time)/2; // in hours
+	var dawnTime = dawn_amp * Math.cos(2*Math.PI/365 * (current_day - dawn_date_offset)) + dawn_avg;
+	var duskTime = dusk_amp * Math.cos(2*Math.PI/365 * (current_day - dusk_date_offset)) + dusk_avg;
+	var nowObj = new Date(new Date().getTime() + new Date().getTimezoneOffset() * 60000);
+	var nowTime = nowObj.getHours() + (nowObj.getMinutes() + nowObj.getSeconds()/60)/60;
+	var length_day = duskTime - dawnTime;
+	var length_night = 24 - length_day;
+	var aesthetic_offset, am, offset, r;
+	if (nowTime < dawnTime){ // before dawn
+		offset = nowTime - duskTime + 24; // in hours
+		// f = offset/length_night;
+		r = length_night/12;
+		am = true;
+		aesthetic_offset = -6;
+	}
+	else if (nowTime < duskTime){ // before dusk
+		offset = nowTime - dawnTime;
+		var f = offset/length_day;
+		r = length_day/12;
+		am = f < 0.5;
+		aesthetic_offset = am ? 6 : -6;
+	}
+	else { // after dusk
+		offset = nowTime - duskTime;
+		// f = offset/length_night;
+		r = length_night/12;
+		am = false;
+		aesthetic_offset = 6;
+	}
+	var t = offset*60*60 / r; // fake seconds past dawn/dusk
+	var hour = Math.floor(t/(60*60));
+	t -= hour*60*60;
+	var minute = Math.floor(t/60);
+	minute = minute < 10 ? '0' + minute : minute;
+	t -= minute*60;
+	var second = Math.floor(t);
+	second = second < 10 ? '0' + second : second;
+	hour += aesthetic_offset;
+	hour = hour ? hour : 12; // 0 -> 12
+	return hour + ':' + minute + ':' + second + (am ? ' A' : ' P') + 'M <abbr title="@Mocha">solar time</abbr>';
 }
 
 function bonus(){
-	document.getElementById('clockbonus').innerHTML = [zodiac(), china(),
+	document.getElementById('clockbonus').innerHTML = [solarDay(), zodiac(), china(),
 		egypt(), hebrew(), japan(), romanFULL(), maya(), 'JD '+jd().toFixed(3),
 		darian(), dorf()].join('<br>');
 }
