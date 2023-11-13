@@ -474,8 +474,36 @@ function elderscrolls(){
 	return weekday + ', ' + d.getDate() + ' <abbr title="Sign: The ' + sign + '">' + month + '</abbr> 4E ' + year;
 }
 
+function kol(){
+	var epoch = new Date(2002, 9, 28); // Jarlsuary 1, year 0 = 10/28/02
+	var time = Math.floor((new Date() - epoch)/(24*60*60*1000)); // days
+	var year = Math.floor(time/(12*8));
+	time -= 12*8*year;
+	var month = Math.floor(time/8);
+	time -= 8*month;
+	time++;
+	var s = 'Jarlsuary Frankuary Starch April Martinus Bill Bor Petember Carlvember Porktober Boozember Dougtember'.split(' ')[month]
+		+ ' ' + time + ', Year ' + year;
+	// Buff Days
+	if (time === [1, 8][month % 2]) // Moxie
+		s += ' <abbr title="Moxie">Mo</abbr>';
+	else if (month % 2 === 1 && time < 3) // Muscle
+		s += ' <abbr title="Muscle">Mu</abbr>';
+	else if (time === 5) // Mysticality
+		s += ' <abbr title="Mysticality">My</abbr>';
+	// holidays
+	if (time === [1, 4, 3, 2, 2, 3, 4, 4, 6, 8, 7, 4][month])
+		s += ' <abbr title="Holiday">H</abbr>';
+	// Ronald and Grimace phases
+	var phases = ['Full', 'Waning Gibbous', 'Third Quarter', 'Waning Crescent',
+		'New', 'Waxing Crescent', 'First Quarter', 'Waxing Gibbous'];
+	s += ' <abbr title="Ronald Phase: ' + phases[(time+3)%8] + '">R</abbr>';
+	s += ' <abbr title="Grimace Phase: ' + phases[(Math.floor(month%2 * 4 + time/2)+4)%8] + '">G</abbr>';
+	return s;
+}
+
 function bonus(){
 	document.getElementById('clockbonus').innerHTML = [solarDay(), zodiac(), china(),
 		egypt(), hebrew(), japan(), romanFULL(), maya(), 'JD '+jd().toFixed(3),
-		darian(), dorf(), elderscrolls()].join('<br>');
+		darian(), dorf(), elderscrolls(), kol()].join('<br>');
 }
