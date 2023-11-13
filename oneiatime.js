@@ -456,8 +456,22 @@ function solarDay(){
 	return hour + ':' + minute + ':' + second + (am ? ' A' : ' P') + 'M <abbr title="@Mocha">solar time</abbr>';
 }
 
+function elderscrolls(){
+	var d = new Date();
+	// 2011 = 4E 201... therefore 1810 is the offset
+	var year = ' 4E ' + (d.getFullYear() - 1810);
+	var month = [
+		'Morning Star', 'Sun\'s Dawn', 'First Seed',
+		'Rain\'s Hand', 'Second Seed', 'Midyear',
+		'Sun\'s Height', 'Last Seed', 'Hearthfire',
+		'Frostfall', 'Sun\'s Dusk', 'Evening Star'
+	][d.getMonth()];
+	var weekday = ['Sundas', 'Morndas', 'Tirdas', 'Middas', 'Turdas', 'Fredas', 'Loredas'][d.getDay()];
+	return weekday + ', ' + d.getDate() + ' ' + month + year;
+}
+
 function bonus(){
 	document.getElementById('clockbonus').innerHTML = [solarDay(), zodiac(), china(),
 		egypt(), hebrew(), japan(), romanFULL(), maya(), 'JD '+jd().toFixed(3),
-		darian(), dorf()].join('<br>');
+		darian(), dorf(), elderscrolls()].join('<br>');
 }
