@@ -358,27 +358,27 @@ function roman(){
 /** Probably broken, but... */
 function hebrew(){
 	// maybe stick to https://www.hebcal.com/home/40/displaying-todays-hebrew-date-on-your-website
-	const monthNames = [
+	var monthNames = [
 		'Tishrei', 'Cheshvan', 'Kislev', 'Tevet', 'Shevat', 'Adar',
 		'Nisan', 'Iyar', 'Sivan', 'Tammuz', 'Av', 'Elul',
 	];
-	const monthLengths = [30, 29, 30, 29, 30, 29, 30, 29, 30, 29, 30, 29];
-	const leapMonthNames = [
+	var monthLengths = [30, 29, 30, 29, 30, 29, 30, 29, 30, 29, 30, 29];
+	var leapMonthNames = [
 		'Tishrei', 'Cheshvan', 'Kislev', 'Tevet', 'Shevat', 'Adar I',
 		'Adar II',
 		'Nisan', 'Iyar', 'Sivan', 'Tammuz', 'Av', 'Elul',
 	];
-	const leapMonthLengths = [30, 29, 30, 29, 30, 30, 29, 30, 29, 30, 29, 30, 29];
+	var leapMonthLengths = [30, 29, 30, 29, 30, 30, 29, 30, 29, 30, 29, 30, 29];
 	// year advances on tishrei
 	// Nisan begins 2 wk before the vernal equinox???
-	const epoch = +new Date(2021, 8, 7); // 7 Sep 2021 = 1 Tishrei 5782
-	let remainder = new Date() - epoch;
-	const year = 5782 + Math.floor(remainder / 31556952000);
-	const metonic = year % 19;
-	const isLeap = [3, 6, 8, 11, 14, 17, 19].includes(metonic);
+	var epoch = +new Date(2021, 8, 7); // 7 Sep 2021 = 1 Tishrei 5782
+	var remainder = new Date() - epoch;
+	var year = 5782 + Math.floor(remainder / 31556952000);
+	var metonic = year % 19;
+	var isLeap = [3, 6, 8, 11, 14, 17, 19].includes(metonic);
 	remainder %= 31556952000; // ms since year start
-	let month = 0;
-	let monthName;
+	var month = 0;
+	var monthName;
 	if (isLeap){
 		while (0 < remainder - 1000*60*60*24*leapMonthLengths[month])
 			remainder -= 1000*60*60*24*leapMonthLengths[month++];
@@ -389,8 +389,8 @@ function hebrew(){
 			remainder -= 1000*60*60*24*monthLengths[month++];
 		monthName = monthNames[month];
 	}
-	const afterSunset = 16 <= new Date().getHours(); // approximation
-	const day = Math.floor(remainder / (1000*60*60*24))
+	var afterSunset = 16 <= new Date().getHours(); // approximation
+	var day = Math.floor(remainder / (1000*60*60*24))
 		+ afterSunset;
 	return `${day} ${monthName} ${year}`;
 }
