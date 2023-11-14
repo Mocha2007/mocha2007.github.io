@@ -543,7 +543,7 @@ function bonus(){
 		document.getElementById('clockbonus_tick100').innerHTML = [beat(), solarDay()].join('<br>');
 	}
 	function onTick1000(){
-		document.getElementById('clockbonus_tick1000').innerHTML = ['JD '+jd().toFixed(4)].join('<br>');
+		document.getElementById('clockbonus_tick1000').innerHTML = ['JD '+jd().toFixed(4), Math.round(new Date()/1000) + ' Unix Time'].join('<br>');
 	}
 	function onTick10000(){
 		document.getElementById('clockbonus_tick10000').innerHTML = [darian(), dorf()].join('<br>');
