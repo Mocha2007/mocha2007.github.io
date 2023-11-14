@@ -1139,4 +1139,26 @@ const blogData = [
 	but I <em>can</em> forge a new path ahead.
 	A good path. <em>My</em> good path.
 	`,
+	`
+	@title Snapshot of the Present
+	@date 1699978371479
+	@tags news 2024_election
+	Since it's been three and a half months since my previous snapshot, time to give an update for posterity.
+	Since last time:
+	<ul>
+		<li>DeSantis's polling has continued to fall, but he is still #2 at ~14%</li>
+		<li>Nikki Haley has surged somewhat in the polls, but is still at ~9%</li>
+		<li>Ramaswamy has fallen to ~5%. Aside from Trump, no other candidate is polling above 5%.
+			Additionally, Tim Scott dropped out two days ago.</li>
+		<li>Kennedy is now running as in independent, and is polling slightly better in general election polls.</li>
+		<li>Four-way general election polling: Trump 39%, Biden 37%, RFK Jr. 15%, Cornel West 4%.</li>
+	</ul>
+	@p
+	The sheer number of people voting for third-party candidates this election year hasn't happened since Perot.
+	In fact, in three-way polls, Kennedy polls significantly higher than Perot did in 1992 (I have seen values as high as 28%).
+	A third-party candidate has never received such a large fraction of the vote since the 1912 election.
+	@p
+	General election polling for my state seems to lean fairly strongly in favor of Trump (avg +5),
+	so I might end up voting for West as a protest candidate.
+	`,
 ];
