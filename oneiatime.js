@@ -503,19 +503,29 @@ function kol(){
 }
 
 function bonus(){
-	function onTick(){
-		document.getElementById('clockbonus_tick').innerHTML = [solarDay(), 'JD '+jd().toFixed(4), darian(), dorf()].join('<br>');
-		/*
-		solarDay updates ~1 hz
-		JD updates once every 8.64 s
-		Darian updates once every 88.776 s
-		1 DF tick = 50s
-		*/
+	/*
+	solarDay updates ~1 hz
+	JD updates once every 8.64 s
+	Darian updates once every 88.776 s
+	1 DF tick = 50s
+	*/
+	function onTick100(){
+		document.getElementById('clockbonus_tick100').innerHTML = [solarDay()].join('<br>');
 	}
-	onTick();
+	function onTick1000(){
+		document.getElementById('clockbonus_tick1000').innerHTML = ['JD '+jd().toFixed(4)].join('<br>');
+	}
+	function onTick10000(){
+		document.getElementById('clockbonus_tick10000').innerHTML = [darian(), dorf()].join('<br>');
+	}
+	onTick100();
+	onTick1000();
+	onTick10000();
 	// all these clocks update once a day, so no need to have these recomputed every 100 ms
 	document.getElementById('clockbonus').innerHTML = [zodiac(), china(),
 		egypt(), hebrew(), japan(), romanFULL(), maya(), elderscrolls(),
 		kol()].join('<br>');
-	setInterval(onTick, 100); // 10 hz
+	setInterval(onTick100, 100); // 10 hz
+	setInterval(onTick1000, 1000); // 1 hz
+	setInterval(onTick10000, 10000); // 0.1 hz
 }
