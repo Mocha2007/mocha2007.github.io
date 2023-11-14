@@ -528,6 +528,10 @@ function kol(){
 	return s;
 }
 
+function beat(){
+	return '@' + ((new Date() % 86400000 + 3600000)/86400).toFixed(2) + ' <a href="https://en.wikipedia.org/wiki/Swatch_Internet_Time">BMT</a>';
+}
+
 function bonus(){
 	/*
 	solarDay updates ~1 hz
@@ -536,7 +540,7 @@ function bonus(){
 	1 DF tick = 50s
 	*/
 	function onTick100(){
-		document.getElementById('clockbonus_tick100').innerHTML = [solarDay()].join('<br>');
+		document.getElementById('clockbonus_tick100').innerHTML = [beat(), solarDay()].join('<br>');
 	}
 	function onTick1000(){
 		document.getElementById('clockbonus_tick1000').innerHTML = ['JD '+jd().toFixed(4)].join('<br>');
