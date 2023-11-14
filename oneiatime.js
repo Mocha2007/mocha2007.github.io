@@ -452,27 +452,18 @@ function solarDay(){
 	var nowTime = nowObj.getHours() + (nowObj.getMinutes() + nowObj.getSeconds()/60)/60;
 	var length_day = duskTime - dawnTime;
 	var length_night = 24 - length_day;
-	var aesthetic_offset, am, offset, r;
-	if (nowTime < dawnTime){ // before dawn
-		offset = nowTime - duskTime + 24; // in hours
-		// f = offset/length_night;
-		r = length_night/12;
-		am = true;
-		aesthetic_offset = -6;
-	}
-	else if (nowTime < duskTime){ // before dusk
+	var aesthetic_offset, offset, r;
+	if (nowTime < duskTime){ // before dusk
 		offset = nowTime - dawnTime;
-		var f = offset/length_day;
 		r = length_day/12;
-		am = f < 0.5;
-		aesthetic_offset = am ? 6 : -6;
-	}
-	else { // after dusk
-		offset = nowTime - duskTime;
-		// f = offset/length_night;
-		r = length_night/12;
-		am = false;
 		aesthetic_offset = 6;
+	}
+	else { // after dusk or before dawn
+		offset = nowTime - duskTime;
+		if (nowTime < dawnTime) // before dawn
+			offset += 24;
+		r = length_night/12;
+		aesthetic_offset = 18;
 	}
 	var t = offset / r + aesthetic_offset; // fake seconds past dawn/dusk
 	var dawndusk_str = '↑ ' + solarDayHelper(dawnTime-5) + '; ↓ ' + solarDayHelper(duskTime-5);
