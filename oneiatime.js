@@ -529,7 +529,13 @@ function kol(){
 }
 
 function beat(){
-	return '@' + ((new Date() % 86400000 + 3600000)/86400).toFixed(2) + ' <a href="https://en.wikipedia.org/wiki/Swatch_Internet_Time">BMT</a>';
+	function pad(n){
+		return n.toString().padStart(2, '0');
+	}
+	var d = new Date(+new Date() + 3600000);
+	var date = 'd' + [d.getDate(), d.getMonth(), d.getFullYear() % 100].map(pad).join('.');
+	return date + ' @' + (d%86400000 / 86400).toFixed(2)
+		+ ' <a href="https://en.wikipedia.org/wiki/Swatch_Internet_Time">BMT</a>';
 }
 
 function bonus(){
