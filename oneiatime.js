@@ -407,6 +407,25 @@ function hebrew(){
 	return day + ' ' + monthName + ' ' + year;
 }
 
+/** @param {number} t hours past midnight */
+function solarDayHelper(t){
+	var ampm = t < 12 ? 'AM' : 'PM';
+	var h = Math.floor(t);
+	t -= h;
+	t *= 60; // in minutes now
+	h %= 12;
+	h = h === 0 ? 12 : h;
+	var m = Math.floor(t);
+	t -= m;
+	t *= 60; // in seconds now
+	var s = Math.floor(t);
+	if (m < 10)
+		m = '0' + m;
+	if (s < 10)
+		s = '0' + s;
+	return [h, m, s].join(':') + ' ' + ampm;
+}
+
 function solarDay(){
 	var dayms = 24*60*60*1000;
 	var current_day = (new Date() - new Date(new Date().getFullYear(), 0))/dayms;
@@ -455,20 +474,11 @@ function solarDay(){
 		am = false;
 		aesthetic_offset = 6;
 	}
-	var t = offset*60*60 / r; // fake seconds past dawn/dusk
-	var hour = Math.floor(t/(60*60));
-	t -= hour*60*60;
-	var minute = Math.floor(t/60);
-	minute = minute < 10 ? '0' + minute : minute;
-	t -= minute*60;
-	var second = Math.floor(t);
-	second = second < 10 ? '0' + second : second;
-	hour += aesthetic_offset;
-	hour = hour ? hour : 12; // 0 -> 12
-	var dawndusk_str = '↑ ' + (dawnTime-5).toFixed(2) + '; ↓ ' + (duskTime-5).toFixed(2);
+	var t = offset / r + aesthetic_offset; // fake seconds past dawn/dusk
+	var dawndusk_str = '↑ ' + solarDayHelper(dawnTime-5) + '; ↓ ' + solarDayHelper(duskTime-5);
 	var daytime_str = '(' + length_day.toFixed(2) + ' h daylight; ' + dawndusk_str + ')';
-	return hour + ':' + minute + ':' + second + (am ? ' A' : ' P')
-		+ 'M <abbr title="@Mocha">solar time</abbr> '
+	return solarDayHelper(t)
+		+ ' <abbr title="@Mocha">solar time</abbr> '
 		+ daytime_str;
 }
 
