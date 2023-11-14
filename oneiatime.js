@@ -465,7 +465,10 @@ function solarDay(){
 	second = second < 10 ? '0' + second : second;
 	hour += aesthetic_offset;
 	hour = hour ? hour : 12; // 0 -> 12
-	return hour + ':' + minute + ':' + second + (am ? ' A' : ' P') + 'M <abbr title="@Mocha">solar time</abbr>';
+	var daytime_str = '(' + length_day.toFixed(2) + ' h daylight)';
+	return hour + ':' + minute + ':' + second + (am ? ' A' : ' P')
+		+ 'M <abbr title="@Mocha">solar time</abbr> '
+		+ daytime_str;
 }
 
 function elderscrolls(){
