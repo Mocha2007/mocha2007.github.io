@@ -211,7 +211,7 @@ function dorf(){
 	var epoch = 1154995200; // 1142878500 = 1:15 PM EST 20 MAR 2006, the first vernal equinox before release
 	var remainder = new Date()/1000 - epoch; // seconds since epoch
 	// 5964 days between Aug 8 2006 and Dec 6 2022 (0.50); so presumably development will take 11928 days total?
-	var progress = 100*remainder/(60*60*24*11928);
+	var progress = Math.floor(100*remainder/(60*60*24*11928));
 	var y = Math.floor(remainder / yearLength);
 	remainder -= y*yearLength;
 	var m = Math.floor(remainder / (yearLength/12));
@@ -227,7 +227,7 @@ function dorf(){
 		+ dorfSeasonModifiers[sm] + ' ' + dorfSeasons[s]
 		+ '</abbr>), <abbr title="Age of Civilization">Year ' + y + '</abbr> - Hour ' + h
 		+ ', Tick ' + t
-		+ ' (' + progress.toFixed(2) + '%?)';
+		+ ' (0.' + progress + '.0?)';
 }
 
 /** ab urbe condita */
@@ -552,7 +552,7 @@ function bonus(){
 	onTick1000();
 	onTick10000();
 	// all these clocks update once a day, so no need to have these recomputed every 100 ms
-	document.getElementById('clockbonus').innerHTML = [zodiac(), china(),
+	document.getElementById('clockbonus').innerHTML = ['<br><hr>', zodiac(), china(),
 		egypt(), hebrew(), japan(), romanFULL(), maya(), elderscrolls(),
 		kol()].join('<br>');
 	setInterval(onTick100, 100); // 10 hz
