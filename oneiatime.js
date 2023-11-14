@@ -155,16 +155,22 @@ function dhelp(){
 
 /** @param {number} month */
 function dhelp2(month){
-	return mod(month, 6) === 5 ? 27 : 28;
+	var y = Math.floor(month/24);
+	var leap = y % 2 || y % 1000 === 0 || y % 100 !== 0 || y % 10 === 0;
+	console.debug(y, leap);
+	return mod(month, 24) === 23
+		// leap month - odd years OR every ten years except every hundred years except every thousand years
+		// https://en.wikipedia.org/wiki/Darian_calendar#Year_length_and_intercalation
+		? leap ? 28 : 27
+		// short, non-leap month
+		: mod(month, 6) === 5 ? 27 : 28;
 }
 
 /** @param {number} day */
 function dhelp3(day){
 	var m = 0;
-	while (dhelp2(m) <= day){
-		day -= dhelp2(m);
-		m += 1;
-	}
+	while (dhelp2(m) <= day)
+		day -= dhelp2(++m);
 	return [m, Math.floor(day), Math.floor(mod(day, 1)*1000)];
 }
 
@@ -174,10 +180,8 @@ function darian(){
 	var tn = n;
 	var marsy = 0;
 	var marsd = 0;
-	while (dhelp(marsy+1) <= tn){
-		tn -= dhelp(marsy+1);
-		marsy += 1;
-	}
+	while (dhelp(marsy+1) <= tn)
+		tn -= dhelp(++marsy);
 	marsd = tn;
 	var marsmonth = marsmonths[dhelp3(marsd)[0]];
 	var marsday = dhelp3(marsd)[1]+1;
