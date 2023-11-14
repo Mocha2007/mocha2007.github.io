@@ -208,8 +208,10 @@ function dorf(){
 	var dorfCaravans = ['Elven', 'Human', 'Dwarven', 'No'];
 	var dorfSeasonModifiers = ['Early', 'Mid', 'Late'];
 	var yearLength = 60*60*24*28*12;
-	var epoch = 1142878500; // 1:15 PM EST 20 MAR 2006, the first vernal equinox before release
+	var epoch = 1154995200; // 1142878500 = 1:15 PM EST 20 MAR 2006, the first vernal equinox before release
 	var remainder = new Date()/1000 - epoch; // seconds since epoch
+	// 5964 days between Aug 8 2006 and Dec 6 2022 (0.50); so presumably development will take 11928 days total?
+	var progress = 100*remainder/(60*60*24*11928);
 	var y = Math.floor(remainder / yearLength);
 	remainder -= y*yearLength;
 	var m = Math.floor(remainder / (yearLength/12));
@@ -224,7 +226,8 @@ function dorf(){
 	return d + ' ' + dorfMonths[m] + ' (<abbr title="' + dorfCaravans[s] + ' caravan">'
 		+ dorfSeasonModifiers[sm] + ' ' + dorfSeasons[s]
 		+ '</abbr>), <abbr title="Age of Civilization">Year ' + y + '</abbr> - Hour ' + h
-		+ ', Tick ' + t;
+		+ ', Tick ' + t
+		+ ' (' + progress.toFixed(2) + '%?)';
 }
 
 /** ab urbe condita */
