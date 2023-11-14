@@ -207,7 +207,7 @@ function dorf(){
 	var dorfSeasons = ['Spring', 'Summer', 'Autumn', 'Winter'];
 	var dorfCaravans = ['Elven', 'Human', 'Dwarven', 'No'];
 	var dorfSeasonModifiers = ['Early', 'Mid', 'Late'];
-	var yearLength = 60*60*24*365.2425;
+	var yearLength = 60*60*24*28*12;
 	var epoch = 1142878500; // 1:15 PM EST 20 MAR 2006, the first vernal equinox before release
 	var remainder = new Date()/1000 - epoch; // seconds since epoch
 	var y = Math.floor(remainder / yearLength);
@@ -220,7 +220,7 @@ function dorf(){
 	remainder -= d*yearLength/12/28;
 	var h = Math.floor(remainder / (yearLength/12/28/24));
 	remainder -= h*yearLength/12/28/24;
-	var t = Math.floor(remainder / 72); // ticks
+	var t = Math.floor(remainder / 72); // *2 = adventure mode ticks; /72 = fortress mode ticks
 	return d + ' ' + dorfMonths[m] + ' (<abbr title="' + dorfCaravans[s] + ' caravan">'
 		+ dorfSeasonModifiers[sm] + ' ' + dorfSeasons[s]
 		+ '</abbr>), <abbr title="Age of Civilization">Year ' + y + '</abbr> - Hour ' + h
