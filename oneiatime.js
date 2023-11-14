@@ -504,9 +504,16 @@ function kol(){
 
 function bonus(){
 	function onTick(){
-		document.getElementById('clockbonus_tick').innerHTML = [solarDay(), 'JD '+jd().toFixed(3), darian(), dorf()].join('<br>');
+		document.getElementById('clockbonus_tick').innerHTML = [solarDay(), 'JD '+jd().toFixed(4), darian(), dorf()].join('<br>');
+		/*
+		solarDay updates ~1 hz
+		JD updates once every 8.64 s
+		Darian updates once every 88.776 s
+		1 DF tick = 50s
+		*/
 	}
 	onTick();
+	// all these clocks update once a day, so no need to have these recomputed every 100 ms
 	document.getElementById('clockbonus').innerHTML = [zodiac(), china(),
 		egypt(), hebrew(), japan(), romanFULL(), maya(), elderscrolls(),
 		kol()].join('<br>');
