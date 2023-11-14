@@ -503,7 +503,12 @@ function kol(){
 }
 
 function bonus(){
-	document.getElementById('clockbonus').innerHTML = [solarDay(), zodiac(), china(),
-		egypt(), hebrew(), japan(), romanFULL(), maya(), 'JD '+jd().toFixed(3),
-		darian(), dorf(), elderscrolls(), kol()].join('<br>');
+	function onTick(){
+		document.getElementById('clockbonus_tick').innerHTML = [solarDay(), 'JD '+jd().toFixed(3), darian(), dorf()].join('<br>');
+	}
+	onTick();
+	document.getElementById('clockbonus').innerHTML = [zodiac(), china(),
+		egypt(), hebrew(), japan(), romanFULL(), maya(), elderscrolls(),
+		kol()].join('<br>');
+	setInterval(onTick, 100); // 10 hz
 }
