@@ -135,29 +135,28 @@ function jd(){
 	return new Date()/86400000+2440587.5;
 }
 
-/** @param {number} year */
-function dhelp(){
-	return 668.591;
-	/*if (year < 2001){
-		return (year-1)/2+year/10-year/100+year/1000;
-	}
-	if (year < 4801){
-		return (year-1)/2+year/10-year/150;
-	}
-	if (year < 6801){
-		return (year-1)/2+year/10-year/200;
-	}
-	if (year < 8401){
-		return (year-1)/2+year/10-year/300;
-	}
-	return (year-1)/2+year/10-year/600;*/
+/** @param {number} y */
+function dhelp(y){
+	var leap;
+	if (y < 2001)
+		leap = y % 2 || y % 1000 === 0 || y % 100 !== 0 || y % 10 === 0;
+	else if (y < 4801)
+		leap = y % 2 || y % 150 !== 0 || y % 10 === 0;
+	else if (y < 6801)
+		leap = y % 2 || y % 200 !== 0 || y % 10 === 0;
+	else if (y < 8401)
+		leap = y % 2 || y % 300 !== 0 || y % 10 === 0;
+	else if (y < 10001)
+		leap = y % 2 || y % 600 !== 0 || y % 10 === 0;
+	else
+		leap = y % 2 || y % 10 === 0;
+	return 668 + leap;
 }
 
 /** @param {number} month */
 function dhelp2(month){
 	var y = Math.floor(month/24);
-	var leap = y % 2 || y % 1000 === 0 || y % 100 !== 0 || y % 10 === 0;
-	console.debug(y, leap);
+	var leap = dhelp(y) === 669;
 	return mod(month, 24) === 23
 		// leap month - odd years OR every ten years except every hundred years except every thousand years
 		// https://en.wikipedia.org/wiki/Darian_calendar#Year_length_and_intercalation
