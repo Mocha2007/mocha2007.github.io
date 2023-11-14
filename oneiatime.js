@@ -52,6 +52,12 @@ var marsmonths = [
 	'Gemini', 'Mithuna', 'Cancer', 'Karka', 'Leo', 'Simha',
 	'Virgo', 'Kanya', 'Libra', 'Tula', 'Scorpius', 'Vrishika'
 ];
+var marsseasons = [ // appx
+	'Spring', 'Spring', 'Spring', 'Spring', 'Spring', 'Spring',
+	'Spring', 'Summer', 'Summer', 'Summer', 'Summer', 'Summer',
+	'Summer', 'Fall', 'Fall', 'Fall', 'Fall', 'Fall',
+	'Winter', 'Winter', 'Winter', 'Winter', 'Winter', 'Winter'
+];
 
 /**
  * https://stackoverflow.com/questions/4467539/javascript-modulo-gives-a-negative-result-for-negative-numbers/17323608#17323608
@@ -182,11 +188,14 @@ function darian(){
 	while (dhelp(marsy+1) <= tn)
 		tn -= dhelp(++marsy);
 	marsd = tn;
-	var marsmonth = marsmonths[dhelp3(marsd)[0]];
-	var marsday = dhelp3(marsd)[1]+1;
-	var marshour = dhelp3(marsd)[2];
+	var DH3 = dhelp3(marsd);
+	var monthID = DH3[0];
+	var marsmonth = marsmonths[monthID];
+	var marsday = DH3[1]+1;
+	var marshour = DH3[2];
 	return [marsday, marsmonth, marsy, marshour,
-		'<a href="https://en.wikipedia.org/wiki/Darian_calendar">UMST</a>'].join(' ');
+		'<a href="https://en.wikipedia.org/wiki/Darian_calendar">UMST</a> &mdash; ',
+		marsseasons[monthID]].join(' ');
 }
 
 /** DF time */
