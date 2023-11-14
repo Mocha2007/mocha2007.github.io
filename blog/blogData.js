@@ -1141,7 +1141,7 @@ const blogData = [
 	`,
 	`
 	@title Snapshot of the Present
-	@date 1699978371479
+	@date 1699979477371
 	@tags news 2024_election
 	Since it's been three and a half months since my previous snapshot, time to give an update for posterity.
 	Since last time:
@@ -1157,6 +1157,16 @@ const blogData = [
 	The sheer number of people voting for third-party candidates this election year hasn't happened since Perot.
 	In fact, in three-way polls, Kennedy polls significantly higher than Perot did in 1992 (I have seen values as high as 28%).
 	A third-party candidate has never received such a large fraction of the vote since the 1912 election.
+	@p
+	Polling seems to suggest Kennedy's presence hurts Trump more than Biden, but only slightly. Normalized to 100%:
+	<ul>
+		<li>2-way: Trump: 50.61%; Biden: 49.39%</li>
+		<li>3-way (w/ Kennedy): Trump: 41.54%; Biden: 42.83%; Kennedy 15.63%</li>
+		<li>3-way (w/ West): Trump: 47.74%; Biden: 46.05%; West 6.21%</li>
+		<li>4-way: Trump: 41.35%; Biden: 38.50%; Kennedy: 16.14%; West 4.01%</li>
+	</ul>
+	These ratios suggest Kennedy's support comes 58% from otherwise-Trump supporters and 42% from otherwise-Biden supporters.
+	Similarly, West seems to be pulling 54% from Biden and 46% from Trump.
 	@p
 	General election polling for my state seems to lean fairly strongly in favor of Trump (avg +5),
 	so I might end up voting for West as a protest candidate.
