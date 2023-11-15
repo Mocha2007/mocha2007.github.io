@@ -411,7 +411,7 @@ function hebrew(){
 }
 
 /** @param {number} t hours past midnight */
-function solarDayHelper(t){
+function solarDayHelper(t, include_seconds = true){
 	var ampm = t < 12 ? 'AM' : 'PM';
 	var h = Math.floor(t);
 	t -= h;
@@ -426,7 +426,10 @@ function solarDayHelper(t){
 		m = '0' + m;
 	if (s < 10)
 		s = '0' + s;
-	return [h, m, s].join(':') + ' ' + ampm;
+	var digits = [h, m];
+	if (include_seconds)
+		digits.push(s);
+	return digits.join(':') + ' ' + ampm;
 }
 
 function solarDay(){
@@ -480,7 +483,7 @@ function solarDay(){
 		aesthetic_offset = 18;
 	}
 	var t = offset / r + aesthetic_offset; // fake seconds past dawn/dusk
-	var dawndusk_str = '↑ ' + solarDayHelper(dawnTime-5) + '; ↓ ' + solarDayHelper(duskTime-5);
+	var dawndusk_str = '↑ ' + solarDayHelper(dawnTime-5, false) + '; ↓ ' + solarDayHelper(duskTime-5, false);
 	var daytime_str = '(' + length_day.toFixed(2) + ' h daylight; ' + dawndusk_str + ')';
 	return solarDayHelper(t)
 		+ ' <abbr title="@Mocha">solar time</abbr> '
