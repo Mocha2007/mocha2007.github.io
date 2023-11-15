@@ -104,8 +104,12 @@ function unit(x, name){
 }
 
 function time_elem_inner(){
+	const _1m = 60*1000;
+	const _1h = 60*_1m;
+	const _12h = 12*_1h;
+	const _1d = 24*_1h;
 	// I subtract 16d 16h 16min from the time, shifting the epoch to August 1st. This allows me to easily count months, whether they were 31 days, 30 days, etc.
-	const dt = new Date(new Date() - (24*60*60*1000 * 15 + 60*60*1000 * 16 + 60*1000 * 16));
+	const dt = new Date(new Date() - (_1d * 15 + _1h * 16 + _1m * 16));
 	const mo = dt.getMonth() - 7 + (dt.getFullYear() - 2023)*12;
 	const yr = Math.floor(mo / 12);
 	const m = mo % 12;
@@ -114,14 +118,14 @@ function time_elem_inner(){
 	const min = dt.getMinutes();
 	const s = dt.getSeconds();
 	const doseT = get_dose_t();
-	const doses = Math.floor(doseT/(12*60*60*1000)) + 1; // dose count starts at 1 for t=0
-	const laser = Math.floor(get_laser_t()/(35*24*60*60*1000)) + 1; // laser count starts at 1 for t=0
+	const doses = Math.floor(doseT/_12h) + 1; // dose count starts at 1 for t=0
+	const laser = Math.floor(get_laser_t()/(35*_1d)) + 1; // laser count starts at 1 for t=0
 	// next dose timer
-	let doseR = 12*60*60*1000 - doseT % (12*60*60*1000);
-	const doseH = Math.floor(doseR / (60*60*1000));
-	doseR -= 60*60*1000*doseH;
-	const doseM = Math.floor(doseR / (60*1000));
-	doseR -= 60*1000*doseM;
+	let doseR = doses*_12h - doseT;
+	const doseH = Math.floor(doseR / _1h);
+	doseR -= _1h*doseH;
+	const doseM = Math.floor(doseR / _1m);
+	doseR -= _1m*doseM;
 	const doseS = Math.ceil(doseR / 1000);
 	// elem
 	const str = 0 < yr ? `${unit(yr, 'year')}, ` : '';
