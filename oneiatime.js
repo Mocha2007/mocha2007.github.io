@@ -430,6 +430,17 @@ function solarDayHelper(t){
 }
 
 function solarDay(){
+	// problem: dawn/dusk times are computed based on the orbital position at midnight. solution: iteratively find the intersection
+	function limit(amp, date_offset, avg){
+		var t = 0, t_;
+		for (var i = 0; i < 10; i++){ // usually needs only 5 or 6 iterations
+			t_ = amp * Math.cos(2*Math.PI/365 * (current_day + t/24 - date_offset)) + avg;
+			if (t === t_)
+				break;
+			t = t_;
+		}
+		return t;
+	}
 	var dayms = 24*60*60*1000;
 	var current_day = (new Date() - new Date(new Date().getFullYear(), 0))/dayms;
 	// based on 2024 times for current location
@@ -449,8 +460,8 @@ function solarDay(){
 	var dusk_date_offset = (dusk_max_date - new Date(2024, 0, 1))/dayms; // in days
 	var dusk_amp = (dusk_max_time - dusk_min_time)/2; // in hours
 	var dusk_avg = (dusk_max_time + dusk_min_time)/2; // in hours
-	var dawnTime = dawn_amp * Math.cos(2*Math.PI/365 * (current_day - dawn_date_offset)) + dawn_avg;
-	var duskTime = dusk_amp * Math.cos(2*Math.PI/365 * (current_day - dusk_date_offset)) + dusk_avg;
+	var dawnTime = limit(dawn_amp, dawn_date_offset, dawn_avg);
+	var duskTime = limit(dusk_amp, dusk_date_offset, dusk_avg);
 	var nowObj = new Date(new Date().getTime() + new Date().getTimezoneOffset() * 60000);
 	var nowTime = nowObj.getHours() + (nowObj.getMinutes() + nowObj.getSeconds()/60)/60;
 	var length_day = duskTime - dawnTime;
