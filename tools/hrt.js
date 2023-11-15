@@ -1,4 +1,11 @@
 /* eslint-disable max-len */
+const _1s = 1000;
+const _1m = 60*_1s;
+const _1h = 60*_1m;
+const _12h = 12*_1h;
+const _1d = 24*_1h;
+const _1y = 365.2425*_1d;
+const _1mo = _1y/12;
 
 class Source {
 	constructor(url, title = '(no title)', author = '(no author)',
@@ -104,10 +111,6 @@ function unit(x, name){
 }
 
 function time_elem_inner(){
-	const _1m = 60*1000;
-	const _1h = 60*_1m;
-	const _12h = 12*_1h;
-	const _1d = 24*_1h;
 	// I subtract 16d 16h 16min from the time, shifting the epoch to August 1st. This allows me to easily count months, whether they were 31 days, 30 days, etc.
 	const dt = new Date(new Date() - (_1d * 15 + _1h * 16 + _1m * 16));
 	const mo = dt.getMonth() - 7 + (dt.getFullYear() - 2023)*12;
@@ -126,7 +129,7 @@ function time_elem_inner(){
 	doseR -= _1h*doseH;
 	const doseM = Math.floor(doseR / _1m);
 	doseR -= _1m*doseM;
-	const doseS = Math.ceil(doseR / 1000);
+	const doseS = Math.ceil(doseR / _1s);
 	// elem
 	const str = 0 < yr ? `${unit(yr, 'year')}, ` : '';
 	return str + `${unit(m, 'month')}, ${unit(d, 'day')},
@@ -151,7 +154,7 @@ const notes = [
 ];
 
 function progress(){
-	const months = get_t() / (1000*60*60*24*365.2425/12);
+	const months = get_t() / _1mo;
 	// elem
 	const elem = document.createElement('div');
 	const table = document.createElement('table');
@@ -203,7 +206,7 @@ function main(){
 	elem.appendChild(hrt());
 	refresh();
 	setInterval(refresh, 200);
-	setTimeout(() => location.reload(), 1000 * 60 * 60); // refresh every hour in case dose counter increases
+	setTimeout(() => location.reload(), _1h); // refresh every hour in case dose counter increases
 }
 
 function refresh(){
