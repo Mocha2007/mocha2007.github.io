@@ -122,7 +122,7 @@ function time_elem_inner(){
 	doseR -= 60*60*1000*doseH;
 	const doseM = Math.floor(doseR / (60*1000));
 	doseR -= 60*1000*doseM;
-	const doseS = Math.floor(doseR / 1000);
+	const doseS = Math.ceil(doseR / 1000);
 	// elem
 	const str = 0 < yr ? `${unit(yr, 'year')}, ` : '';
 	return str + `${unit(m, 'month')}, ${unit(d, 'day')},
