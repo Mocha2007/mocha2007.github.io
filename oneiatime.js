@@ -451,9 +451,9 @@ function solarDay(){
 	var dawn_max_time = 5 + 7 + 27/60; // 7:27 AM UTC-5
 	var dawn_max_date = new Date(2024, 0, 7); // 7 Jan
 	var dusk_min_time = 5 + 17 + 1/60; // 5:01 PM UTC-5
-	// var dusk_min_date = new Date(2024, 11, 4); // 4 Dec
+	// var dusk_min_date = new Date(2024, 11, 4, 12); // 4.5 Dec
 	var dusk_max_time = 4 + 20 + 36/60; // 8:36 PM UTC-4
-	var dusk_max_date = new Date(2024, 5, 28); // 28 Jun
+	var dusk_max_date = new Date(2024, 5, 27, 12); // 27.5 Jun
 	var dawn_date_offset = (dawn_max_date - new Date(2024, 0, 1))/dayms; // in days
 	var dawn_amp = (dawn_max_time - dawn_min_time)/2; // in hours
 	var dawn_avg = (dawn_max_time + dawn_min_time)/2; // in hours
