@@ -113,13 +113,21 @@ function time_elem_inner(){
 	const h = dt.getHours();
 	const min = dt.getMinutes();
 	const s = dt.getSeconds();
-	const doses = Math.floor(get_dose_t()/(12*60*60*1000)) + 1; // dose count starts at 1 for t=0
+	const doseT = get_dose_t();
+	const doses = Math.floor(doseT/(12*60*60*1000)) + 1; // dose count starts at 1 for t=0
 	const laser = Math.floor(get_laser_t()/(35*24*60*60*1000)) + 1; // laser count starts at 1 for t=0
+	// next dose timer
+	let doseR = 12*60*60*1000 - doseT % (12*60*60*1000);
+	const doseH = Math.floor(doseR / (60*60*1000));
+	doseR -= 60*60*1000*doseH;
+	const doseM = Math.floor(doseR / (60*1000));
+	doseR -= 60*1000*doseM;
+	const doseS = Math.floor(doseR / 1000);
 	// elem
 	const str = 0 < yr ? `${unit(yr, 'year')}, ` : '';
 	return str + `${unit(m, 'month')}, ${unit(d, 'day')},
 		${unit(h, 'hour')}, ${unit(min, 'minute')}, ${unit(s, 'second')}<br>
-		${unit(doses, 'dose')} of E<br>
+		${unit(doses, 'dose')} of E (${unit(doseH, 'hour')}, ${unit(doseM, 'minute')}, ${unit(doseS, 'second')} until next dose)<br>
 		${unit(laser, 'laser session')}`;
 }
 
