@@ -437,7 +437,8 @@ function solarDay(){
 	function limit(amp, date_offset, avg){
 		var t = 0, t_;
 		for (var i = 0; i < 10; i++){ // usually needs only 5 or 6 iterations
-			t_ = amp * Math.cos(2*Math.PI/365 * (current_day + t/24 - date_offset)) + avg;
+			t_ = avg + amp
+				* Math.cos(2*Math.PI/365 * (Math.floor(current_day) + t/24 - date_offset));
 			if (t === t_)
 				break;
 			t = t_;
