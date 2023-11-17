@@ -260,8 +260,14 @@ const goods = {
 	horse: new Good('Horse', 'Misc', 'ea'),
 	pony: new Good('Pony', 'Misc', 'ea'),
 	bull: new Good('Bull', 'Misc', 'ea'),
+	ox: new Good('Ox', 'Misc', 'ea'),
 	cow: new Good('Cow', 'Misc', 'ea'),
+	pig: new Good('Pig', 'Misc', 'ea'),
 	sheep: new Good('Sheep', 'Misc', 'ea'),
+	dog: new Good('Dog', 'Misc', 'ea'),
+	cat: new Good('Cat', 'Misc', 'ea'),
+	gooseLive: new Good('Goose', 'Misc', 'ea'),
+	chickenLive: new Good('Chicken', 'Misc', 'ea'),
 	// MISC
 	charcoal: new Good('Charcoal', 'Misc'),
 	coal: new Good('Coal', 'Misc'),
@@ -380,6 +386,8 @@ new GoodDatum(goods.butter, sources.med16, 3*unit.lbt/240 / unit.lb);
 new GoodDatum(goods.hops, sources.med16, (26*12 + 8)*unit.lbt/240 / unit.cwt);
 
 // med13
+new GoodDatum(goods.horse, sources.med13, (10+20)/2*unit.lbtower/240);
+new GoodDatum(goods.horse, sources.med14, (20+40)/2*unit.lbtower/240);
 new GoodDatum(goods.wine, sources.med14, 3*unit.lbtower/240 / unit.gal);
 new GoodDatum(goods.ale, sources.med15, 0.75*unit.lbtower/240 / unit.gal);
 new GoodDatum(goods.beer, sources.med16, 1*unit.lbtower/240 / unit.qt);
@@ -403,6 +411,30 @@ new GoodDatum(goods.charcoal, sources.med15, 5*unit.lbtower/240 / 38560); // 4.2
 
 // https://www.historyextra.com/period/medieval/a-time-travellers-guide-to-medieval-shopping/
 new GoodDatum(goods.ale, sources.med14, (0.75 + 1)/2*unit.lbtower/240 / unit.gal);
+
+// https://regia.org/research/misc/costs.htm
+new GoodDatum(goods.chickenLive, sources.med12, 1/15*unit.lbtower/240);
+new GoodDatum(goods.cow, sources.med12, (64.5 + 88.5)/2*unit.lbtower/240);
+new GoodDatum(goods.ox, sources.med12, (80.5 + 88.5)/2*unit.lbtower/240);
+new GoodDatum(goods.pig, sources.med12, 20*unit.lbtower/240);
+new GoodDatum(goods.sheep, sources.med12, 10*unit.lbtower/240);
+new GoodDatum(goods.horse, sources.med12, (193.5 + 308.5)/2*unit.lbtower/240);
+new GoodDatum(goods.dog, sources.med12, 4*unit.lbtower/240);
+new GoodDatum(goods.slaveM, sources.med12, 197.5*unit.lbtower/240);
+new GoodDatum(goods.slaveF, sources.med12, 131.5*unit.lbtower/240);
+new GoodDatum(goods.silk, sources.med12, 37*unit.lbtower/240 / unit.oz);
+
+// https://www.rpg.net/columns/beasts/beasts4.phtml
+new GoodDatum(goods.cat, sources.med12, (1+4)/2*unit.lbtower/240);
+new GoodDatum(goods.gooseLive, sources.med14, (2.5 + 2)/2*unit.lbtower/240);
+new GoodDatum(goods.chickenLive, sources.med14, (0.5 + 1)/2*unit.lbtower/240);
+new GoodDatum(goods.ox, sources.med14, (6*12 + 8)*unit.lbtower/240);
+
+new GoodDatum(goods.cow, sources.med13, 13*12*unit.lbtower/240);
+new GoodDatum(goods.cow, sources.med14, (9*12 + 5)*unit.lbtower/240);
+new GoodDatum(goods.sheep, sources.med14, (1*12 + 5)*unit.lbtower/240);
+new GoodDatum(goods.pig, sources.med14, 2*12*unit.lbtower/240);
+new GoodDatum(goods.horse, sources.med17, 20*unit.lbtower);
 
 // https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=79
 // 1800
