@@ -1,3 +1,4 @@
+
 const unit = {
 	/** number of L in a bushel */
 	bu: 35.2390704,
@@ -5,6 +6,36 @@ const unit = {
 	cwt: 45359.24,
 	/** number of grams in a gallon of water */
 	gal: 3770,
+	/** g/L of grains https://www.smallfarmcanada.ca/resources/standard-weights-per-bushel-for-agricultural-commodities */
+	grainDensity: {
+		get ppb(){
+			return unit.lb / unit.bu;
+		},
+		// grains alphabetical from here
+		get barley(){
+			return 48 * this.ppb;
+		},
+		get millet(){
+			return 50 * this.ppb;
+		},
+		get rice(){
+			return 45 * this.ppb;
+		},
+		get spelt(){
+			return 40 * this.ppb;
+		},
+		get wheat(){
+			return 60 * this.ppb;
+		},
+		/** unsorted */
+		get NULL(){
+			return 60 * this.ppb;
+		},
+		/** vegetable avg. */
+		get NULL_VEG(){
+			return 45 * this.ppb;
+		},
+	},
 	/** number of grams in a quart of water */
 	qt: 3770/4,
 	/** last in grams */
@@ -329,14 +360,12 @@ new GoodDatum(goods.copper, sources.usa202, 3.73/unit.lb/(23.35/unit.ozt)); // h
 new GoodDatum(goods.iron, sources.usa202, 129.25/1000000/(23.35/unit.ozt)); // iron ore price
 
 // 301 CE ROME
-/** g/L of grains https://www.smallfarmcanada.ca/resources/standard-weights-per-bushel-for-agricultural-commodities */
-const grainDensity = 27215.5 / 35.2391;
-new GoodDatum(goods.wheat, sources.rome0, 100/20/(17*grainDensity)); // 100 denarii for 17L
-new GoodDatum(goods.barley, sources.rome0, 60/20/(17*grainDensity));
-new GoodDatum(goods.millet, sources.rome0, 100/20/(17*grainDensity));
-new GoodDatum(goods.spelt, sources.rome0, 100/20/(17*grainDensity));
-new GoodDatum(goods.sesame, sources.rome0, 200/20/(17*grainDensity));
-new GoodDatum(goods.cumin, sources.rome0, 200/20/(17*grainDensity));
+new GoodDatum(goods.wheat, sources.rome0, 100/20/(17*unit.grainDensity.wheat)); // 100 denarii for 17L
+new GoodDatum(goods.barley, sources.rome0, 60/20/(17*unit.grainDensity.barley));
+new GoodDatum(goods.millet, sources.rome0, 100/20/(17*unit.grainDensity.millet));
+new GoodDatum(goods.spelt, sources.rome0, 100/20/(17*unit.grainDensity.spelt));
+new GoodDatum(goods.sesame, sources.rome0, 200/20/(17*unit.grainDensity.NULL));
+new GoodDatum(goods.cumin, sources.rome0, 200/20/(17*unit.grainDensity.NULL));
 new GoodDatum(goods.wine, sources.rome0, 8/20/500); // 8 denarii for 500mL
 new GoodDatum(goods.beer, sources.rome0, 4/20/500); // 4 denarii for 500mL
 new GoodDatum(goods.oilOlive, sources.rome0, 40/20/500);
@@ -351,7 +380,7 @@ new GoodDatum(goods.fishFreshwater, sources.rome0, 8/20/300);
 new GoodDatum(goods.fishSalted, sources.rome0, 6/20/300);
 new GoodDatum(goods.cheese, sources.rome0, 12/20/300);
 new GoodDatum(goods.fishSardines, sources.rome0, 16/20/300);
-new GoodDatum(goods.garlic, sources.rome0, 60/20/(17*grainDensity));
+new GoodDatum(goods.garlic, sources.rome0, 60/20/(17*unit.grainDensity.NULL_VEG));
 new GoodDatum(goods.figs, sources.rome0, 4/20/300);
 new GoodDatum(goods.milk, sources.rome0, 8/20/500);
 new GoodDatum(goods.firewood, sources.rome0, 30/20/98000); // 30 denarii for 98 kg
@@ -478,7 +507,8 @@ new GoodDatum(goods.sheep, sources.chinaMing, 1/2 * china.tael);
 new GoodDatum(goods.pig, sources.chinaMing, 1 * china.tael);
 
 // https://en.wikipedia.org/wiki/Economy_of_the_Han_dynasty#Subsistence
-new GoodDatum(goods.rice, sources.chinaHan, (70 + 100)/2 * china.cash / (grainDensity * china.hu)); // technically it is "any grain" - but this seems to suggest the values of different grains were not substantially different between one another
+new GoodDatum(goods.rice, sources.chinaHan, (70 + 100)/2 * china.cash
+	/ (unit.grainDensity.rice * china.hu)); // technically it is "any grain" - but this seems to suggest the values of different grains were not substantially different between one another
 
 // https://en.wikipedia.org/wiki/Economy_of_the_Song_dynasty#Cash_crops
 new GoodDatum(goods.tea, sources.chinaSong, (500+37)/2 * china.cash/china.jin);
@@ -501,7 +531,7 @@ new GoodDatum(goods.beef, sources.chinaTang, 5 * china.cash / china.catty);
 // https://www.jstor.org/stable/2123972?seq=5
 new GoodDatum(goods.gold, sources.chinaMing, 5); // went from 1:4 to 1:6 during the ming dynasty, increasing to European levels during the 17th c.
 new GoodDatum(goods.gold, sources.ind14, 8);
-new GoodDatum(goods.rice, sources.chinaMing, 50 / (100 * grainDensity)); // varied from ~35g to a bit over 100g, but was close to 50 for the first half of the dynasty
+new GoodDatum(goods.rice, sources.chinaMing, 50 / (100 * unit.grainDensity.rice)); // varied from ~35g to a bit over 100g, but was close to 50 for the first half of the dynasty
 
 // https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=79
 // 1800
@@ -672,7 +702,8 @@ new GoodDatum(goods.pork, sources.med18, 0.07/unit.lb / usd_ag);
 // https://www.foodtimeline.org/1720.pdf
 const eng_s_ag = 111.4 / 20; // g Ag / shilling https://en.wikipedia.org/wiki/Pound_sterling#History_(600%E2%80%931945)
 const PA_CORRECTION = 50; // for some reason the prices listed are WAAAAAAY off... I'm basing this factor off the price of sugar decreasing exponentially from medieval times
-new GoodDatum(goods.wheat, sources.med18, 4.51/(grainDensity * unit.bu) / eng_s_ag * PA_CORRECTION);
+new GoodDatum(goods.wheat, sources.med18, 4.51/(unit.grainDensity.wheat * unit.bu)
+	/ eng_s_ag * PA_CORRECTION);
 new GoodDatum(goods.tobacco, sources.med18, 19.98/unit.cwt / eng_s_ag * PA_CORRECTION);
 new GoodDatum(goods.rice, sources.med18, 20.63/unit.cwt / eng_s_ag * PA_CORRECTION);
 new GoodDatum(goods.flour, sources.med18, 13.10/unit.cwt / eng_s_ag * PA_CORRECTION);
