@@ -289,6 +289,7 @@ const sources = {
 	chinaHan: new Source('Han', 'China', ''), // 206 BCE - 220 CE
 	rome0: new Source(301, 'Rome', 'https://imperiumromanum.pl/en/roman-economy/roman-goods-prices/'),
 	chinaTang: new Source('Tang', 'China', ''), // 618 - 907
+	chinaSong: new Source('Song', 'China', ''), // 960 - 1279
 	med12: new Source('12th c.', 'W. Eur.', 'http://www.medievalcoinage.com/prices/medievalprices.htm'),
 	med13: new Source('13th c.', 'England', 'http://medieval.ucdavis.edu/120D/Money.html'),
 	med14: new Source('14th c.', 'England', 'http://www.afamilystory.co.uk/history/wages-and-prices.aspx'),
@@ -451,11 +452,21 @@ new GoodDatum(goods.horse, sources.med17, 20*unit.lbtower);
 
 // china
 const china = {
+	/** weight of a bolt of silk in grams, estimate */
+	boltOfSilk: 3 * unit.lb,
 	get cash(){
 		return china.tael / 1000;
 	},
+	/** g per catty */
+	catty: 500,
+	/** L per dou */
+	dou: 10.354688,
 	/** L per hu */
 	hu: 20,
+	/** g per jin */
+	jin: 590,
+	/** g per picul */
+	picul: 60000,
 	/** g Ag per tael */
 	tael: 40,
 };
@@ -467,6 +478,24 @@ new GoodDatum(goods.pig, sources.chinaMing, 1 * china.tael);
 
 // https://en.wikipedia.org/wiki/Economy_of_the_Han_dynasty#Subsistence
 new GoodDatum(goods.rice, sources.chinaHan, (70 + 100)/2 * china.cash / (grainDensity * china.hu)); // technically it is "any grain" - but this seems to suggest the values of different grains were not substantially different between one another
+
+// https://en.wikipedia.org/wiki/Economy_of_the_Song_dynasty#Cash_crops
+new GoodDatum(goods.tea, sources.chinaSong, (500+37)/2 * china.cash/china.jin);
+
+// https://cedar.wwu.edu/cgi/viewcontent.cgi?filename=14&article=1016&context=easpress&type=additional
+const tangRiceValue = (20 + 50)/2 * china.cash / china.picul;
+new GoodDatum(goods.rice, sources.chinaTang, tangRiceValue);
+const tangBoltOfSilk = 10 * china.picul * tangRiceValue;
+new GoodDatum(goods.silk, sources.chinaTang, tangBoltOfSilk / china.boltOfSilk);
+new GoodDatum(goods.cotton, sources.chinaTang, (500 + 2000)/2 * china.cash / china.boltOfSilk);
+// "40 bolts of heavy silk per horse"
+new GoodDatum(goods.horse, sources.chinaTang, 10 * tangBoltOfSilk);
+// "in Emperor Shunzong’s yongzhen 1 (805), the price of salt fell from 370 or more per dou to 250-300 cash.*"
+const saltgperL = 1200;
+new GoodDatum(goods.salt, sources.chinaTang, (250 + 370)/2 * china.cash / (saltgperL * china.dou));
+// "a catty of pure copper fetched 150 cash, and raw copper fetched 100."
+new GoodDatum(goods.copper, sources.chinaTang, (100 + 150)/2 * china.cash / china.catty);
+new GoodDatum(goods.beef, sources.chinaTang, 5 * china.cash / china.catty);
 
 // https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=79
 // 1800
