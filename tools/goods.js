@@ -58,6 +58,17 @@ const unit = {
 	t: 453.5924*2000,
 	/** tun in mL */
 	tun: 252 * 3785,
+	weights: {
+		apple: 200, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344711/portions
+		asparagus: 16, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345287/portions
+		beet: 80, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345290/portions
+		cabbage: 900, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345293/portions
+		leek: 89, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/169246/measures
+		lettuce: 539, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345309/portions
+		melon: 1000, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344736/portions
+		radish: 5, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345323/portions
+		turnip: 120, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345329/portions
+	},
 };
 
 class Category {
@@ -214,6 +225,7 @@ const goods = {
 	// DAIRY
 	butter: new Good('Butter', 'Dairy'),
 	cheese: new Good('Cheese', 'Dairy'),
+	egg: new Good('Egg', 'Dairy', 'doz'),
 	ghee: new Good('Ghee', 'Dairy'),
 	milk: new Good('Milk', 'Dairy'),
 	// MEAT
@@ -233,13 +245,22 @@ const goods = {
 	fishSalted: new Good('Salted Fish', 'Fish'),
 	fishSardines: new Good('Sardines', 'Fish'),
 	// FRUIT
+	apple: new Good('Apple', 'Fruit'),
 	citron: new Good('Citron', 'Fruit'),
 	currant: new Good('Currant', 'Fruit'),
 	figs: new Good('Figs', 'Fruit'),
+	melon: new Good('Melon', 'Fruit'),
 	// VEGETABLES
+	asparagus: new Good('Asparagus', 'Vegetable'),
+	beet: new Good('Beet', 'Vegetable'),
+	cabbage: new Good('Cabbage', 'Vegetable'),
 	garlic: new Good('Garlic', 'Vegetable'),
+	leek: new Good('Leek', 'Vegetable'),
+	lettuce: new Good('Lettuce', 'Vegetable'),
 	potatoSweet: new Good('Sweet Potato', 'Vegetable'),
+	radish: new Good('Radish', 'Vegetable'),
 	squash: new Good('Squash', 'Vegetable'),
+	turnip: new Good('Turnip', 'Vegetable'),
 	// NUTS
 	almond: new Good('Almond', 'Nut'),
 	walnut: new Good('Walnut', 'Nut'),
@@ -309,6 +330,7 @@ const goods = {
 	cat: new Good('Cat', 'Misc', 'ea'),
 	gooseLive: new Good('Goose', 'Misc', 'ea'),
 	chickenLive: new Good('Chicken', 'Misc', 'ea'),
+	duckLive: new Good('Duck', 'Misc', 'ea'),
 	// MISC
 	charcoal: new Good('Charcoal', 'Misc'),
 	coal: new Good('Coal', 'Misc'),
@@ -379,12 +401,25 @@ new GoodDatum(goods.honey, sources.rome0, 40/20/500);
 new GoodDatum(goods.pork, sources.rome0, 12/20/300); // 12 denarii for 300g
 new GoodDatum(goods.beef, sources.rome0, 8/20/300);
 new GoodDatum(goods.boarMeat, sources.rome0, 16/20/300);
+new GoodDatum(goods.gooseLive, sources.rome0, 200/20);
+new GoodDatum(goods.chickenLive, sources.rome0, 30/20);
+new GoodDatum(goods.duckLive, sources.rome0, 20/20);
 new GoodDatum(goods.fishSaltwater, sources.rome0, 24/20/300);
 new GoodDatum(goods.fishFreshwater, sources.rome0, 8/20/300);
 new GoodDatum(goods.fishSalted, sources.rome0, 6/20/300);
 new GoodDatum(goods.cheese, sources.rome0, 12/20/300);
 new GoodDatum(goods.fishSardines, sources.rome0, 16/20/300);
+new GoodDatum(goods.lettuce, sources.rome0, 4/5 /20 / unit.weights.lettuce);
+new GoodDatum(goods.cabbage, sources.rome0, 4/10 /20 / unit.weights.cabbage);
+new GoodDatum(goods.beet, sources.rome0, 4/5 /20 / unit.weights.beet);
 new GoodDatum(goods.garlic, sources.rome0, 60/20/(17*unit.grainDensity.NULL_VEG));
+new GoodDatum(goods.turnip, sources.rome0, 4/20 /20 / unit.weights.turnip);
+new GoodDatum(goods.radish, sources.rome0, 4/10 /20 / unit.weights.radish);
+new GoodDatum(goods.leek, sources.rome0, 4/10 /20 / unit.weights.leek);
+new GoodDatum(goods.egg, sources.rome0, 12/20);
+new GoodDatum(goods.asparagus, sources.rome0, 4/50 /20 / unit.weights.asparagus);
+new GoodDatum(goods.melon, sources.rome0, 4/2 /20 / unit.weights.melon);
+new GoodDatum(goods.apple, sources.rome0, 4/40 /20 / unit.weights.apple);
 new GoodDatum(goods.figs, sources.rome0, 4/20/300);
 new GoodDatum(goods.milk, sources.rome0, 8/20/500);
 new GoodDatum(goods.firewood, sources.rome0, 30/20/98000); // 30 denarii for 98 kg
@@ -537,7 +572,7 @@ new GoodDatum(goods.gold, sources.chinaMing, 5); // went from 1:4 to 1:6 during 
 new GoodDatum(goods.gold, sources.ind14, 8);
 new GoodDatum(goods.rice, sources.chinaMing, 50 / (100 * unit.grainDensity.rice)); // varied from ~35g to a bit over 100g, but was close to 50 for the first half of the dynasty
 
-// https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=79
+// https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76
 // 1800
 const usd_ag = 1.29 / unit.ozt; // usd per gram Ag prior to ~1861
 new GoodDatum(goods.flax, sources.usa180, 0.174/unit.lb / usd_ag);
@@ -643,6 +678,7 @@ new GoodDatum(goods.flour, sources.usa202, 0.027/unit.oz / usd_ag2);
 new GoodDatum(goods.oatmeal, sources.usa202, 0.095/unit.oz / usd_ag2);
 new GoodDatum(goods.butter, sources.usa202, 0.236/unit.oz / usd_ag2);
 new GoodDatum(goods.cheese, sources.usa202, 0.155/unit.oz / usd_ag2);
+new GoodDatum(goods.egg, sources.usa202, 1.7 / usd_ag2);
 new GoodDatum(goods.ghee, sources.usa202, 0.625/unit.oz / usd_ag2);
 new GoodDatum(goods.milk, sources.usa202, 0.022/unit.oz / usd_ag2);
 new GoodDatum(goods.beef, sources.usa202, 6.48/unit.lb / usd_ag2);
@@ -653,8 +689,15 @@ new GoodDatum(goods.chicken, sources.usa202, 2.67/unit.lb / usd_ag2);
 new GoodDatum(goods.turkey, sources.usa202, 7.5/unit.lb / usd_ag2);
 new GoodDatum(goods.fish, sources.usa202, 4.24/unit.lb / usd_ag2); // Tilapia filets
 new GoodDatum(goods.fishSardines, sources.usa202, 0.285/unit.oz / usd_ag2);
+new GoodDatum(goods.apple, sources.usa202, 1.15/unit.lb / usd_ag2);
+new GoodDatum(goods.melon, sources.usa202, 0.214/unit.oz / usd_ag2);
+new GoodDatum(goods.asparagus, sources.usa202, 0.371/unit.oz / usd_ag2);
+new GoodDatum(goods.beet, sources.usa202, 0.173/unit.oz / usd_ag2);
+new GoodDatum(goods.cabbage, sources.usa202, 0.87/unit.lb / usd_ag2);
 new GoodDatum(goods.garlic, sources.usa202, 0.274/unit.lb / usd_ag2);
+new GoodDatum(goods.lettuce, sources.usa202, 0.218/unit.oz / usd_ag2);
 new GoodDatum(goods.potatoSweet, sources.usa202, 0.64/unit.lb / usd_ag2);
+new GoodDatum(goods.radish, sources.usa202, 0.228/unit.oz / usd_ag2);
 new GoodDatum(goods.squash, sources.usa202, 0.98/unit.lb / usd_ag2); // Butternut
 new GoodDatum(goods.almond, sources.usa202, 0.389/unit.oz / usd_ag2);
 new GoodDatum(goods.walnut, sources.usa202, 0.374/unit.oz / usd_ag2);
