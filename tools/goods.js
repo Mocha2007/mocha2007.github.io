@@ -531,26 +531,32 @@ const china = {
 	/** weight of a bolt of silk in grams, estimate */
 	boltOfSilk: 3 * unit.lb,
 	get cash(){
-		return china.tael / 1000;
+		return this.tael / 1000;
 	},
-	/** g per catty */
-	catty: 500,
+	/** g per catty = jin */
+	get catty(){
+		return 16 * this.tael;
+	},
 	/** L per dou */
 	dou: 10.354688,
 	/** L per hu */
 	hu: 20,
-	/** g per jin */
-	jin: 590,
 	/** g per picul */
-	picul: 60000,
-	/** g Ag per tael */
-	tael: 40,
+	get picul(){
+		return 100 * this.catty;
+	},
+	/** g per tael */
+	tael: 37.62, // values given by https://www.jstor.org/stable/1009669?seq=10: 37.573 37.61771 37.6702 - I'm going to take the average of the two extrema
 };
 new GoodDatum(goods.horse, sources.chinaHan, 4500 * china.cash);
 new GoodDatum(goods.horse, sources.chinaTang, 25000 * china.cash);
 new GoodDatum(goods.gooseLive, sources.chinaMing, 1/2 * 3/10 * china.tael);
 new GoodDatum(goods.sheep, sources.chinaMing, 1/2 * china.tael);
 new GoodDatum(goods.pig, sources.chinaMing, 1 * china.tael);
+
+// https://www.wikiwand.com/en/Han_dynasty_coinage
+// "During the Han dynasty one catty (250g - 300g) of gold currency was valued at around ten thousand bronze Ban Liang cash coins."
+new GoodDatum(goods.gold, sources.chinaHan, 10000 * china.cash / 275);
 
 // https://en.wikipedia.org/wiki/Economy_of_the_Han_dynasty#Subsistence
 new GoodDatum(goods.rice, sources.chinaHan, (70 + 100)/2 * china.cash
