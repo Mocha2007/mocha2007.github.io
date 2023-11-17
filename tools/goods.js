@@ -546,6 +546,7 @@ new GoodDatum(goods.tobacco, sources.usa185, 0.285/unit.lb / usd_ag);
 
 // TODAY PRICES
 const usd_ag2 = 23.35 / unit.ozt; // current value
+new GoodDatum(goods.millet, sources.usa202, 0.309/unit.oz / usd_ag2);
 new GoodDatum(goods.rice, sources.usa202, 0.042/unit.oz / usd_ag2);
 new GoodDatum(goods.flour, sources.usa202, 0.027/unit.oz / usd_ag2);
 new GoodDatum(goods.oatmeal, sources.usa202, 0.095/unit.oz / usd_ag2);
@@ -554,7 +555,9 @@ new GoodDatum(goods.cheese, sources.usa202, 0.155/unit.oz / usd_ag2);
 new GoodDatum(goods.ghee, sources.usa202, 0.625/unit.oz / usd_ag2);
 new GoodDatum(goods.milk, sources.usa202, 0.022/unit.oz / usd_ag2);
 new GoodDatum(goods.beef, sources.usa202, 6.48/unit.lb / usd_ag2);
+new GoodDatum(goods.lamb, sources.usa202, 11.99/unit.lb / usd_ag2); // https://www.harristeeter.com/p/great-southern-lamb-shoulder-chops/0020211100000?searchType=default_search
 new GoodDatum(goods.pork, sources.usa202, 4.47/unit.lb / usd_ag2);
+new GoodDatum(goods.veal, sources.usa202, 13.99/unit.lb / usd_ag2); // https://www.harristeeter.com/p/strauss-all-natural-veal-loin-chop/0020035600000?searchType=default_search
 new GoodDatum(goods.chicken, sources.usa202, 2.67/unit.lb / usd_ag2);
 new GoodDatum(goods.turkey, sources.usa202, 7.5/unit.lb / usd_ag2);
 new GoodDatum(goods.fish, sources.usa202, 4.24/unit.lb / usd_ag2); // Tilapia filets
@@ -575,10 +578,13 @@ new GoodDatum(goods.pepper, sources.usa202, 0.953/unit.oz / usd_ag2);
 new GoodDatum(goods.saffron, sources.usa202, 305.5/unit.oz / usd_ag2);
 new GoodDatum(goods.chocolate, sources.usa202, 0.145/unit.oz / usd_ag2);
 new GoodDatum(goods.coffee, sources.usa202, 0.247/unit.oz / usd_ag2);
+new GoodDatum(goods.flax, sources.usa202, 0.317/unit.oz / usd_ag2);
 new GoodDatum(goods.honey, sources.usa202, 0.32/unit.oz / usd_ag2);
+new GoodDatum(goods.hops, sources.usa202, 6.1/unit.lb / usd_ag2); // https://www.statista.com/statistics/758004/average-annual-price-of-hops-in-the-us/
 new GoodDatum(goods.lard, sources.usa202, 0.08/unit.oz / usd_ag2);
 new GoodDatum(goods.oilOlive, sources.usa202, 0.281/unit.oz / usd_ag2);
 new GoodDatum(goods.oilSesame, sources.usa202, 0.536/unit.oz / usd_ag2);
+new GoodDatum(goods.opium, sources.usa202, 408/1000 / usd_ag2); // https://www.unodc.org/documents/crop-monitoring/Afghanistan/Afghanistan_opium_survey_2023.pdf
 new GoodDatum(goods.salt, sources.usa202, 0.025/unit.oz / usd_ag2);
 new GoodDatum(goods.sesame, sources.usa202, 0.653/unit.oz / usd_ag2);
 new GoodDatum(goods.soda, sources.usa202, 0.058/unit.oz / usd_ag2);
@@ -586,12 +592,15 @@ new GoodDatum(goods.sugar, sources.usa202, 0.048/unit.oz / usd_ag2);
 new GoodDatum(goods.sugarBrown, sources.usa202, 0.073/unit.oz / usd_ag2);
 new GoodDatum(goods.tallow, sources.usa202, 39.99/(7*unit.lb) / usd_ag2);
 new GoodDatum(goods.tea, sources.usa202, 0.623/unit.oz / usd_ag2);
+new GoodDatum(goods.tobacco, sources.usa202, 3494.2/1e6 / usd_ag2); // rough estimate from https://www.statista.com/statistics/1184304/unit-price-of-tobacco-in-tanzania/
 new GoodDatum(goods.vinegar, sources.usa202, 0.029/unit.oz / usd_ag2);
 new GoodDatum(goods.ale, sources.usa202, 0.091/unit.oz / usd_ag2);
+new GoodDatum(goods.beer, sources.usa202, 0.064/unit.oz / usd_ag2);
 new GoodDatum(goods.wine, sources.usa202, 0.136/unit.oz / usd_ag2);
 new GoodDatum(goods.candle, sources.usa202, 0.214/unit.oz / usd_ag2);
 new GoodDatum(goods.soap, sources.usa202, 0.148/unit.oz / usd_ag2);
 new GoodDatum(goods.charcoal, sources.usa202, 0.493/unit.lb / usd_ag2);
+new GoodDatum(goods.ivory, sources.usa202, 3300/unit.lb / usd_ag2); // https://wildaid.org/14-things-you-didnt-know-about-todays-ivory-trade/
 
 // https://babel.hathitrust.org/cgi/pt?id=uc1.32106007458745&seq=42
 new GoodDatum(goods.butter, sources.med17, 0.09/unit.lb / usd_ag);
