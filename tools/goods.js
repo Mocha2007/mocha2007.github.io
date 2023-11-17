@@ -7,6 +7,8 @@ const unit = {
 	gal: 3770,
 	/** number of grams in a quart of water */
 	qt: 3770/4,
+	/** last in grams */
+	last: 2*453.5924*2000,
 	/** pound in grams */
 	lb: 453.5924,
 	/** troy pound in grams */
@@ -19,6 +21,8 @@ const unit = {
 	ozt: 373.242/12,
 	/** imperial ton in grams */
 	t: 453.5924*2000,
+	/** tun in mL */
+	tun: 252 * 3785,
 };
 
 class Category {
@@ -166,6 +170,7 @@ const goods = {
 	barley: new Good('Barley', 'Grain'),
 	millet: new Good('Millet', 'Grain'),
 	rice: new Good('Rice', 'Grain'),
+	rye: new Good('Rye', 'Grain'),
 	spelt: new Good('Spelt', 'Grain'),
 	wheat: new Good('Wheat', 'Grain'),
 	// PROCESSED GRAIN
@@ -223,6 +228,7 @@ const goods = {
 	lard: new Good('Lard', 'Ingredient'),
 	oilOlive: new Good('Olive Oil', 'Ingredient'),
 	oilSesame: new Good('Sesame Oil', 'Ingredient'),
+	opium: new Good('Opium', 'Ingredient'),
 	salt: new Good('Salt', 'Ingredient'),
 	sesame: new Good('Sesame', 'Ingredient'),
 	soda: new Good('Baking Soda', 'Ingredient'),
@@ -656,6 +662,32 @@ new GoodDatum(goods.nutmeg, sources.med14, priceMed14Ox / unit.lb);
 // cites "Duke, James A., ed. CRC Handbook of Medicinal Spices. CRC press, 2002.", but that doesn't mention it
 // http://soupsong.com/fnutmeg.html mentions it too
 // maybe look at https://memdb.libraries.rutgers.edu/posthumus-prices?field_postprice_month_value%5Bmin%5D=1&field_postprice_month_value%5Bmax%5D=12&field_postprice_year_value%5Bmin%5D=1572&field_postprice_year_value%5Bmax%5D=1813&items_per_page=50&order=field_postprice_price&sort=desc&page=1393
+
+const guilder_ag = 10.61; // https://en.wikipedia.org/wiki/Dutch_guilder#1659,_Gulden_currency_&_banco
+new GoodDatum(goods.pepper, sources.med18, (0.4 + 1.25)/2 * guilder_ag/unit.lb);
+new GoodDatum(goods.silk, sources.med18, (5.1 + 24)/2 * guilder_ag/unit.lb);
+new GoodDatum(goods.clove, sources.med18, (2.75 + 8.25)/2 * guilder_ag/unit.lb);
+new GoodDatum(goods.iron, sources.med18, (5.63 + 8)/2 * guilder_ag/unit.cwt);
+new GoodDatum(goods.currant, sources.med18, (7 + 25)/2 * guilder_ag/unit.cwt);
+new GoodDatum(goods.cotton, sources.med18, (0.3 + 0.78)/2 * guilder_ag/unit.lb); // from Cyprus
+new GoodDatum(goods.figs, sources.med18, (5.25 + 14.5)/2 * guilder_ag/unit.cwt);
+new GoodDatum(goods.wine, sources.med18, (63 + 285)/2 * guilder_ag/unit.tun); // "French Bordeaux wine"
+new GoodDatum(goods.wheat, sources.med18, (95.3 + 514.5)/2 * guilder_ag/unit.last); // "Frisian wheat"
+new GoodDatum(goods.millet, sources.med18, (5.5 + 18)/2 * guilder_ag/unit.cwt); // "German millet"
+new GoodDatum(goods.wool, sources.med18, (23.5 + 42)/2 * guilder_ag/unit.cwt); // "German wool"
+new GoodDatum(goods.coffee, sources.med18, (0.34 + 1.2)/2 * guilder_ag/unit.lb); // "Java coffee beans"
+new GoodDatum(goods.cinnamon, sources.med18, (2.35 + 10)/2 * guilder_ag/unit.lb);
+new GoodDatum(goods.mace, sources.med18, (5.55 + 22.5)/2 * guilder_ag/unit.lb);
+new GoodDatum(goods.rice, sources.med18, (6.75 + 21)/2 * guilder_ag/unit.cwt); // "Milanese rice"
+new GoodDatum(goods.honey, sources.med18, (17.5 + 48)/2 * guilder_ag/(300 * unit.lb));
+new GoodDatum(goods.wax, sources.med18, (58.5 + 104)/2 * guilder_ag/unit.cwt);
+new GoodDatum(goods.nutmeg, sources.med18, (3.75 + 25)/2 * guilder_ag/unit.lb);
+new GoodDatum(goods.opium, sources.med18, (3 + 14)/2 * guilder_ag/unit.lb);
+new GoodDatum(goods.tea, sources.med18, (0.48 + 1.75)/2 * guilder_ag/unit.lb); // "Ordinary buoy tea"
+new GoodDatum(goods.ginger, sources.med18, (0.4 + 2.06)/2 * guilder_ag/unit.lb); // "Preserved ginger"
+new GoodDatum(goods.rye, sources.med18, (79.8 + 483)/2 * guilder_ag/unit.last); // "Prussian rye"
+new GoodDatum(goods.soda, sources.med18, (4.5 + 24.5)/2 * guilder_ag/unit.cwt);
+new GoodDatum(goods.almond, sources.med18, (17 + 65)/2 * guilder_ag/unit.cwt); // "Valence almonds"
 
 function blankTD(){
 	return document.createElement('td');
