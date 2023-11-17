@@ -108,7 +108,12 @@ const goods = {
 	gold: new Good('Gold'),
 	// have gold on top, the rest in groups alphabetical or in logical order...
 	// GRAIN
+	barley: new Good('Barley'),
+	millet: new Good('Millet'),
 	rice: new Good('Rice'),
+	spelt: new Good('Spelt'),
+	wheat: new Good('Wheat'),
+	// PROCESSED GRAIN
 	flour: new Good('Flour'),
 	oatmeal: new Good('Oatmeal'),
 	// DAIRY
@@ -136,6 +141,7 @@ const goods = {
 	currant: new Good('Currant'),
 	figs: new Good('Figs'),
 	// VEGETABLES
+	garlic: new Good('Garlic'),
 	potatoSweet: new Good('Sweet Potato'),
 	squash: new Good('Squash'),
 	// NUTS
@@ -144,6 +150,7 @@ const goods = {
 	// SPICES/HERBS
 	cinnamon: new Good('Cinnamon'),
 	clove: new Good('Clove'),
+	cumin: new Good('Cumin'),
 	ginger: new Good('Ginger'),
 	mace: new Good('Mace'),
 	mustard: new Good('Mustard'),
@@ -160,6 +167,7 @@ const goods = {
 	lard: new Good('Lard'),
 	oliveOil: new Good('Olive Oil'),
 	salt: new Good('Salt'),
+	sesame: new Good('Sesame'),
 	soda: new Good('Baking Soda'),
 	sugar: new Good('Sugar'),
 	tallow: new Good('Tallow'),
@@ -222,6 +230,13 @@ new GoodDatum(goods.gold, sources.usa185, 16);
 new GoodDatum(goods.gold, sources.usa202, 1962.98/23.35);
 
 // 301 CE ROME
+const grainDensity = 27215.5 / 35.2391; // g/L of grains https://www.smallfarmcanada.ca/resources/standard-weights-per-bushel-for-agricultural-commodities
+new GoodDatum(goods.wheat, sources.rome0, 100/20/(17*grainDensity)); // 100 denarii for 17L
+new GoodDatum(goods.barley, sources.rome0, 60/20/(17*grainDensity));
+new GoodDatum(goods.millet, sources.rome0, 100/20/(17*grainDensity));
+new GoodDatum(goods.spelt, sources.rome0, 100/20/(17*grainDensity));
+new GoodDatum(goods.sesame, sources.rome0, 200/20/(17*grainDensity));
+new GoodDatum(goods.cumin, sources.rome0, 200/20/(17*grainDensity));
 new GoodDatum(goods.wine, sources.rome0, 8/20/500); // 8 denarii for 500mL
 new GoodDatum(goods.beer, sources.rome0, 4/20/500); // 4 denarii for 500mL
 new GoodDatum(goods.oliveOil, sources.rome0, 40/20/500);
@@ -236,6 +251,7 @@ new GoodDatum(goods.fishFreshwater, sources.rome0, 8/20/300);
 new GoodDatum(goods.fishSalted, sources.rome0, 6/20/300);
 new GoodDatum(goods.cheese, sources.rome0, 12/20/300);
 new GoodDatum(goods.fishSardines, sources.rome0, 16/20/300);
+new GoodDatum(goods.garlic, sources.rome0, 60/20/(17*grainDensity));
 new GoodDatum(goods.figs, sources.rome0, 4/20/300);
 new GoodDatum(goods.milk, sources.rome0, 8/20/500);
 new GoodDatum(goods.firewood, sources.rome0, 30/20/98000); // 30 denarii for 98 kg
@@ -410,12 +426,14 @@ new GoodDatum(goods.chicken, sources.usa202, 2.67/unit.lb / usd_ag2);
 new GoodDatum(goods.turkey, sources.usa202, 7.5/unit.lb / usd_ag2);
 new GoodDatum(goods.fish, sources.usa202, 4.24/unit.lb / usd_ag2); // Tilapia filets
 new GoodDatum(goods.fishSardines, sources.usa202, 0.285/unit.oz / usd_ag2);
+new GoodDatum(goods.garlic, sources.usa202, 0.274/unit.lb / usd_ag2);
 new GoodDatum(goods.potatoSweet, sources.usa202, 0.64/unit.lb / usd_ag2);
 new GoodDatum(goods.squash, sources.usa202, 0.98/unit.lb / usd_ag2); // Butternut
 new GoodDatum(goods.almond, sources.usa202, 0.389/unit.oz / usd_ag2);
 new GoodDatum(goods.walnut, sources.usa202, 0.374/unit.oz / usd_ag2);
 new GoodDatum(goods.cinnamon, sources.usa202, 0.496/unit.oz / usd_ag2);
 new GoodDatum(goods.clove, sources.usa202, 3.35/unit.oz / usd_ag2);
+new GoodDatum(goods.cumin, sources.usa202, 0.437/unit.oz / usd_ag2);
 new GoodDatum(goods.ginger, sources.usa202, 0.495/unit.oz / usd_ag2);
 new GoodDatum(goods.mace, sources.usa202, 2.72/unit.oz / usd_ag2);
 new GoodDatum(goods.mustard, sources.usa202, 0.691/unit.oz / usd_ag2);
@@ -428,6 +446,7 @@ new GoodDatum(goods.honey, sources.usa202, 0.32/unit.oz / usd_ag2);
 new GoodDatum(goods.lard, sources.usa202, 0.08/unit.oz / usd_ag2);
 new GoodDatum(goods.oliveOil, sources.usa202, 0.281/unit.oz / usd_ag2);
 new GoodDatum(goods.salt, sources.usa202, 0.025/unit.oz / usd_ag2);
+new GoodDatum(goods.sesame, sources.usa202, 0.653/unit.oz / usd_ag2);
 new GoodDatum(goods.soda, sources.usa202, 0.058/unit.oz / usd_ag2);
 new GoodDatum(goods.sugar, sources.usa202, 0.048/unit.oz / usd_ag2);
 new GoodDatum(goods.tallow, sources.usa202, 39.99/(7*unit.lb) / usd_ag2);
@@ -438,6 +457,16 @@ new GoodDatum(goods.wine, sources.usa202, 0.136/unit.oz / usd_ag2);
 new GoodDatum(goods.candle, sources.usa202, 0.214/unit.oz / usd_ag2);
 new GoodDatum(goods.soap, sources.usa202, 0.148/unit.oz / usd_ag2);
 new GoodDatum(goods.charcoal, sources.usa202, 0.493/unit.lb / usd_ag2);
+
+// https://babel.hathitrust.org/cgi/pt?id=uc1.32106007458745&seq=42
+new GoodDatum(goods.butter, sources.med17, 0.09/unit.lb / usd_ag);
+new GoodDatum(goods.butter, sources.med18, 0.12/unit.lb / usd_ag);
+
+new GoodDatum(goods.beef, sources.med17, 0.03/unit.lb / usd_ag);
+new GoodDatum(goods.beef, sources.med18, 0.04/unit.lb / usd_ag);
+
+new GoodDatum(goods.pork, sources.med17, 0.05/unit.lb / usd_ag);
+new GoodDatum(goods.pork, sources.med18, 0.07/unit.lb / usd_ag);
 
 function blankTD(){
 	return document.createElement('td');
