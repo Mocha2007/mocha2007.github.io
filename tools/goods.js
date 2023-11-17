@@ -3,10 +3,16 @@ const unit = {
 	gal: 3770,
 	/** number of grams in a quart of water */
 	qt: 3770/4,
-	/** tower pound in grams */
-	lbtower: 350,
+	/** pound in grams */
+	lb: 453.5924,
 	/** troy pound in grams */
 	lbt: 373.242,
+	/** tower pound in grams */
+	lbtower: 350,
+	/** pound in grams */
+	oz: 453.5924/16,
+	/** troy ounce in grams */
+	ozt: 373.242/12,
 };
 
 
@@ -101,6 +107,10 @@ Source.sources = [];
 const goods = {
 	gold: new Good('Gold'),
 	// have gold on top, the rest in groups alphabetical or in logical order...
+	// GRAIN
+	rice: new Good('Rice'),
+	flour: new Good('Flour'),
+	oatmeal: new Good('Oatmeal'),
 	// DAIRY
 	butter: new Good('Butter'),
 	cheese: new Good('Cheese'),
@@ -108,54 +118,94 @@ const goods = {
 	// MEAT
 	boarMeat: new Good('Boar Meat'),
 	beef: new Good('Beef'),
+	lamb: new Good('Lamb'),
 	pork: new Good('Pork'),
+	veal: new Good('Veal'),
+	// FOWL
+	chicken: new Good('Chicken'),
+	goose: new Good('Goose'),
+	turkey: new Good('Turkey'),
 	// FISH
+	fish: new Good('Fish'),
 	fishFreshwater: new Good('Freshwater Fish'),
 	fishSaltwater: new Good('Saltwater Fish'),
 	fishSalted: new Good('Salted Fish'),
 	fishSardines: new Good('Sardines'),
 	// FRUIT
+	citron: new Good('Citron'),
+	currant: new Good('Currant'),
 	figs: new Good('Figs'),
-	// SPICES &c
+	// VEGETABLES
+	potatoSweet: new Good('Sweet Potato'),
+	squash: new Good('Squash'),
+	// NUTS
+	almond: new Good('Almond'),
+	walnut: new Good('Walnut'),
+	// SPICES/HERBS
+	cinnamon: new Good('Cinnamon'),
+	clove: new Good('Clove'),
 	ginger: new Good('Ginger'),
+	mace: new Good('Mace'),
+	mustard: new Good('Mustard'),
+	nutmeg: new Good('Nutmeg'),
+	pepper: new Good('Black Pepper'),
+	saffron: new Good('Saffron'),
+	// MISC FOOD / INGREDIENTS
+	chocolate: new Good('Chocolate'),
+	coffee: new Good('Coffee'),
+	flax: new Good('Flax'),
 	honey: new Good('Honey'),
 	hops: new Good('Hops'),
 	incense: new Good('Incense'),
+	lard: new Good('Lard'),
 	oliveOil: new Good('Olive Oil'),
-	pepper: new Good('Black Pepper'),
-	saffron: new Good('Saffron'),
 	salt: new Good('Salt'),
+	soda: new Good('Baking Soda'),
+	sugar: new Good('Sugar'),
+	tallow: new Good('Tallow'),
+	tea: new Good('Tea'),
+	tobacco: new Good('Tobacco'),
 	vinegar: new Good('Vinegar'),
 	// ALCOHOL
 	ale: new Good('Ale'),
 	beer: new Good('Beer'),
 	wine: new Good('Wine'),
 	// DOWN FEATHERS LINING WOOL
+	cotton: new Good('Cotton'),
 	downGoose: new Good('Goose Down'),
 	downWillow: new Good('Willow Down'),
+	leather: new Good('Leather'),
 	linen: new Good('Linen'),
 	wool: new Good('Wool'),
 	// TOOLS
+	candle: new Good('Candles'),
 	ink: new Good('Ink'),
+	soap: new Good('Soap'),
 	// LUXURY MATERIALS
 	glass: new Good('Glass'),
 	ivory: new Good('Ivory'),
 	silk: new Good('Silk'),
 	turtleshell: new Good('Turtleshell'),
 	// MISC
+	charcoal: new Good('Charcoal'),
+	coal: new Good('Coal'),
 	firewood: new Good('Firewood'),
+	iron: new Good('Iron'),
 	wax: new Good('Wax'),
 };
 
 const sources = {
 	// "Silver, pure, in bars or coins – 6000 denarii for about 300 g" thus 1g Ag = 20 denarii
 	rome0: new Source(301, 'Rome', 'https://imperiumromanum.pl/en/roman-economy/roman-goods-prices/'),
+	med12: new Source('12th c.', 'W. Eur.', 'http://www.medievalcoinage.com/prices/medievalprices.htm'),
 	med13: new Source('13th c.', 'England', 'http://medieval.ucdavis.edu/120D/Money.html'),
 	med14: new Source('14th c.', 'England', 'http://www.afamilystory.co.uk/history/wages-and-prices.aspx'),
 	med15: new Source('15th c.', 'England', 'http://www.afamilystory.co.uk/history/wages-and-prices.aspx'),
 	med16: new Source('16th c.', 'England', 'http://www.afamilystory.co.uk/history/wages-and-prices.aspx'),
 	med17: new Source('17th c.', 'England', ''),
 	med18: new Source('18th c.', 'England', ''),
+	usa180: new Source('c. 1800', 'US', 'https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76'),
+	usa185: new Source('c. 1850', 'US', 'https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76'),
 };
 
 // value of a pound, bimetallic ratio:
@@ -165,6 +215,9 @@ new GoodDatum(goods.gold, sources.med15, 172.6/15.47);
 new GoodDatum(goods.gold, sources.med16, 115.1/10.31);
 new GoodDatum(goods.gold, sources.med17, 111.4/((10.31 + 7.32238)/2));
 new GoodDatum(goods.gold, sources.med18, 111.4/7.32238);
+// https://en.wikipedia.org/wiki/Bimetallism#United_States
+new GoodDatum(goods.gold, sources.usa180, 15); // becomes 16 in 1834
+new GoodDatum(goods.gold, sources.usa185, 16);
 
 // 301 CE ROME
 new GoodDatum(goods.wine, sources.rome0, 8/20/500); // 8 denarii for 500mL
@@ -204,27 +257,142 @@ new GoodDatum(goods.ginger, sources.rome0, 250/20/300);
 // https://en.wikipedia.org/wiki/Penny_(English_coin)#History
 // "The penny initially weighed 20 to 22.5 modern grains (1.3 to 1.5 g). It was standardized to 32 Tower grains, 1⁄240 of a Tower pound (approx. 350 g)."
 // 1d = 350/240 g silver
-new GoodDatum(goods.wool, sources.med14, (3 + 5/7)*unit.lbtower/240 / 453.5924); // 3 5/7 d per pound
-new GoodDatum(goods.cheese, sources.med14, (4 + 1/2)*unit.lbtower/240 / (7*453.5924)); // 4 1/2 d per 7 lbs
-new GoodDatum(goods.butter, sources.med14, (4 + 3/4)*unit.lbtower/240 / (7*453.5924));
+new GoodDatum(goods.wool, sources.med14, (3 + 5/7)*unit.lbtower/240 / unit.lb); // 3 5/7 d per pound
+new GoodDatum(goods.cheese, sources.med14, (4 + 1/2)*unit.lbtower/240 / (7*unit.lb)); // 4 1/2 d per 7 lbs
+new GoodDatum(goods.butter, sources.med14, (4 + 3/4)*unit.lbtower/240 / (7*unit.lb));
 // 2nd row
-new GoodDatum(goods.wool, sources.med15, (3 + 5/7)*unit.lbtower/240 / 453.5924);
-new GoodDatum(goods.cheese, sources.med15, 0.5*unit.lbtower/240 / 453.5924);
-new GoodDatum(goods.butter, sources.med15, 1*unit.lbtower/240 / 453.5924);
-new GoodDatum(goods.hops, sources.med15, (14*12 + 0.5)*unit.lbtower/240 / (100*453.5924)); // 1s 0.5d per cwt
+new GoodDatum(goods.wool, sources.med15, (3 + 5/7)*unit.lbtower/240 / unit.lb);
+new GoodDatum(goods.cheese, sources.med15, 0.5*unit.lbtower/240 / unit.lb);
+new GoodDatum(goods.butter, sources.med15, 1*unit.lbtower/240 / unit.lb);
+new GoodDatum(goods.hops, sources.med15, (14*12 + 0.5)*unit.lbtower/240 / (100*unit.lb)); // 1s 0.5d per cwt
 // "The weight standard was changed to the Troy pound (373.242 g) in 1527 under Henry VIII,"
-new GoodDatum(goods.wool, sources.med16, (7 + 1/2)*unit.lbt/240 / 453.5924);
-new GoodDatum(goods.cheese, sources.med16, 1*unit.lbt/240 / 453.5924);
-new GoodDatum(goods.butter, sources.med16, 3*unit.lbt/240 / 453.5924);
-new GoodDatum(goods.hops, sources.med16, (26*12 + 8)*unit.lbt/240 / (100*453.5924));
+new GoodDatum(goods.wool, sources.med16, (7 + 1/2)*unit.lbt/240 / unit.lb);
+new GoodDatum(goods.cheese, sources.med16, 1*unit.lbt/240 / unit.lb);
+new GoodDatum(goods.butter, sources.med16, 3*unit.lbt/240 / unit.lb);
+new GoodDatum(goods.hops, sources.med16, (26*12 + 8)*unit.lbt/240 / (100*unit.lb));
 
 // med13
 new GoodDatum(goods.wine, sources.med14, 3*unit.lbtower/240 / unit.gal);
 new GoodDatum(goods.ale, sources.med15, 0.75*unit.lbtower/240 / unit.gal);
 new GoodDatum(goods.beer, sources.med16, 1*unit.lbtower/240 / unit.qt);
-new GoodDatum(goods.pepper, sources.med13, 12*unit.lbtower/240 / 453.5924);
-new GoodDatum(goods.saffron, sources.med14, 13.5*unit.lbtower/240 / 453.5924);
-new GoodDatum(goods.cheese, sources.med13, (3*12 + 4)*unit.lbt/240 / (80*453.5924));
+new GoodDatum(goods.pepper, sources.med13, 12*unit.lbtower/240 / unit.lb);
+new GoodDatum(goods.saffron, sources.med14, 13.5*unit.lbtower/240 / unit.lb);
+new GoodDatum(goods.cheese, sources.med13, (3*12 + 4)*unit.lbt/240 / (80*unit.lb));
+
+// https://thehistoryofengland.co.uk/resource/medieval-prices-and-wages/
+new GoodDatum(goods.beer, sources.med14, 1*unit.lbtower/240 / unit.gal);
+new GoodDatum(goods.sugar, sources.med14, 18*unit.lbtower/240 / unit.lb);
+
+// https://web.archive.org/web/20110628231215/http://www.fordham.edu/halsall/source/medievalprices.html
+new GoodDatum(goods.candle, sources.med14, 2*unit.lbtower/240 / unit.lb);
+new GoodDatum(goods.candle, sources.med15, 4*unit.lbtower/240 / unit.lb);
+
+// http://www.medievalcoinage.com/prices/medievalprices.htm
+new GoodDatum(goods.wine, sources.med12, 1.14*unit.lbtower/240 / unit.gal);
+
+// https://medium.com/@zavidovych/what-we-can-learn-by-looking-at-prices-and-wages-in-medieval-england-8dc207cfd20a#.7yzbvz6lj
+new GoodDatum(goods.charcoal, sources.med15, 5*unit.lbtower/240 / 38560); // 4.25 bu
+
+// https://www.historyextra.com/period/medieval/a-time-travellers-guide-to-medieval-shopping/
+new GoodDatum(goods.ale, sources.med14, (0.75 + 1)/2*unit.lbtower/240 / unit.gal);
+
+// https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=79
+// 1800
+const usd_ag = 1.29 / unit.ozt; // usd per gram Ag prior to ~1861
+new GoodDatum(goods.flax, sources.usa180, 0.174/unit.lb / usd_ag);
+new GoodDatum(goods.hops, sources.usa180, 0.167/unit.lb / usd_ag);
+new GoodDatum(goods.rice, sources.usa180, 0.036/unit.lb / usd_ag);
+new GoodDatum(goods.wool, sources.usa180, 0.416/unit.lb / usd_ag);
+new GoodDatum(goods.leather, sources.usa180, 0.198/unit.lb / usd_ag);
+new GoodDatum(goods.butter, sources.usa180, 0.198/unit.lb / usd_ag);
+new GoodDatum(goods.cheese, sources.usa180, 0.105/unit.lb / usd_ag);
+new GoodDatum(goods.milk, sources.usa180, 0.035/unit.qt / usd_ag);
+new GoodDatum(goods.cotton, sources.usa180, 0.222/unit.lb / usd_ag);
+new GoodDatum(goods.fish, sources.usa180, 0.057/unit.lb / usd_ag);
+new GoodDatum(goods.fishSaltwater, sources.usa180, 0.056/unit.lb / usd_ag);
+new GoodDatum(goods.flour, sources.usa180, 0.063/unit.lb / usd_ag);
+new GoodDatum(goods.oatmeal, sources.usa180, 0.125/unit.lb / usd_ag);
+new GoodDatum(goods.chocolate, sources.usa180, 0.33/unit.lb / usd_ag);
+new GoodDatum(goods.coffee, sources.usa180, 0.279/unit.lb / usd_ag);
+new GoodDatum(goods.honey, sources.usa180, 0.167/unit.lb / usd_ag);
+new GoodDatum(goods.lard, sources.usa180, 0.11/unit.lb / usd_ag);
+new GoodDatum(goods.sugar, sources.usa180, 0.13/unit.lb / usd_ag);
+new GoodDatum(goods.tea, sources.usa180, 0.799/unit.lb / usd_ag);
+new GoodDatum(goods.currant, sources.usa180, 0.167/unit.lb / usd_ag);
+new GoodDatum(goods.figs, sources.usa180, 0.125/unit.lb / usd_ag);
+new GoodDatum(goods.coal, sources.usa180, 1.03/(100*unit.lb) / usd_ag);
+new GoodDatum(goods.beer, sources.usa180, 0.192/unit.gal / usd_ag);
+new GoodDatum(goods.wine, sources.usa180, 1.17/unit.gal / usd_ag);
+new GoodDatum(goods.beef, sources.usa180, 0.05/unit.lb / usd_ag);
+new GoodDatum(goods.lamb, sources.usa180, 0.076/unit.lb / usd_ag);
+new GoodDatum(goods.pork, sources.usa180, 0.153/unit.lb / usd_ag);
+new GoodDatum(goods.veal, sources.usa180, 0.07/unit.lb / usd_ag);
+new GoodDatum(goods.almond, sources.usa180, 0.626/unit.lb / usd_ag);
+new GoodDatum(goods.chicken, sources.usa180, 0.08/unit.lb / usd_ag); // 1811
+new GoodDatum(goods.goose, sources.usa180, 0.08/unit.lb / usd_ag); // 1806
+new GoodDatum(goods.turkey, sources.usa180, 0.055/unit.lb / usd_ag);
+new GoodDatum(goods.silk, sources.usa180, 6.5/unit.lb / usd_ag);
+new GoodDatum(goods.cinnamon, sources.usa180, 0.083/unit.oz / usd_ag);
+new GoodDatum(goods.clove, sources.usa180, 0.165/unit.oz / usd_ag);
+new GoodDatum(goods.ginger, sources.usa180, 0.25/unit.lb / usd_ag);
+new GoodDatum(goods.mace, sources.usa180, 2/unit.lb / usd_ag);
+new GoodDatum(goods.mustard, sources.usa180, 0.031/unit.oz / usd_ag);
+new GoodDatum(goods.nutmeg, sources.usa180, 5/unit.lb / usd_ag);
+new GoodDatum(goods.pepper, sources.usa180, 0.04/unit.oz / usd_ag);
+new GoodDatum(goods.vinegar, sources.usa180, 0.201/unit.gal / usd_ag);
+new GoodDatum(goods.candle, sources.usa180, 0.2/unit.lb / usd_ag);
+new GoodDatum(goods.soap, sources.usa180, 0.1/unit.lb / usd_ag);
+new GoodDatum(goods.tallow, sources.usa180, 0.167/unit.lb / usd_ag);
+new GoodDatum(goods.tobacco, sources.usa180, 0.083/unit.lb / usd_ag);
+new GoodDatum(goods.iron, sources.usa180, 0.055/unit.lb / usd_ag); // 1752 - 1830
+
+// 1850
+new GoodDatum(goods.hops, sources.usa185, 0.189/unit.lb / usd_ag);
+new GoodDatum(goods.rice, sources.usa185, 0.05/unit.lb / usd_ag);
+new GoodDatum(goods.squash, sources.usa185, 0.01/unit.lb / usd_ag);
+new GoodDatum(goods.potatoSweet, sources.usa185, 0.029/unit.lb / usd_ag);
+new GoodDatum(goods.butter, sources.usa185, 0.206/unit.lb / usd_ag);
+new GoodDatum(goods.cheese, sources.usa185, 0.094/unit.lb / usd_ag);
+new GoodDatum(goods.milk, sources.usa185, 0.053/unit.qt / usd_ag);
+new GoodDatum(goods.cotton, sources.usa185, 0.1/unit.lb / usd_ag);
+new GoodDatum(goods.fish, sources.usa185, 0.042/unit.lb / usd_ag);
+new GoodDatum(goods.fishSaltwater, sources.usa185, 0.035/unit.lb / usd_ag);
+new GoodDatum(goods.flour, sources.usa185, 0.037/unit.lb / usd_ag);
+new GoodDatum(goods.oatmeal, sources.usa185, 0.095/unit.lb / usd_ag);
+new GoodDatum(goods.chocolate, sources.usa185, 0.202/unit.lb / usd_ag);
+new GoodDatum(goods.coffee, sources.usa185, 0.137/unit.lb / usd_ag);
+new GoodDatum(goods.lard, sources.usa185, 0.098/unit.lb / usd_ag);
+new GoodDatum(goods.soda, sources.usa185, 0.06/unit.lb / usd_ag);
+new GoodDatum(goods.sugar, sources.usa185, 0.078/unit.lb / usd_ag);
+new GoodDatum(goods.tea, sources.usa185, 0.378/unit.lb / usd_ag);
+new GoodDatum(goods.citron, sources.usa185, 0.301/unit.lb / usd_ag);
+new GoodDatum(goods.currant, sources.usa185, 0.123/unit.lb / usd_ag);
+new GoodDatum(goods.figs, sources.usa185, 0.152/unit.lb / usd_ag);
+new GoodDatum(goods.coal, sources.usa185, 7/(2000*unit.lb) / usd_ag);
+new GoodDatum(goods.beer, sources.usa185, 0.315/unit.gal / usd_ag);
+new GoodDatum(goods.wine, sources.usa185, 0.25/unit.qt / usd_ag);
+new GoodDatum(goods.beef, sources.usa185, 0.113/unit.lb / usd_ag);
+new GoodDatum(goods.lamb, sources.usa185, 0.081/unit.lb / usd_ag);
+new GoodDatum(goods.pork, sources.usa185, 0.094/unit.lb / usd_ag);
+new GoodDatum(goods.veal, sources.usa185, 0.1/unit.lb / usd_ag);
+new GoodDatum(goods.almond, sources.usa185, 0.151/unit.lb / usd_ag);
+new GoodDatum(goods.walnut, sources.usa185, 0.125/unit.lb / usd_ag);
+new GoodDatum(goods.chicken, sources.usa185, 0.11/unit.lb / usd_ag); // 1834
+new GoodDatum(goods.goose, sources.usa185, 0.096/unit.lb / usd_ag);
+new GoodDatum(goods.turkey, sources.usa185, 0.124/unit.lb / usd_ag);
+new GoodDatum(goods.silk, sources.usa185, 0.56/unit.oz / usd_ag);
+new GoodDatum(goods.cinnamon, sources.usa185, 0.5/unit.lb / usd_ag);
+new GoodDatum(goods.clove, sources.usa185, 0.399/unit.lb / usd_ag);
+new GoodDatum(goods.ginger, sources.usa185, 0.124/unit.lb / usd_ag);
+new GoodDatum(goods.mace, sources.usa185, 1.48/unit.lb / usd_ag);
+new GoodDatum(goods.mustard, sources.usa185, 0.44/unit.lb / usd_ag);
+new GoodDatum(goods.nutmeg, sources.usa185, 1.71/unit.lb / usd_ag);
+new GoodDatum(goods.pepper, sources.usa185, 0.226/unit.lb / usd_ag);
+new GoodDatum(goods.vinegar, sources.usa185, 0.185/unit.gal / usd_ag);
+new GoodDatum(goods.candle, sources.usa185, 0.135/unit.lb / usd_ag);
+new GoodDatum(goods.soap, sources.usa185, 0.081/unit.lb / usd_ag);
+new GoodDatum(goods.tallow, sources.usa185, 0.08/unit.lb / usd_ag); // 1841
+new GoodDatum(goods.tobacco, sources.usa185, 0.285/unit.lb / usd_ag);
 
 function blankTD(){
 	return document.createElement('td');
@@ -248,3 +416,4 @@ function main(){
 }
 
 main();
+// TODO item categories with background colors
