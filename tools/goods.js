@@ -329,7 +329,8 @@ new GoodDatum(goods.copper, sources.usa202, 3.73/unit.lb/(23.35/unit.ozt)); // h
 new GoodDatum(goods.iron, sources.usa202, 129.25/1000000/(23.35/unit.ozt)); // iron ore price
 
 // 301 CE ROME
-const grainDensity = 27215.5 / 35.2391; // g/L of grains https://www.smallfarmcanada.ca/resources/standard-weights-per-bushel-for-agricultural-commodities
+/** g/L of grains https://www.smallfarmcanada.ca/resources/standard-weights-per-bushel-for-agricultural-commodities */
+const grainDensity = 27215.5 / 35.2391;
 new GoodDatum(goods.wheat, sources.rome0, 100/20/(17*grainDensity)); // 100 denarii for 17L
 new GoodDatum(goods.barley, sources.rome0, 60/20/(17*grainDensity));
 new GoodDatum(goods.millet, sources.rome0, 100/20/(17*grainDensity));
@@ -496,6 +497,11 @@ new GoodDatum(goods.salt, sources.chinaTang, (250 + 370)/2 * china.cash / (saltg
 // "a catty of pure copper fetched 150 cash, and raw copper fetched 100."
 new GoodDatum(goods.copper, sources.chinaTang, (100 + 150)/2 * china.cash / china.catty);
 new GoodDatum(goods.beef, sources.chinaTang, 5 * china.cash / china.catty);
+
+// https://www.jstor.org/stable/2123972?seq=5
+new GoodDatum(goods.gold, sources.chinaMing, 5); // went from 1:4 to 1:6 during the ming dynasty, increasing to European levels during the 17th c.
+new GoodDatum(goods.gold, sources.ind14, 8);
+new GoodDatum(goods.rice, sources.chinaMing, 50 / (100 * grainDensity)); // varied from ~35g to a bit over 100g, but was close to 50 for the first half of the dynasty
 
 // https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=79
 // 1800
