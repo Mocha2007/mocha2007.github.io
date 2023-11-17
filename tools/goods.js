@@ -537,9 +537,9 @@ const china = {
 	get catty(){
 		return 16 * this.tael;
 	},
-	/** L per dou */
+	/** L per dou https://en.wikipedia.org/wiki/Chinese_units_of_measurement#Volume */
 	dou: 10.354688,
-	/** L per hu */
+	/** L per hu https://en.wikipedia.org/wiki/Economy_of_the_Han_dynasty#Subsistence */
 	hu: 20,
 	/** g per picul */
 	get picul(){
