@@ -241,6 +241,7 @@ const goods = {
 	// MISC
 	charcoal: new Good('Charcoal', 'Misc'),
 	coal: new Good('Coal', 'Misc'),
+	copper: new Good('Copper', 'Misc'),
 	firewood: new Good('Firewood', 'Misc'),
 	glass: new Good('Glass', 'Misc'),
 	iron: new Good('Iron', 'Misc'),
@@ -264,8 +265,8 @@ const sources = {
 
 // value of a pound, bimetallic ratio:
 // https://en.wikipedia.org/wiki/Pound_sterling#History_(600%E2%80%931945)
-new GoodDatum(goods.gold, sources.med14, 258.9/23.21);
-new GoodDatum(goods.gold, sources.med15, 172.6/15.47);
+const gold14 = new GoodDatum(goods.gold, sources.med14, 258.9/23.21);
+const gold15 = new GoodDatum(goods.gold, sources.med15, 172.6/15.47);
 new GoodDatum(goods.gold, sources.med16, 115.1/10.31);
 new GoodDatum(goods.gold, sources.med17, 111.4/((10.31 + 7.32238)/2));
 new GoodDatum(goods.gold, sources.med18, 111.4/7.32238);
@@ -273,6 +274,15 @@ new GoodDatum(goods.gold, sources.med18, 111.4/7.32238);
 new GoodDatum(goods.gold, sources.usa180, 15); // becomes 16 in 1834
 new GoodDatum(goods.gold, sources.usa185, 16);
 new GoodDatum(goods.gold, sources.usa202, 1962.98/23.35);
+
+// copper values
+new GoodDatum(goods.copper, sources.rome0, 0.355 / 12); // https://seekingalpha.com/article/4181917-copper-silver-ratio-range-for-thousands-of-years
+new GoodDatum(goods.copper, sources.med14, 0.13 / 12); // https://seekingalpha.com/article/4181917-copper-silver-ratio-range-for-thousands-of-years
+new GoodDatum(goods.copper, sources.med17, 5*0.5/240/11/(5/3.58/unit.ozt)); // https://en.wikipedia.org/wiki/History_of_the_halfpenny#Base-metal_halfpennies
+new GoodDatum(goods.copper, sources.med18, 5*0.5/240/((10.3+9.4)/2)/(5/3.58/unit.ozt)); // https://en.wikipedia.org/wiki/History_of_the_halfpenny#The_United_Kingdom
+new GoodDatum(goods.copper, sources.usa180, 0.01/13.48/(1.29/unit.ozt)); // A penny was ~100% pure copper and weighed 13.48g
+new GoodDatum(goods.copper, sources.usa185, 0.22/unit.lb/(1.29/unit.ozt)); // https://pubs.usgs.gov/sir/2012/5188/sir2012-5188.pdf
+new GoodDatum(goods.copper, sources.usa202, 3.73/unit.lb/(23.35/unit.ozt)); // https://commodity.com/precious-metals/copper/price/
 
 // 301 CE ROME
 const grainDensity = 27215.5 / 35.2391; // g/L of grains https://www.smallfarmcanada.ca/resources/standard-weights-per-bushel-for-agricultural-commodities
