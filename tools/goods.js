@@ -206,6 +206,7 @@ const sources = {
 	med18: new Source('18th c.', 'England', ''),
 	usa180: new Source('c. 1800', 'US', 'https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76'),
 	usa185: new Source('c. 1850', 'US', 'https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76'),
+	usa202: new Source('2023', 'US', 'https://www.walmart.com'), // i just went onto walmart lol
 };
 
 // value of a pound, bimetallic ratio:
@@ -218,6 +219,7 @@ new GoodDatum(goods.gold, sources.med18, 111.4/7.32238);
 // https://en.wikipedia.org/wiki/Bimetallism#United_States
 new GoodDatum(goods.gold, sources.usa180, 15); // becomes 16 in 1834
 new GoodDatum(goods.gold, sources.usa185, 16);
+new GoodDatum(goods.gold, sources.usa202, 1962.98/23.35);
 
 // 301 CE ROME
 new GoodDatum(goods.wine, sources.rome0, 8/20/500); // 8 denarii for 500mL
@@ -393,6 +395,49 @@ new GoodDatum(goods.candle, sources.usa185, 0.135/unit.lb / usd_ag);
 new GoodDatum(goods.soap, sources.usa185, 0.081/unit.lb / usd_ag);
 new GoodDatum(goods.tallow, sources.usa185, 0.08/unit.lb / usd_ag); // 1841
 new GoodDatum(goods.tobacco, sources.usa185, 0.285/unit.lb / usd_ag);
+
+// TODAY PRICES
+const usd_ag2 = 23.35 / unit.ozt; // current value
+new GoodDatum(goods.rice, sources.usa202, 0.042/unit.oz / usd_ag2);
+new GoodDatum(goods.flour, sources.usa202, 0.027/unit.oz / usd_ag2);
+new GoodDatum(goods.oatmeal, sources.usa202, 0.095/unit.oz / usd_ag2);
+new GoodDatum(goods.butter, sources.usa202, 0.236/unit.oz / usd_ag2);
+new GoodDatum(goods.cheese, sources.usa202, 0.155/unit.oz / usd_ag2);
+new GoodDatum(goods.milk, sources.usa202, 0.022/unit.oz / usd_ag2);
+new GoodDatum(goods.beef, sources.usa202, 6.48/unit.lb / usd_ag2);
+new GoodDatum(goods.pork, sources.usa202, 4.47/unit.lb / usd_ag2);
+new GoodDatum(goods.chicken, sources.usa202, 2.67/unit.lb / usd_ag2);
+new GoodDatum(goods.turkey, sources.usa202, 7.5/unit.lb / usd_ag2);
+new GoodDatum(goods.fish, sources.usa202, 4.24/unit.lb / usd_ag2); // Tilapia filets
+new GoodDatum(goods.fishSardines, sources.usa202, 0.285/unit.oz / usd_ag2);
+new GoodDatum(goods.potatoSweet, sources.usa202, 0.64/unit.lb / usd_ag2);
+new GoodDatum(goods.squash, sources.usa202, 0.98/unit.lb / usd_ag2); // Butternut
+new GoodDatum(goods.almond, sources.usa202, 0.389/unit.oz / usd_ag2);
+new GoodDatum(goods.walnut, sources.usa202, 0.374/unit.oz / usd_ag2);
+new GoodDatum(goods.cinnamon, sources.usa202, 0.496/unit.oz / usd_ag2);
+new GoodDatum(goods.clove, sources.usa202, 3.35/unit.oz / usd_ag2);
+new GoodDatum(goods.ginger, sources.usa202, 0.495/unit.oz / usd_ag2);
+new GoodDatum(goods.mace, sources.usa202, 2.72/unit.oz / usd_ag2);
+new GoodDatum(goods.mustard, sources.usa202, 0.691/unit.oz / usd_ag2);
+new GoodDatum(goods.nutmeg, sources.usa202, 1.61/unit.oz / usd_ag2);
+new GoodDatum(goods.pepper, sources.usa202, 0.953/unit.oz / usd_ag2);
+new GoodDatum(goods.saffron, sources.usa202, 305.5/unit.oz / usd_ag2);
+new GoodDatum(goods.chocolate, sources.usa202, 0.145/unit.oz / usd_ag2);
+new GoodDatum(goods.coffee, sources.usa202, 0.247/unit.oz / usd_ag2);
+new GoodDatum(goods.honey, sources.usa202, 0.32/unit.oz / usd_ag2);
+new GoodDatum(goods.lard, sources.usa202, 0.08/unit.oz / usd_ag2);
+new GoodDatum(goods.oliveOil, sources.usa202, 0.281/unit.oz / usd_ag2);
+new GoodDatum(goods.salt, sources.usa202, 0.025/unit.oz / usd_ag2);
+new GoodDatum(goods.soda, sources.usa202, 0.058/unit.oz / usd_ag2);
+new GoodDatum(goods.sugar, sources.usa202, 0.048/unit.oz / usd_ag2);
+new GoodDatum(goods.tallow, sources.usa202, 39.99/(7*unit.lb) / usd_ag2);
+new GoodDatum(goods.tea, sources.usa202, 0.623/unit.oz / usd_ag2);
+new GoodDatum(goods.vinegar, sources.usa202, 0.029/unit.oz / usd_ag2);
+new GoodDatum(goods.ale, sources.usa202, 0.091/unit.oz / usd_ag2);
+new GoodDatum(goods.wine, sources.usa202, 0.136/unit.oz / usd_ag2);
+new GoodDatum(goods.candle, sources.usa202, 0.214/unit.oz / usd_ag2);
+new GoodDatum(goods.soap, sources.usa202, 0.148/unit.oz / usd_ag2);
+new GoodDatum(goods.charcoal, sources.usa202, 0.493/unit.lb / usd_ag2);
 
 function blankTD(){
 	return document.createElement('td');
