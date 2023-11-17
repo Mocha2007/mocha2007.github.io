@@ -67,11 +67,13 @@ class Good {
 	 * @param {string} name
 	 * @param {string} name
 	 */
-	constructor(name, category = 'NULL'){
+	constructor(name, category = 'NULL', unit = ''){
 		/** @type {string} */
 		this.name = name;
 		/** @type {Category} */
 		this.category = Category.fromString(category);
+		/** @type {string} */
+		this.unit = unit;
 		Good.goods.push(this);
 	}
 	get sourceArr(){
@@ -81,6 +83,8 @@ class Good {
 	get th(){
 		const elem = document.createElement('th');
 		elem.innerHTML = this.name;
+		if (this.unit)
+			elem.innerHTML += ` (g Ag / ${this.unit})`;
 		return elem;
 	}
 	get tr(){
@@ -170,6 +174,7 @@ const goods = {
 	// DAIRY
 	butter: new Good('Butter', 'Dairy'),
 	cheese: new Good('Cheese', 'Dairy'),
+	ghee: new Good('Ghee', 'Dairy'),
 	milk: new Good('Milk', 'Dairy'),
 	// MEAT
 	boarMeat: new Good('Boar Meat', 'Meat'),
@@ -216,11 +221,13 @@ const goods = {
 	hops: new Good('Hops', 'Ingredient'),
 	incense: new Good('Incense', 'Ingredient'),
 	lard: new Good('Lard', 'Ingredient'),
-	oliveOil: new Good('Olive Oil', 'Ingredient'),
+	oilOlive: new Good('Olive Oil', 'Ingredient'),
+	oilSesame: new Good('Sesame Oil', 'Ingredient'),
 	salt: new Good('Salt', 'Ingredient'),
 	sesame: new Good('Sesame', 'Ingredient'),
 	soda: new Good('Baking Soda', 'Ingredient'),
 	sugar: new Good('Sugar', 'Ingredient'),
+	sugarBrown: new Good('Sugar (Brown)', 'Ingredient'),
 	tallow: new Good('Tallow', 'Ingredient'),
 	tea: new Good('Tea', 'Ingredient'),
 	tobacco: new Good('Tobacco', 'Ingredient'),
@@ -244,6 +251,17 @@ const goods = {
 	ivory: new Good('Ivory', 'Luxury'),
 	silk: new Good('Silk', 'Luxury'),
 	turtleshell: new Good('Turtleshell', 'Luxury'),
+	// SLAVES
+	slaveF: new Good('Slave (f)', 'Misc', 'ea'),
+	slaveM: new Good('Slave (m)', 'Misc', 'ea'),
+	slaveSkilled: new Good('Slave (Skilled)', 'Misc', 'ea'),
+	slaveYoung: new Good('Slave (Young)', 'Misc', 'ea'),
+	// LIVESTOCK
+	horse: new Good('Horse', 'Misc', 'ea'),
+	pony: new Good('Pony', 'Misc', 'ea'),
+	bull: new Good('Bull', 'Misc', 'ea'),
+	cow: new Good('Cow', 'Misc', 'ea'),
+	sheep: new Good('Sheep', 'Misc', 'ea'),
 	// MISC
 	charcoal: new Good('Charcoal', 'Misc'),
 	coal: new Good('Coal', 'Misc'),
@@ -260,6 +278,7 @@ const sources = {
 	med12: new Source('12th c.', 'W. Eur.', 'http://www.medievalcoinage.com/prices/medievalprices.htm'),
 	med13: new Source('13th c.', 'England', 'http://medieval.ucdavis.edu/120D/Money.html'),
 	med14: new Source('14th c.', 'England', 'http://www.afamilystory.co.uk/history/wages-and-prices.aspx'),
+	ind14: new Source('14th c.', 'India', 'https://en.wikipedia.org/wiki/Market_reforms_of_Alauddin_Khalji'),
 	med15: new Source('15th c.', 'England', 'http://www.afamilystory.co.uk/history/wages-and-prices.aspx'),
 	med16: new Source('16th c.', 'England', 'http://www.afamilystory.co.uk/history/wages-and-prices.aspx'),
 	med17: new Source('17th c.', 'England', ''),
@@ -303,7 +322,7 @@ new GoodDatum(goods.sesame, sources.rome0, 200/20/(17*grainDensity));
 new GoodDatum(goods.cumin, sources.rome0, 200/20/(17*grainDensity));
 new GoodDatum(goods.wine, sources.rome0, 8/20/500); // 8 denarii for 500mL
 new GoodDatum(goods.beer, sources.rome0, 4/20/500); // 4 denarii for 500mL
-new GoodDatum(goods.oliveOil, sources.rome0, 40/20/500);
+new GoodDatum(goods.oilOlive, sources.rome0, 40/20/500);
 new GoodDatum(goods.vinegar, sources.rome0, 6/20/500);
 new GoodDatum(goods.salt, sources.rome0, 100/20/21000);
 new GoodDatum(goods.honey, sources.rome0, 40/20/500);
@@ -334,6 +353,13 @@ new GoodDatum(goods.saffron, sources.rome0, 2000/20/300);
 new GoodDatum(goods.incense, sources.rome0, 100/20/300);
 new GoodDatum(goods.pepper, sources.rome0, 800/20/300);
 new GoodDatum(goods.ginger, sources.rome0, 250/20/300);
+new GoodDatum(goods.slaveM, sources.rome0, (25000 + 30000)/2/20); // 25 - 30k denarii
+new GoodDatum(goods.slaveF, sources.rome0, (20000 + 25000)/2/20);
+new GoodDatum(goods.slaveYoung, sources.rome0, (10000 + 20000)/2/20);
+new GoodDatum(goods.cow, sources.rome0, 2000/2/20);
+new GoodDatum(goods.sheep, sources.rome0, 400/2/20);
+new GoodDatum(goods.horse, sources.rome0, 100000/2/20);
+new GoodDatum(goods.bull, sources.rome0, 5000/2/20);
 
 // ENGLAND
 // https://en.wikipedia.org/wiki/Penny_(English_coin)#History
@@ -483,6 +509,7 @@ new GoodDatum(goods.flour, sources.usa202, 0.027/unit.oz / usd_ag2);
 new GoodDatum(goods.oatmeal, sources.usa202, 0.095/unit.oz / usd_ag2);
 new GoodDatum(goods.butter, sources.usa202, 0.236/unit.oz / usd_ag2);
 new GoodDatum(goods.cheese, sources.usa202, 0.155/unit.oz / usd_ag2);
+new GoodDatum(goods.ghee, sources.usa202, 0.625/unit.oz / usd_ag2);
 new GoodDatum(goods.milk, sources.usa202, 0.022/unit.oz / usd_ag2);
 new GoodDatum(goods.beef, sources.usa202, 6.48/unit.lb / usd_ag2);
 new GoodDatum(goods.pork, sources.usa202, 4.47/unit.lb / usd_ag2);
@@ -508,11 +535,13 @@ new GoodDatum(goods.chocolate, sources.usa202, 0.145/unit.oz / usd_ag2);
 new GoodDatum(goods.coffee, sources.usa202, 0.247/unit.oz / usd_ag2);
 new GoodDatum(goods.honey, sources.usa202, 0.32/unit.oz / usd_ag2);
 new GoodDatum(goods.lard, sources.usa202, 0.08/unit.oz / usd_ag2);
-new GoodDatum(goods.oliveOil, sources.usa202, 0.281/unit.oz / usd_ag2);
+new GoodDatum(goods.oilOlive, sources.usa202, 0.281/unit.oz / usd_ag2);
+new GoodDatum(goods.oilSesame, sources.usa202, 0.536/unit.oz / usd_ag2);
 new GoodDatum(goods.salt, sources.usa202, 0.025/unit.oz / usd_ag2);
 new GoodDatum(goods.sesame, sources.usa202, 0.653/unit.oz / usd_ag2);
 new GoodDatum(goods.soda, sources.usa202, 0.058/unit.oz / usd_ag2);
 new GoodDatum(goods.sugar, sources.usa202, 0.048/unit.oz / usd_ag2);
+new GoodDatum(goods.sugarBrown, sources.usa202, 0.073/unit.oz / usd_ag2);
 new GoodDatum(goods.tallow, sources.usa202, 39.99/(7*unit.lb) / usd_ag2);
 new GoodDatum(goods.tea, sources.usa202, 0.623/unit.oz / usd_ag2);
 new GoodDatum(goods.vinegar, sources.usa202, 0.029/unit.oz / usd_ag2);
@@ -543,6 +572,41 @@ new GoodDatum(goods.sugar, sources.med18, 51.98/unit.cwt / eng_s_ag * PA_CORRECT
 new GoodDatum(goods.iron, sources.med18, 34.5*20/unit.t / eng_s_ag * PA_CORRECTION);
 new GoodDatum(goods.cotton, sources.med18, 2.15/unit.lb / eng_s_ag * PA_CORRECTION);
 // https://books.google.com/books?id=j1ArEAAAQBAJ&pg=PA9&source=gbs_toc_r&cad=2#v=onepage&q&f=false
+
+// https://en.wikipedia.org/wiki/Market_reforms_of_Alauddin_Khalji
+const india = {
+	// "Firishta states that 1 silver tanka was equal to 50 jitals."
+	get jital(){
+		return india.tanka/50;
+	},
+	/** grams in one Mann https://en.wikipedia.org/wiki/Maund#Delhi_Sultanate */
+	mann: 11540,
+	// "a tanka was made of one tola of gold or silver."
+	get tanka(){
+		return india.tola;
+	},
+	/** grams in one Sir https://en.wikipedia.org/wiki/Seer_(unit) */
+	sir: 1250,
+	/** grams in one Tola https://en.wikipedia.org/wiki/Tola_(unit) */
+	tola: 11.6638038,
+};
+new GoodDatum(goods.wheat, sources.ind14, 7.5 * india.jital / india.mann);
+new GoodDatum(goods.barley, sources.ind14, 4 * india.jital / india.mann);
+new GoodDatum(goods.rice, sources.ind14, 5 * india.jital / india.mann);
+new GoodDatum(goods.sugar, sources.ind14, 1.5 * india.jital / india.sir);
+new GoodDatum(goods.sugarBrown, sources.ind14, 1 * india.jital / (3 * india.sir));
+new GoodDatum(goods.ghee, sources.ind14, 1 * india.jital / (1.5 * india.sir));
+new GoodDatum(goods.oilSesame, sources.ind14, 1 * india.jital / (3 * india.sir));
+new GoodDatum(goods.salt, sources.ind14, 1 * india.jital / (5 * india.sir));
+new GoodDatum(goods.slaveF, sources.ind14, (5 + 40)/2 * india.tanka);
+new GoodDatum(goods.slaveM, sources.ind14, (20 + 30)/2 * india.tanka);
+new GoodDatum(goods.slaveSkilled, sources.ind14, (10 + 15)/2 * india.tanka);
+new GoodDatum(goods.slaveYoung, sources.ind14, (7 + 8)/2 * india.tanka);
+new GoodDatum(goods.horse, sources.ind14, (60 + 120)/2 * india.tanka);
+new GoodDatum(goods.pony, sources.ind14, (10 + 25)/2 * india.tanka);
+new GoodDatum(goods.bull, sources.ind14, 3 * india.tanka);
+new GoodDatum(goods.cow, sources.ind14, (1.5 + 4)/2 * india.tanka);
+new GoodDatum(goods.sheep, sources.ind14, (10 + 12)/2 * india.jital);
 
 function blankTD(){
 	return document.createElement('td');
