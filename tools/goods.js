@@ -314,6 +314,7 @@ const goods = {
 	silk: new Good('Silk', 'Luxury'),
 	turtleshell: new Good('Turtleshell', 'Luxury'),
 	// SLAVES
+	wageLaborer: new Good('Wage (Laborer)', 'Misc', 'd'), // one day of labor
 	slaveF: new Good('Slave (f)', 'Misc', 'ea'),
 	slaveM: new Good('Slave (m)', 'Misc', 'ea'),
 	slaveSkilled: new Good('Slave (Skilled)', 'Misc', 'ea'),
@@ -422,6 +423,7 @@ new GoodDatum(goods.melon, sources.rome0, 4/2 /20 / unit.weights.melon);
 new GoodDatum(goods.apple, sources.rome0, 4/40 /20 / unit.weights.apple);
 new GoodDatum(goods.figs, sources.rome0, 4/20/300);
 new GoodDatum(goods.milk, sources.rome0, 8/20/500);
+new GoodDatum(goods.wageLaborer, sources.rome0, 25/20);
 new GoodDatum(goods.firewood, sources.rome0, 30/20/98000); // 30 denarii for 98 kg
 new GoodDatum(goods.ivory, sources.rome0, 150/20/300);
 new GoodDatum(goods.turtleshell, sources.rome0, 100/20/300);
@@ -481,6 +483,11 @@ new GoodDatum(goods.sugar, sources.med14, 18*unit.lbtower/240 / unit.lb);
 // https://web.archive.org/web/20110628231215/http://www.fordham.edu/halsall/source/medievalprices.html
 new GoodDatum(goods.candle, sources.med14, 2*unit.lbtower/240 / unit.lb);
 new GoodDatum(goods.candle, sources.med15, 4*unit.lbtower/240 / unit.lb);
+// WAGES
+new GoodDatum(goods.wageLaborer, sources.med13, (2 + 2.5)/2*unit.lbtower/240);
+new GoodDatum(goods.wageLaborer, sources.med14, (2.5 + 4.25)/2*unit.lbtower/240);
+new GoodDatum(goods.wageLaborer, sources.med15, (4.5 + 6)/2*unit.lbtower/240);
+new GoodDatum(goods.wageLaborer, sources.med16, (5.25 + 5.75)/2*unit.lbtower/240);
 
 // http://www.medievalcoinage.com/prices/medievalprices.htm
 new GoodDatum(goods.wine, sources.med12, 1.14*unit.lbtower/240 / unit.gal);
@@ -670,6 +677,11 @@ new GoodDatum(goods.soap, sources.usa185, 0.081/unit.lb / usd_ag);
 new GoodDatum(goods.tallow, sources.usa185, 0.08/unit.lb / usd_ag); // 1841
 new GoodDatum(goods.tobacco, sources.usa185, 0.285/unit.lb / usd_ag);
 
+// 19th century US wages
+// https://babel.hathitrust.org/cgi/pt?id=wu.89071501472&seq=69
+new GoodDatum(goods.wageLaborer, sources.usa180, 0.692 / usd_ag);
+new GoodDatum(goods.wageLaborer, sources.usa185, (0.333 + 1.67)/2 / usd_ag);
+
 // TODAY PRICES
 const usd_ag2 = 23.35 / unit.ozt; // current value
 new GoodDatum(goods.millet, sources.usa202, 0.309/unit.oz / usd_ag2);
@@ -735,6 +747,8 @@ new GoodDatum(goods.candle, sources.usa202, 0.214/unit.oz / usd_ag2);
 new GoodDatum(goods.soap, sources.usa202, 0.148/unit.oz / usd_ag2);
 new GoodDatum(goods.charcoal, sources.usa202, 0.493/unit.lb / usd_ag2);
 new GoodDatum(goods.ivory, sources.usa202, 3300/unit.lb / usd_ag2); // https://wildaid.org/14-things-you-didnt-know-about-todays-ivory-trade/
+
+new GoodDatum(goods.wageLaborer, sources.usa202, 8 * 7.25 / usd_ag2); // 8h min wage
 
 // https://babel.hathitrust.org/cgi/pt?id=uc1.32106007458745&seq=42
 new GoodDatum(goods.butter, sources.med17, 0.09/unit.lb / usd_ag);
