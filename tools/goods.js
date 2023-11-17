@@ -67,13 +67,13 @@ class Good {
 	 * @param {string} name
 	 * @param {string} name
 	 */
-	constructor(name, category = 'NULL', unit = ''){
+	constructor(name, category = 'NULL', unit_ = ''){
 		/** @type {string} */
 		this.name = name;
 		/** @type {Category} */
 		this.category = Category.fromString(category);
 		/** @type {string} */
-		this.unit = unit;
+		this.unit = unit_;
 		Good.goods.push(this);
 	}
 	get sourceArr(){
@@ -414,11 +414,14 @@ new GoodDatum(goods.ale, sources.med14, (0.75 + 1)/2*unit.lbtower/240 / unit.gal
 
 // https://regia.org/research/misc/costs.htm
 new GoodDatum(goods.chickenLive, sources.med12, 1/15*unit.lbtower/240);
-new GoodDatum(goods.cow, sources.med12, (64.5 + 88.5)/2*unit.lbtower/240);
+const priceMed12Cow = (64.5 + 88.5)/2*unit.lbtower/240;
+new GoodDatum(goods.cow, sources.med12, priceMed12Cow);
 new GoodDatum(goods.ox, sources.med12, (80.5 + 88.5)/2*unit.lbtower/240);
 new GoodDatum(goods.pig, sources.med12, 20*unit.lbtower/240);
-new GoodDatum(goods.sheep, sources.med12, 10*unit.lbtower/240);
-new GoodDatum(goods.horse, sources.med12, (193.5 + 308.5)/2*unit.lbtower/240);
+const priceMed12Sheep = 10*unit.lbtower/240;
+new GoodDatum(goods.sheep, sources.med12, priceMed12Sheep);
+const priceMed12Horse = (193.5 + 308.5)/2*unit.lbtower/240;
+new GoodDatum(goods.horse, sources.med12, priceMed12Horse);
 new GoodDatum(goods.dog, sources.med12, 4*unit.lbtower/240);
 new GoodDatum(goods.slaveM, sources.med12, 197.5*unit.lbtower/240);
 new GoodDatum(goods.slaveF, sources.med12, 131.5*unit.lbtower/240);
@@ -428,7 +431,8 @@ new GoodDatum(goods.silk, sources.med12, 37*unit.lbtower/240 / unit.oz);
 new GoodDatum(goods.cat, sources.med12, (1+4)/2*unit.lbtower/240);
 new GoodDatum(goods.gooseLive, sources.med14, (2.5 + 2)/2*unit.lbtower/240);
 new GoodDatum(goods.chickenLive, sources.med14, (0.5 + 1)/2*unit.lbtower/240);
-new GoodDatum(goods.ox, sources.med14, (6*12 + 8)*unit.lbtower/240);
+const priceMed14Ox = (6*12 + 8)*unit.lbtower/240;
+new GoodDatum(goods.ox, sources.med14, priceMed14Ox);
 
 new GoodDatum(goods.cow, sources.med13, 13*12*unit.lbtower/240);
 new GoodDatum(goods.cow, sources.med14, (9*12 + 5)*unit.lbtower/240);
@@ -639,6 +643,17 @@ new GoodDatum(goods.pony, sources.ind14, (10 + 25)/2 * india.tanka);
 new GoodDatum(goods.bull, sources.ind14, 3 * india.tanka);
 new GoodDatum(goods.cow, sources.ind14, (1.5 + 4)/2 * india.tanka);
 new GoodDatum(goods.sheep, sources.ind14, (10 + 12)/2 * india.jital);
+
+// https://www.mccormickscienceinstitute.com/resources/history-of-spices
+// "A pound of saffron cost the same as a horse;""
+new GoodDatum(goods.saffron, sources.med12, priceMed12Horse / unit.lb);
+// "a pound of ginger, as much as a sheep;"
+new GoodDatum(goods.ginger, sources.med12, priceMed12Sheep / unit.lb);
+// "2 pounds of mace as much as a cow."
+new GoodDatum(goods.mace, sources.med12, priceMed12Cow / (2 * unit.lb));
+// "A Germanic price table of AD 1393 lists a pound of nutmeg as worth 7 fat oxen."
+new GoodDatum(goods.nutmeg, sources.med14, priceMed14Ox / unit.lb);
+// cites "Duke, James A., ed. CRC Handbook of Medicinal Spices. CRC press, 2002."
 
 function blankTD(){
 	return document.createElement('td');
