@@ -271,8 +271,8 @@ const sources = {
 
 // value of a pound, bimetallic ratio:
 // https://en.wikipedia.org/wiki/Pound_sterling#History_(600%E2%80%931945)
-const gold14 = new GoodDatum(goods.gold, sources.med14, 258.9/23.21);
-const gold15 = new GoodDatum(goods.gold, sources.med15, 172.6/15.47);
+new GoodDatum(goods.gold, sources.med14, 258.9/23.21);
+new GoodDatum(goods.gold, sources.med15, 172.6/15.47);
 new GoodDatum(goods.gold, sources.med16, 115.1/10.31);
 new GoodDatum(goods.gold, sources.med17, 111.4/((10.31 + 7.32238)/2));
 new GoodDatum(goods.gold, sources.med18, 111.4/7.32238);
