@@ -1,4 +1,8 @@
 const unit = {
+	/** number of L in a bushel */
+	bu: 35.2390704,
+	/** hundredweight in grams */
+	cwt: 45359.24,
 	/** number of grams in a gallon of water */
 	gal: 3770,
 	/** number of grams in a quart of water */
@@ -13,6 +17,8 @@ const unit = {
 	oz: 453.5924/16,
 	/** troy ounce in grams */
 	ozt: 373.242/12,
+	/** imperial ton in grams */
+	t: 453.5924*2000,
 };
 
 class Category {
@@ -340,12 +346,12 @@ new GoodDatum(goods.butter, sources.med14, (4 + 3/4)*unit.lbtower/240 / (7*unit.
 new GoodDatum(goods.wool, sources.med15, (3 + 5/7)*unit.lbtower/240 / unit.lb);
 new GoodDatum(goods.cheese, sources.med15, 0.5*unit.lbtower/240 / unit.lb);
 new GoodDatum(goods.butter, sources.med15, 1*unit.lbtower/240 / unit.lb);
-new GoodDatum(goods.hops, sources.med15, (14*12 + 0.5)*unit.lbtower/240 / (100*unit.lb)); // 1s 0.5d per cwt
+new GoodDatum(goods.hops, sources.med15, (14*12 + 0.5)*unit.lbtower/240 / unit.cwt); // 1s 0.5d per cwt
 // "The weight standard was changed to the Troy pound (373.242 g) in 1527 under Henry VIII,"
 new GoodDatum(goods.wool, sources.med16, (7 + 1/2)*unit.lbt/240 / unit.lb);
 new GoodDatum(goods.cheese, sources.med16, 1*unit.lbt/240 / unit.lb);
 new GoodDatum(goods.butter, sources.med16, 3*unit.lbt/240 / unit.lb);
-new GoodDatum(goods.hops, sources.med16, (26*12 + 8)*unit.lbt/240 / (100*unit.lb));
+new GoodDatum(goods.hops, sources.med16, (26*12 + 8)*unit.lbt/240 / unit.cwt);
 
 // med13
 new GoodDatum(goods.wine, sources.med14, 3*unit.lbtower/240 / unit.gal);
@@ -396,7 +402,7 @@ new GoodDatum(goods.sugar, sources.usa180, 0.13/unit.lb / usd_ag);
 new GoodDatum(goods.tea, sources.usa180, 0.799/unit.lb / usd_ag);
 new GoodDatum(goods.currant, sources.usa180, 0.167/unit.lb / usd_ag);
 new GoodDatum(goods.figs, sources.usa180, 0.125/unit.lb / usd_ag);
-new GoodDatum(goods.coal, sources.usa180, 1.03/(100*unit.lb) / usd_ag);
+new GoodDatum(goods.coal, sources.usa180, 1.03/unit.cwt / usd_ag);
 new GoodDatum(goods.beer, sources.usa180, 0.192/unit.gal / usd_ag);
 new GoodDatum(goods.wine, sources.usa180, 1.17/unit.gal / usd_ag);
 new GoodDatum(goods.beef, sources.usa180, 0.05/unit.lb / usd_ag);
@@ -525,6 +531,18 @@ new GoodDatum(goods.beef, sources.med18, 0.04/unit.lb / usd_ag);
 
 new GoodDatum(goods.pork, sources.med17, 0.05/unit.lb / usd_ag);
 new GoodDatum(goods.pork, sources.med18, 0.07/unit.lb / usd_ag);
+
+// https://www.foodtimeline.org/1720.pdf
+const eng_s_ag = 111.4 / 20; // g Ag / shilling https://en.wikipedia.org/wiki/Pound_sterling#History_(600%E2%80%931945)
+const PA_CORRECTION = 50; // for some reason the prices listed are WAAAAAAY off... I'm basing this factor off the price of sugar decreasing exponentially from medieval times
+new GoodDatum(goods.wheat, sources.med18, 4.51/(grainDensity * unit.bu) / eng_s_ag * PA_CORRECTION);
+new GoodDatum(goods.tobacco, sources.med18, 19.98/unit.cwt / eng_s_ag * PA_CORRECTION);
+new GoodDatum(goods.rice, sources.med18, 20.63/unit.cwt / eng_s_ag * PA_CORRECTION);
+new GoodDatum(goods.flour, sources.med18, 13.10/unit.cwt / eng_s_ag * PA_CORRECTION);
+new GoodDatum(goods.sugar, sources.med18, 51.98/unit.cwt / eng_s_ag * PA_CORRECTION);
+new GoodDatum(goods.iron, sources.med18, 34.5*20/unit.t / eng_s_ag * PA_CORRECTION);
+new GoodDatum(goods.cotton, sources.med18, 2.15/unit.lb / eng_s_ag * PA_CORRECTION);
+// https://books.google.com/books?id=j1ArEAAAQBAJ&pg=PA9&source=gbs_toc_r&cad=2#v=onepage&q&f=false
 
 function blankTD(){
 	return document.createElement('td');
