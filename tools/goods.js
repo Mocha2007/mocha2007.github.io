@@ -655,6 +655,7 @@ new GoodDatum(goods.mace, sources.med12, priceMed12Cow / (2 * unit.lb));
 new GoodDatum(goods.nutmeg, sources.med14, priceMed14Ox / unit.lb);
 // cites "Duke, James A., ed. CRC Handbook of Medicinal Spices. CRC press, 2002.", but that doesn't mention it
 // http://soupsong.com/fnutmeg.html mentions it too
+// maybe look at https://memdb.libraries.rutgers.edu/posthumus-prices?field_postprice_month_value%5Bmin%5D=1&field_postprice_month_value%5Bmax%5D=12&field_postprice_year_value%5Bmin%5D=1572&field_postprice_year_value%5Bmax%5D=1813&items_per_page=50&order=field_postprice_price&sort=desc&page=1393
 
 function blankTD(){
 	return document.createElement('td');
