@@ -284,6 +284,9 @@ new GoodDatum(goods.copper, sources.usa180, 0.01/13.48/(1.29/unit.ozt)); // A pe
 new GoodDatum(goods.copper, sources.usa185, 0.22/unit.lb/(1.29/unit.ozt)); // https://pubs.usgs.gov/sir/2012/5188/sir2012-5188.pdf
 new GoodDatum(goods.copper, sources.usa202, 3.73/unit.lb/(23.35/unit.ozt)); // https://commodity.com/precious-metals/copper/price/
 
+// iron values
+new GoodDatum(goods.iron, sources.usa202, 129.25/1000000/(23.35/unit.ozt)); // iron ore price
+
 // 301 CE ROME
 const grainDensity = 27215.5 / 35.2391; // g/L of grains https://www.smallfarmcanada.ca/resources/standard-weights-per-bushel-for-agricultural-commodities
 new GoodDatum(goods.wheat, sources.rome0, 100/20/(17*grainDensity)); // 100 denarii for 17L
