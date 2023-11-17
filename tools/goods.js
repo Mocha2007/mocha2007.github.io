@@ -6,6 +6,8 @@ const unit = {
 	cwt: 45359.24,
 	/** number of grams in a gallon of water */
 	gal: 3770,
+	/** grams in a grain (no difference between troy/avoirdupois/etc) */
+	grain: 0.06479891,
 	/** g/L of grains https://www.smallfarmcanada.ca/resources/standard-weights-per-bushel-for-agricultural-commodities */
 	grainDensity: {
 		get ppb(){
@@ -793,10 +795,22 @@ const india = {
 	get tanka(){
 		return india.tola;
 	},
-	/** grams in one Sir https://en.wikipedia.org/wiki/Seer_(unit) */
+	/** grams in one Sir
+	 * https://en.wikipedia.org/wiki/Seer_(unit)#India
+	 * BENGAL		~923 g		80 tolas
+	 * SOUTH INDIA	?			24 local rupees
+	 * CHENNAI		~11340 g	25 lbs
+	 * GUJARAT		?			40 local rupees
+	 * MUMBAI		~12701 g	28 lbs
+	 * MAHARASHTRA	1000 g		1 kg
+	 * "STANDARD"	1250 g		1.25 kg
+	*/
 	sir: 1250,
-	/** grams in one Tola https://en.wikipedia.org/wiki/Tola_(unit) */
-	tola: 11.6638038,
+	/**
+	 * grams in one Tola https://en.wikipedia.org/wiki/Tola_(unit)
+	 * "The very first rupee (Urdu: رپيا; rupayā), minted by Sher Shah Suri (1540–45), had a mass of 178 troy grains"
+	 */
+	tola: 178 * unit.grain,
 };
 new GoodDatum(goods.wheat, sources.ind14, 7.5 * india.jital / india.mann);
 new GoodDatum(goods.barley, sources.ind14, 4 * india.jital / india.mann);
