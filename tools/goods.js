@@ -653,7 +653,8 @@ new GoodDatum(goods.ginger, sources.med12, priceMed12Sheep / unit.lb);
 new GoodDatum(goods.mace, sources.med12, priceMed12Cow / (2 * unit.lb));
 // "A Germanic price table of AD 1393 lists a pound of nutmeg as worth 7 fat oxen."
 new GoodDatum(goods.nutmeg, sources.med14, priceMed14Ox / unit.lb);
-// cites "Duke, James A., ed. CRC Handbook of Medicinal Spices. CRC press, 2002."
+// cites "Duke, James A., ed. CRC Handbook of Medicinal Spices. CRC press, 2002.", but that doesn't mention it
+// http://soupsong.com/fnutmeg.html mentions it too
 
 function blankTD(){
 	return document.createElement('td');
