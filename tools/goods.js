@@ -15,15 +15,57 @@ const unit = {
 	ozt: 373.242/12,
 };
 
+class Category {
+	/**
+	 * @param {string} name
+	 * @param {string} bgColor
+	 */
+	constructor(name, bgColor, blackFore = false){
+		/** @type {string} */
+		this.name = name;
+		/** @type {string} */
+		this.bgColor = bgColor;
+		/** @type {boolean} */
+		this.blackFore = blackFore;
+		Category.categories.push(this);
+	}
+	static fromString(s){
+		return Category.categories.find(category => category.name === s) || NULL_CATEGORY;
+	}
+}
+/** @type {Category[]} */
+Category.categories = [];
+const NULL_CATEGORY = new Category('NULL', 'black');
+new Category('Gold', 'gold', true);
+new Category('Grain', 'wheat', true);
+new Category('Processed Grain', 'wheat', true);
+new Category('Dairy', '#ffd', true);
+new Category('Meat', 'red', true);
+new Category('Fowl', '#f40', true);
+new Category('Fish', '#0ff', true);
+new Category('Fruit', '#0c0', true);
+new Category('Vegetable', '#080', true);
+new Category('Nut', 'brown');
+new Category('Spice', '#c86', true);
+new Category('Ingredient', 'white', true);
+new Category('Alcohol', '#808');
+new Category('Fabric', '#fec', true);
+new Category('Tool', 'grey', true);
+new Category('Luxury', 'magenta', true);
+new Category('Misc', 'black');
+
 
 // eg. "cheese"
 class Good {
 	/**
 	 * @param {string} name
+	 * @param {string} name
 	 */
-	constructor(name){
+	constructor(name, category = 'NULL'){
 		/** @type {string} */
 		this.name = name;
+		/** @type {Category} */
+		this.category = Category.fromString(category);
 		Good.goods.push(this);
 	}
 	get sourceArr(){
@@ -37,6 +79,9 @@ class Good {
 	}
 	get tr(){
 		const elem = document.createElement('tr');
+		elem.style.backgroundColor = this.category.bgColor;
+		if (this.category.blackFore)
+			elem.style.color = 'black';
 		elem.appendChild(this.th);
 		// add col for each source
 		this.sourceArr.forEach(datum => elem.appendChild(datum ? datum.td : blankTD()));
@@ -105,101 +150,101 @@ class Source {
 Source.sources = [];
 
 const goods = {
-	gold: new Good('Gold'),
+	gold: new Good('Gold', 'Gold'),
 	// have gold on top, the rest in groups alphabetical or in logical order...
 	// GRAIN
-	barley: new Good('Barley'),
-	millet: new Good('Millet'),
-	rice: new Good('Rice'),
-	spelt: new Good('Spelt'),
-	wheat: new Good('Wheat'),
+	barley: new Good('Barley', 'Grain'),
+	millet: new Good('Millet', 'Grain'),
+	rice: new Good('Rice', 'Grain'),
+	spelt: new Good('Spelt', 'Grain'),
+	wheat: new Good('Wheat', 'Grain'),
 	// PROCESSED GRAIN
-	flour: new Good('Flour'),
-	oatmeal: new Good('Oatmeal'),
+	flour: new Good('Flour', 'Processed Grain'),
+	oatmeal: new Good('Oatmeal', 'Processed Grain'),
 	// DAIRY
-	butter: new Good('Butter'),
-	cheese: new Good('Cheese'),
-	milk: new Good('Milk'),
+	butter: new Good('Butter', 'Dairy'),
+	cheese: new Good('Cheese', 'Dairy'),
+	milk: new Good('Milk', 'Dairy'),
 	// MEAT
-	boarMeat: new Good('Boar Meat'),
-	beef: new Good('Beef'),
-	lamb: new Good('Lamb'),
-	pork: new Good('Pork'),
-	veal: new Good('Veal'),
+	boarMeat: new Good('Boar Meat', 'Meat'),
+	beef: new Good('Beef', 'Meat'),
+	lamb: new Good('Lamb', 'Meat'),
+	pork: new Good('Pork', 'Meat'),
+	veal: new Good('Veal', 'Meat'),
 	// FOWL
-	chicken: new Good('Chicken'),
-	goose: new Good('Goose'),
-	turkey: new Good('Turkey'),
+	chicken: new Good('Chicken', 'Fowl'),
+	goose: new Good('Goose', 'Fowl'),
+	turkey: new Good('Turkey', 'Fowl'),
 	// FISH
-	fish: new Good('Fish'),
-	fishFreshwater: new Good('Freshwater Fish'),
-	fishSaltwater: new Good('Saltwater Fish'),
-	fishSalted: new Good('Salted Fish'),
-	fishSardines: new Good('Sardines'),
+	fish: new Good('Fish', 'Fish'),
+	fishFreshwater: new Good('Freshwater Fish', 'Fish'),
+	fishSaltwater: new Good('Saltwater Fish', 'Fish'),
+	fishSalted: new Good('Salted Fish', 'Fish'),
+	fishSardines: new Good('Sardines', 'Fish'),
 	// FRUIT
-	citron: new Good('Citron'),
-	currant: new Good('Currant'),
-	figs: new Good('Figs'),
+	citron: new Good('Citron', 'Fruit'),
+	currant: new Good('Currant', 'Fruit'),
+	figs: new Good('Figs', 'Fruit'),
 	// VEGETABLES
-	garlic: new Good('Garlic'),
-	potatoSweet: new Good('Sweet Potato'),
-	squash: new Good('Squash'),
+	garlic: new Good('Garlic', 'Vegetable'),
+	potatoSweet: new Good('Sweet Potato', 'Vegetable'),
+	squash: new Good('Squash', 'Vegetable'),
 	// NUTS
-	almond: new Good('Almond'),
-	walnut: new Good('Walnut'),
+	almond: new Good('Almond', 'Nut'),
+	walnut: new Good('Walnut', 'Nut'),
 	// SPICES/HERBS
-	cinnamon: new Good('Cinnamon'),
-	clove: new Good('Clove'),
-	cumin: new Good('Cumin'),
-	ginger: new Good('Ginger'),
-	mace: new Good('Mace'),
-	mustard: new Good('Mustard'),
-	nutmeg: new Good('Nutmeg'),
-	pepper: new Good('Black Pepper'),
-	saffron: new Good('Saffron'),
+	cinnamon: new Good('Cinnamon', 'Spice'),
+	clove: new Good('Clove', 'Spice'),
+	cumin: new Good('Cumin', 'Spice'),
+	ginger: new Good('Ginger', 'Spice'),
+	mace: new Good('Mace', 'Spice'),
+	mustard: new Good('Mustard', 'Spice'),
+	nutmeg: new Good('Nutmeg', 'Spice'),
+	pepper: new Good('Black Pepper', 'Spice'),
+	saffron: new Good('Saffron', 'Spice'),
 	// MISC FOOD / INGREDIENTS
-	chocolate: new Good('Chocolate'),
-	coffee: new Good('Coffee'),
-	flax: new Good('Flax'),
-	honey: new Good('Honey'),
-	hops: new Good('Hops'),
-	incense: new Good('Incense'),
-	lard: new Good('Lard'),
-	oliveOil: new Good('Olive Oil'),
-	salt: new Good('Salt'),
-	sesame: new Good('Sesame'),
-	soda: new Good('Baking Soda'),
-	sugar: new Good('Sugar'),
-	tallow: new Good('Tallow'),
-	tea: new Good('Tea'),
-	tobacco: new Good('Tobacco'),
-	vinegar: new Good('Vinegar'),
+	chocolate: new Good('Chocolate', 'Ingredient'),
+	coffee: new Good('Coffee', 'Ingredient'),
+	flax: new Good('Flax', 'Ingredient'),
+	honey: new Good('Honey', 'Ingredient'),
+	hops: new Good('Hops', 'Ingredient'),
+	incense: new Good('Incense', 'Ingredient'),
+	lard: new Good('Lard', 'Ingredient'),
+	oliveOil: new Good('Olive Oil', 'Ingredient'),
+	salt: new Good('Salt', 'Ingredient'),
+	sesame: new Good('Sesame', 'Ingredient'),
+	soda: new Good('Baking Soda', 'Ingredient'),
+	sugar: new Good('Sugar', 'Ingredient'),
+	tallow: new Good('Tallow', 'Ingredient'),
+	tea: new Good('Tea', 'Ingredient'),
+	tobacco: new Good('Tobacco', 'Ingredient'),
+	vinegar: new Good('Vinegar', 'Ingredient'),
 	// ALCOHOL
-	ale: new Good('Ale'),
-	beer: new Good('Beer'),
-	wine: new Good('Wine'),
+	ale: new Good('Ale', 'Alcohol'),
+	beer: new Good('Beer', 'Alcohol'),
+	wine: new Good('Wine', 'Alcohol'),
 	// DOWN FEATHERS LINING WOOL
-	cotton: new Good('Cotton'),
-	downGoose: new Good('Goose Down'),
-	downWillow: new Good('Willow Down'),
-	leather: new Good('Leather'),
-	linen: new Good('Linen'),
-	wool: new Good('Wool'),
+	cotton: new Good('Cotton', 'Fabric'),
+	downGoose: new Good('Goose Down', 'Fabric'),
+	downWillow: new Good('Willow Down', 'Fabric'),
+	leather: new Good('Leather', 'Fabric'),
+	linen: new Good('Linen', 'Fabric'),
+	wool: new Good('Wool', 'Fabric'),
 	// TOOLS
-	candle: new Good('Candles'),
-	ink: new Good('Ink'),
-	soap: new Good('Soap'),
+	candle: new Good('Candles', 'Tool'),
+	ink: new Good('Ink', 'Tool'),
+	soap: new Good('Soap', 'Tool'),
 	// LUXURY MATERIALS
-	glass: new Good('Glass'),
-	ivory: new Good('Ivory'),
-	silk: new Good('Silk'),
-	turtleshell: new Good('Turtleshell'),
+	ivory: new Good('Ivory', 'Luxury'),
+	silk: new Good('Silk', 'Luxury'),
+	turtleshell: new Good('Turtleshell', 'Luxury'),
 	// MISC
-	charcoal: new Good('Charcoal'),
-	coal: new Good('Coal'),
-	firewood: new Good('Firewood'),
-	iron: new Good('Iron'),
-	wax: new Good('Wax'),
+	charcoal: new Good('Charcoal', 'Misc'),
+	coal: new Good('Coal', 'Misc'),
+	firewood: new Good('Firewood', 'Misc'),
+	glass: new Good('Glass', 'Misc'),
+	iron: new Good('Iron', 'Misc'),
+	wax: new Good('Wax', 'Misc'),
 };
 
 const sources = {
