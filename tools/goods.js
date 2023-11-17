@@ -21,6 +21,10 @@ const unit = {
 		get rice(){
 			return 45 * this.ppb;
 		},
+		// https://kirschner.med.harvard.edu/files/bionumbers/Weight%20per%20bushel%20and%20bulk%20densities%20of%20grain%20and%20seeds.pdf
+		get sesame(){
+			return 46 * this.ppb;
+		},
 		get spelt(){
 			return 40 * this.ppb;
 		},
@@ -364,7 +368,7 @@ new GoodDatum(goods.wheat, sources.rome0, 100/20/(17*unit.grainDensity.wheat)); 
 new GoodDatum(goods.barley, sources.rome0, 60/20/(17*unit.grainDensity.barley));
 new GoodDatum(goods.millet, sources.rome0, 100/20/(17*unit.grainDensity.millet));
 new GoodDatum(goods.spelt, sources.rome0, 100/20/(17*unit.grainDensity.spelt));
-new GoodDatum(goods.sesame, sources.rome0, 200/20/(17*unit.grainDensity.NULL));
+new GoodDatum(goods.sesame, sources.rome0, 200/20/(17*unit.grainDensity.sesame));
 new GoodDatum(goods.cumin, sources.rome0, 200/20/(17*unit.grainDensity.NULL));
 new GoodDatum(goods.wine, sources.rome0, 8/20/500); // 8 denarii for 500mL
 new GoodDatum(goods.beer, sources.rome0, 4/20/500); // 4 denarii for 500mL
