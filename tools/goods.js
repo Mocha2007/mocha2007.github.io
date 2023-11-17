@@ -286,11 +286,14 @@ const goods = {
 
 const sources = {
 	// "Silver, pure, in bars or coins – 6000 denarii for about 300 g" thus 1g Ag = 20 denarii
+	chinaHan: new Source('Han', 'China', ''), // 206 BCE - 220 CE
 	rome0: new Source(301, 'Rome', 'https://imperiumromanum.pl/en/roman-economy/roman-goods-prices/'),
+	chinaTang: new Source('Tang', 'China', ''), // 618 - 907
 	med12: new Source('12th c.', 'W. Eur.', 'http://www.medievalcoinage.com/prices/medievalprices.htm'),
 	med13: new Source('13th c.', 'England', 'http://medieval.ucdavis.edu/120D/Money.html'),
 	med14: new Source('14th c.', 'England', 'http://www.afamilystory.co.uk/history/wages-and-prices.aspx'),
 	ind14: new Source('14th c.', 'India', 'https://en.wikipedia.org/wiki/Market_reforms_of_Alauddin_Khalji'),
+	chinaMing: new Source('Ming', 'China', ''), // 1368 - 1644
 	med15: new Source('15th c.', 'England', 'http://www.afamilystory.co.uk/history/wages-and-prices.aspx'),
 	med16: new Source('16th c.', 'England', 'http://www.afamilystory.co.uk/history/wages-and-prices.aspx'),
 	med17: new Source('17th c.', 'England', ''),
@@ -445,6 +448,25 @@ new GoodDatum(goods.cow, sources.med14, (9*12 + 5)*unit.lbtower/240);
 new GoodDatum(goods.sheep, sources.med14, (1*12 + 5)*unit.lbtower/240);
 new GoodDatum(goods.pig, sources.med14, 2*12*unit.lbtower/240);
 new GoodDatum(goods.horse, sources.med17, 20*unit.lbtower);
+
+// china
+const china = {
+	get cash(){
+		return china.tael / 1000;
+	},
+	/** L per hu */
+	hu: 20,
+	/** g Ag per tael */
+	tael: 40,
+};
+new GoodDatum(goods.horse, sources.chinaHan, 4500 * china.cash);
+new GoodDatum(goods.horse, sources.chinaTang, 25000 * china.cash);
+new GoodDatum(goods.gooseLive, sources.chinaMing, 1/2 * 3/10 * china.tael);
+new GoodDatum(goods.sheep, sources.chinaMing, 1/2 * china.tael);
+new GoodDatum(goods.pig, sources.chinaMing, 1 * china.tael);
+
+// https://en.wikipedia.org/wiki/Economy_of_the_Han_dynasty#Subsistence
+new GoodDatum(goods.rice, sources.chinaHan, (70 + 100)/2 * china.cash / (grainDensity * china.hu)); // technically it is "any grain" - but this seems to suggest the values of different grains were not substantially different between one another
 
 // https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=79
 // 1800
