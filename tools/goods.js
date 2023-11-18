@@ -23,9 +23,12 @@ const unit = {
 		get rice(){
 			return 45 * this.ppb;
 		},
-		/** g/mL salt density */
+		get rye(){
+			return 56 * this.ppb;
+		},
+		/** g/L salt density */
 		get salt(){
-			return 2.17;
+			return 2170;
 		},
 		// https://kirschner.med.harvard.edu/files/bionumbers/Weight%20per%20bushel%20and%20bulk%20densities%20of%20grain%20and%20seeds.pdf
 		get sesame(){
@@ -69,11 +72,13 @@ const unit = {
 		asparagus: 16, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345287/portions
 		beet: 80, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345290/portions
 		cabbage: 900, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345293/portions
+		citron: 65, // lemon https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344662/portions
 		leek: 89, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/169246/measures
 		lettuce: 539, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345309/portions
 		melon: 1000, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344736/portions
 		radish: 5, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345323/portions
 		turnip: 120, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345329/portions
+		walnut: 2, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2343008/portions
 	},
 };
 
@@ -381,7 +386,7 @@ new GoodDatum(goods.gold, sources.usa185, 16);
 new GoodDatum(goods.gold, sources.usa202, 1962.98/23.35);
 
 // copper values
-new GoodDatum(goods.copper, sources.rome0, 0.355 / 12); // https://seekingalpha.com/article/4181917-copper-silver-ratio-range-for-thousands-of-years
+// new GoodDatum(goods.copper, sources.rome0, 0.355 / 12); // https://seekingalpha.com/article/4181917-copper-silver-ratio-range-for-thousands-of-years
 new GoodDatum(goods.copper, sources.med14, 0.13 / 12); // https://seekingalpha.com/article/4181917-copper-silver-ratio-range-for-thousands-of-years
 new GoodDatum(goods.copper, sources.med17, 5*0.5/240/11/(5/3.58/unit.ozt)); // https://en.wikipedia.org/wiki/History_of_the_halfpenny#Base-metal_halfpennies
 new GoodDatum(goods.copper, sources.med18, 5*0.5/240/((10.3+9.4)/2)/(5/3.58/unit.ozt)); // https://en.wikipedia.org/wiki/History_of_the_halfpenny#The_United_Kingdom
@@ -395,27 +400,33 @@ new GoodDatum(goods.iron, sources.usa202, 129.25/1000000/(23.35/unit.ozt)); // i
 // 301 CE ROME
 // cf. https://www.academia.edu/23644199/New_English_translation_of_the_Price_Edict_of_Diocletianus
 const rome = {
+	correctiveFactor: 2.2, // 1 lb of gold = 72 d
 	get cwt(){
 		return 100 * this.lb;
 	},
 	/** g Ag / denarius */
 	get d(){
-		return this.lb / 96 * 0.05; // 1/96 roman pound 0.05 fineness https://en.wikipedia.org/wiki/Denarius#Debasement_and_evolution
+		return this.lb / 96 * 0.05 * this.correctiveFactor; // 1/96 roman pound 0.05 fineness https://en.wikipedia.org/wiki/Denarius#Debasement_and_evolution
 	},
+	/** k mod in L */
 	get kmod(){
-		return 32 * this.pt;
+		return 0.032 * this.pt;
 	},
 	lb: 328.9, // https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement#Weight
 	/** sextarius in mL */
 	pt: 546,
 };
 
-new GoodDatum(goods.wheat, sources.rome0, 100 * rome.d/(17*unit.grainDensity.wheat)); // 100 denarii for 17L
-new GoodDatum(goods.barley, sources.rome0, 60 * rome.d/(17*unit.grainDensity.barley));
-new GoodDatum(goods.millet, sources.rome0, 100 * rome.d/(17*unit.grainDensity.millet));
-new GoodDatum(goods.spelt, sources.rome0, 100 * rome.d/(17*unit.grainDensity.spelt));
-new GoodDatum(goods.sesame, sources.rome0, 200 * rome.d/(17*unit.grainDensity.sesame));
-new GoodDatum(goods.cumin, sources.rome0, 200 * rome.d/(17*unit.grainDensity.NULL));
+new GoodDatum(goods.wheat, sources.rome0, 100 * rome.d/(rome.kmod*unit.grainDensity.wheat)); // 100 denarii for 17L
+new GoodDatum(goods.barley, sources.rome0, 60 * rome.d/(rome.kmod*unit.grainDensity.barley));
+new GoodDatum(goods.rye, sources.rome0, 60 * rome.d/(rome.kmod*unit.grainDensity.rye));
+new GoodDatum(goods.millet, sources.rome0, 100 * rome.d/(rome.kmod*unit.grainDensity.millet));
+new GoodDatum(goods.spelt, sources.rome0, 100 * rome.d/(rome.kmod*unit.grainDensity.spelt));
+new GoodDatum(goods.flax, sources.rome0, 150 * rome.d/(rome.kmod*unit.grainDensity.NULL));
+new GoodDatum(goods.rice, sources.rome0, 200 * rome.d/(rome.kmod*unit.grainDensity.rice));
+new GoodDatum(goods.sesame, sources.rome0, 200 * rome.d/(rome.kmod*unit.grainDensity.sesame));
+new GoodDatum(goods.cumin, sources.rome0, 200 * rome.d/(rome.kmod*unit.grainDensity.NULL));
+new GoodDatum(goods.mustard, sources.rome0, 150 * rome.d/(rome.kmod*unit.grainDensity.NULL));
 new GoodDatum(goods.wine, sources.rome0, 8 * rome.d/rome.pt); // 8 denarii for 500mL
 new GoodDatum(goods.beer, sources.rome0, 4 * rome.d/rome.pt); // 4 denarii for 500mL
 new GoodDatum(goods.oilOlive, sources.rome0, 40 * rome.d/rome.pt);
@@ -424,10 +435,12 @@ new GoodDatum(goods.salt, sources.rome0, 100 * rome.d/(unit.grainDensity.salt * 
 new GoodDatum(goods.honey, sources.rome0, 40 * rome.d/rome.pt);
 new GoodDatum(goods.pork, sources.rome0, 12 * rome.d/rome.lb); // 12 denarii for 300g
 new GoodDatum(goods.beef, sources.rome0, 8 * rome.d/rome.lb);
-new GoodDatum(goods.boarMeat, sources.rome0, 16 * rome.d/rome.lb);
 new GoodDatum(goods.gooseLive, sources.rome0, 200 * rome.d);
 new GoodDatum(goods.chickenLive, sources.rome0, 30 * rome.d);
 new GoodDatum(goods.duckLive, sources.rome0, 20 * rome.d);
+new GoodDatum(goods.boarMeat, sources.rome0, 16 * rome.d/rome.lb);
+new GoodDatum(goods.lamb, sources.rome0, 12 * rome.d/rome.lb);
+new GoodDatum(goods.butter, sources.rome0, 16 * rome.d/rome.lb);
 new GoodDatum(goods.fishSaltwater, sources.rome0, 24 * rome.d/rome.lb);
 new GoodDatum(goods.fishFreshwater, sources.rome0, 8 * rome.d/rome.lb);
 new GoodDatum(goods.fishSalted, sources.rome0, 6 * rome.d/rome.lb);
@@ -436,12 +449,15 @@ new GoodDatum(goods.fishSardines, sources.rome0, 16 * rome.d/rome.lb);
 new GoodDatum(goods.lettuce, sources.rome0, 4/5 * rome.d / unit.weights.lettuce);
 new GoodDatum(goods.cabbage, sources.rome0, 4/10 * rome.d / unit.weights.cabbage);
 new GoodDatum(goods.beet, sources.rome0, 4/5 * rome.d / unit.weights.beet);
-new GoodDatum(goods.garlic, sources.rome0, 60 * rome.d/(17*unit.grainDensity.NULL_VEG));
+new GoodDatum(goods.garlic, sources.rome0, 60 * rome.d/(rome.kmod*unit.grainDensity.NULL_VEG));
 new GoodDatum(goods.turnip, sources.rome0, 4 * rome.d * rome.d / unit.weights.turnip);
 new GoodDatum(goods.radish, sources.rome0, 4/10 * rome.d / unit.weights.radish);
 new GoodDatum(goods.leek, sources.rome0, 4/10 * rome.d / unit.weights.leek);
 new GoodDatum(goods.egg, sources.rome0, 12 * rome.d);
 new GoodDatum(goods.asparagus, sources.rome0, 4/50 * rome.d / unit.weights.asparagus);
+new GoodDatum(goods.walnut, sources.rome0, 4/100 * rome.d / unit.weights.walnut);
+new GoodDatum(goods.almond, sources.rome0, 6 * rome.d / rome.pt);
+new GoodDatum(goods.citron, sources.rome0, 1 * rome.d / unit.weights.citron);
 new GoodDatum(goods.melon, sources.rome0, 4/2 * rome.d / unit.weights.melon);
 new GoodDatum(goods.apple, sources.rome0, 4/40 * rome.d / unit.weights.apple);
 new GoodDatum(goods.figs, sources.rome0, 4 * rome.d/rome.lb);
@@ -467,9 +483,15 @@ new GoodDatum(goods.slaveM, sources.rome0, (25000 + 30000)/2 * rome.d); // 25 - 
 new GoodDatum(goods.slaveF, sources.rome0, (20000 + 25000)/2 * rome.d);
 new GoodDatum(goods.slaveYoung, sources.rome0, (10000 + 20000)/2 * rome.d);
 new GoodDatum(goods.cow, sources.rome0, 2000/2 * rome.d);
+new GoodDatum(goods.ox, sources.rome0, 10000/2 * rome.d);
 new GoodDatum(goods.sheep, sources.rome0, 400/2 * rome.d);
 new GoodDatum(goods.horse, sources.rome0, 100000/2 * rome.d);
 new GoodDatum(goods.bull, sources.rome0, 5000/2 * rome.d);
+new GoodDatum(goods.copper, sources.rome0, 75 * rome.d / rome.lb);
+new GoodDatum(goods.candle, sources.rome0, 4 * rome.d / rome.lb);
+new GoodDatum(goods.soap, sources.rome0, 24 * rome.d / rome.lb);
+new GoodDatum(goods.cinnamon, sources.rome0, 120 * rome.d / rome.lb); // Cassia
+new GoodDatum(goods.opium, sources.rome0, (1000 + 1250)/2 * rome.d / rome.lb); // Cassia
 
 // ENGLAND
 // https://en.wikipedia.org/wiki/Penny_(English_coin)#History
@@ -586,7 +608,7 @@ new GoodDatum(goods.rice, sources.chinaHan, (70 + 100)/2 * china.cash
 	/ (unit.grainDensity.rice * china.hu)); // technically it is "any grain" - but this seems to suggest the values of different grains were not substantially different between one another
 
 // https://en.wikipedia.org/wiki/Economy_of_the_Song_dynasty#Cash_crops
-new GoodDatum(goods.tea, sources.chinaSong, (500+37)/2 * china.cash/china.jin);
+new GoodDatum(goods.tea, sources.chinaSong, (500+37)/2 * china.cash/china.catty);
 
 // https://cedar.wwu.edu/cgi/viewcontent.cgi?filename=14&article=1016&context=easpress&type=additional
 const tangRiceValue = (20 + 50)/2 * china.cash / china.picul;
