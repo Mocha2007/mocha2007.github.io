@@ -568,6 +568,8 @@ new GoodDatum(goods.wageLaborer, sources.med16, (5.25 + 5.75)/2*unit.lbtower/240
 
 // http://www.medievalcoinage.com/prices/medievalprices.htm
 new GoodDatum(goods.wine, sources.med12, 1.14*unit.lbtower/240 / unit.gal);
+new GoodDatum(goods.wheat, sources.med12, (20+30)/2*unit.lbtower/240 / (unit.bu * unit.grainDensity.wheat));
+new GoodDatum(goods.wheat, sources.med13, (3+18)/2*unit.lbtower/240 / (unit.bu * unit.grainDensity.wheat));
 
 // https://medium.com/@zavidovych/what-we-can-learn-by-looking-at-prices-and-wages-in-medieval-england-8dc207cfd20a#.7yzbvz6lj
 new GoodDatum(goods.charcoal, sources.med15, 5*unit.lbtower/240 / 38560); // 4.25 bu
