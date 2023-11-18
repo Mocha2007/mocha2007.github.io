@@ -832,6 +832,7 @@ new GoodDatum(goods.cotton, sources.med18, 2.15/unit.lb / eng_s_ag * PA_CORRECTI
 
 // https://en.wikipedia.org/wiki/Market_reforms_of_Alauddin_Khalji
 const india = {
+	correctiveFactor: 12, // based on food prices
 	// "Firishta states that 1 silver tanka was equal to 50 jitals."
 	get jital(){
 		return india.tanka/50;
@@ -840,7 +841,7 @@ const india = {
 	mann: 11540,
 	// "a tanka was made of one tola of gold or silver."
 	get tanka(){
-		return india.tola;
+		return india.tola * this.correctiveFactor;
 	},
 	/** grams in one Sir
 	 * https://en.wikipedia.org/wiki/Seer_(unit)#India
