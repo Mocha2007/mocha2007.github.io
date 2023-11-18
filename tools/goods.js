@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 
 const unit = {
 	/** number of L in a bushel */
@@ -19,6 +20,9 @@ const unit = {
 		},
 		get millet(){
 			return 50 * this.ppb;
+		},
+		get oat(){
+			return 32 * this.ppb;
 		},
 		get rice(){
 			return 45 * this.ppb;
@@ -63,6 +67,10 @@ const unit = {
 	oz: 453.5924/16,
 	/** troy ounce in grams */
 	ozt: 373.242/12,
+	/** quarter in L https://en.wikipedia.org/wiki/Quarter_(unit)#Volume */
+	get quarter(){
+		return 8 * this.bu;
+	},
 	/** imperial ton in grams */
 	t: 453.5924*2000,
 	/** tun in mL */
@@ -226,6 +234,7 @@ const goods = {
 	// GRAIN
 	barley: new Good('Barley', 'Grain'),
 	millet: new Good('Millet', 'Grain'),
+	oat: new Good('Oat', 'Grain'),
 	rice: new Good('Rice', 'Grain'),
 	rye: new Good('Rye', 'Grain'),
 	spelt: new Good('Spelt', 'Grain'),
@@ -497,6 +506,29 @@ new GoodDatum(goods.opium, sources.rome0, (1000 + 1250)/2 * rome.d / rome.lb); /
 // https://en.wikipedia.org/wiki/Penny_(English_coin)#History
 // "The penny initially weighed 20 to 22.5 modern grains (1.3 to 1.5 g). It was standardized to 32 Tower grains, 1⁄240 of a Tower pound (approx. 350 g)."
 // 1d = 350/240 g silver
+new GoodDatum(goods.wheat, sources.med14, (5*12 + 10 + 3/4)*unit.lbtower/240 / (unit.grainDensity.wheat * unit.quarter));
+new GoodDatum(goods.barley, sources.med14, (4*12 + 3 + 3/4)*unit.lbtower/240 / (unit.grainDensity.barley * unit.quarter));
+new GoodDatum(goods.oat, sources.med14, (2*12 + 5 + 3/4)*unit.lbtower/240 / (unit.grainDensity.oat * unit.quarter));
+new GoodDatum(goods.rye, sources.med14, (4*12 + 4 + 7/8)*unit.lbtower/240 / (unit.grainDensity.rye * unit.quarter));
+
+new GoodDatum(goods.wheat, sources.med15, (5*12 + 11 + 3/4)*unit.lbtower/240 / (unit.grainDensity.wheat * unit.quarter));
+new GoodDatum(goods.barley, sources.med15, (3*12 + 8 + 3/4)*unit.lbtower/240 / (unit.grainDensity.barley * unit.quarter));
+new GoodDatum(goods.oat, sources.med15, (2*12 + 2 + 1/2)*unit.lbtower/240 / (unit.grainDensity.oat * unit.quarter));
+new GoodDatum(goods.rye, sources.med15, (4*12 + 7 + 3/4)*unit.lbtower/240 / (unit.grainDensity.rye * unit.quarter));
+
+new GoodDatum(goods.wheat, sources.med16, (13*12 + 10 + 1/2)*unit.lbt/240 / (unit.grainDensity.wheat * unit.quarter));
+new GoodDatum(goods.barley, sources.med16, (8*12 + 5 + 3/4)*unit.lbt/240 / (unit.grainDensity.barley * unit.quarter));
+new GoodDatum(goods.oat, sources.med16, (5*12 + 5 + 1/2)*unit.lbt/240 / (unit.grainDensity.oat * unit.quarter));
+
+new GoodDatum(goods.wheat, sources.med17, (39*12 + 1/2)*unit.lbt/240 / (unit.grainDensity.wheat * unit.quarter));
+new GoodDatum(goods.barley, sources.med17, (21*12 + 4)*unit.lbt/240 / (unit.grainDensity.barley * unit.quarter));
+new GoodDatum(goods.oat, sources.med17, (13*12 + 10)*unit.lbt/240 / (unit.grainDensity.oat * unit.quarter));
+
+new GoodDatum(goods.egg, sources.med14, 12*4.5/100*unit.lbtower/240);
+new GoodDatum(goods.egg, sources.med15, 12*6.5/100*unit.lbtower/240);
+new GoodDatum(goods.egg, sources.med16, 12*7.5/100*unit.lbt/240);
+new GoodDatum(goods.egg, sources.med17, 12*(3*12 + 3)/100*unit.lbt/240);
+
 new GoodDatum(goods.wool, sources.med14, (3 + 5/7)*unit.lbtower/240 / unit.lb); // 3 5/7 d per pound
 new GoodDatum(goods.cheese, sources.med14, (4 + 1/2)*unit.lbtower/240 / (7*unit.lb)); // 4 1/2 d per 7 lbs
 new GoodDatum(goods.butter, sources.med14, (4 + 3/4)*unit.lbtower/240 / (7*unit.lb));
