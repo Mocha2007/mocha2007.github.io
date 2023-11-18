@@ -431,6 +431,7 @@ new GoodDatum(goods.barley, sources.rome0, 60 * rome.d/(rome.kmod*unit.grainDens
 new GoodDatum(goods.rye, sources.rome0, 60 * rome.d/(rome.kmod*unit.grainDensity.rye));
 new GoodDatum(goods.millet, sources.rome0, 100 * rome.d/(rome.kmod*unit.grainDensity.millet));
 new GoodDatum(goods.spelt, sources.rome0, 100 * rome.d/(rome.kmod*unit.grainDensity.spelt));
+new GoodDatum(goods.oat, sources.rome0, 30 * rome.d/(rome.kmod*unit.grainDensity.oat));
 new GoodDatum(goods.flax, sources.rome0, 150 * rome.d/(rome.kmod*unit.grainDensity.NULL));
 new GoodDatum(goods.rice, sources.rome0, 200 * rome.d/(rome.kmod*unit.grainDensity.rice));
 new GoodDatum(goods.sesame, sources.rome0, 200 * rome.d/(rome.kmod*unit.grainDensity.sesame));
