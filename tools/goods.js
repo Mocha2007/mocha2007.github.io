@@ -774,6 +774,7 @@ new GoodDatum(goods.wageLaborer, sources.usa185, (0.333 + 1.67)/2 / usd_ag);
 // TODAY PRICES
 const usd_ag2 = 23.35 / unit.ozt; // current value
 new GoodDatum(goods.millet, sources.usa202, 0.309/unit.oz / usd_ag2);
+new GoodDatum(goods.oat, sources.usa202, 0.095/unit.oz / usd_ag2);
 new GoodDatum(goods.rice, sources.usa202, 0.042/unit.oz / usd_ag2);
 new GoodDatum(goods.flour, sources.usa202, 0.027/unit.oz / usd_ag2);
 new GoodDatum(goods.oatmeal, sources.usa202, 0.095/unit.oz / usd_ag2);
