@@ -400,7 +400,7 @@ new GoodDatum(goods.iron, sources.usa202, 129.25/1000000/(23.35/unit.ozt)); // i
 // 301 CE ROME
 // cf. https://www.academia.edu/23644199/New_English_translation_of_the_Price_Edict_of_Diocletianus
 const rome = {
-	correctiveFactor: 2.2, // 1 lb of gold = 72 d
+	correctiveFactor: 1, // 2.2, // 1 lb of gold = 72 d
 	get cwt(){
 		return 100 * this.lb;
 	},
