@@ -394,11 +394,50 @@ new GoodDatum(goods.gold, sources.usa180, 15); // becomes 16 in 1834
 new GoodDatum(goods.gold, sources.usa185, 16);
 new GoodDatum(goods.gold, sources.usa202, 1962.98/23.35);
 
+const pence = {
+	/** 1158 - 1350 https://en.wikipedia.org/wiki/Pound_sterling#Medieval,_1158 */
+	_0: unit.lbtower / 240 * 0.925,
+	/** 1351 - 1412 https://en.wikipedia.org/wiki/Pound_sterling#Edward_III,_1351 */
+	_1: unit.grain * 20.25 * 0.925,
+	/** 1412 - 1463 https://en.wikipedia.org/wiki/Pound_sterling#Henry_IV,_1412 */
+	_2: unit.grain * 15 * 0.925,
+	/** 1464 - 1550 https://en.wikipedia.org/wiki/Pound_sterling#Great_slump,_1464 */
+	_3: unit.grain * 12 * 0.925,
+	/** 1551 - 1600 https://en.wikipedia.org/wiki/Pound_sterling#Tudor,_1551 */
+	_4: unit.grain * 8 * 0.925,
+	/** 1601 - ???? https://en.wikipedia.org/wiki/Pound_sterling#1601_to_1816 */
+	_5: unit.ozt / 62 * 0.925,
+	// centuries - if an exact year is unavailable, use these estimates
+	c: {
+		get _12(){
+			return pence._0;
+		},
+		get _13(){
+			return pence._0;
+		},
+		get _14(){
+			return (pence._0 + pence._1)/2;
+		},
+		get _15(){
+			return (12*pence._1 + 52*pence._2 + 36 * pence._3)/100;
+		},
+		get _16(){
+			return (pence._3 + pence._4)/2;
+		},
+		get _17(){
+			return pence._5;
+		},
+		get _18(){
+			return pence._5;
+		},
+	},
+};
+
 // copper values
 // new GoodDatum(goods.copper, sources.rome0, 0.355 / 12); // https://seekingalpha.com/article/4181917-copper-silver-ratio-range-for-thousands-of-years
 new GoodDatum(goods.copper, sources.med14, 0.13 / 12); // https://seekingalpha.com/article/4181917-copper-silver-ratio-range-for-thousands-of-years
-new GoodDatum(goods.copper, sources.med17, 5*0.5/240/11/(5/3.58/unit.ozt)); // https://en.wikipedia.org/wiki/History_of_the_halfpenny#Base-metal_halfpennies
-new GoodDatum(goods.copper, sources.med18, 5*0.5/240/((10.3+9.4)/2)/(5/3.58/unit.ozt)); // https://en.wikipedia.org/wiki/History_of_the_halfpenny#The_United_Kingdom
+new GoodDatum(goods.copper, sources.med17, 0.5*pence.c._17/11); // https://en.wikipedia.org/wiki/History_of_the_halfpenny#Base-metal_halfpennies
+new GoodDatum(goods.copper, sources.med18, 0.5*pence.c._18/((10.3+9.4)/2)); // https://en.wikipedia.org/wiki/History_of_the_halfpenny#The_United_Kingdom
 new GoodDatum(goods.copper, sources.usa180, 0.01/13.48/(1.29/unit.ozt)); // A penny was ~100% pure copper and weighed 13.48g
 new GoodDatum(goods.copper, sources.usa185, 0.22/unit.lb/(1.29/unit.ozt)); // https://pubs.usgs.gov/sir/2012/5188/sir2012-5188.pdf
 new GoodDatum(goods.copper, sources.usa202, 3.73/unit.lb/(23.35/unit.ozt)); // https://commodity.com/precious-metals/copper/price/
@@ -507,104 +546,104 @@ new GoodDatum(goods.opium, sources.rome0, (1000 + 1250)/2 * rome.d / rome.lb); /
 // https://en.wikipedia.org/wiki/Penny_(English_coin)#History
 // "The penny initially weighed 20 to 22.5 modern grains (1.3 to 1.5 g). It was standardized to 32 Tower grains, 1⁄240 of a Tower pound (approx. 350 g)."
 // 1d = 350/240 g silver
-new GoodDatum(goods.wheat, sources.med14, (5*12 + 10 + 3/4)*unit.lbtower/240 / (unit.grainDensity.wheat * unit.quarter));
-new GoodDatum(goods.barley, sources.med14, (4*12 + 3 + 3/4)*unit.lbtower/240 / (unit.grainDensity.barley * unit.quarter));
-new GoodDatum(goods.oat, sources.med14, (2*12 + 5 + 3/4)*unit.lbtower/240 / (unit.grainDensity.oat * unit.quarter));
-new GoodDatum(goods.rye, sources.med14, (4*12 + 4 + 7/8)*unit.lbtower/240 / (unit.grainDensity.rye * unit.quarter));
+new GoodDatum(goods.wheat, sources.med14, (5*12 + 10 + 3/4)*pence.c._14 / (unit.grainDensity.wheat * unit.quarter));
+new GoodDatum(goods.barley, sources.med14, (4*12 + 3 + 3/4)*pence.c._14 / (unit.grainDensity.barley * unit.quarter));
+new GoodDatum(goods.oat, sources.med14, (2*12 + 5 + 3/4)*pence.c._14 / (unit.grainDensity.oat * unit.quarter));
+new GoodDatum(goods.rye, sources.med14, (4*12 + 4 + 7/8)*pence.c._14 / (unit.grainDensity.rye * unit.quarter));
 
-new GoodDatum(goods.wheat, sources.med15, (5*12 + 11 + 3/4)*unit.lbtower/240 / (unit.grainDensity.wheat * unit.quarter));
-new GoodDatum(goods.barley, sources.med15, (3*12 + 8 + 3/4)*unit.lbtower/240 / (unit.grainDensity.barley * unit.quarter));
-new GoodDatum(goods.oat, sources.med15, (2*12 + 2 + 1/2)*unit.lbtower/240 / (unit.grainDensity.oat * unit.quarter));
-new GoodDatum(goods.rye, sources.med15, (4*12 + 7 + 3/4)*unit.lbtower/240 / (unit.grainDensity.rye * unit.quarter));
+new GoodDatum(goods.wheat, sources.med15, (5*12 + 11 + 3/4)*pence.c._15 / (unit.grainDensity.wheat * unit.quarter));
+new GoodDatum(goods.barley, sources.med15, (3*12 + 8 + 3/4)*pence.c._15 / (unit.grainDensity.barley * unit.quarter));
+new GoodDatum(goods.oat, sources.med15, (2*12 + 2 + 1/2)*pence.c._15 / (unit.grainDensity.oat * unit.quarter));
+new GoodDatum(goods.rye, sources.med15, (4*12 + 7 + 3/4)*pence.c._15 / (unit.grainDensity.rye * unit.quarter));
 
-new GoodDatum(goods.wheat, sources.med16, (13*12 + 10 + 1/2)*unit.lbt/240 / (unit.grainDensity.wheat * unit.quarter));
-new GoodDatum(goods.barley, sources.med16, (8*12 + 5 + 3/4)*unit.lbt/240 / (unit.grainDensity.barley * unit.quarter));
-new GoodDatum(goods.oat, sources.med16, (5*12 + 5 + 1/2)*unit.lbt/240 / (unit.grainDensity.oat * unit.quarter));
+new GoodDatum(goods.wheat, sources.med16, (13*12 + 10 + 1/2)*pence.c._16 / (unit.grainDensity.wheat * unit.quarter));
+new GoodDatum(goods.barley, sources.med16, (8*12 + 5 + 3/4)*pence.c._16 / (unit.grainDensity.barley * unit.quarter));
+new GoodDatum(goods.oat, sources.med16, (5*12 + 5 + 1/2)*pence.c._16 / (unit.grainDensity.oat * unit.quarter));
 
-new GoodDatum(goods.wheat, sources.med17, (39*12 + 1/2)*unit.lbt/240 / (unit.grainDensity.wheat * unit.quarter));
-new GoodDatum(goods.barley, sources.med17, (21*12 + 4)*unit.lbt/240 / (unit.grainDensity.barley * unit.quarter));
-new GoodDatum(goods.oat, sources.med17, (13*12 + 10)*unit.lbt/240 / (unit.grainDensity.oat * unit.quarter));
+new GoodDatum(goods.wheat, sources.med17, (39*12 + 1/2)*pence.c._17 / (unit.grainDensity.wheat * unit.quarter));
+new GoodDatum(goods.barley, sources.med17, (21*12 + 4)*pence.c._17 / (unit.grainDensity.barley * unit.quarter));
+new GoodDatum(goods.oat, sources.med17, (13*12 + 10)*pence.c._17 / (unit.grainDensity.oat * unit.quarter));
 
-new GoodDatum(goods.egg, sources.med14, 12*4.5/100*unit.lbtower/240);
-new GoodDatum(goods.egg, sources.med15, 12*6.5/100*unit.lbtower/240);
-new GoodDatum(goods.egg, sources.med16, 12*7.5/100*unit.lbt/240);
-new GoodDatum(goods.egg, sources.med17, 12*(3*12 + 3)/100*unit.lbt/240);
+new GoodDatum(goods.egg, sources.med14, 12*4.5/100*pence.c._14);
+new GoodDatum(goods.egg, sources.med15, 12*6.5/100*pence.c._15);
+new GoodDatum(goods.egg, sources.med16, 12*7.5/100*pence.c._16);
+new GoodDatum(goods.egg, sources.med17, 12*(3*12 + 3)/100*pence.c._17);
 
-new GoodDatum(goods.wool, sources.med14, (3 + 5/7)*unit.lbtower/240 / unit.lb); // 3 5/7 d per pound
-new GoodDatum(goods.cheese, sources.med14, (4 + 1/2)*unit.lbtower/240 / (7*unit.lb)); // 4 1/2 d per 7 lbs
-new GoodDatum(goods.butter, sources.med14, (4 + 3/4)*unit.lbtower/240 / (7*unit.lb));
+new GoodDatum(goods.wool, sources.med14, (3 + 5/7)*pence.c._14 / unit.lb); // 3 5/7 d per pound
+new GoodDatum(goods.cheese, sources.med14, (4 + 1/2)*pence.c._14 / (7*unit.lb)); // 4 1/2 d per 7 lbs
+new GoodDatum(goods.butter, sources.med14, (4 + 3/4)*pence.c._14 / (7*unit.lb));
 // 2nd row
-new GoodDatum(goods.wool, sources.med15, (3 + 5/7)*unit.lbtower/240 / unit.lb);
-new GoodDatum(goods.cheese, sources.med15, 0.5*unit.lbtower/240 / unit.lb);
-new GoodDatum(goods.butter, sources.med15, 1*unit.lbtower/240 / unit.lb);
-new GoodDatum(goods.hops, sources.med15, (14*12 + 0.5)*unit.lbtower/240 / unit.cwt); // 1s 0.5d per cwt
+new GoodDatum(goods.wool, sources.med15, (3 + 5/7)*pence.c._15 / unit.lb);
+new GoodDatum(goods.cheese, sources.med15, 0.5*pence.c._15 / unit.lb);
+new GoodDatum(goods.butter, sources.med15, 1*pence.c._15 / unit.lb);
+new GoodDatum(goods.hops, sources.med15, (14*12 + 0.5)*pence.c._15 / unit.cwt); // 1s 0.5d per cwt
 // "The weight standard was changed to the Troy pound (373.242 g) in 1527 under Henry VIII,"
-new GoodDatum(goods.wool, sources.med16, (7 + 1/2)*unit.lbt/240 / unit.lb);
-new GoodDatum(goods.cheese, sources.med16, 1*unit.lbt/240 / unit.lb);
-new GoodDatum(goods.butter, sources.med16, 3*unit.lbt/240 / unit.lb);
-new GoodDatum(goods.hops, sources.med16, (26*12 + 8)*unit.lbt/240 / unit.cwt);
+new GoodDatum(goods.wool, sources.med16, (7 + 1/2)*pence.c._16 / unit.lb);
+new GoodDatum(goods.cheese, sources.med16, 1*pence.c._16 / unit.lb);
+new GoodDatum(goods.butter, sources.med16, 3*pence.c._16 / unit.lb);
+new GoodDatum(goods.hops, sources.med16, (26*12 + 8)*pence.c._16 / unit.cwt);
 
 // med13
-new GoodDatum(goods.horse, sources.med13, (10+20)/2*unit.lbtower/240);
-new GoodDatum(goods.horse, sources.med14, (20+40)/2*unit.lbtower/240);
-new GoodDatum(goods.wine, sources.med14, 3*unit.lbtower/240 / unit.gal);
-new GoodDatum(goods.ale, sources.med15, 0.75*unit.lbtower/240 / unit.gal);
-new GoodDatum(goods.beer, sources.med16, 1*unit.lbtower/240 / unit.qt);
-new GoodDatum(goods.pepper, sources.med13, 12*unit.lbtower/240 / unit.lb);
-new GoodDatum(goods.saffron, sources.med14, 13.5*unit.lbtower/240 / unit.lb);
-new GoodDatum(goods.cheese, sources.med13, (3*12 + 4)*unit.lbt/240 / (80*unit.lb));
+new GoodDatum(goods.horse, sources.med13, (10+20)/2*pence.c._13);
+new GoodDatum(goods.horse, sources.med14, (20+40)/2*pence.c._14);
+new GoodDatum(goods.wine, sources.med14, 3*pence.c._14 / unit.gal);
+new GoodDatum(goods.ale, sources.med15, 0.75*pence.c._15 / unit.gal);
+new GoodDatum(goods.beer, sources.med16, 1*pence.c._16 / unit.qt);
+new GoodDatum(goods.pepper, sources.med13, 12*pence.c._13 / unit.lb);
+new GoodDatum(goods.saffron, sources.med14, 13.5*pence.c._14 / unit.lb);
+new GoodDatum(goods.cheese, sources.med13, (3*12 + 4)*pence.c._13 / (80*unit.lb));
 
 // https://thehistoryofengland.co.uk/resource/medieval-prices-and-wages/
-new GoodDatum(goods.beer, sources.med14, 1*unit.lbtower/240 / unit.gal);
-new GoodDatum(goods.sugar, sources.med14, 18*unit.lbtower/240 / unit.lb);
+new GoodDatum(goods.beer, sources.med14, 1*pence.c._14 / unit.gal);
+new GoodDatum(goods.sugar, sources.med14, 18*pence.c._14 / unit.lb);
 
 // https://web.archive.org/web/20110628231215/http://www.fordham.edu/halsall/source/medievalprices.html
-new GoodDatum(goods.candle, sources.med14, 2*unit.lbtower/240 / unit.lb);
-new GoodDatum(goods.candle, sources.med15, 4*unit.lbtower/240 / unit.lb);
+new GoodDatum(goods.candle, sources.med14, 2*pence.c._14 / unit.lb);
+new GoodDatum(goods.candle, sources.med15, 4*pence.c._15 / unit.lb);
 // WAGES
-new GoodDatum(goods.wageLaborer, sources.med13, (2 + 2.5)/2*unit.lbtower/240);
-new GoodDatum(goods.wageLaborer, sources.med14, (2.5 + 4.25)/2*unit.lbtower/240);
-new GoodDatum(goods.wageLaborer, sources.med15, (4.5 + 6)/2*unit.lbtower/240);
-new GoodDatum(goods.wageLaborer, sources.med16, (5.25 + 5.75)/2*unit.lbtower/240);
+new GoodDatum(goods.wageLaborer, sources.med13, (2 + 2.5)/2*pence.c._13);
+new GoodDatum(goods.wageLaborer, sources.med14, (2.5 + 4.25)/2*pence.c._14);
+new GoodDatum(goods.wageLaborer, sources.med15, (4.5 + 6)/2*pence.c._15);
+new GoodDatum(goods.wageLaborer, sources.med16, (5.25 + 5.75)/2*pence.c._16);
 
 // http://www.medievalcoinage.com/prices/medievalprices.htm
-new GoodDatum(goods.wine, sources.med12, 1.14*unit.lbtower/240 / unit.gal);
-new GoodDatum(goods.wheat, sources.med12, (20+30)/2*unit.lbtower/240 / (unit.bu * unit.grainDensity.wheat));
-new GoodDatum(goods.wheat, sources.med13, (3+18)/2*unit.lbtower/240 / (unit.bu * unit.grainDensity.wheat));
+new GoodDatum(goods.wine, sources.med12, 1.14*pence.c._12 / unit.gal);
+new GoodDatum(goods.wheat, sources.med12, (20+30)/2*pence.c._12 / (unit.bu * unit.grainDensity.wheat));
+new GoodDatum(goods.wheat, sources.med13, (3+18)/2*pence.c._13 / (unit.bu * unit.grainDensity.wheat));
 
 // https://medium.com/@zavidovych/what-we-can-learn-by-looking-at-prices-and-wages-in-medieval-england-8dc207cfd20a#.7yzbvz6lj
-new GoodDatum(goods.charcoal, sources.med15, 5*unit.lbtower/240 / 38560); // 4.25 bu
+new GoodDatum(goods.charcoal, sources.med15, 5*pence.c._15 / 38560); // 4.25 bu
 
 // https://www.historyextra.com/period/medieval/a-time-travellers-guide-to-medieval-shopping/
-new GoodDatum(goods.ale, sources.med14, (0.75 + 1)/2*unit.lbtower/240 / unit.gal);
+new GoodDatum(goods.ale, sources.med14, (0.75 + 1)/2*pence.c._14 / unit.gal);
 
 // https://regia.org/research/misc/costs.htm
-new GoodDatum(goods.chickenLive, sources.med12, 1/15*unit.lbtower/240);
-const priceMed12Cow = (64.5 + 88.5)/2*unit.lbtower/240;
+new GoodDatum(goods.chickenLive, sources.med12, 1/15*pence.c._12);
+const priceMed12Cow = (64.5 + 88.5)/2*pence.c._12;
 new GoodDatum(goods.cow, sources.med12, priceMed12Cow);
-new GoodDatum(goods.ox, sources.med12, (80.5 + 88.5)/2*unit.lbtower/240);
-new GoodDatum(goods.pig, sources.med12, 20*unit.lbtower/240);
-const priceMed12Sheep = 10*unit.lbtower/240;
+new GoodDatum(goods.ox, sources.med12, (80.5 + 88.5)/2*pence.c._12);
+new GoodDatum(goods.pig, sources.med12, 20*pence.c._12);
+const priceMed12Sheep = 10*pence.c._12;
 new GoodDatum(goods.sheep, sources.med12, priceMed12Sheep);
-const priceMed12Horse = (193.5 + 308.5)/2*unit.lbtower/240;
+const priceMed12Horse = (193.5 + 308.5)/2*pence.c._12;
 new GoodDatum(goods.horse, sources.med12, priceMed12Horse);
-new GoodDatum(goods.dog, sources.med12, 4*unit.lbtower/240);
-new GoodDatum(goods.slaveM, sources.med12, 197.5*unit.lbtower/240);
-new GoodDatum(goods.slaveF, sources.med12, 131.5*unit.lbtower/240);
-new GoodDatum(goods.silk, sources.med12, 37*unit.lbtower/240 / unit.oz);
+new GoodDatum(goods.dog, sources.med12, 4*pence.c._12);
+new GoodDatum(goods.slaveM, sources.med12, 197.5*pence.c._12);
+new GoodDatum(goods.slaveF, sources.med12, 131.5*pence.c._12);
+new GoodDatum(goods.silk, sources.med12, 37*pence.c._12 / unit.oz);
 
 // https://www.rpg.net/columns/beasts/beasts4.phtml
-new GoodDatum(goods.cat, sources.med12, (1+4)/2*unit.lbtower/240);
-new GoodDatum(goods.gooseLive, sources.med14, (2.5 + 2)/2*unit.lbtower/240);
-new GoodDatum(goods.chickenLive, sources.med14, (0.5 + 1)/2*unit.lbtower/240);
-const priceMed14Ox = (6*12 + 8)*unit.lbtower/240;
+new GoodDatum(goods.cat, sources.med12, (1+4)/2*pence.c._12);
+new GoodDatum(goods.gooseLive, sources.med14, (2.5 + 2)/2*pence.c._14);
+new GoodDatum(goods.chickenLive, sources.med14, (0.5 + 1)/2*pence.c._14);
+const priceMed14Ox = (6*12 + 8)*pence.c._14;
 new GoodDatum(goods.ox, sources.med14, priceMed14Ox);
 
-new GoodDatum(goods.cow, sources.med13, 13*12*unit.lbtower/240);
-new GoodDatum(goods.cow, sources.med14, (9*12 + 5)*unit.lbtower/240);
-new GoodDatum(goods.sheep, sources.med14, (1*12 + 5)*unit.lbtower/240);
-new GoodDatum(goods.pig, sources.med14, 2*12*unit.lbtower/240);
-new GoodDatum(goods.horse, sources.med17, 20*unit.lbtower);
+new GoodDatum(goods.cow, sources.med13, 13*12*pence.c._13);
+new GoodDatum(goods.cow, sources.med14, (9*12 + 5)*pence.c._14);
+new GoodDatum(goods.sheep, sources.med14, (1*12 + 5)*pence.c._14);
+new GoodDatum(goods.pig, sources.med14, 2*12*pence.c._14);
+new GoodDatum(goods.horse, sources.med17, 20*240*pence.c._17);
 
 // china
 const china = {
