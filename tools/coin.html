@@ -6,18 +6,35 @@
 <link href="tool.css" type="text/css" rel="stylesheet">
 <link href="../css/button.css" type="text/css" rel="stylesheet">
 <!--<script src="../common.js" defer></script>-->
+<style>
+	.copper {
+		background-color: #d95;
+	}
+	.gold {
+		background-color: #fd5;
+	}
+</style>
 <title>Coin Tool</title>
 <h1 id="Values">Coin Tool</h1>
 <div id="inputs" onclick="update();" onkeyup="update();">
 	Size Presets:
 	<br>
 	US:
-	<span class="button" onclick="preset(1)">Penny</span>
+	<span class="button copper" onclick="preset(1)">Penny</span>
 	<span class="button" onclick="preset(5)">Nickel</span>
 	<span class="button" onclick="preset(10)">Dime</span>
 	<span class="button" onclick="preset(25)">Quarter</span>
 	<span class="button" onclick="preset(50)">Half-Dollar</span>
-	<span class="button" onclick="preset(100)">Dollar</span>
+	<span class="button gold" onclick="preset(100)">Dollar</span>
+	<br>
+	UK:
+	<span class="button copper" onclick="preset('1p')">1p</span>
+	<span class="button copper" onclick="preset('5p')">5p</span>
+	<span class="button" onclick="preset('10p')">10p</span>
+	<span class="button" onclick="preset('20p')">20p</span>
+	<span class="button" onclick="preset('50p')">50p</span>
+	<span class="button gold" onclick="preset('100p')">&pound;1</span>
+	<span class="button gold" onclick="preset('200p')">&pound;2</span>
 	<hr>
 	Diameter:
 	<input type="number" id="diameter_mm" min="17.91" max="38.1" value="20"> mm =
@@ -25,21 +42,23 @@
 	<span id="diameter_se"></span> se
 	<br>
 	Thickness:
-	<input type="number" id="thickness_mm" min="1.35" max="2.58" value="2"> mm =
+	<input type="number" id="thickness_mm" min="1.35" max="2.8" value="2"> mm =
 	<span id="thickness_in"></span> in =
 	<span id="thickness_se"></span> se
 	<br>
 	Composition:
-	<strong>
-	<label><input type="radio" name="composition" value="8.96">Copper</label>
-	<label><input type="radio" name="composition" value="8.15">Bronze</label>
-	<label><input type="radio" name="composition" value="10.3" checked>Sterling Silver</label>
-	<label><input type="radio" name="composition" value="10.49">Silver</label>
-	<label><input type="radio" name="composition" value="19.3">Gold</label>
-	</strong>
-	<br>
-	<label><input type="radio" name="composition" value="7.257">Cupronickel</label>
-	<label><input type="radio" name="composition" value="8.65">Electrum</label>
+	<div>
+		<strong>
+		<label class="button copper"><input type="radio" name="composition" value="8.96">Copper</label>
+		<label class="button copper"><input type="radio" name="composition" value="8.15">Bronze</label>
+		<label class="button"><input type="radio" name="composition" value="10.3" checked>Sterling Silver</label>
+		<label class="button"><input type="radio" name="composition" value="10.49">Silver</label>
+		<label class="button gold"><input type="radio" name="composition" value="19.3">Gold</label>
+		</strong>
+		<br>
+		<label class="button"><input type="radio" name="composition" value="7.257">Cupronickel</label>
+		<label class="button"><input type="radio" name="composition" value="8.65">Electrum</label>
+	</div>
 	<hr>
 	Volume: <span id="vol_mm3"></span> cm<sup>3</sup><br>
 	Mass: <span id="mass_g"></span> g =
@@ -77,6 +96,31 @@ function preset(id){
 			break;
 		case 100:
 			size(26.49, 2);
+			break;
+		// https://en.wikipedia.org/wiki/Coins_of_the_pound_sterling
+		case '1p':
+			size(20.3, 1.65);
+			break;
+		case '2p':
+			size(25.9, 2.03);
+			break;
+		case '5p':
+			size(18, 1.89);
+			break;
+		case '10p':
+			size(24.5, 2.05);
+			break;
+		case '20p':
+			size(21.4, 1.7);
+			break;
+		case '50p':
+			size(27.3, 1.78);
+			break;
+		case '100p':
+			size(23.43, 2.8);
+			break;
+		case '200p':
+			size(28.4, 2.5);
 			break;
 	}
 }
