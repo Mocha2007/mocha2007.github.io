@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+/* exported compare */
 
 const unit = {
 	/** number of L in a bushel */
@@ -1050,6 +1051,27 @@ new GoodDatum(goods.candle, sources.med16, 1.206 * pence._3 / unit.lb); // Candl
 new GoodDatum(goods.wageLaborer, sources.med17, (15 + 18 + 24 + 18 + 36)/5 * pence.c._17); // average of five 17th-c values
 new GoodDatum(goods.wageLaborer, sources.med18, (24 + 36)/2 * pence.c._17); // average of two 18th-c values
 
+/** try "compare(sources.rome0, sources.usa202)" */
+function compare(s0, s1){
+	const priceChanges = {};
+	const rr = [];
+	Good.goods.filter(g => GoodDatum.gooddata.some(gd => gd.good === g && gd.source === s0)
+		&& GoodDatum.gooddata.some(gd => gd.good === g && gd.source === s1)
+	).forEach(g => {
+		const d0 = GoodDatum.gooddata.find(gd => gd.good === g && gd.source === s0);
+		const d1 = GoodDatum.gooddata.find(gd => gd.good === g && gd.source === s1);
+		const r = d1.price / d0.price;
+		priceChanges[d0.good.name] = r;
+		rr.push(r);
+	});
+	priceChanges.avgArithmetic = rr.reduce((a, b) => a+b, 0) / rr.length;
+	priceChanges.avgGeometric = Math.pow(rr.reduce((a, b) => a*b, 1), 1 / rr.length);
+	priceChanges.adjGeo = {};
+	for (const i in priceChanges){
+		priceChanges.adjGeo[i] = priceChanges[i] / priceChanges.avgGeometric;
+	}
+	return priceChanges;
+}
 
 function blankTD(){
 	return document.createElement('td');
