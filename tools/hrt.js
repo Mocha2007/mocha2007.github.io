@@ -4,6 +4,7 @@ const _1m = 60*_1s;
 const _1h = 60*_1m;
 const _12h = 12*_1h;
 const _1d = 24*_1h;
+const _1w = 7*_1d;
 const _1y = 365.2425*_1d;
 const _1mo = _1y/12;
 
@@ -103,7 +104,7 @@ function get_dose_t(){
 }
 
 function get_laser_t(){
-	return new Date() - 1694782800000; // iirc
+	return new Date() - (new Date(2023, 10, 27) - 2*5*_1w); // 2*5 weeks before 11/27; iirc orig. 1694782800000
 }
 
 function unit(x, name){
@@ -122,7 +123,7 @@ function time_elem_inner(){
 	const s = dt.getSeconds();
 	const doseT = get_dose_t();
 	const doses = Math.floor(doseT/_12h) + 1; // dose count starts at 1 for t=0
-	const laser = Math.floor(get_laser_t()/(35*_1d)) + 1; // laser count starts at 1 for t=0
+	const laser = Math.floor(get_laser_t()/(5*_1w)) + 1; // laser count starts at 1 for t=0
 	// next dose timer
 	let doseR = doses*_12h - doseT;
 	const doseH = Math.floor(doseR / _1h);
