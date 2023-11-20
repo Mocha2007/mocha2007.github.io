@@ -595,7 +595,7 @@ new GoodDatum(goods.saffron, sources.med14, (12+15)/2*pence.c._14 / unit.lb);
 new GoodDatum(goods.cheese, sources.med13, (3*12 + 4)*pence.c._13 / (80*unit.lb));
 
 // https://thehistoryofengland.co.uk/resource/medieval-prices-and-wages/
-new GoodDatum(goods.beer, sources.med14, 1*pence.c._14 / unit.gal);
+new GoodDatum(goods.ale, sources.med14, (1.5 + 0.75)/2*pence.c._14 / unit.gal);
 new GoodDatum(goods.sugar, sources.med14, 18*pence.c._14 / unit.lb);
 
 // https://web.archive.org/web/20110628231215/http://www.fordham.edu/halsall/source/medievalprices.html
