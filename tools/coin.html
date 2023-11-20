@@ -20,10 +20,12 @@
 	<hr>
 	Diameter:
 	<input type="number" id="diameter_mm" min="17.91" max="38.1" value="20"> mm =
+	<span id="diameter_in"></span> in =
 	<span id="diameter_se"></span> se
 	<br>
 	Thickness:
 	<input type="number" id="thickness_mm" min="1.35" max="2.58" value="2"> mm =
+	<span id="thickness_in"></span> in =
 	<span id="thickness_se"></span> se
 	<br>
 	Composition:
@@ -34,9 +36,14 @@
 	<label><input type="radio" name="composition" value="19.3">Gold</label>
 	<hr>
 	Volume: <span id="vol_mm3"></span> cm<sup>3</sup><br>
-	Mass: <span id="mass_g"></span> g = <span id="mass_edzam"></span> edzam
+	Mass: <span id="mass_g"></span> g =
+	<span id="mass_gr"></span> gr =
+	<span id="mass_edzam"></span> edzam
 </div>
 <script>
+const inch = 2.54;
+const gr = 0.06479891;
+
 const se = 2.84; // mm
 const edzam = 16.67; // g
 
@@ -70,8 +77,10 @@ function preset(id){
 
 function update(){
 	// convert diam
+	document.getElementById('diameter_in').innerHTML = (document.getElementById('diameter_mm').value / inch).toFixed(3);
 	document.getElementById('diameter_se').innerHTML = (document.getElementById('diameter_mm').value / se).toFixed(3);
 	// convert thick
+	document.getElementById('thickness_in').innerHTML = (document.getElementById('thickness_mm').value / inch).toFixed(3);
 	document.getElementById('thickness_se').innerHTML = (document.getElementById('thickness_mm').value / se).toFixed(3);
 	// compute volume
 	const r = document.getElementById('diameter_mm').value/2;
@@ -82,8 +91,10 @@ function update(){
 	const density = document.querySelector('input[name="composition"]:checked').value;
 	const mass = density * vol;
 	document.getElementById('mass_g').innerHTML = mass.toFixed(3);
+	document.getElementById('mass_gr').innerHTML = (mass / gr).toFixed(3);
 	document.getElementById('mass_edzam').innerHTML = (mass / edzam).toFixed(3);
 }
 update();
 </script>
 </html>
+<!-- todo imperial units -->
