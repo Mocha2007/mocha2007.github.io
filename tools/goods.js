@@ -1033,6 +1033,13 @@ new GoodDatum(goods.barley, sources.med18, (5.9 + 9)/2 * guilder_ag/malter);
 new GoodDatum(goods.oat, sources.med18, (3.2 + 5.47)/2 * guilder_ag/malter);
 new GoodDatum(goods.rye, sources.med18, (9.3 + 14.39)/2 * guilder_ag/malter);
 
+// https://memdb.libraries.rutgers.edu/sites/default/files/munro/eng_comm.xls
+new GoodDatum(goods.wine, sources.med16, 9.702 * pence.c._16/unit.gal); // Wine
+new GoodDatum(goods.wine, sources.med15, 2.145 * pence._3 / 1000); // EngWine
+new GoodDatum(goods.sugar, sources.med15, 5 * pence._3 / unit.lb); // Sugar
+new GoodDatum(goods.sugar, sources.med16, 5.935 * pence._3 / unit.lb); // Sugar
+new GoodDatum(goods.candle, sources.med16, 1.206 * pence._3 / unit.lb); // Candles
+
 function blankTD(){
 	return document.createElement('td');
 }
