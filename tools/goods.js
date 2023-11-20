@@ -876,7 +876,7 @@ new GoodDatum(goods.mace, sources.usa202, 2.72/unit.oz / usd_ag2);
 new GoodDatum(goods.mustard, sources.usa202, 0.691/unit.oz / usd_ag2);
 new GoodDatum(goods.nutmeg, sources.usa202, 1.61/unit.oz / usd_ag2);
 new GoodDatum(goods.pepper, sources.usa202, 0.953/unit.oz / usd_ag2);
-new GoodDatum(goods.saffron, sources.usa202, 305.5/unit.oz / usd_ag2);
+new GoodDatum(goods.saffron, sources.usa202, 99/28 / usd_ag2); // https://www.amazon.com/Persian-Saffron-Threads-Slofoodgroup-Filaments/dp/B01HOXIRGO?th=1
 new GoodDatum(goods.chocolate, sources.usa202, 0.145/unit.oz / usd_ag2);
 new GoodDatum(goods.coffee, sources.usa202, 0.247/unit.oz / usd_ag2);
 new GoodDatum(goods.flax, sources.usa202, 0.317/unit.oz / usd_ag2);
