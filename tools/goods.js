@@ -620,7 +620,12 @@ new GoodDatum(goods.sheep, sources.med15, 8.3/1.5*pence.c._15); // 1.5 sheep
 new GoodDatum(goods.charcoal, sources.med15, 4.4*pence.c._15 / (4.25 * unit.bu * unit.grainDensity.charcoal)); // 4.25 bu
 
 // https://www.historyextra.com/period/medieval/a-time-travellers-guide-to-medieval-shopping/
-new GoodDatum(goods.ale, sources.med14, (0.75 + 1)/2*pence.c._14 / unit.gal);
+new GoodDatum(goods.ale, sources.med14, (0.75 + 1)/2*pence._1 / unit.gal);
+new GoodDatum(goods.wine, sources.med14, (3 + 4)/2*pence._1 / unit.gal);
+new GoodDatum(goods.chickenLive, sources.med14, 2*pence._1);
+new GoodDatum(goods.sugar, sources.med14, 18*pence._1 / unit.lb);
+new GoodDatum(goods.apple, sources.med14, 7*pence._1 / (100 * unit.weights.apple));
+new GoodDatum(goods.egg, sources.med14, 12*33/425*pence._1);
 
 // https://regia.org/research/misc/costs.htm
 new GoodDatum(goods.chickenLive, sources.med12, 1/15*pence.c._12);
