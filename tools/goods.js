@@ -597,15 +597,14 @@ new GoodDatum(goods.cheese, sources.med13, (3*12 + 4)*pence.c._13 / (80*unit.lb)
 new GoodDatum(goods.candle, sources.med14, (1.5 + 2.5)/2*pence._0 / unit.lb);
 new GoodDatum(goods.candle, sources.med15, (1.5 + 6.5)/2*pence._1 / unit.lb);
 
-// https://thehistoryofengland.co.uk/resource/medieval-prices-and-wages/
-new GoodDatum(goods.ale, sources.med14, (1.5 + 0.75)/2*pence.c._14 / unit.gal);
-new GoodDatum(goods.sugar, sources.med14, 18*pence.c._14 / unit.lb);
-
 // WAGES
 new GoodDatum(goods.wageLaborer, sources.med13, (2 + 2.5)/2*pence.c._13);
 new GoodDatum(goods.wageLaborer, sources.med14, (2.5 + 4.25)/2*pence.c._14);
 new GoodDatum(goods.wageLaborer, sources.med15, (4.5 + 6)/2*pence.c._15);
 new GoodDatum(goods.wageLaborer, sources.med16, (5.25 + 5.75)/2*pence.c._16);
+
+// https://thehistoryofengland.co.uk/resource/medieval-prices-and-wages/
+new GoodDatum(goods.sugar, sources.med14, 18*pence.c._14 / unit.lb);
 
 // http://www.medievalcoinage.com/prices/medievalprices.htm
 new GoodDatum(goods.wine, sources.med12, 1.14*pence.c._12 / unit.gal);
