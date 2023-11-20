@@ -214,18 +214,31 @@ class Source {
 	/**
 	 * @param {number} year eg. 1592
 	 * @param {string} place eg. "England"
-	 * @param {string} url
+	 * @param {string|string[]} url
 	 */
 	constructor(year, place, url){
 		this.year = year;
 		this.place = place;
-		this.url = url;
+		/** @type {string[]} */
+		this.urls = typeof url === 'string' ? [url] : url;
 		Source.sources.push(this);
 	}
 	get th(){
 		const elem = document.createElement('th');
 		// elem.classList.add('rot');
-		elem.innerHTML = `${this.year}, ${this.place} <a href="${this.url}">*</a>`;
+		elem.innerHTML = `${this.year}, ${this.place}`;
+		elem.appendChild(this.urlElem);
+		return elem;
+	}
+	get urlElem(){
+		const elem = document.createElement('span');
+		this.urls.forEach((url, i) => {
+			elem.appendChild(document.createTextNode(' '));
+			const a = document.createElement('a');
+			a.href = url;
+			a.innerHTML = i+1;
+			elem.appendChild(a);
+		});
 		return elem;
 	}
 }
@@ -368,19 +381,19 @@ const goods = {
 
 const sources = {
 	// "Silver, pure, in bars or coins – 6000 denarii for about 300 g" thus 1g Ag = 20 denarii
-	chinaHan: new Source('Han', 'China', ''), // 206 BCE - 220 CE
-	rome0: new Source(301, 'Rome', 'https://imperiumromanum.pl/en/roman-economy/roman-goods-prices/'),
-	chinaTang: new Source('Tang', 'China', ''), // 618 - 907
-	chinaSong: new Source('Song', 'China', ''), // 960 - 1279
-	med12: new Source('12th c.', 'W. Eur.', 'http://www.medievalcoinage.com/prices/medievalprices.htm'),
-	med13: new Source('13th c.', 'England', 'http://medieval.ucdavis.edu/120D/Money.html'),
-	med14: new Source('14th c.', 'England', 'http://www.afamilystory.co.uk/history/wages-and-prices.aspx'),
+	chinaHan: new Source('Han', 'China', []), // 206 BCE - 220 CE
+	rome0: new Source(301, 'Rome', 'https://www.academia.edu/23644199/New_English_translation_of_the_Price_Edict_of_Diocletianus'),
+	chinaTang: new Source('Tang', 'China', 'https://cedar.wwu.edu/cgi/viewcontent.cgi?filename=14&article=1016&context=easpress&type=additional'), // 618 - 907
+	chinaSong: new Source('Song', 'China', []), // 960 - 1279
+	med12: new Source('12th c.', 'W. Eur.', ['http://www.medievalcoinage.com/prices/medievalprices.htm', 'https://regia.org/research/misc/costs.htm', 'https://www.rpg.net/columns/beasts/beasts4.phtml', 'https://www.mccormickscienceinstitute.com/resources/history-of-spices']),
+	med13: new Source('13th c.', 'England', ['http://www.afamilystory.co.uk/history/wages-and-prices.aspx', 'http://medieval.ucdavis.edu/120D/Money.html', 'http://www.medievalcoinage.com/prices/medievalprices.htm', 'https://www.rpg.net/columns/beasts/beasts4.phtml']),
+	med14: new Source('14th c.', 'England', ['http://www.afamilystory.co.uk/history/wages-and-prices.aspx', 'http://medieval.ucdavis.edu/120D/Money.html', 'https://thehistoryofengland.co.uk/resource/medieval-prices-and-wages/', 'https://www.historyextra.com/period/medieval/a-time-travellers-guide-to-medieval-shopping/', 'https://www.rpg.net/columns/beasts/beasts4.phtml', 'https://www.mccormickscienceinstitute.com/resources/history-of-spices']),
 	ind14: new Source('14th c.', 'India', 'https://en.wikipedia.org/wiki/Market_reforms_of_Alauddin_Khalji'),
-	chinaMing: new Source('Ming', 'China', ''), // 1368 - 1644
-	med15: new Source('15th c.', 'England', 'http://www.afamilystory.co.uk/history/wages-and-prices.aspx'),
-	med16: new Source('16th c.', 'England', 'http://www.afamilystory.co.uk/history/wages-and-prices.aspx'),
-	med17: new Source('17th c.', 'England', ''),
-	med18: new Source('18th c.', 'England', ''),
+	chinaMing: new Source('Ming', 'China', []), // 1368 - 1644
+	med15: new Source('15th c.', 'England', ['http://www.afamilystory.co.uk/history/wages-and-prices.aspx', 'http://medieval.ucdavis.edu/120D/Money.html', 'https://medium.com/@zavidovych/what-we-can-learn-by-looking-at-prices-and-wages-in-medieval-england-8dc207cfd20a']),
+	med16: new Source('16th c.', 'England', ['http://www.afamilystory.co.uk/history/wages-and-prices.aspx', 'http://medieval.ucdavis.edu/120D/Money.html']),
+	med17: new Source('17th c.', 'England', 'https://www.rpg.net/columns/beasts/beasts4.phtml'),
+	med18: new Source('18th c.', 'England', ['https://www.foodtimeline.org/1720.pdf', 'https://memdb.libraries.rutgers.edu/posthumus-prices']),
 	usa180: new Source('c. 1800', 'US', 'https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76'),
 	usa185: new Source('c. 1850', 'US', 'https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76'),
 	usa202: new Source('2023', 'US', 'https://www.walmart.com'), // i just went onto walmart lol
@@ -581,7 +594,6 @@ new GoodDatum(goods.wool, sources.med15, (3 + 5/7)*pence.c._15 / unit.lb);
 new GoodDatum(goods.cheese, sources.med15, 0.5*pence.c._15 / unit.lb);
 new GoodDatum(goods.butter, sources.med15, 1*pence.c._15 / unit.lb);
 new GoodDatum(goods.hops, sources.med15, (14*12 + 0.5)*pence.c._15 / unit.cwt); // 1s 0.5d per cwt
-// "The weight standard was changed to the Troy pound (373.242 g) in 1527 under Henry VIII,"
 new GoodDatum(goods.wool, sources.med16, (7 + 1/2)*pence.c._16 / unit.lb);
 new GoodDatum(goods.cheese, sources.med16, 1*pence.c._16 / unit.lb);
 new GoodDatum(goods.butter, sources.med16, 3*pence.c._16 / unit.lb);
@@ -974,7 +986,7 @@ new GoodDatum(goods.mace, sources.med12, priceMed12Cow / (2 * unit.lb));
 new GoodDatum(goods.nutmeg, sources.med14, priceMed14Ox / unit.lb);
 // cites "Duke, James A., ed. CRC Handbook of Medicinal Spices. CRC press, 2002.", but that doesn't mention it
 // http://soupsong.com/fnutmeg.html mentions it too
-// maybe look at https://memdb.libraries.rutgers.edu/posthumus-prices?field_postprice_month_value%5Bmin%5D=1&field_postprice_month_value%5Bmax%5D=12&field_postprice_year_value%5Bmin%5D=1572&field_postprice_year_value%5Bmax%5D=1813&items_per_page=50&order=field_postprice_price&sort=desc&page=1393
+// maybe look at https://memdb.libraries.rutgers.edu/posthumus-prices
 
 const guilder_ag = 10.61; // https://en.wikipedia.org/wiki/Dutch_guilder#1659,_Gulden_currency_&_banco
 new GoodDatum(goods.pepper, sources.med18, (0.4 + 1.25)/2 * guilder_ag/unit.lb);
