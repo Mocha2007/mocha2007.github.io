@@ -617,7 +617,7 @@ new GoodDatum(goods.wheat, sources.med13, (3+18)/2*pence.c._13 / (unit.bu * unit
 
 // https://medium.com/@zavidovych/what-we-can-learn-by-looking-at-prices-and-wages-in-medieval-england-8dc207cfd20a#.7yzbvz6lj
 new GoodDatum(goods.sheep, sources.med15, 8.3/1.5*pence.c._15); // 1.5 sheep
-new GoodDatum(goods.charcoal, sources.med15, 4.4*pence.c._15 / (4.25 * unit.grainDensity.charcoal)); // 4.25 bu
+new GoodDatum(goods.charcoal, sources.med15, 4.4*pence.c._15 / (4.25 * unit.bu * unit.grainDensity.charcoal)); // 4.25 bu
 
 // https://www.historyextra.com/period/medieval/a-time-travellers-guide-to-medieval-shopping/
 new GoodDatum(goods.ale, sources.med14, (0.75 + 1)/2*pence.c._14 / unit.gal);
