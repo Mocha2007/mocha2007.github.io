@@ -1040,6 +1040,11 @@ new GoodDatum(goods.sugar, sources.med15, 5 * pence._3 / unit.lb); // Sugar
 new GoodDatum(goods.sugar, sources.med16, 5.935 * pence._3 / unit.lb); // Sugar
 new GoodDatum(goods.candle, sources.med16, 1.206 * pence._3 / unit.lb); // Candles
 
+// 17th and 18th century American wages
+// https://babel.hathitrust.org/cgi/pt?id=uiug.30112104053555&seq=606
+new GoodDatum(goods.wageLaborer, sources.med17, (15 + 18 + 24 + 18 + 36)/5 * pence.c._17); // average of five 17th-c values
+new GoodDatum(goods.wageLaborer, sources.med18, (24 + 36)/2 * pence.c._17); // average of two 18th-c values
+
 function blankTD(){
 	return document.createElement('td');
 }
