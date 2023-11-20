@@ -584,6 +584,7 @@ new GoodDatum(goods.butter, sources.med16, 3*pence.c._16 / unit.lb);
 new GoodDatum(goods.hops, sources.med16, (26*12 + 8)*pence.c._16 / unit.cwt);
 
 // med13 http://medieval.ucdavis.edu/120D/Money.html
+// https://web.archive.org/web/20110628231215/http://www.fordham.edu/halsall/source/medievalprices.html
 new GoodDatum(goods.horse, sources.med13, (10+20)/2*20*pence.c._13);
 new GoodDatum(goods.horse, sources.med14, (20+40)/2*20*pence._0); // "Note: Horse prices varied dramatically; for instance, they doubled between 1210 and 1310.  ([3], p. 37). "
 new GoodDatum(goods.wine, sources.med13, (3+4)/2*pence.c._13 / unit.gal);
@@ -593,14 +594,13 @@ new GoodDatum(goods.beer, sources.med16, 1*pence._4 / unit.qt);
 new GoodDatum(goods.pepper, sources.med13, (4*20 + 12)/2*pence.c._13 / unit.lb);
 new GoodDatum(goods.saffron, sources.med14, (12+15)/2*pence.c._14 / unit.lb);
 new GoodDatum(goods.cheese, sources.med13, (3*12 + 4)*pence.c._13 / (80*unit.lb));
+new GoodDatum(goods.candle, sources.med14, (1.5 + 2.5)/2*pence._0 / unit.lb);
+new GoodDatum(goods.candle, sources.med15, (1.5 + 6.5)/2*pence._1 / unit.lb);
 
 // https://thehistoryofengland.co.uk/resource/medieval-prices-and-wages/
 new GoodDatum(goods.ale, sources.med14, (1.5 + 0.75)/2*pence.c._14 / unit.gal);
 new GoodDatum(goods.sugar, sources.med14, 18*pence.c._14 / unit.lb);
 
-// https://web.archive.org/web/20110628231215/http://www.fordham.edu/halsall/source/medievalprices.html
-new GoodDatum(goods.candle, sources.med14, 2*pence.c._14 / unit.lb);
-new GoodDatum(goods.candle, sources.med15, 4*pence.c._15 / unit.lb);
 // WAGES
 new GoodDatum(goods.wageLaborer, sources.med13, (2 + 2.5)/2*pence.c._13);
 new GoodDatum(goods.wageLaborer, sources.med14, (2.5 + 4.25)/2*pence.c._14);
