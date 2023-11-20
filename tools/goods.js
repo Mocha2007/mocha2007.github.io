@@ -18,6 +18,10 @@ const unit = {
 		get barley(){
 			return 48 * this.ppb;
 		},
+		// http://webserver.rilin.state.ri.us/Statutes/TITLE47/47-4/47-4-2.HTM
+		get charcoal(){
+			return 20 * this.ppb;
+		},
 		get millet(){
 			return 50 * this.ppb;
 		},
@@ -612,7 +616,8 @@ new GoodDatum(goods.wheat, sources.med12, (20+30)/2*pence.c._12 / (unit.bu * uni
 new GoodDatum(goods.wheat, sources.med13, (3+18)/2*pence.c._13 / (unit.bu * unit.grainDensity.wheat));
 
 // https://medium.com/@zavidovych/what-we-can-learn-by-looking-at-prices-and-wages-in-medieval-england-8dc207cfd20a#.7yzbvz6lj
-new GoodDatum(goods.charcoal, sources.med15, 5*pence.c._15 / 38560); // 4.25 bu
+new GoodDatum(goods.sheep, sources.med15, 8.3/1.5*pence.c._15); // 1.5 sheep
+new GoodDatum(goods.charcoal, sources.med15, 4.4*pence.c._15 / (4.25 * unit.grainDensity.charcoal)); // 4.25 bu
 
 // https://www.historyextra.com/period/medieval/a-time-travellers-guide-to-medieval-shopping/
 new GoodDatum(goods.ale, sources.med14, (0.75 + 1)/2*pence.c._14 / unit.gal);
@@ -996,19 +1001,25 @@ function blankTD(){
 	return document.createElement('td');
 }
 
-function main(){
-	const container = document.getElementById('container');
-	// construct table
-	const table = document.createElement('table');
-	// headers
+function headers(){
 	const trh = document.createElement('tr');
 	trh.appendChild(document.createElement('td'));
 	Source.sources.forEach(source => {
 		trh.appendChild(source.th);
 	});
-	table.appendChild(trh);
+	return trh;
+}
+
+function main(){
+	const container = document.getElementById('container');
+	// construct table
+	const table = document.createElement('table');
+	// headers
+	table.appendChild(headers());
 	// rows
 	Good.goods.forEach(good => table.appendChild(good.tr));
+	// footers
+	table.appendChild(headers());
 	// end
 	container.appendChild(table);
 }
