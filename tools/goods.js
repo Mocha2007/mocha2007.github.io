@@ -391,9 +391,9 @@ const sources = {
 	ind14: new Source('14th c.', 'India', 'https://en.wikipedia.org/wiki/Market_reforms_of_Alauddin_Khalji'),
 	chinaMing: new Source('Ming', 'China', []), // 1368 - 1644
 	med15: new Source('15th c.', 'England', ['http://www.afamilystory.co.uk/history/wages-and-prices.aspx', 'http://medieval.ucdavis.edu/120D/Money.html', 'https://medium.com/@zavidovych/what-we-can-learn-by-looking-at-prices-and-wages-in-medieval-england-8dc207cfd20a']),
-	med16: new Source('16th c.', 'England', ['http://www.afamilystory.co.uk/history/wages-and-prices.aspx', 'http://medieval.ucdavis.edu/120D/Money.html']),
-	med17: new Source('17th c.', 'England', 'https://www.rpg.net/columns/beasts/beasts4.phtml'),
-	med18: new Source('18th c.', 'England', ['https://www.foodtimeline.org/1720.pdf', 'https://memdb.libraries.rutgers.edu/posthumus-prices']),
+	med16: new Source('16th c.', 'England', ['http://www.afamilystory.co.uk/history/wages-and-prices.aspx', 'http://medieval.ucdavis.edu/120D/Money.html', 'https://memdb.libraries.rutgers.edu/metz-prices']),
+	med17: new Source('17th c.', 'England', ['https://www.rpg.net/columns/beasts/beasts4.phtml', 'https://memdb.libraries.rutgers.edu/metz-prices']),
+	med18: new Source('18th c.', 'England', ['https://www.foodtimeline.org/1720.pdf', 'https://memdb.libraries.rutgers.edu/posthumus-prices', 'https://memdb.libraries.rutgers.edu/metz-prices']),
 	usa180: new Source('c. 1800', 'US', 'https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76'),
 	usa185: new Source('c. 1850', 'US', 'https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76'),
 	usa202: new Source('2023', 'US', 'https://www.walmart.com'), // i just went onto walmart lol
@@ -1013,6 +1013,25 @@ new GoodDatum(goods.ginger, sources.med18, (0.4 + 2.06)/2 * guilder_ag/unit.lb);
 new GoodDatum(goods.rye, sources.med18, (79.8 + 483)/2 * guilder_ag/unit.last); // "Prussian rye"
 new GoodDatum(goods.soda, sources.med18, (4.5 + 24.5)/2 * guilder_ag/unit.cwt);
 new GoodDatum(goods.almond, sources.med18, (17 + 65)/2 * guilder_ag/unit.cwt); // "Valence almonds"
+
+// https://memdb.libraries.rutgers.edu/metz-prices
+// I assume "malter" ~ 870 lbs since that seems to be about right price-wise
+const malter = 870 * unit.lb;
+// 1587
+new GoodDatum(goods.wheat, sources.med16, (12 + 22.08)/2 * guilder_ag/malter);
+new GoodDatum(goods.barley, sources.med16, (7.75 + 10.92)/2 * guilder_ag/malter);
+new GoodDatum(goods.oat, sources.med16, (4.13 + 5.25)/2 * guilder_ag/malter);
+new GoodDatum(goods.rye, sources.med16, (10.38 + 20)/2 * guilder_ag/malter);
+// 1650
+new GoodDatum(goods.wheat, sources.med17, (12.38 + 18.75)/2 * guilder_ag/malter);
+new GoodDatum(goods.barley, sources.med17, (6.5 + 10.33)/2 * guilder_ag/malter);
+new GoodDatum(goods.oat, sources.med17, (3.81 + 6.92)/2 * guilder_ag/malter);
+new GoodDatum(goods.rye, sources.med17, (9.38 + 18.68)/2 * guilder_ag/malter);
+// 1750
+new GoodDatum(goods.wheat, sources.med18, (13.38 + 17.61)/2 * guilder_ag/malter);
+new GoodDatum(goods.barley, sources.med18, (5.9 + 9)/2 * guilder_ag/malter);
+new GoodDatum(goods.oat, sources.med18, (3.2 + 5.47)/2 * guilder_ag/malter);
+new GoodDatum(goods.rye, sources.med18, (9.3 + 14.39)/2 * guilder_ag/malter);
 
 function blankTD(){
 	return document.createElement('td');
