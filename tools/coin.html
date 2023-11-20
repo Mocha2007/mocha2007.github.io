@@ -35,6 +35,13 @@
 	<span class="button" onclick="preset('50p')">50p</span>
 	<span class="button gold" onclick="preset('100p')">&pound;1</span>
 	<span class="button gold" onclick="preset('200p')">&pound;2</span>
+	<br>
+	Eremor:
+	<span class="button copper" onclick="preset('ere1')">1 a</span>
+	<span class="button" onclick="preset('ere2')">1 z</span>
+	<span class="button" onclick="preset('ere3')">4 z</span>
+	<span class="button gold" onclick="preset('ere4')">1 d</span>
+	<span class="button gold" onclick="preset('ere5')">4 d</span>
 	<hr>
 	Diameter:
 	<input type="number" id="diameter_mm" min="17.91" max="38.1" value="20"> mm =
@@ -121,6 +128,22 @@ function preset(id){
 			break;
 		case '200p':
 			size(28.4, 2.5);
+			break;
+		// https://mocha2007.github.io/namei/namei#Eremoran_Currency
+		case 'ere1':
+			size(7*se, 0.75*se);
+			break;
+		case 'ere2':
+			size(10*se, 0.75*se);
+			break;
+		case 'ere3':
+			size(14*se, 1.5*se);
+			break;
+		case 'ere4':
+			size(10*se, 0.75*se);
+			break;
+		case 'ere5':
+			size(14*se, 1.5*se);
 			break;
 	}
 }
