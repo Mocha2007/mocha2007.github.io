@@ -1,6 +1,13 @@
 /* eslint-disable max-len */
 /* exported compare */
 
+/** @param {number[]} arr */
+function geometricAvg(arr){
+	return Math.pow(arr.reduce((a, b) => a*b, 1), 1 / arr.length);
+}
+
+const debug = document.URL[0].toLowerCase() === 'f'; // file:// vs. http(s)://
+
 const unit = {
 	/** number of L in a bushel */
 	bu: 35.2390704,
@@ -151,7 +158,7 @@ class Good {
 		Good.goods.push(this);
 	}
 	get sourceArr(){
-		return Source.sources
+		return Source.sources.filter(visibleSources)
 			.map(s => GoodDatum.gooddata.find(datum => datum.good === this && datum.source === s));
 	}
 	get th(){
@@ -217,11 +224,12 @@ class Source {
 	 * @param {string} place eg. "England"
 	 * @param {string|string[]} url
 	 */
-	constructor(year, place, url){
+	constructor(year, place, url, hideMe = false){
 		this.year = year;
 		this.place = place;
 		/** @type {string[]} */
 		this.urls = typeof url === 'string' ? [url] : url;
+		this.hideMe = hideMe;
 		Source.sources.push(this);
 	}
 	get th(){
@@ -398,6 +406,7 @@ const sources = {
 	usa180: new Source('c. 1800', 'US', 'https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76'),
 	usa185: new Source('c. 1850', 'US', 'https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76'),
 	usa202: new Source('2023', 'US', 'https://www.walmart.com'), // i just went onto walmart lol
+	skyrim: new Source('4E 201', 'Skyrim', 'https://en.uesp.net/wiki/Skyrim:Skyrim', true),
 };
 
 // value of a pound, bimetallic ratio:
@@ -1051,6 +1060,69 @@ new GoodDatum(goods.candle, sources.med16, 1.206 * pence._3 / unit.lb); // Candl
 new GoodDatum(goods.wageLaborer, sources.med17, (15 + 18 + 24 + 18 + 36)/5 * pence.c._17); // average of five 17th-c values
 new GoodDatum(goods.wageLaborer, sources.med18, (24 + 36)/2 * pence.c._17); // average of two 18th-c values
 
+// SKYRIM
+// https://en.uesp.net/wiki/Skyrim:Silver
+// the main currency is GOLD
+// const skyrimWeightCalibration = [unit.weights.apple/0.1, unit.weights.cabbage/0.25, unit.weights.leek/0.1,
+//	60/0.1, 1600/0.2, 80/0.25, 70/0.5];
+const skyrimWeight = 1; // geometricAvg(skyrimWeightCalibration);
+// exact value doesn't matter for most items
+// apple	0.1
+// cabbage	0.25
+// leek		0.1
+// carrot	0.1		60g
+// squash	0.2 	1600g
+// garlic	0.25 	80g
+// egg		0.5		70g (large)
+const septim = skyrimWeight / 50; // a silver bar with a weight of 1 is worth 50 septims
+new GoodDatum(goods.gold, sources.skyrim, 100*septim/skyrimWeight); // 100s = 1 gold bar; 50s = 1 silver bar
+new GoodDatum(goods.iron, sources.skyrim, 7*septim/skyrimWeight);
+new GoodDatum(goods.leather, sources.skyrim, 10*septim/(2*skyrimWeight));
+// new GoodDatum(goods.glass, sources.skyrim, (2*100*septim/skyrimWeight + 75*septim/skyrimWeight)/3); // glass is 2:1 Malachite:Moonstone
+// https://en.uesp.net/wiki/Skyrim:Clothing#Circlets
+new GoodDatum(goods.copper, sources.skyrim, (100/250 + 200/400)/2); // copper circlets are XXX% the value of silver ones
+// Beyond Skyrim (https://en.uesp.net/wiki/Beyond_Skyrim:Copper) has copper as 0.6 x Silver, close to the 0.45 x calculation I have
+// https://en.uesp.net/wiki/Skyrim:Food
+new GoodDatum(goods.boarMeat, sources.skyrim, 2*septim/skyrimWeight);
+new GoodDatum(goods.chicken, sources.skyrim, 3*septim/(0.2 * skyrimWeight));
+new GoodDatum(goods.lamb, sources.skyrim, 3*septim/skyrimWeight); // leg of goat
+new GoodDatum(goods.beef, sources.skyrim, 4*septim/(0.2 * skyrimWeight));
+new GoodDatum(goods.potatoSweet, sources.skyrim, 1*septim/(0.1 * skyrimWeight)); // ash yam
+new GoodDatum(goods.cabbage, sources.skyrim, 2*septim/(0.25 * skyrimWeight));
+new GoodDatum(goods.carrot, sources.skyrim, 1*septim/(0.1 * skyrimWeight));
+new GoodDatum(goods.squash, sources.skyrim, 1*septim/(0.2 * skyrimWeight)); // gourd
+new GoodDatum(goods.apple, sources.skyrim, 3*septim/(0.1 * skyrimWeight)); // green apple and red apple
+new GoodDatum(goods.leek, sources.skyrim, 1*septim/(0.1 * skyrimWeight));
+new GoodDatum(goods.butter, sources.skyrim, 1*septim/(0.1 * skyrimWeight));
+new GoodDatum(goods.milk, sources.skyrim, 2*septim/(1 * skyrimWeight));
+new GoodDatum(goods.flour, sources.skyrim, 1*septim/(0.5 * skyrimWeight));
+new GoodDatum(goods.cheese, sources.skyrim, (13+10)/2*septim/(2 * skyrimWeight)); // avg. of Eidar and Goat cheese
+new GoodDatum(goods.honey, sources.skyrim, 2*septim/(0.1 * skyrimWeight));
+new GoodDatum(goods.ale, sources.skyrim, 5*septim/(0.5 * skyrimWeight));
+new GoodDatum(goods.wine, sources.skyrim, 7*septim/(0.5 * skyrimWeight));
+// https://en.uesp.net/wiki/Skyrim:Ingredients
+// new GoodDatum(goods.egg, sources.skyrim, 12*2*septim);
+new GoodDatum(goods.garlic, sources.skyrim, 1*septim/(0.25 * skyrimWeight));
+new GoodDatum(goods.sugar, sources.skyrim, 50*septim/(0.25 * skyrimWeight)); // moon sugar
+new GoodDatum(goods.salt, sources.skyrim, 1*septim/(0.2 * skyrimWeight));
+new GoodDatum(goods.wheat, sources.skyrim, 5*septim/(0.1 * skyrimWeight));
+new GoodDatum(goods.silk, sources.skyrim, 50*septim/(0.5 * skyrimWeight)); // daedra silk
+// https://en.uesp.net/wiki/Skyrim:Miscellaneous_Items
+new GoodDatum(goods.glass, sources.skyrim, 5*septim/skyrimWeight);
+new GoodDatum(goods.firewood, sources.skyrim, 5*septim/(5 * skyrimWeight));
+// https://en.uesp.net/wiki/Skyrim:Tools
+new GoodDatum(goods.charcoal, sources.skyrim, 2*septim/(0.5 * skyrimWeight));
+// horse price
+// new GoodDatum(goods.horse, sources.skyrim, 1000*septim);
+// https://en.uesp.net/wiki/Skyrim:Chop_Wood
+// "For the house in Whiterun, for example, you will get 5000 gold if you accumulate 1000 pieces of firewood. This takes approximately 24 hours of game time when the time scale is set around 10, or 25 minutes in real time."
+// new GoodDatum(goods.wageLaborer, sources.skyrim, 5000/3 * septim);
+// https://en.uesp.net/wiki/Beyond_Skyrim:Food
+new GoodDatum(goods.lettuce, sources.skyrim, 2*septim/(0.25 * skyrimWeight));
+new GoodDatum(goods.radish, sources.skyrim, 1*septim/(0.1 * skyrimWeight));
+// https://en.uesp.net/wiki/Beyond_Skyrim:Ingredients
+new GoodDatum(goods.rice, sources.skyrim, 5*septim/(0.1 * skyrimWeight));
+
 /** try "compare(sources.rome0, sources.usa202)" */
 function compare(s0, s1){
 	const priceChanges = {};
@@ -1065,7 +1137,7 @@ function compare(s0, s1){
 		rr.push(r);
 	});
 	priceChanges.avgArithmetic = rr.reduce((a, b) => a+b, 0) / rr.length;
-	priceChanges.avgGeometric = Math.pow(rr.reduce((a, b) => a*b, 1), 1 / rr.length);
+	priceChanges.avgGeometric = geometricAvg(rr);
 	priceChanges.adjGeo = {};
 	for (const i in priceChanges)
 		if (!['avg', 'adj'].includes(i.slice(0, 3)))
@@ -1081,10 +1153,15 @@ function blankTD(){
 	return document.createElement('td');
 }
 
+/** @param {Source} source */
+function visibleSources(source){
+	return debug || !source.hideMe;
+}
+
 function headers(){
 	const trh = document.createElement('tr');
 	trh.appendChild(document.createElement('td'));
-	Source.sources.forEach(source => {
+	Source.sources.filter(visibleSources).forEach(source => {
 		trh.appendChild(source.th);
 	});
 	return trh;
