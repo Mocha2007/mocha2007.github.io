@@ -1070,6 +1070,10 @@ function compare(s0, s1){
 	for (const i in priceChanges)
 		if (!['avg', 'adj'].includes(i.slice(0, 3)))
 			priceChanges.adjGeo[i] = priceChanges[i] / priceChanges.avgGeometric;
+	priceChanges.adjWage = {};
+	for (const i in priceChanges)
+		if (!['avg', 'adj'].includes(i.slice(0, 3)))
+			priceChanges.adjWage[i] = priceChanges[i] / priceChanges['Wage (Laborer)'];
 	return priceChanges;
 }
 
