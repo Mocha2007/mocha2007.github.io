@@ -1067,9 +1067,9 @@ function compare(s0, s1){
 	priceChanges.avgArithmetic = rr.reduce((a, b) => a+b, 0) / rr.length;
 	priceChanges.avgGeometric = Math.pow(rr.reduce((a, b) => a*b, 1), 1 / rr.length);
 	priceChanges.adjGeo = {};
-	for (const i in priceChanges){
-		priceChanges.adjGeo[i] = priceChanges[i] / priceChanges.avgGeometric;
-	}
+	for (const i in priceChanges)
+		if (!['avg', 'adj'].includes(i.slice(0, 3)))
+			priceChanges.adjGeo[i] = priceChanges[i] / priceChanges.avgGeometric;
 	return priceChanges;
 }
 
