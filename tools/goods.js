@@ -407,6 +407,7 @@ const sources = {
 	usa185: new Source('c. 1850', 'US', 'https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76'),
 	usa202: new Source('2023', 'US', 'https://www.walmart.com'), // i just went onto walmart lol
 	skyrim: new Source('4E 201', 'Skyrim', 'https://en.uesp.net/wiki/Skyrim:Skyrim', true),
+	dorf: new Source('', 'Dwarf Fortress', 'https://dwarffortresswiki.org', true),
 };
 
 // value of a pound, bimetallic ratio:
@@ -1122,6 +1123,31 @@ new GoodDatum(goods.lettuce, sources.skyrim, 2*septim/(0.25 * skyrimWeight));
 new GoodDatum(goods.radish, sources.skyrim, 1*septim/(0.1 * skyrimWeight));
 // https://en.uesp.net/wiki/Beyond_Skyrim:Ingredients
 new GoodDatum(goods.rice, sources.skyrim, 5*septim/(0.1 * skyrimWeight));
+
+
+// DWARF FORTRESS
+// https://dwarffortresswiki.org/index.php/Silver
+const dfs = 10*10.49; // value of silver * its density
+const df$ = 600 * 10.49 / (500 * 0.2); // a 600 cm^3 bar of silver (10.49 g/cm^3), weighs 6294 g. This can be turned into 500 silver coins worth $0.2 each.
+// https://dwarffortresswiki.org/index.php/Metal#Pure_metals
+new GoodDatum(goods.gold, sources.dorf, 30*19.32 / dfs);
+new GoodDatum(goods.copper, sources.dorf, 2*8.93 / dfs);
+new GoodDatum(goods.iron, sources.dorf, 10*7.85 / dfs);
+
+new GoodDatum(goods.charcoal, sources.dorf, 2*1.346 / dfs); // fuel
+new GoodDatum(goods.glass, sources.dorf, 2*2.6 / dfs); // green glass
+new GoodDatum(goods.salt, sources.dorf, 1*2.17 / dfs);
+new GoodDatum(goods.soap, sources.dorf, 1*0.5 / dfs);
+
+new GoodDatum(goods.cow, sources.dorf, 300 * df$);
+new GoodDatum(goods.horse, sources.dorf, 200 * df$);
+new GoodDatum(goods.pig, sources.dorf, 100 * df$);
+new GoodDatum(goods.sheep, sources.dorf, 100 * df$);
+new GoodDatum(goods.dog, sources.dorf, 30 * df$);
+new GoodDatum(goods.cat, sources.dorf, 20 * df$);
+new GoodDatum(goods.gooseLive, sources.dorf, 10 * df$);
+new GoodDatum(goods.chickenLive, sources.dorf, 10 * df$);
+new GoodDatum(goods.duckLive, sources.dorf, 10 * df$);
 
 /** try "compare(sources.rome0, sources.usa202)" */
 function compare(s0, s1){
