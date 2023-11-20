@@ -904,6 +904,11 @@ new GoodDatum(goods.ivory, sources.usa202, 3300/unit.lb / usd_ag2); // https://w
 
 new GoodDatum(goods.wageLaborer, sources.usa202, 8 * 7.25 / usd_ag2); // 8h min wage
 
+// today's cheapest animal prices
+new GoodDatum(goods.horse, sources.usa202, 7000 / usd_ag2); // https://www.astepabovestables.com/horses-for-sale/draft?Order=lowest
+new GoodDatum(goods.cat, sources.usa202, 15 / usd_ag2); // https://www.hepper.com/how-much-does-a-cat-cost/ (cheapest adoption cost)
+new GoodDatum(goods.dog, sources.usa202, 50 / usd_ag2); // https://be.chewy.com/pet-parenting-pet-lovers-dog-adoption-fees-explained/ (cheapest adoption cost)
+
 // https://babel.hathitrust.org/cgi/pt?id=uc1.32106007458745&seq=42
 new GoodDatum(goods.butter, sources.med17, 0.09/unit.lb / usd_ag);
 new GoodDatum(goods.butter, sources.med18, 0.12/unit.lb / usd_ag);
@@ -1044,6 +1049,7 @@ new GoodDatum(goods.candle, sources.med16, 1.206 * pence._3 / unit.lb); // Candl
 // https://babel.hathitrust.org/cgi/pt?id=uiug.30112104053555&seq=606
 new GoodDatum(goods.wageLaborer, sources.med17, (15 + 18 + 24 + 18 + 36)/5 * pence.c._17); // average of five 17th-c values
 new GoodDatum(goods.wageLaborer, sources.med18, (24 + 36)/2 * pence.c._17); // average of two 18th-c values
+
 
 function blankTD(){
 	return document.createElement('td');
