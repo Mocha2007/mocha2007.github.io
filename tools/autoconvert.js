@@ -117,6 +117,7 @@ const autoconvert = {
 		mm: [25.4, 'in'],
 		mL: [29.57353, 'fl oz'],
 		'm²': [0.3048*0.3048, 'ft²'],
+		µL: [29573.53/480, 'min'],
 		'°C': [5/9, '°F'],
 	},
 	eremoranUnits: {
