@@ -119,7 +119,7 @@ const autoconvert = {
 	eremoranUnits: {
 		// special eremoran units
 		edzam: [16.67, 'g', 1, 16.67 / 28.349523125, 'oz', 2],
-		se: [2.84, 'mm', 1, 0.284 / 2.54, 'in', 2],
+		se: [2.875, 'mm', 1, 0.2875 / 2.54, 'in', 2],
 	},
 };
 
