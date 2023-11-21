@@ -89,19 +89,22 @@ compositions.forEach((datum, i) => {
 	document.getElementById(important ? 'c_imp' : 'c_unimp').appendChild(label);
 	label.classList.value = `button ${classList}`;
 	const input = document.createElement('input');
+	input.id = `composition_${name.toLowerCase()}`;
 	label.appendChild(input);
 	input.type = 'radio';
 	if (!i)
-		input.checked = 'checked';
+		input.checked = true;
 	input.name = 'composition';
 	input.value = d;
 	label.appendChild(document.createTextNode(name));
 });
 
 function preset(id){
-	function size(d, t){
+	function size(d, t, s){
 		document.getElementById('diameter_mm').value = d;
 		document.getElementById('thickness_mm').value = t;
+		if (s)
+			document.getElementById(`composition_${s}`).checked = true;
 		update();
 	}
 	switch (id){
@@ -150,19 +153,19 @@ function preset(id){
 			break;
 		// https://mocha2007.github.io/namei/namei#Eremoran_Currency
 		case 'ere1':
-			size(7*se, 0.75*se);
+			size(7*se, 0.75*se, 'bronze');
 			break;
 		case 'ere2':
-			size(10*se, 0.75*se);
+			size(10*se, 0.75*se, 'sterling silver');
 			break;
 		case 'ere3':
-			size(14*se, 1.5*se);
+			size(14*se, 1.5*se, 'sterling silver');
 			break;
 		case 'ere4':
-			size(10*se, 0.75*se);
+			size(10*se, 0.75*se, 'gold');
 			break;
 		case 'ere5':
-			size(14*se, 1.5*se);
+			size(14*se, 1.5*se, 'gold');
 			break;
 	}
 }
