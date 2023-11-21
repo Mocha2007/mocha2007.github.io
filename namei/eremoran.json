@@ -5904,7 +5904,8 @@
 		"etym": "C/epet/-ê",
 		"cat": "n., 1st",
 		"defList": [
-			"spearman"
+			"spearman",
+			"surveyor"
 		],
 		"categories": ["person"]
 	},
@@ -5913,7 +5914,8 @@
 		"etym": "L/PRE/eppe/spear",
 		"cat": "n., 3rd",
 		"defList": [
-			"spear"
+			"spear",
+			"surveying rod"
 		],
 		"categories": ["war"]
 	},
