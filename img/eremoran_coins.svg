@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="no"?>
+<svg width="450" height="300" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<desc>Oneia-Nikki System</desc>
+	<!-- 100 px = 1 se; each coin is centered in a 150x150px grid, so the image is 450 wide 300 tall -->
+
+	<circle cx="75" cy="75" r="40" fill="#c73"/>
+	<text x="75" y="80" font-family="Verdana" font-size="18" fill="#663B19" text-anchor="middle">
+		1a
+	</text>
+
+	<circle cx="225" cy="75" r="35" fill="#eee"/>
+	<text x="225" y="80" font-family="Verdana" font-size="18" fill="#777" text-anchor="middle">
+		1z
+	</text>
+
+	<circle cx="375" cy="75" r="55" fill="#eee"/>
+	<text x="375" y="80" font-family="Verdana" font-size="18" fill="#777" text-anchor="middle">
+		4z
+	</text>
+	
+	<circle cx="75" cy="225" r="35" fill="#fc0"/>
+	<text x="75" y="230" font-family="Verdana" font-size="18" fill="#860" text-anchor="middle">
+		1d
+	</text>
+	
+	<circle cx="225" cy="225" r="55" fill="#fc0"/>
+	<text x="225" y="230" font-family="Verdana" font-size="18" fill="#860" text-anchor="middle">
+		4d
+	</text>
+	
+	<circle cx="375" cy="225" r="75" fill="#08f"/>
+	<text x="375" y="230" font-family="Verdana" font-size="18" fill="#048" text-anchor="middle">
+		Eremoran Coins
+	</text>
+</svg>
