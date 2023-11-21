@@ -56,16 +56,9 @@
 	<br>
 	Composition:
 	<div>
-		<strong>
-		<label class="button copper"><input type="radio" name="composition" value="8.96">Copper</label>
-		<label class="button copper"><input type="radio" name="composition" value="8.15">Bronze</label>
-		<label class="button" title="92.5% Ag, 7.5% Cu"><input type="radio" name="composition" value="10.3" checked>Sterling Silver</label>
-		<label class="button"><input type="radio" name="composition" value="10.49">Silver</label>
-		<label class="button gold"><input type="radio" name="composition" value="19.3">Gold</label>
-		</strong>
+		<strong id="c_imp"></strong>
 		<br>
-		<label class="button" title="75% Cu, 25% Ni"><input type="radio" name="composition" value="7.257">Cupronickel</label>
-		<label class="button"><input type="radio" name="composition" value="8.65">Electrum</label>
+		<span id="c_unimp"></span>
 	</div>
 	<hr>
 	Volume: <span id="vol_mm3"></span> cm<sup>3</sup><br>
@@ -79,6 +72,31 @@ const gr = 0.06479891;
 
 const se = 2.84; // mm
 const edzam = 16.67; // g
+
+const compositions = [
+	['Copper', 8.96, 'copper', true],
+	['Bronze', 8.15, 'copper', true],
+	['Sterling Silver', 10.3, '', true],
+	['Silver', 10.49, '', true],
+	['Gold', 19.3, 'gold', true],
+	// secondary
+	['Cupronickel', 7.257],
+	['Electrum', 8.65],
+];
+compositions.forEach((datum, i) => {
+	const [name, d, classList, important] = datum;
+	const label = document.createElement('label');
+	document.getElementById(important ? 'c_imp' : 'c_unimp').appendChild(label);
+	label.classList.value = `button ${classList}`;
+	const input = document.createElement('input');
+	label.appendChild(input);
+	input.type = 'radio';
+	if (!i)
+		input.checked = 'checked';
+	input.name = 'composition';
+	input.value = d;
+	label.appendChild(document.createTextNode(name));
+});
 
 function preset(id){
 	function size(d, t){
@@ -171,4 +189,4 @@ function update(){
 update();
 </script>
 </html>
-<!-- todo imperial units -->
+<!-- todo auto-select composition from preset -->
