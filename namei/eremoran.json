@@ -901,6 +901,14 @@
 		"categories": ["herb", "plant", "tree"]
 	},
 	{
+		"title": "akara",
+		"etym": "I/PEN/*akara",
+		"cat": "n., 4th",
+		"defList": [
+			"drop, droplet"
+		]
+	},
+	{
 		"title": "akat",
 		"etym": "L/VAZ/???",
 		"cat": "n., 3rd",
@@ -8915,6 +8923,14 @@
 		"categories": ["male given name", "person"]
 	},
 	{
+		"title": "keret",
+		"etym": "I/PEN/*kere-t/jug",
+		"cat": "n., 3rd",
+		"defList": [
+			"bottle, quart"
+		]
+	},
+	{
 		"title": "kerôlak",
 		"etym": "D/kerôz",
 		"cat": "n., 2nd",
@@ -9149,6 +9165,14 @@
 		"cat": "n., 5th",
 		"defList": [
 			"somewhere"
+		]
+	},
+	{
+		"title": "kinat",
+		"etym": "I/PEN/*kina-t/jug",
+		"cat": "n., 3rd",
+		"defList": [
+			"jug, gallon"
 		]
 	},
 	{
@@ -9714,6 +9738,14 @@
 			"clover"
 		],
 		"categories": ["plant"]
+	},
+	{
+		"title": "kret",
+		"etym": "I/PEN/*gre-t/basket",
+		"cat": "n., 3rd",
+		"defList": [
+			"basket, bushel"
+		]
 	},
 	{
 		"title": "krifan",
