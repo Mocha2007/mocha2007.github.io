@@ -104,7 +104,7 @@ const autoconvert = {
 		// example translation: IF m THEN USE ft @ RATE 0.3048
 		m: [0.3048, 'ft'],
 		// rest in alphabetical order
-		a: [0.0009290304, 'ft²'],
+		a: [40.468564224, 'ac'],
 		cm: [2.54, 'in'],
 		g: [28.349523125, 'oz'],
 		ha: [0.40468564224, 'ac'],
