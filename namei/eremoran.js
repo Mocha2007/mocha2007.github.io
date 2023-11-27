@@ -555,6 +555,9 @@ const wordle = {
 };
 
 const search = {
+	append(s){
+		document.getElementById('regexSearch').value += s;
+	},
 	appendResult(s){
 		const li = document.createElement('li');
 		li.appendChild(titleCard(s));
