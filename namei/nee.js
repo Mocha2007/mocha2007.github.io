@@ -134,7 +134,7 @@ new Feature(1740/3000, 1860/3000, 'Kuren', 'https://upload.wikimedia.org/wikiped
 new Feature(1770/3000, 1770/3000, 'Taika', 'https://upload.wikimedia.org/wikipedia/commons/6/6b/Restaurant_on_stilts_on_the_Outskirts_of_Dhaka.jpg');
 new Feature(1670/3000, 1700/3000, 'Wu', 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Shah_Rukn-e-Alam_tomb_in_Multan%2C_Pakistan_01.jpg');
 new Feature(1760/3000, 1600/3000, 'Dako', 'https://upload.wikimedia.org/wikipedia/commons/6/66/Kumrat_valley%2C_Upper_Dir.jpg');
-new Feature(1210/3000, 1340/3000, 'Irikar', 'https://upload.wikimedia.org/wikipedia/commons/2/23/Azerbaijan_Nature_Shaki.jpg');
+new Feature(1100/3000, 1340/3000, 'Irikar', 'https://upload.wikimedia.org/wikipedia/commons/2/23/Azerbaijan_Nature_Shaki.jpg');
 // other majors
 new Feature(2640/3000, 1560/3000, 'Važcud', 'https://upload.wikimedia.org/wikipedia/commons/2/2a/%E4%B8%B9%E9%9C%9E%E5%B1%B1_04.jpg', 50);
 new Feature(2070/3000, 1630/3000, 'Nekang', 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Tak_province_Burmese_mountains.jpg', 50);
