@@ -96,6 +96,8 @@ class Feature {
 Feature.features = [];
 new Feature(mm_climate, 1517/3000, 1872/3000, 'Eremor', 'https://upload.wikimedia.org/wikipedia/commons/f/f4/Kirthar_park.jpg',
 	'Eremor is an interesting land...');
+new Feature(mm_climate, 1290/3000, 1660/3000, 'Mur', 'https://upload.wikimedia.org/wikipedia/commons/6/62/TigrisRiver.JPG',
+	'The Murans are related to the Eremorans.');
 
 const nee = {
 	/** the map will be 700 px wide */
