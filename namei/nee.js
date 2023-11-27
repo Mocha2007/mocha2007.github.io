@@ -1,3 +1,18 @@
+const nee = {
+	/** the map will be 700 px wide */
+	imgScale: 700,
+	main(){
+		// create mapmode buttons
+		const mapmodeSelector = document.getElementById('mapmodes');
+		MapMode.mapmodes.forEach(mode => mapmodeSelector.appendChild(mode.label));
+		// select first mapmode
+		MapMode.mapmodes[0].select();
+		// select first feature
+		Feature.features[0].select();
+	},
+	orbsize: 25,
+};
+
 class MapMode {
 	constructor(name, src){
 		/** @type {string} */
@@ -37,7 +52,7 @@ MapMode.mapmodes = [];
 const mm_climate = new MapMode('Climate', '../img/pankair.png');
 
 class Feature {
-	constructor(mode, x, y, name, src, desc = ''){
+	constructor(mode, x, y, name, src, importance = nee.orbsize, desc = ''){
 		/** @type {MapMode} */
 		this.mode = mode;
 		/** @type {number} in % */
@@ -48,6 +63,8 @@ class Feature {
 		this.name = name;
 		/** @type {string} */
 		this.src = src;
+		/** @type {number} */
+		this.importance = importance;
 		/** @type {string} */
 		this.desc = desc;
 		Feature.features.push(this);
@@ -58,6 +75,9 @@ class Feature {
 		const h = document.createElement('h2');
 		elem.appendChild(h);
 		h.innerHTML = this.name;
+		const img = document.createElement('img');
+		img.src = this.src;
+		elem.appendChild(img);
 		const p = document.createElement('p');
 		elem.appendChild(p);
 		p.innerHTML = this.desc;
@@ -70,13 +90,14 @@ class Feature {
 		elem.title = this.name;
 		elem.src = this.src;
 		elem.onclick = () => this.select();
-		const [x, y] = [this.x * nee.imgScale - nee.orbsize/2,
-			this.y * nee.imgScale - nee.orbsize/2];
+		const size = elem.style.zIndex = this.importance;
+		const [x, y] = [this.x * nee.imgScale - size/2,
+			this.y * nee.imgScale - size/2];
 		elem.style.left = x + 'px';
 		elem.style.top = y + 'px';
-		elem.style.borderRadius = nee.orbsize + 'px';
-		elem.style.height = nee.orbsize + 'px';
-		elem.style.width = nee.orbsize + 'px';
+		elem.style.borderRadius = size + 'px';
+		elem.style.height = size + 'px';
+		elem.style.width = size + 'px';
 		return elem;
 	}
 	get orbID(){
@@ -95,23 +116,9 @@ class Feature {
 /** @type {Feature[]} */
 Feature.features = [];
 new Feature(mm_climate, 1517/3000, 1872/3000, 'Eremor', 'https://upload.wikimedia.org/wikipedia/commons/f/f4/Kirthar_park.jpg',
-	'Eremor is an interesting land...');
+	50, 'Eremor is an interesting land...');
 new Feature(mm_climate, 1290/3000, 1660/3000, 'Mur', 'https://upload.wikimedia.org/wikipedia/commons/6/62/TigrisRiver.JPG',
-	'The Murans are related to the Eremorans.');
-
-const nee = {
-	/** the map will be 700 px wide */
-	imgScale: 700,
-	main(){
-		// create mapmode buttons
-		const mapmodeSelector = document.getElementById('mapmodes');
-		MapMode.mapmodes.forEach(mode => mapmodeSelector.appendChild(mode.label));
-		// select first mapmode
-		MapMode.mapmodes[0].select();
-		// select first feature
-		Feature.features[0].select();
-	},
-	orbsize: 50,
-};
+	25, 'The Murans are related to the Eremorans.');
+new Feature(mm_climate, 1630/3000, 1890/3000, 'Tepu', 'https://upload.wikimedia.org/wikipedia/commons/6/66/Periyar_National_Park.JPG');
 
 nee.main();
