@@ -99,8 +99,16 @@ function get_t(){
 	return new Date() - 1692216960000; // first dose = 2023 Aug 16 @ 4:16 PM EDT
 }
 
+/** https://stackoverflow.com/a/30280636 */
+function isDST(d){
+	const jan = new Date(d.getFullYear(), 0, 1).getTimezoneOffset();
+	const jul = new Date(d.getFullYear(), 6, 1).getTimezoneOffset();
+	return Math.max(jan, jul) !== d.getTimezoneOffset();
+}
+
 function get_dose_t(){
-	return new Date() - 1692227700000; // 7:15 is when I normally take my doses
+	const d = new Date();
+	return d - 1692227700000 - (isDST(d) ? 0 : _1h); // 7:15 is when I normally take my doses
 }
 
 function get_laser_t(){
