@@ -80,20 +80,27 @@ class Feature {
 		return elem;
 	}
 	get orb(){
-		const elem = document.createElement('img');
-		elem.id = this.orbID;
-		elem.classList.add('orb');
+		const elem = document.createElement('div');
+		const img = document.createElement('img');
+		elem.appendChild(img);
+		img.id = this.orbID;
+		img.classList.add('orb');
+		elem.classList.add('orbContainer');
 		elem.title = this.name;
-		elem.src = this.src;
+		img.src = this.src;
 		elem.onclick = () => this.select();
 		const size = elem.style.zIndex = this.importance;
 		const [x, y] = [this.x * nee.imgScale - size/2,
 			this.y * nee.imgScale - size/2];
 		elem.style.left = x + 'px';
 		elem.style.top = y + 'px';
-		elem.style.borderRadius = size + 'px';
-		elem.style.height = size + 'px';
-		elem.style.width = size + 'px';
+		img.style.borderRadius = img.style.height = img.style.width = size + 'px';
+		// subtitle
+		const sub = document.createElement('span');
+		sub.innerHTML = this.name;
+		elem.appendChild(sub);
+		sub.style.left = 0;
+		sub.style.top = sub.style.width = size + 'px';
 		return elem;
 	}
 	get orbID(){
