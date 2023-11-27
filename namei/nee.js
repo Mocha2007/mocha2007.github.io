@@ -47,7 +47,10 @@ class MapMode {
 }
 /** @type {MapMode[]} */
 MapMode.mapmodes = [];
+new MapMode('Biomes', '../img/pankair_biomes.png');
 new MapMode('Climate', '../img/pankair.png');
+new MapMode('Crops', '../img/pankair_staple.png');
+new MapMode('Drinks', '../img/pankair_drink.png');
 
 class Feature {
 	constructor(x, y, name, src, importance = nee.orbsize, desc = ''){
@@ -136,7 +139,7 @@ new Feature(1210/3000, 1340/3000, 'Irikar', 'https://upload.wikimedia.org/wikipe
 new Feature(2640/3000, 1560/3000, 'Važcud', 'https://upload.wikimedia.org/wikipedia/commons/2/2a/%E4%B8%B9%E9%9C%9E%E5%B1%B1_04.jpg', 50);
 new Feature(2070/3000, 1630/3000, 'Nekang', 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Tak_province_Burmese_mountains.jpg', 50);
 new Feature(740/3000, 890/3000, 'Półtaś', 'https://upload.wikimedia.org/wikipedia/commons/2/29/Green_and_rolling_countryside_in_northern_Portugal_%2852712607091%29.jpg', 50);
-new Feature(910/3000, 610/3000, 'Porön', 'https://upload.wikimedia.org/wikipedia/commons/9/91/German_Countryside_%2873864589%29.jpeg', 50);
+new Feature(910/3000, 550/3000, 'Porön', 'https://upload.wikimedia.org/wikipedia/commons/9/91/German_Countryside_%2873864589%29.jpeg', 50);
 new Feature(2230/3000, 2800/3000, 'Nizhind', 'https://upload.wikimedia.org/wikipedia/commons/4/46/Lake_Toba%2C_North_Sumatra%2C_Indonesia.jpg', 50);
 // topological features
 new Feature(840/3000, 1070/3000, 'Sinônô', 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Karachay-Cherkessia%2C_Caucasus_Mountains%2C_Abishira-Akhuba%2C_Black_Rock_Ridge_2.jpg', 40,
