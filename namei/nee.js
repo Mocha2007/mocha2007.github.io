@@ -101,6 +101,7 @@ class Feature {
 		elem.appendChild(sub);
 		sub.style.left = 0;
 		sub.style.top = sub.style.width = size + 'px';
+		sub.style.fontSize = `${size + 35}%`;
 		return elem;
 	}
 	get orbID(){
