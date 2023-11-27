@@ -120,18 +120,23 @@ class Feature {
 /** @type {Feature[]} */
 Feature.features = [];
 // countries / nations / cities
+// murans
 new Feature(1517/3000, 1872/3000, 'Eremor', 'https://upload.wikimedia.org/wikipedia/commons/f/f4/Kirthar_park.jpg',
 	50, 'Eremor is an interesting land...');
 new Feature(1290/3000, 1660/3000, 'Mur', 'https://upload.wikimedia.org/wikipedia/commons/6/62/TigrisRiver.JPG',
 	25, 'The Murans are related to the Eremorans.');
+// near murans
 new Feature(1630/3000, 1890/3000, 'Tepu', 'https://upload.wikimedia.org/wikipedia/commons/6/66/Periyar_National_Park.JPG');
 new Feature(1740/3000, 1860/3000, 'Kuren', 'https://upload.wikimedia.org/wikipedia/commons/2/23/Sundarban_Tiger.jpg');
 new Feature(1770/3000, 1770/3000, 'Taika', 'https://upload.wikimedia.org/wikipedia/commons/6/6b/Restaurant_on_stilts_on_the_Outskirts_of_Dhaka.jpg');
+new Feature(1670/3000, 1700/3000, 'Wu', 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Shah_Rukn-e-Alam_tomb_in_Multan%2C_Pakistan_01.jpg');
+new Feature(1760/3000, 1600/3000, 'Dako', 'https://upload.wikimedia.org/wikipedia/commons/6/66/Kumrat_valley%2C_Upper_Dir.jpg');
+new Feature(1210/3000, 1340/3000, 'Irikar', 'https://upload.wikimedia.org/wikipedia/commons/2/23/Azerbaijan_Nature_Shaki.jpg');
+// other majors
 new Feature(2640/3000, 1560/3000, 'Važcud', 'https://upload.wikimedia.org/wikipedia/commons/2/2a/%E4%B8%B9%E9%9C%9E%E5%B1%B1_04.jpg', 50);
 new Feature(2070/3000, 1630/3000, 'Nekang', 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Tak_province_Burmese_mountains.jpg', 50);
 new Feature(740/3000, 890/3000, 'Półtaś', 'https://upload.wikimedia.org/wikipedia/commons/2/29/Green_and_rolling_countryside_in_northern_Portugal_%2852712607091%29.jpg', 50);
 new Feature(910/3000, 610/3000, 'Porön', 'https://upload.wikimedia.org/wikipedia/commons/9/91/German_Countryside_%2873864589%29.jpeg', 50);
-new Feature(1210/3000, 1340/3000, 'Irikar', 'https://upload.wikimedia.org/wikipedia/commons/2/23/Azerbaijan_Nature_Shaki.jpg');
 new Feature(2230/3000, 2800/3000, 'Nizhind', 'https://upload.wikimedia.org/wikipedia/commons/4/46/Lake_Toba%2C_North_Sumatra%2C_Indonesia.jpg', 50);
 // topological features
 new Feature(840/3000, 1070/3000, 'Sinônô', 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Karachay-Cherkessia%2C_Caucasus_Mountains%2C_Abishira-Akhuba%2C_Black_Rock_Ridge_2.jpg', 40,
