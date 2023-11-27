@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="description" content="Namei Exploration Experience">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link href=../simple.css type="text/css" rel="stylesheet" title="Light">
+<link href="../css/button.css" type="text/css" rel="stylesheet">
+<!--<script src="../common.js"></script>-->
+<script src="nee.js" defer></script>
+<style>
+	.orb {
+		border: 2px solid black;
+		border-radius: 50px;
+		cursor: pointer;
+		height: 50px;
+		position: relative;
+		width: 50px;
+	}
+	.orb:hover {
+		opacity: 67%;
+	}
+	.orb:active {
+		opacity: 33%;
+	}
+	.selectedOrb {
+		border-color: red;
+	}
+	#orbs {
+		left: 0;
+		position: absolute;
+		top: 0;
+	}
+	#map {
+		width: 100%;
+	}
+	#map_container {
+		position: relative;
+	}
+</style>
+<title>Namei Exploration Experience</title>
+<nav></nav>
+<h1 id="Namei_Exploration_Experience">Namei Exploration Experience</h1>
+<p>
+	Namei Exploration Experience.
+</p>
+<div id="nee">
+	<div id="mapmodes"></div>
+	<div id="map_container">
+		<img id="map">
+		<div id="orbs"></div>
+	</div>
+	<div id="description"></div>
+</div>
+</html>
+<!-- 
+	different mapmodes:
+		- climate: show climate map
+	each mode has different features
+		- climate mapmode shows sample climates from regions, when you click on them
+-->
