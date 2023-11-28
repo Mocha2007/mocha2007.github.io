@@ -27,7 +27,9 @@ function irishLog(base = 10){
 	 */
 	function minOffset(t1, t2, multiples = [0]){
 		const mods = t1.filter(isFinite);
-		for (let offset = 1; offset < Infinity; offset++) // You may think a while loop would make more sense here. And you'd be right - except due to a quirk of how loop declarations work in JS, a while loop doesn't work here at all.
+		const start = Math.max(...t1.filter(isFinite)) + 1;
+		// You may think a while loop would make more sense here. And you'd be right - except due to a quirk of how loop declarations work in JS, a while loop doesn't work here at all.
+		for (let offset = start; offset < Infinity; offset++)
 			if (mods.every(m => multiples.every(mul => !isFinite(t2[m + mul + offset]))))
 				return offset;
 	}
@@ -109,7 +111,7 @@ function update(){
 		t2_23_container.appendChild(create23Table(t2));
 }
 
-function test(b = 100, n = 100){
+function test(b = 100, n = 500){
 	const t0 = new Date();
 	for (let i = 0; i < n; i++)
 		irishLog(b);
