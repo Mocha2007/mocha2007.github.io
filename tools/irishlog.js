@@ -112,7 +112,7 @@ function test(b = 100, n = 500){
 	for (let i = 0; i < n; i++)
 		irishLog(b);
 	const t1 = new Date();
-	return (t1-t0)/n;
+	return `${(t1-t0)/n} ms`;
 }
 
 update();
