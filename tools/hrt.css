@@ -26,9 +26,11 @@ h2 {
 	background-color: #444;
 }
 td#lpt_td0, td#lpt_td1 {
+	border-bottom: var(--cellBSize) solid silver;
 	height: var(--cellSize);
 }
 td#lpt_td0 {
+	border-right: var(--cellBSize) solid silver;
 	width: calc(2 * var(--cellSize) + 1 * var(--cellBSize));
 }
 td#lpt_td1 {
