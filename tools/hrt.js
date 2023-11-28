@@ -1,4 +1,6 @@
 /* eslint-disable max-len */
+const debug = document.URL[0].toLowerCase() === 'f'; // file:// vs. http(s)://
+
 const _1s = 1000;
 const _1m = 60*_1s;
 const _1h = 60*_1m;
@@ -112,7 +114,59 @@ function get_dose_t(){
 }
 
 function get_laser_t(){
-	return new Date() - (new Date(2024, 0, 2) - 3*5*_1w); // 3*5 weeks before 1/2; iirc orig. 1694782800000
+	return new Date() - (new Date(2024, 0, 2, 9) - 3*5*_1w); // 3*5 weeks before 1/2; iirc orig. 1694782800000
+}
+
+function laserPhaseElem(){
+	const day = Math.floor(get_laser_t() / _1d) % 35;
+	const epoch = new Date(new Date() - _1d * day);
+	// a visual chart showing progress to next laser: 2 days, avoid sunlight, 1 wk, "face settling in", rest, "waiting"
+	// container
+	const elem = document.createElement('div');
+	elem.id = 'laserPhaseContainer';
+	// it is a 7-wide, 5-tall table
+	const table = document.createElement('table');
+	table.id = 'laserPhaseTable';
+	elem.appendChild(table);
+	const tr0 = document.createElement('tr');
+	table.appendChild(tr0);
+	const tr1 = document.createElement('tr');
+	table.appendChild(tr1);
+	const td0 = document.createElement('td');
+	td0.id = 'lpt_td0';
+	td0.innerHTML = 'avoid sun';
+	td0.colSpan = 2;
+	tr0.appendChild(td0);
+	const td1 = document.createElement('td');
+	td1.id = 'lpt_td1';
+	td1.innerHTML = 'hair dies';
+	td1.colSpan = 5;
+	tr0.appendChild(td1);
+	const td2 = document.createElement('td');
+	td2.id = 'lpt_td2';
+	td2.innerHTML = 'wait';
+	td2.colSpan = 7;
+	td2.rowSpan = 4;
+	tr1.appendChild(td2);
+	// duplicate, but just for the redness...
+	const red = document.createElement('table');
+	red.id = 'laserPhaseRed';
+	for (let i = 0; i < 5; i++){
+		const tr = document.createElement('tr');
+		red.appendChild(tr);
+		for (let j = 0; j < 7; j++){
+			const d = 7*i + j;
+			const td = document.createElement('td');
+			tr.appendChild(td);
+			const date = document.createElement('span');
+			date.classList.add('date');
+			date.innerHTML = new Date(_1d*d + +epoch).getDate();
+			td.appendChild(date);
+			td.classList.add(d <= day ? 'red' : debug ? 'redDebug' : 'redNoDebug');
+		}
+	}
+	elem.appendChild(red);
+	return elem;
 }
 
 function unit(x, name){
@@ -205,6 +259,7 @@ function hrt(){
 	const time = document.createElement('h2');
 	time.id = 'time';
 	container.appendChild(time);
+	container.appendChild(laserPhaseElem());
 	container.appendChild(document.createElement('hr'));
 	container.appendChild(progress());
 	return container;

@@ -1,3 +1,57 @@
 h2 {
 	font-size: 125%; /* to prevent the clock from wrapping on mobile */
 }
+
+:root {
+	--cellSize: 2.5em;
+	--cellBSize: 1px;
+}
+
+#laserPhaseContainer {
+	font-size: 65%;
+	position: relative;
+	text-align: center;
+	user-select: none;
+}
+#laserPhaseContainer table {
+	border-collapse: collapse;
+}
+#laserPhaseContainer td {
+	border: var(--cellBSize) solid black;
+	height: var(--cellSize);
+	padding: 0;
+	width: var(--cellSize);
+}
+#laserPhaseTable {
+	background-color: #444;
+}
+td#lpt_td0, td#lpt_td1 {
+	height: var(--cellSize);
+}
+td#lpt_td0 {
+	width: calc(2 * var(--cellSize) + 1 * var(--cellBSize));
+}
+td#lpt_td1 {
+	width: calc(5 * var(--cellSize) + 4 * var(--cellBSize));
+}
+td#lpt_td2 {
+	height: calc(4 * var(--cellSize) + 3 * var(--cellBSize));
+	width: calc(7 * var(--cellSize) + 6 * var(--cellBSize));
+}
+#laserPhaseRed {
+	left: 0;
+	opacity: 0.5;
+	position: absolute;
+	top: 0;
+}
+#laserPhaseRed td {
+	font-style: italic;
+	text-align: left;
+	vertical-align: top;
+}
+#laserPhaseRed td.red {
+	background-color: #f80;
+}
+#laserPhaseRed td.redDebug {
+	background-color: #08f;
+}
