@@ -41,7 +41,7 @@ function irishLog(base = 10){
 	// primes, and multiples thereof
 	range(base).filter(isPrime).concat([0]).forEach(p => {
 		// find smallest valid value for it
-		const multiples = p ? range(Math.floor((base-1) / p)).map(x => table1[x+1]).slice(0, p+1)
+		const multiples = p ? range(Math.floor((base-1) / p)).map(x => table1[x+1])
 			: [0]; // when determining the t1 of a prime we must also account for its multiples that will also be in t1
 		table1[p] = minOffset(table1, table2, multiples);
 		if (0 < p)
