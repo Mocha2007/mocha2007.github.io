@@ -138,7 +138,7 @@ const featureSize = {
 	semi: 1.6 * nee.orbsize,
 	mount: 1.2 * nee.orbsize,
 	min: nee.orbsize,
-}
+};
 // countries / nations / cities
 // murans
 new Feature(1517/3000, 1872/3000, 'Eremor', 'https://upload.wikimedia.org/wikipedia/commons/f/f4/Kirthar_park.jpg',
