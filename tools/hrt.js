@@ -172,7 +172,7 @@ function laserPhaseElem(){
 function eLevel(){
 	const t = get_dose_t() % _12h / _1h;
 	const e = eLevel.peak * Math.pow(0.5, t/6);
-	const delta = e - e * Math.pow(0.5, 1/6);
+	const delta = Math.log(2)/6 * e; // instantaneous change; found through derivative
 	return `<span class="small">Current blood E2 level: ~${Math.round(e)} pg/mL (&darr; ${Math.round(delta)} pg/mLh)</span>`;
 }
 eLevel.peak = 63.4 * Math.pow(2, 14/6);
