@@ -160,7 +160,7 @@ new Feature(1650/3000, 1390/3000, 'Nuzdexax', 'https://upload.wikimedia.org/wiki
 new Feature(740/3000, 890/3000, 'Półtaś', 'https://upload.wikimedia.org/wikipedia/commons/2/29/Green_and_rolling_countryside_in_northern_Portugal_%2852712607091%29.jpg', featureSize.maj);
 new Feature(910/3000, 550/3000, 'Porön', 'https://upload.wikimedia.org/wikipedia/commons/9/91/German_Countryside_%2873864589%29.jpeg', featureSize.maj);
 new Feature(2230/3000, 2800/3000, 'Nizhind', 'https://upload.wikimedia.org/wikipedia/commons/4/46/Lake_Toba%2C_North_Sumatra%2C_Indonesia.jpg', featureSize.maj);
-new Feature(1200/3000, 1080/3000, '"PlainsLang"', 'https://upload.wikimedia.org/wikipedia/commons/7/74/Patagonian_Steppe_%283260842962%29.jpg', featureSize.maj);
+new Feature(1200/3000, 1080/3000, '"PlainsLang"', 'https://upload.wikimedia.org/wikipedia/commons/7/74/Patagonian_Steppe_%283260842962%29.jpg', featureSize.maj, '', ['dead']);
 new Feature(230/3000, 1900/3000, '"Boizone"', 'https://i.imgflip.com/7tz40i.jpg', featureSize.maj, 'The Boizone (name to be determined) is where much of Pankair\'s supply of millet comes from.');
 // topological features
 new Feature(840/3000, 1070/3000, 'Sinônô', 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Karachay-Cherkessia%2C_Caucasus_Mountains%2C_Abishira-Akhuba%2C_Black_Rock_Ridge_2.jpg', featureSize.mount,
