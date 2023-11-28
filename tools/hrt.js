@@ -169,6 +169,13 @@ function laserPhaseElem(){
 	return elem;
 }
 
+function eLevel(){
+	const t = get_dose_t() % _12h / _1h;
+	const e = eLevel.peak * Math.pow(0.5, t/6);
+	return `<span id="e_lev">~${Math.round(e)} pg/mL</span>`;
+}
+eLevel.peak = 63.4 * Math.pow(2, 14/6);
+
 function unit(x, name){
 	return `${x} ${name}${x === 1 ? '' : 's'}`;
 }
@@ -198,6 +205,7 @@ function time_elem_inner(){
 	return str + `${unit(m, 'month')}, ${unit(d, 'day')},
 		${unit(h, 'hour')}, ${unit(min, 'minute')}, ${unit(s, 'second')}<br>
 		${unit(doses, 'dose')} of E (${unit(doseH, 'hour')}, ${unit(doseM, 'minute')}, ${unit(doseS, 'second')} until next dose)<br>
+		${eLevel()}<br>
 		${unit(laser, 'laser session')}`;
 }
 
