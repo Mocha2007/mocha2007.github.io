@@ -27,7 +27,9 @@ function irishLog(base = 10){
 	 */
 	function minOffset(t1, t2){
 		const mods = t1.filter(isFinite);
-		return Math.min(...range(base * base).filter(n => mods.every(m => !isFinite(t2[m + n]))));
+		for (let n = 0; n < Infinity; n++) // You may think a while loop would make more sense here. And you'd be right - except due to a quirk of how loop declarations work in JS, a while loop doesn't work here at all.
+			if (mods.every(m => !isFinite(t2[m + n])))
+				return n;
 	}
 	const table1 = [];
 	const table2 = [];
