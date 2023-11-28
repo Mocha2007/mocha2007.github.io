@@ -1,4 +1,4 @@
-/* exported update */
+/* exported test, update */
 
 function range(n){
 	return Array.from(Array(n).keys());
@@ -9,7 +9,7 @@ function isPrime(n){
 		return true;
 	if (n < 2 || n % 1 || n % 2 === 0)
 		return false;
-	for (let i = 3; i <= Math.floor(Math.sqrt(n)); i += 2)
+	for (let i = 3; i <= Math.floor(Math.sqrt(n)); i += i % 6 === 1 ? 4 : 2)
 		if (n % i === 0)
 			return false;
 	return true;
@@ -63,6 +63,16 @@ function update(){
 	const [t1, t2] = irishLog(base);
 	document.getElementById('t1').innerHTML = printArr(t1);
 	document.getElementById('t2').innerHTML = printArr(t2);
+	document.getElementById('t1_len').innerHTML = base;
+	document.getElementById('t2_len').innerHTML = t2.length;
+}
+
+function test(b = 100, n = 500){
+	const t0 = new Date();
+	for (let i = 0; i < n; i++)
+		irishLog(b);
+	const t1 = new Date();
+	return (t1-t0)/n;
 }
 
 update();
