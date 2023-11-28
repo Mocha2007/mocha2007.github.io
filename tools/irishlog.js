@@ -47,7 +47,7 @@ function irishLog(base = 10){
 		// update table 2
 		for (let i = 0; i < base; i++)
 			if (isFinite(table1[i]))
-				for (let j = 0; j < base; j++)
+				for (let j = i; j < base; j++)
 					if (isFinite(table1[j]))
 						table2[table1[i] + table1[j]] = i*j;
 	});
