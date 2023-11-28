@@ -58,6 +58,42 @@ function irishLog(base = 10){
 	return [table1, table2];
 }
 
+/** @param {number[]} t2 */
+function create23Table(t2){
+	const table = document.createElement('table');
+	const width = t2.indexOf(3);
+	const max_index = t2.indexOf(t2.toReversed().find(x => x));
+	for (let i = 0; i < t2.length / width; i++){
+		const tr = document.createElement('tr');
+		table.appendChild(tr);
+		for (let j = 0; j < width; j++){
+			const td = document.createElement('td');
+			const index = width*i + j;
+			const val = t2[index];
+			if (max_index < index)
+				return table;
+			td.innerHTML = val;
+			tr.appendChild(td);
+			// prime colors
+			if (!val)
+				continue;
+			const p = create23Table.colors.find(datum => val % datum[0] === 0);
+			if (p)
+				td.style.backgroundColor = p[1];
+		}
+	}
+	return table;
+}
+create23Table.colors = [
+	[17, '#c8c'],
+	[13, '#88f'],
+	[11, '#8f8'],
+	[7, '#ff8'],
+	[5, '#fc8'],
+	[3, '#f88'],
+	[2, 'white'],
+];
+
 function update(){
 	const base = +document.getElementById('base').value;
 	const [t1, t2] = irishLog(base);
@@ -65,6 +101,10 @@ function update(){
 	document.getElementById('t2').innerHTML = printArr(t2);
 	document.getElementById('t1_len').innerHTML = base;
 	document.getElementById('t2_len').innerHTML = t2.length;
+	const t2_23_container = document.getElementById('t2_23_container');
+	t2_23_container.innerHTML = '';
+	if (3 < base)
+		t2_23_container.appendChild(create23Table(t2));
 }
 
 function test(b = 100, n = 500){
