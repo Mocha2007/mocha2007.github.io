@@ -109,7 +109,7 @@ function update(){
 		t2_23_container.appendChild(create23Table(t2));
 }
 
-function test(b = 100, n = 500){
+function test(b = 100, n = 100){
 	const t0 = new Date();
 	for (let i = 0; i < n; i++)
 		irishLog(b);
