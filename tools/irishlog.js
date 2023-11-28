@@ -25,10 +25,10 @@ function irishLog(base = 10){
 	 * @param {number[]} t2
 	 * @param {number} offset
 	 */
-	function minOffset(t1, t2){
+	function minOffset(t1, t2, multiples = [0]){
 		const mods = t1.filter(isFinite);
 		for (let offset = 1; offset < Infinity; offset++) // You may think a while loop would make more sense here. And you'd be right - except due to a quirk of how loop declarations work in JS, a while loop doesn't work here at all.
-			if (mods.every(m => !isFinite(t2[m + offset])))
+			if (mods.every(m => multiples.every(mul => !isFinite(t2[m + mul + offset]))))
 				return offset;
 	}
 	const table1 = [];
@@ -37,9 +37,11 @@ function irishLog(base = 10){
 	table1[1] = 0;
 	table2[0] = 1;
 	// primes, and multiples thereof
-	range(base).filter(isPrime).concat([0]).forEach(p => {
+	range(base).filter(isPrime).concat([0]).forEach((p, pi) => {
 		// find smallest valid value for it
-		table1[p] = minOffset(table1, table2);
+		const multiples = p ? range(Math.floor((base-1) / p)).map(x => table1[x+1]).slice(0, pi+1)
+			: [0]; // when determining the t1 of a prime we must also account for its multiples that will also be in t1
+		table1[p] = minOffset(table1, table2, multiples);
 		if (0 < p)
 			// update multiples in table1 (if not zero)
 			for (let i = 2; p*i < base; i++)
