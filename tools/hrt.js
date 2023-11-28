@@ -172,7 +172,7 @@ function laserPhaseElem(){
 function eLevel(){
 	const t = get_dose_t() % _12h / _1h;
 	const e = eLevel.peak * Math.pow(0.5, t/6);
-	return `<span id="e_lev">Current blood E2 level: ~${Math.round(e)} pg/mL</span>`;
+	return `<span class="small">Current blood E2 level: ~${Math.round(e)} pg/mL</span>`;
 }
 eLevel.peak = 63.4 * Math.pow(2, 14/6);
 
@@ -200,13 +200,16 @@ function time_elem_inner(){
 	const doseM = Math.floor(doseR / _1m);
 	doseR -= _1m*doseM;
 	const doseS = Math.ceil(doseR / _1s);
+	// visitations
+	const visits = Math.floor(mo/3) + 2;
 	// elem
 	const str = 0 < yr ? `${unit(yr, 'year')}, ` : '';
 	return str + `${unit(m, 'month')}, ${unit(d, 'day')},
 		${unit(h, 'hour')}, ${unit(min, 'minute')}, ${unit(s, 'second')}<br>
+		<span class="small">${unit(visits, 'endo visit')}</span><br>
 		${unit(doses, 'dose')} of E (${unit(doseH, 'hour')}, ${unit(doseM, 'minute')}, ${unit(doseS, 'second')} until next dose)<br>
 		${eLevel()}<br>
-		${unit(laser, 'laser session')}`;
+		${unit(laser, 'laser session')}<br><span class="small">Laser Calendar:</span>`;
 }
 
 const progress_items = [

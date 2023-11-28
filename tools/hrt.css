@@ -2,7 +2,7 @@ h2 {
 	font-size: 125%; /* to prevent the clock from wrapping on mobile */
 }
 
-#e_lev {
+.small {
 	font-size: 65%;
 	font-style: italic;
 	margin-left: 2em;
