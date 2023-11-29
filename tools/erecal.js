@@ -9,17 +9,11 @@ const ere = {
 		synodic: 93.37 * _1d,
 	},
 	eremor: {
-		get daysPerStarsign(){
-			return ere.oneia.daysPerYear / this.zodiac.length;
-		},
 		holidays: [
 			['Abubisêm', 34], // 34 = Reram 11
 		],
 		// https://en.wikipedia.org/wiki/Karachi#Climate
 		monsoon: ['Dry', 'Dry', 'Dry', 'Monsoon', 'Dry', 'Dry'],
-		get season(){
-			return ere.oneia.year / this.seasons.length;
-		},
 		seasons: ['Stum', 'Reram', 'Kokum'],
 		seasonsAlt: ['Sowing', 'Harvest', 'Flood'],
 		week: ['Nodrilm', 'Rilrilm', 'Kopkêrilm', 'Kosurilm', 'Bikêrilm', 'Samarrilm'],
@@ -74,10 +68,13 @@ clock.yearStartDay = (t = new Date()) => {
 };
 clock.isLeapYear = (t = new Date()) => clock.yearStartDay(t)
 	!== clock.yearStartDay(+t + ere.oneia.year);
+// eslint-disable-next-line max-len
+clock.daysThisYear = (t = new Date()) => (clock.isLeapYear(t) ? Math.floor : Math.ceil)(ere.oneia.daysPerYear);
 
 function calendar(t = new Date(), hideCurrent = false){
 	const IS_LEAP_YEAR = clock.isLeapYear(t);
 	const DOTW_OFFSET = clock.yearStartDay(t);
+	const YEAR_LENGTH_IN_DAYS = clock.daysThisYear(t);
 	const yearStart = Math.floor((t - ere.oneia.epoch) / ere.oneia.year) * ere.oneia.year
 		+ ere.oneia.epoch;
 	const table = document.createElement('table');
@@ -109,7 +106,7 @@ function calendar(t = new Date(), hideCurrent = false){
 			const date = document.createElement('div');
 			date.classList.add('date');
 			const IS_LEAP_DAY = d === 72 && IS_LEAP_YEAR;
-			const slength = Math.floor(ere.eremor.season / ere.oneia.day);
+			const slength = Math.floor(YEAR_LENGTH_IN_DAYS / ere.eremor.seasons.length);
 			const season_id = IS_LEAP_DAY ? ere.eremor.seasons.length-1 : Math.floor(d / slength);
 			const date_adj = (IS_LEAP_DAY ? slength : 0) + d % slength;
 			if (!IS_LEAP_DAY)
@@ -121,7 +118,7 @@ function calendar(t = new Date(), hideCurrent = false){
 			season.classList.add('season');
 			const seasonName = ere.eremor.seasons[season_id % ere.eremor.seasons.length];
 			season.innerHTML = IS_LEAP_DAY ? 'Bodôbêkum' : seasonName;
-			const monsoon = Math.floor(ere.eremor.monsoon.length * d / ere.oneia.daysPerYear);
+			const monsoon = Math.floor(ere.eremor.monsoon.length * d / YEAR_LENGTH_IN_DAYS);
 			// eslint-disable-next-line max-len
 			season.title = `${seasonName} (${ere.eremor.seasonsAlt[season_id]}; ${ere.eremor.monsoon[monsoon]} - ${ere.seasonsCyc[season_id]} Cyclonic Activity)`;
 			if (IS_LEAP_DAY)
@@ -139,10 +136,10 @@ function calendar(t = new Date(), hideCurrent = false){
 			// zodiac
 			const zodiacElem = document.createElement('div');
 			zodiacElem.classList.add('zodiac');
-			const CURRENT_SIGN = Math.floor(d / ere.eremor.daysPerStarsign)
+			const CURRENT_SIGN = Math.floor(ere.eremor.zodiac.length * d / YEAR_LENGTH_IN_DAYS)
 				% ere.eremor.zodiac.length;
 			zodiacElem.innerHTML = ere.eremor.zodiac[CURRENT_SIGN].slice(0, 3) + '.';
-			const _4seasonID = Math.floor(ere.seasons.length * d / ere.oneia.daysPerYear);
+			const _4seasonID = Math.floor(ere.seasons.length * d / YEAR_LENGTH_IN_DAYS);
 			// eslint-disable-next-line max-len
 			zodiacElem.title = `Starsign: ${ere.eremor.zodiac[CURRENT_SIGN]} (the ${ere.eremor.zodiacAlt[CURRENT_SIGN]})
 Season: ${ere.seasons[_4seasonID]}`;
