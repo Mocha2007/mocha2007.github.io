@@ -128,7 +128,7 @@ function calendar(t = new Date()){
 			tdContainer.appendChild(moonElem);
 			// IRL MONTH
 			season.appendChild(document.createElement('br'));
-			season.appendChild(document.createTextNode(dateTime.toLocaleString('default', { month: 'short' })));
+			season.appendChild(document.createTextNode(dateTime.toLocaleString('default', { month: 'short', day: 'numeric' })));
 			// highlight
 			if (clock.dayIndex() === d)
 				tdContainer.classList.add('selectedDate');
