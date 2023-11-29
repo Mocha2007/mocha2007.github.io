@@ -109,13 +109,16 @@ function calendar(t = new Date()){
 			const slength = Math.floor(ere.eremor.season / ere.oneia.day);
 			const season_id = IS_LEAP_DAY ? ere.eremor.seasons.length-1 : Math.floor(d / slength);
 			const date_adj = (IS_LEAP_DAY ? slength : 0) + d % slength;
-			date.innerHTML = date_adj + (IS_LEAP_YEAR && 72 < d ? 0 : 1);
+			if (!IS_LEAP_DAY)
+				date.innerHTML = date_adj + (IS_LEAP_YEAR && 72 < d ? 0 : 1);
 			tdContainer.appendChild(date);
 			// season
-			td.classList.add(`season_${season_id}`);
+			td.classList.add(IS_LEAP_DAY ? 'intercalary' : `season_${season_id}`);
 			const season = document.createElement('div');
 			season.classList.add('season');
-			season.innerHTML = ere.eremor.seasons[season_id % ere.eremor.seasons.length];
+			season.innerHTML = IS_LEAP_DAY ? 'Bodôbêkum' : ere.eremor.seasons[season_id % ere.eremor.seasons.length];
+			if (IS_LEAP_DAY)
+				season.title = 'Intercalary Day';
 			tdContainer.appendChild(season);
 			// MOOOOOOOON
 			const moonElem = document.createElement('div');

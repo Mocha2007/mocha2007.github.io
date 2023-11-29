@@ -43,6 +43,9 @@
 .season_2 {
 	background-color: #008;
 }
+.intercalary {
+	background-color: #404;
+}
 .selectedDate {
 	background-color: rgba(0, 255, 255, 0.25);
 	border: 3px dashed cyan;
