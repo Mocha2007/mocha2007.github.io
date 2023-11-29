@@ -66,7 +66,7 @@ clock.yearStartDay = (t = new Date()) => {
 };
 clock.isLeapYear = (t = new Date()) => clock.yearStartDay(t)
 	!== clock.yearStartDay(+t + ere.oneia.year);
-clock.daysThisYear = (t = new Date()) => (clock.isLeapYear(t) ? Math.floor : Math.ceil)(ere.oneia.daysPerYear);
+clock.daysThisYear = (t = new Date()) => (clock.isLeapYear(t) ? Math.ceil : Math.floor)(ere.oneia.daysPerYear);
 
 function calendar(t = new Date(), hideCurrent = false){
 	const IS_LEAP_YEAR = clock.isLeapYear(t);
