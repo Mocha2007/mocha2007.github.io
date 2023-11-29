@@ -196,6 +196,7 @@ function time_elem_inner(){
 	const laser = Math.floor(get_laser_t()/(5*_1w)) + 1; // laser count starts at 1 for t=0
 	// next dose timer
 	let doseR = doses*_12h - doseT;
+	const quietGirluna = 12 - doseR / _1h < 0.75 ? ['Quiet', 'UwU'] : ['Loud', 'OwO'];
 	const doseH = Math.floor(doseR / _1h);
 	doseR -= _1h*doseH;
 	const doseM = Math.floor(doseR / _1m);
@@ -209,6 +210,7 @@ function time_elem_inner(){
 		${unit(h, 'hour')}, ${unit(min, 'minute')}, ${unit(s, 'second')}<br>
 		<span class="small">${unit(visits, 'endo visit')}</span><br>
 		${unit(doses, 'dose')} of E (${unit(doseH, 'hour')}, ${unit(doseM, 'minute')}, ${unit(doseS, 'second')} until next dose)<br>
+		<span class="small">${quietGirluna[0]} Girluna ${quietGirluna[1]}</span><br>
 		${eLevel()}<br>
 		${unit(laser, 'laser session')}<br><span class="small">Laser Calendar:</span>`;
 }
