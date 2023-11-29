@@ -1,6 +1,7 @@
 :root {
 	--cellSize: 6em;
 	--cellBSize: 1px;
+	--selectedBSize: 3px;
 }
 
 header {
@@ -24,6 +25,7 @@ header {
 	font-size: 75%;
 }
 .tdContainer {
+	border: var(--selectedBSize) dashed transparent;
 	height: 100%;
 	position: relative;
 }
@@ -36,7 +38,7 @@ header {
 .season, .zodiac {
 	font-size: 75%;
 	font-style: italic;
-	right: 0.5em;
+	right: 0;
 	text-align: right;
 }
 .season_0 {
@@ -53,7 +55,10 @@ header {
 }
 .selectedDate {
 	background-color: rgba(0, 255, 255, 0.25);
-	border: 3px dashed cyan;
+	border: var(--selectedBSize) dashed cyan;
 	/* font-size: 200%; */ 
 	font-weight: bold;
+}
+.otherYears {
+	border: var(--selectedBSize) dashed transparent;
 }
