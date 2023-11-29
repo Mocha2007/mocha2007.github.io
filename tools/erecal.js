@@ -53,7 +53,8 @@ function clock(t = new Date()){
 	r *= 1000;
 	// todo
 	const elem = document.createElement('div');
-	elem.innerHTML = `Year ${y}, Season ${season}, Day ${date}, @${r.toFixed(2)}`;
+	elem.innerHTML = `${y} AT, ${ere.eremor.seasons[season]}
+	(${ere.eremor.seasonsAlt[season]}), Day ${date+1}, @${r.toFixed(2)}`;
 	return elem;
 }
 
