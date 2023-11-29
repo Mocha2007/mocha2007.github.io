@@ -414,6 +414,16 @@
 		"categories": ["food"]
 	},
 	{
+		"title": "abubisêm",
+		"etym": "C/abubz/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"change",
+			"the holiday <em>Abubisêm</em>, held on the 11th day of [[reram]]"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "abubit",
 		"etym": "B/abubz/bit",
 		"cat": "n., 3rd",

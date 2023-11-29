@@ -37,17 +37,25 @@ svg {
 	height: 100%;
 	position: relative;
 }
-.date, .moon, .season, .zodiac {
+.date, .holiday, .moon, .season, .zodiac {
 	position: absolute;
 }
 .moon, .zodiac {
 	bottom: 0;
 }
-.season, .zodiac {
+.holiday, .season, .zodiac {
 	font-size: 75%;
 	font-style: italic;
 	right: 0;
 	text-align: right;
+}
+.holiday {
+	font-size: 70%;
+	font-weight: bold;
+	top: 40%;
+}
+.holiday::before{
+	content: '★ ';
 }
 .season_0 {
 	background-color: #080;

@@ -12,6 +12,9 @@ const ere = {
 		get daysPerStarsign(){
 			return ere.oneia.daysPerYear / this.zodiac.length;
 		},
+		holidays: [
+			['Abubisêm', 34], // 34 = Reram 11
+		],
 		get season(){
 			return ere.oneia.year / this.seasons.length;
 		},
@@ -138,6 +141,14 @@ Season: ${ere.seasons[Math.floor(ere.seasons.length * d / ere.oneia.daysPerYear)
 			// highlight
 			if (!hideCurrent && clock.dayIndex() === d)
 				tdContainer.classList.add('selectedDate');
+			// holidays
+			const holiday = ere.eremor.holidays.find(xyz => d === xyz[1]);
+			if (holiday){
+				const holidayElem = document.createElement('div');
+				holidayElem.classList.add('holiday');
+				holidayElem.innerHTML = holiday[0];
+				tdContainer.appendChild(holidayElem);
+			}
 		}
 	}
 	return table;
