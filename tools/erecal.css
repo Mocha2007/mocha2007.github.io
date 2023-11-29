@@ -1,0 +1,40 @@
+:root {
+	--cellSize: 4em;
+	--cellBSize: 1px;
+}
+
+#calendar {
+	border-collapse: collapse;
+	position: relative;
+	text-align: center;
+	user-select: none;
+}
+#calendar td {
+	/* background-color: #444; */
+	border: var(--cellBSize) solid black;
+	height: var(--cellSize);
+	padding: 0;
+	width: var(--cellSize);
+}
+#calendar th {
+	font-size: 75%;
+}
+.tdContainer {
+	height: 100%;
+	position: relative;
+}
+.date, .moon {
+	position: absolute;
+}
+.moon {
+	bottom: 0;
+}
+.season_0 {
+	background-color: #800;
+}
+.season_1 {
+	background-color: #080;
+}
+.season_2 {
+	background-color: #008;
+}
