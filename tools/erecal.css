@@ -3,6 +3,10 @@
 	--cellBSize: 1px;
 }
 
+header {
+	text-align: center;
+}
+
 #calendar {
 	border-collapse: collapse;
 	position: relative;
