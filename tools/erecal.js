@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* global phoonsvg */
 
 const ere = {
@@ -22,11 +23,12 @@ const ere = {
 		// 00:00 is at roughly local noon
 		atEpoch: 1750,
 		day: 105583056.7402678, // ms; solar day; the sideral day is 104148 s
-		get daysPerYear(){
-			return this.year / this.day;
-		},
+		daysPerYear: 72.52,
 		epoch: 1497151176000, // ms; SUN 2017 JUN 11 03:19:36 UTC
-		year: 7656883274.804221, // ms; 72.52 local days; oneian tropical year = 7656856407.307186 s
+		/** ms; 72.52 local days; oneian tropical year = 7656856407.307186 s versus 7656883274.80422 */
+		get year(){
+			return this.day * this.daysPerYear;
+		},
 	},
 	seasons: ['Winter', 'Spring', 'Summer', 'Fall'],
 	// https://en.wikipedia.org/wiki/North_Indian_Ocean_tropical_cyclone#Seasons
@@ -64,7 +66,6 @@ clock.yearStartDay = (t = new Date()) => {
 };
 clock.isLeapYear = (t = new Date()) => clock.yearStartDay(t)
 	!== clock.yearStartDay(+t + ere.oneia.year);
-// eslint-disable-next-line max-len
 clock.daysThisYear = (t = new Date()) => (clock.isLeapYear(t) ? Math.floor : Math.ceil)(ere.oneia.daysPerYear);
 
 function calendar(t = new Date(), hideCurrent = false){
@@ -115,7 +116,6 @@ function calendar(t = new Date(), hideCurrent = false){
 			const seasonName = ere.eremor.seasons[season_id % ere.eremor.seasons.length];
 			season.innerHTML = IS_LEAP_DAY ? 'Bodôbêkum' : seasonName;
 			const monsoon = Math.floor(ere.eremor.monsoon.length * d / YEAR_LENGTH_IN_DAYS);
-			// eslint-disable-next-line max-len
 			season.title = `${seasonName} (${ere.eremor.seasonsAlt[season_id]}; ${ere.eremor.monsoon[monsoon]} - ${ere.seasonsCyc[season_id]} Cyclonic Activity)`;
 			if (IS_LEAP_DAY)
 				season.title = 'Intercalary Day';
@@ -136,7 +136,6 @@ function calendar(t = new Date(), hideCurrent = false){
 				% ere.eremor.zodiac.length;
 			zodiacElem.innerHTML = ere.eremor.zodiac[CURRENT_SIGN].slice(0, 3) + '.';
 			const _4seasonID = Math.floor(ere.seasons.length * d / YEAR_LENGTH_IN_DAYS);
-			// eslint-disable-next-line max-len
 			zodiacElem.title = `Starsign: ${ere.eremor.zodiac[CURRENT_SIGN]} (the ${ere.eremor.zodiacAlt[CURRENT_SIGN]})
 Season: ${ere.seasons[_4seasonID]}`;
 			tdContainer.appendChild(zodiacElem);
