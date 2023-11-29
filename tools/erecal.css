@@ -23,11 +23,16 @@
 	height: 100%;
 	position: relative;
 }
-.date, .moon {
+.date, .moon, .season {
 	position: absolute;
 }
 .moon {
 	bottom: 0;
+}
+.season {
+	font-size: 75%;
+	font-style: italic;
+	right: 0.5em;
 }
 .season_0 {
 	background-color: #080;
@@ -41,6 +46,6 @@
 .selectedDate {
 	background-color: rgba(0, 255, 255, 0.25);
 	border: 3px dashed cyan;
-	font-size: 200%;
+	/* font-size: 200%; */ 
 	font-weight: bold;
 }

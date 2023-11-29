@@ -109,6 +109,10 @@ function calendar(t = new Date()){
 			tdContainer.appendChild(date);
 			// season
 			td.classList.add(`season_${season_id}`);
+			const season = document.createElement('div');
+			season.classList.add('season');
+			season.innerHTML = ere.eremor.seasons[season_id % ere.eremor.seasons.length];
+			tdContainer.appendChild(season);
 			// MOOOOOOOON
 			const moonElem = document.createElement('div');
 			moonElem.classList.add('moon');
