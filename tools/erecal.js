@@ -126,6 +126,9 @@ function calendar(t = new Date()){
 			moonElem.title = 'Eisen Phase';
 			moonElem.appendChild(moon(dateTime));
 			tdContainer.appendChild(moonElem);
+			// IRL MONTH
+			season.appendChild(document.createElement('br'));
+			season.appendChild(document.createTextNode(dateTime.toLocaleString('default', { month: 'short' })));
 			// highlight
 			if (clock.dayIndex() === d)
 				tdContainer.classList.add('selectedDate');
