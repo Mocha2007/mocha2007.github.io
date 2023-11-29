@@ -2,12 +2,17 @@
 	--cellSize: 5em;
 	--cellBSize: 1px;
 	--selectedBSize: 3px;
+	--phoonSize: 1.2em;
 }
 
 header {
 	text-align: center;
 }
-#cals{
+svg {
+	height: var(--phoonSize);
+	width: var(--phoonSize);
+}
+#cals {
 	text-align: center;
 	width: 100%;
 }
@@ -19,7 +24,6 @@ header {
 	width: 100%;
 }
 .calendar td {
-	/* background-color: #444; */
 	border: var(--cellBSize) solid black;
 	height: var(--cellSize);
 	padding: 0;
@@ -60,9 +64,38 @@ header {
 .selectedDate {
 	background-color: rgba(0, 255, 255, 0.25);
 	border: var(--selectedBSize) dashed cyan;
-	/* font-size: 200%; */ 
 	font-weight: bold;
 }
 .otherYears {
 	border: var(--selectedBSize) dashed transparent;
+}
+@media print {
+	@page {size: landscape}
+	/* SIZE ADJUSTMENT */
+	hr {
+		display: none;
+	}
+	/* BRIGHTER COLORS */
+	html, body {
+		background-color: white;
+		font-size: 74%;
+		color: black;
+	}
+	.season_0 {
+		background-color: #cfc;
+	}
+	.season_1 {
+		background-color: #fdd;
+	}
+	.season_2 {
+		background-color: #ccf;
+	}
+	.intercalary {
+		background-color: #fdf;
+	}
+	.otherYears, .selectedDate {
+		background-color: inherit;
+		border: none;
+		font-weight: normal;
+	}
 }
