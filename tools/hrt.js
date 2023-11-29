@@ -12,6 +12,7 @@ const _1y = 365.2425*_1d;
 const _1mo = _1y/12;
 const moonEpoch = new Date(1970, 0, 7, 15, 35); // first new moon after 1/1/1970
 const moonP = 29.530589 * _1d; // synodic period
+const laserP = 5*_1w; // 5 weeks
 
 class Source {
 	constructor(url, title = '(no title)', author = '(no author)',
@@ -146,8 +147,9 @@ function get_dose_t(){
 }
 
 function get_laser_t(){
-	return new Date() - (new Date(2024, 0, 2, 9) - 3*5*_1w); // 3*5 weeks before 1/2; iirc orig. 1694782800000
+	return new Date() - get_laser_t.epoch;
 }
+get_laser_t.epoch = new Date(2024, 0, 2, 9) - 3*laserP; // 3*5 weeks before 1/2; iirc orig. 1694782800000
 
 /** @param {Date} t - integer in [0, 11] = day in shave cycle*/
 function get_shave_cycle(t){
@@ -158,7 +160,6 @@ function get_shave_cycle(t){
 function moon(t){
 	// full = 0
 	const phase = (t - moonEpoch) / moonP % 1;
-	// const emoji = '🌑🌒🌓🌔🌕🌖🌗🌘'[Math.round(8 * phase) % 8];
 	const svg = phoonsvg(phase);
 	svg.setAttribute('height', 10);
 	svg.setAttribute('width', 10);
@@ -166,8 +167,8 @@ function moon(t){
 }
 
 function laserPhaseElem(){
-	const day = Math.floor(get_laser_t() / _1d) % 35;
-	const epoch = new Date(new Date() - _1d * day);
+	/** the last time I got lasered */
+	const epoch = new Date(get_laser_t.epoch + Math.floor((new Date() - get_laser_t.epoch) / laserP) * laserP);
 	// a visual chart showing progress to next laser: 2 days, avoid sunlight, 1 wk, "face settling in", rest, "waiting"
 	// container
 	const elem = document.createElement('div');
@@ -216,7 +217,7 @@ function laserPhaseElem(){
 			const timeObject = new Date(_1d*d + +epoch);
 			date.innerHTML = timeObject.getDate();
 			tdContainer.appendChild(date);
-			td.classList.add(d <= day ? 'red' : debug ? 'redDebug' : 'redNoDebug');
+			td.classList.add(timeObject <= new Date() ? 'red' : debug ? 'redDebug' : 'redNoDebug');
 			// shave cycle
 			const shave = get_shave_cycle(timeObject);
 			const shaveElem = document.createElement('div');
