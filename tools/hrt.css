@@ -70,7 +70,7 @@ td#lpt_td2 {
 /* mobile */
 @media (max-width: 750px) {
 	/* calendar must be wider on mobile */
-	:root {
-		--cellSize: 4em;
+	#laserPhaseContainer {
+		font-size: 100%;
 	}
 }
