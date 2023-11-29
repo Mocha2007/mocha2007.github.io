@@ -100,6 +100,35 @@ class ProgressItem {
 	}
 }
 
+/** create table of E levels */
+function sim(mg = 2, rounds = 2, t = 48 * _1h, tick = _1m){
+	/** pg/mL per mg dose */
+	const doseCoef = 230.52688366817927/2;
+	/** mg dose */
+	const dose = mg;
+	/** time to dissolve dose */
+	const dissolutionT = 45 * _1m;
+	/** time between doses */
+	const doseT = _1d / rounds;
+	const peak = doseCoef * dose;
+	/** sublingual estradiol half-life */
+	const hl = 6 * _1h;
+	/** the long-term limit of the trough level (appx) */
+	const limit = peak / 3;
+	const data = [limit];
+	for (let ms = 0; ms < t; ms += tick){
+		let nextELevel = data[data.length - 1];
+		// more E is dissolving
+		if (ms % doseT < dissolutionT)
+			nextELevel += peak * tick / dissolutionT;
+		// exponential decay
+		nextELevel *= Math.pow(0.5, tick / hl);
+		// update data
+		data.push(nextELevel);
+	}
+	return data.join('\n');
+}
+
 function get_t(){
 	return new Date() - 1692216960000; // first dose = 2023 Aug 16 @ 4:16 PM EDT
 }
