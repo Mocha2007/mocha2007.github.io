@@ -1,16 +1,19 @@
 /* global phoonsvg */
 
-/*
-const debug = document.URL[0].toLowerCase() === 'f'; // file:// vs. http(s)://
+// const debug = document.URL[0].toLowerCase() === 'f'; // file:// vs. http(s)://
 const _1s = 1000;
 const _1m = 60*_1s;
 const _1h = 60*_1m;
 const _1d = 24*_1h;
+/*
 const _1w = 7*_1d;
 const _1y = 365.2425*_1d;
 const _1mo = _1y/12;
 */
 const ere = {
+	eisen: {
+		synodic: 93.37 * _1d,
+	},
 	eremor: {
 		get season(){
 			return ere.oneia.year / this.seasons.length;
@@ -19,9 +22,9 @@ const ere = {
 		seasonsAlt: ['Sowing', 'Harvest', 'Flood'],
 		week: ['Nodrilm', 'Rilrilm', 'Kopkêrilm', 'Kosurilm', 'Bikêrilm', 'Samarrilm'],
 	},
-	nikki: {
+	/*nikki: {
 		epoch: 0.078, // fraction of orbit period?
-	},
+	},*/
 	oneia: {
 		// 00:00 is at roughly local noon
 		atEpoch: 1750,
@@ -32,8 +35,7 @@ const ere = {
 };
 
 function moon(t){
-	const day = t/ere.oneia.day % 1;
-	const phase = (day - ere.nikki.epoch) % 1;
+	const phase = t/ere.eisen.synodic % 1;
 	const svg = phoonsvg(phase);
 	svg.setAttribute('height', 20);
 	svg.setAttribute('width', 20);
@@ -71,7 +73,8 @@ clock.yearStartDay = (t = new Date()) => {
 function calendar(t = new Date()){
 	const DOTW_OFFSET = clock.yearStartDay(t);
 	const slength = Math.floor(ere.eremor.season / ere.oneia.day);
-	// const year = (t - ere.oneia.epoch) / ere.oneia.year + ere.oneia.atEpoch;
+	const yearStart = Math.floor((t - ere.oneia.epoch) / ere.oneia.year) * ere.oneia.year
+		+ ere.oneia.epoch;
 	const table = document.createElement('table');
 	table.id = 'calendar';
 	// day cells
@@ -88,6 +91,7 @@ function calendar(t = new Date()){
 		table.appendChild(tr);
 		for (let j = 0; j < ere.eremor.week.length; j++){ // 6 days / week
 			const d = ere.eremor.week.length*i + j - DOTW_OFFSET;
+			const dateTime = new Date((d + DOTW_OFFSET) * ere.oneia.day + yearStart);
 			const td = document.createElement('td');
 			tr.appendChild(td);
 			if (d < 0)
@@ -108,7 +112,8 @@ function calendar(t = new Date()){
 			// MOOOOOOOON
 			const moonElem = document.createElement('div');
 			moonElem.classList.add('moon');
-			moonElem.appendChild(moon(t)); // todo D IS NOT CORRECT ITS JUST A PLACEHOLDER AND A SHITTY ONE AT THAT
+			moonElem.title = 'Eisen Phase';
+			moonElem.appendChild(moon(dateTime));
 			tdContainer.appendChild(moonElem);
 			// highlight
 			if (clock.dayIndex() === d)
