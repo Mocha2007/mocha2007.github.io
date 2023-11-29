@@ -4191,6 +4191,22 @@
 		]
 	},
 	{
+		"title": "dadalidinmat",
+		"etym": "C/dadalidint/ma",
+		"cat": "n., 3rd",
+		"defList": [
+			"inkwell"
+		]
+	},
+	{
+		"title": "dadalidint",
+		"etym": "C/dadal/-idint",
+		"cat": "n., 3rd",
+		"defList": [
+			"ink"
+		]
+	},
+	{
 		"title": "dadalire",
 		"img": "../img/eremoran/dadalire.png",
 		"etym": "C/dadal/lire",
@@ -9675,6 +9691,14 @@
 		]
 	},
 	{
+		"title": "kraêt",
+		"etym": "C/kraz/-ê",
+		"cat": "n., 3rd",
+		"defList": [
+			"trowel"
+		]
+	},
+	{
 		"title": "krafôla",
 		"etym": "I/PEN/*graɸôla",
 		"cat": "n., 4th",
@@ -9717,6 +9741,7 @@
 		"defList": [
 			"walk",
 			"step",
+			"(intransitive, +stôd) pat down, flatten",
 			"(mathematics) translate"
 		],
 		"categories": ["math", "motion"]
@@ -10511,6 +10536,16 @@
 			"hardtack"
 		],
 		"categories": ["food"]
+	},
+	{
+		"title": "kunum",
+		"etym": "r/kunumz",
+		"cat": "n., 5th",
+		"defList": [
+			"agreement",
+			"treaty"
+		],
+		"categories": ["government"]
 	},
 	{
 		"title": "kunumz",
@@ -15143,6 +15178,14 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "siêt",
+		"etym": "C/siz/-ê",
+		"cat": "n., 3rd",
+		"defList": [
+			"candle"
+		]
+	},
+	{
 		"title": "sifaz",
 		"etym": "I/PEN/*ʃiɸs/hit",
 		"cat": "v.",
@@ -16160,6 +16203,14 @@
 			"(mathematics) pyramid"
 		],
 		"categories": ["math"]
+	},
+	{
+		"title": "tait",
+		"etym": "I/PEN/*texit",
+		"cat": "n., 3rd",
+		"defList": [
+			"bucket"
+		]
 	},
 	{
 		"title": "takêu",
@@ -17652,6 +17703,14 @@
 		"defList": [
 			"nothing",
 			"you're welcome"
+		]
+	},
+	{
+		"title": "unasêm",
+		"etym": "C/una/-isêm",
+		"cat": "n., 5th",
+		"defList": [
+			"a void, nothingness, emptiness"
 		]
 	},
 	{
