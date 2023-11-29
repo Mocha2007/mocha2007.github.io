@@ -2011,10 +2011,10 @@
 	},
 	{
 		"title": "bakoni",
-		"etym": "I/PEN/*βagoni/maize",
+		"etym": "I/PEN/*βagoni/millet",
 		"cat": "n., 4th",
 		"defList": [
-			"maize (corn)"
+			"millet"
 		],
 		"categories": ["grain", "plant"]
 	},
@@ -8250,9 +8250,9 @@
 		"etym": "I/PEN/*kabaxo/rye",
 		"cat": "n., 4th",
 		"defList": [
-			"rye"
+			"rye bread"
 		],
-		"categories": ["grain", "plant"]
+		"categories": ["food"]
 	},
 	{
 		"title": "kabasa",
@@ -14848,7 +14848,7 @@
 			"grain",
 			"unit of measurement equal to one-fifteenth of one edzam (~2.84 mm)"
 		],
-		"categories": ["plant", "v3_trade"]
+		"categories": ["grain", "plant", "v3_trade"]
 	},
 	{
 		"title": "se",
