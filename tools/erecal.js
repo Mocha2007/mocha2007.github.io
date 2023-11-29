@@ -41,9 +41,19 @@ function moon(t){
 }
 
 function clock(t = new Date()){
+	let r = (t - ere.oneia.epoch) / ere.oneia.year + ere.oneia.atEpoch;
+	const y = Math.floor(r);
+	r -= y;
+	const yearLength = ere.oneia.year / ere.oneia.day;
+	r *= yearLength;
+	const seasonLength = Math.floor(yearLength / ere.eremor.seasons.length);
+	const season = Math.floor(r / seasonLength);
+	const date = Math.floor(r % seasonLength);
+	r %= 1;
+	r *= 1000;
 	// todo
 	const elem = document.createElement('div');
-	elem.innerHTML = +t;
+	elem.innerHTML = `Year ${y}, Season ${season}, Day ${date}, @${r.toFixed(2)}`;
 	return elem;
 }
 
