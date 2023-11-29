@@ -33,6 +33,7 @@ const ere = {
 		epoch: 1497151176000, // ms; SUN 2017 JUN 11 03:19:36 UTC
 		year: 7656883274.804221, // ms; 72.52 local days; oneian tropical year = 7656856407.307186 s
 	},
+	seasons: ['Winter', 'Spring', 'Summer', 'Fall'],
 };
 
 function moon(t){
@@ -135,7 +136,8 @@ function calendar(t = new Date(), hideCurrent = false){
 				% ere.eremor.zodiac.length;
 			zodiacElem.innerHTML = ere.eremor.zodiac[CURRENT_SIGN].slice(0, 3) + '.';
 			// eslint-disable-next-line max-len
-			zodiacElem.title = `Starsign: ${ere.eremor.zodiac[CURRENT_SIGN]} (the ${ere.eremor.zodiacAlt[CURRENT_SIGN]})`;
+			zodiacElem.title = `Starsign: ${ere.eremor.zodiac[CURRENT_SIGN]} (the ${ere.eremor.zodiacAlt[CURRENT_SIGN]})
+Season: ${ere.seasons[Math.floor(ere.seasons.length * d / ere.oneia.daysPerYear)]}`;
 			tdContainer.appendChild(zodiacElem);
 			// highlight
 			if (!hideCurrent && clock.dayIndex() === d)
