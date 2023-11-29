@@ -27,13 +27,13 @@ header {
 	height: 100%;
 	position: relative;
 }
-.date, .moon, .season {
+.date, .moon, .season, .zodiac {
 	position: absolute;
 }
-.moon {
+.moon, .zodiac {
 	bottom: 0;
 }
-.season {
+.season, .zodiac {
 	font-size: 75%;
 	font-style: italic;
 	right: 0.5em;

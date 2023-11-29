@@ -9,17 +9,27 @@ const ere = {
 		synodic: 93.37 * _1d,
 	},
 	eremor: {
+		get daysPerStarsign(){
+			return ere.oneia.daysPerYear / this.zodiac.length;
+		},
 		get season(){
 			return ere.oneia.year / this.seasons.length;
 		},
 		seasons: ['Stum', 'Reram', 'Kokum'],
 		seasonsAlt: ['Sowing', 'Harvest', 'Flood'],
 		week: ['Nodrilm', 'Rilrilm', 'Kopkêrilm', 'Kosurilm', 'Bikêrilm', 'Samarrilm'],
+		zodiac: ['Unasêm', 'Tupazut', 'Tait', 'Kôbenk', 'Kraêt', 'Bazêr',
+			'Kôk', 'Siêt', 'Bebekat', 'Dadalidinmat', 'Kunum', 'Zetidot'],
+		zodiacAlt: ['Void', 'Drum', 'Bucket', 'Mice', 'Trowel', 'King',
+			'Hawks', 'Candle', 'Road', 'Inkwell', 'Treaty', 'Die'],
 	},
 	oneia: {
 		// 00:00 is at roughly local noon
 		atEpoch: 1750,
 		day: 105583056.7402678, // ms; solar day; the sideral day is 104148 s
+		get daysPerYear(){
+			return this.year / this.day;
+		},
 		epoch: 1497151176000, // ms; SUN 2017 JUN 11 03:19:36 UTC
 		year: 7656883274.804221, // ms; 72.52 local days; oneian tropical year = 7656856407.307186 s
 	},
@@ -118,6 +128,15 @@ function calendar(t = new Date(), hideCurrent = false){
 			// IRL MONTH
 			season.appendChild(document.createElement('br'));
 			season.appendChild(document.createTextNode(dateTime.toLocaleString('default', { month: 'short', day: 'numeric' })));
+			// zodiac
+			const zodiacElem = document.createElement('div');
+			zodiacElem.classList.add('zodiac');
+			const CURRENT_SIGN = Math.floor(d / ere.eremor.daysPerStarsign)
+				% ere.eremor.zodiac.length;
+			zodiacElem.innerHTML = ere.eremor.zodiac[CURRENT_SIGN].slice(0, 3) + '.';
+			// eslint-disable-next-line max-len
+			zodiacElem.title = `Starsign: ${ere.eremor.zodiac[CURRENT_SIGN]} (the ${ere.eremor.zodiacAlt[CURRENT_SIGN]})`;
+			tdContainer.appendChild(zodiacElem);
 			// highlight
 			if (!hideCurrent && clock.dayIndex() === d)
 				tdContainer.classList.add('selectedDate');
