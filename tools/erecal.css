@@ -71,11 +71,9 @@ svg {
 }
 @media print {
 	@page {size: landscape}
-	/* SIZE ADJUSTMENT */
 	hr {
 		display: none;
 	}
-	/* BRIGHTER COLORS */
 	html, body {
 		background-color: white;
 		font-size: 74%;

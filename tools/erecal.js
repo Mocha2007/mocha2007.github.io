@@ -37,11 +37,7 @@ const ere = {
 };
 
 function moon(t){
-	const phase = t/ere.eisen.synodic % 1;
-	const svg = phoonsvg(phase);
-	//svg.setAttribute('height', 20);
-	//svg.setAttribute('width', 20);
-	return svg;
+	return phoonsvg(t/ere.eisen.synodic % 1);
 }
 
 function clock(t = new Date()){
