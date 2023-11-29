@@ -67,3 +67,10 @@ td#lpt_td2 {
 	text-align: right;
 	width: 100%;
 }
+/* mobile */
+@media (max-width: 750px) {
+	/* calendar must be wider on mobile */
+	:root {
+		--cellSize: 4em;
+	}
+}
