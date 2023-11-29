@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+/* exported sim */
 /* global phoonsvg */
 const debug = document.URL[0].toLowerCase() === 'f'; // file:// vs. http(s)://
 
