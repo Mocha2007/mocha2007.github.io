@@ -15,6 +15,8 @@ const ere = {
 		holidays: [
 			['Abubisêm', 34], // 34 = Reram 11
 		],
+		// https://en.wikipedia.org/wiki/Karachi#Climate
+		monsoon: ['Dry', 'Dry', 'Dry', 'Monsoon', 'Dry', 'Dry'],
 		get season(){
 			return ere.oneia.year / this.seasons.length;
 		},
@@ -119,8 +121,9 @@ function calendar(t = new Date(), hideCurrent = false){
 			season.classList.add('season');
 			const seasonName = ere.eremor.seasons[season_id % ere.eremor.seasons.length];
 			season.innerHTML = IS_LEAP_DAY ? 'Bodôbêkum' : seasonName;
+			const monsoon = Math.floor(ere.eremor.monsoon.length * d / ere.oneia.daysPerYear);
 			// eslint-disable-next-line max-len
-			season.title = `${seasonName} (${ere.eremor.seasonsAlt[season_id]}; ${ere.seasonsCyc[season_id]} Cyclonic Activity)`;
+			season.title = `${seasonName} (${ere.eremor.seasonsAlt[season_id]}; ${ere.eremor.monsoon[monsoon]} - ${ere.seasonsCyc[season_id]} Cyclonic Activity)`;
 			if (IS_LEAP_DAY)
 				season.title = 'Intercalary Day';
 			tdContainer.appendChild(season);
