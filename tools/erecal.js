@@ -13,6 +13,8 @@ const ere = {
 		monsoon: ['Dry', 'Dry', 'Dry', 'Monsoon', 'Dry', 'Dry'],
 		seasons: ['Stum', 'Reram', 'Kokum'],
 		seasonsAlt: ['Sowing', 'Harvest', 'Flood'],
+		// https://en.wikipedia.org/wiki/North_Indian_Ocean_tropical_cyclone#Seasons
+		seasonsCyc: ['No', 'Little', 'Much'],
 		week: ['Nodrilm', 'Rilrilm', 'Kopkêrilm', 'Kosurilm', 'Bikêrilm', 'Samarrilm'],
 		zodiac: ['Unasêm', 'Tupazut', 'Tait', 'Kôbenk', 'Kraêt', 'Bazêr',
 			'Kôk', 'Siêt', 'Bebekat', 'Dadalidinmat', 'Kunum', 'Zetidot'],
@@ -31,8 +33,6 @@ const ere = {
 		},
 	},
 	seasons: ['Winter', 'Spring', 'Summer', 'Fall'],
-	// https://en.wikipedia.org/wiki/North_Indian_Ocean_tropical_cyclone#Seasons
-	seasonsCyc: ['No', 'Little', 'Much'],
 };
 
 function moon(t = new Date()){
@@ -116,7 +116,7 @@ function calendar(t = new Date(), hideCurrent = false){
 			const seasonName = ere.eremor.seasons[season_id % ere.eremor.seasons.length];
 			season.innerHTML = IS_LEAP_DAY ? 'Bodôbêkum' : seasonName;
 			const monsoon = Math.floor(ere.eremor.monsoon.length * d / YEAR_LENGTH_IN_DAYS);
-			season.title = `${seasonName} (${ere.eremor.seasonsAlt[season_id]}; ${ere.eremor.monsoon[monsoon]} - ${ere.seasonsCyc[season_id]} Cyclonic Activity)`;
+			season.title = `${seasonName} (${ere.eremor.seasonsAlt[season_id]}; ${ere.eremor.monsoon[monsoon]} - ${ere.eremor.seasonsCyc[season_id]} Cyclonic Activity)`;
 			if (IS_LEAP_DAY)
 				season.title = 'Intercalary Day';
 			tdContainer.appendChild(season);
