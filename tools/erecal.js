@@ -37,6 +37,7 @@ const ere = {
 		year: 7656883274.804221, // ms; 72.52 local days; oneian tropical year = 7656856407.307186 s
 	},
 	seasons: ['Winter', 'Spring', 'Summer', 'Fall'],
+	seasonsCyc: ['No Cyclones', 'Cyclonic Activity', 'No Cyclones', 'Cyclonic Activity'],
 };
 
 function moon(t = new Date()){
@@ -134,9 +135,10 @@ function calendar(t = new Date(), hideCurrent = false){
 			const CURRENT_SIGN = Math.floor(d / ere.eremor.daysPerStarsign)
 				% ere.eremor.zodiac.length;
 			zodiacElem.innerHTML = ere.eremor.zodiac[CURRENT_SIGN].slice(0, 3) + '.';
+			const _4seasonID = Math.floor(ere.seasons.length * d / ere.oneia.daysPerYear);
 			// eslint-disable-next-line max-len
 			zodiacElem.title = `Starsign: ${ere.eremor.zodiac[CURRENT_SIGN]} (the ${ere.eremor.zodiacAlt[CURRENT_SIGN]})
-Season: ${ere.seasons[Math.floor(ere.seasons.length * d / ere.oneia.daysPerYear)]}`;
+Season: ${ere.seasons[_4seasonID]} (${ere.seasonsCyc[_4seasonID]})`;
 			tdContainer.appendChild(zodiacElem);
 			// highlight
 			if (!hideCurrent && clock.dayIndex() === d)
