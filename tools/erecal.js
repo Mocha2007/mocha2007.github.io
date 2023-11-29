@@ -1,15 +1,9 @@
 /* global phoonsvg */
 
-// const debug = document.URL[0].toLowerCase() === 'f'; // file:// vs. http(s)://
 const _1s = 1000;
 const _1m = 60*_1s;
 const _1h = 60*_1m;
 const _1d = 24*_1h;
-/*
-const _1w = 7*_1d;
-const _1y = 365.2425*_1d;
-const _1mo = _1y/12;
-*/
 const ere = {
 	eisen: {
 		synodic: 93.37 * _1d,
@@ -22,9 +16,6 @@ const ere = {
 		seasonsAlt: ['Sowing', 'Harvest', 'Flood'],
 		week: ['Nodrilm', 'Rilrilm', 'Kopkêrilm', 'Kosurilm', 'Bikêrilm', 'Samarrilm'],
 	},
-	/*nikki: {
-		epoch: 0.078, // fraction of orbit period?
-	},*/
 	oneia: {
 		// 00:00 is at roughly local noon
 		atEpoch: 1750,
@@ -53,7 +44,6 @@ function clock(t = new Date()){
 	const date = Math.floor(r % seasonLength);
 	r %= 1;
 	r *= 1000;
-	// todo
 	const elem = document.createElement('div');
 	elem.innerHTML = `${y} AT, ${ere.eremor.seasons[season]}
 	(${ere.eremor.seasonsAlt[season]}), Day ${date+1}
@@ -63,8 +53,7 @@ function clock(t = new Date()){
 clock.dayIndex = (t = new Date()) => +clock(t).innerHTML.match(/index \d+/g)[0].slice(6);
 clock.year = (t = new Date()) => +clock(t).innerHTML.match(/^\d+/g)[0];
 clock.yearStartDay = (t = new Date()) => {
-	let y = clock.year(t);
-	y %= 150; // just in case...
+	const y = clock.year(t);
 	const ADJUSTMENT_TO_MATCH_HOMEPAGE = 1;
 	return Math.round(0.52*y + (Math.floor((y-1)/25) % 2 ? 0 : 1 - y%2)
 		+ ADJUSTMENT_TO_MATCH_HOMEPAGE) % 6;
@@ -88,10 +77,10 @@ function calendar(t = new Date(), hideCurrent = false){
 		th.innerHTML = day;
 	});
 	// date cells
-	for (let i = 0; i < Math.ceil(ere.oneia.year / ere.oneia.day / ere.eremor.week.length); i++){ // 12 weeks / year
+	for (let i = 0; i < Math.ceil(ere.oneia.year / ere.oneia.day / ere.eremor.week.length); i++){ // weeks
 		const tr = document.createElement('tr');
 		table.appendChild(tr);
-		for (let j = 0; j < ere.eremor.week.length; j++){ // 6 days / week
+		for (let j = 0; j < ere.eremor.week.length; j++){ // days
 			const d = ere.eremor.week.length*i + j - DOTW_OFFSET;
 			const dateTime = new Date((d + DOTW_OFFSET) * ere.oneia.day + yearStart);
 			const td = document.createElement('td');
