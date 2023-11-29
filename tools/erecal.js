@@ -70,9 +70,9 @@ clock.yearStartDay = (t = new Date()) => {
 		+ ADJUSTMENT_TO_MATCH_HOMEPAGE) % 6;
 };
 clock.isLeapYear = (t = new Date()) => clock.yearStartDay(t)
-	!== clock.yearStartDay(t - ere.oneia.year);
+	!== clock.yearStartDay(+t + ere.oneia.year);
 
-function calendar(t = new Date()){
+function calendar(t = new Date(), hideCurrent = false){
 	const IS_LEAP_YEAR = clock.isLeapYear(t);
 	const DOTW_OFFSET = clock.yearStartDay(t);
 	const yearStart = Math.floor((t - ere.oneia.epoch) / ere.oneia.year) * ere.oneia.year
@@ -130,7 +130,7 @@ function calendar(t = new Date()){
 			season.appendChild(document.createElement('br'));
 			season.appendChild(document.createTextNode(dateTime.toLocaleString('default', { month: 'short', day: 'numeric' })));
 			// highlight
-			if (clock.dayIndex() === d)
+			if (!hideCurrent && clock.dayIndex() === d)
 				tdContainer.classList.add('selectedDate');
 		}
 	}
@@ -138,7 +138,13 @@ function calendar(t = new Date()){
 }
 
 function main(){
-	document.getElementById('erecal').appendChild(calendar());
+	const [last, curr, next] = [-1, 0, 1].map(x => new Date(+new Date() + x * ere.oneia.year));
+	document.getElementById('erecal0').appendChild(calendar(last, true));
+	document.getElementById('erecal1').appendChild(calendar(curr));
+	document.getElementById('erecal2').appendChild(calendar(next, true));
+	document.getElementById('erecal0_title').innerHTML = clock.year(last);
+	document.getElementById('erecal1_title').innerHTML = clock.year(curr);
+	document.getElementById('erecal2_title').innerHTML = clock.year(next);
 	refresh();
 	setInterval(refresh, 200);
 }
