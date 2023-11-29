@@ -54,9 +54,10 @@ function clock(t = new Date()){
 	// todo
 	const elem = document.createElement('div');
 	elem.innerHTML = `${y} AT, ${ere.eremor.seasons[season]}
-	(${ere.eremor.seasonsAlt[season]}), Day ${date+1}, @${r.toFixed(2)}`;
+	(${ere.eremor.seasonsAlt[season]}), Day ${date+1} (index ${season * seasonLength + date}), @${r.toFixed(2)}`;
 	return elem;
 }
+clock.dayIndex = (t = new Date()) => +clock(t).innerHTML.match(/index \d+/g)[0].slice(6);
 
 function calendar(t = new Date()){
 	const slength = Math.floor(ere.eremor.season / ere.oneia.day);
@@ -97,6 +98,9 @@ function calendar(t = new Date()){
 			moonElem.classList.add('moon');
 			moonElem.appendChild(moon(t)); // todo D IS NOT CORRECT ITS JUST A PLACEHOLDER AND A SHITTY ONE AT THAT
 			tdContainer.appendChild(moonElem);
+			// highlight
+			if (clock.dayIndex() === d)
+				tdContainer.classList.add('selectedDate');
 		}
 	}
 	return table;

@@ -38,3 +38,9 @@
 .season_2 {
 	background-color: #008;
 }
+.selectedDate {
+	background-color: rgba(0, 255, 255, 0.25);
+	border: 3px dashed cyan;
+	font-size: 200%;
+	font-weight: bold;
+}
