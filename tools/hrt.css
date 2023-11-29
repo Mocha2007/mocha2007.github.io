@@ -63,9 +63,19 @@ td#lpt_td2 {
 #laserPhaseRed td.redDebug {
 	background-color: #08f;
 }
+.tdContainer {
+	height: 100%;
+	position: relative;
+}
+.date, .shave, .moon {
+	position: absolute;
+}
 .shave {
-	text-align: right;
-	width: 100%;
+	bottom: 0;
+	right: 0;
+}
+.moon {
+	bottom: 0;
 }
 /* mobile */
 @media (max-width: 750px) {

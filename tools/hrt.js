@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+/* global phoonsvg */
 const debug = document.URL[0].toLowerCase() === 'f'; // file:// vs. http(s)://
 
 const _1s = 1000;
@@ -9,6 +10,8 @@ const _1d = 24*_1h;
 const _1w = 7*_1d;
 const _1y = 365.2425*_1d;
 const _1mo = _1y/12;
+const moonEpoch = new Date(1970, 0, 7, 15, 35); // first new moon after 1/1/1970
+const moonP = 29.530589 * _1d; // synodic period
 
 class Source {
 	constructor(url, title = '(no title)', author = '(no author)',
@@ -123,6 +126,16 @@ function get_shave_cycle(t){
 	return (Math.floor(t/_1d) + 2) % 12;
 }
 
+function moon(t){
+	// full = 0
+	const phase = (t - moonEpoch) / moonP % 1;
+	// const emoji = '🌑🌒🌓🌔🌕🌖🌗🌘'[Math.round(8 * phase) % 8];
+	const svg = phoonsvg(phase);
+	svg.setAttribute('height', 10);
+	svg.setAttribute('width', 10);
+	return svg;
+}
+
 function laserPhaseElem(){
 	const day = Math.floor(get_laser_t() / _1d) % 35;
 	const epoch = new Date(new Date() - _1d * day);
@@ -164,11 +177,16 @@ function laserPhaseElem(){
 			const d = 7*i + j;
 			const td = document.createElement('td');
 			tr.appendChild(td);
-			const date = document.createElement('span');
+			// container
+			const tdContainer = document.createElement('div');
+			tdContainer.classList.add('tdContainer');
+			td.appendChild(tdContainer);
+			// content
+			const date = document.createElement('div');
 			date.classList.add('date');
 			const timeObject = new Date(_1d*d + +epoch);
 			date.innerHTML = timeObject.getDate();
-			td.appendChild(date);
+			tdContainer.appendChild(date);
 			td.classList.add(d <= day ? 'red' : debug ? 'redDebug' : 'redNoDebug');
 			// shave cycle
 			const shave = get_shave_cycle(timeObject);
@@ -176,7 +194,12 @@ function laserPhaseElem(){
 			shaveElem.classList.add('shave');
 			shaveElem.innerHTML = shave ? shave % 4 ? '' : 's' : '*';
 			shaveElem.title = shave ? shave % 4 ? '' : 'shave body' : 'new blade';
-			td.appendChild(shaveElem);
+			tdContainer.appendChild(shaveElem);
+			// MOOOOOOOON
+			const moonElem = document.createElement('div');
+			moonElem.classList.add('moon');
+			moonElem.appendChild(moon(timeObject));
+			tdContainer.appendChild(moonElem);
 		}
 	}
 	elem.appendChild(red);
