@@ -1,12 +1,8 @@
 /* global phoonsvg */
 
-const _1s = 1000;
-const _1m = 60*_1s;
-const _1h = 60*_1m;
-const _1d = 24*_1h;
 const ere = {
 	eisen: {
-		synodic: 93.37 * _1d,
+		synodic: 8067264898.453218,
 	},
 	eremor: {
 		holidays: [
