@@ -69,10 +69,12 @@ clock.yearStartDay = (t = new Date()) => {
 	return Math.round(0.52*y + (Math.floor((y-1)/25) % 2 ? 0 : 1 - y%2)
 		+ ADJUSTMENT_TO_MATCH_HOMEPAGE) % 6;
 };
+clock.isLeapYear = (t = new Date()) => clock.yearStartDay(t)
+	!== clock.yearStartDay(t - ere.oneia.year);
 
 function calendar(t = new Date()){
+	const IS_LEAP_YEAR = clock.isLeapYear(t);
 	const DOTW_OFFSET = clock.yearStartDay(t);
-	const slength = Math.floor(ere.eremor.season / ere.oneia.day);
 	const yearStart = Math.floor((t - ere.oneia.epoch) / ere.oneia.year) * ere.oneia.year
 		+ ere.oneia.epoch;
 	const table = document.createElement('table');
@@ -103,9 +105,11 @@ function calendar(t = new Date()){
 			// date
 			const date = document.createElement('div');
 			date.classList.add('date');
-			const season_id = Math.floor(d / slength);
-			const date_adj = d % slength;
-			date.innerHTML = date_adj + 1; // todo
+			const IS_LEAP_DAY = d === 72 && IS_LEAP_YEAR;
+			const slength = Math.floor(ere.eremor.season / ere.oneia.day);
+			const season_id = IS_LEAP_DAY ? ere.eremor.seasons.length-1 : Math.floor(d / slength);
+			const date_adj = (IS_LEAP_DAY ? slength : 0) + d % slength;
+			date.innerHTML = date_adj + (IS_LEAP_YEAR && 72 < d ? 0 : 1);
 			tdContainer.appendChild(date);
 			// season
 			td.classList.add(`season_${season_id}`);
