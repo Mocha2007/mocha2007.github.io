@@ -150,9 +150,12 @@ function main(){
 }
 
 function refresh(){
+	// eremoran clock
 	const clockElem = document.getElementById('ereclock');
 	clockElem.innerHTML = '';
 	clockElem.appendChild(clock());
+	// earth clock
+	document.getElementById('earthclock').innerHTML = '' + new Date();
 }
 
 main();
