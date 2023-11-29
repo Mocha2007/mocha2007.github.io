@@ -6461,6 +6461,15 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "han",
+		"etym": "I/PEN/*ɸan",
+		"cat": "n., 4th",
+		"defList": [
+			"rice"
+		],
+		"categories": ["grain", "plant"]
+	},
+	{
 		"title": "hanafi",
 		"etym": "I/PEN/*sonaɸi",
 		"cat": "n., 4th",
