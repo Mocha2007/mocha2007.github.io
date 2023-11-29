@@ -135,7 +135,8 @@ function calendar(t = new Date(), hideCurrent = false){
 			const CURRENT_SIGN = Math.floor(ere.eremor.zodiac.length * d / YEAR_LENGTH_IN_DAYS)
 				% ere.eremor.zodiac.length;
 			zodiacElem.innerHTML = ere.eremor.zodiac[CURRENT_SIGN].slice(0, 3) + '.';
-			const _4seasonID = Math.floor(ere.seasons.length * d / YEAR_LENGTH_IN_DAYS);
+			const _4seasonID = Math.floor(ere.seasons.length * d / YEAR_LENGTH_IN_DAYS)
+				% ere.seasons.length;
 			zodiacElem.title = `Starsign: ${ere.eremor.zodiac[CURRENT_SIGN]} (the ${ere.eremor.zodiacAlt[CURRENT_SIGN]})
 Season: ${ere.seasons[_4seasonID]}`;
 			tdContainer.appendChild(zodiacElem);
