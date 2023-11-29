@@ -1,5 +1,5 @@
 :root {
-	--cellSize: 6em;
+	--cellSize: 5em;
 	--cellBSize: 1px;
 	--selectedBSize: 3px;
 }
@@ -7,21 +7,25 @@
 header {
 	text-align: center;
 }
-
-#calendar {
+#cals{
+	text-align: center;
+	width: 100%;
+}
+.calendar {
 	border-collapse: collapse;
 	position: relative;
 	text-align: center;
 	user-select: none;
+	width: 100%;
 }
-#calendar td {
+.calendar td {
 	/* background-color: #444; */
 	border: var(--cellBSize) solid black;
 	height: var(--cellSize);
 	padding: 0;
 	width: var(--cellSize);
 }
-#calendar th {
+.calendar th {
 	font-size: 75%;
 }
 .tdContainer {

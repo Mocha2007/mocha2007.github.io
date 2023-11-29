@@ -78,7 +78,7 @@ function calendar(t = new Date(), hideCurrent = false){
 	const yearStart = Math.floor((t - ere.oneia.epoch) / ere.oneia.year) * ere.oneia.year
 		+ ere.oneia.epoch;
 	const table = document.createElement('table');
-	table.id = 'calendar';
+	table.classList.add('calendar');
 	// day cells
 	const tr0 = document.createElement('tr');
 	table.appendChild(tr0);
