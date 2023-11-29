@@ -37,6 +37,7 @@ const ere = {
 		year: 7656883274.804221, // ms; 72.52 local days; oneian tropical year = 7656856407.307186 s
 	},
 	seasons: ['Winter', 'Spring', 'Summer', 'Fall'],
+	// https://en.wikipedia.org/wiki/North_Indian_Ocean_tropical_cyclone#Seasons
 	seasonsCyc: ['No', 'Little', 'Much'],
 };
 
