@@ -36,7 +36,7 @@ const ere = {
 	seasons: ['Winter', 'Spring', 'Summer', 'Fall'],
 };
 
-function moon(t){
+function moon(t = new Date()){
 	return phoonsvg(t/ere.eisen.synodic % 1);
 }
 
@@ -143,8 +143,8 @@ Season: ${ere.seasons[Math.floor(ere.seasons.length * d / ere.oneia.daysPerYear)
 	return table;
 }
 
-function main(){
-	const [last, curr, next] = [-1, 0, 1].map(x => new Date(+new Date() + x * ere.oneia.year));
+function main(t = new Date()){
+	const [last, curr, next] = [-1, 0, 1].map(x => new Date(+t + x * ere.oneia.year));
 	document.getElementById('erecal0').appendChild(calendar(last, true));
 	document.getElementById('erecal1').appendChild(calendar(curr));
 	document.getElementById('erecal2').appendChild(calendar(next, true));
@@ -155,13 +155,13 @@ function main(){
 	setInterval(refresh, 200);
 }
 
-function refresh(){
+function refresh(t = new Date()){
 	// eremoran clock
 	const clockElem = document.getElementById('ereclock');
 	clockElem.innerHTML = '';
 	clockElem.appendChild(clock());
 	// earth clock
-	document.getElementById('earthclock').innerHTML = '' + new Date();
+	document.getElementById('earthclock').innerHTML = '' + t;
 }
 
 main();
