@@ -66,7 +66,9 @@ function irishLog(base = 10){
 function create23Table(t2){
 	const table = document.createElement('table');
 	const width = t2.indexOf(3);
-	const max_index = t2.indexOf(t2.toReversed().find(x => x));
+	const reversed = t2.map(x => x);
+	reversed.reverse();
+	const max_index = t2.indexOf(reversed.find(x => x));
 	for (let i = 0; i < t2.length / width; i++){
 		const tr = document.createElement('tr');
 		table.appendChild(tr);
