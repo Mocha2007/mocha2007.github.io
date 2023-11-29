@@ -63,3 +63,7 @@ td#lpt_td2 {
 #laserPhaseRed td.redDebug {
 	background-color: #08f;
 }
+.shave {
+	text-align: right;
+	width: 100%;
+}

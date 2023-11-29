@@ -117,6 +117,12 @@ function get_laser_t(){
 	return new Date() - (new Date(2024, 0, 2, 9) - 3*5*_1w); // 3*5 weeks before 1/2; iirc orig. 1694782800000
 }
 
+/** @param {Date} t - integer in [0, 11] = day in shave cycle*/
+function get_shave_cycle(t){
+	// shave body every 4d; replace blade every 12d
+	return (Math.floor(t/_1d) + 2) % 12;
+}
+
 function laserPhaseElem(){
 	const day = Math.floor(get_laser_t() / _1d) % 35;
 	const epoch = new Date(new Date() - _1d * day);
@@ -160,9 +166,17 @@ function laserPhaseElem(){
 			tr.appendChild(td);
 			const date = document.createElement('span');
 			date.classList.add('date');
-			date.innerHTML = new Date(_1d*d + +epoch).getDate();
+			const timeObject = new Date(_1d*d + +epoch);
+			date.innerHTML = timeObject.getDate();
 			td.appendChild(date);
 			td.classList.add(d <= day ? 'red' : debug ? 'redDebug' : 'redNoDebug');
+			// shave cycle
+			const shave = get_shave_cycle(timeObject);
+			const shaveElem = document.createElement('div');
+			shaveElem.classList.add('shave');
+			shaveElem.innerHTML = shave ? shave % 4 ? '' : 's' : '*';
+			shaveElem.title = shave ? shave % 4 ? '' : 'shave body' : 'new blade';
+			td.appendChild(shaveElem);
 		}
 	}
 	elem.appendChild(red);
