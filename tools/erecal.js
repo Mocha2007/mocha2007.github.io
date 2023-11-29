@@ -54,12 +54,22 @@ function clock(t = new Date()){
 	// todo
 	const elem = document.createElement('div');
 	elem.innerHTML = `${y} AT, ${ere.eremor.seasons[season]}
-	(${ere.eremor.seasonsAlt[season]}), Day ${date+1} (index ${season * seasonLength + date}), @${r.toFixed(2)}`;
+	(${ere.eremor.seasonsAlt[season]}), Day ${date+1}
+	(index ${season * seasonLength + date}), @${r.toFixed(2)}`;
 	return elem;
 }
 clock.dayIndex = (t = new Date()) => +clock(t).innerHTML.match(/index \d+/g)[0].slice(6);
+clock.year = (t = new Date()) => +clock(t).innerHTML.match(/^\d+/g)[0];
+clock.yearStartDay = (t = new Date()) => {
+	let y = clock.year(t);
+	y %= 150; // just in case...
+	const ADJUSTMENT_TO_MATCH_HOMEPAGE = 1;
+	return Math.round(0.52*y + (Math.floor((y-1)/25) % 2 ? 0 : 1 - y%2)
+		+ ADJUSTMENT_TO_MATCH_HOMEPAGE) % 6;
+};
 
 function calendar(t = new Date()){
+	const DOTW_OFFSET = clock.yearStartDay(t);
 	const slength = Math.floor(ere.eremor.season / ere.oneia.day);
 	// const year = (t - ere.oneia.epoch) / ere.oneia.year + ere.oneia.atEpoch;
 	const table = document.createElement('table');
@@ -73,13 +83,15 @@ function calendar(t = new Date()){
 		th.innerHTML = day;
 	});
 	// date cells
-	for (let i = 0; i < Math.floor(ere.oneia.year / ere.oneia.day / ere.eremor.week.length); i++){ // 12 weeks / year
+	for (let i = 0; i < Math.ceil(ere.oneia.year / ere.oneia.day / ere.eremor.week.length); i++){ // 12 weeks / year
 		const tr = document.createElement('tr');
 		table.appendChild(tr);
 		for (let j = 0; j < ere.eremor.week.length; j++){ // 6 days / week
-			const d = ere.eremor.week.length*i + j;
+			const d = ere.eremor.week.length*i + j - DOTW_OFFSET;
 			const td = document.createElement('td');
 			tr.appendChild(td);
+			if (d < 0)
+				continue;
 			// container
 			const tdContainer = document.createElement('div');
 			tdContainer.classList.add('tdContainer');
