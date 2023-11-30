@@ -1,7 +1,6 @@
 :root {
 	--cellSize: 5em;
 	--cellBSize: 1px;
-	--selectedBSize: 0;
 	--phoonSize: 1.2em;
 }
 
@@ -34,7 +33,6 @@ svg {
 	font-size: 75%;
 }
 .tdContainer {
-	border: var(--selectedBSize) dashed transparent;
 	height: 100%;
 	position: relative;
 }
@@ -73,11 +71,7 @@ svg {
 }
 .selectedDate {
 	background-color: rgba(255, 255, 255, 0.25);
-	border: var(--selectedBSize) dashed cyan;
 	font-weight: bold;
-}
-.otherYears {
-	border: var(--selectedBSize) dashed transparent;
 }
 @media print {
 	@page {size: landscape}
@@ -101,9 +95,8 @@ svg {
 	.intercalary {
 		background-color: #fdf;
 	}
-	.otherYears, .selectedDate {
+	.selectedDate {
 		background-color: inherit;
-		border: none;
 		font-weight: normal;
 	}
 }
