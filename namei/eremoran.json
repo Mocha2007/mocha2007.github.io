@@ -1849,7 +1849,7 @@
 		],
 		"categories": ["animal"],
 		"pron": "ba",
-		"notes": "Due to historical reasons, this word has an irregular spelling; *nu would be expected. Although sponges are technically animals, they do not fall under the Eremoran classification of animate since they are sessile. This word is sometimes pronounced ''bat'' to distinguish it from ba 'chickpea' when necessary."
+		"notes": "Due to historical reasons, this word has an irregular spelling; *ba would be expected. Although sponges are technically animals, they do not fall under the Eremoran classification of animate since they are sessile. This word is sometimes pronounced ''bat'' to distinguish it from ba 'chickpea' when necessary."
 	},
 	{
 		"title": "babeku",
@@ -5685,6 +5685,15 @@
 		"categories": ["plant", "tree"]
 	},
 	{
+		"title": "êkamar",
+		"etym": "B/êkar/kamu",
+		"cat": "n., 1st",
+		"defList": [
+			"heterosexual male in a submissive sexual role"
+		],
+		"categories": ["sex"]
+	},
+	{
 		"title": "ekar",
 		"etym": "B/ek/êkar",
 		"cat": "n., 1st",
@@ -5710,6 +5719,15 @@
 		"defList": [
 			"sled"
 		]
+	},
+	{
+		"title": "êksor",
+		"etym": "C/êkar/sou",
+		"cat": "n., 1st",
+		"defList": [
+			"bottom (gay male submissive)"
+		],
+		"categories": ["sex"]
 	},
 	{
 		"title": "ela",
@@ -6650,7 +6668,7 @@
 			"strength, power, might, influence",
 			"(+ ad) ready, prepared",
 			"(+ din) unready, unprepared, extemporaneous",
-			"(noun + su +) [used to indicate an outcome effected with the hands]; by hand, ahold <ul> <li>  ''Sazam i afêst su <b>dir hanum</b> zestisudôz ômôrz.''<br>  awe TOP shortsword GEN ABS hold bent-CAUS EXP.PL<br>  We were amazed to see him bend the shortsword <b>by hand</b>. </li> </ul> "
+			"(noun + su +) [used to indicate an outcome effected with the hands]; by hand, ahold <ul> <li>  ''Sazam i afêst su <b>dir hanum</b> zestisudôz omôrz.''<br>  awe TOP shortsword GEN ABS hold bent-CAUS EXP.PL<br>  We were amazed to see him bend the shortsword <b>by hand</b>. </li> </ul> "
 		]
 	},
 	{
@@ -7370,7 +7388,7 @@
 	{
 		"title": "ho",
 		"etym": "I/PEN/*so/that",
-		"cat": "adj.",
+		"cat": "det., pron.",
 		"defList": [
 			"that, those (away from speaker and listener)"
 		]
@@ -7414,7 +7432,7 @@
 	{
 		"title": "hoki",
 		"etym": "C/ho/kiom",
-		"cat": "adj.",
+		"cat": "det., pron.",
 		"defList": [
 			"that (by listener)"
 		]
@@ -8544,6 +8562,24 @@
 		"categories": ["fruit", "plant", "tree"]
 	},
 	{
+		"title": "kamêkar",
+		"etym": "C/kamu/êkar",
+		"cat": "n., 1st",
+		"defList": [
+			"heterosexual male in a dominant sexual role"
+		],
+		"categories": ["sex"]
+	},
+	{
+		"title": "kamokar",
+		"etym": "C/kamu/okar",
+		"cat": "n., 1st",
+		"defList": [
+			"homosexual female in a dominant sexual role"
+		],
+		"categories": ["sex"]
+	},
+	{
 		"title": "kamela",
 		"etym": "D/kama",
 		"cat": "n., 4th",
@@ -9392,7 +9428,7 @@
 	{
 		"title": "ko",
 		"etym": "I/PEN/*ko/this",
-		"cat": "adj.",
+		"cat": "det., pron.",
 		"defList": [
 			"this, these",
 			"(late Eremoran or dialectal) the (the definite article)"
@@ -13529,6 +13565,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "okamar",
+		"etym": "B/kamu/okar",
+		"cat": "n., 1st",
+		"defList": [
+			"homosexual female in a submissive sexual role"
+		],
+		"categories": ["sex"]
+	},
+	{
 		"title": "okar",
 		"etym": "I/PEN/*okar/woman",
 		"cat": "n., 1st",
@@ -13585,6 +13630,15 @@
 			"1st/2nd person formal pronoun"
 		],
 		"categories": ["personal pronoun"]
+	},
+	{
+		"title": "oksor",
+		"etym": "C/okar/sou",
+		"cat": "n., 1st",
+		"defList": [
+			"heterosexual female in a submissive sexual role"
+		],
+		"categories": ["sex"]
 	},
 	{
 		"title": "ôlê",
@@ -15042,6 +15096,15 @@
 		"categories": ["tool"]
 	},
 	{
+		"title": "sêkar",
+		"etym": "B/sou/êkar",
+		"cat": "n., 1st",
+		"defList": [
+			"homosexual male in a dominant sexual role"
+		],
+		"categories": ["sex"]
+	},
+	{
 		"title": "sekaz",
 		"etym": "C/se/kaz",
 		"cat": "v.",
@@ -15603,6 +15666,15 @@
 			"(intransitive) serve, submit to ([[ad]] + master)",
 			"(intransitive) be submissive"
 		]
+	},
+	{
+		"title": "sokar",
+		"etym": "B/sou/okar",
+		"cat": "n., 1st",
+		"defList": [
+			"homosexual female in a dominant sexual role"
+		],
+		"categories": ["sex"]
 	},
 	{
 		"title": "sokum",
@@ -18158,7 +18230,7 @@
 		"etym": "I/OER/Zikarônaborre",
 		"cat": "n., 1st",
 		"defList": [
-			"Zikrômbor, goddess of Manners and Disease, she curses those who do not practice good manners with various afflictions. It is never used as a given name. It is used in the interj. ''Zikrômbor berbkaldoz'' (gesundheit; bless you; literally \"May Zikrômbor leave you.\")."
+			"Zikrômbor, goddess of Manners and Disease, she curses those who do not practice good manners with various afflictions. It is never used as a given name. It is used in the interj. ''Zikrômbor berbakaldoz'' (gesundheit; bless you; literally \"May Zikrômbor leave you.\")."
 		],
 		"notes": "possibly related to zurku",
 		"categories": ["disease", "female given name", "god"]
