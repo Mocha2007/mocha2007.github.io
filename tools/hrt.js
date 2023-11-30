@@ -144,7 +144,7 @@ function isDST(d){
 
 function get_dose_t(){
 	const d = new Date();
-	return d - 1692227700000 - (isDST(d) ? 0 : _1h); // 7:15 is when I normally take my doses
+	return d - 1692227700000 - (isDST(d) ? 0 : _1h) + 10*_1m; // 7:15 is when I used to take my doses, but I have now moved it back 10 mins to 7:05
 }
 
 function get_laser_t(){
