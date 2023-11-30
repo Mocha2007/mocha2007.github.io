@@ -124,6 +124,27 @@ class EremoranDate {
 	}
 }
 
+/** brute force yearStartDay calculator
+function brute(max = 10){
+	const t0 = +new Date();
+	const f = (c0, c1, c2, x) => mod(Math.floor((c0*x + c1)/c2), 6);
+	for (let c0 = -max; c0 < max; c0++)
+		for (let c1 = -max; c1 < max; c1++)
+			for (let c2 = 1; c2 < max; c2++){
+				let works = true;
+				for (let y = 0; y < 50; y++){
+					if (EremoranDate.yearStartDay(y) !== f(c0, c1, c2, y)){
+						works = false;
+						break;
+					}
+					if (t0 + 10000 < new Date())
+						return `TIMED OUT @ {${c0}, ${c1}, ${c2}}`;
+				}
+				if (works)
+					console.log({c0, c1, c2});
+			}
+} */
+
 function moon(t = new Date()){
 	return phoonsvg(t/ere.eisen.synodic % 1);
 }
