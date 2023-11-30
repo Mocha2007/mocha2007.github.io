@@ -19,6 +19,7 @@ svg {
 .calendar {
 	border-collapse: collapse;
 	position: relative;
+	table-layout: fixed;
 	text-align: center;
 	user-select: none;
 	width: 100%;
