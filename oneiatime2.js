@@ -117,7 +117,7 @@ function eremoranWeekday(y, d){
 	/** this is needed to make this tool match erecal.js */
 	var ADJUSTMENT = -1;
 	y %= 150; // just in case...
-	var dominical = Math.round(0.52*y + (Math.floor((y-1)/25) % 2 ? 0 : 1 - y%2)); // would be % 6 but that's redundant
+	var dominical = Math.floor(y/2) + Math.floor((y-1)/50) + 1; // would be % 6 but that's redundant
 	return constants.eremor.week[(dominical + d + ADJUSTMENT) % 6];
 }
 
