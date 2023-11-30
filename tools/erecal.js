@@ -93,7 +93,7 @@ function calendar(t = new Date(), hideCurrent = false){
 			const dateTime = new Date((d + DOTW_OFFSET) * ere.oneia.day + yearStart);
 			const td = document.createElement('td');
 			tr.appendChild(td);
-			if (d < 0)
+			if (d < 0 || clock.daysThisYear(t) <= d)
 				continue;
 			// container
 			const tdContainer = document.createElement('div');
