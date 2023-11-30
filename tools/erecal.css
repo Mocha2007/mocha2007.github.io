@@ -75,13 +75,11 @@ svg {
 }
 @media print {
 	@page {size: landscape}
-	hr {
-		display: none;
-	}
 	html, body {
 		background-color: white;
-		font-size: 74%;
 		color: black;
+		font-size: 76%;
+		margin: 1%;
 	}
 	.season_0 {
 		background-color: #cfc;
@@ -94,9 +92,5 @@ svg {
 	}
 	.intercalary {
 		background-color: #fdf;
-	}
-	.selectedDate {
-		background-color: inherit;
-		font-weight: normal;
 	}
 }
