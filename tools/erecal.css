@@ -39,6 +39,7 @@ svg {
 	position: relative;
 }
 .date, .holiday, .moon, .season, .zodiac {
+	left: 3%;
 	position: absolute;
 }
 .moon, .zodiac {
@@ -47,11 +48,11 @@ svg {
 .holiday, .season, .zodiac {
 	font-size: 75%;
 	font-style: italic;
-	right: 0;
+	right: 3%;
 	text-align: right;
 }
 .holiday {
-	font-size: 70%;
+	font-size: 65%;
 	font-weight: bold;
 	top: 40%;
 }

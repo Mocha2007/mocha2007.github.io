@@ -15,7 +15,9 @@ const ere = {
 			return ere.oneia.year * this.dominicalCycleYears;
 		},
 		holidays: [
-			['Abubisêm', 34], // 34 = Reram 11
+			['Lirebolbam', datum => datum.yearDayIndex === 13], // Stum 13
+			['Abubisêm', datum => datum.yearDayIndex === 34], // 34 = Reram 11
+			['Lusibolbam', datum => datum.yearDayIndex === 60], // Kokum 13
 		],
 		// https://en.wikipedia.org/wiki/Karachi#Climate
 		monsoon: ['Dry', 'Dry', 'Dry', 'Monsoon', 'Dry', 'Dry'],
@@ -210,7 +212,7 @@ Season: ${ere.seasons[_4seasonID]}`;
 		if (!hideCurrent && datum.yearDayIndex === d)
 			tdContainer.classList.add('selectedDate');
 		// holidays
-		const holiday = ere.eremor.holidays.find(xyz => d === xyz[1]);
+		const holiday = ere.eremor.holidays.find(xyz => xyz[1](datum_));
 		if (holiday){
 			const holidayElem = document.createElement('div');
 			holidayElem.classList.add('holiday');

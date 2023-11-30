@@ -3623,6 +3623,15 @@
 		"categories": ["food"]
 	},
 	{
+		"title": "bolbam",
+		"etym": "C/bolbat/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"festival"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "bolent",
 		"img": "../img/eremoran/bolent.png",
 		"etym": "I/PEN/*βolent/hammer",
@@ -11149,6 +11158,15 @@
 		"categories": ["plant", "tree"]
 	},
 	{
+		"title": "lirebolbam",
+		"etym": "C/lire/bolbam",
+		"cat": "n., 5th",
+		"defList": [
+			"the tree festival ''Lirebolbam''"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "liremimit",
 		"etym": "C/lire/mimit",
 		"cat": "n., 3rd",
@@ -11309,6 +11327,15 @@
 		"defList": [
 			"(transitive) swing"
 		]
+	},
+	{
+		"title": "lusibolbam",
+		"etym": "C/lusik/bolbam",
+		"cat": "n., 5th",
+		"defList": [
+			"the wolf festival ''Lusibolbam''"
+		],
+		"categories": ["time"]
 	},
 	{
 		"title": "lusik",
