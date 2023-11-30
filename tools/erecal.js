@@ -113,9 +113,8 @@ class EremoranDate {
 	 * @returns {0|1|2|3|4|5} eremoran day of the week
 	 */
 	static yearStartDay(y){
-		const ADJUSTMENT_TO_MATCH_HOMEPAGE = 1;
-		return Math.round(0.52*y + (Math.floor((y-1)/25) % 2 ? 0 : 1 - y%2)
-			+ ADJUSTMENT_TO_MATCH_HOMEPAGE) % 6;
+		y = mod(y, 150); // just in case...
+		return Math.round(0.52*y + (Math.floor((y-1)/25) % 2 ? 0 : 1 - y%2)) % 6;
 	}
 }
 

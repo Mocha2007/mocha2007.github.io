@@ -114,9 +114,11 @@ function oneiaTimeInitialize(t){
  * @returns {string}
 */
 function eremoranWeekday(y, d){
+	/** this is needed to make this tool match erecal.js */
+	var ADJUSTMENT = -1;
 	y %= 150; // just in case...
 	var dominical = Math.round(0.52*y + (Math.floor((y-1)/25) % 2 ? 0 : 1 - y%2)); // would be % 6 but that's redundant
-	return constants.eremor.week[(dominical + d) % 6];
+	return constants.eremor.week[(dominical + d + ADJUSTMENT) % 6];
 }
 
 function updateEremoranDate(t){
