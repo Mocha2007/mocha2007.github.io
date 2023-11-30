@@ -1,7 +1,7 @@
 :root {
 	--cellSize: 5em;
 	--cellBSize: 1px;
-	--selectedBSize: 3px;
+	--selectedBSize: 0;
 	--phoonSize: 1.2em;
 }
 
@@ -71,7 +71,7 @@ svg {
 	background-color: #404;
 }
 .selectedDate {
-	background-color: rgba(0, 255, 255, 0.25);
+	background-color: rgba(255, 255, 255, 0.25);
 	border: var(--selectedBSize) dashed cyan;
 	font-weight: bold;
 }
