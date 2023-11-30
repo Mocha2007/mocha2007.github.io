@@ -119,7 +119,7 @@ class EremoranDate {
 	 * @returns {0|1|2|3|4|5} eremoran day of the week
 	 */
 	static yearStartDay(y){
-		return (Math.floor(y/2) + Math.floor((y-1)/50) + 1) % 6;
+		return mod(Math.floor(y/2) + Math.floor((y-1)/50) + 1, 6);
 	}
 }
 
