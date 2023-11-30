@@ -8571,15 +8571,6 @@
 		"categories": ["sex"]
 	},
 	{
-		"title": "kamokar",
-		"etym": "C/kamu/okar",
-		"cat": "n., 1st",
-		"defList": [
-			"homosexual female in a dominant sexual role"
-		],
-		"categories": ["sex"]
-	},
-	{
 		"title": "kamela",
 		"etym": "D/kama",
 		"cat": "n., 4th",
@@ -8596,6 +8587,15 @@
 			"any drink brewed with hot water except tea (from ''Camellia sinensis''), including herbal teas and coffee"
 		],
 		"categories": ["drink"]
+	},
+	{
+		"title": "kamokar",
+		"etym": "C/kamu/okar",
+		"cat": "n., 1st",
+		"defList": [
+			"homosexual female in a dominant sexual role"
+		],
+		"categories": ["sex"]
 	},
 	{
 		"title": "kamu",

@@ -1285,10 +1285,10 @@ function expansionProject(){
 	const goal = (_2024 - w)/(new Date(2024, 0, 1) - new Date()) * day;
 	const currentRate = (w - 900) * day / (new Date() - new Date(2023, 1, 10));
 	const eta = new Date(+new Date() + day*(days - w)/(currentRate-1));
-	const _super = (new Date(2023, 8, 4) - epoch)/day;
-	const supergoal = (_super - w)/(new Date(2023, 8, 4) - new Date()) * day;
+	// const _super = (new Date(2023, 8, 4) - epoch)/day;
+	// const supergoal = (_super - w)/(new Date(2023, 8, 4) - new Date()) * day;
 	console.info(`${round(goal, 2)} w/d required to reach 2024 goal`);
-	console.info(`${round(supergoal, 2)} w/d required to reach anniversary supergoal`);
+	// console.info(`${round(supergoal, 2)} w/d required to reach anniversary supergoal`);
 	console.info(`ETA @ ${currentRate} w/d = ${eta.toDateString()}`);
 }
 
