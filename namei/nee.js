@@ -152,6 +152,7 @@ new Feature(1770/3000, 1770/3000, 'Taika', 'https://upload.wikimedia.org/wikiped
 new Feature(1670/3000, 1700/3000, 'Wu', 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Shah_Rukn-e-Alam_tomb_in_Multan%2C_Pakistan_01.jpg');
 new Feature(1760/3000, 1600/3000, 'Dako', 'https://upload.wikimedia.org/wikipedia/commons/6/66/Kumrat_valley%2C_Upper_Dir.jpg');
 new Feature(1100/3000, 1340/3000, 'Irikar', 'https://upload.wikimedia.org/wikipedia/commons/2/23/Azerbaijan_Nature_Shaki.jpg');
+new Feature(1860/3000, 1490/3000, 'Kikbil', 'https://countrysideindia.com/wp-content/uploads/2018/01/nepal-960x1149.jpg');
 // other majors
 new Feature(2640/3000, 1560/3000, 'Važcud', 'https://upload.wikimedia.org/wikipedia/commons/2/2a/%E4%B8%B9%E9%9C%9E%E5%B1%B1_04.jpg', featureSize.maj, '', ['dead']);
 new Feature(1680/3000, 1060/3000, 'Iwemälre', 'https://savannahinkyrgyzstan.files.wordpress.com/2013/08/dsc_0234.jpg', featureSize.maj, '', ['dead']);
