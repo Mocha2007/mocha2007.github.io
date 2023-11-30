@@ -72,8 +72,11 @@ class EremoranDate {
 		const startDay = EremoranDate.yearStartDay(year);
 		const dotw = (startDay + yearDayIndex) % ere.eremor.week.length;
 		const week = Math.floor((startDay + yearDayIndex) / ere.eremor.week.length);
+		// the starsign doesn't care about the calendar
+		const starsignLength = ere.oneia.year / ere.eremor.zodiac.length;
+		const starsign = Math.floor(dominicalOffset % ere.oneia.year / starsignLength);
 		return {
-			dominicalCycles, dayIndex, year, yearDayIndex, dayFraction, season, date, dotw, week,
+			dominicalCycles, dayIndex, year, yearDayIndex, dayFraction, season, date, dotw, week, starsign,
 		};
 	}
 	get cellID(){
@@ -197,12 +200,10 @@ function calendar(t = new Date(), hideCurrent = false){
 		// zodiac
 		const zodiacElem = document.createElement('div');
 		zodiacElem.classList.add('zodiac');
-		const CURRENT_SIGN = Math.floor(ere.eremor.zodiac.length * d / YEAR_LENGTH_IN_DAYS)
-			% ere.eremor.zodiac.length;
-		zodiacElem.innerHTML = ere.eremor.zodiac[CURRENT_SIGN].slice(0, 3) + '.';
+		zodiacElem.innerHTML = ere.eremor.zodiac[datum_.starsign].slice(0, 3) + '.';
 		const _4seasonID = Math.floor(ere.seasons.length * d / YEAR_LENGTH_IN_DAYS)
 			% ere.seasons.length;
-		zodiacElem.title = `Starsign: ${ere.eremor.zodiac[CURRENT_SIGN]} (the ${ere.eremor.zodiacAlt[CURRENT_SIGN]})
+		zodiacElem.title = `Starsign: ${ere.eremor.zodiac[datum_.starsign]} (the ${ere.eremor.zodiacAlt[datum_.starsign]})
 Season: ${ere.seasons[_4seasonID]}`;
 		tdContainer.appendChild(zodiacElem);
 		// highlight
