@@ -18,6 +18,7 @@ const ere = {
 			['Lirebolbam', datum => datum.yearDayIndex === 13], // Stum 13
 			['Abubisêm', datum => datum.yearDayIndex === 34], // 34 = Reram 11
 			['Lusibolbam', datum => datum.yearDayIndex === 60], // Kokum 13
+			['Skum', datum => datum.yearDayIndex === EremoranDate.yearLength(datum.year)-1], // Last day in the year
 		],
 		// https://en.wikipedia.org/wiki/Karachi#Climate
 		monsoon: ['Dry', 'Dry', 'Dry', 'Monsoon', 'Dry', 'Dry'],
