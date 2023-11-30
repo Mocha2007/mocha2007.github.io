@@ -1,11 +1,19 @@
 /* eslint-disable max-len */
 /* global phoonsvg */
 
+function mod(n, m){
+	return (n%m+m)%m;
+}
+
 const ere = {
 	eisen: {
 		synodic: 8067264898.453218,
 	},
 	eremor: {
+		dominicalCycleYears: 150,
+		get dominical(){
+			return ere.oneia.year * this.dominicalCycleYears;
+		},
 		holidays: [
 			['Abubisêm', 34], // 34 = Reram 11
 		],
@@ -35,45 +43,99 @@ const ere = {
 	seasons: ['Winter', 'Spring', 'Summer', 'Fall'],
 };
 
+class EremoranDate {
+	constructor(dateObj = new Date()){
+		this.dateObj = dateObj;
+	}
+	get datum(){
+		// A leap day, located at the end of the year, outside any season, is added when the year is odd or divisible by 50.
+		/** ms */
+		const offset = this.dateObj - ere.oneia.epoch;
+		/** dominical cycles */
+		const dominicalCycles = Math.floor(offset / ere.eremor.dominical);
+		/** ms */
+		const dominicalOffset = mod(offset, ere.eremor.dominical);
+		let year = ere.oneia.atEpoch + ere.eremor.dominicalCycleYears * dominicalCycles;
+		const dayIndex = Math.floor(dominicalOffset / ere.oneia.day);
+		const dayFraction = dominicalOffset % ere.oneia.day / ere.oneia.day;
+		let yearDayIndex = dayIndex;
+		for (let i = 0; i < ere.eremor.dominicalCycleYears; i++){
+			const daysThisYear = EremoranDate.yearLength(year);
+			if (yearDayIndex < daysThisYear)
+				break;
+			yearDayIndex -= daysThisYear;
+			year++;
+		}
+		const seasonLength = Math.floor(ere.oneia.daysPerYear / ere.eremor.seasons.length);
+		const season = Math.floor(yearDayIndex / seasonLength);
+		const date = yearDayIndex - season * seasonLength + 1;
+		const startDay = EremoranDate.yearStartDay(year);
+		const dotw = (startDay + yearDayIndex) % ere.eremor.week.length;
+		const week = Math.floor((startDay + yearDayIndex) / ere.eremor.week.length);
+		return {
+			dominicalCycles, dayIndex, year, yearDayIndex, dayFraction, season, date, dotw, week,
+		};
+	}
+	get cellID(){
+		const datum = this.datum;
+		return `y${datum.year}w${datum.week}d${datum.dotw}`;
+	}
+	/** get the EremoranDate object representing the beginning of this object's current year */
+	get yearStart(){
+		return this.modify(0, -this.datum.yearDayIndex);
+	}
+	/**
+	 * creates new EremoranDate object with the specified delta-T
+	 * @param {number} dy number of oneian years to add/subtract
+	 * @param {number} dd number of oneian days to add/subtract
+	 */
+	modify(dy = 0, dd = 0){
+		const yearSign = Math.sign(dy);
+		const datum = this.datum;
+		let t = +this.dateObj + dd * ere.oneia.day;
+		for (let i = 0; i < yearSign * dy; i++)
+			t += yearSign * EremoranDate.yearLength(datum.year + yearSign * i) * ere.oneia.day;
+		return new EremoranDate(new Date(t));
+	}
+	/** @param {number} y eremoran year */
+	static isLeapYear(y){
+		return this.yearStartDay(y) !== this.yearStartDay(y+1);
+	}
+	/**
+	 * @param {number} y eremoran year
+	 * @returns {72|73} eremoran days
+	 */
+	static yearLength(y){
+		return 72 + this.isLeapYear(y);
+	}
+	/**
+	 * @param {number} y eremoran year
+	 * @returns {0|1|2|3|4|5} eremoran day of the week
+	 */
+	static yearStartDay(y){
+		const ADJUSTMENT_TO_MATCH_HOMEPAGE = 1;
+		return Math.round(0.52*y + (Math.floor((y-1)/25) % 2 ? 0 : 1 - y%2)
+			+ ADJUSTMENT_TO_MATCH_HOMEPAGE) % 6;
+	}
+}
+
 function moon(t = new Date()){
 	return phoonsvg(t/ere.eisen.synodic % 1);
 }
 
 function clock(t = new Date()){
-	let r = (t - ere.oneia.epoch) / ere.oneia.year + ere.oneia.atEpoch;
-	const y = Math.floor(r);
-	r -= y;
-	const yearLength = ere.oneia.year / ere.oneia.day;
-	r *= yearLength;
-	const seasonLength = Math.floor(yearLength / ere.eremor.seasons.length);
-	const season = Math.floor(r / seasonLength);
-	const date = Math.floor(r % seasonLength);
-	r %= 1;
-	r *= 1000;
+	const datum = new EremoranDate(t).datum;
 	const elem = document.createElement('div');
-	elem.innerHTML = `${y} AT, ${ere.eremor.seasons[season]}
-	(${ere.eremor.seasonsAlt[season]}), Day ${date+1}
-	(index ${season * seasonLength + date}), @${r.toFixed(2)}`;
+	elem.innerHTML = `${datum.year} AT,
+	${ere.eremor.seasons[datum.season]} (${ere.eremor.seasonsAlt[datum.season]}),
+	Day ${datum.date},
+	@${(datum.dayFraction * 1000).toFixed(2)}`;
 	return elem;
 }
-clock.dayIndex = (t = new Date()) => +clock(t).innerHTML.match(/index \d+/g)[0].slice(6);
-clock.year = (t = new Date()) => +clock(t).innerHTML.match(/^\d+/g)[0];
-clock.yearStartDay = (t = new Date()) => {
-	const y = clock.year(t);
-	const ADJUSTMENT_TO_MATCH_HOMEPAGE = 1;
-	return Math.round(0.52*y + (Math.floor((y-1)/25) % 2 ? 0 : 1 - y%2)
-		+ ADJUSTMENT_TO_MATCH_HOMEPAGE) % 6;
-};
-clock.isLeapYear = (t = new Date()) => clock.yearStartDay(t)
-	!== clock.yearStartDay(+t + ere.oneia.year);
-clock.daysThisYear = (t = new Date()) => (clock.isLeapYear(t) ? Math.ceil : Math.floor)(ere.oneia.daysPerYear);
 
 function calendar(t = new Date(), hideCurrent = false){
-	const IS_LEAP_YEAR = clock.isLeapYear(t);
-	const DOTW_OFFSET = clock.yearStartDay(t);
-	const YEAR_LENGTH_IN_DAYS = clock.daysThisYear(t);
-	const yearStart = Math.floor((t - ere.oneia.epoch) / ere.oneia.year) * ere.oneia.year
-		+ ere.oneia.epoch;
+	const ed = new EremoranDate(t);
+	const datum = ed.datum;
 	const table = document.createElement('table');
 	table.classList.add('calendar');
 	// day cells
@@ -84,73 +146,76 @@ function calendar(t = new Date(), hideCurrent = false){
 		tr0.appendChild(th);
 		th.innerHTML = day;
 	});
-	// date cells
+	// construct table first...
+	const cells = {};
 	for (let i = 0; i < Math.ceil(ere.oneia.year / ere.oneia.day / ere.eremor.week.length); i++){ // weeks
 		const tr = document.createElement('tr');
 		table.appendChild(tr);
 		for (let j = 0; j < ere.eremor.week.length; j++){ // days
-			const d = ere.eremor.week.length*i + j - DOTW_OFFSET;
-			const dateTime = new Date((d + DOTW_OFFSET) * ere.oneia.day + yearStart);
 			const td = document.createElement('td');
+			cells[td.id = `y${datum.year}w${i}d${j}`] = td;
 			tr.appendChild(td);
-			if (d < 0 || clock.daysThisYear(t) <= d)
-				continue;
-			// container
-			const tdContainer = document.createElement('div');
-			tdContainer.classList.add('tdContainer');
-			td.appendChild(tdContainer);
-			// date
-			const date = document.createElement('div');
-			date.classList.add('date');
-			const IS_LEAP_DAY = d === 72 && IS_LEAP_YEAR;
-			const slength = Math.floor(YEAR_LENGTH_IN_DAYS / ere.eremor.seasons.length);
-			const season_id = IS_LEAP_DAY ? ere.eremor.seasons.length-1 : Math.floor(d / slength);
-			const date_adj = (IS_LEAP_DAY ? slength : 0) + d % slength;
-			if (!IS_LEAP_DAY)
-				date.innerHTML = date_adj + (IS_LEAP_YEAR && 72 < d ? 0 : 1);
-			tdContainer.appendChild(date);
-			// season
-			td.classList.add(IS_LEAP_DAY ? 'intercalary' : `season_${season_id}`);
-			const season = document.createElement('div');
-			season.classList.add('season');
-			const seasonName = ere.eremor.seasons[season_id % ere.eremor.seasons.length];
-			season.innerHTML = IS_LEAP_DAY ? 'Bodôbêkum' : seasonName;
-			const monsoon = Math.floor(ere.eremor.monsoon.length * d / YEAR_LENGTH_IN_DAYS);
-			season.title = `${seasonName} (${ere.eremor.seasonsAlt[season_id]}; ${ere.eremor.monsoon[monsoon]} - ${ere.eremor.seasonsCyc[season_id]} Cyclonic Activity)`;
-			if (IS_LEAP_DAY)
-				season.title = 'Intercalary Day';
-			tdContainer.appendChild(season);
-			// MOOOOOOOON
-			const moonElem = document.createElement('div');
-			moonElem.classList.add('moon');
-			moonElem.title = 'Eisen Phase';
-			moonElem.appendChild(moon(dateTime));
-			tdContainer.appendChild(moonElem);
-			// IRL MONTH
-			season.appendChild(document.createElement('br'));
-			season.appendChild(document.createTextNode(dateTime.toLocaleString('default', { month: 'short', day: 'numeric' })));
-			// zodiac
-			const zodiacElem = document.createElement('div');
-			zodiacElem.classList.add('zodiac');
-			const CURRENT_SIGN = Math.floor(ere.eremor.zodiac.length * d / YEAR_LENGTH_IN_DAYS)
-				% ere.eremor.zodiac.length;
-			zodiacElem.innerHTML = ere.eremor.zodiac[CURRENT_SIGN].slice(0, 3) + '.';
-			const _4seasonID = Math.floor(ere.seasons.length * d / YEAR_LENGTH_IN_DAYS)
-				% ere.seasons.length;
-			zodiacElem.title = `Starsign: ${ere.eremor.zodiac[CURRENT_SIGN]} (the ${ere.eremor.zodiacAlt[CURRENT_SIGN]})
+		}
+	}
+	const yearStart = ed.yearStart;
+	const YEAR_LENGTH_IN_DAYS = EremoranDate.yearLength(datum.year);
+	for (let d = 0; d < YEAR_LENGTH_IN_DAYS; d++){
+		const ed_ = yearStart.modify(0, d);
+		const datum_ = ed_.datum;
+		const td = cells[ed_.cellID];
+		// container
+		const tdContainer = document.createElement('div');
+		tdContainer.classList.add('tdContainer');
+		td.appendChild(tdContainer);
+		// date
+		const date = document.createElement('div');
+		date.classList.add('date');
+		const IS_LEAP_DAY = d === 72;
+		const season_id = datum_.season;
+		if (!IS_LEAP_DAY)
+			date.innerHTML = datum_.date;
+		tdContainer.appendChild(date);
+		// season
+		td.classList.add(IS_LEAP_DAY ? 'intercalary' : `season_${season_id}`);
+		const season = document.createElement('div');
+		season.classList.add('season');
+		const seasonName = ere.eremor.seasons[season_id];
+		season.innerHTML = IS_LEAP_DAY ? 'Bodôbêkum' : seasonName;
+		const monsoon = Math.floor(ere.eremor.monsoon.length * d / YEAR_LENGTH_IN_DAYS);
+		season.title = `${seasonName} (${ere.eremor.seasonsAlt[season_id]}; ${ere.eremor.monsoon[monsoon]} - ${ere.eremor.seasonsCyc[season_id]} Cyclonic Activity)`;
+		if (IS_LEAP_DAY)
+			season.title = 'Intercalary Day';
+		tdContainer.appendChild(season);
+		// MOOOOOOOON
+		const moonElem = document.createElement('div');
+		moonElem.classList.add('moon');
+		moonElem.title = 'Eisen Phase';
+		moonElem.appendChild(moon(ed_.dateObj));
+		tdContainer.appendChild(moonElem);
+		// IRL MONTH
+		season.appendChild(document.createElement('br'));
+		season.appendChild(document.createTextNode(ed_.dateObj.toLocaleString('default', { month: 'short', day: 'numeric' })));
+		// zodiac
+		const zodiacElem = document.createElement('div');
+		zodiacElem.classList.add('zodiac');
+		const CURRENT_SIGN = Math.floor(ere.eremor.zodiac.length * d / YEAR_LENGTH_IN_DAYS)
+			% ere.eremor.zodiac.length;
+		zodiacElem.innerHTML = ere.eremor.zodiac[CURRENT_SIGN].slice(0, 3) + '.';
+		const _4seasonID = Math.floor(ere.seasons.length * d / YEAR_LENGTH_IN_DAYS)
+			% ere.seasons.length;
+		zodiacElem.title = `Starsign: ${ere.eremor.zodiac[CURRENT_SIGN]} (the ${ere.eremor.zodiacAlt[CURRENT_SIGN]})
 Season: ${ere.seasons[_4seasonID]}`;
-			tdContainer.appendChild(zodiacElem);
-			// highlight
-			if (!hideCurrent && clock.dayIndex() === d)
-				tdContainer.classList.add('selectedDate');
-			// holidays
-			const holiday = ere.eremor.holidays.find(xyz => d === xyz[1]);
-			if (holiday){
-				const holidayElem = document.createElement('div');
-				holidayElem.classList.add('holiday');
-				holidayElem.innerHTML = holiday[0];
-				tdContainer.appendChild(holidayElem);
-			}
+		tdContainer.appendChild(zodiacElem);
+		// highlight
+		if (!hideCurrent && datum.yearDayIndex === d)
+			tdContainer.classList.add('selectedDate');
+		// holidays
+		const holiday = ere.eremor.holidays.find(xyz => d === xyz[1]);
+		if (holiday){
+			const holidayElem = document.createElement('div');
+			holidayElem.classList.add('holiday');
+			holidayElem.innerHTML = holiday[0];
+			tdContainer.appendChild(holidayElem);
 		}
 	}
 	return table;
@@ -158,12 +223,13 @@ Season: ${ere.seasons[_4seasonID]}`;
 
 function main(t = new Date()){
 	const [last, curr, next] = [-1, 0, 1].map(x => new Date(+t + x * ere.oneia.year));
+	const year = new EremoranDate(t).datum.year;
 	document.getElementById('erecal0').appendChild(calendar(last, true));
 	document.getElementById('erecal1').appendChild(calendar(curr));
 	document.getElementById('erecal2').appendChild(calendar(next, true));
-	document.getElementById('erecal0_title').innerHTML = clock.year(last);
-	document.getElementById('erecal1_title').innerHTML = clock.year(curr);
-	document.getElementById('erecal2_title').innerHTML = clock.year(next);
+	document.getElementById('erecal0_title').innerHTML = year-1;
+	document.getElementById('erecal1_title').innerHTML = year;
+	document.getElementById('erecal2_title').innerHTML = year+1;
 	refresh();
 	setInterval(refresh, 200);
 }
