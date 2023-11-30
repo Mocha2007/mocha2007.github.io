@@ -103,6 +103,16 @@ class EremoranDate {
 			t += yearSign * EremoranDate.yearLength(datum.year + yearSign * i) * ere.oneia.day;
 		return new EremoranDate(new Date(t));
 	}
+	static from(y = 0, d = 0){
+		y -= ere.oneia.atEpoch;
+		const y_quotient = Math.floor(y / ere.eremor.dominicalCycleYears);
+		const y_remainder = mod(y, ere.eremor.dominicalCycleYears);
+		let t = ere.oneia.epoch + y_quotient * ere.eremor.dominical;
+		for (let i = 0; i < y_remainder; i++)
+			t += this.yearLength(i) * ere.oneia.day;
+		t += d * ere.oneia.day;
+		return new EremoranDate(new Date(t));
+	}
 	/** @param {number} y eremoran year */
 	static isLeapYear(y){
 		return this.yearStartDay(y) !== this.yearStartDay(y+1);
