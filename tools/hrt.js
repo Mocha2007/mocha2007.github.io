@@ -152,6 +152,18 @@ function get_laser_t(){
 }
 get_laser_t.epoch = new Date(2024, 0, 2, 9) - 3*laserP; // 3*5 weeks before 1/2; iirc orig. 1694782800000
 
+function get_prog(){
+	const t = new Date() - get_prog.epoch;
+	const untilNext = t % _1d;
+	const doseCount = Math.floor(t / _1d);
+	const pumpCount = get_prog.pumps * doseCount;
+	const pCount = get_prog.dose * pumpCount;
+	return {t, untilNext, doseCount, pumpCount, pCount};
+}
+get_prog.epoch = new Date(2023, 11, 7, 19); // Dec 7th @ 7 PM?
+get_prog.pumps = 2;
+get_prog.dose = 21;
+
 /** @param {Date} t - integer in [0, 11] = day in shave cycle*/
 function get_shave_cycle(t){
 	// shave body every 4d; replace blade every 12d
