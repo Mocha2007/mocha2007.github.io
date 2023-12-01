@@ -30,7 +30,7 @@ const ere = {
 			'Hawks', 'Candle', 'Road', 'Inkwell', 'Treaty', 'Die'],
 	},
 	nikki: {
-		epoch: 0.078, // fraction of illumination at epoch
+		epoch: -0.078, // fraction of illumination at epoch; must be negative to ensure eclipses happen
 	},
 	oneia: {
 		// 00:00 is at roughly local noon
