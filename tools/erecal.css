@@ -93,7 +93,7 @@ header {
 	}
 }
 /* mobile */
-@media (max-width: 750px) {
+@media only screen and (hover: none) and (pointer: coarse){
 	.sundial {
 		height: 25em;
 		width: 25em;
