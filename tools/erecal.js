@@ -223,11 +223,13 @@ function calendar(t = new Date(), hideCurrent = false){
 			season.title = 'Intercalary Day';
 		tdContainer.appendChild(season);
 		// MOOOOOOOON
+		/*
 		const moonElem = document.createElement('div');
 		moonElem.classList.add('moon');
 		moonElem.title = 'Eisen Phase';
 		moonElem.appendChild(moon(ed_.dateObj));
 		tdContainer.appendChild(moonElem);
+		*/
 		// IRL MONTH
 		season.appendChild(document.createElement('br'));
 		season.appendChild(document.createTextNode(ed_.dateObj.toLocaleString('default', { month: 'short', day: 'numeric' })));
