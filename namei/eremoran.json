@@ -9650,7 +9650,7 @@
 		"etym": "D/kopz",
 		"cat": "v.",
 		"defList": [
-			"like"
+			"(formal) like"
 		]
 	},
 	{
@@ -9677,9 +9677,9 @@
 		"etym": "L/PRE/qōp/love",
 		"cat": "v.",
 		"defList": [
-			"like, love"
+			"like (in terms of friendship or romance), love"
 		],
-		"notes": "Only for familial/romantic/friendly relations. Not used in the sense of 'I like this music' - you would use ''X i ad Y uzurku'' or similar."
+		"notes": "Only for familial/romantic/friendly relations. Not used in the sense of 'I like this music' - you would use ''X i Y hal uzurku'' or similar."
 	},
 	{
 		"title": "kosum",
@@ -18098,7 +18098,8 @@
 		"etym": "C/u-/zurku",
 		"cat": "adj.",
 		"defList": [
-			"good"
+			"good",
+			"like (in terms of preference, not romance or friendship - '''X i Y hal uzurku''' = '''Y likes X''')"
 		]
 	},
 	{
