@@ -6,9 +6,6 @@ function mod(n, m){
 }
 
 const ere = {
-	eisen: {
-		synodic: 8067264898.453218,
-	},
 	eremor: {
 		dominicalCycleYears: 150,
 		get dominical(){
@@ -31,6 +28,9 @@ const ere = {
 			'Kôk', 'Siêt', 'Bebekat', 'Dadalidinmat', 'Kunum', 'Zetidot'],
 		zodiacAlt: ['Void', 'Drum', 'Bucket', 'Mice', 'Trowel', 'King',
 			'Hawks', 'Candle', 'Road', 'Inkwell', 'Treaty', 'Die'],
+	},
+	nikki: {
+		epoch: 0.078, // fraction of orbit period?
 	},
 	oneia: {
 		// 00:00 is at roughly local noon
@@ -156,12 +156,12 @@ function brute(max = 10){
 } */
 
 function moon(t = new Date()){
-	return phoonsvg(t/ere.eisen.synodic % 1);
+	return phoonsvg(((t - ere.oneia.epoch)/ere.oneia.day + ere.nikki.epoch) % 1);
 }
 
 function clock(t = new Date()){
 	const datum = new EremoranDate(t).datum;
-	const elem = document.createElement('div');
+	const elem = document.createElement('span');
 	elem.innerHTML = `${datum.year} AT,
 	${ere.eremor.seasons[datum.season]} (${ere.eremor.seasonsAlt[datum.season]}),
 	Day ${datum.date},
@@ -222,14 +222,6 @@ function calendar(t = new Date(), hideCurrent = false){
 		if (IS_LEAP_DAY)
 			season.title = 'Intercalary Day';
 		tdContainer.appendChild(season);
-		// MOOOOOOOON
-		/*
-		const moonElem = document.createElement('div');
-		moonElem.classList.add('moon');
-		moonElem.title = 'Eisen Phase';
-		moonElem.appendChild(moon(ed_.dateObj));
-		tdContainer.appendChild(moonElem);
-		*/
 		// IRL MONTH
 		season.appendChild(document.createElement('br'));
 		season.appendChild(document.createTextNode(ed_.dateObj.toLocaleString('default', { month: 'short', day: 'numeric' })));
@@ -277,6 +269,12 @@ function refresh(t = new Date()){
 	clockElem.appendChild(clock());
 	// earth clock
 	document.getElementById('earthclock').innerHTML = '' + t;
+	// MOOOOOOOON
+	const moonElem = document.createElement('span');
+	moonElem.classList.add('moon');
+	moonElem.title = 'Nikki Phase';
+	moonElem.appendChild(moon(t));
+	clockElem.appendChild(moonElem);
 }
 
 main();

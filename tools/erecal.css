@@ -1,7 +1,7 @@
 :root {
 	--cellSize: 5em;
 	--cellBSize: 1px;
-	--phoonSize: 1.2em;
+	--phoonSize: 0.75em;
 }
 
 header {
@@ -9,6 +9,7 @@ header {
 }
 svg {
 	height: var(--phoonSize);
+	margin-left: var(--phoonSize);
 	width: var(--phoonSize);
 }
 #cals {
@@ -36,11 +37,11 @@ svg {
 	height: 100%;
 	position: relative;
 }
-.date, .holiday, .moon, .season, .zodiac {
+.date, .holiday, .season, .zodiac {
 	left: 3%;
 	position: absolute;
 }
-.moon, .zodiac {
+.zodiac {
 	bottom: 0;
 }
 .holiday, .season, .zodiac {
