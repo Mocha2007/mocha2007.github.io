@@ -59,7 +59,7 @@ header {
 	content: '★ ';
 }
 .season_0 {
-	background-color: #080;
+	background-color: #005c00; /* https://webaim.org/resources/contrastchecker/ */
 }
 .season_1 {
 	background-color: #800;

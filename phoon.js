@@ -30,6 +30,7 @@ function phoonsvg(phase){
 	svg.setAttribute('viewBox', '-1 -1 2 2');
 	svg.setAttribute('width', svgScale);
 	svg.setAttribute('height', svgScale);
+	svg.setAttribute('aria-label', 'Lunar Phase');
 	// bg circle
 	var shadow = createSvgElement('circle');
 	shadow.setAttribute('r', 1);
@@ -92,6 +93,7 @@ function sundial(dayPhase, moonPhase, ornamental = true){
 	svg.setAttribute('viewBox', '-1.1 -1.1 2.2 2.2');
 	svg.setAttribute('width', 10*svgScale);
 	svg.setAttribute('height', 10*svgScale);
+	svg.setAttribute('aria-label', 'Sundial');
 	// gold perimeter disk
 	if (ornamental){
 		var clockDisk = createSvgElement('circle');
