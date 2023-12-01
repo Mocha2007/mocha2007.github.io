@@ -260,7 +260,9 @@ function main(t = new Date()){
 	document.getElementById('erecal1_title').innerHTML = year;
 	document.getElementById('erecal2_title').innerHTML = year+1;
 	refresh();
-	setInterval(refresh, 200);
+	refreshSundial();
+	setInterval(refresh, 200); // if you set to 1s, it's not exactly 1000ms so sometimes the clock could "miss" a second - the same issue happens with 200ms, but with time so short you can't actually perceive it
+	setInterval(refreshSundial, 4*60*1000); // once every 4 minutes - that is about the time it takes for pixels to shift over 1 unit
 }
 
 function refresh(t = new Date()){
@@ -270,7 +272,9 @@ function refresh(t = new Date()){
 	clockElem.appendChild(clock());
 	// earth clock
 	document.getElementById('earthclock').innerHTML = '' + t;
-	// sundial
+}
+
+function refreshSundial(t = new Date()){
 	const sundialContainer = document.getElementById('sundial');
 	sundialContainer.innerHTML = '';
 	const sunMoon = [new EremoranDate(t).datum.dayFraction, moon.phase(t)];
