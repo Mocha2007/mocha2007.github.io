@@ -116,7 +116,7 @@ function sim(mg = 2, rounds = 2, t = 48 * _1h, tick = _1m){
 	/** sublingual estradiol half-life */
 	const hl = 6 * _1h;
 	/** the long-term limit of the trough level (appx) */
-	const limit = peak / 3;
+	const limit = peak / (Math.pow(2, doseT/hl) - 1);
 	const data = [limit];
 	for (let ms = 0; ms < t; ms += tick){
 		let nextELevel = data[data.length - 1];
