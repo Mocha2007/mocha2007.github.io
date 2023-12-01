@@ -132,13 +132,15 @@ function sundial(dayPhase, moonPhase, ornamental = true){
 	sunDisk.setAttribute('cy', -0.5);
 	sunDisk.style.fill = '#ff8';
 	// phoon https://stackoverflow.com/a/27546213
+	var moonContainer = createSvgElement('g');
+	g.appendChild(moonContainer);
+	moonContainer.setAttribute('transform', 'rotate(' + 360 * -moonPhase + ', 0, 0)');
 	var moonDisk = phoonsvg(moonPhase);
-	g.appendChild(moonDisk);
+	moonContainer.appendChild(moonDisk);
 	moonDisk.setAttribute('width', 2*bodySize);
 	moonDisk.setAttribute('height', 2*bodySize);
 	moonDisk.setAttribute('x', -0.19);
 	moonDisk.setAttribute('y', -0.7);
-	moonDisk.setAttribute('transform', 'rotate(' + 360 * -moonPhase + ', 0, 0)');
 	// rotate entire image
 	g.setAttribute('transform', 'rotate(' + (360 * -dayPhase + 90) + ', 0, 0)');
 	if (ornamental){
