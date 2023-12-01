@@ -1,16 +1,10 @@
 :root {
 	--cellSize: 5em;
 	--cellBSize: 1px;
-	--phoonSize: 0.75em;
 }
 
 header {
 	text-align: center;
-}
-.phoon {
-	height: var(--phoonSize);
-	margin-left: var(--phoonSize);
-	width: var(--phoonSize);
 }
 #cals {
 	text-align: center;
@@ -96,5 +90,12 @@ header {
 	}
 	.sundial {
 		display: none;
+	}
+}
+/* mobile */
+@media (max-width: 750px) {
+	.sundial {
+		height: 25em;
+		width: 25em;
 	}
 }
