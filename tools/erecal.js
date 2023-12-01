@@ -262,7 +262,12 @@ function main(t = new Date()){
 	refresh();
 	refreshSundial();
 	setInterval(refresh, 200); // if you set to 1s, it's not exactly 1000ms so sometimes the clock could "miss" a second - the same issue happens with 200ms, but with time so short you can't actually perceive it
-	setInterval(refreshSundial, 4*60*1000); // once every 4 minutes - that is about the time it takes for pixels to shift over 1 unit
+	const sundialSize = document.getElementsByClassName('sundial')[0].getBoundingClientRect().width;
+	const sundialPixelAngle = Math.atan2(1, sundialSize);
+	const sundialInterval = ere.oneia.day*sundialPixelAngle/Math.PI;
+	console.info(`Sundial update interval: ${sundialInterval} ms`);
+	setInterval(refreshSundial, sundialInterval); // updates in the time it takes for pixels to shift over 1 unit
+	console.info('erecal.js successfully loaded.');
 }
 
 function refresh(t = new Date()){
