@@ -23,7 +23,7 @@ var constants = {
 		period: 2551442890, // ms orbital period; Lunar Synodic Period
 	},
 	nikki: {
-		epoch: -0.078, // fraction of orbit period?
+		epoch: 0.078, // fraction of orbit period?
 	},
 	oneia: {
 		// 00:00 is at roughly local noon
