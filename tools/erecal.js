@@ -166,7 +166,7 @@ function clock(t = new Date()){
 	elem.innerHTML = `${datum.year} AT,
 	${ere.eremor.seasons[datum.season]} (${ere.eremor.seasonsAlt[datum.season]}),
 	Day ${datum.date},
-	@${(datum.dayFraction * 1000).toFixed(2)}`;
+	@${(datum.dayFraction * 1000).toFixed(2).padStart(6, '0')}`;
 	return elem;
 }
 
