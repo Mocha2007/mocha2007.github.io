@@ -78,7 +78,9 @@ class ProgressItem {
 	tr(t){
 		const tr = document.createElement('tr');
 		const td_name = document.createElement('td');
-		td_name.innerHTML = this.name;
+		const label = document.createElement('label');
+		label.setAttribute('for', label.innerHTML = this.name);
+		td_name.appendChild(label);
 		tr.appendChild(td_name);
 		// min/max
 		const [min, max] = this.range(t);
@@ -91,6 +93,7 @@ class ProgressItem {
 		tr.appendChild(td_max);
 		const td_progress = document.createElement('td');
 		const progress_elem = document.createElement('progress');
+		progress_elem.id = this.name;
 		progress_elem.value = avg;
 		progress_elem.max = 1;
 		progress_elem.innerHTML = `${Math.round(avg*100)}%`; // I think this only shows up for eg. screen readers

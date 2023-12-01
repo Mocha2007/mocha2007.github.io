@@ -58,10 +58,10 @@ td#lpt_td2 {
 	vertical-align: top;
 }
 #laserPhaseRed td.red {
-	background-color: #f80;
+	background-color: #840;
 }
 #laserPhaseRed td.redDebug {
-	background-color: #08f;
+	background-color: #05a;
 }
 .tdContainer {
 	height: 100%;
