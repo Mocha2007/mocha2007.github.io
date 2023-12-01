@@ -143,20 +143,21 @@ function sundial(dayPhase, moonPhase, ornamental = true){
 	g.setAttribute('transform', 'rotate(' + (360 * -dayPhase + 90) + ', 0, 0)');
 	if (ornamental){
 		var fontsize = 0.15;
+		var labelDelta = -0.165;
 		// day label
 		var dayLabel = createSvgElement('text');
 		g.appendChild(dayLabel);
 		dayLabel.innerHTML = 'Noon';
 		dayLabel.setAttribute('font-size', fontsize);
 		dayLabel.setAttribute('text-align', 'center');
-		dayLabel.setAttribute('x', -0.15);
+		dayLabel.setAttribute('x', labelDelta);
 		dayLabel.setAttribute('y', -0.8);
 		// night label
 		var nightLabel = dayLabel.cloneNode();
 		g.appendChild(nightLabel);
 		nightLabel.innerHTML = 'Midnight';
 		nightLabel.setAttribute('fill', 'white');
-		nightLabel.setAttribute('x', -0.3);
+		nightLabel.setAttribute('x', 2*labelDelta);
 		nightLabel.setAttribute('transform', 'rotate(180, 0, 0)');
 		// dawn label
 		var dawnLabel = dayLabel.cloneNode();
