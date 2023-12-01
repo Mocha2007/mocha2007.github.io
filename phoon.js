@@ -140,6 +140,33 @@ function sundial(dayPhase, moonPhase, ornamental = true){
 	// rotate entire image
 	g.setAttribute('transform', 'rotate(' + (360 * -dayPhase + 90) + ', 0, 0)');
 	if (ornamental){
+		var fontsize = 0.15;
+		// day label
+		var dayLabel = createSvgElement('text');
+		g.appendChild(dayLabel);
+		dayLabel.innerHTML = 'Noon';
+		dayLabel.setAttribute('font-size', fontsize);
+		dayLabel.setAttribute('text-align', 'center');
+		dayLabel.setAttribute('x', -0.15);
+		dayLabel.setAttribute('y', -0.8);
+		// night label
+		var nightLabel = dayLabel.cloneNode();
+		g.appendChild(nightLabel);
+		nightLabel.innerHTML = 'Midnight';
+		nightLabel.setAttribute('fill', 'white');
+		nightLabel.setAttribute('x', -0.3);
+		nightLabel.setAttribute('transform', 'rotate(180, 0, 0)');
+		// dawn label
+		var dawnLabel = dayLabel.cloneNode();
+		g.appendChild(dawnLabel);
+		dawnLabel.innerHTML = 'Dawn';
+		dawnLabel.setAttribute('fill', 'red');
+		dawnLabel.setAttribute('transform', 'rotate(270, 0, 0)');
+		// dusk label
+		var duskLabel = dawnLabel.cloneNode();
+		g.appendChild(duskLabel);
+		duskLabel.innerHTML = 'Dusk';
+		duskLabel.setAttribute('transform', 'rotate(90, 0, 0)');
 		// bottom half of mc clock
 		var bottomDisk = createSvgElement('circle');
 		svg.appendChild(bottomDisk);
