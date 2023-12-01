@@ -1,7 +1,7 @@
 /* eslint-disable no-var */
 /* eslint-env es3 */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
-/* exported phoonsvg, phoonTest */
+/* exported phoonsvg, phoonTest, sundial */
 'use strict';
 
 var svgScale = 15;
@@ -26,6 +26,7 @@ function phoonsvg(phase){
 		(3) circular mask to remove edges
 	*/
 	var svg = createSvgElement('svg');
+	svg.classList.add('phoon');
 	svg.setAttribute('viewBox', '-1 -1 2 2');
 	svg.setAttribute('width', svgScale);
 	svg.setAttribute('height', svgScale);
@@ -68,4 +69,97 @@ function phoonTest(){
 		m.setAttribute('width', 50);
 		e.appendChild(m);
 	}
+}
+
+/**
+ * creates a clock that looks like the clock in MC, except it accounts for the moon's phase and relative position.
+ * @param {number} dayPhase [0, 1) 0 = 1 = dawn
+ * @param {number} moonPhase [0, 1) 0 = 1 = new moon
+ * @param {boolean} ornamental dress this svg up like a MC-style clock
+ */
+function sundial(dayPhase, moonPhase, ornamental = true){
+	var bodySize = 0.2;
+	/**
+	 * IMAGE STRUCTURE
+	 * cyan day sky
+	 * midnight blue sky with semicircular mask
+	 * pale yellow sun circle
+	 * phoon()
+	 * both of these are rotated about the center
+	 */
+	var svg = createSvgElement('svg');
+	svg.classList.add('sundial');
+	svg.setAttribute('viewBox', '-1.1 -1.1 2.2 2.2');
+	svg.setAttribute('width', 10*svgScale);
+	svg.setAttribute('height', 10*svgScale);
+	// gold perimeter disk
+	if (ornamental){
+		var clockDisk = createSvgElement('circle');
+		svg.appendChild(clockDisk);
+		clockDisk.setAttribute('r', 1.1);
+		clockDisk.style.fill = '#fc0';
+	}
+	// entire image
+	var g = createSvgElement('g');
+	svg.appendChild(g);
+	// day disk
+	var dayDisk = createSvgElement('circle');
+	g.appendChild(dayDisk);
+	dayDisk.setAttribute('r', 1);
+	dayDisk.style.fill = '#08f';
+	// mask https://stackoverflow.com/a/61001784
+	var mask = createSvgElement('clipPath');
+	g.appendChild(mask);
+	mask.id = 'cut-off';
+	var rect = createSvgElement('rect');
+	mask.appendChild(rect);
+	rect.setAttribute('x', -1);
+	rect.setAttribute('y', 0);
+	rect.setAttribute('width', 2);
+	rect.setAttribute('height', 1);
+	// night disk
+	var nightDisk = createSvgElement('circle');
+	g.appendChild(nightDisk);
+	nightDisk.setAttribute('r', 1);
+	nightDisk.style.fill = '#204';
+	nightDisk.setAttribute('clip-path', 'url(#cut-off)');
+	// sun disk
+	var sunDisk = createSvgElement('circle');
+	g.appendChild(sunDisk);
+	sunDisk.setAttribute('r', bodySize);
+	sunDisk.setAttribute('cy', -0.5);
+	sunDisk.style.fill = '#ff8';
+	// phoon https://stackoverflow.com/a/27546213
+	var moonDisk = phoonsvg(moonPhase);
+	g.appendChild(moonDisk);
+	moonDisk.setAttribute('width', 2*bodySize);
+	moonDisk.setAttribute('height', 2*bodySize);
+	moonDisk.setAttribute('x', -0.19);
+	moonDisk.setAttribute('y', -0.7);
+	moonDisk.setAttribute('transform', 'rotate(' + 360 * -moonPhase + ', 0, 0)');
+	// rotate entire image
+	g.setAttribute('transform', 'rotate(' + (360 * -dayPhase + 90) + ', 0, 0)');
+	if (ornamental){
+		// bottom half of mc clock
+		var bottomDisk = createSvgElement('circle');
+		svg.appendChild(bottomDisk);
+		bottomDisk.setAttribute('r', 1);
+		bottomDisk.style.fill = 'rgba(255, 192, 0, 0.5)';
+		bottomDisk.setAttribute('clip-path', 'url(#cut-off)');
+		// ornamentation
+		// middle bar
+		var bar = createSvgElement('rect');
+		svg.appendChild(bar);
+		bar.setAttribute('x', -1);
+		bar.setAttribute('y', -0.05);
+		bar.setAttribute('width', 2);
+		bar.setAttribute('height', 0.1);
+		bar.style.fill = '#fc0';
+		// triangle
+		var triangle = createSvgElement('polygon');
+		svg.appendChild(triangle);
+		triangle.setAttribute('points', '-0.2 0, 0 -0.2, 0.2 0');
+		triangle.style.fill = '#fc0';
+	}
+	return svg;
 }

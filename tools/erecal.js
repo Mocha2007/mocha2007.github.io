@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-/* global phoonsvg */
+/* global phoonsvg, sundial */
 
 function mod(n, m){
 	return (n%m+m)%m;
@@ -270,12 +270,11 @@ function refresh(t = new Date()){
 	clockElem.appendChild(clock());
 	// earth clock
 	document.getElementById('earthclock').innerHTML = '' + t;
-	// MOOOOOOOON
-	const moonElem = document.createElement('span');
-	moonElem.classList.add('moon');
-	moonElem.title = 'Nikki Phase';
-	moonElem.appendChild(moon(t));
-	clockElem.appendChild(moonElem);
+	// sundial
+	const sundialContainer = document.getElementById('sundial');
+	sundialContainer.innerHTML = '';
+	const sunMoon = [new EremoranDate(t).datum.dayFraction, moon.phase(t)];
+	sundialContainer.appendChild(sundial(...sunMoon));
 }
 
 main();

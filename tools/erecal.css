@@ -7,7 +7,7 @@
 header {
 	text-align: center;
 }
-svg {
+.phoon {
 	height: var(--phoonSize);
 	margin-left: var(--phoonSize);
 	width: var(--phoonSize);
@@ -93,5 +93,8 @@ svg {
 	}
 	.intercalary {
 		background-color: #fdf;
+	}
+	.sundial {
+		display: none;
 	}
 }
