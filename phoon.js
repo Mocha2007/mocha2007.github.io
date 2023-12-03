@@ -77,8 +77,11 @@ function phoonTest(){
  * @param {number} dayPhase [0, 1) 0 = 1 = dawn
  * @param {number} moonPhase [0, 1) 0 = 1 = new moon
  * @param {boolean} ornamental dress this svg up like a MC-style clock
+ * @param {number[]} planets array of planet locations, measured in radians from the sun
  */
-function sundial(dayPhase, moonPhase, ornamental = true){
+function sundial(dayPhase, moonPhase, ornamental, planets){
+	// default value
+	planets = planets || [];
 	var bodySize = 0.2;
 	/**
 	 * IMAGE STRUCTURE
@@ -141,6 +144,16 @@ function sundial(dayPhase, moonPhase, ornamental = true){
 	moonDisk.setAttribute('height', 2*bodySize);
 	moonDisk.setAttribute('x', -0.19);
 	moonDisk.setAttribute('y', -0.7);
+	// planets
+	for (var pID = 0; pID < planets.length; pID++){
+		var angle = planets[pID];
+		var planetDisk = createSvgElement('circle');
+		g.appendChild(planetDisk);
+		planetDisk.style.fill = 'white';
+		planetDisk.setAttribute('transform', 'rotate(' + 360/(2*Math.PI) * angle + ', 0, 0)');
+		planetDisk.setAttribute('r', bodySize/8);
+		planetDisk.setAttribute('cy', -0.5);
+	}
 	// rotate entire image
 	g.setAttribute('transform', 'rotate(' + (360 * -dayPhase + 90) + ', 0, 0)');
 	if (ornamental){

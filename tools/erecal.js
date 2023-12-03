@@ -43,6 +43,25 @@ const ere = {
 			return this.day * this.daysPerYear;
 		},
 	},
+	planets: {
+		// relative to the sun
+		angle(t = new Date()){
+			const positions = this.pos(t);
+			const oneiaPos = positions[4];
+			const nameiAng = Math.atan2(oneiaPos[1], oneiaPos[0]) + Math.PI;
+			return positions.map(xy => Math.atan2(xy[1] - oneiaPos[1], xy[0] - oneiaPos[0]))
+				.filter(theta => theta) // filter out oneia
+				.map(theta => theta - nameiAng); // get angle of planet relative to namei
+		},
+		get periods(){
+			return this.sma.map(a => Math.pow(a / 340, 1.5) * ere.oneia.year);
+		},
+		/** planar x,y coords of each planet at time t */
+		pos(t = new Date()){
+			return this.periods.map((p, i) => (theta => [Math.cos(theta)*this.sma[i], Math.sin(theta)*this.sma[i]])(2*Math.PI*mod(t/p, 1)));
+		},
+		sma: [50, 84, 137, 196, 340, 626, 2500, 6601, 13730, 21797],
+	},
 	seasons: ['Winter', 'Spring', 'Summer', 'Fall'],
 };
 
@@ -282,7 +301,7 @@ function refresh(t = new Date()){
 function refreshSundial(t = new Date()){
 	const sundialContainer = document.getElementById('sundial');
 	sundialContainer.innerHTML = '';
-	const sunMoon = [new EremoranDate(t).datum.dayFraction, moon.phase(t)];
+	const sunMoon = [new EremoranDate(t).datum.dayFraction, moon.phase(t), true, ere.planets.angle(t)];
 	sundialContainer.appendChild(sundial(...sunMoon));
 }
 
