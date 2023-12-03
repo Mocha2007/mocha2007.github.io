@@ -4,6 +4,9 @@
 /* exported phoonsvg, phoonTest, sundial */
 'use strict';
 
+/** IE does not support classList, so only touch this if it exists!!! */
+var IE_COMPAT = document.body.classList;
+
 var svgScale = 15;
 
 // cloned from common.js, look there for docs
@@ -26,7 +29,7 @@ function phoonsvg(phase){
 		(3) circular mask to remove edges
 	*/
 	var svg = createSvgElement('svg');
-	svg.classList.add('phoon');
+	IE_COMPAT && svg.classList.add('phoon');
 	svg.setAttribute('viewBox', '-1 -1 2 2');
 	svg.setAttribute('width', svgScale);
 	svg.setAttribute('height', svgScale);
