@@ -4,9 +4,6 @@
 /* exported phoonsvg, phoonTest, sundial */
 'use strict';
 
-/** IE does not support classList, so only touch this if it exists!!! */
-var IE_COMPAT = document.body.classList;
-
 var svgScale = 15;
 
 // cloned from common.js, look there for docs
@@ -17,6 +14,8 @@ function createSvgElement(name){
 
 /** @param {number} phase [0, 1) */
 function phoonsvg(phase){
+	/** IE does not support classList, so only touch this if it exists!!! */
+	var IE_COMPAT = document.body.classList;
 	// shift from [0, 1) to [-1, 1)
 	// in-circle zero
 	// -1 new moon, -0.5 first q, 0 full, 0.5 third q, 1 new
