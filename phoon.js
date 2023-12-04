@@ -152,6 +152,8 @@ function sundial(dayPhase, moonPhase, ornamental, planets){
 		var planetDisk = createSvgElement('circle');
 		g.appendChild(planetDisk);
 		planetDisk.style.fill = 'white';
+		planetDisk.style.stroke = 'black';
+		planetDisk.style.strokeWidth = bodySize/16;
 		planetDisk.setAttribute('transform', 'rotate(' + 360/(2*Math.PI) * angle + ', 0, 0)');
 		planetDisk.setAttribute('r', bodySize/8);
 		planetDisk.setAttribute('cy', -0.5);
