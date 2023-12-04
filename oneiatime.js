@@ -547,6 +547,33 @@ function beat(){
 		+ ' <a href="https://en.wikipedia.org/wiki/Swatch_Internet_Time">BMT</a>';
 }
 
+function mochaLunisolar(){
+	var header = '<abbr title="Mocha\'s Lunisolar Calendar">MLSC</abbr> ';
+	var monthNames = 'March April May June July August September October November December January February Mercedony'.split(' ');
+	var daysSinceEpoch = Math.floor((new Date() - new Date(2000, 2, 20))/(1000*60*60*24)); // vernal equinox Y2K
+	var weekDay = 'Sunday Monday Tuesday Wednesday Thursday Friday'.split(' ')[daysSinceEpoch % 6];
+	var y;
+	for (y = 0; y < Infinity; y++){
+		var leap = y % 8 && !(y % 2); // leap year every other year; but skip every 8 years
+		var yearLength = leap ? 384 : 354;
+		if (yearLength <= daysSinceEpoch)
+			daysSinceEpoch -= yearLength;
+		else
+			break;
+	}
+	// now figure out month/day
+	var mo;
+	for (mo = 0; mo < 13; mo++){
+		var monthLength = 30 - mo % 2;
+		if (monthLength <= daysSinceEpoch)
+			daysSinceEpoch -= monthLength;
+		else
+			break;
+	}
+	var d = 1 + daysSinceEpoch; // 1-indexed
+	return header + weekDay + ', ' + d + ' ' + monthNames[mo] + ', Year ' + y;
+}
+
 function bonus(){
 	/*
 	solarDay updates ~1 hz
@@ -569,7 +596,7 @@ function bonus(){
 	// all these clocks update once a day, so no need to have these recomputed every 100 ms
 	document.getElementById('clockbonus').innerHTML = ['<br><hr>', zodiac(), china(),
 		egypt(), hebrew(), japan(), romanFULL(), maya(), elderscrolls(),
-		kol()].join('<br>');
+		kol(), mochaLunisolar()].join('<br>');
 	setInterval(onTick100, 100); // 10 hz
 	setInterval(onTick1000, 1000); // 1 hz
 	setInterval(onTick10000, 10000); // 0.1 hz
