@@ -53,6 +53,7 @@ const ere = {
 				.filter(theta => theta) // filter out oneia
 				.map(theta => theta - nameiAng); // get angle of planet relative to namei
 		},
+		names: ['Ara', 'Falto', 'Tata', 'Bau', 'Don', 'Eisen', 'Neuve', 'Dicito', 'Mannu'], // leaves out Oneia intentionally
 		get periods(){
 			return this.sma.map(a => Math.pow(a / 340, 1.5) * ere.oneia.year);
 		},
@@ -301,7 +302,7 @@ function refresh(t = new Date()){
 function refreshSundial(t = new Date()){
 	const sundialContainer = document.getElementById('sundial');
 	sundialContainer.innerHTML = '';
-	const sunMoon = [new EremoranDate(t).datum.dayFraction, moon.phase(t), true, ere.planets.angle(t)];
+	const sunMoon = [new EremoranDate(t).datum.dayFraction, moon.phase(t), true, ere.planets.angle(t), ere.planets.names];
 	sundialContainer.appendChild(sundial(...sunMoon));
 }
 

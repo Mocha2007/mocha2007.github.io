@@ -80,11 +80,15 @@ function phoonTest(){
  * @param {number} moonPhase [0, 1) 0 = 1 = new moon
  * @param {boolean} ornamental dress this svg up like a MC-style clock
  * @param {number[]} planets array of planet locations, measured in radians from the sun
+ * @param {string[]} planetNames array of planet names (default = all blank)
  */
-function sundial(dayPhase, moonPhase, ornamental, planets){
-	// default value
+function sundial(dayPhase, moonPhase, ornamental, planets, planetNames){
+	// default values
 	planets = planets || [];
+	planetNames = planetNames || [];
+	// main
 	var bodySize = 0.2;
+	var fontsize = 0.15;
 	/**
 	 * IMAGE STRUCTURE
 	 * cyan day sky
@@ -99,6 +103,12 @@ function sundial(dayPhase, moonPhase, ornamental, planets){
 	svg.setAttribute('width', 10*svgScale);
 	svg.setAttribute('height', 10*svgScale);
 	svg.setAttribute('aria-label', 'Sundial');
+	// css
+	var style = document.createElement('style');
+	style.innerHTML = 'text{font-size:' + fontsize
+		+ 'px;user-select:none;}\ng .pText{fill:white;font-size:' + fontsize * 0.7
+		+ 'px;opacity:0;paint-order:stroke;stroke:black;stroke-width:0.02px;}\ng:hover > .pText{opacity:1;}';
+	svg.appendChild(style);
 	// gold perimeter disk
 	if (ornamental){
 		var clockDisk = createSvgElement('circle');
@@ -109,6 +119,9 @@ function sundial(dayPhase, moonPhase, ornamental, planets){
 	// entire image
 	var g = createSvgElement('g');
 	svg.appendChild(g);
+	// rotate entire image
+	var globalTheta = 360 * -dayPhase + 90;
+	g.setAttribute('transform', 'rotate(' + globalTheta + ', 0, 0)');
 	// day disk
 	var dayDisk = createSvgElement('circle');
 	g.appendChild(dayDisk);
@@ -148,26 +161,34 @@ function sundial(dayPhase, moonPhase, ornamental, planets){
 	moonDisk.setAttribute('y', -0.7);
 	// planets
 	for (var pID = 0; pID < planets.length; pID++){
-		var angle = planets[pID];
+		var angle = 180/Math.PI * planets[pID];
+		// planet group
+		var pg = createSvgElement('g');
+		g.appendChild(pg);
+		pg.setAttribute('transform', 'rotate(' + angle + ', 0, 0)');
+		// planet disk
 		var planetDisk = createSvgElement('circle');
-		g.appendChild(planetDisk);
+		pg.appendChild(planetDisk);
 		planetDisk.style.fill = 'white';
 		planetDisk.style.stroke = 'black';
 		planetDisk.style.strokeWidth = bodySize/16;
-		planetDisk.setAttribute('transform', 'rotate(' + 360/(2*Math.PI) * angle + ', 0, 0)');
 		planetDisk.setAttribute('r', bodySize/8);
 		planetDisk.setAttribute('cy', -0.5);
+		// planet label
+		var planetLabel = createSvgElement('text');
+		pg.appendChild(planetLabel);
+		planetLabel.innerHTML = planetNames[pID];
+		planetLabel.classList.add('pText');
+		planetLabel.setAttribute('y', -0.5);
+		var labelTheta = -globalTheta-angle;
+		planetLabel.setAttribute('transform', 'rotate(' + labelTheta + ', 0, -0.5)');
 	}
-	// rotate entire image
-	g.setAttribute('transform', 'rotate(' + (360 * -dayPhase + 90) + ', 0, 0)');
 	if (ornamental){
-		var fontsize = 0.15;
 		var labelDelta = -0.165;
 		// day label
 		var dayLabel = createSvgElement('text');
 		g.appendChild(dayLabel);
 		dayLabel.innerHTML = 'Noon';
-		dayLabel.setAttribute('font-size', fontsize);
 		dayLabel.setAttribute('text-align', 'center');
 		dayLabel.setAttribute('x', labelDelta);
 		dayLabel.setAttribute('y', -0.8);
