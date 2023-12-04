@@ -548,22 +548,17 @@ function beat(){
 }
 
 function mochaLunisolar(){
-	var octennium = 2922;
+	var leaps = [0, 2, 5, 8, 10, 13, 16];
+	var metonic = 6936;
 	var header = '<abbr title="Mocha\'s Lunisolar Calendar">MLSC</abbr> ';
 	var monthNames = 'March April May June July August September October November December January February Mercedony'.split(' ');
 	var daysSinceEpoch = Math.floor((new Date() - new Date(2000, 2, 20))/(1000*60*60*24)); // vernal equinox Y2K - coincidentally a full moon
-	var octennia = Math.floor(daysSinceEpoch / octennium);
-	daysSinceEpoch -= octennium * octennia;
-	var y = 8 * octennia;
-	for (var dy = 0; dy < 8; dy++){
-		var leap = y % 8 && !(y % 2); // leap year every other year; but skip every 8 years
-		var yearLength = leap ? 384 : 354;
-		if (yearLength <= daysSinceEpoch)
-			daysSinceEpoch -= yearLength;
-		else
-			break;
-		y++;
-	}
+	var metonics = Math.floor(daysSinceEpoch / metonic);
+	daysSinceEpoch -= metonic * metonics;
+	var y = 19 * metonics;
+	var yearLength;
+	for (y; (yearLength = leaps.includes(y % 19) ? 384 : 354) <= daysSinceEpoch; y++)
+		daysSinceEpoch -= yearLength;
 	// all years start on sunday; years are either 354 or 384 days, both of which are divisible by 6
 	// an easier mnemonic for mental calculation: (month div 6 + date) mod 6; assuming month and date are zero-indexed
 	var weekDay = 'Sunday Monday Tuesday Wednesday Thursday Friday'.split(' ')[daysSinceEpoch % 6];
