@@ -557,7 +557,7 @@ function mochaLunisolar(){
 	daysSinceEpoch -= metonic * metonics;
 	var y = 19 * metonics;
 	var yearLength;
-	for (y; (yearLength = leaps.includes(y % 19) ? 384 : 354) <= daysSinceEpoch; y++)
+	for (; (yearLength = leaps.includes(y % 19) ? 384 : 354) <= daysSinceEpoch; y++)
 		daysSinceEpoch -= yearLength;
 	// all years start on sunday; years are either 354 or 384 days, both of which are divisible by 6
 	// an easier mnemonic for mental calculation: (month div 6 + date) mod 6; assuming month and date are zero-indexed
