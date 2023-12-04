@@ -548,18 +548,22 @@ function beat(){
 }
 
 function mochaLunisolar(){
+	var octennium = 2922;
 	var header = '<abbr title="Mocha\'s Lunisolar Calendar">MLSC</abbr> ';
 	var monthNames = 'March April May June July August September October November December January February Mercedony'.split(' ');
 	var daysSinceEpoch = Math.floor((new Date() - new Date(2000, 2, 20))/(1000*60*60*24)); // vernal equinox Y2K
 	var weekDay = 'Sunday Monday Tuesday Wednesday Thursday Friday'.split(' ')[daysSinceEpoch % 6];
-	var y;
-	for (y = 0; y < Infinity; y++){
+	var octennia = Math.floor(daysSinceEpoch / octennium);
+	daysSinceEpoch -= octennium * octennia;
+	var y = 8 * octennia;
+	for (var dy = 0; dy < 8; dy++){
 		var leap = y % 8 && !(y % 2); // leap year every other year; but skip every 8 years
 		var yearLength = leap ? 384 : 354;
 		if (yearLength <= daysSinceEpoch)
 			daysSinceEpoch -= yearLength;
 		else
 			break;
+		y++;
 	}
 	// now figure out month/day
 	var mo;
