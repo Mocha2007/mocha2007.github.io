@@ -565,6 +565,7 @@ function mochaLunisolar(){
 		y++;
 	}
 	// all years start on sunday; years are either 354 or 384 days, both of which are divisible by 6
+	// an easier mnemonic for mental calculation: (month div 6 + date) mod 6; assuming month and date are zero-indexed
 	var weekDay = 'Sunday Monday Tuesday Wednesday Thursday Friday'.split(' ')[daysSinceEpoch % 6];
 	// now figure out month/day
 	var mo;
