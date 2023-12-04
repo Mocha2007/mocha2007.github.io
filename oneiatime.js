@@ -551,7 +551,7 @@ function mochaLunisolar(){
 	var octennium = 2922;
 	var header = '<abbr title="Mocha\'s Lunisolar Calendar">MLSC</abbr> ';
 	var monthNames = 'March April May June July August September October November December January February Mercedony'.split(' ');
-	var daysSinceEpoch = Math.floor((new Date() - new Date(2000, 2, 20))/(1000*60*60*24)); // vernal equinox Y2K
+	var daysSinceEpoch = Math.floor((new Date() - new Date(2000, 2, 20))/(1000*60*60*24)); // vernal equinox Y2K - coincidentally a full moon
 	var octennia = Math.floor(daysSinceEpoch / octennium);
 	daysSinceEpoch -= octennium * octennia;
 	var y = 8 * octennia;
