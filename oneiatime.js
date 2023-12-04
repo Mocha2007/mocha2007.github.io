@@ -552,7 +552,6 @@ function mochaLunisolar(){
 	var header = '<abbr title="Mocha\'s Lunisolar Calendar">MLSC</abbr> ';
 	var monthNames = 'March April May June July August September October November December January February Mercedony'.split(' ');
 	var daysSinceEpoch = Math.floor((new Date() - new Date(2000, 2, 20))/(1000*60*60*24)); // vernal equinox Y2K
-	var weekDay = 'Sunday Monday Tuesday Wednesday Thursday Friday'.split(' ')[daysSinceEpoch % 6];
 	var octennia = Math.floor(daysSinceEpoch / octennium);
 	daysSinceEpoch -= octennium * octennia;
 	var y = 8 * octennia;
@@ -565,6 +564,8 @@ function mochaLunisolar(){
 			break;
 		y++;
 	}
+	// all years start on sunday; years are either 354 or 384 days, both of which are divisible by 6
+	var weekDay = 'Sunday Monday Tuesday Wednesday Thursday Friday'.split(' ')[daysSinceEpoch % 6];
 	// now figure out month/day
 	var mo;
 	for (mo = 0; mo < 13; mo++){
