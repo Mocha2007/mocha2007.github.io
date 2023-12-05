@@ -567,7 +567,8 @@ function beat(){
  */
 function mochaLunisolar(){
 	// var epoch = new Date(2000, 2, 20); // vernal equinox Y2K - coincidentally a full moon
-	var epoch = new Date(-1432, 2, 20); // first vernal equinox before Mursili's eclipse that lies on a new moon (+/- 12h)
+	// var epoch = new Date(-1432, 2, 20); // first vernal equinox before Mursili's eclipse that lies on a new moon (+/- 12h)
+	var epoch = new Date(2015, 2, 20); // last vernal equinox with a full moon
 	var normalYearLength = 354;
 	var cycleLength = 334;
 	var _334 = 121991;
@@ -592,14 +593,18 @@ function mochaLunisolar(){
 		else
 			break;
 	}
+	var season = 'Spring Summer Fall Winter Month'.split(' ')[Math.floor(mo/4)];
+	var MS = 'Early Mid Late Intercalary'.split(' ')[mo === 12 ? 4 : mo % 3];
 	var d = 1 + daysSinceEpoch; // 1-indexed
-	return header + d + ' ' + monthNames[mo] + ', Year ' + y;
+	return header + d + ' ' + monthNames[mo] + ' (' + MS + ' ' + season + '), Year ' + y;
 }
-/** get the first year before Mursili's eclipse such that the vernal equinox lies on a new moon
+/** get the first year before Mursili's eclipse such that the vernal equinox lies on a new moon */
 mochaLunisolar.getEpoch = function(){
 	// const mursili = new Date(-1331, 5, 24);
-	const newMoon = new Date(-1331, 5, 12, 4, 32);
-	const spring = new Date(-1331, 2, 20, 20, 47);
+	// const newMoon = new Date(-1331, 5, 12, 4, 32);
+	const newMoon = new Date(2023, 11, 12, 18, 31);
+	// const spring = new Date(-1331, 2, 20, 20, 47);
+	const spring = new Date(2023, 2, 20, 4, 8);
 	const day = 1000*60*60*24;
 	const month = 29.530594 * day;
 	const year = 365.24219 * day;
@@ -616,7 +621,7 @@ mochaLunisolar.getEpoch = function(){
 			deltaM++;
 	}
 	return new Date(y);
-}; */
+};
 
 function bonus(){
 	/*
