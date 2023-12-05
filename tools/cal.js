@@ -15,7 +15,12 @@ const time = {
 		(t = new Date()) => t.getMonth() === 11 && t.getDate() === 21 + (t.getFullYear() % 4 === 3), // winter solstice
 	],
 	equinoxNames: ['Vernal Equinox', 'Summer Solstice', 'Autumnal Equinox', 'Winter Solstice'],
-	holidays: [],
+	holidays: [
+		['New Years', (t = new Date()) => t.getMonth() === 0 && t.getDate() === 1], // New Years
+		['Thanksgiving', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 4 && 21 < t.getDate() && t.getDate() < 29], // Thanksgiving
+		['Christmas', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 25], // Christmas
+		['New Years Eve', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 31], // New Years Eve
+	],
 	moon: {
 		epoch: new Date(2023, 11, 12, 18, 31),
 		p: 29.530594 * _1d,
@@ -38,6 +43,7 @@ function getDatum(t = new Date()){
 	// done
 	const date = t.getDate();
 	let seasonDelta = 0;
+	// eslint-disable-next-line no-loop-func
 	while (!time.equinox.some(eq => eq(new Date(t - seasonDelta * _1d))))
 		seasonDelta++;
 	const season = time.equinox.findIndex(eq => eq(new Date(t - seasonDelta * _1d)));
