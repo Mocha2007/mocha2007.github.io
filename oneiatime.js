@@ -507,7 +507,7 @@ function solarDay(){
 	var dawndusk_str = '↑ ' + solarDayHelper(dawnTime-5, false)
 		+ '; <abbr title="noon">n</abbr> ' + solarDayHelper(noon-5, false)
 		+ '; ↓ ' + solarDayHelper(duskTime-5, false);
-	var daytime_str = '(' + length_day.toFixed(2) + ' h daylight; ' + dawndusk_str + ')';
+	var daytime_str = '(' + length_day.toFixed(2) + ' h day; ' + dawndusk_str + ')';
 	return solarDayHelper(t)
 		+ ' <abbr title="@Mocha">solar time</abbr> '
 		+ daytime_str;
