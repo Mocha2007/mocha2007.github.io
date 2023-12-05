@@ -44,7 +44,6 @@ function getDatum(t = new Date()){
 
 function calendar(t = new Date()){
 	// todo add weekday and month labels
-	const datum = getDatum(t); // todo
 	const table = document.createElement('table');
 	table.innerHTML = '';
 	// construct table first...
@@ -77,8 +76,8 @@ function calendar(t = new Date()){
 	const YEAR_LENGTH_IN_DAYS = 365 + LEAP;
 	for (let d = 0; d < YEAR_LENGTH_IN_DAYS; d++){
 		const dateObj = new Date(year, 0, d + 1);
-		const datum_ = getDatum(dateObj);
-		const cellID = `month_${dateObj.getMonth()}week_${datum_.monthWeek}day_${datum_.monthDay}`; // todo
+		const datum = getDatum(dateObj);
+		const cellID = `month_${dateObj.getMonth()}week_${datum.monthWeek}day_${datum.monthDay}`; // todo
 		const td = cells[cellID]; // todo
 		// container
 		const tdContainer = document.createElement('div');
@@ -87,8 +86,8 @@ function calendar(t = new Date()){
 		// date
 		const date = document.createElement('div');
 		date.classList.add('date');
-		const season_id = datum_.season;
-		date.innerHTML = datum_.date;
+		const season_id = datum.season;
+		date.innerHTML = datum.date;
 		tdContainer.appendChild(date);
 		// season
 		td.classList.add(`season_${season_id}`);
@@ -101,11 +100,11 @@ function calendar(t = new Date()){
 		const zodiacElem = document.createElement('div');
 		zodiacElem.classList.add('zodiac');
 		// todo
-		// zodiacElem.innerHTML = time.zodiac[datum_.starsign].slice(0, 3) + '.';
-		// zodiacElem.title = `Starsign: ${time.zodiac[datum_.starsign]}`;
+		// zodiacElem.innerHTML = time.zodiac[datum.starsign].slice(0, 3) + '.';
+		// zodiacElem.title = `Starsign: ${time.zodiac[datum.starsign]}`;
 		tdContainer.appendChild(zodiacElem);
 		// holidays
-		const holiday = time.holidays.find(xyz => xyz[1](datum_));
+		const holiday = time.holidays.find(xyz => xyz[1](datum));
 		if (holiday){
 			const holidayElem = document.createElement('div');
 			holidayElem.classList.add('holiday');
