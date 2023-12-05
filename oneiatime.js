@@ -562,6 +562,7 @@ function beat(){
  * for an average length of ~30.52845528 d.
  * This means the average year length is ~365.242515 d, and the average month length is ~29.53062213 d.
  * The total cycle length is 121991 days, or 4131 months, or 334 years.
+ * A year can have 354, 384, or 385 days.
  */
 function mochaLunisolar(){
 	var normalYearLength = 354;
@@ -582,6 +583,10 @@ function mochaLunisolar(){
 	var mo;
 	for (mo = 0; mo < 13; mo++){
 		var monthLength = 30 - mo % 2;
+		// long leap years
+		if (yearLength === 385 && mo === 12)
+			monthLength++;
+		// ok continue
 		if (monthLength <= daysSinceEpoch)
 			daysSinceEpoch -= monthLength;
 		else
