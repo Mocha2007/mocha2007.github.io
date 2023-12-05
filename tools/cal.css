@@ -34,11 +34,11 @@ header {
 	height: 100%;
 	position: relative;
 }
-.date, .holiday, .season, .zodiac {
+.date, .holiday, .phoon, .season, .zodiac {
 	left: 3%;
 	position: absolute;
 }
-.zodiac {
+.phoon, .zodiac {
 	bottom: 0;
 }
 .holiday, .season, .zodiac {

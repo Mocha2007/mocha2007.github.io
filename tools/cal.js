@@ -151,6 +151,11 @@ function calendar(t = new Date()){
 			holidayElem.innerHTML = holiday[0];
 			tdContainer.appendChild(holidayElem);
 		}
+		// phoon
+		const phoon = document.createElement('div');
+		phoon.classList.add('phoon');
+		phoon.appendChild(moon(dateObj));
+		tdContainer.appendChild(phoon);
 	}
 	return table;
 }
@@ -176,7 +181,7 @@ function refresh(t = new Date()){
 function refreshSundial(t = new Date()){
 	const sundialContainer = document.getElementById('sundial');
 	sundialContainer.innerHTML = '';
-	const dayFraction = (t / _1d - 0.25) % 1; // offset by 6h so 0 = sunrise
+	const dayFraction = (t / _1d - (6 + new Date().getTimezoneOffset()/60)/24) % 1; // offset so 0 = sunrise
 	const sunMoon = [dayFraction, moon.phase(t), true];
 	sundialContainer.appendChild(sundial(...sunMoon));
 }
