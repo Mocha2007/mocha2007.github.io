@@ -59,17 +59,13 @@ header {
 	background-color: #005c00; /* https://webaim.org/resources/contrastchecker/ */
 }
 .season_1 {
-	background-color: #800;
+	background-color: #515100; /* https://webaim.org/resources/contrastchecker/ */
 }
 .season_2 {
+	background-color: #800;
+}
+.season_3 {
 	background-color: #008;
-}
-.intercalary {
-	background-color: #404;
-}
-.selectedDate {
-	background-color: rgba(255, 255, 255, 0.25);
-	font-weight: bold;
 }
 .sundial {
 	height: 15em;

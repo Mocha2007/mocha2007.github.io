@@ -8,16 +8,24 @@ function mod(n, m){
 }
 
 const time = {
+	equinox: [
+		(t = new Date()) => t.getMonth() === 2 && t.getDate() === 20, // vernal equinox
+		(t = new Date()) => t.getMonth() === 5 && t.getDate() === 20 + (0 < t.getFullYear() % 4), // summer solstice
+		(t = new Date()) => t.getMonth() === 8 && t.getDate() === 22 + (1 < t.getFullYear() % 4), // autumnal equinox
+		(t = new Date()) => t.getMonth() === 11 && t.getDate() === 21 + (t.getFullYear() % 4 === 3), // winter solstice
+	],
+	equinoxNames: ['Vernal Equinox', 'Summer Solstice', 'Autumnal Equinox', 'Winter Solstice'],
 	holidays: [],
 	moon: {
 		epoch: new Date(2023, 11, 12, 18, 31),
 		p: 29.530594 * _1d,
 	},
 	months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-	seasons: ['Winter', 'Spring', 'Summer', 'Fall'],
+	seasons: ['Spring', 'Summer', 'Fall', 'Winter'],
 	weekdays: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
 	zodiac: [], // todo
 };
+time.equinox.forEach((d, i) => time.holidays.push([time.equinoxNames[i], d]));
 
 function moon(t = new Date()){
 	return phoonsvg(moon.phase(t));
@@ -26,10 +34,13 @@ moon.phase = (t = new Date()) => mod((time.moon.epoch - t)/time.moon.p, 1);
 
 function getDatum(t = new Date()){
 	// todo
-	const season = 0;
 	const starsign = 0;
 	// done
 	const date = t.getDate();
+	let seasonDelta = 0;
+	while (!time.equinox.some(eq => eq(new Date(t - seasonDelta * _1d))))
+		seasonDelta++;
+	const season = time.equinox.findIndex(eq => eq(new Date(t - seasonDelta * _1d)));
 	/** this date is in the nth week of the current month */
 	let monthWeek = 0;
 	const monthDay = t.getDay();
@@ -118,7 +129,7 @@ function calendar(t = new Date()){
 		// zodiacElem.title = `Starsign: ${time.zodiac[datum.starsign]}`;
 		tdContainer.appendChild(zodiacElem);
 		// holidays
-		const holiday = time.holidays.find(xyz => xyz[1](datum));
+		const holiday = time.holidays.find(xyz => xyz[1](dateObj));
 		if (holiday){
 			const holidayElem = document.createElement('div');
 			holidayElem.classList.add('holiday');
