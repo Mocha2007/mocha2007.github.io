@@ -223,7 +223,7 @@ function dorf(){
 	var h = Math.floor(remainder / (yearLength/12/28/24));
 	remainder -= h*yearLength/12/28/24;
 	var t = Math.floor(remainder / 72); // *2 = adventure mode ticks; /72 = fortress mode ticks
-	return (d+1) + ' ' + dorfMonths[m] + ' (<abbr title="' + dorfCaravans[s] + ' caravan">'
+	return d+1 + ' ' + dorfMonths[m] + ' (<abbr title="' + dorfCaravans[s] + ' caravan">'
 		+ dorfSeasonModifiers[sm] + ' ' + dorfSeasons[s]
 		+ '</abbr>), <abbr title="Age of Civilization">Year ' + y + '</abbr> - Hour ' + h
 		+ ', Tick ' + t
@@ -547,12 +547,26 @@ function beat(){
 		+ ' <a href="https://en.wikipedia.org/wiki/Swatch_Internet_Time">BMT</a>';
 }
 
+/** A lunisolar calendar that uses a 334-year = 4131-month cycle
+ * month drift: -0.02812539337 months per millennium
+ * year drift: -0.0008897385591 years per millennium
+ * rules:
+ * only consider the number of years elapsed in the current 334-year cycle (ie. y %= 334)
+ * There are twelve months in a normal year.
+ * A normal month has 30 days if it is even-indexed, 29 otherwise.
+ * A leap month is placed at the end of leap years.
+ * Leap years are years such that year mod 19 mod 3 is zero.
+ * Keep track of the number of leap years that have already passed in a 334-year cycle.
+ * The length of a leap month is 30 if that number mod 17 is odd, and 31 if it is even.
+ * This means that, per cycle, there are 65 31-day leap years, and 58 30-day leap years,
+ * for an average length of ~30.52845528 d.
+ * This means the average year length is ~365.242515 d, and the average month length is ~29.53062213 d.
+ * The total cycle length is 121991 days, or 4131 months, or 334 years.
+ */
 function mochaLunisolar(){
 	var normalYearLength = 354;
-	var leapMonthLength = 30;
 	var cycleLength = 334;
-	var leapsPerCycle = 123;
-	var _334 = normalYearLength*cycleLength + leapMonthLength*leapsPerCycle;
+	var _334 = 121991;
 	var header = '<abbr title="Mocha\'s Lunisolar Calendar">MLSC</abbr> ';
 	var monthNames = 'March April May June July August September October November December January February Mercedony'.split(' ');
 	var daysSinceEpoch = Math.floor((new Date() - new Date(2000, 2, 20))/(1000*60*60*24)); // vernal equinox Y2K - coincidentally a full moon
@@ -560,11 +574,10 @@ function mochaLunisolar(){
 	daysSinceEpoch -= _334 * _334s;
 	var y = cycleLength * _334s;
 	var yearLength;
-	for (; (yearLength = !(y%19%3)*leapMonthLength + normalYearLength) <= daysSinceEpoch; y++)
+	var leapIndex = 0;
+	// eslint-disable-next-line max-len
+	for (; (yearLength = (y%19%3 ? 0 : leapIndex++%17%2 ? 30 : 31) + normalYearLength) <= daysSinceEpoch; y++)
 		daysSinceEpoch -= yearLength;
-	// all years start on sunday; years are either 354 or 384 days, both of which are divisible by 6
-	// an easier mnemonic for mental calculation: (month div 6 + date) mod 6; assuming month and date are zero-indexed
-	var weekDay = 'Sunday Monday Tuesday Wednesday Thursday Friday'.split(' ')[daysSinceEpoch % 6];
 	// now figure out month/day
 	var mo;
 	for (mo = 0; mo < 13; mo++){
@@ -575,7 +588,7 @@ function mochaLunisolar(){
 			break;
 	}
 	var d = 1 + daysSinceEpoch; // 1-indexed
-	return header + weekDay + ', ' + d + ' ' + monthNames[mo] + ', Year ' + y;
+	return header + d + ' ' + monthNames[mo] + ', Year ' + y;
 }
 
 function bonus(){
