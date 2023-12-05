@@ -424,7 +424,7 @@ function hebrew(){
 	}
 	var afterSunset = 16 <= new Date().getHours(); // approximation
 	var day = Math.floor(remainder / (1000*60*60*24))
-		+ afterSunset;
+		+ afterSunset + 1; // 1-indexed
 	return day + ' ' + monthName + ' ' + year;
 }
 
