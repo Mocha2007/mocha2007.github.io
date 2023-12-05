@@ -16,10 +16,19 @@ const time = {
 	],
 	equinoxNames: ['Vernal Equinox', 'Summer Solstice', 'Autumnal Equinox', 'Winter Solstice'],
 	holidays: [
-		['New Years', (t = new Date()) => t.getMonth() === 0 && t.getDate() === 1], // New Years
-		['Thanksgiving', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 4 && 21 < t.getDate() && t.getDate() < 29], // Thanksgiving
-		['Christmas', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 25], // Christmas
-		['New Years Eve', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 31], // New Years Eve
+		['New Year\'s', (t = new Date()) => t.getMonth() === 0 && t.getDate() === 1],
+		['MLK Jr. Day', (t = new Date()) => t.getMonth() === 0 && t.getDay() === 1 && 14 < t.getDate() && t.getDate() < 22],
+		['Presidents\' Day', (t = new Date()) => t.getMonth() === 1 && t.getDay() === 1 && 14 < t.getDate() && t.getDate() < 22],
+		['Memorial Day', (t = new Date()) => t.getMonth() === 4 && t.getDay() === 1 && 24 < t.getDate()],
+		['Juneteenth', (t = new Date()) => t.getMonth() === 5 && t.getDate() === 19],
+		['Independence Day', (t = new Date()) => t.getMonth() === 6 && t.getDate() === 4],
+		['Labor Day', (t = new Date()) => t.getMonth() === 8 && t.getDay() === 1 && t.getDate() < 8],
+		['Columbus Day', (t = new Date()) => t.getMonth() === 9 && t.getDay() === 1 && 7 < t.getDate() && t.getDate() < 15],
+		['Halloween', (t = new Date()) => t.getMonth() === 9 && t.getDate() === 31],
+		['Veterans\' Day', (t = new Date()) => t.getMonth() === 10 && t.getDate() === 11],
+		['Thanksgiving', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 4 && 21 < t.getDate() && t.getDate() < 29],
+		['Christmas', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 25],
+		['New Year\'s Eve', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 31],
 	],
 	moon: {
 		epoch: new Date(2023, 11, 12, 18, 31),
