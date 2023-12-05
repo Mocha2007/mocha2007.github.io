@@ -572,7 +572,8 @@ function mochaLunisolar(){
 	var cycleLength = 334;
 	var _334 = 121991;
 	var header = '<abbr title="Mocha\'s Lunisolar Calendar">MLSC</abbr> ';
-	var monthNames = 'March April May June July August September October November December January February Mercedony'.split(' ');
+	//              March April May June July August September October November December January February Intercalary
+	var monthNames = 'Sown Blown Grown Height Light Might Turn Burn Earn Wane Sane Rain Joy'.split(' ');
 	var daysSinceEpoch = Math.floor((new Date() - epoch)/(1000*60*60*24));
 	var _334s = Math.floor(daysSinceEpoch / _334);
 	daysSinceEpoch -= _334 * _334s;
