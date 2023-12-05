@@ -1,0 +1,108 @@
+:root {
+	--cellSize: 5em;
+	--cellBSize: 1px;
+	--cellFontSizeBig: 1vw;
+	--cellFontSize: 0.75vw;
+	--cellFontSizeSmall: 0.6vw;
+}
+
+header {
+	text-align: center;
+}
+#cals {
+	text-align: center;
+	width: 100%;
+}
+#months table {
+	border-collapse: collapse;
+	position: relative;
+	table-layout: fixed;
+	text-align: center;
+	user-select: none;
+	width: 100%;
+}
+#months td {
+	border: var(--cellBSize) solid black;
+	height: var(--cellSize);
+	padding: 0;
+	width: var(--cellSize);
+}
+#months th {
+	font-size: var(--cellFontSize);
+}
+.tdContainer {
+	height: 100%;
+	position: relative;
+}
+.date, .holiday, .season, .zodiac {
+	left: 3%;
+	position: absolute;
+}
+.zodiac {
+	bottom: 0;
+}
+.holiday, .season, .zodiac {
+	font-size: var(--cellFontSize);
+	font-style: italic;
+	right: 3%;
+	text-align: right;
+}
+.holiday {
+	font-size: var(--cellFontSizeSmall);
+	font-weight: bold;
+	top: 40%;
+}
+.holiday::before{
+	content: '★ ';
+}
+.season_0 {
+	background-color: #005c00; /* https://webaim.org/resources/contrastchecker/ */
+}
+.season_1 {
+	background-color: #800;
+}
+.season_2 {
+	background-color: #008;
+}
+.intercalary {
+	background-color: #404;
+}
+.selectedDate {
+	background-color: rgba(255, 255, 255, 0.25);
+	font-weight: bold;
+}
+.sundial {
+	height: 15em;
+	width: 15em;
+}
+@media print {
+	@page {size: landscape}
+	html, body {
+		background-color: white;
+		color: black;
+		font-size: 76%;
+		margin: 1%;
+	}
+	.season_0 {
+		background-color: #cfc;
+	}
+	.season_1 {
+		background-color: #fdd;
+	}
+	.season_2 {
+		background-color: #ccf;
+	}
+	.intercalary {
+		background-color: #fdf;
+	}
+	.sundial {
+		display: none;
+	}
+}
+/* mobile */
+@media only screen and (hover: none) and (pointer: coarse){
+	.sundial {
+		height: 25em;
+		width: 25em;
+	}
+}

@@ -45,6 +45,7 @@ function getDatum(t = new Date()){
 function calendar(t = new Date()){
 	// todo add weekday and month labels
 	const table = document.createElement('table');
+	table.id = 'cals';
 	table.innerHTML = '';
 	// construct table first...
 	const cells = {};
@@ -57,8 +58,21 @@ function calendar(t = new Date()){
 			const month = document.createElement('td');
 			month.id = 'month_' + mo;
 			season.appendChild(month);
+			// month header
+			const monthHeader = document.createElement('h3');
+			monthHeader.innerHTML = time.months[mo];
+			month.appendChild(monthHeader);
+			// month table
 			const monthTable = document.createElement('table');
 			month.appendChild(monthTable);
+			// weekday headers
+			const weekdayTr = document.createElement('tr');
+			monthTable.appendChild(weekdayTr);
+			time.weekdays.forEach(weekday => {
+				const th = document.createElement('th');
+				th.innerHTML = weekday;
+				weekdayTr.appendChild(th);
+			});
 			for (let wk = 0; wk < 6; wk++){ // weeks (row)
 				const week = document.createElement('tr');
 				week.id = month.id + 'week_' + wk;
