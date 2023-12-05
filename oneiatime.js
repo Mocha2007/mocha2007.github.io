@@ -223,7 +223,7 @@ function dorf(){
 	var h = Math.floor(remainder / (yearLength/12/28/24));
 	remainder -= h*yearLength/12/28/24;
 	var t = Math.floor(remainder / 72); // *2 = adventure mode ticks; /72 = fortress mode ticks
-	return d + ' ' + dorfMonths[m] + ' (<abbr title="' + dorfCaravans[s] + ' caravan">'
+	return (d+1) + ' ' + dorfMonths[m] + ' (<abbr title="' + dorfCaravans[s] + ' caravan">'
 		+ dorfSeasonModifiers[sm] + ' ' + dorfSeasons[s]
 		+ '</abbr>), <abbr title="Age of Civilization">Year ' + y + '</abbr> - Hour ' + h
 		+ ', Tick ' + t
@@ -471,12 +471,12 @@ function solarDay(){
 	var length_day = duskTime - dawnTime;
 	var length_night = 24 - length_day;
 	var aesthetic_offset, offset, r;
-	if (nowTime < duskTime){ // before dusk
+	if (dawnTime < nowTime && nowTime < duskTime){ // day
 		offset = nowTime - dawnTime;
 		r = length_day/12;
 		aesthetic_offset = 6;
 	}
-	else { // after dusk or before dawn
+	else { // night
 		offset = nowTime - duskTime;
 		if (nowTime < dawnTime) // before dawn
 			offset += 24;
