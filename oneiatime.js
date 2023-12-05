@@ -598,7 +598,7 @@ function mochaLunisolar(){
 	var meton = Math.floor(y/19);
 	var d = 1 + daysSinceEpoch; // 1-indexed
 	return header + d + ' ' + monthNames[mo] + ' (' + MS + ' '
-		+ season + '), Year ' + y + ' (Meton ' + meton + ')';
+		+ season + '), Year ' + y + ' (Meton ' + meton + ', Year ' + y%19 + ')';
 }
 /** get the first year before Mursili's eclipse such that the vernal equinox lies on a new moon
 mochaLunisolar.getEpoch = function(){
