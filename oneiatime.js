@@ -583,11 +583,7 @@ function mochaLunisolar(){
 	// now figure out month/day
 	var mo;
 	for (mo = 0; mo < 13; mo++){
-		var monthLength = 30 - mo % 2;
-		// long leap years
-		if (yearLength === 385 && mo === 12)
-			monthLength++;
-		// ok continue
+		var monthLength = 30 - mo % 2 + (yearLength === 385 && mo === 12); // stuff in parens is accounting for long leap months
 		if (monthLength <= daysSinceEpoch)
 			daysSinceEpoch -= monthLength;
 		else
