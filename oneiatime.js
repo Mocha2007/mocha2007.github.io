@@ -662,6 +662,28 @@ function astro(){
 		+ Math.floor(monthR/DAY) + ' days since a new moon';
 }
 
+/** @param {number} y */
+function getEaster(y){
+	function div(dividend, divisor){
+		return Math.floor(dividend / divisor);
+	}
+	var a = y % 19, b = div(y, 100), c = y % 100;
+	var d = div(b, 4), e = b % 4, f = div(b + 8, 25), i = div(c, 4), k = c % 4;
+	var g = div(b - f + 1, 3);
+	var h = (19*a + b - d - g + 15) % 30;
+	var l = (32 + 2*e + 2*i - h - k) % 7;
+	var m = div(a + 11*h + 22*l, 451);
+	var n = div(h + l - 7*m + 114, 31), o = (h + l - 7*m + 114) % 31;
+	return new Date(y, n-1, o+1);
+}
+getEaster.html = function(){
+	var now = new Date();
+	var y = now.getFullYear();
+	var current = getEaster(y);
+	return 'Next Easter: ' + (current < now ? getEaster(y+1) : current)
+		.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+};
+
 function bonus(){
 	/*
 	solarDay updates ~1 hz
@@ -684,7 +706,7 @@ function bonus(){
 	// all these clocks update once a day, so no need to have these recomputed every 100 ms
 	document.getElementById('clockbonus').innerHTML = ['<br><hr>', zodiac(), china(),
 		egypt(), hebrew(), japan(), romanFULL(), maya(), elderscrolls(),
-		kol(), mochaLunisolar(), astro()].join('<br>');
+		kol(), mochaLunisolar(), astro(), getEaster.html()].join('<br>');
 	setInterval(onTick100, 100); // 10 hz
 	setInterval(onTick1000, 1000); // 1 hz
 	setInterval(onTick10000, 10000); // 0.1 hz
