@@ -563,6 +563,7 @@ function beat(){
  * This means the average year length is ~365.242515 d, and the average month length is ~29.53062213 d.
  * The total cycle length is 121991 days, or 4131 months, or 334 years.
  * A year can have 354, 384, or 385 days.
+ * Per 334-year cycle, there are 211 354-day years, 58 384-day years, and 65 385-day years.
  */
 function mochaLunisolar(){
 	var normalYearLength = 354;
