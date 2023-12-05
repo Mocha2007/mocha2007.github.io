@@ -566,12 +566,14 @@ function beat(){
  * Per 334-year cycle, there are 211 354-day years, 58 384-day years, and 65 385-day years.
  */
 function mochaLunisolar(){
+	// var epoch = new Date(2000, 2, 20); // vernal equinox Y2K - coincidentally a full moon
+	var epoch = new Date(-1432, 2, 20); // first vernal equinox before Mursili's eclipse that lies on a new moon (+/- 12h)
 	var normalYearLength = 354;
 	var cycleLength = 334;
 	var _334 = 121991;
 	var header = '<abbr title="Mocha\'s Lunisolar Calendar">MLSC</abbr> ';
 	var monthNames = 'March April May June July August September October November December January February Mercedony'.split(' ');
-	var daysSinceEpoch = Math.floor((new Date() - new Date(2000, 2, 20))/(1000*60*60*24)); // vernal equinox Y2K - coincidentally a full moon
+	var daysSinceEpoch = Math.floor((new Date() - epoch)/(1000*60*60*24));
 	var _334s = Math.floor(daysSinceEpoch / _334);
 	daysSinceEpoch -= _334 * _334s;
 	var y = cycleLength * _334s;
@@ -592,6 +594,28 @@ function mochaLunisolar(){
 	var d = 1 + daysSinceEpoch; // 1-indexed
 	return header + d + ' ' + monthNames[mo] + ', Year ' + y;
 }
+/** get the first year before Mursili's eclipse such that the vernal equinox lies on a new moon
+mochaLunisolar.getEpoch = function(){
+	// const mursili = new Date(-1331, 5, 24);
+	const newMoon = new Date(-1331, 5, 12, 4, 32);
+	const spring = new Date(-1331, 2, 20, 20, 47);
+	const day = 1000*60*60*24;
+	const month = 29.530594 * day;
+	const year = 365.24219 * day;
+	const tol = day/2;
+	let deltaM = 0, deltaY = 0;
+	let m = 0, y = m + 2*tol;
+	while (tol < Math.abs(m-y)){ // while beyond tolerance
+		m = newMoon - month*deltaM;
+		y = spring - year*deltaY;
+		// if month is already before year, move the year back 1
+		if (m < y)
+			deltaY++;
+		else
+			deltaM++;
+	}
+	return new Date(y);
+}; */
 
 function bonus(){
 	/*
