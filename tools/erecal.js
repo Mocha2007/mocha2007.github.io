@@ -307,3 +307,31 @@ function refreshSundial(t = new Date()){
 }
 
 main();
+
+// MAIAN CALENDAR
+
+const maian = {
+	calendar: {
+		get daysPerYear(){
+			return maian.eisen.pOrbitSideral / maian.maia.pOrbitSynodic;
+		},
+	},
+	eisen: {
+		// eslint-disable-next-line no-loss-of-precision
+		pOrbitSideral: 152781583241.78866, // use this for "year" - Maia's tropics does not precess as it has no axial tilt relative to its orbital inclination
+		// eslint-disable-next-line no-loss-of-precision
+		// pOrbitTropical: 150348280211.95063, // this is wrt. EISEN'S rotational axis, not MAIA'S... so don't use this.
+	},
+	maia: {
+		// pOrbitSideral: 456187681.0641783, // use this for "month"
+		// eslint-disable-next-line no-loss-of-precision
+		pOrbitSynodic: 457553882.67218106, // use this for "day"
+	},
+	oneia: {
+		pOrbitSynodic: 8067264898.453218,
+	},
+};
+// 333.9094891939766 sols per year
+// 333 = 3^2 x 37
+// 334 = 2 x 167
+// 333 10/11 = 333.9090... this is a good enough approximation, better than even the gregorian calendar.
