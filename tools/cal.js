@@ -54,6 +54,7 @@ const time = {
 		['Friday the 13th', (t = new Date()) => t.getDay() === 5 && t.getDate() === 13],
 		// bdays
 		['Luna\'s Birthday', (t = new Date()) => t.getMonth() === 3 && t.getDate() === 27],
+		['Luna\'s HRTiversary', (t = new Date()) => t.getMonth() === 7 && t.getDate() === 16],
 		['Kippi\'s Birthday', (t = new Date()) => t.getMonth() === 10 && t.getDate() === 14],
 	],
 	moon: {
