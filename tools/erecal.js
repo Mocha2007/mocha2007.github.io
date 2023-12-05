@@ -323,7 +323,7 @@ const maian = {
 		// pOrbitTropical: 150348280211.95063, // this is wrt. EISEN'S rotational axis, not MAIA'S... so don't use this.
 	},
 	maia: {
-		// pOrbitSideral: 456187681.0641783, // use this for "month"
+		pOrbitSideral: 456187681.0641783,
 		// eslint-disable-next-line no-loss-of-precision
 		pOrbitSynodic: 457553882.67218106, // use this for "day"
 	},
