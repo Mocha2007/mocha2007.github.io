@@ -26,7 +26,10 @@ moon.phase = (t = new Date()) => mod((time.moon.epoch - t)/time.moon.p, 1);
 
 function getDatum(t = new Date()){
 	// todo
+	const season = 0;
 	const starsign = 0;
+	// done
+	const date = t.getDate();
 	/** this date is in the nth week of the current month */
 	let monthWeek = 0;
 	const monthDay = t.getDay();
@@ -36,7 +39,7 @@ function getDatum(t = new Date()){
 		if (dotw === 6)
 			monthWeek++;
 	}
-	return {monthWeek, monthDay, starsign};
+	return {date, monthWeek, monthDay, season, starsign};
 }
 
 function calendar(t = new Date()){
@@ -70,7 +73,7 @@ function calendar(t = new Date()){
 		}
 	}
 	const year = t.getFullYear();
-	const LEAP = year % 400 === 0 || year % 100 !== 0 || year % 4 === 0;
+	const LEAP = year % 400 === 0 || year % 4 === 0 && year % 100 !== 0;
 	const YEAR_LENGTH_IN_DAYS = 365 + LEAP;
 	for (let d = 0; d < YEAR_LENGTH_IN_DAYS; d++){
 		const dateObj = new Date(year, 0, d + 1);
