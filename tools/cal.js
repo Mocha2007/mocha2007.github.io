@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-/* global phoonsvg, sundial */
+/* global getEaster, phoonsvg, sundial */
 
 const _1d = 1000*60*60*24;
 
@@ -18,15 +18,20 @@ const time = {
 	holidays: [
 		['New Year\'s', (t = new Date()) => t.getMonth() === 0 && t.getDate() === 1],
 		['MLK Jr. Day', (t = new Date()) => t.getMonth() === 0 && t.getDay() === 1 && 14 < t.getDate() && t.getDate() < 22],
+		['Inauguration Day', (t = new Date()) => t.getMonth() === 0 && t.getDate() === (new Date(t.getYear(), 0, 20).getDay() ? 20 : 21)], // Jan 20 unless that's a sunday, then Jan 21
 		['Presidents\' Day', (t = new Date()) => t.getMonth() === 1 && t.getDay() === 1 && 14 < t.getDate() && t.getDate() < 22],
 		['Memorial Day', (t = new Date()) => t.getMonth() === 4 && t.getDay() === 1 && 24 < t.getDate()],
+		['Good Friday', (t = new Date()) => (e => e.getMonth() === t.getMonth() && e.getDate() === t.getDate())(new Date(getEaster(t.getFullYear()) - 2*_1d))],
+		['Easter', (t = new Date()) => (e => e.getMonth() === t.getMonth() && e.getDate() === t.getDate())(getEaster(t.getFullYear()))],
 		['Juneteenth', (t = new Date()) => t.getMonth() === 5 && t.getDate() === 19],
 		['Independence Day', (t = new Date()) => t.getMonth() === 6 && t.getDate() === 4],
 		['Labor Day', (t = new Date()) => t.getMonth() === 8 && t.getDay() === 1 && t.getDate() < 8],
 		['Columbus Day', (t = new Date()) => t.getMonth() === 9 && t.getDay() === 1 && 7 < t.getDate() && t.getDate() < 15],
 		['Halloween', (t = new Date()) => t.getMonth() === 9 && t.getDate() === 31],
+		['Election Day', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 2 && 1 < t.getDate() && t.getDate() < 9],
 		['Veterans\' Day', (t = new Date()) => t.getMonth() === 10 && t.getDate() === 11],
 		['Thanksgiving', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 4 && 21 < t.getDate() && t.getDate() < 29],
+		['Christmas Eve', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 24],
 		['Christmas', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 25],
 		['New Year\'s Eve', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 31],
 	],
