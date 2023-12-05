@@ -574,7 +574,7 @@ function mochaLunisolar(){
 	var _334 = 121991;
 	var header = '<abbr title="Mocha\'s Lunisolar Calendar">MLSC</abbr> ';
 	//              March April May June July August September October November December January February Intercalary
-	var monthNames = 'Sown Blown Grown Height Light Might Turn Burn Earn Wane Sane Rain Joy'.split(' ');
+	var monthNames = 'Aries Taurus Gemini Cancer Leo Virgo Libra Scorpio Sagittarius Capricorn Aquarius Pisces Aurora'.split(' ');
 	var daysSinceEpoch = Math.floor((new Date() - epoch)/(1000*60*60*24));
 	var _334s = Math.floor(daysSinceEpoch / _334);
 	daysSinceEpoch -= _334 * _334s;
