@@ -85,6 +85,24 @@ function stopSound(elementId){
 	thissound.currentTime = 0;
 }
 
+function ordinal(n){
+	var n_ = n;
+	n %= 100;
+	if (10 < n && n < 20)
+		return n_ + 'th';
+	n %= 10;
+	switch (n){
+		case 1:
+			return n_ + 'st';
+		case 2:
+			return n_ + 'nd';
+		case 3:
+			return n_ + 'rd';
+		default:
+			return n_ + 'th';
+	}
+}
+
 function egypt(){
 	var epoch =	21852000; // 1970 SEP 11 00:00:00 UTC+2; first akhet after epoch
 	var reltime = mod(new Date()/1000-epoch, 31556952); // time (s) since beginning of akhet
@@ -597,7 +615,7 @@ function mochaLunisolar(){
 	var MS = 'Early Mid Late Intercalary'.split(' ')[mo === 12 ? 4 : mo % 3];
 	var meton = Math.floor(y/19);
 	var d = 1 + daysSinceEpoch; // 1-indexed
-	return header + d + ' ' + monthNames[mo] + ' (' + MS + ' '
+	return header + ordinal(d) + ' of ' + monthNames[mo] + ' (' + MS + ' '
 		+ season + '), Year ' + y + ' (Meton ' + meton + ', Year ' + y%19 + ')';
 }
 /** get the first year before Mursili's eclipse such that the vernal equinox lies on a new moon
