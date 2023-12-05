@@ -19,18 +19,29 @@ const time = {
 		['New Year\'s', (t = new Date()) => t.getMonth() === 0 && t.getDate() === 1],
 		['MLK Jr. Day', (t = new Date()) => t.getMonth() === 0 && t.getDay() === 1 && 14 < t.getDate() && t.getDate() < 22],
 		['Inauguration Day', (t = new Date()) => t.getMonth() === 0 && t.getDate() === (new Date(t.getYear(), 0, 20).getDay() ? 20 : 21)], // Jan 20 unless that's a sunday, then Jan 21
+		['Groundhog Day', (t = new Date()) => t.getMonth() === 1 && t.getDate() === 2],
+		['Super Bowl Sunday', (t = new Date()) => t.getMonth() === 1 && t.getDay() === 0 && 7 < t.getDate() && t.getDate() < 15],
+		['Valentine\'s Day', (t = new Date()) => t.getMonth() === 1 && t.getDate() === 14],
 		['Presidents\' Day', (t = new Date()) => t.getMonth() === 1 && t.getDay() === 1 && 14 < t.getDate() && t.getDate() < 22],
+		['St. Patrick\'s Day', (t = new Date()) => t.getMonth() === 2 && t.getDate() === 17],
+		['April Fool\'s Day', (t = new Date()) => t.getMonth() === 3 && t.getDate() === 1],
+		['Cinco de Mayo', (t = new Date()) => t.getMonth() === 4 && t.getDate() === 5],
+		['Mother\'s Day', (t = new Date()) => t.getMonth() === 4 && t.getDay() === 0 && 8 < t.getDate() && t.getDate() < 15],
 		['Memorial Day', (t = new Date()) => t.getMonth() === 4 && t.getDay() === 1 && 24 < t.getDate()],
 		['Good Friday', (t = new Date()) => (e => e.getMonth() === t.getMonth() && e.getDate() === t.getDate())(new Date(getEaster(t.getFullYear()) - 2*_1d))],
 		['Easter', (t = new Date()) => (e => e.getMonth() === t.getMonth() && e.getDate() === t.getDate())(getEaster(t.getFullYear()))],
+		['Father\'s Day', (t = new Date()) => t.getMonth() === 5 && t.getDay() === 0 && 14 < t.getDate() && t.getDate() < 22],
 		['Juneteenth', (t = new Date()) => t.getMonth() === 5 && t.getDate() === 19],
 		['Independence Day', (t = new Date()) => t.getMonth() === 6 && t.getDate() === 4],
 		['Labor Day', (t = new Date()) => t.getMonth() === 8 && t.getDay() === 1 && t.getDate() < 8],
+		['Oktoberfest', (t = new Date()) => t.getMonth() === 8 && t.getDay() === 6 && 14 < t.getDate() && t.getDate() < 22],
 		['Columbus Day', (t = new Date()) => t.getMonth() === 9 && t.getDay() === 1 && 7 < t.getDate() && t.getDate() < 15],
 		['Halloween', (t = new Date()) => t.getMonth() === 9 && t.getDate() === 31],
 		['Election Day', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 2 && 1 < t.getDate() && t.getDate() < 9],
 		['Veterans\' Day', (t = new Date()) => t.getMonth() === 10 && t.getDate() === 11],
 		['Thanksgiving', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 4 && 21 < t.getDate() && t.getDate() < 29],
+		['Black Friday', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 5 && 22 < t.getDate() && t.getDate() < 30],
+		['Cyber Monday', (t = new Date()) => t.getDay() === 1 && (t.getMonth() === 10 && 25 < t.getDate() || t.getMonth() === 11 && t.getDate() === 1)],
 		['Christmas Eve', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 24],
 		['Christmas', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 25],
 		['New Year\'s Eve', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 31],
@@ -149,11 +160,11 @@ function calendar(t = new Date()){
 		// zodiacElem.title = `Starsign: ${time.zodiac[datum.starsign]}`;
 		tdContainer.appendChild(zodiacElem);
 		// holidays
-		const holiday = time.holidays.find(xyz => xyz[1](dateObj));
-		if (holiday){
+		const holiday = time.holidays.filter(xyz => xyz[1](dateObj));
+		if (holiday.length){
 			const holidayElem = document.createElement('div');
 			holidayElem.classList.add('holiday');
-			holidayElem.innerHTML = holiday[0];
+			holidayElem.innerHTML = holiday.map(x => x[0]).join('\n');
 			tdContainer.appendChild(holidayElem);
 		}
 		// phoon
