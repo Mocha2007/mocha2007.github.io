@@ -595,10 +595,12 @@ function mochaLunisolar(){
 	}
 	var season = 'Spring Summer Fall Winter Month'.split(' ')[Math.floor(mo/4)];
 	var MS = 'Early Mid Late Intercalary'.split(' ')[mo === 12 ? 4 : mo % 3];
+	var meton = Math.floor(y/19);
 	var d = 1 + daysSinceEpoch; // 1-indexed
-	return header + d + ' ' + monthNames[mo] + ' (' + MS + ' ' + season + '), Year ' + y;
+	return header + d + ' ' + monthNames[mo] + ' (' + MS + ' '
+		+ season + '), Year ' + y + ' (Meton ' + meton + ')';
 }
-/** get the first year before Mursili's eclipse such that the vernal equinox lies on a new moon */
+/** get the first year before Mursili's eclipse such that the vernal equinox lies on a new moon
 mochaLunisolar.getEpoch = function(){
 	// const mursili = new Date(-1331, 5, 24);
 	// const newMoon = new Date(-1331, 5, 12, 4, 32);
@@ -621,7 +623,7 @@ mochaLunisolar.getEpoch = function(){
 			deltaM++;
 	}
 	return new Date(y);
-};
+}; */
 
 function bonus(){
 	/*
