@@ -624,6 +624,21 @@ mochaLunisolar.getEpoch = function(){
 	}
 	return new Date(y);
 }; */
+function astro(){
+	var t = new Date();
+	var DAY = 1000*60*60*24;
+	var MONTH = 29.530594 * DAY;
+	var YEAR = 365.24219 * DAY;
+	var SEASON = YEAR / 4;
+	var newMoon = new Date(2023, 11, 12, 18, 31);
+	var spring = new Date(2023, 2, 20, 4, 8);
+	var monthR = mod(t - newMoon, MONTH);
+	var yearR = mod(t - spring, YEAR);
+	var season = ['Vernal Equinox', 'Summer Solstice', 'Autumnal Equinox', 'Winter Solstice'][Math.floor(yearR / SEASON)];
+	var seasonR = yearR % SEASON;
+	return Math.floor(seasonR/DAY) + ' days since the ' + season + ', '
+		+ Math.floor(monthR/DAY) + ' days since a new moon';
+}
 
 function bonus(){
 	/*
@@ -647,7 +662,7 @@ function bonus(){
 	// all these clocks update once a day, so no need to have these recomputed every 100 ms
 	document.getElementById('clockbonus').innerHTML = ['<br><hr>', zodiac(), china(),
 		egypt(), hebrew(), japan(), romanFULL(), maya(), elderscrolls(),
-		kol(), mochaLunisolar()].join('<br>');
+		kol(), mochaLunisolar(), astro()].join('<br>');
 	setInterval(onTick100, 100); // 10 hz
 	setInterval(onTick1000, 1000); // 1 hz
 	setInterval(onTick10000, 10000); // 0.1 hz
