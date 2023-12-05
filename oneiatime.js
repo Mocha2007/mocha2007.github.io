@@ -503,7 +503,10 @@ function solarDay(){
 		aesthetic_offset = 18;
 	}
 	var t = offset / r + aesthetic_offset; // fake seconds past dawn/dusk
-	var dawndusk_str = '↑ ' + solarDayHelper(dawnTime-5, false) + '; ↓ ' + solarDayHelper(duskTime-5, false);
+	var noon = (dawnTime + duskTime)/2;
+	var dawndusk_str = '↑ ' + solarDayHelper(dawnTime-5, false)
+		+ '; <abbr title="noon">n</abbr> ' + solarDayHelper(noon-5, false)
+		+ '; ↓ ' + solarDayHelper(duskTime-5, false);
 	var daytime_str = '(' + length_day.toFixed(2) + ' h daylight; ' + dawndusk_str + ')';
 	return solarDayHelper(t)
 		+ ' <abbr title="@Mocha">solar time</abbr> '
