@@ -152,7 +152,7 @@ const time = {
 			CELTIC: ['1 FEB', '1 MAY', '1 AUG', '1 NOV'],
 			CH: ['2 MAR', '10 JUN', '9 SEP', '1 DEC'],
 			DRYWET: ['1 JAN', '1 MAY', '1 MAY', '1 NOV', '1 NOV'], // idk how this works, but it does!!!
-			EGYPT: ['9 JAN', '9 MAY', '11 SEP', '11 SEP'], // Peret - spring colors; Shemu - summer colors; Akhet - winter colors
+			EGYPT: ['9 JAN', '9 MAY', '11 SEP'],
 			METEON: ['1 MAR', '1 JUN', '1 SEP', '1 DEC'],
 			METEOS: ['', '', '1 MAR', '1 JUN', '1 SEP', '1 DEC', '1 MAR', '1 JUN'], // I used sorcery and witchcraft to make this work
 			// apparently by using blanks to create invalid Date objects, and appending a second quartet of dates, you can start the year in any season
@@ -161,8 +161,13 @@ const time = {
 			ROMAN: ['7 FEB', '9 MAY', '11 AUG', '10 NOV'], // Varro
 			SD: ['27 FEB', '2 JUL', '1 OCT', '27 NOV'], // MONTGOMERY FIELD
 		},
+		SEASON_COLORS: {
+			EGYPT: ['season_0', 'season_1', 'season_3'],
+			//		 green       yellow      red         blue
+			false: ['season_0', 'season_1', 'season_2', 'season_3'],
+		},
 		SEASON_NAMES: {
-			EGYPT: ['Peret', 'Shemu', '', 'Akhet'],
+			EGYPT: ['Peret', 'Shemu', 'Akhet'],
 			false: ['Spring', 'Summer', 'Fall', 'Winter'],
 		},
 	},
@@ -292,10 +297,14 @@ getSeason.climate = (t = new Date(), forceClimate = '') => {
 	const allStarts = seasonStarts.map(s => new Date(s + ' ' + (year-1)))
 		.concat(seasonStarts.map(s => new Date(s + ' ' + year)))
 		.concat(seasonStarts.map(s => new Date(s + ' ' + (year+1))));
-	return mod(allStarts.findIndex(start => t < start) - 1, 4);
+	return mod(allStarts.findIndex(start => t < start) - 1, getSeason.sa().length);
 };
 /** @type {(n?: number) => string} */
-getSeason.s = (n = 0) => time.CONFIG.SEASON_NAMES[time.CONFIG.SEASON][n];
+getSeason.c = (n = 0) => (time.CONFIG.SEASON_COLORS[time.CONFIG.SEASON] || time.CONFIG.SEASON_COLORS.false)[n];
+/** @type {(n?: number) => string} */
+getSeason.s = (n = 0) => getSeason.sa()[n];
+/** @type {() => string[]} */
+getSeason.sa = () => time.CONFIG.SEASON_NAMES[time.CONFIG.SEASON] || time.CONFIG.SEASON_NAMES.false;
 
 function calendar(t = new Date()){
 	// todo add weekday and month labels
@@ -359,7 +368,7 @@ function calendar(t = new Date()){
 		date.innerHTML = datum.date;
 		tdContainer.appendChild(date);
 		// season
-		td.classList.add(`season_${season_id}`);
+		td.classList.add(getSeason.c(season_id));
 		const season = document.createElement('div');
 		season.classList.add('season');
 		const seasonName = getSeason.s(season_id);
