@@ -154,6 +154,7 @@ const time = {
 			DRYWET: ['1 MAY', '1 NOV'],
 			// Peret := 9 Jan, each month 122 days
 			EGYPT: ['9 JAN', '10 MAY', '9 SEP'],
+			HINDU: ['19 JAN', '20 MAR', '20 MAY', '20 JUL', '19 SEP', '19 NOV'],
 			METEON: ['1 MAR', '1 JUN', '1 SEP', '1 DEC'],
 			METEOS: ['1 MAR', '1 JUN', '1 SEP', '1 DEC'],
 			// apparently by using blanks to create invalid Date objects, and appending a second quartet of dates, you can start the year in any season
@@ -165,14 +166,16 @@ const time = {
 		SEASON_COLORS: {
 			DRYWET: ['season_3', 'season_1'],
 			EGYPT: ['season_0', 'season_1', 'season_3'],
-			//		 green       yellow      red         blue
+			//		 green       yellow      red         blue; 4=purple, 5=teal
 			false: ['season_0', 'season_1', 'season_2', 'season_3'],
+			HINDU: ['season_4', 'season_0', 'season_1', 'season_5', 'season_2', 'season_3'],
 			METEOS: ['season_2', 'season_3', 'season_0', 'season_1'],
 		},
 		SEASON_NAMES: {
 			DRYWET: ['Wet', 'Dry'],
 			EGYPT: ['Peret', 'Shemu', 'Akhet'],
 			false: ['Spring', 'Summer', 'Fall', 'Winter'],
+			HINDU: ['Shishira', 'Vasanta', 'Grīshma', 'Varshā', 'Sharat', 'Hemanta'],
 			METEOS: ['Fall', 'Winter', 'Spring', 'Summer'],
 		},
 	},

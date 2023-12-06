@@ -73,6 +73,9 @@ header, h2, #footer {
 .season_4 {
 	background-color: #808;
 }
+.season_5 {
+	background-color: #005858; /* https://webaim.org/resources/contrastchecker/ */
+}
 .sundial {
 	height: 15em;
 	width: 15em;
