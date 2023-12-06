@@ -15,6 +15,50 @@ const time = {
 		(t = new Date()) => t.getMonth() === 11 && t.getDate() === 21 + (t.getFullYear() % 4 === 3), // winter solstice
 	],
 	equinoxNames: ['Vernal Equinox', 'Summer Solstice', 'Autumnal Equinox', 'Winter Solstice'],
+	/** https://en.wikipedia.org/wiki/Hebrew_calendar#Calculations */
+	hebrew: {
+		get avgYear(){
+			return this.commonYear + this.leapYearR.length / this.leapPeriod;
+		},
+		commonYear: 354 * _1d,
+		fromGregorian(t = new Date()){
+			const delta = t - this.epoch;
+			const cycles = Math.floor(delta/this.leapLength);
+			let r = mod(delta, this.leapLength), y;
+			for (y = 0; y < this.leapPeriod; y++){
+				const leap = this.isLeap(y);
+				const length = this.commonYear + 30*leap;
+				if (r < length)
+					break;
+				r -= length;
+			}
+			const year = cycles * this.leapPeriod + y;
+			const yearDay = r / _1d;
+			// month
+			let m;
+			for (m = 0; m < 13; m++){
+				const length = (29 + (m % 2 === 0)) * _1d;
+				if (r < length)
+					break;
+				r -= length;
+			}
+			const month = m + 1; // 1-indexed
+			const date = Math.floor(r / _1d) + 1; // 1-indexed
+			// console.debug(5784, 9, 23);
+			return {year, yearDay, month, date};
+		},
+		isLeap(y = 0){
+			return this.leapYearR.includes(mod(y, this.leapPeriod));
+		},
+		/** YEAR 1 */
+		epoch: new Date(-3583, 3, 4, 20), // trial and error
+		// days begin at SUNSET UTC+2 in judaism - so roughly 20:00 UTC
+		get leapLength(){
+			return this.avgYear * this.leapPeriod;
+		},
+		leapPeriod: 19, // years
+		leapYearR: [0, 3, 6, 8, 11, 14, 17],
+	},
 	holidays: [
 		['New Year\'s', (t = new Date()) => t.getMonth() === 0 && t.getDate() === 1],
 		['MLK Jr. Day', (t = new Date()) => t.getMonth() === 0 && t.getDay() === 1 && 14 < t.getDate() && t.getDate() < 22],
@@ -49,10 +93,18 @@ const time = {
 		['Super Saturday', (t = new Date()) => t.getMonth() === 11 && t.getDay() === 6 && 16 < t.getDate() && t.getDate() < 24],
 		['Christmas Eve', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 24],
 		['Christmas', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 25],
+		['Kwanzaa', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 26], // 8 days
 		['New Year\'s Eve', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 31],
+		// Christianity
+		// Islam
+		['Eid al-Fitr', (t = new Date()) => (x => x.month === 10 && x.date === 1)(time.islam.fromGregorian(t))],
+		// Judaism
+		['Passover', (t = new Date()) => (x => x.month === 1 && x.date === 15)(time.hebrew.fromGregorian(t))],
+		['Rosh Hashanah', (t = new Date()) => (x => x.month === 7 && x.date === 1)(time.hebrew.fromGregorian(t))],
+		['Yom Kippur', (t = new Date()) => (x => x.month === 7 && x.date === 10)(time.hebrew.fromGregorian(t))],
+		['Hanukkah', (t = new Date()) => (x => x.month === 9 && x.date === 25)(time.hebrew.fromGregorian(t))], // 8 days
 		// misc
 		['Friday the 13th', (t = new Date()) => t.getDay() === 5 && t.getDate() === 13],
-		['Eid al-Fitr', (t = new Date()) => (x => x.month === 10 && x.date === 1)(time.islam.fromGregorian(t))],
 		// bdays
 		['Luna\'s Birthday', (t = new Date()) => t.getMonth() === 3 && t.getDate() === 27],
 		['Luna\'s HRTiversary', (t = new Date()) => t.getMonth() === 7 && t.getDate() === 16],
