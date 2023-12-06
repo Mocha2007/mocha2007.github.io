@@ -152,6 +152,7 @@ const time = {
 			CELTIC: ['1 FEB', '1 MAY', '1 AUG', '1 NOV'],
 			CH: ['2 MAR', '10 JUN', '9 SEP', '1 DEC'],
 			DRYWET: ['1 MAY', '1 NOV'],
+			ECO: ['15 FEB', '1 APR', '1 JUN', '24 AUG', '24 SEP', '15 NOV'],
 			// Peret := 9 Jan, each month 122 days
 			EGYPT: ['9 JAN', '10 MAY', '9 SEP'],
 			HINDU: ['19 JAN', '20 MAR', '20 MAY', '20 JUL', '19 SEP', '19 NOV'],
@@ -165,6 +166,7 @@ const time = {
 		},
 		SEASON_COLORS: {
 			DRYWET: ['season_3', 'season_1'],
+			ECO: ['season_5', 'season_0', 'season_1', 'season_2', 'season_4', 'season_3'],
 			EGYPT: ['season_0', 'season_1', 'season_3'],
 			//		 green       yellow      red         blue; 4=purple, 5=teal
 			false: ['season_0', 'season_1', 'season_2', 'season_3'],
@@ -173,6 +175,7 @@ const time = {
 		},
 		SEASON_NAMES: {
 			DRYWET: ['Wet', 'Dry'],
+			ECO: ['Pervernal', 'Vernal', 'Estival', 'Serotinal', 'Autumnal', 'Hibernal'],
 			EGYPT: ['Peret', 'Shemu', 'Akhet'],
 			false: ['Spring', 'Summer', 'Fall', 'Winter'],
 			HINDU: ['Shishira', 'Vasanta', 'Grīshma', 'Varshā', 'Sharat', 'Hemanta'],
