@@ -153,7 +153,7 @@ const time = {
 			CH: ['2 MAR', '10 JUN', '9 SEP', '1 DEC'],
 			DRYWET: ['1 JAN', '1 MAY', '1 MAY', '1 NOV', '1 NOV'], // idk how this works, but it does!!!
 			METEON: ['1 MAR', '1 JUN', '1 SEP', '1 DEC'],
-			METEOS: ['1 JAN', '1 JAN', '1 MAR', '1 JUN', '1 SEP', '1 DEC', '1 MAR', '1 JUN'], // ALMOST works... just fails for december
+			METEOS: ['', '', '1 MAR', '1 JUN', '1 SEP', '1 DEC', '1 MAR', '1 JUN'], // I used sorcery and witchcraft to make this work
 			MID: ['3 FEB', '6 MAY', '8 AUG', '6 NOV'], // Set midpoint to sol/equ, like Pliny the Elder
 			PA: ['8 MAR', '9 JUN', '6 SEP', '7 DEC'], // LEHIGHTON
 			ROMAN: ['7 FEB', '9 MAY', '11 AUG', '10 NOV'], // Varro
