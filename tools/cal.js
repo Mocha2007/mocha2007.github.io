@@ -328,7 +328,7 @@ function getKippi(t = new Date()){
 	const week = Math.floor(monthIndex/7);
 	const weekDay = monthIndex % 7;
 	const isSpecial = (Math.floor((weekDay + 3)/2) + week) % 2;
-	const letter = isSpecial ? monthIndex === 9 ? 'T' : (monthIndex - 4) % 22 ? 'E' : '2A' : '';
+	const letter = isSpecial ? 'E' : '';
 	return {monthIndex, biweekIndex, week, weekDay, isSpecial, letter};
 }
 
