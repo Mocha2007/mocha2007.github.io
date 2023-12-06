@@ -59,6 +59,51 @@ const time = {
 		leapPeriod: 19, // years
 		leapYearR: [0, 3, 6, 8, 11, 14, 17],
 	},
+	// https://en.wikipedia.org/wiki/Hindu_calendar https://www.drikpanchang.com/calendars/hindu/hinducalendar.html
+	// USE PURNIMANTA SYSTEM https://en.wikipedia.org/wiki/Hindu_calendar#amanta
+	hindu: {
+		get avgYear(){
+			return this.commonYear + this.leapYearR.length / this.leapPeriod;
+		},
+		commonYear: 354 * _1d,
+		fromGregorian(t = new Date()){
+			const delta = t - this.epoch;
+			const cycles = Math.floor(delta/this.leapLength);
+			let r = mod(delta, this.leapLength), y;
+			for (y = 0; y < this.leapPeriod; y++){
+				const leap = this.isLeap(y);
+				const length = this.commonYear + 30*leap;
+				if (r < length)
+					break;
+				r -= length;
+			}
+			const year = cycles * this.leapPeriod + y;
+			const yearDay = r / _1d;
+			// month
+			let m;
+			for (m = 0; m < 13; m++){
+				const length = (29 + (m % 2 === 0)) * _1d;
+				if (r < length)
+					break;
+				r -= length;
+			}
+			const month = m + 1; // 1-indexed
+			const date = Math.floor(r / _1d) + 1; // 1-indexed
+			// March 22, 2023 is the start of the current year
+			// console.debug(2080, 1, 1);
+			return {year, yearDay, month, date};
+		},
+		isLeap(y = 0){
+			return this.leapYearR.includes(mod(y, this.leapPeriod));
+		},
+		/** YEAR 1 */
+		epoch: new Date(0, 3, 14).setFullYear(7), // trial and error
+		get leapLength(){
+			return this.avgYear * this.leapPeriod;
+		},
+		leapPeriod: 19, // years
+		leapYearR: [0, 3, 5, 8, 11, 14, 16],
+	},
 	holidays: [
 		['New Year\'s', (t = new Date()) => t.getMonth() === 0 && t.getDate() === 1],
 		['MLK Jr. Day', (t = new Date()) => t.getMonth() === 0 && t.getDay() === 1 && 14 < t.getDate() && t.getDate() < 22],
@@ -106,6 +151,9 @@ const time = {
 		['Rosh Hashanah', (t = new Date()) => (x => x.month === 7 && x.date === 1)(time.hebrew.fromGregorian(t))],
 		['Yom Kippur', (t = new Date()) => (x => x.month === 7 && x.date === 10)(time.hebrew.fromGregorian(t))],
 		['Hanukkah', (t = new Date()) => (x => x.month === 9 && x.date === 25)(time.hebrew.fromGregorian(t))], // 8 days
+		// Hindu
+		// ['Chaitra Navaratri', (t = new Date()) => (x => x.month === 1 && x.date === 1)(time.hindu.fromGregorian(t))],
+		['Diwali', (t = new Date()) => (x => x.month === 8 && x.date === 12)(time.hindu.fromGregorian(t))],
 		// misc
 		['Friday the 13th', (t = new Date()) => t.getDay() === 5 && t.getDate() === 13],
 		// bdays
@@ -277,7 +325,7 @@ function calendar(t = new Date()){
 		if (holiday.length){
 			const holidayElem = document.createElement('div');
 			holidayElem.classList.add('holiday');
-			holidayElem.innerHTML = holiday.map(x => x[0]).join('\n');
+			holidayElem.innerHTML = holiday.map(x => x[0]).join('<br>');
 			tdContainer.appendChild(holidayElem);
 		}
 		// phoon
@@ -290,6 +338,7 @@ function calendar(t = new Date()){
 }
 
 function main(t = new Date()){
+	// t = new Date(2024, 0, 1);
 	document.getElementById('months').appendChild(calendar(t));
 	document.getElementById('erecal1_title').innerHTML = t.getFullYear();
 	refresh();
