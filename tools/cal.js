@@ -63,8 +63,12 @@ const time = {
 	},
 	months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
 	seasons: ['Spring', 'Summer', 'Fall', 'Winter'],
+	vernal: new Date(2023, 2, 20, 21, 25),
 	weekdays: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-	zodiac: [], // todo
+	yTropical: 365.24219 * _1d,
+	zodiac: '♈︎︎♉︎︎♊︎︎♋︎︎♌︎︎♍︎︎♎︎︎♏︎︎♐︎︎♑︎︎♒︎︎♓︎︎'.split('').filter((_, i) => i % 3 === 0),
+	zodiacAlt: ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
+		'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'],
 };
 time.equinox.forEach((d, i) => time.holidays.push([time.equinoxNames[i], d]));
 
@@ -74,9 +78,7 @@ function moon(t = new Date()){
 moon.phase = (t = new Date()) => mod((time.moon.epoch - t)/time.moon.p, 1);
 
 function getDatum(t = new Date()){
-	// todo
-	const starsign = 0;
-	// done
+	const starsign = mod(Math.floor((t - time.vernal) / (time.yTropical/12)), 12);
 	const date = t.getDate();
 	let seasonDelta = 0;
 	// eslint-disable-next-line no-loop-func
@@ -167,8 +169,8 @@ function calendar(t = new Date()){
 		const zodiacElem = document.createElement('div');
 		zodiacElem.classList.add('zodiac');
 		// todo
-		// zodiacElem.innerHTML = time.zodiac[datum.starsign].slice(0, 3) + '.';
-		// zodiacElem.title = `Starsign: ${time.zodiac[datum.starsign]}`;
+		zodiacElem.innerHTML = time.zodiacAlt[datum.starsign].slice(0, 3) + '.';
+		zodiacElem.title = `Starsign: ${time.zodiac[datum.starsign]} ${time.zodiacAlt[datum.starsign]}`;
 		tdContainer.appendChild(zodiacElem);
 		// holidays
 		const holiday = time.holidays.filter(xyz => xyz[1](dateObj));
