@@ -7,14 +7,8 @@ function mod(n, m){
 	return (n%m+m)%m;
 }
 
-const time = {
-	equinox: [
-		(t = new Date()) => t.getMonth() === 2 && t.getDate() === 20, // vernal equinox
-		(t = new Date()) => t.getMonth() === 5 && t.getDate() === 20 + (0 < t.getFullYear() % 4), // summer solstice
-		(t = new Date()) => t.getMonth() === 8 && t.getDate() === 22 + (1 < t.getFullYear() % 4), // autumnal equinox
-		(t = new Date()) => t.getMonth() === 11 && t.getDate() === 21 + (t.getFullYear() % 4 === 3), // winter solstice
-	],
-	equinoxNames: ['Vernal Equinox', 'Summer Solstice', 'Autumnal Equinox', 'Winter Solstice'],
+// needs to be separate so the type hinting works for time
+const calendars = {
 	/** https://en.wikipedia.org/wiki/Hebrew_calendar#Calculations */
 	hebrew: {
 		get avgYear(){
@@ -104,65 +98,6 @@ const time = {
 		leapPeriod: 19, // years
 		leapYearR: [0, 3, 5, 8, 11, 14, 16],
 	},
-	holidays: [
-		['New Year\'s', (t = new Date()) => t.getMonth() === 0 && t.getDate() === 1],
-		['MLK Jr. Day', (t = new Date()) => t.getMonth() === 0 && t.getDay() === 1 && 14 < t.getDate() && t.getDate() < 22],
-		['Inauguration Day', (t = new Date()) => t.getMonth() === 0 && t.getDate() === (new Date(t.getYear(), 0, 20).getDay() ? 20 : 21)], // Jan 20 unless that's a sunday, then Jan 21
-		['Groundhog Day', (t = new Date()) => t.getMonth() === 1 && t.getDate() === 2],
-		['Super Bowl Sunday', (t = new Date()) => t.getMonth() === 1 && t.getDay() === 0 && 7 < t.getDate() && t.getDate() < 15],
-		['Valentine\'s Day', (t = new Date()) => t.getMonth() === 1 && t.getDate() === 14],
-		['Presidents\' Day', (t = new Date()) => t.getMonth() === 1 && t.getDay() === 1 && 14 < t.getDate() && t.getDate() < 22],
-		['TDoV', (t = new Date()) => t.getMonth() === 2 && t.getDate() === 31],
-		['April Fool\'s Day', (t = new Date()) => t.getMonth() === 3 && t.getDate() === 1],
-		['Cinco de Mayo', (t = new Date()) => t.getMonth() === 4 && t.getDate() === 5],
-		['Mother\'s Day', (t = new Date()) => t.getMonth() === 4 && t.getDay() === 0 && 8 < t.getDate() && t.getDate() < 15],
-		['Memorial Day', (t = new Date()) => t.getMonth() === 4 && t.getDay() === 1 && 24 < t.getDate()],
-		['Father\'s Day', (t = new Date()) => t.getMonth() === 5 && t.getDay() === 0 && 14 < t.getDate() && t.getDate() < 22],
-		['Juneteenth', (t = new Date()) => t.getMonth() === 5 && t.getDate() === 19],
-		['Independence Day', (t = new Date()) => t.getMonth() === 6 && t.getDate() === 4],
-		['Labor Day', (t = new Date()) => t.getMonth() === 8 && t.getDay() === 1 && t.getDate() < 8],
-		['Oktoberfest', (t = new Date()) => t.getMonth() === 8 && t.getDay() === 6 && 14 < t.getDate() && t.getDate() < 22],
-		['Columbus Day', (t = new Date()) => t.getMonth() === 9 && t.getDay() === 1 && 7 < t.getDate() && t.getDate() < 15],
-		['Halloween', (t = new Date()) => t.getMonth() === 9 && t.getDate() === 31],
-		['Election Day', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 2 && 1 < t.getDate() && t.getDate() < 9],
-		['Veterans\' Day', (t = new Date()) => t.getMonth() === 10 && t.getDate() === 11],
-		['TDoR', (t = new Date()) => t.getMonth() === 10 && t.getDate() === 20],
-		['Thanksgiving', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 4 && 21 < t.getDate() && t.getDate() < 29],
-		['Black Friday', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 5 && 22 < t.getDate() && t.getDate() < 30],
-		['Cyber Monday', (t = new Date()) => t.getDay() === 1 && (t.getMonth() === 10 && 25 < t.getDate() || t.getMonth() === 11 && t.getDate() === 1)],
-		['Super Saturday', (t = new Date()) => t.getMonth() === 11 && t.getDay() === 6 && 16 < t.getDate() && t.getDate() < 24],
-		['Christmas Eve', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 24],
-		['Christmas', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 25],
-		['Kwanzaa', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 26], // 8 days
-		['New Year\'s Eve', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 31],
-		// Chinese
-		['Chinese New Year', (t = new Date()) => (x => t.getMonth() === x.getMonth() && t.getDate() === x.getDate())(getChineseNewYear(t.getFullYear()))],
-		// Christianity (excl. Christmas)
-		['Epiphany', (t = new Date()) => t.getMonth() === 0 && t.getDate() === 6],
-		['Ash Wednesday', (t = new Date()) => (e => e.getMonth() === t.getMonth() && e.getDate() === t.getDate())(new Date(getEaster(t.getFullYear()) - 45*_1d))],
-		['St. Patrick\'s Day', (t = new Date()) => t.getMonth() === 2 && t.getDate() === 17],
-		['Good Friday', (t = new Date()) => (e => e.getMonth() === t.getMonth() && e.getDate() === t.getDate())(new Date(getEaster(t.getFullYear()) - 2*_1d))],
-		['Easter', (t = new Date()) => (e => e.getMonth() === t.getMonth() && e.getDate() === t.getDate())(getEaster(t.getFullYear()))],
-		['Advent Sunday', (t = new Date()) => t.getDay() === 0 && (t.getMonth() === 10 && 26 < t.getDate() || t.getMonth() === 11 && t.getDate() < 4)],
-		// Islam
-		['Ramadan', (t = new Date()) => (x => x.month === 9 && x.date === 1)(time.islam.fromGregorian(t))],
-		['Eid al-Fitr', (t = new Date()) => (x => x.month === 10 && x.date === 1)(time.islam.fromGregorian(t))],
-		['Eid al-Adha', (t = new Date()) => (x => x.month === 12 && x.date === 10)(time.islam.fromGregorian(t))],
-		// Judaism
-		['Passover', (t = new Date()) => (x => x.month === 1 && x.date === 15)(time.hebrew.fromGregorian(t))],
-		['Rosh Hashanah', (t = new Date()) => (x => x.month === 7 && x.date === 1)(time.hebrew.fromGregorian(t))],
-		['Yom Kippur', (t = new Date()) => (x => x.month === 7 && x.date === 10)(time.hebrew.fromGregorian(t))],
-		['Hanukkah', (t = new Date()) => (x => x.month === 9 && x.date === 25)(time.hebrew.fromGregorian(t))], // 8 days
-		// Hindu
-		// ['Chaitra Navaratri', (t = new Date()) => (x => x.month === 1 && x.date === 1)(time.hindu.fromGregorian(t))],
-		['Diwali', (t = new Date()) => (x => x.month === 8 && x.date === 12)(time.hindu.fromGregorian(t))],
-		// misc
-		['Friday the 13th', (t = new Date()) => t.getDay() === 5 && t.getDate() === 13],
-		// bdays
-		['Luna\'s Birthday', (t = new Date()) => t.getMonth() === 3 && t.getDate() === 27],
-		['Luna\'s HRTiversary', (t = new Date()) => t.getMonth() === 7 && t.getDate() === 16],
-		['Kippi\'s Birthday', (t = new Date()) => t.getMonth() === 10 && t.getDate() === 14],
-	],
 	/** https://en.wikipedia.org/wiki/Tabular_Islamic_calendar */
 	islam: {
 		get avgYear(){
@@ -207,6 +142,85 @@ const time = {
 		leapPeriod: 30, // years
 		leapYearR: [2, 5, 7, 10, 13, 16, 18, 21, 24, 26, 29],
 	},
+};
+
+const time = {
+	CONFIG: {
+		SEASONS_USE_CLIMATE: false,
+		SEASONS: {
+			CELTIC: ['1 FEB', '1 MAY', '1 AUG', '1 NOV'],
+			CH: ['2 MAR', '10 JUN', '9 SEP', '1 DEC'],
+			METEO: ['1 MAR', '1 JUN', '1 SEP', '1 DEC'],
+			MID: ['3 FEB', '6 MAY', '8 AUG', '6 NOV'],
+			SD: ['27 FEB', '2 JUL', '1 OCT', '27 NOV'],
+		},
+	},
+	equinox: [
+		(t = new Date()) => t.getMonth() === 2 && t.getDate() === 20, // vernal equinox
+		(t = new Date()) => t.getMonth() === 5 && t.getDate() === 20 + (0 < t.getFullYear() % 4), // summer solstice
+		(t = new Date()) => t.getMonth() === 8 && t.getDate() === 22 + (1 < t.getFullYear() % 4), // autumnal equinox
+		(t = new Date()) => t.getMonth() === 11 && t.getDate() === 21 + (t.getFullYear() % 4 === 3), // winter solstice
+	],
+	equinoxNames: ['Vernal Equinox', 'Summer Solstice', 'Autumnal Equinox', 'Winter Solstice'],
+	holidays: [
+		['New Year\'s', (t = new Date()) => t.getMonth() === 0 && t.getDate() === 1],
+		['MLK Jr. Day', (t = new Date()) => t.getMonth() === 0 && t.getDay() === 1 && 14 < t.getDate() && t.getDate() < 22],
+		['Inauguration Day', (t = new Date()) => t.getMonth() === 0 && t.getDate() === (new Date(t.getYear(), 0, 20).getDay() ? 20 : 21)], // Jan 20 unless that's a sunday, then Jan 21
+		['Groundhog Day', (t = new Date()) => t.getMonth() === 1 && t.getDate() === 2],
+		['Super Bowl Sunday', (t = new Date()) => t.getMonth() === 1 && t.getDay() === 0 && 7 < t.getDate() && t.getDate() < 15],
+		['Valentine\'s Day', (t = new Date()) => t.getMonth() === 1 && t.getDate() === 14],
+		['Presidents\' Day', (t = new Date()) => t.getMonth() === 1 && t.getDay() === 1 && 14 < t.getDate() && t.getDate() < 22],
+		['TDoV', (t = new Date()) => t.getMonth() === 2 && t.getDate() === 31],
+		['April Fool\'s Day', (t = new Date()) => t.getMonth() === 3 && t.getDate() === 1],
+		['Cinco de Mayo', (t = new Date()) => t.getMonth() === 4 && t.getDate() === 5],
+		['Mother\'s Day', (t = new Date()) => t.getMonth() === 4 && t.getDay() === 0 && 8 < t.getDate() && t.getDate() < 15],
+		['Memorial Day', (t = new Date()) => t.getMonth() === 4 && t.getDay() === 1 && 24 < t.getDate()],
+		['Father\'s Day', (t = new Date()) => t.getMonth() === 5 && t.getDay() === 0 && 14 < t.getDate() && t.getDate() < 22],
+		['Juneteenth', (t = new Date()) => t.getMonth() === 5 && t.getDate() === 19],
+		['Independence Day', (t = new Date()) => t.getMonth() === 6 && t.getDate() === 4],
+		['Labor Day', (t = new Date()) => t.getMonth() === 8 && t.getDay() === 1 && t.getDate() < 8],
+		['Oktoberfest', (t = new Date()) => t.getMonth() === 8 && t.getDay() === 6 && 14 < t.getDate() && t.getDate() < 22],
+		['Columbus Day', (t = new Date()) => t.getMonth() === 9 && t.getDay() === 1 && 7 < t.getDate() && t.getDate() < 15],
+		['Halloween', (t = new Date()) => t.getMonth() === 9 && t.getDate() === 31],
+		['Election Day', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 2 && 1 < t.getDate() && t.getDate() < 9],
+		['Veterans\' Day', (t = new Date()) => t.getMonth() === 10 && t.getDate() === 11],
+		['TDoR', (t = new Date()) => t.getMonth() === 10 && t.getDate() === 20],
+		['Thanksgiving', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 4 && 21 < t.getDate() && t.getDate() < 29],
+		['Black Friday', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 5 && 22 < t.getDate() && t.getDate() < 30],
+		['Cyber Monday', (t = new Date()) => t.getDay() === 1 && (t.getMonth() === 10 && 25 < t.getDate() || t.getMonth() === 11 && t.getDate() === 1)],
+		['Super Saturday', (t = new Date()) => t.getMonth() === 11 && t.getDay() === 6 && 16 < t.getDate() && t.getDate() < 24],
+		['Christmas Eve', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 24],
+		['Christmas', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 25],
+		['Kwanzaa', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 26], // 8 days
+		['New Year\'s Eve', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 31],
+		// Chinese
+		['Chinese New Year', (t = new Date()) => (x => t.getMonth() === x.getMonth() && t.getDate() === x.getDate())(getChineseNewYear(t.getFullYear()))],
+		// Christianity (excl. Christmas)
+		['Epiphany', (t = new Date()) => t.getMonth() === 0 && t.getDate() === 6],
+		['Ash Wednesday', (t = new Date()) => (e => e.getMonth() === t.getMonth() && e.getDate() === t.getDate())(new Date(getEaster(t.getFullYear()) - 45*_1d))],
+		['St. Patrick\'s Day', (t = new Date()) => t.getMonth() === 2 && t.getDate() === 17],
+		['Good Friday', (t = new Date()) => (e => e.getMonth() === t.getMonth() && e.getDate() === t.getDate())(new Date(getEaster(t.getFullYear()) - 2*_1d))],
+		['Easter', (t = new Date()) => (e => e.getMonth() === t.getMonth() && e.getDate() === t.getDate())(getEaster(t.getFullYear()))],
+		['Advent Sunday', (t = new Date()) => t.getDay() === 0 && (t.getMonth() === 10 && 26 < t.getDate() || t.getMonth() === 11 && t.getDate() < 4)],
+		// Islam
+		['Ramadan', (t = new Date()) => (x => x.month === 9 && x.date === 1)(calendars.islam.fromGregorian(t))],
+		['Eid al-Fitr', (t = new Date()) => (x => x.month === 10 && x.date === 1)(calendars.islam.fromGregorian(t))],
+		['Eid al-Adha', (t = new Date()) => (x => x.month === 12 && x.date === 10)(calendars.islam.fromGregorian(t))],
+		// Judaism
+		['Passover', (t = new Date()) => (x => x.month === 1 && x.date === 15)(calendars.hebrew.fromGregorian(t))],
+		['Rosh Hashanah', (t = new Date()) => (x => x.month === 7 && x.date === 1)(calendars.hebrew.fromGregorian(t))],
+		['Yom Kippur', (t = new Date()) => (x => x.month === 7 && x.date === 10)(calendars.hebrew.fromGregorian(t))],
+		['Hanukkah', (t = new Date()) => (x => x.month === 9 && x.date === 25)(calendars.hebrew.fromGregorian(t))], // 8 days
+		// Hindu
+		// ['Chaitra Navaratri', (t = new Date()) => (x => x.month === 1 && x.date === 1)(calendars.hindu.fromGregorian(t))],
+		['Diwali', (t = new Date()) => (x => x.month === 8 && x.date === 12)(calendars.hindu.fromGregorian(t))],
+		// misc
+		['Friday the 13th', (t = new Date()) => t.getDay() === 5 && t.getDate() === 13],
+		// bdays
+		['Luna\'s Birthday', (t = new Date()) => t.getMonth() === 3 && t.getDate() === 27],
+		['Luna\'s HRTiversary', (t = new Date()) => t.getMonth() === 7 && t.getDate() === 16],
+		['Kippi\'s Birthday', (t = new Date()) => t.getMonth() === 10 && t.getDate() === 14],
+	],
 	moon: {
 		epoch: new Date(2023, 11, 12, 18, 31),
 		p: 29.530594 * _1d,
@@ -239,11 +253,7 @@ function getChineseNewYear(year){
 function getDatum(t = new Date()){
 	const starsign = mod(Math.floor((t - time.vernal) / (time.yTropical/12)), 12);
 	const date = t.getDate();
-	let seasonDelta = 0;
-	// eslint-disable-next-line no-loop-func
-	while (!time.equinox.some(eq => eq(new Date(t - seasonDelta * _1d))))
-		seasonDelta++;
-	const season = time.equinox.findIndex(eq => eq(new Date(t - seasonDelta * _1d)));
+	const season = getSeason(t);
 	/** this date is in the nth week of the current month */
 	let monthWeek = 0;
 	const monthDay = t.getDay();
@@ -255,6 +265,25 @@ function getDatum(t = new Date()){
 	}
 	return {date, monthWeek, monthDay, season, starsign};
 }
+
+function getSeason(t = new Date()){
+	if (time.CONFIG.SEASONS_USE_CLIMATE)
+		return getSeason.climate(t);
+	let seasonDelta = 0;
+	// eslint-disable-next-line no-loop-func
+	while (!time.equinox.some(eq => eq(new Date(t - seasonDelta * _1d))))
+		seasonDelta++;
+	return time.equinox.findIndex(eq => eq(new Date(t - seasonDelta * _1d)));
+}
+getSeason.climate = (t = new Date(), forceClimate = '') => {
+	const year = t.getFullYear();
+	/** @type {string[]} */
+	const seasonStarts = time.CONFIG.SEASONS[forceClimate || time.CONFIG.SEASONS_USE_CLIMATE];
+	const allStarts = seasonStarts.map(s => new Date(s + ' ' + (year-1)))
+		.concat(seasonStarts.map(s => new Date(s + ' ' + year)))
+		.concat(seasonStarts.map(s => new Date(s + ' ' + (year+1))));
+	return mod(allStarts.findIndex(start => t < start) - 1, 4);
+};
 
 function calendar(t = new Date()){
 	// todo add weekday and month labels
