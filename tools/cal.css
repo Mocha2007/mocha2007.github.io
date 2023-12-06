@@ -5,12 +5,16 @@
 	--cellFontSize: 0.75vw;
 	--cellFontSizeSmall: 0.6vw;
 }
-header, h2 {
+header, h2, #footer {
 	text-align: center;
 }
 #cals {
 	text-align: center;
 	width: 100%;
+}
+#footer {
+	font-size: 60%;
+	font-style: italic;
 }
 #months table {
 	border-collapse: collapse;
