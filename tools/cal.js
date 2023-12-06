@@ -148,6 +148,7 @@ const time = {
 	CONFIG: {
 		SEASON: false,
 		SEASONS: {
+			CAL: ['16 APR', '1 JUN', '1 JUL', '16 OCT'], // appx
 			// https://www.weather.gov/wrh/climate
 			CELTIC: ['1 FEB', '1 MAY', '1 AUG', '1 NOV'],
 			CH: ['2 MAR', '10 JUN', '9 SEP', '1 DEC'],
@@ -162,10 +163,10 @@ const time = {
 			MID: ['3 FEB', '6 MAY', '8 AUG', '6 NOV'], // Set midpoint to sol/equ, like Pliny the Elder
 			PA: ['8 MAR', '9 JUN', '6 SEP', '7 DEC'], // LEHIGHTON
 			ROMAN: ['7 FEB', '9 MAY', '11 AUG', '10 NOV'], // Varro
-			SD: ['27 FEB', '2 JUL', '1 OCT', '27 NOV'], // MONTGOMERY FIELD
 			THAI: ['15 FEB', '16 MAY', '16 OCT'],
 		},
 		SEASON_COLORS: {
+			CAL: ['season_5', 'season_1', 'season_2', 'season_3'],
 			DRYWET: ['season_3', 'season_1'],
 			ECO: ['season_5', 'season_0', 'season_1', 'season_2', 'season_4', 'season_3'],
 			EGYPT: ['season_0', 'season_1', 'season_3'],
@@ -176,6 +177,7 @@ const time = {
 			THAI: ['season_2', 'season_0', 'season_3'],
 		},
 		SEASON_NAMES: {
+			CAL: ['May Gray', 'June Gloom', 'Warm', 'Wet'],
 			DRYWET: ['Wet', 'Dry'],
 			ECO: ['Pervernal', 'Vernal', 'Estival', 'Serotinal', 'Autumnal', 'Hibernal'],
 			EGYPT: ['Peret', 'Shemu', 'Akhet'],
