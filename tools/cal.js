@@ -332,6 +332,16 @@ function getKippi(t = new Date()){
 	return {monthIndex, biweekIndex, week, weekDay, isSpecial, letter};
 }
 
+function getLuna(t = new Date()){
+	const biweekIndex = mod(Math.floor(t/_1d) + 3, 14);
+	let letter = '', title = '';
+	if (biweekIndex === 9){
+		letter = 'L';
+		title = 'Luna Payday';
+	}
+	return {biweekIndex, letter, title};
+}
+
 function calendar(t = new Date()){
 	// todo add weekday and month labels
 	const table = document.createElement('table');
@@ -427,6 +437,13 @@ function calendar(t = new Date()){
 		kippi.innerHTML = KIPPI.letter;
 		kippi.title = `Kippi Cycle: Day ${KIPPI.monthIndex}`;
 		tdContainer.appendChild(kippi);
+		// LUNA PAYDAY
+		const luna = document.createElement('span');
+		luna.classList.add('luna');
+		const LUNA = getLuna(dateObj);
+		luna.innerHTML = LUNA.letter;
+		luna.title = LUNA.title;
+		kippi.appendChild(luna);
 	}
 	return table;
 }
