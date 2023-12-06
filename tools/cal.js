@@ -152,9 +152,9 @@ const time = {
 			CELTIC: ['1 FEB', '1 MAY', '1 AUG', '1 NOV'],
 			CH: ['2 MAR', '10 JUN', '9 SEP', '1 DEC'],
 			METEO: ['1 MAR', '1 JUN', '1 SEP', '1 DEC'],
-			MID: ['3 FEB', '6 MAY', '8 AUG', '6 NOV'],
+			MID: ['3 FEB', '6 MAY', '8 AUG', '6 NOV'], // Set midpoint to sol/equ, like Pliny the Elder
 			PA: ['8 MAR', '9 JUN', '6 SEP', '7 DEC'], // LEHIGHTON
-			ROMAN: ['7 FEB', '9 MAY', '11 AUG', '10 NOV'],
+			ROMAN: ['7 FEB', '9 MAY', '11 AUG', '10 NOV'], // Varro
 			SD: ['27 FEB', '2 JUL', '1 OCT', '27 NOV'], // MONTGOMERY FIELD
 		},
 	},
