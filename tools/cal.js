@@ -475,7 +475,7 @@ function refreshSundial(t = new Date()){
 	const sundialContainer = document.getElementById('sundial');
 	sundialContainer.innerHTML = '';
 	const dayFraction = (t / _1d - (6 + new Date().getTimezoneOffset()/60)/24) % 1; // offset so 0 = sunrise
-	const sunMoon = [dayFraction, moon.phase(t), true];
+	const sunMoon = [dayFraction, moon.phase(t), 2];
 	sundialContainer.appendChild(sundial(...sunMoon));
 }
 

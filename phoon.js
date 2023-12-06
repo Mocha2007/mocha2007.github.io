@@ -218,6 +218,33 @@ function sundial(dayPhase, moonPhase, ornamental, planets, planetNames){
 		svg.appendChild(triangle);
 		triangle.setAttribute('points', '-0.2 0, 0 -0.2, 0.2 0');
 		triangle.style.fill = '#fc0';
+		// text
+		if (ornamental === 2){
+			var hours = 'I II III IV V VI VII VIII IX X XI XII'.split(' ');
+			for (let i = 0; i < 2*hours.length; i++){
+				var hLabel = createSvgElement('text');
+				g.appendChild(hLabel);
+				s = hours[i%12];
+				hLabel.innerHTML = s;
+				hLabel.setAttribute('fill', '#860');
+				hLabel.setAttribute('text-align', 'center');
+				hLabel.setAttribute('x', labelDelta * s.length);
+				hLabel.setAttribute('y', -1.015);
+				theta = 15 + 15*i;
+				hLabel.setAttribute('transform', 'rotate(' + theta + ', 0, 0)');
+			}
+			// east/west
+			var eastLabel = hLabel.cloneNode();
+			svg.appendChild(eastLabel);
+			eastLabel.innerHTML = 'EAST';
+			eastLabel.setAttribute('x', 0.45);
+			eastLabel.setAttribute('y', 0.03);
+			eastLabel.setAttribute('transform', 'rotate(0, 0, 0)');
+			var westLabel = eastLabel.cloneNode();
+			svg.appendChild(westLabel);
+			westLabel.innerHTML = 'WEST';
+			westLabel.setAttribute('x', -0.65);
+		}
 	}
 	return svg;
 }
