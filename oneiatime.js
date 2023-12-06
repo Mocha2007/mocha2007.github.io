@@ -355,9 +355,9 @@ function roman(){
 	var year = new Date().getFullYear();
 	var nextMonth = new Date(year, month+1, 1).getMonth(); // 0-indexed
 	var numberOfDaysInTheMonth = new Date(year, month+1, 0).getDate();
-	var ides = numberOfDaysInTheMonth === 31 ? 15 : 13;
+	var ides = [2, 4, 6, 9].includes(month) ? 15 : 13; // https://en.wikipedia.org/wiki/Roman_calendar#Months
 	var nones = ides - 8;
-	var numberOfDaysBeforeNextKalends = numberOfDaysInTheMonth - (ides ? 15 : 13);
+	var numberOfDaysBeforeNextKalends = numberOfDaysInTheMonth - ides;
 	// console.debug(day, month, year, ';', nones, ides, numberOfDaysInTheMonth);
 	if (day === 1)
 		return '<abbr title="kalendīs ' + monthsAbl[month]
