@@ -322,6 +322,16 @@ getSeason.s = (n = 0) => getSeason.sa()[n];
 /** @type {() => string[]} */
 getSeason.sa = () => time.CONFIG.SEASON_NAMES[time.CONFIG.SEASON] || time.CONFIG.SEASON_NAMES.false;
 
+function getKippi(t = new Date()){
+	const monthIndex = mod(Math.floor(t/_1d) + 18, 28);
+	const biweekIndex = monthIndex % 14; // 0 3 4 8 9 12 13
+	const week = Math.floor(monthIndex/7);
+	const weekDay = monthIndex % 7;
+	const isSpecial = (Math.floor((weekDay + 3)/2) + week) % 2;
+	const letter = isSpecial ? monthIndex === 9 ? 'T' : (monthIndex - 4) % 22 ? 'E' : '2A' : '';
+	return {monthIndex, biweekIndex, week, weekDay, isSpecial, letter};
+}
+
 function calendar(t = new Date()){
 	// todo add weekday and month labels
 	const table = document.createElement('table');
@@ -410,6 +420,13 @@ function calendar(t = new Date()){
 		phoon.classList.add('phoon');
 		phoon.appendChild(moon(dateObj));
 		tdContainer.appendChild(phoon);
+		// KIPPI
+		const kippi = document.createElement('div');
+		kippi.classList.add('kippi');
+		const KIPPI = getKippi(dateObj);
+		kippi.innerHTML = KIPPI.letter;
+		kippi.title = `Kippi Cycle: Day ${KIPPI.monthIndex}`;
+		tdContainer.appendChild(kippi);
 	}
 	return table;
 }

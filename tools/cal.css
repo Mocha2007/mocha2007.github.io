@@ -37,14 +37,17 @@ header, h2, #footer {
 	height: 100%;
 	position: relative;
 }
-.date, .holiday, .phoon, .season, .zodiac {
+.date, .holiday, .kippi, .phoon, .season, .zodiac {
 	left: 3%;
 	position: absolute;
+}
+.kippi {
+	bottom: 1em;
 }
 .phoon, .zodiac {
 	bottom: 0;
 }
-.holiday, .season, .zodiac {
+.holiday, .kippi, .season, .zodiac {
 	font-size: var(--cellFontSize);
 	font-style: italic;
 	right: 3%;
