@@ -163,6 +163,7 @@ const time = {
 			PA: ['8 MAR', '9 JUN', '6 SEP', '7 DEC'], // LEHIGHTON
 			ROMAN: ['7 FEB', '9 MAY', '11 AUG', '10 NOV'], // Varro
 			SD: ['27 FEB', '2 JUL', '1 OCT', '27 NOV'], // MONTGOMERY FIELD
+			THAI: ['15 FEB', '16 MAY', '16 OCT'],
 		},
 		SEASON_COLORS: {
 			DRYWET: ['season_3', 'season_1'],
@@ -172,6 +173,7 @@ const time = {
 			false: ['season_0', 'season_1', 'season_2', 'season_3'],
 			HINDU: ['season_4', 'season_0', 'season_1', 'season_5', 'season_2', 'season_3'],
 			METEOS: ['season_2', 'season_3', 'season_0', 'season_1'],
+			THAI: ['season_2', 'season_0', 'season_3'],
 		},
 		SEASON_NAMES: {
 			DRYWET: ['Wet', 'Dry'],
@@ -180,6 +182,7 @@ const time = {
 			false: ['Spring', 'Summer', 'Fall', 'Winter'],
 			HINDU: ['Shishira', 'Vasanta', 'Grīshma', 'Varshā', 'Sharat', 'Hemanta'],
 			METEOS: ['Fall', 'Winter', 'Spring', 'Summer'],
+			THAI: ['Hot', 'Rainy', 'Cold'],
 		},
 	},
 	equinox: [
