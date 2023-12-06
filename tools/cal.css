@@ -75,16 +75,19 @@ header, h2 {
 	html, body {
 		background-color: white;
 		color: black;
-		font-size: 76%;
+		font-size: 77%;
 		margin: 1%;
 	}
 	.season_0 {
 		background-color: #cfc;
 	}
 	.season_1 {
-		background-color: #fdd;
+		background-color: #ff8;
 	}
 	.season_2 {
+		background-color: #fdd;
+	}
+	.season_3 {
 		background-color: #ccf;
 	}
 	.intercalary {
