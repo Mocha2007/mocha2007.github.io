@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-/* global getEaster, phoonsvg, sundial */
+/* global getEaster, phoonsvg, romanFULL, sundial */
 
 const _1d = 1000*60*60*24;
 
@@ -349,8 +349,9 @@ function calendar(t = new Date()){
 }
 
 function main(t = new Date()){
-	// t = new Date(2024, 0, 1);
-	document.getElementById('months').appendChild(calendar(t));
+	const container = document.getElementById('months');
+	container.innerHTML = '';
+	container.appendChild(calendar(t));
 	document.getElementById('erecal1_title').innerHTML = t.getFullYear();
 	refresh();
 	refreshSundial();
@@ -360,6 +361,9 @@ function main(t = new Date()){
 	const sundialInterval = _1d*sundialPixelAngle/Math.PI;
 	console.info(`Sundial update interval: ${sundialInterval} ms`);
 	setInterval(refreshSundial, sundialInterval); // updates in the time it takes for pixels to shift over 1 unit
+	// timestamp
+	document.getElementById('timestamp').innerHTML = romanFULL(new Date());
+	// done loading
 	console.info('erecal.js successfully loaded.');
 }
 
