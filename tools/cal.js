@@ -135,6 +135,8 @@ const time = {
 		['Christmas', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 25],
 		['Kwanzaa', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 26], // 8 days
 		['New Year\'s Eve', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 31],
+		// Chinese
+		['Chinese New Year', (t = new Date()) => (x => t.getMonth() === x.getMonth() && t.getDate() === x.getDate())(getChineseNewYear(t.getFullYear()))],
 		// Christianity (excl. Christmas)
 		['Epiphany', (t = new Date()) => t.getMonth() === 0 && t.getDate() === 6],
 		['Ash Wednesday', (t = new Date()) => (e => e.getMonth() === t.getMonth() && e.getDate() === t.getDate())(new Date(getEaster(t.getFullYear()) - 45*_1d))],
@@ -223,7 +225,16 @@ time.equinox.forEach((d, i) => time.holidays.push([time.equinoxNames[i], d]));
 function moon(t = new Date()){
 	return phoonsvg(moon.phase(t));
 }
-moon.phase = (t = new Date()) => mod((time.moon.epoch - t)/time.moon.p, 1);
+moon.phase = (t = new Date()) => mod((t - time.moon.epoch)/time.moon.p, 1);
+
+/** @param {number} year */
+function getChineseNewYear(year){
+	let d;
+	for (let i = 0; i < 30; i++)
+		// if yesterday's % is greater than today's, that means it must now be a new moon
+		if (moon.phase(d = new Date(year, 0, 21+i)) < moon.phase(new Date(year, 0, 20+i)))
+			return d;
+}
 
 function getDatum(t = new Date()){
 	const starsign = mod(Math.floor((t - time.vernal) / (time.yTropical/12)), 12);

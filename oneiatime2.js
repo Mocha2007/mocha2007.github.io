@@ -79,7 +79,7 @@ function getChineseNewYear(year){
 	var d;
 	for (var i = 0; i < 30; i++)
 		// if yesterday's % is greater than today's, that means it must now be a new moon
-		if (moonPhase(d = new Date(year, 0, 21+i)) < moonPhase(d = new Date(year, 0, 20+i)))
+		if (moonPhase(d = new Date(year, 0, 21+i)) < moonPhase(new Date(year, 0, 20+i)))
 			return d;
 }
 
