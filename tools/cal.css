@@ -5,8 +5,7 @@
 	--cellFontSize: 0.75vw;
 	--cellFontSizeSmall: 0.6vw;
 }
-
-header {
+header, h2 {
 	text-align: center;
 }
 #cals {
