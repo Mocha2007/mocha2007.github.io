@@ -88,7 +88,7 @@ function sundial(dayPhase, moonPhase, ornamental, planets, planetNames){
 	planetNames = planetNames || [];
 	// main
 	var bodySize = 0.2;
-	var fontsize = 0.15;
+	var fontsize = 0.1;
 	/**
 	 * IMAGE STRUCTURE
 	 * cyan day sky
@@ -106,8 +106,7 @@ function sundial(dayPhase, moonPhase, ornamental, planets, planetNames){
 	// css
 	var style = document.createElement('style');
 	style.innerHTML = 'text{font-size:' + fontsize
-		+ 'px;user-select:none;}\ng .pText{fill:white;font-size:' + fontsize * 0.7
-		+ 'px;opacity:0;paint-order:stroke;stroke:black;stroke-width:0.02px;}\ng:hover > .pText{opacity:1;}';
+		+ 'px;user-select:none;}\ng .pText{fill:white;opacity:0;paint-order:stroke;stroke:black;stroke-width:0.02px;}\ng:hover > .pText{opacity:1;}';
 	svg.appendChild(style);
 	// gold perimeter disk
 	if (ornamental){
@@ -184,32 +183,21 @@ function sundial(dayPhase, moonPhase, ornamental, planets, planetNames){
 		planetLabel.setAttribute('transform', 'rotate(' + labelTheta + ', 0, -0.5)');
 	}
 	if (ornamental){
-		var labelDelta = -0.165;
-		// day label
-		var dayLabel = createSvgElement('text');
-		g.appendChild(dayLabel);
-		dayLabel.innerHTML = 'Noon';
-		dayLabel.setAttribute('text-align', 'center');
-		dayLabel.setAttribute('x', labelDelta);
-		dayLabel.setAttribute('y', -0.8);
-		// night label
-		var nightLabel = dayLabel.cloneNode();
-		g.appendChild(nightLabel);
-		nightLabel.innerHTML = 'Midnight';
-		nightLabel.setAttribute('fill', 'white');
-		nightLabel.setAttribute('x', 2*labelDelta);
-		nightLabel.setAttribute('transform', 'rotate(180, 0, 0)');
-		// dawn label
-		var dawnLabel = dayLabel.cloneNode();
-		g.appendChild(dawnLabel);
-		dawnLabel.innerHTML = 'Dawn';
-		dawnLabel.setAttribute('fill', 'red');
-		dawnLabel.setAttribute('transform', 'rotate(270, 0, 0)');
-		// dusk label
-		var duskLabel = dawnLabel.cloneNode();
-		g.appendChild(duskLabel);
-		duskLabel.innerHTML = 'Dusk';
-		duskLabel.setAttribute('transform', 'rotate(90, 0, 0)');
+		var labelDelta = -0.027;
+		var labels = ['Dawn', 'L. Morn', 'Noon', 'Afternoon', 'Dusk', 'Evening', 'Midnight', 'E. Morn'];
+		for (let i = 0; i < labels.length; i++){
+			var dayLabel = createSvgElement('text');
+			g.appendChild(dayLabel);
+			var s = labels[i];
+			dayLabel.innerHTML = s;
+			var fill = i % 4 ? i % 2 ? 'silver' : 'white' : 'red';
+			dayLabel.setAttribute('fill', fill);
+			dayLabel.setAttribute('text-align', 'center');
+			dayLabel.setAttribute('x', labelDelta * s.length);
+			dayLabel.setAttribute('y', -0.8);
+			var theta = 270 + 45*i;
+			dayLabel.setAttribute('transform', 'rotate(' + theta + ', 0, 0)');
+		}
 		// bottom half of mc clock
 		var bottomDisk = createSvgElement('circle');
 		svg.appendChild(bottomDisk);
