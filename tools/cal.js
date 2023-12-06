@@ -146,12 +146,13 @@ const calendars = {
 
 const time = {
 	CONFIG: {
-		SEASONS_USE_CLIMATE: false,
+		SEASON: false,
 		SEASONS: {
 			// https://www.weather.gov/wrh/climate
 			CELTIC: ['1 FEB', '1 MAY', '1 AUG', '1 NOV'],
 			CH: ['2 MAR', '10 JUN', '9 SEP', '1 DEC'],
 			DRYWET: ['1 JAN', '1 MAY', '1 MAY', '1 NOV', '1 NOV'], // idk how this works, but it does!!!
+			EGYPT: ['9 JAN', '9 MAY', '11 SEP', '11 SEP'], // Peret - spring colors; Shemu - summer colors; Akhet - winter colors
 			METEON: ['1 MAR', '1 JUN', '1 SEP', '1 DEC'],
 			METEOS: ['', '', '1 MAR', '1 JUN', '1 SEP', '1 DEC', '1 MAR', '1 JUN'], // I used sorcery and witchcraft to make this work
 			// apparently by using blanks to create invalid Date objects, and appending a second quartet of dates, you can start the year in any season
@@ -159,6 +160,10 @@ const time = {
 			PA: ['8 MAR', '9 JUN', '6 SEP', '7 DEC'], // LEHIGHTON
 			ROMAN: ['7 FEB', '9 MAY', '11 AUG', '10 NOV'], // Varro
 			SD: ['27 FEB', '2 JUL', '1 OCT', '27 NOV'], // MONTGOMERY FIELD
+		},
+		SEASON_NAMES: {
+			EGYPT: ['Peret', 'Shemu', '', 'Akhet'],
+			false: ['Spring', 'Summer', 'Fall', 'Winter'],
 		},
 	},
 	equinox: [
@@ -232,7 +237,6 @@ const time = {
 		p: 29.530594 * _1d,
 	},
 	months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-	seasons: ['Spring', 'Summer', 'Fall', 'Winter'],
 	vernal: new Date(2023, 2, 20, 21, 25),
 	weekdays: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
 	yTropical: 365.24219 * _1d,
@@ -273,7 +277,7 @@ function getDatum(t = new Date()){
 }
 
 function getSeason(t = new Date()){
-	if (time.CONFIG.SEASONS_USE_CLIMATE)
+	if (time.CONFIG.SEASON)
 		return getSeason.climate(t);
 	let seasonDelta = 0;
 	// eslint-disable-next-line no-loop-func
@@ -284,12 +288,14 @@ function getSeason(t = new Date()){
 getSeason.climate = (t = new Date(), forceClimate = '') => {
 	const year = t.getFullYear();
 	/** @type {string[]} */
-	const seasonStarts = time.CONFIG.SEASONS[forceClimate || time.CONFIG.SEASONS_USE_CLIMATE];
+	const seasonStarts = time.CONFIG.SEASONS[forceClimate || time.CONFIG.SEASON];
 	const allStarts = seasonStarts.map(s => new Date(s + ' ' + (year-1)))
 		.concat(seasonStarts.map(s => new Date(s + ' ' + year)))
 		.concat(seasonStarts.map(s => new Date(s + ' ' + (year+1))));
 	return mod(allStarts.findIndex(start => t < start) - 1, 4);
 };
+/** @type {(n?: number) => string} */
+getSeason.s = (n = 0) => time.CONFIG.SEASON_NAMES[time.CONFIG.SEASON][n];
 
 function calendar(t = new Date()){
 	// todo add weekday and month labels
@@ -356,7 +362,7 @@ function calendar(t = new Date()){
 		td.classList.add(`season_${season_id}`);
 		const season = document.createElement('div');
 		season.classList.add('season');
-		const seasonName = time.seasons[season_id];
+		const seasonName = getSeason.s(season_id);
 		season.innerHTML = seasonName;
 		tdContainer.appendChild(season);
 		// zodiac
