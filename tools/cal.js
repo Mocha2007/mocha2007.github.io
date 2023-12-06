@@ -151,10 +151,11 @@ const time = {
 			// https://www.weather.gov/wrh/climate
 			CELTIC: ['1 FEB', '1 MAY', '1 AUG', '1 NOV'],
 			CH: ['2 MAR', '10 JUN', '9 SEP', '1 DEC'],
-			DRYWET: ['1 JAN', '1 MAY', '1 MAY', '1 NOV', '1 NOV'], // idk how this works, but it does!!!
-			EGYPT: ['9 JAN', '9 MAY', '11 SEP'],
+			DRYWET: ['1 MAY', '1 NOV'],
+			// Peret := 9 Jan, each month 122 days
+			EGYPT: ['9 JAN', '10 MAY', '9 SEP'],
 			METEON: ['1 MAR', '1 JUN', '1 SEP', '1 DEC'],
-			METEOS: ['', '', '1 MAR', '1 JUN', '1 SEP', '1 DEC', '1 MAR', '1 JUN'], // I used sorcery and witchcraft to make this work
+			METEOS: ['1 MAR', '1 JUN', '1 SEP', '1 DEC'],
 			// apparently by using blanks to create invalid Date objects, and appending a second quartet of dates, you can start the year in any season
 			MID: ['3 FEB', '6 MAY', '8 AUG', '6 NOV'], // Set midpoint to sol/equ, like Pliny the Elder
 			PA: ['8 MAR', '9 JUN', '6 SEP', '7 DEC'], // LEHIGHTON
@@ -162,13 +163,17 @@ const time = {
 			SD: ['27 FEB', '2 JUL', '1 OCT', '27 NOV'], // MONTGOMERY FIELD
 		},
 		SEASON_COLORS: {
+			DRYWET: ['season_3', 'season_1'],
 			EGYPT: ['season_0', 'season_1', 'season_3'],
 			//		 green       yellow      red         blue
 			false: ['season_0', 'season_1', 'season_2', 'season_3'],
+			METEOS: ['season_2', 'season_3', 'season_0', 'season_1'],
 		},
 		SEASON_NAMES: {
+			DRYWET: ['Wet', 'Dry'],
 			EGYPT: ['Peret', 'Shemu', 'Akhet'],
 			false: ['Spring', 'Summer', 'Fall', 'Winter'],
+			METEOS: ['Fall', 'Winter', 'Spring', 'Summer'],
 		},
 	},
 	equinox: [
