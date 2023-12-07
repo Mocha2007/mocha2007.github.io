@@ -197,7 +197,7 @@ function printCharArc(parent, s, color, y, startAngle){
 		// hLabel.setAttribute('font-size', fontSize);
 		hLabel.setAttribute('text-align', 'center');
 		hLabel.setAttribute('y', y);
-		var thetaChar = charAngle * j - charAngle * s.length/2;
+		var thetaChar = charAngle * j - charAngle * s.length/2 + 0.1;
 		var theta = startAngle + thetaChar;
 		hLabel.setAttribute('transform', 'rotate(' + theta + ', 0, 0)');
 	}
