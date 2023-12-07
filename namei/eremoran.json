@@ -12274,6 +12274,14 @@
 		"categories": ["disease"]
 	},
 	{
+		"title": "muksêrem",
+		"etym": "C/muk/erem",
+		"cat": "n., 5th",
+		"defList": [
+			"dawn"
+		]
+	},
+	{
 		"title": "mulam",
 		"etym": "C/mu/lam",
 		"cat": "n., 4th",
@@ -16574,6 +16582,14 @@
 			"asparagus"
 		],
 		"categories": ["plant", "vegetable"]
+	},
+	{
+		"title": "tarsêrem",
+		"etym": "C/tar/erem",
+		"cat": "n., 5th",
+		"defList": [
+			"dawn"
+		]
 	},
 	{
 		"title": "tasfut",
