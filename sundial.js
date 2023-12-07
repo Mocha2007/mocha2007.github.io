@@ -207,7 +207,8 @@ function printCharArc(parent, s, color, y, startAngle){
 // ok below this line you can use es6 lol
 
 function goldClock(t = new Date()){
-	var colorScheme = ['#fc0', '#860'];
+	var barWidth = 0.01;
+	var colorScheme = ['#fc0', '#860', '#640'];
 	// main
 	var svg = createSvgElement('svg');
 	svg.classList.add('sundial');
@@ -227,24 +228,22 @@ function goldClock(t = new Date()){
 	var _1mo = new Date(t.getFullYear(), t.getMonth()+1) - new Date(t.getFullYear(), t.getMonth());
 	var _1y = new Date(t.getFullYear()+1, 0) - new Date(t.getFullYear(), 0);
 	var LUNAR_SYNODIC_PERIOD = 29.530594*_1d;
-	var METON = 19 * 365.24219 * _1d;
+	var SEASON = 365.24219/4 * _1d;
 	var moonPhase = (t - new Date(2023, 11, 12, 18, 31))/(29.530594*_1d) % 1;
-	var phases = ['New', '+C', '1', '+G', 'Full', '-G', '3', '-C'];
-	var intervals = [_1m, _1h, _1d, _1w, _1mo, _1y, METON, LUNAR_SYNODIC_PERIOD];
-	var divisions = [60, 60, 24, 7, _1mo/_1d, 12, 19, 8];
-	var indices = [0, 0, 'H', 'D', 1, 'mo', 0, 'M'];
+	var intervals = [_1m, _1h, _1d, _1w, _1mo, _1y, LUNAR_SYNODIC_PERIOD, SEASON];
+	var divisions = [60, 60, 24, 7, _1mo/_1d, 12, 8, 4];
+	var indices = [0, 0, 'H', 'D', 1, 'mo', 'M', 'S'];
 	var progress = [t/_1m%1, t/_1h%1, t/_1d%1, (+t+4*_1d)/_1w%1];
 	progress.push((t.getDate()-1+progress[2])*_1d/_1mo); // days in the present month
 	progress.push((t.getMonth()+progress[4])*_1mo/_1y); // months in the present year
-	progress.push(t/METON%1); // meton progress???
+	progress.push((t - new Date(2023, 2, 20, 21, 25))/SEASON%1); // season progress
 	progress.push(moonPhase); // moon phase
 	intervals.forEach((interval, i, a) => {
-		var IS_MOON = interval === LUNAR_SYNODIC_PERIOD;
-		var back = IS_MOON ? 'black' : colorScheme[i%2];
-		var fore = IS_MOON ? 'silver' : colorScheme[(i+1)%2];
+		var back = colorScheme[i%2];
+		var fore = colorScheme[(i+1)%2];
 		var i_ = a.length-i;
 		var r = 0.5 + 0.1*i_;
-		var tick = 360 / divisions[i];
+		var ang = 360 / divisions[i];
 		// light hour disk
 		var gH = createSvgElement('g');
 		svg.appendChild(gH);
@@ -256,7 +255,7 @@ function goldClock(t = new Date()){
 		gH.setAttribute('transform', 'rotate(' + thetaH + ', 0, 0)');
 		// text
 		for (var j = 0; j < divisions[i]; j++){
-			var theta = tick*j;
+			var theta = ang*j;
 			var ind, s;
 			switch (ind = indices[i]){
 				case 'D':
@@ -266,26 +265,42 @@ function goldClock(t = new Date()){
 					s = (j%12 || 12) + 'ap'[Math.floor(j/12)];
 					break;
 				case 'M':
-					s = phases[j];
+					s = 'New +C 1 +G Full -G 3 -C'.split(' ')[j];
 					break;
 				case 'mo':
 					s = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ')[j];
 					break;
+				case 'S':
+					s = 'Spring Summer Fall Winter'.split(' ')[j];
+					break;
 				default:
 					s = ''+(j + ind);
 			}
-			printCharArc(gH, ''+s, fore, 0.08 - r, theta);
+			printCharArc(gH, ''+s, fore, 0.08 - r, theta + ang/2);
+			// tick
+			var tick = createSvgElement('rect');
+			gH.appendChild(tick);
+			tick.setAttribute('x', 0);
+			tick.setAttribute('y', -r);
+			tick.setAttribute('width', barWidth);
+			tick.setAttribute('height', 0.1);
+			tick.style.fill = fore;
+			tick.setAttribute('transform', 'rotate(' + theta + ', 0, 0)');
 		}
 	});
 	// ornamentation
 	// triangle
-	var barWidth = 0.01;
 	var bar = createSvgElement('rect');
 	svg.appendChild(bar);
 	bar.setAttribute('x', -barWidth/2);
 	bar.setAttribute('y', -size/10);
 	bar.setAttribute('width', barWidth);
 	bar.setAttribute('height', size/10);
-	bar.style.fill = '#640';
+	bar.style.fill = colorScheme[2];
+	// center disk
+	var diskH = createSvgElement('circle');
+	svg.appendChild(diskH);
+	diskH.setAttribute('r', 0.5);
+	diskH.style.fill = colorScheme[intervals.length%2];
 	return svg;
 }
