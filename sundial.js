@@ -228,16 +228,16 @@ function goldClock(t = new Date()){
 	var _1mo = new Date(t.getFullYear(), t.getMonth()+1) - new Date(t.getFullYear(), t.getMonth());
 	var _1y = new Date(t.getFullYear()+1, 0) - new Date(t.getFullYear(), 0);
 	var LUNAR_SYNODIC_PERIOD = 29.530594*_1d;
-	var SEASON = 365.24219/4 * _1d;
+	var YTROPICAL = 365.24219 * _1d;
 	var moonPhase = (t - new Date(2023, 11, 12, 18, 31))/(29.530594*_1d) % 1;
-	var intervals = [_1m, _1h, _1d, _1w, _1mo, _1y, LUNAR_SYNODIC_PERIOD, SEASON];
+	var intervals = [_1m, _1h, _1d, _1w, _1mo, _1y, LUNAR_SYNODIC_PERIOD, YTROPICAL];
 	var divisions = [60, 60, 24, 7, _1mo/_1d, 12, 8, 4];
 	var indices = [0, 0, 'H', 'D', 1, 'mo', 'M', 'S'];
 	var progress = [t/_1m%1, t/_1h%1, t/_1d%1, (+t+4*_1d)/_1w%1];
 	progress.push((t.getDate()-1+progress[2])*_1d/_1mo); // days in the present month
 	progress.push((t.getMonth()+progress[4])*_1mo/_1y); // months in the present year
-	progress.push((t - new Date(2023, 2, 20, 21, 25))/SEASON%1); // season progress
 	progress.push(moonPhase); // moon phase
+	progress.push((t - new Date(2023, 2, 20, 21, 25))/YTROPICAL%1); // season progress
 	intervals.forEach((interval, i, a) => {
 		var back = colorScheme[i%2];
 		var fore = colorScheme[(i+1)%2];
