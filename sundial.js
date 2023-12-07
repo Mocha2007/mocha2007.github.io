@@ -217,10 +217,10 @@ function goldClock(t = new Date()){
 	svg.setAttribute('width', 10*svgScale);
 	svg.setAttribute('height', 10*svgScale);
 	svg.setAttribute('aria-label', 'Sundial');
-	// css
-	var style = document.createElement('style');
-	style.innerHTML = 'text{font-size:0.1px;user-select:none;}';
-	svg.appendChild(style);
+	// css - this causes lag I think?
+	// var style = document.createElement('style');
+	// style.innerHTML = 'text{font-size:0.1px;user-select:none;}';
+	// svg.appendChild(style);
 	// eslint-disable-next-line sort-vars
 	var _1m = 1000*60, _1h = _1m*60, _1d = _1h*24, _1w = _1d*7;
 	t = new Date(t - t.getTimezoneOffset()*_1m);

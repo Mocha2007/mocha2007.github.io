@@ -80,7 +80,8 @@ header, h2, #footer {
 .season_5 {
 	background-color: #005858; /* https://webaim.org/resources/contrastchecker/ */
 }
-.sundial {
+.clockContainer, .sundial {
+	display: inline-block;
 	height: var(--dialSize);
 	width: var(--dialSize);
 }
