@@ -4,6 +4,7 @@
 	--cellFontSizeBig: 1vw;
 	--cellFontSize: 0.75vw;
 	--cellFontSizeSmall: 0.6vw;
+	--dialSize: 35vw;
 }
 header, h2, #footer {
 	text-align: center;
@@ -80,8 +81,8 @@ header, h2, #footer {
 	background-color: #005858; /* https://webaim.org/resources/contrastchecker/ */
 }
 .sundial {
-	height: 15em;
-	width: 15em;
+	height: var(--dialSize);
+	width: var(--dialSize);
 }
 .printOnly {
 	display: none;
