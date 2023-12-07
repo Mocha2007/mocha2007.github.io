@@ -1,7 +1,7 @@
 /* eslint-disable no-var */
 /* eslint-env es3 */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
-/* exported sundial */
+/* exported goldClock, sundial */
 /* global createSvgElement, phoonsvg, svgScale */
 'use strict';
 
@@ -187,13 +187,14 @@ function printCharArc(parent, s, color, y, startAngle){
 	y = y || 0;
 	startAngle = startAngle || 0;
 	// MAIN
-	var charAngle = 2.6 / Math.pow(Math.abs(y), 2);
+	var charAngle = 3 / Math.abs(y);
 	for (var j = 0; j < s.length; j++){
 		var char = s[j];
 		var hLabel = createSvgElement('text');
 		parent.appendChild(hLabel);
 		hLabel.innerHTML = char;
 		hLabel.setAttribute('fill', color);
+		// hLabel.setAttribute('font-size', fontSize);
 		hLabel.setAttribute('text-align', 'center');
 		hLabel.setAttribute('y', y);
 		var thetaChar = charAngle * j - charAngle * s.length/2;
@@ -201,4 +202,90 @@ function printCharArc(parent, s, color, y, startAngle){
 		hLabel.setAttribute('transform', 'rotate(' + theta + ', 0, 0)');
 	}
 	return hLabel;
+}
+
+// ok below this line you can use es6 lol
+
+function goldClock(t = new Date()){
+	var colorScheme = ['#fc0', '#860'];
+	// main
+	var svg = createSvgElement('svg');
+	svg.classList.add('sundial');
+	var size = 13;
+	svg.setAttribute('viewBox', [-size/10, -size/10, size/5, size/5].join(' '));
+	svg.setAttribute('width', 10*svgScale);
+	svg.setAttribute('height', 10*svgScale);
+	svg.setAttribute('aria-label', 'Sundial');
+	// css
+	var style = document.createElement('style');
+	style.innerHTML = 'text{font-size:0.1px;user-select:none;}';
+	svg.appendChild(style);
+	// eslint-disable-next-line sort-vars
+	var _1m = 1000*60, _1h = _1m*60, _1d = _1h*24, _1w = _1d*7;
+	t = new Date(t - t.getTimezoneOffset()*_1m);
+	// eslint-disable-next-line max-len
+	var _1mo = new Date(t.getFullYear(), t.getMonth()+1) - new Date(t.getFullYear(), t.getMonth());
+	var _1y = new Date(t.getFullYear()+1, 0) - new Date(t.getFullYear(), 0);
+	var LUNAR_SYNODIC_PERIOD = 29.530594*_1d;
+	var METON = 19 * 365.24219 * _1d;
+	var moonPhase = (t - new Date(2023, 11, 12, 18, 31))/(29.530594*_1d) % 1;
+	var phases = ['New', '+C', '1', '+G', 'Full', '-G', '3', '-C'];
+	var intervals = [_1m, _1h, _1d, _1w, _1mo, _1y, METON, LUNAR_SYNODIC_PERIOD];
+	var divisions = [60, 60, 24, 7, _1mo/_1d, 12, 19, 8];
+	var indices = [0, 0, 'H', 'D', 1, 'mo', 0, 'M'];
+	var progress = [t/_1m%1, t/_1h%1, t/_1d%1, (+t+4*_1d)/_1w%1];
+	progress.push((t.getDate()-1+progress[2])*_1d/_1mo); // days in the present month
+	progress.push((t.getMonth()+progress[4])*_1mo/_1y); // months in the present year
+	progress.push(t/METON%1); // meton progress???
+	progress.push(moonPhase); // moon phase
+	intervals.forEach((interval, i, a) => {
+		var IS_MOON = interval === LUNAR_SYNODIC_PERIOD;
+		var back = IS_MOON ? 'black' : colorScheme[i%2];
+		var fore = IS_MOON ? 'silver' : colorScheme[(i+1)%2];
+		var i_ = a.length-i;
+		var r = 0.5 + 0.1*i_;
+		var tick = 360 / divisions[i];
+		// light hour disk
+		var gH = createSvgElement('g');
+		svg.appendChild(gH);
+		var diskH = createSvgElement('circle');
+		gH.appendChild(diskH);
+		diskH.setAttribute('r', r);
+		diskH.style.fill = back;
+		var thetaH = -360*progress[i];
+		gH.setAttribute('transform', 'rotate(' + thetaH + ', 0, 0)');
+		// text
+		for (var j = 0; j < divisions[i]; j++){
+			var theta = tick*j;
+			var ind, s;
+			switch (ind = indices[i]){
+				case 'D':
+					s = 'Sun Mon Tue Wed Thu Fri Sat'.split(' ')[j];
+					break;
+				case 'H':
+					s = (j%12 || 12) + 'ap'[Math.floor(j/12)];
+					break;
+				case 'M':
+					s = phases[j];
+					break;
+				case 'mo':
+					s = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ')[j];
+					break;
+				default:
+					s = ''+(j + ind);
+			}
+			printCharArc(gH, ''+s, fore, 0.08 - r, theta);
+		}
+	});
+	// ornamentation
+	// triangle
+	var barWidth = 0.01;
+	var bar = createSvgElement('rect');
+	svg.appendChild(bar);
+	bar.setAttribute('x', -barWidth/2);
+	bar.setAttribute('y', -size/10);
+	bar.setAttribute('width', barWidth);
+	bar.setAttribute('height', size/10);
+	bar.style.fill = '#640';
+	return svg;
 }

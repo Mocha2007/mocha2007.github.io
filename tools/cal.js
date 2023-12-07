@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-/* global getEaster, phoonsvg, romanFULL, sundial */
+/* global getEaster, goldClock, phoonsvg, romanFULL, sundial */
 
 const _1d = 1000*60*60*24;
 
@@ -454,8 +454,10 @@ function main(t = new Date()){
 	container.appendChild(calendar(t));
 	document.getElementById('erecal1_title').innerHTML = t.getFullYear();
 	refresh();
+	refreshClock();
 	refreshSundial();
 	setInterval(refresh, 200); // if you set to 1s, it's not exactly 1000ms so sometimes the clock could "miss" a second - the same issue happens with 200ms, but with time so short you can't actually perceive it
+	setInterval(refreshClock, 1000/25);
 	const sundialSize = document.getElementsByClassName('sundial')[0].getBoundingClientRect().width;
 	const sundialPixelAngle = Math.atan2(1, sundialSize);
 	const sundialInterval = _1d*sundialPixelAngle/Math.PI;
@@ -472,11 +474,17 @@ function refresh(t = new Date()){
 }
 
 function refreshSundial(t = new Date()){
-	const sundialContainer = document.getElementById('sundial');
-	sundialContainer.innerHTML = '';
+	const container = document.getElementById('sundial');
+	container.innerHTML = '';
 	const dayFraction = (t / _1d - (6 + new Date().getTimezoneOffset()/60)/24) % 1; // offset so 0 = sunrise
 	const sunMoon = [dayFraction, moon.phase(t), 2];
-	sundialContainer.appendChild(sundial(...sunMoon));
+	container.appendChild(sundial(...sunMoon));
+}
+
+function refreshClock(t = new Date()){
+	const container = document.getElementById('clock');
+	container.innerHTML = '';
+	container.appendChild(goldClock(t));
 }
 
 main();
