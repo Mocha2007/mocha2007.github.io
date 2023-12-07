@@ -271,7 +271,7 @@ function goldClock(t = new Date(), lang = 'EN'){
 					s = goldClock.language[lang].eclipse[j];
 					break;
 				case 'H':
-					s = (j%12 || 12) + 'ap'[Math.floor(j/12)];
+					s = goldClock.language[lang].ap[Math.floor(j/12)].replace('_', j%12 || 12);
 					break;
 				case 'M':
 					s = goldClock.language[lang].moon[j];
@@ -318,6 +318,7 @@ function goldClock(t = new Date(), lang = 'EN'){
 }
 goldClock.language = {
 	EN: {
+		ap: 'ap'.split('').map(s => '_'+s),
 		day: 'Sun Mon Tues Wednes Thurs Fri Satur'.split(' ').map(s => s + 'day'),
 		eclipse: 'E E E          E E E         '.split(' '),
 		month: 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' '),
@@ -325,7 +326,17 @@ goldClock.language = {
 		season: 'Spring Summer Fall Winter'.split(' '),
 		zodiac: 'Ari Tau Gem Can Leo Vir Lib Sco Sag Cap Aqu Pis'.split(' '),
 	},
+	JP: {
+		ap: '前後'.split('').map(s => '午 '+s+' _'),
+		day: '日 月 火 水 木 金 土'.split(' ').map(s => s + ' 曜 日'),
+		eclipse: '食 食 食          食 食 食         '.split(' '),
+		month: '一\t二\t三\t四\t五\t六\t七\t八\t九\t十\t十 一\t十 二'.split('\t').map(s => s+' 月'),
+		moon: '新 月\t三 日 月\t上 弦\t十 一 日 月\t満 月\t十 八 日 月\t下 弦\t二 十 六 日 月'.split('\t'),
+		season: '春 夏 秋 冬'.split(' '),
+		zodiac: '白 羊\n金 牛\n双 子\t巨 蟹\t獅 子\t処 女\t天 秤\t天 蝎\t人 馬\t磨 羯\t宝 瓶\t双 魚'.split('\t').map(s => s+' 宮'),
+	},
 	LA: {
+		ap: 'ap'.split('').map(s => '_'+s),
 		day: 'Sōlis Lūnae Mārtis Mercuriī Iovis Veneris Saturnī'.split(' ').map(s => 'Diēs '+s),
 		eclipse: 'E E E          E E E         '.split(' '),
 		month: 'Iān Feb Mār Apr Māi Iūn Iūl Aug Sep Oct Nov Dec'.split(' '),
