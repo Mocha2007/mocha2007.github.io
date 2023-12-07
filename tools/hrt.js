@@ -174,7 +174,7 @@ get_prog.dose = 21;
 /** @param {Date} t - integer in [0, 11] = day in shave cycle*/
 function get_shave_cycle(t){
 	// shave body every 4d; replace blade every 12d
-	return (Math.floor(t/_1d) + 3) % 12;
+	return (Math.floor(t/_1d) + 6) % 12;
 }
 
 function moon(t){
