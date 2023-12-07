@@ -114,20 +114,14 @@ function sundial(dayPhase, moonPhase, ornamental, planets, planetNames){
 		planetLabel.setAttribute('transform', 'rotate(' + labelTheta + ', 0, -0.5)');
 	}
 	if (ornamental){
-		var labelDelta = -0.027;
-		var labels = ['Dawn', 'L. Morn', 'Noon', 'Afternoon', 'Dusk', 'Evening', 'Midnight', 'E. Morn'];
+		var labels = ['Dawn', 'L. Morning', 'Noon', 'Afternoon', 'Dusk', 'Evening', 'Midnight', 'E. Morning'];
 		for (let i = 0; i < labels.length; i++){
 			var dayLabel = createSvgElement('text');
 			g.appendChild(dayLabel);
 			var s = labels[i];
-			dayLabel.innerHTML = s;
 			var fill = i % 4 ? i % 2 ? 'silver' : 'white' : 'red';
-			dayLabel.setAttribute('fill', fill);
-			dayLabel.setAttribute('text-align', 'center');
-			dayLabel.setAttribute('x', labelDelta * s.length);
-			dayLabel.setAttribute('y', -0.8);
 			var theta = 90 - 45*i;
-			dayLabel.setAttribute('transform', 'rotate(' + theta + ', 0, 0)');
+			printCharArc(g, s, fill, -0.91, theta);
 		}
 		// bottom half of mc clock
 		var bottomDisk = createSvgElement('circle');
@@ -151,18 +145,12 @@ function sundial(dayPhase, moonPhase, ornamental, planets, planetNames){
 		triangle.style.fill = '#fc0';
 		// text
 		if (ornamental === 2){
+			var hLabel;
 			var hours = 'I II III IV V VI VII VIII IX X XI XII'.split(' ');
-			for (let i = 0; i < 2*hours.length; i++){
-				var hLabel = createSvgElement('text');
-				g.appendChild(hLabel);
+			for (var i = 0; i < 2*hours.length; i++){
 				s = hours[i%12];
-				hLabel.innerHTML = s;
-				hLabel.setAttribute('fill', '#860');
-				hLabel.setAttribute('text-align', 'center');
-				hLabel.setAttribute('x', labelDelta * s.length);
-				hLabel.setAttribute('y', -1.015);
 				theta = -15 - 15*i;
-				hLabel.setAttribute('transform', 'rotate(' + theta + ', 0, 0)');
+				hLabel = printCharArc(g, s, '#860', -1.015, theta);
 			}
 			// east/west
 			var eastLabel = hLabel.cloneNode();
@@ -183,4 +171,34 @@ function sundial(dayPhase, moonPhase, ornamental, planets, planetNames){
 		}
 	}
 	return svg;
+}
+
+/**
+ * @param {SVGElement} parent
+ * @param {string} s
+ * @param {string} color (default: black)
+ * @param {number} y (default: 0)
+ * @param {number} startAngle (default: 0)
+ * @returns {SVGTextElement} the last char
+ */
+function printCharArc(parent, s, color, y, startAngle){
+	// DEFAULTS
+	color = color || 'black';
+	y = y || 0;
+	startAngle = startAngle || 0;
+	// MAIN
+	var charAngle = 2.6 / Math.pow(Math.abs(y), 2);
+	for (var j = 0; j < s.length; j++){
+		var char = s[j];
+		var hLabel = createSvgElement('text');
+		parent.appendChild(hLabel);
+		hLabel.innerHTML = char;
+		hLabel.setAttribute('fill', color);
+		hLabel.setAttribute('text-align', 'center');
+		hLabel.setAttribute('y', y);
+		var thetaChar = charAngle * j - charAngle * s.length/2;
+		var theta = startAngle + thetaChar;
+		hLabel.setAttribute('transform', 'rotate(' + theta + ', 0, 0)');
+	}
+	return hLabel;
 }
