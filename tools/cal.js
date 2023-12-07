@@ -464,7 +464,7 @@ function main(t = new Date()){
 	// timestamp
 	document.getElementById('timestamp').innerHTML = romanFULL(new Date());
 	// done loading
-	console.info('erecal.js successfully loaded.');
+	console.info('cal.js successfully loaded.');
 }
 
 function refresh(t = new Date()){
