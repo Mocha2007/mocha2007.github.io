@@ -212,7 +212,7 @@ function goldClock(t = new Date(), lang = 'EN'){
 	// main
 	var svg = createSvgElement('svg');
 	svg.classList.add('sundial');
-	var size = 13;
+	var size = 14;
 	svg.setAttribute('viewBox', [-size/10, -size/10, size/5, size/5].join(' '));
 	svg.setAttribute('width', 10*svgScale);
 	svg.setAttribute('height', 10*svgScale);
@@ -228,16 +228,21 @@ function goldClock(t = new Date(), lang = 'EN'){
 	var _1mo = new Date(t.getFullYear(), t.getMonth()+1) - new Date(t.getFullYear(), t.getMonth());
 	var _1y = new Date(t.getFullYear()+1, 0) - new Date(t.getFullYear(), 0);
 	var LUNAR_SYNODIC_PERIOD = 29.530594*_1d;
+	var LUNAR_DRACONIC_PERIOD = 27.212220817*_1d;
+	var EY = LUNAR_SYNODIC_PERIOD * LUNAR_DRACONIC_PERIOD
+		/ (LUNAR_SYNODIC_PERIOD - LUNAR_DRACONIC_PERIOD); // ~346.62d
 	var YTROPICAL = 365.24219 * _1d;
 	var moonPhase = (t - new Date(2023, 11, 12, 18, 31))/(29.530594*_1d) % 1;
-	var intervals = [_1m, _1h, _1d, _1w, _1mo, _1y, LUNAR_SYNODIC_PERIOD, YTROPICAL];
-	var divisions = [60, 60, 24, 7, _1mo/_1d, 12, 8, 4];
-	var indices = [0, 0, 'H', 'D', 1, 'mo', 'M', 'S'];
+	var intervals = [_1m, _1h, _1d, _1w, _1mo, _1y,
+		LUNAR_SYNODIC_PERIOD, YTROPICAL, EY];
+	var divisions = [60, 60, 24, 7, _1mo/_1d, 12, 8, 4, 24];
+	var indices = [0, 0, 'H', 'D', 1, 'mo', 'M', 'S', 'E'];
 	var progress = [t/_1m%1, t/_1h%1, t/_1d%1, (+t+4*_1d)/_1w%1];
 	progress.push((t.getDate()-1+progress[2])*_1d/_1mo); // days in the present month
 	progress.push((t.getMonth()+progress[4])*_1mo/_1y); // months in the present year
 	progress.push(moonPhase); // moon phase
 	progress.push((t - new Date(2023, 2, 20, 21, 25))/YTROPICAL%1); // season progress
+	progress.push((t - new Date(2020, 5, 5, 19, 25, 2))/(EY)%1); // eclipse season
 	intervals.forEach((_, i, a) => {
 		var back = colorScheme[i%2];
 		var fore = colorScheme[(i+1)%2];
@@ -260,6 +265,9 @@ function goldClock(t = new Date(), lang = 'EN'){
 			switch (ind = indices[i]){
 				case 'D':
 					s = goldClock.language[lang].day[j];
+					break;
+				case 'E':
+					s = goldClock.language[lang].eclipse[j];
 					break;
 				case 'H':
 					s = (j%12 || 12) + 'ap'[Math.floor(j/12)];
@@ -307,12 +315,14 @@ function goldClock(t = new Date(), lang = 'EN'){
 goldClock.language = {
 	EN: {
 		day: 'Sun Mon Tues Wednes Thurs Fri Satur'.split(' ').map(s => s + 'day'),
+		eclipse: 'E E E          E E E         '.split(' '),
 		month: 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' '),
 		moon: 'New +C 1st +G Full -G 3rd -C'.split(' '),
 		season: 'Spring Summer Fall Winter'.split(' '),
 	},
 	LA: {
 		day: 'Sōlis Lūnae Mārtis Mercuriī Iovis Veneris Saturnī'.split(' ').map(s => 'Diēs '+s),
+		eclipse: 'E E E          E E E         '.split(' '),
 		month: 'Iān Feb Mār Apr Māi Iūn Iūl Aug Sep Oct Nov Dec'.split(' '),
 		moon: 'Nova AC AD AIOI Plena DIOI DD DC'.split(' '),
 		season: 'Vēr Aestās Autumnus Hiems'.split(' '),
