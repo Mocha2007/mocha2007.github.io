@@ -206,7 +206,7 @@ function printCharArc(parent, s, color, y, startAngle){
 
 // ok below this line you can use es6 lol
 
-function goldClock(t = new Date()){
+function goldClock(t = new Date(), lang = 'EN'){
 	var barWidth = 0.01;
 	var colorScheme = ['#fc0', '#860', '#640'];
 	// main
@@ -238,7 +238,7 @@ function goldClock(t = new Date()){
 	progress.push((t.getMonth()+progress[4])*_1mo/_1y); // months in the present year
 	progress.push(moonPhase); // moon phase
 	progress.push((t - new Date(2023, 2, 20, 21, 25))/YTROPICAL%1); // season progress
-	intervals.forEach((interval, i, a) => {
+	intervals.forEach((_, i, a) => {
 		var back = colorScheme[i%2];
 		var fore = colorScheme[(i+1)%2];
 		var i_ = a.length-i;
@@ -259,19 +259,19 @@ function goldClock(t = new Date()){
 			var ind, s;
 			switch (ind = indices[i]){
 				case 'D':
-					s = 'Sun Mon Tue Wed Thu Fri Sat'.split(' ')[j];
+					s = goldClock.language[lang].day[j];
 					break;
 				case 'H':
 					s = (j%12 || 12) + 'ap'[Math.floor(j/12)];
 					break;
 				case 'M':
-					s = 'New +C 1st +G Full -G 3rd -C'.split(' ')[j];
+					s = goldClock.language[lang].moon[j];
 					break;
 				case 'mo':
-					s = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ')[j];
+					s = goldClock.language[lang].month[j];
 					break;
 				case 'S':
-					s = 'Spring Summer Fall Winter'.split(' ')[j];
+					s = goldClock.language[lang].season[j];
 					break;
 				default:
 					s = ''+(j + ind);
@@ -304,3 +304,17 @@ function goldClock(t = new Date()){
 	diskH.style.fill = colorScheme[intervals.length%2];
 	return svg;
 }
+goldClock.language = {
+	EN: {
+		day: 'Sun Mon Tues Wednes Thurs Fri Satur'.split(' ').map(s => s + 'day'),
+		month: 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' '),
+		moon: 'New +C 1st +G Full -G 3rd -C'.split(' '),
+		season: 'Spring Summer Fall Winter'.split(' '),
+	},
+	LA: {
+		day: 'Sōlis Lūnae Mārtis Mercuriī Iovis Veneris Saturnī'.split(' ').map(s => 'Diēs '+s),
+		month: 'Iān Feb Mār Apr Māi Iūn Iūl Aug Sep Oct Nov Dec'.split(' '),
+		moon: 'Nova AC AD AIOI Plena DIOI DD DC'.split(' '),
+		season: 'Vēr Aestās Autumnus Hiems'.split(' '),
+	},
+};

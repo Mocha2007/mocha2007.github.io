@@ -146,6 +146,7 @@ const calendars = {
 
 const time = {
 	CONFIG: {
+		LANG: 'EN',
 		SEASON: false,
 		SEASONS: {
 			CAL: ['16 APR', '1 JUN', '1 JUL', '16 OCT'], // appx
@@ -457,7 +458,7 @@ function main(t = new Date()){
 	refreshClock();
 	refreshSundial();
 	setInterval(refresh, 200); // if you set to 1s, it's not exactly 1000ms so sometimes the clock could "miss" a second - the same issue happens with 200ms, but with time so short you can't actually perceive it
-	setInterval(refreshClock, 1000/25);
+	setInterval(refreshClock, 1000/20);
 	const sundialSize = document.getElementsByClassName('sundial')[0].getBoundingClientRect().width;
 	const sundialPixelAngle = Math.atan2(1, sundialSize);
 	const sundialInterval = _1d*sundialPixelAngle/Math.PI;
@@ -484,7 +485,7 @@ function refreshSundial(t = new Date()){
 function refreshClock(t = new Date()){
 	const container = document.getElementById('clock');
 	container.innerHTML = '';
-	container.appendChild(goldClock(t));
+	container.appendChild(goldClock(t, time.CONFIG.LANG));
 }
 
 main();
