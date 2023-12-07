@@ -351,8 +351,8 @@ goldClock.language = {
 		eclipse: 'E E E          E E E         '.split(' '),
 		// ordinals
 		month: 'pr̥h₃ h₂én tri kʷet pen swe sep oḱt h₁ne deḱ h₁oy dwi'.split(' '),
-		// todo...
-		moon: 'néwos AC pr̥h₃wós AIOI pl̥h₁nós DIOI tritós DC'.split(' '), // mḗh₁n̥s is masculine
+		// waxing = ḱreh₁sḱónts; waning = deḱreh₁sḱónts; crescent = ḱr̥h₂nós; gibbous = geybʰós
+		moon: 'néwos ḱḱ pr̥h₃wós gḱ pl̥h₁nós gd tritós ḱd'.split(' '), // mḗh₁n̥s is masculine
 		season: 'wósr̥ sm̥h₂ós (s)h₁esós ǵʰéyōm'.split(' '),
 		//       wr̥h₁ḗn táwros yémHoes karkros ?leóntos pr̥spténos ?ledʰreh₂ ?skorpéos ?lenk- kápros h₂ékʷeh₂ dʰǵʰúHes
 		zodiac: 'wr̥h₁ táw yém kar leó pr̥s ledʰ sko len káp h₂ékʷ dʰǵʰú'.split(' '),
