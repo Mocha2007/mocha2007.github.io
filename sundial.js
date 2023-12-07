@@ -50,7 +50,7 @@ function sundial(dayPhase, moonPhase, ornamental, planets, planetNames){
 	var g = createSvgElement('g');
 	svg.appendChild(g);
 	// rotate entire image
-	var globalTheta = 360 * -dayPhase + 90;
+	var globalTheta = 360 * dayPhase - 90;
 	g.setAttribute('transform', 'rotate(' + globalTheta + ', 0, 0)');
 	// day disk
 	var dayDisk = createSvgElement('circle');
@@ -126,7 +126,7 @@ function sundial(dayPhase, moonPhase, ornamental, planets, planetNames){
 			dayLabel.setAttribute('text-align', 'center');
 			dayLabel.setAttribute('x', labelDelta * s.length);
 			dayLabel.setAttribute('y', -0.8);
-			var theta = 270 + 45*i;
+			var theta = 90 - 45*i;
 			dayLabel.setAttribute('transform', 'rotate(' + theta + ', 0, 0)');
 		}
 		// bottom half of mc clock
@@ -161,20 +161,25 @@ function sundial(dayPhase, moonPhase, ornamental, planets, planetNames){
 				hLabel.setAttribute('text-align', 'center');
 				hLabel.setAttribute('x', labelDelta * s.length);
 				hLabel.setAttribute('y', -1.015);
-				theta = 15 + 15*i;
+				theta = -15 - 15*i;
 				hLabel.setAttribute('transform', 'rotate(' + theta + ', 0, 0)');
 			}
 			// east/west
 			var eastLabel = hLabel.cloneNode();
 			svg.appendChild(eastLabel);
-			eastLabel.innerHTML = 'EAST';
+			eastLabel.innerHTML = 'WEST';
 			eastLabel.setAttribute('x', 0.45);
 			eastLabel.setAttribute('y', 0.03);
 			eastLabel.setAttribute('transform', 'rotate(0, 0, 0)');
 			var westLabel = eastLabel.cloneNode();
 			svg.appendChild(westLabel);
-			westLabel.innerHTML = 'WEST';
+			westLabel.innerHTML = 'EAST';
 			westLabel.setAttribute('x', -0.65);
+			var southLabel = eastLabel.cloneNode();
+			svg.appendChild(southLabel);
+			southLabel.innerHTML = 'Z';
+			southLabel.setAttribute('x', -0.025);
+			southLabel.setAttribute('y', -0.08);
 		}
 	}
 	return svg;
