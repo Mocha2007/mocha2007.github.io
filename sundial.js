@@ -265,7 +265,7 @@ function goldClock(t = new Date()){
 					s = (j%12 || 12) + 'ap'[Math.floor(j/12)];
 					break;
 				case 'M':
-					s = 'New +C 1 +G Full -G 3 -C'.split(' ')[j];
+					s = 'New +C 1st +G Full -G 3rd -C'.split(' ')[j];
 					break;
 				case 'mo':
 					s = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ')[j];
