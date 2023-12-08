@@ -242,7 +242,7 @@ function goldClock(t = new Date(), lang = 'EN'){
 	progress.push((t.getUTCDate()-1+progress[2])*_1d/_1mo); // days in the present month
 	progress.push((t.getUTCMonth()+progress[4])*_1mo/_1y); // months in the present year
 	progress.push((ACTUAL_TIME - EPOCH_EQUINOX_VERNAL)/YTROPICAL%1); // season progress
-	progress.push(progress[7]); // zodiac progress
+	progress.push(progress[6]); // zodiac progress
 	progress.push(moonPhase); // moon phase
 	progress.push(moonPhase); // eclipse 1 (synodic)
 	progress.push((ACTUAL_TIME - EPOCH_MOON_DESCENDING_NODE)/LUNAR_DRACONIC_PERIOD%1); // eclipse 2 (draconic)
