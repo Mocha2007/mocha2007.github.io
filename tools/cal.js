@@ -1,7 +1,8 @@
 /* eslint-disable max-len */
 /* global getEaster, goldClock, phoonsvg, romanFULL, sundial */
 
-const _1h = 1000*60*60;
+const _1m = 60*1000;
+const _1h = 60*_1m;
 const _1d = 24*_1h;
 
 function mod(n, m){
@@ -190,7 +191,8 @@ const time = {
 			THAI: ['Hot', 'Rainy', 'Cold'],
 		},
 		UPDATE_INTERVAL: {
-			CLOCK: 50,
+			CLOCK: 0,
+			SUNDIAL: 0,
 		},
 	},
 	equinox: [
@@ -465,10 +467,10 @@ function main(t = new Date()){
 	setInterval(refresh, 200); // if you set to 1s, it's not exactly 1000ms so sometimes the clock could "miss" a second - the same issue happens with 200ms, but with time so short you can't actually perceive it
 	const sundialSize = document.getElementsByClassName('sundial')[0].getBoundingClientRect().width;
 	const sundialPixelAngle = Math.atan2(1, sundialSize);
-	const sundialInterval = _1d*sundialPixelAngle/Math.PI;
-	console.info(`Sundial update interval: ${sundialInterval} ms`);
+	const sundialInterval = time.CONFIG.UPDATE_INTERVAL.SUNDIAL || _1d*sundialPixelAngle/Math.PI;
+	console.info(`Sundial update interval: ${sundialInterval/1000} s`);
 	setInterval(refreshSundial, sundialInterval); // updates in the time it takes for pixels to shift over 1 unit
-	const clockInterval = time.CONFIG.UPDATE_INTERVAL.CLOCK || _1h*sundialPixelAngle/Math.PI;
+	const clockInterval = time.CONFIG.UPDATE_INTERVAL.CLOCK || _1m*sundialPixelAngle/Math.PI;
 	console.info(`Clock update interval: ${clockInterval} ms`);
 	setInterval(refreshClock, clockInterval);
 	// timestamp
