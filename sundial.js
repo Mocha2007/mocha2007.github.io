@@ -219,8 +219,8 @@ function goldClock(t = new Date(), lang = 'EN'){
 	var _1m = 1000*60, _1h = _1m*60, _1d = _1h*24, _1w = _1d*7;
 	t = new Date(t - t.getTimezoneOffset()*_1m);
 	// eslint-disable-next-line max-len
-	var _1mo = new Date(t.getFullYear(), t.getMonth()+1) - new Date(t.getFullYear(), t.getMonth());
-	var _1y = new Date(t.getFullYear()+1, 0) - new Date(t.getFullYear(), 0);
+	var _1mo = new Date(t.getUTCFullYear(), t.getUTCMonth()+1) - new Date(t.getUTCFullYear(), t.getUTCMonth());
+	var _1y = new Date(t.getUTCFullYear()+1, 0) - new Date(t.getUTCFullYear(), 0);
 	var LUNAR_SYNODIC_PERIOD = 29.530594*_1d;
 	var LUNAR_DRACONIC_PERIOD = 27.212220817*_1d;
 	var EY = LUNAR_SYNODIC_PERIOD * LUNAR_DRACONIC_PERIOD
@@ -228,15 +228,15 @@ function goldClock(t = new Date(), lang = 'EN'){
 	var YTROPICAL = 365.24219 * _1d;
 	var moonPhase = (t - new Date(2023, 11, 12, 18, 31))/(29.530594*_1d) % 1;
 	var intervals = [_1m, _1h, _1d, _1w, _1mo, _1y,
-		LUNAR_SYNODIC_PERIOD, YTROPICAL, YTROPICAL, EY];
-	var divisions = [60, 60, 24, 7, _1mo/_1d, 12, 8, 12, 4, 24];
-	var indices = [0, 0, 'H', 'D', 1, 'mo', 'M', 'Z', 'S', 'E'];
+		YTROPICAL, YTROPICAL, LUNAR_SYNODIC_PERIOD, EY];
+	var divisions = [60, 60, 24, 7, _1mo/_1d, 12, 12, 4, 8, 24];
+	var indices = [0, 0, 'H', 'D', 1, 'mo', 'Z', 'S', 'M', 'E'];
 	var progress = [t/_1m%1, t/_1h%1, t/_1d%1, (+t+4*_1d)/_1w%1];
-	progress.push((t.getDate()-1+progress[2])*_1d/_1mo); // days in the present month
-	progress.push((t.getMonth()+progress[4])*_1mo/_1y); // months in the present year
-	progress.push(moonPhase); // moon phase
+	progress.push((t.getUTCDate()-1+progress[2])*_1d/_1mo); // days in the present month
+	progress.push((t.getUTCMonth()+progress[4])*_1mo/_1y); // months in the present year
 	progress.push((t - new Date(2023, 2, 20, 21, 25))/YTROPICAL%1); // season progress
 	progress.push(progress[7]); // zodiac progress
+	progress.push(moonPhase); // moon phase
 	progress.push((t - new Date(2020, 5, 5, 19, 25, 2))/EY%1); // eclipse season
 	intervals.forEach((_, i, a) => {
 		var back = colorScheme[i%2];
