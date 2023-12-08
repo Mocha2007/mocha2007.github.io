@@ -271,13 +271,13 @@ function goldClock(t = new Date(), lang = 'EN'){
 					s = goldClock.language[lang].day[j];
 					break;
 				case 'E1':
-					s = j % 15 ? '' : 'SL'[j/15];
+					s = 'S             LL             S'[j];
 					break;
 				case 'E2':
-					s = j % 14 ? '' : '-+'[j/14];
+					s = '--          ++++          --'[j];
 					break;
 				case 'E3':
-					s = j % 14 ? '' : 'PA'[j/14];
+					s = 'pTTTTTAAAAAAAaaAAAAAAATTTTTp'[j];
 					break;
 				case 'H':
 					s = goldClock.language[lang].ap[Math.floor(j/12)].replace('_', j%12 || 12);
