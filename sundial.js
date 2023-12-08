@@ -236,7 +236,7 @@ function goldClock(t = new Date(), lang = 'EN'){
 	var intervals = [_1m, _1h, _1d, _1w, _1mo, _1y,
 		YTROPICAL, YTROPICAL, LUNAR_SYNODIC_PERIOD,
 		LUNAR_SYNODIC_PERIOD, LUNAR_DRACONIC_PERIOD, LUNAR_ANOMALISTIC_PERIOD]; // eclipse shit
-	var divisions = [60, 60, 24, 7, _1mo/_1d, 12, 12, 4, 8, 30, 28, 13];
+	var divisions = [60, 60, 24, 7, _1mo/_1d, 12, 12, 4, 8, 30, 28, 28];
 	var indices = [0, 0, 'H', 'D', 1, 'mo', 'Z', 'S', 'M', 'E1', 'E2', 'E3'];
 	var progress = [t/_1m%1, t/_1h%1, t/_1d%1, (+t+4*_1d)/_1w%1];
 	progress.push((t.getUTCDate()-1+progress[2])*_1d/_1mo); // days in the present month
@@ -246,7 +246,7 @@ function goldClock(t = new Date(), lang = 'EN'){
 	progress.push((moonPhase + 1/16)%1); // moon phase
 	progress.push(moonPhase); // eclipse 1 (synodic)
 	progress.push((ACTUAL_TIME - EPOCH_MOON_DESCENDING_NODE)/LUNAR_DRACONIC_PERIOD%1); // eclipse 2 (draconic)
-	progress.push((ACTUAL_TIME - EPOCH_MOON_PERIGEE)/LUNAR_ANOMALISTIC_PERIOD%1); // eclipse 3 (anomalistic) (for determining totality)
+	progress.push(((ACTUAL_TIME - EPOCH_MOON_PERIGEE)/LUNAR_ANOMALISTIC_PERIOD + 0.5/28)%1); // eclipse 3 (anomalistic) (for determining totality)
 	intervals.forEach((_, i, a) => {
 		var back = colorScheme[i%2];
 		var fore = colorScheme[(i+1)%2];
@@ -277,7 +277,7 @@ function goldClock(t = new Date(), lang = 'EN'){
 					s = '☋☋          ☊☊☊☊          ☋☋'[j];
 					break;
 				case 'E3':
-					s = 'TTTAAAAAAATTT'[j]; // 68/147 tot/ann/hyb eclipses in the 21st century are total which is ~46.3% ~6/13
+					s = j%14 ? '' : 'qQ'[j/14]; // 68/147 tot/ann/hyb eclipses in the 21st century are total which is ~46.3% ~6/13
 					break;
 				case 'H':
 					s = goldClock.language[lang].ap[Math.floor(j/12)].replace('_', j%12 || 12);
