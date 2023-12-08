@@ -151,6 +151,7 @@ const time = {
 		DEBUG: document.URL[0].toLowerCase() === 'f', // file:// vs. http(s)://
 		FAST_CLOCK: false,
 		LANG: 'EN',
+		OFFSET: false,
 		SEASON: false,
 		SEASONS: {
 			CAL: ['16 APR', '1 JUN', '1 JUL', '16 OCT'], // appx
@@ -494,6 +495,7 @@ function refreshSundial(t = new Date()){
 }
 
 function refreshClock(t = new Date()){
+	t = new Date(+t + time.CONFIG.OFFSET);
 	if (time.CONFIG.FAST_CLOCK)
 		t = new Date((t - new Date(t.getFullYear(), 0, 1))*time.CONFIG.FAST_CLOCK);
 	const container = document.getElementById('clock');
