@@ -173,6 +173,8 @@ function sundial(dayPhase, moonPhase, ornamental, planets, planetNames){
 	return svg;
 }
 
+// ok below this line you can use es6 lol
+
 /**
  * @param {SVGElement} parent
  * @param {string} s
@@ -181,30 +183,22 @@ function sundial(dayPhase, moonPhase, ornamental, planets, planetNames){
  * @param {number} startAngle (default: 0)
  * @returns {SVGTextElement} the last char
  */
-function printCharArc(parent, s, color, y, startAngle){
-	// DEFAULTS
-	color = color || 'black';
-	y = y || 0;
-	startAngle = startAngle || 0;
+function printCharArc(parent, s, color = 'black', y = 0, startAngle = 0){
 	// MAIN
 	var charAngle = 3 / Math.abs(y);
 	for (var j = 0; j < s.length; j++){
-		var char = s[j];
 		var hLabel = createSvgElement('text');
 		parent.appendChild(hLabel);
-		hLabel.innerHTML = char;
+		hLabel.innerHTML = s[j];
 		hLabel.setAttribute('fill', color);
 		// hLabel.setAttribute('font-size', fontSize);
-		hLabel.setAttribute('text-align', 'center');
+		// hLabel.setAttribute('text-align', 'center');
 		hLabel.setAttribute('y', y);
-		var thetaChar = charAngle * j - charAngle * s.length/2 + 0.1;
-		var theta = startAngle + thetaChar;
+		var theta = startAngle + charAngle * j - charAngle * s.length/2 + 0.1;
 		hLabel.setAttribute('transform', 'rotate(' + theta + ', 0, 0)');
 	}
 	return hLabel;
 }
-
-// ok below this line you can use es6 lol
 
 function goldClock(t = new Date(), lang = 'EN'){
 	var barWidth = 0.01;
