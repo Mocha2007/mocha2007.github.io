@@ -201,12 +201,15 @@ function printCharArc(parent, s, color = 'black', y = 0, startAngle = 0){
 }
 
 function goldClock(t = new Date(), lang = 'EN'){
+	var EPOCH_EQUINOX_VERNAL = new Date(2023, 2, 20, 21, 25);
+	var EPOCH_MOON_NEW = new Date(2023, 11, 12, 18, 31);
+	var EPOCH_MOON_DESCENDING_NODE = new Date(2020, 5, 5, 19, 25, 2);
 	var barWidth = 0.01;
 	var colorScheme = ['#fc0', '#860', '#640'];
 	// main
 	var svg = createSvgElement('svg');
 	svg.classList.add('sundial');
-	var size = 15;
+	var size = 16;
 	svg.setAttribute('viewBox', [-size/10, -size/10, size/5, size/5].join(' '));
 	svg.setAttribute('width', 10*svgScale);
 	svg.setAttribute('height', 10*svgScale);
@@ -223,21 +226,23 @@ function goldClock(t = new Date(), lang = 'EN'){
 	var _1y = new Date(t.getUTCFullYear()+1, 0) - new Date(t.getUTCFullYear(), 0);
 	var LUNAR_SYNODIC_PERIOD = 29.530594*_1d;
 	var LUNAR_DRACONIC_PERIOD = 27.212220817*_1d;
-	var EY = LUNAR_SYNODIC_PERIOD * LUNAR_DRACONIC_PERIOD
-		/ (LUNAR_SYNODIC_PERIOD - LUNAR_DRACONIC_PERIOD); // ~346.62d
+	// var EY = LUNAR_SYNODIC_PERIOD * LUNAR_DRACONIC_PERIOD
+	//	/ (LUNAR_SYNODIC_PERIOD - LUNAR_DRACONIC_PERIOD); // ~346.62d
 	var YTROPICAL = 365.24219 * _1d;
-	var moonPhase = (t - new Date(2023, 11, 12, 18, 31))/(29.530594*_1d) % 1;
+	var moonPhase = (t - EPOCH_MOON_NEW)/(29.530594*_1d) % 1;
 	var intervals = [_1m, _1h, _1d, _1w, _1mo, _1y,
-		YTROPICAL, YTROPICAL, LUNAR_SYNODIC_PERIOD, EY];
-	var divisions = [60, 60, 24, 7, _1mo/_1d, 12, 12, 4, 8, 24];
-	var indices = [0, 0, 'H', 'D', 1, 'mo', 'Z', 'S', 'M', 'E'];
+		YTROPICAL, YTROPICAL, LUNAR_SYNODIC_PERIOD,
+		LUNAR_SYNODIC_PERIOD, LUNAR_DRACONIC_PERIOD]; // eclipse shit
+	var divisions = [60, 60, 24, 7, _1mo/_1d, 12, 12, 4, 8, 30, 28];
+	var indices = [0, 0, 'H', 'D', 1, 'mo', 'Z', 'S', 'M', 'E1', 'E2'];
 	var progress = [t/_1m%1, t/_1h%1, t/_1d%1, (+t+4*_1d)/_1w%1];
 	progress.push((t.getUTCDate()-1+progress[2])*_1d/_1mo); // days in the present month
 	progress.push((t.getUTCMonth()+progress[4])*_1mo/_1y); // months in the present year
-	progress.push((t - new Date(2023, 2, 20, 21, 25))/YTROPICAL%1); // season progress
+	progress.push((t - EPOCH_EQUINOX_VERNAL)/YTROPICAL%1); // season progress
 	progress.push(progress[7]); // zodiac progress
 	progress.push(moonPhase); // moon phase
-	progress.push((t - new Date(2020, 5, 5, 19, 25, 2))/EY%1); // eclipse season
+	progress.push(moonPhase); // eclipse 1 (synodic)
+	progress.push((t - EPOCH_MOON_DESCENDING_NODE)/LUNAR_DRACONIC_PERIOD%1); // eclipse 2 (draconic)
 	intervals.forEach((_, i, a) => {
 		var back = colorScheme[i%2];
 		var fore = colorScheme[(i+1)%2];
@@ -261,8 +266,11 @@ function goldClock(t = new Date(), lang = 'EN'){
 				case 'D':
 					s = goldClock.language[lang].day[j];
 					break;
-				case 'E':
-					s = goldClock.language[lang].eclipse[j];
+				case 'E1':
+					s = j % 15 ? '' : 'SL'[j/15];
+					break;
+				case 'E2':
+					s = j % 14 ? '' : '-+'[j/14];
 					break;
 				case 'H':
 					s = goldClock.language[lang].ap[Math.floor(j/12)].replace('_', j%12 || 12);
@@ -314,7 +322,6 @@ goldClock.language = {
 	EN: {
 		ap: 'ap'.split('').map(s => '_'+s),
 		day: 'Sun Mon Tues Wednes Thurs Fri Satur'.split(' ').map(s => s + 'day'),
-		eclipse: 'E E E          E E E         '.split(' '),
 		month: 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' '),
 		moon: 'New +C 1st +G Full -G 3rd -C'.split(' '),
 		season: 'Spring Summer Fall Winter'.split(' '),
@@ -323,7 +330,6 @@ goldClock.language = {
 	JP: {
 		ap: '前後'.split('').map(s => '午 '+s+' _'),
 		day: '日 月 火 水 木 金 土'.split(' ').map(s => s + ' 曜 日'),
-		eclipse: '食 食 食          食 食 食         '.split(' '),
 		month: '一\t二\t三\t四\t五\t六\t七\t八\t九\t十\t十 一\t十 二'.split('\t').map(s => s+' 月'),
 		moon: '新 月\t三 日 月\t上 弦\t十 一 日 月\t満 月\t十 八 日 月\t下 弦\t二 十 六 日 月'.split('\t'),
 		season: '春 夏 秋 冬'.split(' '),
@@ -332,7 +338,6 @@ goldClock.language = {
 	LA: {
 		ap: 'ap'.split('').map(s => '_'+s),
 		day: 'Sōlis Lūnae Mārtis Mercuriī Iovis Veneris Saturnī'.split(' ').map(s => 'Diēs '+s),
-		eclipse: 'E E E          E E E         '.split(' '),
 		month: 'Iān Feb Mār Apr Māi Iūn Iūl Aug Sep Oct Nov Dec'.split(' '),
 		moon: 'Nova AC AD AIOI Plena DIOI DD DC'.split(' '),
 		season: 'Vēr Aestās Autumnus Hiems'.split(' '),
@@ -342,7 +347,6 @@ goldClock.language = {
 		ap: 'h₂ p'.split(' ').map(s => '_'+s),
 		//made up ones:        Ares   Hermes       Venus     Cronus
 		day: 'sh₂wéns méh₁n̥sos h₂erés sermés diwés wénh₁osyo krónosyo'.split(' ').map(s => 'dyḗws '+s),
-		eclipse: 'E E E          E E E         '.split(' '),
 		// ordinals
 		month: 'pr̥h₃ h₂én tri kʷet pen swe sep oḱt h₁ne deḱ h₁oy dwi'.split(' '),
 		// waxing = ḱreh₁sḱónts; waning = deḱreh₁sḱónts; crescent = ḱr̥h₂nós; gibbous = geybʰós

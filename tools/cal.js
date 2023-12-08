@@ -149,6 +149,7 @@ const calendars = {
 const time = {
 	CONFIG: {
 		DEBUG: document.URL[0].toLowerCase() === 'f', // file:// vs. http(s)://
+		FAST_CLOCK: false,
 		LANG: 'EN',
 		SEASON: false,
 		SEASONS: {
@@ -493,6 +494,8 @@ function refreshSundial(t = new Date()){
 }
 
 function refreshClock(t = new Date()){
+	if (time.CONFIG.FAST_CLOCK)
+		t = new Date((t - new Date(t.getFullYear(), 0, 1))*time.CONFIG.FAST_CLOCK);
 	const container = document.getElementById('clock');
 	container.innerHTML = '';
 	container.appendChild(goldClock(t, time.CONFIG.LANG));
