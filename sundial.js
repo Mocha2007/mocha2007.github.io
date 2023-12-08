@@ -209,6 +209,7 @@ function goldClock(t = new Date(), lang = 'EN'){
 	var EPOCH_MOON_DESCENDING_NODE = new Date(2020, 5, 6, 18, 10); // https://astropixels.com/ephemeris/moon/moonnodes2001.html
 	var EPOCH_MOON_PERIGEE = new Date(2020, 0, 13, 20, 20); // unkhttps://astropixels.com/ephemeris/moon/moonperap2001.htmlnown
 	var colorScheme = ['#fc0', '#860', '#640'];
+	var colorScheme2 = ['#ccf', '#334', '#112'];
 	// main
 	var svg = createSvgElement('svg');
 	svg.classList.add('sundial');
@@ -238,6 +239,7 @@ function goldClock(t = new Date(), lang = 'EN'){
 		LUNAR_SYNODIC_PERIOD, LUNAR_DRACONIC_PERIOD, LUNAR_ANOMALISTIC_PERIOD]; // eclipse shit
 	var divisions = [60, 60, 24, 7, _1mo/_1d, 12, 12, 4, 8, 30, 28, 28];
 	var indices = [0, 0, 'H', 'D', 1, 'mo', 'Z', 'S', 'M', 'E1', 'E2', 'E3'];
+	var colors = [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1];
 	var progress = [t/_1m%1, t/_1h%1, t/_1d%1, (+t+4*_1d)/_1w%1];
 	progress.push((t.getUTCDate()-1+progress[2])*_1d/_1mo); // days in the present month
 	progress.push((t.getUTCMonth()+progress[4])*_1mo/_1y); // months in the present year
@@ -248,8 +250,9 @@ function goldClock(t = new Date(), lang = 'EN'){
 	progress.push(((ACTUAL_TIME - EPOCH_MOON_DESCENDING_NODE)/LUNAR_DRACONIC_PERIOD + 0.5/28)%1); // eclipse 2 (draconic)
 	progress.push(((ACTUAL_TIME - EPOCH_MOON_PERIGEE)/LUNAR_ANOMALISTIC_PERIOD + 0.5/28)%1); // eclipse 3 (anomalistic) (for determining totality)
 	intervals.forEach((_, i, a) => {
-		var back = colorScheme[i%2];
-		var fore = colorScheme[(i+1)%2];
+		var chosenScheme = [colorScheme, colorScheme2][colors[i]];
+		var back = chosenScheme[i%2];
+		var fore = chosenScheme[(i+1)%2];
 		var i_ = a.length-i;
 		var r = 0.5 + 0.1*i_;
 		var ang = 360 / divisions[i];
@@ -317,19 +320,19 @@ function goldClock(t = new Date(), lang = 'EN'){
 	bar.setAttribute('y', -size/10);
 	bar.setAttribute('width', barWidth);
 	bar.setAttribute('height', size/10);
-	bar.style.fill = colorScheme[2];
+	bar.style.fill = colorScheme2[2];
 	// center disk
 	var diskH = createSvgElement('circle');
 	svg.appendChild(diskH);
 	diskH.setAttribute('r', 0.5);
-	diskH.style.fill = colorScheme[intervals.length%2];
+	diskH.style.fill = colorScheme2[intervals.length%2];
 	// year
 	var yearLabel = createSvgElement('text');
 	svg.appendChild(yearLabel);
 	var yearString = yearLabel.innerHTML = ''+t.getUTCFullYear();
 	yearLabel.setAttribute('x', -0.055*yearString.length);
 	yearLabel.setAttribute('y', 0.05);
-	yearLabel.style.fill = colorScheme[1-intervals.length%2];
+	yearLabel.style.fill = colorScheme2[1-intervals.length%2];
 	yearLabel.style.fontSize = '0.2px';
 	return svg;
 }
