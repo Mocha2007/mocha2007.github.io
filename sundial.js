@@ -190,11 +190,11 @@ function printCharArc(parent, s, color = 'black', y = 0, startAngle = 0){
 		var hLabel = createSvgElement('text');
 		parent.appendChild(hLabel);
 		hLabel.innerHTML = s[j];
-		hLabel.setAttribute('fill', color);
+		hLabel.style.fill = color;
 		// hLabel.setAttribute('font-size', fontSize);
 		// hLabel.setAttribute('text-align', 'center');
 		hLabel.setAttribute('y', y);
-		var theta = startAngle + charAngle * j - charAngle * s.length/2 + 0.1;
+		var theta = startAngle + charAngle * (j - s.length/2) + 0.1;
 		hLabel.setAttribute('transform', 'rotate(' + theta + ', 0, 0)');
 	}
 	return hLabel;

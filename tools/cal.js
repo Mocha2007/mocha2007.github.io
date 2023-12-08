@@ -147,6 +147,7 @@ const calendars = {
 
 const time = {
 	CONFIG: {
+		DEBUG: document.URL[0].toLowerCase() === 'f', // file:// vs. http(s)://
 		LANG: 'EN',
 		SEASON: false,
 		SEASONS: {
@@ -473,6 +474,7 @@ function main(t = new Date()){
 	// timestamp
 	document.getElementById('timestamp').innerHTML = romanFULL(new Date());
 	// done loading
+	setInterval(refreshDebug, 3000);
 	console.info('cal.js successfully loaded.');
 }
 
@@ -492,6 +494,11 @@ function refreshClock(t = new Date()){
 	const container = document.getElementById('clock');
 	container.innerHTML = '';
 	container.appendChild(goldClock(t, time.CONFIG.LANG));
+}
+
+function refreshDebug(){
+	// const PCA_AVG = printCharArc.data.reduce((a, b) => a+b, 0) / printCharArc.data.length;
+	// console.debug(`PCA_AVG = ${PCA_AVG} ms`);
 }
 
 main();
