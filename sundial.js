@@ -274,7 +274,7 @@ function goldClock(t = new Date(), lang = 'EN'){
 					s = 'S             LL             S'[j];
 					break;
 				case 'E2':
-					s = '--          ++++          --'[j];
+					s = '☋☋          ☊☊☊☊          ☋☋'[j];
 					break;
 				case 'E3':
 					s = 'TTTAAAAAAATTT'[j]; // 68/147 tot/ann/hyb eclipses in the 21st century are total which is ~46.3% ~6/13
