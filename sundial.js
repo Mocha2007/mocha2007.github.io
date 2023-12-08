@@ -201,15 +201,17 @@ function printCharArc(parent, s, color = 'black', y = 0, startAngle = 0){
 }
 
 function goldClock(t = new Date(), lang = 'EN'){
+	var size = 17;
+	var barWidth = 0.01;
+	var ACTUAL_TIME = t;
 	var EPOCH_EQUINOX_VERNAL = new Date(2023, 2, 20, 21, 25);
 	var EPOCH_MOON_NEW = new Date(2023, 11, 12, 18, 31);
-	var EPOCH_MOON_DESCENDING_NODE = new Date(2020, 5, 5, 19, 25, 2);
-	var barWidth = 0.01;
+	var EPOCH_MOON_DESCENDING_NODE = new Date(2020, 5, 6, 18, 10); // https://astropixels.com/ephemeris/moon/moonnodes2001.html
+	var EPOCH_MOON_PERIGEE = new Date(2020, 0, 13, 20, 20); // unkhttps://astropixels.com/ephemeris/moon/moonperap2001.htmlnown
 	var colorScheme = ['#fc0', '#860', '#640'];
 	// main
 	var svg = createSvgElement('svg');
 	svg.classList.add('sundial');
-	var size = 16;
 	svg.setAttribute('viewBox', [-size/10, -size/10, size/5, size/5].join(' '));
 	svg.setAttribute('width', 10*svgScale);
 	svg.setAttribute('height', 10*svgScale);
@@ -226,23 +228,25 @@ function goldClock(t = new Date(), lang = 'EN'){
 	var _1y = new Date(t.getUTCFullYear()+1, 0) - new Date(t.getUTCFullYear(), 0);
 	var LUNAR_SYNODIC_PERIOD = 29.530594*_1d;
 	var LUNAR_DRACONIC_PERIOD = 27.212220817*_1d;
+	var LUNAR_ANOMALISTIC_PERIOD = 27.55454988*_1d;
 	// var EY = LUNAR_SYNODIC_PERIOD * LUNAR_DRACONIC_PERIOD
 	//	/ (LUNAR_SYNODIC_PERIOD - LUNAR_DRACONIC_PERIOD); // ~346.62d
 	var YTROPICAL = 365.24219 * _1d;
-	var moonPhase = (t - EPOCH_MOON_NEW)/(29.530594*_1d) % 1;
+	var moonPhase = (ACTUAL_TIME - EPOCH_MOON_NEW)/(29.530594*_1d) % 1;
 	var intervals = [_1m, _1h, _1d, _1w, _1mo, _1y,
 		YTROPICAL, YTROPICAL, LUNAR_SYNODIC_PERIOD,
-		LUNAR_SYNODIC_PERIOD, LUNAR_DRACONIC_PERIOD]; // eclipse shit
-	var divisions = [60, 60, 24, 7, _1mo/_1d, 12, 12, 4, 8, 30, 28];
-	var indices = [0, 0, 'H', 'D', 1, 'mo', 'Z', 'S', 'M', 'E1', 'E2'];
+		LUNAR_SYNODIC_PERIOD, LUNAR_DRACONIC_PERIOD, LUNAR_ANOMALISTIC_PERIOD]; // eclipse shit
+	var divisions = [60, 60, 24, 7, _1mo/_1d, 12, 12, 4, 8, 30, 28, 28];
+	var indices = [0, 0, 'H', 'D', 1, 'mo', 'Z', 'S', 'M', 'E1', 'E2', 'E3'];
 	var progress = [t/_1m%1, t/_1h%1, t/_1d%1, (+t+4*_1d)/_1w%1];
 	progress.push((t.getUTCDate()-1+progress[2])*_1d/_1mo); // days in the present month
 	progress.push((t.getUTCMonth()+progress[4])*_1mo/_1y); // months in the present year
-	progress.push((t - EPOCH_EQUINOX_VERNAL)/YTROPICAL%1); // season progress
+	progress.push((ACTUAL_TIME - EPOCH_EQUINOX_VERNAL)/YTROPICAL%1); // season progress
 	progress.push(progress[7]); // zodiac progress
 	progress.push(moonPhase); // moon phase
 	progress.push(moonPhase); // eclipse 1 (synodic)
-	progress.push((t - EPOCH_MOON_DESCENDING_NODE)/LUNAR_DRACONIC_PERIOD%1); // eclipse 2 (draconic)
+	progress.push((ACTUAL_TIME - EPOCH_MOON_DESCENDING_NODE)/LUNAR_DRACONIC_PERIOD%1); // eclipse 2 (draconic)
+	progress.push((ACTUAL_TIME - EPOCH_MOON_PERIGEE)/LUNAR_ANOMALISTIC_PERIOD%1); // eclipse 3 (anomalistic) (for determining totality)
 	intervals.forEach((_, i, a) => {
 		var back = colorScheme[i%2];
 		var fore = colorScheme[(i+1)%2];
@@ -271,6 +275,9 @@ function goldClock(t = new Date(), lang = 'EN'){
 					break;
 				case 'E2':
 					s = j % 14 ? '' : '-+'[j/14];
+					break;
+				case 'E3':
+					s = j % 14 ? '' : 'PA'[j/14];
 					break;
 				case 'H':
 					s = goldClock.language[lang].ap[Math.floor(j/12)].replace('_', j%12 || 12);
