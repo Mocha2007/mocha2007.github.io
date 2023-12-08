@@ -282,7 +282,7 @@ function goldClock(t = new Date(), lang = 'EN'){
 				default:
 					s = ''+(j + ind);
 			}
-			printCharArc(gH, ''+s, fore, 0.08 - r, theta + ang/2);
+			printCharArc(gH, s, fore, 0.08 - r, theta + ang/2);
 			// tick
 			var tick = createSvgElement('rect');
 			gH.appendChild(tick);
