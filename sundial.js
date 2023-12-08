@@ -323,6 +323,14 @@ function goldClock(t = new Date(), lang = 'EN'){
 	svg.appendChild(diskH);
 	diskH.setAttribute('r', 0.5);
 	diskH.style.fill = colorScheme[intervals.length%2];
+	// year
+	var yearLabel = createSvgElement('text');
+	svg.appendChild(yearLabel);
+	var yearString = yearLabel.innerHTML = ''+t.getUTCFullYear();
+	yearLabel.setAttribute('x', -0.055*yearString.length);
+	yearLabel.setAttribute('y', 0.05);
+	yearLabel.style.fill = colorScheme[1-intervals.length%2];
+	yearLabel.style.fontSize = '0.2px';
 	return svg;
 }
 goldClock.language = {
