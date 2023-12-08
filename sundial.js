@@ -244,8 +244,8 @@ function goldClock(t = new Date(), lang = 'EN'){
 	progress.push((ACTUAL_TIME - EPOCH_EQUINOX_VERNAL)/YTROPICAL%1); // season progress
 	progress.push(progress[6]); // zodiac progress
 	progress.push((moonPhase + 1/16)%1); // moon phase
-	progress.push(moonPhase); // eclipse 1 (synodic)
-	progress.push((ACTUAL_TIME - EPOCH_MOON_DESCENDING_NODE)/LUNAR_DRACONIC_PERIOD%1); // eclipse 2 (draconic)
+	progress.push((moonPhase + 0.5/30)%1); // eclipse 1 (synodic)
+	progress.push(((ACTUAL_TIME - EPOCH_MOON_DESCENDING_NODE)/LUNAR_DRACONIC_PERIOD + 0.5/28)%1); // eclipse 2 (draconic)
 	progress.push(((ACTUAL_TIME - EPOCH_MOON_PERIGEE)/LUNAR_ANOMALISTIC_PERIOD + 0.5/28)%1); // eclipse 3 (anomalistic) (for determining totality)
 	intervals.forEach((_, i, a) => {
 		var back = colorScheme[i%2];
@@ -271,13 +271,13 @@ function goldClock(t = new Date(), lang = 'EN'){
 					s = goldClock.language[lang].day[j];
 					break;
 				case 'E1':
-					s = 'S             LL             S'[j];
+					s = j%15 ? '' : 'SL'[j/15];
 					break;
 				case 'E2':
-					s = '☋☋          ☊☊☊☊          ☋☋'[j];
+					s = j%14 ? '' : '☋☊'[j/14];
 					break;
 				case 'E3':
-					s = j%14 ? '' : 'qQ'[j/14]; // 68/147 tot/ann/hyb eclipses in the 21st century are total which is ~46.3% ~6/13
+					s = j%14 ? '' : 'qQ'[j/14];
 					break;
 				case 'H':
 					s = goldClock.language[lang].ap[Math.floor(j/12)].replace('_', j%12 || 12);
