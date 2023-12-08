@@ -150,7 +150,7 @@ const time = {
 	CONFIG: {
 		DEBUG: document.URL[0].toLowerCase() === 'f', // file:// vs. http(s)://
 		FAST_CLOCK: false,
-		LAME_CLOCK: true,
+		LAME_CLOCK: false,
 		LANG: 'EN',
 		OFFSET: false,
 		SEASON: false,
@@ -194,7 +194,7 @@ const time = {
 			THAI: ['Hot', 'Rainy', 'Cold'],
 		},
 		UPDATE_INTERVAL: {
-			CLOCK: 500,
+			CLOCK: 0,
 			SUNDIAL: 0,
 		},
 	},
