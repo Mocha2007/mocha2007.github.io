@@ -5109,7 +5109,7 @@
 	},
 	{
 		"title": "dôanambam",
-		"etym": "C/rilnambat/-m",
+		"etym": "C/dôanambat/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"dinnertime, suppertime"
@@ -15925,7 +15925,7 @@
 		"etym": "I/PEN/*sti/pepper",
 		"cat": "n., 4th",
 		"defList": [
-			"pepper (any capsaicin-bearing plant, incl. black and chili)"
+			"pepper (any capsaicin- or piperine-bearing plant, incl. black and chili)"
 		],
 		"categories": ["plant", "spice", "vegetable"]
 	},
