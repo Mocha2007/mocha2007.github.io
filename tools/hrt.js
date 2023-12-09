@@ -12,7 +12,7 @@ const _1w = 7*_1d;
 const _1y = 365.2425*_1d;
 const _1mo = _1y/12;
 const moonEpoch = new Date(1970, 0, 7, 15, 35); // first new moon after 1/1/1970
-const moonP = 29.530589 * _1d; // synodic period
+const moonP = 29.530588904835206 * _1d; // synodic period
 const laserP = 5*_1w; // 5 weeks
 
 class Source {

@@ -630,7 +630,7 @@ mochaLunisolar.getEpoch = function(){
 	// const spring = new Date(-1331, 2, 20, 20, 47);
 	const spring = new Date(2023, 2, 20, 4, 8);
 	const day = 1000*60*60*24;
-	const month = 29.530594 * day;
+	const month = 29.530588904835206 * day;
 	const year = 365.24219 * day;
 	const tol = day/2;
 	let deltaM = 0, deltaY = 0;
@@ -649,7 +649,7 @@ mochaLunisolar.getEpoch = function(){
 function astro(){
 	var t = new Date();
 	var DAY = 1000*60*60*24;
-	var MONTH = 29.530594 * DAY;
+	var MONTH = 29.530588904835206 * DAY;
 	var YEAR = 365.24219 * DAY;
 	var SEASON = YEAR / 4;
 	var newMoon = new Date(2023, 11, 12, 18, 31);

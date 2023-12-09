@@ -266,7 +266,7 @@ const time = {
 	],
 	moon: {
 		epoch: new Date(2023, 11, 12, 18, 31),
-		p: 29.530594 * _1d,
+		p: 29.530588904835206 * _1d,
 	},
 	months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
 	vernal: new Date(2023, 2, 20, 21, 25),
