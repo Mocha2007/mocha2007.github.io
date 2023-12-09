@@ -227,9 +227,10 @@ function goldClock(t = new Date(), lang = 'EN'){
 	// eslint-disable-next-line max-len
 	var _1mo = new Date(t.getUTCFullYear(), t.getUTCMonth()+1) - new Date(t.getUTCFullYear(), t.getUTCMonth());
 	var _1y = new Date(t.getUTCFullYear()+1, 0) - new Date(t.getUTCFullYear(), 0);
-	var LUNAR_SYNODIC_PERIOD = 29.530594*_1d;
-	var LUNAR_DRACONIC_PERIOD = 27.212220817*_1d;
-	var LUNAR_ANOMALISTIC_PERIOD = 27.55454988*_1d;
+	// sources for below: https://en.wikipedia.org/wiki/Lunar_month#Cycle_lengths for year 2024
+	var LUNAR_SYNODIC_PERIOD = 29.53058892148*_1d;
+	var LUNAR_DRACONIC_PERIOD = 27.21222091436*_1d;
+	var LUNAR_ANOMALISTIC_PERIOD = 27.55454964432*_1d;
 	// var EY = LUNAR_SYNODIC_PERIOD * LUNAR_DRACONIC_PERIOD
 	//	/ (LUNAR_SYNODIC_PERIOD - LUNAR_DRACONIC_PERIOD); // ~346.62d
 	var YTROPICAL = 365.24219 * _1d;
