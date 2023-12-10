@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-/* global getEaster, goldClock, mochaLunisolar, phoonsvg, romanFULL, sundial */
+/* global getEaster, goldClock, mochaLunisolar, phoonsvg, romanFULL, solarDay, sundial */
 
 const _1m = 60*1000;
 const _1h = 60*_1m;
@@ -493,12 +493,12 @@ function main(t = new Date()){
 	container.innerHTML = '';
 	container.appendChild(calendar(t));
 	let year;
+	refresh();
+	setInterval(refresh, 200); // if you set to 1s, it's not exactly 1000ms so sometimes the clock could "miss" a second - the same issue happens with 200ms, but with time so short you can't actually perceive it
 	if (time.CONFIG.CALTYPE === 'GREGORIAN'){
 		year = document.getElementById('erecal1_title').innerHTML = t.getFullYear();
-		refresh();
 		refreshClock();
 		refreshSundial();
-		setInterval(refresh, 200); // if you set to 1s, it's not exactly 1000ms so sometimes the clock could "miss" a second - the same issue happens with 200ms, but with time so short you can't actually perceive it
 		const sundialSize = document.getElementsByClassName('sundial')[0].getBoundingClientRect().width;
 		const sundialPixelAngle = Math.atan2(1, sundialSize);
 		const sundialInterval = time.CONFIG.UPDATE_INTERVAL.SUNDIAL || _1d*sundialPixelAngle/Math.PI;
@@ -518,7 +518,7 @@ function main(t = new Date()){
 }
 
 function refresh(t = new Date()){
-	document.getElementById('earthclock').innerHTML = t;
+	document.getElementById('earthclock').innerHTML = time.CONFIG.CALTYPE === 'MLSC' ? solarDay(t) : t;
 }
 
 function refreshSundial(t = new Date()){

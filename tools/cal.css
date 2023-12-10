@@ -13,6 +13,9 @@ header, h2, #footer {
 	text-align: center;
 	width: 100%;
 }
+#earthclock {
+	font-size: 1.5em;
+}
 #footer {
 	font-size: 60%;
 	font-style: italic;

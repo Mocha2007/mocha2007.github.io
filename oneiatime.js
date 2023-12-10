@@ -450,8 +450,8 @@ function solarDayHelper(t, include_seconds = true){
 	return digits.join(':') + ' ' + ampm;
 }
 
-function solarDay(){
-	var now = new Date();
+function solarDay(now){
+	now = now || new Date();
 	// problem: dawn/dusk times are computed based on the orbital position at midnight. solution: iteratively find the intersection
 	function limit(amp, date_offset, avg){
 		var t = 0, t_;
