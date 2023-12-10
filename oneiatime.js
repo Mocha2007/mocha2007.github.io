@@ -1,4 +1,4 @@
-/* eslint-disable comma-dangle, no-var */
+/* eslint-disable comma-dangle, no-var, object-shorthand */
 /* eslint-env es3 */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
 /* exported bonus, playSound, stopSound */
@@ -587,65 +587,76 @@ function beat(){
  * A year can have 354, 384, or 385 days.
  * Per 334-year cycle, there are 211 354-day years, 58 384-day years, and 65 385-day years.
  */
-function mochaLunisolar(){
-	// var epoch = new Date(2000, 2, 20); // vernal equinox Y2K - coincidentally a full moon
-	// var epoch = new Date(-1432, 2, 20); // first vernal equinox before Mursili's eclipse that lies on a new moon (+/- 12h)
+function mochaLunisolar(t){
+	// default
+	t = t || new Date();
+	var _1d = 1000*60*60*24;
 	var epoch = new Date(2015, 2, 20); // last vernal equinox with a full moon
 	var normalYearLength = 354;
 	var cycleLength = 334;
 	var _334 = 121991;
-	var header = '<abbr title="Mocha\'s Lunisolar Calendar">MLSC</abbr> ';
-	//              March April May June July August September October November December January February Intercalary
-	var monthNames = 'Pisces Aries Taurus Gemini Cancer Leo Virgo Libra Scorpio Sagittarius Capricorn Aquarius Aurora'.split(' ');
-	var daysSinceEpoch = Math.floor((new Date() - epoch)/(1000*60*60*24));
+	var header = '<a title="Mocha\'s Lunisolar Calendar" href="tools/mlsc.html">MLSC</a> ';
+	var daysSinceEpoch = Math.floor((t - epoch)/_1d);
 	var _334s = Math.floor(daysSinceEpoch / _334);
 	daysSinceEpoch -= _334 * _334s;
 	var y = cycleLength * _334s;
 	var yearLength;
 	var leapIndex = 0;
+	var yearStartT = _334 * _334s;
 	// eslint-disable-next-line max-len
-	for (; (yearLength = (y%19%3 ? 0 : leapIndex++%17%2 ? 30 : 31) + normalYearLength) <= daysSinceEpoch; y++)
+	for (; (yearLength = (y%19%3 ? 0 : leapIndex++%17%2 ? 30 : 31) + normalYearLength) <= daysSinceEpoch; y++){
 		daysSinceEpoch -= yearLength;
+		yearStartT += yearLength;
+	}
+	yearStartT = new Date(+epoch + yearStartT * _1d);
+	var monthStartT = +yearStartT;
 	// now figure out month/day
 	var mo;
 	for (mo = 0; mo < 13; mo++){
 		var monthLength = 30 - mo % 2 + (yearLength === 385 && mo === 12); // stuff in parens is accounting for long leap months
-		if (monthLength <= daysSinceEpoch)
+		if (monthLength <= daysSinceEpoch){
 			daysSinceEpoch -= monthLength;
+			monthStartT += _1d*monthLength;
+		}
 		else
 			break;
 	}
+	monthStartT = new Date(monthStartT);
 	var season = 'Spring Summer Fall Winter Month'.split(' ')[Math.floor(mo/4)];
 	var MS = 'Early Mid Late Intercalary'.split(' ')[mo === 12 ? 4 : mo % 3];
 	var meton = Math.floor(y/19);
 	var d = 1 + daysSinceEpoch; // 1-indexed
-	return header + ordinal(d) + ' of ' + monthNames[mo] + ' (' + MS + ' '
-		+ season + '), Year ' + y + ' (Meton ' + meton + ', Year ' + y%19 + ')';
-}
-/** get the first year before Mursili's eclipse such that the vernal equinox lies on a new moon
-mochaLunisolar.getEpoch = function(){
-	// const mursili = new Date(-1331, 5, 24);
-	// const newMoon = new Date(-1331, 5, 12, 4, 32);
-	const newMoon = new Date(2023, 11, 12, 18, 31);
-	// const spring = new Date(-1331, 2, 20, 20, 47);
-	const spring = new Date(2023, 2, 20, 4, 8);
-	const day = 1000*60*60*24;
-	const month = 29.530588904835206 * day;
-	const year = 365.24219 * day;
-	const tol = day/2;
-	let deltaM = 0, deltaY = 0;
-	let m = 0, y = m + 2*tol;
-	while (tol < Math.abs(m-y)){ // while beyond tolerance
-		m = newMoon - month*deltaM;
-		y = spring - year*deltaY;
-		// if month is already before year, move the year back 1
-		if (m < y)
-			deltaY++;
-		else
-			deltaM++;
+	var monthName = mochaLunisolar.monthNames[mo];
+	var string = header + ordinal(d) + ' of ' + monthName + ' (' + MS + ' '
+	+ season + '), Year ' + y + ' (Meton ' + meton + ', Year ' + y%19 + ')';
+	var monthDay = monthStartT.getDay(), monthWeek = 0;
+	for (var date = 0; date < d; date++){
+		monthDay++;
+		if (6 < monthDay){
+			monthDay -= 7;
+			monthWeek++;
+		}
 	}
-	return new Date(y);
-}; */
+	return {
+		cycles: _334s,
+		date: d,
+		leap: normalYearLength < yearLength,
+		meton: meton,
+		month: mo,
+		monthDay: monthDay,
+		monthName: monthName,
+		monthStartT: monthStartT,
+		monthWeek: monthWeek,
+		string: string,
+		year: y,
+		yearLengthDays: yearLength,
+		yearLengthMonths: 12 + (normalYearLength < yearLength),
+		yearStartT: yearStartT,
+	};
+}
+//							March April May June July August September October November December January February Intercalary
+mochaLunisolar.monthNames = 'Pisces Aries Taurus Gemini Cancer Leo Virgo Libra Scorpio Sagittarius Capricorn Aquarius Aurora'.split(' ');
+
 function astro(){
 	var t = new Date();
 	var DAY = 1000*60*60*24;
@@ -706,7 +717,7 @@ function bonus(){
 	// all these clocks update once a day, so no need to have these recomputed every 100 ms
 	document.getElementById('clockbonus').innerHTML = ['<br><hr>', zodiac(), china(),
 		egypt(), hebrew(), japan(), romanFULL(), maya(), elderscrolls(),
-		kol(), mochaLunisolar(), astro(), getEaster.html()].join('<br>');
+		kol(), mochaLunisolar().string, astro(), getEaster.html()].join('<br>');
 	setInterval(onTick100, 100); // 10 hz
 	setInterval(onTick1000, 1000); // 1 hz
 	setInterval(onTick10000, 10000); // 0.1 hz

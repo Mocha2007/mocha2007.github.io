@@ -1,9 +1,21 @@
 /* eslint-disable max-len */
-/* global getEaster, goldClock, phoonsvg, romanFULL, sundial */
+/* global getEaster, goldClock, mochaLunisolar, phoonsvg, romanFULL, sundial */
 
 const _1m = 60*1000;
 const _1h = 60*_1m;
 const _1d = 24*_1h;
+
+function isLoaded(...varNames){
+	return varNames.map(s => {
+		try {
+			// eslint-disable-next-line no-eval
+			return eval(s);
+		}
+		catch (_){
+			return undefined;
+		}
+	});
+}
 
 function mod(n, m){
 	return (n%m+m)%m;
@@ -148,6 +160,7 @@ const calendars = {
 
 const time = {
 	CONFIG: {
+		CALTYPE: undefined,
 		DEBUG: document.URL[0].toLowerCase() === 'f', // file:// vs. http(s)://
 		FAST_CLOCK: false,
 		LAME_CLOCK: true,
@@ -305,7 +318,7 @@ function getDatum(t = new Date()){
 		if (dotw === 6)
 			monthWeek++;
 	}
-	return {date, monthWeek, monthDay, season, starsign};
+	return {date, monthWeek, monthDay, season, starsign, month: t.getMonth()};
 }
 
 function getSeason(t = new Date()){
@@ -353,25 +366,81 @@ function getLuna(t = new Date()){
 	return {biweekIndex, letter, title};
 }
 
+function dayCell(td, dateObj, datum){
+	// container
+	const tdContainer = document.createElement('div');
+	tdContainer.classList.add('tdContainer');
+	td.appendChild(tdContainer);
+	// date
+	const date = document.createElement('div');
+	date.classList.add('date');
+	const season_id = datum.season;
+	date.innerHTML = datum.date;
+	tdContainer.appendChild(date);
+	// season
+	td.classList.add(getSeason.c(season_id));
+	const season = document.createElement('div');
+	season.classList.add('season');
+	const seasonName = getSeason.s(season_id);
+	season.innerHTML = seasonName;
+	tdContainer.appendChild(season);
+	// zodiac
+	const zodiacElem = document.createElement('div');
+	zodiacElem.classList.add('zodiac');
+	zodiacElem.innerHTML = time.zodiacAlt[datum.starsign].slice(0, 3) + '.';
+	zodiacElem.title = `Starsign: ${time.zodiac[datum.starsign]} ${time.zodiacAlt[datum.starsign]}`;
+	tdContainer.appendChild(zodiacElem);
+	// holidays
+	const holiday = time.holidays.filter(xyz => xyz[1](dateObj));
+	if (holiday.length){
+		const holidayElem = document.createElement('div');
+		holidayElem.classList.add('holiday');
+		holidayElem.innerHTML = holiday.map(x => x[0]).join('<br>');
+		tdContainer.appendChild(holidayElem);
+	}
+	// phoon
+	const phoon = document.createElement('div');
+	phoon.classList.add('phoon');
+	phoon.appendChild(moon(dateObj));
+	tdContainer.appendChild(phoon);
+	// KIPPI
+	const kippi = document.createElement('div');
+	kippi.classList.add('kippi');
+	const KIPPI = getKippi(dateObj);
+	kippi.innerHTML = KIPPI.letter;
+	kippi.title = `Kippi Cycle: Day ${KIPPI.monthIndex}`;
+	tdContainer.appendChild(kippi);
+	// LUNA PAYDAY
+	const luna = document.createElement('span');
+	luna.classList.add('luna');
+	const LUNA = getLuna(dateObj);
+	luna.innerHTML = LUNA.letter;
+	luna.title = LUNA.title;
+	kippi.appendChild(luna);
+}
+
 function calendar(t = new Date()){
-	// todo add weekday and month labels
+	const USING_MLSC = time.CONFIG.CALTYPE === 'MLSC';
+	const MLSC = mochaLunisolar(t);
 	const table = document.createElement('table');
 	table.id = 'cals';
 	table.innerHTML = '';
 	// construct table first...
 	const cells = {};
-	for (let se = 0; se < 4; se++){ // season (row)
+	for (let se = 0; se < 4 + USING_MLSC; se++){ // season (row)
 		const season = document.createElement('tr');
 		season.id = 'season_' + se;
 		table.appendChild(season);
 		for (let m_ = 0; m_ < 3; m_++){ // months (cell)
 			const mo = 3*se + m_;
+			if (MLSC.yearLengthMonths <= mo)
+				break;
 			const month = document.createElement('td');
 			month.id = 'month_' + mo;
 			season.appendChild(month);
 			// month header
 			const monthHeader = document.createElement('h3');
-			monthHeader.innerHTML = time.months[mo];
+			monthHeader.innerHTML = (USING_MLSC ? mochaLunisolar.monthNames : time.months)[mo];
 			month.appendChild(monthHeader);
 			// month table
 			const monthTable = document.createElement('table');
@@ -396,65 +465,22 @@ function calendar(t = new Date()){
 			}
 		}
 	}
-	const year = t.getFullYear();
-	const LEAP = year % 400 === 0 || year % 4 === 0 && year % 100 !== 0;
-	const YEAR_LENGTH_IN_DAYS = 365 + LEAP;
+	const year = USING_MLSC ? MLSC.year
+		: t.getFullYear();
+	const LEAP = USING_MLSC ? MLSC.leap
+		: year % 400 === 0 || year % 4 === 0 && year % 100 !== 0;
+	const YEAR_LENGTH_IN_DAYS = USING_MLSC ? MLSC.yearLengthDays
+		: 365 + LEAP;
 	for (let d = 0; d < YEAR_LENGTH_IN_DAYS; d++){
-		const dateObj = new Date(year, 0, d + 1);
-		const datum = getDatum(dateObj);
-		const cellID = `month_${dateObj.getMonth()}week_${datum.monthWeek}day_${datum.monthDay}`; // todo
-		const td = cells[cellID]; // todo
-		// container
-		const tdContainer = document.createElement('div');
-		tdContainer.classList.add('tdContainer');
-		td.appendChild(tdContainer);
-		// date
-		const date = document.createElement('div');
-		date.classList.add('date');
-		const season_id = datum.season;
-		date.innerHTML = datum.date;
-		tdContainer.appendChild(date);
-		// season
-		td.classList.add(getSeason.c(season_id));
-		const season = document.createElement('div');
-		season.classList.add('season');
-		const seasonName = getSeason.s(season_id);
-		season.innerHTML = seasonName;
-		tdContainer.appendChild(season);
-		// zodiac
-		const zodiacElem = document.createElement('div');
-		zodiacElem.classList.add('zodiac');
-		// todo
-		zodiacElem.innerHTML = time.zodiacAlt[datum.starsign].slice(0, 3) + '.';
-		zodiacElem.title = `Starsign: ${time.zodiac[datum.starsign]} ${time.zodiacAlt[datum.starsign]}`;
-		tdContainer.appendChild(zodiacElem);
-		// holidays
-		const holiday = time.holidays.filter(xyz => xyz[1](dateObj));
-		if (holiday.length){
-			const holidayElem = document.createElement('div');
-			holidayElem.classList.add('holiday');
-			holidayElem.innerHTML = holiday.map(x => x[0]).join('<br>');
-			tdContainer.appendChild(holidayElem);
-		}
-		// phoon
-		const phoon = document.createElement('div');
-		phoon.classList.add('phoon');
-		phoon.appendChild(moon(dateObj));
-		tdContainer.appendChild(phoon);
-		// KIPPI
-		const kippi = document.createElement('div');
-		kippi.classList.add('kippi');
-		const KIPPI = getKippi(dateObj);
-		kippi.innerHTML = KIPPI.letter;
-		kippi.title = `Kippi Cycle: Day ${KIPPI.monthIndex}`;
-		tdContainer.appendChild(kippi);
-		// LUNA PAYDAY
-		const luna = document.createElement('span');
-		luna.classList.add('luna');
-		const LUNA = getLuna(dateObj);
-		luna.innerHTML = LUNA.letter;
-		luna.title = LUNA.title;
-		kippi.appendChild(luna);
+		const dateObj = USING_MLSC ? new Date(+MLSC.yearStartT + d*_1d)
+			: new Date(year, 0, d + 1);
+		const datum = USING_MLSC ? mochaLunisolar(dateObj)
+			: getDatum(dateObj);
+		const cellID = `month_${datum.month}week_${datum.monthWeek}day_${datum.monthDay}`;
+		const td = cells[cellID];
+		datum.season = getDatum(dateObj).season;
+		datum.starsign = getDatum(dateObj).starsign;
+		dayCell(td, dateObj, datum);
 	}
 	return table;
 }
@@ -463,24 +489,29 @@ function main(t = new Date()){
 	const container = document.getElementById('months');
 	container.innerHTML = '';
 	container.appendChild(calendar(t));
-	document.getElementById('erecal1_title').innerHTML = t.getFullYear();
-	refresh();
-	refreshClock();
-	refreshSundial();
-	setInterval(refresh, 200); // if you set to 1s, it's not exactly 1000ms so sometimes the clock could "miss" a second - the same issue happens with 200ms, but with time so short you can't actually perceive it
-	const sundialSize = document.getElementsByClassName('sundial')[0].getBoundingClientRect().width;
-	const sundialPixelAngle = Math.atan2(1, sundialSize);
-	const sundialInterval = time.CONFIG.UPDATE_INTERVAL.SUNDIAL || _1d*sundialPixelAngle/Math.PI;
-	console.info(`Sundial update interval: ${sundialInterval/1000} s`);
-	setInterval(refreshSundial, sundialInterval); // updates in the time it takes for pixels to shift over 1 unit
-	const clockInterval = time.CONFIG.UPDATE_INTERVAL.CLOCK || _1m*sundialPixelAngle/Math.PI;
-	console.info(`Clock update interval: ${clockInterval} ms`);
-	setInterval(refreshClock, clockInterval);
+	let year;
+	if (time.CONFIG.CALTYPE === 'GREGORIAN'){
+		year = document.getElementById('erecal1_title').innerHTML = t.getFullYear();
+		refresh();
+		refreshClock();
+		refreshSundial();
+		setInterval(refresh, 200); // if you set to 1s, it's not exactly 1000ms so sometimes the clock could "miss" a second - the same issue happens with 200ms, but with time so short you can't actually perceive it
+		const sundialSize = document.getElementsByClassName('sundial')[0].getBoundingClientRect().width;
+		const sundialPixelAngle = Math.atan2(1, sundialSize);
+		const sundialInterval = time.CONFIG.UPDATE_INTERVAL.SUNDIAL || _1d*sundialPixelAngle/Math.PI;
+		console.info(`Sundial update interval: ${sundialInterval/1000} s`);
+		setInterval(refreshSundial, sundialInterval); // updates in the time it takes for pixels to shift over 1 unit
+		const clockInterval = time.CONFIG.UPDATE_INTERVAL.CLOCK || _1m*sundialPixelAngle/Math.PI;
+		console.info(`Clock update interval: ${clockInterval} ms`);
+		setInterval(refreshClock, clockInterval);
+	}
+	else if (time.CONFIG.CALTYPE === 'MLSC')
+		year = document.getElementById('erecal1_title').innerHTML = `MLSC Year ${mochaLunisolar(t).year}`;
 	// timestamp
 	document.getElementById('timestamp').innerHTML = romanFULL(new Date());
 	// done loading
-	setInterval(refreshDebug, 3000);
 	console.info('cal.js successfully loaded.');
+	console.info(`CONFIG: ${time.CONFIG.CALTYPE} - ${year}`);
 }
 
 function refresh(t = new Date()){
@@ -507,9 +538,21 @@ function refreshClock(t = new Date()){
 	container.appendChild(goldClock(t, time.CONFIG.LANG));
 }
 
-function refreshDebug(){
-	// const PCA_AVG = printCharArc.data.reduce((a, b) => a+b, 0) / printCharArc.data.length;
-	// console.debug(`PCA_AVG = ${PCA_AVG} ms`);
+function mainWrapper(){
+	// global CALENDAR_TYPE (cal.html), getEaster (oneiatime.js), goldClock (sundial.js), phoonsvg (phoon.js)
+	const [caltype, a, b, c] = isLoaded('CALENDAR_TYPE', 'getEaster', 'goldClock', 'phoonsvg');
+	time.CONFIG.CALTYPE = caltype;
+	switch (caltype){
+		case 'GREGORIAN':
+			if (a && b && c)
+				return main();
+			break;
+		case 'MLSC':
+			if (a && c)
+				return main();
+			break;
+	}
+	setTimeout(mainWrapper, 50);
 }
 
-main();
+mainWrapper();
