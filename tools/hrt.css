@@ -67,15 +67,12 @@ td#lpt_td2 {
 	height: 100%;
 	position: relative;
 }
-.date, .shave, .moon {
+.date, .shave {
 	position: absolute;
 }
 .shave {
 	bottom: 0;
 	right: 0;
-}
-.moon {
-	bottom: 0;
 }
 /* mobile */
 @media (max-width: 750px) {

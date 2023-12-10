@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 /* exported sim */
-/* global phoonsvg */
 const debug = document.URL[0].toLowerCase() === 'f'; // file:// vs. http(s)://
 
 const _1s = 1000;
@@ -11,8 +10,6 @@ const _1d = 24*_1h;
 const _1w = 7*_1d;
 const _1y = 365.2425*_1d;
 const _1mo = _1y/12;
-const moonEpoch = new Date(1970, 0, 7, 15, 35); // first new moon after 1/1/1970
-const moonP = 29.530588904835206 * _1d; // synodic period
 const laserP = 5*_1w; // 5 weeks
 
 class Source {
@@ -139,8 +136,9 @@ function sim(mg = 2, rounds = 2, t = 48 * _1h, tick = _1m){
 }
 
 function get_t(){
-	return new Date() - 1692216960000; // first dose = 2023 Aug 16 @ 4:16 PM EDT
+	return new Date() - get_t.epoch;
 }
+get_t.epoch = new Date(2023, 7, 16, 16, 16); // first dose = 2023 Aug 16 @ 4:16 PM EDT
 
 /** https://stackoverflow.com/a/30280636 */
 function isDST(d){
@@ -190,15 +188,6 @@ get_shave_cycle.dayOffset = 6;
 get_shave_cycle.period = 12;
 get_shave_cycle.periodminor = 4;
 get_shave_cycle.cycleOffset = 1667;
-
-function moon(t){
-	// full = 0
-	const phase = (t - moonEpoch) / moonP % 1;
-	const svg = phoonsvg(phase);
-	svg.setAttribute('height', 10);
-	svg.setAttribute('width', 10);
-	return svg;
-}
 
 function laserPhaseElem(){
 	/** the last time I got lasered */
@@ -259,11 +248,6 @@ function laserPhaseElem(){
 			shaveElem.innerHTML = shave.abbr;
 			shaveElem.title = shave.full;
 			tdContainer.appendChild(shaveElem);
-			// MOOOOOOOON
-			const moonElem = document.createElement('div');
-			moonElem.classList.add('moon');
-			moonElem.appendChild(moon(timeObject));
-			tdContainer.appendChild(moonElem);
 		}
 	}
 	elem.appendChild(red);
