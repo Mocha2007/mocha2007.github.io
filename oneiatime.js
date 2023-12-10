@@ -630,7 +630,7 @@ function mochaLunisolar(t){
 	var string = header + ordinal(d) + ' of ' + monthName + ' (' + MS + ' '
 	+ season + '), Year ' + y + ' (Meton ' + meton + ', Year ' + y%19 + ')';
 	var monthDay = monthStartT.getDay(), monthWeek = 0;
-	for (var date = 0; date < d; date++){
+	for (var date = 0; date < daysSinceEpoch; date++){
 		monthDay++;
 		if (6 < monthDay){
 			monthDay -= 7;

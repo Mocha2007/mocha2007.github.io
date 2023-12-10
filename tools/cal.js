@@ -370,6 +370,7 @@ function dayCell(td, dateObj, datum){
 	// container
 	const tdContainer = document.createElement('div');
 	tdContainer.classList.add('tdContainer');
+	tdContainer.title = dateObj.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'});
 	td.appendChild(tdContainer);
 	// date
 	const date = document.createElement('div');
