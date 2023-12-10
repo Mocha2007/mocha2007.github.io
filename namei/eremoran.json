@@ -4694,9 +4694,10 @@
 		"etym": "C/din/mok",
 		"cat": "adv.",
 		"defList": [
-			"from now on",
+			"now (starting now), from now on",
 			"nowadays, anymore"
 		],
+		"notes": "contrast [[mok]]",
 		"categories": ["time"]
 	},
 	{
@@ -12098,11 +12099,11 @@
 			"already",
 			"still",
 			"[Particle forming perfect aspect]",
-			"now",
+			"now (continuing from before)",
 			"because, for, since",
 			"(+ ad) despite, although"
 		],
-		"notes": "Roughly equivalent to 'is/has at/since some time previous...'; cf. la. ''iam''"
+		"notes": "Roughly equivalent to 'is/has at/since some time previous...'; cf. la. ''iam''; contrast [[dimok]]"
 	},
 	{
 		"title": "môk",
