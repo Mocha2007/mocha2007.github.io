@@ -292,6 +292,8 @@ function time_elem_inner(){
 	const doseM = Math.floor(doseR / _1m);
 	doseR -= _1m*doseM;
 	const doseS = Math.ceil(doseR / _1s);
+	// total E consumed
+	const totalE = doses <= 166 ? doses : 2*doses - 166;
 	// visitations
 	const visits = Math.floor(mo/3) + 2;
 	// elem
@@ -302,6 +304,7 @@ function time_elem_inner(){
 		${unit(doses, 'dose')} of E (${unit(doseH, 'hour')}, ${unit(doseM, 'minute')}, ${unit(doseS, 'second')} until next dose)<br>
 		<span class="small">${quietGirluna[0]} Girluna ${quietGirluna[1]} (${unit(quietGirluna[2], 'minute')} left)</span><br>
 		${eLevel()}<br>
+		<span class="small">Total E consumed: ${totalE} mg</span><br>
 		${unit(laser, 'laser session')}<br><span class="small">Laser Calendar:</span>`;
 }
 
