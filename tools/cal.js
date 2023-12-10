@@ -290,6 +290,20 @@ const time = {
 	zodiac: '♈︎︎♉︎︎♊︎︎♋︎︎♌︎︎♍︎︎♎︎︎♏︎︎♐︎︎♑︎︎♒︎︎♓︎︎'.split('').filter((_, i) => i % 3 === 0),
 	zodiacAlt: ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
 		'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'],
+	zodiacSrc: [
+		'https://upload.wikimedia.org/wikipedia/commons/0/0f/Sidney_Hall_-_Urania%27s_Mirror_-_Aries_and_Musca_Borealis.jpg',
+		'https://upload.wikimedia.org/wikipedia/commons/d/de/Sidney_Hall_-_Urania%27s_Mirror_-_Taurus.jpg',
+		'https://upload.wikimedia.org/wikipedia/commons/4/44/Sidney_Hall_-_Urania%27s_Mirror_-_Gemini.jpg',
+		'https://upload.wikimedia.org/wikipedia/commons/c/ce/Sidney_Hall_-_Urania%27s_Mirror_-_Cancer.jpg',
+		'https://upload.wikimedia.org/wikipedia/commons/6/62/Sidney_Hall_-_Urania%27s_Mirror_-_Leo_Major_and_Leo_Minor.jpg',
+		'https://upload.wikimedia.org/wikipedia/commons/3/38/Sidney_Hall_-_Urania%27s_Mirror_-_Virgo.jpg',
+		'https://upload.wikimedia.org/wikipedia/commons/0/00/Sidney_Hall_-_Urania%27s_Mirror_-_Libra.jpg',
+		'https://upload.wikimedia.org/wikipedia/commons/c/cf/Sidney_Hall_-_Urania%27s_Mirror_-_Scorpio.jpg',
+		'https://upload.wikimedia.org/wikipedia/commons/7/7e/Sidney_Hall_-_Urania%27s_Mirror_-_Sagittarius_and_Corona_Australis%2C_Microscopium%2C_and_Telescopium.png',
+		'https://upload.wikimedia.org/wikipedia/commons/f/fc/Sidney_Hall_-_Urania%27s_Mirror_-_Capricornus.jpg',
+		'https://upload.wikimedia.org/wikipedia/commons/5/5c/Sidney_Hall_-_Urania%27s_Mirror_-_Aquarius%2C_Piscis_Australis_%26_Ballon_Aerostatique.jpg',
+		'https://upload.wikimedia.org/wikipedia/commons/d/d9/Sidney_Hall_-_Urania%27s_Mirror_-_Pisces.jpg',
+	],
 };
 time.equinox.forEach((d, i) => time.holidays.push([time.equinoxNames[i], d]));
 
@@ -508,8 +522,18 @@ function main(t = new Date()){
 		console.info(`Clock update interval: ${clockInterval} ms`);
 		setInterval(refreshClock, clockInterval);
 	}
-	else if (time.CONFIG.CALTYPE === 'MLSC')
-		year = document.getElementById('erecal1_title').innerHTML = `MLSC Year ${mochaLunisolar(t).year}`;
+	else if (time.CONFIG.CALTYPE === 'MLSC'){
+		const MLSC = mochaLunisolar(t);
+		year = document.getElementById('erecal1_title').innerHTML = `MLSC Year ${MLSC.year}`;
+		year = document.getElementById('earthclock2').innerHTML = `${MLSC.monthName}, Year ${MLSC.year}:
+		<br>Kalends: ${MLSC.monthStartT.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}
+		<br>Nones: ${MLSC.nones.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}
+		<br>Ides: ${MLSC.ides.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}
+		<br>Icas: ${MLSC.icas.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}
+		`;
+		document.getElementById('monthImg').src = MLSC.month < 12 ? time.zodiacSrc[MLSC.month]
+			: 'https://the-public-domain-review.imgix.net/collections/aurora-borealis-in-art/SAAM-1911.4.1_2-000001.jpg';
+	}
 	// timestamp
 	document.getElementById('timestamp').innerHTML = romanFULL(new Date());
 	// done loading

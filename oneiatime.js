@@ -644,6 +644,8 @@ function mochaLunisolar(t){
 	return {
 		cycles: _334s,
 		date: d,
+		icas: new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+22), // third quarter
+		ides: new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+15), // full
 		leap: normalYearLength < yearLength,
 		meton: meton,
 		month: mo,
@@ -651,6 +653,7 @@ function mochaLunisolar(t){
 		monthName: monthName,
 		monthStartT: monthStartT,
 		monthWeek: monthWeek,
+		nones: new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+7), // first quarter
 		string: string,
 		year: y,
 		yearLengthDays: yearLength,

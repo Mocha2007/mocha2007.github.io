@@ -16,6 +16,10 @@ header, h2, #footer {
 #earthclock {
 	font-size: 1.5em;
 }
+#monthImg {
+	max-height: 50vw;
+	max-width: 50vw;
+}
 #footer {
 	font-size: 60%;
 	font-style: italic;
