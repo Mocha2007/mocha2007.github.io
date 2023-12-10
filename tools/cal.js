@@ -21,6 +21,14 @@ function mod(n, m){
 	return (n%m+m)%m;
 }
 
+/**
+ * Converts string to title case. identical to str.title in python.
+ * @param {string} s
+ */
+function title(s){
+	return s[0].toUpperCase() + s.slice(1);
+}
+
 // needs to be separate so the type hinting works for time
 const calendars = {
 	/** https://en.wikipedia.org/wiki/Hebrew_calendar#Calculations */
@@ -530,12 +538,11 @@ function main(t = new Date()){
 		'previousMonth t nextMonth'.split(' ').forEach(key => {
 			const datum = mochaLunisolar(MLSC[key]);
 			const td = document.createElement('td');
-			td.innerHTML = `${datum.monthName}, Year ${datum.year}:
-			<br>Kalends: ${datum.monthStartT.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}
-			<br>Nones: ${datum.nones.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}
-			<br>Ides: ${datum.ides.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}
-			<br>Icas: ${datum.icas.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}
-			`;
+			td.innerHTML = `${datum.monthName}, Year ${datum.year}:`;
+			'kalends nones ides icas'.split(' ').forEach(key2 => {
+				const rowTitle = title(key2).padStart(7, '_').replace(/_/g, '&nbsp;');
+				td.innerHTML += `<br>${rowTitle}: ${datum[key2].toLocaleDateString('en-GB', {year: 'numeric', month: 'short', day: '2-digit'})}`;
+			});
 			monthTable.appendChild(td);
 		});
 		document.getElementById('monthImg').src = MLSC.month < 12 ? time.zodiacSrc[MLSC.month]

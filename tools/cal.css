@@ -95,6 +95,9 @@ header, h2, #footer {
 #mlscTable {
 	display: inline-block;
 }
+#mlscTable * {
+	padding: 1em;
+}
 #earthclock2 {
 	text-align: left;
 }
