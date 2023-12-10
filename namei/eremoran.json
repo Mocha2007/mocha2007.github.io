@@ -3644,15 +3644,6 @@
 		"categories": ["extent"]
 	},
 	{
-		"title": "bolbat",
-		"etym": "C/bolz/-ba",
-		"cat": "n., 3rd",
-		"defList": [
-			"feast"
-		],
-		"categories": ["food"]
-	},
-	{
 		"title": "bolbam",
 		"etym": "C/bolbat/-m",
 		"cat": "n., 5th",
@@ -3660,6 +3651,15 @@
 			"festival"
 		],
 		"categories": ["time"]
+	},
+	{
+		"title": "bolbat",
+		"etym": "C/bolz/-ba",
+		"cat": "n., 3rd",
+		"defList": [
+			"feast"
+		],
+		"categories": ["food"]
 	},
 	{
 		"title": "bolent",
