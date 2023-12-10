@@ -916,7 +916,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"drop, droplet"
-		]
+		],
+		"categories": ["measurement"]
 	},
 	{
 		"title": "akat",
@@ -1360,6 +1361,15 @@
 			"military officer"
 		],
 		"categories": ["person"]
+	},
+	{
+		"title": "aramam",
+		"etym": "C/aramat/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"pennyweight"
+		],
+		"categories": ["measurement"]
 	},
 	{
 		"title": "aramat",
@@ -1824,6 +1834,15 @@
 		"categories": ["body part"]
 	},
 	{
+		"title": "azmum",
+		"etym": "C/azmu/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"cubit, ell"
+		],
+		"categories": ["measurement"]
+	},
+	{
 		"title": "ba",
 		"etym": "I/PEN/*βa/chickpea",
 		"cat": "n., 4th",
@@ -1886,6 +1905,15 @@
 			"twenty"
 		],
 		"categories": ["number"]
+	},
+	{
+		"title": "babzelam",
+		"etym": "C/babzu/ela",
+		"cat": "n., 5th",
+		"defList": [
+			"breadth of four fingers"
+		],
+		"categories": ["measurement"]
 	},
 	{
 		"title": "babzidimôm",
@@ -2754,7 +2782,7 @@
 			"cycle",
 			"week (a period of six sols, four of which comprise one month)"
 		],
-		"categories": ["time"]
+		"categories": ["measurement", "time"]
 	},
 	{
 		"title": "bemak",
@@ -2835,7 +2863,7 @@
 			"blink",
 			"(metaphorically) a moment, a second"
 		],
-		"categories": ["time"]
+		"categories": ["measurement", "time"]
 	},
 	{
 		"title": "beriz",
@@ -3137,7 +3165,7 @@
 		"defList": [
 			"two decades, approximately Eisen's synodic period (in Earth years: 4 yr 1 mo 7 d)"
 		],
-		"categories": ["time"]
+		"categories": ["measurement", "time"]
 	},
 	{
 		"title": "bikêmom",
@@ -3352,8 +3380,10 @@
 		"etym": "L/VAZ/vinthin/thousand",
 		"cat": "n., 5th",
 		"defList": [
-			"one thousand of something"
-		]
+			"one thousand of something",
+			"(specifically) one thousand paces, a mile"
+		],
+		"categories": ["measurement", "number"]
 	},
 	{
 		"title": "binun",
@@ -5878,7 +5908,7 @@
 			"height, depth, altitude",
 			"length"
 		],
-		"categories": ["extent"]
+		"categories": ["extent", "measurement"]
 	},
 	{
 		"title": "endur",
@@ -5978,7 +6008,7 @@
 			"spear",
 			"surveying rod"
 		],
-		"categories": ["war"]
+		"categories": ["measurement", "war"]
 	},
 	{
 		"title": "erekanu",
@@ -6182,7 +6212,7 @@
 			"finger",
 			"toe"
 		],
-		"categories": ["body part"]
+		"categories": ["body part", "measurement"]
 	},
 	{
 		"title": "habindo",
@@ -6505,6 +6535,24 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "ham",
+		"etym": "C/haz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"span (stretched hand)"
+		],
+		"categories": ["measurement"]
+	},
+	{
+		"title": "hambi",
+		"etym": "B/hanu/habin",
+		"cat": "n., 4th",
+		"defList": [
+			"fist"
+		],
+		"categories": ["measurement"]
+	},
+	{
 		"title": "hame",
 		"etym": "I/PEN/*ɸame",
 		"cat": "n., 4th",
@@ -6678,7 +6726,8 @@
 			"(+ ad) ready, prepared",
 			"(+ din) unready, unprepared, extemporaneous",
 			"(noun + su +) [used to indicate an outcome effected with the hands]; by hand, ahold <ul> <li>  ''Sazam i afêst su <b>dir hanum</b> zestisudôz omôrz.''<br>  awe TOP shortsword GEN ABS hold bent-CAUS EXP.PL<br>  We were amazed to see him bend the shortsword <b>by hand</b>. </li> </ul> "
-		]
+		],
+		"categories": ["measurement"]
 	},
 	{
 		"title": "hanumat",
@@ -8646,7 +8695,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"chain, link"
-		]
+		],
+		"categories": ["measurement"]
 	},
 	{
 		"title": "kanda",
@@ -9007,7 +9057,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"bottle, quart"
-		]
+		],
+		"categories": ["measurement"]
 	},
 	{
 		"title": "kerôlak",
@@ -9062,7 +9113,7 @@
 			"(+ ad) standing still, standing stiff, in place",
 			"(archaic) leg"
 		],
-		"categories": ["body part"]
+		"categories": ["body part", "measurement"]
 	},
 	{
 		"title": "kidôu",
@@ -9252,7 +9303,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"jug, gallon"
-		]
+		],
+		"categories": ["measurement"]
 	},
 	{
 		"title": "kinê",
@@ -9777,7 +9829,7 @@
 		"defList": [
 			"step"
 		],
-		"categories": ["motion"]
+		"categories": ["measurement", "motion"]
 	},
 	{
 		"title": "krarnok",
@@ -9833,7 +9885,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"basket, bushel"
-		]
+		],
+		"categories": ["measurement"]
 	},
 	{
 		"title": "krifan",
@@ -10691,9 +10744,10 @@
 		"etym": "I/PEN/*guril/onion",
 		"cat": "n., 4th",
 		"defList": [
-			"onion"
+			"onion",
+			"(generally) a vegetable bulb"
 		],
-		"categories": ["plant", "vegetable"]
+		"categories": ["measurement", "plant", "vegetable"]
 	},
 	{
 		"title": "kuro",
@@ -12826,7 +12880,7 @@
 		"defList": [
 			"year (in Earth time: 2 mo 14 d)"
 		],
-		"categories": ["time"],
+		"categories": ["measurement", "time"],
 		"notes": "not used for giving the ages of people; skum is used instead"
 	},
 	{
@@ -12952,7 +13006,7 @@
 		"defList": [
 			"season (one third of the year = 24 sols)"
 		],
-		"categories": ["time"]
+		"categories": ["measurement", "time"]
 	},
 	{
 		"title": "neurmom",
@@ -13286,7 +13340,7 @@
 			"wink",
 			"(metaphorically) a moment, a second"
 		],
-		"categories": ["time"]
+		"categories": ["measurement", "time"]
 	},
 	{
 		"title": "nuluz",
@@ -14469,7 +14523,7 @@
 			"day, sol (in earth time: 28.93 h)",
 			"daytime"
 		],
-		"categories": ["time"]
+		"categories": ["measurement", "time"]
 	},
 	{
 		"title": "rilmonumk",
@@ -14531,7 +14585,7 @@
 		"defList": [
 			"150-year dominical letter cycle"
 		],
-		"categories": ["time"]
+		"categories": ["measurement", "time"]
 	},
 	{
 		"title": "rilupiam",
@@ -14566,7 +14620,7 @@
 		"defList": [
 			"spoon"
 		],
-		"categories": ["food"]
+		"categories": ["food", "measurement"]
 	},
 	{
 		"title": "rô",
@@ -14858,7 +14912,8 @@
 		"cat": "n., 5th",
 		"defList": [
 			"unit of area, equivalent to 50 square labnim, or about 1.452 m<sup>2</sup>"
-		]
+		],
+		"categories": ["measurement"]
 	},
 	{
 		"title": "sarsêm",
@@ -14998,7 +15053,7 @@
 			"grain",
 			"unit of measurement equal to one-fifteenth of one edzam (~2.84 mm)"
 		],
-		"categories": ["grain", "plant", "v3_trade"]
+		"categories": ["grain", "measurement", "plant", "v3_trade"]
 	},
 	{
 		"title": "se",
@@ -15080,7 +15135,7 @@
 			"unit of area, about 0.31 ha or 0.76 acres",
 			"(archaic) area"
 		],
-		"categories": ["extent", "math"]
+		"categories": ["extent", "math", "measurement"]
 	},
 	{
 		"title": "sedasêm",
@@ -15726,7 +15781,7 @@
 		"defList": [
 			"pace"
 		],
-		"categories": ["motion"]
+		"categories": ["measurement", "motion"]
 	},
 	{
 		"title": "sokuz",
@@ -16850,6 +16905,15 @@
 			"thimble"
 		],
 		"categories": ["tool"]
+	},
+	{
+		"title": "tifambim",
+		"etym": "B/tifabin/hambi",
+		"cat": "n., 5th",
+		"defList": [
+			"shaftment"
+		],
+		"categories": ["measurement"]
 	},
 	{
 		"title": "tik",
