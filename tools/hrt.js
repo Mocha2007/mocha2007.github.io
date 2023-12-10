@@ -172,10 +172,24 @@ get_prog.pumps = 2;
 get_prog.dose = 21;
 
 /** @param {Date} t - integer in [0, 11] = day in shave cycle*/
-function get_shave_cycle(t){
+function get_shave_cycle(t = new Date()){
 	// shave body every 4d; replace blade every 12d
-	return (Math.floor(t/_1d) + 6) % 12;
+	const day = (Math.floor(t/_1d) + get_shave_cycle.dayOffset) % get_shave_cycle.period;
+	const abbr = day ? day % get_shave_cycle.periodminor ? '' : 's' : '*';
+	const title = day ? day % get_shave_cycle.periodminor ? '' : 'shave body' : 'new blade';
+	const bladesLeft = get_shave_cycle.cycleOffset
+		- Math.floor((+t + get_shave_cycle.dayOffset*_1d) / (get_shave_cycle.period*_1d));
+	const eta = new Date(get_shave_cycle.cycleOffset*get_shave_cycle.period*_1d - get_shave_cycle.dayOffset*_1d)
+		.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'});
+	const full = `${title} (${unit(bladesLeft, 'blade')} left - estimated date of depletion: ${eta})`;
+	const boxesLeft = Math.floor(bladesLeft / get_shave_cycle.boxSize);
+	return {day, abbr, title, bladesLeft, full, boxesLeft};
 }
+get_shave_cycle.boxSize = 12;
+get_shave_cycle.dayOffset = 6;
+get_shave_cycle.period = 12;
+get_shave_cycle.periodminor = 4;
+get_shave_cycle.cycleOffset = 1667;
 
 function moon(t){
 	// full = 0
@@ -242,8 +256,8 @@ function laserPhaseElem(){
 			const shave = get_shave_cycle(timeObject);
 			const shaveElem = document.createElement('div');
 			shaveElem.classList.add('shave');
-			shaveElem.innerHTML = shave ? shave % 4 ? '' : 's' : '*';
-			shaveElem.title = shave ? shave % 4 ? '' : 'shave body' : 'new blade';
+			shaveElem.innerHTML = shave.abbr;
+			shaveElem.title = shave.full;
 			tdContainer.appendChild(shaveElem);
 			// MOOOOOOOON
 			const moonElem = document.createElement('div');
