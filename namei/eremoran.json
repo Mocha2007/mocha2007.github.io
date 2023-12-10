@@ -1908,7 +1908,7 @@
 	},
 	{
 		"title": "babzelam",
-		"etym": "C/babzu/ela",
+		"etym": "D/babzu",
 		"cat": "n., 5th",
 		"defList": [
 			"breadth of four fingers"
@@ -7026,6 +7026,15 @@
 		"notes": "See ''zurkrôz''"
 	},
 	{
+		"title": "helam",
+		"etym": "D/ham",
+		"cat": "n., 5th",
+		"defList": [
+			"little span (stretched hand)"
+		],
+		"categories": ["measurement"]
+	},
+	{
 		"title": "helsu",
 		"etym": "I/PEN/*seltʃu/bitter",
 		"cat": "adj.",
@@ -11864,7 +11873,7 @@
 	},
 	{
 		"title": "melar",
-		"etym": "C/mor/ela",
+		"etym": "B/mor/ela",
 		"cat": "pron.",
 		"defList": [
 			"1st/2nd person informal pronoun"
