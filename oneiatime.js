@@ -590,7 +590,8 @@ function beat(){
 function mochaLunisolar(t){
 	// default
 	t = t || new Date();
-	var _1d = 1000*60*60*24;
+	var _1h = 1000*60*60;
+	var _1d = 24*_1h;
 	var epoch = new Date(2015, 2, 20); // last vernal equinox with a full moon
 	var normalYearLength = 354;
 	var cycleLength = 334;
@@ -609,6 +610,9 @@ function mochaLunisolar(t){
 		yearStartT += yearLength;
 	}
 	yearStartT = new Date(+epoch + yearStartT * _1d);
+	// DST fix
+	if (yearStartT.getHours())
+		yearStartT = new Date(+yearStartT + _1h);
 	var monthStartT = +yearStartT;
 	// now figure out month/day
 	var mo;
