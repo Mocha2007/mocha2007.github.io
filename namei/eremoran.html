@@ -2133,6 +2133,30 @@ The following remarks apply to the Zestim-Embemmu (Bend-Highbrook) dialect:
 
 <h2 id="Vocab">Vocab</h2>
 
+
+<h3 id="Write_Eremoran">Eremoran Writing Utility</h3>
+<div id="erewrite_container">
+	<input type="text" id="erewrite_input" onkeyup="ereWrite.update();">
+	<div onclick="ereWrite.update();">
+	<input type="checkbox" id="erewrite_case" name="erewrite_case">
+	<label for="erewrite_case">Match Case</label>
+	<input type="checkbox" id="erewrite_wholeword" name="erewrite_wholeword">
+	<label for="erewrite_wholeword">Whole Words</label>
+	</div>
+	<table>
+		<tr>
+			<td>Suggestions:</td>
+			<td><span class="button" onclick="ereWrite.addRaw();">Add raw</span></td>
+		</tr>
+		<tr>
+			<td colspan="2" id="erewrite_suggest"></td>
+		</tr>
+	</table>
+	<span class="button" onclick="ereWrite.removeLast();">Backspace</span>
+	<span class="button" onclick="ereWrite.reset();">Clear</span>
+	<div id="erewrite_canvas"></div>
+</div>
+
 <h3 id="Vocab_Search">Search</h3>
 
 <div id="searchSettings">
@@ -3022,30 +3046,6 @@ Circumcize therefore the foreskin of your heart,
 		<td>crow TOP some ABS rock-DIM DAT water-container-[class 3] fall&lt;CAUS> and ABS water DAT edge rise&lt;CAUS></td>
 	</tr>
 </table>
-
-
-<h3 id="Write_Eremoran">Eremoran Writing Utility</h3>
-<div id="erewrite_container">
-	<input type="text" id="erewrite_input" onkeyup="ereWrite.update();">
-	<div onclick="ereWrite.update();">
-	<input type="checkbox" id="erewrite_case" name="erewrite_case">
-	<label for="erewrite_case">Match Case</label>
-	<input type="checkbox" id="erewrite_wholeword" name="erewrite_wholeword">
-	<label for="erewrite_wholeword">Whole Words</label>
-	</div>
-	<table>
-		<tr>
-			<td>Suggestions:</td>
-			<td><span class="button" onclick="ereWrite.addRaw();">Add raw</span></td>
-		</tr>
-		<tr>
-			<td colspan="2" id="erewrite_suggest"></td>
-		</tr>
-	</table>
-	<span class="button" onclick="ereWrite.removeLast();">Backspace</span>
-	<span class="button" onclick="ereWrite.reset();">Clear</span>
-	<div id="erewrite_canvas"></div>
-</div>
 
 
 <h3 id="Learn_Eremoran">Learn Eremoran</h3>
