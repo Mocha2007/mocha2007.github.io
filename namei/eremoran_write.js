@@ -19,6 +19,9 @@ const ereWrite = {
 	addRaw(){
 		this.add(this.elem.input.value);
 	},
+	append(char){
+		this.elem.input.value += char;
+	},
 	elem: {
 		/** @returns {HTMLDivElement} */
 		get canvas(){

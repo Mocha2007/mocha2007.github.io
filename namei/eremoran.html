@@ -2136,7 +2136,12 @@ The following remarks apply to the Zestim-Embemmu (Bend-Highbrook) dialect:
 
 <h3 id="Write_Eremoran">Eremoran Writing Utility</h3>
 <div id="erewrite_container">
-	<input type="text" id="erewrite_input" onkeyup="ereWrite.update();">
+	<label>
+		English Regex:
+		<input type="text" id="erewrite_input" onkeyup="ereWrite.update();">
+		<span class="button" onclick="ereWrite.append('ê');">&ecirc;</span>
+		<span class="button" onclick="ereWrite.append('ô');">&ocirc;</span>
+	</label>
 	<div onclick="ereWrite.update();">
 	<input type="checkbox" id="erewrite_case" name="erewrite_case">
 	<label for="erewrite_case">Match Case</label>
@@ -2219,7 +2224,7 @@ The following remarks apply to the Zestim-Embemmu (Bend-Highbrook) dialect:
 		<option value="~">(Related to...)</option>
 	</select>
 	<br>
-	<label for="regex">Regex:</label>
+	<label for="regex">Eremoran Regex:</label>
 	<input name="regex" type="text" id="regexSearch" onkeypress="event => event.key === 'Enter' ? search.input() : undefined">
 	<span class="button" onclick="search.append('ê');">&ecirc;</span>
 	<span class="button" onclick="search.append('ô');">&ocirc;</span>
