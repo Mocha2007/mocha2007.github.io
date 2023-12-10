@@ -518,7 +518,9 @@ function main(t = new Date()){
 }
 
 function refresh(t = new Date()){
-	document.getElementById('earthclock').innerHTML = time.CONFIG.CALTYPE === 'MLSC' ? solarDay(t) : t;
+	document.getElementById('earthclock').innerHTML = time.CONFIG.CALTYPE === 'MLSC'
+		? mochaLunisolar(t).string + '<br>' + solarDay(t)
+		: t;
 }
 
 function refreshSundial(t = new Date()){
