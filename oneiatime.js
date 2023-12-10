@@ -653,8 +653,15 @@ function mochaLunisolar(t){
 		monthName: monthName,
 		monthStartT: monthStartT,
 		monthWeek: monthWeek,
+		get nextMonth(){
+			return new Date(+this.monthStartT + 31*_1d);
+		},
+		get previousMonth(){
+			return new Date(this.monthStartT - _1d);
+		},
 		nones: new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+7), // first quarter
 		string: string,
+		t: t,
 		year: y,
 		yearLengthDays: yearLength,
 		yearLengthMonths: 12 + (normalYearLength < yearLength),

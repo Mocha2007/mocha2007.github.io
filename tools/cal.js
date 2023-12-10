@@ -525,12 +525,19 @@ function main(t = new Date()){
 	else if (time.CONFIG.CALTYPE === 'MLSC'){
 		const MLSC = mochaLunisolar(t);
 		year = document.getElementById('erecal1_title').innerHTML = `MLSC Year ${MLSC.year}`;
-		year = document.getElementById('earthclock2').innerHTML = `${MLSC.monthName}, Year ${MLSC.year}:
-		<br>Kalends: ${MLSC.monthStartT.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}
-		<br>Nones: ${MLSC.nones.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}
-		<br>Ides: ${MLSC.ides.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}
-		<br>Icas: ${MLSC.icas.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}
-		`;
+		/** @type {HTMLTableRowElement} */
+		const monthTable = document.getElementById('earthclock2');
+		'previousMonth t nextMonth'.split(' ').forEach(key => {
+			const datum = mochaLunisolar(MLSC[key]);
+			const td = document.createElement('td');
+			td.innerHTML = `${datum.monthName}, Year ${datum.year}:
+			<br>Kalends: ${datum.monthStartT.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}
+			<br>Nones: ${datum.nones.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}
+			<br>Ides: ${datum.ides.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}
+			<br>Icas: ${datum.icas.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}
+			`;
+			monthTable.appendChild(td);
+		});
 		document.getElementById('monthImg').src = MLSC.month < 12 ? time.zodiacSrc[MLSC.month]
 			: 'https://the-public-domain-review.imgix.net/collections/aurora-borealis-in-art/SAAM-1911.4.1_2-000001.jpg';
 	}
