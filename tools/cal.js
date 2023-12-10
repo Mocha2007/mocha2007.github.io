@@ -150,7 +150,7 @@ const time = {
 	CONFIG: {
 		DEBUG: document.URL[0].toLowerCase() === 'f', // file:// vs. http(s)://
 		FAST_CLOCK: false,
-		LAME_CLOCK: false,
+		LAME_CLOCK: true,
 		LANG: 'EN',
 		OFFSET: false,
 		SEASON: false,
@@ -194,7 +194,7 @@ const time = {
 			THAI: ['Hot', 'Rainy', 'Cold'],
 		},
 		UPDATE_INTERVAL: {
-			CLOCK: 0,
+			CLOCK: 500,
 			SUNDIAL: 0,
 		},
 	},
@@ -503,7 +503,7 @@ function refreshClock(t = new Date()){
 	container.innerHTML = '';
 	// round to nearest interval...
 	if (time.CONFIG.LAME_CLOCK)
-		t = new Date(Math.floor(t/time.CONFIG.UPDATE_INTERVAL.CLOCK)*time.CONFIG.UPDATE_INTERVAL.CLOCK);
+		t = new Date(Math.floor(t/time.CONFIG.UPDATE_INTERVAL.CLOCK/2)*time.CONFIG.UPDATE_INTERVAL.CLOCK*2);
 	container.appendChild(goldClock(t, time.CONFIG.LANG));
 }
 
