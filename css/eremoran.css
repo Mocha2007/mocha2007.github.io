@@ -99,6 +99,12 @@ symbols for 10-19 are lowercase a-j
 a.eremoran {
 	text-decoration: none;
 }
+#erewrite_container > table {
+	width: 100%;
+}
+#erewrite_container > table tr {
+	height: 2em;
+}
 #eremoran_tooltip {
 	background-color: black;
 	border: 0.5vh solid grey;
