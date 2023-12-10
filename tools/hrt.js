@@ -376,7 +376,7 @@ function main(){
 	const elem = document.getElementById('hrt');
 	elem.appendChild(hrt());
 	refresh();
-	setInterval(refresh, 200);
+	setInterval(refresh, 500);
 	setTimeout(() => location.reload(), _1h); // refresh every hour in case dose counter increases
 }
 
