@@ -605,7 +605,7 @@ function mochaLunisolar(t){
 	var leapIndex = 0;
 	var yearStartT = _334 * _334s;
 	// eslint-disable-next-line max-len
-	for (; (yearLength = (y%19%3 ? 0 : leapIndex++%17%2 ? 30 : 31) + normalYearLength) <= daysSinceEpoch; y++){
+	for (; (yearLength = (mod(y, 19)%3 ? 0 : leapIndex++%17%2 ? 30 : 31) + normalYearLength) <= daysSinceEpoch; y++){
 		daysSinceEpoch -= yearLength;
 		yearStartT += yearLength;
 	}

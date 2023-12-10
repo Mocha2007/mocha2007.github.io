@@ -382,12 +382,12 @@ function getKippi(t = new Date()){
 
 function getLuna(t = new Date()){
 	const biweekIndex = mod(Math.floor(t/_1d) + 3, 14);
-	let letter = '', title = '';
+	let alt = '', letter = '';
 	if (biweekIndex === 9){
 		letter = 'L';
-		title = 'Luna Payday';
+		alt = 'Luna Payday';
 	}
-	return {biweekIndex, letter, title};
+	return {biweekIndex, letter, title: alt};
 }
 
 function dayCell(td, dateObj, datum){
@@ -535,6 +535,7 @@ function main(t = new Date()){
 		year = document.getElementById('erecal1_title').innerHTML = `MLSC Year ${MLSC.year}`;
 		/** @type {HTMLTableRowElement} */
 		const monthTable = document.getElementById('earthclock2');
+		monthTable.innerHTML = '';
 		'previousMonth t nextMonth'.split(' ').forEach(key => {
 			const datum = mochaLunisolar(MLSC[key]);
 			const td = document.createElement('td');
