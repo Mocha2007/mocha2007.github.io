@@ -167,7 +167,7 @@ function get_prog(){
 	const pCount = get_prog.dose * pumpCount;
 	return {t, untilNext, doseCount, pumpCount, pCount};
 }
-get_prog.epoch = new Date(2023, 11, 7, 19); // Dec 7th @ 7 PM?
+get_prog.epoch = new Date(2024, 1, 16-3, 19); // February 16th, less three days
 get_prog.pumps = 2;
 get_prog.dose = 21;
 
