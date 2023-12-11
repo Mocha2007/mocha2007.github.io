@@ -288,7 +288,7 @@ const time = {
 		['Kippi\'s Birthday', (t = new Date()) => t.getMonth() === 10 && t.getDate() === 14],
 	],
 	moon: {
-		epoch: new Date(2023, 11, 12, 18, 31),
+		epoch: new Date(Date.UTC(2024, 3, 8, 18, 18, 29)), // https://en.wikipedia.org/wiki/Solar_eclipse_of_April_8,_2024
 		p: 29.530588904835206 * _1d,
 	},
 	months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -547,7 +547,7 @@ function main(t = new Date()){
 			monthTable.appendChild(td);
 		});
 		document.getElementById('monthImg').src = MLSC.month < 12 ? MLSC.month === 8
-			? 'https://upload.wikimedia.org/wikipedia/commons/5/5f/Sidney_Hall_-_Urania%27s_Mirror_-_Taurus_Poniatowski%2C_Serpentarius%2C_Scutum_Sobiesky%2C_and_Serpens.jpg' 
+			? 'https://upload.wikimedia.org/wikipedia/commons/5/5f/Sidney_Hall_-_Urania%27s_Mirror_-_Taurus_Poniatowski%2C_Serpentarius%2C_Scutum_Sobiesky%2C_and_Serpens.jpg'
 			: time.zodiacSrc[(MLSC.month+11)%12]
 			: 'https://the-public-domain-review.imgix.net/collections/aurora-borealis-in-art/SAAM-1911.4.1_2-000001.jpg';
 	}
