@@ -570,7 +570,7 @@ function beat(){
 }
 
 /** A lunisolar calendar that uses a 334-year = 4131-month cycle
- * month drift: -0.3478622973 days per millennium
+ * month drift: -0.4108807128 days per millennium
  * year drift:  -0.3249700599 days per millennium
  * rules:
  * only consider the number of years elapsed in the current 334-year cycle (ie. y %= 334)
