@@ -103,6 +103,13 @@ function ordinal(n){
 	}
 }
 
+function avoidWrap(innerHTML){
+	var elem = document.createElement('span');
+	elem.style.display = 'inline-block';
+	elem.innerHTML = innerHTML;
+	return elem.outerHTML;
+}
+
 function egypt(){
 	var epoch =	21852000; // 1970 SEP 11 00:00:00 UTC+2; first akhet after epoch
 	var reltime = mod(new Date()/1000-epoch, 31556952); // time (s) since beginning of akhet
@@ -510,7 +517,7 @@ function solarDay(now){
 	var daytime_str = '(' + length_day.toFixed(2) + ' h day; ' + dawndusk_str + ')';
 	return solarDayHelper(t)
 		+ ' <abbr title="@Mocha">solar time</abbr> '
-		+ daytime_str;
+		+ avoidWrap(daytime_str);
 }
 
 function elderscrolls(){
@@ -598,7 +605,7 @@ function mochaLunisolar(t){
 	var normalYearLength = 354;
 	var cycleLength = 334;
 	var _334 = 121991;
-	var header = '<a title="Mocha\'s Lunisolar Calendar" href="tools/mlsc.html">MLSC</a> ';
+	var header = '<a title="Mocha\'s Lunisolar Calendar" href="https://mocha2007.github.io/tools/mlsc">MLSC</a> ';
 	var daysSinceEpoch = Math.floor((t - epoch)/_1d);
 	var _334s = Math.floor(daysSinceEpoch / _334);
 	daysSinceEpoch -= _334 * _334s;
@@ -636,7 +643,7 @@ function mochaLunisolar(t){
 		, mochaLunisolar.cyclesPerEpi);
 	var eraLength = mod(mochaLunisolar.eraStarts[ELH]
 		- mochaLunisolar.eraStarts[mod(ELH-1, 12)], mochaLunisolar.cyclesPerEpi);
-	var eraString = '(Age of ' + eraName + ', Cycle ' + (eraR+1) + ' of ' + eraLength + ', Year ' + (mod(y, 334)+1) + ')';
+	var eraString = avoidWrap('(Age of ' + eraName + ', Cycle ' + (eraR+1) + ' of ' + eraLength + ', Year ' + (mod(y, 334)+1) + ')');
 	// continue
 	monthStartT = new Date(monthStartT);
 	var season = 'Spring Summer Fall Winter Month'.split(' ')[Math.floor(mo/4)];
@@ -644,7 +651,7 @@ function mochaLunisolar(t){
 	var meton = Math.floor(y/19);
 	var d = 1 + daysSinceEpoch; // 1-indexed
 	var monthName = 12 < mo ? 'Aurora' : mochaLunisolar.monthNames[(mo + epicycleEra) % 12];
-	var string = header + ordinal(d) + ' of ' + monthName + ' (' + MS + ' ' + season + '), Year ' + y + ' ' + eraString;
+	var string = header + ordinal(d) + ' of ' + monthName + ' (' + MS + ' ' + season + '), ' + y + ' ' + eraString;
 	var monthDay = monthStartT.getDay(), monthWeek = 0;
 	for (var date = 0; date < daysSinceEpoch; date++){
 		monthDay++;
