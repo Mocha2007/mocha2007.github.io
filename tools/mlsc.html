@@ -23,6 +23,157 @@
 	Javascript is not enabled in your browser,<br>
 	or your browser does not support ES6 features.
 </div>
+<script>const CALENDAR_TYPE = 'MLSC';</script>
+<dic id="mlsc_explanation">
+	<h2>Explanation</h2>
+	<h3>Months</h3>
+	<p>
+		A <em>month</em> approximates the moon's synodic orbital period.
+		A <em>common month</em> comprises 30 days (if it is odd-indexed),
+		or 29 days (if it is even-indexed).
+		Every so often, a <em>leap month</em> is inserted, which may have 30 or 31 days.
+		There are twelve months in a <em>common year</em>,
+		and thirteen in a <em>leap year</em>.
+	</p>
+	<h3>Leap Month Rules</h3>
+	<p>
+		If the cycle number (which is the year number mod 334, explained later)
+		mod 19 mod 3 is 0, then the year is a common year.
+		Otherwise, it is a <em>leap year</em>.
+	</p>
+	<p>
+		The leap month is inserted at the end of a leap year.
+		The number of leap months passed in the current cycle is recorded.
+		If this number mod 17 is even, then the leap month has 31 days,
+		otherwise if it is odd, it has 30 days.
+	</p>
+	<h3>Summary so far</h3>
+	<p>
+		A year may contain 12 or 13 months,
+		and total 354, 384, or 385 days.
+	</p>
+	<p>
+		A <em>year</em> approximates the Earth's tropical orbital period.
+	</p>
+	<h3>Cycles, Ages, and Epicycles</h3>
+	<p>
+		A <em>cycle</em> comprises 334 years.
+		The length of the cycle was chosen because the number of lunar synodic months in 334 tropical years
+		is <em>quite nearly</em> a whole number, simplifying calculations.
+		An <em>epicycle</em> comprises 77 cycles (and is thus 25,718 MLSC years or about 25,717 Julian years).
+		The current cycle in the epicycle determines the <em>age</em>.
+		An epicycle approximates Earth's axial precession,
+		and thus what constellation the vernal equinox lies in.
+		Ages vary in length from 4 to 9 cycles according to the table below:
+	</p>
+	<table>
+		<tr>
+			<th>Age</th>
+			<th>Length (cycles)</th>
+		</tr>
+		<tr>
+			<td>Aries</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>Pisces</td>
+			<td>8</td>
+		</tr>
+		<tr>
+			<td>Aquarius</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>Capricornus</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td>Sagittarius</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<td>Ophiuchus</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>Libra</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>Virgo</td>
+			<td>9</td>
+		</tr>
+		<tr>
+			<td>Leo</td>
+			<td>8</td>
+		</tr>
+		<tr>
+			<td>Cancer</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>Gemini</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td>Taurus</td>
+			<td>8</td>
+		</tr>
+	</table>
+	<p>
+		The age determines the name of the starting month.
+		It's cosmetic, and does not affect any ordinal numbers.
+	</p>
+	<p>
+		Epicycles start with <em>Aries</em> and proceed backwards around the zodiac.
+		The current <em>Age of Pisces</em> began year -1002 (March 20th, 1013 CE),
+		and will end 1670 (March 19th, 3685 CE).
+	</p>
+	<h3>Gals</h3>
+	<p>
+		The largest division of time is the <em>gal</em>.
+		A gal is 9,000 epicycles (and is thus 231,462,000 MLSC years or about 231,457,257 Julian years).
+		A gal approximates the time taken for the sun to orbit the milky way once.
+		The current epicycle's beginning of the age of Aries defines the start of <em>gal 0</em>.
+		The solar system therefore formed in <em>gal -20</em>,
+		and the universe in <em>gal -60</em>.
+	</p>
+	<h3>Summary</h3>
+	<table>
+		<tr>
+			<th>Unit</th>
+			<th>Length</th>
+		</tr>
+		<tr>
+			<td>Day</td>
+			<td>86,400 s</td>
+		</tr>
+		<tr>
+			<td>Month</td>
+			<td>29-31 d</td>
+		</tr>
+		<tr>
+			<td>Year</td>
+			<td>12-13 mo<br>354-385 d</td>
+		</tr>
+		<tr>
+			<td>Cycle</td>
+			<td>334 yr<br>4,131 mo<br>121,991 d</td>
+		</tr>
+		<tr>
+			<td>Age</td>
+			<td>4-9 Cycles<br>1,336-3,006 yr</td>
+		</tr>
+		<tr>
+			<td>Epicycle</td>
+			<td>12 Ages<br>77 cycles<br>25,718 yr</td>
+		</tr>
+		<tr>
+			<td>Gal</td>
+			<td>9,000 epicycles<br>231.462 Myr</td>
+		</tr>
+	</table>
+</div>
 <div id="footer">
 	Luna fecit Mar. Non. Dec. 2776 AUC.,<br>
 	eius amore artium programmaturae mathematicaeque.<br>
@@ -32,5 +183,4 @@
 		in mocha2007.github.io/tools/cal
 	</span>
 </div>
-<script>const CALENDAR_TYPE = 'MLSC';</script>
 </html>

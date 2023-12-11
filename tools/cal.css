@@ -141,6 +141,9 @@ header, h2, #footer {
 	.intercalary {
 		background-color: #fdf;
 	}
+	#mlsc_explanation {
+		display: none;
+	}
 }
 /* mobile */
 @media only screen and (hover: none) and (pointer: coarse){

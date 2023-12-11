@@ -636,7 +636,7 @@ function mochaLunisolar(t){
 		, mochaLunisolar.cyclesPerEpi);
 	var eraLength = mod(mochaLunisolar.eraStarts[ELH]
 		- mochaLunisolar.eraStarts[mod(ELH-1, 12)], mochaLunisolar.cyclesPerEpi);
-	var eraString = '(Age of ' + eraName + ', Cycle ' + (eraR+1) + ' of ' + eraLength + ', Year ' + mod(y, 334) + ')';
+	var eraString = '(Age of ' + eraName + ', Cycle ' + (eraR+1) + ' of ' + eraLength + ', Year ' + (mod(y, 334)+1) + ')';
 	// continue
 	monthStartT = new Date(monthStartT);
 	var season = 'Spring Summer Fall Winter Month'.split(' ')[Math.floor(mo/4)];
