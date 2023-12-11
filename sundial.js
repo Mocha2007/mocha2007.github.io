@@ -495,6 +495,11 @@ ursaMinor.edges = [
 	[18, 19],
 	[19, 20],
 	[22, 23],
+	// Cas
+	[24, 25],
+	[24, 26],
+	[26, 27],
+	[27, 28],
 ];
 ursaMinor.vertices = [
 	// RA, DEC
@@ -506,34 +511,41 @@ ursaMinor.vertices = [
 	[ra2rad(16, 16, 45.7), deg2rad(75, 41, 46), 4.95], // eta UMi
 	[ra2rad(15, 20, 39.7), deg2rad(71, 44, 41.8), 3.05], // Pherkad
 	[ra2rad(14, 50, 37), deg2rad(74, 3, 12.1), 2.08], // Kochab (link to Mizar)
-	// CEPHEUS 7-23???
+	// CEPHEUS 7-23
 	[ra2rad(21, 19, 6.4), deg2rad(62, 41, 24.4), 2.45], // alpha cephei
 	[ra2rad(21, 28, 54.3), deg2rad(70, 40, 8.6), 3.23], // beta cephei
 	[ra2rad(23, 40, 19), deg2rad(77, 46, 14.1), 3.21], // gamma cephei
 	[ra2rad(22, 29, 10), deg2rad(58, 24), 4.07], // delta cephei
 	[ra2rad(22, 15, 2.1953), deg2rad(57, 2, 36.8771), 4.18], // epsilon cephei
-	[ra2rad(22, 11, 39.5), deg2rad(58, 19, 22.8), 3.39], // zeta cephei DELETE
+	[ra2rad(22, 11, 39.5), deg2rad(58, 19, 22.8), 3.39], // zeta cephei
 	[ra2rad(20, 45, 43.6), deg2rad(61, 56, 3.3), 3.41], // eta cephei
 	[ra2rad(20, 29, 34.86518), deg2rad(62, 59, 38.6216), 4.21], // theta cephei
 	[ra2rad(22, 50, 30.4), deg2rad(66, 19, 50.5), 3.5], // iota cephei
 	[ra2rad(20, 8, 53.34492), deg2rad(77, 42, 41.0909), 4.28], // kappa cephei
-	[ra2rad(22, 11, 30.57571), deg2rad(59, 24, 52.15), 5.05], // lambda cephei DELETE
+	[ra2rad(22, 11, 30.57571), deg2rad(59, 24, 52.15), 5.05], // lambda cephei
 	[ra2rad(21, 43, 30.4609), deg2rad(58, 46, 48.166), 4.23], // mu cephei
 	[ra2rad(21, 32, 31.9), deg2rad(61, 36, 33.9), 4.25], // nu cephei
 	[ra2rad(22, 3, 47.455), deg2rad(64, 37, 40.71), 4.45], // xi cephei
 	[ra2rad(23, 18, 37), deg2rad(68, 6), 4.75], // omicron
 	[ra2rad(23, 7, 53.854), deg2rad(75, 23, 15), 4.41], // pi
 	[ra2rad(22, 27.5), deg2rad(78, 48), 5.45], // rho
+	// CASSIOPEA 24-28
+	[ra2rad(0, 41, 52.47), deg2rad(56, 40, 22.2), 2.24], // alpha
+	[ra2rad(0, 10, 26.3), deg2rad(59, 17, 30), 2.25], // beta
+	[ra2rad(0, 58, 10.11), deg2rad(60, 51, 2.2), 2.15], // gamma
+	[ra2rad(1, 27, 23.64), deg2rad(60, 21, 56.4), 2.65], // delta
+	[ra2rad(1, 56, 9.07), deg2rad(63, 47, 30), 3.35], // epsilon
 ];
 ursaMinor.labels = [
 	[ra2rad(16), deg2rad(79), 'Ursa Minor'],
 	[ra2rad(22), deg2rad(67), 'Cepheus'],
+	[ra2rad(1.1), deg2rad(61), 'Cassiopeia'],
 ];
 /* constellation todo list:
 	- Ursa Minor (done!)
 	- Cepheus (done!)
 	- Draco
 	- Camelopardalis
-	- Cassiopeia
+	- Cassiopeia (done!)
 	- Ursa Major
 */
