@@ -628,13 +628,14 @@ function mochaLunisolar(t){
 			break;
 	}
 	// epicycles
-	var epicycleR = mod(_334s + 7, 75);
+	var epicycleR = mod(_334s + 7, mochaLunisolar.cyclesPerEpi);
 	var epicycleEra = (12 - mochaLunisolar.eraStarts.findIndex(n => epicycleR < n)) % 12;
 	var eraName = mochaLunisolar.monthNames[epicycleEra];
 	var ELH = (12 - epicycleEra) % 12;
-	var eraR = mod(epicycleR - mochaLunisolar.eraStarts[mod(ELH+11, 12)], 75);
+	var eraR = mod(epicycleR - mochaLunisolar.eraStarts[mod(ELH+11, 12)]
+		, mochaLunisolar.cyclesPerEpi);
 	var eraLength = mod(mochaLunisolar.eraStarts[ELH]
-		- mochaLunisolar.eraStarts[mod(ELH-1, 12)], 75);
+		- mochaLunisolar.eraStarts[mod(ELH-1, 12)], mochaLunisolar.cyclesPerEpi);
 	var eraString = '(Age of ' + eraName + ', Cycle ' + (eraR+1) + ' of ' + eraLength + ', Year ' + mod(y, 334) + ')';
 	// continue
 	monthStartT = new Date(monthStartT);
@@ -694,10 +695,11 @@ function mochaLunisolar(t){
 // Most of month 0 will be in Pisces until 3665 CE (MLST ~1650), when half is in Aquarius instead.
 // Hypothetically, after 11 334-cycles (3674 years), Aquarius could be made the first month by decree...
 // 5374 CE (MLST ~3359) it would switch to Capricorn after 10 334-cycles
-// current "era" = (C+7) % 75
-mochaLunisolar.eraStarts = [4, 12, 17, 23, 30, 35, 40, 49, 57, 61, 67, 75];
+// current "era" = (C+7) % 77
+mochaLunisolar.eraStarts = [4, 12, 17, 23, 31, 36, 41, 50, 58, 62, 69, 77];
 //							  March April May June July August September October November December January February Intercalary
 mochaLunisolar.monthNames = 'Aries Taurus Gemini Cancer Leo Virgo Libra Ophiuchus Sagittarius Capricornus Aquarius Pisces Aurora'.split(' ');
+mochaLunisolar.cyclesPerEpi = mochaLunisolar.eraStarts[11];
 
 function astro(){
 	var t = new Date();
