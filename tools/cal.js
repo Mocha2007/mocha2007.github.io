@@ -546,7 +546,7 @@ function main(t = new Date()){
 			});
 			monthTable.appendChild(td);
 		});
-		document.getElementById('monthImg').src = MLSC.month < 12 ? time.zodiacSrc[MLSC.month]
+		document.getElementById('monthImg').src = MLSC.month < 12 ? time.zodiacSrc[(MLSC.month+11)%12]
 			: 'https://the-public-domain-review.imgix.net/collections/aurora-borealis-in-art/SAAM-1911.4.1_2-000001.jpg';
 	}
 	// timestamp
