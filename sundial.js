@@ -424,6 +424,7 @@ function ursaMinor(t = new Date()){
 		starDisk.style.fill = 'white';
 		starDisk.setAttribute('cx', x);
 		starDisk.setAttribute('cy', y);
+		starDisk.id = 'star_' + i;
 	});
 	// edges
 	ursaMinor.edges.forEach(edge => {
@@ -445,16 +446,34 @@ function ursaMinor(t = new Date()){
 ursaMinor.latitude = 36;
 ursaMinor.offset = -164; // from my longitude!
 ursaMinor.edges = [
+	// UMi
 	[0, 1],
 	[1, 2],
 	[2, 3],
 	[3, 4],
+	[3, 6],
 	[4, 5],
 	[5, 6],
-	[6, 3],
+	// Cep
+	[7, 14],
+	[7, 20],
+	[8, 16],
+	[8, 20],
+	[8, 22],
+	[9, 23],
+	[10, 11],
+	[10, 20],
+	[11, 18],
+	[13, 14],
+	[15, 20],
+	[15, 21],
+	[18, 19],
+	[19, 20],
+	[22, 23],
 ];
 ursaMinor.vertices = [
 	// RA, DEC
+	// URSA MINOR 0-6
 	[ra2rad(3, 3, 48.9), deg2rad(89, 22, 4)], // Polaris
 	[ra2rad(17, 24, 17.9), deg2rad(86, 33, 59.5)], // Yildun
 	[ra2rad(16, 43, 28.4), deg2rad(81, 59, 29.9)], // Alioth
@@ -462,6 +481,24 @@ ursaMinor.vertices = [
 	[ra2rad(16, 16, 45.7), deg2rad(75, 41, 46)], // eUmi
 	[ra2rad(15, 20, 39.7), deg2rad(71, 44, 41.8)], // Pherkad
 	[ra2rad(14, 50, 37), deg2rad(74, 3, 12.1)], // Kochab (link to Mizar)
+	// CEPHEUS 7-23???
+	[ra2rad(21, 19, 6.4), deg2rad(62, 41, 24.4)], // alpha cephei
+	[ra2rad(21, 28, 54.3), deg2rad(70, 40, 8.6)], // beta cephei
+	[ra2rad(23, 40, 19), deg2rad(77, 46, 14.1)], // gamma cephei
+	[ra2rad(22, 29, 10), deg2rad(58, 24)], // delta cephei
+	[ra2rad(22, 15, 2.1953), deg2rad(57, 2, 36.8771)], // epsilon cephei
+	[ra2rad(22, 11, 39.5), deg2rad(58, 19, 22.8)], // zeta cephei DELETE
+	[ra2rad(20, 45, 43.6), deg2rad(61, 56, 3.3)], // eta cephei
+	[ra2rad(20, 29, 34.86518), deg2rad(62, 59, 38.6216)], // theta cephei
+	[ra2rad(22, 50, 30.4), deg2rad(66, 19, 50.5)], // iota cephei
+	[ra2rad(20, 8, 53.34492), deg2rad(77, 42, 41.0909)], // kappa cephei
+	[ra2rad(22, 11, 30.57571), deg2rad(59, 24, 52.15)], // lambda cephei DELETE
+	[ra2rad(21, 43, 30.4609), deg2rad(58, 46, 48.166)], // mu cephei
+	[ra2rad(21, 32, 31.9), deg2rad(61, 36, 33.9)], // nu cephei
+	[ra2rad(22, 3, 47.455), deg2rad(64, 37, 40.71)], // xi cephei
+	[ra2rad(23, 18, 37), deg2rad(68, 6)], // omicron
+	[ra2rad(23, 7, 53.854), deg2rad(75, 23, 15)], // pi
+	[ra2rad(22, 27.5), deg2rad(78, 48)], // rho
 ];
 /* constellation todo list:
 	- Ursa Minor (done!)
