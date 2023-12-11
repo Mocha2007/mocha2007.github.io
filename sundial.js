@@ -181,11 +181,12 @@ function sundial(dayPhase, moonPhase, ornamental, planets, planetNames){
  * @param {string} color (default: black)
  * @param {number} y (default: 0)
  * @param {number} startAngle (default: 0)
+ * @param {number} spacing (default: 3)
  * @returns {SVGTextElement} the last char
  */
-function printCharArc(parent, s, color = 'black', y = 0, startAngle = 0){
+function printCharArc(parent, s, color = 'black', y = 0, startAngle = 0, spacing = 3){
 	// MAIN
-	var charAngle = 3 / Math.abs(y);
+	var charAngle = spacing / Math.abs(y);
 	for (var j = 0; j < s.length; j++){
 		var hLabel = createSvgElement('text');
 		parent.appendChild(hLabel);
@@ -404,6 +405,12 @@ function ursaMinor(t = new Date()){
 	svg.setAttribute('width', 10*svgScale);
 	svg.setAttribute('height', 10*svgScale);
 	svg.setAttribute('aria-label', 'North Celestial Pole');
+	svg.classList.add('pole');
+	// style
+	// css
+	var style = document.createElement('style');
+	style.innerHTML = '.pole text{font-size:0.04px;}';
+	svg.appendChild(style);
 	// background disks
 	var whiteDisk = createSvgElement('circle');
 	svg.appendChild(whiteDisk);
@@ -415,7 +422,7 @@ function ursaMinor(t = new Date()){
 	nightDisk.style.fill = 'black';
 	// global rotation group
 	var g = createSvgElement('g');
-	g.setAttribute('transform', 'rotate(' + angle + ', 0, 0)');
+	g.setAttribute('transform', 'rotate(' + angle*0 + ', 0, 0)');
 	svg.appendChild(g);
 	// line group
 	var lg = createSvgElement('g');
@@ -450,6 +457,14 @@ function ursaMinor(t = new Date()){
 		line.setAttribute('y1', y1);
 		line.setAttribute('x2', x2);
 		line.setAttribute('y2', y2);
+	});
+	// labels
+	ursaMinor.labels.forEach(x => {
+		const [theta_, r_, s_] = x;
+		const r = Math.PI/2 - r_;
+		const theta = theta_ * 180/Math.PI;
+		const s = s_.split('').reverse().join('');
+		printCharArc(g, s, 'red', r, theta - 90, 1.5);
 	});
 	return svg;
 }
@@ -510,9 +525,13 @@ ursaMinor.vertices = [
 	[ra2rad(23, 7, 53.854), deg2rad(75, 23, 15), 4.41], // pi
 	[ra2rad(22, 27.5), deg2rad(78, 48), 5.45], // rho
 ];
+ursaMinor.labels = [
+	[ra2rad(16), deg2rad(79), 'Ursa Minor'],
+	[ra2rad(22), deg2rad(67), 'Cepheus'],
+];
 /* constellation todo list:
 	- Ursa Minor (done!)
-	- Cepheus
+	- Cepheus (done!)
 	- Draco
 	- Camelopardalis
 	- Cassiopeia
