@@ -465,7 +465,7 @@ function calendar(t = new Date()){
 			season.appendChild(month);
 			// month header
 			const monthHeader = document.createElement('h3');
-			monthHeader.innerHTML = (USING_MLSC ? mochaLunisolar.monthNames : time.months)[mo];
+			monthHeader.innerHTML = (USING_MLSC ? MLSC.eraMonths : time.months)[mo];
 			month.appendChild(monthHeader);
 			// month table
 			const monthTable = document.createElement('table');
@@ -546,9 +546,10 @@ function main(t = new Date()){
 			});
 			monthTable.appendChild(td);
 		});
-		document.getElementById('monthImg').src = MLSC.month < 12 ? MLSC.month === 8
+		const modMonth = MLSC.month === 12 ? 12 : (MLSC.month + MLSC.era) % 12;
+		document.getElementById('monthImg').src = modMonth < 12 ? modMonth === 7
 			? 'https://upload.wikimedia.org/wikipedia/commons/5/5f/Sidney_Hall_-_Urania%27s_Mirror_-_Taurus_Poniatowski%2C_Serpentarius%2C_Scutum_Sobiesky%2C_and_Serpens.jpg'
-			: time.zodiacSrc[(MLSC.month+11)%12]
+			: time.zodiacSrc[modMonth]
 			: 'https://the-public-domain-review.imgix.net/collections/aurora-borealis-in-art/SAAM-1911.4.1_2-000001.jpg';
 	}
 	// timestamp

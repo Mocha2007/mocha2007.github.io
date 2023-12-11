@@ -627,14 +627,19 @@ function mochaLunisolar(t){
 		else
 			break;
 	}
+	// epicycles
+	var epicycleR = mod(_334s + 7, 75);
+	var epicycleEra = (12 - mochaLunisolar.eraStarts.findIndex(n => epicycleR < n)) % 12;
+	var eraName = mochaLunisolar.monthNames[epicycleEra];
+	// continue
 	monthStartT = new Date(monthStartT);
 	var season = 'Spring Summer Fall Winter Month'.split(' ')[Math.floor(mo/4)];
 	var MS = 'Early Mid Late Intercalary'.split(' ')[mo === 12 ? 4 : mo % 3];
 	var meton = Math.floor(y/19);
 	var d = 1 + daysSinceEpoch; // 1-indexed
-	var monthName = mochaLunisolar.monthNames[mo];
+	var monthName = 12 < mo ? 'Aurora' : mochaLunisolar.monthNames[(mo + epicycleEra) % 12];
 	var string = header + ordinal(d) + ' of ' + monthName + ' (' + MS + ' '
-	+ season + '), Year ' + y + ' (Meton ' + meton + ', Year ' + y%19 + ')';
+	+ season + '), Year ' + y + ' (Meton ' + meton + ', Year ' + y%19 + ', age of ' + eraName + ')';
 	var monthDay = monthStartT.getDay(), monthWeek = 0;
 	for (var date = 0; date < daysSinceEpoch; date++){
 		monthDay++;
@@ -646,6 +651,12 @@ function mochaLunisolar(t){
 	return {
 		cycles: _334s,
 		date: d,
+		epicycle: epicycleR,
+		era: epicycleEra,
+		eraName: mochaLunisolar.monthNames[epicycleEra], // this is the month of the year it starts on...
+		eraMonths: new Array(12).fill(0)
+			.map((_, i) => mochaLunisolar.monthNames[(i + epicycleEra) % 12])
+			.concat([mochaLunisolar.monthNames[12]]),
 		icas: new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+22), // third quarter
 		ides: new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+15), // full
 		get kalends(){
@@ -673,8 +684,13 @@ function mochaLunisolar(t){
 		yearStartT: yearStartT,
 	};
 }
+// Most of month 0 will be in Pisces until 3665 CE (MLST ~1650), when half is in Aquarius instead.
+// Hypothetically, after 11 334-cycles (3674 years), Aquarius could be made the first month by decree...
+// 5374 CE (MLST ~3359) it would switch to Capricorn after 10 334-cycles
+// current "era" = (C+7) % 75
+mochaLunisolar.eraStarts = [4, 12, 17, 23, 30, 35, 40, 49, 57, 61, 67, 75];
 //							  March April May June July August September October November December January February Intercalary
-mochaLunisolar.monthNames = 'Pisces Aries Taurus Gemini Cancer Leo Virgo Libra Ophiuchus Sagittarius Capricornus Aquarius Aurora'.split(' ');
+mochaLunisolar.monthNames = 'Aries Taurus Gemini Cancer Leo Virgo Libra Ophiuchus Sagittarius Capricornus Aquarius Pisces Aurora'.split(' ');
 
 function astro(){
 	var t = new Date();
