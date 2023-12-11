@@ -422,7 +422,7 @@ function ursaMinor(t = new Date()){
 	nightDisk.style.fill = 'black';
 	// global rotation group
 	var g = createSvgElement('g');
-	g.setAttribute('transform', 'rotate(' + angle*0 + ', 0, 0)');
+	g.setAttribute('transform', 'rotate(' + angle + ', 0, 0)');
 	svg.appendChild(g);
 	// line group
 	var lg = createSvgElement('g');
@@ -500,6 +500,15 @@ ursaMinor.edges = [
 	[24, 26],
 	[26, 27],
 	[27, 28],
+	// Cam
+	[29, 30],
+	[29, 33],
+	[29, 36],
+	[30, 32],
+	[31, 33],
+	[31, 36],
+	[33, 35],
+	[34, 35],
 ];
 ursaMinor.vertices = [
 	// RA, DEC
@@ -535,11 +544,21 @@ ursaMinor.vertices = [
 	[ra2rad(0, 58, 10.11), deg2rad(60, 51, 2.2), 2.15], // gamma
 	[ra2rad(1, 27, 23.64), deg2rad(60, 21, 56.4), 2.65], // delta
 	[ra2rad(1, 56, 9.07), deg2rad(63, 47, 30), 3.35], // epsilon
+	// CAMELOPARDALIS 29-33
+	[ra2rad(4, 56, 29.07), deg2rad(66, 22, 57.1), 4.25], // alpha
+	[ra2rad(5, 5, 35.33), deg2rad(60, 28, 35.8), 4.00], // beta
+	[ra2rad(3, 52, 57.98), deg2rad(71, 24, 23.6), 4.55], // gamma
+	[ra2rad(4, 59, 14.37), deg2rad(53, 47, 24.7), 4.43], // 7 cam
+	[ra2rad(3, 51, 46.08), deg2rad(65, 36, 2.9), 4.35], // be cam
+	[ra2rad(3, 31, 51.76), deg2rad(58, 57, 47.7), 4.55], // ce cam
+	[ra2rad(3, 31, 2.89), deg2rad(60, 1, 30.9), 4.25], // cs cam
+	[ra2rad(7, 3, 36.21), deg2rad(76, 56, 30.1), 4.55], // HD 49878
 ];
 ursaMinor.labels = [
 	[ra2rad(16), deg2rad(79), 'Ursa Minor'],
 	[ra2rad(22), deg2rad(67), 'Cepheus'],
 	[ra2rad(1.1), deg2rad(61), 'Cassiopeia'],
+	[ra2rad(5.5), deg2rad(68), 'Camelopardalis'],
 ];
 /* constellation todo list:
 	- Ursa Minor (done!)
