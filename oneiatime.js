@@ -628,7 +628,7 @@ function mochaLunisolar(t){
 			break;
 	}
 	// epicycles
-	var epicycleR = mod(_334s + 7, mochaLunisolar.cyclesPerEpi);
+	var epicycleR = mod(_334s + mochaLunisolar.eraROffset, mochaLunisolar.cyclesPerEpi);
 	var epicycleEra = (12 - mochaLunisolar.eraStarts.findIndex(n => epicycleR < n)) % 12;
 	var eraName = mochaLunisolar.monthNames[epicycleEra];
 	var ELH = (12 - epicycleEra) % 12;
@@ -696,10 +696,12 @@ function mochaLunisolar(t){
 // Hypothetically, after 11 334-cycles (3674 years), Aquarius could be made the first month by decree...
 // 5374 CE (MLST ~3359) it would switch to Capricorn after 10 334-cycles
 // current "era" = (C+7) % 77
-mochaLunisolar.eraStarts = [4, 12, 17, 23, 31, 36, 41, 50, 58, 62, 69, 77];
+// mochaLunisolar.eraStarts = [4, 12, 17, 23, 31, 36, 41, 50, 58, 62, 69, 77];
+mochaLunisolar.eraStarts = [6, 13, 19, 25, 32, 38, 44, 51, 58, 64, 70, 77]; // based on even divisions centered roughly on the middle of pisces...
 //							  March April May June July August September October November December January February Intercalary
 mochaLunisolar.monthNames = 'Aries Taurus Gemini Cancer Leo Virgo Libra Ophiuchus Sagittarius Capricornus Aquarius Pisces Aurora'.split(' ');
 mochaLunisolar.cyclesPerEpi = mochaLunisolar.eraStarts[11];
+mochaLunisolar.eraROffset = 9; // set to 7 for the original lengths
 
 function astro(){
 	var t = new Date();
