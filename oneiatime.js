@@ -588,10 +588,10 @@ function beat(){
  * Per 334-year cycle, there are 211 354-day years, 58 384-day years, and 65 385-day years.
  */
 function mochaLunisolar(t){
-	if (isNaN(t))
-		throw new Error('INVALID DATE');
 	// default
 	t = t || new Date();
+	if (isNaN(t))
+		throw new Error('INVALID DATE');
 	var _1h = 1000*60*60;
 	var _1d = 24*_1h;
 	var epoch = new Date(2015, 2, 20); // last vernal equinox with a full moon
