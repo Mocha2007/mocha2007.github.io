@@ -375,3 +375,90 @@ goldClock.language = {
 		zodiac: 'wr̥h₁ táw yém kar leó pr̥s ledʰ sko len káp h₂ékʷ dʰǵʰú'.split(' '),
 	},
 };
+
+function deg2rad(deg = 0, amin = 0, asec = 0, neg = false){
+	return Math.PI/180 * (deg + (amin + asec/60)/60) * (neg ? -1 : 1);
+}
+
+function ra2rad(h = 0, m = 0, s = 0){
+	return Math.PI/12 * (h + (m + s/60)/60);
+}
+
+function ursaMinor(t = new Date()){
+	var starSize = 0.01;
+	var size = ursaMinor.latitude * Math.PI/180;
+	var whiteDiskScale = 1.01;
+	var angle = ursaMinor.offset-360*(t/(1000*60*60*24) % 1); // todo
+	// svg
+	var svg = createSvgElement('svg');
+	svg.classList.add('sundial');
+	svg.setAttribute('viewBox', [-size*whiteDiskScale, -size*whiteDiskScale,
+		2*size*whiteDiskScale, 2*size*whiteDiskScale].join(' '));
+	svg.setAttribute('width', 10*svgScale);
+	svg.setAttribute('height', 10*svgScale);
+	svg.setAttribute('aria-label', 'North Celestial Pole');
+	// background disks
+	var whiteDisk = createSvgElement('circle');
+	svg.appendChild(whiteDisk);
+	whiteDisk.setAttribute('r', size*whiteDiskScale);
+	whiteDisk.style.fill = 'white';
+	var nightDisk = createSvgElement('circle');
+	svg.appendChild(nightDisk);
+	nightDisk.setAttribute('r', size);
+	nightDisk.style.fill = 'black';
+	// global rotation group
+	var g = createSvgElement('g');
+	g.setAttribute('transform', 'rotate(' + angle + ', 0, 0)');
+	svg.appendChild(g);
+	// vertices
+	const vertices = [];
+	ursaMinor.vertices.forEach((vertex, i) => {
+		const r = Math.PI/2 - vertex[1];
+		const theta = vertex[0];
+		const [x, y] = vertices[i] = [r*Math.cos(theta), r*Math.sin(theta)];
+		// elem
+		var starDisk = createSvgElement('circle');
+		g.appendChild(starDisk);
+		starDisk.setAttribute('r', starSize);
+		starDisk.style.fill = 'white';
+		starDisk.setAttribute('cx', x);
+		starDisk.setAttribute('cy', y);
+	});
+	// edges
+	ursaMinor.edges.forEach(edge => {
+		const [v1, v2] = edge;
+		const [x1, y1] = vertices[v1];
+		const [x2, y2] = vertices[v2];
+		// elem
+		var line = createSvgElement('line');
+		g.appendChild(line);
+		line.style.stroke = 'white';
+		line.style.strokeWidth = starSize/4;
+		line.setAttribute('x1', x1);
+		line.setAttribute('y1', y1);
+		line.setAttribute('x2', x2);
+		line.setAttribute('y2', y2);
+	});
+	return svg;
+}
+ursaMinor.latitude = 36;
+ursaMinor.offset = -154; // from my longitude!
+ursaMinor.edges = [
+	[0, 1],
+	[1, 2],
+	[2, 3],
+	[3, 4],
+	[4, 5],
+	[5, 6],
+	[6, 3],
+];
+ursaMinor.vertices = [
+	// RA, DEC
+	[ra2rad(3, 3, 48.9), deg2rad(89, 22, 4)], // Polaris
+	[ra2rad(17, 24, 17.9), deg2rad(86, 33, 59.5)], // Yildun
+	[ra2rad(16, 43, 28.4), deg2rad(81, 59, 29.9)], // Alioth
+	[ra2rad(15, 43, 10.8), deg2rad(77, 42, 58)], // Mizar
+	[ra2rad(16, 16, 45.7), deg2rad(75, 41, 46)], // eUmi
+	[ra2rad(15, 20, 39.7), deg2rad(71, 44, 41.8)], // Pherkad
+	[ra2rad(14, 50, 37), deg2rad(74, 3, 12.1)], // Kochab (link to Mizar)
+];

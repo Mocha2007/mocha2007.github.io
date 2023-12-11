@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-/* global getEaster, goldClock, mochaLunisolar, phoonsvg, romanFULL, solarDay, sundial */
+/* global getEaster, goldClock, mochaLunisolar, phoonsvg, romanFULL, solarDay, sundial, ursaMinor */
 
 const _1m = 60*1000;
 const _1h = 60*_1m;
@@ -571,6 +571,9 @@ function refreshSundial(t = new Date()){
 	const dayFraction = (t / _1d - (6 + new Date().getTimezoneOffset()/60)/24) % 1; // offset so 0 = sunrise
 	const sunMoon = [dayFraction, moon.phase(t), 2];
 	container.appendChild(sundial(...sunMoon));
+	const sky = document.getElementById('sky');
+	sky.innerHTML = '';
+	sky.appendChild(ursaMinor(t));
 }
 
 function refreshClock(t = new Date()){
