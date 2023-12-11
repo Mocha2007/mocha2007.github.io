@@ -24,18 +24,19 @@
 	or your browser does not support ES6 features.
 </div>
 <script>const CALENDAR_TYPE = 'MLSC';</script>
-<dic id="mlsc_explanation">
-	<h2>Explanation</h2>
-	<h3>Months</h3>
+<div id="mlsc_explanation">
+	<h2><a href="#mlsc_explanation">^</a>
+		Explanation</h2>
+	<h3 id="mlsc_e_months"><a href="#mlsc_e_months">^</a>Months</h3>
 	<p>
-		A <em>month</em> approximates the moon's synodic orbital period.
+		A <em>month</em> approximates <a href="https://en.wikipedia.org/wiki/Lunar_month#Synodic_month">the moon's synodic orbital period</a>.
 		A <em>common month</em> comprises 30 days (if it is odd-indexed),
 		or 29 days (if it is even-indexed).
 		Every so often, a <em>leap month</em> is inserted, which may have 30 or 31 days.
 		There are twelve months in a <em>common year</em>,
 		and thirteen in a <em>leap year</em>.
 	</p>
-	<h3>Leap Month Rules</h3>
+	<h3 id="mlsc_e_leap"><a href="#mlsc_e_leap">^</a>Leap Month Rules</h3>
 	<p>
 		If the cycle number (which is the year number mod 334, explained later)
 		mod 19 mod 3 is 0, then the year is a common year.
@@ -47,23 +48,23 @@
 		If this number mod 17 is even, then the leap month has 31 days,
 		otherwise if it is odd, it has 30 days.
 	</p>
-	<h3>Summary so far</h3>
+	<h3 id="mlsc_e_s1"><a href="#mlsc_e_s1">^</a>Summary so far</h3>
 	<p>
 		A year may contain 12 or 13 months,
 		and total 354, 384, or 385 days.
 	</p>
 	<p>
-		A <em>year</em> approximates the Earth's tropical orbital period.
+		A <em>year</em> approximates <a href="https://en.wikipedia.org/wiki/Tropical_year">Earth's tropical orbital period</a>.
 	</p>
-	<h3>Cycles, Ages, and Epicycles</h3>
+	<h3 id="mlsc_e_cycles"><a href="#mlsc_e_cycles">^</a>Cycles, Ages, and Epicycles</h3>
 	<p>
 		A <em>cycle</em> comprises 334 years.
 		The length of the cycle was chosen because the number of lunar synodic months in 334 tropical years
 		is <em>quite nearly</em> a whole number, simplifying calculations.
 		An <em>epicycle</em> comprises 77 cycles (and is thus 25,718 MLSC years or about 25,717 Julian years).
 		The current cycle in the epicycle determines the <em>age</em>.
-		An epicycle approximates Earth's axial precession,
-		and thus what constellation the vernal equinox lies in.
+		An epicycle approximates <a href="https://en.wikipedia.org/wiki/Axial_precession">Earth's axial precession</a>,
+		and thus what constellation the <a href="https://en.wikipedia.org/wiki/March_equinox">vernal equinox</a> lies in.
 		Ages vary in length from 6 to 7 cycles,
 		with Pisces, Sagittarius, Virgo, Leo, and Taurus having 7, and the rest 6.
 	</p>
@@ -134,20 +135,21 @@
 		It's cosmetic, and does not affect any ordinal numbers.
 	</p>
 	<p>
-		Epicycles start with <em>Aries</em> and proceed backwards around the zodiac.
+		Epicycles start with <em>Aries</em> and proceed backwards around the <a href="https://en.wikipedia.org/wiki/Zodiac">zodiac</a>.
 		The current <em>Age of Pisces</em> began year -1002 (March 20th, 1013 CE),
 		and will end 1670 (March 20th, 3351 CE).
 	</p>
-	<h3>Gals</h3>
+	<h3 id="mlsc_e_gals"><a href="#mlsc_e_gals">^</a>Gals</h3>
 	<p>
 		The largest division of time is the <em>gal</em>.
 		A gal is 9,000 epicycles (and is thus 231,462,000 MLSC years or about 231,457,257 Julian years).
-		A gal approximates the time taken for the sun to orbit the milky way once.
+		A gal approximates the time taken for the sun to orbit the milky way once
+		(the <a href="https://en.wikipedia.org/wiki/Galactic_year">galactic year</a>).
 		The current epicycle's beginning of the age of Aries defines the start of <em>gal 0</em>.
-		The solar system therefore formed in <em>gal -20</em>,
-		and the universe in <em>gal -60</em>.
+		The solar system therefore <a href="https://en.wikipedia.org/wiki/Formation_and_evolution_of_the_Solar_System">formed</a> in <em>gal -20</em>,
+		and <a href="https://en.wikipedia.org/wiki/Big_Bang">the universe</a> in <em>gal -60</em>.
 	</p>
-	<h3>Summary</h3>
+	<h3 id="mlsc_e_s2"><a href="#mlsc_e_s2">^</a>Summary</h3>
 	<table>
 		<tr>
 			<th>Unit</th>
