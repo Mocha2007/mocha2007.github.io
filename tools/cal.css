@@ -15,6 +15,7 @@ header, h2, #footer {
 }
 #earthclock {
 	font-size: 1.5em;
+	user-select: none;
 }
 #footer {
 	font-size: 60%;
