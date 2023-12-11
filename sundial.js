@@ -463,3 +463,11 @@ ursaMinor.vertices = [
 	[ra2rad(15, 20, 39.7), deg2rad(71, 44, 41.8)], // Pherkad
 	[ra2rad(14, 50, 37), deg2rad(74, 3, 12.1)], // Kochab (link to Mizar)
 ];
+/* constellation todo list:
+	- Ursa Minor (done!)
+	- Cepheus
+	- Draco
+	- Camelopardalis
+	- Cassiopeia
+	- Ursa Major
+*/
