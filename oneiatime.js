@@ -1,4 +1,4 @@
-/* eslint-disable comma-dangle, no-var, object-shorthand */
+/* eslint-disable comma-dangle, no-var, object-shorthand, prefer-arrow-callback */
 /* eslint-env es3 */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
 /* exported bonus, playSound, stopSound */
@@ -636,7 +636,9 @@ function mochaLunisolar(t){
 	}
 	// epicycles
 	var epicycleR = mod(_334s + mochaLunisolar.eraROffset, mochaLunisolar.cyclesPerEpi);
-	var epicycleEra = (12 - mochaLunisolar.eraStarts.findIndex(n => epicycleR < n)) % 12;
+	// eslint-disable-next-line brace-style
+	var epicycleEra = (12 - mochaLunisolar.eraStarts.findIndex(function(n){return epicycleR < n;}))
+		% 12;
 	var eraName = mochaLunisolar.monthNames[epicycleEra];
 	var ELH = (12 - epicycleEra) % 12;
 	var eraR = mod(epicycleR - mochaLunisolar.eraStarts[mod(ELH+11, 12)]
@@ -644,14 +646,28 @@ function mochaLunisolar(t){
 	var eraLength = mod(mochaLunisolar.eraStarts[ELH]
 		- mochaLunisolar.eraStarts[mod(ELH-1, 12)], mochaLunisolar.cyclesPerEpi);
 	var eraString = avoidWrap('(Age of ' + eraName + ', Cycle ' + (eraR+1) + ' of ' + eraLength + ', Year ' + (mod(y, 334)+1) + ')');
-	// continue
+	// weekday
 	monthStartT = new Date(monthStartT);
+	var quarters = [
+		monthStartT,
+		new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+7),
+		new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+15),
+		new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+22)
+	];
+	var currentQuarter = (mod(quarters.findIndex(q => t < q), 5)+3)%4;
+	var daysAfterQuarter = Math.floor((t - quarters[currentQuarter])/_1d);
+	var quarterName = 'the ' + mochaLunisolar.quarterNames[currentQuarter];
+	var dayName = daysAfterQuarter
+		? mochaLunisolar.dayNames[daysAfterQuarter-1] + '’s Day of ' + quarterName
+		: quarterName;
+	// continue
 	var season = 'Spring Summer Fall Winter Month'.split(' ')[Math.floor(mo/4)];
 	var MS = 'Early Mid Late Intercalary'.split(' ')[mo === 12 ? 4 : mo % 3];
 	var meton = Math.floor(y/19);
 	var d = 1 + daysSinceEpoch; // 1-indexed
 	var monthName = 12 < mo ? 'Aurora' : mochaLunisolar.monthNames[(mo + epicycleEra) % 12];
-	var string = header + ordinal(d) + ' of ' + monthName + ' (' + MS + ' ' + season + '), ' + y + ' ' + eraString;
+	var string = header + ordinal(d) + ' ' + avoidWrap('(' + dayName + ')')
+		+ ' of ' + monthName + ' (' + MS + ' ' + season + '), ' + y + ' ' + eraString;
 	var monthDay = monthStartT.getDay(), monthWeek = 0;
 	for (var date = 0; date < daysSinceEpoch; date++){
 		monthDay++;
@@ -667,16 +683,15 @@ function mochaLunisolar(t){
 		era: epicycleEra,
 		eraLength: eraLength,
 		eraMonths: new Array(12).fill(0)
-			.map((_, i) => mochaLunisolar.monthNames[(i + epicycleEra) % 12])
+			// eslint-disable-next-line brace-style
+			.map(function(_, i){return mochaLunisolar.monthNames[(i + epicycleEra) % 12];})
 			.concat([mochaLunisolar.monthNames[12]]),
 		eraName: mochaLunisolar.monthNames[epicycleEra], // this is the month of the year it starts on...
 		eraR: eraR,
 		eraString: eraString,
-		icas: new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+22), // third quarter
-		ides: new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+15), // full
-		get kalends(){
-			return this.monthStartT;
-		},
+		icas: quarters[3], // third quarter
+		ides: quarters[2], // full
+		kalends: quarters[0], // new
 		leap: normalYearLength < yearLength,
 		meton: meton,
 		month: mo,
@@ -690,9 +705,11 @@ function mochaLunisolar(t){
 		get previousMonth(){
 			return new Date(this.monthStartT - _1d);
 		},
-		nones: new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+7), // first quarter
+		nones: quarters[1], // first quarter
 		string: string,
 		t: t,
+		weekdayM: daysAfterQuarter,
+		weekdayMName: dayName,
 		year: y,
 		yearLengthDays: yearLength,
 		yearLengthMonths: 12 + (normalYearLength < yearLength),
@@ -706,6 +723,8 @@ function mochaLunisolar(t){
 // mochaLunisolar.eraStarts = [4, 12, 17, 23, 31, 36, 41, 50, 58, 62, 69, 77];
 mochaLunisolar.eraStarts = [6, 13, 19, 25, 32, 38, 44, 51, 58, 64, 70, 77]; // based on even divisions centered roughly on the middle of pisces...
 //							  March April May June July August September October November December January February Intercalary
+mochaLunisolar.dayNames = 'Sol Luna Mars Mercury Jupiter Venus Saturn Uranus'.split(' ');
+mochaLunisolar.quarterNames = 'Kalends Nones Ides Icas'.split(' ');
 mochaLunisolar.monthNames = 'Aries Taurus Gemini Cancer Leo Virgo Libra Ophiuchus Sagittarius Capricornus Aquarius Pisces Aurora'.split(' ');
 mochaLunisolar.cyclesPerEpi = mochaLunisolar.eraStarts[11];
 mochaLunisolar.eraROffset = 9; // set to 7 for the original lengths
