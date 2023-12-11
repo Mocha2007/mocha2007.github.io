@@ -385,10 +385,11 @@ function ra2rad(h = 0, m = 0, s = 0){
 }
 
 function ursaMinor(t = new Date()){
+	var sideralDay = 86164100;
 	var starSize = 0.01;
 	var size = ursaMinor.latitude * Math.PI/180;
 	var whiteDiskScale = 1.01;
-	var angle = ursaMinor.offset-360*(t/(1000*60*60*24) % 1); // todo
+	var angle = ursaMinor.offset-360*(t/sideralDay % 1); // todo
 	// svg
 	var svg = createSvgElement('svg');
 	svg.classList.add('sundial');
@@ -442,7 +443,7 @@ function ursaMinor(t = new Date()){
 	return svg;
 }
 ursaMinor.latitude = 36;
-ursaMinor.offset = -154; // from my longitude!
+ursaMinor.offset = -164; // from my longitude!
 ursaMinor.edges = [
 	[0, 1],
 	[1, 2],
