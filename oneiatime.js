@@ -673,8 +673,8 @@ function mochaLunisolar(t){
 		yearStartT: yearStartT,
 	};
 }
-//							March April May June July August September October November December January February Intercalary
-mochaLunisolar.monthNames = 'Pisces Aries Taurus Gemini Cancer Leo Virgo Libra Scorpio Sagittarius Capricorn Aquarius Aurora'.split(' ');
+//							  March April May June July August September October November December January February Intercalary
+mochaLunisolar.monthNames = 'Pisces Aries Taurus Gemini Cancer Leo Virgo Libra Ophiuchus Sagittarius Capricornus Aquarius Aurora'.split(' ');
 
 function astro(){
 	var t = new Date();
