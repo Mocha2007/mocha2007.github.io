@@ -631,6 +631,11 @@ function mochaLunisolar(t){
 	var epicycleR = mod(_334s + 7, 75);
 	var epicycleEra = (12 - mochaLunisolar.eraStarts.findIndex(n => epicycleR < n)) % 12;
 	var eraName = mochaLunisolar.monthNames[epicycleEra];
+	var ELH = (12 - epicycleEra) % 12;
+	var eraR = mod(epicycleR - mochaLunisolar.eraStarts[mod(ELH+11, 12)], 75);
+	var eraLength = mod(mochaLunisolar.eraStarts[ELH]
+		- mochaLunisolar.eraStarts[mod(ELH-1, 12)], 75);
+	var eraString = '(Age of ' + eraName + ', Cycle ' + (eraR+1) + ' of ' + eraLength + ', Year ' + mod(y, 334) + ')';
 	// continue
 	monthStartT = new Date(monthStartT);
 	var season = 'Spring Summer Fall Winter Month'.split(' ')[Math.floor(mo/4)];
@@ -638,8 +643,7 @@ function mochaLunisolar(t){
 	var meton = Math.floor(y/19);
 	var d = 1 + daysSinceEpoch; // 1-indexed
 	var monthName = 12 < mo ? 'Aurora' : mochaLunisolar.monthNames[(mo + epicycleEra) % 12];
-	var string = header + ordinal(d) + ' of ' + monthName + ' (' + MS + ' '
-	+ season + '), Year ' + y + ' (Meton ' + meton + ', Year ' + y%19 + ', age of ' + eraName + ')';
+	var string = header + ordinal(d) + ' of ' + monthName + ' (' + MS + ' ' + season + '), Year ' + y + ' ' + eraString;
 	var monthDay = monthStartT.getDay(), monthWeek = 0;
 	for (var date = 0; date < daysSinceEpoch; date++){
 		monthDay++;
@@ -653,10 +657,13 @@ function mochaLunisolar(t){
 		date: d,
 		epicycle: epicycleR,
 		era: epicycleEra,
-		eraName: mochaLunisolar.monthNames[epicycleEra], // this is the month of the year it starts on...
+		eraLength: eraLength,
 		eraMonths: new Array(12).fill(0)
 			.map((_, i) => mochaLunisolar.monthNames[(i + epicycleEra) % 12])
 			.concat([mochaLunisolar.monthNames[12]]),
+		eraName: mochaLunisolar.monthNames[epicycleEra], // this is the month of the year it starts on...
+		eraR: eraR,
+		eraString: eraString,
 		icas: new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+22), // third quarter
 		ides: new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+15), // full
 		get kalends(){
