@@ -384,9 +384,15 @@ function ra2rad(h = 0, m = 0, s = 0){
 	return Math.PI/12 * (h + (m + s/60)/60);
 }
 
+function mag2radius(mag = 0){
+	var linearMag = Math.pow(100, -mag/5); // turn it from logarithmic to linear
+	return Math.sqrt(linearMag); // if we let area = mag, then the radius is... sqrt(A/pi), but the pi is just a constant term anyways so I ignore it
+}
+
 function ursaMinor(t = new Date()){
 	var sideralDay = 86164100;
-	var starSize = 0.01;
+	var starSize = 0.02;
+	var lineSize = 0.001;
 	var size = ursaMinor.latitude * Math.PI/180;
 	var whiteDiskScale = 1.01;
 	var angle = ursaMinor.offset-360*(t/sideralDay % 1); // todo
@@ -411,16 +417,20 @@ function ursaMinor(t = new Date()){
 	var g = createSvgElement('g');
 	g.setAttribute('transform', 'rotate(' + angle + ', 0, 0)');
 	svg.appendChild(g);
+	// line group
+	var lg = createSvgElement('g');
+	g.appendChild(lg);
 	// vertices
 	const vertices = [];
 	ursaMinor.vertices.forEach((vertex, i) => {
 		const r = Math.PI/2 - vertex[1];
 		const theta = vertex[0];
+		const mag = vertex[2];
 		const [x, y] = vertices[i] = [r*Math.cos(theta), r*Math.sin(theta)];
 		// elem
 		var starDisk = createSvgElement('circle');
 		g.appendChild(starDisk);
-		starDisk.setAttribute('r', starSize);
+		starDisk.setAttribute('r', starSize * mag2radius(mag));
 		starDisk.style.fill = 'white';
 		starDisk.setAttribute('cx', x);
 		starDisk.setAttribute('cy', y);
@@ -433,9 +443,9 @@ function ursaMinor(t = new Date()){
 		const [x2, y2] = vertices[v2];
 		// elem
 		var line = createSvgElement('line');
-		g.appendChild(line);
-		line.style.stroke = 'white';
-		line.style.strokeWidth = starSize/4;
+		lg.appendChild(line);
+		line.style.stroke = 'cyan';
+		line.style.strokeWidth = lineSize;
 		line.setAttribute('x1', x1);
 		line.setAttribute('y1', y1);
 		line.setAttribute('x2', x2);
@@ -474,31 +484,31 @@ ursaMinor.edges = [
 ursaMinor.vertices = [
 	// RA, DEC
 	// URSA MINOR 0-6
-	[ra2rad(3, 3, 48.9), deg2rad(89, 22, 4)], // Polaris
-	[ra2rad(17, 24, 17.9), deg2rad(86, 33, 59.5)], // Yildun
-	[ra2rad(16, 43, 28.4), deg2rad(81, 59, 29.9)], // Alioth
-	[ra2rad(15, 43, 10.8), deg2rad(77, 42, 58)], // Mizar
-	[ra2rad(16, 16, 45.7), deg2rad(75, 41, 46)], // eUmi
-	[ra2rad(15, 20, 39.7), deg2rad(71, 44, 41.8)], // Pherkad
-	[ra2rad(14, 50, 37), deg2rad(74, 3, 12.1)], // Kochab (link to Mizar)
+	[ra2rad(3, 3, 48.9), deg2rad(89, 22, 4), 1.97], // Polaris
+	[ra2rad(17, 24, 17.9), deg2rad(86, 33, 59.5), 4.35], // Yildun
+	[ra2rad(16, 43, 28.4), deg2rad(81, 59, 29.9), 1.77], // Alioth
+	[ra2rad(15, 43, 10.8), deg2rad(77, 42, 58), 2.04], // Mizar
+	[ra2rad(16, 16, 45.7), deg2rad(75, 41, 46), 4.95], // eta UMi
+	[ra2rad(15, 20, 39.7), deg2rad(71, 44, 41.8), 3.05], // Pherkad
+	[ra2rad(14, 50, 37), deg2rad(74, 3, 12.1), 2.08], // Kochab (link to Mizar)
 	// CEPHEUS 7-23???
-	[ra2rad(21, 19, 6.4), deg2rad(62, 41, 24.4)], // alpha cephei
-	[ra2rad(21, 28, 54.3), deg2rad(70, 40, 8.6)], // beta cephei
-	[ra2rad(23, 40, 19), deg2rad(77, 46, 14.1)], // gamma cephei
-	[ra2rad(22, 29, 10), deg2rad(58, 24)], // delta cephei
-	[ra2rad(22, 15, 2.1953), deg2rad(57, 2, 36.8771)], // epsilon cephei
-	[ra2rad(22, 11, 39.5), deg2rad(58, 19, 22.8)], // zeta cephei DELETE
-	[ra2rad(20, 45, 43.6), deg2rad(61, 56, 3.3)], // eta cephei
-	[ra2rad(20, 29, 34.86518), deg2rad(62, 59, 38.6216)], // theta cephei
-	[ra2rad(22, 50, 30.4), deg2rad(66, 19, 50.5)], // iota cephei
-	[ra2rad(20, 8, 53.34492), deg2rad(77, 42, 41.0909)], // kappa cephei
-	[ra2rad(22, 11, 30.57571), deg2rad(59, 24, 52.15)], // lambda cephei DELETE
-	[ra2rad(21, 43, 30.4609), deg2rad(58, 46, 48.166)], // mu cephei
-	[ra2rad(21, 32, 31.9), deg2rad(61, 36, 33.9)], // nu cephei
-	[ra2rad(22, 3, 47.455), deg2rad(64, 37, 40.71)], // xi cephei
-	[ra2rad(23, 18, 37), deg2rad(68, 6)], // omicron
-	[ra2rad(23, 7, 53.854), deg2rad(75, 23, 15)], // pi
-	[ra2rad(22, 27.5), deg2rad(78, 48)], // rho
+	[ra2rad(21, 19, 6.4), deg2rad(62, 41, 24.4), 2.45], // alpha cephei
+	[ra2rad(21, 28, 54.3), deg2rad(70, 40, 8.6), 3.23], // beta cephei
+	[ra2rad(23, 40, 19), deg2rad(77, 46, 14.1), 3.21], // gamma cephei
+	[ra2rad(22, 29, 10), deg2rad(58, 24), 4.07], // delta cephei
+	[ra2rad(22, 15, 2.1953), deg2rad(57, 2, 36.8771), 4.18], // epsilon cephei
+	[ra2rad(22, 11, 39.5), deg2rad(58, 19, 22.8), 3.39], // zeta cephei DELETE
+	[ra2rad(20, 45, 43.6), deg2rad(61, 56, 3.3), 3.41], // eta cephei
+	[ra2rad(20, 29, 34.86518), deg2rad(62, 59, 38.6216), 4.21], // theta cephei
+	[ra2rad(22, 50, 30.4), deg2rad(66, 19, 50.5), 3.5], // iota cephei
+	[ra2rad(20, 8, 53.34492), deg2rad(77, 42, 41.0909), 4.28], // kappa cephei
+	[ra2rad(22, 11, 30.57571), deg2rad(59, 24, 52.15), 5.05], // lambda cephei DELETE
+	[ra2rad(21, 43, 30.4609), deg2rad(58, 46, 48.166), 4.23], // mu cephei
+	[ra2rad(21, 32, 31.9), deg2rad(61, 36, 33.9), 4.25], // nu cephei
+	[ra2rad(22, 3, 47.455), deg2rad(64, 37, 40.71), 4.45], // xi cephei
+	[ra2rad(23, 18, 37), deg2rad(68, 6), 4.75], // omicron
+	[ra2rad(23, 7, 53.854), deg2rad(75, 23, 15), 4.41], // pi
+	[ra2rad(22, 27.5), deg2rad(78, 48), 5.45], // rho
 ];
 /* constellation todo list:
 	- Ursa Minor (done!)
