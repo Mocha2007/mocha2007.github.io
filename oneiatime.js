@@ -601,7 +601,7 @@ function mochaLunisolar(t){
 		throw new Error('INVALID DATE');
 	var _1h = 1000*60*60;
 	var _1d = 24*_1h;
-	var epoch = new Date(Date.UTC(2015, 2, 20, 4)); // local midnight, last vernal equinox with a full moon
+	var epoch = new Date(Date.UTC(2015, 2, 20, 5)); // local midnight, last vernal equinox with a full moon
 	var normalYearLength = 354;
 	var cycleLength = 334;
 	var _334 = 121991;
