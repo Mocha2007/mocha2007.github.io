@@ -695,6 +695,14 @@ ursaMinor.labels = [
 	[ra2rad(8), deg2rad(46), 'Lynx'],
 	[ra2rad(13), deg2rad(39.5), 'Canes Venatici'],
 	[ra2rad(22.6), deg2rad(45), 'Lacerta'],
+	// todo
+	[ra2rad(4), deg2rad(43), 'Perseus'],
+	[ra2rad(20.5), deg2rad(40), 'Cygnus'],
+	[ra2rad(5.5), deg2rad(39), 'Auriga'],
+	[ra2rad(1), deg2rad(36), 'Andromeda'],
+	[ra2rad(10), deg2rad(36), 'Leo Minor'],
+	[ra2rad(19), deg2rad(36), 'Lyra'],
+	[ra2rad(17), deg2rad(34), 'Hercules'],
 ];
 /* FINISHED:
 	Camelopardalis, Canes Venatici, Cassiopeia, Cepheus, Draco
