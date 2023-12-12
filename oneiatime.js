@@ -602,6 +602,7 @@ function mochaLunisolar(t, link){
 	var _1h = 1000*60*60;
 	var _1d = 24*_1h;
 	var epoch = new Date(Date.UTC(2015, 2, 20, 5)); // local midnight, last vernal equinox with a full moon
+	var LUNAR_SIDEREAL_PERIOD = 27.321661 * _1d; // used only for lunar mansions
 	var normalYearLength = 354;
 	var cycleLength = 334;
 	var _334 = 121991;
@@ -662,6 +663,9 @@ function mochaLunisolar(t, link){
 	var dayName = daysAfterQuarter
 		? mochaLunisolar.dayNames[daysAfterQuarter-1] + '’s Day of ' + quarterName
 		: quarterName;
+	// Lunar Mansion
+	var mansionID = (Math.round(t/LUNAR_SIDEREAL_PERIOD % 1 * mochaLunisolar.mansions.length)
+		+ mochaLunisolar.mansionOffset) % mochaLunisolar.mansions.length;
 	// continue
 	var season = 'Spring Summer Fall Winter Month'.split(' ')[Math.floor(mo/4)];
 	var MS = 'Early Mid Late Intercalary'.split(' ')[mo === 12 ? 4 : mo % 3];
@@ -699,6 +703,8 @@ function mochaLunisolar(t, link){
 		kalends: quarters[0], // new
 		leap: normalYearLength < yearLength,
 		meton: meton,
+		mansion: mochaLunisolar.mansions[mansionID],
+		mansionID: mansionID,
 		month: mo,
 		monthDay: monthDay,
 		monthName: monthName,
@@ -729,6 +735,12 @@ mochaLunisolar.quarterNames = 'Kalends Nones Ides Icas'.split(' ');
 mochaLunisolar.monthNames = 'Aries Taurus Gemini Cancer Leo Virgo Libra Ophiuchus Sagittarius Capricornus Aquarius Pisces Aurora'.split(' ');
 mochaLunisolar.cyclesPerEpi = mochaLunisolar.eraStarts[11];
 mochaLunisolar.eraROffset = 9; // set to 7 for the original lengths
+mochaLunisolar.mansions = [
+	'd Oph', 'δ Sag', 'τ Sag', 'ψ Cap', 'γ Cap', 'τ Aqr', 'ψ Aqr', 'ω Psc', 'ζ Psc',
+	'ο Psc', 'δ Ari', 'Pleiades', 'τ Tau', 'β Tau', 'ε Gem', 'Pollux', 'γ Cnc', 'λ Leo',
+	'Regulus', 'ρ Leo', 'β Vir', 'η Vir', 'θ Vir', 'Spica', 'α Lib', 'υ Lib', 'Antares',
+];
+mochaLunisolar.mansionOffset = 22;
 
 function astro(){
 	var t = new Date();

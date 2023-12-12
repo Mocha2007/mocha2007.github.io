@@ -551,12 +551,20 @@ function main(t = new Date()){
 			? 'https://upload.wikimedia.org/wikipedia/commons/5/5f/Sidney_Hall_-_Urania%27s_Mirror_-_Taurus_Poniatowski%2C_Serpentarius%2C_Scutum_Sobiesky%2C_and_Serpens.jpg'
 			: time.zodiacSrc[modMonth]
 			: 'https://the-public-domain-review.imgix.net/collections/aurora-borealis-in-art/SAAM-1911.4.1_2-000001.jpg';
+		mlscBonus(t);
 	}
 	// timestamp
 	document.getElementById('timestamp').innerHTML = romanFULL(new Date());
 	// done loading
 	console.info('cal.js successfully loaded.');
 	console.info(`CONFIG: ${time.CONFIG.CALTYPE} - ${year}`);
+}
+
+function mlscBonus(t = new Date()){
+	const bonus = document.getElementById('bonus');
+	const MLSC = mochaLunisolar(t);
+	bonus.innerHTML = `<h2>Additional Information</h2>
+	Lunar Mansion: ${MLSC.mansion}`;
 }
 
 function refresh(t = new Date()){
