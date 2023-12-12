@@ -466,6 +466,13 @@ function ursaMinor(t = new Date()){
 		const s = s_.split('').reverse().join('');
 		printCharArc(g, s, 'red', r, theta - 90, 1.5);
 	});
+	// mask https://stackoverflow.com/a/61001784
+	var mask = createSvgElement('clipPath');
+	svg.appendChild(mask);
+	mask.id = 'crop-disk';
+	var rect = nightDisk.cloneNode();
+	mask.appendChild(rect);
+	g.setAttribute('clip-path', 'url(#crop-disk)');
 	return svg;
 }
 ursaMinor.latitude = 36;
