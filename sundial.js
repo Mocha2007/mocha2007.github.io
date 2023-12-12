@@ -509,6 +509,22 @@ ursaMinor.edges = [
 	[31, 36],
 	[33, 35],
 	[34, 35],
+	// Dra
+	[37, 45],
+	[37, 46],
+	[38, 39],
+	[38, 48],
+	[39, 49],
+	[40, 41],
+	[40, 49],
+	[41, 50],
+	[42, 43],
+	[42, 51],
+	[43, 44],
+	[44, 45],
+	[46, 47],
+	[48, 49],
+	[50, 51],
 ];
 ursaMinor.vertices = [
 	// RA, DEC
@@ -544,7 +560,7 @@ ursaMinor.vertices = [
 	[ra2rad(0, 58, 10.11), deg2rad(60, 51, 2.2), 2.15], // gamma
 	[ra2rad(1, 27, 23.64), deg2rad(60, 21, 56.4), 2.65], // delta
 	[ra2rad(1, 56, 9.07), deg2rad(63, 47, 30), 3.35], // epsilon
-	// CAMELOPARDALIS 29-33
+	// CAMELOPARDALIS 29-36
 	[ra2rad(4, 56, 29.07), deg2rad(66, 22, 57.1), 4.25], // alpha
 	[ra2rad(5, 5, 35.33), deg2rad(60, 28, 35.8), 4.00], // beta
 	[ra2rad(3, 52, 57.98), deg2rad(71, 24, 23.6), 4.55], // gamma
@@ -553,18 +569,35 @@ ursaMinor.vertices = [
 	[ra2rad(3, 31, 51.76), deg2rad(58, 57, 47.7), 4.55], // ce cam
 	[ra2rad(3, 31, 2.89), deg2rad(60, 1, 30.9), 4.25], // cs cam
 	[ra2rad(7, 3, 36.21), deg2rad(76, 56, 30.1), 4.55], // HD 49878
+	// DRACO 37-51
+	[ra2rad(14, 5, 1.06), deg2rad(64, 15, 26.2), 3.65], // alpha
+	[ra2rad(17, 30, 56.15), deg2rad(52, 16, 58), 2.75], // beta
+	[ra2rad(17, 57, 7.4), deg2rad(51, 29, 8.6), 2.2], // gamma
+	[ra2rad(19, 12, 29.73), deg2rad(67, 42, 13.4), 3.05], // delta
+	[ra2rad(19, 48, 0.88), deg2rad(70, 19, 46.4), 3.85], // epsilon
+	[ra2rad(17, 8, 48.55), deg2rad(65, 40, 59.2), 3.15], // zeta
+	[ra2rad(16, 24, 16.67), deg2rad(61, 27, 27), 2.7], // eta
+	[ra2rad(16, 2, 17.89), deg2rad(58, 29, 51.6), 4], // theta
+	[ra2rad(15, 25, 25.95), deg2rad(58, 52, 45.6), 3.25], // iota
+	[ra2rad(12, 33, 27.69), deg2rad(69, 39, 5.2), 3.85], // kappa
+	[ra2rad(11, 32, 48.69), deg2rad(69, 11, 41.4), 3.8], // lambda
+	[ra2rad(17, 32, 36.3), deg2rad(55, 10, 1), 4.85], // nu
+	[ra2rad(17, 53, 54), deg2rad(56, 52, 5.7), 3.7], // xi
+	[ra2rad(19, 14, 59.98), deg2rad(73, 23, 59.4), 4.45], // tau
+	[ra2rad(18, 20, 31.68), deg2rad(72, 44, 32.5), 3.55], // chi
 ];
 ursaMinor.labels = [
 	[ra2rad(16), deg2rad(79), 'Ursa Minor'],
 	[ra2rad(22), deg2rad(67), 'Cepheus'],
 	[ra2rad(1.1), deg2rad(61), 'Cassiopeia'],
 	[ra2rad(5.5), deg2rad(68), 'Camelopardalis'],
+	[ra2rad(16), deg2rad(65), 'Draco'],
 ];
 /* constellation todo list:
 	- Ursa Minor (done!)
 	- Cepheus (done!)
-	- Draco
-	- Camelopardalis
+	- Draco (done!)
+	- Camelopardalis (done!)
 	- Cassiopeia (done!)
 	- Ursa Major
 */
