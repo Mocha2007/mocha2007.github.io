@@ -474,7 +474,7 @@ function ursaMinor(t = new Date(), drawEdges = true){
 	g.setAttribute('clip-path', 'url(#crop-disk)');
 	return svg;
 }
-ursaMinor.latitude = 36;
+ursaMinor.latitude = 36; // upgrade to 41N soon
 ursaMinor.offset = -164; // from my longitude!
 ursaMinor.edges = [
 	// UMi
@@ -539,6 +539,18 @@ ursaMinor.edges = [
 	['h uma', 'upsilon uma'],
 	['iota uma', 'omicron uma'],
 	['theta uma', 'upsilon uma'],
+	['theta uma', 'kappa uma'],
+	['iota uma', 'kappa uma'],
+	// head/paws (per HAR)
+	['gamma uma', 'chi uma'],
+	['eta uma', 'chi uma'],
+	['psi uma', 'chi uma'],
+	['mu uma', 'lambda uma'],
+	['theta uma', 'lambda uma'],
+	['kappa uma', 'lambda uma'],
+	['xi uma', 'nu uma'],
+	['psi uma', 'nu uma'],
+	['mu uma', 'nu uma'],
 ];
 ursaMinor.vertices = [
 	// RA, DEC
@@ -616,6 +628,14 @@ ursaMinor.vertices = [
 	['upsilon uma', ra2rad(9, 52, 41.5), deg2rad(58, 55, 19.6), 3.84],
 	['iota uma', ra2rad(9, 0, 51.2), deg2rad(47, 56, 41.9), 3.19],
 	['theta uma', ra2rad(9, 34, 27.7), deg2rad(51, 33, 53.3), 3.27],
+	['kappa uma', ra2rad(9, 5, 15.9), deg2rad(47, 3, 31.9), 3.56],
+	// head/paws (per HAR)
+	['chi uma', ra2rad(11, 47, 18.2), deg2rad(47, 38, 36.1), 3.84],
+	['psi uma', ra2rad(11, 11, 0.2), deg2rad(44, 21, 55.9), 3.16],
+	['lambda uma', ra2rad(10, 18, 32.3), deg2rad(42, 47, 30.8), 3.45], // tania borealis
+	['mu uma', ra2rad(10, 23, 45.2), deg2rad(41, 22, 34.9), 3.14], // tania australis
+	['nu uma', ra2rad(11, 19, 45.9), deg2rad(32, 57, 41.8), 3.63], // alula borealis
+	['xi uma', ra2rad(11, 19, 27.1), deg2rad(31, 23, 33.4), 3.79], // alula australis
 ];
 ursaMinor.labels = [
 	[ra2rad(16), deg2rad(79), 'Ursa Minor'],
@@ -623,13 +643,14 @@ ursaMinor.labels = [
 	[ra2rad(1.1), deg2rad(61), 'Cassiopeia'],
 	[ra2rad(5.5), deg2rad(68), 'Camelopardalis'],
 	[ra2rad(16), deg2rad(65), 'Draco'],
-	[ra2rad(11.5), deg2rad(51), 'Ursa Major'],
+	[ra2rad(11), deg2rad(51), 'Ursa Major'],
 ];
 /* constellation todo list:
 	- Ursa Minor (done!)
 	- Cepheus (done!)
 	- Draco (done!)
-	- Camelopardalis (done!)
+	- Camelopardalis (done... sorta!)
 	- Cassiopeia (done!)
-	- Ursa Major
+	- Ursa Major (done!)
+	- Lynx
 */
