@@ -687,11 +687,11 @@ ursaMinor.vertices = [
 ];
 ursaMinor.labels = [
 	[ra2rad(16), deg2rad(79), 'Ursa Minor'],
-	[ra2rad(22), deg2rad(67), 'Cepheus'],
+	[ra2rad(22.2), deg2rad(64), 'Cepheus'],
 	[ra2rad(1.1), deg2rad(61), 'Cassiopeia'],
-	[ra2rad(5.2), deg2rad(67), 'Camelopardalis'],
+	[ra2rad(5.2), deg2rad(63), 'Camelopardalis'],
 	[ra2rad(16), deg2rad(63), 'Draco'],
-	[ra2rad(11), deg2rad(51), 'Ursa Major'],
+	[ra2rad(11.5), deg2rad(50), 'Ursa Major'],
 	[ra2rad(8), deg2rad(46), 'Lynx'],
 	[ra2rad(13), deg2rad(39.5), 'Canes Venatici'],
 	[ra2rad(22.6), deg2rad(45), 'Lacerta'],
