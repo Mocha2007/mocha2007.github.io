@@ -736,9 +736,9 @@ mochaLunisolar.monthNames = 'Aries Taurus Gemini Cancer Leo Virgo Libra Ophiuchu
 mochaLunisolar.cyclesPerEpi = mochaLunisolar.eraStarts[11];
 mochaLunisolar.eraROffset = 9; // set to 7 for the original lengths
 mochaLunisolar.mansions = [
-	'c Oph', 'Kaus Borealis', 'h1 Sag', 'Dabih', 'Nashira', 'σ Aqr', 'ψ Aqr', 'ω Psc', 'ε Psc',
-	'ο Psc', 'Bharani', 'Pleiades', 'τ Tau', 'Alheka', 'Mebsuta', 'Wasat', 'Asellus Australis', 'Acubens',
-	'Regulus', 'Chertan', 'β Vir', 'Zaniah', 'θ Vir', 'Spica', 'Zubenelgenubi', 'Zubenelhakrabi', 'Antares',
+	'Sabik', 'Kaus Borealis', '52 Sag', 'Dabih', 'Nashira', 'Ancha', 'ψ Aqr', 'ω Psc', 'ε Psc',
+	'Torcular', 'Bharani', 'Pleiades', 'Aldebaran', 'Alheka', 'Mebsuta', 'Wasat', 'Asellus Australis', 'Acubens',
+	'Regulus', 'Chertan', 'Zavijava', 'Zaniah', 'θ Vir', 'Spica', 'Zubenelgenubi', 'Zubenelhakrabi', 'Antares',
 ];
 mochaLunisolar.mansionOffset = 22;
 
