@@ -390,7 +390,7 @@ function mag2radius(mag = 0){
 	return Math.sqrt(linearMag); // if we let area = mag, then the radius is... sqrt(A/pi), but the pi is just a constant term anyways so I ignore it
 }
 
-function ursaMinor(t = new Date()){
+function ursaMinor(t = new Date(), drawEdges = true){
 	var sideralDay = 86164100;
 	var starSize = 0.02;
 	var lineSize = 0.001;
@@ -444,7 +444,7 @@ function ursaMinor(t = new Date()){
 		starDisk.id = 'star_' + i;
 	});
 	// edges
-	ursaMinor.edges.forEach(edge => {
+	drawEdges && ursaMinor.edges.forEach(edge => {
 		const [v1, v2] = edge;
 		const [x1, y1] = vertices[v1];
 		const [x2, y2] = vertices[v2];
