@@ -474,7 +474,7 @@ function ursaMinor(t = new Date(), drawEdges = true){
 	g.setAttribute('clip-path', 'url(#crop-disk)');
 	return svg;
 }
-ursaMinor.latitude = 41;
+ursaMinor.latitude = 45;
 ursaMinor.offset = -164; // from my longitude!
 ursaMinor.edges = [
 	// UMi
@@ -565,6 +565,17 @@ ursaMinor.edges = [
 	['38 lyn', 'alpha lyn'],
 	// Canes Venatici
 	['cor caroli', 'chara'],
+	// Lacerta
+	['alpha lac', 'beta lac'],
+	['alpha lac', '5 lac'],
+	['beta lac', '4 lac'],
+	['1 lac', 'hd 211073'],
+	['2 lac', '5 lac'],
+	['2 lac', '6 lac'],
+	['4 lac', '5 lac'],
+	['5 lac', '11 lac'],
+	['6 lac', '11 lac'],
+	['6 lac', 'hd 211073'],
 ];
 ursaMinor.vertices = [
 	// RA, DEC
@@ -663,6 +674,16 @@ ursaMinor.vertices = [
 	// Canes Venatici
 	['cor caroli', ra2rad(12, 57, 7.9), deg2rad(38, 11, 12), 2.84],
 	['chara', ra2rad(12, 34, 52), deg2rad(41, 13, 28.7), 4.34],
+	// Lacerta
+	['alpha lac', ra2rad(22, 32, 15.5), deg2rad(50, 24, 33), 3.78],
+	['beta lac', ra2rad(22, 24, 28.9), deg2rad(52, 21, 9.4), 4.56],
+	['1 lac', ra2rad(22, 16, 59.7), deg2rad(37, 52, 14.5), 4.28],
+	['2 lac', ra2rad(22, 21, 59.7), deg2rad(46, 39, 37.5), 4.5],
+	['4 lac', ra2rad(22, 25, 28), deg2rad(49, 36, 4.6), 4.59],
+	['5 lac', ra2rad(22, 30, 30.6), deg2rad(47, 49, 58.4), 4.41],
+	['6 lac', ra2rad(22, 31, 30.2), deg2rad(43, 14, 57.6), 4.47],
+	['11 lac', ra2rad(22, 41, 32.9), deg2rad(44, 24, 16.5), 4.66],
+	['hd 211073', ra2rad(22, 14, 53.2), deg2rad(39, 50, 11.6), 4.63],
 ];
 ursaMinor.labels = [
 	[ra2rad(16), deg2rad(79), 'Ursa Minor'],
@@ -673,8 +694,9 @@ ursaMinor.labels = [
 	[ra2rad(11), deg2rad(51), 'Ursa Major'],
 	[ra2rad(8), deg2rad(46), 'Lynx'],
 	[ra2rad(13), deg2rad(39.5), 'Canes Venatici'],
+	[ra2rad(22.6), deg2rad(45), 'Lacerta'],
 ];
 /* FINISHED:
 	Camelopardalis, Canes Venatici, Cassiopeia, Cepheus, Draco
-	Lynx, Ursa Major, Ursa Minor
+	Lacerta, Lynx, Ursa Major, Ursa Minor
 */
