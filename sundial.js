@@ -445,6 +445,10 @@ function ursaMinor(t = new Date(), drawEdges = true){
 	// edges
 	drawEdges && ursaMinor.edges.forEach(edge => {
 		const [v1, v2] = edge;
+		if (!(vertices[v1] && vertices[v2])){
+			console.warn(`${v1}-${v2} link could not be drawn`);
+			return;
+		}
 		const [x1, y1] = vertices[v1];
 		const [x2, y2] = vertices[v2];
 		// elem
@@ -580,6 +584,19 @@ ursaMinor.edges = [
 	['alpha tri', 'beta tri'],
 	['alpha tri', 'gamma tri'],
 	['beta tri', 'gamma tri'],
+	// Antinous
+	['eta aql', 'theta aql'],
+	['eta aql', 'iota aql'],
+	['theta aql', '69 aql'],
+	['iota aql', 'nu aql'],
+	['iota aql', 'kappa aql'],
+	['kappa aql', 'lambda aql'],
+	['kappa aql', '26 aql'],
+	['lambda aql', '12 aql'],
+	['51 aql', '57 aql'],
+	['57 aql', '69 aql'],
+	['69 aql', '70 aql'],
+	['70 aql', '71 aql'],
 ];
 ursaMinor.vertices = [
 	// RA, DEC
@@ -692,6 +709,20 @@ ursaMinor.vertices = [
 	['alpha tri', ra2rad(1, 54, 27.5), deg2rad(29, 41, 50.6), 3.52], // mothallah
 	['beta tri', ra2rad(2, 10, 58.9), deg2rad(35, 6, 9.5), 3.06],
 	['gamma tri', ra2rad(2, 18, 45.1), deg2rad(33, 57, 35.7), 4],
+	// Antinous
+	['eta aql', ra2rad(19, 53, 39.9), deg2rad(1, 4, 0.8), 4.03],
+	['theta aql', ra2rad(20, 12, 30.8), deg2rad(0, 45, 2.8, true), 3.22],
+	['iota aql', ra2rad(19, 37, 56), deg2rad(1, 14, 1.7, true), 4.31],
+	['kappa aql', ra2rad(19, 38, 9.1), deg2rad(6, 58, 29.1, true), 4.94],
+	['lambda aql', ra2rad(19, 7, 29.4), deg2rad(4, 50, 49, true), 4.03],
+	['nu aql', ra2rad(19, 27, 42.8), deg2rad(0, 23, 10), 4.75],
+	['12 aql', ra2rad(19, 2, 55.8), deg2rad(5, 42, 20.7, true), 4.16],
+	['26 aql', ra2rad(19, 21, 47.9), deg2rad(5, 22, 17.1, true), 4.75],
+	['51 aql', ra2rad(19, 52, 4.2), deg2rad(10, 42, 12.8, true), 5.47],
+	['57 aql', ra2rad(19, 55, 53.7), deg2rad(8, 9, 56.2, true), 5.66],
+	['69 aql', ra2rad(20, 30, 52.6), deg2rad(2, 48, 23.2, true), 5.06],
+	['70 aql', ra2rad(20, 37, 57), deg2rad(2, 28, 3.2, true), 5],
+	['71 aql', ra2rad(20, 39, 33), deg2rad(1, 1, 18.8, true), 4.47],
 ];
 ursaMinor.labels = [
 	// sort from most northernly, then alphabetically
@@ -705,6 +736,7 @@ ursaMinor.labels = [
 	[ra2rad(22.6), deg2rad(45), 'Lacerta'],
 	[ra2rad(13), deg2rad(39.5), 'Canes Venatici'],
 	[ra2rad(2), deg2rad(32), 'Triangulum'],
+	[ra2rad(20), deg2rad(-4), 'Antinous'],
 	// todo
 	[ra2rad(4), deg2rad(43), 'Perseus'],
 	[ra2rad(20.5), deg2rad(40), 'Cygnus'],
@@ -716,6 +748,7 @@ ursaMinor.labels = [
 	[ra2rad(16), deg2rad(29), 'Corona Borealis'],
 ];
 /* FINISHED:
+	Antinous
 	Camelopardalis, Canes Venatici, Cassiopeia, Cepheus, Draco
 	Lacerta, Lynx, Triangulum, Ursa Major, Ursa Minor
 */
