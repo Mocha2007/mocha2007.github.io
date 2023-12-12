@@ -564,7 +564,7 @@ function mlscBonus(t = new Date()){
 	const bonus = document.getElementById('bonus');
 	const MLSC = mochaLunisolar(t);
 	bonus.innerHTML = `<h2>Additional Information</h2>
-	Lunar Mansion: ${MLSC.mansion}`;
+	Lunar Mansion: <a href="https://en.wikipedia.org/wiki/${MLSC.mansion}">${MLSC.mansion}</a>`;
 }
 
 function refresh(t = new Date()){
