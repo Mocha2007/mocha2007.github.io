@@ -594,7 +594,7 @@ function beat(){
  * A year can have 354, 384, or 385 days.
  * Per 334-year cycle, there are 211 354-day years, 58 384-day years, and 65 385-day years.
  */
-function mochaLunisolar(t){
+function mochaLunisolar(t, link){
 	// default
 	t = t || new Date();
 	if (isNaN(t))
@@ -605,7 +605,9 @@ function mochaLunisolar(t){
 	var normalYearLength = 354;
 	var cycleLength = 334;
 	var _334 = 121991;
-	var header = '<a title="Mocha\'s Lunisolar Calendar" href="https://mocha2007.github.io/tools/mlsc">MLSC</a> ';
+	var headerTag = link ? 'a' : 'abbr';
+	var header = '<' + headerTag + ' title="Mocha\'s Lunisolar Calendar" href="https://mocha2007.github.io/tools/mlsc">MLSC</'
+		+ headerTag + '> ';
 	var daysSinceEpoch = Math.floor((t - epoch)/_1d);
 	var _334s = Math.floor(daysSinceEpoch / _334);
 	daysSinceEpoch -= _334 * _334s;
@@ -676,6 +678,9 @@ function mochaLunisolar(t){
 			monthWeek++;
 		}
 	}
+	// misc data
+	var nextMonth = new Date(+monthStartT + 31*_1d);
+	var previousMonth = new Date(monthStartT - _1d);
 	return {
 		cycles: _334s,
 		date: d,
@@ -699,12 +704,8 @@ function mochaLunisolar(t){
 		monthName: monthName,
 		monthStartT: monthStartT,
 		monthWeek: monthWeek,
-		get nextMonth(){
-			return new Date(+this.monthStartT + 31*_1d);
-		},
-		get previousMonth(){
-			return new Date(this.monthStartT - _1d);
-		},
+		nextMonth: nextMonth,
+		previousMonth: previousMonth,
 		nones: quarters[1], // first quarter
 		string: string,
 		t: t,
@@ -789,7 +790,7 @@ function bonus(){
 	// all these clocks update once a day, so no need to have these recomputed every 100 ms
 	document.getElementById('clockbonus').innerHTML = ['<br><hr>', zodiac(), china(),
 		egypt(), hebrew(), japan(), romanFULL(), maya(), elderscrolls(),
-		kol(), mochaLunisolar().string, astro(), getEaster.html()].join('<br>');
+		kol(), mochaLunisolar(new Date(), true).string, astro(), getEaster.html()].join('<br>');
 	setInterval(onTick100, 100); // 10 hz
 	setInterval(onTick1000, 1000); // 1 hz
 	setInterval(onTick10000, 10000); // 0.1 hz
