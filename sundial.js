@@ -428,12 +428,11 @@ function ursaMinor(t = new Date(), drawEdges = true){
 	var lg = createSvgElement('g');
 	g.appendChild(lg);
 	// vertices
-	const vertices = [];
+	const vertices = {};
 	ursaMinor.vertices.forEach((vertex, i) => {
-		const r = Math.PI/2 - vertex[1];
-		const theta = vertex[0];
-		const mag = vertex[2];
-		const [x, y] = vertices[i] = [r*Math.cos(theta), r*Math.sin(theta)];
+		const [id, theta, r_, mag] = vertex;
+		const r = Math.PI/2 - r_;
+		const [x, y] = vertices[id] = [r*Math.cos(theta), r*Math.sin(theta)];
 		// elem
 		var starDisk = createSvgElement('circle');
 		g.appendChild(starDisk);
@@ -479,119 +478,114 @@ ursaMinor.latitude = 36;
 ursaMinor.offset = -164; // from my longitude!
 ursaMinor.edges = [
 	// UMi
-	[0, 1],
-	[1, 2],
-	[2, 3],
-	[3, 4],
-	[3, 6],
-	[4, 5],
-	[5, 6],
+	['alpha umi', 'delta umi'],
+	['delta umi', 'epsilon umi'],
+	['epsilon umi', 'zeta umi'],
+	['zeta umi', 'eta umi'],
+	['eta umi', 'gamma umi'],
+	['gamma umi', 'beta umi'],
+	['beta umi', 'zeta umi'],
 	// Cep
-	[7, 13],
-	[7, 20],
-	[8, 16],
-	[8, 20],
-	[8, 22],
-	[9, 23],
-	[10, 11],
-	[10, 20],
-	[11, 18],
-	[13, 14],
-	[15, 20],
-	[15, 21],
-	[18, 19],
-	[19, 20],
-	[22, 23],
+	['alpha cep', 'beta cep'],
+	['alpha cep', 'mu cep'],
+	['alpha cep', 'eta cep'],
+	['beta cep', 'gamma cep'],
+	['beta cep', 'iota cep'],
+	['gamma cep', 'iota cep'],
+	['delta cep', 'iota cep'],
+	['delta cep', 'zeta cep'],
+	['epsilon cep', 'zeta cep'],
+	['epsilon cep', 'mu cep'],
+	['eta cep', 'theta cep'],
 	// Cas
-	[24, 25],
-	[24, 26],
-	[26, 27],
-	[27, 28],
-	// Cam
-	[29, 30],
-	[29, 33],
-	[29, 36],
-	[30, 32],
-	[31, 33],
-	[31, 36],
-	[33, 35],
-	[34, 35],
+	['alpha cas', 'beta cas'],
+	['alpha cas', 'gamma cas'],
+	['gamma cas', 'delta cas'],
+	['delta cas', 'epsilon cas'],
+	['epsilon cas', '50 cas'],
+	// Cam - this does not use HAR's lines (yet!) - todo!
+	['alpha cam', 'gamma cam'],
+	['alpha cam', 'beta cam'],
+	['alpha cam', 'bk cam'],
+	['bk cam', 'cs cam'],
 	// Dra
-	[37, 45],
-	[37, 46],
-	[38, 39],
-	[38, 48],
-	[39, 49],
-	[40, 41],
-	[40, 49],
-	[40, 51],
-	[42, 43],
-	[42, 51],
-	[43, 44],
-	[44, 45],
-	[46, 47],
-	[48, 49],
-	[50, 51],
+	['beta dra', 'gamma dra'],
+	['beta dra', 'nu dra'],
+	['xi dra', 'gamma dra'],
+	['xi dra', 'nu dra'],
+	['delta dra', 'xi dra'],
+	['delta dra', 'epsilon dra'],
+	['delta dra', 'chi dra'],
+	['tau dra', 'chi dra'],
+	['zeta dra', 'chi dra'],
+	['zeta dra', 'eta dra'],
+	['theta dra', 'eta dra'],
+	['theta dra', 'iota dra'],
+	['alpha dra', 'iota dra'],
+	['alpha dra', 'kappa dra'],
+	['lambda dra', 'kappa dra'],
 ];
 ursaMinor.vertices = [
 	// RA, DEC
 	// URSA MINOR 0-6
-	[ra2rad(3, 3, 48.9), deg2rad(89, 22, 4), 1.97], // Polaris
-	[ra2rad(17, 24, 17.9), deg2rad(86, 33, 59.5), 4.35], // Yildun
-	[ra2rad(16, 43, 28.4), deg2rad(81, 59, 29.9), 1.77], // Alioth
-	[ra2rad(15, 43, 10.8), deg2rad(77, 42, 58), 2.04], // Mizar
-	[ra2rad(16, 16, 45.7), deg2rad(75, 41, 46), 4.95], // eta UMi
-	[ra2rad(15, 20, 39.7), deg2rad(71, 44, 41.8), 3.05], // Pherkad
-	[ra2rad(14, 50, 37), deg2rad(74, 3, 12.1), 2.08], // Kochab (link to Mizar)
+	['alpha umi', ra2rad(3, 3, 48.9), deg2rad(89, 22, 4), 1.97], // Polaris
+	['beta umi', ra2rad(14, 50, 37), deg2rad(74, 3, 12.1), 2.08], // Kochab
+	['delta umi', ra2rad(17, 24, 17.9), deg2rad(86, 33, 59.5), 4.35], // Yildun
+	['epsilon umi', ra2rad(16, 43, 28.4), deg2rad(81, 59, 29.9), 1.77], // Alioth
+	['zeta umi', ra2rad(15, 43, 10.8), deg2rad(77, 42, 58), 2.04],
+	['eta umi', ra2rad(16, 16, 45.7), deg2rad(75, 41, 46), 4.95],
+	['gamma umi', ra2rad(15, 20, 39.7), deg2rad(71, 44, 41.8), 3.05], // Pherkad
 	// CEPHEUS 7-23
-	[ra2rad(21, 19, 6.4), deg2rad(62, 41, 24.4), 2.45], // alpha cephei
-	[ra2rad(21, 28, 54.3), deg2rad(70, 40, 8.6), 3.23], // beta cephei
-	[ra2rad(23, 40, 19), deg2rad(77, 46, 14.1), 3.21], // gamma cephei
-	[ra2rad(22, 29, 10), deg2rad(58, 24), 4.07], // delta cephei
-	[ra2rad(22, 15, 2.1953), deg2rad(57, 2, 36.8771), 4.18], // epsilon cephei
-	[ra2rad(22, 11, 39.5), deg2rad(58, 19, 22.8), 3.39], // zeta cephei
-	[ra2rad(20, 45, 43.6), deg2rad(61, 56, 3.3), 3.41], // eta cephei
-	[ra2rad(20, 29, 34.86518), deg2rad(62, 59, 38.6216), 4.21], // theta cephei
-	[ra2rad(22, 50, 30.4), deg2rad(66, 19, 50.5), 3.5], // iota cephei
-	[ra2rad(20, 8, 53.34492), deg2rad(77, 42, 41.0909), 4.28], // kappa cephei
-	[ra2rad(22, 11, 30.57571), deg2rad(59, 24, 52.15), 5.05], // lambda cephei
-	[ra2rad(21, 43, 30.4609), deg2rad(58, 46, 48.166), 4.23], // mu cephei
-	[ra2rad(21, 32, 31.9), deg2rad(61, 36, 33.9), 4.25], // nu cephei
-	[ra2rad(22, 3, 47.455), deg2rad(64, 37, 40.71), 4.45], // xi cephei
-	[ra2rad(23, 18, 37), deg2rad(68, 6), 4.75], // omicron
-	[ra2rad(23, 7, 53.854), deg2rad(75, 23, 15), 4.41], // pi
-	[ra2rad(22, 27.5), deg2rad(78, 48), 5.45], // rho
+	['alpha cep', ra2rad(21, 19, 6.4), deg2rad(62, 41, 24.4), 2.45], // alpha cephei
+	['beta cep', ra2rad(21, 28, 54.3), deg2rad(70, 40, 8.6), 3.23], // beta cephei
+	['gamma cep', ra2rad(23, 40, 19), deg2rad(77, 46, 14.1), 3.21], // gamma cephei
+	['delta cep', ra2rad(22, 29, 10), deg2rad(58, 24), 4.07], // delta cephei
+	['epsilon cep', ra2rad(22, 15, 2.1953), deg2rad(57, 2, 36.8771), 4.18], // epsilon cephei
+	['zeta cep', ra2rad(22, 11, 39.5), deg2rad(58, 19, 22.8), 3.39], // zeta cephei
+	['eta cep', ra2rad(20, 45, 43.6), deg2rad(61, 56, 3.3), 3.41], // eta cephei
+	['theta cep', ra2rad(20, 29, 34.86518), deg2rad(62, 59, 38.6216), 4.21], // theta cephei
+	['iota cep', ra2rad(22, 50, 30.4), deg2rad(66, 19, 50.5), 3.5], // iota cephei
+	['kappa cep', ra2rad(20, 8, 53.34492), deg2rad(77, 42, 41.0909), 4.28], // kappa cephei
+	['lambda cep', ra2rad(22, 11, 30.57571), deg2rad(59, 24, 52.15), 5.05], // lambda cephei
+	['mu cep', ra2rad(21, 43, 30.4609), deg2rad(58, 46, 48.166), 4.23], // mu cephei
+	['nu cep', ra2rad(21, 32, 31.9), deg2rad(61, 36, 33.9), 4.25], // nu cephei
+	['xi cep', ra2rad(22, 3, 47.455), deg2rad(64, 37, 40.71), 4.45], // xi cephei
+	['omicron cep', ra2rad(23, 18, 37), deg2rad(68, 6), 4.75], // omicron
+	['pi cep', ra2rad(23, 7, 53.854), deg2rad(75, 23, 15), 4.41], // pi
+	['rho cep', ra2rad(22, 27.5), deg2rad(78, 48), 5.45], // rho
 	// CASSIOPEA 24-28
-	[ra2rad(0, 41, 52.47), deg2rad(56, 40, 22.2), 2.24], // alpha
-	[ra2rad(0, 10, 26.3), deg2rad(59, 17, 30), 2.25], // beta
-	[ra2rad(0, 58, 10.11), deg2rad(60, 51, 2.2), 2.15], // gamma
-	[ra2rad(1, 27, 23.64), deg2rad(60, 21, 56.4), 2.65], // delta
-	[ra2rad(1, 56, 9.07), deg2rad(63, 47, 30), 3.35], // epsilon
+	['alpha cas', ra2rad(0, 41, 52.47), deg2rad(56, 40, 22.2), 2.24], // shedir
+	['beta cas', ra2rad(0, 10, 26.3), deg2rad(59, 17, 30), 2.25], // caph
+	['gamma cas', ra2rad(0, 58, 10.11), deg2rad(60, 51, 2.2), 2.15], // navi
+	['delta cas', ra2rad(1, 27, 23.64), deg2rad(60, 21, 56.4), 2.65], // ruchbah
+	['epsilon cas', ra2rad(1, 56, 9.07), deg2rad(63, 47, 30), 3.35], // segin
+	['50 cas', ra2rad(2, 5, 32.7), deg2rad(72, 32, 25.1), 3.95], // 50 cas
 	// CAMELOPARDALIS 29-36
-	[ra2rad(4, 56, 29.07), deg2rad(66, 22, 57.1), 4.25], // alpha
-	[ra2rad(5, 5, 35.33), deg2rad(60, 28, 35.8), 4.00], // beta
-	[ra2rad(3, 52, 57.98), deg2rad(71, 24, 23.6), 4.55], // gamma
-	[ra2rad(4, 59, 14.37), deg2rad(53, 47, 24.7), 4.43], // 7 cam
-	[ra2rad(3, 51, 46.08), deg2rad(65, 36, 2.9), 4.35], // be cam
-	[ra2rad(3, 31, 51.76), deg2rad(58, 57, 47.7), 4.55], // ce cam
-	[ra2rad(3, 31, 2.89), deg2rad(60, 1, 30.9), 4.25], // cs cam
-	[ra2rad(7, 3, 36.21), deg2rad(76, 56, 30.1), 4.55], // HD 49878
+	['beta cam', ra2rad(5, 5, 35.33), deg2rad(60, 28, 35.8), 4.00], // beta
+	['cs cam', ra2rad(3, 31, 2.89), deg2rad(60, 1, 30.9), 4.21], // cs cam
+	['alpha cam', ra2rad(4, 56, 29.07), deg2rad(66, 22, 57.1), 4.26], // alpha
+	['be cam', ra2rad(3, 51, 46.08), deg2rad(65, 36, 2.9), 4.39], // be cam
+	['7 cam', ra2rad(4, 59, 14.37), deg2rad(53, 47, 24.7), 4.43], // 7 cam
+	['ce cam', ra2rad(3, 31, 51.76), deg2rad(58, 57, 47.7), 4.55], // ce cam
+	['hd 49878', ra2rad(7, 3, 36.21), deg2rad(76, 56, 30.1), 4.55], // HD 49878
+	['gamma cam', ra2rad(3, 52, 57.98), deg2rad(71, 24, 23.6), 4.59], // gamma
+	['bk cam', ra2rad(3, 22, 8.9), deg2rad(65, 44, 29.1), 4.74], // bk
 	// DRACO 37-51
-	[ra2rad(14, 5, 1.06), deg2rad(64, 15, 26.2), 3.65], // alpha
-	[ra2rad(17, 30, 56.15), deg2rad(52, 16, 58), 2.75], // beta
-	[ra2rad(17, 57, 7.4), deg2rad(51, 29, 8.6), 2.2], // gamma
-	[ra2rad(19, 12, 29.73), deg2rad(67, 42, 13.4), 3.05], // delta
-	[ra2rad(19, 48, 0.88), deg2rad(70, 19, 46.4), 3.85], // epsilon
-	[ra2rad(17, 8, 48.55), deg2rad(65, 40, 59.2), 3.15], // zeta
-	[ra2rad(16, 24, 16.67), deg2rad(61, 27, 27), 2.7], // eta
-	[ra2rad(16, 2, 17.89), deg2rad(58, 29, 51.6), 4], // theta
-	[ra2rad(15, 25, 25.95), deg2rad(58, 52, 45.6), 3.25], // iota
-	[ra2rad(12, 33, 27.69), deg2rad(69, 39, 5.2), 3.85], // kappa
-	[ra2rad(11, 32, 48.69), deg2rad(69, 11, 41.4), 3.8], // lambda
-	[ra2rad(17, 32, 36.3), deg2rad(55, 10, 1), 4.85], // nu
-	[ra2rad(17, 53, 54), deg2rad(56, 52, 5.7), 3.7], // xi
-	[ra2rad(19, 14, 59.98), deg2rad(73, 23, 59.4), 4.45], // tau
-	[ra2rad(18, 20, 31.68), deg2rad(72, 44, 32.5), 3.55], // chi
+	['alpha dra', ra2rad(14, 5, 1.06), deg2rad(64, 15, 26.2), 3.65], // alpha
+	['beta dra', ra2rad(17, 30, 56.15), deg2rad(52, 16, 58), 2.75], // beta
+	['gamma dra', ra2rad(17, 57, 7.4), deg2rad(51, 29, 8.6), 2.2], // gamma
+	['delta dra', ra2rad(19, 12, 29.73), deg2rad(67, 42, 13.4), 3.05], // delta
+	['epsilon dra', ra2rad(19, 48, 0.88), deg2rad(70, 19, 46.4), 3.85], // epsilon
+	['zeta dra', ra2rad(17, 8, 48.55), deg2rad(65, 40, 59.2), 3.15], // zeta
+	['eta dra', ra2rad(16, 24, 16.67), deg2rad(61, 27, 27), 2.7], // eta
+	['theta dra', ra2rad(16, 2, 17.89), deg2rad(58, 29, 51.6), 4], // theta
+	['iota dra', ra2rad(15, 25, 25.95), deg2rad(58, 52, 45.6), 3.25], // iota
+	['kappa dra', ra2rad(12, 33, 27.69), deg2rad(69, 39, 5.2), 3.85], // kappa
+	['lambda dra', ra2rad(11, 32, 48.69), deg2rad(69, 11, 41.4), 3.8], // lambda
+	['nu dra', ra2rad(17, 32, 36.3), deg2rad(55, 10, 1), 4.85], // nu
+	['xi dra', ra2rad(17, 53, 54), deg2rad(56, 52, 5.7), 3.7], // xi
+	['tau dra', ra2rad(19, 14, 59.98), deg2rad(73, 23, 59.4), 4.45], // tau
+	['chi dra', ra2rad(18, 20, 31.68), deg2rad(72, 44, 32.5), 3.55], // chi
 ];
 ursaMinor.labels = [
 	[ra2rad(16), deg2rad(79), 'Ursa Minor'],
