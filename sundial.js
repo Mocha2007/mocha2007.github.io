@@ -474,7 +474,7 @@ function ursaMinor(t = new Date(), drawEdges = true){
 	g.setAttribute('clip-path', 'url(#crop-disk)');
 	return svg;
 }
-ursaMinor.latitude = 36; // upgrade to 41N soon
+ursaMinor.latitude = 41;
 ursaMinor.offset = -164; // from my longitude!
 ursaMinor.edges = [
 	// UMi
@@ -551,6 +551,14 @@ ursaMinor.edges = [
 	['xi uma', 'nu uma'],
 	['psi uma', 'nu uma'],
 	['mu uma', 'nu uma'],
+	// Lynx
+	['2 lyn', '15 lyn'],
+	['15 lyn', '21 lyn'],
+	['21 lyn', '31 lyn'],
+	['31 lyn', '10 uma'],
+	['10 uma', 'hd 77912'],
+	['hd 77912', '38 lyn'],
+	['38 lyn', 'alpha lyn'],
 ];
 ursaMinor.vertices = [
 	// RA, DEC
@@ -636,6 +644,15 @@ ursaMinor.vertices = [
 	['mu uma', ra2rad(10, 23, 45.2), deg2rad(41, 22, 34.9), 3.14], // tania australis
 	['nu uma', ra2rad(11, 19, 45.9), deg2rad(32, 57, 41.8), 3.63], // alula borealis
 	['xi uma', ra2rad(11, 19, 27.1), deg2rad(31, 23, 33.4), 3.79], // alula australis
+	// Lynx
+	['2 lyn', ra2rad(6, 21, 46), deg2rad(59, 0, 0.9), 4.44],
+	['15 lyn', ra2rad(6, 59, 22.5), deg2rad(58, 23, 19.9), 4.5],
+	['21 lyn', ra2rad(7, 28, 32.2), deg2rad(49, 9, 42.2), 4.59],
+	['31 lyn', ra2rad(8, 24, 29), deg2rad(43, 6, 32.1), 4.34], // alsciaukat
+	['10 uma', ra2rad(9, 2, 11.9), deg2rad(41, 41, 9.4), 4.03],
+	['hd 77912', ra2rad(9, 8, 3.5), deg2rad(38, 21, 15.2), 4.72],
+	['38 lyn', ra2rad(9, 20, 20.2), deg2rad(36, 41, 56.6), 3.83],
+	['alpha lyn', ra2rad(9, 22, 31), deg2rad(34, 17, 21.6), 3.25],
 ];
 ursaMinor.labels = [
 	[ra2rad(16), deg2rad(79), 'Ursa Minor'],
@@ -644,6 +661,7 @@ ursaMinor.labels = [
 	[ra2rad(5.5), deg2rad(68), 'Camelopardalis'],
 	[ra2rad(16), deg2rad(65), 'Draco'],
 	[ra2rad(11), deg2rad(51), 'Ursa Major'],
+	[ra2rad(8), deg2rad(46), 'Lynx'],
 ];
 /* constellation todo list:
 	- Ursa Minor (done!)
@@ -652,5 +670,5 @@ ursaMinor.labels = [
 	- Camelopardalis (done... sorta!)
 	- Cassiopeia (done!)
 	- Ursa Major (done!)
-	- Lynx
+	- Lynx (done!)
 */
