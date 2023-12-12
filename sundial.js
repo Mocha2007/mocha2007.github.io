@@ -563,6 +563,8 @@ ursaMinor.edges = [
 	['10 uma', 'hd 77912'],
 	['hd 77912', '38 lyn'],
 	['38 lyn', 'alpha lyn'],
+	// Canes Venatici
+	['cor caroli', 'chara'],
 ];
 ursaMinor.vertices = [
 	// RA, DEC
@@ -658,22 +660,21 @@ ursaMinor.vertices = [
 	['hd 77912', ra2rad(9, 8, 3.5), deg2rad(38, 21, 15.2), 4.72],
 	['38 lyn', ra2rad(9, 20, 20.2), deg2rad(36, 41, 56.6), 3.83],
 	['alpha lyn', ra2rad(9, 22, 31), deg2rad(34, 17, 21.6), 3.25],
+	// Canes Venatici
+	['cor caroli', ra2rad(12, 57, 7.9), deg2rad(38, 11, 12), 2.84],
+	['chara', ra2rad(12, 34, 52), deg2rad(41, 13, 28.7), 4.34],
 ];
 ursaMinor.labels = [
 	[ra2rad(16), deg2rad(79), 'Ursa Minor'],
 	[ra2rad(22), deg2rad(67), 'Cepheus'],
 	[ra2rad(1.1), deg2rad(61), 'Cassiopeia'],
 	[ra2rad(5.2), deg2rad(67), 'Camelopardalis'],
-	[ra2rad(16), deg2rad(65), 'Draco'],
+	[ra2rad(16), deg2rad(63), 'Draco'],
 	[ra2rad(11), deg2rad(51), 'Ursa Major'],
 	[ra2rad(8), deg2rad(46), 'Lynx'],
+	[ra2rad(13), deg2rad(39.5), 'Canes Venatici'],
 ];
-/* constellation todo list:
-	- Ursa Minor (done!)
-	- Cepheus (done!)
-	- Draco (done!)
-	- Camelopardalis (done!)
-	- Cassiopeia (done!)
-	- Ursa Major (done!)
-	- Lynx (done!)
+/* FINISHED:
+	Camelopardalis, Canes Venatici, Cassiopeia, Cepheus, Draco
+	Lynx, Ursa Major, Ursa Minor
 */
