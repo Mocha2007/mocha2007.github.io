@@ -503,11 +503,15 @@ ursaMinor.edges = [
 	['gamma cas', 'delta cas'],
 	['delta cas', 'epsilon cas'],
 	['epsilon cas', '50 cas'],
-	// Cam - this does not use HAR's lines (yet!) - todo!
+	// Cam
 	['alpha cam', 'gamma cam'],
 	['alpha cam', 'beta cam'],
-	['alpha cam', 'bk cam'],
-	['bk cam', 'cs cam'],
+	['alpha cam', 'hd 49878'],
+	['hd 42818', 'hd 49878'],
+	['be cam', 'beta cam'],
+	['be cam', 'gamma cam'],
+	['be cam', 'cs cam'],
+	['beta cam', '7 cam'],
 	// Dra
 	['beta dra', 'gamma dra'],
 	['beta dra', 'nu dra'],
@@ -603,6 +607,7 @@ ursaMinor.vertices = [
 	['7 cam', ra2rad(4, 59, 14.37), deg2rad(53, 47, 24.7), 4.43],
 	['ce cam', ra2rad(3, 31, 51.76), deg2rad(58, 57, 47.7), 4.55],
 	['hd 49878', ra2rad(7, 3, 36.21), deg2rad(76, 56, 30.1), 4.55],
+	['hd 42818', ra2rad(6, 21, 31.8), deg2rad(69, 18, 30.1), 4.75],
 	['gamma cam', ra2rad(3, 52, 57.98), deg2rad(71, 24, 23.6), 4.59],
 	['bk cam', ra2rad(3, 22, 8.9), deg2rad(65, 44, 29.1), 4.74],
 	// DRACO 37-51
@@ -658,7 +663,7 @@ ursaMinor.labels = [
 	[ra2rad(16), deg2rad(79), 'Ursa Minor'],
 	[ra2rad(22), deg2rad(67), 'Cepheus'],
 	[ra2rad(1.1), deg2rad(61), 'Cassiopeia'],
-	[ra2rad(5.5), deg2rad(68), 'Camelopardalis'],
+	[ra2rad(5.2), deg2rad(67), 'Camelopardalis'],
 	[ra2rad(16), deg2rad(65), 'Draco'],
 	[ra2rad(11), deg2rad(51), 'Ursa Major'],
 	[ra2rad(8), deg2rad(46), 'Lynx'],
@@ -667,7 +672,7 @@ ursaMinor.labels = [
 	- Ursa Minor (done!)
 	- Cepheus (done!)
 	- Draco (done!)
-	- Camelopardalis (done... sorta!)
+	- Camelopardalis (done!)
 	- Cassiopeia (done!)
 	- Ursa Major (done!)
 	- Lynx (done!)
