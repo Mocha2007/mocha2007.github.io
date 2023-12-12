@@ -525,6 +525,7 @@ ursaMinor.edges = [
 	['alpha dra', 'kappa dra'],
 	['lambda dra', 'kappa dra'],
 	// Ursa Major
+	// big dipper
 	['alpha uma', 'beta uma'],
 	['alpha uma', 'delta uma'],
 	['beta uma', 'gamma uma'],
@@ -532,6 +533,12 @@ ursaMinor.edges = [
 	['delta uma', 'epsilon uma'],
 	['epsilon uma', 'zeta uma'],
 	['zeta uma', 'eta uma'],
+	// rear (per HAR)
+	['alpha uma', 'h uma'],
+	['h uma', 'omicron uma'],
+	['h uma', 'upsilon uma'],
+	['iota uma', 'omicron uma'],
+	['theta uma', 'upsilon uma'],
 ];
 ursaMinor.vertices = [
 	// RA, DEC
@@ -595,6 +602,7 @@ ursaMinor.vertices = [
 	['tau dra', ra2rad(19, 14, 59.98), deg2rad(73, 23, 59.4), 4.45],
 	['chi dra', ra2rad(18, 20, 31.68), deg2rad(72, 44, 32.5), 3.55],
 	// Ursa Major (partial)
+	// big dipper
 	['alpha uma', ra2rad(11, 5, 11.8), deg2rad(61, 37, 3.6), 1.95], // dubhe
 	['beta uma', ra2rad(11, 3, 16.8), deg2rad(56, 15, 0.7), 2.34], // merak
 	['gamma uma', ra2rad(11, 55, 4.8), deg2rad(53, 33, 28.6), 2.42], // phecda
@@ -602,6 +610,12 @@ ursaMinor.vertices = [
 	['epsilon uma', ra2rad(12, 55, 4), deg2rad(55, 49, 34.5), 1.75], // alioth
 	['zeta uma', ra2rad(13, 24, 52.3), deg2rad(54, 47, 48.6), 2.25], // mizar
 	['eta uma', ra2rad(13, 48, 27.8), deg2rad(49, 11, 26.7), 1.8], // alkaid
+	// rump (per HAR)
+	['h uma', ra2rad(9, 33, 25), deg2rad(62, 57, 10.5), 3.72],
+	['omicron uma', ra2rad(8, 32, 15.9), deg2rad(60, 38, 3.8), 3.5], // muscida
+	['upsilon uma', ra2rad(9, 52, 41.5), deg2rad(58, 55, 19.6), 3.84],
+	['iota uma', ra2rad(9, 0, 51.2), deg2rad(47, 56, 41.9), 3.19],
+	['theta uma', ra2rad(9, 34, 27.7), deg2rad(51, 33, 53.3), 3.27],
 ];
 ursaMinor.labels = [
 	[ra2rad(16), deg2rad(79), 'Ursa Minor'],
@@ -609,6 +623,7 @@ ursaMinor.labels = [
 	[ra2rad(1.1), deg2rad(61), 'Cassiopeia'],
 	[ra2rad(5.5), deg2rad(68), 'Camelopardalis'],
 	[ra2rad(16), deg2rad(65), 'Draco'],
+	[ra2rad(11.5), deg2rad(51), 'Ursa Major'],
 ];
 /* constellation todo list:
 	- Ursa Minor (done!)
