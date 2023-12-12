@@ -576,6 +576,10 @@ ursaMinor.edges = [
 	['5 lac', '11 lac'],
 	['6 lac', '11 lac'],
 	['6 lac', 'hd 211073'],
+	// Triangulum
+	['alpha tri', 'beta tri'],
+	['alpha tri', 'gamma tri'],
+	['beta tri', 'gamma tri'],
 ];
 ursaMinor.vertices = [
 	// RA, DEC
@@ -588,23 +592,23 @@ ursaMinor.vertices = [
 	['eta umi', ra2rad(16, 16, 45.7), deg2rad(75, 41, 46), 4.95],
 	['gamma umi', ra2rad(15, 20, 39.7), deg2rad(71, 44, 41.8), 3.05], // Pherkad
 	// CEPHEUS 7-23
-	['alpha cep', ra2rad(21, 19, 6.4), deg2rad(62, 41, 24.4), 2.45], // alpha cephei
-	['beta cep', ra2rad(21, 28, 54.3), deg2rad(70, 40, 8.6), 3.23], // beta cephei
-	['gamma cep', ra2rad(23, 40, 19), deg2rad(77, 46, 14.1), 3.21], // gamma cephei
-	['delta cep', ra2rad(22, 29, 10), deg2rad(58, 24), 4.07], // delta cephei
-	['epsilon cep', ra2rad(22, 15, 2.1953), deg2rad(57, 2, 36.8771), 4.18], // epsilon cephei
-	['zeta cep', ra2rad(22, 11, 39.5), deg2rad(58, 19, 22.8), 3.39], // zeta cephei
-	['eta cep', ra2rad(20, 45, 43.6), deg2rad(61, 56, 3.3), 3.41], // eta cephei
-	['theta cep', ra2rad(20, 29, 34.86518), deg2rad(62, 59, 38.6216), 4.21], // theta cephei
-	['iota cep', ra2rad(22, 50, 30.4), deg2rad(66, 19, 50.5), 3.5], // iota cephei
-	['kappa cep', ra2rad(20, 8, 53.34492), deg2rad(77, 42, 41.0909), 4.28], // kappa cephei
-	['lambda cep', ra2rad(22, 11, 30.57571), deg2rad(59, 24, 52.15), 5.05], // lambda cephei
-	['mu cep', ra2rad(21, 43, 30.4609), deg2rad(58, 46, 48.166), 4.23], // mu cephei
-	['nu cep', ra2rad(21, 32, 31.9), deg2rad(61, 36, 33.9), 4.25], // nu cephei
-	['xi cep', ra2rad(22, 3, 47.455), deg2rad(64, 37, 40.71), 4.45], // xi cephei
-	['omicron cep', ra2rad(23, 18, 37), deg2rad(68, 6), 4.75], // omicron
-	['pi cep', ra2rad(23, 7, 53.854), deg2rad(75, 23, 15), 4.41], // pi
-	['rho cep', ra2rad(22, 27.5), deg2rad(78, 48), 5.45], // rho
+	['alpha cep', ra2rad(21, 19, 6.4), deg2rad(62, 41, 24.4), 2.45],
+	['beta cep', ra2rad(21, 28, 54.3), deg2rad(70, 40, 8.6), 3.23],
+	['gamma cep', ra2rad(23, 40, 19), deg2rad(77, 46, 14.1), 3.21],
+	['delta cep', ra2rad(22, 29, 10), deg2rad(58, 24), 4.07],
+	['epsilon cep', ra2rad(22, 15, 2.1953), deg2rad(57, 2, 36.8771), 4.18],
+	['zeta cep', ra2rad(22, 11, 39.5), deg2rad(58, 19, 22.8), 3.39],
+	['eta cep', ra2rad(20, 45, 43.6), deg2rad(61, 56, 3.3), 3.41],
+	['theta cep', ra2rad(20, 29, 34.86518), deg2rad(62, 59, 38.6216), 4.21],
+	['iota cep', ra2rad(22, 50, 30.4), deg2rad(66, 19, 50.5), 3.5],
+	['kappa cep', ra2rad(20, 8, 53.34492), deg2rad(77, 42, 41.0909), 4.28],
+	['lambda cep', ra2rad(22, 11, 30.57571), deg2rad(59, 24, 52.15), 5.05],
+	['mu cep', ra2rad(21, 43, 30.4609), deg2rad(58, 46, 48.166), 4.23],
+	['nu cep', ra2rad(21, 32, 31.9), deg2rad(61, 36, 33.9), 4.25],
+	['xi cep', ra2rad(22, 3, 47.455), deg2rad(64, 37, 40.71), 4.45],
+	['omicron cep', ra2rad(23, 18, 37), deg2rad(68, 6), 4.75],
+	['pi cep', ra2rad(23, 7, 53.854), deg2rad(75, 23, 15), 4.41],
+	['rho cep', ra2rad(22, 27.5), deg2rad(78, 48), 5.45],
 	// CASSIOPEA 24-28
 	['alpha cas', ra2rad(0, 41, 52.47), deg2rad(56, 40, 22.2), 2.24], // shedir
 	['beta cas', ra2rad(0, 10, 26.3), deg2rad(59, 17, 30), 2.25], // caph
@@ -639,7 +643,7 @@ ursaMinor.vertices = [
 	['xi dra', ra2rad(17, 53, 54), deg2rad(56, 52, 5.7), 3.7],
 	['tau dra', ra2rad(19, 14, 59.98), deg2rad(73, 23, 59.4), 4.45],
 	['chi dra', ra2rad(18, 20, 31.68), deg2rad(72, 44, 32.5), 3.55],
-	// Ursa Major (partial)
+	// Ursa Major
 	// big dipper
 	['alpha uma', ra2rad(11, 5, 11.8), deg2rad(61, 37, 3.6), 1.95], // dubhe
 	['beta uma', ra2rad(11, 3, 16.8), deg2rad(56, 15, 0.7), 2.34], // merak
@@ -684,17 +688,23 @@ ursaMinor.vertices = [
 	['6 lac', ra2rad(22, 31, 30.2), deg2rad(43, 14, 57.6), 4.47],
 	['11 lac', ra2rad(22, 41, 32.9), deg2rad(44, 24, 16.5), 4.66],
 	['hd 211073', ra2rad(22, 14, 53.2), deg2rad(39, 50, 11.6), 4.63],
+	// Triangulum
+	['alpha tri', ra2rad(1, 54, 27.5), deg2rad(29, 41, 50.6), 3.52], // mothallah
+	['beta tri', ra2rad(2, 10, 58.9), deg2rad(35, 6, 9.5), 3.06],
+	['gamma tri', ra2rad(2, 18, 45.1), deg2rad(33, 57, 35.7), 4],
 ];
 ursaMinor.labels = [
+	// sort from most northernly, then alphabetically
 	[ra2rad(16), deg2rad(79), 'Ursa Minor'],
 	[ra2rad(22.2), deg2rad(64), 'Cepheus'],
-	[ra2rad(1.1), deg2rad(61), 'Cassiopeia'],
 	[ra2rad(5.2), deg2rad(63), 'Camelopardalis'],
 	[ra2rad(16), deg2rad(63), 'Draco'],
+	[ra2rad(1.1), deg2rad(61), 'Cassiopeia'],
 	[ra2rad(11.5), deg2rad(50), 'Ursa Major'],
 	[ra2rad(8), deg2rad(46), 'Lynx'],
-	[ra2rad(13), deg2rad(39.5), 'Canes Venatici'],
 	[ra2rad(22.6), deg2rad(45), 'Lacerta'],
+	[ra2rad(13), deg2rad(39.5), 'Canes Venatici'],
+	[ra2rad(2), deg2rad(32), 'Triangulum'],
 	// todo
 	[ra2rad(4), deg2rad(43), 'Perseus'],
 	[ra2rad(20.5), deg2rad(40), 'Cygnus'],
@@ -703,8 +713,9 @@ ursaMinor.labels = [
 	[ra2rad(10), deg2rad(36), 'Leo Minor'],
 	[ra2rad(19), deg2rad(36), 'Lyra'],
 	[ra2rad(17), deg2rad(34), 'Hercules'],
+	[ra2rad(16), deg2rad(29), 'Corona Borealis'],
 ];
 /* FINISHED:
 	Camelopardalis, Canes Venatici, Cassiopeia, Cepheus, Draco
-	Lacerta, Lynx, Ursa Major, Ursa Minor
+	Lacerta, Lynx, Triangulum, Ursa Major, Ursa Minor
 */
