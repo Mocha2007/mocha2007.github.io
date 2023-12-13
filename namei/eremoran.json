@@ -8963,6 +8963,15 @@
 		"categories": ["fiber", "plant", "oil"]
 	},
 	{
+		"title": "kazik",
+		"etym": "L/VAZ/khazhit",
+		"cat": "n., 2nd",
+		"defList": [
+			"big cat"
+		],
+		"categories": ["animal"]
+	},
+	{
 		"title": "kazlu",
 		"etym": "I/PEN/*gaslu",
 		"cat": "n., 4th",

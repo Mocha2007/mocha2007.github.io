@@ -399,3 +399,4 @@ dankino=n, n=water chestnut
 tugu=n, n=bamboo
 panntugu=n, n=bamboo shoot
 shimi=n, n=ginseng
+khazhit=n, f=big cat
