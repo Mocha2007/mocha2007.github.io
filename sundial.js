@@ -397,7 +397,7 @@ function ursaMinor(t = new Date(), drawEdges = true){
 	var size = 1;
 	var whiteDiskScale = 1.01;
 	var LABEL_OFFSET_C = 0.01;
-	var timeAngle = t/sideralDay%1*360 - ursaMinor.offset; // todo
+	var timeAngle = t/sideralDay%1*360 - ursaMinor.offset;
 	// svg
 	var svg = createSvgElement('svg');
 	svg.classList.add('sundial');
@@ -505,7 +505,7 @@ function ursaMinor(t = new Date(), drawEdges = true){
 	return svg;
 }
 ursaMinor.latitude = 31;
-ursaMinor.offset = -164; // from my longitude!
+ursaMinor.offset = 160; // from my longitude!
 ursaMinor.edges = [
 	// UMi
 	['alpha umi', 'delta umi'],
