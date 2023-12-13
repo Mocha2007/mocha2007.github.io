@@ -1,7 +1,7 @@
 /* eslint-disable no-var */
 /* eslint-env es3 */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
-/* exported goldClock, sundial */
+/* exported goldClock, nightSky, sundial */
 /* global createSvgElement, phoonsvg, svgScale */
 'use strict';
 
@@ -390,14 +390,14 @@ function mag2radius(mag = 0){
 	return Math.sqrt(linearMag); // if we let area = mag, then the radius is... sqrt(A/pi), but the pi is just a constant term anyways so I ignore it
 }
 
-function ursaMinor(t = new Date(), drawEdges = true){
+function nightSky(t = new Date(), drawEdges = true){
 	var sideralDay = 86164100;
 	var starSize = 0.02;
 	var lineSize = 0.001;
 	var size = 1;
 	var whiteDiskScale = 1.01;
 	var LABEL_OFFSET_C = 0.01;
-	var timeAngle = t/sideralDay%1*360 - ursaMinor.offset;
+	var timeAngle = t/sideralDay%1*360 - nightSky.offset;
 	// svg
 	var svg = createSvgElement('svg');
 	svg.classList.add('sundial');
@@ -435,7 +435,7 @@ function ursaMinor(t = new Date(), drawEdges = true){
 		// https://en.wikipedia.org/wiki/Orthographic_map_projection#Mathematics
 		// RA is longitude, dec is latitude
 		const lambda0 = timeAngle * Math.PI/180;
-		const phi0 = Math.PI - ursaMinor.latitude * Math.PI/180; // I subtract from pi so north appears UP
+		const phi0 = Math.PI - nightSky.latitude * Math.PI/180; // I subtract from pi so north appears UP
 		const coords = [
 			// X, Y, cos(c) <- if cos(c) is < 0, the point should not be displayed since it is behind the viewport
 			Math.cos(dec)*Math.sin(ra-lambda0),
@@ -445,7 +445,7 @@ function ursaMinor(t = new Date(), drawEdges = true){
 		];
 		return coords;
 	}
-	ursaMinor.vertices.forEach((vertex, i) => {
+	nightSky.vertices.forEach((vertex, i) => {
 		const [id, ra, dec, mag] = vertex;
 		const [gx, gy, cosc] = vertices[id] = transform(ra, dec);
 		if (cosc < 0)
@@ -471,7 +471,7 @@ function ursaMinor(t = new Date(), drawEdges = true){
 		}
 	});
 	// edges
-	drawEdges && ursaMinor.edges.forEach(edge => {
+	drawEdges && nightSky.edges.forEach(edge => {
 		const [v1, v2] = edge;
 		if (!(vertices[v1] && vertices[v2])){
 			console.warn(`${v1}-${v2} link could not be drawn`);
@@ -492,7 +492,7 @@ function ursaMinor(t = new Date(), drawEdges = true){
 		line.setAttribute('y2', y2);
 	});
 	// labels
-	ursaMinor.labels.forEach(datum => {
+	nightSky.labels.forEach(datum => {
 		const [ra, dec, s_] = datum;
 		const s = s_.split('').reverse().join('');
 		const [x, y, cosc] = transform(ra, dec);
@@ -515,9 +515,9 @@ function ursaMinor(t = new Date(), drawEdges = true){
 	g.setAttribute('clip-path', 'url(#crop-disk)');
 	return svg;
 }
-ursaMinor.latitude = 31;
-ursaMinor.offset = 160; // from my longitude!
-ursaMinor.edges = [
+nightSky.latitude = 31;
+nightSky.offset = 160; // from my longitude!
+nightSky.edges = [
 	// UMi
 	['alpha umi', 'delta umi'],
 	['delta umi', 'epsilon umi'],
@@ -635,7 +635,7 @@ ursaMinor.edges = [
 	['69 aql', '70 aql'],
 	['70 aql', '71 aql'],
 ];
-ursaMinor.vertices = [
+nightSky.vertices = [
 	// RA, DEC
 	// URSA MINOR 0-6
 	['alpha umi', ra2rad(3, 3, 48.9), deg2rad(89, 22, 4), 1.97], // Polaris
@@ -763,7 +763,7 @@ ursaMinor.vertices = [
 	// Corona Borealis
 	['zeta crb', ra2rad(15, 40, 14.7), deg2rad(36, 33, 27.3), 5.94],
 ];
-ursaMinor.labels = [
+nightSky.labels = [
 	// sort from most northernly, then alphabetically
 	[ra2rad(16), deg2rad(79), 'Ursa Minor'],
 	[ra2rad(22.2), deg2rad(64), 'Cepheus'],
