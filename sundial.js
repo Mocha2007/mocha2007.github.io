@@ -399,6 +399,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	var totalSize = size + exteriorSize;
 	var whiteDiskScale = 1.01;
 	var LABEL_OFFSET_C = 0.01;
+	var circleResolution = 48;
 	var timeAngle = t/sideralDay%1*360 - (nightSky.offset + lon);
 	// svg
 	var svg = createSvgElement('svg');
@@ -444,6 +445,17 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 			Math.cos(phi0)*Math.sin(dec) - Math.sin(phi0)*Math.cos(dec)*Math.cos(ra-lambda0),
 			Math.sin(phi0)*Math.sin(dec)
 				+ Math.cos(phi0)*Math.cos(dec)*Math.cos(ra-lambda0),
+		];
+		return coords;
+	}
+	function sunPos(time){
+		const SUN = solarPosition(time, lat, lon);
+		const [theta_, phi] = [SUN.theta, SUN.phi];
+		const [r, theta] = [Math.sin(phi), theta_+Math.PI/2];
+		const coords = [
+			r*Math.cos(theta) * (SUN.snoon < time ? -1 : 1),
+			r*Math.sin(theta),
+			SUN.sunrise < time && time < SUN.sunset,
 		];
 		return coords;
 	}
@@ -493,6 +505,24 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 		line.setAttribute('x2', x2);
 		line.setAttribute('y2', y2);
 	});
+	// celestial equator
+	for (let i = 0; i < circleResolution; i++){
+		const [x1, y1, cosc1] = transform(2*Math.PI/circleResolution * i, 0);
+		if (cosc1 < 0)
+			continue;
+		const [x2, y2, cosc2] = transform(2*Math.PI/circleResolution * (i+1), 0);
+		if (cosc2 < 0)
+			continue;
+		// elem
+		var line = createSvgElement('line');
+		lg.appendChild(line);
+		line.style.stroke = 'orange';
+		line.style.strokeWidth = lineSize*2;
+		line.setAttribute('x1', x1);
+		line.setAttribute('y1', y1);
+		line.setAttribute('x2', x2);
+		line.setAttribute('y2', y2);
+	}
 	// labels
 	nightSky.labels.forEach(datum => {
 		const [ra, dec, s_] = datum;
@@ -510,14 +540,8 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	});
 	// SUN!!!
 	if (typeof solarPosition !== 'undefined'){
-		const SUN = solarPosition(t, lat, lon);
-		const [theta_, phi] = [SUN.theta, SUN.phi];
-		const [r, theta] = [Math.sin(phi), theta_+Math.PI/2];
-		const [sx, sy] = [
-			r*Math.cos(theta) * (SUN.snoon < t ? -1 : 1),
-			r*Math.sin(theta),
-		];
-		if (SUN.sunrise < t && t < SUN.sunset){
+		const [sx, sy, visible] = sunPos(t);
+		if (visible){
 			// elem
 			var starDisk = createSvgElement('circle');
 			g.appendChild(starDisk);
