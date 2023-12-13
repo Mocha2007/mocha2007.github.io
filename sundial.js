@@ -390,14 +390,14 @@ function mag2radius(mag = 0){
 	return Math.sqrt(linearMag); // if we let area = mag, then the radius is... sqrt(A/pi), but the pi is just a constant term anyways so I ignore it
 }
 
-function nightSky(t = new Date(), drawEdges = true){
+function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	var sideralDay = 86164100;
 	var starSize = 0.02;
 	var lineSize = 0.001;
 	var size = 1;
 	var whiteDiskScale = 1.01;
 	var LABEL_OFFSET_C = 0.01;
-	var timeAngle = t/sideralDay%1*360 - nightSky.offset;
+	var timeAngle = t/sideralDay%1*360 - (nightSky.offset + lon);
 	// svg
 	var svg = createSvgElement('svg');
 	svg.classList.add('sundial');
@@ -435,7 +435,7 @@ function nightSky(t = new Date(), drawEdges = true){
 		// https://en.wikipedia.org/wiki/Orthographic_map_projection#Mathematics
 		// RA is longitude, dec is latitude
 		const lambda0 = timeAngle * Math.PI/180;
-		const phi0 = Math.PI - nightSky.latitude * Math.PI/180; // I subtract from pi so north appears UP
+		const phi0 = Math.PI - lat * Math.PI/180; // I subtract from pi so north appears UP
 		const coords = [
 			// X, Y, cos(c) <- if cos(c) is < 0, the point should not be displayed since it is behind the viewport
 			Math.cos(dec)*Math.sin(ra-lambda0),
@@ -515,8 +515,7 @@ function nightSky(t = new Date(), drawEdges = true){
 	g.setAttribute('clip-path', 'url(#crop-disk)');
 	return svg;
 }
-nightSky.latitude = 31;
-nightSky.offset = 160; // from my longitude!
+nightSky.offset = 240;
 nightSky.edges = [
 	// UMi
 	['alpha umi', 'delta umi'],

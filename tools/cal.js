@@ -171,6 +171,12 @@ const time = {
 		CALTYPE: undefined,
 		DEBUG: document.URL[0].toLowerCase() === 'f', // file:// vs. http(s)://
 		FAST_CLOCK: false,
+		GEO: {
+			ALT: 160, // meters
+			HEADING: 0, // degrees
+			LAT: 36,
+			LON: -79,
+		},
 		LAME_CLOCK: true,
 		LANG: 'EN',
 		OFFSET: false,
@@ -531,6 +537,7 @@ function main(t = new Date()){
 		setInterval(refreshClock, clockInterval);
 	}
 	else if (time.CONFIG.CALTYPE === 'MLSC'){
+		query();
 		const MLSC = mochaLunisolar(t);
 		year = document.getElementById('erecal1_title').innerHTML = `MLSC Year ${MLSC.year}`;
 		/** @type {HTMLTableRowElement} */
@@ -560,6 +567,16 @@ function main(t = new Date()){
 	console.info(`CONFIG: ${time.CONFIG.CALTYPE} - ${year}`);
 }
 
+function query(){
+	navigator.geolocation.getCurrentPosition(gc => {
+		time.CONFIG.GEO.ALT = gc.coords.altitude;
+		time.CONFIG.GEO.HEADING = gc.coords.heading;
+		time.CONFIG.GEO.LAT = gc.coords.latitude;
+		time.CONFIG.GEO.LON = gc.coords.longitude;
+		refreshSundial();
+	});
+}
+
 function mlscBonus(t = new Date()){
 	const bonus = document.getElementById('bonus');
 	const MLSC = mochaLunisolar(t);
@@ -581,7 +598,7 @@ function refreshSundial(t = new Date()){
 	container.appendChild(sundial(...sunMoon));
 	const sky = document.getElementById('sky');
 	sky.innerHTML = '';
-	sky.appendChild(nightSky(t));
+	sky.appendChild(nightSky(t, true, time.CONFIG.GEO.LAT, time.CONFIG.GEO.LON));
 }
 
 function refreshClock(t = new Date()){
