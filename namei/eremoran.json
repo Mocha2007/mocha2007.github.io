@@ -125,6 +125,15 @@
 		]
 	},
 	{
+		"title": "-oboz",
+		"etym": "C/obo/-z",
+		"cat": "aff.",
+		"defList": [
+			"(intensive affix)"
+		],
+		"notes": "has the alternate form -boz after a vowel"
+	},
+	{
 		"title": "-ofaz",
 		"etym": "r/hofoz",
 		"cat": "aff.",
