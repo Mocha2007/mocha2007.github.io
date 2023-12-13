@@ -435,89 +435,89 @@ function hebrew(){
 	return day + ' ' + monthName + ' ' + year;
 }
 
-/** @param {number} t hours past midnight */
-function solarDayHelper(t, include_seconds = true){
-	var ampm = t < 12 ? 'AM' : 'PM';
+/** @param {number} t hours past dawn */
+function solarDayHelper(t, includeSeconds){
+	t += 6;
+	t %= 24;
 	var h = Math.floor(t);
-	t -= h;
-	t *= 60; // in minutes now
-	h %= 12;
-	h = h === 0 ? 12 : h;
-	var m = Math.floor(t);
-	t -= m;
-	t *= 60; // in seconds now
-	var s = Math.floor(t);
-	if (m < 10)
-		m = '0' + m;
-	if (s < 10)
-		s = '0' + s;
+	var m = Math.floor((t - h)*60);
+	var s = Math.floor((t - h - m/60)*3600);
+	// 12h time
+	var ampm = 'AP'[+(11 < h)] + 'M';
+	h = h%12 || 12;
 	var digits = [h, m];
-	if (include_seconds)
+	if (includeSeconds)
 		digits.push(s);
-	return digits.join(':') + ' ' + ampm;
+	return digits.map(x => (x + '').padStart(2, 0)).join(':') + ' ' + ampm;
 }
 
-function solarDay(now){
+function solarDay(now, latitude, longitude){
 	now = now || new Date();
-	// problem: dawn/dusk times are computed based on the orbital position at midnight. solution: iteratively find the intersection
-	function limit(amp, date_offset, avg){
-		var t = 0, t_;
-		for (var i = 0; i < 10; i++){ // usually needs only 5 or 6 iterations
-			t_ = avg + amp
-				* Math.cos(2*Math.PI/365 * (Math.floor(current_day) + t/24 - date_offset));
-			if (t === t_)
-				break;
-			t = t_;
-		}
-		return t;
-	}
-	var dayms = 24*60*60*1000;
-	var current_day = (now - new Date(now.getFullYear(), 0))/dayms;
-	// based on 2024 times for current location
-	// all times UTC+0
-	// https://www.timeanddate.com/sun
-	var dawn_min_time = 4 + 5 + 59/60; // 5:59 AM UTC-4
-	// var dawn_min_date = new Date(2024, 5, 12); // 12 Jun
-	var dawn_max_time = 5 + 7 + 27/60; // 7:27 AM UTC-5
-	var dawn_max_date = new Date(2024, 0, 7); // 7 Jan
-	var dusk_min_time = 5 + 17 + 1/60; // 5:01 PM UTC-5
-	// var dusk_min_date = new Date(2024, 11, 4, 12); // 4.5 Dec
-	var dusk_max_time = 4 + 20 + 36/60; // 8:36 PM UTC-4
-	var dusk_max_date = new Date(2024, 5, 27, 12); // 27.5 Jun
-	var dawn_date_offset = (dawn_max_date - new Date(2024, 0, 1))/dayms; // in days
-	var dawn_amp = (dawn_max_time - dawn_min_time)/2; // in hours
-	var dawn_avg = (dawn_max_time + dawn_min_time)/2; // in hours
-	var dusk_date_offset = (dusk_max_date - new Date(2024, 0, 1))/dayms; // in days
-	var dusk_amp = (dusk_max_time - dusk_min_time)/2; // in hours
-	var dusk_avg = (dusk_max_time + dusk_min_time)/2; // in hours
-	var dawnTime = limit(dawn_amp, dawn_date_offset, dawn_avg);
-	var duskTime = limit(dusk_amp, dusk_date_offset, dusk_avg);
-	// var nowObj = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
-	var nowTime = now % (1000*60*60*24) / (1000*60*60);
-	var length_day = duskTime - dawnTime;
-	var length_night = 24 - length_day;
-	var aesthetic_offset, offset, r;
-	if (dawnTime < nowTime && nowTime < duskTime){ // day
-		offset = nowTime - dawnTime;
-		r = length_day/12;
-		aesthetic_offset = 6;
-	}
-	else { // night
-		offset = nowTime - duskTime;
-		if (nowTime < dawnTime) // before dawn
-			offset += 24;
-		r = length_night/12;
-		aesthetic_offset = 18;
-	}
-	var t = offset / r + aesthetic_offset; // fake seconds past dawn/dusk
-	var noon = (dawnTime + duskTime)/2;
-	var dawndusk_str = '↑ ' + solarDayHelper(dawnTime-5, false)
-		+ '; <abbr title="noon">n</abbr> ' + solarDayHelper(noon-5, false)
-		+ '; ↓ ' + solarDayHelper(duskTime-5, false);
-	var daytime_str = '(' + length_day.toFixed(2) + ' h day; ' + dawndusk_str + ')';
-	return solarDayHelper(t)
-		+ ' <abbr title="@Mocha">solar time</abbr> '
+	latitude = latitude || 36;
+	longitude = longitude || -79;
+	// main
+	var _1d = 24*60*60*1000;
+	var TODAY = solarPosition(now, latitude, longitude);
+	var YESTERDAY = solarPosition(new Date(now - _1d), latitude, longitude);
+	var TOMORROW = solarPosition(new Date(+now + _1d), latitude, longitude);
+	var t = now < TODAY.sunrise ? (now - YESTERDAY.sunset)/(TODAY.sunrise - YESTERDAY.sunset)/2+0.5
+		: now < TODAY.sunset ? (now - TODAY.sunrise)/(TODAY.sunset - TODAY.sunrise)/2
+			: (now - TODAY.sunset)/(TOMORROW.sunrise - TODAY.sunset)/2 + 0.5;
+	var dawndusk_str = '↑ ' + TODAY.sunrise.toLocaleTimeString('en-US', {timeStyle: 'short'})
+		+ '; <abbr title="noon">n</abbr> ' + TODAY.snoon.toLocaleTimeString('en-US', {timeStyle: 'short'})
+		+ '; ↓ ' + TODAY.sunset.toLocaleTimeString('en-US', {timeStyle: 'short'});
+	var daytime_str = '(' + (TODAY.dayLength/60).toFixed(2) + ' h day; ' + dawndusk_str + ')';
+	return solarDayHelper(24*t, true)
+		+ ' <abbr title="h:m:s since local midnight">solar time</abbr> '
 		+ avoidWrap(daytime_str);
+}
+
+/** this still seems buggy...
+ * @param {Date} t
+ * @param {number} latitude in degrees (eg. NYC = +41)
+ * @param {number} longitude in degrees (eg. NYC = -74)
+ */
+function solarPosition(t, latitude, longitude){
+	// http://www.jgiesen.de/astro/suncalc/calculations.htm
+	var offset = t.getTimezoneOffset();
+	latitude *= Math.PI/180; // convert to radians
+	longitude *= -1; // the site seems to use a weird backwards longitude...?
+	var y = 2*Math.PI * (t - new Date(t.getFullYear(), 0, 1))/(1000*60*60*24*365.2425);
+	// eslint-disable-next-line max-len
+	var eqtime = 229.18*(0.000075+0.001868*Math.cos(y)-0.032077*Math.sin(y)-0.014615*Math.cos(2*y)-0.040849*Math.sin(2*y));
+	// eslint-disable-next-line max-len
+	var declin = 0.006918-0.399912*Math.cos(y)+0.070257*Math.sin(y)-0.006758*Math.cos(2*y)+0.000907*Math.sin(2*y)-0.002697*Math.cos(3*y)+0.00148*Math.sin(3*y);
+	var time_offset = eqtime - 4*longitude + offset;
+	var tst = t.getHours()*60 + t.getMinutes() + t.getSeconds()/60
+		+ t.getMilliseconds()/60000 + time_offset;
+	var ha = (tst/4 - 180)*Math.PI/180;
+	// eslint-disable-next-line max-len
+	var phi = Math.acos(Math.sin(latitude)*Math.sin(declin)+Math.cos(latitude)*Math.cos(declin)*Math.cos(ha));
+	// eslint-disable-next-line max-len
+	var theta = Math.PI - Math.acos(-(Math.sin(latitude)*Math.cos(phi)-Math.sin(declin))/(Math.cos(latitude)*Math.sin(phi)));
+	var refrac = 90.833 * Math.PI/180;
+	// eslint-disable-next-line max-len
+	var ha_inner = Math.cos(refrac)/(Math.cos(latitude)*Math.cos(declin)) - Math.tan(latitude)*Math.tan(declin);
+	var ha_ = Math.acos(ha_inner);
+	var sunrise = 720 + 4*(longitude-ha_*180/Math.PI) - eqtime;
+	var sunset = 720 + 4*(longitude+ha_*180/Math.PI) - eqtime;
+	var snoon = 720 + 4*longitude - eqtime;
+	return {
+		dayLength: sunset - sunrise, // min
+		declin: declin, // rad
+		eqtime: eqtime, // min
+		ha: ha, // rad
+		ha_: ha_, // rad
+		ha_inner: ha_inner, // dimensionless??? if this is <=-1 then eternal night, if this is 1<= eternal day (or was it vice versa?)
+		phi: phi, // rad
+		snoon: new Date(Date.UTC(t.getFullYear(), t.getMonth(), t.getDate(), 0, snoon)),
+		sunrise: new Date(Date.UTC(t.getFullYear(), t.getMonth(), t.getDate(), 0, sunrise)),
+		sunset: new Date(Date.UTC(t.getFullYear(), t.getMonth(), t.getDate(), 0, sunset)),
+		theta: theta, // rad
+		time_offset: time_offset, // min
+		tst: tst, // min
+		y: y, // rad
+	};
 }
 
 function elderscrolls(){
