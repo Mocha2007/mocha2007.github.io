@@ -394,9 +394,10 @@ function ursaMinor(t = new Date(), drawEdges = true){
 	var sideralDay = 86164100;
 	var starSize = 0.02;
 	var lineSize = 0.001;
-	var size = ursaMinor.latitude * Math.PI/180;
+	var size = 1;
 	var whiteDiskScale = 1.01;
-	var angle = ursaMinor.offset-360*(t/sideralDay % 1); // todo
+	var LABEL_OFFSET_C = 0.01;
+	var timeAngle = t/sideralDay%1*360 - ursaMinor.offset; // todo
 	// svg
 	var svg = createSvgElement('svg');
 	svg.classList.add('sundial');
@@ -422,24 +423,40 @@ function ursaMinor(t = new Date(), drawEdges = true){
 	nightDisk.style.fill = 'black';
 	// global rotation group
 	var g = createSvgElement('g');
-	g.setAttribute('transform', 'rotate(' + angle + ', 0, 0)');
 	svg.appendChild(g);
 	// line group
 	var lg = createSvgElement('g');
 	g.appendChild(lg);
 	// vertices
 	const vertices = {};
+	/** transform celestial coords to their ACTUAL position in the sky */
+	function transform(ra, dec){
+		// 			lambda phi
+		// https://en.wikipedia.org/wiki/Orthographic_map_projection#Mathematics
+		// RA is longitude, dec is latitude
+		const lambda0 = timeAngle * Math.PI/180;
+		const phi0 = Math.PI - ursaMinor.latitude * Math.PI/180; // I subtract from pi so north appears UP
+		const coords = [
+			// X, Y, cos(c) <- if cos(c) is < 0, the point should not be displayed since it is behind the viewport
+			Math.cos(dec)*Math.sin(ra-lambda0),
+			Math.cos(phi0)*Math.sin(dec) - Math.sin(phi0)*Math.cos(dec)*Math.cos(ra-lambda0),
+			Math.sin(phi0)*Math.sin(dec)
+				+ Math.cos(phi0)*Math.cos(dec)*Math.cos(ra-lambda0),
+		];
+		return coords;
+	}
 	ursaMinor.vertices.forEach((vertex, i) => {
-		const [id, theta, r_, mag] = vertex;
-		const r = Math.PI/2 - r_;
-		const [x, y] = vertices[id] = [r*Math.cos(theta), r*Math.sin(theta)];
+		const [id, ra, dec, mag] = vertex;
+		const [gx, gy, cosc] = vertices[id] = transform(ra, dec);
+		if (cosc < 0)
+			return;
 		// elem
 		var starDisk = createSvgElement('circle');
 		g.appendChild(starDisk);
 		starDisk.setAttribute('r', starSize * mag2radius(mag));
 		starDisk.style.fill = 'white';
-		starDisk.setAttribute('cx', x);
-		starDisk.setAttribute('cy', y);
+		starDisk.setAttribute('cx', gx);
+		starDisk.setAttribute('cy', gy);
 		starDisk.id = 'star_' + i;
 	});
 	// edges
@@ -449,8 +466,10 @@ function ursaMinor(t = new Date(), drawEdges = true){
 			console.warn(`${v1}-${v2} link could not be drawn`);
 			return;
 		}
-		const [x1, y1] = vertices[v1];
-		const [x2, y2] = vertices[v2];
+		const [x1, y1, cosc1] = vertices[v1];
+		const [x2, y2, cosc2] = vertices[v2];
+		if (cosc1 < 0 && cosc2 < 0)
+			return;
 		// elem
 		var line = createSvgElement('line');
 		lg.appendChild(line);
@@ -462,23 +481,30 @@ function ursaMinor(t = new Date(), drawEdges = true){
 		line.setAttribute('y2', y2);
 	});
 	// labels
-	ursaMinor.labels.forEach(x => {
-		const [theta_, r_, s_] = x;
-		const r = Math.PI/2 - r_;
-		const theta = theta_ * 180/Math.PI;
+	ursaMinor.labels.forEach(datum => {
+		const [ra, dec, s_] = datum;
 		const s = s_.split('').reverse().join('');
-		printCharArc(g, s, 'red', r, theta - 90, 1.5);
+		const [x, y, cosc] = transform(ra, dec);
+		if (cosc < 0)
+			return;
+		// label
+		var yearLabel = createSvgElement('text');
+		lg.appendChild(yearLabel);
+		yearLabel.innerHTML = s_;
+		yearLabel.setAttribute('x', x - LABEL_OFFSET_C*s.length);
+		yearLabel.setAttribute('y', y);
+		yearLabel.style.fill = 'red';
 	});
 	// mask https://stackoverflow.com/a/61001784
-	var mask = createSvgElement('clipPath');
-	svg.appendChild(mask);
-	mask.id = 'crop-disk';
-	var rect = nightDisk.cloneNode();
-	mask.appendChild(rect);
+	var diskMask = createSvgElement('clipPath');
+	svg.appendChild(diskMask);
+	diskMask.id = 'crop-disk';
+	var maskRect = nightDisk.cloneNode();
+	diskMask.appendChild(maskRect);
 	g.setAttribute('clip-path', 'url(#crop-disk)');
 	return svg;
 }
-ursaMinor.latitude = 45;
+ursaMinor.latitude = 31;
 ursaMinor.offset = -164; // from my longitude!
 ursaMinor.edges = [
 	// UMi
