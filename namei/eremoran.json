@@ -1154,7 +1154,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"port; harbor"
-		]
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "amu",
@@ -1351,7 +1352,7 @@
 		"defList": [
 			"smithy"
 		],
-		"categories": ["metal"]
+		"categories": ["building", "metal"]
 	},
 	{
 		"title": "aramaêr",
@@ -1782,7 +1783,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"fence"
-		]
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "az",
@@ -2256,6 +2258,15 @@
 		"categories": ["experiential"]
 	},
 	{
+		"title": "baradut",
+		"etym": "I/PEN/*baradu-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"tower (esp. watchtower)"
+		],
+		"categories": ["building"]
+	},
+	{
 		"title": "barak",
 		"etym": "I/PEN/*βara-x",
 		"cat": "n., 2nd",
@@ -2644,7 +2655,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"road, street"
-		]
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "bêbêtur",
@@ -3012,7 +3024,7 @@
 		"defList": [
 			"bar, pub"
 		],
-		"categories": ["drink"]
+		"categories": ["building", "drink"]
 	},
 	{
 		"title": "bibit",
@@ -3237,7 +3249,7 @@
 		"defList": [
 			"military school, military academy"
 		],
-		"categories": ["war"]
+		"categories": ["building", "war"]
 	},
 	{
 		"title": "bikut",
@@ -3329,7 +3341,7 @@
 		"defList": [
 			"brothel"
 		],
-		"categories": ["sex"]
+		"categories": ["building", "sex"]
 	},
 	{
 		"title": "bimuk",
@@ -4177,13 +4189,23 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "busmafêssaur",
+		"etym": "B/busmat/afêssaur",
+		"cat": "n., 1st",
+		"defList": [
+			"corrections officer"
+		],
+		"categories": ["person"]
+	},
+	{
 		"title": "busmat",
 		"etym": "C/busk/mat",
 		"cat": "n., 3rd",
 		"defList": [
 			"doghouse",
 			"prison"
-		]
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "but",
@@ -4556,7 +4578,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"bank"
-		]
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "daret",
@@ -5242,7 +5265,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"hotel"
-		]
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "doder",
@@ -5348,6 +5372,14 @@
 			"tunic"
 		],
 		"categories": ["clothing"]
+	},
+	{
+		"title": "dom",
+		"etym": "I/PEN/*do-m",
+		"cat": "n., 5th",
+		"defList": [
+			"passage"
+		]
 	},
 	{
 		"title": "dôm",
@@ -5484,6 +5516,15 @@
 			"anvil"
 		],
 		"categories": ["tool"]
+	},
+	{
+		"title": "dot",
+		"etym": "C/dom/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"door"
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "dôt",
@@ -6746,7 +6787,7 @@
 		"defList": [
 			"headquarters"
 		],
-		"categories": ["war"]
+		"categories": ["building", "war"]
 	},
 	{
 		"title": "hanumor",
@@ -7547,7 +7588,7 @@
 		"defList": [
 			"castle, fort, fortress"
 		],
-		"categories": ["war"]
+		"categories": ["building", "war"]
 	},
 	{
 		"title": "holkit",
@@ -7555,7 +7596,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"city, town, village, settlement"
-		]
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "homak",
@@ -9615,7 +9657,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"bridge"
-		]
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "kokoz",
@@ -10001,7 +10044,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"school"
-		]
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "krus",
@@ -11522,7 +11566,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"storage, store, stockpile"
-		]
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "mafir",
@@ -11576,7 +11621,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"town, village"
-		]
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "mana",
@@ -11621,7 +11667,8 @@
 		"defList": [
 			"(archaic) workshop",
 			"forge, furnace"
-		]
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "manaz",
@@ -11838,7 +11885,8 @@
 			"house",
 			"housing; casing",
 			"(suffix) -ary, -arium"
-		]
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "maukon",
@@ -13296,7 +13344,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"column"
-		]
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "noz",
@@ -14289,7 +14338,7 @@
 		"defList": [
 			"restaurant"
 		],
-		"categories": ["food"]
+		"categories": ["building", "food"]
 	},
 	{
 		"title": "raratit",
@@ -14674,7 +14723,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"stele, obelisk"
-		]
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "rôlire",
@@ -15298,7 +15348,7 @@
 		"defList": [
 			"granary"
 		],
-		"categories": ["food"]
+		"categories": ["building", "food"]
 	},
 	{
 		"title": "semuk",
@@ -15650,7 +15700,7 @@
 		"etym": "C/skimolt/kum",
 		"cat": "n., 3rd",
 		"defList": [
-			"galley"
+			"galley (ship type)"
 		]
 	},
 	{
@@ -15946,7 +15996,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"base, foundation"
-		]
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "sparu",
@@ -16348,7 +16399,8 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"window"
-		]
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "surozik",
@@ -17528,7 +17580,8 @@
 		"defList": [
 			"ceiling",
 			"roof"
-		]
+		],
+		"categories": ["building"]
 	},
 	{
 		"title": "tuz",
