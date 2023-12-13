@@ -749,6 +749,8 @@ ursaMinor.vertices = [
 	['69 aql', ra2rad(20, 30, 52.6), deg2rad(2, 48, 23.2, true), 5.06],
 	['70 aql', ra2rad(20, 37, 57), deg2rad(2, 28, 3.2, true), 5],
 	['71 aql', ra2rad(20, 39, 33), deg2rad(1, 1, 18.8, true), 4.47],
+	// Corona Borealis
+	['zeta crb', ra2rad(15, 40, 14.7), deg2rad(36, 33, 27.3), 5.94],
 ];
 ursaMinor.labels = [
 	// sort from most northernly, then alphabetically
