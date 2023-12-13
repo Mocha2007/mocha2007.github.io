@@ -394,15 +394,17 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	var sideralDay = 86164100;
 	var starSize = 0.02;
 	var lineSize = 0.001;
+	var exteriorSize = 0.04;
 	var size = 1;
+	var totalSize = size + exteriorSize;
 	var whiteDiskScale = 1.01;
 	var LABEL_OFFSET_C = 0.01;
 	var timeAngle = t/sideralDay%1*360 - (nightSky.offset + lon);
 	// svg
 	var svg = createSvgElement('svg');
 	svg.classList.add('sundial');
-	svg.setAttribute('viewBox', [-size*whiteDiskScale, -size*whiteDiskScale,
-		2*size*whiteDiskScale, 2*size*whiteDiskScale].join(' '));
+	svg.setAttribute('viewBox', [-totalSize*whiteDiskScale, -totalSize*whiteDiskScale,
+		2*totalSize*whiteDiskScale, 2*totalSize*whiteDiskScale].join(' '));
 	svg.setAttribute('width', 10*svgScale);
 	svg.setAttribute('height', 10*svgScale);
 	svg.setAttribute('aria-label', 'North Celestial Pole');
@@ -533,6 +535,10 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 			yearLabel.style.fill = 'lime';
 		}
 	}
+	// directions
+	'N NNE NE ENE E ESE SE SSE S SSW SW WSW W WNW NW NWN'.split(' ').forEach((dir, i) => {
+		printCharArc(svg, dir, 'cyan', -1.02, -i*360/16);
+	});
 	// mask https://stackoverflow.com/a/61001784
 	var diskMask = createSvgElement('clipPath');
 	svg.appendChild(diskMask);
