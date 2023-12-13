@@ -2,7 +2,7 @@
 /* eslint-env es3 */
 /* jshint esversion: 3, strict: true, strict: global, eqeqeq: true */
 /* exported goldClock, nightSky, sundial */
-/* global createSvgElement, phoonsvg, svgScale */
+/* global createSvgElement, phoonsvg, solarPosition, svgScale */
 'use strict';
 
 /**
@@ -506,6 +506,33 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 		yearLabel.setAttribute('y', y);
 		yearLabel.style.fill = 'red';
 	});
+	// SUN!!!
+	if (typeof solarPosition !== 'undefined'){
+		const SUN = solarPosition(t, lat, lon);
+		const [theta_, phi] = [SUN.theta, SUN.phi];
+		const [r, theta] = [Math.sin(phi), theta_+Math.PI/2];
+		const [sx, sy] = [
+			r*Math.cos(theta) * (SUN.snoon < t ? -1 : 1),
+			r*Math.sin(theta),
+		];
+		if (SUN.sunrise < t && t < SUN.sunset){
+			// elem
+			var starDisk = createSvgElement('circle');
+			g.appendChild(starDisk);
+			starDisk.setAttribute('r', 2*starSize);
+			starDisk.style.fill = 'yellow';
+			starDisk.setAttribute('cx', sx);
+			starDisk.setAttribute('cy', sy);
+			starDisk.id = 'star_sol';
+			// label
+			var yearLabel = createSvgElement('text');
+			lg.appendChild(yearLabel);
+			yearLabel.innerHTML = 'Sun'; // t.toLocaleTimeString('en-US', {timeStyle: 'short'});
+			yearLabel.setAttribute('x', sx + 4*LABEL_OFFSET_C);
+			yearLabel.setAttribute('y', sy);
+			yearLabel.style.fill = 'lime';
+		}
+	}
 	// mask https://stackoverflow.com/a/61001784
 	var diskMask = createSvgElement('clipPath');
 	svg.appendChild(diskMask);
