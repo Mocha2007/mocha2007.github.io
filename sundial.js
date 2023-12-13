@@ -506,23 +506,45 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 		line.setAttribute('y2', y2);
 	});
 	// celestial equator
-	for (let i = 0; i < circleResolution; i++){
-		const [x1, y1, cosc1] = transform(2*Math.PI/circleResolution * i, 0);
-		if (cosc1 < 0)
-			continue;
-		const [x2, y2, cosc2] = transform(2*Math.PI/circleResolution * (i+1), 0);
-		if (cosc2 < 0)
-			continue;
-		// elem
-		var line = createSvgElement('line');
-		lg.appendChild(line);
-		line.style.stroke = 'orange';
-		line.style.strokeWidth = lineSize*2;
-		line.setAttribute('x1', x1);
-		line.setAttribute('y1', y1);
-		line.setAttribute('x2', x2);
-		line.setAttribute('y2', y2);
-	}
+	nightSky.normals.forEach(normal => {
+		const [ra, dec] = normal; // ra dec
+		const [phi0, theta0] = [ra, Math.PI/2 - dec];
+		for (let i = 0; i < circleResolution; i++){
+			let [phi1, theta1] = [2*Math.PI/circleResolution * i, 0];
+			let [phi2, theta2] = [2*Math.PI/circleResolution * (i+1), 0];
+			// https://math.stackexchange.com/a/1847806
+			// rotate around z-axis (RA) is just rotating it
+			theta1 += theta0;
+			theta2 += theta0;
+			// convert to cartesian and rotate about x-axis (or is it y?)
+			// swap x and z axes :^)
+			let [x1, y1, z1] = [
+				Math.cos(theta1), // Z
+				Math.sin(theta1)*Math.sin(phi1), // Y
+				Math.sin(theta1)*Math.cos(phi1), // X
+			];
+			// back to spherical!
+			[phi1, theta1] = [Math.atan2(y1, x1), Math.acos(z1)];
+			// ROTATO FASTER BANAMBA
+			theta1 += phi0;
+			theta2 += phi0;
+			const [x1, y1, cosc1] = transform(2*Math.PI/circleResolution * i, 0);
+			//if (cosc1 < 0)
+			//	continue;
+			const [x2, y2, cosc2] = transform(2*Math.PI/circleResolution * (i+1), 0);
+			//if (cosc2 < 0)
+			//	continue;
+			// elem
+			var line = createSvgElement('line');
+			lg.appendChild(line);
+			line.style.stroke = 'orange';
+			line.style.strokeWidth = lineSize*2;
+			line.setAttribute('x1', x1);
+			line.setAttribute('y1', y1);
+			line.setAttribute('x2', x2);
+			line.setAttribute('y2', y2);
+		}
+	});
 	// labels
 	nightSky.labels.forEach(datum => {
 		const [ra, dec, s_] = datum;
@@ -573,6 +595,10 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	return svg;
 }
 nightSky.offset = 240;
+nightSky.normals = [ // normals for the circles that should be drawn on the celestial sphere
+	[0, Math.PI], // celestial equator
+	[ra2rad(17, 58), deg2rad(66, 30)], // ecliptic todo this is just an appx
+];
 nightSky.edges = [
 	// UMi
 	['alpha umi', 'delta umi'],
