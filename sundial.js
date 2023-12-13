@@ -390,6 +390,36 @@ function mag2radius(mag = 0){
 	return Math.sqrt(linearMag); // if we let area = mag, then the radius is... sqrt(A/pi), but the pi is just a constant term anyways so I ignore it
 }
 
+function sphere2cart(phi = 0, theta = 0, r = 1){
+	return {
+		x: r*Math.sin(theta)*Math.cos(phi),
+		y: r*Math.sin(theta)*Math.sin(phi),
+		z: r*Math.cos(theta),
+	};
+}
+
+function cart2sphere(x = 0, y = 0, z = 0){
+	return {r: Math.hypot(x, y, z), theta: Math.atan2(z, Math.hypot(x, y)), phi: Math.atan2(y, x)};
+}
+
+function rotateSphericalCoords(phi = 0, theta = 0, rx = 0, ry = 0, rz = 0){
+	let cc, sc = {phi, theta};
+	[rz, rx, ry].forEach(r => {
+		// rotate about current z, then swap coords :^)
+		cc = sphere2cart(sc.phi, sc.theta + r);
+		sc = cart2sphere(cc.y, cc.z, cc.x);
+	});
+	return sc;
+}
+
+function eq2sphere(ra = 0, dec = 0){
+	return {r: 1, phi: ra, theta: Math.PI/2-dec};
+}
+
+function sphere2eq(phi = 0, theta = 0){
+	return {ra: phi, dec: Math.PI/2-theta};
+}
+
 function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	var sideralDay = 86164100;
 	var starSize = 0.02;
@@ -507,33 +537,22 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	});
 	// celestial equator
 	nightSky.normals.forEach(normal => {
-		const [ra, dec] = normal; // ra dec
-		const [phi0, theta0] = [ra, Math.PI/2 - dec];
+		const [ra0, dec0] = normal; // ra dec
 		for (let i = 0; i < circleResolution; i++){
-			let [phi1, theta1] = [2*Math.PI/circleResolution * i, 0];
-			let [phi2, theta2] = [2*Math.PI/circleResolution * (i+1), 0];
-			// https://math.stackexchange.com/a/1847806
-			// rotate around z-axis (RA) is just rotating it
-			theta1 += theta0;
-			theta2 += theta0;
-			// convert to cartesian and rotate about x-axis (or is it y?)
-			// swap x and z axes :^)
-			let [x1, y1, z1] = [
-				Math.cos(theta1), // Z
-				Math.sin(theta1)*Math.sin(phi1), // Y
-				Math.sin(theta1)*Math.cos(phi1), // X
-			];
-			// back to spherical!
-			[phi1, theta1] = [Math.atan2(y1, x1), Math.acos(z1)];
-			// ROTATO FASTER BANAMBA
-			theta1 += phi0;
-			theta2 += phi0;
-			const [x1, y1, cosc1] = transform(2*Math.PI/circleResolution * i, 0);
+			let s1 = eq2sphere(2*Math.PI/circleResolution * i, 0);
+			let s2 = eq2sphere(2*Math.PI/circleResolution * (i+1), 0);
+			s1 = rotateSphericalCoords(s1.phi, s1.theta, ra0, 0, dec0);
+			s2 = rotateSphericalCoords(s2.phi, s2.theta, ra0, 0, dec0);
+			const eq1 = sphere2eq(s1.phi, s1.theta);
+			const eq2 = sphere2eq(s2.phi, s2.theta);
+
+			const [x1, y1, cosc1] = transform(eq1.ra, eq1.dec);
 			//if (cosc1 < 0)
 			//	continue;
-			const [x2, y2, cosc2] = transform(2*Math.PI/circleResolution * (i+1), 0);
+			const [x2, y2, cosc2] = transform(eq2.ra, eq2.dec);
 			//if (cosc2 < 0)
 			//	continue;
+			debugger;
 			// elem
 			var line = createSvgElement('line');
 			lg.appendChild(line);
