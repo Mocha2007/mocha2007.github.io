@@ -458,6 +458,17 @@ function ursaMinor(t = new Date(), drawEdges = true){
 		starDisk.setAttribute('cx', gx);
 		starDisk.setAttribute('cy', gy);
 		starDisk.id = 'star_' + i;
+		// greek
+		const gi = GREEK_ALPHABET_NAMES.indexOf(id.split(' ')[0]);
+		if (0 <= gi){
+			// label
+			var yearLabel = createSvgElement('text');
+			lg.appendChild(yearLabel);
+			yearLabel.innerHTML = GREEK_ALPHABET_LC[gi];
+			yearLabel.setAttribute('x', gx + LABEL_OFFSET_C);
+			yearLabel.setAttribute('y', gy);
+			yearLabel.style.fill = 'lime';
+		}
 	});
 	// edges
 	drawEdges && ursaMinor.edges.forEach(edge => {
@@ -780,3 +791,5 @@ ursaMinor.labels = [
 	Camelopardalis, Canes Venatici, Cassiopeia, Cepheus, Draco
 	Lacerta, Lynx, Triangulum, Ursa Major, Ursa Minor
 */
+var GREEK_ALPHABET_NAMES = 'alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi omicron pi rho sigma tau upsilon phi chi psi omega'.split(' ');
+var GREEK_ALPHABET_LC = 'αβγδεζηθικλμνξοπρστυφχψω';
