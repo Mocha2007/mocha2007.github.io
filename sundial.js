@@ -835,9 +835,9 @@ nightSky.edges = [
 	// Vulpecula
 	['alpha vul', '15 vul'],
 	// Sagitta
-	['alpha sag', 'delta sag'],
-	['beta sag', 'delta sag'],
-	['gamma sag', 'delta sag'],
+	['alpha sge', 'delta sge'],
+	['beta sge', 'delta sge'],
+	['gamma sge', 'delta sge'],
 	// Equuleus
 	['alpha equ', 'delta equ'],
 	['gamma equ', 'delta equ'],
@@ -1005,17 +1005,17 @@ nightSky.vertices = [
 	['alpha vul', ra2rad(19, 29, 40.4), deg2rad(24, 42, 50.2), 4.4],
 	['15 vul', ra2rad(20, 2, 3.5), deg2rad(27, 49, 14.5), 4.66],
 	// Sagitta
-	['alpha sag', ra2rad(19, 41, 8.4), deg2rad(18, 4, 9.7), 4.38], // sham
-	['beta sag', ra2rad(19, 42, 5.8), deg2rad(17, 31, 54.9), 4.38],
-	['gamma sag', ra2rad(19, 59, 47.7), deg2rad(19, 33, 28), 3.51],
-	['delta sag', ra2rad(19, 48, 25.7), deg2rad(18, 35, 38), 3.82],
+	['alpha sge', ra2rad(19, 41, 8.4), deg2rad(18, 4, 9.7), 4.38], // sham
+	['beta sge', ra2rad(19, 42, 5.8), deg2rad(17, 31, 54.9), 4.38],
+	['gamma sge', ra2rad(19, 59, 47.7), deg2rad(19, 33, 28), 3.51],
+	['delta sge', ra2rad(19, 48, 25.7), deg2rad(18, 35, 38), 3.82],
 	// Equuleus
 	['alpha equ', ra2rad(21, 17), deg2rad(5, 20, 48.4), 3.92], // kitalpha
 	['delta equ', ra2rad(21, 15, 37.5), deg2rad(10, 6, 15.7), 4.47],
 	['gamma equ', ra2rad(21, 11, 29.1), deg2rad(10, 13, 42), 4.7],
 	// Sextans
-	['alpha sag', ra2rad(10, 9, 9.9), deg2rad(0, 29, 15.3, true), 4.47],
-	['beta sag', ra2rad(10, 31, 30.8), deg2rad(0, 45, 31.4, true), 5.03],
+	['alpha sex', ra2rad(10, 9, 9.9), deg2rad(0, 29, 15.3, true), 4.47],
+	['beta sex', ra2rad(10, 31, 30.8), deg2rad(0, 45, 31.4, true), 5.03],
 ];
 nightSky.labels = [
 	// sort from most northernly, then alphabetically
