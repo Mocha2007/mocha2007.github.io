@@ -417,6 +417,7 @@ function rotateSphericalCoords(phi = 0, theta = 0, r = 1, rx = 0, ry = 0, rz = 0
 
 // eslint-disable-next-line no-unused-vars
 function coordTest(){
+	console.debug('TEST 1/2');
 	const start = {x: 1, y: 2, z: 3};
 	console.debug(start);
 	const sphere = cart2sphere(start.x, start.y, start.z);
@@ -425,6 +426,11 @@ function coordTest(){
 	console.debug(q);
 	const cart = sphere2cart(q.phi, q.theta, q.r);
 	console.debug(cart);
+	console.debug('TEST 2/2');
+	const e0 = eq2sphere(1, 2);
+	console.debug(e0);
+	const eq = sphere2eq(e0.phi, e0.theta);
+	console.debug(eq);
 }
 
 function eq2sphere(ra = 0, dec = 0){
@@ -552,22 +558,23 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	});
 	// celestial equator
 	nightSky.normals.forEach(normal => {
-		const [ra0, dec0_] = normal; // ra dec
-		const dec0 = Math.PI/2 - dec0_;
+		const [ra0, dec0] = normal; // ra dec
+		const nv = eq2sphere(ra0, dec0);
+		const [rx, ry, rz] = [nv.phi, nv.theta, 0];
 		for (let i = 0; i < circleResolution; i++){
 			let s1 = eq2sphere(2*Math.PI/circleResolution * i, 0);
 			let s2 = eq2sphere(2*Math.PI/circleResolution * (i+1), 0);
-			s1 = rotateSphericalCoords(s1.phi, s1.theta, ra0, 0, dec0);
-			s2 = rotateSphericalCoords(s2.phi, s2.theta, ra0, 0, dec0);
+			s1 = rotateSphericalCoords(s1.phi, s1.theta, rx, ry, rz);
+			s2 = rotateSphericalCoords(s2.phi, s2.theta, rx, ry, rz);
 			const eq1 = sphere2eq(s1.phi, s1.theta);
 			const eq2 = sphere2eq(s2.phi, s2.theta);
 
 			const [x1, y1, cosc1] = transform(eq1.ra, eq1.dec);
-			//if (cosc1 < 0)
-			//	continue;
+			if (cosc1 < 0)
+				continue;
 			const [x2, y2, cosc2] = transform(eq2.ra, eq2.dec);
-			//if (cosc2 < 0)
-			//	continue;
+			if (cosc2 < 0)
+				continue;
 			// debugger;
 			// elem
 			var line = createSvgElement('line');
@@ -631,7 +638,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 }
 nightSky.offset = 240;
 nightSky.normals = [ // normals for the circles that should be drawn on the celestial sphere
-	// [0, Math.PI/2], // celestial equator
+	[1e-10, Math.PI/2], // celestial equator
 	[ra2rad(18), deg2rad(66, 33, 38.84)], // ecliptic https://en.wikipedia.org/wiki/Orbital_pole#Ecliptic_pole
 ];
 nightSky.edges = [
