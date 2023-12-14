@@ -815,6 +815,12 @@ nightSky.edges = [
 	// Crux
 	['alpha cru', 'gamma cru'],
 	['beta cru', 'delta cru'],
+	// Leo Minor
+	['beta lmi', '21 lmi'],
+	['beta lmi', '46 lmi'],
+	['10 lmi', '21 lmi'],
+	['21 lmi', '30 lmi'],
+	['30 lmi', '46 lmi'],
 ];
 nightSky.vertices = [
 	// RA, DEC
@@ -956,6 +962,12 @@ nightSky.vertices = [
 	['alpha cen', ra2rad(14, 41, 11), deg2rad(60, 55, 52.8, true), -0.27],
 	// Bootes (todo)
 	['alpha boo', ra2rad(14, 16, 44.11), deg2rad(19, 3, 24.6), -0.05], // arcturus
+	// Leo Minor
+	['beta lmi', ra2rad(10, 29, 16), deg2rad(36, 34, 55.2), 4.2],
+	['10 lmi', ra2rad(9, 35, 41.6), deg2rad(36, 17, 20.3), 4.54],
+	['21 lmi', ra2rad(10, 8, 50.5), deg2rad(35, 7, 32.4), 4.49],
+	['30 lmi', ra2rad(10, 27, 17.1), deg2rad(33, 40, 19), 4.72],
+	['46 lmi', ra2rad(10, 54, 38.9), deg2rad(34, 5, 0.3), 3.79],
 ];
 nightSky.labels = [
 	// sort from most northernly, then alphabetically
@@ -968,6 +980,7 @@ nightSky.labels = [
 	[ra2rad(8), deg2rad(46), 'Lynx'],
 	[ra2rad(22.6), deg2rad(45), 'Lacerta'],
 	[ra2rad(13), deg2rad(39.5), 'Canes Venatici'],
+	[ra2rad(10.5), deg2rad(35), 'Leo Minor'],
 	[ra2rad(2), deg2rad(32), 'Triangulum'],
 	[ra2rad(20), deg2rad(-4), 'Antinous'], // nonstandard
 	[ra2rad(12.5), deg2rad(-60), 'Crux'],
@@ -989,7 +1002,6 @@ nightSky.labels = [
 	[ra2rad(20.5), deg2rad(40), 'Cygnus'],
 	[ra2rad(5.5), deg2rad(39), 'Auriga'],
 	[ra2rad(1), deg2rad(36), 'Andromeda'],
-	[ra2rad(10), deg2rad(36), 'Leo Minor'],
 	[ra2rad(19), deg2rad(36), 'Lyra'],
 	[ra2rad(17), deg2rad(34), 'Hercules'],
 	[ra2rad(16), deg2rad(29), 'Corona Borealis'],
