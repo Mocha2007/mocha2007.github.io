@@ -442,18 +442,19 @@ function sphere2eq(phi = 0, theta = 0){
 }
 
 function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
-	var sideralDay = 86164100;
-	var starSize = 0.02;
-	var lineSize = 0.001;
-	var exteriorSize = 0.04;
-	var size = 1;
-	var totalSize = size + exteriorSize;
-	var whiteDiskScale = 1.01;
-	var LABEL_OFFSET_C = 0.01;
-	var circleResolution = 48;
-	var timeAngle = t/sideralDay%1*360 - (nightSky.offset + lon);
+	const t_start = new Date();
+	const sideralDay = 86164100;
+	const starSize = 0.02;
+	const lineSize = 0.001;
+	const exteriorSize = 0.04;
+	const size = 1;
+	const totalSize = size + exteriorSize;
+	const whiteDiskScale = 1.01;
+	const LABEL_OFFSET_C = 0.01;
+	const circleResolution = 48;
+	const timeAngle = t/sideralDay%1*360 - (nightSky.offset + lon);
 	// svg
-	var svg = createSvgElement('svg');
+	const svg = createSvgElement('svg');
 	svg.classList.add('sundial');
 	svg.setAttribute('viewBox', [-totalSize*whiteDiskScale, -totalSize*whiteDiskScale,
 		2*totalSize*whiteDiskScale, 2*totalSize*whiteDiskScale].join(' '));
@@ -463,15 +464,15 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	svg.classList.add('pole');
 	// style
 	// css
-	var style = document.createElement('style');
+	const style = document.createElement('style');
 	style.innerHTML = '.pole text{font-size:0.04px;}';
 	svg.appendChild(style);
 	// background disks
-	var whiteDisk = createSvgElement('circle');
+	const whiteDisk = createSvgElement('circle');
 	svg.appendChild(whiteDisk);
 	whiteDisk.setAttribute('r', size*whiteDiskScale);
 	whiteDisk.style.fill = 'white';
-	var nightDisk = createSvgElement('circle');
+	const nightDisk = createSvgElement('circle');
 	svg.appendChild(nightDisk);
 	nightDisk.setAttribute('r', size);
 	nightDisk.style.fill = 'black';
@@ -519,7 +520,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 		if (cosc < 0)
 			return;
 		// elem
-		var starDisk = createSvgElement('circle');
+		const starDisk = createSvgElement('circle');
 		layers.star.appendChild(starDisk);
 		starDisk.setAttribute('r', starSize * mag2radius(mag));
 		starDisk.style.fill = 'white';
@@ -530,7 +531,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 		const gi = GREEK_ALPHABET_NAMES.indexOf(id.split(' ')[0]);
 		if (0 <= gi){
 			// label
-			var yearLabel = createSvgElement('text');
+			const yearLabel = createSvgElement('text');
 			layers.star_name.appendChild(yearLabel);
 			yearLabel.innerHTML = GREEK_ALPHABET_LC[gi];
 			yearLabel.setAttribute('x', gx + LABEL_OFFSET_C);
@@ -550,7 +551,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 		if (cosc1 < 0 && cosc2 < 0)
 			return;
 		// elem
-		var line = createSvgElement('line');
+		const line = createSvgElement('line');
 		layers.constellation_line.appendChild(line);
 		line.style.stroke = 'cyan';
 		line.style.strokeWidth = lineSize;
@@ -582,7 +583,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 				if (cosc2 < 0)
 					continue;
 				// elem
-				var line = createSvgElement('line');
+				const line = createSvgElement('line');
 				layers.grid.appendChild(line);
 				line.style.stroke = color;
 				line.style.opacity = DASHED ? 0.5 : 1;
@@ -602,7 +603,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 		if (cosc < 0)
 			return;
 		// label
-		var yearLabel = createSvgElement('text');
+		const yearLabel = createSvgElement('text');
 		layers.constellation_name.appendChild(yearLabel);
 		yearLabel.innerHTML = s_;
 		yearLabel.setAttribute('x', x - LABEL_OFFSET_C*s.length);
@@ -614,7 +615,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 		const [sx, sy, visible] = sunPos(t);
 		if (visible){
 			// elem
-			var starDisk = createSvgElement('circle');
+			const starDisk = createSvgElement('circle');
 			layers.planet.appendChild(starDisk);
 			starDisk.setAttribute('r', 2*starSize);
 			starDisk.style.fill = 'yellow';
@@ -622,7 +623,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 			starDisk.setAttribute('cy', sy);
 			starDisk.id = 'star_sol';
 			// label
-			var yearLabel = createSvgElement('text');
+			const yearLabel = createSvgElement('text');
 			layers.misc.appendChild(yearLabel);
 			yearLabel.innerHTML = 'Sun'; // t.toLocaleTimeString('en-US', {timeStyle: 'short'});
 			yearLabel.setAttribute('x', sx + 4*LABEL_OFFSET_C);
@@ -635,25 +636,27 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 		printCharArc(layers.misc, dir, 'cyan', -1.02, -i*360/16);
 	});
 	// mask https://stackoverflow.com/a/61001784
-	var diskMask = createSvgElement('clipPath');
+	const diskMask = createSvgElement('clipPath');
 	svg.appendChild(diskMask);
 	diskMask.id = 'crop-disk';
-	var maskRect = nightDisk.cloneNode();
+	const maskRect = nightDisk.cloneNode();
 	diskMask.appendChild(maskRect);
 	layers.constellation_name.setAttribute('clip-path', 'url(#crop-disk)');
 	// coords for debugging
-	var info = 'Geolocation o' + ['ff', 'n'][+(lat%1 !== lon%1)]
+	const t_taken = new Date() - t_start;
+	const info = 'Geolocation o' + ['ff', 'n'][+(lat%1 !== lon%1)]
 	+ '\nLat: ' + lat
 	+ '°\nLon: ' + lon
 	+ '°\nDate: ' + t.toLocaleDateString()
-	+ '\nTime: ' + t.toLocaleTimeString();
+	+ '\nTime: ' + t.toLocaleTimeString()
+	+ '\nCalc: ' + t_taken + ' ms';
 	info.split('\n').forEach((line, i) => {
-		var coordText = createSvgElement('text');
+		const coordText = createSvgElement('text');
 		layers.misc.appendChild(coordText);
 		coordText.innerHTML = line;
 		coordText.style.fill = 'yellow';
-		coordText.setAttribute('x', 0.6*totalSize);
-		coordText.setAttribute('y', 0.8*totalSize + 0.05*i);
+		coordText.setAttribute('x', 0.65*totalSize);
+		coordText.setAttribute('y', 0.75*totalSize + 0.05*i);
 	});
 	return svg;
 }
