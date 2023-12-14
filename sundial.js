@@ -476,11 +476,14 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	nightDisk.setAttribute('r', size);
 	nightDisk.style.fill = 'black';
 	// global rotation group
-	var g = createSvgElement('g');
-	svg.appendChild(g);
-	// line group
-	var lg = createSvgElement('g');
-	g.appendChild(lg);
+	const layers = {};
+	['grid', 'constellation_line', 'star', 'star_name',
+		'constellation_name', 'planet', 'misc']
+		.forEach(layer => {
+			const g = layers[layer] = createSvgElement('g');
+			g.id = layer;
+			svg.appendChild(g);
+		});
 	// vertices
 	const vertices = {};
 	/** transform celestial coords to their ACTUAL position in the sky */
@@ -517,7 +520,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 			return;
 		// elem
 		var starDisk = createSvgElement('circle');
-		g.appendChild(starDisk);
+		layers.star.appendChild(starDisk);
 		starDisk.setAttribute('r', starSize * mag2radius(mag));
 		starDisk.style.fill = 'white';
 		starDisk.setAttribute('cx', gx);
@@ -528,7 +531,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 		if (0 <= gi){
 			// label
 			var yearLabel = createSvgElement('text');
-			lg.appendChild(yearLabel);
+			layers.star_name.appendChild(yearLabel);
 			yearLabel.innerHTML = GREEK_ALPHABET_LC[gi];
 			yearLabel.setAttribute('x', gx + LABEL_OFFSET_C);
 			yearLabel.setAttribute('y', gy);
@@ -548,7 +551,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 			return;
 		// elem
 		var line = createSvgElement('line');
-		lg.appendChild(line);
+		layers.constellation_line.appendChild(line);
 		line.style.stroke = 'cyan';
 		line.style.strokeWidth = lineSize;
 		line.setAttribute('x1', x1);
@@ -580,7 +583,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 					continue;
 				// elem
 				var line = createSvgElement('line');
-				lg.appendChild(line);
+				layers.grid.appendChild(line);
 				line.style.stroke = color;
 				line.style.opacity = DASHED ? 0.5 : 1;
 				line.style.strokeWidth = lineSize*3;
@@ -600,7 +603,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 			return;
 		// label
 		var yearLabel = createSvgElement('text');
-		lg.appendChild(yearLabel);
+		layers.constellation_name.appendChild(yearLabel);
 		yearLabel.innerHTML = s_;
 		yearLabel.setAttribute('x', x - LABEL_OFFSET_C*s.length);
 		yearLabel.setAttribute('y', y);
@@ -612,7 +615,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 		if (visible){
 			// elem
 			var starDisk = createSvgElement('circle');
-			g.appendChild(starDisk);
+			layers.planet.appendChild(starDisk);
 			starDisk.setAttribute('r', 2*starSize);
 			starDisk.style.fill = 'yellow';
 			starDisk.setAttribute('cx', sx);
@@ -620,7 +623,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 			starDisk.id = 'star_sol';
 			// label
 			var yearLabel = createSvgElement('text');
-			lg.appendChild(yearLabel);
+			layers.misc.appendChild(yearLabel);
 			yearLabel.innerHTML = 'Sun'; // t.toLocaleTimeString('en-US', {timeStyle: 'short'});
 			yearLabel.setAttribute('x', sx + 4*LABEL_OFFSET_C);
 			yearLabel.setAttribute('y', sy);
@@ -629,7 +632,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	}
 	// directions
 	'N NNE NE ENE E ESE SE SSE S SSW SW WSW W WNW NW NNW'.split(' ').forEach((dir, i) => {
-		printCharArc(svg, dir, 'cyan', -1.02, -i*360/16);
+		printCharArc(layers.misc, dir, 'cyan', -1.02, -i*360/16);
 	});
 	// mask https://stackoverflow.com/a/61001784
 	var diskMask = createSvgElement('clipPath');
@@ -637,7 +640,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	diskMask.id = 'crop-disk';
 	var maskRect = nightDisk.cloneNode();
 	diskMask.appendChild(maskRect);
-	g.setAttribute('clip-path', 'url(#crop-disk)');
+	layers.constellation_name.setAttribute('clip-path', 'url(#crop-disk)');
 	// coords for debugging
 	var info = 'Geolocation o' + ['ff', 'n'][+(lat%1 !== lon%1)]
 	+ '\nLat: ' + lat
@@ -646,7 +649,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	+ '\nTime: ' + t.toLocaleTimeString();
 	info.split('\n').forEach((line, i) => {
 		var coordText = createSvgElement('text');
-		svg.appendChild(coordText);
+		layers.misc.appendChild(coordText);
 		coordText.innerHTML = line;
 		coordText.style.fill = 'yellow';
 		coordText.setAttribute('x', 0.6*totalSize);
