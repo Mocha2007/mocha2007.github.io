@@ -414,6 +414,11 @@ function rotateSphericalCoords(phi = 0, theta = 0, r = 1, rx = 0, ry = 0, rz = 0
 	});
 	return sc;
 }
+rotateSphericalCoords.eq = (lat = 0, lon = 0, lat0 = 0, lon0 = 0) => {
+	const sphere = eq2sphere(lon, lat);
+	const sphere_ = rotateSphericalCoords(sphere.phi, sphere.theta, sphere.r, lon0 - Math.PI/2, 0, -lat0);
+	return sphere2eq(sphere_.phi, sphere_.theta);
+};
 
 // eslint-disable-next-line no-unused-vars
 function coordTest(){
@@ -440,6 +445,36 @@ function eq2sphere(ra = 0, dec = 0){
 function sphere2eq(phi = 0, theta = 0){
 	return {ra: phi, dec: Math.PI/2-theta};
 }
+
+function orthographic(lat = 0, lon = 0, lat0 = 0, lon0 = 0){
+	return {
+		// X, Y, cos(c) <- if cos(c) is < 0, the point should not be displayed since it is behind the viewport
+		x: Math.cos(lat)*Math.sin(lon-lon0),
+		y: Math.cos(lat0)*Math.sin(lat) - Math.sin(lat0)*Math.cos(lat)*Math.cos(lon-lon0),
+		cosc: Math.sin(lat0)*Math.sin(lat)
+			+ Math.cos(lat0)*Math.cos(lat)*Math.cos(lon-lon0),
+	};
+}
+orthographic._ = (lat = 0, lon = 0, lat0 = 0, lon0 = 0) => {
+	const out = orthographic(lat, lon, lat0, lon0);
+	return [out.x, out.y, out.cosc];
+};
+
+function stereographic(lat = 0, lon = 0, lat0 = 0, lon0 = 0){
+	const eq_ = rotateSphericalCoords.eq(lat, lon, lat0, lon0);
+	const [r, theta] = [Math.tan(Math.PI/4 - eq_.dec/2), eq_.ra];
+	return {
+		r, theta,
+		// X, Y, cos(c) <- if cos(c) is < 0, the point should not be displayed since it is behind the viewport
+		x: r*Math.cos(theta),
+		y: r*Math.sin(theta),
+		cosc: 1.1 - r,
+	};
+}
+stereographic._ = (lat = 0, lon = 0, lat0 = 0, lon0 = 0) => {
+	const out = stereographic(lat, lon, lat0, lon0);
+	return [out.x, out.y, out.cosc];
+};
 
 function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	var sideralDay = 86164100;
@@ -490,14 +525,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 		// RA is longitude, dec is latitude
 		const lambda0 = timeAngle * Math.PI/180;
 		const phi0 = Math.PI - lat * Math.PI/180; // I subtract from pi so north appears UP
-		const coords = [
-			// X, Y, cos(c) <- if cos(c) is < 0, the point should not be displayed since it is behind the viewport
-			Math.cos(dec)*Math.sin(ra-lambda0),
-			Math.cos(phi0)*Math.sin(dec) - Math.sin(phi0)*Math.cos(dec)*Math.cos(ra-lambda0),
-			Math.sin(phi0)*Math.sin(dec)
-				+ Math.cos(phi0)*Math.cos(dec)*Math.cos(ra-lambda0),
-		];
-		return coords;
+		return stereographic._(dec, ra, lambda0, phi0);
 	}
 	function sunPos(time){
 		const SUN = solarPosition(time, lat, lon);
@@ -633,7 +661,32 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	diskMask.id = 'crop-disk';
 	var maskRect = nightDisk.cloneNode();
 	diskMask.appendChild(maskRect);
+<<<<<<< Updated upstream
 	g.setAttribute('clip-path', 'url(#crop-disk)');
+=======
+	layers.constellation_line.setAttribute('clip-path', 'url(#crop-disk)');
+	layers.constellation_name.setAttribute('clip-path', 'url(#crop-disk)');
+	layers.star.setAttribute('clip-path', 'url(#crop-disk)');
+	layers.star_name.setAttribute('clip-path', 'url(#crop-disk)');
+	layers.grid.setAttribute('clip-path', 'url(#crop-disk)');
+	// coords for debugging
+	const t_taken = new Date() - t_start;
+	const info = 'Geolocation o' + ['ff', 'n'][+(lat%1 !== lon%1)]
+	+ '\nLat: ' + lat
+	+ '°\nLon: ' + lon
+	+ '°\nDate: ' + t.toLocaleDateString()
+	+ '\nTime: ' + t.toLocaleTimeString()
+	+ '\nCalc: ' + t_taken + ' ms';
+	info.split('\n').forEach((line, i) => {
+		const coordText = createSvgElement('text');
+		layers.misc.appendChild(coordText);
+		coordText.classList.add('data');
+		coordText.innerHTML = line;
+		coordText.style.fill = 'yellow';
+		coordText.setAttribute('x', 0.65*totalSize);
+		coordText.setAttribute('y', 0.75*totalSize + 0.05*i);
+	});
+>>>>>>> Stashed changes
 	return svg;
 }
 nightSky.offset = 240;
