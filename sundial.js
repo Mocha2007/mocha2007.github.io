@@ -624,7 +624,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 		}
 	}
 	// directions
-	'N NNE NE ENE E ESE SE SSE S SSW SW WSW W WNW NW NWN'.split(' ').forEach((dir, i) => {
+	'N NNE NE ENE E ESE SE SSE S SSW SW WSW W WNW NW NNW'.split(' ').forEach((dir, i) => {
 		printCharArc(svg, dir, 'cyan', -1.02, -i*360/16);
 	});
 	// mask https://stackoverflow.com/a/61001784
