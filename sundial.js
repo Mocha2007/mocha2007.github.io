@@ -834,6 +834,10 @@ nightSky.edges = [
 	['eta lyr', '13 lyr'],
 	// Vulpecula
 	['alpha vul', '15 vul'],
+	// Sagitta
+	['alpha sag', 'delta sag'],
+	['beta sag', 'delta sag'],
+	['gamma sag', 'delta sag'],
 ];
 nightSky.vertices = [
 	// RA, DEC
@@ -995,6 +999,11 @@ nightSky.vertices = [
 	// Vulpecula
 	['alpha vul', ra2rad(19, 29, 40.4), deg2rad(24, 42, 50.2), 4.4],
 	['15 vul', ra2rad(20, 2, 3.5), deg2rad(27, 49, 14.5), 4.66],
+	// Sagitta
+	['alpha sag', ra2rad(19, 41, 8.4), deg2rad(18, 4, 9.7), 4.38], // sham
+	['beta sag', ra2rad(19, 42, 5.8), deg2rad(17, 31, 54.9), 4.38],
+	['gamma sag', ra2rad(19, 59, 47.7), deg2rad(19, 33, 28), 3.51],
+	['delta sag', ra2rad(19, 48, 25.7), deg2rad(18, 35, 38), 3.82],
 ];
 nightSky.labels = [
 	// sort from most northernly, then alphabetically
@@ -1011,6 +1020,7 @@ nightSky.labels = [
 	[ra2rad(10.5), deg2rad(35), 'Leo Minor'],
 	[ra2rad(2), deg2rad(32), 'Triangulum'],
 	[ra2rad(20), deg2rad(26), 'Vulpecula'],
+	[ra2rad(20), deg2rad(18), 'Sagitta'],
 	[ra2rad(20), deg2rad(-4), 'Antinous'], // nonstandard
 	[ra2rad(12.5), deg2rad(-60), 'Crux'],
 	// zodiac [HIGH PRIORITY]
@@ -1036,7 +1046,6 @@ nightSky.labels = [
 	[ra2rad(14.5), deg2rad(27), 'Boötes'],
 	[ra2rad(13), deg2rad(23), 'Coma Berenices'],
 	[ra2rad(23), deg2rad(21), 'Pegasus'],
-	[ra2rad(20), deg2rad(19), 'Sagitta'],
 	[ra2rad(21), deg2rad(15), 'Delphinus'],
 	[ra2rad(21), deg2rad(8), 'Equuleus'],
 	[ra2rad(7.5), deg2rad(7), 'Canis Minor'],
