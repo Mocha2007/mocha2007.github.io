@@ -521,6 +521,7 @@ function main(t = new Date()){
 	container.innerHTML = '';
 	container.appendChild(calendar(t));
 	let year;
+	query();
 	refresh();
 	setInterval(refresh, 200); // if you set to 1s, it's not exactly 1000ms so sometimes the clock could "miss" a second - the same issue happens with 200ms, but with time so short you can't actually perceive it
 	if (time.CONFIG.CALTYPE === 'GREGORIAN'){
@@ -537,7 +538,6 @@ function main(t = new Date()){
 		setInterval(refreshClock, clockInterval);
 	}
 	else if (time.CONFIG.CALTYPE === 'MLSC'){
-		query();
 		const MLSC = mochaLunisolar(t);
 		year = document.getElementById('erecal1_title').innerHTML = `MLSC Year ${MLSC.year}`;
 		/** @type {HTMLTableRowElement} */
@@ -574,6 +574,9 @@ function query(){
 		time.CONFIG.GEO.LAT = gc.coords.latitude;
 		time.CONFIG.GEO.LON = gc.coords.longitude;
 		refreshSundial();
+	},
+	e => {
+		console.debug(`Couldn't get geolocation due to ${e}`);
 	});
 }
 
