@@ -633,6 +633,19 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	var maskRect = nightDisk.cloneNode();
 	diskMask.appendChild(maskRect);
 	g.setAttribute('clip-path', 'url(#crop-disk)');
+	// coords for debugging
+	var info = 'Lat: ' + lat
+	+ '°\nLon: ' + lon
+	+ '°\nDate: ' + t.toLocaleDateString()
+	+ '\nTime: ' + t.toLocaleTimeString();
+	info.split('\n').forEach((line, i) => {
+		var coordText = createSvgElement('text');
+		svg.appendChild(coordText);
+		coordText.innerHTML = line;
+		coordText.style.fill = 'yellow';
+		coordText.setAttribute('x', 0.5*totalSize);
+		coordText.setAttribute('y', 0.87*totalSize + 0.05*i);
+	});
 	return svg;
 }
 nightSky.offset = 240;
