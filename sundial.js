@@ -821,6 +821,17 @@ nightSky.edges = [
 	['10 lmi', '21 lmi'],
 	['21 lmi', '30 lmi'],
 	['30 lmi', '46 lmi'],
+	// Lyra
+	['alpha lyr', 'epsilon lyr'],
+	['alpha lyr', 'kappa lyr'],
+	['beta lyr', 'gamma lyr'],
+	['beta lyr', 'zeta lyr'],
+	['beta lyr', 'kappa lyr'],
+	['gamma lyr', 'delta lyr'],
+	['gamma lyr', 'theta lyr'],
+	['epsilon lyr', '13 lyr'],
+	['eta lyr', 'theta lyr'],
+	['eta lyr', '13 lyr'],
 ];
 nightSky.vertices = [
 	// RA, DEC
@@ -968,6 +979,17 @@ nightSky.vertices = [
 	['21 lmi', ra2rad(10, 8, 50.5), deg2rad(35, 7, 32.4), 4.49],
 	['30 lmi', ra2rad(10, 27, 17.1), deg2rad(33, 40, 19), 4.72],
 	['46 lmi', ra2rad(10, 54, 38.9), deg2rad(34, 5, 0.3), 3.79],
+	// Lyra
+	['alpha lyr', ra2rad(18, 37, 42.9), deg2rad(38, 48, 22.1), 0.09], // vega
+	['beta lyr', ra2rad(18, 50, 55.9), deg2rad(33, 23, 26.8), 3.55], // sheliak
+	['gamma lyr', ra2rad(18, 59, 48.4), deg2rad(32, 43, 22.1), 3.22], // sulafat
+	['delta lyr', ra2rad(18, 55, 18.6), deg2rad(36, 55, 46.1), 4.19],
+	['epsilon lyr', ra2rad(18, 45, 5.9), deg2rad(39, 41, 43.7), 4.72],
+	['zeta lyr', ra2rad(18, 45, 33.8), deg2rad(37, 37, 49.5), 4.38],
+	['eta lyr', ra2rad(19, 14, 32.4), deg2rad(39, 11, 16.2), 4.34],
+	['theta lyr', ra2rad(19, 17, 10), deg2rad(38, 10, 37.5), 4.5],
+	['kappa lyr', ra2rad(18, 20, 40.1), deg2rad(36, 4, 31.1), 4.47],
+	['13 lyr', ra2rad(18, 56, 1.6), deg2rad(43, 58, 41), 3.92],
 ];
 nightSky.labels = [
 	// sort from most northernly, then alphabetically
@@ -980,6 +1002,7 @@ nightSky.labels = [
 	[ra2rad(8), deg2rad(46), 'Lynx'],
 	[ra2rad(22.6), deg2rad(45), 'Lacerta'],
 	[ra2rad(13), deg2rad(39.5), 'Canes Venatici'],
+	[ra2rad(19), deg2rad(38), 'Lyra'],
 	[ra2rad(10.5), deg2rad(35), 'Leo Minor'],
 	[ra2rad(2), deg2rad(32), 'Triangulum'],
 	[ra2rad(20), deg2rad(-4), 'Antinous'], // nonstandard
@@ -1002,7 +1025,6 @@ nightSky.labels = [
 	[ra2rad(20.5), deg2rad(40), 'Cygnus'],
 	[ra2rad(5.5), deg2rad(39), 'Auriga'],
 	[ra2rad(1), deg2rad(36), 'Andromeda'],
-	[ra2rad(19), deg2rad(36), 'Lyra'],
 	[ra2rad(17), deg2rad(34), 'Hercules'],
 	[ra2rad(16), deg2rad(29), 'Corona Borealis'],
 	[ra2rad(14.5), deg2rad(27), 'Boötes'],
