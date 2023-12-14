@@ -558,32 +558,37 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	});
 	// celestial equator
 	nightSky.normals.forEach(normal => {
-		const [ra0, dec0, color] = normal; // ra dec
+		const [ra0, dec0, color, latitudeDivisions] = normal; // ra dec
 		const nv = eq2sphere(ra0, dec0);
 		const [rx, ry, rz] = [nv.phi, -Math.sin(nv.phi)*nv.theta, Math.cos(nv.phi)*nv.theta];
-		for (let i = 0; i < circleResolution; i++){
-			let s1 = eq2sphere(2*Math.PI/circleResolution * i, 0);
-			let s2 = eq2sphere(2*Math.PI/circleResolution * (i+1), 0);
-			s1 = rotateSphericalCoords(s1.phi, s1.theta, rx, ry, rz);
-			s2 = rotateSphericalCoords(s2.phi, s2.theta, rx, ry, rz);
-			const eq1 = sphere2eq(s1.phi, s1.theta);
-			const eq2 = sphere2eq(s2.phi, s2.theta);
+		for (let li = 1; li < latitudeDivisions; li++){
+			const latitude = -Math.PI/2 + Math.PI/latitudeDivisions*li;
+			const DASHED = li*2 !== latitudeDivisions;
+			for (let i = 0; i < circleResolution; i++){
+				let s1 = eq2sphere(2*Math.PI/circleResolution * i, latitude);
+				let s2 = eq2sphere(2*Math.PI/circleResolution * (i+1), latitude);
+				s1 = rotateSphericalCoords(s1.phi, s1.theta, rx, ry, rz);
+				s2 = rotateSphericalCoords(s2.phi, s2.theta, rx, ry, rz);
+				const eq1 = sphere2eq(s1.phi, s1.theta);
+				const eq2 = sphere2eq(s2.phi, s2.theta);
 
-			const [x1, y1, cosc1] = transform(eq1.ra, eq1.dec);
-			if (cosc1 < 0) // do && i%2 for a dashed line
-				continue;
-			const [x2, y2, cosc2] = transform(eq2.ra, eq2.dec);
-			if (cosc2 < 0)
-				continue;
-			// elem
-			var line = createSvgElement('line');
-			lg.appendChild(line);
-			line.style.stroke = color;
-			line.style.strokeWidth = lineSize*2;
-			line.setAttribute('x1', x1);
-			line.setAttribute('y1', y1);
-			line.setAttribute('x2', x2);
-			line.setAttribute('y2', y2);
+				const [x1, y1, cosc1] = transform(eq1.ra, eq1.dec);
+				if (cosc1 < 0) // do && i%2 for a dashed line
+					continue;
+				const [x2, y2, cosc2] = transform(eq2.ra, eq2.dec);
+				if (cosc2 < 0)
+					continue;
+				// elem
+				var line = createSvgElement('line');
+				lg.appendChild(line);
+				line.style.stroke = color;
+				line.style.opacity = DASHED ? 0.5 : 1;
+				line.style.strokeWidth = lineSize*3;
+				line.setAttribute('x1', x1);
+				line.setAttribute('y1', y1);
+				line.setAttribute('x2', x2);
+				line.setAttribute('y2', y2);
+			}
 		}
 	});
 	// labels
@@ -651,9 +656,9 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 }
 nightSky.offset = 240;
 nightSky.normals = [ // normals for the circles that should be drawn on the celestial sphere
-	[1e-10, Math.PI/2, '#34c'], // celestial equator
-	[ra2rad(18), deg2rad(66, 33, 38.84), '#e93'], // ecliptic https://en.wikipedia.org/wiki/Orbital_pole#Ecliptic_pole
-	[ra2rad(12, 51, 26.282), deg2rad(27, 7, 42.01), '#3c4'], // galactic https://en.wikipedia.org/wiki/Galactic_plane
+	[1e-10, Math.PI/2, '#34c', 18], // celestial equator
+	[ra2rad(18), deg2rad(66, 33, 38.84), '#e93', 2], // ecliptic https://en.wikipedia.org/wiki/Orbital_pole#Ecliptic_pole
+	[ra2rad(12, 51, 26.282), deg2rad(27, 7, 42.01), '#3c4', 2], // galactic https://en.wikipedia.org/wiki/Galactic_plane
 ];
 nightSky.edges = [
 	// UMi
