@@ -450,7 +450,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	var totalSize = size + exteriorSize;
 	var whiteDiskScale = 1.01;
 	var LABEL_OFFSET_C = 0.01;
-	var circleResolution = 200; // default 48
+	var circleResolution = 48;
 	var timeAngle = t/sideralDay%1*360 - (nightSky.offset + lon);
 	// svg
 	var svg = createSvgElement('svg');
