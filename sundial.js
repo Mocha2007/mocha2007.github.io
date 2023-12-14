@@ -758,6 +758,9 @@ nightSky.edges = [
 	['57 aql', '69 aql'],
 	['69 aql', '70 aql'],
 	['70 aql', '71 aql'],
+	// Crux
+	['alpha cru', 'gamma cru'],
+	['beta cru', 'delta cru'],
 ];
 nightSky.vertices = [
 	// RA, DEC
@@ -886,6 +889,11 @@ nightSky.vertices = [
 	['71 aql', ra2rad(20, 39, 33), deg2rad(1, 1, 18.8, true), 4.47],
 	// Corona Borealis
 	['zeta crb', ra2rad(15, 40, 14.7), deg2rad(36, 33, 27.3), 5.94],
+	// Crux
+	['alpha cru', ra2rad(12, 27, 54.73), deg2rad(63, 13, 32.2, true), 1.25],
+	['beta cru', ra2rad(12, 49, 5.98), deg2rad(59, 48, 50.2, true), 1.25],
+	['gamma cru', ra2rad(12, 32, 28.16), deg2rad(57, 14, 30.2, true), 1.55],
+	['delta cru', ra2rad(12, 16, 24.05), deg2rad(58, 52, 34.6, true), 2.75],
 ];
 nightSky.labels = [
 	// sort from most northernly, then alphabetically
@@ -900,6 +908,7 @@ nightSky.labels = [
 	[ra2rad(13), deg2rad(39.5), 'Canes Venatici'],
 	[ra2rad(2), deg2rad(32), 'Triangulum'],
 	[ra2rad(20), deg2rad(-4), 'Antinous'],
+	[ra2rad(12.5), deg2rad(-60), 'Crux'],
 	// zodiac [HIGH PRIORITY]
 	[ra2rad(2.5), deg2rad(24), 'Aries'],
 	[ra2rad(4.5), deg2rad(18), 'Taurus'],
@@ -925,7 +934,7 @@ nightSky.labels = [
 ];
 /* FINISHED:
 	Antinous
-	Camelopardalis, Canes Venatici, Cassiopeia, Cepheus, Draco
+	Camelopardalis, Canes Venatici, Cassiopeia, Cepheus, Crux, Draco
 	Lacerta, Lynx, Triangulum, Ursa Major, Ursa Minor
 */
 var GREEK_ALPHABET_NAMES = 'alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi omicron pi rho sigma tau upsilon phi chi psi omega'.split(' ');
