@@ -634,7 +634,8 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	diskMask.appendChild(maskRect);
 	g.setAttribute('clip-path', 'url(#crop-disk)');
 	// coords for debugging
-	var info = 'Lat: ' + lat
+	var info = 'Geolocation o' + ['ff', 'n'][+(lat%1 !== lon%1)]
+	+ '\nLat: ' + lat
 	+ '°\nLon: ' + lon
 	+ '°\nDate: ' + t.toLocaleDateString()
 	+ '\nTime: ' + t.toLocaleTimeString();
@@ -643,8 +644,8 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 		svg.appendChild(coordText);
 		coordText.innerHTML = line;
 		coordText.style.fill = 'yellow';
-		coordText.setAttribute('x', 0.5*totalSize);
-		coordText.setAttribute('y', 0.87*totalSize + 0.05*i);
+		coordText.setAttribute('x', 0.6*totalSize);
+		coordText.setAttribute('y', 0.8*totalSize + 0.05*i);
 	});
 	return svg;
 }
