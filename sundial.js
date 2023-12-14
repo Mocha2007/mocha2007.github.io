@@ -570,10 +570,10 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 			const eq2 = sphere2eq(s2.phi, s2.theta);
 
 			const [x1, y1, cosc1] = transform(eq1.ra, eq1.dec);
-			if (cosc1 < 0 && i%2) // dashed line
+			if (cosc1 < 0) // do && i%2 for a dashed line
 				continue;
 			const [x2, y2, cosc2] = transform(eq2.ra, eq2.dec);
-			if (cosc2 < 0 && i%2)
+			if (cosc2 < 0)
 				continue;
 			// elem
 			var line = createSvgElement('line');
