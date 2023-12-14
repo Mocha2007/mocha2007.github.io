@@ -560,7 +560,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	nightSky.normals.forEach(normal => {
 		const [ra0, dec0, color] = normal; // ra dec
 		const nv = eq2sphere(ra0, dec0);
-		const [rx, ry, rz] = [nv.phi, nv.theta, 0];
+		const [rx, ry, rz] = [nv.phi, -Math.sin(nv.phi)*nv.theta, Math.cos(nv.phi)*nv.theta];
 		for (let i = 0; i < circleResolution; i++){
 			let s1 = eq2sphere(2*Math.PI/circleResolution * i, 0);
 			let s2 = eq2sphere(2*Math.PI/circleResolution * (i+1), 0);
@@ -570,12 +570,11 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 			const eq2 = sphere2eq(s2.phi, s2.theta);
 
 			const [x1, y1, cosc1] = transform(eq1.ra, eq1.dec);
-			if (cosc1 < 0)
+			if (cosc1 < 0 && i%2) // dashed line
 				continue;
 			const [x2, y2, cosc2] = transform(eq2.ra, eq2.dec);
-			if (cosc2 < 0)
+			if (cosc2 < 0 && i%2)
 				continue;
-			// debugger;
 			// elem
 			var line = createSvgElement('line');
 			lg.appendChild(line);
@@ -640,6 +639,7 @@ nightSky.offset = 240;
 nightSky.normals = [ // normals for the circles that should be drawn on the celestial sphere
 	[1e-10, Math.PI/2, '#34c'], // celestial equator
 	[ra2rad(18), deg2rad(66, 33, 38.84), '#e93'], // ecliptic https://en.wikipedia.org/wiki/Orbital_pole#Ecliptic_pole
+	[ra2rad(12, 51, 26.282), deg2rad(27, 7, 42.01), '#3c4'], // galactic https://en.wikipedia.org/wiki/Galactic_plane
 ];
 nightSky.edges = [
 	// UMi
