@@ -841,6 +841,8 @@ nightSky.edges = [
 	// Equuleus
 	['alpha equ', 'delta equ'],
 	['gamma equ', 'delta equ'],
+	// Sextans
+	['alpha sex', 'beta sex'],
 ];
 nightSky.vertices = [
 	// RA, DEC
@@ -1011,6 +1013,9 @@ nightSky.vertices = [
 	['alpha equ', ra2rad(21, 17), deg2rad(5, 20, 48.4), 3.92], // kitalpha
 	['delta equ', ra2rad(21, 15, 37.5), deg2rad(10, 6, 15.7), 4.47],
 	['gamma equ', ra2rad(21, 11, 29.1), deg2rad(10, 13, 42), 4.7],
+	// Sextans
+	['alpha sag', ra2rad(10, 9, 9.9), deg2rad(0, 29, 15.3, true), 4.47],
+	['beta sag', ra2rad(10, 31, 30.8), deg2rad(0, 45, 31.4, true), 5.03],
 ];
 nightSky.labels = [
 	// sort from most northernly, then alphabetically
@@ -1029,6 +1034,7 @@ nightSky.labels = [
 	[ra2rad(20), deg2rad(26), 'Vulpecula'],
 	[ra2rad(20), deg2rad(18), 'Sagitta'],
 	[ra2rad(21), deg2rad(9), 'Equuleus'],
+	[ra2rad(10.5), deg2rad(0, -37), 'Sextans'],
 	[ra2rad(20), deg2rad(-4), 'Antinous'], // nonstandard
 	[ra2rad(12.5), deg2rad(-60), 'Crux'],
 	// zodiac [HIGH PRIORITY]
@@ -1058,7 +1064,6 @@ nightSky.labels = [
 	[ra2rad(7.5), deg2rad(7), 'Canis Minor'],
 	[ra2rad(19.5), deg2rad(6), 'Aquila'],
 	[ra2rad(5.5), deg2rad(6), 'Orion'],
-	[ra2rad(10.5), deg2rad(-1), 'Sextans'],
 	[ra2rad(7), deg2rad(-2), 'Monoceros'],
 	[ra2rad(17.5), deg2rad(-6), 'Ophiuchus'],
 	[ra2rad(2), deg2rad(-8), 'Cetus'],
