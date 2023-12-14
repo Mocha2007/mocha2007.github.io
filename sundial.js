@@ -948,6 +948,14 @@ nightSky.vertices = [
 	['beta cru', ra2rad(12, 49, 5.98), deg2rad(59, 48, 50.2, true), 1.25],
 	['gamma cru', ra2rad(12, 32, 28.16), deg2rad(57, 14, 30.2, true), 1.55],
 	['delta cru', ra2rad(12, 16, 24.05), deg2rad(58, 52, 34.6, true), 2.75],
+	// Canis Major (todo)
+	['alpha cma', ra2rad(6, 46, 13.2), deg2rad(16, 44, 51.4, true), -1.46], // sirius
+	// Carina (todo)
+	['alpha car', ra2rad(6, 24, 31), deg2rad(52, 42, 21.9, true), -0.74], // canopus
+	// Centaurus (todo)
+	['alpha cen', ra2rad(14, 41, 11), deg2rad(60, 55, 52.8, true), -0.27],
+	// Bootes (todo)
+	['alpha boo', ra2rad(14, 16, 44.11), deg2rad(19, 3, 24.6), -0.05], // arcturus
 ];
 nightSky.labels = [
 	// sort from most northernly, then alphabetically
@@ -985,6 +993,15 @@ nightSky.labels = [
 	[ra2rad(19), deg2rad(36), 'Lyra'],
 	[ra2rad(17), deg2rad(34), 'Hercules'],
 	[ra2rad(16), deg2rad(29), 'Corona Borealis'],
+	[ra2rad(14.5), deg2rad(27), 'Bootes'],
+	[ra2rad(20), deg2rad(26), 'Vulpecula'],
+	[ra2rad(13), deg2rad(23), 'Coma Berenices'],
+	[ra2rad(20), deg2rad(19), 'Sagitta'],
+	[ra2rad(21), deg2rad(15), 'Delphinus'],
+	[ra2rad(19.5), deg2rad(6), 'Aquila'],
+	[ra2rad(7), deg2rad(-22), 'Canis Major'],
+	[ra2rad(13), deg2rad(-51), 'Centaurus'],
+	[ra2rad(9), deg2rad(-55), 'Carina'],
 ];
 /* FINISHED:
 	Antinous
