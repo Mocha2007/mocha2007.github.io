@@ -465,7 +465,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	// style
 	// css
 	const style = document.createElement('style');
-	style.innerHTML = '.pole text{font-size:0.04px;}';
+	style.innerHTML = '.pole text{font-size:0.04px;} text.data{font-size:0.03px;}';
 	svg.appendChild(style);
 	// background disks
 	const whiteDisk = createSvgElement('circle');
@@ -653,6 +653,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	info.split('\n').forEach((line, i) => {
 		const coordText = createSvgElement('text');
 		layers.misc.appendChild(coordText);
+		coordText.classList.add('data');
 		coordText.innerHTML = line;
 		coordText.style.fill = 'yellow';
 		coordText.setAttribute('x', 0.65*totalSize);
