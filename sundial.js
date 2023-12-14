@@ -558,7 +558,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	});
 	// celestial equator
 	nightSky.normals.forEach(normal => {
-		const [ra0, dec0] = normal; // ra dec
+		const [ra0, dec0, color] = normal; // ra dec
 		const nv = eq2sphere(ra0, dec0);
 		const [rx, ry, rz] = [nv.phi, nv.theta, 0];
 		for (let i = 0; i < circleResolution; i++){
@@ -579,7 +579,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 			// elem
 			var line = createSvgElement('line');
 			lg.appendChild(line);
-			line.style.stroke = 'orange';
+			line.style.stroke = color;
 			line.style.strokeWidth = lineSize*2;
 			line.setAttribute('x1', x1);
 			line.setAttribute('y1', y1);
@@ -638,8 +638,8 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 }
 nightSky.offset = 240;
 nightSky.normals = [ // normals for the circles that should be drawn on the celestial sphere
-	[1e-10, Math.PI/2], // celestial equator
-	[ra2rad(18), deg2rad(66, 33, 38.84)], // ecliptic https://en.wikipedia.org/wiki/Orbital_pole#Ecliptic_pole
+	[1e-10, Math.PI/2, '#34c'], // celestial equator
+	[ra2rad(18), deg2rad(66, 33, 38.84), '#e93'], // ecliptic https://en.wikipedia.org/wiki/Orbital_pole#Ecliptic_pole
 ];
 nightSky.edges = [
 	// UMi
