@@ -415,6 +415,7 @@ function rotateSphericalCoords(phi = 0, theta = 0, r = 1, rx = 0, ry = 0, rz = 0
 	return sc;
 }
 
+// eslint-disable-next-line no-unused-vars
 function coordTest(){
 	const start = {x: 1, y: 2, z: 3};
 	console.debug(start);
@@ -631,7 +632,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 nightSky.offset = 240;
 nightSky.normals = [ // normals for the circles that should be drawn on the celestial sphere
 	// [0, Math.PI/2], // celestial equator
-	[ra2rad(17, 58), deg2rad(66, 30)], // ecliptic todo this is just an appx
+	[ra2rad(18), deg2rad(66, 33, 38.84)], // ecliptic https://en.wikipedia.org/wiki/Orbital_pole#Ecliptic_pole
 ];
 nightSky.edges = [
 	// UMi
