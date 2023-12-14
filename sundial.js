@@ -390,6 +390,7 @@ function mag2radius(mag = 0){
 	return Math.sqrt(linearMag); // if we let area = mag, then the radius is... sqrt(A/pi), but the pi is just a constant term anyways so I ignore it
 }
 
+// seems to be correct
 function sphere2cart(phi = 0, theta = 0, r = 1){
 	return {
 		x: r*Math.sin(theta)*Math.cos(phi),
@@ -398,18 +399,31 @@ function sphere2cart(phi = 0, theta = 0, r = 1){
 	};
 }
 
+// seems to be correct
 function cart2sphere(x = 0, y = 0, z = 0){
-	return {r: Math.hypot(x, y, z), theta: Math.atan2(z, Math.hypot(x, y)), phi: Math.atan2(y, x)};
+	const r = Math.hypot(x, y, z);
+	return {r, theta: Math.acos(z/r), phi: Math.atan2(y, x)};
 }
 
-function rotateSphericalCoords(phi = 0, theta = 0, rx = 0, ry = 0, rz = 0){
-	let cc, sc = {phi, theta};
-	[rz, rx, ry].forEach(r => {
+function rotateSphericalCoords(phi = 0, theta = 0, r = 1, rx = 0, ry = 0, rz = 0){
+	let cc, sc = {phi, theta, r};
+	[rz, rx, ry].forEach(rot => {
 		// rotate about current z, then swap coords :^)
-		cc = sphere2cart(sc.phi, sc.theta + r);
+		cc = sphere2cart(sc.phi + rot, sc.theta, sc.r);
 		sc = cart2sphere(cc.y, cc.z, cc.x);
 	});
 	return sc;
+}
+
+function coordTest(){
+	const start = {x: 1, y: 2, z: 3};
+	console.debug(start);
+	const sphere = cart2sphere(start.x, start.y, start.z);
+	console.debug(sphere);
+	const q = rotateSphericalCoords(sphere.phi, sphere.theta, sphere.r, Math.PI/2, 0, 0);
+	console.debug(q);
+	const cart = sphere2cart(q.phi, q.theta, q.r);
+	console.debug(cart);
 }
 
 function eq2sphere(ra = 0, dec = 0){
@@ -429,7 +443,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	var totalSize = size + exteriorSize;
 	var whiteDiskScale = 1.01;
 	var LABEL_OFFSET_C = 0.01;
-	var circleResolution = 48;
+	var circleResolution = 200; // default 48
 	var timeAngle = t/sideralDay%1*360 - (nightSky.offset + lon);
 	// svg
 	var svg = createSvgElement('svg');
@@ -537,7 +551,8 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 	});
 	// celestial equator
 	nightSky.normals.forEach(normal => {
-		const [ra0, dec0] = normal; // ra dec
+		const [ra0, dec0_] = normal; // ra dec
+		const dec0 = Math.PI/2 - dec0_;
 		for (let i = 0; i < circleResolution; i++){
 			let s1 = eq2sphere(2*Math.PI/circleResolution * i, 0);
 			let s2 = eq2sphere(2*Math.PI/circleResolution * (i+1), 0);
@@ -552,7 +567,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 			const [x2, y2, cosc2] = transform(eq2.ra, eq2.dec);
 			//if (cosc2 < 0)
 			//	continue;
-			debugger;
+			// debugger;
 			// elem
 			var line = createSvgElement('line');
 			lg.appendChild(line);
@@ -615,7 +630,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 }
 nightSky.offset = 240;
 nightSky.normals = [ // normals for the circles that should be drawn on the celestial sphere
-	[0, Math.PI], // celestial equator
+	// [0, Math.PI/2], // celestial equator
 	[ra2rad(17, 58), deg2rad(66, 30)], // ecliptic todo this is just an appx
 ];
 nightSky.edges = [
