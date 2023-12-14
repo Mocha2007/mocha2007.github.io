@@ -820,12 +820,12 @@ nightSky.vertices = [
 	// RA, DEC
 	// URSA MINOR 0-6
 	['alpha umi', ra2rad(3, 3, 48.9), deg2rad(89, 22, 4), 1.97], // Polaris
-	['beta umi', ra2rad(14, 50, 37), deg2rad(74, 3, 12.1), 2.08], // Kochab
+	['beta umi', ra2rad(14, 50, 37), deg2rad(74, 3, 12.1), 2.07], // Kochab
 	['delta umi', ra2rad(17, 24, 17.9), deg2rad(86, 33, 59.5), 4.35], // Yildun
-	['epsilon umi', ra2rad(16, 43, 28.4), deg2rad(81, 59, 29.9), 1.77], // Alioth
-	['zeta umi', ra2rad(15, 43, 10.8), deg2rad(77, 42, 58), 2.04],
+	['epsilon umi', ra2rad(16, 43, 28.4), deg2rad(81, 59, 29.9), 4.21], // Alioth
+	['zeta umi', ra2rad(15, 43, 10.8), deg2rad(77, 42, 58), 4.29],
 	['eta umi', ra2rad(16, 16, 45.7), deg2rad(75, 41, 46), 4.95],
-	['gamma umi', ra2rad(15, 20, 39.7), deg2rad(71, 44, 41.8), 3.05], // Pherkad
+	['gamma umi', ra2rad(15, 20, 39.7), deg2rad(71, 44, 41.8), 3.04], // Pherkad
 	// CEPHEUS 7-23
 	['alpha cep', ra2rad(21, 19, 6.4), deg2rad(62, 41, 24.4), 2.45],
 	['beta cep', ra2rad(21, 28, 54.3), deg2rad(70, 40, 8.6), 3.23],
