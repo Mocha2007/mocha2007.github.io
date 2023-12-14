@@ -991,7 +991,7 @@ nightSky.vertices = [
 	['30 lmi', ra2rad(10, 27, 17.1), deg2rad(33, 40, 19), 4.72],
 	['46 lmi', ra2rad(10, 54, 38.9), deg2rad(34, 5, 0.3), 3.79],
 	// Lyra
-	['alpha lyr', ra2rad(18, 37, 42.9), deg2rad(38, 48, 22.1), 0.09], // vega
+	['alpha lyr', ra2rad(18, 37, 42.9), deg2rad(38, 48, 22.1), 0.026], // vega
 	['beta lyr', ra2rad(18, 50, 55.9), deg2rad(33, 23, 26.8), 3.55], // sheliak
 	['gamma lyr', ra2rad(18, 59, 48.4), deg2rad(32, 43, 22.1), 3.22], // sulafat
 	['delta lyr', ra2rad(18, 55, 18.6), deg2rad(36, 55, 46.1), 4.19],
@@ -1016,6 +1016,12 @@ nightSky.vertices = [
 	// Sextans
 	['alpha sex', ra2rad(10, 9, 9.9), deg2rad(0, 29, 15.3, true), 4.47],
 	['beta sex', ra2rad(10, 31, 30.8), deg2rad(0, 45, 31.4, true), 5.03],
+	// Auriga
+	['alpha aur', ra2rad(5, 18, 29.1), deg2rad(46, 1, 19.7), 0.08], // capella
+	// Orion
+	['alpha aur', ra2rad(5, 15, 42.4), deg2rad(8, 10, 24.5, true), 0.13], // rigel
+	// Eridanus
+	['alpha eri', ra2rad(1, 38, 37.9), deg2rad(57, 7, 10, true), 0.46], // Achernar
 ];
 nightSky.labels = [
 	// sort from most northernly, then alphabetically
