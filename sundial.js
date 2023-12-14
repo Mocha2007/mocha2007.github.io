@@ -594,7 +594,7 @@ function nightSky(t = new Date(), drawEdges = true, lat = 0, lon = 0){
 				line.setAttribute('y2', y2);
 			}
 		}
-		for (let li = 0; li < longitudeDivisions; li++){
+		for (let li = 0; 2*li < longitudeDivisions; li++){
 			const longitude = 2*Math.PI/longitudeDivisions*li;
 			for (let i = 0; i < circleResolution; i++){
 				let s1 = eq2sphere(longitude, 2*Math.PI/circleResolution * i);
