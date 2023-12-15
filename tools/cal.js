@@ -590,7 +590,6 @@ function monthAlt(t = new Date()){
 	const trh = document.createElement('tr');
 	table.appendChild(trh);
 	const corner = document.createElement('th');
-	corner.innerHTML = '-';
 	corner.colSpan = 2;
 	trh.appendChild(corner); // blank cell in corner
 	mochaLunisolar.dayNames.forEach((day, i) => {
