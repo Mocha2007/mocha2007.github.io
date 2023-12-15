@@ -586,6 +586,8 @@ function query(){
 function monthAlt(t = new Date()){
 	const MLSC = mochaLunisolar(t);
 	const table = document.getElementById('monthAlt');
+	// title
+	document.getElementById('monthTitle').innerHTML = MLSC.monthName;
 	// headers
 	const trh = document.createElement('tr');
 	table.appendChild(trh);
@@ -616,7 +618,7 @@ function monthAlt(t = new Date()){
 			tr.appendChild(td);
 			// fill cell
 			td.innerHTML = `<span class="bigger">${date+1}</span><hr>
-			<span class="smaller">${dateObj.toLocaleDateString('en-US', {month: 'short', day: 'numeric', weekday: 'short'}).replace(', ', '<br>')}</span>`;
+			${dateObj.toLocaleDateString('en-US', {month: 'short', day: 'numeric', weekday: 'short'}).replace(', ', '<br>')}`;
 			td.classList.add('season_' + [2, 6, 1, 0, 5, 3, 4, 7][dateObj.getDay()]); // ROYGCBP and rose
 			// finish
 			date++;

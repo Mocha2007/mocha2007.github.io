@@ -1,5 +1,5 @@
 :root {
-	--cellSize: 5em;
+	--cellSize: 5.4em;
 	--cellBSize: 1px;
 	--cellFontSizeBig: 1vw;
 	--cellFontSize: 0.75vw;
@@ -112,8 +112,15 @@ header, h2, #footer {
 	background-color: #444;
 }
 #monthImg {
+	display: block;
+	margin: auto;
 	max-height: 50vw;
-	max-width: 50vw;
+	max-width: 75vw;
+}
+#monthAlt td {
+	height: calc(1.4*var(--cellSize));
+	text-align: center;
+	width: calc(1.4*var(--cellSize));
 }
 #mlsc_explanation {
 	margin: auto;
@@ -137,11 +144,8 @@ header, h2, #footer {
 	width: 75%
 }
 .bigger {
-	font-size: 125%;
+	font-size: 150%;
 	font-weight: bold;
-}
-.smaller {
-	font-size: 75%;
 }
 /* other media */
 @media print {
@@ -161,23 +165,26 @@ header, h2, #footer {
 		font-size: 77%;
 		margin: 1%;
 	}
-	.season_0 {
-		background-color: #cfc;
+	.season_0, .season_4 {
+		background-color: #eee;
 	}
-	.season_1 {
-		background-color: #ff8;
+	.season_1, .season_5 {
+		background-color: #ddd;
 	}
-	.season_2 {
-		background-color: #fdd;
+	.season_2, .season_6 {
+		background-color: #ccc;
 	}
-	.season_3 {
-		background-color: #ccf;
+	.season_3, .season_7 {
+		background-color: #bbb;
 	}
 	.intercalary {
 		background-color: #fdf;
 	}
 	#mlsc_explanation {
 		display: none;
+	}
+	#monthImg {
+		max-height: 32vw;
 	}
 }
 /* mobile */
