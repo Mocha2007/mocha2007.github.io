@@ -607,7 +607,6 @@ function monthAlt(t = new Date()){
 		const weekLength = week % 2 ? week === 3 ? MLSC.monthLength-22 : 8 : 7;
 		for (let day = 0; day < weekLength; day++){
 			const dateObj = new Date(+MLSC.monthStartT + date*_1d);
-			const MLSC_ = mochaLunisolar(dateObj);
 			const td = document.createElement('td');
 			tr.appendChild(td);
 			// fill cell
