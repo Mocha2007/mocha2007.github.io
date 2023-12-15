@@ -707,6 +707,7 @@ function mochaLunisolar(t, link){
 		mansionID: mansionID,
 		month: mo,
 		monthDay: monthDay,
+		monthLength: monthLength,
 		monthName: monthName,
 		monthStartT: monthStartT,
 		monthWeek: monthWeek,

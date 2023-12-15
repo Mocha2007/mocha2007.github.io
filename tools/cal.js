@@ -558,6 +558,7 @@ function main(t = new Date()){
 			? 'https://upload.wikimedia.org/wikipedia/commons/5/5f/Sidney_Hall_-_Urania%27s_Mirror_-_Taurus_Poniatowski%2C_Serpentarius%2C_Scutum_Sobiesky%2C_and_Serpens.jpg'
 			: time.zodiacSrc[modMonth]
 			: 'https://the-public-domain-review.imgix.net/collections/aurora-borealis-in-art/SAAM-1911.4.1_2-000001.jpg';
+		monthAlt(t);
 		mlscBonus(t);
 	}
 	// timestamp
@@ -573,11 +574,50 @@ function query(){
 		time.CONFIG.GEO.HEADING = gc.coords.heading;
 		time.CONFIG.GEO.LAT = gc.coords.latitude;
 		time.CONFIG.GEO.LON = gc.coords.longitude;
-		refreshSundial();
+		if (time.CONFIG.CALTYPE === 'GREGORIAN')
+			refreshSundial();
 	},
 	e => {
 		console.debug(`Couldn't get geolocation due to ${e}`);
 	});
+}
+
+/** display the month with the MLSC days of the week */
+function monthAlt(t = new Date()){
+	const MLSC = mochaLunisolar(t);
+	const table = document.getElementById('monthAlt');
+	// headers
+	const trh = document.createElement('tr');
+	table.appendChild(trh);
+	const corner = document.createElement('th');
+	corner.innerHTML = '-';
+	trh.appendChild(corner); // blank cell in corner
+	mochaLunisolar.dayNames.forEach((day, i) => {
+		if (i === 7 && MLSC.monthLength < 31)
+			return;
+		const th = document.createElement('th');
+		th.innerHTML = day + '’s Day';
+		trh.appendChild(th);
+	});
+	// dates
+	let date = 0;
+	for (let week = 0; week < 4; week++){
+		const tr = document.createElement('tr');
+		table.appendChild(tr);
+		const weekLength = week % 2 ? week === 3 ? MLSC.monthLength-22 : 8 : 7;
+		for (let day = 0; day < weekLength; day++){
+			const dateObj = new Date(+MLSC.monthStartT + date*_1d);
+			const MLSC_ = mochaLunisolar(dateObj);
+			const td = document.createElement('td');
+			tr.appendChild(td);
+			// fill cell
+			td.innerHTML = `<span class="bigger">${date+1}</span><hr>
+			<span class="smaller">${dateObj.toLocaleDateString('en-US', {month: 'short', day: 'numeric', weekday: 'short'}).replace(', ', '<br>')}</span>`;
+			td.classList.add('season_' + [2, 6, 1, 0, 5, 3, 4, 7][dateObj.getDay()]); // ROYGCBP and rose
+			// finish
+			date++;
+		}
+	}
 }
 
 function mlscBonus(t = new Date()){

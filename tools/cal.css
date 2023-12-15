@@ -29,7 +29,7 @@ header, h2, #footer {
 	user-select: none;
 	width: 100%;
 }
-#months td {
+#months td, #monthAlt td {
 	border: var(--cellBSize) solid black;
 	height: var(--cellSize);
 	padding: 0;
@@ -84,6 +84,12 @@ header, h2, #footer {
 .season_5 {
 	background-color: #005858; /* https://webaim.org/resources/contrastchecker/ */
 }
+.season_6 {
+	background-color: #703800; /* https://webaim.org/resources/contrastchecker/ */
+}
+.season_7 {
+	background-color: #804; /* https://webaim.org/resources/contrastchecker/ */
+}
 .clockContainer, .sundial {
 	display: inline-block;
 	height: var(--dialSize);
@@ -117,7 +123,7 @@ header, h2, #footer {
 #mlsc_explanation p {
 	text-indent: 2em;
 }
-#mlsc_explanation table {
+#mlsc_explanation table, #monthAlt {
 	margin: auto;
 }
 #mlsc_explanation th {
@@ -125,6 +131,17 @@ header, h2, #footer {
 }
 #mlsc_explanation table tr:nth-child(2n){
 	background-color: #444;
+}
+#monthAlt hr {
+	border: 1px solid silver;
+	width: 75%
+}
+.bigger {
+	font-size: 125%;
+	font-weight: bold;
+}
+.smaller {
+	font-size: 75%;
 }
 /* other media */
 @media print {
