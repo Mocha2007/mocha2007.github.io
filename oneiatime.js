@@ -737,11 +737,13 @@ mochaLunisolar.monthNames = 'Aries Taurus Gemini Cancer Leo Virgo Libra Ophiuchu
 mochaLunisolar.cyclesPerEpi = mochaLunisolar.eraStarts[11];
 mochaLunisolar.eraROffset = 9; // set to 7 for the original lengths
 mochaLunisolar.mansions = [
-	'Garafsa', 'Kaus Borealis', '52 Sagittarii', 'Dabih', 'Nashira', 'Ancha', 'φ Aquarii', 'ω Piscium', 'ε Piscium',
-	'Torcular', 'μ Ceti', 'Pleiades', 'Aldebaran', 'Alheka', 'Mebsuta', 'Wasat', 'Asellus Borealis', 'Acubens',
-	'Regulus', 'Chertan', 'ν Virginis', 'Zaniah', 'θ Virginis', 'Spica', 'Zubenelgenubi', 'Zubenelhakrabi', 'Antares',
+	// starting 0 deg ecliptic long, ending 360, in intervals of 10 deg, visualize a box +/- 5 deg longitude +/- 6 deg latitude, choose brightest star
+	'ω Piscium', 'δ Piscium', 'ε Piscium', 'η Piscium', 'μ Ceti', '5 Tauri', 'Pleiades', 'Aldebaran', '119 Tauri', 'ζ Tauri',
+	'Tejat', 'Wasat', '81 Geminorum', 'Asellus Australis', 'Subra', 'Regulus', 'ρ Leonis', 'ν Virginis', 'Zavijava', 'Porrima',
+	'Spica', 'Kang', 'Khambalia', 'Zubenelgenubi', 'Dschubba', 'Antares', 'Garafsa', 'Polis', 'Nunki', 'Albaldah',
+	'Dabih', 'θ Capricorni', 'δ Capricorni', 'Ancha', 'Hydor', 'φ Aquarii',
 ];
-mochaLunisolar.mansionOffset = 22;
+mochaLunisolar.mansionOffset = 20;
 
 function astro(){
 	var t = new Date();
