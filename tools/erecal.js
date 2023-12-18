@@ -30,7 +30,7 @@ const ere = {
 			'Hawks', 'Candle', 'Road', 'Inkwell', 'Treaty', 'Die'],
 	},
 	nikki: {
-		epoch: 0.078, // fraction of illumination at epoch; must be positive to ensure visibility
+		epoch: 0.578, // fraction of illumination at epoch; must be positive to ensure visibility
 	},
 	oneia: {
 		// 00:00 is at roughly local noon
@@ -178,7 +178,7 @@ function brute(max = 10){
 function moon(t = new Date()){
 	return phoonsvg(moon.phase(t));
 }
-moon.phase = (t = new Date()) => mod(-(t - ere.oneia.epoch)/ere.oneia.day + ere.nikki.epoch, 1);
+moon.phase = (t = new Date()) => mod((t - ere.oneia.epoch)/ere.oneia.day + ere.nikki.epoch, 1);
 
 function clock(t = new Date()){
 	const datum = new EremoranDate(t).datum;
