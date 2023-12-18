@@ -43,7 +43,7 @@ progress#clock_earth_progress[aria-valuenow]:before {
 /* new ones */
 
 progress#clock_eremor_progress,
-progress#clock_earth_progress::-webkit-progress-bar {
+progress#clock_eremor_progress::-webkit-progress-bar {
 	background: url("../img/progress2.png");
 }
 
