@@ -1,5 +1,13 @@
 /* global goldClock */
 const OTHER_GOLDCLOC_LOCS = {
+	ANG: {
+		ap: 'ap'.split('').map(s => '_'+s),
+		day: 'Sunnan Mōnan Tīwes Wōdnes Þunres Frīġe Sæternes'.split(' ').map(s => s + 'dæġ'),
+		month: 'Æ.Gēol Sol Hrēð Ēaster Þrimilce Sēar Mǣd Wēod Hālig Winterf. Blōt Gēol'.split(' '),
+		moon: 'Nīewe +C Forma +G Full -G Þridda -C'.split(' '), // moon is masculine
+		season: 'Lencten Sumer Hærfest Winter'.split(' '),
+		zodiac: 'Ramm Fearr Ġetwisan Crabba Lēo Fǣmne Lib Sċorpio Sċytta Cap Aqu Fiscas'.split(' '),
+	},
 	JP: {
 		ap: '前後'.split('').map(s => '午 '+s+' _'),
 		day: '日 月 火 水 木 金 土'.split(' ').map(s => s + ' 曜 日'),
