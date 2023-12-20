@@ -1334,7 +1334,7 @@
 			"tetrahedrite",
 			"malachite"
 		],
-		"categories": ["metal"]
+		"categories": ["metal", "mineral"]
 	},
 	{
 		"title": "aramabokusar",
@@ -1600,7 +1600,7 @@
 			"native silver",
 			"horn silver"
 		],
-		"categories": ["metal"]
+		"categories": ["metal", "mineral"]
 	},
 	{
 		"title": "arzênelat",
@@ -1881,6 +1881,14 @@
 		"categories": ["animal"],
 		"pron": "ba",
 		"notes": "Due to historical reasons, this word has an irregular spelling; *ba would be expected. Although sponges are technically animals, they do not fall under the Eremoran classification of animate since they are sessile. This word is sometimes pronounced ''bat'' to distinguish it from ba 'chickpea' when necessary."
+	},
+	{
+		"title": "babaz",
+		"etym": "I/PEN/*βaβas",
+		"cat": "v.",
+		"defList": [
+			"choke"
+		]
 	},
 	{
 		"title": "babeku",
@@ -4553,7 +4561,7 @@
 		"defList": [
 			"gold"
 		],
-		"categories": ["metal", "v3_trade"]
+		"categories": ["metal", "mineral", "v3_trade"]
 	},
 	{
 		"title": "darekut",
@@ -6078,7 +6086,7 @@
 		"defList": [
 			"cinnabar"
 		],
-		"categories": ["metal"]
+		"categories": ["metal", "mineral"]
 	},
 	{
 		"title": "erelikat",
@@ -7094,6 +7102,24 @@
 		"defList": [
 			"bitter"
 		]
+	},
+	{
+		"title": "helsuda",
+		"etym": "C/helsu/da",
+		"cat": "adj.",
+		"defList": [
+			"magnesia (magnesium oxide)"
+		],
+		"categories": ["mineral"]
+	},
+	{
+		"title": "helsutia",
+		"etym": "C/helsu/tia",
+		"cat": "adj.",
+		"defList": [
+			"alum (aluminum sulfate)"
+		],
+		"categories": ["mineral"]
 	},
 	{
 		"title": "hema",
@@ -8488,7 +8514,8 @@
 		"cat": "n., 4th",
 		"defList": [
 			"gem"
-		]
+		],
+		"categories": ["mineral"]
 	},
 	{
 		"title": "kadu",
@@ -11265,6 +11292,15 @@
 		"categories": ["motion"]
 	},
 	{
+		"title": "linksuro",
+		"etym": "C/linku/suro",
+		"cat": "n., 4th",
+		"defList": [
+			"beryl"
+		],
+		"categories": ["mineral"]
+	},
+	{
 		"title": "linku",
 		"etym": "I/PEN/*lingu/cyan",
 		"cat": "adj.",
@@ -11410,7 +11446,7 @@
 		"defList": [
 			"galena"
 		],
-		"categories": ["metal"]
+		"categories": ["metal", "mineral"]
 	},
 	{
 		"title": "lubak",
@@ -11786,7 +11822,7 @@
 		"defList": [
 			"iron ore (esp. hematite, limonite, and magnetite)"
 		],
-		"categories": ["metal"]
+		"categories": ["metal", "mineral"]
 	},
 	{
 		"title": "maramat",
@@ -14180,6 +14216,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "pen",
+		"etym": "L/PEN/pen",
+		"cat": "n., 4th",
+		"defList": [
+			"borax"
+		],
+		"categories": ["mineral"]
+	},
+	{
 		"title": "pi",
 		"etym": "L/PRE/pi",
 		"cat": "interj.",
@@ -14223,6 +14268,15 @@
 		],
 		"categories": ["weather"],
 		"notes": "(specifically, a compound of their reduplications - *pibu is unattested)"
+	},
+	{
+		"title": "pu",
+		"etym": "L/VAZ/pu",
+		"cat": "n., 4th",
+		"defList": [
+			"soda (sodium bicarbonate or sodium carbonate)"
+		],
+		"categories": ["mineral"]
 	},
 	{
 		"title": "pu-",
@@ -15480,6 +15534,16 @@
 		"categories": ["fruit", "plant"]
 	},
 	{
+		"title": "silam",
+		"etym": "C/siu/lam",
+		"cat": "n., 5th",
+		"defList": [
+			"limestone",
+			"chalk"
+		],
+		"categories": ["mineral"]
+	},
+	{
 		"title": "sim",
 		"etym": "C/siu/-m",
 		"cat": "n., 5th",
@@ -16053,7 +16117,7 @@
 			"cassiterite"
 		],
 		"notes": "stanu is one of a handful of nouns ending in -u.",
-		"categories": ["metal"]
+		"categories": ["metal", "mineral"]
 	},
 	{
 		"title": "stanut",
