@@ -9140,6 +9140,15 @@
 		"categories": ["animal", "bug"]
 	},
 	{
+		"title": "kerôm",
+		"etym": "C/kerôz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"prayer"
+		],
+		"categories": ["god"]
+	},
+	{
 		"title": "kerôz",
 		"etym": "C/kek/rôz",
 		"cat": "v.",
@@ -16170,6 +16179,24 @@
 		"defList": [
 			"(intransitive) develop, evolve"
 		]
+	},
+	{
+		"title": "stôrrôm",
+		"etym": "C/stôrrôz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"divine command"
+		],
+		"categories": ["god"]
+	},
+	{
+		"title": "stôrrôz",
+		"etym": "C/kerôz/-m",
+		"cat": "v.",
+		"defList": [
+			"(of a god) speak, say"
+		],
+		"categories": ["god"]
 	},
 	{
 		"title": "stôssifaz",
