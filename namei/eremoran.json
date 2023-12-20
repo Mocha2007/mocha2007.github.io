@@ -18325,6 +18325,22 @@
 		"categories": ["time"]
 	},
 	{
+		"title": "zedelam",
+		"etym": "C/zedelz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"kiss"
+		]
+	},
+	{
+		"title": "zedelz",
+		"etym": "D/zedu",
+		"cat": "v.",
+		"defList": [
+			"kiss"
+		]
+	},
+	{
 		"title": "zedu",
 		"etym": "I/PEN/*asedu/lip",
 		"cat": "n., 4th",
