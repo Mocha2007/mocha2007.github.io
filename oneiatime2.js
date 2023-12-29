@@ -30,7 +30,7 @@ var constants = {
 		atEpoch: 1750,
 		day: 105583056.7402678, // ms; solar day; the sideral day is 104148 s
 		epoch: 1497151176000, // ms; SUN 2017 JUN 11 03:19:36 UTC
-		year: 7656883274.804221, // ms; 72.52 local days; oneian tropical year = 7656856407.307186 s
+		year: 105583056.7402678 * (72.5 + 1/30), // ms; 72.52 local days; oneian tropical year = 7656856407.307186 s
 	},
 	timeOfDay: [
 		// each represents a 3h period on earth
@@ -116,7 +116,7 @@ function oneiaTimeInitialize(t){
 function eremoranWeekday(y, d){
 	/** this is needed to make this tool match erecal.js */
 	var ADJUSTMENT = -1;
-	var dominical = Math.floor(y/2) + Math.floor((y+49)/50); // would be % 6 but that's redundant
+	var dominical = Math.floor(y/2) + Math.floor((y+29)/30); // would be % 6 but that's redundant
 	return constants.eremor.week[(dominical + d + ADJUSTMENT) % 6];
 }
 

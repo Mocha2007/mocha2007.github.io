@@ -7,7 +7,7 @@ function mod(n, m){
 
 const ere = {
 	eremor: {
-		dominicalCycleYears: 150,
+		dominicalCycleYears: 90,
 		get dominical(){
 			return ere.oneia.year * this.dominicalCycleYears;
 		},
@@ -36,7 +36,7 @@ const ere = {
 		// 00:00 is at roughly local noon
 		atEpoch: 1750,
 		day: 105583056.7402678, // ms; solar day; the sideral day is 104148 s
-		daysPerYear: 72.52,
+		daysPerYear: 72.5 + 1/30,
 		epoch: 1497151176000, // ms; SUN 2017 JUN 11 03:19:36 UTC
 		/** ms; 72.52 local days; oneian tropical year = 7656856407.307186 s versus 7656883274.80422 */
 		get year(){
@@ -149,8 +149,8 @@ class EremoranDate {
 	 * @returns {0|1|2|3|4|5} eremoran day of the week
 	 */
 	static yearStartDay(y){
-		// 49 may be replaced by any integer st. i % 50 = 49
-		return mod(Math.floor(y/2) + Math.floor((y+49)/50), 6);
+		// 29 may be replaced by any integer st. i % 30 = 29
+		return mod(Math.floor(y/2) + Math.floor((y+29)/30), 6);
 	}
 }
 
