@@ -285,7 +285,7 @@ function time_elem_inner(){
 	const s = dt.getSeconds();
 	const doseT = get_dose_t();
 	const doses = Math.floor(doseT/_12h) + 1; // dose count starts at 1 for t=0
-	const laser = Math.floor(get_laser_t()/(5*_1w)) + 1; // laser count starts at 1 for t=0
+	const laser = get_laser_t.appts.length-1; // Math.floor(get_laser_t()/(5*_1w)) + 1; // laser count starts at 1 for t=0
 	// next dose timer
 	let doseR = doses*_12h - doseT;
 	const quietGirlunaTime = Math.floor((12 - doseR / _1h)*60); // minutes since last dose
