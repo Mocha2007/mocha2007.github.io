@@ -798,28 +798,37 @@ function bonus(){
 	Darian updates once every 88.776 s
 	1 DF tick = 50s
 	*/
-	function onTick100(){ // every 100 ms
-		document.getElementById('clockbonus_tick100').innerHTML = [beat(), solarDay()].join('<br>');
+	function onTick(int){
+		var elem = document.getElementById('clockbonus_tick' + int);
+		elem.innerHTML = '';
+		for (var j = 0; j < intervals[int].length; j++){
+			if (j)
+				elem.appendChild(document.createElement('br'));
+			elem.innerHTML += intervals[int][j]();
+		}
 	}
-	function onTick1000(){ // every 1 s
-		document.getElementById('clockbonus_tick1000').innerHTML = ['JD '+jd().toFixed(4), Math.round(new Date()/1000) + ' Unix Time'].join('<br>');
+	var intervals = {
+		// every 100 ms
+		100: [beat, solarDay],
+		// every 1 s
+		// eslint-disable-next-line brace-style
+		1000: [function(){return 'JD '+jd().toFixed(4);}, function(){return Math.round(new Date()/1000) + ' Unix Time';}],
+		// every 10 s
+		10000: [darian, dorf],
+		// every 1 min 40 s
+		100000: [stardate],
+	};
+	var container = document.getElementById('clockbonus');
+	for (let i = 100; i < 100000; i *= 10){
+		var tick_container = document.createElement('div');
+		tick_container.id = 'clockbonus_tick' + i;
+		container.appendChild(tick_container);
+		onTick(i);
+		// eslint-disable-next-line brace-style
+		setInterval(function(){onTick(i);}, i);
 	}
-	function onTick10000(){ // every 10 s
-		document.getElementById('clockbonus_tick10000').innerHTML = [darian(), dorf()].join('<br>');
-	}
-	function onTick100000(){// every 1m40s
-		document.getElementById('clockbonus_tick100000').innerHTML = [stardate()].join('<br>');
-	}
-	onTick100();
-	onTick1000();
-	onTick10000();
-	onTick100000();
 	// all these clocks update once a day, so no need to have these recomputed every 100 ms
-	document.getElementById('clockbonus').innerHTML = ['<br><hr>', zodiac(), china(),
+	container.innerHTML += ['<br><hr>', zodiac(), china(),
 		egypt(), hebrew(), japan(), romanFULL(), maya(), elderscrolls(),
 		kol(), mochaLunisolar(new Date(), true).string, astro(), getEaster.html()].join('<br>');
-	setInterval(onTick100, 100);
-	setInterval(onTick1000, 1000);
-	setInterval(onTick10000, 10000);
-	setInterval(onTick10000, 100000);
 }
