@@ -79,7 +79,7 @@ const calendars = {
 	// USE PURNIMANTA SYSTEM https://en.wikipedia.org/wiki/Hindu_calendar#amanta
 	hindu: {
 		get avgYear(){
-			return this.commonYear + this.leapYearR.length / this.leapPeriod;
+			return this.commonYear + 30 * _1d * this.leapYearR.length / this.leapPeriod;
 		},
 		commonYear: 354 * _1d,
 		fromGregorian(t = new Date()){
@@ -88,7 +88,7 @@ const calendars = {
 			let r = mod(delta, this.leapLength), y;
 			for (y = 0; y < this.leapPeriod; y++){
 				const leap = this.isLeap(y);
-				const length = this.commonYear + 30*leap;
+				const length = this.commonYear + 30*_1d*leap;
 				if (r < length)
 					break;
 				r -= length;
@@ -98,7 +98,7 @@ const calendars = {
 			// month
 			let m;
 			for (m = 0; m < 13; m++){
-				const length = (29 + (m % 2 === 0)) * _1d;
+				const length = (29 + (m % 2 === 0 || m === 13 && this.isLeap(y))) * _1d;
 				if (r < length)
 					break;
 				r -= length;
@@ -113,7 +113,7 @@ const calendars = {
 			return this.leapYearR.includes(mod(y, this.leapPeriod));
 		},
 		/** YEAR 1 */
-		epoch: new Date(0, 3, 14).setFullYear(7), // trial and error
+		epoch: new Date(0, 2, 28).setFullYear(7), // trial and error
 		get leapLength(){
 			return this.avgYear * this.leapPeriod;
 		},
