@@ -67,7 +67,7 @@ const calendars = {
 			return this.leapYearR.includes(mod(y, this.leapPeriod));
 		},
 		/** YEAR 1 */
-		epoch: new Date(-3583, 4, 2, 20), // trial and error
+		epoch: new Date(-3583, 3, 3, 20), // trial and error
 		// days begin at SUNSET UTC+2 in judaism - so roughly 20:00 UTC
 		get leapLength(){
 			return this.avgYear * this.leapPeriod;
