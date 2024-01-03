@@ -558,6 +558,7 @@ function query(){
 function monthAlt(t = new Date()){
 	const MLSC = mochaLunisolar(t);
 	const table = document.getElementById('monthAlt');
+	table.innerHTML = '';
 	// title
 	document.getElementById('monthTitle').innerHTML = MLSC.monthName;
 	// headers
