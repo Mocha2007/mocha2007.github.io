@@ -819,7 +819,7 @@ function bonus(){
 		100000: [stardate],
 	};
 	var container = document.getElementById('clockbonus');
-	for (let i = 100; i < 100000; i *= 10){
+	for (let i = 100; i < 1000000; i *= 10){
 		var tick_container = document.createElement('div');
 		tick_container.id = 'clockbonus_tick' + i;
 		container.appendChild(tick_container);
