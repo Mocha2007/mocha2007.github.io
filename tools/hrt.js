@@ -11,6 +11,8 @@ const _1w = 7*_1d;
 const _1y = 365.2425*_1d;
 const _1mo = _1y/12;
 const laserP = 5*_1w; // 5 weeks
+const LUNA_MASS = 53; // kg
+const LUNA_BLOOD = 65 * LUNA_MASS; // mL https://reference.medscape.com/calculator/648/estimated-blood-volume
 
 class Source {
 	constructor(url, title = '(no title)', author = '(no author)',
@@ -265,7 +267,8 @@ function eLevel(){
 	const t = get_dose_t() % _12h / _1h;
 	const e = eLevel.peak * Math.pow(0.5, t/6);
 	const delta = Math.LN2/6 * e; // instantaneous change; found through derivative
-	return `<span class="small">Current blood E2 level: ~${Math.round(e)} pg/mL (&darr; ${Math.round(delta)} pg/mLh)</span>`;
+	const totalE = Math.round(LUNA_BLOOD * e / 1000);
+	return `<span class="small">Current blood E2 level: ~${Math.round(e)} pg/mL (&darr; ${Math.round(delta)} pg/mLh, ${totalE} ng total)</span>`;
 }
 eLevel.peak = 63.4 * Math.pow(2, 14/6);
 
