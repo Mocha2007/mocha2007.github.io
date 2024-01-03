@@ -34,7 +34,7 @@ const calendars = {
 	/** https://en.wikipedia.org/wiki/Hebrew_calendar#Calculations */
 	hebrew: {
 		get avgYear(){
-			return this.commonYear + this.leapYearR.length / this.leapPeriod;
+			return this.commonYear + 30 * _1d * this.leapYearR.length / this.leapPeriod;
 		},
 		commonYear: 354 * _1d,
 		fromGregorian(t = new Date()){
@@ -43,7 +43,7 @@ const calendars = {
 			let r = mod(delta, this.leapLength), y;
 			for (y = 0; y < this.leapPeriod; y++){
 				const leap = this.isLeap(y);
-				const length = this.commonYear + 30*leap;
+				const length = this.commonYear + 30*_1d*leap;
 				if (r < length)
 					break;
 				r -= length;
@@ -67,7 +67,7 @@ const calendars = {
 			return this.leapYearR.includes(mod(y, this.leapPeriod));
 		},
 		/** YEAR 1 */
-		epoch: new Date(-3583, 3, 3, 20), // trial and error
+		epoch: new Date(-3758, 2, 22, 20), // trial and error
 		// days begin at SUNSET UTC+2 in judaism - so roughly 20:00 UTC
 		get leapLength(){
 			return this.avgYear * this.leapPeriod;
