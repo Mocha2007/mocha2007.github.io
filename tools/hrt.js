@@ -156,6 +156,13 @@ function get_laser_t(){
 	return new Date() - get_laser_t.epoch;
 }
 get_laser_t.epoch = new Date(2024, 1, 7, 16) - 4*laserP; // 4*5 weeks before 2/7; iirc orig. 1694782800000
+get_laser_t.appts = [
+	new Date('2023-09-15T09:00:00.000-04:00'),
+	new Date('2023-10-15T11:15:00.000-04:00'),
+	new Date('2023-11-27T10:30:00.000-05:00'),
+	new Date('2024-01-02T09:30:00.000-05:00'),
+	new Date('2024-02-07T16:00:00.000-05:00'),
+];
 
 function get_prog(){
 	const t = new Date() - get_prog.epoch;
@@ -191,12 +198,12 @@ get_shave_cycle.cycleOffset = 1257;
 
 function laserPhaseElem(){
 	/** the last time I got lasered */
-	const epoch = new Date(get_laser_t.epoch + Math.floor((new Date() - get_laser_t.epoch) / laserP) * laserP);
+	const last = get_laser_t.appts[get_laser_t.appts.length-2];
 	// a visual chart showing progress to next laser: 2 days, avoid sunlight, 1 wk, "face settling in", rest, "waiting"
 	// container
 	const elem = document.createElement('div');
 	elem.id = 'laserPhaseContainer';
-	// it is a 7-wide, 5-tall table
+	// it is a 7-wide, >=5-tall table
 	const table = document.createElement('table');
 	table.id = 'laserPhaseTable';
 	elem.appendChild(table);
@@ -237,7 +244,7 @@ function laserPhaseElem(){
 			// content
 			const date = document.createElement('div');
 			date.classList.add('date');
-			const timeObject = new Date(_1d*d + +epoch);
+			const timeObject = new Date(_1d*d + +last);
 			date.innerHTML = timeObject.getDate();
 			tdContainer.appendChild(date);
 			td.classList.add(timeObject <= new Date() ? 'red' : debug ? 'redDebug' : 'redNoDebug');
