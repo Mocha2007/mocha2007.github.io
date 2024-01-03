@@ -123,7 +123,7 @@ const calendars = {
 	/** https://en.wikipedia.org/wiki/Tabular_Islamic_calendar */
 	islam: {
 		get avgYear(){
-			return this.commonYear + this.leapYearR.length / this.leapPeriod;
+			return this.commonYear + _1d * this.leapYearR.length / this.leapPeriod;
 		},
 		commonYear: 354 * _1d,
 		fromGregorian(t = new Date()){
@@ -142,8 +142,8 @@ const calendars = {
 			const yearDay = r / _1d;
 			// month
 			let m;
-			for (m = 0; m < 12; m++){
-				const length = (29 + (m % 2 === 0) + this.isLeap(y)) * _1d;
+			for (m = 0; m < 13; m++){
+				const length = (29 + (m % 2 === 0 || m === 13 && this.isLeap(y))) * _1d;
 				if (r < length)
 					break;
 				r -= length;
@@ -156,7 +156,7 @@ const calendars = {
 			return this.leapYearR.includes(mod(y, this.leapPeriod));
 		},
 		/** YEAR 1 */
-		epoch: new Date(623, 0, -1, 20), // should be new Date(622, 6, 15) but the Ramadan math is off?
+		epoch: new Date(621, 6, 29, 20), // should be new Date(622, 6, 15) but the Ramadan math is off?
 		// days begin at SUNSET UTC+3 in islam - so roughly 21:00 UTC
 		get leapLength(){
 			return this.avgYear * this.leapPeriod;
