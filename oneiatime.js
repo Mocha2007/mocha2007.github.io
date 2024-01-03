@@ -788,7 +788,7 @@ function stardate(){
 	var date = new Date();
 	var y = 1970 + date/31556952000;
 	var d = mod(date/86400000, 1);
-	return 'Stardate ' + Math.round(1000 * y - 2322242) + '.' + Math.round(d*100);
+	return 'Stardate ' + Math.round(1000 * (y - 2323)) + '.' + Math.round(d*100);
 }
 
 function bonus(){
