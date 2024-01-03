@@ -257,9 +257,9 @@ const time = {
 		['Election Day', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 2 && 1 < t.getDate() && t.getDate() < 9],
 		['Veterans\' Day', (t = new Date()) => t.getMonth() === 10 && t.getDate() === 11],
 		['TDoR', (t = new Date()) => t.getMonth() === 10 && t.getDate() === 20],
-		['Thanksgiving', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 4 && 21 < t.getDate() && t.getDate() < 29],
-		['Black Friday', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 5 && 22 < t.getDate() && t.getDate() < 30],
-		['Cyber Monday', (t = new Date()) => t.getDay() === 1 && (t.getMonth() === 10 && 25 < t.getDate() || t.getMonth() === 11 && t.getDate() === 1)],
+		['Thanksgiving', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 4 && 21 < t.getDate() && t.getDate() < 29], // [22, 28]
+		['Black Friday', (t = new Date()) => t.getMonth() === 10 && t.getDay() === 5 && 22 < t.getDate() && t.getDate() < 30], // [23, 29]
+		['Cyber Monday', (t = new Date()) => t.getDay() === 1 && (t.getMonth() === 10 && 25 < t.getDate() || t.getMonth() === 11 && t.getDate() < 3)], // [26, 2]
 		['Super Saturday', (t = new Date()) => t.getMonth() === 11 && t.getDay() === 6 && 16 < t.getDate() && t.getDate() < 24],
 		['Christmas Eve', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 24],
 		['Christmas', (t = new Date()) => t.getMonth() === 11 && t.getDate() === 25],
