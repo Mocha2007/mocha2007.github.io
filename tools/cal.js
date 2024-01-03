@@ -67,7 +67,7 @@ const calendars = {
 			return this.leapYearR.includes(mod(y, this.leapPeriod));
 		},
 		/** YEAR 1 */
-		epoch: new Date(-3583, 3, 4, 20), // trial and error
+		epoch: new Date(-3583, 4, 2, 20), // trial and error
 		// days begin at SUNSET UTC+2 in judaism - so roughly 20:00 UTC
 		get leapLength(){
 			return this.avgYear * this.leapPeriod;
@@ -156,7 +156,7 @@ const calendars = {
 			return this.leapYearR.includes(mod(y, this.leapPeriod));
 		},
 		/** YEAR 1 */
-		epoch: new Date(623, 0, 7, 20), // should be new Date(622, 6, 15) but the Ramadan math is off?
+		epoch: new Date(623, 0, -1, 20), // should be new Date(622, 6, 15) but the Ramadan math is off?
 		// days begin at SUNSET UTC+3 in islam - so roughly 21:00 UTC
 		get leapLength(){
 			return this.avgYear * this.leapPeriod;
