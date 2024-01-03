@@ -783,6 +783,14 @@ getEaster.html = function(){
 		.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
 };
 
+function stardate(){
+	// updates every 14m24s
+	var date = new Date();
+	var y = 1970 + date/31556952000;
+	var d = mod(date/86400000, 1);
+	return 'Stardate ' + Math.round(1000 * y - 2322242) + '.' + Math.round(d*100);
+}
+
 function bonus(){
 	/*
 	solarDay updates ~1 hz
@@ -790,23 +798,28 @@ function bonus(){
 	Darian updates once every 88.776 s
 	1 DF tick = 50s
 	*/
-	function onTick100(){
+	function onTick100(){ // every 100 ms
 		document.getElementById('clockbonus_tick100').innerHTML = [beat(), solarDay()].join('<br>');
 	}
-	function onTick1000(){
+	function onTick1000(){ // every 1 s
 		document.getElementById('clockbonus_tick1000').innerHTML = ['JD '+jd().toFixed(4), Math.round(new Date()/1000) + ' Unix Time'].join('<br>');
 	}
-	function onTick10000(){
+	function onTick10000(){ // every 10 s
 		document.getElementById('clockbonus_tick10000').innerHTML = [darian(), dorf()].join('<br>');
+	}
+	function onTick100000(){// every 1m40s
+		document.getElementById('clockbonus_tick100000').innerHTML = [stardate()].join('<br>');
 	}
 	onTick100();
 	onTick1000();
 	onTick10000();
+	onTick100000();
 	// all these clocks update once a day, so no need to have these recomputed every 100 ms
 	document.getElementById('clockbonus').innerHTML = ['<br><hr>', zodiac(), china(),
 		egypt(), hebrew(), japan(), romanFULL(), maya(), elderscrolls(),
 		kol(), mochaLunisolar(new Date(), true).string, astro(), getEaster.html()].join('<br>');
-	setInterval(onTick100, 100); // 10 hz
-	setInterval(onTick1000, 1000); // 1 hz
-	setInterval(onTick10000, 10000); // 0.1 hz
+	setInterval(onTick100, 100);
+	setInterval(onTick1000, 1000);
+	setInterval(onTick10000, 10000);
+	setInterval(onTick10000, 100000);
 }
