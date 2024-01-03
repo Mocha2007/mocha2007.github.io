@@ -155,7 +155,7 @@ function get_dose_t(){
 function get_laser_t(){
 	return new Date() - get_laser_t.epoch;
 }
-get_laser_t.epoch = new Date(2024, 0, 2, 9) - 3*laserP; // 3*5 weeks before 1/2; iirc orig. 1694782800000
+get_laser_t.epoch = new Date(2024, 1, 7, 16) - 4*laserP; // 4*5 weeks before 2/7; iirc orig. 1694782800000
 
 function get_prog(){
 	const t = new Date() - get_prog.epoch;
@@ -320,7 +320,7 @@ const progress_items = [
 const notes = [
 	'16 Aug 2023 - 7 Nov 2023: twice daily 1 mg E subL, 50 mg spiro oral',
 	'7 Nov 2023 onward: twice daily 2 mg E subL, 50 mg spiro oral',
-	'Lasering started 15 Sep 2023: 9/15, 10/20, 11/27, 1/2, ...',
+	'Lasering started 15 Sep 2023: 9/15, 10/20, 11/27, 1/2, 2/7, ...',
 ];
 
 function progress(){
