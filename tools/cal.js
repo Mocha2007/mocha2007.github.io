@@ -122,47 +122,19 @@ const calendars = {
 	},
 	/** https://en.wikipedia.org/wiki/Tabular_Islamic_calendar */
 	islam: {
-		get avgYear(){
-			return this.commonYear + _1d * this.leapYearR.length / this.leapPeriod;
-		},
-		commonYear: 354 * _1d,
 		fromGregorian(t = new Date()){
 			// see also https://www.fourmilab.ch/documents/calendar/
 			const delta = t - this.epoch;
-			const cycles = Math.floor(delta/this.leapLength);
-			let r = mod(delta, this.leapLength), y;
-			for (y = 0; y < this.leapPeriod; y++){
-				const leap = this.isLeap(y);
-				const length = this.commonYear + _1d*leap;
-				if (r < length)
-					break;
-				r -= length;
-			}
-			const year = cycles * this.leapPeriod + y;
-			const yearDay = r / _1d;
-			// month
-			let m;
-			for (m = 0; m < 13; m++){
-				const length = (29 + (m % 2 === 0 || m === 13 && this.isLeap(y))) * _1d;
-				if (r < length)
-					break;
-				r -= length;
-			}
-			const month = m + 1; // 1-indexed
+			const fullMonths = Math.floor(delta/time.moon.p);
+			const r = delta - time.moon.p * fullMonths;
+			// date
+			const year = Math.floor(fullMonths/12) + 1; // 1-indexed
+			const month = mod(fullMonths, 12) + 1; // 1-indexed
 			const date = Math.floor(r / _1d) + 1; // 1-indexed
-			return {year, yearDay, month, date};
-		},
-		isLeap(y = 0){
-			return this.leapYearR.includes(mod(y, this.leapPeriod));
+			return {year, month, date};
 		},
 		/** YEAR 1 */
-		epoch: new Date(621, 6, 29, 20), // should be new Date(622, 6, 15) but the Ramadan math is off?
-		// days begin at SUNSET UTC+3 in islam - so roughly 21:00 UTC
-		get leapLength(){
-			return this.avgYear * this.leapPeriod;
-		},
-		leapPeriod: 30, // years
-		leapYearR: [2, 5, 7, 10, 13, 16, 18, 21, 24, 26, 29],
+		epoch: new Date(622, 6, 16, 20), // should be new Date(622, 6, 15) but the Ramadan math is off?
 	},
 };
 
