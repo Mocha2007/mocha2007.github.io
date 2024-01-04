@@ -88,7 +88,7 @@ var subtitles =	[
 	'Invest in Eremor! 💎🙌',
 	'Paint Pankair red!',
 	'Tem&ecirc;r guide us!',
-	'Rubri Eremorae donum requirunt',
+	'Rubrī Eremōris dōnum requīrunt',
 	'<abbr title="Eremoran smith guild motto">Som ardo din, ardo som din.</abbr>',
 	'The worldbuilding speaks for itself.', // or maybe this counts as a chess reference?
 	// mochisms
