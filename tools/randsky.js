@@ -1,5 +1,7 @@
 /* global createSvgElement, random, range */
 
+const MAG_CUTOFF = 7;
+
 /** J/K; exact; https://en.wikipedia.org/wiki/Boltzmann_constant */
 const boltzmann = 1.380649e-23;
 /** W; exact; zero point luminosity */
@@ -143,15 +145,26 @@ class Star {
 	static randomCoords(){
 		return new Coords(...range(3).map(() => random.uniform(-RANDSKY.SIZE, RANDSKY.SIZE)));
 	}
+	static randomClass(){
+		return {
+			m: [0.08, 0.45],
+			k: [0.45, 0.8],
+			g: [0.8, 1.04],
+			f: [1.04, 1.4],
+			a: [1.4, 2.1],
+			b: [2.1, 16],
+			o: [16, 200],
+		}[random.weightedChoice('obafgkm',
+			[0.0000003, 0.0012, 0.0061, 0.03, 0.076, 0.12, 0.76]
+		)];
+	}
 	static randomMass(){
-		const M_MIN = 0.08; // min M
-		const M_MAX = 16; // O-B cutoff
-		const e = 1.9; // tweak as necessary
+		const [M_MIN, M_MAX] = this.randomClass();
+		const e = 2; // tweak as necessary
 		const max = Math.pow(M_MIN, -1/e);
 		const min = Math.pow(M_MAX, -1/e);
 		const m = Math.pow(random.uniform(min, max), -e);
-		return 2.1 < m && random.random() < 0.93 ? this.randomMass()
-			: 1.25 < m && random.random() < 0.87 ? this.randomMass() : m;
+		return m;
 	}
 }
 
@@ -189,7 +202,7 @@ function main(){
 	let printed = 0;
 	cluster.stars.forEach((star, i) => {
 		const mag = star.appMag;
-		if (7 < mag)
+		if (MAG_CUTOFF < mag)
 			return;
 		const [ra, dec] = [star.coords.phi, star.coords.el];
 		const [x, y] = [ra, -dec];
