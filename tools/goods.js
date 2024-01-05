@@ -406,8 +406,8 @@ const sources = {
 	med18: new Source('18th c.', 'England', ['https://www.foodtimeline.org/1720.pdf', 'https://memdb.libraries.rutgers.edu/posthumus-prices', 'https://memdb.libraries.rutgers.edu/metz-prices']),
 	usa180: new Source('c. 1800', 'US', 'https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76'),
 	usa185: new Source('c. 1850', 'US', 'https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76'),
-	usa190: new Source('c. 1900', 'US', ['https://fraser.stlouisfed.org/title/bulletin-united-states-bureau-labor-3943/july-1905-477618/retail-prices-food-498513?start_page=179', 'https://fraser.stlouisfed.org/files/docs/publications/FRB/pages/1915-1919/24568_1915-1919.pdf']),
-	usa195: new Source('c. 1950', 'US', []),
+	usa190: new Source('c. 1900', 'US', ['https://babel.hathitrust.org/cgi/pt?id=umn.31951000014585x&seq=233', 'https://fraser.stlouisfed.org/title/bulletin-united-states-bureau-labor-3943/july-1905-477618/retail-prices-food-498513?start_page=179', 'https://fraser.stlouisfed.org/files/docs/publications/FRB/pages/1915-1919/24568_1915-1919.pdf']),
+	usa195: new Source('c. 1950', 'US', 'https://babel.hathitrust.org/cgi/pt?id=umn.31951000014585x&seq=233'),
 	usa202: new Source('2023', 'US', 'https://www.walmart.com'), // i just went onto walmart lol
 	skyrim: new Source('4E 201', 'Skyrim', 'https://en.uesp.net/wiki/Skyrim:Skyrim', true),
 	dorf: new Source('', 'Dwarf Fortress', 'https://dwarffortresswiki.org', true),
@@ -872,6 +872,16 @@ new GoodDatum(goods.wageLaborer, sources.usa190, 10.06/7 / usd_ag_1900); // actu
 // 1950
 const usd_ag_1950 = 0.73 / unit.ozt; // $0.62007/ozt
 new GoodDatum(goods.gold, sources.usa195, 34.72/unit.ozt / usd_ag_1950);
+new GoodDatum(goods.flour, sources.usa195, 0.491/(5*unit.lb) / usd_ag_1950);
+new GoodDatum(goods.beef, sources.usa195, 0.936/unit.lb / usd_ag_1950);
+new GoodDatum(goods.pork, sources.usa195, 0.754/unit.lb / usd_ag_1950);
+new GoodDatum(goods.butter, sources.usa195, 0.729/unit.lb / usd_ag_1950);
+new GoodDatum(goods.egg, sources.usa195, 0.604 / usd_ag_1950);
+new GoodDatum(goods.milk, sources.usa195, 0.412 / (0.5 * unit.gal) / usd_ag_1950);
+new GoodDatum(goods.coffee, sources.usa195, 0.794 / unit.lb / usd_ag_1950);
+new GoodDatum(goods.sugar, sources.usa195, 0.487/(5*unit.lb) / usd_ag_1950);
+
+
 new GoodDatum(goods.wageLaborer, sources.usa195, 8 * 0.75 / usd_ag_1950); // 8h min wage
 
 // TODAY PRICES
