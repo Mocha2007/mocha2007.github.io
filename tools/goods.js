@@ -11,6 +11,26 @@ const debug = document.URL[0].toLowerCase() === 'f'; // file:// vs. http(s)://
 const unit = {
 	/** number of L in a bushel */
 	bu: 35.2390704,
+	/** mL per standard US can size https://food.unl.edu/article/how-interpret-can-size-numbers */
+	can: {
+		get _1(){
+			return 1.25 * unit.cup;
+		},
+		get _2(){
+			return 2.5 * unit.cup;
+		},
+		get _2_5(){
+			return 3.5 * unit.cup;
+		},
+		get _3(){
+			return 5.75 * unit.cup;
+		},
+		get beerBottle(){
+			return 1.5 * unit.cup;
+		},
+	},
+	/** mL per cup */
+	cup: 236.588,
 	/** hundredweight in grams */
 	cwt: 45359.24,
 	/** kg/m^3 */
@@ -887,6 +907,23 @@ new GoodDatum(goods.veal, sources.usa190, 0.2/unit.lb / usd_ag_1900);
 new GoodDatum(goods.wheat, sources.usa190, 0.05/unit.lb / usd_ag_1900);
 new GoodDatum(goods.coal, sources.usa190, 12/unit.t / usd_ag_1900);
 new GoodDatum(goods.glass, sources.usa190, 6/(9*unit.inch*12*unit.inch*3/32*unit.inch * unit.density.glass*1000) / usd_ag_1900);
+// https://babel.hathitrust.org/cgi/pt?id=nnc2.ark:/13960/t2x376p77&seq=387
+new GoodDatum(goods.chocolate, sources.usa190, 0.18/(0.5*unit.lb) / usd_ag_1900);
+new GoodDatum(goods.soda, sources.usa190, 0.04/(0.5*unit.lb) / usd_ag_1900);
+new GoodDatum(goods.clove, sources.usa190, 0.38/unit.lb / usd_ag_1900);
+new GoodDatum(goods.cinnamon, sources.usa190, 0.32/unit.lb / usd_ag_1900);
+new GoodDatum(goods.ginger, sources.usa190, 0.29/unit.lb / usd_ag_1900);
+new GoodDatum(goods.mace, sources.usa190, 0.69/unit.lb / usd_ag_1900);
+new GoodDatum(goods.nutmeg, sources.usa190, 0.19/(0.25*unit.lb) / usd_ag_1900);
+new GoodDatum(goods.oilOlive, sources.usa190, 2.54/unit.gal / usd_ag_1900);
+new GoodDatum(goods.vinegar, sources.usa190, 0.34/unit.gal / usd_ag_1900);
+new GoodDatum(goods.asparagus, sources.usa190, 0.78/unit.can._2_5 / usd_ag_1900);
+new GoodDatum(goods.turnip, sources.usa190, 0.24/unit.can._1 / usd_ag_1900);
+new GoodDatum(goods.beet, sources.usa190, 0.14/unit.can._3 / usd_ag_1900);
+new GoodDatum(goods.squash, sources.usa190, 0.12/unit.can._3 / usd_ag_1900);
+new GoodDatum(goods.wine, sources.usa190, 0.8/unit.gal / usd_ag_1900); // rough average
+new GoodDatum(goods.ale, sources.usa190, 0.98/(12 * unit.can.beerBottle) / usd_ag_1900); // cheapest
+new GoodDatum(goods.beer, sources.usa190, 0.79/(12 * unit.can.beerBottle) / usd_ag_1900); // cheapest
 
 new GoodDatum(goods.wageLaborer, sources.usa190, 10.06/7 / usd_ag_1900); // actual wages per week per capita https://babel.hathitrust.org/cgi/pt?id=nnc1.cu56779232&seq=15
 
