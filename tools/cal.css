@@ -153,7 +153,7 @@ header, h2, #footer {
 	.printOnly {
 		display: inline;
 	}
-	header {
+	header, #erecal1_title {
 		display: none;
 	}
 	h2 {
@@ -162,7 +162,7 @@ header, h2, #footer {
 	html, body {
 		background-color: white;
 		color: black;
-		font-size: 77%;
+		font-size: 81%;
 		margin: 1%;
 	}
 	.season_0, .season_4 {
@@ -184,7 +184,7 @@ header, h2, #footer {
 		display: none;
 	}
 	#monthImg {
-		max-height: 32vw;
+		max-height: 29vw;
 	}
 }
 /* mobile */
