@@ -11,6 +11,7 @@ const speedOfLight = 299792458;
 
 const RANDSKY = {
 	ELEM: {
+		/** @returns {HTMLDivElement} */
 		get SKYMAP(){
 			return document.getElementById('skymap');
 		},
@@ -116,9 +117,9 @@ class Star {
 	}
 	get color(){
 		const t = this.temp;
-		const rAbs = planckLaw(speedOfLight/680e-9, t);
-		const gAbs = planckLaw(speedOfLight/530e-9, t);
-		const bAbs = planckLaw(speedOfLight/470e-9, t);
+		const rAbs = planckLaw(speedOfLight/612e-9, t);
+		const gAbs = planckLaw(speedOfLight/549e-9, t);
+		const bAbs = planckLaw(speedOfLight/464e-9, t);
 		const max = Math.max(rAbs, gAbs, bAbs)/255;
 		// [800, 3500] => [black, red]
 		let value = 1;
