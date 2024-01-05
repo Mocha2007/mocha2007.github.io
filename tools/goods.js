@@ -405,6 +405,7 @@ const goods = {
 	chickenLive: new Good('Chicken', 'Misc', 'ea'),
 	duckLive: new Good('Duck', 'Misc', 'ea'),
 	// MISC
+	aluminum: new Good('Aluminum', 'Misc'),
 	charcoal: new Good('Charcoal', 'Misc'),
 	coal: new Good('Coal', 'Misc'),
 	copper: new Good('Copper', 'Misc'),
@@ -1017,6 +1018,28 @@ new GoodDatum(goods.horse, sources.usa202, 7000 / usd_ag2); // https://www.astep
 new GoodDatum(goods.cat, sources.usa202, 15 / usd_ag2); // https://www.hepper.com/how-much-does-a-cat-cost/ (cheapest adoption cost)
 new GoodDatum(goods.dog, sources.usa202, 50 / usd_ag2); // https://be.chewy.com/pet-parenting-pet-lovers-dog-adoption-fees-explained/ (cheapest adoption cost)
 
+// aluminum values
+new GoodDatum(goods.aluminum, sources.usa185, 545/unit.lb / usd_ag); // https://www.indexbox.io/search/historical-aluminum-prices-per-pound/
+new GoodDatum(goods.aluminum, sources.usa190, 0.4/unit.lb / usd_ag); // https://www.indexbox.io/search/historical-aluminum-prices-per-pound/
+new GoodDatum(goods.aluminum, sources.usa195, 0.183*0.4/unit.lb / usd_ag); // https://ourworldindata.org/grapher/real-commodity-price-index-metals
+new GoodDatum(goods.aluminum, sources.usa202, 2202.25545/1e6 / usd_ag2); // https://fred.stlouisfed.org/series/PALUMUSDM
+
+// copper values
+// https://www.worldcoppersmith.com/articles/a-complete-history-of-the-price-of-copper/
+new GoodDatum(goods.copper, sources.usa190, 0.2/unit.lb / usd_ag);
+new GoodDatum(goods.copper, sources.usa195, 0.25/unit.lb / usd_ag_1950);
+
+// iron values
+// https://economics.yale.edu/sites/default/files/iron_www.pdf
+new GoodDatum(goods.iron, sources.usa185, 0.5831*18.7/unit.t / usd_ag); // https://ourworldindata.org/grapher/real-commodity-price-index-metals
+new GoodDatum(goods.iron, sources.usa190, 18.7/unit.t / usd_ag);
+new GoodDatum(goods.iron, sources.usa195, 0.7077*18.7/unit.t / usd_ag); // https://ourworldindata.org/grapher/real-commodity-price-index-metals
+
+// 2019 misc commodity values
+// https://www.sfu.ca/~djacks/data/boombust/Chartbook%20for%20From%20Boom%20to%20Bust%202102.pdf
+new GoodDatum(goods.barley, sources.usa202, 20.36e9/158.98e12 / usd_ag2);
+new GoodDatum(goods.rye, sources.usa202, 3.03e9/12.8e12 / usd_ag2);
+
 // https://babel.hathitrust.org/cgi/pt?id=uc1.32106007458745&seq=42
 new GoodDatum(goods.butter, sources.med17, 0.09/unit.lb / usd_ag);
 new GoodDatum(goods.butter, sources.med18, 0.12/unit.lb / usd_ag);
@@ -1230,6 +1253,7 @@ const df$ = 600 * 10.49 / (500 * 0.2); // a 600 cm^3 bar of silver (10.49 g/cm^3
 new GoodDatum(goods.gold, sources.dorf, 30*19.32 / dfs);
 new GoodDatum(goods.copper, sources.dorf, 2*8.93 / dfs);
 new GoodDatum(goods.iron, sources.dorf, 10*7.85 / dfs);
+new GoodDatum(goods.aluminum, sources.dorf, 40*2.7 / dfs);
 
 new GoodDatum(goods.charcoal, sources.dorf, 2*1.346 / dfs); // fuel
 new GoodDatum(goods.glass, sources.dorf, 2*2.6 / dfs); // green glass
