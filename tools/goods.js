@@ -13,6 +13,10 @@ const unit = {
 	bu: 35.2390704,
 	/** hundredweight in grams */
 	cwt: 45359.24,
+	/** kg/m^3 */
+	density: {
+		glass: 2500,
+	},
 	/** number of grams in a gallon of water */
 	gal: 3770,
 	/** grams in a grain (no difference between troy/avoirdupois/etc) */
@@ -65,6 +69,8 @@ const unit = {
 			return 45 * this.ppb;
 		},
 	},
+	/** number of meters in an inch */
+	inch: 0.0254,
 	/** number of grams in a quart of water */
 	qt: 3770/4,
 	/** last in grams */
@@ -866,6 +872,21 @@ new GoodDatum(goods.coffee, sources.usa190, 0.0587/unit.lb / usd_ag_1900);
 new GoodDatum(goods.sugar, sources.usa190, 0.2295/unit.lb / usd_ag_1900);
 new GoodDatum(goods.flour, sources.usa190, 0.0246/unit.lb / usd_ag_1900);
 new GoodDatum(goods.rice, sources.usa190, 0.0817/unit.lb / usd_ag_1900);
+// https://babel.hathitrust.org/cgi/pt?id=mdp.39015068283111&seq=220
+new GoodDatum(goods.lamb, sources.usa190, 0.13/unit.lb / usd_ag_1900);
+new GoodDatum(goods.turkey, sources.usa190, 0.21/unit.lb / usd_ag_1900);
+new GoodDatum(goods.goose, sources.usa190, 0.175/unit.lb / usd_ag_1900);
+new GoodDatum(goods.cabbage, sources.usa190, 0.125/unit.weights.cabbage / usd_ag_1900);
+// https://babel.hathitrust.org/cgi/pt?id=uc1.b3991878&seq=146
+new GoodDatum(goods.oatmeal, sources.usa190, 0.075/unit.lb / usd_ag_1900);
+new GoodDatum(goods.salt, sources.usa190, 0.025/unit.lb / usd_ag_1900);
+new GoodDatum(goods.mustard, sources.usa190, 0.65/unit.lb / usd_ag_1900);
+new GoodDatum(goods.pepper, sources.usa190, 0.40/unit.lb / usd_ag_1900);
+new GoodDatum(goods.sugarBrown, sources.usa190, 0.05/unit.lb / usd_ag_1900);
+new GoodDatum(goods.veal, sources.usa190, 0.2/unit.lb / usd_ag_1900);
+new GoodDatum(goods.wheat, sources.usa190, 0.05/unit.lb / usd_ag_1900);
+new GoodDatum(goods.coal, sources.usa190, 12/unit.t / usd_ag_1900);
+new GoodDatum(goods.glass, sources.usa190, 6/(9*unit.inch*12*unit.inch*3/32*unit.inch * unit.density.glass*1000) / usd_ag_1900);
 
 new GoodDatum(goods.wageLaborer, sources.usa190, 10.06/7 / usd_ag_1900); // actual wages per week per capita https://babel.hathitrust.org/cgi/pt?id=nnc1.cu56779232&seq=15
 
