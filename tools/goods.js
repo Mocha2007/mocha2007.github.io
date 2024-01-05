@@ -942,6 +942,7 @@ new GoodDatum(goods.sugar, sources.usa195, 0.487/(5*unit.lb) / usd_ag_1950);
 
 
 new GoodDatum(goods.wageLaborer, sources.usa195, 8 * 0.75 / usd_ag_1950); // 8h min wage
+new GoodDatum(goods.uranium, sources.usa195, 9.11 / unit.lb / usd_ag_1950); // https://www.osti.gov/servlets/purl/7346006
 
 // TODAY PRICES
 const usd_ag2 = 23.35 / unit.ozt; // current value
