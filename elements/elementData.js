@@ -5364,7 +5364,7 @@ const elementData = [
 		z: 116,
 		name: 'Livermorium',
 		symbol: 'Lv',
-		mass: 294,
+		mass: 293,
 		group: 16,
 		period: 7,
 		properties: {
