@@ -385,6 +385,7 @@ const goods = {
 	firewood: new Good('Firewood', 'Misc'),
 	glass: new Good('Glass', 'Misc'),
 	iron: new Good('Iron', 'Misc'),
+	uranium: new Good('Uranium', 'Misc'),
 	wax: new Good('Wax', 'Misc'),
 };
 
@@ -851,10 +852,12 @@ new GoodDatum(goods.wageLaborer, sources.usa185, (0.333 + 1.67)/2 / usd_ag);
 // 1900
 const usd_ag_1900 = 0.62007 / unit.ozt; // $0.62007/ozt
 new GoodDatum(goods.gold, sources.usa190, 18.96/unit.ozt / usd_ag_1900);
+new GoodDatum(goods.wageLaborer, sources.usa190, 10.06/7 / usd_ag_1900); // actual wages per week per capita https://babel.hathitrust.org/cgi/pt?id=nnc1.cu56779232&seq=15
 
 // 1950
 const usd_ag_1950 = 0.73 / unit.ozt; // $0.62007/ozt
 new GoodDatum(goods.gold, sources.usa195, 34.72/unit.ozt / usd_ag_1950);
+new GoodDatum(goods.wageLaborer, sources.usa195, 8 * 0.75 / usd_ag_1950); // 8h min wage
 
 // TODAY PRICES
 const usd_ag2 = 23.35 / unit.ozt; // current value
@@ -922,6 +925,7 @@ new GoodDatum(goods.candle, sources.usa202, 0.214/unit.oz / usd_ag2);
 new GoodDatum(goods.soap, sources.usa202, 0.148/unit.oz / usd_ag2);
 new GoodDatum(goods.charcoal, sources.usa202, 0.493/unit.lb / usd_ag2);
 new GoodDatum(goods.ivory, sources.usa202, 3300/unit.lb / usd_ag2); // https://wildaid.org/14-things-you-didnt-know-about-todays-ivory-trade/
+new GoodDatum(goods.uranium, sources.usa202, 40.06/unit.lb / usd_ag2); // https://www.statista.com/statistics/260005/monthly-uranium-price/
 
 new GoodDatum(goods.wageLaborer, sources.usa202, 8 * 7.25 / usd_ag2); // 8h min wage
 
