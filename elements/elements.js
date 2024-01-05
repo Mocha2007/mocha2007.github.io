@@ -41,6 +41,40 @@ const elemCatColors = {
 	'Superactinide': '#f7a',
 };
 
+const elemGoldschmidtColors = [
+	'#bff', // atmophile
+	'#ff8', // chalcophile
+	'#fb7', // lithophile
+	'#fde', // siderophile
+];
+elemGoldschmidtColors[undefined] = 'white';
+
+const elemGoldschmidt = [
+	// p1
+	0, 0,
+	// p2
+	2, 2,
+	2, 0, 0, 2, 2, 0,
+	// p3
+	2, 2,
+	2, 2, 2, 1, 2, 0,
+	// p4
+	2, 2,
+	2, 2, 2, 2, 3, 3, 3, 3, 1, 1,
+	1, 1, 1, 1, 2, 0,
+	// p5
+	2, 2,
+	2, 2, 2, 3, undefined, 3, 3, 3, 1, 1,
+	1, 1, 1, 1, 2, 0,
+	// p6
+	2, 2,
+	2, 2, 2, 2, undefined, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+	2, 2, 2, 3, 3, 3, 3, 3, 3, 1,
+	1, 1, 1,
+];
+// p7
+elemGoldschmidt[90] = elemGoldschmidt[92] = 2;
+
 let hlCull = 0; // s, when to stop drawing isotopes
 
 // classes
@@ -664,6 +698,9 @@ class ChemElement {
 				c = `rgb(${127*mmm+128}, ${127*bbb+128}, ${127*eee+128})`;
 				break;
 			}
+			case 'goldschmidt':
+				c = elemGoldschmidtColors[elemGoldschmidt[this.z-1]];
+				break;
 			case 'ionization1':
 				if (!this.ionization)
 					c = '#ccc';
