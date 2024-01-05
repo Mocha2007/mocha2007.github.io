@@ -405,6 +405,8 @@ const sources = {
 	med18: new Source('18th c.', 'England', ['https://www.foodtimeline.org/1720.pdf', 'https://memdb.libraries.rutgers.edu/posthumus-prices', 'https://memdb.libraries.rutgers.edu/metz-prices']),
 	usa180: new Source('c. 1800', 'US', 'https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76'),
 	usa185: new Source('c. 1850', 'US', 'https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76'),
+	usa190: new Source('c. 1900', 'US', 'https://fraser.stlouisfed.org/files/docs/publications/FRB/pages/1915-1919/24568_1915-1919.pdf'),
+	usa195: new Source('c. 1950', 'US', []),
 	usa202: new Source('2023', 'US', 'https://www.walmart.com'), // i just went onto walmart lol
 	skyrim: new Source('4E 201', 'Skyrim', 'https://en.uesp.net/wiki/Skyrim:Skyrim', true),
 	dorf: new Source('', 'Dwarf Fortress', 'https://dwarffortresswiki.org', true),
@@ -845,6 +847,14 @@ new GoodDatum(goods.tobacco, sources.usa185, 0.285/unit.lb / usd_ag);
 // https://babel.hathitrust.org/cgi/pt?id=wu.89071501472&seq=69
 new GoodDatum(goods.wageLaborer, sources.usa180, 0.692 / usd_ag);
 new GoodDatum(goods.wageLaborer, sources.usa185, (0.333 + 1.67)/2 / usd_ag);
+
+// 1900
+const usd_ag_1900 = 0.62007 / unit.ozt; // $0.62007/ozt
+new GoodDatum(goods.gold, sources.usa190, 18.96/unit.ozt / usd_ag_1900);
+
+// 1950
+const usd_ag_1950 = 0.73 / unit.ozt; // $0.62007/ozt
+new GoodDatum(goods.gold, sources.usa195, 34.72/unit.ozt / usd_ag_1950);
 
 // TODAY PRICES
 const usd_ag2 = 23.35 / unit.ozt; // current value
