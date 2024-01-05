@@ -1,7 +1,5 @@
 /* global createSvgElement, random, range */
 
-const MAG_CUTOFF = 7;
-
 /** J/K; exact; https://en.wikipedia.org/wiki/Boltzmann_constant */
 const boltzmann = 1.380649e-23;
 /** W; exact; zero point luminosity */
@@ -17,10 +15,13 @@ const RANDSKY = {
 			return document.getElementById('skymap');
 		},
 	},
+	MAG_CUTOFF: 7,
 	/** side length of the rng cube in pc */
 	get SIZE(){
 		return Math.cbrt(this.STAR_TARGET/this.STELLAR_DENSITY)/2;
 	},
+	/** px */
+	STAR_SIZE: 0.02,
 	/** stars */
 	STAR_TARGET: 1000000,
 	/** stars per pc^3 https://en.wikipedia.org/wiki/Stellar_density */
@@ -128,6 +129,16 @@ class Star {
 		const b = Math.round(bAbs/max*value);
 		return `rgb(${r}, ${g}, ${b})`;
 	}
+	get elem(){
+		const [ra, dec] = [this.coords.phi, this.coords.el];
+		const [x, y] = [ra, -dec];
+		const starDisk = createSvgElement('circle');
+		starDisk.setAttribute('r', RANDSKY.STAR_SIZE * mag2radius(this.appMag));
+		starDisk.style.fill = this.color;
+		starDisk.setAttribute('cx', x);
+		starDisk.setAttribute('cy', y);
+		return starDisk;
+	}
 	get luminosity(){
 		return RANDSKY.SUN.LUM * (0.45 < this.mass
 			? 1.148*Math.pow(this.mass, 3.4751)
@@ -173,7 +184,6 @@ function mag2radius(mag = 0){
 }
 
 function main(){
-	const starSize = 0.02;
 	// svg
 	const svg = createSvgElement('svg');
 	svg.classList.add('sundial');
@@ -201,22 +211,15 @@ function main(){
 	// cluster.printDistr();
 	let printed = 0;
 	cluster.stars.forEach((star, i) => {
-		const mag = star.appMag;
-		if (MAG_CUTOFF < mag)
+		if (RANDSKY.MAG_CUTOFF < star.appMag)
 			return;
-		const [ra, dec] = [star.coords.phi, star.coords.el];
-		const [x, y] = [ra, -dec];
 		// elem
-		const starDisk = createSvgElement('circle');
+		const starDisk = star.elem;
 		svg.appendChild(starDisk);
-		starDisk.setAttribute('r', starSize * mag2radius(mag));
-		starDisk.style.fill = star.color;
-		starDisk.setAttribute('cx', x);
-		starDisk.setAttribute('cy', y);
 		starDisk.id = 'star_' + i;
 		printed++;
 	});
-	console.debug(printed);
+	console.info(`randsky.js drew ${printed} stars`);
 }
 
 main();
