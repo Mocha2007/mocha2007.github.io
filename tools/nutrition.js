@@ -217,6 +217,27 @@ class Nutrient extends SourcedObject {
 Nutrient.nutrients = [];
 
 
+class NutrientGroup extends Nutrient {
+	/** Eg. "Calories", "Carbohydrates"
+	 * @param {string} name
+	 * @param {NutrientAmount[]} nutrientWeights [Nutrient, Weight]
+	 */
+	constructor(name, nutrientWeights = []){
+		super(name);
+		this.nutrientWeights = nutrientWeights;
+		NutrientGroup.groups.push(this);
+	}
+	/** @param {Food} food */
+	value(food){
+		return this.nutrientWeights
+			.map(na => food.nutrient(na.nutrient) * na.amount)
+			.reduce((a, b) => a+b);
+	}
+}
+/** @type {NutrientGroup[]} */
+NutrientGroup.groups = [];
+
+
 class NutrientAmount {
 	/**
 	 * @param {Nutrient} nutrient
@@ -254,19 +275,6 @@ class Food extends SourcedObject {
 		});
 		return c;
 	}
-	get calories(){
-		return this.properties.calories !== undefined
-			? this.properties.calories
-			: 3.95 * this.nutrient(Nutrient.SUGAR) // glucose ~ 3.719; sucrose ~ 3.943; fructose ~ 3.75
-			+ 2 * this.nutrient(Nutrient.FIBER)
-			+ 4.1788 * this.nutrient(Nutrient.STARCH) // heat of combustion
-			+ 9 * this.nutrient(Nutrient.FAT)
-			+ 4 * this.nutrient(Nutrient.PROTEIN)
-			+ 7.112 * this.nutrient(Nutrient.ALCOHOL); // ditto
-	}
-	get carbs(){
-		return this.nutrient(Nutrient.SUGAR) + this.nutrient(Nutrient.FIBER);
-	}
 	get compositionUnit(){
 		const COMPOSITION = this.composition;
 		const c = {};
@@ -301,6 +309,8 @@ class Food extends SourcedObject {
 	// methods
 	/** @param {Nutrient} n */
 	nutrient(n){
+		if (n instanceof NutrientGroup)
+			return n.value(this);
 		// eslint-disable-next-line max-len
 		return (maybe_n => maybe_n ? maybe_n.amount : 0)(this.nutrients.find(na => na.nutrient === n));
 	}
@@ -355,6 +365,21 @@ Nutrient.FOLATE = new Nutrient('Vitamin B9 (Folate)', {C: 19, H: 19, N: 7, O: 6}
 Nutrient.CAROTENE_BETA = new Nutrient('β-Carotene', {C: 40, H: 56}, 1, 'https://en.wikipedia.org/wiki/%CE%92-Carotene');
 Nutrient.VITAMIN_E = new Nutrient('Vitamin E', {C: 29, H: 50, O: 2}, 0.95, 'https://en.wikipedia.org/wiki/Vitamin_E'); // α-Tocopherol
 Nutrient.VITAMIN_K = new Nutrient('Vitamin K', {C: 31, H: 46, O: 2}); // Phytomenadione
+
+NutrientGroup.CALORIES = new NutrientGroup('Calories', [
+	new NutrientAmount(Nutrient.SUGAR, 3.943), // glucose ~ 3.719; sucrose ~ 3.943; fructose ~ 3.75
+	new NutrientAmount(Nutrient.FIBER, 2),
+	new NutrientAmount(Nutrient.STARCH, 4.1788), // heat of combustion
+	new NutrientAmount(Nutrient.FAT, 9),
+	new NutrientAmount(Nutrient.PROTEIN, 4),
+	new NutrientAmount(Nutrient.ALCOHOL, 7.112), // ditto
+]);
+
+NutrientGroup.CARBOHYDRATES = new NutrientGroup('Carbohydrates', [
+	new NutrientAmount(Nutrient.SUGAR, 1),
+	new NutrientAmount(Nutrient.FIBER, 1),
+	new NutrientAmount(Nutrient.STARCH, 1),
+]);
 
 
 // FOODS
