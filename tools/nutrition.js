@@ -154,7 +154,7 @@ class Nutrient extends SourcedObject {
 			if (y)
 				xy.push([food.name, y]);
 		});
-		const barURL = 'chart.html?data=' + histo2(xy, true, true, 0, 20);
+		const barURL = 'chart.html?data=' + histo2(xy, true, true, Number.MIN_VALUE, 20);
 		document.getElementById('bar').src = barURL;
 		console.info(`nutrition.js displaying foods rich in ${this.name}`);
 	}
