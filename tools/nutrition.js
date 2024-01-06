@@ -136,6 +136,18 @@ class Food extends SourcedObject {
 		});
 		return c;
 	}
+	get calories(){
+		return this.properties.calories !== undefined
+			? this.properties.calories
+			: 4 * this.nutrient(Nutrient.SUGAR)
+			+ 2 * this.nutrient(Nutrient.FIBER)
+			+ 9 * this.nutrient(Nutrient.FAT)
+			+ 4 * this.nutrient(Nutrient.PROTEIN)
+			+ 7 * this.nutrient(Nutrient.ALCOHOL);
+	}
+	get carbs(){
+		return this.nutrient(Nutrient.SUGAR) + this.nutrient(Nutrient.FIBER);
+	}
 	get compositionUnit(){
 		const COMPOSITION = this.composition;
 		const c = {};
@@ -159,6 +171,11 @@ class Food extends SourcedObject {
 	get unitMass(){
 		return this.properties.unitMass || 100;
 	}
+	/** @param {Nutrient} n */
+	nutrient(n){
+		// eslint-disable-next-line max-len
+		return (maybe_n => maybe_n ? maybe_n.amount : 0)(this.nutrients.find(na => na.nutrient === n));
+	}
 }
 /** @type {Food[]} */
 Food.foods = [];
@@ -170,6 +187,7 @@ Nutrient.PROTEIN = new Nutrient('Protein', {C: 6, H: 13, N: 1, O: 2}, 1.5); // L
 Nutrient.FAT = new Nutrient('Fat', {C: 18, H: 36, O: 2}, 0.895); // Stearic Acid
 Nutrient.FIBER = new Nutrient('Fiber', {C: 12, H: 20, O: 10}, 1.5); // Cellulose
 Nutrient.SUGAR = new Nutrient('Sugar', {C: 6, H: 12, O: 6}, 1.54); // Glucose
+Nutrient.ALCOHOL = new Nutrient('Alcohol', {C: 2, H: 6, O: 1}, 0.78945, 'https://en.wikipedia.org/wiki/Ethanol'); // Ethanol
 
 Nutrient.CALCIUM = new Nutrient('Calcium', {Ca: 1});
 Nutrient.IRON = new Nutrient('Iron', {Fe: 1});
