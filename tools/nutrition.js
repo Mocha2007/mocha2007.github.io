@@ -381,6 +381,14 @@ NutrientGroup.CARBOHYDRATES = new NutrientGroup('Carbohydrates', [
 	new NutrientAmount(Nutrient.STARCH, 1),
 ]);
 
+NutrientGroup.VITAMIN_A = new NutrientGroup('Vitamin A', [
+	// new NutrientAmount(Nutrient.RETINOL, 1),
+	new NutrientAmount(Nutrient.CAROTENE_BETA, 0.5),
+	// new NutrientAmount(Nutrient.CAROTENE_ALPHA, 0.25),
+	// new NutrientAmount(Nutrient.CAROTENE_GAMMA, 0.25),
+	// new NutrientAmount(Nutrient.CRYPTOXANTHIN_BETA, 0.25),
+]);
+
 
 // FOODS
 Food.OnionYellow = new Food('Yellow Onion', {
