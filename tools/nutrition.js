@@ -72,8 +72,8 @@ function main(){
 		pairs.push([elem, composition[elem], getElemColor(elem)]);
 	}
 	const [x, y, text] = [
-		Food.foods.map(food => food.nutrient(Nutrient.SUGAR)),
-		Food.foods.map(food => food.nutrient(Nutrient.FAT)),
+		Food.foods.map(food => food.nutrient(Nutrient.SODIUM)),
+		Food.foods.map(food => food.nutrient(Nutrient.POTASSIUM)),
 		Food.foods.map(food => food.name),
 	];
 	const scatterURL = 'chart.html?data=' + toURL({
