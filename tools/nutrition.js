@@ -1,4 +1,5 @@
-/* exported NUTRITION_LOADED, main */
+/* exported NUTRITION_LOADED, main*/
+/* global elementData, toURL */
 const MOLAR_MASS = {
 	H: 1.008,
 	C: 12.011,
@@ -19,6 +20,11 @@ const MOLAR_MASS = {
 	I: 126.9,
 };
 
+/** @param {string} symbol */
+function getElemColor(symbol){
+	return elementData.find(datum => datum.symbol === symbol).properties.modelColor;
+}
+
 function fancyList(header = '', items = [], headerLevel = 3, listType = 'ul'){
 	const container = document.createElement('div');
 	container.classList.add('fancyList');
@@ -31,7 +37,7 @@ function fancyList(header = '', items = [], headerLevel = 3, listType = 'ul'){
 	container.appendChild(l);
 	items.forEach(item => {
 		const li = document.createElement('li');
-		li.innerHTML = item;
+		li.appendChild(typeof item === 'string' ? document.createTextNode(item) : item);
 		l.appendChild(li);
 	});
 	return container;
@@ -39,14 +45,18 @@ function fancyList(header = '', items = [], headerLevel = 3, listType = 'ul'){
 
 function main(){
 	// foods
-	// todo
+	const foodContainer = document.getElementById('food');
+	foodContainer.innerHTML = '';
+	foodContainer.appendChild(fancyList('Foods',
+		Food.foods.map(food => food.linkShowPie)
+	));
 	// list of todo
 	const todoContainer = document.getElementById('todo');
 	todoContainer.innerHTML = '';
 	todoContainer.appendChild(fancyList('Missing Densities',
 		Nutrient.nutrients
 			.filter(nutrient => nutrient.density === 1)
-			.map(nutrient => nutrient.a.outerHTML)
+			.map(nutrient => nutrient.a)
 	));
 	// done
 	console.info('nutrition.js ran successfully');
@@ -175,10 +185,33 @@ class Food extends SourcedObject {
 	get unitMass(){
 		return this.properties.unitMass || 100;
 	}
+	// HTML crap
+	get linkShowPie(){
+		const elem = document.createElement('span');
+		elem.classList.add('button');
+		elem.innerHTML = this.name;
+		elem.onclick = () => this.showPie();
+		return elem;
+	}
+	// methods
 	/** @param {Nutrient} n */
 	nutrient(n){
 		// eslint-disable-next-line max-len
 		return (maybe_n => maybe_n ? maybe_n.amount : 0)(this.nutrients.find(na => na.nutrient === n));
+	}
+	showPie(){
+		const composition = this.composition;
+		const pairs = [];
+		for (const elem in composition){
+			pairs.push([elem, composition[elem], getElemColor(elem)]);
+		}
+		const pieURL = 'chart.html?data=' + toURL({
+			type: 'pie',
+			pairs,
+			labels: true,
+		});
+		document.getElementById('pie').src = pieURL;
+		console.info(`nutrition.js displaying composition of ${this.name}`);
 	}
 }
 /** @type {Food[]} */

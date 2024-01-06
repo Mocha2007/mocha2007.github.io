@@ -1,9 +1,17 @@
 <!DOCTYPE html>
+<script src="chart.js" async></script>
+<script src="../elements/elementData.js" async></script>
 <script src="nutrition.js" async></script>
+<link href="tool.css" type="text/css" rel="stylesheet">
+<link href="../css/button.css" type="text/css" rel="stylesheet">
+<title>nutrition.js</title>
 <body onload="main();">
 	<h1>nutrition.js</h1>
-	<h2>FoodList</h2>
-	<div id="foods"></div>
+	<iframe id="scatter">
+		<!-- todo scatter plot of... idk... sugar:fat ratio??? -->
+	</iframe>
+	<div id="food"></div>
+	<iframe id="pie"></iframe>
 	<h2>TODO LIST</h2>
 	<div id="todo"></div>
 </body>
