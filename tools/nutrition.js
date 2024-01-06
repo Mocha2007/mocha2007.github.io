@@ -1,3 +1,4 @@
+/* exported todo */
 const MOLAR_MASS = {
 	H: 1.008,
 	C: 12.011,
@@ -17,6 +18,35 @@ const MOLAR_MASS = {
 	Mo: 95.95,
 	I: 126.9,
 };
+
+function fancyList(header = '', items = [], headerLevel = 3, listType = 'ul'){
+	const container = document.createElement('div');
+	container.classList.add('fancyList');
+	// header
+	const h = document.createElement('h' + headerLevel);
+	h.innerHTML = header;
+	container.appendChild(h);
+	// list
+	const l = document.createElement(listType);
+	container.appendChild(l);
+	items.forEach(item => {
+		const li = document.createElement('li');
+		li.innerHTML = item;
+		l.appendChild(li);
+	});
+	return container;
+}
+
+function todo(){
+	const todoContainer = document.getElementById('todo');
+	todoContainer.innerHTML = '';
+	todoContainer.appendChild(fancyList('Missing Densities',
+		Nutrient.nutrients
+			.filter(nutrient => nutrient.density === 1)
+			.map(nutrient => nutrient.a.outerHTML)
+	));
+	console.info('todo @ nutrition.js ran successfully');
+}
 
 
 class SourcedObject {
@@ -41,13 +71,14 @@ class Nutrient extends SourcedObject {
 	/**
 	 * @param {string} name
 	 * @param {{string: number}} composition
-	 * @param {number} density g/cm^3
+	 * @param {number} density g/cm^3 - as close to 37C @ 1 atm as I can find...
 	 * @param {string?} source URL
 	 */
 	constructor(name, composition, density = 1, source = undefined){
 		super(name, source);
 		this.compositionAmt = composition;
 		this.density = density;
+		Nutrient.nutrients.push(this);
 	}
 	get composition(){
 		const MM = this.molarMass;
@@ -63,6 +94,8 @@ class Nutrient extends SourcedObject {
 		return s;
 	}
 }
+/** @type {Nutrient[]} */
+Nutrient.nutrients = [];
 
 
 class NutrientAmount {
@@ -123,7 +156,7 @@ class Food extends SourcedObject {
 
 
 // NUTRIENTS
-Nutrient.WATER = new Nutrient('Water', {H: 2, O: 1});
+Nutrient.WATER = new Nutrient('Water', {H: 2, O: 1}, 0.99336);
 Nutrient.PROTEIN = new Nutrient('Protein', {C: 6, H: 14, N: 2, O: 2}); // Lysine
 Nutrient.FAT = new Nutrient('Fat', {C: 18, H: 36, O: 2}); // Stearic Acid
 Nutrient.FIBER = new Nutrient('Fiber', {C: 12, H: 20, O: 10}); // Cellulose
@@ -203,3 +236,5 @@ Food.PotatoSweet = new Food('Sweet Potato', {
 		new NutrientAmount(Nutrient.K, 0.2e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2346404/nutrients');
+
+const NUTRITION_LOADED = true;
