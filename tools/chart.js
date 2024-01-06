@@ -213,11 +213,14 @@ function scatter(){
 */
 
 function pie(){
+	const SMALL_SECTOR_LABEL_CULL = 0.001;
+	const LABEL_DIST = 1.1;
+	const GLOBAL_SCALE = 1/LABEL_DIST;
 	const data = getData(); // data is X:val, Y:val, Z:val, ...
 	/** @type {SVGElement} */
 	const chart = document.getElementById('chart');
 	chart.setAttribute('viewBox', `${-sizeX/2} ${-sizeY/2} ${sizeX} ${sizeY}`);
-	const PIE_RADIUS = Math.min(sizeX, sizeY)/2;
+	const PIE_RADIUS = GLOBAL_SCALE * Math.min(sizeX, sizeY)/2;
 	const total = data.pairs.map(p => p[1]).reduce((a, b) => a+b, 0);
 	// main
 	let startTheta = 0;
@@ -232,12 +235,30 @@ function pie(){
 		// https://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands
 		sector.setAttribute('d', `M 0 0 ${x0} ${y0} A ${PIE_RADIUS} ${PIE_RADIUS} 0 ${LARGE_ARC_FLAG} ${SWEEP_FLAG} ${x1} ${y1} Z`);
 		sector.setAttribute('fill', pair[2] || pie.colors[i++ % pie.colors.length]);
+		//  stroke="#000" stroke-width="2"
+		sector.setAttribute('stroke', 'black');
+		sector.setAttribute('stroke-width', 1);
 		chart.appendChild(sector);
 		startTheta += theta;
 		// todo label
-		if (!data.labels)
+		if (!data.labels || fraction < SMALL_SECTOR_LABEL_CULL)
 			return;
+		const thetac = startTheta - theta/2;
+		const [xc, yc] = [LABEL_DIST*PIE_RADIUS*Math.cos(thetac),
+			LABEL_DIST*PIE_RADIUS*-Math.sin(thetac)];
 		const label = createSvgElement('text');
+		label.classList.add('label');
+		label.setAttribute('x', xc);
+		label.setAttribute('y', yc);
+		label.innerHTML = pair[0];
+		chart.appendChild(label);
+		// value label
+		const value = createSvgElement('text');
+		value.classList.add('value');
+		value.setAttribute('x', xc);
+		value.setAttribute('y', yc + 10);
+		value.innerHTML = Math.round(1000 * fraction)/10 + '%';
+		chart.appendChild(value);
 	});
 }
 pie.colors = ['blue', 'red', 'yellow', 'green']; // todo
