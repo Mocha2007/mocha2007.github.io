@@ -149,6 +149,9 @@ function main(){
 		case 'bar':
 			bar();
 			break;
+		case 'pie':
+			pie();
+			break;
 		case 'scatter':
 			scatter();
 			break;
@@ -207,6 +210,44 @@ function scatter(){
   labels: true, // optional, default: false
   radius: 1, // optional, default: 3
 }
+*/
+
+function pie(){
+	const data = getData(); // data is X:val, Y:val, Z:val, ...
+	/** @type {SVGElement} */
+	const chart = document.getElementById('chart');
+	chart.setAttribute('viewBox', `${-sizeX/2} ${-sizeY/2} ${sizeX} ${sizeY}`);
+	const PIE_RADIUS = Math.min(sizeX, sizeY)/2;
+	const total = data.pairs.map(p => p[1]).reduce((a, b) => a+b, 0);
+	// main
+	let startTheta = 0;
+	data.pairs.forEach((pair, i) => {
+		const sector = createSvgElement('path');
+		const fraction = pair[1] / total;
+		const theta = 2*Math.PI*fraction;
+		const endTheta = startTheta + theta;
+		const [x0, y0] = [PIE_RADIUS*Math.cos(startTheta), PIE_RADIUS*-Math.sin(startTheta)];
+		const [x1, y1] = [PIE_RADIUS*Math.cos(endTheta), PIE_RADIUS*-Math.sin(endTheta)];
+		const [LARGE_ARC_FLAG, SWEEP_FLAG] = [+(0.5 < fraction), 0];
+		// https://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands
+		sector.setAttribute('d', `M 0 0 ${x0} ${y0} A ${PIE_RADIUS} ${PIE_RADIUS} 0 ${LARGE_ARC_FLAG} ${SWEEP_FLAG} ${x1} ${y1} Z`);
+		sector.setAttribute('fill', pair[2] || pie.colors[i++ % pie.colors.length]);
+		chart.appendChild(sector);
+		startTheta += theta;
+		// todo label
+		if (!data.labels)
+			return;
+		const label = createSvgElement('text');
+	});
+}
+pie.colors = ['blue', 'red', 'yellow', 'green']; // todo
+/*
+{
+  type: 'pie',
+  pairs: [['x', 1, 'black'], ['y', 2], ['z', 3], ...],
+  labels: true, // optional, default: false
+}
+(you can override individual colors by specifying them in the tuple)
 */
 
 function toURL(data){
