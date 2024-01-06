@@ -1,4 +1,4 @@
-/* exported NUTRITION_LOADED, todo */
+/* exported NUTRITION_LOADED, main */
 const MOLAR_MASS = {
 	H: 1.008,
 	C: 12.011,
@@ -37,7 +37,10 @@ function fancyList(header = '', items = [], headerLevel = 3, listType = 'ul'){
 	return container;
 }
 
-function todo(){
+function main(){
+	// foods
+	// todo
+	// list of todo
 	const todoContainer = document.getElementById('todo');
 	todoContainer.innerHTML = '';
 	todoContainer.appendChild(fancyList('Missing Densities',
@@ -45,7 +48,8 @@ function todo(){
 			.filter(nutrient => nutrient.density === 1)
 			.map(nutrient => nutrient.a.outerHTML)
 	));
-	console.info('todo @ nutrition.js ran successfully');
+	// done
+	console.info('nutrition.js ran successfully');
 }
 
 
@@ -203,9 +207,11 @@ Nutrient.SELENIUM = new Nutrient('Selenium', {Se: 1});
 Nutrient.MOLYBDENUM = new Nutrient('Molybdenum', {Mo: 1});
 Nutrient.VITAMIN_C = new Nutrient('Vitamin C', {C: 6, H: 8, O: 6}, 1.694);
 Nutrient.THIAMIN = new Nutrient('Vitamin B1 (Thiamin)', {C: 12, H: 17, N: 4, O: 1, S: 1});
+Nutrient.RIBOFLAVIN = new Nutrient('Vitamin B2 (Riboflavin)', {C: 17, H: 20, N: 4, O: 6});
 Nutrient.NIACIN = new Nutrient('Vitamin B3 (Niacin)', {C: 6, H: 5, N: 1, O: 2}, 1.473, 'https://en.wikipedia.org/wiki/Vitamin_B3');
 Nutrient.B6 = new Nutrient('Vitamin B6', {C: 8, H: 10, N: 1, O: 6, P: 1}, 1.638); // Pyridoxal Phosphate
 Nutrient.BIOTIN = new Nutrient('Vitamin B7 (Biotin)', {C: 10, H: 16, N: 2, O: 3, S: 1});
+Nutrient.FOLATE = new Nutrient('Vitamin B9 (Folate)', {C: 19, H: 19, N: 7, O: 6}, 1.6, 'https://en.wikipedia.org/wiki/Folate');
 Nutrient.K = new Nutrient('Vitamin K', {C: 31, H: 46, O: 2}); // Phytomenadione
 
 
@@ -263,5 +269,30 @@ Food.PotatoSweet = new Food('Sweet Potato', {
 		new NutrientAmount(Nutrient.K, 0.2e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2346404/nutrients');
+Food.Carrot = new Food('Carrot', {
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 87.7),
+		new NutrientAmount(Nutrient.PROTEIN, 0.94),
+		new NutrientAmount(Nutrient.FAT, 0.35),
+		new NutrientAmount(Nutrient.FIBER, 3.1),
+		new NutrientAmount(Nutrient.SUGAR, 10.3 - 3.1),
+		new NutrientAmount(Nutrient.CALCIUM, 30e-3),
+		new NutrientAmount(Nutrient.IRON, 0.15e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 12.4e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 40e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 280e-3),
+		new NutrientAmount(Nutrient.SODIUM, 87e-3),
+		new NutrientAmount(Nutrient.ZINC, 0.24e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.061e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 0.13e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 2.5e-6),
+		new NutrientAmount(Nutrient.THIAMIN, 0.065e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.095e-3),
+		new NutrientAmount(Nutrient.NIACIN, 1.41e-3),
+		new NutrientAmount(Nutrient.B6, 0.146e-3),
+		new NutrientAmount(Nutrient.BIOTIN, 2.22e-6),
+		new NutrientAmount(Nutrient.FOLATE, 37e-6),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2258586/nutrients');
 
 const NUTRITION_LOADED = true;
