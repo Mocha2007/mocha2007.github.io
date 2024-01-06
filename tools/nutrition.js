@@ -335,10 +335,17 @@ Food.foods = [];
 
 // NUTRIENTS
 Nutrient.WATER = new Nutrient('Water', {H: 2, O: 1}, 0.99336);
+Nutrient.NITROGEN = new Nutrient('Nitrogen', {N: 2}); // ???
 Nutrient.PROTEIN = new Nutrient('Protein', {C: 6, H: 13, N: 1, O: 2}, 1.5); // Leucine
 Nutrient.FAT = new Nutrient('Fat', {C: 18, H: 36, O: 2}, 0.895); // Stearic Acid
+Nutrient.ASH = new Nutrient('Ash', {K: 2, C: 1, O: 3}); // ???
 Nutrient.FIBER = new Nutrient('Fiber', {C: 12, H: 20, O: 10}, 1.5); // Cellulose
-Nutrient.SUGAR = new Nutrient('Sugar', {C: 6, H: 12, O: 6}, 1.54); // Glucose
+Nutrient.SUGAR = new Nutrient('Sugar (Unspecified)', {C: 6, H: 12, O: 6}, 1.55);
+Nutrient.SUCROSE = new Nutrient('Sucrose', {C: 12, H: 22, O: 11}, 1.587);
+Nutrient.GLUCOSE = new Nutrient('Glucose', {C: 6, H: 12, O: 6}, 1.54);
+Nutrient.FRUCTOSE = new Nutrient('Fructose', {C: 6, H: 12, O: 6}, 1.694);
+Nutrient.LACTOSE = new Nutrient('Lactose', {C: 12, H: 22, O: 11}, 1.525);
+Nutrient.MALTOSE = new Nutrient('Maltose', {C: 12, H: 22, O: 11}, 1.54);
 Nutrient.STARCH = new Nutrient('Starch', {C: 6, H: 10, O: 5});
 Nutrient.ALCOHOL = new Nutrient('Alcohol', {C: 2, H: 6, O: 1}, 0.78945, 'https://en.wikipedia.org/wiki/Ethanol'); // Ethanol
 
@@ -364,10 +371,30 @@ Nutrient.BIOTIN = new Nutrient('Vitamin B7 (Biotin)', {C: 10, H: 16, N: 2, O: 3,
 Nutrient.FOLATE = new Nutrient('Vitamin B9 (Folate)', {C: 19, H: 19, N: 7, O: 6}, 1.6, 'https://en.wikipedia.org/wiki/Folate');
 Nutrient.CAROTENE_BETA = new Nutrient('β-Carotene', {C: 40, H: 56}, 1, 'https://en.wikipedia.org/wiki/%CE%92-Carotene');
 Nutrient.VITAMIN_E = new Nutrient('Vitamin E', {C: 29, H: 50, O: 2}, 0.95, 'https://en.wikipedia.org/wiki/Vitamin_E'); // α-Tocopherol
-Nutrient.VITAMIN_K = new Nutrient('Vitamin K', {C: 31, H: 46, O: 2}); // Phytomenadione
+Nutrient.PHYLLOQUINONE = new Nutrient('Phytomenadione', {C: 31, H: 46, O: 2}); // Phytomenadione
+Nutrient.DIHYDROPHYLLOQUINONE = new Nutrient('Dihydrophylloquinone', {C: 31, H: 50, O: 4}); // ???
+Nutrient.MENAQUINONE_4 = new Nutrient('Menatetrenone', {C: 31, H: 40, O: 2});
+
+NutrientGroup.SUGARS = new NutrientGroup('Sugars', [
+	new NutrientAmount(Nutrient.SUCROSE, 1),
+	new NutrientAmount(Nutrient.GLUCOSE, 1),
+	new NutrientAmount(Nutrient.FRUCTOSE, 1),
+	new NutrientAmount(Nutrient.LACTOSE, 1),
+	new NutrientAmount(Nutrient.MALTOSE, 1),
+	new NutrientAmount(Nutrient.SUGAR, 1),
+]);
+
+NutrientGroup.CALORIES_FROM_SUGAR = new NutrientGroup('Calories from Sugar', [
+	new NutrientAmount(Nutrient.SUCROSE, 3.943),
+	new NutrientAmount(Nutrient.GLUCOSE, 3.719),
+	new NutrientAmount(Nutrient.FRUCTOSE, 3.75),
+	new NutrientAmount(Nutrient.LACTOSE, 3.94),
+	new NutrientAmount(Nutrient.MALTOSE, 3.8), // unknown
+	new NutrientAmount(Nutrient.SUGAR, 3.8),
+]);
 
 NutrientGroup.CALORIES = new NutrientGroup('Calories', [
-	new NutrientAmount(Nutrient.SUGAR, 3.943), // glucose ~ 3.719; sucrose ~ 3.943; fructose ~ 3.75
+	new NutrientAmount(NutrientGroup.CALORIES_FROM_SUGAR, 1),
 	new NutrientAmount(Nutrient.FIBER, 2),
 	new NutrientAmount(Nutrient.STARCH, 4.1788), // heat of combustion
 	new NutrientAmount(Nutrient.FAT, 9),
@@ -376,7 +403,7 @@ NutrientGroup.CALORIES = new NutrientGroup('Calories', [
 ]);
 
 NutrientGroup.CARBOHYDRATES = new NutrientGroup('Carbohydrates', [
-	new NutrientAmount(Nutrient.SUGAR, 1),
+	new NutrientAmount(NutrientGroup.SUGARS, 1),
 	new NutrientAmount(Nutrient.FIBER, 1),
 	new NutrientAmount(Nutrient.STARCH, 1),
 ]);
@@ -389,6 +416,12 @@ NutrientGroup.VITAMIN_A = new NutrientGroup('Vitamin A', [
 	// new NutrientAmount(Nutrient.CRYPTOXANTHIN_BETA, 0.25),
 ]);
 
+NutrientGroup.VITAMIN_K = new NutrientGroup('Vitamin K', [
+	new NutrientAmount(Nutrient.PHYLLOQUINONE, 1),
+	new NutrientAmount(Nutrient.DIHYDROPHYLLOQUINONE, 1),
+	new NutrientAmount(Nutrient.MENAQUINONE_4, 1),
+]);
+
 
 // FOODS
 Food.OnionYellow = new Food('Yellow Onion', {
@@ -399,8 +432,13 @@ Food.OnionYellow = new Food('Yellow Onion', {
 		new NutrientAmount(Nutrient.WATER, 90.1),
 		new NutrientAmount(Nutrient.PROTEIN, 0.83),
 		new NutrientAmount(Nutrient.FAT, 0.05),
+		new NutrientAmount(Nutrient.ASH, 0.41),
 		new NutrientAmount(Nutrient.FIBER, 2.71),
-		new NutrientAmount(Nutrient.SUGAR, 5.82),
+		new NutrientAmount(Nutrient.SUCROSE, 1.6),
+		new NutrientAmount(Nutrient.GLUCOSE, 2.31),
+		new NutrientAmount(Nutrient.FRUCTOSE, 1.91),
+		new NutrientAmount(Nutrient.LACTOSE, 0.15),
+		new NutrientAmount(Nutrient.MALTOSE, 0.15),
 		new NutrientAmount(Nutrient.CALCIUM, 15e-3),
 		new NutrientAmount(Nutrient.IRON, 0.28e-3),
 		new NutrientAmount(Nutrient.MAGNESIUM, 9e-3),
@@ -422,10 +460,16 @@ Food.PotatoSweet = new Food('Sweet Potato', {
 	},
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 79.5),
+		new NutrientAmount(Nutrient.NITROGEN, 0.25),
 		new NutrientAmount(Nutrient.PROTEIN, 1.58),
 		new NutrientAmount(Nutrient.FAT, 0.38),
+		new NutrientAmount(Nutrient.ASH, 1.18),
 		new NutrientAmount(Nutrient.FIBER, 4.44),
-		new NutrientAmount(Nutrient.SUGAR, 6.06),
+		new NutrientAmount(Nutrient.SUCROSE, 3.06),
+		new NutrientAmount(Nutrient.GLUCOSE, 0.98),
+		new NutrientAmount(Nutrient.FRUCTOSE, 0.93),
+		new NutrientAmount(Nutrient.LACTOSE, 0.25),
+		new NutrientAmount(Nutrient.MALTOSE, 1.1),
 		new NutrientAmount(Nutrient.CALCIUM, 22e-3),
 		new NutrientAmount(Nutrient.IRON, 0.4e-3),
 		new NutrientAmount(Nutrient.MAGNESIUM, 19.1e-3),
@@ -441,14 +485,18 @@ Food.PotatoSweet = new Food('Sweet Potato', {
 		new NutrientAmount(Nutrient.THIAMIN, 0.045e-3),
 		new NutrientAmount(Nutrient.NIACIN, 0.432e-3),
 		new NutrientAmount(Nutrient.VITAMIN_B6, 0.124e-3),
-		new NutrientAmount(Nutrient.VITAMIN_K, 0.2e-6),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 0.2e-6),
+		new NutrientAmount(Nutrient.DIHYDROPHYLLOQUINONE, 0.1e-6),
+		new NutrientAmount(Nutrient.MENAQUINONE_4, 0.1e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2346404/nutrients');
 Food.Carrot = new Food('Carrot', {
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 87.7),
+		new NutrientAmount(Nutrient.NITROGEN, 0.15),
 		new NutrientAmount(Nutrient.PROTEIN, 0.94),
 		new NutrientAmount(Nutrient.FAT, 0.35),
+		new NutrientAmount(Nutrient.ASH, 0.72),
 		new NutrientAmount(Nutrient.FIBER, 3.1),
 		new NutrientAmount(Nutrient.SUGAR, 10.3 - 3.1),
 		new NutrientAmount(Nutrient.CALCIUM, 30e-3),
@@ -472,8 +520,10 @@ Food.Carrot = new Food('Carrot', {
 Food.Peanut = new Food('Peanut', {
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 4.82),
+		new NutrientAmount(Nutrient.NITROGEN, 4.25),
 		new NutrientAmount(Nutrient.PROTEIN, 23.2),
 		new NutrientAmount(Nutrient.FAT, 43.3),
+		new NutrientAmount(Nutrient.ASH, 2.2),
 		new NutrientAmount(Nutrient.FIBER, 8),
 		new NutrientAmount(Nutrient.SUGAR, 26.5 - 8),
 		new NutrientAmount(Nutrient.CALCIUM, 49e-3),
@@ -488,7 +538,12 @@ Food.Peanut = new Food('Peanut', {
 		new NutrientAmount(Nutrient.SELENIUM, 17.8e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2515376/nutrients');
-Food.Lime = new Food('Lime', {
+Food.Lime = new Food('Lime', { // todo create nutrient groups for all this other shit
+	measures: {
+		fruit: 65,
+		slice: 8,
+		cup: 200,
+	},
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 88.3),
 		new NutrientAmount(Nutrient.PROTEIN, 0.7),
@@ -519,8 +574,10 @@ Food.Lime = new Food('Lime', {
 Food.RiceWhite = new Food('White Rice', {
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 11.2),
+		new NutrientAmount(Nutrient.NITROGEN, 1.18),
 		new NutrientAmount(Nutrient.PROTEIN, 7.04),
 		new NutrientAmount(Nutrient.FAT, 1.03),
+		new NutrientAmount(Nutrient.ASH, 0.42),
 		new NutrientAmount(Nutrient.FIBER, 2.77),
 		new NutrientAmount(Nutrient.STARCH, 74.4),
 		new NutrientAmount(Nutrient.CALCIUM, 4e-3),
