@@ -14,6 +14,7 @@ const MOLAR_MASS = { // todo
 	Cu: 63.546,
 	Zn: 65.38,
 	Se: 78.971,
+	Mo: 95.95,
 	I: 126.9,
 };
 
@@ -115,8 +116,13 @@ Nutrient.COPPER = new Nutrient('Copper', {Cu: 1});
 Nutrient.MANGANESE = new Nutrient('Manganese', {Mn: 1});
 Nutrient.IODINE = new Nutrient('Iodine', {I: 1});
 Nutrient.SELENIUM = new Nutrient('Selenium', {Se: 1});
+Nutrient.MOLYBDENUM = new Nutrient('Molybdenum', {Mo: 1});
 Nutrient.VITAMIN_C = new Nutrient('Vitamin C', {C: 6, H: 8, O: 6});
+Nutrient.THIAMIN = new Nutrient('Vitamin B1 (Thiamin)', {C: 12, H: 17, N: 4, O: 1, S: 1});
+Nutrient.NIACIN = new Nutrient('Vitamin B3 (Niacin)', {C: 6, H: 5, N: 1, O: 2});
+Nutrient.B6 = new Nutrient('Vitamin B6', {C: 8, H: 10, N: 1, O: 6, P: 1}); // Pyridoxal Phosphate
 Nutrient.BIOTIN = new Nutrient('Vitamin B7 (Biotin)', {C: 10, H: 16, N: 2, O: 3, S: 1});
+Nutrient.K = new Nutrient('Vitamin K', {C: 31, H: 46, O: 2}); // Phytomenadione
 
 
 // FOODS
@@ -128,7 +134,6 @@ Food.OnionYellow = new Food('Yellow Onion', 'https://fdc.nal.usda.gov/fdc-app.ht
 		new NutrientAmount(Nutrient.WATER, 90.1),
 		new NutrientAmount(Nutrient.PROTEIN, 0.83),
 		new NutrientAmount(Nutrient.FAT, 0.05),
-		// new NutrientAmount(Nutrient.ASH, 0.41),
 		new NutrientAmount(Nutrient.FIBER, 2.71),
 		new NutrientAmount(Nutrient.SUGAR, 5.82),
 		new NutrientAmount(Nutrient.CALCIUM, 15e-3),
@@ -144,5 +149,33 @@ Food.OnionYellow = new Food('Yellow Onion', 'https://fdc.nal.usda.gov/fdc-app.ht
 		new NutrientAmount(Nutrient.SELENIUM, 2.5e-6),
 		new NutrientAmount(Nutrient.VITAMIN_C, 8.2e-3),
 		new NutrientAmount(Nutrient.BIOTIN, 0.004e-6),
+	],
+});
+Food.PotatoSweet = new Food('Sweet Potato', 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2346404/nutrients', {
+	measures: {
+		unit: 271, // self-measurement
+	},
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 79.5),
+		new NutrientAmount(Nutrient.PROTEIN, 1.58),
+		new NutrientAmount(Nutrient.FAT, 0.38),
+		new NutrientAmount(Nutrient.FIBER, 4.44),
+		new NutrientAmount(Nutrient.SUGAR, 6.06),
+		new NutrientAmount(Nutrient.CALCIUM, 22e-3),
+		new NutrientAmount(Nutrient.IRON, 0.4e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 19.1e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 37e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 486e-3),
+		new NutrientAmount(Nutrient.SODIUM, 2.5e-3),
+		new NutrientAmount(Nutrient.ZINC, 0.34e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.187e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 0.417e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 2.5e-6),
+		new NutrientAmount(Nutrient.MOLYBDENUM, 2.5e-6),
+		new NutrientAmount(Nutrient.VITAMIN_C, 14.8e-3),
+		new NutrientAmount(Nutrient.THIAMIN, 0.045e-3),
+		new NutrientAmount(Nutrient.NIACIN, 0.432e-3),
+		new NutrientAmount(Nutrient.B6, 0.124e-3),
+		new NutrientAmount(Nutrient.K, 0.2e-6),
 	],
 });
