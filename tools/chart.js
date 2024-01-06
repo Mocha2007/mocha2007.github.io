@@ -16,7 +16,7 @@ function bar(){
 	const yScale = sizeY / maxY * 0.85;
 
 	/** @type {[*, number][]} */
-	let xxyy = data.x.map((x, i) => [x, round(data.y[i]/divisor, 1)]);
+	let xxyy = data.x.map((x, i) => [x, data.round ? round(data.y[i]/divisor, 1) : data.y[i]]);
 	if (data.pruneY)
 		xxyy = xxyy.filter(xy => !(xy[1] < data.pruneY));
 	if (data.sort)
@@ -75,6 +75,7 @@ function charHisto(s){
 		percent: true,
 		reverse: true,
 		sort: true,
+		round: true,
 		type: 'bar',
 		x,
 		y,
@@ -111,6 +112,7 @@ function histo(d, sort, reverse, pruneY, maxBars){
 		reverse,
 		sort,
 		sortX: !sort,
+		round: true,
 		type: 'bar',
 		x,
 		y,
@@ -134,6 +136,7 @@ function histo2(xy, sort, reverse, pruneY, maxBars){
 		reverse,
 		sort,
 		sortX: !sort,
+		round: true,
 		type: 'bar',
 		x,
 		y,

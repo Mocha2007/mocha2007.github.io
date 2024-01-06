@@ -1,5 +1,5 @@
 /* exported NUTRITION_LOADED, main, SCATTER_CONTROL */
-/* global elementData, histo2, toURL */
+/* global elementData, toURL */
 const MOLAR_MASS = {
 	H: 1.008,
 	C: 12.011,
@@ -199,13 +199,25 @@ class Nutrient extends SourcedObject {
 	}
 	// methods
 	showBar(){
-		const xy = [];
+		const x = [], y = [];
 		Food.foods.forEach(food => {
-			const y = food.nutrient(this);
-			if (y)
-				xy.push([food.name, y]);
+			const fy = food.nutrient(this);
+			console.debug(food.name, fy, this.name);
+			if (fy){
+				x.push(food.name);
+				y.push(fy);
+			}
 		});
-		const barURL = 'chart.html?data=' + histo2(xy, true, true, Number.MIN_VALUE, 20);
+		const data = {
+			pruneY: Number.MIN_VALUE,
+			reverse: true,
+			sort: true,
+			type: 'bar',
+			x,
+			y,
+			maxBars: 20,
+		};
+		const barURL = 'chart.html?data=' + toURL(data);
 		document.getElementById('bar').src = barURL;
 		console.info(`nutrition.js displaying foods rich in ${this.name}`);
 	}
@@ -416,6 +428,18 @@ NutrientGroup.VITAMIN_A = new NutrientGroup('Vitamin A', [
 	// new NutrientAmount(Nutrient.CAROTENE_ALPHA, 0.25),
 	// new NutrientAmount(Nutrient.CAROTENE_GAMMA, 0.25),
 	// new NutrientAmount(Nutrient.CRYPTOXANTHIN_BETA, 0.25),
+]);
+
+NutrientGroup.VITAMIN_B = new NutrientGroup('Vitamin B (total)', [
+	new NutrientAmount(Nutrient.THIAMIN, 1),
+	new NutrientAmount(Nutrient.RIBOFLAVIN, 1),
+	new NutrientAmount(Nutrient.NIACIN, 1),
+	new NutrientAmount(Nutrient.CHOLINE, 1),
+	// new NutrientAmount(Nutrient.PANTOTHENIC_ACID, 1),
+	new NutrientAmount(Nutrient.VITAMIN_B6, 1),
+	new NutrientAmount(Nutrient.BIOTIN, 1),
+	new NutrientAmount(Nutrient.FOLATE, 1),
+	// new NutrientAmount(Nutrient.VITAMIN_B12, 1),
 ]);
 
 NutrientGroup.VITAMIN_K = new NutrientGroup('Vitamin K', [
