@@ -1,4 +1,4 @@
-/* exported NUTRITION_LOADED, main*/
+/* exported NUTRITION_LOADED, main, SCATTER_CONTROL */
 /* global elementData, histo2, toURL */
 const MOLAR_MASS = {
 	H: 1.008,
@@ -43,6 +43,32 @@ function fancyList(header = '', items = [], headerLevel = 3, listType = 'ul'){
 	return container;
 }
 
+/**
+ * @param {Nutrient} nutrient_x
+ * @param {Nutrient} nutrient_y
+ */
+function showScatter(nutrient_x, nutrient_y){
+	const composition = this.composition;
+	const pairs = [];
+	for (const elem in composition){
+		pairs.push([elem, composition[elem], getElemColor(elem)]);
+	}
+	const [x, y, text] = [
+		Food.foods.map(food => food.nutrient(nutrient_x)),
+		Food.foods.map(food => food.nutrient(nutrient_y)),
+		Food.foods.map(food => food.name),
+	];
+	const scatterURL = 'chart.html?data=' + toURL({
+		type: 'scatter',
+		x,
+		y,
+		text,
+		fill: 'green',
+		labels: true,
+	});
+	document.getElementById('scatter').src = scatterURL;
+}
+
 function main(){
 	// foods
 	Food.foods.sort((a, b) => a.name < b.name ? -1 : 1);
@@ -66,31 +92,54 @@ function main(){
 			.map(nutrient => nutrient.a)
 	));
 	// scatter
-	const composition = this.composition;
-	const pairs = [];
-	for (const elem in composition){
-		pairs.push([elem, composition[elem], getElemColor(elem)]);
-	}
-	const [x, y, text] = [
-		Food.foods.map(food => food.nutrient(Nutrient.SODIUM)),
-		Food.foods.map(food => food.nutrient(Nutrient.POTASSIUM)),
-		Food.foods.map(food => food.name),
-	];
-	const scatterURL = 'chart.html?data=' + toURL({
-		type: 'scatter',
-		x,
-		y,
-		text,
-		fill: 'green',
-		labels: true,
-	});
-	document.getElementById('scatter').src = scatterURL;
+	SCATTER_CONTROL.init();
 	// defaults...
 	Food.OnionYellow.showPie();
 	Nutrient.POTASSIUM.showBar();
 	// done
 	console.info('nutrition.js ran successfully');
 }
+
+const SCATTER_CONTROL = {
+	elem: {
+		/** @returns {HTMLSelectElement} */
+		get x(){
+			return document.getElementById('nutrientX');
+		},
+		/** @returns {HTMLSelectElement} */
+		get y(){
+			return document.getElementById('nutrientY');
+		},
+	},
+	/** @type {Nutrient} */
+	x: undefined,
+	/** @type {Nutrient} */
+	y: undefined,
+	init(){
+		// add nutrients to selectors...
+		Nutrient.nutrients.forEach(nutrient => {
+			[this.elem.x, this.elem.y].forEach((selector, i) => {
+				const option = document.createElement('option');
+				option.innerHTML = option.value = nutrient.name;
+				option.id = `SELECTOR_${i}_${nutrient.name}`;
+				selector.appendChild(option);
+			});
+		});
+		document.getElementById('SELECTOR_0_Sodium').selected = 'selected';
+		document.getElementById('SELECTOR_1_Potassium').selected = 'selected';
+		this.reread();
+	},
+	reread(){
+		// reread x
+		this.x = Nutrient.fromString(this.elem.x.value);
+		this.y = Nutrient.fromString(this.elem.y.value);
+		// reread y
+		this.update();
+	},
+	update(){
+		showScatter(this.x, this.y);
+	},
+};
 
 
 class SourcedObject {
@@ -157,6 +206,11 @@ class Nutrient extends SourcedObject {
 		const barURL = 'chart.html?data=' + histo2(xy, true, true, Number.MIN_VALUE, 20);
 		document.getElementById('bar').src = barURL;
 		console.info(`nutrition.js displaying foods rich in ${this.name}`);
+	}
+	// static
+	/** @param {string} s */
+	static fromString(s){
+		return Nutrient.nutrients.find(nutrient => nutrient.name === s);
 	}
 }
 /** @type {Nutrient[]} */

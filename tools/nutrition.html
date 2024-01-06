@@ -8,7 +8,11 @@
 <title>nutrition.js</title>
 <body onload="main();">
 	<h1>nutrition.js</h1>
-	<h2>Sodium-Potassium plane</h2>
+	<h2>Nutrient Plane</h2>
+	<div id="scatterControls" onclick="SCATTER_CONTROL.reread();">
+		<label>x-Axis: <select title="type" name="type" id="nutrientX"></select></label>
+		<label>y-Axis: <select title="type" name="type" id="nutrientY"></select></label>
+	</div>
 	<iframe id="scatter" scrolling="no"></iframe>
 	<div id="food"></div>
 	<iframe id="pie" scrolling="no"></iframe>
