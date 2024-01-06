@@ -45,6 +45,7 @@ function fancyList(header = '', items = [], headerLevel = 3, listType = 'ul'){
 
 function main(){
 	// foods
+	Food.foods.sort((a, b) => a.name < b.name ? -1 : 1);
 	const foodContainer = document.getElementById('food');
 	foodContainer.innerHTML = '';
 	foodContainer.appendChild(fancyList('Foods',
@@ -347,5 +348,24 @@ Food.Carrot = new Food('Carrot', {
 		new NutrientAmount(Nutrient.FOLATE, 37e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2258586/nutrients');
+Food.Peanut = new Food('Peanut', {
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 4.82),
+		new NutrientAmount(Nutrient.PROTEIN, 23.2),
+		new NutrientAmount(Nutrient.FAT, 43.3),
+		new NutrientAmount(Nutrient.FIBER, 8),
+		new NutrientAmount(Nutrient.SUGAR, 26.5 - 8),
+		new NutrientAmount(Nutrient.CALCIUM, 49e-3),
+		new NutrientAmount(Nutrient.IRON, 1.55e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 180e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 380e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 636e-3),
+		new NutrientAmount(Nutrient.SODIUM, 1e-3),
+		new NutrientAmount(Nutrient.ZINC, 2.78e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.46e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 1.68e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 17.8e-6),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2515376/nutrients');
 
 const NUTRITION_LOADED = true;
