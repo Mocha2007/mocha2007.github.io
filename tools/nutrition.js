@@ -570,7 +570,7 @@ Food.Lime = new Food('Lime', { // todo create nutrient groups for all this other
 		new NutrientAmount(Nutrient.CHOLINE, 5.1e-3),
 		new NutrientAmount(Nutrient.CAROTENE_BETA, 30e-6),
 		new NutrientAmount(Nutrient.VITAMIN_E, 0.22e-3),
-		new NutrientAmount(Nutrient.VITAMIN_K, 0.6e-6),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 0.6e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344664/nutrients');
 Food.RiceWhite = new Food('White Rice', {
