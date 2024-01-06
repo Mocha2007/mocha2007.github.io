@@ -1,4 +1,4 @@
-/* exported todo */
+/* exported NUTRITION_LOADED, todo */
 const MOLAR_MASS = {
 	H: 1.008,
 	C: 12.011,
@@ -77,6 +77,7 @@ class Nutrient extends SourcedObject {
 	constructor(name, composition, density = 1, source = undefined){
 		super(name, source);
 		this.compositionAmt = composition;
+		/** @type {number} g/cm^3 */
 		this.density = density;
 		Nutrient.nutrients.push(this);
 	}
@@ -119,6 +120,7 @@ class Food extends SourcedObject {
 	constructor(name, properties, source){
 		super(name, source);
 		this.properties = properties;
+		Food.foods.push(this);
 	}
 	get composition(){
 		const c = {};
@@ -141,6 +143,11 @@ class Food extends SourcedObject {
 			c[nutrient] = COMPOSITION[nutrient] * this.measures.unit;
 		return c;
 	}
+	get densityEstimate(){
+		return this.nutrients
+			.map(na => na.nutrient.density * na.amount / this.unitMass)
+			.reduce((a, b) => a+b, 0);
+	}
 	get measures(){
 		return this.properties.measures;
 	}
@@ -153,14 +160,16 @@ class Food extends SourcedObject {
 		return this.properties.unitMass || 100;
 	}
 }
+/** @type {Food[]} */
+Food.foods = [];
 
 
 // NUTRIENTS
 Nutrient.WATER = new Nutrient('Water', {H: 2, O: 1}, 0.99336);
-Nutrient.PROTEIN = new Nutrient('Protein', {C: 6, H: 14, N: 2, O: 2}); // Lysine
-Nutrient.FAT = new Nutrient('Fat', {C: 18, H: 36, O: 2}); // Stearic Acid
-Nutrient.FIBER = new Nutrient('Fiber', {C: 12, H: 20, O: 10}); // Cellulose
-Nutrient.SUGAR = new Nutrient('Sugar', {C: 6, H: 12, O: 6}); // Glucose
+Nutrient.PROTEIN = new Nutrient('Protein', {C: 6, H: 13, N: 1, O: 2}, 1.5); // Leucine
+Nutrient.FAT = new Nutrient('Fat', {C: 18, H: 36, O: 2}, 0.895); // Stearic Acid
+Nutrient.FIBER = new Nutrient('Fiber', {C: 12, H: 20, O: 10}, 1.5); // Cellulose
+Nutrient.SUGAR = new Nutrient('Sugar', {C: 6, H: 12, O: 6}, 1.54); // Glucose
 
 Nutrient.CALCIUM = new Nutrient('Calcium', {Ca: 1});
 Nutrient.IRON = new Nutrient('Iron', {Fe: 1});
@@ -174,10 +183,10 @@ Nutrient.MANGANESE = new Nutrient('Manganese', {Mn: 1});
 Nutrient.IODINE = new Nutrient('Iodine', {I: 1});
 Nutrient.SELENIUM = new Nutrient('Selenium', {Se: 1});
 Nutrient.MOLYBDENUM = new Nutrient('Molybdenum', {Mo: 1});
-Nutrient.VITAMIN_C = new Nutrient('Vitamin C', {C: 6, H: 8, O: 6});
+Nutrient.VITAMIN_C = new Nutrient('Vitamin C', {C: 6, H: 8, O: 6}, 1.694);
 Nutrient.THIAMIN = new Nutrient('Vitamin B1 (Thiamin)', {C: 12, H: 17, N: 4, O: 1, S: 1});
-Nutrient.NIACIN = new Nutrient('Vitamin B3 (Niacin)', {C: 6, H: 5, N: 1, O: 2});
-Nutrient.B6 = new Nutrient('Vitamin B6', {C: 8, H: 10, N: 1, O: 6, P: 1}); // Pyridoxal Phosphate
+Nutrient.NIACIN = new Nutrient('Vitamin B3 (Niacin)', {C: 6, H: 5, N: 1, O: 2}, 1.473, 'https://en.wikipedia.org/wiki/Vitamin_B3');
+Nutrient.B6 = new Nutrient('Vitamin B6', {C: 8, H: 10, N: 1, O: 6, P: 1}, 1.638); // Pyridoxal Phosphate
 Nutrient.BIOTIN = new Nutrient('Vitamin B7 (Biotin)', {C: 10, H: 16, N: 2, O: 3, S: 1});
 Nutrient.K = new Nutrient('Vitamin K', {C: 31, H: 46, O: 2}); // Phytomenadione
 
