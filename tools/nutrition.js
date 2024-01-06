@@ -1,5 +1,5 @@
 /* exported NUTRITION_LOADED, main*/
-/* global elementData, toURL */
+/* global elementData, histo2, toURL */
 const MOLAR_MASS = {
 	H: 1.008,
 	C: 12.011,
@@ -51,6 +51,12 @@ function main(){
 	foodContainer.appendChild(fancyList('Foods',
 		Food.foods.map(food => food.linkShowPie)
 	));
+	// nutrients
+	const nutrientContainer = document.getElementById('nutrient');
+	nutrientContainer.innerHTML = '';
+	nutrientContainer.appendChild(fancyList('Nutrients',
+		Nutrient.nutrients.map(nutrient => nutrient.linkShowBar)
+	));
 	// list of todo
 	const todoContainer = document.getElementById('todo');
 	todoContainer.innerHTML = '';
@@ -79,6 +85,9 @@ function main(){
 		labels: true,
 	});
 	document.getElementById('scatter').src = scatterURL;
+	// defaults...
+	Food.OnionYellow.showPie();
+	Nutrient.POTASSIUM.showBar();
 	// done
 	console.info('nutrition.js ran successfully');
 }
@@ -128,6 +137,26 @@ class Nutrient extends SourcedObject {
 		for (const elem in this.compositionAmt)
 			s += this.compositionAmt[elem] * MOLAR_MASS[elem];
 		return s;
+	}
+	// HTML crap
+	get linkShowBar(){
+		const elem = document.createElement('span');
+		elem.classList.add('button');
+		elem.innerHTML = this.name;
+		elem.onclick = () => this.showBar();
+		return elem;
+	}
+	// methods
+	showBar(){
+		const xy = [];
+		Food.foods.forEach(food => {
+			const y = food.nutrient(this);
+			if (y)
+				xy.push([food.name, y]);
+		});
+		const barURL = 'chart.html?data=' + histo2(xy, true, true, 0, 20);
+		document.getElementById('bar').src = barURL;
+		console.info(`nutrition.js displaying foods rich in ${this.name}`);
 	}
 }
 /** @type {Nutrient[]} */
