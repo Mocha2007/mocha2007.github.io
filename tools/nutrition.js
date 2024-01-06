@@ -1,4 +1,4 @@
-const MOLAR_MASS = { // todo
+const MOLAR_MASS = {
 	H: 1.008,
 	C: 12.011,
 	N: 14.007,
@@ -19,10 +19,35 @@ const MOLAR_MASS = { // todo
 };
 
 
-class Nutrient {
-	constructor(name, composition){
+class SourcedObject {
+	/**
+	 * @param {string} name
+	 * @param {string?} source URL
+	 */
+	constructor(name, source){
 		this.name = name;
+		this.source = source || `https://en.wikipedia.org/wiki/${name}`;
+	}
+	get a(){
+		const elem = document.createElement('a');
+		elem.innerHTML = this.name;
+		elem.href = this.source;
+		return elem;
+	}
+}
+
+
+class Nutrient extends SourcedObject {
+	/**
+	 * @param {string} name
+	 * @param {{string: number}} composition
+	 * @param {number} density g/cm^3
+	 * @param {string?} source URL
+	 */
+	constructor(name, composition, density = 1, source = undefined){
+		super(name, source);
 		this.compositionAmt = composition;
+		this.density = density;
 	}
 	get composition(){
 		const MM = this.molarMass;
@@ -52,15 +77,14 @@ class NutrientAmount {
 }
 
 
-class Food {
+class Food extends SourcedObject {
 	/**
 	 * @param {string} name
-	 * @param {string} source URL
 	 * @param {*} properties incl. composition := Nutrient[]
+	 * @param {string?} source URL
 	 */
-	constructor(name, source, properties){
-		this.name = name;
-		this.source = source;
+	constructor(name, properties, source){
+		super(name, source);
 		this.properties = properties;
 	}
 	get composition(){
@@ -126,7 +150,7 @@ Nutrient.K = new Nutrient('Vitamin K', {C: 31, H: 46, O: 2}); // Phytomenadione
 
 
 // FOODS
-Food.OnionYellow = new Food('Yellow Onion', 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/790646/nutrients', {
+Food.OnionYellow = new Food('Yellow Onion', {
 	measures: {
 		unit: 143,
 	},
@@ -150,8 +174,8 @@ Food.OnionYellow = new Food('Yellow Onion', 'https://fdc.nal.usda.gov/fdc-app.ht
 		new NutrientAmount(Nutrient.VITAMIN_C, 8.2e-3),
 		new NutrientAmount(Nutrient.BIOTIN, 0.004e-6),
 	],
-});
-Food.PotatoSweet = new Food('Sweet Potato', 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2346404/nutrients', {
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/790646/nutrients');
+Food.PotatoSweet = new Food('Sweet Potato', {
 	measures: {
 		unit: 271, // self-measurement
 	},
@@ -178,4 +202,4 @@ Food.PotatoSweet = new Food('Sweet Potato', 'https://fdc.nal.usda.gov/fdc-app.ht
 		new NutrientAmount(Nutrient.B6, 0.124e-3),
 		new NutrientAmount(Nutrient.K, 0.2e-6),
 	],
-});
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2346404/nutrients');
