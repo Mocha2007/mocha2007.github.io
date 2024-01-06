@@ -65,6 +65,8 @@ function showScatter(nutrient_x, nutrient_y){
 		text,
 		fill: 'green',
 		labels: true,
+		logx: true,
+		logy: true,
 	});
 	document.getElementById('scatter').src = scatterURL;
 }

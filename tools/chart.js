@@ -167,6 +167,11 @@ main.testData = {
 function scatter(){
 	const PADDING = 0.05;
 	const data = getData();
+	// log scaling?
+	if (data.logx)
+		data.x = data.x.map(Math.log).filter(isFinite);
+	if (data.logy)
+		data.y = data.y.map(Math.log).filter(isFinite);
 	/** @type {SVGElement} */
 	const chart = document.getElementById('chart');
 	chart.setAttribute('viewBox', `0 0 ${sizeX} ${sizeY}`);
@@ -212,8 +217,10 @@ function scatter(){
 				g.appendChild(labelElem);
 			}
 			// value
+			const valueFnX = data.logx ? Math.exp : vx => vx;
+			const valueFnY = data.logy ? Math.exp : vy => vy;
 			const valueElem = createSvgElement('text');
-			valueElem.innerHTML = `(${xy[0]}, ${xy[1]})`;
+			valueElem.innerHTML = `(${valueFnX(xy[0])}, ${valueFnY(xy[1])})`;
 			valueElem.classList.add('value');
 			valueElem.setAttribute('x', x);
 			valueElem.setAttribute('y', y + (LABEL ? 20 : 0) + 10);
@@ -230,6 +237,8 @@ function scatter(){
   fill: 'red', // optional, default: black
   labels: true, // optional, default: false
   radius: 1, // optional, default: 3
+  logx: true, // optional, whether to scale X axis logarithmically, default: false
+  logy: true, // optional, whether to scale Y axis logarithmically, default: false
 }
 */
 
