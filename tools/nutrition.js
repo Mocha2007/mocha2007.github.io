@@ -257,12 +257,12 @@ class Food extends SourcedObject {
 	get calories(){
 		return this.properties.calories !== undefined
 			? this.properties.calories
-			: 4 * this.nutrient(Nutrient.SUGAR)
+			: 3.95 * this.nutrient(Nutrient.SUGAR) // glucose ~ 3.719; sucrose ~ 3.943; fructose ~ 3.75
 			+ 2 * this.nutrient(Nutrient.FIBER)
-			+ 3.75 * this.nutrient(Nutrient.STARCH) // guess
+			+ 4.1788 * this.nutrient(Nutrient.STARCH) // heat of combustion
 			+ 9 * this.nutrient(Nutrient.FAT)
 			+ 4 * this.nutrient(Nutrient.PROTEIN)
-			+ 7 * this.nutrient(Nutrient.ALCOHOL);
+			+ 7.112 * this.nutrient(Nutrient.ALCOHOL); // ditto
 	}
 	get carbs(){
 		return this.nutrient(Nutrient.SUGAR) + this.nutrient(Nutrient.FIBER);
