@@ -202,7 +202,7 @@ class Nutrient extends SourcedObject {
 		const x = [], y = [];
 		Food.foods.forEach(food => {
 			const fy = food.nutrient(this);
-			console.debug(food.name, fy, this.name);
+			// console.debug(food.name, fy, this.name);
 			if (fy){
 				x.push(food.name);
 				y.push(fy);
@@ -326,7 +326,7 @@ class Food extends SourcedObject {
 		if (n instanceof NutrientGroup)
 			return n.value(this);
 		// eslint-disable-next-line max-len
-		return (maybe_n => maybe_n ? maybe_n.amount : 0)(this.nutrients.find(na => na.nutrient === n));
+		return (maybe_n => maybe_n ? maybe_n.amount / this.unitMass : 0)(this.nutrients.find(na => na.nutrient === n));
 	}
 	showPie(){
 		const composition = this.composition;
