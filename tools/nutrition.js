@@ -346,10 +346,13 @@ Nutrient.VITAMIN_C = new Nutrient('Vitamin C', {C: 6, H: 8, O: 6}, 1.694);
 Nutrient.THIAMIN = new Nutrient('Vitamin B1 (Thiamin)', {C: 12, H: 17, N: 4, O: 1, S: 1});
 Nutrient.RIBOFLAVIN = new Nutrient('Vitamin B2 (Riboflavin)', {C: 17, H: 20, N: 4, O: 6});
 Nutrient.NIACIN = new Nutrient('Vitamin B3 (Niacin)', {C: 6, H: 5, N: 1, O: 2}, 1.473, 'https://en.wikipedia.org/wiki/Vitamin_B3');
-Nutrient.B6 = new Nutrient('Vitamin B6', {C: 8, H: 10, N: 1, O: 6, P: 1}, 1.638); // Pyridoxal Phosphate
+Nutrient.CHOLINE = new Nutrient('Vitamin B4 (Choline)', {C: 5, H: 14, N: 1, O: 1});
+Nutrient.VITAMIN_B6 = new Nutrient('Vitamin B6', {C: 8, H: 10, N: 1, O: 6, P: 1}, 1.638); // Pyridoxal Phosphate
 Nutrient.BIOTIN = new Nutrient('Vitamin B7 (Biotin)', {C: 10, H: 16, N: 2, O: 3, S: 1});
 Nutrient.FOLATE = new Nutrient('Vitamin B9 (Folate)', {C: 19, H: 19, N: 7, O: 6}, 1.6, 'https://en.wikipedia.org/wiki/Folate');
-Nutrient.K = new Nutrient('Vitamin K', {C: 31, H: 46, O: 2}); // Phytomenadione
+Nutrient.CAROTENE_BETA = new Nutrient('β-Carotene', {C: 40, H: 56}, 1, 'https://en.wikipedia.org/wiki/%CE%92-Carotene');
+Nutrient.VITAMIN_E = new Nutrient('Vitamin E', {C: 29, H: 50, O: 2}, 0.95, 'https://en.wikipedia.org/wiki/Vitamin_E'); // α-Tocopherol
+Nutrient.VITAMIN_K = new Nutrient('Vitamin K', {C: 31, H: 46, O: 2}); // Phytomenadione
 
 
 // FOODS
@@ -402,8 +405,8 @@ Food.PotatoSweet = new Food('Sweet Potato', {
 		new NutrientAmount(Nutrient.VITAMIN_C, 14.8e-3),
 		new NutrientAmount(Nutrient.THIAMIN, 0.045e-3),
 		new NutrientAmount(Nutrient.NIACIN, 0.432e-3),
-		new NutrientAmount(Nutrient.B6, 0.124e-3),
-		new NutrientAmount(Nutrient.K, 0.2e-6),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.124e-3),
+		new NutrientAmount(Nutrient.VITAMIN_K, 0.2e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2346404/nutrients');
 Food.Carrot = new Food('Carrot', {
@@ -426,7 +429,7 @@ Food.Carrot = new Food('Carrot', {
 		new NutrientAmount(Nutrient.THIAMIN, 0.065e-3),
 		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.095e-3),
 		new NutrientAmount(Nutrient.NIACIN, 1.41e-3),
-		new NutrientAmount(Nutrient.B6, 0.146e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.146e-3),
 		new NutrientAmount(Nutrient.BIOTIN, 2.22e-6),
 		new NutrientAmount(Nutrient.FOLATE, 37e-6),
 	],
@@ -450,5 +453,33 @@ Food.Peanut = new Food('Peanut', {
 		new NutrientAmount(Nutrient.SELENIUM, 17.8e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2515376/nutrients');
+Food.Lime = new Food('Lime', {
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 88.3),
+		new NutrientAmount(Nutrient.PROTEIN, 0.7),
+		new NutrientAmount(Nutrient.FAT, 0.2),
+		new NutrientAmount(Nutrient.FIBER, 2.8),
+		new NutrientAmount(Nutrient.SUGAR, 1.69),
+		new NutrientAmount(Nutrient.CALCIUM, 33e-3),
+		new NutrientAmount(Nutrient.IRON, 0.6e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 6e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 18e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 102e-3),
+		new NutrientAmount(Nutrient.SODIUM, 2e-3),
+		new NutrientAmount(Nutrient.ZINC, 0.11e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.065e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 0.4e-6),
+		new NutrientAmount(Nutrient.VITAMIN_C, 29.1e-3),
+		new NutrientAmount(Nutrient.THIAMIN, 0.03e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.02e-3),
+		new NutrientAmount(Nutrient.NIACIN, 0.2e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.043e-3),
+		new NutrientAmount(Nutrient.FOLATE, 8e-6),
+		new NutrientAmount(Nutrient.CHOLINE, 5.1e-3),
+		new NutrientAmount(Nutrient.CAROTENE_BETA, 30e-6),
+		new NutrientAmount(Nutrient.VITAMIN_E, 0.22e-3),
+		new NutrientAmount(Nutrient.VITAMIN_K, 0.6e-6),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344664/nutrients');
 
 const NUTRITION_LOADED = true;
