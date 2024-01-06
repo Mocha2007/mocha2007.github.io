@@ -259,6 +259,7 @@ class Food extends SourcedObject {
 			? this.properties.calories
 			: 4 * this.nutrient(Nutrient.SUGAR)
 			+ 2 * this.nutrient(Nutrient.FIBER)
+			+ 3.75 * this.nutrient(Nutrient.STARCH) // guess
 			+ 9 * this.nutrient(Nutrient.FAT)
 			+ 4 * this.nutrient(Nutrient.PROTEIN)
 			+ 7 * this.nutrient(Nutrient.ALCOHOL);
@@ -328,6 +329,7 @@ Nutrient.PROTEIN = new Nutrient('Protein', {C: 6, H: 13, N: 1, O: 2}, 1.5); // L
 Nutrient.FAT = new Nutrient('Fat', {C: 18, H: 36, O: 2}, 0.895); // Stearic Acid
 Nutrient.FIBER = new Nutrient('Fiber', {C: 12, H: 20, O: 10}, 1.5); // Cellulose
 Nutrient.SUGAR = new Nutrient('Sugar', {C: 6, H: 12, O: 6}, 1.54); // Glucose
+Nutrient.STARCH = new Nutrient('Starch', {C: 6, H: 10, O: 5});
 Nutrient.ALCOHOL = new Nutrient('Alcohol', {C: 2, H: 6, O: 1}, 0.78945, 'https://en.wikipedia.org/wiki/Ethanol'); // Ethanol
 
 Nutrient.CALCIUM = new Nutrient('Calcium', {Ca: 1});
@@ -481,5 +483,29 @@ Food.Lime = new Food('Lime', {
 		new NutrientAmount(Nutrient.VITAMIN_K, 0.6e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344664/nutrients');
+Food.RiceWhite = new Food('White Rice', {
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 11.2),
+		new NutrientAmount(Nutrient.PROTEIN, 7.04),
+		new NutrientAmount(Nutrient.FAT, 1.03),
+		new NutrientAmount(Nutrient.FIBER, 2.77),
+		new NutrientAmount(Nutrient.STARCH, 74.4),
+		new NutrientAmount(Nutrient.CALCIUM, 4e-3),
+		new NutrientAmount(Nutrient.IRON, 0.14e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 26.5e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 108e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 82e-3),
+		new NutrientAmount(Nutrient.ZINC, 1.45e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.214e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 0.981e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 6.6e-6),
+		new NutrientAmount(Nutrient.MOLYBDENUM, 64.2e-6),
+		new NutrientAmount(Nutrient.THIAMIN, 0.065e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.08e-3),
+		new NutrientAmount(Nutrient.NIACIN, 1.43e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.058e-3),
+		new NutrientAmount(Nutrient.BIOTIN, 3.7e-6),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2512381/nutrients');
 
 const NUTRITION_LOADED = true;
