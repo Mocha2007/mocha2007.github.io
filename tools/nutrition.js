@@ -58,6 +58,26 @@ function main(){
 			.filter(nutrient => nutrient.density === 1)
 			.map(nutrient => nutrient.a)
 	));
+	// scatter
+	const composition = this.composition;
+	const pairs = [];
+	for (const elem in composition){
+		pairs.push([elem, composition[elem], getElemColor(elem)]);
+	}
+	const [x, y, text] = [
+		Food.foods.map(food => food.nutrient(Nutrient.SUGAR)),
+		Food.foods.map(food => food.nutrient(Nutrient.FAT)),
+		Food.foods.map(food => food.name),
+	];
+	const scatterURL = 'chart.html?data=' + toURL({
+		type: 'scatter',
+		x,
+		y,
+		text,
+		fill: 'green',
+		labels: true,
+	});
+	document.getElementById('scatter').src = scatterURL;
 	// done
 	console.info('nutrition.js ran successfully');
 }

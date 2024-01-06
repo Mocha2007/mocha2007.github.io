@@ -165,17 +165,26 @@ main.testData = {
 
 /** generate scatter plot from URL data */
 function scatter(){
+	const PADDING = 0.05;
 	const data = getData();
 	/** @type {SVGElement} */
 	const chart = document.getElementById('chart');
 	chart.setAttribute('viewBox', `0 0 ${sizeX} ${sizeY}`);
-	const xMax = Math.max(...data.x);
-	const xMin = Math.min(...data.x);
-	const yMax = Math.max(...data.y);
-	const yMin = Math.min(...data.y);
+	let xMax = Math.max(...data.x);
+	let xMin = Math.min(...data.x);
+	let yMax = Math.max(...data.y);
+	let yMin = Math.min(...data.y);
+	const xRange = xMax - xMin;
+	const yRange = yMax - yMin;
+	const xPadding = PADDING * xRange;
+	const yPadding = PADDING * yRange;
+	xMax += xPadding;
+	yMax += yPadding;
+	xMin -= xPadding;
+	yMin -= yPadding;
 
 	/** @type {[number, number][]} */
-	const xxyy = data.x.map((x, i) => [x, data.y[i]]);
+	const xxyy = data.x.map((x, i) => [x, data.y[i], data.text && data.text[i]]);
 
 	xxyy.forEach(xy => {
 		const g = createSvgElement('g');
@@ -192,12 +201,23 @@ function scatter(){
 		// append to group
 		g.appendChild(point);
 		if (data.labels){
-			const labelElem = createSvgElement('text');
-			labelElem.innerHTML = `(${xy[0]}, ${xy[1]})`;
-			labelElem.classList.add('value');
-			labelElem.setAttribute('x', x + 5);
-			labelElem.setAttribute('y', y + 5);
-			g.appendChild(labelElem);
+			const LABEL = xy[2];
+			// label
+			if (LABEL){
+				const labelElem = createSvgElement('text');
+				labelElem.innerHTML = LABEL;
+				labelElem.classList.add('label');
+				labelElem.setAttribute('x', x);
+				labelElem.setAttribute('y', y + 20);
+				g.appendChild(labelElem);
+			}
+			// value
+			const valueElem = createSvgElement('text');
+			valueElem.innerHTML = `(${xy[0]}, ${xy[1]})`;
+			valueElem.classList.add('value');
+			valueElem.setAttribute('x', x);
+			valueElem.setAttribute('y', y + (LABEL ? 20 : 0) + 10);
+			g.appendChild(valueElem);
 		}
 	});
 }
@@ -206,6 +226,7 @@ function scatter(){
   type: 'scatter',
   x,
   y,
+  text, // optional, labels for when labels=true
   fill: 'red', // optional, default: black
   labels: true, // optional, default: false
   radius: 1, // optional, default: 3
