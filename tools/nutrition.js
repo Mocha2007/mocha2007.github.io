@@ -383,11 +383,22 @@ Nutrient.CHOLINE = new Nutrient('Vitamin B4 (Choline)', {C: 5, H: 14, N: 1, O: 1
 Nutrient.VITAMIN_B6 = new Nutrient('Vitamin B6', {C: 8, H: 10, N: 1, O: 6, P: 1}, 1.638); // Pyridoxal Phosphate
 Nutrient.BIOTIN = new Nutrient('Vitamin B7 (Biotin)', {C: 10, H: 16, N: 2, O: 3, S: 1});
 Nutrient.FOLATE = new Nutrient('Vitamin B9 (Folate)', {C: 19, H: 19, N: 7, O: 6}, 1.6, 'https://en.wikipedia.org/wiki/Folate');
+Nutrient.RETINOL = new Nutrient('Retinol', {C: 20, H: 30, O: 1});
 Nutrient.CAROTENE_BETA = new Nutrient('β-Carotene', {C: 40, H: 56}, 1, 'https://en.wikipedia.org/wiki/%CE%92-Carotene');
+Nutrient.CRYPTOXANTHIN_BETA = new Nutrient('β-Cryptoxanthin', {C: 40, H: 56, O: 1});
+Nutrient.CRYPTOXANTHIN_ALPHA = new Nutrient('α-Cryptoxanthin', {C: 40, H: 56, O: 1}); // ???
 Nutrient.VITAMIN_E = new Nutrient('Vitamin E', {C: 29, H: 50, O: 2}, 0.95, 'https://en.wikipedia.org/wiki/Vitamin_E'); // α-Tocopherol
 Nutrient.PHYLLOQUINONE = new Nutrient('Phytomenadione', {C: 31, H: 46, O: 2}); // Phytomenadione
 Nutrient.DIHYDROPHYLLOQUINONE = new Nutrient('Dihydrophylloquinone', {C: 31, H: 50, O: 4}); // ???
 Nutrient.MENAQUINONE_4 = new Nutrient('Menatetrenone', {C: 31, H: 40, O: 2});
+
+Nutrient.VITAMIN_D3 = new Nutrient('Vitamin D3 (Cholecalciferol)', {C: 27, H: 44, O: 1});
+
+Nutrient.BETAINE = new Nutrient('Betaine', {C: 5, H: 11, N: 1, O: 2}); // Trimethylglycine
+Nutrient.LUTEIN = new Nutrient('Lutein', {C: 40, H: 56, O: 2});
+Nutrient.CIS_LUTEIN = new Nutrient('Cis-Lutein', {C: 40, H: 56, O: 2}); // ???
+Nutrient.ZEAXANTHIN = new Nutrient('Zeaxanthin', {C: 40, H: 56, O: 2});
+Nutrient._25_HYDROXYCHOLECALCIFEROL = new Nutrient('Calcifediol', {C: 27, H: 44, O: 2});
 
 NutrientGroup.SUGARS = new NutrientGroup('Sugars', [
 	new NutrientAmount(Nutrient.SUCROSE, 1),
@@ -423,11 +434,12 @@ NutrientGroup.CARBOHYDRATES = new NutrientGroup('Carbohydrates', [
 ]);
 
 NutrientGroup.VITAMIN_A = new NutrientGroup('Vitamin A', [
-	// new NutrientAmount(Nutrient.RETINOL, 1),
+	new NutrientAmount(Nutrient.RETINOL, 1),
 	new NutrientAmount(Nutrient.CAROTENE_BETA, 0.5),
 	// new NutrientAmount(Nutrient.CAROTENE_ALPHA, 0.25),
 	// new NutrientAmount(Nutrient.CAROTENE_GAMMA, 0.25),
-	// new NutrientAmount(Nutrient.CRYPTOXANTHIN_BETA, 0.25),
+	new NutrientAmount(Nutrient.CRYPTOXANTHIN_BETA, 0.25),
+	new NutrientAmount(Nutrient.CRYPTOXANTHIN_ALPHA, 0.25), // ???
 ]);
 
 NutrientGroup.VITAMIN_B = new NutrientGroup('Vitamin B (total)', [
@@ -440,6 +452,14 @@ NutrientGroup.VITAMIN_B = new NutrientGroup('Vitamin B (total)', [
 	new NutrientAmount(Nutrient.BIOTIN, 1),
 	new NutrientAmount(Nutrient.FOLATE, 1),
 	// new NutrientAmount(Nutrient.VITAMIN_B12, 1),
+]);
+
+NutrientGroup.VITAMIN_D = new NutrientGroup('Vitamin D (total)', [
+	// new NutrientAmount(Nutrient.VITAMIN_D1, 1),
+	// new NutrientAmount(Nutrient.VITAMIN_D2, 1),
+	new NutrientAmount(Nutrient.VITAMIN_D3, 1),
+	// new NutrientAmount(Nutrient.VITAMIN_D4, 1),
+	// new NutrientAmount(Nutrient.VITAMIN_D5, 1),
 ]);
 
 NutrientGroup.VITAMIN_K = new NutrientGroup('Vitamin K', [
@@ -463,8 +483,6 @@ Food.OnionYellow = new Food('Yellow Onion', {
 		new NutrientAmount(Nutrient.SUCROSE, 1.6),
 		new NutrientAmount(Nutrient.GLUCOSE, 2.31),
 		new NutrientAmount(Nutrient.FRUCTOSE, 1.91),
-		new NutrientAmount(Nutrient.LACTOSE, 0.15),
-		new NutrientAmount(Nutrient.MALTOSE, 0.15),
 		new NutrientAmount(Nutrient.CALCIUM, 15e-3),
 		new NutrientAmount(Nutrient.IRON, 0.28e-3),
 		new NutrientAmount(Nutrient.MAGNESIUM, 9e-3),
@@ -474,10 +492,7 @@ Food.OnionYellow = new Food('Yellow Onion', {
 		new NutrientAmount(Nutrient.ZINC, 0.2e-3),
 		new NutrientAmount(Nutrient.COPPER, 0.035e-3),
 		new NutrientAmount(Nutrient.MANGANESE, 0.144e-3),
-		new NutrientAmount(Nutrient.IODINE, 10e-6),
-		new NutrientAmount(Nutrient.SELENIUM, 2.5e-6),
 		new NutrientAmount(Nutrient.VITAMIN_C, 8.2e-3),
-		new NutrientAmount(Nutrient.BIOTIN, 0.004e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/790646/nutrients');
 Food.PotatoSweet = new Food('Sweet Potato', {
@@ -494,26 +509,20 @@ Food.PotatoSweet = new Food('Sweet Potato', {
 		new NutrientAmount(Nutrient.SUCROSE, 3.06),
 		new NutrientAmount(Nutrient.GLUCOSE, 0.98),
 		new NutrientAmount(Nutrient.FRUCTOSE, 0.93),
-		new NutrientAmount(Nutrient.LACTOSE, 0.25),
 		new NutrientAmount(Nutrient.MALTOSE, 1.1),
 		new NutrientAmount(Nutrient.CALCIUM, 22e-3),
 		new NutrientAmount(Nutrient.IRON, 0.4e-3),
 		new NutrientAmount(Nutrient.MAGNESIUM, 19.1e-3),
 		new NutrientAmount(Nutrient.PHOSPHORUS, 37e-3),
 		new NutrientAmount(Nutrient.POTASSIUM, 486e-3),
-		new NutrientAmount(Nutrient.SODIUM, 2.5e-3),
 		new NutrientAmount(Nutrient.ZINC, 0.34e-3),
 		new NutrientAmount(Nutrient.COPPER, 0.187e-3),
 		new NutrientAmount(Nutrient.MANGANESE, 0.417e-3),
-		new NutrientAmount(Nutrient.SELENIUM, 2.5e-6),
-		new NutrientAmount(Nutrient.MOLYBDENUM, 2.5e-6),
 		new NutrientAmount(Nutrient.VITAMIN_C, 14.8e-3),
 		new NutrientAmount(Nutrient.THIAMIN, 0.045e-3),
 		new NutrientAmount(Nutrient.NIACIN, 0.432e-3),
 		new NutrientAmount(Nutrient.VITAMIN_B6, 0.124e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 0.2e-6),
-		new NutrientAmount(Nutrient.DIHYDROPHYLLOQUINONE, 0.1e-6),
-		new NutrientAmount(Nutrient.MENAQUINONE_4, 0.1e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2346404/nutrients');
 Food.Carrot = new Food('Carrot', {
@@ -534,7 +543,6 @@ Food.Carrot = new Food('Carrot', {
 		new NutrientAmount(Nutrient.ZINC, 0.24e-3),
 		new NutrientAmount(Nutrient.COPPER, 0.061e-3),
 		new NutrientAmount(Nutrient.MANGANESE, 0.13e-3),
-		new NutrientAmount(Nutrient.SELENIUM, 2.5e-6),
 		new NutrientAmount(Nutrient.THIAMIN, 0.065e-3),
 		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.095e-3),
 		new NutrientAmount(Nutrient.NIACIN, 1.41e-3),
@@ -620,8 +628,45 @@ Food.RiceWhite = new Food('White Rice', {
 		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.08e-3),
 		new NutrientAmount(Nutrient.NIACIN, 1.43e-3),
 		new NutrientAmount(Nutrient.VITAMIN_B6, 0.058e-3),
-		new NutrientAmount(Nutrient.BIOTIN, 3.7e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2512381/nutrients');
+Food.Egg = new Food('Egg', { // todo create nutrient groups for all this other shit
+	measures: {
+		fruit: 65,
+		slice: 8,
+		cup: 200,
+	},
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 75.8),
+		new NutrientAmount(Nutrient.NITROGEN, 1.99),
+		new NutrientAmount(Nutrient.PROTEIN, 12.4),
+		new NutrientAmount(Nutrient.FAT, 9.96),
+		new NutrientAmount(Nutrient.ASH, 0.85),
+		new NutrientAmount(Nutrient.GLUCOSE, 0.2),
+		new NutrientAmount(Nutrient.CALCIUM, 48e-3),
+		new NutrientAmount(Nutrient.IRON, 1.67e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 11.4e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 184e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 132e-3),
+		new NutrientAmount(Nutrient.SODIUM, 129e-3),
+		new NutrientAmount(Nutrient.ZINC, 1.24e-3),
+		new NutrientAmount(Nutrient.IODINE, 49.1e-6),
+		new NutrientAmount(Nutrient.SELENIUM, 31.1e-6),
+		new NutrientAmount(Nutrient.THIAMIN, 0.077e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.419e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.063e-3),
+		new NutrientAmount(Nutrient.FOLATE, 71e-6),
+		new NutrientAmount(Nutrient.CHOLINE, 335e-3),
+		new NutrientAmount(Nutrient.BETAINE, 0.3e-3),
+		new NutrientAmount(Nutrient.RETINOL, 179e-6),
+		new NutrientAmount(Nutrient.CRYPTOXANTHIN_BETA, 13e-6),
+		new NutrientAmount(Nutrient.CRYPTOXANTHIN_ALPHA, 13e-6),
+		new NutrientAmount(Nutrient.CIS_LUTEIN, 57e-6),
+		new NutrientAmount(Nutrient.LUTEIN, 230e-6),
+		new NutrientAmount(Nutrient.ZEAXANTHIN, 229e-6),
+		new NutrientAmount(Nutrient.VITAMIN_D3, 2.46e-6),
+		new NutrientAmount(Nutrient._25_HYDROXYCHOLECALCIFEROL, 0.56e-6),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344664/nutrients');
 
 const NUTRITION_LOADED = true;
