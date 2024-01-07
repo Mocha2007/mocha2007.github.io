@@ -748,25 +748,33 @@ NutrientGroup.XENOESTROGEN_ACTIVITY_B = new NutrientGroup('Xenoestrogens (Estrad
 	new NutrientAmount(Nutrient.SITOSTEROL_BETA, 0.00016), // max
 ], true);
 
-NutrientGroup.MINERALS = new NutrientGroup('Minerals (total)', 0, [
-	new NutrientAmount(Nutrient.CALCIUM, 1),
+NutrientGroup.METALS_TRANSITION = new NutrientGroup('Transition Metals (total)', 0, [
 	new NutrientAmount(Nutrient.IRON, 1),
+	new NutrientAmount(Nutrient.COPPER, 1),
+	new NutrientAmount(Nutrient.MANGANESE, 1),
+	new NutrientAmount(Nutrient.MOLYBDENUM, 1),
+	new NutrientAmount(Nutrient.CHROMIUM, 1),
+	new NutrientAmount(Nutrient.VANADIUM, 1),
+	new NutrientAmount(Nutrient.NICKEL, 1),
+]);
+
+NutrientGroup.METALS = new NutrientGroup('Metals (total)', 0, [
+	new NutrientAmount(NutrientGroup.METALS_TRANSITION, 1),
+	new NutrientAmount(Nutrient.CALCIUM, 1),
 	new NutrientAmount(Nutrient.MAGNESIUM, 1),
-	new NutrientAmount(Nutrient.PHOSPHORUS, 1),
 	new NutrientAmount(Nutrient.POTASSIUM, 1),
 	new NutrientAmount(Nutrient.SODIUM, 1),
 	new NutrientAmount(Nutrient.ZINC, 1),
-	new NutrientAmount(Nutrient.COPPER, 1),
-	new NutrientAmount(Nutrient.MANGANESE, 1),
+]);
+
+NutrientGroup.MINERALS = new NutrientGroup('Minerals (total)', 0, [
+	new NutrientAmount(NutrientGroup.METALS, 1),
+	new NutrientAmount(Nutrient.PHOSPHORUS, 1),
 	new NutrientAmount(Nutrient.IODINE, 1),
 	new NutrientAmount(Nutrient.SELENIUM, 1),
-	new NutrientAmount(Nutrient.MOLYBDENUM, 1),
 	new NutrientAmount(Nutrient.CHLORIDE, 1),
-	new NutrientAmount(Nutrient.CHROMIUM, 1),
 	new NutrientAmount(Nutrient.BORON, 1),
 	new NutrientAmount(Nutrient.FLUORIDE, 1),
-	new NutrientAmount(Nutrient.VANADIUM, 1),
-	new NutrientAmount(Nutrient.NICKEL, 1),
 ]);
 
 NutrientGroup.VITAMINS = new NutrientGroup('Vitamins (total)', 0, [
