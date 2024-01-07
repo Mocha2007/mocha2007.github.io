@@ -512,8 +512,8 @@ NutrientGroup.XANTHOPHYLLS = new NutrientGroup('Xanthophylls', [
 
 NutrientGroup.CAROTENOIDS = new NutrientGroup('Carotenoids', [
 	new NutrientAmount(NutrientGroup.XANTHOPHYLLS, 1),
-	new NutrientAmount(NutrientGroup.CAROTENE_ALPHA, 1),
-	new NutrientAmount(NutrientGroup.CAROTENE_BETA, 1),
+	new NutrientAmount(Nutrient.CAROTENE_ALPHA, 1),
+	new NutrientAmount(Nutrient.CAROTENE_BETA, 1),
 ]);
 
 
