@@ -361,13 +361,14 @@ class Food extends SourcedObject {
 		// calories
 		appendHR();
 		const calories = document.createElement('div');
+		calories.classList.add('calories');
 		// eslint-disable-next-line max-len
 		calories.innerHTML = `<b>Calories</b> ${Math.round(this.nutrient(NutrientGroup.CALORIES, true))}<br>
 		Calories from Fat ${Math.round(9*this.nutrient(Nutrient.FAT, true))}`;
 		elem.appendChild(calories);
 		// central sector
-		elem.innerHTML += '<div class="dv">% Daily Value</div>';
 		appendHR();
+		elem.innerHTML += '<div id="DVheader">&nbsp;<div class="dv">% Daily Value</div></div>';
 		const MAIN_NUTRIENTS = [
 			[Nutrient.FAT, true],
 			[Nutrient.CHOLESTEROL, true],
@@ -385,6 +386,7 @@ class Food extends SourcedObject {
 			if (!value)
 				return;
 			const lineItem = document.createElement('div');
+			lineItem.classList.add('nutritionLine');
 			if (bold)
 				lineItem.innerHTML = `<b>${nutrient.name}</b>`;
 			else
@@ -392,7 +394,7 @@ class Food extends SourcedObject {
 			lineItem.innerHTML += ' ' + value + 'g';
 			// % Daily Value
 			if (nutrient.DV)
-				lineItem.innerHTML += ' <div class="dv">' + Math.round(100 * trueValue / nutrient.DV) + '%</div>';
+				lineItem.innerHTML += ' <div class="dv"><b>' + Math.round(100 * trueValue / nutrient.DV) + '%</b></div>';
 			elem.appendChild(lineItem);
 		});
 		// vitamins and minerals w/ %DV
@@ -404,7 +406,8 @@ class Food extends SourcedObject {
 				if (!value)
 					return;
 				const lineItem = document.createElement('div');
-				lineItem.innerHTML = nutrient.name + ' &mdash; ' + value + '%';
+				lineItem.classList.add('nutritionLine');
+				lineItem.innerHTML = nutrient.name + '<div class="dv">' + value + '%</div>';
 				elem.appendChild(lineItem);
 			});
 		return elem;

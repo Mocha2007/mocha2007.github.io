@@ -9,21 +9,36 @@ iframe {
 	border: 1px solid black;
 	color: black;
 	font-family: Helvetica, sans-serif;
+	padding: 0.5em;
 	width: 20em;
 }
 #foodLabel h3 {
-	font-size: 200%;
+	font-size: 250%;
 	font-weight: bold;
+	margin: 0;
 	text-align: center;
 }
 #foodLabel hr {
-	border: 2px solid black;
+	border: 4px solid black;
 }
-
+.calories {
+	font-size: 150%;
+	padding: 0 1em 0 1em;
+}
 .dv {
 	height: 0;
 	right: 0;
 	position: relative;
 	text-align: right;
-	top: -1em;
+	top: -1.5em;
+}
+#DVheader {
+	font-size: 75%;
+	font-weight: bold;
+}
+#DVheader, .nutritionLine {
+	line-height: 1.5em;
+}
+.nutritionLine {
+	border-top: 2px solid grey;
 }
