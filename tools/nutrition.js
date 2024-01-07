@@ -397,7 +397,7 @@ class Food extends SourcedObject {
 			[NutrientGroup.CARBOHYDRATES, true],
 			[Nutrient.FIBER, false],
 			[NutrientGroup.SUGARS, false],
-			[Nutrient.ALCOHOL, false],
+			[Nutrient.ALCOHOL, true],
 			[Nutrient.PROTEIN, true],
 		];
 		let ADD_CAVEAT = false;
