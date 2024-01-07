@@ -2,9 +2,11 @@
 /* global elementData, toURL */
 const MOLAR_MASS = {
 	H: 1.008,
+	B: 10.81,
 	C: 12.011,
 	N: 14.007,
 	O: 15.999,
+	F: 18.998403162,
 	Na: 22.99,
 	Mg: 24.305,
 	P: 30.974,
@@ -12,9 +14,11 @@ const MOLAR_MASS = {
 	Cl: 35.45,
 	K: 39.098,
 	Ca: 40.078,
+	V: 50.9415,
 	Cr: 51.9961,
 	Mn: 54.938,
 	Fe: 55.845,
+	Ni: 58.6934,
 	Co: 58.933194,
 	Cu: 63.546,
 	Zn: 65.38,
@@ -209,13 +213,15 @@ class Nutrient extends SourcedObject {
 	 * @param {number} DV - p. 167 https://www.fda.gov/files/food/published/Food-Labeling-Guide-%28PDF%29.pdf
 	 * @param {number} density g/cm^3 - as close to 37C @ 1 atm as I can find...
 	 * @param {string?} source URL
+	 * @param {boolean?} unofficialDV
 	 */
-	constructor(name, composition, DV = 0, density = 1, source = undefined){
+	constructor(name, composition, DV = 0, density = 1, source = undefined, unofficialDV = false){
 		super(name, source);
 		this.DV = DV;
 		this.compositionAmt = composition;
 		/** @type {number} g/cm^3 */
 		this.density = density;
+		this.unofficialDV = unofficialDV;
 		Nutrient.nutrients.push(this);
 	}
 	get composition(){
@@ -281,10 +287,9 @@ class NutrientGroup extends Nutrient {
 	 * @param {boolean} unofficialDV - for some nutrients, the FDA hasn't established guidelines; the figures provided are based on health studies.
 	 */
 	constructor(name, DV = 0, nutrientWeights = [], unofficialDV = false){
-		super(name, {}, DV);
+		super(name, {}, DV, undefined, undefined, unofficialDV);
 		this.nutrientWeights = nutrientWeights;
 		NutrientGroup.groups.push(this);
-		this.unofficialDV = unofficialDV;
 	}
 	/** @param {Food} food */
 	value(food, useUnitMass = false){
@@ -542,6 +547,10 @@ Nutrient.SELENIUM = new Nutrient('Selenium', {Se: 1}, 55e-6);
 Nutrient.MOLYBDENUM = new Nutrient('Molybdenum', {Mo: 1}, 45e-6);
 Nutrient.CHLORIDE = new Nutrient('Chloride', {Cl: 1}, 2300e-3);
 Nutrient.CHROMIUM = new Nutrient('Chromium', {Cr: 1}, 35e-6);
+Nutrient.BORON = new Nutrient('Boron', {B: 1}, 1.125e-3, undefined, undefined, true);
+Nutrient.FLUORIDE = new Nutrient('Fluoride', {F: 1}, 4, undefined, undefined, true); // https://web.archive.org/web/20181113060244/http://www.nationalacademies.org/hmd/~/media/Files/Activity%20Files/Nutrition/DRI-Tables/2_%20RDA%20and%20AI%20Values_Vitamin%20and%20Elements.pdf?la=en
+Nutrient.VANADIUM = new Nutrient('Vanadium', {V: 1}, 12e-6, undefined, undefined, true);
+Nutrient.NICKEL = new Nutrient('Nickel', {V: 1}, 85e-6, undefined, undefined, true);
 // A
 Nutrient.RETINOL = new Nutrient('Retinol', {C: 20, H: 30, O: 1});
 Nutrient.CAROTENE_ALPHA = new Nutrient('α-Carotene', {C: 40, H: 56});
@@ -755,6 +764,10 @@ NutrientGroup.MINERALS = new NutrientGroup('Minerals (total)', 0, [
 	new NutrientAmount(Nutrient.MOLYBDENUM, 1),
 	new NutrientAmount(Nutrient.CHLORIDE, 1),
 	new NutrientAmount(Nutrient.CHROMIUM, 1),
+	new NutrientAmount(Nutrient.BORON, 1),
+	new NutrientAmount(Nutrient.FLUORIDE, 1),
+	new NutrientAmount(Nutrient.VANADIUM, 1),
+	new NutrientAmount(Nutrient.NICKEL, 1),
 ]);
 
 NutrientGroup.VITAMINS = new NutrientGroup('Vitamins (total)', 0, [
