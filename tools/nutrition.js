@@ -1169,7 +1169,6 @@ Food.Tofu = new Food('Tofu', { // todo create nutrient groups for all this other
 		new NutrientAmount(Nutrient.COUMESTROL, 0.12e-3), // https://en.wikipedia.org/wiki/Coumestrol
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2342910/nutrients');
-// FOODS
 Food.Garlic = new Food('Garlic', {
 	measures: { // guesses
 		bulb: 50,
@@ -1203,5 +1202,37 @@ Food.Garlic = new Food('Garlic', {
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 1.7e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/1103354/nutrients');
+Food.Seaweed = new Food('Seaweed', {
+	measures: {
+		cup: 15,
+		strip: 0.5,
+	},
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 6.68),
+		new NutrientAmount(Nutrient.PROTEIN, 31.8),
+		new NutrientAmount(Nutrient.FAT, 4.01),
+		new NutrientAmount(Nutrient.FIBER, 5.6),
+		new NutrientAmount(Nutrient.SUGAR, 3.04),
+		new NutrientAmount(Nutrient.CALCIUM, 372e-3),
+		new NutrientAmount(Nutrient.IRON, 25e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 482e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 85e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 1240e-3),
+		new NutrientAmount(Nutrient.SODIUM, 575e-3),
+		new NutrientAmount(Nutrient.ZINC, 3.9e-3),
+		new NutrientAmount(Nutrient.COPPER, 3.36e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 7.3e-6),
+		new NutrientAmount(Nutrient.VITAMIN_C, 5e-3),
+		new NutrientAmount(Nutrient.THIAMIN, 1.2e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 1.95e-3),
+		new NutrientAmount(Nutrient.NIACIN, 6.51e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.334e-3),
+		new NutrientAmount(Nutrient.FOLATE, 337e-6),
+		new NutrientAmount(Nutrient.CHOLINE, 64.6e-3),
+		new NutrientAmount(Nutrient.CAROTENE_BETA, 171e-6),
+		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 5e-3),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 25e-6),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345512/nutrients');
 
 const NUTRITION_LOADED = true;
