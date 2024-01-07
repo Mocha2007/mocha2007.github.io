@@ -1342,5 +1342,35 @@ Food.WineRed = new Food('Red Wine', {
 		new NutrientAmount(Nutrient.RESVERATROL, 2.78e-3), // max; https://en.wikipedia.org/wiki/Resveratrol#Foods
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2346263/nutrients');
+Food.PeanutButter = new Food('Peanut Butter', {
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 1.1),
+		new NutrientAmount(Nutrient.NITROGEN, 4.39),
+		new NutrientAmount(Nutrient.PROTEIN, 24),
+		new NutrientAmount(Nutrient.FAT, 49.4),
+		new NutrientAmount(Nutrient.ASH, 2.77),
+		new NutrientAmount(Nutrient.FIBER, 6.3),
+		new NutrientAmount(Nutrient.CALCIUM, 50e-3),
+		new NutrientAmount(Nutrient.IRON, 1.85e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 193e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 393e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 654e-3),
+		new NutrientAmount(Nutrient.SODIUM, 221e-3),
+		new NutrientAmount(Nutrient.ZINC, 3.06e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.54e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 1.68e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 20.2e-6),
+		new NutrientAmount(Nutrient.THIAMIN, 0.121e-3),
+		new NutrientAmount(Nutrient.NIACIN, 17.2e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.38e-3),
+		new NutrientAmount(Nutrient.BIOTIN, 87.8e-6),
+		new NutrientAmount(Nutrient.FOLATE, 97e-6),
+		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 5.41e-3),
+		new NutrientAmount(Nutrient.DAIDZEIN, 11.5e-3),
+		new NutrientAmount(Nutrient.DAIDZIN, 0.649e-3),
+		new NutrientAmount(Nutrient.GENISTIN, 1.932e-3),
+		new NutrientAmount(Nutrient.GLYCITIN, 0.41e-3),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2262072/nutrients');
 
 const NUTRITION_LOADED = true;
