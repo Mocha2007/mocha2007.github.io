@@ -756,6 +756,7 @@ NutrientGroup.METALS_TRANSITION = new NutrientGroup('Transition Metals (total)',
 	new NutrientAmount(Nutrient.CHROMIUM, 1),
 	new NutrientAmount(Nutrient.VANADIUM, 1),
 	new NutrientAmount(Nutrient.NICKEL, 1),
+	new NutrientAmount(Nutrient.VITAMIN_B12, 0.04433), // Cobalt
 ]);
 
 NutrientGroup.METALS = new NutrientGroup('Metals (total)', 0, [
@@ -789,6 +790,7 @@ NutrientGroup.VITAMINS = new NutrientGroup('Vitamins (total)', 0, [
 NutrientGroup.VITAMINS_AND_MINERALS = new NutrientGroup('Vitamins & Minerals (total)', 0, [
 	new NutrientAmount(NutrientGroup.VITAMINS, 1),
 	new NutrientAmount(NutrientGroup.MINERALS, 1),
+	new NutrientAmount(Nutrient.VITAMIN_B12, -0.04433), // Cobalt is counted twice
 ]);
 
 // FOODS
@@ -1271,5 +1273,41 @@ Food.Sorghum = new Food('Sorghum', {
 		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.5e-3),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/169716/nutrients');
+Food.Thyme = new Food('Thyme (dried)', {
+	measures: {
+		tsp: 1,
+		tbsp: 2.7,
+	},
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 7.79),
+		new NutrientAmount(Nutrient.PROTEIN, 9.11),
+		new NutrientAmount(Nutrient.FAT, 7.43),
+		new NutrientAmount(Nutrient.ASH, 11.7),
+		new NutrientAmount(Nutrient.FIBER, 37),
+		new NutrientAmount(Nutrient.SUGAR, 1.71),
+		new NutrientAmount(Nutrient.CALCIUM, 1890e-3),
+		new NutrientAmount(Nutrient.IRON, 124e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 220e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 201e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 814e-3),
+		new NutrientAmount(Nutrient.SODIUM, 55e-3),
+		new NutrientAmount(Nutrient.ZINC, 6.18e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.86e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 7.87e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 4.6e-6),
+		new NutrientAmount(Nutrient.VITAMIN_C, 50e-3),
+		new NutrientAmount(Nutrient.THIAMIN, 0.513e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.399e-3),
+		new NutrientAmount(Nutrient.NIACIN, 4.94e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.55e-3),
+		new NutrientAmount(Nutrient.FOLATE, 274e-6),
+		new NutrientAmount(Nutrient.CHOLINE, 43.6e-3),
+		new NutrientAmount(Nutrient.CAROTENE_BETA, 2260e-6),
+		new NutrientAmount(Nutrient.CRYPTOXANTHIN_BETA, 33e-6),
+		new NutrientAmount(Nutrient.LUTEIN, 1900e-6),
+		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 7.48e-3),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 1710e-6),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/170938/nutrients');
 
 const NUTRITION_LOADED = true;
