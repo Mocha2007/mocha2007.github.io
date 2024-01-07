@@ -379,9 +379,9 @@ class Food extends SourcedObject {
 		elem.innerHTML += DVHEADER;
 		const MAIN_NUTRIENTS = [
 			[Nutrient.FAT, true],
-			[Nutrient.CHOLESTEROL, true],
-			[Nutrient.SODIUM, true],
-			[Nutrient.POTASSIUM, true],
+			[Nutrient.CHOLESTEROL, true, true],
+			[Nutrient.SODIUM, true, true],
+			[Nutrient.POTASSIUM, true, true],
 			[NutrientGroup.CARBOHYDRATES, true],
 			[Nutrient.FIBER, false],
 			[NutrientGroup.SUGARS, false],
@@ -389,9 +389,9 @@ class Food extends SourcedObject {
 			[Nutrient.PROTEIN, true],
 		];
 		MAIN_NUTRIENTS.forEach(datum => {
-			const [nutrient, bold] = datum;
+			const [nutrient, bold, usemg] = datum;
 			const trueValue = this.nutrient(nutrient, true);
-			const value = fdaround(nutrient, trueValue);
+			const value = fdaround(nutrient, trueValue * (usemg ? 1e3 : 1));
 			if (!value)
 				return;
 			const lineItem = document.createElement('div');
@@ -400,7 +400,7 @@ class Food extends SourcedObject {
 				lineItem.innerHTML = `<b>${nutrient.name}</b>`;
 			else
 				lineItem.innerHTML = '&mdash; ' + nutrient.name;
-			lineItem.innerHTML += ' ' + value + 'g';
+			lineItem.innerHTML += ' ' + value + (usemg ? 'm' : '') + 'g';
 			// % Daily Value
 			if (nutrient.DV)
 				lineItem.innerHTML += ' <div class="dv"><b>' + Math.round(100 * trueValue / nutrient.DV) + '%</b></div>';
