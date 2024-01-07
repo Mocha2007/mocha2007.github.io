@@ -19,3 +19,11 @@ iframe {
 #foodLabel hr {
 	border: 2px solid black;
 }
+
+.dv {
+	height: 0;
+	right: 0;
+	position: relative;
+	text-align: right;
+	top: -1em;
+}

@@ -366,6 +366,7 @@ class Food extends SourcedObject {
 		Calories from Fat ${Math.round(9*this.nutrient(Nutrient.FAT, true))}`;
 		elem.appendChild(calories);
 		// central sector
+		elem.innerHTML += '<div class="dv">% Daily Value</div>';
 		appendHR();
 		const MAIN_NUTRIENTS = [
 			[Nutrient.FAT, true],
@@ -391,7 +392,7 @@ class Food extends SourcedObject {
 			lineItem.innerHTML += ' ' + value + 'g';
 			// % Daily Value
 			if (nutrient.DV)
-				lineItem.innerHTML += ' &mdash; ' + Math.round(100 * trueValue / nutrient.DV) + '%';
+				lineItem.innerHTML += ' <div class="dv">' + Math.round(100 * trueValue / nutrient.DV) + '%</div>';
 			elem.appendChild(lineItem);
 		});
 		// vitamins and minerals w/ %DV
@@ -564,7 +565,7 @@ NutrientGroup.CALORIES = new NutrientGroup('Calories', 0, [
 	new NutrientAmount(Nutrient.ALCOHOL, 7.112), // ditto
 ]);
 
-NutrientGroup.CARBOHYDRATES = new NutrientGroup('Carbohydrates', 0, [
+NutrientGroup.CARBOHYDRATES = new NutrientGroup('Carbohydrates', 300, [
 	new NutrientAmount(NutrientGroup.SUGARS, 1),
 	new NutrientAmount(Nutrient.FIBER, 1),
 	new NutrientAmount(Nutrient.STARCH, 1),

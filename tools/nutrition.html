@@ -6,7 +6,7 @@
 <link href="../css/button.css" type="text/css" rel="stylesheet">
 <link href="nutrition.css" type="text/css" rel="stylesheet">
 <title>nutrition.js</title>
-<body onload="nutrition_main();">
+<body>
 	<h1>nutrition.js</h1>
 	<h2>Nutrient Plane</h2>
 	<div id="scatterControls" onclick="SCATTER_CONTROL.reread();">
@@ -22,3 +22,12 @@
 	<h2>TODO LIST</h2>
 	<div id="todo"></div>
 </body>
+<script>
+const WAIT_FOR_NUTRITION_TO_LOAD = () => {
+	if (typeof NUTRITION_LOADED === 'undefined')
+		setTimeout(WAIT_FOR_NUTRITION_TO_LOAD, 100);
+	else
+		nutrition_main();
+};
+WAIT_FOR_NUTRITION_TO_LOAD();
+</script>
