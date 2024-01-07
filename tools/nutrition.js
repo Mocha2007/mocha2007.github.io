@@ -592,6 +592,8 @@ Nutrient.GENISTIN = new Nutrient('Genistin', {C: 21, H: 20, O: 10});
 Nutrient.GLYCITIN = new Nutrient('Glycitin', {C: 22, H: 22, O: 10});
 // misc Xenoestrogens
 Nutrient.COUMESTROL = new Nutrient('Coumestrol', {C: 15, H: 8, O: 5});
+Nutrient.QUERCETIN = new Nutrient('Quercetin', {C: 15, H: 10, O: 7}, 0, 1.799, 'https://en.wikipedia.org/wiki/Quercetin');
+Nutrient.RESVERATROL = new Nutrient('Resveratrol', {C: 14, H: 12, O: 3});
 // ?????
 Nutrient.ALCOHOL = new Nutrient('Alcohol', {C: 2, H: 6, O: 1}, 0, 0.78945, 'https://en.wikipedia.org/wiki/Ethanol'); // Ethanol
 Nutrient.BETAINE = new Nutrient('Betaine', {C: 5, H: 11, N: 1, O: 2}); // Trimethylglycine
@@ -712,6 +714,9 @@ NutrientGroup.ISOFLAVONES = new NutrientGroup('Isoflavones', 0, [
 
 NutrientGroup.PHYTOESTROGENS = new NutrientGroup('Phytoestrogens', 0, [
 	new NutrientAmount(NutrientGroup.ISOFLAVONES, 1),
+	new NutrientAmount(Nutrient.QUERCETIN, 1),
+	new NutrientAmount(Nutrient.RESVERATROL, 1),
+	new NutrientAmount(Nutrient.SITOSTEROL_BETA, 1),
 ]);
 
 NutrientGroup.XENOESTROGENS = new NutrientGroup('Xenoestrogens', 0, [
@@ -723,11 +728,16 @@ NutrientGroup.XENOESTROGEN_ACTIVITY_A = new NutrientGroup('Xenoestrogens (Estrad
 	new NutrientAmount(Nutrient.COUMESTROL, 0.09225),
 	new NutrientAmount(Nutrient.DAIDZEIN, 0.0007),
 	new NutrientAmount(Nutrient.GENISTEIN, 0.00445),
+	new NutrientAmount(Nutrient.QUERCETIN, 0.0001), // max
+	new NutrientAmount(Nutrient.RESVERATROL, 0.000032), // max
+	new NutrientAmount(Nutrient.SITOSTEROL_BETA, 0.000875), // max
 ], true);
 NutrientGroup.XENOESTROGEN_ACTIVITY_B = new NutrientGroup('Xenoestrogens (Estradiol RBA ERβ)', 5e-3, [
 	new NutrientAmount(Nutrient.COUMESTROL, 0.64125),
 	new NutrientAmount(Nutrient.DAIDZEIN, 0.7865),
 	new NutrientAmount(Nutrient.GENISTEIN, 0.3342),
+	new NutrientAmount(Nutrient.QUERCETIN, 0.0004), // max
+	new NutrientAmount(Nutrient.SITOSTEROL_BETA, 0.00016), // max
 ], true);
 
 NutrientGroup.MINERALS = new NutrientGroup('Minerals (total)', 0, [
@@ -785,6 +795,8 @@ Food.OnionYellow = new Food('Yellow Onion', {
 		new NutrientAmount(Nutrient.COPPER, 0.035e-3),
 		new NutrientAmount(Nutrient.MANGANESE, 0.144e-3),
 		new NutrientAmount(Nutrient.VITAMIN_C, 8.2e-3),
+		// other sources...
+		new NutrientAmount(Nutrient.QUERCETIN, 32e-3), // RED onions https://en.wikipedia.org/wiki/Quercetin#Occurrence
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/790646/nutrients');
 Food.PotatoSweet = new Food('Sweet Potato', {
@@ -862,6 +874,8 @@ Food.Peanut = new Food('Peanut', {
 		new NutrientAmount(Nutrient.COPPER, 0.46e-3),
 		new NutrientAmount(Nutrient.MANGANESE, 1.68e-3),
 		new NutrientAmount(Nutrient.SELENIUM, 17.8e-6),
+		// other sources...
+		new NutrientAmount(Nutrient.RESVERATROL, 0.26e-3/146), // max; https://en.wikipedia.org/wiki/Resveratrol#Foods
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2515376/nutrients');
 Food.Lime = new Food('Lime', { // todo create nutrient groups for all this other shit
@@ -1058,6 +1072,8 @@ Food.ChocolateDark = new Food('Dark Chocolate (70-85%)', { // todo create nutrie
 		new NutrientAmount(Nutrient.SITOSTEROL_BETA, 86e-3),
 		new NutrientAmount(Nutrient.CAFFEINE, 80e-3),
 		new NutrientAmount(Nutrient.THEOBROMINE, 802e-3),
+		// other sources...
+		new NutrientAmount(Nutrient.RESVERATROL, 0.46e-3*0.85/200), // est'd; max; https://en.wikipedia.org/wiki/Resveratrol#Foods
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/170273/nutrients');
 Food.MilkSoy = new Food('Soy Milk', { // todo create nutrient groups for all this other shit
