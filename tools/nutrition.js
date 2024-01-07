@@ -172,7 +172,7 @@ const SCATTER_CONTROL = {
 			});
 		});
 		document.getElementById('SELECTOR_0_Sodium').selected = 'selected';
-		document.getElementById('SELECTOR_1_Potassium').selected = 'selected';
+		document.getElementById('SELECTOR_1_Sugars').selected = 'selected';
 		this.reread();
 	},
 	reread(){
@@ -1309,5 +1309,38 @@ Food.Thyme = new Food('Thyme (dried)', {
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 1710e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/170938/nutrients');
+Food.WineRed = new Food('Red Wine', {
+	measures: {
+		floz: 30,
+		glass: 180,
+		bottle: 750,
+	},
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 86.5),
+		new NutrientAmount(Nutrient.PROTEIN, 0.07),
+		new NutrientAmount(Nutrient.SUGAR, 0.62),
+		new NutrientAmount(Nutrient.CALCIUM, 8e-3),
+		new NutrientAmount(Nutrient.IRON, 0.46e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 12e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 23e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 127e-3),
+		new NutrientAmount(Nutrient.SODIUM, 4e-3),
+		new NutrientAmount(Nutrient.ZINC, 0.14e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.011e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 0.2e-6),
+		new NutrientAmount(Nutrient.THIAMIN, 0.005e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.031e-3),
+		new NutrientAmount(Nutrient.NIACIN, 0.224e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.057e-3),
+		new NutrientAmount(Nutrient.FOLATE, 1e-6),
+		new NutrientAmount(Nutrient.CHOLINE, 5.7e-3),
+		new NutrientAmount(Nutrient.CAROTENE_BETA, 1e-6),
+		new NutrientAmount(Nutrient.LUTEIN, 6e-6),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 0.4e-6),
+		new NutrientAmount(Nutrient.ALCOHOL, 10.6),
+		// other sources...
+		new NutrientAmount(Nutrient.RESVERATROL, 2.78e-3), // max; https://en.wikipedia.org/wiki/Resveratrol#Foods
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2346263/nutrients');
 
 const NUTRITION_LOADED = true;
