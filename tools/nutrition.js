@@ -575,7 +575,6 @@ Nutrient.VITAMIN_D2 = new Nutrient('Vitamin D2 (Ergocalciferol)', {C: 28, H: 44,
 Nutrient.VITAMIN_D3 = new Nutrient('Vitamin D3 (Cholecalciferol)', {C: 27, H: 44, O: 1});
 Nutrient._25_HYDROXYCHOLECALCIFEROL = new Nutrient('Calcifediol', {C: 27, H: 44, O: 2});
 // E
-Nutrient.VITAMIN_E = new Nutrient('Vitamin E (Unspecified)', {C: 29, H: 50, O: 2});
 Nutrient.TOCOPHEROL_ALPHA = new Nutrient('α-Tocopherol', {C: 29, H: 50, O: 2}, 0, 0.95, 'https://en.wikipedia.org/wiki/%CE%91-Tocopherol');
 Nutrient.TOCOPHEROL_BETA = new Nutrient('β-Tocopherol', {C: 28, H: 48, O: 2});
 Nutrient.TOCOPHEROL_GAMMA = new Nutrient('γ-Tocopherol', {C: 28, H: 48, O: 2});
@@ -672,7 +671,7 @@ NutrientGroup.VITAMIN_B = new NutrientGroup('Vitamin B (total)', 0, [
 	new NutrientAmount(Nutrient.VITAMIN_B12, 1),
 ]);
 
-NutrientGroup.VITAMIN_D = new NutrientGroup('Vitamin D (total)', 20e-6, [
+NutrientGroup.VITAMIN_D = new NutrientGroup('Vitamin D', 20e-6, [
 	// new NutrientAmount(Nutrient.VITAMIN_D1, 1),
 	new NutrientAmount(Nutrient.VITAMIN_D2, 1),
 	new NutrientAmount(Nutrient.VITAMIN_D3, 1),
@@ -681,8 +680,7 @@ NutrientGroup.VITAMIN_D = new NutrientGroup('Vitamin D (total)', 20e-6, [
 	new NutrientAmount(Nutrient._25_HYDROXYCHOLECALCIFEROL, 1),
 ]);
 
-NutrientGroup.VITAMIN_E = new NutrientGroup('Vitamin E (total)', 15e-3, [
-	new NutrientAmount(Nutrient.VITAMIN_E, 1),
+NutrientGroup.VITAMIN_E = new NutrientGroup('Vitamin E', 15e-3, [
 	new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 1),
 	new NutrientAmount(Nutrient.TOCOPHEROL_BETA, 1),
 	new NutrientAmount(Nutrient.TOCOPHEROL_GAMMA, 1),
@@ -921,7 +919,7 @@ Food.Lime = new Food('Lime', { // todo create nutrient groups for all this other
 		new NutrientAmount(Nutrient.FOLATE, 8e-6),
 		new NutrientAmount(Nutrient.CHOLINE, 5.1e-3),
 		new NutrientAmount(Nutrient.CAROTENE_BETA, 30e-6),
-		new NutrientAmount(Nutrient.VITAMIN_E, 0.22e-3),
+		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.22e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 0.6e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344664/nutrients');
@@ -1074,7 +1072,7 @@ Food.ChocolateDark = new Food('Dark Chocolate (70-85%)', { // todo create nutrie
 		new NutrientAmount(Nutrient.CAROTENE_ALPHA, 7e-6),
 		new NutrientAmount(Nutrient.CRYPTOXANTHIN_BETA, 1e-6),
 		new NutrientAmount(Nutrient.LUTEIN, 27e-3),
-		new NutrientAmount(Nutrient.VITAMIN_E, 0.59e-3),
+		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.59e-3),
 		new NutrientAmount(Nutrient.TOCOPHEROL_BETA, 0.01e-3),
 		new NutrientAmount(Nutrient.TOCOPHEROL_GAMMA, 9.19e-3),
 		new NutrientAmount(Nutrient.TOCOPHEROL_DELTA, 0.29e-3),
@@ -1165,11 +1163,45 @@ Food.Tofu = new Food('Tofu', { // todo create nutrient groups for all this other
 		new NutrientAmount(Nutrient.FOLATE, 44e-6),
 		new NutrientAmount(Nutrient.CHOLINE, 27.4e-3),
 		new NutrientAmount(Nutrient.CAROTENE_BETA, 4e-6),
-		new NutrientAmount(Nutrient.VITAMIN_E, 0.01e-3),
+		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.01e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 2e-6),
 		// other sources...
 		new NutrientAmount(Nutrient.COUMESTROL, 0.12e-3), // https://en.wikipedia.org/wiki/Coumestrol
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2342910/nutrients');
+// FOODS
+Food.Garlic = new Food('Garlic', {
+	measures: { // guesses
+		bulb: 50,
+		clove: 5,
+	},
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 58.58),
+		new NutrientAmount(Nutrient.PROTEIN, 6.36),
+		new NutrientAmount(Nutrient.FAT, 0.5),
+		new NutrientAmount(Nutrient.FIBER, 2.1),
+		new NutrientAmount(Nutrient.SUGAR, 1),
+		new NutrientAmount(Nutrient.CALCIUM, 181e-3),
+		new NutrientAmount(Nutrient.IRON, 1.7e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 25e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 153e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 401e-3),
+		new NutrientAmount(Nutrient.SODIUM, 17e-3),
+		new NutrientAmount(Nutrient.ZINC, 1.16e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.299e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 14.2e-6),
+		new NutrientAmount(Nutrient.VITAMIN_C, 31.2e-3),
+		new NutrientAmount(Nutrient.THIAMIN, 0.2e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.11e-3),
+		new NutrientAmount(Nutrient.NIACIN, 0.7e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 1.235e-3),
+		new NutrientAmount(Nutrient.FOLATE, 3e-6),
+		new NutrientAmount(Nutrient.CHOLINE, 23.2e-3),
+		new NutrientAmount(Nutrient.CAROTENE_BETA, 5e-6),
+		new NutrientAmount(Nutrient.LUTEIN, 16e-6),
+		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.08e-3),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 1.7e-6),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/1103354/nutrients');
 
 const NUTRITION_LOADED = true;
