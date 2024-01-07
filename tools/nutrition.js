@@ -666,5 +666,29 @@ Food.Egg = new Food('Egg', { // todo create nutrient groups for all this other s
 		new NutrientAmount(Nutrient._25_HYDROXYCHOLECALCIFEROL, 0.56e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344664/nutrients');
+Food.Bacon = new Food('Bacon', { // todo create nutrient groups for all this other shit
+	measures: {
+		slice: 6.3,
+	},
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 14.2),
+		new NutrientAmount(Nutrient.NITROGEN, 6.54),
+		new NutrientAmount(Nutrient.PROTEIN, 40.9),
+		new NutrientAmount(Nutrient.FAT, 36.5),
+		new NutrientAmount(Nutrient.ASH, 6.33),
+		new NutrientAmount(Nutrient.SUCROSE, 3.09),
+		new NutrientAmount(Nutrient.GLUCOSE, 0.04),
+		new NutrientAmount(Nutrient.FRUCTOSE, 0.01),
+		new NutrientAmount(Nutrient.CALCIUM, 13e-3),
+		new NutrientAmount(Nutrient.IRON, 1.28e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 36.5e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 415e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 557e-3),
+		new NutrientAmount(Nutrient.SODIUM, 1830e-3),
+		new NutrientAmount(Nutrient.ZINC, 3.56e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.13e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 0.02e-3),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/749420/nutrients');
 
 const NUTRITION_LOADED = true;
