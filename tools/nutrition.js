@@ -380,23 +380,36 @@ Nutrient.THIAMIN = new Nutrient('Vitamin B1 (Thiamin)', {C: 12, H: 17, N: 4, O: 
 Nutrient.RIBOFLAVIN = new Nutrient('Vitamin B2 (Riboflavin)', {C: 17, H: 20, N: 4, O: 6});
 Nutrient.NIACIN = new Nutrient('Vitamin B3 (Niacin)', {C: 6, H: 5, N: 1, O: 2}, 1.473, 'https://en.wikipedia.org/wiki/Vitamin_B3');
 Nutrient.CHOLINE = new Nutrient('Vitamin B4 (Choline)', {C: 5, H: 14, N: 1, O: 1});
+Nutrient.PANTOTHENIC_ACID = new Nutrient('Vitamin B5 (Pantothenic Acid)', {C: 9, H: 17, N: 1, O: 5}, 1.266);
 Nutrient.VITAMIN_B6 = new Nutrient('Vitamin B6', {C: 8, H: 10, N: 1, O: 6, P: 1}, 1.638); // Pyridoxal Phosphate
 Nutrient.BIOTIN = new Nutrient('Vitamin B7 (Biotin)', {C: 10, H: 16, N: 2, O: 3, S: 1});
 Nutrient.FOLATE = new Nutrient('Vitamin B9 (Folate)', {C: 19, H: 19, N: 7, O: 6}, 1.6, 'https://en.wikipedia.org/wiki/Folate');
+Nutrient.VITAMIN_B12 = new Nutrient('Vitamin B12 (Cobalamin)', {C: 63, H: 88, Co: 1, N: 14, O: 14, P: 1});
 Nutrient.RETINOL = new Nutrient('Retinol', {C: 20, H: 30, O: 1});
+Nutrient.CAROTENE_ALPHA = new Nutrient('α-Carotene', {C: 40, H: 56});
 Nutrient.CAROTENE_BETA = new Nutrient('β-Carotene', {C: 40, H: 56}, 1, 'https://en.wikipedia.org/wiki/%CE%92-Carotene');
 Nutrient.CRYPTOXANTHIN_BETA = new Nutrient('β-Cryptoxanthin', {C: 40, H: 56, O: 1});
 Nutrient.CRYPTOXANTHIN_ALPHA = new Nutrient('α-Cryptoxanthin', {C: 40, H: 56, O: 1}); // ???
-Nutrient.VITAMIN_E = new Nutrient('Vitamin E', {C: 29, H: 50, O: 2}, 0.95, 'https://en.wikipedia.org/wiki/Vitamin_E'); // α-Tocopherol
+Nutrient.VITAMIN_E = new Nutrient('Vitamin E (Unspecified)', {C: 29, H: 50, O: 2}, 0.95, 'https://en.wikipedia.org/wiki/Vitamin_E'); // α-Tocopherol
 Nutrient.PHYLLOQUINONE = new Nutrient('Phytomenadione', {C: 31, H: 46, O: 2}); // Phytomenadione
 Nutrient.DIHYDROPHYLLOQUINONE = new Nutrient('Dihydrophylloquinone', {C: 31, H: 50, O: 4}); // ???
 Nutrient.MENAQUINONE_4 = new Nutrient('Menatetrenone', {C: 31, H: 40, O: 2});
-
 Nutrient.VITAMIN_D3 = new Nutrient('Vitamin D3 (Cholecalciferol)', {C: 27, H: 44, O: 1});
 
+Nutrient.TOCOPHEROL_BETA = new Nutrient('β-Tocopherol', {C: 28, H: 48, O: 2});
+Nutrient.TOCOPHEROL_GAMMA = new Nutrient('γ-Tocopherol', {C: 28, H: 48, O: 2});
+Nutrient.TOCOPHEROL_DELTA = new Nutrient('δ-Tocopherol', {C: 27, H: 46, O: 2});
+Nutrient.TOCOTRIENOL_GAMMA = new Nutrient('γ-Tocotrienol', {C: 28, H: 42, O: 2});
+
 Nutrient.BETAINE = new Nutrient('Betaine', {C: 5, H: 11, N: 1, O: 2}); // Trimethylglycine
-Nutrient.LUTEIN = new Nutrient('Lutein', {C: 40, H: 56, O: 2});
+Nutrient.CAFFEINE = new Nutrient('Caffeine', {C: 8, H: 10, N: 4, O: 2});
+Nutrient.CAMPESTEROL = new Nutrient('Campesterol', {C: 28, H: 48, O: 1});
+Nutrient.CHOLESTEROL = new Nutrient('Cholesterol', {C: 27, H: 46, O: 1}, 1.052, 'https://en.wikipedia.org/wiki/Cholesterol');
 Nutrient.CIS_LUTEIN = new Nutrient('Cis-Lutein', {C: 40, H: 56, O: 2}); // ???
+Nutrient.LUTEIN = new Nutrient('Lutein', {C: 40, H: 56, O: 2});
+Nutrient.SITOSTEROL_BETA = new Nutrient('β-Sitosterol', {C: 29, H: 50, O: 1});
+Nutrient.STIGMASTEROL = new Nutrient('Stigmasterol', {C: 29, H: 48, O: 1});
+Nutrient.THEOBROMINE = new Nutrient('Theobromine', {C: 7, H: 8, N: 4, O: 2});
 Nutrient.ZEAXANTHIN = new Nutrient('Zeaxanthin', {C: 40, H: 56, O: 2});
 Nutrient._25_HYDROXYCHOLECALCIFEROL = new Nutrient('Calcifediol', {C: 27, H: 44, O: 2});
 
@@ -436,7 +449,7 @@ NutrientGroup.CARBOHYDRATES = new NutrientGroup('Carbohydrates', [
 NutrientGroup.VITAMIN_A = new NutrientGroup('Vitamin A', [
 	new NutrientAmount(Nutrient.RETINOL, 1),
 	new NutrientAmount(Nutrient.CAROTENE_BETA, 0.5),
-	// new NutrientAmount(Nutrient.CAROTENE_ALPHA, 0.25),
+	new NutrientAmount(Nutrient.CAROTENE_ALPHA, 0.25),
 	// new NutrientAmount(Nutrient.CAROTENE_GAMMA, 0.25),
 	new NutrientAmount(Nutrient.CRYPTOXANTHIN_BETA, 0.25),
 	new NutrientAmount(Nutrient.CRYPTOXANTHIN_ALPHA, 0.25), // ???
@@ -447,11 +460,11 @@ NutrientGroup.VITAMIN_B = new NutrientGroup('Vitamin B (total)', [
 	new NutrientAmount(Nutrient.RIBOFLAVIN, 1),
 	new NutrientAmount(Nutrient.NIACIN, 1),
 	new NutrientAmount(Nutrient.CHOLINE, 1),
-	// new NutrientAmount(Nutrient.PANTOTHENIC_ACID, 1),
+	new NutrientAmount(Nutrient.PANTOTHENIC_ACID, 1),
 	new NutrientAmount(Nutrient.VITAMIN_B6, 1),
 	new NutrientAmount(Nutrient.BIOTIN, 1),
 	new NutrientAmount(Nutrient.FOLATE, 1),
-	// new NutrientAmount(Nutrient.VITAMIN_B12, 1),
+	new NutrientAmount(Nutrient.VITAMIN_B12, 1),
 ]);
 
 NutrientGroup.VITAMIN_D = new NutrientGroup('Vitamin D (total)', [
@@ -460,6 +473,14 @@ NutrientGroup.VITAMIN_D = new NutrientGroup('Vitamin D (total)', [
 	new NutrientAmount(Nutrient.VITAMIN_D3, 1),
 	// new NutrientAmount(Nutrient.VITAMIN_D4, 1),
 	// new NutrientAmount(Nutrient.VITAMIN_D5, 1),
+]);
+
+NutrientGroup.VITAMIN_E = new NutrientGroup('Vitamin E (total)', [
+	new NutrientAmount(Nutrient.VITAMIN_E, 1),
+	new NutrientAmount(Nutrient.TOCOPHEROL_BETA, 1),
+	new NutrientAmount(Nutrient.TOCOPHEROL_GAMMA, 1),
+	new NutrientAmount(Nutrient.TOCOPHEROL_DELTA, 1),
+	new NutrientAmount(Nutrient.TOCOTRIENOL_GAMMA, 1),
 ]);
 
 NutrientGroup.VITAMIN_K = new NutrientGroup('Vitamin K', [
@@ -722,5 +743,50 @@ Food.BreadRye = new Food('Rye Bread', { // todo create nutrient groups for all t
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 1.2e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2343235/nutrients');
+Food.ChocolateDark = new Food('Dark Chocolate (70-85%)', { // todo create nutrient groups for all this other shit
+	measures: {
+		bar: 101,
+	},
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 1.37),
+		new NutrientAmount(Nutrient.PROTEIN, 7.79),
+		new NutrientAmount(Nutrient.FAT, 42.6),
+		new NutrientAmount(Nutrient.ASH, 2.32),
+		new NutrientAmount(Nutrient.FIBER, 10.9),
+		new NutrientAmount(Nutrient.SUCROSE, 24),
+		new NutrientAmount(Nutrient.CALCIUM, 73e-3),
+		new NutrientAmount(Nutrient.IRON, 11.9e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 228e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 308e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 715e-3),
+		new NutrientAmount(Nutrient.SODIUM, 20e-3),
+		new NutrientAmount(Nutrient.ZINC, 3.31e-3),
+		new NutrientAmount(Nutrient.COPPER, 1.77e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 1.95e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 6.8e-6),
+		new NutrientAmount(Nutrient.THIAMIN, 0.034e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.078e-3),
+		new NutrientAmount(Nutrient.NIACIN, 1.05e-3),
+		new NutrientAmount(Nutrient.PANTOTHENIC_ACID, 0.418e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.038e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B12, 0.28e-6),
+		new NutrientAmount(Nutrient.CAROTENE_BETA, 19e-6),
+		new NutrientAmount(Nutrient.CAROTENE_ALPHA, 7e-6),
+		new NutrientAmount(Nutrient.CRYPTOXANTHIN_BETA, 1e-6),
+		new NutrientAmount(Nutrient.LUTEIN, 27e-3),
+		new NutrientAmount(Nutrient.VITAMIN_E, 0.59e-3),
+		new NutrientAmount(Nutrient.TOCOPHEROL_BETA, 0.01e-3),
+		new NutrientAmount(Nutrient.TOCOPHEROL_GAMMA, 9.19e-3),
+		new NutrientAmount(Nutrient.TOCOPHEROL_DELTA, 0.29e-3),
+		new NutrientAmount(Nutrient.TOCOTRIENOL_GAMMA, 0.14e-3),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 7.3e-6),
+		new NutrientAmount(Nutrient.CHOLESTEROL, 3e-3),
+		new NutrientAmount(Nutrient.STIGMASTEROL, 31e-3),
+		new NutrientAmount(Nutrient.CAMPESTEROL, 12e-3),
+		new NutrientAmount(Nutrient.SITOSTEROL_BETA, 86e-3),
+		new NutrientAmount(Nutrient.CAFFEINE, 80e-3),
+		new NutrientAmount(Nutrient.THEOBROMINE, 802e-3),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/170273/nutrients');
 
 const NUTRITION_LOADED = true;
