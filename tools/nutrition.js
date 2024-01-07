@@ -1136,5 +1136,40 @@ Food.MilkSoy = new Food('Soy Milk', { // todo create nutrient groups for all thi
 		new NutrientAmount(Nutrient.COUMESTROL, 0.81e-3), // https://en.wikipedia.org/wiki/Coumestrol
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/1999630/nutrients');
+Food.Tofu = new Food('Tofu', { // todo create nutrient groups for all this other shit
+	measures: {
+		cup: 248,
+		piece: 120,
+		cu_in: 17.6,
+	},
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 87.3),
+		new NutrientAmount(Nutrient.PROTEIN, 7.17),
+		new NutrientAmount(Nutrient.FAT, 3.69),
+		new NutrientAmount(Nutrient.FIBER, 0.2),
+		new NutrientAmount(Nutrient.SUGAR, 0.7),
+		new NutrientAmount(Nutrient.CALCIUM, 111e-3),
+		new NutrientAmount(Nutrient.IRON, 1.11e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 27e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 92e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 120e-3),
+		new NutrientAmount(Nutrient.SODIUM, 8e-3),
+		new NutrientAmount(Nutrient.ZINC, 0.64e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.157e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 8.9e-6),
+		new NutrientAmount(Nutrient.VITAMIN_C, 0.2e-3),
+		new NutrientAmount(Nutrient.THIAMIN, 0.047e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.037e-3),
+		new NutrientAmount(Nutrient.NIACIN, 0.535e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.052e-3),
+		new NutrientAmount(Nutrient.FOLATE, 44e-6),
+		new NutrientAmount(Nutrient.CHOLINE, 27.4e-3),
+		new NutrientAmount(Nutrient.CAROTENE_BETA, 4e-6),
+		new NutrientAmount(Nutrient.VITAMIN_E, 0.01e-3),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 2e-6),
+		// other sources...
+		new NutrientAmount(Nutrient.COUMESTROL, 0.12e-3), // https://en.wikipedia.org/wiki/Coumestrol
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2342910/nutrients');
 
 const NUTRITION_LOADED = true;
