@@ -1234,5 +1234,34 @@ Food.Seaweed = new Food('Seaweed', {
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 25e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345512/nutrients');
+Food.Sorghum = new Food('Sorghum', {
+	measures: {
+		cup: 192,
+	},
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 12.4),
+		new NutrientAmount(Nutrient.PROTEIN, 10.6),
+		new NutrientAmount(Nutrient.FAT, 3.46),
+		new NutrientAmount(Nutrient.ASH, 1.43),
+		new NutrientAmount(Nutrient.FIBER, 6.7),
+		new NutrientAmount(Nutrient.SUGAR, 2.53),
+		new NutrientAmount(Nutrient.CALCIUM, 13e-3),
+		new NutrientAmount(Nutrient.IRON, 3.36e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 165e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 289e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 363e-3),
+		new NutrientAmount(Nutrient.SODIUM, 2e-3),
+		new NutrientAmount(Nutrient.ZINC, 1.67e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.284e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 12.2e-6),
+		new NutrientAmount(Nutrient.THIAMIN, 0.332e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.096e-3),
+		new NutrientAmount(Nutrient.NIACIN, 3.69e-3),
+		new NutrientAmount(Nutrient.PANTOTHENIC_ACID, 0.367e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.443e-3),
+		new NutrientAmount(Nutrient.FOLATE, 20e-6),
+		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.5e-3),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/169716/nutrients');
 
 const NUTRITION_LOADED = true;
