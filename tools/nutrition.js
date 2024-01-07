@@ -9,8 +9,10 @@ const MOLAR_MASS = {
 	Mg: 24.305,
 	P: 30.974,
 	S: 32.06,
+	Cl: 35.45,
 	K: 39.098,
 	Ca: 40.078,
+	Cr: 51.9961,
 	Mn: 54.938,
 	Fe: 55.845,
 	Co: 58.933194,
@@ -477,12 +479,13 @@ Food.foods = [];
 
 
 // NUTRIENTS
+// DV as of Aug 2023 https://www.fda.gov/media/135301/download?attachment
 Nutrient.WATER = new Nutrient('Water', {H: 2, O: 1}, 0, 0.99336);
 Nutrient.NITROGEN = new Nutrient('Nitrogen', {N: 2}); // ???
 Nutrient.PROTEIN = new Nutrient('Protein', {C: 6, H: 13, N: 1, O: 2}, 50, 1.5); // Leucine
-Nutrient.FAT = new Nutrient('Fat', {C: 18, H: 36, O: 2}, 65, 0.895); // Stearic Acid
+Nutrient.FAT = new Nutrient('Fat', {C: 18, H: 36, O: 2}, 78, 0.895); // Stearic Acid
 Nutrient.ASH = new Nutrient('Ash', {C: 1, H: 1, N: 1, O: 1}); // ???
-Nutrient.FIBER = new Nutrient('Fiber', {C: 12, H: 20, O: 10}, 25, 1.5); // Cellulose
+Nutrient.FIBER = new Nutrient('Fiber', {C: 12, H: 20, O: 10}, 28, 1.5); // Cellulose
 Nutrient.SUGAR = new Nutrient('Sugar (Unspecified)', {C: 6, H: 12, O: 6}, 0, 1.55);
 Nutrient.SUCROSE = new Nutrient('Sucrose', {C: 12, H: 22, O: 11}, 0, 1.587);
 Nutrient.GLUCOSE = new Nutrient('Glucose', {C: 6, H: 12, O: 6}, 0, 1.54);
@@ -491,18 +494,20 @@ Nutrient.LACTOSE = new Nutrient('Lactose', {C: 12, H: 22, O: 11}, 0, 1.525);
 Nutrient.MALTOSE = new Nutrient('Maltose', {C: 12, H: 22, O: 11}, 0, 1.54);
 Nutrient.STARCH = new Nutrient('Starch', {C: 6, H: 10, O: 5});
 // Minerals
-Nutrient.CALCIUM = new Nutrient('Calcium', {Ca: 1}, 1);
+Nutrient.CALCIUM = new Nutrient('Calcium', {Ca: 1}, 1300e-3);
 Nutrient.IRON = new Nutrient('Iron', {Fe: 1}, 18e-3);
-Nutrient.MAGNESIUM = new Nutrient('Magnesium', {Mg: 1}, 400e-3);
-Nutrient.PHOSPHORUS = new Nutrient('Phosphorus', {P: 1}, 1);
-Nutrient.POTASSIUM = new Nutrient('Potassium', {K: 1});
-Nutrient.SODIUM = new Nutrient('Sodium', {Na: 1}, 2.4);
-Nutrient.ZINC = new Nutrient('Zinc', {Zn: 1}, 15e-3);
-Nutrient.COPPER = new Nutrient('Copper', {Cu: 1}, 2e-3);
-Nutrient.MANGANESE = new Nutrient('Manganese', {Mn: 1}, 2e-3);
+Nutrient.MAGNESIUM = new Nutrient('Magnesium', {Mg: 1}, 420e-3);
+Nutrient.PHOSPHORUS = new Nutrient('Phosphorus', {P: 1}, 1250e-3);
+Nutrient.POTASSIUM = new Nutrient('Potassium', {K: 1}, 4700e-3);
+Nutrient.SODIUM = new Nutrient('Sodium', {Na: 1}, 2.3);
+Nutrient.ZINC = new Nutrient('Zinc', {Zn: 1}, 11e-3);
+Nutrient.COPPER = new Nutrient('Copper', {Cu: 1}, 0.9e-3);
+Nutrient.MANGANESE = new Nutrient('Manganese', {Mn: 1}, 2.3e-3);
 Nutrient.IODINE = new Nutrient('Iodine', {I: 1}, 150e-6);
-Nutrient.SELENIUM = new Nutrient('Selenium', {Se: 1}, 70e-6);
-Nutrient.MOLYBDENUM = new Nutrient('Molybdenum', {Mo: 1}, 75e-6);
+Nutrient.SELENIUM = new Nutrient('Selenium', {Se: 1}, 55e-6);
+Nutrient.MOLYBDENUM = new Nutrient('Molybdenum', {Mo: 1}, 45e-6);
+Nutrient.CHLORIDE = new Nutrient('Chloride', {Cl: 1}, 2300e-3);
+Nutrient.CHROMIUM = new Nutrient('Chromium', {Cr: 1}, 35e-6);
 // A
 Nutrient.RETINOL = new Nutrient('Retinol', {C: 20, H: 30, O: 1});
 Nutrient.CAROTENE_ALPHA = new Nutrient('α-Carotene', {C: 40, H: 56});
@@ -510,17 +515,17 @@ Nutrient.CAROTENE_BETA = new Nutrient('β-Carotene', {C: 40, H: 56}, 1, 'https:/
 Nutrient.CRYPTOXANTHIN_BETA = new Nutrient('β-Cryptoxanthin', {C: 40, H: 56, O: 1});
 Nutrient.CRYPTOXANTHIN_ALPHA = new Nutrient('α-Cryptoxanthin', {C: 40, H: 56, O: 1}); // ???
 // B
-Nutrient.THIAMIN = new Nutrient('Vitamin B1 (Thiamin)', {C: 12, H: 17, N: 4, O: 1, S: 1}, 1.5e-3);
-Nutrient.RIBOFLAVIN = new Nutrient('Vitamin B2 (Riboflavin)', {C: 17, H: 20, N: 4, O: 6}, 1.7e-3);
-Nutrient.NIACIN = new Nutrient('Vitamin B3 (Niacin)', {C: 6, H: 5, N: 1, O: 2}, 20e-3, 1.473, 'https://en.wikipedia.org/wiki/Vitamin_B3');
-Nutrient.CHOLINE = new Nutrient('Vitamin B4 (Choline)', {C: 5, H: 14, N: 1, O: 1});
-Nutrient.PANTOTHENIC_ACID = new Nutrient('Vitamin B5 (Pantothenic Acid)', {C: 9, H: 17, N: 1, O: 5}, 10e-3, 1.266);
-Nutrient.VITAMIN_B6 = new Nutrient('Vitamin B6', {C: 8, H: 10, N: 1, O: 6, P: 1}, 2e-3, 1.638); // Pyridoxal Phosphate
-Nutrient.BIOTIN = new Nutrient('Vitamin B7 (Biotin)', {C: 10, H: 16, N: 2, O: 3, S: 1}, 300e-6);
+Nutrient.THIAMIN = new Nutrient('Vitamin B1 (Thiamin)', {C: 12, H: 17, N: 4, O: 1, S: 1}, 1.2e-3);
+Nutrient.RIBOFLAVIN = new Nutrient('Vitamin B2 (Riboflavin)', {C: 17, H: 20, N: 4, O: 6}, 1.3e-3);
+Nutrient.NIACIN = new Nutrient('Vitamin B3 (Niacin)', {C: 6, H: 5, N: 1, O: 2}, 16e-3, 1.473, 'https://en.wikipedia.org/wiki/Vitamin_B3');
+Nutrient.CHOLINE = new Nutrient('Vitamin B4 (Choline)', {C: 5, H: 14, N: 1, O: 1}, 550e-3);
+Nutrient.PANTOTHENIC_ACID = new Nutrient('Vitamin B5 (Pantothenic Acid)', {C: 9, H: 17, N: 1, O: 5}, 5e-3, 1.266);
+Nutrient.VITAMIN_B6 = new Nutrient('Vitamin B6', {C: 8, H: 10, N: 1, O: 6, P: 1}, 1.7e-3, 1.638); // Pyridoxal Phosphate
+Nutrient.BIOTIN = new Nutrient('Vitamin B7 (Biotin)', {C: 10, H: 16, N: 2, O: 3, S: 1}, 30e-6);
 Nutrient.FOLATE = new Nutrient('Vitamin B9 (Folate)', {C: 19, H: 19, N: 7, O: 6}, 400e-6, 1.6, 'https://en.wikipedia.org/wiki/Folate');
-Nutrient.VITAMIN_B12 = new Nutrient('Vitamin B12 (Cobalamin)', {C: 63, H: 88, Co: 1, N: 14, O: 14, P: 1}, 6e-6);
+Nutrient.VITAMIN_B12 = new Nutrient('Vitamin B12 (Cobalamin)', {C: 63, H: 88, Co: 1, N: 14, O: 14, P: 1}, 2.4e-6);
 // C
-Nutrient.VITAMIN_C = new Nutrient('Vitamin C', {C: 6, H: 8, O: 6}, 60e-3, 1.694);
+Nutrient.VITAMIN_C = new Nutrient('Vitamin C', {C: 6, H: 8, O: 6}, 90e-3, 1.694);
 // D
 Nutrient.VITAMIN_D3 = new Nutrient('Vitamin D3 (Cholecalciferol)', {C: 27, H: 44, O: 1});
 Nutrient._25_HYDROXYCHOLECALCIFEROL = new Nutrient('Calcifediol', {C: 27, H: 44, O: 2});
@@ -576,13 +581,13 @@ NutrientGroup.CALORIES = new NutrientGroup('Calories', 0, [
 	new NutrientAmount(Nutrient.ALCOHOL, 7.112), // ditto
 ]);
 
-NutrientGroup.CARBOHYDRATES = new NutrientGroup('Carbohydrates', 300, [
+NutrientGroup.CARBOHYDRATES = new NutrientGroup('Carbohydrates', 275, [
 	new NutrientAmount(NutrientGroup.SUGARS, 1),
 	new NutrientAmount(Nutrient.FIBER, 1),
 	new NutrientAmount(Nutrient.STARCH, 1),
 ]);
 
-NutrientGroup.VITAMIN_A = new NutrientGroup('Vitamin A (μg RAE)', 5000/3.3, [
+NutrientGroup.VITAMIN_A = new NutrientGroup('Vitamin A (μg RAE)', 900, [
 	new NutrientAmount(Nutrient.RETINOL, 1),
 	new NutrientAmount(Nutrient.CAROTENE_BETA, 1/12),
 	new NutrientAmount(Nutrient.CAROTENE_ALPHA, 1/24),
@@ -603,7 +608,7 @@ NutrientGroup.VITAMIN_B = new NutrientGroup('Vitamin B (total)', 0, [
 	new NutrientAmount(Nutrient.VITAMIN_B12, 1),
 ]);
 
-NutrientGroup.VITAMIN_D = new NutrientGroup('Vitamin D (total)', 400e-3*40, [
+NutrientGroup.VITAMIN_D = new NutrientGroup('Vitamin D (total)', 20e-6, [
 	// new NutrientAmount(Nutrient.VITAMIN_D1, 1),
 	// new NutrientAmount(Nutrient.VITAMIN_D2, 1),
 	new NutrientAmount(Nutrient.VITAMIN_D3, 1),
@@ -620,7 +625,7 @@ NutrientGroup.VITAMIN_E = new NutrientGroup('Vitamin E (total)', 15e-3, [
 	new NutrientAmount(Nutrient.TOCOTRIENOL_GAMMA, 1),
 ]);
 
-NutrientGroup.VITAMIN_K = new NutrientGroup('Vitamin K', 80e-6, [
+NutrientGroup.VITAMIN_K = new NutrientGroup('Vitamin K', 120e-6, [
 	new NutrientAmount(Nutrient.PHYLLOQUINONE, 1),
 	new NutrientAmount(Nutrient.DIHYDROPHYLLOQUINONE, 1),
 	new NutrientAmount(Nutrient.MENAQUINONE_4, 1),
@@ -657,6 +662,8 @@ NutrientGroup.MINERALS = new NutrientGroup('Minerals (total)', 0, [
 	new NutrientAmount(Nutrient.IODINE, 1),
 	new NutrientAmount(Nutrient.SELENIUM, 1),
 	new NutrientAmount(Nutrient.MOLYBDENUM, 1),
+	new NutrientAmount(Nutrient.CHLORIDE, 1),
+	new NutrientAmount(Nutrient.CHROMIUM, 1),
 ]);
 
 NutrientGroup.VITAMINS = new NutrientGroup('Vitamins (total)', 0, [
