@@ -3,3 +3,13 @@ iframe {
 	height: 40vw;
 	width: 80vw;
 }
+
+#foodLabel {
+	background-color: white;
+	color: black;
+	font-family: sans-serif;
+	width: 20em;
+}
+#foodLabel h3 {
+	text-align: center;
+}

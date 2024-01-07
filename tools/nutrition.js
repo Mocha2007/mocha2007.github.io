@@ -97,7 +97,7 @@ function main(){
 	// scatter
 	SCATTER_CONTROL.init();
 	// defaults...
-	Food.OnionYellow.showPie();
+	Food.OnionYellow.show();
 	Nutrient.POTASSIUM.showBar();
 	// done
 	console.info('nutrition.js ran successfully');
@@ -243,9 +243,9 @@ class NutrientGroup extends Nutrient {
 		NutrientGroup.groups.push(this);
 	}
 	/** @param {Food} food */
-	value(food){
+	value(food, useUnitMass = false){
 		return this.nutrientWeights
-			.map(na => food.nutrient(na.nutrient) * na.amount)
+			.map(na => food.nutrient(na.nutrient, useUnitMass) * na.amount)
 			.reduce((a, b) => a+b);
 	}
 }
@@ -303,7 +303,56 @@ class Food extends SourcedObject {
 			.reduce((a, b) => a+b, 0);
 	}
 	get measures(){
-		return this.properties.measures;
+		return this.properties.measures || {};
+	}
+	get nutritionLabel(){
+		// https://www.fda.gov/files/food/published/Food-Labeling-Guide-%28PDF%29.pdf
+		function appendHR(){
+			elem.appendChild(document.createElement('hr'));
+		}
+		const elem = document.createElement('div');
+		const title = document.createElement('h3');
+		title.innerHTML = 'Nutrition Facts';
+		elem.appendChild(title);
+		// measures
+		const measureContainer = document.createElement('div');
+		elem.appendChild(measureContainer);
+		for (const measure in this.measures){
+			const measureElem = document.createElement('div');
+			measureElem.innerHTML = `${measure}: ${this.measures[measure]} g`;
+			measureContainer.appendChild(measureElem);
+		}
+		// calories
+		appendHR();
+		const calories = document.createElement('div');
+		// eslint-disable-next-line max-len
+		calories.innerHTML = `<b>Calories</b> ${Math.round(this.nutrient(NutrientGroup.CALORIES, true))}<br>
+		Calories from Fat ${Math.round(9*this.nutrient(Nutrient.FAT, true))}`;
+		elem.appendChild(calories);
+		// central sector
+		appendHR();
+		[
+			[Nutrient.FAT, true],
+			[Nutrient.CHOLESTEROL, true],
+			[Nutrient.SODIUM, true],
+			[NutrientGroup.CARBOHYDRATES, true],
+			[Nutrient.FIBER, false],
+			[NutrientGroup.SUGARS, false],
+			[Nutrient.PROTEIN, true],
+		].forEach(datum => {
+			const [nutrient, bold] = datum;
+			const lineItem = document.createElement('div');
+			if (bold)
+				lineItem.innerHTML = `<b>${nutrient.name}</b>`;
+			else
+				lineItem.innerHTML = '&mdash; ' + nutrient.name;
+			lineItem.innerHTML += ' ' + Math.round(this.nutrient(nutrient, true)) + 'g';
+			// todo % Daily Value
+			elem.appendChild(lineItem);
+		});
+		// todo vitamins and minerals w/ %DV
+		appendHR();
+		return elem;
 	}
 	/** @returns {NutrientAmount[]} */
 	get nutrients(){
@@ -318,16 +367,29 @@ class Food extends SourcedObject {
 		const elem = document.createElement('span');
 		elem.classList.add('button');
 		elem.innerHTML = this.name;
-		elem.onclick = () => this.showPie();
+		elem.onclick = () => this.show();
 		return elem;
 	}
 	// methods
-	/** @param {Nutrient} n */
-	nutrient(n){
+	/**
+	 * @param {Nutrient} n
+	 * @param {boolean} useUnitMass
+	 */
+	nutrient(n, useUnitMass = false){
+		const DIVISOR = useUnitMass ? 1 : this.unitMass;
 		if (n instanceof NutrientGroup)
-			return n.value(this);
+			return n.value(this, useUnitMass);
 		// eslint-disable-next-line max-len
-		return (maybe_n => maybe_n ? maybe_n.amount / this.unitMass : 0)(this.nutrients.find(na => na.nutrient === n));
+		return (maybe_n => maybe_n ? maybe_n.amount / DIVISOR : 0)(this.nutrients.find(na => na.nutrient === n));
+	}
+	show(){
+		this.showNutrition();
+		this.showPie();
+	}
+	showNutrition(){
+		const container = document.getElementById('foodLabel');
+		container.innerHTML = '';
+		container.appendChild(this.nutritionLabel);
 	}
 	showPie(){
 		const composition = this.composition;
