@@ -632,9 +632,7 @@ Food.RiceWhite = new Food('White Rice', {
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2512381/nutrients');
 Food.Egg = new Food('Egg', { // todo create nutrient groups for all this other shit
 	measures: {
-		fruit: 65,
-		slice: 8,
-		cup: 200,
+		egg: 50.3,
 	},
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 75.8),
