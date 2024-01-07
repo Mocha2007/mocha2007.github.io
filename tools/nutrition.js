@@ -402,6 +402,7 @@ class Food extends SourcedObject {
 		];
 		let ADD_CAVEAT = false;
 		MAIN_NUTRIENTS.forEach(datum => {
+			/** @type {[Nutrient, boolean, boolean]} */
 			const [nutrient, bold, usemg] = datum;
 			const trueValue = this.nutrient(nutrient, true);
 			const value = fdaround(nutrient, trueValue * (usemg ? 1e3 : 1));
@@ -410,9 +411,9 @@ class Food extends SourcedObject {
 			const lineItem = document.createElement('div');
 			lineItem.classList.add('nutritionLine');
 			if (bold)
-				lineItem.innerHTML = `<b>${nutrient.name}</b>`;
+				lineItem.innerHTML = `<b>${nutrient.a.outerHTML}</b>`;
 			else
-				lineItem.innerHTML = '&mdash; ' + nutrient.name;
+				lineItem.innerHTML = '&mdash; ' + nutrient.a.outerHTML;
 			lineItem.innerHTML += ' ' + value + (usemg ? 'm' : '') + 'g';
 			// % Daily Value
 			let INNER = Math.round(100 * trueValue / nutrient.DV) + '%';
@@ -435,7 +436,7 @@ class Food extends SourcedObject {
 					return;
 				const lineItem = document.createElement('div');
 				lineItem.classList.add('nutritionLine');
-				lineItem.innerHTML = nutrient.name;
+				lineItem.innerHTML = nutrient.a.outerHTML;
 				let INNER = value + '%';
 				if (nutrient.unofficialDV){
 					INNER += '*';

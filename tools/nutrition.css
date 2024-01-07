@@ -12,6 +12,10 @@ iframe {
 	padding: 0.5em;
 	width: 20em;
 }
+#foodLabel a {
+	color: black;
+	text-decoration: none;
+}
 #foodLabel h3 {
 	font-size: 280%;
 	font-weight: bold;
