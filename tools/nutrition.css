@@ -42,3 +42,6 @@ iframe {
 .nutritionLine {
 	border-top: 2px solid grey;
 }
+.nutritionNote {
+	font-size: 75%;
+}
