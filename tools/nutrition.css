@@ -32,11 +32,11 @@ iframe {
 	text-align: right;
 	top: -1.5em;
 }
-#DVheader {
+.DVheader {
 	font-size: 75%;
 	font-weight: bold;
 }
-#DVheader, .nutritionLine {
+.DVheader, .nutritionLine {
 	line-height: 1.5em;
 }
 .nutritionLine {

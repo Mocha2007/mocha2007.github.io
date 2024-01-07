@@ -351,13 +351,16 @@ class Food extends SourcedObject {
 		title.innerHTML = 'Nutrition Facts';
 		elem.appendChild(title);
 		// measures
+		/*
 		const measureContainer = document.createElement('div');
 		elem.appendChild(measureContainer);
 		for (const measure in this.measures){
 			const measureElem = document.createElement('div');
 			measureElem.innerHTML = `${measure}: ${this.measures[measure]} g`;
 			measureContainer.appendChild(measureElem);
-		}
+		}*/
+		// eslint-disable-next-line max-len
+		elem.innerHTML += `<div class="DVheader">&nbsp;<div class="dv">Amount per ${this.unitMass}g</div></div>`;
 		// calories
 		appendHR();
 		const calories = document.createElement('div');
@@ -368,7 +371,8 @@ class Food extends SourcedObject {
 		elem.appendChild(calories);
 		// central sector
 		appendHR();
-		elem.innerHTML += '<div id="DVheader">&nbsp;<div class="dv">% Daily Value</div></div>';
+		const DVHEADER = '<div class="DVheader">&nbsp;<div class="dv">% Daily Value</div></div>';
+		elem.innerHTML += DVHEADER;
 		const MAIN_NUTRIENTS = [
 			[Nutrient.FAT, true],
 			[Nutrient.CHOLESTEROL, true],
@@ -399,6 +403,7 @@ class Food extends SourcedObject {
 		});
 		// vitamins and minerals w/ %DV
 		appendHR();
+		elem.innerHTML += DVHEADER;
 		// eslint-disable-next-line max-len
 		Nutrient.nutrients.filter(nutrient => nutrient.DV && !MAIN_NUTRIENTS.map(x => x[0]).includes(nutrient))
 			.forEach(nutrient => {
