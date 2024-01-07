@@ -41,7 +41,7 @@ const nucleosynthesisColors = {
 // https://en.wikipedia.org/wiki/Template:Periodic_table_(noble_metals)
 const nobleMetalColors = ['#cf0', '#0e7', '#6bf', '#c9f', '#fb6', '#f66'];
 // https://en.wikipedia.org/wiki/Template:Periodic_table_(nutritional_elements)
-const nutritionColors = ['#060', '#0b0', '#7f0', '#670', '#f70', '#dd9'];
+const nutritionColors = ['#060', '#0b0', '#7f0', '#eb3', '#dd9'];
 
 // also used in isotopeData.js
 const minute = 60;
@@ -684,7 +684,6 @@ const elementData = [
 			nucleosynthesis: {
 				neonBurningProcess: 1,
 			},
-			nutrition: 4,
 			oxidation: [3],
 			prices: {
 				2022: 1.078/pound,
@@ -1240,7 +1239,7 @@ const elementData = [
 			nucleosynthesis: {
 				alphaProcess: 1,
 			},
-			nutrition: 2,
+			nutrition: 3,
 			oxidation: [2, 3, 6],
 			prices: {
 				2021: 5.65/pound,
@@ -1682,7 +1681,6 @@ const elementData = [
 				rpProcess: 0.5203, // guess; Ge-73, Ge-74, Ge-76
 				sProcess: 0.4797, // Ge-70, Ge-72
 			},
-			nutrition: 4,
 			oxidation: [-4, 2, 4],
 			prices: {
 				2022: 1124,
@@ -1736,7 +1734,7 @@ const elementData = [
 			nucleosynthesis: {
 				rProcess: 1,
 			},
-			nutrition: 4,
+			nutrition: 3,
 			oxidation: [-3, 3, 5],
 			prices: {
 				2021: 1.11,
@@ -1939,7 +1937,6 @@ const elementData = [
 				rProcess: 0.7217, // Rb-85
 				sProcess: 0.2783, // Rb-87
 			},
-			nutrition: 4,
 			oxidation: [1],
 			prices: {
 				2018: 15500,
@@ -1991,7 +1988,7 @@ const elementData = [
 				pProcess: 0.0056, // Sr-84
 				sProcess: 0.9944, // rest
 			},
-			nutrition: 3,
+			nutrition: 4,
 			oxidation: [2],
 			prices: {
 				2019: 6.61,
@@ -2525,7 +2522,7 @@ const elementData = [
 				sProcess: 0.52,
 				rProcess: 0.48,
 			},
-			nutrition: 5,
+			nutrition: 4,
 			oxidation: [2],
 			prices: {
 				2022: 1.9,
@@ -2634,7 +2631,7 @@ const elementData = [
 				sProcess: 0.69,
 				rProcess: 0.31,
 			},
-			nutrition: 4,
+			nutrition: 3,
 			oxidation: [-4, 2, 4],
 			prices: {
 				2022: 23.307,
@@ -2994,7 +2991,7 @@ const elementData = [
 				sProcess: 0.62,
 				rProcess: 0.38,
 			},
-			nutrition: 5,
+			nutrition: 4,
 			oxidation: [3],
 			prices: {
 				2022: 5.09,
@@ -3045,7 +3042,7 @@ const elementData = [
 				sProcess: 0.76,
 				rProcess: 0.24,
 			},
-			nutrition: 5,
+			nutrition: 4,
 			oxidation: [3, 4],
 			prices: {
 				2020: 31.4,
@@ -3093,7 +3090,7 @@ const elementData = [
 				sProcess: 0.52,
 				rProcess: 0.48,
 			},
-			nutrition: 5,
+			nutrition: 4,
 			oxidation: [3],
 			prices: {
 				2022: 135.59,
@@ -3143,7 +3140,7 @@ const elementData = [
 				sProcess: 0.60,
 				rProcess: 0.40,
 			},
-			nutrition: 5,
+			nutrition: 4,
 			oxidation: [3],
 			prices: {
 				2022: 135,
@@ -3236,7 +3233,6 @@ const elementData = [
 				sProcess: 0.29,
 				rProcess: 0.71,
 			},
-			nutrition: 5,
 			oxidation: [3],
 			prices: {
 				2021: 13.94,
@@ -3826,7 +3822,7 @@ const elementData = [
 				sProcess: 0.57,
 				rProcess: 0.43,
 			},
-			nutrition: 5,
+			nutrition: 4,
 			oxidation: [4, 6],
 			prices: {
 				2021: 37.94,
@@ -4260,7 +4256,6 @@ const elementData = [
 				rProcess: 0.53,
 				tech: 0.5,
 			},
-			nutrition: 4,
 			oxidation: [2, 4],
 			prices: {
 				2022: 0.9857/pound,
