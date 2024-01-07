@@ -103,6 +103,38 @@ function main(){
 	console.info('nutrition.js ran successfully');
 }
 
+/**
+ * @param {Nutrient} nutrient
+ * @param {number} value
+ */
+function fdaround(nutrient, value){
+	// https://www.fda.gov/files/food/published/Food-Labeling-Guide-%28PDF%29.pdf
+	let interval = 0.1; // nearest integer; 0.5 = "nearest half"
+	switch (nutrient){
+		// p. 129 (Appendix H)
+		case NutrientGroup.CALORIES:
+			interval = 50 < value ? 10 : 5;
+			break;
+		case Nutrient.FAT:
+			interval = value < 0.5 ? 1 : value < 5 ? 0.5 : 1;
+			break;
+		case Nutrient.CHOLESTEROL:
+			interval = value < 2 ? 4 : value < 5 ? 1 : 5;
+			break;
+		case Nutrient.SODIUM:
+		case Nutrient.POTASSIUM:
+			interval = value < 5 ? 10 : value < 140 ? 5 : 10;
+			break;
+		case NutrientGroup.CARBOHYDRATES:
+		case Nutrient.FIBER:
+		case NutrientGroup.SUGARS:
+		case Nutrient.ALCOHOL:
+		case Nutrient.PROTEIN:
+			interval = 1;
+	}
+	return Math.round(value / interval) * interval;
+}
+
 const SCATTER_CONTROL = {
 	elem: {
 		/** @returns {HTMLSelectElement} */
@@ -306,6 +338,7 @@ class Food extends SourcedObject {
 		return this.properties.measures || {};
 	}
 	get nutritionLabel(){
+		// https://upload.wikimedia.org/wikipedia/commons/7/75/US_Nutritional_Fact_Label_2.svg
 		// https://www.fda.gov/files/food/published/Food-Labeling-Guide-%28PDF%29.pdf
 		function appendHR(){
 			elem.appendChild(document.createElement('hr'));
@@ -338,15 +371,19 @@ class Food extends SourcedObject {
 			[NutrientGroup.CARBOHYDRATES, true],
 			[Nutrient.FIBER, false],
 			[NutrientGroup.SUGARS, false],
+			[Nutrient.STARCH, false],
 			[Nutrient.PROTEIN, true],
 		].forEach(datum => {
 			const [nutrient, bold] = datum;
+			const value = fdaround(nutrient, this.nutrient(nutrient, true));
+			if (!value)
+				return;
 			const lineItem = document.createElement('div');
 			if (bold)
 				lineItem.innerHTML = `<b>${nutrient.name}</b>`;
 			else
 				lineItem.innerHTML = '&mdash; ' + nutrient.name;
-			lineItem.innerHTML += ' ' + Math.round(this.nutrient(nutrient, true)) + 'g';
+			lineItem.innerHTML += ' ' + value + 'g';
 			// todo % Daily Value
 			elem.appendChild(lineItem);
 		});

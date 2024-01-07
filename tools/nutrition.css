@@ -6,10 +6,16 @@ iframe {
 
 #foodLabel {
 	background-color: white;
+	border: 1px solid black;
 	color: black;
-	font-family: sans-serif;
+	font-family: Helvetica, sans-serif;
 	width: 20em;
 }
 #foodLabel h3 {
+	font-size: 200%;
+	font-weight: bold;
 	text-align: center;
+}
+#foodLabel hr {
+	border: 2px solid black;
 }
