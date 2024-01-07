@@ -590,6 +590,8 @@ Nutrient.GENISTEIN = new Nutrient('Genistein', {C: 15, H: 10, O: 5});
 Nutrient.DAIDZIN = new Nutrient('Daidzin', {C: 21, H: 20, O: 9});
 Nutrient.GENISTIN = new Nutrient('Genistin', {C: 21, H: 20, O: 10});
 Nutrient.GLYCITIN = new Nutrient('Glycitin', {C: 22, H: 22, O: 10});
+// misc Xenoestrogens
+Nutrient.COUMESTROL = new Nutrient('Coumestrol', {C: 15, H: 8, O: 5});
 // ?????
 Nutrient.ALCOHOL = new Nutrient('Alcohol', {C: 2, H: 6, O: 1}, 0, 0.78945, 'https://en.wikipedia.org/wiki/Ethanol'); // Ethanol
 Nutrient.BETAINE = new Nutrient('Betaine', {C: 5, H: 11, N: 1, O: 2}); // Trimethylglycine
@@ -717,9 +719,15 @@ NutrientGroup.XENOESTROGENS = new NutrientGroup('Xenoestrogens', 0, [
 ]);
 
 // https://en.wikipedia.org/wiki/Template:Affinities_of_estrogen_receptor_ligands_for_the_ER%CE%B1_and_ER%CE%B2
-NutrientGroup.XENOESTROGEN_ACTIVITY = new NutrientGroup('Xenoestrogens (Estradiol RBA)', 5e-3, [
-	new NutrientAmount(Nutrient.GENISTEIN, 0.3342),
+NutrientGroup.XENOESTROGEN_ACTIVITY_A = new NutrientGroup('Xenoestrogens (Estradiol RBA ERα)', 5e-3, [
+	new NutrientAmount(Nutrient.COUMESTROL, 0.09225),
+	new NutrientAmount(Nutrient.DAIDZEIN, 0.0007),
+	new NutrientAmount(Nutrient.GENISTEIN, 0.00445),
+], true);
+NutrientGroup.XENOESTROGEN_ACTIVITY_B = new NutrientGroup('Xenoestrogens (Estradiol RBA ERβ)', 5e-3, [
+	new NutrientAmount(Nutrient.COUMESTROL, 0.64125),
 	new NutrientAmount(Nutrient.DAIDZEIN, 0.7865),
+	new NutrientAmount(Nutrient.GENISTEIN, 0.3342),
 ], true);
 
 NutrientGroup.MINERALS = new NutrientGroup('Minerals (total)', 0, [
@@ -1094,6 +1102,8 @@ Food.MilkSoy = new Food('Soy Milk', { // todo create nutrient groups for all thi
 		new NutrientAmount(Nutrient.DAIDZIN, 12.9e-3),
 		new NutrientAmount(Nutrient.GENISTIN, 18.81e-3),
 		new NutrientAmount(Nutrient.GLYCITIN, 1.36e-3),
+		// other sources...
+		new NutrientAmount(Nutrient.COUMESTROL, 0.81e-3), // https://en.wikipedia.org/wiki/Coumestrol
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/1999630/nutrients');
 
