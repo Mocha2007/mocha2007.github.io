@@ -517,10 +517,10 @@ Food.foods = [];
 	Phytosterols - 2g - https://en.wikipedia.org/wiki/Phytosterol#FDA
 */
 Nutrient.WATER = new Nutrient('Water', {H: 2, O: 1}, 0, 0.99336);
-Nutrient.NITROGEN = new Nutrient('Nitrogen', {N: 2}); // ???
+Nutrient.NITROGEN = new Nutrient('Nitrogen', {}); // ???
 Nutrient.PROTEIN = new Nutrient('Protein', {C: 6, H: 13, N: 1, O: 2}, 50, 1.5); // Leucine
 Nutrient.FAT = new Nutrient('Fat', {C: 18, H: 36, O: 2}, 78, 0.895); // Stearic Acid
-Nutrient.ASH = new Nutrient('Ash', {C: 1, H: 1, N: 1, O: 1}); // ???
+Nutrient.ASH = new Nutrient('Ash', {}); // ???
 Nutrient.FIBER = new Nutrient('Fiber', {C: 12, H: 20, O: 10}, 28, 1.5); // Cellulose
 Nutrient.SUGAR = new Nutrient('Sugar (Unspecified)', {C: 6, H: 12, O: 6}, 0, 1.55);
 Nutrient.SUCROSE = new Nutrient('Sucrose', {C: 12, H: 22, O: 11}, 0, 1.587);
