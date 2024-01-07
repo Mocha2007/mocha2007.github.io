@@ -454,13 +454,13 @@ NutrientGroup.CARBOHYDRATES = new NutrientGroup('Carbohydrates', [
 	new NutrientAmount(Nutrient.STARCH, 1),
 ]);
 
-NutrientGroup.VITAMIN_A = new NutrientGroup('Vitamin A', [
+NutrientGroup.VITAMIN_A = new NutrientGroup('Vitamin A (μg RAE)', [
 	new NutrientAmount(Nutrient.RETINOL, 1),
-	new NutrientAmount(Nutrient.CAROTENE_BETA, 0.5),
-	new NutrientAmount(Nutrient.CAROTENE_ALPHA, 0.25),
-	// new NutrientAmount(Nutrient.CAROTENE_GAMMA, 0.25),
-	new NutrientAmount(Nutrient.CRYPTOXANTHIN_BETA, 0.25),
-	new NutrientAmount(Nutrient.CRYPTOXANTHIN_ALPHA, 0.25), // ???
+	new NutrientAmount(Nutrient.CAROTENE_BETA, 1/12),
+	new NutrientAmount(Nutrient.CAROTENE_ALPHA, 1/24),
+	// new NutrientAmount(Nutrient.CAROTENE_GAMMA, 1/24),
+	new NutrientAmount(Nutrient.CRYPTOXANTHIN_BETA, 1/24),
+	new NutrientAmount(Nutrient.CRYPTOXANTHIN_ALPHA, 1/24), // ???
 ]);
 
 NutrientGroup.VITAMIN_B = new NutrientGroup('Vitamin B (total)', [
