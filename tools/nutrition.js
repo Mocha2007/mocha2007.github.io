@@ -362,7 +362,6 @@ Nutrient.FRUCTOSE = new Nutrient('Fructose', {C: 6, H: 12, O: 6}, 1.694);
 Nutrient.LACTOSE = new Nutrient('Lactose', {C: 12, H: 22, O: 11}, 1.525);
 Nutrient.MALTOSE = new Nutrient('Maltose', {C: 12, H: 22, O: 11}, 1.54);
 Nutrient.STARCH = new Nutrient('Starch', {C: 6, H: 10, O: 5});
-Nutrient.ALCOHOL = new Nutrient('Alcohol', {C: 2, H: 6, O: 1}, 0.78945, 'https://en.wikipedia.org/wiki/Ethanol'); // Ethanol
 // Minerals
 Nutrient.CALCIUM = new Nutrient('Calcium', {Ca: 1});
 Nutrient.IRON = new Nutrient('Iron', {Fe: 1});
@@ -396,6 +395,7 @@ Nutrient.VITAMIN_B12 = new Nutrient('Vitamin B12 (Cobalamin)', {C: 63, H: 88, Co
 Nutrient.VITAMIN_C = new Nutrient('Vitamin C', {C: 6, H: 8, O: 6}, 1.694);
 // D
 Nutrient.VITAMIN_D3 = new Nutrient('Vitamin D3 (Cholecalciferol)', {C: 27, H: 44, O: 1});
+Nutrient._25_HYDROXYCHOLECALCIFEROL = new Nutrient('Calcifediol', {C: 27, H: 44, O: 2});
 // E
 Nutrient.VITAMIN_E = new Nutrient('Vitamin E (Unspecified)', {C: 29, H: 50, O: 2}, 0.95, 'https://en.wikipedia.org/wiki/Vitamin_E'); // α-Tocopherol
 Nutrient.TOCOPHEROL_BETA = new Nutrient('β-Tocopherol', {C: 28, H: 48, O: 2});
@@ -406,18 +406,20 @@ Nutrient.TOCOTRIENOL_GAMMA = new Nutrient('γ-Tocotrienol', {C: 28, H: 42, O: 2}
 Nutrient.PHYLLOQUINONE = new Nutrient('Phytomenadione', {C: 31, H: 46, O: 2}); // Phytomenadione
 Nutrient.DIHYDROPHYLLOQUINONE = new Nutrient('Dihydrophylloquinone', {C: 31, H: 50, O: 4}); // ???
 Nutrient.MENAQUINONE_4 = new Nutrient('Menatetrenone', {C: 31, H: 40, O: 2});
-// ?????
-Nutrient.BETAINE = new Nutrient('Betaine', {C: 5, H: 11, N: 1, O: 2}); // Trimethylglycine
-Nutrient.CAFFEINE = new Nutrient('Caffeine', {C: 8, H: 10, N: 4, O: 2});
-Nutrient.CAMPESTEROL = new Nutrient('Campesterol', {C: 28, H: 48, O: 1});
+// Cholesterol and Phytosterols
 Nutrient.CHOLESTEROL = new Nutrient('Cholesterol', {C: 27, H: 46, O: 1}, 1.052, 'https://en.wikipedia.org/wiki/Cholesterol');
-Nutrient.CIS_LUTEIN = new Nutrient('Cis-Lutein', {C: 40, H: 56, O: 2}); // ???
-Nutrient.LUTEIN = new Nutrient('Lutein', {C: 40, H: 56, O: 2});
+Nutrient.CAMPESTEROL = new Nutrient('Campesterol', {C: 28, H: 48, O: 1});
 Nutrient.SITOSTEROL_BETA = new Nutrient('β-Sitosterol', {C: 29, H: 50, O: 1});
 Nutrient.STIGMASTEROL = new Nutrient('Stigmasterol', {C: 29, H: 48, O: 1});
-Nutrient.THEOBROMINE = new Nutrient('Theobromine', {C: 7, H: 8, N: 4, O: 2});
+// misc Carotenoids
+Nutrient.CIS_LUTEIN = new Nutrient('Cis-Lutein', {C: 40, H: 56, O: 2}); // ???
+Nutrient.LUTEIN = new Nutrient('Lutein', {C: 40, H: 56, O: 2});
 Nutrient.ZEAXANTHIN = new Nutrient('Zeaxanthin', {C: 40, H: 56, O: 2});
-Nutrient._25_HYDROXYCHOLECALCIFEROL = new Nutrient('Calcifediol', {C: 27, H: 44, O: 2});
+// ?????
+Nutrient.ALCOHOL = new Nutrient('Alcohol', {C: 2, H: 6, O: 1}, 0.78945, 'https://en.wikipedia.org/wiki/Ethanol'); // Ethanol
+Nutrient.BETAINE = new Nutrient('Betaine', {C: 5, H: 11, N: 1, O: 2}); // Trimethylglycine
+Nutrient.CAFFEINE = new Nutrient('Caffeine', {C: 8, H: 10, N: 4, O: 2});
+Nutrient.THEOBROMINE = new Nutrient('Theobromine', {C: 7, H: 8, N: 4, O: 2});
 
 NutrientGroup.SUGARS = new NutrientGroup('Sugars', [
 	new NutrientAmount(Nutrient.SUCROSE, 1),
@@ -479,6 +481,7 @@ NutrientGroup.VITAMIN_D = new NutrientGroup('Vitamin D (total)', [
 	new NutrientAmount(Nutrient.VITAMIN_D3, 1),
 	// new NutrientAmount(Nutrient.VITAMIN_D4, 1),
 	// new NutrientAmount(Nutrient.VITAMIN_D5, 1),
+	new NutrientAmount(Nutrient._25_HYDROXYCHOLECALCIFEROL, 1),
 ]);
 
 NutrientGroup.VITAMIN_E = new NutrientGroup('Vitamin E (total)', [
@@ -493,6 +496,24 @@ NutrientGroup.VITAMIN_K = new NutrientGroup('Vitamin K', [
 	new NutrientAmount(Nutrient.PHYLLOQUINONE, 1),
 	new NutrientAmount(Nutrient.DIHYDROPHYLLOQUINONE, 1),
 	new NutrientAmount(Nutrient.MENAQUINONE_4, 1),
+]);
+
+NutrientGroup.PHYTOSTEROLS = new NutrientGroup('Phytosterols', [
+	new NutrientAmount(Nutrient.CAMPESTEROL, 1),
+	new NutrientAmount(Nutrient.SITOSTEROL_BETA, 1),
+	new NutrientAmount(Nutrient.STIGMASTEROL, 1),
+]);
+
+NutrientGroup.XANTHOPHYLLS = new NutrientGroup('Xanthophylls', [
+	new NutrientAmount(Nutrient.CIS_LUTEIN, 1),
+	new NutrientAmount(Nutrient.LUTEIN, 1),
+	new NutrientAmount(Nutrient.ZEAXANTHIN, 1),
+]);
+
+NutrientGroup.CAROTENOIDS = new NutrientGroup('Carotenoids', [
+	new NutrientAmount(NutrientGroup.XANTHOPHYLLS, 1),
+	new NutrientAmount(NutrientGroup.CAROTENE_ALPHA, 1),
+	new NutrientAmount(NutrientGroup.CAROTENE_BETA, 1),
 ]);
 
 
