@@ -875,6 +875,7 @@ Food.Egg = new Food('Egg', { // todo create nutrient groups for all this other s
 		new NutrientAmount(Nutrient.ZEAXANTHIN, 229e-6),
 		new NutrientAmount(Nutrient.VITAMIN_D3, 2.46e-6),
 		new NutrientAmount(Nutrient._25_HYDROXYCHOLECALCIFEROL, 0.56e-6),
+		new NutrientAmount(Nutrient.CHOLESTEROL, 411e-3),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344664/nutrients');
 Food.Bacon = new Food('Bacon', { // todo create nutrient groups for all this other shit
