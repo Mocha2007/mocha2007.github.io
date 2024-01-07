@@ -379,10 +379,11 @@ class Food extends SourcedObject {
 			[Nutrient.FAT, true],
 			[Nutrient.CHOLESTEROL, true],
 			[Nutrient.SODIUM, true],
+			[Nutrient.POTASSIUM, true],
 			[NutrientGroup.CARBOHYDRATES, true],
 			[Nutrient.FIBER, false],
 			[NutrientGroup.SUGARS, false],
-			[Nutrient.STARCH, false],
+			[Nutrient.ALCOHOL, false],
 			[Nutrient.PROTEIN, true],
 		];
 		MAIN_NUTRIENTS.forEach(datum => {
