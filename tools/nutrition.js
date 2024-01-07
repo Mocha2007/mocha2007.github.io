@@ -366,8 +366,8 @@ class Food extends SourcedObject {
 		const calories = document.createElement('div');
 		calories.classList.add('calories');
 		// eslint-disable-next-line max-len
-		calories.innerHTML = `<b>Calories</b> ${Math.round(this.nutrient(NutrientGroup.CALORIES, true))}`;
-		const CFF = Math.round(9*this.nutrient(Nutrient.FAT, true));
+		calories.innerHTML = `<b>Calories</b> ${fdaround(NutrientGroup.CALORIES, this.nutrient(NutrientGroup.CALORIES, true))}`;
+		const CFF = fdaround(NutrientGroup.CALORIES, 9*this.nutrient(Nutrient.FAT, true));
 		if (CFF)
 			calories.innerHTML += `<br>Calories from Fat ${CFF}`;
 		elem.appendChild(calories);
