@@ -516,6 +516,34 @@ NutrientGroup.CAROTENOIDS = new NutrientGroup('Carotenoids', [
 	new NutrientAmount(Nutrient.CAROTENE_BETA, 1),
 ]);
 
+NutrientGroup.MINERALS = new NutrientGroup('Minerals (total)', [
+	new NutrientAmount(Nutrient.CALCIUM, 1),
+	new NutrientAmount(Nutrient.IRON, 1),
+	new NutrientAmount(Nutrient.MAGNESIUM, 1),
+	new NutrientAmount(Nutrient.PHOSPHORUS, 1),
+	new NutrientAmount(Nutrient.POTASSIUM, 1),
+	new NutrientAmount(Nutrient.SODIUM, 1),
+	new NutrientAmount(Nutrient.ZINC, 1),
+	new NutrientAmount(Nutrient.COPPER, 1),
+	new NutrientAmount(Nutrient.MANGANESE, 1),
+	new NutrientAmount(Nutrient.IODINE, 1),
+	new NutrientAmount(Nutrient.SELENIUM, 1),
+	new NutrientAmount(Nutrient.MOLYBDENUM, 1),
+]);
+
+NutrientGroup.VITAMINS = new NutrientGroup('Vitamins (total)', [
+	new NutrientAmount(NutrientGroup.VITAMIN_A, 1),
+	new NutrientAmount(NutrientGroup.VITAMIN_B, 1),
+	new NutrientAmount(Nutrient.VITAMIN_C, 1),
+	new NutrientAmount(NutrientGroup.VITAMIN_D, 1),
+	new NutrientAmount(NutrientGroup.VITAMIN_E, 1),
+	new NutrientAmount(NutrientGroup.VITAMIN_K, 1),
+]);
+
+NutrientGroup.VITAMINS_AND_MINERALS = new NutrientGroup('Vitamins & Minerals (total)', [
+	new NutrientAmount(NutrientGroup.VITAMINS, 1),
+	new NutrientAmount(NutrientGroup.MINERALS, 1),
+]);
 
 // FOODS
 Food.OnionYellow = new Food('Yellow Onion', {
