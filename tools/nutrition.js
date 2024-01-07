@@ -352,7 +352,7 @@ Nutrient.WATER = new Nutrient('Water', {H: 2, O: 1}, 0.99336);
 Nutrient.NITROGEN = new Nutrient('Nitrogen', {N: 2}); // ???
 Nutrient.PROTEIN = new Nutrient('Protein', {C: 6, H: 13, N: 1, O: 2}, 1.5); // Leucine
 Nutrient.FAT = new Nutrient('Fat', {C: 18, H: 36, O: 2}, 0.895); // Stearic Acid
-Nutrient.ASH = new Nutrient('Ash', {K: 2, C: 1, O: 3}); // ???
+Nutrient.ASH = new Nutrient('Ash', {C: 1, H: 1, N: 1, O: 1}); // ???
 Nutrient.FIBER = new Nutrient('Fiber', {C: 12, H: 20, O: 10}, 1.5); // Cellulose
 Nutrient.SUGAR = new Nutrient('Sugar (Unspecified)', {C: 6, H: 12, O: 6}, 1.55);
 Nutrient.SUCROSE = new Nutrient('Sucrose', {C: 12, H: 22, O: 11}, 1.587);
@@ -690,5 +690,37 @@ Food.Bacon = new Food('Bacon', { // todo create nutrient groups for all this oth
 		new NutrientAmount(Nutrient.MANGANESE, 0.02e-3),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/749420/nutrients');
+Food.BreadRye = new Food('Rye Bread', { // todo create nutrient groups for all this other shit
+	measures: {
+		slice: 32,
+	},
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 37.3),
+		new NutrientAmount(Nutrient.PROTEIN, 8.5),
+		new NutrientAmount(Nutrient.FAT, 3.3),
+		new NutrientAmount(Nutrient.FIBER, 5.8),
+		new NutrientAmount(Nutrient.SUGAR, 3.85),
+		new NutrientAmount(Nutrient.CALCIUM, 73e-3),
+		new NutrientAmount(Nutrient.IRON, 2.83e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 40e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 125e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 166e-3),
+		new NutrientAmount(Nutrient.SODIUM, 603e-3),
+		new NutrientAmount(Nutrient.ZINC, 1.14e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.186e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 30.9e-6),
+		new NutrientAmount(Nutrient.VITAMIN_C, 0.4e-3),
+		new NutrientAmount(Nutrient.THIAMIN, 0.434e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.335e-3),
+		new NutrientAmount(Nutrient.NIACIN, 3.8e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.075e-3),
+		new NutrientAmount(Nutrient.FOLATE, 110e-6),
+		new NutrientAmount(Nutrient.CHOLINE, 14.6e-3),
+		new NutrientAmount(Nutrient.CAROTENE_BETA, 4e-6),
+		new NutrientAmount(Nutrient.CRYPTOXANTHIN_BETA, 1e-6),
+		new NutrientAmount(Nutrient.LUTEIN, 54e-3),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 1.2e-6),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2343235/nutrients');
 
 const NUTRITION_LOADED = true;
