@@ -112,12 +112,12 @@ const LUNALIFE = {
 		new LunaEvent('(appx) Egg Cracked', new Date(2022, 4)), // appx
 		new LunaEvent('Observed my first lunar eclipse after two previous attempts thwarted by clouds!', new Date(2022, 4, 15)),
 		new LunaEvent('Came out to BF', new Date(2022, 6, 15)),
-		new LunaEvent('Discovered and binge-read Rain', new Date(2022, 9, 24)), // appx
+		new LunaEvent('Discovered and binge-read Rain', new Date(2022, 9, 25)), // appx
 		new LunaEvent('Came out to friends', new Date(2023, 0)), // appx
-		new LunaEvent('Move in with BF', new Date(2023, 5, 14)), // appx
+		new LunaEvent('Move in with BF', new Date(2023, 5, 14)),
 		new LunaEvent('After a bout of severe depression, I resolved to transition, and set up my first HRT appointment', new Date(2023, 6, 25)),
 		new LunaEvent('Started HRT', new Date(2023, 7, 16)),
-		new LunaEvent('Fully came out to everyone, started living as my true self 24/7', new Date(2023, 10, 10)), // appx
+		new LunaEvent('Fully came out to everyone, started living as my true self 24/7', new Date(2023, 10, 6)),
 		new LunaEvent('Met BF\'s family', new Date(2023, 11, 16)),
 		new LunaEvent('I plan to observe the 2024 Solar Eclipse in Texas.', new Date(2024, 3, 8)),
 		new LunaEvent('If I am alive by this date, I could observe Halley\'s comet.', new Date(2061, 6, 28)),
