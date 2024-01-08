@@ -132,7 +132,7 @@ const LUNALIFE = {
 		new LunaEvent('College', new Date(2020, 4, 7), '#c0c'), // 16-20
 		new LunaEvent('"""Manhood"""', new Date(2023, 7, 16), '#c8c'), // 20-23
 		new LunaEvent('Womanhood', new Date(), '#f4c'),
-		new LunaEvent('Future', new Date(9e99), '#ecf'),
+		new LunaEvent('Future', new Date(9e99), 'rgba(224, 192, 255, 0.15)'),
 	],
 	main(){
 		// construct table
