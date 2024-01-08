@@ -43,7 +43,7 @@ const LUNALIFE = {
 	EVENT_CURRENT: 0,
 	EVENTS: [
 		new LunaEvent('Roughly the time of my earliest memories', new Date(2003, 0)),
-		new LunaEvent('First hints of dysphoria', new Date(2008, 8, 1)),
+		new LunaEvent('First hints of dysphoria', new Date(2009, 8, 7)),
 		new LunaEvent('Joined Youtube', new Date(2011, 0, 6)),
 		new LunaEvent('Start conworlding (then, about Mochadia)', new Date(2011, 3, 22)),
 		new LunaEvent('Join cult of bronydom', new Date(2011, 3, 30)),
@@ -83,10 +83,10 @@ const LUNALIFE = {
 	],
 	ZONE_CURRENT: 0,
 	ZONES: [
-		new LunaEvent('Early Childhood', new Date(2003, 8, 1), '#444'), // 98-04
-		new LunaEvent('Elementary School', new Date(2008, 8, 1), '#00c'), // 04-09
-		new LunaEvent('Middle School', new Date(2011, 8, 5), '#408'), // 09-12
-		new LunaEvent('High School', new Date(2015, 5, 20), '#60f'), // 12-15
+		new LunaEvent('Early Childhood', new Date(2004, 8, 7), '#444'), // 98-04
+		new LunaEvent('Elementary School', new Date(2009, 8, 7), '#00c'), // 04-09 CONFIRMED (Steve Irwin's death, arson)
+		new LunaEvent('Middle School', new Date(2012, 8, 4), '#408'), // 09-12 START CONFIRMED (MJ's death)
+		new LunaEvent('High School', new Date(2015, 5, 20), '#60f'), // 12-15 END CONFIRMED (I just know it)
 		new LunaEvent('Gap Year', new Date(2016, 7, 1), '#808'), // 15-16
 		new LunaEvent('College', new Date(2020, 4, 7), '#c0c'), // 16-20
 		new LunaEvent('"""Manhood"""', new Date(2023, 7, 16), '#c8c'), // 20-23
