@@ -35,6 +35,7 @@ const LUNALIFE = {
 	EVENTS: [
 		new LunaEvent('First hints of dysphoria', new Date(2008, 8, 1)),
 		new LunaEvent('Joined Youtube', new Date(2011, 0, 6)),
+		new LunaEvent('Start conworlding (then, about Mochadia)', new Date(2011, 3, 22)),
 		new LunaEvent('Joined Twitter (and then proceeded to never use it...)', new Date(2011, 4, 1)),
 		new LunaEvent('Joined Cloudsdale', new Date(2012, 0, 7)), // appx
 		new LunaEvent('Met the one who would eventually be my BF', new Date(2012, 6, 1)), // appx
@@ -45,6 +46,7 @@ const LUNALIFE = {
 		new LunaEvent('Watched that vihart video on gender identity that made me question myself even more lmao', new Date(2015, 5, 8)), // https://www.youtube.com/watch?v=hmKix-75dsg
 		new LunaEvent('Joined Discord after watching a JiggyWiggy video', new Date(2015, 11, 8)), // I was using it like maybe a month or two prior as well
 		new LunaEvent('Realized I enjoyed the thought of being a woman', new Date(2016, 7, 29)), // appx. (date I joined PPP)
+		new LunaEvent('Publish mocha2007.github.io', new Date(2017, 4, 16)), // https://github.com/Mocha2007/mocha2007.github.io/commit/4e1bbc0bc41c4f75681c539cd09e164594e6ba7c
 		new LunaEvent('Started dating BF (online)', new Date(2019, 10, 21)), // appx
 		new LunaEvent('Met BF IRL first time', new Date(2020, 0, 14)), // appx
 		new LunaEvent('Tried women\'s clothing', new Date(2020, 6, 1)), // appx
