@@ -56,7 +56,7 @@ const LUNALIFE = {
 		new LunaEvent('Started consciously questioning my gender', new Date(2014, 6, 1)), // very rough estimate - must've been pre-Discord...
 		new LunaEvent('Discovered Dwarf Fortress, which quickly became my favorite game EVER', new Date(2014, 6, 7)), // appx
 		new LunaEvent('Watched that vihart video on gender identity that made me question myself even more lmao', new Date(2015, 5, 8)), // https://www.youtube.com/watch?v=hmKix-75dsg
-		new LunaEvent('Joined Discord after watching a JiggyWiggy video', new Date(2015, 11, 8)), // I was using it like maybe a month or two prior as well
+		new LunaEvent('Joined Discord after watching a JiggyWiggy video', new Date(2015, 10, 8)), // I was using it like maybe a month or two prior as well
 		new LunaEvent('Migrated to Telegram from Kik', new Date(2016, 6, 4)),
 		new LunaEvent('Realized I enjoyed the thought of being a woman', new Date(2016, 7, 29)), // appx. (date I joined PPP)
 		new LunaEvent('Publish mocha2007.github.io', new Date(2017, 4, 16)), // https://github.com/Mocha2007/mocha2007.github.io/commit/4e1bbc0bc41c4f75681c539cd09e164594e6ba7c
