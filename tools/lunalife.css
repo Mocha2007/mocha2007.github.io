@@ -1,5 +1,5 @@
 :root {
-	--cellSize: calc(min(1vw, 1vh));
+	--cellSize: 0.85vmin;
 }
 
 html, body {
@@ -18,7 +18,7 @@ td {
 }
 
 td:hover {
-	box-shadow: 0 0 40px 20px #0ff;
+	box-shadow: 0 0 40px 20px #000;
 	position: relative;
 	z-index: 999;
 }
