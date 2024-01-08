@@ -36,6 +36,7 @@ const LUNALIFE = {
 		new LunaEvent('First hints of dysphoria', new Date(2008, 8, 1)),
 		new LunaEvent('Joined Youtube', new Date(2011, 0, 6)),
 		new LunaEvent('Start conworlding (then, about Mochadia)', new Date(2011, 3, 22)),
+		new LunaEvent('Join cult of bronydom', new Date(2011, 3, 30)),
 		new LunaEvent('Joined Twitter (and then proceeded to never use it...)', new Date(2011, 4, 1)),
 		new LunaEvent('Joined Cloudsdale', new Date(2012, 0, 7)), // appx
 		new LunaEvent('Met the one who would eventually be my BF', new Date(2012, 6, 1)), // appx
@@ -50,6 +51,7 @@ const LUNALIFE = {
 		new LunaEvent('Started dating BF (online)', new Date(2019, 10, 21)), // appx
 		new LunaEvent('Met BF IRL first time', new Date(2020, 0, 14)), // appx
 		new LunaEvent('Tried women\'s clothing', new Date(2020, 6, 1)), // appx
+		new LunaEvent('Discovered TFGames :^)', new Date(2021, 0, 13)), // appx
 		new LunaEvent('Egg Cracked', new Date(2022, 2, 1)), // appx
 		new LunaEvent('Came out to BF', new Date(2022, 6, 1)), // appx
 		new LunaEvent('Discovered and binge-read Rain', new Date(2022, 9, 24)), // appx
