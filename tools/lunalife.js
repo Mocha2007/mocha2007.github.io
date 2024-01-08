@@ -55,15 +55,18 @@ const LUNALIFE = {
 	},
 	EVENT_CURRENT: 0,
 	EVENTS: [
+		new LunaEvent('Death of my maternal grandfather (before my memories)', new Date(2000, 6, 17)),
 		new LunaEvent('Roughly the time of my earliest memories', new Date(2003, 0)),
 		new LunaEvent('(appx) I remember tossing my favorite stuffed animal into the air, and the tail falling off, and panicking.', new Date(2003, 1)), // appx
 		new LunaEvent('(appx) Moved in to my childhood home', new Date(2003, 6)), // appx
 		new LunaEvent('I remember getting SimCity 4: Deluxe edition for christmas and playing the game all the time. To this day I still occasionally play it!', new Date(2003, 11, 25)),
 		new LunaEvent('I remember buying a copy of CotN (I think it was left discarded on a palette at Costco) and loving it.', new Date(2004, 10, 9)),
+		new LunaEvent('(appx) dog died ;-;', new Date(2007, 0)), // appx
 		new LunaEvent('By this point I was definitely obsessed with flash games. Today marks the release of Ocean Explorer, the earliest game from jmtb02 where I remember playing it on release.', new Date(2007, 8, 14)),
 		new LunaEvent('About the time I got Spore (maybe as a christmas gift?). I was obsessed with this game for years.', new Date(2008, 11, 25)),
 		new LunaEvent('Played Pokemon Platinum, the only Pokemon game I spent a lot of time on.', new Date(2009, 2, 22)),
 		new LunaEvent('First hints of dysphoria', new Date(2009, 8, 7)),
+		new LunaEvent('An earthquake hit San Diego on Easter, the strongest quake I experienced (about magnitude 5 at my location).', new Date(2010, 3, 4)),
 		new LunaEvent('I got Civ5 for christmas and LOVED it, and only stopped playing once EU4 came out 3 years later.', new Date(2010, 11, 25)),
 		new LunaEvent('Joined Youtube', new Date(2011, 0, 6)),
 		new LunaEvent('Start conworlding (then, about Mochadia)', new Date(2011, 3, 22)),
@@ -94,6 +97,7 @@ const LUNALIFE = {
 		new LunaEvent('Publish mocha2007.github.io', new Date(2017, 4, 16)), // https://github.com/Mocha2007/mocha2007.github.io/commit/4e1bbc0bc41c4f75681c539cd09e164594e6ba7c
 		new LunaEvent('Observed totality of the Great American Eclipse in Greenville, SC.', new Date(2017, 7, 21)),
 		new LunaEvent('First job (includes bonus moment where my egg almost cracked four years early!)', new Date(2017, 8)),
+		new LunaEvent('Hurricane Michael knocked our power out for days, and kicked up probably the craziest storm I\'ve been through!', new Date(2018, 9, 11)),
 		new LunaEvent('Started dating BF (online)', new Date(2019, 10, 24)),
 		new LunaEvent('Met BF IRL first time', new Date(2020, 0, 24)),
 		new LunaEvent('Almost died from Ehrlichia (and my bastard prof wouldn\'t let me redo my midterm...)', new Date(2020, 2, 3)),
