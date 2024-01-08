@@ -42,16 +42,16 @@ const LUNALIFE = {
 	},
 	EVENT_CURRENT: 0,
 	EVENTS: [
-		new LunaEvent('Roughly the time of my earliest memories', new Date(2003, 0, 1)),
+		new LunaEvent('Roughly the time of my earliest memories', new Date(2003, 0)),
 		new LunaEvent('First hints of dysphoria', new Date(2008, 8, 1)),
 		new LunaEvent('Joined Youtube', new Date(2011, 0, 6)),
 		new LunaEvent('Start conworlding (then, about Mochadia)', new Date(2011, 3, 22)),
 		new LunaEvent('Join cult of bronydom', new Date(2011, 3, 30)),
-		new LunaEvent('Joined Twitter (and then proceeded to never use it...)', new Date(2011, 4, 1)),
+		new LunaEvent('Joined Twitter (and then proceeded to never use it...)', new Date(2011, 4)),
 		new LunaEvent('Taught myself how to code (Python at the time)', new Date(2012, 0, 1)), // appx
 		new LunaEvent('Joined Cloudsdale', new Date(2012, 0, 7)), // appx
 		new LunaEvent('Met the one who would eventually be my BF', new Date(2012, 6, 1)), // appx
-		new LunaEvent('Moved across the country', new Date(2013, 6, 1)), // appx
+		new LunaEvent('Moved across the country', new Date(2013, 5)),
 		new LunaEvent('About the time I started consistently getting gender envy', new Date(2013, 8, 2)), // appx
 		new LunaEvent('Joined Reddit after watching a CGPGrey video', new Date(2013, 8, 10)),
 		new LunaEvent('Started consciously questioning my gender', new Date(2014, 6, 1)), // very rough estimate - must've been pre-Discord...
@@ -71,10 +71,10 @@ const LUNALIFE = {
 		new LunaEvent('Had a moment at work where my egg almost cracked a couple months early!', new Date(2021, 10, 1)), // appx
 		new LunaEvent('Went to MFF 2021 w/ BF, met a long-time online friend', new Date(2021, 11, 2)),
 		new LunaEvent('Went to BRFF 2022 w/ BF', new Date(2022, 2, 10)),
-		new LunaEvent('Egg Cracked', new Date(2022, 4, 1)), // appx
+		new LunaEvent('Egg Cracked', new Date(2022, 4)), // appx
 		new LunaEvent('Came out to BF', new Date(2022, 6, 15)),
 		new LunaEvent('Discovered and binge-read Rain', new Date(2022, 9, 24)), // appx
-		new LunaEvent('Came out to friends', new Date(2023, 1, 1)), // appx
+		new LunaEvent('Came out to friends', new Date(2023, 0)), // appx
 		new LunaEvent('Move in with BF', new Date(2023, 5, 14)), // appx
 		new LunaEvent('After a bout of severe depression, I resolved to transition, and set up my first HRT appointment', new Date(2023, 6, 25)),
 		new LunaEvent('Started HRT', new Date(2023, 7, 16)),
