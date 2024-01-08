@@ -43,22 +43,37 @@ const LUNALIFE = {
 	EVENT_CURRENT: 0,
 	EVENTS: [
 		new LunaEvent('Roughly the time of my earliest memories', new Date(2003, 0)),
+		new LunaEvent('(appx) I remember tossing my favorite stuffed animal into the air, and the tail falling off, and panicking.', new Date(2003, 1)), // appx
+		new LunaEvent('(appx) Moved in to my childhood home', new Date(2003, 6)), // appx
+		new LunaEvent('I remember getting SimCity 4: Deluxe edition for christmas and playing the game all the time. To this day I still occasionally play it!', new Date(2003, 11, 25)),
+		new LunaEvent('I remember buying a copy of CotN (I think it was left discarded on a palette at Costco) and loving it.', new Date(2004, 10, 9)),
+		new LunaEvent('By this point I was definitely obsessed with flash games. Today marks the release of Ocean Explorer, the earliest game from jmtb02 where I remember playing it on release.', new Date(2007, 8, 14)),
+		new LunaEvent('About the time I got Spore (maybe as a christmas gift?). I was obsessed with this game for years.', new Date(2008, 11, 25)),
+		new LunaEvent('Played Pokemon Platinum, the only Pokemon game I spent a lot of time on.', new Date(2009, 2, 22)),
 		new LunaEvent('First hints of dysphoria', new Date(2009, 8, 7)),
+		new LunaEvent('I got Civ5 for christmas and LOVED it, and only stopped playing once EU4 came out 3 years later.', new Date(2010, 11, 25)),
 		new LunaEvent('Joined Youtube', new Date(2011, 0, 6)),
 		new LunaEvent('Start conworlding (then, about Mochadia)', new Date(2011, 3, 22)),
 		new LunaEvent('Join cult of bronydom', new Date(2011, 3, 30)),
 		new LunaEvent('Joined Twitter (and then proceeded to never use it...)', new Date(2011, 4)),
-		new LunaEvent('Taught myself how to code (Python at the time)', new Date(2012, 0, 1)), // appx
+		new LunaEvent('I started playing Minecraft in B1.8.1', new Date(2011, 8, 15)),
+		new LunaEvent('I started playing Terraria shortly before 1.1, after watching SirEldricIV\'s Hardcore Saga LP series.', new Date(2011, 10)), // I played Terraria AFTER MC but before 1.1... so between Sep 15th and Dec 1st...
+		new LunaEvent('Taught myself how to code (Python at the time)', new Date(2012, 0)), // appx
 		new LunaEvent('Joined Cloudsdale', new Date(2012, 0, 7)), // appx
-		new LunaEvent('Met the one who would eventually be my BF', new Date(2012, 6, 1)), // appx
+		new LunaEvent('I started playing KSP in 0.13.3', new Date(2012, 2, 3)),
+		new LunaEvent('Met the one who would eventually be my BF', new Date(2012, 6)), // appx
 		new LunaEvent('Moved across the country', new Date(2013, 5)),
+		new LunaEvent('I started playing EU4, thus initiating my map game obsession', new Date(2013, 7, 13)),
 		new LunaEvent('About the time I started consistently getting gender envy', new Date(2013, 8, 2)), // appx
 		new LunaEvent('Joined Reddit after watching a CGPGrey video', new Date(2013, 8, 10)),
 		new LunaEvent('Started playing KoL, which I was OBSESSED with in HS...', new Date(2013, 10, 27)),
 		new LunaEvent('Started consciously questioning my gender', new Date(2014, 6, 1)), // very rough estimate - must've been pre-Discord...
-		new LunaEvent('Discovered Dwarf Fortress, which quickly became my favorite game EVER', new Date(2014, 6, 7)), // appx
+		new LunaEvent('Discovered Dwarf Fortress 0.40, which quickly became my favorite game EVER', new Date(2014, 6, 7)), // appx - I started playing IN 2014, but after 0.40 was released...
 		new LunaEvent('Watched that vihart video on gender identity that made me question myself even more lmao', new Date(2015, 5, 8)), // https://www.youtube.com/watch?v=hmKix-75dsg
 		new LunaEvent('Joined Discord after watching a JiggyWiggy video', new Date(2015, 10, 8)), // I was using it like maybe a month or two prior as well
+		new LunaEvent('I started playing Rimworld in... I think... Alpha 13?', new Date(2016, 3, 6)),
+		new LunaEvent('I started playing Stellaris on release. I remember being particularly excited for it, since I enjoyed other Paradox games, and was disappointed by the similar but worse Endless Space, released 4 years prior.', new Date(2016, 4, 9)),
+		new LunaEvent('I started playing HOI4 on release. I remember trying HOI3 briefly and being excited HOI4 was just around the corner.', new Date(2016, 5, 6)),
 		new LunaEvent('Migrated to Telegram from Kik', new Date(2016, 6, 4)),
 		new LunaEvent('Realized I enjoyed the thought of being a woman', new Date(2016, 7, 29)), // appx. (date I joined PPP)
 		new LunaEvent('I get mistaken for a trans man in a VC because "my voice sounded too feminine to be cis"... and somehow, that made me feel good :^)', new Date(2017, 4, 11)),
