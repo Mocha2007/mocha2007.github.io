@@ -49,11 +49,13 @@ const LUNALIFE = {
 		new LunaEvent('Joined Discord after watching a JiggyWiggy video', new Date(2015, 11, 8)), // I was using it like maybe a month or two prior as well
 		new LunaEvent('Realized I enjoyed the thought of being a woman', new Date(2016, 7, 29)), // appx. (date I joined PPP)
 		new LunaEvent('Publish mocha2007.github.io', new Date(2017, 4, 16)), // https://github.com/Mocha2007/mocha2007.github.io/commit/4e1bbc0bc41c4f75681c539cd09e164594e6ba7c
+		new LunaEvent('First job (includes bonus moment where my egg almost cracked four years early!)', new Date(2017, 8)),
 		new LunaEvent('Started dating BF (online)', new Date(2019, 10, 21)), // appx
 		new LunaEvent('Met BF IRL first time', new Date(2020, 0, 14)), // appx
 		new LunaEvent('Almost die from Ehrlichia', new Date(2020, 2, 1)), // appx
-		new LunaEvent('Tried women\'s clothing', new Date(2020, 6, 1)), // appx
+		new LunaEvent('Tried on women\'s clothing for the first time... and liked it OwO', new Date(2020, 6, 1)), // appx
 		new LunaEvent('Discovered TFGames :^)', new Date(2020, 10, 11)), // appx
+		new LunaEvent('Had a moment at work where my egg almost cracked a couple months early!', new Date(2021, 10, 1)), // appx
 		new LunaEvent('Went to MFF 2021 w/ BF, met a long-time online friend', new Date(2021, 11, 2)),
 		new LunaEvent('Egg Cracked', new Date(2022, 0, 1)), // appx
 		new LunaEvent('Went to BRFF 2022 w/ BF', new Date(2022, 2, 10)),
