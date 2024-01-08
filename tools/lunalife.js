@@ -1,5 +1,20 @@
 /* exported LUNALIFE, LUNALIFE_LOADED */
 
+class LunaEvent {
+	constructor(title, date, desc = ''){
+		/** @type {string} */
+		this.title = title;
+		/** @type {Date} */
+		this.date = date;
+		/** @type {string} */
+		this.desc = desc;
+	}
+	get weekID(){
+		return Math.floor((this.date - LunaEvent.epoch)/(7*24*60*60*1000));
+	}
+}
+LunaEvent.epoch = Date.UTC(1998, 3, 27, 13+7, 20);
+
 const LUNALIFE = {
 	CONFIG: {
 		LIFESPAN: 91, // guess
@@ -16,17 +31,21 @@ const LUNALIFE = {
 			return document.getElementById('container');
 		},
 	},
+	EVENT_CURRENT: 0,
+	EVENTS: [
+		new LunaEvent('Started HRT', new Date(2023, 7, 16)),
+	],
 	ZONE_CURRENT: 0,
 	ZONES: [
-		['Early Childhood', 332, '#000'], // 98-04
-		['Elementary School', 593, '#00c'], // 04-09
-		['Middle School', 749, '#408'], // 09-12
-		['High School', 896, '#60f'], // 12-15
-		['(Gap Year)', 953, '#808'], // 15-16
-		['College', 1149, '#c0c'], // 16-20
-		['Manhood', 1320, '#c8c'], // 20-23
-		['Womanhood', (new Date() - Date.UTC(1998, 3, 27, 13+7, 20))/(7*24*60*60*1000), '#84f'],
-		['Future', Infinity, '#ecf'],
+		new LunaEvent('Early Childhood', new Date(2004, 8, 6), '#000'), // 98-04
+		new LunaEvent('Elementary School', new Date(2009, 8, 7), '#00c'), // 04-09
+		new LunaEvent('Middle School', new Date(2012, 8, 3), '#408'), // 09-12
+		new LunaEvent('High School', new Date(2015, 5, 20), '#60f'), // 12-15
+		new LunaEvent('(Gap Year)', new Date(2016, 7, 1), '#808'), // 15-16
+		new LunaEvent('College', new Date(2020, 4, 7), '#c0c'), // 16-20
+		new LunaEvent('Manhood', new Date(2023, 7, 16), '#c8c'), // 20-23
+		new LunaEvent('Womanhood', new Date(), '#84f'),
+		new LunaEvent('Future', new Date(9e99), '#ecf'),
 	],
 	main(){
 		// construct table
@@ -40,11 +59,20 @@ const LUNALIFE = {
 				const td = document.createElement('td');
 				tr.appendChild(td);
 				const WEEK_NUMBER = this.CONFIG.DIM*i + j;
-				if (this.ZONES[this.ZONE_CURRENT][1] < WEEK_NUMBER)
+				if (this.ZONES[this.ZONE_CURRENT].weekID < WEEK_NUMBER)
 					this.ZONE_CURRENT++;
 				// style!~
-				td.title = this.ZONES[this.ZONE_CURRENT][0];
-				td.style.backgroundColor = this.ZONES[this.ZONE_CURRENT][2];
+				td.title = this.ZONES[this.ZONE_CURRENT].title;
+				td.style.backgroundColor = this.ZONES[this.ZONE_CURRENT].desc;
+				// check events
+				const THIS_EVENTS = [];
+				while (this.EVENT_CURRENT < this.EVENTS.length
+						&& this.EVENTS[this.EVENT_CURRENT].weekID < WEEK_NUMBER)
+					THIS_EVENTS.push(this.EVENTS[this.EVENT_CURRENT++]);
+				if (THIS_EVENTS.length){
+					td.title += `\n${THIS_EVENTS.map(e => e.date.toDateString() + ': ' + e.title).join('\n')}`;
+					td.innerHTML = '+';
+				}
 			}
 		}
 		console.info('lunalife.js ran successfully');

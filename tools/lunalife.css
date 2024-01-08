@@ -2,8 +2,16 @@
 	--cellSize: calc(min(1vw, 1vh));
 }
 
+html, body {
+	font-family: Consolas, 'Courier New', monospace;
+}
+
 td {
+	font-size: calc(0.6 * var(--cellSize));
+	font-weight: bold;
 	height: var(--cellSize);
+	text-align: center;
+	text-decoration: none;
 	width: var(--cellSize);
 }
 
