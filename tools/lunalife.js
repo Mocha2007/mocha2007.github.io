@@ -68,6 +68,7 @@ const LUNALIFE = {
 		new LunaEvent('Taught myself how to code (Python at the time)', new Date(2012, 0)), // appx
 		new LunaEvent('Joined Cloudsdale', new Date(2012, 0, 7)), // appx
 		new LunaEvent('I started playing KSP in 0.13.3', new Date(2012, 2, 3)),
+		new LunaEvent('Observed the 2012 transit of Venus - my first memorable astronomical observation. I projected it onto a sheet of paper with binoculars and took some crude photos.', new Date(2012, 5, 5)),
 		new LunaEvent('Met the one who would eventually be my BF', new Date(2012, 6)), // appx
 		new LunaEvent('Moved across the country', new Date(2013, 5)),
 		new LunaEvent('I started playing EU4, thus initiating my map game obsession', new Date(2013, 7, 13)),
@@ -85,6 +86,7 @@ const LUNALIFE = {
 		new LunaEvent('Realized I enjoyed the thought of being a woman', new Date(2016, 7, 29)), // appx. (date I joined PPP)
 		new LunaEvent('I get mistaken for a trans man in a VC because "my voice sounded too feminine to be cis"... and somehow, that made me feel good :^)', new Date(2017, 4, 11)),
 		new LunaEvent('Publish mocha2007.github.io', new Date(2017, 4, 16)), // https://github.com/Mocha2007/mocha2007.github.io/commit/4e1bbc0bc41c4f75681c539cd09e164594e6ba7c
+		new LunaEvent('Observed totality of the Great American Eclipse in Greenville, SC.', new Date(2017, 7, 21)),
 		new LunaEvent('First job (includes bonus moment where my egg almost cracked four years early!)', new Date(2017, 8)),
 		new LunaEvent('Started dating BF (online)', new Date(2019, 10, 24)),
 		new LunaEvent('Met BF IRL first time', new Date(2020, 0, 24)),
@@ -94,7 +96,8 @@ const LUNALIFE = {
 		new LunaEvent('Had a moment at work where my egg almost cracked a couple months early!', new Date(2021, 10, 1)), // appx
 		new LunaEvent('Went to MFF 2021 w/ BF, met a long-time online friend', new Date(2021, 11, 2)),
 		new LunaEvent('Went to BRFF 2022 w/ BF', new Date(2022, 2, 10)),
-		new LunaEvent('Egg Cracked', new Date(2022, 4)), // appx
+		new LunaEvent('(appx) Egg Cracked', new Date(2022, 4)), // appx
+		new LunaEvent('Observed my first lunar eclipse after two previous attempts thwarted by clouds!', new Date(2022, 4, 15)),
 		new LunaEvent('Came out to BF', new Date(2022, 6, 15)),
 		new LunaEvent('Discovered and binge-read Rain', new Date(2022, 9, 24)), // appx
 		new LunaEvent('Came out to friends', new Date(2023, 0)), // appx
@@ -103,6 +106,8 @@ const LUNALIFE = {
 		new LunaEvent('Started HRT', new Date(2023, 7, 16)),
 		new LunaEvent('Fully came out to everyone, started living as my true self 24/7', new Date(2023, 10, 10)), // appx
 		new LunaEvent('Met BF\'s family', new Date(2023, 11, 16)),
+		new LunaEvent('I plan to observe the 2024 Solar Eclipse in Texas.', new Date(2024, 3, 8)),
+		new LunaEvent('If I am alive by this date, I could observe Halley\'s comet.', new Date(2061, 6, 28)),
 	],
 	ZONE_CURRENT: 0,
 	ZONES: [
