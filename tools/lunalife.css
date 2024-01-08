@@ -3,10 +3,12 @@
 }
 
 html, body {
+	background-color: black;
 	font-family: Consolas, 'Courier New', monospace;
 }
 
 td {
+	color: white;
 	font-size: calc(0.6 * var(--cellSize));
 	font-weight: bold;
 	height: var(--cellSize);
@@ -19,4 +21,8 @@ td:hover {
 	box-shadow: 0 0 40px 20px #0ff;
 	position: relative;
 	z-index: 999;
+}
+
+#container table {
+	margin: auto;
 }

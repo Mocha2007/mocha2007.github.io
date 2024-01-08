@@ -37,7 +37,7 @@ const LUNALIFE = {
 	],
 	ZONE_CURRENT: 0,
 	ZONES: [
-		new LunaEvent('Early Childhood', new Date(2004, 8, 6), '#000'), // 98-04
+		new LunaEvent('Early Childhood', new Date(2004, 8, 6), '#444'), // 98-04
 		new LunaEvent('Elementary School', new Date(2009, 8, 7), '#00c'), // 04-09
 		new LunaEvent('Middle School', new Date(2012, 8, 3), '#408'), // 09-12
 		new LunaEvent('High School', new Date(2015, 5, 20), '#60f'), // 12-15
