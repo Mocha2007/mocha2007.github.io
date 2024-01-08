@@ -33,10 +33,13 @@ const LUNALIFE = {
 	},
 	EVENT_CURRENT: 0,
 	EVENTS: [
-		new LunaEvent('First hints of dysphoria', new Date(2009, 8, 7)),
+		new LunaEvent('First hints of dysphoria', new Date(2008, 8, 1)),
+		new LunaEvent('Joined Youtube', new Date(2011, 0, 6)),
+		new LunaEvent('Joined Twitter (and then proceeded to never use it...)', new Date(2011, 4, 1)),
 		new LunaEvent('Joined Cloudsdale', new Date(2012, 0, 7)), // appx
 		new LunaEvent('Met the one who would eventually be my BF', new Date(2012, 6, 1)), // appx
 		new LunaEvent('Moved across the country', new Date(2013, 6, 1)), // appx
+		new LunaEvent('About the time I started consistently getting gender envy', new Date(2013, 8, 2)), // appx
 		new LunaEvent('Joined Reddit after watching a CGPGrey video', new Date(2013, 8, 10)),
 		new LunaEvent('Started consciously questioning my gender', new Date(2014, 6, 1)), // very rough estimate - must've been pre-Discord...
 		new LunaEvent('Watched that vihart video on gender identity that made me question myself even more lmao', new Date(2015, 5, 8)), // https://www.youtube.com/watch?v=hmKix-75dsg
@@ -55,9 +58,9 @@ const LUNALIFE = {
 	],
 	ZONE_CURRENT: 0,
 	ZONES: [
-		new LunaEvent('Early Childhood', new Date(2004, 8, 6), '#444'), // 98-04
-		new LunaEvent('Elementary School', new Date(2009, 8, 7), '#00c'), // 04-09
-		new LunaEvent('Middle School', new Date(2012, 8, 3), '#408'), // 09-12
+		new LunaEvent('Early Childhood', new Date(2003, 8, 1), '#444'), // 98-04
+		new LunaEvent('Elementary School', new Date(2008, 8, 1), '#00c'), // 04-09
+		new LunaEvent('Middle School', new Date(2011, 8, 5), '#408'), // 09-12
 		new LunaEvent('High School', new Date(2015, 5, 20), '#60f'), // 12-15
 		new LunaEvent('Gap Year', new Date(2016, 7, 1), '#808'), // 15-16
 		new LunaEvent('College', new Date(2020, 4, 7), '#c0c'), // 16-20
