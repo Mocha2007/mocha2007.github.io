@@ -60,6 +60,7 @@ const LUNALIFE = {
 		new LunaEvent('Joined Discord after watching a JiggyWiggy video', new Date(2015, 10, 8)), // I was using it like maybe a month or two prior as well
 		new LunaEvent('Migrated to Telegram from Kik', new Date(2016, 6, 4)),
 		new LunaEvent('Realized I enjoyed the thought of being a woman', new Date(2016, 7, 29)), // appx. (date I joined PPP)
+		new LunaEvent('I get mistaken for a trans man in a VC because "my voice sounded too feminine to be cis"... and somehow, that made me feel good :^)', new Date(2017, 4, 11)),
 		new LunaEvent('Publish mocha2007.github.io', new Date(2017, 4, 16)), // https://github.com/Mocha2007/mocha2007.github.io/commit/4e1bbc0bc41c4f75681c539cd09e164594e6ba7c
 		new LunaEvent('First job (includes bonus moment where my egg almost cracked four years early!)', new Date(2017, 8)),
 		new LunaEvent('Started dating BF (online)', new Date(2019, 10, 24)),
@@ -71,7 +72,7 @@ const LUNALIFE = {
 		new LunaEvent('Went to MFF 2021 w/ BF, met a long-time online friend', new Date(2021, 11, 2)),
 		new LunaEvent('Egg Cracked', new Date(2022, 0, 1)), // appx
 		new LunaEvent('Went to BRFF 2022 w/ BF', new Date(2022, 2, 10)),
-		new LunaEvent('Came out to BF', new Date(2022, 6, 1)), // appx
+		new LunaEvent('Came out to BF', new Date(2022, 6, 15)),
 		new LunaEvent('Discovered and binge-read Rain', new Date(2022, 9, 24)), // appx
 		new LunaEvent('Came out to friends', new Date(2023, 1, 1)), // appx
 		new LunaEvent('Move in with BF', new Date(2023, 5, 14)), // appx
