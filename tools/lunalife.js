@@ -70,8 +70,8 @@ const LUNALIFE = {
 		new LunaEvent('Discovered TFGames :^)', new Date(2020, 10, 11)), // appx
 		new LunaEvent('Had a moment at work where my egg almost cracked a couple months early!', new Date(2021, 10, 1)), // appx
 		new LunaEvent('Went to MFF 2021 w/ BF, met a long-time online friend', new Date(2021, 11, 2)),
-		new LunaEvent('Egg Cracked', new Date(2022, 0, 1)), // appx
 		new LunaEvent('Went to BRFF 2022 w/ BF', new Date(2022, 2, 10)),
+		new LunaEvent('Egg Cracked', new Date(2022, 4, 1)), // appx
 		new LunaEvent('Came out to BF', new Date(2022, 6, 15)),
 		new LunaEvent('Discovered and binge-read Rain', new Date(2022, 9, 24)), // appx
 		new LunaEvent('Came out to friends', new Date(2023, 1, 1)), // appx
