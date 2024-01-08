@@ -1,5 +1,8 @@
 /* exported LUNALIFE, LUNALIFE_LOADED */
 
+const _1d = 24*60*60*1000;
+const _1w = 7*_1d;
+
 class LunaEvent {
 	constructor(title, date, desc = ''){
 		/** @type {string} */
@@ -19,7 +22,11 @@ class LunaEvent {
 		return `${this.date.toDateString()} (${this.age} years old)`;
 	}
 	get weekID(){
-		return Math.floor((this.date - LunaEvent.epoch)/(7*24*60*60*1000));
+		return Math.floor((this.date - LunaEvent.epoch)/_1w);
+	}
+	/** @param {number} wID */
+	static fromWeekID(wID){
+		return new Date(+LunaEvent.epoch + _1w*wID);
 	}
 }
 LunaEvent.epoch = new Date(Date.UTC(1998, 3, 27, 13+7, 20));
@@ -124,12 +131,15 @@ const LUNALIFE = {
 				if (this.ZONES[this.ZONE_CURRENT].weekID < WEEK_NUMBER)
 					this.ZONE_CURRENT++;
 				// style!~
-				td.title = this.ZONES[this.ZONE_CURRENT].title;
+				td.title = this.ZONES[this.ZONE_CURRENT].title
+					+ ',\nWeek of '
+					+ LunaEvent.fromWeekID(WEEK_NUMBER).toDateString()
+					+ ':\n--------------------';
 				td.style.backgroundColor = this.ZONES[this.ZONE_CURRENT].desc;
 				// check events
 				const THIS_EVENTS = [];
 				while (this.EVENT_CURRENT < this.EVENTS.length
-						&& this.EVENTS[this.EVENT_CURRENT].weekID < WEEK_NUMBER)
+						&& this.EVENTS[this.EVENT_CURRENT].weekID <= WEEK_NUMBER)
 					THIS_EVENTS.push(this.EVENTS[this.EVENT_CURRENT++]);
 				if (THIS_EVENTS.length){
 					td.title += `\n${THIS_EVENTS.map(e => e.dateString + ': ' + e.title).join('\n')}`;
