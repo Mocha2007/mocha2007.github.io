@@ -33,6 +33,7 @@ const LUNALIFE = {
 	},
 	EVENT_CURRENT: 0,
 	EVENTS: [
+		new LunaEvent('Roughly the time of my earliest memories', new Date(2002, 0, 1)),
 		new LunaEvent('First hints of dysphoria', new Date(2008, 8, 1)),
 		new LunaEvent('Joined Youtube', new Date(2011, 0, 6)),
 		new LunaEvent('Start conworlding (then, about Mochadia)', new Date(2011, 3, 22)),
