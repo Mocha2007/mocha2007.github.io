@@ -77,10 +77,10 @@ const LUNALIFE = {
 		new LunaEvent('I started playing Minecraft in B1.8.1', new Date(2011, 8, 15)),
 		new LunaEvent('I started playing Terraria shortly before 1.1, after watching SirEldricIV\'s Hardcore Saga LP series.', new Date(2011, 10)), // I played Terraria AFTER MC but before 1.1... so between Sep 15th and Dec 1st...
 		new LunaEvent('Taught myself how to code (Python at the time)', new Date(2012, 0)), // appx
-		new LunaEvent('Joined Cloudsdale', new Date(2012, 0, 7)), // appx
 		new LunaEvent('I started playing KSP in 0.13.3', new Date(2012, 2, 3)),
 		new LunaEvent('Observed the 2012 transit of Venus - my first memorable astronomical observation. I projected it onto a sheet of paper with binoculars and took some crude photos.', new Date(2012, 5, 5)),
-		new LunaEvent('Met the one who would eventually be my BF', new Date(2012, 6)), // appx
+		new LunaEvent('Joined Cloudsdale', new Date(2013, 0, 28)), // appx
+		new LunaEvent('Met the one who would eventually be my BF', new Date(2013, 3)), // appx
 		new LunaEvent('Moved across the country', new Date(2013, 5)),
 		new LunaEvent('I started playing EU4, thus initiating my map game obsession', new Date(2013, 7, 13)),
 		new LunaEvent('About the time I started consistently getting gender envy', new Date(2013, 8, 2)), // appx
@@ -101,6 +101,8 @@ const LUNALIFE = {
 		new LunaEvent('Observed totality of the Great American Eclipse in Greenville, SC.', new Date(2017, 7, 21)),
 		new LunaEvent('First job (includes bonus moment where my egg almost cracked four years early!)', new Date(2017, 8)),
 		new LunaEvent('Hurricane Michael knocked our power out for days, and kicked up probably the craziest storm I\'ve been through!', new Date(2018, 9, 11)),
+		new LunaEvent('SotE 0.1 released. I met a lot of my current friends through the "fanbase" (if it can be called that). Sadly, SotE died UwU.', new Date(2018, 11, 4)),
+		new LunaEvent('Briefly rejoined Cloudsdale before it shut down (thankfully, I\'m still in touch with folks!)', new Date(2019, 3)), // appx
 		new LunaEvent('Started dating BF (online)', new Date(2019, 10, 24)),
 		new LunaEvent('Met BF IRL first time', new Date(2020, 0, 24)),
 		new LunaEvent('Almost died from Ehrlichia (and my bastard prof wouldn\'t let me redo my midterm...)', new Date(2020, 2, 3)),
