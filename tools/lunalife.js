@@ -54,6 +54,7 @@ const LUNALIFE = {
 		new LunaEvent('Moved across the country', new Date(2013, 5)),
 		new LunaEvent('About the time I started consistently getting gender envy', new Date(2013, 8, 2)), // appx
 		new LunaEvent('Joined Reddit after watching a CGPGrey video', new Date(2013, 8, 10)),
+		new LunaEvent('Started playing KoL, which I was OBSESSED with in HS...', new Date(2013, 10, 27)),
 		new LunaEvent('Started consciously questioning my gender', new Date(2014, 6, 1)), // very rough estimate - must've been pre-Discord...
 		new LunaEvent('Discovered Dwarf Fortress, which quickly became my favorite game EVER', new Date(2014, 6, 7)), // appx
 		new LunaEvent('Watched that vihart video on gender identity that made me question myself even more lmao', new Date(2015, 5, 8)), // https://www.youtube.com/watch?v=hmKix-75dsg
