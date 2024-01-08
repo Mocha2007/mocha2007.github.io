@@ -9,11 +9,20 @@ class LunaEvent {
 		/** @type {string} */
 		this.desc = desc;
 	}
+	get age(){
+		const dy = this.date.getFullYear() - LunaEvent.epoch.getFullYear();
+		return this.date.getMonth() === 3
+			? 27 <= this.date.getDate() ? dy : dy - 1
+			: this.date.getMonth() < 3 ? dy - 1 : dy;
+	}
+	get dateString(){
+		return `${this.date.toDateString()} (${this.age} years old)`;
+	}
 	get weekID(){
 		return Math.floor((this.date - LunaEvent.epoch)/(7*24*60*60*1000));
 	}
 }
-LunaEvent.epoch = Date.UTC(1998, 3, 27, 13+7, 20);
+LunaEvent.epoch = new Date(Date.UTC(1998, 3, 27, 13+7, 20));
 
 const LUNALIFE = {
 	CONFIG: {
@@ -45,8 +54,10 @@ const LUNALIFE = {
 		new LunaEvent('About the time I started consistently getting gender envy', new Date(2013, 8, 2)), // appx
 		new LunaEvent('Joined Reddit after watching a CGPGrey video', new Date(2013, 8, 10)),
 		new LunaEvent('Started consciously questioning my gender', new Date(2014, 6, 1)), // very rough estimate - must've been pre-Discord...
+		new LunaEvent('Discovered Dwarf Fortress, which quickly became my favorite game EVER', new Date(2014, 6, 7)), // appx
 		new LunaEvent('Watched that vihart video on gender identity that made me question myself even more lmao', new Date(2015, 5, 8)), // https://www.youtube.com/watch?v=hmKix-75dsg
 		new LunaEvent('Joined Discord after watching a JiggyWiggy video', new Date(2015, 11, 8)), // I was using it like maybe a month or two prior as well
+		new LunaEvent('Migrated to Telegram from Kik', new Date(2016, 6, 4)),
 		new LunaEvent('Realized I enjoyed the thought of being a woman', new Date(2016, 7, 29)), // appx. (date I joined PPP)
 		new LunaEvent('Publish mocha2007.github.io', new Date(2017, 4, 16)), // https://github.com/Mocha2007/mocha2007.github.io/commit/4e1bbc0bc41c4f75681c539cd09e164594e6ba7c
 		new LunaEvent('First job (includes bonus moment where my egg almost cracked four years early!)', new Date(2017, 8)),
@@ -103,7 +114,7 @@ const LUNALIFE = {
 						&& this.EVENTS[this.EVENT_CURRENT].weekID < WEEK_NUMBER)
 					THIS_EVENTS.push(this.EVENTS[this.EVENT_CURRENT++]);
 				if (THIS_EVENTS.length){
-					td.title += `\n${THIS_EVENTS.map(e => e.date.toDateString() + ': ' + e.title).join('\n')}`;
+					td.title += `\n${THIS_EVENTS.map(e => e.dateString + ': ' + e.title).join('\n')}`;
 					td.innerHTML = '+';
 				}
 			}
