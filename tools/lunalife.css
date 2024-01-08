@@ -1,5 +1,11 @@
 :root {
 	--cellSize: 0.85vmin;
+	--shadow1: 0 0 1em black;
+	--shadow2: var(--shadow1), var(--shadow1);
+	--shadow4: var(--shadow2), var(--shadow2);
+	--shadow8: var(--shadow4), var(--shadow4);
+	--shadow16: var(--shadow8), var(--shadow8);
+	--shadow32: var(--shadow16), var(--shadow16);
 }
 
 html, body {
@@ -15,11 +21,12 @@ td {
 	height: var(--cellSize);
 	text-align: center;
 	text-decoration: none;
+	text-shadow: var(--shadow32);
 	width: var(--cellSize);
 }
 
 td:hover {
-	box-shadow: 0 0 40px 20px #000;
+	box-shadow: 0 0 40px 20px black;
 	position: relative;
 	z-index: 999;
 }
