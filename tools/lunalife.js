@@ -52,7 +52,7 @@ const LUNALIFE = {
 		new LunaEvent('First job (includes bonus moment where my egg almost cracked four years early!)', new Date(2017, 8)),
 		new LunaEvent('Started dating BF (online)', new Date(2019, 10, 21)), // appx
 		new LunaEvent('Met BF IRL first time', new Date(2020, 0, 14)), // appx
-		new LunaEvent('Almost die from Ehrlichia', new Date(2020, 2, 1)), // appx
+		new LunaEvent('Almost died from Ehrlichia (and my bastard prof wouldn\'t let me redo my midterm...)', new Date(2020, 2, 3)),
 		new LunaEvent('Tried on women\'s clothing for the first time... and liked it OwO', new Date(2020, 6, 1)), // appx
 		new LunaEvent('Discovered TFGames :^)', new Date(2020, 10, 11)), // appx
 		new LunaEvent('Had a moment at work where my egg almost cracked a couple months early!', new Date(2021, 10, 1)), // appx
