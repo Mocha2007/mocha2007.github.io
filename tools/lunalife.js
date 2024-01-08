@@ -63,9 +63,11 @@ const LUNALIFE = {
 		new LunaEvent('I remember buying a copy of CotN (I think it was left discarded on a palette at Costco) and loving it.', new Date(2004, 10, 9)),
 		new LunaEvent('(appx) dog died ;-;', new Date(2007, 0)), // appx
 		new LunaEvent('By this point I was definitely obsessed with flash games. Today marks the release of Ocean Explorer, the earliest game from jmtb02 where I remember playing it on release.', new Date(2007, 8, 14)),
+		new LunaEvent('Submachine 5 released - this is the game that first got me into the series!', new Date(2008, 0, 30)),
 		new LunaEvent('About the time I got Spore (maybe as a christmas gift?). I was obsessed with this game for years.', new Date(2008, 11, 25)),
 		new LunaEvent('Played Pokemon Platinum, the only Pokemon game I spent a lot of time on.', new Date(2009, 2, 22)),
 		new LunaEvent('First hints of dysphoria', new Date(2009, 8, 7)),
+		new LunaEvent('Some time between v6.5 and v7.1 I started playing Dan-Ball\'s powder game. I recall playing it a lot in middle school...', new Date(2009, 8, 11)),
 		new LunaEvent('An earthquake hit San Diego on Easter, the strongest quake I experienced (about magnitude 5 at my location).', new Date(2010, 3, 4)),
 		new LunaEvent('I got Civ5 for christmas and LOVED it, and only stopped playing once EU4 came out 3 years later.', new Date(2010, 11, 25)),
 		new LunaEvent('Joined Youtube', new Date(2011, 0, 6)),
@@ -84,7 +86,8 @@ const LUNALIFE = {
 		new LunaEvent('About the time I started consistently getting gender envy', new Date(2013, 8, 2)), // appx
 		new LunaEvent('Joined Reddit after watching a CGPGrey video', new Date(2013, 8, 10)),
 		new LunaEvent('Started playing KoL, which I was OBSESSED with in HS...', new Date(2013, 10, 27)),
-		new LunaEvent('Started consciously questioning my gender', new Date(2014, 6, 1)), // very rough estimate - must've been pre-Discord...
+		new LunaEvent('(appx) Started consciously questioning my gender', new Date(2014, 6)), // very rough estimate - must've been pre-Discord...
+		new LunaEvent('Coming Out Simulator 2014 released. It was something I thought back to a lot when sorting out my identity.', new Date(2014, 6, 1)),
 		new LunaEvent('Discovered Dwarf Fortress 0.40, which quickly became my favorite game EVER', new Date(2014, 6, 7)), // appx - I started playing IN 2014, but after 0.40 was released...
 		new LunaEvent('Watched that vihart video on gender identity that made me question myself even more lmao', new Date(2015, 5, 8)), // https://www.youtube.com/watch?v=hmKix-75dsg
 		new LunaEvent('Joined Discord after watching a JiggyWiggy video', new Date(2015, 10, 8)), // I was using it like maybe a month or two prior as well
