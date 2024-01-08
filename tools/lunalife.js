@@ -29,7 +29,7 @@ class LunaEvent {
 		return new Date(+LunaEvent.epoch + _1w*wID);
 	}
 }
-LunaEvent.epoch = new Date(Date.UTC(1998, 3, 27, 13+7, 20));
+LunaEvent.epoch = new Date(1998, 3, 27);
 
 const LUNALIFE = {
 	CONFIG: {
