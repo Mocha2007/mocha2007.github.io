@@ -48,6 +48,7 @@ const LUNALIFE = {
 		new LunaEvent('Start conworlding (then, about Mochadia)', new Date(2011, 3, 22)),
 		new LunaEvent('Join cult of bronydom', new Date(2011, 3, 30)),
 		new LunaEvent('Joined Twitter (and then proceeded to never use it...)', new Date(2011, 4, 1)),
+		new LunaEvent('Taught myself how to code (Python at the time)', new Date(2012, 0, 1)), // appx
 		new LunaEvent('Joined Cloudsdale', new Date(2012, 0, 7)), // appx
 		new LunaEvent('Met the one who would eventually be my BF', new Date(2012, 6, 1)), // appx
 		new LunaEvent('Moved across the country', new Date(2013, 6, 1)), // appx
