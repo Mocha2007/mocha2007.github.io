@@ -50,15 +50,18 @@ const LUNALIFE = {
 		new LunaEvent('Publish mocha2007.github.io', new Date(2017, 4, 16)), // https://github.com/Mocha2007/mocha2007.github.io/commit/4e1bbc0bc41c4f75681c539cd09e164594e6ba7c
 		new LunaEvent('Started dating BF (online)', new Date(2019, 10, 21)), // appx
 		new LunaEvent('Met BF IRL first time', new Date(2020, 0, 14)), // appx
+		new LunaEvent('Almost die from Ehrlichia', new Date(2020, 2, 1)), // appx
 		new LunaEvent('Tried women\'s clothing', new Date(2020, 6, 1)), // appx
-		new LunaEvent('Discovered TFGames :^)', new Date(2021, 0, 13)), // appx
+		new LunaEvent('Discovered TFGames :^)', new Date(2020, 10, 11)), // appx
 		new LunaEvent('Egg Cracked', new Date(2022, 2, 1)), // appx
 		new LunaEvent('Came out to BF', new Date(2022, 6, 1)), // appx
 		new LunaEvent('Discovered and binge-read Rain', new Date(2022, 9, 24)), // appx
 		new LunaEvent('Came out to friends', new Date(2023, 1, 1)), // appx
+		new LunaEvent('Move in with BF', new Date(2023, 5, 14)), // appx
 		new LunaEvent('After a bout of severe depression, I resolved to transition, and set up my first HRT appointment', new Date(2023, 6, 25)),
 		new LunaEvent('Started HRT', new Date(2023, 7, 16)),
 		new LunaEvent('Fully came out to everyone, started living as my true self 24/7', new Date(2023, 10, 10)), // appx
+		new LunaEvent('Met BF\'s family', new Date(2023, 11, 16)),
 	],
 	ZONE_CURRENT: 0,
 	ZONES: [
