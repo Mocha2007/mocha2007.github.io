@@ -37,8 +37,14 @@ const LUNALIFE = {
 		get DIM(){
 			return Math.round(Math.sqrt(91 * 365.25 / 7));
 		},
+		get H(){
+			return this.DIM;
+		},
 		get LEN(){
-			return this.DIM * this.DIM;
+			return this.H * this.W;
+		},
+		get W(){
+			return this.DIM;
 		},
 	},
 	ELEM: {
@@ -126,13 +132,13 @@ const LUNALIFE = {
 		this.ELEM.CONTAINER.innerHTML = '';
 		const table = document.createElement('table');
 		this.ELEM.CONTAINER.appendChild(table);
-		for (let i = 0; i < this.CONFIG.DIM; i++){
+		for (let i = 0; i < this.CONFIG.H; i++){
 			const tr = document.createElement('tr');
 			table.appendChild(tr);
-			for (let j = 0; j < this.CONFIG.DIM; j++){
+			for (let j = 0; j < this.CONFIG.W; j++){
 				const td = document.createElement('td');
 				tr.appendChild(td);
-				const WEEK_NUMBER = this.CONFIG.DIM*i + j;
+				const WEEK_NUMBER = this.CONFIG.W*i + j;
 				if (this.ZONES[this.ZONE_CURRENT].weekID < WEEK_NUMBER)
 					this.ZONE_CURRENT++;
 				// style!~
