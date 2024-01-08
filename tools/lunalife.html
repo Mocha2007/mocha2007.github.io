@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<script src="lunalife.js" async></script>
+<link href="lunalife.css" type="text/css" rel="stylesheet">
+<div id="container"></div>
+<script>
+const LOAD = () => {
+	if (typeof LUNALIFE_LOADED === 'undefined')
+		setTimeout(LOAD, 100);
+	else
+		LUNALIFE.main();
+}
+LOAD();
+</script>
