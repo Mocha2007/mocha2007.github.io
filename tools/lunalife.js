@@ -87,6 +87,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(2013, 7, 13), 'I started playing EU4, thus initiating my map game obsession'),
 		new LunaEvent(new Date(2013, 8, 10), 'Joined Reddit after watching a CGPGrey video'),
 		new LunaEvent(new Date(2013, 10, 27), 'Started playing KoL, which I was OBSESSED with in HS...'),
+		new LunaEvent(new Date(2014, 0, 14), '(appx) Built my current, very old desktop.'),
 		new LunaEvent(new Date(2014, 6), '(appx) Started consciously questioning my gender', 'very rough estimate - must\'ve been pre-Discord...'),
 		new LunaEvent(new Date(2014, 6, 1), 'Coming Out Simulator 2014 released. It was something I thought back to a lot when sorting out my identity.'),
 		new LunaEvent(new Date(2014, 6, 7), '(appx) Discovered Dwarf Fortress 0.40, which quickly became my favorite game EVER', 'I started playing IN 2014, but after 0.40 was released...'),
