@@ -136,6 +136,19 @@ const LUNALIFE = {
 		new LunaEvent('Womanhood', new Date(), '#f4c'),
 		new LunaEvent('Future', new Date(9e99), 'rgba(224, 192, 255, 0.15)'),
 	],
+	/** converting the class to the new order... */
+	convert(){
+		const s = this.EVENTS.concat(this.ZONES)
+			.map(e => {
+				// eslint-disable-next-line max-len
+				let partial = `new LunaEvent(new Date(${e.date.getFullYear()}, ${e.date.getMonth()}, ${e.date.getDate()}), '${e.title}'`;
+				if (e.desc)
+					partial += `, '${e.desc}'`;
+				return partial + ')';
+			})
+			.join(',\n');
+		console.debug(s);
+	},
 	main(){
 		// construct table
 		this.ELEM.CONTAINER.innerHTML = '';
