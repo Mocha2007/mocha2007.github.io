@@ -55,7 +55,9 @@ const LUNALIFE = {
 	},
 	EVENT_CURRENT: 0,
 	EVENTS: [
-		new LunaEvent(new Date(2000, 6, 17), 'Death of my maternal grandfather (before my memories)'),
+		new LunaEvent(new Date(2000, 0, 1), 'As the clock struck midnight on New Year\'s, a car, swerving to avoid an animal in the road, strikes a power box, knocking out power to our neighborhood. This freaky coincidence will be retold to me many times by my parents over the years.'),
+		new LunaEvent(new Date(2000, 6, 17), 'Death of my maternal grandfather'),
+		new LunaEvent(new Date(2001, 8, 11), '9/11 was happening as my mother was driving back from dropping me off at daycare. As she heard the events unfold on the radio, she decided to turn back and pick me up. I was too young to remember this, but if it happened, it happened...'),
 		new LunaEvent(new Date(2003, 0), 'Roughly the time of my earliest memories'),
 		new LunaEvent(new Date(2003, 1), '(appx) I remember tossing my favorite stuffed animal into the air, and the tail falling off, and panicking.'),
 		new LunaEvent(new Date(2003, 6), '(appx) Moved in to my childhood home'),
@@ -126,8 +128,9 @@ const LUNALIFE = {
 	],
 	ZONE_CURRENT: 0,
 	ZONES: [
-		new LunaEvent(new Date(2004, 8, 7), 'Early Childhood', '#444'), // 98-04
-		new LunaEvent(new Date(2009, 8, 7), 'Elementary School', '#00c'), // 04-09 CONFIRMED (Steve Irwin's death, arson)
+		new LunaEvent(new Date(2003, 0), 'Pre-Memory Era', '#444'), // 98-03
+		new LunaEvent(new Date(2004, 8, 7), 'Early Childhood', '#666'), // 03-04
+		new LunaEvent(new Date(2009, 8, 8), 'Elementary School', '#00c'), // 04-09 CONFIRMED (Steve Irwin's death, arson)
 		new LunaEvent(new Date(2012, 8, 4), 'Middle School', '#408'), // 09-12 START CONFIRMED (MJ's death)
 		new LunaEvent(new Date(2015, 5, 20), 'High School', '#60f'), // 12-15 END CONFIRMED (I just know it)
 		new LunaEvent(new Date(2016, 7), 'Gap Year', '#808'), // 15-16
