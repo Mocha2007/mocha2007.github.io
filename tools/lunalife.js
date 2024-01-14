@@ -196,6 +196,15 @@ const LUNALIFE = {
 			}
 		}
 		console.info('lunalife.js ran successfully');
+		// warnings
+		this.verify();
+	},
+	verify(){
+		// make sure events are in order
+		this.EVENTS.forEach((event, i, a) => {
+			if (i+1 < a.length && a[i+1].date < event.date)
+				console.warn(`Event ${i} (${event.title}) out of order!`);
+		});
 	},
 };
 
