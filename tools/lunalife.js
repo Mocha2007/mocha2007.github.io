@@ -120,7 +120,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(2020, 0, 24), 'Met BF IRL first time'),
 		new LunaEvent(new Date(2020, 2, 3), 'Almost died from Ehrlichia. I was convinced I was dying from this strange new disease brought over from China - Corona. Funnily enough, I was half right. Also, my bastard prof wouldn\'t let me redo my midterm...'),
 		new LunaEvent(new Date(2020, 5), '(appx) Tried on women\'s clothing for the first time... and liked it OwO', 'it was after 4/1 before 8/1...'),
-		new LunaEvent(new Date(2020, 10, 11), '(appx) Discovered TFGames :^)', 'Must\'ve been before Apr 7 2021 (that\'s when I made the tracker sheet). File revision history suggests NLT Nov 11'),
+		new LunaEvent(new Date(2020, 10, 11), '(appx) Discovered TFGames :^)', 'Must\'ve been before Feb 28 2021 (per being log) and Apr 7 (per tracker sheet). File revision history suggests NLT Nov 11'),
 		new LunaEvent(new Date(2021, 10), '(appx) Had a moment at work where my egg almost cracked a few months early!'),
 		new LunaEvent(new Date(2021, 11, 2), 'Went to MFF 2021 w/ BF, met a long-time online friend'),
 		new LunaEvent(new Date(2022, 2, 10), 'Went to BRFF 2022 w/ BF'),
