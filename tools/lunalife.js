@@ -110,6 +110,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(2017, 7, 21), 'Observed totality of the Great American Eclipse in Greenville, SC.'),
 		new LunaEvent(new Date(2017, 8), 'First job (includes bonus moment where my egg almost cracked four years early!)'),
 		new LunaEvent(new Date(2017, 10, 28), 'Start of second period of regular journalling.'),
+		new LunaEvent(new Date(2017, 11, 6), 'I stopped using IRC on this date.'),
 		new LunaEvent(new Date(2018, 4, 16), 'End of second period of regular journalling.'),
 		new LunaEvent(new Date(2018, 9), 'I started self-identifying as a femboy sometime prior to this date', 'I\'m shocked this sheet is as old as it is!'),
 		new LunaEvent(new Date(2018, 9, 11), 'Hurricane Michael knocked our power out for days, and kicked up probably the craziest storm I\'ve been through!'),
