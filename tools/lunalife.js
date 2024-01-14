@@ -110,7 +110,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(2018, 9), 'I started self-identifying as a femboy sometime prior to this date', 'I\'m shocked this sheet is as old as it is!'),
 		new LunaEvent(new Date(2018, 9, 11), 'Hurricane Michael knocked our power out for days, and kicked up probably the craziest storm I\'ve been through!'),
 		new LunaEvent(new Date(2018, 11, 4), 'SotE 0.1 released. I met a lot of my current friends through the "fanbase" (if it can be called that). Sadly, SotE died UwU.'),
-		new LunaEvent(new Date(2019, 0), '(appx) About the time I started learning C#'),
+		new LunaEvent(new Date(2019, 1, 22), '(appx) About the time I started learning C#'),
 		new LunaEvent(new Date(2019, 3), '(appx) Briefly rejoined Cloudsdale before it shut down (thankfully, I\'m still in touch with folks!)'),
 		new LunaEvent(new Date(2019, 10, 24), 'Started dating BF (online)'),
 		new LunaEvent(new Date(2020, 0, 24), 'Met BF IRL first time'),
