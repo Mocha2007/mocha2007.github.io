@@ -149,7 +149,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(2016, 7), 'Gap Year', '#808'), // 15-16
 		new LunaEvent(new Date(2020, 4, 7), 'College', '#c0c'), // 16-20
 		new LunaEvent(new Date(2023, 7, 16), '"""Manhood"""', '#c8c'), // 20-23
-		new LunaEvent(new Date(2024, 0, 9), 'Womanhood', '#f4c'),
+		new LunaEvent(new Date(), 'Womanhood', '#f4c'),
 		new LunaEvent(new Date(9e99), 'Future', 'rgba(224, 192, 255, 0.15)'),
 	],
 	/** converting the class to the new order... */
