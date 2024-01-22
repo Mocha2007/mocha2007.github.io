@@ -45,6 +45,8 @@ class Blogpost {
 	constructor(title, date, tags, sections){
 		this.title = title;
 		this.date = date;
+		if (!blog.debug && new Date() < date)
+			return;
 		this.tags = tags;
 		this.sections = sections;
 		Blogpost.blogposts.push(this);

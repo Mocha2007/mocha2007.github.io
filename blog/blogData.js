@@ -1204,4 +1204,37 @@ const blogData = [
 	@p
 	I once more took up journalling after a nearly 4-year hiatus.
 	`,
+	`
+	@title What's in a Name?
+	@date 1706533200000
+	@tags meta
+	I am changing my name. I am certain of my first name (Luna).
+	Although I don't care for middle names, for logitical/bureaucratic reasons it is evident I will need one.
+	Some options I have thought of:
+	<ul>
+	<li>Luna <b>Celestia</b> - Luna's complement in FiM</li>
+		<li>Luna <b>Cynthia Selene</b> - two Greek names for the moon</li>
+		<li>Luna <b>Lilith</b> - although this goes against my personal ban on abrahamic names, <em>Lilith</em> is just so badass.</li>
+		<li>Luna <b>Molly</b> - after probably my favorite book protagonist growing up, Molly Moon.
+			That universe was one of the early targets of my "dysphoria-escapist" desires.
+			Bonus: her last name is <em>literally</em> Moon.</li>
+		<li>Luna <b>Sapphira</b> - one of my original top first name choices -
+			named after an old friend. Alternates: Alyssa, Emily, Emma, Mallory, Xanthe.</li>
+		<li>Luna <b>Sappho</b> - the OG lesbian</li>
+		<li>Luna <b>[Eremoran name]</b> - this would certainly be reflective of myself.
+			Unfortunately, Eremoran names aren't really phonoaesthetic in English,
+			eg. <em>Siardor</em> or <em>Erekaflar</em>.
+			Humorously, <em>Tranzfemar</em> would be a valid dithetmatic name - it means <em>hidden rose</em>.</li>
+		<li>Luna <b>[Galilean Moon]</b> - unfortunately,<ul>
+			<li>Luna <b>Io</b> - to modern English phonoaesthetics, -o names are masculine.</li>
+			<li>Luna <b>Europa</b> - not gonna share names with a continent, sorry.</li>
+			<li>Luna <b>Ganymede</b> - male name.</li>
+			<li>Luna <b>Callisto</b> - ditto Io.</li>
+			</ul></li>
+		<li>Luna <b>[Tolkien Elvish name]</b> - although I don't associate much with LotR, elvish names are aesthetic, and would add a worldbuilding component to my name's meaning personally relevant to me:<ul>
+			<li>Luna <b>Galadriel</b> - badass elf bitch</li>
+			</ul></li>
+	</ul>
+	Clearly, I have a lot to decide.
+	`,
 ];
