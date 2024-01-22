@@ -1171,4 +1171,37 @@ const blogData = [
 	General election polling for my state seems to lean fairly strongly in favor of Trump (avg +5),
 	so I might end up voting for West as a protest candidate.
 	`,
+	`
+	@title E, Calendars, Haley, Winter.
+	@date 1705932486942
+	@p
+	I uploaded a Youtube video in the first time in over 1&frac12; years, although it is only 5 seconds long.
+	I do plan on making longer education/rant style videos later this year, but we'll have to see.
+	@p
+	@tags site js dev
+	I created several calendrical tools for the Eremoran, Gregrorian, and "Mocha Lunisolar" calendars.
+	They're useful enough for me to reference them myself in day-to-day activities.
+	@p
+	@tags news 2024_election
+	Since it's been two months since my previous snapshot, time to give an update for posterity.
+	Since last time:
+	<ul>
+		<li>DeSantis, Ramaswamy, and every other relevant republican challenger to Trump has dropped out. Except...</li>
+		<li>...Nikki Haley, polling nationally at 12%, and in New Hampshire at a significant 36%.</li>
+	</ul>
+	It is quite possible by the time I can vote in this primary, there will be no choices left to vote for.
+	<br><br>
+	An update on 3/4-way race figures:
+	<ul>
+		<li>2-way: Trump: 51.10%; Biden: 48.90%</li>
+		<li>3-way (w/ Kennedy): Trump: 41.39%; Biden: 37.31%; Kennedy 21.30%</li>
+	</ul>
+	I can't seem to find figures with just West anymore, but he has been polling around 2%.
+	@p
+	@tags weather
+	I found this morning the recent January frost clawing at my cheeks.
+	The sun once again rises on my morning commute, rather than after.
+	@p
+	I once more took up journalling after a nearly 4-year hiatus.
+	`,
 ];
