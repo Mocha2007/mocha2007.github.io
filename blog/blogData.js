@@ -1221,6 +1221,9 @@ const blogData = [
 		<li>Luna <b>Sapphira</b> - one of my original top first name choices -
 			named after an old friend. Alternates: Alyssa, Emily, Emma, Mallory, Xanthe.</li>
 		<li>Luna <b>Sappho</b> - the OG lesbian</li>
+		<li>Luna <b>[Another Latin name]</b><ul>
+			<li>Luna <b>Nox</b> - night</li>
+			</ul></li>
 		<li>Luna <b>[Eremoran name]</b> - this would certainly be reflective of myself.
 			Unfortunately, Eremoran names aren't really phonoaesthetic in English,
 			eg. <em>Siardor</em> or <em>Erekaflar</em>.
