@@ -10,13 +10,37 @@ class Floater {
 		this.t = t;
 		this.vx = random.uniform(-1, 1);
 		this.vy = random.uniform(-1, 1);
+		this.id = 'FLOATER_' + Floater.i++;
+	}
+	/** @returns {HTMLDivElement} */
+	get currentElem(){
+		return document.getElementById(this.id);
 	}
 	spawn(){
 		const elem = document.createElement('div');
-		// todo
+		document.body.appendChild(elem);
+		elem.id = this.id;
+		elem.style.position = 'absolute';
+		elem.style.left = this.x;
+		elem.style.top = this.y;
+		elem.style.color = this.color;
+		elem.innerHTML = this.text;
+		this.tick();
 		return elem;
 	}
+	tick(){
+		// move elem in direction of velocity vector
+		this.currentElem.style.left = (this.x += this.vx) + 'px';
+		this.currentElem.style.top = (this.y += this.vy) + 'px';
+		if (0 < this.t)
+			setTimeout(() => this.tick(), Floater.time);
+		else
+			this.currentElem.remove();
+		this.t -= Floater.time;
+	}
 }
+Floater.i = 0;
+Floater.time = 50; // ms
 
 class Infobox {
 	constructor(name, src = ''){
@@ -29,8 +53,9 @@ class Infobox {
 		return elem;
 	}
 	spawnFloater(text, color = 'White'){
-		new Floater(text, color);
-		alert(text); // todo
+		const elem = document.getElementById('COUNT_' + this.name);
+		const rect = elem.getBoundingClientRect();
+		new Floater(text, rect.x, rect.y, color).spawn();
 	}
 }
 
