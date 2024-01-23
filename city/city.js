@@ -118,6 +118,9 @@ class Cost extends Infobox {
 		this.res.forEach((r, i) => r.amount += mul * this.amt[i]);
 		CITY.update.resources();
 	}
+	mul(c = 1){
+		return new Cost(this.res, this.amt.map(x => x*c));
+	}
 }
 
 class Effects extends Infobox {
@@ -162,7 +165,7 @@ class Building extends Infobox {
 		return elem;
 	}
 	get cost(){
-		return Math.round(this.baseCost * Math.pow(1.2, this.amount));
+		return this.baseCost.mul(Math.pow(1.2, this.amount));
 	}
 	build(n = 1){
 		for (let i = 0; i < n; i++)
