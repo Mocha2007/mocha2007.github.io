@@ -218,7 +218,7 @@ const CITY = {
 		NEUTRAL: 'yellow',
 	},
 	DEFAULT: {
-		SRC: '', // todo
+		SRC: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Ambox_blue_question.svg',
 	},
 	ELEM: {
 		/** @returns {HTMLDivElement} */
@@ -227,7 +227,6 @@ const CITY = {
 		},
 	},
 	init(){
-		// todo
 		const MAIN = this.ELEM.MAIN;
 		// resource list
 		const RES_CONTAINER = this.ELEM.RES_CONTAINER = document.createElement('div');
@@ -299,3 +298,5 @@ const HOUSE = new Building('House', new Cost([WOOD], [10]));
 const MAKER_WOOD = new Building('Lumbermill', new Cost([WOOD, PEOPLE_U], [25, 1]), new Effects(0, new Cost([WOOD], [1])));
 
 const CITY_LOADED = true;
+
+// todo save/load w/ common.js:storage
