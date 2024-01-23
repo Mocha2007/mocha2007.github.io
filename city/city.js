@@ -119,6 +119,11 @@ class Cost extends Infobox {
 	get affordable(){
 		return this.res.every((r, i) => this.amt[i] <= r.amount);
 	}
+	get elem(){
+		const e = document.createElement('span');
+		e.innerHTML = 'Cost: ' + this.res.map((r, i) => `${this.amt[i]} ${r.name}`).join(', ');
+		return e;
+	}
 	modifyStock(mul = -1){
 		this.res.forEach((r, i) => r.amount += mul * this.amt[i]);
 		CITY.update.resources();
@@ -168,10 +173,16 @@ class Building extends Infobox {
 		elem.id = 'BUILDING_' + this.name;
 		elem.appendChild(this.countElem);
 		elem.appendChild(this.buildButton);
+		elem.appendChild(this.costElem);
 		return elem;
 	}
 	get cost(){
 		return this.baseCost.mul(Math.pow(1.2, this.amount));
+	}
+	get costElem(){
+		const elem = this.cost.elem;
+		elem.id = 'COST_' + this.name;
+		return elem;
 	}
 	build(n = 1){
 		for (let i = 0; i < n; i++)
@@ -243,7 +254,12 @@ const CITY = {
 			this.resources();
 		},
 		buildings(){
-			Building.buildings.forEach(b => document.getElementById('COUNT_' + b.name).innerHTML = b.amountString);
+			Building.buildings.forEach(b => {
+				// update amt
+				document.getElementById('COUNT_' + b.name).innerHTML = b.amountString;
+				// update cost
+				document.getElementById('COST_' + b.name).innerHTML = b.costElem.innerHTML;
+			});
 		},
 		buildingTick(){
 			Building.buildings.forEach(b => b.tick());
