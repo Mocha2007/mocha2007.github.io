@@ -1,5 +1,5 @@
 /* exported CITY, CITY_LOADED */
-/* global random */
+/* global random, sum */
 
 class Floater {
 	constructor(text, x = 0, y = 0, color = 'White', t = 1000){
@@ -60,12 +60,14 @@ class Infobox {
 }
 
 class Resource extends Infobox {
-	constructor(name, gatherable = true, amtGetter = undefined){
+	constructor(name, gatherable = true, amtGetter = undefined, scales = true){
 		super(name);
 		/** @type {boolean} */
 		this.gatherable = gatherable;
 		/** @type {() => void} */
 		this.amtGetter = amtGetter;
+		/** @type {boolean} */
+		this.scales = scales;
 		CITY.resources[name] = 0;
 		Resource.resources.push(this);
 	}
@@ -130,7 +132,7 @@ class Cost extends Infobox {
 		CITY.update.resources();
 	}
 	mul(c = 1){
-		return new Cost(this.res, this.amt.map(x => x*c));
+		return new Cost(this.res, this.amt.map((x, i) => this.res[i].scales ? Math.floor(x*c) : x));
 	}
 }
 
@@ -251,6 +253,18 @@ const CITY = {
 		console.info(`${Building.buildings.length} building types.`);
 	},
 	resources: {},
+	resources2: {
+		get employed(){
+			return sum(Building.buildings.map(b => b.cost.res.includes(PEOPLE_U)
+				? b.amount * b.cost.amt[b.cost.res.indexOf(PEOPLE_U)] : 0));
+		},
+		get pop(){
+			return HOUSE.amount;
+		},
+		get unemployed(){
+			return this.pop - this.employed;
+		},
+	},
 	update: {
 		all(){
 			this.buildings();
@@ -275,11 +289,13 @@ const CITY = {
 
 // resources
 // const METAL = new Resource('Metal');
-const PEOPLE = new Resource('People', false, () => HOUSE.amount);
+const PEOPLE = new Resource('Pops', false, () => CITY.resources2.pop, false);
+const PEOPLE_E = new Resource('Employed', false, () => CITY.resources2.employed, false);
+const PEOPLE_U = new Resource('Unemployed', false, () => CITY.resources2.unemployed, false);
 const WOOD = new Resource('Wood');
 
 // buildings
 const HOUSE = new Building('House', new Cost([WOOD], [10]));
-const MAKER_WOOD = new Building('Lumbermill', new Cost([WOOD, PEOPLE], [25, 1]), new Effects(0, new Cost([WOOD], [1])));
+const MAKER_WOOD = new Building('Lumbermill', new Cost([WOOD, PEOPLE_U], [25, 1]), new Effects(0, new Cost([WOOD], [1])));
 
 const CITY_LOADED = true;
