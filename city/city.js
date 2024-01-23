@@ -88,6 +88,7 @@ class Resource extends Infobox {
 	}
 	get gatherElem(){
 		const elem = document.createElement('div');
+		elem.classList.add('resource');
 		elem.id = 'RES_' + this.name;
 		elem.appendChild(this.countElem);
 		if (this.gatherable)
