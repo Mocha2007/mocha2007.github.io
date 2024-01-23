@@ -122,6 +122,9 @@ class Cost extends Infobox {
 	get affordable(){
 		return this.res.every((r, i) => this.amt[i] <= r.amount);
 	}
+	get allResKnown(){
+		return this.res.every(r => 0 < r.amount);
+	}
 	get elem(){
 		const e = document.createElement('span');
 		e.innerHTML = 'Cost: ' + this.res.map((r, i) => `${this.amt[i]} ${r.name}`).join(', ');
@@ -175,6 +178,8 @@ class Building extends Infobox {
 		this.baseCost = baseCost;
 		/** @type {Effects} */
 		this.effects = effects;
+		/** @type {boolean} */
+		this.visible = false;
 		Building.buildings.push(this);
 	}
 	get amountString(){
@@ -191,6 +196,7 @@ class Building extends Infobox {
 	get buildElem(){
 		const elem = document.createElement('div');
 		elem.classList.add('building');
+		elem.classList.add('hidden');
 		elem.id = 'BUILDING_' + this.name;
 		elem.appendChild(this.countElem);
 		elem.appendChild(this.buildButton);
@@ -223,6 +229,10 @@ class Building extends Infobox {
 				break;
 			}
 		CITY.update.buildings();
+	}
+	reveal(){
+		document.getElementById('BUILDING_' + this.name).classList.remove('hidden');
+		this.visible = true;
 	}
 	tick(){
 		// production
@@ -334,6 +344,16 @@ const CITY = {
 				document.getElementById('COUNT_' + b.name).innerHTML = b.amountString;
 				// update cost
 				document.getElementById('COST_' + b.name).innerHTML = b.costElem.innerHTML;
+				// update visibility
+				if (!b.visible && (b.amount || b.cost.allResKnown))
+					b.reveal();
+			});
+		},
+		buildingVis(){
+			Building.buildings.forEach(b => {
+				// update visibility
+				if (!b.visible && (b.amount || b.cost.allResKnown))
+					b.reveal();
 			});
 		},
 		buildingTick(){
@@ -341,6 +361,7 @@ const CITY = {
 		},
 		resources(){
 			Resource.resources.forEach(r => document.getElementById('COUNT_' + r.name).innerHTML = r.amountString);
+			this.buildingVis();
 		},
 	},
 };
@@ -351,8 +372,8 @@ const PEOPLE = new Resource('Pops', false, () => CITY.resources2.pop, false);
 const PEOPLE_E = new Resource('Employed', false, () => CITY.resources2.employed, false);
 const PEOPLE_U = new Resource('Unemployed', false, () => CITY.resources2.unemployed, false);
 const METAL = new Resource('Metal', false);
-const ORE = new Resource('Ore');
-const STONE = new Resource('Stone');
+const ORE = new Resource('Ore', false);
+const STONE = new Resource('Stone', false);
 const WOOD = new Resource('Wood');
 
 // buildings
