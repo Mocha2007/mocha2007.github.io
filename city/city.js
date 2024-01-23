@@ -142,6 +142,23 @@ class Effects extends Infobox {
 		this.pop = pop;
 		this.prod_per_s = prod_per_s;
 	}
+	get elem(){
+		const e = document.createElement('div');
+		e.innerHTML = '<strong>Effects</strong>: ';
+		const ul = document.createElement('ul');
+		e.appendChild(ul);
+		const list = [];
+		if (this.pop)
+			list.push(`Provides housing for ${this.pop} pops.`);
+		if (this.prod_per_s.res.length)
+			list.push('Produces: ' + this.prod_per_s.res.map((r, i) => `${this.prod_per_s.amt[i]} ${r.name}/s`).join(', '));
+		list.forEach(x => {
+			const li = document.createElement('li');
+			li.innerHTML = x;
+			ul.appendChild(li);
+		});
+		return e;
+	}
 }
 
 class Building extends Infobox {
@@ -179,6 +196,7 @@ class Building extends Infobox {
 		elem.appendChild(this.buildButton);
 		elem.appendChild(document.createElement('br'));
 		elem.appendChild(this.costElem);
+		elem.appendChild(this.effectElem);
 		return elem;
 	}
 	get cost(){
@@ -187,6 +205,11 @@ class Building extends Infobox {
 	get costElem(){
 		const elem = this.cost.elem;
 		elem.id = 'COST_' + this.name;
+		return elem;
+	}
+	get effectElem(){
+		const elem = this.effects.elem;
+		elem.id = 'EFFECTS_' + this.name;
 		return elem;
 	}
 	build(n = 1){
@@ -291,11 +314,29 @@ const CITY = {
 const PEOPLE = new Resource('Pops', false, () => CITY.resources2.pop, false);
 const PEOPLE_E = new Resource('Employed', false, () => CITY.resources2.employed, false);
 const PEOPLE_U = new Resource('Unemployed', false, () => CITY.resources2.unemployed, false);
+const METAL = new Resource('Metal', false);
+const ORE = new Resource('Ore');
+const STONE = new Resource('Stone');
 const WOOD = new Resource('Wood');
 
 // buildings
-const HOUSE = new Building('House', new Cost([WOOD], [10]));
-const MAKER_WOOD = new Building('Lumbermill', new Cost([WOOD, PEOPLE_U], [25, 1]), new Effects(0, new Cost([WOOD], [1])));
+const HOUSE = new Building('House', new Cost([WOOD], [10]), new Effects(1));
+const MAKER_METAL = new Building('Foundry',
+	new Cost([STONE, PEOPLE_U], [50, 5]),
+	new Effects(0, new Cost([ORE, METAL], [-1, 1]))
+);
+const MAKER_ORE = new Building('Mine',
+	new Cost([STONE, PEOPLE_U], [25, 1]),
+	new Effects(0, new Cost([ORE], [1]))
+);
+const MAKER_STONE = new Building('Mason',
+	new Cost([WOOD, PEOPLE_U], [25, 1]),
+	new Effects(0, new Cost([STONE], [1]))
+);
+const MAKER_WOOD = new Building('Lumbermill',
+	new Cost([WOOD, PEOPLE_U], [25, 1]),
+	new Effects(0, new Cost([WOOD], [1]))
+);
 
 const CITY_LOADED = true;
 
