@@ -4,6 +4,7 @@ html {
 .building, .resource {
 	border-radius: 10px;
 	display: inline-block;
+	margin: 2px;
 	padding: 10px;
 	width: fit-content;
 	vertical-align: middle;

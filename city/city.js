@@ -175,6 +175,7 @@ class Building extends Infobox {
 		elem.id = 'BUILDING_' + this.name;
 		elem.appendChild(this.countElem);
 		elem.appendChild(this.buildButton);
+		elem.appendChild(document.createElement('br'));
 		elem.appendChild(this.costElem);
 		return elem;
 	}
