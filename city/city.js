@@ -60,13 +60,17 @@ class Infobox {
 }
 
 class Resource extends Infobox {
-	constructor(name){
+	constructor(name, gatherable = true, amtGetter = undefined){
 		super(name);
+		/** @type {boolean} */
+		this.gatherable = gatherable;
+		/** @type {() => void} */
+		this.amtGetter = amtGetter;
 		CITY.resources[name] = 0;
 		Resource.resources.push(this);
 	}
 	get amount(){
-		return CITY.resources[this.name];
+		return this.amtGetter ? this.amtGetter() : CITY.resources[this.name];
 	}
 	set amount(x){
 		CITY.resources[this.name] = x;
@@ -86,7 +90,8 @@ class Resource extends Infobox {
 		const elem = document.createElement('div');
 		elem.id = 'RES_' + this.name;
 		elem.appendChild(this.countElem);
-		elem.appendChild(this.gatherButton);
+		if (this.gatherable)
+			elem.appendChild(this.gatherButton);
 		return elem;
 	}
 	gather(){
@@ -241,9 +246,10 @@ const CITY = {
 
 // resources
 // const METAL = new Resource('Metal');
+const PEOPLE = new Resource('People', false, () => HOUSE.amount);
 const WOOD = new Resource('Wood');
 
 // buildings
-new Building('House', new Cost([WOOD], [10]));
+const HOUSE = new Building('House', new Cost([WOOD], [10]));
 
 const CITY_LOADED = true;
