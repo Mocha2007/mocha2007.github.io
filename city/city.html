@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link href="../css/button.css" type="text/css" rel="stylesheet">
+<link href="../tools/tool.css" type="text/css" rel="stylesheet">
+<link href="city.css" type="text/css" rel="stylesheet">
+<script src="../common.js" async></script>
+<script src="city.js" async></script>
+<title>city.js</title>
+<div id="main"></div>
+<script>
+const LOAD = () => {
+	if (typeof CITY_LOADED === 'undefined')
+		setTimeout(LOAD, 100);
+	else
+		CITY.main();
+}
+LOAD();
+</script>
+</html>
