@@ -1,5 +1,5 @@
 /* exported CITY, CITY_LOADED */
-/* global random, sum */
+/* global random, storage, sum */
 
 class Floater {
 	constructor(text, x = 0, y = 0, color = 'White', t = 1000){
@@ -234,6 +234,7 @@ class Building extends Infobox {
 Building.buildings = [];
 
 const CITY = {
+	AUTOSAVE_INTERVAL: 60 * 1000, // autosave every minute
 	COLOR: {
 		BAD: 'red',
 		DEFAULT: 'silver',
@@ -273,6 +274,11 @@ const CITY = {
 		console.info('city.js loaded.');
 		console.info(`${Resource.resources.length} resource types.`);
 		console.info(`${Building.buildings.length} building types.`);
+		// try to load
+		this.save.read();
+		// try to save
+		this.save.write();
+		setInterval(() => this.save.write(), this.AUTOSAVE_INTERVAL);
 	},
 	resources: {},
 	resources2: {
@@ -285,6 +291,36 @@ const CITY = {
 		},
 		get unemployed(){
 			return this.pop - this.employed;
+		},
+	},
+	save: {
+		get data(){
+			return {
+				buildings: Building.buildings.map(b => b.amount),
+				resources: CITY.resources,
+				version_checksum: this.version_checksum,
+			};
+		},
+		get version_checksum(){
+			return Building.buildings.length * 100 + Resource.resources.length;
+		},
+		read(){
+			const x = storage.read('city.js');
+			if (!x){
+				console.warn('no save detected');
+				return;
+			}
+			if (x.version_checksum !== this.version_checksum)
+				// eslint-disable-next-line max-len
+				console.warn(`SAVE VERSION CHECKSUM MISMATCH: WAS ${x.version_checksum}, EXPECTED ${this.version_checksum}!`);
+			// now copy data over
+			Building.buildings.forEach((b, i) => b.amount = x.buildings[i]);
+			CITY.resources = x.resources;
+			console.info('loaded');
+		},
+		write(){
+			storage.write('city.js', this.data);
+			console.info('saved');
 		},
 	},
 	update: {
