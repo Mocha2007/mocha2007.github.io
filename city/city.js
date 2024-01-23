@@ -170,6 +170,7 @@ class Building extends Infobox {
 	}
 	get buildElem(){
 		const elem = document.createElement('div');
+		elem.classList.add('building');
 		elem.id = 'BUILDING_' + this.name;
 		elem.appendChild(this.countElem);
 		elem.appendChild(this.buildButton);

@@ -1,3 +1,10 @@
 html {
 	user-select: none;
 }
+.building {
+	background-color: rgba(0, 0, 255, 0.25);
+	border: 2px solid blue;
+	border-radius: 10px;
+	padding: 10px;
+	width: fit-content;
+}
