@@ -94,8 +94,8 @@ class Resource extends Infobox {
 			elem.appendChild(this.gatherButton);
 		return elem;
 	}
-	gather(){
-		CITY.resources[this.name]++;
+	gather(n = 1){
+		CITY.resources[this.name] += n;
 		CITY.update.resources();
 	}
 }
@@ -129,9 +129,10 @@ class Cost extends Infobox {
 }
 
 class Effects extends Infobox {
-	constructor(pop = 0){
+	constructor(pop = 0, prod_per_s = new Cost()){
 		super('Effects');
 		this.pop = pop;
+		this.prod_per_s = prod_per_s;
 	}
 }
 
@@ -184,6 +185,11 @@ class Building extends Infobox {
 			}
 		CITY.update.buildings();
 	}
+	tick(){
+		// production
+		// eslint-disable-next-line max-len
+		this.effects.prod_per_s.res.forEach((r, i) => r.gather(this.amount * this.effects.prod_per_s.amt[i]));
+	}
 }
 /** @type {Building[]} */
 Building.buildings = [];
@@ -225,6 +231,7 @@ const CITY = {
 	main(){
 		this.init();
 		this.update.all();
+		setInterval(() => this.update.buildingTick(), 1000);
 		console.info('city.js loaded.');
 		console.info(`${Resource.resources.length} resource types.`);
 		console.info(`${Building.buildings.length} building types.`);
@@ -237,6 +244,9 @@ const CITY = {
 		},
 		buildings(){
 			Building.buildings.forEach(b => document.getElementById('COUNT_' + b.name).innerHTML = b.amountString);
+		},
+		buildingTick(){
+			Building.buildings.forEach(b => b.tick());
 		},
 		resources(){
 			Resource.resources.forEach(r => document.getElementById('COUNT_' + r.name).innerHTML = r.amountString);
@@ -251,5 +261,6 @@ const WOOD = new Resource('Wood');
 
 // buildings
 const HOUSE = new Building('House', new Cost([WOOD], [10]));
+const MAKER_WOOD = new Building('Lumbermill', new Cost([WOOD, PEOPLE], [25, 1]), new Effects(0, new Cost([WOOD], [1])));
 
 const CITY_LOADED = true;
