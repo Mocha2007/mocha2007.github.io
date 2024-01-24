@@ -1,6 +1,18 @@
 /* exported CITY, CITY_LOADED */
 /* global clamp, mean, random, round, storage, sum */
 
+function button(says, does, id = '', classes = []){
+	const elem = document.createElement('span');
+	elem.classList.add('button');
+	elem.innerHTML = says;
+	elem.onclick = does;
+	if (id)
+		elem.id = id;
+	if (classes)
+		elem.classList.add(...classes);
+	return elem;
+}
+
 function colorScale(c = 0.5){
 	return `hsl(${120*clamp(c, 0, 1)} 100% 50%)`;
 }
@@ -117,12 +129,7 @@ class Resource extends Infobox {
 		return 'inherit';
 	}
 	get gatherButton(){
-		const elem = document.createElement('span');
-		elem.classList.add('button');
-		elem.id = 'GATHER_' + this.name;
-		elem.innerHTML = 'Gather ' + this.name;
-		elem.onclick = () => this.gather();
-		return elem;
+		return button('Gather ' + this.name, () => this.gather(), 'GATHER_' + this.name);
 	}
 	get gatherElem(){
 		const elem = document.createElement('div');
@@ -287,12 +294,7 @@ class Building extends Infobox {
 		return `${this.amount} ${this.name}`;
 	}
 	get buildButton(){
-		const elem = document.createElement('span');
-		elem.classList.add('button');
-		elem.id = 'BUILD_' + this.name;
-		elem.innerHTML = 'Build';
-		elem.onclick = () => this.build();
-		return elem;
+		return button('Build', () => this.build(), 'BUILD_' + this.name);
 	}
 	get buildElem(){
 		const elem = document.createElement('div');
@@ -321,12 +323,7 @@ class Building extends Infobox {
 		return elem;
 	}
 	get demoButton(){
-		const elem = document.createElement('span');
-		elem.classList.add('button');
-		elem.id = 'DEMO_' + this.name;
-		elem.innerHTML = 'Demolish';
-		elem.onclick = () => this.demo();
-		return elem;
+		return button('Demolish', () => this.demo(), 'DEMO_' + this.name);
 	}
 	build(n = 1){
 		for (let i = 0; i < n; i++)
@@ -415,7 +412,14 @@ const CITY = {
 	FPS: 10,
 	init(){
 		const MAIN = this.ELEM.MAIN;
+		// control panel
+		// todo (save, reset)
+		const CTRL_CONTAINER = this.ELEM.CTRL_CONTAINER = document.createElement('div');
+		MAIN.appendChild(CTRL_CONTAINER);
+		CTRL_CONTAINER.appendChild(button('Save', CITY.save.write, 'ctrl_save', ['ctrl']));
+		CTRL_CONTAINER.appendChild(button('Reset Data', CITY.save.reset, 'ctrl_reset', ['ctrl']));
 		// status list
+		MAIN.appendChild(document.createElement('hr'));
 		const STATUS_CONTAINER = this.ELEM.STATUS_CONTAINER = document.createElement('div');
 		MAIN.appendChild(STATUS_CONTAINER);
 		// resource list
@@ -604,7 +608,10 @@ const CITY = {
 			CITY.update.all();
 		},
 		reset(){
+			if (!confirm('Are you sure you want to reset the save? (This is PERMANENT!)'))
+				return;
 			storage.delete('city.js');
+			location.reload();
 		},
 		write(){
 			storage.write('city.js', this.data);
