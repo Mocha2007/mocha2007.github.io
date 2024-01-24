@@ -251,6 +251,9 @@ class Effects extends Infobox {
 				case 'police': // cops
 					o.push('Provides public safety for a limited number of pops');
 					break;
+				case 'traffic': // traffic suppression
+					o.push('Reduces traffic');
+					break;
 				case 'trans': // roads
 					o.push('Provides transportation for a limited number of buildings');
 					break;
@@ -450,7 +453,7 @@ const CITY = {
 	resources2: {
 		get approval(){
 			return Math.floor(mean([this.admin, 100 - this.crime,
-				this.education, this.fire, this.health, this.trans, 100-this.unemployment]));
+				this.education, this.fire, this.health, this.traffic, 100-this.unemployment]));
 		},
 		get admin(){
 			const P = this.pop.total || 1;
@@ -537,6 +540,15 @@ const CITY = {
 			const B = this.buildings - TRANS || 1;
 			const TRANS_ = Math.min(1, 10 * TRANS / B);
 			return Math.floor(100 * TRANS_);
+		},
+		get traffic(){
+			const POP_RAMPUP = clamp(this.pop.total, 0, 10) / 10; // traffic reduced if pop < 10
+			const TRAFFIC_PROD = this.buildings / 25;
+			const TRAFFIC_REDU = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('traffic'))) || 0.5;
+			const TRAFFIC = clamp(TRAFFIC_PROD/TRAFFIC_REDU - 1, 0, 1);
+			const TRANS = this.trans;
+			const TRAF_ = Math.min(1, TRAFFIC);
+			return Math.floor((50 - TRANS/2 + 50 * TRAF_) * POP_RAMPUP);
 		},
 		get unemployment(){
 			return Math.floor(100 * this.pop.unemployed / this.pop.total) || 0;
@@ -674,12 +686,13 @@ const FOOD = new Resource('Food Production', 'Food is produced on farms, and can
 
 // abstract
 const APPROVAL = new Resource('Productivity', 'Impacts resource generation rate.', false, () => CITY.resources2.approval, false, 1);
-const ADMIN = new Resource('Administration', 'Improves productivity.', false, () => CITY.resources2.admin, false, 1);
+const ADMIN = new Resource('Administration', 'Improves productivity. Increased by administration centers.', false, () => CITY.resources2.admin, false, 1);
 const CRIME = new Resource('Crime', 'Crime is primarily perpetrated by unemployed pops, but even employed pops commit some crime. Education slightly reduces crime. Police greatly reduce crime.', false, () => CITY.resources2.crime, false, -1);
 const EDU = new Resource('Education', 'Improves productivity and slightly reduces crime.', false, () => CITY.resources2.education, false, 1);
-const FIREFIGHTING = new Resource('Fire Suppression', 'Improves productivity.', false, () => CITY.resources2.fire, false, 1);
-const HEALTH = new Resource('Health', 'Improves productivity.', false, () => CITY.resources2.health, false, 1);
-const TRANS = new Resource('Transportation', 'Improves productivity.', false, () => CITY.resources2.trans, false, 1);
+const FIREFIGHTING = new Resource('Fire Suppression', 'Improves productivity. Increased by fire stations.', false, () => CITY.resources2.fire, false, 1);
+const HEALTH = new Resource('Health', 'Improves productivity. Increased by clinics.', false, () => CITY.resources2.health, false, 1);
+const TRANS = new Resource('Infrastructure', 'Improves productivity and reduces traffic. Increased by roads.', false, () => CITY.resources2.trans, false, 1);
+const TRAFFIC = new Resource('Traffic', 'Reduces productivity. Decreased by infrastructure and signage.', false, () => CITY.resources2.traffic, false, -1);
 const UNEMPLOYMENT = new Resource('Unemployment', 'Percentage of workforce employed. High unemployment reduces productivity.', false, () => CITY.resources2.unemployment, false, -1);
 
 // actual legit resources
@@ -764,6 +777,10 @@ const FIRE = new Building('Fire Station',
 const ROAD = new Building('Road',
 	new Cost([STONE], [100]),
 	new Effects(0, new Cost(), ['trans'])
+);
+const SIGNAGE = new Building('Signage',
+	new Cost([WOOD], [10]),
+	new Effects(0, new Cost(), ['traffic'])
 );
 
 const CITY_LOADED = true;
