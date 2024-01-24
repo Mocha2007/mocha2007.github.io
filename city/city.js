@@ -125,6 +125,9 @@ class Cost extends Infobox {
 	get affordable(){
 		return this.res.every((r, i) => this.amt[i] <= r.amount);
 	}
+	get affordable_build(){
+		return this.amt_build.every((a, i) => a <= this.res[i].amount);
+	}
 	get amt_build(){
 		return this.amt.map(a => a * CITY.BONUS.BUILD);
 	}
@@ -282,8 +285,8 @@ class Building extends Infobox {
 	}
 	build(n = 1){
 		for (let i = 0; i < n; i++)
-			if (this.cost.affordable){
-				this.cost.modifyStock(-1);
+			if (this.cost.affordable_build){
+				this.cost.modifyStock(-CITY.BONUS.BUILD);
 				this.amount++;
 			}
 			else {
