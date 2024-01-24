@@ -453,7 +453,8 @@ const CITY = {
 	resources2: {
 		get approval(){
 			return Math.floor(mean([this.admin, 100 - this.crime,
-				this.education, this.fire, this.health, this.traffic, 100-this.unemployment]));
+				this.education, this.fire, this.health, 100 - this.traffic,
+				100 - this.unemployment]));
 		},
 		get admin(){
 			const P = this.pop.total || 1;
