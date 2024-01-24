@@ -1,5 +1,5 @@
 /* exported CITY, CITY_LOADED */
-/* global random, storage, sum */
+/* global mean, random, storage, sum */
 
 class Floater {
 	constructor(text, x = 0, y = 0, color = 'White', t = 1000){
@@ -90,12 +90,15 @@ class Resource extends Infobox {
 	}
 	get gatherElem(){
 		const elem = document.createElement('div');
-		elem.classList.add('resource');
+		elem.classList.add(this.isSpecial ? 'specialResource' : 'resource');
 		elem.id = 'RES_' + this.name;
 		elem.appendChild(this.countElem);
 		if (this.gatherable)
 			elem.appendChild(this.gatherButton);
 		return elem;
+	}
+	get isSpecial(){
+		return !!this.amtGetter;
 	}
 	gather(n = 1){
 		CITY.resources[this.name] += n;
@@ -288,12 +291,16 @@ const CITY = {
 	},
 	init(){
 		const MAIN = this.ELEM.MAIN;
+		// status list
+		const STATUS_CONTAINER = this.ELEM.STATUS_CONTAINER = document.createElement('div');
+		MAIN.appendChild(STATUS_CONTAINER);
 		// resource list
+		MAIN.appendChild(document.createElement('hr'));
 		const RES_CONTAINER = this.ELEM.RES_CONTAINER = document.createElement('div');
 		MAIN.appendChild(RES_CONTAINER);
 		// gather buttons
 		Resource.resources.forEach(r => {
-			RES_CONTAINER.appendChild(r.gatherElem);
+			(r.isSpecial ? STATUS_CONTAINER : RES_CONTAINER).appendChild(r.gatherElem);
 		});
 		// building buttons
 		MAIN.appendChild(document.createElement('hr'));
@@ -318,6 +325,9 @@ const CITY = {
 	},
 	resources: {},
 	resources2: {
+		get approval(){
+			return Math.floor(mean([this.education]));
+		},
 		get education(){
 			const P = this.pop;
 			const EDU1 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu1')));
@@ -411,6 +421,7 @@ const CITY = {
 const PEOPLE = new Resource('Pop', false, () => CITY.resources2.pop, false);
 const PEOPLE_E = new Resource('Employed', false, () => CITY.resources2.employed, false);
 const PEOPLE_U = new Resource('Unemployed', false, () => CITY.resources2.unemployed, false);
+const APPROVAL = new Resource('Approval', false, () => CITY.resources2.approval, false);
 const EDU = new Resource('Education', false, () => CITY.resources2.education, false);
 const METAL = new Resource('Metal', false);
 const ORE = new Resource('Ore', false);
@@ -440,6 +451,14 @@ const MAKER_WOOD = new Building('Lumbermill',
 const SCHOOL1 = new Building('Elementary School',
 	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [500, 1000, 250, 25, 15]),
 	new Effects(0, new Cost(), ['edu1'])
+);
+const SCHOOL2 = new Building('High School',
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [2000, 4000, 1000, 50, 30]),
+	new Effects(0, new Cost(), ['edu2'])
+);
+const SCHOOL3 = new Building('College',
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [8000, 16000, 4000, 100, 60]),
+	new Effects(0, new Cost(), ['edu3'])
 );
 
 const CITY_LOADED = true;
