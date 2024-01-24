@@ -171,6 +171,9 @@ class Cost extends Infobox {
 	get affordable_build(){
 		return this.amt_build.every((a, i) => a <= this.res[i].amount);
 	}
+	get affordable_build_ignoring_unemployed(){
+		return this.amt_build.every((a, i) => this.res[i] === PEOPLE_U || a <= this.res[i].amount);
+	}
 	get amt_build(){
 		return this.amt.map((a, i) => this.res[i].isSpecial ? a : a * CITY.BONUS.BUILD);
 	}
@@ -327,7 +330,8 @@ class Building extends Infobox {
 	}
 	build(n = 1){
 		for (let i = 0; i < n; i++)
-			if (this.cost.affordable_build){
+			if (this.cost.affordable_build
+					|| this.effects.pop && this.cost.affordable_build_ignoring_unemployed){
 				if (CITY.resources2.food < this.effects.pop && !this.effects.tags.includes('farm')){
 					// eslint-disable-next-line max-len
 					this.spawnFloater(`You have insufficient food production to build another ${this.name}.`, CITY.COLOR.BAD);
