@@ -656,6 +656,7 @@ const CITY = {
 };
 
 // resources
+/* eslint-disable no-unused-vars */
 
 // population statistics
 const PEOPLE = new Resource('Population', 'Total number of people in the settlement. Creates demand for most services.', false, () => CITY.resources2.pop.total, false);
