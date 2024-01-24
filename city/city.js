@@ -78,7 +78,7 @@ class Resource extends Infobox {
 		CITY.resources[this.name] = x;
 	}
 	get amountString(){
-		return `${this.amount} ${this.name}`;
+		return `${Math.floor(this.amount)} ${this.name}`;
 	}
 	get gatherButton(){
 		const elem = document.createElement('span');
@@ -262,7 +262,8 @@ class Building extends Infobox {
 		// production
 		if (this.effects.prod_per_s.mul(-1).affordable)
 			this.effects.prod_per_s.res
-				.forEach((r, i) => r.gather(this.amount * this.effects.prod_per_s.amt[i]));
+				// eslint-disable-next-line max-len
+				.forEach((r, i) => r.gather(CITY.BONUS.PROD * this.amount * this.effects.prod_per_s.amt[i]));
 	}
 	/** @param {string} s */
 	static fromString(s){
@@ -274,6 +275,11 @@ Building.buildings = [];
 
 const CITY = {
 	AUTOSAVE_INTERVAL: 60 * 1000, // autosave every minute
+	BONUS: {
+		get PROD(){
+			return 0.1 + CITY.resources2.approval / 100;
+		},
+	},
 	COLOR: {
 		BAD: 'red',
 		DEFAULT: 'silver',
@@ -326,7 +332,7 @@ const CITY = {
 	resources: {},
 	resources2: {
 		get approval(){
-			return Math.floor(mean([this.education]));
+			return Math.floor(mean([this.education, 100-this.unemployment]));
 		},
 		get education(){
 			const P = this.pop;
@@ -347,6 +353,9 @@ const CITY = {
 		},
 		get unemployed(){
 			return this.pop - this.employed;
+		},
+		get unemployment(){
+			return Math.floor(100 * this.unemployed / this.pop);
 		},
 	},
 	save: {
@@ -423,6 +432,7 @@ const PEOPLE_E = new Resource('Employed', false, () => CITY.resources2.employed,
 const PEOPLE_U = new Resource('Unemployed', false, () => CITY.resources2.unemployed, false);
 const APPROVAL = new Resource('Approval', false, () => CITY.resources2.approval, false);
 const EDU = new Resource('Education', false, () => CITY.resources2.education, false);
+const UNEMPLOYMENT = new Resource('Unemployment', false, () => CITY.resources2.unemployment, false);
 const METAL = new Resource('Metal', false);
 const ORE = new Resource('Ore', false);
 const STONE = new Resource('Stone', false);
