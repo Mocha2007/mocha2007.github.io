@@ -175,6 +175,9 @@ class Effects extends Infobox {
 		const o = [];
 		this.tags.forEach(tag => {
 			switch (tag.toLowerCase()){
+				case 'admin': // clinic
+					o.push('Provides administrative support for a limited number of pops');
+					break;
 				case 'edu1': // elem
 				case 'edu2': // high
 				case 'edu3': // coll
@@ -183,8 +186,11 @@ class Effects extends Infobox {
 				case 'health': // clinic
 					o.push('Provides healthcare for a limited number of pops');
 					break;
-				case 'police': // clinic
+				case 'police': // cops
 					o.push('Provides public safety for a limited number of pops');
+					break;
+				case 'trans': // roads
+					o.push('Provides transportation for a limited number of buildings');
 					break;
 				default:
 					console.warn(`INVALID TAG "${tag}"`);
@@ -338,11 +344,20 @@ const CITY = {
 	resources: {},
 	resources2: {
 		get approval(){
-			return Math.floor(mean([100 - this.crime,
-				this.education, this.health, 100-this.unemployment]));
+			return Math.floor(mean([this.admin, 100 - this.crime,
+				this.education, this.health, this.trans, 100-this.unemployment]));
+		},
+		get admin(){
+			const P = this.pop || 1;
+			const ADMIN = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('admin')));
+			const ADMIN_ = Math.min(1, 75 * ADMIN / P);
+			return Math.floor(100 * ADMIN_);
+		},
+		get buildings(){
+			return sum(Building.buildings.map(b => b.amount));
 		},
 		get education(){
-			const P = this.pop;
+			const P = this.pop || 1;
 			const EDU1 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu1')));
 			const EDU2 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu2')));
 			const EDU3 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu3')));
@@ -352,7 +367,7 @@ const CITY = {
 			return Math.floor(100 * (EDU1_ + EDU2_ + EDU3_));
 		},
 		get crime(){
-			const P = this.pop;
+			const P = this.pop || 1;
 			const POL = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('police')));
 			const POL_ = Math.min(1, 50 * POL / P);
 			return Math.floor(100 * POL_);
@@ -362,7 +377,7 @@ const CITY = {
 				? b.amount * b.cost.amt[b.cost.res.indexOf(PEOPLE_U)] : 0));
 		},
 		get health(){
-			const P = this.pop;
+			const P = this.pop || 1;
 			const HEALTH = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('health')));
 			const HEALTH_ = Math.min(1, 25 * HEALTH / P);
 			return Math.floor(100 * HEALTH_);
@@ -370,11 +385,17 @@ const CITY = {
 		get pop(){
 			return HOUSE.amount;
 		},
+		get trans(){
+			const TRANS = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('trans')));
+			const B = this.buildings - TRANS || 1;
+			const TRANS_ = Math.min(1, 10 * TRANS / B);
+			return Math.floor(100 * TRANS_);
+		},
 		get unemployed(){
 			return this.pop - this.employed;
 		},
 		get unemployment(){
-			return Math.floor(100 * this.unemployed / this.pop);
+			return Math.floor(100 * this.unemployed / this.pop) || 0;
 		},
 	},
 	save: {
@@ -449,10 +470,12 @@ const CITY = {
 const PEOPLE = new Resource('Pop', false, () => CITY.resources2.pop, false);
 const PEOPLE_E = new Resource('Employed', false, () => CITY.resources2.employed, false);
 const PEOPLE_U = new Resource('Unemployed', false, () => CITY.resources2.unemployed, false);
-const APPROVAL = new Resource('Approval', false, () => CITY.resources2.approval, false);
+const APPROVAL = new Resource('Satisfaction', false, () => CITY.resources2.approval, false);
+const ADMIN = new Resource('Administration', false, () => CITY.resources2.admin, false);
 const CRIME = new Resource('Crime', false, () => CITY.resources2.crime, false);
 const EDU = new Resource('Education', false, () => CITY.resources2.education, false);
 const HEALTH = new Resource('Health', false, () => CITY.resources2.health, false);
+const TRANS = new Resource('Transportation', false, () => CITY.resources2.trans, false);
 const UNEMPLOYMENT = new Resource('Unemployment', false, () => CITY.resources2.unemployment, false);
 const METAL = new Resource('Metal', false);
 const ORE = new Resource('Ore', false);
@@ -491,6 +514,10 @@ const SCHOOL3 = new Building('College',
 	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [8000, 16000, 4000, 100, 4]),
 	new Effects(0, new Cost(), ['edu3'])
 );
+const ADMINCEN = new Building('Administrative Center',
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [6000, 12000, 3000, 75, 3]),
+	new Effects(0, new Cost(), ['admin'])
+);
 const CLINIC = new Building('Clinic',
 	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [500, 1000, 250, 25, 1]),
 	new Effects(0, new Cost(), ['health'])
@@ -498,6 +525,10 @@ const CLINIC = new Building('Clinic',
 const POLICE = new Building('Police Station',
 	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [2000, 4000, 1000, 50, 2]),
 	new Effects(0, new Cost(), ['health'])
+);
+const ROAD = new Building('Road',
+	new Cost([STONE], [100]),
+	new Effects(0, new Cost(), ['trans'])
 );
 
 const CITY_LOADED = true;
