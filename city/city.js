@@ -1,5 +1,5 @@
 /* exported CITY, CITY_LOADED */
-/* global clamp, mean, random, storage, sum */
+/* global clamp, mean, random, round, storage, sum */
 
 class Floater {
 	constructor(text, x = 0, y = 0, color = 'White', t = 1000){
@@ -125,9 +125,13 @@ class Cost extends Infobox {
 	get affordable(){
 		return this.res.every((r, i) => this.amt[i] <= r.amount);
 	}
+	get amt_build(){
+		return this.amt.map(a => a * CITY.BONUS.BUILD);
+	}
 	get elem(){
 		const e = document.createElement('span');
-		e.innerHTML = 'Cost: ' + this.res.map((r, i) => `${this.amt[i]} ${r.name}`).join(', ');
+		const AMT_BUILD = this.amt_build;
+		e.innerHTML = 'Cost: ' + this.res.map((r, i) => `${AMT_BUILD[i]} ${r.name}`).join(', ');
 		return e;
 	}
 	get revealable(){
@@ -152,8 +156,12 @@ class Effects extends Infobox {
 		/** @type {string[]} */
 		this.tags = tags;
 	}
+	get amt_prod(){
+		return this.prod_per_s.amt.map(a => a * CITY.BONUS.PROD);
+	}
 	get elem(){
 		const e = document.createElement('div');
+		e.classList.add('effects');
 		e.innerHTML = '<strong>Effects</strong>: ';
 		const ul = document.createElement('ul');
 		e.appendChild(ul);
@@ -162,8 +170,10 @@ class Effects extends Infobox {
 			list.push(`Provides housing for ${this.pop} pops.`);
 		if (this.tags)
 			list.push(...this.tagEffects);
-		if (this.prod_per_s.res.length)
-			list.push('Produces: ' + this.prod_per_s.res.map((r, i) => `${this.prod_per_s.amt[i]} ${r.name}/s`).join(', '));
+		if (this.prod_per_s.res.length){
+			const AMT_PROD = this.amt_prod;
+			list.push('Produces: ' + this.prod_per_s.res.map((r, i) => `${round(AMT_PROD[i], 2)} ${r.name}/s`).join(', '));
+		}
 		list.forEach(x => {
 			const li = document.createElement('li');
 			li.innerHTML = x;
@@ -177,6 +187,9 @@ class Effects extends Infobox {
 			switch (tag.toLowerCase()){
 				case 'admin': // clinic
 					o.push('Provides administrative support for a limited number of pops');
+					break;
+				case 'arch': // architect
+					o.push('Reduces all build costs by 5%');
 					break;
 				case 'edu1': // elem
 				case 'edu2': // high
@@ -242,7 +255,7 @@ class Building extends Infobox {
 		return elem;
 	}
 	get cost(){
-		return this.baseCost.mul(Math.pow(1.2, this.amount));
+		return this.baseCost.mul(Math.pow(1.2, this.amount) * CITY.BONUS.BUILD);
 	}
 	get costElem(){
 		const elem = this.cost.elem;
@@ -288,6 +301,9 @@ Building.buildings = [];
 const CITY = {
 	AUTOSAVE_INTERVAL: 60 * 1000, // autosave every minute
 	BONUS: {
+		get BUILD(){
+			return Math.pow(0.95, CITY.resources2.upgrade.build);
+		},
 		get PROD(){
 			return 0.1 + CITY.resources2.approval / 100;
 		},
@@ -398,6 +414,12 @@ const CITY = {
 		get unemployment(){
 			return Math.floor(100 * this.unemployed / this.pop) || 0;
 		},
+		// upgrades
+		upgrade: {
+			get build(){
+				return sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('arch')));
+			},
+		},
 	},
 	save: {
 		get data(){
@@ -444,9 +466,14 @@ const CITY = {
 				document.getElementById('COUNT_' + b.name).innerHTML = b.amountString;
 				// update cost
 				document.getElementById('COST_' + b.name).innerHTML = b.costElem.innerHTML;
-				// update visibility
-				if (!b.visible && (b.amount || b.cost.revealable))
-					b.reveal();
+			});
+			this.buildingEff();
+			this.buildingVis();
+		},
+		buildingEff(){
+			Building.buildings.forEach(b => {
+				// update effects
+				document.getElementById('EFFECTS_' + b.name).innerHTML = b.effectElem.innerHTML;
 			});
 		},
 		buildingVis(){
@@ -500,6 +527,11 @@ const MAKER_STONE = new Building('Mason',
 const MAKER_WOOD = new Building('Lumbermill',
 	new Cost([WOOD, PEOPLE_U], [25, 1]),
 	new Effects(0, new Cost([WOOD], [1]))
+);
+
+const UPGRADE_BUILD = new Building('Architect',
+	new Cost([WOOD, STONE, METAL, PEOPLE_U], [100, 1000, 100, 1]),
+	new Effects(0, new Cost(), ['arch'])
 );
 
 // https://wiki.sc4devotion.com
