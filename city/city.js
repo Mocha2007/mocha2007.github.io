@@ -206,6 +206,9 @@ class Effects extends Infobox {
 				case 'farm': // farm
 					o.push('Produces 10 food units');
 					break;
+				case 'fire': // firefighting
+					o.push('Provides fire suppression for a limited number of pops');
+					break;
 				case 'health': // clinic
 					o.push('Provides healthcare for a limited number of pops');
 					break;
@@ -406,12 +409,12 @@ const CITY = {
 	resources2: {
 		get approval(){
 			return Math.floor(mean([this.admin, 100 - this.crime,
-				this.education, this.health, this.trans, 100-this.unemployment]));
+				this.education, this.fire, this.health, this.trans, 100-this.unemployment]));
 		},
 		get admin(){
 			const P = this.pop.total || 1;
 			const ADMIN = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('admin')));
-			const ADMIN_ = Math.min(1, 75 * ADMIN / P);
+			const ADMIN_ = Math.min(1, 100 * ADMIN / P);
 			return Math.floor(100 * ADMIN_);
 		},
 		get buildings(){
@@ -436,6 +439,11 @@ const CITY = {
 			const EDU3_ = Math.min(1, 30 * EDU3 / P1) / 3;
 			const EDU4_ = Math.min(1, 125 * EDU4 / P2) / 3;
 			return Math.floor(100 * (EDU1_ + EDU3_ + EDU4_));
+		},
+		get fire(){
+			const STATIONS = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('fire')));
+			const FF = Math.min(1, 1000 * STATIONS / this.pop.total);
+			return Math.floor(100 * FF);
 		},
 		get food(){
 			const BASE = 5;
@@ -599,6 +607,7 @@ const APPROVAL = new Resource('Satisfaction', false, () => CITY.resources2.appro
 const ADMIN = new Resource('Administration', false, () => CITY.resources2.admin, false);
 const CRIME = new Resource('Crime', false, () => CITY.resources2.crime, false);
 const EDU = new Resource('Education', false, () => CITY.resources2.education, false);
+const FIREFIGHTING = new Resource('Fire Suppression', false, () => CITY.resources2.fire, false);
 const HEALTH = new Resource('Health', false, () => CITY.resources2.health, false);
 const TRANS = new Resource('Transportation', false, () => CITY.resources2.trans, false);
 const UNEMPLOYMENT = new Resource('Unemployment', false, () => CITY.resources2.unemployment, false);
@@ -642,8 +651,9 @@ const UPGRADE_DEMO = new Building('Demolitionist',
 
 // cf. https://wiki.sc4devotion.com
 /*
-	1 teacher : 30 students
+	1 firefighter : 1000 people
 	1 doctor : 600 people
+	1 teacher : 30 students
 	1 cop : 450 people, OR... 1 cop : 15 unemployed people
 */
 const SCHOOL1 = new Building('Elementary School',
@@ -664,7 +674,7 @@ const SCHOOL4 = new Building('College',
 	new Effects(0, new Cost(), ['edu4'])
 );
 const ADMINCEN = new Building('Administrative Center',
-	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [5000, 10000, 2500, 40, 1]),
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [5000, 10000, 2500, 50, 1]),
 	new Effects(0, new Cost(), ['admin'])
 );
 const CLINIC = new Building('Clinic',
@@ -674,6 +684,10 @@ const CLINIC = new Building('Clinic',
 const POLICE = new Building('Police Station',
 	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [1000, 2000, 500, 30, 1]),
 	new Effects(0, new Cost(), ['police'])
+);
+const FIRE = new Building('Fire Station',
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [1000, 2000, 500, 500, 1]),
+	new Effects(0, new Cost(), ['fire'])
 );
 const ROAD = new Building('Road',
 	new Cost([STONE], [100]),
