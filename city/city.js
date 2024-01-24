@@ -420,7 +420,7 @@ const CITY = {
 		// todo (save, reset)
 		const CTRL_CONTAINER = this.ELEM.CTRL_CONTAINER = document.createElement('div');
 		MAIN.appendChild(CTRL_CONTAINER);
-		CTRL_CONTAINER.appendChild(button('Save', CITY.save.write, 'ctrl_save', ['ctrl']));
+		CTRL_CONTAINER.appendChild(button('Save', () => CITY.save.write(), 'ctrl_save', ['ctrl']));
 		CTRL_CONTAINER.appendChild(button('Reset Data', CITY.save.reset, 'ctrl_reset', ['ctrl']));
 		// status list
 		MAIN.appendChild(document.createElement('hr'));
@@ -708,7 +708,7 @@ const ADMIN = new Resource('Administration', 'Improves productivity. Increased b
 const CRIME = new Resource('Crime', 'Crime is primarily perpetrated by unemployed pops, but even employed pops commit some crime. Education slightly reduces crime. Police greatly reduce crime.', false, () => CITY.resources2.crime, false, -1);
 const EDU = new Resource('Education', 'Improves productivity and slightly reduces crime.', false, () => CITY.resources2.education, false, 1);
 const FIREFIGHTING = new Resource('Fire Suppression', 'Improves productivity. Increased by fire stations.', false, () => CITY.resources2.fire, false, 1);
-const HAPPINESS = new Resource('Happiness', 'Improves productivity. Affected by food availability, health, and unemployment.', false, () => CITY.resources2.health, false, 1);
+const HAPPINESS = new Resource('Happiness', 'Improves productivity. Affected by food availability, health, and unemployment.', false, () => CITY.resources2.happiness, false, 1);
 const HEALTH = new Resource('Health', 'Improves happiness. Increased by clinics.', false, () => CITY.resources2.health, false, 1);
 const TRANS = new Resource('Infrastructure', 'Improves productivity and reduces traffic. Increased by roads.', false, () => CITY.resources2.trans, false, 1);
 const TRAFFIC = new Resource('Traffic', 'Reduces productivity. Decreased by infrastructure and signage.', false, () => CITY.resources2.traffic, false, -1);
