@@ -416,14 +416,14 @@ const CITY = {
 			const P1 = this.pop.age1 || 1;
 			const P2 = this.pop.age2 || 1;
 			const EDU1 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu1')));
-			const EDU2 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu2')));
+			// const EDU2 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu2')));
 			const EDU3 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu3')));
 			const EDU4 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu4')));
-			const EDU1_ = Math.min(1, 25 * EDU1 / P0) / 4;
-			const EDU2_ = Math.min(1, 30 * EDU2 / P0) / 4;
-			const EDU3_ = Math.min(1, 35 * EDU3 / P1) / 4;
-			const EDU4_ = Math.min(1, 100 * EDU4 / P2) / 4;
-			return Math.floor(100 * (EDU1_ + EDU2_ + EDU3_ + EDU4_));
+			const EDU1_ = Math.min(1, 30 * EDU1 / P0) / 3;
+			// const EDU2_ = Math.min(1, 30 * EDU2 / P0) / 4;
+			const EDU3_ = Math.min(1, 30 * EDU3 / P1) / 3;
+			const EDU4_ = Math.min(1, 125 * EDU4 / P2) / 3;
+			return Math.floor(100 * (EDU1_ + EDU3_ + EDU4_));
 		},
 		get crime(){
 			const CRIMINALS = this.pop.employed * 0.1 + this.pop.unemployed * 0.9;
@@ -504,7 +504,14 @@ const CITY = {
 				// eslint-disable-next-line max-len
 				console.warn(`SAVE VERSION CHECKSUM MISMATCH: WAS ${x.version_checksum}, EXPECTED ${this.version_checksum}!`);
 			// now copy data over
-			x.buildings.forEach(pair => Building.fromString(pair[0]).amount = pair[1]);
+			x.buildings.forEach(pair => {
+				try {
+					Building.fromString(pair[0]).amount = pair[1];
+				}
+				catch (_){
+					console.warn(`CITY.save.read: Invalid building "${pair[0]}"`);
+				}
+			});
 			CITY.resources = x.resources;
 			console.info('loaded');
 			CITY.update.all();
@@ -559,10 +566,10 @@ const CITY = {
 // const METAL = new Resource('Metal');
 // population statistics
 const PEOPLE = new Resource('Population', false, () => CITY.resources2.pop.total, false);
-// const PEOPLE_AGE0 = new Resource('Population (Child)', false, () => CITY.resources2.pop.age0, false);
-// const PEOPLE_AGE1 = new Resource('Population (Teen)', false, () => CITY.resources2.pop.age1, false);
-// const PEOPLE_AGE2 = new Resource('Population (Adult)', false, () => CITY.resources2.pop.age2, false);
-// const PEOPLE_AGE3 = new Resource('Population (Elder)', false, () => CITY.resources2.pop.age3, false);
+const PEOPLE_AGE0 = new Resource('Population (Child)', false, () => CITY.resources2.pop.age0, false);
+const PEOPLE_AGE1 = new Resource('Population (Teen)', false, () => CITY.resources2.pop.age1, false);
+const PEOPLE_AGE2 = new Resource('Population (Adult)', false, () => CITY.resources2.pop.age2, false);
+const PEOPLE_AGE3 = new Resource('Population (Elder)', false, () => CITY.resources2.pop.age3, false);
 const PEOPLE_E = new Resource('Employed', false, () => CITY.resources2.pop.employed, false);
 const PEOPLE_U = new Resource('Unemployed', false, () => CITY.resources2.pop.unemployed, false);
 // const PEOPLE_W = new Resource('Workforce', false, () => CITY.resources2.pop.workforce, false);
@@ -610,19 +617,20 @@ const UPGRADE_DEMO = new Building('Demolitionist',
 
 // https://wiki.sc4devotion.com
 const SCHOOL1 = new Building('Elementary School',
-	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [500, 1000, 250, 25, 1]),
+	new Cost([WOOD, STONE, METAL, PEOPLE_AGE0, PEOPLE_U], [500, 1000, 250, 15, 1]),
 	new Effects(0, new Cost(), ['edu1'])
 );
+/*
 const SCHOOL2 = new Building('Middle School',
-	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [2000, 4000, 1000, 50, 2]),
+	new Cost([WOOD, STONE, METAL, PEOPLE_AGE0, PEOPLE_U], [2000, 4000, 1000, 15, 1]),
 	new Effects(0, new Cost(), ['edu2'])
-);
+);*/
 const SCHOOL3 = new Building('High School',
-	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [5000, 10000, 2500, 75, 3]),
+	new Cost([WOOD, STONE, METAL, PEOPLE_AGE1, PEOPLE_U], [5000, 10000, 2500, 30, 4]),
 	new Effects(0, new Cost(), ['edu3'])
 );
 const SCHOOL4 = new Building('College',
-	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [8000, 16000, 4000, 100, 4]),
+	new Cost([WOOD, STONE, METAL, PEOPLE_AGE2, PEOPLE_U], [8000, 16000, 4000, 125, 4]),
 	new Effects(0, new Cost(), ['edu4'])
 );
 const ADMINCEN = new Building('Administrative Center',
