@@ -275,7 +275,7 @@ class Building extends Infobox {
 		if (this.effects.prod_per_s.mul(-1).affordable)
 			this.effects.prod_per_s.res
 				// eslint-disable-next-line max-len
-				.forEach((r, i) => r.gather(CITY.BONUS.PROD * this.amount * this.effects.prod_per_s.amt[i]));
+				.forEach((r, i) => r.gather(CITY.BONUS.PROD * this.amount * this.effects.prod_per_s.amt[i] / CITY.FPS));
 	}
 	/** @param {string} s */
 	static fromString(s){
@@ -307,6 +307,7 @@ const CITY = {
 			return document.getElementById('main');
 		},
 	},
+	FPS: 10,
 	init(){
 		const MAIN = this.ELEM.MAIN;
 		// status list
@@ -331,7 +332,7 @@ const CITY = {
 	main(){
 		this.init();
 		this.update.all();
-		setInterval(() => this.update.buildingTick(), 1000);
+		setInterval(() => this.update.buildingTick(), 1000 / this.FPS);
 		console.info('city.js loaded.');
 		console.info(`${Resource.resources.length} resource types.`);
 		console.info(`${Building.buildings.length} building types.`);
@@ -483,7 +484,7 @@ const STONE = new Resource('Stone', false);
 const WOOD = new Resource('Wood');
 
 // buildings
-const HOUSE = new Building('House', new Cost([WOOD], [10]), new Effects(1));
+const HOUSE = new Building('House', new Cost([WOOD], [3]), new Effects(1));
 const MAKER_METAL = new Building('Foundry',
 	new Cost([STONE, ORE, PEOPLE_U], [50, 1, 5]),
 	new Effects(0, new Cost([ORE, METAL], [-1, 1]))
