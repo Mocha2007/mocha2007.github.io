@@ -47,25 +47,46 @@ Floater.i = 0;
 Floater.time = 50; // ms
 
 class Infobox {
-	constructor(name, src = ''){
+	constructor(name, src = '', desc = ''){
 		this.name = name;
 		this.src = src || CITY.DEFAULT.SRC;
+		this.desc = desc;
 	}
 	get countElem(){
 		const elem = document.createElement('div');
 		elem.id = 'COUNT_' + this.name;
+		elem.onmouseover = () => this.tooltipShow();
+		elem.onmouseleave = () => this.tooltipHide();
+		return elem;
+	}
+	get loc(){
+		const rect = document.getElementById('COUNT_' + this.name).getBoundingClientRect();
+		return {x: rect.left + window.scrollX, y: rect.top + window.scrollY};
+	}
+	get tooltip(){
+		const elem = document.createElement('div');
+		elem.innerHTML = `<h2>${this.name}</h2><p>${this.desc}</p>`;
 		return elem;
 	}
 	spawnFloater(text, color = 'White'){
-		const elem = document.getElementById('COUNT_' + this.name);
-		const rect = elem.getBoundingClientRect();
-		new Floater(text, rect.left + window.scrollX, rect.top + window.scrollY, color).spawn();
+		const LOC = this.loc;
+		new Floater(text, LOC.x, LOC.y, color).spawn();
+	}
+	tooltipHide(){
+		CITY.tooltip.setVisibility(false);
+	}
+	tooltipShow(){
+		const LOC = this.loc;
+		CITY.tooltip.move(LOC.x, LOC.y);
+		CITY.tooltip.set(this.tooltip);
+		CITY.tooltip.setVisibility(true);
 	}
 }
 
 class Resource extends Infobox {
-	constructor(name, gatherable = true, amtGetter = undefined, scales = true, positivity = 0){
-		super(name);
+	// eslint-disable-next-line max-len
+	constructor(name, desc, gatherable = true, amtGetter = undefined, scales = true, positivity = 0){
+		super(name, '', desc);
 		/** @type {boolean} */
 		this.gatherable = gatherable;
 		/** @type {() => void} */
@@ -378,6 +399,9 @@ const CITY = {
 	DEFAULT: {
 		SRC: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Ambox_blue_question.svg',
 	},
+	DESC: {
+		CONS: 'Basic construction material.',
+	},
 	ELEM: {
 		/** @returns {HTMLDivElement} */
 		get MAIN(){
@@ -405,6 +429,8 @@ const CITY = {
 		Building.buildings.forEach(b => {
 			BUILD_CONTAINER.appendChild(b.buildElem);
 		});
+		// tooltip
+		this.tooltip.init();
 	},
 	main(){
 		this.init();
@@ -435,7 +461,9 @@ const CITY = {
 			return sum(Building.buildings.map(b => b.amount));
 		},
 		get crime(){
-			const CRIMINALS = this.pop.employed * 0.1 + this.pop.unemployed * 0.9;
+			const EDUCATION_BONUS = this.education / 1000; // [0, 0.1]
+			const CRIMINALS = this.pop.employed * (0.1 - EDUCATION_BONUS)
+				+ this.pop.unemployed * (1 - EDUCATION_BONUS);
 			const POL = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('police'))) || 1e-3;
 			const CRIME = clamp(CRIMINALS / (15 * POL) - 1, 0, 1);
 			return Math.floor(100 * CRIME);
@@ -562,6 +590,32 @@ const CITY = {
 			console.info('saved');
 		},
 	},
+	tooltip: {
+		/** @type {HTMLDivElement} */
+		get elem(){
+			return CITY.ELEM.TOOLTIP;
+		},
+		init(){
+			const TOOLTIP = CITY.ELEM.TOOLTIP = document.createElement('div');
+			document.body.appendChild(TOOLTIP);
+			TOOLTIP.id = 'tooltip';
+			TOOLTIP.innerHTML = 'TEST';
+			this.setVisibility(false);
+			this.move();
+		},
+		move(x = 0, y = 0){
+			this.elem.style.left = x + 'px';
+			this.elem.style.top = y + 20 + 'px';
+		},
+		/** @param {HTMLElement} elem */
+		set(elem){
+			this.elem.innerHTML = '';
+			this.elem.appendChild(elem);
+		},
+		setVisibility(state = true){
+			this.elem.style.display = state ? 'block' : 'none';
+		},
+	},
 	update: {
 		all(){
 			this.buildings();
@@ -603,31 +657,33 @@ const CITY = {
 // resources
 
 // population statistics
-const PEOPLE = new Resource('Population', false, () => CITY.resources2.pop.total, false);
-const PEOPLE_AGE0 = new Resource('Population (Child)', false, () => CITY.resources2.pop.age0, false);
-const PEOPLE_AGE1 = new Resource('Population (Teen)', false, () => CITY.resources2.pop.age1, false);
-const PEOPLE_AGE2 = new Resource('Population (Adult)', false, () => CITY.resources2.pop.age2, false);
-const PEOPLE_AGE3 = new Resource('Population (Elder)', false, () => CITY.resources2.pop.age3, false);
-const PEOPLE_E = new Resource('Employed', false, () => CITY.resources2.pop.employed, false);
-const PEOPLE_U = new Resource('Unemployed', false, () => CITY.resources2.pop.unemployed, false);
+const PEOPLE = new Resource('Population', 'Total number of people in the settlement. Creates demand for most services.', false, () => CITY.resources2.pop.total, false);
+const PEOPLE_AGE0 = new Resource('Population (Child)', 'People under 13. None work. Creates demand for elementary school education.', false, () => CITY.resources2.pop.age0, false);
+const PEOPLE_AGE1 = new Resource('Population (Teen)', 'People 13-18. Some work, but most do not. Creates demand for high school education.', false, () => CITY.resources2.pop.age1, false);
+const PEOPLE_AGE2 = new Resource('Population (Adult)', 'People 18-54. Most work. Creates a slight demand for college education.', false, () => CITY.resources2.pop.age2, false);
+const PEOPLE_AGE3 = new Resource('Population (Elder)', 'People 55 or older. Some work, but most do not.', false, () => CITY.resources2.pop.age3, false);
+const PEOPLE_E = new Resource('Employed', 'Employed people in the workforce.', false, () => CITY.resources2.pop.employed, false);
+const PEOPLE_U = new Resource('Unemployed', 'Unemployed people in the workforce. Folks out of work tend to turn to crime to make ends meet, and their presence further reduces settlement satisfaction.', false, () => CITY.resources2.pop.unemployed, false);
 // const PEOPLE_W = new Resource('Workforce', false, () => CITY.resources2.pop.workforce, false);
 
 // concrete
-const FOOD = new Resource('Food Production', false, () => CITY.resources2.food, false);
+const FOOD = new Resource('Food Production', 'Food is produced on farms, and cannot be stored. If it is not consumed; it immediately rots. You must have a net inflow of food to increase population. Children and teens consume less food than adults and elders.', false, () => CITY.resources2.food, false);
 
 // abstract
-const APPROVAL = new Resource('Satisfaction', false, () => CITY.resources2.approval, false, 1);
-const ADMIN = new Resource('Administration', false, () => CITY.resources2.admin, false, 1);
-const CRIME = new Resource('Crime', false, () => CITY.resources2.crime, false, -1);
-const EDU = new Resource('Education', false, () => CITY.resources2.education, false, 1);
-const FIREFIGHTING = new Resource('Fire Suppression', false, () => CITY.resources2.fire, false, 1);
-const HEALTH = new Resource('Health', false, () => CITY.resources2.health, false, 1);
-const TRANS = new Resource('Transportation', false, () => CITY.resources2.trans, false, 1);
-const UNEMPLOYMENT = new Resource('Unemployment', false, () => CITY.resources2.unemployment, false, -1);
-const METAL = new Resource('Metal', false);
-const ORE = new Resource('Ore', false);
-const STONE = new Resource('Stone', false);
-const WOOD = new Resource('Wood');
+const APPROVAL = new Resource('Productivity', 'Impacts resource generation rate.', false, () => CITY.resources2.approval, false, 1);
+const ADMIN = new Resource('Administration', 'Improves productivity.', false, () => CITY.resources2.admin, false, 1);
+const CRIME = new Resource('Crime', 'Crime is primarily perpetrated by unemployed pops, but even employed pops commit some crime. Education slightly reduces crime. Police greatly reduce crime.', false, () => CITY.resources2.crime, false, -1);
+const EDU = new Resource('Education', 'Improves productivity and slightly reduces crime.', false, () => CITY.resources2.education, false, 1);
+const FIREFIGHTING = new Resource('Fire Suppression', 'Improves productivity.', false, () => CITY.resources2.fire, false, 1);
+const HEALTH = new Resource('Health', 'Improves productivity.', false, () => CITY.resources2.health, false, 1);
+const TRANS = new Resource('Transportation', 'Improves productivity.', false, () => CITY.resources2.trans, false, 1);
+const UNEMPLOYMENT = new Resource('Unemployment', 'Percentage of workforce employed. High unemployment reduces productivity.', false, () => CITY.resources2.unemployment, false, -1);
+
+// actual legit resources
+const METAL = new Resource('Metal', CITY.DESC.CONS, false);
+const ORE = new Resource('Ore', 'Can be smelted into metal.', false);
+const STONE = new Resource('Stone', CITY.DESC.CONS, false);
+const WOOD = new Resource('Wood', CITY.DESC.CONS);
 
 // buildings
 const HOUSE = new Building('House', new Cost([WOOD], [3]), new Effects(2));

@@ -1,7 +1,7 @@
 html {
 	user-select: none;
 }
-.building, .resource, .specialResource {
+.building, .resource, .specialResource, #tooltip {
 	border-radius: 10px;
 	display: inline-block;
 	margin: 2px;
@@ -14,7 +14,7 @@ html {
 	background-color: rgba(0, 0, 255, 0.25);
 	border: 2px solid blue;
 }
-.effects, .resource, .specialResource {
+.effects, .resource, .specialResource, #tooltip {
 	font-size: 75%;
 }
 .resource {
@@ -27,4 +27,9 @@ html {
 }
 .hidden {
 	display: none;
+}
+#tooltip {
+	background-color: #444;
+	border: 2px solid silver;
+	position: absolute;
 }
