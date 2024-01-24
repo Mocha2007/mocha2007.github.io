@@ -369,7 +369,7 @@ const CITY = {
 		get crime(){
 			const CRIMINALS = this.employed * 0.1 + this.unemployed * 0.9;
 			const POL = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('police')));
-			const CRIME = clamp(CRIMINALS / (10 * POL) - 1, 0, 1);
+			const CRIME = clamp(CRIMINALS / (10 * POL) - 1, 0, 1) || 1;
 			return Math.floor(100 * CRIME);
 		},
 		get employed(){
