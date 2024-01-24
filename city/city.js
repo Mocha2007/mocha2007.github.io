@@ -662,9 +662,9 @@ const PEOPLE_AGE0 = new Resource('Population (Child)', 'People under 13. None wo
 const PEOPLE_AGE1 = new Resource('Population (Teen)', 'People 13-18. Some work, but most do not. Creates demand for high school education.', false, () => CITY.resources2.pop.age1, false);
 const PEOPLE_AGE2 = new Resource('Population (Adult)', 'People 18-54. Most work. Creates a slight demand for college education.', false, () => CITY.resources2.pop.age2, false);
 const PEOPLE_AGE3 = new Resource('Population (Elder)', 'People 55 or older. Some work, but most do not.', false, () => CITY.resources2.pop.age3, false);
+const PEOPLE_W = new Resource('Workforce', 'Number of people able and willing to work. Ensure as many of them are employed as possible, otherwise crime and other unpleasant effects will become rampant.', false, () => CITY.resources2.pop.workforce, false);
 const PEOPLE_E = new Resource('Employed', 'Employed people in the workforce.', false, () => CITY.resources2.pop.employed, false);
-const PEOPLE_U = new Resource('Unemployed', 'Unemployed people in the workforce. Folks out of work tend to turn to crime to make ends meet, and their presence further reduces settlement satisfaction.', false, () => CITY.resources2.pop.unemployed, false);
-// const PEOPLE_W = new Resource('Workforce', false, () => CITY.resources2.pop.workforce, false);
+const PEOPLE_U = new Resource('Unemployed', 'Unemployed people in the workforce. Folks out of work tend to turn to crime to make ends meet, and their presence irritates other settlers, futher reducing productivity.', false, () => CITY.resources2.pop.unemployed, false);
 
 // concrete
 const FOOD = new Resource('Food Production', 'Food is produced on farms, and cannot be stored. If it is not consumed; it immediately rots. You must have a net inflow of food to increase population. Children and teens consume less food than adults and elders.', false, () => CITY.resources2.food, false);
