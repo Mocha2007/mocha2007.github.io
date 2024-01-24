@@ -453,8 +453,8 @@ const CITY = {
 	resources2: {
 		get approval(){
 			return Math.floor(mean([this.admin, 100 - this.crime,
-				this.education, this.fire, this.health, 100 - this.traffic,
-				100 - this.unemployment]));
+				this.education, this.fire, this.happiness,
+				100 - this.traffic]));
 		},
 		get admin(){
 			const P = this.pop.total || 1;
@@ -499,6 +499,12 @@ const CITY = {
 			const PRODUCTION = BASE + 7 * FARMERS;
 			const CONSUMPTION = this.pop.foodConsumption;
 			return PRODUCTION - CONSUMPTION;
+		},
+		get happiness(){
+			const H_FOOD = 0 < this.food ? 1 : 0;
+			const H_HEALTH = this.health/100;
+			const H_HOBO = 1 - this.unemployment/100;
+			return Math.floor(100 * mean([H_FOOD, H_HEALTH, H_HOBO]));
 		},
 		get health(){
 			const P = this.pop.total || 1;
@@ -691,10 +697,11 @@ const ADMIN = new Resource('Administration', 'Improves productivity. Increased b
 const CRIME = new Resource('Crime', 'Crime is primarily perpetrated by unemployed pops, but even employed pops commit some crime. Education slightly reduces crime. Police greatly reduce crime.', false, () => CITY.resources2.crime, false, -1);
 const EDU = new Resource('Education', 'Improves productivity and slightly reduces crime.', false, () => CITY.resources2.education, false, 1);
 const FIREFIGHTING = new Resource('Fire Suppression', 'Improves productivity. Increased by fire stations.', false, () => CITY.resources2.fire, false, 1);
-const HEALTH = new Resource('Health', 'Improves productivity. Increased by clinics.', false, () => CITY.resources2.health, false, 1);
+const HAPPINESS = new Resource('Happiness', 'Improves productivity. Affected by food availability, health, and unemployment.', false, () => CITY.resources2.health, false, 1);
+const HEALTH = new Resource('Health', 'Improves happiness. Increased by clinics.', false, () => CITY.resources2.health, false, 1);
 const TRANS = new Resource('Infrastructure', 'Improves productivity and reduces traffic. Increased by roads.', false, () => CITY.resources2.trans, false, 1);
 const TRAFFIC = new Resource('Traffic', 'Reduces productivity. Decreased by infrastructure and signage.', false, () => CITY.resources2.traffic, false, -1);
-const UNEMPLOYMENT = new Resource('Unemployment', 'Percentage of workforce employed. High unemployment reduces productivity.', false, () => CITY.resources2.unemployment, false, -1);
+const UNEMPLOYMENT = new Resource('Unemployment', 'Percentage of workforce employed. High unemployment reduces happiness.', false, () => CITY.resources2.unemployment, false, -1);
 
 // actual legit resources
 const METAL = new Resource('Metal', CITY.DESC.CONS, false);
