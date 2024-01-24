@@ -129,7 +129,7 @@ class Cost extends Infobox {
 		return this.amt_build.every((a, i) => a <= this.res[i].amount);
 	}
 	get amt_build(){
-		return this.amt.map(a => a * CITY.BONUS.BUILD);
+		return this.amt.map((a, i) => this.res[i].isSpecial ? a : a * CITY.BONUS.BUILD);
 	}
 	get elem(){
 		const e = document.createElement('span');
