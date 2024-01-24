@@ -434,7 +434,7 @@ const CITY = {
 		get health(){
 			const P = this.pop.total || 1;
 			const HEALTH = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('health')));
-			const HEALTH_ = Math.min(1, 25 * HEALTH / P);
+			const HEALTH_ = Math.min(1, 60 * HEALTH / P);
 			return Math.floor(100 * HEALTH_);
 		},
 		pop: {
@@ -638,7 +638,7 @@ const ADMINCEN = new Building('Administrative Center',
 	new Effects(0, new Cost(), ['admin'])
 );
 const CLINIC = new Building('Clinic',
-	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [500, 1000, 250, 25, 1]),
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [500, 1000, 250, 30, 1]),
 	new Effects(0, new Cost(), ['health'])
 );
 const POLICE = new Building('Police Station',
