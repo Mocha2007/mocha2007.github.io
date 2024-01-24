@@ -191,6 +191,9 @@ class Effects extends Infobox {
 				case 'arch': // architect
 					o.push('Reduces all build costs by 5%');
 					break;
+				case 'demo': // demolitionist
+					o.push('Recover 20% more building material when demolishing buildings');
+					break;
 				case 'edu1': // elem
 				case 'edu2': // mid
 				case 'edu3': // high
@@ -330,13 +333,13 @@ Building.buildings = [];
 const CITY = {
 	AUTOSAVE_INTERVAL: 60 * 1000, // autosave every minute
 	BONUS: {
-		get BUILD(){
+		get BUILD(){ // build efficiency
 			return Math.pow(0.95, CITY.resources2.upgrade.build);
 		},
-		get DEMO(){
-			return 0.1; // demolition efficiency
+		get DEMO(){ // demolition efficiency
+			return 1 - Math.pow(0.8, CITY.resources2.upgrade.demo + 1);
 		},
-		get PROD(){
+		get PROD(){ // production efficiency
 			return 0.1 + CITY.resources2.approval / 100;
 		},
 	},
@@ -453,6 +456,9 @@ const CITY = {
 			get build(){
 				return sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('arch')));
 			},
+			get demo(){
+				return sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('demo')));
+			},
 		},
 	},
 	save: {
@@ -566,6 +572,11 @@ const MAKER_WOOD = new Building('Lumbermill',
 const UPGRADE_BUILD = new Building('Architect',
 	new Cost([WOOD, STONE, METAL, PEOPLE_U], [100, 1000, 100, 1]),
 	new Effects(0, new Cost(), ['arch'])
+);
+
+const UPGRADE_DEMO = new Building('Demolitionist',
+	new Cost([WOOD, STONE, METAL, PEOPLE_U], [100, 1000, 100, 1]),
+	new Effects(0, new Cost(), ['demo'])
 );
 
 // https://wiki.sc4devotion.com
