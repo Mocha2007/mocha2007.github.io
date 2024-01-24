@@ -203,6 +203,9 @@ class Effects extends Infobox {
 				case 'edu4': // coll
 					o.push('Provides education for a limited number of pops');
 					break;
+				case 'farm': // farm
+					o.push('Produces 10 food units');
+					break;
 				case 'health': // clinic
 					o.push('Provides healthcare for a limited number of pops');
 					break;
@@ -286,6 +289,11 @@ class Building extends Infobox {
 	build(n = 1){
 		for (let i = 0; i < n; i++)
 			if (this.cost.affordable_build){
+				if (CITY.resources2.food < this.effects.pop && !this.effects.tags.includes('farm')){
+					// eslint-disable-next-line max-len
+					this.spawnFloater(`You have insufficient food production to build another ${this.name}.`, CITY.COLOR.BAD);
+					break;
+				}
 				this.cost.modifyStock(-CITY.BONUS.BUILD);
 				this.amount++;
 			}
@@ -303,10 +311,8 @@ class Building extends Infobox {
 					this.spawnFloater(`You have insufficient unemployed pops to demolish another ${this.name}.`, CITY.COLOR.BAD);
 					break;
 				}
-				else {
-					this.cost.modifyStock(CITY.BONUS.DEMO);
-					this.amount--;
-				}
+				this.cost.modifyStock(CITY.BONUS.DEMO);
+				this.amount--;
 			}
 			else {
 				this.spawnFloater(`You have no ${this.name} to demolish.`, CITY.COLOR.BAD);
@@ -411,6 +417,12 @@ const CITY = {
 		get buildings(){
 			return sum(Building.buildings.map(b => b.amount));
 		},
+		get crime(){
+			const CRIMINALS = this.pop.employed * 0.1 + this.pop.unemployed * 0.9;
+			const POL = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('police'))) || 1e-3;
+			const CRIME = clamp(CRIMINALS / (10 * POL) - 1, 0, 1);
+			return Math.floor(100 * CRIME);
+		},
 		get education(){
 			const P0 = this.pop.age0 || 1;
 			const P1 = this.pop.age1 || 1;
@@ -425,11 +437,13 @@ const CITY = {
 			const EDU4_ = Math.min(1, 125 * EDU4 / P2) / 3;
 			return Math.floor(100 * (EDU1_ + EDU3_ + EDU4_));
 		},
-		get crime(){
-			const CRIMINALS = this.pop.employed * 0.1 + this.pop.unemployed * 0.9;
-			const POL = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('police'))) || 1e-3;
-			const CRIME = clamp(CRIMINALS / (10 * POL) - 1, 0, 1);
-			return Math.floor(100 * CRIME);
+		get food(){
+			const BASE = 5;
+			const FARMS = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('farm')));
+			const FARMERS = this.pop.unemployed * 0.5 + FARMS;
+			const PRODUCTION = BASE + 7 * FARMERS;
+			const CONSUMPTION = this.pop.foodConsumption;
+			return PRODUCTION - CONSUMPTION;
 		},
 		get health(){
 			const P = this.pop.total || 1;
@@ -453,6 +467,9 @@ const CITY = {
 			get employed(){
 				return sum(Building.buildings.map(b => b.cost.res.includes(PEOPLE_U)
 					? b.amount * b.cost.amt[b.cost.res.indexOf(PEOPLE_U)] : 0));
+			},
+			get foodConsumption(){
+				return this.age0 * 0.5 + this.age1 * 0.75 + this.age2 + this.age3;
 			},
 			get total(){
 				return sum(Building.buildings.map(b => b.amount * b.effects.pop));
@@ -563,7 +580,7 @@ const CITY = {
 };
 
 // resources
-// const METAL = new Resource('Metal');
+
 // population statistics
 const PEOPLE = new Resource('Population', false, () => CITY.resources2.pop.total, false);
 const PEOPLE_AGE0 = new Resource('Population (Child)', false, () => CITY.resources2.pop.age0, false);
@@ -573,7 +590,11 @@ const PEOPLE_AGE3 = new Resource('Population (Elder)', false, () => CITY.resourc
 const PEOPLE_E = new Resource('Employed', false, () => CITY.resources2.pop.employed, false);
 const PEOPLE_U = new Resource('Unemployed', false, () => CITY.resources2.pop.unemployed, false);
 // const PEOPLE_W = new Resource('Workforce', false, () => CITY.resources2.pop.workforce, false);
-// other
+
+// concrete
+const FOOD = new Resource('Food Production', false, () => CITY.resources2.food, false);
+
+// abstract
 const APPROVAL = new Resource('Satisfaction', false, () => CITY.resources2.approval, false);
 const ADMIN = new Resource('Administration', false, () => CITY.resources2.admin, false);
 const CRIME = new Resource('Crime', false, () => CITY.resources2.crime, false);
@@ -588,6 +609,10 @@ const WOOD = new Resource('Wood');
 
 // buildings
 const HOUSE = new Building('House', new Cost([WOOD], [3]), new Effects(2));
+const FARM = new Building('Farm',
+	new Cost([WOOD, PEOPLE_U], [15, 1]),
+	new Effects(2, new Cost(), ['farm'])
+);
 const MAKER_METAL = new Building('Foundry',
 	new Cost([STONE, ORE, PEOPLE_U], [50, 1, 1]),
 	new Effects(0, new Cost([ORE, METAL], [-1, 1]))
