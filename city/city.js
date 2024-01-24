@@ -403,7 +403,7 @@ const CITY = {
 				this.education, this.health, this.trans, 100-this.unemployment]));
 		},
 		get admin(){
-			const P = this.pop || 1;
+			const P = this.pop.total || 1;
 			const ADMIN = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('admin')));
 			const ADMIN_ = Math.min(1, 75 * ADMIN / P);
 			return Math.floor(100 * ADMIN_);
@@ -412,7 +412,7 @@ const CITY = {
 			return sum(Building.buildings.map(b => b.amount));
 		},
 		get education(){
-			const P = this.pop || 1;
+			const P = this.pop.total || 1;
 			const EDU1 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu1')));
 			const EDU2 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu2')));
 			const EDU3 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu3')));
@@ -424,23 +424,43 @@ const CITY = {
 			return Math.floor(100 * (EDU1_ + EDU2_ + EDU3_ + EDU4_));
 		},
 		get crime(){
-			const CRIMINALS = this.employed * 0.1 + this.unemployed * 0.9;
+			const CRIMINALS = this.pop.employed * 0.1 + this.pop.unemployed * 0.9;
 			const POL = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('police'))) || 1e-3;
 			const CRIME = clamp(CRIMINALS / (10 * POL) - 1, 0, 1);
 			return Math.floor(100 * CRIME);
 		},
-		get employed(){
-			return sum(Building.buildings.map(b => b.cost.res.includes(PEOPLE_U)
-				? b.amount * b.cost.amt[b.cost.res.indexOf(PEOPLE_U)] : 0));
-		},
 		get health(){
-			const P = this.pop || 1;
+			const P = this.pop.total || 1;
 			const HEALTH = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('health')));
 			const HEALTH_ = Math.min(1, 25 * HEALTH / P);
 			return Math.floor(100 * HEALTH_);
 		},
-		get pop(){
-			return HOUSE.amount;
+		pop: {
+			get age0(){ // 0-12
+				return this.total * 0.19;
+			},
+			get age1(){ // 13-18
+				return this.total * 0.07;
+			},
+			get age2(){ // 19-54
+				return this.total * 0.46;
+			},
+			get age3(){ // >=55
+				return this.total * 0.28;
+			},
+			get employed(){
+				return sum(Building.buildings.map(b => b.cost.res.includes(PEOPLE_U)
+					? b.amount * b.cost.amt[b.cost.res.indexOf(PEOPLE_U)] : 0));
+			},
+			get total(){
+				return sum(Building.buildings.map(b => b.amount * b.effects.pop));
+			},
+			get unemployed(){
+				return this.workforce - this.employed;
+			},
+			get workforce(){ // https://en.wikipedia.org/wiki/File:Work_Force_Participation_Rate_by_Age_Group.webp
+				return 0.4 * this.age1 + 0.8 * this.age2 + 0.4 * this.age3;
+			},
 		},
 		get trans(){
 			const TRANS = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('trans')));
@@ -448,11 +468,8 @@ const CITY = {
 			const TRANS_ = Math.min(1, 10 * TRANS / B);
 			return Math.floor(100 * TRANS_);
 		},
-		get unemployed(){
-			return this.pop - this.employed;
-		},
 		get unemployment(){
-			return Math.floor(100 * this.unemployed / this.pop) || 0;
+			return Math.floor(100 * this.pop.unemployed / this.pop.total) || 0;
 		},
 		// upgrades
 		upgrade: {
@@ -538,9 +555,16 @@ const CITY = {
 
 // resources
 // const METAL = new Resource('Metal');
-const PEOPLE = new Resource('Pop', false, () => CITY.resources2.pop, false);
-const PEOPLE_E = new Resource('Employed', false, () => CITY.resources2.employed, false);
-const PEOPLE_U = new Resource('Unemployed', false, () => CITY.resources2.unemployed, false);
+// population statistics
+const PEOPLE = new Resource('Population', false, () => CITY.resources2.pop.total, false);
+// const PEOPLE_AGE0 = new Resource('Population (Child)', false, () => CITY.resources2.pop.age0, false);
+// const PEOPLE_AGE1 = new Resource('Population (Teen)', false, () => CITY.resources2.pop.age1, false);
+// const PEOPLE_AGE2 = new Resource('Population (Adult)', false, () => CITY.resources2.pop.age2, false);
+// const PEOPLE_AGE3 = new Resource('Population (Elder)', false, () => CITY.resources2.pop.age3, false);
+const PEOPLE_E = new Resource('Employed', false, () => CITY.resources2.pop.employed, false);
+const PEOPLE_U = new Resource('Unemployed', false, () => CITY.resources2.pop.unemployed, false);
+// const PEOPLE_W = new Resource('Workforce', false, () => CITY.resources2.pop.workforce, false);
+// other
 const APPROVAL = new Resource('Satisfaction', false, () => CITY.resources2.approval, false);
 const ADMIN = new Resource('Administration', false, () => CITY.resources2.admin, false);
 const CRIME = new Resource('Crime', false, () => CITY.resources2.crime, false);
@@ -554,7 +578,7 @@ const STONE = new Resource('Stone', false);
 const WOOD = new Resource('Wood');
 
 // buildings
-const HOUSE = new Building('House', new Cost([WOOD], [3]), new Effects(1));
+const HOUSE = new Building('House', new Cost([WOOD], [3]), new Effects(2));
 const MAKER_METAL = new Building('Foundry',
 	new Cost([STONE, ORE, PEOPLE_U], [50, 1, 1]),
 	new Effects(0, new Cost([ORE, METAL], [-1, 1]))
