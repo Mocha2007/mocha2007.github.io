@@ -192,8 +192,9 @@ class Effects extends Infobox {
 					o.push('Reduces all build costs by 5%');
 					break;
 				case 'edu1': // elem
-				case 'edu2': // high
-				case 'edu3': // coll
+				case 'edu2': // mid
+				case 'edu3': // high
+				case 'edu4': // coll
 					o.push('Provides education for a limited number of pops');
 					break;
 				case 'health': // clinic
@@ -378,10 +379,12 @@ const CITY = {
 			const EDU1 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu1')));
 			const EDU2 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu2')));
 			const EDU3 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu3')));
-			const EDU1_ = Math.min(1, 25 * EDU1 / P) / 3;
-			const EDU2_ = Math.min(1, 50 * EDU2 / P) / 3;
-			const EDU3_ = Math.min(1, 100 * EDU3 / P) / 3;
-			return Math.floor(100 * (EDU1_ + EDU2_ + EDU3_));
+			const EDU4 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu4')));
+			const EDU1_ = Math.min(1, 25 * EDU1 / P) / 4;
+			const EDU2_ = Math.min(1, 50 * EDU2 / P) / 4;
+			const EDU3_ = Math.min(1, 75 * EDU3 / P) / 4;
+			const EDU4_ = Math.min(1, 100 * EDU4 / P) / 4;
+			return Math.floor(100 * (EDU1_ + EDU2_ + EDU3_ + EDU4_));
 		},
 		get crime(){
 			const CRIMINALS = this.employed * 0.1 + this.unemployed * 0.9;
@@ -539,16 +542,20 @@ const SCHOOL1 = new Building('Elementary School',
 	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [500, 1000, 250, 25, 1]),
 	new Effects(0, new Cost(), ['edu1'])
 );
-const SCHOOL2 = new Building('High School',
+const SCHOOL2 = new Building('Middle School',
 	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [2000, 4000, 1000, 50, 2]),
 	new Effects(0, new Cost(), ['edu2'])
 );
-const SCHOOL3 = new Building('College',
-	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [8000, 16000, 4000, 100, 4]),
+const SCHOOL3 = new Building('High School',
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [5000, 10000, 2500, 75, 3]),
 	new Effects(0, new Cost(), ['edu3'])
 );
+const SCHOOL4 = new Building('College',
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [8000, 16000, 4000, 100, 4]),
+	new Effects(0, new Cost(), ['edu4'])
+);
 const ADMINCEN = new Building('Administrative Center',
-	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [6000, 12000, 3000, 75, 3]),
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [5000, 10000, 2500, 75, 3]),
 	new Effects(0, new Cost(), ['admin'])
 );
 const CLINIC = new Building('Clinic',
