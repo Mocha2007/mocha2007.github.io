@@ -11,7 +11,7 @@
 <div id="main"></div>
 <script>
 const LOAD = () => {
-	if (typeof CITY_LOADED === 'undefined')
+	if (typeof CITY_LOADED === 'undefined' || typeof storage === 'undefined')
 		setTimeout(LOAD, 100);
 	else
 		CITY.main();

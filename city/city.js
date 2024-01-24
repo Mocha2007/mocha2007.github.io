@@ -1,5 +1,5 @@
 /* exported CITY, CITY_LOADED */
-/* global mean, random, storage, sum */
+/* global clamp, mean, random, storage, sum */
 
 class Floater {
 	constructor(text, x = 0, y = 0, color = 'White', t = 1000){
@@ -367,10 +367,10 @@ const CITY = {
 			return Math.floor(100 * (EDU1_ + EDU2_ + EDU3_));
 		},
 		get crime(){
-			const P = this.pop || 1;
+			const CRIMINALS = this.employed * 0.1 + this.unemployed * 0.9;
 			const POL = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('police')));
-			const POL_ = Math.min(1, 50 * POL / P);
-			return Math.floor(100 * POL_);
+			const CRIME = clamp(CRIMINALS / (10 * POL) - 1, 0, 1);
+			return Math.floor(100 * CRIME);
 		},
 		get employed(){
 			return sum(Building.buildings.map(b => b.cost.res.includes(PEOPLE_U)
