@@ -131,7 +131,7 @@ class Cost extends Infobox {
 	get elem(){
 		const e = document.createElement('span');
 		const AMT_BUILD = this.amt_build;
-		e.innerHTML = 'Cost: ' + this.res.map((r, i) => `${AMT_BUILD[i]} ${r.name}`).join(', ');
+		e.innerHTML = 'Cost: ' + this.res.map((r, i) => `${Math.ceil(AMT_BUILD[i])} ${r.name}`).join(', ');
 		return e;
 	}
 	get revealable(){
