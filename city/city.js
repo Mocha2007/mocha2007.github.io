@@ -412,15 +412,17 @@ const CITY = {
 			return sum(Building.buildings.map(b => b.amount));
 		},
 		get education(){
-			const P = this.pop.total || 1;
+			const P0 = this.pop.age0 || 1;
+			const P1 = this.pop.age1 || 1;
+			const P2 = this.pop.age2 || 1;
 			const EDU1 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu1')));
 			const EDU2 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu2')));
 			const EDU3 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu3')));
 			const EDU4 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu4')));
-			const EDU1_ = Math.min(1, 25 * EDU1 / P) / 4;
-			const EDU2_ = Math.min(1, 50 * EDU2 / P) / 4;
-			const EDU3_ = Math.min(1, 75 * EDU3 / P) / 4;
-			const EDU4_ = Math.min(1, 100 * EDU4 / P) / 4;
+			const EDU1_ = Math.min(1, 25 * EDU1 / P0) / 4;
+			const EDU2_ = Math.min(1, 30 * EDU2 / P0) / 4;
+			const EDU3_ = Math.min(1, 35 * EDU3 / P1) / 4;
+			const EDU4_ = Math.min(1, 100 * EDU4 / P2) / 4;
 			return Math.floor(100 * (EDU1_ + EDU2_ + EDU3_ + EDU4_));
 		},
 		get crime(){
