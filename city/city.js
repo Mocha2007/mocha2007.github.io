@@ -1,6 +1,12 @@
 /* exported CITY, CITY_LOADED */
 /* global clamp, mean, random, round, storage, sum */
 
+function colorScale(c = 0.5){
+	const R = c < 0.5 ? 255 : 510 - 510 * c;
+	const G = c > 0.5 ? 255 : 510 * c;
+	return `rgb(${R}, ${G}, 0)`;
+}
+
 class Floater {
 	constructor(text, x = 0, y = 0, color = 'White', t = 1000){
 		this.text = text;
@@ -60,7 +66,7 @@ class Infobox {
 }
 
 class Resource extends Infobox {
-	constructor(name, gatherable = true, amtGetter = undefined, scales = true){
+	constructor(name, gatherable = true, amtGetter = undefined, scales = true, positivity = 0){
 		super(name);
 		/** @type {boolean} */
 		this.gatherable = gatherable;
@@ -68,6 +74,8 @@ class Resource extends Infobox {
 		this.amtGetter = amtGetter;
 		/** @type {boolean} */
 		this.scales = scales;
+		/** @type {number} */
+		this.positivity = positivity;
 		CITY.resources[name] = 0;
 		Resource.resources.push(this);
 	}
@@ -78,7 +86,15 @@ class Resource extends Infobox {
 		CITY.resources[this.name] = x;
 	}
 	get amountString(){
-		return `${Math.floor(this.amount)} ${this.name}`;
+		return `<span style="color:${this.color}">${Math.floor(this.amount)}</span> ${this.name}`;
+	}
+	get color(){
+		if (this.positivity){
+			let C = this.amount / 100;
+			C = 0.5 * (1 - this.positivity) + this.positivity * C;
+			return colorScale(C);
+		}
+		return 'inherit';
 	}
 	get gatherButton(){
 		const elem = document.createElement('span');
@@ -447,8 +463,7 @@ const CITY = {
 		},
 		get food(){
 			const BASE = 5;
-			const FARMS = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('farm')));
-			const FARMERS = this.pop.unemployed * 0.5 + FARMS;
+			const FARMERS = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('farm')));
 			const PRODUCTION = BASE + 7 * FARMERS;
 			const CONSUMPTION = this.pop.foodConsumption;
 			return PRODUCTION - CONSUMPTION;
@@ -603,14 +618,14 @@ const PEOPLE_U = new Resource('Unemployed', false, () => CITY.resources2.pop.une
 const FOOD = new Resource('Food Production', false, () => CITY.resources2.food, false);
 
 // abstract
-const APPROVAL = new Resource('Satisfaction', false, () => CITY.resources2.approval, false);
-const ADMIN = new Resource('Administration', false, () => CITY.resources2.admin, false);
-const CRIME = new Resource('Crime', false, () => CITY.resources2.crime, false);
-const EDU = new Resource('Education', false, () => CITY.resources2.education, false);
-const FIREFIGHTING = new Resource('Fire Suppression', false, () => CITY.resources2.fire, false);
-const HEALTH = new Resource('Health', false, () => CITY.resources2.health, false);
-const TRANS = new Resource('Transportation', false, () => CITY.resources2.trans, false);
-const UNEMPLOYMENT = new Resource('Unemployment', false, () => CITY.resources2.unemployment, false);
+const APPROVAL = new Resource('Satisfaction', false, () => CITY.resources2.approval, false, 1);
+const ADMIN = new Resource('Administration', false, () => CITY.resources2.admin, false, 1);
+const CRIME = new Resource('Crime', false, () => CITY.resources2.crime, false, -1);
+const EDU = new Resource('Education', false, () => CITY.resources2.education, false, 1);
+const FIREFIGHTING = new Resource('Fire Suppression', false, () => CITY.resources2.fire, false, 1);
+const HEALTH = new Resource('Health', false, () => CITY.resources2.health, false, 1);
+const TRANS = new Resource('Transportation', false, () => CITY.resources2.trans, false, 1);
+const UNEMPLOYMENT = new Resource('Unemployment', false, () => CITY.resources2.unemployment, false, -1);
 const METAL = new Resource('Metal', false);
 const ORE = new Resource('Ore', false);
 const STONE = new Resource('Stone', false);
@@ -619,7 +634,7 @@ const WOOD = new Resource('Wood');
 // buildings
 const HOUSE = new Building('House', new Cost([WOOD], [3]), new Effects(2));
 const FARM = new Building('Farm',
-	new Cost([WOOD, PEOPLE_U], [15, 1]),
+	new Cost([WOOD, PEOPLE_U], [25, 1]),
 	new Effects(2, new Cost(), ['farm'])
 );
 const MAKER_METAL = new Building('Foundry',
