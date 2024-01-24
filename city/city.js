@@ -556,7 +556,7 @@ const WOOD = new Resource('Wood');
 // buildings
 const HOUSE = new Building('House', new Cost([WOOD], [3]), new Effects(1));
 const MAKER_METAL = new Building('Foundry',
-	new Cost([STONE, ORE, PEOPLE_U], [50, 1, 2]),
+	new Cost([STONE, ORE, PEOPLE_U], [50, 1, 1]),
 	new Effects(0, new Cost([ORE, METAL], [-1, 1]))
 );
 const MAKER_ORE = new Building('Mine',
@@ -600,7 +600,7 @@ const SCHOOL4 = new Building('College',
 	new Effects(0, new Cost(), ['edu4'])
 );
 const ADMINCEN = new Building('Administrative Center',
-	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [5000, 10000, 2500, 75, 3]),
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [5000, 10000, 2500, 75, 2]),
 	new Effects(0, new Cost(), ['admin'])
 );
 const CLINIC = new Building('Clinic',
