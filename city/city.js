@@ -2,9 +2,7 @@
 /* global clamp, mean, random, round, storage, sum */
 
 function colorScale(c = 0.5){
-	const R = c < 0.5 ? 255 : 510 - 510 * c;
-	const G = c > 0.5 ? 255 : 510 * c;
-	return `rgb(${R}, ${G}, 0)`;
+	return `hsl(${120*clamp(c, 0, 1)} 100 50)`;
 }
 
 class Floater {
