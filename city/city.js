@@ -474,12 +474,13 @@ const CITY = {
 			return sum(Building.buildings.map(b => b.amount));
 		},
 		get crime(){
+			const POP_RAMPUP = clamp(this.pop.total, 0, 30) / 30; // crime reduced if pop < 30
 			const EDUCATION_BONUS = this.education / 1000; // [0, 0.1]
 			const CRIMINALS = this.pop.employed * (0.1 - EDUCATION_BONUS)
 				+ this.pop.unemployed * (1 - EDUCATION_BONUS);
 			const POL = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('police'))) || 1e-3;
 			const CRIME = clamp(CRIMINALS / (15 * POL) - 1, 0, 1);
-			return Math.floor(100 * CRIME);
+			return Math.floor(100 * CRIME * POP_RAMPUP);
 		},
 		get education(){
 			const P0 = this.pop.age0 || 1;
