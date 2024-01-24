@@ -55,7 +55,7 @@ class Infobox {
 	spawnFloater(text, color = 'White'){
 		const elem = document.getElementById('COUNT_' + this.name);
 		const rect = elem.getBoundingClientRect();
-		new Floater(text, rect.x, rect.y, color).spawn();
+		new Floater(text, rect.left + window.scrollX, rect.top + window.scrollY, color).spawn();
 	}
 }
 
@@ -600,7 +600,7 @@ const SCHOOL4 = new Building('College',
 	new Effects(0, new Cost(), ['edu4'])
 );
 const ADMINCEN = new Building('Administrative Center',
-	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [5000, 10000, 2500, 75, 2]),
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [5000, 10000, 2500, 40, 1]),
 	new Effects(0, new Cost(), ['admin'])
 );
 const CLINIC = new Building('Clinic',
