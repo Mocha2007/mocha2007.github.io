@@ -54,6 +54,7 @@ class Infobox {
 	}
 	get countElem(){
 		const elem = document.createElement('div');
+		elem.classList.add('count');
 		elem.id = 'COUNT_' + this.name;
 		elem.onmouseover = () => this.tooltipShow();
 		elem.onmouseleave = () => this.tooltipHide();
