@@ -122,13 +122,13 @@ class Cost extends Infobox {
 	get affordable(){
 		return this.res.every((r, i) => this.amt[i] <= r.amount);
 	}
-	get allResKnown(){
-		return this.res.every(r => 0 < r.amount);
-	}
 	get elem(){
 		const e = document.createElement('span');
 		e.innerHTML = 'Cost: ' + this.res.map((r, i) => `${this.amt[i]} ${r.name}`).join(', ');
 		return e;
+	}
+	get revealable(){
+		return this.res.every((r, i) => this.amt[i] / 2 <= r.amount);
 	}
 	modifyStock(mul = -1){
 		this.res.forEach((r, i) => r.amount += mul * this.amt[i]);
@@ -140,10 +140,14 @@ class Cost extends Infobox {
 }
 
 class Effects extends Infobox {
-	constructor(pop = 0, prod_per_s = new Cost()){
+	constructor(pop = 0, prod_per_s = new Cost(), tags = []){
 		super('Effects');
+		/** @type {number} */
 		this.pop = pop;
+		/** @type {Cost} */
 		this.prod_per_s = prod_per_s;
+		/** @type {string[]} */
+		this.tags = tags;
 	}
 	get elem(){
 		const e = document.createElement('div');
@@ -153,6 +157,8 @@ class Effects extends Infobox {
 		const list = [];
 		if (this.pop)
 			list.push(`Provides housing for ${this.pop} pops.`);
+		if (this.tags)
+			list.push(...this.tagEffects);
 		if (this.prod_per_s.res.length)
 			list.push('Produces: ' + this.prod_per_s.res.map((r, i) => `${this.prod_per_s.amt[i]} ${r.name}/s`).join(', '));
 		list.forEach(x => {
@@ -161,6 +167,21 @@ class Effects extends Infobox {
 			ul.appendChild(li);
 		});
 		return e;
+	}
+	get tagEffects(){
+		const o = [];
+		this.tags.forEach(tag => {
+			switch (tag.toLowerCase()){
+				case 'edu1': // elem
+				case 'edu2': // high
+				case 'edu3': // coll
+					o.push('Provides education for a limited number of pops');
+					break;
+				default:
+					console.warn(`INVALID TAG "${tag}"`);
+			}
+		});
+		return o;
 	}
 }
 
@@ -240,6 +261,10 @@ class Building extends Infobox {
 			this.effects.prod_per_s.res
 				.forEach((r, i) => r.gather(this.amount * this.effects.prod_per_s.amt[i]));
 	}
+	/** @param {string} s */
+	static fromString(s){
+		return this.buildings.find(b => b.name === s);
+	}
 }
 /** @type {Building[]} */
 Building.buildings = [];
@@ -293,6 +318,16 @@ const CITY = {
 	},
 	resources: {},
 	resources2: {
+		get education(){
+			const P = this.pop;
+			const EDU1 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu1')));
+			const EDU2 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu2')));
+			const EDU3 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu3')));
+			const EDU1_ = Math.min(1, 25 * EDU1 / P) / 3;
+			const EDU2_ = Math.min(1, 50 * EDU2 / P) / 3;
+			const EDU3_ = Math.min(1, 100 * EDU3 / P) / 3;
+			return Math.floor(100 * (EDU1_ + EDU2_ + EDU3_));
+		},
 		get employed(){
 			return sum(Building.buildings.map(b => b.cost.res.includes(PEOPLE_U)
 				? b.amount * b.cost.amt[b.cost.res.indexOf(PEOPLE_U)] : 0));
@@ -307,7 +342,7 @@ const CITY = {
 	save: {
 		get data(){
 			return {
-				buildings: Building.buildings.map(b => b.amount),
+				buildings: Building.buildings.map(b => [b.name, b.amount]),
 				resources: CITY.resources,
 				version_checksum: this.version_checksum,
 			};
@@ -325,10 +360,13 @@ const CITY = {
 				// eslint-disable-next-line max-len
 				console.warn(`SAVE VERSION CHECKSUM MISMATCH: WAS ${x.version_checksum}, EXPECTED ${this.version_checksum}!`);
 			// now copy data over
-			Building.buildings.forEach((b, i) => b.amount = x.buildings[i]);
+			x.buildings.forEach(pair => Building.fromString(pair[0]).amount = pair[1]);
 			CITY.resources = x.resources;
 			console.info('loaded');
 			CITY.update.all();
+		},
+		reset(){
+			storage.delete('city.js');
 		},
 		write(){
 			storage.write('city.js', this.data);
@@ -347,14 +385,14 @@ const CITY = {
 				// update cost
 				document.getElementById('COST_' + b.name).innerHTML = b.costElem.innerHTML;
 				// update visibility
-				if (!b.visible && (b.amount || b.cost.allResKnown))
+				if (!b.visible && (b.amount || b.cost.revealable))
 					b.reveal();
 			});
 		},
 		buildingVis(){
 			Building.buildings.forEach(b => {
 				// update visibility
-				if (!b.visible && (b.amount || b.cost.allResKnown))
+				if (!b.visible && (b.amount || b.cost.revealable))
 					b.reveal();
 			});
 		},
@@ -373,6 +411,7 @@ const CITY = {
 const PEOPLE = new Resource('Pop', false, () => CITY.resources2.pop, false);
 const PEOPLE_E = new Resource('Employed', false, () => CITY.resources2.employed, false);
 const PEOPLE_U = new Resource('Unemployed', false, () => CITY.resources2.unemployed, false);
+const EDU = new Resource('Education', false, () => CITY.resources2.education, false);
 const METAL = new Resource('Metal', false);
 const ORE = new Resource('Ore', false);
 const STONE = new Resource('Stone', false);
@@ -395,6 +434,12 @@ const MAKER_STONE = new Building('Mason',
 const MAKER_WOOD = new Building('Lumbermill',
 	new Cost([WOOD, PEOPLE_U], [25, 1]),
 	new Effects(0, new Cost([WOOD], [1]))
+);
+
+// https://wiki.sc4devotion.com
+const SCHOOL1 = new Building('Elementary School',
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [500, 1000, 250, 25, 15]),
+	new Effects(0, new Cost(), ['edu1'])
 );
 
 const CITY_LOADED = true;
