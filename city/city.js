@@ -183,6 +183,9 @@ class Effects extends Infobox {
 				case 'health': // clinic
 					o.push('Provides healthcare for a limited number of pops');
 					break;
+				case 'police': // clinic
+					o.push('Provides public safety for a limited number of pops');
+					break;
 				default:
 					console.warn(`INVALID TAG "${tag}"`);
 			}
@@ -335,7 +338,8 @@ const CITY = {
 	resources: {},
 	resources2: {
 		get approval(){
-			return Math.floor(mean([this.education, this.health, 100-this.unemployment]));
+			return Math.floor(mean([100 - this.crime,
+				this.education, this.health, 100-this.unemployment]));
 		},
 		get education(){
 			const P = this.pop;
@@ -346,6 +350,12 @@ const CITY = {
 			const EDU2_ = Math.min(1, 50 * EDU2 / P) / 3;
 			const EDU3_ = Math.min(1, 100 * EDU3 / P) / 3;
 			return Math.floor(100 * (EDU1_ + EDU2_ + EDU3_));
+		},
+		get crime(){
+			const P = this.pop;
+			const POL = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('police')));
+			const POL_ = Math.min(1, 50 * POL / P);
+			return Math.floor(100 * POL_);
 		},
 		get employed(){
 			return sum(Building.buildings.map(b => b.cost.res.includes(PEOPLE_U)
@@ -440,6 +450,7 @@ const PEOPLE = new Resource('Pop', false, () => CITY.resources2.pop, false);
 const PEOPLE_E = new Resource('Employed', false, () => CITY.resources2.employed, false);
 const PEOPLE_U = new Resource('Unemployed', false, () => CITY.resources2.unemployed, false);
 const APPROVAL = new Resource('Approval', false, () => CITY.resources2.approval, false);
+const CRIME = new Resource('Crime', false, () => CITY.resources2.crime, false);
 const EDU = new Resource('Education', false, () => CITY.resources2.education, false);
 const HEALTH = new Resource('Health', false, () => CITY.resources2.health, false);
 const UNEMPLOYMENT = new Resource('Unemployment', false, () => CITY.resources2.unemployment, false);
@@ -482,6 +493,10 @@ const SCHOOL3 = new Building('College',
 );
 const CLINIC = new Building('Clinic',
 	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [500, 1000, 250, 25, 1]),
+	new Effects(0, new Cost(), ['health'])
+);
+const POLICE = new Building('Police Station',
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [2000, 4000, 1000, 50, 2]),
 	new Effects(0, new Cost(), ['health'])
 );
 
