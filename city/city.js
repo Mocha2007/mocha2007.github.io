@@ -2,7 +2,7 @@
 /* global clamp, mean, random, round, storage, sum */
 
 function colorScale(c = 0.5){
-	return `hsl(${120*clamp(c, 0, 1)} 100 50)`;
+	return `hsl(${120*clamp(c, 0, 1)} 100% 50%)`;
 }
 
 class Floater {
