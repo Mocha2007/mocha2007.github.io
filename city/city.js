@@ -236,8 +236,9 @@ class Building extends Infobox {
 	}
 	tick(){
 		// production
-		// eslint-disable-next-line max-len
-		this.effects.prod_per_s.res.forEach((r, i) => r.gather(this.amount * this.effects.prod_per_s.amt[i]));
+		if (this.effects.prod_per_s.mul(-1).affordable)
+			this.effects.prod_per_s.res
+				.forEach((r, i) => r.gather(this.amount * this.effects.prod_per_s.amt[i]));
 	}
 }
 /** @type {Building[]} */
@@ -327,6 +328,7 @@ const CITY = {
 			Building.buildings.forEach((b, i) => b.amount = x.buildings[i]);
 			CITY.resources = x.resources;
 			console.info('loaded');
+			CITY.update.all();
 		},
 		write(){
 			storage.write('city.js', this.data);
@@ -368,7 +370,7 @@ const CITY = {
 
 // resources
 // const METAL = new Resource('Metal');
-const PEOPLE = new Resource('Pops', false, () => CITY.resources2.pop, false);
+const PEOPLE = new Resource('Pop', false, () => CITY.resources2.pop, false);
 const PEOPLE_E = new Resource('Employed', false, () => CITY.resources2.employed, false);
 const PEOPLE_U = new Resource('Unemployed', false, () => CITY.resources2.unemployed, false);
 const METAL = new Resource('Metal', false);
@@ -379,7 +381,7 @@ const WOOD = new Resource('Wood');
 // buildings
 const HOUSE = new Building('House', new Cost([WOOD], [10]), new Effects(1));
 const MAKER_METAL = new Building('Foundry',
-	new Cost([STONE, PEOPLE_U], [50, 5]),
+	new Cost([STONE, ORE, PEOPLE_U], [50, 1, 5]),
 	new Effects(0, new Cost([ORE, METAL], [-1, 1]))
 );
 const MAKER_ORE = new Building('Mine',
