@@ -606,7 +606,7 @@ const CLINIC = new Building('Clinic',
 );
 const POLICE = new Building('Police Station',
 	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [2000, 4000, 1000, 50, 2]),
-	new Effects(0, new Cost(), ['health'])
+	new Effects(0, new Cost(), ['police'])
 );
 const ROAD = new Building('Road',
 	new Cost([STONE], [100]),
