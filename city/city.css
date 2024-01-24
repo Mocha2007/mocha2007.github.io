@@ -37,3 +37,6 @@ html {
 	border: 2px solid silver;
 	position: absolute;
 }
+#tooltip h2 {
+	text-align: center;
+}
