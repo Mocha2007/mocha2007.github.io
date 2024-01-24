@@ -425,8 +425,8 @@ const CITY = {
 		},
 		get crime(){
 			const CRIMINALS = this.employed * 0.1 + this.unemployed * 0.9;
-			const POL = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('police')));
-			const CRIME = clamp(CRIMINALS / (10 * POL) - 1, 0, 1) || 1;
+			const POL = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('police'))) || 1e-3;
+			const CRIME = clamp(CRIMINALS / (10 * POL) - 1, 0, 1);
 			return Math.floor(100 * CRIME);
 		},
 		get employed(){
@@ -608,7 +608,7 @@ const CLINIC = new Building('Clinic',
 	new Effects(0, new Cost(), ['health'])
 );
 const POLICE = new Building('Police Station',
-	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [2000, 4000, 1000, 50, 2]),
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [2000, 4000, 1000, 35, 2]),
 	new Effects(0, new Cost(), ['police'])
 );
 const ROAD = new Building('Road',
