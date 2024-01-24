@@ -420,7 +420,7 @@ const CITY = {
 		get crime(){
 			const CRIMINALS = this.pop.employed * 0.1 + this.pop.unemployed * 0.9;
 			const POL = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('police'))) || 1e-3;
-			const CRIME = clamp(CRIMINALS / (10 * POL) - 1, 0, 1);
+			const CRIME = clamp(CRIMINALS / (15 * POL) - 1, 0, 1);
 			return Math.floor(100 * CRIME);
 		},
 		get education(){
@@ -448,7 +448,7 @@ const CITY = {
 		get health(){
 			const P = this.pop.total || 1;
 			const HEALTH = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('health')));
-			const HEALTH_ = Math.min(1, 60 * HEALTH / P);
+			const HEALTH_ = Math.min(1, 600 * HEALTH / P);
 			return Math.floor(100 * HEALTH_);
 		},
 		pop: {
@@ -640,7 +640,12 @@ const UPGRADE_DEMO = new Building('Demolitionist',
 	new Effects(0, new Cost(), ['demo'])
 );
 
-// https://wiki.sc4devotion.com
+// cf. https://wiki.sc4devotion.com
+/*
+	1 teacher : 30 students
+	1 doctor : 600 people
+	1 cop : 450 people, OR... 1 cop : 15 unemployed people
+*/
 const SCHOOL1 = new Building('Elementary School',
 	new Cost([WOOD, STONE, METAL, PEOPLE_AGE0, PEOPLE_U], [500, 1000, 250, 15, 1]),
 	new Effects(0, new Cost(), ['edu1'])
@@ -651,7 +656,7 @@ const SCHOOL2 = new Building('Middle School',
 	new Effects(0, new Cost(), ['edu2'])
 );*/
 const SCHOOL3 = new Building('High School',
-	new Cost([WOOD, STONE, METAL, PEOPLE_AGE1, PEOPLE_U], [5000, 10000, 2500, 30, 4]),
+	new Cost([WOOD, STONE, METAL, PEOPLE_AGE1, PEOPLE_U], [1000, 2000, 500, 15, 1]),
 	new Effects(0, new Cost(), ['edu3'])
 );
 const SCHOOL4 = new Building('College',
@@ -663,11 +668,11 @@ const ADMINCEN = new Building('Administrative Center',
 	new Effects(0, new Cost(), ['admin'])
 );
 const CLINIC = new Building('Clinic',
-	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [500, 1000, 250, 30, 1]),
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [500, 1000, 250, 300, 1]),
 	new Effects(0, new Cost(), ['health'])
 );
 const POLICE = new Building('Police Station',
-	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [2000, 4000, 1000, 35, 2]),
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [1000, 2000, 500, 30, 1]),
 	new Effects(0, new Cost(), ['police'])
 );
 const ROAD = new Building('Road',
