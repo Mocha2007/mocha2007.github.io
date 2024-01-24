@@ -239,7 +239,7 @@ class Building extends Infobox {
 		const elem = document.createElement('span');
 		elem.classList.add('button');
 		elem.id = 'BUILD_' + this.name;
-		elem.innerHTML = 'Build ' + this.name;
+		elem.innerHTML = 'Build';
 		elem.onclick = () => this.build();
 		return elem;
 	}
@@ -250,6 +250,7 @@ class Building extends Infobox {
 		elem.id = 'BUILDING_' + this.name;
 		elem.appendChild(this.countElem);
 		elem.appendChild(this.buildButton);
+		elem.appendChild(this.demoButton);
 		elem.appendChild(document.createElement('br'));
 		elem.appendChild(this.costElem);
 		elem.appendChild(this.effectElem);
@@ -268,6 +269,14 @@ class Building extends Infobox {
 		elem.id = 'EFFECTS_' + this.name;
 		return elem;
 	}
+	get demoButton(){
+		const elem = document.createElement('span');
+		elem.classList.add('button');
+		elem.id = 'DEMO_' + this.name;
+		elem.innerHTML = 'Demolish';
+		elem.onclick = () => this.demo();
+		return elem;
+	}
 	build(n = 1){
 		for (let i = 0; i < n; i++)
 			if (this.cost.affordable){
@@ -276,6 +285,25 @@ class Building extends Infobox {
 			}
 			else {
 				this.spawnFloater(`You can't afford another ${this.name}.`, CITY.COLOR.BAD);
+				break;
+			}
+		CITY.update.buildings();
+	}
+	demo(n = 1){
+		for (let i = 0; i < n; i++)
+			if (0 < this.amount){
+				if (CITY.resources2.unemployed < this.effects.pop){
+					// eslint-disable-next-line max-len
+					this.spawnFloater(`You have insufficient unemployed pops to demolish another ${this.name}.`, CITY.COLOR.BAD);
+					break;
+				}
+				else {
+					this.cost.modifyStock(CITY.BONUS.DEMO);
+					this.amount--;
+				}
+			}
+			else {
+				this.spawnFloater(`You have no ${this.name} to demolish.`, CITY.COLOR.BAD);
 				break;
 			}
 		CITY.update.buildings();
@@ -304,6 +332,9 @@ const CITY = {
 	BONUS: {
 		get BUILD(){
 			return Math.pow(0.95, CITY.resources2.upgrade.build);
+		},
+		get DEMO(){
+			return 0.1; // demolition efficiency
 		},
 		get PROD(){
 			return 0.1 + CITY.resources2.approval / 100;
@@ -516,7 +547,7 @@ const WOOD = new Resource('Wood');
 // buildings
 const HOUSE = new Building('House', new Cost([WOOD], [3]), new Effects(1));
 const MAKER_METAL = new Building('Foundry',
-	new Cost([STONE, ORE, PEOPLE_U], [50, 1, 5]),
+	new Cost([STONE, ORE, PEOPLE_U], [50, 1, 2]),
 	new Effects(0, new Cost([ORE, METAL], [-1, 1]))
 );
 const MAKER_ORE = new Building('Mine',
