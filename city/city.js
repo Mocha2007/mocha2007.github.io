@@ -180,6 +180,9 @@ class Effects extends Infobox {
 				case 'edu3': // coll
 					o.push('Provides education for a limited number of pops');
 					break;
+				case 'health': // clinic
+					o.push('Provides healthcare for a limited number of pops');
+					break;
 				default:
 					console.warn(`INVALID TAG "${tag}"`);
 			}
@@ -332,7 +335,7 @@ const CITY = {
 	resources: {},
 	resources2: {
 		get approval(){
-			return Math.floor(mean([this.education, 100-this.unemployment]));
+			return Math.floor(mean([this.education, this.health, 100-this.unemployment]));
 		},
 		get education(){
 			const P = this.pop;
@@ -347,6 +350,12 @@ const CITY = {
 		get employed(){
 			return sum(Building.buildings.map(b => b.cost.res.includes(PEOPLE_U)
 				? b.amount * b.cost.amt[b.cost.res.indexOf(PEOPLE_U)] : 0));
+		},
+		get health(){
+			const P = this.pop;
+			const HEALTH = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('health')));
+			const HEALTH_ = Math.min(1, 25 * HEALTH / P);
+			return Math.floor(100 * HEALTH_);
 		},
 		get pop(){
 			return HOUSE.amount;
@@ -432,6 +441,7 @@ const PEOPLE_E = new Resource('Employed', false, () => CITY.resources2.employed,
 const PEOPLE_U = new Resource('Unemployed', false, () => CITY.resources2.unemployed, false);
 const APPROVAL = new Resource('Approval', false, () => CITY.resources2.approval, false);
 const EDU = new Resource('Education', false, () => CITY.resources2.education, false);
+const HEALTH = new Resource('Health', false, () => CITY.resources2.health, false);
 const UNEMPLOYMENT = new Resource('Unemployment', false, () => CITY.resources2.unemployment, false);
 const METAL = new Resource('Metal', false);
 const ORE = new Resource('Ore', false);
@@ -459,16 +469,20 @@ const MAKER_WOOD = new Building('Lumbermill',
 
 // https://wiki.sc4devotion.com
 const SCHOOL1 = new Building('Elementary School',
-	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [500, 1000, 250, 25, 15]),
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [500, 1000, 250, 25, 1]),
 	new Effects(0, new Cost(), ['edu1'])
 );
 const SCHOOL2 = new Building('High School',
-	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [2000, 4000, 1000, 50, 30]),
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [2000, 4000, 1000, 50, 2]),
 	new Effects(0, new Cost(), ['edu2'])
 );
 const SCHOOL3 = new Building('College',
-	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [8000, 16000, 4000, 100, 60]),
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [8000, 16000, 4000, 100, 4]),
 	new Effects(0, new Cost(), ['edu3'])
+);
+const CLINIC = new Building('Clinic',
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [500, 1000, 250, 25, 1]),
+	new Effects(0, new Cost(), ['health'])
 );
 
 const CITY_LOADED = true;
