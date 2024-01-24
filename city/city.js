@@ -484,8 +484,9 @@ const CITY = {
 			return Math.floor(100 * (EDU1_ + EDU3_ + EDU4_));
 		},
 		get fire(){
+			const P = this.pop.total || 1;
 			const STATIONS = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('fire')));
-			const FF = Math.min(1, 1000 * STATIONS / this.pop.total);
+			const FF = Math.min(1, 1000 * STATIONS / P);
 			return Math.floor(100 * FF);
 		},
 		get food(){
