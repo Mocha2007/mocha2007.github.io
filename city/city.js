@@ -144,7 +144,7 @@ class Resource extends Infobox {
 		return !!this.amtGetter;
 	}
 	gather(n = 1){
-		CITY.resources[this.name] += n;
+		CITY.resources[this.name] += n * CITY.BONUS.CLICK;
 		CITY.update.resources();
 	}
 }
@@ -240,6 +240,9 @@ class Effects extends Infobox {
 				case 'arch': // architect
 					o.push('Reduces all build costs by 5%');
 					break;
+				case 'click': // doubles click power
+					o.push('Doubles click power');
+					break;
 				case 'demo': // demolitionist
 					o.push('Recover 20% more building material when demolishing buildings');
 					break;
@@ -296,12 +299,15 @@ class Building extends Infobox {
 	get amountString(){
 		return `${this.amount} ${this.name}`;
 	}
+	get base(){
+		return CITY.CONFIG.BASE;
+	}
 	get buildButton(){
 		return button('Build', () => this.build(), 'BUILD_' + this.name);
 	}
 	get buildElem(){
 		const elem = document.createElement('div');
-		elem.classList.add('building');
+		elem.classList.add(this instanceof Upgrade ? 'upgrade' : 'building');
 		elem.classList.add('hidden');
 		elem.id = 'BUILDING_' + this.name;
 		elem.appendChild(this.countElem);
@@ -313,7 +319,7 @@ class Building extends Infobox {
 		return elem;
 	}
 	get cost(){
-		return this.baseCost.mul(Math.pow(CITY.CONFIG.BASE, this.amount) * CITY.BONUS.BUILD);
+		return this.baseCost.mul(Math.pow(this.base, this.amount) * CITY.BONUS.BUILD);
 	}
 	get costElem(){
 		const elem = this.cost.elem;
@@ -382,10 +388,28 @@ class Building extends Infobox {
 /** @type {Building[]} */
 Building.buildings = [];
 
+class Upgrade extends Building {
+	/**
+	 * @param {string} name
+	 * @param {Cost} baseCost
+	 * @param {Effects} effects
+	 */
+	constructor(name, baseCost = new Cost(), effects = new Effects()){
+		super(name, baseCost, effects);
+	}
+	get base(){
+		return CITY.CONFIG.BASE_UPGRADE;
+	}
+}
+
 const CITY = {
 	BONUS: {
 		get BUILD(){ // build efficiency
 			return Math.pow(0.95, CITY.resources2.upgrade.build);
+		},
+		get CLICK(){
+			const POW = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('click')));
+			return Math.pow(CITY.CONFIG.UPGRADE_EFFECT, POW);
 		},
 		get DEMO(){ // demolition efficiency
 			return 1 - Math.pow(0.8, CITY.resources2.upgrade.demo + 1);
@@ -402,8 +426,10 @@ const CITY = {
 	},
 	CONFIG: {
 		AUTOSAVE_INTERVAL: 60 * 1000, // autosave every minute
-		BASE: 1.15,
+		BASE: 1.15, // each building is 15% more
+		BASE_UPGRADE: 10, // each upgrade is 9x more
 		FPS: 10,
+		UPGRADE_EFFECT: 2, // each upgrade doubles something
 	},
 	DEFAULT: {
 		SRC: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Ambox_blue_question.svg',
@@ -808,4 +834,9 @@ const SIGNAGE = new Building('Signage',
 
 const CITY_LOADED = true;
 
-// todo save/load w/ common.js:storage
+// real upgrades
+
+const UPGRADE_CLICK = new Upgrade('Better Axe',
+	new Cost([WOOD], [10]),
+	new Effects(0, new Cost(), ['click'])
+);
