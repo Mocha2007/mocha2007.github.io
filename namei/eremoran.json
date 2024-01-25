@@ -2153,6 +2153,15 @@
 		"categories": ["food"]
 	},
 	{
+		"title": "balusir",
+		"etym": "B/balim/lusik",
+		"cat": "n., 1st",
+		"defList": [
+			"Balusir, god of death"
+		],
+		"categories": ["god"]
+	},
+	{
 		"title": "bam",
 		"etym": "C/bau/-m",
 		"cat": "n., 5th",
@@ -11245,6 +11254,15 @@
 			"dove"
 		],
 		"categories": ["animal", "bird"]
+	},
+	{
+		"title": "libôr",
+		"etym": "B/liba/bôz",
+		"cat": "n., 1st",
+		"defList": [
+			"Libôr, goddess of birth and life"
+		],
+		"categories": ["god"]
 	},
 	{
 		"title": "liboz",
