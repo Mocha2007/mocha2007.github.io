@@ -129,7 +129,6 @@ class Infobox {
 		CITY.tooltip.setVisibility(false);
 	}
 	tooltipShow(){
-		const LOC = this.loc;
 		CITY.tooltip.move(CITY.CURSOR.X, CITY.CURSOR.Y);
 		CITY.tooltip.set(this.tooltip);
 		CITY.tooltip.setVisibility(true);
