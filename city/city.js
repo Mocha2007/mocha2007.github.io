@@ -24,7 +24,7 @@ class Name {
 	}
 	/** @param {number} x */
 	n(x){
-		return `${x} ${x === 1 ? this.s : this.pl}`;
+		return `${x}&nbsp;${x === 1 ? this.s : this.pl}`;
 	}
 }
 
@@ -95,12 +95,17 @@ class Infobox {
 		this.src = src || CITY.DEFAULT.SRC;
 		this.desc = desc;
 	}
-	get countElem(){
-		const elem = document.createElement('div');
-		elem.classList.add('count');
-		elem.id = this.countID;
+	get amountElem(){
+		const elem = document.createElement('span');
+		elem.classList.add('amount');
 		elem.onmouseover = () => this.tooltipShow();
 		elem.onmouseleave = () => this.tooltipHide();
+		return elem;
+	}
+	get countElem(){
+		const elem = this.amountElem;
+		elem.id = this.countID;
+		elem.classList.add('count');
 		return elem;
 	}
 	get countID(){
@@ -187,6 +192,12 @@ class Resource extends Infobox {
 	get isSpecial(){
 		return !!this.amtGetter;
 	}
+	/** @param {number} n */
+	costElem(n){
+		const elem = this.amountElem;
+		elem.innerHTML = this.name.n(n);
+		return elem;
+	}
 	gather(n = 1){
 		CITY.resources[this.name.s] += n;
 		CITY.update.resources();
@@ -225,7 +236,12 @@ class Cost extends Infobox {
 	get elem(){
 		const e = document.createElement('span');
 		const AMT_BUILD = this.amt_build;
-		e.innerHTML = 'Cost: ' + this.res.map((r, i) => r.name.n(Math.ceil(AMT_BUILD[i]))).join(', ');
+		e.innerHTML = 'Cost: ';
+		this.res.forEach((r, i) => {
+			if (i)
+				e.appendChild(document.createTextNode(', '));
+			e.appendChild(r.costElem(Math.round(AMT_BUILD[i])));
+		});
 		return e;
 	}
 	get revealable(){
@@ -810,9 +826,12 @@ const CITY = {
 		buildings(){
 			Building.buildings.forEach(b => {
 				// update amt
-				document.getElementById('COUNT_' + b.name.s).innerHTML = b.amountString;
+				const COUNT = document.getElementById('COUNT_' + b.name.s);
+				COUNT.innerHTML = b.amountString;
 				// update cost
-				document.getElementById('COST_' + b.name.s).innerHTML = b.costElem.innerHTML;
+				const COST = document.getElementById('COST_' + b.name.s);
+				COST.innerHTML = '';
+				COST.appendChild(b.costElem);
 			});
 			this.buildingEff();
 			this.buildingVis();
@@ -820,7 +839,9 @@ const CITY = {
 		buildingEff(){
 			Building.buildings.forEach(b => {
 				// update effects
-				document.getElementById('EFFECTS_' + b.name.s).innerHTML = b.effectElem.innerHTML;
+				const EFF = document.getElementById('EFFECTS_' + b.name.s);
+				EFF.innerHTML = '';
+				EFF.appendChild(b.effectElem);
 			});
 		},
 		buildingVis(){
