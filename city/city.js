@@ -24,7 +24,7 @@ class Name {
 	}
 	/** @param {number} x */
 	n(x){
-		return `${x}&nbsp;${x === 1 ? this.s : this.pl}`;
+		return `${x.toLocaleString()}&nbsp;${x === 1 ? this.s : this.pl}`;
 	}
 }
 
