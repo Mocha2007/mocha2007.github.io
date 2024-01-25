@@ -516,7 +516,7 @@ const CITY = {
 		AUTOSAVE_INTERVAL: 60 * 1000, // autosave every minute
 		BASE: 1.15, // each building is 15% more
 		BASE_UPGRADE: 10, // each upgrade is 9x more
-		FPS: 10,
+		FPS: 20,
 		UPGRADE_EFFECT: 2, // each upgrade doubles something
 	},
 	DEBUG: {
@@ -835,7 +835,7 @@ const CITY = {
 			Building.buildings.forEach(b => b.tick(t));
 		},
 		fpsMeter(){
-			CITY.ELEM.TICK.innerHTML = (CITY.DEBUG.FPS <= 100 ? CITY.DEBUG.FPS : '>100') + ' FPS';
+			CITY.ELEM.TICK.innerHTML = Math.min(CITY.CONFIG.FPS, CITY.DEBUG.FPS) + ' TPS';
 		},
 		/** @param {number} t time in seconds */
 		globalTick(t){
