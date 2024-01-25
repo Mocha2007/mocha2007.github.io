@@ -216,7 +216,8 @@ class Cost extends Infobox {
 		return this.amt_build.every((a, i) => a <= this.res[i].amount);
 	}
 	get affordable_build_ignoring_unemployed(){
-		return this.amt_build.every((a, i) => this.res[i] === PEOPLE_U || a <= this.res[i].amount);
+		return this.amt_build.every((a, i) => this.res[i] === CITY.NAME.UNEMPLOYED
+			|| a <= this.res[i].amount);
 	}
 	get amt_build(){
 		return this.amt.map((a, i) => this.res[i].isSpecial ? a : a * CITY.BONUS.BUILD);
@@ -518,6 +519,12 @@ const CITY = {
 		FPS: 10,
 		UPGRADE_EFFECT: 2, // each upgrade doubles something
 	},
+	DEBUG: {
+		get FPS(){
+			return Math.floor(1000 / this.TICK);
+		},
+		TICK: 0,
+	},
 	DEFAULT: {
 		SRC: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Ambox_blue_question.svg',
 	},
@@ -531,6 +538,7 @@ const CITY = {
 		},
 	},
 	init(){
+		this.loadData();
 		const MAIN = this.ELEM.MAIN;
 		// control panel
 		// todo (save, reset)
@@ -559,6 +567,10 @@ const CITY = {
 		});
 		// tooltip
 		this.tooltip.init();
+		// tick info
+		const TICK = this.ELEM.TICK = document.createElement('div');
+		TICK.id = 'tick';
+		document.body.appendChild(TICK);
 	},
 	main(){
 		this.init();
@@ -572,6 +584,10 @@ const CITY = {
 		// try to save
 		this.save.write();
 		setInterval(() => this.save.write(), this.CONFIG.AUTOSAVE_INTERVAL);
+	},
+	NAME: {
+		/** @type {Resource} */
+		UNEMPLOYED: undefined,
 	},
 	/** @param {number} t in ms */
 	offlineGain(t = 0){
@@ -659,8 +675,8 @@ const CITY = {
 				return this.total * 0.28;
 			},
 			get employed(){
-				return CITY.cached('employed', () => sum(Building.buildings.map(b => b.cost.res.includes(PEOPLE_U)
-					? b.amount * b.cost.amt[b.cost.res.indexOf(PEOPLE_U)] : 0)));
+				return CITY.cached('employed', () => sum(Building.buildings.map(b => b.cost.res.includes(CITY.NAME.UNEMPLOYED)
+					? b.amount * b.cost.amt[b.cost.res.indexOf(CITY.NAME.UNEMPLOYED)] : 0)));
 			},
 			get foodConsumption(){
 				return this.age0 * 0.5 + this.age1 * 0.75 + this.age2 + this.age3;
@@ -818,10 +834,15 @@ const CITY = {
 		buildingTick(t){
 			Building.buildings.forEach(b => b.tick(t));
 		},
+		fpsMeter(){
+			CITY.ELEM.TICK.innerHTML = CITY.DEBUG.TICK + ' FPS';
+		},
 		/** @param {number} t time in seconds */
 		globalTick(t){
 			CITY.CACHET = new Date();
 			this.buildingTick(t); // for now, just this.
+			this.fpsMeter();
+			CITY.DEBUG.TICK = new Date() - CITY.CACHET;
 		},
 		resources(){
 			Resource.resources.forEach(r => document.getElementById('COUNT_' + r.name.s).innerHTML = r.amountString);
@@ -830,8 +851,9 @@ const CITY = {
 	},
 };
 
+CITY.loadData = () => {
 // resources
-/* eslint-disable no-unused-vars */
+/* eslint-disable indent, no-unused-vars */
 
 // population statistics
 const PEOPLE = new Resource('Population', 'Total number of people in the settlement. Creates demand for most services.', false, () => CITY.resources2.pop.total, false);
@@ -841,7 +863,7 @@ const PEOPLE_AGE2 = new Resource('Population (Adult)', 'People 18-54. Most work.
 const PEOPLE_AGE3 = new Resource('Population (Elder)', 'People 55 or older. Some work, but most do not.', false, () => CITY.resources2.pop.age3, false);
 const PEOPLE_W = new Resource('Workforce', 'Number of people able and willing to work. Ensure as many of them are employed as possible, otherwise crime and other unpleasant effects will become rampant.', false, () => CITY.resources2.pop.workforce, false);
 const PEOPLE_E = new Resource('Employed', 'Employed people in the workforce.', false, () => CITY.resources2.pop.employed, false);
-const PEOPLE_U = new Resource('Unemployed', 'Unemployed people in the workforce. Folks out of work tend to turn to crime to make ends meet, and their presence irritates other settlers, futher reducing productivity.', false, () => CITY.resources2.pop.unemployed, false);
+const PEOPLE_U = CITY.NAME.UNEMPLOYED = new Resource('Unemployed', 'Unemployed people in the workforce. Folks out of work tend to turn to crime to make ends meet, and their presence irritates other settlers, futher reducing productivity.', false, () => CITY.resources2.pop.unemployed, false);
 
 // concrete
 const FOOD = new Resource('Food Production', 'Food is produced on farms, and cannot be stored. If it is not consumed; it immediately rots. You must have a net inflow of food to increase population. Children and teens consume less food than adults and elders.', false, () => CITY.resources2.food, false);
@@ -946,8 +968,6 @@ const SIGNAGE = new Building('Signage',
 	new Effects(0, new Cost(), ['traffic'])
 );
 
-const CITY_LOADED = true;
-
 // real upgrades
 
 const UPGRADE_CLICK = new Upgrade('Better Axe',
@@ -974,3 +994,6 @@ const UPGRADE_OFFLINE_GAIN = new Upgrade('Better Offline Gain',
 	new Cost([WOOD, STONE, METAL], [10000, 5000, 2500]),
 	new Effects(0, new Cost(), ['offline'])
 );
+};
+
+const CITY_LOADED = true;

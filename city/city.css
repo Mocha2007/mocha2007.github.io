@@ -2,7 +2,7 @@ html {
 	overflow-x: hidden;
 	user-select: none;
 }
-.building, .ctrl, .resource, .specialResource, .upgrade, #tooltip {
+.building, .ctrl, .resource, .specialResource, .upgrade, #tick, #tooltip {
 	border-radius: 10px;
 	display: inline-block;
 	margin: 2px;
@@ -40,6 +40,11 @@ html {
 .upgrade {
 	background-color: rgba(128, 0, 255, 0.25);
 	border: 2px solid #80f;
+}
+#tick {
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 #tooltip {
 	background-color: #444;
