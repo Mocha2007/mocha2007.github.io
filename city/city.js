@@ -270,6 +270,12 @@ class Effects extends Infobox {
 				case 'trans': // roads
 					o.push('Provides transportation for a limited number of buildings');
 					break;
+				case 'wfp1': // workforce participation
+					o.push('Increases workforce participation of teens by 10%');
+					break;
+				case 'wfp3': // workforce participation
+					o.push('Increases workforce participation of elders by 10%');
+					break;
 				default:
 					console.warn(`INVALID TAG "${tag}"`);
 			}
@@ -416,6 +422,14 @@ const CITY = {
 		},
 		get PROD(){ // production efficiency
 			return 0.1 + CITY.resources2.approval / 100;
+		},
+		WORKFORCE_PARTICIPATION: {
+			get AGE1(){ // starts out at 40%, slowly increases to 100%
+				return 1 - 0.6 * Math.pow(0.9, CITY.resources2.upgrade.wfp1);
+			},
+			get AGE3(){ // starts out at 40%, slowly increases to 100%
+				return 1 - 0.6 * Math.pow(0.9, CITY.resources2.upgrade.wfp3);
+			},
 		},
 	},
 	COLOR: {
@@ -577,7 +591,9 @@ const CITY = {
 				return this.workforce - this.employed;
 			},
 			get workforce(){ // https://en.wikipedia.org/wiki/File:Work_Force_Participation_Rate_by_Age_Group.webp
-				return 0.4 * this.age1 + 0.8 * this.age2 + 0.4 * this.age3;
+				return CITY.BONUS.WORKFORCE_PARTICIPATION.AGE1 * this.age1
+					+ 0.8 * this.age2
+					+ CITY.BONUS.WORKFORCE_PARTICIPATION.AGE3 * this.age3;
 			},
 		},
 		get trans(){
@@ -605,6 +621,12 @@ const CITY = {
 			},
 			get demo(){
 				return sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('demo')));
+			},
+			get wfp1(){
+				return sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('wfp1')));
+			},
+			get wfp3(){
+				return sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('wfp3')));
 			},
 		},
 	},
@@ -839,4 +861,14 @@ const CITY_LOADED = true;
 const UPGRADE_CLICK = new Upgrade('Better Axe',
 	new Cost([WOOD], [10]),
 	new Effects(0, new Cost(), ['click'])
+);
+
+const UPGRADE_WFP1 = new Upgrade('Increased Teen Workforce Participation',
+	new Cost([WOOD, STONE, METAL], [1000, 500, 250]),
+	new Effects(0, new Cost(), ['wfp1'])
+);
+
+const UPGRADE_WFP3 = new Upgrade('Increased Elder Workforce Participation',
+	new Cost([WOOD, STONE, METAL], [1000, 500, 250]),
+	new Effects(0, new Cost(), ['wfp3'])
 );
