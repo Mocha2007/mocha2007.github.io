@@ -216,7 +216,7 @@ class Effects extends Infobox {
 		e.appendChild(ul);
 		const list = [];
 		if (this.pop)
-			list.push(`Provides housing for ${this.pop} pops.`);
+			list.push(`Provides housing for ${this.pop * CITY.BONUS.HOUSE_SIZE} pops.`);
 		if (this.tags)
 			list.push(...this.tagEffects);
 		if (this.prod_per_s.res.length){
@@ -260,6 +260,9 @@ class Effects extends Infobox {
 					break;
 				case 'health': // clinic
 					o.push('Provides healthcare for a limited number of pops');
+					break;
+				case 'house_size':
+					o.push(`Houses can now hold ${CITY.BONUS.HOUSE_SIZE+1} people`);
 					break;
 				case 'police': // cops
 					o.push('Provides public safety for a limited number of pops');
@@ -344,7 +347,7 @@ class Building extends Infobox {
 		for (let i = 0; i < n; i++)
 			if (this.cost.affordable_build
 					|| this.effects.pop && this.cost.affordable_build_ignoring_unemployed){
-				if (CITY.resources2.food < this.effects.pop && !this.effects.tags.includes('farm')){
+				if (CITY.resources2.food < this.effects.pop * CITY.BONUS.HOUSE_SIZE && !this.effects.tags.includes('farm')){
 					// eslint-disable-next-line max-len
 					this.spawnFloater(`You have insufficient food production to build another ${this.name}.`, CITY.COLOR.BAD);
 					break;
@@ -361,7 +364,7 @@ class Building extends Infobox {
 	demo(n = 1){
 		for (let i = 0; i < n; i++)
 			if (0 < this.amount){
-				if (CITY.resources2.unemployed < this.effects.pop){
+				if (CITY.resources2.unemployed < this.effects.pop * CITY.BONUS.HOUSE_SIZE){
 					// eslint-disable-next-line max-len
 					this.spawnFloater(`You have insufficient unemployed pops to demolish another ${this.name}.`, CITY.COLOR.BAD);
 					break;
@@ -419,6 +422,9 @@ const CITY = {
 		},
 		get DEMO(){ // demolition efficiency
 			return 1 - Math.pow(0.8, CITY.resources2.upgrade.demo + 1);
+		},
+		get HOUSE_SIZE(){ // people per house
+			return 2 + sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('house_size')));
 		},
 		get PROD(){ // production efficiency
 			return 0.1 + CITY.resources2.approval / 100;
@@ -585,7 +591,8 @@ const CITY = {
 				return this.age0 * 0.5 + this.age1 * 0.75 + this.age2 + this.age3;
 			},
 			get total(){
-				return sum(Building.buildings.map(b => b.amount * b.effects.pop));
+				// eslint-disable-next-line max-len
+				return sum(Building.buildings.map(b => b.amount * b.effects.pop * CITY.BONUS.HOUSE_SIZE));
 			},
 			get unemployed(){
 				return this.workforce - this.employed;
@@ -773,10 +780,10 @@ const STONE = new Resource('Stone', CITY.DESC.CONS, false);
 const WOOD = new Resource('Wood', CITY.DESC.CONS);
 
 // buildings
-const HOUSE = new Building('House', new Cost([WOOD], [3]), new Effects(2));
+const HOUSE = new Building('House', new Cost([WOOD], [3]), new Effects(1));
 const FARM = new Building('Farm',
 	new Cost([WOOD, PEOPLE_U], [25, 1]),
-	new Effects(2, new Cost(), ['farm'])
+	new Effects(1, new Cost(), ['farm'])
 );
 const MAKER_METAL = new Building('Foundry',
 	new Cost([STONE, ORE, PEOPLE_U], [50, 1, 1]),
@@ -871,4 +878,9 @@ const UPGRADE_WFP1 = new Upgrade('Increased Teen Workforce Participation',
 const UPGRADE_WFP3 = new Upgrade('Increased Elder Workforce Participation',
 	new Cost([WOOD, STONE, METAL], [1000, 500, 250]),
 	new Effects(0, new Cost(), ['wfp3'])
+);
+
+const UPGRADE_HOUSE_SIZE = new Upgrade('Bigger Houses',
+	new Cost([WOOD, STONE], [2000, 1000]),
+	new Effects(0, new Cost(), ['house_size'])
 );
