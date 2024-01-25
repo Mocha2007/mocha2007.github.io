@@ -281,10 +281,8 @@ class Effects extends Infobox {
 			list.push(`Provides housing for ${this.pop * CITY.BONUS.HOUSE_SIZE} pops.`);
 		if (this.tags)
 			list.push(...this.tagEffects);
-		if (this.prod_per_s.res.length){
-			const AMT_PROD = this.amt_prod;
-			list.push('Produces: ' + this.prod_per_s.res.map((r, i) => `${r.name.n(round(AMT_PROD[i], 2))}/s`).join(', '));
-		}
+		if (this.prod_per_s.res.length)
+			list.push(this.produces().innerHTML);
 		list.forEach(x => {
 			const li = document.createElement('li');
 			li.innerHTML = x;
@@ -352,6 +350,14 @@ class Effects extends Infobox {
 		});
 		return o;
 	}
+	produces(n = 1){
+		const elem = document.createElement('span');
+		elem.innerHTML = 'Produces: '
+			+ this.prod_per_s.res
+				.map((r, i) => `${r.name.n(round(n*this.prod_per_s.amt[i]*CITY.BONUS.PROD, 2))}/s`)
+				.join(', ');
+		return elem;
+	}
 }
 
 class Building extends Infobox {
@@ -394,6 +400,7 @@ class Building extends Infobox {
 		elem.appendChild(document.createElement('br'));
 		elem.appendChild(this.costElem);
 		elem.appendChild(this.effectElem);
+		elem.appendChild(this.totalProdElem);
 		return elem;
 	}
 	get cost(){
@@ -411,6 +418,15 @@ class Building extends Infobox {
 	}
 	get demoButton(){
 		return button('Demolish', () => this.demo(), 'DEMO_' + this.name.s);
+	}
+	get totalProdElem(){
+		const elem = this.effects.produces(this.amount);
+		elem.classList.add('totalProd');
+		elem.id = 'TOTAL_PROD_' + this.name.s;
+		elem.innerHTML = elem.innerHTML.replace('Produces', 'Total Production');
+		if (!this.effects.amt_prod.length)
+			elem.innerHTML = '';
+		return elem;
 	}
 	build(n = 1){
 		for (let i = 0; i < n; i++)
@@ -497,7 +513,7 @@ const CITY = {
 			return 2 + CITY.cachedBuildingTagValue('house_size');
 		},
 		get OFFLINE(){ // offline gain
-			return 1 + CITY.cachedBuildingTagValue('offline')/100;
+			return CITY.cachedBuildingTagValue('offline')/100;
 		},
 		get PROD(){ // production efficiency
 			return 0.1 + CITY.resources2.approval / 100;
@@ -833,6 +849,9 @@ const CITY = {
 				const COST = document.getElementById('COST_' + b.name.s);
 				COST.innerHTML = '';
 				COST.appendChild(b.costElem);
+				// update total prod
+				const TP = document.getElementById('TOTAL_PROD_' + b.name.s);
+				TP.innerHTML = b.totalProdElem.innerHTML;
 			});
 			this.buildingEff();
 			this.buildingVis();

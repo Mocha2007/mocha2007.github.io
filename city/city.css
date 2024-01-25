@@ -26,7 +26,7 @@ html {
 	border: 2px solid red;
 	color: red;
 }
-.effects, .resource, .specialResource, #tooltip {
+.effects, .resource, .specialResource, .totalProd, #tooltip {
 	font-size: 75%;
 }
 .hidden {
