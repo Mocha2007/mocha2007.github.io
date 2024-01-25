@@ -1,5 +1,5 @@
 /* exported CITY, CITY_LOADED */
-/* global clamp, mean, random, round, storage, sum */
+/* global clamp, isString, mean, random, round, storage, sum */
 
 function button(says, does, id = '', classes = []){
 	const elem = document.createElement('span');
@@ -17,15 +17,41 @@ function colorScale(c = 0.5){
 	return `hsl(${120*clamp(c, 0, 1)} 100% 50%)`;
 }
 
+class Name {
+	constructor(singular, plural = ''){
+		this.s = singular;
+		this.pl = plural || singular;
+	}
+	/** @param {number} x */
+	n(x){
+		return `${x} ${x === 1 ? this.s : this.pl}`;
+	}
+}
+
 class Floater {
+	/**
+	 * @param {string} text
+	 * @param {number} x
+	 * @param {number} y
+	 * @param {string} color
+	 * @param {number} t
+	 */
 	constructor(text, x = 0, y = 0, color = 'White', t = 1000){
+		/** @type {string} */
 		this.text = text;
+		/** @type {number} */
 		this.x = x;
+		/** @type {number} */
 		this.y = y;
+		/** @type {string} */
 		this.color = color;
+		/** @type {number} */
 		this.t = t;
+		/** @type {number} */
 		this.vx = random.uniform(-1, 1);
+		/** @type {number} */
 		this.vy = random.uniform(-1, 1);
+		/** @type {string} */
 		this.id = 'FLOATER_' + Floater.i++;
 	}
 	/** @returns {HTMLDivElement} */
@@ -59,6 +85,11 @@ Floater.i = 0;
 Floater.time = 50; // ms
 
 class Infobox {
+	/**
+	 * @param {Name} name
+	 * @param {string} src
+	 * @param {string} desc
+	 */
 	constructor(name, src = '', desc = ''){
 		this.name = name;
 		this.src = src || CITY.DEFAULT.SRC;
@@ -67,18 +98,21 @@ class Infobox {
 	get countElem(){
 		const elem = document.createElement('div');
 		elem.classList.add('count');
-		elem.id = 'COUNT_' + this.name;
+		elem.id = this.countID;
 		elem.onmouseover = () => this.tooltipShow();
 		elem.onmouseleave = () => this.tooltipHide();
 		return elem;
 	}
+	get countID(){
+		return 'COUNT_' + this.name.s;
+	}
 	get loc(){
-		const rect = document.getElementById('COUNT_' + this.name).getBoundingClientRect();
+		const rect = document.getElementById(this.countID).getBoundingClientRect();
 		return {x: rect.left + window.scrollX, y: rect.top + window.scrollY};
 	}
 	get tooltip(){
 		const elem = document.createElement('div');
-		elem.innerHTML = `<h2>${this.name}</h2><p>${this.desc}</p>`;
+		elem.innerHTML = `<h2>${this.name.s}</h2><p>${this.desc}</p>`;
 		return elem;
 	}
 	spawnFloater(text, color = 'White'){
@@ -97,8 +131,18 @@ class Infobox {
 }
 
 class Resource extends Infobox {
-	// eslint-disable-next-line max-len
-	constructor(name, desc, gatherable = true, amtGetter = undefined, scales = true, positivity = 0){
+	/**
+	 * @param {Name|string} name (if the plural and singular are the same, you can use a string as a shorthand)
+	 * @param {string} desc
+	 * @param {boolean} gatherable whether there is a gather button
+	 * @param {() => number} amtGetter function returning the displayed value
+	 * @param {boolean} scales whether, in costs of buildings, upgrades, etc., the amount increases with each purchase
+	 * @param {0|1|-1} positivity whether a statistic is good (1), bad (-1), or neutral (0). Theoretically, other values are possible, but they might break shit.
+	 */
+	constructor(name, desc, gatherable = true, amtGetter = undefined,
+		scales = true, positivity = 0){
+		if (isString(name))
+			name = new Name(name);
 		super(name, '', desc);
 		/** @type {boolean} */
 		this.gatherable = gatherable;
@@ -112,13 +156,13 @@ class Resource extends Infobox {
 		Resource.resources.push(this);
 	}
 	get amount(){
-		return this.amtGetter ? this.amtGetter() : CITY.resources[this.name];
+		return this.amtGetter ? this.amtGetter() : CITY.resources[this.name.s];
 	}
 	set amount(x){
-		CITY.resources[this.name] = x;
+		CITY.resources[this.name.s] = x;
 	}
 	get amountString(){
-		return `<span style="color:${this.color}">${Math.floor(this.amount)}</span> ${this.name}`;
+		return `<span style="color:${this.color}">${Math.floor(this.amount)}</span> ${this.name.s}`;
 	}
 	get color(){
 		if (this.positivity){
@@ -129,12 +173,12 @@ class Resource extends Infobox {
 		return 'inherit';
 	}
 	get gatherButton(){
-		return button('Gather ' + this.name, () => this.gather(CITY.BONUS.CLICK), 'GATHER_' + this.name);
+		return button('Gather ' + this.name.s, () => this.gather(CITY.BONUS.CLICK), 'GATHER_' + this.name.s);
 	}
 	get gatherElem(){
 		const elem = document.createElement('div');
 		elem.classList.add(this.isSpecial ? 'specialResource' : 'resource');
-		elem.id = 'RES_' + this.name;
+		elem.id = 'RES_' + this.name.s;
 		elem.appendChild(this.countElem);
 		if (this.gatherable)
 			elem.appendChild(this.gatherButton);
@@ -144,7 +188,7 @@ class Resource extends Infobox {
 		return !!this.amtGetter;
 	}
 	gather(n = 1){
-		CITY.resources[this.name] += n;
+		CITY.resources[this.name.s] += n;
 		CITY.update.resources();
 	}
 }
@@ -180,7 +224,7 @@ class Cost extends Infobox {
 	get elem(){
 		const e = document.createElement('span');
 		const AMT_BUILD = this.amt_build;
-		e.innerHTML = 'Cost: ' + this.res.map((r, i) => `${Math.ceil(AMT_BUILD[i])} ${r.name}`).join(', ');
+		e.innerHTML = 'Cost: ' + this.res.map((r, i) => r.name.n(Math.ceil(AMT_BUILD[i]))).join(', ');
 		return e;
 	}
 	get revealable(){
@@ -221,7 +265,7 @@ class Effects extends Infobox {
 			list.push(...this.tagEffects);
 		if (this.prod_per_s.res.length){
 			const AMT_PROD = this.amt_prod;
-			list.push('Produces: ' + this.prod_per_s.res.map((r, i) => `${round(AMT_PROD[i], 2)} ${r.name}/s`).join(', '));
+			list.push('Produces: ' + this.prod_per_s.res.map((r, i) => `${r.name.n(round(AMT_PROD[i], 2))}/s`).join(', '));
 		}
 		list.forEach(x => {
 			const li = document.createElement('li');
@@ -294,11 +338,13 @@ class Effects extends Infobox {
 
 class Building extends Infobox {
 	/**
-	 * @param {string} name
+	 * @param {Name|string} name (if the plural and singular are the same, you can use a string as a shorthand)
 	 * @param {Cost} baseCost
 	 * @param {Effects} effects
 	 */
 	constructor(name, baseCost = new Cost(), effects = new Effects()){
+		if (isString(name))
+			name = new Name(name);
 		super(name);
 		/** @type {number} */
 		this.amount = 0;
@@ -311,19 +357,19 @@ class Building extends Infobox {
 		Building.buildings.push(this);
 	}
 	get amountString(){
-		return `${this.amount} ${this.name}`;
+		return this.name.n(this.amount);
 	}
 	get base(){
 		return CITY.CONFIG.BASE;
 	}
 	get buildButton(){
-		return button('Build', () => this.build(), 'BUILD_' + this.name);
+		return button('Build', () => this.build(), 'BUILD_' + this.name.s);
 	}
 	get buildElem(){
 		const elem = document.createElement('div');
 		elem.classList.add(this instanceof Upgrade ? 'upgrade' : 'building');
 		elem.classList.add('hidden');
-		elem.id = 'BUILDING_' + this.name;
+		elem.id = 'BUILDING_' + this.name.s;
 		elem.appendChild(this.countElem);
 		elem.appendChild(this.buildButton);
 		elem.appendChild(this.demoButton);
@@ -337,16 +383,16 @@ class Building extends Infobox {
 	}
 	get costElem(){
 		const elem = this.cost.elem;
-		elem.id = 'COST_' + this.name;
+		elem.id = 'COST_' + this.name.s;
 		return elem;
 	}
 	get effectElem(){
 		const elem = this.effects.elem;
-		elem.id = 'EFFECTS_' + this.name;
+		elem.id = 'EFFECTS_' + this.name.s;
 		return elem;
 	}
 	get demoButton(){
-		return button('Demolish', () => this.demo(), 'DEMO_' + this.name);
+		return button('Demolish', () => this.demo(), 'DEMO_' + this.name.s);
 	}
 	build(n = 1){
 		for (let i = 0; i < n; i++)
@@ -354,14 +400,14 @@ class Building extends Infobox {
 					|| this.effects.pop && this.cost.affordable_build_ignoring_unemployed){
 				if (CITY.resources2.food < this.effects.pop * CITY.BONUS.HOUSE_SIZE && !this.effects.tags.includes('farm')){
 					// eslint-disable-next-line max-len
-					this.spawnFloater(`You have insufficient food production to build another ${this.name}.`, CITY.COLOR.BAD);
+					this.spawnFloater(`You have insufficient food production to build another ${this.name.s}.`, CITY.COLOR.BAD);
 					break;
 				}
 				this.cost.modifyStock(-CITY.BONUS.BUILD);
 				this.amount++;
 			}
 			else {
-				this.spawnFloater(`You can't afford another ${this.name}.`, CITY.COLOR.BAD);
+				this.spawnFloater(`You can't afford another ${this.name.s}.`, CITY.COLOR.BAD);
 				break;
 			}
 		CITY.update.buildings();
@@ -371,20 +417,20 @@ class Building extends Infobox {
 			if (0 < this.amount){
 				if (CITY.resources2.unemployed < this.effects.pop * CITY.BONUS.HOUSE_SIZE){
 					// eslint-disable-next-line max-len
-					this.spawnFloater(`You have insufficient unemployed pops to demolish another ${this.name}.`, CITY.COLOR.BAD);
+					this.spawnFloater(`You have insufficient unemployed pops to demolish another ${this.name.s}.`, CITY.COLOR.BAD);
 					break;
 				}
 				this.cost.modifyStock(CITY.BONUS.DEMO);
 				this.amount--;
 			}
 			else {
-				this.spawnFloater(`You have no ${this.name} to demolish.`, CITY.COLOR.BAD);
+				this.spawnFloater(`You have no ${this.name.s} to demolish.`, CITY.COLOR.BAD);
 				break;
 			}
 		CITY.update.buildings();
 	}
 	reveal(){
-		document.getElementById('BUILDING_' + this.name).classList.remove('hidden');
+		document.getElementById('BUILDING_' + this.name.s).classList.remove('hidden');
 		this.visible = true;
 	}
 	/** @param {number} t in seconds */
@@ -397,7 +443,7 @@ class Building extends Infobox {
 	}
 	/** @param {string} s */
 	static fromString(s){
-		return this.buildings.find(b => b.name === s);
+		return this.buildings.find(b => b.name.s === s);
 	}
 }
 /** @type {Building[]} */
@@ -405,7 +451,7 @@ Building.buildings = [];
 
 class Upgrade extends Building {
 	/**
-	 * @param {string} name
+	 * @param {Name|string} name (if the plural and singular are the same, you can use a string as a shorthand)
 	 * @param {Cost} baseCost
 	 * @param {Effects} effects
 	 */
@@ -423,17 +469,17 @@ const CITY = {
 			return Math.pow(0.95, CITY.resources2.upgrade.build);
 		},
 		get CLICK(){
-			const POW = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('click')));
+			const POW = CITY.cachedBuildingTagValue('click');
 			return Math.pow(CITY.CONFIG.UPGRADE_EFFECT, POW);
 		},
 		get DEMO(){ // demolition efficiency
 			return 1 - Math.pow(0.8, CITY.resources2.upgrade.demo + 1);
 		},
 		get HOUSE_SIZE(){ // people per house
-			return 2 + sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('house_size')));
+			return 2 + CITY.cachedBuildingTagValue('house_size');
 		},
 		get OFFLINE(){ // offline gain
-			return (1 + sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('offline'))))/100;
+			return 1 + CITY.cachedBuildingTagValue('offline')/100;
 		},
 		get PROD(){ // production efficiency
 			return 0.1 + CITY.resources2.approval / 100;
@@ -447,6 +493,18 @@ const CITY = {
 			},
 		},
 	},
+	CACHE: {},
+	/** searches the cache for the key - if it doesn't exist, uses value provided by the getter */
+	cached(key, getter){
+		if (!(this.CACHE[key] && this.CACHE[key][0] === CITY.CACHET))
+			this.CACHE[key] = [CITY.CACHET, getter()];
+		return this.CACHE[key][1];
+	},
+	cachedBuildingTagValue(tag){
+		// eslint-disable-next-line max-len
+		return CITY.cached(`cbtv_${tag}`, () => sum(Building.buildings.map(b => b.amount * b.effects.tags.includes(tag))));
+	},
+	CACHET: new Date(),
 	COLOR: {
 		BAD: 'red',
 		DEFAULT: 'silver',
@@ -505,7 +563,7 @@ const CITY = {
 	main(){
 		this.init();
 		this.update.all();
-		setInterval(() => this.update.buildingTick(1/CITY.CONFIG.FPS), 1000 / this.CONFIG.FPS);
+		setInterval(() => this.update.globalTick(1/CITY.CONFIG.FPS), 1000 / this.CONFIG.FPS);
 		console.info('city.js loaded.');
 		console.info(`${Resource.resources.length} resource types.`);
 		console.info(`${Building.buildings.length} building types.`);
@@ -519,7 +577,7 @@ const CITY = {
 	offlineGain(t = 0){
 		// t in ms, T in s
 		const TIME = t/1000 * this.BONUS.OFFLINE;
-		this.update.buildingTick(TIME);
+		this.update.globalTick(TIME);
 		// eslint-disable-next-line max-len
 		alert(`${Math.floor(TIME)} seconds of offline time (${Math.round(100*this.BONUS.OFFLINE)}% Efficiency)`);
 	},
@@ -532,19 +590,19 @@ const CITY = {
 		},
 		get admin(){
 			const P = this.pop.total || 1;
-			const ADMIN = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('admin')));
+			const ADMIN = CITY.cachedBuildingTagValue('admin');
 			const ADMIN_ = Math.min(1, 100 * ADMIN / P);
 			return Math.floor(100 * ADMIN_);
 		},
 		get buildings(){
-			return sum(Building.buildings.map(b => b.amount));
+			return CITY.cached('buildings', () => sum(Building.buildings.map(b => b.amount)));
 		},
 		get crime(){
 			const POP_RAMPUP = clamp(this.pop.total, 0, 30) / 30; // crime reduced if pop < 30
 			const EDUCATION_BONUS = this.education / 1000; // [0, 0.1]
 			const CRIMINALS = this.pop.employed * (0.1 - EDUCATION_BONUS)
 				+ this.pop.unemployed * (1 - EDUCATION_BONUS);
-			const POL = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('police'))) || 1e-3;
+			const POL = CITY.cachedBuildingTagValue('police') || 1e-3;
 			const CRIME = clamp(CRIMINALS / (15 * POL) - 1, 0, 1);
 			return Math.floor(100 * CRIME * POP_RAMPUP);
 		},
@@ -552,10 +610,10 @@ const CITY = {
 			const P0 = this.pop.age0 || 1;
 			const P1 = this.pop.age1 || 1;
 			const P2 = this.pop.age2 || 1;
-			const EDU1 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu1')));
-			// const EDU2 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu2')));
-			const EDU3 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu3')));
-			const EDU4 = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('edu4')));
+			const EDU1 = CITY.cachedBuildingTagValue('edu1');
+			// const EDU2 = CITY.cachedBuildingTagValue('edu2');
+			const EDU3 = CITY.cachedBuildingTagValue('edu3');
+			const EDU4 = CITY.cachedBuildingTagValue('edu4');
 			const EDU1_ = Math.min(1, 30 * EDU1 / P0) / 3;
 			// const EDU2_ = Math.min(1, 30 * EDU2 / P0) / 4;
 			const EDU3_ = Math.min(1, 30 * EDU3 / P1) / 3;
@@ -564,13 +622,13 @@ const CITY = {
 		},
 		get fire(){
 			const P = this.pop.total || 1;
-			const STATIONS = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('fire')));
+			const STATIONS = CITY.cachedBuildingTagValue('fire');
 			const FF = Math.min(1, 1000 * STATIONS / P);
 			return Math.floor(100 * FF);
 		},
 		get food(){
 			const BASE = 5;
-			const FARMERS = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('farm')));
+			const FARMERS = CITY.cachedBuildingTagValue('farm');
 			const PRODUCTION = BASE + 7 * FARMERS;
 			const CONSUMPTION = this.pop.foodConsumption;
 			return PRODUCTION - CONSUMPTION;
@@ -583,7 +641,7 @@ const CITY = {
 		},
 		get health(){
 			const P = this.pop.total || 1;
-			const HEALTH = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('health')));
+			const HEALTH = CITY.cachedBuildingTagValue('health');
 			const HEALTH_ = Math.min(1, 600 * HEALTH / P);
 			return Math.floor(100 * HEALTH_);
 		},
@@ -601,15 +659,16 @@ const CITY = {
 				return this.total * 0.28;
 			},
 			get employed(){
-				return sum(Building.buildings.map(b => b.cost.res.includes(PEOPLE_U)
-					? b.amount * b.cost.amt[b.cost.res.indexOf(PEOPLE_U)] : 0));
+				return CITY.cached('employed', () => sum(Building.buildings.map(b => b.cost.res.includes(PEOPLE_U)
+					? b.amount * b.cost.amt[b.cost.res.indexOf(PEOPLE_U)] : 0)));
 			},
 			get foodConsumption(){
 				return this.age0 * 0.5 + this.age1 * 0.75 + this.age2 + this.age3;
 			},
 			get total(){
-				// eslint-disable-next-line max-len
-				return sum(Building.buildings.map(b => b.amount * b.effects.pop * CITY.BONUS.HOUSE_SIZE));
+				return CITY.cached('poptotal',
+					() => sum(Building.buildings
+						.map(b => b.amount * b.effects.pop * CITY.BONUS.HOUSE_SIZE)));
 			},
 			get unemployed(){
 				return this.workforce - this.employed;
@@ -621,7 +680,7 @@ const CITY = {
 			},
 		},
 		get trans(){
-			const TRANS = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('trans')));
+			const TRANS = CITY.cachedBuildingTagValue('trans');
 			const B = this.buildings - TRANS || 1;
 			const TRANS_ = Math.min(1, 10 * TRANS / B);
 			return Math.floor(100 * TRANS_);
@@ -629,7 +688,7 @@ const CITY = {
 		get traffic(){
 			const POP_RAMPUP = clamp(this.pop.total, 0, 10) / 10; // traffic reduced if pop < 10
 			const TRAFFIC_PROD = this.buildings / 25;
-			const TRAFFIC_REDU = sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('traffic'))) || 0.5;
+			const TRAFFIC_REDU = CITY.cachedBuildingTagValue('traffic') || 0.5;
 			const TRAFFIC = clamp(TRAFFIC_PROD/TRAFFIC_REDU - 1, 0, 1);
 			const TRANS = this.trans;
 			const TRAF_ = Math.min(1, TRAFFIC);
@@ -641,23 +700,23 @@ const CITY = {
 		// upgrades
 		upgrade: {
 			get build(){
-				return sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('arch')));
+				return CITY.cachedBuildingTagValue('arch');
 			},
 			get demo(){
-				return sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('demo')));
+				return CITY.cachedBuildingTagValue('demo');
 			},
 			get wfp1(){
-				return sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('wfp1')));
+				return CITY.cachedBuildingTagValue('wfp1');
 			},
 			get wfp3(){
-				return sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('wfp3')));
+				return CITY.cachedBuildingTagValue('wfp3');
 			},
 		},
 	},
 	save: {
 		get data(){
 			return {
-				buildings: Building.buildings.map(b => [b.name, b.amount]),
+				buildings: Building.buildings.map(b => [b.name.s, b.amount]),
 				resources: CITY.resources,
 				time: +new Date(),
 				version_checksum: this.version_checksum,
@@ -735,9 +794,9 @@ const CITY = {
 		buildings(){
 			Building.buildings.forEach(b => {
 				// update amt
-				document.getElementById('COUNT_' + b.name).innerHTML = b.amountString;
+				document.getElementById('COUNT_' + b.name.s).innerHTML = b.amountString;
 				// update cost
-				document.getElementById('COST_' + b.name).innerHTML = b.costElem.innerHTML;
+				document.getElementById('COST_' + b.name.s).innerHTML = b.costElem.innerHTML;
 			});
 			this.buildingEff();
 			this.buildingVis();
@@ -745,7 +804,7 @@ const CITY = {
 		buildingEff(){
 			Building.buildings.forEach(b => {
 				// update effects
-				document.getElementById('EFFECTS_' + b.name).innerHTML = b.effectElem.innerHTML;
+				document.getElementById('EFFECTS_' + b.name.s).innerHTML = b.effectElem.innerHTML;
 			});
 		},
 		buildingVis(){
@@ -759,8 +818,13 @@ const CITY = {
 		buildingTick(t){
 			Building.buildings.forEach(b => b.tick(t));
 		},
+		/** @param {number} t time in seconds */
+		globalTick(t){
+			CITY.CACHET = new Date();
+			this.buildingTick(t); // for now, just this.
+		},
 		resources(){
-			Resource.resources.forEach(r => document.getElementById('COUNT_' + r.name).innerHTML = r.amountString);
+			Resource.resources.forEach(r => document.getElementById('COUNT_' + r.name.s).innerHTML = r.amountString);
 			this.buildingVis();
 		},
 	},
@@ -801,34 +865,34 @@ const STONE = new Resource('Stone', CITY.DESC.CONS, false);
 const WOOD = new Resource('Wood', CITY.DESC.CONS);
 
 // buildings
-const HOUSE = new Building('House', new Cost([WOOD], [3]), new Effects(1));
-const FARM = new Building('Farm',
+const HOUSE = new Building(new Name('House', 'Houses'), new Cost([WOOD], [3]), new Effects(1));
+const FARM = new Building(new Name('Farm', 'Farms'),
 	new Cost([WOOD, PEOPLE_U], [25, 1]),
 	new Effects(1, new Cost(), ['farm'])
 );
-const MAKER_METAL = new Building('Foundry',
+const MAKER_METAL = new Building(new Name('Foundry', 'Foundries'),
 	new Cost([STONE, ORE, PEOPLE_U], [50, 1, 1]),
 	new Effects(0, new Cost([ORE, METAL], [-1, 1]))
 );
-const MAKER_ORE = new Building('Mine',
+const MAKER_ORE = new Building(new Name('Mine', 'Mines'),
 	new Cost([STONE, PEOPLE_U], [25, 1]),
 	new Effects(0, new Cost([ORE], [1]))
 );
-const MAKER_STONE = new Building('Mason',
+const MAKER_STONE = new Building(new Name('Masonry', 'Masonries'),
 	new Cost([WOOD, PEOPLE_U], [25, 1]),
 	new Effects(0, new Cost([STONE], [1]))
 );
-const MAKER_WOOD = new Building('Lumbermill',
+const MAKER_WOOD = new Building(new Name('Lumbermill', 'Lumbermills'),
 	new Cost([WOOD, PEOPLE_U], [25, 1]),
 	new Effects(0, new Cost([WOOD], [1]))
 );
 
-const UPGRADE_BUILD = new Building('Architect',
+const UPGRADE_BUILD = new Building(new Name('Architect', 'Architects'),
 	new Cost([WOOD, STONE, METAL, PEOPLE_U], [100, 1000, 100, 1]),
 	new Effects(0, new Cost(), ['arch'])
 );
 
-const UPGRADE_DEMO = new Building('Demolitionist',
+const UPGRADE_DEMO = new Building(new Name('Demolitionist', 'Demolitionists'),
 	new Cost([WOOD, STONE, METAL, PEOPLE_U], [100, 1000, 100, 1]),
 	new Effects(0, new Cost(), ['demo'])
 );
@@ -840,7 +904,7 @@ const UPGRADE_DEMO = new Building('Demolitionist',
 	1 teacher : 30 students
 	1 cop : 450 people, OR... 1 cop : 15 unemployed people
 */
-const SCHOOL1 = new Building('Elementary School',
+const SCHOOL1 = new Building(new Name('Elementary School', 'Elementary Schools'),
 	new Cost([WOOD, STONE, METAL, PEOPLE_AGE0, PEOPLE_U], [500, 1000, 250, 15, 1]),
 	new Effects(0, new Cost(), ['edu1'])
 );
@@ -849,31 +913,31 @@ const SCHOOL2 = new Building('Middle School',
 	new Cost([WOOD, STONE, METAL, PEOPLE_AGE0, PEOPLE_U], [2000, 4000, 1000, 15, 1]),
 	new Effects(0, new Cost(), ['edu2'])
 );*/
-const SCHOOL3 = new Building('High School',
+const SCHOOL3 = new Building(new Name('High School', 'High Schools'),
 	new Cost([WOOD, STONE, METAL, PEOPLE_AGE1, PEOPLE_U], [1000, 2000, 500, 15, 1]),
 	new Effects(0, new Cost(), ['edu3'])
 );
-const SCHOOL4 = new Building('College',
+const SCHOOL4 = new Building(new Name('College', 'Colleges'),
 	new Cost([WOOD, STONE, METAL, PEOPLE_AGE2, PEOPLE_U], [8000, 16000, 4000, 125, 4]),
 	new Effects(0, new Cost(), ['edu4'])
 );
-const ADMINCEN = new Building('Administrative Center',
+const ADMINCEN = new Building(new Name('Administrative Center', 'Administrative Centers'),
 	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [5000, 10000, 2500, 50, 1]),
 	new Effects(0, new Cost(), ['admin'])
 );
-const CLINIC = new Building('Clinic',
+const CLINIC = new Building(new Name('Clinic', 'Clinics'),
 	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [500, 1000, 250, 300, 1]),
 	new Effects(0, new Cost(), ['health'])
 );
-const POLICE = new Building('Police Station',
+const POLICE = new Building(new Name('Police Station', 'Police Stations'),
 	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [1000, 2000, 500, 30, 1]),
 	new Effects(0, new Cost(), ['police'])
 );
-const FIRE = new Building('Fire Station',
+const FIRE = new Building(new Name('Fire Station', 'Fire Stations'),
 	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [1000, 2000, 500, 500, 1]),
 	new Effects(0, new Cost(), ['fire'])
 );
-const ROAD = new Building('Road',
+const ROAD = new Building(new Name('Road', 'Roads'),
 	new Cost([STONE], [100]),
 	new Effects(0, new Cost(), ['trans'])
 );

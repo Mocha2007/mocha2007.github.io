@@ -451,6 +451,8 @@ function intersect(a, b){
 	return a.filter(e => -1 < b.indexOf(e)).filter((e, i, c) => c.indexOf(e) === i);
 }
 
+const isString = x => typeof x === 'string' || x instanceof String;
+
 /** https://stackoverflow.com/a/14521482
  * load js file using js
  * @param {string} url
