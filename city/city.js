@@ -313,7 +313,7 @@ class Building extends Infobox {
 		return elem;
 	}
 	get cost(){
-		return this.baseCost.mul(Math.pow(1.2, this.amount) * CITY.BONUS.BUILD);
+		return this.baseCost.mul(Math.pow(CITY.CONFIG.BASE, this.amount) * CITY.BONUS.BUILD);
 	}
 	get costElem(){
 		const elem = this.cost.elem;
@@ -400,6 +400,9 @@ const CITY = {
 		DEFAULT: 'silver',
 		GOOD: 'lime',
 		NEUTRAL: 'yellow',
+	},
+	CONFIG: {
+		BASE: 1.15,
 	},
 	DEFAULT: {
 		SRC: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Ambox_blue_question.svg',
