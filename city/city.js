@@ -835,7 +835,7 @@ const CITY = {
 			Building.buildings.forEach(b => b.tick(t));
 		},
 		fpsMeter(){
-			CITY.ELEM.TICK.innerHTML = CITY.DEBUG.TICK + ' FPS';
+			CITY.ELEM.TICK.innerHTML = (CITY.DEBUG.FPS < 100 ? CITY.DEBUG.FPS : '>100') + ' FPS';
 		},
 		/** @param {number} t time in seconds */
 		globalTick(t){
