@@ -167,7 +167,8 @@ class Resource extends Infobox {
 		CITY.resources[this.name.s] = x;
 	}
 	get amountString(){
-		return `<span style="color:${this.color}">${Math.floor(this.amount)}</span> ${this.name.s}`;
+		// eslint-disable-next-line max-len
+		return `<span style="color:${this.color}">${Math.floor(this.amount).toLocaleString()}</span> ${this.name.s}`;
 	}
 	get color(){
 		if (this.positivity){
