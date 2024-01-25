@@ -278,19 +278,21 @@ class Effects extends Infobox {
 		e.appendChild(ul);
 		const list = [];
 		if (this.pop)
-			list.push(`Provides housing for ${this.pop * CITY.BONUS.HOUSE_SIZE} pops.`);
+			// eslint-disable-next-line max-len
+			list.push(document.createTextNode(`Provides housing for ${this.pop * CITY.BONUS.HOUSE_SIZE} pops.`));
 		if (this.tags)
-			list.push(...this.tagEffects);
+			list.push(...this.tagEffects.map(s => document.createTextNode(s)));
 		if (this.prod_per_s.res.length)
-			list.push(this.produces().innerHTML);
+			list.push(this.produces());
 		list.forEach(x => {
 			const li = document.createElement('li');
-			li.innerHTML = x;
+			li.appendChild(x);
 			ul.appendChild(li);
 		});
 		return e;
 	}
 	get tagEffects(){
+		/** @type {string[]} */
 		const o = [];
 		this.tags.forEach(tag => {
 			let OFFLINE;
@@ -352,10 +354,14 @@ class Effects extends Infobox {
 	}
 	produces(n = 1){
 		const elem = document.createElement('span');
-		elem.innerHTML = 'Produces: '
-			+ this.prod_per_s.res
-				.map((r, i) => `${r.name.n(round(n*this.prod_per_s.amt[i]*CITY.BONUS.PROD, 2))}/s`)
-				.join(', ');
+		elem.innerHTML = 'Produces: ';
+		this.prod_per_s.res.forEach((r, i) => {
+			if (i)
+				elem.appendChild(document.createTextNode(', '));
+			const e = r.costElem(round(n*this.prod_per_s.amt[i]*CITY.BONUS.PROD, 2));
+			e.appendChild(document.createTextNode('/s'));
+			elem.appendChild(e);
+		});
 		return elem;
 	}
 }
@@ -423,7 +429,7 @@ class Building extends Infobox {
 		const elem = this.effects.produces(this.amount);
 		elem.classList.add('totalProd');
 		elem.id = 'TOTAL_PROD_' + this.name.s;
-		elem.innerHTML = elem.innerHTML.replace('Produces', 'Total Production');
+		// elem.innerHTML = elem.innerHTML.replace('Produces', 'Total Production');
 		if (!this.effects.amt_prod.length)
 			elem.innerHTML = '';
 		return elem;
@@ -865,7 +871,8 @@ const CITY = {
 				COST.appendChild(b.costElem);
 				// update total prod
 				const TP = document.getElementById('TOTAL_PROD_' + b.name.s);
-				TP.innerHTML = b.totalProdElem.innerHTML;
+				TP.innerHTML = '';
+				TP.appendChild(b.totalProdElem);
 			});
 			this.buildingEff();
 			this.buildingVis();
