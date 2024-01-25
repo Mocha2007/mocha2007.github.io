@@ -100,6 +100,7 @@ class Infobox {
 		elem.classList.add('amount');
 		elem.onmouseover = () => this.tooltipShow();
 		elem.onmouseleave = () => this.tooltipHide();
+		elem.onmousemove = () => CITY.tooltip.move(CITY.CURSOR.X, CITY.CURSOR.Y);
 		return elem;
 	}
 	get countElem(){
@@ -129,7 +130,7 @@ class Infobox {
 	}
 	tooltipShow(){
 		const LOC = this.loc;
-		CITY.tooltip.move(LOC.x, LOC.y);
+		CITY.tooltip.move(CITY.CURSOR.X, CITY.CURSOR.Y);
 		CITY.tooltip.set(this.tooltip);
 		CITY.tooltip.setVisibility(true);
 	}
@@ -552,6 +553,10 @@ const CITY = {
 		FPS: 20,
 		UPGRADE_EFFECT: 2, // each upgrade doubles something
 	},
+	CURSOR: {
+		X: 0,
+		Y: 0,
+	},
 	DEBUG: {
 		get FPS(){
 			return Math.floor(1000 / this.TICK);
@@ -571,6 +576,12 @@ const CITY = {
 		},
 	},
 	init(){
+		document.body.onmousemove = e => {
+			const rect = document.body.getBoundingClientRect();
+			CITY.CURSOR.X = e.clientX - rect.left;
+			CITY.CURSOR.Y = e.clientY - rect.top;
+			// console.debug(CITY.CURSOR);
+		};
 		this.loadData();
 		const MAIN = this.ELEM.MAIN;
 		// control panel
@@ -814,6 +825,10 @@ const CITY = {
 		get elem(){
 			return CITY.ELEM.TOOLTIP;
 		},
+		OFFSET: {
+			X: 10,
+			Y: 20,
+		},
 		init(){
 			const TOOLTIP = CITY.ELEM.TOOLTIP = document.createElement('div');
 			document.body.appendChild(TOOLTIP);
@@ -823,8 +838,8 @@ const CITY = {
 			this.move();
 		},
 		move(x = 0, y = 0){
-			this.elem.style.left = x + 'px';
-			this.elem.style.top = y + 20 + 'px';
+			this.elem.style.left = x + this.OFFSET.X + 'px';
+			this.elem.style.top = y + this.OFFSET.Y + 'px';
 		},
 		/** @param {HTMLElement} elem */
 		set(elem){
