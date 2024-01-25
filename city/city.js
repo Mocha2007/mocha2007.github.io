@@ -649,7 +649,7 @@ const CITY = {
 			const EDU1_ = Math.min(1, 30 * EDU1 / P0) / 3;
 			// const EDU2_ = Math.min(1, 30 * EDU2 / P0) / 4;
 			const EDU3_ = Math.min(1, 30 * EDU3 / P1) / 3;
-			const EDU4_ = Math.min(1, 125 * EDU4 / P2) / 3;
+			const EDU4_ = Math.min(1, 250 * EDU4 / P2) / 3;
 			return Math.floor(100 * (EDU1_ + EDU3_ + EDU4_));
 		},
 		get fire(){
@@ -981,7 +981,7 @@ const POLICE = new Building(new Name('Police Station', 'Police Stations'),
 	new Effects(0, new Cost(), ['police'])
 );
 const FIRE = new Building(new Name('Fire Station', 'Fire Stations'),
-	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [1000, 2000, 500, 500, 1]),
+	new Cost([WOOD, STONE, METAL, PEOPLE, PEOPLE_U], [1000, 2000, 500, 250, 1]),
 	new Effects(0, new Cost(), ['fire'])
 );
 const ROAD = new Building(new Name('Road', 'Roads'),
