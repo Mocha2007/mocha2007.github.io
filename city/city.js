@@ -129,7 +129,7 @@ class Resource extends Infobox {
 		return 'inherit';
 	}
 	get gatherButton(){
-		return button('Gather ' + this.name, () => this.gather(), 'GATHER_' + this.name);
+		return button('Gather ' + this.name, () => this.gather(CITY.BONUS.CLICK), 'GATHER_' + this.name);
 	}
 	get gatherElem(){
 		const elem = document.createElement('div');
@@ -144,7 +144,7 @@ class Resource extends Infobox {
 		return !!this.amtGetter;
 	}
 	gather(n = 1){
-		CITY.resources[this.name] += n * CITY.BONUS.CLICK;
+		CITY.resources[this.name] += n;
 		CITY.update.resources();
 	}
 }
