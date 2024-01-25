@@ -834,6 +834,9 @@ const CITY = {
 		buildingTick(t){
 			Building.buildings.forEach(b => b.tick(t));
 		},
+		fix(){
+			Resource.resources.forEach(r => r.amount = Math.max(0, r.amount));
+		},
 		fpsMeter(){
 			CITY.ELEM.TICK.innerHTML = Math.min(CITY.CONFIG.FPS, CITY.DEBUG.FPS) + ' TPS';
 		},
@@ -841,6 +844,7 @@ const CITY = {
 		globalTick(t){
 			CITY.CACHET = new Date();
 			this.buildingTick(t); // for now, just this.
+			this.fix();
 			this.fpsMeter();
 			CITY.DEBUG.TICK = new Date() - CITY.CACHET;
 		},
