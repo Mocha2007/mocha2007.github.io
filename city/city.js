@@ -233,6 +233,7 @@ class Effects extends Infobox {
 	get tagEffects(){
 		const o = [];
 		this.tags.forEach(tag => {
+			let OFFLINE;
 			switch (tag.toLowerCase()){
 				case 'admin': // clinic
 					o.push('Provides administrative support for a limited number of pops');
@@ -263,6 +264,10 @@ class Effects extends Infobox {
 					break;
 				case 'house_size':
 					o.push(`Houses can now hold ${CITY.BONUS.HOUSE_SIZE+1} people`);
+					break;
+				case 'offline': // cops
+					OFFLINE = Math.round(CITY.BONUS.OFFLINE * 100);
+					o.push(`Increase offline resource gain from ${OFFLINE}% to ${OFFLINE+1}%`);
 					break;
 				case 'police': // cops
 					o.push('Provides public safety for a limited number of pops');
@@ -382,12 +387,13 @@ class Building extends Infobox {
 		document.getElementById('BUILDING_' + this.name).classList.remove('hidden');
 		this.visible = true;
 	}
-	tick(){
+	/** @param {number} t in seconds */
+	tick(t){
 		// production
 		if (this.effects.prod_per_s.mul(-1).affordable)
 			this.effects.prod_per_s.res
 				// eslint-disable-next-line max-len
-				.forEach((r, i) => r.gather(CITY.BONUS.PROD * this.amount * this.effects.prod_per_s.amt[i] / CITY.CONFIG.FPS));
+				.forEach((r, i) => r.gather(CITY.BONUS.PROD * this.amount * this.effects.prod_per_s.amt[i] * t));
 	}
 	/** @param {string} s */
 	static fromString(s){
@@ -425,6 +431,9 @@ const CITY = {
 		},
 		get HOUSE_SIZE(){ // people per house
 			return 2 + sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('house_size')));
+		},
+		get OFFLINE(){ // offline gain
+			return (1 + sum(Building.buildings.map(b => b.amount * b.effects.tags.includes('offline'))))/100;
 		},
 		get PROD(){ // production efficiency
 			return 0.1 + CITY.resources2.approval / 100;
@@ -496,7 +505,7 @@ const CITY = {
 	main(){
 		this.init();
 		this.update.all();
-		setInterval(() => this.update.buildingTick(), 1000 / this.CONFIG.FPS);
+		setInterval(() => this.update.buildingTick(1/CITY.CONFIG.FPS), 1000 / this.CONFIG.FPS);
 		console.info('city.js loaded.');
 		console.info(`${Resource.resources.length} resource types.`);
 		console.info(`${Building.buildings.length} building types.`);
@@ -505,6 +514,14 @@ const CITY = {
 		// try to save
 		this.save.write();
 		setInterval(() => this.save.write(), this.CONFIG.AUTOSAVE_INTERVAL);
+	},
+	/** @param {number} t in ms */
+	offlineGain(t = 0){
+		// t in ms, T in s
+		const TIME = t/1000 * this.BONUS.OFFLINE;
+		this.update.buildingTick(TIME);
+		// eslint-disable-next-line max-len
+		alert(`${Math.floor(TIME)} seconds of offline time (${Math.round(100*this.BONUS.OFFLINE)}% Efficiency)`);
 	},
 	resources: {},
 	resources2: {
@@ -642,6 +659,7 @@ const CITY = {
 			return {
 				buildings: Building.buildings.map(b => [b.name, b.amount]),
 				resources: CITY.resources,
+				time: +new Date(),
 				version_checksum: this.version_checksum,
 			};
 		},
@@ -667,6 +685,8 @@ const CITY = {
 				}
 			});
 			CITY.resources = x.resources;
+			if (x.time)
+				CITY.offlineGain(new Date() - x.time);
 			console.info('loaded');
 			CITY.update.all();
 		},
@@ -735,8 +755,9 @@ const CITY = {
 					b.reveal();
 			});
 		},
-		buildingTick(){
-			Building.buildings.forEach(b => b.tick());
+		/** @param {number} t time in seconds */
+		buildingTick(t){
+			Building.buildings.forEach(b => b.tick(t));
 		},
 		resources(){
 			Resource.resources.forEach(r => document.getElementById('COUNT_' + r.name).innerHTML = r.amountString);
@@ -883,4 +904,9 @@ const UPGRADE_WFP3 = new Upgrade('Increased Elder Workforce Participation',
 const UPGRADE_HOUSE_SIZE = new Upgrade('Bigger Houses',
 	new Cost([WOOD, STONE], [2000, 1000]),
 	new Effects(0, new Cost(), ['house_size'])
+);
+
+const UPGRADE_OFFLINE_GAIN = new Upgrade('Better Offline Gain',
+	new Cost([WOOD, STONE, METAL], [10000, 5000, 2500]),
+	new Effects(0, new Cost(), ['offline'])
 );
