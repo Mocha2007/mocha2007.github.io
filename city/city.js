@@ -372,7 +372,7 @@ class Building extends Infobox {
 		if (this.effects.prod_per_s.mul(-1).affordable)
 			this.effects.prod_per_s.res
 				// eslint-disable-next-line max-len
-				.forEach((r, i) => r.gather(CITY.BONUS.PROD * this.amount * this.effects.prod_per_s.amt[i] / CITY.FPS));
+				.forEach((r, i) => r.gather(CITY.BONUS.PROD * this.amount * this.effects.prod_per_s.amt[i] / CITY.CONFIG.FPS));
 	}
 	/** @param {string} s */
 	static fromString(s){
@@ -383,7 +383,6 @@ class Building extends Infobox {
 Building.buildings = [];
 
 const CITY = {
-	AUTOSAVE_INTERVAL: 60 * 1000, // autosave every minute
 	BONUS: {
 		get BUILD(){ // build efficiency
 			return Math.pow(0.95, CITY.resources2.upgrade.build);
@@ -402,7 +401,9 @@ const CITY = {
 		NEUTRAL: 'yellow',
 	},
 	CONFIG: {
+		AUTOSAVE_INTERVAL: 60 * 1000, // autosave every minute
 		BASE: 1.15,
+		FPS: 10,
 	},
 	DEFAULT: {
 		SRC: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Ambox_blue_question.svg',
@@ -416,7 +417,6 @@ const CITY = {
 			return document.getElementById('main');
 		},
 	},
-	FPS: 10,
 	init(){
 		const MAIN = this.ELEM.MAIN;
 		// control panel
@@ -450,7 +450,7 @@ const CITY = {
 	main(){
 		this.init();
 		this.update.all();
-		setInterval(() => this.update.buildingTick(), 1000 / this.FPS);
+		setInterval(() => this.update.buildingTick(), 1000 / this.CONFIG.FPS);
 		console.info('city.js loaded.');
 		console.info(`${Resource.resources.length} resource types.`);
 		console.info(`${Building.buildings.length} building types.`);
@@ -458,7 +458,7 @@ const CITY = {
 		this.save.read();
 		// try to save
 		this.save.write();
-		setInterval(() => this.save.write(), this.AUTOSAVE_INTERVAL);
+		setInterval(() => this.save.write(), this.CONFIG.AUTOSAVE_INTERVAL);
 	},
 	resources: {},
 	resources2: {
