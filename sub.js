@@ -105,7 +105,6 @@ var subtitles =	[
 	'MOW! MOW! MOW!',
 	'That post-con depression feels real today',
 	// etc allusion
-	// 'The pizza doesn&rsquo;t scream when you put it in the oven.',
 	'/mo(ch|k|hx|\\u0125)[aeiou]r?/gi',
 	'Perihelion * Date of perihelion passage * 3.14',
 	'Looks like we got ourselves a li&rsquo;l Mike-Oscar-Charlie-Hotel-Alfa!',
@@ -126,6 +125,9 @@ var subtitles =	[
 	'Self-initiated <a href="namei/eremoran.html#lemma-dinabubzik">Dinabubzik</a>-haver',
 	'(Literally) a self-made woman',
 	'<a href="https://youtu.be/sYf64O-tsy4"><cite>Polka is Magic</cite></a> &rarr; (several intermediate steps) &rarr; Eremoran', // The Spore community was a secondary reason, but Isoraq's MLP chess is what really did it.
+	'Eam vīdī!',
+	'Ōvum frēgit!',
+	'Es puella, fac puellam.',
 ];
 subtitles.push(subtitles.length+1 + ' unique subtitles - collect them all!');
 
