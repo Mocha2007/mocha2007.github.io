@@ -1209,7 +1209,7 @@ const blogData = [
 	@date 1706533200000
 	@tags meta
 	I am changing my name. I am certain of my first name (Luna).
-	Although I don't care for middle names, for logitical/bureaucratic reasons it is evident I will need one.
+	Although I don't care for middle names, for logistical/bureaucratic reasons it is evident I will need one.
 	Some options I have thought of:
 	<ul>
 	<li>Luna <b>Celestia</b> - Luna's complement in FiM</li>
@@ -1221,6 +1221,7 @@ const blogData = [
 		<li>Luna <b>Sapphira</b> - one of my original top first name choices -
 			named after an old friend. Alternates: Alyssa, Emily, Emma, Mallory, Xanthe.</li>
 		<li>Luna <b>Sappho</b> - the OG lesbian</li>
+		<li>Luna <b>Victoria</b> - I mean, I do like playing Vicky...</li>
 		<li>Luna <b>[Another Latin name]</b><ul>
 			<li>Luna <b>Nox</b> - night</li>
 			</ul></li>
