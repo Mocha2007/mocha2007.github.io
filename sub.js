@@ -119,6 +119,7 @@ var subtitles =	[
 	'Let&rsquo;s have us a pizza bungus',
 	'The Mocha / She destroyed her cage / Yes / YES / The Mocha is out',
 	// 🥚
+	'Legally recognized by the state of West Virginia to be <a href="https://www.wvlegislature.gov/Bill_Status/bills_text.cfm?billdoc=sb197%20intr.htm&yr=2024&sesstype=RS&i=197">obscenely</a> sexy',
 	'Heat from fire, fire from heat.',
 	'^ (realest girl)',
 	'Egg? Who, me?',
