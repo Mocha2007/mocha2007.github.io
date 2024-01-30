@@ -7,14 +7,14 @@ var subtitles =	[
 	'Math, &#x1F44F; Cities, &#x1F44F; Math &#x1F44F; &rsquo;n Cities! &#x1F44F;',
 	// vaguely linguistics/language
 	'The antonym of <em>Mocha</em> is <em>Lesscha</em>.',
-	'The antonym of <em>subtraction</em> is <em>domdition</em>.',
+	// 'The antonym of <em>subtraction</em> is <em>domdition</em>.',
 	'&iexcl;Mundos Interminables, Historias Interminables!',
 	'Ab <em>owo</em> usque ad <em>What&rsquo;s this???</em>',
 	'Is <em>*(é)-trom</em> an instrument?',
 	'Poorly-transed Japanese for <em>also tea</em>? You decide.',
 	'<a href="https://en.wikipedia.org/wiki/Bet_(letter)">Bet</a>, <a href="https://en.wikipedia.org/wiki/Click_consonant">clicks</a>, and <a href="https://en.wikipedia.org/wiki/Trill_consonant">trills</a>?',
 	'#ThingsISayBeforeSex: <em>quinque</em>',
-	'The Senate and Poplar of Rome',
+	// 'The Senate and Poplar of Rome',
 	'Mentula Culusque Moechae',
 	'I neither misspell nor use bad grammar;<br/>I just use a different style guide.',
 	'Hey man, at least <em>my</em> conlangs don&rsquo;t use words like <em>boato</em> and <em>farmo</em>',
@@ -33,8 +33,8 @@ var subtitles =	[
 	'Real grammars are descriptivist',
 	'If only all English were speaking in just take, go, set, make, and bear', // good luck parsing that one
 	'English sucks, and then you die.', // https://meta.stackexchange.com/questions/336005/neopronouns-or-trolling?newreg=7d69c4a9e87042df92f32d4bf2487f37#comment1109688_336011
-	'Common sense is a term we use for things obvious to us, but not others.', // https://meta.stackexchange.com/questions/335708/under-what-circumstances-will-stack-exchange-inc-share-private-sensitive-infor/335749#comment1106974_335749
-	'It growe&thorn; to ben a frogge, if it be noght eten.', // https://incubator.wikimedia.org/wiki/Wp/enm/Frogge
+	// 'Common sense is a term we use for things obvious to us, but not others.', // https://meta.stackexchange.com/questions/335708/under-what-circumstances-will-stack-exchange-inc-share-private-sensitive-infor/335749#comment1106974_335749
+	// 'It growe&thorn; to ben a frogge, if it be noght eten.', // https://incubator.wikimedia.org/wiki/Wp/enm/Frogge
 	'Renascatur Lingua Latina!',
 	'The fox&rsquo;s attempt at the grapes, although he couldn&rsquo;t, was admirable.', // weird English sentence
 	'The G in GIF is pronounced like the G in <em>gigantic</em> or <em>suggest</em>.',
@@ -44,18 +44,21 @@ var subtitles =	[
 	'Mocha &isin; UwUers',
 	'&lambda;x.x is Mocha',
 	// his
-	'<span class="highlight">aragoscope</span> <em>n</em>. : the act of <a href="https://en.wikipedia.org/wiki/Kingdom_of_Castile#Union_of_the_Crowns_of_Castile_and_Aragon">noscoping Aragon</a>',
+	// '<span class="highlight">aragoscope</span> <em>n</em>. : the act of <a href="https://en.wikipedia.org/wiki/Kingdom_of_Castile#Union_of_the_Crowns_of_Castile_and_Aragon">noscoping Aragon</a>',
 	// sci
-	'If eyes are round, then why is the image we see flat?',
+	// 'If eyes are round, then why is the image we see flat?',
 	// etc gaming
+	/*
 	'The med curse is real',
 	'Hok-Seng Lau is innocent!',
 	'Certified Elf-Kosher',
 	'More struts and boosters than the leading brand!',
+	*/
 	'We can finally invade the heart of Eremor.<br/>Unfortunately for you, your adventure ends here.',
 	'I can hear them breaching the defenses of my RigFives ship.',
 	'You require more Mochas',
 	'You must construct additional Mochas',
+	/*
 	'Plura pyla debes construere',
 	'Plura mineralia requirimus',
 	'Plus gasem vespinum requiris',
@@ -63,25 +66,28 @@ var subtitles =	[
 	'Nos aggrediuntur',
 	'Iactans nucleare detegitur',
 	'I have seen the river.',
+	*/
 	'Beavaria&rsquo;s most obedient human slave',
 	'Non-acidic plutonics, glaciation, fjords, biome-aware migratory automata, and fluvial sediment dispersal - everything marshmallows hate!',
 	// quotations
 	// 'In theory, theory and practice are the same. In practice, they are not.',
-	'Sail Hatan!',
+	// 'Sail Hatan!',
 	// media allusion
 	'Gluten-free Mocha: now with real sugar!',
 	// 'The fruitiest of all fruity-ass fruitbowls!',
 	// '"Gay and Fake" - NYT review',
 	'Zen and the Art of Conworlding',
-	'You spice?',
-	'<em>Real</em> News.',
+	// 'You spice?',
+	// '<em>Real</em> News.',
 	'The coneconomy, stupid!',
 	'I did <em>not</em> have sexual relations with that map.',
+	/*
 	'⬇ 🌀 🆘',
 	'Pay no attention to that Mocha in the closet!',
 	'Splunge is for Splunge',
 	'Patterns are traps.',
 	'Kiss me under the kissing fern!~',
+	*/
 	// namei/oneia/eremor
 	'But I would walk <abbr title="878 km, 546 mi">200 abakêum</abbr>, and I would walk 200 more!',
 	'Namei crawling through my windowpane',
@@ -92,13 +98,13 @@ var subtitles =	[
 	'<abbr title="Eremoran smith guild motto">Som ardo din, ardo som din.</abbr>',
 	'The worldbuilding speaks for itself.', // or maybe this counts as a chess reference?
 	// mochisms
-	'slash-me huggu',
+	// 'slash-me huggu',
 	'Enkl&aacute;r&rsquo;s Stead, by Enkl&aacute;r&rsquo;s Head',
 	'Why many, when few?',
 	'Thanks to Isoraķatheð for getting me into conworlding',
-	'Drink me.',
+	// 'Drink me.',
 	'gib snuggu',
-	'insert dong',
+	// 'insert dong',
 	'It is easier for a camel to find a needle in a haystack than for one to simply enter Mordor.',
 	// furry
 	'Update Furrygram',
@@ -110,6 +116,7 @@ var subtitles =	[
 	'Looks like we got ourselves a li&rsquo;l Mike-Oscar-Charlie-Hotel-Alfa!',
 	'49206a757374207761737465642061206d696e757465206f6620796f75722074696d652e203b33',
 	'.... .- ...- . / -.-- --- ..- / -. --- / .-.. .. ..-. .',
+	/*
 	'<em>"No"</em>',
 	'...baka!',
 	'HAAAAAAAAAAAA YOUR CAMERA IS TRAAAAASH',
@@ -117,6 +124,7 @@ var subtitles =	[
 	'This individual, however, <em>is</em> firing on all cinderblocks situation.',
 	'Not a scam artist situation',
 	'Let&rsquo;s have us a pizza bungus',
+	*/
 	'The Mocha / She destroyed her cage / Yes / YES / The Mocha is out',
 	// 🥚
 	'Legally recognized by the state of West Virginia to be <a href="https://www.wvlegislature.gov/Bill_Status/bills_text.cfm?billdoc=sb197%20intr.htm&yr=2024&sesstype=RS&i=197">obscenely</a> sexy',
