@@ -37,6 +37,14 @@
 	<span class="button gold" onclick="preset('100p')">&pound;1</span>
 	<span class="button gold" onclick="preset('200p')">&pound;2</span>
 	<br>
+	Japan:
+	<span class="button" onclick="preset('Y1')">¥1</span>
+	<span class="button gold" onclick="preset('Y5')">¥5</span>
+	<span class="button copper" onclick="preset('Y10')">¥10</span>
+	<span class="button" onclick="preset('Y50')">¥50</span>
+	<span class="button" onclick="preset('Y100')">¥100</span>
+	<span class="button gold" onclick="preset('Y500')">¥500</span>
+	<br>
 	Eremor:
 	<span class="button copper" onclick="preset('ere1')">1 a</span>
 	<span class="button" onclick="preset('ere2')">1 z</span>
@@ -80,7 +88,10 @@ const compositions = [
 	['Silver', 10.49, '', true],
 	['Gold', 19.3, 'gold', true],
 	// secondary
+	['Aluminum', 2.7],
+	['Zinc', 7.14],
 	['Cupronickel', 7.257],
+	['Steel', 7.85],
 	['Electrum', 8.65],
 ];
 compositions.forEach((datum, i) => {
@@ -109,47 +120,66 @@ function preset(id){
 	}
 	switch (id){
 		case 1:
-			size(19.05, 1.52);
+			size(19.05, 1.52, 'zinc');
 			break;
 		case 5:
-			size(21.21, 1.95);
+			size(21.21, 1.95, 'cupronickel');
 			break;
 		case 10:
-			size(17.91, 1.35);
+			size(17.91, 1.35, 'copper');
 			break;
 		case 25:
-			size(24.26, 1.75);
+			size(24.26, 1.75, 'copper');
 			break;
 		case 50:
-			size(30.61, 2.15);
+			size(30.61, 2.15, 'copper');
 			break;
 		case 100:
-			size(26.49, 2);
+			size(26.49, 2, 'copper');
 			break;
 		// https://en.wikipedia.org/wiki/Coins_of_the_pound_sterling
 		case '1p':
-			size(20.3, 1.65);
+			size(20.3, 1.65, 'steel');
 			break;
 		case '2p':
-			size(25.9, 2.03);
+			size(25.9, 2.03, 'steel');
 			break;
 		case '5p':
-			size(18, 1.89);
+			size(18, 1.89, 'steel');
 			break;
 		case '10p':
-			size(24.5, 2.05);
+			size(24.5, 2.05, 'steel');
 			break;
 		case '20p':
-			size(21.4, 1.7);
+			size(21.4, 1.7, 'cupronickel');
 			break;
 		case '50p':
-			size(27.3, 1.78);
+			size(27.3, 1.78, 'cupronickel');
 			break;
 		case '100p':
-			size(23.43, 2.8);
+			size(23.43, 2.8, 'cupronickel'); // close enough alloy
 			break;
 		case '200p':
-			size(28.4, 2.5);
+			size(28.4, 2.5, 'cupronickel'); // close enough alloy
+			break;
+		// https://en.wikipedia.org/wiki/Japanese_yen#Coins
+		case 'Y1':
+			size(20, 1.5, 'aluminum');
+			break;
+		case 'Y5':
+			size(22, 1.5, 'bronze');
+			break;
+		case 'Y10':
+			size(23.5, 1.5, 'copper');
+			break;
+		case 'Y50':
+			size(21, 1.7, 'cupronickel');
+			break;
+		case 'Y100':
+			size(22.6, 1.7, 'cupronickel');
+			break;
+		case 'Y500':
+			size(26.5, 1.81, 'bronze');
 			break;
 		// https://mocha2007.github.io/namei/namei#Eremoran_Currency
 		case 'ere1':
