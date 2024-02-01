@@ -677,14 +677,14 @@
 
 	<!-- TNOs -->
 	<g id='tnos'>
-		<a href="https://en.wikipedia.org/wiki/ʻOumuamua"><!-- ʻOumuamua @ 2023 --> <!-- https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=1I%2F2017%20U1 -->
-			<text x="3356" y="107" font-size="8" fill="white">ʻOumuamua</text>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/1/1c/Artist%27s_impression_of_%CA%BBOumuamua.jpg" x="3356" y="88" height="12"/>
+		<a href="https://en.wikipedia.org/wiki/Halley's_Comet"><!-- Halley's Comet @ 2024 --> <!-- https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?des=1P -->
+			<text x="3528" y="120">Halley's Comet</text>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Lspn_comet_halley.jpg" x="3526" y="88" height="24"/>
 		</a>
 
-		<a href="https://en.wikipedia.org/wiki/Halley's_Comet"><!-- Halley's Comet @ 2023 --> <!-- https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?des=1P -->
-			<text x="3526" y="120">Halley's Comet</text>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Lspn_comet_halley.jpg" x="3526" y="88" height="24"/>
+		<a href="https://en.wikipedia.org/wiki/ʻOumuamua"><!-- ʻOumuamua @ 2024 --> <!-- https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=1I%2F2017%20U1 -->
+			<text x="3944" y="107" font-size="8" fill="white">ʻOumuamua</text>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/1/1c/Artist%27s_impression_of_%CA%BBOumuamua.jpg" x="3944" y="88" height="12"/>
 		</a>
 
 		<circle class='mo' r="3940"/><!-- Orcus orbit -->
@@ -759,9 +759,9 @@
 			</animateMotion>
 		</a>
 
-		<a href="https://en.wikipedia.org/wiki/New_Horizons"><!-- New Horizons @ 2023 http://pluto.jhuapl.edu/Mission/Where-is-New-Horizons.php -->
-			<text x="5514" y="120" font-size="8" fill="white">New Horizons</text>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/e/ee/New_Horizons_spacecraft_model_1.png" x="5514" y="88" height="24"/>
+		<a href="https://en.wikipedia.org/wiki/New_Horizons"><!-- New Horizons @ 2024 http://pluto.jhuapl.edu/Mission/Where-is-New-Horizons.php -->
+			<text x="5808" y="120" font-size="8" fill="white">New Horizons</text>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/e/ee/New_Horizons_spacecraft_model_1.png" x="5808" y="88" height="24"/>
 		</a>
 
 		<circle class='mo' r="6706"/><!-- 2007 OR10 orbit -->
@@ -790,12 +790,13 @@
 				<mpath href="#OuterPath"/>
 			</animateMotion>
 		</a>
-	
+		<!--
 		<a href='https://en.wikipedia.org/wiki/Elon_Musk'>
 			<text x="7865" y="45">*Notices ur uncolonized planets*</text>
 			<image href="https://static.businessinsider.com/image/5202d38a6bb3f7f61e000004-750.jpg" x="7870" y="50" height="100"/>
 			<text x="7890" y="160">OwO What's this???</text>
 		</a>
+		-->
 	</g>
 	
 	<a href='https://mocha2007.github.io'>
