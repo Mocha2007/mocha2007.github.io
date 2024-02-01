@@ -37,6 +37,16 @@
 	<span class="button gold" onclick="preset('100p')">&pound;1</span>
 	<span class="button gold" onclick="preset('200p')">&pound;2</span>
 	<br>
+	EU:
+	<span class="button copper" onclick="preset('1c')">1c</span>
+	<span class="button copper" onclick="preset('2c')">2c</span>
+	<span class="button copper" onclick="preset('5c')">5c</span>
+	<span class="button gold" onclick="preset('10c')">10c</span>
+	<span class="button gold" onclick="preset('20c')">20c</span>
+	<span class="button gold" onclick="preset('50c')">50c</span>
+	<span class="button" onclick="preset('100c')">&euro;1</span>
+	<span class="button gold" onclick="preset('200c')">&euro;2</span>
+	<br>
 	Japan:
 	<span class="button" onclick="preset('Y1')">¥1</span>
 	<span class="button gold" onclick="preset('Y5')">¥5</span>
@@ -89,6 +99,7 @@ const compositions = [
 	['Gold', 19.3, 'gold', true],
 	// secondary
 	['Aluminum', 2.7],
+	['Nordic Gold', 7.1, 'gold'], // est'd
 	['Zinc', 7.14],
 	['Cupronickel', 7.257],
 	['Steel', 7.85],
@@ -161,6 +172,31 @@ function preset(id){
 			break;
 		case '200p':
 			size(28.4, 2.5, 'cupronickel'); // close enough alloy
+			break;
+		// https://en.wikipedia.org/wiki/Euro_coins#Specification
+		case '1c':
+			size(16.25, 1.67, 'steel');
+			break;
+		case '2c':
+			size(18.75, 1.67, 'steel');
+			break;
+		case '5c':
+			size(21.25, 1.67, 'steel');
+			break;
+		case '10c':
+			size(19.75, 1.93, 'nordic gold');
+			break;
+		case '20c':
+			size(22.5, 2.14, 'nordic gold');
+			break;
+		case '50c':
+			size(24.25, 2.38, 'nordic gold');
+			break;
+		case '100c':
+			size(23.25, 2.33, 'cupronickel');
+			break;
+		case '200c':
+			size(25.75, 2.2, 'cupronickel');
 			break;
 		// https://en.wikipedia.org/wiki/Japanese_yen#Coins
 		case 'Y1':
