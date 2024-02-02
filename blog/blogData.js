@@ -1241,4 +1241,23 @@ const blogData = [
 	</ul>
 	Clearly, I have a lot to decide.
 	`,
+	`
+	@title Why does the world suck?
+	@date 1706897495393
+	@tags news
+	<em>These days</em>, news is depressing.
+	The future feels uncertain.
+	I keep wildly vacillating between bouts of euphoria from achieving personal goals,
+	to downness about my future.
+	@p
+	Thankfully, <em>these days</em>, my mind has the courage to fight back.
+	I am weakened in some ways, but strengthened in others.
+	I can now see my victory.
+	To achieve it I need only to start at the end and work back.
+	@p
+	I have learned to stop caring about what I may and may not do,
+	and focus instead on what I can and cannot do.
+	<em>I</em> will not be stopped.
+	<em>I</em> will happen.
+	`,
 ];
