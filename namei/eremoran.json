@@ -10029,9 +10029,9 @@
 		"etym": "I/PEN/*grisar",
 		"cat": "n., 1st",
 		"defList": [
-			"witch"
+			"witch (a [[kumkek]] with physical form)"
 		],
-		"categories": ["person"]
+		"categories": ["god", "person"]
 	},
 	{
 		"title": "krizasêm",
@@ -15518,6 +15518,15 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "sibanar",
+		"etym": "C/siz/bant",
+		"cat": "n., 1st",
+		"defList": [
+			"Sibanar, 'bright-knife', one of the three [[krizar]] (witches) of emotion"
+		],
+		"categories": ["god", "emotion"]
+	},
+	{
 		"title": "siêt",
 		"etym": "C/siz/-ê",
 		"cat": "n., 3rd",
@@ -17513,6 +17522,15 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "tukelar",
+		"etym": "D/tukilk",
+		"cat": "n., 1st",
+		"defList": [
+			"Tukelar, 'little soul', one of the three [[krizar]] (witches) of emotion"
+		],
+		"categories": ["god", "emotion"]
+	},
+	{
 		"title": "tukil",
 		"etym": "I/PEN/*tuxil/wind",
 		"cat": "n., 4th",
@@ -18072,6 +18090,15 @@
 			"whortleberry"
 		],
 		"categories": ["fruit", "plant"]
+	},
+	{
+		"title": "ullar",
+		"etym": "C/ulu/lam",
+		"cat": "n., 1st",
+		"defList": [
+			"Ullar, 'blue-stone', one of the three [[krizar]] (witches) of emotion"
+		],
+		"categories": ["god", "emotion"]
 	},
 	{
 		"title": "ulu",
