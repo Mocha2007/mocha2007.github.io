@@ -62,6 +62,7 @@
 	<span class="button gold" onclick="preset('ere5')">4 d</span>
 	<hr>
 	<h2>Specifications</h2>
+	<h3>Core</h3>
 	Diameter:
 	<input type="number" id="diameter_mm" min="17.91" max="38.1" step="0.1" value="20"> mm =
 	<span id="diameter_in"></span> in =
@@ -78,17 +79,29 @@
 		<br>
 		<span id="c_unimp"></span>
 	</div>
-	<h3>Cladding / Plating</h3>
-	Cladding/Plating Thickness:
-	<input type="number" id="cladding_mm" min="0" max="675" step="5" value="0"> &micro;m =
-	<span id="cladding_in"></span> in =
-	<span id="cladding_se"></span> se
+	<h3>Outer Ring (for Bimetallic coins)</h3>
+	Width:
+	<input type="number" id="ring_mm" min="0" max="3.5" step="0.5" value="0"> mm =
+	<span id="ring_in"></span> in =
+	<span id="ring_se"></span> se
 	<br>
 	Composition:
 	<div>
 		<strong id="cc_imp"></strong>
 		<br>
 		<span id="cc_unimp"></span>
+	</div>
+	<h3>Cladding / Plating</h3>
+	Thickness:
+	<input type="number" id="cladding_mm" min="0" max="675" step="5" value="0"> &micro;m =
+	<span id="cladding_in"></span> in =
+	<span id="cladding_se"></span> se
+	<br>
+	Composition:
+	<div>
+		<strong id="rc_imp"></strong>
+		<br>
+		<span id="rc_unimp"></span>
 	</div>
 	<hr>
 	<h2>Result</h2>
@@ -98,7 +111,10 @@
 	<span id="mass_gr"></span> gr =
 	<span id="mass_edzam"></span> edzam
 	<br>
-	Cladding/Plating Mass Fraction: <span id="clad_frac"></span>
+	<h3>Mass Fractions</h3>
+	Core: <span id="mf_core"></span><br>
+	Outer Ring: <span id="mf_ring"></span><br>
+	Cladding/Plating: <span id="mf_clad"></span>
 </div>
 <script>
 const inch = 25.4;
@@ -119,17 +135,18 @@ const compositions = [
 	['Zinc', 7.14],
 	['Cupronickel', 7.257],
 	['Steel', 7.85],
+	['Nickel Brass', 8.586, 'gold'],
 	['Electrum', 8.65],
 	['Nickel', 8.908],
 ];
 compositions.forEach((datum, i) => {
 	const [name, d, classList, important] = datum;
-	['', 'c'].forEach(prefix => {
+	['', 'c', 'r'].forEach(prefix => {
 		const label = document.createElement('label');
 		document.getElementById(prefix + (important ? 'c_imp' : 'c_unimp')).appendChild(label);
 		label.classList.value = `button ${classList}`;
 		const input = document.createElement('input');
-		input.id = `${prefix}composition_${name.toLowerCase()}`;
+		input.id = `${prefix}composition_${name.toLowerCase().replace(' ', '_')}`;
 		label.appendChild(input);
 		input.type = 'radio';
 		if (!i)
@@ -141,14 +158,17 @@ compositions.forEach((datum, i) => {
 });
 
 function preset(id){
-	function size(d, t, s, c = 0, cc = undefined){
+	function size(d, t, s, c = 0, cc = undefined, r = 0, rr = undefined){
 		document.getElementById('diameter_mm').value = d;
 		document.getElementById('thickness_mm').value = t;
 		document.getElementById('cladding_mm').value = c;
+		document.getElementById('ring_mm').value = r;
 		if (s)
 			document.getElementById(`composition_${s}`).checked = true;
 		if (cc)
 			document.getElementById(`ccomposition_${cc}`).checked = true;
+		if (rr)
+			document.getElementById(`rcomposition_${rr}`).checked = true;
 		update();
 	}
 	switch (id){
@@ -191,10 +211,10 @@ function preset(id){
 			size(27.3, 1.78, 'cupronickel');
 			break;
 		case '100p':
-			size(23.43, 2.8, 'cupronickel'); // close enough alloy
+			size(23.23, 2.8, 'nickel', 0, undefined, 4, 'nickel_brass'); // unknown alloy
 			break;
 		case '200p':
-			size(28.4, 2.5, 'cupronickel'); // close enough alloy
+			size(28.4, 2.5, 'nickel', 0, undefined, 4, 'nickel_brass'); // unknown alloy
 			break;
 		// https://en.wikipedia.org/wiki/Euro_coins#Specification
 		case '1c':
@@ -216,10 +236,10 @@ function preset(id){
 			size(24.25, 2.38, 'nordic gold');
 			break;
 		case '100c':
-			size(23.25, 2.33, 'cupronickel');
+			size(23.25, 2.33, 'cupronickel', 0, undefined, 3.4, 'nickel_brass');
 			break;
 		case '200c':
-			size(25.75, 2.2, 'cupronickel');
+			size(25.75, 2.2, 'nickel_brass', 0, undefined, 3.7, 'cupronickel');
 			break;
 		// https://en.wikipedia.org/wiki/Japanese_yen#Coins
 		case 'Y1':
@@ -238,17 +258,17 @@ function preset(id){
 			size(22.6, 1.7, 'cupronickel');
 			break;
 		case 'Y500':
-			size(26.5, 1.81, 'bronze');
+			size(26.5, 1.81, 'cupronickel', 0, undefined, 5.2, 'nickel_brass');
 			break;
 		// https://mocha2007.github.io/namei/namei#Eremoran_Currency
 		case 'ere1':
 			size(8*se, se, 'bronze');
 			break;
 		case 'ere2':
-			size(7*se, 0.625*se, 'sterling silver');
+			size(7*se, 0.625*se, 'sterling_silver');
 			break;
 		case 'ere3':
-			size(11*se, se, 'sterling silver');
+			size(11*se, se, 'sterling_silver');
 			break;
 		case 'ere4':
 			size(7*se, 0.625*se, 'gold');
@@ -269,28 +289,40 @@ function update(){
 	// convert cladding
 	document.getElementById('cladding_in').innerHTML = (document.getElementById('cladding_mm').value/1000 / inch).toFixed(3);
 	document.getElementById('cladding_se').innerHTML = (document.getElementById('cladding_mm').value/1000 / se).toFixed(3);
+	// convert ring
+	document.getElementById('ring_in').innerHTML = (document.getElementById('ring_mm').value / inch).toFixed(3);
+	document.getElementById('ring_se').innerHTML = (document.getElementById('ring_mm').value / se).toFixed(3);
 	// compute volume
-	const r = document.getElementById('diameter_mm').value/2;
-	const h = document.getElementById('thickness_mm').value;
+	const r_i = document.getElementById('diameter_mm').value/2;
+	const h = +document.getElementById('thickness_mm').value;
 	const padding = document.getElementById('cladding_mm').value/1000; // mcm -> mm
+	const r_o = +document.getElementById('ring_mm').value;
+	const r = r_i + r_o;
 	const r_ = r - padding;
 	const h_ = h - 2*padding;
 	const volt = Math.PI * r * r * h / 1000; // total
-	const voli = Math.PI * r_ * r_ * h_ / 1000; // core
-	const volc = volt - voli; // cladding
+	const voli = Math.PI * r_ * r_ * h_ / 1000; // core + outer ring
+	const vol_core = Math.PI * r_i * r_i * h_ / 1000; // core only
+	const vol_ring = voli - vol_core; // outer ring only
+	const volc = volt - voli; // cladding only
 	document.getElementById('vol_mm3').innerHTML = volt.toFixed(3);
 	// compute cladding volume
 	// compute mass
 	const density = document.querySelector('input[name="composition"]:checked').value;
 	const densityc = document.querySelector('input[name="ccomposition"]:checked').value;
-	const massi = density * voli;
+	const densityr = document.querySelector('input[name="rcomposition"]:checked').value;
+	const massi = density * vol_core;
+	const massr = densityr * vol_ring;
 	const massc = densityc * volc;
-	const mass = massi + massc;
+	const mass = massi + massc + massr;
+	// conversions
 	document.getElementById('mass_g').innerHTML = mass.toFixed(3);
 	document.getElementById('mass_gr').innerHTML = (mass / gr).toFixed(3);
 	document.getElementById('mass_edzam').innerHTML = (mass / edzam).toFixed(3);
 	// mass frac
-	document.getElementById('clad_frac').innerHTML = (100 * massc / mass).toFixed(1) + '%';
+	document.getElementById('mf_core').innerHTML = (100 * massi / mass).toFixed(1) + '%';
+	document.getElementById('mf_ring').innerHTML = (100 * massr / mass).toFixed(1) + '%';
+	document.getElementById('mf_clad').innerHTML = (100 * massc / mass).toFixed(1) + '%';
 }
 update();
 </script>
