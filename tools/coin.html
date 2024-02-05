@@ -22,6 +22,11 @@
 	.ring_silver {
 		border: 5px solid silver;
 	}
+	.note {
+		color: grey;
+		font-size: 75%;
+		font-style: italic;
+	}
 </style>
 <title>Coin Tool</title>
 <h1 id="Values">Coin Tool</h1>
@@ -116,9 +121,15 @@
 	<h2>Result</h2>
 	Volume: <span id="vol_mm3"></span> cm<sup>3</sup>
 	<br>
-	Mass: <span id="mass_g"></span> g =
+	Mass (perfect disk): <span id="mass_g"></span> g =
 	<span id="mass_gr"></span> gr =
 	<span id="mass_edzam"></span> edzam
+	<br>
+	<b>Mass (stamped): about <span id="mass2_g"></span> g (&plusmn;5%) =
+	<span id="mass2_gr"></span> gr =
+	<span id="mass2_edzam"></span> edzam</b>
+	<br>
+	<span class="note">Note: exact mass of stamped coin will depend on its exact design, edge milling, and wear.</span>
 	<br>
 	<h3>Mass Fractions</h3>
 	Core: <span id="mf_core"></span><br>
@@ -131,6 +142,7 @@ const gr = 0.06479891;
 
 const se = 2.84; // mm
 const edzam = 16.67; // g
+const MASS_LOSS = 0.78; // est'd based on measurements
 
 const compositions = [
 	['Copper', 8.96, 'copper', true],
@@ -328,10 +340,14 @@ function update(){
 	const massr = densityr * vol_ring;
 	const massc = densityc * volc;
 	const mass = massi + massc + massr;
+	const mass2 = MASS_LOSS * mass;
 	// conversions
 	document.getElementById('mass_g').innerHTML = mass.toFixed(3);
 	document.getElementById('mass_gr').innerHTML = (mass / gr).toFixed(3);
 	document.getElementById('mass_edzam').innerHTML = (mass / edzam).toFixed(3);
+	document.getElementById('mass2_g').innerHTML = mass2.toFixed(3);
+	document.getElementById('mass2_gr').innerHTML = (mass2 / gr).toFixed(3);
+	document.getElementById('mass2_edzam').innerHTML = (mass2 / edzam).toFixed(3);
 	// mass frac
 	document.getElementById('mf_core').innerHTML = (100 * massi / mass).toFixed(1) + '%';
 	document.getElementById('mf_ring').innerHTML = (100 * massr / mass).toFixed(1) + '%';
