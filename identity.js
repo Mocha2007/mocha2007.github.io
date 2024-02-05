@@ -223,7 +223,10 @@ function secret(){
 	document.getElementById('title').innerHTML = 'Luna’s Site<audio id="sfx" src="snd/egg.mp3"/>';
 	document.title = 'Luna’s Site';
 	const sub = document.getElementById('subtitle');
-	sub.innerHTML = sub.innerHTML.replace(/Mocha/g, 'Luna');
+	const RE = [/Mocha/g, 'Luna'];
+	sub.innerHTML = sub.innerHTML.replace(...RE);
+	Array.from(document.getElementsByTagName('a'))
+		.forEach(elem => elem.innerHTML = elem.innerHTML.replace(...RE));
 	playSound('sfx');
 	// console.info('I am myself now.');
 }
@@ -233,12 +236,13 @@ secret.enable = () => {
 };
 
 function identity(){
-	if (!OCTOBER_DEBUG && (new Date().getMonth() !== 9 || 0.2 < Math.random())) // 20% chance of happening during October
-		return;
 	// scroll to top
 	window.scrollTo(0, 0);
-	// add secret
+	// add secret, regardless of the time of year
 	onVisible(document.getElementById('bottom'), secret);
+	// 20% chance of happening during JUNE (pride month), OCTOBER (halloween), and NOVEMBER (trans month)
+	if (!(OCTOBER_DEBUG || [5, 9, 10].includes(new Date().getMonth()) && Math.random() < 0.2))
+		return secret.enable();
 	// import CSS
 	const style = document.createElement('link');
 	style.href = 'css/identity.css';

@@ -145,6 +145,7 @@ function sub(){
 	var index = Math.floor(Math.random()*subtitles.length);
 	document.getElementById('subtitle').innerHTML = subtitles[index];
 	// console.info('C3692 6510 QT4420');
+	console.info('If you\'re interested in JS, make sure to check out my other repositories on github: https://github.com/Mocha2007');
 }
 
 // run
