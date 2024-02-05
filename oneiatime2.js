@@ -146,6 +146,18 @@ function oneiaTime(){
 }
 
 function holidayCSS(){
+	var alreadyUsedCustomCss = false;
+	function labor(s){
+		title = s;
+		src = defaultSrc;
+		document.body.style.filter = 'invert(1)';
+		img.classList.add('social'); // so it remains unaffected by the pinkening
+		var a = Array.from(document.getElementsByClassName('highlight'));
+		a.push(...document.getElementsByTagName('progress'));
+		for (var i = 0; i < a.length; i++)
+			a[i].style.filter = 'invert(1)';
+		alreadyUsedCustomCss = true;
+	}
 	var year = new Date().getFullYear();
 	var month = new Date().getMonth() + 1;
 	var day = new Date().getDate();
@@ -165,11 +177,13 @@ function holidayCSS(){
 		img.style.filter = 'hue-rotate(225deg)';
 		img.style.borderRadius = '30px';
 		img.style.backgroundColor = '#082';
+		img.style.padding = '10px';
 		img.style.maskImage = 'linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0))';
 		img.classList.add('cny'); // so it remains unaffected by the pinkening
 		title = 'Year of the ' + animal;
 		// to counteract valentines:
 		src = defaultSrc;
+		alreadyUsedCustomCss = true;
 	}
 
 	var title = '';
@@ -191,6 +205,8 @@ function holidayCSS(){
 				src = 'mochricks';
 			if (day === 17)
 				title = 'Drink, ye bastard!';
+			if (day === 18)
+				labor('Founding of the Paris Commune');
 			else if (day === 20)
 				title = 'Happy vernal equinox ' + year + '! Happy Nowruz!';
 			else if (day === 31) // TDoV
@@ -210,6 +226,8 @@ function holidayCSS(){
 				img.outerHTML = '<img id="m" src="img/mopril.png" width="200" alt="Mochadian Birthday Squiggle" onmouseover="playSound(\'sfx\')" onmouseout="stopSound(\'sfx\')"> <audio id="sfx" src="snd/partyhorn.mp3"/>';
 			break;
 		case 5:
+			if (day === 1)
+				labor('International Workers\' Day');
 			if (day === 29)
 				title = 'Roma renascetur';
 			break;
@@ -251,7 +269,7 @@ function holidayCSS(){
 			break;
 		case 11:
 			if (day === 7)
-				title = 'The Feast of Boris is today! \'Tis the season to be gorging!';
+				labor('October Revolution');
 			else if (day === 11){
 				title = '1918 - ' + year;
 				img.style.filter = 'hue-rotate(180deg)';
@@ -279,14 +297,14 @@ function holidayCSS(){
 			break;
 	}
 
-	// compute Chinese new year
-	if (wkBefCNY < Date.now() && Date.now() < wkAftCNY)
-		runCny();
 
 	img.title = title;
-	if (src !== defaultSrc)
+	// compute Chinese new year
+	if (!alreadyUsedCustomCss && wkBefCNY < Date.now() && Date.now() < wkAftCNY)
+		runCny();
+	else if (src !== defaultSrc)
 		img.src = 'img/'+src+'.png';
-	else if (!img.classList.length){ // THE PINKENING
+	else if (!alreadyUsedCustomCss && !img.classList.length){ // THE PINKENING
 		// compute
 		var pinkeningFactor = Math.max(0, Math.min(1,
 			(Date.now() - new Date(2023, 7, 16))/(1*constants.earth.year) // 1 year hrt OwO
