@@ -154,6 +154,7 @@ compositions.forEach((datum, i) => {
 		const label = document.createElement('label');
 		document.getElementById(prefix + (important ? 'c_imp' : 'c_unimp')).appendChild(label);
 		label.classList.value = `button ${classList}`;
+		label.title = `ρ = ${d} g/cm³`;
 		const input = document.createElement('input');
 		input.id = `${prefix}composition_${name.toLowerCase().replace(' ', '_')}`;
 		label.appendChild(input);
