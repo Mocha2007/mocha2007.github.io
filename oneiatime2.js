@@ -222,13 +222,17 @@ function holidayCSS(){
 			}
 			else if (day === 5)
 				title = 'Live long and prosper. 2063 - Forever';
+			else if (day === 22)
+				labor('Lenin\'s Birthday');
 			else if (day === 27)
 				img.outerHTML = '<img id="m" src="img/mopril.png" width="200" alt="Mochadian Birthday Squiggle" onmouseover="playSound(\'sfx\')" onmouseout="stopSound(\'sfx\')"> <audio id="sfx" src="snd/partyhorn.mp3"/>';
 			break;
 		case 5:
 			if (day === 1)
 				labor('International Workers\' Day');
-			if (day === 29)
+			else if (day === 5)
+				labor('Marx\'s Birthday');
+			else if (day === 29)
 				title = 'Roma renascetur';
 			break;
 		case 6:
@@ -269,7 +273,7 @@ function holidayCSS(){
 			break;
 		case 11:
 			if (day === 7)
-				labor('October Revolution');
+				labor('October Revolution and Trotsky\'s Birthday');
 			else if (day === 11){
 				title = '1918 - ' + year;
 				img.style.filter = 'hue-rotate(180deg)';
