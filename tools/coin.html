@@ -108,6 +108,11 @@
 		<br>
 		<span id="rc_unimp"></span>
 	</div>
+	<h3>Hole</h3>
+	Diameter:
+	<input type="number" id="hole_mm" min="0" max="3.5" step="0.5" value="0"> mm =
+	<span id="hole_in"></span> in =
+	<span id="hole_se"></span> se
 	<h3>Cladding / Plating</h3>
 	Thickness:
 	<input type="number" id="cladding_mm" min="0" max="675" step="5" value="0"> &micro;m =
@@ -183,11 +188,12 @@ compositions.forEach((datum, i) => {
 });
 
 function preset(id){
-	function size(d, t, s, c = 0, cc = undefined, r = 0, rr = undefined){
+	function size(d, t, s, c = 0, cc = undefined, r = 0, rr = undefined, h = 0){
 		document.getElementById('diameter_mm').value = d;
 		document.getElementById('thickness_mm').value = t;
 		document.getElementById('cladding_mm').value = c;
 		document.getElementById('ring_mm').value = r;
+		document.getElementById('hole_mm').value = h;
 		if (s)
 			document.getElementById(`composition_${s}`).checked = true;
 		if (cc)
@@ -274,13 +280,13 @@ function preset(id){
 			size(20, 1.5, 'aluminum');
 			break;
 		case 'Y5':
-			size(22, 1.5, 'bronze');
+			size(22, 1.5, 'bronze', 0, undefined, 0, undefined, 5.7);
 			break;
 		case 'Y10':
 			size(23.5, 1.5, 'copper');
 			break;
 		case 'Y50':
-			size(21, 1.7, 'cupronickel');
+			size(21, 1.7, 'cupronickel', 0, undefined, 0, undefined, 4.4);
 			break;
 		case 'Y100':
 			size(22.6, 1.7, 'cupronickel');
@@ -325,14 +331,19 @@ function update(){
 	const h = +document.getElementById('thickness_mm').value; // total height
 	const padding = document.getElementById('cladding_mm').value/1000; // cladding/plating thickness
 	const or = +document.getElementById('ring_mm').value; // outer ring thickness
+	const r_h = +document.getElementById('hole_mm').value/2; // hole radius
 	const r_ = r - padding; // core+ring thickness
 	const r_i = r_ - or; // core radius
 	const h_ = h - 2*padding; // height of core/ring
 	const volt = Math.PI * r * r * h / 1000; // total volume
-	const voli = Math.PI * r_ * r_ * h_ / 1000; // core + outer ring volume
-	const vol_core = Math.PI * r_i * r_i * h_ / 1000; // core volume
-	const vol_ring = voli - vol_core; // outer ring volume
-	const volc = volt - voli; // cladding volume
+	const volh = Math.PI * r_h * r_h * h / 1000; // hole volume
+	const volh2 = Math.PI * r_h * r_h * h_ / 1000; // hole volume (excl clad)
+	const volh3 = volh - volh2; // hole volume (just the clad)
+	const voli = Math.PI * r_ * r_ * h_ / 1000; // hole2 + core + outer ring volume
+	const vol_ch = Math.PI * r_i * r_i * h_ / 1000; // core + hole2 volume
+	const vol_core = vol_ch - volh2; // core volume
+	const vol_ring = voli - vol_ch; // outer ring volume
+	const volc = volt - voli - volh3; // cladding volume
 	document.getElementById('vol_mm3').innerHTML = volt.toFixed(3);
 	// compute cladding volume
 	// compute mass
