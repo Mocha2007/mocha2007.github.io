@@ -106,6 +106,7 @@ var subtitles =	[
 	'gib snuggu',
 	// 'insert dong',
 	'It is easier for a camel to find a needle in a haystack than for one to simply enter Mordor.',
+	'Your FALGSC Empress',
 	// furry
 	'Update Furrygram',
 	'MOW! MOW! MOW!',
