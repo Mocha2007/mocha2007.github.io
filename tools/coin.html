@@ -17,8 +17,7 @@
 <title>Coin Tool</title>
 <h1 id="Values">Coin Tool</h1>
 <div id="inputs" onclick="update();" onkeyup="update();">
-	Size Presets:
-	<br>
+	<h2>Presets</h2>
 	US:
 	<span class="button copper" onclick="preset(1)">Penny</span>
 	<span class="button" onclick="preset(5)">Nickel</span>
@@ -62,13 +61,14 @@
 	<span class="button gold" onclick="preset('ere4')">1 d</span>
 	<span class="button gold" onclick="preset('ere5')">4 d</span>
 	<hr>
+	<h2>Specifications</h2>
 	Diameter:
-	<input type="number" id="diameter_mm" min="17.91" max="38.1" value="20"> mm =
+	<input type="number" id="diameter_mm" min="17.91" max="38.1" step="0.1" value="20"> mm =
 	<span id="diameter_in"></span> in =
 	<span id="diameter_se"></span> se
 	<br>
 	Thickness:
-	<input type="number" id="thickness_mm" min="1.35" max="2.8" value="2"> mm =
+	<input type="number" id="thickness_mm" min="1.35" max="2.8" step="0.05" value="2"> mm =
 	<span id="thickness_in"></span> in =
 	<span id="thickness_se"></span> se
 	<br>
@@ -78,11 +78,27 @@
 		<br>
 		<span id="c_unimp"></span>
 	</div>
+	<h3>Cladding / Plating</h3>
+	Cladding/Plating Thickness:
+	<input type="number" id="cladding_mm" min="0" max="675" step="5" value="0"> &micro;m =
+	<span id="cladding_in"></span> in =
+	<span id="cladding_se"></span> se
+	<br>
+	Composition:
+	<div>
+		<strong id="cc_imp"></strong>
+		<br>
+		<span id="cc_unimp"></span>
+	</div>
 	<hr>
-	Volume: <span id="vol_mm3"></span> cm<sup>3</sup><br>
+	<h2>Result</h2>
+	Volume: <span id="vol_mm3"></span> cm<sup>3</sup>
+	<br>
 	Mass: <span id="mass_g"></span> g =
 	<span id="mass_gr"></span> gr =
 	<span id="mass_edzam"></span> edzam
+	<br>
+	Cladding/Plating Mass Fraction: <span id="clad_frac"></span>
 </div>
 <script>
 const inch = 25.4;
@@ -107,31 +123,37 @@ const compositions = [
 ];
 compositions.forEach((datum, i) => {
 	const [name, d, classList, important] = datum;
-	const label = document.createElement('label');
-	document.getElementById(important ? 'c_imp' : 'c_unimp').appendChild(label);
-	label.classList.value = `button ${classList}`;
-	const input = document.createElement('input');
-	input.id = `composition_${name.toLowerCase()}`;
-	label.appendChild(input);
-	input.type = 'radio';
-	if (!i)
-		input.checked = true;
-	input.name = 'composition';
-	input.value = d;
-	label.appendChild(document.createTextNode(name));
+	['', 'c'].forEach(prefix => {
+		const label = document.createElement('label');
+		document.getElementById(prefix + (important ? 'c_imp' : 'c_unimp')).appendChild(label);
+		label.classList.value = `button ${classList}`;
+		const input = document.createElement('input');
+		input.id = `${prefix}composition_${name.toLowerCase()}`;
+		label.appendChild(input);
+		input.type = 'radio';
+		if (!i)
+			input.checked = true;
+		input.name = prefix + 'composition';
+		input.value = d;
+		label.appendChild(document.createTextNode(name));
+	});
 });
 
 function preset(id){
-	function size(d, t, s){
+	function size(d, t, s, c = 0, cc = undefined){
 		document.getElementById('diameter_mm').value = d;
 		document.getElementById('thickness_mm').value = t;
+		document.getElementById('cladding_mm').value = c;
 		if (s)
 			document.getElementById(`composition_${s}`).checked = true;
+		if (cc)
+			document.getElementById(`ccomposition_${cc}`).checked = true;
 		update();
 	}
 	switch (id){
+		// https://en.wikipedia.org/wiki/Coins_of_the_United_States_dollar#Coins_in_circulation
 		case 1:
-			size(19.05, 1.52, 'zinc');
+			size(19.05, 1.52, 'zinc', 21, 'copper');
 			break;
 		case 5:
 			size(21.21, 1.95, 'cupronickel');
@@ -243,17 +265,31 @@ function update(){
 	// convert thick
 	document.getElementById('thickness_in').innerHTML = (document.getElementById('thickness_mm').value / inch).toFixed(3);
 	document.getElementById('thickness_se').innerHTML = (document.getElementById('thickness_mm').value / se).toFixed(3);
+	// convert cladding
+	document.getElementById('cladding_in').innerHTML = (document.getElementById('cladding_mm').value/1000 / inch).toFixed(3);
+	document.getElementById('cladding_se').innerHTML = (document.getElementById('cladding_mm').value/1000 / se).toFixed(3);
 	// compute volume
 	const r = document.getElementById('diameter_mm').value/2;
 	const h = document.getElementById('thickness_mm').value;
-	const vol = Math.PI * r * r * h / 1000;
-	document.getElementById('vol_mm3').innerHTML = vol.toFixed(3);
+	const padding = document.getElementById('cladding_mm').value/1000; // mcm -> mm
+	const r_ = r - padding;
+	const h_ = h - 2*padding;
+	const volt = Math.PI * r * r * h / 1000; // total
+	const voli = Math.PI * r_ * r_ * h_ / 1000; // core
+	const volc = volt - voli; // cladding
+	document.getElementById('vol_mm3').innerHTML = volt.toFixed(3);
+	// compute cladding volume
 	// compute mass
 	const density = document.querySelector('input[name="composition"]:checked').value;
-	const mass = density * vol;
+	const densityc = document.querySelector('input[name="ccomposition"]:checked').value;
+	const massi = density * voli;
+	const massc = densityc * volc;
+	const mass = massi + massc;
 	document.getElementById('mass_g').innerHTML = mass.toFixed(3);
 	document.getElementById('mass_gr').innerHTML = (mass / gr).toFixed(3);
 	document.getElementById('mass_edzam').innerHTML = (mass / edzam).toFixed(3);
+	// mass frac
+	document.getElementById('clad_frac').innerHTML = (100 * massc / mass).toFixed(1) + '%';
 }
 update();
 </script>
