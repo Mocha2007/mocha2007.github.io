@@ -120,6 +120,7 @@ const compositions = [
 	['Cupronickel', 7.257],
 	['Steel', 7.85],
 	['Electrum', 8.65],
+	['Nickel', 8.908],
 ];
 compositions.forEach((datum, i) => {
 	const [name, d, classList, important] = datum;
@@ -153,35 +154,35 @@ function preset(id){
 	switch (id){
 		// https://en.wikipedia.org/wiki/Coins_of_the_United_States_dollar#Coins_in_circulation
 		case 1:
-			size(19.05, 1.52, 'zinc', 21, 'copper');
+			size(19.05, 1.52, 'zinc', 20, 'copper');
 			break;
 		case 5:
 			size(21.21, 1.95, 'cupronickel');
 			break;
 		case 10:
-			size(17.91, 1.35, 'copper');
+			size(17.91, 1.35, 'copper', 235, 'cupronickel');
 			break;
 		case 25:
-			size(24.26, 1.75, 'copper');
+			size(24.26, 1.75, 'copper', 305, 'cupronickel');
 			break;
 		case 50:
-			size(30.61, 2.15, 'copper');
+			size(30.61, 2.15, 'copper', 375, 'curpronickel');
 			break;
 		case 100:
-			size(26.49, 2, 'copper');
+			size(26.49, 2, 'copper', 485, 'bronze');
 			break;
-		// https://en.wikipedia.org/wiki/Coins_of_the_pound_sterling
+		// https://en.wikipedia.org/wiki/Coins_of_the_pound_sterling#Currently_circulating_coinage
 		case '1p':
-			size(20.3, 1.65, 'steel');
+			size(20.3, 1.65, 'steel', 0, 'copper');
 			break;
 		case '2p':
-			size(25.9, 2.03, 'steel');
+			size(25.9, 2.03, 'steel', 0, 'copper');
 			break;
 		case '5p':
-			size(18, 1.89, 'steel');
+			size(18, 1.89, 'steel', 0, 'nickel');
 			break;
 		case '10p':
-			size(24.5, 2.05, 'steel');
+			size(24.5, 2.05, 'steel', 0, 'nickel');
 			break;
 		case '20p':
 			size(21.4, 1.7, 'cupronickel');
@@ -197,13 +198,13 @@ function preset(id){
 			break;
 		// https://en.wikipedia.org/wiki/Euro_coins#Specification
 		case '1c':
-			size(16.25, 1.67, 'steel');
+			size(16.25, 1.67, 'steel', 0, 'copper');
 			break;
 		case '2c':
-			size(18.75, 1.67, 'steel');
+			size(18.75, 1.67, 'steel', 0, 'copper');
 			break;
 		case '5c':
-			size(21.25, 1.67, 'steel');
+			size(21.25, 1.67, 'steel', 0, 'copper');
 			break;
 		case '10c':
 			size(19.75, 1.93, 'nordic gold');
