@@ -7,6 +7,9 @@
 <link href="../css/button.css" type="text/css" rel="stylesheet">
 <!--<script src="../common.js" defer></script>-->
 <style>
+	a {
+		color: white;
+	}
 	.button {
 		line-height: 2em;
 	}
@@ -32,7 +35,7 @@
 <h1 id="Values">Coin Tool</h1>
 <div id="inputs" onclick="update();" onkeyup="update();">
 	<h2>Presets</h2>
-	US:
+	<a href="https://en.wikipedia.org/wiki/Coins_of_the_United_States_dollar#Coins_in_circulation">US</a>:
 	<span class="button copper" onclick="preset(1)">Penny</span>
 	<span class="button" onclick="preset(5)">Nickel</span>
 	<span class="button" onclick="preset(10)">Dime</span>
@@ -40,7 +43,7 @@
 	<span class="button" onclick="preset(50)">Half-Dollar</span>
 	<span class="button gold" onclick="preset(100)">Dollar</span>
 	<br>
-	UK:
+	<a href="https://en.wikipedia.org/wiki/Coins_of_the_pound_sterling#Currently_circulating_coinage">UK</a>:
 	<span class="button copper" onclick="preset('1p')">1p</span>
 	<span class="button copper" onclick="preset('2p')">2p</span>
 	<span class="button" onclick="preset('5p')">5p</span>
@@ -50,7 +53,7 @@
 	<span class="button ring_gold" onclick="preset('100p')">&pound;1</span>
 	<span class="button ring_gold" onclick="preset('200p')">&pound;2</span>
 	<br>
-	EU:
+	<a href="https://en.wikipedia.org/wiki/Euro_coins#Specification">EU</a>:
 	<span class="button copper" onclick="preset('1c')">1c</span>
 	<span class="button copper" onclick="preset('2c')">2c</span>
 	<span class="button copper" onclick="preset('5c')">5c</span>
@@ -60,7 +63,7 @@
 	<span class="button ring_gold" onclick="preset('100c')">&euro;1</span>
 	<span class="button gold ring_silver" onclick="preset('200c')">&euro;2</span>
 	<br>
-	Japan:
+	<a href="https://en.wikipedia.org/wiki/Japanese_yen#Coins">Japan</a>:
 	<span class="button" onclick="preset('Y1')">¥1</span>
 	<span class="button gold" onclick="preset('Y5')">¥5</span>
 	<span class="button copper" onclick="preset('Y10')">¥10</span>
@@ -68,7 +71,7 @@
 	<span class="button" onclick="preset('Y100')">¥100</span>
 	<span class="button ring_gold" onclick="preset('Y500')">¥500</span>
 	<br>
-	Eremor:
+	<a href="../namei/namei.html#Eremoran_Currency">Eremor</a>:
 	<span class="button copper" onclick="preset('ere1')">1 a</span>
 	<span class="button" onclick="preset('ere2')">1 z</span>
 	<span class="button" onclick="preset('ere3')">4 z</span>
