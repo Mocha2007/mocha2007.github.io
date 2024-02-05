@@ -184,35 +184,37 @@ function preset(id){
 	switch (id){
 		// https://en.wikipedia.org/wiki/Coins_of_the_United_States_dollar#Coins_in_circulation
 		case 1:
-			size(19.05, 1.52, 'zinc', 20, 'copper');
+			size(19.05, 1.52, 'zinc', 13, 'copper'); // 2.5% plating
 			break;
 		case 5:
 			size(21.21, 1.95, 'cupronickel');
 			break;
+		// 10, 25, 50: 33% of the coin is the cladding
 		case 10:
-			size(17.91, 1.35, 'copper', 235, 'cupronickel');
+			size(17.91, 1.35, 'copper', 205, 'cupronickel');
 			break;
 		case 25:
-			size(24.26, 1.75, 'copper', 305, 'cupronickel');
+			size(24.26, 1.75, 'copper', 265, 'cupronickel');
 			break;
 		case 50:
-			size(30.61, 2.15, 'copper', 375, 'curpronickel');
+			size(30.61, 2.15, 'copper', 330, 'curpronickel');
 			break;
 		case 100:
-			size(26.49, 2, 'copper', 485, 'bronze');
+			size(26.49, 2, 'copper', 465, 'bronze'); // 50% cladding
 			break;
 		// https://en.wikipedia.org/wiki/Coins_of_the_pound_sterling#Currently_circulating_coinage
+		// plating is a wild guess...
 		case '1p':
-			size(20.3, 1.65, 'steel', 0, 'copper');
+			size(20.3, 1.65, 'steel', 10, 'copper');
 			break;
 		case '2p':
-			size(25.9, 2.03, 'steel', 0, 'copper');
+			size(25.9, 2.03, 'steel', 10, 'copper');
 			break;
 		case '5p':
-			size(18, 1.89, 'steel', 0, 'nickel');
+			size(18, 1.89, 'steel', 10, 'nickel');
 			break;
 		case '10p':
-			size(24.5, 2.05, 'steel', 0, 'nickel');
+			size(24.5, 2.05, 'steel', 10, 'nickel');
 			break;
 		case '20p':
 			size(21.4, 1.7, 'cupronickel');
@@ -227,14 +229,15 @@ function preset(id){
 			size(28.4, 2.5, 'nickel', 0, undefined, 4, 'nickel_brass'); // unknown alloy
 			break;
 		// https://en.wikipedia.org/wiki/Euro_coins#Specification
+		// plating is a wild guess...
 		case '1c':
-			size(16.25, 1.67, 'steel', 0, 'copper');
+			size(16.25, 1.67, 'steel', 10, 'copper');
 			break;
 		case '2c':
-			size(18.75, 1.67, 'steel', 0, 'copper');
+			size(18.75, 1.67, 'steel', 10, 'copper');
 			break;
 		case '5c':
-			size(21.25, 1.67, 'steel', 0, 'copper');
+			size(21.25, 1.67, 'steel', 10, 'copper');
 			break;
 		case '10c':
 			size(19.75, 1.93, 'nordic gold');
@@ -303,24 +306,24 @@ function update(){
 	document.getElementById('ring_in').innerHTML = (document.getElementById('ring_mm').value / inch).toFixed(3);
 	document.getElementById('ring_se').innerHTML = (document.getElementById('ring_mm').value / se).toFixed(3);
 	// compute volume
-	const r_i = document.getElementById('diameter_mm').value/2;
-	const h = +document.getElementById('thickness_mm').value;
-	const padding = document.getElementById('cladding_mm').value/1000; // mcm -> mm
-	const r_o = +document.getElementById('ring_mm').value;
-	const r = r_i + r_o;
-	const r_ = r - padding;
-	const h_ = h - 2*padding;
-	const volt = Math.PI * r * r * h / 1000; // total
-	const voli = Math.PI * r_ * r_ * h_ / 1000; // core + outer ring
-	const vol_core = Math.PI * r_i * r_i * h_ / 1000; // core only
-	const vol_ring = voli - vol_core; // outer ring only
-	const volc = volt - voli; // cladding only
+	const r = document.getElementById('diameter_mm').value/2; // total radius
+	const h = +document.getElementById('thickness_mm').value; // total height
+	const padding = document.getElementById('cladding_mm').value/1000; // cladding/plating thickness
+	const or = +document.getElementById('ring_mm').value; // outer ring thickness
+	const r_ = r - padding; // core+ring thickness
+	const r_i = r_ - or; // core radius
+	const h_ = h - 2*padding; // height of core/ring
+	const volt = Math.PI * r * r * h / 1000; // total volume
+	const voli = Math.PI * r_ * r_ * h_ / 1000; // core + outer ring volume
+	const vol_core = Math.PI * r_i * r_i * h_ / 1000; // core volume
+	const vol_ring = voli - vol_core; // outer ring volume
+	const volc = volt - voli; // cladding volume
 	document.getElementById('vol_mm3').innerHTML = volt.toFixed(3);
 	// compute cladding volume
 	// compute mass
-	const density = document.querySelector('input[name="composition"]:checked').value;
-	const densityc = document.querySelector('input[name="ccomposition"]:checked').value;
-	const densityr = document.querySelector('input[name="rcomposition"]:checked').value;
+	const density = +document.querySelector('input[name="composition"]:checked').value;
+	const densityc = +document.querySelector('input[name="ccomposition"]:checked').value;
+	const densityr = +document.querySelector('input[name="rcomposition"]:checked').value;
 	const massi = density * vol_core;
 	const massr = densityr * vol_ring;
 	const massc = densityc * volc;
