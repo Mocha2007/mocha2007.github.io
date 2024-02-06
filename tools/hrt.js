@@ -173,7 +173,7 @@ function get_prog(){
 	const pCount = get_prog.dose * doseCount;
 	return {t, untilNext, doseCount, pCount};
 }
-get_prog.epoch = new Date(2024, 1, 6, 18); // February 6th
+get_prog.epoch = new Date(2024, 1, 12, 18); // February 12th
 get_prog.dose = 100;
 
 /** @param {Date} t - integer in [0, 11] = day in shave cycle*/
@@ -302,7 +302,7 @@ function time_elem_inner(){
 	const totalE = doses <= 166 ? doses
 		: doses <= 349 ? 2*doses - 166 : 3*doses - 515;
 	const totalS = doses*50;
-	const totalP = Math.floor(doses/2-175)*100;
+	const totalP = Math.floor(doses/2-180.5)*100;
 	// visitations
 	const visits = Math.floor(mo/3) + 2;
 	// elem
