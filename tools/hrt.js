@@ -170,13 +170,11 @@ function get_prog(){
 	const t = new Date() - get_prog.epoch;
 	const untilNext = t % _1d;
 	const doseCount = Math.floor(t / _1d);
-	const pumpCount = get_prog.pumps * doseCount;
-	const pCount = get_prog.dose * pumpCount;
-	return {t, untilNext, doseCount, pumpCount, pCount};
+	const pCount = get_prog.dose * doseCount;
+	return {t, untilNext, doseCount, pCount};
 }
-get_prog.epoch = new Date(2024, 1, 16-3, 19); // February 16th, less three days
-get_prog.pumps = 2;
-get_prog.dose = 21;
+get_prog.epoch = new Date(2024, 1, 6, 18); // February 6th
+get_prog.dose = 100;
 
 /** @param {Date} t - integer in [0, 11] = day in shave cycle*/
 function get_shave_cycle(t = new Date()){
@@ -301,8 +299,10 @@ function time_elem_inner(){
 	doseR -= _1m*doseM;
 	const doseS = Math.ceil(doseR / _1s);
 	// total E consumed
-	const totalE = doses <= 166 ? doses : 2*doses - 166;
+	const totalE = doses <= 166 ? doses
+		: doses <= 349 ? 2*doses - 166 : 3*doses - 515;
 	const totalS = doses*50;
+	const totalP = Math.floor(doses/2-175)*100;
 	// visitations
 	const visits = Math.floor(mo/3) + 2;
 	// elem
@@ -315,6 +315,7 @@ function time_elem_inner(){
 		${eLevel()}<br>
 		<span class="small">Total E consumed: ${totalE} mg</span><br>
 		<span class="small">Total Spiro consumed: ${totalS/1000} g</span><br>
+		<span class="small">Total Prog consumed: ${totalP/1000} g</span><br>
 		${unit(laser, 'laser session')}<br><span class="small">Laser Calendar:</span>`;
 }
 
@@ -329,7 +330,8 @@ const progress_items = [
 
 const notes = [
 	'16 Aug 2023 - 7 Nov 2023: twice daily 1 mg E subL, 50 mg spiro oral',
-	'7 Nov 2023 onward: twice daily 2 mg E subL, 50 mg spiro oral',
+	'7 Nov 2023 - 6 Feb 2024: twice daily 2 mg E subL, 50 mg spiro oral',
+	'7 Feb 2024 onward: 3x daily 2 mg E subL, 2x daily 50 mg spiro oral, 1x daily 100 mg prog oral',
 	'Lasering started 15 Sep 2023: 9/15, 10/20, 11/27, 1/2, 2/7, ...',
 ];
 
