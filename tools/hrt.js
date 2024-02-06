@@ -333,6 +333,10 @@ const notes = [
 	'7 Nov 2023 - 6 Feb 2024: twice daily 2 mg E subL, 50 mg spiro oral',
 	'7 Feb 2024 onward: 3x daily 2 mg E subL, 2x daily 50 mg spiro oral, 1x daily 100 mg prog oral',
 	'Lasering started 15 Sep 2023: 9/15, 10/20, 11/27, 1/2, 2/7, ...',
+	`Current daily schedule as of 2/12/24:<ul>
+	<li>Morning: 2 x 2 mg E, 50 mg spiro</li>
+	<li>Evening: 1 x 2 mg E, 50 mg spiro, 100 mg prog</li>
+	</ul>`,
 ];
 
 function progress(){
