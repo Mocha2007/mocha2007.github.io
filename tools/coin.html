@@ -326,6 +326,9 @@ function update(){
 	// convert ring
 	document.getElementById('ring_in').innerHTML = (document.getElementById('ring_mm').value / inch).toFixed(3);
 	document.getElementById('ring_se').innerHTML = (document.getElementById('ring_mm').value / se).toFixed(3);
+	// convert hole
+	document.getElementById('hole_in').innerHTML = (document.getElementById('hole_mm').value / inch).toFixed(3);
+	document.getElementById('hole_se').innerHTML = (document.getElementById('hole_mm').value / se).toFixed(3);
 	// compute volume
 	const r = document.getElementById('diameter_mm').value/2; // total radius
 	const h = +document.getElementById('thickness_mm').value; // total height
