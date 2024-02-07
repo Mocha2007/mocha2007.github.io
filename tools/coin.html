@@ -153,19 +153,19 @@ const edzam = 16.67; // g
 const MASS_LOSS = 0.78; // est'd based on measurements
 
 const compositions = [
-	['Copper', 8.96, 'copper', true],
+	['Copper', 8.93, 'copper', true], // https://www.matweb.com/search/DataSheet.aspx?MatGUID=9aebe83845c04c1db5126fada6f76f7e
 	['Bronze', 8.86, 'copper', true], // https://www.matweb.com/search/datasheet.aspx?matguid=1b9e2d6c22f54dc48880b44d0e3434b4&n=1&ckck=1
-	['Sterling Silver', 10.3, '', true],
-	['Silver', 10.49, '', true],
-	['Gold', 19.3, 'gold', true],
+	['Sterling Silver', 10.4, '', true], // eg. https://www.matweb.com/search/DataSheet.aspx?MatGUID=5cb2789a0d5f4f4b8cf7579a375b8ada
+	['Silver', 10.491, '', true], // https://www.matweb.com/search/DataSheet.aspx?MatGUID=63cbd043a31f4f739ddb7632c1443d33
+	['Gold', 19.32, 'gold', true], // https://www.matweb.com/search/DataSheet.aspx?MatGUID=d2a2119a08904a0fa706e9408cddb88e
 	// secondary
-	['Aluminum', 2.7],
+	['Aluminum', 2.6989], // https://www.matweb.com/search/DataSheet.aspx?MatGUID=0cd1edf33ac145ee93a0aa6fc666c0e0
 	['Nordic Gold', 7.01, 'gold'], // https://www.greatwhitebullion.com.au/blogs/news/nordic-gold
-	['Zinc', 7.14],
+	['Zinc', 7.10], // https://www.matweb.com/search/DataSheet.aspx?MatGUID=8909140a76074049809ad74d536ed606
 	['Steel', 7.85], // https://buyabeam.com/blogs/steel-beams/what-makes-steel-so-dense/
 	['Nickel Brass', 8.586, 'gold'], // https://amesweb.info/Materials/Density-of-Metals.aspx
 	['Electrum', 8.65], // https://www.engineersedge.com/materials/densities_of_metals_and_elements_table_13976.htm
-	['Nickel', 8.908],
+	['Nickel', 8.88], // https://www.matweb.com/search/DataSheet.aspx?MatGUID=e6eb83327e534850a062dbca3bc758dc
 	['Cupronickel', 8.94], // https://matweb.com/search/DataSheet.aspx?MatGUID=4fb6ab47b8784e868bc270d230da8109&ckck=1
 ];
 compositions.forEach((datum, i) => {
