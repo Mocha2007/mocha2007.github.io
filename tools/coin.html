@@ -314,21 +314,12 @@ function preset(id){
 }
 
 function update(){
-	// convert diam
-	document.getElementById('diameter_in').innerHTML = (document.getElementById('diameter_mm').value / inch).toFixed(3);
-	document.getElementById('diameter_se').innerHTML = (document.getElementById('diameter_mm').value / se).toFixed(3);
-	// convert thick
-	document.getElementById('thickness_in').innerHTML = (document.getElementById('thickness_mm').value / inch).toFixed(3);
-	document.getElementById('thickness_se').innerHTML = (document.getElementById('thickness_mm').value / se).toFixed(3);
-	// convert cladding
-	document.getElementById('cladding_in').innerHTML = (document.getElementById('cladding_mm').value/1000 / inch).toFixed(3);
-	document.getElementById('cladding_se').innerHTML = (document.getElementById('cladding_mm').value/1000 / se).toFixed(3);
-	// convert ring
-	document.getElementById('ring_in').innerHTML = (document.getElementById('ring_mm').value / inch).toFixed(3);
-	document.getElementById('ring_se').innerHTML = (document.getElementById('ring_mm').value / se).toFixed(3);
-	// convert hole
-	document.getElementById('hole_in').innerHTML = (document.getElementById('hole_mm').value / inch).toFixed(3);
-	document.getElementById('hole_se').innerHTML = (document.getElementById('hole_mm').value / se).toFixed(3);
+	// conversions
+	const COEF_AB = [1, 1, 1000, 1, 1];
+	['diameter', 'thickness', 'cladding', 'ring', 'hole']
+		.forEach((a, i) => ['in', 'se']
+			.forEach(b => document.getElementById(`${a}_${b}`).innerHTML
+				= (document.getElementById(`${a}_mm`).value/COEF_AB[i] / inch).toFixed(3)))
 	// compute volume
 	const r = document.getElementById('diameter_mm').value/2; // total radius
 	const h = +document.getElementById('thickness_mm').value; // total height
