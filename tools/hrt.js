@@ -164,6 +164,7 @@ get_laser_t.appts = [
 	new Date('2023-11-27T10:30:00.000-05:00'),
 	new Date('2024-01-02T09:30:00.000-05:00'),
 	new Date('2024-02-07T16:00:00.000-05:00'),
+	new Date('2024-03-13T16:20:00.000-05:00'),
 ];
 
 function get_prog(){
@@ -304,7 +305,7 @@ function time_elem_inner(){
 	const totalS = doses*50;
 	const totalP = Math.floor(doses/2-180.5)*100;
 	// visitations
-	const visits = Math.floor(mo/3) + 2;
+	const visits = Math.floor(doses/2 / 90) + 2;
 	// elem
 	const str = 0 < yr ? `${unit(yr, 'year')}, ` : '';
 	return str + `${unit(m, 'month')}, ${unit(d, 'day')},
