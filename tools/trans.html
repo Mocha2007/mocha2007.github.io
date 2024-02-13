@@ -8,6 +8,9 @@
 <script src="trans.js" defer></script>
 <title>Trans Tool(s)</title>
 <h1 id="Tools">LunaToolz&trade;</h1>
+<p>
+	Tools to help me keep track of yummy yummy pills
+</p>
 <hr>
 <div id="molar">
 	<h2>Molar Mass Conversion</h2>
@@ -19,4 +22,20 @@
 	<input id="t_g" type="number" value="0" onkeyup="convert.t()" onmouseup="convert.t()"> ng/dL
 	<br>
 	<input id="t_mol" type="number" value="0" onkeyup="convert.t(true)" onmouseup="convert.t(true)"> nmol/L
+</div>
+<hr>
+<div id="hl">
+	<h2>Biological Half-Life Calculator</h2>
+	<p>Reference HLs for E2: subL = 6 h</p>
+	<input id="hl_0" type="number" value="12" onkeyup="convert.hl()" onmouseup="convert.hl()"> h between dose and measurement
+	<br>
+	<input id="hl_1" type="number" value="6" onkeyup="convert.hl()" onmouseup="convert.hl()"> h half-life
+	<br>
+	<input id="hl_2" type="number" value="12" onkeyup="convert.hl()" onmouseup="convert.hl()"> h between doses
+	<br>
+	<input id="hl_3" type="number" value="100" onkeyup="convert.hl()" onmouseup="convert.hl()"> measurement (any units)
+	<br>
+	Peak: <span id="hl_o0">400</span>
+	<br>
+	Trough: <span id="hl_o1">100</span>
 </div>

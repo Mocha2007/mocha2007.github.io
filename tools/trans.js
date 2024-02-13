@@ -36,6 +36,16 @@ const convert = {
 			return document.getElementById('t_mol');
 		},
 	},
+	hl(){
+		const H0 = +document.getElementById('hl_0').value; // t between dose and measurement
+		const H1 = +document.getElementById('hl_1').value; // hl
+		const H2 = +document.getElementById('hl_2').value; // t between doses
+		const MEASUREMENT = +document.getElementById('hl_3').value;
+		const PEAK = MEASUREMENT * Math.pow(2, H0 / H1);
+		const TROUGH = PEAK * Math.pow(0.5, H2 / H1);
+		document.getElementById('hl_o0').innerHTML = PEAK;
+		document.getElementById('hl_o1').innerHTML = TROUGH;
+	},
 	t(fromMol){
 		const T_G = +this.elem.t_g.value;
 		const T_MOL = +this.elem.t_mol.value;
