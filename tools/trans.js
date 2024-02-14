@@ -64,7 +64,7 @@ const convert = {
 			elem.appendChild(svg);
 		},
 		range(x, extrema = []){
-			const svg = document.createElement('svg');
+			const svg = createSvgElement('svg');
 			const W = 4;
 			const H = extrema.length + 1;
 			svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
