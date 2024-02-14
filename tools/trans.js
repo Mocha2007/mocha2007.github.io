@@ -49,6 +49,10 @@ const convert = {
 		document.getElementById('hl_o0').innerHTML = PEAK;
 		document.getElementById('hl_o1').innerHTML = TROUGH;
 	},
+	init(){
+		this.e();
+		this.t();
+	},
 	svg: {
 		// TODO THIS IS NOT WORKING FOR SOME REASON
 		constants: {
@@ -115,4 +119,13 @@ const convert = {
 		// do bars
 		this.svg.t(+this.elem.t_g.value);
 	},
+	wait(){
+		if (typeof createSvgElement === 'undefined')
+			setTimeout(() => this.wait(), 100);
+		else
+			this.init();
+	},
 };
+
+// wait for common.js to be loaded, then run
+convert.wait();
