@@ -1592,14 +1592,6 @@
 		"categories": ["math"]
 	},
 	{
-		"title": "arzênmonz",
-		"etym": "C/arzênt/monz",
-		"cat": "v.",
-		"defList": [
-			"be greedy"
-		]
-	},
-	{
 		"title": "arzên",
 		"img": "../img/eremoran/ardzin.png",
 		"etym": "I/PEN/*xerediên/silver",
@@ -1627,6 +1619,14 @@
 			"silverfish"
 		],
 		"categories": ["animal", "bug"]
+	},
+	{
+		"title": "arzênmonz",
+		"etym": "C/arzênt/monz",
+		"cat": "v.",
+		"defList": [
+			"be greedy"
+		]
 	},
 	{
 		"title": "arzênt",
@@ -6455,7 +6455,7 @@
 	},
 	{
 		"title": "hakiêm",
-		"etym": "C/hakiz/-e",
+		"etym": "C/hakiz/-ê",
 		"cat": "n., 5th",
 		"defList": [
 			"conundrum, dilemma, puzzle"
