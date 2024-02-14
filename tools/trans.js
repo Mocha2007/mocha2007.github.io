@@ -53,7 +53,7 @@ const convert = {
 		// TODO THIS IS NOT WORKING FOR SOME REASON
 		constants: {
 			barHeight: 50, // px
-			sexes: [['f', 'magenta'], ['m', 'blue']], // trying to design this to be as extensible as possible
+			sexes: ['magenta', 'blue'], // trying to design this to be as extensible as possible
 			// width: 200, // px
 		},
 		e(val){
@@ -75,8 +75,7 @@ const convert = {
 			const MIN = Math.min(x, ...extrema.flat());
 			const RANGE = MAX - MIN;
 			// reference intervals by sex
-			this.constants.sexes.forEach((pair, i) => {
-				const [sex, color] = pair;
+			this.constants.sexes.forEach((color, i) => {
 				const bar = createSvgElement('rect');
 				const THIS_EXTREMA = extrema[i];
 				const X = (THIS_EXTREMA[0] - MIN) / RANGE * W;
