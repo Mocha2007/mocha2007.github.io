@@ -16581,6 +16581,14 @@
 		"categories": ["government"]
 	},
 	{
+		"title": "sumu",
+		"etym": "I/PEN/*ʃumu/pure",
+		"cat": "adj.",
+		"defList": [
+			"pure, clean, pristine"
+		]
+	},
+	{
 		"title": "suro",
 		"img": "../img/eremoran/sauroma.png",
 		"etym": "I/PEN/*siuro",
