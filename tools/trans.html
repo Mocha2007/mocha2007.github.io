@@ -5,7 +5,8 @@
 <link rel="shortcut icon" href="../img/favicon.ico">
 <link href="tool.css" type="text/css" rel="stylesheet">
 <link href="../css/button.css" type="text/css" rel="stylesheet">
-<script src="trans.js" defer></script>
+<script src="../common.js" async></script>
+<script src="trans.js" async></script>
 <title>Trans Tool(s)</title>
 <h1 id="Tools">LunaToolz&trade;</h1>
 <p>
@@ -17,10 +18,12 @@
 <div id="molar">
 	<h2>Molar Mass Conversion</h2>
 	<h3>Estradiol</h3>
+	<div id="e_bars"></div>
 	<input id="e_g" type="number" value="0" onkeyup="convert.e()" onmouseup="convert.e()"> pg/mL
 	<br>
 	<input id="e_mol" type="number" value="0" onkeyup="convert.e(true)" onmouseup="convert.e(true)"> pmol/L
 	<h3>Testosterone</h3>
+	<div id="t_bars"></div>
 	<input id="t_g" type="number" value="0" onkeyup="convert.t()" onmouseup="convert.t()"> ng/dL
 	<br>
 	<input id="t_mol" type="number" value="0" onkeyup="convert.t(true)" onmouseup="convert.t(true)"> nmol/L
