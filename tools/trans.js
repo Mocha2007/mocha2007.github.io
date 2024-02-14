@@ -49,7 +49,7 @@ const convert = {
 	t(fromMol){
 		const T_G = +this.elem.t_g.value;
 		const T_MOL = +this.elem.t_mol.value;
-		const C = 1000 / this.constants.t.mm; // cause mL -> L
+		const C = 10 / this.constants.t.mm; // cause dL -> L
 		if (fromMol)
 			this.elem.t_g.value = T_MOL / C;
 		else
