@@ -71,8 +71,8 @@ const convert = {
 			svg.setAttribute('width', W * this.constants.barHeight);
 			svg.setAttribute('height', H * this.constants.barHeight);
 			svg.setAttribute('aria-label', 'Reference Intervals by Sex (Cis)');
-			const MAX = Math.max(...extrema.flat());
-			const MIN = Math.min(...extrema.flat());
+			const MAX = Math.max(x, ...extrema.flat());
+			const MIN = Math.min(x, ...extrema.flat());
 			const RANGE = MAX - MIN;
 			// reference intervals by sex
 			this.constants.sexes.forEach((pair, i) => {
@@ -88,6 +88,13 @@ const convert = {
 				bar.setAttribute('height', 1);
 				svg.appendChild(bar);
 			});
+			// measurement disk
+			const MEASUREMENT = createSvgElement('circle');
+			MEASUREMENT.setAttribute('fill', 'white');
+			MEASUREMENT.setAttribute('cx', (x - MIN)/RANGE);
+			MEASUREMENT.setAttribute('cy', H - 0.5);
+			MEASUREMENT.setAttribute('r', 0.1);
+			svg.appendChild(MEASUREMENT);
 			return svg;
 		},
 		t(val){
