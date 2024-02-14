@@ -1592,6 +1592,14 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "arzênmonz",
+		"etym": "C/arzênt/monz",
+		"cat": "v.",
+		"defList": [
+			"be greedy"
+		]
+	},
+	{
 		"title": "arzên",
 		"img": "../img/eremoran/ardzin.png",
 		"etym": "I/PEN/*xerediên/silver",
@@ -3864,7 +3872,8 @@
 		"etym": "I/PEN/*bôs/carry",
 		"cat": "v.",
 		"defList": [
-			"(archaic) carry"
+			"(archaic) carry",
+			"cause"
 		],
 		"categories": ["motion"]
 	},
@@ -6177,6 +6186,15 @@
 		"categories": ["disease"]
 	},
 	{
+		"title": "erôz",
+		"etym": "B/rôz/etoz",
+		"cat": "v.",
+		"defList": [
+			"(you/they) think, (you/they) believe"
+		],
+		"categories": ["experiential"]
+	},
+	{
 		"title": "esuk",
 		"etym": "I/PEN/*etiu-x",
 		"cat": "n., 2nd",
@@ -6199,7 +6217,7 @@
 		"etym": "r/etoz",
 		"cat": "adv.",
 		"defList": [
-			"believe; think (opinion evidential)"
+			"(I) believe; (I) think (opinion evidential)"
 		],
 		"categories": ["evidential"]
 	},
@@ -6434,6 +6452,14 @@
 			"flatcake"
 		],
 		"categories": ["food"]
+	},
+	{
+		"title": "hakiêm",
+		"etym": "C/hakiz/-e",
+		"cat": "n., 5th",
+		"defList": [
+			"conundrum, dilemma, puzzle"
+		]
 	},
 	{
 		"title": "hakiz",
@@ -7522,6 +7548,14 @@
 			"mold"
 		],
 		"categories": ["fungus"]
+	},
+	{
+		"title": "hitu",
+		"etym": "I/PEN/*ɸitu/fat",
+		"cat": "adj.",
+		"defList": [
+			"fat"
+		]
 	},
 	{
 		"title": "hiu",
@@ -10918,6 +10952,14 @@
 		"cat": "n., 5th",
 		"defList": [
 			"how many, how much"
+		]
+	},
+	{
+		"title": "kusau",
+		"etym": "C/kusam/-u",
+		"cat": "adj.",
+		"defList": [
+			"(suffix) -ose, -full"
 		]
 	},
 	{
@@ -15188,6 +15230,16 @@
 		"categories": ["experiential"]
 	},
 	{
+		"title": "sazabôz",
+		"etym": "B/sazam/bôz",
+		"cat": "v.",
+		"defList": [
+			"scary, terrifying, terrible, awesome, fearsome, shocking",
+			"(auxiliary verb, adverb-like) very, a lot"
+		],
+		"categories": ["emotion"]
+	},
+	{
 		"title": "sazam",
 		"etym": "B/sim/azaz",
 		"cat": "n., 5th",
@@ -15942,6 +15994,14 @@
 		"cat": "n., 3rd",
 		"defList": [
 			"soap"
+		]
+	},
+	{
+		"title": "skusau",
+		"etym": "B/skum/kusau",
+		"cat": "adj.",
+		"defList": [
+			"wise"
 		]
 	},
 	{
