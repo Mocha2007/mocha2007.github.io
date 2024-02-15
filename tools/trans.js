@@ -1,42 +1,25 @@
 /* exported convert */
-/* global createSvgElement */
+/* global createSvgElement, title */
 
 const convert = {
 	constants: {
 		e: {
+			extrema: [[30, 400], [10, 50]],
+			literFactor: 1000, // mL -> L
 			mm: 272.38, // g/mol
+			units: ['pg/mL', 'pmol/L'],
 		},
 		t: {
+			extrema: [[15, 70], [300, 1000]],
+			literFactor: 10, // dL -> L
 			mm: 288.431, // g/mol
+			units: ['ng/dL', 'nmol/L'],
 		},
-	},
-	e(fromMol){
-		const E_G = +this.elem.e_g.value;
-		const E_MOL = +this.elem.e_mol.value;
-		const C = 1000 / this.constants.e.mm; // cause mL -> L
-		if (fromMol)
-			this.elem.e_g.value = E_MOL / C;
-		else
-			this.elem.e_mol.value = E_G * C;
-		// do bars
-		this.svg.e(+this.elem.e_g.value);
 	},
 	elem: {
 		/** @returns {HTMLInputElement} */
-		get e_g(){
-			return document.getElementById('e_g');
-		},
-		/** @returns {HTMLInputElement} */
-		get e_mol(){
-			return document.getElementById('e_mol');
-		},
-		/** @returns {HTMLInputElement} */
-		get t_g(){
-			return document.getElementById('t_g');
-		},
-		/** @returns {HTMLInputElement} */
-		get t_mol(){
-			return document.getElementById('t_mol');
+		get molar(){
+			return document.getElementById('molar');
 		},
 	},
 	hl(){
@@ -49,9 +32,48 @@ const convert = {
 		document.getElementById('hl_o0').innerHTML = PEAK;
 		document.getElementById('hl_o1').innerHTML = TROUGH;
 	},
+	/** make the hormone elements/functions */
+	hormone(id){
+		function update(fromMol){
+			const G = +input_g.value;
+			const MOL = +input_mol.value;
+			const C = convert.constants[id].literFactor / convert.constants[id].mm; // cause mL -> L
+			if (fromMol)
+				input_g.value = MOL / C;
+			else
+				input_mol.value = G * C;
+			// do bars
+			barContainer.innerHTML = '';
+			barContainer.appendChild(
+				convert.svg.range(+input_g.value, convert.constants[id].extrema));
+		}
+		// elem
+		const container = document.createElement('div');
+		container.id = `container_${id}`;
+		this.elem.molar.appendChild(container);
+		const header = document.createElement('h3');
+		header.innerHTML = title(id);
+		container.appendChild(header);
+		// inputs
+		const input_g = document.createElement('input');
+		input_g.onkeyup = input_g.onmouseup = () => update();
+		container.appendChild(input_g);
+		container.appendChild(document.createTextNode(this.constants[id].units[0]));
+		container.appendChild(document.createElement('br'));
+		const input_mol = document.createElement('input');
+		input_mol.onkeyup = input_mol.onmouseup = () => update(true);
+		container.appendChild(input_mol);
+		container.appendChild(document.createTextNode(this.constants[id].units[1]));
+		input_mol.type = input_g.type = 'number';
+		input_mol.value = input_g.value = 0;
+		// bar container
+		const barContainer = document.createElement('div');
+		container.appendChild(barContainer);
+		// first update
+		update();
+	},
 	init(){
-		this.e();
-		this.t();
+		Object.keys(this.constants).forEach(id => this.hormone(id));
 	},
 	svg: {
 		// TODO THIS IS NOT WORKING FOR SOME REASON
@@ -59,13 +81,6 @@ const convert = {
 			barHeight: 50, // px
 			sexes: ['magenta', 'blue'], // trying to design this to be as extensible as possible
 			// width: 200, // px
-		},
-		e(val){
-			const extrema = [[30, 400], [10, 50]];
-			const elem = document.getElementById('e_bars');
-			const svg = this.range(val, extrema);
-			elem.innerHTML = '';
-			elem.appendChild(svg);
 		},
 		range(x, extrema = []){
 			const svg = createSvgElement('svg');
@@ -100,24 +115,6 @@ const convert = {
 			svg.appendChild(MEASUREMENT);
 			return svg;
 		},
-		t(val){
-			const extrema = [[15, 70], [300, 1000]];
-			const elem = document.getElementById('t_bars');
-			const svg = this.range(val, extrema);
-			elem.innerHTML = '';
-			elem.appendChild(svg);
-		},
-	},
-	t(fromMol){
-		const T_G = +this.elem.t_g.value;
-		const T_MOL = +this.elem.t_mol.value;
-		const C = 10 / this.constants.t.mm; // cause dL -> L
-		if (fromMol)
-			this.elem.t_g.value = T_MOL / C;
-		else
-			this.elem.t_mol.value = T_G * C;
-		// do bars
-		this.svg.t(+this.elem.t_g.value);
 	},
 	wait(){
 		if (typeof createSvgElement === 'undefined')
