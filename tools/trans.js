@@ -57,7 +57,7 @@ const convert = {
 		// inputs
 		const inputs = range(2).map(i => {
 			const input = document.createElement('input');
-			input.onkeyup = input.onmouseup = () => update();
+			input.onkeyup = input.onmouseup = () => update(i);
 			container.appendChild(input);
 			container.appendChild(document.createTextNode(this.constants[id].units[i]));
 			container.appendChild(document.createElement('br'));
