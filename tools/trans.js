@@ -1,5 +1,5 @@
 /* exported convert */
-/* global createSvgElement, title */
+/* global createSvgElement, range, title */
 
 const convert = {
 	constants: {
@@ -35,17 +35,17 @@ const convert = {
 	/** make the hormone elements/functions */
 	hormone(id){
 		function update(fromMol){
-			const G = +input_g.value;
-			const MOL = +input_mol.value;
+			const G = +inputs[0].value;
+			const MOL = +inputs[1].value;
 			const C = convert.constants[id].literFactor / convert.constants[id].mm; // cause mL -> L
 			if (fromMol)
-				input_g.value = MOL / C;
+				inputs[0].value = MOL / C;
 			else
-				input_mol.value = G * C;
+				inputs[1].value = G * C;
 			// do bars
 			barContainer.innerHTML = '';
 			barContainer.appendChild(
-				convert.svg.range(+input_g.value, convert.constants[id].extrema));
+				convert.svg.range(+inputs[0].value, convert.constants[id].extrema));
 		}
 		// elem
 		const container = document.createElement('div');
@@ -55,17 +55,16 @@ const convert = {
 		header.innerHTML = title(id);
 		container.appendChild(header);
 		// inputs
-		const input_g = document.createElement('input');
-		input_g.onkeyup = input_g.onmouseup = () => update();
-		container.appendChild(input_g);
-		container.appendChild(document.createTextNode(this.constants[id].units[0]));
-		container.appendChild(document.createElement('br'));
-		const input_mol = document.createElement('input');
-		input_mol.onkeyup = input_mol.onmouseup = () => update(true);
-		container.appendChild(input_mol);
-		container.appendChild(document.createTextNode(this.constants[id].units[1]));
-		input_mol.type = input_g.type = 'number';
-		input_mol.value = input_g.value = 0;
+		const inputs = range(2).map(i => {
+			const input = document.createElement('input');
+			input.onkeyup = input.onmouseup = () => update();
+			container.appendChild(input);
+			container.appendChild(document.createTextNode(this.constants[id].units[i]));
+			container.appendChild(document.createElement('br'));
+			input.type = 'number';
+			input.value = 0;
+			return input;
+		});
 		// bar container
 		const barContainer = document.createElement('div');
 		container.appendChild(barContainer);
