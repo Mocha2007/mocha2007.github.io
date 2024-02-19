@@ -80,8 +80,8 @@ class Blogpost {
 			'month'
 		)));
 		dateContainer.appendChild(link(new Period(
-			new Date(`${this.date.getFullYear()}`),
-			new Date(`${this.date.getFullYear()+1}`),
+			new Date(`${this.date.getFullYear()}-1-1`),
+			new Date(`${this.date.getFullYear()+1}-1-1`),
 			'year'
 		)));
 		div.appendChild(dateContainer);
