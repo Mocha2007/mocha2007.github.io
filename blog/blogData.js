@@ -1262,7 +1262,7 @@ const blogData = [
 	`,
 	`
 	@title Reborn
-	@date 1708374845958
+	@date 1708375346864
 	@tags transition
 	I can be happy now.
 	Laughter comes so easily.
@@ -1281,7 +1281,14 @@ const blogData = [
 	Sometimes I cry for what could've been.
 	Bewilderment at what took me so long.
 	To realize. To take the first step. Anything.
-	What I wouldn't give to have five minutes with my younger self...
+	What I wouldn't give to have five minutes with my younger self.
+	@p
+	Tell her she's not crazy. Not a freak. Be herself.
+	That it'll be hard. Very hard.
+	But absolutely worth it.
+	Every bit of pain and effort.
+	@p
+	That's all in the past, though.
 	@p
 	Now, if only I could get my mind to stop racing.
 	I have so many things I want and need to do.
