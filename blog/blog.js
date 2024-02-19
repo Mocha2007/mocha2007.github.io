@@ -75,8 +75,8 @@ class Blogpost {
 			'week'
 		)));
 		dateContainer.appendChild(link(new Period(
-			new Date(`${this.date.getFullYear()}-${this.date.getMonth()+1}`),
-			new Date(`${this.date.getFullYear()}-${this.date.getMonth()+2}`),
+			new Date(`${this.date.getFullYear()}-${this.date.getMonth()+1}-1`),
+			new Date(`${this.date.getFullYear()}-${this.date.getMonth()+2}-1`),
 			'month'
 		)));
 		dateContainer.appendChild(link(new Period(
