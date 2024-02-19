@@ -898,6 +898,7 @@ const CITY = {
 		},
 		fix(){
 			Resource.resources.forEach(r => r.amount = Math.max(0, r.amount));
+			Resource.resources.forEach(r => !isFinite(r.amount) ? r.amount = 0 : 0);
 		},
 		fpsMeter(){
 			CITY.ELEM.TICK.innerHTML = Math.min(CITY.CONFIG.FPS, CITY.DEBUG.FPS) + ' TPS';
