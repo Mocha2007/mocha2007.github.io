@@ -1095,7 +1095,7 @@ const blogData = [
 	`
 	@title The Death of Escapism
 	@date 1695667681570
-	@tags namei site dev meta
+	@tags namei site dev meta transition
 	Almost six weeks ago, my life underwent a massive shift.
 	Colossal. Indescribably large.
 	@p
@@ -1207,7 +1207,7 @@ const blogData = [
 	`
 	@title What's in a Name?
 	@date 1706533200000
-	@tags meta
+	@tags transition
 	I am changing my name. I am certain of my first name (Luna).
 	Although I don't care for middle names, for logistical/bureaucratic reasons it is evident I will need one.
 	Some options I have thought of:
@@ -1259,5 +1259,32 @@ const blogData = [
 	and focus instead on what I can and cannot do.
 	<em>I</em> will not be stopped.
 	<em>I</em> will happen.
+	`,
+	`
+	@title Reborn
+	@date 1708374845958
+	@tags transition
+	I can be happy now.
+	Laughter comes so easily.
+	The world feels real again.
+	I am so close to my dreams, and getting closer by the day.
+	@p
+	In some ways it feels like my life was paused for a decade.
+	Like I've been forced to wait, and only now can I resume.
+	Which sucks, but it's okay, because I'm almost there anyways.
+	@p
+	In other ways it feels like I was only born half a year ago,
+	and I'm experiencing the world for the first time.
+	I'm becoming aware of all sorts of things I never truly acknowledged or understood.
+	@p
+	When I look to the past, sometimes I laugh at my ignorance.
+	Sometimes I cry for what could've been.
+	Bewilderment at what took me so long.
+	To realize. To take the first step. Anything.
+	What I wouldn't give to have five minutes with my younger self...
+	@p
+	Now, if only I could get my mind to stop racing.
+	I have so many things I want and need to do.
+	So much to do, so much to do.
 	`,
 ];
