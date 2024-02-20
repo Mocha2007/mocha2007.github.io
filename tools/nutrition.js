@@ -1372,5 +1372,36 @@ Food.PeanutButter = new Food('Peanut Butter', {
 		new NutrientAmount(Nutrient.GLYCITIN, 0.41e-3),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2262072/nutrients');
+Food.Banana = new Food('Banana', {
+	measures: {
+		cup: 150,
+		slice: 6,
+		unit: 126,
+	},
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 75.6),
+		new NutrientAmount(Nutrient.PROTEIN, 0.74),
+		new NutrientAmount(Nutrient.FAT, 0.28),
+		new NutrientAmount(Nutrient.FIBER, 1.7),
+		new NutrientAmount(Nutrient.SUGAR, 15.8),
+		new NutrientAmount(Nutrient.CALCIUM, 5e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 28e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 22e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 326e-3),
+		new NutrientAmount(Nutrient.ZINC, 0.16e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.101e-3),
+		new NutrientAmount(Nutrient.VITAMIN_C, 12e-3),
+		new NutrientAmount(Nutrient.THIAMIN, 0.054e-3),
+		new NutrientAmount(Nutrient.NIACIN, 0.653e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.212e-3),
+		new NutrientAmount(Nutrient.FOLATE, 15e-6),
+		new NutrientAmount(Nutrient.CHOLINE, 9.8e-3),
+		new NutrientAmount(Nutrient.CAROTENE_BETA, 8e-6),
+		new NutrientAmount(Nutrient.CAROTENE_ALPHA, 7e-6),
+		new NutrientAmount(Nutrient.LUTEIN, 22e-6),
+		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.1e-3),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 0.1e-6),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344720/nutrients');
 
 const NUTRITION_LOADED = true;
