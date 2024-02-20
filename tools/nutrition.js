@@ -354,7 +354,7 @@ class Food extends SourcedObject {
 	get measures(){
 		return this.properties.measures || {};
 	}
-	get nutritionLabel(){
+	nutritionLabel(useUnitMass = false){
 		// https://upload.wikimedia.org/wikipedia/commons/7/75/US_Nutritional_Fact_Label_2.svg
 		// https://www.fda.gov/files/food/published/Food-Labeling-Guide-%28PDF%29.pdf
 		function appendHR(){
@@ -374,14 +374,14 @@ class Food extends SourcedObject {
 			measureContainer.appendChild(measureElem);
 		}*/
 		// eslint-disable-next-line max-len
-		elem.innerHTML += `<div class="DVheader">&nbsp;<div class="dv">Amount per ${this.unitMass}g</div></div>`;
+		elem.innerHTML += `<div class="DVheader">&nbsp;<div class="dv">Amount per ${useUnitMass ? 'unit (' + this.unitMass + 'g)' : '100g'}</div></div>`;
 		// calories
 		appendHR();
 		const calories = document.createElement('div');
 		calories.classList.add('calories');
 		// eslint-disable-next-line max-len
-		calories.innerHTML = `<b>Calories</b> ${fdaround(NutrientGroup.CALORIES, this.nutrient(NutrientGroup.CALORIES, true))}`;
-		const CFF = fdaround(NutrientGroup.CALORIES, 9*this.nutrient(Nutrient.FAT, true));
+		calories.innerHTML = `<b>Calories</b> ${fdaround(NutrientGroup.CALORIES, this.nutrient(NutrientGroup.CALORIES, useUnitMass))}`;
+		const CFF = fdaround(NutrientGroup.CALORIES, 9*this.nutrient(Nutrient.FAT, useUnitMass));
 		if (CFF)
 			calories.innerHTML += `<br>Calories from Fat ${CFF}`;
 		elem.appendChild(calories);
@@ -404,7 +404,7 @@ class Food extends SourcedObject {
 		MAIN_NUTRIENTS.forEach(datum => {
 			/** @type {[Nutrient, boolean, boolean]} */
 			const [nutrient, bold, usemg] = datum;
-			const trueValue = this.nutrient(nutrient, true);
+			const trueValue = this.nutrient(nutrient, useUnitMass);
 			const value = fdaround(nutrient, trueValue * (usemg ? 1e3 : 1));
 			if (!value)
 				return;
@@ -431,7 +431,7 @@ class Food extends SourcedObject {
 		// eslint-disable-next-line max-len
 		Nutrient.nutrients.filter(nutrient => nutrient.DV && !MAIN_NUTRIENTS.map(x => x[0]).includes(nutrient))
 			.forEach(nutrient => {
-				const value = Math.round(100 * this.nutrient(nutrient, true) / nutrient.DV);
+				const value = Math.round(100 * this.nutrient(nutrient, useUnitMass) / nutrient.DV);
 				if (!value)
 					return;
 				const lineItem = document.createElement('div');
@@ -461,7 +461,7 @@ class Food extends SourcedObject {
 	}
 	/** @returns {number} g */
 	get unitMass(){
-		return this.properties.unitMass || 100;
+		return this.measures.unit || 100;
 	}
 	// HTML crap
 	get linkShowPie(){
@@ -477,7 +477,7 @@ class Food extends SourcedObject {
 	 * @param {boolean} useUnitMass
 	 */
 	nutrient(n, useUnitMass = false){
-		const DIVISOR = useUnitMass ? 1 : this.unitMass;
+		const DIVISOR = 100 / (useUnitMass ? this.unitMass : 100);
 		if (n instanceof NutrientGroup)
 			return n.value(this, useUnitMass);
 		// eslint-disable-next-line max-len
@@ -488,9 +488,14 @@ class Food extends SourcedObject {
 		this.showPie();
 	}
 	showNutrition(){
-		const container = document.getElementById('foodLabel');
+		const container = document.getElementById('foodLabel_100g');
 		container.innerHTML = '';
-		container.appendChild(this.nutritionLabel);
+		container.appendChild(this.nutritionLabel(false));
+		// unit
+		const container_u = document.getElementById('foodLabel_unit');
+		container_u.innerHTML = '';
+		if (this.measures.unit)
+			container_u.appendChild(this.nutritionLabel(true));
 	}
 	showPie(){
 		const composition = this.composition;
