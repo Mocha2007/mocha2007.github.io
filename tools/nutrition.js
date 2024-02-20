@@ -857,6 +857,9 @@ Food.PotatoSweet = new Food('Sweet Potato', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2346404/nutrients');
 Food.Carrot = new Food('Carrot', {
+	measures: {
+		unit: 61, // https://www.liveeatlearn.com/how-many-carrots-in-a-pound/
+	},
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 87.7),
 		new NutrientAmount(Nutrient.NITROGEN, 0.15),
@@ -883,6 +886,9 @@ Food.Carrot = new Food('Carrot', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2258586/nutrients');
 Food.Peanut = new Food('Peanut', {
+	measures: {
+		unit: 0.8, // https://weighschool.com/peanut-weights-calories-including-calculator-charts/
+	},
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 4.82),
 		new NutrientAmount(Nutrient.NITROGEN, 4.25),
@@ -907,7 +913,7 @@ Food.Peanut = new Food('Peanut', {
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2515376/nutrients');
 Food.Lime = new Food('Lime', { // todo create nutrient groups for all this other shit
 	measures: {
-		fruit: 65,
+		unit: 65,
 		slice: 8,
 		cup: 200,
 	},
@@ -939,6 +945,10 @@ Food.Lime = new Food('Lime', { // todo create nutrient groups for all this other
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344664/nutrients');
 Food.RiceWhite = new Food('White Rice', {
+	measures: {
+		grain: 0.03,
+		unit: 0.03, // https://www.quora.com/How-much-does-a-single-grain-of-rice-weigh
+	},
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 11.2),
 		new NutrientAmount(Nutrient.NITROGEN, 1.18),
@@ -966,6 +976,7 @@ Food.RiceWhite = new Food('White Rice', {
 Food.Egg = new Food('Egg', { // todo create nutrient groups for all this other shit
 	measures: {
 		egg: 50.3,
+		unit: 50.3,
 	},
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 75.8),
@@ -1003,6 +1014,7 @@ Food.Egg = new Food('Egg', { // todo create nutrient groups for all this other s
 Food.Bacon = new Food('Bacon', { // todo create nutrient groups for all this other shit
 	measures: {
 		slice: 6.3,
+		unit: 6.3,
 	},
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 14.2),
@@ -1027,6 +1039,7 @@ Food.Bacon = new Food('Bacon', { // todo create nutrient groups for all this oth
 Food.BreadRye = new Food('Rye Bread', { // todo create nutrient groups for all this other shit
 	measures: {
 		slice: 32,
+		unit: 32,
 	},
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 37.3),
@@ -1059,6 +1072,7 @@ Food.BreadRye = new Food('Rye Bread', { // todo create nutrient groups for all t
 Food.ChocolateDark = new Food('Dark Chocolate (70-85%)', { // todo create nutrient groups for all this other shit
 	measures: {
 		bar: 101,
+		unit: 101,
 	},
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 1.37),
@@ -1188,6 +1202,7 @@ Food.Garlic = new Food('Garlic', {
 	measures: { // guesses
 		bulb: 50,
 		clove: 5,
+		unit: 50,
 	},
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 58.58),
