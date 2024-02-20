@@ -308,6 +308,7 @@ function holidayCSS(){
 		runCny();
 	else if (src !== defaultSrc)
 		img.src = 'img/'+src+'.png';
+	/*
 	else if (!alreadyUsedCustomCss && !img.classList.length){ // THE PINKENING
 		// compute
 		var pinkeningFactor = Math.max(0, Math.min(1,
@@ -317,7 +318,7 @@ function holidayCSS(){
 		var p1 = 120*pinkeningFactor;
 		var p2 = 100 - 50*pinkeningFactor;
 		document.getElementById('top').style.filter = 'hue-rotate(' + p1 + 'deg) saturate(' + p2 + '%)';
-	}
+	}*/
 }
 
 // run
