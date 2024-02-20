@@ -2699,7 +2699,7 @@
 		"etym": "I/PEN/*βê-dôs",
 		"cat": "v.",
 		"defList": [
-			"pickle"
+			"(Southern) pickle"
 		],
 		"categories": ["food"]
 	},
@@ -4017,6 +4017,14 @@
 			"woodpecker"
 		],
 		"categories": ["animal", "bird"]
+	},
+	{
+		"title": "budit",
+		"etym": "C/budik/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"pickaxe"
+		]
 	},
 	{
 		"title": "bueba",
@@ -14649,7 +14657,7 @@
 		"etym": "I/PEN/*rênas/be pickled",
 		"cat": "v.",
 		"defList": [
-			"be pickled"
+			"(Northern) be pickled"
 		],
 		"notes": "Can be used with the causative to mean 'pickle'. Can be used as an adjective to mean 'pickled'."
 	},
