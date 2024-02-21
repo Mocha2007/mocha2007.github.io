@@ -13786,6 +13786,14 @@
 		"categories": ["toponym"]
 	},
 	{
+		"title": "ôdmitaz",
+		"etym": "I/PEN/*ôd-mitas/away-push",
+		"cat": "v.",
+		"defList": [
+			"push back, repel"
+		]
+	},
+	{
 		"title": "ôdu",
 		"etym": "I/PEN/*ôdu/away",
 		"cat": "adj.",
