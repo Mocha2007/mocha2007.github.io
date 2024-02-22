@@ -393,7 +393,7 @@ const ereNum = {
 	 * @returns {string}
 	 */
 	num(x){
-		if (1e14 <= x)
+		if (Math.pow(100, this.hundreds.length) <= x)
 			return '';
 		if (x < 15)
 			return this.first[x];
