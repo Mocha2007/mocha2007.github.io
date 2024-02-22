@@ -301,7 +301,9 @@ function time_elem_inner(){
 	const doseS = Math.ceil(doseR / _1s);
 	// total E consumed
 	const totalE = doses <= 166 ? doses
-		: doses <= 349 ? 2*doses - 166 : 3*doses - 515;
+		: doses <= 349 ? 2*doses - 166
+			: doses <= 379 ? 3*doses - 515
+				: 4 * doses - 894;
 	const totalS = doses*50;
 	const totalP = Math.floor(doses/2-180.5)*100;
 	// visitations
@@ -333,11 +335,12 @@ const notes = [
 	'16 Aug 2023 - 7 Nov 2023: twice daily 1 mg E subL, 50 mg spiro oral',
 	'7 Nov 2023 - 6 Feb 2024: twice daily 2 mg E subL, 50 mg spiro oral',
 	'7 Feb 2024 - 12 Feb 2024: 3x daily 2 mg E subL, 2x daily 50 mg spiro oral',
-	'13 Feb 2024 onward: 3x daily 2 mg E subL, 2x daily 50 mg spiro oral, 1x nightly 100 mg prog oral',
+	'13 Feb 2024 - 21 Feb 2024: 3x daily 2 mg E subL, 2x daily 50 mg spiro oral, 1x nightly 100 mg prog oral',
+	'22 Feb 2024 onward: 4x daily 2 mg E subL, 2x daily 50 mg spiro oral, 1x nightly 100 mg prog oral',
 	'Lasering started 15 Sep 2023: 9/15, 10/20, 11/27, 1/2, 2/7, 3/13, ...',
 	`Current daily schedule as of 2/12/24:<ul>
 	<li>Morning: 2 x 2 mg E, 50 mg spiro</li>
-	<li>Evening: 1 x 2 mg E, 50 mg spiro, 100 mg prog</li>
+	<li>Evening: 2 x 2 mg E, 50 mg spiro, 100 mg prog</li>
 	</ul>`,
 ];
 
