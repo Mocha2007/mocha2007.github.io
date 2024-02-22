@@ -1166,6 +1166,15 @@
 		]
 	},
 	{
+		"title": "amuluz",
+		"etym": "L/VAZ/pamolunz",
+		"cat": "v., num.",
+		"defList": [
+			"(be) ten billion"
+		],
+		"categories": ["number"]
+	},
+	{
 		"title": "amunaba",
 		"etym": "C/amu/naba",
 		"cat": "n., 4th",
@@ -12316,6 +12325,15 @@
 		"notes": "Expected form [[melat]]; but since that form already exists, this was dissimilated."
 	},
 	{
+		"title": "moluz",
+		"etym": "L/VAZ/molunz",
+		"cat": "v., num.",
+		"defList": [
+			"(be) one trillion"
+		],
+		"categories": ["number"]
+	},
+	{
 		"title": "môlz",
 		"etym": "I/PEN/*môls/wake up'",
 		"cat": "v.",
@@ -12958,6 +12976,15 @@
 			"The north plains, a cultural region of Eremor, often portrayed as excessively warlike (even by Eremoran standards); outsiders belive everyone from the region is a soldier-turned-farmer - and they are largely correct. In terms of speech, they are mocked as 'always breathy', as they are one of the few regions to retain /h/, but also merge /r/ into /h/."
 		],
 		"categories": ["toponym"]
+	},
+	{
+		"title": "natiuz",
+		"etym": "L/VAZ/nathiunz",
+		"cat": "v., num.",
+		"defList": [
+			"(be) one million"
+		],
+		"categories": ["number"]
 	},
 	{
 		"title": "nau",
@@ -14173,6 +14200,15 @@
 		"defList": [
 			"scry"
 		]
+	},
+	{
+		"title": "pamoluz",
+		"etym": "L/VAZ/pamolunz",
+		"cat": "v., num.",
+		"defList": [
+			"(be) one hundred million"
+		],
+		"categories": ["number"]
 	},
 	{
 		"title": "pamor",

@@ -400,3 +400,8 @@ tugu=n, n=bamboo
 panntugu=n, n=bamboo shoot
 shimi=n, n=ginseng
 khazhit=n, f=big cat
+-unz=suff=augmentative suffix
+nathinunz=num=million
+pamolunz=num=hundred million
+amulunz=num=ten billion
+molunz=num=trillion
