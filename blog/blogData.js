@@ -1294,4 +1294,17 @@ const blogData = [
 	I have so many things I want and need to do.
 	So much to do, so much to do.
 	`,
+	`
+	@title Return
+	@date 1708617562761
+	@tags transition
+	Dear Corporeal Salesman,
+	<br><br>
+	I'd like to make a return.
+	You accidentally shipped me the wrong model.
+	<br><br>
+	Sincerely,
+	<br><br>
+	Luna
+	`,
 ];
