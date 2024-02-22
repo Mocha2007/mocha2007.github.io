@@ -372,12 +372,23 @@ const ereNum = {
 		'tankumku',
 		'tambabzu',
 	],
+	hundreds: [
+		'',
+		'sesu',
+		'sesusesu',
+		'natiuz',
+		'pamoluz',
+		'amuluz',
+		'moluz',
+	],
 	interval: 0,
 	/**
 	 * @param {number} x
 	 * @returns {string}
 	 */
 	num(x){
+		if (1e14 <= x)
+			return '';
 		if (x < 15)
 			return this.first[x];
 		if (x < 80){
@@ -389,13 +400,13 @@ const ereNum = {
 		}
 		if (x < 100)
 			return `kumkananu ${this.num(x-75)}`;
-		if (x < 200)
-			return `sesu ${this.num(x-100)}`.replace(/ $/g, '');
-		const hundreds = Math.floor(x / 100);
-		const remainder = x % 100;
-		const hundredsWord = `${this.num(hundreds)}sesu`.replace(' ', 'sesu ').replace('idsesu', 'sesu ');
-		const onesWord = this.num(remainder);
-		return `${hundredsWord} ${onesWord}`.replace(/ $/g, '');
+		// 2024 modifications
+		return this.splitBase(x)
+			.map((n, i, a) => `${1 < n || i === a.length-1 ? this.num(n) : ''} ${n ? this.hundreds[a.length-i-1] : ''}`)
+			.join(' ')
+			.replace(/ +/g, ' ') // double space
+			.replace(/^ /, '') // phrase-initial space
+			.replace(/ $/, ''); // phrase-final space
 	},
 	numberTool(){
 		/** @type {number} */
@@ -408,6 +419,14 @@ const ereNum = {
 		EremoranTooltip.setupWord(o);
 	},
 	on: false,
+	splitBase(n, base = 100){
+		const digits = [];
+		while (n){
+			digits.push(n % base);
+			n = Math.floor(n / base);
+		}
+		return digits.reverse();
+	},
 };
 
 const adj = {
