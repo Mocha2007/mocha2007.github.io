@@ -5785,6 +5785,14 @@
 		]
 	},
 	{
+		"title": "edzar",
+		"etym": "C/edzam/-r",
+		"cat": "n., 1st",
+		"defList": [
+			"(political) party"
+		]
+	},
+	{
 		"title": "êdzêsêm",
 		"etym": "C/êdzêz/-isêm",
 		"cat": "n., 5th",
@@ -10806,6 +10814,14 @@
 		"notes": "Spelling variant of [[kunu]]."
 	},
 	{
+		"title": "kunudaremaz",
+		"etym": "C/kunuz/daremat",
+		"cat": "v.",
+		"defList": [
+			"be/go bankrupt"
+		]
+	},
+	{
 		"title": "kunufkaz",
 		"etym": "C/kunu/afkaz",
 		"cat": "v.",
@@ -11121,6 +11137,14 @@
 			"(archaic) good"
 		],
 		"notes": "Displaced by synonym ''uzurku'' after ''laku'' became sarcastic"
+	},
+	{
+		"title": "lalk",
+		"etym": "B/laku/-lk",
+		"cat": "adv.",
+		"defList": [
+			"well (opposite of poorly)"
+		]
 	},
 	{
 		"title": "lam",
@@ -17136,6 +17160,14 @@
 		"categories": ["drink"]
 	},
 	{
+		"title": "tembu",
+		"etym": "C/temz/-ba",
+		"cat": "v.",
+		"defList": [
+			"be safe, be secure"
+		]
+	},
+	{
 		"title": "temêmom",
 		"etym": "C/temêmor/-m",
 		"cat": "n., 5th",
@@ -17687,6 +17719,14 @@
 			"tropical storm, hurricane, typhoon",
 			"tornado, twister",
 			"whirlwind"
+		]
+	},
+	{
+		"title": "tukilkum",
+		"etym": "C/tukilku/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"disaster, catastrophe"
 		]
 	},
 	{
