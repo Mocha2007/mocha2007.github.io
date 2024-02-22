@@ -374,12 +374,18 @@ const ereNum = {
 	],
 	hundreds: [
 		'',
-		'sesu',
-		'sesusesu',
-		'natiuz',
-		'pamoluz',
-		'amuluz',
-		'moluz',
+		'sesu', // 100
+		'sesusesu', // 10k
+		'natiuz', // 1M
+		'pamoluz', // 100M
+		'amuluz', // 10B
+		'moluz', // 1T
+		'dazuz', // 100T; not in dict
+		'kuduz', // 10Qa; not in dict
+		'sauz', // 1Qi; not in dict
+		'kakuz', // 100Qi; not in dict
+		'bakuz', // 10Sx; not in dict
+		'sonuz', // 1Sp; not in dict
 	],
 	interval: 0,
 	/**
