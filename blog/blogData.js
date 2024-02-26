@@ -1335,6 +1335,15 @@ const blogData = [
 	I mean, I can tell male voices from female voices.
 	I can tell there's <i>more</i> than just pitch to it.
 	But I can't "hear" these other dimensions, no matter how hard I try.
+	Pardon to bring mathematics into this, <i>but</i>...
+	@p
+	@tags math
+	To my ears, it sounds like voice has a basis of two vectors:
+	pitch, and this other indescribable quality.
+	But (assuming I'm not just being gaslit by everyone else in the world, which is an assumption I'm gradually doubting more and more),
+	this quality is <i>absolutely not</i> anything I've heard from guides.
+	So the only reasonable explanation I can come up with is that I am just defective, broken,
+	and my mind collapses dimensions others hear distinctly into a single other dimension.
 	@p
 	Anyways, I think I may permanently be stuck in a "masc androgynous" zone,
 	which is pretty depressing.
