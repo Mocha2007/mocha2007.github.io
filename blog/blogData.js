@@ -1307,4 +1307,36 @@ const blogData = [
 	<br><br>
 	Luna
 	`,
+	`
+	@title Voice
+	@date 1708979425604
+	@tags transition
+	I think I've officially given up on voice training guides.
+	I tried for a year, made no progress, understood nothing, gave up,
+	and tried a strategy of "throw shit at a wall and see what sticks"
+	for six months, and...
+	well, that strategy <i>actually sorta worked a bit</i>.
+	I mean, my voice is still on the masc end of androgynous,
+	but at least it's not <i>totally</i> masc!
+	@p
+	So I thought to myself, okay, maybe now that I've made progress,
+	I'll understand all the jargon being thrown around.
+	Nope.
+	I guess like my brain is just wired wrong (aside from the obvious...).
+	Sample clips of vocal dimensions ("weight", "resonance", "brightness", "radioactivity", ...)
+	<b>all</b> straight-up sound like either just a difference in pitch,
+	or absolutely no audible difference whatsoever.
+	So it is no wonder guides never made sense to me.
+	@p
+	And then, of course, it doesn't help that it seems like different people use the same terms differently
+	(or maybe this is my 'weight/resonance/etc-blindness'... who knows)
+	@p
+	I feel like I'm being gaslit that there is more to voice than pitch.
+	I mean, I can tell male voices from female voices.
+	I can tell there's <i>more</i> than just pitch to it.
+	But I can't "hear" these other dimensions, no matter how hard I try.
+	@p
+	Anyways, I think I may permanently be stuck in a "masc androgynous" zone,
+	which is pretty depressing.
+	`,
 ];
