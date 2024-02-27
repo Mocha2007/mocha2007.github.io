@@ -81,9 +81,13 @@ class ProgressItem {
 		label.setAttribute('for', label.innerHTML = this.name);
 		td_name.appendChild(label);
 		tr.appendChild(td_name);
-		// min/max
+		// overview, min, max
 		const [min, max] = this.range(t);
 		const avg = (min + max)/2;
+		const td_avg = document.createElement('td');
+		const [a0, a1] = [Math.round(avg*100), Math.round(50*(max-min))];
+		td_avg.innerHTML = `${a0} ± ${a1}%`;
+		tr.appendChild(td_avg);
 		const td_min = document.createElement('td');
 		td_min.innerHTML = Math.round(min*100) + '%';
 		tr.appendChild(td_min);
@@ -350,7 +354,7 @@ function progress(){
 	const elem = document.createElement('div');
 	const table = document.createElement('table');
 	const tr = document.createElement('tr');
-	['Effect', 'Min. Progress', 'Max. Progress', 'Visualization', 'Started', 'Apparent Progress'].forEach(header => {
+	['Effect', 'Progress', 'Min', 'Max', 'Visualization', 'Started', 'Apparent Progress'].forEach(header => {
 		const th = document.createElement('th');
 		th.innerHTML = header;
 		tr.appendChild(th);
