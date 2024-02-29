@@ -268,11 +268,6 @@ function holidayCSS(){
 		case 11:
 			if (day === 7)
 				labor('October Revolution and Trotsky\'s Birthday');
-			else if (day === 11){
-				title = '1918 - ' + year;
-				img.style.filter = 'hue-rotate(180deg)';
-				src = 'Mo'; // to prevent the pinkening but preserve the image
-			}
 			else if (day === 14)
 				title = '<3';
 			else if (13 <= day && day <= 20) // Trans Awareness Week and TDoR
