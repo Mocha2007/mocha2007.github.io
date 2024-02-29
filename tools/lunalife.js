@@ -196,7 +196,9 @@ const LUNALIFE = {
 				td.title = this.ZONES[this.ZONE_CURRENT].title
 					+ ',\nWeek of '
 					+ LunaEvent.fromWeekID(WEEK_NUMBER).toDateString()
-					+ ':\n--------------------';
+					+ ' (#'
+					+ WEEK_NUMBER
+					+ '):\n--------------------';
 				td.style.backgroundColor = this.ZONES[this.ZONE_CURRENT].desc;
 				// check events
 				const THIS_EVENTS = [];
