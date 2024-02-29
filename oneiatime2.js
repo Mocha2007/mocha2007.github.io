@@ -194,9 +194,7 @@ function holidayCSS(){
 	switch (month){
 		case 2:
 			// special day stuff
-			if (day === 4)
-				title = 'Day of the Republic. Wiwie Erdeka! Long live the RTC!';
-			else if (7 <= day && day < 21){ // Valentine's day is on the 14th - this is a week before/after
+			if (7 <= day && day < 21){ // Valentine's day is on the 14th - this is a week before/after
 				src = 'mochentines';
 				title = 'Fuck merrily!';
 			}
@@ -238,16 +236,11 @@ function holidayCSS(){
 			break;
 		case 6:
 			src = 'mogay';
+			title = 'Everyone gets a nice big hug!';
 			if (day === 20 + (0 < year % 4))
 				title = 'Happy summer solstice ' + year + '!';
 			else if (day === 23)
 				title = 'Happy birthday, MochaFiction Wiki! 2011-' + year;
-			else
-				title = 'Everyone gets a nice big hug!';
-			break;
-		case 7:
-			if (day === 12)
-				title = 'King Witold\'s Birthday';
 			break;
 		case 8:
 			if (day === 16){
@@ -286,9 +279,7 @@ function holidayCSS(){
 			break;
 		case 12:
 			src = 'mochristmas';
-			if (day === 4)
-				title = 'Today is Yuletide! Roast marshmallows and listen to spooky ghost stories in Seaside Town!';
-			else if (day === 21 + (year % 4 === 3))
+			if (day === 21 + (year % 4 === 3))
 				title = 'Happy winter solstice ' + year + '!';
 			else if (17 <= day && day < 23)
 				title = 'Have a joyous Saturnalia!';
