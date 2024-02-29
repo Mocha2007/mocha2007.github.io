@@ -192,8 +192,8 @@ function holidayCSS(){
 	var img = document.getElementById('m');
 	var sub = document.getElementById('subtitle');
 	switch (month){
+		// special day stuff
 		case 2:
-			// special day stuff
 			if (7 <= day && day < 21){ // Valentine's day is on the 14th - this is a week before/after
 				src = 'mochentines';
 				title = 'Fuck merrily!';
@@ -213,13 +213,14 @@ function holidayCSS(){
 			break;
 		case 4:
 			if (day === 1){
-				document.getElementById('title').innerHTML = 'Schmocha&rsquo;s Site';
+				var temp_s = document.getElementById('title').innerHTML;
+				document.getElementById('title').innerHTML = 'Sch' + temp_s[0].toLowerCase() + temp_s.slice(1);
 				addExtraCss();
 				img.style.animation = 'rainbow 5s linear infinite'; // tried this for pride but it didn't look as good
 				img.style.transform = 'rotate(180deg)';
 				sub.innerHTML = sub.innerHTML.split('').reverse().join('');
 			}
-			else if (day === 5)
+			else if (day === 5) // first contact
 				title = 'Live long and prosper. 2063 - Forever';
 			else if (day === 22)
 				labor('Lenin\'s Birthday');
