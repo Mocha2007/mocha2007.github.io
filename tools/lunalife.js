@@ -1,6 +1,7 @@
 /* exported LUNALIFE, LUNALIFE_LOADED */
 
-const _1d = 24*60*60*1000;
+const _1h = 60*60*1000;
+const _1d = 24*_1h;
 const _1w = 7*_1d;
 
 class LunaEvent {
@@ -22,14 +23,16 @@ class LunaEvent {
 		return `${this.date.toDateString()} (${this.age} years old)`;
 	}
 	get weekID(){
-		return Math.floor((this.date - LunaEvent.epoch)/_1w);
+		// round to nearest midnight to account for DST shifts
+		// THEN div by 7...
+		return Math.floor(Math.round((this.date - LunaEvent.epoch)/_1d) / 7);
 	}
 	/** @param {number} wID */
 	static fromWeekID(wID){
-		return new Date(+LunaEvent.epoch + _1w*wID);
+		return new Date(+LunaEvent.epoch + _1w*wID + _1h); // 1h to account for DST
 	}
 }
-LunaEvent.epoch = new Date(1998, 3, 27, 1); // needs to be 1 to account for DST
+LunaEvent.epoch = new Date(1998, 3, 27);
 
 const LUNALIFE = {
 	CONFIG: {
