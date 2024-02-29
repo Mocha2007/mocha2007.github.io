@@ -193,6 +193,7 @@ function holidayCSS(){
 	var sub = document.getElementById('subtitle');
 	switch (month){
 		// special day stuff
+		// https://docs.google.com/spreadsheets/d/15MYULhkoJDUTCci5a-9HOGTNycCjcgiwt0N_-HAoPzI/edit#gid=0
 		case 2:
 			if (7 <= day && day < 21){ // Valentine's day is on the 14th - this is a week before/after
 				src = 'mochentines';
