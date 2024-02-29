@@ -193,18 +193,19 @@ function holidayCSS(){
 	var sub = document.getElementById('subtitle');
 	switch (month){
 		case 2:
-			// valentines
-			src = 'mochentines';
-			title = 'Fuck merrily!';
 			// special day stuff
 			if (day === 4)
 				title = 'Day of the Republic. Wiwie Erdeka! Long live the RTC!';
+			else if (7 <= day && day < 21){ // Valentine's day is on the 14th - this is a week before/after
+				src = 'mochentines';
+				title = 'Fuck merrily!';
+			}
+			else if (day === 29)
+				title = 'Huh. Well this doesn\'t happen very often, does it?';
 			break;
 		case 3:
-			if (day < 31)
+			if (10 <= day && day < 24) // St. Patrick's day is on the 17th - this is a week before/after
 				src = 'mochricks';
-			if (day === 17)
-				title = 'Drink, ye bastard!';
 			if (day === 18)
 				labor('Founding of the Paris Commune');
 			else if (day === 20)
@@ -264,12 +265,11 @@ function holidayCSS(){
 				title = 'Happy autumnal equinox ' + year + '!';
 			break;
 		case 10:
-			// src = 'mochaween';
-			img.style.filter = 'hue-rotate(-180deg) saturate(3)';
-			if (day === 18)
-				title = 'Memorial Day for the Victims of the Bombing of Łódź';
-			else
+			if (15 < day){ // latter half of the month
+				// src = 'mochaween';
+				img.style.filter = 'hue-rotate(-180deg) saturate(3)';
 				title = 'Boo, motherfucker!';
+			}
 			break;
 		case 11:
 			if (day === 7)
