@@ -283,8 +283,6 @@ function holidayCSS(){
 				title = 'Happy Festivus!';
 			else if (day === 31)
 				title = 'Party Time!';
-			else
-				title = 'Have a frosty winter solstice!';
 			break;
 	}
 
