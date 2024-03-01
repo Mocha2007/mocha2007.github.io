@@ -320,6 +320,7 @@ holidayCSS.bgs = [
 	'img/oneia_drawing_1.png',
 	'img/pankair_biomes.png',
 	'img/phones.svg',
+	'https://i.imgur.com/bCXJRhu.png', // SA langs pre-columbian map
 ];
 
 // run
