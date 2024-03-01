@@ -311,6 +311,11 @@ function holidayCSS(){
 		bg_img.src = holidayCSS.bgs[Math.floor(Math.random() * holidayCSS.bgs.length)];
 }
 holidayCSS.bgs = [
+	'img/bg/ar.png',
+	'img/bg/chaos.png',
+	'img/bg/dv.png',
+	'img/bg/measurements.png',
+	'img/bg/mlsc.png',
 	'img/bg/unwind_juice.png',
 	'img/bg/warplan.png',
 	'img/china_collapse_meme_ere.png',
