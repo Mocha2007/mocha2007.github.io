@@ -312,6 +312,7 @@ function holidayCSS(){
 }
 holidayCSS.bgs = [
 	'img/bg/unwind_juice.png',
+	'img/bg/warplan.png',
 	'img/china_collapse_meme_ere.png',
 	'img/eisen_system.png',
 	'img/oneia_drawing_1.png',
