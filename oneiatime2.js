@@ -332,8 +332,8 @@ holidayCSS.bgs = [
 ];
 holidayCSS.randomBg = function(){
 	var img = document.getElementById('m_bg');
-	// choose a random DIFFERENT image...
-	holidayCSS.currentBg += Math.floor(Math.random() * (holidayCSS.bgs.length - 1));
+	// choose a random DIFFERENT image... so index is [i+1, i+L-1]
+	holidayCSS.currentBg += 1 + Math.floor(Math.random() * (holidayCSS.bgs.length - 1));
 	holidayCSS.currentBg %= holidayCSS.bgs.length;
 	img.src = holidayCSS.bgs[holidayCSS.currentBg];
 	// reset anim
