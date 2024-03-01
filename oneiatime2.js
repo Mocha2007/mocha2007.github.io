@@ -330,8 +330,11 @@ holidayCSS.bgs = [
 	'https://i.imgur.com/bCXJRhu.png', // SA langs pre-columbian map
 ];
 holidayCSS.randomBg = function(){
-	document.getElementById('m_bg').src = holidayCSS.bgs[Math.floor(Math.random() * holidayCSS.bgs.length)];
+	// choose a random DIFFERENT image...
+	holidayCSS.currentBg += Math.floor(Math.random() * (holidayCSS.bgs.length - 1));
+	document.getElementById('m_bg').src = holidayCSS.bgs[holidayCSS.currentBg];
 };
+holidayCSS.currentBg = 0;
 
 // run
 holidayCSS();
