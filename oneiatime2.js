@@ -314,9 +314,12 @@ holidayCSS.bgs = [
 	'img/bg/unwind_juice.png',
 	'img/bg/warplan.png',
 	'img/china_collapse_meme_ere.png',
+	'img/density.png',
 	'img/eisen_system.png',
+	'img/moost/moost.png',
 	'img/oneia_drawing_1.png',
 	'img/pankair_biomes.png',
+	'img/phones.svg',
 ];
 
 // run
