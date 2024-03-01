@@ -332,6 +332,7 @@ holidayCSS.bgs = [
 holidayCSS.randomBg = function(){
 	// choose a random DIFFERENT image...
 	holidayCSS.currentBg += Math.floor(Math.random() * (holidayCSS.bgs.length - 1));
+	holidayCSS.currentBg %= holidayCSS.bgs.length;
 	document.getElementById('m_bg').src = holidayCSS.bgs[holidayCSS.currentBg];
 };
 holidayCSS.currentBg = 0;
