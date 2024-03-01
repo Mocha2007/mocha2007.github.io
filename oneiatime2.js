@@ -314,6 +314,7 @@ holidayCSS.bgs = [
 	'img/bg/ar.png',
 	'img/bg/chaos.png',
 	'img/bg/dv.png',
+	'img/bg/escapism.png',
 	'img/bg/measurements.png',
 	'img/bg/mlsc.png',
 	'img/bg/unwind_juice.png',
