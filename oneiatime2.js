@@ -189,6 +189,7 @@ function holidayCSS(){
 	var title = '';
 	var defaultSrc = 'mo';
 	var src = defaultSrc;
+	var bg_img = document.getElementById('m_bg');
 	var img = document.getElementById('m');
 	var sub = document.getElementById('subtitle');
 	switch (month){
@@ -305,7 +306,16 @@ function holidayCSS(){
 		var p2 = 100 - 50*pinkeningFactor;
 		document.getElementById('top').style.filter = 'hue-rotate(' + p1 + 'deg) saturate(' + p2 + '%)';
 	}*/
+	// random bg
+	if (!alreadyUsedCustomCss)
+		bg_img.src = holidayCSS.bgs[Math.floor(Math.random() * holidayCSS.bgs.length)];
 }
+holidayCSS.bgs = [
+	'img/china_collapse_meme_ere.png',
+	'img/eisen_system.png',
+	'img/oneia_drawing_1.png',
+	'img/pankair_biomes.png',
+];
 
 // run
 holidayCSS();
