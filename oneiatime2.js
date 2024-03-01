@@ -308,7 +308,8 @@ function holidayCSS(){
 	// random bg
 	if (!alreadyUsedCustomCss){
 		holidayCSS.randomBg();
-		setInterval(holidayCSS.randomBg, 10000);
+		document.getElementById('m_bg').addEventListener('animationend', holidayCSS.randomBg);
+		// setInterval(holidayCSS.randomBg, 10000);
 	}
 }
 holidayCSS.bgs = [
@@ -330,10 +331,16 @@ holidayCSS.bgs = [
 	'https://i.imgur.com/bCXJRhu.png', // SA langs pre-columbian map
 ];
 holidayCSS.randomBg = function(){
+	var img = document.getElementById('m_bg');
 	// choose a random DIFFERENT image...
 	holidayCSS.currentBg += Math.floor(Math.random() * (holidayCSS.bgs.length - 1));
 	holidayCSS.currentBg %= holidayCSS.bgs.length;
-	document.getElementById('m_bg').src = holidayCSS.bgs[holidayCSS.currentBg];
+	img.src = holidayCSS.bgs[holidayCSS.currentBg];
+	// reset anim
+	// https://stackoverflow.com/a/45036752/2579798
+	img.style.animation = 'none';
+	img.offsetHeight; /* trigger reflow */
+	img.style.animation = 'scroll 10s linear';
 };
 holidayCSS.currentBg = 0;
 

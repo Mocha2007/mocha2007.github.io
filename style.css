@@ -10,7 +10,7 @@ a:hover{text-shadow:0 0 10px #0ff;}
 .highlight:hover,.highlight a:hover{text-shadow:0 0 10px #f90;}
 p{text-indent:45px;}
 abbr{text-decoration:none;animation:strobe 1s linear alternate infinite;cursor: help;}
-#m_bg{animation: scroll 10s linear infinite; display: block; max-height: 350px; object-fit: cover;
+#m_bg{animation: scroll 10s linear; display: block; max-height: 350px; object-fit: cover;
 	position: absolute; top: 0; width: 700px; z-index: -9;
 	mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));}
 @keyframes strobe{
