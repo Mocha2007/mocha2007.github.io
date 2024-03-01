@@ -189,7 +189,6 @@ function holidayCSS(){
 	var title = '';
 	var defaultSrc = 'mo';
 	var src = defaultSrc;
-	var bg_img = document.getElementById('m_bg');
 	var img = document.getElementById('m');
 	var sub = document.getElementById('subtitle');
 	switch (month){
@@ -307,8 +306,10 @@ function holidayCSS(){
 		document.getElementById('top').style.filter = 'hue-rotate(' + p1 + 'deg) saturate(' + p2 + '%)';
 	}*/
 	// random bg
-	if (!alreadyUsedCustomCss)
-		bg_img.src = holidayCSS.bgs[Math.floor(Math.random() * holidayCSS.bgs.length)];
+	if (!alreadyUsedCustomCss){
+		holidayCSS.randomBg();
+		setInterval(holidayCSS.randomBg, 10000);
+	}
 }
 holidayCSS.bgs = [
 	'img/bg/ar.png',
@@ -328,6 +329,9 @@ holidayCSS.bgs = [
 	'img/phones.svg',
 	'https://i.imgur.com/bCXJRhu.png', // SA langs pre-columbian map
 ];
+holidayCSS.randomBg = function(){
+	document.getElementById('m_bg').src = holidayCSS.bgs[Math.floor(Math.random() * holidayCSS.bgs.length)];
+};
 
 // run
 holidayCSS();

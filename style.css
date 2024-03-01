@@ -10,7 +10,8 @@ a:hover{text-shadow:0 0 10px #0ff;}
 .highlight:hover,.highlight a:hover{text-shadow:0 0 10px #f90;}
 p{text-indent:45px;}
 abbr{text-decoration:none;animation:strobe 1s linear alternate infinite;cursor: help;}
-#m_bg{display: block; max-height: 350px; object-fit: cover; position: absolute; top: 0; width: 700px; z-index: -9;
+#m_bg{animation: scroll 10s linear infinite; display: block; max-height: 350px; object-fit: cover;
+	position: absolute; top: 0; width: 700px; z-index: -9;
 	mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));}
 @keyframes strobe{
 	0% {border-bottom:1px solid transparent;}
@@ -24,4 +25,10 @@ abbr{text-decoration:none;animation:strobe 1s linear alternate infinite;cursor: 
 	63% {filter: hue-rotate(120deg)}
 	66% {filter: saturate(0)} /* white */
 	96% {filter: saturate(0)}
+}
+@keyframes scroll{
+	0% {object-position: 0 0; opacity: 0;}
+	10% {object-position: 0 10%; opacity: 1;}
+	90% {object-position: 0 90%; opacity: 1;}
+	100% {object-position: 0 100%; opacity: 0;}
 }
