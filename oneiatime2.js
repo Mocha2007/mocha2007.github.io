@@ -313,7 +313,7 @@ function holidayCSS(){
 	}
 }
 holidayCSS.bgs = [
-	'img/bg/ar.png',
+	// 'img/bg/ar.png',
 	'img/bg/chaos.png',
 	'img/bg/dv.png',
 	'img/bg/escapism.png',
@@ -323,10 +323,10 @@ holidayCSS.bgs = [
 	'img/bg/unwind_juice.png',
 	'img/bg/warplan.png',
 	'img/china_collapse_meme_ere.png',
-	'img/density.png',
+	// 'img/density.png',
 	'img/eisen_system.png',
 	'img/moost/moost.PNG',
-	'img/oneia_drawing_1.png',
+	// 'img/oneia_drawing_1.png',
 	'img/pankair_biomes.png',
 	'img/phones.svg',
 	'https://i.imgur.com/bCXJRhu.png', // SA langs pre-columbian map
