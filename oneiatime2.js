@@ -321,7 +321,7 @@ holidayCSS.bgs = [
 	'img/bg/mlsc.png',
 	'img/bg/tetrahedron.png',
 	'img/bg/unwind_juice.png',
-	'img/bg/warplan.png',
+	// 'img/bg/warplan.png',
 	'img/china_collapse_meme_ere.png',
 	// 'img/density.png',
 	'img/eisen_system.png',
