@@ -313,11 +313,11 @@ function holidayCSS(){
 	}
 }
 holidayCSS.bgs = [
-	// 'img/bg/ar.png',
+	'img/bg/40.png',
 	'img/bg/chaos.png',
+	'img/bg/draw.png',
 	'img/bg/dv.png',
 	'img/bg/escapism.png',
-	// 'img/bg/measurements.png',
 	'img/bg/mlsc.png',
 	'img/bg/tetrahedron.png',
 	'img/bg/unwind_juice.png',
