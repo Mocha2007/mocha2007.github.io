@@ -196,10 +196,10 @@ function get_shave_cycle(t = new Date()){
 	return {day, abbr, title, bladesLeft, full, boxesLeft};
 }
 get_shave_cycle.boxSize = 12;
-get_shave_cycle.dayOffset = 17;
+get_shave_cycle.dayOffset = 7;
 get_shave_cycle.period = 16;
 get_shave_cycle.periodminor = 4;
-get_shave_cycle.cycleOffset = 1258;
+get_shave_cycle.cycleOffset = 1257;
 
 function laserPhaseElem(){
 	/** the last time I got lasered */
