@@ -20,7 +20,21 @@ class Declension {
 		this.plvoc = o.pl.voc;
 	}
 	get elem(){
-		// todo
+		const o = document.createElement('table');
+		o.innerHTML = '<tr><th></th><th>s</th><th>pl</th></tr>';
+		['nom', 'gen', 'dat', 'acc', 'ins', 'loc', 'voc'].forEach(c => {
+			const tr = document.createElement('tr');
+			o.appendChild(tr);
+			const th = document.createElement('th');
+			th.innerHTML = c;
+			tr.appendChild(th);
+			['s', 'pl'].forEach(number => {
+				const td = document.createElement('td');
+				tr.appendChild(td);
+				td.innerHTML = this[`${number}${c}`];
+			});
+		});
+		return o;
 	}
 }
 
@@ -109,6 +123,11 @@ const PL = {
 			['(?<=[mbpwfndtzsłrh])a$', 'y'],
 			['a$', 'e'],
 		],
+	},
+	display(word){
+		const container = document.getElementById('container');
+		container.innerHTML = '';
+		container.appendChild(this.decl.f(word).elem);
 	},
 	get_final_cons_cluster(word){
 		// todo
