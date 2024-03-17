@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<script src="pl.js" async></script>
+<link href="pl.css" type="text/css" rel="stylesheet">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<title>pl</title>
+<div id="container"></div>
+<script>
+const LOAD = () => {
+	if (typeof PL_LOADED === 'undefined')
+		setTimeout(LOAD, 100);
+	else
+		PL.main();
+}
+LOAD();
+</script>
