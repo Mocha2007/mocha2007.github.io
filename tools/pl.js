@@ -47,7 +47,7 @@ const PL = {
 				return this.f2(index);
 			if (LAST1 === 'a')
 				return this.f(index);
-			return new Declension();
+			return this.m(index);
 		},
 		f(index){
 			// https://en.wiktionary.org/wiki/Appendix:Polish_nouns#Feminine_nouns
@@ -145,6 +145,20 @@ const PL = {
 			['(?<=[mbpwfndtzsłrh])a$', 'y'],
 			['a$', 'e'],
 		],
+		// https://en.wiktionary.org/wiki/Template:pl-decl-noun-m-pr ???
+		m(index){
+			const decl_o = {s: {nom: index}, pl: {}};
+			decl_o.s.gen = decl_o.s.acc = index + 'a';
+			decl_o.s.dat = index + 'owi';
+			decl_o.s.ins = index + 'iem';
+			decl_o.s.loc = decl_o.s.voc = index + 'u';
+			decl_o.pl.voc = decl_o.pl.nom = index + 'y'; // sorta
+			decl_o.pl.gen = decl_o.pl.acc = index + 'ów';
+			decl_o.pl.dat = index + 'om';
+			decl_o.pl.ins = index + 'ami';
+			decl_o.pl.loc = index + 'ach';
+			return new Declension(decl_o);
+		},
 	},
 	display(word){
 		const container = document.getElementById('container');
