@@ -127,18 +127,24 @@ const PL = {
 	display(word){
 		const container = document.getElementById('container');
 		container.innerHTML = '';
-		container.appendChild(this.decl.f(word).elem);
+		try {
+			container.appendChild(this.decl.f(word).elem);
+		}
+		catch (_){
+			container.appendChild(this.invalid);
+		}
 	},
-	get_final_cons_cluster(word){
-		// todo
-		return word;
+	get invalid(){
+		const elem = document.createElement('span');
+		elem.innerHTML = 'invalid';
+		return elem;
 	},
 	main(){
-		// todo
-	},
-	pal_final_cons_cluster(word){
-		// todo
-		return word;
+		const ctrl = document.getElementById('ctrl');
+		const input = document.createElement('input');
+		ctrl.appendChild(input);
+		input.type = 'text';
+		input.onkeyup = () => this.display(input.value);
 	},
 };
 
