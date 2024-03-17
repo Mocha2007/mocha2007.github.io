@@ -40,6 +40,15 @@ class Declension {
 
 const PL = {
 	decl: {
+		decl(index){
+			const LAST1 = index[index.length-1];
+			const LAST2 = index.slice(index.length-2);
+			if (LAST2 === 'ść')
+				return this.f2(index);
+			if (LAST1 === 'a')
+				return this.f(index);
+			return new Declension();
+		},
 		f(index){
 			// https://en.wiktionary.org/wiki/Appendix:Polish_nouns#Feminine_nouns
 			const decl_o = {s: {nom: index}, pl: {}};
@@ -62,6 +71,19 @@ const PL = {
 			decl_o.pl.dat = stem + 'om';
 			decl_o.pl.ins = stem + 'ami';
 			decl_o.pl.loc = stem + 'ach';
+			return new Declension(decl_o);
+		},
+		// -ść fem noun
+		f2(index){
+			const decl_o = {s: {nom: index}, pl: {}};
+			decl_o.s.acc = decl_o.s.nom;
+			decl_o.s.gen = decl_o.s.dat = decl_o.s.loc = decl_o.s.voc
+				= decl_o.pl.nom = decl_o.pl.gen = decl_o.pl.acc = decl_o.pl.voc
+				= index + 'i';
+			decl_o.s.ins = index + 'ą';
+			decl_o.pl.dat = index + 'om';
+			decl_o.pl.ins = index + 'ami';
+			decl_o.pl.loc = index + 'ach';
 			return new Declension(decl_o);
 		},
 		/** @param {string} word */
@@ -128,7 +150,7 @@ const PL = {
 		const container = document.getElementById('container');
 		container.innerHTML = '';
 		try {
-			container.appendChild(this.decl.f(word).elem);
+			container.appendChild(this.decl.decl(word).elem);
 		}
 		catch (_){
 			container.appendChild(this.invalid);
