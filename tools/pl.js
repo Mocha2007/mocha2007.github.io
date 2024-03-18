@@ -163,7 +163,7 @@ const PL = {
 				: PL.irr_owie ? index + 'owie'
 				: (PL.animacy === 'pers' ? this.palstem(index) : index)
 				+ (this.is_hard(index) ? this.yi(index) : 'e');
-			decl_o.pl.gen = index + (this.is_hard(index, false, true) ? 'ów' : this.yi(index));
+			decl_o.pl.gen = index + (PL.irr_owie || this.is_hard(index, false, true) ? 'ów' : this.yi(index));
 			decl_o.pl.acc = PL.animacy === 'pers' ? decl_o.pl.gen : decl_o.pl.nom;
 			decl_o.pl.dat = index + 'om';
 			decl_o.pl.ins = PL.irr_short_ins ? this.reducePal(this.palstem(index)) + 'mi' : index + 'ami';
