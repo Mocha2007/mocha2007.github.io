@@ -150,7 +150,7 @@ const PL = {
 			else {
 				decl_o.s.gen = stem + 'a';
 				decl_o.s.dat = stem + 'u';
-				decl_o.s.ins = stem + 'em';
+				decl_o.s.ins = stem + (this.ends_in_velar(stem) ? 'i' : '') + 'em';
 				decl_o.s.loc = this.is_hard(stem, true) ? this.palstem(stem) + 'e': stem + 'u';
 				decl_o.pl.gen = stem;
 			}
