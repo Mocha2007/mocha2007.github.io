@@ -71,6 +71,8 @@ const PL = {
 				return this.n(index, LAST2);
 			if (LAST1 === 'a')
 				return PL.irr_mf ? this.mf(index) : this.f(index);
+			if (LAST1 === 'i')
+				return this.f3(index);
 			if ('oeę'.includes(LAST1))
 				return this.n(index, LAST1);
 			return PL.irr_cf ? this.f2(index) : this.m(index);
@@ -112,6 +114,20 @@ const PL = {
 				= decl_o.pl.nom = decl_o.pl.gen = decl_o.pl.acc = decl_o.pl.voc
 				= index + this.yi(index);
 			decl_o.s.ins = index + 'ą';
+			decl_o.pl.dat = index + 'om';
+			decl_o.pl.ins = index + 'ami';
+			decl_o.pl.loc = index + 'ach';
+			return new Declension(decl_o);
+		},
+		// -i fem noun
+		f3(index){
+			const stem = index.slice(0, index.length-1);
+			const decl_o = {s: {nom: index}, pl: {}};
+			decl_o.s.voc = decl_o.s.loc = decl_o.s.dat = decl_o.s.gen = decl_o.s.nom
+			decl_o.s.acc = index + 'ę';
+			decl_o.s.ins = index + 'ą';
+			decl_o.pl.nom = decl_o.pl.acc = decl_o.pl.voc = index + 'e';
+			decl_o.pl.gen = stem;
 			decl_o.pl.dat = index + 'om';
 			decl_o.pl.ins = index + 'ami';
 			decl_o.pl.loc = index + 'ach';
