@@ -69,11 +69,11 @@ const PL = {
 			const decl_o = {s: {nom: index}, pl: {}};
 			const stem = index.slice(0, index.length-1);
 			// Genitive singular adds -y.
-			decl_o.s.gen = stem + 'y';
+			decl_o.s.gen = stem + this.yi(stem);
 			// Dative singular palatalizes (softens) the final consonant cluster
 			// and adds -e, -i or -y.
 			// Locative singular is always the same as dative singular.
-			decl_o.s.loc = decl_o.s.dat = this.fdat(index);
+			decl_o.s.loc = decl_o.s.dat = this.is_hard(stem) ? this.palstem(stem) + 'e' : stem + this.yi(stem);
 			// Accusative singular adds -ę.
 			decl_o.s.acc = stem + 'ę';
 			// Instrumental singular adds -ą.
@@ -81,7 +81,7 @@ const PL = {
 			// Vocative singular adds -o.
 			decl_o.s.voc = stem + 'o';
 			// todo nom pl annoyance
-			decl_o.pl.voc = decl_o.pl.acc = decl_o.pl.nom = this.fpl(index);
+			decl_o.pl.voc = decl_o.pl.acc = decl_o.pl.nom = stem + (this.is_hard(stem) ? this.yi(stem) : 'e');
 			decl_o.pl.gen = stem;
 			decl_o.pl.dat = stem + 'om';
 			decl_o.pl.ins = stem + 'ami';
@@ -94,72 +94,13 @@ const PL = {
 			decl_o.s.acc = decl_o.s.nom;
 			decl_o.s.gen = decl_o.s.dat = decl_o.s.loc = decl_o.s.voc
 				= decl_o.pl.nom = decl_o.pl.gen = decl_o.pl.acc = decl_o.pl.voc
-				= index + 'i';
+				= index + this.yi(index);
 			decl_o.s.ins = index + 'ą';
 			decl_o.pl.dat = index + 'om';
 			decl_o.pl.ins = index + 'ami';
 			decl_o.pl.loc = index + 'ach';
 			return new Declension(decl_o);
 		},
-		/** @param {string} word */
-		fdat(word){
-			const rule = this.fdat_dat.find(r => new RegExp(r[0]).test(word));
-			return word.replace(new RegExp(rule[0]), rule[1]);
-		},
-		// https://en.wiktionary.org/wiki/Appendix:Polish_nouns#List_of_palatalizations_in_the_dative_and_locative
-		fdat_dat: [
-			// 4c
-			['dzia$', 'dzi'],
-			// 3c
-			['bia$', 'bi'],
-			['cha$', 'sze'],
-			['cia$', 'ci'],
-			['cza$', 'czy'],
-			['dza$', 'dzy'],
-			['dża$', 'dży'],
-			['pia$', 'pi'],
-			['rza$', 'rzy'],
-			['sia$', 'si'],
-			['sła$', 'śle'],
-			['sma$', 'śmie'],
-			['sna$', 'śnie'],
-			['sta$', 'ście'],
-			['sza$', 'szy'],
-			['zda$', 'ździe'],
-			['zia$', 'zi'],
-			['zła$', 'źle'],
-			['zma$', 'zmie'],
-			['zna$', 'źnie'],
-			// 2c
-			['ba$', 'bie'],
-			['ca$', 'cy'],
-			['da$', 'dzie'],
-			['fa$', 'fie'],
-			['ga$', 'dze'],
-			['ja$', 'ji'],
-			['ka$', 'ce'],
-			['la$', 'li'],
-			['ła$', 'le'],
-			['ma$', 'mie'],
-			['na$', 'nie'],
-			['pa$', 'pie'],
-			['ra$', 'rze'],
-			['sa$', 'sie'],
-			['ta$', 'cie'],
-			['wa$', 'wie'],
-			['za$', 'zie'],
-			['ża$', 'ży'],
-		],
-		/** @param {string} word */
-		fpl(word){
-			const rule = this.fpl_dat.find(r => new RegExp(r[0]).test(word));
-			return word.replace(new RegExp(rule[0]), rule[1]);
-		},
-		fpl_dat: [
-			['(?<=[kg])a$', 'i'],
-			['(?<=[mbpwfndtzsłrh])a$', 'y'],
-			['a$', 'e'],
-		],
 		hard: 'pbfwmtdsznłrkgh',
 		hardnv: 'pbfwmtdsznłr',
 		is_hard(stem, exclude_velars = false){
