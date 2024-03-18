@@ -160,6 +160,13 @@ const PL = {
 			['(?<=[mbpwfndtzsłrh])a$', 'y'],
 			['a$', 'e'],
 		],
+		hard: 'pbfwmtdsznłrkgh',
+		hardnv: 'pbfwmtdsznłr',
+		is_hard(stem, exclude_velars = false){
+			stem = stem.replace(/(?<=[rdsc])z/g, '`');
+			return (exclude_velars ? this.hardnv : this.hard)
+				.includes(stem[stem.length-1]);
+		},
 		// https://en.wiktionary.org/wiki/Template:pl-decl-noun-m-pr ???
 		m(index){
 			const decl_o = {s: {nom: index}, pl: {}};
@@ -167,9 +174,10 @@ const PL = {
 			decl_o.s.gen = index + {inan: 'u', anim: 'a', pers: 'a'}[PL.animacy];
 			decl_o.s.dat = index + 'owi';
 			decl_o.s.ins = index + (this.ends_in_velar(index) ? 'i' : '') + 'em';
-			decl_o.s.loc = decl_o.s.voc = index + 'u'; // TODO: PAL + e if non-velar hard, else u
-			decl_o.pl.voc = decl_o.pl.nom = index + 'y'; // sorta? seems to also be -e sometimes? -owie?
-			decl_o.pl.gen = index + 'ów';
+			decl_o.s.loc = decl_o.s.voc = this.is_hard(index, true) ? this.palstem(index) + 'e' : index + 'u';
+			decl_o.pl.voc = decl_o.pl.nom = (PL.animacy === 'pers' ? this.palstem(index) : index)
+				+ (this.is_hard(index) ? this.yi(index) : 'e');
+			decl_o.pl.gen = index + (this.is_hard(index) ? 'ów' : this.yi(index)); // todo fix this for c/dz/j stems
 			decl_o.pl.acc = PL.animacy === 'pers' ? decl_o.pl.gen : decl_o.pl.nom;
 			decl_o.pl.dat = index + 'om';
 			decl_o.pl.ins = index + 'ami';
@@ -210,6 +218,14 @@ const PL = {
 			decl_o.pl.ins = stem + 'ami';
 			decl_o.pl.loc = stem + 'ach';
 			return new Declension(decl_o);
+		},
+		palstem(stem){
+			// todo
+			return stem;
+		},
+		soft: 'ićźśńlcżj`', // lacks rz, dz, sz, cz: replace these with X'
+		yi(stem){
+			return 'kgćźśńlj'.includes(stem[stem.length-1]) ? 'i' : 'y';
 		},
 	},
 	display(word){
