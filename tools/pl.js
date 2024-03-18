@@ -37,7 +37,8 @@ class Declension {
 		return o;
 	}
 	static cleanup(form){
-		return form.replace(/c+/g, 'c'); // to prevent eg. 'dziecci'
+		return form.replace(/c+/g, 'c') // to prevent eg. 'dziecci'
+		.replace(/iy$/, 'i'); // to prevent eg. 'mężczyzniy
 	}
 }
 
