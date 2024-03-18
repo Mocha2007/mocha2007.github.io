@@ -3,14 +3,23 @@
 <link href="pl.css" type="text/css" rel="stylesheet">
 <link rel="shortcut icon" href="../img/favicon.ico">
 <title>pl</title>
-<div id="ctrl"></div>
+<div id="ctrl" onclick="PL.main()">
+	<input id="inp" type="text" onkeyup="PL.main()">
+	<br>
+	<input type="radio" id="inan" name="animacy" value="inan" checked>
+	<label for="inan">inanimate</label><br>
+	<input type="radio" id="anim" name="animacy" value="anim">
+	<label for="anim">animate</label><br>
+	<input type="radio" id="pers" name="animacy" value="pers">
+	<label for="pers">person</label>
+</div>
 <div id="container"></div>
 <script>
 const LOAD = () => {
 	if (typeof PL_LOADED === 'undefined')
 		setTimeout(LOAD, 100);
 	else
-		PL.main();
+		PL.init();
 }
 LOAD();
 </script>

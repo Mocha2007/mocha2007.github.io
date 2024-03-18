@@ -39,6 +39,10 @@ class Declension {
 }
 
 const PL = {
+	/** @returns {"inan"|"anim"|"pers"} */
+	get animacy(){
+		return document.querySelector('input[name="animacy"]:checked').value || 'inan';
+	},
 	decl: {
 		decl(index){
 			const LAST1 = index[index.length-1];
@@ -148,11 +152,12 @@ const PL = {
 		// https://en.wiktionary.org/wiki/Template:pl-decl-noun-m-pr ???
 		m(index){
 			const decl_o = {s: {nom: index}, pl: {}};
-			decl_o.s.gen = decl_o.s.acc = index + 'a';
+			decl_o.s.acc = index + {inan: '', anim: 'a', pers: 'a'}[PL.animacy];
+			decl_o.s.gen = index + {inan: 'u', anim: 'a', pers: 'a'}[PL.animacy];
 			decl_o.s.dat = index + 'owi';
-			decl_o.s.ins = index + 'iem';
-			decl_o.s.loc = decl_o.s.voc = index + 'u';
-			decl_o.pl.voc = decl_o.pl.nom = index + 'y'; // sorta
+			decl_o.s.ins = index + 'em'; // sometimes -iem???
+			decl_o.s.loc = decl_o.s.voc = index + {inan: 'u', anim: 'u', pers: 'ie'}[PL.animacy];
+			decl_o.pl.voc = decl_o.pl.nom = index + 'y'; // sorta? seems to also be -e sometimes? -owie?
 			decl_o.pl.gen = decl_o.pl.acc = index + 'ów';
 			decl_o.pl.dat = index + 'om';
 			decl_o.pl.ins = index + 'ami';
@@ -170,17 +175,16 @@ const PL = {
 			container.appendChild(this.invalid);
 		}
 	},
+	init(){
+		// pass
+	},
 	get invalid(){
 		const elem = document.createElement('span');
 		elem.innerHTML = 'invalid';
 		return elem;
 	},
 	main(){
-		const ctrl = document.getElementById('ctrl');
-		const input = document.createElement('input');
-		ctrl.appendChild(input);
-		input.type = 'text';
-		input.onkeyup = () => this.display(input.value);
+		this.display(document.getElementById('inp').value);
 	},
 };
 
