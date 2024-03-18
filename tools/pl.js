@@ -135,7 +135,8 @@ const PL = {
 			decl_o.s.dat = index + (PL.irr_mudat ? 'u' : 'owi');
 			decl_o.s.ins = index + (this.ends_in_velar(index) ? 'i' : '') + 'em';
 			decl_o.s.loc = decl_o.s.voc = this.is_hard(index, true) ? this.palstem(index) + 'e' : index + 'u';
-			decl_o.pl.voc = decl_o.pl.nom = (PL.animacy === 'pers' ? this.palstem(index) : index)
+			decl_o.pl.voc = decl_o.pl.nom = PL.irr_owie ? index + 'owie'
+				: (PL.animacy === 'pers' ? this.palstem(index) : index)
 				+ (this.is_hard(index) ? this.yi(index) : 'e');
 			decl_o.pl.gen = index + (this.is_hard(index, false, true) ? 'ów' : this.yi(index));
 			decl_o.pl.acc = PL.animacy === 'pers' ? decl_o.pl.gen : decl_o.pl.nom;
@@ -242,6 +243,9 @@ const PL = {
 	},
 	get irr_oa(){
 		return document.getElementById('oa').checked;
+	},
+	get irr_owie(){
+		return document.getElementById('owie').checked;
 	},
 	main(){
 		this.display(document.getElementById('inp').value);
