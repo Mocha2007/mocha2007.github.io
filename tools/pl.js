@@ -44,6 +44,20 @@ const PL = {
 		return document.querySelector('input[name="animacy"]:checked').value || 'inan';
 	},
 	decl: {
+		/** @param {string} index */
+		ablaut(index){
+			index = index.split('').reverse().join('');
+			const ALTERNATIONS = [['ei?', ''], ['ó', 'o'], ['o', 'ó'], ['ą', 'ę'], ['ę', 'ą']];
+			for (let i = 0; i < ALTERNATIONS.length; i++){
+				const NEW = index.replace(new RegExp(ALTERNATIONS[i][0]), ALTERNATIONS[i][1]);
+				if (NEW !== index){
+					index = NEW;
+					break;
+				}
+			}
+			index = index.split('').reverse().join('');
+			return index;
+		},
 		// cf. https://courseofpolish.com/grammar/cases/nouns-declension/cases-endings-summary
 		decl(index){
 			const LAST1 = index[index.length-1];
@@ -111,8 +125,10 @@ const PL = {
 		// https://en.wiktionary.org/wiki/Template:pl-decl-noun-m-pr ???
 		m(index){
 			const decl_o = {s: {nom: index}, pl: {}};
-			decl_o.s.acc = index + {inan: '', anim: 'a', pers: 'a'}[PL.animacy];
+			if (PL.irr_oa)
+				index = this.ablaut(index);
 			decl_o.s.gen = index + {inan: 'u', anim: 'a', pers: 'a'}[PL.animacy];
+			decl_o.s.acc = PL.animacy === 'inan' ? decl_o.s.nom : decl_o.s.gen;
 			decl_o.s.dat = index + (PL.irr_mudat ? 'u' : 'owi');
 			decl_o.s.ins = index + (this.ends_in_velar(index) ? 'i' : '') + 'em';
 			decl_o.s.loc = decl_o.s.voc = this.is_hard(index, true) ? this.palstem(index) + 'e' : index + 'u';
@@ -220,6 +236,9 @@ const PL = {
 	},
 	get irr_mudat(){
 		return document.getElementById('mudat').checked;
+	},
+	get irr_oa(){
+		return document.getElementById('oa').checked;
 	},
 	main(){
 		this.display(document.getElementById('inp').value);
