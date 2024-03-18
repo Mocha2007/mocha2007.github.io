@@ -117,7 +117,10 @@ const PL = {
 		},
 		hard: 'pbfwmtdsznłrkgh',
 		hardnv: 'pbfwmtdsznłr',
-		is_hard(stem, exclude_velars = false){
+		/** @param {string} stem */
+		is_hard(stem, exclude_velars = false, include_cdzj = false){
+			if (include_cdzj && stem.match(/c$|dz$|j$/g))
+				return true;
 			stem = stem.replace(/(?<=[rdsc])z/g, '`');
 			return (exclude_velars ? this.hardnv : this.hard)
 				.includes(stem[stem.length-1]);
@@ -134,7 +137,7 @@ const PL = {
 			decl_o.s.loc = decl_o.s.voc = this.is_hard(index, true) ? this.palstem(index) + 'e' : index + 'u';
 			decl_o.pl.voc = decl_o.pl.nom = (PL.animacy === 'pers' ? this.palstem(index) : index)
 				+ (this.is_hard(index) ? this.yi(index) : 'e');
-			decl_o.pl.gen = index + (this.is_hard(index) ? 'ów' : this.yi(index)); // todo fix this for c/dz/j stems
+			decl_o.pl.gen = index + (this.is_hard(index, false, true) ? 'ów' : this.yi(index));
 			decl_o.pl.acc = PL.animacy === 'pers' ? decl_o.pl.gen : decl_o.pl.nom;
 			decl_o.pl.dat = index + 'om';
 			decl_o.pl.ins = index + 'ami';
