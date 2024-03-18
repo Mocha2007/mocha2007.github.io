@@ -153,6 +153,9 @@ const PL = {
 			decl_o.s.dat = index + (PL.irr_mudat ? 'u' : 'owi');
 			decl_o.s.ins = index + (this.ends_in_velar(index) ? 'i' : '') + 'em';
 			decl_o.s.loc = decl_o.s.voc = this.is_hard(index, true) ? this.palstem(index) + 'e' : index + 'u';
+			if (PL.irr_voce) // eg. boże
+				decl_o.s.voc = (this.palstem(index) + 'e')
+					.replace(/ce$/, 'cze').replace(/dze$/, 'że');
 			decl_o.pl.voc = decl_o.pl.nom = PL.irr_owie ? index + 'owie'
 				: (PL.animacy === 'pers' ? this.palstem(index) : index)
 				+ (this.is_hard(index) ? this.yi(index) : 'e');
@@ -267,6 +270,9 @@ const PL = {
 	},
 	get irr_owie(){
 		return document.getElementById('owie').checked;
+	},
+	get irr_voce(){
+		return document.getElementById('voce').checked;
 	},
 	get irr_yin(){
 		return document.getElementById('yin').checked;
