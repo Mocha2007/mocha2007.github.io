@@ -44,6 +44,7 @@ const PL = {
 		return document.querySelector('input[name="animacy"]:checked').value || 'inan';
 	},
 	decl: {
+		// cf. https://courseofpolish.com/grammar/cases/nouns-declension/cases-endings-summary
 		decl(index){
 			const LAST1 = index[index.length-1];
 			const LAST2 = index.slice(index.length-2);
@@ -59,6 +60,9 @@ const PL = {
 			if ('oeę'.includes(LAST1))
 				return this.n(index, LAST1);
 			return this.m(index);
+		},
+		ends_in_velar(stem){
+			return 'kg'.includes(stem[stem.length-1]);
 		},
 		f(index){
 			// https://en.wiktionary.org/wiki/Appendix:Polish_nouns#Feminine_nouns
@@ -162,10 +166,11 @@ const PL = {
 			decl_o.s.acc = index + {inan: '', anim: 'a', pers: 'a'}[PL.animacy];
 			decl_o.s.gen = index + {inan: 'u', anim: 'a', pers: 'a'}[PL.animacy];
 			decl_o.s.dat = index + 'owi';
-			decl_o.s.ins = index + 'em'; // sometimes -iem???
-			decl_o.s.loc = decl_o.s.voc = index + {inan: 'u', anim: 'u', pers: 'ie'}[PL.animacy];
+			decl_o.s.ins = index + (this.ends_in_velar(index) ? 'i' : '') + 'em';
+			decl_o.s.loc = decl_o.s.voc = index + 'u'; // TODO: PAL + e if non-velar hard, else u
 			decl_o.pl.voc = decl_o.pl.nom = index + 'y'; // sorta? seems to also be -e sometimes? -owie?
-			decl_o.pl.gen = decl_o.pl.acc = index + 'ów';
+			decl_o.pl.gen = index + 'ów';
+			decl_o.pl.acc = PL.animacy === 'pers' ? decl_o.pl.gen : decl_o.pl.nom;
 			decl_o.pl.dat = index + 'om';
 			decl_o.pl.ins = index + 'ami';
 			decl_o.pl.loc = index + 'ach';
@@ -197,7 +202,7 @@ const PL = {
 				decl_o.s.gen = stem + 'a';
 				decl_o.s.dat = stem + 'u';
 				decl_o.s.ins = stem + 'em';
-				decl_o.s.loc = stem + {o: 'e' /*+PAL???*/, e: 'u'}[ending];
+				decl_o.s.loc = stem + 'u'; // TODO: PAL + e if non-velar hard, else u
 				decl_o.pl.gen = stem;
 			}
 			decl_o.pl.nom = decl_o.pl.acc = decl_o.pl.voc = stem + 'a';
