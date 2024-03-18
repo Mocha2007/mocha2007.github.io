@@ -161,6 +161,7 @@ const PL = {
 			return new Declension(decl_o);
 		},
 		palstem(stem){
+			const HEAD = stem.slice(0, stem.length-1);
 			const LAST = stem[stem.length-1];
 			const LAST_TWO = stem.slice(0, stem.length-2);
 			if ('ch st zd sł zł sn zn'.split(' ').includes(LAST_TWO))
@@ -168,17 +169,17 @@ const PL = {
 			if ('pbfwmszn'.includes(LAST))
 				return stem + 'i';
 			if (LAST === 't')
-				return stem.slice(0, stem.length-1) + 'ci';
+				return HEAD + 'ci';
 			if (LAST === 'd')
-				return stem.slice(0, stem.length-1) + 'dzi';
+				return HEAD + 'dzi';
 			if (LAST === 'ł')
-				return stem.slice(0, stem.length-1) + 'l';
+				return HEAD + 'l';
 			if (LAST === 'r')
-				return stem.slice(0, stem.length-1) + 'rz';
+				return HEAD + 'rz';
 			if (LAST === 'k')
-				return stem.slice(0, stem.length-1) + 'c';
+				return HEAD + 'c';
 			if (LAST === 'g')
-				return stem.slice(0, stem.length-1) + 'dz';
+				return HEAD + 'dz';
 			console.warn(`PL.decl.palstem can't soften "${stem}"`);
 			return stem;
 		},
