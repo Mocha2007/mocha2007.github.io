@@ -182,7 +182,7 @@ const PL = {
 				decl_o.s.loc = this.is_hard(stem, true) ? this.palstem(stem) + 'e': stem + 'u';
 				decl_o.pl.gen = stem;
 			}
-			decl_o.pl.nom = decl_o.pl.acc = decl_o.pl.voc = stem + 'a';
+			decl_o.pl.nom = decl_o.pl.acc = decl_o.pl.voc = PL.irr_yin ? this.palstem(stem) + this.yi(stem) : stem + 'a';
 			decl_o.pl.dat = stem + 'om';
 			decl_o.pl.ins = stem + 'ami';
 			decl_o.pl.loc = stem + 'ach';
@@ -246,6 +246,9 @@ const PL = {
 	},
 	get irr_owie(){
 		return document.getElementById('owie').checked;
+	},
+	get irr_yin(){
+		return document.getElementById('yin').checked;
 	},
 	main(){
 		this.display(document.getElementById('inp').value);
