@@ -3,21 +3,21 @@
 class Declension {
 	constructor(o){
 		// s
-		this.snom = o.s.nom;
-		this.sgen = o.s.gen;
-		this.sdat = o.s.dat;
-		this.sacc = o.s.acc;
-		this.sins = o.s.ins;
-		this.sloc = o.s.loc;
-		this.svoc = o.s.voc;
+		this.snom = Declension.cleanup(o.s.nom);
+		this.sgen = Declension.cleanup(o.s.gen);
+		this.sdat = Declension.cleanup(o.s.dat);
+		this.sacc = Declension.cleanup(o.s.acc);
+		this.sins = Declension.cleanup(o.s.ins);
+		this.sloc = Declension.cleanup(o.s.loc);
+		this.svoc = Declension.cleanup(o.s.voc);
 		// pl
-		this.plnom = o.pl.nom;
-		this.plgen = o.pl.gen;
-		this.pldat = o.pl.dat;
-		this.placc = o.pl.acc;
-		this.plins = o.pl.ins;
-		this.plloc = o.pl.loc;
-		this.plvoc = o.pl.voc;
+		this.plnom = Declension.cleanup(o.pl.nom);
+		this.plgen = Declension.cleanup(o.pl.gen);
+		this.pldat = Declension.cleanup(o.pl.dat);
+		this.placc = Declension.cleanup(o.pl.acc);
+		this.plins = Declension.cleanup(o.pl.ins);
+		this.plloc = Declension.cleanup(o.pl.loc);
+		this.plvoc = Declension.cleanup(o.pl.voc);
 	}
 	get elem(){
 		const o = document.createElement('table');
@@ -35,6 +35,9 @@ class Declension {
 			});
 		});
 		return o;
+	}
+	static cleanup(form){
+		return form.replace(/c+/g, 'c'); // to prevent eg. 'dziecci'
 	}
 }
 
@@ -156,13 +159,14 @@ const PL = {
 			if (PL.irr_voce) // eg. boże
 				decl_o.s.voc = (this.palstem(index) + 'e')
 					.replace(/ce$/, 'cze').replace(/dze$/, 'że');
-			decl_o.pl.voc = decl_o.pl.nom = PL.irr_owie ? index + 'owie'
+			decl_o.pl.voc = decl_o.pl.nom = PL.irr_ma ? index + 'a'
+				: PL.irr_owie ? index + 'owie'
 				: (PL.animacy === 'pers' ? this.palstem(index) : index)
 				+ (this.is_hard(index) ? this.yi(index) : 'e');
 			decl_o.pl.gen = index + (this.is_hard(index, false, true) ? 'ów' : this.yi(index));
 			decl_o.pl.acc = PL.animacy === 'pers' ? decl_o.pl.gen : decl_o.pl.nom;
 			decl_o.pl.dat = index + 'om';
-			decl_o.pl.ins = index + 'ami';
+			decl_o.pl.ins = PL.irr_short_ins ? this.reducePal(this.palstem(index)) + 'mi' : index + 'ami';
 			decl_o.pl.loc = index + 'ach';
 			return new Declension(decl_o);
 		},
@@ -201,11 +205,11 @@ const PL = {
 				decl_o.s.dat = stem + 'u';
 				decl_o.s.ins = stem + (this.ends_in_velar(stem) ? 'i' : '') + 'em';
 				decl_o.s.loc = this.is_hard(stem, true) ? this.palstem(stem) + 'e': stem + 'u';
-				decl_o.pl.gen = stem;
+				decl_o.pl.gen = PL.irr_yin2 ? this.palstem(stem) + this.yi(stem) : stem;
 			}
 			decl_o.pl.nom = decl_o.pl.acc = decl_o.pl.voc = PL.irr_yin ? this.palstem(stem) + this.yi(stem) : stem + 'a';
 			decl_o.pl.dat = stem + 'om';
-			decl_o.pl.ins = stem + 'ami';
+			decl_o.pl.ins = PL.irr_short_ins ? this.reducePal(this.palstem(stem)) + 'mi' : stem + 'ami';
 			decl_o.pl.loc = stem + 'ach';
 			return new Declension(decl_o);
 		},
@@ -233,6 +237,10 @@ const PL = {
 			console.warn(`PL.decl.palstem can't soften "${stem}"`);
 			return stem;
 		},
+		reducePal(stem){
+			return stem.replace(/ci$/, 'ć').replace(/si$/, 'ś')
+				.replace(/zi$/, 'ż').replace(/ni$/, 'ń');
+		},
 		soft: 'ićźśńlcżj`', // lacks rz, dz, sz, cz: replace these with X'
 		yi(stem){
 			return 'kgćźśńlj'.includes(stem[stem.length-1]) ? 'i' : 'y';
@@ -259,6 +267,9 @@ const PL = {
 	get irr_cf(){
 		return document.getElementById('cf').checked;
 	},
+	get irr_ma(){
+		return document.getElementById('ma').checked;
+	},
 	get irr_mf(){
 		return document.getElementById('mf').checked;
 	},
@@ -271,11 +282,17 @@ const PL = {
 	get irr_owie(){
 		return document.getElementById('owie').checked;
 	},
+	get irr_short_ins(){
+		return document.getElementById('short_ins').checked;
+	},
 	get irr_voce(){
 		return document.getElementById('voce').checked;
 	},
 	get irr_yin(){
 		return document.getElementById('yin').checked;
+	},
+	get irr_yin2(){
+		return document.getElementById('yin2').checked;
 	},
 	main(){
 		this.display(document.getElementById('inp').value);
