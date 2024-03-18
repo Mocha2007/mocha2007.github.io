@@ -161,7 +161,25 @@ const PL = {
 			return new Declension(decl_o);
 		},
 		palstem(stem){
-			// todo
+			const LAST = stem[stem.length-1];
+			const LAST_TWO = stem.slice(0, stem.length-2);
+			if ('ch st zd sł zł sn zn'.split(' ').includes(LAST_TWO))
+				return {ch: 'sz', st: 'ść', zd: 'źdź', sł: 'śl', zł: 'źl', sn: 'śni', zn: 'źni'}[LAST_TWO];
+			if ('pbfwmszn'.includes(LAST))
+				return stem + 'i';
+			if (LAST === 't')
+				return stem.slice(0, stem.length-1) + 'ci';
+			if (LAST === 'd')
+				return stem.slice(0, stem.length-1) + 'dzi';
+			if (LAST === 'ł')
+				return stem.slice(0, stem.length-1) + 'l';
+			if (LAST === 'r')
+				return stem.slice(0, stem.length-1) + 'rz';
+			if (LAST === 'k')
+				return stem.slice(0, stem.length-1) + 'c';
+			if (LAST === 'g')
+				return stem.slice(0, stem.length-1) + 'dz';
+			console.warn(`PL.decl.palstem can't soften "${stem}"`);
 			return stem;
 		},
 		soft: 'ićźśńlcżj`', // lacks rz, dz, sz, cz: replace these with X'
