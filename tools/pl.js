@@ -68,8 +68,8 @@ const PL = {
 			const LAST3 = index.slice(index.length-3);
 			if (LAST3 === 'mię')
 				return this.n(index, LAST3);
-			if (LAST2 === 'ść')
-				return this.f2(index);
+			//if (LAST2 === 'ść')
+			//	return this.f2(index);
 			if (LAST2 === 'um')
 				return this.n(index, LAST2);
 			if (LAST1 === 'a')
