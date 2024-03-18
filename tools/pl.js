@@ -80,7 +80,7 @@ const PL = {
 			decl_o.s.ins = stem + 'ą';
 			// Vocative singular adds -o.
 			decl_o.s.voc = stem + 'o';
-			// todo nom pl annoyance
+			// pl
 			decl_o.pl.voc = decl_o.pl.acc = decl_o.pl.nom = stem + (this.is_hard(stem) ? this.yi(stem) : 'e');
 			decl_o.pl.gen = stem;
 			decl_o.pl.dat = stem + 'om';
