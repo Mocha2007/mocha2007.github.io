@@ -73,7 +73,7 @@ const PL = {
 				return PL.irr_mf ? this.mf(index) : this.f(index);
 			if ('oeę'.includes(LAST1))
 				return this.n(index, LAST1);
-			return this.m(index);
+			return PL.irr_cf ? this.f2(index) : this.m(index);
 		},
 		ends_in_velar(stem){
 			return 'kg'.includes(stem[stem.length-1]);
@@ -105,6 +105,8 @@ const PL = {
 		// -ść fem noun
 		f2(index){
 			const decl_o = {s: {nom: index}, pl: {}};
+			if (PL.irr_oa)
+				index = this.ablaut(index);
 			decl_o.s.acc = decl_o.s.nom;
 			decl_o.s.gen = decl_o.s.dat = decl_o.s.loc = decl_o.s.voc
 				= decl_o.pl.nom = decl_o.pl.gen = decl_o.pl.acc = decl_o.pl.voc
@@ -234,6 +236,9 @@ const PL = {
 		const elem = document.createElement('span');
 		elem.innerHTML = 'invalid';
 		return elem;
+	},
+	get irr_cf(){
+		return document.getElementById('cf').checked;
 	},
 	get irr_mf(){
 		return document.getElementById('mf').checked;
