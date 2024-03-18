@@ -151,7 +151,7 @@ const PL = {
 				decl_o.s.gen = stem + 'a';
 				decl_o.s.dat = stem + 'u';
 				decl_o.s.ins = stem + 'em';
-				decl_o.s.loc = stem + 'u'; // TODO: PAL + e if non-velar hard, else u
+				decl_o.s.loc = this.is_hard(stem, true) ? this.palstem(stem) + 'e': stem + 'u';
 				decl_o.pl.gen = stem;
 			}
 			decl_o.pl.nom = decl_o.pl.acc = decl_o.pl.voc = stem + 'a';
