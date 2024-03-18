@@ -113,7 +113,7 @@ const PL = {
 			const decl_o = {s: {nom: index}, pl: {}};
 			decl_o.s.acc = index + {inan: '', anim: 'a', pers: 'a'}[PL.animacy];
 			decl_o.s.gen = index + {inan: 'u', anim: 'a', pers: 'a'}[PL.animacy];
-			decl_o.s.dat = index + 'owi';
+			decl_o.s.dat = index + (PL.irr_mudat ? 'u' : 'owi');
 			decl_o.s.ins = index + (this.ends_in_velar(index) ? 'i' : '') + 'em';
 			decl_o.s.loc = decl_o.s.voc = this.is_hard(index, true) ? this.palstem(index) + 'e' : index + 'u';
 			decl_o.pl.voc = decl_o.pl.nom = (PL.animacy === 'pers' ? this.palstem(index) : index)
@@ -173,7 +173,8 @@ const PL = {
 			const LAST = stem[stem.length-1];
 			const LAST_TWO = stem.slice(0, stem.length-2);
 			if ('ch st zd sł zł sn zn'.split(' ').includes(LAST_TWO))
-				return {ch: 'sz', st: 'ść', zd: 'źdź', sł: 'śl', zł: 'źl', sn: 'śni', zn: 'źni'}[LAST_TWO];
+				return stem.replace(new RegExp(LAST_TWO + '$'),
+				{ch: 'sz', st: 'ść', zd: 'źdź', sł: 'śl', zł: 'źl', sn: 'śni', zn: 'źni'}[LAST_TWO]);
 			if ('pbfwmszn'.includes(LAST))
 				return stem + 'i';
 			if (LAST === 't')
@@ -216,6 +217,9 @@ const PL = {
 	},
 	get irr_mf(){
 		return document.getElementById('mf').checked;
+	},
+	get irr_mudat(){
+		return document.getElementById('mudat').checked;
 	},
 	main(){
 		this.display(document.getElementById('inp').value);
