@@ -235,7 +235,7 @@ const PL = {
 				return HEAD + 'c';
 			if (LAST === 'g')
 				return HEAD + 'dz';
-			console.warn(`PL.decl.palstem can't soften "${stem}"`);
+			// console.warn(`PL.decl.palstem can't soften "${stem}"`);
 			return stem;
 		},
 		reducePal(stem){
