@@ -56,7 +56,7 @@ const PL = {
 			if (LAST2 === 'um')
 				return this.n(index, LAST2);
 			if (LAST1 === 'a')
-				return this.f(index);
+				return PL.irr_mf ? this.mf(index) : this.f(index);
 			if ('oeę'.includes(LAST1))
 				return this.n(index, LAST1);
 			return this.m(index);
@@ -124,6 +124,14 @@ const PL = {
 			decl_o.pl.ins = index + 'ami';
 			decl_o.pl.loc = index + 'ach';
 			return new Declension(decl_o);
+		},
+		mf(index){
+			// masculine nouns that end in -a
+			const D_M = this.m(index.slice(0, index.length-1));
+			const D_F = this.f(index);
+			['nom', 'gen', 'dat', 'acc', 'ins', 'loc', 'voc']
+				.forEach(c => D_F[`pl${c}`] = D_M[`pl${c}`]);
+			return D_F;
 		},
 		n(index, ending = 'o'){
 			const decl_o = {s: {nom: index}, pl: {}};
@@ -205,6 +213,9 @@ const PL = {
 		const elem = document.createElement('span');
 		elem.innerHTML = 'invalid';
 		return elem;
+	},
+	get irr_mf(){
+		return document.getElementById('mf').checked;
 	},
 	main(){
 		this.display(document.getElementById('inp').value);
