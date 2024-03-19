@@ -38,7 +38,16 @@ class Declension {
 	}
 	static cleanup(form){
 		return form.replace(/c+/g, 'c') // to prevent eg. 'dziecci'
-		.replace(/iy$/, 'i'); // to prevent eg. 'mężczyzniy
+		.replace(/iy$/, 'i') // to prevent eg. 'mężczyzniy
+		// various orthographic rules
+		.replace(/ć(?=[aeiouąęóy])/, 'ci')
+		.replace(/ći/, 'ci')
+		.replace(/ń(?=[aeiouąęóy])$/, 'ni')
+		.replace(/ńi/, 'ni')
+		.replace(/ś(?=[aeiouąęóy])$/, 'si')
+		.replace(/śi/, 'si')
+		.replace(/ź(?=[aeiouąęóy])$/, 'zi')
+		.replace(/źi/, 'zi');
 	}
 }
 
