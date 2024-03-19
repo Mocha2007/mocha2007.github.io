@@ -47,11 +47,11 @@ class Declension {
 		// various orthographic rules
 		.replace(/ć(?=[aeouąęóy])/, 'ci')
 		.replace(/ći/, 'ci')
-		.replace(/ń(?=[aeouąęóy])$/, 'ni')
+		.replace(/ń(?=[aeouąęóy])/, 'ni')
 		.replace(/ńi/, 'ni')
-		.replace(/ś(?=[aeouąęóy])$/, 'si')
+		.replace(/ś(?=[aeouąęóy])/, 'si')
 		.replace(/śi/, 'si')
-		.replace(/ź(?=[aeouąęóy])$/, 'zi')
+		.replace(/ź(?=[aeouąęóy])/, 'zi')
 		.replace(/źi/, 'zi');
 	}
 }
