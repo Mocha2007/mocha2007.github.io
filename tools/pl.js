@@ -84,6 +84,8 @@ const PL = {
 			const LAST3 = index.slice(index.length-3);
 			if (LAST3 === 'mię')
 				return this.n(index, LAST3);
+			if (LAST3 === 'owa')
+				return this.fowa(index);
 			//if (LAST2 === 'ść')
 			//	return this.f2(index);
 			if (LAST2 === 'um')
@@ -144,7 +146,7 @@ const PL = {
 		f3(index){
 			const stem = index.slice(0, index.length-1);
 			const decl_o = {s: {nom: index}, pl: {}};
-			decl_o.s.voc = decl_o.s.loc = decl_o.s.dat = decl_o.s.gen = decl_o.s.nom
+			decl_o.s.voc = decl_o.s.loc = decl_o.s.dat = decl_o.s.gen = decl_o.s.nom;
 			decl_o.s.acc = index + 'ę';
 			decl_o.s.ins = index + 'ą';
 			decl_o.pl.nom = decl_o.pl.acc = decl_o.pl.voc = index + 'e';
@@ -152,6 +154,19 @@ const PL = {
 			decl_o.pl.dat = index + 'om';
 			decl_o.pl.ins = index + 'ami';
 			decl_o.pl.loc = index + 'ach';
+			return new Declension(decl_o);
+		},
+		// -owa fem noun
+		fowa(index){
+			const stem = index.slice(0, index.length-1);
+			const decl_o = {s: {nom: index}, pl: {}};
+			decl_o.s.loc = decl_o.s.dat = decl_o.s.gen = stem + 'ej';
+			decl_o.s.acc = decl_o.s.ins = stem + 'ą';
+			decl_o.s.voc = stem + 'o';
+			decl_o.pl.nom = decl_o.pl.acc = decl_o.pl.voc = stem + 'e';
+			decl_o.pl.gen = decl_o.pl.loc = stem + 'ych';
+			decl_o.pl.dat = stem + 'ym';
+			decl_o.pl.ins = stem + 'ymi';
 			return new Declension(decl_o);
 		},
 		hard: 'pbfwmtdsznłrkgh',
