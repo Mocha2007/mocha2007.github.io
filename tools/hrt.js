@@ -314,17 +314,62 @@ function time_elem_inner(){
 	// visitations
 	const visits = Math.floor(doses/2 / 90) + 2;
 	// elem
-	const str = 0 < yr ? `${unit(yr, 'year')}, ` : '';
-	return str + `${unit(m, 'month')}, ${unit(d, 'day')},
-		${unit(h, 'hour')}, ${unit(min, 'minute')}, ${unit(s, 'second')}<br>
+	const NAME_CHANGE_T = delta(new Date(2024, 2, 21, 15), new Date());
+	return `${timeString(s, min, h, d, m, yr)}<br>
 		<span class="small">${unit(visits, 'endo visit')}</span><br>
-		${unit(doses, 'dose')} of E (${unit(doseH, 'hour')}, ${unit(doseM, 'minute')}, ${unit(doseS, 'second')} until next dose)<br>
+		${unit(doses, 'dose')} of E (${timeString(doseS, doseM, doseH)} until next dose)<br>
 		<span class="small">${quietGirluna[0]} Girluna ${quietGirluna[1]} (${unit(quietGirluna[2], 'minute')} left)</span><br>
 		${eLevel()}<br>
 		<span class="small">Total E consumed: ${totalE} mg</span><br>
 		<span class="small">Total Spiro consumed: ${totalS/1000} g</span><br>
 		<span class="small">Total Prog consumed: ${totalP/1000} g</span><br>
+		${NAME_CHANGE_T.s} ${NAME_CHANGE_T.preposition} name change<br>
 		${unit(laser, 'laser session')}<br><span class="small">Laser Calendar:</span>`;
+}
+
+function timeString(s = 0, min = 0, h = 0, d = 0, m = 0, yr = 0){
+	const str = [];
+	let foundNonzero = false;
+	[[yr, 'year'], [m, 'month'], [d, 'day'], [h, 'hour'], [min, 'minute'], [s, 'second']].forEach(xy => {
+		if (xy[0] || foundNonzero){
+			foundNonzero = true;
+			str.push(unit(...xy));
+		}
+	});
+	return str.join(', ');
+}
+
+/**
+ * @param {Date} start
+ * @param {Date} end
+ */
+function delta(start, end){
+	let swapped = false;
+	if (end < start){
+		const TEMP = end;
+		end = start;
+		start = TEMP;
+		swapped = true;
+	}
+	const preposition = swapped ? 'until' : 'since';
+	const MONTH_start = start.getMonth() + start.getFullYear() * 12;
+	const MONTH_end = end.getMonth() + end.getFullYear() * 12;
+	const CALENDAR_MONTHS = MONTH_end - MONTH_start;
+	const FULL_MONTH_FLAG = MONTH_start === MONTH_end || end.getDate() <= start.getDate();
+	const MONTHS_RAW = CALENDAR_MONTHS - (FULL_MONTH_FLAG ? 0 : 1);
+	const YEARS = Math.floor(MONTHS_RAW / 12);
+	const MONTHS = MONTHS_RAW % 12;
+	start.setMonth(start.getMonth() + MONTHS_RAW);
+	let remainder = end - start;
+	const DAYS = Math.floor(remainder / _1d);
+	remainder %= _1d;
+	const HOURS = Math.floor(remainder / _1h);
+	remainder %= _1h;
+	const MINUTES = Math.floor(remainder / _1m);
+	remainder %= _1m;
+	const SECONDS = Math.floor(remainder / _1s);
+	remainder %= _1s;
+	return {s: timeString(SECONDS, MINUTES, HOURS, DAYS, MONTHS, YEARS), remainder, swapped, preposition};
 }
 
 const progress_items = [
