@@ -40,13 +40,13 @@ class Declension {
 		return form.replace(/c+/g, 'c') // to prevent eg. 'dziecci'
 		.replace(/iy$/, 'i') // to prevent eg. 'mężczyzniy
 		// various orthographic rules
-		.replace(/ć(?=[aeiouąęóy])/, 'ci')
+		.replace(/ć(?=[aeouąęóy])/, 'ci')
 		.replace(/ći/, 'ci')
-		.replace(/ń(?=[aeiouąęóy])$/, 'ni')
+		.replace(/ń(?=[aeouąęóy])$/, 'ni')
 		.replace(/ńi/, 'ni')
-		.replace(/ś(?=[aeiouąęóy])$/, 'si')
+		.replace(/ś(?=[aeouąęóy])$/, 'si')
 		.replace(/śi/, 'si')
-		.replace(/ź(?=[aeiouąęóy])$/, 'zi')
+		.replace(/ź(?=[aeouąęóy])$/, 'zi')
 		.replace(/źi/, 'zi');
 	}
 }
