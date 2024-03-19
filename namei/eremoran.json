@@ -15699,6 +15699,15 @@
 		"categories": ["fruit", "plant"]
 	},
 	{
+		"title": "sikun",
+		"etym": "C/siu/kun",
+		"cat": "n., 4th",
+		"defList": [
+			"first snowfall"
+		],
+		"categories": ["time"]
+	},
+	{
 		"title": "silam",
 		"etym": "C/siu/lam",
 		"cat": "n., 5th",
