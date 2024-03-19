@@ -1,3 +1,6 @@
+label {
+	user-select: none;
+}
 th {
 	background-color: #eff7ff;
 	text-transform: uppercase;
@@ -10,4 +13,8 @@ th {
 }
 .gn {
 	background-color: #ddd;
+}
+.irregular {
+	background-color: #fee;
+	color: #400;
 }

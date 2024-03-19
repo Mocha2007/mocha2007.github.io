@@ -18,20 +18,25 @@ class Declension {
 		this.plins = Declension.cleanup(o.pl.ins);
 		this.plloc = Declension.cleanup(o.pl.loc);
 		this.plvoc = Declension.cleanup(o.pl.voc);
+		// notes
+		this.irr = o.irr || [];
 	}
 	get elem(){
 		const o = document.createElement('table');
 		o.innerHTML = '<tr><th></th><th>s</th><th>pl</th></tr>';
-		['nom', 'gen', 'dat', 'acc', 'ins', 'loc', 'voc'].forEach(c => {
+		PL.cases.forEach(c => {
 			const tr = document.createElement('tr');
 			o.appendChild(tr);
 			const th = document.createElement('th');
 			th.innerHTML = c;
 			tr.appendChild(th);
-			['s', 'pl'].forEach(number => {
+			PL.numbers.forEach(number => {
 				const td = document.createElement('td');
 				tr.appendChild(td);
-				td.innerHTML = this[`${number}${c}`];
+				const ID = `${number}${c}`;
+				td.innerHTML = this[ID];
+				if (this.irr.includes(ID))
+					td.classList.add('irregular');
 			});
 		});
 		return o;
@@ -56,6 +61,7 @@ const PL = {
 	get animacy(){
 		return document.querySelector('input[name="animacy"]:checked').value || 'inan';
 	},
+	cases: ['nom', 'gen', 'dat', 'acc', 'ins', 'loc', 'voc'],
 	decl: {
 		/** @param {string} index */
 		ablaut(index){
@@ -119,9 +125,11 @@ const PL = {
 		},
 		// -ść fem noun
 		f2(index){
-			const decl_o = {s: {nom: index}, pl: {}};
-			if (PL.irr_oa)
+			const decl_o = {s: {nom: index}, pl: {}, irr: []};
+			if (PL.irr_oa){
 				index = this.ablaut(index);
+				PL.numbers.forEach(n => PL.cases.forEach(c => n+c !== 'snom' ? decl_o.irr.push(n+c) : 0));
+			}
 			decl_o.s.acc = decl_o.s.nom;
 			decl_o.s.gen = decl_o.s.dat = decl_o.s.loc = decl_o.s.voc
 				= decl_o.pl.nom = decl_o.pl.gen = decl_o.pl.acc = decl_o.pl.voc
@@ -158,25 +166,39 @@ const PL = {
 		},
 		// https://en.wiktionary.org/wiki/Template:pl-decl-noun-m-pr ???
 		m(index){
-			const decl_o = {s: {nom: index}, pl: {}};
-			if (PL.irr_oa)
+			const decl_o = {s: {nom: index}, pl: {}, irr: []};
+			if (PL.irr_oa){
 				index = this.ablaut(index);
+				PL.numbers.forEach(n => PL.cases.forEach(c => n+c !== 'snom' ? decl_o.irr.push(n+c) : 0));
+			}
 			decl_o.s.gen = index + {inan: 'u', anim: 'a', pers: 'a'}[PL.animacy];
 			decl_o.s.acc = PL.animacy === 'inan' ? decl_o.s.nom : decl_o.s.gen;
 			decl_o.s.dat = index + (PL.irr_mudat ? 'u' : 'owi');
+			if (PL.irr_mudat)
+				decl_o.irr.push('sdat');
 			decl_o.s.ins = index + (this.ends_in_velar(index) ? 'i' : '') + 'em';
 			decl_o.s.loc = decl_o.s.voc = !PL.irr_vocu && this.is_hard(index, true) ? this.palstem(index) + 'e' : index + 'u';
-			if (PL.irr_voce) // eg. boże
+			if (PL.irr_voce){ // eg. boże
 				decl_o.s.voc = (this.palstem(index) + 'e')
 					.replace(/ce$/, 'cze').replace(/dze$/, 'że');
+				decl_o.irr.push('svoc');
+			}
+			if (PL.irr_vocu)
+				decl_o.irr.push('sloc', 'svoc');
 			decl_o.pl.voc = decl_o.pl.nom = PL.irr_ma ? index + 'a'
 				: PL.irr_owie ? index + 'owie'
 				: (PL.animacy === 'pers' ? this.palstem(index) : index)
 				+ (this.is_hard(index) ? this.yi(index) : 'e');
+			if (PL.irr_ma || PL.irr_owie)
+				decl_o.irr.push('plnom', 'plvoc');
 			decl_o.pl.gen = index + (PL.irr_owie || this.is_hard(index, false, true) ? 'ów' : this.yi(index));
+			if (PL.irr_owie && !this.is_hard(index, false, true))
+				decl_o.irr.push('plgen');
 			decl_o.pl.acc = PL.animacy === 'pers' ? decl_o.pl.gen : decl_o.pl.nom;
 			decl_o.pl.dat = index + 'om';
 			decl_o.pl.ins = PL.irr_short_ins ? this.reducePal(this.palstem(index)) + 'mi' : index + 'ami';
+			if (PL.irr_short_ins)
+				decl_o.irr.push('plins');
 			decl_o.pl.loc = index + 'ach';
 			return new Declension(decl_o);
 		},
@@ -184,12 +206,14 @@ const PL = {
 			// masculine nouns that end in -a
 			const D_M = this.m(index.slice(0, index.length-1));
 			const D_F = this.f(index);
-			['nom', 'gen', 'dat', 'acc', 'ins', 'loc', 'voc']
-				.forEach(c => D_F[`pl${c}`] = D_M[`pl${c}`]);
+			PL.cases.forEach(c => {
+				D_F[`pl${c}`] = D_M[`pl${c}`];
+				D_F.irr.push(`pl${c}`);
+			});
 			return D_F;
 		},
 		n(index, ending = 'o'){
-			const decl_o = {s: {nom: index}, pl: {}};
+			const decl_o = {s: {nom: index}, pl: {}, irr: []};
 			let stem = index.slice(0, index.length-ending.length);
 			decl_o.s.acc = decl_o.s.voc = decl_o.s.nom;
 			if (ending === 'um'){
@@ -216,10 +240,16 @@ const PL = {
 				decl_o.s.ins = stem + (this.ends_in_velar(stem) ? 'i' : '') + 'em';
 				decl_o.s.loc = this.is_hard(stem, true) ? this.palstem(stem) + 'e': stem + 'u';
 				decl_o.pl.gen = PL.irr_yin2 ? this.palstem(stem) + this.yi(stem) : stem;
+				if (PL.irr_yin2)
+					decl_o.irr.push('plgen');
 			}
 			decl_o.pl.nom = decl_o.pl.acc = decl_o.pl.voc = PL.irr_yin ? this.palstem(stem) + this.yi(stem) : stem + 'a';
+			if (PL.irr_yin)
+				decl_o.irr.push('plnom', 'placc', 'plvoc');
 			decl_o.pl.dat = stem + 'om';
 			decl_o.pl.ins = PL.irr_short_ins ? this.reducePal(this.palstem(stem)) + 'mi' : stem + 'ami';
+			if (PL.irr_short_ins)
+				decl_o.irr.push('plins');
 			decl_o.pl.loc = stem + 'ach';
 			return new Declension(decl_o);
 		},
@@ -310,6 +340,7 @@ const PL = {
 	main(){
 		this.display(document.getElementById('inp').value);
 	},
+	numbers: ['s', 'pl'],
 };
 
 const PL_LOADED = true;
