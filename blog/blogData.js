@@ -1362,7 +1362,7 @@ const blogData = [
 			<li>Highly sensitive to perceived changes (real or imagined) in pitch in interlocutor's voice; prone to irrational fits of anger over unexpected changes in interlocutor's pitch.</li>
 			<li>Difficulty discussing interests in depth (eg. may only be able to discuss a topic for less than a minute rather than a few hours).</li>
 			<li>Difficulty explaining topics clearly and effectively.</li>
-			<li><a href="https://newtsoda.tumblr.com/post/681610131808681984/there-has-been-a-lot-of-research-about-autistics">Flexible morality</a>.</li>
+			<li><a href="https://www.researchgate.net/publication/268143945_Ratings_of_Facial_Attractiveness_by_High-Functioning_Individuals_with_Autism">Judgier wrt. attractiveness</a>.</li>
 		</ul>
 		</li>
 		<li>Differences in logic and thought processes:
@@ -1372,6 +1372,11 @@ const blogData = [
 			<li>Prone to emotional decisionmaking; difficulty thinking rationally.</li>
 			<li>Struggles working alone, requires group support to perform work normally.</li>
 			<li>Inability to dedicate time and effort to interests (when compared to normal non-allistics).</li>
+			<li><a href="https://newtsoda.tumblr.com/post/681610131808681984/there-has-been-a-lot-of-research-about-autistics">Lack of moral rigidity</a>.</li>
+			<li><a href="https://www.psychologytoday.com/us/blog/the-fallible-mind/201708/why-advertising-falls-flat-in-individuals-autism">Susceptibility to advertising</a>.</li>
+			<li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3606476/">Inferior abstract spatial reasoning</a>.</li>
+			<li><a href="https://www.sciencedaily.com/releases/2009/06/090616121339.htm">Poor problem-solving</a>.</li>
+			<li><a href="https://link.springer.com/article/10.1007/s10803-015-2518-2">Less creative</a>.</li>
 		</ul>
 		</li>
 		<li>Sensory symptoms:
