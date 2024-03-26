@@ -1357,6 +1357,7 @@ const blogData = [
 		<li>Often asks pointless questions, or ones the subject already knows the answer to (subject may refer to such questions as "rhetorical" or "smalltalk").</li>
 		<li>Difficulty socializing with non-allistic peers (often can only form relationships with other allistics).</li>
 		<li>Difficulty adhering to routines.</li>
+		<li>Lack of awareness of or understanding of the ramifications of changes in routine.</li>
 		<li>Prone to emotional decisionmaking; difficulty thinking rationally.</li>
 		<li>Struggles working alone, requires group support to perform work normally.</li>
 		<li>Inability to dedicate time and effort to interests (when compared to normal non-allistics).</li>
