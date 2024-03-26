@@ -1363,6 +1363,7 @@ const blogData = [
 		<li>Inability to dedicate time and effort to interests (when compared to normal non-allistics).</li>
 		<li>Difficulty discussing interests in depth (eg. may only be able to discuss a topic for less than a minute rather than a few hours).</li>
 		<li>Lack of awareness of or sensitivity to environmental sensory stimuli (light, noise, etc.).</li>
+		<li>Highly sensitive to perceived changes (real or imagined) in pitch in interlocutor's voice; prone to irrational fits of anger over unexpected changes in interlocutor's pitch.</li>
 	</ul>
 	`,
 ];
