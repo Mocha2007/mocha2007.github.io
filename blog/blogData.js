@@ -1361,6 +1361,8 @@ const blogData = [
 			<li>Tells unusual, illogical jokes.</li>
 			<li>Highly sensitive to perceived changes (real or imagined) in pitch in interlocutor's voice; prone to irrational fits of anger over unexpected changes in interlocutor's pitch.</li>
 			<li>Difficulty discussing interests in depth (eg. may only be able to discuss a topic for less than a minute rather than a few hours).</li>
+			<li>Difficulty explaining topics clearly and effectively.</li>
+			<li><a href="https://newtsoda.tumblr.com/post/681610131808681984/there-has-been-a-lot-of-research-about-autistics">Flexible morality</a>.</li>
 		</ul>
 		</li>
 		<li>Differences in logic and thought processes:
