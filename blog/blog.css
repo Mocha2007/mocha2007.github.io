@@ -68,6 +68,9 @@ code, .dateContainer, .tagList, *:target {
 	border-radius: 15px;
 	padding-left: 0.5em;
 }
+.list2 {
+	list-style: disc;
+}
 .shorterHr {
 	border-color: #444;
 	width: 80%;
