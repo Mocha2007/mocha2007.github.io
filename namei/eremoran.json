@@ -5851,7 +5851,8 @@
 		"cat": "n., 1st",
 		"defList": [
 			"man",
-			"husband (in monogamous relationships)"
+			"husband (in monogamous relationships)",
+			"(suffix) specifies stem is male"
 		],
 		"categories": ["family", "person"]
 	},
@@ -13937,7 +13938,8 @@
 		"defList": [
 			"woman",
 			"wife (in monogamous relationships)",
-			"(chess) queen"
+			"(chess) queen",
+			"(suffix) specifies stem is female"
 		],
 		"categories": ["chess", "family", "person"]
 	},
