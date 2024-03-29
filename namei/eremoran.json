@@ -717,7 +717,7 @@
 		"defList": [
 			"Afêsir, god of thunder, husband of Siraur"
 		],
-		"categories": ["god", "male given name"]
+		"categories": ["gendered male", "god", "male given name"]
 	},
 	{
 		"title": "afêsma",
@@ -1559,7 +1559,7 @@
 			"male given name"
 		],
 		"notes": "PEN is a nominalization of ''*xêrrôs'' from ''*xêd'' 'to' + ''*rôs'' 'speak'; Related to Numoran ''Xerror''",
-		"categories": ["male given name"]
+		"categories": ["gendered male", "male given name"]
 	},
 	{
 		"title": "art",
@@ -2177,7 +2177,7 @@
 		"defList": [
 			"Balusir, god of death"
 		],
-		"categories": ["god"]
+		"categories": ["gendered male", "god"]
 	},
 	{
 		"title": "bam",
@@ -2605,7 +2605,7 @@
 		"cat": "n., 1st",
 		"defList": [
 			"leader, ruler",
-			"emperor, king",
+			"(gender-neutral) emperor, king",
 			"(chess) king"
 		],
 		"categories": ["chess", "person"]
@@ -2702,7 +2702,7 @@
 			"male given name"
 		],
 		"lore": "cf. Agamemnon",
-		"categories": ["male given name"]
+		"categories": ["gendered male", "male given name"]
 	},
 	{
 		"title": "bêdôz",
@@ -5686,7 +5686,7 @@
 		"defList": [
 			"female given name"
 		],
-		"categories": ["female given name"]
+		"categories": ["female given name", "gendered female"]
 	},
 	{
 		"title": "eba",
@@ -5834,7 +5834,7 @@
 		"defList": [
 			"heterosexual male in a submissive sexual role"
 		],
-		"categories": ["sex"]
+		"categories": ["gendered male", "sex"]
 	},
 	{
 		"title": "ekar",
@@ -5854,7 +5854,7 @@
 			"husband (in monogamous relationships)",
 			"(suffix) specifies stem is male"
 		],
-		"categories": ["family", "person"]
+		"categories": ["family", "gendered male", "person"]
 	},
 	{
 		"title": "eket",
@@ -5871,7 +5871,7 @@
 		"defList": [
 			"bottom (gay male submissive)"
 		],
-		"categories": ["sex"]
+		"categories": ["gendered male", "sex"]
 	},
 	{
 		"title": "ela",
@@ -5888,11 +5888,11 @@
 		"etym": "C/ela/-ê",
 		"cat": "n., 1st",
 		"defList": [
-			"child",
-			"(more specifically) boy",
-			"(more specifically) son"
+			"(gender-neutral) child",
+			"(more specifically, masculine) boy",
+			"(more specifically, masculine) son"
 		],
-		"categories": ["age", "family", "person"]
+		"categories": ["age", "family", "gendered male", "person"]
 	},
 	{
 		"title": "elaôr",
@@ -5902,7 +5902,7 @@
 			"girl",
 			"daughter"
 		],
-		"categories": ["family", "person"]
+		"categories": ["family", "gendered female", "person"]
 	},
 	{
 		"title": "elelak",
@@ -6237,7 +6237,7 @@
 		"defList": [
 			"female given name"
 		],
-		"categories": ["female given name"]
+		"categories": ["female given name", "gendered female"]
 	},
 	{
 		"title": "eto",
@@ -6415,7 +6415,7 @@
 		"defList": [
 			"female given name"
 		],
-		"categories": ["female given name"]
+		"categories": ["female given name", "gendered female"]
 	},
 	{
 		"title": "haflar",
@@ -6424,7 +6424,7 @@
 		"defList": [
 			"female given name"
 		],
-		"categories": ["female given name"]
+		"categories": ["female given name", "gendered female"]
 	},
 	{
 		"title": "hai",
@@ -7080,7 +7080,7 @@
 		"defList": [
 			"maternal grandfather"
 		],
-		"categories": ["family", "person"]
+		"categories": ["family", "gendered male", "person"]
 	},
 	{
 		"title": "hek",
@@ -7246,7 +7246,7 @@
 		"defList": [
 			"(archaic) father"
 		],
-		"categories": ["family", "person"]
+		"categories": ["family", "gendered male", "person"]
 	},
 	{
 		"title": "heri",
@@ -7522,7 +7522,7 @@
 		"defList": [
 			"paternal grandfather"
 		],
-		"categories": ["family", "person"]
+		"categories": ["family", "gendered male", "person"]
 	},
 	{
 		"title": "hirak",
@@ -7540,7 +7540,7 @@
 		"defList": [
 			"paternal grandmother"
 		],
-		"categories": ["family", "person"]
+		"categories": ["family", "gendered female", "person"]
 	},
 	{
 		"title": "hisim",
@@ -7765,7 +7765,7 @@
 		"defList": [
 			"female given name"
 		],
-		"categories": ["female given name"]
+		"categories": ["female given name", "gendered female"]
 	},
 	{
 		"title": "hou",
@@ -8140,7 +8140,7 @@
 		"defList": [
 			"(archaic, non-southern) girl (older form of elaôr)"
 		],
-		"categories": ["age", "person"]
+		"categories": ["age", "gendered female", "person"]
 	},
 	{
 		"title": "ikuks",
@@ -8785,7 +8785,7 @@
 		"defList": [
 			"heterosexual male in a dominant sexual role"
 		],
-		"categories": ["sex"]
+		"categories": ["gendered male", "sex"]
 	},
 	{
 		"title": "kamela",
@@ -8812,7 +8812,7 @@
 		"defList": [
 			"homosexual female in a dominant sexual role"
 		],
-		"categories": ["sex"]
+		"categories": ["gendered female", "sex"]
 	},
 	{
 		"title": "kamu",
@@ -9214,11 +9214,11 @@
 		"etym": "C/kek/-r",
 		"cat": "n., 1st",
 		"defList": [
-			"aristocrat, noble, powerful person",
-			"skilled person; expert; master",
-			"male given name"
+			"(gender-neutral) aristocrat, noble, powerful person",
+			"(gender-neutral) skilled person; expert; master",
+			"(masculine) male given name"
 		],
-		"categories": ["male given name", "person"]
+		"categories": ["gendered male", "male given name", "person"]
 	},
 	{
 		"title": "keret",
@@ -11040,7 +11040,7 @@
 		"defList": [
 			"female given name"
 		],
-		"categories": ["female given name"]
+		"categories": ["female given name", "gendered female"]
 	},
 	{
 		"title": "kuzalk",
@@ -11347,7 +11347,7 @@
 		"defList": [
 			"Libôr, goddess of birth and life"
 		],
-		"categories": ["god"]
+		"categories": ["gendered female", "god"]
 	},
 	{
 		"title": "liboz",
@@ -11364,7 +11364,7 @@
 		"defList": [
 			"female given name"
 		],
-		"categories": ["female given name"]
+		"categories": ["female given name", "gendered female"]
 	},
 	{
 		"title": "lielat",
@@ -11540,7 +11540,7 @@
 			"male given name"
 		],
 		"notes": "Related to Numoran ''Flotwer'' and ''Lotwer''",
-		"categories": ["male given name"]
+		"categories": ["gendered male", "male given name"]
 	},
 	{
 		"title": "lu",
@@ -11708,7 +11708,7 @@
 		"defList": [
 			"mother"
 		],
-		"categories": ["family", "person"]
+		"categories": ["family", "gendered female", "person"]
 	},
 	{
 		"title": "maêt",
@@ -11837,7 +11837,7 @@
 			"female given name",
 			"(archaic) male given name"
 		],
-		"categories": ["female given name", "male given name"]
+		"categories": ["female given name", "gendered female", "gendered male", "male given name"]
 	},
 	{
 		"title": "maninan",
@@ -11961,7 +11961,7 @@
 			"Marnamêr, god of war",
 			"male given name"
 		],
-		"categories": ["god", "male given name"]
+		"categories": ["gendered male", "god", "male given name"]
 	},
 	{
 		"title": "marz",
@@ -12114,7 +12114,7 @@
 		"defList": [
 			"maternal grandmother"
 		],
-		"categories": ["family", "person"]
+		"categories": ["family", "gendered female", "person"]
 	},
 	{
 		"title": "mêt",
@@ -12130,7 +12130,7 @@
 		"etym": "I/PEN/*miêur/widow/heir",
 		"cat": "n., 1st",
 		"defList": [
-			"widow",
+			"widow, widower",
 			"heir"
 		],
 		"categories": ["person"]
@@ -12337,7 +12337,7 @@
 		"defList": [
 			"housewife"
 		],
-		"categories": ["person"]
+		"categories": ["gendered female", "person"]
 	},
 	{
 		"title": "molat",
@@ -12837,7 +12837,7 @@
 		"defList": [
 			"female given name"
 		],
-		"categories": ["female given name"]
+		"categories": ["female given name", "gendered female"]
 	},
 	{
 		"title": "narko",
@@ -13196,7 +13196,7 @@
 		"defList": [
 			"female given name"
 		],
-		"categories": ["female given name"]
+		"categories": ["female given name", "gendered female"]
 	},
 	{
 		"title": "neurfansam",
@@ -13929,7 +13929,7 @@
 		"defList": [
 			"homosexual female in a submissive sexual role"
 		],
-		"categories": ["sex"]
+		"categories": ["gendered female", "sex"]
 	},
 	{
 		"title": "okar",
@@ -13941,7 +13941,7 @@
 			"(chess) queen",
 			"(suffix) specifies stem is female"
 		],
-		"categories": ["chess", "family", "person"]
+		"categories": ["chess", "family", "gendered female", "person"]
 	},
 	{
 		"title": "ôkar",
@@ -13953,7 +13953,7 @@
 			"wife (in monogamous relationships; esp. someone else's)",
 			"1st/2nd person female pronoun"
 		],
-		"categories": ["family", "person", "personal pronoun"]
+		"categories": ["family", "gendered female", "person", "personal pronoun"]
 	},
 	{
 		"title": "ôkarinu",
@@ -13997,7 +13997,7 @@
 		"defList": [
 			"heterosexual female in a submissive sexual role"
 		],
-		"categories": ["sex"]
+		"categories": ["gendered female", "sex"]
 	},
 	{
 		"title": "ôlê",
@@ -14243,7 +14243,7 @@
 		"defList": [
 			"female given name"
 		],
-		"categories": ["female given name"]
+		"categories": ["female given name", "gendered female"]
 	},
 	{
 		"title": "pankair",
@@ -14315,7 +14315,7 @@
 		"defList": [
 			"female given name"
 		],
-		"categories": ["female given name"]
+		"categories": ["female given name", "gendered female"]
 	},
 	{
 		"title": "parônar",
@@ -15283,7 +15283,7 @@
 		"defList": [
 			"female given name"
 		],
-		"categories": ["female given name"]
+		"categories": ["female given name", "gendered female"]
 	},
 	{
 		"title": "saurom",
@@ -15500,7 +15500,7 @@
 		"defList": [
 			"homosexual male in a dominant sexual role"
 		],
-		"categories": ["sex"]
+		"categories": ["gendered male", "sex"]
 	},
 	{
 		"title": "sekaz",
@@ -15655,7 +15655,7 @@
 		"defList": [
 			"Sibanar, 'bright-knife', one of the three [[krizar]] (witches) of emotion"
 		],
-		"categories": ["god", "emotion"]
+		"categories": ["gendered female", "god", "emotion"]
 	},
 	{
 		"title": "siêt",
@@ -15771,7 +15771,7 @@
 		"defList": [
 			"female given name"
 		],
-		"categories": ["female given name"]
+		"categories": ["female given name", "gendered female"]
 	},
 	{
 		"title": "sipam",
@@ -15815,7 +15815,7 @@
 			"Siraur, goddess of law and custom, family, and femininity, chief of the gods",
 			"female given name"
 		],
-		"categories": ["god", "female given name"]
+		"categories": ["female given name", "gendered female", "god"]
 	},
 	{
 		"title": "sirez",
@@ -16117,7 +16117,7 @@
 		"defList": [
 			"homosexual female in a dominant sexual role"
 		],
-		"categories": ["sex"]
+		"categories": ["gendered female", "sex"]
 	},
 	{
 		"title": "sokum",
@@ -17218,11 +17218,11 @@
 		"etym": "C/temz/-ê",
 		"cat": "n., 1st",
 		"defList": [
-			"(archaic) protector",
-			"father",
-			"(archaic) male given name"
+			"(archaic, gender-neutral) protector",
+			"(masculine) father",
+			"(archaic, masculine) male given name"
 		],
-		"categories": ["family", "male given name", "person"]
+		"categories": ["family", "gendered male", "male given name", "person"]
 	},
 	{
 		"title": "temz",
@@ -17258,7 +17258,7 @@
 		"defList": [
 			"Tianar, goddess of love"
 		],
-		"categories": ["god"]
+		"categories": ["gendered female", "god"]
 	},
 	{
 		"title": "tiasu",
@@ -17692,7 +17692,7 @@
 		"defList": [
 			"Tukelar, 'little soul', one of the three [[krizar]] (witches) of emotion"
 		],
-		"categories": ["god", "emotion"]
+		"categories": ["emotion", "gendered female", "god"]
 	},
 	{
 		"title": "tukil",
@@ -18270,7 +18270,7 @@
 		"defList": [
 			"Ullar, 'blue-stone', one of the three [[krizar]] (witches) of emotion"
 		],
-		"categories": ["god", "emotion"]
+		"categories": ["emotion", "gendered female", "god"]
 	},
 	{
 		"title": "ulu",
@@ -18782,7 +18782,7 @@
 			"Zikrômbor, goddess of Manners and Disease, she curses those who do not practice good manners with various afflictions. It is never used as a given name. It is used in the interj. ''Zikrômbor berbakaldoz'' (gesundheit; bless you; literally \"May Zikrômbor leave you.\")."
 		],
 		"notes": "possibly related to zurku",
-		"categories": ["disease", "female given name", "god"]
+		"categories": ["disease", "female given name", "gendered female", "god"]
 	},
 	{
 		"title": "zirta",
