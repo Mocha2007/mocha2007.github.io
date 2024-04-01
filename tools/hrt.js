@@ -355,7 +355,7 @@ function deltat(start, end){
 	const MONTH_start = start.getMonth() + start.getFullYear() * 12;
 	const MONTH_end = end.getMonth() + end.getFullYear() * 12;
 	const CALENDAR_MONTHS = MONTH_end - MONTH_start;
-	const FULL_MONTH_FLAG = MONTH_start === MONTH_end || end.getDate() <= start.getDate();
+	const FULL_MONTH_FLAG = MONTH_start === MONTH_end || start.getDate() <= end.getDate();
 	const MONTHS_RAW = CALENDAR_MONTHS - (FULL_MONTH_FLAG ? 0 : 1);
 	const YEARS = Math.floor(MONTHS_RAW / 12);
 	const MONTHS = MONTHS_RAW % 12;
