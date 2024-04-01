@@ -1351,6 +1351,8 @@ const blogData = [
 	`
 	@title Mental Disorder
 	@date 1711481683504
+	What would a world in which autism is the norm treat NTs?
+	@p
 	Allism. Symptoms:
 	<ul class="list2">
 		<li>Socially:
