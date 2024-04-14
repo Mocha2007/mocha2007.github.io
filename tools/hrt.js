@@ -378,7 +378,7 @@ const progress_items = [
 	new ProgressItem('Reduced facial hair', 0, 0, 6 * 35/30.5, 10 * 35/30.5, 'middle estimate', '2nd laser'), // I am lasering!
 	new ProgressItem('Improved skin', 0, 2, 3, 24, 'upper estimate', '2 weeks'), // TFS DIYHRT TFS DIYHRT
 	new ProgressItem('Decreased muscle mass', 1, 6, 12, 24, 'middle estimate?', '1 month?'), // DIYHRT TFS TFS TFS
-	new ProgressItem('Reduced body hair', 1, 12, 6, 36, 'lower estimate', '???'), // DIYHRT TFS DIYHRT TFS
+	new ProgressItem('Reduced body hair', 1, 12, 6, 36, 'lower estimate', '8 months?'), // DIYHRT TFS DIYHRT TFS
 	new ProgressItem('Body fat redistribution', 1, 6, 24, 60, 'middle estimate??', '14 weeks'), // DIYHRT TFS TFS TFS
 	new ProgressItem('Breast development', 0.5, 6, 24, 72, 'middle estimate??', '4 weeks'), // DIYHRT TFS TFS DIYHRT
 ];
