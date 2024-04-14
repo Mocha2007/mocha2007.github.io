@@ -390,7 +390,7 @@ const notes = [
 	'13 Feb 2024 - 21 Feb 2024: 3x daily 2 mg E subL, 2x daily 50 mg spiro oral, 1x nightly 100 mg prog oral',
 	'22 Feb 2024 onward: 4x daily 2 mg E subL, 2x daily 50 mg spiro oral, 1x nightly 100 mg prog oral',
 	'Lasering started 15 Sep 2023: 9/15, 10/20, 11/27, 1/2, 2/7, 3/13, 4/17, ...',
-	`Current daily schedule as of 2/12/24:<ul>
+	`Current daily schedule as of 2/22/24:<ul>
 	<li>Morning: 2 x 2 mg E, 50 mg spiro</li>
 	<li>Evening: 2 x 2 mg E, 50 mg spiro, 100 mg prog</li>
 	</ul>`,
