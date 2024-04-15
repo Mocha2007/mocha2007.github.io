@@ -7,10 +7,10 @@ const _1m = 60*_1s;
 const _1h = 60*_1m;
 const _12h = 12*_1h;
 const _1d = 24*_1h;
-const _1w = 7*_1d;
+// const _1w = 7*_1d;
 const _1y = 365.2425*_1d;
 const _1mo = _1y/12;
-const laserP = 5*_1w; // 5 weeks
+// const laserP = 5*_1w; // 5 weeks
 const LUNA_MASS = 53; // kg
 const LUNA_BLOOD = 65 * LUNA_MASS; // mL https://reference.medscape.com/calculator/648/estimated-blood-volume
 
