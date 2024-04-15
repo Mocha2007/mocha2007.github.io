@@ -159,9 +159,8 @@ function get_dose_t(){
 }
 
 function get_laser_t(){
-	return new Date() - get_laser_t.epoch;
+	return undefined;
 }
-get_laser_t.epoch = new Date(2024, 1, 7, 16) - 4*laserP; // 4*5 weeks before 2/7; iirc orig. 1694782800000
 get_laser_t.appts = [
 	new Date('2023-09-15T09:00:00.000-04:00'),
 	new Date('2023-10-15T11:15:00.000-04:00'),
@@ -179,7 +178,7 @@ function get_prog(){
 	const pCount = get_prog.dose * doseCount;
 	return {t, untilNext, doseCount, pCount};
 }
-get_prog.epoch = new Date(2024, 1, 12, 18); // February 12th
+get_prog.epoch = new Date('2024-02-12T18:00:00.000-05:00'); // February 12th
 get_prog.dose = 100;
 
 /** @param {Date} t - integer in [0, 11] = day in shave cycle*/
@@ -314,8 +313,8 @@ function time_elem_inner(){
 	// visitations
 	const visits = Math.floor(doses/2 / 90) + 2;
 	// elem
-	const NAME_CHANGE_T = deltat(new Date(2024, 2, 21, 15), new Date());
-	const MYST = deltat(new Date(2024, 3, 28, 1, 20), new Date());
+	const NAME_CHANGE_T = deltat(new Date('2024-03-21T15:00:00.000-04:00'), new Date());
+	const MYST = deltat(new Date('2024-04-28T01:20:00.000-04:00'), new Date());
 	return `${timeString(s, min, h, d, m, yr)}<br>
 		<span class="small">${unit(visits, 'endo visit')}</span><br>
 		${unit(doses, 'dose')} of E (${timeString(doseS, doseM, doseH)} until next dose)<br>
