@@ -181,7 +181,7 @@ class HEvent {
 	show(ignoreCW = false){
 		document.body.classList.add('noOverflow');
 		document.body.appendChild(this.cw && !ignoreCW ? this.cwElem : this.elem);
-		if (OCTOBER_DEBUG)
+		if (IDENT_DEBUG)
 			console.debug(this);
 	}
 	/**
@@ -203,7 +203,7 @@ HEvent.defaultChoices = ['Accept incongruity', 'Fight back'];
 HEvent.links = ['begone', 'redPill'];
 HEvent.hevents = data.map(HEvent.fromObject);
 
-const OCTOBER_DEBUG = false;
+const IDENT_DEBUG = false;
 
 // https://stackoverflow.com/a/44670818
 function onVisible(element, callback){
@@ -236,18 +236,18 @@ secret.enable = () => {
 };
 
 function identity(){
-	// scroll to top
-	window.scrollTo(0, 0);
 	// add secret, regardless of the time of year
 	onVisible(document.getElementById('bottom'), secret);
-	// 20% chance of happening during JUNE (pride month), OCTOBER (halloween), and NOVEMBER (trans month)
-	if (!(OCTOBER_DEBUG || [5, 9, 10].includes(new Date().getMonth()) && Math.random() < 0.2))
+	// 20% chance of happening during JUNE (pride month), OCTOBER (halloween), and NOVEMBER (trans pride month)
+	if (!(IDENT_DEBUG || [5, 9, 10].includes(new Date().getMonth()) && Math.random() < 0.2))
 		return secret.enable();
 	// import CSS
 	const style = document.createElement('link');
 	style.href = 'css/identity.css';
 	style.rel = 'stylesheet';
 	document.head.appendChild(style);
+	// scroll to top
+	window.scrollTo(0, 0);
 	// block rest of doc
 	HEvent.random().show();
 }
