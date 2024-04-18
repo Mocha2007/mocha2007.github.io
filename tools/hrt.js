@@ -169,6 +169,7 @@ get_laser_t.appts = [
 	new Date('2024-02-07T16:00:00.000-05:00'),
 	new Date('2024-03-13T16:00:00.000-05:00'),
 	new Date('2024-04-17T16:00:00.000-05:00'),
+	new Date('2024-06-26T16:00:00.000-05:00'),
 ];
 
 function get_prog(){
@@ -374,7 +375,7 @@ function deltat(start, end){
 }
 
 const progress_items = [
-	new ProgressItem('Reduced facial hair', 0, 0, 6 * 35/30.5, 10 * 35/30.5, 'middle estimate', '2nd laser'), // I am lasering!
+	new ProgressItem('Reduced facial hair', 0, 0, 6 * 35/30.5, 7 * 35/30.5 + 3 * 70/30.5, 'middle estimate', '2nd laser'), // I am lasering!
 	new ProgressItem('Improved skin', 0, 2, 3, 24, 'upper estimate', '2 weeks'), // TFS DIYHRT TFS DIYHRT
 	new ProgressItem('Decreased muscle mass', 1, 6, 12, 24, 'middle estimate?', '1 month?'), // DIYHRT TFS TFS TFS
 	new ProgressItem('Reduced body hair', 1, 12, 6, 36, 'lower estimate', '8 months?'), // DIYHRT TFS DIYHRT TFS
@@ -388,7 +389,7 @@ const notes = [
 	'7 Feb 2024 - 12 Feb 2024: 3x daily 2 mg E subL, 2x daily 50 mg spiro oral',
 	'13 Feb 2024 - 21 Feb 2024: 3x daily 2 mg E subL, 2x daily 50 mg spiro oral, 1x nightly 100 mg prog oral',
 	'22 Feb 2024 onward: 4x daily 2 mg E subL, 2x daily 50 mg spiro oral, 1x nightly 100 mg prog oral',
-	'Lasering started 15 Sep 2023: 9/15, 10/20, 11/27, 1/2, 2/7, 3/13, 4/17, ...',
+	'Lasering started 15 Sep 2023: 9/15, 10/20, 11/27, 1/2, 2/7, 3/13, 4/17, 6/26, ...',
 	`Current daily schedule as of 2/22/24:<ul>
 	<li>Morning: 2 x 2 mg E, 50 mg spiro</li>
 	<li>Evening: 2 x 2 mg E, 50 mg spiro, 100 mg prog</li>
