@@ -202,6 +202,7 @@ get_shave_cycle.period = 16;
 get_shave_cycle.periodminor = 4;
 get_shave_cycle.cycleOffset = 1257;
 
+// obsolete now that I'm working on 10-wk schedule with entirely different details...
 function laserPhaseElem(){
 	/** the last time I got lasered */
 	const last = get_laser_t.appts[get_laser_t.appts.length-2];
@@ -326,7 +327,7 @@ function time_elem_inner(){
 		<span class="small">Total Prog consumed: ${totalP/1000} g</span><br>
 		${NAME_CHANGE_T.s} ${NAME_CHANGE_T.preposition} name change<br>
 		${MYST.s} ${MYST.preposition} mystery event<br>
-		${unit(laser, 'laser session')}<br><span class="small">Laser Calendar:</span>`;
+		${unit(laser, 'laser session')}`;
 }
 
 function timeString(s = 0, min = 0, h = 0, d = 0, m = 0, yr = 0){
@@ -439,7 +440,7 @@ function hrt(){
 	const time = document.createElement('h2');
 	time.id = 'time';
 	container.appendChild(time);
-	container.appendChild(laserPhaseElem());
+	// container.appendChild(laserPhaseElem());
 	container.appendChild(document.createElement('hr'));
 	container.appendChild(progress());
 	return container;
