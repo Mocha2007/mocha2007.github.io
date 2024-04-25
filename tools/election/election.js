@@ -1,10 +1,10 @@
 /* global POLITICIANS, STATES */
 
 const CONST = {
-	date: new Date(),
+	date: new Date(2024, 2, 5), // sim starts after March 5th - super tuesday - 8 months before the election
 	dates: {
 		election: new Date(2024, 10, 5),
-		inauguration: new Date(2025, 1, 20),
+		inauguration: new Date(2025, 0, 20),
 	},
 	dur: {
 		day: 24*60*60*1000,
@@ -206,10 +206,10 @@ function simulation(){
 	CONST.positions.house_speaker = Politician.fromName('Mike Johnson');
 	// start!
 	while (CONST.date < CONST.dates.inauguration){
-		console.log(CONST.date);
+		// console.log(CONST.date);
 		// todo
 		// increment date by 1
-		CONST.date = new Date(CONST.date + CONST.dur.day);
+		CONST.date = new Date(+CONST.date + CONST.dur.day);
 	}
 	console.info('Simulation complete!');
 }
