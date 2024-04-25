@@ -1,4 +1,4 @@
-/* global POLITICIANS, STATES */
+/* global POLITICIANS, random, STATES */
 
 const CONST = {
 	date: new Date(2024, 2, 5), // sim starts after March 5th - super tuesday - 8 months before the election
@@ -12,6 +12,10 @@ const CONST = {
 			return 365.25 * this.day;
 		},
 	},
+	nom_r_vp_candidates: [
+		// https://electionbettingodds.com/RepublicanVicePresident_2024.html
+		['Tim Scott', 0.207]
+	],
 	/** @type {Politician[]} */
 	politicians: [],
 	positions: {
@@ -244,7 +248,11 @@ function simulation(){
 	CONST.positions.nom_d_vp = CONST.positions.vice_president = Politician.fromName('Kamala Harris');
 	CONST.positions.house_speaker = Politician.fromName('Mike Johnson');
 	CONST.positions.nom_r_p = Politician.fromName('Donald Trump');
-	CONST.positions.nom_r_vp = Politician.fromName('Tim Scott');
+	CONST.positions.nom_r_vp = Politician.fromName(random.weightedChoice(
+		CONST.nom_r_vp_candidates.map(x => x[0]),
+		CONST.nom_r_vp_candidates.map(x => x[1])
+	));
+	console.info(`${CONST.positions.nom_r_p.name} chose ${CONST.positions.nom_r_vp.name} as VP`);
 	// start!
 	while (CONST.date < CONST.dates.inauguration){
 		// console.log(CONST.date);
@@ -258,7 +266,7 @@ function simulation(){
 
 function main(){
 	// wait for data to load...
-	if (typeof POLITICIANS === 'undefined' || typeof STATES === 'undefined')
+	if (typeof random === 'undefined' || typeof POLITICIANS === 'undefined' || typeof STATES === 'undefined')
 		setTimeout(main, 100);
 	// parse data
 	POLITICIANS.forEach(o => new Politician(o.name, o.dob, o.gender, o.party));
