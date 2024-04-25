@@ -40,11 +40,14 @@ const CONST = {
 		nom_r_p: undefined,
 		/** @type {Politician} */
 		nom_r_vp: undefined,
+		// 'secret' backups...
+		BACKUP_house_speaker: undefined,
 	},
 	position_backups: {
 		president: 'vice_president',
 		nom_d_p: 'nom_d_vp', // it's a fair guess
 		nom_r_p: 'nom_r_vp', // it's a fair guess
+		house_speaker: 'BACKUP_house_speaker',
 	},
 	/** @type {State[]} */
 	states: [],

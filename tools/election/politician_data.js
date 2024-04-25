@@ -56,4 +56,5 @@ const POLITICIANS = [
 		gender: 1,
 		party: 1,
 	},
+	// backup pols
 ];
