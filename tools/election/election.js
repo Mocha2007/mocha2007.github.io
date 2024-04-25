@@ -288,7 +288,7 @@ function main(){
 		return setTimeout(main, 100);
 	// parse data
 	POLITICIANS.forEach(o => new Politician(o.name, o.dob, o.gender, o.party));
-	STATES.forEach(o => new State(o.name, o.ev, o.p_rep));
+	STATES.forEach(o => new State(...o));
 	console.info(`election.js loaded ${CONST.politicians.length} politicians and ${CONST.states.length} states.`);
 	// run sim
 	simulation();
