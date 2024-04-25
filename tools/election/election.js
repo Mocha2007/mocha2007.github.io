@@ -30,12 +30,25 @@ const CONST = {
 		/** @type {Politician} */
 		nom_r_vp: undefined,
 	},
+	position_backups: {
+		president: 'vice_president',
+		nom_d_p: 'nom_d_vp', // it's a fair guess
+		nom_r_p: 'nom_r_vp', // it's a fair guess
+	},
 	/** @type {State[]} */
 	states: [],
 	// methods
 	alert(s){
 		console.info(`${this.date}: ${s}`);
-	}
+	},
+	checkPositions(){
+		for (let x in this.positions)
+			if (this.positions[x] && !this.positions[x].alive && this.position_backups[x]){
+				this.alert(`filling ${x} (${this.positions[x].name}) with ${this.position_backups[x]} (${this.positions[this.position_backups[x]].name})...`)
+				this.positions[x] = this.positions[this.position_backups[x]];
+				this.positions[this.position_backups[x]] = undefined;
+			}
+	},
 };
 
 class Gender {
@@ -88,6 +101,7 @@ class Politician {
 		if (Math.random() < this.daily_death_chance){
 			this.alive = false;
 			CONST.alert(`${this.name} has died!`);
+			CONST.checkPositions();
 		}
 	}
 	static fromName(name){
