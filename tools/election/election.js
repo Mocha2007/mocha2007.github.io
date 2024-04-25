@@ -24,6 +24,10 @@ const CONST = {
 	},
 	/** @type {State[]} */
 	states: [],
+	// methods
+	alert(s){
+		console.info(`${this.date}: ${s}`);
+	}
 };
 
 class Gender {
@@ -54,6 +58,7 @@ class Politician {
 		this.dob = dob;
 		this.gender = gender;
 		this.party = party;
+		this.alive = true;
 		CONST.politicians.push(this);
 	}
 	get age(){
@@ -62,8 +67,20 @@ class Politician {
 	get annual_death_chance(){
 		return ACTUARIAL_TABLE[this.age][this.gender];
 	}
+	get daily_death_chance(){
+		return 1 - Math.pow(1-this.annual_death_chance, 1/365.25);
+	}
 	get eligible_for_president(){
 		return 35 < this.age;
+	}
+	tick(){
+		if (!this.alive)
+			return;
+		// dies
+		if (Math.random() < this.daily_death_chance){
+			this.alive = false;
+			CONST.alert(`${this.name} has died!`);
+		}
 	}
 	static fromName(name){
 		return CONST.politicians.find(p => p.name === name);
@@ -207,7 +224,8 @@ function simulation(){
 	// start!
 	while (CONST.date < CONST.dates.inauguration){
 		// console.log(CONST.date);
-		// todo
+		// see if someone dies
+		CONST.politicians.forEach(p => p.tick());
 		// increment date by 1
 		CONST.date = new Date(+CONST.date + CONST.dur.day);
 	}
