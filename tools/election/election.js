@@ -12,12 +12,17 @@ const CONST = {
 			return 365.25 * this.day;
 		},
 	},
+	/** @type {Politician[]} */
 	politicians: [],
 	positions: {
+		/** @type {Politician} */
 		president: undefined,
+		/** @type {Politician} */
 		vice_president: undefined,
+		/** @type {Politician} */
 		house_speaker: undefined,
 	},
+	/** @type {State[]} */
 	states: [],
 };
 
@@ -59,6 +64,9 @@ class Politician {
 	}
 	get eligible_for_president(){
 		return 35 < this.age;
+	}
+	static fromName(name){
+		return CONST.politicians.find(p => p.name === name);
 	}
 }
 
@@ -191,19 +199,30 @@ const ACTUARIAL_TABLE = [
 
 function simulation(){
 	// initialize simulation...
+	console.info('initializing simulation...')
 	// todo set prez, vp, speaker
+	CONST.positions.president = Politician.fromName('Joe Biden');
+	CONST.positions.vice_president = Politician.fromName('Donald Trump');
+	CONST.positions.house_speaker = Politician.fromName('Mike Johnson');
 	// start!
 	while (CONST.date < CONST.dates.inauguration){
+		console.log(CONST.date);
 		// todo
 		// increment date by 1
 		CONST.date = new Date(CONST.date + CONST.dur.day);
 	}
+	console.info('Simulation complete!');
 }
 
 function main(){
 	// wait for data to load...
 	if (typeof POLITICIANS === 'undefined' || typeof STATES === 'undefined')
 		setTimeout(main, 100);
+	// parse data
+	POLITICIANS.forEach(o => new Politician(o.name, o.dob, o.gender, o.party));
+	STATES.forEach(o => new State(o.name, o.ev, o.p_rep));
+	console.info(`election.js loaded ${CONST.politicians.length} politicians and ${CONST.states.length} states.`);
+	// run sim
 	simulation();
 }
 

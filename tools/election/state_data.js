@@ -1,5 +1,5 @@
 /* exported STATES */
 
-const STATES = {
+const STATES = [
 
-};
+];

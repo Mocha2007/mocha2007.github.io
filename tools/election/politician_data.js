@@ -11,6 +11,12 @@ const POLITICIANS = [
 		name: 'Joe Biden',
 		dob: new Date(1942, 10, 20),
 		gender: 1,
+		party: 0,
+	},
+	{
+		name: 'Mike Johnson',
+		dob: new Date(1972, 0, 30),
+		gender: 1,
 		party: 1,
 	},
 ];
