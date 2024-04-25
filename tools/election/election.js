@@ -72,8 +72,8 @@ const CONST = {
 				d += state.ev;
 		});
 		console.info(`RESULTS:
-		${this.positions.nom_d_p.name} / ${this.positions.nom_d_vp.name} : ${d} EVs
-		${this.positions.nom_r_p.name} / ${this.positions.nom_r_vp.name} : ${r} EVs`);
+		${this.positions.nom_d_p.name} : ${d} EVs
+		${this.positions.nom_r_p.name} : ${r} EVs`);
 	}
 };
 
