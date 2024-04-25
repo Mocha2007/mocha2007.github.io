@@ -1,9 +1,13 @@
+/* global POLITICIANS, STATES */
+
 const CONST = {
 	date: new Date(),
 	dates: {
 		election: new Date(2024, 10, 5),
 		inauguration: new Date(2025, 1, 20),
 	},
+	politicians: [],
+	states: [],
 	year: 365.25 * 24 * 60 * 60 * 1000,
 };
 
@@ -25,6 +29,7 @@ class State {
 		this.name = name;
 		this.ev = ev;
 		this.p_rep = p_rep;
+		CONST.states.push(this);
 	}
 }
 
@@ -34,6 +39,7 @@ class Politician {
 		this.dob = dob;
 		this.gender = gender;
 		this.party = party;
+		CONST.politicians.push(this);
 	}
 	get age(){
 		return Math.floor((CONST.date - this.dob) / CONST.year);
