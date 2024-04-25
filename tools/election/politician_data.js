@@ -19,4 +19,16 @@ const POLITICIANS = [
 		gender: 1,
 		party: 1,
 	},
+	{
+		name: 'Kamala Harris',
+		dob: new Date(1964, 9, 20),
+		gender: 0,
+		party: 0,
+	},
+	{
+		name: 'Tim Scott',
+		dob: new Date(1965, 8, 19),
+		gender: 1,
+		party: 1,
+	},
 ];

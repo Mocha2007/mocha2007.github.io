@@ -21,6 +21,14 @@ const CONST = {
 		vice_president: undefined,
 		/** @type {Politician} */
 		house_speaker: undefined,
+		/** @type {Politician} */
+		nom_d_p: undefined,
+		/** @type {Politician} */
+		nom_d_vp: undefined,
+		/** @type {Politician} */
+		nom_r_p: undefined,
+		/** @type {Politician} */
+		nom_r_vp: undefined,
 	},
 	/** @type {State[]} */
 	states: [],
@@ -218,9 +226,11 @@ function simulation(){
 	// initialize simulation...
 	console.info('initializing simulation...')
 	// todo set prez, vp, speaker
-	CONST.positions.president = Politician.fromName('Joe Biden');
-	CONST.positions.vice_president = Politician.fromName('Donald Trump');
+	CONST.positions.nom_d_p = CONST.positions.president = Politician.fromName('Joe Biden');
+	CONST.positions.nom_d_vp = CONST.positions.vice_president = Politician.fromName('Kamala Harris');
 	CONST.positions.house_speaker = Politician.fromName('Mike Johnson');
+	CONST.positions.nom_r_p = Politician.fromName('Donald Trump');
+	CONST.positions.nom_r_vp = Politician.fromName('Tim Scott');
 	// start!
 	while (CONST.date < CONST.dates.inauguration){
 		// console.log(CONST.date);
