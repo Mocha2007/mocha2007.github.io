@@ -1,5 +1,9 @@
 const CONST = {
 	date: new Date(),
+	dates: {
+		election: new Date(2024, 10, 5),
+		inauguration: new Date(2025, 1, 20),
+	},
 	year: 365.25 * 24 * 60 * 60 * 1000,
 };
 
@@ -17,7 +21,8 @@ class Party {
 }
 
 class State {
-	constructor(ev, p_rep){
+	constructor(name, ev, p_rep){
+		this.name = name;
 		this.ev = ev;
 		this.p_rep = p_rep;
 	}
@@ -167,3 +172,9 @@ const ACTUARIAL_TABLE = [
 ];
 
 // https://en.wikipedia.org/wiki/Twelfth_Amendment_to_the_United_States_Constitution#Text
+
+function simulation(){
+	while (CONST.date < CONST.dates.inauguration){
+		// todo
+	}
+}
