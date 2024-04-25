@@ -6,9 +6,19 @@ const CONST = {
 		election: new Date(2024, 10, 5),
 		inauguration: new Date(2025, 1, 20),
 	},
+	dur: {
+		day: 24*60*60*1000,
+		get year(){
+			return 365.25 * this.day;
+		},
+	},
 	politicians: [],
+	positions: {
+		president: undefined,
+		vice_president: undefined,
+		house_speaker: undefined,
+	},
 	states: [],
-	year: 365.25 * 24 * 60 * 60 * 1000,
 };
 
 class Gender {
@@ -42,7 +52,7 @@ class Politician {
 		CONST.politicians.push(this);
 	}
 	get age(){
-		return Math.floor((CONST.date - this.dob) / CONST.year);
+		return Math.floor((CONST.date - this.dob) / CONST.dur.year);
 	}
 	get annual_death_chance(){
 		return ACTUARIAL_TABLE[this.age][this.gender];
@@ -180,7 +190,21 @@ const ACTUARIAL_TABLE = [
 // https://en.wikipedia.org/wiki/Twelfth_Amendment_to_the_United_States_Constitution#Text
 
 function simulation(){
+	// initialize simulation...
+	// todo set prez, vp, speaker
+	// start!
 	while (CONST.date < CONST.dates.inauguration){
 		// todo
+		// increment date by 1
+		CONST.date = new Date(CONST.date + CONST.dur.day);
 	}
 }
+
+function main(){
+	// wait for data to load...
+	if (typeof POLITICIANS === 'undefined' || typeof STATES === 'undefined')
+		setTimeout(main, 100);
+	simulation();
+}
+
+main();
