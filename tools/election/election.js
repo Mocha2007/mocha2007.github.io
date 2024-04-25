@@ -12,6 +12,9 @@ const CONST = {
 			return 365.25 * this.day;
 		},
 	},
+	flags: {
+		election_held: false,
+	},
 	nom_r_vp_candidates: [
 		// https://electionbettingodds.com/RepublicanVicePresident_2024.html
 		['Tim Scott', 0.207],
@@ -57,6 +60,11 @@ const CONST = {
 				this.positions[this.position_backups[x]] = undefined;
 			}
 	},
+	holdElection(){
+		// todo
+		this.alert('holding election...');
+		this.flags.election_held = true;
+	}
 };
 
 class Gender {
@@ -78,6 +86,9 @@ class State {
 		this.ev = ev;
 		this.p_rep = p_rep;
 		CONST.states.push(this);
+	}
+	get victor(){
+		return Math.random() < this.p_rep ? 1 : 0;
 	}
 }
 
@@ -262,6 +273,9 @@ function simulation(){
 		// console.log(CONST.date);
 		// see if someone dies
 		CONST.politicians.forEach(p => p.tick());
+		// election
+		if (CONST.dates.election <= CONST.date && !CONST.flags.election_held)
+			CONST.holdElection();
 		// increment date by 1
 		CONST.date = new Date(+CONST.date + CONST.dur.day);
 	}
@@ -271,7 +285,7 @@ function simulation(){
 function main(){
 	// wait for data to load...
 	if (typeof random === 'undefined' || typeof POLITICIANS === 'undefined' || typeof STATES === 'undefined')
-		setTimeout(main, 100);
+		return setTimeout(main, 100);
 	// parse data
 	POLITICIANS.forEach(o => new Politician(o.name, o.dob, o.gender, o.party));
 	STATES.forEach(o => new State(o.name, o.ev, o.p_rep));
