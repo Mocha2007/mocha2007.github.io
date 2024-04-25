@@ -25,9 +25,34 @@ const POLITICIANS = [
 		gender: 0,
 		party: 0,
 	},
+	// Trump VP picks
 	{
 		name: 'Tim Scott',
 		dob: new Date(1965, 8, 19),
+		gender: 1,
+		party: 1,
+	},
+	{
+		name: 'Kristi Noem',
+		dob: new Date(1971, 10, 30),
+		gender: 0,
+		party: 1,
+	},
+	{
+		name: 'Elise Stefanik',
+		dob: new Date(1984, 6, 2),
+		gender: 0,
+		party: 1,
+	},
+	{
+		name: 'James Vance',
+		dob: new Date(1984, 7, 2),
+		gender: 1,
+		party: 1,
+	},
+	{
+		name: 'Ben Carson',
+		dob: new Date(1951, 8, 18),
 		gender: 1,
 		party: 1,
 	},

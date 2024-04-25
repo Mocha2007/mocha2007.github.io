@@ -14,7 +14,11 @@ const CONST = {
 	},
 	nom_r_vp_candidates: [
 		// https://electionbettingodds.com/RepublicanVicePresident_2024.html
-		['Tim Scott', 0.207]
+		['Tim Scott', 0.207],
+		['Kristi Noem', 0.113],
+		['Elise Stefanik', 0.075],
+		['James Vance', 0.066],
+		['Ben Carson', 0.056],
 	],
 	/** @type {Politician[]} */
 	politicians: [],
