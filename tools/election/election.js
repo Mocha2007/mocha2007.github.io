@@ -61,9 +61,19 @@ const CONST = {
 			}
 	},
 	holdElection(){
-		// todo
 		this.alert('holding election...');
 		this.flags.election_held = true;
+		let d = 0;
+		let r = 0;
+		this.states.forEach(state => {
+			if (Math.random() < state.p_rep)
+				r += state.ev;
+			else
+				d += state.ev;
+		});
+		console.info(`RESULTS:
+		${this.positions.nom_d_p.name} / ${this.positions.nom_d_vp.name} : ${d} EVs
+		${this.positions.nom_r_p.name} / ${this.positions.nom_r_vp.name} : ${r} EVs`);
 	}
 };
 
