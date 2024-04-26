@@ -81,7 +81,7 @@ const CONST = {
 			}
 	},
 	holdElection(){
-		console.info('holding election...');
+		// console.info('holding election...');
 		this.flags.election_held = true;
 		let d = 0;
 		let r = 0;
@@ -170,7 +170,7 @@ class Politician {
 
 function simulation(){
 	// initialize simulation...
-	console.info('initializing simulation...');
+	CONST.alert('initializing simulation...');
 	// todo set prez, vp, speaker
 	CONST.positions.nom_d_p = CONST.positions.president = Politician.fromName('Joe Biden');
 	CONST.positions.nom_d_vp = CONST.positions.vice_president = Politician.fromName('Kamala Harris');
@@ -200,7 +200,7 @@ function simulation(){
 		// increment date by 1
 		CONST.date = new Date(+CONST.date + CONST.dur.day);
 	}
-	console.info('Simulation complete!');
+	CONST.alert('Simulation complete!');
 }
 
 function main(){
