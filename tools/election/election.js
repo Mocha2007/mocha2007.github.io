@@ -69,11 +69,9 @@ const CONST = {
 	states: [],
 	// methods
 	alert(s){
-		const str = `${this.date.toDateString()}: ${s}`;
-		console.info(str);
 		const elem = document.createElement('div');
 		elem.classList.add('message');
-		elem.innerHTML = str;
+		elem.innerHTML = `<span class='date'>${this.date.toDateString()}</span>: ${s}`;
 		document.getElementById('console').appendChild(elem);
 	},
 	checkPositions(){
