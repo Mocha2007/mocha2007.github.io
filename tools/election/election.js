@@ -49,21 +49,17 @@ const CONST = {
 		nom_r_p: undefined,
 		/** @type {Politician} */
 		nom_r_vp: undefined,
-		// 'secret' backups...
-		/** @type {Politician} */
-		BACKUP_d_vp: undefined,
-		/** @type {Politician} */
-		BACKUP_r_vp: undefined,
-		/** @type {Politician} */
-		BACKUP_house_speaker: undefined,
 	},
 	position_backups: {
-		president: 'vice_president',
-		nom_d_p: 'nom_d_vp', // it's a fair guess
-		nom_r_p: 'nom_r_vp', // it's a fair guess
-		nom_d_vp: 'BACKUP_d_vp',
-		nom_r_vp: 'BACKUP_r_vp',
-		house_speaker: 'BACKUP_house_speaker',
+		president: () => ({x: CONST.positions.vice_president, y: 'vice_president'}),
+		nom_d_p: () => ({x: CONST.positions.nom_d_vp, y: 'nom_d_vp'}), // it's a fair guess
+		nom_r_p: () => ({x: CONST.positions.nom_r_vp, y: 'nom_r_vp'}), // it's a fair guess
+		nom_d_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
+			&& p.party === Party.DEMOCRATIC && p !== CONST.positions.nom_d_p))}),
+		nom_r_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
+			&& p.party === Party.REPUBLICAN && p !== CONST.positions.nom_r_p))}),
+		house_speaker: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
+			&& p.party === Party.REPUBLICAN && p.position === Position.REPRESENTATIVE))}),
 	},
 	/** @type {State[]} */
 	states: [],
@@ -77,10 +73,10 @@ const CONST = {
 	checkPositions(){
 		for (const x in this.positions)
 			if ((!this.positions[x] || !this.positions[x].alive) && this.position_backups[x]){
-				// eslint-disable-next-line max-len
-				this.alert(`filling ${x} with ${this.position_backups[x]} (${this.positions[this.position_backups[x]].name})...`);
-				this.positions[x] = this.positions[this.position_backups[x]];
-				this.positions[this.position_backups[x]] = undefined;
+				const bu = this.position_backups[x]();
+				this.alert(`filling ${x} with ${bu.y || 'random'} (${bu.x.name})...`);
+				this.positions[x] = bu.x;
+				this.positions[bu.y] = undefined;
 			}
 	},
 	holdElection(){
@@ -144,7 +140,7 @@ class Politician {
 		return 1 - Math.pow(1-this.annual_death_chance, 1/365.25);
 	}
 	get eligible_for_president(){
-		return 35 < this.age;
+		return 35 < this.age && this.alive;
 	}
 	tick(){
 		if (!this.alive)
@@ -175,21 +171,6 @@ function simulation(){
 		CONST.nom_r_vp_candidates.map(x => x[0]),
 		CONST.nom_r_vp_candidates.map(x => x[1])
 	));
-	// if Kamala dies, a random democrat is chosen (other than Biden and Harris)
-	CONST.positions.BACKUP_d_vp = random.choice(
-		CONST.politicians.filter(p => p.party === Party.DEMOCRATIC
-			&& p !== CONST.positions.nom_d_p && p !== CONST.positions.nom_d_vp)
-	);
-	// if VP dies, a random republican is chosen (other than Trump and VP)
-	CONST.positions.BACKUP_r_vp = random.choice(
-		CONST.politicians.filter(p => p.party === Party.REPUBLICAN
-			&& p !== CONST.positions.nom_r_p && p !== CONST.positions.nom_r_vp)
-	);
-	// if house speaker dies, a random republican representative is chosen (Other than Johnson)
-	CONST.positions.BACKUP_house_speaker = random.choice(
-		CONST.politicians.filter(p => p.party === Party.REPUBLICAN
-			&& p.position === Position.REPRESENTATIVE && p !== CONST.positions.house_speaker)
-	);
 	// trump veep choice
 	CONST.alert(`${CONST.positions.nom_r_p.name} chose ${CONST.positions.nom_r_vp.name} as VP`);
 	// start!
