@@ -3,6 +3,7 @@
 const CONST = {
 	config: {
 		deathRate: 1, // x times normal rate of death
+		speakerRemovalDailyChance: 0.01,
 	},
 	date: new Date(2024, 2, 5), // sim starts after March 5th - super tuesday - 8 months before the election
 	dates: {
@@ -178,6 +179,13 @@ function simulation(){
 		// console.log(CONST.date);
 		// see if someone dies
 		CONST.politicians.forEach(p => p.tick());
+		// remove the speaker
+		if (Math.random() < CONST.config.speakerRemovalDailyChance){
+			// eslint-disable-next-line max-len
+			CONST.alert(`The house has voted to oust ${CONST.positions.house_speaker.name} from the speaker role.`);
+			CONST.positions.house_speaker = undefined;
+			CONST.checkPositions();
+		}
 		// election
 		if (CONST.dates.election <= CONST.date && !CONST.flags.election_held)
 			CONST.holdElection();
