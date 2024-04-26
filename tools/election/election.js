@@ -50,8 +50,11 @@ const CONST = {
 		/** @type {Politician} */
 		nom_r_vp: undefined,
 		// 'secret' backups...
+		/** @type {Politician} */
 		BACKUP_d_vp: undefined,
+		/** @type {Politician} */
 		BACKUP_r_vp: undefined,
+		/** @type {Politician} */
 		BACKUP_house_speaker: undefined,
 	},
 	position_backups: {
@@ -95,6 +98,11 @@ const CONST = {
 };
 
 class State {
+	/**
+	 * @param {string} name
+	 * @param {number} ev electoral votes
+	 * @param {number} p_rep chance the repubs win this state
+	 */
 	constructor(name, ev, p_rep){
 		this.name = name;
 		this.ev = ev;
@@ -107,6 +115,13 @@ class State {
 }
 
 class Politician {
+	/**
+	 * @param {string} name
+	 * @param {Date} dob
+	 * @param {Gender} gender
+	 * @param {Party} party
+	 * @param {Position} pos political position (eg. "Governor")
+	 */
 	constructor(name, dob, gender, party, pos = Position.NONE){
 		this.name = name;
 		this.dob = dob;
