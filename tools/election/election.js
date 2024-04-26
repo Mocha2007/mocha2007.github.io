@@ -47,14 +47,16 @@ const CONST = {
 		/** @type {Politician} */
 		nom_r_vp: undefined,
 		// 'secret' backups...
-		BACKUP_dem_vp: undefined,
+		BACKUP_d_vp: undefined,
+		BACKUP_r_vp: undefined,
 		BACKUP_house_speaker: undefined,
 	},
 	position_backups: {
 		president: 'vice_president',
 		nom_d_p: 'nom_d_vp', // it's a fair guess
 		nom_r_p: 'nom_r_vp', // it's a fair guess
-		nom_d_vp: 'BACKUP_dem_vp',
+		nom_d_vp: 'BACKUP_d_vp',
+		nom_r_vp: 'BACKUP_r_vp',
 		house_speaker: 'BACKUP_house_speaker',
 	},
 	/** @type {State[]} */
@@ -86,7 +88,7 @@ const CONST = {
 		console.info(`RESULTS:
 		${this.positions.nom_d_p.name} / ${this.positions.nom_d_vp.name} : ${d} EVs
 		${this.positions.nom_r_p.name} / ${this.positions.nom_r_vp.name} : ${r} EVs`);
-	}
+	},
 };
 
 class State {
@@ -278,9 +280,14 @@ function simulation(){
 		CONST.nom_r_vp_candidates.map(x => x[1])
 	));
 	// if Kamala dies, a random democrat is chosen (other than Biden and Harris)
-	CONST.positions.BACKUP_dem_vp = random.choice(
+	CONST.positions.BACKUP_d_vp = random.choice(
 		CONST.politicians.filter(p => p.party === Party.DEMOCRATIC
 			&& p !== CONST.positions.nom_d_p && p !== CONST.positions.nom_d_vp)
+	);
+	// if VP dies, a random republican is chosen (other than Trump and VP)
+	CONST.positions.BACKUP_r_vp = random.choice(
+		CONST.politicians.filter(p => p.party === Party.REPUBLICAN
+			&& p !== CONST.positions.nom_r_p && p !== CONST.positions.nom_r_vp)
 	);
 	// if house speaker dies, a random republican representative is chosen (Other than Johnson)
 	CONST.positions.BACKUP_house_speaker = random.choice(
