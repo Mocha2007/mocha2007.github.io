@@ -1,6 +1,9 @@
 /* global Gender, Party, POLITICIANS, Position, random, STATES */
 
 const CONST = {
+	config: {
+		deathRate: 1, // x times normal rate of death
+	},
 	date: new Date(2024, 2, 5), // sim starts after March 5th - super tuesday - 8 months before the election
 	dates: {
 		election: new Date(2024, 10, 5),
@@ -117,7 +120,7 @@ class Politician {
 		return Math.floor((CONST.date - this.dob) / CONST.dur.year);
 	}
 	get annual_death_chance(){
-		return ACTUARIAL_TABLE[this.age][this.gender];
+		return 1 - Math.pow(1 - ACTUARIAL_TABLE[this.age][this.gender], CONST.config.deathRate);
 	}
 	get daily_death_chance(){
 		return 1 - Math.pow(1-this.annual_death_chance, 1/365.25);
