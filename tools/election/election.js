@@ -1,4 +1,4 @@
-/* global POLITICIANS, random, STATES */
+/* global Gender, Party, POLITICIANS, Position, random, STATES */
 
 const CONST = {
 	backups: {
@@ -75,7 +75,8 @@ const CONST = {
 	checkPositions(){
 		for (let x in this.positions)
 			if (this.positions[x] && !this.positions[x].alive && this.position_backups[x]){
-				this.alert(`filling ${x} (${this.positions[x].name}) with ${this.position_backups[x]} (${this.positions[this.position_backups[x]].name})...`)
+				// eslint-disable-next-line max-len
+				this.alert(`filling ${x} (${this.positions[x].name}) with ${this.position_backups[x]} (${this.positions[this.position_backups[x]].name})...`);
 				this.positions[x] = this.positions[this.position_backups[x]];
 				this.positions[this.position_backups[x]] = undefined;
 			}
@@ -97,19 +98,6 @@ const CONST = {
 	}
 };
 
-class Gender {
-	static FEMALE = 0;
-	static MALE = 1;
-}
-
-class Party {
-	static INDEPENDENT = -1;
-	static DEMOCRATIC = 0;
-	static REPUBLICAN = 1;
-	static LIBERTARIAN = 2;
-	static GREEN = 3
-}
-
 class State {
 	constructor(name, ev, p_rep){
 		this.name = name;
@@ -123,11 +111,12 @@ class State {
 }
 
 class Politician {
-	constructor(name, dob, gender, party){
+	constructor(name, dob, gender, party, pos = Position.NONE){
 		this.name = name;
 		this.dob = dob;
 		this.gender = gender;
 		this.party = party;
+		this.position = pos;
 		this.alive = true;
 		CONST.politicians.push(this);
 	}
@@ -280,14 +269,14 @@ const ACTUARIAL_TABLE = [
 	[0.882352, 0.882352],
 	[0.926469, 0.926469],
 	[0.972793, 0.972793],
-	[1, 1]
+	[1, 1],
 ];
 
 // https://en.wikipedia.org/wiki/Twelfth_Amendment_to_the_United_States_Constitution#Text
 
 function simulation(){
 	// initialize simulation...
-	console.info('initializing simulation...')
+	console.info('initializing simulation...');
 	// todo set prez, vp, speaker
 	CONST.positions.nom_d_p = CONST.positions.president = Politician.fromName('Joe Biden');
 	CONST.positions.nom_d_vp = CONST.positions.vice_president = Politician.fromName('Kamala Harris');
@@ -299,7 +288,11 @@ function simulation(){
 	));
 	// random backups
 	CONST.positions.BACKUP_dem_vp = Politician.fromName(random.choice(CONST.backups.BACKUP_dem_vp));
-	CONST.positions.BACKUP_house_speaker = Politician.fromName(random.choice(CONST.backups.BACKUP_speaker));
+	// if house speaker dies, a random living republican representative is chosen
+	CONST.positions.BACKUP_house_speaker = random.choice(
+		CONST.politicians.filter(p => p.alive && p.party === Party.REPUBLICAN
+			&& p.position === Position.REPRESENTATIVE)
+	);
 	// trump veep choice
 	console.info(`${CONST.positions.nom_r_p.name} chose ${CONST.positions.nom_r_vp.name} as VP`);
 	// start!
@@ -321,8 +314,9 @@ function main(){
 	if (typeof random === 'undefined' || typeof POLITICIANS === 'undefined' || typeof STATES === 'undefined')
 		return setTimeout(main, 100);
 	// parse data
-	POLITICIANS.forEach(o => new Politician(o.name, o.dob, o.gender, o.party));
+	POLITICIANS.forEach(o => new Politician(o.name, o.dob, o.gender, o.party, o.position));
 	STATES.forEach(o => new State(...o));
+	// eslint-disable-next-line max-len
 	console.info(`election.js loaded ${CONST.politicians.length} politicians and ${CONST.states.length} states.`);
 	// run sim
 	simulation();
