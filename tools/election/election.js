@@ -1,15 +1,6 @@
 /* global Gender, Party, POLITICIANS, Position, random, STATES */
 
 const CONST = {
-	backups: {
-		BACKUP_dem_vp: [ // todo
-			'Amy Klobuchar',
-		],
-		BACKUP_speaker: [ // todo
-			'Elise Stefanik',
-			'Byron Donalds',
-		],
-	},
 	date: new Date(2024, 2, 5), // sim starts after March 5th - super tuesday - 8 months before the election
 	dates: {
 		election: new Date(2024, 10, 5),
@@ -286,12 +277,15 @@ function simulation(){
 		CONST.nom_r_vp_candidates.map(x => x[0]),
 		CONST.nom_r_vp_candidates.map(x => x[1])
 	));
-	// random backups
-	CONST.positions.BACKUP_dem_vp = Politician.fromName(random.choice(CONST.backups.BACKUP_dem_vp));
-	// if house speaker dies, a random living republican representative is chosen
+	// if Kamala dies, a random democrat is chosen (other than Biden and Harris)
+	CONST.positions.BACKUP_dem_vp = random.choice(
+		CONST.politicians.filter(p => p.party === Party.DEMOCRATIC
+			&& p !== CONST.positions.nom_d_p && p !== CONST.positions.nom_d_vp)
+	);
+	// if house speaker dies, a random republican representative is chosen (Other than Johnson)
 	CONST.positions.BACKUP_house_speaker = random.choice(
-		CONST.politicians.filter(p => p.alive && p.party === Party.REPUBLICAN
-			&& p.position === Position.REPRESENTATIVE)
+		CONST.politicians.filter(p => p.party === Party.REPUBLICAN
+			&& p.position === Position.REPRESENTATIVE && p !== CONST.positions.house_speaker)
 	);
 	// trump veep choice
 	console.info(`${CONST.positions.nom_r_p.name} chose ${CONST.positions.nom_r_vp.name} as VP`);
