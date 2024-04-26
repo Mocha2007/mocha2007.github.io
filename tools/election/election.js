@@ -69,7 +69,12 @@ const CONST = {
 	states: [],
 	// methods
 	alert(s){
-		console.info(`${this.date}: ${s}`);
+		const str = `${this.date.toDateString()}: ${s}`;
+		console.info(str);
+		const elem = document.createElement('div');
+		elem.classList.add('message');
+		elem.innerHTML = str;
+		document.getElementById('console').appendChild(elem);
 	},
 	checkPositions(){
 		for (const x in this.positions)
@@ -81,7 +86,7 @@ const CONST = {
 			}
 	},
 	holdElection(){
-		this.alert('holding election...');
+		console.info('holding election...');
 		this.flags.election_held = true;
 		let d = 0;
 		let r = 0;
@@ -91,8 +96,8 @@ const CONST = {
 			else
 				d += state.ev;
 		});
-		console.info(`RESULTS:
-		${this.positions.nom_d_p.name} / ${this.positions.nom_d_vp.name} : ${d} EVs
+		this.alert(`<br>ELECTION RESULTS:<br>
+		${this.positions.nom_d_p.name} / ${this.positions.nom_d_vp.name} : ${d} EVs<br>
 		${this.positions.nom_r_p.name} / ${this.positions.nom_r_vp.name} : ${r} EVs`);
 	},
 };
@@ -188,7 +193,7 @@ function simulation(){
 			&& p.position === Position.REPRESENTATIVE && p !== CONST.positions.house_speaker)
 	);
 	// trump veep choice
-	console.info(`${CONST.positions.nom_r_p.name} chose ${CONST.positions.nom_r_vp.name} as VP`);
+	CONST.alert(`${CONST.positions.nom_r_p.name} chose ${CONST.positions.nom_r_vp.name} as VP`);
 	// start!
 	while (CONST.date < CONST.dates.inauguration){
 		// console.log(CONST.date);
