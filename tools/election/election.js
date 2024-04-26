@@ -170,7 +170,6 @@ class Politician {
 
 function simulation(){
 	// initialize simulation...
-	CONST.alert('initializing simulation...');
 	// todo set prez, vp, speaker
 	CONST.positions.nom_d_p = CONST.positions.president = Politician.fromName('Joe Biden');
 	CONST.positions.nom_d_vp = CONST.positions.vice_president = Politician.fromName('Kamala Harris');
@@ -183,6 +182,7 @@ function simulation(){
 	// trump veep choice
 	CONST.alert(`${CONST.positions.nom_r_p.name} chose ${CONST.positions.nom_r_vp.name} as VP`);
 	// start!
+	CONST.alert('Super Tuesday');
 	while (CONST.date < CONST.dates.inauguration){
 		// console.log(CONST.date);
 		// see if someone dies
@@ -200,7 +200,7 @@ function simulation(){
 		// increment date by 1
 		CONST.date = new Date(+CONST.date + CONST.dur.day);
 	}
-	CONST.alert('Simulation complete!');
+	CONST.alert('Inauguration');
 }
 
 function main(){
