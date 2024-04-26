@@ -1,6 +1,15 @@
 /* global POLITICIANS, random, STATES */
 
 const CONST = {
+	backups: {
+		BACKUP_dem_vp: [ // todo
+			'Amy Klobuchar',
+		],
+		BACKUP_speaker: [ // todo
+			'Elise Stefanik',
+			'Byron Donalds',
+		],
+	},
 	date: new Date(2024, 2, 5), // sim starts after March 5th - super tuesday - 8 months before the election
 	dates: {
 		election: new Date(2024, 10, 5),
@@ -22,6 +31,12 @@ const CONST = {
 		['Elise Stefanik', 0.075],
 		['James Vance', 0.066],
 		['Ben Carson', 0.056],
+		// no way Haley accepts VP lol
+		['Vivek Ramaswamy', 0.033],
+		['Byron Donalds', 0.029],
+		// the following %s are guesses
+		['Doug Burgum', 0.02],
+		['Tucker Carlson', 0.02],
 	],
 	/** @type {Politician[]} */
 	politicians: [],
@@ -41,12 +56,14 @@ const CONST = {
 		/** @type {Politician} */
 		nom_r_vp: undefined,
 		// 'secret' backups...
+		BACKUP_dem_vp: undefined,
 		BACKUP_house_speaker: undefined,
 	},
 	position_backups: {
 		president: 'vice_president',
 		nom_d_p: 'nom_d_vp', // it's a fair guess
 		nom_r_p: 'nom_r_vp', // it's a fair guess
+		nom_d_vp: 'BACKUP_dem_vp',
 		house_speaker: 'BACKUP_house_speaker',
 	},
 	/** @type {State[]} */
@@ -280,6 +297,10 @@ function simulation(){
 		CONST.nom_r_vp_candidates.map(x => x[0]),
 		CONST.nom_r_vp_candidates.map(x => x[1])
 	));
+	// random backups
+	CONST.positions.BACKUP_dem_vp = Politician.fromName(random.choice(CONST.backups.BACKUP_dem_vp));
+	CONST.positions.BACKUP_house_speaker = Politician.fromName(random.choice(CONST.backups.BACKUP_speaker));
+	// trump veep choice
 	console.info(`${CONST.positions.nom_r_p.name} chose ${CONST.positions.nom_r_vp.name} as VP`);
 	// start!
 	while (CONST.date < CONST.dates.inauguration){
