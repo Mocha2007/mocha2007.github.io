@@ -64,10 +64,10 @@ const CONST = {
 		console.info(`${this.date}: ${s}`);
 	},
 	checkPositions(){
-		for (let x in this.positions)
-			if (this.positions[x] && !this.positions[x].alive && this.position_backups[x]){
+		for (const x in this.positions)
+			if ((!this.positions[x] || !this.positions[x].alive) && this.position_backups[x]){
 				// eslint-disable-next-line max-len
-				this.alert(`filling ${x} (${this.positions[x].name}) with ${this.position_backups[x]} (${this.positions[this.position_backups[x]].name})...`);
+				this.alert(`filling ${x} with ${this.position_backups[x]} (${this.positions[this.position_backups[x]].name})...`);
 				this.positions[x] = this.positions[this.position_backups[x]];
 				this.positions[this.position_backups[x]] = undefined;
 			}
@@ -84,8 +84,8 @@ const CONST = {
 				d += state.ev;
 		});
 		console.info(`RESULTS:
-		${this.positions.nom_d_p.name} : ${d} EVs
-		${this.positions.nom_r_p.name} : ${r} EVs`);
+		${this.positions.nom_d_p.name} / ${this.positions.nom_d_vp.name} : ${d} EVs
+		${this.positions.nom_r_p.name} / ${this.positions.nom_r_vp.name} : ${r} EVs`);
 	}
 };
 
