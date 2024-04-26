@@ -3,7 +3,7 @@
 const CONST = {
 	config: {
 		deathRate: 1, // x times normal rate of death
-		speakerRemovalDailyChance: 0.01,
+		speakerRemovalDailyChance: 0.001,
 	},
 	date: new Date(2024, 2, 5), // sim starts after March 5th - super tuesday - 8 months before the election
 	dates: {
@@ -94,6 +94,14 @@ const CONST = {
 		this.alert(`<br>ELECTION RESULTS:<br>
 		${this.positions.nom_d_p.name} / ${this.positions.nom_d_vp.name} : ${d} EVs<br>
 		${this.positions.nom_r_p.name} / ${this.positions.nom_r_vp.name} : ${r} EVs`);
+	},
+	evTie(){
+		// choose president since the EV is tied.
+		this.alert('Due to the EV tie, the house will elect the president, and the senate will elect the vice president.');
+		// republicans control the house. they choose trump.
+		this.alert(`The house elects ${this.positions.nom_r_p} president`);
+		// democrats control the senate. they choose harris.
+		this.alert(`The house elects ${this.positions.nom_d_vp} vice president`);
 	},
 };
 
