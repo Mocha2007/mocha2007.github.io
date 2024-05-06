@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<title>Geocoord MoE Calc</title>
+<h1 id="Template">Geocoord Margin of Error Calculator</h1>
+
+<div onkeyup="main()">
+	Latitude: <input id="lat"> (MoE: &plusmn;<span id="latmoe">-</span> m)
+	<br>
+	Longitude: <input id="lon"> (MoE: &plusmn;<span id="lonmoe">-</span> m)
+	<br>
+	Total MoE: &plusmn;<span id="totmoe"></span> m
+</div>
+
+<script>
+const R_E = 6371000; // todo account for oblateness
+const r_at_lat = lat => R_E * Math.cos(lat);
+const digits = s => s.includes('.') ? s.split('.')[1].length : 0;
+const moe = (r, n_digits) => Math.PI * r / (360 * Math.pow(10, n_digits));
+
+function main(){
+	const INPUT_LAT = document.getElementById('lat').value;
+	const INPUT_LON = document.getElementById('lon').value;
+	const MOE_LAT = moe(R_E, digits(INPUT_LAT));
+	const MOE_LON = moe(r_at_lat(+INPUT_LAT * Math.PI/180), digits(INPUT_LON));
+	const MOE_TOT = Math.hypot(MOE_LAT, MOE_LON);
+	// output
+	document.getElementById('latmoe').innerHTML = Math.round(MOE_LAT);
+	document.getElementById('lonmoe').innerHTML = Math.round(MOE_LON);
+	document.getElementById('totmoe').innerHTML = Math.round(MOE_TOT);
+	return {MOE_LAT, MOE_LON, MOE_TOT};
+}
+</script>
+</html>
