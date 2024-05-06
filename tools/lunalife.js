@@ -73,10 +73,12 @@ const LUNALIFE = {
 		new LunaEvent(new Date(2003, 0), 'Roughly the time of my earliest memories'),
 		new LunaEvent(new Date(2003, 1), '(appx) I remember tossing my favorite stuffed animal into the air, and the tail falling off, and panicking.'),
 		new LunaEvent(new Date(2003, 6), '(appx) Moved in to my childhood home'),
+		new LunaEvent(new Date(2003, 9, 26), 'Cedar Fire'), // c. 8 am
 		new LunaEvent(new Date(2003, 11, 25), 'I remember getting SimCity 4: Deluxe edition for christmas and playing the game all the time. To this day I still occasionally play it!'),
 		new LunaEvent(new Date(2004, 10, 9), 'I remember buying a copy of CotN (I think it was left discarded on a palette at Costco) and loving it.'),
 		new LunaEvent(new Date(2007, 2), '(appx) Our dog died ;-;'),
 		new LunaEvent(new Date(2007, 8, 14), 'By this point I was definitely obsessed with flash games. Today marks the release of Ocean Explorer, the earliest game from jmtb02 where I remember playing it on release.'),
+		new LunaEvent(new Date(2007, 9, 21), 'Witch Fire'), // appx
 		new LunaEvent(new Date(2008, 0, 30), 'Submachine 5 released - this is the game that first got me into the series!'),
 		new LunaEvent(new Date(2008, 5, 9), 'Start of first period of regular journalling.'),
 		new LunaEvent(new Date(2009, 2, 22), 'Played Pokemon Platinum, the only Pokemon game I spent a lot of time on.'),
