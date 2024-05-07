@@ -176,8 +176,8 @@ function simulation(){
 	CONST.positions.house_speaker = Politician.fromName('Mike Johnson');
 	CONST.positions.nom_r_p = Politician.fromName('Donald Trump');
 	// trump veep choice - random day in July or August
+	// https://docs.google.com/spreadsheets/d/1A4S_VrL-ZLOflY1Y4SGoKAZumv4xHQmYg4TWszrn9vw
 	const TRUMP_VP_SELECTION_DATE = new Date(2024, random.randint(6, 7), random.randint(1, 31));
-	let TRUMP_VP_SELECTED = false;
 	// start!
 	CONST.alert('Super Tuesday');
 	while (CONST.date < CONST.dates.inauguration){
@@ -185,8 +185,7 @@ function simulation(){
 		// see if someone dies
 		CONST.politicians.forEach(p => p.tick());
 		// Trump VP selection
-		if (!TRUMP_VP_SELECTED && TRUMP_VP_SELECTION_DATE <= CONST.date){
-			TRUMP_VP_SELECTED = true;
+		if (!CONST.positions.nom_r_vp && TRUMP_VP_SELECTION_DATE <= CONST.date){
 			CONST.positions.nom_r_vp = Politician.fromName(random.weightedChoice(
 				CONST.nom_r_vp_candidates.map(x => x[0]),
 				CONST.nom_r_vp_candidates.map(x => x[1])
