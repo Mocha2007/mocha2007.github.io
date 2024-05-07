@@ -175,18 +175,25 @@ function simulation(){
 	CONST.positions.nom_d_vp = CONST.positions.vice_president = Politician.fromName('Kamala Harris');
 	CONST.positions.house_speaker = Politician.fromName('Mike Johnson');
 	CONST.positions.nom_r_p = Politician.fromName('Donald Trump');
-	CONST.positions.nom_r_vp = Politician.fromName(random.weightedChoice(
-		CONST.nom_r_vp_candidates.map(x => x[0]),
-		CONST.nom_r_vp_candidates.map(x => x[1])
-	));
-	// trump veep choice
-	CONST.alert(`${CONST.positions.nom_r_p.name} chose ${CONST.positions.nom_r_vp.name} as VP`);
+	// trump veep choice - random day in July or August
+	const TRUMP_VP_SELECTION_DATE = new Date(2024, random.randint(6, 7), random.randint(1, 31));
+	let TRUMP_VP_SELECTED = false;
 	// start!
 	CONST.alert('Super Tuesday');
 	while (CONST.date < CONST.dates.inauguration){
 		// console.log(CONST.date);
 		// see if someone dies
 		CONST.politicians.forEach(p => p.tick());
+		// Trump VP selection
+		if (!TRUMP_VP_SELECTED && TRUMP_VP_SELECTION_DATE <= CONST.date){
+			TRUMP_VP_SELECTED = true;
+			CONST.positions.nom_r_vp = Politician.fromName(random.weightedChoice(
+				CONST.nom_r_vp_candidates.map(x => x[0]),
+				CONST.nom_r_vp_candidates.map(x => x[1])
+			));
+			// eslint-disable-next-line max-len
+			CONST.alert(`${CONST.positions.nom_r_p.name} chose ${CONST.positions.nom_r_vp.name} as VP`);
+		}
 		// remove the speaker
 		if (Math.random() < CONST.config.speakerRemovalDailyChance){
 			// eslint-disable-next-line max-len
