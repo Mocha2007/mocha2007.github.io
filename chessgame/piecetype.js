@@ -48,7 +48,9 @@ class PieceType {
 			const FLAG_LEFTWARD = !HAS_MOVEMENT_FLAGS || modifiers.includes('l') || modifiers.includes('s');
 			const FLAG_RIGHTWARD = !HAS_MOVEMENT_FLAGS || modifiers.includes('r') || modifiers.includes('s');
 			// is rider?
-			const FLAG_RIDER = 'BRQ'.includes(movement);
+			const FLAG_BISHOPISH = 'BQ'.includes(movement);
+			const FLAG_ROOKISH = 'RQ'.includes(movement);
+			const FLAG_RIDER = FLAG_BISHOPISH || FLAG_ROOKISH;
 			if (FLAG_RIDER){
 				// look forward...
 				// todo fix movement: this only works for rook movement lmao
