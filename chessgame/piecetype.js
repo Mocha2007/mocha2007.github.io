@@ -51,81 +51,44 @@ class PieceType {
 			const FLAG_BISHOPISH = 'BQ'.includes(movement);
 			const FLAG_ROOKISH = 'RQ'.includes(movement);
 			const FLAG_RIDER = FLAG_BISHOPISH || FLAG_ROOKISH;
-			if (FLAG_RIDER){
-				// look forward...
-				// todo fix movement: this only works for rook movement lmao
-				if (FLAG_FORWARD)
-					for (let rank = coords.rank; 0 <= rank && rank <= 7; rank += COLOR.direction){
-						const COORDS = [coords.file, rank];
-						const TARGET = board.getAt(COORDS);
-						if (TARGET){
-							// block movement if same color,
-							// otherwise, check capture flag,
-							if (TARGET.color !== COLOR && FLAG_CAPTURE)
+			if (FLAG_RIDER) // goes in a continuous line
+				[-1, 0, 1].forEach(dx => {
+					// todo, may have to account for board orientation difference between black and white wrt left/rightness?
+					if (dx === -1 && !FLAG_LEFTWARD)
+						return;
+					if (dx === 1 && !FLAG_RIGHTWARD)
+						return;
+					[-1, 0, 1].forEach(dy => {
+						if (dy === -1 && !FLAG_BACKWARD)
+							return;
+						if (dy === 1 && !FLAG_FORWARD)
+							return;
+						if (!(dx || dy))
+							return; // null move
+						const IS_ORTHOGONAL = !(dx && dy);
+						if ((IS_ORTHOGONAL && !FLAG_ROOKISH) || !(IS_ORTHOGONAL || FLAG_BISHOPISH))
+							return; // invalid move type for this piece
+						for (let i = 0; i < 7; i++){
+							if (coords.file + i*dx < 0 || 7 < coords.file + i*dx || coords.rank + i*dy < 0 || 7 < coords.rank + i*dy)
+								break; // move is off board!
+							// okay so the move is valid I GUESS
+							const COORDS = [coords.file + i*dx, coords.rank + i*dy];
+							const TARGET = board.getAt(COORDS);
+							if (TARGET){
+								// block movement if same color,
+								// otherwise, check capture flag,
+								if (TARGET.color !== COLOR && FLAG_CAPTURE)
+									o.push(new Coords(...COORDS));
+								// then break
+								break;
+							}
+							else if (FLAG_MOVE) // can move to this empty tile
 								o.push(new Coords(...COORDS));
-							// then break
-							break;
+							else // lacks movement flag, and this would count as a move
+								break;
 						}
-						else if (FLAG_MOVE) // can move to this empty tile
-							o.push(new Coords(...COORDS));
-						else // lacks movement flag, and this would count as a move
-							break;
-					}
-				// look backward...
-				if (FLAG_BACKWARD)
-					for (let rank = coords.rank; 0 <= rank && rank <= 7; rank += -COLOR.direction){
-						const COORDS = [coords.file, rank];
-						const TARGET = board.getAt(COORDS);
-						if (TARGET){
-							// block movement if same color,
-							// otherwise, check capture flag,
-							if (TARGET.color !== COLOR && FLAG_CAPTURE)
-								o.push(new Coords(...COORDS));
-							// then break
-							break;
-						}
-						else if (FLAG_MOVE) // can move to this empty tile
-							o.push(new Coords(...COORDS));
-						else // lacks movement flag, and this would count as a move
-							break;
-					}
-				// look leftward...
-				if (FLAG_LEFTWARD)
-					for (let file = coords.file; file <= 7; file++){
-						const COORDS = [file, coords.rank];
-						const TARGET = board.getAt(COORDS);
-						if (TARGET){
-							// block movement if same color,
-							// otherwise, check capture flag,
-							if (TARGET.color !== COLOR && FLAG_CAPTURE)
-								o.push(new Coords(...COORDS));
-							// then break
-							break;
-						}
-						else if (FLAG_MOVE) // can move to this empty tile
-							o.push(new Coords(...COORDS));
-						else // lacks movement flag, and this would count as a move
-							break;
-					}
-				// look rightward...
-				if (FLAG_RIGHTWARD)
-					for (let file = coords.file; 0 <= file; file--){
-						const COORDS = [file, coords.rank];
-						const TARGET = board.getAt(COORDS);
-						if (TARGET){
-							// block movement if same color,
-							// otherwise, check capture flag,
-							if (TARGET.color !== COLOR && FLAG_CAPTURE)
-								o.push(new Coords(...COORDS));
-							// then break
-							break;
-						}
-						else if (FLAG_MOVE) // can move to this empty tile
-							o.push(new Coords(...COORDS));
-						else // lacks movement flag, and this would count as a move
-							break;
-					}
-			}
+					})
+				});
 			// look leapward...
 			else {
 				const LEAP = PieceType.LEAPS[movement];
