@@ -103,8 +103,8 @@ class PieceType {
 						(and thus, one of these must be 0, and the other must be 1 or -1)
 					*/
 					[[0, 1], [1, 0]], [[1, 0], [0, 1]],
-					[[0, 1], [1, 0]], [[-1, 0], [0, -1]],
-					[[0, -1], [-1, 0]], [[1, 0], [0, 1]],
+					[[0, 1], [-1, 0]], [[1, 0], [0, -1]],
+					[[0, -1], [1, 0]], [[-1, 0], [0, 1]],
 					[[0, -1], [-1, 0]], [[-1, 0], [0, -1]],
 				].forEach(coefficients => {
 					const [[dx0, dx1], [dy0, dy1]] = coefficients;
@@ -295,7 +295,7 @@ class PieceInstance {
 		elem.classList.add('move');
 		elem.style.marginLeft = (coords.file+1)/9 * 100 + 'vw';
 		elem.style.marginTop = (coords.rank+1)/9 * 100 + 'vh';
-		elem.title = 'Move ' + this.type + ' to ' + coords.notation;
+		elem.title = 'Move ' + this.type.name + ' to ' + coords.notation;
 		elem.onclick = () => this.move(coords);
 		return elem;
 	}
