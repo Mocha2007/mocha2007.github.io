@@ -72,22 +72,22 @@ class PieceType {
 						const IS_ORTHOGONAL = !(dx && dy);
 						if ((IS_ORTHOGONAL && !FLAG_ROOKISH) || !(IS_ORTHOGONAL || FLAG_BISHOPISH))
 							return; // invalid move type for this piece
-						for (let i = 0; i < 7; i++){
-							if (coords.file + i*dx < 0 || 7 < coords.file + i*dx || coords.rank + i*dy < 0 || 7 < coords.rank + i*dy)
+						for (let i = 1; i < 7; i++){
+							const COORDS = new Coords(coords.file + i*dx, coords.rank + i*dy);
+							if (!COORDS.isValid)
 								break; // move is off board!
 							// okay so the move is valid I GUESS
-							const COORDS = [coords.file + i*dx, coords.rank + i*dy];
 							const TARGET = board.getAt(COORDS);
 							if (TARGET){
 								// block movement if same color,
 								// otherwise, check capture flag,
 								if (TARGET.color !== COLOR && FLAG_CAPTURE)
-									o.push(new Coords(...COORDS));
+									o.push(COORDS);
 								// then break
 								break;
 							}
 							else if (FLAG_MOVE) // can move to this empty tile
-								o.push(new Coords(...COORDS));
+								o.push(COORDS);
 							else // lacks movement flag, and this would count as a move
 								break;
 						}
