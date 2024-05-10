@@ -5,6 +5,10 @@ class Color {
 		this.id = id;
 		this.name = name;
 	}
+	/** rank direction of pawns (ie., where is "forward"?) */
+	get direction(){
+		return this.id ? -1 : 1;
+	}
 	static BLACK = new Color(0, 'Black');
 	static WHITE = new Color(1, 'White');
 }

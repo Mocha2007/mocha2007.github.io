@@ -31,7 +31,131 @@ class PieceType {
 	getValidMoves(coords, board){
 		/** @type {Coords[]} */
 		const o = [];
+		const COLOR = board.getAt(coords).color;
 		// todo
+		// https://www.chessvariants.com/dictionary/BexNotation.pdf
+		this.movement.betza.split(/(?<=[A-Z])/g).forEach(moveType => {
+			const [modifiers, movement] = moveType.split(/(?=[A-Z])/g);
+			// royalty... 
+			const FLAG_ROYAL = modifiers.includes('y'); // todo
+			// move types...
+			const FLAG_CAPTURE = modifiers.includes('c') || !modifiers.includes('m');
+			const FLAG_MOVE = modifiers.includes('m') || !modifiers.includes('c');
+			// directions...
+			const HAS_MOVEMENT_FLAGS = 'fblrvs'.split('').some(char => modifiers.includes(char))
+			const FLAG_FORWARD = !HAS_MOVEMENT_FLAGS || modifiers.includes('f') || modifiers.includes('v');
+			const FLAG_BACKWARD = !HAS_MOVEMENT_FLAGS || modifiers.includes('b') || modifiers.includes('v');
+			const FLAG_LEFTWARD = !HAS_MOVEMENT_FLAGS || modifiers.includes('l') || modifiers.includes('s');
+			const FLAG_RIGHTWARD = !HAS_MOVEMENT_FLAGS || modifiers.includes('r') || modifiers.includes('s');
+			// is rider?
+			const FLAG_RIDER = 'BRQ'.includes(movement);
+			if (FLAG_RIDER){
+				// look forward...
+				// todo fix movement: this only works for rook movement lmao
+				if (FLAG_FORWARD)
+					for (let rank = coords.rank; 0 <= rank && rank <= 7; rank += COLOR.direction){
+						const COORDS = [coords.file, rank];
+						const TARGET = board.getAt(COORDS);
+						if (TARGET){
+							// block movement if same color,
+							// otherwise, check capture flag,
+							if (TARGET.color !== COLOR && FLAG_CAPTURE)
+								o.push(new Coords(...COORDS));
+							// then break
+							break;
+						}
+						else if (FLAG_MOVE) // can move to this empty tile
+							o.push(new Coords(...COORDS));
+						else // lacks movement flag, and this would count as a move
+							break;
+					}
+				// look backward...
+				if (FLAG_BACKWARD)
+					for (let rank = coords.rank; 0 <= rank && rank <= 7; rank += -COLOR.direction){
+						const COORDS = [coords.file, rank];
+						const TARGET = board.getAt(COORDS);
+						if (TARGET){
+							// block movement if same color,
+							// otherwise, check capture flag,
+							if (TARGET.color !== COLOR && FLAG_CAPTURE)
+								o.push(new Coords(...COORDS));
+							// then break
+							break;
+						}
+						else if (FLAG_MOVE) // can move to this empty tile
+							o.push(new Coords(...COORDS));
+						else // lacks movement flag, and this would count as a move
+							break;
+					}
+				// look leftward...
+				if (FLAG_LEFTWARD)
+					for (let file = coords.file; file <= 7; file++){
+						const COORDS = [file, coords.rank];
+						const TARGET = board.getAt(COORDS);
+						if (TARGET){
+							// block movement if same color,
+							// otherwise, check capture flag,
+							if (TARGET.color !== COLOR && FLAG_CAPTURE)
+								o.push(new Coords(...COORDS));
+							// then break
+							break;
+						}
+						else if (FLAG_MOVE) // can move to this empty tile
+							o.push(new Coords(...COORDS));
+						else // lacks movement flag, and this would count as a move
+							break;
+					}
+				// look rightward...
+				if (FLAG_RIGHTWARD)
+					for (let file = coords.file; 0 <= file; file--){
+						const COORDS = [file, coords.rank];
+						const TARGET = board.getAt(COORDS);
+						if (TARGET){
+							// block movement if same color,
+							// otherwise, check capture flag,
+							if (TARGET.color !== COLOR && FLAG_CAPTURE)
+								o.push(new Coords(...COORDS));
+							// then break
+							break;
+						}
+						else if (FLAG_MOVE) // can move to this empty tile
+							o.push(new Coords(...COORDS));
+						else // lacks movement flag, and this would count as a move
+							break;
+					}
+			}
+			// look leapward...
+			else {
+				const LEAP = PieceType.LEAPS[movement];
+				[
+					/* for a given leap L: each element x:
+						x[0][0]*L[0] + x[0][1]*L[1] is the delta-x
+						x[1][0]*L[0] + x[1][1]*L[1] is the delta-y
+						(and thus, one of these must be 0, and the other must be 1 or -1)
+					*/
+					[[0, 1], [1, 0]], [[1, 0], [0, 1]],
+					[[0, 1], [1, 0]], [[-1, 0], [0, -1]],
+					[[0, -1], [-1, 0]], [[1, 0], [0, 1]],
+					[[0, -1], [-1, 0]], [[-1, 0], [0, -1]],
+				].forEach(coefficients => {
+					const [[dx0, dx1], [dy0, dy1]] = coefficients;
+					const [dx, dy] = [dx0 * LEAP[0] + dx1 * LEAP[1], dy0 * LEAP[0] + dy1 * LEAP[1]];
+					// continue
+					const COORDS = [coords.file + dx, coords.rank + dy];
+					if (dx < 0 || 7 < dx || dy < 0 || 7 < dy)
+						return; // invalid position
+					const TARGET = board.getAt(COORDS);
+					if (TARGET){
+						// block movement if same color,
+						// otherwise, check capture flag,
+						if (TARGET.color !== COLOR && FLAG_CAPTURE)
+							o.push(new Coords(...COORDS));
+					}
+					else if (FLAG_MOVE) // can move to this empty tile
+						o.push(new Coords(...COORDS));
+				});
+			}
+		});
 		return o;
 	}
 	static PAWN = new PieceType('Pawn', '', '♙', '♟', MovementType.PAWN, ['pawn_double_move', 'promotes']);
@@ -39,7 +163,11 @@ class PieceType {
 	static BISHOP = new PieceType('Bishop', 'B', '♗', '♝', MovementType.BISHOP);
 	static ROOK = new PieceType('Rook', 'R', '♖', '♜', MovementType.ROOK, ['castle_target']);
 	static QUEEN = new PieceType('Queen', 'Q', '♕', '♛', MovementType.QUEEN);
-	static KING = new PieceType('King', 'K', '♔', '♚', MovementType.KING, ['royal', 'castle_source']);
+	static KING = new PieceType('King', 'K', '♔', '♚', MovementType.KING, ['castle_source']);
+	static LEAPS = {
+		// todo
+		'N': [1, 2],
+	};
 }
 /** @type {PieceType[]} */
 PieceType.list = [];
@@ -49,18 +177,18 @@ class MovementType {
 		this.betza = betza;
 	}
 	// https://en.wikipedia.org/wiki/Betza%27s_funny_notation
-	static PAWN = new MovementType('fmWfcF');
+	static PAWN = new MovementType('fmWfcF'); // (m)oves (f)orward like a (W)azir, (c)aptures (f)orward like a (F)erz
 	static KNIGHT = new MovementType('N');
 	static BISHOP = new MovementType('B');
 	static ROOK = new MovementType('R');
 	static QUEEN = new MovementType('Q');
-	static KING = new MovementType('K');
+	static KING = new MovementType('yK'); // ro(y)al
 }
 
 class Board {
-	/** @param {Piece[][]} piece_array */
+	/** @param {PieceInstance[][]} piece_array */
 	constructor(piece_array){
-		/** @type {Piece[][]} */
+		/** @type {PieceInstance[][]} */
 		this.piece_array = piece_array;
 	}
 	/** @param {number[]} coords */
