@@ -21,7 +21,7 @@ class Coords {
 		this.rank = rank;
 	}
 	get notation(){
-		return ' abcdefgh'[this.file] + (rank + 1);
+		return ' abcdefgh'[this.file + 1] + (this.rank + 1);
 	}
 	static fromNotation(s){
 		const x = colString.indexOf(s[0])-1;

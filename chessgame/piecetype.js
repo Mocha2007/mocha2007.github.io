@@ -200,9 +200,12 @@ class Board {
 				new PieceInstance(PieceType.KNIGHT, Color.BLACK, undefined, game),
 				new PieceInstance(PieceType.ROOK, Color.BLACK, undefined, game),
 			],
-		]
-		a.forEach((row, x) => row.forEach((piece, y) => piece.coords = new Coords(x, y)));
-		return new Board(game, a);
+		];
+		// transpose a
+		const a_ = [[],[],[],[],[],[],[],[]];
+		a.forEach((row, x) => row.forEach((piece, y) => a_[y][x] = piece));
+		a_.forEach((row, x) => row.forEach((piece, y) => piece.coords = new Coords(x, y)));
+		return new Board(game, a_);
 	}
 }
 
@@ -213,6 +216,9 @@ class Game {
 	}
 	next(){
 		this.turn = this.turn === Color.WHITE ? Color.BLACK : Color.WHITE;
+	}
+	setUp(){
+		this.board.piece_array.flat().filter(p => p).forEach(p => p.placePiece())
 	}
 }
 
@@ -288,8 +294,8 @@ class PieceInstance {
 		elem.onclick = () => this.move(coords);
 		return elem;
 	}
-	placePiece(tileID){
-		document.getElementById(tileID).appendChild(this.span);
+	placePiece(){
+		document.getElementById(this.coords.notation).appendChild(this.span);
 	}
 	showMoves(){
 		if (this.game.turn !== this.color)

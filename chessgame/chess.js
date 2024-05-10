@@ -7,6 +7,7 @@ function main(){
 	console.info('Mocha\'s weird-ass chess test');
 	makeBoard();
 	const GAME = new Game();
+	GAME.setUp(); // place pieces
 	return GAME;
 }
 
