@@ -35,7 +35,10 @@ class PieceType {
 		// todo
 		// https://www.chessvariants.com/dictionary/BexNotation.pdf
 		this.movement.betza.split(/(?<=[A-Z])/g).forEach(moveType => {
-			const [modifiers, movement] = moveType.split(/(?=[A-Z])/g);
+			if (!moveType)
+				return; // blank ... not sure if this is necessary but better safe than sorry.
+			// need this ternary operator because if it's just eg. 'N' it thinks 'N' is the modifier...
+			const [modifiers, movement] = moveType.length === 1 ? ['', moveType] : moveType.split(/(?=[A-Z])/g);
 			// royalty... 
 			const FLAG_ROYAL = modifiers.includes('y'); // todo
 			// move types...
@@ -53,16 +56,16 @@ class PieceType {
 			const FLAG_RIDER = FLAG_BISHOPISH || FLAG_ROOKISH;
 			if (FLAG_RIDER) // goes in a continuous line
 				[-1, 0, 1].forEach(dx => {
-					// todo, may have to account for board orientation difference between black and white wrt left/rightness?
+					// have to account for board orientation difference between black and white wrt left/rightness?
 					// shouldn't matter for most standard pieces anyways I think...
-					if (dx === -1 && !FLAG_LEFTWARD)
+					if (dx === 1 * COLOR.direction && !FLAG_LEFTWARD)
 						return;
-					if (dx === 1 && !FLAG_RIGHTWARD)
+					if (dx === -1 * COLOR.direction && !FLAG_RIGHTWARD)
 						return;
 					[-1, 0, 1].forEach(dy => {
-						if (dy === -1 && !FLAG_BACKWARD)
+						if (dy === 1 * COLOR.direction && !FLAG_BACKWARD)
 							return;
-						if (dy === 1 && !FLAG_FORWARD)
+						if (dy === -1 * COLOR.direction && !FLAG_FORWARD)
 							return;
 						if (!(dx || dy))
 							return; // null move
@@ -153,7 +156,7 @@ class Board {
 	}
 	/** @param {Coords} coords */
 	getAt(coords){
-		return this.piece_array[coords.file][coords.rank];
+		return this.piece_array[coords.file] && this.piece_array[coords.file][coords.rank];
 	}
 	/** @param {Game} game */
 	static new(game){
