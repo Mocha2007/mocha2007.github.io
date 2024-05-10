@@ -31,7 +31,8 @@ class PieceType {
 	getValidMoves(coords, board){
 		/** @type {Coords[]} */
 		const o = [];
-		const COLOR = board.getAt(coords).color;
+		const PIECE = board.getAt(coords);
+		const COLOR = PIECE.color;
 		// todo
 		// https://www.chessvariants.com/dictionary/BexNotation.pdf
 		this.movement.betza.split(/(?<=[A-Z])/g).forEach(moveType => {
@@ -125,16 +126,23 @@ class PieceType {
 				});
 			}
 		});
+		// SPECIAL MOVES
+		if (!PIECE.hasMoved && this.movement.flags.includes('double_pawn_move')){
+			// todo double pawn first move
+		}
+		// todo en passant
+		// todo castling
+		// todo promotion
 		return o;
 	}
 	/** @type {PieceType[]} */
 	static list = [];
-	static PAWN = new PieceType('Pawn', ' ', '♙', '♟', MovementType.PAWN, ['pawn_double_move', 'promotes']);
+	static PAWN = new PieceType('Pawn', ' ', '♙', '♟', MovementType.PAWN);
 	static KNIGHT = new PieceType('Knight', 'N', '♘', '♞', MovementType.KNIGHT);
 	static BISHOP = new PieceType('Bishop', 'B', '♗', '♝', MovementType.BISHOP);
-	static ROOK = new PieceType('Rook', 'R', '♖', '♜', MovementType.ROOK, ['castle_target']);
+	static ROOK = new PieceType('Rook', 'R', '♖', '♜', MovementType.ROOK);
 	static QUEEN = new PieceType('Queen', 'Q', '♕', '♛', MovementType.QUEEN);
-	static KING = new PieceType('King', 'K', '♔', '♚', MovementType.KING, ['castle_source']);
+	static KING = new PieceType('King', 'K', '♔', '♚', MovementType.KING);
 	static LEAPS = {
 		// todo
 		'F': [1, 1],
@@ -243,6 +251,8 @@ class PieceInstance {
 		/** @type {Game} */
 		this.game = game;
 		this.id = 'piece_' + (PieceInstance.pieceIDcounter++);
+		// flags
+		this.hasMoved = false; // needed for castling and double pawn first move
 	}
 	get abbr(){
 		return this.type.abbr + this.color.name;
@@ -293,6 +303,8 @@ class PieceInstance {
 		PieceInstance.hideMoves();
 		// swap player
 		this.game.next();
+		// change flag
+		this.hasMoved = true;
 	}
 	/** @param {Coords} coords */
 	moveButton(coords){

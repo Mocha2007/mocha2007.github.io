@@ -35,3 +35,10 @@ function makeSquare(row, col){
 	elem.classList = ['white', 'black'][color] +'Square';
 	elem.id = ' abcdefgh'[col] + row;
 }
+/**
+ * todo:
+ * double pawn first move / the french move
+ * pawn changes gender
+ * castling
+ * checks / checkmates
+ */
