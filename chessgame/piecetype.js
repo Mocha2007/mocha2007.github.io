@@ -111,7 +111,7 @@ class PieceType {
 					const [dx, dy] = [dx0 * LEAP[0] + dx1 * LEAP[1], dy0 * LEAP[0] + dy1 * LEAP[1]];
 					// continue
 					const COORDS = new Coords(coords.file + dx, coords.rank + dy);
-					if (dx < 0 || 7 < dx || dy < 0 || 7 < dy)
+					if (!COORDS.isValid)
 						return; // invalid position
 					const TARGET = board.getAt(COORDS);
 					if (TARGET){

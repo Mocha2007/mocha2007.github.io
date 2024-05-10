@@ -23,6 +23,9 @@ class Coords {
 	get notation(){
 		return ' abcdefgh'[this.file + 1] + (this.rank + 1);
 	}
+	get isValid(){
+		return 0 <= this.file && this.file <= 7 && 0 <= this.rank && this.rank <= 7;
+	}
 	static fromNotation(s){
 		const x = colString.indexOf(s[0])-1;
 		const y = parseInt(s[1])-1;
