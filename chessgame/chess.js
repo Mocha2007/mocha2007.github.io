@@ -32,6 +32,6 @@ function makeSquare(row, col){
 		return elem.innerHTML = row;
 	}
 	const color = (row+col)%2;
-	elem.classList = ['black', 'white'][color] +'Square';
+	elem.classList = ['white', 'black'][color] +'Square';
 	elem.id = ' abcdefgh'[col] + row;
 }
