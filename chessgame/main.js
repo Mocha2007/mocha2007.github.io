@@ -81,7 +81,7 @@ class Piece {
 	constructor(type, color, coords){
 		this.type = type;
 		this.color = color;
-		/** @type {[number, number]} coords x, y - 0 = a, 0 = 1 */
+		/** @type {[number, number]} file, rank - zero indexed */
 		this.coords = fromNotation(coords);
 		this.id = 'piece_' + coords[0] + '_' + coords[1];
 		placePiece(this, coords);
@@ -110,26 +110,40 @@ class Piece {
 			'Kb': '♚',
 		}[this.abbr];
 	}
+	get file(){
+		return this.coords[0];
+	}
 	/** @returns {[number, number][]} */
 	get moveList(){
 		// todo
 		const list = [];
 		const pieceType = pieceData[this.type];
 		if (pieceType.pawnMoves){ // pawns
-			if (this.color === 0){ // black
-				list.push([this.coords[0], this.coords[1]-1]); // single forward
-				if (this.coords[1] === 6)
-					list.push([this.coords[0], this.coords[1]-2]); // double forward
-				// todo en passant
-				return list;
-			} // white
-			list.push([this.coords[0], this.coords[1]+1]); // single forward
-			if (this.coords[1] === 1)
-				list.push([this.coords[0], this.coords[1]+2]); // double forward
+			const direction = this.color ? 1 : -1;
+			const start = this.color ? 1 : 6;
+			// single forward
+			if (!Piece.getAt([this.file, this.rank + direction]))
+				list.push([this.file, this.rank + direction]);
+			// double forward
+			if (this.rank === start && !Piece.getAt(this.file, start + 2 * direction))
+				list.push([this.file, start + 2 * direction]);
+			// capturing
+			// left(?)
+			if (Piece.getAt([this.file - 1, this.rank + direction])){
+				// todo
+			}
+			// right(?)
+			if (Piece.getAt([this.file + 1, this.rank + direction])){
+				// todo
+			}
 			// todo en passant, capturing
-			return list;
 		}
 		// todo other pieces
+		console.debug(this);
+		return list;
+	}
+	get rank(){
+		return this.coords[1];
 	}
 	get span(){
 		const elem = document.createElement('span');
@@ -151,7 +165,7 @@ class Piece {
 		elem.innerHTML = '❌';
 		return elem;
 	}
-	/** move this piece to specifed coords */
+	/** move this piece to specified coords */
 	move(coords){
 		// update piece coords
 		this.coords = coords;
@@ -183,6 +197,10 @@ class Piece {
 		// show each move, onclick = perform move
 		this.moveList.forEach(m => root.appendChild(this.moveButton(m)));
 	}
+	static getAt(coords){
+		// eslint-disable-next-line max-len
+		return pieceList.find(piece => piece.coords[0] === coords[0] && piece.coords[1] === coords[1]);
+	}
 	static hideMoves(){
 		Array.from(document.getElementsByClassName('move')).forEach(e => e.remove());
 	}
@@ -192,7 +210,7 @@ class Piece {
 
 /**
  * @param {string} s eg. c4
- * @returns {[number, number]}
+ * @returns {[number, number]} file, rank - zero indexed
  */
 function fromNotation(s){
 	const x = colString.indexOf(s[0])-1;
