@@ -1,6 +1,19 @@
 /* exported */
 /* global Color, Coords */
 
+class MovementType {
+	constructor(betza){
+		this.betza = betza;
+	}
+	// https://en.wikipedia.org/wiki/Betza%27s_funny_notation
+	static PAWN = new MovementType('fmWfcF'); // (m)oves (f)orward like a (W)azir, (c)aptures (f)orward like a (F)erz
+	static KNIGHT = new MovementType('N');
+	static BISHOP = new MovementType('B');
+	static ROOK = new MovementType('R');
+	static QUEEN = new MovementType('Q');
+	static KING = new MovementType('yK'); // ro(y)al
+}
+
 class PieceType {
 	/**
 	 * @param {string} name
@@ -137,19 +150,6 @@ class PieceType {
 }
 /** @type {PieceType[]} */
 PieceType.list = [];
-
-class MovementType {
-	constructor(betza){
-		this.betza = betza;
-	}
-	// https://en.wikipedia.org/wiki/Betza%27s_funny_notation
-	static PAWN = new MovementType('fmWfcF'); // (m)oves (f)orward like a (W)azir, (c)aptures (f)orward like a (F)erz
-	static KNIGHT = new MovementType('N');
-	static BISHOP = new MovementType('B');
-	static ROOK = new MovementType('R');
-	static QUEEN = new MovementType('Q');
-	static KING = new MovementType('yK'); // ro(y)al
-}
 
 class Board {
 	/**
@@ -299,6 +299,9 @@ class PieceInstance {
 		elem.title = 'Move ' + this.type + ' to ' + coords.notation;
 		elem.onclick = () => this.move(coords);
 		return elem;
+	}
+	placePiece(tileID){
+		document.getElementById(tileID).appendChild(this.span);
 	}
 	showMoves(){
 		if (this.game.turn !== this.color)

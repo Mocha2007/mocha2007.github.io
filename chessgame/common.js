@@ -23,4 +23,9 @@ class Coords {
 	get notation(){
 		return ' abcdefgh'[this.file] + (rank + 1);
 	}
+	static fromNotation(s){
+		const x = colString.indexOf(s[0])-1;
+		const y = parseInt(s[1])-1;
+		return new Coords(x, y);
+	}
 }
