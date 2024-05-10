@@ -107,7 +107,7 @@ class PieceType {
 					const [[dx0, dx1], [dy0, dy1]] = coefficients;
 					const [dx, dy] = [dx0 * LEAP[0] + dx1 * LEAP[1], dy0 * LEAP[0] + dy1 * LEAP[1]];
 					// continue
-					const COORDS = [coords.file + dx, coords.rank + dy];
+					const COORDS = new Coords(coords.file + dx, coords.rank + dy);
 					if (dx < 0 || 7 < dx || dy < 0 || 7 < dy)
 						return; // invalid position
 					const TARGET = board.getAt(COORDS);
@@ -115,10 +115,10 @@ class PieceType {
 						// block movement if same color,
 						// otherwise, check capture flag,
 						if (TARGET.color !== COLOR && FLAG_CAPTURE)
-							o.push(new Coords(...COORDS));
+							o.push(COORDS);
 					}
 					else if (FLAG_MOVE) // can move to this empty tile
-						o.push(new Coords(...COORDS));
+						o.push(COORDS);
 				});
 			}
 		});
@@ -126,7 +126,7 @@ class PieceType {
 	}
 	/** @type {PieceType[]} */
 	static list = [];
-	static PAWN = new PieceType('Pawn', '', '♙', '♟', MovementType.PAWN, ['pawn_double_move', 'promotes']);
+	static PAWN = new PieceType('Pawn', ' ', '♙', '♟', MovementType.PAWN, ['pawn_double_move', 'promotes']);
 	static KNIGHT = new PieceType('Knight', 'N', '♘', '♞', MovementType.KNIGHT);
 	static BISHOP = new PieceType('Bishop', 'B', '♗', '♝', MovementType.BISHOP);
 	static ROOK = new PieceType('Rook', 'R', '♖', '♜', MovementType.ROOK, ['castle_target']);
@@ -134,7 +134,9 @@ class PieceType {
 	static KING = new PieceType('King', 'K', '♔', '♚', MovementType.KING, ['castle_source']);
 	static LEAPS = {
 		// todo
+		'F': [1, 1],
 		'N': [1, 2],
+		'W': [0, 1],
 	};
 }
 
@@ -149,9 +151,9 @@ class Board {
 		/** @type {PieceInstance[][]} */
 		this.piece_array = piece_array;
 	}
-	/** @param {number[]} coords */
+	/** @param {Coords} coords */
 	getAt(coords){
-		return this.piece_array[coords[0]][coords[1]];
+		return this.piece_array[coords.file][coords.rank];
 	}
 	/** @param {Game} game */
 	static new(game){
@@ -211,7 +213,7 @@ class Board {
 
 class Game {
 	constructor(){
-		this.board = Board.new();
+		this.board = Board.new(this);
 		this.turn = Color.WHITE;
 	}
 	next(){
@@ -306,7 +308,8 @@ class PieceInstance {
 		// button to hide moves
 		root.appendChild(this.hideMoveButton(this.coords));
 		// show each move, onclick = perform move
-		this.moveList.forEach(m => root.appendChild(this.moveButton(m)));
+		this.type.getValidMoves(this.coords, this.game.board)
+			.forEach(m => root.appendChild(this.moveButton(m)));
 	}
 	static hideMoves(){
 		Array.from(document.getElementsByClassName('move')).forEach(e => e.remove());
