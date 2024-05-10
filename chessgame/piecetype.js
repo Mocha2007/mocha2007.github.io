@@ -54,6 +54,7 @@ class PieceType {
 			if (FLAG_RIDER) // goes in a continuous line
 				[-1, 0, 1].forEach(dx => {
 					// todo, may have to account for board orientation difference between black and white wrt left/rightness?
+					// shouldn't matter for most standard pieces anyways I think...
 					if (dx === -1 && !FLAG_LEFTWARD)
 						return;
 					if (dx === 1 && !FLAG_RIGHTWARD)
@@ -151,8 +152,13 @@ class MovementType {
 }
 
 class Board {
-	/** @param {PieceInstance[][]} piece_array */
-	constructor(piece_array){
+	/**
+	 * @param {Game} game 
+	 * @param {PieceInstance[][]} piece_array 
+	 */
+	constructor(game, piece_array){
+		/** @type {Game} */
+		this.game = game;
 		/** @type {PieceInstance[][]} */
 		this.piece_array = piece_array;
 	}
@@ -160,18 +166,56 @@ class Board {
 	getAt(coords){
 		return this.piece_array[coords[0]][coords[1]];
 	}
-	static new(){
-		const o = new Board([
+	/** @param {Game} game */
+	static new(game){
+		const a = [
+			[
+				new PieceInstance(PieceType.ROOK, Color.WHITE, undefined, game),
+				new PieceInstance(PieceType.KNIGHT, Color.WHITE, undefined, game),
+				new PieceInstance(PieceType.BISHOP, Color.WHITE, undefined, game),
+				new PieceInstance(PieceType.KING, Color.WHITE, undefined, game),
+				new PieceInstance(PieceType.QUEEN, Color.WHITE, undefined, game),
+				new PieceInstance(PieceType.BISHOP, Color.WHITE, undefined, game),
+				new PieceInstance(PieceType.KNIGHT, Color.WHITE, undefined, game),
+				new PieceInstance(PieceType.ROOK, Color.WHITE, undefined, game),
+			],
+			[
+				new PieceInstance(PieceType.PAWN, Color.WHITE, undefined, game),
+				new PieceInstance(PieceType.PAWN, Color.WHITE, undefined, game),
+				new PieceInstance(PieceType.PAWN, Color.WHITE, undefined, game),
+				new PieceInstance(PieceType.PAWN, Color.WHITE, undefined, game),
+				new PieceInstance(PieceType.PAWN, Color.WHITE, undefined, game),
+				new PieceInstance(PieceType.PAWN, Color.WHITE, undefined, game),
+				new PieceInstance(PieceType.PAWN, Color.WHITE, undefined, game),
+				new PieceInstance(PieceType.PAWN, Color.WHITE, undefined, game),
+			],
 			[],
 			[],
 			[],
 			[],
-			[],
-			[],
-			[],
-			[],
-		]);
-		return o;
+			[
+				new PieceInstance(PieceType.PAWN, Color.BLACK, undefined, game),
+				new PieceInstance(PieceType.PAWN, Color.BLACK, undefined, game),
+				new PieceInstance(PieceType.PAWN, Color.BLACK, undefined, game),
+				new PieceInstance(PieceType.PAWN, Color.BLACK, undefined, game),
+				new PieceInstance(PieceType.PAWN, Color.BLACK, undefined, game),
+				new PieceInstance(PieceType.PAWN, Color.BLACK, undefined, game),
+				new PieceInstance(PieceType.PAWN, Color.BLACK, undefined, game),
+				new PieceInstance(PieceType.PAWN, Color.BLACK, undefined, game),
+			],
+			[
+				new PieceInstance(PieceType.ROOK, Color.BLACK, undefined, game),
+				new PieceInstance(PieceType.KNIGHT, Color.BLACK, undefined, game),
+				new PieceInstance(PieceType.BISHOP, Color.BLACK, undefined, game),
+				new PieceInstance(PieceType.KING, Color.BLACK, undefined, game),
+				new PieceInstance(PieceType.QUEEN, Color.BLACK, undefined, game),
+				new PieceInstance(PieceType.BISHOP, Color.BLACK, undefined, game),
+				new PieceInstance(PieceType.KNIGHT, Color.BLACK, undefined, game),
+				new PieceInstance(PieceType.ROOK, Color.BLACK, undefined, game),
+			],
+		]
+		a.forEach((row, x) => row.forEach((piece, y) => piece.coords = new Coords(x, y)));
+		return new Board(game, a);
 	}
 }
 
