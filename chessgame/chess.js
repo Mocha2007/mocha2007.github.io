@@ -12,7 +12,7 @@ function main(){
 
 function makeBoard(){
 	for (let i = 0; i < 9; i++)
-		for (let j = 0; j < 8; j++)
+		for (let j = 0; j < 9; j++)
 			makeSquare(i, j);
 }
 
@@ -26,12 +26,11 @@ function makeSquare(row, col){
 		elem.classList = 'dataSquare';
 		return elem.innerHTML = ' abcdefgh'[col];
 	}
-	if (col === 0){ // numbers
+	else if (col === 0){ // numbers
 		elem.classList = 'dataSquare';
-		return elem.innerHTML = row ? row : '';
+		return elem.innerHTML = row;
 	}
 	const color = (row+col)%2;
 	elem.classList = ['black', 'white'][color] +'Square';
 	elem.id = ' abcdefgh'[col] + row;
-	// console.log(color);
 }

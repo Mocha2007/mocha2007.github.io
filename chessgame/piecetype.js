@@ -1,18 +1,5 @@
 /* exported */
-/* global Color, Coords */
-
-class MovementType {
-	constructor(betza){
-		this.betza = betza;
-	}
-	// https://en.wikipedia.org/wiki/Betza%27s_funny_notation
-	static PAWN = new MovementType('fmWfcF'); // (m)oves (f)orward like a (W)azir, (c)aptures (f)orward like a (F)erz
-	static KNIGHT = new MovementType('N');
-	static BISHOP = new MovementType('B');
-	static ROOK = new MovementType('R');
-	static QUEEN = new MovementType('Q');
-	static KING = new MovementType('yK'); // ro(y)al
-}
+/* global Color, Coords, MovementType */
 
 class PieceType {
 	/**
@@ -137,6 +124,8 @@ class PieceType {
 		});
 		return o;
 	}
+	/** @type {PieceType[]} */
+	static list = [];
 	static PAWN = new PieceType('Pawn', '', '♙', '♟', MovementType.PAWN, ['pawn_double_move', 'promotes']);
 	static KNIGHT = new PieceType('Knight', 'N', '♘', '♞', MovementType.KNIGHT);
 	static BISHOP = new PieceType('Bishop', 'B', '♗', '♝', MovementType.BISHOP);
@@ -148,8 +137,6 @@ class PieceType {
 		'N': [1, 2],
 	};
 }
-/** @type {PieceType[]} */
-PieceType.list = [];
 
 class Board {
 	/**
@@ -230,6 +217,7 @@ class Game {
 }
 
 class PieceInstance {
+	static pieceIDcounter = 0;
 	/**
 	 * @param {PieceType} type
 	 * @param {Color} color
@@ -243,7 +231,7 @@ class PieceInstance {
 		this.coords = coords;
 		/** @type {Game} */
 		this.game = game;
-		this.id = 'piece_' + coords.file + '_' + coords.rank;
+		this.id = 'piece_' + (PieceInstance.pieceIDcounter++);
 	}
 	get abbr(){
 		return this.type.abbr + this.color.name;
