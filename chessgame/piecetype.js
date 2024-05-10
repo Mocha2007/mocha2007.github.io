@@ -279,6 +279,8 @@ class PieceInstance {
 	*/
 	move(coords){
 		// update piece coords
+		this.game.board.piece_array[this.coords.file][this.coords.rank] = undefined;
+		this.game.board.piece_array[coords.file][coords.rank] = this;
 		this.coords = coords;
 		// move element
 		/** @type {HTMLDivElement} */
