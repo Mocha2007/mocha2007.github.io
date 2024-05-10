@@ -45,18 +45,16 @@ class PieceType {
 PieceType.list = [];
 
 class MovementType {
-	constructor(both, move = [], capture = []){
-		this.both = both;
-		this.move = move;
-		this.capture = capture;
+	constructor(betza){
+		this.betza = betza;
 	}
-	// https://en.wikipedia.org/wiki/Betza%27s_funny_notation ???
-	static PAWN = new MovementType(); // todo
-	static KNIGHT = new MovementType(); // todo
-	static BISHOP = new MovementType(); // todo
-	static ROOK = new MovementType(); // todo
-	static QUEEN = new MovementType(); // todo
-	static KING = new MovementType(); // todo
+	// https://en.wikipedia.org/wiki/Betza%27s_funny_notation
+	static PAWN = new MovementType('fmWfcF');
+	static KNIGHT = new MovementType('N');
+	static BISHOP = new MovementType('B');
+	static ROOK = new MovementType('R');
+	static QUEEN = new MovementType('Q');
+	static KING = new MovementType('K');
 }
 
 class Board {
