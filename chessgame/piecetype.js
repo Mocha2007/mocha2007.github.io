@@ -9,12 +9,16 @@ class PieceType {
 	 * @param {string} black_emoji
 	 * @param {MovementType} movement
 	 */
-	constructor(name, abbr, white_emoji, black_emoji, movement){
+	constructor(name, abbr, white_emoji, black_emoji, movement, flags = []){
 		this.name = name || 'unknown';
 		this.abbr = abbr || '?';
 		this.white_emoji = white_emoji || '?';
 		this.black_emoji = black_emoji || '?';
+		/** @type {MovementType} */
 		this.movement = movement;
+		/** @type {string[]} */
+		this.flags = flags;
+		PieceType.list.push(this);
 	}
 	/** @param {Color} color */
 	emoji(color){
@@ -30,7 +34,15 @@ class PieceType {
 		// todo
 		return o;
 	}
+	static PAWN = new PieceType('Pawn', '', '♙', '♟', MovementType.PAWN, ['pawn_double_move', 'promotes']);
+	static KNIGHT = new PieceType('Knight', 'N', '♘', '♞', MovementType.KNIGHT);
+	static BISHOP = new PieceType('Bishop', 'B', '♗', '♝', MovementType.BISHOP);
+	static ROOK = new PieceType('Rook', 'R', '♖', '♜', MovementType.ROOK, ['castle_target']);
+	static QUEEN = new PieceType('Queen', 'Q', '♕', '♛', MovementType.QUEEN);
+	static KING = new PieceType('King', 'K', '♔', '♚', MovementType.KING, ['royal', 'castle_source']);
 }
+/** @type {PieceType[]} */
+PieceType.list = [];
 
 class MovementType {
 	constructor(both, move = [], capture = []){
@@ -38,6 +50,13 @@ class MovementType {
 		this.move = move;
 		this.capture = capture;
 	}
+	// https://en.wikipedia.org/wiki/Betza%27s_funny_notation ???
+	static PAWN = new MovementType(); // todo
+	static KNIGHT = new MovementType(); // todo
+	static BISHOP = new MovementType(); // todo
+	static ROOK = new MovementType(); // todo
+	static QUEEN = new MovementType(); // todo
+	static KING = new MovementType(); // todo
 }
 
 class Board {
@@ -49,6 +68,19 @@ class Board {
 	/** @param {number[]} coords */
 	getAt(coords){
 		return this.piece_array[coords[0]][coords[1]];
+	}
+	static new(){
+		const o = new Board([
+			[],
+			[],
+			[],
+			[],
+			[],
+			[],
+			[],
+			[],
+		]);
+		return o;
 	}
 }
 
