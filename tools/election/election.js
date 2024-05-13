@@ -170,7 +170,7 @@ const CONST = {
 		}
 		return {p: this.positions.president, vp: this.positions.vice_president};
 	},
-	debug(n = 100){
+	debug(n = 1000){
 		this.debug_mode = true;
 		const outcomes = [];
 		for (let i = 0; i < n; i++){
