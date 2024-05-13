@@ -17,13 +17,6 @@ const POLITICIANS = [
 		position: Position.PRESIDENT,
 	},
 	{
-		name: 'Mike Johnson', // representative
-		dob: new Date(1972, 0, 30),
-		gender: Gender.MALE,
-		party: Party.REPUBLICAN,
-		position: Position.REPRESENTATIVE,
-	},
-	{
 		name: 'Kamala Harris', // vice president
 		dob: new Date(1964, 9, 20),
 		gender: Gender.FEMALE,
@@ -44,13 +37,6 @@ const POLITICIANS = [
 		gender: Gender.FEMALE,
 		party: Party.REPUBLICAN,
 		position: Position.GOVERNOR,
-	},
-	{
-		name: 'Elise Stefanik', // representative
-		dob: new Date(1984, 6, 2),
-		gender: Gender.FEMALE,
-		party: Party.REPUBLICAN,
-		position: Position.REPRESENTATIVE,
 	},
 	{
 		name: 'James Vance', // senator
@@ -74,13 +60,6 @@ const POLITICIANS = [
 		position: Position.NONE,
 	},
 	{
-		name: 'Byron Donalds', // representative
-		dob: new Date(1978, 9, 28),
-		gender: Gender.MALE,
-		party: Party.REPUBLICAN,
-		position: Position.REPRESENTATIVE,
-	},
-	{
 		name: 'Doug Burgum', // governor
 		dob: new Date(1956, 8, 1),
 		gender: Gender.MALE,
@@ -93,6 +72,49 @@ const POLITICIANS = [
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
 		position: Position.NONE,
+	},
+	// republican reps
+	{
+		name: 'Byron Donalds',
+		dob: new Date(1978, 9, 28),
+		gender: Gender.MALE,
+		party: Party.REPUBLICAN,
+		position: Position.REPRESENTATIVE,
+	},
+	{
+		name: 'Mike Johnson',
+		dob: new Date(1972, 0, 30),
+		gender: Gender.MALE,
+		party: Party.REPUBLICAN,
+		position: Position.REPRESENTATIVE,
+	},
+	{
+		name: 'Kevin McCarthy',
+		dob: new Date(1965, 1, 26),
+		gender: Gender.MALE,
+		party: Party.REPUBLICAN,
+		position: Position.REPRESENTATIVE,
+	},
+	{
+		name: 'Patrick McHenry',
+		dob: new Date(1975, 10, 22),
+		gender: Gender.MALE,
+		party: Party.REPUBLICAN,
+		position: Position.REPRESENTATIVE,
+	},
+	{
+		name: 'Steve Scalise',
+		dob: new Date(1965, 9, 6),
+		gender: Gender.MALE,
+		party: Party.REPUBLICAN,
+		position: Position.REPRESENTATIVE,
+	},
+	{
+		name: 'Elise Stefanik',
+		dob: new Date(1984, 6, 2),
+		gender: Gender.FEMALE,
+		party: Party.REPUBLICAN,
+		position: Position.REPRESENTATIVE,
 	},
 	// backup pols
 	{
