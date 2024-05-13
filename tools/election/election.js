@@ -162,8 +162,8 @@ const CONST = {
 		this.positions.president = this.positions.nom_p;
 		this.positions.vice_president = this.positions.nom_vp;
 		try {
-			this.alert(`Inauguration of ${this.positions.president.name}
-				and ${this.positions.vice_president.name}`);
+			this.alert(`Inauguration of ${this.positions.president.html}
+				and ${this.positions.vice_president.html}`);
 		}
 		catch (e){
 			// pass
