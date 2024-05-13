@@ -1,4 +1,4 @@
-/* global ACTUARIAL_TABLE, Gender, MapElem, Party, POLITICIANS, Position, random, round, STATES */
+/* global ACTUARIAL_TABLE, Gender, MapElem, Party, POLITICIANS, poll, Position, random, round, STATES */
 
 const CONST = {
 	config: {
@@ -305,6 +305,7 @@ function main(){
 	// parse data
 	POLITICIANS.forEach(o => new Politician(o));
 	STATES.forEach(o => new State(...o));
+	CONST.config.swingToPollingError = poll.certaintyMargin * 100;
 	// eslint-disable-next-line max-len
 	console.info(`election.js loaded ${CONST.politicians.length} politicians and ${CONST.states.length} states.`);
 	// run sim

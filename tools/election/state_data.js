@@ -1,20 +1,14 @@
 /* exported STATES */
 
-/**
-	rule of thumb:
-	0% margin = 50/50
-	2% ~ 60%
-	4% ~ 70%
-	6% ~ 80%
-	8% ~ 90%
-	10% margin = certainty
-*/
 function poll(r, d){
 	const m = r - d;
-	if (0.1 < Math.abs(m))
+	if (poll.certaintyMargin < Math.abs(m))
 		return r > d ? 1 : 0;
-	return 5 * m + 0.5;
+	return 0.5 / poll.certaintyMargin * m + 0.5;
 }
+/** margin at which a local election becomes a certainty */
+poll.certaintyMargin = 0.07;
+
 // use if graph exists: https://projects.fivethirtyeight.com/polls/president-general/
 // else: https://www.270towin.com/2024-presidential-election-polls/
 const STATES = [
