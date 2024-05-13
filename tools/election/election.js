@@ -28,10 +28,10 @@ const CONST = {
 		['Ben Carson', 0.056],
 		// no way Haley accepts VP lol
 		['Vivek Ramaswamy', 0.033],
-		['Byron Donalds', 0.029],
+		// ['Byron Donalds', 0.029], prob. not because his home state is also FL
 		// the following %s are guesses
 		['Doug Burgum', 0.02],
-		['Tucker Carlson', 0.02],
+		// ['Tucker Carlson', 0.02], prob. not because his home state is also FL
 	],
 	/** @type {Politician[]} */
 	politicians: [],
@@ -76,7 +76,7 @@ const CONST = {
 		for (const x in this.positions)
 			if ((!this.positions[x] || !this.positions[x].alive) && this.position_backups[x]){
 				const bu = this.position_backups[x]();
-				this.alert(`filling ${x} with ${bu.y || 'random'} (${bu.x.name})...`);
+				this.alert(`filling ${x} with ${bu.y || 'random'} (${bu.x.str})...`);
 				this.positions[x] = bu.x;
 				this.positions[bu.y] = undefined;
 			}
@@ -149,7 +149,7 @@ class Politician {
 		/** @type {Party} */
 		this.party = o.party || Party.INDEPENDENT;
 		/** @type {Position} */
-		this.position = o.pos || Position.NONE;
+		this.position = o.position || Position.NONE;
 		/** @type {State} */
 		this.state = o.state;
 		this.alive = true;

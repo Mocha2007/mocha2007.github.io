@@ -28,7 +28,7 @@ const POLITICIANS = [
 	},
 	// Trump VP picks
 	{
-		name: 'Tim Scott', // senator
+		name: 'Tim Scott',
 		dob: new Date(1965, 8, 19),
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
@@ -36,7 +36,7 @@ const POLITICIANS = [
 		state: 'SC',
 	},
 	{
-		name: 'Kristi Noem', // governor
+		name: 'Kristi Noem',
 		dob: new Date(1971, 10, 30),
 		gender: Gender.FEMALE,
 		party: Party.REPUBLICAN,
@@ -44,7 +44,7 @@ const POLITICIANS = [
 		state: 'SD',
 	},
 	{
-		name: 'James Vance', // senator
+		name: 'James Vance',
 		dob: new Date(1984, 7, 2),
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
@@ -57,7 +57,7 @@ const POLITICIANS = [
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
 		position: Position.NONE,
-		state: 'FL', // ???
+		state: 'MI', // unsure
 	},
 	{
 		name: 'Vivek Ramaswamy',
@@ -65,10 +65,10 @@ const POLITICIANS = [
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
 		position: Position.NONE,
-		state: 'OH', // ???
+		state: 'OH',
 	},
 	{
-		name: 'Doug Burgum', // governor
+		name: 'Doug Burgum',
 		dob: new Date(1956, 8, 1),
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
@@ -81,7 +81,7 @@ const POLITICIANS = [
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
 		position: Position.NONE,
-		state: 'FL', // ???
+		state: 'FL', // unsure
 	},
 	// republican reps
 	{
