@@ -1,3 +1,7 @@
+:root {
+	--cellSize: 3.5vw;
+}
+
 .date {
 	color: red;
 }
@@ -9,10 +13,10 @@
 }
 
 #map td {
-	height: 4vw;
+	height: var(--cellSize);
 	text-align: center;
 	text-shadow: 1px 1px 2px black;
-	width: 4vw;
+	width: var(--cellSize);
 }
 
 .party_R {
@@ -21,4 +25,9 @@
 
 .party_D {
 	background-color: blue;
+}
+
+.swing {
+	border-color: gold;
+	border-style: dashed;
 }

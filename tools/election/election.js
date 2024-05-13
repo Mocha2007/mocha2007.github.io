@@ -92,11 +92,11 @@ const CONST = {
 		this.states.forEach(state => {
 			if (Math.random() < state.p_rep){
 				r += state.ev;
-				results.push([state.name, 'R']);
+				results.push([state.name, 'R', state.swing]);
 			}
 			else {
 				d += state.ev;
-				results.push([state.name, 'D']);
+				results.push([state.name, 'D', state.swing]);
 			}
 		});
 		this.alert(`<br>ELECTION RESULTS:<br>
@@ -132,6 +132,9 @@ class State {
 		this.ev = ev;
 		this.p_rep = p_rep;
 		CONST.states.push(this);
+	}
+	get swing(){
+		return 0 < this.p_rep % 1;
 	}
 	get victor(){
 		return Math.random() < this.p_rep ? 1 : 0;

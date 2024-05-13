@@ -31,8 +31,11 @@ class MapElem {
 				td.id = `map_cell_${s}`;
 				// if results exists, try to find it!
 				let index;
-				if (results.find((datum, ii) => datum[0] === s && 0 <= (index = ii)))
+				if (results.find((datum, ii) => datum[0] === s && 0 <= (index = ii))){
 					td.classList.add(`party_${results[index][1]}`);
+					if (results[index][2])
+						td.classList.add('swing');
+				}
 				// debugger;
 			}
 		}
