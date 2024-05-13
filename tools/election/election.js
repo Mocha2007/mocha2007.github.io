@@ -1,8 +1,9 @@
-/* global ACTUARIAL_TABLE, Gender, MapElem, Party, POLITICIANS, Position, random, STATES */
+/* global ACTUARIAL_TABLE, Gender, MapElem, Party, POLITICIANS, Position, random, round, STATES */
 
 const CONST = {
 	config: {
 		deathRate: 1, // x times normal rate of death
+		swingFuzz: 0.05, // if swing states < 0.8 go in favor of Trump, this will 'fuzz' the threshold to 0.75 - 0.85
 		speakerRemovalDailyChance: 0.001,
 	},
 	date: new Date(2024, 2, 5), // sim starts after March 5th - super tuesday - 8 months before the election
@@ -89,8 +90,14 @@ const CONST = {
 		const TICKET_D = `${this.positions.nom_d_p.str} / ${this.positions.nom_d_vp.str}`;
 		const TICKET_R = `${this.positions.nom_r_p.str} / ${this.positions.nom_r_vp.str}`;
 		const results = [];
+		const swingThreshold = random.uniform(this.config.swingFuzz, 1 - this.config.swingFuzz);
+		const fakePollingError = 10 * swingThreshold - 5; // -5% to 5% appx
+		this.alert(`Polling Error: ${round(Math.abs(fakePollingError), 2)}%
+			in favor of ${0 < fakePollingError ? TICKET_D : TICKET_R}`);
 		this.states.forEach(state => {
-			if (Math.random() < state.p_rep){
+			const C = swingThreshold
+				+ random.uniform(-this.config.swingFuzz, this.config.swingFuzz);
+			if (C < state.p_rep){
 				r += state.ev;
 				results.push([state.name, 'R', state.swing]);
 			}
