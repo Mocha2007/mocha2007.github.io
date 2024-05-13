@@ -85,6 +85,8 @@ const CONST = {
 		this.flags.election_held = true;
 		let d = 0;
 		let r = 0;
+		const TICKET_D = `${this.positions.nom_d_p.name} / ${this.positions.nom_d_vp.name}`;
+		const TICKET_R = `${this.positions.nom_r_p.name} / ${this.positions.nom_r_vp.name}`;
 		const results = [];
 		this.states.forEach(state => {
 			if (Math.random() < state.p_rep){
@@ -97,13 +99,16 @@ const CONST = {
 			}
 		});
 		this.alert(`<br>ELECTION RESULTS:<br>
-		${this.positions.nom_d_p.name} / ${this.positions.nom_d_vp.name} : ${d} EVs<br>
-		${this.positions.nom_r_p.name} / ${this.positions.nom_r_vp.name} : ${r} EVs`);
+		${TICKET_D} : ${d} EVs<br>
+		${TICKET_R} : ${r} EVs`);
 		// fancy map
 		document.getElementById('console').appendChild(MapElem.table(results));
+		// winner declaration / tie
 		// tie?
 		if (d === r)
 			this.evTie();
+		else
+			this.alert(`${(r < d ? TICKET_D : TICKET_R).replace('/', 'and')} win!`);
 	},
 	evTie(){
 		// choose president since the EV is tied.
