@@ -7,7 +7,7 @@ function poll(r, d){
 	return 0.5 / poll.certaintyMargin * m + 0.5;
 }
 /** margin at which a local election becomes a certainty */
-poll.certaintyMargin = 0.1;
+poll.certaintyMargin = 0.112; // based on https://docs.google.com/spreadsheets/d/1RI_mZUrYo_0q1MaZ6BGuq932FsdqabnUx4o0WWOz1IA/edit#gid=1973406276
 
 // use if graph exists: https://projects.fivethirtyeight.com/polls/president-general/
 // else: https://www.racetothewh.com/president/polls
