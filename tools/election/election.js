@@ -55,10 +55,11 @@ const CONST = {
 		president: () => ({x: CONST.positions.vice_president, y: 'vice_president'}),
 		nom_d_p: () => ({x: CONST.positions.nom_d_vp, y: 'nom_d_vp'}), // it's a fair guess
 		nom_r_p: () => ({x: CONST.positions.nom_r_vp, y: 'nom_r_vp'}), // it's a fair guess
+		// VP: alive, same party, must be from different state than pres candidate (which also prevents the pres from also becoming veep)
 		nom_d_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
-			&& p.party === Party.DEMOCRATIC && p !== CONST.positions.nom_d_p))}),
+			&& p.party === Party.DEMOCRATIC && p.state !== CONST.positions.nom_d_p.state))}),
 		nom_r_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
-			&& p.party === Party.REPUBLICAN && p !== CONST.positions.nom_r_p))}),
+			&& p.party === Party.REPUBLICAN && p.state !== CONST.positions.nom_r_p.state))}),
 		house_speaker: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
 			&& p.party === Party.REPUBLICAN && p.position === Position.REPRESENTATIVE))}),
 	},
@@ -85,8 +86,8 @@ const CONST = {
 		this.flags.election_held = true;
 		let d = 0;
 		let r = 0;
-		const TICKET_D = `${this.positions.nom_d_p.name} / ${this.positions.nom_d_vp.name}`;
-		const TICKET_R = `${this.positions.nom_r_p.name} / ${this.positions.nom_r_vp.name}`;
+		const TICKET_D = `${this.positions.nom_d_p.str} / ${this.positions.nom_d_vp.str}`;
+		const TICKET_R = `${this.positions.nom_r_p.str} / ${this.positions.nom_r_vp.str}`;
 		const results = [];
 		this.states.forEach(state => {
 			if (Math.random() < state.p_rep){
@@ -114,9 +115,9 @@ const CONST = {
 		// choose president since the EV is tied.
 		this.alert('Due to the EV tie, the house will elect the president, and the senate will elect the vice president.');
 		// republicans control the house. they choose trump.
-		this.alert(`The house elects ${this.positions.nom_r_p.name} president`);
+		this.alert(`The house elects ${this.positions.nom_r_p.str} president`);
 		// democrats control the senate. they choose harris.
-		this.alert(`The house elects ${this.positions.nom_d_vp.name} vice president`);
+		this.alert(`The house elects ${this.positions.nom_d_vp.str} vice president`);
 	},
 };
 
@@ -138,19 +139,19 @@ class State {
 }
 
 class Politician {
-	/**
-	 * @param {string} name
-	 * @param {Date} dob
-	 * @param {Gender} gender
-	 * @param {Party} party
-	 * @param {Position} pos political position (eg. "Governor")
-	 */
-	constructor(name, dob, gender, party, pos = Position.NONE){
-		this.name = name;
-		this.dob = dob;
-		this.gender = gender;
-		this.party = party;
-		this.position = pos;
+	constructor(o){
+		/** @type {string} */
+		this.name = o.name;
+		/** @type {Date} */
+		this.dob = o.dob;
+		/** @type {Gender} */
+		this.gender = o.gender;
+		/** @type {Party} */
+		this.party = o.party || Party.INDEPENDENT;
+		/** @type {Position} */
+		this.position = o.pos || Position.NONE;
+		/** @type {State} */
+		this.state = o.state;
 		this.alive = true;
 		CONST.politicians.push(this);
 	}
@@ -166,13 +167,16 @@ class Politician {
 	get eligible_for_president(){
 		return 35 < this.age && this.alive;
 	}
+	get str(){
+		return `${this.name} (${this.party.abbr}-${this.state})`;
+	}
 	tick(){
 		if (!this.alive)
 			return;
 		// dies
 		if (Math.random() < this.daily_death_chance){
 			this.alive = false;
-			CONST.alert(`${this.name} has died!`);
+			CONST.alert(`${this.str} has died!`);
 			CONST.checkPositions();
 		}
 	}
@@ -206,12 +210,12 @@ function simulation(){
 				CONST.nom_r_vp_candidates.map(x => x[1])
 			));
 			// eslint-disable-next-line max-len
-			CONST.alert(`${CONST.positions.nom_r_p.name} chose ${CONST.positions.nom_r_vp.name} as VP`);
+			CONST.alert(`${CONST.positions.nom_r_p.str} chose ${CONST.positions.nom_r_vp.str} as VP`);
 		}
 		// remove the speaker
 		if (Math.random() < CONST.config.speakerRemovalDailyChance){
 			// eslint-disable-next-line max-len
-			CONST.alert(`The house has voted to oust ${CONST.positions.house_speaker.name} from the speaker role.`);
+			CONST.alert(`The house has voted to oust ${CONST.positions.house_speaker.str} from the speaker role.`);
 			CONST.positions.house_speaker = undefined;
 			CONST.checkPositions();
 		}
@@ -229,7 +233,7 @@ function main(){
 	if (typeof random === 'undefined' || typeof POLITICIANS === 'undefined' || typeof STATES === 'undefined' || typeof MapElem === 'undefined')
 		return setTimeout(main, 100);
 	// parse data
-	POLITICIANS.forEach(o => new Politician(o.name, o.dob, o.gender, o.party, o.position));
+	POLITICIANS.forEach(o => new Politician(o));
 	STATES.forEach(o => new State(...o));
 	// eslint-disable-next-line max-len
 	console.info(`election.js loaded ${CONST.politicians.length} politicians and ${CONST.states.length} states.`);

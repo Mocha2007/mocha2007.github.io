@@ -6,11 +6,19 @@ class Gender {
 }
 
 class Party {
-	static INDEPENDENT = -1;
-	static DEMOCRATIC = 0;
-	static REPUBLICAN = 1;
-	static LIBERTARIAN = 2;
-	static GREEN = 3
+	/** @param {string} name */
+	constructor(name){
+		/** @type {string} */
+		this.name = name;
+	}
+	get abbr(){
+		return this.name[0];
+	}
+	static INDEPENDENT = new Party('Independent');
+	static DEMOCRATIC = new Party('Democratic');
+	static REPUBLICAN = new Party('Republican');
+	static LIBERTARIAN = new Party('Libertarian');
+	static GREEN = new Party('Green');
 }
 
 class Position {

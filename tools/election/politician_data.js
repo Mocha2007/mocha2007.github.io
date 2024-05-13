@@ -8,6 +8,7 @@ const POLITICIANS = [
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
 		position: Position.NONE,
+		state: 'FL',
 	},
 	{
 		name: 'Joe Biden', // president
@@ -15,6 +16,7 @@ const POLITICIANS = [
 		gender: Gender.MALE,
 		party: Party.DEMOCRATIC,
 		position: Position.PRESIDENT,
+		state: 'DE',
 	},
 	{
 		name: 'Kamala Harris', // vice president
@@ -22,6 +24,7 @@ const POLITICIANS = [
 		gender: Gender.FEMALE,
 		party: Party.DEMOCRATIC,
 		position: Position.VICE_PRESIDENT,
+		state: 'CA',
 	},
 	// Trump VP picks
 	{
@@ -30,6 +33,7 @@ const POLITICIANS = [
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
 		position: Position.SENATOR,
+		state: 'SC',
 	},
 	{
 		name: 'Kristi Noem', // governor
@@ -37,6 +41,7 @@ const POLITICIANS = [
 		gender: Gender.FEMALE,
 		party: Party.REPUBLICAN,
 		position: Position.GOVERNOR,
+		state: 'SD',
 	},
 	{
 		name: 'James Vance', // senator
@@ -44,6 +49,7 @@ const POLITICIANS = [
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
 		position: Position.SENATOR,
+		state: 'OH',
 	},
 	{
 		name: 'Ben Carson',
@@ -51,6 +57,7 @@ const POLITICIANS = [
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
 		position: Position.NONE,
+		state: 'FL', // ???
 	},
 	{
 		name: 'Vivek Ramaswamy',
@@ -58,6 +65,7 @@ const POLITICIANS = [
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
 		position: Position.NONE,
+		state: 'OH', // ???
 	},
 	{
 		name: 'Doug Burgum', // governor
@@ -65,6 +73,7 @@ const POLITICIANS = [
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
 		position: Position.GOVERNOR,
+		state: 'ND',
 	},
 	{
 		name: 'Tucker Carlson',
@@ -72,6 +81,7 @@ const POLITICIANS = [
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
 		position: Position.NONE,
+		state: 'FL', // ???
 	},
 	// republican reps
 	{
@@ -80,6 +90,7 @@ const POLITICIANS = [
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
 		position: Position.REPRESENTATIVE,
+		state: 'FL',
 	},
 	{
 		name: 'Mike Johnson',
@@ -87,6 +98,7 @@ const POLITICIANS = [
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
 		position: Position.REPRESENTATIVE,
+		state: 'LA',
 	},
 	{
 		name: 'Kevin McCarthy',
@@ -94,6 +106,7 @@ const POLITICIANS = [
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
 		position: Position.REPRESENTATIVE,
+		state: 'CA',
 	},
 	{
 		name: 'Patrick McHenry',
@@ -101,6 +114,7 @@ const POLITICIANS = [
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
 		position: Position.REPRESENTATIVE,
+		state: 'NC',
 	},
 	{
 		name: 'Steve Scalise',
@@ -108,6 +122,7 @@ const POLITICIANS = [
 		gender: Gender.MALE,
 		party: Party.REPUBLICAN,
 		position: Position.REPRESENTATIVE,
+		state: 'LA',
 	},
 	{
 		name: 'Elise Stefanik',
@@ -115,6 +130,7 @@ const POLITICIANS = [
 		gender: Gender.FEMALE,
 		party: Party.REPUBLICAN,
 		position: Position.REPRESENTATIVE,
+		state: 'NY',
 	},
 	// backup pols
 	{
@@ -123,5 +139,6 @@ const POLITICIANS = [
 		gender: Gender.FEMALE,
 		party: Party.DEMOCRATIC,
 		position: Position.SENATOR,
+		state: 'MN',
 	},
 ];
