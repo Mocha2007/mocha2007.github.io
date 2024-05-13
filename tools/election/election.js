@@ -11,7 +11,9 @@ const CONST = {
 	dates: {
 		election: new Date(2024, 10, 5),
 		inauguration: new Date(2025, 0, 20),
+		start: new Date(2024, 2, 5),
 	},
+	debug_mode: false,
 	dur: {
 		day: 24*60*60*1000,
 		get year(){
@@ -45,6 +47,10 @@ const CONST = {
 		/** @type {Politician} */
 		house_speaker: undefined,
 		/** @type {Politician} */
+		nom_p: undefined,
+		/** @type {Politician} */
+		nom_vp: undefined,
+		/** @type {Politician} */
 		nom_d_p: undefined,
 		/** @type {Politician} */
 		nom_d_vp: undefined,
@@ -55,6 +61,7 @@ const CONST = {
 	},
 	position_backups: {
 		president: () => ({x: CONST.positions.vice_president, y: 'vice_president'}),
+		nom_p: () => ({x: CONST.positions.nom_vp, y: 'nom_vp'}),
 		nom_d_p: () => ({x: CONST.positions.nom_d_vp, y: 'nom_d_vp'}), // it's a fair guess
 		nom_r_p: () => ({x: CONST.positions.nom_r_vp, y: 'nom_r_vp'}), // it's a fair guess
 		// VP: alive, same party, must be from different state than pres candidate (which also prevents the pres from also becoming veep)
@@ -72,12 +79,19 @@ const CONST = {
 		const elem = document.createElement('div');
 		elem.classList.add('message');
 		elem.innerHTML = `<span class='date'>${this.date.toDateString()}</span>: ${s}`;
+		this.alertElem(elem);
+	},
+	alertElem(elem){
+		if (this.debug_mode)
+			return;
 		document.getElementById('console').appendChild(elem);
 	},
 	checkPositions(){
 		for (const x in this.positions)
 			if ((!this.positions[x] || !this.positions[x].alive) && this.position_backups[x]){
 				const bu = this.position_backups[x]();
+				if (!bu.x)
+					continue;
 				this.alert(`filling ${x} with ${bu.y || 'random'} (${bu.x.str})...`);
 				this.positions[x] = bu.x;
 				this.positions[bu.y] = undefined;
@@ -117,21 +131,55 @@ const CONST = {
 		${TICKET_D} : ${d} EVs<br>
 		${TICKET_R} : ${r} EVs`);
 		// fancy map
-		document.getElementById('console').appendChild(MapElem.table(results));
+		this.alertElem(MapElem.table(results));
 		// winner declaration / tie
 		// tie?
 		if (d === r)
 			this.evTie();
-		else
-			this.alert(`${(r < d ? TICKET_D : TICKET_R).replace('/', 'and')} win!`);
+		else if (r < d){
+			this.alert(`${TICKET_D.replace('/', 'and')} win!`);
+			this.positions.nom_p = this.positions.nom_d_p;
+			this.positions.nom_vp = this.positions.nom_d_vp;
+		}
+		else {
+			this.alert(`${TICKET_R.replace('/', 'and')} win!`);
+			this.positions.nom_p = this.positions.nom_r_p;
+			this.positions.nom_vp = this.positions.nom_r_vp;
+		}
 	},
 	evTie(){
 		// choose president since the EV is tied.
 		this.alert('Due to the EV tie, the house will elect the president, and the senate will elect the vice president.');
 		// republicans control the house. they choose trump.
 		this.alert(`The house elects ${this.positions.nom_r_p.str} president`);
+		this.positions.nom_p = this.positions.nom_r_p;
 		// democrats control the senate. they choose harris.
 		this.alert(`The house elects ${this.positions.nom_d_vp.str} vice president`);
+		this.positions.nom_vp = this.positions.nom_d_vp;
+	},
+	inauguration(){
+		this.positions.president = this.positions.nom_p;
+		this.positions.vice_president = this.positions.nom_vp;
+		try {
+			this.alert(`Inauguration of ${this.positions.president.name}
+				and ${this.positions.vice_president.name}`);
+		}
+		catch (e){
+			// pass
+		}
+		return {p: this.positions.president, vp: this.positions.vice_president};
+	},
+	debug(n = 100){
+		this.debug_mode = true;
+		const outcomes = [];
+		for (let i = 0; i < n; i++){
+			const o = simulation();
+			const p = o.p ? o.p.name : '';
+			const vp = o.vp ? o.vp.name : '';
+			outcomes.push(`${p}\t${vp}`);
+		}
+		this.debug_mode = false;
+		return outcomes.join('\n');
 	},
 };
 
@@ -205,14 +253,18 @@ class Politician {
 // https://en.wikipedia.org/wiki/Twelfth_Amendment_to_the_United_States_Constitution#Text
 
 function simulation(){
-	// initialize simulation...
-	// todo set prez, vp, speaker
+	// initialize/reset simulation...
+	CONST.politicians.forEach(p => p.alive = true);
+	CONST.date = CONST.dates.start;
+	CONST.flags.election_held = false;
+	// set prez, vp, speaker
 	CONST.positions.nom_d_p = CONST.positions.president = Politician.fromName('Joe Biden');
 	CONST.positions.nom_d_vp = CONST.positions.vice_president = Politician.fromName('Kamala Harris');
 	CONST.positions.house_speaker = Politician.fromName('Mike Johnson');
 	CONST.positions.nom_r_p = Politician.fromName('Donald Trump');
 	// trump veep choice - random day in July or August
 	// https://docs.google.com/spreadsheets/d/1A4S_VrL-ZLOflY1Y4SGoKAZumv4xHQmYg4TWszrn9vw
+	CONST.positions.nom_r_vp = undefined;
 	const TRUMP_VP_SELECTION_DATE = new Date(2024, random.randint(6, 7), random.randint(1, 31));
 	// start!
 	CONST.alert('Super Tuesday');
@@ -242,7 +294,7 @@ function simulation(){
 		// increment date by 1
 		CONST.date = new Date(+CONST.date + CONST.dur.day);
 	}
-	CONST.alert('Inauguration');
+	return CONST.inauguration();
 }
 
 function main(){
