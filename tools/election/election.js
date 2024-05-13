@@ -101,14 +101,17 @@ const CONST = {
 		${this.positions.nom_r_p.name} / ${this.positions.nom_r_vp.name} : ${r} EVs`);
 		// fancy map
 		document.getElementById('console').appendChild(MapElem.table(results));
+		// tie?
+		if (d === r)
+			this.evTie();
 	},
 	evTie(){
 		// choose president since the EV is tied.
 		this.alert('Due to the EV tie, the house will elect the president, and the senate will elect the vice president.');
 		// republicans control the house. they choose trump.
-		this.alert(`The house elects ${this.positions.nom_r_p} president`);
+		this.alert(`The house elects ${this.positions.nom_r_p.name} president`);
 		// democrats control the senate. they choose harris.
-		this.alert(`The house elects ${this.positions.nom_d_vp} vice president`);
+		this.alert(`The house elects ${this.positions.nom_d_vp.name} vice president`);
 	},
 };
 
