@@ -1,3 +1,20 @@
 .date {
 	color: red;
 }
+
+/* for map */
+
+#map td {
+	height: 3vw;
+	text-align: center;
+	text-shadow: 1px 1px 2px black;
+	width: 3vw;
+}
+
+.party_R {
+	background-color: red;
+}
+
+.party_D {
+	background-color: blue;
+}

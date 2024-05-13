@@ -1,4 +1,4 @@
-/* global ACTUARIAL_TABLE, Gender, Party, POLITICIANS, Position, random, STATES */
+/* global ACTUARIAL_TABLE, Gender, MapElem, Party, POLITICIANS, Position, random, STATES */
 
 const CONST = {
 	config: {
@@ -85,15 +85,22 @@ const CONST = {
 		this.flags.election_held = true;
 		let d = 0;
 		let r = 0;
+		const results = [];
 		this.states.forEach(state => {
-			if (Math.random() < state.p_rep)
+			if (Math.random() < state.p_rep){
 				r += state.ev;
-			else
+				results.push([state.name, 'R']);
+			}
+			else {
 				d += state.ev;
+				results.push([state.name, 'D']);
+			}
 		});
 		this.alert(`<br>ELECTION RESULTS:<br>
 		${this.positions.nom_d_p.name} / ${this.positions.nom_d_vp.name} : ${d} EVs<br>
 		${this.positions.nom_r_p.name} / ${this.positions.nom_r_vp.name} : ${r} EVs`);
+		// fancy map
+		document.getElementById('console').appendChild(MapElem.table(results));
 	},
 	evTie(){
 		// choose president since the EV is tied.
@@ -211,7 +218,7 @@ function simulation(){
 
 function main(){
 	// wait for data to load...
-	if (typeof random === 'undefined' || typeof POLITICIANS === 'undefined' || typeof STATES === 'undefined')
+	if (typeof random === 'undefined' || typeof POLITICIANS === 'undefined' || typeof STATES === 'undefined' || typeof MapElem === 'undefined')
 		return setTimeout(main, 100);
 	// parse data
 	POLITICIANS.forEach(o => new Politician(o.name, o.dob, o.gender, o.party, o.position));
