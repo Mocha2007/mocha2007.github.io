@@ -93,7 +93,7 @@ const CONST = {
 				const bu = this.position_backups[x]();
 				if (!bu.x)
 					continue;
-				this.alert(`filling ${x} with ${bu.y || 'random'} (${bu.x.str})...`);
+				this.alert(`filling ${x} with ${bu.y || 'random'} (${bu.x.html})...`);
 				this.positions[x] = bu.x;
 				this.positions[bu.y] = undefined;
 			}
@@ -103,8 +103,8 @@ const CONST = {
 		this.flags.election_held = true;
 		let d = 0;
 		let r = 0;
-		const TICKET_D = `${this.positions.nom_d_p.str} / ${this.positions.nom_d_vp.str}`;
-		const TICKET_R = `${this.positions.nom_r_p.str} / ${this.positions.nom_r_vp.str}`;
+		const TICKET_D = `${this.positions.nom_d_p.html} / ${this.positions.nom_d_vp.html}`;
+		const TICKET_R = `${this.positions.nom_r_p.html} / ${this.positions.nom_r_vp.html}`;
 		const results = [];
 		/*
 			HOW THIS WORKS:
@@ -152,10 +152,10 @@ const CONST = {
 		// choose president since the EV is tied.
 		this.alert('Due to the EV tie, the house will elect the president, and the senate will elect the vice president.');
 		// republicans control the house. they choose trump.
-		this.alert(`The house elects ${this.positions.nom_r_p.str} president`);
+		this.alert(`The house elects ${this.positions.nom_r_p.html} president`);
 		this.positions.nom_p = this.positions.nom_r_p;
 		// democrats control the senate. they choose harris.
-		this.alert(`The house elects ${this.positions.nom_d_vp.str} vice president`);
+		this.alert(`The house elects ${this.positions.nom_d_vp.html} vice president`);
 		this.positions.nom_vp = this.positions.nom_d_vp;
 	},
 	inauguration(){
@@ -233,6 +233,10 @@ class Politician {
 	get eligible_for_president(){
 		return 35 < this.age && this.alive;
 	}
+	get html(){
+		// eslint-disable-next-line max-len
+		return `${this.name} (<span class='char_${this.party.abbr}'>${this.party.abbr}</span>-${this.state})`;
+	}
 	get str(){
 		return `${this.name} (${this.party.abbr}-${this.state})`;
 	}
@@ -242,7 +246,7 @@ class Politician {
 		// dies
 		if (Math.random() < this.daily_death_chance){
 			this.alive = false;
-			CONST.alert(`${this.str} has died!`);
+			CONST.alert(`${this.html} has died!`);
 			CONST.checkPositions();
 		}
 	}
@@ -280,12 +284,12 @@ function simulation(){
 				CONST.nom_r_vp_candidates.map(x => x[1])
 			));
 			// eslint-disable-next-line max-len
-			CONST.alert(`${CONST.positions.nom_r_p.str} chose ${CONST.positions.nom_r_vp.str} as VP`);
+			CONST.alert(`${CONST.positions.nom_r_p.html} chose ${CONST.positions.nom_r_vp.html} as VP`);
 		}
 		// remove the speaker
 		if (Math.random() < CONST.config.speakerRemovalDailyChance){
 			// eslint-disable-next-line max-len
-			CONST.alert(`The house has voted to oust ${CONST.positions.house_speaker.str} from the speaker role.`);
+			CONST.alert(`The house has voted to oust ${CONST.positions.house_speaker.html} from the speaker role.`);
 			CONST.positions.house_speaker = undefined;
 			CONST.checkPositions();
 		}

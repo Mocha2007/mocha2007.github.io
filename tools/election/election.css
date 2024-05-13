@@ -6,6 +6,18 @@
 	color: red;
 }
 
+/* for character labels */
+
+.char_D {
+	color: blue;
+	font-weight: bold;
+}
+
+.char_R {
+	color: red;
+	font-weight: bold;
+}
+
 /* for map */
 
 #map {
