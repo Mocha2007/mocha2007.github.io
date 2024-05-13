@@ -4,6 +4,7 @@ const CONST = {
 	config: {
 		deathRate: 1, // x times normal rate of death
 		swingFuzz: 0.05, // if swing states < 0.8 go in favor of Trump, this will 'fuzz' the threshold to 0.75 - 0.85
+		swingThreshold: 0.5, // must be in [0, 1]; randomly chosen if outside this range
 		swingToPollingError: 10, // eg. 0.7 threshold -> +0.2 -> +2% systematic error
 		speakerRemovalDailyChance: 0.001,
 	},
@@ -112,7 +113,9 @@ const CONST = {
 			this is the "swing threshold".
 			if a state's p_rep is GREATER than the swing threshold + the fuzzing, R wins, otherwise D wins.
 		*/
-		const swingThreshold = random.uniform(this.config.swingFuzz, 1 - this.config.swingFuzz);
+		const swingThreshold = this.config.swingThreshold <= 1 && 0 <= this.config.swingThreshold
+			? this.config.swingThreshold
+			: random.uniform(this.config.swingFuzz, 1 - this.config.swingFuzz);
 		const fakePollingError = this.config.swingToPollingError * (swingThreshold - 0.5);
 		this.alert(`Polling Error: ${round(Math.abs(fakePollingError), 2)}%
 			in favor of ${0 < fakePollingError ? TICKET_D : TICKET_R}`);
