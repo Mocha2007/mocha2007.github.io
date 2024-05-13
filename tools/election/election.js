@@ -138,12 +138,12 @@ const CONST = {
 		if (d === r)
 			this.evTie();
 		else if (r < d){
-			this.alert(`${TICKET_D.replace('/', 'and')} win!`);
+			this.alert(`${TICKET_D.replace(' / ', ' and ')} win!`);
 			this.positions.nom_p = this.positions.nom_d_p;
 			this.positions.nom_vp = this.positions.nom_d_vp;
 		}
 		else {
-			this.alert(`${TICKET_R.replace('/', 'and')} win!`);
+			this.alert(`${TICKET_R.replace(' / ', ' and ')} win!`);
 			this.positions.nom_p = this.positions.nom_r_p;
 			this.positions.nom_vp = this.positions.nom_r_vp;
 		}
