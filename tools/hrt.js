@@ -316,7 +316,7 @@ function time_elem_inner(){
 	const visits = Math.floor(doses/2 / 90) + 2;
 	// elem
 	const NAME_CHANGE_T = deltat(new Date('2024-03-21T15:00:00.000-04:00'), new Date());
-	// const MYST = deltat(new Date('2024-04-28T01:20:00.000-04:00'), new Date());
+	const MYST = deltat(new Date('2024-06-30T16:00:00.000+01:00'), new Date());
 	return `${timeString(s, min, h, d, m, yr)}<br>
 		<span class="small">${unit(visits, 'endo visit')}</span><br>
 		${unit(doses, 'dose')} of E (${timeString(doseS, doseM, doseH)} until next dose)<br>
@@ -326,8 +326,8 @@ function time_elem_inner(){
 		<span class="small">Total Spiro consumed: ${totalS/1000} g</span><br>
 		<span class="small">Total Prog consumed: ${totalP/1000} g</span><br>
 		${NAME_CHANGE_T.s} ${NAME_CHANGE_T.preposition} name change<br>
+		${MYST.s} ${MYST.preposition} mystery event<br>
 		${unit(laser, 'laser session')}`;
-	// ${MYST.s} ${MYST.preposition} mystery event<br>
 }
 
 function timeString(s = 0, min = 0, h = 0, d = 0, m = 0, yr = 0){
