@@ -23,6 +23,7 @@ class Polling {
 // and... https://www.270towin.com/2024-presidential-election-polls/
 
 // recount margins https://ballotpedia.org/Vote_margins_required_for_election_recounts,_2020
+// ME-1 &c need a few people (I use 10...) so there are actually people who vote
 const STATES = [
 	['AK', 3, new Polling(0.529, 0.386), 733406, 0], // rttwh
 	['AL', 9, new Polling(0.561, 0.361), 5108468, 0.005], // rttwh
@@ -44,10 +45,10 @@ const STATES = [
 	['KY', 8, new Polling(0.55, 0.284), 4526154, 0], // rttwh
 	['LA', 8, new Polling(0.515, 0.355), 4573749, 0], // rttwh
 	['MA', 11, new Polling(0.254, 0.531), 7001399, 0], // rttwh
-	['MD', 10, new Polling(0.579, 0.332), 6180253, 0], // rttwh
+	['MD', 10, new Polling(0.332, 0.579), 6180253, 0], // rttwh
 	['ME', 2, new Polling(0.359, 0.472), 1395722, 0], // rttwh
-	['ME-1', 1, new Polling(0.293, 0.407), 0, 0], // rttwh
-	['ME-2', 1, new Polling(0.434, 0.266), 0, 0], // rttwh
+	['ME-1', 1, new Polling(0.293, 0.407), 10, 0], // rttwh
+	['ME-2', 1, new Polling(0.434, 0.266), 10, 0], // rttwh
 	['MI', 15, new Polling(0.414, 0.408, 0.03), 10037261, 0.0002], // 538
 	['MN', 10, new Polling(0.404, 0.443), 5737915, 0], // rttwh
 	['MO', 10, new Polling(0.488, 0.331), 6196156, 0], // rttwh
@@ -56,9 +57,9 @@ const STATES = [
 	['NC', 16, new Polling(0.448, 0.385, 0.03), 10835491, 0], // 538
 	['ND', 3, new Polling(0.532, 0.179), 783926, 0.01], // rttwh
 	['NE', 2, new Polling(0.573, 0.335), 1978379, 0.01], // rttwh
-	['NE-1', 1, new Polling(0.4109, 0.5601), 0, 0], // 2020
-	['NE-2', 1, new Polling(0.46, 0.43), 0, 0], // rttwh
-	['NE-3', 1, new Polling(0.2234, 0.7536), 0, 0], // 2020
+	['NE-1', 1, new Polling(0.5601, 0.4109), 10, 0], // 2020
+	['NE-2', 1, new Polling(0.46, 0.43), 10, 0], // rttwh
+	['NE-3', 1, new Polling(0.7536, 0.2234), 10, 0], // 2020
 	['NH', 4, new Polling(0.444, 0.512), 1402054, 0], // rttwh
 	['NJ', 14, new Polling(0.386, 0.466), 9290841, 0], // rttwh
 	['NM', 5, new Polling(0.411, 0.486), 2114371, 0.0025], // rttwh
