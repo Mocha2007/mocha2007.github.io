@@ -82,7 +82,13 @@ const CONST = {
 	},
 	position_backups: {
 		president: () => ({x: CONST.positions.vice_president, y: 'vice_president'}),
+		house_speaker: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
+			&& p.party === Party.REPUBLICAN && p.position === Position.REPRESENTATIVE))}),
+		// final noms
 		nom_p: () => ({x: CONST.positions.nom_vp, y: 'nom_vp'}),
+		// todo: pres nominates new vp-elect?
+		// nom_vp: () => ({x: CONST.positions.nom_vp, y: 'nom_vp'}),
+		// the five party noms
 		nom_d_p: () => ({x: CONST.positions.nom_d_vp, y: 'nom_d_vp'}), // it's a fair guess
 		nom_r_p: () => ({x: CONST.positions.nom_r_vp, y: 'nom_r_vp'}), // it's a fair guess
 		nom_rfk_p: () => ({x: CONST.positions.nom_rfk_vp, y: 'nom_rfk_vp'}), // it's a fair guess
@@ -93,8 +99,6 @@ const CONST = {
 			&& p.party === Party.DEMOCRATIC && p.state !== CONST.positions.nom_d_p.state))}),
 		nom_r_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
 			&& p.party === Party.REPUBLICAN && p.state !== CONST.positions.nom_r_p.state))}),
-		house_speaker: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
-			&& p.party === Party.REPUBLICAN && p.position === Position.REPRESENTATIVE))}),
 	},
 	/** @type {State[]} */
 	states: [],
