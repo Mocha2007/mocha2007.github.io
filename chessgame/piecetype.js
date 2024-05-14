@@ -5,13 +5,15 @@ class PieceType {
 	/**
 	 * @param {string} name
 	 * @param {string} abbr
+	 * @param {number} value
 	 * @param {string} white_emoji
 	 * @param {string} black_emoji
 	 * @param {MovementType} movement
 	 */
-	constructor(name, abbr, white_emoji, black_emoji, movement, flags = []){
+	constructor(name, abbr, value, white_emoji, black_emoji, movement, flags = []){
 		this.name = name || 'unknown';
 		this.abbr = abbr || '?';
+		this.value = value;
 		this.white_emoji = white_emoji || '?';
 		this.black_emoji = black_emoji || '?';
 		/** @type {MovementType} */
@@ -137,12 +139,12 @@ class PieceType {
 	}
 	/** @type {PieceType[]} */
 	static list = [];
-	static PAWN = new PieceType('Pawn', ' ', '♙', '♟', MovementType.PAWN);
-	static KNIGHT = new PieceType('Knight', 'N', '♘', '♞', MovementType.KNIGHT);
-	static BISHOP = new PieceType('Bishop', 'B', '♗', '♝', MovementType.BISHOP);
-	static ROOK = new PieceType('Rook', 'R', '♖', '♜', MovementType.ROOK);
-	static QUEEN = new PieceType('Queen', 'Q', '♕', '♛', MovementType.QUEEN);
-	static KING = new PieceType('King', 'K', '♔', '♚', MovementType.KING);
+	static PAWN = new PieceType('Pawn', ' ', 1, '♙', '♟', MovementType.PAWN);
+	static KNIGHT = new PieceType('Knight', 'N', 3, '♘', '♞', MovementType.KNIGHT);
+	static BISHOP = new PieceType('Bishop', 'B', 3, '♗', '♝', MovementType.BISHOP);
+	static ROOK = new PieceType('Rook', 'R', 5, '♖', '♜', MovementType.ROOK);
+	static QUEEN = new PieceType('Queen', 'Q', 9, '♕', '♛', MovementType.QUEEN);
+	static KING = new PieceType('King', 'K', Infinity, '♔', '♚', MovementType.KING);
 	static LEAPS = {
 		// todo
 		'F': [1, 1],
