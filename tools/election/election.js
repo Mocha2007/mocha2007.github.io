@@ -288,7 +288,8 @@ class Politician {
 	}
 	get html(){
 		// eslint-disable-next-line max-len
-		return `${this.name} (<span class='char_${this.party.abbr}'>${this.party.abbr}</span>-${this.state})`;
+		return `${this.name} (<span class='char_${this.party.abbr}'>${this.party.abbr}</span>-${this.state}
+			${this.age}${this.gender.html})`;
 	}
 	get str(){
 		return `${this.name} (${this.party.abbr}-${this.state})`;

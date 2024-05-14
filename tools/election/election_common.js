@@ -1,9 +1,19 @@
 /* exported ACTUARIAL_TABLE, Gender, Party, Position */
 
 class Gender {
-	static FEMALE = 0;
-	static MALE = 1;
-	static NONBINARY = 2;
+	constructor(name, color = 'white'){
+		this.name = name;
+		this.color = color;
+	}
+	get abbr(){
+		return this.name[0];
+	}
+	get html(){
+		return `<span class="gender" style="color: ${this.color}">${this.abbr}</span>`;
+	}
+	static FEMALE = new Gender('Female', '#f8f');
+	static MALE = new Gender('Male', '#08f');
+	static NONBINARY = new Gender('Nonbinary', 'white');
 }
 
 class Party {

@@ -10,31 +10,31 @@
 
 .char_D {
 	color: blue;
-	font-weight: bold;
 }
 
 .char_G {
 	color: green;
-	font-weight: bold;
 }
 
 .char_I {
 	color: olive;
-	font-weight: bold;
 }
 
 .char_J {
 	color: brown;
-	font-weight: bold;
 }
 
 .char_L {
 	color: yellow;
-	font-weight: bold;
 }
 
 .char_R {
 	color: red;
+}
+
+.char_D, .char_G, .char_I,
+.char_J, .char_L, .char_R,
+.gender {
 	font-weight: bold;
 }
 
