@@ -1,4 +1,4 @@
-/* exported ACTUARIAL_TABLE, Gender, Party, Position */
+/* exported ACTUARIAL_TABLE, EVENTS, Gender, Party, Position */
 
 class Gender {
 	constructor(name, pronouns, color = 'white'){
@@ -167,3 +167,15 @@ const ACTUARIAL_TABLE = [
 	[0.972793, 0.972793],
 	[1, 1],
 ];
+
+const EVENTS = [
+	[new Date(2024, 6, 11), 'The Green National Convention is held online.'],
+	[new Date(2024, 6, 15), 'The Republican National Convention is held in Milwaukee, WI.'],
+	[new Date(2024, 7, 19), 'The Democratic National Convention is held in Chicago, IL.'],
+	[new Date(2024, 8, 16), 'The first presidential debate is held at the Texas State University in San Marcos, TX.'],
+	[new Date(2024, 8, 25), 'The only vice presidential debate is held at the Lafayette College in Easton, PA.'],
+	[new Date(2024, 9, 1), 'The second presidential debate is held at the Virginia State University in Petersburg, VA.'],
+	[new Date(2024, 9, 9), 'The third presidential debate is held at the University of Utah in Salt Lake City, UT.'],
+	[new Date(2025, 0, 6), 'Electoral votes are formally counted before a joint session of Congress; the president of the Senate formally announces the electoral result.'],
+];
+EVENTS.i = 0;

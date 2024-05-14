@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-/* global ACTUARIAL_TABLE, MapElem, Party, POLITICIANS, Position, random, round, STATES, sum */
+/* global ACTUARIAL_TABLE, EVENTS, MapElem, Party, POLITICIANS, Position, random, round, STATES, sum */
 
 const CONST = {
 	config: {
@@ -99,10 +99,11 @@ const CONST = {
 	/** @type {State[]} */
 	states: [],
 	// methods
-	alert(s){
+	alert(s, major = true){
 		const elem = document.createElement('div');
 		elem.classList.add('message');
-		elem.innerHTML = `<span class='date'>${this.date.toDateString()}</span>: ${s}`;
+		const majority = major ? 'major' : 'minor';
+		elem.innerHTML = `<span class='date'>${this.date.toDateString()}</span><span class="event_${majority}">: ${s}</span>`;
 		this.alertElem(elem);
 	},
 	alertElem(elem){
@@ -122,6 +123,7 @@ const CONST = {
 			}
 	},
 	holdElection(){
+		this.alert('ELECTION 2024');
 		this.flags.election_held = true;
 		const ev = {D: 0, R: 0, I: 0, J: 0, G: 0};
 		const pv = {D: 0, R: 0, I: 0, J: 0, G: 0};
@@ -149,7 +151,7 @@ const CONST = {
 			if (result.recount)
 				this.alert(`The margin in ${state.name} was close enough to warrant a recount
 				(${round(state.recountMargin * 100, 2)}%);
-			final results will be delayed for a few weeks.`);
+			final results will be delayed for a few weeks.`, false);
 		});
 		this.alert(`<br>ELECTION RESULTS:<br>
 		${TICKET_D} : ${ev.D} EVs (${pv.D.toLocaleString()} votes - ${round(pv.D / turnout * 100, 2)}%)<br>
@@ -362,6 +364,10 @@ function simulation(){
 		// election
 		if (CONST.dates.election <= CONST.date && !CONST.flags.election_held)
 			CONST.holdElection();
+		// misc events
+		if (!CONST.debug_mode)
+			while (EVENTS.i < EVENTS.length && EVENTS[EVENTS.i][0] <= CONST.date)
+				CONST.alert(EVENTS[EVENTS.i++][1], false);
 		// increment date by 1
 		CONST.date = new Date(+CONST.date + CONST.dur.day * CONST.config.timestep);
 	}

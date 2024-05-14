@@ -12,6 +12,12 @@
 	color: red;
 }
 
+/* for events */
+
+.event_minor {
+	color: grey;
+}
+
 /* for character labels */
 
 .char_D {
