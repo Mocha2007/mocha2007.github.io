@@ -71,8 +71,8 @@ const POLITICIANS = [
 	},
 	{
 		name: 'Jasmine Sherman',
-		dob: new Date(1980, 0),
-		gender: Gender.FEMALE,
+		dob: new Date(1985, 0), // guess
+		gender: Gender.NONBINARY, // https://jasminesherman.com/about-president/
 		party: Party.GREEN,
 		position: Position.NONE,
 		state: 'NC',

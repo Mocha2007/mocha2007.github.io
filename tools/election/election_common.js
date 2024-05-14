@@ -3,6 +3,7 @@
 class Gender {
 	static FEMALE = 0;
 	static MALE = 1;
+	static NONBINARY = 2;
 }
 
 class Party {
