@@ -40,7 +40,7 @@ class Polling {
 Polling.DEFAULT_ERROR = 0.05;
 // https://www.realclearpolling.com/polls/president/general/2024/trump-vs-biden-vs-kennedy-vs-west-vs-stein
 Polling.DEFAULT_THIRD = [Polling.DEFAULT_ERROR, {rfk: 0.108, west: 0.02, g: 0.015}];
-Polling.DISTRICT = 100;
+Polling.DISTRICT = 1000; // this should be small enough to be irrelevant but large enough to not fuck up the "close race" table...
 
 // use if graph exists: https://projects.fivethirtyeight.com/polls/president-general/
 // else: https://www.racetothewh.com/president/polls
