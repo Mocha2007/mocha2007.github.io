@@ -3,10 +3,10 @@
 const CONST = {
 	config: {
 		deathRate: 1, // x times normal rate of death
-		swingFuzz: 0.05, // if swing states < 0.8 go in favor of Trump, this will 'fuzz' the threshold to 0.75 - 0.85
-		swingThreshold: -1, // must be in [0, 1]; randomly chosen if outside this range
-		swingToPollingError: 10, // eg. 0.7 threshold -> +0.2 -> +2% systematic error
+		eligibleVoters: 0.72,
+		forceErrorX: 0.5,
 		speakerRemovalDailyChance: 0.001,
+		turnout: 0.66,
 	},
 	date: new Date(2024, 2, 5), // sim starts after March 5th - super tuesday - 8 months before the election
 	dates: {
@@ -104,25 +104,15 @@ const CONST = {
 		this.flags.election_held = true;
 		let d = 0;
 		let r = 0;
+		let d_pop = 0;
+		let r_pop = 0;
 		const TICKET_D = `${this.positions.nom_d_p.html} / ${this.positions.nom_d_vp.html}`;
 		const TICKET_R = `${this.positions.nom_r_p.html} / ${this.positions.nom_r_vp.html}`;
 		const results = [];
-		/*
-			HOW THIS WORKS:
-			there is a "systemic polling error" with some fuzzing on a per-state basis.
-			this is the "swing threshold".
-			if a state's p_rep is GREATER than the swing threshold + the fuzzing, R wins, otherwise D wins.
-		*/
-		const swingThreshold = this.config.swingThreshold <= 1 && 0 <= this.config.swingThreshold
-			? this.config.swingThreshold
-			: random.uniform(this.config.swingFuzz, 1 - this.config.swingFuzz);
-		const fakePollingError = this.config.swingToPollingError * (swingThreshold - 0.5);
-		this.alert(`Polling Error: ${round(Math.abs(fakePollingError), 2)}%
-			in favor of ${0 < fakePollingError ? TICKET_D : TICKET_R}`);
+		const pollingError = this.config.forceErrorX || Math.random();
 		this.states.forEach(state => {
-			const C = swingThreshold
-				+ random.uniform(-this.config.swingFuzz, this.config.swingFuzz);
-			if (C < state.p_rep){
+			const result = state.results(pollingError);
+			if (result.D < result.R){
 				r += state.ev;
 				results.push([state.name, 'R', state.swing]);
 			}
@@ -130,10 +120,13 @@ const CONST = {
 				d += state.ev;
 				results.push([state.name, 'D', state.swing]);
 			}
+			// popular vote tally
+			d_pop += result.D;
+			r_pop += result.R;
 		});
 		this.alert(`<br>ELECTION RESULTS:<br>
-		${TICKET_D} : ${d} EVs<br>
-		${TICKET_R} : ${r} EVs`);
+		${TICKET_D} : ${d} EVs (${d_pop.toLocaleString()} votes)<br>
+		${TICKET_R} : ${r} EVs (${r_pop.toLocaleString()} votes)`);
 		// fancy map
 		this.alertElem(MapElem.table(results));
 		// winner declaration / tie
@@ -191,19 +184,24 @@ class State {
 	/**
 	 * @param {string} name
 	 * @param {number} ev electoral votes
-	 * @param {number} p_rep chance the repubs win this state
+	 * @param {Polling} polling
+	 * @param {number} pop 1M default
 	 */
-	constructor(name, ev, p_rep){
+	constructor(name, ev, polling, pop = 1e6){
 		this.name = name;
 		this.ev = ev;
-		this.p_rep = p_rep;
+		this.polling = polling;
+		this.pop = pop;
 		CONST.states.push(this);
 	}
 	get swing(){
-		return 0 < this.p_rep % 1;
+		return Math.abs(this.polling.r - this.polling.d) < 0.1;
 	}
-	get victor(){
-		return Math.random() < this.p_rep ? 1 : 0;
+	results(x = 0.5){
+		const c = this.polling.actual(x);
+		const R = Math.round(this.pop * c.R * CONST.config.eligibleVoters * CONST.config.turnout);
+		const D = Math.round(this.pop * c.D * CONST.config.eligibleVoters * CONST.config.turnout);
+		return {R, D};
 	}
 }
 
@@ -312,7 +310,6 @@ function main(){
 	// parse data
 	POLITICIANS.forEach(o => new Politician(o));
 	STATES.forEach(o => new State(...o));
-	CONST.config.swingToPollingError = poll.certaintyMargin * 100;
 	// eslint-disable-next-line max-len
 	console.info(`election.js loaded ${CONST.politicians.length} politicians and ${CONST.states.length} states.`);
 	// run sim
