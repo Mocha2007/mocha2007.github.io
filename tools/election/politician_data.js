@@ -132,13 +132,29 @@ const POLITICIANS = [
 		position: Position.REPRESENTATIVE,
 		state: 'NY',
 	},
-	// backup pols
+	// backup dem pols
 	{
-		name: 'Amy Klobuchar', // senator
+		name: 'Hillary Clinton',
+		dob: new Date(1947, 9, 26),
+		gender: Gender.FEMALE,
+		party: Party.DEMOCRATIC,
+		position: Position.NONE,
+		state: 'NY',
+	},
+	{
+		name: 'Amy Klobuchar',
 		dob: new Date(1960, 4, 25),
 		gender: Gender.FEMALE,
 		party: Party.DEMOCRATIC,
 		position: Position.SENATOR,
 		state: 'MN',
+	},
+	{
+		name: 'Elizabeth Warren',
+		dob: new Date(1949, 5, 22),
+		gender: Gender.FEMALE,
+		party: Party.DEMOCRATIC,
+		position: Position.SENATOR,
+		state: 'MA',
 	},
 ];
