@@ -9,6 +9,7 @@ const CONST = {
 		nClosestRaces: 3,
 		recountMargin: 0.01, // todo
 		speakerRemovalDailyChance: 0.001,
+		timestep: 1, // days
 		turnout: 0.66,
 	},
 	date: new Date(2024, 2, 5), // sim starts after March 5th - super tuesday - 8 months before the election
@@ -103,7 +104,6 @@ const CONST = {
 			}
 	},
 	holdElection(){
-		// console.info('holding election...');
 		this.flags.election_held = true;
 		let d = 0;
 		let r = 0;
@@ -148,13 +148,11 @@ const CONST = {
 			this.alert(`${TICKET_D.replace(' / ', ' and ')} win!`);
 			this.positions.nom_p = this.positions.nom_d_p;
 			this.positions.nom_vp = this.positions.nom_d_vp;
-			// console.debug('d', r-d);
 		}
 		else {
 			this.alert(`${TICKET_R.replace(' / ', ' and ')} win!`);
 			this.positions.nom_p = this.positions.nom_r_p;
 			this.positions.nom_vp = this.positions.nom_r_vp;
-			// console.debug('r', r-d);
 		}
 	},
 	evTie(){
@@ -247,7 +245,7 @@ class Politician {
 		return 1 - Math.pow(1 - ACTUARIAL_TABLE[this.age][this.gender], CONST.config.deathRate);
 	}
 	get daily_death_chance(){
-		return 1 - Math.pow(1-this.annual_death_chance, 1/365.25);
+		return 1 - Math.pow(1-this.annual_death_chance, CONST.config.timestep/365.25);
 	}
 	get eligible_for_president(){
 		return 35 < this.age && this.alive;
@@ -293,7 +291,6 @@ function simulation(){
 	// start!
 	CONST.alert('Super Tuesday');
 	while (CONST.date < CONST.dates.inauguration){
-		// console.log(CONST.date);
 		// see if someone dies
 		if (CONST.config.mortal)
 			CONST.politicians.forEach(p => p.tick());
@@ -307,7 +304,8 @@ function simulation(){
 			CONST.alert(`${CONST.positions.nom_r_p.html} chose ${CONST.positions.nom_r_vp.html} as VP`);
 		}
 		// remove the speaker
-		if (Math.random() < CONST.config.speakerRemovalDailyChance){
+		// eslint-disable-next-line max-len
+		if (Math.random() < Math.pow(CONST.config.speakerRemovalDailyChance, CONST.config.timestep)){
 			// eslint-disable-next-line max-len
 			CONST.alert(`The house has voted to oust ${CONST.positions.house_speaker.html} from the speaker role.`);
 			CONST.positions.house_speaker = undefined;
@@ -317,7 +315,7 @@ function simulation(){
 		if (CONST.dates.election <= CONST.date && !CONST.flags.election_held)
 			CONST.holdElection();
 		// increment date by 1
-		CONST.date = new Date(+CONST.date + CONST.dur.day);
+		CONST.date = new Date(+CONST.date + CONST.dur.day * CONST.config.timestep);
 	}
 	return CONST.inauguration();
 }
