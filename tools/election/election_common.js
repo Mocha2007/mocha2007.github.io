@@ -1,19 +1,20 @@
 /* exported ACTUARIAL_TABLE, Gender, Party, Position */
 
 class Gender {
-	constructor(name, color = 'white'){
+	constructor(name, pronouns, color = 'white'){
 		this.name = name;
+		this.pronouns = pronouns;
 		this.color = color;
 	}
 	get abbr(){
 		return this.name[0];
 	}
 	get html(){
-		return `<span class="gender" style="color: ${this.color}">${this.abbr}</span>`;
+		return `<span class="gender" style="color: ${this.color}" title="${this.pronouns}">${this.abbr}</span>`;
 	}
-	static FEMALE = new Gender('Female', '#f8f');
-	static MALE = new Gender('Male', '#08f');
-	static NONBINARY = new Gender('Nonbinary', 'white');
+	static FEMALE = new Gender('Female', 'she/her', '#f8f');
+	static MALE = new Gender('Male', 'he/him', '#08f');
+	static NONBINARY = new Gender('Nonbinary', 'they/them', 'white');
 }
 
 class Party {
