@@ -1,10 +1,12 @@
 /* exported ACTUARIAL_TABLE, EVENTS, Gender, Party, Position */
 
 class Gender {
+	static #id_ = 0;
 	constructor(name, pronouns, color = 'white'){
 		this.name = name;
 		this.pronouns = pronouns;
 		this.color = color;
+		this.id = Gender.#id_++;
 	}
 	get abbr(){
 		return this.name[0];

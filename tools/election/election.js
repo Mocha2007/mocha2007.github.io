@@ -288,10 +288,10 @@ class Politician {
 		return Math.floor((CONST.date - this.dob) / CONST.dur.year);
 	}
 	get annual_death_chance(){
-		return 1 - Math.pow(1 - ACTUARIAL_TABLE[this.age][this.gender], CONST.config.deathRate);
+		return 1 - Math.pow(1 - ACTUARIAL_TABLE[this.age][this.gender.id], CONST.config.deathRate);
 	}
 	get daily_death_chance(){
-		return 1 - Math.pow(1-this.annual_death_chance, CONST.config.timestep/365.25);
+		return 1 - Math.pow(1-this.annual_death_chance, 1/365.25);
 	}
 	get eligible_for_president(){
 		return 35 < this.age && this.alive;
@@ -307,11 +307,12 @@ class Politician {
 		if (!this.alive)
 			return;
 		// dies
-		if (Math.random() < this.daily_death_chance){
-			this.alive = false;
-			CONST.alert(`${this.html} has died!`);
-			CONST.checkPositions();
-		}
+		for (let i = 0; i < CONST.config.timestep; i++)
+			if (Math.random() < this.daily_death_chance){
+				this.alive = false;
+				CONST.alert(`${this.html} has died!`);
+				CONST.checkPositions();
+			}
 	}
 	static fromName(name){
 		return CONST.politicians.find(p => p.name === name);
