@@ -35,7 +35,8 @@ class Polling {
 	}
 }
 Polling.DEFAULT_ERROR = 0.05;
-Polling.DEFAULT_THIRD = [Polling.DEFAULT_ERROR, {rfk: 0.092, west: 0.016, g: 0.012}];
+// https://www.realclearpolling.com/polls/president/general/2024/trump-vs-biden-vs-kennedy-vs-west-vs-stein
+Polling.DEFAULT_THIRD = [Polling.DEFAULT_ERROR, {rfk: 0.108, west: 0.02, g: 0.015}];
 
 // use if graph exists: https://projects.fivethirtyeight.com/polls/president-general/
 // else: https://www.racetothewh.com/president/polls
