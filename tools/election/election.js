@@ -1,4 +1,4 @@
-/* global ACTUARIAL_TABLE, Gender, MapElem, Party, POLITICIANS, poll, Position, random, round, STATES */
+/* global ACTUARIAL_TABLE, MapElem, Party, POLITICIANS, Position, random, round, STATES */
 
 const CONST = {
 	config: {

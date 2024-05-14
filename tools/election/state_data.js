@@ -4,7 +4,7 @@ class Polling {
 	constructor(r = 0.5, d = 0.5, error = 0.05){
 		this.r = r;
 		this.d = d;
-		this.error = 0.05;
+		this.error = error;
 	}
 	/** normalize result to 100% */
 	actual(x = 0.5){
