@@ -5,6 +5,7 @@ const CONST = {
 		deathRate: 1, // x times normal rate of death
 		eligibleVoters: 0.72,
 		forceErrorX: 0, // set to 0.5 to use exact polling data, set to 1 to set max rep win, set to epsilon for max dem win
+		mortal: true,
 		nClosestRaces: 3,
 		recountMargin: 0.01, // todo
 		speakerRemovalDailyChance: 0.001,
@@ -147,11 +148,13 @@ const CONST = {
 			this.alert(`${TICKET_D.replace(' / ', ' and ')} win!`);
 			this.positions.nom_p = this.positions.nom_d_p;
 			this.positions.nom_vp = this.positions.nom_d_vp;
+			// console.debug('d', r-d);
 		}
 		else {
 			this.alert(`${TICKET_R.replace(' / ', ' and ')} win!`);
 			this.positions.nom_p = this.positions.nom_r_p;
 			this.positions.nom_vp = this.positions.nom_r_vp;
+			// console.debug('r', r-d);
 		}
 	},
 	evTie(){
@@ -176,8 +179,8 @@ const CONST = {
 		}
 		return {p: this.positions.president, vp: this.positions.vice_president};
 	},
-	debug(n = 1000){
-		this.debug_mode = true;
+	debug(n = 1000, use_debug = true){
+		this.debug_mode = use_debug;
 		const outcomes = [];
 		for (let i = 0; i < n; i++){
 			const o = simulation();
@@ -292,7 +295,8 @@ function simulation(){
 	while (CONST.date < CONST.dates.inauguration){
 		// console.log(CONST.date);
 		// see if someone dies
-		CONST.politicians.forEach(p => p.tick());
+		if (CONST.config.mortal)
+			CONST.politicians.forEach(p => p.tick());
 		// Trump VP selection
 		if (!CONST.positions.nom_r_vp && TRUMP_VP_SELECTION_DATE <= CONST.date){
 			CONST.positions.nom_r_vp = Politician.fromName(random.weightedChoice(
