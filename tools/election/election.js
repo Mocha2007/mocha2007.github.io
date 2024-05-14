@@ -4,7 +4,7 @@ const CONST = {
 	config: {
 		deathRate: 1, // x times normal rate of death
 		swingFuzz: 0.05, // if swing states < 0.8 go in favor of Trump, this will 'fuzz' the threshold to 0.75 - 0.85
-		swingThreshold: 0.5, // must be in [0, 1]; randomly chosen if outside this range
+		swingThreshold: -1, // must be in [0, 1]; randomly chosen if outside this range
 		swingToPollingError: 10, // eg. 0.7 threshold -> +0.2 -> +2% systematic error
 		speakerRemovalDailyChance: 0.001,
 	},
