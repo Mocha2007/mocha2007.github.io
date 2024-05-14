@@ -1,5 +1,11 @@
 :root {
 	--cellSize: 3.5vw;
+	--partyD: blue;
+	--partyG: green;
+	--partyI: olive;
+	--partyJ: brown;
+	--partyL: yellow;
+	--partyR: red;
 }
 
 .date {
@@ -9,27 +15,27 @@
 /* for character labels */
 
 .char_D {
-	color: blue;
+	color: var(--partyD);
 }
 
 .char_G {
-	color: green;
+	color: var(--partyG);
 }
 
 .char_I {
-	color: olive;
+	color: var(--partyI);
 }
 
 .char_J {
-	color: brown;
+	color: var(--partyJ);
 }
 
 .char_L {
-	color: yellow;
+	color: var(--partyL);
 }
 
 .char_R {
-	color: red;
+	color: var(--partyR);
 }
 
 .char_D, .char_G, .char_I,
@@ -51,12 +57,28 @@
 	width: var(--cellSize);
 }
 
-.party_R {
-	background-color: red;
+.party_D {
+	background-color: var(--partyD);
 }
 
-.party_D {
-	background-color: blue;
+.party_G {
+	background-color: var(--partyG);
+}
+
+.party_I {
+	background-color: var(--partyI);
+}
+
+.party_J {
+	background-color: var(--partyJ);
+}
+
+.party_L {
+	background-color: var(--partyL);
+}
+
+.party_R {
+	background-color: var(--partyR);
 }
 
 .swing {
