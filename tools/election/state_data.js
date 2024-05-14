@@ -29,7 +29,7 @@ const STATES = [
 	['AL', 9, new Polling(0.561, 0.361), 5108468, 0.005], // rttwh
 	['AR', 6, new Polling(0.562, 0.249), 3067732, 0], // rttwh
 	['AZ', 11, new Polling(0.428, 0.392, 0.03), 7431344, 0.001], // 538
-	['CA', 54, new Polling(0.332, 0.553), 38965193, 0], // rttwh
+	['CA', 54, new Polling(0.296, 0.503, 0.05), 38965193, 0], // 538
 	['CO', 10, new Polling(0.398, 0.467), 5877610, 0.005], // rttwh
 	['CT', 7, new Polling(0.388, 0.499), 3617176, 0.005], // rttwh
 	['DC', 3, new Polling(0.054, 0.9215), 678972, 0], // 2020
@@ -73,7 +73,7 @@ const STATES = [
 	['SC', 9, new Polling(0.513, 0.356), 5373555, 0.01], // rttwh
 	['SD', 3, new Polling(0.544, 0.273), 919318, 0], // rttwh
 	['TN', 11, new Polling(0.573, 0.315), 7126489, 0], // rttwh
-	['TX', 40, new Polling(0.489, 0.405), 30503301, 0], // rttwh
+	['TX', 40, new Polling(0.455, 0.355, 0.03), 30503301, 0], // 538
 	['UT', 6, new Polling(0.506, 0.298), 3417734, 0], // rttwh
 	['VA', 13, new Polling(0.422, 0.464), 8715698, 0], // rttwh
 	['VT', 3, new Polling(0.284, 0.577), 647464, 0], // rttwh
