@@ -4,6 +4,7 @@ const CONST = {
 	config: {
 		deathRate: 1, // x times normal rate of death
 		eligibleVoters: 0.72,
+		errorFuzzing: 0.05, // max state variation in systemic polling error
 		forceErrorX: 0, // set to 0.5 to use exact polling data, set to 1 to set max rep win, set to epsilon for max dem win
 		mortal: true,
 		nClosestRaces: 3,
@@ -112,9 +113,11 @@ const CONST = {
 		const TICKET_D = `${this.positions.nom_d_p.html} / ${this.positions.nom_d_vp.html}`;
 		const TICKET_R = `${this.positions.nom_r_p.html} / ${this.positions.nom_r_vp.html}`;
 		const results = [];
-		const pollingError = this.config.forceErrorX || Math.random();
+		const pollingError = this.config.forceErrorX
+			|| random.uniform(CONST.config.errorFuzzing, 1 - CONST.config.errorFuzzing);
 		this.states.forEach(state => {
-			const result = state.results(pollingError);
+			const result = state.results(pollingError
+				+ random.uniform(-CONST.config.errorFuzzing, CONST.config.errorFuzzing));
 			const winner = result.D < result.R ? 'R' : 'D';
 			if (winner === 'R')
 				r += state.ev;
