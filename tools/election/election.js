@@ -160,23 +160,31 @@ const CONST = {
 		for (let i = 0; i < this.config.nClosestRaces; i++)
 			this.alert(`(${i+1}) ${results[i][0]} - ${round(results[i][3] * 100, 2)}%`);
 		// winner declaration / tie
+		const winner = 'DRIJG'.split('').find(char => 270 <= ev[char]);
 		// tie?
-		if (ev.D === ev.R) // todo ALL parties!
-			this.evTie();
-		else if (ev.R < ev.D){
-			this.alert(`${TICKET_D.replace(' / ', ' and ')} win!`);
-			this.positions.nom_p = this.positions.nom_d_p;
-			this.positions.nom_vp = this.positions.nom_d_vp;
-		}
-		else {
-			this.alert(`${TICKET_R.replace(' / ', ' and ')} win!`);
-			this.positions.nom_p = this.positions.nom_r_p;
-			this.positions.nom_vp = this.positions.nom_r_vp;
+		switch (winner){
+			case 'D':
+				this.alert(`${TICKET_D.replace(' / ', ' and ')} win!`);
+				this.positions.nom_p = this.positions.nom_d_p;
+				this.positions.nom_vp = this.positions.nom_d_vp;
+				break;
+			case 'R':
+				this.alert(`${TICKET_R.replace(' / ', ' and ')} win!`);
+				this.positions.nom_p = this.positions.nom_r_p;
+				this.positions.nom_vp = this.positions.nom_r_vp;
+				break;
+			case 'I':
+				this.alert(`${TICKET_RFK.replace(' / ', ' and ')} win!`);
+				this.positions.nom_p = this.positions.nom_rfk_p;
+				this.positions.nom_vp = this.positions.nom_rfk_vp;
+				break;
+			default:
+				this.evTie();
 		}
 	},
 	evTie(){
 		// choose president since the EV is tied.
-		this.alert('Due to the EV tie, the house will elect the president, and the senate will elect the vice president.');
+		this.alert('Due to no candidate getting a majority in the electoral college, the house will elect the president, and the senate will elect the vice president.');
 		// republicans control the house. they choose trump.
 		this.alert(`The house elects ${this.positions.nom_r_p.html} president`);
 		this.positions.nom_p = this.positions.nom_r_p;
