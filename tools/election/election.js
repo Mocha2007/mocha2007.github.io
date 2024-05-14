@@ -4,7 +4,8 @@ const CONST = {
 	config: {
 		deathRate: 1, // x times normal rate of death
 		eligibleVoters: 0.72,
-		forceErrorX: 0.5,
+		forceErrorX: 0, // set to 0.5 to use exact polling data, set to 1 to set max rep win, set to epsilon for max dem win
+		recountMargin: 0.01, // todo
 		speakerRemovalDailyChance: 0.001,
 		turnout: 0.66,
 	},
@@ -123,6 +124,11 @@ const CONST = {
 			// popular vote tally
 			d_pop += result.D;
 			r_pop += result.R;
+			// recount
+			if (result.recount)
+				this.alert(`The margin in ${state.name} was close enough to warrant a recount
+				(${round(state.recountMargin * 100, 2)}%);
+			final results will be delayed for a few weeks.`);
 		});
 		this.alert(`<br>ELECTION RESULTS:<br>
 		${TICKET_D} : ${d} EVs (${d_pop.toLocaleString()} votes)<br>
@@ -186,12 +192,14 @@ class State {
 	 * @param {number} ev electoral votes
 	 * @param {Polling} polling
 	 * @param {number} pop 1M default
+	 * @param {number} recountMargin margin in % to warrant a vote recount based on state law https://ballotpedia.org/Vote_margins_required_for_election_recounts,_2020
 	 */
-	constructor(name, ev, polling, pop = 1e6){
+	constructor(name, ev, polling, pop = 1e6, recountMargin = 0){
 		this.name = name;
 		this.ev = ev;
 		this.polling = polling;
 		this.pop = pop;
+		this.recountMargin = recountMargin;
 		CONST.states.push(this);
 	}
 	get swing(){
@@ -201,7 +209,9 @@ class State {
 		const c = this.polling.actual(x);
 		const R = Math.round(this.pop * c.R * CONST.config.eligibleVoters * CONST.config.turnout);
 		const D = Math.round(this.pop * c.D * CONST.config.eligibleVoters * CONST.config.turnout);
-		return {R, D};
+		const sum = R + D;
+		const recount = Math.abs((R - D) / sum) < this.recountMargin;
+		return {R, D, sum, recount};
 	}
 }
 
