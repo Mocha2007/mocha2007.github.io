@@ -8,7 +8,7 @@ class Polling {
 	}
 	/** normalize result to 100% */
 	actual(x = 0.5){
-		const error = (x - 0.5) * this.error;
+		const error = 2 * (x - 0.5) * this.error;
 		const R_ = this.r + error;
 		const D_ = this.d - error;
 		const sum = R_ + D_;
