@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* global ACTUARIAL_TABLE, MapElem, Party, POLITICIANS, Position, random, round, STATES, sum */
 
 const CONST = {
@@ -124,10 +125,10 @@ const CONST = {
 		this.flags.election_held = true;
 		const ev = {D: 0, R: 0, I: 0, J: 0, G: 0};
 		const pv = {D: 0, R: 0, I: 0, J: 0, G: 0};
+		let turnout = 0;
 		const TICKET_D = `${this.positions.nom_d_p.html} / ${this.positions.nom_d_vp.html}`;
 		const TICKET_R = `${this.positions.nom_r_p.html} / ${this.positions.nom_r_vp.html}`;
 		const TICKET_RFK = `${this.positions.nom_rfk_p.html} / ${this.positions.nom_rfk_vp.html}`;
-		// eslint-disable-next-line max-len
 		const TICKET_WEST = `${this.positions.nom_west_p.html} / ${this.positions.nom_west_vp.html}`;
 		const TICKET_G = `${this.positions.nom_g_p.html} / ${this.positions.nom_g_vp.html}`;
 		const results = [];
@@ -139,7 +140,11 @@ const CONST = {
 			ev[result.winner.abbr] += state.ev;
 			results.push([state.name, result.winner.abbr, state.swing, result.margin]);
 			// popular vote tally
-			'DRIJG'.split('').forEach(p => pv[p] += result.result.find(x => x[0].abbr === p)[1]);
+			'DRIJG'.split('').forEach(p => {
+				const v = result.result.find(x => x[0].abbr === p)[1];
+				pv[p] += v;
+				turnout += v;
+			});
 			// recount
 			if (result.recount)
 				this.alert(`The margin in ${state.name} was close enough to warrant a recount
@@ -147,11 +152,11 @@ const CONST = {
 			final results will be delayed for a few weeks.`);
 		});
 		this.alert(`<br>ELECTION RESULTS:<br>
-		${TICKET_D} : ${ev.D} EVs (${pv.D.toLocaleString()} votes)<br>
-		${TICKET_R} : ${ev.R} EVs (${pv.R.toLocaleString()} votes)<br>
-		${TICKET_RFK} : ${ev.I} EVs (${pv.I.toLocaleString()} votes)<br>
-		${TICKET_WEST} : ${ev.J} EVs (${pv.J.toLocaleString()} votes)<br>
-		${TICKET_G} : ${ev.G} EVs (${pv.G.toLocaleString()} votes)`);
+		${TICKET_D} : ${ev.D} EVs (${pv.D.toLocaleString()} votes - ${round(pv.D / turnout * 100, 2)}%)<br>
+		${TICKET_R} : ${ev.R} EVs (${pv.R.toLocaleString()} votes - ${round(pv.R / turnout * 100, 2)}%)<br>
+		${TICKET_RFK} : ${ev.I} EVs (${pv.I.toLocaleString()} votes - ${round(pv.I / turnout * 100, 2)}%)<br>
+		${TICKET_WEST} : ${ev.J} EVs (${pv.J.toLocaleString()} votes - ${round(pv.J / turnout * 100, 2)}%)<br>
+		${TICKET_G} : ${ev.G} EVs (${pv.G.toLocaleString()} votes - ${round(pv.G / turnout * 100, 2)}%)`);
 		// fancy map
 		this.alertElem(MapElem.table(results));
 		// closest races
@@ -241,9 +246,7 @@ class State {
 		const c = this.polling.actual(x);
 		const R = Math.round(this.pop * c.R * CONST.config.eligibleVoters * CONST.config.turnout);
 		const D = Math.round(this.pop * c.D * CONST.config.eligibleVoters * CONST.config.turnout);
-		// eslint-disable-next-line max-len
 		const RFK = Math.round(this.pop * c.RFK * CONST.config.eligibleVoters * CONST.config.turnout);
-		// eslint-disable-next-line max-len
 		const WEST = Math.round(this.pop * c.WEST * CONST.config.eligibleVoters * CONST.config.turnout);
 		const G = Math.round(this.pop * c.G * CONST.config.eligibleVoters * CONST.config.turnout);
 		const result = [
@@ -292,7 +295,6 @@ class Politician {
 		return 35 < this.age && this.alive;
 	}
 	get html(){
-		// eslint-disable-next-line max-len
 		return `${this.name} (<span class='char_${this.party.abbr}'>${this.party.abbr}</span>-${this.state}
 			${this.age}${this.gender.html})`;
 	}
@@ -349,13 +351,10 @@ function simulation(){
 				CONST.nom_r_vp_candidates.map(x => x[0]),
 				CONST.nom_r_vp_candidates.map(x => x[1])
 			));
-			// eslint-disable-next-line max-len
 			CONST.alert(`${CONST.positions.nom_r_p.html} chose ${CONST.positions.nom_r_vp.html} as VP`);
 		}
 		// remove the speaker
-		// eslint-disable-next-line max-len
 		if (Math.random() < Math.pow(CONST.config.speakerRemovalDailyChance, CONST.config.timestep)){
-			// eslint-disable-next-line max-len
 			CONST.alert(`The house has voted to oust ${CONST.positions.house_speaker.html} from the speaker role.`);
 			CONST.positions.house_speaker = undefined;
 			CONST.checkPositions();
@@ -376,7 +375,6 @@ function main(){
 	// parse data
 	POLITICIANS.forEach(o => new Politician(o));
 	STATES.forEach(o => new State(...o));
-	// eslint-disable-next-line max-len
 	console.info(`election.js loaded ${CONST.politicians.length} politicians and ${CONST.states.length} states.`);
 	// run sim
 	simulation();
