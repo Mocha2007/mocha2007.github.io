@@ -33,6 +33,7 @@ class Polling {
 	}
 }
 Polling.DEFAULT_ERROR = 0.05;
+Polling.DEFAULT_THIRD = [Polling.DEFAULT_ERROR, {rfk: 0.092, west: 0.016}];
 
 // use if graph exists: https://projects.fivethirtyeight.com/polls/president-general/
 // else: https://www.racetothewh.com/president/polls
@@ -42,59 +43,59 @@ Polling.DEFAULT_ERROR = 0.05;
 // ME-1 &c need a few people (I use 10...) so there are actually people who vote
 const STATES = [
 	['AK', 3, new Polling(0.487, 0.26, Polling.DEFAULT_ERROR, {rfk: 0.102, west: 0.01}), 733406, 0], // rttwh
-	['AL', 9, new Polling(0.561, 0.361), 5108468, 0.005], // rttwh
-	['AR', 6, new Polling(0.562, 0.249), 3067732, 0], // rttwh
+	['AL', 9, new Polling(0.561, 0.361, ...Polling.DEFAULT_THIRD), 5108468, 0.005], // rttwh
+	['AR', 6, new Polling(0.562, 0.249, ...Polling.DEFAULT_THIRD), 3067732, 0], // rttwh
 	['AZ', 11, new Polling(0.428, 0.392, 0.03, {rfk: 0.103}), 7431344, 0.001], // 538
 	['CA', 54, new Polling(0.296, 0.503, 0.05, {rfk: 0.109}), 38965193, 0], // 538
-	['CO', 10, new Polling(0.398, 0.467), 5877610, 0.005], // rttwh
-	['CT', 7, new Polling(0.388, 0.499), 3617176, 0.005], // rttwh
-	['DC', 3, new Polling(0.054, 0.9215), 678972, 0], // 2020
-	['DE', 3, new Polling(0.3977, 0.5874), 1031890, 0.005], // 2020
+	['CO', 10, new Polling(0.398, 0.467, ...Polling.DEFAULT_THIRD), 5877610, 0.005], // rttwh
+	['CT', 7, new Polling(0.388, 0.499, ...Polling.DEFAULT_THIRD), 3617176, 0.005], // rttwh
+	['DC', 3, new Polling(0.054, 0.9215, ...Polling.DEFAULT_THIRD), 678972, 0], // 2020
+	['DE', 3, new Polling(0.3977, 0.5874, ...Polling.DEFAULT_THIRD), 1031890, 0.005], // 2020
 	['FL', 30, new Polling(0.462, 0.367, 0.03, {rfk: 0.084}), 22610726, 0.005], // 538
 	['GA', 16, new Polling(0.444, 0.384, 0.03, {rfk: 0.084}), 11029227, 0], // 538
 	['HI', 4, new Polling(0.34, 0.42, Polling.DEFAULT_ERROR, {rfk: 0.08, west: 0.03}), 1435138, 0.0025], // rttwh
-	['IA', 6, new Polling(0.485, 0.363), 3207004, 0], // rttwh
-	['ID', 4, new Polling(0.535, 0.268), 1964726, 0], // rttwh
-	['IL', 19, new Polling(0.335, 0.46), 12549689, 0], // rttwh
-	['IN', 11, new Polling(0.539, 0.344), 6862199, 0], // rttwh
-	['KS', 6, new Polling(0.462, 0.319), 2940546, 0], // rttwh
-	['KY', 8, new Polling(0.55, 0.284), 4526154, 0], // rttwh
+	['IA', 6, new Polling(0.485, 0.363, ...Polling.DEFAULT_THIRD), 3207004, 0], // rttwh
+	['ID', 4, new Polling(0.535, 0.268, ...Polling.DEFAULT_THIRD), 1964726, 0], // rttwh
+	['IL', 19, new Polling(0.335, 0.46, ...Polling.DEFAULT_THIRD), 12549689, 0], // rttwh
+	['IN', 11, new Polling(0.539, 0.344, ...Polling.DEFAULT_THIRD), 6862199, 0], // rttwh
+	['KS', 6, new Polling(0.462, 0.319, ...Polling.DEFAULT_THIRD), 2940546, 0], // rttwh
+	['KY', 8, new Polling(0.55, 0.284, ...Polling.DEFAULT_THIRD), 4526154, 0], // rttwh
 	['LA', 8, new Polling(0.48, 0.33, Polling.DEFAULT_ERROR, {rfk: 0.10, west: 0.02}), 4573749, 0], // rttwh
 	['MA', 11, new Polling(0.274, 0.462, Polling.DEFAULT_ERROR, {rfk: 0.091, west: 0.011}), 7001399, 0], // rttwh
 	['MD', 10, new Polling(0.319, 0.507, Polling.DEFAULT_ERROR, {rfk: 0.066, west: 0.029}), 6180253, 0], // rttwh
-	['ME', 2, new Polling(0.359, 0.472), 1395722, 0], // rttwh
-	['ME-1', 1, new Polling(0.293, 0.407), 10, 0], // rttwh
-	['ME-2', 1, new Polling(0.434, 0.266), 10, 0], // rttwh
+	['ME', 2, new Polling(0.359, 0.472, ...Polling.DEFAULT_THIRD), 1395722, 0], // rttwh
+	['ME-1', 1, new Polling(0.293, 0.407, ...Polling.DEFAULT_THIRD), 10, 0], // rttwh
+	['ME-2', 1, new Polling(0.434, 0.266, ...Polling.DEFAULT_THIRD), 10, 0], // rttwh
 	['MI', 15, new Polling(0.414, 0.408, 0.03, {rfk: 0.092}), 10037261, 0.0002], // 538
-	['MN', 10, new Polling(0.404, 0.443), 5737915, 0], // rttwh
+	['MN', 10, new Polling(0.404, 0.443, ...Polling.DEFAULT_THIRD), 5737915, 0], // rttwh
 	['MO', 10, new Polling(0.499, 0.331, Polling.DEFAULT_ERROR, {rfk: 0.09, west: 0}), 6196156, 0], // rttwh
-	['MS', 6, new Polling(0.545, 0.355), 2939690, 0], // rttwh
+	['MS', 6, new Polling(0.545, 0.355, ...Polling.DEFAULT_THIRD), 2939690, 0], // rttwh
 	['MT', 4, new Polling(0.482, 0.289, Polling.DEFAULT_ERROR, {rfk: 0.08, west: 0.01}), 1132812, 0], // rttwh
 	['NC', 16, new Polling(0.448, 0.385, 0.03, {rfk: 0.091}), 10835491, 0], // 538
-	['ND', 3, new Polling(0.532, 0.179), 783926, 0.01], // rttwh
-	['NE', 2, new Polling(0.573, 0.335), 1978379, 0.01], // rttwh
-	['NE-1', 1, new Polling(0.5601, 0.4109), 10, 0], // 2020
+	['ND', 3, new Polling(0.532, 0.179, ...Polling.DEFAULT_THIRD), 783926, 0.01], // rttwh
+	['NE', 2, new Polling(0.573, 0.335, ...Polling.DEFAULT_THIRD), 1978379, 0.01], // rttwh
+	['NE-1', 1, new Polling(0.5601, 0.4109, ...Polling.DEFAULT_THIRD), 10, 0], // 2020
 	['NE-2', 1, new Polling(0.375, 0.336, Polling.DEFAULT_ERROR, {rfk: 0.09, west: 0.04}), 10, 0], // rttwh
-	['NE-3', 1, new Polling(0.7536, 0.2234), 10, 0], // 2020
+	['NE-3', 1, new Polling(0.7536, 0.2234, ...Polling.DEFAULT_THIRD), 10, 0], // 2020
 	['NH', 4, new Polling(0.385, 0.437, Polling.DEFAULT_ERROR, {rfk: 0.098, west: 0.008}), 1402054, 0], // rttwh
 	['NJ', 14, new Polling(0.35, 0.419, Polling.DEFAULT_ERROR, {rfk: 0.075, west: 0.012}), 9290841, 0], // rttwh
-	['NM', 5, new Polling(0.411, 0.486), 2114371, 0.0025], // rttwh
+	['NM', 5, new Polling(0.411, 0.486, ...Polling.DEFAULT_THIRD), 2114371, 0.0025], // rttwh
 	['NV', 6, new Polling(0.43, 0.36, 0.03, {rfk: 0.116}), 3194176, 0], // 538
 	['NY', 28, new Polling(0.319, 0.42, Polling.DEFAULT_ERROR, {rfk: 0.13, west: 0.057}), 19571216, 0], // rttwh
 	['OH', 17, new Polling(0.453, 0.357, 0.02, {rfk: 0.100}), 11785935, 0.0025], // 538
-	['OK', 7, new Polling(0.577, 0.326), 4053824, 0], // rttwh
+	['OK', 7, new Polling(0.577, 0.326, ...Polling.DEFAULT_THIRD), 4053824, 0], // rttwh
 	['OR', 8, new Polling(0.29, 0.40, Polling.DEFAULT_ERROR, {rfk: 0.19, west: 0.03}), 4233358, 0.002], // rttwh
 	['PA', 19, new Polling(0.429, 0.41, 0.02, {rfk: 0.094}), 12961683, 0.005], // 538
-	['RI', 4, new Polling(0.33, 0.496), 1095962, 0], // rttwh
-	['SC', 9, new Polling(0.513, 0.356), 5373555, 0.01], // rttwh
-	['SD', 3, new Polling(0.544, 0.273), 919318, 0], // rttwh
+	['RI', 4, new Polling(0.33, 0.496, ...Polling.DEFAULT_THIRD), 1095962, 0], // rttwh
+	['SC', 9, new Polling(0.513, 0.356, ...Polling.DEFAULT_THIRD), 5373555, 0.01], // rttwh
+	['SD', 3, new Polling(0.544, 0.273, ...Polling.DEFAULT_THIRD), 919318, 0], // rttwh
 	['TN', 11, new Polling(0.481, 0.264, Polling.DEFAULT_ERROR, {rfk: 0.148, west: 0}), 7126489, 0], // rttwh
 	['TX', 40, new Polling(0.455, 0.355, 0.03, {rfk: 0.126}), 30503301, 0], // 538
 	['UT', 6, new Polling(0.467, 0.234, Polling.DEFAULT_ERROR, {rfk: 0.13, west: 0.01}), 3417734, 0], // rttwh
 	['VA', 13, new Polling(0.358, 0.423, Polling.DEFAULT_ERROR, {rfk: 0.14, west: 0}), 8715698, 0], // rttwh
-	['VT', 3, new Polling(0.284, 0.577), 647464, 0], // rttwh
+	['VT', 3, new Polling(0.284, 0.577, ...Polling.DEFAULT_THIRD), 647464, 0], // rttwh
 	['WA', 12, new Polling(0.386, 0.36, Polling.DEFAULT_ERROR, {rfk: 0.129, west: 0.04}), 7812880, 0.005], // rttwh
 	['WI', 10, new Polling(0.418, 0.405, 0.02, {rfk: 0.095}), 5910955, 0], // 538
-	['WV', 4, new Polling(0.582, 0.239), 1770071, 0], // rttwh
-	['WY', 3, new Polling(0.672, 0.159), 584057, 0.01], // rttwh
+	['WV', 4, new Polling(0.582, 0.239, ...Polling.DEFAULT_THIRD), 1770071, 0], // rttwh
+	['WY', 3, new Polling(0.672, 0.159, ...Polling.DEFAULT_THIRD), 584057, 0.01], // rttwh
 ];
