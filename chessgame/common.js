@@ -45,4 +45,8 @@ class MovementType {
 	static ROOK = new MovementType('R', ['castle_target']);
 	static QUEEN = new MovementType('Q');
 	static KING = new MovementType('yK', ['castle_source']); // ro(y)al
+	// fairy
+	static FERZ = new MovementType('F');
+	static WAZIR = new MovementType('W');
+	static MANN = new MovementType('K');
 }

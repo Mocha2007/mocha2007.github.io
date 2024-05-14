@@ -151,6 +151,11 @@ class PieceType {
 		'N': [1, 2],
 		'W': [0, 1],
 	};
+	// fairy chess
+	// valuations estimated by https://www.reddit.com/r/chessvariants/comments/exltw8/values_of_certain_fairy_pieces_in_normal_chess/fgao6c3/
+	static FERZ = new PieceType('Ferz', 'F', 2, 'f', 'F', MovementType.FERZ);
+	static WAZIR = new PieceType('Wazir', 'W', 2, 'w', 'W', MovementType.WAZIR);
+	static MANN = new PieceType('Wazir', 'M', 4, 'm', 'M', MovementType.MANN);
 }
 
 class Board {
