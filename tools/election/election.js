@@ -5,6 +5,7 @@ const CONST = {
 		deathRate: 1, // x times normal rate of death
 		eligibleVoters: 0.72,
 		forceErrorX: 0, // set to 0.5 to use exact polling data, set to 1 to set max rep win, set to epsilon for max dem win
+		nClosestRaces: 3,
 		recountMargin: 0.01, // todo
 		speakerRemovalDailyChance: 0.001,
 		turnout: 0.66,
@@ -113,14 +114,12 @@ const CONST = {
 		const pollingError = this.config.forceErrorX || Math.random();
 		this.states.forEach(state => {
 			const result = state.results(pollingError);
-			if (result.D < result.R){
+			const winner = result.D < result.R ? 'R' : 'D';
+			if (winner === 'R')
 				r += state.ev;
-				results.push([state.name, 'R', state.swing]);
-			}
-			else {
+			else
 				d += state.ev;
-				results.push([state.name, 'D', state.swing]);
-			}
+			results.push([state.name, winner, state.swing, result.margin]);
 			// popular vote tally
 			d_pop += result.D;
 			r_pop += result.R;
@@ -135,6 +134,11 @@ const CONST = {
 		${TICKET_R} : ${r} EVs (${r_pop.toLocaleString()} votes)`);
 		// fancy map
 		this.alertElem(MapElem.table(results));
+		// closest races
+		this.alert(`${this.config.nClosestRaces} closest races:`);
+		results.sort((a, b) => Math.abs(a[3]) - Math.abs(b[3]));
+		for (let i = 0; i < this.config.nClosestRaces; i++)
+			this.alert(`(${i+1}) ${results[i][0]} - ${round(results[i][3] * 100, 2)}%`);
 		// winner declaration / tie
 		// tie?
 		if (d === r)
@@ -210,8 +214,9 @@ class State {
 		const R = Math.round(this.pop * c.R * CONST.config.eligibleVoters * CONST.config.turnout);
 		const D = Math.round(this.pop * c.D * CONST.config.eligibleVoters * CONST.config.turnout);
 		const sum = R + D;
-		const recount = Math.abs((R - D) / sum) < this.recountMargin;
-		return {R, D, sum, recount};
+		const margin = c.R - c.D;
+		const recount = Math.abs(margin) < this.recountMargin;
+		return {R, D, sum, recount, margin};
 	}
 }
 
