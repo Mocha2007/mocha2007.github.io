@@ -13,6 +13,11 @@
 	font-weight: bold;
 }
 
+.char_G {
+	color: green;
+	font-weight: bold;
+}
+
 .char_I {
 	color: olive;
 	font-weight: bold;
@@ -20,6 +25,11 @@
 
 .char_J {
 	color: brown;
+	font-weight: bold;
+}
+
+.char_L {
+	color: yellow;
 	font-weight: bold;
 }
 

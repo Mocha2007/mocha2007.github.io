@@ -73,12 +73,19 @@ const CONST = {
 		nom_west_p: undefined,
 		/** @type {Politician} */
 		nom_west_vp: undefined,
+		/** @type {Politician} */
+		nom_g_p: undefined,
+		/** @type {Politician} */
+		nom_g_vp: undefined,
 	},
 	position_backups: {
 		president: () => ({x: CONST.positions.vice_president, y: 'vice_president'}),
 		nom_p: () => ({x: CONST.positions.nom_vp, y: 'nom_vp'}),
 		nom_d_p: () => ({x: CONST.positions.nom_d_vp, y: 'nom_d_vp'}), // it's a fair guess
 		nom_r_p: () => ({x: CONST.positions.nom_r_vp, y: 'nom_r_vp'}), // it's a fair guess
+		nom_rfk_p: () => ({x: CONST.positions.nom_rfk_vp, y: 'nom_rfk_vp'}), // it's a fair guess
+		nom_west_p: () => ({x: CONST.positions.nom_west_vp, y: 'nom_west_vp'}), // it's a fair guess
+		nom_g_p: () => ({x: CONST.positions.nom_g_vp, y: 'nom_g_vp'}), // it's a fair guess
 		// VP: alive, same party, must be from different state than pres candidate (which also prevents the pres from also becoming veep)
 		nom_d_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
 			&& p.party === Party.DEMOCRATIC && p.state !== CONST.positions.nom_d_p.state))}),
@@ -120,11 +127,13 @@ const CONST = {
 		let r_pop = 0;
 		let rfk_pop = 0;
 		let west_pop = 0;
+		let g_pop = 0;
 		const TICKET_D = `${this.positions.nom_d_p.html} / ${this.positions.nom_d_vp.html}`;
 		const TICKET_R = `${this.positions.nom_r_p.html} / ${this.positions.nom_r_vp.html}`;
 		const TICKET_RFK = `${this.positions.nom_rfk_p.html} / ${this.positions.nom_rfk_vp.html}`;
 		// eslint-disable-next-line max-len
 		const TICKET_WEST = `${this.positions.nom_west_p.html} / ${this.positions.nom_west_vp.html}`;
+		const TICKET_G = `${this.positions.nom_g_p.html} / ${this.positions.nom_g_vp.html}`;
 		const results = [];
 		const pollingError = this.config.forceErrorX
 			|| random.uniform(CONST.config.errorFuzzing, 1 - CONST.config.errorFuzzing);
@@ -142,6 +151,7 @@ const CONST = {
 			r_pop += result.R;
 			rfk_pop += result.RFK;
 			west_pop += result.WEST;
+			g_pop += result.G;
 			// recount
 			if (result.recount)
 				this.alert(`The margin in ${state.name} was close enough to warrant a recount
@@ -152,7 +162,8 @@ const CONST = {
 		${TICKET_D} : ${d} EVs (${d_pop.toLocaleString()} votes)<br>
 		${TICKET_R} : ${r} EVs (${r_pop.toLocaleString()} votes)<br>
 		${TICKET_RFK} : 0 EVs (${rfk_pop.toLocaleString()} votes)<br>
-		${TICKET_WEST} : 0 EVs (${west_pop.toLocaleString()} votes)`);
+		${TICKET_WEST} : 0 EVs (${west_pop.toLocaleString()} votes)<br>
+		${TICKET_G} : 0 EVs (${g_pop.toLocaleString()} votes)`);
 		// fancy map
 		this.alertElem(MapElem.table(results));
 		// closest races
@@ -238,10 +249,11 @@ class State {
 		const RFK = Math.round(this.pop * c.RFK * CONST.config.eligibleVoters * CONST.config.turnout);
 		// eslint-disable-next-line max-len
 		const WEST = Math.round(this.pop * c.WEST * CONST.config.eligibleVoters * CONST.config.turnout);
-		const sum = R + D + RFK;
+		const G = Math.round(this.pop * c.G * CONST.config.eligibleVoters * CONST.config.turnout);
+		const sum = R + D + RFK + WEST + G;
 		const margin = c.R - c.D;
 		const recount = Math.abs(margin) < this.recountMargin;
-		return {R, D, sum, recount, margin, RFK, WEST};
+		return {R, D, sum, recount, margin, RFK, WEST, G};
 	}
 }
 
@@ -317,6 +329,8 @@ function simulation(){
 	CONST.positions.nom_rfk_vp = Politician.fromName('Nicole Shanahan');
 	CONST.positions.nom_west_p = Politician.fromName('Cornel West');
 	CONST.positions.nom_west_vp = Politician.fromName('Melina Abdullah');
+	CONST.positions.nom_g_p = Politician.fromName('Jill Stein');
+	CONST.positions.nom_g_vp = Politician.fromName('Jasmine Sherman'); // placeholder
 	// start!
 	CONST.alert('Super Tuesday');
 	while (CONST.date < CONST.dates.inauguration){

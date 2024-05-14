@@ -60,6 +60,23 @@ const POLITICIANS = [
 		position: Position.NONE,
 		state: 'CA',
 	},
+	// Green
+	{
+		name: 'Jill Stein',
+		dob: new Date(1950, 4, 14),
+		gender: Gender.FEMALE,
+		party: Party.GREEN,
+		position: Position.NONE,
+		state: 'MA',
+	},
+	{
+		name: 'Jasmine Sherman',
+		dob: new Date(1980, 0),
+		gender: Gender.FEMALE,
+		party: Party.GREEN,
+		position: Position.NONE,
+		state: 'NC',
+	},
 	// Trump VP picks
 	{
 		name: 'Tim Scott',

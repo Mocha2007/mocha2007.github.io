@@ -21,19 +21,21 @@ class Polling {
 		const D_ = this.d - error;
 		const RFK_ = (this.other.rfk || 0) + random.uniform(-this.e('rfk'), this.e('rfk'));
 		const WEST_ = (this.other.west || 0) + random.uniform(-this.e('west'), this.e('west'));
-		const sum = R_ + D_ + RFK_ + WEST_;
+		const G_ = (this.other.g || 0) + random.uniform(-this.e('g'), this.e('g'));
+		const sum = R_ + D_ + RFK_ + WEST_ + G_;
 		const R = R_ / sum;
 		const D = D_ / sum;
 		const RFK = RFK_ / sum;
 		const WEST = WEST_ / sum;
-		return {R, D, RFK, WEST};
+		const G = G_ / sum;
+		return {R, D, RFK, WEST, G};
 	}
 	e(candidate){
 		return (this.other[candidate] || 0) * this.error / 0.5;
 	}
 }
 Polling.DEFAULT_ERROR = 0.05;
-Polling.DEFAULT_THIRD = [Polling.DEFAULT_ERROR, {rfk: 0.092, west: 0.016}];
+Polling.DEFAULT_THIRD = [Polling.DEFAULT_ERROR, {rfk: 0.092, west: 0.016, g: 0.012}];
 
 // use if graph exists: https://projects.fivethirtyeight.com/polls/president-general/
 // else: https://www.racetothewh.com/president/polls
