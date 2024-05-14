@@ -1,5 +1,5 @@
 /* exported STATES */
-/* global random */
+/* global CONST, random */
 
 class Polling {
 	constructor(r = 0.5, d = 0.5, error = Polling.DEFAULT_ERROR, other = {}){
@@ -19,9 +19,9 @@ class Polling {
 		const error = 2 * (x - 0.5) * this.error;
 		const R_ = this.r + error;
 		const D_ = this.d - error;
-		const RFK_ = (this.other.rfk || 0) + random.uniform(-this.e('rfk'), this.e('rfk'));
-		const WEST_ = (this.other.west || 0) + random.uniform(-this.e('west'), this.e('west'));
-		const G_ = (this.other.g || 0) + random.uniform(-this.e('g'), this.e('g'));
+		const RFK_ = this.v('rfk') + random.uniform(-this.e('rfk'), this.e('rfk'));
+		const WEST_ = this.v('west') + random.uniform(-this.e('west'), this.e('west'));
+		const G_ = this.v('g') + random.uniform(-this.e('g'), this.e('g'));
 		const sum = R_ + D_ + RFK_ + WEST_ + G_;
 		const R = R_ / sum;
 		const D = D_ / sum;
@@ -31,7 +31,10 @@ class Polling {
 		return {R, D, RFK, WEST, G};
 	}
 	e(candidate){
-		return (this.other[candidate] || 0) * this.error / 0.5;
+		return this.v(candidate) * this.error / 0.5;
+	}
+	v(candidate){
+		return (this.other[candidate] || 0) * CONST.config.thirdPartyBuff;
 	}
 }
 Polling.DEFAULT_ERROR = 0.05;

@@ -10,6 +10,7 @@ const CONST = {
 		nClosestRaces: 3,
 		recountMargin: 0.01, // todo
 		speakerRemovalDailyChance: 0.001,
+		thirdPartyBuff: 1, // 1 = no change. 0 = no third party votes. 2 = double votes.
 		timestep: 1, // days
 		turnout: 0.66,
 	},
