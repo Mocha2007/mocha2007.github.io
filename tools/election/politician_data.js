@@ -26,6 +26,23 @@ const POLITICIANS = [
 		position: Position.VICE_PRESIDENT,
 		state: 'CA',
 	},
+	// RFK
+	{
+		name: 'Robert Kennedy',
+		dob: new Date(1954, 0, 17),
+		gender: Gender.MALE,
+		party: Party.INDEPENDENT,
+		position: Position.NONE,
+		state: 'CA',
+	},
+	{
+		name: 'Nicole Shanahan',
+		dob: new Date(1985, 8, 26),
+		gender: Gender.FEMALE,
+		party: Party.INDEPENDENT,
+		position: Position.NONE,
+		state: 'CA',
+	},
 	// Trump VP picks
 	{
 		name: 'Tim Scott',

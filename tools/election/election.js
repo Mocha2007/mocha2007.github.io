@@ -65,6 +65,10 @@ const CONST = {
 		nom_r_p: undefined,
 		/** @type {Politician} */
 		nom_r_vp: undefined,
+		/** @type {Politician} */
+		nom_rfk_p: undefined,
+		/** @type {Politician} */
+		nom_rfk_vp: undefined,
 	},
 	position_backups: {
 		president: () => ({x: CONST.positions.vice_president, y: 'vice_president'}),
@@ -110,8 +114,10 @@ const CONST = {
 		let r = 0;
 		let d_pop = 0;
 		let r_pop = 0;
+		let rfk_pop = 0;
 		const TICKET_D = `${this.positions.nom_d_p.html} / ${this.positions.nom_d_vp.html}`;
 		const TICKET_R = `${this.positions.nom_r_p.html} / ${this.positions.nom_r_vp.html}`;
+		const TICKET_RFK = `${this.positions.nom_rfk_p.html} / ${this.positions.nom_rfk_vp.html}`;
 		const results = [];
 		const pollingError = this.config.forceErrorX
 			|| random.uniform(CONST.config.errorFuzzing, 1 - CONST.config.errorFuzzing);
@@ -127,6 +133,7 @@ const CONST = {
 			// popular vote tally
 			d_pop += result.D;
 			r_pop += result.R;
+			rfk_pop += result.RFK;
 			// recount
 			if (result.recount)
 				this.alert(`The margin in ${state.name} was close enough to warrant a recount
@@ -135,7 +142,8 @@ const CONST = {
 		});
 		this.alert(`<br>ELECTION RESULTS:<br>
 		${TICKET_D} : ${d} EVs (${d_pop.toLocaleString()} votes)<br>
-		${TICKET_R} : ${r} EVs (${r_pop.toLocaleString()} votes)`);
+		${TICKET_R} : ${r} EVs (${r_pop.toLocaleString()} votes)<br>
+		${TICKET_RFK} : 0 EVs (${rfk_pop.toLocaleString()} votes)`);
 		// fancy map
 		this.alertElem(MapElem.table(results));
 		// closest races
@@ -217,10 +225,12 @@ class State {
 		const c = this.polling.actual(x);
 		const R = Math.round(this.pop * c.R * CONST.config.eligibleVoters * CONST.config.turnout);
 		const D = Math.round(this.pop * c.D * CONST.config.eligibleVoters * CONST.config.turnout);
-		const sum = R + D;
+		// eslint-disable-next-line max-len
+		const RFK = Math.round(this.pop * c.RFK * CONST.config.eligibleVoters * CONST.config.turnout);
+		const sum = R + D + RFK;
 		const margin = c.R - c.D;
 		const recount = Math.abs(margin) < this.recountMargin;
-		return {R, D, sum, recount, margin};
+		return {R, D, sum, recount, margin, RFK};
 	}
 }
 
@@ -285,6 +295,8 @@ function simulation(){
 	// set prez, vp, speaker
 	CONST.positions.nom_d_p = CONST.positions.president = Politician.fromName('Joe Biden');
 	CONST.positions.nom_d_vp = CONST.positions.vice_president = Politician.fromName('Kamala Harris');
+	CONST.positions.nom_rfk_p = Politician.fromName('Robert Kennedy');
+	CONST.positions.nom_rfk_vp = Politician.fromName('Nicole Shanahan');
 	CONST.positions.house_speaker = Politician.fromName('Mike Johnson');
 	CONST.positions.nom_r_p = Politician.fromName('Donald Trump');
 	// trump veep choice - random day in July or August
