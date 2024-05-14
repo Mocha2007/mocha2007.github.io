@@ -19,6 +19,7 @@ class Party {
 	static REPUBLICAN = new Party('Republican');
 	static LIBERTARIAN = new Party('Libertarian');
 	static GREEN = new Party('Green');
+	static JFA = new Party('Justice For All');
 }
 
 class Position {

@@ -43,6 +43,23 @@ const POLITICIANS = [
 		position: Position.NONE,
 		state: 'CA',
 	},
+	// West
+	{
+		name: 'Cornel West',
+		dob: new Date(1953, 5, 2),
+		gender: Gender.MALE,
+		party: Party.JFA,
+		position: Position.NONE,
+		state: 'CA',
+	},
+	{
+		name: 'Melina Abdullah',
+		dob: new Date(1972, 0),
+		gender: Gender.FEMALE,
+		party: Party.JFA,
+		position: Position.NONE,
+		state: 'CA',
+	},
 	// Trump VP picks
 	{
 		name: 'Tim Scott',
