@@ -40,6 +40,7 @@ class Polling {
 Polling.DEFAULT_ERROR = 0.05;
 // https://www.realclearpolling.com/polls/president/general/2024/trump-vs-biden-vs-kennedy-vs-west-vs-stein
 Polling.DEFAULT_THIRD = [Polling.DEFAULT_ERROR, {rfk: 0.108, west: 0.02, g: 0.015}];
+Polling.DISTRICT = 100;
 
 // use if graph exists: https://projects.fivethirtyeight.com/polls/president-general/
 // else: https://www.racetothewh.com/president/polls
@@ -70,8 +71,8 @@ const STATES = [
 	['MA', 11, new Polling(0.274, 0.462, Polling.DEFAULT_ERROR, {rfk: 0.091, west: 0.011}), 7001399, 0], // rttwh
 	['MD', 10, new Polling(0.319, 0.507, Polling.DEFAULT_ERROR, {rfk: 0.066, west: 0.029}), 6180253, 0], // rttwh
 	['ME', 2, new Polling(0.359, 0.472, ...Polling.DEFAULT_THIRD), 1395722, 0], // rttwh
-	['ME-1', 1, new Polling(0.293, 0.407, ...Polling.DEFAULT_THIRD), 10, 0], // rttwh
-	['ME-2', 1, new Polling(0.434, 0.266, ...Polling.DEFAULT_THIRD), 10, 0], // rttwh
+	['ME-1', 1, new Polling(0.293, 0.407, ...Polling.DEFAULT_THIRD), Polling.DISTRICT, 0], // rttwh
+	['ME-2', 1, new Polling(0.434, 0.266, ...Polling.DEFAULT_THIRD), Polling.DISTRICT, 0], // rttwh
 	['MI', 15, new Polling(0.414, 0.408, 0.03, {rfk: 0.092}), 10037261, 0.0002], // 538
 	['MN', 10, new Polling(0.404, 0.443, ...Polling.DEFAULT_THIRD), 5737915, 0], // rttwh
 	['MO', 10, new Polling(0.499, 0.331, Polling.DEFAULT_ERROR, {rfk: 0.09, west: 0}), 6196156, 0], // rttwh
@@ -80,9 +81,9 @@ const STATES = [
 	['NC', 16, new Polling(0.448, 0.385, 0.03, {rfk: 0.091}), 10835491, 0], // 538
 	['ND', 3, new Polling(0.532, 0.179, ...Polling.DEFAULT_THIRD), 783926, 0.01], // rttwh
 	['NE', 2, new Polling(0.573, 0.335, ...Polling.DEFAULT_THIRD), 1978379, 0.01], // rttwh
-	['NE-1', 1, new Polling(0.5601, 0.4109, ...Polling.DEFAULT_THIRD), 10, 0], // 2020
-	['NE-2', 1, new Polling(0.375, 0.336, Polling.DEFAULT_ERROR, {rfk: 0.09, west: 0.04}), 10, 0], // rttwh
-	['NE-3', 1, new Polling(0.7536, 0.2234, ...Polling.DEFAULT_THIRD), 10, 0], // 2020
+	['NE-1', 1, new Polling(0.5601, 0.4109, ...Polling.DEFAULT_THIRD), Polling.DISTRICT, 0], // 2020
+	['NE-2', 1, new Polling(0.375, 0.336, Polling.DEFAULT_ERROR, {rfk: 0.09, west: 0.04}), Polling.DISTRICT, 0], // rttwh
+	['NE-3', 1, new Polling(0.7536, 0.2234, ...Polling.DEFAULT_THIRD), Polling.DISTRICT, 0], // 2020
 	['NH', 4, new Polling(0.385, 0.437, Polling.DEFAULT_ERROR, {rfk: 0.098, west: 0.008}), 1402054, 0], // rttwh
 	['NJ', 14, new Polling(0.35, 0.419, Polling.DEFAULT_ERROR, {rfk: 0.075, west: 0.012}), 9290841, 0], // rttwh
 	['NM', 5, new Polling(0.411, 0.486, ...Polling.DEFAULT_THIRD), 2114371, 0.0025], // rttwh

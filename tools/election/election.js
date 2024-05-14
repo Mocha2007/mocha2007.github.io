@@ -1,4 +1,4 @@
-/* global ACTUARIAL_TABLE, MapElem, Party, POLITICIANS, Position, random, round, STATES */
+/* global ACTUARIAL_TABLE, MapElem, Party, POLITICIANS, Position, random, round, STATES, sum */
 
 const CONST = {
 	config: {
@@ -122,13 +122,8 @@ const CONST = {
 	},
 	holdElection(){
 		this.flags.election_held = true;
-		let d = 0;
-		let r = 0;
-		let d_pop = 0;
-		let r_pop = 0;
-		let rfk_pop = 0;
-		let west_pop = 0;
-		let g_pop = 0;
+		const ev = {D: 0, R: 0, I: 0, J: 0, G: 0};
+		const pv = {D: 0, R: 0, I: 0, J: 0, G: 0};
 		const TICKET_D = `${this.positions.nom_d_p.html} / ${this.positions.nom_d_vp.html}`;
 		const TICKET_R = `${this.positions.nom_r_p.html} / ${this.positions.nom_r_vp.html}`;
 		const TICKET_RFK = `${this.positions.nom_rfk_p.html} / ${this.positions.nom_rfk_vp.html}`;
@@ -141,18 +136,10 @@ const CONST = {
 		this.states.forEach(state => {
 			const result = state.results(pollingError
 				+ random.uniform(-CONST.config.errorFuzzing, CONST.config.errorFuzzing));
-			const winner = result.D < result.R ? 'R' : 'D';
-			if (winner === 'R')
-				r += state.ev;
-			else
-				d += state.ev;
-			results.push([state.name, winner, state.swing, result.margin]);
+			ev[result.winner.abbr] += state.ev;
+			results.push([state.name, result.winner.abbr, state.swing, result.margin]);
 			// popular vote tally
-			d_pop += result.D;
-			r_pop += result.R;
-			rfk_pop += result.RFK;
-			west_pop += result.WEST;
-			g_pop += result.G;
+			'DRIJG'.split('').forEach(p => pv[p] += result.result.find(x => x[0].abbr === p)[1]);
 			// recount
 			if (result.recount)
 				this.alert(`The margin in ${state.name} was close enough to warrant a recount
@@ -160,11 +147,11 @@ const CONST = {
 			final results will be delayed for a few weeks.`);
 		});
 		this.alert(`<br>ELECTION RESULTS:<br>
-		${TICKET_D} : ${d} EVs (${d_pop.toLocaleString()} votes)<br>
-		${TICKET_R} : ${r} EVs (${r_pop.toLocaleString()} votes)<br>
-		${TICKET_RFK} : 0 EVs (${rfk_pop.toLocaleString()} votes)<br>
-		${TICKET_WEST} : 0 EVs (${west_pop.toLocaleString()} votes)<br>
-		${TICKET_G} : 0 EVs (${g_pop.toLocaleString()} votes)`);
+		${TICKET_D} : ${ev.D} EVs (${pv.D.toLocaleString()} votes)<br>
+		${TICKET_R} : ${ev.R} EVs (${pv.R.toLocaleString()} votes)<br>
+		${TICKET_RFK} : ${ev.I} EVs (${pv.I.toLocaleString()} votes)<br>
+		${TICKET_WEST} : ${ev.J} EVs (${pv.J.toLocaleString()} votes)<br>
+		${TICKET_G} : ${ev.G} EVs (${pv.G.toLocaleString()} votes)`);
 		// fancy map
 		this.alertElem(MapElem.table(results));
 		// closest races
@@ -174,9 +161,9 @@ const CONST = {
 			this.alert(`(${i+1}) ${results[i][0]} - ${round(results[i][3] * 100, 2)}%`);
 		// winner declaration / tie
 		// tie?
-		if (d === r)
+		if (ev.D === ev.R) // todo ALL parties!
 			this.evTie();
-		else if (r < d){
+		else if (ev.R < ev.D){
 			this.alert(`${TICKET_D.replace(' / ', ' and ')} win!`);
 			this.positions.nom_p = this.positions.nom_d_p;
 			this.positions.nom_vp = this.positions.nom_d_vp;
@@ -251,10 +238,19 @@ class State {
 		// eslint-disable-next-line max-len
 		const WEST = Math.round(this.pop * c.WEST * CONST.config.eligibleVoters * CONST.config.turnout);
 		const G = Math.round(this.pop * c.G * CONST.config.eligibleVoters * CONST.config.turnout);
-		const sum = R + D + RFK + WEST + G;
-		const margin = c.R - c.D;
+		const result = [
+			[Party.REPUBLICAN, R],
+			[Party.DEMOCRATIC, D],
+			[Party.INDEPENDENT, RFK],
+			[Party.JFA, WEST],
+			[Party.GREEN, G],
+		];
+		result.sort((a, b) => b[1] - a[1]);
+		/** @type {Party} */
+		const winner = result[0][0];
+		const margin = (result[0][1] - result[1][1]) / sum(result.map(a => a[1]));
 		const recount = Math.abs(margin) < this.recountMargin;
-		return {R, D, sum, recount, margin, RFK, WEST, G};
+		return {result, winner, margin, recount};
 	}
 }
 
