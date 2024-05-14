@@ -49,4 +49,5 @@ class MovementType {
 	static FERZ = new MovementType('F');
 	static WAZIR = new MovementType('W');
 	static MANN = new MovementType('K');
+	static AMAZON = new MovementType('QN');
 }
