@@ -233,6 +233,7 @@ const CONST = {
 	debug(n = 1000, use_debug = true){
 		this.debug_mode = use_debug;
 		const outcomes = [];
+		const START = new Date();
 		for (let i = 0; i < n; i++){
 			try {
 				const o = simulation();
@@ -245,6 +246,8 @@ const CONST = {
 				console.error(e);
 			}
 		}
+		const t = new Date() - START;
+		console.debug(`T = ${t/1000} s; ${t/n} ms avg.`);
 		this.debug_mode = false;
 		return outcomes.join('\n');
 	},
