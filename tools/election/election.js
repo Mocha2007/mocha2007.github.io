@@ -234,10 +234,16 @@ const CONST = {
 		this.debug_mode = use_debug;
 		const outcomes = [];
 		for (let i = 0; i < n; i++){
-			const o = simulation();
-			const p = o.p ? o.p.name : '';
-			const vp = o.vp ? o.vp.name : '';
-			outcomes.push(`${p}\t${vp}`);
+			try {
+				const o = simulation();
+				const p = o.p ? o.p.name : '';
+				const vp = o.vp ? o.vp.name : '';
+				outcomes.push(`${p}\t${vp}`);
+			}
+			catch (e){
+				i--; // ignore this attempt
+				console.error(e);
+			}
 		}
 		this.debug_mode = false;
 		return outcomes.join('\n');
