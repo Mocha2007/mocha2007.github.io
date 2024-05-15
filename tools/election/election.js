@@ -100,6 +100,12 @@ const CONST = {
 			&& p.party === Party.DEMOCRATIC && p.state !== CONST.positions.nom_d_p.state))}),
 		nom_r_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
 			&& p.party === Party.REPUBLICAN && p.state !== CONST.positions.nom_r_p.state))}),
+		nom_rfk_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
+			&& p.party === Party.INDEPENDENT && p.state !== CONST.positions.nom_rfk_p.state))}),
+		nom_west_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
+			&& p.party === Party.JFA && p.state !== CONST.positions.nom_west_p.state))}),
+		nom_g_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
+			&& p.party === Party.GREEN && p.state !== CONST.positions.nom_g_p.state))}),
 	},
 	/** @type {State[]} */
 	states: [],

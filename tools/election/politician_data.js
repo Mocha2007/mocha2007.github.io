@@ -208,4 +208,29 @@ const POLITICIANS = [
 		position: Position.SENATOR,
 		state: 'MA',
 	},
+	// minor backups
+	{
+		name: 'Tulsi Gabbard',
+		dob: new Date(1981, 3, 12),
+		gender: Gender.FEMALE,
+		party: Party.INDEPENDENT,
+		position: Position.NONE,
+		state: 'HI',
+	},
+	{
+		name: 'Peter Daou',
+		dob: new Date(1965, 0),
+		gender: Gender.MALE,
+		party: Party.JFA,
+		position: Position.NONE,
+		state: 'NY',
+	},
+	{
+		name: 'Tanda Blubear',
+		dob: new Date(1980, 0), // guess
+		gender: Gender.FEMALE,
+		party: Party.GREEN,
+		position: Position.NONE,
+		state: 'CA',
+	},
 ];
