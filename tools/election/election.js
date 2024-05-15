@@ -147,11 +147,12 @@ const CONST = {
 			ev[result.winner.abbr] += state.ev;
 			results.push([state, result]);
 			// popular vote tally
-			'DRIJG'.split('').forEach(p => {
-				const v = result.result.find(x => x[0].abbr === p)[1];
-				pv[p] += v;
-				turnout += v;
-			});
+			if (!state.votesDontCount)
+				'DRIJG'.split('').forEach(p => {
+					const v = result.result.find(x => x[0].abbr === p)[1];
+					pv[p] += v;
+					turnout += v;
+				});
 			// recount
 			if (result.recount)
 				this.alert(`The margin in ${state.name} was close enough to warrant a recount
@@ -245,6 +246,10 @@ class State {
 		this.pop = pop;
 		this.recountMargin = recountMargin;
 		CONST.states.push(this);
+	}
+	/** prevents double-counting of districts in popular vote totals */
+	get votesDontCount(){
+		return 2 < this.name.length;
 	}
 	get swing(){
 		return Math.abs(this.polling.r - this.polling.d) < 0.1;
