@@ -27,14 +27,21 @@ class MapElem {
 				const s = this.stateFromCoords({X: j, Y: i});
 				if (!s)
 					continue;
-				td.innerHTML = td.title = s;
+				td.innerHTML = s;
 				td.id = `map_cell_${s}`;
 				// if results exists, try to find it!
 				let index;
 				if (results.find((datum, ii) => datum[0].name === s && 0 <= (index = ii))){
-					td.classList.add(`party_${results[index][1].winner.abbr}`);
-					if (results[index][0].swing)
+					/** @type {[State, *]} */
+					const [state, result] = results[index];
+					td.classList.add(`party_${result.winner.abbr}`);
+					if (state.swing)
 						td.classList.add('swing');
+					// detailed results...
+					td.title = [
+						`${state.name} (${state.ev} EVs)`,
+						...result.result.map(line => `${line[0].name} - ${line[1].toLocaleString()}`)
+					].join('\n');
 				}
 				// debugger;
 			}
