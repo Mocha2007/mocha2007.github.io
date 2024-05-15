@@ -40,7 +40,7 @@ class MapElem {
 					// detailed results...
 					td.title = [
 						`${state.name} (${state.ev} EVs)`,
-						...result.result.map(line => `${line[0].name} - ${line[1].toLocaleString()}`)
+						...result.result.map((line, i) => `${line[0].name} - ${line[1].toLocaleString()} (${round(result.resultP[i][1] * 100, 2)}%)`)
 					].join('\n');
 				}
 				// debugger;

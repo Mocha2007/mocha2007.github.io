@@ -271,11 +271,13 @@ class State {
 			[Party.GREEN, G],
 		];
 		result.sort((a, b) => b[1] - a[1]);
+		const total = sum(result.map(a => a[1]));
+		const resultP = result.map(a => [a[0], a[1] / total]);
 		/** @type {Party} */
 		const winner = result[0][0];
 		const margin = (result[0][1] - result[1][1]) / sum(result.map(a => a[1]));
 		const recount = Math.abs(margin) < this.recountMargin;
-		return {result, winner, margin, recount};
+		return {result, winner, margin, recount, total, resultP};
 	}
 }
 
