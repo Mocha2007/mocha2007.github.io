@@ -9,6 +9,10 @@ body, html{
 ul{
 	list-style: none;
 }
+.piece_icon {
+	height: 5vw;
+	width: 5vw;
+}
 .blackSquare, .dataSquare, .move, .whiteSquare{
 	align-items: center;
 	display: flex;

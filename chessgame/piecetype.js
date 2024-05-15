@@ -147,10 +147,28 @@ class PieceType {
 	};
 	// fairy chess
 	// valuations estimated by https://www.reddit.com/r/chessvariants/comments/exltw8/values_of_certain_fairy_pieces_in_normal_chess/fgao6c3/
-	static FERZ = new PieceType('Ferz', 'F', 2, 'f', 'F', MovementType.FERZ);
-	static WAZIR = new PieceType('Wazir', 'W', 2, 'w', 'W', MovementType.WAZIR);
-	static MANN = new PieceType('Mann', 'M', 4, 'm', 'M', MovementType.MANN);
-	static AMAZON = new PieceType('Amazon', 'A', 11, 'a', 'A', MovementType.AMAZON);
+	static FERZ = new PieceType('Ferz', 'F', 2, new Icon('24', {
+		dl: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Chess_Bdl45.svg',
+		dd: 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Chess_Bdd45.svg',
+		ll: 'https://upload.wikimedia.org/wikipedia/commons/f/f0/Chess_Bll45.svg',
+		ld: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Chess_Bld45.svg',
+	}), MovementType.FERZ);
+	static WAZIR = new PieceType('Wazir', 'W', 2, new Icon('24', {
+		dl: 'https://upload.wikimedia.org/wikipedia/commons/3/35/Chess_mdl45.svg',
+		dd: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/Chess_mdd45.svg',
+		ll: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Chess_mll45.svg',
+		ld: 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Chess_mld45.svg',
+	}), MovementType.WAZIR);
+	static MANN = new PieceType('Mann', 'M', 4, new Icon('24', {
+		dl: 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Chess_fdl45.svg',
+		dd: 'https://upload.wikimedia.org/wikipedia/commons/d/df/Chess_fdd45.svg',
+		ll: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Chess_fll45.svg',
+		ld: 'https://upload.wikimedia.org/wikipedia/commons/6/6f/Chess_fld45.svg',
+	}), MovementType.MANN);
+	static AMAZON = new PieceType('Amazon', 'A', 11, new Icon('32', {
+		white: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Chess_Alt26.svg',
+		black: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Chess_Adt26.svg',
+	}), MovementType.AMAZON);
 }
 
 class Board {
