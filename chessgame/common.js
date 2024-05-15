@@ -1,4 +1,4 @@
-/* exported Color, Coords */
+/* exported Color, Coords, Icon, MovementType */
 
 class Color {
 	constructor(id, name){
@@ -50,4 +50,62 @@ class MovementType {
 	static WAZIR = new MovementType('W');
 	static MANN = new MovementType('K');
 	static AMAZON = new MovementType('QN');
+}
+
+class Icon {
+	/**
+	 * @param {string} type 
+	 * @param {*} data a character if "char"; else {white, black} if '32' else {dl, dd, ll, ld} if '24'
+	 */
+	constructor(type, data){
+		this.type = type;
+		this.data = data;
+	}
+	/**
+	 * @param {Color} color color of the piece
+	 * @param {Color} bg color of the square
+	 */
+	elem(color, bg){
+		switch (this.type){
+			case '24':
+				return this._24(color, bg);
+			case '32':
+				return this._32(color);
+			case 'char':
+				return this.char(color);
+			default:
+				throw new Error('invalid Icon.type');
+		}
+	}
+	/**
+	 * @param {Color} color color of the piece
+	 * @param {Color} bg color of the square
+	 */
+	_24(color, bg){
+		const e = document.createElement('img');
+		e.src = this.data[`${color === Color.WHITE ? 'l' : 'd'}${bg === Color.WHITE ? 'l' : 'd'}`];
+		e.classList.add('piece_icon');
+		return e;
+	}
+	/** @param {Color} color color of the piece */
+	_32(color){
+		const e = document.createElement('img');
+		e.src = this.data[color === Color.WHITE ? 'white' : 'black'];
+		e.classList.add('piece_icon');
+		return e;
+	}
+	/** @param {Color} color color of the piece */
+	char(color){
+		const e = document.createElement('span');
+		e.innerHTML = this.data[color === Color.WHITE ? 'white' : 'black'];
+		e.classList.add('piece_icon');
+		return e;
+	}
+	// std icons
+	static PAWN = new Icon('char', {black: '♟', white: '♙'});
+	static KNIGHT = new Icon('char', {black: '♞', white: '♘'});
+	static BISHOP = new Icon('char', {black: '♝', white: '♗'});
+	static ROOK = new Icon('char', {black: '♜', white: '♖'});
+	static QUEEN = new Icon('char', {black: '♛', white: '♕'});
+	static KING = new Icon('char', {black: '♚', white: '♔'});
 }

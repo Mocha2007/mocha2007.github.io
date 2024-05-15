@@ -1,30 +1,24 @@
 /* exported */
-/* global Color, Coords, MovementType */
+/* global Color, Coords, Icon, MovementType */
 
 class PieceType {
 	/**
 	 * @param {string} name
 	 * @param {string} abbr
 	 * @param {number} value
-	 * @param {string} white_emoji
-	 * @param {string} black_emoji
+	 * @param {Icon} icon
 	 * @param {MovementType} movement
 	 */
-	constructor(name, abbr, value, white_emoji, black_emoji, movement, flags = []){
+	constructor(name, abbr, value, icon, movement, flags = []){
 		this.name = name || 'unknown';
 		this.abbr = abbr || '?';
 		this.value = value;
-		this.white_emoji = white_emoji || '?';
-		this.black_emoji = black_emoji || '?';
+		this.icon = icon;
 		/** @type {MovementType} */
 		this.movement = movement;
 		/** @type {string[]} */
 		this.flags = flags;
 		PieceType.list.push(this);
-	}
-	/** @param {Color} color */
-	emoji(color){
-		return color === Color.BLACK ? this.black_emoji : this.white_emoji;
 	}
 	/**
 	 * @param {Coords} coords
@@ -139,12 +133,12 @@ class PieceType {
 	}
 	/** @type {PieceType[]} */
 	static list = [];
-	static PAWN = new PieceType('Pawn', ' ', 1, '♙', '♟', MovementType.PAWN);
-	static KNIGHT = new PieceType('Knight', 'N', 3, '♘', '♞', MovementType.KNIGHT);
-	static BISHOP = new PieceType('Bishop', 'B', 3, '♗', '♝', MovementType.BISHOP);
-	static ROOK = new PieceType('Rook', 'R', 5, '♖', '♜', MovementType.ROOK);
-	static QUEEN = new PieceType('Queen', 'Q', 9, '♕', '♛', MovementType.QUEEN);
-	static KING = new PieceType('King', 'K', Infinity, '♔', '♚', MovementType.KING);
+	static PAWN = new PieceType('Pawn', ' ', 1, Icon.PAWN, MovementType.PAWN);
+	static KNIGHT = new PieceType('Knight', 'N', 3, Icon.KNIGHT, MovementType.KNIGHT);
+	static BISHOP = new PieceType('Bishop', 'B', 3, Icon.BISHOP, MovementType.BISHOP);
+	static ROOK = new PieceType('Rook', 'R', 5, Icon.ROOK, MovementType.ROOK);
+	static QUEEN = new PieceType('Queen', 'Q', 9, Icon.QUEEN, MovementType.QUEEN);
+	static KING = new PieceType('King', 'K', Infinity, Icon.KING, MovementType.KING);
 	static LEAPS = {
 		// todo
 		'F': [1, 1],
@@ -169,6 +163,10 @@ class Board {
 		this.game = game;
 		/** @type {PieceInstance[][]} */
 		this.piece_array = piece_array;
+	}
+	/** @param {Coords} coords */
+	color(coords){
+		return (coords.file + coords.rank) % 2 ? Color.BLACK : Color.WHITE;
 	}
 	/** @param {Coords} coords */
 	getAt(coords){
@@ -269,12 +267,9 @@ class PieceInstance {
 	get element(){
 		return document.getElementById(this.id);
 	}
-	get emoji(){
-		return this.type.emoji(this.color);
-	}
 	get span(){
 		const elem = document.createElement('span');
-		elem.innerHTML = this.emoji;
+		elem.appendChild(this.type.icon.elem(this.color, this.game.board.color(this.coords)));
 		elem.title = this.color.name + ' ' + this.type.name;
 		elem.id = this.id;
 		elem.classList.add('piece');
