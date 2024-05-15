@@ -203,9 +203,9 @@ const CONST = {
 		// republicans control the house. they choose trump.
 		this.alert(`The house elects ${this.positions.nom_r_p.html} president`);
 		this.positions.nom_p = this.positions.nom_r_p;
-		// democrats control the senate. they choose harris.
-		this.alert(`The house elects ${this.positions.nom_d_vp.html} vice president`);
-		this.positions.nom_vp = this.positions.nom_d_vp;
+		// democrats control the senate. they choose harris or biden randomly.
+		this.positions.nom_vp = random.choice([this.positions.nom_d_p, this.positions.nom_d_vp]);
+		this.alert(`The house elects ${this.positions.nom_vp.html} vice president`);
 	},
 	inauguration(){
 		this.positions.president = this.positions.nom_p;
