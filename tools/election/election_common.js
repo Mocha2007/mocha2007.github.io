@@ -171,9 +171,12 @@ const ACTUARIAL_TABLE = [
 ];
 
 const EVENTS = [
+	// https://www.nytimes.com/live/2024/05/15/us/biden-trump-election
+	[new Date(2024, 5, 27), 'The first private debate between the two major party candidates is hosted on CNN.'],
 	[new Date(2024, 6, 11), 'The Green National Convention is held online.'],
 	[new Date(2024, 6, 15), 'The Republican National Convention is held in Milwaukee, WI.'],
 	[new Date(2024, 7, 19), 'The Democratic National Convention is held in Chicago, IL.'],
+	[new Date(2024, 8, 10), 'The second private debate between the two major party candidates is hosted on ABC.'],
 	[new Date(2024, 8, 16), 'The first presidential debate is held at the Texas State University in San Marcos, TX.'],
 	[new Date(2024, 8, 25), 'The only vice presidential debate is held at the Lafayette College in Easton, PA.'],
 	[new Date(2024, 9, 1), 'The second presidential debate is held at the Virginia State University in Petersburg, VA.'],
