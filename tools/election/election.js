@@ -137,6 +137,7 @@ const CONST = {
 		const TICKET_RFK = `${this.positions.nom_rfk_p.html} / ${this.positions.nom_rfk_vp.html}`;
 		const TICKET_WEST = `${this.positions.nom_west_p.html} / ${this.positions.nom_west_vp.html}`;
 		const TICKET_G = `${this.positions.nom_g_p.html} / ${this.positions.nom_g_vp.html}`;
+		/** @type {[State, *][]} */
 		const results = [];
 		const pollingError = this.config.forceErrorX
 			|| random.uniform(CONST.config.errorFuzzing, 1 - CONST.config.errorFuzzing);
@@ -144,7 +145,7 @@ const CONST = {
 			const result = state.results(pollingError
 				+ random.uniform(-CONST.config.errorFuzzing, CONST.config.errorFuzzing));
 			ev[result.winner.abbr] += state.ev;
-			results.push([state.name, result.winner.abbr, state.swing, result.margin]);
+			results.push([state, result]);
 			// popular vote tally
 			'DRIJG'.split('').forEach(p => {
 				const v = result.result.find(x => x[0].abbr === p)[1];
@@ -167,9 +168,9 @@ const CONST = {
 		this.alertElem(MapElem.table(results));
 		// closest races
 		this.alert(`${this.config.nClosestRaces} closest races:`);
-		results.sort((a, b) => Math.abs(a[3]) - Math.abs(b[3]));
+		results.sort((a, b) => Math.abs(a[1].margin) - Math.abs(b[1].margin));
 		for (let i = 0; i < this.config.nClosestRaces; i++)
-			this.alert(`(${i+1}) ${results[i][0]} - ${round(results[i][3] * 100, 2)}%`);
+			this.alert(`(${i+1}) ${results[i][0].name} - ${round(results[i][1].margin * 100, 2)}%`);
 		// winner declaration / tie
 		const winner = 'DRIJG'.split('').find(char => 270 <= ev[char]);
 		// tie?

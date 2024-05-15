@@ -13,7 +13,7 @@ class MapElem {
 	static stateFromCoords(o){
 		return this.MAP_GRID_DATA[o.Y][o.X];
 	}
-	/** @param {string[][]} results */
+	/** @param {[State, *][]} results */
 	static table(results = []){
 		const table = document.createElement('table');
 		table.id = 'map';
@@ -31,9 +31,9 @@ class MapElem {
 				td.id = `map_cell_${s}`;
 				// if results exists, try to find it!
 				let index;
-				if (results.find((datum, ii) => datum[0] === s && 0 <= (index = ii))){
-					td.classList.add(`party_${results[index][1]}`);
-					if (results[index][2])
+				if (results.find((datum, ii) => datum[0].name === s && 0 <= (index = ii))){
+					td.classList.add(`party_${results[index][1].winner.abbr}`);
+					if (results[index][0].swing)
 						td.classList.add('swing');
 				}
 				// debugger;
