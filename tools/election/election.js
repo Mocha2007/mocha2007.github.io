@@ -31,6 +31,7 @@ const CONST = {
 	},
 	flags: {
 		election_held: false,
+		trumpChoseVP: false,
 	},
 	nom_r_vp_candidates: [
 		// https://electionbettingodds.com/RepublicanVicePresident_2024.html
@@ -98,8 +99,12 @@ const CONST = {
 		// VP: alive, same party, must be from different state than pres candidate (which also prevents the pres from also becoming veep)
 		nom_d_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
 			&& p.party === Party.DEMOCRATIC && p.state !== CONST.positions.nom_d_p.state))}),
-		nom_r_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
-			&& p.party === Party.REPUBLICAN && p.state !== CONST.positions.nom_r_p.state))}),
+		nom_r_vp: () => ({x:
+				CONST.flags.trumpChoseVP
+					? random.choice(CONST.politicians.filter(p => p.alive
+						&& p.party === Party.REPUBLICAN && p.state !== CONST.positions.nom_r_p.state))
+					: undefined, // TRUMP HASNT CHOSEN YET
+		}),
 		nom_rfk_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
 			&& p.party === Party.INDEPENDENT && p.state !== CONST.positions.nom_rfk_p.state))}),
 		nom_west_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
@@ -323,16 +328,18 @@ class Politician {
 	get str(){
 		return `${this.name} (${this.party.abbr}-${this.state})`;
 	}
+	die(){
+		this.alive = false;
+		CONST.alert(`${this.html} has died!`);
+		CONST.checkPositions();
+	}
 	tick(){
 		if (!this.alive)
 			return;
 		// dies
 		for (let i = 0; i < CONST.config.timestep; i++)
-			if (Math.random() < this.daily_death_chance){
-				this.alive = false;
-				CONST.alert(`${this.html} has died!`);
-				CONST.checkPositions();
-			}
+			if (Math.random() < this.daily_death_chance)
+				this.die();
 	}
 	static fromName(name){
 		return CONST.politicians.find(p => p.name === name);
@@ -346,6 +353,7 @@ function simulation(){
 	CONST.politicians.forEach(p => p.alive = true);
 	CONST.date = CONST.dates.start;
 	CONST.flags.election_held = false;
+	CONST.flags.trumpChoseVP = false;
 	CONST.config.turnout = random.uniform(...CONST.config.turnoutMinMax); // random turnout
 	// set prez, vp, speaker
 	CONST.positions.nom_d_p = CONST.positions.president = Politician.fromName('Joe Biden');
@@ -370,12 +378,13 @@ function simulation(){
 		if (CONST.config.mortal)
 			CONST.politicians.forEach(p => p.tick());
 		// Trump VP selection
-		if (!CONST.positions.nom_r_vp && TRUMP_VP_SELECTION_DATE <= CONST.date){
+		if (!CONST.flags.trumpChoseVP && TRUMP_VP_SELECTION_DATE <= CONST.date){
 			CONST.positions.nom_r_vp = Politician.fromName(random.weightedChoice(
 				CONST.nom_r_vp_candidates.map(x => x[0]),
 				CONST.nom_r_vp_candidates.map(x => x[1])
 			));
 			CONST.alert(`${CONST.positions.nom_r_p.html} chose ${CONST.positions.nom_r_vp.html} as VP`);
+			CONST.flags.trumpChoseVP = true;
 		}
 		// remove the speaker
 		if (Math.random() < Math.pow(CONST.config.speakerRemovalDailyChance, CONST.config.timestep)){
