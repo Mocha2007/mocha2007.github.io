@@ -13,7 +13,8 @@ const CONST = {
 		speakerRemovalDailyChance: 0.001,
 		thirdPartyBuff: 1, // 1 = no change. 0 = no third party votes. 2 = double votes.
 		timestep: 1, // days
-		turnout: 0.66,
+		turnout: 0.6,
+		turnoutMinMax: [0.542, 0.666], // 2000, 2020 - extrema for the 2000s
 	},
 	date: new Date(2024, 2, 5), // sim starts after March 5th - super tuesday - 8 months before the election
 	dates: {
@@ -165,6 +166,7 @@ const CONST = {
 		${TICKET_RFK} : ${ev.I} EVs (${pv.I.toLocaleString()} votes - ${round(pv.I / turnout * 100, 2)}%)<br>
 		${TICKET_WEST} : ${ev.J} EVs (${pv.J.toLocaleString()} votes - ${round(pv.J / turnout * 100, 2)}%)<br>
 		${TICKET_G} : ${ev.G} EVs (${pv.G.toLocaleString()} votes - ${round(pv.G / turnout * 100, 2)}%)`);
+		this.alert(`Turnout: ${round(this.config.turnout * 100, 1)}%`);
 		// fancy map
 		this.alertElem(MapElem.table(results));
 		// closest races
@@ -336,6 +338,7 @@ function simulation(){
 	CONST.politicians.forEach(p => p.alive = true);
 	CONST.date = CONST.dates.start;
 	CONST.flags.election_held = false;
+	CONST.config.turnout = random.uniform(...CONST.config.turnoutMinMax); // random turnout
 	// set prez, vp, speaker
 	CONST.positions.nom_d_p = CONST.positions.president = Politician.fromName('Joe Biden');
 	CONST.positions.nom_d_vp = CONST.positions.vice_president = Politician.fromName('Kamala Harris');
