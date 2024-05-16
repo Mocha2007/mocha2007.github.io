@@ -128,8 +128,11 @@ const CONST = {
 		document.getElementById('console').appendChild(elem);
 	},
 	checkPositions(){
-		for (const x in this.positions)
-			if ((!this.positions[x] || !this.positions[x].alive) && this.position_backups[x]){
+		for (const x in this.positions){
+			// remove dead people from office, even if they DON'T have a backup...
+			if (this.positions[x] && !this.positions[x].alive)
+				this.positions[x] = undefined;
+			if (!this.positions[x] && this.position_backups[x]){
 				const bu = this.position_backups[x]();
 				if (!bu.x)
 					continue;
@@ -137,6 +140,7 @@ const CONST = {
 				this.positions[x] = bu.x;
 				this.positions[bu.y] = undefined;
 			}
+		}
 	},
 	holdElection(){
 		this.alert('ELECTION 2024');
