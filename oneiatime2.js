@@ -315,6 +315,7 @@ function holidayCSS(){
 holidayCSS.bgs = [
 	'img/bg/40.png',
 	'img/bg/500 BCE.png',
+	'img/bg/1000 BCE.png',
 	'img/bg/buydiyhrt.png',
 	'img/bg/chaos.png',
 	'img/bg/draw.png',
