@@ -21,9 +21,10 @@ Aspect.IMPERFECT = new Aspect('Imperfect', 'H₁a{c1}{c2}a{c3}');
 Aspect.PERFECT = new Aspect('Perfect', '{c1}a{c2}a{c3}k');
 
 class Mood {
-	constructor(name, root = ''){
+	constructor(name, root = '', perf_only = false){
 		this.name = name;
 		this.root = root;
+		this.perf_only = perf_only;
 		Mood.moods.push(this);
 	}
 	x(root, aspect){
@@ -36,8 +37,8 @@ class Mood {
 Mood.moods = [];
 // compound
 Mood.INDICATIVE = new Mood('Indicative');
-Mood.DEBITIVE = new Mood('Imperative', '--');
-Mood.PROHIBITIVE = new Mood('Prohibitive', 'n--');
+Mood.DEBITIVE = new Mood('Imperative', '--', true);
+Mood.PROHIBITIVE = new Mood('Prohibitive', 'n--', true);
 Mood.DEBITIVE = new Mood('Debitive', 'h₃-r-');
 Mood.POTENTIAL = new Mood('Potential', 'k-H₁-');
 Mood.VOLITIVE = new Mood('Volitive', 'h₂--');
@@ -164,11 +165,13 @@ const AA = {
 			const tr_mood = document.createElement('tr');
 			elem.appendChild(tr_mood);
 			const th_mood = document.createElement('th');
+			th_mood.classList.add(`mood_${mood.name.toLowerCase()}`);
 			th_mood.innerHTML = mood.name;
 			th_mood.rowSpan = Aspect.aspects.length - 1;
+			th_mood.colSpan = mood.perf_only ? 2 : 1;
 			tr_mood.appendChild(th_mood);
 			Aspect.aspects.forEach((aspect, i) => {
-				if (!aspect.display)
+				if (!aspect.display || (mood.perf_only && aspect !== Aspect.PERFECT))
 					return;
 				const tr_aspect = document.createElement('tr');
 				const th_aspect = document.createElement('th');
@@ -176,12 +179,13 @@ const AA = {
 				const tr = i === 1 ? tr_mood : tr_aspect;
 				if (i !== 1)
 					elem.appendChild(tr_aspect);
-				tr.appendChild(th_aspect);
+				if (!mood.perf_only)
+					tr.appendChild(th_aspect);
 				GNumber.numbers.forEach(n => {
 					Person.persons.forEach(p => {
 						Gender.genders.forEach(g => {
 							const td = document.createElement('td');
-							td.title = `${n.name} ${p.name} ${g.name}`;
+							td.title = `${p.name} person ${n.name} ${g.name} ${mood.name} ${aspect.name}`;
 							td.innerHTML = this.verb(root, mood, aspect, p, g, n);
 							tr.appendChild(td);
 						});
