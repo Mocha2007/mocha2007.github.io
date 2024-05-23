@@ -74,7 +74,7 @@ class Person {
 	constructor(name, m, f){
 		this.name = name;
 		this.m = m;
-		this.f = f || m;
+		this.f = f;
 		Person.persons.push(this);
 	}
 	ending(gender){
@@ -83,9 +83,9 @@ class Person {
 }
 /** @type {Person[]} */
 Person.persons = [];
-Person._1 = new Person(1, 'u', 'um');
+Person._1 = new Person(1, 'um', 'u');
 Person._2 = new Person(2, 'ā', 'i');
-Person._3 = new Person(3, 'a', 'at');
+Person._3 = new Person(3, 'a', '');
 
 
 const AA = {
@@ -222,8 +222,8 @@ const AA = {
 			// ['Passive Root', consonantality < 3 ? 'n-{c1}-{c2}' : 'na{c1}-{c2}-{c3}', '(only applies to active verbs)'],
 			// derived nouns
 			['Instrument Noun (M)', 'ma{c1}a{c2}{c3}atrum', 'instrument used to ~'],
-			['Agent Noun (M)',      'ma{c1}{c2}a{c3}', '~er (male)'],
-			['Agent Noun (F)',      'ma{c1}a{c2}{c3}at', '~er (female)'],
+			['Agent Noun (M)',      'ma{c1}{c2}a{c3}fa-', '~er (male; requires possessor)'],
+			['Agent Noun (F)',      'ma{c1}{c2}a{c3}', '~er (female)'],
 			['Location Noun (F)',   'ma{c1}a{c2}{c3}aryut', 'location where ~ happens'],
 		].forEach(ab => {
 			const [name, form, desc] = ab;
