@@ -100,9 +100,9 @@ const AA = {
 			// w-ing
 			.replace(/(?<=[uū])(?=[aā])/g, 'w')
 			.replace(/(?<=[aā])(?=[uū])/g, 'w')
-			.replace(/(?<=[iī])(?=[uū])/g, 'w')
+			.replace(/(?<=[iī])(?=[uū])/g, 'w');
 			// delete -
-			.replace(/-/g, '');
+			//.replace(/-/g, '');
 	},
 	elem: {
 		/** @type {HTMLDivElement} */
@@ -119,6 +119,7 @@ const AA = {
 		console.info(`Conjugating ${root}`);
 		this.elem.container.innerHTML = '';
 		this.elem.container.appendChild(this.table(root));
+		this.elem.container.appendChild(this.table2(root));
 	},
 	table(root){
 		// each "big row" in the table represents one mood
@@ -187,6 +188,39 @@ const AA = {
 				});
 			});
 		});
+		return elem;
+	},
+	table2(root){
+		function fill(s, c1 = '', c2 = '', c3 = ''){
+			return s
+				.replace(/{c1}/g, c1)
+				.replace(/{c2}/g, c2)
+				.replace(/{c3}/g, c3);
+		}
+		// misc forms
+		const consonantality = root.split('-').length;
+		const elem = document.createElement('table');
+		[
+			['Infinitive', Aspect.INFINITIVE.form],
+			['Causative Root', consonantality < 3 ? 's-{c1}-{c2}' : 'sa{c1}-{c2}-{c3}'],
+			['Reflexive Root', consonantality < 3 ? 't-{c1}-{c2}' : 'ta{c1}-{c2}-{c3}'],
+			['Passive Root', consonantality < 3 ? 'n-{c1}-{c2}' : 'na{c1}-{c2}-{c3}'],
+			// derived nouns
+			['Instrument Noun (M)', 'ma{c1}a{c2}{c3}atrum'],
+			['Agent Noun (M)',      'ma{c1}{c2}a{c3}'],
+			['Agent Noun (F)',      'ma{c1}a{c2}{c3}at'],
+			['Location Noun (F)',   'ma{c1}a{c2}{c3}aryut'],
+		].forEach(ab => {
+			const [name, form] = ab;
+			const tr = document.createElement('tr');
+			elem.appendChild(tr);
+			const th = document.createElement('th');
+			th.innerHTML = name;
+			tr.appendChild(th);
+			const td = document.createElement('td');
+			td.innerHTML = this.cleanup(fill(form, ...root.split('-')));
+			tr.appendChild(td);
+		})
 		return elem;
 	},
 	verb(root, mood = Mood.INDICATIVE, aspect = Aspect.IMPERFECT,
