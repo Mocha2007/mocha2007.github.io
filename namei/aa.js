@@ -202,16 +202,17 @@ const AA = {
 		const elem = document.createElement('table');
 		[
 			['Infinitive', Aspect.INFINITIVE.form],
+			['Adverbial', '{c1}a{c2}{c3}in', 'creates a dependent clause providing context'],
 			['Causative Root', consonantality < 3 ? 's-{c1}-{c2}' : 'sa{c1}-{c2}-{c3}'],
 			['Reflexive Root', consonantality < 3 ? 't-{c1}-{c2}' : 'ta{c1}-{c2}-{c3}'],
-			['Passive Root', consonantality < 3 ? 'n-{c1}-{c2}' : 'na{c1}-{c2}-{c3}'],
+			['Passive Root', consonantality < 3 ? 'n-{c1}-{c2}' : 'na{c1}-{c2}-{c3}', '(only applies to active verbs)'],
 			// derived nouns
-			['Instrument Noun (M)', 'ma{c1}a{c2}{c3}atrum'],
-			['Agent Noun (M)',      'ma{c1}{c2}a{c3}'],
-			['Agent Noun (F)',      'ma{c1}a{c2}{c3}at'],
-			['Location Noun (F)',   'ma{c1}a{c2}{c3}aryut'],
+			['Instrument Noun (M)', 'ma{c1}a{c2}{c3}atrum', 'instrument used to ~'],
+			['Agent Noun (M)',      'ma{c1}{c2}a{c3}', '~er (male)'],
+			['Agent Noun (F)',      'ma{c1}a{c2}{c3}at', '~er (female)'],
+			['Location Noun (F)',   'ma{c1}a{c2}{c3}aryut', 'location where ~ happens'],
 		].forEach(ab => {
-			const [name, form] = ab;
+			const [name, form, desc] = ab;
 			const tr = document.createElement('tr');
 			elem.appendChild(tr);
 			const th = document.createElement('th');
@@ -220,6 +221,9 @@ const AA = {
 			const td = document.createElement('td');
 			td.innerHTML = this.cleanup(fill(form, ...root.split('-')));
 			tr.appendChild(td);
+			const td2 = document.createElement('td');
+			td2.innerHTML = desc || '-';
+			tr.appendChild(td2);
 		})
 		return elem;
 	},
