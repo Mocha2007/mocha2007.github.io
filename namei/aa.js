@@ -1,4 +1,5 @@
 /* exported AA */
+/* global random */
 
 class Aspect {
 	constructor(name, form, display = true){
@@ -137,6 +138,15 @@ const AA = {
 		const elem = document.createElement('h' + level);
 		elem.innerHTML = content;
 		return elem;
+	},
+	random: {
+		consList: 'm n tʼ cʼ kʼ qʼ t c k q H₁ b d j g fʼ sʼ šʼ h₅ʼ h₄ʼ h₃ʼ f s š h₅ h₄ h₃ h₂ h₁ Lʼ L w l y H₃ H₂ r'.split(' '),
+		get cons(){
+			return random.choice(this.consList);
+		},
+		root(c = 0){
+			return range(c || random.randint(1, 3)).map(_ => this.cons).join('-');
+		}
 	},
 	run(){
 		const root = this.elem.input.value;
