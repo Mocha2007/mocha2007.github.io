@@ -210,7 +210,7 @@ const AA = {
 			['Gerund (M)', '{c1}a{c2}a{c3}'],
 			['Adverbial', 'ni{c1}{c2}a{c3}', 'creates a dependent clause providing context'],
 			['Causative Root', consonantality < 3 ? 's-{c1}-{c2}' : 'sa{c1}-{c2}-{c3}'],
-			['Reflexive Root', consonantality < 3 ? 't-{c1}-{c2}' : 'ta{c1}-{c2}-{c3}'],
+			['Reflexive Root', consonantality < 3 ? 't-{c1}-{c2}' : 'ta{c1}-{c2}-{c3}', '(only applies to active verbs)'],
 			['Passive Root', consonantality < 3 ? 'n-{c1}-{c2}' : 'na{c1}-{c2}-{c3}', '(only applies to active verbs)'],
 			// derived nouns
 			['Instrument Noun (M)', 'ma{c1}a{c2}{c3}atrum', 'instrument used to ~'],
