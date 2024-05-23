@@ -66,7 +66,7 @@ class GNumber {
 GNumber.numbers = [];
 GNumber.S = new GNumber('Singular', '');
 GNumber.D = new GNumber('Dual', 'ā', 'i');
-GNumber.P = new GNumber('Plural', 'ū', 'u');
+GNumber.P = new GNumber('Plural', 'u', 'u'); // ū u
 
 class Person {
 	constructor(name, m, f){
@@ -91,8 +91,8 @@ const AA = {
 		return s
 			// merge same vowels
 			.replace(/[aā]{2,}/g, 'ā')
-			.replace(/[iī]{2,}/g, 'ī')
-			.replace(/[uū]{2,}/g, 'ū')
+			.replace(/[iī]{2,}/g, 'i') // ī
+			.replace(/[uū]{2,}/g, 'u') // ū
 			// y-ing
 			.replace(/(?<=[iī])(?=[aā])/g, 'y')
 			.replace(/(?<=[aā])(?=[iī])/g, 'y')
