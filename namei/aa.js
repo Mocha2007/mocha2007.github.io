@@ -260,7 +260,7 @@ const AA = {
 		// headers
 		const tr_head = document.createElement('tr');
 		elem.appendChild(tr_head);
-		['-', 'Unpossessed', 'Possessed'].forEach(s => {
+		['-', 'Free', 'Bound'].forEach(s => {
 			const th = document.createElement('th');
 			th.innerHTML = s;
 			tr_head.appendChild(th);
