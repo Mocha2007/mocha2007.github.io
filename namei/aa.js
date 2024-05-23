@@ -85,10 +85,18 @@ class Person {
 Person.persons = [];
 Person._1 = new Person(1, 'um', 'u');
 Person._2 = new Person(2, 'ā', 'i');
-Person._3 = new Person(3, 'a', '');
+Person._3 = new Person(3, 'af', 'a');
 
 
 const AA = {
+	choice: {
+		get gender(){
+			return Array.from(document.getElementsByName('gender')).find(e => e.checked).value === 'Feminine' ? Gender.F : Gender.M;
+		},
+		get stativeness(){
+			return Array.from(document.getElementsByName('stativeness')).find(e => e.checked).value === 'Stative';
+		}
+	},
 	cleanup(s){
 		return s
 			// merge same vowels
@@ -102,7 +110,10 @@ const AA = {
 			// w-ing
 			.replace(/(?<=[uū])(?=[aā])/g, 'w')
 			.replace(/(?<=[aā])(?=[uū])/g, 'w')
-			.replace(/(?<=[iī])(?=[uū])/g, 'w');
+			.replace(/(?<=[iī])(?=[uū])/g, 'w')
+			// contractions
+			.replace(/[aā]w[aā]/g, 'u')
+			.replace(/[aā]y[aā]/g, 'i');
 			// delete -
 			//.replace(/-/g, '');
 	},
@@ -182,10 +193,11 @@ const AA = {
 			th_mood.classList.add(`mood_${mood.name.toLowerCase()}`);
 			th_mood.innerHTML = mood.name;
 			th_mood.rowSpan = Aspect.aspects.length - 1;
-			th_mood.colSpan = mood.perf_only ? 2 : 1;
+			const PERF_ONLY = mood.perf_only || this.choice.stativeness;
+			th_mood.colSpan = PERF_ONLY ? 2 : 1;
 			tr_mood.appendChild(th_mood);
 			Aspect.aspects.forEach((aspect, i) => {
-				if (!aspect.display || (mood.perf_only && aspect !== Aspect.PERFECT))
+				if (!aspect.display || (PERF_ONLY && aspect !== Aspect.PERFECT))
 					return;
 				const tr_aspect = document.createElement('tr');
 				const th_aspect = document.createElement('th');
@@ -193,7 +205,7 @@ const AA = {
 				const tr = i === 1 ? tr_mood : tr_aspect;
 				if (i !== 1)
 					elem.appendChild(tr_aspect);
-				if (!mood.perf_only)
+				if (!PERF_ONLY)
 					tr.appendChild(th_aspect);
 				GNumber.numbers.forEach(n => {
 					Person.persons.forEach(p => {
@@ -254,10 +266,11 @@ const AA = {
 			tr_head.appendChild(th);
 		});
 		// content
+		const IS_F = this.choice.gender === Gender.F;
 		[
-			['Singular', ['{c1}a{c2}a{c3}', '{c1}a{c2}{c3}a-']],
-			['Dual', ['{c1}a{c2}i{c3}', '{c1}a{c2}{c3}i-']],
-			['Plural', ['{c1}a{c2}u{c3}', '{c1}a{c2}{c3}u-']],
+			['Singular', [IS_F ? '{c1}a{c2}a{c3}' : '', '{c1}a{c2}{c3}a-']],
+			['Dual', [IS_F ? '{c1}i{c2}i{c3}' : '', '{c1}i{c2}{c3}i-']],
+			['Plural', [IS_F ? '{c1}u{c2}u{c3}' : '', '{c1}u{c2}{c3}u-']],
 		].forEach(ab => {
 			const [name, forms] = ab;
 			const tr = document.createElement('tr');
