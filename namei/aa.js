@@ -37,6 +37,7 @@ Mood.moods = [];
 // compound
 Mood.INDICATIVE = new Mood('Indicative');
 Mood.DEBITIVE = new Mood('Imperative', '--');
+Mood.PROHIBITIVE = new Mood('Prohibitive', 'n--');
 Mood.DEBITIVE = new Mood('Debitive', 'h₃-r-');
 Mood.POTENTIAL = new Mood('Potential', 'k-H₁-');
 Mood.VOLITIVE = new Mood('Volitive', 'h₂--');
@@ -202,7 +203,8 @@ const AA = {
 		const elem = document.createElement('table');
 		[
 			['Infinitive', Aspect.INFINITIVE.form],
-			['Adverbial', '{c1}a{c2}{c3}in', 'creates a dependent clause providing context'],
+			['Gerund (M)', '{c1}a{c2}a{c3}'],
+			['Adverbial', 'ni{c1}{c2}a{c3}', 'creates a dependent clause providing context'],
 			['Causative Root', consonantality < 3 ? 's-{c1}-{c2}' : 'sa{c1}-{c2}-{c3}'],
 			['Reflexive Root', consonantality < 3 ? 't-{c1}-{c2}' : 'ta{c1}-{c2}-{c3}'],
 			['Passive Root', consonantality < 3 ? 'n-{c1}-{c2}' : 'na{c1}-{c2}-{c3}', '(only applies to active verbs)'],
