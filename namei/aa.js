@@ -116,12 +116,26 @@ const AA = {
 			return document.getElementById('root');
 		},
 	},
+	fill(s, c1 = '', c2 = '', c3 = ''){
+		return s
+			.replace(/{c1}/g, c1)
+			.replace(/{c2}/g, c2)
+			.replace(/{c3}/g, c3);
+	},
+	header(content, level = 2){
+		const elem = document.createElement('h' + level);
+		elem.innerHTML = content;
+		return elem;
+	},
 	run(){
 		const root = this.elem.input.value;
 		console.info(`Conjugating ${root}`);
 		this.elem.container.innerHTML = '';
+		this.elem.container.appendChild(this.header('Verb'));
 		this.elem.container.appendChild(this.table(root));
 		this.elem.container.appendChild(this.table2(root));
+		this.elem.container.appendChild(this.header('Noun'));
+		this.elem.container.appendChild(this.table3(root));
 	},
 	table(root){
 		// each "big row" in the table represents one mood
@@ -196,13 +210,7 @@ const AA = {
 		return elem;
 	},
 	table2(root){
-		function fill(s, c1 = '', c2 = '', c3 = ''){
-			return s
-				.replace(/{c1}/g, c1)
-				.replace(/{c2}/g, c2)
-				.replace(/{c3}/g, c3);
-		}
-		// misc forms
+		// misc verb forms
 		const consonantality = root.split('-').length;
 		const elem = document.createElement('table');
 		[
@@ -225,11 +233,43 @@ const AA = {
 			th.innerHTML = name;
 			tr.appendChild(th);
 			const td = document.createElement('td');
-			td.innerHTML = this.cleanup(fill(form, ...root.split('-')));
+			td.innerHTML = this.cleanup(this.fill(form, ...root.split('-')));
 			tr.appendChild(td);
 			const td2 = document.createElement('td');
 			td2.innerHTML = desc || '-';
 			tr.appendChild(td2);
+		})
+		return elem;
+	},
+	table3(root){
+		// noun forms
+		const consonantality = root.split('-').length;
+		const elem = document.createElement('table');
+		// headers
+		const tr_head = document.createElement('tr');
+		elem.appendChild(tr_head);
+		['-', 'Unpossessed', 'Possessed'].forEach(s => {
+			const th = document.createElement('th');
+			th.innerHTML = s;
+			tr_head.appendChild(th);
+		});
+		// content
+		[
+			['Singular', ['{c1}a{c2}a{c3}', '{c1}a{c2}{c3}a-']],
+			['Dual', ['{c1}a{c2}i{c3}', '{c1}a{c2}{c3}i-']],
+			['Plural', ['{c1}a{c2}u{c3}', '{c1}a{c2}{c3}u-']],
+		].forEach(ab => {
+			const [name, forms] = ab;
+			const tr = document.createElement('tr');
+			elem.appendChild(tr);
+			const th = document.createElement('th');
+			th.innerHTML = name;
+			tr.appendChild(th);
+			forms.forEach(form => {
+				const td = document.createElement('td');
+				td.innerHTML = this.cleanup(this.fill(form, ...root.split('-')));
+				tr.appendChild(td);
+			})
 		})
 		return elem;
 	},
