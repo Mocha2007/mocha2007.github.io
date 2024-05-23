@@ -268,10 +268,12 @@ const AA = {
 		// content
 		const IS_F = this.choice.gender === Gender.F;
 		[
-			['Singular', [IS_F ? '{c1}a{c2}a{c3}' : '', '{c1}a{c2}{c3}a-']],
+			[IS_F ? 'Singular' : '(All numbers)', [IS_F ? '{c1}a{c2}a{c3}' : '', '{c1}a{c2}{c3}a-']],
 			['Dual', [IS_F ? '{c1}i{c2}i{c3}' : '', '{c1}i{c2}{c3}i-']],
 			['Plural', [IS_F ? '{c1}u{c2}u{c3}' : '', '{c1}u{c2}{c3}u-']],
-		].forEach(ab => {
+		].forEach((ab, i) => {
+			if (!IS_F && i)
+				return;
 			const [name, forms] = ab;
 			const tr = document.createElement('tr');
 			elem.appendChild(tr);
