@@ -112,8 +112,8 @@ const AA = {
 			.replace(/(?<=[aā])(?=[uū])/g, 'w')
 			.replace(/(?<=[iī])(?=[uū])/g, 'w')
 			// contractions
-			.replace(/[aā]w[aā]/g, 'u')
-			.replace(/[aā]y[aā]/g, 'i');
+			.replace(/[aā]w[aā]/g, 'u') // ū
+			.replace(/[aā]y[aā]/g, 'i'); // ī
 			// delete -
 			//.replace(/-/g, '');
 	},
