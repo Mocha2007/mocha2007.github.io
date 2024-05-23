@@ -26,11 +26,38 @@ Root: <input id="root" type="text" onkeyup="AA.run();" value="šʼ-h₃ʼ-h₂">
 <span class="button" onclick="AA.run();">&rarr;</span>
 <br>
 <div id="controls" onclick="AA.run();">
+	Stativeness:
 	<label><input type="radio" id="stativeness_dynamic" name="stativeness" value="Dynamic" checked>Dynamic</label>
 	<label><input type="radio" id="stativeness_stative" name="stativeness" value="Stative">Stative</label>
 	<br>
+	Gender:
 	<label><input type="radio" id="gender_f" name="gender" value="Feminine" checked>Feminine</label>
 	<label><input type="radio" id="gender_m" name="gender" value="Masculine">Masculine</label>
+	<br>
+	<label>
+		Object Pronoun:
+		<select name="obj" id="obj">
+			<option value="xxx" selected>(none)</option>
+			<option value="1sm">1sm</option>
+			<option value="1sf">1sf</option>
+			<option value="1dm">1dm</option>
+			<option value="1df">1df</option>
+			<option value="1pm">1pm</option>
+			<option value="1pf">1pf</option>
+			<option value="2sm">2sm</option>
+			<option value="2sf">2sf</option>
+			<option value="2dm">2dm</option>
+			<option value="2df">2df</option>
+			<option value="2pm">2pm</option>
+			<option value="2pf">2pf</option>
+			<option value="3sm">3sm</option>
+			<option value="3sf">3sf</option>
+			<option value="3dm">3dm</option>
+			<option value="3df">3df</option>
+			<option value="3pm">3pm</option>
+			<option value="3pf">3pf</option>
+		  </select>
+	</label>
 </div>
 <hr>
 <div id="conj"></div>

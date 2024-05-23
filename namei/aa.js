@@ -84,15 +84,31 @@ class Person {
 }
 /** @type {Person[]} */
 Person.persons = [];
-Person._1 = new Person(1, 'um', 'u');
+Person._1 = new Person(1, 'ama', 'u');
 Person._2 = new Person(2, 'ā', 'i');
-Person._3 = new Person(3, 'af', 'a');
+Person._3 = new Person(3, 'ā', 'a');
 
 
 const AA = {
 	choice: {
 		get gender(){
 			return Array.from(document.getElementsByName('gender')).find(e => e.checked).value === 'Feminine' ? Gender.F : Gender.M;
+		},
+		get object(){
+			const value = document.getElementById('obj').value;
+			if (value === 'xxx')
+				return '';
+			const [p, n, g] = value.split('');
+			const _0 = {
+				m1: 'y',
+				f1: 'H₁',
+				m2: 'k',
+				f2: 'c',
+				m3: 'f',
+				f3: 't',
+			}[g + p];
+			const _1 = {s: '', d: 'i', p: 'un'}[n];
+			return _0 + _1;
 		},
 		get stativeness(){
 			return Array.from(document.getElementsByName('stativeness')).find(e => e.checked).value === 'Stative';
@@ -141,6 +157,7 @@ const AA = {
 	},
 	random: {
 		consList: 'm n tʼ cʼ kʼ qʼ t c k q H₁ b d j g fʼ sʼ šʼ h₅ʼ h₄ʼ h₃ʼ f s š h₅ h₄ h₃ h₂ h₁ Lʼ L w l y H₃ H₂ r'.split(' '),
+		/** @type {string} */
 		get cons(){
 			return random.choice(this.consList);
 		},
@@ -222,7 +239,7 @@ const AA = {
 						Gender.genders.forEach(g => {
 							const td = document.createElement('td');
 							td.title = `${p.name} person ${n.name} ${g.name} ${mood.name} ${aspect.name}`;
-							td.innerHTML = this.verb(root, mood, aspect, p, g, n);
+							td.innerHTML = this.verb(root, mood, aspect, p, g, n, this.choice.object);
 							tr.appendChild(td);
 						});
 					});
@@ -301,9 +318,10 @@ const AA = {
 		return elem;
 	},
 	verb(root, mood = Mood.INDICATIVE, aspect = Aspect.IMPERFECT,
-		person = Person._3, gender = Gender.M, number = GNumber.S){
+		person = Person._3, gender = Gender.M, number = GNumber.S, obj = ''){
 		return this.cleanup(mood.x(root, aspect)
 			+ person.ending(gender)
-			+ number.v_verb);
+			+ number.v_verb
+			+ obj);
 	},
 };
