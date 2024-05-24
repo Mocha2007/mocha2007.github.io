@@ -6,19 +6,22 @@
 table {
 	font-size: 75%;
 }
+table a {
+	color: blue;
+}
 table td:nth-of-type(odd) {
 	background-color:silver;
 }
-.mood_indicative {
+.mood_realis {
 	background-color: #8cf;
 }
-.mood_imperative {
+.mood_deontic {
 	background-color: #fc8;
 }
-.mood_prohibitive {
+.mood_deontic_neg {
 	background-color: #f88;
 }
-.mood_debitive, .mood_potential, .mood_volitive {
+.mood_epistemic {
 	background-color: #8f8;
 }
 </style>
@@ -29,8 +32,8 @@ Root: <input id="root" type="text" onkeyup="AA.run();" value="šʼ-h₃ʼ-h₂">
 <br>
 <div id="controls" onclick="AA.run();">
 	Aktionsart:
-	<label><input type="radio" id="stativeness_1" name="stativeness" value="Durative">Durative Dynamic</label>
-	<label><input type="radio" id="stativeness_2" name="stativeness" value="Punctual" checked>Punctual Dynamic</label>
+	<label><input type="radio" id="stativeness_1" name="stativeness" value="Durative" checked>Durative Dynamic</label>
+	<label><input type="radio" id="stativeness_2" name="stativeness" value="Punctual">Punctual Dynamic</label>
 	<label><input type="radio" id="stativeness_3" name="stativeness" value="Stative">Stative</label>
 	<br>
 	Gender:

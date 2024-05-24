@@ -1,9 +1,24 @@
 /* exported AA */
 /* global random */
 
-class Aspect {
-	constructor(name, form, display = true){
+class Named {
+	constructor(name, desc, wiki, url){
 		this.name = name;
+		this.desc = desc || '';
+		this.url = url || `https://en.wikipedia.org/wiki/${wiki || name}`;
+	}
+	get link(){
+		const a = document.createElement('a');
+		a.innerHTML = this.name;
+		a.href = this.url;
+		a.title = this.desc;
+		return a;
+	}
+}
+
+class Aspect extends Named {
+	constructor(name, desc, form, display = true){
+		super(name, desc, name + '_aspect');
 		this.form = form;
 		this.display = display;
 		Aspect.aspects.push(this);
@@ -17,14 +32,15 @@ class Aspect {
 }
 /** @type {Aspect[]} */
 Aspect.aspects = [];
-Aspect.INFINITIVE = new Aspect('Infinitive', '{c1}a{c2}{c3}a', false);
-Aspect.PERFECT = new Aspect('Perfective', '{c1}a{c2}a{c3}k');
-Aspect.IMPERFECT = new Aspect('Continuous', 'H₁a{c1}{c2}a{c3}');
-Aspect.IMPERFECT1 = new Aspect('Habitual', 'h₅i{c1}{c2}a{c3}');
+Aspect.INFINITIVE = new Aspect('Infinitive', '', '{c1}a{c2}{c3}a', false);
+Aspect.PERFECT = new Aspect('Perfective', '', '{c1}a{c2}a{c3}k');
+Aspect.IMPERFECT = new Aspect('Continuous', '', 'H₁a{c1}{c2}a{c3}');
+Aspect.IMPERFECT1 = new Aspect('Habitual', '', 'h₅i{c1}{c2}a{c3}');
 
-class Mood {
-	constructor(name, root = '', perf_only = false){
-		this.name = name;
+class Mood extends Named {
+	constructor(name, desc, category, root = '', perf_only = false){
+		super(name, desc, name + '_mood');
+		this.category = category || 'realis';
 		this.root = root;
 		this.perf_only = perf_only;
 		Mood.moods.push(this);
@@ -38,12 +54,12 @@ class Mood {
 /** @type {Mood[]} */
 Mood.moods = [];
 // compound
-Mood.INDICATIVE = new Mood('Indicative');
-Mood.IMPERATIVE = new Mood('Imperative', '--', true);
-Mood.PROHIBITIVE = new Mood('Prohibitive', 'n--', true);
-Mood.DEBITIVE = new Mood('Debitive', 'h₃-r-');
-Mood.POTENTIAL = new Mood('Potential', 'k-H₁-');
-Mood.VOLITIVE = new Mood('Volitive', 'h₂--');
+Mood.INDICATIVE = new Mood('Indicative', '');
+Mood.POTENTIAL = new Mood('Potential', '"It is possible that X"', 'epistemic', 'k-H₁-');
+Mood.DEBITIVE = new Mood('Debitive', '"must X"', 'deontic', 'h₃-r-');
+Mood.DESIDERATIVE = new Mood('Desiderative', '"...wants to X"', 'deontic', 'h₂--');
+Mood.IMPERATIVE = new Mood('Imperative', '"Do X!"', 'deontic', '--', true);
+Mood.PROHIBITIVE = new Mood('Prohibitive', '"Don\'t X!"', 'deontic_neg', 'n--', true);
 
 class Gender {
 	constructor(name, v = 'a', c = ''){
@@ -255,8 +271,8 @@ const AA = {
 			const tr_mood = document.createElement('tr');
 			elem.appendChild(tr_mood);
 			const th_mood = document.createElement('th');
-			th_mood.classList.add(`mood_${mood.name.toLowerCase()}`);
-			th_mood.innerHTML = mood.name;
+			th_mood.classList.add(`mood_${mood.category}`);
+			th_mood.appendChild(mood.link);
 			const PERF_ONLY = mood.perf_only || this.choice.aktionsart !== 'Durative';
 			th_mood.rowSpan = PERF_ONLY ? 1 : Aspect.aspects.length - 1;
 			th_mood.colSpan = PERF_ONLY ? 2 : 1;
@@ -266,7 +282,7 @@ const AA = {
 					return;
 				const tr_aspect = document.createElement('tr');
 				const th_aspect = document.createElement('th');
-				th_aspect.innerHTML = aspect.name;
+				th_aspect.appendChild(aspect.link);
 				const tr = i === 1 ? tr_mood : tr_aspect;
 				if (i !== 1)
 					elem.appendChild(tr_aspect);
