@@ -32,10 +32,10 @@ class Aspect extends Named {
 }
 /** @type {Aspect[]} */
 Aspect.aspects = [];
-Aspect.INFINITIVE = new Aspect('Infinitive', '', '{c1}a{c2}{c3}a', false);
-Aspect.PERFECT = new Aspect('Perfective', '', '{c1}a{c2}a{c3}k');
-Aspect.IMPERFECT = new Aspect('Continuous', '', 'H₁a{c1}{c2}a{c3}');
-Aspect.IMPERFECT1 = new Aspect('Habitual', '', 'h₅i{c1}{c2}a{c3}');
+Aspect.INFINITIVE = new Aspect('Infinitive', 'context-independent', '{c1}a{c2}{c3}a', false);
+Aspect.PERFECT = new Aspect('Perfective', '"has Xed"', '{c1}a{c2}a{c3}k');
+Aspect.IMPERFECT = new Aspect('Continuous', '"is Xing"', 'H₁a{c1}{c2}a{c3}');
+Aspect.IMPERFECT1 = new Aspect('Habitual', '"Xes all the time"', 'h₅i{c1}{c2}a{c3}');
 
 class Mood extends Named {
 	constructor(name, desc, category, root = '', perf_only = false){
@@ -54,7 +54,7 @@ class Mood extends Named {
 /** @type {Mood[]} */
 Mood.moods = [];
 // compound
-Mood.INDICATIVE = new Mood('Indicative', '');
+Mood.INDICATIVE = new Mood('Indicative');
 Mood.POTENTIAL = new Mood('Potential', '"It is possible that X"', 'epistemic', 'k-H₁-');
 Mood.DEBITIVE = new Mood('Debitive', '"must X"', 'deontic', 'h₃-r-');
 Mood.DESIDERATIVE = new Mood('Desiderative', '"...wants to X"', 'deontic', 'h₂--');
