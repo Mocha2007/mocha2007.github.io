@@ -192,11 +192,15 @@ const AA = {
 		},
 		root(c = 0){
 			return range(c || random.randint(1, 3)).map(_ => this.cons).join('-');
-		}
+		},
+		run(c = 0){
+			AA.elem.input.value = this.root(c);
+			AA.run();
+		},
 	},
 	run(){
 		const root = this.elem.input.value;
-		console.info(`Conjugating ${root}`);
+		// console.info(`Conjugating ${root}`);
 		this.elem.container.innerHTML = '';
 		this.elem.container.appendChild(this.header('Verb'));
 		this.elem.container.appendChild(this.table(root));
