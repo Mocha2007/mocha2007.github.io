@@ -55,7 +55,7 @@ class Mood extends Named {
 Mood.moods = [];
 // compound
 Mood.INDICATIVE = new Mood('Indicative');
-Mood.POTENTIAL = new Mood('Potential', '"It is possible that X"', 'epistemic', 'k-H₁-');
+Mood.SPECULATIVE = new Mood('Speculative', '"It is possible that X"', 'epistemic', 'k-H₁-');
 Mood.DEBITIVE = new Mood('Debitive', '"must X"', 'deontic', 'h₃-r-');
 Mood.DESIDERATIVE = new Mood('Desiderative', '"...wants to X"', 'deontic', 'h₂--');
 Mood.IMPERATIVE = new Mood('Imperative', '"Do X!"', 'deontic', '--', true);
