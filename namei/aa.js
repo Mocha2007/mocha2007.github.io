@@ -18,8 +18,9 @@ class Aspect {
 /** @type {Aspect[]} */
 Aspect.aspects = [];
 Aspect.INFINITIVE = new Aspect('Infinitive', '{c1}a{c2}{c3}a', false);
-Aspect.IMPERFECT = new Aspect('Imperfect', 'H₁a{c1}{c2}a{c3}');
-Aspect.PERFECT = new Aspect('Perfect', '{c1}a{c2}a{c3}k');
+Aspect.PERFECT = new Aspect('Perfective', '{c1}a{c2}a{c3}k');
+Aspect.IMPERFECT = new Aspect('Continuous', 'H₁a{c1}{c2}a{c3}');
+Aspect.IMPERFECT1 = new Aspect('Habitual', 'h₅i{c1}{c2}a{c3}');
 
 class Mood {
 	constructor(name, root = '', perf_only = false){
@@ -256,8 +257,8 @@ const AA = {
 			const th_mood = document.createElement('th');
 			th_mood.classList.add(`mood_${mood.name.toLowerCase()}`);
 			th_mood.innerHTML = mood.name;
-			th_mood.rowSpan = Aspect.aspects.length - 1;
 			const PERF_ONLY = mood.perf_only || this.choice.aktionsart !== 'Durative';
+			th_mood.rowSpan = PERF_ONLY ? 1 : Aspect.aspects.length - 1;
 			th_mood.colSpan = PERF_ONLY ? 2 : 1;
 			tr_mood.appendChild(th_mood);
 			Aspect.aspects.forEach((aspect, i) => {
