@@ -157,9 +157,38 @@ const AA = {
 	},
 	random: {
 		consList: 'm n tʼ cʼ kʼ qʼ t c k q H₁ b d j g fʼ sʼ šʼ h₅ʼ h₄ʼ h₃ʼ f s š h₅ h₄ h₃ h₂ h₁ Lʼ L w l y H₃ H₂ r'.split(' '),
+		/** inverse of Polish */
+		consWeights: {
+			DEFAULT: 322,
+			b: 67,
+			c: 223,
+			d: 30,
+			f: 321,
+			'h₄': 93,
+			g: 73,
+			k: 29,
+			l: 47,
+			m: 34,
+			n: 13,
+			r: 22,
+			s: 23,
+			š: 100, // guess
+			t: 25,
+			// I want these to be common because they lead to good reductions - they're 57 / 43 by default
+			w: 400,
+			y: 400,
+		},
 		/** @type {string} */
 		get cons(){
-			return random.choice(this.consList);
+			this.init();
+			return random.weightedChoice(this.consList, this.cW2);
+		},
+		/** initialize consWeights */
+		init(){
+			if (this.initialized)
+				return;
+			this.cW2 = this.consList.map(c => this.consWeights[c] || this.consWeights.DEFAULT);
+			this.initialized = true;
 		},
 		root(c = 0){
 			return range(c || random.randint(1, 3)).map(_ => this.cons).join('-');
