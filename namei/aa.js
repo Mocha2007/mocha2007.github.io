@@ -38,7 +38,7 @@ class Mood {
 Mood.moods = [];
 // compound
 Mood.INDICATIVE = new Mood('Indicative');
-Mood.DEBITIVE = new Mood('Imperative', '--', true);
+Mood.IMPERATIVE = new Mood('Imperative', '--', true);
 Mood.PROHIBITIVE = new Mood('Prohibitive', 'n--', true);
 Mood.DEBITIVE = new Mood('Debitive', 'h₃-r-');
 Mood.POTENTIAL = new Mood('Potential', 'k-H₁-');
@@ -91,6 +91,10 @@ Person._3 = new Person(3, 'ā', 'a');
 
 const AA = {
 	choice: {
+		/** @type {"Durative"|"Punctual"|"Stative"} */
+		get aktionsart(){
+			return Array.from(document.getElementsByName('stativeness')).find(e => e.checked).value;
+		},
 		get gender(){
 			return Array.from(document.getElementsByName('gender')).find(e => e.checked).value === 'Feminine' ? Gender.F : Gender.M;
 		},
@@ -110,9 +114,6 @@ const AA = {
 			const _1 = {s: '', d: 'i', p: 'un'}[n];
 			return _0 + _1;
 		},
-		get stativeness(){
-			return Array.from(document.getElementsByName('stativeness')).find(e => e.checked).value === 'Stative';
-		}
 	},
 	cleanup(s){
 		return s
@@ -247,13 +248,16 @@ const AA = {
 		});
 		// then create body
 		Mood.moods.forEach(mood => {
+			const NO_IMP = this.choice.aktionsart === 'Stative';
+			if (NO_IMP && (mood === Mood.PROHIBITIVE || mood === Mood.IMPERATIVE))
+				return;
 			const tr_mood = document.createElement('tr');
 			elem.appendChild(tr_mood);
 			const th_mood = document.createElement('th');
 			th_mood.classList.add(`mood_${mood.name.toLowerCase()}`);
 			th_mood.innerHTML = mood.name;
 			th_mood.rowSpan = Aspect.aspects.length - 1;
-			const PERF_ONLY = mood.perf_only || this.choice.stativeness;
+			const PERF_ONLY = mood.perf_only || this.choice.aktionsart !== 'Durative';
 			th_mood.colSpan = PERF_ONLY ? 2 : 1;
 			tr_mood.appendChild(th_mood);
 			Aspect.aspects.forEach((aspect, i) => {
