@@ -155,7 +155,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(2024, 2, 21), 'I finally completed the process of legally changing my name!'),
 		new LunaEvent(new Date(2024, 3, 8), 'I observed the 2024 Solar Eclipse in Oxford, Ohio.'),
 		new LunaEvent(new Date(2024, 3, 28), 'Visited Cala in Tokyo'),
-		new LunaEvent(new Date(2024, 4, 26), 'All legal documentation in new name acquired?'),
+		new LunaEvent(new Date(2024, 4, 25), 'All legal documentation in new name acquired.'),
 		new LunaEvent(new Date(2024, 6, 1), 'Visited Cala in Warsaw'),
 		new LunaEvent(new Date(2024, 10, 13), 'laser done?'),
 		new LunaEvent(new Date(2026, 7, 16), 'Theoretically the effects of HRT should be largely complete by now.'),
