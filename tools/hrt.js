@@ -316,7 +316,7 @@ function time_elem_inner(){
 	const visits = Math.floor(doses/2 / 90) + 2;
 	// elem
 	const NAME_CHANGE_T = deltat(new Date('2024-03-21T15:00:00.000-04:00'), new Date());
-	const MYST = deltat(new Date('2024-06-30T16:00:00.000+01:00'), new Date());
+	const MYST = deltat(new Date('2024-07-01T16:00:00.000+01:00'), new Date());
 	return `${timeString(s, min, h, d, m, yr)}<br>
 		<span class="small">${unit(visits, 'endo visit')}</span><br>
 		${unit(doses, 'dose')} of E (${timeString(doseS, doseM, doseH)} until next dose)<br>
