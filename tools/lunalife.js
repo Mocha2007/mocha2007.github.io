@@ -157,6 +157,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(2024, 3, 28), 'Visited Cala in Tokyo'),
 		new LunaEvent(new Date(2024, 4, 25), 'All legal documentation in new name acquired.'),
 		new LunaEvent(new Date(2024, 6, 1), 'Visited Cala in Warsaw'),
+		new LunaEvent(new Date(2024, 8, 27), 'End of Cala Warsaw Visit'),
 		new LunaEvent(new Date(2024, 11, 9), 'laser done?'), // I will need to push L9 from 4 Sep to 30 Sep (+26 d), otherwise this would be Nov 13th...
 		new LunaEvent(new Date(2026, 7, 16), 'Theoretically the effects of HRT should be largely complete by now.'),
 		new LunaEvent(new Date(2028, 7, 16), 'Theoretically the effects of HRT should be totally complete by now.'),
