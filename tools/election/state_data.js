@@ -46,11 +46,10 @@ Polling.DEFAULT_THIRD = [Polling.DEFAULT_ERROR, {rfk: 0.104, west: 0.018, g: 0.0
 // and... https://www.270towin.com/2024-presidential-election-polls/
 
 // recount margins https://ballotpedia.org/Vote_margins_required_for_election_recounts,_2020
-// ME-1 &c need a few people (I use 10...) so there are actually people who vote
 
 /* updated
 	538		6/3/24
-	rttwh	5/14/24
+	rttwh	6/3/24
 */
 
 const STATES = [
@@ -89,24 +88,24 @@ const STATES = [
 	['NE-1', 1, new Polling(0.5601, 0.4109, ...Polling.DEFAULT_THIRD), 659903, 0], // 2020
 	['NE-2', 1, new Polling(0.375, 0.336, Polling.DEFAULT_ERROR, {rfk: 0.09, west: 0.04}), 	658116, 0], // rttwh
 	['NE-3', 1, new Polling(0.7536, 0.2234, ...Polling.DEFAULT_THIRD), 	649904, 0], // 2020
-	['NH', 4, new Polling(0.385, 0.437, Polling.DEFAULT_ERROR, {rfk: 0.098, west: 0.008}), 1402054, 0], // rttwh
+	['NH', 4, new Polling(0.384, 0.407, Polling.DEFAULT_ERROR, {rfk: 0.097, west: 0.01}), 1402054, 0], // rttwh
 	['NJ', 14, new Polling(0.35, 0.419, Polling.DEFAULT_ERROR, {rfk: 0.075, west: 0.012}), 9290841, 0], // rttwh
 	['NM', 5, new Polling(0.411, 0.486, ...Polling.DEFAULT_THIRD), 2114371, 0.0025], // rttwh
 	['NV', 6, new Polling(0.424, 0.367, 0.03, {rfk: 0.102}), 3194176, 0], // 538
-	['NY', 28, new Polling(0.319, 0.42, Polling.DEFAULT_ERROR, {rfk: 0.13, west: 0.057}), 19571216, 0], // rttwh
+	['NY', 28, new Polling(0.366, 0.445, Polling.DEFAULT_ERROR, {rfk: 0.067, west: 0.024}), 19571216, 0], // rttwh
 	['OH', 17, new Polling(0.453, 0.357, 0.02, {rfk: 0.100}), 11785935, 0.0025], // 538
 	['OK', 7, new Polling(0.577, 0.326, ...Polling.DEFAULT_THIRD), 4053824, 0], // rttwh
 	['OR', 8, new Polling(0.29, 0.40, Polling.DEFAULT_ERROR, {rfk: 0.19, west: 0.03}), 4233358, 0.002], // rttwh
 	['PA', 19, new Polling(0.427, 0.408, 0.02, {rfk: 0.087}), 12961683, 0.005], // 538
-	['RI', 4, new Polling(0.33, 0.496, ...Polling.DEFAULT_THIRD), 1095962, 0], // rttwh
+	['RI', 4, new Polling(0.34, 0.51, Polling.DEFAULT_ERROR, {rfk: 0.06, west: 0.01}), 1095962, 0], // rttwh
 	['SC', 9, new Polling(0.513, 0.356, ...Polling.DEFAULT_THIRD), 5373555, 0.01], // rttwh
-	['SD', 3, new Polling(0.544, 0.273, ...Polling.DEFAULT_THIRD), 919318, 0], // rttwh
+	['SD', 3, new Polling(0.498, 0.313, Polling.DEFAULT_ERROR, {rfk: 0.11, west: 0}), 919318, 0], // rttwh
 	['TN', 11, new Polling(0.481, 0.264, Polling.DEFAULT_ERROR, {rfk: 0.148, west: 0}), 7126489, 0], // rttwh
 	['TX', 40, new Polling(0.456, 0.344, 0.03, {rfk: 0.120}), 30503301, 0], // 538
 	['UT', 6, new Polling(0.467, 0.234, Polling.DEFAULT_ERROR, {rfk: 0.13, west: 0.01}), 3417734, 0], // rttwh
-	['VA', 13, new Polling(0.358, 0.423, Polling.DEFAULT_ERROR, {rfk: 0.14, west: 0}), 8715698, 0], // rttwh
+	['VA', 13, new Polling(0.379, 0.401, Polling.DEFAULT_ERROR, {rfk: 0.083, west: 0.01}), 8715698, 0], // rttwh
 	['VT', 3, new Polling(0.284, 0.577, ...Polling.DEFAULT_THIRD), 647464, 0], // rttwh
-	['WA', 12, new Polling(0.386, 0.36, Polling.DEFAULT_ERROR, {rfk: 0.129, west: 0.04}), 7812880, 0.005], // rttwh
+	['WA', 12, new Polling(0.355, 0.402, Polling.DEFAULT_ERROR, {rfk: 0.054, west: 0.017}), 7812880, 0.005], // rttwh
 	['WI', 10, new Polling(0.419, 0.406, 0.02, {rfk: 0.086}), 5910955, 0], // 538
 	['WV', 4, new Polling(0.582, 0.239, ...Polling.DEFAULT_THIRD), 1770071, 0], // rttwh
 	['WY', 3, new Polling(0.672, 0.159, ...Polling.DEFAULT_THIRD), 584057, 0.01], // rttwh
