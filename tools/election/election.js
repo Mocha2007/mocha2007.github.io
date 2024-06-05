@@ -21,6 +21,13 @@ const CONST = {
 		election: new Date(2024, 10, 5),
 		inauguration: new Date(2025, 0, 20),
 		start: new Date(2024, 2, 5),
+		_538: {
+			get args(){
+				return [this.start.getMonth(), this.start.getDate() + random.randint(0, this.delta_d_max)];
+			},
+			start: new Date(2024, 5, 29),
+			delta_d_max: 48,
+		},
 	},
 	debug_mode: false,
 	dur: {
@@ -30,6 +37,7 @@ const CONST = {
 		},
 	},
 	flags: {
+		_538: false,
 		election_held: false,
 		trumpChoseVP: false,
 	},
@@ -384,6 +392,8 @@ function simulation(){
 	CONST.positions.nom_west_vp = Politician.fromName('Melina Abdullah');
 	CONST.positions.nom_g_p = Politician.fromName('Jill Stein');
 	CONST.positions.nom_g_vp = Politician.fromName('Jasmine Sherman'); // placeholder
+	// 538
+	const DATE_538 = new Date(2024, ...CONST.dates._538.args);
 	// start!
 	CONST.alert('Super Tuesday');
 	while (CONST.date < CONST.dates.inauguration){
@@ -408,6 +418,11 @@ function simulation(){
 		// election
 		if (CONST.dates.election <= CONST.date && !CONST.flags.election_held)
 			CONST.holdElection();
+		// election
+		if (DATE_538 <= CONST.date && !CONST.flags._538){
+			CONST.alert('538 uploads their election tracker.', false);
+			CONST.flags._538 = true;
+		}
 		// misc events
 		if (!CONST.debug_mode)
 			while (EVENTS.i < EVENTS.length && EVENTS[EVENTS.i][0] <= CONST.date)
