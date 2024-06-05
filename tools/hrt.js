@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 /* exported sim */
+// eslint-disable-next-line no-unused-vars
 const debug = document.URL[0].toLowerCase() === 'f'; // file:// vs. http(s)://
 
 const _1s = 1000;
@@ -203,8 +204,9 @@ get_shave_cycle.periodminor = 4;
 get_shave_cycle.cycleOffset = 1257;
 
 // obsolete now that I'm working on 10-wk schedule with entirely different details...
+/*
 function laserPhaseElem(){
-	/** the last time I got lasered */
+	// the last time I got lasered
 	const last = get_laser_t.appts[get_laser_t.appts.length-2];
 	// a visual chart showing progress to next laser: 2 days, avoid sunlight, 1 wk, "face settling in", rest, "waiting"
 	// container
@@ -267,6 +269,7 @@ function laserPhaseElem(){
 	elem.appendChild(red);
 	return elem;
 }
+*/
 
 function eLevel(){
 	const t = get_dose_t() % _12h / _1h;
