@@ -175,6 +175,7 @@ const EVENTS = [
 	[new Date(2024, 4, 30), 'Donald Trump is convicted of financial crimes.'],
 	[new Date(2024, 5, 27), 'The first private debate between the two major party candidates is hosted on CNN.'],
 	[new Date(2024, 6, 11), 'The Green National Convention is held online.'],
+	[new Date(2024, 6, 11), 'Donald Trump is sentenced.'],
 	[new Date(2024, 6, 15), 'The Republican National Convention is held in Milwaukee, WI.'],
 	[new Date(2024, 7, 19), 'The Democratic National Convention is held in Chicago, IL.'],
 	[new Date(2024, 8, 10), 'The second private debate between the two major party candidates is hosted on ABC.'],
