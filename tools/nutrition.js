@@ -584,6 +584,7 @@ Nutrient.TOCOPHEROL_ALPHA = new Nutrient('α-Tocopherol', {C: 29, H: 50, O: 2}, 
 Nutrient.TOCOPHEROL_BETA = new Nutrient('β-Tocopherol', {C: 28, H: 48, O: 2});
 Nutrient.TOCOPHEROL_GAMMA = new Nutrient('γ-Tocopherol', {C: 28, H: 48, O: 2});
 Nutrient.TOCOPHEROL_DELTA = new Nutrient('δ-Tocopherol', {C: 27, H: 46, O: 2});
+Nutrient.TOCOTRIENOL_ALPHA = new Nutrient('α-Tocotrienol', {C: 29, H: 44, O: 2});
 Nutrient.TOCOTRIENOL_GAMMA = new Nutrient('γ-Tocotrienol', {C: 28, H: 42, O: 2});
 // K
 Nutrient.PHYLLOQUINONE = new Nutrient('Phytomenadione', {C: 31, H: 46, O: 2}); // Phytomenadione
@@ -694,6 +695,7 @@ NutrientGroup.VITAMIN_E = new NutrientGroup('Vitamin E', 15e-3, [
 	new NutrientAmount(Nutrient.TOCOPHEROL_BETA, 1),
 	new NutrientAmount(Nutrient.TOCOPHEROL_GAMMA, 1),
 	new NutrientAmount(Nutrient.TOCOPHEROL_DELTA, 1),
+	new NutrientAmount(Nutrient.TOCOTRIENOL_ALPHA, 1),
 	new NutrientAmount(Nutrient.TOCOTRIENOL_GAMMA, 1),
 ]);
 
@@ -1508,6 +1510,48 @@ Food.Blueberry = new Food('Blueberry', {
 		new NutrientAmount(Nutrient.TOCOPHEROL_DELTA, 0.03e-3),
 		new NutrientAmount(Nutrient.TOCOTRIENOL_GAMMA, 0.07e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 19.3e-6),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/171711/nutrients');
+Food.Jalapeno = new Food('Jalapeño', {
+	measures: {
+		cup: 90,
+		unit: 14,
+	},
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 91.7),
+		new NutrientAmount(Nutrient.PROTEIN, 0.91),
+		new NutrientAmount(Nutrient.FAT, 0.37),
+		new NutrientAmount(Nutrient.ASH, 0.53),
+		new NutrientAmount(Nutrient.FIBER, 2.8),
+		new NutrientAmount(Nutrient.GLUCOSE, 1.48),
+		new NutrientAmount(Nutrient.FRUCTOSE, 2.63),
+		new NutrientAmount(Nutrient.CALCIUM, 12e-3),
+		new NutrientAmount(Nutrient.IRON, 0.25e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 15e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 26e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 248e-3),
+		new NutrientAmount(Nutrient.SODIUM, 3e-3),
+		new NutrientAmount(Nutrient.ZINC, 0.14e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.046e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 0.097e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 0.4e-6),
+		new NutrientAmount(Nutrient.VITAMIN_C, 119e-3),
+		new NutrientAmount(Nutrient.THIAMIN, 0.04e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.07e-3),
+		new NutrientAmount(Nutrient.NIACIN, 1.28e-3),
+		new NutrientAmount(Nutrient.PANTOTHENIC_ACID, 0.315e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.419e-3),
+		new NutrientAmount(Nutrient.FOLATE, 27e-6),
+		new NutrientAmount(Nutrient.CHOLINE, 7.5e-3),
+		new NutrientAmount(Nutrient.CAROTENE_BETA, 561e-6),
+		new NutrientAmount(Nutrient.CAROTENE_ALPHA, 67e-6),
+		new NutrientAmount(Nutrient.CRYPTOXANTHIN_BETA, 105e-6),
+		new NutrientAmount(Nutrient.LUTEIN, 861e-6),
+		new NutrientAmount(Nutrient.TOCOPHEROL_BETA, 0.17e-3),
+		new NutrientAmount(Nutrient.TOCOPHEROL_GAMMA, 0.05e-3),
+		new NutrientAmount(Nutrient.TOCOPHEROL_DELTA, 0.01e-3),
+		new NutrientAmount(Nutrient.TOCOTRIENOL_ALPHA, 0.02e-3),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 18.5e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/171711/nutrients');
 
