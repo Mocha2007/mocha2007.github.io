@@ -1648,6 +1648,9 @@ Food.Jalapeno = new Food('Guava', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/173044/nutrients');
 Food.ChickenThigh = new Food('Chicken Thigh', {
+	measures: {
+		unit: 191,
+	},
 	ignoreNutrientWarning: true,
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 77.2),
@@ -1711,6 +1714,9 @@ Food.Butter = new Food('Butter', { // salted
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/790508/nutrients');
 Food.BeefGround = new Food('Beef (Ground)', {
+	measures: {
+		serving: 85,
+	},
 	ignoreNutrientWarning: true,
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 67.1),
@@ -1741,5 +1747,46 @@ Food.BeefGround = new Food('Beef (Ground)', {
 		new NutrientAmount(Nutrient.CHOLESTEROL, 62e-3),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/168608/nutrients');
+Food.Milk = new Food('Milk', { // whole, unfortified
+	measures: {
+		cup: 244,
+		tbsp: 15,
+		floz: 30.5,
+		qt: 976,
+	},
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 88.1),
+		new NutrientAmount(Nutrient.PROTEIN, 3.15),
+		new NutrientAmount(Nutrient.FAT, 3.27),
+		new NutrientAmount(Nutrient.ASH, 0.67),
+		new NutrientAmount(Nutrient.LACTOSE, 5.05),
+		new NutrientAmount(Nutrient.CALCIUM, 113e-3),
+		new NutrientAmount(Nutrient.IRON, 0.03e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 10e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 84e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 132e-3),
+		new NutrientAmount(Nutrient.SODIUM, 43e-3),
+		new NutrientAmount(Nutrient.ZINC, 0.37e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.025e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 0.004e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 3.7e-6),
+		new NutrientAmount(Nutrient.THIAMIN, 0.046e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.169e-3),
+		new NutrientAmount(Nutrient.NIACIN, 0.089e-3),
+		new NutrientAmount(Nutrient.PANTOTHENIC_ACID, 0.373e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.036e-3),
+		new NutrientAmount(Nutrient.FOLATE, 5e-6),
+		new NutrientAmount(Nutrient.CHOLINE, 14.3e-3),
+		new NutrientAmount(Nutrient.BETAINE, 0.6e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B12, 0.45e-6),
+		new NutrientAmount(Nutrient.RETINOL, 45e-6),
+		new NutrientAmount(Nutrient.CAROTENE_BETA, 7e-6),
+		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.07e-3),
+		new NutrientAmount(Nutrient.VITAMIN_D3, 0.1e-6),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 0.3e-6),
+		new NutrientAmount(Nutrient.MENAQUINONE_4, 1e-6),
+		new NutrientAmount(Nutrient.CHOLESTEROL, 10e-3),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/172217/nutrients');
 
 const NUTRITION_LOADED = true;
