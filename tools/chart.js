@@ -315,7 +315,6 @@ function ternary(){
 	const [WIDTH, HEIGHT] = [sizeY * 2/Math.sqrt(3), sizeY];
 	const OFFSET_X = (sizeX - WIDTH)/2;
 	function normalize(...args){
-		console.debug(...args);
 		const s = sum(args);
 		return args.map(x => x/s);
 	}
