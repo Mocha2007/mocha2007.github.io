@@ -172,16 +172,16 @@ function scatter(){
 	const data = getData();
 	// log scaling?
 	if (data.logx)
-		data.x = data.x.map(Math.log).filter(isFinite);
+		data.x = data.x.map(Math.log);
 	if (data.logy)
-		data.y = data.y.map(Math.log).filter(isFinite);
+		data.y = data.y.map(Math.log);
 	/** @type {SVGElement} */
 	const chart = document.getElementById('chart');
 	chart.setAttribute('viewBox', `0 0 ${sizeX} ${sizeY}`);
-	let xMax = Math.max(...data.x);
-	let xMin = Math.min(...data.x);
-	let yMax = Math.max(...data.y);
-	let yMin = Math.min(...data.y);
+	let xMax = Math.max(...data.x.filter(isFinite));
+	let xMin = Math.min(...data.x.filter(isFinite));
+	let yMax = Math.max(...data.y.filter(isFinite));
+	let yMin = Math.min(...data.y.filter(isFinite));
 	const xRange = xMax - xMin;
 	const yRange = yMax - yMin;
 	const xPadding = PADDING * xRange;
@@ -204,6 +204,8 @@ function scatter(){
 		// x-y coords
 		const [x, y] = [remap(xy[0], [xMin, xMax], [0, sizeX]),
 			remap(xy[1], [yMin, yMax], [sizeY, 0])];
+		if (!isFinite(x) || !isFinite(y))
+			return;
 		point.setAttribute('cx', x);
 		point.setAttribute('cy', y);
 		// append to group
