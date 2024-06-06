@@ -602,6 +602,7 @@ Nutrient.ERGOSTA_7_22_DIENOL = new Nutrient('Ergosta-7,22-dienol', Nutrient.ERGO
 // misc Carotenoids
 Nutrient.CIS_LUTEIN = new Nutrient('Cis-Lutein', {C: 40, H: 56, O: 2}); // ???
 Nutrient.LUTEIN = new Nutrient('Lutein', {C: 40, H: 56, O: 2});
+Nutrient.LYCOPENE = new Nutrient('Lycopene', {C: 40, H: 56});
 Nutrient.ZEAXANTHIN = new Nutrient('Zeaxanthin', {C: 40, H: 56, O: 2});
 // Isoflavones
 Nutrient.DAIDZEIN = new Nutrient('Daidzein', {C: 15, H: 10, O: 4});
@@ -734,6 +735,7 @@ NutrientGroup.CAROTENOIDS = new NutrientGroup('Carotenoids', 0, [
 	new NutrientAmount(NutrientGroup.XANTHOPHYLLS, 1),
 	new NutrientAmount(Nutrient.CAROTENE_ALPHA, 1),
 	new NutrientAmount(Nutrient.CAROTENE_BETA, 1),
+	new NutrientAmount(Nutrient.LYCOPENE, 1),
 ]);
 
 NutrientGroup.ISOFLAVONES = new NutrientGroup('Isoflavones', 0, [
@@ -1553,6 +1555,42 @@ Food.Jalapeno = new Food('Jalapeño', {
 		new NutrientAmount(Nutrient.TOCOTRIENOL_ALPHA, 0.02e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 18.5e-6),
 	],
-}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/171711/nutrients');
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/168576/nutrients');
+Food.Jalapeno = new Food('Guava', {
+	measures: {
+		cup: 165,
+		unit: 55,
+	},
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 80.8),
+		new NutrientAmount(Nutrient.PROTEIN, 2.55),
+		new NutrientAmount(Nutrient.FAT, 0.95),
+		new NutrientAmount(Nutrient.ASH, 1.39),
+		new NutrientAmount(Nutrient.FIBER, 5.4),
+		new NutrientAmount(Nutrient.SUGAR, 8.92),
+		new NutrientAmount(Nutrient.CALCIUM, 18e-3),
+		new NutrientAmount(Nutrient.IRON, 0.26e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 22e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 40e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 417e-3),
+		new NutrientAmount(Nutrient.SODIUM, 2e-3),
+		new NutrientAmount(Nutrient.ZINC, 0.23e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.23e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 0.15e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 0.6e-6),
+		new NutrientAmount(Nutrient.VITAMIN_C, 228e-3),
+		new NutrientAmount(Nutrient.THIAMIN, 0.067e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.04e-3),
+		new NutrientAmount(Nutrient.NIACIN, 1.08e-3),
+		new NutrientAmount(Nutrient.PANTOTHENIC_ACID, 0.451e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.11e-3),
+		new NutrientAmount(Nutrient.FOLATE, 49e-6),
+		new NutrientAmount(Nutrient.CHOLINE, 7.6e-3),
+		new NutrientAmount(Nutrient.CAROTENE_BETA, 374e-6),
+		new NutrientAmount(Nutrient.LYCOPENE, 5200e-6),
+		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.73e-3),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 2.6e-6),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/173044/nutrients');
 
 const NUTRITION_LOADED = true;
