@@ -1826,5 +1826,35 @@ Food.BeefLiver = new Food('Beef Liver', {
 		new NutrientAmount(Nutrient.CHOLESTEROL, 275e-3),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/169451/nutrients');
+Food.BeefSweetbread = new Food('Beef Sweetbread', {
+	ignoreNutrientWarning: true,
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 57.7),
+		new NutrientAmount(Nutrient.PROTEIN, 11.5),
+		new NutrientAmount(Nutrient.FAT, 28.6),
+		new NutrientAmount(Nutrient.ASH, 2.36),
+		new NutrientAmount(Nutrient.CALCIUM, 4e-3),
+		new NutrientAmount(Nutrient.IRON, 1.15e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 15e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 331e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 318e-3),
+		new NutrientAmount(Nutrient.SODIUM, 64e-3),
+		new NutrientAmount(Nutrient.ZINC, 1e-3),
+		new NutrientAmount(Nutrient.COPPER, 5.1e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 0.012e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 9e-6),
+		new NutrientAmount(Nutrient.THIAMIN, 0.087e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.112e-3),
+		new NutrientAmount(Nutrient.NIACIN, 2e-3),
+		new NutrientAmount(Nutrient.PANTOTHENIC_ACID, 0.6e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.041e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B12, 2.1e-6),
+		new NutrientAmount(Nutrient.RETINOL, 19e-6),
+		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.69e-3),
+		new NutrientAmount(Nutrient.VITAMIN_D3, 0.6e-6),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 3.1e-6),
+		new NutrientAmount(Nutrient.CHOLESTEROL, 217e-3),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/173093/nutrients');
 
 const NUTRITION_LOADED = true;
