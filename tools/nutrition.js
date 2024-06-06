@@ -983,7 +983,7 @@ Food.Peanut = new Food('Peanut', {
 		new NutrientAmount(Nutrient.RESVERATROL, 0.26e-3/146), // max; https://en.wikipedia.org/wiki/Resveratrol#Foods
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2515376/nutrients');
-Food.Lime = new Food('Lime', { // todo create nutrient groups for all this other shit
+Food.Lime = new Food('Lime', {
 	measures: {
 		unit: 65,
 		slice: 8,
@@ -1049,7 +1049,7 @@ Food.RiceWhite = new Food('White Rice', {
 		new NutrientAmount(Nutrient.FOLATE, 7e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/168883/nutrients');
-Food.Egg = new Food('Egg', { // todo create nutrient groups for all this other shit
+Food.Egg = new Food('Egg', {
 	measures: {
 		egg: 50.3,
 		unit: 50.3,
@@ -1088,7 +1088,7 @@ Food.Egg = new Food('Egg', { // todo create nutrient groups for all this other s
 		new NutrientAmount(Nutrient.CHOLESTEROL, 411e-3),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/748967/nutrients');
-Food.Bacon = new Food('Bacon', { // todo create nutrient groups for all this other shit
+Food.Bacon = new Food('Bacon', {
 	measures: {
 		slice: 6.3,
 		unit: 6.3,
@@ -1113,7 +1113,7 @@ Food.Bacon = new Food('Bacon', { // todo create nutrient groups for all this oth
 		new NutrientAmount(Nutrient.MANGANESE, 0.02e-3),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/749420/nutrients');
-Food.BreadRye = new Food('Rye Bread', { // todo create nutrient groups for all this other shit
+Food.BreadRye = new Food('Rye Bread', {
 	measures: {
 		slice: 32,
 		unit: 32,
@@ -1146,7 +1146,7 @@ Food.BreadRye = new Food('Rye Bread', { // todo create nutrient groups for all t
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 1.2e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2343235/nutrients');
-Food.ChocolateDark = new Food('Dark Chocolate (70-85%)', { // todo create nutrient groups for all this other shit
+Food.ChocolateDark = new Food('Dark Chocolate (70-85%)', {
 	measures: {
 		bar: 101,
 		unit: 101,
@@ -1194,7 +1194,7 @@ Food.ChocolateDark = new Food('Dark Chocolate (70-85%)', { // todo create nutrie
 		new NutrientAmount(Nutrient.RESVERATROL, 0.46e-3*0.85/200), // est'd; max; https://en.wikipedia.org/wiki/Resveratrol#Foods
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/170273/nutrients');
-Food.MilkSoy = new Food('Soy Milk', { // todo create nutrient groups for all this other shit
+Food.MilkSoy = new Food('Soy Milk', {
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 92.4),
 		new NutrientAmount(Nutrient.NITROGEN, 0.57),
@@ -1240,7 +1240,7 @@ Food.MilkSoy = new Food('Soy Milk', { // todo create nutrient groups for all thi
 		new NutrientAmount(Nutrient.COUMESTROL, 0.81e-3), // https://en.wikipedia.org/wiki/Coumestrol
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/1999630/nutrients');
-Food.Tofu = new Food('Tofu', { // todo create nutrient groups for all this other shit
+Food.Tofu = new Food('Tofu', {
 	measures: {
 		cup: 248,
 		piece: 120,
@@ -1526,10 +1526,10 @@ Food.MushroomWhiteButton = new Food('White Button Mushroom', {
 		new NutrientAmount(Nutrient.BIOTIN, 9.07e-6),
 		new NutrientAmount(Nutrient.FOLATE, 35e-6),
 		new NutrientAmount(Nutrient.VITAMIN_D2, 0.02e-6),
-		new NutrientAmount(Nutrient.ERGOSTA_7_ENOL, 1.63e-3), // todo
-		new NutrientAmount(Nutrient.ERGOSTA_5_7_DIENOL, 5.84e-3), // todo
-		new NutrientAmount(Nutrient.ERGOSTA_7_22_DIENOL, 1.54e-3), // todo
-		new NutrientAmount(Nutrient.ERGOSTEROL, 56e-3), // todo
+		new NutrientAmount(Nutrient.ERGOSTA_7_ENOL, 1.63e-3),
+		new NutrientAmount(Nutrient.ERGOSTA_5_7_DIENOL, 5.84e-3),
+		new NutrientAmount(Nutrient.ERGOSTA_7_22_DIENOL, 1.54e-3),
+		new NutrientAmount(Nutrient.ERGOSTEROL, 56e-3),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/1999629/nutrients');
 Food.Blueberry = new Food('Blueberry', {
