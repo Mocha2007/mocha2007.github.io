@@ -107,6 +107,8 @@ function nutrition_main(){
 	));
 	// scatter
 	SCATTER_CONTROL.init();
+	// ternary
+	SCATTER_CONTROL.ternary();
 	// defaults...
 	Food.OnionYellow.show();
 	Nutrient.POTASSIUM.showBar();
@@ -197,6 +199,20 @@ const SCATTER_CONTROL = {
 		this.y = Nutrient.fromString(this.elem.y.value);
 		// reread y
 		this.update();
+	},
+	ternary(){
+		const URL = 'chart.html?data=' + toURL({
+			type: 'ternary',
+			x: Food.foods.map(f => f.nutrient(Nutrient.PROTEIN) * 4),
+			y: Food.foods.map(f => f.nutrient(Nutrient.FAT) * 9),
+			z: Food.foods.map(f => f.nutrient(NutrientGroup.CALORIES_FROM_SUGAR)),
+			text: Food.foods.map(f => f.name),
+			labels: true,
+			logx: true,
+			logy: true,
+			logz: true,
+		});
+		document.getElementById('ternary').src = URL;
 	},
 	update(){
 		showScatter(this.x, this.y);
