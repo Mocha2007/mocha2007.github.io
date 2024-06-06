@@ -311,7 +311,7 @@ pie.colors = ['blue', 'red', 'yellow', 'green']; // todo
 
 /** generate ternary plot from URL data */
 function ternary(){
-	const PADDING = 0.1; // todo use this
+	const PADDING = 0.07;
 	const [WIDTH, HEIGHT] = [sizeY * 2/Math.sqrt(3), sizeY];
 	const OFFSET_X = (sizeX - WIDTH)/2;
 	function normalize(...args){
@@ -331,7 +331,7 @@ function ternary(){
 	const data = getData();
 	/** @type {SVGElement} */
 	const chart = document.getElementById('chart');
-	chart.setAttribute('viewBox', `0 0 ${sizeX} ${sizeY}`);
+	chart.setAttribute('viewBox', `${-PADDING*sizeX} ${-PADDING*sizeY} ${(1+2*PADDING)*sizeX} ${(1+2*PADDING)*sizeY}`);
 	// draw triangle
 	// <polygon points="100,100 150,25 150,75 200,0" fill="none" stroke="black" />
 	const triangle = createSvgElement('polygon');
