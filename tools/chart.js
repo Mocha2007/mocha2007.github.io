@@ -362,7 +362,7 @@ function ternary(){
 				labelElem.innerHTML = LABEL;
 				labelElem.classList.add('value');
 				labelElem.setAttribute('x', coords.x);
-				labelElem.setAttribute('y', coords.y + 20);
+				labelElem.setAttribute('y', coords.y + 10);
 				g.appendChild(labelElem);
 			}
 		}

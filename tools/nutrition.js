@@ -1710,5 +1710,36 @@ Food.Butter = new Food('Butter', { // salted
 		new NutrientAmount(Nutrient.VITAMIN_D3, 0.4e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/790508/nutrients');
+Food.BeefGround = new Food('Beef (Ground)', {
+	ignoreNutrientWarning: true,
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 67.1),
+		new NutrientAmount(Nutrient.PROTEIN, 19.4),
+		new NutrientAmount(Nutrient.FAT, 12.7),
+		new NutrientAmount(Nutrient.ASH, 1.71),
+		new NutrientAmount(Nutrient.CALCIUM, 12e-3),
+		new NutrientAmount(Nutrient.IRON, 1.99e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 19e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 175e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 289e-3),
+		new NutrientAmount(Nutrient.SODIUM, 68e-3),
+		new NutrientAmount(Nutrient.ZINC, 4.55e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.063e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 0.01e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 14.2e-6),
+		new NutrientAmount(Nutrient.THIAMIN, 0.049e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.154e-3),
+		new NutrientAmount(Nutrient.NIACIN, 4.82e-3),
+		new NutrientAmount(Nutrient.PANTOTHENIC_ACID, 0.576e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.355e-3),
+		new NutrientAmount(Nutrient.FOLATE, 6e-6),
+		new NutrientAmount(Nutrient.CHOLINE, 67.4e-3),
+		new NutrientAmount(Nutrient.BETAINE, 8e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B12, 1.97e-6),
+		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.35e-3),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 1.1e-6),
+		new NutrientAmount(Nutrient.CHOLESTEROL, 62e-3),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/168608/nutrients');
 
 const NUTRITION_LOADED = true;
