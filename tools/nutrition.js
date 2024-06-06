@@ -567,6 +567,7 @@ Nutrient.GLUCOSE = new Nutrient('Glucose', {C: 6, H: 12, O: 6}, 0, 1.54);
 Nutrient.FRUCTOSE = new Nutrient('Fructose', {C: 6, H: 12, O: 6}, 0, 1.694);
 Nutrient.LACTOSE = new Nutrient('Lactose', {C: 12, H: 22, O: 11}, 0, 1.525);
 Nutrient.MALTOSE = new Nutrient('Maltose', {C: 12, H: 22, O: 11}, 0, 1.54);
+Nutrient.GALACTOSE = new Nutrient('Galactose', {C: 6, H: 12, O: 6}, 0, 1.5);
 Nutrient.STARCH = new Nutrient('Starch', {C: 6, H: 10, O: 5});
 // Oligosaccharides
 Nutrient.RAFFINOSE = new Nutrient('Raffinose', {C: 18, H: 32, O: 16});
@@ -660,6 +661,7 @@ NutrientGroup.SUGARS = new NutrientGroup('Sugars', 195, [
 	new NutrientAmount(Nutrient.FRUCTOSE, 1),
 	new NutrientAmount(Nutrient.LACTOSE, 1),
 	new NutrientAmount(Nutrient.MALTOSE, 1),
+	new NutrientAmount(Nutrient.GALACTOSE, 1),
 	new NutrientAmount(Nutrient.SUGAR, 1),
 ], true);
 
@@ -675,6 +677,7 @@ NutrientGroup.CALORIES_FROM_SUGAR = new NutrientGroup('Calories from Sugar', 0, 
 	new NutrientAmount(Nutrient.FRUCTOSE, 3.75),
 	new NutrientAmount(Nutrient.LACTOSE, 3.94),
 	new NutrientAmount(Nutrient.MALTOSE, 3.8), // unknown
+	new NutrientAmount(Nutrient.GALACTOSE, 3.8), // unknown
 	new NutrientAmount(NutrientGroup.OLIGOSACCHARIDES, 2), // unknown
 	new NutrientAmount(Nutrient.SUGAR, 3.8),
 ]);
@@ -1884,5 +1887,38 @@ Food.LambTesticles = new Food('Lamb Testicles', {
 		new NutrientAmount(Nutrient.CHOLESTEROL, 393e-3),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/172619/nutrients');
+Food.Honey = new Food('Honey', {
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 17.1),
+		new NutrientAmount(Nutrient.PROTEIN, 0.3),
+		new NutrientAmount(Nutrient.ASH, 0.2),
+		new NutrientAmount(Nutrient.FIBER, 0.2e-3),
+		new NutrientAmount(Nutrient.SUCROSE, 0.89),
+		new NutrientAmount(Nutrient.GLUCOSE, 35.8),
+		new NutrientAmount(Nutrient.FRUCTOSE, 40.9),
+		new NutrientAmount(Nutrient.MALTOSE, 1.44),
+		new NutrientAmount(Nutrient.GALACTOSE, 3.1),
+		new NutrientAmount(Nutrient.CALCIUM, 6e-3),
+		new NutrientAmount(Nutrient.IRON, 0.42e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 2e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 4e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 52e-3),
+		new NutrientAmount(Nutrient.SODIUM, 4e-3),
+		new NutrientAmount(Nutrient.ZINC, 0.22e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.036e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 0.08e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 0.8e-6),
+		new NutrientAmount(Nutrient.FLUORIDE, 7e-6),
+		new NutrientAmount(Nutrient.THIAMIN, 0.315e-3),
+		new NutrientAmount(Nutrient.VITAMIN_C, 0.5e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.038e-3),
+		new NutrientAmount(Nutrient.NIACIN, 0.121e-3),
+		new NutrientAmount(Nutrient.PANTOTHENIC_ACID, 0.068e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.024e-3),
+		new NutrientAmount(Nutrient.FOLATE, 2e-6),
+		new NutrientAmount(Nutrient.CHOLINE, 2.2e-3),
+		new NutrientAmount(Nutrient.BETAINE, 1.7e-3),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/169640/nutrients');
 
 const NUTRITION_LOADED = true;
