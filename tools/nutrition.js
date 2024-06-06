@@ -110,6 +110,22 @@ function nutrition_main(){
 	// defaults...
 	Food.OnionYellow.show();
 	Nutrient.POTASSIUM.showBar();
+	// checks...
+	const urls = [];
+	Food.foods.forEach(f => {
+		// source check
+		if (urls.includes(f.source))
+			console.warn(`${f.name} has duplicate source: ${f.source}`);
+		else
+			urls.push(f.source);
+		// sugar + sodium check
+		if (!f.ignoreNutrientWarning){
+			if (!f.nutrient(Nutrient.SODIUM))
+				console.warn(`${f.name} lacks sodium info (${f.source})`);
+			if (!f.nutrient(NutrientGroup.SUGARS))
+				console.warn(`${f.name} lacks sugar info (${f.source})`);
+		}
+	});
 	// done
 	console.info('nutrition.js ran successfully');
 }
@@ -350,6 +366,10 @@ class Food extends SourcedObject {
 		return this.nutrients
 			.map(na => na.nutrient.density * na.amount / this.unitMass)
 			.reduce((a, b) => a+b, 0);
+	}
+	/** @returns {boolean} */
+	get ignoreNutrientWarning(){
+		return this.properties.ignoreNutrientWarning || false;
 	}
 	get measures(){
 		return this.properties.measures || {};
@@ -849,34 +869,44 @@ Food.OnionYellow = new Food('Yellow Onion', {
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/790646/nutrients');
 Food.PotatoSweet = new Food('Sweet Potato', {
 	measures: {
-		unit: 271, // self-measurement
+		cup: 133,
+		unit: 130,
 	},
 	nutrients: [
-		new NutrientAmount(Nutrient.WATER, 79.5),
-		new NutrientAmount(Nutrient.NITROGEN, 0.25),
-		new NutrientAmount(Nutrient.PROTEIN, 1.58),
-		new NutrientAmount(Nutrient.FAT, 0.38),
-		new NutrientAmount(Nutrient.ASH, 1.18),
-		new NutrientAmount(Nutrient.FIBER, 4.44),
-		new NutrientAmount(Nutrient.SUCROSE, 3.06),
-		new NutrientAmount(Nutrient.GLUCOSE, 0.98),
-		new NutrientAmount(Nutrient.FRUCTOSE, 0.93),
-		new NutrientAmount(Nutrient.MALTOSE, 1.1),
-		new NutrientAmount(Nutrient.CALCIUM, 22e-3),
-		new NutrientAmount(Nutrient.IRON, 0.4e-3),
-		new NutrientAmount(Nutrient.MAGNESIUM, 19.1e-3),
-		new NutrientAmount(Nutrient.PHOSPHORUS, 37e-3),
-		new NutrientAmount(Nutrient.POTASSIUM, 486e-3),
-		new NutrientAmount(Nutrient.ZINC, 0.34e-3),
-		new NutrientAmount(Nutrient.COPPER, 0.187e-3),
-		new NutrientAmount(Nutrient.MANGANESE, 0.417e-3),
-		new NutrientAmount(Nutrient.VITAMIN_C, 14.8e-3),
-		new NutrientAmount(Nutrient.THIAMIN, 0.045e-3),
-		new NutrientAmount(Nutrient.NIACIN, 0.432e-3),
-		new NutrientAmount(Nutrient.VITAMIN_B6, 0.124e-3),
-		new NutrientAmount(Nutrient.PHYLLOQUINONE, 0.2e-6),
+		new NutrientAmount(Nutrient.WATER, 77.3),
+		new NutrientAmount(Nutrient.PROTEIN, 1.57),
+		new NutrientAmount(Nutrient.FAT, 0.05),
+		new NutrientAmount(Nutrient.ASH, 0.99),
+		new NutrientAmount(Nutrient.FIBER, 3),
+		new NutrientAmount(Nutrient.SUCROSE, 2.52),
+		new NutrientAmount(Nutrient.GLUCOSE, 0.96),
+		new NutrientAmount(Nutrient.FRUCTOSE, 0.7),
+		new NutrientAmount(Nutrient.STARCH, 12.6),
+		new NutrientAmount(Nutrient.CALCIUM, 30e-3),
+		new NutrientAmount(Nutrient.IRON, 0.61e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 25e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 47e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 337e-3),
+		new NutrientAmount(Nutrient.SODIUM, 55e-3),
+		new NutrientAmount(Nutrient.ZINC, 0.3e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.151e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 0.258e-3),
+		new NutrientAmount(Nutrient.VITAMIN_C, 2.4e-3),
+		new NutrientAmount(Nutrient.THIAMIN, 0.078e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.061e-3),
+		new NutrientAmount(Nutrient.NIACIN, 0.557e-3),
+		new NutrientAmount(Nutrient.PANTOTHENIC_ACID, 0.8e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.209e-3),
+		new NutrientAmount(Nutrient.FOLATE, 11e-6),
+		new NutrientAmount(Nutrient.CHOLINE, 12.3e-3),
+		new NutrientAmount(Nutrient.CAROTENE_BETA, 8510e-6),
+		new NutrientAmount(Nutrient.CAROTENE_ALPHA, 7e-6),
+		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.26e-3),
+		new NutrientAmount(Nutrient.TOCOPHEROL_BETA, 0.01e-3),
+		new NutrientAmount(Nutrient.TOCOTRIENOL_ALPHA, 0.01e-3),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 1.8e-6),
 	],
-}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2346404/nutrients');
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/168482/nutrients');
 Food.Carrot = new Food('Carrot', {
 	measures: {
 		unit: 61, // https://www.liveeatlearn.com/how-many-carrots-in-a-pound/
@@ -1392,6 +1422,7 @@ Food.PeanutButter = new Food('Peanut Butter', {
 		new NutrientAmount(Nutrient.FAT, 49.4),
 		new NutrientAmount(Nutrient.ASH, 2.77),
 		new NutrientAmount(Nutrient.FIBER, 6.3),
+		new NutrientAmount(Nutrient.SUGAR, 22.7-6.3),
 		new NutrientAmount(Nutrient.CALCIUM, 50e-3),
 		new NutrientAmount(Nutrient.IRON, 1.85e-3),
 		new NutrientAmount(Nutrient.MAGNESIUM, 193e-3),
@@ -1430,6 +1461,7 @@ Food.Banana = new Food('Banana', {
 		new NutrientAmount(Nutrient.MAGNESIUM, 28e-3),
 		new NutrientAmount(Nutrient.PHOSPHORUS, 22e-3),
 		new NutrientAmount(Nutrient.POTASSIUM, 326e-3),
+		new NutrientAmount(Nutrient.SODIUM, 3e-3 * 3/75.6), // est'd from dried https://fdc.nal.usda.gov/fdc-app.html#/food-details/173945/nutrients
 		new NutrientAmount(Nutrient.ZINC, 0.16e-3),
 		new NutrientAmount(Nutrient.COPPER, 0.101e-3),
 		new NutrientAmount(Nutrient.VITAMIN_C, 12e-3),
@@ -1594,6 +1626,7 @@ Food.Jalapeno = new Food('Guava', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/173044/nutrients');
 Food.ChickenThigh = new Food('Chicken Thigh', {
+	ignoreNutrientWarning: true,
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 77.2),
 		new NutrientAmount(Nutrient.PROTEIN, 19.1),
