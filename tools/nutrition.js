@@ -208,9 +208,6 @@ const SCATTER_CONTROL = {
 			z: Food.foods.map(f => f.nutrient(NutrientGroup.CALORIES_FROM_SUGAR)),
 			text: Food.foods.map(f => f.name),
 			labels: true,
-			logx: true,
-			logy: true,
-			logz: true,
 		});
 		document.getElementById('ternary').src = URL;
 	},

@@ -309,11 +309,13 @@ pie.colors = ['blue', 'red', 'yellow', 'green']; // todo
 (you can override individual colors by specifying them in the tuple)
 */
 
-// TODO FIX
 /** generate ternary plot from URL data */
 function ternary(){
-	const [WIDTH, HEIGHT] = [sizeX, sizeX * Math.sqrt(3)/2];
+	const PADDING = 0.1; // todo use this
+	const [WIDTH, HEIGHT] = [sizeY * 2/Math.sqrt(3), sizeY];
+	const OFFSET_X = (sizeX - WIDTH)/2;
 	function normalize(...args){
+		console.debug(...args);
 		const s = sum(args);
 		return args.map(x => x/s);
 	}
@@ -322,30 +324,22 @@ function ternary(){
 	// top = max z
 	function xyz2xy(a, b, c){
 		// https://en.wikipedia.org/wiki/Ternary_plot#Plotting_a_ternary_plot
-		console.debug(a, b, c);
-		const x = WIDTH * 0.5 * (2*b+c)/(a+b+c);
-		const y = HEIGHT * Math.sqrt(3)/2 * c / (a+b+c);
+		const x = OFFSET_X + WIDTH * 0.5 * (2*b+c)/(a+b+c);
+		const y = HEIGHT - HEIGHT * Math.sqrt(3)/2 * c / (a+b+c);
 		return {x, y};
 	}
 	const data = getData();
 	/** @type {SVGElement} */
 	const chart = document.getElementById('chart');
-	chart.setAttribute('viewBox', `0 0 ${WIDTH} ${HEIGHT}`);
+	chart.setAttribute('viewBox', `0 0 ${sizeX} ${sizeY}`);
 	// draw triangle
 	// <polygon points="100,100 150,25 150,75 200,0" fill="none" stroke="black" />
 	const triangle = createSvgElement('polygon');
 	// bottom left corner to bottom right corner to top mid
-	triangle.setAttribute('points', `0,${HEIGHT} ${WIDTH},${HEIGHT} ${WIDTH/2},0`);
+	triangle.setAttribute('points', `${OFFSET_X},${HEIGHT} ${OFFSET_X+WIDTH},${HEIGHT} ${OFFSET_X+WIDTH/2},0`);
 	triangle.setAttribute('fill', data.fill || 'white');
 	triangle.setAttribute('stroke', data.stroke || 'black');
 	chart.appendChild(triangle);
-	// log
-	if (data.logx)
-		data.x = data.x.map(Math.log);
-	if (data.logy)
-		data.y = data.y.map(Math.log);
-	if (data.logz)
-		data.z = data.z.map(Math.log);
 
 	data.x.map((x, i) => [x, data.y[i], data.z[i]]).forEach((xyz, i) => {
 		const coords = xyz2xy(...normalize(...xyz));
@@ -367,7 +361,7 @@ function ternary(){
 			if (LABEL){
 				const labelElem = createSvgElement('text');
 				labelElem.innerHTML = LABEL;
-				labelElem.classList.add('label');
+				labelElem.classList.add('small', 'label');
 				labelElem.setAttribute('x', coords.x);
 				labelElem.setAttribute('y', coords.y + 20);
 				g.appendChild(labelElem);
@@ -386,9 +380,6 @@ function ternary(){
   stroke: 'red', // optional, default: black
   labels: true, // optional, default: false
   radius: 1, // optional, default: 3
-  logx: true, // optional, whether to scale X axis logarithmically, default: false
-  logy: true, // optional, whether to scale Y axis logarithmically, default: false
-  logz: true, // optional, whether to scale Z axis logarithmically, default: false
 }
 */
 
