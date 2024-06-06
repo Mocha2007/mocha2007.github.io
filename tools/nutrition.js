@@ -594,6 +594,10 @@ Nutrient.CHOLESTEROL = new Nutrient('Cholesterol', {C: 27, H: 46, O: 1}, 300e-3,
 Nutrient.CAMPESTEROL = new Nutrient('Campesterol', {C: 28, H: 48, O: 1});
 Nutrient.SITOSTEROL_BETA = new Nutrient('β-Sitosterol', {C: 29, H: 50, O: 1});
 Nutrient.STIGMASTEROL = new Nutrient('Stigmasterol', {C: 29, H: 48, O: 1});
+Nutrient.ERGOSTEROL = new Nutrient('Ergosterol', {C: 28, H: 44, O: 1});
+Nutrient.ERGOSTA_7_ENOL = new Nutrient('Ergosta-7-enol', Nutrient.ERGOSTEROL.compositionAmt);
+Nutrient.ERGOSTA_5_7_DIENOL = new Nutrient('Ergosta-5,7-dienol', Nutrient.ERGOSTEROL.compositionAmt);
+Nutrient.ERGOSTA_7_22_DIENOL = new Nutrient('Ergosta-7,22-dienol', Nutrient.ERGOSTEROL.compositionAmt);
 // misc Carotenoids
 Nutrient.CIS_LUTEIN = new Nutrient('Cis-Lutein', {C: 40, H: 56, O: 2}); // ???
 Nutrient.LUTEIN = new Nutrient('Lutein', {C: 40, H: 56, O: 2});
@@ -704,6 +708,19 @@ NutrientGroup.PHYTOSTEROLS = new NutrientGroup('Phytosterols', 2, [
 	new NutrientAmount(Nutrient.SITOSTEROL_BETA, 1),
 	new NutrientAmount(Nutrient.STIGMASTEROL, 1),
 ], true);
+
+NutrientGroup.MYCOSTEROLS = new NutrientGroup('Mycosterols', 0, [
+	new NutrientAmount(Nutrient.ERGOSTA_5_7_DIENOL, 1),
+	new NutrientAmount(Nutrient.ERGOSTA_7_22_DIENOL, 1),
+	new NutrientAmount(Nutrient.ERGOSTA_7_ENOL, 1),
+	new NutrientAmount(Nutrient.ERGOSTEROL, 1),
+], true);
+
+NutrientGroup.STEROLS = new NutrientGroup('Sterols', 0, [
+	new NutrientAmount(NutrientGroup.CHOLESTEROL, 1),
+	new NutrientAmount(NutrientGroup.PHYTOSTEROLS, 1),
+	new NutrientAmount(NutrientGroup.MYCOSTEROLS, 1),
+]);
 
 NutrientGroup.XANTHOPHYLLS = new NutrientGroup('Xanthophylls', 0, [
 	new NutrientAmount(Nutrient.CIS_LUTEIN, 1),
@@ -1423,5 +1440,35 @@ Food.Banana = new Food('Banana', {
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 0.1e-6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344720/nutrients');
+Food.MushroomWhiteButton = new Food('White Button Mushroom', {
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 91.8),
+		new NutrientAmount(Nutrient.PROTEIN, 2.89),
+		new NutrientAmount(Nutrient.FAT, 0.37),
+		new NutrientAmount(Nutrient.FIBER, 1.7),
+		new NutrientAmount(Nutrient.SUGAR, 4.08-1.7),
+		new NutrientAmount(Nutrient.CALCIUM, 5e-3),
+		new NutrientAmount(Nutrient.IRON, 0.23e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 10.2e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 93e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 373e-3),
+		new NutrientAmount(Nutrient.SODIUM, 6e-3),
+		new NutrientAmount(Nutrient.ZINC, 0.51e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.389e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 0.054e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 20e-6),
+		new NutrientAmount(Nutrient.THIAMIN, 0.065e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.444e-3),
+		new NutrientAmount(Nutrient.NIACIN, 3.88e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.077e-3),
+		new NutrientAmount(Nutrient.BIOTIN, 9.07e-6),
+		new NutrientAmount(Nutrient.FOLATE, 35e-6),
+		new NutrientAmount(Nutrient.VITAMIN_D2, 0.02e-6),
+		new NutrientAmount(Nutrient.ERGOSTA_7_ENOL, 1.63e-3), // todo
+		new NutrientAmount(Nutrient.ERGOSTA_5_7_DIENOL, 5.84e-3), // todo
+		new NutrientAmount(Nutrient.ERGOSTA_7_22_DIENOL, 1.54e-3), // todo
+		new NutrientAmount(Nutrient.ERGOSTEROL, 56e-3), // todo
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/1999629/nutrients');
 
 const NUTRITION_LOADED = true;
