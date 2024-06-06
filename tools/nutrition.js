@@ -1627,5 +1627,33 @@ Food.ChickenThigh = new Food('Chicken Thigh', {
 		new NutrientAmount(Nutrient.CHOLESTEROL, 87e-3),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/172859/nutrients');
+Food.Butter = new Food('Butter', { // salted
+	measures: {
+		stick: 113,
+	},
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 15.8),
+		new NutrientAmount(Nutrient.FAT, 82.2),
+		new NutrientAmount(Nutrient.LACTOSE, 0.58),
+		new NutrientAmount(Nutrient.CALCIUM, 21e-3),
+		new NutrientAmount(Nutrient.IRON, 0.06e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 1.6e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 22e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 23e-3),
+		new NutrientAmount(Nutrient.SODIUM, 524e-3),
+		new NutrientAmount(Nutrient.ZINC, 0.07e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.006e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 0.005e-3),
+		new NutrientAmount(Nutrient.FOLATE, 5e-6),
+		new NutrientAmount(Nutrient.RETINOL, 5e-6),
+		new NutrientAmount(Nutrient.CAROTENE_BETA, 168e-6),
+		new NutrientAmount(Nutrient.CAROTENE_ALPHA, 2e-6),
+		new NutrientAmount(Nutrient.CRYPTOXANTHIN_BETA, 8e-6),
+		new NutrientAmount(Nutrient.CRYPTOXANTHIN_ALPHA, 2e-6),
+		new NutrientAmount(Nutrient.ZEAXANTHIN, 1e-6),
+		new NutrientAmount(Nutrient.LUTEIN, 12e-6),
+		new NutrientAmount(Nutrient.VITAMIN_D3, 0.4e-6),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/790508/nutrients');
 
 const NUTRITION_LOADED = true;
