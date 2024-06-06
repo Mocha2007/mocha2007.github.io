@@ -1021,6 +1021,7 @@ Food.Egg = new Food('Egg', { // todo create nutrient groups for all this other s
 		new NutrientAmount(Nutrient.FOLATE, 71e-6),
 		new NutrientAmount(Nutrient.CHOLINE, 335e-3),
 		new NutrientAmount(Nutrient.BETAINE, 0.3e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B12, 1.02e-6),
 		new NutrientAmount(Nutrient.RETINOL, 179e-6),
 		new NutrientAmount(Nutrient.CRYPTOXANTHIN_BETA, 13e-6),
 		new NutrientAmount(Nutrient.CRYPTOXANTHIN_ALPHA, 13e-6),
@@ -1031,7 +1032,7 @@ Food.Egg = new Food('Egg', { // todo create nutrient groups for all this other s
 		new NutrientAmount(Nutrient._25_HYDROXYCHOLECALCIFEROL, 0.56e-6),
 		new NutrientAmount(Nutrient.CHOLESTEROL, 411e-3),
 	],
-}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344664/nutrients');
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/748967/nutrients');
 Food.Bacon = new Food('Bacon', { // todo create nutrient groups for all this other shit
 	measures: {
 		slice: 6.3,
