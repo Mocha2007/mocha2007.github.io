@@ -16,9 +16,6 @@ text {
 	fill: blue;
 	font: 25px monospace;
 }
-.small.label {
-	font-size: 10px;
-}
 .value {
 	fill: red;
 	font: 10px monospace;

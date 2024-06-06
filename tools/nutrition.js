@@ -205,9 +205,10 @@ const SCATTER_CONTROL = {
 			type: 'ternary',
 			x: Food.foods.map(f => f.nutrient(Nutrient.PROTEIN) * 4),
 			y: Food.foods.map(f => f.nutrient(Nutrient.FAT) * 9),
-			z: Food.foods.map(f => f.nutrient(NutrientGroup.CALORIES_FROM_SUGAR)),
+			z: Food.foods.map(f => f.nutrient(NutrientGroup.CALORIES_FROM_CARBOHYDRATES)),
 			text: Food.foods.map(f => f.name),
 			labels: true,
+			axes: {x: 'Protein', y: 'Fat', z: 'Carbs'},
 		});
 		document.getElementById('ternary').src = URL;
 	},
@@ -678,10 +679,14 @@ NutrientGroup.CALORIES_FROM_SUGAR = new NutrientGroup('Calories from Sugar', 0, 
 	new NutrientAmount(Nutrient.SUGAR, 3.8),
 ]);
 
-NutrientGroup.CALORIES = new NutrientGroup('Calories', 0, [
+NutrientGroup.CALORIES_FROM_CARBOHYDRATES = new NutrientGroup('Calories from Carbohydrates', 0, [
 	new NutrientAmount(NutrientGroup.CALORIES_FROM_SUGAR, 1),
 	new NutrientAmount(Nutrient.FIBER, 2),
 	new NutrientAmount(Nutrient.STARCH, 4.1788), // heat of combustion
+]);
+
+NutrientGroup.CALORIES = new NutrientGroup('Calories', 0, [
+	new NutrientAmount(NutrientGroup.CALORIES_FROM_CARBOHYDRATES, 1),
 	new NutrientAmount(Nutrient.FAT, 9),
 	new NutrientAmount(Nutrient.PROTEIN, 4),
 	new NutrientAmount(Nutrient.ALCOHOL, 7.112), // ditto

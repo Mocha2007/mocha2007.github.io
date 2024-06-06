@@ -361,13 +361,31 @@ function ternary(){
 			if (LABEL){
 				const labelElem = createSvgElement('text');
 				labelElem.innerHTML = LABEL;
-				labelElem.classList.add('small', 'label');
+				labelElem.classList.add('value');
 				labelElem.setAttribute('x', coords.x);
 				labelElem.setAttribute('y', coords.y + 20);
 				g.appendChild(labelElem);
 			}
 		}
 	});
+	// axis labels
+	const LABEL_COORDS = {
+		x: {x: 0, y: 1},
+		y: {x: 1, y: 1},
+		z: {x: 0.5, y: 0},
+	};
+	if (data.axes){
+		'xyz'.split('').forEach(x => {
+			if (data.axes[x]){
+				const labelElem = createSvgElement('text');
+				labelElem.innerHTML = data.axes[x];
+				labelElem.classList.add('label');
+				labelElem.setAttribute('x', OFFSET_X + LABEL_COORDS[x].x * WIDTH);
+				labelElem.setAttribute('y', LABEL_COORDS[x].y * HEIGHT);
+				chart.appendChild(labelElem);
+			}
+		});
+	}
 }
 /*
 {
@@ -380,6 +398,7 @@ function ternary(){
   stroke: 'red', // optional, default: black
   labels: true, // optional, default: false
   radius: 1, // optional, default: 3
+  axes, // optional, list of x/y/z labels
 }
 */
 
