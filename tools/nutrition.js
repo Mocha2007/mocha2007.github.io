@@ -1856,5 +1856,33 @@ Food.BeefSweetbread = new Food('Beef Sweetbread', {
 		new NutrientAmount(Nutrient.CHOLESTEROL, 217e-3),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/173093/nutrients');
+Food.LambTesticles = new Food('Lamb Testicles', {
+	ignoreNutrientWarning: true,
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 85),
+		new NutrientAmount(Nutrient.PROTEIN, 11.4),
+		new NutrientAmount(Nutrient.FAT, 2.38),
+		new NutrientAmount(Nutrient.ASH, 1.08),
+		new NutrientAmount(Nutrient.CALCIUM, 5e-3),
+		new NutrientAmount(Nutrient.IRON, 1.14e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 11e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 179e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 265e-3),
+		new NutrientAmount(Nutrient.SODIUM, 119e-3),
+		new NutrientAmount(Nutrient.ZINC, 1.14e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.091e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 0.029e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 26.2e-6),
+		new NutrientAmount(Nutrient.THIAMIN, 0.315e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.214e-3),
+		new NutrientAmount(Nutrient.NIACIN, 1.74e-3),
+		new NutrientAmount(Nutrient.PANTOTHENIC_ACID, 0.872e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.033e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B12, 9.89e-6),
+		new NutrientAmount(Nutrient.RETINOL, 10e-6),
+		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.31e-3),
+		new NutrientAmount(Nutrient.CHOLESTEROL, 393e-3),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/172619/nutrients');
 
 const NUTRITION_LOADED = true;
