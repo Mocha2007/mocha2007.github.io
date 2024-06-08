@@ -320,7 +320,11 @@ function time_elem_inner(){
 	// elem
 	const NAME_CHANGE_T = deltat(new Date('2024-03-21T15:00:00.000-04:00'), new Date());
 	const MYST = deltat(new Date('2024-07-01T16:00:00.000+01:00'), new Date());
-	return `${timeString(s, min, h, d, m, yr)}<br>
+	return `${timeString(s, min, h, d, m, yr)} on HRT<br>
+		${NAME_CHANGE_T.s} ${NAME_CHANGE_T.preposition} name change<br>
+		${MYST.s} ${MYST.preposition} mystery event<br>
+		${unit(laser, 'laser session')}`;
+		/*
 		<span class="small">${unit(visits, 'endo visit')}</span><br>
 		${unit(doses, 'dose')} of E (${timeString(doseS, doseM, doseH)} until next dose)<br>
 		<span class="small">${quietGirluna[0]} Girluna ${quietGirluna[1]} (${unit(quietGirluna[2], 'minute')} left)</span><br>
@@ -328,9 +332,7 @@ function time_elem_inner(){
 		<span class="small">Total E consumed: ${totalE} mg</span><br>
 		<span class="small">Total Spiro consumed: ${totalS/1000} g</span><br>
 		<span class="small">Total Prog consumed: ${totalP/1000} g</span><br>
-		${NAME_CHANGE_T.s} ${NAME_CHANGE_T.preposition} name change<br>
-		${MYST.s} ${MYST.preposition} mystery event<br>
-		${unit(laser, 'laser session')}`;
+		*/
 }
 
 function timeString(s = 0, min = 0, h = 0, d = 0, m = 0, yr = 0){
@@ -392,11 +394,14 @@ const notes = [
 	'7 Nov 2023 - 6 Feb 2024: twice daily 2 mg E subL, 50 mg spiro oral',
 	'7 Feb 2024 - 12 Feb 2024: 3x daily 2 mg E subL, 2x daily 50 mg spiro oral',
 	'13 Feb 2024 - 21 Feb 2024: 3x daily 2 mg E subL, 2x daily 50 mg spiro oral, 1x nightly 100 mg prog oral',
-	'22 Feb 2024 onward: 4x daily 2 mg E subL, 2x daily 50 mg spiro oral, 1x nightly 100 mg prog oral',
+	'22 Feb 2024 - 7 Jun 2024: 2x daily 4 mg E subL, 2x daily 50 mg spiro oral, 1x nightly 100 mg prog oral',
+	'08 Jun 2024 - 14 Jun 2024: 2x daily 2 mg E subL, 2x daily 25 mg spiro oral, 1x nightly 100 mg prog oral, 1x weekly 10 mg E val IM',
+	'15 Jun 2024 - 21 Jun 2024: 2x daily 1 mg E subL, 1x daily 25 mg spiro oral, 1x nightly 100 mg prog oral, 1x weekly 10 mg E val IM',
+	'22 Jun 2024 onward: 1x nightly 100 mg prog oral, 1x weekly 10 mg E val IM',
 	'Lasering started 15 Sep 2023: 9/15, 10/20, 11/27, 1/2, 2/7, 3/13, 4/17, 6/26, ...',
-	`Current daily schedule as of 2/22/24:<ul>
-	<li>Morning: 2 x 2 mg E, 50 mg spiro</li>
-	<li>Evening: 2 x 2 mg E, 50 mg spiro, 100 mg prog</li>
+	`Current schedule as of 6/22/24:<ul>
+	<li>Weekly (Saturdays): 10 mg IM E val</li>
+	<li>Nightly: 100 mg prog</li>
 	</ul>`,
 ];
 
