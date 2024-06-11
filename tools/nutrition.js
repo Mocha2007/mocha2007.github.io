@@ -109,6 +109,7 @@ function nutrition_main(){
 	SCATTER_CONTROL.init();
 	// ternary
 	SCATTER_CONTROL.ternary();
+	SCATTER_CONTROL.ternary2();
 	// defaults...
 	Food.OnionYellow.show();
 	Nutrient.POTASSIUM.showBar();
@@ -211,6 +212,22 @@ const SCATTER_CONTROL = {
 			axes: {x: 'Protein', y: 'Fat', z: 'Carbs'},
 		});
 		document.getElementById('ternary').src = URL;
+	},
+	ternary2(){
+		const C_AXIS1 = Math.max(...Food.foods.map(f => f.nutrient(Nutrient.SODIUM)));
+		const C_AXIS2 = Math.max(...Food.foods.map(f => f.nutrient(NutrientGroup.SUGARS)));
+		// const MAX_AC = Math.max(...Food.foods.map(f => f.nutrient(NutrientGroup.ACIDITY)));
+		const C_AXIS3 = Math.max(...Food.foods.map(f => f.nutrient(Nutrient.PROTEIN))); // Glutamic Acid
+		const URL = 'chart.html?data=' + toURL({
+			type: 'ternary',
+			x: Food.foods.map(f => f.nutrient(Nutrient.SODIUM) / C_AXIS1),
+			y: Food.foods.map(f => f.nutrient(NutrientGroup.SUGARS) / C_AXIS2),
+			z: Food.foods.map(f => f.nutrient(Nutrient.PROTEIN) / C_AXIS3),
+			text: Food.foods.map(f => f.name),
+			labels: true,
+			axes: {x: 'Salty', y: 'Sweet', z: 'Savory'},
+		});
+		document.getElementById('ternary2').src = URL;
 	},
 	update(){
 		showScatter(this.x, this.y);
@@ -862,6 +879,12 @@ NutrientGroup.VITAMINS_AND_MINERALS = new NutrientGroup('Vitamins & Minerals (to
 	new NutrientAmount(NutrientGroup.MINERALS, 1),
 	new NutrientAmount(Nutrient.VITAMIN_B12, -0.04433), // Cobalt is counted twice
 ]);
+/*
+NutrientGroup.ACIDITY = new NutrientGroup('Acidity (Crude Est.)', 0, [
+	new NutrientAmount(Nutrient.PANTOTHENIC_ACID, 7-4.41), // appx
+	new NutrientAmount(Nutrient.FOLATE, 7-4.41), // wild guess
+	new NutrientAmount(Nutrient.VITAMIN_C, 7-4.1), // appx
+]);*/
 
 // FOODS
 Food.OnionYellow = new Food('Yellow Onion', {
