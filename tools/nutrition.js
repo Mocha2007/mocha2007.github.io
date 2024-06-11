@@ -1064,7 +1064,7 @@ Food.Carrot = new Food('Carrot', {
 		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.66e-3),
 		new NutrientAmount(Nutrient.TOCOPHEROL_BETA, 0.01e-3),
 		new NutrientAmount(Nutrient.TOCOTRIENOL_ALPHA, 0.01e-3),
-		new NutrientAmount(Nutrient.PHYLLOQUINONE, 13.2e-3),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 13.2e-6),
 		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.366),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/170393/nutrients');
