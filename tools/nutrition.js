@@ -145,7 +145,7 @@ function fdaround(nutrient, value){
 		case NutrientGroup.CALORIES:
 			interval = 50 < value ? 10 : 5;
 			break;
-		case Nutrient.FAT:
+		case NutrientGroup.FATS:
 			interval = value < 0.5 ? 1 : value < 5 ? 0.5 : 1;
 			break;
 		case Nutrient.CHOLESTEROL:
@@ -159,7 +159,7 @@ function fdaround(nutrient, value){
 		case Nutrient.FIBER:
 		case NutrientGroup.SUGARS:
 		case Nutrient.ALCOHOL:
-		case Nutrient.PROTEIN:
+		case NutrientGroup.PROTEINS:
 			interval = 1;
 	}
 	return Math.round(value / interval) * interval;
@@ -204,8 +204,8 @@ const SCATTER_CONTROL = {
 	ternary(){
 		const URL = 'chart.html?data=' + toURL({
 			type: 'ternary',
-			x: Food.foods.map(f => f.nutrient(Nutrient.PROTEIN) * 4),
-			y: Food.foods.map(f => f.nutrient(Nutrient.FAT) * 9),
+			x: Food.foods.map(f => f.nutrient(NutrientGroup.PROTEINS) * 4),
+			y: Food.foods.map(f => f.nutrient(NutrientGroup.FATS) * 9),
 			z: Food.foods.map(f => f.nutrient(NutrientGroup.CALORIES_FROM_CARBOHYDRATES)),
 			text: Food.foods.map(f => f.name),
 			labels: true,
@@ -217,12 +217,12 @@ const SCATTER_CONTROL = {
 		const C_AXIS1 = Math.max(...Food.foods.map(f => f.nutrient(Nutrient.SODIUM)));
 		const C_AXIS2 = Math.max(...Food.foods.map(f => f.nutrient(NutrientGroup.SUGARS)));
 		// const MAX_AC = Math.max(...Food.foods.map(f => f.nutrient(NutrientGroup.ACIDITY)));
-		const C_AXIS3 = Math.max(...Food.foods.map(f => f.nutrient(Nutrient.PROTEIN))); // Glutamic Acid
+		const C_AXIS3 = Math.max(...Food.foods.map(f => f.nutrient(NutrientGroup.PROTEINS))); // Glutamic Acid
 		const URL = 'chart.html?data=' + toURL({
 			type: 'ternary',
 			x: Food.foods.map(f => f.nutrient(Nutrient.SODIUM) / C_AXIS1),
 			y: Food.foods.map(f => f.nutrient(NutrientGroup.SUGARS) / C_AXIS2),
-			z: Food.foods.map(f => f.nutrient(Nutrient.PROTEIN) / C_AXIS3),
+			z: Food.foods.map(f => f.nutrient(NutrientGroup.PROTEINS) / C_AXIS3),
 			text: Food.foods.map(f => f.name),
 			labels: true,
 			axes: {x: 'Salty', y: 'Sweet', z: 'Savory'},
@@ -432,7 +432,8 @@ class Food extends SourcedObject {
 		calories.classList.add('calories');
 		// eslint-disable-next-line max-len
 		calories.innerHTML = `<b>Calories</b> ${fdaround(NutrientGroup.CALORIES, this.nutrient(NutrientGroup.CALORIES, useUnitMass))}`;
-		const CFF = fdaround(NutrientGroup.CALORIES, 9*this.nutrient(Nutrient.FAT, useUnitMass));
+		// eslint-disable-next-line max-len
+		const CFF = fdaround(NutrientGroup.CALORIES, 9*this.nutrient(NutrientGroup.FATS, useUnitMass));
 		if (CFF)
 			calories.innerHTML += `<br>Calories from Fat ${CFF}`;
 		elem.appendChild(calories);
@@ -441,7 +442,7 @@ class Food extends SourcedObject {
 		const DVHEADER = '<div class="DVheader">&nbsp;<div class="dv">% Daily Value</div></div>';
 		elem.innerHTML += DVHEADER;
 		const MAIN_NUTRIENTS = [
-			[Nutrient.FAT, true],
+			[NutrientGroup.FATS, true],
 			[Nutrient.CHOLESTEROL, true, true],
 			[Nutrient.SODIUM, true, true],
 			[Nutrient.POTASSIUM, true, true],
@@ -449,7 +450,7 @@ class Food extends SourcedObject {
 			[Nutrient.FIBER, false],
 			[NutrientGroup.SUGARS, false],
 			[Nutrient.ALCOHOL, true],
-			[Nutrient.PROTEIN, true],
+			[NutrientGroup.PROTEINS, true],
 		];
 		let ADD_CAVEAT = false;
 		MAIN_NUTRIENTS.forEach(datum => {
@@ -574,8 +575,8 @@ Food.foods = [];
 */
 Nutrient.WATER = new Nutrient('Water', {H: 2, O: 1}, 0, 0.99336);
 Nutrient.NITROGEN = new Nutrient('Nitrogen', {}); // ???
-Nutrient.PROTEIN = new Nutrient('Protein', {C: 6, H: 13, N: 1, O: 2}, 50, 1.5); // Leucine
-Nutrient.FAT = new Nutrient('Fat', {C: 18, H: 36, O: 2}, 78, 0.895); // Stearic Acid
+Nutrient.PROTEIN = new Nutrient('Protein (Unspecified)', {C: 6, H: 13, N: 1, O: 2}, 0, 1.5); // Leucine
+Nutrient.FAT = new Nutrient('Fat (Unspecified)', {C: 18, H: 36, O: 2}, 0, 0.895); // Stearic Acid
 Nutrient.ASH = new Nutrient('Ash', {}); // ???
 Nutrient.FIBER = new Nutrient('Fiber', {C: 12, H: 20, O: 10}, 28, 1.5); // Cellulose
 Nutrient.SUGAR = new Nutrient('Sugar (Unspecified)', {C: 6, H: 12, O: 6}, 0, 1.55);
@@ -672,6 +673,14 @@ Nutrient.BETAINE = new Nutrient('Betaine', {C: 5, H: 11, N: 1, O: 2}); // Trimet
 Nutrient.CAFFEINE = new Nutrient('Caffeine', {C: 8, H: 10, N: 4, O: 2});
 Nutrient.THEOBROMINE = new Nutrient('Theobromine', {C: 7, H: 8, N: 4, O: 2});
 
+NutrientGroup.FATS = new NutrientGroup('Fat', 78, [
+	new NutrientAmount(Nutrient.FAT, 1),
+]);
+
+NutrientGroup.PROTEINS = new NutrientGroup('Protein', 50, [
+	new NutrientAmount(Nutrient.PROTEIN, 1),
+]);
+
 NutrientGroup.SUGARS = new NutrientGroup('Sugars', 195, [
 	new NutrientAmount(Nutrient.SUCROSE, 1),
 	new NutrientAmount(Nutrient.GLUCOSE, 1),
@@ -710,8 +719,8 @@ NutrientGroup.CALORIES_FROM_CARBOHYDRATES = new NutrientGroup('Calories from Car
 
 NutrientGroup.CALORIES = new NutrientGroup('Calories', 0, [
 	new NutrientAmount(NutrientGroup.CALORIES_FROM_CARBOHYDRATES, 1),
-	new NutrientAmount(Nutrient.FAT, 9),
-	new NutrientAmount(Nutrient.PROTEIN, 4),
+	new NutrientAmount(NutrientGroup.FATS, 9),
+	new NutrientAmount(NutrientGroup.PROTEINS, 4),
 	new NutrientAmount(Nutrient.ALCOHOL, 7.112), // ditto
 ]);
 
