@@ -1005,11 +1005,19 @@ NutrientGroup.ACIDITY = new NutrientGroup('Acidity (Crude Est.)', 0, [
 ]);*/
 
 NutrientGroup.ANTIOXIDANTS = new NutrientGroup('Antioxidants', 0, [
+	// https://en.wikipedia.org/wiki/List_of_antioxidants_in_food
+	// vitamins
+	new NutrientAmount(Nutrient.RETINOL, 1),
 	new NutrientAmount(Nutrient.VITAMIN_C, 1),
-	new NutrientAmount(NutrientGroup.CAROTENOIDS, 1),
-	new NutrientAmount(Nutrient.RESVERATROL, 1),
-	new NutrientAmount(Nutrient.SELENIUM, 1),
 	new NutrientAmount(NutrientGroup.VITAMIN_E, 1),
+	// minerals
+	new NutrientAmount(NutrientGroup.MANGANESE, 1),
+	new NutrientAmount(NutrientGroup.IODINE, 1),
+	new NutrientAmount(Nutrient.SELENIUM, 1),
+	// misc
+	new NutrientAmount(NutrientGroup.CAROTENOIDS, 1),
+	new NutrientAmount(NutrientGroup.ISOFLAVONES, 1),
+	new NutrientAmount(Nutrient.RESVERATROL, 1),
 ]);
 
 // FOODS
