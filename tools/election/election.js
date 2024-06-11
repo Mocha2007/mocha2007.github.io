@@ -393,7 +393,7 @@ function simulation(){
 	CONST.positions.nom_g_p = Politician.fromName('Jill Stein');
 	CONST.positions.nom_g_vp = Politician.fromName('Jasmine Sherman'); // placeholder
 	// 538
-	const DATE_538 = new Date(2024, ...CONST.dates._538.args);
+	// const DATE_538 = new Date(2024, ...CONST.dates._538.args);
 	// start!
 	CONST.alert('Super Tuesday');
 	while (CONST.date < CONST.dates.inauguration){
@@ -419,10 +419,10 @@ function simulation(){
 		if (CONST.dates.election <= CONST.date && !CONST.flags.election_held)
 			CONST.holdElection();
 		// election
-		if (DATE_538 <= CONST.date && !CONST.flags._538){
-			CONST.alert('538 uploads their election tracker.', false);
-			CONST.flags._538 = true;
-		}
+		// if (DATE_538 <= CONST.date && !CONST.flags._538){
+		// 	CONST.alert('538 uploads their election tracker.', false);
+		// 	CONST.flags._538 = true;
+		// }
 		// misc events
 		if (!CONST.debug_mode)
 			while (EVENTS.i < EVENTS.length && EVENTS[EVENTS.i][0] <= CONST.date)
