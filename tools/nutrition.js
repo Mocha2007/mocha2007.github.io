@@ -1004,6 +1004,14 @@ NutrientGroup.ACIDITY = new NutrientGroup('Acidity (Crude Est.)', 0, [
 	new NutrientAmount(Nutrient.GLUTAMIC_ACID, 7-4.1), // appx
 ]);*/
 
+NutrientGroup.ANTIOXIDANTS = new NutrientGroup('Antioxidants', 0, [
+	new NutrientAmount(Nutrient.VITAMIN_C, 1),
+	new NutrientAmount(NutrientGroup.CAROTENOIDS, 1),
+	new NutrientAmount(Nutrient.RESVERATROL, 1),
+	new NutrientAmount(Nutrient.SELENIUM, 1),
+	new NutrientAmount(NutrientGroup.VITAMIN_E, 1),
+]);
+
 // FOODS
 Food.OnionYellow = new Food('Yellow Onion', {
 	group: FoodGroup.VEG,
@@ -2211,6 +2219,8 @@ Food.Grape = new Food('Grape', {
 		new NutrientAmount(Nutrient.TOCOPHEROL_GAMMA, 0.07e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 14.6e-6),
 		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.081),
+		// other sources...
+		new NutrientAmount(Nutrient.RESVERATROL, 1.25/1.6 * 1e-3), // max; https://en.wikipedia.org/wiki/Resveratrol#Foods
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/174683/nutrients');
 
