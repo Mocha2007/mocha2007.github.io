@@ -138,6 +138,14 @@ function mean(x){
 	return sum(x)/x.length;
 }
 
+/** find the mean of an array
+ * @param {number[]} x
+*/
+function median(x){
+	const a = [...x].sort();
+	return a[Math.floor(a.length/2)];
+}
+
 /** fixes a bug with the js % operator with negative numbers
  * @param {number} n
  * @param {number} m
