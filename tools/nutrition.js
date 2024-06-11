@@ -608,8 +608,11 @@ class FoodGroupAverage extends Food {
 					.filter(food => food.group === group) // ONLY this group
 					.map(food => food.nutrient(nutrient)) // get nutrient value
 					.filter(x => x); // remove zeroes
-				// return median
-				return new NutrientAmount(nutrient, data.sort()[Math.floor(data.length/2)]);
+				data.sort();
+				const [i, j] = [(data.length % 2 ? Math.floor : Math.ceil)(data.length/2),
+					Math.ceil(data.length/2)];
+				const median = (data[i] + data[j])/2;
+				return new NutrientAmount(nutrient, median);
 			}).filter(x => isFinite(x.amount)), // filter out undefineds
 		});
 	}
