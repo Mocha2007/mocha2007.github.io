@@ -360,7 +360,7 @@ function ternary(){
 			if (LABEL){
 				const labelElem = createSvgElement('text');
 				labelElem.innerHTML = LABEL;
-				labelElem.classList.add('value');
+				labelElem.classList.add('value', 'small');
 				labelElem.setAttribute('x', coords.x);
 				labelElem.setAttribute('y', coords.y + 10);
 				g.appendChild(labelElem);

@@ -20,3 +20,6 @@ text {
 	fill: red;
 	font: 10px monospace;
 }
+.value.small {
+	font-size: 7.5px;
+}
