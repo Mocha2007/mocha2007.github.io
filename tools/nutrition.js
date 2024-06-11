@@ -1,5 +1,7 @@
 /* exported NUTRITION_LOADED, nutrition_main, SCATTER_CONTROL */
 /* global elementData, toURL */
+const DEBUG = document.URL[0].toLowerCase() === 'f'; // file:// vs. http(s)://
+
 const MOLAR_MASS = {
 	H: 1.008,
 	B: 10.81,
@@ -253,7 +255,19 @@ class SourcedObject {
 }
 
 
-class FoodGroup extends SourcedObject {}
+class FoodGroup extends SourcedObject {
+	constructor(name){
+		super(name);
+		FoodGroup.groups.push(this);
+	}
+	/** @returns {FoodGroupAverage} */
+	get median(){
+		// todo
+		return;
+	}
+}
+/** @type {FoodGroup[]} */
+FoodGroup.groups = [];
 FoodGroup.OTHER = new FoodGroup('Other');
 FoodGroup.DAIRY = new FoodGroup('Dairy');
 FoodGroup.FRUIT = new FoodGroup('Fruit');
@@ -348,7 +362,10 @@ class NutrientGroup extends Nutrient {
 		this.nutrientWeights = nutrientWeights;
 		NutrientGroup.groups.push(this);
 	}
-	/** @param {Food} food */
+	/**
+	 * @param {Food} food
+	 * @returns {number}
+	 */
 	value(food, useUnitMass = false){
 		return this.nutrientWeights
 			.map(na => food.nutrient(na.nutrient, useUnitMass) * na.amount)
@@ -580,6 +597,23 @@ class Food extends SourcedObject {
 }
 /** @type {Food[]} */
 Food.foods = [];
+
+class FoodGroupAverage extends Food {
+	/** @param {FoodGroup} group */
+	constructor(group){
+		super(`${group.name} (median)`, {
+			group,
+			nutrients: Nutrient.nutrients.map(nutrient => {
+				const data = Food.foods
+					.filter(food => food.group === group) // ONLY this group
+					.map(food => food.nutrient(nutrient)) // get nutrient value
+					.filter(x => x); // remove zeroes
+				// return median
+				return new NutrientAmount(nutrient, data.sort()[Math.floor(data.length/2)]);
+			}).filter(x => isFinite(x.amount)), // filter out undefineds
+		});
+	}
+}
 
 
 // NUTRIENTS
@@ -2177,4 +2211,6 @@ Food.Grape = new Food('Grape', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/174683/nutrients');
 
+if (DEBUG)
+	FoodGroupAverage.foodGroupAverages = FoodGroup.groups.map(fg => new FoodGroupAverage(fg));
 const NUTRITION_LOADED = true;
