@@ -1175,7 +1175,7 @@ Food.Peanut = new Food('Peanut', {
 		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 8.33e-3),
 		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 5.39),
 		// other sources...
-		new NutrientAmount(Nutrient.RESVERATROL, 0.26e-3/146), // max; https://en.wikipedia.org/wiki/Resveratrol#Foods
+		new NutrientAmount(Nutrient.RESVERATROL, (0.01 + 0.26)*1e-3/2 /1.46), // https://en.wikipedia.org/wiki/Resveratrol#Foods
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/172430/nutrients');
 Food.Lime = new Food('Lime', {
@@ -1417,7 +1417,7 @@ Food.ChocolateDark = new Food('Dark Chocolate (70-85%)', {
 		new NutrientAmount(Nutrient.THEOBROMINE, 802e-3),
 		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 2.95 * 7.79/19.6), // est'd from 169593
 		// other sources...
-		new NutrientAmount(Nutrient.RESVERATROL, 0.46e-3*0.85/200), // est'd; max; https://en.wikipedia.org/wiki/Resveratrol#Foods
+		new NutrientAmount(Nutrient.RESVERATROL, (0.28 + 0.46)*1e-3/2 /2 * 0.5), // assuming 50% cocoa powder; https://en.wikipedia.org/wiki/Resveratrol#Foods
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/170273/nutrients');
 Food.MilkSoy = new Food('Soy Milk', {
@@ -1676,7 +1676,7 @@ Food.WineRed = new Food('Red Wine', {
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 0.4e-6),
 		new NutrientAmount(Nutrient.ALCOHOL, 10.6),
 		// other sources...
-		new NutrientAmount(Nutrient.RESVERATROL, 1.76e-3), // https://en.wikipedia.org/wiki/Resveratrol#Foods
+		new NutrientAmount(Nutrient.RESVERATROL, 270e-6), // https://en.wikipedia.org/wiki/Resveratrol#Foods
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2346263/nutrients');
 Food.PeanutButter = new Food('Peanut Butter', {
@@ -1710,6 +1710,8 @@ Food.PeanutButter = new Food('Peanut Butter', {
 		new NutrientAmount(Nutrient.DAIDZIN, 0.649e-3),
 		new NutrientAmount(Nutrient.GENISTIN, 1.932e-3),
 		new NutrientAmount(Nutrient.GLYCITIN, 0.41e-3),
+		// other sources...
+		new NutrientAmount(Nutrient.RESVERATROL, (0.04 + 0.13)*1e-3/2 /2.58), // https://en.wikipedia.org/wiki/Resveratrol#Foods
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2262072/nutrients');
 Food.Banana = new Food('Banana', {
@@ -2246,7 +2248,7 @@ Food.Grape = new Food('Grape', {
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 14.6e-6),
 		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.081),
 		// other sources...
-		new NutrientAmount(Nutrient.RESVERATROL, 1.08e-3), // https://en.wikipedia.org/wiki/Resveratrol#Foods
+		new NutrientAmount(Nutrient.RESVERATROL, (0.24 + 1.25)*1e-3/2 /1.6), // https://en.wikipedia.org/wiki/Resveratrol#Foods
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/174683/nutrients');
 
