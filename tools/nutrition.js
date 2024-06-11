@@ -1332,6 +1332,7 @@ Food.ChocolateDark = new Food('Dark Chocolate (70-85%)', {
 		new NutrientAmount(Nutrient.SITOSTEROL_BETA, 86e-3),
 		new NutrientAmount(Nutrient.CAFFEINE, 80e-3),
 		new NutrientAmount(Nutrient.THEOBROMINE, 802e-3),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 2.95 * 7.79/19.6), // est'd from 169593
 		// other sources...
 		new NutrientAmount(Nutrient.RESVERATROL, 0.46e-3*0.85/200), // est'd; max; https://en.wikipedia.org/wiki/Resveratrol#Foods
 	],
@@ -1414,6 +1415,7 @@ Food.Tofu = new Food('Tofu', {
 		new NutrientAmount(Nutrient.CAROTENE_BETA, 4e-6),
 		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.01e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 2e-6),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 1.18 * 7.17/6.9), // est'd from 172461
 		// other sources...
 		new NutrientAmount(Nutrient.COUMESTROL, 0.12e-3), // https://en.wikipedia.org/wiki/Coumestrol
 	],
@@ -1450,6 +1452,7 @@ Food.Garlic = new Food('Garlic', {
 		new NutrientAmount(Nutrient.LUTEIN, 16e-6),
 		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.08e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 1.7e-6),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.805), // est'd from 169230
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/1103354/nutrients');
 Food.Seaweed = new Food('Seaweed', {
@@ -1632,7 +1635,7 @@ Food.Banana = new Food('Banana', {
 		new NutrientAmount(Nutrient.MAGNESIUM, 28e-3),
 		new NutrientAmount(Nutrient.PHOSPHORUS, 22e-3),
 		new NutrientAmount(Nutrient.POTASSIUM, 326e-3),
-		new NutrientAmount(Nutrient.SODIUM, 3e-3 * 3/75.6), // est'd from dried https://fdc.nal.usda.gov/fdc-app.html#/food-details/173945/nutrients
+		new NutrientAmount(Nutrient.SODIUM, 3e-3 * 3/75.6), // est'd from 173945
 		new NutrientAmount(Nutrient.ZINC, 0.16e-3),
 		new NutrientAmount(Nutrient.COPPER, 0.101e-3),
 		new NutrientAmount(Nutrient.VITAMIN_C, 12e-3),
@@ -1646,6 +1649,7 @@ Food.Banana = new Food('Banana', {
 		new NutrientAmount(Nutrient.LUTEIN, 22e-6),
 		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.1e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 0.1e-6),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.399 * 0.74/3.89), // est'd from 173945
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344720/nutrients');
 Food.MushroomWhiteButton = new Food('White Button Mushroom', {
@@ -1759,6 +1763,7 @@ Food.Jalapeno = new Food('Jalapeño', {
 		new NutrientAmount(Nutrient.TOCOPHEROL_DELTA, 0.01e-3),
 		new NutrientAmount(Nutrient.TOCOTRIENOL_ALPHA, 0.02e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 18.5e-6),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.122 * 0.91/0.92), // est'd from 170080
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/168576/nutrients');
 Food.Jalapeno = new Food('Guava', {
@@ -1899,6 +1904,7 @@ Food.BeefGround = new Food('Beef (Ground)', {
 		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.35e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 1.1e-6),
 		new NutrientAmount(Nutrient.CHOLESTEROL, 62e-3),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 3 * 19.4/20), // est'd from https://fdc.nal.usda.gov/fdc-app.html#/food-details/174030/nutrients
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/168608/nutrients');
 Food.Milk = new Food('Milk', { // whole, unfortified
