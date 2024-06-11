@@ -1262,6 +1262,7 @@ Food.BreadRye = new Food('Rye Bread', {
 		new NutrientAmount(Nutrient.WATER, 37.3),
 		new NutrientAmount(Nutrient.PROTEIN, 8.5),
 		new NutrientAmount(Nutrient.FAT, 3.3),
+		new NutrientAmount(Nutrient.ASH, 2.5),
 		new NutrientAmount(Nutrient.FIBER, 5.8),
 		new NutrientAmount(Nutrient.SUGAR, 3.85),
 		new NutrientAmount(Nutrient.CALCIUM, 73e-3),
@@ -1284,8 +1285,9 @@ Food.BreadRye = new Food('Rye Bread', {
 		new NutrientAmount(Nutrient.CRYPTOXANTHIN_BETA, 1e-6),
 		new NutrientAmount(Nutrient.LUTEIN, 54e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 1.2e-6),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 2.6),
 	],
-}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2343235/nutrients');
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/172684/nutrients');
 Food.ChocolateDark = new Food('Dark Chocolate (70-85%)', {
 	measures: {
 		bar: 101,
