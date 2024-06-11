@@ -1809,6 +1809,8 @@ Food.Blueberry = new Food('Blueberry', {
 		new NutrientAmount(Nutrient.TOCOTRIENOL_GAMMA, 0.07e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 19.3e-6),
 		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.091),
+		// other sources...
+		new NutrientAmount(Nutrient.QUERCETIN, 18e-3), // RED onions https://en.wikipedia.org/wiki/Quercetin#Occurrence
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/171711/nutrients');
 Food.Jalapeno = new Food('Jalapeño', {
