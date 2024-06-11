@@ -672,13 +672,16 @@ NutrientGroup.OLIGOSACCHARIDES = new NutrientGroup('Oligosaccharides', 0, [
 ]);
 
 NutrientGroup.CALORIES_FROM_SUGAR = new NutrientGroup('Calories from Sugar', 0, [
-	new NutrientAmount(Nutrient.SUCROSE, 3.943),
-	new NutrientAmount(Nutrient.GLUCOSE, 3.719),
+	// Monosaccharides
 	new NutrientAmount(Nutrient.FRUCTOSE, 3.75),
+	new NutrientAmount(Nutrient.GALACTOSE, 3.7), // unknown
+	new NutrientAmount(Nutrient.GLUCOSE, 3.719),
+	// Disaccharides
 	new NutrientAmount(Nutrient.LACTOSE, 3.94),
-	new NutrientAmount(Nutrient.MALTOSE, 3.8), // unknown
-	new NutrientAmount(Nutrient.GALACTOSE, 3.8), // unknown
-	new NutrientAmount(NutrientGroup.OLIGOSACCHARIDES, 2), // unknown
+	new NutrientAmount(Nutrient.MALTOSE, 3.94), // unknown
+	new NutrientAmount(Nutrient.SUCROSE, 3.943),
+	// Oligosaccharides / Other
+	new NutrientAmount(NutrientGroup.OLIGOSACCHARIDES, 3.94), // unknown
 	new NutrientAmount(Nutrient.SUGAR, 3.8),
 ]);
 
