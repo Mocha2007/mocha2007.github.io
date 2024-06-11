@@ -7942,6 +7942,24 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "husisi",
+		"etym": "C/hut/sisi",
+		"cat": "n., 4th",
+		"defList": [
+			"(poetic) moon"
+		],
+		"categories": ["astronomy", "moon"]
+	},
+	{
+		"title": "husisir",
+		"etym": "C/husisi/-r",
+		"cat": "n., 1st",
+		"defList": [
+			"Husisir, god of the moon"
+		],
+		"categories": ["gendered male", "god", "male given name", "moon"]
+	},
+	{
 		"title": "hut",
 		"etym": "I/PEN/*ɸut",
 		"cat": "n., 3rd",
@@ -12163,6 +12181,15 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "midarir",
+		"etym": "C/midarit/-r",
+		"cat": "n., 1st",
+		"defList": [
+			"Midarir, goddess of the sun"
+		],
+		"categories": ["female given name", "gendered female", "god"]
+	},
+	{
 		"title": "midarit",
 		"etym": "L/PRE/mitari",
 		"cat": "n., 3rd",
@@ -13383,10 +13410,9 @@
 		"etym": "I/PEN/*nod/moon",
 		"cat": "n., 4th",
 		"defList": [
-			"Nikki (Moon of Oneia)",
-			"moon"
+			"moon (sp., Nikki, the moon of Oneia)"
 		],
-		"categories": ["astronomy"]
+		"categories": ["astronomy", "moon"]
 	},
 	{
 		"title": "nodrilm",
@@ -15730,6 +15756,15 @@
 		]
 	},
 	{
+		"title": "sima",
+		"etym": "C/sim/ma",
+		"cat": "n., 4th",
+		"defList": [
+			"(poetic) moon"
+		],
+		"categories": ["astronomy", "moon"]
+	},
+	{
 		"title": "simbun",
 		"etym": "I/PEN/*ʃimbuns/new",
 		"cat": "adj., s-triggering",
@@ -15848,7 +15883,8 @@
 		"etym": "R/siz",
 		"cat": "n., 4th",
 		"defList": [
-			"star"
+			"luminary, celestial body",
+			"(specifically) star"
 		],
 		"categories": ["astronomy"]
 	},
