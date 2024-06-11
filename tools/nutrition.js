@@ -2126,7 +2126,7 @@ Food.Grape = new Food('Grape', {
 		new NutrientAmount(Nutrient.LUTEIN, 72e-6),
 		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.19e-3),
 		new NutrientAmount(Nutrient.TOCOPHEROL_GAMMA, 0.07e-3),
-		new NutrientAmount(Nutrient.PHYLLOQUINONE, 14.6e-3),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 14.6e-6),
 		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.081),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/174683/nutrients');
