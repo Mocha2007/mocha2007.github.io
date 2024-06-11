@@ -719,7 +719,7 @@ Nutrient.GENISTIN = new Nutrient('Genistin', {C: 21, H: 20, O: 10});
 Nutrient.GLYCITIN = new Nutrient('Glycitin', {C: 22, H: 22, O: 10});
 // misc Xenoestrogens
 Nutrient.COUMESTROL = new Nutrient('Coumestrol', {C: 15, H: 8, O: 5});
-Nutrient.QUERCETIN = new Nutrient('Quercetin', {C: 15, H: 10, O: 7}, 0, 1.799, 'https://en.wikipedia.org/wiki/Quercetin');
+Nutrient.QUERCETIN = new Nutrient('Quercetin', {C: 15, H: 10, O: 7}, 0, 1.799, 'https://en.wikipedia.org/wiki/Quercetin'); // https://www.ars.usda.gov/ARSUserFiles/80400525/Data/Flav/Flav_R03.pdf
 Nutrient.RESVERATROL = new Nutrient('Resveratrol', {C: 14, H: 12, O: 3});
 // ?????
 Nutrient.ALCOHOL = new Nutrient('Alcohol', {C: 2, H: 6, O: 1}, 0, 0.78945, 'https://en.wikipedia.org/wiki/Ethanol'); // Ethanol
@@ -1089,6 +1089,8 @@ Food.PotatoSweet = new Food('Sweet Potato', {
 		new NutrientAmount(Nutrient.TOCOTRIENOL_ALPHA, 0.01e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 1.8e-6),
 		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.155),
+		// other sources...
+		new NutrientAmount(Nutrient.QUERCETIN, 0.01e-3), // https://en.wikipedia.org/wiki/Quercetin#Occurrence
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/168482/nutrients');
 Food.Carrot = new Food('Carrot', {
@@ -1136,6 +1138,8 @@ Food.Carrot = new Food('Carrot', {
 		new NutrientAmount(Nutrient.TOCOTRIENOL_ALPHA, 0.01e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 13.2e-6),
 		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.366),
+		// other sources...
+		new NutrientAmount(Nutrient.QUERCETIN, 0.21e-3), // https://en.wikipedia.org/wiki/Quercetin#Occurrence
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/170393/nutrients');
 Food.Peanut = new Food('Peanut', {
@@ -1206,6 +1210,8 @@ Food.Lime = new Food('Lime', {
 		new NutrientAmount(Nutrient.CAROTENE_BETA, 30e-6),
 		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.22e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 0.6e-6),
+		// other sources...
+		new NutrientAmount(Nutrient.QUERCETIN, 0.4e-3), // https://en.wikipedia.org/wiki/Quercetin#Occurrence
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344664/nutrients');
 Food.RiceWhite = new Food('White Rice', {
@@ -1533,6 +1539,8 @@ Food.Garlic = new Food('Garlic', {
 		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.08e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 1.7e-6),
 		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.805), // est'd from 169230
+		// other sources...
+		new NutrientAmount(Nutrient.QUERCETIN, 1.74e-3), // https://en.wikipedia.org/wiki/Quercetin#Occurrence
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/1103354/nutrients');
 Food.Seaweed = new Food('Seaweed', {
@@ -1668,7 +1676,7 @@ Food.WineRed = new Food('Red Wine', {
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 0.4e-6),
 		new NutrientAmount(Nutrient.ALCOHOL, 10.6),
 		// other sources...
-		new NutrientAmount(Nutrient.RESVERATROL, 2.78e-3), // max; https://en.wikipedia.org/wiki/Resveratrol#Foods
+		new NutrientAmount(Nutrient.RESVERATROL, 1.76e-3), // https://en.wikipedia.org/wiki/Resveratrol#Foods
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2346263/nutrients');
 Food.PeanutButter = new Food('Peanut Butter', {
@@ -1736,6 +1744,8 @@ Food.Banana = new Food('Banana', {
 		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.1e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 0.1e-6),
 		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.399 * 0.74/3.89), // est'd from 173945
+		// other sources...
+		new NutrientAmount(Nutrient.QUERCETIN, 21.4e-3), // https://en.wikipedia.org/wiki/Quercetin#Occurrence
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344720/nutrients');
 Food.MushroomWhiteButton = new Food('White Button Mushroom', {
@@ -1810,7 +1820,7 @@ Food.Blueberry = new Food('Blueberry', {
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 19.3e-6),
 		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.091),
 		// other sources...
-		new NutrientAmount(Nutrient.QUERCETIN, 18e-3), // RED onions https://en.wikipedia.org/wiki/Quercetin#Occurrence
+		new NutrientAmount(Nutrient.QUERCETIN, 7.67e-3), // https://en.wikipedia.org/wiki/Quercetin#Occurrence
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/171711/nutrients');
 Food.Jalapeno = new Food('Jalapeño', {
@@ -1855,6 +1865,8 @@ Food.Jalapeno = new Food('Jalapeño', {
 		new NutrientAmount(Nutrient.TOCOTRIENOL_ALPHA, 0.02e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 18.5e-6),
 		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.122 * 0.91/0.92), // est'd from 170080
+		// other sources...
+		new NutrientAmount(Nutrient.QUERCETIN, 5.07e-3), // https://en.wikipedia.org/wiki/Quercetin#Occurrence
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/168576/nutrients');
 Food.Jalapeno = new Food('Guava', {
@@ -1893,6 +1905,8 @@ Food.Jalapeno = new Food('Guava', {
 		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.73e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 2.6e-6),
 		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.333),
+		// other sources...
+		new NutrientAmount(Nutrient.QUERCETIN, 1.1e-3), // https://en.wikipedia.org/wiki/Quercetin#Occurrence
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/173044/nutrients');
 Food.ChickenThigh = new Food('Chicken Thigh', {
@@ -2185,6 +2199,8 @@ Food.Honey = new Food('Honey', {
 		new NutrientAmount(Nutrient.CHOLINE, 2.2e-3),
 		new NutrientAmount(Nutrient.BETAINE, 1.7e-3),
 		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.018),
+		// other sources...
+		new NutrientAmount(Nutrient.QUERCETIN, 0.31e-3), // https://en.wikipedia.org/wiki/Quercetin#Occurrence
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/169640/nutrients');
 Food.Grape = new Food('Grape', {
@@ -2230,7 +2246,7 @@ Food.Grape = new Food('Grape', {
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 14.6e-6),
 		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.081),
 		// other sources...
-		new NutrientAmount(Nutrient.RESVERATROL, 1.25/1.6 * 1e-3), // max; https://en.wikipedia.org/wiki/Resveratrol#Foods
+		new NutrientAmount(Nutrient.RESVERATROL, 1.08e-3), // https://en.wikipedia.org/wiki/Resveratrol#Foods
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/174683/nutrients');
 
