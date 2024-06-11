@@ -217,12 +217,12 @@ const SCATTER_CONTROL = {
 		const C_AXIS1 = Math.max(...Food.foods.map(f => f.nutrient(Nutrient.SODIUM)));
 		const C_AXIS2 = Math.max(...Food.foods.map(f => f.nutrient(NutrientGroup.SUGARS)));
 		// const MAX_AC = Math.max(...Food.foods.map(f => f.nutrient(NutrientGroup.ACIDITY)));
-		const C_AXIS3 = Math.max(...Food.foods.map(f => f.nutrient(NutrientGroup.PROTEINS))); // Glutamic Acid
+		const C_AXIS3 = Math.max(...Food.foods.map(f => PROTEINS.estimate_glutamic_acid(f))); // f.nutrient(Nutrient.GLUTAMIC_ACID))or NutrientGroup.PROTEINS
 		const URL = 'chart.html?data=' + toURL({
 			type: 'ternary',
 			x: Food.foods.map(f => f.nutrient(Nutrient.SODIUM) / C_AXIS1),
 			y: Food.foods.map(f => f.nutrient(NutrientGroup.SUGARS) / C_AXIS2),
-			z: Food.foods.map(f => f.nutrient(NutrientGroup.PROTEINS) / C_AXIS3),
+			z: Food.foods.map(f => PROTEINS.estimate_glutamic_acid(f) / C_AXIS3),
 			text: Food.foods.map(f => f.name),
 			labels: true,
 			axes: {x: 'Salty', y: 'Sweet', z: 'Savory'},
@@ -591,6 +591,9 @@ Nutrient.STARCH = new Nutrient('Starch', {C: 6, H: 10, O: 5});
 Nutrient.RAFFINOSE = new Nutrient('Raffinose', {C: 18, H: 32, O: 16});
 Nutrient.STACHYOSE = new Nutrient('Stachyose', {C: 24, H: 42, O: 21});
 Nutrient.VERBASCOSE = new Nutrient('Verbascose', {C: 12, H: 22, O: 11}); // unknown composition
+// Fats
+// Proteins
+Nutrient.GLUTAMIC_ACID = new Nutrient('Glutamic Acid', {C: 5, H: 9, N: 1, O: 4}, 0, 1.4601);
 // Minerals
 Nutrient.CALCIUM = new Nutrient('Calcium', {Ca: 1}, 1300e-3);
 Nutrient.IRON = new Nutrient('Iron', {Fe: 1}, 18e-3);
@@ -672,13 +675,67 @@ Nutrient.ALCOHOL = new Nutrient('Alcohol', {C: 2, H: 6, O: 1}, 0, 0.78945, 'http
 Nutrient.BETAINE = new Nutrient('Betaine', {C: 5, H: 11, N: 1, O: 2}); // Trimethylglycine
 Nutrient.CAFFEINE = new Nutrient('Caffeine', {C: 8, H: 10, N: 4, O: 2});
 Nutrient.THEOBROMINE = new Nutrient('Theobromine', {C: 7, H: 8, N: 4, O: 2});
+/*
+const FATS = {
+	formula: {
+		mufa(n = 12){
+			n -= 4;
+			return {C: 4+n, H: 6+2*n, O: 2};
+		},
+		sfa(n = 3){
+			n -= 2;
+			return {C: 2+n, H: 4+2*n, O: 2};
+		},
+	},
+};
+FATS.SFA = Array.from(Array(25).keys())
+	.map(n => new Nutrient(`SFA ${n}:0`, FATS.formula.sfa(n), 0, 0.85));
+FATS.MUFA = Array.from(Array(25).keys())
+	.map(n => new Nutrient(`MUFA ${n}:0`, FATS.formula.mufa(n), 0, 0.85));
+
+NutrientGroup.FAT_SATURATED = new NutrientGroup('Saturated Fat', 0, FATS.SFA.map(x => new NutrientAmount(x, 1)));
+
+NutrientGroup.FAT_MONOUNSATURATED = new NutrientGroup('Monounsaturated Fat', 0, [
+	// new NutrientAmount(Nutrient.FAT, 1),
+]);
+
+NutrientGroup.FAT_POLYUNSATURATED = new NutrientGroup('Polyunsaturated Fat', 0, [
+	// new NutrientAmount(Nutrient.FAT, 1),
+]);
+
+NutrientGroup.FAT_TRANS = new NutrientGroup('Trans Fat', 0, [
+	// new NutrientAmount(Nutrient.FAT, 1),
+]);
+*/
+
+const PROTEINS = {
+	// average fraction of total protein which is glutamic acid
+	get C(){
+		function mean(arr){
+			return arr.reduce((a, b) => a+b) / arr.length;
+		}
+		return this.C_ || (this.C_ = mean(Food.foods.filter(f => f.nutrient(Nutrient.GLUTAMIC_ACID))
+			.map(f => f.nutrient(Nutrient.GLUTAMIC_ACID) / f.nutrient(NutrientGroup.PROTEINS))));
+	},
+	C_: 0,
+	/** @param {Food} food */
+	estimate_glutamic_acid(food){
+		return food.nutrient(Nutrient.GLUTAMIC_ACID)
+			|| food.nutrient(NutrientGroup.PROTEINS) * this.C;
+	},
+};
 
 NutrientGroup.FATS = new NutrientGroup('Fat', 78, [
-	new NutrientAmount(Nutrient.FAT, 1),
+	new NutrientAmount(Nutrient.FAT, 1), // unspecified fat
+	// new NutrientAmount(NutrientGroup.FAT_SATURATED, 1),
+	// new NutrientAmount(NutrientGroup.FAT_MONOUNSATURATED, 1),
+	// new NutrientAmount(NutrientGroup.FAT_POLYUNSATURATED, 1),
+	// new NutrientAmount(NutrientGroup.FAT_TRANS, 1),
 ]);
 
 NutrientGroup.PROTEINS = new NutrientGroup('Protein', 50, [
 	new NutrientAmount(Nutrient.PROTEIN, 1),
+	new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0), // duplicate
 ]);
 
 NutrientGroup.SUGARS = new NutrientGroup('Sugars', 195, [
@@ -893,6 +950,7 @@ NutrientGroup.ACIDITY = new NutrientGroup('Acidity (Crude Est.)', 0, [
 	new NutrientAmount(Nutrient.PANTOTHENIC_ACID, 7-4.41), // appx
 	new NutrientAmount(Nutrient.FOLATE, 7-4.41), // wild guess
 	new NutrientAmount(Nutrient.VITAMIN_C, 7-4.1), // appx
+	new NutrientAmount(Nutrient.GLUTAMIC_ACID, 7-4.1), // appx
 ]);*/
 
 // FOODS
@@ -961,6 +1019,7 @@ Food.PotatoSweet = new Food('Sweet Potato', {
 		new NutrientAmount(Nutrient.TOCOPHEROL_BETA, 0.01e-3),
 		new NutrientAmount(Nutrient.TOCOTRIENOL_ALPHA, 0.01e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 1.8e-6),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.155),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/168482/nutrients');
 Food.Carrot = new Food('Carrot', {
@@ -1082,6 +1141,7 @@ Food.RiceWhite = new Food('White Rice', {
 		new NutrientAmount(Nutrient.PANTOTHENIC_ACID, 0.824e-3),
 		new NutrientAmount(Nutrient.VITAMIN_B6, 0.107e-3),
 		new NutrientAmount(Nutrient.FOLATE, 7e-6),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 1.33),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/168883/nutrients');
 Food.Egg = new Food('Egg', {
@@ -1121,6 +1181,7 @@ Food.Egg = new Food('Egg', {
 		new NutrientAmount(Nutrient.VITAMIN_D3, 2.46e-6),
 		new NutrientAmount(Nutrient._25_HYDROXYCHOLECALCIFEROL, 0.56e-6),
 		new NutrientAmount(Nutrient.CHOLESTEROL, 411e-3),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 1.63),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/748967/nutrients');
 Food.Bacon = new Food('Bacon', {
@@ -1266,6 +1327,7 @@ Food.MilkSoy = new Food('Soy Milk', {
 		new NutrientAmount(Nutrient.TOCOPHEROL_DELTA, 0.87e-3),
 		new NutrientAmount(Nutrient.TOCOTRIENOL_GAMMA, 0.14e-3),
 		new NutrientAmount(Nutrient.VITAMIN_D2, 0.68e-6),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.619),
 		new NutrientAmount(Nutrient.DAIDZEIN, 0.46e-3),
 		new NutrientAmount(Nutrient.GENISTEIN, 0.38e-3),
 		new NutrientAmount(Nutrient.DAIDZIN, 12.9e-3),
@@ -1374,6 +1436,7 @@ Food.Seaweed = new Food('Seaweed', {
 		new NutrientAmount(Nutrient.CAROTENE_BETA, 171e-6),
 		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 5e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 25e-6),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 2.44),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345512/nutrients');
 Food.Sorghum = new Food('Sorghum', {
@@ -1403,6 +1466,7 @@ Food.Sorghum = new Food('Sorghum', {
 		new NutrientAmount(Nutrient.VITAMIN_B6, 0.443e-3),
 		new NutrientAmount(Nutrient.FOLATE, 20e-6),
 		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.5e-3),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 2.44),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/169716/nutrients');
 Food.Thyme = new Food('Thyme (dried)', {
@@ -1499,6 +1563,7 @@ Food.PeanutButter = new Food('Peanut Butter', {
 		new NutrientAmount(Nutrient.BIOTIN, 87.8e-6),
 		new NutrientAmount(Nutrient.FOLATE, 97e-6),
 		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 5.41e-3),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 5.82),
 		new NutrientAmount(Nutrient.DAIDZEIN, 11.5e-3),
 		new NutrientAmount(Nutrient.DAIDZIN, 0.649e-3),
 		new NutrientAmount(Nutrient.GENISTIN, 1.932e-3),
@@ -1605,6 +1670,7 @@ Food.Blueberry = new Food('Blueberry', {
 		new NutrientAmount(Nutrient.TOCOPHEROL_DELTA, 0.03e-3),
 		new NutrientAmount(Nutrient.TOCOTRIENOL_GAMMA, 0.07e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 19.3e-6),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.091),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/171711/nutrients');
 Food.Jalapeno = new Food('Jalapeño', {
@@ -1683,6 +1749,7 @@ Food.Jalapeno = new Food('Guava', {
 		new NutrientAmount(Nutrient.LYCOPENE, 5200e-6),
 		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.73e-3),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 2.6e-6),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.333),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/173044/nutrients');
 Food.ChickenThigh = new Food('Chicken Thigh', {
@@ -1721,6 +1788,7 @@ Food.ChickenThigh = new Food('Chicken Thigh', {
 		new NutrientAmount(Nutrient.VITAMIN_D3, 0.1e-6),
 		new NutrientAmount(Nutrient.MENAQUINONE_4, 8.5e-6),
 		new NutrientAmount(Nutrient.CHOLESTEROL, 87e-3),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 3.01),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/172859/nutrients');
 Food.Butter = new Food('Butter', { // salted
@@ -1729,6 +1797,7 @@ Food.Butter = new Food('Butter', { // salted
 	},
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 15.8),
+		new NutrientAmount(Nutrient.PROTEIN, 0.553), // reconstructed from AA table
 		new NutrientAmount(Nutrient.FAT, 82.2),
 		new NutrientAmount(Nutrient.LACTOSE, 0.58),
 		new NutrientAmount(Nutrient.CALCIUM, 21e-3),
@@ -1749,6 +1818,7 @@ Food.Butter = new Food('Butter', { // salted
 		new NutrientAmount(Nutrient.ZEAXANTHIN, 1e-6),
 		new NutrientAmount(Nutrient.LUTEIN, 12e-6),
 		new NutrientAmount(Nutrient.VITAMIN_D3, 0.4e-6),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.08),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/790508/nutrients');
 Food.BeefGround = new Food('Beef (Ground)', {
@@ -1824,6 +1894,7 @@ Food.Milk = new Food('Milk', { // whole, unfortified
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 0.3e-6),
 		new NutrientAmount(Nutrient.MENAQUINONE_4, 1e-6),
 		new NutrientAmount(Nutrient.CHOLESTEROL, 10e-3),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.708),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/172217/nutrients');
 Food.BeefLiver = new Food('Beef Liver', {
@@ -1862,6 +1933,7 @@ Food.BeefLiver = new Food('Beef Liver', {
 		new NutrientAmount(Nutrient.VITAMIN_D3, 1.2e-6),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 3.1e-6),
 		new NutrientAmount(Nutrient.CHOLESTEROL, 275e-3),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 2.61),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/169451/nutrients');
 Food.BeefSweetbread = new Food('Beef Sweetbread', {
@@ -1892,6 +1964,7 @@ Food.BeefSweetbread = new Food('Beef Sweetbread', {
 		new NutrientAmount(Nutrient.VITAMIN_D3, 0.6e-6),
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 3.1e-6),
 		new NutrientAmount(Nutrient.CHOLESTEROL, 217e-3),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 1.6),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/173093/nutrients');
 Food.LambTesticles = new Food('Lamb Testicles', {
@@ -1920,6 +1993,7 @@ Food.LambTesticles = new Food('Lamb Testicles', {
 		new NutrientAmount(Nutrient.RETINOL, 10e-6),
 		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.31e-3),
 		new NutrientAmount(Nutrient.CHOLESTEROL, 393e-3),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 1.59),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/172619/nutrients');
 Food.Honey = new Food('Honey', {
@@ -1953,6 +2027,7 @@ Food.Honey = new Food('Honey', {
 		new NutrientAmount(Nutrient.FOLATE, 2e-6),
 		new NutrientAmount(Nutrient.CHOLINE, 2.2e-3),
 		new NutrientAmount(Nutrient.BETAINE, 1.7e-3),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.018),
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/169640/nutrients');
 
