@@ -253,6 +253,16 @@ class SourcedObject {
 }
 
 
+class FoodGroup extends SourcedObject {}
+FoodGroup.OTHER = new FoodGroup('Other');
+FoodGroup.DAIRY = new FoodGroup('Dairy');
+FoodGroup.FRUIT = new FoodGroup('Fruit');
+FoodGroup.GRAIN = new FoodGroup('Grain');
+FoodGroup.MEAT = new FoodGroup('Meat');
+FoodGroup.SWEETS = new FoodGroup('Sweets');
+FoodGroup.VEG = new FoodGroup('Vegetables');
+
+
 class Nutrient extends SourcedObject {
 	/**
 	 * @param {string} name
@@ -364,7 +374,7 @@ class NutrientAmount {
 class Food extends SourcedObject {
 	/**
 	 * @param {string} name
-	 * @param {*} properties incl. composition := Nutrient[]
+	 * @param {*} properties incl. composition := Nutrient[], group := FoodGroup
 	 * @param {string?} source URL
 	 */
 	constructor(name, properties, source){
@@ -397,6 +407,10 @@ class Food extends SourcedObject {
 		return this.nutrients
 			.map(na => na.nutrient.density * na.amount / this.unitMass)
 			.reduce((a, b) => a+b, 0);
+	}
+	/** @returns {FoodGroup} */
+	get group(){
+		return this.properties.group || FoodGroup.OTHER;
 	}
 	/** @returns {boolean} */
 	get ignoreNutrientWarning(){
@@ -955,6 +969,7 @@ NutrientGroup.ACIDITY = new NutrientGroup('Acidity (Crude Est.)', 0, [
 
 // FOODS
 Food.OnionYellow = new Food('Yellow Onion', {
+	group: FoodGroup.VEG,
 	measures: {
 		unit: 143,
 	},
@@ -982,6 +997,7 @@ Food.OnionYellow = new Food('Yellow Onion', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/790646/nutrients');
 Food.PotatoSweet = new Food('Sweet Potato', {
+	group: FoodGroup.VEG,
 	measures: {
 		cup: 133,
 		unit: 130,
@@ -1023,6 +1039,7 @@ Food.PotatoSweet = new Food('Sweet Potato', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/168482/nutrients');
 Food.Carrot = new Food('Carrot', {
+	group: FoodGroup.VEG,
 	measures: {
 		unit: 61, // https://www.liveeatlearn.com/how-many-carrots-in-a-pound/
 	},
@@ -1069,6 +1086,7 @@ Food.Carrot = new Food('Carrot', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/170393/nutrients');
 Food.Peanut = new Food('Peanut', {
+	group: FoodGroup.GRAIN,
 	measures: {
 		unit: 0.8, // https://weighschool.com/peanut-weights-calories-including-calculator-charts/
 	},
@@ -1104,6 +1122,7 @@ Food.Peanut = new Food('Peanut', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/172430/nutrients');
 Food.Lime = new Food('Lime', {
+	group: FoodGroup.FRUIT,
 	measures: {
 		unit: 65,
 		slice: 8,
@@ -1137,6 +1156,7 @@ Food.Lime = new Food('Lime', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344664/nutrients');
 Food.RiceWhite = new Food('White Rice', {
+	group: FoodGroup.GRAIN,
 	ignoreNutrientWarning: true,
 	measures: {
 		cup: 185,
@@ -1171,6 +1191,7 @@ Food.RiceWhite = new Food('White Rice', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/168883/nutrients');
 Food.Egg = new Food('Egg', {
+	group: FoodGroup.MEAT,
 	measures: {
 		egg: 50.3,
 		unit: 50.3,
@@ -1211,6 +1232,7 @@ Food.Egg = new Food('Egg', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/748967/nutrients');
 Food.Bacon = new Food('Bacon', {
+	group: FoodGroup.MEAT,
 	measures: {
 		package: 442,
 		slice: 28,
@@ -1254,6 +1276,7 @@ Food.Bacon = new Food('Bacon', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/168277/nutrients');
 Food.BreadRye = new Food('Rye Bread', {
+	group: FoodGroup.GRAIN,
 	measures: {
 		slice: 32,
 		unit: 32,
@@ -1289,6 +1312,7 @@ Food.BreadRye = new Food('Rye Bread', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/172684/nutrients');
 Food.ChocolateDark = new Food('Dark Chocolate (70-85%)', {
+	group: FoodGroup.SWEETS,
 	measures: {
 		bar: 101,
 		unit: 101,
@@ -1338,6 +1362,7 @@ Food.ChocolateDark = new Food('Dark Chocolate (70-85%)', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/170273/nutrients');
 Food.MilkSoy = new Food('Soy Milk', {
+	group: FoodGroup.DAIRY,
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 92.4),
 		new NutrientAmount(Nutrient.NITROGEN, 0.57),
@@ -1385,6 +1410,7 @@ Food.MilkSoy = new Food('Soy Milk', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/1999630/nutrients');
 Food.Tofu = new Food('Tofu', {
+	group: FoodGroup.DAIRY,
 	measures: {
 		cup: 248,
 		piece: 120,
@@ -1421,6 +1447,7 @@ Food.Tofu = new Food('Tofu', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2342910/nutrients');
 Food.Garlic = new Food('Garlic', {
+	group: FoodGroup.VEG,
 	measures: { // guesses
 		bulb: 50,
 		clove: 5,
@@ -1456,6 +1483,7 @@ Food.Garlic = new Food('Garlic', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/1103354/nutrients');
 Food.Seaweed = new Food('Seaweed', {
+	group: FoodGroup.VEG,
 	measures: {
 		cup: 15,
 		strip: 0.5,
@@ -1489,6 +1517,7 @@ Food.Seaweed = new Food('Seaweed', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345512/nutrients');
 Food.Sorghum = new Food('Sorghum', {
+	group: FoodGroup.GRAIN,
 	measures: {
 		cup: 192,
 	},
@@ -1519,6 +1548,7 @@ Food.Sorghum = new Food('Sorghum', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/169716/nutrients');
 Food.Thyme = new Food('Thyme (dried)', {
+	group: FoodGroup.VEG,
 	measures: {
 		tsp: 1,
 		tbsp: 2.7,
@@ -1555,6 +1585,7 @@ Food.Thyme = new Food('Thyme (dried)', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/170938/nutrients');
 Food.WineRed = new Food('Red Wine', {
+	group: FoodGroup.OTHER,
 	measures: {
 		floz: 30,
 		glass: 180,
@@ -1588,6 +1619,7 @@ Food.WineRed = new Food('Red Wine', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2346263/nutrients');
 Food.PeanutButter = new Food('Peanut Butter', {
+	group: FoodGroup.OTHER,
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 1.1),
 		new NutrientAmount(Nutrient.NITROGEN, 4.39),
@@ -1620,6 +1652,7 @@ Food.PeanutButter = new Food('Peanut Butter', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2262072/nutrients');
 Food.Banana = new Food('Banana', {
+	group: FoodGroup.FRUIT,
 	measures: {
 		cup: 150,
 		slice: 6,
@@ -1653,6 +1686,7 @@ Food.Banana = new Food('Banana', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344720/nutrients');
 Food.MushroomWhiteButton = new Food('White Button Mushroom', {
+	group: FoodGroup.VEG,
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 91.8),
 		new NutrientAmount(Nutrient.PROTEIN, 2.89),
@@ -1683,6 +1717,7 @@ Food.MushroomWhiteButton = new Food('White Button Mushroom', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/1999629/nutrients');
 Food.Blueberry = new Food('Blueberry', {
+	group: FoodGroup.FRUIT,
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 84.2),
 		new NutrientAmount(Nutrient.PROTEIN, 0.74),
@@ -1724,6 +1759,7 @@ Food.Blueberry = new Food('Blueberry', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/171711/nutrients');
 Food.Jalapeno = new Food('Jalapeño', {
+	group: FoodGroup.VEG,
 	measures: {
 		cup: 90,
 		unit: 14,
@@ -1767,6 +1803,7 @@ Food.Jalapeno = new Food('Jalapeño', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/168576/nutrients');
 Food.Jalapeno = new Food('Guava', {
+	group: FoodGroup.FRUIT,
 	measures: {
 		cup: 165,
 		unit: 55,
@@ -1804,6 +1841,7 @@ Food.Jalapeno = new Food('Guava', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/173044/nutrients');
 Food.ChickenThigh = new Food('Chicken Thigh', {
+	group: FoodGroup.MEAT,
 	measures: {
 		unit: 191,
 	},
@@ -1843,6 +1881,7 @@ Food.ChickenThigh = new Food('Chicken Thigh', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/172859/nutrients');
 Food.Butter = new Food('Butter', { // salted
+	group: FoodGroup.DAIRY,
 	measures: {
 		stick: 113,
 	},
@@ -1873,6 +1912,7 @@ Food.Butter = new Food('Butter', { // salted
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/790508/nutrients');
 Food.BeefGround = new Food('Beef (Ground)', {
+	group: FoodGroup.MEAT,
 	measures: {
 		serving: 85,
 	},
@@ -1908,6 +1948,7 @@ Food.BeefGround = new Food('Beef (Ground)', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/168608/nutrients');
 Food.Milk = new Food('Milk', { // whole, unfortified
+	group: FoodGroup.DAIRY,
 	measures: {
 		cup: 244,
 		tbsp: 15,
@@ -1950,6 +1991,7 @@ Food.Milk = new Food('Milk', { // whole, unfortified
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/172217/nutrients');
 Food.BeefLiver = new Food('Beef Liver', {
+	group: FoodGroup.MEAT,
 	ignoreNutrientWarning: true,
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 70.8),
@@ -1989,6 +2031,7 @@ Food.BeefLiver = new Food('Beef Liver', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/169451/nutrients');
 Food.BeefSweetbread = new Food('Beef Sweetbread', {
+	group: FoodGroup.MEAT,
 	ignoreNutrientWarning: true,
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 57.7),
@@ -2020,6 +2063,7 @@ Food.BeefSweetbread = new Food('Beef Sweetbread', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/173093/nutrients');
 Food.LambTesticles = new Food('Lamb Testicles', {
+	group: FoodGroup.MEAT,
 	ignoreNutrientWarning: true,
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 85),
@@ -2049,6 +2093,7 @@ Food.LambTesticles = new Food('Lamb Testicles', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/172619/nutrients');
 Food.Honey = new Food('Honey', {
+	group: FoodGroup.SWEETS,
 	measures: {
 		cup: 339,
 		tbsp: 21,
@@ -2088,6 +2133,7 @@ Food.Honey = new Food('Honey', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/169640/nutrients');
 Food.Grape = new Food('Grape', {
+	group: FoodGroup.FRUIT,
 	measures: {
 		cup: 151,
 		unit: 4.9,
