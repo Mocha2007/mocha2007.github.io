@@ -2049,6 +2049,11 @@ Food.LambTesticles = new Food('Lamb Testicles', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/172619/nutrients');
 Food.Honey = new Food('Honey', {
+	measures: {
+		cup: 339,
+		tbsp: 21,
+		packet: 14,
+	},
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 17.1),
 		new NutrientAmount(Nutrient.PROTEIN, 0.3),
@@ -2083,6 +2088,10 @@ Food.Honey = new Food('Honey', {
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/169640/nutrients');
 Food.Grape = new Food('Grape', {
+	measures: {
+		cup: 151,
+		unit: 4.9,
+	},
 	nutrients: [
 		new NutrientAmount(Nutrient.WATER, 80.5),
 		new NutrientAmount(Nutrient.PROTEIN, 0.72),
@@ -2120,6 +2129,6 @@ Food.Grape = new Food('Grape', {
 		new NutrientAmount(Nutrient.PHYLLOQUINONE, 14.6e-3),
 		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 0.081),
 	],
-}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/169640/nutrients');
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/174683/nutrients');
 
 const NUTRITION_LOADED = true;
