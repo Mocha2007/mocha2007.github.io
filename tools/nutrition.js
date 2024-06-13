@@ -260,11 +260,6 @@ class FoodGroup extends SourcedObject {
 		super(name);
 		FoodGroup.groups.push(this);
 	}
-	/** @returns {FoodGroupAverage} */
-	get median(){
-		// todo
-		return;
-	}
 }
 /** @type {FoodGroup[]} */
 FoodGroup.groups = [];
@@ -829,7 +824,7 @@ NutrientGroup.CALORIES = new NutrientGroup('Calories', 0, [
 	new NutrientAmount(NutrientGroup.CALORIES_FROM_CARBOHYDRATES, 1),
 	new NutrientAmount(NutrientGroup.FATS, 9),
 	new NutrientAmount(NutrientGroup.PROTEINS, 4),
-	new NutrientAmount(Nutrient.ALCOHOL, 7.112), // ditto
+	new NutrientAmount(Nutrient.ALCOHOL, 6.93), // https://www.ars.usda.gov/ARSUserFiles/80400525/Data/SR26/sr26_doc.pdf p. 14
 ]);
 
 NutrientGroup.CARBOHYDRATES = new NutrientGroup('Carbohydrates', 275, [
