@@ -43,18 +43,22 @@ const CONST = {
 	},
 	nom_r_vp_candidates: [
 		// https://electionbettingodds.com/RepublicanVicePresident_2024.html
-		['Tim Scott', 0.211],
-		['James Vance', 0.084],
-		['Ben Carson', 0.052],
-		['Elise Stefanik', 0.048],
+		['Tim Scott', 0.143],
+		['Ben Carson', 0.127],
+		['James Vance', 0.124],
+		// ['Byron Donalds', 0.046], prob. not because his home state is also FL
+		['Elise Stefanik', 0.045],
 		// no way Haley accepts VP lol
-		['Vivek Ramaswamy', 0.038],
-		// ['Byron Donalds', 0.026], prob. not because his home state is also FL
+		['Vivek Ramaswamy', 0.027],
 		// no way Kennedy accepts VP lol
 		// the following %s are guesses
+		// https://www.nytimes.com/interactive/2024/us/politics/donald-trump-vp.html
+		// https://www.axios.com/2024/06/06/trump-vp-short-list-top-contenders
 		['Doug Burgum', 0.02],
-		['Kristi Noem', 0.02],
 		// ['Tucker Carlson', 0.02], prob. not because his home state is also FL
+		['Tom Cotton', 0.02],
+		['Kristi Noem', 0.02],
+		// ['Marco Rubio', 0.02], fl so no
 	],
 	/** @type {Politician[]} */
 	politicians: [],
