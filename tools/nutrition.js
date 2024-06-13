@@ -100,6 +100,7 @@ function nutrition_main(){
 		Nutrient.nutrients.map(nutrient => nutrient.linkShowBar)
 	));
 	// list of todo
+	/*
 	const todoContainer = document.getElementById('todo');
 	todoContainer.innerHTML = '';
 	todoContainer.appendChild(fancyList('Missing Densities',
@@ -107,6 +108,7 @@ function nutrition_main(){
 			.filter(nutrient => nutrient.density === 1)
 			.map(nutrient => nutrient.a)
 	));
+	*/
 	// scatter
 	SCATTER_CONTROL.init();
 	// ternary
@@ -641,24 +643,24 @@ Nutrient.VERBASCOSE = new Nutrient('Verbascose', {C: 12, H: 22, O: 11}); // unkn
 // Proteins
 Nutrient.GLUTAMIC_ACID = new Nutrient('Glutamic Acid', {C: 5, H: 9, N: 1, O: 4}, 0, 1.4601);
 // Minerals
-Nutrient.CALCIUM = new Nutrient('Calcium', {Ca: 1}, 1300e-3);
-Nutrient.IRON = new Nutrient('Iron', {Fe: 1}, 18e-3);
-Nutrient.MAGNESIUM = new Nutrient('Magnesium', {Mg: 1}, 420e-3);
-Nutrient.PHOSPHORUS = new Nutrient('Phosphorus', {P: 1}, 1250e-3);
-Nutrient.POTASSIUM = new Nutrient('Potassium', {K: 1}, 4700e-3);
-Nutrient.SODIUM = new Nutrient('Sodium', {Na: 1}, 2.3);
-Nutrient.ZINC = new Nutrient('Zinc', {Zn: 1}, 11e-3);
-Nutrient.COPPER = new Nutrient('Copper', {Cu: 1}, 0.9e-3);
-Nutrient.MANGANESE = new Nutrient('Manganese', {Mn: 1}, 2.3e-3);
-Nutrient.IODINE = new Nutrient('Iodine', {I: 1}, 150e-6);
-Nutrient.SELENIUM = new Nutrient('Selenium', {Se: 1}, 55e-6);
-Nutrient.MOLYBDENUM = new Nutrient('Molybdenum', {Mo: 1}, 45e-6);
+Nutrient.CALCIUM = new Nutrient('Calcium', {Ca: 1}, 1300e-3, 1.526);
+Nutrient.IRON = new Nutrient('Iron', {Fe: 1}, 18e-3, 7.874);
+Nutrient.MAGNESIUM = new Nutrient('Magnesium', {Mg: 1}, 420e-3, 1.737);
+Nutrient.PHOSPHORUS = new Nutrient('Phosphorus', {P: 1}, 1250e-3, 2); // four types
+Nutrient.POTASSIUM = new Nutrient('Potassium', {K: 1}, 4700e-3, 0.8590);
+Nutrient.SODIUM = new Nutrient('Sodium', {Na: 1}, 2.3, 0.9688);
+Nutrient.ZINC = new Nutrient('Zinc', {Zn: 1}, 11e-3, 7.140);
+Nutrient.COPPER = new Nutrient('Copper', {Cu: 1}, 0.9e-3, 8.935);
+Nutrient.MANGANESE = new Nutrient('Manganese', {Mn: 1}, 2.3e-3, 7.476);
+Nutrient.IODINE = new Nutrient('Iodine', {I: 1}, 150e-6, 4.944);
+Nutrient.SELENIUM = new Nutrient('Selenium', {Se: 1}, 55e-6, 4.5); // three types
+Nutrient.MOLYBDENUM = new Nutrient('Molybdenum', {Mo: 1}, 45e-6, 10.223);
 Nutrient.CHLORIDE = new Nutrient('Chloride', {Cl: 1}, 2300e-3);
-Nutrient.CHROMIUM = new Nutrient('Chromium', {Cr: 1}, 35e-6);
-Nutrient.BORON = new Nutrient('Boron', {B: 1}, 1.125e-3, undefined, undefined, true);
+Nutrient.CHROMIUM = new Nutrient('Chromium', {Cr: 1}, 35e-6, 7.192);
+Nutrient.BORON = new Nutrient('Boron', {B: 1}, 1.125e-3, 2.08, undefined, true);
 Nutrient.FLUORIDE = new Nutrient('Fluoride', {F: 1}, 4, undefined, undefined, true); // https://web.archive.org/web/20181113060244/http://www.nationalacademies.org/hmd/~/media/Files/Activity%20Files/Nutrition/DRI-Tables/2_%20RDA%20and%20AI%20Values_Vitamin%20and%20Elements.pdf?la=en
-Nutrient.VANADIUM = new Nutrient('Vanadium', {V: 1}, 12e-6, undefined, undefined, true);
-Nutrient.NICKEL = new Nutrient('Nickel', {V: 1}, 85e-6, undefined, undefined, true);
+Nutrient.VANADIUM = new Nutrient('Vanadium', {V: 1}, 12e-6, 6.099, undefined, true);
+Nutrient.NICKEL = new Nutrient('Nickel', {V: 1}, 85e-6, 8.907, undefined, true);
 // A
 Nutrient.RETINOL = new Nutrient('Retinol', {C: 20, H: 30, O: 1});
 Nutrient.CAROTENE_ALPHA = new Nutrient('α-Carotene', {C: 40, H: 56});
