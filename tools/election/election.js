@@ -54,11 +54,20 @@ const CONST = {
 		// the following %s are guesses
 		// https://www.nytimes.com/interactive/2024/us/politics/donald-trump-vp.html
 		// https://www.axios.com/2024/06/06/trump-vp-short-list-top-contenders
-		['Doug Burgum', 0.02],
-		// ['Tucker Carlson', 0.02], prob. not because his home state is also FL
+		['Doug Burgum', 0.01],
+		// ['Tucker Carlson', 0.01], prob. not because his home state is also FL
 		['Tom Cotton', 0.02],
+		// ['Tulsi Gabbard', 0.01], insanely unlikely
+		['Marjorie Greene', 0.01],
+		['Wesley Hunt', 0.02],
+		['Kari Lake', 0.01],
+		['Nancy Mace', 0.02],
 		['Kristi Noem', 0.02],
+		['Mike Pompeo', 0.02],
+		['John Ratcliffe', 0.02],
 		// ['Marco Rubio', 0.02], fl so no
+		['Sarah Sanders', 0.02],
+		// ['Rick Scott', 0.02], fl so no
 	],
 	/** @type {Politician[]} */
 	politicians: [],
