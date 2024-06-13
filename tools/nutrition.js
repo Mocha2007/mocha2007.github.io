@@ -2251,6 +2251,43 @@ Food.Grape = new Food('Grape', {
 		new NutrientAmount(Nutrient.RESVERATROL, (0.24 + 1.25)*1e-3/2 /1.6), // https://en.wikipedia.org/wiki/Resveratrol#Foods
 	],
 }, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/174683/nutrients');
+Food.CheeseCheddar = new Food('Cheddar', {
+	group: FoodGroup.DAIRY,
+	nutrients: [
+		new NutrientAmount(Nutrient.WATER, 36.2),
+		new NutrientAmount(Nutrient.PROTEIN, 24.2),
+		new NutrientAmount(Nutrient.FAT, 33.8),
+		new NutrientAmount(Nutrient.ASH, 3.66),
+		new NutrientAmount(Nutrient.LACTOSE, 0.18),
+		new NutrientAmount(Nutrient.GALACTOSE, 0.08),
+		new NutrientAmount(Nutrient.CALCIUM, 711e-3),
+		new NutrientAmount(Nutrient.IRON, 0.16e-3),
+		new NutrientAmount(Nutrient.MAGNESIUM, 27e-3),
+		new NutrientAmount(Nutrient.PHOSPHORUS, 460e-3),
+		new NutrientAmount(Nutrient.POTASSIUM, 76e-3),
+		new NutrientAmount(Nutrient.SODIUM, 644e-3),
+		new NutrientAmount(Nutrient.ZINC, 3.74e-3),
+		new NutrientAmount(Nutrient.COPPER, 0.035e-3),
+		new NutrientAmount(Nutrient.MANGANESE, 0.024e-3),
+		new NutrientAmount(Nutrient.SELENIUM, 28.3e-6),
+		new NutrientAmount(Nutrient.THIAMIN, 0.027e-3),
+		new NutrientAmount(Nutrient.RIBOFLAVIN, 0.434e-3),
+		new NutrientAmount(Nutrient.NIACIN, 0.039e-3),
+		new NutrientAmount(Nutrient.PANTOTHENIC_ACID, 0.481e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B6, 0.075e-3),
+		new NutrientAmount(Nutrient.FOLATE, 27e-6),
+		new NutrientAmount(Nutrient.CHOLINE, 16.5e-3),
+		new NutrientAmount(Nutrient.VITAMIN_B12, 0.88e-6),
+		new NutrientAmount(Nutrient.RETINOL, 256e-6),
+		new NutrientAmount(Nutrient.CAROTENE_BETA, 85e-6),
+		new NutrientAmount(Nutrient.TOCOPHEROL_ALPHA, 0.78e-3),
+		new NutrientAmount(Nutrient.TOCOPHEROL_GAMMA, 0.06e-3),
+		new NutrientAmount(Nutrient.VITAMIN_D3, 1e-6),
+		new NutrientAmount(Nutrient.PHYLLOQUINONE, 2.4e-6),
+		new NutrientAmount(Nutrient.MENAQUINONE_4, 8.6e-6),
+		new NutrientAmount(Nutrient.GLUTAMIC_ACID, 5.68),
+	],
+}, 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/170899/nutrients');
 
 if (DEBUG)
 	FoodGroupAverage.foodGroupAverages = FoodGroup.groups.map(fg => new FoodGroupAverage(fg));
