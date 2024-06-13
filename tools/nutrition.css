@@ -3,6 +3,16 @@ iframe {
 	height: 40vw;
 	width: 80vw;
 }
+ul {
+	column-count: 4;
+}
+
+/* mobile */
+@media (max-width: 750px) {
+	ul {
+		column-count: 2;
+	}
+}
 
 .foodLabel {
 	background-color: white;
