@@ -904,16 +904,30 @@ NutrientGroup.STEROLS = new NutrientGroup('Sterols', 0, [
 ]);
 
 NutrientGroup.XANTHOPHYLLS = new NutrientGroup('Xanthophylls', 0, [
+	new NutrientAmount(Nutrient.CRYPTOXANTHIN_BETA, 1),
 	new NutrientAmount(Nutrient.CIS_LUTEIN, 1),
 	new NutrientAmount(Nutrient.LUTEIN, 1),
 	new NutrientAmount(Nutrient.ZEAXANTHIN, 1),
 ]);
 
-NutrientGroup.CAROTENOIDS = new NutrientGroup('Carotenoids', 0, [
-	new NutrientAmount(NutrientGroup.XANTHOPHYLLS, 1),
+NutrientGroup.CAROTENES = new NutrientGroup('Carotenes', 0, [
 	new NutrientAmount(Nutrient.CAROTENE_ALPHA, 1),
 	new NutrientAmount(Nutrient.CAROTENE_BETA, 1),
 	new NutrientAmount(Nutrient.LYCOPENE, 1),
+]);
+
+NutrientGroup.CAROTENOIDS = new NutrientGroup('Carotenoids', 0, [
+	new NutrientAmount(NutrientGroup.CAROTENES, 1),
+	new NutrientAmount(NutrientGroup.XANTHOPHYLLS, 1),
+]);
+
+NutrientGroup.FLAVONOIDS = new NutrientGroup('Flavonoids', 0, [
+	new NutrientAmount(Nutrient.QUERCETIN, 1),
+]);
+
+NutrientGroup.ISOFLAVANOIDS = new NutrientGroup('Isoflavonoids', 0, [
+	new NutrientAmount(NutrientGroup.ISOFLAVONES, 1),
+	new NutrientAmount(Nutrient.COUMESTROL, 1),
 ]);
 
 NutrientGroup.ISOFLAVONES = new NutrientGroup('Isoflavones', 0, [
@@ -922,6 +936,11 @@ NutrientGroup.ISOFLAVONES = new NutrientGroup('Isoflavones', 0, [
 	new NutrientAmount(Nutrient.DAIDZIN, 1),
 	new NutrientAmount(Nutrient.GENISTIN, 1),
 	new NutrientAmount(Nutrient.GLYCITIN, 1),
+]);
+
+NutrientGroup.POLYPHENOLS = new NutrientGroup('Polyphenols', 0, [
+	new NutrientAmount(NutrientGroup.FLAVONOIDS, 1),
+	new NutrientAmount(NutrientGroup.ISOFLAVANOIDS, 1),
 ]);
 
 NutrientGroup.PHYTOESTROGENS = new NutrientGroup('Phytoestrogens', 0, [
