@@ -38,13 +38,13 @@ const LUNALIFE = {
 	CONFIG: {
 		LIFESPAN: 86, // median of tests
 		/**
-		 * 	77		https://www.annuity.org/retirement/planning/life-expectancy/calculator/
-		 * 	77.5	https://www.seniorliving.org/research/life-expectancy/calculator/
-		 * 	81.4	https://www.ssa.gov/cgi-bin/longevity.cgi
-		 *  85.9	https://www.bankrate.com/retirement/life-expectancy-calculator/
+		 * 	80		https://www.annuity.org/retirement/planning/life-expectancy/calculator/
+		 * 	81.4	https://www.seniorliving.org/research/life-expectancy/calculator/
+		 * 	81.6	https://www.ssa.gov/cgi-bin/longevity.cgi
+		 *  86		https://www.bankrate.com/retirement/life-expectancy-calculator/
 		 * 	91		https://www.johnhancock.com/life-insurance/life-expectancy-calculator.html
-		 * 	93		https://media.nmfn.com/tnetwork/lifespan/index.html#13
-		 * 	98.4	https://calcuworld.com/health-calculators/life-expectancy-calculator/
+		 * 	92		https://media.nmfn.com/tnetwork/lifespan/index.html#13
+		 * 	94.3	https://calcuworld.com/health-calculators/life-expectancy-calculator/
 		 */
 		get DIM(){
 			return Math.round(Math.sqrt(this.LIFESPAN * 365.25 / 7));
