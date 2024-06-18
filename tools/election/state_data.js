@@ -39,7 +39,7 @@ class Polling {
 }
 Polling.DEFAULT_ERROR = 0.05;
 // https://www.realclearpolling.com/polls/president/general/2024/trump-vs-biden-vs-kennedy-vs-west-vs-stein
-Polling.DEFAULT_THIRD = [Polling.DEFAULT_ERROR, {rfk: 0.104, west: 0.018, g: 0.02}];
+Polling.DEFAULT_THIRD = [Polling.DEFAULT_ERROR, {rfk: 0.079, west: 0.014, g: 0.013}];
 
 // use if graph exists: https://projects.fivethirtyeight.com/polls/president-general/
 // else: https://www.racetothewh.com/president/polls
@@ -48,7 +48,7 @@ Polling.DEFAULT_THIRD = [Polling.DEFAULT_ERROR, {rfk: 0.104, west: 0.018, g: 0.0
 // recount margins https://ballotpedia.org/Vote_margins_required_for_election_recounts,_2020
 
 /* updated
-	538		6/3/24
+	538		6/18/24
 	rttwh	6/3/24
 */
 
@@ -56,14 +56,14 @@ const STATES = [
 	['AK', 3, new Polling(0.487, 0.26, Polling.DEFAULT_ERROR, {rfk: 0.102, west: 0.01}), 733406, 0], // rttwh
 	['AL', 9, new Polling(0.561, 0.361, ...Polling.DEFAULT_THIRD), 5108468, 0.005], // rttwh
 	['AR', 6, new Polling(0.562, 0.249, ...Polling.DEFAULT_THIRD), 3067732, 0], // rttwh
-	['AZ', 11, new Polling(0.424, 0.379, 0.03, {rfk: 0.098}), 7431344, 0.001], // 538
+	['AZ', 11, new Polling(0.428, 0.387, 0.03, {rfk: 0.085}), 7431344, 0.001], // 538
 	['CA', 54, new Polling(0.296, 0.495, 0.06, {rfk: 0.104}), 38965193, 0], // 538
 	['CO', 10, new Polling(0.398, 0.467, ...Polling.DEFAULT_THIRD), 5877610, 0.005], // rttwh
 	['CT', 7, new Polling(0.388, 0.499, ...Polling.DEFAULT_THIRD), 3617176, 0.005], // rttwh
 	['DC', 3, new Polling(0.054, 0.9215, ...Polling.DEFAULT_THIRD), 678972, 0], // 2020
 	['DE', 3, new Polling(0.3977, 0.5874, ...Polling.DEFAULT_THIRD), 1031890, 0.005], // 2020
-	['FL', 30, new Polling(0.458, 0.349, 0.03, {rfk: 0.085}), 22610726, 0.005], // 538
-	['GA', 16, new Polling(0.435, 0.382, 0.03, {rfk: 0.089}), 11029227, 0], // 538
+	['FL', 30, new Polling(0.453, 0.367, 0.03, {rfk: 0.077}), 22610726, 0.005], // 538
+	['GA', 16, new Polling(0.436, 0.389, 0.03, {rfk: 0.080}), 11029227, 0], // 538
 	['HI', 4, new Polling(0.34, 0.42, Polling.DEFAULT_ERROR, {rfk: 0.08, west: 0.03}), 1435138, 0.0025], // rttwh
 	['IA', 6, new Polling(0.485, 0.363, ...Polling.DEFAULT_THIRD), 3207004, 0], // rttwh
 	['ID', 4, new Polling(0.535, 0.268, ...Polling.DEFAULT_THIRD), 1964726, 0], // rttwh
@@ -77,12 +77,12 @@ const STATES = [
 	['ME', 2, new Polling(0.359, 0.472, ...Polling.DEFAULT_THIRD), 1395722, 0], // rttwh
 	['ME-1', 1, new Polling(0.293, 0.407, ...Polling.DEFAULT_THIRD), 697698, 0], // rttwh
 	['ME-2', 1, new Polling(0.434, 0.266, ...Polling.DEFAULT_THIRD), 687642, 0], // rttwh
-	['MI', 15, new Polling(0.414, 0.408, 0.03, {rfk: 0.085}), 10037261, 0.0002], // 538
-	['MN', 10, new Polling(0.383, 0.407, 0.06, {rfk: 0.101}), 5737915, 0], // 538
+	['MI', 15, new Polling(0.416, 0.415, 0.03, {rfk: 0.076}), 10037261, 0.0002], // 538
+	['MN', 10, new Polling(0.401, 0.422, 0.06, {rfk: 0.073}), 5737915, 0], // 538
 	['MO', 10, new Polling(0.499, 0.331, Polling.DEFAULT_ERROR, {rfk: 0.09, west: 0}), 6196156, 0], // rttwh
 	['MS', 6, new Polling(0.545, 0.355, ...Polling.DEFAULT_THIRD), 2939690, 0], // rttwh
 	['MT', 4, new Polling(0.482, 0.289, Polling.DEFAULT_ERROR, {rfk: 0.08, west: 0.01}), 1132812, 0], // rttwh
-	['NC', 16, new Polling(0.442, 0.381, 0.03, {rfk: 0.094}), 10835491, 0], // 538
+	['NC', 16, new Polling(0.442, 0.381, 0.03, {rfk: 0.082}), 10835491, 0], // 538
 	['ND', 3, new Polling(0.532, 0.179, ...Polling.DEFAULT_THIRD), 783926, 0.01], // rttwh
 	['NE', 2, new Polling(0.573, 0.335, ...Polling.DEFAULT_THIRD), 1978379, 0.01], // rttwh
 	['NE-1', 1, new Polling(0.5601, 0.4109, ...Polling.DEFAULT_THIRD), 659903, 0], // 2020
@@ -91,12 +91,12 @@ const STATES = [
 	['NH', 4, new Polling(0.384, 0.407, Polling.DEFAULT_ERROR, {rfk: 0.097, west: 0.01}), 1402054, 0], // rttwh
 	['NJ', 14, new Polling(0.35, 0.419, Polling.DEFAULT_ERROR, {rfk: 0.075, west: 0.012}), 9290841, 0], // rttwh
 	['NM', 5, new Polling(0.411, 0.486, ...Polling.DEFAULT_THIRD), 2114371, 0.0025], // rttwh
-	['NV', 6, new Polling(0.424, 0.367, 0.03, {rfk: 0.102}), 3194176, 0], // 538
+	['NV', 6, new Polling(0.426, 0.379, 0.03, {rfk: 0.084}), 3194176, 0], // 538
 	['NY', 28, new Polling(0.366, 0.445, Polling.DEFAULT_ERROR, {rfk: 0.067, west: 0.024}), 19571216, 0], // rttwh
-	['OH', 17, new Polling(0.453, 0.357, 0.02, {rfk: 0.100}), 11785935, 0.0025], // 538
+	['OH', 17, new Polling(0.461, 0.368, 0.02, {rfk: 0.071}), 11785935, 0.0025], // 538
 	['OK', 7, new Polling(0.577, 0.326, ...Polling.DEFAULT_THIRD), 4053824, 0], // rttwh
 	['OR', 8, new Polling(0.29, 0.40, Polling.DEFAULT_ERROR, {rfk: 0.19, west: 0.03}), 4233358, 0.002], // rttwh
-	['PA', 19, new Polling(0.427, 0.408, 0.02, {rfk: 0.087}), 12961683, 0.005], // 538
+	['PA', 19, new Polling(0.425, 0.415, 0.02, {rfk: 0.077}), 12961683, 0.005], // 538
 	['RI', 4, new Polling(0.34, 0.51, Polling.DEFAULT_ERROR, {rfk: 0.06, west: 0.01}), 1095962, 0], // rttwh
 	['SC', 9, new Polling(0.513, 0.356, ...Polling.DEFAULT_THIRD), 5373555, 0.01], // rttwh
 	['SD', 3, new Polling(0.498, 0.313, Polling.DEFAULT_ERROR, {rfk: 0.11, west: 0}), 919318, 0], // rttwh
@@ -106,7 +106,7 @@ const STATES = [
 	['VA', 13, new Polling(0.379, 0.401, Polling.DEFAULT_ERROR, {rfk: 0.083, west: 0.01}), 8715698, 0], // rttwh
 	['VT', 3, new Polling(0.284, 0.577, ...Polling.DEFAULT_THIRD), 647464, 0], // rttwh
 	['WA', 12, new Polling(0.355, 0.402, Polling.DEFAULT_ERROR, {rfk: 0.054, west: 0.017}), 7812880, 0.005], // rttwh
-	['WI', 10, new Polling(0.419, 0.406, 0.02, {rfk: 0.086}), 5910955, 0], // 538
+	['WI', 10, new Polling(0.413, 0.413, 0.02, {rfk: 0.082}), 5910955, 0], // 538
 	['WV', 4, new Polling(0.582, 0.239, ...Polling.DEFAULT_THIRD), 1770071, 0], // rttwh
 	['WY', 3, new Polling(0.672, 0.159, ...Polling.DEFAULT_THIRD), 584057, 0.01], // rttwh
 ];
