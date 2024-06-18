@@ -43,31 +43,32 @@ const CONST = {
 	},
 	nom_r_vp_candidates: [
 		// https://electionbettingodds.com/RepublicanVicePresident_2024.html
-		['Tim Scott', 0.143],
-		['Ben Carson', 0.127],
-		['James Vance', 0.124],
-		// ['Byron Donalds', 0.046], prob. not because his home state is also FL
-		['Elise Stefanik', 0.045],
+		// updated 6/18
+		['Ben Carson', 0.137],
+		['James Vance', 0.127],
+		// ['Byron Donalds', 0.090], prob. not because his home state is also FL
+		['Tim Scott', 0.082],
+		['Elise Stefanik', 0.032],
 		// no way Haley accepts VP lol
-		['Vivek Ramaswamy', 0.027],
+		['Vivek Ramaswamy', 0.020],
 		// no way Kennedy accepts VP lol
 		// the following %s are guesses
 		// https://www.nytimes.com/interactive/2024/us/politics/donald-trump-vp.html
 		// https://www.axios.com/2024/06/06/trump-vp-short-list-top-contenders
-		['Doug Burgum', 0.01],
-		// ['Tucker Carlson', 0.01], prob. not because his home state is also FL
-		['Tom Cotton', 0.02],
-		// ['Tulsi Gabbard', 0.01], insanely unlikely
-		['Marjorie Greene', 0.01],
-		['Wesley Hunt', 0.02],
-		['Kari Lake', 0.01],
-		['Nancy Mace', 0.02],
-		['Kristi Noem', 0.02],
-		['Mike Pompeo', 0.02],
-		['John Ratcliffe', 0.02],
-		// ['Marco Rubio', 0.02], fl so no
-		['Sarah Sanders', 0.02],
-		// ['Rick Scott', 0.02], fl so no
+		['Doug Burgum', 0.006],
+		// ['Tucker Carlson', 0.006], prob. not because his home state is also FL
+		['Tom Cotton', 0.012],
+		// ['Tulsi Gabbard', 0.006], insanely unlikely
+		['Marjorie Greene', 0.006],
+		['Wesley Hunt', 0.012],
+		['Kari Lake', 0.006],
+		['Nancy Mace', 0.012],
+		['Kristi Noem', 0.012],
+		['Mike Pompeo', 0.012],
+		['John Ratcliffe', 0.012],
+		// ['Marco Rubio', 0.012], fl so no
+		['Sarah Sanders', 0.012],
+		// ['Rick Scott', 0.012], fl so no
 	],
 	/** @type {Politician[]} */
 	politicians: [],
