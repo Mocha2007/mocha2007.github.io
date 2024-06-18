@@ -34,7 +34,8 @@ class Polling {
 		return this.v(candidate) * this.error / 0.5;
 	}
 	v(candidate){
-		return (this.other[candidate] || 0) * CONST.config.thirdPartyBuff;
+		return (this.other[candidate] || Polling.DEFAULT_THIRD[1][candidate])
+			* CONST.config.thirdPartyBuff;
 	}
 }
 Polling.DEFAULT_ERROR = 0.05;
