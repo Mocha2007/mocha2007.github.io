@@ -74,7 +74,7 @@ const STATES = [
 	['LA', 8, new Polling(0.48, 0.33, Polling.DEFAULT_ERROR, {rfk: 0.10, west: 0.02}), 4573749, 0], // rttwh
 	['MA', 11, new Polling(0.274, 0.462, Polling.DEFAULT_ERROR, {rfk: 0.091, west: 0.011}), 7001399, 0], // rttwh
 	['MD', 10, new Polling(0.319, 0.507, Polling.DEFAULT_ERROR, {rfk: 0.066, west: 0.029}), 6180253, 0], // rttwh
-	['ME', 2, new Polling(0.359, 0.472, ...Polling.DEFAULT_THIRD), 1395722, 0], // rttwh
+	['ME', 2, new Polling(0.418, 0.413, Polling.DEFAULT_ERROR, {rfk: 0.11, west: 0.01}), 1395722, 0], // rttwh 6/18
 	['ME-1', 1, new Polling(0.293, 0.407, ...Polling.DEFAULT_THIRD), 697698, 0], // rttwh
 	['ME-2', 1, new Polling(0.434, 0.266, ...Polling.DEFAULT_THIRD), 687642, 0], // rttwh
 	['MI', 15, new Polling(0.416, 0.415, 0.03, {rfk: 0.076}), 10037261, 0.0002], // 538

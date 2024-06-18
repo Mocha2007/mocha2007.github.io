@@ -11,6 +11,7 @@ const CONST = {
 		nClosestRaces: 3,
 		recountMargin: 0.01, // todo
 		speakerRemovalDailyChance: 0.001,
+		swingMargin: 0.07, // polling margin required to highlight state as a swing state - should be a superset of whatever 538 has as tossup or lean https://projects.fivethirtyeight.com/2024-election-forecast/#state-probabilities
 		thirdPartyBuff: 1, // 1 = no change. 0 = no third party votes. 2 = double votes.
 		timestep: 1, // days
 		turnout: 0.6,
@@ -300,7 +301,7 @@ class State {
 		return 2 < this.name.length;
 	}
 	get swing(){
-		return Math.abs(this.polling.r - this.polling.d) < 0.1;
+		return Math.abs(this.polling.r - this.polling.d) < CONST.config.swingMargin;
 	}
 	results(x = 0.5){
 		const c = this.polling.actual(x);
