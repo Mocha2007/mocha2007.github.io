@@ -44,22 +44,22 @@
 		"notes": "has the alternate form ''-dzu'' after a vowel"
 	},
 	{
-		"title": "-isêm",
-		"etym": "C/-isu/-ê",
+		"title": "-isem",
+		"etym": "C/-isu/-e",
 		"cat": "aff.",
 		"defList": [
 			"-ness, -hood, -ity, -someness"
 		],
-		"notes": "has the alternate form -sêm after a vowel"
+		"notes": "has the alternate form -sem after a vowel"
 	},
 	{
-		"title": "-isêu",
-		"etym": "C/-isêm/-u",
+		"title": "-iseu",
+		"etym": "C/-isem/-u",
 		"cat": "aff.",
 		"defList": [
 			"-ate, be -some (noun verbalizing affix meaning to do something related to the noun)"
 		],
-		"notes": "has the alternate form -sêz after a vowel"
+		"notes": "has the alternate form -sez after a vowel"
 	},
 	{
 		"title": "-isu",
@@ -210,8 +210,8 @@
 		"categories": ["disease"]
 	},
 	{
-		"title": "abask",
-		"etym": "I/PEN/*aβasx/duck",
+		"title": "abas",
+		"etym": "I/PEN/*aβas-x/duck",
 		"cat": "n., 2nd",
 		"defList": [
 			"duck",
@@ -220,9 +220,9 @@
 		"categories": ["animal", "bird", "person"]
 	},
 	{
-		"title": "abat",
+		"title": "abak",
 		"img": "../img/eremoran/abakt.png",
-		"etym": "I/PEN/*abakt/board",
+		"etym": "I/PEN/*abak-t/board",
 		"cat": "n., 3rd",
 		"defList": [
 			"board, plank",
@@ -231,8 +231,8 @@
 		]
 	},
 	{
-		"title": "abbak",
-		"etym": "I/PEN/*aββax/bee",
+		"title": "abba",
+		"etym": "I/PEN/*aββa-x/bee",
 		"cat": "n., 2nd",
 		"defList": [
 			"bee"
@@ -240,7 +240,7 @@
 		"categories": ["animal", "bug"]
 	},
 	{
-		"title": "abbakam",
+		"title": "abbaka",
 		"etym": "C/abbakaz/-m",
 		"cat": "n., 5th",
 		"defList": [
@@ -280,7 +280,7 @@
 		"categories": ["giving"]
 	},
 	{
-		"title": "abbalier",
+		"title": "abbalie",
 		"etym": "C/abbaliz/-e",
 		"cat": "n., 1st",
 		"defList": [
@@ -290,8 +290,8 @@
 		"categories": ["person"]
 	},
 	{
-		"title": "abbalim",
-		"etym": "C/ad/balim",
+		"title": "abbali",
+		"etym": "C/ad/bali",
 		"cat": "n., 5th",
 		"defList": [
 			"competition",
@@ -316,8 +316,8 @@
 		"categories": ["math"]
 	},
 	{
-		"title": "abbarsêm",
-		"etym": "C/abbarz/-isêm",
+		"title": "abbarse",
+		"etym": "C/abbarz/-ise",
 		"cat": "n., 5th",
 		"defList": [
 			"rescue"
@@ -332,8 +332,8 @@
 		]
 	},
 	{
-		"title": "abbôz",
-		"etym": "C/ad/bôz",
+		"title": "abboz",
+		"etym": "C/ad/boz",
 		"cat": "v.",
 		"defList": [
 			"(intransitive) (lower status) gives (higher status) X"
@@ -368,8 +368,8 @@
 		"notes": "Often used in places where English would use 'would&apos;ve'."
 	},
 	{
-		"title": "aberet",
-		"etym": "B/eba/erem",
+		"title": "abere",
+		"etym": "B/eba/ere",
 		"cat": "n., 3rd",
 		"defList": [
 			"dye"
@@ -387,8 +387,8 @@
 		"categories": ["clothing"]
 	},
 	{
-		"title": "abubbat",
-		"etym": "C/abubz/-ba",
+		"title": "abubaba",
+		"etym": "C/abubaz/-ba",
 		"cat": "n., 3rd",
 		"defList": [
 			"bread roll"
@@ -396,25 +396,25 @@
 		"categories": ["food"]
 	},
 	{
-		"title": "abubisêm",
-		"etym": "C/abubz/-isêm",
+		"title": "abubise",
+		"etym": "C/abubz/-ise",
 		"cat": "n., 5th",
 		"defList": [
 			"change",
-			"the holiday <em>Abubisêm</em>, held on the 11th day of [[reram]]"
+			"the holiday <em>Abubisem</em>, held on the 11th day of [[reram]]"
 		],
 		"categories": ["time"]
 	},
 	{
-		"title": "abubit",
-		"etym": "B/abubz/bit",
+		"title": "abubi",
+		"etym": "B/abubz/bi",
 		"cat": "n., 3rd",
 		"defList": [
 			"scroll"
 		]
 	},
 	{
-		"title": "abubut",
+		"title": "abubu",
 		"etym": "R/abu",
 		"cat": "n., 3rd",
 		"defList": [
@@ -422,8 +422,8 @@
 		]
 	},
 	{
-		"title": "abubz",
-		"etym": "C/abubut/-z",
+		"title": "abubaz",
+		"etym": "C/abubu/-az",
 		"cat": "v.",
 		"defList": [
 			"(intransitive) turn, twist, wind, coil, roll, spin",
@@ -434,8 +434,8 @@
 		"categories": ["math"]
 	},
 	{
-		"title": "abufimbasêm",
-		"etym": "C/abum/himbasêm",
+		"title": "abufimbase",
+		"etym": "C/abum/himbase",
 		"cat": "n., 5th",
 		"defList": [
 			"(mathematics) sphere, ball"
@@ -443,7 +443,7 @@
 		"categories": ["math"]
 	},
 	{
-		"title": "abukut",
+		"title": "abuku",
 		"etym": "A/abu",
 		"cat": "n., 3rd",
 		"defList": [
@@ -452,7 +452,7 @@
 		"categories": ["clothing"]
 	},
 	{
-		"title": "abum",
+		"title": "abu",
 		"etym": "C/abu/-m",
 		"cat": "n., 5th",
 		"defList": [
@@ -462,8 +462,8 @@
 		"categories": ["math"]
 	},
 	{
-		"title": "aburt",
-		"etym": "B/abubz/bart",
+		"title": "abur",
+		"etym": "B/abubaz/bar",
 		"cat": "n., 3rd",
 		"defList": [
 			"thread"
@@ -488,8 +488,8 @@
 		"categories": ["motion"]
 	},
 	{
-		"title": "abzalk",
-		"etym": "I/PEN/*abdialx/eel",
+		"title": "abzal",
+		"etym": "I/PEN/*abdial-x/eel",
 		"cat": "n., 2nd",
 		"defList": [
 			"eel"
@@ -535,23 +535,23 @@
 	},
 	{
 		"title": "adarrez",
-		"etym": "C/ad/arret",
+		"etym": "C/ad/arre",
 		"cat": "v.",
 		"defList": [
 			"board (a ship, peacefully)"
 		]
 	},
 	{
-		"title": "adarz",
-		"etym": "C/ad/arz",
+		"title": "adaraz",
+		"etym": "C/ad/araz",
 		"cat": "v.",
 		"defList": [
 			"support"
 		]
 	},
 	{
-		"title": "addam",
-		"etym": "C/ad/dam",
+		"title": "adda",
+		"etym": "C/ad/da",
 		"cat": "n., 5th; adv.",
 		"defList": [
 			"tomorrow"
@@ -559,15 +559,15 @@
 		"categories": ["time"]
 	},
 	{
-		"title": "addôkaz",
-		"etym": "C/ad/dôkaz",
+		"title": "addokaz",
+		"etym": "C/ad/dokaz",
 		"cat": "v.",
 		"defList": [
 			"happen"
 		]
 	},
 	{
-		"title": "adebam",
+		"title": "adeba",
 		"etym": "C/adebaz/-m",
 		"cat": "n., 5th",
 		"defList": [
@@ -610,15 +610,15 @@
 		]
 	},
 	{
-		"title": "adzamarkim",
-		"etym": "C/adzamarz/kim",
+		"title": "adzamarki",
+		"etym": "C/adzamaraz/ki",
 		"cat": "n., 5th",
 		"defList": [
 			"camp"
 		]
 	},
 	{
-		"title": "adzamarm",
+		"title": "adzamar",
 		"etym": "C/adzamarz/-m",
 		"cat": "n., 5th",
 		"defList": [
@@ -626,7 +626,7 @@
 		]
 	},
 	{
-		"title": "adzamarz",
+		"title": "adzamaraz",
 		"etym": "I/PEN/*xêd-samars/rest",
 		"cat": "v.",
 		"defList": [
@@ -635,8 +635,8 @@
 		]
 	},
 	{
-		"title": "afêkam",
-		"etym": "C/afêkz/-m",
+		"title": "afekam",
+		"etym": "C/afekz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"knowledge",
@@ -644,8 +644,8 @@
 		]
 	},
 	{
-		"title": "afêkkrum",
-		"etym": "C/afêkam/krum",
+		"title": "afekkrum",
+		"etym": "C/afekam/krum",
 		"cat": "n., 5th",
 		"defList": [
 			"science",
@@ -653,7 +653,7 @@
 		]
 	},
 	{
-		"title": "afêkz",
+		"title": "afekaz",
 		"etym": "I/PEN/*aɸêks/know",
 		"cat": "v.",
 		"defList": [
@@ -666,8 +666,8 @@
 		"categories": ["experiential"]
 	},
 	{
-		"title": "afês",
-		"etym": "r/afêst",
+		"title": "afes",
+		"etym": "r/afes",
 		"cat": "n., 4th",
 		"defList": [
 			"penis, dong, cock, dick"
@@ -675,8 +675,8 @@
 		"categories": ["body part"]
 	},
 	{
-		"title": "afêsêr",
-		"etym": "C/afêst/-ê",
+		"title": "afese",
+		"etym": "C/afest/-e",
 		"cat": "n., 1st",
 		"defList": [
 			"shortswordsman"
@@ -684,17 +684,17 @@
 		"categories": ["person"]
 	},
 	{
-		"title": "afêsir",
-		"etym": "B/afêsêr/siz",
+		"title": "afesi",
+		"etym": "B/afese/siz",
 		"cat": "n., 1st",
 		"defList": [
-			"Afêsir, god of thunder, husband of Siraur"
+			"Afêsi, god of thunder, husband of Siraur"
 		],
 		"categories": ["gendered male", "god", "male given name"]
 	},
 	{
-		"title": "afêsma",
-		"etym": "C/afês/mat",
+		"title": "afesma",
+		"etym": "C/afes/ma",
 		"cat": "n., 4th",
 		"defList": [
 			"vagina"
@@ -702,8 +702,8 @@
 		"categories": ["body part"]
 	},
 	{
-		"title": "afêssaur",
-		"etym": "C/afêst/saurz",
+		"title": "afessau",
+		"etym": "C/afêst/sauz",
 		"cat": "n., 1st",
 		"defList": [
 			"watchman, guard, policeman, officer"
@@ -711,7 +711,7 @@
 		"categories": ["person"]
 	},
 	{
-		"title": "afêst",
+		"title": "afes",
 		"etym": "I/PEN/*xeɸêʃt/shortsword",
 		"cat": "n., 3rd",
 		"defList": [
@@ -730,7 +730,7 @@
 	},
 	{
 		"title": "afik",
-		"etym": "I/PEN/*aɸix",
+		"etym": "I/PEN/*aɸi-x",
 		"cat": "n., 2nd",
 		"defList": [
 			"beast, wild animal"
@@ -748,8 +748,8 @@
 		"categories": ["animal"]
 	},
 	{
-		"title": "afkaêt",
-		"etym": "C/afkaz/-ê",
+		"title": "afkae",
+		"etym": "C/afkaz/-e",
 		"cat": "n., 3rd",
 		"defList": [
 			"drift (blacksmithing)",
@@ -767,8 +767,8 @@
 		"categories": ["motion"]
 	},
 	{
-		"title": "afkakum",
-		"etym": "A/afkam",
+		"title": "afkaku",
+		"etym": "A/afka",
 		"cat": "n., 5th",
 		"defList": [
 			"journey"
@@ -776,7 +776,7 @@
 		"categories": ["motion"]
 	},
 	{
-		"title": "afkam",
+		"title": "afka",
 		"etym": "C/afkaz/-m",
 		"cat": "n., 5th",
 		"defList": [
@@ -831,7 +831,7 @@
 	},
 	{
 		"title": "ak",
-		"etym": "I/PEN/*ax/mare",
+		"etym": "I/PEN/*a-x/mare",
 		"cat": "n., 2nd",
 		"defList": [
 			"mare (female horse)"
@@ -875,7 +875,7 @@
 		"categories": ["animal", "seafood"]
 	},
 	{
-		"title": "akalôt",
+		"title": "akalo",
 		"etym": "I/PEN/*xêkalô-t",
 		"cat": "n., 3rd",
 		"defList": [
@@ -948,7 +948,7 @@
 	},
 	{
 		"title": "aksibi",
-		"etym": "C/aksik/bi",
+		"etym": "C/aksi/bi",
 		"cat": "n., 4th",
 		"defList": [
 			"celery"
@@ -956,7 +956,7 @@
 		"categories": ["plant", "vegetable"]
 	},
 	{
-		"title": "aksik",
+		"title": "aksi",
 		"etym": "I/PEN/*xeksi-x",
 		"cat": "n., 2nd",
 		"defList": [
@@ -974,7 +974,7 @@
 		"categories": ["fruit", "plant", "tree"]
 	},
 	{
-		"title": "akulak",
+		"title": "akula",
 		"etym": "I/PEN/*axula-x",
 		"cat": "n., 2nd",
 		"defList": [
@@ -1012,8 +1012,8 @@
 		"categories": ["fruit", "plant", "tree"]
 	},
 	{
-		"title": "alikanask",
-		"etym": "C/alika/nask",
+		"title": "alikanas",
+		"etym": "C/alika/nas",
 		"cat": "n., 2nd",
 		"defList": [
 			"leopard"
@@ -1021,8 +1021,8 @@
 		"categories": ["animal"]
 	},
 	{
-		"title": "amabasêz",
-		"etym": "C/amabaz/-isêz",
+		"title": "amabasez",
+		"etym": "C/amabaz/-isez",
 		"cat": "v.",
 		"defList": [
 			"(Southern) annoying, intolerable, insufferable",
@@ -1038,8 +1038,8 @@
 		]
 	},
 	{
-		"title": "amabbak",
-		"etym": "C/amz/abbak",
+		"title": "amabba",
+		"etym": "C/amz/abba",
 		"cat": "n., 2nd",
 		"defList": [
 			"bumblebee"
@@ -1056,7 +1056,7 @@
 		"categories": ["fruit", "plant", "tree"]
 	},
 	{
-		"title": "amelat",
+		"title": "amela",
 		"etym": "D/amu",
 		"cat": "n., 3rd",
 		"defList": [
@@ -1083,8 +1083,8 @@
 		"categories": ["food"]
 	},
 	{
-		"title": "ammadint",
-		"etym": "C/amma/-idint",
+		"title": "ammadin",
+		"etym": "C/amma/-idin",
 		"cat": "n., 3rd",
 		"defList": [
 			"mead"
@@ -1092,8 +1092,8 @@
 		"categories": ["drink"]
 	},
 	{
-		"title": "ammak",
-		"etym": "B/abbak/amma",
+		"title": "amba",
+		"etym": "B/abba/amma",
 		"cat": "n., 2nd",
 		"defList": [
 			"honey bee"
@@ -1122,7 +1122,7 @@
 		"categories": ["spice"]
 	},
 	{
-		"title": "ammut",
+		"title": "ammu",
 		"etym": "I/PEN/*xedmu/port",
 		"cat": "n., 3rd",
 		"defList": [
@@ -1158,7 +1158,7 @@
 		"notes": "categorizing this as a spice instead of an herb as its extract comes from the root"
 	},
 	{
-		"title": "amz",
+		"title": "amaz",
 		"etym": "O",
 		"cat": "v.",
 		"defList": [
@@ -1166,8 +1166,8 @@
 		]
 	},
 	{
-		"title": "amzralam",
-		"etym": "C/amzralz/-m",
+		"title": "amrala",
+		"etym": "C/amzralaz/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"number, numeral"
@@ -1175,8 +1175,8 @@
 		"categories": ["extent", "math"]
 	},
 	{
-		"title": "amzralz",
-		"etym": "I/PEN/*amsrals/count",
+		"title": "amralaz",
+		"etym": "I/PEN/*amrals/count",
 		"cat": "v.",
 		"defList": [
 			"count"
@@ -1184,7 +1184,7 @@
 		"categories": ["math"]
 	},
 	{
-		"title": "anam",
+		"title": "an",
 		"etym": "C/anu/-m",
 		"cat": "n., 5th",
 		"defList": [
@@ -1193,15 +1193,15 @@
 		"categories": ["emotion"]
 	},
 	{
-		"title": "andôt",
-		"etym": "I/PEN/*andôt/oven",
+		"title": "ando",
+		"etym": "I/PEN/*andô-t/oven",
 		"cat": "n., 3rd",
 		"defList": [
 			"oven"
 		]
 	},
 	{
-		"title": "anitêr",
+		"title": "anite",
 		"etym": "L/PRE/anitē",
 		"cat": "n., 1st",
 		"defList": [
@@ -1239,7 +1239,7 @@
 		"categories": ["motion", "war"]
 	},
 	{
-		"title": "anom",
+		"title": "ano",
 		"etym": "C/anoz/-m",
 		"cat": "n., 5th",
 		"defList": [
@@ -1247,7 +1247,7 @@
 		]
 	},
 	{
-		"title": "anot",
+		"title": "ano",
 		"etym": "C/anom/-t",
 		"cat": "n., 3rd",
 		"defList": [
@@ -1274,7 +1274,7 @@
 		"categories": ["emotion"]
 	},
 	{
-		"title": "anz",
+		"title": "az",
 		"etym": "L/VAZ/anj/an elder",
 		"cat": "v. ",
 		"defList": [
@@ -1282,7 +1282,7 @@
 		]
 	},
 	{
-		"title": "aô",
+		"title": "ao",
 		"etym": "I/PEN/*aô",
 		"cat": "n., 4th",
 		"defList": [
@@ -1291,8 +1291,8 @@
 		"categories": ["plant"]
 	},
 	{
-		"title": "aôbil",
-		"etym": "C/aô/bil",
+		"title": "aobil",
+		"etym": "C/ao/bil",
 		"cat": "n., 4th",
 		"defList": [
 			"cranberry"
@@ -1329,8 +1329,8 @@
 		"categories": ["person"]
 	},
 	{
-		"title": "aramaêmat",
-		"etym": "C/aramaêr/mat",
+		"title": "aramaema",
+		"etym": "C/aramae/ma",
 		"cat": "n., 3rd",
 		"defList": [
 			"smithy"
@@ -1338,8 +1338,8 @@
 		"categories": ["building", "metal"]
 	},
 	{
-		"title": "aramaêr",
-		"etym": "C/arama/-ê",
+		"title": "aramae",
+		"etym": "C/arama/-e",
 		"cat": "n., 1st",
 		"defList": [
 			"metalsmith (more specifically, a coppersmith)"
@@ -1347,7 +1347,7 @@
 		"categories": ["metal", "person"]
 	},
 	{
-		"title": "aramafir",
+		"title": "aramafi",
 		"etym": "C/arama/hi",
 		"cat": "n., 1st",
 		"defList": [
@@ -1356,7 +1356,7 @@
 		"categories": ["person"]
 	},
 	{
-		"title": "aramam",
+		"title": "arama",
 		"etym": "C/aramat/-m",
 		"cat": "n., 5th",
 		"defList": [
@@ -1365,7 +1365,7 @@
 		"categories": ["measurement"]
 	},
 	{
-		"title": "aramat",
+		"title": "arama",
 		"etym": "C/arama/-t",
 		"cat": "n., 3rd",
 		"defList": [
@@ -1375,7 +1375,7 @@
 		"categories": ["coin", "metal"]
 	},
 	{
-		"title": "aramelat",
+		"title": "aramela",
 		"etym": "D/aramat",
 		"cat": "n., 3rd",
 		"defList": [
@@ -1404,15 +1404,15 @@
 		"notes": "further etymology of *xere: *x [animacy particle] + *ere 'red'"
 	},
 	{
-		"title": "ardolam",
-		"etym": "C/ardo/lam",
+		"title": "ardola",
+		"etym": "C/ardo/la",
 		"cat": "n., 5th",
 		"defList": [
 			"(uncountable) flint"
 		]
 	},
 	{
-		"title": "ardom",
+		"title": "ardo",
 		"etym": "C/ardo/-m",
 		"cat": "n., 5th",
 		"defList": [
@@ -1422,9 +1422,9 @@
 		]
 	},
 	{
-		"title": "ardomêr",
+		"title": "ardome",
 		"img": "../img/eremoran/ardomut.png",
-		"etym": "B/ardomut/-ê",
+		"etym": "B/ardomu/-ê",
 		"cat": "n., 1st",
 		"defList": [
 			"winemaker, vintner"
@@ -1432,8 +1432,8 @@
 		"categories": ["drink", "v3_trade"]
 	},
 	{
-		"title": "ardomukaskrut",
-		"etym": "C/ardomut/kaskru",
+		"title": "ardomukaskru",
+		"etym": "C/ardomu/kaskru",
 		"cat": "n., 3rd",
 		"defList": [
 			"cider"
@@ -1441,7 +1441,7 @@
 		"categories": ["drink"]
 	},
 	{
-		"title": "ardomut",
+		"title": "ardomu",
 		"img": "../img/eremoran/ardomut.png",
 		"etym": "C/ardo/mu",
 		"cat": "n., 3rd",
@@ -1451,8 +1451,8 @@
 		"categories": ["drink", "v3_trade"]
 	},
 	{
-		"title": "ardonask",
-		"etym": "C/ardo/nask",
+		"title": "ardonas",
+		"etym": "C/ardo/nas",
 		"cat": "n., 2nd",
 		"defList": [
 			"red panda"
@@ -1460,8 +1460,8 @@
 		"categories": ["animal"]
 	},
 	{
-		"title": "ardonôak",
-		"etym": "C/ardo/nôak",
+		"title": "ardonoa",
+		"etym": "C/ardo/noa",
 		"cat": "n., 2nd",
 		"defList": [
 			"firefly"
@@ -1469,8 +1469,8 @@
 		"categories": ["animal", "bug"]
 	},
 	{
-		"title": "arêôk",
-		"etym": "I/PEN/*arêôx",
+		"title": "areo",
+		"etym": "I/PEN/*arêô-x",
 		"cat": "n., 2nd",
 		"defList": [
 			"cattle; cow"
@@ -1478,8 +1478,8 @@
 		"categories": ["animal"]
 	},
 	{
-		"title": "arkik",
-		"etym": "I/PEN/*ere-kix",
+		"title": "arki",
+		"etym": "I/PEN/*ere-ki-x",
 		"cat": "n., 2nd",
 		"defList": [
 			"donkey (equus asinus)",
@@ -1500,7 +1500,7 @@
 		"categories": ["plant", "tree"]
 	},
 	{
-		"title": "arm",
+		"title": "ar",
 		"etym": "C/arz/-m",
 		"cat": "n., 5th",
 		"defList": [
@@ -1508,16 +1508,16 @@
 		]
 	},
 	{
-		"title": "arret",
-		"etym": "I/PEN/*ereret",
+		"title": "arre",
+		"etym": "I/PEN/*erere-t",
 		"cat": "n., 3rd",
 		"defList": [
 			"deck (of a ship)"
 		]
 	},
 	{
-		"title": "arrilm",
-		"etym": "C/arz/rilm",
+		"title": "arril",
+		"etym": "C/arz/ril",
 		"cat": "n., 5th",
 		"defList": [
 			"noon"
@@ -1525,7 +1525,7 @@
 		"categories": ["time"]
 	},
 	{
-		"title": "arrôr",
+		"title": "arro",
 		"etym": "I/PEN/*xêrrôr",
 		"cat": "n., 1st",
 		"defList": [
@@ -1535,8 +1535,8 @@
 		"categories": ["gendered male", "male given name"]
 	},
 	{
-		"title": "art",
-		"etym": "I/PEN/*art",
+		"title": "ar",
+		"etym": "I/PEN/*ar-t",
 		"cat": "n., 3rd",
 		"defList": [
 			"porridge"
@@ -1562,7 +1562,7 @@
 		"categories": ["herb", "plant"]
 	},
 	{
-		"title": "arz",
+		"title": "araz",
 		"etym": "I/PEN/*ars/stand",
 		"cat": "v.",
 		"defList": [
@@ -1575,7 +1575,7 @@
 		"categories": ["math"]
 	},
 	{
-		"title": "arzên",
+		"title": "arzen",
 		"img": "../img/eremoran/ardzin.png",
 		"etym": "I/PEN/*xerediên/silver",
 		"cat": "n., 4th",
@@ -1586,8 +1586,8 @@
 		"categories": ["metal", "mineral"]
 	},
 	{
-		"title": "arzênelat",
-		"etym": "D/arzênt",
+		"title": "arzenela",
+		"etym": "D/arzen",
 		"cat": "n., 3rd",
 		"defList": [
 			"small silver piece, worth four aramat"
@@ -1595,8 +1595,8 @@
 		"categories": ["coin"]
 	},
 	{
-		"title": "arzênk",
-		"etym": "C/arzên/-k",
+		"title": "arzen",
+		"etym": "C/arzen/-k",
 		"cat": "n., 2nd",
 		"defList": [
 			"silverfish"
@@ -1604,15 +1604,15 @@
 		"categories": ["animal", "bug"]
 	},
 	{
-		"title": "arzênmonz",
-		"etym": "C/arzênt/monz",
+		"title": "arzenmonaz",
+		"etym": "C/arzênt/monaz",
 		"cat": "v.",
 		"defList": [
 			"be greedy"
 		]
 	},
 	{
-		"title": "arzênt",
+		"title": "arzen",
 		"etym": "C/arzên/-t",
 		"cat": "n., 3rd",
 		"defList": [
@@ -1631,8 +1631,8 @@
 		]
 	},
 	{
-		"title": "ask",
-		"etym": "I/PEN/*atsx",
+		"title": "as",
+		"etym": "I/PEN/*ats-x",
 		"cat": "n., 2nd",
 		"defList": [
 			"sandpiper"
@@ -1640,7 +1640,7 @@
 		"categories": ["animal", "bird"]
 	},
 	{
-		"title": "askit",
+		"title": "aski",
 		"etym": "I/PEN/*aʃki-t",
 		"cat": "n., 3rd",
 		"defList": [
@@ -1648,8 +1648,8 @@
 		]
 	},
 	{
-		"title": "asmom",
-		"etym": "C/as/mor",
+		"title": "asmo",
+		"etym": "C/as/mo",
 		"cat": "n., 5th",
 		"defList": [
 			"kin-duty (duty and loyalty to one's kin)"
@@ -1664,8 +1664,8 @@
 		]
 	},
 	{
-		"title": "assêz",
-		"etym": "C/as/-isêm",
+		"title": "assez",
+		"etym": "C/as/-isem",
 		"cat": "v.",
 		"defList": [
 			"mutual, reciporical"
@@ -1725,8 +1725,8 @@
 		"categories": ["disease"]
 	},
 	{
-		"title": "attukum",
-		"etym": "C/ad/tukum",
+		"title": "attuku",
+		"etym": "C/ad/tuku",
 		"cat": "n., 5th",
 		"defList": [
 			"pronoun"
@@ -1734,7 +1734,7 @@
 		"categories": ["language"]
 	},
 	{
-		"title": "atutum",
+		"title": "atutu",
 		"etym": "O",
 		"cat": "n., 5th",
 		"defList": [
@@ -1761,8 +1761,8 @@
 		"categories": ["food"]
 	},
 	{
-		"title": "aum",
-		"etym": "C/aut/-m",
+		"title": "au",
+		"etym": "C/au/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"(mathematics) perimeter"
@@ -1770,7 +1770,7 @@
 		"categories": ["math"]
 	},
 	{
-		"title": "aut",
+		"title": "au",
 		"etym": "I/PEN/*axeut/fence",
 		"cat": "n., 3rd",
 		"defList": [
@@ -1798,7 +1798,7 @@
 		"categories": ["body part"]
 	},
 	{
-		"title": "azik",
+		"title": "azi",
 		"etym": "I/PEN/*asi-x",
 		"cat": "n., 2nd",
 		"defList": [
@@ -1807,8 +1807,8 @@
 		"categories": ["animal", "bird"]
 	},
 	{
-		"title": "azlisêm",
-		"etym": "C/azlu/-isêm",
+		"title": "azlise",
+		"etym": "C/azlu/-ise",
 		"cat": "n., 5th",
 		"defList": [
 			"weakness",
@@ -1837,13 +1837,14 @@
 		"categories": ["body part"]
 	},
 	{
-		"title": "azmum",
+		"title": "azmu",
 		"etym": "C/azmu/-m",
 		"cat": "n., 5th",
 		"defList": [
 			"cubit, ell"
 		],
-		"categories": ["measurement"]
+		"categories": ["measurement"],
+		"TODO CONTINUE HERE": ""
 	},
 	{
 		"title": "ba",
