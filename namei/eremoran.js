@@ -1318,9 +1318,9 @@ function expansionProject(){
 }
 
 /** this is run at the end of eremoran.html */
-function eremoranMain(){
+function eremoranMain(dict_name = 'eremoran'){
 	// needs to wait a second to download, so put this first
-	getDict('eremoran', computeStats);
+	getDict(dict_name, computeStats);
 	// scrolling quotes
 	startEreQuote();
 	// tooltip for hovering over eremoran words

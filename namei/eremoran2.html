@@ -4121,8 +4121,8 @@ Universals Violated:
 <script>
 // Vivaldi and some mobile browsers do not correctly handle async so I have to wait for it to load...
 if (typeof dictScriptIsLoaded !== 'undefined')
-	eremoranMain();
+	eremoranMain('eremoran2');
 else
-	document.getElementById('dictScript').addEventListener('load', eremoranMain);
+	document.getElementById('dictScript').addEventListener('load', () => eremoranMain('eremoran2'));
 </script>
 </html>
