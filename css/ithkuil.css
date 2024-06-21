@@ -17,7 +17,10 @@ body {
 	font-family: "Times New Roman", "serif";
 	font-weight: bold;
 }
-/*.ithkuil p:nth-of-type(2){}*/
+.ithkuil td:nth-of-type(2){
+	color: blue;
+	text-align: center;
+}
 .ithkuil p:nth-of-type(3){
 	font-style: italic;
 }
