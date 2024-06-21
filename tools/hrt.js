@@ -363,7 +363,7 @@ function deltat(start, end){
 	const MONTH_start = start.getMonth() + start.getFullYear() * 12;
 	const MONTH_end = end.getMonth() + end.getFullYear() * 12;
 	const CALENDAR_MONTHS = MONTH_end - MONTH_start;
-	const FULL_MONTH_FLAG = MONTH_start === MONTH_end || start.getDate() <= end.getDate();
+	const FULL_MONTH_FLAG = MONTH_start === MONTH_end || start.getDate() < end.getDate(); // using < prevents a weird negative bug, but makes it kinda weird for the 9h in the end of the final day of the month, maybe when I have more time I can fix this with .getHour too?
 	const MONTHS_RAW = CALENDAR_MONTHS - (FULL_MONTH_FLAG ? 0 : 1);
 	const YEARS = Math.floor(MONTHS_RAW / 12);
 	const MONTHS = MONTHS_RAW % 12;
