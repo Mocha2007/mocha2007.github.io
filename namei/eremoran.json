@@ -2611,6 +2611,15 @@
 		"categories": ["chess", "person"]
 	},
 	{
+		"title": "bazêrôt",
+		"etym": "C/bazêr/rôz",
+		"cat": "n., 3rd",
+		"defList": [
+			"legislative building"
+		],
+		"categories": ["government"]
+	},
+	{
 		"title": "baztumimit",
 		"etym": "C/baztur/mimit",
 		"cat": "n., 3rd",
@@ -10162,6 +10171,14 @@
 		"cat": "adj.",
 		"defList": [
 			"soft, gentle"
+		]
+	},
+	{
+		"title": "krukut",
+		"etym": "A/krum",
+		"cat": "n., 3rd",
+		"defList": [
+			"university, college"
 		]
 	},
 	{
