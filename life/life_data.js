@@ -4574,6 +4574,12 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'parahoxozoa',
 		'range': 'wo',
+		'genetic': {
+			'chromosome': { // https://en.wikipedia.org/wiki/Trichoplax#Genetics
+				'autosomal': 6,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'plantae',
