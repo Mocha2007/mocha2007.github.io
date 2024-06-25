@@ -260,10 +260,14 @@ const CONST = {
 		}
 		return {p: this.positions.president, vp: this.positions.vice_president};
 	},
+	// @ n = 1000, takes about 54s
 	debug(n = 1000, use_debug = true){
+		if (!use_debug)
+			this.dates.start = new Date();
 		this.debug_mode = use_debug;
 		const outcomes = [];
 		const START = new Date();
+		const DIVISION = Math.floor(n/10);
 		for (let i = 0; i < n; i++){
 			try {
 				const o = simulation();
@@ -274,6 +278,12 @@ const CONST = {
 			catch (e){
 				i--; // ignore this attempt
 				console.error(e);
+			}
+			// progress
+			if (i && i % DIVISION === 0){
+				const f = i/n;
+				const t = new Date() - START;
+				console.debug(`${Math.round(100*f)}%; ETA = ${Math.round((t/f - t)/1000)} s`);
 			}
 		}
 		const t = new Date() - START;
