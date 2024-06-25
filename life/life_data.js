@@ -338,7 +338,7 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'amorphea',
 		'range': 'ww',
-		'age': 1000,
+		'age': 1500, // https://en.wikipedia.org/wiki/Amoebozoa#cite_note-Amoebozoa_dating-3
 	},
 	{
 		'name': 'amorphea',
@@ -1556,7 +1556,7 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'choanozoa',
 		'range': 'wo',
-		'age': 100.5,
+		'age': 94,
 		'desc': 'Choanoflagellate',
 	},
 	{
@@ -1564,7 +1564,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'opisthokonta',
 		'range': 'ww',
-		'age': 1000,
+		'age': 950,
 	},
 	{
 		'name': 'chondrichthyes',
@@ -2429,7 +2429,7 @@ const lifeData = [
 		'rank': 'domain',
 		'parent': 'asgard',
 		'range': 'ww',
-		'age': 2100,
+		'age': 1650,
 		'desc': 'Eukaryotes are organisms which have cells with a nucleus enclosed within membranes, unlike prokaryotes, which have no membrane-bound organelles.',
 		'develop': 'nucleus, mitochondrion, peroxisome, linear chromosomes',
 	},
