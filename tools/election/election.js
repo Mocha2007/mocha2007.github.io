@@ -290,14 +290,30 @@ class State {
 	 * @param {Polling} polling
 	 * @param {number} pop 1M default
 	 * @param {number} recountMargin margin in % to warrant a vote recount based on state law https://ballotpedia.org/Vote_margins_required_for_election_recounts,_2020
+	 * @param {number} pollClose in hours after noon (eg. 11.00 for 11 PM), EST (UTC-5). (DST ends first sunday in Nov, so 3 Nov 2024)
+	 * @param {number} ET_OFFSET time zone offset from ET
 	 */
-	constructor(name, ev, polling, pop = 1e6, recountMargin = 0){
+	constructor(name, ev, polling, pop = 1e6, recountMargin = 0, pollClose = 8, ET_OFFSET = 0){
 		this.name = name;
 		this.ev = ev;
 		this.polling = polling;
 		this.pop = pop;
 		this.recountMargin = recountMargin;
+		this.pollClose = pollClose;
+		this.ET_OFFSET = ET_OFFSET;
 		CONST.states.push(this);
+	}
+	get pollCloseTime(){
+		const t = new Date(CONST.dates.election.getTime());
+		// todo fix if eg. 7:30, cause that gets changed to eg. 7
+		t.setHours(12 + this.pollClose);
+		const t2 = new Date(CONST.dates.election.getTime());
+		t2.setHours(12 + this.pollClose - this.ET_OFFSET);
+		return {t, t2};
+	}
+	get pollCloseTimeString(){
+		const t = this.pollCloseTime;
+		return `Polls close at ${t.t.toLocaleTimeString()} local time (${t.t2.toLocaleTimeString()} ET)`;
 	}
 	/** prevents double-counting of districts in popular vote totals */
 	get votesDontCount(){

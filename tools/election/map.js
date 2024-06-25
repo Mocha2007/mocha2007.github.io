@@ -40,6 +40,8 @@ class MapElem {
 					// detailed results...
 					td.title = [
 						`${state.name} (${state.ev} EVs)`,
+						state.pollCloseTimeString,
+						'--------------------',
 						...result.result.map((line, i) => `${line[0].name} - ${line[1].toLocaleString()} (${round(result.resultP[i][1] * 100, 2)}%)`)
 					].join('\n');
 				}
