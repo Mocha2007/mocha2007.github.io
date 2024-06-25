@@ -212,7 +212,9 @@ const CONST = {
 		this.alert(`${this.config.nClosestRaces} closest races:`);
 		results.sort((a, b) => Math.abs(a[1].margin) - Math.abs(b[1].margin));
 		for (let i = 0; i < this.config.nClosestRaces; i++)
-			this.alert(`(${i+1}) ${results[i][0].name} - ${round(results[i][1].margin * 100, 2)}%`);
+			this.alert(`(${i+1}) ${results[i][0].name} -
+			${round(results[i][1].margin * 100, 2)}%
+			(${results[i][1].marginAbs.toLocaleString()} votes)`);
 		// winner declaration / tie
 		const winner = 'DRIJG'.split('').find(char => 270 <= ev[char]);
 		// tie?
@@ -323,9 +325,10 @@ class State {
 		const resultP = result.map(a => [a[0], a[1] / total]);
 		/** @type {Party} */
 		const winner = result[0][0];
-		const margin = (result[0][1] - result[1][1]) / sum(result.map(a => a[1]));
+		const marginAbs = result[0][1] - result[1][1];
+		const margin = marginAbs / sum(result.map(a => a[1]));
 		const recount = Math.abs(margin) < this.recountMargin;
-		return {result, winner, margin, recount, total, resultP};
+		return {result, winner, margin, marginAbs, recount, total, resultP};
 	}
 }
 
