@@ -198,6 +198,14 @@ const POLITICIANS = [
 		position: Position.SENATOR,
 		state: 'OH',
 	},
+	{
+		name: 'Glenn Youngkin',
+		dob: new Date(1966, 12, 9),
+		gender: Gender.MALE,
+		party: Party.REPUBLICAN,
+		position: Position.GOVERNOR,
+		state: 'VA',
+	},
 	// republican reps
 	{
 		name: 'Byron Donalds',

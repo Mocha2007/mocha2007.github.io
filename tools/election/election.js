@@ -44,21 +44,24 @@ const CONST = {
 	},
 	nom_r_vp_candidates: [
 		// https://electionbettingodds.com/RepublicanVicePresident_2024.html
-		// updated 6/18
-		['Ben Carson', 0.137],
-		['James Vance', 0.127],
-		// ['Byron Donalds', 0.090], prob. not because his home state is also FL
-		['Tim Scott', 0.082],
+		// updated 6/25
+		['Doug Burgum', 0.335],
+		['James Vance', 0.175],
+		['Vivek Ramaswamy', 0.096],
+		// ['Byron Donalds', 0.079], prob. not because his home state is also FL
+		// ['Marco Rubio', 0.065], fl so no
+		['Tim Scott', 0.055],
+		['Ben Carson', 0.054],
+		['Glenn Youngkin', 0.053],
+		['Sarah Sanders', 0.040],
 		['Elise Stefanik', 0.032],
 		// no way Haley accepts VP lol
-		['Vivek Ramaswamy', 0.020],
 		// no way Kennedy accepts VP lol
+		['Tom Cotton', 0.014],
 		// the following %s are guesses
 		// https://www.nytimes.com/interactive/2024/us/politics/donald-trump-vp.html
 		// https://www.axios.com/2024/06/06/trump-vp-short-list-top-contenders
-		['Doug Burgum', 0.006],
 		// ['Tucker Carlson', 0.006], prob. not because his home state is also FL
-		['Tom Cotton', 0.012],
 		// ['Tulsi Gabbard', 0.006], insanely unlikely
 		['Marjorie Greene', 0.006],
 		['Wesley Hunt', 0.012],
@@ -67,8 +70,6 @@ const CONST = {
 		['Kristi Noem', 0.012],
 		['Mike Pompeo', 0.012],
 		['John Ratcliffe', 0.012],
-		// ['Marco Rubio', 0.012], fl so no
-		['Sarah Sanders', 0.012],
 		// ['Rick Scott', 0.012], fl so no
 	],
 	/** @type {Politician[]} */
