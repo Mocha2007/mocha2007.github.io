@@ -20,16 +20,21 @@ class PaleoMap {
 PaleoMap.maps = [];
 
 new PaleoMap(0, 'https://upload.wikimedia.org/wikipedia/commons/7/78/Mollweide-projection.jpg');
-new PaleoMap(10, 'https://upload.wikimedia.org/wikipedia/commons/2/26/Mapa_amb_distibuci%C3%B3_al_Eoc%C3%A8.png');
+new PaleoMap(1, 'https://upload.wikimedia.org/wikipedia/commons/6/60/1_Ma_paleoglobe.png');
+// new PaleoMap(10, 'https://upload.wikimedia.org/wikipedia/commons/2/26/Mapa_amb_distibuci%C3%B3_al_Eoc%C3%A8.png'); dead
+new PaleoMap(15, 'https://upload.wikimedia.org/wikipedia/commons/6/6a/15_Ma_paleoglobe.png');
 new PaleoMap(30, 'http://www.scotese.com/images/B030_zonef.jpg');
 new PaleoMap(60, 'http://www.scotese.com/images/E060_zonef.jpg');
 new PaleoMap(90, 'https://upload.wikimedia.org/wikipedia/commons/d/d0/90_Ma_-_Late_Cretaceous_paleogeography_with_known_distribution_of_Arcellites_disciformis_indicated.jpg');
 new PaleoMap(122.5, 'https://upload.wikimedia.org/wikipedia/commons/a/a3/The_distribution_of_paraves_in_Early_Cretaceous.png');
-new PaleoMap(170, 'https://upload.wikimedia.org/wikipedia/commons/b/b3/MiddleJurassicMap.jpg');
+new PaleoMap(170, 'https://upload.wikimedia.org/wikipedia/commons/9/9a/170_Ma.png'); // https://upload.wikimedia.org/wikipedia/commons/b/b3/MiddleJurassicMap.jpg
 new PaleoMap(220, 'https://upload.wikimedia.org/wikipedia/commons/e/ec/220Ma_Paleomap.svg');
 new PaleoMap(250, 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Triassic_250.png');
 new PaleoMap(270, 'https://upload.wikimedia.org/wikipedia/commons/9/90/Distribution_of_caseid_synapsids_in_late_Paleozoic_Pangea.jpg');
+new PaleoMap(275, 'https://upload.wikimedia.org/wikipedia/commons/e/e7/275_Ma_paleoglobe.png');
 new PaleoMap(300, 'https://upload.wikimedia.org/wikipedia/commons/9/96/Karoo_Glaciation.png');
+new PaleoMap(330, 'https://upload.wikimedia.org/wikipedia/commons/6/6d/330_Ma_paleoglobe.png');
+new PaleoMap(370, 'https://upload.wikimedia.org/wikipedia/commons/c/ce/370_Ma_paleoglobe.png');
 new PaleoMap(372, 'https://upload.wikimedia.org/wikipedia/commons/5/57/Late_Devonian_palaeogeographic_map.jpg');
 new PaleoMap(420, 'http://www.scotese.com/images/V420_zonef.jpg');
 new PaleoMap(440, 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Silurian_plate_tectonics.png');
@@ -41,10 +46,18 @@ new PaleoMap(540, 'http://www.scotese.com/images/Z540_zonef.jpg');
 new PaleoMap(600, 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Ediacaran-Cambrian_boundary_plate_tectonics.png');
 new PaleoMap(650, 'http://www.scotese.com/images/650.jpg');
 new PaleoMap(720, 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Earth_720Ma.gif');
-new PaleoMap(750, 'https://www.lyellcollection.org/cms/10.1144/SP326.4/asset/72e565b5-40b8-46bb-8606-4bfc11526e74/assets/images/large/1697ch04f04.jpg');
+// new PaleoMap(750, 'https://www.lyellcollection.org/cms/10.1144/SP326.4/asset/72e565b5-40b8-46bb-8606-4bfc11526e74/assets/images/large/1697ch04f04.jpg'); dead
+new PaleoMap(1040, 'https://upload.wikimedia.org/wikipedia/commons/8/8c/1040_Ma_paleoglobe.png');
 new PaleoMap(1200, 'https://static.wikia.nocookie.net/dimensionscollide/images/d/d0/1200Marect.png/revision/latest?cb=20170109052233');
+new PaleoMap(1590, 'https://upload.wikimedia.org/wikipedia/commons/6/63/1590_Ma.png');
 new PaleoMap(1600, 'https://upload.wikimedia.org/wikipedia/commons/5/58/Columbia1600.png');
+new PaleoMap(1740, 'https://upload.wikimedia.org/wikipedia/commons/3/34/1740_Ma_paleoglobe.png');
+new PaleoMap(2000, 'https://upload.wikimedia.org/wikipedia/commons/5/51/2000_Ma_paleoglobe.png');
 new PaleoMap(2050, 'https://upload.wikimedia.org/wikipedia/commons/d/d5/2050ma.png');
+new PaleoMap(2200, 'https://upload.wikimedia.org/wikipedia/commons/4/4a/2200_Ma.png');
+new PaleoMap(2400, 'https://upload.wikimedia.org/wikipedia/commons/5/5c/2400_Ma_paleoglobe.png');
+new PaleoMap(2650, 'https://upload.wikimedia.org/wikipedia/commons/9/9a/2650_Ma_paleoglobe.png');
+new PaleoMap(3000, 'https://upload.wikimedia.org/wikipedia/commons/d/d9/3000_Ma_paleoglobe.png');
 
 
 const paleomap = {
