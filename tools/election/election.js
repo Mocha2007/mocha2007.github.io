@@ -441,8 +441,14 @@ function simulation(){
 				CONST.nom_r_vp_candidates.map(x => x[0]),
 				CONST.nom_r_vp_candidates.map(x => x[1])
 			));
-			CONST.alert(`${CONST.positions.nom_r_p.html} chose ${CONST.positions.nom_r_vp.html} as VP`);
 			CONST.flags.trumpChoseVP = true;
+			// if Trump dies too early, repubs just choose the veep
+			if (!CONST.positions.nom_r_p){
+				CONST.positions.nom_r_p = CONST.positions.nom_r_vp;
+				CONST.positions.nom_r_vp = CONST.position_backups.nom_r_vp().x;
+				// console.debug('Emergency Trump veep fill!');
+			}
+			CONST.alert(`${CONST.positions.nom_r_p.html} chose ${CONST.positions.nom_r_vp.html} as VP`);
 		}
 		// remove the speaker
 		if (Math.random() < Math.pow(CONST.config.speakerRemovalDailyChance, CONST.config.timestep)){
