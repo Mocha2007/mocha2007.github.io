@@ -14,6 +14,8 @@
     desc?: string;
     develop?: string;
     loss?: string;
+    wiki?: string;
+    url?: string;
 }[]} */
 const lifeData = [
 	/*
@@ -38,6 +40,8 @@ const lifeData = [
 		},
 		'develop': 'neoplastid';
 		'loss': 'archaeoplastid';
+		'wiki': 'archaeoplastid'; USE ONLY WIKI OR URL NOT BOTH, URL HAS HIGHER PRIORITY THAN WIKI BUT ONLY USE IF NECESSARY!
+		'url': 'archaeoplastid';
 	},
 	*/
 	// BEGIN ALPHABETICAL ORDERING
@@ -676,6 +680,7 @@ const lifeData = [
 		'rank': 'superphylum',
 		'parent': 'proteoarchaeota',
 		'range': 'ww',
+		'wiki': 'Asgard (archaea)',
 	},
 	{
 		'name': 'asparagales',

@@ -12,12 +12,14 @@ class Taxon {
 		this.rank = o.rank;
 		/** @type {string} */
 		this.parent_id = o.parent;
+		/** @type {string} */
+		this.url = o.url || `https://en.wikipedia.org/wiki/${o.wiki || o.name}`;
 		Taxon.taxa.push(this);
 	}
 	get a(){
 		const e = document.createElement('a');
 		e.innerHTML = this.pName;
-		e.href = 'https://en.wikipedia.org/wiki/' + this.pName;
+		e.href = this.url;
 		return e;
 	}
 	get elem(){
