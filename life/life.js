@@ -14,6 +14,12 @@ class Taxon {
 		this.parent_id = o.parent;
 		Taxon.taxa.push(this);
 	}
+	get a(){
+		const e = document.createElement('a');
+		e.innerHTML = this.pName;
+		e.href = 'https://en.wikipedia.org/wiki/' + this.pName;
+		return e;
+	}
 	get elem(){
 		const i = this.i;
 		const details = document.createElement('details');
@@ -48,11 +54,7 @@ class Taxon {
 		if (lifeData[i].emoji)
 			title.innerHTML += lifeData[i].emoji + ' ';
 		// name
-		let a = document.createElement('a');
-		const pName = proper(name);
-		a.innerHTML = pName;
-		a.href = 'https://en.wikipedia.org/wiki/' + pName;
-		title.appendChild(a);
+		title.appendChild(this.a);
 		// range
 		if (lifeData[i].hasOwnProperty('range')){
 			title.innerHTML += ' ';
@@ -60,7 +62,7 @@ class Taxon {
 		}
 		// age
 		if (lifeData[i].hasOwnProperty('age')){
-			a = lifeData[i].age; // mya
+			const a = lifeData[i].age; // mya
 			title.innerHTML += ' ';
 			const age = document.createElement('abbr');
 			age.classList.add('age');
@@ -105,14 +107,14 @@ class Taxon {
 			develop.classList.add('develop');
 			title.appendChild(develop);
 			develop.innerHTML = '*';
-			develop.title = `${pName} innovated: ${lifeData[i].develop}`;
+			develop.title = `${this.pName} innovated: ${lifeData[i].develop}`;
 		}
 		if (lifeData[i].hasOwnProperty('loss')){
 			const loss = document.createElement('abbr');
 			loss.classList.add('develop');
 			title.appendChild(loss);
 			loss.innerHTML = '+';
-			loss.title = `${pName} lost: ${lifeData[i].loss}`;
+			loss.title = `${this.pName} lost: ${lifeData[i].loss}`;
 		}
 		// "open all" button
 		const openAll = document.createElement('input');
@@ -143,6 +145,9 @@ class Taxon {
 	}
 	get parent(){
 		return Taxon.fromString(this.parent_id);
+	}
+	get pName(){
+		return proper(this.name);
 	}
 	/** @param {string} s */
 	static fromString(s){
