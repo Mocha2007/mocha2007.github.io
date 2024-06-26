@@ -3,7 +3,7 @@
 
 const CONST = {
 	config: {
-		deathPenalty: 0.9, // eg. 0.9 => 10% fewer votes when presidential candidate dies
+		deathPenalty: 0.96, // eg. 0.9 => 10% fewer votes when presidential candidate dies. I estimate this from the difference betweeen Biden/Trump and Harris/Trump 2023 polling averages.
 		deathRate: 1, // x times normal rate of death
 		eligibleVoters: 0.72,
 		errorFuzzing: 0.05, // max state variation in systemic polling error
