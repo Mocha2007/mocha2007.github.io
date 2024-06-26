@@ -311,6 +311,35 @@ const CONST = {
 		this.debug_mode = false;
 		return outcomes.join('\n');
 	},
+	// try NC! CONST.debugState(CONST.states[29])
+	/** @param {State} state */
+	debugState(state, n = 100000){
+		const START = new Date();
+		const DIVISION = Math.floor(n/10);
+		const WINNERS = {};
+		for (let i = 0; i < n; i++){
+			// quickly determine winner
+			const pollingError = this.config.forceErrorX
+				|| random.uniform(CONST.config.errorFuzzing, 1 - CONST.config.errorFuzzing);
+			const WINNER = state.results(pollingError
+				+ random.uniform(-CONST.config.errorFuzzing, CONST.config.errorFuzzing)).winner.abbr;
+			// add winner
+			if (WINNERS[WINNER])
+				WINNERS[WINNER]++;
+			else
+				WINNERS[WINNER] = 1;
+			// progress
+			if (i && i % DIVISION === 0){
+				const f = i/n;
+				const t = new Date() - START;
+				console.debug(`${Math.round(100*f)}%; ETA = ${Math.round((t/f - t)/1000)} s`);
+			}
+		}
+		const t = new Date() - START;
+		console.debug(`T = ${t/1000} s; ${t/n} ms avg.`);
+		this.debug_mode = false;
+		return WINNERS;
+	},
 };
 
 class State {
