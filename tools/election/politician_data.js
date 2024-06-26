@@ -1,5 +1,6 @@
 /* exported POLITICIANS */
 /* global Gender, Party, Position */
+// some state data from https://www.thegreenpapers.com/P24/candidates.phtml?sort=f
 
 const POLITICIANS = [
 	{
@@ -67,7 +68,7 @@ const POLITICIANS = [
 		gender: Gender.FEMALE,
 		party: Party.GREEN,
 		position: Position.NONE,
-		state: 'MA',
+		state: 'ME',
 	},
 	{
 		name: 'Jasmine Sherman',
@@ -101,7 +102,7 @@ const POLITICIANS = [
 		gender: Gender.FEMALE,
 		party: Party.SAL,
 		position: Position.NONE,
-		state: 'NY',
+		state: 'DC',
 	},
 	{
 		name: 'Karina Garcia',
