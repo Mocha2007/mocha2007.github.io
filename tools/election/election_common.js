@@ -26,6 +26,7 @@ class Party {
 		this.name = name;
 		Party.parties.push(this);
 	}
+	/** @returns {string} first letter of the party name, capitalized (eg. "D") */
 	get abbr(){
 		return this.name[0];
 	}

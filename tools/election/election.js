@@ -95,13 +95,13 @@ const CONST = {
 		/** @type {Politician} */
 		nom_r_vp: undefined,
 		/** @type {Politician} */
-		nom_rfk_p: undefined,
+		nom_i_p: undefined,
 		/** @type {Politician} */
-		nom_rfk_vp: undefined,
+		nom_i_vp: undefined,
 		/** @type {Politician} */
-		nom_west_p: undefined,
+		nom_j_p: undefined,
 		/** @type {Politician} */
-		nom_west_vp: undefined,
+		nom_j_vp: undefined,
 		/** @type {Politician} */
 		nom_g_p: undefined,
 		/** @type {Politician} */
@@ -118,8 +118,8 @@ const CONST = {
 		// the five party noms
 		nom_d_p: () => ({x: CONST.positions.nom_d_vp, y: 'nom_d_vp'}), // it's a fair guess
 		nom_r_p: () => ({x: CONST.positions.nom_r_vp, y: 'nom_r_vp'}), // it's a fair guess
-		nom_rfk_p: () => ({x: CONST.positions.nom_rfk_vp, y: 'nom_rfk_vp'}), // it's a fair guess
-		nom_west_p: () => ({x: CONST.positions.nom_west_vp, y: 'nom_west_vp'}), // it's a fair guess
+		nom_i_p: () => ({x: CONST.positions.nom_i_vp, y: 'nom_i_vp'}), // it's a fair guess
+		nom_j_p: () => ({x: CONST.positions.nom_j_vp, y: 'nom_j_vp'}), // it's a fair guess
 		nom_g_p: () => ({x: CONST.positions.nom_g_vp, y: 'nom_g_vp'}), // it's a fair guess
 		// VP: alive, same party, must be from different state than pres candidate (which also prevents the pres from also becoming veep)
 		nom_d_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
@@ -130,10 +130,10 @@ const CONST = {
 						&& p.party === Party.REPUBLICAN && p.state !== CONST.positions.nom_r_p.state))
 					: undefined, // TRUMP HASNT CHOSEN YET
 		}),
-		nom_rfk_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
-			&& p.party === Party.INDEPENDENT && p.state !== CONST.positions.nom_rfk_p.state))}),
-		nom_west_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
-			&& p.party === Party.JFA && p.state !== CONST.positions.nom_west_p.state))}),
+		nom_i_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
+			&& p.party === Party.INDEPENDENT && p.state !== CONST.positions.nom_i_p.state))}),
+		nom_j_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
+			&& p.party === Party.JFA && p.state !== CONST.positions.nom_j_p.state))}),
 		nom_g_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
 			&& p.party === Party.GREEN && p.state !== CONST.positions.nom_g_p.state))}),
 	},
@@ -175,8 +175,8 @@ const CONST = {
 		let turnout = 0;
 		const TICKET_D = `${this.positions.nom_d_p.html} / ${this.positions.nom_d_vp.html}`;
 		const TICKET_R = `${this.positions.nom_r_p.html} / ${this.positions.nom_r_vp.html}`;
-		const TICKET_RFK = `${this.positions.nom_rfk_p.html} / ${this.positions.nom_rfk_vp.html}`;
-		const TICKET_WEST = `${this.positions.nom_west_p.html} / ${this.positions.nom_west_vp.html}`;
+		const TICKET_I = `${this.positions.nom_i_p.html} / ${this.positions.nom_i_vp.html}`;
+		const TICKET_J = `${this.positions.nom_j_p.html} / ${this.positions.nom_j_vp.html}`;
 		const TICKET_G = `${this.positions.nom_g_p.html} / ${this.positions.nom_g_vp.html}`;
 		/** @type {[State, *][]} */
 		const results = [];
@@ -203,8 +203,8 @@ const CONST = {
 		this.alert(`<br>ELECTION RESULTS:<br>
 		${TICKET_D} : ${ev.D} EVs (${pv.D.toLocaleString()} votes - ${round(pv.D / turnout * 100, 2)}%)<br>
 		${TICKET_R} : ${ev.R} EVs (${pv.R.toLocaleString()} votes - ${round(pv.R / turnout * 100, 2)}%)<br>
-		${TICKET_RFK} : ${ev.I} EVs (${pv.I.toLocaleString()} votes - ${round(pv.I / turnout * 100, 2)}%)<br>
-		${TICKET_WEST} : ${ev.J} EVs (${pv.J.toLocaleString()} votes - ${round(pv.J / turnout * 100, 2)}%)<br>
+		${TICKET_I} : ${ev.I} EVs (${pv.I.toLocaleString()} votes - ${round(pv.I / turnout * 100, 2)}%)<br>
+		${TICKET_J} : ${ev.J} EVs (${pv.J.toLocaleString()} votes - ${round(pv.J / turnout * 100, 2)}%)<br>
 		${TICKET_G} : ${ev.G} EVs (${pv.G.toLocaleString()} votes - ${round(pv.G / turnout * 100, 2)}%)`);
 		this.alert(`Turnout: ${round(this.config.turnout * 100, 1)}%`);
 		// fancy map
@@ -231,9 +231,9 @@ const CONST = {
 				this.positions.nom_vp = this.positions.nom_r_vp;
 				break;
 			case 'I':
-				this.alert(`${TICKET_RFK.replace(' / ', ' and ')} win!`);
-				this.positions.nom_p = this.positions.nom_rfk_p;
-				this.positions.nom_vp = this.positions.nom_rfk_vp;
+				this.alert(`${TICKET_I.replace(' / ', ' and ')} win!`);
+				this.positions.nom_p = this.positions.nom_i_p;
+				this.positions.nom_vp = this.positions.nom_i_vp;
 				break;
 			default:
 				this.evTie();
@@ -338,14 +338,14 @@ class State {
 		const c = this.polling.actual(x);
 		const R = Math.round(this.pop * c.R * CONST.config.eligibleVoters * CONST.config.turnout);
 		const D = Math.round(this.pop * c.D * CONST.config.eligibleVoters * CONST.config.turnout);
-		const RFK = Math.round(this.pop * c.RFK * CONST.config.eligibleVoters * CONST.config.turnout);
-		const WEST = Math.round(this.pop * c.WEST * CONST.config.eligibleVoters * CONST.config.turnout);
+		const I = Math.round(this.pop * c.RFK * CONST.config.eligibleVoters * CONST.config.turnout);
+		const J = Math.round(this.pop * c.WEST * CONST.config.eligibleVoters * CONST.config.turnout);
 		const G = Math.round(this.pop * c.G * CONST.config.eligibleVoters * CONST.config.turnout);
 		const result = [
 			[Party.REPUBLICAN, R],
 			[Party.DEMOCRATIC, D],
-			[Party.INDEPENDENT, RFK],
-			[Party.JFA, WEST],
+			[Party.INDEPENDENT, I],
+			[Party.JFA, J],
 			[Party.GREEN, G],
 		];
 		result.sort((a, b) => b[1] - a[1]);
@@ -399,6 +399,8 @@ class Politician {
 	die(){
 		this.alive = false;
 		// todo: if head of party, set party head death flag!
+		if (CONST.positions[`nom_${this.party.abbr.toLowerCase()}_p`])
+			CONST.flags.partyNomDeath[this.party.abbr] = true;
 		CONST.alert(`${this.html} has died!`);
 		CONST.checkPositions();
 	}
@@ -436,10 +438,10 @@ function simulation(){
 	CONST.positions.nom_r_vp = undefined;
 	const TRUMP_VP_SELECTION_DATE = new Date(2024, random.randint(6, 7), random.randint(1, 31));
 	// third parties
-	CONST.positions.nom_rfk_p = Politician.fromName('Robert Kennedy');
-	CONST.positions.nom_rfk_vp = Politician.fromName('Nicole Shanahan');
-	CONST.positions.nom_west_p = Politician.fromName('Cornel West');
-	CONST.positions.nom_west_vp = Politician.fromName('Melina Abdullah');
+	CONST.positions.nom_i_p = Politician.fromName('Robert Kennedy');
+	CONST.positions.nom_i_vp = Politician.fromName('Nicole Shanahan');
+	CONST.positions.nom_j_p = Politician.fromName('Cornel West');
+	CONST.positions.nom_j_vp = Politician.fromName('Melina Abdullah');
 	CONST.positions.nom_g_p = Politician.fromName('Jill Stein');
 	CONST.positions.nom_g_vp = Politician.fromName('Jasmine Sherman'); // placeholder
 	// 538
