@@ -85,7 +85,7 @@ const STATES = [
 	['GA', 16, new Polling(0.438, 0.389, 0.03, {rfk: 0.084}), 11029227, 0, 7, 0], // 538
 	['HI', 4, new Polling(0.34, 0.42, Polling.DEFAULT_ERROR, {rfk: 0.08, west: 0.03}), 1435138, 0.0025, 6, -5], // rttwh
 	// IA Lib data https://en.wikipedia.org/wiki/Chase_Oliver_2024_presidential_campaign#Polling
-	['IA', 6, new Polling(0.485, 0.363, Polling.DEFAULT_ERROR, {l: 0.02}), 3207004, 0, 8, -1], // rttwh
+	['IA', 6, new Polling(0.485, 0.363, Polling.DEFAULT_ERROR, {rfk: 0.09, l: 0.02}), 3207004, 0, 8, -1], // rttwh
 	['ID', 4, new Polling(0.535, 0.268, ...Polling.DEFAULT_THIRD), 1964726, 0, 8, -2], // rttwh
 	['IL', 19, new Polling(0.335, 0.46, ...Polling.DEFAULT_THIRD), 12549689, 0, 7, -1], // rttwh
 	['IN', 11, new Polling(0.539, 0.344, ...Polling.DEFAULT_THIRD), 6862199, 0, 6, 0], // rttwh
