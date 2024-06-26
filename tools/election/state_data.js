@@ -91,7 +91,7 @@ const STATES = [
 	['CA', 54, new Polling(0.296, 0.495, 0.06, {rfk: 0.104}), 38965193, 0, 8, -3], // 538
 	['CO', 10, new Polling(0.398, 0.467, ...Polling.DEFAULT_THIRD), 5877610, 0.005, 7, -2], // rttwh
 	['CT', 7, new Polling(0.388, 0.499, ...Polling.DEFAULT_THIRD), 3617176, 0.005, 8, 0], // rttwh
-	['DC', 3, new Polling(0.054, 0.9215, ...Polling.DEFAULT_THIRD), 678972, 0, 8, 0], // 2020
+	['DC', 3, new Polling(0.054, 0.9215, Polling.DEFAULT_ERROR, {g: 0.50, l: 0.59}), 678972, 0, 8, 0], // 2020
 	['DE', 3, new Polling(0.3977, 0.5874, ...Polling.DEFAULT_THIRD), 1031890, 0.005, 8, 0], // 2020
 	['FL', 30, new Polling(0.453, 0.371, 0.03, {rfk: 0.079}), 22610726, 0.005, 7, 0], // 538
 	['GA', 16, new Polling(0.438, 0.389, 0.03, {rfk: 0.084}), 11029227, 0, 7, 0], // 538
