@@ -24,10 +24,13 @@ class Party {
 	constructor(name){
 		/** @type {string} */
 		this.name = name;
+		Party.parties.push(this);
 	}
 	get abbr(){
 		return this.name[0];
 	}
+	/** @type {Party[]} */
+	static parties = [];
 	static INDEPENDENT = new Party('Independent');
 	static DEMOCRATIC = new Party('Democratic');
 	static REPUBLICAN = new Party('Republican');

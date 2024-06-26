@@ -1,5 +1,5 @@
 /* exported STATES */
-/* global CONST, random */
+/* global CONST, Party, random */
 
 class Polling {
 	constructor(r = 0.5, d = 0.5, error = Polling.DEFAULT_ERROR, other = {}){
@@ -17,11 +17,16 @@ class Polling {
 	/** normalize result to 100% */
 	actual(x = 0.5){
 		const error = 2 * (x - 0.5) * this.error;
-		const R_ = this.r + error;
-		const D_ = this.d - error;
-		const RFK_ = this.v('rfk') + random.uniform(-this.e('rfk'), this.e('rfk'));
-		const WEST_ = this.v('west') + random.uniform(-this.e('west'), this.e('west'));
-		const G_ = this.v('g') + random.uniform(-this.e('g'), this.e('g'));
+		const R_ = (this.r + error)
+			* this.bonus(Party.REPUBLICAN);
+		const D_ = (this.d - error)
+			* this.bonus(Party.DEMOCRATIC);
+		const RFK_ = (this.v('rfk') + random.uniform(-this.e('rfk'), this.e('rfk')))
+			* this.bonus(Party.INDEPENDENT);
+		const WEST_ = (this.v('west') + random.uniform(-this.e('west'), this.e('west')))
+			* this.bonus(Party.JFA);
+		const G_ = (this.v('g') + random.uniform(-this.e('g'), this.e('g')))
+			* this.bonus(Party.GREEN);
 		const sum = R_ + D_ + RFK_ + WEST_ + G_;
 		const R = R_ / sum;
 		const D = D_ / sum;
@@ -30,9 +35,15 @@ class Polling {
 		const G = G_ / sum;
 		return {R, D, RFK, WEST, G};
 	}
+	/** @param {Party} party */
+	bonus(party){
+		return CONST.flags.partyNomDeath[party.abbr] ? CONST.config.deathPenalty : 1;
+	}
+	/** @param {string} candidate */
 	e(candidate){
 		return this.v(candidate) * this.error / 0.5;
 	}
+	/** @param {string} candidate */
 	v(candidate){
 		return (this.other[candidate] || Polling.DEFAULT_THIRD[1][candidate])
 			* CONST.config.thirdPartyBuff;

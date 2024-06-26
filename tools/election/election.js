@@ -3,13 +3,13 @@
 
 const CONST = {
 	config: {
+		deathPenalty: 0.9, // eg. 0.9 => 10% fewer votes when presidential candidate dies
 		deathRate: 1, // x times normal rate of death
 		eligibleVoters: 0.72,
 		errorFuzzing: 0.05, // max state variation in systemic polling error
 		forceErrorX: 0, // set to 0.5 to use exact polling data, set to 1 to set max rep win, set to epsilon for max dem win
 		mortal: true,
 		nClosestRaces: 3,
-		recountMargin: 0.01, // todo
 		speakerRemovalDailyChance: 0.001,
 		swingMargin: 0.07, // polling margin required to highlight state as a swing state - should be a superset of whatever 538 has as tossup or lean https://projects.fivethirtyeight.com/2024-election-forecast/#state-probabilities
 		thirdPartyBuff: 1, // 1 = no change. 0 = no third party votes. 2 = double votes.
@@ -40,6 +40,7 @@ const CONST = {
 	flags: {
 		_538: false,
 		election_held: false,
+		partyNomDeath: {},
 		trumpChoseVP: false,
 	},
 	nom_r_vp_candidates: [
@@ -314,11 +315,12 @@ class State {
 		CONST.states.push(this);
 	}
 	get pollCloseTime(){
-		const t = new Date(CONST.dates.election.getTime());
-		// todo fix if eg. 7:30, cause that gets changed to eg. 7
+		const t = new Date(CONST.dates.election);
 		t.setHours(12 + this.pollClose);
-		const t2 = new Date(CONST.dates.election.getTime());
-		t2.setHours(12 + this.pollClose - this.ET_OFFSET);
+		// fixes if eg. 7:30, that gets changed to eg. 7 without following line
+		t.setMinutes(this.pollClose % 1 * 60);
+		const t2 = new Date(t);
+		t.setHours(t.getHours() + this.ET_OFFSET);
 		return {t, t2};
 	}
 	get pollCloseTimeString(){
@@ -396,6 +398,7 @@ class Politician {
 	}
 	die(){
 		this.alive = false;
+		// todo: if head of party, set party head death flag!
 		CONST.alert(`${this.html} has died!`);
 		CONST.checkPositions();
 	}
@@ -421,6 +424,8 @@ function simulation(){
 	CONST.flags.election_held = false;
 	CONST.flags.trumpChoseVP = false;
 	CONST.config.turnout = random.uniform(...CONST.config.turnoutMinMax); // random turnout
+	CONST.flags.partyNomDeath = {};
+	Party.parties.forEach(p => CONST.flags.partyNomDeath[p.abbr] = false);
 	// set prez, vp, speaker
 	CONST.positions.nom_d_p = CONST.positions.president = Politician.fromName('Joe Biden');
 	CONST.positions.nom_d_vp = CONST.positions.vice_president = Politician.fromName('Kamala Harris');
