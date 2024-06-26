@@ -8,6 +8,7 @@ const CONST = {
 		eligibleVoters: 0.72,
 		errorFuzzing: 0.05, // max state variation in systemic polling error
 		forceErrorX: 0, // set to 0.5 to use exact polling data, set to 1 to set max rep win, set to epsilon for max dem win
+		homeStateBuff: 1.05, // 1.05 = 5% increased support in home state above nat'l avg. when no polling data is available; data from the spreadsheet
 		mortal: true,
 		nClosestRaces: 3,
 		speakerRemovalDailyChance: 0.001,
@@ -326,6 +327,7 @@ class State {
 		this.name = name;
 		this.ev = ev;
 		this.polling = polling;
+		this.polling.state = this;
 		this.pop = pop;
 		this.recountMargin = recountMargin;
 		this.pollClose = pollClose;

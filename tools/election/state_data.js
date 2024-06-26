@@ -7,6 +7,8 @@ class Polling {
 		this.d = d;
 		this.error = error;
 		this.other = other; // incl. rfk
+		/** @type {State} */
+		this.state = undefined; // initialized by State constructor
 	}
 	get indy(){
 		let sum = 0;
@@ -43,7 +45,11 @@ class Polling {
 	}
 	/** @param {Party} party */
 	bonus(party){
-		return CONST.flags.partyNomDeath[party.abbr] ? CONST.config.deathPenalty : 1;
+		const DEATH = CONST.flags.partyNomDeath[party.abbr] ? CONST.config.deathPenalty : 1;
+		const KEY = party === 'west' ? 'j' : party === 'jfk' ? 'i' : party.abbr.toLowerCase();
+		const HOME = !this.other[KEY] && CONST.positions[`nom_${KEY}_p`].state === this.state
+			? CONST.config.homeStateBuff : 1;
+		return DEATH * HOME;
 	}
 	/** @param {string} candidate */
 	e(candidate){
