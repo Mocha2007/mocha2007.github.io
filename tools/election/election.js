@@ -303,17 +303,17 @@ const CONST = {
 			if (i && i % DIVISION === 0){
 				const f = i/n;
 				const t = new Date() - START;
-				console.debug(`${Math.round(100*f)}%; ETA = ${Math.round((t/f - t)/1000)} s`);
+				console.debug(`${Math.round(100*f)}%; ETA = ${Math.round((t/f - t)/1e3)} s`);
 			}
 		}
 		const t = new Date() - START;
-		console.debug(`T = ${t/1000} s; ${t/n} ms avg.`);
+		console.debug(`T = ${t/1e3} s; ${t/n} ms avg.`);
 		this.debug_mode = false;
 		return outcomes.join('\n');
 	},
 	// try NC! CONST.debugState(CONST.states[29])
 	/** @param {State} state */
-	debugState(state, n = 100000){
+	debugState(state, n = 1e5){
 		const START = new Date();
 		const DIVISION = Math.floor(n/10);
 		const WINNERS = {};
@@ -332,11 +332,11 @@ const CONST = {
 			if (i && i % DIVISION === 0){
 				const f = i/n;
 				const t = new Date() - START;
-				console.debug(`${Math.round(100*f)}%; ETA = ${Math.round((t/f - t)/1000)} s`);
+				console.debug(`${Math.round(100*f)}%; ETA = ${Math.round((t/f - t)/1e3)} s`);
 			}
 		}
 		const t = new Date() - START;
-		console.debug(`T = ${t/1000} s; ${t/n} ms avg.`);
+		console.debug(`T = ${t/1e3} s; ${1e3*t/n} µs avg.`);
 		this.debug_mode = false;
 		return WINNERS;
 	},
