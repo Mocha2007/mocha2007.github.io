@@ -110,6 +110,10 @@ const CONST = {
 		nom_l_p: undefined,
 		/** @type {Politician} */
 		nom_l_vp: undefined,
+		/** @type {Politician} */
+		nom_s_p: undefined,
+		/** @type {Politician} */
+		nom_s_vp: undefined,
 	},
 	position_backups: {
 		president: () => ({x: CONST.positions.vice_president, y: 'vice_president'}),
@@ -126,6 +130,7 @@ const CONST = {
 		nom_j_p: () => ({x: CONST.positions.nom_j_vp, y: 'nom_j_vp'}), // it's a fair guess
 		nom_g_p: () => ({x: CONST.positions.nom_g_vp, y: 'nom_g_vp'}), // it's a fair guess
 		nom_l_p: () => ({x: CONST.positions.nom_l_vp, y: 'nom_l_vp'}), // it's a fair guess
+		nom_s_p: () => ({x: CONST.positions.nom_s_vp, y: 'nom_s_vp'}), // it's a fair guess
 		// VP: alive, same party, must be from different state than pres candidate (which also prevents the pres from also becoming veep)
 		nom_d_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
 			&& p.party === Party.DEMOCRATIC && p.state !== CONST.positions.nom_d_p.state))}),
@@ -143,6 +148,8 @@ const CONST = {
 			&& p.party === Party.GREEN && p.state !== CONST.positions.nom_g_p.state))}),
 		nom_l_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
 			&& p.party === Party.LIBERTARIAN && p.state !== CONST.positions.nom_l_p.state))}),
+		nom_s_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
+			&& p.party === Party.SAL && p.state !== CONST.positions.nom_s_p.state))}),
 	},
 	/** @type {State[]} */
 	states: [],
@@ -177,8 +184,8 @@ const CONST = {
 	holdElection(){
 		this.alert('ELECTION 2024');
 		this.flags.election_held = true;
-		const ev = {D: 0, R: 0, I: 0, J: 0, G: 0, L: 0};
-		const pv = {D: 0, R: 0, I: 0, J: 0, G: 0, L: 0};
+		const ev = {D: 0, R: 0, I: 0, J: 0, G: 0, L: 0, S: 0};
+		const pv = {D: 0, R: 0, I: 0, J: 0, G: 0, L: 0, S: 0};
 		let turnout = 0;
 		const TICKET_D = `${this.positions.nom_d_p.html} / ${this.positions.nom_d_vp.html}`;
 		const TICKET_R = `${this.positions.nom_r_p.html} / ${this.positions.nom_r_vp.html}`;
@@ -186,6 +193,7 @@ const CONST = {
 		const TICKET_J = `${this.positions.nom_j_p.html} / ${this.positions.nom_j_vp.html}`;
 		const TICKET_G = `${this.positions.nom_g_p.html} / ${this.positions.nom_g_vp.html}`;
 		const TICKET_L = `${this.positions.nom_l_p.html} / ${this.positions.nom_l_vp.html}`;
+		const TICKET_S = `${this.positions.nom_s_p.html} / ${this.positions.nom_s_vp.html}`;
 		/** @type {[State, *][]} */
 		const results = [];
 		const pollingError = this.config.forceErrorX
@@ -197,7 +205,7 @@ const CONST = {
 			results.push([state, result]);
 			// popular vote tally
 			if (!state.votesDontCount)
-				'DRIJGL'.split('').forEach(p => {
+				'DRIJGLS'.split('').forEach(p => {
 					const v = result.result.find(x => x[0].abbr === p)[1];
 					pv[p] += v;
 					turnout += v;
@@ -214,7 +222,8 @@ const CONST = {
 		${TICKET_I} : ${ev.I} EVs (${pv.I.toLocaleString()} votes - ${round(pv.I / turnout * 100, 2)}%)<br>
 		${TICKET_J} : ${ev.J} EVs (${pv.J.toLocaleString()} votes - ${round(pv.J / turnout * 100, 2)}%)<br>
 		${TICKET_G} : ${ev.G} EVs (${pv.G.toLocaleString()} votes - ${round(pv.G / turnout * 100, 2)}%)<br>
-		${TICKET_L} : ${ev.L} EVs (${pv.L.toLocaleString()} votes - ${round(pv.L / turnout * 100, 2)}%)`);
+		${TICKET_L} : ${ev.L} EVs (${pv.L.toLocaleString()} votes - ${round(pv.L / turnout * 100, 2)}%)<br>
+		${TICKET_S} : ${ev.S} EVs (${pv.S.toLocaleString()} votes - ${round(pv.S / turnout * 100, 2)}%)`);
 		this.alert(`Turnout: ${round(this.config.turnout * 100, 1)}%`);
 		// fancy map
 		this.alertElem(MapElem.table(results));
@@ -226,7 +235,7 @@ const CONST = {
 			${round(results[i][1].margin * 100, 2)}%
 			(${results[i][1].marginAbs.toLocaleString()} votes)`);
 		// winner declaration / tie
-		const winner = 'DRIJGL'.split('').find(char => 270 <= ev[char]);
+		const winner = 'DRIJGLS'.split('').find(char => 270 <= ev[char]);
 		// tie?
 		switch (winner){
 			case 'D':
@@ -351,6 +360,7 @@ class State {
 		const J = Math.round(this.pop * c.WEST * CONST.config.eligibleVoters * CONST.config.turnout);
 		const G = Math.round(this.pop * c.G * CONST.config.eligibleVoters * CONST.config.turnout);
 		const L = Math.round(this.pop * c.L * CONST.config.eligibleVoters * CONST.config.turnout);
+		const S = Math.round(this.pop * c.S * CONST.config.eligibleVoters * CONST.config.turnout);
 		const result = [
 			[Party.REPUBLICAN, R],
 			[Party.DEMOCRATIC, D],
@@ -358,6 +368,7 @@ class State {
 			[Party.JFA, J],
 			[Party.GREEN, G],
 			[Party.LIBERTARIAN, L],
+			[Party.SAL, S],
 		];
 		result.sort((a, b) => b[1] - a[1]);
 		const total = sum(result.map(a => a[1]));
@@ -457,6 +468,8 @@ function simulation(){
 	CONST.positions.nom_g_vp = Politician.fromName('Jasmine Sherman'); // placeholder
 	CONST.positions.nom_l_p = Politician.fromName('Chase Oliver');
 	CONST.positions.nom_l_vp = Politician.fromName('Mike ter Maat');
+	CONST.positions.nom_s_p = Politician.fromName('Claudia de la Cruz');
+	CONST.positions.nom_s_vp = Politician.fromName('Karina Garcia');
 	// 538
 	// const DATE_538 = new Date(2024, ...CONST.dates._538.args);
 	// start!

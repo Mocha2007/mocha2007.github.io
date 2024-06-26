@@ -3,9 +3,10 @@
 	--partyD: blue;
 	--partyG: green;
 	--partyI: olive;
-	--partyJ: brown;
+	--partyJ: #843;
 	--partyL: yellow;
 	--partyR: red;
+	--partyS: #c00;
 }
 
 .date {
@@ -42,6 +43,10 @@
 
 .char_R {
 	color: var(--partyR);
+}
+
+.char_S {
+	color: var(--partyS);
 }
 
 .char_D, .char_G, .char_I,
@@ -85,6 +90,10 @@
 
 .party_R {
 	background-color: var(--partyR);
+}
+
+.party_S {
+	background-color: var(--partyS);
 }
 
 .swing {

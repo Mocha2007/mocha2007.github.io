@@ -29,14 +29,17 @@ class Polling {
 			* this.bonus(Party.GREEN);
 		const L_ = (this.v('l') + random.uniform(-this.e('l'), this.e('l')))
 			* this.bonus(Party.LIBERTARIAN);
-		const sum = R_ + D_ + RFK_ + WEST_ + G_ + L_;
+		const S_ = (this.v('s') + random.uniform(-this.e('s'), this.e('s')))
+			* this.bonus(Party.SAL);
+		const sum = R_ + D_ + RFK_ + WEST_ + G_ + L_ + S_;
 		const R = R_ / sum;
 		const D = D_ / sum;
 		const RFK = RFK_ / sum;
 		const WEST = WEST_ / sum;
 		const G = G_ / sum;
 		const L = L_ / sum;
-		return {R, D, RFK, WEST, G, L};
+		const S = S_ / sum;
+		return {R, D, RFK, WEST, G, L, S};
 	}
 	/** @param {Party} party */
 	bonus(party){
@@ -55,7 +58,10 @@ class Polling {
 Polling.DEFAULT_ERROR = 0.05;
 // https://www.realclearpolling.com/polls/president/general/2024/trump-vs-biden-vs-kennedy-vs-west-vs-stein
 // Lib from avg of https://en.wikipedia.org/wiki/Nationwide_opinion_polling_for_the_2024_United_States_presidential_election
-Polling.DEFAULT_THIRD = [Polling.DEFAULT_ERROR, {rfk: 0.067, west: 0.016, g: 0.011, l: 0.02/3}];
+// SAL from 2020 results
+Polling.DEFAULT_THIRD = [Polling.DEFAULT_ERROR, {
+	rfk: 0.067, west: 0.016, g: 0.011, l: 0.02/3, s: 0.0005,
+}];
 
 // use if graph exists: https://projects.fivethirtyeight.com/polls/president-general/
 // else: https://www.racetothewh.com/president/polls

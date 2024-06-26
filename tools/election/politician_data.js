@@ -94,6 +94,23 @@ const POLITICIANS = [
 		position: Position.NONE,
 		state: 'VA',
 	},
+	// SAL
+	{
+		name: 'Claudia de la Cruz',
+		dob: new Date(1980, 0),
+		gender: Gender.FEMALE,
+		party: Party.SAL,
+		position: Position.NONE,
+		state: 'NY',
+	},
+	{
+		name: 'Karina Garcia',
+		dob: new Date(1986, 0),
+		gender: Gender.FEMALE,
+		party: Party.SAL,
+		position: Position.NONE,
+		state: 'CA', // maybe? see https://votesocialist2024.com/about-the-candidates
+	},
 	// Trump VP picks
 	{
 		name: 'Katie Britt',

@@ -38,6 +38,7 @@ class Party {
 	static LIBERTARIAN = new Party('Libertarian');
 	static GREEN = new Party('Green');
 	static JFA = new Party('Justice For All');
+	static SAL = new Party('Socialism and Liberation');
 }
 
 class Position {
