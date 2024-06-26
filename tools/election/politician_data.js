@@ -77,6 +77,23 @@ const POLITICIANS = [
 		position: Position.NONE,
 		state: 'NC',
 	},
+	// Libertarian
+	{
+		name: 'Chase Oliver',
+		dob: new Date(1985, 7, 16),
+		gender: Gender.MALE,
+		party: Party.LIBERTARIAN,
+		position: Position.NONE,
+		state: 'GA',
+	},
+	{
+		name: 'Mike ter Maat',
+		dob: new Date(1961, 0),
+		gender: Gender.MALE,
+		party: Party.LIBERTARIAN,
+		position: Position.NONE,
+		state: 'VA',
+	},
 	// Trump VP picks
 	{
 		name: 'Katie Britt',
