@@ -101,7 +101,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(2012, 5, 5), 'Observed the 2012 transit of Venus - my first memorable astronomical observation. I projected it onto a sheet of paper with binoculars and took some crude photos.'),
 		new LunaEvent(new Date(2013, 0, 28), '(appx) Joined Cloudsdale'),
 		new LunaEvent(new Date(2013, 4), '(appx) Met K, my first and only long-term partner'),
-		new LunaEvent(new Date(2013, 5), 'Moved across the country'),
+		new LunaEvent(new Date(2013, 5, 23), 'Moved across the country'),
 		new LunaEvent(new Date(2013, 7, 13), 'I started playing EU4, thus initiating my map game obsession'),
 		new LunaEvent(new Date(2013, 8, 10), 'Joined Reddit after watching a CGPGrey video'),
 		new LunaEvent(new Date(2013, 10, 27), 'Started playing KoL, which I was OBSESSED with in HS...'),
