@@ -172,7 +172,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(2009, 8, 8), 'Elementary School', '#00c'), // 04-09 CONFIRMED (Steve Irwin's death, arson)
 		new LunaEvent(new Date(2012, 8, 4), 'Middle School', '#408'), // 09-12 START CONFIRMED (MJ's death)
 		new LunaEvent(new Date(2015, 7), 'High School', '#608'), // 12-15 END CONFIRMED (I just know it)
-		new LunaEvent(new Date(2017, 7), 'College', '#c0c'), // 15-17
+		new LunaEvent(new Date(2017, 4), 'College', '#c0c'), // 15-17
 		new LunaEvent(new Date(2018, 7), 'Gap Year', '#808'), // 17-18
 		new LunaEvent(new Date(2020, 4, 7), 'College', '#c0c'), // 18-20
 		new LunaEvent(new Date(2023, 7, 16), '"""Manhood"""', '#c8c'), // 20-23
