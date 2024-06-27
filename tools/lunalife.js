@@ -138,8 +138,8 @@ const LUNALIFE = {
 		new LunaEvent(new Date(2020, 10, 11), '(appx) Discovered TFGames :^)', 'Must\'ve been before Feb 28 2021 (per being log) and Apr 7 (per tracker sheet). File revision history suggests NLT Nov 11'),
 		new LunaEvent(new Date(2021, 10), '(appx) Had a moment at work where my egg almost cracked a few months early!'),
 		new LunaEvent(new Date(2021, 11, 2), 'Went to MFF 2021 w/ K, met a long-time online friend'),
+		new LunaEvent(new Date(2021, 11, 9), '(appx) Egg Cracked'), // 12/9/21 note on choosing names
 		new LunaEvent(new Date(2022, 2, 10), 'Went to BRFF 2022 w/ K'),
-		new LunaEvent(new Date(2022, 4), '(appx) Egg Cracked'),
 		new LunaEvent(new Date(2022, 4, 15), 'Observed my first lunar eclipse after two previous attempts thwarted by clouds!'),
 		new LunaEvent(new Date(2022, 4, 23), 'Tried (and failed) to secretly solicit female naming advice from my trans friends. Unsurprisingly, they all saw right through it. It probably didn\'t help I was the most obvious egg ever.'),
 		new LunaEvent(new Date(2022, 6, 15), 'Came out to K'),
