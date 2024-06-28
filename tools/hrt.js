@@ -398,7 +398,7 @@ const notes = [
 	'08 Jun 2024 - 14 Jun 2024: 2x daily 2 mg E subL, 2x daily 25 mg spiro oral, 1x nightly 100 mg prog oral, 1x weekly 10 mg E val IM',
 	'15 Jun 2024 - 21 Jun 2024: 2x daily 1 mg E subL, 1x daily 25 mg spiro oral, 1x nightly 100 mg prog oral, 1x weekly 10 mg E val IM',
 	'22 Jun 2024 onward: 1x nightly 100 mg prog oral, 1x weekly 10 mg E val IM',
-	'Lasering started 15 Sep 2023: 9/15, 10/20, 11/27, 1/2, 2/7, 3/13, 4/17, 6/26, ...',
+	'Lasering started 15 Sep 2023: 9/15, 10/20, 11/27, 1/2, 2/7, 3/13, 4/17, 9/28, ...',
 	`Current schedule as of 6/22/24:<ul>
 	<li>Weekly (Saturdays): 10 mg IM E val</li>
 	<li>Nightly: 100 mg prog</li>
@@ -459,7 +459,7 @@ function main(){
 	elem.appendChild(hrt());
 	refresh();
 	setInterval(refresh, 500);
-	setTimeout(() => location.reload(), _1h); // refresh every hour in case dose counter increases
+	setTimeout(() => location.reload(), _1d); // refresh every day in case dose counter increases
 }
 
 function refresh(){
