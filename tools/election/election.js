@@ -47,19 +47,17 @@ const CONST = {
 	nom_r_vp_candidates: [
 		// https://electionbettingodds.com/RepublicanVicePresident_2024.html
 		// updated 6/25
-		['Doug Burgum', 0.335],
-		['James Vance', 0.175],
-		['Vivek Ramaswamy', 0.096],
-		// ['Byron Donalds', 0.079], prob. not because his home state is also FL
-		// ['Marco Rubio', 0.065], fl so no
-		['Tim Scott', 0.055],
-		['Ben Carson', 0.054],
-		['Glenn Youngkin', 0.053],
-		['Sarah Sanders', 0.040],
-		['Elise Stefanik', 0.032],
-		// no way Haley accepts VP lol
-		// no way Kennedy accepts VP lol
-		['Tom Cotton', 0.014],
+		['James Vance', 0.390],
+		['Doug Burgum', 0.224],
+		// ['Marco Rubio', 0.097], fl so no
+		['Ben Carson', 0.068],
+		['Glenn Youngkin', 0.054],
+		['Vivek Ramaswamy', 0.036],
+		['Elise Stefanik', 0.025],
+		['Tim Scott', 0.022],
+		['Sarah Sanders', 0.017],
+		// ['Byron Donalds', 0.014], prob. not because his home state is also FL
+		['Tom Cotton', 0.012],
 		// the following %s are guesses
 		// https://www.nytimes.com/interactive/2024/us/politics/donald-trump-vp.html
 		// https://www.axios.com/2024/06/06/trump-vp-short-list-top-contenders
