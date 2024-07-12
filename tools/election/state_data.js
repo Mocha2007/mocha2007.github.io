@@ -89,7 +89,7 @@ const STATES = [
 	['AR', 6, new Polling(0.562, 0.249, ...Polling.DEFAULT_THIRD), 3067732, 0, 7.5, -1], // rttwh
 	['AZ', 11, new Polling(0.440, 0.396, 0.03, {rfk: 0.086}), 7431344, 0.001, 7, -2], // 538
 	['CA', 54, new Polling(0.296, 0.495, 0.06, {rfk: 0.104}), 38965193, 0, 8, -3], // 538
-	['CO', 10, new Polling(0.398, 0.467, ...Polling.DEFAULT_THIRD), 5877610, 0.005, 7, -2], // rttwh
+	['CO', 10, new Polling(0.403, 0.498, Polling.DEFAULT_ERROR, {rfk: 0.099}), 5877610, 0.005, 7, -2], // 538EF
 	['CT', 7, new Polling(0.388, 0.499, ...Polling.DEFAULT_THIRD), 3617176, 0.005, 8, 0], // rttwh
 	['DC', 3, new Polling(0.054, 0.9215, Polling.DEFAULT_ERROR, {g: 0.0050, l: 0.0059}), 678972, 0, 8, 0], // 2020
 	['DE', 3, new Polling(0.3977, 0.5874, ...Polling.DEFAULT_THIRD), 1031890, 0.005, 8, 0], // 2020
@@ -106,9 +106,9 @@ const STATES = [
 	['LA', 8, new Polling(0.48, 0.33, Polling.DEFAULT_ERROR, {rfk: 0.10, west: 0.02}), 4573749, 0, 8, -1], // rttwh
 	['MA', 11, new Polling(0.274, 0.462, Polling.DEFAULT_ERROR, {rfk: 0.091, west: 0.011}), 7001399, 0, 8, 0], // rttwh
 	['MD', 10, new Polling(0.319, 0.507, Polling.DEFAULT_ERROR, {rfk: 0.066, west: 0.029}), 6180253, 0, 8, 0], // rttwh
-	['ME', 2, new Polling(0.418, 0.413, Polling.DEFAULT_ERROR, {rfk: 0.11, west: 0.01}), 1395722, 0, 8, 0], // rttwh 6/18
+	['ME', 2, new Polling(0.424, 0.477, Polling.DEFAULT_ERROR, {rfk: 0.099}), 1395722, 0, 8, 0], // 538EF
 	['ME-1', 1, new Polling(0.293, 0.407, ...Polling.DEFAULT_THIRD), 697698, 0, 8, 0], // rttwh
-	['ME-2', 1, new Polling(0.434, 0.266, ...Polling.DEFAULT_THIRD), 687642, 0, 8, 0], // rttwh
+	['ME-2', 1, new Polling(0.490, 0.405, Polling.DEFAULT_ERROR, {rfk: 0.105}), 687642, 0, 8, 0], // 538EF
 	['MI', 15, new Polling(0.423, 0.418, 0.03, {rfk: 0.087}), 10037261, 0.0002, 8, 0], // 538
 	['MN', 10, new Polling(0.409, 0.419, 0.06, {rfk: 0.085}), 5737915, 0, 8, -1], // 538
 	['MO', 10, new Polling(0.499, 0.331, Polling.DEFAULT_ERROR, {rfk: 0.09, west: 0}), 6196156, 0, 7, -1], // rttwh
@@ -120,8 +120,8 @@ const STATES = [
 	['NE-1', 1, new Polling(0.5601, 0.4109, ...Polling.DEFAULT_THIRD), 659903, 0, 8, -1], // 2020
 	['NE-2', 1, new Polling(0.375, 0.336, Polling.DEFAULT_ERROR, {rfk: 0.09, west: 0.04}), 	658116, 0, 8, -1], // rttwh
 	['NE-3', 1, new Polling(0.7536, 0.2234, ...Polling.DEFAULT_THIRD), 	649904, 0, 8, -1], // 2020
-	['NH', 4, new Polling(0.384, 0.407, Polling.DEFAULT_ERROR, {rfk: 0.097, west: 0.01}), 1402054, 0, 8, 0], // rttwh
-	['NJ', 14, new Polling(0.411, 0.529, Polling.DEFAULT_ERROR, {rfk: 0.059}), 9290841, 0, 8, 0], // 538EF
+	['NH', 4, new Polling(0.445, 0.490, Polling.DEFAULT_ERROR, {rfk: 0.065}), 1402054, 0, 8, 0], // 538EF
+	['NJ', 14, new Polling(0.424, 0.521, Polling.DEFAULT_ERROR, {rfk: 0.055}), 9290841, 0, 8, 0], // 538EF
 	['NM', 5, new Polling(0.411, 0.486, ...Polling.DEFAULT_THIRD), 2114371, 0.0025, 7, -2], // rttwh
 	['NV', 6, new Polling(0.433, 0.385, 0.03, {rfk: 0.090}), 3194176, 0, 7, -3], // 538
 	['NY', 28, new Polling(0.366, 0.445, Polling.DEFAULT_ERROR, {rfk: 0.067, west: 0.024}), 19571216, 0, 9, 0], // rttwh
@@ -135,7 +135,7 @@ const STATES = [
 	['TN', 11, new Polling(0.481, 0.264, Polling.DEFAULT_ERROR, {rfk: 0.148, west: 0}), 7126489, 0, 7, -1], // rttwh
 	['TX', 40, new Polling(0.449, 0.364, 0.03, {rfk: 0.097}), 30503301, 0, 7, -1], // 538
 	['UT', 6, new Polling(0.467, 0.234, Polling.DEFAULT_ERROR, {rfk: 0.13, west: 0.01}), 3417734, 0, 8, -2], // rttwh
-	['VA', 13, new Polling(0.379, 0.401, Polling.DEFAULT_ERROR, {rfk: 0.083, west: 0.01}), 8715698, 0, 7, 0], // rttwh
+	['VA', 13, new Polling(0.434, 0.497, Polling.DEFAULT_ERROR, {rfk: 0.070}), 8715698, 0, 7, 0], // 538EF
 	['VT', 3, new Polling(0.284, 0.577, ...Polling.DEFAULT_THIRD), 647464, 0, 7, 0], // rttwh
 	['WA', 12, new Polling(0.369, 0.512, Polling.DEFAULT_ERROR, {rfk: 0.119}), 7812880, 0.005, 8, -3], // 538EF
 	['WI', 10, new Polling(0.432, 0.418, 0.02, {rfk: 0.076}), 5910955, 0, 8, -1], // 538
