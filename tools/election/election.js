@@ -35,7 +35,6 @@ const CONST = {
 			delta_d_max: 48,
 		},
 	},
-	debug_mode: false,
 	dur: {
 		day: 24*60*60*1000,
 		get year(){
@@ -284,11 +283,11 @@ const CONST = {
 		return {p: this.positions.president, vp: this.positions.vice_president};
 	},
 	// @ n = 1000, takes about 54s
-	// use_debug: whether to use this for debugging purposes, or live prediction odds
-	debug(n = 1000, use_debug = true){
-		if (!use_debug)
+	// for_debug: whether to use this for debugging purposes, or live prediction odds
+	debug(n = 1000, for_debug = true){
+		if (!for_debug)
 			this.dates.start = new Date();
-		this.config.bullet = this.debug_mode = use_debug;
+		this.config.bullet = for_debug;
 		this.config.quiet = true;
 		const outcomes = [];
 		const START = new Date();
@@ -313,7 +312,7 @@ const CONST = {
 		}
 		const t = new Date() - START;
 		console.debug(`T = ${t/1e3} s; ${t/n} ms avg.`);
-		this.config.quiet = this.debug_mode = false;
+		this.config.quiet = false;
 		this.config.bullet = true;
 		return outcomes.join('\n');
 	},
@@ -561,9 +560,8 @@ function simulation(){
 		// 	CONST.flags._538 = true;
 		// }
 		// misc events
-		if (!CONST.debug_mode)
-			while (EVENTS.i < EVENTS.length && EVENTS[EVENTS.i][0] <= CONST.date)
-				CONST.alert(EVENTS[EVENTS.i++][1], false);
+		while (EVENTS.i < EVENTS.length && EVENTS[EVENTS.i][0] <= CONST.date)
+			CONST.alert(EVENTS[EVENTS.i++][1], false);
 		// increment date by 1
 		CONST.date = new Date(+CONST.date + CONST.dur.day * CONST.config.timestep);
 	}
