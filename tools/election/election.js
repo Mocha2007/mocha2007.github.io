@@ -12,6 +12,7 @@ const CONST = {
 		homeStateBuff: 1.07, // 1.07 = 7% increased support in home state above nat'l avg. when no polling data is available; data from the spreadsheet; range [0.98, 1.17]
 		mortal: true,
 		nClosestRaces: 3,
+		quiet: false, // show alerts?
 		speakerRemovalDailyChance: 0.001,
 		swingMargin: 0.07, // polling margin required to highlight state as a swing state - should be a superset of whatever 538 has as tossup or lean https://projects.fivethirtyeight.com/2024-election-forecast/#state-probabilities
 		thirdPartyBuff: 1, // 1 = no change. 0 = no third party votes. 2 = double votes.
@@ -165,7 +166,7 @@ const CONST = {
 		this.alertElem(elem);
 	},
 	alertElem(elem){
-		if (this.debug_mode)
+		if (this.config.quiet)
 			return;
 		document.getElementById('console').appendChild(elem);
 	},
@@ -288,6 +289,7 @@ const CONST = {
 		if (!use_debug)
 			this.dates.start = new Date();
 		this.config.bullet = this.debug_mode = use_debug;
+		this.config.quiet = true;
 		const outcomes = [];
 		const START = new Date();
 		const DIVISION = Math.floor(n/10);
@@ -311,7 +313,7 @@ const CONST = {
 		}
 		const t = new Date() - START;
 		console.debug(`T = ${t/1e3} s; ${t/n} ms avg.`);
-		this.debug_mode = false;
+		this.config.quiet = this.debug_mode = false;
 		this.config.bullet = true;
 		return outcomes.join('\n');
 	},
@@ -319,6 +321,7 @@ const CONST = {
 	/** @param {State} state */
 	debugState(state, n = 1e5){
 		const START = new Date();
+		this.config.quiet = true;
 		const DIVISION = Math.floor(n/10);
 		const WINNERS = {};
 		for (let i = 0; i < n; i++){
@@ -341,7 +344,7 @@ const CONST = {
 		}
 		const t = new Date() - START;
 		console.debug(`T = ${t/1e3} s; ${1e3*t/n} µs avg.`);
-		this.debug_mode = false;
+		this.config.quiet = false;
 		return WINNERS;
 	},
 };
