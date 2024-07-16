@@ -3,6 +3,7 @@
 
 const CONST = {
 	config: {
+		bullet: true, // whether Trump can receive the Butler, PA event
 		deathPenalty: 0.96, // eg. 0.9 => 10% fewer votes when presidential candidate dies. I estimate this from the difference betweeen Biden/Trump and Harris/Trump 2023 polling averages.
 		deathRate: 1, // x times normal rate of death
 		eligibleVoters: 0.72,
@@ -20,9 +21,11 @@ const CONST = {
 	},
 	date: new Date(2024, 2, 5), // sim starts after March 5th - super tuesday - 8 months before the election
 	dates: {
+		bullet: new Date(2024, 6, 13),
 		election: new Date(2024, 10, 5),
 		inauguration: new Date(2025, 0, 20),
 		start: new Date(2024, 2, 5),
+		trump_VP: new Date(2024, 6, 15),
 		_538: {
 			get args(){
 				return [this.start.getMonth(), this.start.getDate() + random.randint(0, this.delta_d_max)];
@@ -40,6 +43,7 @@ const CONST = {
 	},
 	flags: {
 		_538: false,
+		bullet: false,
 		election_held: false,
 		partyNomDeath: {},
 		trumpChoseVP: false,
@@ -279,10 +283,11 @@ const CONST = {
 		return {p: this.positions.president, vp: this.positions.vice_president};
 	},
 	// @ n = 1000, takes about 54s
+	// use_debug: whether to use this for debugging purposes, or live prediction odds
 	debug(n = 1000, use_debug = true){
 		if (!use_debug)
 			this.dates.start = new Date();
-		this.debug_mode = use_debug;
+		this.config.bullet = this.debug_mode = use_debug;
 		const outcomes = [];
 		const START = new Date();
 		const DIVISION = Math.floor(n/10);
@@ -307,6 +312,7 @@ const CONST = {
 		const t = new Date() - START;
 		console.debug(`T = ${t/1e3} s; ${t/n} ms avg.`);
 		this.debug_mode = false;
+		this.config.bullet = true;
 		return outcomes.join('\n');
 	},
 	// try NC! CONST.debugState(CONST.states[29])
@@ -476,6 +482,7 @@ function simulation(){
 	CONST.date = CONST.dates.start;
 	CONST.flags.election_held = false;
 	CONST.flags.trumpChoseVP = false;
+	CONST.flags.bullet = false;
 	CONST.config.turnout = random.uniform(...CONST.config.turnoutMinMax); // random turnout
 	CONST.flags.partyNomDeath = {};
 	Party.parties.forEach(p => CONST.flags.partyNomDeath[p.abbr] = false);
@@ -483,11 +490,10 @@ function simulation(){
 	CONST.positions.nom_d_p = CONST.positions.president = Politician.fromName('Joe Biden');
 	CONST.positions.nom_d_vp = CONST.positions.vice_president = Politician.fromName('Kamala Harris');
 	CONST.positions.house_speaker = Politician.fromName('Mike Johnson');
-	CONST.positions.nom_r_p = Politician.fromName('Donald Trump');
+	const TRUMP = CONST.positions.nom_r_p = Politician.fromName('Donald Trump');
 	// trump veep choice - random day in July or August
 	// https://docs.google.com/spreadsheets/d/1A4S_VrL-ZLOflY1Y4SGoKAZumv4xHQmYg4TWszrn9vw
 	CONST.positions.nom_r_vp = undefined;
-	const TRUMP_VP_SELECTION_DATE = new Date(2024, random.randint(6, 7), random.randint(1, 31));
 	// third parties
 	CONST.positions.nom_i_p = Politician.fromName('Robert Kennedy');
 	CONST.positions.nom_i_vp = Politician.fromName('Nicole Shanahan');
@@ -508,7 +514,7 @@ function simulation(){
 		if (CONST.config.mortal)
 			CONST.politicians.forEach(p => p.tick());
 		// Trump VP selection
-		if (!CONST.flags.trumpChoseVP && TRUMP_VP_SELECTION_DATE <= CONST.date){
+		if (!CONST.flags.trumpChoseVP && CONST.dates.trump_VP <= CONST.date){
 			CONST.positions.nom_r_vp = Politician.fromName(random.weightedChoice(
 				CONST.nom_r_vp_candidates.map(x => x[0]),
 				CONST.nom_r_vp_candidates.map(x => x[1])
@@ -521,6 +527,21 @@ function simulation(){
 				// console.debug('Emergency Trump veep fill!');
 			}
 			CONST.alert(`${CONST.positions.nom_r_p.html} chose ${CONST.positions.nom_r_vp.html} as VP`);
+		}
+		// Bullet
+		if (CONST.config.bullet && !CONST.flags.bullet && CONST.dates.bullet <= CONST.date && TRUMP.alive){
+			random.choice([
+				// no hit
+				() => CONST.alert(`${TRUMP.html} was shot at in Butler, PA, but not hit.`),
+				// grazing hit (OT) - TODO check if this boosted trump IRL?
+				() => CONST.alert(`${TRUMP.html} was shot in Butler, PA, but received only a grazing wound.`),
+				// JFK'd
+				() => {
+					CONST.alert(`${TRUMP.html} was shot and killed in Butler, PA.`);
+					TRUMP.die();
+				},
+			])();
+			CONST.flags.bullet = true;
 		}
 		// remove the speaker
 		if (Math.random() < Math.pow(CONST.config.speakerRemovalDailyChance, CONST.config.timestep)){
