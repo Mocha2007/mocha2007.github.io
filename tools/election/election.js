@@ -4,6 +4,8 @@
 const CONST = {
 	config: {
 		bullet: true, // whether Trump can receive the Butler, PA event
+		corona: true, // historical covid infections may occasionally cause death
+		coronaDeathRate: 0.003514, // https://en.wikipedia.org/wiki/COVID-19_pandemic_death_rates_by_country
 		deathPenalty: 0.96, // eg. 0.9 => 10% fewer votes when presidential candidate dies. I estimate this from the difference betweeen Biden/Trump and Harris/Trump 2023 polling averages.
 		deathRate: 1, // x times normal rate of death
 		eligibleVoters: 0.72,
@@ -23,6 +25,9 @@ const CONST = {
 	date: new Date(2024, 2, 5), // sim starts after March 5th - super tuesday - 8 months before the election
 	dates: {
 		bullet: new Date(2024, 6, 13),
+		corona: [
+			['Joe Biden', new Date(2024, 6, 17)], // https://www.cnn.com/2024/07/17/politics/joe-biden-tests-positive-covid-19/index.html
+		],
 		election: new Date(2024, 10, 5),
 		inauguration: new Date(2025, 0, 20),
 		start: new Date(2024, 2, 5),
@@ -44,6 +49,7 @@ const CONST = {
 	flags: {
 		_538: false,
 		bullet: false,
+		coronaI: 0,
 		election_held: false,
 		partyNomDeath: {},
 		trumpChoseVP: false,
@@ -287,7 +293,7 @@ const CONST = {
 	debug(n = 1000, for_debug = true){
 		if (!for_debug)
 			this.dates.start = new Date();
-		this.config.bullet = for_debug;
+		this.config.bullet = this.config.corona = for_debug;
 		this.config.quiet = true;
 		const outcomes = [];
 		const START = new Date();
@@ -482,9 +488,8 @@ function simulation(){
 	// initialize/reset simulation...
 	CONST.politicians.forEach(p => p.alive = true);
 	CONST.date = CONST.dates.start;
-	CONST.flags.election_held = false;
-	CONST.flags.trumpChoseVP = false;
-	CONST.flags.bullet = false;
+	CONST.flags.bullet = CONST.flags.election_held = CONST.flags.trumpChoseVP = false;
+	CONST.flags.coronaI = 0;
 	CONST.config.turnout = random.uniform(...CONST.config.turnoutMinMax); // random turnout
 	CONST.flags.partyNomDeath = {};
 	Party.parties.forEach(p => CONST.flags.partyNomDeath[p.abbr] = false);
@@ -544,6 +549,18 @@ function simulation(){
 				},
 			])();
 			CONST.flags.bullet = true;
+		}
+		// Corona
+		// debugger;
+		if (CONST.config.corona && CONST.flags.coronaI < CONST.dates.corona.length
+				&& CONST.dates.corona[CONST.flags.coronaI][1] <= CONST.date){
+			const c_pol = Politician.fromName(CONST.dates.corona[CONST.flags.coronaI++][0]);
+			if (Math.random() < CONST.config.coronaDeathRate){
+				CONST.alert(`${c_pol.html} died from COVID-19.`);
+				c_pol.die();
+			}
+			else
+				CONST.alert(`${c_pol.html} tested positive for COVID-19.`);
 		}
 		// remove the speaker
 		if (Math.random() < Math.pow(CONST.config.speakerRemovalDailyChance, CONST.config.timestep)){
