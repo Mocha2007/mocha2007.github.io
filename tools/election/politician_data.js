@@ -112,15 +112,7 @@ const POLITICIANS = [
 		position: Position.NONE,
 		state: 'CA', // maybe? see https://votesocialist2024.com/about-the-candidates
 	},
-	// Trump VP picks
-	{
-		name: 'Katie Britt',
-		dob: new Date(1982, 1, 2),
-		gender: Gender.FEMALE,
-		party: Party.REPUBLICAN,
-		position: Position.SENATOR,
-		state: 'AL',
-	},
+	// Misc Trump VP picks
 	{
 		name: 'Doug Burgum',
 		dob: new Date(1956, 8, 1),
@@ -144,14 +136,6 @@ const POLITICIANS = [
 		party: Party.REPUBLICAN,
 		position: Position.NONE,
 		state: 'MI', // unsure
-	},
-	{
-		name: 'Tom Cotton',
-		dob: new Date(1977, 4, 13),
-		gender: Gender.MALE,
-		party: Party.REPUBLICAN,
-		position: Position.SENATOR,
-		state: 'AR',
 	},
 	{
 		name: 'Kari Lake',
@@ -194,44 +178,12 @@ const POLITICIANS = [
 		state: 'TX',
 	},
 	{
-		name: 'Marco Rubio',
-		dob: new Date(1971, 4, 28),
-		gender: Gender.MALE,
-		party: Party.REPUBLICAN,
-		position: Position.SENATOR,
-		state: 'FL',
-	},
-	{
 		name: 'Sarah Sanders',
 		dob: new Date(1982, 7, 13),
 		gender: Gender.FEMALE,
 		party: Party.REPUBLICAN,
 		position: Position.GOVERNOR,
 		state: 'AR',
-	},
-	{
-		name: 'Rick Scott',
-		dob: new Date(1952, 11, 1),
-		gender: Gender.MALE,
-		party: Party.REPUBLICAN,
-		position: Position.SENATOR,
-		state: 'FL',
-	},
-	{
-		name: 'Tim Scott',
-		dob: new Date(1965, 8, 19),
-		gender: Gender.MALE,
-		party: Party.REPUBLICAN,
-		position: Position.SENATOR,
-		state: 'SC',
-	},
-	{
-		name: 'James Vance',
-		dob: new Date(1984, 7, 2),
-		gender: Gender.MALE,
-		party: Party.REPUBLICAN,
-		position: Position.SENATOR,
-		state: 'OH',
 	},
 	{
 		name: 'Glenn Youngkin',
@@ -241,7 +193,7 @@ const POLITICIANS = [
 		position: Position.GOVERNOR,
 		state: 'VA',
 	},
-	// republican reps
+	// House of Representatives
 	{
 		name: 'Byron Donalds',
 		dob: new Date(1978, 9, 28),
@@ -314,14 +266,30 @@ const POLITICIANS = [
 		position: Position.REPRESENTATIVE,
 		state: 'NY',
 	},
-	// backup dem pols
+	// Senators
 	{
-		name: 'Hillary Clinton',
-		dob: new Date(1947, 9, 26),
+		name: 'Katie Britt',
+		dob: new Date(1982, 1, 2),
 		gender: Gender.FEMALE,
+		party: Party.REPUBLICAN,
+		position: Position.SENATOR,
+		state: 'AL',
+	},
+	{
+		name: 'Tom Cotton',
+		dob: new Date(1977, 4, 13),
+		gender: Gender.MALE,
+		party: Party.REPUBLICAN,
+		position: Position.SENATOR,
+		state: 'AR',
+	},
+	{
+		name: 'Mark Kelly',
+		dob: new Date(1964, 1, 21),
+		gender: Gender.MALE,
 		party: Party.DEMOCRATIC,
-		position: Position.NONE,
-		state: 'NY',
+		position: Position.SENATOR,
+		state: 'AZ',
 	},
 	{
 		name: 'Amy Klobuchar',
@@ -330,6 +298,38 @@ const POLITICIANS = [
 		party: Party.DEMOCRATIC,
 		position: Position.SENATOR,
 		state: 'MN',
+	},
+	{
+		name: 'Marco Rubio',
+		dob: new Date(1971, 4, 28),
+		gender: Gender.MALE,
+		party: Party.REPUBLICAN,
+		position: Position.SENATOR,
+		state: 'FL',
+	},
+	{
+		name: 'Rick Scott',
+		dob: new Date(1952, 11, 1),
+		gender: Gender.MALE,
+		party: Party.REPUBLICAN,
+		position: Position.SENATOR,
+		state: 'FL',
+	},
+	{
+		name: 'Tim Scott',
+		dob: new Date(1965, 8, 19),
+		gender: Gender.MALE,
+		party: Party.REPUBLICAN,
+		position: Position.SENATOR,
+		state: 'SC',
+	},
+	{
+		name: 'James Vance',
+		dob: new Date(1984, 7, 2),
+		gender: Gender.MALE,
+		party: Party.REPUBLICAN,
+		position: Position.SENATOR,
+		state: 'OH',
 	},
 	{
 		name: 'Elizabeth Warren',
@@ -341,12 +341,12 @@ const POLITICIANS = [
 	},
 	// minor backups
 	{
-		name: 'Tulsi Gabbard',
-		dob: new Date(1981, 3, 12),
+		name: 'Tanda Blubear',
+		dob: new Date(1980, 0), // guess
 		gender: Gender.FEMALE,
-		party: Party.INDEPENDENT,
+		party: Party.GREEN,
 		position: Position.NONE,
-		state: 'HI',
+		state: 'CA',
 	},
 	{
 		name: 'Peter Daou',
@@ -357,12 +357,12 @@ const POLITICIANS = [
 		state: 'NY',
 	},
 	{
-		name: 'Tanda Blubear',
-		dob: new Date(1980, 0), // guess
+		name: 'Tulsi Gabbard',
+		dob: new Date(1981, 3, 12),
 		gender: Gender.FEMALE,
-		party: Party.GREEN,
+		party: Party.INDEPENDENT,
 		position: Position.NONE,
-		state: 'CA',
+		state: 'HI',
 	},
 	// dem party "elite"s
 	{
@@ -373,6 +373,14 @@ const POLITICIANS = [
 		position: Position.NONE,
 		state: 'GA',
 		cannotBeChosen: true,
+	},
+	{
+		name: 'Hillary Clinton',
+		dob: new Date(1947, 9, 26),
+		gender: Gender.FEMALE,
+		party: Party.DEMOCRATIC,
+		position: Position.NONE,
+		state: 'NY',
 	},
 	{
 		name: 'Barack Obama',
