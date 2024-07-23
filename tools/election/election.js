@@ -296,6 +296,15 @@ const CONST = {
 		}
 		return {p: this.positions.president, vp: this.positions.vice_president};
 	},
+	info(){
+		// show missing govs, sens, reps
+		const GOVS = this.politicians.filter(p => p.position === Position.GOVERNOR).length;
+		const REPS = this.politicians.filter(p => p.position === Position.REPRESENTATIVE).length;
+		const SENS = this.politicians.filter(p => p.position === Position.SENATOR).length;
+		console.info(`${GOVS} / 50 governors (${2*GOVS}%)`);
+		console.info(`${REPS} / 435 representiatives (${Math.round(100*REPS/435)}%)`);
+		console.info(`${SENS} / 100 senators (${SENS}%)`);
+	},
 	// @ n = 1000, takes about 54s
 	// for_debug: whether to use this for debugging purposes, or live prediction odds
 	debug(n = 1000, for_debug = true){
@@ -444,7 +453,7 @@ class Politician {
 		/** @type {Party} */
 		this.party = o.party || Party.INDEPENDENT;
 		/** @type {Position} */
-		this.position = o.position || Position.NONE;
+		this.position = isFinite(o.position) ? o.position : Position.NONE;
 		/** @type {State} */
 		this.state = o.state;
 		this.alive = true;
@@ -645,6 +654,8 @@ function main(){
 	POLITICIANS.forEach(o => new Politician(o));
 	STATES.forEach(o => new State(...o));
 	console.info(`election.js loaded ${CONST.politicians.length} politicians and ${CONST.states.length} states.`);
+	// debug info
+	CONST.info();
 	// run sim
 	simulation();
 }
