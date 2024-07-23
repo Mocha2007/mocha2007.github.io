@@ -357,6 +357,14 @@ const POLITICIANS = [
 		state: 'AL',
 	},
 	{
+		name: 'Ted Budd',
+		dob: new Date(1971, 9, 21),
+		gender: Gender.MALE,
+		party: Party.REPUBLICAN,
+		position: Position.SENATOR,
+		state: 'NC',
+	},
+	{
 		name: 'Tom Cotton',
 		dob: new Date(1977, 4, 13),
 		gender: Gender.MALE,
@@ -403,6 +411,14 @@ const POLITICIANS = [
 		party: Party.REPUBLICAN,
 		position: Position.SENATOR,
 		state: 'SC',
+	},
+	{
+		name: 'Thom Thillis',
+		dob: new Date(1960, 7, 30),
+		gender: Gender.MALE,
+		party: Party.REPUBLICAN,
+		position: Position.SENATOR,
+		state: 'NC',
 	},
 	{
 		name: 'James Vance',
