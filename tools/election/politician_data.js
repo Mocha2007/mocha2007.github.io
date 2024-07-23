@@ -114,14 +114,6 @@ const POLITICIANS = [
 	},
 	// Misc Trump VP picks
 	{
-		name: 'Doug Burgum',
-		dob: new Date(1956, 8, 1),
-		gender: Gender.MALE,
-		party: Party.REPUBLICAN,
-		position: Position.GOVERNOR,
-		state: 'ND',
-	},
-	{
 		name: 'Tucker Carlson',
 		dob: new Date(1969, 5, 16),
 		gender: Gender.MALE,
@@ -146,14 +138,6 @@ const POLITICIANS = [
 		state: 'AZ',
 	},
 	{
-		name: 'Kristi Noem',
-		dob: new Date(1971, 10, 30),
-		gender: Gender.FEMALE,
-		party: Party.REPUBLICAN,
-		position: Position.GOVERNOR,
-		state: 'SD',
-	},
-	{
 		name: 'Mike Pompeo',
 		dob: new Date(1963, 11, 30),
 		gender: Gender.MALE,
@@ -176,6 +160,23 @@ const POLITICIANS = [
 		party: Party.REPUBLICAN,
 		position: Position.NONE,
 		state: 'TX',
+	},
+	// Governors
+	{
+		name: 'Doug Burgum',
+		dob: new Date(1956, 8, 1),
+		gender: Gender.MALE,
+		party: Party.REPUBLICAN,
+		position: Position.GOVERNOR,
+		state: 'ND',
+	},
+	{
+		name: 'Kristi Noem',
+		dob: new Date(1971, 10, 30),
+		gender: Gender.FEMALE,
+		party: Party.REPUBLICAN,
+		position: Position.GOVERNOR,
+		state: 'SD',
 	},
 	{
 		name: 'Sarah Sanders',
