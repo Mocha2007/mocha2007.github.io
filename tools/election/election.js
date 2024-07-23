@@ -564,8 +564,7 @@ function simulation(){
 			CONST.flags.bullet = true;
 		}
 		// Corona
-		// debugger;
-		if (CONST.config.corona && CONST.flags.coronaI < CONST.dates.corona.length
+		if (BIDEN.alive && CONST.config.corona && CONST.flags.coronaI < CONST.dates.corona.length
 				&& CONST.dates.corona[CONST.flags.coronaI][1] <= CONST.date){
 			const c_pol = Politician.fromName(CONST.dates.corona[CONST.flags.coronaI++][0]);
 			if (Math.random() < CONST.config.coronaDeathRate){
