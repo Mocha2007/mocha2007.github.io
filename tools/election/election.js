@@ -393,7 +393,7 @@ class State {
 		CONST.states.push(this);
 	}
 	get governor(){
-		return CONST.politicians.find(p => p.position === Position.GOVERNOR && p.state === this.name && p.alive);
+		return CONST.politicians.find(p => p.position === Position.GOVERNOR && p.state === this.state && p.alive);
 	}
 	get pollCloseTime(){
 		const t = new Date(CONST.dates.election);
@@ -412,7 +412,10 @@ class State {
 		return CONST.politicians.filter(p => p.position === Position.REPRESENTATIVE && p.state === this.name && p.alive);
 	}
 	get senators(){
-		return CONST.politicians.filter(p => p.position === Position.SENATOR && p.state === this.name && p.alive);
+		return CONST.politicians.filter(p => p.position === Position.SENATOR && p.state === this.state && p.alive);
+	}
+	get state(){
+		return 2 < this.name.length ? this.name.slice(0, 2) : this.name;
 	}
 	/** prevents double-counting of districts in popular vote totals */
 	get votesDontCount(){
