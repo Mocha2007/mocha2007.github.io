@@ -392,6 +392,9 @@ class State {
 		this.ET_OFFSET = ET_OFFSET;
 		CONST.states.push(this);
 	}
+	get governor(){
+		return CONST.politicians.find(p => p.position === Position.GOVERNOR && p.state === this.name && p.alive);
+	}
 	get pollCloseTime(){
 		const t = new Date(CONST.dates.election);
 		t.setHours(12 + this.pollClose);
@@ -404,6 +407,12 @@ class State {
 	get pollCloseTimeString(){
 		const t = this.pollCloseTime;
 		return `Polls close at ${t.t.toLocaleTimeString()} local time (${t.t2.toLocaleTimeString()} ET)`;
+	}
+	get representatives(){
+		return CONST.politicians.filter(p => p.position === Position.REPRESENTATIVE && p.state === this.name && p.alive);
+	}
+	get senators(){
+		return CONST.politicians.filter(p => p.position === Position.SENATOR && p.state === this.name && p.alive);
 	}
 	/** prevents double-counting of districts in popular vote totals */
 	get votesDontCount(){

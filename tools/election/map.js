@@ -41,6 +41,9 @@ class MapElem {
 					td.title = [
 						`${state.name} (${state.ev} EVs)`,
 						state.pollCloseTimeString,
+						'Governor: ' + (state.governor ? state.governor.name : '???'),
+						'Senators: ' + state.senators.map(s => s.name).join(', '),
+						'Representatives: ' + state.representatives.map(s => s.name).join(', '),
 						'--------------------',
 						...result.result.map((line, i) => `${line[0].name} - ${line[1].toLocaleString()} (${round(result.resultP[i][1] * 100, 2)}%)`)
 					].join('\n');
