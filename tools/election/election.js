@@ -392,8 +392,14 @@ class State {
 		this.ET_OFFSET = ET_OFFSET;
 		CONST.states.push(this);
 	}
+	get district(){
+		return +this.name.slice(3);
+	}
 	get governor(){
 		return CONST.politicians.find(p => p.position === Position.GOVERNOR && p.state === this.state && p.alive);
+	}
+	get isState(){
+		return this.name.length <= 2;
 	}
 	get pollCloseTime(){
 		const t = new Date(CONST.dates.election);
@@ -409,17 +415,19 @@ class State {
 		return `Polls close at ${t.t.toLocaleTimeString()} local time (${t.t2.toLocaleTimeString()} ET)`;
 	}
 	get representatives(){
-		return CONST.politicians.filter(p => p.position === Position.REPRESENTATIVE && p.state === this.name && p.alive);
+		if (this.isState)
+			return CONST.politicians.filter(p => p.position === Position.REPRESENTATIVE && p.state === this.name && p.alive);
+		return CONST.politicians.filter(p => p.position === Position.REPRESENTATIVE && p.state === this.state && p.district === this.district && p.alive);
 	}
 	get senators(){
 		return CONST.politicians.filter(p => p.position === Position.SENATOR && p.state === this.state && p.alive);
 	}
 	get state(){
-		return 2 < this.name.length ? this.name.slice(0, 2) : this.name;
+		return this.isState ? this.name : this.name.slice(0, 2);
 	}
 	/** prevents double-counting of districts in popular vote totals */
 	get votesDontCount(){
-		return 2 < this.name.length;
+		return !this.isState;
 	}
 	get swing(){
 		return Math.abs(this.polling.r - this.polling.d) < CONST.config.swingMargin;
@@ -472,6 +480,8 @@ class Politician {
 		/** @type {boolean} */
 		this.cannotBeChosen = o.cannotBeChosen || false;
 		CONST.politicians.push(this);
+		/** @type {number} */
+		this.district = o.district || 0;
 	}
 	get age(){
 		return Math.floor((CONST.date - this.dob) / CONST.dur.year);

@@ -138,6 +138,14 @@ const POLITICIANS = [
 		state: 'AZ',
 	},
 	{
+		name: 'Kevin McCarthy',
+		dob: new Date(1965, 1, 26),
+		gender: Gender.MALE,
+		party: Party.REPUBLICAN,
+		position: Position.NONE,
+		state: 'CA',
+	},
+	{
 		name: 'Mike Pompeo',
 		dob: new Date(1963, 11, 30),
 		gender: Gender.MALE,
@@ -282,6 +290,16 @@ const POLITICIANS = [
 		party: Party.REPUBLICAN,
 		position: Position.REPRESENTATIVE,
 		state: 'FL',
+		district: 19,
+	},
+	{
+		name: 'Valerie Foushee',
+		dob: new Date(1956, 4, 7),
+		gender: Gender.FEMALE,
+		party: Party.DEMOCRATIC,
+		position: Position.REPRESENTATIVE,
+		state: 'NC',
+		district: 4,
 	},
 	{
 		name: 'Marjorie Greene',
@@ -290,6 +308,7 @@ const POLITICIANS = [
 		party: Party.REPUBLICAN,
 		position: Position.REPRESENTATIVE,
 		state: 'GA',
+		district: 14,
 	},
 	{
 		name: 'Wesley Hunt',
@@ -298,6 +317,7 @@ const POLITICIANS = [
 		party: Party.REPUBLICAN,
 		position: Position.REPRESENTATIVE,
 		state: 'TX',
+		district: 38,
 	},
 	{
 		name: 'Mike Johnson',
@@ -306,6 +326,7 @@ const POLITICIANS = [
 		party: Party.REPUBLICAN,
 		position: Position.REPRESENTATIVE,
 		state: 'LA',
+		district: 4,
 	},
 	{
 		name: 'Nancy Mace',
@@ -314,14 +335,7 @@ const POLITICIANS = [
 		party: Party.REPUBLICAN,
 		position: Position.REPRESENTATIVE,
 		state: 'SC',
-	},
-	{
-		name: 'Kevin McCarthy',
-		dob: new Date(1965, 1, 26),
-		gender: Gender.MALE,
-		party: Party.REPUBLICAN,
-		position: Position.REPRESENTATIVE,
-		state: 'CA',
+		district: 1,
 	},
 	{
 		name: 'Patrick McHenry',
@@ -330,6 +344,7 @@ const POLITICIANS = [
 		party: Party.REPUBLICAN,
 		position: Position.REPRESENTATIVE,
 		state: 'NC',
+		district: 10,
 	},
 	{
 		name: 'Steve Scalise',
@@ -338,6 +353,7 @@ const POLITICIANS = [
 		party: Party.REPUBLICAN,
 		position: Position.REPRESENTATIVE,
 		state: 'LA',
+		district: 1,
 	},
 	{
 		name: 'Elise Stefanik',
@@ -346,6 +362,7 @@ const POLITICIANS = [
 		party: Party.REPUBLICAN,
 		position: Position.REPRESENTATIVE,
 		state: 'NY',
+		district: 21,
 	},
 	// Senators
 	{
