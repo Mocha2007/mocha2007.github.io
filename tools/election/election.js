@@ -4,6 +4,7 @@
 const CONST = {
 	config: {
 		bullet: true, // whether Trump can receive the Butler, PA event
+		bdo: true, // whether Biden drops out in the summer
 		corona: true, // historical covid infections may occasionally cause death
 		coronaDeathRate: 0.003514, // https://en.wikipedia.org/wiki/COVID-19_pandemic_death_rates_by_country
 		deathPenalty: 0.96, // eg. 0.9 => 10% fewer votes when presidential candidate dies. I estimate this from the difference betweeen Biden/Trump and Harris/Trump 2023 polling averages.
@@ -21,9 +22,15 @@ const CONST = {
 		timestep: 1, // days
 		turnout: 0.6,
 		turnoutMinMax: [0.542, 0.666], // 2000, 2020 - extrema for the 2000s
+		wildScenWeights: {
+			carterObama: 1,
+			harrisBiden: 1,
+			harrisObama: 1,
+		},
 	},
 	date: new Date(2024, 2, 5), // sim starts after March 5th - super tuesday - 8 months before the election
 	dates: {
+		bdo: new Date(2024, 6, 21),
 		bullet: new Date(2024, 6, 13),
 		corona: [
 			['Joe Biden', new Date(2024, 6, 17)], // https://www.cnn.com/2024/07/17/politics/joe-biden-tests-positive-covid-19/index.html
@@ -48,6 +55,7 @@ const CONST = {
 	},
 	flags: {
 		_538: false,
+		bdo: false,
 		bullet: false,
 		coronaI: 0,
 		election_held: false,
@@ -126,7 +134,7 @@ const CONST = {
 	},
 	position_backups: {
 		president: () => ({x: CONST.positions.vice_president, y: 'vice_president'}),
-		house_speaker: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
+		house_speaker: () => ({x: random.choice(CONST.politicians.filter(p => p.canBeChosen
 			&& p.party === Party.REPUBLICAN && p.position === Position.REPRESENTATIVE))}),
 		// final noms
 		nom_p: () => ({x: CONST.positions.nom_vp, y: 'nom_vp'}),
@@ -141,23 +149,23 @@ const CONST = {
 		nom_l_p: () => ({x: CONST.positions.nom_l_vp, y: 'nom_l_vp'}), // it's a fair guess
 		nom_s_p: () => ({x: CONST.positions.nom_s_vp, y: 'nom_s_vp'}), // it's a fair guess
 		// VP: alive, same party, must be from different state than pres candidate (which also prevents the pres from also becoming veep)
-		nom_d_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
-			&& p.party === Party.DEMOCRATIC && p.state !== CONST.positions.nom_d_p.state))}),
+		nom_d_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.canBeChosen
+			&& p.party === Party.DEMOCRATIC && (CONST.positions.nom_d_p ? p.state !== CONST.positions.nom_d_p.state : true)))}),
 		nom_r_vp: () => ({x:
 				CONST.flags.trumpChoseVP
-					? random.choice(CONST.politicians.filter(p => p.alive
+					? random.choice(CONST.politicians.filter(p => p.canBeChosen
 						&& p.party === Party.REPUBLICAN && p.state !== CONST.positions.nom_r_p.state))
 					: undefined, // TRUMP HASNT CHOSEN YET
 		}),
-		nom_i_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
+		nom_i_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.canBeChosen
 			&& p.party === Party.INDEPENDENT && p.state !== CONST.positions.nom_i_p.state))}),
-		nom_j_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
+		nom_j_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.canBeChosen
 			&& p.party === Party.JFA && p.state !== CONST.positions.nom_j_p.state))}),
-		nom_g_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
+		nom_g_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.canBeChosen
 			&& p.party === Party.GREEN && p.state !== CONST.positions.nom_g_p.state))}),
-		nom_l_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
+		nom_l_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.canBeChosen
 			&& p.party === Party.LIBERTARIAN && p.state !== CONST.positions.nom_l_p.state))}),
-		nom_s_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.alive
+		nom_s_vp: () => ({x: random.choice(CONST.politicians.filter(p => p.canBeChosen
 			&& p.party === Party.SAL && p.state !== CONST.positions.nom_s_p.state))}),
 	},
 	/** @type {State[]} */
@@ -293,7 +301,7 @@ const CONST = {
 	debug(n = 1000, for_debug = true){
 		if (!for_debug)
 			this.dates.start = new Date();
-		this.config.bullet = this.config.corona = for_debug;
+		this.config.bdo = this.config.bullet = this.config.corona = for_debug;
 		this.config.quiet = true;
 		const outcomes = [];
 		const START = new Date();
@@ -319,7 +327,7 @@ const CONST = {
 		const t = new Date() - START;
 		console.debug(`T = ${t/1e3} s; ${t/n} ms avg.`);
 		this.config.quiet = false;
-		this.config.bullet = true;
+		this.config.bdo = this.config.bullet = true;
 		return outcomes.join('\n');
 	},
 	// try NC! CONST.debugState(CONST.states[29])
@@ -440,6 +448,8 @@ class Politician {
 		/** @type {State} */
 		this.state = o.state;
 		this.alive = true;
+		/** @type {boolean} */
+		this.cannotBeChosen = o.cannotBeChosen || false;
 		CONST.politicians.push(this);
 	}
 	get age(){
@@ -448,11 +458,14 @@ class Politician {
 	get annual_death_chance(){
 		return 1 - Math.pow(1 - ACTUARIAL_TABLE[this.age][this.gender.id], CONST.config.deathRate);
 	}
+	get canBeChosen(){
+		return this.alive && !this.cannotBeChosen;
+	}
 	get daily_death_chance(){
 		return 1 - Math.pow(1-this.annual_death_chance, 1/365.25);
 	}
 	get eligible_for_president(){
-		return 35 < this.age && this.alive;
+		return 35 < this.age && this.canBeChosen;
 	}
 	get html(){
 		return `${this.name} (<span class='char_${this.party.abbr}'>${this.party.abbr}</span>-${this.state}
@@ -488,14 +501,14 @@ function simulation(){
 	// initialize/reset simulation...
 	CONST.politicians.forEach(p => p.alive = true);
 	CONST.date = CONST.dates.start;
-	CONST.flags.bullet = CONST.flags.election_held = CONST.flags.trumpChoseVP = false;
+	CONST.flags.bdo = CONST.flags.bullet = CONST.flags.election_held = CONST.flags.trumpChoseVP = false;
 	CONST.flags.coronaI = 0;
 	CONST.config.turnout = random.uniform(...CONST.config.turnoutMinMax); // random turnout
 	CONST.flags.partyNomDeath = {};
 	Party.parties.forEach(p => CONST.flags.partyNomDeath[p.abbr] = false);
 	// set prez, vp, speaker
-	CONST.positions.nom_d_p = CONST.positions.president = Politician.fromName('Joe Biden');
-	CONST.positions.nom_d_vp = CONST.positions.vice_president = Politician.fromName('Kamala Harris');
+	const BIDEN = CONST.positions.nom_d_p = CONST.positions.president = Politician.fromName('Joe Biden');
+	const HARRIS = CONST.positions.nom_d_vp = CONST.positions.vice_president = Politician.fromName('Kamala Harris');
 	CONST.positions.house_speaker = Politician.fromName('Mike Johnson');
 	const TRUMP = CONST.positions.nom_r_p = Politician.fromName('Donald Trump');
 	// trump veep choice - random day in July or August
@@ -561,6 +574,46 @@ function simulation(){
 			}
 			else
 				CONST.alert(`${c_pol.html} tested positive for COVID-19.`);
+		}
+		// Biden Drops Out
+		if (CONST.config.bdo && !CONST.flags.bdo && CONST.dates.bdo <= CONST.date && BIDEN.alive){
+			const CARTER = Politician.fromName('Jimmy Carter');
+			const OBAMA = Politician.fromName('Barack Obama');
+			const VP = CONST.positions.nom_d_vp;
+			BIDEN.cannotBeChosen = true; // to prevent him from being chosen
+			random.weightedChoice([
+				// Biden rejects calls to drops out.
+				() => CONST.alert(`${BIDEN.html} rejects calls to resign.`),
+				// Biden drops out, Harris is nominee.
+				() => {
+					CONST.alert(`${BIDEN.html} drops out - ${(CONST.positions.nom_d_p = VP).html} is now the presidential nominee.`);
+					CONST.positions.nom_d_vp = undefined;
+					CONST.checkPositions();
+				},
+				// Biden drops out, open convention.
+				() => {
+					CONST.alert(`${BIDEN.html} drops out - the party struggles to come to a consensus on the new presidential nominee.`);
+					CONST.positions.nom_d_p = undefined;
+					CONST.positions.nom_d_vp = undefined;
+					CONST.checkPositions(); // need to run twice - once for VP, once for P
+					CONST.checkPositions();
+				},
+				// Biden drops out, Harris is nominee. Harris chooses Biden as her running mate!
+				() => {
+					CONST.alert(`${BIDEN.html} drops out - ${(CONST.positions.nom_d_p = VP).html} is now the presidential nominee...
+					and ${VP.gender.pronouns.subj} chose ${BIDEN.html} as ${VP.gender.pronouns.poss_det} running mate!`);
+					CONST.positions.nom_d_vp = BIDEN;
+				},
+				// Carter / Obama 2024!!!
+				() => {
+					CONST.alert(`${BIDEN.html} drops out, and after long and highly contentious discussion,
+					and ${CARTER.html} has emerged as the new presumptive nominee, with ${OBAMA.html} as his running mate!`);
+					CONST.positions.nom_d_p = CARTER;
+					CONST.positions.nom_d_vp = OBAMA;
+				},
+			], [50, 25, 25, HARRIS.alive ? CONST.config.wildScenWeights.harrisBiden : 0, CARTER.alive && OBAMA.alive ? CONST.config.wildScenWeights.carterObama : 0])();
+			CONST.flags.bdo = true;
+			BIDEN.cannotBeChosen = false; // reset
 		}
 		// remove the speaker
 		if (Math.random() < Math.pow(CONST.config.speakerRemovalDailyChance, CONST.config.timestep)){

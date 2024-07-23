@@ -364,4 +364,23 @@ const POLITICIANS = [
 		position: Position.NONE,
 		state: 'CA',
 	},
+	// dem party "elite"s
+	{
+		name: 'Jimmy Carter',
+		dob: new Date(1924, 9, 1),
+		gender: Gender.MALE,
+		party: Party.DEMOCRATIC,
+		position: Position.NONE,
+		state: 'GA',
+		cannotBeChosen: true,
+	},
+	{
+		name: 'Barack Obama',
+		dob: new Date(1961, 7, 4),
+		gender: Gender.MALE,
+		party: Party.DEMOCRATIC,
+		position: Position.NONE,
+		state: 'IL',
+		cannotBeChosen: true,
+	},
 ];

@@ -1,9 +1,23 @@
 /* exported ACTUARIAL_TABLE, EVENTS, Gender, Party, Position */
 
+class Pronouns {
+	constructor(subj, obl, refl, poss_det, poss_pron){
+		this.subj = subj;
+		this.obl = obl;
+		this.refl = refl;
+		this.poss_det = poss_det;
+		this.poss_pron = poss_pron;
+	}
+	get shorthand(){
+		return `${this.subj}/${this.obl}`;
+	}
+}
+
 class Gender {
 	static #id_ = 0;
 	constructor(name, pronouns, color = 'white'){
 		this.name = name;
+		/** @type {Pronouns} */
 		this.pronouns = pronouns;
 		this.color = color;
 		this.id = Gender.#id_++;
@@ -12,11 +26,11 @@ class Gender {
 		return this.name[0];
 	}
 	get html(){
-		return `<span class="gender" style="color: ${this.color}" title="${this.pronouns}">${this.abbr}</span>`;
+		return `<span class="gender" style="color: ${this.color}" title="${this.pronouns.shorthand}">${this.abbr}</span>`;
 	}
-	static FEMALE = new Gender('Female', 'she/her', '#f8f');
-	static MALE = new Gender('Male', 'he/him', '#08f');
-	static NONBINARY = new Gender('Nonbinary', 'they/them', 'white');
+	static FEMALE = new Gender('Female', new Pronouns('she', 'her', 'herself', 'her', 'hers'), '#f8f');
+	static MALE = new Gender('Male', new Pronouns('he', 'him', 'himself', 'his', 'his'), '#08f');
+	static NONBINARY = new Gender('Nonbinary', new Pronouns('they', 'them', 'themself', 'their', 'theirs'), 'white');
 }
 
 class Party {
