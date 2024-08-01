@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<link href="../css/button.css" type="text/css" rel="stylesheet">
+<script src="../common.js" async></script>
+<script src="enderal_minigame.js" async></script>
+
+<h1>Battle of Treomar</h1>
+
+<label><input type="number" id="player_hand" min="3", max="30" > Player Hand</label><br>
+<label><input type="number" id="player_bet" min="1"> Player Bet</label><br>
+<label><input type="number" id="opponent_bet" min="1"> Opponent Bet</label><br>
+
+<span class="button" onclick="run()">Calculate &rarr;</span><br>
+
+Recommendation: <span id="RECOMMENDATION">...</span>
+<hr>
+If you do not boost:<br>
+Winrate: <span id="WIN">...</span>%<br>
+Lossrate: <span id="LOSS">...</span>%<br>
+Drawrate: <span id="DRAW">...</span>%<br>
+Expected Value: <span id="EV">...</span><br>
+If you boost:<br>
+Winrate: <span id="WINB">...</span>%<br>
+Lossrate: <span id="LOSSB">...</span>%<br>
+Drawrate: <span id="DRAWB">...</span>%<br>
+Expected Value: <span id="EVB">...</span>
