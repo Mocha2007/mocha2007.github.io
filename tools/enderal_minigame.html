@@ -27,7 +27,7 @@
 </style>
 <title>Battle of Treomar Calculator</title>
 <link rel="shortcut icon" href="../img/favicon.ico">
-<body onload="recTable()">
+<body onload="recTable();recTable2();">
 	<h1>Battle of Treomar Calculator</h1>
 
 	<label><input type="number" id="player_hand" min="3", max="30" > Player Hand</label><br>
@@ -53,4 +53,6 @@
 	<div>Recommendation table - columns represent hands, rows represent your bet, relative to your opponent's.</div>
 	<span class="button" onclick="speedTest.reThink()">Spend an additional ... s thinking about this</span><input id="thinkTime" type="number" min="1" value="10">
 	<table id="recTable"></table>
+	<div>Expected value table (by bet ratio - yours/theirs)</div>
+	<table id="recTable2"></table>
 </body>

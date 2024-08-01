@@ -1,8 +1,19 @@
-/* exported recTable, run */
+/* exported recTable, recTable2, run */
 /* global random, range, round, sum */
 const BOOST_RATIO = 0.425; // "between 40 and 45%"
 const AI_ROLLS_DICE_THRESHOLD_LOWER = -11; // https://web.archive.org/web/20211220170105/https://www.reddit.com/r/enderal/comments/rkrrsx/battle_for_treomar_is_really_unfair_an_analysis/
 const AI_ROLLS_DICE_THRESHOLD_UPPER = -1;
+
+function boost(m = 2, n_ = 6){
+	function dn(){
+		return random.randint(1, n_);
+	}
+	return sum(range(m).map(dn));
+}
+
+function hand(){
+	return boost(3, 10);
+}
 
 /**
  * @param {number} player_hand
@@ -11,16 +22,10 @@ const AI_ROLLS_DICE_THRESHOLD_UPPER = -1;
  * @param {number} n
  */
 function test(player_hand, player_bet, opponent_bet, n = 10000){
-	function boost(m = 2, n_ = 6){
-		function dn(){
-			return random.randint(1, n_);
-		}
-		return sum(range(m).map(dn));
-	}
 	function simulate_opponent_hand(you_boost = false){
 		const PLAYER = player_hand + you_boost * boost();
 		let boosted = false;
-		let value = boost(3, 10);
+		let value = hand();
 		if (AI_ROLLS_DICE_THRESHOLD_LOWER <= value - PLAYER
 				&& value - PLAYER <= AI_ROLLS_DICE_THRESHOLD_UPPER){
 			value += boost();
@@ -129,6 +134,30 @@ function recTable(use_pm = false){
 			TD.title = `Δ = ${DELTA}% of opponent bet`;
 			TR.appendChild(TD);
 		});
+	});
+}
+
+function recTable2(n = 100){
+	const opponent_bet = 100;
+	const player_bets = range(10, 100, 10).concat(...range(100, 1001, 100));
+	const TABLE = document.getElementById('recTable2');
+	TABLE.innerHTML = '';
+	const TRH = document.createElement('tr');
+	TABLE.appendChild(TRH);
+	const TR = document.createElement('tr');
+	TABLE.appendChild(TR);
+	player_bets.forEach(player_bet => {
+		const TH = document.createElement('th');
+		TRH.appendChild(TH);
+		TH.innerHTML = round(player_bet/opponent_bet, 1);
+		const TD = document.createElement('td');
+		TR.appendChild(TD);
+		let s = 0;
+		range(n).forEach(() => {
+			const RESULT = test(hand(), player_bet, opponent_bet, 100);
+			s += Math.max(RESULT.EV, RESULT.EVB)/100;
+		});
+		TD.innerHTML = round(s/n, 3);
 	});
 }
 
