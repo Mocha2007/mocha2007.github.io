@@ -93,7 +93,8 @@ speedTest.reThink = () => {
 };
 let rec_n = 0;
 
-function recTable(){
+function recTable(use_pm = false){
+	const PLUSMINUS_THRESHOLD = use_pm && 1;
 	const n = rec_n || speedTest();
 	const opponent_bet = 100;
 	const player_hands = range(3, 31); // 28 cols + header
@@ -121,8 +122,11 @@ function recTable(){
 		player_hands.forEach(player_hand => {
 			const TD = document.createElement('td');
 			const RESULT = test(player_hand, player_bet, opponent_bet, n);
-			TD.className = `REC_${RESULT.RECOMMENDATION[0]}`;
-			TD.innerHTML = RESULT.RECOMMENDATION === 'BOOST' ? '✔️' : '❌';
+			const DELTA = RESULT.EVB - RESULT.EV;
+			const UNDER_THRESH = Math.abs(DELTA) < PLUSMINUS_THRESHOLD;
+			TD.className = `REC_${UNDER_THRESH ? 'P' : RESULT.RECOMMENDATION[0]}`;
+			TD.innerHTML = UNDER_THRESH ? '±' : RESULT.RECOMMENDATION === 'BOOST' ? '✔️' : '❌';
+			TD.title = `Δ = ${DELTA}% of opponent bet`;
 			TR.appendChild(TD);
 		});
 	});
