@@ -81,7 +81,7 @@ function run(){
 	document.getElementById('RECOMMENDATION').className = `REC_${RESULT.RECOMMENDATION[0]}`;
 }
 
-function speedTest(desired_time = 1000, needed_calculations = 280, n = 100){
+function speedTest(desired_time = 1000, needed_calculations = 170, n = 100){
 	const DEBUG_T = new Date();
 	for (let i = 0; i < needed_calculations; i++)
 		test(random.randint(3, 30), 5, 10, n);
@@ -102,8 +102,8 @@ function recTable(use_pm = false){
 	const PLUSMINUS_THRESHOLD = use_pm && 1;
 	const n = rec_n || speedTest();
 	const opponent_bet = 100;
-	const player_hands = range(3, 31); // 28 cols + header
-	const player_bets = range(5, 51, 5);
+	const player_hands = range(3, 20); // 17 cols + header
+	const player_bets = range(5, 51, 5); // 10 rows + header
 	const TABLE = document.getElementById('recTable');
 	TABLE.innerHTML = '';
 	// headers
@@ -113,6 +113,8 @@ function recTable(use_pm = false){
 	player_hands.forEach(player_hand => {
 		const TH = document.createElement('th');
 		TH.innerHTML = player_hand;
+		if (player_hand === 19)
+			TH.innerHTML += '+';
 		TRH.appendChild(TH);
 	});
 	// main rows
@@ -122,6 +124,8 @@ function recTable(use_pm = false){
 		TABLE.appendChild(TR);
 		const TH = document.createElement('th');
 		TH.innerHTML = round(player_bet/opponent_bet, 2);
+		if (player_bet === 50)
+			TH.innerHTML += '+';
 		TR.appendChild(TH);
 		// main
 		player_hands.forEach(player_hand => {
