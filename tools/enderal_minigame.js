@@ -157,7 +157,8 @@ function recTable2(n = 100){
 			const RESULT = test(hand(), player_bet, opponent_bet, 100);
 			s += Math.max(RESULT.EV, RESULT.EVB)/100;
 		});
-		TD.innerHTML = round(s/n, 3);
+		TD.innerHTML = Math.round(100*s/n) + '%';
+		TD.classList = 'REC_' + (s < 0 ? 'D' : 'B');
 	});
 }
 
