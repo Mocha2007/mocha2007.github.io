@@ -252,7 +252,7 @@ class GoodDatum {
 			elem.innerHTML = `1:${(1/price).toFixed(0)}`;
 		else
 			elem.innerHTML = `${price.toFixed(0)}:1`;
-		elem.title = price;
+		elem.title = `${this.good.name} in ${this.source.place} in ${this.source.year}\n${price}`;
 		return elem;
 	}
 	get td(){
