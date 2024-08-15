@@ -692,6 +692,8 @@ new GoodDatum(goods.wageLaborer, sources.med13, (2 + 2.5)/2*pence.c._13);
 new GoodDatum(goods.wageLaborer, sources.med14, (2.5 + 4.25)/2*pence.c._14);
 new GoodDatum(goods.wageLaborer, sources.med15, (4.5 + 6)/2*pence.c._15);
 new GoodDatum(goods.wageLaborer, sources.med16, (5.25 + 5.75)/2*pence.c._16);
+// no data for 12th century, so just assume it's about the same as 13th...
+new GoodDatum(goods.wageLaborer, sources.med12, 3);
 
 // https://thehistoryofengland.co.uk/resource/medieval-prices-and-wages/
 new GoodDatum(goods.sugar, sources.med14, 18*pence.c._14 / unit.lb);
@@ -803,6 +805,14 @@ new GoodDatum(goods.beef, sources.chinaTang, 5 * china.cash / china.catty * tang
 new GoodDatum(goods.gold, sources.chinaMing, 5); // went from 1:4 to 1:6 during the ming dynasty, increasing to European levels during the 17th c.
 new GoodDatum(goods.gold, sources.ind14, 8);
 new GoodDatum(goods.rice, sources.chinaMing, 50 / (100 * unit.grainDensity.rice)); // varied from ~35g to a bit over 100g, but was close to 50 for the first half of the dynasty
+
+// https://en.wikipedia.org/wiki/Economy_of_the_Han_dynasty#Landowners_and_peasants
+// a family of five producing 2000L of grain annually (313 workdays?) was apparently a plausible hypothetical, albeit a low one
+// a bit further down a more neutral 2800L estimate is given
+const china_wage_labor_estimate = 2800 * unit.grainDensity.rice * tangRiceValue / 313;
+new GoodDatum(goods.wageLaborer, sources.chinaHan, china_wage_labor_estimate);
+new GoodDatum(goods.wageLaborer, sources.chinaTang, china_wage_labor_estimate);
+new GoodDatum(goods.wageLaborer, sources.chinaSong, china_wage_labor_estimate);
 
 // babylon https://economics.yale.edu/sites/default/files/yale_money-prices-markets.pdf
 const shekel_babylonian = 8.62; // g Ag "the didrachm (8.62 g) more or less equaled the shekel;"
