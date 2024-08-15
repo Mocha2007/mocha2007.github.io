@@ -805,13 +805,14 @@ new GoodDatum(goods.gold, sources.ind14, 8);
 new GoodDatum(goods.rice, sources.chinaMing, 50 / (100 * unit.grainDensity.rice)); // varied from ~35g to a bit over 100g, but was close to 50 for the first half of the dynasty
 
 // babylon https://economics.yale.edu/sites/default/files/yale_money-prices-markets.pdf
-const shekel_babylonian = 14.55; // g Ag https://www.jewishencyclopedia.com/articles/13536-shekel
+const shekel_babylonian = 8.62; // g Ag "the didrachm (8.62 g) more or less equaled the shekel;"
 new GoodDatum(goods.gold, sources.babylon, 13); // roughly same place and era https://en.wikipedia.org/wiki/Bimetallism#Achaemenid_coinage
 new GoodDatum(goods.barley, sources.babylon, shekel_babylonian / (180 * unit.grainDensity.barley)); // 180 L of barley = 1 shekel
 new GoodDatum(goods.sesame, sources.babylon, shekel_babylonian / (66 * unit.grainDensity.sesame)); // 66 L of sesame = 1 shekel
 new GoodDatum(goods.oilOlive, sources.babylon, shekel_babylonian / (18 * unit.density.oilOlive)); // 18 L of "oil" = 1 shekel
 new GoodDatum(goods.wool, sources.babylon, shekel_babylonian / (5 * unit.lb)); // 5 lb of wool = 1 shekel
 new GoodDatum(goods.wine, sources.babylon, shekel_babylonian / 18000); // 18 L of wine = 1 shekel
+new GoodDatum(goods.wageLaborer, sources.babylon, 20 * shekel_babylonian/(5 * 26)); // 1 month (26 labor days?), 5 workers = 20 shekels
 
 // https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76
 // 1800
