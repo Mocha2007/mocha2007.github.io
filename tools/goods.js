@@ -93,14 +93,7 @@ const unit = {
 	inch: 0.0254,
 	/** @returns {Good} */
 	get index(){
-		switch (document.getElementById('index').value){
-			case 'silver':
-				return goods.silver;
-			case 'labor':
-				return goods.wageLaborer;
-			default:
-				throw "Invalid Index";
-		}
+		return Good.fromName(document.getElementById('index').value);
 	},
 	/** number of grams in a quart of water */
 	qt: 3770/4,
@@ -182,10 +175,7 @@ new Category('Misc', 'black');
 
 // eg. "cheese"
 class Good {
-	/**
-	 * @param {string} name
-	 * @param {string} name
-	 */
+	/** @param {string} name */
 	constructor(name, category = 'NULL', unit_ = ''){
 		/** @type {string} */
 		this.name = name;
@@ -225,6 +215,9 @@ class Good {
 			}
 		});
 		return elem;
+	}
+	static fromName(name){
+		return this.goods.find(good => good.name === name);
 	}
 }
 /** @type {Good[]} */
