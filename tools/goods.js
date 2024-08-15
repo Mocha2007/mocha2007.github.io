@@ -35,6 +35,7 @@ const unit = {
 	cwt: 45359.24,
 	/** kg/m^3 */
 	density: {
+		oilOlive: 916.5, // https://www.chefsresource.com/what-is-the-density-of-olive-oil/
 		glass: 2500,
 	},
 	/** number of grams in a gallon of water */
@@ -446,6 +447,7 @@ const goods = {
 
 const sources = {
 	// "Silver, pure, in bars or coins – 6000 denarii for about 300 g" thus 1g Ag = 20 denarii
+	babylon: new Source('6th c. BCE', 'Babylon', ['https://economics.yale.edu/sites/default/files/yale_money-prices-markets.pdf']), // p. 16
 	chinaHan: new Source('Han', 'China', []), // 206 BCE - 220 CE
 	rome0: new Source(301, 'Rome', 'https://www.academia.edu/23644199/New_English_translation_of_the_Price_Edict_of_Diocletianus'),
 	chinaTang: new Source('Tang', 'China', 'https://cedar.wwu.edu/cgi/viewcontent.cgi?filename=14&article=1016&context=easpress&type=additional'), // 618 - 907
@@ -567,7 +569,7 @@ new GoodDatum(goods.cumin, sources.rome0, 200 * rome.d/(rome.kmod*unit.grainDens
 new GoodDatum(goods.mustard, sources.rome0, 150 * rome.d/(rome.kmod*unit.grainDensity.NULL));
 new GoodDatum(goods.wine, sources.rome0, 8 * rome.d/rome.pt); // 8 denarii for 500mL
 new GoodDatum(goods.beer, sources.rome0, 4 * rome.d/rome.pt); // 4 denarii for 500mL
-new GoodDatum(goods.oilOlive, sources.rome0, 40 * rome.d/rome.pt);
+new GoodDatum(goods.oilOlive, sources.rome0, 40 * rome.d/(rome.pt/1000 * unit.density.oilOlive));
 new GoodDatum(goods.vinegar, sources.rome0, 6 * rome.d/rome.pt);
 new GoodDatum(goods.salt, sources.rome0, 100 * rome.d/(unit.grainDensity.salt * rome.kmod));
 new GoodDatum(goods.honey, sources.rome0, 40 * rome.d/rome.pt);
@@ -802,6 +804,15 @@ new GoodDatum(goods.gold, sources.chinaMing, 5); // went from 1:4 to 1:6 during 
 new GoodDatum(goods.gold, sources.ind14, 8);
 new GoodDatum(goods.rice, sources.chinaMing, 50 / (100 * unit.grainDensity.rice)); // varied from ~35g to a bit over 100g, but was close to 50 for the first half of the dynasty
 
+// babylon https://economics.yale.edu/sites/default/files/yale_money-prices-markets.pdf
+const shekel_babylonian = 14.55; // g Ag https://www.jewishencyclopedia.com/articles/13536-shekel
+new GoodDatum(goods.gold, sources.babylon, 13); // roughly same place and era https://en.wikipedia.org/wiki/Bimetallism#Achaemenid_coinage
+new GoodDatum(goods.barley, sources.babylon, shekel_babylonian / (180 * unit.grainDensity.barley)); // 180 L of barley = 1 shekel
+new GoodDatum(goods.sesame, sources.babylon, shekel_babylonian / (66 * unit.grainDensity.sesame)); // 66 L of sesame = 1 shekel
+new GoodDatum(goods.oilOlive, sources.babylon, shekel_babylonian / (18 * unit.density.oilOlive)); // 18 L of "oil" = 1 shekel
+new GoodDatum(goods.wool, sources.babylon, shekel_babylonian / (5 * unit.lb)); // 5 lb of wool = 1 shekel
+new GoodDatum(goods.wine, sources.babylon, shekel_babylonian / 18000); // 18 L of wine = 1 shekel
+
 // https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76
 // 1800
 const usd_ag = 1.29 / unit.ozt; // usd per gram Ag prior to ~1861
@@ -947,7 +958,7 @@ new GoodDatum(goods.cinnamon, sources.usa190, 0.32/unit.lb / usd_ag_1900);
 new GoodDatum(goods.ginger, sources.usa190, 0.29/unit.lb / usd_ag_1900);
 new GoodDatum(goods.mace, sources.usa190, 0.69/unit.lb / usd_ag_1900);
 new GoodDatum(goods.nutmeg, sources.usa190, 0.19/(0.25*unit.lb) / usd_ag_1900);
-new GoodDatum(goods.oilOlive, sources.usa190, 2.54/unit.gal / usd_ag_1900);
+new GoodDatum(goods.oilOlive, sources.usa190, 2.54/(unit.gal * unit.density.oilOlive/1000) / usd_ag_1900);
 new GoodDatum(goods.vinegar, sources.usa190, 0.34/unit.gal / usd_ag_1900);
 new GoodDatum(goods.asparagus, sources.usa190, 0.78/unit.can._2_5 / usd_ag_1900);
 new GoodDatum(goods.turnip, sources.usa190, 0.24/unit.can._1 / usd_ag_1900);
@@ -1022,8 +1033,8 @@ new GoodDatum(goods.flax, sources.usa202, 0.317/unit.oz / usd_ag2);
 new GoodDatum(goods.honey, sources.usa202, 0.32/unit.oz / usd_ag2);
 new GoodDatum(goods.hops, sources.usa202, 6.1/unit.lb / usd_ag2); // https://www.statista.com/statistics/758004/average-annual-price-of-hops-in-the-us/
 new GoodDatum(goods.lard, sources.usa202, 0.08/unit.oz / usd_ag2);
-new GoodDatum(goods.oilOlive, sources.usa202, 0.281/unit.oz / usd_ag2);
-new GoodDatum(goods.oilSesame, sources.usa202, 0.536/unit.oz / usd_ag2);
+new GoodDatum(goods.oilOlive, sources.usa202, 0.281/(unit.oz * unit.density.oilOlive/1000) / usd_ag2);
+new GoodDatum(goods.oilSesame, sources.usa202, 0.536/(unit.oz * unit.density.oilOlive/1000) / usd_ag2);
 new GoodDatum(goods.opium, sources.usa202, 408/1000 / usd_ag2); // https://www.unodc.org/documents/crop-monitoring/Afghanistan/Afghanistan_opium_survey_2023.pdf
 new GoodDatum(goods.salt, sources.usa202, 0.025/unit.oz / usd_ag2);
 new GoodDatum(goods.sesame, sources.usa202, 0.653/unit.oz / usd_ag2);
@@ -1131,7 +1142,7 @@ new GoodDatum(goods.rice, sources.ind14, 5 * india.jital / india.mann);
 new GoodDatum(goods.sugar, sources.ind14, 1.5 * india.jital / india.sir);
 new GoodDatum(goods.sugarBrown, sources.ind14, 1 * india.jital / (3 * india.sir));
 new GoodDatum(goods.ghee, sources.ind14, 1 * india.jital / (1.5 * india.sir));
-new GoodDatum(goods.oilSesame, sources.ind14, 1 * india.jital / (3 * india.sir));
+new GoodDatum(goods.oilSesame, sources.ind14, 1 * india.jital / (3 * india.sir * unit.density.oilOlive/1000));
 new GoodDatum(goods.salt, sources.ind14, 1 * india.jital / (5 * india.sir));
 new GoodDatum(goods.slaveF, sources.ind14, (5 + 40)/2 * india.tanka);
 new GoodDatum(goods.slaveM, sources.ind14, (20 + 30)/2 * india.tanka);
