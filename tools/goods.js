@@ -91,6 +91,17 @@ const unit = {
 	},
 	/** number of meters in an inch */
 	inch: 0.0254,
+	/** @returns {Good} */
+	get index(){
+		switch (document.getElementById('index').value){
+			case 'silver':
+				return goods.silver;
+			case 'labor':
+				return goods.wageLaborer;
+			default:
+				throw "Invalid Index";
+		}
+	},
 	/** number of grams in a quart of water */
 	qt: 3770/4,
 	/** last in grams */
@@ -149,6 +160,7 @@ class Category {
 /** @type {Category[]} */
 Category.categories = [];
 const NULL_CATEGORY = new Category('NULL', 'black');
+new Category('Silver', 'silver', true);
 new Category('Gold', 'gold', true);
 new Category('Grain', 'wheat', true);
 new Category('Processed Grain', 'wheat', true);
@@ -201,7 +213,17 @@ class Good {
 			elem.style.color = 'black';
 		elem.appendChild(this.th);
 		// add col for each source
-		this.sourceArr.forEach(datum => elem.appendChild(datum ? datum.td : blankTD()));
+		this.sourceArr.forEach(datum => {
+			try {
+				elem.appendChild(datum ? datum.td : blankTD());
+			}
+			catch (_){
+				const e = blankTD();
+				e.innerHTML = 'nd';
+				e.title = 'no index data at this date';
+				elem.appendChild(e);
+			}
+		});
 		return elem;
 	}
 }
@@ -227,18 +249,30 @@ class GoodDatum {
 		this.context = context;
 		GoodDatum.gooddata.push(this);
 	}
+	get indexedPrice(){
+		return this.price / GoodDatum.getAt(unit.index, this.source).price;
+	}
 	get priceElem(){
 		const elem = document.createElement('span');
-		if (this.price < 1)
-			elem.innerHTML = `1:${(1/this.price).toFixed(0)}`;
+		const price = this.indexedPrice;
+		if (price < 1)
+			elem.innerHTML = `1:${(1/price).toFixed(0)}`;
 		else
-			elem.innerHTML = `${this.price.toFixed(0)}:1`;
+			elem.innerHTML = `${price.toFixed(0)}:1`;
+		elem.title = price;
 		return elem;
 	}
 	get td(){
 		const elem = document.createElement('td');
 		elem.appendChild(this.priceElem);
 		return elem;
+	}
+	/**
+	 * @param {Good} good
+	 * @param {Source} source
+	 */
+	static getAt(good, source){
+		return this.gooddata.find(datum => datum.good === good && datum.source === source);
 	}
 }
 /** @type {GoodDatum[]} */
@@ -281,6 +315,7 @@ class Source {
 Source.sources = [];
 
 const goods = {
+	silver: new Good('Silver', 'Silver'),
 	gold: new Good('Gold', 'Gold'),
 	// have gold on top, the rest in groups alphabetical or in logical order...
 	// GRAIN
@@ -439,6 +474,9 @@ const sources = {
 	skyrim: new Source('4E 201', 'Skyrim', 'https://en.uesp.net/wiki/Skyrim:Skyrim', true),
 	dorf: new Source('', 'Dwarf Fortress', 'https://dwarffortresswiki.org', true),
 };
+
+// add default silver
+Source.sources.forEach(source => new GoodDatum(goods.silver, source, 1));
 
 // value of a pound, bimetallic ratio:
 // https://en.wikipedia.org/wiki/Pound_sterling#History_(600%E2%80%931945)
@@ -1316,7 +1354,11 @@ function headers(){
 }
 
 function main(){
+	if (main.last === unit.index)
+		return;
+	main.last = unit.index;
 	const container = document.getElementById('container');
+	container.innerHTML = '';
 	// construct table
 	const table = document.createElement('table');
 	// headers

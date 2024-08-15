@@ -24,6 +24,13 @@
 	Values are given in an equivalent weight of silver unless otherwise specified.
 	eg. "GOLD = 12:1" means 12 pounds of silver is worth 1 lb of gold.
 	"PEPPER = 1:8" means 1 lb of silver is worth 8 lbs of pepper.
+	<br><br>
+	Index: <select id="index" onclick="main();">
+		<option value="labor">Labor (1d, laborer wage)</option>
+		<option value="silver" selected>Silver</option>
+	</select>
+	<br><br>
+	Note: if "labor" is selected, the units for everything will no longer be dimensionless ratios, but be in grams instead.
 </p>
 <div id="container"></div>
 </html>
