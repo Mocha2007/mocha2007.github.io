@@ -1275,6 +1275,8 @@ new GoodDatum(goods.lettuce, sources.skyrim, 2*septim/(0.25 * skyrimWeight));
 new GoodDatum(goods.radish, sources.skyrim, 1*septim/(0.1 * skyrimWeight));
 // https://en.uesp.net/wiki/Beyond_Skyrim:Ingredients
 new GoodDatum(goods.rice, sources.skyrim, 5*septim/(0.1 * skyrimWeight));
+// https://www.reddit.com/r/teslore/comments/hhru3q/what_is_the_average_income/
+new GoodDatum(goods.wageLaborer, sources.skyrim, 10*septim); // rough estimate
 
 
 // DWARF FORTRESS
