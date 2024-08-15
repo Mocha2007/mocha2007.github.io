@@ -441,6 +441,7 @@ const goods = {
 	firewood: new Good('Firewood', 'Misc'),
 	glass: new Good('Glass', 'Misc'),
 	iron: new Good('Iron', 'Misc'),
+	platinum: new Good('Platinum', 'Misc'),
 	uranium: new Good('Uranium', 'Misc'),
 	wax: new Good('Wax', 'Misc'),
 };
@@ -1310,6 +1311,7 @@ new GoodDatum(goods.gold, sources.dorf, 30*19.32 / dfs);
 new GoodDatum(goods.copper, sources.dorf, 2*8.93 / dfs);
 new GoodDatum(goods.iron, sources.dorf, 10*7.85 / dfs);
 new GoodDatum(goods.aluminum, sources.dorf, 40*2.7 / dfs);
+new GoodDatum(goods.platinum, sources.dorf, 40*21.4 / dfs);
 
 new GoodDatum(goods.charcoal, sources.dorf, 2*1.346 / dfs); // fuel
 new GoodDatum(goods.glass, sources.dorf, 2*2.6 / dfs); // green glass
@@ -1325,6 +1327,13 @@ new GoodDatum(goods.cat, sources.dorf, 20 * df$);
 new GoodDatum(goods.gooseLive, sources.dorf, 10 * df$);
 new GoodDatum(goods.chickenLive, sources.dorf, 10 * df$);
 new GoodDatum(goods.duckLive, sources.dorf, 10 * df$);
+
+// Platinum Price History
+// https://sdbullion.com/blog/platinum-price-history
+new GoodDatum(goods.platinum, sources.usa190, 6 / unit.ozt / usd_ag_1900); // abt $6 / ozt
+new GoodDatum(goods.platinum, sources.usa195, 70 / unit.ozt / usd_ag_1950); // abt $70 / ozt
+// https://tradingeconomics.com/commodity/platinum
+new GoodDatum(goods.platinum, sources.usa202, 1011.1 / unit.ozt / usd_ag2);
 
 /** try "compare(sources.rome0, sources.usa202)" */
 function compare(s0, s1){
