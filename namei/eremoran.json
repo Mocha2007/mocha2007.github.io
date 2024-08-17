@@ -16962,6 +16962,15 @@
 		]
 	},
 	{
+		"title": "tanarm",
+		"etym": "C/tanarz/-m",
+		"cat": "v.",
+		"defList": [
+			"(mathematics) remainder, modulus"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "tanarrilm",
 		"etym": "C/tan/arrilm",
 		"cat": "n., 5th",
