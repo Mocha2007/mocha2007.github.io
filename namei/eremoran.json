@@ -4977,6 +4977,15 @@
 		]
 	},
 	{
+		"title": "dinelar",
+		"etym": "D/din",
+		"cat": "n., 1st",
+		"defList": [
+			"(slur) foreigner"
+		],
+		"categories": ["person", "slur"]
+	},
+	{
 		"title": "dinfalbiz",
 		"etym": "C/din/halbiz",
 		"cat": "v.",
@@ -7645,6 +7654,16 @@
 			"melon"
 		],
 		"categories": ["fruit", "plant"]
+	},
+	{
+		"title": "hofor",
+		"etym": "L/NUZ/ho/you//L/VAZ/wo/you",
+		"cat": "n., 1st",
+		"defList": [
+			"(slur) a Važcudic person"
+		],
+		"categories": ["person", "slur"],
+		"notes": "From their frequent use of the pronoun 'you', an unusual concept to Eremorans."
 	},
 	{
 		"title": "hofoz",
@@ -11412,6 +11431,16 @@
 		"categories": ["female given name", "gendered female"]
 	},
 	{
+		"title": "lidunur",
+		"etym": "L/NUZ/Lidunu//L/VAZ/Lidunon/fire-heart",
+		"cat": "n., 1st",
+		"defList": [
+			"(slur) a Važcudic person"
+		],
+		"categories": ["person", "slur"],
+		"notes": "A common Važcudic name"
+	},
+	{
 		"title": "lielat",
 		"etym": "D/li",
 		"cat": "n., 3rd",
@@ -12132,6 +12161,16 @@
 			"mekrak (a parastitic flatworm used primarily in torture and occasionally medicinally for its behavior-altering effects)"
 		],
 		"categories": ["animal", "fantasy"]
+	},
+	{
+		"title": "mekrolar",
+		"etym": "B/mekrak/bolz",
+		"cat": "n., 1st",
+		"defList": [
+			"(slur) stupid person (cf. en. retard)"
+		],
+		"categories": ["person", "slur"],
+		"notes": "The implication being that they must consume a lot of mekrak to be that way."
 	},
 	{
 		"title": "melar",
@@ -13915,11 +13954,29 @@
 		]
 	},
 	{
+		"title": "ôdzbamar",
+		"etym": "C/ôdzbamz/-r",
+		"cat": "n., 1st",
+		"defList": [
+			"loser",
+			"(slur) a Nizhind person"
+		],
+		"categories": ["person", "slur"]
+	},
+	{
+		"title": "ôdzbamz",
+		"etym": "C/ôdz/bamz",
+		"cat": "v.",
+		"defList": [
+			"lose (a competition, war, etc.)"
+		]
+	},
+	{
 		"title": "ôdzbôz",
 		"etym": "C/ôdz/bôz",
 		"cat": "adv., post.",
 		"defList": [
-			"lose (an item)"
+			"lose/misplace (an item)"
 		]
 	},
 	{
@@ -14469,6 +14526,24 @@
 		],
 		"categories": ["weather"],
 		"notes": "(specifically, a compound of their reduplications - *pibu is unattested)"
+	},
+	{
+		"title": "potar",
+		"etym": "r/poltasar",
+		"cat": "n., 1st",
+		"defList": [
+			"(slur) a Połtaś person"
+		],
+		"categories": ["person", "slur"]
+	},
+	{
+		"title": "potasar",
+		"etym": "L/POL/Połtaś",
+		"cat": "n., 1st",
+		"defList": [
+			"a Połtaś person"
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "pu",
@@ -18258,6 +18333,15 @@
 			"be unbounded, be boundless"
 		],
 		"categories": ["extent", "math"]
+	},
+	{
+		"title": "ukuetor",
+		"etym": "C/uku/eto",
+		"cat": "n., 1st",
+		"defList": [
+			"(slur) heathen"
+		],
+		"categories": ["person", "slur"]
 	},
 	{
 		"title": "ukufanuz",
