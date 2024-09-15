@@ -12785,6 +12785,14 @@
 		"notes": "Modern Eremoran uses ''nau'', which was originally just the determiner form."
 	},
 	{
+		"title": "nau kikom",
+		"etym": "P/nau/kikom",
+		"cat": "interj.",
+		"defList": [
+			"(informal) hey, hi, hello"
+		]
+	},
+	{
 		"title": "naba",
 		"etym": "I/PEN/*naβa/root//~/nabi",
 		"cat": "n., 4th",
@@ -18308,6 +18316,15 @@
 		"categories": ["language"]
 	},
 	{
+		"title": "ukubekar",
+		"etym": "C/uku/beka",
+		"cat": "n., 1st",
+		"defList": [
+			"heathen"
+		],
+		"categories": ["person"]
+	},
+	{
 		"title": "ukubo",
 		"etym": "I/PEN/*ukubo/throat",
 		"cat": "n., 4th",
@@ -18378,6 +18395,15 @@
 			"miss (eg. a target)"
 		],
 		"categories": ["war"]
+	},
+	{
+		"title": "ukusir",
+		"etym": "C/uku/sim",
+		"cat": "n., 1st",
+		"defList": [
+			"heathen"
+		],
+		"categories": ["person"]
 	},
 	{
 		"title": "ukutukilz",
@@ -18727,6 +18753,15 @@
 			"unavoidable, inevitable",
 			"darn, dang, oh well, how unfortunate"
 		]
+	},
+	{
+		"title": "utukir",
+		"etym": "B/uku/tukilk",
+		"cat": "n., 1st",
+		"defList": [
+			"(slur) heathen"
+		],
+		"categories": ["person", "slur"]
 	},
 	{
 		"title": "uzibez",
