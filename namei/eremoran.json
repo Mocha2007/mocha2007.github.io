@@ -12020,6 +12020,15 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "markelam",
+		"etym": "B/markla/ela",
+		"cat": "n., 5th",
+		"defList": [
+			"noun"
+		],
+		"categories": ["language"]
+	},
+	{
 		"title": "markla",
 		"etym": "I/PEN/*markla/thing",
 		"cat": "n., 4th",
@@ -18612,6 +18621,15 @@
 		"defList": [
 			"[forms gnomic aspect]"
 		]
+	},
+	{
+		"title": "urelam",
+		"etym": "D/urm",
+		"cat": "n., 5th",
+		"defList": [
+			"verb"
+		],
+		"categories": ["language"]
 	},
 	{
 		"title": "urilar",
