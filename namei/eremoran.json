@@ -17116,6 +17116,16 @@
 		"categories": ["herb", "plant"]
 	},
 	{
+		"title": "tanelam",
+		"etym": "D/tan",
+		"cat": "n., 5th",
+		"defList": [
+			"adverb"
+		],
+		"categories": ["language"],
+		"notes": "from their common location in a sentence: after all else"
+	},
+	{
 		"title": "tanêt",
 		"etym": "C/tanz/-ê",
 		"cat": "n., 3rd",
