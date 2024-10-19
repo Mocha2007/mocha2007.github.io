@@ -1392,7 +1392,7 @@ const blogData = [
 	`
 	@title Vote
 	@date 1729369222230
-	@tags 2024 election
+	@tags 2024_election
 	To give an election update, since I haven't in a while: I voted yesterday.
 	The line at the polling place was the longest I've seen since 2016.
 	Although I have hope Harris will win NC, I suspect Trump will still win the election as a whole.
