@@ -1389,4 +1389,25 @@ const blogData = [
 		</li>
 	</ul>
 	`,
+	`
+	@title Vote
+	@date 1729369222230
+	@tags 2024 election
+	To give an election update, since I haven't in a while: I voted yesterday.
+	The line at the polling place was the longest I've seen since 2016.
+	Although I have hope Harris will win NC, I suspect Trump will still win the election as a whole.
+	Before early voting results were available, I did some quick napkin math and found these approximate odds:
+	<ul>
+		<li>55.5% Harris</li>
+		<li>42.2% Trump</li>
+		<li>2.3% EV Tie</li>
+	</ul>
+	Based on current early voting data though, I actually think Trump's odds are much higher,
+	much higher than even on the betting odds website - something like 70%, again, based on napkin math - and a near-zero chance of a tie.
+	That said, because I love chaos, I'm hoping for this map:
+	<img src="https://i.imgur.com/l088nsQ.png"/>
+	Which 538 currently suggests has about a (0.52)(0.37)(0.51)(0.47)(0.5)(0.42)(0.63) ~ <strong>0.61% (1 in 164)</strong> chance of happening.
+	This actually agrees with 538's modal outcome except in AZ, MI, and NC.
+	538's modal outcome is 281-257 in favor of Trump with odds of (0.52)(0.63)(0.51)(0.53)(0.58)(0.63)(0.5) ~ <strong>1.62% (1 in 62)</strong>.
+	`,
 ];
