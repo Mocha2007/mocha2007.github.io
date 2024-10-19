@@ -1409,5 +1409,13 @@ const blogData = [
 	Which 538 currently suggests has about a (0.52)(0.37)(0.51)(0.47)(0.5)(0.42)(0.63) ~ <strong>0.61% (1 in 164)</strong> chance of happening.
 	This actually agrees with 538's modal outcome except in AZ, MI, and NC.
 	538's modal outcome is 281-257 in favor of Trump with odds of (0.52)(0.63)(0.51)(0.53)(0.58)(0.63)(0.5) ~ <strong>1.62% (1 in 62)</strong>.
+
+	@p
+	There are two other probable tie outcomes:
+	<ul>
+		<li>The same, but with NC and GA swapped: (0.52)(0.37)(0.51)(0.47)(0.5)(0.58)(0.37) ~ <strong>0.49% (1 in 202)</strong></li>
+		<li>The same, but with GA, WI, and NV swapped: (0.52)(0.37)(0.51)(0.47)(0.5)(0.58)(0.37) ~ <strong>0.32% (1 in 315)</strong></li>
+	</ul>
+	The total chance of a tie is not much more than the sum of these three odds: <strong>1.42% (1 in 70)</strong>.
 	`,
 ];
