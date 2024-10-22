@@ -1,0 +1,61 @@
+<html>
+	<!-- tool to optimize wake/sleep schedule -->
+	 <head>
+		<title>Daylight Wakeness Optimizer</title>
+		<link rel="shortcut icon" href="../img/favicon.ico">
+		<link href="tool.css" type="text/css" rel="stylesheet">
+		<link href="../css/button.css" type="text/css" rel="stylesheet">
+		<script src="../oneiatime.js" defer></script>
+		<script>
+			const LOCALE = [[], { hour: 'numeric', minute: '2-digit' }];
+			const HOUR = 60*60*1000;
+			const GEO = {
+				ALT: 160, // meters
+				HEADING: 0, // degrees
+				LAT: 36,
+				LON: -79,
+			};
+			function query(){
+				navigator.geolocation.getCurrentPosition(gc => {
+					GEO.ALT = gc.coords.altitude;
+					GEO.HEADING = gc.coords.heading;
+					GEO.LAT = gc.coords.latitude;
+					GEO.LON = gc.coords.longitude;
+				},
+				e => {
+					console.debug(`Couldn't get geolocation due to ${e}`);
+				});
+			}
+			function run(){
+				// query();
+				const t = new Date();
+				const sun = solarPosition(t, GEO.LAT, GEO.LON);
+				const h_raw = document.getElementById('hours').value;
+				const h = (24 - h_raw) * HOUR;
+				document.getElementById("wake").innerHTML = new Date(+sun.snoon - h/2).toLocaleTimeString(...LOCALE);
+				document.getElementById("sleep").innerHTML = new Date(+sun.snoon + h/2).toLocaleTimeString(...LOCALE);
+				// misc
+				document.getElementById("hr").innerHTML = h_raw;
+				document.getElementById("ldawn").innerHTML = sun.sunrise.toLocaleTimeString(...LOCALE);
+				document.getElementById("ldusk").innerHTML = sun.sunset.toLocaleTimeString(...LOCALE);
+				document.getElementById("lnoon").innerHTML = sun.snoon.toLocaleTimeString(...LOCALE);
+			}
+		</script>
+	 </head>
+	 <body onload="run();">
+		<h1>Daylight Wakeness Optimizer</h1>
+		<input id="hours" type="number" value="9"> hours of sleep
+		<span class="button" onclick="run();">&rarr;</span>
+		<hr>
+		If you want to get <span id="hr"></span> hours of sleep centered on local solar noon,
+		wake up at <span id="wake"></span>,<br>
+		and fall asleep at <span id="sleep"></span>.
+		<hr>
+		Local dawn is <span id="ldawn"></span>,
+		local dusk is <span id="ldusk"></span>,
+		and local noon is <span id="lnoon"></span>.
+		<script>
+			query();
+		</script>
+	 </body>
+</html>
