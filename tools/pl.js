@@ -32,6 +32,7 @@ class Declension {
 			tr.appendChild(th);
 			PL.numbers.forEach(number => {
 				const td = document.createElement('td');
+				td.classList.add('pl');
 				tr.appendChild(td);
 				const ID = `${number}${c}`;
 				td.innerHTML = this[ID];
@@ -376,6 +377,7 @@ const PL = {
 		const plural = declension['pl' + ncase];
 		// create element
 		const e = document.createElement('div');
+		e.classList.add('pl');
 		e.innerHTML = `${preposition} + <strong>${ncase.toUpperCase()}</strong>: <em>${preposition} ${singular}</em> / <em>${preposition} ${plural}</em>`;
 		return e;
 	},
