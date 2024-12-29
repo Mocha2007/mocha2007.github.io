@@ -313,7 +313,7 @@ const PL = {
 			container.appendChild(this.prep(
 				decl,
 				psel.value,
-				psel.value === 'nom' ? '' : psel.options[psel.selectedIndex].text.match(/PL \w+/g)[0].slice(3)
+				psel.value === 'nom' ? '' : psel.options[psel.selectedIndex].text.match(/PL [\wę]+/g)[0].slice(3)
 			));
 		}
 		catch (_){
