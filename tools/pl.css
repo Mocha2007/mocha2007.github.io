@@ -21,3 +21,26 @@ th {
 .pl {
 	font-family: "Brygada 1918", serif;
 }
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: black;
+		color: silver;
+	}
+	th {
+		background-color: #036;
+		text-transform: uppercase;
+	}
+	.gf {
+		background-color: #846;
+	}
+	.gm {
+		background-color: #448;
+	}
+	.gn {
+		background-color: #444;
+	}
+	.irregular {
+		background-color: #400;
+		color: #c88;
+	}
+}
