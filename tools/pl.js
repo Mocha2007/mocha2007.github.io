@@ -305,7 +305,16 @@ const PL = {
 		const container = document.getElementById('container');
 		container.innerHTML = '';
 		try {
-			container.appendChild(this.decl.decl(word).elem);
+			const decl = this.decl.decl(word);
+			// declension table
+			container.appendChild(decl.elem);
+			// preposition
+			const psel = document.getElementById('cases_bonus');
+			container.appendChild(this.prep(
+				decl,
+				psel.value,
+				psel.value === 'nom' ? '' : psel.options[psel.selectedIndex].text.match(/PL \w+/g)[0].slice(3)
+			));
 		}
 		catch (_){
 			container.appendChild(this.invalid);
@@ -356,6 +365,20 @@ const PL = {
 		this.display(document.getElementById('inp').value);
 	},
 	numbers: ['s', 'pl'],
+	/**
+	 * @param {Declension} declension
+	 * @param {string} ncase - case goverened by selected preposition (lowercase, please!)
+	 */
+	prep(declension, ncase, preposition){
+		/** @type {string} */
+		const singular = declension['s' + ncase];
+		/** @type {string} */
+		const plural = declension['pl' + ncase];
+		// create element
+		const e = document.createElement('div');
+		e.innerHTML = `${preposition} ${singular} / ${preposition} ${plural}`;
+		return e;
+	},
 };
 
 const PL_LOADED = true;

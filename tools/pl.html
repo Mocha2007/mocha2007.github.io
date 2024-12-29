@@ -10,6 +10,8 @@
 <div id="ctrl" onclick="PL.main()">
 	<input id="inp" type="text" onkeyup="PL.main()">
 	<br>
+	Animacy (only matters for masculine nouns):
+	<br>
 	<input type="radio" id="inan" name="animacy" value="inan" checked>
 	<label for="inan">inanimate</label><br>
 	<input type="radio" id="anim" name="animacy" value="anim">
@@ -40,6 +42,38 @@
 	<label for="yin2" class="gn"><input type="checkbox" id="yin2" name="yin2"> -y/i Gen Pl (N)</label>
 	<br>
 	<label for="oa"><input type="checkbox" id="oa" name="oa"> Oblique Ablaut</label>
+	<br>
+	Preposition:
+	<select name="cases_bonus" id="cases_bonus">
+		<option value="nom">(none)</option>
+		<option value="gen">ABE / PL bez / EN without</option>
+		<option value="gen">ABL / PL od / EN from</option>
+		<option value="loc">ADE / PL przy / EN by</option>
+		<option value="loc">ANTE / PL przed / EN before</option>
+		<option value="acc">ANTL / PL przed / EN to in front of</option>
+		<option value="gen">BEN / PL dla / EN for</option>
+		<option value="ins">COM / PL z / EN with</option>
+		<option value="gen">DEL CAUS ELA / PL z / EN off</option>
+		<option value="acc">ILL / PL w / EN into</option>
+		<option value="loc">INE / PL w / EN in</option>
+		<option value="acc">ITRL / PL między / EN to between</option>
+		<option value="loc">ITRT / PL między / EN between</option>
+		<option value="gen">ITRT2 / PL wśród / EN among</option>
+		<option value="gen">LAT / PL do / EN to</option>
+		<option value="acc">PER / PL przez / EN through</option>
+		<option value="loc">POSTE / PL po za / EN after</option>
+		<option value="acc">POSTL / PL po za / EN to behind</option>
+		<option value="loc">SUBE / PL pod / EN under</option>
+		<option value="acc">SUBL / PL pod / EN to under</option>
+		<option value="loc">SUPE / PL na / EN on</option>
+		<option value="acc">SUPL / PL na / EN onto</option>
+		<option value="loc">SUPE2 / PL nad / EN above</option>
+		<option value="acc">SUPL2 / PL nad / EN to above</option>
+		<option value="loc">PL o / EN about</option>
+		<option value="gen">PL u / FR chez</option>
+		<option value="dat">PL wbrew / EN against</option>
+		<option value="gen">PL wokół / EN around</option>
+	</select>
 </div>
 <div id="container"></div>
 <script>
