@@ -313,7 +313,7 @@ const PL = {
 			container.appendChild(this.prep(
 				decl,
 				psel.value,
-				psel.value === 'nom' ? '' : psel.options[psel.selectedIndex].text.match(/PL [\wę]+/g)[0].slice(3)
+				psel.value === 'nom' ? '' : psel.options[psel.selectedIndex].text.match(/PL [a-ząćęłńóśźż]+/g)[0].slice(3)
 			));
 		}
 		catch (_){
@@ -376,7 +376,7 @@ const PL = {
 		const plural = declension['pl' + ncase];
 		// create element
 		const e = document.createElement('div');
-		e.innerHTML = `${preposition} ${singular} / ${preposition} ${plural}`;
+		e.innerHTML = `${preposition} + <strong>${ncase.toUpperCase()}</strong>: <em>${preposition} ${singular}</em> / <em>${preposition} ${plural}</em>`;
 		return e;
 	},
 };
