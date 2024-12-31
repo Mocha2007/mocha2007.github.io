@@ -20,6 +20,10 @@ th {
 .pl {
 	font-family: "Brygada 1918", serif;
 }
+.prep {
+	font-size: larger;
+	padding: 1em 0;
+}
 
 
 @media (prefers-color-scheme: light) {
