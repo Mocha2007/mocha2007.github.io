@@ -378,7 +378,7 @@ const PL = {
 		// create element
 		const e = document.createElement('div');
 		e.classList.add('pl');
-		e.innerHTML = `${preposition} + <strong>${ncase.toUpperCase()}</strong>: <em>${preposition} ${singular}</em> / <em>${preposition} ${plural}</em>`;
+		e.innerHTML = `${preposition} + <strong class="gov_${ncase}">${ncase.toUpperCase()}</strong>: <em>${preposition} <span class="gov_${ncase}">${singular}</span></em> / <em>${preposition} <span class="gov_${ncase}">${plural}</span></em>`;
 		return e;
 	},
 };

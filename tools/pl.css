@@ -1,34 +1,56 @@
-label {
+/* LatinTutorial-inspired colors https://www.youtube.com/watch?v=zA0CPJZfoI4&list=PLI76N29qybf-o5U6tvD-8VPILacttSaM3 */
+:root {
+	--la-red: #FD6E6A; /* loc. use of abl (R41) */
+	--la-orange: #FE8801; /* appears to be secondary, also used for gender headers (eg. "F") */
+	--la-gold: #FECD68; /* R4: 2.PL*/
+	--la-yellow: #F7F866; /* R5: 3.S, possessives, reflexives, used for number headers (eg. "singular"), nom. */
+	--la-green: #04F705; /* appears to be primary, also 1.S, was used for the dative */
+	--la-cyan: #6AD0FD; /* used for 2.S, antecedents, genitives, but also acc., ins. use of abl (R41) */ 
+	--la-blue: #6F76F7; /* appears to be for smaller subtext or table headers, but also third person possessives */
+	--la-purple: #D17AFC; /* 3.PL */
+	--la-pink: #FC7ED1; /* R4: 1.PL, also abl.? */
+}
+
+label, th {
 	user-select: none;
 }
 th {
-	background-color: #eff7ff;
 	text-transform: uppercase;
-}
-.gf {
-	background-color: #fdf;
-}
-.gm {
-	background-color: #ddf;
-}
-.gn {
-	background-color: #ddd;
-}
-.irregular {
-	background-color: #fee;
-	color: #400;
 }
 .pl {
 	font-family: "Brygada 1918", serif;
 }
+
+
+@media (prefers-color-scheme: light) {
+	th {
+		background-color: #eff7ff;
+	}
+	.gf {
+		background-color: #fdf;
+	}
+	.gm {
+		background-color: #ddf;
+	}
+	.gn {
+		background-color: #ddd;
+	}
+	.irregular {
+		background-color: #fee;
+		color: #400;
+	}
+}
+
 @media (prefers-color-scheme: dark) {
 	body {
 		background-color: black;
 		color: silver;
 	}
-	th {
-		background-color: #036;
-		text-transform: uppercase;
+	th { /* column headers */
+		color: var(--la-orange);
+	}
+	th:first-child { /* row headers */
+		color: var(--la-blue);
 	}
 	.gf {
 		background-color: #846;
@@ -42,5 +64,17 @@ th {
 	.irregular {
 		background-color: #400;
 		color: #c88;
+	}
+	.gov_acc {
+		color: var(--la-cyan);
+	}
+	.gov_dat {
+		color: var(--la-green);
+	}
+	.gov_gen {
+		color: var(--la-pink);
+	}
+	.gov_loc {
+		color: var(--la-red);
 	}
 }
