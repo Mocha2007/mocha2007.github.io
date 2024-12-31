@@ -70,13 +70,16 @@ th {
 		color: #c88;
 	}
 	.gov_acc {
-		color: var(--la-cyan);
+		color: var(--la-blue);
 	}
 	.gov_dat {
 		color: var(--la-green);
 	}
 	.gov_gen {
 		color: var(--la-pink);
+	}
+	.gov_ins {
+		color: var(--la-cyan);
 	}
 	.gov_loc {
 		color: var(--la-red);
