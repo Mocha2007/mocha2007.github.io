@@ -366,6 +366,12 @@ const PL = {
 		this.display(document.getElementById('inp').value);
 	},
 	numbers: ['s', 'pl'],
+	/** @param {number} n integer */
+	number_case(n){
+		return n == 1 ? 'snom'
+			: n == 0 || (10 < n && n < 20) || 4 < Math.abs(n) % 10 ? 'plgen'
+			: 'plnom';
+	},
 	/**
 	 * @param {Declension} declension
 	 * @param {string} ncase - case goverened by selected preposition (lowercase, please!)
