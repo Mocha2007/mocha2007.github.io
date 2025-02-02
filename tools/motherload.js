@@ -38,6 +38,9 @@ class Mineral {
 		if (n > -1 && n < 6){
 			return 'dirt';
 		}
+		if (n === 31){
+			return 'gas'; // ???
+		}
 		return minerals[mineralId].name;
 	}
 }
@@ -98,7 +101,7 @@ function generateEarth(){
 			else if (y > earthHeight - 5){
 				earth[x][y][0] = -8;
 			}
-			else {
+			else { // main terrain gen block
 				if (random(5) === 0){
 					if (random(5) === 0){
 						if (random(5) === 0){
@@ -122,19 +125,17 @@ function generateEarth(){
 				}
 				else {
 					earth[x][y][0] = random(5) + 1;
-					if (y * 1.5 > earthHeight / 3){
-						if (random(int(earthHeight - y) / earthHeight * 15) === 0){
-							if (y / 2 * 1.5 > earthHeight / 3 && random(2) === 0){
-								if (y / 3 * 1.5 > earthHeight / 3 && random(2) === 0){
-									earth[x][y][0] = 31;
-								}
-								else {
-									earth[x][y][0] = 28 + random(3);
-								}
+					if (4.5 * y > earthHeight && random(int((earthHeight - y) / earthHeight * 15)) === 0){
+						if (2.25 * y > earthHeight && random(2) === 0){
+							if (1.5 * y > earthHeight && random(2) === 0){
+								earth[x][y][0] = 31;
 							}
 							else {
-								earth[x][y][0] = 25 + random(3);
+								earth[x][y][0] = 28 + random(3);
 							}
+						}
+						else {
+							earth[x][y][0] = 25 + random(3);
 						}
 					}
 				}
