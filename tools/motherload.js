@@ -231,3 +231,33 @@ function histogram(){
 }
 
 histogram();
+
+/**
+ * @param {string} oooooooo
+ * @param {string} ooooooooo
+ */
+function ooo(oooooooo, ooooooooo){
+	let oooooooooo = '';
+	let ooooooooooo = 0;
+	let i = 0;
+	while (i < oooooooo.length){
+		oooooooooo += String.fromCharCode(oooooooo.charCodeAt(i) ^ ooooooooo.charCodeAt(ooooooooooo));
+		ooooooooooo++;
+		if (ooooooooooo === ooooooooo.length){
+			ooooooooooo = 0;
+		}
+		i++;
+	}
+	return oooooooooo;
+}
+/** @type {string[]} */
+const codes = [];
+codes[0] = ooo('ÈÉÀÁÉÀÁÄÀÀÁÀÁÂÈÉÀÁÉÀÁÄÀÀÁÀÁÂ', 'ñ');
+codes[1] = ooo('ÀÀÃÀÁÀÀÀÁÀÁÀÀÀÇÀÀÅÈÆÈÉÀÁÉÀÁÀ', 'ñ');
+codes[2] = ooo('ÀÁÁÀÁÄÀÁÂÀÁÁÀÀÆÀÁÂ', 'ñ');
+codes[3] = ooo('ÀÀÈÈÆÀÀÅÀÀÃÄÆ', 'ñ');
+codes[4] = ooo('ÀÁÂÀÀÆÀÃÃÀÃÃÀÁÉÀÁÀ', 'ñ');
+codes[5] = ooo('ÀÀÇÀÀÀÀÀÀÈÈÀÀÀÀÀÀÀÁÉ', 'ñ');
+codes[6] = ooo('ÀÀÄÀÀÆÀÀÃÀÁÀÀÀÅÀÀÄÀÁÄÀÃÃÀÁÀ', 'ñ');
+codes[7] = ooo('ÀÁÃÀÁÄÀÁÉÀÁÉÀÁÀÀÀÅÀÀÆÀÀÃ', 'ñ');
+codes[8] = ooo('ÀÀÁÀÀÇÀÀÀÀÀÆÈÈÀÁÅÈÆÈÉÀÁÉÀÁÀ', 'ñ');

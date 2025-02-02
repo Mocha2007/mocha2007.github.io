@@ -1418,4 +1418,98 @@ const blogData = [
 	</ul>
 	The total chance of a tie is not much more than the sum of these three odds: <strong>1.42% (1 in 70)</strong>.
 	`,
+	`
+	@title Motherload
+	@date 1738512686099
+	@tags flash
+	After decompiling the flash game <cite>Motherload</cite> to learn its world generation, I found the following information:
+	<br><br>
+	Ore Distribution (determined computationally)
+	<iframe width="700" height="422" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSYsvUZTjG7dMOJKNA2F5fJACsMuD60uXMT0eUBv9kr18v10V2xAirCaoz86_p15nW28Io5c47G49sX/pubchart?oid=270808293&amp;format=interactive"></iframe>
+
+	Avg. Value of Tile Row (determined computationally)
+	<iframe width="700" height="422" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSYsvUZTjG7dMOJKNA2F5fJACsMuD60uXMT0eUBv9kr18v10V2xAirCaoz86_p15nW28Io5c47G49sX/pubchart?oid=1064456251&amp;format=interactive"></iframe>
+
+	Ore Distribution (determined mathematically)
+	<iframe width="700" height="422" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSYsvUZTjG7dMOJKNA2F5fJACsMuD60uXMT0eUBv9kr18v10V2xAirCaoz86_p15nW28Io5c47G49sX/pubchart?oid=1116954098&amp;format=interactive"></iframe>
+
+	Avg. Value of Tile Row (determined mathematically)
+	<iframe width="700" height="422" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSYsvUZTjG7dMOJKNA2F5fJACsMuD60uXMT0eUBv9kr18v10V2xAirCaoz86_p15nW28Io5c47G49sX/pubchart?oid=777561049&amp;format=interactive"></iframe>
+
+	@p
+	Some worldgen observations:
+	<ul>
+		<li>Apparently "cave generation" is just randomly erasing 1/3 of tiles after generation. It sure seems like a lot less, but after some in-game verification it indeed appears about 1/3 of tiles are empty, and the distribution is random.</li>
+		<li>Interestingly, even though Ironium is always rarer than Bronzium, Bronzium is worth twice as much. This apparent bug is due to ore generation being split into tiers - Bronzium cannot appear in the third ore generation tier, and Ironium cannot appear in the first or second ore generation tiers, because the tier bonus is added AFTER generating the random integer in the range, rather than being added to the range.</li>
+		<li>Generation of "treasures" is uniform throughout the applicable range (below 1,000 ft.), and the four treasure types are equally distributed.</li>
+		<li>The world is evenly divided into ranges, where in a particular range, ore tiers 0..n generate equally often, the n+1-th tier is 5 times rarer, and the n+2-th tier is 25 times rarer.</li>
+	</ul>
+
+	@p
+	Some code observations:
+	<ul>
+		<li>Internally, gas traps are called "l".</li>
+		<li>Internally, the rewards you get at the end of the game use the same structure as ores.</li>
+		<li>There is a debug item that teleports you to the core of the planet, with a price of $1, and is bound to the 0 key. However, in normal gameplay, it is, of course, unobtainable.</li>
+		<li>The silver-tier drill is called <em>Silvide</em> instead of <em>Silverium</em> like the other upgrades.</li>
+		<li>The dropship remains just offscreen after dropping you off, and is therefore rendered the whole game (not that it matters much).</li>
+		<li>
+			Gas trap damage is calculated: <code>floor((depth + 3000) / 15) * cooling</code> <!-- 962 -->
+			Cooling tiers have the following values: <code>1, 0.9, 0.75, 0.6, 0.4, 0.2</code>
+			HP tiers have the following values: <code>10, 17, 30, 50, 80, 120, 180</code>
+			Since gas pockets only appear at a depth of 5,000 ft and below (until, of course, 7,350 ft), <strong>they deal at least 106.6 damage, and will therefore one-shot you unless you have one of the highest two hull tiers and the highest cooling tier</strong>.
+		</li>
+		<li>Even though the game's story takes place on Mars, Mars is called "Earth" internally.
+		<li>When typed anywhere ingame, the following cheat codes have the following effects:
+			<ul>
+				<li>blingbling - gives player $100,000</li>
+				<li>penetrable - upgrade hull by one tier</li>
+				<li>digdug - upgrade drill by one tier</li>
+				<li>warp9 - upgrade engine by one tier</li>
+				<li>guzzle - upgrade fuel tank by one tier</li>
+				<li>toocool - upgrade radiator by one tier</li>
+				<li>supersize - upgrade storage bay by one tier</li>
+				<li>fillerup - refuel completely</li>
+				<li>ntouchable - max hp, upgrades, and 99 of each item</li>
+			</ul>
+			Some of these you'll need to be in a menu or the pause screen to type properly, otherwise it will trigger a hotkey and reset the code.
+			The game will say "Sorry, cheaters can't save." if you attempt to save - however, due to a bug, the code appears to save the game anyways.
+			Since the login service is long dead, I have no way of verifying this, but it would be pretty funny if it's true.
+		</li>
+		<li>
+			The game attempts to encrypt certain data (eg. submitting scores), but the "encryption" is just taking the string and xor'ing every character by ñ (char code 241)...
+			so you can just xor it by ñ again to get the original string.
+			The save data is an array (of the below values) turned into a comma-separated string, and put through this "encryption".
+			<code>
+			[0]	score<br>
+			[1] cash<br>
+			[2] scoreBillion (see note below)<br>
+			[3] lvl<br>
+			[4] hp<br>
+			[5] fuel (if fuel is 0, saves "1" instead)<br>
+			[6] hull tier<br>
+			[7] drill tier<br>
+			[8] engine tier<br>
+			[9] fuel tank tier<br>
+			[10] radiator tier<br>
+			[11] storage bay tier<br>
+			[12] to [21] storage bay contents<br>
+			[22] to [28] consumable items<br>
+			[29] lastTransmission (ie. max depth)<br>
+			[30] playTime<br>
+			[31] totalPlayTime
+			</code>
+			scoreBillion (unsure why this is separated, but I suspect it is to prevent players from just padding the begining of the string with random characters to increase score)
+		</li>
+		<li>Your username and password are sent unencrypted(!!!) but not your save data.</li>
+	</ul>
+
+	@p
+	Did you know higher-tier ores are also heavier, taking more cargo space?
+	Every ore above Silverium is denser than the last.
+	As for value density, more valuable ores are always more value-dense as well (which isn't terribly surprising, but I figure it'd be worth a check).
+
+	The code used to generate the first two graphs is available at
+	<a href="../tools/motherload.html">https://mocha2007.github.io/tools/motherload</a>.
+	`,
 ];
