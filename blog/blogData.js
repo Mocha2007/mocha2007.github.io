@@ -1438,7 +1438,7 @@ const blogData = [
 
 	@p
 	Some worldgen observations:
-	<ul>
+	<ul class="list2">
 		<li>Apparently "cave generation" is just randomly erasing 1/3 of tiles after generation. It sure seems like a lot less, but after some in-game verification it indeed appears about 1/3 of tiles are empty, and the distribution is random.</li>
 		<li>Interestingly, even though Ironium is always rarer than Bronzium, Bronzium is worth twice as much. This apparent bug is due to ore generation being split into tiers - Bronzium cannot appear in the third ore generation tier, and Ironium cannot appear in the first or second ore generation tiers, because the tier bonus is added AFTER generating the random integer in the range, rather than being added to the range.</li>
 		<li>Generation of "treasures" is uniform throughout the applicable range (below 1,000 ft.), and the four treasure types are equally distributed.</li>
@@ -1447,7 +1447,7 @@ const blogData = [
 
 	@p
 	Some code observations:
-	<ul>
+	<ul class="list2">
 		<li>Internally, gas traps are called "l".</li>
 		<li>Internally, the rewards you get at the end of the game use the same structure as ores.</li>
 		<li>There is a debug item that teleports you to the core of the planet, with a price of $1, and is bound to the 0 key. However, in normal gameplay, it is, of course, unobtainable.</li>
@@ -1461,7 +1461,7 @@ const blogData = [
 		</li>
 		<li>Even though the game's story takes place on Mars, Mars is called "Earth" internally.
 		<li>When typed anywhere ingame, the following cheat codes have the following effects:
-			<ul>
+			<ul class="list2">
 				<li>blingbling - gives player $100,000</li>
 				<li>penetrable - upgrade hull by one tier</li>
 				<li>digdug - upgrade drill by one tier</li>
@@ -1511,5 +1511,15 @@ const blogData = [
 
 	The code used to generate the first two graphs is available at
 	<a href="../tools/motherload.html">https://mocha2007.github.io/tools/motherload</a>.
+	`,
+	`
+	@title Random Flash Decompilation Observations
+	@date 1738520765488
+	@tags flash
+	<ul class="list2">
+		<li>"Steve" from <cite>The Sea Has No Claim</cite> wanders the map randomly, and doesn't have any particular advantage over "Wandering Boats"</li>
+		<li>In <cite>Corporation Incorporated</cite>, four names - Quinn, Reagan, Reese, and Riley - have spaces at their beginnings.</li>
+		<li><a href="https://docs.google.com/spreadsheets/d/1YQdaQTZyQgu52AhT1VxMrMC7H-dX1d0m3G_RbqVSeQw/edit?usp=sharing">Age of Empires unit stats</a></li>
+	</ul>
 	`,
 ];
