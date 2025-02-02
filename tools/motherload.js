@@ -26,9 +26,6 @@ class Mineral {
 	}
 	static idToMineralName(n){
 		const mineralId = n - 6;
-		if (mineralId < 0 || mineralId >= minerals.length){
-			return 'other';
-		}
 		if (n > 24 && n < 28){
 			return 'rock';
 		}
@@ -39,7 +36,10 @@ class Mineral {
 			return 'dirt';
 		}
 		if (n === 31){
-			return 'gas'; // ???
+			return 'gas';
+		}
+		if (mineralId < 0 || mineralId >= minerals.length){
+			return `unknown #${n}`;
 		}
 		return minerals[mineralId].name;
 	}
@@ -82,7 +82,7 @@ function generateEarth(){
 		let y = 0;
 		while (y < earthHeight){
 			earth[x][y] = [];
-			earth[x][y][1] = random(4);
+			earth[x][y][1] = random(4); // orientation?
 			if (y < 5){
 				earth[x][y][0] = 0;
 			}
