@@ -33,7 +33,7 @@ class Mineral {
 			return 'lava';
 		}
 		if (n > -1 && n < 6){
-			return 'dirt';
+			return n ? 'dirt' : 'air';
 		}
 		if (n === 31){
 			return 'gas';
