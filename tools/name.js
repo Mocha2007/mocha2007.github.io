@@ -193,5 +193,58 @@ new Language('Verdurian', [[[0], [0, 1]]],
 	]
 );
 
+new Language('Ithkuil', [[[4], [0, 2], [3], [1, 2]]],
+	// http://www.zompist.com/names.htm
+	[
+		[
+			'acvil', // GREY
+			'agpwal', // HAMMER
+			'alḑaz', // FOREST
+			'allwil', // BRIGHT
+			'almal', // MIGHT, STRENGTH
+			'aļļtļil', // HEAVEN
+			'ankral', // HOME
+			'avplil', // LIGHTNING
+			'elzmřal', // ASH (tree)
+			'emfaj', // HONOR
+			'ežval', // GOOD (morally)
+			'otglal', // SPEAR
+			'ubyal', // WISE
+			'ukskal', // FURY
+			'ulppil', // HOARD
+			'umšal', // BOLD
+			'unšwal', // NOBLE
+		],
+		[
+			'aggwal', // STONE
+			'kçil', // BLADE
+			'umflil', // SPOUSE
+		],
+		// either
+		[
+			'aljar', // GOLD
+			'amtril', // HELMET
+			'anstal', // RAVEN, ROOK
+			'aňsdyal', // EAGLE
+			'ařal', // DAY
+			'asglar', // IRON
+			'ažfel', // HEALTHY
+			'ažxil', // FIRE
+			'eltil', // RULER
+			'elţmil', // GUEST
+			'enil', // GIFT
+			'eňtçaj', // COUNSEL
+			'epxal', // BOAR
+			'ernzil', // FRIEND
+			'ezval', // WOLF
+			'ujthaj', // WAR
+			'urhil', // BEAR
+			'uţkhal', // ARMY
+		],
+		['â-'],
+		['hw'],
+	]
+);
+
 // finally
 namegen.updateCount();
