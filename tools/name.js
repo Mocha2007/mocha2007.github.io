@@ -1,5 +1,17 @@
 /* exported name */
-/* global random, sum, title */
+/* global log, random, sum, title */
+
+function bars(n){
+	const completion = Math.min(4, Math.floor(log(n, 6)));
+	const icon_src = [
+		'https://upload.wikimedia.org/wikipedia/commons/6/60/00_percent.svg',
+		'https://upload.wikimedia.org/wikipedia/commons/c/ce/25_percent.svg',
+		'https://upload.wikimedia.org/wikipedia/commons/e/eb/50_percent.svg',
+		'https://upload.wikimedia.org/wikipedia/commons/6/62/75_percent.svg',
+		'https://upload.wikimedia.org/wikipedia/commons/2/24/100_percent.svg',
+	][completion];
+	return `<img src="${icon_src}" style="height:4vh;">`;
+}
 
 class Language {
 	constructor(name, forms, sets){
@@ -31,16 +43,17 @@ class Language {
 		radio.classList.add('langChoice');
 		if (!Language.languages.length)
 			radio.checked = 'checked';
+		radio.id = `radio_${this.name}`;
 		// label
 		const label = document.createElement('label');
-		label.innerHTML = this.name;
+		label.innerHTML = `${this.name} ${bars(this.count || 1)}`;
 		label.appendChild(radio);
 		container.appendChild(label);
 		return this.elem_ = container;
 	}
 	/** @returns {boolean} */
 	get selected(){
-		return this.elem.children[0].children[0].checked;
+		return document.getElementById(`radio_${this.name}`).checked;
 	}
 	gen(){
 		return this.randomForm().map(x => this.randomComponent(x)).join('');
