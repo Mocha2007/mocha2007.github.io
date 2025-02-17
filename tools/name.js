@@ -34,7 +34,8 @@ class Language {
 	get elem(){
 		if (this.elem_)
 			return this.elem_;
-		const container = document.createElement('span');
+		const container = document.createElement('div');
+		container.style.display = 'inline-block';
 		// https://www.w3schools.com/tags/att_input_type_radio.asp
 		const radio = document.createElement('input');
 		radio.type = 'radio';
