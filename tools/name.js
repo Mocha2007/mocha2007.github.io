@@ -111,6 +111,8 @@ new Language('Tragedeigh', [DITHEMATIC, [[2]].concat(DITHEMATIC)],
 	]
 );
 
+// todo https://en.wiktionary.org/wiki/Category:Ancient_Greek_male_given_names
+
 new Language('Proto-Celtic', [DITHEMATIC],
 	// https://en.wiktionary.org/wiki/Category:Proto-Celtic_male_given_names
 	[
@@ -157,6 +159,26 @@ new Language('Proto-Slavic', [DITHEMATIC],
 		['bogъ', 'bojь', 'borni', 'bъdi', 'gosti', 'jaro', 'jьzę',
 			'miro', 'mьsti', 'mojь', 'vęťe', 'voldi', 'žiro'],
 		['danъ', 'gostь', 'měrъ', 'mirъ', 'slàvъ', 'vojь', 'vujь'],
+	]
+);
+
+const VERDURIAN_1 = ['aď', 'al', 'an', 'andor', 'ban', 'belgo', 'benda', 'bes', 'bur',
+	'calo', 'clai', 'com', 'cor', 'cör', 'cuma', 'dan', 'dašo', 'dën',
+	'diči', 'dom', 'dorot', 'draco', 'ďal', 'ďom', 'efar', 'es', 'ele',
+	'elir', 'elu', 'elure', 'er', 'esta', 'fale', 'fant', 'fi', 'fori',
+	'fre', 'gar', 'gen', 'ges', 'glavo', 'glini', 'gröse', 'hum', 'ili',
+	'inye', 'kai', 'kol', 'leti', 'lir', 'lon', 'mei', 'meli', 'mëra',
+	'mura', 'nan', 'nařo', 'neže', 'nožu', 'nou', 'nusse', 'oh', 'op',
+	'on', 'örn', 'pal', 'pe', 'pon', 'ric', 'ruže', 'řem', 'řezi',
+	'sasna', 'sar', 'sea', 'sört', 'sul', 'šeli', 'tai', 'tel', 'tihi',
+	'tuli', 'vaďra', 'veaďa', 'vuran', 'zer', 'zol', 'zon', 'zula',
+	'žen', 'žina', 'žive', 'žorta', 'žuli', 'žosu'];
+
+new Language('Verdurian', [DITHEMATIC],
+	// http://www.zompist.com/names.htm
+	[
+		VERDURIAN_1,
+		VERDURIAN_1.concat(['dul', 'eon', 'nes', 'om', 'orion', 'šec']), // todo: figure out why I can't just do [[0], [0, 1]]
 	]
 );
 
