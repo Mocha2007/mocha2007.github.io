@@ -201,13 +201,17 @@ new Language('Ithkuil', [[[4], [0, 2], [3], [1, 2]]],
 			'agpwal', // HAMMER
 			'alḑaz', // FOREST
 			'allwil', // BRIGHT
-			'almal', // MIGHT, STRENGTH
+			'almaj', // MIGHT, STRENGTH
+			'alxwal', // STAR
 			'aļļtļil', // HEAVEN
 			'ankral', // HOME
+			'aržaj', // VENGEANCE
 			'avplil', // LIGHTNING
+			'ekšnal', // FLOWER
 			'elzmřal', // ASH (tree)
 			'emfaj', // HONOR
 			'ežval', // GOOD (morally)
+			'orkwaj', // LOVE
 			'otglal', // SPEAR
 			'ubyal', // WISE
 			'ukskal', // FURY
