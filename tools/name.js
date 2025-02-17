@@ -10,7 +10,7 @@ function bars(n){
 		'https://upload.wikimedia.org/wikipedia/commons/6/62/75_percent.svg',
 		'https://upload.wikimedia.org/wikipedia/commons/2/24/100_percent.svg',
 	][completion];
-	return `<img src="${icon_src}" style="height:4vh;">`;
+	return `<img src="${icon_src}" style="height:4vh;" title="${n} possibilities">`;
 }
 
 class Language {
