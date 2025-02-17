@@ -174,11 +174,21 @@ const VERDURIAN_1 = ['aď', 'al', 'an', 'andor', 'ban', 'belgo', 'benda', 'bes',
 	'tuli', 'vaďra', 'veaďa', 'vuran', 'zer', 'zol', 'zon', 'zula',
 	'žen', 'žina', 'žive', 'žorta', 'žuli', 'žosu'];
 
-new Language('Verdurian', [DITHEMATIC],
+new Language('Verdurian', [[[0], [0, 1]]],
 	// http://www.zompist.com/names.htm
 	[
-		VERDURIAN_1,
-		VERDURIAN_1.concat(['dul', 'eon', 'nes', 'om', 'orion', 'šec']), // todo: figure out why I can't just do [[0], [0, 1]]
+		['aď', 'al', 'an', 'andor', 'ban', 'belgo', 'benda', 'bes', 'bur',
+			'calo', 'clai', 'com', 'cor', 'cör', 'cuma', 'dan', 'dašo', 'dën',
+			'diči', 'dom', 'dorot', 'draco', 'ďal', 'ďom', 'efar', 'es', 'ele',
+			'elir', 'elu', 'elure', 'er', 'esta', 'fale', 'fant', 'fi', 'fori',
+			'fre', 'gar', 'gen', 'ges', 'glavo', 'glini', 'gröse', 'hum', 'ili',
+			'inye', 'kai', 'kol', 'leti', 'lir', 'lon', 'mei', 'meli', 'mëra',
+			'mura', 'nan', 'nařo', 'neže', 'nožu', 'nou', 'nusse', 'oh', 'op',
+			'on', 'örn', 'pal', 'pe', 'pon', 'ric', 'ruže', 'řem', 'řezi',
+			'sasna', 'sar', 'sea', 'sört', 'sul', 'šeli', 'tai', 'tel', 'tihi',
+			'tuli', 'vaďra', 'veaďa', 'vuran', 'zer', 'zol', 'zon', 'zula',
+			'žen', 'žina', 'žive', 'žorta', 'žuli', 'žosu'],
+		['dul', 'eon', 'nes', 'om', 'orion', 'šec'],
 	]
 );
 
