@@ -268,5 +268,11 @@ new Language('Muskian', [[[0], [2], [1], [2], [0], [2], [0], [3], [3]]],
 	]
 );
 
+new Language('&rsquo;Murican', [[[0], [0]]],
+	[
+		['beer', 'burger', 'eagle', 'flag', 'football', 'freedom', 'god', 'gun', 'jesus', 'liberty', 'patriot', 'pickup', 'rifle', 'shoot'],
+	]
+);
+
 // finally
 namegen.init();
