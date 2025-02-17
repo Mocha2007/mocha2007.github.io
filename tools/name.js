@@ -105,7 +105,7 @@ const namegen = {
 		this.elem.result.innerHTML = title(this.lang.gen());
 	},
 	updateCount(){
-		this.elem.count.innerHTML = this.lang.count + ' possible names';
+		this.elem.count.innerHTML = this.lang.count.toLocaleString() + ' possible names';
 	},
 };
 
@@ -254,6 +254,17 @@ new Language('Ithkuil', [[[4], [0, 2], [3], [1, 2]]],
 		],
 		['â-'],
 		['hw'],
+	]
+);
+
+new Language('Muskian', [[[0], [2], [1], [2], [0], [2], [0], [3], [3]]],
+	// X Æ A-X12
+	// letter, weird letter, letter, hyphen, letter, digit, digit
+	[
+		'abcdefghijklmnopqrstuvwxyz'.split(''),
+		'àáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ'.split(''),
+		['-', ' '],
+		'0123456789'.split(''),
 	]
 );
 
