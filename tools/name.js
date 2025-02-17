@@ -290,5 +290,36 @@ const DWARVEN = new Language('Dwarven', [[[1], [0], [2, 3, 4], [5]]],
 );
 DWARVEN.sets.push(DWARVEN.sets[2].map(s => s.toLowerCase()));
 
+new Language('Founding Fathers', [[[1], [0], [2]]],
+	// (specific subset) + (N/Adj/V)(N)
+	[
+		[' '],
+		[
+			'Abraham', 'Alexander', 'Andrew', 'Arthur', 'Benjamin', 'Button', 'Caesar',
+			'Carter', 'Charles', 'Cornelius', 'Daniel', 'David', 'Edward', 'Elbridge',
+			'Francis', 'Gouverneur', 'George', 'Gunning', 'Henry', 'Hugh', 'Jacob', 'James',
+			'Jared', 'John', 'Jonathan', 'Joseph', 'Josiah', 'Lewis', 'Lyman', 'Matthew',
+			'Nathaniel', 'Nicholas', 'Oliver', 'Philip', 'Pierce', 'Richard', 'Robert', 'Rufus',
+			'Samuel', 'Stephen', 'Thomas', 'Titus', 'William',
+		],
+		[
+			'Adams', 'Baldwin', 'Banister', 'Bartlett', 'Bassett', 'Bedford', 'Blair', 'Blount',
+			'Braxton', 'Brearley', 'Broom', 'Butler', 'Carroll', 'Chase', 'Clark', 'Clingan',
+			'Clymer', 'Collins', 'Dana', 'Dayton', 'Dickinson', 'Drayton', 'Duane', 'Duer',
+			'Ellery', 'Few', 'Fitzsimons', 'Floyd', 'Franklin', 'Gerry', 'Gilman', 'Gorham',
+			'Gwinnett', 'Hall', 'Hamilton', 'Hancock', 'Hanson', 'Harnett', 'Harrison', 'Hart',
+			'Harvie', 'Hewes', 'Heyward', 'Holten', 'Hooper', 'Hopkins', 'Hopkinson', 'Hosmer',
+			'Huntington', 'Hutson', 'Ingersoll', 'Jackson', 'Jefferson', 'Jenifer', 'Johnson',
+			'King', 'Langdon', 'Langworthy', 'Laurens', 'Lee', 'Lewis', 'Livingston', 'Lovell',
+			'Lynch', 'Madison', 'Marchant', 'Mathews', 'McHenry', 'McKean', 'Middleton',
+			'Miffin', 'Morris', 'Morton', 'Nelson', 'Paca', 'Paine', 'Paterson', 'Penn',
+			'Pinckney', 'Read', 'Reed', 'Roberdeau', 'Rodney', 'Ross', 'Rush', 'Rutledge',
+			'Scudder', 'Sherman', 'Smith', 'Spaight', 'Stockton', 'Stone', 'Taylor', 'Telfair',
+			'Thornton', 'Van Dyke', 'Walton', 'Washington', 'Wentworth', 'Whipple', 'Williams',
+			'Williamson', 'Wilson', 'Witherspoon', 'Wolcott', 'Wythe'
+		],
+	]
+);
+
 // finally
 namegen.init();
