@@ -132,5 +132,14 @@ new Language('Proto-Germanic', [DITHEMATIC],
 	]
 );
 
+new Language('Proto-Slavic', [DITHEMATIC],
+	// https://en.wiktionary.org/wiki/Category:Proto-Slavic_male_given_names
+	[
+		['bogъ', 'bojь', 'borni', 'bъdi', 'gosti', 'jaro', 'jьzę',
+			'miro', 'mьsti', 'mojь', 'vęťe', 'voldi', 'žiro'],
+		['danъ', 'gostь', 'měrъ', 'mirъ', 'slàvъ', 'vojь', 'vujь'],
+	]
+);
+
 // finally
 namegen.updateCount();
