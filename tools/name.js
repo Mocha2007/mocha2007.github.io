@@ -20,7 +20,6 @@ class Language {
 		this.forms = forms; // eg. array of [[0], [1, 2], [0, 1]]
 		/** @type {string[][]} */
 		this.sets = sets; // eg. [["eigh", "xton"], ["ash", "jo"]]
-		this.addRadioButton();
 		Language.languages.push(this);
 	}
 	addRadioButton(){
@@ -93,6 +92,13 @@ const namegen = {
 	},
 	get lang(){
 		return Language.languages.find(l => l.selected);
+	},
+	init(){
+		// sort langs by name, then create list
+		Language.languages.sort((a, b) => a.name < b.name ? -1 : b.name < a.name ? 1 : 0);
+		Language.languages.forEach(l => l.addRadioButton());
+		// finally
+		namegen.updateCount();
 	},
 	run(){
 		this.elem.result.innerHTML = title(this.lang.gen());
@@ -251,4 +257,4 @@ new Language('Ithkuil', [[[4], [0, 2], [3], [1, 2]]],
 );
 
 // finally
-namegen.updateCount();
+namegen.init();
