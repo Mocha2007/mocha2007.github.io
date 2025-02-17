@@ -25,6 +25,14 @@
 		]
 	},
 	{
+		"title": "-eska",
+		"etym": "I/PEN/*-eʃka",
+		"cat": "aff.",
+		"defList": [
+			"diminutivizes words using -ela already as a derivational morpheme, eg. 'dinelat' -> 'dineskat'"
+		]
+	},
+	{
 		"title": "-id",
 		"etym": "r/id",
 		"cat": "aff.",
