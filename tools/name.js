@@ -111,6 +111,17 @@ new Language('Tragedeigh', [DITHEMATIC, [[2]].concat(DITHEMATIC)],
 	]
 );
 
+new Language('Proto-Celtic', [DITHEMATIC],
+	// https://en.wiktionary.org/wiki/Category:Proto-Celtic_male_given_names
+	[
+		['ambi', 'anawo', 'awi', 'dago', 'dubno', 'esu', 'iwo',
+			'katu', 'kengeto', 'koro', 'kuno', 'kʷenno',
+			'maglo', 'medu', 'oino', 'rextu', 'tanko', 'tazgo', 'tigerno', 'touto', 'weiko', 'weni', 'wiro'],
+		['bilyos', 'galos', 'ganyos', 'genos', 'gnāwos', 'gustus', 'gʷonos', 'kantos', 'karos', 'katus', 'kū', 'kunos', 'maglos', 'mandus', 'māros',
+			'rīxs', 'tigernos', 'walos', 'welnāmnos', 'windos'],
+	]
+);
+
 new Language('Proto-Germanic', [DITHEMATIC],
 	// source https://en.wikipedia.org/wiki/Germanic_name#Dithematic_names
 	// https://en.wiktionary.org/wiki/Category:Proto-Germanic_male_given_names
@@ -129,6 +140,14 @@ new Language('Proto-Germanic', [DITHEMATIC],
 			'hailaz', 'harduz', 'harjaz', 'hildiz', 'hrōþiz',
 			'mērijaz', 'rīks', 'sinþaz', 'segaz', 'stainaz', 'swinþaz',
 			'waldą', 'winiz', 'wulfaz'],
+	]
+);
+
+new Language('Proto-Iranian', [DITHEMATIC],
+	// https://en.wiktionary.org/wiki/Category:Proto-Iranian_male_given_names
+	[
+		['bága', 'cyaHmá', 'haHtr̥', 'hhu'],
+		['cráwah', 'daHtah', 'kah'],
 	]
 );
 
