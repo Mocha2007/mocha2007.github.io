@@ -1,5 +1,5 @@
 /* exported name */
-/* global log, random, sum, title */
+/* global log, random, range, sum, title */
 
 function bars(n){
 	const completion = Math.min(4, Math.floor(log(n, 6)));
@@ -278,7 +278,7 @@ new Language('&rsquo;Murican', [[[0], [0]]],
 	]
 );
 
-const DWARVEN = new Language('Dwarven', [[[1], [0], [2, 3, 4], [5]]],
+const DWARVEN = new Language('Dwarven (DF)', [[[1], [0], [2, 3, 4], [5]]],
 	// (specific subset) + (N/Adj/V)(N)
 	[
 		[' '],
@@ -316,10 +316,32 @@ new Language('Founding Fathers', [[[1], [0], [2]]],
 			'Pinckney', 'Read', 'Reed', 'Roberdeau', 'Rodney', 'Ross', 'Rush', 'Rutledge',
 			'Scudder', 'Sherman', 'Smith', 'Spaight', 'Stockton', 'Stone', 'Taylor', 'Telfair',
 			'Thornton', 'Van Dyke', 'Walton', 'Washington', 'Wentworth', 'Whipple', 'Williams',
-			'Williamson', 'Wilson', 'Witherspoon', 'Wolcott', 'Wythe'
+			'Williamson', 'Wilson', 'Witherspoon', 'Wolcott', 'Wythe',
 		],
 	]
 );
+
+// (C)V(C)
+const ELVEN_SYL = [[2], [1], [2]];
+
+const ELVEN = new Language('Elven (Luna)', [ELVEN_SYL, [...ELVEN_SYL, [0], ...ELVEN_SYL], [...ELVEN_SYL, [0], ...ELVEN_SYL, [0], ...ELVEN_SYL]],
+	[
+		[''], // replace this with a hyphen to debug
+		'aeiouâêîôû'.split(''),
+		'ptkbdgfvszśźmnńlryw'.split(''),
+	]
+);
+range(Math.round(ELVEN.sets[2].length * 0.6)).forEach(() => ELVEN.sets[2].push(''));
+// I'd like for onset to be 65%, coda to be 60%. So I need spaces to be 42.5% of the set. If you do the math that means 0.6*LEN = S
+/*
+	currently this results in...
+		Res	All
+	V	14%	10-15%
+	CV	23% 20-25%
+	VC	23%	15-20%
+	CVC	39%	30-35%
+	All = Alleged Distribution
+*/
 
 // finally
 namegen.init();
