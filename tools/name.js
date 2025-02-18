@@ -30,7 +30,7 @@ class Language {
 		return sum(this.forms.map(
 			form => form.map(
 				setIds => sum(setIds.map(
-					setId => this.sets[setId].length))).reduce((a, b) => a * b, 1)));
+					setId => new Set(this.sets[setId]).size))).reduce((a, b) => a * b, 1)));
 	}
 	get elem(){
 		if (this.elem_)
