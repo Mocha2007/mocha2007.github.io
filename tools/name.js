@@ -328,7 +328,7 @@ const DWARVEN2 = new Language('Dwarven (Luna)', [DWARVEN_SYL, [...DWARVEN_SYL, [
 	[
 		[''], // replace this with a hyphen to debug
 		'aeiouâêîôû'.split(''),
-		'ptkbdgfvszśźmnńlryw'.split(''),
+		'tkbdgfszśmnlrywh'.split(''),
 	]
 );
 range(Math.round(DWARVEN2.sets[2].length * 0.6)).forEach(() => DWARVEN2.sets[2].push(''));
@@ -344,21 +344,42 @@ range(Math.round(DWARVEN2.sets[2].length * 0.6)).forEach(() => DWARVEN2.sets[2].
 */
 
 // the names I see are all 2-3 syllables
-const ELVEN = new Language('Elven (Luna)', [[[2], [0], [1], [0], [3], [0], [1], [4]], [[2], [0], [1], [0], [3], [0], [1], [0], [3], [0], [1], [4]]],
+const ELVEN = new Language('Elven (Luna)', [[[0], [7], [1], [7], [2], [7], [3], [7], [4], [7], [5], [7], [6]]],
 	[
 		// https://en.wikipedia.org/wiki/Quenya#Phonotactics
-		[''], // replace this with a hyphen to debug
-		// 1 - NUCLEI
-		'aeiouáéíóú'.split(''),
-		// 2 - INITIALS
+		// 0 - Ci
 		'p, t, c, f, s, h, hy, hw, m, n, ñ, v, l, hl, r, hr, y, w, x, ps, ty, ny, ly, qu, ñw'.split(', '),
-		// 3 - MEDIALS
+		// 1 - Vi
+		'aeiouáéíóú'.split(''),
+		// 2 - Cm
 		'ht, lc, ld, lf, lm, lp, lqu, lt, lv, lw, ly, mb, mn, mp, my, nc, nd, ng, nt, nw, ny, ps, pt, qu, rc, rd, rm, rn, rp, rt, rs, rv, rw, ry, sc, st, sw, ts, tw, ty, x, nqu, lqu, rqu, squ, ngw, rhw, nty, lty, hty, rty, sty, lhy'.split(', '),
-		// 4 - FINALS
+		// 3 - Vm
+		'aeiiiiou'.split(''),
+		// 4 - Cm2 todo
+		[''],
+		// 5 - Vf
+		'aaaaaaaaaaaaaaaaeiou'.split(''),
+		// 6 - Cf
 		'n, r, l, s, t, nt'.split(', '),
+		// 7 - debug hyphen
+		[''],
 	]
 );
-range(2, 5).forEach(i => range(Math.round(ELVEN.sets[i].length * 0.6)).forEach(() => ELVEN.sets[i].push('')));
+range(Math.round(ELVEN.sets[0].length * 0.2)).forEach(() => ELVEN.sets[0].push('')); // Ci should sometimes not appear
+range(Math.round(ELVEN.sets[1].length * 0.6)).forEach(() => ELVEN.sets[1].push('a')); // force "a" to occur 40% of the time
+range(ELVEN.sets[3].length).forEach(() => ELVEN.sets[3].push('i', '', '')); // see Vm note
+range(ELVEN.sets[6].length * 12).forEach(() => ELVEN.sets[6].push(''));
+/**
+ * ANALYSIS OF DESIRED NAMES:
+ * (Ci) Vi Cm (Vm) (Cm2) Vf (Cf?)
+ * (Ci) occurs 84% of the time and seems about equally distributed among single-character consonants
+ * Vi: "a" occurs about 40% of the time; rest are equiprobable
+ * Cm: equiprobable???
+ * (Vm) occurs 1/3 of the time. "i" occurs half of the time this occurs, rest of SHORT VOWELS equiprobable, so aeiiiiou
+ * (Cm2) occurs 87% of the time IF Vm occurs, but I can't currently simulate this with such a basic name generator. SKIP for now.
+ * Vf is 84% "a", remainder equiprobable short vowels
+ * (Cf) occurs 8% of the time and is very restricted (n, r, l, s, t, nt)
+ */
 
 // finally
 namegen.init();
