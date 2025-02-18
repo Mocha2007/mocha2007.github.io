@@ -322,16 +322,16 @@ new Language('Founding Fathers', [[[1], [0], [2]]],
 );
 
 // (C)V(C)
-const ELVEN_SYL = [[2], [1], [2]];
+const DWARVEN_SYL = [[2], [1], [2]];
 
-const ELVEN = new Language('Elven (Luna)', [ELVEN_SYL, [...ELVEN_SYL, [0], ...ELVEN_SYL], [...ELVEN_SYL, [0], ...ELVEN_SYL, [0], ...ELVEN_SYL]],
+const DWARVEN2 = new Language('Dwarven (Luna)', [DWARVEN_SYL, [...DWARVEN_SYL, [0], ...DWARVEN_SYL], [...DWARVEN_SYL, [0], ...DWARVEN_SYL, [0], ...DWARVEN_SYL]],
 	[
 		[''], // replace this with a hyphen to debug
 		'aeiouâêîôû'.split(''),
 		'ptkbdgfvszśźmnńlryw'.split(''),
 	]
 );
-range(Math.round(ELVEN.sets[2].length * 0.6)).forEach(() => ELVEN.sets[2].push(''));
+range(Math.round(DWARVEN2.sets[2].length * 0.6)).forEach(() => DWARVEN2.sets[2].push(''));
 // I'd like for onset to be 65%, coda to be 60%. So I need spaces to be 42.5% of the set. If you do the math that means 0.6*LEN = S
 /*
 	currently this results in...
@@ -342,6 +342,23 @@ range(Math.round(ELVEN.sets[2].length * 0.6)).forEach(() => ELVEN.sets[2].push('
 	CVC	39%	30-35%
 	All = Alleged Distribution
 */
+
+// the names I see are all 2-3 syllables
+const ELVEN = new Language('Elven (Luna)', [[[2], [0], [1], [0], [3], [0], [1], [4]], [[2], [0], [1], [0], [3], [0], [1], [0], [3], [0], [1], [4]]],
+	[
+		// https://en.wikipedia.org/wiki/Quenya#Phonotactics
+		[''], // replace this with a hyphen to debug
+		// 1 - NUCLEI
+		'aeiouáéíóú'.split(''),
+		// 2 - INITIALS
+		'p, t, c, f, s, h, hy, hw, m, n, ñ, v, l, hl, r, hr, y, w, x, ps, ty, ny, ly, qu, ñw'.split(', '),
+		// 3 - MEDIALS
+		'ht, lc, ld, lf, lm, lp, lqu, lt, lv, lw, ly, mb, mn, mp, my, nc, nd, ng, nt, nw, ny, ps, pt, qu, rc, rd, rm, rn, rp, rt, rs, rv, rw, ry, sc, st, sw, ts, tw, ty, x, nqu, lqu, rqu, squ, ngw, rhw, nty, lty, hty, rty, sty, lhy'.split(', '),
+		// 4 - FINALS
+		'n, r, l, s, t, nt'.split(', '),
+	]
+);
+range(2, 5).forEach(i => range(Math.round(ELVEN.sets[i].length * 0.6)).forEach(() => ELVEN.sets[i].push('')));
 
 // finally
 namegen.init();
