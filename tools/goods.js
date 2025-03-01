@@ -1441,8 +1441,24 @@ function cost_of_living(source, use_indexed = true){
 		const fab_min = min(get_cat('Fabric')) || fallback;
 		const sal_min = get_good(goods.salt) || fallback;
 		const fuel_min = Math.min(...[get_good(goods.charcoal), get_good(goods.coal), 1.62*get_good(goods.firewood)].filter(isFinite));
-		return 300*veg_min + 200*fru_min + 60*mea_min + 20*fis_min + 485*dai_min + 500*gra_min + 25*nut_min
-			+ 1.65*fab_min + 0.5*sal_min + 1350 * (isFinite(fuel_min) ? fuel_min : 1.62*fallback);
+		const fuel_actual = 1350 * (isFinite(fuel_min) ? fuel_min : 1.62*fallback);
+		const value = 300*veg_min + 200*fru_min + 60*mea_min + 20*fis_min + 485*dai_min + 500*gra_min + 25*nut_min
+			+ 1.65*fab_min + 0.5*sal_min + fuel_actual;
+		const frac = {
+			gra: 500 * gra_min / value,
+			veg: 300 * veg_min / value,
+			fru: 200 * fru_min / value,
+			mea: 60 * mea_min / value,
+			fis: 20 * fis_min / value,
+			dai: 485 * dai_min / value,
+			nut: 25 * nut_min / value,
+			fab: 1.65 * fab_min / value,
+			sal: 0.5 * sal_min / value,
+			fuel: fuel_actual / value,
+		};
+		return {
+			fallback, gra_min, veg_min, fru_min, fis_min, dai_min, nut_min, fab_min, sal_min, fuel_min, value, frac,
+		};
 	}
 	catch (_){
 		// eslint-disable-next-line no-useless-return
@@ -1452,7 +1468,7 @@ function cost_of_living(source, use_indexed = true){
 
 /** @param {Source} source */
 function standard_of_living(source){
-	return GoodDatum.gooddata.find(gd => gd.good && gd.good === goods.wageLaborer && gd.source === source).price / cost_of_living(source, false);
+	return GoodDatum.gooddata.find(gd => gd.good && gd.good === goods.wageLaborer && gd.source === source).price / cost_of_living(source, false).value;
 }
 
 /** try "compare(sources.rome0, sources.usa202)" */
@@ -1530,9 +1546,22 @@ function main(){
 		col_tr.appendChild(col_td);
 		const sol_td = document.createElement('td');
 		sol_tr.appendChild(sol_td);
-		col_td.innerHTML = round3(cost_of_living(source));
+		const col = cost_of_living(source);
+		col_td.innerHTML = round3(col.value);
 		sol_td.innerHTML = round3(standard_of_living(source));
-		col_td.title = sol_td.title = source.summary;
+		col_td.title = sol_td.title = `${source.summary}
+		Breakdown:
+		Fuel: ${Math.round(100*col.frac.fuel)}%
+		Grain: ${Math.round(100*col.frac.gra)}%
+		Dairy: ${Math.round(100*col.frac.dai)}%
+		Vegetables: ${Math.round(100*col.frac.veg)}%
+		Fruit: ${Math.round(100*col.frac.fru)}%
+		Meat: ${Math.round(100*col.frac.mea)}%
+		Nuts: ${Math.round(100*col.frac.nut)}%
+		Fish: ${Math.round(100*col.frac.fis)}%
+		Fabric: ${Math.round(100*col.frac.fab)}%
+		Salt: ${Math.round(100*col.frac.sal)}%
+		`;
 	});
 	// rows
 	Good.goods.forEach(good => table.appendChild(good.tr));
