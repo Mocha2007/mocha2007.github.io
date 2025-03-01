@@ -1423,7 +1423,7 @@ function cost_of_living(source, use_indexed = true){
 	/** @param {Good} good */
 	function get_good(good){
 		const datum = GoodDatum.gooddata.find(gd => gd.good && gd.good === good && gd.source === source);
-		return datum && datum.price;
+		return datum && datum[qqq];
 	}
 	function min(x){
 		const m = Math.min(...x);
