@@ -1462,6 +1462,7 @@ function cost_of_living(source, use_indexed = true){
 		};
 		return {
 			fallback, gra_min, veg_min, fru_min, fis_min, dai_min, nut_min, fab_min, sal_min, fuel_min, value, frac,
+			just_grain: 1250 * gra_min, // abt. 2000 cal of grain
 		};
 	}
 	catch (_){
@@ -1535,12 +1536,18 @@ function main(){
 	// first two rows are COST OF LIVING and STANDARD OF LIVING
 	const col_tr = document.createElement('tr');
 	table.appendChild(col_tr);
+	const col2_tr = document.createElement('tr');
+	table.appendChild(col2_tr);
 	const sol_tr = document.createElement('tr');
 	table.appendChild(sol_tr);
 	const col_th = document.createElement('th');
 	col_tr.appendChild(col_th);
 	col_th.innerHTML = 'Cost of Living';
 	col_th.title = 'Based on a balanced diet (see methodology section)';
+	const col2_th = document.createElement('th');
+	col2_tr.appendChild(col2_th);
+	col2_th.innerHTML = 'Cost of 2k cal Grain';
+	col2_th.title = 'Currently approximated by taking 1.25 kg of the cheapest grain';
 	const sol_th = document.createElement('th');
 	sol_tr.appendChild(sol_th);
 	sol_th.innerHTML = 'Standard of Living';
@@ -1548,10 +1555,13 @@ function main(){
 	Source.sources.forEach(source => {
 		const col_td = document.createElement('td');
 		col_tr.appendChild(col_td);
+		const col2_td = document.createElement('td');
+		col2_tr.appendChild(col2_td);
 		const sol_td = document.createElement('td');
 		sol_tr.appendChild(sol_td);
 		const col = cost_of_living(source);
 		col_td.innerHTML = round3(col.value);
+		col2_td.innerHTML = round3(col.just_grain);
 		sol_td.innerHTML = round3(standard_of_living(source));
 		col_td.title = sol_td.title = `${source.summary}
 		Breakdown:
