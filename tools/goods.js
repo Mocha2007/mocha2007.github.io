@@ -33,8 +33,9 @@ const unit = {
 	cup: 236.588,
 	/** hundredweight in grams */
 	cwt: 45359.24,
-	/** kg/m^3 */
+	/** kg/m^3 = g/L */
 	density: {
+		honey: 1400, // appx.
 		oilOlive: 916.5, // https://www.chefsresource.com/what-is-the-density-of-olive-oil/
 		glass: 2500,
 	},
@@ -110,6 +111,8 @@ const unit = {
 	oz: 453.5924/16,
 	/** troy ounce in grams */
 	ozt: 373.242/12,
+	/** 1 pint in L */
+	pt: 0.473,
 	/** quarter in L https://en.wikipedia.org/wiki/Quarter_(unit)#Volume */
 	get quarter(){
 		return 8 * this.bu;
@@ -454,6 +457,7 @@ const goods = {
 const sources = {
 	// "Silver, pure, in bars or coins – 6000 denarii for about 300 g" thus 1g Ag = 20 denarii
 	babylon: new Source('6th c. BCE', 'Babylon', ['https://economics.yale.edu/sites/default/files/yale_money-prices-markets.pdf']), // p. 16
+	greece: new Source('6th c. BCE', 'Greece', ['https://www.gutenberg.org/files/14033/14033-h/14033-h.htm']), // tangential price references
 	chinaHan: new Source('Han', 'China', []), // 206 BCE - 220 CE
 	rome0: new Source(301, 'Rome', 'https://www.academia.edu/23644199/New_English_translation_of_the_Price_Edict_of_Diocletianus'),
 	chinaTang: new Source('Tang', 'China', 'https://cedar.wwu.edu/cgi/viewcontent.cgi?filename=14&article=1016&context=easpress&type=additional'), // 618 - 907
@@ -1403,6 +1407,35 @@ new GoodDatum(goods.platinum, sources.usa195, 70 / unit.ozt / usd_ag_1950); // a
 // https://tradingeconomics.com/commodity/platinum
 new GoodDatum(goods.platinum, sources.usa202, 1011.1 / unit.ozt / usd_ag2);
 
+// Tangential references to price in Plutarch's Lives:
+const greece = {
+	/** g Ag, Attic standard */
+	drachma: 4.3,
+	/** L, Attic */
+	medimnos: 51.84,
+	get obol(){
+		return this.drachma/6;
+	},
+};
+/*
+He gave five drachmas for every wolf that was killed, and one drachma for every wolf's whelp; and we are told by Demetrius of Phalerum that the first of these sums was the price of an ox, and the second that of a sheep.
+Now the value of a sheep was ten obols, and that of an ox a hundred,
+the implication seems to be the latter values are more representative.
+*/
+new GoodDatum(goods.ox, sources.greece, 100 * greece.obol);
+new GoodDatum(goods.sheep, sources.greece, 10 * greece.obol);
+new GoodDatum(goods.wageLaborer, sources.greece, 2 * greece.obol); // minimum price listed; 3-4 obol wages also mentioned
+// "a sheep and a drachma were reckoned as each equal to a medimnus of corn"
+new GoodDatum(goods.wheat, sources.greece, greece.drachma / (greece.medimnos * unit.grainDensity.wheat));
+// "The two commanders agreed that the prisoners should be exchanged man for man, and that if either party had more than the other, he should redeem for two hundred and fifty drachmas per man"
+new GoodDatum(goods.slaveM, sources.greece, 250*greece.drachma);
+new GoodDatum(goods.gold, sources.greece, 13.3); // see top of https://en.wikipedia.org/wiki/Bimetallism
+// Plutarch, Regum et imperatorum apophthegmata: "flesh at half an obol a pound" - assuming beef, which would likely have been the cheapest
+new GoodDatum(goods.beef, sources.greece, 0.5 * greece.obol / unit.lb);
+// https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:2008.01.0267:section=10&highlight=obol
+// a half-pint of honey five drachmas
+new GoodDatum(goods.honey, sources.greece, 5 * greece.drachma / (0.5 * unit.pt * unit.density.honey));
+
 /** @param {Source} source */
 function cost_of_living(source, use_indexed = true){
 	const qqq = use_indexed ? 'indexedPrice' : 'price';
@@ -1473,7 +1506,8 @@ function cost_of_living(source, use_indexed = true){
 
 /** @param {Source} source */
 function standard_of_living(source){
-	return GoodDatum.gooddata.find(gd => gd.good && gd.good === goods.wageLaborer && gd.source === source).price / cost_of_living(source, false).value;
+	const wage = GoodDatum.gooddata.find(gd => gd.good && gd.good === goods.wageLaborer && gd.source === source);
+	return wage && wage.price / cost_of_living(source, false).value;
 }
 
 /** try "compare(sources.rome0, sources.usa202)" */
