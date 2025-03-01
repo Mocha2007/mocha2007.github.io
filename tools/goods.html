@@ -39,6 +39,7 @@
 	I base cost of living on daily consumption of the CHEAPEST goods in the following categories:
 </p>
 <ul>
+	<li><strong>Fuel</strong>: 1.35 kg of Charcoal or Coal, or 2.2 kg of firewood, whichever is cheaper (fallback: 2.2 kg of any good)</li>
 	<li><strong>Grain</strong>: 500g (fallback: any good)</li>
 	<li><strong>Dairy</strong>: 485g (fallback: grain, then any good)</li>
 	<li><strong>Vegetables</strong>: 300g (fallback: grain, then any good)</li>
@@ -52,12 +53,25 @@
 <p>
 	By dividing the wage by this CoL figure, we can establish a <em>rough</em> estimate with which we can compare disposable income.
 </p>
-<h3 id="Limitations">Limitations</h3>
+<h3 id="Fuel">Fuel</h3>
+<p>
+	For fuel usage I have used this very basic heuristic:
+</p>
+<ul>
+	<li>The global average energy consumption per capita is 3,500 kWh/yr (12.6 GJ). (<a href="https://gitnux.org/average-kwh-per-day/">Source</a>)</li>
+	<li>Approximate fuel densities of Charcoal and Coal are around 30 MJ/kg. For Wood it is around 18.5 MJ/kg. (<a href="https://en.wikipedia.org/wiki/Energy_content_of_biofuel#Energy_and_CO2_output_of_common_biofuels">Source</a>)</li>
+	<li>Coal power plants operate at an efficiency of about 35%. (<a href="https://www.brighthubengineering.com/power-plants/72369-compare-the-efficiency-of-different-power-plants/">Source</a>)</li>
+	<li>Therefore, per person per year, 1,200 kg of coal is required, or about 3,285 g/d.</li>
+	<li>However, in the modern era, only about 41% of this goes to uses relevant to all time periods (ie. heating and appliances). (<a href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpacesaves.com%2Fwp-content%2Fuploads%2F2017%2F04%2Fpie-chart-energy-consumption-768x495.png&f=1&nofb=1&ipt=d292258496a8796021e25c0277104cd89113a4b7534811b1f0394db136709b6f&ipo=images">Source</a>)</li>
+	<li>This results in an estimate of 1,347 g of coal per person per day.</li>
+</ul>
+<h2 id="Limitations">Limitations</h2>
 <p>
 	This does not account for regional differences in food consumption or cost.
 	As an example, dairy is virtually absent from Chinese cuisine. Different regions and time periods may be more or less meat-centric than this baseline.
 	Warmer climates do not require as much clothing as cooler climates, and thus will use less fabric.
 	All of these, along with simple lack of data, can cause CoL values to appear higher than wages (an impossibility).
+	Fuel costs for warmer climates will be far less, since you only need to account for cooking fuel and not heating fuel.
 </p>
 <div id="container"></div>
 </html>

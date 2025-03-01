@@ -171,6 +171,7 @@ new Category('Alcohol', '#808');
 new Category('Fabric', '#fec', true);
 new Category('Tool', 'grey', true);
 new Category('Luxury', 'magenta', true);
+new Category('Fuel', '#222');
 new Category('Misc', 'black');
 
 
@@ -414,6 +415,10 @@ const goods = {
 	ivory: new Good('Ivory', 'Luxury'),
 	silk: new Good('Silk', 'Luxury'),
 	turtleshell: new Good('Turtleshell', 'Luxury'),
+	// FUEL
+	charcoal: new Good('Charcoal', 'Fuel'),
+	coal: new Good('Coal', 'Fuel'),
+	firewood: new Good('Firewood', 'Fuel'),
 	// SLAVES
 	wageLaborer: new Good('Wage (Laborer)', 'Misc', 'd'), // one day of labor
 	slaveF: new Good('Slave (f)', 'Misc', 'ea'),
@@ -435,10 +440,7 @@ const goods = {
 	duckLive: new Good('Duck', 'Misc', 'ea'),
 	// MISC
 	aluminum: new Good('Aluminum', 'Misc'),
-	charcoal: new Good('Charcoal', 'Misc'),
-	coal: new Good('Coal', 'Misc'),
 	copper: new Good('Copper', 'Misc'),
-	firewood: new Good('Firewood', 'Misc'),
 	glass: new Good('Glass', 'Misc'),
 	iron: new Good('Iron', 'Misc'),
 	platinum: new Good('Platinum', 'Misc'),
@@ -1435,7 +1437,9 @@ function cost_of_living(source, use_indexed = true){
 		const nut_min = min(get_cat('Nut')) || dai_min;
 		const fab_min = min(get_cat('Fabric')) || fallback;
 		const sal_min = get_good(goods.salt) || fallback;
-		return 300*veg_min + 200*fru_min + 60*mea_min + 20*fis_min + 485*dai_min + 500*gra_min + 25*nut_min + 10*fab_min + 0.5*sal_min;
+		const fuel_min = Math.min(...[get_good(goods.charcoal), get_good(goods.coal), 1.62*get_good(goods.firewood)].filter(isFinite));
+		return 300*veg_min + 200*fru_min + 60*mea_min + 20*fis_min + 485*dai_min + 500*gra_min + 25*nut_min
+			+ 10*fab_min + 0.5*sal_min + 1350 * (isFinite(fuel_min) ? fuel_min : 1.62*fallback);
 	}
 	catch (_){
 		// eslint-disable-next-line no-useless-return
