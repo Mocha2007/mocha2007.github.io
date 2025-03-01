@@ -473,7 +473,7 @@ const sources = {
 	med18: new Source('18th c.', 'England', ['https://www.foodtimeline.org/1720.pdf', 'https://memdb.libraries.rutgers.edu/posthumus-prices', 'https://memdb.libraries.rutgers.edu/metz-prices']),
 	usa180: new Source('c. 1800', 'US', 'https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76'),
 	usa185: new Source('c. 1850', 'US', 'https://babel.hathitrust.org/cgi/pt?id=hvd.32044050806330&seq=76'),
-	usa190: new Source('c. 1900', 'US', ['https://babel.hathitrust.org/cgi/pt?id=umn.31951000014585x&seq=233', 'https://fraser.stlouisfed.org/title/bulletin-united-states-bureau-labor-3943/july-1905-477618/retail-prices-food-498513?start_page=179', 'https://fraser.stlouisfed.org/files/docs/publications/FRB/pages/1915-1919/24568_1915-1919.pdf']),
+	usa190: new Source('c. 1900', 'US', ['https://babel.hathitrust.org/cgi/pt?id=umn.31951000014585x&seq=233', 'https://fraser.stlouisfed.org/title/bulletin-united-states-bureau-labor-3943/july-1905-477618/retail-prices-food-498513?start_page=179', 'https://fraser.stlouisfed.org/files/docs/publications/FRB/pages/1915-1919/24568_1915-1919.pdf', 'https://archive.org/details/catalogueno11200sear/page/20/mode/2up']),
 	usa195: new Source('c. 1950', 'US', 'https://babel.hathitrust.org/cgi/pt?id=umn.31951000014585x&seq=233'),
 	usa202: new Source('2023', 'US', 'https://www.walmart.com'), // i just went onto walmart lol
 	skyrim: new Source('4E 201', 'Skyrim', 'https://en.uesp.net/wiki/Skyrim:Skyrim', true),
@@ -990,6 +990,16 @@ new GoodDatum(goods.ale, sources.usa190, 0.98/(12 * unit.can.beerBottle) / usd_a
 new GoodDatum(goods.beer, sources.usa190, 0.79/(12 * unit.can.beerBottle) / usd_ag_1900); // cheapest
 
 new GoodDatum(goods.wageLaborer, sources.usa190, 10.06/7 / usd_ag_1900); // actual wages per week per capita https://babel.hathitrust.org/cgi/pt?id=nnc1.cu56779232&seq=15
+
+// https://archive.org/details/catalogueno11200sear/page/20/mode/2up
+new GoodDatum(goods.almond, sources.usa190, 0.15/unit.lb / usd_ag_1900);
+new GoodDatum(goods.barley, sources.usa190, 0.035/unit.lb / usd_ag_1900);
+new GoodDatum(goods.candle, sources.usa190, 0.11/unit.lb / usd_ag_1900);
+new GoodDatum(goods.honey, sources.usa190, 0.09/unit.lb / usd_ag_1900);
+new GoodDatum(goods.millet, sources.usa190, 0.08/unit.lb / usd_ag_1900);
+new GoodDatum(goods.saffron, sources.usa190, 0.60/unit.lb / usd_ag_1900);
+new GoodDatum(goods.tobacco, sources.usa190, 0.30/unit.lb / usd_ag_1900); // avg.
+new GoodDatum(goods.walnut, sources.usa190, 0.12/unit.lb / usd_ag_1900);
 
 // 1950
 const usd_ag_1950 = 0.73 / unit.ozt; // $0.62007/ozt
