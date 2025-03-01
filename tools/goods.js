@@ -1017,6 +1017,24 @@ new GoodDatum(goods.sugar, sources.usa195, 0.487/(5*unit.lb) / usd_ag_1950);
 new GoodDatum(goods.wageLaborer, sources.usa195, 8 * 0.75 / usd_ag_1950); // 8h min wage
 new GoodDatum(goods.uranium, sources.usa195, 9.11 / unit.lb / usd_ag_1950); // https://www.osti.gov/servlets/purl/7346006
 
+// https://www.ranker.com/list/1950-food-prices-vs-today/jude-newsome
+new GoodDatum(goods.apple, sources.usa195, 0.09 / unit.lb / usd_ag_1950);
+new GoodDatum(goods.cheese, sources.usa195, 0.52 / unit.lb / usd_ag_1950);
+new GoodDatum(goods.lettuce, sources.usa195, 0.19 / unit.weights.lettuce / usd_ag_1950); // https://money.howstuffworks.com/Grocery-store-prices-for-14-items-in-1957.htm
+new GoodDatum(goods.rice, sources.usa195, 0.16 / unit.lb / usd_ag_1950);
+
+// https://onetuberadio.com/2020/11/20/1950-grocery-prices/
+new GoodDatum(goods.asparagus, sources.usa195, 0.20 / unit.can._1 / usd_ag_1950);
+new GoodDatum(goods.chicken, sources.usa195, 0.69 / unit.lb / usd_ag_1950);
+new GoodDatum(goods.goose, sources.usa195, 0.49 / unit.lb / usd_ag_1950);
+new GoodDatum(goods.potatoSweet, sources.usa195, 0.29 / (3*unit.lb) / usd_ag_1950);
+new GoodDatum(goods.turkey, sources.usa195, 0.59 / unit.lb / usd_ag_1950);
+
+// https://fraser.stlouisfed.org/files/docs/publications/bls/bls_1055_1952.pdf
+new GoodDatum(goods.cabbage, sources.usa195, 0.059 / unit.lb / usd_ag_1950);
+new GoodDatum(goods.lamb, sources.usa195, 0.744 / unit.lb / usd_ag_1950);
+new GoodDatum(goods.veal, sources.usa195, 1.083 / unit.lb / usd_ag_1950);
+
 // TODAY PRICES
 const usd_ag2 = 23.35 / unit.ozt; // current value
 new GoodDatum(goods.millet, sources.usa202, 0.309/unit.oz / usd_ag2);
