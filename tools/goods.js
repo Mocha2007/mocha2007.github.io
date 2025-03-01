@@ -1551,6 +1551,7 @@ function headers(){
 	Source.sources.filter(visibleSources).forEach(source => {
 		trh.appendChild(source.th);
 	});
+	trh.classList.add('tableHeader');
 	return trh;
 }
 
