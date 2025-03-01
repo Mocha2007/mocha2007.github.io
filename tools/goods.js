@@ -1439,7 +1439,7 @@ function cost_of_living(source, use_indexed = true){
 		const sal_min = get_good(goods.salt) || fallback;
 		const fuel_min = Math.min(...[get_good(goods.charcoal), get_good(goods.coal), 1.62*get_good(goods.firewood)].filter(isFinite));
 		return 300*veg_min + 200*fru_min + 60*mea_min + 20*fis_min + 485*dai_min + 500*gra_min + 25*nut_min
-			+ 10*fab_min + 0.5*sal_min + 1350 * (isFinite(fuel_min) ? fuel_min : 1.62*fallback);
+			+ 1.65*fab_min + 0.5*sal_min + 1350 * (isFinite(fuel_min) ? fuel_min : 1.62*fallback);
 	}
 	catch (_){
 		// eslint-disable-next-line no-useless-return
@@ -1449,7 +1449,7 @@ function cost_of_living(source, use_indexed = true){
 
 /** @param {Source} source */
 function standard_of_living(source){
-	return GoodDatum.gooddata.find(gd => gd.good && gd.good === goods.wageLaborer).price / cost_of_living(source, false);
+	return GoodDatum.gooddata.find(gd => gd.good && gd.good === goods.wageLaborer && gd.source === source).price / cost_of_living(source, false);
 }
 
 /** try "compare(sources.rome0, sources.usa202)" */
