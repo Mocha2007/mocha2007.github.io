@@ -1414,6 +1414,11 @@ function cost_of_living(source, use_indexed = true){
 	function get_cat(name){
 		return GoodDatum.gooddata.filter(gd => gd.good && gd.good.category === Category.fromString(name) && gd.source === source).map(gd => gd[qqq]);
 	}
+	/** @param {Good} good */
+	/*function get_good(good){
+		const datum = GoodDatum.gooddata.find(gd => gd.good && gd.good === good && gd.source === source);
+		return datum && datum.price;
+	}*/
 	function min(x){
 		const m = Math.min(...x);
 		return isFinite(m) ? m : undefined;
@@ -1423,7 +1428,7 @@ function cost_of_living(source, use_indexed = true){
 		const gra_min = min(get_cat('Grain')) || fallback;
 		const veg_min = min(get_cat('Vegetable')) || gra_min;
 		const fru_min = min(get_cat('Fruit')) || veg_min;
-		const mea_min = min(get_cat('Meat')) || gra_min;
+		const mea_min = min([get_cat('Meat'), get_cat('Fowl')]) || gra_min;
 		const fis_min = min(get_cat('Fish')) || mea_min;
 		const dai_min = min(get_cat('Dairy')) || gra_min;
 		const nut_min = min(get_cat('Nut')) || dai_min;
