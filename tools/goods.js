@@ -254,7 +254,7 @@ class GoodDatum {
 			elem.innerHTML = `1:${(1/price).toFixed(0)}`;
 		else
 			elem.innerHTML = `${price.toFixed(0)}:1`;
-		elem.title = `${this.good.name} in ${this.source.place} in ${this.source.year}\n${price}`;
+		elem.title = `${this.good.name} in ${this.source.summary}\n${price}`;
 		return elem;
 	}
 	get td(){
@@ -286,6 +286,9 @@ class Source {
 		this.urls = typeof url === 'string' ? [url] : url;
 		this.hideMe = hideMe;
 		Source.sources.push(this);
+	}
+	get summary(){
+		return `${this.place} in ${this.year}`;
 	}
 	get th(){
 		const elem = document.createElement('th');
@@ -1529,6 +1532,7 @@ function main(){
 		sol_tr.appendChild(sol_td);
 		col_td.innerHTML = round3(cost_of_living(source));
 		sol_td.innerHTML = round3(standard_of_living(source));
+		col_td.title = sol_td.title = source.summary;
 	});
 	// rows
 	Good.goods.forEach(good => table.appendChild(good.tr));
