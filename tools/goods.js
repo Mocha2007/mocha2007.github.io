@@ -1398,6 +1398,48 @@ new GoodDatum(goods.platinum, sources.usa195, 70 / unit.ozt / usd_ag_1950); // a
 // https://tradingeconomics.com/commodity/platinum
 new GoodDatum(goods.platinum, sources.usa202, 1011.1 / unit.ozt / usd_ag2);
 
+/** @param {Source} source */
+function cost_of_living(source, use_indexed = true){
+	const qqq = use_indexed ? 'indexedPrice' : 'price';
+	// I'm using very approximate values based on dietary recommendations:
+	// PER DAY:
+	// 300g vegetables
+	// 200g fruit
+	// 60g meat
+	// 20g fish
+	// 500 mL milk (appx. 485g)
+	// 500g grain
+	// 25g nuts
+	/** @param {string} name */
+	function get_cat(name){
+		return GoodDatum.gooddata.filter(gd => gd.good && gd.good.category === Category.fromString(name) && gd.source === source).map(gd => gd[qqq]);
+	}
+	function min(x){
+		const m = Math.min(...x);
+		return isFinite(m) ? m : undefined;
+	}
+	try {
+		const fallback = min(GoodDatum.gooddata.filter(gd => gd.good && gd.source === source).map(gd => gd[qqq]));
+		const gra_min = min(get_cat('Grain')) || fallback;
+		const veg_min = min(get_cat('Vegetable')) || gra_min;
+		const fru_min = min(get_cat('Fruit')) || veg_min;
+		const mea_min = min(get_cat('Meat')) || gra_min;
+		const fis_min = min(get_cat('Fish')) || mea_min;
+		const dai_min = min(get_cat('Dairy')) || gra_min;
+		const nut_min = min(get_cat('Nut')) || dai_min;
+		return 300*veg_min + 200*fru_min + 60*mea_min + 20*fis_min + 485*dai_min + 500*gra_min + 25*nut_min;
+	}
+	catch (_){
+		// eslint-disable-next-line no-useless-return
+		return;
+	}
+}
+
+/** @param {Source} source */
+function standard_of_living(source){
+	return GoodDatum.gooddata.find(gd => gd.good && gd.good === goods.wageLaborer).price / cost_of_living(source, false);
+}
+
 /** try "compare(sources.rome0, sources.usa202)" */
 function compare(s0, s1){
 	const priceChanges = {};
@@ -1443,6 +1485,9 @@ function headers(){
 }
 
 function main(){
+	function round3(x){
+		return Math.round(1000 * x) / 1000;
+	}
 	if (main.last === unit.index)
 		return;
 	main.last = unit.index;
@@ -1452,6 +1497,27 @@ function main(){
 	const table = document.createElement('table');
 	// headers
 	table.appendChild(headers());
+	// first two rows are COST OF LIVING and STANDARD OF LIVING
+	const col_tr = document.createElement('tr');
+	table.appendChild(col_tr);
+	const sol_tr = document.createElement('tr');
+	table.appendChild(sol_tr);
+	const col_th = document.createElement('th');
+	col_tr.appendChild(col_th);
+	col_th.innerHTML = 'Cost of Living';
+	col_th.title = 'Based on a balanced diet (see methodology section)';
+	const sol_th = document.createElement('th');
+	sol_tr.appendChild(sol_th);
+	sol_th.innerHTML = 'Standard of Living';
+	sol_th.title = 'Wage / Cost of Living';
+	Source.sources.forEach(source => {
+		const col_td = document.createElement('td');
+		col_tr.appendChild(col_td);
+		const sol_td = document.createElement('td');
+		sol_tr.appendChild(sol_td);
+		col_td.innerHTML = round3(cost_of_living(source));
+		sol_td.innerHTML = round3(standard_of_living(source));
+	});
 	// rows
 	Good.goods.forEach(good => table.appendChild(good.tr));
 	// footers
