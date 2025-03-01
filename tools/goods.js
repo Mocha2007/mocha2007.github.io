@@ -774,7 +774,7 @@ new GoodDatum(goods.pig, sources.chinaMing, 1 * china.tael);
 
 // https://www.wikiwand.com/en/Han_dynasty_coinage
 // "During the Han dynasty one catty (250g - 300g) of gold currency was valued at around ten thousand bronze Ban Liang cash coins."
-new GoodDatum(goods.gold, sources.chinaHan, 10000 * china.cash / 275);
+const chinaHanGold = new GoodDatum(goods.gold, sources.chinaHan, 10000 * china.cash / 275);
 
 // https://en.wikipedia.org/wiki/Economy_of_the_Han_dynasty#Subsistence
 new GoodDatum(goods.rice, sources.chinaHan, (70 + 100)/2 * china.cash
@@ -1235,6 +1235,56 @@ new GoodDatum(goods.candle, sources.med16, 1.206 * pence._3 / unit.lb); // Candl
 // https://babel.hathitrust.org/cgi/pt?id=uiug.30112104053555&seq=606
 new GoodDatum(goods.wageLaborer, sources.med17, (15 + 18 + 24 + 18 + 36)/5 * pence.c._17); // average of five 17th-c values
 new GoodDatum(goods.wageLaborer, sources.med18, (24 + 36)/2 * pence.c._17); // average of two 18th-c values
+
+// Notes from
+// A Monetary History of China
+// (1) In Chu [https://en.wikipedia.org/wiki/Chu_(state)], the Gold:Copper ratio was "a bit over" 1:10 (p.29)
+new GoodDatum(goods.copper, sources.chinaHan, chinaHanGold.price/10.5);
+// (2) p.165 [217 in pdf] gives prices for livestock and grain:
+/* "Hence, calculated in gold, the
+Chinese and Roman wheat prices were fairly close.
+In silver, the Chinese price was much lower than
+Rome’s." */
+// My calculations seem to agree with this assessment so I think I calculated them right...
+new GoodDatum(goods.wheat, sources.chinaHan, 9800 / 6250 * 3.6*chinaHanGold.price / (100*unit.grainDensity.wheat));
+new GoodDatum(goods.ox, sources.chinaHan, (1200+3800)/2 * china.cash);
+new GoodDatum(goods.sheep, sources.chinaHan, (150+500)/2 * china.cash);
+new GoodDatum(goods.pig, sources.chinaHan, 300 * china.cash);
+new GoodDatum(goods.dog, sources.chinaHan, (100+120)/2 * china.cash);
+new GoodDatum(goods.chickenLive, sources.chinaHan, (23+70)/2 * china.cash);
+const chinaHanMillet = new GoodDatum(goods.millet, sources.chinaHan, (85+195)/2 * china.cash / china.picul);
+new GoodDatum(goods.barley, sources.chinaHan, 110/2 * china.cash / china.picul);
+new GoodDatum(goods.wheat, sources.chinaHan, 90/2 * china.cash / china.picul);
+// p. 168, typical annual untaxed peasant income during Emperor Wen (Han dynasty)
+// this is in almost precise agreement with the source I originally used (only like 2% less)
+new GoodDatum(goods.wageLaborer, sources.chinaHan, 100*china.picul*chinaHanMillet.price / 365.25);
+// p. 281 "At the time Emperor Muzong ascended the throne, gold and silver sold for each other in Chang’an at a price ratio of 1:10"
+new GoodDatum(goods.gold, sources.chinaTang, 10);
+// also cf. p. 282 "In Japan in 760, the ratio of gold to silver to copper was tenfold at each step."
+// this page also has a LOT of other gold:silver ratios for other regions
+// p. 380: Song prices
+// RICE: 350 small iron cash per dou (c. Zhenzhong, 997‍–‍1022)
+// WHEAT: 10 cash per dou (do.)
+// IRON: c. 966 iron cash fell to 1/5 copper cash. c. 976 it fell to 1/10. c. 1079 it went back up between 1/1.5 and 1/2.
+/** This is the approximate value of copper cash (in silver) p.428 averaged over entire Song dynasty */
+const chinaSongCopperCash = unit.oz / 2105.71; // 2105.71 copper cash per oz silver average
+/** This is the approximate value of iron cash (in silver) between c. 976 - 1079 */
+// const chinaSongIronCash = 0.1 * chinaSongCopperCash; // todo: I feel like rice should be worth twice as much - is this really right?
+// p.428, averaged values in table
+new GoodDatum(goods.rice, sources.chinaSong, 1.34152 * unit.oz / (100 *unit.grainDensity.rice));
+new GoodDatum(goods.wheat, sources.chinaSong, 10 * chinaSongCopperCash / (unit.grainDensity.wheat * china.dou));
+// p.431, chose average in date range where copper prices were near chinaSongCopperCash; this matches table on p.433
+new GoodDatum(goods.gold, sources.chinaSong, 30000 * chinaSongCopperCash / unit.oz);
+//p. 608
+new GoodDatum(goods.copper, sources.chinaMing, 1/((320+112)/2)); // avg. throughout dynasty
+// p.609
+new GoodDatum(goods.horse, sources.chinaMing, 14.37 * unit.oz);
+new GoodDatum(goods.cow, sources.chinaMing, 1.5 * unit.oz);
+new GoodDatum(goods.sheep, sources.chinaMing, 0.59 * unit.oz);
+new GoodDatum(goods.pig, sources.chinaMing, 1.23 * unit.oz); // Yuan
+new GoodDatum(goods.chickenLive, sources.chinaMing, 0.04 * unit.oz);
+// p. 615 "During the ’30s of the jiajing period [1550s], an ordinary river worker’s wage was 0.03 ounce of silver per day"
+new GoodDatum(goods.wageLaborer, sources.chinaMing, 0.03 * unit.oz);
 
 // SKYRIM
 // https://en.uesp.net/wiki/Skyrim:Silver
