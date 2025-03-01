@@ -1410,6 +1410,7 @@ function cost_of_living(source, use_indexed = true){
 	// 500 mL milk (appx. 485g)
 	// 500g grain
 	// 25g nuts
+	// 10g fabric (to replace about 3.65 kg of worn clothing per year)
 	/** @param {string} name */
 	function get_cat(name){
 		return GoodDatum.gooddata.filter(gd => gd.good && gd.good.category === Category.fromString(name) && gd.source === source).map(gd => gd[qqq]);
@@ -1432,7 +1433,8 @@ function cost_of_living(source, use_indexed = true){
 		const fis_min = min(get_cat('Fish')) || mea_min;
 		const dai_min = min(get_cat('Dairy')) || gra_min;
 		const nut_min = min(get_cat('Nut')) || dai_min;
-		return 300*veg_min + 200*fru_min + 60*mea_min + 20*fis_min + 485*dai_min + 500*gra_min + 25*nut_min;
+		const fab_min = min(get_cat('Fabric')) || fallback;
+		return 300*veg_min + 200*fru_min + 60*mea_min + 20*fis_min + 485*dai_min + 500*gra_min + 25*nut_min + 10*fab_min;
 	}
 	catch (_){
 		// eslint-disable-next-line no-useless-return
