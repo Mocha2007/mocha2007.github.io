@@ -41,19 +41,40 @@
 </p>
 <ul>
 	<li><strong>Fuel</strong>: 1.35 kg of Charcoal or Coal, or 2.2 kg of firewood, whichever is cheaper (fallback: 2.2 kg of any good)</li>
-	<li><strong>Grain</strong>: 500g (fallback: any good)</li>
-	<li><strong>Dairy</strong>: 485g (fallback: grain, then any good)</li>
+	<li><strong>Dairy</strong>: 350g (fallback: grain, then any good)</li>
+	<li><strong>Fruit</strong>: 350g (fallback: vegetable, then grain, then any good)</li>
 	<li><strong>Vegetables</strong>: 300g (fallback: grain, then any good)</li>
-	<li><strong>Fruit</strong>: 200g (fallback: vegetable, then grain, then any good)</li>
-	<li><strong>Meat (incl. Poultry)</strong>: 60g (fallback: grain, then any good)</li>
-	<li><strong>Nuts</strong>: 25g (fallback: dairy, then grain, then any good)</li>
-	<li><strong>Fish</strong>: 20g (fallback: meat, then grain, then any good)</li>
+	<li><strong>Grain</strong>: 170g (fallback: any good)</li>
+	<li><strong>Meat (incl. Poultry)</strong>: 105g (fallback: grain, then any good)</li>
+	<li><strong>Fish</strong>: 30g (fallback: meat, then grain, then any good)</li>
+	<li><strong>Nuts</strong>: 20g (fallback: dairy, then grain, then any good)</li>
+	<li><strong>Alcohol</strong>: 15g (fallback: any good)</li>
+	<li><strong>Salt</strong>: 1g (fallback: any good)</li>
 	<li><strong>Fabric</strong>: 1.65g (proxy for clothing; fallback: any good)</li>
-	<li><strong>Salt</strong>: 0.5g (fallback: any good)</li>
+	<li><strong>Eggs</strong>: 0.18/d (0.015 doz/d, fallback: any good)</li>
 </ul>
 <p>
 	By dividing the wage by this CoL figure, we can establish a <em>rough</em> estimate with which we can compare disposable income.
 </p>
+<h3 id="Food">Food</h3>
+<p>
+	For most goods I use a combination of dietary guidelines, or actual consumption data when available (eg. <a href="https://www.efsa.europa.eu/en/microstrategy/foodex2-level-1">here</a>).
+	For salt I have taken the minimum of <a href="https://worldpopulationreview.com/country-rankings/salt-consumption-by-country">this dataset</a>.
+	Dietary guidelines: <a href="https://www.dietaryguidelines.gov/sites/default/files/2021-03/Dietary_Guidelines_for_Americans-2020-2025.pdf">USDA</a>.
+</p>
+<ul>
+	<li><strong>Grain</strong>: USDA recommends 6 oz or 170g</li>
+	<li><strong>Dairy</strong>: 0g minimum, 1083g maximum (Denmark, milk, 2022), USDA recommends 3 cups, or 735g which seems ridiculously high; I'll use half this value</li>
+	<li><strong>Vegetables</strong>: 15g minimum (Chad, 2022), 1116g maximum (China, 2022), USDA recommends 2.5 cups, or abt. 300g</li>
+	<!-- based on https://optaviamedia.com/pdf/learn/OPTAVIA-Vegetarian_Conversion_Chart.pdf it seems veg has a specific gravity of ~0.5 so I just divide volume by 2 to get mass -->
+	<li><strong>Fruit</strong>: 14g minimum (Zambia, 2022), 1331g maximum (Dominica, 2022), USDA recommends 2 cups, abt. 350g</li>
+	<li><strong>Meat (incl. Poultry)</strong>: 10g minimum (Burundi, 2024), 404g maximum (Tonga, 2024), USDA recommends 105g</li>
+	<li><strong>Nuts</strong>: USDA recommends 20g</li>
+	<li><strong>Fish</strong>: 1g minimum (Afghanistan, 2022), 238g maximum (Iceland, 2022), USDA recommends 32g</li>
+	<li><strong>Alcohol</strong>: 0g minimum, 46g maximum (Russia, 2020)</li>
+	<li><strong>Salt</strong>: Consumption: 5g minimum (Samoa, 2024), 18g maximum (China, 2024), BUT EU DRV 2g/d total sodium and USDA recommends no more than 2.3g/d.</li>
+	<li><strong>Eggs</strong>: 0 dozen minimum, 0.120 dozen maximum (Hong Kong, 2024)</li>
+</ul>
 <h3 id="Fuel">Fuel</h3>
 <p>
 	For fuel usage I have used this very basic heuristic:

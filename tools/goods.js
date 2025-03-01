@@ -1439,21 +1439,25 @@ function cost_of_living(source, use_indexed = true){
 		const dai_min = min(get_cat('Dairy')) || gra_min;
 		const nut_min = min(get_cat('Nut')) || dai_min;
 		const fab_min = min(get_cat('Fabric')) || fallback;
+		const alc_min = min(get_cat('Alcohol')) || fallback;
 		const sal_min = get_good(goods.salt) || fallback;
+		const egg_min = get_good(goods.egg) || fallback;
 		const fuel_min = Math.min(...[get_good(goods.charcoal), get_good(goods.coal), 1.62*get_good(goods.firewood)].filter(isFinite));
 		const fuel_actual = 1350 * (isFinite(fuel_min) ? fuel_min : 1.62*fallback);
-		const value = 300*veg_min + 200*fru_min + 60*mea_min + 20*fis_min + 485*dai_min + 500*gra_min + 25*nut_min
-			+ 1.65*fab_min + 0.5*sal_min + fuel_actual;
+		const value = 300*veg_min + 350*fru_min + 105*mea_min + 30*fis_min + 350*dai_min + 170*gra_min + 20*nut_min
+			+ 1.65*fab_min + 1*sal_min + fuel_actual + 15*alc_min + 0.015*egg_min;
 		const frac = {
-			gra: 500 * gra_min / value,
+			gra: 170 * gra_min / value,
+			fru: 350 * fru_min / value,
 			veg: 300 * veg_min / value,
-			fru: 200 * fru_min / value,
-			mea: 60 * mea_min / value,
-			fis: 20 * fis_min / value,
-			dai: 485 * dai_min / value,
-			nut: 25 * nut_min / value,
+			mea: 105 * mea_min / value,
+			fis: 30 * fis_min / value,
+			dai: 350 * dai_min / value,
+			nut: 20 * nut_min / value,
 			fab: 1.65 * fab_min / value,
-			sal: 0.5 * sal_min / value,
+			alc: 15 * alc_min / value,
+			egg: 0.015 * egg_min / value,
+			sal: 1 * sal_min / value,
 			fuel: fuel_actual / value,
 		};
 		return {
@@ -1557,10 +1561,12 @@ function main(){
 		Vegetables: ${Math.round(100*col.frac.veg)}%
 		Fruit: ${Math.round(100*col.frac.fru)}%
 		Meat: ${Math.round(100*col.frac.mea)}%
+		Alcohol: ${Math.round(100*col.frac.alc)}%
 		Nuts: ${Math.round(100*col.frac.nut)}%
 		Fish: ${Math.round(100*col.frac.fis)}%
 		Fabric: ${Math.round(100*col.frac.fab)}%
 		Salt: ${Math.round(100*col.frac.sal)}%
+		Eggs: ${Math.round(100*col.frac.egg)}%
 		`;
 	});
 	// rows
