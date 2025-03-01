@@ -1105,6 +1105,12 @@ new GoodDatum(goods.uranium, sources.usa202, 40.06/unit.lb / usd_ag2); // https:
 
 new GoodDatum(goods.wageLaborer, sources.usa202, 8 * 7.25 / usd_ag2); // 8h min wage
 
+// https://stellinamarfa.com/fruits/how-much-does-a-fresh-fig-cost/
+new GoodDatum(goods.figs, sources.usa202, (2.65+2.18)/2 / unit.lb / usd_ag2); // 2022
+new GoodDatum(goods.leek, sources.usa202, 2.88 / unit.lb / usd_ag2); // 2025 https://www.safeway.com/shop/product-details.184460010.html
+new GoodDatum(goods.turnip, sources.usa202, 0.166 / unit.oz / usd_ag2); // 2025 Walmart
+new GoodDatum(goods.firewood, sources.usa202, 7.66 / (21 * unit.lb) / usd_ag2); // 2025 Walmart
+
 // today's cheapest animal prices
 new GoodDatum(goods.horse, sources.usa202, 7000 / usd_ag2); // https://www.astepabovestables.com/horses-for-sale/draft?Order=lowest
 new GoodDatum(goods.cat, sources.usa202, 15 / usd_ag2); // https://www.hepper.com/how-much-does-a-cat-cost/ (cheapest adoption cost)
@@ -1129,8 +1135,9 @@ new GoodDatum(goods.iron, sources.usa195, 0.7077*18.7/unit.t / usd_ag); // https
 
 // 2019 misc commodity values
 // https://www.sfu.ca/~djacks/data/boombust/Chartbook%20for%20From%20Boom%20to%20Bust%202102.pdf
-new GoodDatum(goods.barley, sources.usa202, 20.36e9/158.98e12 / usd_ag2);
-new GoodDatum(goods.rye, sources.usa202, 3.03e9/12.8e12 / usd_ag2);
+// these seem wrong...
+// new GoodDatum(goods.barley, sources.usa202, 20.36e9/158.98e12 / usd_ag2);
+// new GoodDatum(goods.rye, sources.usa202, 3.03e9/12.8e12 / usd_ag2);
 
 // https://babel.hathitrust.org/cgi/pt?id=uc1.32106007458745&seq=42
 new GoodDatum(goods.butter, sources.med17, 0.09/unit.lb / usd_ag);
