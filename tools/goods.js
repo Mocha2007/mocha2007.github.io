@@ -1444,15 +1444,15 @@ function cost_of_living(source, use_indexed = true){
 		const egg_min = get_good(goods.egg) || fallback;
 		const fuel_min = Math.min(...[get_good(goods.charcoal), get_good(goods.coal), 1.62*get_good(goods.firewood)].filter(isFinite));
 		const fuel_actual = 1350 * (isFinite(fuel_min) ? fuel_min : 1.62*fallback);
-		const value = 300*veg_min + 350*fru_min + 105*mea_min + 30*fis_min + 350*dai_min + 170*gra_min + 20*nut_min
+		const value = 350*veg_min + 350*fru_min + 105*mea_min + 30*fis_min + 150*dai_min + 300*gra_min + 20*nut_min
 			+ 1.65*fab_min + 1*sal_min + fuel_actual + 15*alc_min + 0.015*egg_min;
 		const frac = {
-			gra: 170 * gra_min / value,
+			gra: 300 * gra_min / value,
 			fru: 350 * fru_min / value,
-			veg: 300 * veg_min / value,
+			veg: 350 * veg_min / value,
 			mea: 105 * mea_min / value,
 			fis: 30 * fis_min / value,
-			dai: 350 * dai_min / value,
+			dai: 150 * dai_min / value,
 			nut: 20 * nut_min / value,
 			fab: 1.65 * fab_min / value,
 			alc: 15 * alc_min / value,
