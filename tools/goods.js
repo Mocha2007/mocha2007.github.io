@@ -1165,6 +1165,7 @@ new GoodDatum(goods.pony, sources.ind14, (10 + 25)/2 * india.tanka);
 new GoodDatum(goods.bull, sources.ind14, 3 * india.tanka);
 new GoodDatum(goods.cow, sources.ind14, (1.5 + 4)/2 * india.tanka);
 new GoodDatum(goods.sheep, sources.ind14, (10 + 12)/2 * india.jital);
+new GoodDatum(goods.wageLaborer, sources.ind14, (1+2)/2 * india.jital); // Pulled this out of my ass, essentially. If you find actual sources, replace this.
 
 // https://www.mccormickscienceinstitute.com/resources/history-of-spices
 // "A pound of saffron cost the same as a horse;""
@@ -1377,6 +1378,18 @@ new GoodDatum(goods.cat, sources.dorf, 20 * df$);
 new GoodDatum(goods.gooseLive, sources.dorf, 10 * df$);
 new GoodDatum(goods.chickenLive, sources.dorf, 10 * df$);
 new GoodDatum(goods.duckLive, sources.dorf, 10 * df$);
+
+// BASIC STANDARD OF LIVING: FOOD + DRINK + CLOTHING
+// FOOD:
+// https://dwarffortresswiki.org/index.php/Food#Detailed_mechanics
+// Eating one meal decreases hunger by 50,000 units. It increases 1,200 units per day. (Drinking works identically)
+// My understanding is that with cheap ingredients, basic meal quality, a meal is 1☼
+// Cheapest alcohol is 1☼ per unit [https://dwarffortresswiki.org/index.php/Alcohol#List_of_alcohol], although one could also consider it is easier to get the 2☼ alcohols
+// cheapest base values of clothing 5 headwear, 8 torso, 5 pants, 12 pair of handwear, 12 pair of footwear (42 total)
+// clothing undergoes 1 wear level every 20 years base (https://dwarffortresswiki.org/index.php/Wear) so this is the replacement time I'm using.
+// so 0.024☼/d for food, the same amount for drink, 0.00625☼/d clothing (336 days in a year)
+// this comes out to 0.05425☼/d (abt. 1/18)
+new GoodDatum(goods.wageLaborer, sources.dorf, 0.05425 * df$);
 
 // Platinum Price History
 // https://sdbullion.com/blog/platinum-price-history
