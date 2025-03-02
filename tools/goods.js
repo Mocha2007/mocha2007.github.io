@@ -496,6 +496,7 @@ const sources = {
 	usa190: new Source('c. 1900', 'US', ['https://babel.hathitrust.org/cgi/pt?id=umn.31951000014585x&seq=233', 'https://fraser.stlouisfed.org/title/bulletin-united-states-bureau-labor-3943/july-1905-477618/retail-prices-food-498513?start_page=179', 'https://fraser.stlouisfed.org/files/docs/publications/FRB/pages/1915-1919/24568_1915-1919.pdf', 'https://archive.org/details/catalogueno11200sear/page/20/mode/2up']),
 	usa195: new Source('c. 1950', 'US', 'https://babel.hathitrust.org/cgi/pt?id=umn.31951000014585x&seq=233'),
 	usa202: new Source('2023', 'US', 'https://www.walmart.com'), // i just went onto walmart lol
+	pol202: new Source('2025', 'Poland', ''),
 	skyrim: new Source('4E 201', 'Skyrim', 'https://en.uesp.net/wiki/Skyrim:Skyrim', true),
 	dorf: new Source('', 'Dwarf Fortress', 'https://dwarffortresswiki.org', true),
 };
@@ -1158,6 +1159,39 @@ new GoodDatum(goods.iron, sources.usa195, 0.7077*18.7/unit.t / usd_ag); // https
 // these seem wrong...
 // new GoodDatum(goods.barley, sources.usa202, 20.36e9/158.98e12 / usd_ag2);
 // new GoodDatum(goods.rye, sources.usa202, 3.03e9/12.8e12 / usd_ag2);
+
+// WOOJYLAND
+
+
+const pln_ag_2025 = 125.99 / unit.ozt; // current value
+new GoodDatum(goods.gold, sources.pol202, 91.71);
+new GoodDatum(goods.wageLaborer, sources.pol202, 4666/pln_ag_2025 * 12 / 52 / 5); // to convert from monthly wage to daily wage, turns out to 215.35 zł/d
+// https://www.biedronka.pl/pl/press,id,iifdszot1,title,biedronki-niskie-ceny-p-oferta-od-27-02#page=1
+new GoodDatum(goods.milk, sources.pol202, 1.99/pln_ag_2025 / 1000); // per liter
+new GoodDatum(goods.sugar, sources.pol202, 1.49/pln_ag_2025 / 1000);
+new GoodDatum(goods.lettuce, sources.pol202, 5.49/pln_ag_2025 / unit.weights.lettuce);
+new GoodDatum(goods.apple, sources.pol202, 9.99/pln_ag_2025 / 1000);
+new GoodDatum(goods.asparagus, sources.pol202, 9.50/pln_ag_2025 / 250);
+new GoodDatum(goods.pork, sources.pol202, 23.52/pln_ag_2025 / 1000);
+new GoodDatum(goods.beef, sources.pol202, 35.58/pln_ag_2025 / 1000);
+new GoodDatum(goods.fish, sources.pol202, 37.90/pln_ag_2025 / 1000);
+// https://marketdino.pl/gazetka/163/1
+new GoodDatum(goods.chocolate, sources.pol202, 7.79/pln_ag_2025 / 200); // cocoa powder
+new GoodDatum(goods.coffee, sources.pol202, 4.99/pln_ag_2025 / 500);
+new GoodDatum(goods.tea, sources.pol202, 83/pln_ag_2025 / 1000);
+new GoodDatum(goods.flour, sources.pol202, 2.89/pln_ag_2025 / 1100);
+new GoodDatum(goods.soda, sources.pol202, 4.79/pln_ag_2025 / 500);
+new GoodDatum(goods.honey, sources.pol202, 8.89/pln_ag_2025 / 400);
+new GoodDatum(goods.oilOlive, sources.pol202, 24.49/pln_ag_2025 / 500); // evoo
+new GoodDatum(goods.vinegar, sources.pol202, 1.39/pln_ag_2025 / 500);
+new GoodDatum(goods.chicken, sources.pol202, 11.99/pln_ag_2025 / 1000);
+new GoodDatum(goods.garlic, sources.pol202, 29.99/pln_ag_2025 / 1000);
+new GoodDatum(goods.egg, sources.pol202, 10.99/pln_ag_2025 / 10 * 12); // sold in 10-packs
+new GoodDatum(goods.butter, sources.pol202, 8.99/pln_ag_2025 / 200);
+new GoodDatum(goods.cheese, sources.pol202, 27.99/pln_ag_2025 / 1000);
+new GoodDatum(goods.beer, sources.pol202, 4.28/pln_ag_2025 / 1000); // per liter
+new GoodDatum(goods.walnut, sources.pol202, 14.99/pln_ag_2025 / 230);
+
 
 // https://babel.hathitrust.org/cgi/pt?id=uc1.32106007458745&seq=42
 new GoodDatum(goods.butter, sources.med17, 0.09/unit.lb / usd_ag);
