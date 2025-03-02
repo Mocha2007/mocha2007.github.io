@@ -52,6 +52,18 @@ const unit = {
 	gal: 3770,
 	/** grams in a grain (no difference between troy/avoirdupois/etc) */
 	grain: 0.06479891,
+	/** cal per 100g */
+	grainCal: {
+		Barley: 354, // https://fdc.nal.usda.gov/food-details/170283/nutrients
+		Millet: 376, // https://fdc.nal.usda.gov/food-details/2512379/nutrients
+		Oat: 381, // https://fdc.nal.usda.gov/food-details/2346397/nutrients
+		Rice: 359, // https://fdc.nal.usda.gov/food-details/2512381/nutrients
+		Rye: 338, // https://fdc.nal.usda.gov/food-details/168884/nutrients
+		Spelt: 338, // https://fdc.nal.usda.gov/food-details/169745/nutrients
+		Wheat: 339, // https://fdc.nal.usda.gov/food-details/169721/nutrients
+		Flour: 366, // https://fdc.nal.usda.gov/food-details/789890/nutrients
+		Oatmeal: 362, // https://fdc.nal.usda.gov/food-details/171661/nutrients
+	},
 	/** g/L of grains https://www.smallfarmcanada.ca/resources/standard-weights-per-bushel-for-agricultural-commodities */
 	grainDensity: {
 		get ppb(){
@@ -1622,7 +1634,10 @@ function cost_of_living(source, use_indexed = true){
 		};
 		return {
 			fallback, gra_min, veg_min, fru_min, fis_min, dai_min, nut_min, fab_min, sal_min, fuel_min, value, frac,
-			just_grain: 1250 * gra_min, // abt. 2000 cal of grain
+			just_grain: Math.min(...GoodDatum.gooddata.filter(gd => gd.good
+				&& (gd.good.category === Category.fromString('Grain') || gd.good.category === Category.fromString('Processed Grain'))
+				&& gd.source === source)
+				.map(gd => gd[qqq] * 2000 / unit.grainCal[gd.good.name] * 100)), // find the minimum of whichever 2000cal grain product is cheapest
 		};
 	}
 	catch (_){
@@ -1709,7 +1724,6 @@ function main(){
 	const col2_th = document.createElement('th');
 	col2_tr.appendChild(col2_th);
 	col2_th.innerHTML = 'Cost of 2k cal Grain';
-	col2_th.title = 'Currently approximated by taking 1.25 kg of the cheapest grain';
 	const sol_th = document.createElement('th');
 	sol_tr.appendChild(sol_th);
 	sol_th.innerHTML = 'Standard of Living';
