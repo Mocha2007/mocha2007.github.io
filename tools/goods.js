@@ -156,6 +156,7 @@ const unit = {
 		beet: 80, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345290/portions
 		cabbage: 900, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345293/portions
 		citron: 65, // lemon https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344662/portions
+		fig: 50, // https://fdc.nal.usda.gov/food-details/173021/measures
 		leek: 89, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/169246/measures
 		lettuce: 539, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2345309/portions
 		melon: 1000, // https://fdc.nal.usda.gov/fdc-app.html#/food-details/2344736/portions
@@ -1235,6 +1236,26 @@ new GoodDatum(goods.cumin, sources.pol202, 6.90/pln_ag_2025 / 200); // https://w
 new GoodDatum(goods.nutmeg, sources.pol202, 36.80/pln_ag_2025 / 500); // https://www.kaufland.pl/product/502641160/?search_value=ga%C5%82ka%20muszkato%C5%82owa
 new GoodDatum(goods.pepper, sources.pol202, 885.93/pln_ag_2025 / 25000); // https://www.kaufland.pl/product/480909120/?id_unit=387918279725&ref=spa_search_page_widget&mabref=pieprz&search_value=pieprz
 new GoodDatum(goods.saffron, sources.pol202, 59.99/pln_ag_2025 / 5); // https://www.kaufland.pl/product/494737672/?search_value=szafran
+// https://polskikoszyk.pl/
+new GoodDatum(goods.leek, sources.pol202, 3.99/pln_ag_2025 / 1000);
+new GoodDatum(goods.currant, sources.pol202, 162.32/pln_ag_2025 / 1000);
+new GoodDatum(goods.figs, sources.pol202, 8.62/pln_ag_2025 / (2 * unit.weights.fig));
+new GoodDatum(goods.beet, sources.pol202, 1.99/pln_ag_2025 / 1000);
+new GoodDatum(goods.cabbage, sources.pol202, 13.98/pln_ag_2025 / 2000);
+new GoodDatum(goods.lettuce, sources.pol202, 5.09/pln_ag_2025 / (2 * unit.weights.lettuce));
+new GoodDatum(goods.potatoSweet, sources.pol202, 12.99/pln_ag_2025 / 1000);
+new GoodDatum(goods.squash, sources.pol202, 14.38/pln_ag_2025 / 1000);
+new GoodDatum(goods.clove, sources.pol202, 2.82/pln_ag_2025 / 15);
+new GoodDatum(goods.ginger, sources.pol202, 3.30/pln_ag_2025 / 150);
+new GoodDatum(goods.flax, sources.pol202, 6.32/pln_ag_2025 / 200);
+new GoodDatum(goods.lard, sources.pol202, 3.59/pln_ag_2025 / 200);
+new GoodDatum(goods.oilSesame, sources.pol202, 12.79/pln_ag_2025 / 150); // per 150 mL
+new GoodDatum(goods.salt, sources.pol202, 3.28/pln_ag_2025 / 1000);
+new GoodDatum(goods.sesame, sources.pol202, 11.20/pln_ag_2025 / 250);
+new GoodDatum(goods.candle, sources.pol202, 32.80/pln_ag_2025 / 700); // estimated mass https://polskikoszyk.pl/catalogsearch/result?q=%C5%9Bwieca#produkt-98300
+new GoodDatum(goods.soap, sources.pol202, 2.19/pln_ag_2025 / 90);
+new GoodDatum(goods.charcoal, sources.pol202, 18.69/pln_ag_2025 / 2000);
+
 
 // misc
 new GoodDatum(goods.turkey, sources.pol202, 13.99/pln_ag_2025 / 500); // https://www.biedronka.pl/pl/product,id,426035,name,indyk-ze-sliwka-wolno-gotowane-kraina-mies-500-g
