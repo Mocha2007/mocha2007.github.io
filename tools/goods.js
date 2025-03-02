@@ -104,7 +104,9 @@ const unit = {
 		return Good.fromName(document.getElementById('index').value);
 	},
 	/** number of grams in a quart of water */
-	qt: 3770/4,
+	get qt(){
+		return this.gal/4;
+	},
 	/** last in grams */
 	last: 2*453.5924*2000,
 	/** pound in grams */
@@ -114,9 +116,13 @@ const unit = {
 	/** tower pound in grams */
 	lbtower: 350,
 	/** pound in grams */
-	oz: 453.5924/16,
+	get oz(){
+		return this.lb/16;
+	},
 	/** troy ounce in grams */
-	ozt: 373.242/12,
+	get ozt(){
+		return this.lbt / 12;
+	},
 	/** 1 pint in L */
 	pt: 0.473,
 	/** quarter in L https://en.wikipedia.org/wiki/Quarter_(unit)#Volume */
@@ -124,7 +130,9 @@ const unit = {
 		return 8 * this.bu;
 	},
 	/** imperial ton in grams */
-	t: 453.5924*2000,
+	get t(){
+		return this.lb * 2000;
+	},
 	/** tun in mL */
 	tun: 252 * 3785,
 	weights: {
