@@ -291,8 +291,7 @@ class GoodDatum {
 			`;
 		}
 		catch (_){
-			// eslint-disable-next-line getter-return
-			return;
+			return '';
 		}
 	}
 	get indexedPrice(){
