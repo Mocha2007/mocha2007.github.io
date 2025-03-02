@@ -12,7 +12,8 @@ function geometricAvg(arr){
 }
 
 const debug = document.URL[0].toLowerCase() === 'f'; // file:// vs. http(s)://
-const USD_CONVERSION = 8*7.25;
+const USD_CONVERSION = 8*7.25; // $
+const ROM_CONVERSION = 25; // denarii
 
 const unit = {
 	/** number of L in a bushel */
@@ -261,6 +262,14 @@ class GoodDatum {
 		this.context = context;
 		GoodDatum.gooddata.push(this);
 	}
+	get equivalency(){
+		const weight_unit = this.good.unit ? [1, this.good.unit] : [unit.lb, 'pound'];
+		const labor_value = this.priceIn(goods.wageLaborer) * weight_unit[0];
+		const rom = ROM_CONVERSION * labor_value;
+		return `Roughly equivalent to $${(USD_CONVERSION * labor_value).toLocaleString()} per ${weight_unit[1]} in 2023 USD based on labor costs
+		... or ${Math.floor(rom).toLocaleString()} denarii, ${Math.round(rom%1*16)} asses per ${weight_unit[1]} in 301 CE Roman currency.
+		`;
+	}
 	get indexedPrice(){
 		return this.priceIn(unit.index);
 	}
@@ -271,16 +280,13 @@ class GoodDatum {
 			elem.innerHTML = `1:${(1/price).toFixed(0)}`;
 		else
 			elem.innerHTML = `${price.toFixed(0)}:1`;
-		elem.title = `${this.good.name} in ${this.source.summary}\n${price}\nRoughly equivalent to $${this.todayPrice.toLocaleString()} per unit in 2023 USD based on labor costs.`;
+		elem.title = `${this.good.name} in ${this.source.summary}\n${price}\n${this.equivalency}`;
 		return elem;
 	}
 	get td(){
 		const elem = document.createElement('td');
 		elem.appendChild(this.priceElem);
 		return elem;
-	}
-	get todayPrice(){
-		return USD_CONVERSION * this.priceIn(goods.wageLaborer);
 	}
 	priceIn(index){
 		return this.price / GoodDatum.getAt(index, this.source).price;
