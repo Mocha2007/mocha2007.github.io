@@ -50,7 +50,7 @@ const GRADIENT = {
 	},
 	// TEST
 	/** finds the TEST element and outputs test to it */
-	test(steps = 96){
+	test(steps = 240){
 		function br(){
 			elem.appendChild(document.createElement('br'));
 		}
