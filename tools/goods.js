@@ -2,11 +2,17 @@
 /* exported compare */
 
 /** @param {number[]} arr */
+function arithmeticAvg(arr){
+	return arr.reduce((a, b) => a+b, 0) / arr.length;
+}
+
+/** @param {number[]} arr */
 function geometricAvg(arr){
 	return Math.pow(arr.reduce((a, b) => a*b, 1), 1 / arr.length);
 }
 
 const debug = document.URL[0].toLowerCase() === 'f'; // file:// vs. http(s)://
+const USD_CONVERSION = 8*7.25;
 
 const unit = {
 	/** number of L in a bushel */
@@ -248,7 +254,7 @@ class GoodDatum {
 		GoodDatum.gooddata.push(this);
 	}
 	get indexedPrice(){
-		return this.price / GoodDatum.getAt(unit.index, this.source).price;
+		return this.priceIn(unit.index);
 	}
 	get priceElem(){
 		const elem = document.createElement('span');
@@ -257,13 +263,19 @@ class GoodDatum {
 			elem.innerHTML = `1:${(1/price).toFixed(0)}`;
 		else
 			elem.innerHTML = `${price.toFixed(0)}:1`;
-		elem.title = `${this.good.name} in ${this.source.summary}\n${price}`;
+		elem.title = `${this.good.name} in ${this.source.summary}\n${price}\nRoughly equivalent to $${this.todayPrice.toLocaleString()} per unit in 2023 USD based on labor costs.`;
 		return elem;
 	}
 	get td(){
 		const elem = document.createElement('td');
 		elem.appendChild(this.priceElem);
 		return elem;
+	}
+	get todayPrice(){
+		return USD_CONVERSION * this.priceIn(goods.wageLaborer);
+	}
+	priceIn(index){
+		return this.price / GoodDatum.getAt(index, this.source).price;
 	}
 	/**
 	 * @param {Good} good
@@ -1448,8 +1460,13 @@ const greece = {
 	drachma: 4.3,
 	/** L, Attic */
 	medimnos: 51.84,
+	/** g */
+	mina: 570,
 	get obol(){
 		return this.drachma/6;
+	},
+	get stater(){
+		return 2*this.drachma;
 	},
 };
 /*
@@ -1470,6 +1487,10 @@ new GoodDatum(goods.beef, sources.greece, 0.5 * greece.obol / unit.lb);
 // https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:2008.01.0267:section=10&highlight=obol
 // a half-pint of honey five drachmas
 new GoodDatum(goods.honey, sources.greece, 5 * greece.drachma / (0.5 * unit.pt * unit.density.honey));
+
+// 2nd c. http://www.attalus.org/docs/other/inscr_24.html
+new GoodDatum(goods.slaveF, sources.greece, arithmeticAvg([7/3, 2, 4, 4, 3, 3, 3, 3, 5, 3, 1]) * greece.mina);
+new GoodDatum(goods.slaveSkilled, sources.greece, arithmeticAvg([10]) * greece.mina);
 
 /** @param {Source} source */
 function cost_of_living(source, use_indexed = true){
@@ -1623,6 +1644,9 @@ function main(){
 	sol_th.innerHTML = 'Standard of Living';
 	sol_th.title = 'Wage / Cost of Living';
 	Source.sources.forEach(source => {
+		if (source.hideMe && !debug){
+			return;
+		}
 		const col_td = document.createElement('td');
 		col_tr.appendChild(col_td);
 		const col2_td = document.createElement('td');
