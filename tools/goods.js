@@ -280,14 +280,20 @@ class GoodDatum {
 		function pl(n, s, plu){
 			return n === 1 ? `1 ${s}` : `${n} ${plu}`;
 		}
-		const weight_unit = this.good.unit ? [1, this.good.unit] : [unit.lb, 'pound'];
-		const labor_value = this.priceIn(goods.wageLaborer) * weight_unit[0];
-		const ROM = ROM_CONVERSION * labor_value;
-		const ENG = ENG_CONVERSION * labor_value; // PENCE
-		return `Roughly equivalent to $${(USD_CONVERSION * labor_value).toLocaleString()} per ${weight_unit[1]} in 2023 USD based on labor costs
-		... or ${pl(Math.floor(ROM).toLocaleString(), 'denarius', 'denarii')}, ${pl(ROM%1*16, 'as', 'asses')} per ${weight_unit[1]} in 301 CE Roman currency.
-		... or £ ${Math.floor(ENG/240).toLocaleString()} ${Math.floor(ENG/12%20)} s ${ENG%12} d per ${weight_unit[1]} in late medieval English currency.
-		`;
+		try {
+			const weight_unit = this.good.unit ? [1, this.good.unit] : [unit.lb, 'pound'];
+			const labor_value = this.priceIn(goods.wageLaborer) * weight_unit[0];
+			const ROM = ROM_CONVERSION * labor_value;
+			const ENG = ENG_CONVERSION * labor_value; // PENCE
+			return `Roughly equivalent to $${(USD_CONVERSION * labor_value).toLocaleString()} per ${weight_unit[1]} in 2023 USD based on labor costs
+			... or ${pl(Math.floor(ROM).toLocaleString(), 'denarius', 'denarii')}, ${pl(ROM%1*16, 'as', 'asses')} per ${weight_unit[1]} in 301 CE Roman currency.
+			... or £ ${Math.floor(ENG/240).toLocaleString()} ${Math.floor(ENG/12%20)} s ${ENG%12} d per ${weight_unit[1]} in late medieval English currency.
+			`;
+		}
+		catch (_){
+			// eslint-disable-next-line getter-return
+			return;
+		}
 	}
 	get indexedPrice(){
 		return this.priceIn(unit.index);
@@ -524,6 +530,7 @@ const sources = {
 	pol202: new Source('2025', 'Poland', ''),
 	skyrim: new Source('4E 201', 'Skyrim', 'https://en.uesp.net/wiki/Skyrim:Skyrim', true),
 	dorf: new Source('', 'Dwarf Fortress', 'https://dwarffortresswiki.org', true),
+	terraria: new Source('', 'Terraria', 'https://terraria.wiki.gg/wiki/Bars', true),
 };
 
 // add default silver
@@ -1529,6 +1536,14 @@ new GoodDatum(goods.duckLive, sources.dorf, 10 * df$);
 // so 0.024☼/d for food, the same amount for drink, 0.00625☼/d clothing (336 days in a year)
 // this comes out to 0.05425☼/d (abt. 1/18)
 new GoodDatum(goods.wageLaborer, sources.dorf, 0.05425 * df$);
+
+// Terraria
+const TERRARIA_COPPER_COIN = 1 / 600; // 1 silver bar = 600 coins
+new GoodDatum(goods.copper, sources.terraria, 150*TERRARIA_COPPER_COIN);
+new GoodDatum(goods.gold, sources.terraria, 1200*TERRARIA_COPPER_COIN);
+new GoodDatum(goods.iron, sources.terraria, 300*TERRARIA_COPPER_COIN);
+new GoodDatum(goods.platinum, sources.terraria, 1800*TERRARIA_COPPER_COIN);
+// new GoodDatum(goods.wageLaborer, sources.terraria, 1); // just to prevent bug
 
 // Platinum Price History
 // https://sdbullion.com/blog/platinum-price-history
