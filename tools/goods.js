@@ -1238,6 +1238,7 @@ new GoodDatum(goods.saffron, sources.pol202, 59.99/pln_ag_2025 / 5); // https://
 
 // misc
 new GoodDatum(goods.turkey, sources.pol202, 13.99/pln_ag_2025 / 500); // https://www.biedronka.pl/pl/product,id,426035,name,indyk-ze-sliwka-wolno-gotowane-kraina-mies-500-g
+new GoodDatum(goods.firewood, sources.pol202, 250/pln_ag_2025 / (1701.94*unit.lb)); // https://www.olx.pl/d/oferta/drewno-opalowe-kominkowe-cena-za-buk-CID628-ID14l2Xw.html?isPreviewActive=0&sliderIndex=0
 
 
 // https://babel.hathitrust.org/cgi/pt?id=uc1.32106007458745&seq=42
