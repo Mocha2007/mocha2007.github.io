@@ -226,6 +226,7 @@ class Good {
 	}
 	get th(){
 		const elem = document.createElement('th');
+		elem.style.backgroundColor = this.category.bgColor;
 		elem.innerHTML = this.name;
 		if (this.unit)
 			elem.innerHTML += ` (g Ag / ${this.unit})`;

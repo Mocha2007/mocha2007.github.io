@@ -18,10 +18,21 @@
 	.rot {
 		transform: rotate(90deg);
 	}
-	.tableHeader {
+	.tableHeader th {
 		background-color: black;
 		position: sticky;
 		top: 0;
+	}
+	th:first-child {
+		position: sticky;
+		left: 0;
+	}
+	.tableHeader td:first-child {
+		background-color: black;
+		position: sticky;
+		left: 0;
+		top: 0;
+		z-index: 1;
 	}
 </style>
 <title>Good Values</title>
