@@ -434,6 +434,7 @@ const goods = {
 	nutmeg: new Good('Nutmeg', 'Spice'),
 	pepper: new Good('Black Pepper', 'Spice'),
 	saffron: new Good('Saffron', 'Spice'),
+	silphium: new Good('Silphium', 'Spice'),
 	// MISC FOOD / INGREDIENTS
 	chocolate: new Good('Chocolate', 'Ingredient'),
 	coffee: new Good('Coffee', 'Ingredient'),
@@ -680,6 +681,7 @@ new GoodDatum(goods.linen, sources.rome0, 24 * rome.d/rome.lb);
 new GoodDatum(goods.gold, sources.rome0, 12);
 new GoodDatum(goods.wax, sources.rome0, 25 * rome.d/rome.lb);
 new GoodDatum(goods.saffron, sources.rome0, 2000 * rome.d/rome.lb);
+new GoodDatum(goods.silphium, sources.rome0, 16 * rome.d/rome.lb);
 new GoodDatum(goods.incense, sources.rome0, 100 * rome.d/rome.lb);
 new GoodDatum(goods.pepper, sources.rome0, 800 * rome.d/rome.lb);
 new GoodDatum(goods.ginger, sources.rome0, 250 * rome.d/rome.lb);
