@@ -264,8 +264,8 @@ class GoodDatum {
 		GoodDatum.gooddata.push(this);
 	}
 	get equivalency(){
-		function pl(n, s, pl){
-			return n === 1 ? `1 ${s}` : `${n} ${pl}`;
+		function pl(n, s, plu){
+			return n === 1 ? `1 ${s}` : `${n} ${plu}`;
 		}
 		const weight_unit = this.good.unit ? [1, this.good.unit] : [unit.lb, 'pound'];
 		const labor_value = this.priceIn(goods.wageLaborer) * weight_unit[0];
@@ -1576,10 +1576,10 @@ function cost_of_living(source, use_indexed = true){
 	}
 	try {
 		const fallback = min(GoodDatum.gooddata.filter(gd => gd.good && gd.source === source).map(gd => gd[qqq]));
-		const gra_min = min(get_cat('Grain')) || fallback;
+		const gra_min = min(get_cat('Grain').concat(get_cat('Processed Grain'))) || fallback;
 		const veg_min = min(get_cat('Vegetable')) || gra_min;
 		const fru_min = min(get_cat('Fruit')) || veg_min;
-		const mea_min = min([get_cat('Meat'), get_cat('Fowl')]) || gra_min;
+		const mea_min = min(get_cat('Meat').concat(get_cat('Fowl'))) || gra_min;
 		const fis_min = min(get_cat('Fish')) || mea_min;
 		const dai_min = min(get_cat('Dairy')) || gra_min;
 		const nut_min = min(get_cat('Nut')) || dai_min;
