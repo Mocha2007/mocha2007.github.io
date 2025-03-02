@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+/* global GRADIENT */
 /* exported compare */
 
 /** @param {number[]} arr */
@@ -9,19 +10,6 @@ function arithmeticAvg(arr){
 /** @param {number[]} arr */
 function geometricAvg(arr){
 	return Math.pow(arr.reduce((a, b) => a*b, 1), 1 / arr.length);
-}
-
-/** returns css color in a gradient from dark blue = 0 to light yellow = 1 */
-function gradient(x){
-	const v = x < 0 ? 0 : x > 1 ? 1 : x;
-	// This tries to approximate Viridis:
-	// R should be like __/
-	// G should be like _/-
-	// B should be like /\_
-	const R = 237 * Math.pow(v, 6) - 61 * v + 69;
-	const G = 221*v + 20;
-	const B = -329*v*v + 274*v + 87;
-	return `rgb(${R}, ${G}, ${B})`;
 }
 
 const debug = document.URL[0].toLowerCase() === 'f'; // file:// vs. http(s)://
@@ -1737,9 +1725,9 @@ function main(){
 		const col = cost_of_living(source);
 		if (col){
 			col_td.innerHTML = round3(col.value);
-			col_td.style.backgroundColor = gradient(col.value);
+			col_td.style.backgroundColor = GRADIENT.viridis(col.value);
 			col2_td.innerHTML = round3(col.just_grain);
-			col2_td.style.backgroundColor = gradient(col.just_grain);
+			col2_td.style.backgroundColor = GRADIENT.viridis(col.just_grain);
 			col_td.style.color = col2_td.style.color = 'white';
 			col_td.title = sol_td.title = `${source.summary}
 			Breakdown:
