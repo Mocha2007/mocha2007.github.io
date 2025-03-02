@@ -14,6 +14,7 @@ function geometricAvg(arr){
 const debug = document.URL[0].toLowerCase() === 'f'; // file:// vs. http(s)://
 const USD_CONVERSION = 8*7.25; // $
 const ROM_CONVERSION = 25; // denarii
+const ENG_CONVERSION = 3; // pence (typical late medieval laborer wage) - it varied but oh well
 
 const unit = {
 	/** number of L in a bushel */
@@ -263,11 +264,16 @@ class GoodDatum {
 		GoodDatum.gooddata.push(this);
 	}
 	get equivalency(){
+		function pl(n, s, pl){
+			return n === 1 ? `1 ${s}` : `${n} ${pl}`;
+		}
 		const weight_unit = this.good.unit ? [1, this.good.unit] : [unit.lb, 'pound'];
 		const labor_value = this.priceIn(goods.wageLaborer) * weight_unit[0];
-		const rom = ROM_CONVERSION * labor_value;
+		const ROM = ROM_CONVERSION * labor_value;
+		const ENG = ENG_CONVERSION * labor_value; // PENCE
 		return `Roughly equivalent to $${(USD_CONVERSION * labor_value).toLocaleString()} per ${weight_unit[1]} in 2023 USD based on labor costs
-		... or ${Math.floor(rom).toLocaleString()} denarii, ${Math.round(rom%1*16)} asses per ${weight_unit[1]} in 301 CE Roman currency.
+		... or ${pl(Math.floor(ROM).toLocaleString(), 'denarius', 'denarii')}, ${pl(ROM%1*16, 'as', 'asses')} per ${weight_unit[1]} in 301 CE Roman currency.
+		... or £ ${Math.floor(ENG/240).toLocaleString()} ${Math.floor(ENG/12%20)} s ${ENG%12} d per ${weight_unit[1]} in late medieval English currency.
 		`;
 	}
 	get indexedPrice(){
