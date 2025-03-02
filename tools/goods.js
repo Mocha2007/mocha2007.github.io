@@ -848,7 +848,9 @@ new GoodDatum(goods.beef, sources.chinaTang, 5 * china.cash / china.catty * tang
 // https://www.jstor.org/stable/2123972?seq=5
 new GoodDatum(goods.gold, sources.chinaMing, 5); // went from 1:4 to 1:6 during the ming dynasty, increasing to European levels during the 17th c.
 new GoodDatum(goods.gold, sources.ind14, 8);
-new GoodDatum(goods.rice, sources.chinaMing, 50 / (100 * unit.grainDensity.rice)); // varied from ~35g to a bit over 100g, but was close to 50 for the first half of the dynasty
+// A Monetary History of China pp. 598-601
+const MING_RICE = new GoodDatum(goods.rice, sources.chinaMing, arithmeticAvg([17.19, 10.63, 10.84, 9.47, 15.41, 9.56, 16.44, 19.31, 17.72, 21.78, 22.05, 23.81, 34.59, 43.22]) / (100 * unit.grainDensity.rice)); // g Ag / hL
+new GoodDatum(goods.wheat, sources.chinaMing, MING_RICE.price/1.25); // typical ratio
 
 // https://en.wikipedia.org/wiki/Economy_of_the_Han_dynasty#Landowners_and_peasants
 // a family of five producing 2000L of grain annually (313 workdays?) was apparently a plausible hypothetical, albeit a low one
