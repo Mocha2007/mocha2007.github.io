@@ -1717,6 +1717,9 @@ function main(){
 			Eggs: ${Math.round(100*col.frac.egg)}%
 			`;
 		}
+		else {
+			col_td.innerHTML = col2_td.innerHTML = 'nd';
+		}
 		sol_td.innerHTML = round3(standard_of_living(source));
 	});
 	// rows
