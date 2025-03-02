@@ -1412,7 +1412,7 @@ const chinaSongCopperCash = unit.oz / 2105.71; // 2105.71 copper cash per oz sil
 // const chinaSongIronCash = 0.1 * chinaSongCopperCash; // todo: I feel like rice should be worth twice as much - is this really right?
 // p.428, averaged values in table
 new GoodDatum(goods.rice, sources.chinaSong, 1.34152 * unit.oz / (100 *unit.grainDensity.rice));
-new GoodDatum(goods.wheat, sources.chinaSong, 10 * chinaSongCopperCash / (unit.grainDensity.wheat * china.dou));
+// new GoodDatum(goods.wheat, sources.chinaSong, 10 * chinaSongCopperCash / (unit.grainDensity.wheat * china.dou)); // cannot find where this is mentioned again...?
 // p.431, chose average in date range where copper prices were near chinaSongCopperCash; this matches table on p.433
 new GoodDatum(goods.gold, sources.chinaSong, 30000 * chinaSongCopperCash / unit.oz);
 //p. 608
