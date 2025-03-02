@@ -1701,7 +1701,6 @@ function main(){
 		if (col){
 			col_td.innerHTML = round3(col.value);
 			col2_td.innerHTML = round3(col.just_grain);
-			sol_td.innerHTML = round3(standard_of_living(source));
 			col_td.title = sol_td.title = `${source.summary}
 			Breakdown:
 			Fuel: ${Math.round(100*col.frac.fuel)}%
@@ -1718,6 +1717,7 @@ function main(){
 			Eggs: ${Math.round(100*col.frac.egg)}%
 			`;
 		}
+		sol_td.innerHTML = round3(standard_of_living(source));
 	});
 	// rows
 	Good.goods.forEach(good => table.appendChild(good.tr));
