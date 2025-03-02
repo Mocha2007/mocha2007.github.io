@@ -1698,24 +1698,26 @@ function main(){
 		const sol_td = document.createElement('td');
 		sol_tr.appendChild(sol_td);
 		const col = cost_of_living(source);
-		col_td.innerHTML = round3(col.value);
-		col2_td.innerHTML = round3(col.just_grain);
-		sol_td.innerHTML = round3(standard_of_living(source));
-		col_td.title = sol_td.title = `${source.summary}
-		Breakdown:
-		Fuel: ${Math.round(100*col.frac.fuel)}%
-		Grain: ${Math.round(100*col.frac.gra)}%
-		Dairy: ${Math.round(100*col.frac.dai)}%
-		Vegetables: ${Math.round(100*col.frac.veg)}%
-		Fruit: ${Math.round(100*col.frac.fru)}%
-		Meat: ${Math.round(100*col.frac.mea)}%
-		Alcohol: ${Math.round(100*col.frac.alc)}%
-		Nuts: ${Math.round(100*col.frac.nut)}%
-		Fish: ${Math.round(100*col.frac.fis)}%
-		Fabric: ${Math.round(100*col.frac.fab)}%
-		Salt: ${Math.round(100*col.frac.sal)}%
-		Eggs: ${Math.round(100*col.frac.egg)}%
-		`;
+		if (col){
+			col_td.innerHTML = round3(col.value);
+			col2_td.innerHTML = round3(col.just_grain);
+			sol_td.innerHTML = round3(standard_of_living(source));
+			col_td.title = sol_td.title = `${source.summary}
+			Breakdown:
+			Fuel: ${Math.round(100*col.frac.fuel)}%
+			Grain: ${Math.round(100*col.frac.gra)}%
+			Dairy: ${Math.round(100*col.frac.dai)}%
+			Vegetables: ${Math.round(100*col.frac.veg)}%
+			Fruit: ${Math.round(100*col.frac.fru)}%
+			Meat: ${Math.round(100*col.frac.mea)}%
+			Alcohol: ${Math.round(100*col.frac.alc)}%
+			Nuts: ${Math.round(100*col.frac.nut)}%
+			Fish: ${Math.round(100*col.frac.fis)}%
+			Fabric: ${Math.round(100*col.frac.fab)}%
+			Salt: ${Math.round(100*col.frac.sal)}%
+			Eggs: ${Math.round(100*col.frac.egg)}%
+			`;
+		}
 	});
 	// rows
 	Good.goods.forEach(good => table.appendChild(good.tr));
