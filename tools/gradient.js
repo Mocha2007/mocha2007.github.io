@@ -48,4 +48,35 @@ const GRADIENT = {
 		const B = -329*x*x + 274*x + 87;
 		return `rgb(${R}, ${G}, ${B})`;
 	},
+	// TEST
+	/** finds the TEST element and outputs test to it */
+	test(steps = 96){
+		function br(){
+			elem.appendChild(document.createElement('br'));
+		}
+		const ignore = ['clamp', 'test'];
+		console.debug('testing gradient.js ...');
+		const elem = document.createElement('div');
+		elem.id = 'test';
+		document.documentElement.appendChild(elem);
+		for (const gradient in this){
+			if (ignore.includes(gradient)){
+				continue;
+			}
+			console.debug('testing', gradient, '...');
+			const label = document.createElement('span');
+			label.innerHTML = gradient;
+			elem.appendChild(label);
+			br();
+			for (let i = 0; i < steps; i++){
+				const x = i/steps;
+				const swatch = document.createElement('span');
+				swatch.classList.add('swatch');
+				swatch.style.backgroundColor = this[gradient](x);
+				elem.appendChild(swatch);
+			}
+			br();
+		}
+		console.debug('gradient.js testing complete');
+	},
 };
