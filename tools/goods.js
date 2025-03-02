@@ -1191,6 +1191,8 @@ new GoodDatum(goods.butter, sources.pol202, 8.99/pln_ag_2025 / 200);
 new GoodDatum(goods.cheese, sources.pol202, 27.99/pln_ag_2025 / 1000);
 new GoodDatum(goods.beer, sources.pol202, 4.28/pln_ag_2025 / 1000); // per liter
 new GoodDatum(goods.walnut, sources.pol202, 14.99/pln_ag_2025 / 230);
+// misc
+new GoodDatum(goods.turkey, sources.pol202, 13.99/pln_ag_2025 / 500); // https://www.biedronka.pl/pl/product,id,426035,name,indyk-ze-sliwka-wolno-gotowane-kraina-mies-500-g
 
 
 // https://babel.hathitrust.org/cgi/pt?id=uc1.32106007458745&seq=42
