@@ -11,6 +11,19 @@ function geometricAvg(arr){
 	return Math.pow(arr.reduce((a, b) => a*b, 1), 1 / arr.length);
 }
 
+/** returns css color in a gradient from dark blue = 0 to light yellow = 1 */
+function gradient(x){
+	const v = x < 0 ? 0 : x > 1 ? 1 : x;
+	// This tries to approximate Viridis:
+	// R should be like __/
+	// G should be like _/-
+	// B should be like /\_
+	const R = 237 * Math.pow(v, 6) - 61 * v + 69;
+	const G = 221*v + 20;
+	const B = -329*v*v + 274*v + 87;
+	return `rgb(${R}, ${G}, ${B})`;
+}
+
 const debug = document.URL[0].toLowerCase() === 'f'; // file:// vs. http(s)://
 const USD_CONVERSION = 8*7.25; // $
 const ROM_CONVERSION = 25; // denarii
@@ -1200,9 +1213,21 @@ new GoodDatum(goods.chicken, sources.pol202, 11.99/pln_ag_2025 / 1000);
 new GoodDatum(goods.garlic, sources.pol202, 29.99/pln_ag_2025 / 1000);
 new GoodDatum(goods.egg, sources.pol202, 10.99/pln_ag_2025 / 10 * 12); // sold in 10-packs
 new GoodDatum(goods.butter, sources.pol202, 8.99/pln_ag_2025 / 200);
-new GoodDatum(goods.cheese, sources.pol202, 27.99/pln_ag_2025 / 1000);
 new GoodDatum(goods.beer, sources.pol202, 4.28/pln_ag_2025 / 1000); // per liter
 new GoodDatum(goods.walnut, sources.pol202, 14.99/pln_ag_2025 / 230);
+// https://www.kaufland.pl/
+new GoodDatum(goods.melon, sources.pol202, 7.99/pln_ag_2025 / 1000); // "yellow melon"
+new GoodDatum(goods.cheese, sources.pol202, 2.19/pln_ag_2025 / 100);
+new GoodDatum(goods.oatmeal, sources.pol202, 44.32/pln_ag_2025 / 1000); // https://www.kaufland.pl/product/317001162/?search_value=owies
+new GoodDatum(goods.rice, sources.pol202, 255.51/pln_ag_2025 / 20000); // https://www.kaufland.pl/product/478539193/?id_unit=387918279812&ref=spa_search_page_widget&mabref=ry%C5%BC&search_value=ry%C5%BC
+new GoodDatum(goods.fishSardines, sources.pol202, 10.46/pln_ag_2025 / 110); // https://www.kaufland.pl/product/491844791/?search_value=sardynki
+new GoodDatum(goods.almond, sources.pol202, 35.80/pln_ag_2025 / 1000); // https://www.kaufland.pl/product/515922081/?search_value=migda%C5%82y
+new GoodDatum(goods.cinnamon, sources.pol202, 76.97/pln_ag_2025 / 1000); // https://www.kaufland.pl/product/347304466/?search_value=cynamon
+new GoodDatum(goods.cumin, sources.pol202, 6.90/pln_ag_2025 / 200); // https://www.kaufland.pl/product/502407120/?search_value=kminek
+new GoodDatum(goods.nutmeg, sources.pol202, 36.80/pln_ag_2025 / 500); // https://www.kaufland.pl/product/502641160/?search_value=ga%C5%82ka%20muszkato%C5%82owa
+new GoodDatum(goods.pepper, sources.pol202, 885.93/pln_ag_2025 / 25000); // https://www.kaufland.pl/product/480909120/?id_unit=387918279725&ref=spa_search_page_widget&mabref=pieprz&search_value=pieprz
+new GoodDatum(goods.saffron, sources.pol202, 59.99/pln_ag_2025 / 5); // https://www.kaufland.pl/product/494737672/?search_value=szafran
+
 // misc
 new GoodDatum(goods.turkey, sources.pol202, 13.99/pln_ag_2025 / 500); // https://www.biedronka.pl/pl/product,id,426035,name,indyk-ze-sliwka-wolno-gotowane-kraina-mies-500-g
 
@@ -1712,7 +1737,10 @@ function main(){
 		const col = cost_of_living(source);
 		if (col){
 			col_td.innerHTML = round3(col.value);
+			col_td.style.backgroundColor = gradient(col.value);
 			col2_td.innerHTML = round3(col.just_grain);
+			col2_td.style.backgroundColor = gradient(col.just_grain);
+			col_td.style.color = col2_td.style.color = 'white';
 			col_td.title = sol_td.title = `${source.summary}
 			Breakdown:
 			Fuel: ${Math.round(100*col.frac.fuel)}%
