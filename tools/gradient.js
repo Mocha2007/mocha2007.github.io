@@ -113,6 +113,7 @@ const GRADIENT = {
 			g: [0, 255, 229.5, -229.5],
 			b: [0, 379.5, -904.5, 675],
 		},
+		// errors: not monotonic increasing, too bendy
 		sunset: {
 			r: [57, 210, 576, -675],
 			g: [78, 596, -563, -108],
