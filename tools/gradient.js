@@ -78,12 +78,13 @@ const GRADIENT = {
 			// this introduces a nearly imperceptible change that fixes that.
 			b: [7, -167, 1157, -756],
 		},
+		// luna3 but with minimized brightness bend
 		luna4: {
-			r: [7, 541, -974, 664],
-			g: [0, 334, -63, -32],
+			r: [7, 344, -452, 353],
+			g: [0, 253, 0, 0],
 			// original: 0, -167, 1157, -731 ... problem is that goes slightly outside [0, 255]
 			// this introduces a nearly imperceptible change that fixes that.
-			b: [7, -167, 1157, -756],
+			b: [7, -163, 1003, -592],
 		},
 	},
 };
