@@ -118,10 +118,10 @@ GRADIENT.verifyCubic = function verifyCubic(gradient, name){
 	const [b_, a_] = [b, 2*a];
 	const max_bend = Math.max(Math.abs(2*b_), Math.abs(6*a_+2*b_));
 	// console.debug('max(f\'\') =', max_bend);
-	// inferno has the highest value of the 'stock' color maps, at 46736.
+	// magma has the highest value of the 'stock' color maps, at 5634.935199999999.
 	// Therefore, we must make sure it's not WORSE than that.
-	if (46736 < max_bend){
-		console.error('BAD: brightness curve is too bendy: max(|f\'\'|) on [0, 1] = ', max_bend);
+	if (5635 < max_bend){
+		console.error('BAD: brightness curve is too bendy: max(|f\'\'|) on [0, 1] =', max_bend, '>', 5635);
 		return false;
 	}
 	return true;
