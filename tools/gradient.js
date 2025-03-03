@@ -100,10 +100,17 @@ const GRADIENT = {
 			b: [0, 1020, -3060, 2295],
 		},
 		// ROYG, but colorblind-friendly
+		// flat brightness curve
 		luna2: {
 			r: [192, 84.5, -63, -85.5],
 			g: [0, 322.5, 0, -67.5],
 			b: [0, 308, -1012.5, 832.5],
+		},
+		// most saturated orange/yellow possible
+		luna2alt: {
+			r: [192, 12, 135, -189],
+			g: [0, 255, 229.5, -229.5],
+			b: [0, 379.5, -904.5, 675],
 		},
 	},
 };
