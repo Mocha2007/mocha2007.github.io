@@ -52,7 +52,7 @@ const GRADIENT = {
 		// https://www.desmos.com/calculator/pfkgnr5z6z
 		// test, loosely based on Princess Luna's color palette
 		luna0: {
-			r: [0, 649, -1972, 1579],
+			r: [0, 649, -1972, 1578],
 			g: [0, 404, -951, 766],
 			b: [0, 261, 8, -23],
 		},
@@ -74,7 +74,9 @@ const GRADIENT = {
 		luna3: {
 			r: [0, 561, -974, 666],
 			g: [0, 335, -63, -32],
-			b: [0, -167, 1157, -731],
+			// original: 0, -167, 1157, -731 ... problem is that goes slightly outside [0, 255]
+			// this introduces a nearly imperceptible change that fixes that.
+			b: [7, -167, 1157, -744],
 		},
 	},
 };
