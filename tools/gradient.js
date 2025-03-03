@@ -65,7 +65,7 @@ const GRADIENT = {
 		// test, loosely based on Fluttershy's color palette
 		luna2: {
 			r: [10, 460, -451, 236],
-			g: [43, -167, 1024, -704],
+			g: [43, -165, 1024, -671],
 			b: [43, 283, -546, 441],
 		},
 		// https://www.desmos.com/calculator/pecwugvins
