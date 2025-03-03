@@ -5,15 +5,11 @@ GRADIENT.test = function test(steps = 240){
 	function br(){
 		elem.appendChild(document.createElement('br'));
 	}
-	const ignore = ['clamp', 'test'];
 	console.debug('testing gradient.js ...');
 	const elem = document.createElement('div');
 	elem.id = 'test';
 	document.documentElement.appendChild(elem);
 	for (const gradient in this.gradientData){
-		if (ignore.includes(gradient)){
-			continue;
-		}
 		console.debug('testing', gradient, '...');
 		const label = document.createElement('span');
 		label.innerHTML = gradient;
@@ -39,7 +35,8 @@ GRADIENT.test = function test(steps = 240){
 };
 GRADIENT.verifyCubic = function verifyCubic(gradient, name){
 	// verify monotonic increasing
-	const brightness = gradient.r.map((x, i) => x + gradient.g[i] + gradient.b[i]);
+	// https://stackoverflow.com/a/596243 (0.2126*R + 0.7152*G + 0.0722*B)
+	const brightness = gradient.r.map((x, i) => 0.2126*x + 0.7152*gradient.g[i] + 0.0722*gradient.b[i]);
 	console.info('brightness cubic for', name, 'is', brightness);
 	// derivative
 	const [c, b, a] = [brightness[1], 2*brightness[2], 3*brightness[3]];
@@ -128,4 +125,31 @@ GRADIENT.verifyCubic = function verifyCubic(gradient, name){
 		return false;
 	}
 	return true;
+};
+GRADIENT.random = function random(max_attempts = 100){
+	// todo
+	// d probably in [0, 135]
+	// c probably in [-102, 980]
+	// b probably in [-2556, 482]
+	// a probably in [-321, 1737]
+	function randint(min, max){
+		return Math.round((max - min) * Math.random() + min);
+	}
+	for (let attempt = 0; attempt < max_attempts; attempt++){
+		console.clear();
+		const gradient = {};
+		['r', 'g', 'b'].forEach(color => {
+			const d = randint(0, 135);
+			const c = randint(-102, 980);
+			const b = randint(-2556, 482);
+			// a+b+c+d must lie in [0, 255]. therefore a must be random(0, 255) - (b+c+d)
+			const a = randint(0, 255) - b-c-d;
+			gradient[color] = [d, c, b, a];
+		});
+		if (this.verifyCubic(gradient)){
+			console.info('found', gradient, 'after', attempt+1, 'attempt(s)');
+			return gradient;
+		}
+	}
+	console.warn('No suitable gradient found in', max_attempts, 'attempts.');
 };

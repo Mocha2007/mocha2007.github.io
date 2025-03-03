@@ -52,7 +52,7 @@ const GRADIENT = {
 		// https://www.desmos.com/calculator/pfkgnr5z6z
 		// test, loosely based on Princess Luna's color palette
 		luna0: {
-			r: [0, 649, -1972, 1578],
+			r: [0, 649, -1810, 1416],
 			g: [0, 404, -951, 766],
 			b: [0, 261, 8, -23],
 		},
