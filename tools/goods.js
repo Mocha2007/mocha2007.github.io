@@ -1780,9 +1780,9 @@ function main(){
 		const col = cost_of_living(source);
 		if (col){
 			col_td.innerHTML = round3(col.value);
-			col_td.style.backgroundColor = GRADIENT.viridis(col.value);
+			col_td.style.backgroundColor = GRADIENT.gradient(col.value);
 			col2_td.innerHTML = round3(col.just_grain);
-			col2_td.style.backgroundColor = GRADIENT.viridis(col.just_grain);
+			col2_td.style.backgroundColor = GRADIENT.gradient(col.just_grain);
 			col_td.style.color = col2_td.style.color = 'white';
 			col_td.title = sol_td.title = `${source.summary}
 			Breakdown:

@@ -1,52 +1,54 @@
+/* eslint-disable max-len */
 /* exported GRADIENT */
 
 // Rough approximations of these gradients:
 // https://sjmgarnier.github.io/viridis/reference/figures/maps.png
 const GRADIENT = {
-	/** @param {number} x */
-	clamp(x){
-		return x < 0 ? 0 : x > 1 ? 1 : x;
-	},
 	// GRADIENTS
 	/** @param {number} x */
-	cividis(x){
-		x = this.clamp(x);
-		const R = 251 * x;
-		const G = 198 * x + 27;
-		const B = -194 * x*x*x + 108 * x*x + 73 * x + 79;
+	gradient(x, name = 'viridis'){
+		x = x < 0 ? 0 : x > 1 ? 1 : x;
+		const R = this.gradientData[name].r.map((c, i) => c*Math.pow(x, i)).reduce((a, b) => a+b, 0);
+		const G = this.gradientData[name].g.map((c, i) => c*Math.pow(x, i)).reduce((a, b) => a+b, 0);
+		const B = this.gradientData[name].b.map((c, i) => c*Math.pow(x, i)).reduce((a, b) => a+b, 0);
 		return `rgb(${R}, ${G}, ${B})`;
 	},
-	/** @param {number} x */
-	inferno(x){
-		x = this.clamp(x);
-		const R = -194 * x*x + 449 * x;
-		const G = 289 * x*x - 40 * x;
-		const B = 1598 * x*x*x - 2394 * x*x + 951 * x;
-		return `rgb(${R}, ${G}, ${B})`;
-	},
-	/** @param {number} x */
-	mako(x){
-		x = this.clamp(x);
-		const R = 1116 * x*x*x - 1458 * x*x + 557 * x;
-		const G = 240 * x;
-		const B = 464 * x*x*x - 873 * x*x + 633 * x;
-		return `rgb(${R}, ${G}, ${B})`;
-	},
-	/** @param {number} x */
-	rocket(x){
-		x = this.clamp(x);
-		const R = -233 * x*x + 488 * x;
-		const G = 250 * x*x - 21 * x;
-		const B = 1188 * x*x*x - 1580 * x*x + 581 * x + 27;
-		return `rgb(${R}, ${G}, ${B})`;
-	},
-	/** @param {number} x */
-	viridis(x){
-		x = this.clamp(x);
-		const R = 237 * Math.pow(x, 6) - 61 * x + 69;
-		const G = 221*x + 20;
-		const B = -329*x*x + 274*x + 87;
-		return `rgb(${R}, ${G}, ${B})`;
+	gradientData: {
+		cividis: {
+			r: [0, 255, 0, 0],
+			g: [33, 163, 38, 0],
+			b: [77, 101, 32, -140],
+		},
+		inferno: {
+			r: [0, 316, 191, -255],
+			g: [0, 15, 180, 59],
+			b: [3, 980, -2556, 1737],
+		},
+		magma: {
+			r: [0, 262, 311, -321],
+			g: [0, 73, -14, 193],
+			b: [3, 922, -2079, 1346],
+		},
+		mako: {
+			r: [0, 546, -1431, 1107],
+			g: [0, 110, 396, -261],
+			b: [0, 706, -1062, 585],
+		},
+		plasma: {
+			r: [13, 475, -122, -126],
+			g: [22, -102, 482, -153],
+			b: [135, 356, -1049, 590],
+		},
+		rocket: {
+			r: [2, 381, 68, -201],
+			g: [4, 38, 86, 108],
+			b: [26, 578, -1544, 1161],
+		},
+		viridis: {
+			r: [68, 68, -621, 738],
+			g: [13, 245, 113, -140],
+			b: [84, 318, -464, 99],
+		},
 	},
 	// TEST
 	/** finds the TEST element and outputs test to it */
@@ -59,7 +61,7 @@ const GRADIENT = {
 		const elem = document.createElement('div');
 		elem.id = 'test';
 		document.documentElement.appendChild(elem);
-		for (const gradient in this){
+		for (const gradient in this.gradientData){
 			if (ignore.includes(gradient)){
 				continue;
 			}
@@ -72,7 +74,7 @@ const GRADIENT = {
 				const x = i/steps;
 				const swatch = document.createElement('span');
 				swatch.classList.add('swatch');
-				swatch.style.backgroundColor = this[gradient](x);
+				swatch.style.backgroundColor = this.gradient(x, gradient);
 				elem.appendChild(swatch);
 			}
 			br();
