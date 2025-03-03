@@ -72,6 +72,28 @@ const GRADIENT = {
 			g: [42, 742, -664, 0],
 			b: [131, 540, -616, 0],
 		},
+		// simple crap
+		// most saturated orange/yellow possible
+		grey: {
+			r: [0, 255, 0, 0],
+			g: [0, 255, 0, 0],
+			b: [0, 255, 0, 0],
+		},
+		blue: {
+			r: [0, 0, 255, 0],
+			g: [0, 0, 255, 0],
+			b: [0, 509, -254, 0],
+		},
+		purpleorange: {
+			r: [128, -275, 402, 0],
+			g: [0, 236, -108, 0],
+			b: [128, -20, -108, 0],
+		},
+		reddit: {
+			r: [148, -67, 174, 0],
+			g: [148, 50, -60, 0],
+			b: [255, -227, 66, 0],
+		},
 		// https://www.desmos.com/calculator/pfkgnr5z6z
 		// test, loosely based on Princess Luna's color palette
 		/*luna0: {
