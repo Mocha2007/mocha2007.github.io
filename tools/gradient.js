@@ -51,7 +51,7 @@ const GRADIENT = {
 		},
 		// https://www.desmos.com/calculator/pfkgnr5z6z
 		// test, loosely based on Princess Luna's color palette
-		luna0: {
+		/*luna0: {
 			r: [0, 649, -1810, 1416],
 			g: [0, 404, -951, 766],
 			b: [0, 261, 8, -23],
@@ -77,7 +77,7 @@ const GRADIENT = {
 			// original: 0, -167, 1157, -731 ... problem is that goes slightly outside [0, 255]
 			// this introduces a nearly imperceptible change that fixes that.
 			b: [7, -167, 1157, -756],
-		},
+		},*/
 		// luna3 but cubic fit on
 		/*
 			x	r	g	b
@@ -88,16 +88,22 @@ const GRADIENT = {
 			where B1 = 57 chosen st. the minimum is positive,
 			and R1 = 100 chosen st. the bendiness is just barely within limits
 		*/
-		luna4: {
+		luna0: {
 			r: [0, 570, -1260, 945],
 			g: [0, 255, 0, 0],
 			b: [0, 3, 630, -378],
 		},
 		// luna4 but blue->red instead of backwards
-		luna5: {
+		luna1: {
 			r: [0, 3, 630, -378],
 			g: [0, 255, 0, 0],
 			b: [0, 1020, -3060, 2295],
+		},
+		// quadratic viridis???
+		luna2: {
+			r: [64, 65, 126, 0],
+			g: [16, 240, -32, 0],
+			b: [80, 240, -288, 0],
 		},
 	},
 };
