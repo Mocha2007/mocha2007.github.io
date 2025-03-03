@@ -49,6 +49,33 @@ const GRADIENT = {
 			g: [13, 245, 113, -140],
 			b: [84, 318, -464, 99],
 		},
+		// https://www.desmos.com/calculator/pfkgnr5z6z
+		// test, loosely based on Princess Luna's color palette
+		luna0: {
+			r: [0, 649, -1972, 1579],
+			g: [0, 404, -951, 766],
+			b: [0, 261, 8, -23],
+		},
+		// test, loosely based on Princess Celestia's color palette
+		luna1: {
+			r: [14, 151, 521, -460],
+			g: [37, -77, 664, -406],
+			b: [44, 481, -1095, 794],
+		},
+		// test, loosely based on Fluttershy's color palette
+		luna2: {
+			r: [10, 460, -451, 236],
+			g: [43, -167, 1024, -704],
+			b: [43, 283, -546, 441],
+		},
+		// https://www.desmos.com/calculator/pecwugvins
+		// test: red dominant in first third, green in second, blue in third,
+		// roughly linear brightness increase
+		luna3: {
+			r: [0, 561, -974, 666],
+			g: [0, 335, -63, -32],
+			b: [0, -167, 1157, -731],
+		},
 	},
 	// TEST
 	/** finds the TEST element and outputs test to it */
