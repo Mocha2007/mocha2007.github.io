@@ -91,9 +91,13 @@ const GRADIENT = {
 		luna4: {
 			r: [0, 570, -1260, 945],
 			g: [0, 255, 0, 0],
-			// original: 0, -167, 1157, -731 ... problem is that goes slightly outside [0, 255]
-			// this introduces a nearly imperceptible change that fixes that.
 			b: [0, 3, 630, -378],
+		},
+		// luna4 but blue->red instead of backwards
+		luna5: {
+			r: [0, 3, 630, -378],
+			g: [0, 255, 0, 0],
+			b: [0, 1020, -3060, 2295],
 		},
 	},
 };
