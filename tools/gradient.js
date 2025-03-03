@@ -72,6 +72,13 @@ const GRADIENT = {
 		// test: red dominant in first third, green in second, blue in third,
 		// roughly linear brightness increase
 		luna3: {
+			r: [0, 561, -974, 654],
+			g: [0, 334, -63, -32],
+			// original: 0, -167, 1157, -731 ... problem is that goes slightly outside [0, 255]
+			// this introduces a nearly imperceptible change that fixes that.
+			b: [7, -167, 1157, -756],
+		},
+		luna4: {
 			r: [0, 561, -974, 666],
 			g: [0, 335, -63, -32],
 			// original: 0, -167, 1157, -731 ... problem is that goes slightly outside [0, 255]
