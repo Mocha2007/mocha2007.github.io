@@ -112,5 +112,20 @@ GRADIENT.verifyCubic = function verifyCubic(gradient, name){
 			return false;
 		}
 	});
+	// I also want to ensure the brightness curve is approximately linear.
+	// It doesn't need to be PERFECTLY linear, just close.
+	// To accomplish this, I will use the second derivative f''(x) = 6ax + 2b
+	// we ideally want this derivative to be very small along the entire range [0, 1]
+	// in order to make sure it's small, we need to find the maximum abs value along this range
+	// since it is linear, we can just calculate the endpoints f''(0) = 2b and f''(1) = 6a + 2b
+	const [b_, a_] = [b, 2*a];
+	const max_bend = Math.max(Math.abs(2*b_), Math.abs(6*a_+2*b_));
+	// console.debug('max(f\'\') =', max_bend);
+	// inferno has the highest value of the 'stock' color maps, at 46736.
+	// Therefore, we must make sure it's not WORSE than that.
+	if (46736 < max_bend){
+		console.error('BAD: brightness curve is too bendy: max(|f\'\'|) on [0, 1] = ', max_bend);
+		return false;
+	}
 	return true;
 };
