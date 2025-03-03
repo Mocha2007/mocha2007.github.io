@@ -78,13 +78,22 @@ const GRADIENT = {
 			// this introduces a nearly imperceptible change that fixes that.
 			b: [7, -167, 1157, -756],
 		},
-		// luna3 but with minimized brightness bend
+		// luna3 but cubic fit on
+		/*
+			x	r	g	b
+			0	0	0	0
+			1/3	85	85	B1
+			2/3	R1	170	170
+			1	255	255	255
+			where B1 = 57 chosen st. the minimum is positive,
+			and R1 = 100 chosen st. the bendiness is just barely within limits
+		*/
 		luna4: {
-			r: [1, 353, -405, 306],
+			r: [0, 570, -1260, 945],
 			g: [0, 255, 0, 0],
 			// original: 0, -167, 1157, -731 ... problem is that goes slightly outside [0, 255]
 			// this introduces a nearly imperceptible change that fixes that.
-			b: [1, -13, 665, -398],
+			b: [0, 3, 630, -378],
 		},
 	},
 };
