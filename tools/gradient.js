@@ -49,6 +49,29 @@ const GRADIENT = {
 			g: [13, 245, 113, -140],
 			b: [84, 318, -464, 99],
 		},
+		// https://personal.sron.nl/%7Epault/
+		// errors: not monotonic increasing, too bendy
+		sunset: {
+			r: [57, 210, 576, -675],
+			g: [78, 596, -563, -108],
+			b: [157, 730, -1877, 1031],
+		},
+		// errors: not monotonic increasing
+		nightfall: {
+			r: [18, 326, 486, -670],
+			g: [90, 542, -581, -27],
+			b: [86, 1319, -3177, 1791],
+		},
+		burd: {
+			r: [33, 720, -584, 0],
+			g: [102, 658, -736, 0],
+			b: [172, 429, -558, 0],
+		},
+		prgn: {
+			r: [118, 607, -698, 0],
+			g: [42, 742, -664, 0],
+			b: [131, 540, -616, 0],
+		},
 		// https://www.desmos.com/calculator/pfkgnr5z6z
 		// test, loosely based on Princess Luna's color palette
 		/*luna0: {
@@ -112,18 +135,6 @@ const GRADIENT = {
 			r: [192, 12, 135, -189],
 			g: [0, 255, 229.5, -229.5],
 			b: [0, 379.5, -904.5, 675],
-		},
-		// errors: not monotonic increasing, too bendy
-		sunset: {
-			r: [57, 210, 576, -675],
-			g: [78, 596, -563, -108],
-			b: [157, 730, -1877, 1031],
-		},
-		// errors: not monotonic increasing
-		nightfall: {
-			r: [18, 326, 486, -670],
-			g: [90, 542, -581, -27],
-			b: [86, 1319, -3177, 1791],
 		},
 	},
 };
