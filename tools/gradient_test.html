@@ -7,6 +7,10 @@
 <link href="tool.css" type="text/css" rel="stylesheet">
 <title>gradient.js test</title>
 <style>
+	:root {
+		--diskSize: 10.3vw;
+		--shadow: 0 0 5px black;
+	}
 span {
 	color: silver;
 	font-family: Consolas, "Courier New", monospace;
@@ -15,9 +19,6 @@ span {
 	display: inline-block;
 	height: 10vw;
 	width: 0.4vw;
-}
-:root {
-	--diskSize: 10.3vw;
 }
 #test {
 	display: flex;
@@ -33,7 +34,7 @@ span {
 	height: var(--diskSize);
 	justify-content: center;
 	text-align: center;
-	text-shadow: 0 0 5px black;
+	text-shadow: var(--shadow), var(--shadow), var(--shadow), var(--shadow);
 	width: var(--diskSize);
 }
 .disk_parent {
