@@ -169,17 +169,17 @@ GRADIENT.random = function random(max_attempts = 100){
 		const b_r = randint((-3*a_r - Math.sqrt(-3*a_r*a_r + 3060*a_r))/2, (-3*a_r + Math.sqrt(-3*a_r*a_r + 3060*a_r))/2);
 		const c_r = 255 - a_r - b_r;
 		gradient.r = [0, c_r, b_r, a_r];
-		const a_g = randint(0, 1020);
-		const b_g = randint((-3*a_g - Math.sqrt(-3*a_g*a_g + 3060*a_g))/2, (-3*a_g + Math.sqrt(-3*a_g*a_g + 3060*a_g))/2);
-		const c_g = 255 - a_g - b_g;
-		gradient.g = [0, c_g, b_g, a_g];
+		const a_b = randint(0, 1020);
+		const b_b = randint((-3*a_b - Math.sqrt(-3*a_b*a_b + 3060*a_b))/2, (-3*a_b + Math.sqrt(-3*a_b*a_b + 3060*a_b))/2);
+		const c_b = 255 - a_b - b_b;
+		gradient.b = [0, c_b, b_b, a_b];
 		// we can derive B from the brightness formula since we want brightness to be exactly y = 255x
 		// (0.2126*R + 0.7152*G + 0.0722*B)
 		// (0.2126*R + 0.7152*G)/-0.0722 = B
-		const a_b = (brightness_coef.r * a_r + brightness_coef.g * a_g) / -brightness_coef.b;
-		const b_b = (brightness_coef.r * b_r + brightness_coef.g * b_g) / -brightness_coef.b;
-		const c_b = 255 - a_b - b_b;
-		gradient.b = [0, c_b, b_b, a_b];
+		const a_g = (brightness_coef.r * a_r + brightness_coef.b * a_b) / -brightness_coef.g;
+		const b_g = (brightness_coef.r * b_r + brightness_coef.b * b_b) / -brightness_coef.g;
+		const c_g = 255 - a_g - b_g;
+		gradient.g = [0, c_g, b_g, a_g];
 		if (this.verifyCubic(gradient)){
 			console.info('found', gradient, 'after', attempt+1, 'attempt(s)');
 			this.gradientData.test = gradient;
