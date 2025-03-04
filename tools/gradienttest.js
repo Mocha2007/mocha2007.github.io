@@ -58,13 +58,20 @@ GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, d
 	const [d_b, c_b, b_b, a_b] = GRADIENT.gradientData[gradient].b;
 	const [d_l, c_l, b_l, a_l] = GRADIENT.gradientData[gradient].r.map((x, i) => brightness_coef.r*x + brightness_coef.g*GRADIENT.gradientData[gradient].g[i] + brightness_coef.b*GRADIENT.gradientData[gradient].b[i]);
 	const [c_l_, b_l_, a_l_] = [c_l, 2*b_l, 3*a_l];
-	const [r_l0, r_l1] = [-1, 1].map(x => (-b_l_ + x*Math.sqrt(b_l_*b_l_ - 4*a_l_*c_l_))/(2*a_l_));
+	// eslint-disable-next-line prefer-const
+	let [r_l0, r_l1] = [-1, 1].map(x => (-b_l_ + x*Math.sqrt(b_l_*b_l_ - 4*a_l_*c_l_))/(2*a_l_));
+	if (a_l_ === 0){
+		r_l0 = -c_l_/b_l_;
+		r_l1 = NaN;
+	}
+	const [r_l0goodness, r_l1goodness] = [0 < r_l0 && r_l0 < 1 ? 'red' : 'green', 0 < r_l1 && r_l1 < 1 ? 'red' : 'green'];
 	label.innerHTML += `<br>
 	<span class='red'>R</span>(x) = ${a_r} x<sup>3</sup> + ${b_r} x<sup>2</sup> + ${c_r} x + ${d_r}<br>
 	<span class='green'>G</span>(x) = ${a_g} x<sup>3</sup> + ${b_g} x<sup>2</sup> + ${c_g} x + ${d_g}<br>
 	<span class='blue'>B</span>(x) = ${a_b} x<sup>3</sup> + ${b_b} x<sup>2</sup> + ${c_b} x + ${d_b}<br>
 	<span class='white'>L</span>(x) = ${a_l} x<sup>3</sup> + ${b_l} x<sup>2</sup> + ${c_l} x + ${d_l}<br>
-	<span class='white'>L&prime;</span>(x) = ${a_l_} x<sup>2</sup> + ${b_l_} x + ${c_l_} (r<sub>L0</sub> = ${r_l0}, r<sub>L1</sub> = ${r_l1})`;
+	<span class='white'>L&prime;</span>(x) = ${a_l_} x<sup>2</sup> + ${b_l_} x + ${c_l_}
+	(r<sub>L0</sub> = <span class="${r_l0goodness}">${r_l0}</span>, r<sub>L1</sub> = <span class="${r_l1goodness}">${r_l1}</span>)`;
 	const dh = delta_hue(GRADIENT.gradientData[gradient]);
 	// ok now compute min H'
 	let min_hp = Infinity;
