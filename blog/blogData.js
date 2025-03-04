@@ -1522,4 +1522,62 @@ const blogData = [
 		<li><a href="https://docs.google.com/spreadsheets/d/1YQdaQTZyQgu52AhT1VxMrMC7H-dX1d0m3G_RbqVSeQw/edit?usp=sharing">Age of Empires unit stats</a></li>
 	</ul>
 	`,
+	`
+	@title Generating Colorblind-friendly Color Palettes
+	@date 1741082724928
+	@tags programming math
+	I needed to create a color map to visualize the values in <a href="../tools/goods.html">goods.js</a>.
+	My first attempt made it difficult even for me (someone who's very much not colorblind) to tell points off,
+	which means it would probably be <em>doubly</em> difficult for someone who <em>is</em> colorblind.
+	So after some searching I found a simple color mapping, sampled some points on it and fit it to a cubic and then called it a day.
+	But then I wondered if I could create my <em>own</em> colorblind-friendly color palette.
+	Or, better yet, have a program randomly generate them for me.
+	I went through a lot of failed ideas but eventually I came up with this:
+	@p
+	We need a color scale with monotonically increasing perceptual brightness.
+	Ideally, the brightness increases will be equally spaced along the scale.
+	Human eyes are most sensitive to green light, followed by red light, and then blue light.
+	<a href="https://stackoverflow.com/a/596243">Stack Overflow</a> gives the following formula to calculate this:
+	<code>0.2126*R + 0.7152*G + 0.0722*B</code>
+	We are representing each color channel as a cubic polynomial f(x), with x in [0, 1] and f(x) in [0, 255] (you will see later why we're using cubics).
+	<code>f(x) = a x^3 + b x^2 + c x + d</code>
+	Due to our brightness constraint, f(0) = 0 and f(1) = 255 for all channels.
+	This requires that d = 0 and a + b + c + d = 255
+	So we can therefore simplify our cubics to this:
+	<code>f(x) = a x^3 + b x^2 + (255 - a - b) x</code>
+	It may seem like we can now just plug in whatever values for a and b we want, but there's a catch:
+	not all combinations of a and b will result in a function that outputs numbers strictly in [0, 255].
+	As an example:
+	<code>f(x) = -128 x^3 + 383 x</code>
+	This has a maximum at:
+	<code>(sqrt(2298)/48, 383sqrt(2298)/72) ~ (0.999, 255.007)</code>
+	But how can we prevent generating cubics that produce values outside our range?
+	Well, the simplest way would be to ensure they are monotonically increasing, which ensures our local extrema must be at the bounds of our range -
+	which we have defined to be 0 and 1 anyways.
+	If a cubic is monotonically increasing, its derivative must not have any roots:
+	<code>f'(x) = 3a x^2 + 2b x + (255 - a - b) ≠ 0 </code>
+	Since its derivative is a quadratic, that means the determinant of the derivative must be negative:
+	<code>(2b)^2 - 4*(3a)*(255 - a - b) < 0</code>
+	<code>b^2 - 765a + 3a^2 + 3ab < 0</code>
+	This is a quadratic in b. Since the quadratic coefficient is positive (1), for this inequality to be true, b must lie between the two roots of this polynomial.
+	<code>b^2 + 3ab + (3a^2 - 765a) < 0</code>
+	<code>roots = (-3a ± sqrt((3a)^2 - 4*1*(3a^2 - 765a)))/(2*1)</code>
+	<code>roots = (-3a ± sqrt(-3a^2 + 3060a))/2</code>
+	<code>(-3a - sqrt(-3a^2 + 3060a))/2 ≤ b ≤ (-3a + sqrt(-3a^2 + 3060a))/2</code>
+	Since we need to actually have roots, this imposes a new constraint on a:
+	<code>0 ≤ -3a^2 + 3060a</code>
+	<code>0 ≤ a ≤ 1020</code>
+	We simply generate random a, b for the red and blue channels, and derive the green channel from these.
+	(Since the perceptual brightness function weights green so heavily, we need to derive green from red and blue to ensure the green cubic can satisfy these constraints).
+	@p
+	I have implemented this in <a href="https://github.com/Mocha2007/mocha2007.github.io/blob/master/tools/gradienttest.js#L170">gradienttest.js</a>,
+	And you can fiddle around with it on <a href="../tools/gradient_test.html">gradient_test.html</a> in the console using
+	<code>GRADIENT.random();</code>
+	@p
+	Some notes:
+	<ul class="list2">
+		<li>It would be much more difficult to compute these constraints with higher-degree polynomials, which is why we're sticking to cubics. They provide enough flexibility anyways.</li>
+		<li>The exact color channel weights for the perceptual brightness formula don't necessarily matter for this algorithm, and you can swap them for other values if you want.</li>
+	</ul>
+	`,
 ];
