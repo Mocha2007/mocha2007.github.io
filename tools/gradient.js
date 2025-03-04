@@ -11,7 +11,7 @@ const GRADIENT = {
 		const R = this.gradientData[name].r.map((c, i) => c*Math.pow(x, i)).reduce((a, b) => a+b, 0);
 		const G = this.gradientData[name].g.map((c, i) => c*Math.pow(x, i)).reduce((a, b) => a+b, 0);
 		const B = this.gradientData[name].b.map((c, i) => c*Math.pow(x, i)).reduce((a, b) => a+b, 0);
-		return `rgb(${R}, ${G}, ${B})`;
+		return `rgb(${Math.round(R)}, ${Math.round(G)}, ${Math.round(B)})`;
 	},
 	gradientData: {
 		cividis: {

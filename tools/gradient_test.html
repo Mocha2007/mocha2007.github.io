@@ -16,6 +16,30 @@ span {
 	height: 10vw;
 	width: 0.4vw;
 }
+:root {
+	--diskSize: 10.5vw;
+}
+.disc {
+	border: 0.2vw solid grey;
+	border-radius: calc(var(--diskSize)/2);
+	color: white;
+	display: inline-block;
+	font-size: 75%;
+	height: var(--diskSize);
+	line-height: var(--diskSize);
+	text-align: center;
+	text-shadow: 0 0 5px black;
+	width: var(--diskSize);
+}
+.red {
+	color: #e33;
+}
+.green {
+	color: #3c3;
+}
+.blue {
+	color: #33e;
+}
 </style>
 <span class="button" onclick="GRADIENT_TEST.test();">TEST ALL GRADIENTS &rarr;</span>
 <span class="button" onclick="GRADIENT_TEST.random();">NEW RANDOM GRADIENT &rarr;</span>

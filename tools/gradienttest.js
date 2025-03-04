@@ -3,13 +3,21 @@
 
 const GRADIENT_TEST = {};
 
-GRADIENT_TEST.print = function print(parent, gradient, steps = 240){
+GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9){
 	function br(){
 		parent.appendChild(document.createElement('br'));
 	}
 	const label = document.createElement('span');
 	label.innerHTML = gradient;
 	parent.appendChild(label);
+	br();
+	for (let i = 0; i < discs; i++){
+		const x = i/(discs-1);
+		const disc = document.createElement('span');
+		disc.classList.add('disc');
+		disc.innerHTML = disc.style.backgroundColor = GRADIENT.gradient(x, gradient);
+		parent.appendChild(disc);
+	}
 	br();
 	for (let i = 0; i < steps; i++){
 		const x = i/steps;
@@ -189,9 +197,9 @@ GRADIENT_TEST.random = function random(max_attempts = 100){
 			const test_elem = document.getElementById('test');
 			test_elem.innerHTML = '';
 			const test_name = `
-			R(x) = ${a_r} x<sup>3</sup> + ${b_r} x<sup>2</sup> + ${c_r} x<br>
-			G(x) = ${a_g} x<sup>3</sup> + ${b_g} x<sup>2</sup> + ${c_g} x<br>
-			B(x) = ${a_b} x<sup>3</sup> + ${b_b} x<sup>2</sup> + ${c_b} x`;
+			<span class='red'>R</span>(x) = ${a_r} x<sup>3</sup> + ${b_r} x<sup>2</sup> + ${c_r} x<br>
+			<span class='green'>G</span>(x) = ${a_g} x<sup>3</sup> + ${b_g} x<sup>2</sup> + ${c_g} x<br>
+			<span class='blue'>B</span>(x) = ${a_b} x<sup>3</sup> + ${b_b} x<sup>2</sup> + ${c_b} x`;
 			GRADIENT.gradientData[test_name] = gradient;
 			this.print(test_elem, test_name);
 			return gradient;
