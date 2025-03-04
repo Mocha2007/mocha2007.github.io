@@ -1582,5 +1582,7 @@ const blogData = [
 	</ul>
 	You can play around with the color curve solution space in Desmos:
 	<iframe src="https://www.desmos.com/calculator/yf4lnarpyr?embed" width="700" height="700" style="border: 1px solid #ccc" frameborder=0></iframe>
+	You can also play around with the color curves in this desmos graph:
+	<iframe src="https://www.desmos.com/calculator/n7fj6lvvo0?embed" width="700" height="700" style="border: 1px solid #ccc" frameborder=0></iframe>
 	`,
 ];
