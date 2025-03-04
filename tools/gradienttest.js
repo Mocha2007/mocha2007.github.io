@@ -1,6 +1,35 @@
 /* eslint-disable max-len */
 /* global GRADIENT */
 
+// https://stackoverflow.com/a/26233318
+function rgb2hsv(red, green, blue){
+	const min = Math.min(red, green, blue);
+	const max = Math.max(red, green, blue);
+
+	let hue;
+	if (min === max){
+		hue = 0;
+	}
+	else if (max === red){
+		hue = (green - blue) / (max - min);
+	}
+	else if (max === green){
+		hue = 2 + (blue - red) / (max - min);
+	}
+	else {
+		hue = 4 + (red - green) / (max - min);
+	}
+
+	hue *= 60;
+	if (hue < 0){
+		hue += 360;
+	}
+	const H = Math.round(hue);
+	const S = max === min ? 0 : Math.round(100*(max-min)/max);
+	const V = Math.round(max/2.5);
+	return {H, S, V};
+}
+
 const GRADIENT_TEST = {};
 
 GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9){
@@ -16,6 +45,9 @@ GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9){
 		const disc = document.createElement('span');
 		disc.classList.add('disc');
 		disc.innerHTML = disc.style.backgroundColor = GRADIENT.gradient(x, gradient);
+		const color = GRADIENT.gradient_raw(x, GRADIENT.gradientData[gradient]);
+		const hsv = rgb2hsv(color.R, color.G, color.B);
+		disc.innerHTML += `<br>hsv(${hsv.H}, ${hsv.S}, ${hsv.V})`;
 		parent.appendChild(disc);
 	}
 	br();
