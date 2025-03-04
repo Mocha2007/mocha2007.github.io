@@ -187,7 +187,9 @@ GRADIENT_TEST.random = function random(max_attempts = 100){
 		if (this.verifyCubic(gradient)){
 			console.info('found', gradient, 'after', attempt+1, 'attempt(s)');
 			GRADIENT.gradientData.test = gradient;
-			this.print(document.documentElement, 'test');
+			const test_elem = document.getElementById('test');
+			test_elem.innerHTML = '';
+			this.print(test_elem, 'test');
 			return gradient;
 		}
 	}
