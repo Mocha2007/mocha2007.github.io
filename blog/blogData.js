@@ -1580,5 +1580,7 @@ const blogData = [
 		<li>The exact color channel weights for the perceptual brightness formula don't necessarily matter for this algorithm, and you can swap them for other values if you want.</li>
 		<li>In case you need to know the implied bounds on b and c: 0 ≤ c ≤ 1020, and -510 sqrt(3) - 765 ≤ b ≤ 510 sqrt(3) - 765 (appx. -1648 ≤ b ≤ 68)</li>
 	</ul>
+	You can play around with the color curve solution space in Desmos:
+	<iframe src="https://www.desmos.com/calculator/yf4lnarpyr?embed" width="700" height="700" style="border: 1px solid #ccc" frameborder=0></iframe>
 	`,
 ];
