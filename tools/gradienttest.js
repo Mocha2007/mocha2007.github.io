@@ -27,8 +27,9 @@ function rgb2hsv(red, green, blue){
 	const H = Math.round(hue);
 	const S = max === min ? 0 : Math.round(100*(max-min)/max);
 	const V = Math.round(max/2.5);
-	return {H, S, V};
+	return {H, S, V, hue};
 }
+// https://www.desmos.com/calculator/gtcwgixpqu
 
 // computes change in hue across gradient
 function delta_hue(gradient, epsilon = 1e-10){
@@ -44,14 +45,28 @@ function delta_hue(gradient, epsilon = 1e-10){
 
 const GRADIENT_TEST = {};
 
-GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9){
-	function br(){
-		parent.appendChild(document.createElement('br'));
-	}
+GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, dh_steps = 1000){
 	const label = document.createElement('span');
 	label.innerHTML = gradient;
 	const dh = delta_hue(GRADIENT.gradientData[gradient]);
-	label.innerHTML += `<br>&Delta;<sub>hue</sub> = ${dh.delta} (${dh.start}, ${dh.end})`;
+	// ok now compute min H'
+	let min_hp = Infinity;
+	let min_hp_x = Infinity;
+	for (let i = 1; i < dh_steps-1; i++){
+		const x0 = i/dh_steps;
+		const x1 = (i+1)/dh_steps;
+		const color0 = GRADIENT.gradient_raw(x0, GRADIENT.gradientData[gradient]);
+		const h0 = rgb2hsv(color0.R, color0.G, color0.B).hue;
+		const color1 = GRADIENT.gradient_raw(x1, GRADIENT.gradientData[gradient]);
+		const h1 = rgb2hsv(color1.R, color1.G, color1.B).hue;
+		const dh_check = Math.abs(h1-h0);
+		const dh_chec2 = Math.min(dh_check, 360-dh_check);
+		min_hp = Math.min(dh_steps*dh_chec2, min_hp);
+		if (dh_steps*dh_chec2 === min_hp){
+			min_hp_x = x0;
+		}
+	}
+	label.innerHTML += `<br>&Delta;<sub>hue</sub> = ${dh.delta} (${dh.start} &rarr; ${dh.end}, min |H&prime;| = ${Math.round(min_hp)} at x = ${min_hp_x})`;
 	parent.appendChild(label);
 	const disk_parent = document.createElement('div');
 	parent.appendChild(disk_parent);
