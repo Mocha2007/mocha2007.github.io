@@ -1593,7 +1593,7 @@ const blogData = [
 	given that the coefficients are uniformly randomly chosen from [-1, 1]:
 	<ol>
 		<li>1: 100%</li>
-		<li>0: 37.1863%, 2: 62.8137%</li>
+		<li>0: 37.1863%, 2: 62.8137% (<a href="https://math.stackexchange.com/a/3819057">this stack exchange question</a> gives an exact expression)</li>
 		<li>1: 78.2289%, 3: 21.7711%</li>
 		<li>0: 23.5942%, 2: 69.7628%, 4: 6.6430%</li>
 	</ol>
