@@ -1,5 +1,10 @@
 /* eslint-disable max-len */
 /* global GRADIENT */
+const brightness_coef = {
+	r: 0.2126,
+	g: 0.7152,
+	b: 0.0722,
+};
 
 // https://stackoverflow.com/a/26233318
 function rgb2hsv(red, green, blue){
@@ -48,10 +53,15 @@ const GRADIENT_TEST = {};
 GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, dh_steps = 1000){
 	const label = document.createElement('span');
 	label.innerHTML = gradient;
+	const [d_r, c_r, b_r, a_r] = GRADIENT.gradientData[gradient].r;
+	const [d_g, c_g, b_g, a_g] = GRADIENT.gradientData[gradient].g;
+	const [d_b, c_b, b_b, a_b] = GRADIENT.gradientData[gradient].b;
+	const [d_l, c_l, b_l, a_l] = GRADIENT.gradientData[gradient].r.map((x, i) => brightness_coef.r*x + brightness_coef.g*GRADIENT.gradientData[gradient].g[i] + brightness_coef.b*GRADIENT.gradientData[gradient].b[i]);
 	label.innerHTML += `<br>
-	<span class='red'>R</span>(x) = ${GRADIENT.gradientData[gradient].r[3]} x<sup>3</sup> + ${GRADIENT.gradientData[gradient].r[2]} x<sup>2</sup> + ${GRADIENT.gradientData[gradient].r[1]} x<br>
-	<span class='green'>G</span>(x) = ${GRADIENT.gradientData[gradient].g[3]} x<sup>3</sup> + ${GRADIENT.gradientData[gradient].g[2]} x<sup>2</sup> + ${GRADIENT.gradientData[gradient].g[1]} x<br>
-	<span class='blue'>B</span>(x) = ${GRADIENT.gradientData[gradient].b[3]} x<sup>3</sup> + ${GRADIENT.gradientData[gradient].b[2]} x<sup>2</sup> + ${GRADIENT.gradientData[gradient].b[1]} x`;
+	<span class='red'>R</span>(x) = ${a_r} x<sup>3</sup> + ${b_r} x<sup>2</sup> + ${c_r} x + ${d_r}<br>
+	<span class='green'>G</span>(x) = ${a_g} x<sup>3</sup> + ${b_g} x<sup>2</sup> + ${c_g} x + ${d_g}<br>
+	<span class='blue'>B</span>(x) = ${a_b} x<sup>3</sup> + ${b_b} x<sup>2</sup> + ${c_b} x + ${d_b}<br>
+	<span class='white'>L</span>(x) = ${a_l} x<sup>3</sup> + ${b_l} x<sup>2</sup> + ${c_l} x + ${d_l}`;
 	const dh = delta_hue(GRADIENT.gradientData[gradient]);
 	// ok now compute min H'
 	let min_hp = Infinity;
@@ -209,11 +219,6 @@ GRADIENT_TEST.verifyCubic = function verifyCubic(gradient, name){
 	return true;
 };
 GRADIENT_TEST.random = function random(max_attempts = 100){
-	const brightness_coef = {
-		r: 0.2126,
-		g: 0.7152,
-		b: 0.0722,
-	};
 	// todo
 	// d probably in [0, 135]
 	// c probably in [-102, 980]
