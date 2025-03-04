@@ -1,28 +1,32 @@
 /* eslint-disable max-len */
-
 /* global GRADIENT */
-GRADIENT.test = function test(steps = 240){
+
+GRADIENT.print = function print(parent, gradient, steps = 240){
 	function br(){
-		elem.appendChild(document.createElement('br'));
+		parent.appendChild(document.createElement('br'));
 	}
+	const label = document.createElement('span');
+	label.innerHTML = gradient;
+	parent.appendChild(label);
+	br();
+	for (let i = 0; i < steps; i++){
+		const x = i/steps;
+		const swatch = document.createElement('span');
+		swatch.classList.add('swatch');
+		swatch.style.backgroundColor = this.gradient(x, gradient);
+		parent.appendChild(swatch);
+	}
+	br();
+};
+
+GRADIENT.test = function test(){
 	console.debug('testing gradient.js ...');
 	const elem = document.createElement('div');
 	elem.id = 'test';
 	document.documentElement.appendChild(elem);
 	for (const gradient in this.gradientData){
 		console.debug('testing', gradient, '...');
-		const label = document.createElement('span');
-		label.innerHTML = gradient;
-		elem.appendChild(label);
-		br();
-		for (let i = 0; i < steps; i++){
-			const x = i/steps;
-			const swatch = document.createElement('span');
-			swatch.classList.add('swatch');
-			swatch.style.backgroundColor = this.gradient(x, gradient);
-			elem.appendChild(swatch);
-		}
-		br();
+		this.print(elem, gradient);
 		// (1) i need to make sure valid rgb values are always given
 		// (2) i'd like to also make sure the brightness for each cubic is monotonic increasing
 		// which implies the derivative is always positive
@@ -164,6 +168,8 @@ GRADIENT.random = function random(max_attempts = 100){
 		gradient.b = [0, c_b, b_b, a_b];
 		if (this.verifyCubic(gradient)){
 			console.info('found', gradient, 'after', attempt+1, 'attempt(s)');
+			this.gradientData.test = gradient;
+			this.print(document.getElementById('test'), 'test');
 			return gradient;
 		}
 	}
