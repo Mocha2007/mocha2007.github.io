@@ -127,6 +127,11 @@ GRADIENT.verifyCubic = function verifyCubic(gradient, name){
 	return true;
 };
 GRADIENT.random = function random(max_attempts = 100){
+	const brightness_coef = {
+		r: 0.2126,
+		g: 0.7152,
+		b: 0.0722,
+	};
 	// todo
 	// d probably in [0, 135]
 	// c probably in [-102, 980]
@@ -135,17 +140,28 @@ GRADIENT.random = function random(max_attempts = 100){
 	function randint(min, max){
 		return Math.round((max - min) * Math.random() + min);
 	}
+	function randcoef(){
+		return randint(-1000, 1000);
+	}
 	for (let attempt = 0; attempt < max_attempts; attempt++){
 		console.clear();
 		const gradient = {};
-		['r', 'g', 'b'].forEach(color => {
-			const d = randint(0, 135);
-			const c = randint(-102, 980);
-			const b = randint(-2556, 482);
-			// a+b+c+d must lie in [0, 255]. therefore a must be random(0, 255) - (b+c+d)
-			const a = randint(0, 255) - b-c-d;
-			gradient[color] = [d, c, b, a];
-		});
+		// we want (0,0) and (1, 255) so d must be 0 for all and c must be 255-a-b for all
+		const a_r = randcoef();
+		const b_r = randcoef();
+		const c_r = 255 - a_r - b_r;
+		gradient.r = [0, c_r, b_r, a_r];
+		const a_g = randcoef();
+		const b_g = randcoef();
+		const c_g = 255 - a_g - b_g;
+		gradient.g = [0, c_g, b_g, a_g];
+		// we can derive B from the brightness formula since we want brightness to be exactly y = 255x
+		// (0.2126*R + 0.7152*G + 0.0722*B)
+		// (0.2126*R + 0.7152*G)/-0.0722 = B
+		const a_b = (brightness_coef.r * a_r + brightness_coef.g * a_g) / -brightness_coef.b;
+		const b_b = (brightness_coef.r * b_r + brightness_coef.g * b_g) / -brightness_coef.b;
+		const c_b = 255 - a_b - b_b;
+		gradient.b = [0, c_b, b_b, a_b];
 		if (this.verifyCubic(gradient)){
 			console.info('found', gradient, 'after', attempt+1, 'attempt(s)');
 			return gradient;
