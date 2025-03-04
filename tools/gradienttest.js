@@ -165,6 +165,8 @@ GRADIENT.random = function random(max_attempts = 100){
 		// for real roots to exist, -3a^2 + 3060a must be greater than or equal to 0.
 		// so we now gain an additional constraint on a:
 		// 1020 >= a >= 0
+		// https://www.desmos.com/calculator/zebxlysfca
+		// https://www.desmos.com/calculator/hddwps88py
 		const a_r = uniform(0, 1020);
 		const b_r = uniform((-3*a_r - Math.sqrt(-3*a_r*a_r + 3060*a_r))/2, (-3*a_r + Math.sqrt(-3*a_r*a_r + 3060*a_r))/2);
 		const c_r = 255 - a_r - b_r;
