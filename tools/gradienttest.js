@@ -144,19 +144,33 @@ GRADIENT.random = function random(max_attempts = 100){
 	function randint(min, max){
 		return Math.round((max - min) * Math.random() + min);
 	}
-	function randcoef(){
-		return randint(-1000, 1000);
-	}
 	for (let attempt = 0; attempt < max_attempts; attempt++){
 		console.clear();
 		const gradient = {};
 		// we want (0,0) and (1, 255) so d must be 0 for all and c must be 255-a-b for all
-		const a_r = randcoef();
-		const b_r = randcoef();
+		// we also want to ensure for all x in [0, 1], f(x) is in [0, 255].
+		// we can ensure this by making sure the cubic is monotonic increasing, which implies the min/max are at the bounds we already set (at the cost of losing some valid cubics)
+		// it is monotonic increasing if f'(x) has no real roots - in other words, its determinant is less than 0
+		// f'(x) = 3a x^2 + 2b x + c
+		// determinant = (2b)^2 - 4*(3a) * c = 4b^2 - 12ac < 0
+		// we can slightly simplify to b^2 < 3ac
+		// we have defined c = 255 - a - b, substituting:
+		// b^2 < 3a(255 - a - b)
+		// b^2 < 765a - 3a^2 - 3ab
+		// this is essentially a quadratic in b:
+		// b^2 + 3ab + (3a^2 - 765a) < 0
+		// since the quadratic coefficient is positive (1), the valid solutions to this MUST lie between the roots:
+		// roots = (-3a +/- sqrt((3a)^2 - 4*1*(3a^2 - 765a)))/2
+		// roots = (-3a +/- sqrt(-3a^2 + 3060a))/2
+		// for real roots to exist, -3a^2 + 3060a must be greater than or equal to 0.
+		// so we now gain an additional constraint on a:
+		// 1020 >= a >= 0
+		const a_r = randint(0, 1020);
+		const b_r = randint((-3*a_r - Math.sqrt(-3*a_r*a_r + 3060*a_r))/2, (-3*a_r + Math.sqrt(-3*a_r*a_r + 3060*a_r))/2);
 		const c_r = 255 - a_r - b_r;
 		gradient.r = [0, c_r, b_r, a_r];
-		const a_g = randcoef();
-		const b_g = randcoef();
+		const a_g = randint(0, 1020);
+		const b_g = randint((-3*a_g - Math.sqrt(-3*a_g*a_g + 3060*a_g))/2, (-3*a_g + Math.sqrt(-3*a_g*a_g + 3060*a_g))/2);
 		const c_g = 255 - a_g - b_g;
 		gradient.g = [0, c_g, b_g, a_g];
 		// we can derive B from the brightness formula since we want brightness to be exactly y = 255x
