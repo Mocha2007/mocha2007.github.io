@@ -35,10 +35,11 @@ function delta_hue(gradient, epsilon = 1e-10){
 	// need to compute this slightly above 0 and slightly below 1 because hue is messed up at the extrema
 	const col0 = GRADIENT.gradient_raw(epsilon, gradient);
 	const col1 = GRADIENT.gradient_raw(1-epsilon, gradient);
-	const hue0 = rgb2hsv(col0.R, col0.G, col0.B).H;
-	const hue1 = rgb2hsv(col1.R, col1.G, col1.B).H;
-	const diff = Math.abs(hue0 - hue1);
-	return Math.min(diff, 360-diff);
+	const start = rgb2hsv(col0.R, col0.G, col0.B).H;
+	const end = rgb2hsv(col1.R, col1.G, col1.B).H;
+	const diff = Math.abs(start - end);
+	const delta = Math.min(diff, 360-diff);
+	return {delta, start, end};
 }
 
 const GRADIENT_TEST = {};
@@ -49,7 +50,8 @@ GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9){
 	}
 	const label = document.createElement('span');
 	label.innerHTML = gradient;
-	label.innerHTML += `<br>&Delta;<sub>hue</sub> = ${delta_hue(GRADIENT.gradientData[gradient])}`;
+	const dh = delta_hue(GRADIENT.gradientData[gradient]);
+	label.innerHTML += `<br>&Delta;<sub>hue</sub> = ${dh.delta} (${dh.start}, ${dh.end})`;
 	parent.appendChild(label);
 	const disk_parent = document.createElement('div');
 	parent.appendChild(disk_parent);
