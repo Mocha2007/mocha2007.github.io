@@ -1525,7 +1525,7 @@ const blogData = [
 	`
 	@title Generating Colorblind-friendly Color Palettes
 	@date 1741082724928
-	@tags programming math
+	@tags dev js math
 	I needed to create a color map to visualize the values in <a href="../tools/goods.html">goods.js</a>.
 	My first attempt made it difficult even for me (someone who's very much not colorblind) to tell points off,
 	which means it would probably be <em>doubly</em> difficult for someone who <em>is</em> colorblind.
