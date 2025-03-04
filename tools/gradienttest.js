@@ -60,19 +60,16 @@ const GRADIENT_TEST = {};
 GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, dh_steps = 1000){
 	const label = document.createElement('span');
 	label.innerHTML = gradient;
-	const [d_l, c_l, b_l, a_l] = GRADIENT.gradientData[gradient].r.map((x, i) => brightness_coef.r*x + brightness_coef.g*GRADIENT.gradientData[gradient].g[i] + brightness_coef.b*GRADIENT.gradientData[gradient].b[i]);
-	const [c_l_, b_l_, a_l_] = [c_l, 2*b_l, 3*a_l];
-	// eslint-disable-next-line prefer-const
-	const roots_l_ = quadroot(a_l_, b_l_, c_l_);
-	const [r_l0goodness, r_l1goodness] = [0 < roots_l_.r0 && roots_l_.r0 < 1 ? 'red' : 'green', 0 < roots_l_.r1 && roots_l_.r1 < 1 ? 'red' : 'green'];
-	['red', 'green', 'blue'].forEach(color => {
+	GRADIENT.gradientData[gradient].w = GRADIENT.gradientData[gradient].r.map((x, i) => brightness_coef.r*x + brightness_coef.g*GRADIENT.gradientData[gradient].g[i] + brightness_coef.b*GRADIENT.gradientData[gradient].b[i]);
+	['red', 'green', 'blue', 'white'].forEach(color => {
 		const [d, c, b, a] = GRADIENT.gradientData[gradient][color[0]];
 		const [c_, b_, a_] = [c, 2*b, 3*a];
 		const roots = quadroot(a_, b_, c_);
-		const rootgoodness = [0 < roots.r0 && roots.r0 < 1 ? 'yellow' : 'green', 0 < roots.r1 && roots.r1 < 1 ? 'yellow' : 'green'];
+		const warning_color = color === 'white' ? 'red' : 'yellow';
+		const rootgoodness = [0 < roots.r0 && roots.r0 < 1 ? warning_color : 'green', 0 < roots.r1 && roots.r1 < 1 ? warning_color : 'green'];
 		const f = x => a*x*x*x + b*x*x + c*x + d;
 		const [fr0, fr1] = [roots.r0, roots.r1].map(f);
-		const [fr0_goodness, fr1_goodness] =[(fr0 < 0 || 255 < fr0) && rootgoodness[0] === 'yellow' ? 'red' : 'green', (fr1 < 0 || 255 < fr1) && rootgoodness[1] === 'yellow' ? 'red' : 'green'];
+		const [fr0_goodness, fr1_goodness] =[(fr0 < 0 || 255 < fr0) && rootgoodness[0] === warning_color ? 'red' : 'green', (fr1 < 0 || 255 < fr1) && rootgoodness[1] === warning_color ? 'red' : 'green'];
 		const symbol = color[0].toUpperCase();
 		label.innerHTML += `<br>
 	<span class='${color}'>${symbol}</span>(x) = ${a} x<sup>3</sup> + ${b} x<sup>2</sup> + ${c} x + ${d}<br>
@@ -80,10 +77,6 @@ GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, d
 	(r<sub>${symbol}&prime;0</sub> = <span class="${rootgoodness[0]}">${roots.r0}</span>, r<sub>${symbol}&prime;1</sub> = <span class="${rootgoodness[1]}">${roots.r1}</span>,
 	<span class='${color}'>${symbol}</span>(r<sub>${symbol}&prime;0</sub>) = <span class="${fr0_goodness}">${fr0}</span>, <span class='${color}'>${symbol}</span>(r<sub>${symbol}&prime;1</sub>) = <span class="${fr1_goodness}">${fr1}</span>)`;
 	});
-	label.innerHTML += `<br>
-	<span class='white'>L</span>(x) = ${a_l} x<sup>3</sup> + ${b_l} x<sup>2</sup> + ${c_l} x + ${d_l}<br>
-	<span class='white'>L&prime;</span>(x) = ${a_l_} x<sup>2</sup> + ${b_l_} x + ${c_l_}
-	(r<sub>L&prime;0</sub> = <span class="${r_l0goodness}">${roots_l_.r0}</span>, r<sub>L&prime;1</sub> = <span class="${r_l1goodness}">${roots_l_.r1}</span>)`;
 	const dh = delta_hue(GRADIENT.gradientData[gradient]);
 	// ok now compute min H'
 	let min_hp = Infinity;
