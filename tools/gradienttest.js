@@ -186,10 +186,14 @@ GRADIENT_TEST.random = function random(max_attempts = 100){
 		gradient.g = [0, c_g, b_g, a_g];
 		if (this.verifyCubic(gradient)){
 			console.info('found', gradient, 'after', attempt+1, 'attempt(s)');
-			GRADIENT.gradientData.test = gradient;
 			const test_elem = document.getElementById('test');
 			test_elem.innerHTML = '';
-			this.print(test_elem, 'test');
+			const test_name = `
+			R(x) = ${a_r} x<sup>3</sup> + ${b_r} x<sup>2</sup> + ${c_r} x<br>
+			G(x) = ${a_g} x<sup>3</sup> + ${b_g} x<sup>2</sup> + ${c_g} x<br>
+			B(x) = ${a_b} x<sup>3</sup> + ${b_b} x<sup>2</sup> + ${c_b} x`;
+			GRADIENT.gradientData[test_name] = gradient;
+			this.print(test_elem, test_name);
 			return gradient;
 		}
 	}
