@@ -19,17 +19,26 @@ span {
 :root {
 	--diskSize: 10.3vw;
 }
+#test {
+	display: flex;
+	flex-direction: column;
+}
 .disc {
+	align-items: center;
 	border: 0.2vw solid grey;
 	border-radius: calc(var(--diskSize)/2);
 	color: white;
-	display: inline-block;
+	display: flex;
 	font-size: 75%;
 	height: var(--diskSize);
-	line-height: calc(var(--diskSize)/2);
+	justify-content: center;
 	text-align: center;
 	text-shadow: 0 0 5px black;
 	width: var(--diskSize);
+}
+.disk_parent {
+	display: flex;
+	flex-direction: row;
 }
 .red {
 	color: #e33;

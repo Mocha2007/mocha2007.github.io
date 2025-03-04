@@ -39,26 +39,29 @@ GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9){
 	const label = document.createElement('span');
 	label.innerHTML = gradient;
 	parent.appendChild(label);
-	br();
+	const disk_parent = document.createElement('div');
+	parent.appendChild(disk_parent);
+	disk_parent.classList.add('disk_parent');
 	for (let i = 0; i < discs; i++){
 		const x = i/(discs-1);
-		const disc = document.createElement('span');
+		const disc = document.createElement('div');
 		disc.classList.add('disc');
-		disc.innerHTML = disc.style.backgroundColor = GRADIENT.gradient(x, gradient);
+		disc.style.backgroundColor = GRADIENT.gradient(x, gradient);
 		const color = GRADIENT.gradient_raw(x, GRADIENT.gradientData[gradient]);
 		const hsv = rgb2hsv(color.R, color.G, color.B);
-		disc.innerHTML += `<br>hsv(${hsv.H}, ${hsv.S}, ${hsv.V})`;
-		parent.appendChild(disc);
+		disc.innerHTML = `<span>${disc.style.backgroundColor}<br>hsv(${hsv.H}, ${hsv.S}, ${hsv.V})</span>`;
+		disk_parent.appendChild(disc);
 	}
-	br();
+	const bar_parent = document.createElement('div');
+	parent.appendChild(bar_parent);
+	bar_parent.classList.add('bar_parent');
 	for (let i = 0; i < steps; i++){
 		const x = i/steps;
 		const swatch = document.createElement('span');
 		swatch.classList.add('swatch');
 		swatch.style.backgroundColor = GRADIENT.gradient(x, gradient);
-		parent.appendChild(swatch);
+		bar_parent.appendChild(swatch);
 	}
-	br();
 };
 
 GRADIENT_TEST.test = function test(){
