@@ -1602,5 +1602,9 @@ const blogData = [
 	this also applies to all polynomials in R.
 	@p
 	Now the question is... why these numbers specifically???
+	Some solutions to the quadratic question on the math stack exchange use multiple-integration.
+	More interestingly, I found <a href="https://epubs.siam.org/doi/abs/10.1137/1116052?journalCode=tprbau">a paper</a>
+	demonstrating the probability is always proportional to the natural log of its degree,
+	and furthermore that as the degree approaches infinity, the probability approaches ln(n)/&pi;!
 	`,
 ];
