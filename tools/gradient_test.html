@@ -56,6 +56,20 @@ span {
 .white {
 	color: #fff;
 }
+.rainbow {
+	background: linear-gradient(to right, red, yellow, lime, cyan, blue, magenta);
+	background-clip: text;
+	color: transparent;
+	animation: shimmer 1s linear infinite;
+}
+@keyframes shimmer {
+	0% {
+		filter: hue-rotate(0);
+	}
+	100% {
+		filter: hue-rotate(360deg);
+	}
+}
 </style>
 <span class="button" onclick="GRADIENT_TEST.test();">TEST ALL GRADIENTS &rarr;</span>
 <span class="button" onclick="GRADIENT_TEST.random();">NEW RANDOM GRADIENT &rarr;</span>

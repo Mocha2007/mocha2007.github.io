@@ -95,7 +95,7 @@ GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, d
 			min_hp_x = x0;
 		}
 	}
-	label.innerHTML += `<br>&Delta;<sub>hue</sub> = ${dh.delta} (${dh.start} &rarr; ${dh.end}, min |H&prime;| = ${Math.round(min_hp)} at x = ${min_hp_x})`;
+	label.innerHTML += `<br>&Delta;<sub class="rainbow">hue</sub> = ${dh.delta} (${dh.start} &rarr; ${dh.end}, min |<span class="rainbow">H&prime;</span>| = ${Math.round(min_hp)} at x = ${min_hp_x})`;
 	parent.appendChild(label);
 	const disk_parent = document.createElement('div');
 	parent.appendChild(disk_parent);
