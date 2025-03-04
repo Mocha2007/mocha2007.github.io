@@ -48,6 +48,10 @@ const GRADIENT_TEST = {};
 GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, dh_steps = 1000){
 	const label = document.createElement('span');
 	label.innerHTML = gradient;
+	label.innerHTML += `<br>
+	<span class='red'>R</span>(x) = ${GRADIENT.gradientData[gradient].r[3]} x<sup>3</sup> + ${GRADIENT.gradientData[gradient].r[2]} x<sup>2</sup> + ${GRADIENT.gradientData[gradient].r[1]} x<br>
+	<span class='green'>G</span>(x) = ${GRADIENT.gradientData[gradient].g[3]} x<sup>3</sup> + ${GRADIENT.gradientData[gradient].g[2]} x<sup>2</sup> + ${GRADIENT.gradientData[gradient].g[1]} x<br>
+	<span class='blue'>B</span>(x) = ${GRADIENT.gradientData[gradient].b[3]} x<sup>3</sup> + ${GRADIENT.gradientData[gradient].b[2]} x<sup>2</sup> + ${GRADIENT.gradientData[gradient].b[1]} x`;
 	const dh = delta_hue(GRADIENT.gradientData[gradient]);
 	// ok now compute min H'
 	let min_hp = Infinity;
@@ -260,10 +264,7 @@ GRADIENT_TEST.random = function random(max_attempts = 100){
 			console.info('found', gradient, 'after', attempt+1, 'attempt(s)');
 			const test_elem = document.getElementById('test');
 			test_elem.innerHTML = '';
-			const test_name = `
-			<span class='red'>R</span>(x) = ${a_r} x<sup>3</sup> + ${b_r} x<sup>2</sup> + ${c_r} x<br>
-			<span class='green'>G</span>(x) = ${a_g} x<sup>3</sup> + ${b_g} x<sup>2</sup> + ${c_g} x<br>
-			<span class='blue'>B</span>(x) = ${a_b} x<sup>3</sup> + ${b_b} x<sup>2</sup> + ${c_b} x`;
+			const test_name = 'test';
 			GRADIENT.gradientData[test_name] = gradient;
 			this.print(test_elem, test_name);
 			return gradient;
