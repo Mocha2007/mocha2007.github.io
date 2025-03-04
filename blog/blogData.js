@@ -1610,5 +1610,6 @@ const blogData = [
 	Other weirdness can be found when randomly generating polynomials,
 	such as <a href="http://jdc.math.uwo.ca/roots/"><em>this really freaking weird fractal</em></a>.
 	(Discussed further in <a href="https://web.mit.edu/twang6/public/poly-roots.pdf>this paper</a>)
+	(Also see <a href="https://people.math.osu.edu/nguyen.1261/cikk/dbroot.pdf">this one</a>)
 	`,
 ];
