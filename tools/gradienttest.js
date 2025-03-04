@@ -48,6 +48,13 @@ function delta_hue(gradient, epsilon = 1e-10){
 	return {delta, start, end};
 }
 
+function quadroot(a, b, c){
+	const d = b*b - 4*a*c;
+	const r0 = a === 0 ? -c/b : (-b - Math.sqrt(d))/(2*a);
+	const r1 = (-b + Math.sqrt(d))/(2*a);
+	return {d, r0, r1};
+}
+
 const GRADIENT_TEST = {};
 
 GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, dh_steps = 1000){
@@ -59,19 +66,20 @@ GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, d
 	const [d_l, c_l, b_l, a_l] = GRADIENT.gradientData[gradient].r.map((x, i) => brightness_coef.r*x + brightness_coef.g*GRADIENT.gradientData[gradient].g[i] + brightness_coef.b*GRADIENT.gradientData[gradient].b[i]);
 	const [c_l_, b_l_, a_l_] = [c_l, 2*b_l, 3*a_l];
 	// eslint-disable-next-line prefer-const
-	let [r_l0, r_l1] = [-1, 1].map(x => (-b_l_ + x*Math.sqrt(b_l_*b_l_ - 4*a_l_*c_l_))/(2*a_l_));
-	if (a_l_ === 0){
-		r_l0 = -c_l_/b_l_;
-		r_l1 = NaN;
-	}
-	const [r_l0goodness, r_l1goodness] = [0 < r_l0 && r_l0 < 1 ? 'red' : 'green', 0 < r_l1 && r_l1 < 1 ? 'red' : 'green'];
+	const roots_l_ = quadroot(a_l_, b_l_, c_l_);
+	const [r_l0goodness, r_l1goodness] = [0 < roots_l_.r0 && roots_l_.r0 < 1 ? 'red' : 'green', 0 < roots_l_.r1 && roots_l_.r1 < 1 ? 'red' : 'green'];
+	const [c_g_, b_g_, a_g_] = [c_g, 2*b_g, 3*a_g];
+	const roots_g_ = quadroot(a_g_, b_g_, c_g_);
+	const [r_g0goodness, r_g1goodness] = [0 < roots_g_.r0 && roots_g_.r0 < 1 ? 'red' : 'green', 0 < roots_g_.r1 && roots_g_.r1 < 1 ? 'red' : 'green'];
 	label.innerHTML += `<br>
 	<span class='red'>R</span>(x) = ${a_r} x<sup>3</sup> + ${b_r} x<sup>2</sup> + ${c_r} x + ${d_r}<br>
 	<span class='green'>G</span>(x) = ${a_g} x<sup>3</sup> + ${b_g} x<sup>2</sup> + ${c_g} x + ${d_g}<br>
+	<span class='green'>G&prime;</span>(x) = ${3*a_g} x<sup>2</sup> + ${2*b_g} x + ${c_g}
+	(r<sub>G&prime;0</sub> = <span class="${r_g0goodness}">${roots_g_.r0}</span>, r<sub>L1</sub> = <span class="${r_g1goodness}">${roots_g_.r1}</span>)<br>
 	<span class='blue'>B</span>(x) = ${a_b} x<sup>3</sup> + ${b_b} x<sup>2</sup> + ${c_b} x + ${d_b}<br>
 	<span class='white'>L</span>(x) = ${a_l} x<sup>3</sup> + ${b_l} x<sup>2</sup> + ${c_l} x + ${d_l}<br>
 	<span class='white'>L&prime;</span>(x) = ${a_l_} x<sup>2</sup> + ${b_l_} x + ${c_l_}
-	(r<sub>L0</sub> = <span class="${r_l0goodness}">${r_l0}</span>, r<sub>L1</sub> = <span class="${r_l1goodness}">${r_l1}</span>)`;
+	(r<sub>L&prime;0</sub> = <span class="${r_l0goodness}">${roots_l_.r0}</span>, r<sub>L&prime;1</sub> = <span class="${r_l1goodness}">${roots_l_.r1}</span>)`;
 	const dh = delta_hue(GRADIENT.gradientData[gradient]);
 	// ok now compute min H'
 	let min_hp = Infinity;
