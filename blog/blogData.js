@@ -1585,4 +1585,21 @@ const blogData = [
 	You can also play around with the color curves in this desmos graph:
 	<iframe src="https://www.desmos.com/calculator/n7fj6lvvo0?embed" width="700" height="700" style="border: 1px solid #ccc" frameborder=0></iframe>
 	`,
+	`
+	@title Polynomial Root Probabilities
+	@date 1741116360799
+	@tags math
+	I computed the approximate probability of a polynomial of a given degree having a certain number of real roots (computationally),
+	given that the coefficients are uniformly randomly chosen from [-1, 1]:
+	<ol>
+		<li>1: 100%</li>
+		<li>0: 37.1863%, 2: 62.8137%</li>
+		<li>1: 78.2289%, 3: 21.7711%</li>
+		<li>0: 23.5942%, 2: 69.7628%, 4: 6.6430%</li>
+	</ol>
+	Since all polynomials in R can be expressed as a scaled version of these,
+	this also applies to all polynomials in R.
+	@p
+	Now the question is... why these numbers specifically???
+	`,
 ];
