@@ -1578,6 +1578,7 @@ const blogData = [
 	<ul class="list2">
 		<li>It would be much more difficult to compute these constraints with higher-degree polynomials, which is why we're sticking to cubics. They provide enough flexibility anyways.</li>
 		<li>The exact color channel weights for the perceptual brightness formula don't necessarily matter for this algorithm, and you can swap them for other values if you want.</li>
+		<li>In case you need to know the implied bounds on b and c: 0 ≤ c ≤ 1020, and -510 sqrt(3) - 765 ≤ b ≤ 510 sqrt(3) - 765 (appx. -1648 ≤ b ≤ 68)</li>
 	</ul>
 	`,
 ];
