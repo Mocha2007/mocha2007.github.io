@@ -62,6 +62,7 @@ GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, d
 	label.innerHTML = gradient;
 	const [d_r, c_r, b_r, a_r] = GRADIENT.gradientData[gradient].r;
 	const [d_g, c_g, b_g, a_g] = GRADIENT.gradientData[gradient].g;
+	const gx = x => a_g*x*x*x + b_g*x*x + c_g*x + d_g;
 	const [d_b, c_b, b_b, a_b] = GRADIENT.gradientData[gradient].b;
 	const [d_l, c_l, b_l, a_l] = GRADIENT.gradientData[gradient].r.map((x, i) => brightness_coef.r*x + brightness_coef.g*GRADIENT.gradientData[gradient].g[i] + brightness_coef.b*GRADIENT.gradientData[gradient].b[i]);
 	const [c_l_, b_l_, a_l_] = [c_l, 2*b_l, 3*a_l];
@@ -70,12 +71,15 @@ GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, d
 	const [r_l0goodness, r_l1goodness] = [0 < roots_l_.r0 && roots_l_.r0 < 1 ? 'red' : 'green', 0 < roots_l_.r1 && roots_l_.r1 < 1 ? 'red' : 'green'];
 	const [c_g_, b_g_, a_g_] = [c_g, 2*b_g, 3*a_g];
 	const roots_g_ = quadroot(a_g_, b_g_, c_g_);
-	const [r_g0goodness, r_g1goodness] = [0 < roots_g_.r0 && roots_g_.r0 < 1 ? 'red' : 'green', 0 < roots_g_.r1 && roots_g_.r1 < 1 ? 'red' : 'green'];
+	const [r_g0goodness, r_g1goodness] = [0 < roots_g_.r0 && roots_g_.r0 < 1 ? 'yellow' : 'green', 0 < roots_g_.r1 && roots_g_.r1 < 1 ? 'yellow' : 'green'];
+	const [gr0, gr1] = [gx(roots_g_.r0), gx(roots_g_.r1)];
+	const [gr0_goodness, gr1_goodness] =[(gr0 < 0 || 255 < gr0) && r_g0goodness === 'yellow' ? 'red' : 'green', (gr1 < 0 || 255 < gr1) && r_g1goodness === 'yellow' ? 'red' : 'green'];
 	label.innerHTML += `<br>
 	<span class='red'>R</span>(x) = ${a_r} x<sup>3</sup> + ${b_r} x<sup>2</sup> + ${c_r} x + ${d_r}<br>
 	<span class='green'>G</span>(x) = ${a_g} x<sup>3</sup> + ${b_g} x<sup>2</sup> + ${c_g} x + ${d_g}<br>
 	<span class='green'>G&prime;</span>(x) = ${3*a_g} x<sup>2</sup> + ${2*b_g} x + ${c_g}
-	(r<sub>G&prime;0</sub> = <span class="${r_g0goodness}">${roots_g_.r0}</span>, r<sub>L1</sub> = <span class="${r_g1goodness}">${roots_g_.r1}</span>)<br>
+	(r<sub>G&prime;0</sub> = <span class="${r_g0goodness}">${roots_g_.r0}</span>, r<sub>G&prime;1</sub> = <span class="${r_g1goodness}">${roots_g_.r1}</span>,
+	<span class='green'>G</span>(r<sub>G&prime;0</sub>) = <span class="${gr0_goodness}">${gr0}</span>, <span class='green'>G</span>(r<sub>G&prime;1</sub>) = <span class="${gr1_goodness}">${gr1}</span>)<br>
 	<span class='blue'>B</span>(x) = ${a_b} x<sup>3</sup> + ${b_b} x<sup>2</sup> + ${c_b} x + ${d_b}<br>
 	<span class='white'>L</span>(x) = ${a_l} x<sup>3</sup> + ${b_l} x<sup>2</sup> + ${c_l} x + ${d_l}<br>
 	<span class='white'>L&prime;</span>(x) = ${a_l_} x<sup>2</sup> + ${b_l_} x + ${c_l_}
