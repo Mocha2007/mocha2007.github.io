@@ -141,8 +141,8 @@ GRADIENT.random = function random(max_attempts = 100){
 	// c probably in [-102, 980]
 	// b probably in [-2556, 482]
 	// a probably in [-321, 1737]
-	function randint(min, max){
-		return Math.round((max - min) * Math.random() + min);
+	function uniform(min, max){
+		return (max - min) * Math.random() + min;
 	}
 	for (let attempt = 0; attempt < max_attempts; attempt++){
 		console.clear();
@@ -165,12 +165,12 @@ GRADIENT.random = function random(max_attempts = 100){
 		// for real roots to exist, -3a^2 + 3060a must be greater than or equal to 0.
 		// so we now gain an additional constraint on a:
 		// 1020 >= a >= 0
-		const a_r = randint(0, 1020);
-		const b_r = randint((-3*a_r - Math.sqrt(-3*a_r*a_r + 3060*a_r))/2, (-3*a_r + Math.sqrt(-3*a_r*a_r + 3060*a_r))/2);
+		const a_r = uniform(0, 1020);
+		const b_r = uniform((-3*a_r - Math.sqrt(-3*a_r*a_r + 3060*a_r))/2, (-3*a_r + Math.sqrt(-3*a_r*a_r + 3060*a_r))/2);
 		const c_r = 255 - a_r - b_r;
 		gradient.r = [0, c_r, b_r, a_r];
-		const a_b = randint(0, 1020);
-		const b_b = randint((-3*a_b - Math.sqrt(-3*a_b*a_b + 3060*a_b))/2, (-3*a_b + Math.sqrt(-3*a_b*a_b + 3060*a_b))/2);
+		const a_b = uniform(0, 1020);
+		const b_b = uniform((-3*a_b - Math.sqrt(-3*a_b*a_b + 3060*a_b))/2, (-3*a_b + Math.sqrt(-3*a_b*a_b + 3060*a_b))/2);
 		const c_b = 255 - a_b - b_b;
 		gradient.b = [0, c_b, b_b, a_b];
 		// we can derive B from the brightness formula since we want brightness to be exactly y = 255x
