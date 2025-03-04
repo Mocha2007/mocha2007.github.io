@@ -1597,6 +1597,7 @@ const blogData = [
 		<li>1: 78.2289%, 3: 21.7711%</li>
 		<li>0: 23.5942%, 2: 69.7628%, 4: 6.6430%</li>
 	</ol>
+	Other amounts (eg. 1 for quadratics) have zero probability since that would require the determinant to be exactly zero.
 	Since all polynomials in R can be expressed as a scaled version of these,
 	this also applies to all polynomials in R.
 	@p
