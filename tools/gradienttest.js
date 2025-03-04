@@ -1,7 +1,9 @@
 /* eslint-disable max-len */
 /* global GRADIENT */
 
-GRADIENT.print = function print(parent, gradient, steps = 240){
+const GRADIENT_TEST = {};
+
+GRADIENT_TEST.print = function print(parent, gradient, steps = 240){
 	function br(){
 		parent.appendChild(document.createElement('br'));
 	}
@@ -13,18 +15,18 @@ GRADIENT.print = function print(parent, gradient, steps = 240){
 		const x = i/steps;
 		const swatch = document.createElement('span');
 		swatch.classList.add('swatch');
-		swatch.style.backgroundColor = this.gradient(x, gradient);
+		swatch.style.backgroundColor = GRADIENT.gradient(x, gradient);
 		parent.appendChild(swatch);
 	}
 	br();
 };
 
-GRADIENT.test = function test(){
+GRADIENT_TEST.test = function test(){
 	console.debug('testing gradient.js ...');
 	const elem = document.createElement('div');
 	elem.id = 'test';
 	document.documentElement.appendChild(elem);
-	for (const gradient in this.gradientData){
+	for (const gradient in GRADIENT.gradientData){
 		console.debug('testing', gradient, '...');
 		this.print(elem, gradient);
 		// (1) i need to make sure valid rgb values are always given
@@ -33,11 +35,11 @@ GRADIENT.test = function test(){
 		// this can be checked easily by taking the derivative, finding roots,
 		// sectioning (0, 1) between roots, and testing each region for positivity
 		// (3) I'd like to also make sure the brightness is approximately linear (this isn't essential, but might be useful?)
-		this.verifyCubic(this.gradientData[gradient], gradient);
+		this.verifyCubic(GRADIENT.gradientData[gradient], gradient);
 	}
 	console.debug('gradient.js testing complete');
 };
-GRADIENT.verifyCubic = function verifyCubic(gradient, name){
+GRADIENT_TEST.verifyCubic = function verifyCubic(gradient, name){
 	// verify monotonic increasing
 	// https://stackoverflow.com/a/596243 (0.2126*R + 0.7152*G + 0.0722*B)
 	const brightness = gradient.r.map((x, i) => 0.2126*x + 0.7152*gradient.g[i] + 0.0722*gradient.b[i]);
@@ -130,7 +132,7 @@ GRADIENT.verifyCubic = function verifyCubic(gradient, name){
 	}
 	return true;
 };
-GRADIENT.random = function random(max_attempts = 100){
+GRADIENT_TEST.random = function random(max_attempts = 100){
 	const brightness_coef = {
 		r: 0.2126,
 		g: 0.7152,
@@ -184,10 +186,137 @@ GRADIENT.random = function random(max_attempts = 100){
 		gradient.g = [0, c_g, b_g, a_g];
 		if (this.verifyCubic(gradient)){
 			console.info('found', gradient, 'after', attempt+1, 'attempt(s)');
-			this.gradientData.test = gradient;
-			this.print(document.getElementById('test'), 'test');
+			GRADIENT.gradientData.test = gradient;
+			this.print(document.documentElement, 'test');
 			return gradient;
 		}
 	}
 	console.warn('No suitable gradient found in', max_attempts, 'attempts.');
 };
+
+// extra gradients
+
+const EXTRA_GRADIENTS = {
+	// simple crap
+	// most saturated orange/yellow possible
+	grey: {
+		r: [0, 255, 0, 0],
+		g: [0, 255, 0, 0],
+		b: [0, 255, 0, 0],
+	},
+	blue: {
+		r: [0, 0, 255, 0],
+		g: [0, 0, 255, 0],
+		b: [0, 509, -254, 0],
+	},
+	blueyellow: {
+		r: [0, 93, 486, -324],
+		g: [0, 93, 486, -324],
+		b: [0, 2293.5, -6115.5, 4077],
+	},
+	purpleorange: {
+		r: [128, -275, 402, 0],
+		g: [0, 236, -108, 0],
+		b: [128, -20, -108, 0],
+	},
+	reddit: {
+		r: [148, -67, 174, 0],
+		g: [148, 50, -60, 0],
+		b: [255, -227, 66, 0],
+	},
+	// https://www.desmos.com/calculator/pfkgnr5z6z
+	// test, loosely based on Princess Luna's color palette
+	/*luna0: {
+		r: [0, 649, -1810, 1416],
+		g: [0, 404, -951, 766],
+		b: [0, 261, 8, -23],
+	},
+	// test, loosely based on Princess Celestia's color palette
+	luna1: {
+		r: [14, 151, 521, -460],
+		g: [37, -77, 664, -406],
+		b: [44, 481, -1095, 794],
+	},
+	// test, loosely based on Fluttershy's color palette
+	luna2: {
+		r: [10, 460, -451, 236],
+		g: [43, -165, 1024, -671],
+		b: [43, 283, -546, 441],
+	},
+	// https://www.desmos.com/calculator/pecwugvins
+	// test: red dominant in first third, green in second, blue in third,
+	// roughly linear brightness increase
+	luna3: {
+		r: [7, 541, -974, 664],
+		g: [0, 334, -63, -32],
+		// original: 0, -167, 1157, -731 ... problem is that goes slightly outside [0, 255]
+		// this introduces a nearly imperceptible change that fixes that.
+		b: [7, -167, 1157, -756],
+	},*/
+	// luna3 but cubic fit on
+	/*
+		x	r	g	b
+		0	0	0	0
+		1/3	85	85	B1
+		2/3	R1	170	170
+		1	255	255	255
+		where B1 = 57 chosen st. the minimum is positive,
+		and R1 = 100 chosen st. the bendiness is just barely within limits
+	*/
+	luna0: {
+		r: [0, 570, -1260, 945],
+		g: [0, 255, 0, 0],
+		b: [0, 3, 630, -378],
+	},
+	// luna4 but blue->red instead of backwards
+	luna1: {
+		r: [0, 3, 630, -378],
+		g: [0, 255, 0, 0],
+		b: [0, 1020, -3060, 2295],
+	},
+	// ROYG, but colorblind-friendly
+	// flat brightness curve
+	// https://www.desmos.com/calculator/vum6et5vrr
+	luna2: {
+		r: [192, 84.5, -63, -85.5],
+		g: [0, 322.5, 0, -67.5],
+		b: [0, 308, -1012.5, 832.5],
+	},
+	// most saturated orange/yellow possible
+	luna2alt: {
+		r: [192, 12, 135, -189],
+		g: [0, 255, 229.5, -229.5],
+		b: [0, 379.5, -904.5, 675],
+	},
+	// purplish -> orangish?
+	luna3: {
+		r: [0, 694, -629, 190],
+		g: [0, 87, 318, -150],
+		b: [0, 625, -1300, 930],
+	},
+	// purplish -> cyanish?
+	luna4: {
+		r: [0, 744, -1502, 1013],
+		g: [0, 88, 473, -306],
+		b: [0, 471, -266, 50],
+	},
+	// reddish -> yellowish -> greenish?
+	luna5: {
+		r: [0, 874, -1519, 900],
+		g: [0, 70, 530, -345],
+		b: [0, 240, -755, 770],
+	},
+};
+
+GRADIENT_TEST.interval = setInterval(() => {
+	if (GRADIENT){
+		console.info('gradient.js loaded');
+		clearInterval(GRADIENT_TEST.interval);
+		for (const gradient in EXTRA_GRADIENTS){
+			console.info('adding new gradient:', gradient);
+			GRADIENT.gradientData[gradient] = EXTRA_GRADIENTS[gradient];
+		}
+		// GRADIENT_TEST.test();
+	}
+}, 100);
+console.info('gradienttest.js loaded');
