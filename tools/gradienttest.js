@@ -296,13 +296,27 @@ GRADIENT_TEST.random = function random(max_attempts = 100){
 
 GRADIENT_TEST.random_cyclic = function random_cyclic(max_attempts = 1000){
 	// condition 1: f(0) = f(1) => ax^3 + bx^2 + (-a-b)x + d
+	/*
+	we can force one of the maxima to be at x >= 0 (which is necessary) by doing this:
+	f(x) = ax^3 + bx^2 + (-a-b)x + d
+	f'(x) = 3ax^2 + 2bx -a -b
+	root 0: (-b - sqrt(b^2 + 3a^2 + 3ab))/(3a)
+
+	0 <= (-b - sqrt(b^2 + 3a^2 + 3ab))/(3a)
+	0 <= -b - sqrt(b^2 + 3a^2 + 3ab)
+	b <= -sqrt(b^2 + 3a^2 + 3ab)
+	b is necessarily negative here, so squaring flips the sign:
+	b^2 >= b^2 + 3a^2 + 3ab
+	-a >= b (this means a is positive)
+	In practice this reduces the number of attempts needed by about a factor of 10!
+	*/
 	const gradient = {};
 	let attempt;
 	for (attempt = 0; attempt < max_attempts; attempt++){
 		let failed = false;
 		['r', 'g', 'b'].forEach(color => {
-			const a = uniform(-1000, 1000);
-			const b = uniform(-1000, 1000);
+			const a = uniform(0, 1000);
+			const b = uniform(-1000, -a);
 			const c = -a-b;
 			const d = uniform(0, 255);
 			const f = x => a*x*x*x + b*x*x + c*x + d;
