@@ -76,8 +76,8 @@ GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, d
 		const [fr0_goodness, fr1_goodness] =[(fr0 < 0 || 255 < fr0) && rootgoodness[0] === warning_color ? 'red' : 'green', (fr1 < 0 || 255 < fr1) && rootgoodness[1] === warning_color ? 'red' : 'green'];
 		const symbol = color[0].toUpperCase();
 		label.innerHTML += `<br>
-	<span class='${color}'>${symbol}</span>(x) = ${a} x<sup>3</sup> + ${b} x<sup>2</sup> + ${c} x + ${d}<br>
-	<span class='${color}'>${symbol}&prime;</span>(x) = ${a_} x<sup>2</sup> + ${b_} x + ${c_}
+	<span class='${color}'>${symbol}</span>(x) = ${new Polynomial(...GRADIENT.gradientData[gradient][color[0]]).span.outerHTML}<br>
+	<span class='${color}'>${symbol}&prime;</span>(x) = ${new Polynomial(...GRADIENT.gradientData[gradient][color[0]]).dx.span.outerHTML}
 	(r<sub>${symbol}&prime;0</sub> = <span class="${rootgoodness[0]}">${roots.r0}</span>, r<sub>${symbol}&prime;1</sub> = <span class="${rootgoodness[1]}">${roots.r1}</span>,
 	<span class='${color}'>${symbol}</span>(r<sub>${symbol}&prime;0</sub>) = <span class="${fr0_goodness}">${fr0}</span>, <span class='${color}'>${symbol}</span>(r<sub>${symbol}&prime;1</sub>) = <span class="${fr1_goodness}">${fr1}</span>)`;
 	});

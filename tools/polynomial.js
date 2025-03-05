@@ -66,6 +66,7 @@ class Polynomial {
 		const elem = document.createElement('span');
 		elem.innerHTML = this.coefficients
 			.map((c, i) => c ? 1 < i ? `${c}x<sup>${i}</sup>` : 0 < i ? `${c}x` : `${c}` : '')
+			.filter(s => s) // remove blanks
 			.reverse().join(' + ');
 		elem.classList.add('polynomial'); // in case we want special styling for this
 		return elem;
