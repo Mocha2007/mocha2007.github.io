@@ -364,7 +364,7 @@ GRADIENT_TEST.random_peak = function random_peak(){
 	// 0 <= (-a-b-(-11*a/4 - 2*b)-(-15*a-14*b-12*(-11*a/4 - 2*b)-8160)/8)
 	// THUS b <= 4080-2a
 	// the f'(1) <= 0 condition requires b <= 4080-3a
-	// https://www.desmos.com/calculator/ezjvmivs1c
+	// https://www.desmos.com/calculator/asvbmeblny
 	const gradient = {};
 	['r', 'g', 'b'].forEach(color => {
 		const a = uniform(-5632, 16320); // these bounds are needed for b to be possible
