@@ -346,6 +346,30 @@ GRADIENT_TEST.random_cyclic = function random_cyclic(){
 	return gradient;
 };
 
+// this generates colorblind-friendly cyclic color maps suitable for all types of colorblindness but Achromatopsia
+// (which is mathematically impossible to accomodate for with a cyclic color map regardless)
+GRADIENT_TEST.random_peak = function random_peak(){
+	// conditions: f(0) = f(1) = 0; f(1/2) = 255, f'(1/2) = 0
+	// there is only a single cubic which satisfies this (which is a quadratic), so we need to look to quartics if we want variance...
+	const gradient = {};
+	['r', 'g', 'b'].forEach(color => {
+		const a = uniform(-4080, 4080); // a must be in this specific range otherwise extrema in [0, 1] clip oob
+		const b = -2*a;
+		const c = (-4080 - 7*a - 6*b)/4;
+		const d = -a-b-c;
+		// success!!!!
+		gradient[color] = [0, d, c, b, a];
+	});
+	// now disp
+	console.info('found', gradient);
+	const test_elem = document.getElementById('test');
+	test_elem.innerHTML = '';
+	const test_name = 'test';
+	GRADIENT.gradientData[test_name] = gradient;
+	this.print(test_elem, test_name);
+	return gradient;
+};
+
 // extra gradients
 
 const EXTRA_GRADIENTS = {
@@ -457,6 +481,12 @@ const EXTRA_GRADIENTS = {
 		r: [0, 874, -1519, 900],
 		g: [0, 70, 530, -345],
 		b: [0, 240, -755, 770],
+	},
+	// only cubic st. f(0) = f(1) = 0 and f(1/2) = 255 and f'(1/2) = 0
+	midpeak: {
+		r: [0, 1020, -1020, 0],
+		g: [0, 1020, -1020, 0],
+		b: [0, 1020, -1020, 0],
 	},
 };
 
