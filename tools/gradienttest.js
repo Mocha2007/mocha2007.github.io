@@ -390,7 +390,7 @@ GRADIENT_TEST.random_peak2 = function random_peak2(){
 	const gradient = {};
 	['r', 'g', 'b'].forEach(color => {
 		const a = uniform(-816, 816); // these bounds are needed for b to be possible
-		const b = uniform(-Math.min(a, 2*a) - 1020, Math.min(-3*a/4, -9*a/4));
+		const b = uniform(-Math.min(a, 2*a) - 1020, -Math.max(3*a, 9*a)/4);
 		const c = -3*a/4 - b;
 		const d = 255 - (a/8 + b/4 + c/2);
 		// success!!!!
