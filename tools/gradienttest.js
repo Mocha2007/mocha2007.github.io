@@ -297,7 +297,7 @@ GRADIENT_TEST.random = function random(max_attempts = 100){
 GRADIENT_TEST.random_cyclic = function random_cyclic(max_attempts = 1000){
 	// condition 1: f(0) = f(1) => ax^3 + bx^2 + (-a-b)x + d
 	/*
-	we can force one of the maxima to be at x >= 0 (which is necessary) by doing this:
+	we can force one of the maxima to be at x >= 0 (which is necessary, and also the previous condition forces the same root to be in [0, 1]) by doing this:
 	f(x) = ax^3 + bx^2 + (-a-b)x + d
 	f'(x) = 3ax^2 + 2bx -a -b
 	root 0: (-b - sqrt(b^2 + 3a^2 + 3ab))/(3a)
