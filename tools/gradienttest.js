@@ -367,8 +367,8 @@ GRADIENT_TEST.random_peak = function random_peak(){
 	// https://www.desmos.com/calculator/asvbmeblny
 	const gradient = {};
 	['r', 'g', 'b'].forEach(color => {
-		const a = uniform(-5632, 16320); // these bounds are needed for b to be possible
-		const b = uniform((-5*a - 8160)/2, Math.min(4080-2*a, 4080-3*a));
+		const a = uniform(-16320, 16320); // these bounds are needed for b to be possible
+		const b = uniform((-5*a - 8160)/2, 4080 - Math.max(2*a, 3*a));
 		const c = -11*a/4 - 2*b;
 		const d = (-15*a-14*b-12*c-8160)/8;
 		const e = -a-b-c-d;
