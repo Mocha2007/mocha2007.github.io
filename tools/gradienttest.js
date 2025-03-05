@@ -416,10 +416,45 @@ const EXTRA_GRADIENTS = {
 		g: [0, 255, 0, 0],
 		b: [0, 255, 0, 0],
 	},
+	// linear brightness curve, with integral B(x) maximized and R(x)=G(x) minimized...
+	/*
+	 R(x) = (255x - Wb B(x))/(Wr+Wg)
+
+	B(x) = ax^3 + bx^2 + (255-a-b)x
+	MAXIMIZE integral of B(x)
+
+	integral is 1/4 ax^4 + 1/3 bx^3 + 1/2 (255-a-b) x^2
+	i(0) = 0
+	i(1) = 1/4 a + 1/3 b + 1/2 (255-a-b)
+
+	-1/4 a - 1/6 b + 255/2
+
+	we want to choose a,b to MAXIMIZE -1/4 a - 1/6 b + 255/2
+
+	we need to make sure it doesn't exceed bounds, so it must be monotonic increasing
+	B'(x) must have no zeroes (so discriminant must be negative, and also a>0)
+	B'(x) = 3ax^2 + 2bx + (255-a-b)
+	4b^2 - 3060a + 12a^2 + 12ab < 0
+	b^2 + 3ab - 765a + 3a^2 < 0
+	find roots of b
+
+	-3a +/- sqrt(-3a^2 + 3060a)
+	/////////////////////
+			2
+
+	which also implies 0 <= a <= 1020
+
+	the maximum is at a = 510
+	b = -765 - 255*sqrt(3)
+	*/
 	blue: {
-		r: [0, 0, 255, 0],
-		g: [0, 0, 255, 0],
-		b: [0, 509, -254, 0],
+		get r(){
+			return [0, 255, 0, 0].map((x, i) => (x - brightness_coef.b*this.b[i])/(brightness_coef.r+brightness_coef.g));
+		},
+		get g(){
+			return this.r;
+		},
+		b: [0, 510+255*Math.sqrt(3), -765-255*Math.sqrt(3), 510],
 	},
 	luna0: {
 		r: [0, 570, -1260, 945],
