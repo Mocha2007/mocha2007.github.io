@@ -294,6 +294,8 @@ GRADIENT_TEST.random = function random(max_attempts = 100){
 	console.warn('No suitable gradient found in', max_attempts, 'attempts.');
 };
 
+// this generates colorblind-friendly cyclic color maps suitable for all types of colorblindness but Achromatopsia
+// (which is mathematically impossible to accomodate for with a cyclic color map regardless)
 GRADIENT_TEST.random_cyclic = function random_cyclic(){
 	// condition 1: f(0) = f(1) => ax^3 + bx^2 + (-a-b)x + d
 	/*
