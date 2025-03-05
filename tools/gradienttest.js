@@ -359,10 +359,15 @@ GRADIENT_TEST.random_peak = function random_peak(){
 	// maybe we can force concavity of 1/2 to be neg? so f''(1/2) <= 0?
 	// second derivative is 20ax^3 + 12bx^2 + 6(-11a/4 - 2b)x + (-15*a-14*b-12*(-11a/4 - 2b)-8160)/4
 	// this means b must be greater than (-5*a - 8160)/2
+	// we also need f'(0) >= 0 and f'(1) <= 0
+	// 5ax^4 + 4bx^3 + 3(-11*a/4 - 2*b)x^2 + (-15*a-14*b-12*(-11*a/4 - 2*b)-8160)/4x + (-a-b-(-11*a/4 - 2*b)-(-15*a-14*b-12*(-11*a/4 - 2*b)-8160)/8)
+	// 0 <= (-a-b-(-11*a/4 - 2*b)-(-15*a-14*b-12*(-11*a/4 - 2*b)-8160)/8)
+	// THUS b <= 4080-2a
+	// the f'(1) <= 0 condition requires b <= 4080-3a
 	const gradient = {};
 	['r', 'g', 'b'].forEach(color => {
-		const a = uniform(-5632, 10000);
-		const b = uniform((-5*a - 8160)/2, 10000);
+		const a = uniform(-5632, 16320); // these bounds are needed for b to be possible
+		const b = uniform((-5*a - 8160)/2, Math.min(4080-2*a, 4080-3*a));
 		const c = -11*a/4 - 2*b;
 		const d = (-15*a-14*b-12*c-8160)/8;
 		const e = -a-b-c-d;
