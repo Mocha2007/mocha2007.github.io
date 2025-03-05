@@ -499,6 +499,12 @@ const EXTRA_GRADIENTS = {
 		g: [0, 1020, -1020, 0],
 		b: [0, 1020, -1020, 0],
 	},
+	// republican red -> democratic blue but with constant brightness
+	lunaredblue: {
+		r: [233, -233, 0, 0],
+		g: [17, 52, 0, 0],
+		b: [30, 172, 0, 0],
+	},
 };
 
 GRADIENT_TEST.interval = setInterval(() => {
