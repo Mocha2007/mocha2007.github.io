@@ -294,7 +294,7 @@ GRADIENT_TEST.random = function random(max_attempts = 100){
 	console.warn('No suitable gradient found in', max_attempts, 'attempts.');
 };
 
-GRADIENT_TEST.random_cyclic = function random_cyclic(max_attempts = 1000){
+GRADIENT_TEST.random_cyclic = function random_cyclic(){
 	// condition 1: f(0) = f(1) => ax^3 + bx^2 + (-a-b)x + d
 	/*
 	we can force one of the maxima to be at x >= 0 (which is necessary, and also the previous condition forces the same root to be in [0, 1]) by doing this:
@@ -311,34 +311,31 @@ GRADIENT_TEST.random_cyclic = function random_cyclic(max_attempts = 1000){
 	In practice this reduces the number of attempts needed by about a factor of 10!
 	*/
 	const gradient = {};
-	let attempt;
-	for (attempt = 0; attempt < max_attempts; attempt++){
-		// R(x) = nG(x) AND B(x) = R(1-x) (so that the blue channel is offset by half the period)
-		let a = uniform(0, 1000);
-		let b = uniform(-1000, -a);
-		let c = -a-b;
-		let d = uniform(0, 255);
-		const f = x => a*x*x*x + b*x*x + c*x + d;
-		// now we need to ensure f(x) evaluated at {the roots of f'(x) that are in [0, 1]} is in [0, 255]
-		const roots = quadroot(3*a, 2*b, c);
-		// to optimize brightness, we multiply coefs by 255/(greater of the two extrema in the domain)
-		const local_maximum = Math.max(...[0, roots.r0, roots.r1].filter(r => 0 <= r && r < 1).map(f));
-		a *= 255/local_maximum;
-		b *= 255/local_maximum;
-		c *= 255/local_maximum;
-		d *= 255/local_maximum;
-		// now we only need to ensure the other root is either outside the domain, or is nonnegative for validity...
-		if (roots.r1 <= 0 || 1 <= roots.r1 || 0 <= f(roots.r1)){
-			// success!!!!
-			gradient.r = [d, c, b, a];
-			const n = uniform(0, 1);
-			gradient.g = [n*d, n*c, n*b, n*a];
-			gradient.b = [d, -2*a-b, 3*a+b, -a];
-			break;
-		}
-	}
+	// R(x) = nG(x) AND B(x) = R(1-x) (so that the blue channel is offset by half the period)
+	let a = uniform(0, 1000);
+	let b = uniform(-1000, -a);
+	let c = -a-b;
+	let d = uniform(0, 255);
+	const f = x => a*x*x*x + b*x*x + c*x + d;
+	// now we need to ensure f(x) evaluated at {the roots of f'(x) that are in [0, 1]} is in [0, 255]
+	const roots = quadroot(3*a, 2*b, c);
+	// to optimize brightness, we multiply coefs by 255/(greater of the two extrema in the domain)
+	const local_extrema = [0, roots.r0, roots.r1].filter(r => 0 <= r && r < 1).map(f);
+	const local_maximum = Math.max(...local_extrema);
+	const local_minimum = Math.min(...local_extrema);
+	const y_variance = local_maximum - local_minimum;
+	a *= 255/y_variance;
+	b *= 255/y_variance;
+	c *= 255/y_variance;
+	d -= local_minimum;
+	d *= 255/y_variance;
+	// success!!!!
+	gradient.r = [d, c, b, a];
+	const n = uniform(0, 1);
+	gradient.g = [n*d, n*c, n*b, n*a];
+	gradient.b = [d, -2*a-b, 3*a+b, -a];
 	// now disp
-	console.info('found', gradient, 'after', attempt+1, 'attempt(s)');
+	console.info('found', gradient);
 	const test_elem = document.getElementById('test');
 	test_elem.innerHTML = '';
 	const test_name = 'test';
