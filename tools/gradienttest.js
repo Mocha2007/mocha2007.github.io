@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-/* global GRADIENT */
+/* global GRADIENT, Polynomial */
 const brightness_coef = {
 	r: 0.2126,
 	g: 0.7152,
@@ -100,6 +100,9 @@ GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, d
 		}
 	}
 	label.innerHTML += `<br>&Delta;<sub class="rainbow">hue</sub> = ${dh.delta} (${dh.start} &rarr; ${dh.end}, min |<span class="rainbow">H&prime;</span>| = ${Math.round(min_hp)} at x = ${min_hp_x})`;
+	// B E N D
+	const bend = Math.max(...[0, 1].map(x => Math.abs(new Polynomial(...GRADIENT.gradientData[gradient].w).dn(2).f(x))));
+	label.innerHTML += `<br>Bend: ${bend}`;
 	parent.appendChild(label);
 	const disk_parent = document.createElement('div');
 	parent.appendChild(disk_parent);
@@ -520,8 +523,8 @@ const EXTRA_GRADIENTS = {
 };
 
 GRADIENT_TEST.interval = setInterval(() => {
-	if (GRADIENT){
-		console.info('gradient.js loaded');
+	if (GRADIENT && Polynomial){
+		console.info('gradient.js and polynomial.js loaded');
 		clearInterval(GRADIENT_TEST.interval);
 		for (const gradient in EXTRA_GRADIENTS){
 			console.info('adding new gradient:', gradient);
