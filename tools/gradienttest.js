@@ -351,14 +351,23 @@ GRADIENT_TEST.random_cyclic = function random_cyclic(){
 GRADIENT_TEST.random_peak = function random_peak(){
 	// conditions: f(0) = f(1) = 0; f(1/2) = 255, f'(1/2) = 0
 	// there is only a single cubic which satisfies this (which is a quadratic), so we need to look to quartics if we want variance...
+	// quartics only provide single-hue gradients, so for more interesting patterns we need QUINTICS!!! poggers
+	// boundary conditions require f(x) = ax^5 + bx^4 + cx^3 + dx^2 + (-a-b-c-d)x
+	// f(1/2) condition requires d to be (-15*a-14*b-12*c-8160)/8
+	// derivative is 5ax^4 + 4bx^3 + 3cx^2 + (-15*a-14*b-12*c-8160)/4x + (-a-b-c-(-15*a-14*b-12*c-8160)/8)
+	// f'(1/2) condition requires c to be -11a/4 -2b
+	// maybe we can force concavity of 1/2 to be neg? so f''(1/2) <= 0?
+	// second derivative is 20ax^3 + 12bx^2 + 6(-11a/4 - 2b)x + (-15*a-14*b-12*(-11a/4 - 2b)-8160)/4
+	// this means b must be greater than (-5*a - 8160)/2
 	const gradient = {};
 	['r', 'g', 'b'].forEach(color => {
-		const a = uniform(-4080, 4080); // a must be in this specific range otherwise extrema in [0, 1] clip oob
-		const b = -2*a;
-		const c = (-4080 - 7*a - 6*b)/4;
-		const d = -a-b-c;
+		const a = uniform(-5632, 10000);
+		const b = uniform((-5*a - 8160)/2, 10000);
+		const c = -11*a/4 - 2*b;
+		const d = (-15*a-14*b-12*c-8160)/8;
+		const e = -a-b-c-d;
 		// success!!!!
-		gradient[color] = [0, d, c, b, a];
+		gradient[color] = [0, e, d, c, b, a];
 	});
 	// now disp
 	console.info('found', gradient);
