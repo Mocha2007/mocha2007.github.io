@@ -102,7 +102,7 @@ GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, d
 	label.innerHTML += `<br>&Delta;<sub class="rainbow">hue</sub> = ${dh.delta} (${dh.start} &rarr; ${dh.end}, min |<span class="rainbow">H&prime;</span>| = ${Math.round(min_hp)} at x = ${min_hp_x})`;
 	// B E N D
 	const bend = Math.max(...[0, 1].map(x => Math.abs(new Polynomial(...GRADIENT.gradientData[gradient].w).dn(2).f(x))));
-	label.innerHTML += `<br>Bend: ${bend}`;
+	label.innerHTML += `<br>Highest Magnitude Concavity at Bounds: ${bend}`;
 	parent.appendChild(label);
 	const disk_parent = document.createElement('div');
 	parent.appendChild(disk_parent);
