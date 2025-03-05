@@ -506,13 +506,13 @@ const EXTRA_GRADIENTS = {
 		b: [30, 172, 0, 0],
 	},
 	// an elevation colormap i found, rescaled
-	elevation: {
+	/*elevation: {
 		r: [249, 65, -220, 0],
 		g: [104, 397, -328, 0],
 		b: [1, 504, -486, 0],
 	},
 	// the same, but tweaked minimally to ensure monotonically increasing brightness
-/* 	elevation2: {
+ 	elevation2: {
 		r: [81, 366, -132, -70],
 		g: [167, 314, -747, 512],
 		b: [0, 734, -1618, 1130],
