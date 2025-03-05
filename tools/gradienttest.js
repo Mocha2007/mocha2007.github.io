@@ -385,6 +385,27 @@ GRADIENT_TEST.random_peak = function random_peak(){
 	return gradient;
 };
 
+GRADIENT_TEST.random_peak2 = function random_peak2(){
+	// conditions: f(1/2) = 255, f'(1/2) = 0, 0 <= f(0) <= 255, 0 <= f(1) <= 255
+	const gradient = {};
+	['r', 'g', 'b'].forEach(color => {
+		const a = uniform(-1020, 1020); // these bounds are needed for b to be possible
+		const b = uniform(Math.max(-a -1020, -2*a - 1020), Math.min(-a, -2*a));
+		const c = -3*a/4 - b;
+		const d = 255 - (a/8 + b/4 + c/2);
+		// success!!!!
+		gradient[color] = [d, c, b, a];
+	});
+	// now disp
+	console.info('found', gradient);
+	const test_elem = document.getElementById('test');
+	test_elem.innerHTML = '';
+	const test_name = 'test';
+	GRADIENT.gradientData[test_name] = gradient;
+	this.print(test_elem, test_name);
+	return gradient;
+};
+
 // extra gradients
 
 const EXTRA_GRADIENTS = {
