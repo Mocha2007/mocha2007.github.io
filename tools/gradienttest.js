@@ -6,6 +6,10 @@ const brightness_coef = {
 	b: 0.0722,
 };
 
+function uniform(min, max){
+	return (max - min) * Math.random() + min;
+}
+
 // https://stackoverflow.com/a/26233318
 function rgb2hsv(red, green, blue){
 	const min = Math.min(red, green, blue);
@@ -239,9 +243,6 @@ GRADIENT_TEST.random = function random(max_attempts = 100){
 	// c probably in [-102, 980]
 	// b probably in [-2556, 482]
 	// a probably in [-321, 1737]
-	function uniform(min, max){
-		return (max - min) * Math.random() + min;
-	}
 	for (let attempt = 0; attempt < max_attempts; attempt++){
 		console.clear();
 		const gradient = {};
@@ -291,6 +292,39 @@ GRADIENT_TEST.random = function random(max_attempts = 100){
 		}
 	}
 	console.warn('No suitable gradient found in', max_attempts, 'attempts.');
+};
+
+GRADIENT_TEST.random_cyclic = function random_cyclic(max_attempts = 1000){
+	// condition 1: f(0) = f(1) => ax^3 + bx^2 + (-a-b)x + d
+	const gradient = {};
+	let attempt;
+	for (attempt = 0; attempt < max_attempts; attempt++){
+		let failed = false;
+		['r', 'g', 'b'].forEach(color => {
+			const a = uniform(-1000, 1000);
+			const b = uniform(-1000, 1000);
+			const c = -a-b;
+			const d = uniform(0, 255);
+			const f = x => a*x*x*x + b*x*x + c*x + d;
+			gradient[color] = [d, c, b, a];
+			// now we need to ensure f(x) evaluated at {the roots of f'(x) that are in [0, 1]} is in [0, 255]
+			const roots = quadroot(3*a, 2*b, c);
+			if (![roots.r0, roots.r1].filter(r => 0 < r && r < 1).every(r => 0 <= f(r) && f(r) <= 255)){
+				failed = true;
+			}
+		});
+		if (!failed){
+			break;
+		}
+	}
+	// now disp
+	console.info('found', gradient, 'after', attempt+1, 'attempt(s)');
+	const test_elem = document.getElementById('test');
+	test_elem.innerHTML = '';
+	const test_name = 'test';
+	GRADIENT.gradientData[test_name] = gradient;
+	this.print(test_elem, test_name);
+	return gradient;
 };
 
 // extra gradients
