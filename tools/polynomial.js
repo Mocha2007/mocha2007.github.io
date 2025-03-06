@@ -117,11 +117,12 @@ class Polynomial {
 	/** @param {Polynomial} d divisor */
 	div(d){
 		// https://en.wikipedia.org/wiki/Polynomial_long_division#Pseudocode
-		let q = Polynomial.monomial(0, 0);
+		let q = new Polynomial(0);
 		let r = this.clone();
 		while (r.nonzero && r.degree >= d.degree){
 			// eslint-disable-next-line max-len
 			const t = Polynomial.monomial(r.leading_coefficient / d.leading_coefficient, r.degree - d.degree);
+			// console.debug(q.span.innerHTML, r.span.innerHTML, t.span.innerHTML);
 			q = q.add(t);
 			r = r.sub(t.mul(d));
 		}
@@ -212,14 +213,24 @@ class Polynomial {
 		else {
 			console.info('polynomial.js: MUL test failed: expected -1 0 1, got', product.coefficients.join(' '));
 		}
-		const quotient = product.mul(product).div(product);
-		if (quotient.q.eq(product)){
-			console.info('polynomial.js: DIV test passed');
+		let quotient = new Polynomial(1);
+		let divisor = new Polynomial(1);
+		function random_coef(){
+			return Math.round(20 * Math.random() - 10);
 		}
-		else {
-			console.info('polynomial.js: DIV test failed: expected', product, ', got', quotient.q);
+		for (let i = 1; i < 5; i++){
+			quotient = quotient.mul(new Polynomial(random_coef(), 1));
+			divisor = divisor.mul(new Polynomial(random_coef(), 1));
+			const dividend = quotient.mul(divisor);
+			const maybe_quotient = dividend.div(divisor).q;
+			if (maybe_quotient.eq(quotient)){
+				console.info('polynomial.js: DIV test passed');
+			}
+			else {
+				console.info('polynomial.js: DIV test failed: expected', quotient, ', got', maybe_quotient);
+			}
 		}
-		let p = Polynomial.monomial(1, 0);
+		let p = new Polynomial(1);
 		for (let i = 1; i <= 5; i++){
 			p = p.mul(new Polynomial(-i, 1));
 			// the roots should be 1 ... i
