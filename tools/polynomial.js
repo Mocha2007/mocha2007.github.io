@@ -48,10 +48,10 @@ class Polynomial {
 		this.coefficients = coefficients;
 	}
 	get degree(){
-		while (this.coefficients[this.coefficients.length-1] === 0){
+		while (this.leading_coefficient === 0){
 			this.coefficients.pop();
 		}
-		return this.coefficients.length-1;
+		return Math.max(0, this.coefficients.length - 1);
 	}
 	/** derivative */
 	get dx(){
@@ -72,7 +72,8 @@ class Polynomial {
 		return {strict, monotonic, direction};
 	}
 	get nonzero(){
-		return !(this.degree === 1 && this.coefficients[0] === 0 || this.degree === 0);
+		// eslint-disable-next-line max-len
+		return !(this.degree === 0 && (this.coefficients.length === 0 || this.coefficients[0] === 0));
 	}
 	/** returns all real roots of a polynomial (degrees <= 2 implemented) */
 	get roots(){
