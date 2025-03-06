@@ -122,6 +122,7 @@ class Polynomial {
 	/** @param {Polynomial} d divisor */
 	div(d){
 		// https://en.wikipedia.org/wiki/Polynomial_long_division#Pseudocode
+		console.assert(d.nonzero);
 		let q = new Polynomial(0);
 		let r = this.clone();
 		while (r.nonzero && r.degree >= d.degree){
