@@ -114,7 +114,11 @@ class Polynomial {
 	}
 	/** @param {Polynomial} other */
 	mul(other){
-		throw Error('unimplemented');
+		const product_degree = this.degree + other.degree;
+		const product = Array(product_degree).fill(0);
+		// eslint-disable-next-line max-len
+		this.coefficients.forEach((c, i) => other.coefficients.forEach((o, j) => product[i+j] += c*o));
+		return new Polynomial(...product);
 	}
 	/** @param {number} scalar to multiply coefficients by */
 	scalar(r){
