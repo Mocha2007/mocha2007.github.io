@@ -128,6 +128,10 @@ class Polynomial {
 		}
 		return {q, r};
 	}
+	/** @param {Polynomial} other */
+	eq(other){
+		return this.coefficients.every((c, i) => c === other.coefficients[i]);
+	}
 	/**
 	 * returns the local min and max of the polynomial in the given
 	 * @param {number} x_min
@@ -202,12 +206,19 @@ class Polynomial {
 		else {
 			console.info('polynomial.js: degree test failed: expected 1, got', a.degree);
 		}
-		const product = a.mul(b).coefficients.join(' ');
-		if (product === '-1 0 1'){
+		const product = a.mul(b);
+		if (product.coefficients.join(' ') === '-1 0 1'){
 			console.info('polynomial.js: MUL test passed');
 		}
 		else {
-			console.info('polynomial.js: MUL test failed: expected -1 0 1, got', product);
+			console.info('polynomial.js: MUL test failed: expected -1 0 1, got', product.coefficients.join(' '));
+		}
+		const quotient = product.div(b);
+		if (quotient.q.eq(a)){
+			console.info('polynomial.js: DIV test passed');
+		}
+		else {
+			console.info('polynomial.js: DIV test failed: expected', a, ', got', quotient.q);
 		}
 	}
 }
