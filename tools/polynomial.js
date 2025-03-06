@@ -146,7 +146,7 @@ class Polynomial {
 	/** @param {Polynomial} other */
 	mul(other){
 		const product_degree = this.degree + other.degree;
-		const product = Array(product_degree).fill(0);
+		const product = Array(product_degree+1).fill(0);
 		// eslint-disable-next-line max-len
 		this.coefficients.forEach((c, i) => other.coefficients.forEach((o, j) => product[i+j] += c*o));
 		return new Polynomial(...product);
@@ -191,5 +191,23 @@ class Polynomial {
 		const coef = Array(n+1).fill(0);
 		coef[n] = c;
 		return new Polynomial(...coef);
+	}
+	static test(){
+		// test rootfinding, addition, subtraction, multiplication, division
+		const a = new Polynomial(1, 1);
+		const b = new Polynomial(-1, 1);
+		if (a.degree === 1){
+			console.info('polynomial.js: degree test passed');
+		}
+		else {
+			console.info('polynomial.js: degree test failed: expected 1, got', a.degree);
+		}
+		const product = a.mul(b).coefficients.join(' ');
+		if (product === '-1 0 1'){
+			console.info('polynomial.js: MUL test passed');
+		}
+		else {
+			console.info('polynomial.js: MUL test failed: expected -1 0 1, got', product);
+		}
 	}
 }
