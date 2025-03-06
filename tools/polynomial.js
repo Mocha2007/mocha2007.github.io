@@ -27,11 +27,11 @@ function rootfind(f, x0 = undefined, i_max = 100, threshold = 1e-10){
 		if (!isFinite(x0)){
 			x0 = -f.coefficients[0] / f.coefficients[1];
 		}
-		const f_ = f.dx.f;
-		f = x => f.f(x);
+		const f_ = x => f.dx.f(x);
+		const _f = x => f.f(x);
 		for (; i < i_max; i++){
-			const fx = f(x0);
-			if (Math.abs(f(x0)) < threshold){
+			const fx = _f(x0);
+			if (Math.abs(fx) < threshold){
 				break;
 			}
 			x0 -= fx / f_(x0);
