@@ -58,6 +58,9 @@ class Polynomial {
 		return new Polynomial(...this.coefficients.map((c, i) => c*i).slice(1));
 	}
 	get leading_coefficient(){
+		while (this.coefficients.length && this.coefficients[this.coefficients.length-1] === 0){
+			this.coefficients.pop();
+		}
 		return this.coefficients[this.coefficients.length-1];
 	}
 	/** returns monotonicity, whether it's strictly monotonic or not, and increasing/decreasing as +1/-1 */
