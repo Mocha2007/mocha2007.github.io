@@ -1,5 +1,46 @@
 /* exported Polynomial */
 
+/**
+ * this function assumes there is at least one real root.
+ * @param {Polynomial} f polynomial
+ * @param {number} x0 real number, seed value (can be left blank)
+ * @param {number} i_max positive integer, maximum number of iterations
+ * @param {number} threshold positive real number, threshold of "success", should be very small
+ */
+function rootfind(f, x0 = undefined, i_max = 100, threshold = 1e-10){
+	let i = 0;
+	// check for obvious roots: 0, 1, -1
+	// 0
+	if (f.coefficients[0] === 0){
+		x0 = 0;
+	}
+	// 1
+	else if (f.coefficients.reduce((a, b) => a+b, 0) === 0){
+		x0 = 1;
+	}
+	// -1
+	else if (f.coefficients.map((x, n) => x * Math.pow(-1, n)).reduce((a, b) => a+b, 0) === 0){
+		x0 = -1;
+	}
+	// okay i give up, use newton-raphson method
+	else {
+		if (!isFinite(x0)){
+			x0 = -f.coefficients[0] / f.coefficients[1];
+		}
+		const f_ = f.dx.f;
+		f = f.f;
+		for (; i < i_max; i++){
+			const fx = f(x0);
+			if (Math.abs(f(x0)) < threshold){
+				break;
+			}
+			x0 -= fx / f_(x0);
+		}
+	}
+	// give up
+	return {x0, i, failed: i === i_max};
+}
+
 class Polynomial {
 	/** @param {number[]} coefficients */
 	constructor(...coefficients){
@@ -32,7 +73,7 @@ class Polynomial {
 	}
 	/** returns all real roots of a polynomial (degrees <= 2 implemented) */
 	get roots(){
-		let C, Delta0, Delta1, a, b, c, d, discriminant, roots = new Set(), xi;
+		let a, b, c, discriminant, root0, roots = new Set();
 		switch (this.degree){
 			case 0:
 			case 1:
@@ -46,21 +87,12 @@ class Polynomial {
 					roots = new Set((-b - Math.sqrt(discriminant))/(2*a), (-b + Math.sqrt(discriminant))/(2*a));
 				}
 				break;
-			case 3:
-				[d, c, b, a] = this.coefficients;
-				discriminant = b*b*c*c - 4*a*c*c*c - 4*b*b*b*d - 27*a*a*d*d + 18*a*b*c*d;
-				Delta0 = b*b - 3*a*c;
-				Delta1 = 2*b*b*b - 9*a*b*c + 27*a*a*d;
-				C = Math.cbrt((Delta1 + Math.sqrt(Delta1*Delta1 - 4*Delta0*Delta0*Delta0))/2);
-				xi = (-1 + Math.sqrt(-3))/2;
-				// todo
-				// eslint-disable-next-line max-len
-				roots = new Set([0, 1, 2].map(k => -(b + Math.pow(xi, k)*C + Delta0/(Math.pow(xi, k) * C))/(3*a)));
-				break;
 			default:
-				throw Error('unimplemented');
+				root0 = rootfind(this);
+				roots.add(root0);
+				this.div(new Polynomial(-root0, 1)).roots.forEach(root => roots.add(root));
 		}
-		return {discriminant, roots, Delta0, Delta1, C};
+		return roots;
 	}
 	get span(){
 		const elem = document.createElement('span');
@@ -71,6 +103,28 @@ class Polynomial {
 		elem.classList.add('polynomial'); // in case we want special styling for this
 		return elem;
 	}
+	// math operations
+	/** @param {Polynomial} other */
+	add(other){
+		return new Polynomial(...this.coefficients.map((c, i) => c + other.coefficients[i]));
+	}
+	/** @param {Polynomial} other */
+	div(other){
+		throw Error('unimplemented');
+	}
+	/** @param {Polynomial} other */
+	mul(other){
+		throw Error('unimplemented');
+	}
+	/** @param {number} scalar to multiply coefficients by */
+	scalar(r){
+		return new Polynomial(...this.coefficients.map(c => c*r));
+	}
+	/** @param {Polynomial} other */
+	sub(other){
+		return new Polynomial(...this.coefficients.map((c, i) => c - other.coefficients[i]));
+	}
+	// rest
 	/**
 	 * nth derivative
 	 * @param {number} n
