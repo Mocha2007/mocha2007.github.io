@@ -76,7 +76,8 @@ class Polynomial {
 	}
 	/** returns all real roots of a polynomial (degrees <= 2 implemented) */
 	get roots(){
-		let a, b, c, discriminant, root0, roots = new Set();
+		const roots = new Set();
+		let a, b, c, discriminant, root0;
 		switch (this.degree){
 			case 0:
 				break;
@@ -88,8 +89,8 @@ class Polynomial {
 				[c, b, a] = this.coefficients;
 				discriminant = b*b - 4*a*c;
 				if (0 <= discriminant){
-					// eslint-disable-next-line max-len
-					roots = new Set([(-b - Math.sqrt(discriminant))/(2*a), (-b + Math.sqrt(discriminant))/(2*a)]);
+					roots.add((-b - Math.sqrt(discriminant))/(2*a));
+					roots.add((-b + Math.sqrt(discriminant))/(2*a));
 				}
 				break;
 			default:
