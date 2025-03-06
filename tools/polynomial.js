@@ -28,7 +28,7 @@ function rootfind(f, x0 = undefined, i_max = 100, threshold = 1e-10){
 			x0 = -f.coefficients[0] / f.coefficients[1];
 		}
 		const f_ = f.dx.f;
-		f = f.f;
+		f = x => f.f(x);
 		for (; i < i_max; i++){
 			const fx = f(x0);
 			if (Math.abs(f(x0)) < threshold){
@@ -117,7 +117,8 @@ class Polynomial {
 	// math operations
 	/** @param {Polynomial} other */
 	add(other){
-		return new Polynomial(...this.coefficients.map((c, i) => c + other.coefficients[i]));
+		// eslint-disable-next-line max-len
+		return other.degree <= this.degree ? new Polynomial(...this.coefficients.map((c, i) => c + (other.coefficients[i] || 0))) : other.add(this);
 	}
 	/** @param {Polynomial} d divisor */
 	div(d){
@@ -167,7 +168,7 @@ class Polynomial {
 	}
 	/** @param {Polynomial} other */
 	sub(other){
-		return new Polynomial(...this.coefficients.map((c, i) => c - other.coefficients[i]));
+		return this.add(other.scalar(-1));
 	}
 	// rest
 	clone(){
