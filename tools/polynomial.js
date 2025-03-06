@@ -93,7 +93,7 @@ class Polynomial {
 			default:
 				root0 = rootfind(this);
 				roots.add(root0);
-				this.div(new Polynomial(-root0, 1)).roots.forEach(root => roots.add(root));
+				this.div(new Polynomial(-root0, 1)).q.roots.forEach(root => roots.add(root));
 		}
 		return roots;
 	}
