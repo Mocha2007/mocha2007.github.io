@@ -59,6 +59,32 @@ function quadroot(a, b, c){
 	return {d, r0, r1};
 }
 
+/**
+ * @param {Polynomial} poly
+ * @param {string} name
+ * @param {string} color
+ * @param {string} warning_color
+ */
+function root_parenthetical(poly, symbol = 'f', color = 'inherit', warning_color = 'yellow'){
+	/** @param {number[]} */
+	const roots = Array.from(poly.dx.roots);
+	/** @param {string[]} */
+	const rootgoodness = roots.map(r => 0 < r && r < 1 ? warning_color : 'green');
+	const fr = roots.map(r => poly.f(r));
+	const fr_goodness = fr.map((x, i) => (x < 0 || 255 < x) && rootgoodness[i] === warning_color ? 'red' : 'green');
+	let s = `<br>
+	<span class="${color}">${symbol}</span>(x) = ${poly.span.outerHTML} <br>
+	<span class="${color}">${symbol}&prime;</span>(x) = ${poly.dx.span.outerHTML}`;
+	if (roots.length){
+		s += ` (${roots.map((root, i) => `r<sub>${symbol}&prime;${i}</sub> = <span class="${rootgoodness[i]}">${root}</span>`).join(', ')},
+		${fr.map((x, i) => `<span class='${color}'>${symbol}</span>(r<sub>${symbol}&prime;${i}</sub>) = <span class="${fr_goodness[i]}">${x}</span>`).join(', ')})`;
+	}
+	else {
+		s += ' (no roots)';
+	}
+	return s;
+}
+
 const GRADIENT_TEST = {};
 
 GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, dh_steps = 1000){
@@ -66,20 +92,10 @@ GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, d
 	label.innerHTML = gradient;
 	GRADIENT.gradientData[gradient].w = GRADIENT.gradientData[gradient].r.map((x, i) => brightness_coef.r*x + brightness_coef.g*GRADIENT.gradientData[gradient].g[i] + brightness_coef.b*GRADIENT.gradientData[gradient].b[i]);
 	['red', 'green', 'blue', 'white'].forEach(color => {
-		const [d, c, b, a] = GRADIENT.gradientData[gradient][color[0]];
-		const [c_, b_, a_] = [c, 2*b, 3*a];
-		const roots = quadroot(a_, b_, c_);
 		const warning_color = color === 'white' ? 'red' : 'yellow';
-		const rootgoodness = [0 < roots.r0 && roots.r0 < 1 ? warning_color : 'green', 0 < roots.r1 && roots.r1 < 1 ? warning_color : 'green'];
-		const f = x => a*x*x*x + b*x*x + c*x + d;
-		const [fr0, fr1] = [roots.r0, roots.r1].map(f);
-		const [fr0_goodness, fr1_goodness] =[(fr0 < 0 || 255 < fr0) && rootgoodness[0] === warning_color ? 'red' : 'green', (fr1 < 0 || 255 < fr1) && rootgoodness[1] === warning_color ? 'red' : 'green'];
 		const symbol = color[0].toUpperCase();
-		label.innerHTML += `<br>
-	<span class='${color}'>${symbol}</span>(x) = ${new Polynomial(...GRADIENT.gradientData[gradient][color[0]]).span.outerHTML}<br>
-	<span class='${color}'>${symbol}&prime;</span>(x) = ${new Polynomial(...GRADIENT.gradientData[gradient][color[0]]).dx.span.outerHTML}
-	(r<sub>${symbol}&prime;0</sub> = <span class="${rootgoodness[0]}">${roots.r0}</span>, r<sub>${symbol}&prime;1</sub> = <span class="${rootgoodness[1]}">${roots.r1}</span>,
-	<span class='${color}'>${symbol}</span>(r<sub>${symbol}&prime;0</sub>) = <span class="${fr0_goodness}">${fr0}</span>, <span class='${color}'>${symbol}</span>(r<sub>${symbol}&prime;1</sub>) = <span class="${fr1_goodness}">${fr1}</span>)`;
+		const poly = new Polynomial(...GRADIENT.gradientData[gradient][color[0]]);
+		label.innerHTML += root_parenthetical(poly, symbol, color, warning_color);
 	});
 	const dh = delta_hue(GRADIENT.gradientData[gradient]);
 	// ok now compute min H'
