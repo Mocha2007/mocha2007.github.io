@@ -117,8 +117,11 @@ GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, d
 	}
 	label.innerHTML += `<br>&Delta;<sub class="rainbow">hue</sub> = ${dh.delta} (${dh.start} &rarr; ${dh.end}, min |<span class="rainbow">H&prime;</span>| = ${Math.round(min_hp)} at x = ${min_hp_x})`;
 	// B E N D
-	const bend = Math.max(...[0, 1].map(x => Math.abs(new Polynomial(...GRADIENT.gradientData[gradient].w).dn(2).f(x))));
-	label.innerHTML += `<br>Highest Magnitude Concavity at Bounds: ${bend}`;
+	const bend_extrema = new Polynomial(...GRADIENT.gradientData[gradient].w).dn(2).local_extrema(0, 1);
+	const bend = Math.max(...[bend_extrema.min, bend_extrema.max].map(Math.abs));
+	const bend_x = bend === Math.abs(bend_extrema.max) ? bend_extrema.max_x : bend_extrema.min_x;
+	// TODO: get exact solution to entire interval!
+	label.innerHTML += `<br>Highest Magnitude Concavity in Interval: ${bend} (@ x = ${bend_x})`;
 	parent.appendChild(label);
 	const disk_parent = document.createElement('div');
 	parent.appendChild(disk_parent);

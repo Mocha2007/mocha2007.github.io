@@ -128,6 +128,21 @@ class Polynomial {
 		}
 		return {q, r};
 	}
+	/**
+	 * returns the local min and max of the polynomial in the given
+	 * @param {number} x_min
+	 * @param {number} x_max
+	 */
+	local_extrema(x_min, x_max){
+		// points of interest: min, max, and all roots of the derivative.
+		const poi = [x_min, x_max].concat(...Array.from(this.dx.roots));
+		const fpoi = poi.map(x => this.f(x));
+		const min = Math.min(...fpoi);
+		const min_x = poi[fpoi.indexOf(min)];
+		const max = Math.max(...fpoi);
+		const max_x = poi[fpoi.indexOf(max)];
+		return {min, max, min_x, max_x};
+	}
 	/** @param {Polynomial} other */
 	mul(other){
 		const product_degree = this.degree + other.degree;
