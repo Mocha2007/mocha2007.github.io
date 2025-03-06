@@ -79,10 +79,8 @@ class Polynomial {
 		let a, b, c, discriminant, root0, roots = new Set();
 		switch (this.degree){
 			case 0:
-				discriminant = 1;
 				break;
 			case 1:
-				discriminant = 1;
 				[b, a] = this.coefficients;
 				roots.add(-b/a);
 				break;
@@ -95,7 +93,8 @@ class Polynomial {
 				}
 				break;
 			default:
-				root0 = rootfind(this);
+				// debugger;
+				root0 = rootfind(this).x0;
 				roots.add(root0);
 				this.div(new Polynomial(-root0, 1)).q.roots.forEach(root => roots.add(root));
 		}
@@ -213,12 +212,12 @@ class Polynomial {
 		else {
 			console.info('polynomial.js: MUL test failed: expected -1 0 1, got', product.coefficients.join(' '));
 		}
-		const quotient = product.div(b);
-		if (quotient.q.eq(a)){
+		const quotient = product.mul(product).div(product);
+		if (quotient.q.eq(product)){
 			console.info('polynomial.js: DIV test passed');
 		}
 		else {
-			console.info('polynomial.js: DIV test failed: expected', a, ', got', quotient.q);
+			console.info('polynomial.js: DIV test failed: expected', product, ', got', quotient.q);
 		}
 		let p = Polynomial.monomial(1, 0);
 		for (let i = 1; i <= 5; i++){
