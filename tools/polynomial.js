@@ -220,5 +220,12 @@ class Polynomial {
 		else {
 			console.info('polynomial.js: DIV test failed: expected', a, ', got', quotient.q);
 		}
+		let p = Polynomial.monomial(1, 0);
+		for (let i = 1; i <= 5; i++){
+			p = p.mul(new Polynomial(-i, 1));
+			// the roots should be 1 ... i
+			console.info('polynomial.js: testing rootfinding for degree', i);
+			console.info(p.roots);
+		}
 	}
 }
