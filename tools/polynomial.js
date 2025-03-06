@@ -146,7 +146,8 @@ class Polynomial {
 	 */
 	local_extrema(x_min, x_max){
 		// points of interest: min, max, and all roots of the derivative.
-		const poi = [x_min, x_max].concat(...Array.from(this.dx.roots));
+		// eslint-disable-next-line max-len
+		const poi = [x_min, x_max].concat(...Array.from(this.dx.roots).filter(r => x_min <= r && r <= x_max));
 		const fpoi = poi.map(x => this.f(x));
 		const min = Math.min(...fpoi);
 		const min_x = poi[fpoi.indexOf(min)];
