@@ -114,7 +114,7 @@ class Polynomial {
 	/** @param {Polynomial} d divisor */
 	div(d){
 		// https://en.wikipedia.org/wiki/Polynomial_long_division#Pseudocode
-		let q = 0;
+		let q = Polynomial.monomial(0, 0);
 		let r = this.clone();
 		while (r.nonzero && r.degree >= d.degree){
 			// eslint-disable-next-line max-len
@@ -169,6 +169,8 @@ class Polynomial {
 	 * @param {number} n power
 	 */
 	static monomial(c, n){
-		throw Error('unimplemented');
+		const coef = Array(n+1).fill(0);
+		coef[n] = c;
+		return new Polynomial(...coef);
 	}
 }
