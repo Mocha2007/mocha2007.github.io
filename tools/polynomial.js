@@ -71,6 +71,9 @@ class Polynomial {
 		const direction = Math.sign(this.leading_coefficient);
 		return {strict, monotonic, direction};
 	}
+	get nonzero(){
+		return !(this.degree === 1 && this.coefficients[0] === 0 || this.degree === 0);
+	}
 	/** returns all real roots of a polynomial (degrees <= 2 implemented) */
 	get roots(){
 		let a, b, c, discriminant, root0, roots = new Set();
@@ -108,9 +111,18 @@ class Polynomial {
 	add(other){
 		return new Polynomial(...this.coefficients.map((c, i) => c + other.coefficients[i]));
 	}
-	/** @param {Polynomial} other */
-	div(other){
-		throw Error('unimplemented');
+	/** @param {Polynomial} d divisor */
+	div(d){
+		// https://en.wikipedia.org/wiki/Polynomial_long_division#Pseudocode
+		let q = 0;
+		let r = this.clone();
+		while (r.nonzero && r.degree >= d.degree){
+			// eslint-disable-next-line max-len
+			const t = Polynomial.monomial(r.leading_coefficient / d.leading_coefficient, r.degree - d.degree);
+			q = q.add(t);
+			r = r.sub(t.mul(d));
+		}
+		return {q, r};
 	}
 	/** @param {Polynomial} other */
 	mul(other){
@@ -129,6 +141,9 @@ class Polynomial {
 		return new Polynomial(...this.coefficients.map((c, i) => c - other.coefficients[i]));
 	}
 	// rest
+	clone(){
+		return new Polynomial(...this.coefficients);
+	}
 	/**
 	 * nth derivative
 	 * @param {number} n
@@ -139,12 +154,21 @@ class Polynomial {
 			throw new RangeError(`n < 0: ${n}`);
 		}
 		if (n === 0){
-			return new Polynomial(...this.coefficients);
+			return this.clone();
 		}
 		return this.dx.dn(n-1);
 	}
 	/** @param {number} x */
 	f(x){
 		return this.coefficients.map((c, i) => c*Math.pow(x, i)).reduce((a, b) => a+b, 0);
+	}
+	// static
+	/**
+	 * create a new monomial cx^n
+	 * @param {number} c coefficient
+	 * @param {number} n power
+	 */
+	static monomial(c, n){
+		throw Error('unimplemented');
 	}
 }
