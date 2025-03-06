@@ -156,14 +156,19 @@ GRADIENT_TEST.test = function test(){
 	document.documentElement.appendChild(elem);
 	for (const gradient in GRADIENT.gradientData){
 		console.debug('testing', gradient, '...');
-		this.print(elem, gradient);
-		// (1) i need to make sure valid rgb values are always given
-		// (2) i'd like to also make sure the brightness for each cubic is monotonic increasing
-		// which implies the derivative is always positive
-		// this can be checked easily by taking the derivative, finding roots,
-		// sectioning (0, 1) between roots, and testing each region for positivity
-		// (3) I'd like to also make sure the brightness is approximately linear (this isn't essential, but might be useful?)
-		this.verifyCubic(GRADIENT.gradientData[gradient], gradient);
+		try {
+			this.print(elem, gradient);
+			// (1) i need to make sure valid rgb values are always given
+			// (2) i'd like to also make sure the brightness for each cubic is monotonic increasing
+			// which implies the derivative is always positive
+			// this can be checked easily by taking the derivative, finding roots,
+			// sectioning (0, 1) between roots, and testing each region for positivity
+			// (3) I'd like to also make sure the brightness is approximately linear (this isn't essential, but might be useful?)
+			this.verifyCubic(GRADIENT.gradientData[gradient], gradient);
+		}
+		catch (e){
+			console.error(e);
+		}
 	}
 	console.debug('gradient.js testing complete');
 };
