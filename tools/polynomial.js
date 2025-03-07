@@ -112,7 +112,52 @@ class Polynomial {
 			.filter(s => s) // remove blanks
 			.reverse().join(' + ');
 		elem.classList.add('polynomial'); // in case we want special styling for this
+		// hovering over this element should display a small svg of the function on [0, 1] from [0, 255]
+		elem.onmouseover = e => {
+			const svg = this.svg;
+			document.documentElement.appendChild(svg);
+			svg.style.left = `${e.pageX + 20}px`;
+			svg.style.top = `${e.pageY + 20}px`;
+		};
+		elem.onmouseout = () => document.getElementById(this.svg_id).remove();
 		return elem;
+	}
+	get svg(){
+		const resolution = 100;
+		// cloned from common.js, look there for docs
+		/** @returns {SVGElement} */
+		function createSvgElement(name){
+			return document.createElementNS('http://www.w3.org/2000/svg', name);
+		}
+		const elem = createSvgElement('svg');
+		elem.style.backgroundColor = 'white';
+		elem.style.position = 'absolute';
+		elem.setAttribute('viewBox', '0 0 1 1');
+		elem.setAttribute('preserveAspectRatio', 'none');
+		elem.setAttribute('width', 200);
+		elem.setAttribute('height', 200);
+		elem.id = this.svg_id;
+		elem.classList.add('polyGraph');
+		let path_string = '';
+		function coord_to_svg(x, y){
+			return {x, y: 1-y/255};
+		}
+		for (let i = 0; i <= resolution; i++){
+			const x = i/resolution;
+			const y = this.f(x);
+			const coords = coord_to_svg(x, y);
+			path_string += `${i ? 'L' : 'M'} ${coords.x} ${coords.y}`;
+		}
+		const path = createSvgElement('path');
+		path.setAttribute('d', path_string);
+		path.setAttribute('stroke', 'black');
+		path.setAttribute('stroke-width', 0.01);
+		path.setAttribute('fill', 'none');
+		elem.appendChild(path);
+		return elem;
+	}
+	get svg_id(){
+		return `polySVG${this.coefficients.join('_')}`;
 	}
 	// math operations
 	/** @param {Polynomial} other */

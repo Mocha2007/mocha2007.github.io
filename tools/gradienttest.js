@@ -72,17 +72,19 @@ function root_parenthetical(poly, symbol = 'f', color = 'inherit', warning_color
 	const rootgoodness = roots.map(r => 0 < r && r < 1 ? warning_color : 'green');
 	const fr = roots.map(r => poly.f(r));
 	const fr_goodness = fr.map((x, i) => (x < 0 || 255 < x) && rootgoodness[i] === warning_color ? 'red' : 'green');
-	let s = `<br>
-	<span class="${color}">${symbol}</span>(x) = ${poly.span.outerHTML} <br>
-	<span class="${color}">${symbol}&prime;</span>(x) = ${poly.dx.span.outerHTML}`;
+	const elem = document.createElement('span');
+	elem.classList.add('rootParenthetical');
+	elem.innerHTML = `<br><span class="${color}">${symbol}</span>(x) = <span class='polyReplace'></span><br><span class="${color}">${symbol}&prime;</span>(x) = <span class='polyReplace'></span>`;
 	if (roots.length){
-		s += ` (${roots.map((root, i) => `r<sub>${symbol}&prime;${i}</sub> = <span class="${rootgoodness[i]}">${root}</span>`).join(', ')},
+		elem.innerHTML += ` (${roots.map((root, i) => `r<sub>${symbol}&prime;${i}</sub> = <span class="${rootgoodness[i]}">${root}</span>`).join(', ')},
 		${fr.map((x, i) => `<span class='${color}'>${symbol}</span>(r<sub>${symbol}&prime;${i}</sub>) = <span class="${fr_goodness[i]}">${x}</span>`).join(', ')})`;
 	}
 	else {
-		s += ' (no roots)';
+		elem.innerHTML += ' (no roots)';
 	}
-	return s;
+	elem.getElementsByClassName('polyReplace')[0].appendChild(poly.span);
+	elem.getElementsByClassName('polyReplace')[1].appendChild(poly.dx.span);
+	return elem;
 }
 
 const GRADIENT_TEST = {};
@@ -95,7 +97,7 @@ GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, d
 		const warning_color = color === 'white' ? 'red' : 'yellow';
 		const symbol = color[0].toUpperCase();
 		const poly = new Polynomial(...GRADIENT.gradientData[gradient][color[0]]);
-		label.innerHTML += root_parenthetical(poly, symbol, color, warning_color);
+		label.appendChild(root_parenthetical(poly, symbol, color, warning_color));
 	});
 	const dh = delta_hue(GRADIENT.gradientData[gradient]);
 	// ok now compute min H'
@@ -115,14 +117,19 @@ GRADIENT_TEST.print = function print(parent, gradient, steps = 240, discs = 9, d
 			min_hp_x = x0;
 		}
 	}
-	label.innerHTML += `<br>&Delta;<sub class="rainbow">hue</sub> = ${dh.delta} (${dh.start} &rarr; ${dh.end}, min |<span class="rainbow">H&prime;</span>| = ${Math.round(min_hp)} at x = ${min_hp_x})`;
+	const moreCrap0 = document.createElement('span');
+	moreCrap0.innerHTML = `<br>&Delta;<sub class="rainbow">hue</sub> = ${dh.delta} (${dh.start} &rarr; ${dh.end}, min |<span class="rainbow">H&prime;</span>| = ${Math.round(min_hp)} at x = ${min_hp_x})`;
+	label.appendChild(moreCrap0);
 	// B E N D
 	const concavity = new Polynomial(...GRADIENT.gradientData[gradient].w).dn(2);
 	const bend_extrema = concavity.local_extrema(0, 1);
 	const bend = Math.max(...[bend_extrema.min, bend_extrema.max].map(Math.abs));
 	const bend_x = bend === Math.abs(bend_extrema.max) ? bend_extrema.max_x : bend_extrema.min_x;
 	// TODO: get exact solution to entire interval!
-	label.innerHTML += `<br>Highest Magnitude Concavity (${concavity.span.outerHTML}) in Interval: ${bend} (@ x = ${bend_x})`;
+	const moreCrap1 = document.createElement('span');
+	moreCrap1.innerHTML = `<br>Highest Magnitude Concavity (<span class="concavityReplace"></span> in Interval: ${bend} (@ x = ${bend_x})`;
+	moreCrap1.getElementsByClassName('concavityReplace')[0].appendChild(concavity.span);
+	label.appendChild(moreCrap1);
 	parent.appendChild(label);
 	const disk_parent = document.createElement('div');
 	parent.appendChild(disk_parent);
