@@ -152,6 +152,8 @@ class Polynomial {
 		const elem = createSvgElement('svg');
 		elem.style.backgroundColor = 'white';
 		elem.style.position = 'absolute';
+		elem.style.border = '0.5vw solid #242';
+		elem.style.borderRadius = '1vw';
 		elem.setAttribute('viewBox', '0 0 1 1');
 		elem.setAttribute('preserveAspectRatio', 'none');
 		elem.setAttribute('width', 200);
