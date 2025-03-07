@@ -123,6 +123,26 @@ class Polynomial {
 		return elem;
 	}
 	get svg(){
+		// slope, concavity colors
+		const lineColor = {
+			// slope controls blueness, concavity controlls yellowness
+			// 444, 888, ccc
+			'-1': {
+				'-1': '#444',
+				0: '#884',
+				1: '#cc4',
+			},
+			0: {
+				'-1': '#448',
+				0: '#888',
+				1: '#cc8',
+			},
+			1: {
+				'-1': '#44c',
+				0: '#88c',
+				1: '#ccc',
+			},
+		};
 		const resolution = 100;
 		// cloned from common.js, look there for docs
 		/** @returns {SVGElement} */
@@ -138,22 +158,25 @@ class Polynomial {
 		elem.setAttribute('height', 200);
 		elem.id = this.svg_id;
 		elem.classList.add('polyGraph');
-		let path_string = '';
 		function coord_to_svg(x, y){
 			return {x, y: 1-y/255};
 		}
-		for (let i = 0; i <= resolution; i++){
-			const x = i/resolution;
-			const y = this.f(x);
-			const coords = coord_to_svg(x, y);
-			path_string += `${i ? 'L' : 'M'} ${coords.x} ${coords.y}`;
+		for (let i = 0; i < resolution; i++){
+			const x0 = i/resolution;
+			const x1 = (i+1)/resolution;
+			const coords0 = coord_to_svg(x0, this.f(x0));
+			const coords1 = coord_to_svg(x1, this.f(x1));
+			const slope = Math.sign(this.dx.f(x0));
+			const concavity = Math.sign(this.dx.dx.f(x0));
+			const line = createSvgElement('line');
+			line.setAttribute('x1', coords0.x);
+			line.setAttribute('y1', coords0.y);
+			line.setAttribute('x2', coords1.x);
+			line.setAttribute('y2', coords1.y);
+			line.setAttribute('stroke', lineColor[slope][concavity]);
+			line.setAttribute('stroke-width', 0.01);
+			elem.appendChild(line);
 		}
-		const path = createSvgElement('path');
-		path.setAttribute('d', path_string);
-		path.setAttribute('stroke', 'black');
-		path.setAttribute('stroke-width', 0.01);
-		path.setAttribute('fill', 'none');
-		elem.appendChild(path);
 		return elem;
 	}
 	get svg_id(){
