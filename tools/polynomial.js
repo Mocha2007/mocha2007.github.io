@@ -128,26 +128,9 @@ class Polynomial {
 		return elem;
 	}
 	get svg(){
-		// slope, concavity colors
-		const lineColor = {
-			// slope controls blueness, concavity controlls yellowness
-			// 444, 888, ccc
-			'-1': {
-				'-1': '#444',
-				0: '#884',
-				1: '#cc4',
-			},
-			0: {
-				'-1': '#448',
-				0: '#888',
-				1: '#cc8',
-			},
-			1: {
-				'-1': '#44c',
-				0: '#88c',
-				1: '#ccc',
-			},
-		};
+		function clampunit(x){
+			return 1 / Math.PI * Math.atan(x/100) + 0.5;
+		}
 		const resolution = 100;
 		// cloned from common.js, look there for docs
 		/** @returns {SVGElement} */
@@ -155,7 +138,7 @@ class Polynomial {
 			return document.createElementNS('http://www.w3.org/2000/svg', name);
 		}
 		const elem = createSvgElement('svg');
-		elem.style.backgroundColor = 'white';
+		elem.style.backgroundColor = '#222';
 		elem.style.position = 'absolute';
 		elem.style.border = '0.5vw solid #242';
 		elem.style.borderRadius = '1vw';
@@ -173,14 +156,19 @@ class Polynomial {
 			const x1 = (i+1)/resolution;
 			const coords0 = coord_to_svg(x0, this.f(x0));
 			const coords1 = coord_to_svg(x1, this.f(x1));
-			const slope = Math.sign(this.dx.f(x0));
-			const concavity = Math.sign(this.dx.dx.f(x0));
+			const slope = clampunit(this.dx.f(x0));
+			const concavity = clampunit(this.dx.dx.f(x0));
 			const line = createSvgElement('line');
 			line.setAttribute('x1', coords0.x);
 			line.setAttribute('y1', coords0.y);
 			line.setAttribute('x2', coords1.x);
 			line.setAttribute('y2', coords1.y);
-			line.setAttribute('stroke', lineColor[slope][concavity]);
+			const [r, g, b] = [
+				-584 * slope * slope + 720 * slope + 33,
+				-736 * slope * slope + 658 * slope + 102,
+				-558 * concavity * concavity + 429 * concavity + 172,
+			];
+			line.setAttribute('stroke', `rgb(${r}, ${g}, ${b})`);
 			line.setAttribute('stroke-width', 0.01);
 			elem.appendChild(line);
 		}
