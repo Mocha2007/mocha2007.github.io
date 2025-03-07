@@ -119,6 +119,11 @@ class Polynomial {
 			svg.style.left = `${e.pageX + 20}px`;
 			svg.style.top = `${e.pageY + 20}px`;
 		};
+		elem.onmousemove = e => {
+			const svg = document.getElementById(this.svg_id);
+			svg.style.left = `${e.pageX + 20}px`;
+			svg.style.top = `${e.pageY + 20}px`;
+		};
 		elem.onmouseout = () => document.getElementById(this.svg_id).remove();
 		return elem;
 	}
