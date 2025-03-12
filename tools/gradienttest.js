@@ -441,6 +441,30 @@ GRADIENT_TEST.random_peak2 = function random_peak2(){
 	return gradient;
 };
 
+/*
+	Color Diff:
+	RED<>PURPLE	36.2418
+	BLUE<>PURPLE	36.3822
+	YELLOW<>GREEN	54.213
+	RED<>BLUE	72.624
+	ORANGE<>YELLOW	90.8304
+	RED<>ORANGE	91.5456
+	ORANGE<>PURPLE	127.7874
+	ORANGE<>GREEN	145.0434
+	ORANGE<>BLUE	164.1696
+	RED<>YELLOW	182.376
+	GREEN<>BLUE	200.787
+	YELLOW<>PURPLE	218.6178
+	GREEN<>PURPLE	218.8304
+	RED<>GREEN	236.589
+	YELLOW<>BLUE	255
+ */
+GRADIENT_TEST.color_diff = function color_diff(r0, g0, b0, r1, g1, b1){
+	return Math.abs(r0-r1)*brightness_coef.r
+		+ Math.abs(g0-g1)*brightness_coef.g
+		+ Math.abs(b0-b1)*brightness_coef.b;
+};
+
 // extra gradients
 
 const EXTRA_GRADIENTS = {
