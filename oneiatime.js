@@ -753,6 +753,7 @@ mochaLunisolar.localization = {
 		cycle: 'Cycle',
 		dayNames: 'Sol’s Day;Luna’s Day;Mars’s Day;Mercury’s Day;Jupiter’s Day;Venus’s Day;Saturn’s Day'.split(';'),
 		monthNames: 'Aries Taurus Gemini Cancer Leo Virgo Libra Ophiuchus Sagittarius Capricornus Aquarius Pisces Aurora'.split(' '),
+		monthRel: ['The last month.', 'This month.', 'The next month.'],
 		MSNames: 'Early Mid Late Intercalary'.split(' '),
 		of0: ' of ', // ie. "two out of five"
 		of1: ' of ', // ie. "twelfth day of march"
@@ -766,6 +767,7 @@ mochaLunisolar.localization = {
 		cycle: 'Cykl',
 		dayNames: 'Dzień Sola;Dzień Luny;Dzień Marsa;Dzień Merkurego;Dzień Jowisza;Dzień Wenus;Dzień Saturna'.split(';'),
 		monthNames: 'Baran Byk Bliźnięta Rak Lew Panna Waga Węgownik Strzelec Koziorożec Wodnik Ryby Aurora'.split(' '),
+		monthRel: ['Ostatni miesiąc.', 'Ten miesiąc.', 'Następny miesiąc.'],
 		MSNames: 'Wczesna Środkowa Późna Miesiąc'.split(' '),
 		of0: ' na ',
 		of1: ' ',

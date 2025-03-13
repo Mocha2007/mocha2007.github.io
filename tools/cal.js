@@ -518,14 +518,17 @@ function main(t = new Date()){
 	}
 	else if (time.CONFIG.CALTYPE === 'MLSC'){
 		const MLSC = mochaLunisolar(t, undefined, time.CONFIG.LANG);
-		year = document.getElementById('erecal1_title').innerHTML = `MLSC Year ${MLSC.year}`;
+		year = document.getElementById('erecal1_title').innerHTML = `MLSC ${mochaLunisolar.getLocalization(time.CONFIG.LANG).year} ${MLSC.year}`;
+		mochaLunisolar.getLocalization(time.CONFIG.LANG).monthRel.forEach((s, i) => {
+			document.getElementById('monthTitles').children[i].innerHTML = s;
+		});
 		/** @type {HTMLTableRowElement} */
 		const monthTable = document.getElementById('earthclock2');
 		monthTable.innerHTML = '';
 		'previousMonth t nextMonth'.split(' ').forEach(key => {
 			const datum = mochaLunisolar(MLSC[key], undefined, time.CONFIG.LANG);
 			const td = document.createElement('td');
-			td.innerHTML = `${datum.monthName}, Year ${datum.year}:`;
+			td.innerHTML = `${datum.monthName}, ${mochaLunisolar.getLocalization(time.CONFIG.LANG).year} ${datum.year}:`;
 			'kalends nones ides icas'.split(' ').forEach(key2 => {
 				const rowTitle = title(key2).padStart(7, '_').replace(/_/g, '&nbsp;');
 				td.innerHTML += `<br>${rowTitle}: ${datum[key2].toLocaleDateString(time.CONFIG.LANG2, {year: 'numeric', month: 'short', day: '2-digit'})}`;
