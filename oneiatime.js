@@ -85,23 +85,30 @@ function stopSound(elementId){
 	thissound.currentTime = 0;
 }
 
-function ordinal(n){
+function ordinal(n, lang){
+	var loc = ordinal.loc(lang);
 	var n_ = n;
 	n %= 100;
 	if (10 < n && n < 20)
-		return n_ + 'th';
+		return n_ + loc[0];
 	n %= 10;
 	switch (n){
+		case 0:
 		case 1:
-			return n_ + 'st';
 		case 2:
-			return n_ + 'nd';
 		case 3:
-			return n_ + 'rd';
+			return n_ + loc[n];
 		default:
-			return n_ + 'th';
+			return n_ + loc[0];
 	}
 }
+ordinal.localization = {
+	EN: 'th st nd rd'.split(' '),
+	PL: '. . . .'.split(' '),
+};
+ordinal.loc = function loc(l){
+	return ordinal.localization[l] || ordinal.localization.EN;
+};
 
 function avoidWrap(innerHTML){
 	var elem = document.createElement('span');
@@ -452,7 +459,7 @@ function solarDayHelper(t, includeSeconds){
 }
 
 function solarDay(now, latitude, longitude, localization){
-	const loc = solarDay.loc(localization);
+	var loc = solarDay.loc(localization);
 	now = now || new Date();
 	latitude = latitude || 52;
 	longitude = longitude || 16;
@@ -492,7 +499,7 @@ solarDay.localizations = {
 };
 solarDay.loc = function loc(localization){
 	return solarDay.localizations[localization || navigator.language] || solarDay.localizations['en-US'];
-}
+};
 
 /** this still seems buggy...
  * @param {Date} t
@@ -699,7 +706,7 @@ function mochaLunisolar(t, link, lang){
 	var d = 1 + daysSinceEpoch; // 1-indexed
 	var monthName = mo === 12 ? localization.monthNames[12]
 		: localization.monthNames[(mo + epicycleEra) % 12];
-	var string = header + ordinal(d) + ' ' + avoidWrap('(' + dayName + ')')
+	var string = header + ordinal(d, lang) + ' ' + avoidWrap('(' + dayName + ')')
 		+ localization.of1 + monthName + ' (' + MS + ' ' + season + '), ' + y + ' ' + eraString;
 	var monthDay = monthStartT.getDay(), monthWeek = 0;
 	for (var date = 0; date < daysSinceEpoch; date++){
