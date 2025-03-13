@@ -667,11 +667,11 @@ function mochaLunisolar(t, link){
 	var mansionID = (Math.round(t/LUNAR_SIDEREAL_PERIOD % 1 * mochaLunisolar.mansions.length)
 		+ mochaLunisolar.mansionOffset) % mochaLunisolar.mansions.length;
 	// continue
-	var season = 'Spring Summer Fall Winter Month'.split(' ')[Math.floor(mo/4)];
-	var MS = 'Early Mid Late Intercalary'.split(' ')[mo === 12 ? 4 : mo % 3];
+	var season = 'Spring Summer Fall Winter Month'.split(' ')[Math.floor(mo/3)];
+	var MS = 'Early Mid Late Intercalary'.split(' ')[mo === 12 ? 3 : mo % 3];
 	var meton = Math.floor(y/19);
 	var d = 1 + daysSinceEpoch; // 1-indexed
-	var monthName = 12 < mo ? 'Aurora' : mochaLunisolar.monthNames[(mo + epicycleEra) % 12];
+	var monthName = mo === 12 ? 'Aurora' : mochaLunisolar.monthNames[(mo + epicycleEra) % 12];
 	var string = header + ordinal(d) + ' ' + avoidWrap('(' + dayName + ')')
 		+ ' of ' + monthName + ' (' + MS + ' ' + season + '), ' + y + ' ' + eraString;
 	var monthDay = monthStartT.getDay(), monthWeek = 0;
