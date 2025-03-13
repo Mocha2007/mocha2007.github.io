@@ -757,7 +757,7 @@ mochaLunisolar.localization = {
 	PL: {
 		dayNames: 'Dzień Sola;Dzień Luny;Dzień Marsa;Dzień Merkurego;Dzień Jowisza;Dzień Wenus;Dzień Saturna'.split(';'),
 		monthNames: 'Baran Byk Bliźnięta Rak Lew Panna Waga Węgownik Strzelec Koziorożec Wodnik Ryby Aurora'.split(' '),
-		MSNames: 'Wczesna Środek Późna Miesiąc'.split(' '),
+		MSNames: 'Wczesna Środkowa Późna Miesiąc'.split(' '),
 		quarterNames: 'Kalendy Nony Idy Ikas'.split(' '),
 		seasonNames: 'Wiosna Lato Jesień Zima Przestępny'.split(' '),
 	},
