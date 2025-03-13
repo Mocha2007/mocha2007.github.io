@@ -670,8 +670,8 @@ function mochaLunisolar(t, link, lang){
 	var mansionID = (Math.round(t/LUNAR_SIDEREAL_PERIOD % 1 * mochaLunisolar.mansions.length)
 		+ mochaLunisolar.mansionOffset) % mochaLunisolar.mansions.length;
 	// continue
-	var season = 'Spring Summer Fall Winter Month'.split(' ')[Math.floor(mo/3)];
-	var MS = 'Early Mid Late Intercalary'.split(' ')[mo === 12 ? 3 : mo % 3];
+	var season = localization.seasonNames[Math.floor(mo/3)];
+	var MS = localization.MSNames[mo === 12 ? 3 : mo % 3];
 	var meton = Math.floor(y/19);
 	var d = 1 + daysSinceEpoch; // 1-indexed
 	var monthName = mo === 12 ? localization.monthNames[12]
@@ -750,12 +750,16 @@ mochaLunisolar.localization = {
 	EN: {
 		dayNames: 'Sol’s Day;Luna’s Day;Mars’s Day;Mercury’s Day;Jupiter’s Day;Venus’s Day;Saturn’s Day'.split(';'),
 		monthNames: 'Aries Taurus Gemini Cancer Leo Virgo Libra Ophiuchus Sagittarius Capricornus Aquarius Pisces Aurora'.split(' '),
+		MSNames: 'Early Mid Late Intercalary'.split(' '),
 		quarterNames: 'Kalends Nones Ides Icas'.split(' '),
+		seasonNames: 'Spring Summer Fall Winter Month'.split(' '),
 	},
 	PL: {
 		dayNames: 'Dzień Sola;Dzień Luny;Dzień Marsa;Dzień Merkurego;Dzień Jowisza;Dzień Wenus;Dzień Saturna'.split(';'),
 		monthNames: 'Baran Byk Bliźnięta Rak Lew Panna Waga Węgownik Strzelec Koziorożec Wodnik Ryby Aurora'.split(' '),
+		MSNames: 'Wczesna Środek Późna Miesiąc'.split(' '),
 		quarterNames: 'Kalendy Nony Idy Ikas'.split(' '),
+		seasonNames: 'Wiosna Lato Jesień Zima Przestępny'.split(' '),
 	},
 };
 mochaLunisolar.getLocalization = function getLocalization(id){
