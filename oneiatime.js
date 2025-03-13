@@ -752,8 +752,10 @@ mochaLunisolar.localization = {
 		age: 'Age',
 		cycle: 'Cycle',
 		dayNames: 'Sol’s Day;Luna’s Day;Mars’s Day;Mercury’s Day;Jupiter’s Day;Venus’s Day;Saturn’s Day'.split(';'),
+		mansion: 'Lunar Mansion',
 		monthNames: 'Aries Taurus Gemini Cancer Leo Virgo Libra Ophiuchus Sagittarius Capricornus Aquarius Pisces Aurora'.split(' '),
 		monthRel: ['The last month.', 'This month.', 'The next month.'],
+		more: 'Additional Information',
 		MSNames: 'Early Mid Late Intercalary'.split(' '),
 		of0: ' of ', // ie. "two out of five"
 		of1: ' of ', // ie. "twelfth day of march"
@@ -766,8 +768,10 @@ mochaLunisolar.localization = {
 		age: 'Era',
 		cycle: 'Cykl',
 		dayNames: 'Dzień Sola;Dzień Luny;Dzień Marsa;Dzień Merkurego;Dzień Jowisza;Dzień Wenus;Dzień Saturna'.split(';'),
+		mansion: 'Dom Księżycowy',
 		monthNames: 'Baran Byk Bliźnięta Rak Lew Panna Waga Węgownik Strzelec Koziorożec Wodnik Ryby Aurora'.split(' '),
 		monthRel: ['Ostatni miesiąc.', 'Ten miesiąc.', 'Następny miesiąc.'],
+		more: 'Dodatkowe Informacje',
 		MSNames: 'Wczesna Środkowa Późna Miesiąc'.split(' '),
 		of0: ' na ',
 		of1: ' ',

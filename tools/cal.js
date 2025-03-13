@@ -567,6 +567,7 @@ function query(){
 /** display the month with the MLSC days of the week */
 function monthAlt(t = new Date()){
 	const MLSC = mochaLunisolar(t, undefined, time.CONFIG.LANG);
+	const MLSCloc = mochaLunisolar.getLocalization(time.CONFIG.LANG);
 	const table = document.getElementById('monthAlt');
 	table.innerHTML = '';
 	// title
@@ -577,7 +578,7 @@ function monthAlt(t = new Date()){
 	const corner = document.createElement('th');
 	corner.colSpan = 2;
 	trh.appendChild(corner); // blank cell in corner
-	mochaLunisolar.getLocalization(time.CONFIG.LANG).dayNames.forEach(day => {
+	MLSCloc.dayNames.forEach(day => {
 		const th = document.createElement('th');
 		th.innerHTML = day;
 		trh.appendChild(th);
@@ -589,7 +590,7 @@ function monthAlt(t = new Date()){
 		table.appendChild(tr);
 		// header
 		const th = document.createElement('th');
-		th.innerHTML = mochaLunisolar.getLocalization(time.CONFIG.LANG).quarterNames[week];
+		th.innerHTML = MLSCloc.quarterNames[week];
 		tr.appendChild(th);
 		// dates
 		const weekLength = MLSC.weekLengths[week];
@@ -610,8 +611,9 @@ function monthAlt(t = new Date()){
 function mlscBonus(t = new Date()){
 	const bonus = document.getElementById('bonus');
 	const MLSC = mochaLunisolar(t, undefined, time.CONFIG.LANG);
-	bonus.innerHTML = `<h2>Additional Information</h2>
-	Lunar Mansion: <a href="https://en.wikipedia.org/wiki/${MLSC.mansion}">${MLSC.mansion}</a>`;
+	const MLSCloc = mochaLunisolar.getLocalization(time.CONFIG.LANG);
+	bonus.innerHTML = `<h2>${MLSCloc.more}</h2>
+	${MLSCloc.mansion}: <a href="https://en.wikipedia.org/wiki/${MLSC.mansion}">${MLSC.mansion}</a>`;
 }
 
 function refresh(t = new Date()){
