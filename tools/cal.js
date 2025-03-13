@@ -150,7 +150,7 @@ const time = {
 			LON: -79,
 		},
 		LAME_CLOCK: true,
-		LANG: 'EN',
+		LANG: new Intl.Locale(navigator.language).language.toUpperCase() || 'EN',
 		OFFSET: false,
 		SEASON: false,
 		SEASONS: {

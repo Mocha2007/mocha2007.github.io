@@ -36,6 +36,15 @@ const OTHER_GOLDCLOC_LOCS = {
 		//       wr̥h₁ḗn táwros yémHoes karkros ?leóntos pr̥spténos ?ledʰreh₂ ?skorpéos ?lenk- kápros h₂ékʷeh₂ dʰǵʰúHes
 		zodiac: 'wr̥h₁ táw yém kar leó pr̥s ledʰ sko len káp h₂ékʷ dʰǵʰú'.split(' '),
 	},
+	PL: {
+		ap: 'ap'.split('').map(s => '_'+s),
+		day: 'Niedziela Poniedziałek Wtorek Środa Czwartek Piątek Sobota'.split(' '),
+		month: 'Styczeń Luty Marzec Kwiecień Maj Czerwiec Lipiec Sierpień Wrzesień Październik Listopad Grudzień'.split(' '),
+		// https://spotbox.pl/wp-content/uploads/2023/03/Fazy-Ksiezyca-1024x597.jpg
+		moon: 'Nów;Sierp P.;PK;Garb R.;Pełnia;Garb Z.;OK;Sierp Z.'.split(';'),
+		season: 'Wiosna Lato Jesień Zima'.split(' '),
+		zodiac: 'Baran Byk Bliźnięta Rak Lew Panna Waga Skorpion Strzelec Koziorożec Wodnik Ryby'.split(' '),
+	},
 };
 
 function ADD_OTHER_LOCS(){
