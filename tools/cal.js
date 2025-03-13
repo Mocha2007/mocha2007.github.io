@@ -270,9 +270,13 @@ const time = {
 		epoch: new Date(Date.UTC(2024, 3, 8, 18, 18, 29)), // https://en.wikipedia.org/wiki/Solar_eclipse_of_April_8,_2024
 		p: 29.530588904835206 * _1d,
 	},
-	months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+	get months(){
+		return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(n => new Date(1970, n, 1).toLocaleDateString(this.CONFIG.LANG2, {month: 'long'}));
+	},
 	vernal: new Date(2023, 2, 20, 21, 25),
-	weekdays: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+	get weekdays(){
+		return [4, 5, 6, 0, 1, 2, 3].map(n => new Date(1970, 0, n).toLocaleDateString(this.CONFIG.LANG2, {weekday: 'long'}));
+	},
 	yTropical: 365.24219 * _1d,
 	zodiac: '♈︎︎♉︎︎♊︎︎♋︎︎♌︎︎♍︎︎♎︎︎♏︎︎♐︎︎♑︎︎♒︎︎♓︎︎'.split('').filter((_, i) => i % 3 === 0),
 	zodiacAlt: ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
