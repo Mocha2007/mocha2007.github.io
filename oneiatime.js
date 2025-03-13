@@ -453,8 +453,8 @@ function solarDayHelper(t, includeSeconds){
 
 function solarDay(now, latitude, longitude){
 	now = now || new Date();
-	latitude = latitude || 36;
-	longitude = longitude || -79;
+	latitude = latitude || 52;
+	longitude = longitude || 16;
 	// main
 	var _1d = 24*60*60*1000;
 	var TODAY = solarPosition(now, latitude, longitude);
@@ -463,9 +463,9 @@ function solarDay(now, latitude, longitude){
 	var t = now < TODAY.sunrise ? (now - YESTERDAY.sunset)/(TODAY.sunrise - YESTERDAY.sunset)/2+0.5
 		: now < TODAY.sunset ? (now - TODAY.sunrise)/(TODAY.sunset - TODAY.sunrise)/2
 			: (now - TODAY.sunset)/(TOMORROW.sunrise - TODAY.sunset)/2 + 0.5;
-	var dawndusk_str = '↑ ' + TODAY.sunrise.toLocaleTimeString('en-US', {timeStyle: 'short'})
+	var dawndusk_str = '<abbr title="dawn">↑</abbr> ' + TODAY.sunrise.toLocaleTimeString('en-US', {timeStyle: 'short'})
 		+ '; <abbr title="noon">n</abbr> ' + TODAY.snoon.toLocaleTimeString('en-US', {timeStyle: 'short'})
-		+ '; ↓ ' + TODAY.sunset.toLocaleTimeString('en-US', {timeStyle: 'short'});
+		+ '; <abbr title="dusk">↓</abbr> ' + TODAY.sunset.toLocaleTimeString('en-US', {timeStyle: 'short'});
 	var daytime_str = '(' + (TODAY.dayLength/60).toFixed(2) + ' h day; ' + dawndusk_str + ')';
 	return solarDayHelper(24*t, true)
 		+ ' <abbr title="h:m:s since local midnight">solar time</abbr> '
