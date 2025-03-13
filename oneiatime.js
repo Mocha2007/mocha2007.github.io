@@ -753,7 +753,7 @@ mochaLunisolar.localization = {
 		quarterNames: 'Kalends Nones Ides Icas'.split(' '),
 	},
 	PL: {
-		dayNames: 'Dzień Solu;Dzień Luny;Dzień Marsa;Dzień Merkurego;Dzień Jowisza;Dzień Wenus;Dzień Saturna'.split(';'),
+		dayNames: 'Dzień Sola;Dzień Luny;Dzień Marsa;Dzień Merkurego;Dzień Jowisza;Dzień Wenus;Dzień Saturna'.split(';'),
 		monthNames: 'Baran Byk Bliźnięta Rak Lew Panna Waga Węgownik Strzelec Koziorożec Wodnik Ryby Aurora'.split(' '),
 		quarterNames: 'Kalendy Nony Idy Ikas'.split(' '),
 	},
