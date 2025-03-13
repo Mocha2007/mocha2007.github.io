@@ -618,7 +618,7 @@ function mlscBonus(t = new Date()){
 
 function refresh(t = new Date()){
 	document.getElementById('earthclock').innerHTML = time.CONFIG.CALTYPE === 'MLSC'
-		? mochaLunisolar(t, undefined, time.CONFIG.LANG).string + '<br>' + solarDay(t, time.CONFIG.GEO.LAT, time.CONFIG.GEO.LON)
+		? mochaLunisolar(t, undefined, time.CONFIG.LANG).string + '<br>' + solarDay(t, time.CONFIG.GEO.LAT, time.CONFIG.GEO.LON, time.CONFIG.LANG2)
 		: t;
 }
 

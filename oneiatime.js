@@ -451,7 +451,8 @@ function solarDayHelper(t, includeSeconds){
 	return digits.map(x => (x + '').padStart(2, 0)).join(':') + ' ' + ampm;
 }
 
-function solarDay(now, latitude, longitude){
+function solarDay(now, latitude, longitude, localization){
+	const loc = solarDay.loc(localization);
 	now = now || new Date();
 	latitude = latitude || 52;
 	longitude = longitude || 16;
@@ -463,13 +464,34 @@ function solarDay(now, latitude, longitude){
 	var t = now < TODAY.sunrise ? (now - YESTERDAY.sunset)/(TODAY.sunrise - YESTERDAY.sunset)/2+0.5
 		: now < TODAY.sunset ? (now - TODAY.sunrise)/(TODAY.sunset - TODAY.sunrise)/2
 			: (now - TODAY.sunset)/(TOMORROW.sunrise - TODAY.sunset)/2 + 0.5;
-	var dawndusk_str = '<abbr title="dawn">↑</abbr> ' + TODAY.sunrise.toLocaleTimeString('en-US', {timeStyle: 'short'})
-		+ '; <abbr title="noon">n</abbr> ' + TODAY.snoon.toLocaleTimeString('en-US', {timeStyle: 'short'})
-		+ '; <abbr title="dusk">↓</abbr> ' + TODAY.sunset.toLocaleTimeString('en-US', {timeStyle: 'short'});
-	var daytime_str = '(' + (TODAY.dayLength/60).toFixed(2) + ' h day; ' + dawndusk_str + ')';
+	var dawndusk_str = '<abbr title="' + loc.dawn + '">↑</abbr> ' + TODAY.sunrise.toLocaleTimeString(localization, {timeStyle: 'short'})
+		+ '; <abbr title="' + loc.noon + '">' + loc.noon[0] + '</abbr> ' + TODAY.snoon.toLocaleTimeString(localization, {timeStyle: 'short'})
+		+ '; <abbr title="' + loc.dusk + '">↓</abbr> ' + TODAY.sunset.toLocaleTimeString(localization, {timeStyle: 'short'});
+	var daytime_str = '(' + (TODAY.dayLength/60).toFixed(2) + ' ' + loc.hday + '; ' + dawndusk_str + ')';
 	return solarDayHelper(24*t, true)
-		+ ' <abbr title="h:m:s since local midnight">solar time</abbr> '
+		+ ' <abbr title="' + loc.since + '">' + loc.solarTime + '</abbr> '
 		+ avoidWrap(daytime_str);
+}
+solarDay.localizations = {
+	'en-US': {
+		dawn: 'dawn',
+		dusk: 'dusk',
+		hday: 'h day',
+		noon: 'noon',
+		since: 'h:m:s since local midnight',
+		solarTime: 'solar time',
+	},
+	'pl-PL': {
+		dawn: 'świt',
+		dusk: 'zmierzch',
+		hday: 'g dzień',
+		noon: 'południe',
+		since: 'g:m:s od północy lokalnej',
+		solarTime: 'czas słoneczny',
+	},
+};
+solarDay.loc = function loc(localization){
+	return solarDay.localizations[localization || navigator.language] || solarDay.localizations['en-US'];
 }
 
 /** this still seems buggy...
