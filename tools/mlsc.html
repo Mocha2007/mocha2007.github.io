@@ -220,7 +220,7 @@
 			<td>1st</td>
 			<td>8th</td>
 			<td>16th</td>
-			<td>23rd</td>
+			<td>23rd&dagger;</td>
 		</tr>
 		<tr>
 			<td>1</td>
@@ -228,7 +228,7 @@
 			<td>2nd</td>
 			<td>9th</td>
 			<td>17th</td>
-			<td>24th</td>
+			<td>24th&dagger;</td>
 		</tr>
 		<tr>
 			<td>2</td>
@@ -236,7 +236,7 @@
 			<td>3rd</td>
 			<td>10th</td>
 			<td>18th</td>
-			<td>25th</td>
+			<td>25th&dagger;</td>
 		</tr>
 		<tr>
 			<td>3</td>
@@ -244,7 +244,7 @@
 			<td>4th</td>
 			<td>12th</td>
 			<td>19th</td>
-			<td>26th</td>
+			<td>26th&dagger;</td>
 		</tr>
 		<tr>
 			<td>4</td>
@@ -252,7 +252,7 @@
 			<td>5th</td>
 			<td>13th</td>
 			<td>20th</td>
-			<td>27th</td>
+			<td>27th&dagger;</td>
 		</tr>
 		<tr>
 			<td>5</td>
@@ -260,7 +260,7 @@
 			<td>6th</td>
 			<td>13th</td>
 			<td>21st</td>
-			<td>28th</td>
+			<td>28th&dagger;</td>
 		</tr>
 		<tr>
 			<td>6</td>
@@ -268,31 +268,25 @@
 			<td>7th</td>
 			<td>14th</td>
 			<td>22nd</td>
-			<td>29th</td>
+			<td>29th&dagger;</td>
 		</tr>
 		<tr>
 			<td>7</td>
 			<td>Saturn&rsquo;s Day</td>
 			<td>-</td>
 			<td>15th</td>
-			<td>-</td>
-			<td>30th</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>Uranus&rsquo;s Day</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>31st</td>
+			<td>-&dagger;</td>
+			<td>30th&dagger;</td>
 		</tr>
 	</table>
 	<p>
+		&dagger; - If the month has 31 days (ie., it is a long leap month), the 23rd instead belongs to the week of the Ides,
+		and the rest of the days are pushed down one (so the month's week schedule is 7-8-8-8).
+		<!-- eg. main(new Date(2028, 2, 1)); -->
+	</p>
+	<p>
 		These could be treated as weekdays, if one wished.
-		The length of a "week" would then be from 7-9 days: 7-8-7 followed by a week 7-9 days long.
-		Note that <em>Uranus&rsquo;s day</em> can only occur at the end of a long leap month,
-		so it happens only once about every four years.
-		<em>Saturn&rsquo;s day</em> only occurs on the 15th and 30th.
+		The length of a "week" would then be 7 or 8 days: typically of the pattern 7-8-7-7 or 7-8-7-8, but rarely 7-8-8-8.
 	</p>
 	<p>
 		Convenient side effects of this calendar include:

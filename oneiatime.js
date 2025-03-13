@@ -651,12 +651,14 @@ function mochaLunisolar(t, link){
 	var eraString = avoidWrap('(Age of ' + eraName + ', Cycle ' + (eraR+1) + ' of ' + eraLength + ', Year ' + (mod(y, 334)+1) + ')');
 	// weekday
 	monthStartT = new Date(monthStartT);
+	var q3start = monthLength === 31 ? 23 : 22;
 	var quarters = [
 		monthStartT,
 		new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+7),
 		new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+15),
-		new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+22)
+		new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+q3start)
 	];
+	var weekLengths = [7, 8, q3start - 15, 29 < monthLength ? 8 : 7];
 	var currentQuarter = (mod(quarters.findIndex(q => t < q), 5)+3)%4;
 	var daysAfterQuarter = Math.floor((t - quarters[currentQuarter])/_1d);
 	var quarterName = 'the ' + mochaLunisolar.quarterNames[currentQuarter];
@@ -718,6 +720,7 @@ function mochaLunisolar(t, link){
 		t: t,
 		weekdayM: daysAfterQuarter,
 		weekdayMName: dayName,
+		weekLengths: weekLengths,
 		year: y,
 		yearLengthDays: yearLength,
 		yearLengthMonths: 12 + (normalYearLength < yearLength),
@@ -731,7 +734,7 @@ function mochaLunisolar(t, link){
 // mochaLunisolar.eraStarts = [4, 12, 17, 23, 31, 36, 41, 50, 58, 62, 69, 77];
 mochaLunisolar.eraStarts = [6, 13, 19, 25, 32, 38, 44, 51, 58, 64, 70, 77]; // based on even divisions centered roughly on the middle of pisces...
 //							  March April May June July August September October November December January February Intercalary
-mochaLunisolar.dayNames = 'Sol Luna Mars Mercury Jupiter Venus Saturn Uranus'.split(' ');
+mochaLunisolar.dayNames = 'Sol Luna Mars Mercury Jupiter Venus Saturn'.split(' ');
 mochaLunisolar.quarterNames = 'Kalends Nones Ides Icas'.split(' ');
 mochaLunisolar.monthNames = 'Aries Taurus Gemini Cancer Leo Virgo Libra Ophiuchus Sagittarius Capricornus Aquarius Pisces Aurora'.split(' ');
 mochaLunisolar.cyclesPerEpi = mochaLunisolar.eraStarts[11];

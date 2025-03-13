@@ -568,8 +568,6 @@ function monthAlt(t = new Date()){
 	corner.colSpan = 2;
 	trh.appendChild(corner); // blank cell in corner
 	mochaLunisolar.dayNames.forEach((day, i) => {
-		if (i === 7 && MLSC.monthLength < 31)
-			return;
 		const th = document.createElement('th');
 		th.innerHTML = day + '’s Day';
 		trh.appendChild(th);
@@ -584,7 +582,7 @@ function monthAlt(t = new Date()){
 		th.innerHTML = mochaLunisolar.quarterNames[week];
 		tr.appendChild(th);
 		// dates
-		const weekLength = week % 2 ? week === 3 ? MLSC.monthLength-22 : 8 : 7;
+		const weekLength = MLSC.weekLengths[week];
 		for (let day = 0; day < weekLength; day++){
 			const dateObj = new Date(+MLSC.monthStartT + date*_1d);
 			const td = document.createElement('td');
