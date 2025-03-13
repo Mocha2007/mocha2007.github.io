@@ -150,7 +150,9 @@ const time = {
 			LON: -79,
 		},
 		LAME_CLOCK: true,
-		LANG: new Intl.Locale(navigator.language).language.toUpperCase() || 'EN',
+		get LANG(){
+			return new Intl.Locale(this.LANG2).language.toUpperCase() || 'EN';
+		},
 		LANG2: navigator.language,
 		OFFSET: false,
 		SEASON: false,
@@ -482,7 +484,7 @@ function calendar(t = new Date()){
 	for (let d = 0; d < YEAR_LENGTH_IN_DAYS; d++){
 		const dateObj = USING_MLSC ? new Date(+MLSC.yearStartT + d*_1d)
 			: new Date(year, 0, d + 1);
-		const datum = USING_MLSC ? mochaLunisolar(dateObj)
+		const datum = USING_MLSC ? mochaLunisolar(dateObj, undefined, time.CONFIG.LANG)
 			: getDatum(dateObj);
 		const cellID = `month_${datum.month}week_${datum.monthWeek}day_${datum.monthDay}`;
 		const td = cells[cellID];
@@ -515,13 +517,13 @@ function main(t = new Date()){
 		setInterval(refreshClock, clockInterval);
 	}
 	else if (time.CONFIG.CALTYPE === 'MLSC'){
-		const MLSC = mochaLunisolar(t);
+		const MLSC = mochaLunisolar(t, undefined, time.CONFIG.LANG);
 		year = document.getElementById('erecal1_title').innerHTML = `MLSC Year ${MLSC.year}`;
 		/** @type {HTMLTableRowElement} */
 		const monthTable = document.getElementById('earthclock2');
 		monthTable.innerHTML = '';
 		'previousMonth t nextMonth'.split(' ').forEach(key => {
-			const datum = mochaLunisolar(MLSC[key]);
+			const datum = mochaLunisolar(MLSC[key], undefined, time.CONFIG.LANG);
 			const td = document.createElement('td');
 			td.innerHTML = `${datum.monthName}, Year ${datum.year}:`;
 			'kalends nones ides icas'.split(' ').forEach(key2 => {
@@ -561,7 +563,7 @@ function query(){
 
 /** display the month with the MLSC days of the week */
 function monthAlt(t = new Date()){
-	const MLSC = mochaLunisolar(t);
+	const MLSC = mochaLunisolar(t, undefined, time.CONFIG.LANG);
 	const table = document.getElementById('monthAlt');
 	table.innerHTML = '';
 	// title
@@ -604,14 +606,14 @@ function monthAlt(t = new Date()){
 
 function mlscBonus(t = new Date()){
 	const bonus = document.getElementById('bonus');
-	const MLSC = mochaLunisolar(t);
+	const MLSC = mochaLunisolar(t, undefined, time.CONFIG.LANG);
 	bonus.innerHTML = `<h2>Additional Information</h2>
 	Lunar Mansion: <a href="https://en.wikipedia.org/wiki/${MLSC.mansion}">${MLSC.mansion}</a>`;
 }
 
 function refresh(t = new Date()){
 	document.getElementById('earthclock').innerHTML = time.CONFIG.CALTYPE === 'MLSC'
-		? mochaLunisolar(t).string + '<br>' + solarDay(t, time.CONFIG.GEO.LAT, time.CONFIG.GEO.LON)
+		? mochaLunisolar(t, undefined, time.CONFIG.LANG).string + '<br>' + solarDay(t, time.CONFIG.GEO.LAT, time.CONFIG.GEO.LON)
 		: t;
 }
 
