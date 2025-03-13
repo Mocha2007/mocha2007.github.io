@@ -424,7 +424,7 @@ function dayCell(td, dateObj, datum){
 
 function calendar(t = new Date()){
 	const USING_MLSC = time.CONFIG.CALTYPE === 'MLSC';
-	const MLSC = mochaLunisolar(t);
+	const MLSC = mochaLunisolar(t, undefined, time.CONFIG.LANG);
 	const table = document.createElement('table');
 	table.id = 'cals';
 	table.innerHTML = '';
@@ -567,9 +567,9 @@ function monthAlt(t = new Date()){
 	const corner = document.createElement('th');
 	corner.colSpan = 2;
 	trh.appendChild(corner); // blank cell in corner
-	mochaLunisolar.dayNames.forEach(day => {
+	mochaLunisolar.getLocalization(time.CONFIG.LANG).dayNames.forEach(day => {
 		const th = document.createElement('th');
-		th.innerHTML = day + '’s Day';
+		th.innerHTML = day;
 		trh.appendChild(th);
 	});
 	// dates
@@ -579,7 +579,7 @@ function monthAlt(t = new Date()){
 		table.appendChild(tr);
 		// header
 		const th = document.createElement('th');
-		th.innerHTML = mochaLunisolar.quarterNames[week];
+		th.innerHTML = mochaLunisolar.getLocalization(time.CONFIG.LANG).quarterNames[week];
 		tr.appendChild(th);
 		// dates
 		const weekLength = MLSC.weekLengths[week];

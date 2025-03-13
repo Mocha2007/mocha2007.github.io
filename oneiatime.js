@@ -594,7 +594,8 @@ function beat(){
  * A year can have 354, 384, or 385 days.
  * Per 334-year cycle, there are 211 354-day years, 58 384-day years, and 65 385-day years.
  */
-function mochaLunisolar(t, link){
+function mochaLunisolar(t, link, lang){
+	var localization = mochaLunisolar.getLocalization(lang);
 	// default
 	t = t || new Date();
 	if (isNaN(t))
@@ -642,7 +643,7 @@ function mochaLunisolar(t, link){
 	// eslint-disable-next-line brace-style
 	var epicycleEra = (12 - mochaLunisolar.eraStarts.findIndex(function(n){return epicycleR < n;}))
 		% 12;
-	var eraName = mochaLunisolar.monthNames[epicycleEra];
+	var eraName = localization.monthNames[epicycleEra];
 	var ELH = (12 - epicycleEra) % 12;
 	var eraR = mod(epicycleR - mochaLunisolar.eraStarts[mod(ELH+11, 12)]
 		, mochaLunisolar.cyclesPerEpi);
@@ -661,9 +662,9 @@ function mochaLunisolar(t, link){
 	var weekLengths = [7, 8, q3start - 15, 29 < monthLength ? 8 : 7];
 	var currentQuarter = (mod(quarters.findIndex(q => t < q), 5)+3)%4;
 	var daysAfterQuarter = Math.floor((t - quarters[currentQuarter])/_1d);
-	var quarterName = 'the ' + mochaLunisolar.quarterNames[currentQuarter];
+	var quarterName = 'the ' + localization.quarterNames[currentQuarter];
 	var dayName = daysAfterQuarter
-		? mochaLunisolar.dayNames[daysAfterQuarter-1] + '’s Day of ' + quarterName
+		? localization.dayNames[daysAfterQuarter-1] + ' of ' + quarterName
 		: quarterName;
 	// Lunar Mansion
 	var mansionID = (Math.round(t/LUNAR_SIDEREAL_PERIOD % 1 * mochaLunisolar.mansions.length)
@@ -673,7 +674,8 @@ function mochaLunisolar(t, link){
 	var MS = 'Early Mid Late Intercalary'.split(' ')[mo === 12 ? 3 : mo % 3];
 	var meton = Math.floor(y/19);
 	var d = 1 + daysSinceEpoch; // 1-indexed
-	var monthName = mo === 12 ? 'Aurora' : mochaLunisolar.monthNames[(mo + epicycleEra) % 12];
+	var monthName = mo === 12 ? localization.monthNames[12]
+		: localization.monthNames[(mo + epicycleEra) % 12];
 	var string = header + ordinal(d) + ' ' + avoidWrap('(' + dayName + ')')
 		+ ' of ' + monthName + ' (' + MS + ' ' + season + '), ' + y + ' ' + eraString;
 	var monthDay = monthStartT.getDay(), monthWeek = 0;
@@ -695,9 +697,9 @@ function mochaLunisolar(t, link){
 		eraLength: eraLength,
 		eraMonths: new Array(12).fill(0)
 			// eslint-disable-next-line brace-style
-			.map(function(_, i){return mochaLunisolar.monthNames[(i + epicycleEra) % 12];})
-			.concat([mochaLunisolar.monthNames[12]]),
-		eraName: mochaLunisolar.monthNames[epicycleEra], // this is the month of the year it starts on...
+			.map(function(_, i){return localization.monthNames[(i + epicycleEra) % 12];})
+			.concat([localization.monthNames[12]]),
+		eraName: localization.monthNames[epicycleEra], // this is the month of the year it starts on...
 		eraR: eraR,
 		eraString: eraString,
 		icas: quarters[3], // third quarter
@@ -734,9 +736,6 @@ function mochaLunisolar(t, link){
 // mochaLunisolar.eraStarts = [4, 12, 17, 23, 31, 36, 41, 50, 58, 62, 69, 77];
 mochaLunisolar.eraStarts = [6, 13, 19, 25, 32, 38, 44, 51, 58, 64, 70, 77]; // based on even divisions centered roughly on the middle of pisces...
 //							  March April May June July August September October November December January February Intercalary
-mochaLunisolar.dayNames = 'Sol Luna Mars Mercury Jupiter Venus Saturn'.split(' ');
-mochaLunisolar.quarterNames = 'Kalends Nones Ides Icas'.split(' ');
-mochaLunisolar.monthNames = 'Aries Taurus Gemini Cancer Leo Virgo Libra Ophiuchus Sagittarius Capricornus Aquarius Pisces Aurora'.split(' ');
 mochaLunisolar.cyclesPerEpi = mochaLunisolar.eraStarts[11];
 mochaLunisolar.eraROffset = 9; // set to 7 for the original lengths
 mochaLunisolar.mansions = [
@@ -747,6 +746,21 @@ mochaLunisolar.mansions = [
 	'Dabih', 'θ Capricorni', 'δ Capricorni', 'Ancha', 'Hydor', 'φ Aquarii',
 ];
 mochaLunisolar.mansionOffset = 20;
+mochaLunisolar.localization = {
+	EN: {
+		dayNames: 'Sol’s Day;Luna’s Day;Mars’s Day;Mercury’s Day;Jupiter’s Day;Venus’s Day;Saturn’s Day'.split(';'),
+		monthNames: 'Aries Taurus Gemini Cancer Leo Virgo Libra Ophiuchus Sagittarius Capricornus Aquarius Pisces Aurora'.split(' '),
+		quarterNames: 'Kalends Nones Ides Icas'.split(' '),
+	},
+	PL: {
+		dayNames: 'Dzień Solu;Dzień Luny;Dzień Marsa;Dzień Merkurego;Dzień Jowisza;Dzień Wenus;Dzień Saturna'.split(';'),
+		monthNames: 'Baran Byk Bliźnięta Rak Lew Panna Waga Węgownik Strzelec Koziorożec Wodnik Ryby Aurora'.split(' '),
+		quarterNames: 'Kalendy Nony Idy Ikas'.split(' '),
+	},
+};
+mochaLunisolar.getLocalization = function getLocalization(id){
+	return mochaLunisolar.localization[id] || mochaLunisolar.localization.EN; // mochaLunisolar.localization.PL ||
+};
 
 function astro(){
 	var t = new Date();
