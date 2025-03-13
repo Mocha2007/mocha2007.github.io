@@ -151,6 +151,7 @@ const time = {
 		},
 		LAME_CLOCK: true,
 		LANG: new Intl.Locale(navigator.language).language.toUpperCase() || 'EN',
+		LANG2: navigator.language,
 		OFFSET: false,
 		SEASON: false,
 		SEASONS: {
@@ -372,7 +373,7 @@ function dayCell(td, dateObj, datum){
 	// container
 	const tdContainer = document.createElement('div');
 	tdContainer.classList.add('tdContainer');
-	tdContainer.title = dateObj.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'});
+	tdContainer.title = dateObj.toLocaleDateString(time.CONFIG.LANG2, {year: 'numeric', month: 'long', day: 'numeric'});
 	td.appendChild(tdContainer);
 	// date
 	const date = document.createElement('div');
@@ -521,7 +522,7 @@ function main(t = new Date()){
 			td.innerHTML = `${datum.monthName}, Year ${datum.year}:`;
 			'kalends nones ides icas'.split(' ').forEach(key2 => {
 				const rowTitle = title(key2).padStart(7, '_').replace(/_/g, '&nbsp;');
-				td.innerHTML += `<br>${rowTitle}: ${datum[key2].toLocaleDateString('en-GB', {year: 'numeric', month: 'short', day: '2-digit'})}`;
+				td.innerHTML += `<br>${rowTitle}: ${datum[key2].toLocaleDateString(time.CONFIG.LANG2, {year: 'numeric', month: 'short', day: '2-digit'})}`;
 			});
 			monthTable.appendChild(td);
 		});
@@ -589,7 +590,7 @@ function monthAlt(t = new Date()){
 			tr.appendChild(td);
 			// fill cell
 			td.innerHTML = `<span class="bigger">${date+1}</span><hr>
-			${dateObj.toLocaleDateString('en-US', {month: 'short', day: 'numeric', weekday: 'short'}).replace(', ', '<br>')}`;
+			${dateObj.toLocaleDateString(time.CONFIG.LANG2, {month: 'short', day: 'numeric', weekday: 'short'}).replace(', ', '<br>')}`;
 			td.classList.add('season_' + [2, 6, 1, 0, 5, 3, 4, 7][dateObj.getDay()]); // ROYGCBP and rose
 			// finish
 			date++;
