@@ -649,7 +649,8 @@ function mochaLunisolar(t, link, lang){
 		, mochaLunisolar.cyclesPerEpi);
 	var eraLength = mod(mochaLunisolar.eraStarts[ELH]
 		- mochaLunisolar.eraStarts[mod(ELH-1, 12)], mochaLunisolar.cyclesPerEpi);
-	var eraString = avoidWrap('(Age of ' + eraName + ', Cycle ' + (eraR+1) + ' of ' + eraLength + ', Year ' + (mod(y, 334)+1) + ')');
+	var eraString = avoidWrap('(' + localization.age + localization.of1 + eraName + ', ' + localization.cycle
+		+ ' ' + (eraR+1) + localization.of0 + eraLength + ', ' + localization.year +' ' + (mod(y, 334)+1) + ')');
 	// weekday
 	monthStartT = new Date(monthStartT);
 	var q3start = monthLength === 31 ? 23 : 22;
@@ -662,9 +663,9 @@ function mochaLunisolar(t, link, lang){
 	var weekLengths = [7, 8, q3start - 15, 29 < monthLength ? 8 : 7];
 	var currentQuarter = (mod(quarters.findIndex(q => t < q), 5)+3)%4;
 	var daysAfterQuarter = Math.floor((t - quarters[currentQuarter])/_1d);
-	var quarterName = 'the ' + localization.quarterNames[currentQuarter];
+	var quarterName = localization.the + localization.quarterNames[currentQuarter];
 	var dayName = daysAfterQuarter
-		? localization.dayNames[daysAfterQuarter-1] + ' of ' + quarterName
+		? localization.dayNames[daysAfterQuarter-1] + localization.of1 + quarterName
 		: quarterName;
 	// Lunar Mansion
 	var mansionID = (Math.round(t/LUNAR_SIDEREAL_PERIOD % 1 * mochaLunisolar.mansions.length)
@@ -677,7 +678,7 @@ function mochaLunisolar(t, link, lang){
 	var monthName = mo === 12 ? localization.monthNames[12]
 		: localization.monthNames[(mo + epicycleEra) % 12];
 	var string = header + ordinal(d) + ' ' + avoidWrap('(' + dayName + ')')
-		+ ' of ' + monthName + ' (' + MS + ' ' + season + '), ' + y + ' ' + eraString;
+		+ localization.of1 + monthName + ' (' + MS + ' ' + season + '), ' + y + ' ' + eraString;
 	var monthDay = monthStartT.getDay(), monthWeek = 0;
 	for (var date = 0; date < daysSinceEpoch; date++){
 		monthDay++;
@@ -748,18 +749,30 @@ mochaLunisolar.mansions = [
 mochaLunisolar.mansionOffset = 20;
 mochaLunisolar.localization = {
 	EN: {
+		age: 'Age',
+		cycle: 'Cycle',
 		dayNames: 'Sol’s Day;Luna’s Day;Mars’s Day;Mercury’s Day;Jupiter’s Day;Venus’s Day;Saturn’s Day'.split(';'),
 		monthNames: 'Aries Taurus Gemini Cancer Leo Virgo Libra Ophiuchus Sagittarius Capricornus Aquarius Pisces Aurora'.split(' '),
 		MSNames: 'Early Mid Late Intercalary'.split(' '),
+		of0: ' of ', // ie. "two out of five"
+		of1: ' of ', // ie. "twelfth day of march"
 		quarterNames: 'Kalends Nones Ides Icas'.split(' '),
 		seasonNames: 'Spring Summer Fall Winter Month'.split(' '),
+		the: 'the ',
+		year: 'Year',
 	},
 	PL: {
+		age: 'Era',
+		cycle: 'Cykl',
 		dayNames: 'Dzień Sola;Dzień Luny;Dzień Marsa;Dzień Merkurego;Dzień Jowisza;Dzień Wenus;Dzień Saturna'.split(';'),
 		monthNames: 'Baran Byk Bliźnięta Rak Lew Panna Waga Węgownik Strzelec Koziorożec Wodnik Ryby Aurora'.split(' '),
 		MSNames: 'Wczesna Środkowa Późna Miesiąc'.split(' '),
+		of0: ' na ',
+		of1: ' ',
 		quarterNames: 'Kalendy Nony Idy Ikas'.split(' '),
 		seasonNames: 'Wiosna Lato Jesień Zima Przestępny'.split(' '),
+		the: '',
+		year: 'Rok',
 	},
 };
 mochaLunisolar.getLocalization = function getLocalization(id){
