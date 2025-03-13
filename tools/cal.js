@@ -358,7 +358,7 @@ function getKippi(t = new Date()){
 	return {monthIndex, biweekIndex, week, weekDay, isSpecial, letter};
 }
 
-function getLuna(t = new Date()){
+/* function getLuna(t = new Date()){
 	const biweekIndex = mod(Math.floor(t/_1d) + 3, 14);
 	let alt = '', letter = '';
 	if (biweekIndex === 9){
@@ -366,7 +366,7 @@ function getLuna(t = new Date()){
 		alt = 'Luna Payday';
 	}
 	return {biweekIndex, letter, title: alt};
-}
+} */
 
 function dayCell(td, dateObj, datum){
 	// container
@@ -414,12 +414,12 @@ function dayCell(td, dateObj, datum){
 	kippi.title = `Kippi Cycle: Day ${KIPPI.monthIndex}`;
 	tdContainer.appendChild(kippi);
 	// LUNA PAYDAY
-	const luna = document.createElement('span');
+/* 	const luna = document.createElement('span');
 	luna.classList.add('luna');
 	const LUNA = getLuna(dateObj);
 	luna.innerHTML = LUNA.letter;
 	luna.title = LUNA.title;
-	kippi.appendChild(luna);
+	kippi.appendChild(luna); */
 }
 
 function calendar(t = new Date()){
