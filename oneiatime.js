@@ -471,9 +471,9 @@ function solarDay(now, latitude, longitude, localization){
 	var t = now < TODAY.sunrise ? (now - YESTERDAY.sunset)/(TODAY.sunrise - YESTERDAY.sunset)/2+0.5
 		: now < TODAY.sunset ? (now - TODAY.sunrise)/(TODAY.sunset - TODAY.sunrise)/2
 			: (now - TODAY.sunset)/(TOMORROW.sunrise - TODAY.sunset)/2 + 0.5;
-	var dawndusk_str = '<abbr title="' + loc.dawn + '">↑</abbr> ' + TODAY.sunrise.toLocaleTimeString(localization, {timeStyle: 'short'})
-		+ '; <abbr title="' + loc.noon + '">' + loc.noon[0] + '</abbr> ' + TODAY.snoon.toLocaleTimeString(localization, {timeStyle: 'short'})
-		+ '; <abbr title="' + loc.dusk + '">↓</abbr> ' + TODAY.sunset.toLocaleTimeString(localization, {timeStyle: 'short'});
+	var dawndusk_str = '<abbr title="' + loc.dawn + '">↑</abbr> ' + TODAY.sunrise.toLocaleTimeString(localization)
+		+ '; <abbr title="' + loc.noon + '">' + loc.noon[0] + '</abbr> ' + TODAY.snoon.toLocaleTimeString(localization)
+		+ '; <abbr title="' + loc.dusk + '">↓</abbr> ' + TODAY.sunset.toLocaleTimeString(localization);
 	var daytime_str = '(' + (TODAY.dayLength/60).toFixed(2) + ' ' + loc.hday + '; ' + dawndusk_str + ')';
 	return solarDayHelper(24*t, true)
 		+ ' <abbr title="' + loc.since + '">' + loc.solarTime + '</abbr> '
@@ -539,9 +539,12 @@ function solarPosition(t, latitude, longitude){
 		ha_: ha_, // rad
 		ha_inner: ha_inner, // dimensionless??? if this is <=-1 then eternal night, if this is 1<= eternal day (or was it vice versa?)
 		phi: phi, // rad
-		snoon: new Date(Date.UTC(t.getFullYear(), t.getMonth(), t.getDate(), 0, snoon)),
-		sunrise: new Date(Date.UTC(t.getFullYear(), t.getMonth(), t.getDate(), 0, sunrise)),
-		sunset: new Date(Date.UTC(t.getFullYear(), t.getMonth(), t.getDate(), 0, sunset)),
+		// eslint-disable-next-line max-len
+		snoon: new Date(Date.UTC(t.getFullYear(), t.getMonth(), t.getDate(), 0, Math.floor(snoon), snoon%1*60)),
+		// eslint-disable-next-line max-len
+		sunrise: new Date(Date.UTC(t.getFullYear(), t.getMonth(), t.getDate(), 0, Math.floor(sunrise), sunrise%1*60)),
+		// eslint-disable-next-line max-len
+		sunset: new Date(Date.UTC(t.getFullYear(), t.getMonth(), t.getDate(), 0, Math.floor(sunset), sunset%1*60)),
 		theta: theta, // rad
 		time_offset: time_offset, // min
 		tst: tst, // min
