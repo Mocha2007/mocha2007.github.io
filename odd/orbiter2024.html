@@ -153,10 +153,10 @@ Alternatively, if you want to save 86 MB, you can delete XRSound\Default\Altea S
 	</tr>
 	<tr>
 		<td>PRO999</td>
-		<td class="best">4461</td><!-- switching off turbopump made it 4370... less efficient... -->
+		<td class="best">4492</td><!-- switching off turbopump made it 4370... less efficient... -->
 	</tr>
 </table>
-PRO999: (I think switching from INFLIGHT to HOVERGROUND might improve performance. turning off turbopump does not seem to help.)
+PRO999: (Adjusting turbopump timing might help...?)
 <pre>
 	// -----------------------------------------------
 	// ASCENT PROGRAM PRO999 FROM EARTH
@@ -164,15 +164,15 @@ PRO999: (I think switching from INFLIGHT to HOVERGROUND might improve performanc
 	// -----------------------------------------------
 	PROGNAME: EARTH ~195km lunastart
 	TYPE:     ASCENT
-	START:    INFLIGHT
+	START:    HOVERGROUND
 	DISPLAYDEBUG: 0		;Display some debug information to help tune an autopilot. (0=off 1=on)
 	ALT: 0      ENG: 1.0	;Engine full
 	ALT: 15     SNMSG: #RaiseLandingGear
 	ALT: 20     PITCH: 20   ;Take-off pitch
 	ALT: 700    ENG: 1.0
 	ALT: 700    PITCH: 43   ;climb steady while making turn
-	ALT: 1500   ENG: 1.10   ;Engage turbopump past maxQ
 	ALT: 1500   PITCH: 80   ; Thanks go to Tommy! He saved me abt. 100 kilos of fuel!
+	ALT: 6000   ENG: 1.10   ;Engage turbopump past maxQ (2000 too low, 7000 too high)
 	ALT: 7303   PITCH: 75
 	ALT: 14854  PITCH: 70
 	ALT: 22681  PITCH: 65
