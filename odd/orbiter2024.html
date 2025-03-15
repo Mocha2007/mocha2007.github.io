@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <link href="../tools/tool.css" type="text/css" rel="stylesheet">
 <link rel="shortcut icon" href="../img/favicon.ico">
+<style>
+	.best {
+		color:lime;
+		font-weight: bold;
+	}
+</style>
 <title>Orbiter 2024 Install Checklist</title>
 <h1>Orbiter 2024 Install Checklist</h1>
 <p>
@@ -117,6 +123,71 @@ Alternatively, if you want to save 86 MB, you can delete XRSound\Default\Altea S
 		<a href="https://www.orbiter-forum.com/threads/post-your-favourite-dgiv-ascent-autopilot-here.16530/">two sample ascent programs</a>
 	</li>
 </ul>
+<table>
+	<tr>
+		<th rowspan="2">Ascent Program</th>
+		<th colspan="1">Remaining Fuel (kg) <abbr title="using 'Landed KSC departure to ISS' scenario, SPEC42 (ISS)">&dagger;</abbr></th>
+	</tr>
+	<tr>
+		<th>Earth</th>
+	</tr>
+	<tr>
+		<td>PRO903</td>
+		<td>3966</td>
+	</tr>
+	<tr>
+		<td>PRO904</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>PRO943</td>
+		<td>4120</td>
+	</tr>
+	<tr>
+		<td>PRO996</td>
+		<td>4656<abbr title="does not achieve stable orbit; circularizes at ~75 km">*</abbr></td>
+	</tr>
+	<tr>
+		<td>PRO999</td>
+		<td class="best">4461</td>
+	</tr>
+</table>
+PRO999:
+<pre>
+	// -----------------------------------------------
+	// ASCENT PROGRAM PRO999 FROM EARTH
+	// ENGAGE FROM GROUND OR IN FLIGHT (&lt;1000m)
+	// -----------------------------------------------
+	PROGNAME: EARTH ~195km lunastart
+	TYPE:     ASCENT
+	START:    INFLIGHT
+	DISPLAYDEBUG: 0		;Display some debug information to help tune an autopilot. (0=off 1=on)
+	ALT: 0      ENG: 1.0	;Engine full
+	ALT: 15     SNMSG: #RaiseLandingGear
+	ALT: 20     PITCH: 20   ;Take-off pitch
+	ALT: 700    ENG: 1.0
+	ALT: 700    PITCH: 43   ;climb steady while making turn
+	ALT: 1500   ENG: 1.10   ;Engage turbopump past maxQ
+	ALT: 1500   PITCH: 80   ; Thanks go to Tommy! He saved me abt. 100 kilos of fuel!
+	ALT: 7303   PITCH: 75
+	ALT: 14854  PITCH: 70
+	ALT: 22681  PITCH: 65
+	ALT: 30814  PITCH: 60
+	ALT: 39294  PITCH: 55
+	ALT: 48169  PITCH: 50
+	ALT: 50000  ENG: 1.0   ;Disengage turbopump - thanks to PeterRoss
+	ALT: 57500  PITCH: 45
+	ALT: 67365  PITCH: 40   ; Switch between quadratic solutions
+	ALT: 125100 PITCH: 35
+	ALT: 149015 PITCH: 30
+	ALT: 167365 PITCH: 25
+	ALT: 182835 PITCH: 20
+	ALT: 196464 PITCH: 15
+	ALT: 208786 PITCH: 10
+	ALT: 220118 PITCH: 5
+	ALT: 400000 PITCH: 0
+	ENDPROG:
+</pre>
 <h3>Keybinds</h3>
 <ul>
 	<li>Toggle textured HUD - F8</li>
