@@ -1,0 +1,78 @@
+<h1>Orbiter 2024 Install Checklist</h1>
+<h2>Main Installation</h2>
+<ol>
+	<li>Install Orbiter 2024 (2.67 GB, <a href="https://www.orbiter-forum.com/threads/orbiter-2024-release.42062/">Forum</a>,
+		<a href="https://cdn.openorbiter.space/orbiter-releases/Orbiter-2024.zip">Direct</a>)</li>
+</ol>
+<h2>Mod Installation</h2>
+169 MB total if excluding UCGO:
+<ol>
+	<li>Download Altea Aerospace Mods (68.5 MB total, <a href="https://alteaaerospace.com/index-3.html">Altea</a>):
+		<ul>
+			<li>XR2 (35.0 MB)</li>
+			<li>XR5 (20.8 MB)</li>
+			<li>DG XR1 (12.6 MB)</li>
+		</ul>
+	</li>
+	<li>
+		Download Dan's Mods (Currently only DGIV works in 2024):
+		<ul>
+			<li>DeltaGlider IV (86.2 MB, <a href="http://orbiter.dansteph.com/forum/index.php?page=download">Dan</a>,
+				<a href="http://orbiter.dansteph.com/downloadround/tempdgIV/DeltaGliderIV-3_2010_20140109.exe">Direct</a>)</li>
+		</ul>
+		The Arrow Freighter doesn't 100% work yet but if you want to try it: (360 MB, excl. XR2,
+		<a href="https://www.orbiter-forum.com/threads/arrow-freighter-for-orbiter2016-merry-christmas.40956/post-606769">Method Source</a>):
+		<ol>
+			<li>UCGO 3.0 + UMmu 3.0 - 2014 (192 MB, <a href="http://orbiter.dansteph.com/forum/index.php?page=download">Dan</a>, <a href="http://orbiter.dansteph.com/downloadround/tempucgo/UCGO30_2010_20140109.exe">Direct</a>)</li>
+			<li>OrbiterSound 5.0 (96.2 MB, <a href="http://orbiter.dansteph.com/forum/index.php?page=download">Dan</a>, <a href="http://orbiter.dansteph.com/downloadround/orbitersound50/OrbiterSound50_20200811_setup.zip">Direct</a>)</li>
+			<li>GeneralVehicle (6.70 MB <a href="https://www.orbiter-forum.com/resources/generalvehicle.3158/">Forum</a>)</li>
+			<li>Sound Bridge OS (604 kB, <a href="https://www.orbiter-forum.com/resources/sound-bridge-os.1377/">Forum</a>)</li>
+			<li>XR2 (See above)</li>
+			<li>Arrow Freighter 2016 (63.5 MB, <a href="https://www.mediafire.com/file/y6csp2itluwaarg/Arrow_10032023.zip/file">Direct</a>)</li>
+			<li>Arrow Freighter 2016 Patch (367 kB, <a href="https://www.mediafire.com/file/5muxsagla3y1ox7/Patch01.zip/file">Direct</a>)</li>
+		</ol>
+		Afterwards, <b>enable both XRSound and OrbiterSound</b>.
+	</li>
+	<li>
+		Download essential MFDs (14.8 MB total)
+		<ul>
+			<li>Download Prereqs (1.17 MB total):
+				<ul>
+					<li>ModuleMessagingEXT (962 kB, <a href="https://www.orbiter-forum.com/resources/modulemessagingext-v2-1d-for-orbiter-2016.121/">Forum</a>)</li>
+					<li>HudDrawer (246 kB, <a href="https://www.orbiter-forum.com/resources/huddrawer-sdk-v-0-4-for-orbiter-2016.2873/">Forum</a>)</li>
+				</ul>
+			</li>
+			<li>Download MFDs (13.6 MB total):
+				<ul>
+					<li>BaseSyncMFD (0.98 MB, req MME, <a href="https://www.orbiter-forum.com/resources/basesyncmfd-3-3-for-orbiter-2016.2705/">Forum</a>)</li>
+					<li>GlideslopeMFD (2.03 MB, req MME, <a href="https://www.orbiter-forum.com/resources/glideslope-2-7-for-orbiter-2016.1093/">Forum</a>)</li>
+					<li>LaunchMFD (4.61 MB, req HD &amp; MME, <a href="https://www.orbiter-forum.com/resources/launch-mfd-v-1-6-6-for-orbiter-2016.2192/">Forum</a>)</li>
+					<li>BurnTimeCalcMFD (4.37 MB, req HD &amp; MME, <a href="https://www.orbiter-forum.com/resources/burntimecalcmfd-btc-3-1-for-orbiter-2016.736/">Forum</a>)</li>
+					<li>LunarTransferMFD (784 kB, <a href="https://www.orbiter-forum.com/resources/lunartransfer-mfd-ltmfd.5501/">Forum</a>)</li>
+					<li>InterplanetaryMFD (934 kB, <a href="https://www.orbiter-forum.com/resources/interplanetary-mfd.5500/">Forum</a>)</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ol>
+<h2>Settings Tweaks</h2>
+<ul>
+	<li>Options&rarr;Visual Settings&rarr; Enable Cloud Shadows, Specular Ripples, Local Light Sources</li>
+	<li>Options&rarr;Instruments and Panels&rarr;Virtual Cockpit MFD texture size: 1024 x 1024</li>
+	<li>XRSound\XRSound.cfg - line 554: <code>Volume = 0.0</code></li>
+	<li>Modules: Enable:
+		<ul>
+			<li>BaseSyncMFD</li>
+			<li>BurnTimeMFD</li>
+			<li>LaunchMFD</li>
+			<li>TransX</li>
+			<li>DrawOrbits</li>
+			<li>InterMFD57</li>
+			<li>LunarTransferMFD</li>
+			<li>XRSound</li>
+			<li>Framerate</li>
+			<li>ScnEditor</li>
+		</ul>
+	</li>
+	<li>Video&rarr;Graphics Engine = D3D9 Client, set windowed resolution as appropriate</li>
+</ul>
