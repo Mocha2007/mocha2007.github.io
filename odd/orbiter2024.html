@@ -125,21 +125,37 @@ Alternatively, if you want to save 86 MB, you can delete XRSound\Default\Altea S
 </ul>
 <table>
 	<tr>
+		<th rowspan="2">Source</th>
 		<th rowspan="2">Ascent Program</th>
-		<th colspan="1">Remaining Fuel (kg) <abbr title="using 'Landed KSC departure to ISS' scenario, SPEC42 (ISS)">&dagger;</abbr></th>
+		<th colspan="3">Remaining Fuel (kg)></th>
 	</tr>
 	<tr>
-		<th>Earth</th>
+		<th>Earth <abbr title="using 'Landed KSC departure to ISS' scenario, SPEC42 (ISS)">&dagger;</abbr</th>
+		<th>Moon <abbr title="using Brighton Beach pad 1, SPEC67 (close to straight ahead)">&dagger;</abbr</th>
+		<th>Mars <abbr title="using Mars Olympus pad 3, SPEC0 (straight ahead)">&dagger;</abbr</th>
 	</tr>
 	<tr>
+		<td rowspan="4">Dan</td>
 		<td>PRO903</td>
 		<td>3966</td>
+		<td>n/a</td>
 	</tr>
 	<tr>
 		<td>PRO904</td>
 		<td>4085</td>
 	</tr>
 	<tr>
+		<td>PRO905</td>
+		<td>n/a</td>
+	</tr>
+	<tr>
+		<td>PRO906</td>
+		<td>n/a</td>
+		<td>-</td>
+		<td>7181</td>
+	</tr>
+	<tr>
+		<td rowspan="4">Others</td>
 		<td>PRO910</td>
 		<td>4228<abbr title="does not achieve stable orbit; circularizes at ~90 km">*</abbr></td>
 	</tr>
@@ -156,15 +172,22 @@ Alternatively, if you want to save 86 MB, you can delete XRSound\Default\Altea S
 		<td class="best">4610</td>
 	</tr>
 	<tr>
-		<td>PRO999</td>
+		<td rowspan="2">Luna</td>
+		<td>PRO984</td>
 		<td class="best">4503</td><!-- switching off turbopump made it 4370... less efficient... -->
+	</tr>
+	<tr>
+		<td>PRO986</td>
+		<td>n/a</td>
+		<td>-</td>
+		<td class="best">7632</td>
 	</tr>
 </table>
 PRO910 is based on <a href="http://orbiter.dansteph.com/forum/index.php?topic=14617.msg222347#msg222347">this guide</a>.
-PRO999: (Adjusting turbopump timing might help...?)
+PRO984: (Adjusting turbopump timing might help...?)
 <pre>
 	// -----------------------------------------------
-	// ASCENT PROGRAM PRO999 FROM EARTH
+	// ASCENT PROGRAM PRO984 FROM EARTH
 	// ENGAGE FROM GROUND OR IN FLIGHT (&lt;1000m)
 	// -----------------------------------------------
 	PROGNAME: EARTH ~195km lunastart
@@ -193,6 +216,30 @@ PRO999: (Adjusting turbopump timing might help...?)
 	ALT: 196464 PITCH: 15
 	ALT: 208786 PITCH: 10
 	ALT: 220118 PITCH: 5
+	ALT: 400000 PITCH: 0
+	ENDPROG:
+</pre>
+PRO986:
+<pre>
+	// -----------------------------------------------
+	// ASCENT PROGRAM PRO986 FROM MARS
+	// HOVER TAKE-OFF
+	// -----------------------------------------------
+	DISPLAYDEBUG: 1		;Display some debug information to help tune an autopilot. (0=off 1=on)
+	PROGNAME: MARS ~130km (Luna)
+	TYPE:     ASCENT
+	START:    HOVERGROUND
+	ALT: 0      ENG:   1.0
+	ALT: 10     PITCH: 25
+	ALT: 15     SNMSG: #RaiseLandingGear
+	ALT: 5000   PITCH: 20
+	ALT: 10000  PITCH: 15
+	ALT: 67000  PITCH: 15
+	ALT: 67000  ENG: 0.0
+	ALT: 67000  SNMSG: Coasting to 120km
+	ALT: 120000 PITCH: 0
+	ALT: 120000 ENG: 1.0
+	ALT: 120000 SNMSG: Rounding Orbit
 	ALT: 400000 PITCH: 0
 	ENDPROG:
 </pre>
