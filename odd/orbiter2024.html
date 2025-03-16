@@ -146,7 +146,7 @@ Alternatively, if you want to save 86 MB, you can delete XRSound\Default\Altea S
 	<tr>
 		<td>PRO905</td>
 		<td>n/a</td>
-		<td class="best">8557</td>
+		<td>8557</td>
 	</tr>
 	<tr>
 		<td>PRO906</td>
@@ -172,9 +172,14 @@ Alternatively, if you want to save 86 MB, you can delete XRSound\Default\Altea S
 		<td class="best">4610</td>
 	</tr>
 	<tr>
-		<td rowspan="2">Luna</td>
+		<td rowspan="3">Luna</td>
 		<td>PRO984</td>
 		<td class="best">4503</td><!-- switching off turbopump made it 4370... less efficient... -->
+	</tr>
+	<tr>
+		<td>PRO985</td>
+		<td>n/a</td>
+		<td class="best">8675</td>
 	</tr>
 	<tr>
 		<td>PRO986</td>
@@ -216,6 +221,29 @@ PRO984: (Adjusting turbopump timing might help...?)
 	ALT: 196464 PITCH: 15
 	ALT: 208786 PITCH: 10
 	ALT: 220118 PITCH: 5
+	ALT: 400000 PITCH: 0
+	ENDPROG:
+</pre>
+PRO985:
+<pre>
+	// -----------------------------------------------
+	// ASCENT PROGRAM PRO985 FROM MOON
+	// HOVER TAKE-OFF
+	// -----------------------------------------------
+	DISPLAYDEBUG: 1		;Display some debug information to help tune an autopilot. (0=off 1=on)
+	PROGNAME: MOON ~50km (Luna)
+	TYPE:     ASCENT
+	START:    HOVERGROUND
+	ALT: 0      ENG:   1.0
+	ALT: 10     PITCH: 15
+	ALT: 15     SNMSG: #RaiseLandingGear
+	ALT: 12000  PITCH: 15
+	ALT: 12100  PITCH: 0
+	ALT: 12100  ENG: 0.0
+	ALT: 12100  SNMSG: Coasting to 46km
+	ALT: 46000 PITCH: 0
+	ALT: 46000 ENG: 1.0
+	ALT: 46000 SNMSG: Rounding Orbit
 	ALT: 400000 PITCH: 0
 	ENDPROG:
 </pre>
