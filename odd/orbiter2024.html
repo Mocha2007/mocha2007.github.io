@@ -278,6 +278,29 @@ PRO986:
 	ALT: 400000 PITCH: 0
 	ENDPROG:
 </pre>
+PRO987 (Titan with 7179 kg fuel left):
+<pre>
+	// -----------------------------------------------
+	// ASCENT PROGRAM PRO987 FROM TITAN
+	// ENGAGE FROM GROUND OR IN FLIGHT (&lt;1000m)
+	// -----------------------------------------------
+	PROGNAME: TITAN ~300km (Luna)
+	TYPE:     ASCENT
+	START:    HOVERGROUND
+	DISPLAYDEBUG: 1		;Display some debug information to help tune an autopilot. (0=off 1=on)
+	ALT: 0      ENG: 1.0	; Engine full
+	ALT: 5      SNMSG: #RaiseLandingGear
+	ALT: 15     PITCH: 80
+	ALT: 70000  PITCH: 15
+	ALT: 110000 PITCH: 15	; 10deg maybe too low??? 100k slightly too low, should wind up at 205k max after drag force
+	ALT: 110000 ENG: 0.0
+	ALT: 110000 SNMSG: Coasting to 295km (~15 min)
+	ALT: 295000 PITCH: 0
+	ALT: 295000 ENG: 1.0
+	ALT: 295000 SNMSG: Rounding Orbit
+	ALT: 400000 PITCH: 0
+	ENDPROG:
+</pre>
 <h3>Observed DGIV Engine Specs</h3>
 <table>
 	<tr>
