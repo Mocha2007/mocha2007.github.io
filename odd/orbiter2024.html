@@ -197,7 +197,7 @@ PRO999: (Adjusting turbopump timing might help...?)
 	<tr>
 		<th rowspan="2">Altitude (m)</th>
 		<th rowspan="2">Static Pressure (Pa)</th>
-		<th>Fuel Flow (kg/s)</th>
+		<th colspan="2">Fuel Flow (kg/s)</th>
 	</tr>
 	<tr>
 		<th>Normal</th>
@@ -209,7 +209,63 @@ PRO999: (Adjusting turbopump timing might help...?)
 		<td>5.75</td>
 		<td>?</td>
 	</tr>
+	<tr>
+		<td>1005</td>
+		<td>89880</td>
+		<td>5.61</td>
+		<td>?</td>
+	</tr>
+	<tr>
+		<td>3992</td>
+		<td>61690</td>
+		<td>5.71</td>
+		<td>?</td>
+	</tr>
+	<tr>
+		<td>6006</td>
+		<td>47230</td>
+		<td>?</td>
+		<td>8.15</td> <!-- +42.73% fuel flow, +23.08% thrust... -->
+	</tr>
+	<tr>
+		<td>12030</td>
+		<td>19320</td>
+		<td>?</td>
+		<td>8.29</td>
+	</tr>
+	<tr>
+		<td>24020</td>
+		<td>2965</td>
+		<td>?</td>
+		<td>8.42</td>
+	</tr>
+	<tr>
+		<td>48030</td>
+		<td>102.1</td>
+		<td>?</td>
+		<td>8.42</td>
+	</tr>
+	<tr>
+		<td>64080</td>
+		<td>12.55</td>
+		<td>?</td>
+		<td>8.42</td> <!-- +42.47% fuel flow, +23.08% thrust... -->
+	</tr>
+	<tr>
+		<td>72050</td>
+		<td>3.83</td>
+		<td>5.91</td>
+		<td>?</td>
+	</tr>
 </table>
+Fuel flow seems to remain proportional between turbo and normal modes.
+This means for an extra 23.08% thrust, you burn 42.47% more fuel.
+Not sure what the fuel flow function is.
+It can be roughly approximated with
+<code>
+	-2.32386e-6 * p + 5.88154
+</code>
+where <code>p</code> is the static pressure.
 <h3>Keybinds</h3>
 <ul>
 	<li>Toggle textured HUD - F8</li>
