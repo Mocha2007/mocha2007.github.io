@@ -11,7 +11,7 @@ var days = isLeapYear ? 366 : 365;
 var seconds = 86400*(isLeapYear?366:365);
 var cye = new Date(currentyear+'-01-01T00:00:00')/1000; // current year epoch - jan 1 XXXX 00:00 local
 // new Date("2020-01-01T00:00:00")
-var debug = true; // enable to see all events at any time
+var debug = false; // enable to see all events at any time
 var color = true; // enable to have lines color-coded
 /*
 Jan	~ until Paleoproterozoic
