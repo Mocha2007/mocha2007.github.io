@@ -84,6 +84,8 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	// dates updated from Algol's video: https://www.youtube.com/watch?v=d27exZfXzsc
 	[4.57e9, 'Formation of the <a href="https://en.wikipedia.org/wiki/Sun">Sun</a>'],
 	[4.566e9, 'Formation of <a href="https://en.wikipedia.org/wiki/Jupiter">Jupiter</a>'],
+	[4.566e9 - 10e3, 'Formation of <a href="https://en.wikipedia.org/wiki/Ganymede_(moon)#Origin_and_evolution">Ganymede</a>'], // 10k years after Jupiter???
+	[4.566e9 - 1e6, 'Formation of <a href="https://en.wikipedia.org/wiki/Callisto_(moon)#Origin_and_evolution">Callisto</a>'], // 0.1 - 10 Myr
 	[4.561e9, 'The sun enters the <a href="https://en.wikipedia.org/wiki/Henyey_track">Henyey track</a> of star formation'],
 	[4.560e9, 'Formation of <a href="https://en.wikipedia.org/wiki/Saturn">Saturn</a>'],
 	[4.555e9, 'Formation of the <a href="https://en.wikipedia.org/wiki/Ice_giant">Ice Giants</a>'],
@@ -660,6 +662,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[diff(1000212360), '<a href="https://en.wikipedia.org/wiki/September_11_attacks">September 11 Attacks</a>'],
 	[diff(1000771200), '<a href="https://en.wikipedia.org/wiki/2001_anthrax_attacks">2001 Anthrax Attacks</a>'],
 	[diff(1025481600), '<a href="https://en.wikipedia.org/wiki/2002_Überlingen_mid-air_collision">Überlingen midair collision</a>'],
+	[diff(1044057600), '<a href="https://en.wikipedia.org/wiki/Space_Shuttle_Columbia_disaster">Columbia disaster</a>'],
 	[diff(1059710400), '<a href="https://en.wikipedia.org/wiki/Myspace">Myspace</a> Launched'],
 	[diff(1075870800), '<a href="https://en.wikipedia.org/wiki/Facebook">Facebook</a> Launched'],
 	[diff(1108357200), '<a href="https://en.wikipedia.org/wiki/YouTube">YouTube</a> Launched'],
@@ -667,11 +670,13 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[diff(1154390400), '<a href="https://en.wikipedia.org/wiki/Pluto">Pluto</a> no longer considered a planet'],
 	[diff(1159488000), 'Midair collision of <a href="https://en.wikipedia.org/wiki/Gol_Transportes_Aéreos_Flight_1907">Gol Flight 1907</a>'],
 	[diff(1183075200), 'First <a href="https://en.wikipedia.org/wiki/IPhone">iPhone</a>'],
+	[diff(1196467200), 'Beginning of the <a href="https://en.wikipedia.org/wiki/Great_Recession">Great Recession</a>'],
 	[diff(1211673600), '<a href="https://en.wikipedia.org/wiki/Phoenix_(spacecraft)">Phoenix</a> lands on Mars'],
 	[diff(1225411200), 'Creation of <a href="https://en.wikipedia.org/wiki/Bitcoin">Bitcoin</a>'],
 	[diff(1242532800), '<a href="https://en.wikipedia.org/wiki/Minecraft">Minecraft Classic</a> Released'],
 	// 2010
 	[diff(1263333180), '<a href="https://en.wikipedia.org/wiki/2010_Haiti_earthquake">2010 Haiti Earthquake</a>'],
+	[diff(1292544000), 'Beginning of the <a href="https://en.wikipedia.org/wiki/Arab_Spring">Arab Spring</a>'],
 	// 2011
 	[diff(1305172800), '<a href="https://en.wikipedia.org/wiki/Death_of_Osama_bin_Laden">Death of Osama bin Laden</a>'],
 	[diff(1307332800), '<a href="https://en.wikipedia.org/wiki/Twitch.tv">Twitch</a> Launched'],
@@ -694,6 +699,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[diff(1494942600), '<a href="https://mocha2007.github.io">Mocha\'s Site</a> <a href="https://github.com/Mocha2007/mocha2007.github.io/commit/4e1bbc0bc41c4f75681c539cd09e164594e6ba7c">Launched</a>'],
 	[diff(1503705600), '<a href="https://en.wikipedia.org/wiki/Hurricane_Harvey">Hurricane Harvey</a> makes landfall in Texas'],
 	[diff(1506920400), 'The <a href="https://en.wikipedia.org/wiki/2017_Las_Vegas_shooting">2017 Las Vegas Shooting</a>, the deadliest mass shooting committed by a single person in American history'],
+	[diff(1508112000), 'Approximate beginning of the <a href="https://en.wikipedia.org/wiki/MeToo_movement">#Metoo Movement</a>'],
 	[diff(1508371200), '<abbr title="The first known insterstellar object to enter the solar system"><a href="https://en.wikipedia.org/wiki/ʻOumuamua">ʻOumuamua</a></abbr> discovered'],
 	// 2018
 	[diff(1519992000), 'The <a href="https://en.wikipedia.org/wiki/Austin_serial_bombings">Austin Serial Bombings</a>'],
@@ -707,10 +713,10 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	// 2020
 	[diff(1578024000), 'The <a href="https://en.wikipedia.org/wiki/2020_Baghdad_International_Airport_airstrike">2020 Baghdad International Airport airstrike</a> kills <a href="https://en.wikipedia.org/wiki/Qasem_Soleimani">Qasem Soleimani</a>'],
 	[diff(1584835200), 'A national emergency <a href="https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_the_United_States">is declared</a> in the US in response to the Coronavirus pandemic'],
-	[diff(1590458400), 'The <a href="https://en.wikipedia.org/wiki/Killing_of_George_Floyd">Murder of George Floyd</a> spawns <a href="https://en.wikipedia.org/wiki/George_Floyd_protests">subsequent riots and protests</a>'], // as controversial as this is, it thankfully won't show until next year anwyays
+	[diff(1590458400), 'The <a href="https://en.wikipedia.org/wiki/Killing_of_George_Floyd">Murder of George Floyd</a> spawns <a href="https://en.wikipedia.org/wiki/George_Floyd_protests">subsequent riots and protests</a>'],
 	[diff(1596553698), 'The <a href="https://en.wikipedia.org/wiki/2020_Beirut_explosion">Beirut Explosion</a>'],
 	// 2021
-	[diff(1609955580), 'The <a href="https://en.wikipedia.org/wiki/2021_United_States_Capitol_attack">US Capitol Attack</a>'],
+	[diff(1609955580), 'The January 6th <a href="https://en.wikipedia.org/wiki/2021_United_States_Capitol_attack">US Capitol Attack</a>'],
 	[diff(1616478000), 'The Ever Given <a href="https://en.wikipedia.org/wiki/2021_Suez_Canal_obstruction">obstructs the Suez canal</a> for nearly a week'],
 	[diff(1626786660), '<a href="https://en.wikipedia.org/wiki/Blue_Origin_NS-16">Blue Origin NS-16</a> launches'],
 	[diff(1628985600), 'The <a href="https://en.wikipedia.org/wiki/Fall_of_Kabul_(2021)">Fall of Kabul</a>'],
@@ -720,7 +726,10 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[diff(1669809600), 'The launch of <a href="https://en.wikipedia.org/wiki/ChatGPT">ChatGPT</a>'],
 	// 2023
 	[diff(1674950400), 'The <a href="https://en.wikipedia.org/wiki/2023_Chinese_balloon_incident">Chinese Balloon Incident</a>'],
-	[diff(1675475700), 'The <a href="https://en.wikipedia.org/wiki/2023_Ohio_train_derailment">2023 Ohio Train Derailment</a>']
+	[diff(1675475700), 'The <a href="https://en.wikipedia.org/wiki/2023_Ohio_train_derailment">2023 Ohio Train Derailment</a>'],
+	[diff(1728259200), 'Start of the <a href="https://en.wikipedia.org/wiki/Gaza_war">Gaza War</a>'],
+	// 2024
+	[diff(1733312700), '<a href="https://en.wikipedia.org/wiki/Killing_of_Brian_Thompson#Killing">Killing of Brian Thompson</a>']
 // 2020
 // https://en.wikipedia.org/wiki/Timelines_of_world_history
 // https://www.epochconverter.com/
