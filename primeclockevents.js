@@ -108,6 +108,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[4.091e9, 'Formation of <a href="https://en.wikipedia.org/wiki/Allan_Hills_84001">ALH84001</a>, a Mars rock blasted off Mars in an impact 17 Myr ago which impacted Allan Hills in Antarctica 13 Kyr ago'],
 	[4.044e9, 'Formation of the <a href="https://en.wikipedia.org/wiki/Nuvvuagittuq_Greenstone_Belt">Nuvvuagittuq Greenstone Belt</a>'],
 	[4.031e9, 'Formation of the <a href="https://en.wikipedia.org/wiki/Acasta_Gneiss">Acasta Gneiss</a> in the <a href="https://en.wikipedia.org/wiki/Slave_Craton">Slave Craton</a>'],
+	[4.0e9, 'By now <a href="https://en.wikipedia.org/wiki/Capture_of_Triton">Triton has been captured by Neptune</a>'],
 	[4e9, 'Beginning of the <a href="https://en.wikipedia.org/wiki/Archean">Archean</a>'],
 	[3.938e9, 'Formation of <a href="https://en.wikipedia.org/wiki/Mare_Imbrium">Mare Imbrium</a>'],
 	[3.92e9, 'Impact creates the <a href="https://en.wikipedia.org/wiki/Nectaris_Basin">Nectaris Basin</a> on the Moon'],
