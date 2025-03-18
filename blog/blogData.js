@@ -1612,4 +1612,122 @@ const blogData = [
 	(Discussed further in <a href="https://web.mit.edu/twang6/public/poly-roots.pdf>this paper</a>)
 	(Also see <a href="https://people.math.osu.edu/nguyen.1261/cikk/dbroot.pdf">this one</a>)
 	`,
+	`
+	@title Surviving Earth's Geological Past
+	@date 1742299136164
+	I was curious to know, given the conditions of the past, what would happen if you were suddenly teleported back?
+	The immediate concern would be whether you could breathe, since Earth's atmosphere was not breathable.
+	Given Earth's atmosphere in the past 4.540 billion years, that means:
+	<ul class="list2">
+		<li>4540-4100 Mya (9.7% chance, most of the Hadean): You boil alive while suffocating.</li>
+		<li>4100-4000 Mya (2.2% chance, late Hadean to early Eoarchaean): You suffocate while receiving third degree burns across your entire body.</li>
+		<li>4000-3950 Mya (1.1% chance, early Eoarchaean): You suffocate while receiving second degree burns across your entire body.</li>
+		<li>3950-3900 Mya (1.1% chance, early Eoarchaean): You suffocate while receiving first degree burns across your entire body.</li>
+		<li>3900-580 Mya (72% chance, early Eoarchaean to mid Ediacaran): You don't notice anything immediately wrong, but after a few seconds you become dizzy
+		and peacefully slip into unconsciousness, dying of hypoxia. But for a delightful 15-30 seconds, you get to experience Earth's fascinating geologial past!.</li>
+	</ul>
+	This is a combined 87.2% of dying within seconds.
+	@p
+	<h3>Latter Ediacaran (580 - 538.8 Mya, 0.9% chance)</h3>
+	<img src="https://www.pnas.org/cms/10.1073/pnas.2207475119/asset/7107235c-dd83-4fd8-b18f-365d34043af7/assets/images/large/pnas.2207475119fig02.jpg" width="100%" alt="Three maps of Earth in the late Ediacaran. Most of the landmass is in the southern hemisphere, and it is divided into many small continents.">
+	To survive in the second half of the Ediacaran you would have to subsist off food gathered from the coasts.
+	Seaweed and jellyfish existed by this time, but little else from modern ecosystems did.
+	Nutritionally speaking, a diet of seaweed and <a href="https://en.wikipedia.org/wiki/Kimberella">Kimberella</a> would give the best chance of survival.
+	After experimentation, I found this to be the best diet I could come up with:
+	<ul>
+		<li>250g Seaweed<li>
+		<li>180g Kimberella or similar sp.<li>
+	</ul>
+	However with just these two foods, it is difficult to get enough of some nutrients without overdosing on others.
+	With this diet, for instance, you will suffer deficiencies of Calcium, Potassium, Choline, and Vitamins B6, C, and E.
+	You might be able to survive a couple months, but you would eventually die (primarily of Scurvy).
+	Days were only 21.5 hours long, so to get adequate sleep you'd lose ~15% of your working hours.
+	There was also the Baykonouran Glaciation period near the end of this period that might present additional survival challenges.
+	@p
+	<h3>Cambrian (538.8 - 486.85 Mya, 1.1% chance)</h3>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Mollweide_Paleographic_Map_of_Earth%2C_510_Ma.png" width="100%" alt="Earth during the mid-Cambrian.">
+	In the Cambrian, a much wider diversity of seafood would have been available, with a variety of choices comparable to the modern day.
+	Although certainly not nutritionally ideal (making sure to get sufficient Vitamin C will be a challenge),
+	it could be possible to subsist entirely on coastal Cambrian seafood.
+	You would be living in a barren landscape, however, as no land plant or animal life will exist for millions of years.
+	@p
+	<h3>Ordovician (486.85 - 443.1 Mya, 1.0% chance)</h3>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Mollweide_Paleographic_Map_of_Earth%2C_465_Ma_%28Darriwilian_Age%29.png" width="100%" alt="Earth during the mid-Ordovician.">
+	Similar to the Cambrian. Oxygen was a bit lower here, so you may get winded more easily, but it is probably still survivable.
+	Land plants existed, but were limited to liverworts and <a href="https://en.wikipedia.org/wiki/Cooksonia">Cooksonia</a>, so don't expect to integrate them into your diet.
+	Overall, probably slightly more difficult than the Cambrian, but still doable.
+	@p
+	<h3>Silurian (443.8 - 419.2 Mya, 0.5% chance)</h3>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Mollweide_Paleographic_Map_of_Earth%2C_430_Ma_%28Homerian_Age%29.png" width="100%" alt="Earth during the mid-Silurian.">
+	Your diet will still be seafood. At least oxygen is back up to normal levels again.
+	There are more land plants now, but probably nothing edible or nutritionally worthwhile.
+	The from the late Silurian, through the Devonian, the landscape is dominanted by <a href="https://en.wikipedia.org/wiki/Prototaxites">Prototaxites</a>, 8 meter tall tree-like fungi.
+	Its edibility would be heavily dependent on its exact nature, but it is probably not worth risking.
+	The late Silurian features the first land animals - small arthropods, like <a href="https://en.wikipedia.org/wiki/Kampecaris">Kampecaris</a> -
+	but nothing nutritionally superior to seafood. Maybe you can keep them as pets?
+	Overall, about as difficult as the Cambrian.
+	@p
+	<h3>Devonian (419.2 - 358.9 Mya, 1.3% chance)</h3>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Mollweide_Paleographic_Map_of_Earth%2C_390_Ma_%28Eifelian_Age%29.png" width="100%" alt="Earth during the mid-Devonian.">
+	Your diet will still mainly be seafood, but there is a greater variety of seafood available in this period than the modern day.
+	Some fish have teeth now, so you're going to start having to be more careful about how you catch fish.
+	There are more land arthropods (including insects) now, but they are all still too small to play a large part in your diet.
+	The <a href="https://en.wikipedia.org/wiki/Silurian-Devonian_Terrestrial_Revolution">Devonian explosion</a> will probably lead to at least <em>some</em> land plants that are edible for humans.
+	At minimum, you could use plants like <a href="https://en.wikipedia.org/wiki/Archaeopteris">Archaeopteris</a> and <a href="https://en.wikipedia.org/wiki/Wattieza">Wattieza</a> for wooden tools.
+	Overall, slightly easier than the eras before it - I think, with luck, it may be possible to have a nutritious diet starting from this period.
+	@p
+	<h3>Carboniferous (358.9 - 298.9 Mya, 1.3% chance)</h3>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Mollweide_Paleographic_Map_of_Earth%2C_330_Ma_%28Serpukhovian_Age%29.png" width="100%" alt="Earth during the mid-Carboniferous.">
+	Insects are HUGE, and some will be dangerous, like the 70 cm long scorpion <a href="https://en.wikipedia.org/wiki/Pulmonoscorpius">Pulmonoscorpius</a>, native to the jungles of Scotland.
+	If you're up for the challenge, you could try hunting massive insects, like the 2 meter long millipede-like <a href="https://en.wikipedia.org/wiki/Arthropleura">Arthropleura</a> (found in the tropical swamps of Central Europe and the American Midwest), for food.
+	You will also be pestered by numerous flying insects, such as the 50 cm wide dragonfly-like <a href="https://en.wikipedia.org/wiki/Mazothairos">Mazothairos</a>,
+	or 60 cm <a href="https://en.wikipedia.org/wiki/Meganeura">Meganeura</a> (found in Illinois and France respectively, both tropical climates at the time).
+	Snake- and lizard-like animals were also present by the Carboniferous.
+	Fungi have also by now diversified to modern levels, so if you manage to find the safe mushrooms, you could integrate them into your diet, too.
+	Trees would have consisted of seed ferns, with conifers also appearing in the late carboniferous.
+	It will be easier to get nutrition, but some animals now pose a threat to you.
+	On balance it may be about as difficult as the Devonian.
+	@p
+	<h3>Permian (298.9 - 251.902 Mya, 1.0% chance)</h3>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Mollweide_Paleographic_Map_of_Earth%2C_275_Ma_%28Kungurian_Age%29.png" width="100%" alt="Earth during the mid-Permian.">
+	Oxygen will be on the high end of breathable in some parts of the Permian, although this can be mitigated by living high in the mountains.
+	The overall climate of the world was cooler and more arid, with much of the land being desert, especially in the latter half of this period.
+	Your best luck would be landing in the temperate mountains of Greenland, Scandinavia, and Siberia.
+	In the latter half of the Permian, the mountains of Argentina and Brazil would also be viable (but they are frozen over in the first half).
+	The land is now dominated more by proto-dinosaurs than arthropods, and many of them will be dangerous to you.
+	Definitely more difficult than the Devonian and Carboniferous, but not as difficult as the Cambrian to Silurian.
+	@p
+	<h3>Triassic (251.902 - 201.4 Mya, 1.1% chance)</h3>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Mollweide_Paleographic_Map_of_Earth%2C_225_Ma_%28Norian_Age%29.png" width="100%" alt="Earth during the mid-Triassic.">
+	Oxygen goes back to normal, but the climate is still quite arid around the tropics, and now much warmer.
+	The best places to land would be Alaska, Russia, northern China, Patagonia, Australia or Antarctica.
+	The poles had a pleasant, temperate climate, while the tropics had rather extreme seasonal variations
+	(eg. <a href="https://en.wikipedia.org/wiki/Pangean_megamonsoon">Pangean megamonsoons</a>).
+	The fauna becomes even more dangerous.
+	More difficult to survive in than the Permian.
+	@p
+	<h3>Jurassic (201.4 - 143.1 Mya, 1.3% chance)</h3>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Mollweide_Paleographic_Map_of_Earth%2C_170_Ma_%28Bajocian_Age%29.png" width="100%" alt="Earth during the mid-Jurassic.">
+	Climate starts returning back to normal, but oxygen is now dangerously low (on the limit of survivability).
+	Your best chance of surviving then would be to spawn in non-tropical lowlands (so similar locations to the Triassic).
+	It goes without saying that dinosaurs become even more dangerous.
+	The combination of low oxygen and many predators dangerous to you would make surviving here quite difficult.
+	I would rate this as being the most difficult of the Phanerozoic.
+	@p
+	<h3>Cretaceous (143.1 - 66.0 Mya, 1.7% chance)</h3>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Mollweide_Paleographic_Map_of_Earth%2C_105_Ma_%28Albian_Age%29.png" width="100%" alt="Earth during the mid-Cretaceous.">
+	The climate and oxygen are both back to normal (more or less).
+	Although the fauna is still dangerous (T-rexes and Deinonychus if you're especially unlucky!),
+	you start to see proto-birds, and modern plants like angiosperms and grasses that will provide useful food sources.
+	I would rate this overall more difficult to survive in than other Panerozoic periods, except the Triassic and Jurassic.
+	@p
+	<h3>Cenozoic (66.0 - present, 1.4% chance)</h3>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/6/62/Mollweide_Paleographic_Map_of_Earth%2C_45_Ma_%28Lutetian_Age%29.png" width="100%" alt="Earth during the mid-Paleogene.">
+	Fauna finally starts looking modern-ish. Climate is different depending on the exact period in question,
+	but nothing out of the ordinary unless you are unfortunate enough to land in an ice age.
+	From 30 to 10 Mya Antarctica (9.2% of Earth's land area) transitions from Tundra to uninhabitable polar ice caps.
+	So that is a cumulative 2.8% you get unlucky and get stranded in Antarctic ice caps provided you get stuck in the Cenozoic, but otherwise your odds are good.
+	Definitely among the easiest periods to survive in.
+	You only have about a 1 in 22,000 chance of landing in a time with humans, and a 1 in 750,000 chance of landing in an era with civilization, but who knows, maybe you get lucky.
+	`,
 ];
