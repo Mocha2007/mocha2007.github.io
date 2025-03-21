@@ -71,6 +71,17 @@
 	<span class="button" onclick="preset('Y100')">¥100</span>
 	<span class="button ring_gold" onclick="preset('Y500')">¥500</span>
 	<br>
+	<a href="https://en.wikipedia.org/wiki/Polish_coins_and_banknotes">Poland</a>:
+	<span class="button gold" onclick="preset('pl1')">1 gr</span>
+	<span class="button gold" onclick="preset('pl2')">2 gr</span>
+	<span class="button gold" onclick="preset('pl5')">5 gr</span>
+	<span class="button" onclick="preset('pl10')">10 gr</span>
+	<span class="button" onclick="preset('pl20')">20 gr</span>
+	<span class="button" onclick="preset('pl50')">50 gr</span>
+	<span class="button" onclick="preset('pl100')">1 zł</span>
+	<span class="button ring_gold" onclick="preset('pl200')">2 zł</span>
+	<span class="button gold ring_silver" onclick="preset('pl500')">5 zł</span>
+	<br>
 	<a href="../namei/namei.html#Eremoran_Currency">Eremor</a>:
 	<span class="button copper" onclick="preset('ere1')">1 a</span>
 	<span class="button" onclick="preset('ere2')">1 z</span>
@@ -309,6 +320,34 @@ function preset(id){
 			break;
 		case 'ere5':
 			size(11*se, se, 'gold');
+			break;
+		// https://en.wikipedia.org/wiki/Polish_coins_and_banknotes
+		case 'pl1':
+			size(15.5, 1.4, 'steel', 10, 'nickel_brass')
+			break;
+		case 'pl2':
+			size(17.5, 1.4, 'steel', 10, 'nickel_brass')
+			break;
+		case 'pl5':
+			size(19.5, 1.4, 'steel', 10, 'nickel_brass')
+			break;
+		case 'pl10':
+			size(16.5, 1.9, 'steel', 10, 'nickel')
+			break;
+		case 'pl20':
+			size(18.5, 2, 'steel', 10, 'nickel')
+			break;
+		case 'pl50':
+			size(20.5, 2, 'steel', 10, 'nickel')
+			break;
+		case 'pl100':
+			size(23, 2, 'steel', 10, 'nickel')
+			break;
+		case 'pl200':
+			size(21.5, 2.6, 'cupronickel', 0, undefined, 9.5, 'nordic_gold')
+			break;
+		case 'pl500':
+			size(24, 2.1, 'nordic_gold', 0, undefined, 8, 'cupronickel')
 			break;
 	}
 }
