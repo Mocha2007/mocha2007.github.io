@@ -1730,4 +1730,80 @@ const blogData = [
 	Definitely among the easiest periods to survive in.
 	You only have about a 1 in 22,000 chance of landing in a time with humans, and a 1 in 750,000 chance of landing in an era with civilization, but who knows, maybe you get lucky.
 	`,
+	`
+	@title Reverse-Engineering the Ënomai System
+	@date 1742756495769
+	@tags verduria math rust
+	A long time ago I used textual clues from the Virtual Verduria website to reconstruct the Ënomai System.
+	But now that I've been working on more astronomical software in Rust, I decided I could do a much more accurate job this time.
+	@p
+	<h3>Ënomai itself</h3>
+	Per <a href="https://www.zompist.com/drill0.htm">drill0</a>:
+	<q>The Almean year is 328 days long ...</q>
+	But:
+	<q>The Almean day is slightly longer than ours.</q>
+	How much longer? Well, according to the <a href="http://www.almeopedia.com/almeo.html?Almea">Almea</a> page on the Almeopedia:
+	<q>The Almean day is slightly longer than ours (by about half an hour).</q>
+	So the almean day is perhaps 24.5 &pm; 0.25 h, making the year 335 &pm; 3 Earth days.
+	Assuming Almea receives the same stellar flux as Earth, that would make Ënomai <strong>0.980 &pm; 0.002 M<sub>☉︎</sub></strong>,<!-- 0.978 to 0.981 -->
+	fitting the description of it being <q>... almost exactly the size and color of our own sun, although astronomically ... a little smaller.</q>
+	This happens to be more or less identical to the reference values for G5V stars, so Ënomai is likely:
+	<ul class="list2">
+		<li>0.975 &pm; 0.005 R<sub>☉︎</sub> (678,000 km)</li>
+		<li>5652 &pm; 12 K</li>
+		<li>0.88 &pm; 0.01 L<sub>☉︎</sub></li>
+	</ul>
+	@p
+	<h3>Almea</h3>
+	Likewise, we can deduce Almea's semimajor axis as being 0.938 &pm; 0.007 au (depending on the properties of Ënomai).
+	<a href="https://www.zompist.com/drill1.htm">drill1</a> helpfully states that <q>Almea is an Earthlike planet, with a radius of 5320 km</q> (<strong>0.835 R<sub>🜨</sub></strong>).
+	With an Earthlike density, that implies a mass of 0.582 M<sub>🜨</sub>. But if the density is closer to Mars, its mass would be about 0.415 M<sub>🜨</sub>.
+	So we need to constrain the mass another way.
+	We can use its moons to determine its mass.
+	@p
+	<!--<img src="http://www.almeopedia.com/allo/Almea-moons.jpg" width="100%">-->
+	Its furthest moon takes 28 local days (28.5 Earth days) to orbit, and its nearest moon takes 6.5 local days (6.6 Earth days) to orbit.
+	Based on our previous mass estimate, we'd expect the larger orbit to be between 294,000 and 330,000 km.
+	The visual widths of those two orbits across Almea are 693 px and 262 px, respectively. Almea appears to be 10 &pm; 1 px wide.
+	This implies the outer moon orbits somewhere between 335,160 and 409,640 km.
+	This discrepancy could be explained by an eccentric orbit making the visual measurement less accurate
+	(the orbit are definitely eccentric - I estimate 0.26 for the outer, 0.30 for the middle, and 0.07 for the inner moon),
+	but it could also be explained by Almea having a density higher than Earth (say, 7,454 kg/m<sup>3</sup>) and thus having a mass closer to 0.786 M<sub>🜨</sub>.
+	I'm inclined to think the truth is that the actual value is on the high end of the visual measurement,
+	and that Almea really does have a density slightly greater than earth - 5,786 kg/m<sup>3</sup> - implying a mass of about <strong>0.6 M<sub>🜨</sub></strong>.<!-- I use 0.615 for calculations -->
+	That means the moons orbit with semimajor axes of about 335,000 km, 241,000 km, and 127,000 km.
+	@p
+	<h3>Iliažë, Iliacáš, and Naunai</h3>
+	Per <a href="http://www.almeopedia.com/almeo.html?Iliac%C3%A1%C5%A1">the Almeopedia</a>:
+	<q>Seen from Almea, it is a little more than half the apparent size of Earth's moon.</q>
+	The accompanying diagram illustrates that a "little more" is about 64%.
+	As the moon's apparent diameter is about 0.52°, that makes Iliažë 0.33°,
+	and solving the triangle implies a radius of about <strong>965 km</strong>.
+	As Iliacáš is said to have a radius 2/3 that of Iliažë, that implies a radius of about <strong>643 km</strong>.
+	The diagram implies Naunai has an angular diameter of 0.0058°, which implies a radius of about <strong>6.4 km</strong>,
+	although you should consider that value to be only a rough estimate - the true value could be off by a factor of two.
+	@p
+	<h3>The other planets</h3>
+	<ul class="list2">
+		<li>Vereon: 0.458 &pm; 0.003 au</li>
+		<li>Išire: 0.716 &pm; 0.005 au</li>
+		<li>Almea: 0.938 &pm; 0.007 au</li>
+		<li>Vlerëi: 1.287 &pm; 0.009 au (<a href="http://www.almeopedia.com/almeo.html?Vler%C3%ABi">Almeopedia</a>: rotation period = 29 hours; based on visual description appears to be a water world with polar ice caps)</li>
+		<li>Hírumor: 4.30 &pm; 0.03 au
+			<br>
+			The diagram shows Punče orbiting with a semimajor axis 29.1 &pm; 1.5 Hírumor radii.
+			Since its orbital period is 7.66 &pm; 0.08 earth days,
+			Hírumor <em>must</em> be a Jupiter-size gas giant, with a mass of <strong>6 &pm; 1 M<sub>♃</sub></strong>. <!-- 1580 earths to 2250 earths -->
+			Furthermore:
+			<ul class="list2">
+				<li>Mihel: 780 &pm; 50 Mm</li>
+				<li>Balmova: 1,210 &pm; 70 Mm</li>
+				<li>Punče: 2,040 &pm; 120 Mm</li>
+				<li>Catum: 3,230 &pm; 190 Mm</li>
+			</ul>
+		</li>
+		<li>Imiri: 7.82 &pm; 0.06 au (has two moons with unknown orbital properties and names)</li>
+		<li>Caiem: 14.8 &pm; 0.1 au</li>
+	</ul>
+	`,
 ];
