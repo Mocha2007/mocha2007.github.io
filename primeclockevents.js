@@ -373,6 +373,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[621e3, '<i><a href="https://en.wikipedia.org/wiki/Gunz-Haslach_interglacial">Gunz-Haslach interglacial</a></i>'],
 	[474e3, '<a href="https://en.wikipedia.org/wiki/Haslach_glaciation">Haslach Glaciation</a>'],
 	[430e3, '<a href="https://en.wikipedia.org/wiki/Neanderthal">Neanderthals</a>'],
+	[400e3, 'Formation of <a href="https://en.wikipedia.org/wiki/T_Tauri">T Tauri</a>'],
 	[360e3, '<a href="https://en.wikipedia.org/wiki/Elster_glaciation">Elster Glaciation</a>'],
 	[315e3, '<a href="https://en.wikipedia.org/wiki/Human_evolution">Modern Humans Evolve</a>'],
 	[275e3, 'Age of <a href="https://en.wikipedia.org/wiki/Y-chromosomal_Adam">Y-Chromosomal Adam</a>'],
