@@ -1895,7 +1895,7 @@ const blogData = [
 		<li>"h" is firmly in the vowel quadrant and very common, so it is quite likely a vowel. Due to the reasons stated in the previous point, it is most likely /a/, but /e/ and /o/ are also probable.</li>
 		<li>"a" and "k" are also likely vowels. (Possibly /e/ and /o/, as stated before)</li>
 		<li>"l" and "t" may also be vowels, but could just as easily be sonorous consonants. If one is a vowel, it could be /u/.</li>
-		<li>the position of "q" suggests it is probably a word-initial allograph of another phoneme, but there are other possibilities (represents a phone only found in loanwords with a very peculiar distribution?)</li>
+		<!--<li>the position of "q" suggests it is probably a word-initial allograph of another phoneme, but there are other possibilities (represents a phone only found in loanwords with a very peculiar distribution?)</li>-->
 		<li>the positions of "i", "e", and "n" suggest they are part of digraphs (I'm pretty sure that was the consensus to begin with).
 	</ul>
 	@p
