@@ -1918,5 +1918,11 @@ const blogData = [
 	@p
 	This leads to the following (highly, highly speculative!) assignments:
 	<img src="../img/voynich/vowels.png">
+	And the remaining symbols in the vowel quadrant (f, k, l, p, t) may be sonorous consonants, perhaps /l n m r/ (in no particular order).
+	It is notable that 4 of these 5 (f, k, p, t) are the gallows characters.
+	Perhaps this means Voynich is partially featural.
+	@p
+	Though even if (a, e, h, o, y) represent some combination of /a e i o u/, and (f, k, p, t) represent some combination of /l m n r/,
+	that still leaves more than half the alphabet to figure out...
 	`,
 ];
