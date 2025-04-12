@@ -1912,5 +1912,11 @@ const blogData = [
 	When I performed the same analysis on Latin, the top 5 pairs were all vowels, and contained every vowel except &lt;o> and the rare &lt;y>.
 	In the same analysis performed on English, 4 of the top 5 pairs contained only vowels, and contained every vowel but &lt;u>.
 	The odd one out was (e, t), which came in third place.
+	This seems to imply (o, y, h, a) are all vowels, which is mostly in agreement with the previous analysis except for &lt;y>,
+	which could be a vowel with very unusual distribution, or a common consonant. I think overall I lean towards the former, which might imply it is /u~w/.
+	The same analysis on Voynich for three vowels yields (a, o, y), (a, h, o), and (a, e, o) as the top three sets, each comprising 97%, 94%, and 92% of words respectively.
+	@p
+	This leads to the following (highly, highly speculative!) assignments:
+	<img src="../img/voynich/vowels.png">
 	`,
 ];
