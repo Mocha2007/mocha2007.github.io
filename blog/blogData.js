@@ -1905,5 +1905,12 @@ const blogData = [
 	so if nothing else, this has convinced me that Voynich has actual linguistic content and isn't gibberish.
 	@p
 	Overall, this is admittedly nothing groundbreaking, but this does give me some further ideas on how to analyze the manuscript.
+	@p
+	<h3>A second look</h3>
+	In a separate analysis, I found 57.70% of words contain &lt;o>, 43.77% contain &lt;y>, and 42.66% contain &lt;h> (these are the top three).
+	79.30% contain &lt;o> or &lt;y>, and 78.39% contain &lt;o> or &lt;h> (these are the top two combinations - (a, o) and (a, y) were close behind).
+	When I performed the same analysis on Latin, the top 5 pairs were all vowels, and contained every vowel except &lt;o> and the rare &lt;y>.
+	In the same analysis performed on English, 4 of the top 5 pairs contained only vowels, and contained every vowel but &lt;u>.
+	The odd one out was (e, t), which came in third place.
 	`,
 ];
