@@ -1923,5 +1923,11 @@ const blogData = [
 	@p
 	Though even if (a, e, h, o, y) represent some combination of /a e i o u/, and (f, k, p, t) represent some combination of /l m n r/,
 	that still leaves more than half the alphabet to figure out...
+	@p
+	<h3>Star Names</h3>
+	Another thing I've noticed. In English, many of the proper names for stars derive from Arabic, and as a consequence,
+	many (about a third) start with the letter A, and almost as many start with AL as their first two letters.
+	In the Voynich manuscript, nearly half of the stars begin with "o", of which about a third start with "ok" and a third start with "ot".
+	If Voynichese uses largely similar names for stars, that could mean "o" = /a/ and either "k" or "t" = /l/.
 	`,
 ];
