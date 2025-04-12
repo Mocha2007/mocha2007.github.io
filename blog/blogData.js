@@ -1806,4 +1806,104 @@ const blogData = [
 		<li>Caiem: 14.8 &pm; 0.1 au</li>
 	</ul>
 	`,
+	`
+	@title Using Positional Symbol Frequency to Deduce Sonority
+	@date 1744448975732
+	@tags language math voynich
+	I recently read <a href="https://voynich.nu/extra/sol_hmm.html">a page</a> that used hidden markov modelling to try to deduce which symbols in the Voynich manuscript
+	are vowels and which are consonants.
+	This analysis was very interesting to me, and I immediately thought up of a few improvements that could be made.
+	In the process of that, however, I came across what may be an even more conclusive method.
+	@p
+	First, some background information.
+	This analysis assumes Voynich is written in <em>a</em> language, but makes no assumptions about <em>what</em> language.
+	@p
+	I started out trying to "decode" Latin phonology (pretending I know nothing about the Latin alphabet).
+	I quickly realized that since Latin syllable structure is (C)(C)(C)V(C)(C),
+	and the vast majority (about 75%, it turns out) of words start with a consonant,
+	the second letter of a Latin word is much more likely to be a vowel than the first.
+	This means that when evaluating the relative positional frequency of a symbol,
+	the frequency of it occuring in the <em>first</em> position should generally be higher than that if it appears in the <em>second</em> position,
+	assuming it is a consonant, and the <em>exact opposite</em> is true if it is a vowel.
+	Furthermore, since the <a href="https://en.wikipedia.org/wiki/Sonority_sequencing_principle">sonority sequencing principle</a> causes more sonorous phones to appear closer to the nucleus,
+	this type of analysis should separate symbols by sonority (so we not only know information about whether a symbol represents a consonant, but we also get information on how sonorous it is).
+	In fact, the exact distribution for Latin is as follows:
+	<table>
+		<tr>
+			<th>#</th>
+			<th>C</th>
+			<th>V</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>8.44%</td>
+			<td>16.08%</td>
+		</td>
+		<tr>
+			<td>2</td>
+			<td>21.39%</td>
+			<td>7.70%</td>
+		</td>
+	</table>
+	That is to say, in Latin, if a symbol represents a vowel, it is nearly 3x likelier to appear in the second position than in the first,
+	And vice versa for consonants.
+	I quickly rushed to perform this analysis on every Latin consonant,
+	but found that between the less sonorous consonants and vowels lie more sonorous consonants (like /r/ and /n/)
+	that often appear closer to syllable nuclei.
+	Thankfully, it turns out the distribution of sonorous consonants in the <em>third</em> position differs from that of vowels,
+	so I can use that property to more clearly separate them from the vowels, and turn it into a neat scatter plot, normalized to frequency:
+	<iframe width="700" height="700" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQMEG54aTTrEEkyvLh22MgurNAELTl3ZJC-oQeE5IQ1WPAxloEoDJVI4AbJ11H18CX3-tGtbh55macA/pubchart?oid=146502752&amp;format=interactive"></iframe>
+	This perfectly separates vowels from consonants with only a couple minor hiccups we will need to keep in mind:
+	<ul class="list2">
+		<li>x: only appears in the first position in loanwords, so of course this is much more likely to appear in positions 2+. Thankfully its frequency is very small which allows us to easily distinguish it.</li>
+		<li>i: appears further away from the central vowel cluster because it can act both as a consonant and a vowel, much like y in English.</li>
+	</ul>
+	I then performed this on a variety of languages to confirm this holds true for all languages, and came up with the following notes:
+	<ul class="list2">
+		<li>Polish: clean separation except for F (which is relatively uncommon, so it is easy to tell that is not a vowel) and R (which is rather sonorous).</li>
+		<li>English: clean separation except for H (which is quite often used in digraphs to modify consonants, so it exhibits vowel-like distribution) N (very sonorous) and Y (which functions as both a consonant and vowel).</li>
+		<li>German: clean separation except for X (which is so rare that it is obvious it is not a vowel). Even umlauted vowels are clearly distinguished.</li>
+		<li>Hawaiian: clean separation except for I (which probably has some phonotactic constraints I'm not aware of)</li>
+		<li>Arabic (Romanized): clean separation for the common vowels, although if I didn't know the orthography, it may be hard to tell E and O are vowels.</li>
+		<li>Eremoran (Romanized): very, very clean separation.</li>
+		<li>Ancient Greek: clean separation except for &lambda; (which is rather sonorous)</li>
+		<li>French: would be clean if you ignored diacritics, and except for i which often functions and both a consonant and vowel. Certain vowels with diacritics are scattered in odd ways due to the very particular uses of them (eg. &agrave; and &iuml;) that don't align closely to vowels or consonants.</li>
+		<li>Georgian: clean separation except for ღ (gh), which is rather sonorous, and rare enough to tell is is unlikely to be a vowel.</li>
+	</ul>
+	So before I reveal the graph for Voynichese, we need to keep a few very important things in mind:
+	<ul class="list2">
+		<li>Just because a symbol is in the bottom-right quadrant does not mean it is a vowel.
+			<ul class="list2">
+				<li>Occasionally, very sonorous consonants can have vowel-like distributions. /r/, /l/, and /n/ seem particularly susceptible to this.</li>
+				<li>Occasionally, a symbol representing a consonant cluster can have a vowel-like distribution (X is a common example), but their rarity makes it obvious it is not a vowel.</li>
+			</ul>
+		</li>
+		<li>Just because a symbol is not in the bottom-right quadrant does not mean it is a consonant.
+			<ul class="list2">
+				<li>Latin i is almost not in the quadrant because it is both a consonant and a vowel. For the same reason, English y and French i appear just outside the vowel quadrant. (This is, however, a blessing in disguise, because a very common symbol appearing just outside the vowel quadrant almost certainly represents a high vowel and its corresponding approximant)</li>
+				<li>Occasionally, vowels lie very slightly outside the quadrant for no apparent reason. But it is always very slightly, and they are often frequent enough to make them obvious. English u and Polish e are examples of this.</li>
+			</ul>
+		</li>
+	</ul>
+	Okay, enough rambling. Let's get to what you're here for.
+	<iframe width="700" height="700" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQMEG54aTTrEEkyvLh22MgurNAELTl3ZJC-oQeE5IQ1WPAxloEoDJVI4AbJ11H18CX3-tGtbh55macA/pubchart?oid=1173014915&amp;format=interactive"></iframe>
+	This data was extracted from a Voynich corpus transcribed into EVA.
+	<img src="https://voynich.nu/img/extra/eva01.gif">
+	Okay, analysis time.
+	<ul class="list2">
+		<li>"o", the most common symbol, appears just outside the vowel quadrant. Instant red flag for a high vowel/approximant pair, of which there are two: /i~j/ and /u~w/. So it likely represents one of these two possibilities, probably the former since /u/ tends to be less frequent both in European languages and cross-linguistically - in general /a/ ≈ /i/ > /e/ ≈ /o/ > /u/</li>
+		<li>"h" is firmly in the vowel quadrant and very common, so it is quite likely a vowel. Due to the reasons stated in the previous point, it is most likely /a/, but /e/ and /o/ are also probable.</li>
+		<li>"a" and "k" are also likely vowels. (Possibly /e/ and /o/, as stated before)</li>
+		<li>"l" and "t" may also be vowels, but could just as easily be sonorous consonants. If one is a vowel, it could be /u/.</li>
+		<li>the position of "q" suggests it is probably a word-initial allograph of another phoneme, but there are other possibilities (represents a phone only found in loanwords with a very peculiar distribution?)</li>
+		<li>the positions of "i", "e", and "n" suggest they are part of digraphs (I'm pretty sure that was the consensus to begin with).
+	</ul>
+	@p
+	Before I summarize, I should note that I also did this analysis on a variety of randomly-generated words using different phonotactic constraints,
+	encrypted plaintext, and random noise, and it is <em>very difficult</em> to generate distributions of symbols that match natural languages without
+	both a detailed naturalistic phonotactic model <em>and</em> zipf-like frequency distribution,
+	so if nothing else, this has convinced me that Voynich has actual linguistic content and isn't gibberish.
+	@p
+	Overall, this is admittedly nothing groundbreaking, but this does give me some further ideas on how to analyze the manuscript.
+	`,
 ];
