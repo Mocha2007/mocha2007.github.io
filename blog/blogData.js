@@ -1869,6 +1869,7 @@ const blogData = [
 		<li>Ancient Greek: clean separation except for &lambda; (which is rather sonorous)</li>
 		<li>French: would be clean if you ignored diacritics, and except for i which often functions and both a consonant and vowel. Certain vowels with diacritics are scattered in odd ways due to the very particular uses of them (eg. &agrave; and &iuml;) that don't align closely to vowels or consonants.</li>
 		<li>Georgian: clean separation except for ღ (gh), which is rather sonorous, and rare enough to tell is is unlikely to be a vowel.</li>
+		<li>Hebrew (Abjad): A disorganized clump near the origin, with finals randomly placed along the right edge, since Hebrew is not alphabetic.</li>
 	</ul>
 	So before I reveal the graph for Voynichese, we need to keep a few very important things in mind:
 	<ul class="list2">
