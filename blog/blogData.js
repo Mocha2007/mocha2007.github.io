@@ -1931,4 +1931,100 @@ const blogData = [
 	In the Voynich manuscript, nearly half of the stars begin with "o", of which about a third start with "ok" and a third start with "ot".
 	If Voynichese uses largely similar names for stars, that could mean "o" = /a/ and either "k" or "t" = /l/.
 	`,
+	`
+	@title Separating Vowels Programmatically
+	@date 1744561335704 
+	@tags language math rust voynich
+	As an addendum to my previous post:
+	I tried to create a program to determine vowels and consonants from an unknown text.
+	Unfortunately, I was not able to refine it to the degree where I am confident of its analysis.
+	Long story short, it identified "e o" as certainly vowels,
+	"h" as almost certainly a vowel (p = 0.92),
+	"y" as probably being a vowel (p=0.62),
+	and the rest as consonants,
+	although it was on the fence about "i" (p=0.47) and "a" (p=0.49).
+	For reference, it identified the following as vowels when presented with these languages:
+	<table>
+		<tr>
+			<th>Language</th>
+			<th>Correct</th>
+			<th>False Negative</th>
+			<th>False Positive</th>
+		</tr>
+		<tr>
+			<td>Armenian</td>
+			<td><ul>
+				<li>ա (a, p=1.0)</li>
+			</ul></td>
+			<td><ul>
+				<li>ե (e, p=0.27)</li>
+				<li>է (ē, p=0.0)</li>
+				<li>ը (ë, p=0.0)</li>
+				<li>ո (o, p=0.24)</li>
+				<li>օ (ò, p=0.0)</li>
+			</ul></td>
+			<td>None!</td>
+		</tr>
+		<tr>
+			<td>Georgian</td>
+			<td><ul>
+				<li>ი (i, p=0.63)</li>
+				<li>ა (a, p=0.67)</li>
+			</ul></td>
+			<td><ul>
+				<li>ე (e, p=0.38)</li>
+				<li>ო (o, p=0.21)</li>
+				<li>უ (u, p=0.16)</li>
+			</ul></td>
+			<td>None!</td>
+		</tr>
+		<tr>
+			<td>Hawaiian</td>
+			<td><ul>
+				<li>a (p=1.0)</li>
+				<li>e (p=0.79)</li>
+				<li>i (p=1.0)</li>
+				<li>o (p=1.0)</li>
+			</ul></td>
+			<td><ul>
+				<li>u (p=0.39)</li>
+			</ul></td>
+			<td><ul>
+				<li>k (p=0.65)</li>
+			</ul></td>
+		</tr>
+		<tr>
+			<td>Latin</td>
+			<td><ul>
+				<li>a (p=0.54)</li>
+				<li>e (p=1.0)</li>
+				<li>i (p=1.0)</li>
+				<li>u (p=0.67)</li>
+			</ul></td>
+			<td><ul>
+				<li>o (p=0.38)</li>
+			</ul></td>
+			<td><ul>
+				<li>t (p=0.62)</li>
+			</ul></td>
+		</tr>
+		<tr>
+			<td>Polish</td>
+			<td><ul>
+				<li>a (p=0.72)</li>
+				<li>e (p=0.68)</li>
+				<li>i (p=0.86)</li>
+			</ul></td>
+			<td><ul>
+				<li>ą (p=0.31)</li>
+				<li>ę (p=0.32)</li>
+				<li>o (p=0.48)</li>
+				<li>ó (p=0.31)</li>
+				<li>u (p=0.15)</li>
+				<li>y (p=0.35)</li>
+			</ul></td>
+			<td>None!</td>
+		</tr>
+	</table>
+	`,
 ];
