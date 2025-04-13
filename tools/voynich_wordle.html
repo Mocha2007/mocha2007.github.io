@@ -12,6 +12,13 @@
 
 <div id="game">
 	<h1 id="Wordle">Voynich Wordle</h1>
+	<img src="../img/voynich/wordle.jpg">
+	<div id="links">
+		<a href="../index.html">&larr; Home</a>
+		&mdash;
+		<a href="https://en.wikipedia.org/wiki/Voynich_manuscript">About VM &rarr;</a>
+	</div>
+	<br>
 	<span class="button" onclick="wordle.init();">New Game...</span>
 	<ul id="wordle_history" class="voynich"></ul>
 	<input type="text" id="wordle_input" onkeypress="event => event.key === 'Enter' ? wordle.submit() : undefined;" placeholder="press 'new game' to start">
