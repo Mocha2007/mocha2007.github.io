@@ -35,7 +35,9 @@ const wordle = {
 			});
 			this.initialized = true;
 			const button_container = document.getElementById('buttons');
-			'abcdefghijklmnopqrstuvwxyz'.split('').forEach(c => {
+			'acdefghiklmnopqrstxy'.split('').forEach((c, i) => {
+				if (i % 5 === 0)
+					button_container.appendChild(document.createElement('br'));
 				const span = document.createElement('span');
 				button_container.appendChild(span);
 				span.innerHTML = c;

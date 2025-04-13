@@ -10,3 +10,15 @@
 	text-transform: lowercase;
 	/* font-size: 12pt; */
 }
+#game {
+	margin: 0 auto;
+	max-width: 700px;
+	font-size: 200%;
+	text-align: center;
+}
+#buttons {
+	line-height: 200%;
+}
+.voynich.button {
+	padding-top: 20px;
+}
