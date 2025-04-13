@@ -152,29 +152,6 @@ a.eremoran {
 	list-style: none;
 	padding: 2vh;
 }
-/* wordle */
-#wordle_history {
-	list-style: none;
-}
-#wordle_history li {
-	margin-top: 2vh;
-}
-.wordle0, .wordle1, .wordle2 {
-	border-radius: 2vh;
-	color: silver;
-	font-size: 200%;
-	margin: 0.5vh;
-	padding: 1.4vh 1.9vh 1vh 2.5vh;
-}
-.wordle0 {
-	background-color: black;
-}
-.wordle1 {
-	background-color: olive;
-}
-.wordle2 {
-	background-color: green;
-}
 /* ereQuote */
 #ereQuote {
 	background-color: #bbb;

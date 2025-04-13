@@ -1,0 +1,12 @@
+@font-face {
+	font-family: 'EVA Hand 1';
+	font-style: normal;
+	src: local('EVA Hand 1'), 
+		 url('../font/eva1-webfont.woff') format('woff'),
+		 url('../font/eva1-webfont.ttf') format('truetype');
+  }
+.voynich {
+	font-family: 'EVA Hand 1';
+	text-transform: lowercase;
+	/* font-size: 12pt; */
+}
