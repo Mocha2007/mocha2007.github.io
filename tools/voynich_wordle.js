@@ -44,6 +44,7 @@ const wordle = {
 				span.className = 'voynich button';
 				span.onclick = () => wordle.append(c);
 			});
+			document.getElementById('wordle_input').placeholder = '';
 		}
 		this.reset();
 	},
