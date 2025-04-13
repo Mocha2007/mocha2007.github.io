@@ -2026,5 +2026,10 @@ const blogData = [
 			<td>None!</td>
 		</tr>
 	</table>
+	@p
+	Additionally, I considered whether letter sociability measure would work well.
+	After testing it on several languages, it seems to have mixed results - perfect for Latin, okay for English, terrible for Polish.
+	When I tested Voynich, I found "a e o s y" were particularly sociable, so perhaps those are the vowels.
+	"h" was close to the median sociability.
 	`,
 ];
