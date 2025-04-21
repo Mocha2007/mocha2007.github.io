@@ -2039,6 +2039,7 @@ const blogData = [
 	Just a short what-if post today.
 	@p
 	Results:
+	<img src="../img/cardinals.png">
 	<table>
 		<tr>
 			<th>Country</th>
