@@ -20,6 +20,13 @@
 	4	https://web.archive.org/web/20190104023431/http://www.cosmic-origins.org/
 			https://web.archive.org/web/20181228175648/http://www.cosmic-origins.org/PAGES/chartnuc.html
 */
+/// kg
+const human_weight = 60;
+/// I assume 1000x recommended intake is GIGABAD
+const over_nutrition = 1000;
+/// in m^3: derived from 6-8 L per minute
+const minute_of_breathing = 7 / 1000;
+const workday_of_breathing = 8 * 60 * minute_of_breathing;
 // also used: CRC 97th ed.
 const nucleosynthesisColors = {
 	artificial: '#fff', // the rest
@@ -595,6 +602,7 @@ const elementData = [
 				boil: 1156,
 				melt: 370.87,
 			},
+			toxicity: 2.3e-3 / human_weight * over_nutrition, // double the daily intake, a wild guess. (see <https://en.wikipedia.org/wiki/Hypernatremia>)
 			youngsModulus: 10e9,
 		},
 	},
@@ -649,6 +657,7 @@ const elementData = [
 				boil: 1363,
 				melt: 923,
 			},
+			toxicity: 0.42e-3 / human_weight * over_nutrition, // double the daily intake, a wild guess. (see <https://en.wikipedia.org/wiki/Hypermagnesemia>)
 			youngsModulus: 45e9,
 		},
 	},
@@ -805,6 +814,7 @@ const elementData = [
 				boil: 550,
 				melt: 317.3,
 			},
+			toxicity: 1.25e-3 / human_weight * over_nutrition, // double the daily intake, a wild guess. (see <https://en.wikipedia.org/wiki/Hyperphosphatemia>)
 			youngsModulus: 6e9, // based on data from https://arxiv.org/pdf/1211.3512.pdf => v = 0.3 for black
 		},
 	},
@@ -903,6 +913,7 @@ const elementData = [
 				boil: 239.11,
 				melt: 171.6,
 			},
+			toxicity: 2.3e-3 / human_weight * over_nutrition, // double the daily intake, a wild guess. (see <https://en.wikipedia.org/wiki/Hypernatremia>)
 		},
 	},
 	{
@@ -997,6 +1008,7 @@ const elementData = [
 				boil: 1032,
 				melt: 336.53,
 			},
+			toxicity: 4.7e-3 / human_weight * over_nutrition, // double the daily intake, a wild guess. (see <https://en.wikipedia.org/wiki/Hyperkalemia>)
 			youngsModulus: 3.53e9,
 		},
 	},
@@ -1047,6 +1059,7 @@ const elementData = [
 				boil: 1757,
 				melt: 1115,
 			},
+			toxicity: 1.3e-3 / human_weight * over_nutrition, // double the daily intake, a wild guess. (see <https://en.wikipedia.org/wiki/Hypercalcaemia>)
 			youngsModulus: 20e9,
 		},
 	},
@@ -1149,6 +1162,7 @@ const elementData = [
 				boil: 3560,
 				melt: 1941,
 			},
+			toxicity: 0.8e-6 / human_weight * over_nutrition, // "titanium is non-toxic even in large doses ... people consume an average of 0.8 mg / day"
 			youngsModulus: 116e9,
 		},
 	},
@@ -1201,6 +1215,7 @@ const elementData = [
 				boil: 3680,
 				melt: 2183,
 			},
+			toxicity: 12e-9 / human_weight * over_nutrition, // double the daily intake, a wild guess. (see <https://en.wikipedia.org/wiki/Zinc_toxicity>)
 			youngsModulus: 128e9,
 		},
 	},
@@ -1313,6 +1328,7 @@ const elementData = [
 				boil: 2334,
 				melt: 1519,
 			},
+			toxicity: 2.3e-6 / human_weight * over_nutrition, // double the daily intake, a wild guess. (see <https://en.wikipedia.org/wiki/Zinc_toxicity>)
 			youngsModulus: 198e9,
 		},
 	},
@@ -1481,6 +1497,7 @@ const elementData = [
 				boil: 3186,
 				melt: 1728,
 			},
+			toxicity: 1e-3 / human_weight * over_nutrition, // tolerable upper intake
 			youngsModulus: 200e9,
 		},
 	},
@@ -1595,6 +1612,7 @@ const elementData = [
 				boil: 1180,
 				melt: 692.88,
 			},
+			toxicity: 11e-6 / human_weight * over_nutrition, // double the daily intake, a wild guess. (see <https://en.wikipedia.org/wiki/Zinc_toxicity>)
 			youngsModulus: 108e9,
 		},
 	},
@@ -1751,7 +1769,7 @@ const elementData = [
 				boil: 887,
 				melt: 887, // sublimates
 			},
-			toxicity: 763e-6, // rat, oral
+			toxicity: 1e-6, // "The acute minimal lethal dose of arsenic in adults is estimated to be 70 to 200 mg or 1 mg/kg/day."
 			youngsModulus: 8e9,
 		},
 	},
@@ -1859,6 +1877,7 @@ const elementData = [
 				boil: 332,
 				melt: 265.8,
 			},
+			toxicity: 8e-6 / human_weight * over_nutrition, // "normal daily intake is 2-8 mg"
 		},
 	},
 	{
@@ -2004,6 +2023,7 @@ const elementData = [
 				boil: 1655,
 				melt: 1050,
 			},
+			toxicity: 2e-6 / human_weight * over_nutrition, // average daily intake
 			youngsModulus: 15.7e9,
 		},
 	},
@@ -2053,6 +2073,7 @@ const elementData = [
 				boil: 3609,
 				melt: 1799,
 			},
+			toxicity: 500e-6 * minute_of_breathing / human_weight, // "at levels of 500 mg/m^3 yttrium is IDLH"
 			youngsModulus: 63.5e9,
 		},
 	},
@@ -2103,6 +2124,7 @@ const elementData = [
 				boil: 4682,
 				melt: 2128,
 			},
+			toxicity: 25e-6 * minute_of_breathing / human_weight, // "at levels of 25 mg/m^3 zirconium is IDLH"
 			youngsModulus: 88e9,
 		},
 	},
@@ -2214,6 +2236,7 @@ const elementData = [
 				boil: 4912,
 				melt: 2896,
 			},
+			toxicity: 45e-9 / human_weight * over_nutrition, // double the daily intake, a wild guess. (see <https://en.wikipedia.org/wiki/Zinc_toxicity>)
 			youngsModulus: 329e9,
 		},
 	},
@@ -2256,6 +2279,7 @@ const elementData = [
 				boil: 4538,
 				melt: 2430,
 			},
+			toxicity: 15e-12 * over_nutrition, // 15 mcg/g is apparently safe in mice (see <https://en.wikipedia.org/wiki/Zinc_toxicity>)
 			youngsModulus: (382e9 + 430e9)/2,
 		},
 	},
@@ -2487,6 +2511,7 @@ const elementData = [
 				boil: 2435,
 				melt: 1234.93,
 			},
+			toxicity: 5e-9 * over_nutrition, // safe at doses up to 5 μg/(kg·d)
 			youngsModulus: 83e9,
 		},
 	},
@@ -2594,6 +2619,7 @@ const elementData = [
 				boil: 2345,
 				melt: 429.75,
 			},
+			toxicity: 0.1e-6 * workday_of_breathing / human_weight * over_nutrition, // recommended exposure limit over an 8h workday
 			youngsModulus: 11e9,
 		},
 	},
