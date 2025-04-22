@@ -72,6 +72,34 @@ const elemGoldschmidt = [
 	2, 2, 2, 3, 3, 3, 3, 3, 3, 1,
 	1, 1, 1,
 ];
+
+const elemNaming = [
+	// p1
+	undefined, 1,
+	// p2
+	2, 2,
+	2, 2, 2, undefined, 2, undefined,
+	// p3
+	2, 1,
+	2, 2, 3, undefined, 3, undefined,
+	// p4
+	2, 2,
+	1, 0, 0, 3, 1, 3, undefined, 3, 1, undefined,
+	1, 1, 2, 1, undefined, undefined,
+	// p5
+	3, 2,
+	2, 2, 0, 2, undefined, 1, 3, 0, undefined, 2,
+	2, 3, undefined, 1, 3, undefined,
+	// p6
+	3, undefined,
+	undefined, 1, undefined, undefined, 0, 2, 1, 0, 1, undefined, 1, 1, 1, 2,
+	1, 1, 0, undefined, 1, undefined, undefined, 3, 3, 0,
+	3, undefined, 3, 1, undefined, undefined,
+	// p7
+	1, undefined,
+	undefined, 0, undefined, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0,
+	0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0,
+];
 // p7
 elemGoldschmidt[90] = elemGoldschmidt[92] = 2;
 
@@ -774,6 +802,9 @@ class ChemElement {
 					c = c4[this.isotopes[isotopeMasses.indexOf(
 						Math.max(...isotopeMasses))].mass % 4];
 				}
+				break;
+			case 'naming':
+				c = elemGoldschmidtColors[elemNaming[this.z-1]];
 				break;
 			case 'nobleMetal':
 				c = this.nobleMetal === undefined ? 'white' : nobleMetalColors[this.nobleMetal];
