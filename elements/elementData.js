@@ -20,13 +20,6 @@
 	4	https://web.archive.org/web/20190104023431/http://www.cosmic-origins.org/
 			https://web.archive.org/web/20181228175648/http://www.cosmic-origins.org/PAGES/chartnuc.html
 */
-/// kg
-const human_weight = 60;
-/// I assume 1000x recommended intake is GIGABAD
-const over_nutrition = 1000;
-/// in m^3: derived from 6-8 L per minute
-const minute_of_breathing = 7 / 1000;
-const workday_of_breathing = 8 * 60 * minute_of_breathing;
 // also used: CRC 97th ed.
 const nucleosynthesisColors = {
 	artificial: '#fff', // the rest
@@ -59,6 +52,29 @@ const month = year / 12;
 // used for metal prices
 const pound = 0.45359237;
 const ounce = pound/16;
+
+/// kg
+const human_weight = 60;
+/// I assume 1000x recommended intake is GIGABAD
+const over_nutrition = 1000;
+/// in m^3: derived from 6-8 L per minute
+const minute_of_breathing = 7 / 1000;
+const workday_of_breathing = 8 * 60 * minute_of_breathing;
+
+/**
+ * Thought process behind this:
+ * The median lethal dose (LD50) for acute radiation exposure is about 4.5 Sv.
+ * The committed effective dose equivalent 210Po is 0.51 μSv/Bq if ingested, and 2.5 μSv/Bq if inhaled.
+ * A fatal 4.5 Sv dose can be caused by ingesting 8.8 MBq (240 μCi), about 50 nanograms (ng), or inhaling 1.8 MBq (49 μCi), about 10 ng.
+ * Po-210 has a half-life of 138.376 d, and decays exclusively by alpha decay.
+ * Therefore, I can roughly approximate the LD50 of a radioactive element by taking the ratio of HL's.
+ * This is probably not accurate for HL > 1000 yr (100?), so don't use it on elements with a longer HL...
+ * @param {number} hl half-life, in seconds
+ */
+function ld50_radiation(hl){
+	const hl_po210 = 138.376 * day;
+	return hl / hl_po210 * 50e-12 / human_weight;
+}
 
 const elementData = [
 	{
@@ -3225,6 +3241,7 @@ const elementData = [
 				boil: 3273,
 				melt: 1315,
 			},
+			toxicity: ld50_radiation(17.7*year),
 			youngsModulus: 46e9,
 		},
 	},
@@ -4439,6 +4456,7 @@ const elementData = [
 				boil: 610,
 				melt: 575,
 			},
+			toxicity: ld50_radiation(8.1*hour),
 		},
 	},
 	{
@@ -4477,6 +4495,7 @@ const elementData = [
 				boil: 211.5,
 				melt: 202,
 			},
+			toxicity: ld50_radiation(3.8235*day),
 		},
 	},
 	{
@@ -4515,6 +4534,7 @@ const elementData = [
 				boil: 950,
 				melt: 300,
 			},
+			toxicity: ld50_radiation(22*minute),
 		},
 	},
 	{
@@ -4596,6 +4616,7 @@ const elementData = [
 				boil: 3471,
 				melt: 1323,
 			},
+			toxicity: ld50_radiation(21.772*year),
 		},
 	},
 	{
