@@ -4198,6 +4198,7 @@ const elementData = [
 				boil: 629.88,
 				melt: 234.43,
 			},
+			toxicity: 44e-6 * workday_of_breathing / human_weight, // "A study has shown that acute exposure (4–8 hours) to calculated elemental mercury levels of 1.1 to 44 mg/m3 resulted in chest pain, dyspnea, cough, hemoptysis, impairment of pulmonary function, and evidence of interstitial pneumonitis."
 		},
 	},
 	{
@@ -4300,6 +4301,7 @@ const elementData = [
 				boil: 2022,
 				melt: 600.61,
 			},
+			toxicity: 100e-6 * minute_of_breathing / human_weight, // "at levels of 500 mg/m^3 yttrium is IDLH"
 			youngsModulus: 16e9,
 		},
 	},
