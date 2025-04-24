@@ -4435,6 +4435,7 @@ const elementData = [
 			abundance: {
 				earth: 1e-24, // https://en.wikipedia.org/wiki/Astatine#Natural_occurrence
 			},
+			appearance: 'metallic',
 			categories: {
 				halogen: true,
 				metalloid: 0.5,
