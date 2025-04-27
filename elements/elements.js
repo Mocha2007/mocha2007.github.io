@@ -151,7 +151,7 @@ class ChemElement {
 			}
 			/** string => true|false|0.5 */
 			this.categories = properties.categories;
-			/** @type {number} */
+			/** @type {number} DO NOT USE THIS EXCEPT IN ESTIMATES. Use radius.covalent for "real" radius!!! */
 			this.covalentRadius = properties.covalentRadius;
 			/** @type {string} */
 			this.crystal = properties.crystal;

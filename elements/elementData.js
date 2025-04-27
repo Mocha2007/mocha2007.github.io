@@ -5066,7 +5066,6 @@ const elementData = [
 			modelColor: 'rgb(179, 13, 166)',
 			oxidation: [3],
 			radius: {
-				covalent: 173e-12,
 				ionic: 90e-12, // four estimates were given
 				metallic: 194e-12,
 			},
@@ -5095,7 +5094,6 @@ const elementData = [
 			modelColor: 'rgb(189, 13, 135)',
 			oxidation: [2],
 			radius: {
-				covalent: 176e-12,
 				ionic: 100e-12,
 				metallic: 197e-12,
 			},
@@ -5127,7 +5125,6 @@ const elementData = [
 			modelColor: 'rgb(199, 0, 102)',
 			oxidation: [3],
 			radius: {
-				covalent: 161e-12,
 				ionic: 88.6e-12,
 				metallic: 157e-12,
 			},
