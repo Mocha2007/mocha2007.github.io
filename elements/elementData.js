@@ -815,7 +815,7 @@ const elementData = [
 			nucleosynthesis: {
 				neonBurningProcess: 1,
 			},
-			nutrition: 1,
+			nutrition: 0,
 			oxidation: [-3, 3, 5],
 			prices: {
 				2019: 2.69,
@@ -867,7 +867,7 @@ const elementData = [
 				oxygenBurningProcess: 0.9924,
 				alphaProcess: 0.0034,
 			},
-			nutrition: 1,
+			nutrition: 0,
 			oxidation: [-2, 2, 4, 6],
 			prices: {
 				2019: 0.0926,
@@ -1161,6 +1161,7 @@ const elementData = [
 			nucleosynthesis: {
 				alphaProcess: 1,
 			},
+			nutrition: 4,
 			oxidation: [2, 3, 4],
 			prices: {
 				2022: 9,
@@ -2673,7 +2674,6 @@ const elementData = [
 				sProcess: 0.69,
 				rProcess: 0.31,
 			},
-			nutrition: 3,
 			oxidation: [-4, 2, 4],
 			prices: {
 				2022: 23.307,
@@ -3276,6 +3276,7 @@ const elementData = [
 				sProcess: 0.29,
 				rProcess: 0.71,
 			},
+			nutrition: 4,
 			oxidation: [3],
 			prices: {
 				2021: 13.94,
@@ -3325,6 +3326,7 @@ const elementData = [
 				sProcess: 0.05,
 				rProcess: 0.95,
 			},
+			nutrition: 4,
 			oxidation: [2, 3],
 			prices: {
 				2020: 31.4,
@@ -3373,6 +3375,7 @@ const elementData = [
 				sProcess: 0.15,
 				rProcess: 0.85,
 			},
+			nutrition: 4,
 			oxidation: [3],
 			prices: {
 				2020: 28.6,
