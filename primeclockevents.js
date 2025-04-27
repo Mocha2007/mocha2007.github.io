@@ -166,6 +166,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[1.1e9, 'Beginning of the <a href="https://en.wikipedia.org/wiki/Copernican_period">Copernician Period</a> on the moon, the current lunar geologic period'],
 	[1.047e9, '<i><a href="https://en.wikipedia.org/wiki/Bangiomorpha">Bangiomorpha</a></i>'],
 	[1e9, 'Beginning of the <a href="https://en.wikipedia.org/wiki/Tonian">Tonian</a> period of the <a href="https://en.wikipedia.org/wiki/Neoproterozoic">Neoproterozoic</a>'],
+	[968e6, 'Earth\'s first <a href="https://en.wikipedia.org/wiki/Solar_eclipse#Types">Annular solar eclipse</a>'], // source: "lunatool geo era" command
 	[950e6, 'The <a href="https://en.wikipedia.org/wiki/Sun">Sun</a> has completed four galactic orbits since this time.'],
 	[896e6, 'Formation of the <a href="https://en.wikipedia.org/wiki/Bitter_Springs_Group">Bitter Springs Group</a> in Australia'],
 	[870e6, 'Formation of the <a href="https://en.wikipedia.org/wiki/Adelaide_Rift_Complex">Adelaide Rift Complex</a>'],
