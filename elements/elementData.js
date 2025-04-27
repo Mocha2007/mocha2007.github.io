@@ -4459,6 +4459,11 @@ const elementData = [
 				decay: 1,
 			},
 			oxidation: [-1, 1],
+			// https://www.knowledgedoor.com/2/elements_handbook/astatine.html
+			radius: {
+				covalent: 147e-12,
+				ionic: 62e-12,
+			},
 			temperatures: {
 				boil: 610,
 				melt: 575,
@@ -4991,6 +4996,11 @@ const elementData = [
 				2004: 906e9,
 			},
 			production: 0.275e-6,
+			// https://www.knowledgedoor.com/2/elements_handbook/californium.html
+			radius: {
+				covalent: 168e-12,
+				ionic: 95e-12,
+			},
 			temperatures: {
 				boil: 1743, // estimate
 				melt: 1173,
@@ -5018,6 +5028,10 @@ const elementData = [
 			ionization: [619e3, 1216e3, 2334e3, 3734e3],
 			modelColor: 'rgb(179, 31, 212)',
 			oxidation: [3],
+			// https://www.knowledgedoor.com/2/elements_handbook/einsteinium.html
+			radius: {
+				covalent: 165e-12,
+			},
 			temperatures: {
 				boil: 1269, // estimate
 				melt: 1133,
@@ -5044,6 +5058,10 @@ const elementData = [
 			ionization: [629e3, 1225e3, 2363e3, 3792e3],
 			modelColor: 'rgb(179, 31, 186)',
 			oxidation: [3],
+			// https://www.knowledgedoor.com/2/elements_handbook/fermium.html
+			radius: {
+				covalent: 167e-12,
+			},
 			temperatures: {
 				melt: 1800, // predicted
 			},
@@ -5069,6 +5087,7 @@ const elementData = [
 			modelColor: 'rgb(179, 13, 166)',
 			oxidation: [3],
 			radius: {
+				covalent: 173e-12, // https://www.knowledgedoor.com/2/elements_handbook/mendelevium.html
 				ionic: 90e-12, // four estimates were given
 				metallic: 194e-12,
 			},
@@ -5097,6 +5116,7 @@ const elementData = [
 			modelColor: 'rgb(189, 13, 135)',
 			oxidation: [2],
 			radius: {
+				covalent: 176e-12, // https://www.knowledgedoor.com/2/elements_handbook/nobelium.html
 				ionic: 100e-12,
 				metallic: 197e-12,
 			},
@@ -5128,6 +5148,7 @@ const elementData = [
 			modelColor: 'rgb(199, 0, 102)',
 			oxidation: [3],
 			radius: {
+				covalent: 161e-12, // https://www.knowledgedoor.com/2/elements_handbook/lawrencium.html
 				ionic: 88.6e-12,
 				metallic: 157e-12,
 			},
