@@ -5065,6 +5065,11 @@ const elementData = [
 			ionization: [636e3, 1235e3, 2470e3, 3840e3],
 			modelColor: 'rgb(179, 13, 166)',
 			oxidation: [3],
+			radius: {
+				covalent: 173e-12,
+				ionic: 90e-12, // four estimates were given
+				metallic: 194e-12,
+			},
 			temperatures: {
 				melt: 1100, // predicted
 			},
@@ -5089,6 +5094,11 @@ const elementData = [
 			ionization: [639e3, 1254e3, 2643e3, 3956e3],
 			modelColor: 'rgb(189, 13, 135)',
 			oxidation: [2],
+			radius: {
+				covalent: 176e-12,
+				ionic: 100e-12,
+				metallic: 197e-12,
+			},
 			temperatures: {
 				melt: 1100, // predicted
 			},
@@ -5116,6 +5126,11 @@ const elementData = [
 			ionization: [479e3, 1428e3, 2228e3, 4910e3],
 			modelColor: 'rgb(199, 0, 102)',
 			oxidation: [3],
+			radius: {
+				covalent: 161e-12,
+				ionic: 88.6e-12,
+				metallic: 157e-12,
+			},
 			temperatures: {
 				melt: 1900, // predicted
 			},
