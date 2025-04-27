@@ -2944,6 +2944,7 @@ const elementData = [
 				vanDerWaals: 343e-12,
 			},
 			resistivity: 205e-9,
+			speedOfSound: 980, // https://www.knowledgedoor.com/2/elements_handbook/speed_of_sound.html
 			temperatures: {
 				boil: 944,
 				melt: 301.59,
@@ -3990,6 +3991,7 @@ const elementData = [
 				covalent: 144e-12,
 			},
 			resistivity: 81.2e-9,
+			speedOfSound: 4940, // https://www.knowledgedoor.com/2/elements_handbook/speed_of_sound_part_3.html
 			temperatures: {
 				boil: 5285,
 				melt: 3306,
@@ -4214,6 +4216,7 @@ const elementData = [
 				vanDerWaals: 155e-12,
 			},
 			resistivity: 961e-9,
+			speedOfSound: 1454, // https://www.knowledgedoor.com/2/elements_handbook/speed_of_sound_part_2.html
 			temperatures: {
 				boil: 629.88,
 				melt: 234.43,
