@@ -76,6 +76,12 @@ const GRADIENT = {
 			g: [42, 742, -664, 0],
 			b: [131, 540, -616, 0],
 		},
+		// https://upload.wikimedia.org/wikipedia/commons/0/0a/Parrot_GB_example.png
+		gameboy: {
+			r: [41, 5.5, 153, -76.5],
+			g: [65, 29, 175.5, -139.5],
+			b: [57, 71.5, -36, -76.5],
+		},
 		// luna-made <3
 		elevation: {
 			r: [81, 366, -132, -70],
