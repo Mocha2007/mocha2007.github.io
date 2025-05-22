@@ -93,5 +93,11 @@ const GRADIENT = {
 			g: [137, 139, 7, -28],
 			b: [186, 76, 21, -28],
 		},
+		// f(1) scaled +4.1% to ensure brightness is monotonic increasing
+		gameboy2: {
+			r: [41, 10.5, 130.3, -53.8],
+			g: [65, 34.3, 151.5, -115.5],
+			b: [57, 72.2, -39, -73.5],
+		},
 	},
 };
