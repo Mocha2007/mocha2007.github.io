@@ -79,7 +79,7 @@ const GRADIENT = {
 		// https://upload.wikimedia.org/wikipedia/commons/0/0a/Parrot_GB_example.png
 		gameboy: {
 			r: [41, 5.5, 153, -76.5],
-			g: [65, 29, 175.5, -139.5],
+			g: [65, 29, 175.5, -139.5], // change to 65, 36, 144, -108 to avoid extremum
 			b: [57, 71.5, -36, -76.5],
 		},
 		// luna-made <3
