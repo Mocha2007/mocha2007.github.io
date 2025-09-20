@@ -39,6 +39,7 @@ var subtitles =	[
 	'The fox&rsquo;s attempt at the grapes, although he couldn&rsquo;t, was admirable.', // weird English sentence
 	'The G in GIF is pronounced like the G in <em>gigantic</em> or <em>suggest</em>.',
 	'roses are red / violets are blue / singular they / predates singular you',
+	'Mors fascistis',
 	// mat
 	'I have created a truly marvelous conworld,<br/>which this randomly chosen subtitle is too small to contain.',
 	'Mocha &isin; UwUers',
