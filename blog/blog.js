@@ -181,7 +181,7 @@ class Tag {
 	/** @param {string} name */
 	constructor(name){
 		this.name = name;
-		this.title = title(name.toLowerCase().replace('_', ' '));
+		this.title = title(name.toLowerCase().replaceAll('_', ' '));
 		Tag.tags.push(this);
 	}
 	get elem(){
