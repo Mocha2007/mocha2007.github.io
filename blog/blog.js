@@ -446,6 +446,8 @@ const blog = {
 	/** @param {number} i */
 	goto(i){
 		this.set(Blogpost.blogposts[this.current = i].elem);
+		// update url
+		window.history.pushState(undefined, undefined, `?i=${i}`);
 	},
 	init(){
 		blogData.forEach(Blogpost.parse);
