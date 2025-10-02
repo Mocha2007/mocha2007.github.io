@@ -57,7 +57,7 @@ const timelineTest = [
 	{
 		name: 'Seventh Party System',
 		start: '2016',
-		end: '2025',
+		end: '2028',
 		href: true,
 		forceY: 1,
 	},
@@ -449,11 +449,19 @@ const timelineTest = [
 		href: true,
 		forceY: 3,
 	},
+	{
+		name: 'Donald Trump',
+		start: '20 Jan 2025',
+		end: '20 Jan 2028',
+		color: colors.r,
+		href: true,
+		forceY: 3,
+	},
 	// US Congress (overall picture)
 	{
 		name: 'United States Congress',
 		start: '4 Mar 1789',
-		end: '2025', // todo
+		end: '2026',
 		href: true,
 		forceY: 5,
 		insets: [
@@ -602,13 +610,18 @@ const timelineTest = [
 				end: '3 Jan 2023',
 				color: colors.d,
 			},
+			{
+				start: '3 Jan 2025',
+				end: '3 Jan 2027',
+				color: colors.r,
+			},
 		],
 	},
 	// US Senate
 	{
 		name: 'United States Senate',
 		start: '4 Mar 1789',
-		end: '2025', // todo
+		end: '2026',
 		href: true,
 		forceY: 6,
 		insets: [
@@ -767,13 +780,18 @@ const timelineTest = [
 				end: '3 Jan 2025',
 				color: colors.d,
 			},
+			{
+				start: '20 Jan 2025',
+				end: '3 Jan 2027',
+				color: colors.r,
+			},
 		],
 	},
 	// US House
 	{
 		name: 'United States House of Representatives',
 		start: '4 Mar 1789',
-		end: '2025', // todo
+		end: '2026',
 		href: true,
 		forceY: 7,
 		insets: [
@@ -919,7 +937,7 @@ const timelineTest = [
 			},
 			{
 				start: '3 Jan 2023',
-				end: '3 Jan 2025',
+				end: '3 Jan 2027',
 				color: colors.r,
 			},
 		],
@@ -928,7 +946,7 @@ const timelineTest = [
 	{
 		name: 'United States Supreme Court',
 		start: '19 Oct 1789',
-		end: '2023',
+		end: '2026',
 		href: true,
 		forceY: 9,
 		insets: [
@@ -989,7 +1007,7 @@ const timelineTest = [
 			},
 			{
 				start: '6 Oct 2018',
-				end: '2023',
+				end: '1 Jan 2026', // ???
 				color: colors.r,
 			},
 		],
@@ -1133,7 +1151,8 @@ const timelineTest = [
 	{
 		name: 'John Roberts',
 		start: '29 Sep 2005',
-		end: '2023',
+		end: '2026',
+		color: colors.r,
 		href: true,
 		forceY: 10,
 	},
@@ -1141,7 +1160,7 @@ const timelineTest = [
 	{
 		name: 'State Governorships',
 		start: '7 Dec 1787',
-		end: '2024', // after 2023 elections dems might tie it
+		end: '2026', // after 2023 elections dems might tie it
 		// href: true,
 		forceY: 12,
 		insets: [
@@ -1256,7 +1275,7 @@ const timelineTest = [
 			},
 			{
 				start: '2011',
-				end: '2024',
+				end: '2026',
 				color: colors.r,
 			},
 		],
@@ -1265,7 +1284,7 @@ const timelineTest = [
 	{
 		name: 'Governor of Delaware',
 		start: '7 Dec 1787',
-		end: '21 Jan 2025',
+		end: '21 Jan 2029',
 		href: true,
 		forceY: 13,
 		insets: [
@@ -1411,7 +1430,7 @@ const timelineTest = [
 			},
 			{
 				start: '19 Jan 1993',
-				end: '21 Jan 2025',
+				end: '21 Jan 2029',
 				color: colors.d,
 			},
 		],
