@@ -6,6 +6,7 @@ const colors = {
 	f: '#EA9978', // Federalist; also Pro-Administration
 	kn: '#D99FE8', // Know-Nothing AKA American Party
 	nu: '#B22222', // National Union
+	p: '#5FD170', // Progressive
 	r: '#E81B23',
 	whig: '#F0C862', // also National Republican & Anti-Jacksonians
 };
@@ -1431,6 +1432,131 @@ const timelineTest = [
 			{
 				start: '19 Jan 1993',
 				end: '21 Jan 2029',
+				color: colors.d,
+			},
+		],
+	},
+	// California Governorship
+	{
+		name: 'Governor of California',
+		start: '20 Dec 1849',
+		end: '3 Jan 2027',
+		href: true,
+		forceY: 14,
+		insets: [
+			{
+				start: '8 Jan 1852',
+				end: '9 Jan 1856',
+				color: colors.d,
+			},
+			{
+				start: '9 Jan 1856',
+				end: '8 Jan 1858',
+				color: colors.kn,
+			},
+			{
+				start: '8 Jan 1858',
+				end: '10 Jan 1862',
+				color: colors.d,
+			},
+			{
+				start: '10 Jan 1862',
+				end: '5 Dec 1867',
+				color: colors.r,
+			},
+			{
+				start: '5 Dec 1867',
+				end: '8 Dec 1871',
+				color: colors.d,
+			},
+			{
+				start: '8 Dec 1871',
+				end: '9 Dec 1875',
+				color: colors.r,
+			},
+			{
+				start: '9 Dec 1875',
+				end: '8 Jan 1880',
+				color: colors.d,
+			},
+			{
+				start: '8 Jan 1880',
+				end: '10 Jan 1883',
+				color: colors.r,
+			},
+			{
+				start: '10 Jan 1883',
+				end: '12 Sep 1887',
+				color: colors.d,
+			},
+			{
+				start: '12 Sep 1887',
+				end: '11 Jan 1895',
+				color: colors.r,
+			},
+			{
+				start: '11 Jan 1895',
+				end: '4 Jan 1899',
+				color: colors.d,
+			},
+			{
+				start: '4 Jan 1899',
+				end: '1912', // Hiram Johnson switched to Progressive
+				color: colors.r,
+			},
+			{
+				start: '1912',
+				end: '15 Mar 1917',
+				color: colors.p,
+			},
+			{
+				start: '15 Mar 1917',
+				end: '2 Jan 1939',
+				color: colors.r,
+			},
+			{
+				start: '2 Jan 1939',
+				end: '4 Jan 1943',
+				color: colors.d,
+			},
+			{
+				start: '4 Jan 1943',
+				end: '5 Jan 1959',
+				color: colors.r,
+			},
+			{
+				start: '5 Jan 1959',
+				end: '2 Jan 1967',
+				color: colors.d,
+			},
+			{
+				start: '2 Jan 1967',
+				end: '6 Jan 1975',
+				color: colors.r,
+			},
+			{
+				start: '6 Jan 1975',
+				end: '3 Jan 1983',
+				color: colors.d,
+			},
+			{
+				start: '3 Jan 1983',
+				end: '4 Jan 1999',
+				color: colors.r,
+			},
+			{
+				start: '4 Jan 1999',
+				end: '17 Nov 2003',
+				color: colors.d,
+			},
+			{
+				start: '17 Nov 2003',
+				end: '3 Jan 2011',
+				color: colors.r,
+			},
+			{
+				start: '3 Jan 2011',
+				end: '3 Jan 2027',
 				color: colors.d,
 			},
 		],
