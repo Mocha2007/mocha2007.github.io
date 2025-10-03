@@ -19,14 +19,18 @@ class PaleoMap {
 /** @type {PaleoMap[]} */
 PaleoMap.maps = [];
 
+// cf. https://commons.wikimedia.org/wiki/Category:Palaeomaps_by_year
 new PaleoMap(0, 'https://upload.wikimedia.org/wikipedia/commons/7/78/Mollweide-projection.jpg');
 new PaleoMap(1, 'https://upload.wikimedia.org/wikipedia/commons/6/60/1_Ma_paleoglobe.png');
-// new PaleoMap(10, 'https://upload.wikimedia.org/wikipedia/commons/2/26/Mapa_amb_distibuci%C3%B3_al_Eoc%C3%A8.png'); dead
+new PaleoMap(5, 'https://upload.wikimedia.org/wikipedia/commons/f/fc/Mollweide_Paleographic_Map_of_Earth%2C_5_Ma_%28Zanclean_Age%29.jpg');
+new PaleoMap(10, 'https://upload.wikimedia.org/wikipedia/commons/5/56/010_mya.png');
 new PaleoMap(15, 'https://upload.wikimedia.org/wikipedia/commons/6/6a/15_Ma_paleoglobe.png');
-new PaleoMap(30, 'http://www.scotese.com/images/B030_zonef.jpg');
-new PaleoMap(60, 'http://www.scotese.com/images/E060_zonef.jpg');
+new PaleoMap(21, 'https://upload.wikimedia.org/wikipedia/commons/8/80/Mollweide_Paleographic_Map_of_Earth%2C_21_Ka_%28Late_Pleistocene_Age%29.png');
+new PaleoMap(30, 'https://upload.wikimedia.org/wikipedia/commons/2/27/Mollweide_Paleographic_Map_of_Earth%2C_30_Ma_%28Rupelian_Age%29.png');
+new PaleoMap(50, 'https://upload.wikimedia.org/wikipedia/commons/0/03/Ypresian_Earth_50_mya.jpg');
+new PaleoMap(60, 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Mollweide_Paleographic_Map_of_Earth%2C_60_Ma_%28Selandian_Age%29.png');
 new PaleoMap(90, 'https://upload.wikimedia.org/wikipedia/commons/d/d0/90_Ma_-_Late_Cretaceous_paleogeography_with_known_distribution_of_Arcellites_disciformis_indicated.jpg');
-new PaleoMap(122.5, 'https://upload.wikimedia.org/wikipedia/commons/a/a3/The_distribution_of_paraves_in_Early_Cretaceous.png');
+new PaleoMap(120, 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Mollweide_Paleographic_Map_of_Earth%2C_120_Ma_%28Aptian_Age%29.jpg');
 new PaleoMap(170, 'https://upload.wikimedia.org/wikipedia/commons/9/9a/170_Ma.png'); // https://upload.wikimedia.org/wikipedia/commons/b/b3/MiddleJurassicMap.jpg
 new PaleoMap(220, 'https://upload.wikimedia.org/wikipedia/commons/e/ec/220Ma_Paleomap.svg');
 new PaleoMap(250, 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Triassic_250.png');
@@ -36,19 +40,22 @@ new PaleoMap(300, 'https://upload.wikimedia.org/wikipedia/commons/9/96/Karoo_Gla
 new PaleoMap(330, 'https://upload.wikimedia.org/wikipedia/commons/6/6d/330_Ma_paleoglobe.png');
 new PaleoMap(370, 'https://upload.wikimedia.org/wikipedia/commons/c/ce/370_Ma_paleoglobe.png');
 new PaleoMap(372, 'https://upload.wikimedia.org/wikipedia/commons/5/57/Late_Devonian_palaeogeographic_map.jpg');
-new PaleoMap(420, 'http://www.scotese.com/images/V420_zonef.jpg');
+new PaleoMap(420, 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Mollweide_Paleographic_Map_of_Earth%2C_420_Ma_%28P%C5%99%C3%ADdol%C3%AD_Epoch%29.png');
+new PaleoMap(430, 'https://upload.wikimedia.org/wikipedia/commons/b/b3/Mollweide_Paleographic_Map_of_Earth%2C_430_Ma_%28Homerian_Age%29.png');
 new PaleoMap(440, 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Silurian_plate_tectonics.png');
 new PaleoMap(458, 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Map_showing_the_paleogeography_of_the_Middle_Ordovician_%28approximately_458_million_years_ago%29._Most_researchers_place_western_%282de3cd16-15cc-4d0c-b553-71cbbeb4c7e3%29.jpg');
-new PaleoMap(480, 'http://www.scotese.com/images/X480_zonef.jpg');
-new PaleoMap(500, 'https://upload.wikimedia.org/wikipedia/commons/9/96/%E0%A6%95%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%AE%E0%A7%8D%E0%A6%AC%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%AF%E0%A6%BC%E0%A6%BE%E0%A6%A8%E0%A7%AB%E0%A7%A6.png');
-new PaleoMap(520, 'http://www.scotese.com/images/Y520_zonef.jpg');
-new PaleoMap(540, 'http://www.scotese.com/images/Z540_zonef.jpg');
-new PaleoMap(600, 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Ediacaran-Cambrian_boundary_plate_tectonics.png');
-new PaleoMap(650, 'http://www.scotese.com/images/650.jpg');
+new PaleoMap(465, 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Mollweide_Paleographic_Map_of_Earth%2C_465_Ma_%28Darriwilian_Age%29.png');
+new PaleoMap(495, 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Mollweide_Paleographic_Map_of_Earth%2C_465_Ma_%28Darriwilian_Age%29.pnghttps://upload.wikimedia.org/wikipedia/commons/1/1c/Mollweide_Paleographic_Map_of_Earth%2C_495_Ma_%28Paibian_Stage%29.png');
+new PaleoMap(505, 'https://upload.wikimedia.org/wikipedia/commons/4/41/Mollweide_Paleographic_Map_of_Earth%2C_505_Ma_%28Wuliuan_Stage%29.png');
+new PaleoMap(510, 'https://upload.wikimedia.org/wikipedia/commons/2/25/Mollweide_Paleographic_Map_of_Earth%2C_510_Ma.png');
+new PaleoMap(515, 'https://upload.wikimedia.org/wikipedia/commons/6/63/Mollweide_Paleographic_Map_of_Earth%2C_515_Ma.png');
+new PaleoMap(530, 'https://upload.wikimedia.org/wikipedia/commons/1/13/Mollweide_Paleographic_Map_of_Earth%2C_530_Ma_%28Fortunian_Age%29.png');
+new PaleoMap(600, 'https://upload.wikimedia.org/wikipedia/commons/2/2e/Mollweide_Paleographic_Map_of_Earth%2C_600_Ma_%28Ediacaran_Period%29.png');
+new PaleoMap(690, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Mollweide_Paleographic_Map_of_Earth%2C_690_Ma_%28Cryogenian_Period%29.png');
 new PaleoMap(720, 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Earth_720Ma.gif');
-// new PaleoMap(750, 'https://www.lyellcollection.org/cms/10.1144/SP326.4/asset/72e565b5-40b8-46bb-8606-4bfc11526e74/assets/images/large/1697ch04f04.jpg'); dead
+new PaleoMap(750, 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Mollweide_Paleographic_Map_of_Earth%2C_750_Ma_%28Tonian_Period%29.png');
 new PaleoMap(1040, 'https://upload.wikimedia.org/wikipedia/commons/8/8c/1040_Ma_paleoglobe.png');
-new PaleoMap(1200, 'https://static.wikia.nocookie.net/dimensionscollide/images/d/d0/1200Marect.png/revision/latest?cb=20170109052233');
+new PaleoMap(1260, 'https://upload.wikimedia.org/wikipedia/commons/9/93/1260_Ma_paleoglobe.png');
 new PaleoMap(1590, 'https://upload.wikimedia.org/wikipedia/commons/6/63/1590_Ma.png');
 new PaleoMap(1600, 'https://upload.wikimedia.org/wikipedia/commons/5/58/Columbia1600.png');
 new PaleoMap(1740, 'https://upload.wikimedia.org/wikipedia/commons/3/34/1740_Ma_paleoglobe.png');
