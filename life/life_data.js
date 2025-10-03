@@ -165,6 +165,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'agaricus',
 		'range': 'nh',
+		'desc': 'Button mushroom'
 	},
 	{
 		'name': 'ailuridae',
@@ -5077,6 +5078,37 @@ const lifeData = [
 		'range': 'ww',
 	},
 	// S
+	{
+		'name': 'saccharomyces',
+		'rank': 'genus',
+		'parent': 'saccharomycetaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'saccharomyces cerevisiae',
+		'rank': 'species',
+		'parent': 'saccharomyces',
+		'range': 'ww',
+		'desc': 'Brewer\'s yeast, Baker\'s yeast'
+	},
+	{
+		'name': 'saccharomycetaceae',
+		'rank': 'family',
+		'parent': 'saccharomycetales',
+		'range': 'ww',
+	},
+	{
+		'name': 'saccharomycetales',
+		'rank': 'order',
+		'parent': 'saccharomycetes',
+		'range': 'ww',
+	},
+	{
+		'name': 'saccharomycetes',
+		'rank': 'class',
+		'parent': 'ascomycota',
+		'range': 'ww',
+	},
 	{
 		'name': 'saccharum',
 		'rank': 'genus',
