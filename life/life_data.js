@@ -138,18 +138,21 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'agaricales',
 		'range': 'ww',
+		'age': 20, // "burdigalian"
 	},
 	{
 		'name': 'agaricales',
 		'rank': 'order',
 		'parent': 'agaricomycetes',
 		'range': 'ww',
+		'age': 113,
 	},
 	{
 		'name': 'agaricomycetes',
 		'rank': 'class',
 		'parent': 'basidiomycota',
 		'range': 'ww',
+		'age': 125, // "Barremian"
 	},
 	{
 		'name': 'agaricus',
@@ -674,12 +677,14 @@ const lifeData = [
 		'rank': 'division',
 		'parent': 'fungi',
 		'range': 'ww',
+		'age': 419.2, // "early devonian"
 	},
 	{
 		'name': 'asgard',
 		'rank': 'superphylum',
 		'parent': 'proteoarchaeota',
 		'range': 'ww',
+		'age': 3380,
 		'wiki': 'Asgard (archaea)',
 	},
 	{
@@ -955,6 +960,7 @@ const lifeData = [
 		'rank': 'division',
 		'parent': 'fungi',
 		'range': 'ww',
+		'age': 330,
 	},
 	{
 		'name': 'batoidea',
@@ -1284,6 +1290,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'selachimorpha',
 		'range': 'wo',
+		'age': 168.2, // Bathonian
 		'desc': 'Ground Shark',
 	},
 	{
@@ -1343,6 +1350,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'castoridae',
 		'range': 'nh',
+		'age': 11, // "late miocene"
 		'desc': 'Beaver',
 	},
 	{
@@ -1380,6 +1388,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'rodentia',
 		'range': 'nh',
+		'age': 40, // "late eocene"
 	},
 	{
 		'name': 'caulerpa',
@@ -1398,6 +1407,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'caviidae',
 		'range': 'sa',
+		'age': 5.33, // "pliocene"
 	},
 	{
 		'name': 'cavia porcellus',
@@ -1419,6 +1429,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'rodentia',
 		'range': 'sa',
+		'age': 14, // "middle miocene"
 	},
 	{
 		'name': 'cedrus',
@@ -2608,12 +2619,14 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'gadiformes',
 		'range': 'wo',
+		'age': 33.9, // Oligocene
 	},
 	{
 		'name': 'gadiformes',
 		'rank': 'order',
 		'parent': 'acanthomorpha',
 		'range': 'wo',
+		'age': 72.1, // Maastrichtian
 	},
 	{
 		'name': 'gadus',
@@ -3441,6 +3454,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'lagomorpha',
 		'range': 'ww',
+		'age': 53,
 		'desc': 'Rabbit, Hare',
 	},
 	{
@@ -4361,6 +4375,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'acanthomorpha',
 		'range': 'wo',
+		'age': 86.3,
 	},
 	{
 		'name': 'perissodactyla',
@@ -5181,12 +5196,14 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'percomorpha',
 		'range': 'wo',
+		'age': 56,
 	},
 	{
 		'name': 'scyliorhinidae',
 		'rank': 'order',
 		'parent': 'carcharhiniformes',
 		'range': 'wo',
+		'age': 161.5, // Upper Jurassic
 		'desc': 'Catshark',
 	},
 	{
@@ -5591,6 +5608,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'tetraodontiformes',
 		'range': 'eq',
+		'age': 56,
 		'desc': 'Pufferfish',
 	},
 	{
@@ -5598,6 +5616,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'percomorpha',
 		'range': 'wo',
+		'age': 86.3,
 	},
 	{
 		'name': 'tetrapoda',
@@ -5642,10 +5661,11 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
-		'name': 'thunni',
+		'name': 'thunnini',
 		'rank': 'tribe',
 		'parent': 'scombridae',
 		'range': 'wo',
+		'age': 56,
 		'desc': 'Tuna',
 	},
 	{
