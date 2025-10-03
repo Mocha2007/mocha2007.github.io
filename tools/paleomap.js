@@ -45,7 +45,7 @@ new PaleoMap(430, 'https://upload.wikimedia.org/wikipedia/commons/b/b3/Mollweide
 new PaleoMap(440, 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Silurian_plate_tectonics.png');
 new PaleoMap(458, 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Map_showing_the_paleogeography_of_the_Middle_Ordovician_%28approximately_458_million_years_ago%29._Most_researchers_place_western_%282de3cd16-15cc-4d0c-b553-71cbbeb4c7e3%29.jpg');
 new PaleoMap(465, 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Mollweide_Paleographic_Map_of_Earth%2C_465_Ma_%28Darriwilian_Age%29.png');
-new PaleoMap(495, 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Mollweide_Paleographic_Map_of_Earth%2C_465_Ma_%28Darriwilian_Age%29.pnghttps://upload.wikimedia.org/wikipedia/commons/1/1c/Mollweide_Paleographic_Map_of_Earth%2C_495_Ma_%28Paibian_Stage%29.png');
+new PaleoMap(495, 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Mollweide_Paleographic_Map_of_Earth%2C_495_Ma_%28Paibian_Stage%29.png');
 new PaleoMap(505, 'https://upload.wikimedia.org/wikipedia/commons/4/41/Mollweide_Paleographic_Map_of_Earth%2C_505_Ma_%28Wuliuan_Stage%29.png');
 new PaleoMap(510, 'https://upload.wikimedia.org/wikipedia/commons/2/25/Mollweide_Paleographic_Map_of_Earth%2C_510_Ma.png');
 new PaleoMap(515, 'https://upload.wikimedia.org/wikipedia/commons/6/63/Mollweide_Paleographic_Map_of_Earth%2C_515_Ma.png');
@@ -140,17 +140,31 @@ const paleomap = {
 		},
 	},
 	init(){
+		if (this.initialized) {
+			return;
+		}
 		const cC = document.createElement('div');
 		cC.id = 'paleomap_super';
 		cC.appendChild(this.create.container);
 		document.body.appendChild(cC);
 		this.update();
+		this.preload();
+		console.info('paleomap.js loaded.');
+		this.initialized = true;
 	},
+	initialized: false,
 	/** @param {number} delta */
 	move(delta){
 		const v = +this.elem.slider.children[1].value;
 		this.elem.slider.children[1].value = v + delta;
 		this.update();
+	},
+	preload(){
+		// https://stackoverflow.com/questions/3646036/preloading-images-with-javascript
+		PaleoMap.maps.forEach(map => {
+			const img = new Image();
+			img.src = map.src;
+		});
 	},
 	update(){
 		this.elem.year.innerHTML = this.year;
