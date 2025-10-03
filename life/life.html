@@ -6,6 +6,10 @@
 <link href="life.css" type="text/css" rel="stylesheet">
 <link href="../tools/paleomap.css" type="text/css" rel="stylesheet">
 <title>Life</title>
+<script src="../common.js"></script>
+<script src="life_data.js"></script>
+<script src="ages.js"></script>
+<script src="../tools/paleomap.js" defer></script>
 <div id="controls">
 	<button type="button" onclick="toggle();"><span id="toggle_button_inner"></span> all</button>
 	<!-- | <input type="text" id="control_clade">
@@ -18,10 +22,6 @@
 	<div id="search_div"><ol id="results"></ol></div>
 </div>
 <div id="root"></div>
-<script src="../common.js"></script>
 <script src="life.js"></script>
-<script src="life_data.js"></script>
-<script src="ages.js"></script>
-<script src="../tools/paleomap.js"></script>
 <script>main();</script>
 </html>
