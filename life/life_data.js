@@ -2302,6 +2302,14 @@ const lifeData = [
 		'range': 'ow',
 	},
 	{
+		'name': 'equisetidae',
+		'rank': 'subclass',
+		'parent': 'polypodiopsida',
+		'range': 'ww',
+		'age': 382, // late devonian
+		'desc': 'Horsetails',
+	},
+	{
 		'name': 'equus',
 		'rank': 'genus',
 		'parent': 'equidae',
