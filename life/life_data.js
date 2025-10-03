@@ -3341,6 +3341,19 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'laetiporaceae',
+		'rank': 'family',
+		'parent': 'polyporales',
+		'range': 'ww',
+	},
+	{
+		'name': 'laetiporus',
+		'rank': 'genus',
+		'parent': 'laetiporaceae',
+		'range': 'ww',
+		'desc': 'Chicken of the woods',
+	},
+	{
 		'name': 'lagomorpha',
 		'rank': 'order',
 		'parent': 'glires',
@@ -4702,6 +4715,12 @@ const lifeData = [
 		'range': 'ww',
 		'age': 390,
 		'desc': 'Ferns',
+	},
+	{
+		'name': 'polyporales',
+		'rank': 'order',
+		'parent': 'agaricomycetes',
+		'range': 'ww',
 	},
 	{
 		'name': 'pongo',
