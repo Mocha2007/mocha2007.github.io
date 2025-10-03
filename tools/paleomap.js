@@ -12,8 +12,8 @@ class PaleoMap {
 		this.src = src;
 		PaleoMap.maps.push(this);
 	}
-	get score(){
-		return Math.abs(this.mya - paleomap.year);
+	score(year){
+		return Math.abs(this.mya - year);
 	}
 }
 /** @type {PaleoMap[]} */
@@ -155,7 +155,8 @@ const paleomap = {
 	update(){
 		this.elem.year.innerHTML = this.year;
 		// find closest year...
-		const map = PaleoMap.maps.sort((a, b) => a.score - b.score)[0];
+		const year = this.year;
+		const map = PaleoMap.maps.sort((a, b) => a.score(year) - b.score(year))[0];
 		this.elem.img.src = map.src;
 		this.elem.img.title = this.elem.img.alt = `Map of the Earth circa ${map.mya} MYA`;
 	},
