@@ -1558,6 +1558,18 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'chlorellaceae',
+		'rank': 'family',
+		'parent': 'chlorellales',
+		'range': 'ww',
+	},
+	{
+		'name': 'chlorellales',
+		'rank': 'order',
+		'parent': 'trebouxiophyceae',
+		'range': 'ww',
+	},
+	{
 		'name': 'chloridoideae',
 		'rank': 'subfamily',
 		'parent': 'pacmad clade',
@@ -4824,6 +4836,19 @@ const lifeData = [
 		'age': 610,
 	},
 	{
+		'name': 'prototheca',
+		'rank': 'genus',
+		'parent': 'chlorellaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'prototheca wickerhamii',
+		'rank': 'species',
+		'parent': 'prototheca',
+		'range': 'ww',
+		'desc': 'Protothecosis-causing green alga'
+	},
+	{
 		'name': 'prunus',
 		'rank': 'genus',
 		'parent': 'rosaceae',
@@ -5738,6 +5763,12 @@ const lifeData = [
 		'parent': 'embryophyta',
 		'range': 'ww',
 		'age': 425,
+	},
+	{
+		'name': 'trebouxiophyceae',
+		'rank': 'class',
+		'parent': 'chlorophyta',
+		'range': 'ww',
 	},
 	{
 		'name': 'triceratops',
