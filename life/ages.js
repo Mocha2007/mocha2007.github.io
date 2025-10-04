@@ -13,6 +13,16 @@ const ages = [
 	{
 		'name': 'Hadean',
 		'start': 4600,
+		'divisions': [
+			{
+				'name': 'Chaotian',
+				'start': 4600,
+			},
+			{
+				'name': 'Zirconian',
+				'start': 4404,
+			},
+		],
 	},
 	{
 		'name': 'Archean',
