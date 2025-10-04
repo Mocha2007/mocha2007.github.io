@@ -4199,6 +4199,21 @@ const lifeData = [
 			'sex': 'XY',
 		},
 	},
+	{
+		'name': 'nymphaeaceae',
+		'rank': 'family',
+		'parent': 'nymphaeales',
+		'range': 'ww',
+		'age': 130,
+		'desc': 'Water lily',
+	},
+	{
+		'name': 'nymphaeales',
+		'rank': 'order',
+		'parent': 'angiospermae',
+		'range': 'ww',
+		'age': 130,
+	},
 	// O
 	{
 		'name': 'ochrophyta',
