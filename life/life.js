@@ -12,8 +12,9 @@ class Taxon {
 		this.rank = o.rank;
 		/** @type {string} */
 		this.parent_id = o.parent;
+		const wikientry = o.wiki || o.name.replaceAll(' ', '_');
 		/** @type {string} */
-		this.url = o.url || `https://en.wikipedia.org/wiki/${o.wiki || o.name}`;
+		this.url = o.url || `https://en.wikipedia.org/wiki/${wikientry}`;
 		Taxon.taxa.push(this);
 	}
 	get a(){
@@ -366,6 +367,8 @@ function stats(){
 		const n = kingdoms[ks];
 		console.info(`${n} taxa (${Math.round(100*n/total)}%) in kingdom ${ks}`);
 	});
+	console.debug("missing ages:");
+	console.debug(Taxon.taxa.filter(t => !lifeData[t.i].hasOwnProperty('age')).map(t => t.url));
 	/*
 	const ranks = {};
 	Taxon.taxa.forEach(t => {
