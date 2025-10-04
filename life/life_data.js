@@ -2241,6 +2241,15 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'diskagma',
+		'rank': 'genus',
+		'parent': 'eukaryota',
+		'range': 'af',
+		'age': 2200,
+		'extinct': true,
+		'desc': 'Macroscopic land lifeform',
+	},
+	{
 		'name': 'dromaeosauridae',
 		'rank': 'family',
 		'parent': 'paraves',
@@ -4194,6 +4203,14 @@ const lifeData = [
 		'desc': 'Bony Fish',
 	},
 	{
+		'name': 'otavia',
+		'rank': 'genus',
+		'parent': 'porifera',
+		'range': 'af',
+		'age': 760,
+		'extinct': true,
+	},
+	{
 		'name': 'ovis',
 		'rank': 'genus',
 		'parent': 'caprinae',
@@ -5084,6 +5101,14 @@ const lifeData = [
 		'parent': 'retaria',
 		'range': 'ww',
 		'age': lifeDataPeriod.cambrian,
+	},
+	{
+		'name': 'rafatazmia',
+		'rank': 'genus',
+		'parent': 'bangiales',
+		'range': 'in',
+		'age': 1600,
+		'extinct': true,
 	},
 	{
 		'name': 'raphanus',

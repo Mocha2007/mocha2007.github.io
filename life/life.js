@@ -175,6 +175,8 @@ const regions = {
 			'AF': 'Africa',
 			'EA': 'Eurasia',
 				'AS': 'Asia',
+					'CN': 'China',
+					'IN': 'India',
 					'ME': 'Middle East', // excl. Africa
 				'EU': 'Europe',
 		// alternatively
@@ -186,7 +188,7 @@ const regions = {
 			'AL': 'Atlantic Ocean',
 			'PA': 'Pacific Ocean',
 			'SO': 'Southern Ocean',
-	'XX': 'Extinct',
+	// 'XX': 'Extinct', // deprecated
 };
 
 // helper functions
