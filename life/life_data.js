@@ -3374,6 +3374,14 @@ const lifeData = [
 	},
 	// K
 	{
+		'name': 'kimberella',
+		'rank': 'genus',
+		'parent': 'bilateria',
+		'range': 'ow', // Ediacara hills (Aus) and White sea (Russia)
+		'age': 570,
+		'extinct': true,
+	},
+	{
 		'name': 'kinetoplastea',
 		'rank': 'class',
 		'parent': 'euglenozoa',
