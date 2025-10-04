@@ -45,6 +45,7 @@ const lifeDataPeriod = {
 	pliestocene: 1,
 	pliocene: 4,
 	rhaetian: 204,
+	stenian: 1100,
 	turonian: 92,
 	upper_jurassic: 152,
 };
@@ -463,6 +464,7 @@ const lifeData = [
 		'parent': 'spermatophyta',
 		'range': 'ww',
 		'age': 134,
+		'desc': 'Flowering plants',
 	},
 	{
 		'name': 'animalia',
@@ -2656,6 +2658,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'euphyllophyta',
+		'rank': 'clade',
+		'parent': 'tracheophyta',
+		'range': 'ww',
+	},
+	{
 		'name': 'euryarchaeota',
 		'rank': 'kingdom',
 		'parent': 'archaea',
@@ -4838,7 +4846,7 @@ const lifeData = [
 		'rank': 'kingdom',
 		'parent': 'archaeplastida',
 		'range': 'ww',
-		'age': 1200,
+		'age': lifeDataPeriod.stenian,
 		'desc': 'Plant',
 	},
 	{
@@ -4922,7 +4930,7 @@ const lifeData = [
 	{
 		'name': 'polypodiopsida',
 		'rank': 'class',
-		'parent': 'tracheophyta',
+		'parent': 'euphyllophyta',
 		'range': 'ww',
 		'age': 390,
 		'desc': 'Ferns',
@@ -5041,7 +5049,7 @@ const lifeData = [
 	{
 		'name': 'progymnospermopsida',
 		'rank': 'class',
-		'parent': 'tracheophyta',
+		'parent': 'euphyllophyta',
 		'range': 'ww', // ??
 		'age': lifeDataPeriod.middle_devonian,
 		'extinct': true,
@@ -5205,7 +5213,7 @@ const lifeData = [
 	{
 		'name': 'pteridophyta',
 		'rank': 'division',
-		'parent': 'tracheophyta',
+		'parent': 'euphyllophyta',
 		'range': 'ww', // ??
 	},
 	{
