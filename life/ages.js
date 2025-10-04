@@ -187,14 +187,64 @@ const ages = [
 							{
 								'name': 'Early Jurassic',
 								'start': 201.3,
+								'divisions': [
+									{
+										'name': 'Hettangian',
+										'start': 201.4,
+									},
+									{
+										'name': 'Sinemurian',
+										'start': 199.5,
+									},
+									{
+										'name': 'Pliensbachian',
+										'start': 192.9,
+									},
+									{
+										'name': 'Toarcian',
+										'start': 184.2,
+									},
+								],
 							},
 							{
 								'name': 'Middle Jurassic',
 								'start': 174.1,
+								'divisions': [
+									{
+										'name': 'Aalenian',
+										'start': 174.7,
+									},
+									{
+										'name': 'Bajocian',
+										'start': 170.9,
+									},
+									{
+										'name': 'Bathonian',
+										'start': 168.2,
+									},
+									{
+										'name': 'Callovian',
+										'start': 165.3,
+									},
+								],
 							},
 							{
 								'name': 'Late Jurassic',
 								'start': 163.5,
+								'divisions': [
+									{
+										'name': 'Oxfordian',
+										'start': 161.5,
+									},
+									{
+										'name': 'Kimmeridgian',
+										'start': 154.8,
+									},
+									{
+										'name': 'Tithonian',
+										'start': 149.2,
+									},
+								],
 							},
 						],
 					},
