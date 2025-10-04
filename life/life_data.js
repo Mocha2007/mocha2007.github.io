@@ -21,6 +21,7 @@ const lifeDataPeriod = {
 	late_eocene: 39,
 	late_miocene: 10,
 	late_silurian: 425,
+	lutetian: 45,
 	maastrichtian: 69,
 	mesoproterozoic: 1300,
 	miaolingian: 502,
@@ -317,7 +318,7 @@ const lifeData = [
 	{
 		'name': 'alveolata',
 		'rank': 'clade',
-		'parent': 'harosa',
+		'parent': 'halvaria',
 		'range': 'ww',
 	},
 	{
@@ -857,14 +858,6 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'bacilli',
 		'range': 'ww',
-	},
-	{
-		'name': 'bacillariophyceae',
-		'rank': 'class',
-		'parent': 'ochrophytina',
-		'range': 'wo',
-		'age': lifeDataPeriod.jurassic,
-		'desc': 'Diatom',
 	},
 	{
 		'name': 'bacilli',
@@ -2155,6 +2148,14 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'diatomeae',
+		'rank': 'clade',
+		'parent': 'ochrophyta',
+		'range': 'wo',
+		'age': lifeDataPeriod.jurassic,
+		'desc': 'Diatom',
+	},
+	{
 		'name': 'dickinsonia',
 		'rank': 'genus',
 		'parent': 'dickinsoniidae',
@@ -2193,7 +2194,7 @@ const lifeData = [
 	},
 	{
 		'name': 'dinoflagellata',
-		'rank': 'superclass',
+		'rank': 'phylum',
 		'parent': 'myzozoa',
 		'range': 'ww',
 		'age': 240,
@@ -2265,7 +2266,7 @@ const lifeData = [
 	},
 	{
 		'name': 'discicristata',
-		'rank': 'superphylum',
+		'rank': 'clade',
 		'parent': 'discoba',
 		'range': 'ww',
 	},
@@ -2695,7 +2696,7 @@ const lifeData = [
 	},
 	{
 		'name': 'foraminifera',
-		'rank': 'infraphylum',
+		'rank': 'subphylum',
 		'parent': 'retaria',
 		'range': 'ww',
 		'age': 542,
@@ -2885,8 +2886,8 @@ const lifeData = [
 	},
 	{
 		'name': 'gromia sphaerica',
-		'rank': 'genus',
-		'parent': 'gromiidae',
+		'rank': 'species',
+		'parent': 'gromia',
 		'range': 'ww',
 	},
 	{
@@ -2916,8 +2917,8 @@ const lifeData = [
 	},
 	{
 		'name': 'gyrista',
-		'rank': 'phylum',
-		'parent': 'harosa',
+		'rank': 'clade',
+		'parent': 'halvaria',
 		'range': 'ww',
 	},
 	// H
@@ -2925,6 +2926,12 @@ const lifeData = [
 		'name': 'haemospororida',
 		'rank': 'order',
 		'parent': 'aconoidasida',
+		'range': 'ww',
+	},
+	{
+		'name': 'halvaria',
+		'rank': 'clade',
+		'parent': 'harosa',
 		'range': 'ww',
 	},
 	{
@@ -3991,7 +3998,7 @@ const lifeData = [
 	},
 	{
 		'name': 'myzozoa',
-		'rank': 'phylum',
+		'rank': 'clade',
 		'parent': 'alveolata',
 		'range': 'ww',
 	},
@@ -4088,9 +4095,10 @@ const lifeData = [
 	},
 	// O
 	{
-		'name': 'ochrophytina',
-		'rank': 'subphylum',
+		'name': 'ochrophyta',
+		'rank': 'phylum',
 		'parent': 'gyrista',
+		'age': 1000,
 		'range': 'ww',
 	},
 	{
@@ -4148,8 +4156,8 @@ const lifeData = [
 		'desc': 'Ghost Fungus',
 	},
 	{
-		'name': 'oomycetes',
-		'rank': 'class',
+		'name': 'oomyceta',
+		'rank': 'phylum',
 		'parent': 'pseudofungi',
 		'range': 'ww',
 		'desc': 'Water Molds',
@@ -4438,12 +4446,6 @@ const lifeData = [
 		'age': 10,
 	},
 	{
-		'name': 'parabasalia',
-		'rank': 'clade',
-		'parent': 'metamonada',
-		'range': 'ww',
-	},
-	{
 		'name': 'paraceratherium',
 		'rank': 'genus',
 		'parent': 'hyracodontidae',
@@ -4560,9 +4562,9 @@ const lifeData = [
 	{
 		'name': 'phaeophyceae',
 		'rank': 'class',
-		'parent': 'ochrophytina',
+		'parent': 'ochrophyta',
 		'range': 'wo',
-		'age': 150,
+		'age': lifeDataPeriod.lutetian,
 		'desc': 'Brown Algae',
 	},
 	{
@@ -5055,7 +5057,7 @@ const lifeData = [
 	},
 	{
 		'name': 'pseudofungi',
-		'rank': 'subphylum',
+		'rank': 'clade',
 		'parent': 'gyrista',
 		'range': 'ww',
 	},
@@ -5999,7 +6001,7 @@ const lifeData = [
 	{
 		'name': 'trichomonadida',
 		'rank': 'order',
-		'parent': 'parabasalia',
+		'parent': 'trichozoa',
 		'range': 'ww',
 	},
 	{
@@ -6020,6 +6022,12 @@ const lifeData = [
 		'parent': 'trichomonas',
 		'range': 'ww',
 		'desc': 'Trichomoniasis-causing anaerobic flagellated protozoan parasite',
+	},
+	{
+		'name': 'trichozoa',
+		'rank': 'subphylum',
+		'parent': 'metamonada',
+		'range': 'ww',
 	},
 	{
 		'name': 'trilobita',
@@ -6064,7 +6072,7 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
-		'name': 'trypanosoma bruccei',
+		'name': 'trypanosoma brucei',
 		'rank': 'species',
 		'parent': 'trypanosoma',
 		'range': 'ww',
