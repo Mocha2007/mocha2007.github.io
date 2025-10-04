@@ -5826,6 +5826,15 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'thuchomyces',
+		'rank': 'genus',
+		'parent': 'life',
+		'range': 'af',
+		'age': 2800,
+		'extinct': true,
+		'desc': 'Macroscopic land lifeform which reached a height of 1 mm',
+	},
+	{
 		'name': 'thunnini',
 		'rank': 'tribe',
 		'parent': 'scombridae',
