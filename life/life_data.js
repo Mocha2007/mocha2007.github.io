@@ -29,6 +29,7 @@ const lifeDataPeriod = {
 	middle_miocene: 14,
 	miocene: 14,
 	oligocene: 28,
+	pliestocene: 1,
 	pliocene: 4,
 	rhaetian: 204,
 	turonian: 92,
@@ -124,6 +125,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'acinonyx',
 		'range': 'ow',
+		'age': lifeDataPeriod.pliestocene,
 		'desc': 'Cheetah',
 	},
 	{
