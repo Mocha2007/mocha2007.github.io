@@ -1642,7 +1642,7 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'choanozoa',
 		'range': 'wo',
-		'age': 94,
+		'age': 100.5,
 		'desc': 'Choanoflagellate',
 	},
 	{
