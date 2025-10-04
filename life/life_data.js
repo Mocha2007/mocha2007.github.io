@@ -1105,6 +1105,7 @@ const lifeData = [
 		'parent': 'decapoda',
 		'range': 'wo',
 		'desc': 'Crab',
+		'emoji': '🦀',
 	},
 	{
 		'name': 'brassica',
@@ -1385,6 +1386,7 @@ const lifeData = [
 		'range': 'nh',
 		'age': lifeDataPeriod.late_miocene,
 		'desc': 'Beaver',
+		'emoji': '🦫',
 	},
 	{
 		'name': 'castor canadensis',
@@ -1896,6 +1898,7 @@ const lifeData = [
 		'parent': 'cricetidae',
 		'range': 'ea',
 		'desc': 'Hamster',
+		'emoji': '🐹',
 	},
 	{
 		'name': 'crustacea',
@@ -3178,6 +3181,7 @@ const lifeData = [
 		'range': 'af',
 		'age': 0.315,
 		'desc': 'Human',
+		'emoji': '🧑',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 22,
@@ -3588,6 +3592,7 @@ const lifeData = [
 		'range': 'ww',
 		'age': 53,
 		'desc': 'Rabbit, Hare',
+		'emoji': '🐇',
 	},
 	{
 		'name': 'leptocardii',
@@ -3763,6 +3768,7 @@ const lifeData = [
 		'range': 'wo',
 		'age': 575,
 		'desc': 'Jellyfish',
+		'emoji': '🪼',
 	},
 	{
 		'name': 'mesonychoteuthis',
@@ -4123,6 +4129,7 @@ const lifeData = [
 		'range': 'wo',
 		'age': lifeDataPeriod.middle_jurassic,
 		'desc': 'Octopus',
+		'emoji': '🐙',
 	},
 	{
 		'name': 'oegopsida',
@@ -4885,6 +4892,7 @@ const lifeData = [
 		'range': 'wo',
 		'age': 580,
 		'desc': 'Sponge',
+		'emoji': '🧽',
 	},
 	{
 		'name': 'primates',
@@ -5829,6 +5837,14 @@ const lifeData = [
 		'range': 'ww',
 	},
 	// T
+	{
+		'name': 'tamiina',
+		'rank': 'subtribe',
+		'parent': 'sciuridae',
+		'range': 'ww',
+		'desc': 'Chipmunk',
+		'emoji': '🐿️',
+	},
 	{
 		'name': 'taraxacum',
 		'rank': 'genus',
