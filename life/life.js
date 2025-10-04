@@ -393,6 +393,6 @@ function verify(){
 	// age is older than parent
 	console.debug("age is older than parent:");
 	Taxon.taxa.filter(t => t.parent && t.age > t.parent.age).forEach(t => {
-		console.warn(`${t.name}: ${t.age} vs. ${t.parent.age}`);
+		console.warn(`${t.name} (${t.age}) older than its parent ${t.parent.name} (${t.parent.age})`);
 	});
 }

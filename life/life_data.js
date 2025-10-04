@@ -10,12 +10,14 @@ const lifeDataPeriod = {
 	burdigalian: 18,
 	cambrian: 513,
 	cambrian_stage_2: 525,
+	cambrian_stage_3: 518,
 	chattian: 25,
 	devonian: 389,
 	early_devonian: 407,
 	early_eocene: 50,
 	early_miocene: 19,
 	ediacaran: 587,
+	famennian: 365,
 	jurassic: 172,
 	late_devonian: 371,
 	late_eocene: 39,
@@ -31,6 +33,7 @@ const lifeDataPeriod = {
 	middle_triassic: 242,
 	miocene: 14,
 	oligocene: 28,
+	paleocene: 61,
 	pliestocene: 1,
 	pliocene: 4,
 	rhaetian: 204,
@@ -381,7 +384,7 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'amorphea',
 		'range': 'ww',
-		'age': 1500, // https://en.wikipedia.org/wiki/Amoebozoa#cite_note-Amoebozoa_dating-3
+		'age': 1400, // https://en.wikipedia.org/wiki/Amoebozoa#cite_note-Amoebozoa_dating-3
 	},
 	{
 		'name': 'amorphea',
@@ -395,7 +398,7 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'tetrapoda',
 		'range': 'ww',
-		'age': 370,
+		'age': 330,
 	},
 	{
 		'name': 'amphioxiformes',
@@ -1023,7 +1026,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'planulozoa',
 		'range': 'ww',
-		'age': 560,
+		'age': 567,
 		'desc': 'Bilaterians are animals with bilateral symmetry as an embryo.',
 	},
 	{
@@ -1037,7 +1040,7 @@ const lifeData = [
 		'rank': 'magnorder',
 		'parent': 'placentalia',
 		'range': 'ww',
-		'age': 65,
+		'age': 66.043,
 		'develop': 'scrotum',
 	},
 	{
@@ -1652,7 +1655,7 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'deuterostomia',
 		'range': 'ww',
-		'age': 518,
+		'age': 525,
 		'develop': 'notochord, dorsal nerve cord, pharyngeal slits, endostyle, post-anal tail',
 	},
 	{
@@ -2010,7 +2013,7 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'terrabacteria',
 		'range': 'ww',
-		'age': 3500,
+		'age': 2100,
 	},
 	{
 		'name': 'cyanocitta',
@@ -2030,7 +2033,6 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'cyanobacteria',
 		'range': 'ww',
-		'age': 3500,
 	},
 	{
 		'name': 'cycadales',
@@ -2168,7 +2170,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'dipleurozoa',
 		'range': 'wo', // ???
-		'age': 555,
+		'age': 567, // wp lists 555 but that doesn't work with its child
 		'extinct': true,
 	},
 	{
@@ -2225,7 +2227,7 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'proarticulata',
 		'range': 'wo', // ???
-		'age': lifeDataPeriod.ediacaran,
+		'age': 567, // lifeDataPeriod.ediacaran???
 		'extinct': true,
 	},
 	{
@@ -2331,7 +2333,7 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'ambulacraria',
 		'range': 'wo',
-		'age': 540,
+		'age': lifeDataPeriod.cambrian_stage_3,
 	},
 	{
 		'name': 'ehrlichia',
@@ -2522,7 +2524,7 @@ const lifeData = [
 		'rank': 'superorder',
 		'parent': 'boreoeutheria',
 		'range': 'ww',
-		'age': 65,
+		'age': lifeDataPeriod.paleocene,
 	},
 	{
 		'name': 'eubacteriales',
@@ -2692,7 +2694,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'laurasiatheria',
 		'range': 'ww',
-		'age': 78.9,
+		'age': 79.47,
 	},
 	{
 		'name': 'foraminifera',
@@ -3531,7 +3533,7 @@ const lifeData = [
 		'rank': 'superorder',
 		'parent': 'boreoeutheria',
 		'range': 'ww',
-		'age': 91,
+		'age': 66.3,
 	},
 	{
 		'name': 'laurus',
@@ -3759,7 +3761,7 @@ const lifeData = [
 		'rank': 'subphylum',
 		'parent': 'cnidaria',
 		'range': 'wo',
-		'age': 540,
+		'age': 575,
 		'desc': 'Jellyfish',
 	},
 	{
@@ -4767,7 +4769,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'parahoxozoa',
 		'range': 'ww',
-		'age': 680,
+		'age': 600,
 		'develop': 'Zoc and ZF-NC gene domains',
 	},
 	{
@@ -4984,7 +4986,7 @@ const lifeData = [
 		'rank': 'superphylum',
 		'parent': 'nephrozoa',
 		'range': 'ww',
-		'age': 610,
+		'age': 570,
 	},
 	{
 		'name': 'prototaxitaceae',
@@ -5897,7 +5899,7 @@ const lifeData = [
 		'rank': 'superclass',
 		'parent': 'rhipidistia',
 		'range': 'ww',
-		'age': 360,
+		'age': lifeDataPeriod.famennian,
 		'desc': 'Tetrapods are four-limbed animals.',
 		'develop': 'legs',
 	},
@@ -6116,7 +6118,7 @@ const lifeData = [
 		'rank': 'subphylum',
 		'parent': 'olfactores',
 		'range': 'wo',
-		'age': lifeDataPeriod.cambrian_stage_2,
+		'age': 518,
 		'desc': 'Tunicate',
 	},
 	{
@@ -6327,7 +6329,6 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'bilateria',
 		'range': 'wo',
-		'age': lifeDataPeriod.ediacaran,
 	},
 	// Y
 	{
