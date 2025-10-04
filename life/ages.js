@@ -169,24 +169,58 @@ const ages = [
 							{
 								'name': 'Early Triassic',
 								'start': 251.902,
+								'divisions': [
+									{
+										'name': 'Induan',
+										'start': 251.902,
+									},
+									{
+										'name': 'Olenekian',
+										'start': 249.9,
+									},
+								],
 							},
 							{
 								'name': 'Middle Triassic',
-								'start': 247.2,
+								'start': 246.7,
+								'divisions': [
+									{
+										'name': 'Anisian',
+										'start': 246.7,
+									},
+									{
+										'name': 'Ladinian',
+										'start': 241.464,
+									},
+								],
 							},
 							{
 								'name': 'Late Triassic',
 								'start': 237,
+								'divisions': [
+									{
+										'name': 'Carnian',
+										'start': 237,
+									},
+									{
+										'name': 'Norian',
+										'start': 227.3,
+									},
+									{
+										'name': 'Rhaetian',
+										'start': 205.7,
+									},
+								],
 							},
 						],
 					},
 					{
 						'name': 'Jurassic',
-						'start': 201.3,
+						'start': 201.4,
 						'divisions': [
 							{
 								'name': 'Early Jurassic',
-								'start': 201.3,
+								'start': 201.4,
 								'divisions': [
 									{
 										'name': 'Hettangian',
@@ -208,7 +242,7 @@ const ages = [
 							},
 							{
 								'name': 'Middle Jurassic',
-								'start': 174.1,
+								'start': 174.7,
 								'divisions': [
 									{
 										'name': 'Aalenian',
@@ -230,7 +264,7 @@ const ages = [
 							},
 							{
 								'name': 'Late Jurassic',
-								'start': 163.5,
+								'start': 161.5,
 								'divisions': [
 									{
 										'name': 'Oxfordian',
@@ -250,11 +284,11 @@ const ages = [
 					},
 					{
 						'name': 'Cretaceous',
-						'start': 145,
+						'start': 143.1,
 						'divisions': [
 							{
 								'name': 'Early Cretaceous',
-								'start': 145,
+								'start': 143.1,
 								'divisions': [
 									{
 										'name': 'Berriasian',
