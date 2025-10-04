@@ -1558,6 +1558,22 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'charnia',
+		'rank': 'genus',
+		'parent': 'charniidae',
+		'range': 'wo', // ???
+		'age': 570,
+		'extinct': true,
+	},
+	{
+		'name': 'charniidae',
+		'rank': 'family',
+		'parent': 'rangeomorpha',
+		'range': 'wo', // ???
+		'age': 635,
+		'extinct': true,
+	},
+	{
 		'name': 'chlamydia',
 		'rank': 'genus',
 		'parent': 'chlamydiaceae',
@@ -2139,6 +2155,22 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'dickinsonia',
+		'rank': 'genus',
+		'parent': 'dickinsoniidae',
+		'range': 'wo', // ???
+		'age': 567,
+		'extinct': true,
+	},
+	{
+		'name': 'dickinsoniidae',
+		'rank': 'family',
+		'parent': 'dipleurozoa',
+		'range': 'wo', // ???
+		'age': 555,
+		'extinct': true,
+	},
+	{
 		'name': 'didelphimorphia',
 		'rank': 'order',
 		'parent': 'marsupialia',
@@ -2186,6 +2218,14 @@ const lifeData = [
 		'parent': 'monocots',
 		'range': 'eq',
 		'age': 116,
+	},
+	{
+		'name': 'dipleurozoa',
+		'rank': 'class',
+		'parent': 'proarticulata',
+		'range': 'wo', // ???
+		'age': lifeDataPeriod.ediacaran,
+		'extinct': true,
 	},
 	{
 		'name': 'diplodocidae',
@@ -4478,6 +4518,14 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'petalonamae',
+		'rank': 'phylum',
+		'parent': 'animalia',
+		'range': 'wo', // ???
+		'age': 635,
+		'extinct': true,
+	},
+	{
 		'name': 'petroselinum',
 		'rank': 'genus',
 		'parent': 'apiaceae',
@@ -4852,6 +4900,14 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'proarticulata',
+		'rank': 'phylum',
+		'parent': 'animalia',
+		'range': 'wo', // ???
+		'age': 567,
+		'extinct': true,
+	},
+	{
 		'name': 'proboscidea',
 		'rank': 'order',
 		'parent': 'tethytheria',
@@ -5118,6 +5174,14 @@ const lifeData = [
 		'parent': 'bangiales',
 		'range': 'in',
 		'age': 1600,
+		'extinct': true,
+	},
+	{
+		'name': 'rangeomorpha',
+		'rank': 'clade',
+		'parent': 'petalonamae',
+		'range': 'wo', // ???
+		'age': 635,
 		'extinct': true,
 	},
 	{
@@ -5776,6 +5840,14 @@ const lifeData = [
 		'range': 'ww',
 		'age': lifeDataPeriod.turonian,
 		'desc': 'Tardigrade',
+	},
+	{
+		'name': 'tawuia',
+		'rank': 'genus',
+		'parent': 'eukaryota',
+		'range': 'cn',
+		'age': 1630,
+		'extinct': true,
 	},
 	{
 		'name': 'teleostei',
