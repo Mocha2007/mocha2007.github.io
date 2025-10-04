@@ -4836,6 +4836,20 @@ const lifeData = [
 		'age': 610,
 	},
 	{
+		'name': 'prototaxitaceae',
+		'rank': 'family',
+		'parent': 'ascomycota',
+		'age': 425, // "Late silurian"
+		'extinct': true,
+	},
+	{
+		'name': 'prototaxites',
+		'rank': 'genus',
+		'parent': 'prototaxitaceae',
+		'age': 425, // "Late silurian"
+		'extinct': true,
+	},
+	{
 		'name': 'prototheca',
 		'rank': 'genus',
 		'parent': 'chlorellaceae',
