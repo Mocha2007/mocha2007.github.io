@@ -15,6 +15,10 @@ class Taxon {
 		const wikientry = o.wiki || o.name.replaceAll(' ', '_');
 		/** @type {string} */
 		this.url = o.url || `https://en.wikipedia.org/wiki/${wikientry}`;
+		/** @type {number} */
+		this.i = Taxon.taxa.length;
+		/** @type {number|undefined} */
+		this.age = o.age;
 		Taxon.taxa.push(this);
 	}
 	get a(){
@@ -134,9 +138,9 @@ class Taxon {
 		}
 		return details;
 	}
-	get i(){
-		return lifeData.findIndex(o => o.name === this.name);
-	}
+	// get i(){
+	// 	return lifeData.findIndex(o => o.name === this.name);
+	// }
 	/** @returns {Taxon|undefined} */
 	get kingdom(){
 		if (this.rank === 'kingdom')
@@ -350,6 +354,7 @@ function main(){
 		}
 	}
 	stats();
+	verify();
 }
 
 function stats(){
@@ -369,8 +374,6 @@ function stats(){
 		const n = kingdoms[ks];
 		console.info(`${n} taxa (${Math.round(100*n/total)}%) in kingdom ${ks}`);
 	});
-	console.debug("missing ages:");
-	console.debug(Taxon.taxa.filter(t => !lifeData[t.i].hasOwnProperty('age')).map(t => t.url));
 	/*
 	const ranks = {};
 	Taxon.taxa.forEach(t => {
@@ -381,4 +384,15 @@ function stats(){
 	});
 	Object.keys(ranks).sort().forEach(key => console.info(`${ranks[key]} of rank ${key}`));
 	*/
+}
+
+function verify(){
+	// missing ages
+	console.debug("missing ages:");
+	console.debug(Taxon.taxa.filter(t => !lifeData[t.i].hasOwnProperty('age')).map(t => t.url));
+	// age is older than parent
+	console.debug("age is older than parent:");
+	Taxon.taxa.filter(t => t.parent && t.age > t.parent.age).forEach(t => {
+		console.warn(`${t.name}: ${t.age} vs. ${t.parent.age}`);
+	});
 }
