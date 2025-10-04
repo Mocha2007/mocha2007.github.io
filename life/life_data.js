@@ -27,6 +27,7 @@ const lifeDataPeriod = {
 	mid_ordovician: 465,
 	middle_jurassic: 168,
 	middle_miocene: 14,
+	middle_triassic: 242,
 	miocene: 14,
 	oligocene: 28,
 	pliestocene: 1,
@@ -4695,6 +4696,7 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'parahoxozoa',
 		'range': 'wo',
+		'age': lifeDataPeriod.middle_triassic,
 		'genetic': {
 			'chromosome': { // https://en.wikipedia.org/wiki/Trichoplax#Genetics
 				'autosomal': 6,
