@@ -35,6 +35,7 @@ const lifeDataPeriod = {
 	mesoproterozoic: 1300,
 	miaolingian: 502,
 	mid_ordovician: 465,
+	middle_devonian: 388,
 	middle_jurassic: 168,
 	middle_miocene: 14,
 	middle_triassic: 242,
@@ -620,6 +621,30 @@ const lifeData = [
 		'age': 3420,
 		'desc': 'Archaea',
 		'develop': 'methionine protein synthesis initiation, sensitive to diphtheria toxin',
+	},
+	{
+		'name': 'archaeopteridaceae',
+		'rank': 'family',
+		'parent': 'archaeopteridales',
+		'range': 'ww', // ??
+		'age': lifeDataPeriod.middle_devonian,
+		'extinct': true,
+	},
+	{
+		'name': 'archaeopteridales',
+		'rank': 'order',
+		'parent': 'progymnospermopsida',
+		'range': 'ww', // ??
+		'age': lifeDataPeriod.middle_devonian,
+		'extinct': true,
+	},
+	{
+		'name': 'archaeopteris',
+		'rank': 'genus',
+		'parent': 'archaeopteridaceae',
+		'range': 'ww', // ??
+		'age': lifeDataPeriod.late_devonian,
+		'extinct': true,
 	},
 	{
 		'name': 'archaeopterygidae',
@@ -1757,6 +1782,14 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'citrus',
 		'desc': 'Tangerine',
+	},
+	{
+		'name': 'cladoxylopsida',
+		'rank': 'class',
+		'parent': 'pteridophyta',
+		'range': 'ww', // ??
+		'age': lifeDataPeriod.middle_devonian,
+		'extinct': true,
 	},
 	{
 		'name': 'claviceps',
@@ -5006,6 +5039,14 @@ const lifeData = [
 		'age': 22.6,
 	},
 	{
+		'name': 'progymnospermopsida',
+		'rank': 'class',
+		'parent': 'tracheophyta',
+		'range': 'ww', // ??
+		'age': lifeDataPeriod.middle_devonian,
+		'extinct': true,
+	},
+	{
 		'name': 'proteoarchaeota',
 		'rank': 'kingdom',
 		'parent': 'archaea',
@@ -5116,6 +5157,14 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'pseudosporochnales',
+		'rank': 'order',
+		'parent': 'cladoxylopsida',
+		'range': 'ww', // ??
+		'age': lifeDataPeriod.middle_devonian,
+		'extinct': true,
+	},
+	{
 		'name': 'psilocybe',
 		'rank': 'genus',
 		'parent': 'hymenogastraceae',
@@ -5152,6 +5201,12 @@ const lifeData = [
 		'parent': 'psittacus',
 		'range': 'af',
 		'desc': 'Grey Parrot',
+	},
+	{
+		'name': 'pteridophyta',
+		'rank': 'division',
+		'parent': 'tracheophyta',
+		'range': 'ww', // ??
 	},
 	{
 		'name': 'pterosauria',
@@ -5705,7 +5760,7 @@ const lifeData = [
 	{
 		'name': 'spermatophyta',
 		'rank': 'clade',
-		'parent': 'tracheophyta',
+		'parent': 'pteridophyta',
 		'range': 'ww',
 		'age': 370,
 	},
@@ -6375,6 +6430,14 @@ const lifeData = [
 		},
 	},
 	// W
+	{
+		'name': 'wattieza',
+		'rank': 'genus',
+		'parent': 'pseudosporochnales',
+		'range': 'ww', // ??
+		'age': lifeDataPeriod.middle_devonian,
+		'extinct': true,
+	},
 	{
 		'name': 'whippomorpha',
 		'rank': 'suborder',
