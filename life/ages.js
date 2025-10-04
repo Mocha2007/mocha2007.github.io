@@ -205,10 +205,62 @@ const ages = [
 							{
 								'name': 'Early Cretaceous',
 								'start': 145,
+								'divisions': [
+									{
+										'name': 'Berriasian',
+										'start': 143.1,
+									},
+									{
+										'name': 'Valangian',
+										'start': 137.05,
+									},
+									{
+										'name': 'Hauterivian',
+										'start': 132.6,
+									},
+									{
+										'name': 'Barremian',
+										'start': 125.77,
+									},
+									{
+										'name': 'Aptian',
+										'start': 121.4,
+									},
+									{
+										'name': 'Albian',
+										'start': 113.2,
+									},
+								],
 							},
 							{
 								'name': 'Late Cretaceous',
 								'start': 100.5,
+								'divisions': [
+									{
+										'name': 'Cenomanian',
+										'start': 100.5,
+									},
+									{
+										'name': 'Turonian',
+										'start': 93.9,
+									},
+									{
+										'name': 'Coniacian',
+										'start': 89.8,
+									},
+									{
+										'name': 'Santonian',
+										'start': 85.7,
+									},
+									{
+										'name': 'Campanian',
+										'start': 83.6,
+									},
+									{
+										'name': 'Maastrichtian',
+										'start': 72.2,
+									},
+								],
 							},
 						],
 					},
