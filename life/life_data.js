@@ -2861,7 +2861,7 @@ const lifeData = [
 	},
 	{
 		'name': 'glires',
-		'rank': 'clade',
+		'rank': 'grandorder',
 		'parent': 'euarchontoglires',
 		'range': 'ww',
 		'age': 60,
