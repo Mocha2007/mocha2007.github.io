@@ -2677,6 +2677,12 @@ const lifeData = [
 		'desc': 'Krill',
 	},
 	{
+		'name': 'euphyllophyta',
+		'rank': 'clade',
+		'parent': 'tracheophyta',
+		'range': 'ww',
+	},
+	{
 		'name': 'eurotiales',
 		'rank': 'order',
 		'parent': 'eurotiomycetes',
@@ -2686,12 +2692,6 @@ const lifeData = [
 		'name': 'eurotiomycetes',
 		'rank': 'class',
 		'parent': 'ascomycota',
-		'range': 'ww',
-	},
-	{
-		'name': 'euphyllophyta',
-		'rank': 'clade',
-		'parent': 'tracheophyta',
 		'range': 'ww',
 	},
 	{
