@@ -22,6 +22,7 @@ const lifeDataPeriod = {
 	late_devonian: 371,
 	late_eocene: 39,
 	late_miocene: 10,
+	late_oligocene: 26,
 	late_silurian: 425,
 	lutetian: 45,
 	maastrichtian: 69,
@@ -225,6 +226,7 @@ const lifeData = [
 		'parent': 'ailuropoda',
 		'range': 'as',
 		'desc': 'Panda Bear',
+		'emoji': '🐼',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 20,
@@ -1070,6 +1072,7 @@ const lifeData = [
 		'parent': 'bos',
 		'range': 'ww',
 		'desc': 'Cattle',
+		'emoji': '🐄',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 29,
@@ -1290,6 +1293,7 @@ const lifeData = [
 		'parent': 'caprinae',
 		'range': 'ow',
 		'desc': 'Goat',
+		'emoji': '🐐',
 		// capra hircus
 		'genetic': {
 			'chromosome': {
@@ -1533,12 +1537,15 @@ const lifeData = [
 		'parent': 'cetruminantia',
 		'range': 'ww',
 		'desc': 'Deer',
+		'emoji': '🦌',
 	},
 	{
 		'name': 'cetacea',
 		'rank': 'infraorder',
 		'parent': 'whippomorpha',
 		'range': 'ww',
+		'age': 53.5,
+		'emoji': '🐋',
 		// https://en.wikipedia.org/wiki/Cetacea#Chromosomes
 		'genetic': {
 			'chromosome': {
@@ -2116,6 +2123,8 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'cetacea',
 		'range': 'ww',
+		'age': lifeDataPeriod.late_oligocene,
+		'emoji': '🐬',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 21,
@@ -2443,6 +2452,7 @@ const lifeData = [
 		'parent': 'equus africanus',
 		'range': 'af',
 		'desc': 'Donkey',
+		'emoji': '🫏',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 30,
@@ -2499,6 +2509,7 @@ const lifeData = [
 		'parent': 'erinaceidae',
 		'range': 'ow',
 		'desc': 'Hedgehog',
+		'emoji': '🦔',
 		// erinaceus and atelerix
 		'genetic': {
 			'chromosome': {
@@ -3011,6 +3022,7 @@ const lifeData = [
 		'parent': 'hippopotamidae',
 		'range': 'af',
 		'age': 5,
+		'emoji': '🦛',
 	},
 	{
 		'name': 'hippopotamus amphibius',
@@ -3035,6 +3047,7 @@ const lifeData = [
 		'parent': 'equus',
 		'range': 'af',
 		'desc': 'Zebra',
+		'emoji': '🦓',
 	},
 	{
 		'name': 'hominidae',
@@ -3493,6 +3506,7 @@ const lifeData = [
 		'parent': 'lama',
 		'range': 'sa',
 		'desc': 'Llama',
+		'emoji': '🦙',
 	},
 	{
 		'name': 'lamiaceae',
@@ -3615,6 +3629,7 @@ const lifeData = [
 		'range': 'ww',
 		'age': 15,
 		'desc': 'Otter',
+		'emoji': '🦦',
 		// enhydra lutris
 		'genetic': {
 			'chromosome': {
@@ -4288,6 +4303,7 @@ const lifeData = [
 		'parent': 'ovis',
 		'range': 'ea',
 		'desc': 'Sheep',
+		'emoji': '🐑',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 21,
@@ -5790,6 +5806,7 @@ const lifeData = [
 		'parent': 'suidae',
 		'range': 'ow',
 		'desc': 'Pig',
+		'emoji': '🐖',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 17,
@@ -6206,6 +6223,7 @@ const lifeData = [
 		'range': 'nh',
 		'age': 38,
 		'desc': 'Bear',
+		'emoji': '🐻',
 	},
 	{
 		'name': 'ursus',
