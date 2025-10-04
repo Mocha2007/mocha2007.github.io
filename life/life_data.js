@@ -247,6 +247,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'ailurus',
 		'range': 'as',
+		'age': lifeDataPeriod.pliestocene,
 		'desc': 'Red Panda',
 		'genetic': {
 			'chromosome': {
