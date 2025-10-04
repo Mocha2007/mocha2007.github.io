@@ -876,6 +876,13 @@ const lifeData = [
 		'desc': 'Ancestor of H. Habilis.',
 	},
 	{
+		'name': 'austrobaileyales',
+		'rank': 'order',
+		'parent': 'angiospermae',
+		'range': 'ww', // ???
+		'age': lifeDataPeriod.albian,
+	},
+	{
 		'name': 'avena',
 		'rank': 'genus',
 		'parent': 'pooideae',
@@ -3472,6 +3479,19 @@ const lifeData = [
 		'range': 'ow',
 	},
 	{
+		'name': 'illicium',
+		'rank': 'genus',
+		'parent': 'schisandraceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'illicium verum',
+		'rank': 'species',
+		'parent': 'illicium',
+		'range': 'as',
+		'desc': 'Star anise',
+	},
+	{
 		'name': 'insecta',
 		'rank': 'class',
 		'parent': 'hexapoda',
@@ -3778,6 +3798,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'angiospermae',
 		'range': 'ww',
+		'age': lifeDataPeriod.aptian,
 	},
 	{
 		'name': 'malacostraca',
@@ -5562,6 +5583,13 @@ const lifeData = [
 		'parent': 'sauria',
 		'extinct': true,
 		'range': 'ww',
+	},
+	{
+		'name': 'schisandraceae',
+		'rank': 'family',
+		'parent': 'austrobaileyales',
+		'range': 'ww', // ???
+		'age': lifeDataPeriod.late_cretaceous,
 	},
 	{
 		'name': 'schizopyrenida',
