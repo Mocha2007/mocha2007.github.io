@@ -5,13 +5,18 @@
 // (x - 2932 px)(1000 yr / 626 px)
 /** just select the middle of the era */
 const lifeDataPeriod = {
+	albian: 107,
+	aptian: 117,
 	barremian: 124,
 	bathonian: 167,
 	burdigalian: 18,
 	cambrian: 513,
 	cambrian_stage_2: 525,
 	cambrian_stage_3: 518,
+	campanian: 78,
+	carboniferous: 329,
 	chattian: 25,
+	cretaceous: 105,
 	devonian: 389,
 	early_devonian: 407,
 	early_eocene: 50,
@@ -19,6 +24,7 @@ const lifeDataPeriod = {
 	ediacaran: 587,
 	famennian: 365,
 	jurassic: 172,
+	late_cretaceous: 83,
 	late_devonian: 371,
 	late_eocene: 39,
 	late_miocene: 10,
@@ -687,6 +693,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'commelinids',
 		'range': 'eq',
+		'age': 80,
 	},
 	{
 		'name': 'armadillidiidae',
@@ -734,6 +741,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'monocots',
 		'range': 'ww',
+		'age': lifeDataPeriod.late_cretaceous,
 	},
 	{
 		'name': 'asphodelaceae',
@@ -771,6 +779,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'eudicots',
 		'range': 'ww',
+		'age': lifeDataPeriod.late_cretaceous,
 	},
 	{
 		'name': 'asteroidea',
@@ -949,6 +958,7 @@ const lifeData = [
 		'rank': 'subfamily',
 		'parent': 'bop clade',
 		'range': 'eq',
+		'age': 55,
 		'desc': 'Bamboo',
 	},
 	{
@@ -1154,6 +1164,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'poales',
 		'range': 'nw',
+		'age': 100,
 	},
 	{
 		'name': 'bryophyta',
@@ -1476,7 +1487,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'abietoideae',
 		'range': 'ea',
-		'age': 113,
+		'age': lifeDataPeriod.albian,
 		'desc': 'Cedar',
 	},
 	{
@@ -1637,6 +1648,7 @@ const lifeData = [
 		'rank': 'division',
 		'parent': 'plantae',
 		'range': 'ww',
+		'age': 1000,
 	},
 	{
 		'name': 'choanoflagellatea',
@@ -1685,6 +1697,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'lauraceae',
 		'range': 'as',
+		'age': lifeDataPeriod.cretaceous,
 		'desc': 'Cinnamon',
 	},
 	{
@@ -1837,6 +1850,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'monocots',
 		'range': 'ww',
+		'age': lifeDataPeriod.late_cretaceous,
 	},
 	{
 		'name': 'conoidasida',
@@ -2850,14 +2864,14 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'ginkgophyta',
 		'range': 'as',
-		'age': 280,
+		'age': lifeDataPeriod.carboniferous,
 	},
 	{
 		'name': 'ginkgophyta',
 		'rank': 'division',
 		'parent': 'gymnospermae',
 		'range': 'as',
-		'age': 280,
+		'age': lifeDataPeriod.carboniferous,
 	},
 	{
 		'name': 'glires',
@@ -3540,12 +3554,14 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'laurales',
 		'range': 'ww',
+		'age': 100,
 	},
 	{
 		'name': 'laurales',
 		'rank': 'order',
 		'parent': 'magnoliids',
 		'range': 'ww',
+		'age': lifeDataPeriod.aptian,
 	},
 	{
 		'name': 'laurasiatheria',
@@ -3690,6 +3706,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'magnoliids',
 		'range': 'ww',
+		'age': lifeDataPeriod.aptian,
 	},
 	{
 		'name': 'magnoliids',
@@ -4320,6 +4337,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'poaceae',
 		'range': 'ww',
+		'age': lifeDataPeriod.campanian,
 	},
 	{
 		'name': 'paenungulata',
@@ -4657,6 +4675,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'pacmad clade',
 		'range': 'ww',
+		'age': lifeDataPeriod.campanian,
 		'desc': 'Common Reed',
 	},
 	{
@@ -4740,6 +4759,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'magnoliids',
 		'range': 'eq',
+		'age': lifeDataPeriod.aptian,
 	},
 	{
 		'name': 'pisum',
@@ -4851,6 +4871,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'commelinids',
 		'range': 'ww',
+		'age': 66,
 	},
 	{
 		'name': 'pollachius',
@@ -5322,6 +5343,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'eudicots',
 		'range': 'ww',
+		'age': lifeDataPeriod.aptian,
 	},
 	{
 		'name': 'rutaceae',
@@ -6314,12 +6336,14 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'vitales',
 		'range': 'ww',
+		'age': lifeDataPeriod.maastrichtian,
 	},
 	{
 		'name': 'vitales',
 		'rank': 'order',
 		'parent': 'rosids',
 		'range': 'ww',
+		'age': lifeDataPeriod.maastrichtian,
 	},
 	{
 		'name': 'vitis',
@@ -6430,12 +6454,14 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'zingiberales',
 		'range': 'eq',
+		'age': lifeDataPeriod.campanian,
 	},
 	{
 		'name': 'zingiberales',
 		'rank': 'order',
 		'parent': 'commelinids',
 		'range': 'eq',
+		'age': 80,
 	},
 	{
 		'name': 'zizania',
