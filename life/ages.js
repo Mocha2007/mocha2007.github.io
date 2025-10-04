@@ -111,18 +111,82 @@ const ages = [
 					{
 						'name': 'Cambrian',
 						'start': 538.8,
+						'divisions': [
+							{
+								'name': 'Terreneuvian',
+								'start': 538.8,
+							},
+							{
+								'name': 'Cambrian Series 2',
+								'start': 521,
+							},
+							{
+								'name': 'Miaolingian',
+								'start': 506.5,
+							},
+							{
+								'name': 'Furongian',
+								'start': 497,
+							},
+						],
 					},
 					{
 						'name': 'Ordovician',
-						'start': 485.4,
+						'start': 486.85,
+						'divisions': [
+							{
+								'name': 'Early Ordovician',
+								'start': 486.85,
+							},
+							{
+								'name': 'Middle Ordovician',
+								'start': 471.3,
+							},
+							{
+								'name': 'Late Ordovician',
+								'start': 458.2,
+							},
+						],
 					},
 					{
 						'name': 'Silurian',
-						'start': 443.8,
+						'start': 443.1,
+						'divisions': [
+							{
+								'name': 'Llandovery',
+								'start': 443.1,
+							},
+							{
+								'name': 'Wenlock',
+								'start': 433.4,
+							},
+							{
+								'name': 'Ludlow',
+								'start': 427.4,
+							},
+							{
+								'name': 'Přídolí',
+								'start': 423.0,
+							},
+						],
 					},
 					{
 						'name': 'Devonian',
-						'start': 419.2,
+						'start': 419.62,
+						'divisions': [
+							{
+								'name': 'Early Devonian',
+								'start': 419.62,
+							},
+							{
+								'name': 'Middle Devonian',
+								'start': 393.3,
+							},
+							{
+								'name': 'Late Devonian',
+								'start': 382.31,
+							},
+						],
 					},
 					{
 						'name': 'Carboniferous',
