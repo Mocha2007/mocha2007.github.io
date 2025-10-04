@@ -3022,7 +3022,6 @@ const lifeData = [
 		'parent': 'hippopotamidae',
 		'range': 'af',
 		'age': 5,
-		'emoji': '🦛',
 	},
 	{
 		'name': 'hippopotamus amphibius',
@@ -3031,6 +3030,7 @@ const lifeData = [
 		'range': 'af',
 		'age': 2,
 		'desc': 'Hippo',
+		'emoji': '🦛',
 		// https://repository.up.ac.za/bitstream/handle/2263/56649/6gerneke1965.pdf?sequence=1
 		'genetic': {
 			'chromosome': {
