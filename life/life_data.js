@@ -6031,6 +6031,14 @@ const lifeData = [
 		'desc': 'Trilobite',
 	},
 	{
+		'name': 'trilobozoa',
+		'rank': 'phylum',
+		'parent': 'animalia',
+		'range': 'wo', // ???
+		'age': 557,
+		'extinct': true,
+	},
+	{
 		'name': 'triticeae',
 		'rank': 'tribe',
 		'parent': 'pooideae',
