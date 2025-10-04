@@ -1215,6 +1215,7 @@ const lifeData = [
 		'parent': 'canis',
 		'range': 'nh',
 		'desc': 'Wolf',
+		'emoji': '🐺',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 38,
@@ -1229,6 +1230,7 @@ const lifeData = [
 		'rank': 'subspecies',
 		'parent': 'canis lupus',
 		'desc': 'Dog',
+		'emoji': '🐕',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 38,
@@ -2406,6 +2408,7 @@ const lifeData = [
 		'parent': 'equus ferus',
 		'range': 'ea',
 		'desc': 'Horse',
+		'emoji': '🐴',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 31,
@@ -2623,6 +2626,7 @@ const lifeData = [
 		// 'important': true,
 		'range': 'af',
 		'desc': 'Cat',
+		'emoji': '🐈',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 17,
@@ -2806,6 +2810,7 @@ const lifeData = [
 		'parent': 'homininae',
 		'range': 'af',
 		'desc': 'Gorilla',
+		'emoji': '🦍',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 23,
@@ -3020,7 +3025,7 @@ const lifeData = [
 	{
 		'name': 'hominoidea',
 		'rank': 'superfamily',
-		'parent': 'primates',
+		'parent': 'simiiformes',
 		'range': 'ow',
 		'age': 23,
 		'desc': 'Ape',
@@ -4311,6 +4316,7 @@ const lifeData = [
 		'parent': 'panthera',
 		'range': 'ow',
 		'desc': 'Lion',
+		'emoji': '🦁',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 17,
@@ -4333,6 +4339,7 @@ const lifeData = [
 		'parent': 'panthera',
 		'range': 'ow',
 		'desc': 'Leopard',
+		'emoji': '🐆',
 	},
 	{
 		'name': 'panthera tigris',
@@ -4340,6 +4347,7 @@ const lifeData = [
 		'parent': 'panthera',
 		'range': 'as',
 		'desc': 'Tiger',
+		'emoji': '🐅',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 17,
@@ -4775,6 +4783,7 @@ const lifeData = [
 		'range': 'as',
 		'age': 2,
 		'desc': 'Orangutan',
+		'emoji': '🦧',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 23,
@@ -4839,6 +4848,29 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'prochlorococcus',
 		'range': 'wo',
+	},
+	{
+		'name': 'procyon',
+		'rank': 'genus',
+		'parent': 'procyonidae',
+		'range': 'nw',
+		'age': 4.9,
+	},
+	{
+		'name': 'procyon lotor',
+		'rank': 'species',
+		'parent': 'procyon',
+		'range': 'na',
+		'age': lifeDataPeriod.pliocene,
+		'desc': 'Raccoon',
+		'emoji': '🦝',
+	},
+	{
+		'name': 'procyonidae',
+		'rank': 'family',
+		'parent': 'caniformia',
+		'range': 'nw',
+		'age': 22.6,
 	},
 	{
 		'name': 'proteoarchaeota',
@@ -5405,6 +5437,15 @@ const lifeData = [
 		'range': 'wo',
 		'age': 100,
 		'desc': 'Catfish',
+	},
+	{
+		'name': 'simiiformes',
+		'rank': 'infraorder',
+		'parent': 'primates',
+		'range': 'eq',
+		'age': lifeDataPeriod.late_eocene,
+		'emoji': '🐒',
+		'desc': 'Monkey',
 	},
 	{
 		'name': 'sirenia',
@@ -6130,6 +6171,7 @@ const lifeData = [
 		'parent': 'vulpes',
 		'range': 'nh',
 		'desc': 'Red Fox',
+		'emoji': '🦊',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 16,
