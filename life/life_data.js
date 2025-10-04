@@ -3,6 +3,37 @@
 // sources
 // https://upload.wikimedia.org/wikipedia/commons/e/e3/Timeline_of_life.png
 // (x - 2932 px)(1000 yr / 626 px)
+/** just select the middle of the era */
+const lifeDataPeriod = {
+	barremian: 124,
+	bathonian: 167,
+	burdigalian: 18,
+	cambrian: 513,
+	cambrian_stage_2: 525,
+	chattian: 25,
+	devonian: 389,
+	early_devonian: 407,
+	early_eocene: 50,
+	early_miocene: 19,
+	ediacaran: 587,
+	jurassic: 172,
+	late_devonian: 371,
+	late_eocene: 39,
+	late_miocene: 10,
+	late_silurian: 425,
+	maastrichtian: 69,
+	mesoproterozoic: 1300,
+	miaolingian: 502,
+	mid_ordovician: 465,
+	middle_jurassic: 168,
+	middle_miocene: 14,
+	miocene: 14,
+	oligocene: 28,
+	pliocene: 4,
+	rhaetian: 204,
+	turonian: 92,
+	upper_jurassic: 152,
+};
 /** @type {{
     name: string;
     rank: string;
@@ -138,7 +169,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'agaricales',
 		'range': 'ww',
-		'age': 20, // "burdigalian"
+		'age': lifeDataPeriod.burdigalian,
 	},
 	{
 		'name': 'agaricales',
@@ -152,7 +183,7 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'basidiomycota',
 		'range': 'ww',
-		'age': 125, // "Barremian"
+		'age': lifeDataPeriod.barremian,
 	},
 	{
 		'name': 'agaricus',
@@ -678,7 +709,7 @@ const lifeData = [
 		'rank': 'division',
 		'parent': 'fungi',
 		'range': 'ww',
-		'age': 419.2, // "early devonian"
+		'age': lifeDataPeriod.early_devonian,
 	},
 	{
 		'name': 'asgard',
@@ -829,7 +860,7 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'ochrophytina',
 		'range': 'wo',
-		'age': 200, // "jurassic"
+		'age': lifeDataPeriod.jurassic,
 		'desc': 'Diatom',
 	},
 	{
@@ -923,14 +954,14 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'bangiales',
 		'range': 'wo',
-		'age': 1047, // bangiomorpha
+		'age': 1047,
 	},
 	{
 		'name': 'bangiales',
 		'rank': 'order',
 		'parent': 'bangiophyceae',
 		'range': 'wo',
-		'age': 1600, // rafatazmia
+		'age': 1047,
 	},
 	{
 		'name': 'bangiomorpha',
@@ -954,7 +985,7 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'rhodophyta',
 		'range': 'wo',
-		'age': 1600, // Rafatazmia
+		'age': 1047,
 	},
 	{
 		'name': 'basidiomycota',
@@ -989,7 +1020,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'eukaryota',
 		'range': 'ww',
-		'age': 1600, // "mesoproterozoic"
+		'age': lifeDataPeriod.mesoproterozoic,
 	},
 	{
 		'name': 'bilateria',
@@ -1291,7 +1322,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'selachimorpha',
 		'range': 'wo',
-		'age': 168.2, // Bathonian
+		'age': lifeDataPeriod.bathonian,
 		'desc': 'Ground Shark',
 	},
 	{
@@ -1351,7 +1382,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'castoridae',
 		'range': 'nh',
-		'age': 11, // "late miocene"
+		'age': lifeDataPeriod.late_miocene,
 		'desc': 'Beaver',
 	},
 	{
@@ -1389,7 +1420,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'rodentia',
 		'range': 'nh',
-		'age': 40, // "late eocene"
+		'age': lifeDataPeriod.late_eocene,
 	},
 	{
 		'name': 'caulerpa',
@@ -1408,7 +1439,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'caviidae',
 		'range': 'sa',
-		'age': 5.33, // "pliocene"
+		'age': lifeDataPeriod.pliocene,
 	},
 	{
 		'name': 'cavia porcellus',
@@ -1430,7 +1461,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'rodentia',
 		'range': 'sa',
-		'age': 14, // "middle miocene"
+		'age': lifeDataPeriod.middle_miocene,
 	},
 	{
 		'name': 'cedrus',
@@ -2107,7 +2138,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'marsupialia',
 		'range': 'nw',
-		'age': 20, // "early miocene"
+		'age': lifeDataPeriod.early_miocene,
 		'desc': 'Opossum',
 		'genetic': {
 			'chromosome': {
@@ -2170,7 +2201,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'rhipidistia',
 		'range': 'wo',
-		'age': 410, // early devonian
+		'age': lifeDataPeriod.early_devonian,
 		'desc': 'Lungfish',
 	},
 	{
@@ -2306,6 +2337,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'plantae',
 		'range': 'ww',
+		'age': lifeDataPeriod.mid_ordovician,
 	},
 	{
 		'name': 'enterobacterales',
@@ -2330,7 +2362,7 @@ const lifeData = [
 		'rank': 'subclass',
 		'parent': 'polypodiopsida',
 		'range': 'ww',
-		'age': 382, // late devonian
+		'age': lifeDataPeriod.late_devonian,
 		'desc': 'Horsetails',
 	},
 	{
@@ -2632,14 +2664,14 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'gadiformes',
 		'range': 'wo',
-		'age': 33.9, // Oligocene
+		'age': lifeDataPeriod.oligocene,
 	},
 	{
 		'name': 'gadiformes',
 		'rank': 'order',
 		'parent': 'acanthomorpha',
 		'range': 'wo',
-		'age': 72.1, // Maastrichtian
+		'age': lifeDataPeriod.maastrichtian,
 	},
 	{
 		'name': 'gadus',
@@ -2870,7 +2902,7 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'ambulacraria',
 		'range': 'wo',
-		'age': 500, // "Miaolingian"
+		'age': lifeDataPeriod.miaolingian,
 	},
 	{
 		'name': 'heterolobosea',
@@ -3015,7 +3047,7 @@ const lifeData = [
 		'parent': 'homo',
 		'extinct': true,
 		'range': 'as',
-		'age': 0.3, // appx.
+		'age': 0.2,
 		'desc': 'Denisovan',
 		// https://www.thetech.org/ask-a-geneticist/denisovan-chromosome-2
 		'genetic': {
@@ -3526,7 +3558,7 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'lycophyta',
 		'range': 'ww',
-		'age': 400, // "devonian"
+		'age': lifeDataPeriod.devonian,
 		'desc': 'Clubmosses, Firmosses, Spikemosses, Quillworts',
 	},
 	{
@@ -3733,7 +3765,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'yinotheria',
 		'range': 'oc',
-		'age': 125, // Barremian
+		'age': lifeDataPeriod.barremian,
 	},
 	{
 		'name': 'morchella',
@@ -3917,7 +3949,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'cephalopoda',
 		'range': 'wo',
-		'age': 419, // "devonian"
+		'age': lifeDataPeriod.devonian,
 	},
 	{
 		'name': 'nautilidae',
@@ -4014,7 +4046,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'cephalopoda',
 		'range': 'wo',
-		'age': 175, // "middle jurassic"
+		'age': lifeDataPeriod.middle_jurassic,
 		'desc': 'Octopus',
 	},
 	{
@@ -4454,7 +4486,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'diprotodontia',
 		'range': 'au',
-		'age': 25, // chattian
+		'age': lifeDataPeriod.chattian,
 	},
 	{
 		'name': 'phascolarctos',
@@ -4839,14 +4871,14 @@ const lifeData = [
 		'name': 'prototaxitaceae',
 		'rank': 'family',
 		'parent': 'ascomycota',
-		'age': 425, // "Late silurian"
+		'age': lifeDataPeriod.late_silurian,
 		'extinct': true,
 	},
 	{
 		'name': 'prototaxites',
 		'rank': 'genus',
 		'parent': 'prototaxitaceae',
-		'age': 425, // "Late silurian"
+		'age': lifeDataPeriod.late_silurian,
 		'extinct': true,
 	},
 	{
@@ -4901,7 +4933,7 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'diaphoretickes',
 		'range': 'wo',
-		'age': 205, // "rhaetian"
+		'age': lifeDataPeriod.rhaetian,
 		'desc': 'Coccolithophore',
 	},
 	{
@@ -5017,7 +5049,7 @@ const lifeData = [
 		'rank': 'subphylum',
 		'parent': 'retaria',
 		'range': 'ww',
-		'age': 538, // 'cambrian'
+		'age': lifeDataPeriod.cambrian,
 	},
 	{
 		'name': 'raphanus',
@@ -5082,7 +5114,7 @@ const lifeData = [
 		'rank': 'division',
 		'parent': 'archaeplastida',
 		'range': 'wo',
-		'age': 1600, // 'mesoproterozoic'
+		'age': lifeDataPeriod.mesoproterozoic,
 		'desc': 'Red Algae',
 	},
 	{
@@ -5293,7 +5325,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'carcharhiniformes',
 		'range': 'wo',
-		'age': 161.5, // Upper Jurassic
+		'age': lifeDataPeriod.upper_jurassic,
 		'desc': 'Catshark',
 	},
 	{
@@ -5341,7 +5373,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'cephalopoda',
 		'range': 'wo',
-		'age': 72, // "maastrichtian"
+		'age': lifeDataPeriod.maastrichtian,
 		'desc': 'Cuttlefish',
 	},
 	{
@@ -5656,7 +5688,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'asteraceae',
 		'range': 'ea;na',
-		'age': 23, // miocene
+		'age': lifeDataPeriod.miocene,
 		'desc': 'Dandelion',
 	},
 	{
@@ -5664,7 +5696,7 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'panarthropoda',
 		'range': 'ww',
-		'age': 90, // turonian
+		'age': lifeDataPeriod.turonian,
 		'desc': 'Tardigrade',
 	},
 	{
@@ -5909,7 +5941,7 @@ const lifeData = [
 		'rank': 'subphylum',
 		'parent': 'olfactores',
 		'range': 'wo',
-		'age': 525, // camb stage 2
+		'age': lifeDataPeriod.cambrian_stage_2,
 		'desc': 'Tunicate',
 	},
 	{
@@ -6111,7 +6143,7 @@ const lifeData = [
 		'rank': 'suborder',
 		'parent': 'cetruminantia',
 		'range': 'af',
-		'age': 50, // "early eocene"
+		'age': lifeDataPeriod.early_eocene,
 	},
 	// X
 	{
@@ -6119,7 +6151,7 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'bilateria',
 		'range': 'wo',
-		'age': 635, // "Ediacaran"
+		'age': lifeDataPeriod.ediacaran,
 	},
 	// Y
 	{
@@ -6146,7 +6178,7 @@ const lifeData = [
 		'rank': 'subclass',
 		'parent': 'mammalia',
 		'range': 'oc;ow',
-		'age': 170, // "Middle Jurassic"
+		'age': lifeDataPeriod.middle_jurassic,
 	},
 	// Z
 	{
