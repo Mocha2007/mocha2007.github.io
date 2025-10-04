@@ -367,6 +367,30 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'amborella',
+		'rank': 'genus',
+		'parent': 'amborellaceae',
+		'range': 'oc',
+	},
+	{
+		'name': 'amborella trichopoda',
+		'rank': 'species',
+		'parent': 'amborella',
+		'range': 'oc',
+	},
+	{
+		'name': 'amborellaceae',
+		'rank': 'family',
+		'parent': 'amborellales',
+		'range': 'oc',
+	},
+	{
+		'name': 'amborellales',
+		'rank': 'order',
+		'parent': 'angiospermae',
+		'range': 'oc',
+	},
+	{
 		'name': 'ambulacraria',
 		'rank': 'clade',
 		'parent': 'deuterostomia',
