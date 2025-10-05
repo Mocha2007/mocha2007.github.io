@@ -23,6 +23,7 @@ const lifeDataPeriod = {
 	early_devonian: 407,
 	early_eocene: 50,
 	early_miocene: 19,
+	early_oligocene: 31,
 	ediacaran: 587,
 	famennian: 365,
 	induan: 251,
@@ -56,6 +57,7 @@ const lifeDataPeriod = {
 	stenian: 1100,
 	turonian: 92,
 	upper_jurassic: 152,
+	zanclean: 4,
 };
 /** @type {{
     name: string;
@@ -258,6 +260,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'ailuridae',
 		'range': 'as',
+		'age': lifeDataPeriod.pliestocene,
 	},
 	{
 		'name': 'ailurus fulgens',
@@ -487,6 +490,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'anas',
 		'range': 'nh',
+		'age': lifeDataPeriod.zanclean,
 		'desc': 'Mallard',
 	},
 	{
@@ -494,6 +498,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'anseriformes',
 		'range': 'ww',
+		'age': lifeDataPeriod.early_oligocene,
 		'desc': 'Waterfowl',
 	},
 	{
@@ -540,6 +545,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'galloanserae',
 		'range': 'ww',
+		'age': lifeDataPeriod.maastrichtian,
 	},
 	{
 		'name': 'anthoathecata',
@@ -567,6 +573,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'amphibia',
 		'range': 'ww',
+		'age': 200,
 		'desc': 'Frog',
 	},
 	{
@@ -592,12 +599,14 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'hymenoptera',
 		'range': 'ww',
+		'age': lifeDataPeriod.maastrichtian,
 	},
 	{
 		'name': 'apis',
 		'rank': 'genus',
 		'parent': 'apidae',
 		'range': 'ea',
+		'age': lifeDataPeriod.oligocene,
 		'desc': 'Honey Bee',
 		'genetic': {
 			'chromosome': {
@@ -750,6 +759,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'sauria',
 		'range': 'ww',
+		'age': 248,
 	},
 	{
 		'name': 'arctoidea',
@@ -795,6 +805,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'isopoda',
 		'range': 'ow',
+		'age': lifeDataPeriod.chattian,
 		'desc': 'Rolly Polly',
 	},
 	{
@@ -809,12 +820,14 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'ungulata',
 		'range': 'ww',
+		'age': 55.4,
 	},
 	{
 		'name': 'artiofabula',
 		'rank': 'clade',
 		'parent': 'artiodactyla',
 		'range': 'ww',
+		'age': lifeDataPeriod.early_eocene,
 	},
 	{
 		'name': 'ascomycota',
@@ -847,6 +860,7 @@ const lifeData = [
 		'rank': 'superfamily',
 		'parent': 'decapoda',
 		'range': 'wo',
+		'age': 228,
 		'desc': 'Crayfish',
 	},
 	{
@@ -984,6 +998,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'paraves',
 		'range': 'ww',
+		'age': 150.8,
 	},
 	// B
 	{
