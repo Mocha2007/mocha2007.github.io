@@ -223,12 +223,7 @@ class Taxon {
 	// }
 	/** @returns {Taxon|undefined} */
 	get kingdom(){
-		if (this.rank === 'kingdom')
-			return this;
-		const p = this.parent;
-		if (p)
-			return p.kingdom;
-		return undefined;
+		return this.rank === 'kingdom' ? this : (p => p && p.kingdom)(this.parent);
 	}
 	get parent(){
 		return Taxon.fromString(this.parent_id);
