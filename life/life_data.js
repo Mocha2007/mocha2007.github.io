@@ -170,7 +170,7 @@ const lifeData = [
 	{
 		'name': 'actinomycetota',
 		'rank': 'phylum',
-		'parent': 'terrabacteria',
+		'parent': 'bacillati',
 		'range': 'ww',
 	},
 	{
@@ -965,6 +965,13 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'bacillati',
+		'rank': 'kingdom',
+		'parent': 'bacteria',
+		'range': 'ww',
+		'age': 2900, // https://en.wikipedia.org/wiki/File:Timeline_of_life.png
+	},
+	{
 		'name': 'bacilli',
 		'rank': 'class',
 		'parent': 'bacillota',
@@ -973,7 +980,7 @@ const lifeData = [
 	{
 		'name': 'bacillota',
 		'rank': 'phylum',
-		'parent': 'terrabacteria',
+		'parent': 'bacillati',
 		'range': 'ww',
 	},
 	{
@@ -1744,7 +1751,7 @@ const lifeData = [
 	{
 		'name': 'chlamydiota',
 		'rank': 'phylum',
-		'parent': 'hydrobacteria',
+		'parent': 'pseudomonadati',
 		'range': 'ww',
 	},
 	{
@@ -2035,10 +2042,11 @@ const lifeData = [
 	},
 	{
 		'name': 'cpr group',
-		'rank': 'infrakingdom',
+		'rank': 'clade',
 		'parent': 'bacteria',
 		'range': 'ww',
 		'desc': 'Candidate phyla radiation',
+		'wiki': 'Candidate_phyla_radiation',
 	},
 	{
 		'name': 'cranchiidae',
@@ -2174,7 +2182,7 @@ const lifeData = [
 	{
 		'name': 'cyanobacteria',
 		'rank': 'phylum',
-		'parent': 'terrabacteria',
+		'parent': 'bacillati',
 		'range': 'ww',
 		'age': 2100,
 	},
@@ -3455,13 +3463,6 @@ const lifeData = [
 		'range': 'eq',
 	},
 	{
-		'name': 'hydrobacteria',
-		'rank': 'clade',
-		'parent': 'bacteria',
-		'range': 'ww',
-		'age': 3000, // https://en.wikipedia.org/wiki/File:Timeline_of_life.png
-	},
-	{
 		'name': 'hydrochoerus',
 		'rank': 'genus',
 		'parent': 'caviidae',
@@ -4262,7 +4263,7 @@ const lifeData = [
 	{
 		'name': 'myxococcota',
 		'rank': 'phylum',
-		'parent': 'hydrobacteria',
+		'parent': 'pseudomonadati',
 		'range': 'ww',
 		'desc': 'Fruiting Gliding Bacteria',
 	},
@@ -5438,9 +5439,16 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'pseudomonadati',
+		'rank': 'kingdom',
+		'parent': 'bacteria',
+		'range': 'ww',
+		'age': 3000, // https://en.wikipedia.org/wiki/File:Timeline_of_life.png
+	},
+	{
 		'name': 'pseudomonadota',
 		'rank': 'phylum',
-		'parent': 'hydrobacteria',
+		'parent': 'pseudomonadati',
 		'range': 'ww',
 	},
 	{
@@ -6297,13 +6305,6 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'neoaves',
 		'range': 'ww',
-	},
-	{
-		'name': 'terrabacteria',
-		'rank': 'clade',
-		'parent': 'bacteria',
-		'range': 'ww',
-		'age': 2900, // https://en.wikipedia.org/wiki/File:Timeline_of_life.png
 	},
 	{
 		'name': 'tethytheria',
