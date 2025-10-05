@@ -2476,7 +2476,8 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'proarticulata',
 		'range': 'wo', // ???
-		'age': 567, // lifeDataPeriod.ediacaran???
+		'age': 567, // wp lists 555 but that doesn't work with its child
+		'age_end': 550,
 		'extinct': true,
 	},
 	{
