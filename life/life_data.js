@@ -2756,7 +2756,7 @@ const lifeData = [
 	{
 		'name': 'eudicots',
 		'rank': 'clade',
-		'parent': 'angiospermae',
+		'parent': 'mesangiospermae',
 		'range': 'ww',
 		'age': 125,
 	},
@@ -3956,7 +3956,7 @@ const lifeData = [
 	{
 		'name': 'magnoliids',
 		'rank': 'clade',
-		'parent': 'angiospermae',
+		'parent': 'mesangiospermae',
 		'range': 'ww',
 		'age': lifeDataPeriod.aptian,
 	},
@@ -4051,6 +4051,12 @@ const lifeData = [
 		'emoji': '🪼',
 	},
 	{
+		'name': 'mesangiospermae',
+		'rank': 'clade',
+		'parent': 'angiospermae',
+		'range': 'ww',
+	},
+	{
 		'name': 'mesonychoteuthis',
 		'rank': 'genus',
 		'parent': 'cranchiidae',
@@ -4116,7 +4122,7 @@ const lifeData = [
 	{
 		'name': 'monocots',
 		'rank': 'clade',
-		'parent': 'angiospermae',
+		'parent': 'mesangiospermae',
 		'range': 'ww',
 		'age': 125,
 	},

@@ -519,4 +519,11 @@ function verify(){
 	Taxon.taxa.filter(t => t.extinct && !(t.age && t.age_end)).forEach(t => {
 		console.warn(`${t.name} (${t.url}) is extinct but is missing an age tag (${t.age}) or an age_end tag (${t.age_end})`);
 	});
+	// too many children
+	const MAX_CHILDREN = 4;
+	const FORGIVEN_RANKS = ['genus'];
+	console.debug(`too many direct children (>${MAX_CHILDREN}):`);
+	Taxon.taxa.filter(t => !FORGIVEN_RANKS.includes(t.rank) && MAX_CHILDREN < t.children.length).forEach(t => {
+		console.warn(`${t.name} (${t.url}) has too many direct children (${t.children.length}: ${t.children.map(c => c.name).join(', ')}) - are we sure it isn't divided further?`);
+	});
 }
