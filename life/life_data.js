@@ -2209,6 +2209,12 @@ const lifeData = [
 		'age': 511,
 	},
 	{
+		'name': 'cryptovermes',
+		'rank': 'clade',
+		'parent': 'ecdysozoa',
+		'range': 'ww',
+	},
+	{
 		'name': 'ctenophora',
 		'rank': 'phylum',
 		'parent': 'eumetazoa',
@@ -3932,7 +3938,7 @@ const lifeData = [
 	{
 		'name': 'kinorhyncha',
 		'rank': 'phylum',
-		'parent': 'ecdysozoa',
+		'parent': 'scalidophora',
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.terreneuvian,
 		'desc': 'Mud dragons',
@@ -4126,7 +4132,7 @@ const lifeData = [
 	{
 		'name': 'loricifera',
 		'rank': 'phylum',
-		'parent': 'ecdysozoa',
+		'parent': 'scalidophora',
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.cambrian_stage_2,
 		'desc': 'Brush heads',
@@ -4628,7 +4634,7 @@ const lifeData = [
 	{
 		'name': 'nematoda',
 		'rank': 'phylum',
-		'parent': 'ecdysozoa',
+		'parent': 'cryptovermes',
 		'range': 'ww', // ?
 		'age': lifeDataPeriod.early_devonian,
 		'desc': 'Roundworms',
@@ -4636,7 +4642,7 @@ const lifeData = [
 	{
 		'name': 'nematomorpha',
 		'rank': 'phylum',
-		'parent': 'ecdysozoa',
+		'parent': 'cryptovermes',
 		'range': 'ww', // ?
 		'age': lifeDataPeriod.cenomanian,
 		'desc': 'Horsehair worms',
@@ -5006,7 +5012,7 @@ const lifeData = [
 	{
 		'name': 'panarthropoda',
 		'rank': 'clade',
-		'parent': 'ecdysozoa',
+		'parent': 'cryptovermes',
 		'range': 'ww',
 		'age': 540,
 	},
@@ -5657,7 +5663,7 @@ const lifeData = [
 	{
 		'name': 'priapulida',
 		'rank': 'phylum',
-		'parent': 'ecdysozoa',
+		'parent': 'scalidophora',
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.late_pennsylvanian,
 		'desc': 'Penis worms',
@@ -6200,7 +6206,7 @@ const lifeData = [
 		'name': 'saccorhytida',
 		'rank': 'phylum',
 		'parent': 'ecdysozoa',
-		'range': 'ch',
+		'range': 'cn',
 		'age': lifeDataPeriod.fortunian,
 		'extinct': true,
 	},
@@ -6270,6 +6276,12 @@ const lifeData = [
 		'extinct': true,
 		'age': 247,
 		'age_end': 66,
+		'range': 'ww',
+	},
+	{
+		'name': 'scalidophora',
+		'rank': 'clade',
+		'parent': 'ecdysozoa',
 		'range': 'ww',
 	},
 	{
