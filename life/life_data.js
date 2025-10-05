@@ -6226,6 +6226,14 @@ const lifeData = [
 	},
 	// T
 	{
+		'name': 'tachyglossidae',
+		'rank': 'family',
+		'parent': 'monotremata',
+		'range': 'oc',
+		'age': lifeDataPeriod.pliocene,
+		'desc': 'Echidnas',
+	},
+	{
 		'name': 'tamiina',
 		'rank': 'subtribe',
 		'parent': 'sciuridae',
