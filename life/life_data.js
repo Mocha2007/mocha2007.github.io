@@ -3774,6 +3774,15 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'horodyskia',
+		'rank': 'genus',
+		'parent': 'eukaryota',
+		'range': 'au;cn;na',
+		'age': 1500,
+		'age_end': 900,
+		'extinct': true,
+	},
+	{
 		'name': 'hyaenidae',
 		'rank': 'family',
 		'parent': 'feliformia',
