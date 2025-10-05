@@ -1333,6 +1333,19 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'candida',
+		'rank': 'genus',
+		'parent': 'debaryomycetaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'candida albicans',
+		'rank': 'species',
+		'parent': 'candida',
+		'range': 'ww',
+		'desc': 'Opportunistic pathogenic yeast that is a common member of the human gut flora',
+	},
+	{
 		'name': 'canidae',
 		'rank': 'family',
 		'parent': 'cynoidea',
@@ -2306,6 +2319,12 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+	},
+	{
+		'name': 'debaryomycetaceae',
+		'rank': 'family',
+		'parent': 'serinales',
+		'range': 'ww',
 	},
 	{
 		'name': 'decapoda',
@@ -5123,6 +5142,12 @@ const lifeData = [
 		'desc': 'Spruce',
 	},
 	{
+		'name': 'pichiomycetes',
+		'rank': 'class',
+		'parent': 'saccharomycotina',
+		'range': 'ww',
+	},
+	{
 		'name': 'pinaceae',
 		'rank': 'family',
 		'parent': 'pinales',
@@ -5872,6 +5897,12 @@ const lifeData = [
 	{
 		'name': 'saccharomycetes',
 		'rank': 'class',
+		'parent': 'saccharomycotina',
+		'range': 'ww',
+	},
+	{
+		'name': 'saccharomycotina',
+		'rank': 'subdivision',
 		'parent': 'ascomycota',
 		'range': 'ww',
 	},
@@ -6068,6 +6099,12 @@ const lifeData = [
 		'range': 'wo',
 		'age': lifeDataPeriod.maastrichtian,
 		'desc': 'Cuttlefish',
+	},
+	{
+		'name': 'serinales',
+		'rank': 'order',
+		'parent': 'pichiomycetes',
+		'range': 'ww',
 	},
 	{
 		'name': 'serpentes',
