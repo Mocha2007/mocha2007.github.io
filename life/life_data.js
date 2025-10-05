@@ -1845,6 +1845,12 @@ const lifeData = [
 		'extinct': true,
 	},
 	{
+		'name': 'charophyta',
+		'rank': 'division',
+		'parent': 'plantae',
+		'range': 'ww',
+	},
+	{
 		'name': 'chlamydia',
 		'rank': 'genus',
 		'parent': 'chlamydiaceae',
@@ -3303,6 +3309,13 @@ const lifeData = [
 		'desc': 'Jaw worms',
 	},
 	{
+		'name': 'gnetophyta',
+		'rank': 'division',
+		'parent': 'gymnospermae',
+		'range': 'ww',
+		'age': lifeDataPeriod.jurassic,
+	},
+	{
 		'name': 'gorilla',
 		'rank': 'genus',
 		'parent': 'homininae',
@@ -4177,7 +4190,7 @@ const lifeData = [
 	},
 	{
 		'name': 'lycophyta',
-		'rank': 'clade',
+		'rank': 'division',
 		'parent': 'tracheophyta',
 		'range': 'ww',
 		'age': 428,
@@ -5429,6 +5442,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'picozoa',
+		'rank': 'phylum',
+		'parent': 'archaeplastida',
+		'range': 'ww', // ???
+	},
+	{
 		'name': 'pinaceae',
 		'rank': 'family',
 		'parent': 'pinales',
@@ -5635,12 +5654,19 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
-		'name': 'polypodiopsida',
-		'rank': 'class',
+		'name': 'polypodiophyta',
+		'rank': 'division',
 		'parent': 'euphyllophyta',
 		'range': 'ww',
 		'age': 390,
 		'desc': 'Ferns',
+	},
+	{
+		'name': 'polypodiopsida',
+		'rank': 'class',
+		'parent': 'polypodiophyta',
+		'range': 'ww',
+		'age': 390,
 	},
 	{
 		'name': 'polyporales',
@@ -5679,6 +5705,12 @@ const lifeData = [
 		'age': 580,
 		'desc': 'Sponge',
 		'emoji': '🧽',
+	},
+	{
+		'name': 'prasinodermophyta',
+		'rank': 'division',
+		'parent': 'plantae',
+		'range': 'ww', // ???
 	},
 	{
 		'name': 'priapulida',
