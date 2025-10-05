@@ -66,7 +66,7 @@ class Taxon {
 		}
 		const age_upper = this.age_guess_upper;
 		const age_lower = this.age_guess_lower;
-		return 0 < age_upper && 0 < age_lower && age_upper > age_lower ? (age_upper + age_lower)/2 : 0;
+		return 0 < age_upper && 0 < age_lower && age_lower <= age_upper ? (age_upper + age_lower)/2 : 0;
 	}
 	get age_guess_lower(){
 		if (this.age){

@@ -756,7 +756,7 @@ const lifeData = [
 	{
 		'name': 'archaeplastida',
 		'rank': 'clade',
-		'parent': 'diaphoretickes',
+		'parent': 'cam',
 		'range': 'ww',
 		'age': 1600,
 	},
@@ -1395,6 +1395,12 @@ const lifeData = [
 		'desc': 'Moss animals',
 	},
 	// C
+	{
+		'name': 'cam',
+		'rank': 'clade',
+		'parent': 'diaphoretickes',
+		'range': 'ww',
+	},
 	{
 		'name': 'camelidae',
 		'rank': 'family',
@@ -2241,7 +2247,7 @@ const lifeData = [
 	{
 		'name': 'cryptista',
 		'rank': 'phylum',
-		'parent': 'diaphoretickes',
+		'parent': 'sar',
 		'range': 'ww', // ???
 	},
 	{
@@ -3439,7 +3445,7 @@ const lifeData = [
 	{
 		'name': 'halvaria',
 		'rank': 'clade',
-		'parent': 'harosa',
+		'parent': 'sar',
 		'range': 'ww',
 	},
 	{
@@ -3449,8 +3455,8 @@ const lifeData = [
 		'range': 'ww', // ???
 	},
 	{
-		'name': 'harosa',
-		'rank': 'subkingdom',
+		'name': 'sar',
+		'rank': 'clade',
 		'parent': 'diaphoretickes',
 		'range': 'ww',
 		'age': 736,
@@ -6201,7 +6207,7 @@ const lifeData = [
 	{
 		'name': 'rhizaria',
 		'rank': 'clade',
-		'parent': 'harosa',
+		'parent': 'sar',
 		'range': 'ww',
 	},
 	{
