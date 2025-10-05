@@ -3000,6 +3000,7 @@ const lifeData = [
 		'parent': 'felis',
 		// 'important': true,
 		'range': 'af',
+		'age': 0.0095,
 		'desc': 'Cat',
 		'emoji': '🐈',
 		'genetic': {
@@ -3043,6 +3044,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'hymenoptera',
 		'range': 'ww',
+		'age': 113,
 		'desc': 'Ant',
 	},
 	{
@@ -3079,12 +3081,14 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'galloanserae',
 		'range': 'ww',
+		'age': 55,
 	},
 	{
 		'name': 'galloanserae',
 		'rank': 'superorder',
 		'parent': 'aves',
 		'range': 'ww',
+		'age': lifeDataPeriod.maastrichtian,
 		'desc': 'Fowl',
 	},
 	{
@@ -3092,6 +3096,9 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'phasianinae',
 		'range': 'as',
+		'age': lifeDataPeriod.late_miocene,
+		'desc': 'Junglefowl',
+		'wiki': 'Junglefowl',
 	},
 	{
 		'name': 'gallus gallus',
@@ -3126,6 +3133,7 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'mollusca',
 		'range': 'ww',
+		'age': lifeDataPeriod.cambrian,
 		'desc': 'Slugs and Snails',
 	},
 	{
@@ -3392,6 +3400,7 @@ const lifeData = [
 		'rank': 'subgenus',
 		'parent': 'equus',
 		'range': 'af',
+		'age': 2,
 		'desc': 'Zebra',
 		'emoji': '🦓',
 	},
@@ -3610,6 +3619,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'hydridae',
 		'range': 'eq',
+		'wiki': 'Hydra_(genus)',
 	},
 	{
 		'name': 'hydridae',
@@ -3689,6 +3699,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'insecta',
 		'range': 'ww',
+		'age': 235,
 	},
 	{
 		'name': 'hypocreales',
@@ -3795,6 +3806,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'malacostraca',
 		'range': 'ww',
+		'age': 300,
 	},
 	// J
 	{
