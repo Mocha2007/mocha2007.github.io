@@ -39,6 +39,7 @@ const lifeDataPeriod = {
 	late_miocene: 10,
 	late_oligocene: 26,
 	late_paleocene: 58,
+	late_pleistocene: 0.07,
 	late_silurian: 425,
 	lopingian: 256,
 	lutetian: 45,
@@ -4844,6 +4845,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'pan',
 		'range': 'af',
+		'age': 4,
 		'desc': 'Chimpanzee',
 		'genetic': {
 			'chromosome': {
@@ -4866,6 +4868,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'arthropoda',
 		'range': 'ww',
+		'age': lifeDataPeriod.cambrian_stage_3,
 	},
 	{
 		'name': 'paniceae',
@@ -4911,6 +4914,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'panthera',
 		'range': 'ow',
+		'age': lifeDataPeriod.pliestocene,
 		'desc': 'Lion',
 		'emoji': '🦁',
 		'genetic': {
@@ -4927,6 +4931,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'panthera',
 		'range': 'nw',
+		'age': 0.85,
 		'desc': 'Jaguar',
 	},
 	{
@@ -4934,6 +4939,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'panthera',
 		'range': 'ow',
+		'age': lifeDataPeriod.early_pleistocene,
 		'desc': 'Leopard',
 		'emoji': '🐆',
 	},
@@ -4942,6 +4948,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'panthera',
 		'range': 'as',
+		'age': lifeDataPeriod.early_pleistocene,
 		'desc': 'Tiger',
 		'emoji': '🐅',
 		'genetic': {
@@ -4958,6 +4965,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'panthera',
 		'range': 'as',
+		'age': lifeDataPeriod.late_pleistocene,
 		'desc': 'Snow Leopard',
 	},
 	{
@@ -5004,6 +5012,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'theropoda',
 		'range': 'ww',
+		'age': lifeDataPeriod.middle_jurassic,
 	},
 	{
 		'name': 'paridae',
@@ -5017,13 +5026,16 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'psittacopasserae',
 		'range': 'ww',
+		'age': 52.5,
 	},
 	{
 		'name': 'pavo',
 		'rank': 'genus',
 		'parent': 'phasianinae',
 		'range': 'as',
+		'age': lifeDataPeriod.late_miocene,
 		'desc': 'Peafowl',
+		'wiki': 'Pavo_(bird)',
 	},
 	{
 		'name': 'penicillium',
@@ -5063,6 +5075,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'ungulata',
 		'range': 'ww',
+		'age': 56,
 	},
 	{
 		'name': 'petalonamae',
@@ -5165,6 +5178,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'galliformes',
 		'range': 'ww',
+		'age': 30,
 	},
 	{
 		'name': 'phasianinae',
@@ -5177,6 +5191,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'ferae',
 		'range': 'ow',
+		'age': 47.8,
 		'desc': 'Pangolin',
 	},
 	{
@@ -5713,6 +5728,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'psittaciformes',
 		'range': 'eq',
+		'age': lifeDataPeriod.eocene,
 	},
 	{
 		'name': 'psittaciformes',
@@ -5768,6 +5784,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'puma',
 		'range': 'nw',
+		'age': 1.2,
 		'desc': 'Mountain Lion',
 	},
 	{
