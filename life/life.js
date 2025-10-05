@@ -503,7 +503,7 @@ function verify(){
 	const MISSING_AGES_KINGDOM_WHITELIST = ['animalia', 'plantae'].map(Taxon.fromString);
 	const missing = Taxon.taxa.filter(t => MISSING_AGES_KINGDOM_WHITELIST.includes(t.kingdom) && !lifeData[t.i].hasOwnProperty('age')).map(t => t.url);
 	console.debug(`missing ages in plants and animals: ${Math.round(100 * missing.length / Taxon.taxa.length)}%`);
-	console.debug(missing);
+	console.warn(missing);
 	// age is older than parent
 	console.debug("age is older than parent:");
 	Taxon.taxa.filter(t => t.parent && t.parent.age > 0 && t.age > t.parent.age).forEach(t => {
