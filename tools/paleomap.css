@@ -5,8 +5,12 @@
 	display: inline-block;
 }
 
+#paleomap_container span {
+	font-size: 3vh;
+}
+
 #paleomap_img {
-	height: 20vh;
+	width: 30vw;
 }
 
 #paleomap_super {
@@ -16,7 +20,7 @@
 	text-align: center;
 }
 
-.button {
+#paleomap_container .button {
 	background-color: #aac;
 	border-color: #444;
 	border-radius: 15px;
@@ -29,9 +33,9 @@
 	user-select: none;
 	width: fit-content;
 }
-.button:hover {
+#paleomap_container .button:hover {
 	opacity: 0.5;
 }
-.button:active {
+#paleomap_container .button:active {
 	opacity: 0.25;
 }

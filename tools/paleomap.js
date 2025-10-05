@@ -92,6 +92,7 @@ const paleomap = {
 			container.appendChild(this.img);
 			container.appendChild(document.createElement('br'));
 			container.appendChild(this.year);
+			container.appendChild(document.createElement('br'));
 			container.appendChild(this.slider);
 			return container;
 		},
@@ -103,7 +104,6 @@ const paleomap = {
 		get slider(){
 			// todo
 			const label = document.createElement('label');
-			label.innerHTML = '&nbsp;MYA';
 			label.appendChild(this.buttonLeft);
 			const input = document.createElement('input');
 			input.type = 'range';
@@ -116,9 +116,12 @@ const paleomap = {
 			return label;
 		},
 		get year(){
+			const container = document.createElement('span');
 			const span = document.createElement('span');
 			span.id = 'paleomap_year';
-			return span;
+			container.appendChild(span);
+			container.appendChild(document.createTextNode(' Mya'));
+			return container;
 		},
 	},
 	elem: {
