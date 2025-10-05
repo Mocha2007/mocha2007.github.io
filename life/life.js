@@ -34,12 +34,13 @@ class Taxon {
 	// todo: make this auto-generate a "guess" if there is parent and daughter info
 	get age_elem(){
 		const age_container = document.createElement('span');
-		if (this.age){
-			const age = document.createElement('abbr');
-			age.classList.add('age');
-			age.title = getEra(this.age);
-			age.innerHTML = getAge(this.age);
-			age_container.appendChild(age);
+		const age = this.age || this.age_guess;
+		if (age){
+			const age_elem = document.createElement('abbr');
+			age_elem.classList.add('age');
+			age_elem.title = getEra(age);
+			age_elem.innerHTML = getAge(age);
+			age_container.appendChild(age_elem);
 			// age_end
 			if (this.age_end){
 				age_container.innerHTML += '&ndash;';
@@ -52,6 +53,10 @@ class Taxon {
 			}
 		}
 		return age_container;
+	}
+	get age_guess(){
+		// todo
+		return 0;
 	}
 	get authority_elem(){
 		const authority_elem = document.createElement('span');
