@@ -29,7 +29,7 @@ summary a {
 	font-size: small;
 	font-weight: bold;
 }
-.authority, .age {
+.authority, summary .age:first-of-type {
 	margin-left: 0.5vw;
 }
 .authority, .develop, .genetic, .openAll, .range {
