@@ -26,6 +26,7 @@ const lifeDataPeriod = {
 	famennian: 365,
 	induan: 251,
 	jurassic: 172,
+	late_carboniferous: 311,
 	late_cretaceous: 83,
 	late_devonian: 371,
 	late_eocene: 39,
@@ -3591,6 +3592,13 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'isoetales',
+		'rank': 'order',
+		'parent': 'lycopodiopsida',
+		'range': 'ww',
+		'desc': 'Quillwort',
+	},
+	{
 		'name': 'isopoda',
 		'rank': 'order',
 		'parent': 'malacostraca',
@@ -3834,12 +3842,18 @@ const lifeData = [
 		'age': 428,
 	},
 	{
+		'name': 'lycopodiales',
+		'rank': 'order',
+		'parent': 'lycopodiopsida',
+		'range': 'ww',
+		'desc': 'Clubmosses and firmosses',
+	},
+	{
 		'name': 'lycopodiopsida',
 		'rank': 'class',
 		'parent': 'lycophyta',
 		'range': 'ww',
 		'age': lifeDataPeriod.devonian,
-		'desc': 'Clubmosses, Firmosses, Spikemosses, Quillworts',
 	},
 	{
 		'name': 'lynx',
@@ -5834,6 +5848,14 @@ const lifeData = [
 		'range': 'wo',
 		'age': 200,
 		'desc': 'Shark',
+	},
+	{
+		'name': 'selaginellales',
+		'rank': 'order',
+		'parent': 'lycopodiopsida',
+		'range': 'ww',
+		'age': lifeDataPeriod.late_carboniferous,
+		'desc': 'Spikemoss',
 	},
 	{
 		'name': 'semaeostomeae',
