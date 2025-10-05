@@ -15,6 +15,7 @@ const lifeDataPeriod = {
 	cambrian_stage_3: 518,
 	campanian: 78,
 	carboniferous: 329,
+	cenomanian: 97,
 	chattian: 25,
 	cretaceous: 105,
 	devonian: 389,
@@ -225,7 +226,7 @@ const lifeData = [
 	{
 		'name': 'ailuridae',
 		'rank': 'family',
-		'parent': 'caniformia',
+		'parent': 'arctoidea',
 		'range': 'as',
 		'age': 30,
 	},
@@ -749,6 +750,13 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'sauria',
 		'range': 'ww',
+	},
+	{
+		'name': 'arctoidea',
+		'rank': 'infraorder',
+		'parent': 'caniformia',
+		'range': 'ww',
+		'age': 46,
 	},
 	{
 		'name': 'ardipithecus',
@@ -1327,7 +1335,7 @@ const lifeData = [
 	{
 		'name': 'canidae',
 		'rank': 'family',
-		'parent': 'caniformia',
+		'parent': 'cynoidea',
 		'range': 'ww',
 		'age': 39.75,
 	},
@@ -2260,6 +2268,13 @@ const lifeData = [
 		'range': 'ww',
 		'desc': 'Swan',
 	},
+	{
+		'name': 'cynoidea',
+		'rank': 'infraorder',
+		'parent': 'caniformia',
+		'range': 'ww',
+		'age': 39.75,
+	},
 	// D
 	{
 		'name': 'dasycladales',
@@ -2297,6 +2312,13 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'malacostraca',
 		'range': 'wo',
+	},
+	{
+		'name': 'decapodiformes',
+		'rank': 'superorder',
+		'parent': 'cephalopoda',
+		'range': 'wo',
+		'age': lifeDataPeriod.early_devonian,
 	},
 	{
 		'name': 'deinonychus',
@@ -4231,7 +4253,7 @@ const lifeData = [
 	{
 		'name': 'mustelidae',
 		'rank': 'family',
-		'parent': 'caniformia',
+		'parent': 'arctoidea',
 		'range': 'ww',
 		'age': 30,
 	},
@@ -4458,8 +4480,9 @@ const lifeData = [
 	{
 		'name': 'oegopsida',
 		'rank': 'order',
-		'parent': 'cephalopoda',
+		'parent': 'decapodiformes',
 		'range': 'wo',
+		'age': lifeDataPeriod.cenomanian,
 	},
 	{
 		'name': 'olfactores',
@@ -5370,7 +5393,7 @@ const lifeData = [
 	{
 		'name': 'procyonidae',
 		'rank': 'family',
-		'parent': 'caniformia',
+		'parent': 'arctoidea',
 		'range': 'nw',
 		'age': 22.6,
 	},
@@ -5984,7 +6007,7 @@ const lifeData = [
 	{
 		'name': 'sepiida',
 		'rank': 'order',
-		'parent': 'cephalopoda',
+		'parent': 'decapodiformes',
 		'range': 'wo',
 		'age': lifeDataPeriod.maastrichtian,
 		'desc': 'Cuttlefish',
@@ -6697,7 +6720,7 @@ const lifeData = [
 	{
 		'name': 'ursidae',
 		'rank': 'family',
-		'parent': 'caniformia',
+		'parent': 'arctoidea',
 		'range': 'nh',
 		'age': 38,
 		'desc': 'Bear',
