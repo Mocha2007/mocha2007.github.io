@@ -29,6 +29,7 @@ const lifeDataPeriod = {
 	ediacaran: 587,
 	eocene: 45,
 	famennian: 365,
+	fortunian: 534,
 	gelasian: 2,
 	induan: 251,
 	jurassic: 172,
@@ -39,6 +40,7 @@ const lifeDataPeriod = {
 	late_miocene: 10,
 	late_oligocene: 26,
 	late_paleocene: 58,
+	late_pennsylvanian: 303,
 	late_pleistocene: 0.07,
 	late_silurian: 425,
 	lopingian: 256,
@@ -66,7 +68,9 @@ const lifeDataPeriod = {
 	pliocene: 4,
 	pragian: 409,
 	rhaetian: 204,
+	silurian: 431,
 	stenian: 1100,
+	terreneuvian: 530,
 	turonian: 92,
 	upper_jurassic: 152,
 	valanginian: 135,
@@ -552,6 +556,14 @@ const lifeData = [
 		'age': 68,
 		'age_end': 66,
 		'range': 'na',
+	},
+	{
+		'name': 'annelida',
+		'rank': 'phylum',
+		'parent': 'platytrochozoa',
+		'range': 'ww', // ?
+		'age': lifeDataPeriod.cambrian_stage_3,
+		'desc': 'Segmented worms',
 	},
 	{
 		'name': 'anseriformes',
@@ -1268,6 +1280,14 @@ const lifeData = [
 		'age': 20,
 	},
 	{
+		'name': 'brachiopoda',
+		'rank': 'phylum',
+		'parent': 'platytrochozoa',
+		'range': 'ww', // ?
+		'age': lifeDataPeriod.terreneuvian,
+		'desc': 'Lampshells',
+	},
+	{
 		'name': 'brachiosauridae',
 		'rank': 'family',
 		'parent': 'saurischia',
@@ -1353,6 +1373,14 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'ulvophyceae',
 		'range': 'ww',
+	},
+	{
+		'name': 'bryozoa',
+		'rank': 'phylum',
+		'parent': 'platytrochozoa',
+		'range': 'wo', // ?
+		'age': lifeDataPeriod.ordovician,
+		'desc': 'Moss animals',
 	},
 	// C
 	{
@@ -1789,6 +1817,14 @@ const lifeData = [
 		'parent': 'artiofabula',
 		'range': 'ww',
 		'age': lifeDataPeriod.early_eocene,
+	},
+	{
+		'name': 'chaetognatha',
+		'rank': 'phylum',
+		'parent': 'protostomia',
+		'range': 'wo', // ?
+		'age': lifeDataPeriod.terreneuvian,
+		'desc': 'Arrow worms',
 	},
 	{
 		'name': 'charnia',
@@ -2327,6 +2363,12 @@ const lifeData = [
 		'age': 300,
 	},
 	{
+		'name': 'cycliophora',
+		'rank': 'phylum',
+		'parent': 'platytrochozoa',
+		'range': 'al', // ?
+	},
+	{
 		'name': 'cygnus',
 		'rank': 'genus',
 		'parent': 'anatidae',
@@ -2475,6 +2517,12 @@ const lifeData = [
 		'age': 567, // wp lists 555 but that doesn't work with its child
 		'age_end': 550,
 		'extinct': true,
+	},
+	{
+		'name': 'dicyemida',
+		'rank': 'phylum',
+		'parent': 'platytrochozoa',
+		'range': 'wo', // ?
 	},
 	{
 		'name': 'didelphimorphia',
@@ -2718,6 +2766,14 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'enterobacterales',
 		'range': 'ww',
+	},
+	{
+		'name': 'entoprocta',
+		'rank': 'phylum',
+		'parent': 'platytrochozoa',
+		'range': 'wo', // ?
+		'age': lifeDataPeriod.terreneuvian,
+		'desc': 'Goblet worms',
 	},
 	{
 		'name': 'equidae',
@@ -3143,6 +3199,13 @@ const lifeData = [
 		'desc': 'Slugs and Snails',
 	},
 	{
+		'name': 'gastrotricha',
+		'rank': 'phylum',
+		'parent': 'protostomia',
+		'range': 'ww', // ?
+		'desc': 'Hairybellies',
+	},
+	{
 		'name': 'ginkgo',
 		'rank': 'genus',
 		'parent': 'ginkgoaceae',
@@ -3211,6 +3274,13 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'cyanophyceae',
 		'range': 'ww',
+	},
+	{
+		'name': 'gnathostomulida',
+		'rank': 'phylum',
+		'parent': 'protostomia',
+		'range': 'wo', // ?
+		'desc': 'Jaw worms',
 	},
 	{
 		'name': 'gorilla',
@@ -3852,6 +3922,14 @@ const lifeData = [
 		'parent': 'euglenozoa',
 		'range': 'ww',
 	},
+	{
+		'name': 'kinorhyncha',
+		'rank': 'phylum',
+		'parent': 'protostomia',
+		'range': 'wo', // ?
+		'age': lifeDataPeriod.terreneuvian,
+		'desc': 'Mud dragons',
+	},
 	// L
 	{
 		'name': 'lactuca',
@@ -4037,6 +4115,14 @@ const lifeData = [
 		'parent': '*',
 		'range': 'ww',
 		'age': 4280,
+	},
+	{
+		'name': 'loricifera',
+		'rank': 'phylum',
+		'parent': 'protostomia',
+		'range': 'wo', // ?
+		'age': lifeDataPeriod.cambrian_stage_2,
+		'desc': 'Brush heads',
 	},
 	{
 		'name': 'lutrinae',
@@ -4265,6 +4351,12 @@ const lifeData = [
 		'name': 'methanosarcinales',
 		'rank': 'order',
 		'parent': 'methanomicrobia',
+		'range': 'ww',
+	},
+	{
+		'name': 'micrognathozoa',
+		'rank': 'phylum',
+		'parent': 'protostomia',
 		'range': 'ww',
 	},
 	{
@@ -4527,6 +4619,30 @@ const lifeData = [
 		'desc': 'Nautilus',
 	},
 	{
+		'name': 'nematoda',
+		'rank': 'phylum',
+		'parent': 'protostomia',
+		'range': 'ww', // ?
+		'age': lifeDataPeriod.early_devonian,
+		'desc': 'Roundworms',
+	},
+	{
+		'name': 'nematomorpha',
+		'rank': 'phylum',
+		'parent': 'protostomia',
+		'range': 'ww', // ?
+		'age': lifeDataPeriod.cenomanian,
+		'desc': 'Horsehair worms',
+	},
+	{
+		'name': 'nemertea',
+		'rank': 'phylum',
+		'parent': 'platytrochozoa',
+		'range': 'ww', // ?
+		'age': lifeDataPeriod.middle_triassic,
+		'desc': 'Ribbon worms',
+	},
+	{
 		'name': 'nemopilema',
 		'rank': 'genus',
 		'parent': 'rhizostomatidae',
@@ -4751,6 +4867,12 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+	},
+	{
+		'name': 'orthonectida',
+		'rank': 'phylum',
+		'parent': 'platytrochozoa',
+		'range': 'wo', // ?
 	},
 	{
 		'name': 'oryza',
@@ -5213,6 +5335,14 @@ const lifeData = [
 		'desc': 'Pangolin',
 	},
 	{
+		'name': 'phoronida',
+		'rank': 'phylum',
+		'parent': 'platytrochozoa',
+		'range': 'wo', // ?
+		'age': lifeDataPeriod.silurian,
+		'desc': 'Horseshoe worms',
+	},
+	{
 		'name': 'phragmites',
 		'rank': 'genus',
 		'parent': 'pacmad clade',
@@ -5516,6 +5646,14 @@ const lifeData = [
 		'age': 580,
 		'desc': 'Sponge',
 		'emoji': '🧽',
+	},
+	{
+		'name': 'priapulida',
+		'rank': 'phylum',
+		'parent': 'protostomia',
+		'range': 'wo', // ?
+		'age': lifeDataPeriod.late_pennsylvanian,
+		'desc': 'Penis worms',
 	},
 	{
 		'name': 'primates',
@@ -5980,6 +6118,13 @@ const lifeData = [
 		'age': lifeDataPeriod.aptian,
 	},
 	{
+		'name': 'rotifera',
+		'rank': 'phylum',
+		'parent': 'protostomia',
+		'range': 'ww',
+		'age': lifeDataPeriod.middle_jurassic,
+	},
+	{
 		'name': 'russulales',
 		'rank': 'order',
 		'parent': 'agaricomycetes',
@@ -6043,6 +6188,14 @@ const lifeData = [
 				'ploidy': 8,
 			},
 		},
+	},
+	{
+		'name': 'saccorhytida',
+		'rank': 'phylum',
+		'parent': 'protostomia',
+		'range': 'ch',
+		'age': lifeDataPeriod.fortunian,
+		'extinct': true,
 	},
 	{
 		'name': 'salmonella',
@@ -7078,6 +7231,15 @@ const lifeData = [
 			'year': 1801,
 		},
 		'develop': 'vertebra',
+	},
+	{
+		'name': 'vetulicolia',
+		'rank': 'phylum',
+		'parent': 'chordata',
+		'range': 'ww', // ?
+		'age': lifeDataPeriod.cambrian_stage_3,
+		'age_end': lifeDataPeriod.drumian,
+		'extinct': true,
 	},
 	{
 		'name': 'vibrio',
