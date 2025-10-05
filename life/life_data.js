@@ -6523,6 +6523,37 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'tremella',
+		'rank': 'genus',
+		'parent': 'tremellaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'tremella fuciformis',
+		'rank': 'species',
+		'parent': 'tremella',
+		'range': 'ww',
+		'desc': 'Snow fungus',
+	},
+	{
+		'name': 'tremellaceae',
+		'rank': 'family',
+		'parent': 'tremellales',
+		'range': 'ww',
+	},
+	{
+		'name': 'tremellales',
+		'rank': 'order',
+		'parent': 'tremellomycetes',
+		'range': 'ww',
+	},
+	{
+		'name': 'tremellomycetes',
+		'rank': 'class',
+		'parent': 'basidiomycota',
+		'range': 'ww',
+	},
+	{
 		'name': 'triceratops',
 		'rank': 'genus',
 		'parent': 'ceratopsidae',
