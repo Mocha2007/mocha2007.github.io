@@ -18,9 +18,9 @@ class Taxon {
 		/** @type {number} */
 		this.i = Taxon.taxa.length;
 		/** @type {number} */
-		this.age = o.age | 0;
+		this.age = o.age || 0;
 		/** @type {number} */
-		this.age_end = o.age_end | 0;
+		this.age_end = o.age_end || 0;
 		/** @type {boolean} */
 		this.extinct = o.extinct || false;
 		Taxon.taxa.push(this);
