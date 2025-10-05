@@ -4675,6 +4675,14 @@ const lifeData = [
 		'desc': 'Ghost Fungus',
 	},
 	{
+		'name': 'onychophora',
+		'rank': 'phylum',
+		'parent': 'panarthropoda',
+		'range': 'nw;af;as;oc',
+		'age': lifeDataPeriod.late_carboniferous,
+		'desc': 'Velvet worms',
+	},
+	{
 		'name': 'oomyceta',
 		'rank': 'phylum',
 		'parent': 'pseudofungi',
