@@ -23,6 +23,8 @@ class Taxon {
 		this.age_end = o.age_end || 0;
 		/** @type {boolean} */
 		this.extinct = o.extinct || false;
+		/** @type {Taxon[]} once initialized */
+		this.parent_recursive = undefined;
 		Taxon.taxa.push(this);
 	}
 	get a(){
@@ -34,13 +36,17 @@ class Taxon {
 	// todo: make this auto-generate a "guess" if there is parent and daughter info
 	get age_elem(){
 		const age_container = document.createElement('span');
-		const age = this.age || this.age_guess;
+		const age = this.age_guess;
+		const is_guess = !this.age;
 		if (age){
 			const age_elem = document.createElement('abbr');
 			age_elem.classList.add('age');
 			age_elem.title = getEra(age);
 			age_elem.innerHTML = getAge(age);
 			age_container.appendChild(age_elem);
+			if (is_guess){
+				age_elem.innerHTML += '<abbr title="guess">?</abbr>';
+			}
 			// age_end
 			if (this.age_end){
 				age_container.innerHTML += '&ndash;';
@@ -55,8 +61,26 @@ class Taxon {
 		return age_container;
 	}
 	get age_guess(){
-		// todo
-		return 0;
+		if (this.age){
+			return this.age;
+		}
+		const age_upper = this.age_guess_upper;
+		const age_lower = this.age_guess_lower;
+		return 0 < age_upper && 0 < age_lower && age_upper > age_lower ? (age_upper + age_lower)/2 : 0;
+	}
+	get age_guess_lower(){
+		if (this.age){
+			return this.age;
+		}
+		const children = this.children_recursive;
+		return children ? Math.max(...children.map(t => t.age_guess_lower)) : 0;
+	}
+	get age_guess_upper(){
+		if (this.age){
+			return this.age;
+		}
+		const parent = this.parent;
+		return parent ? this.parent.age_guess_upper : 0;
 	}
 	get authority_elem(){
 		const authority_elem = document.createElement('span');
@@ -82,6 +106,12 @@ class Taxon {
 
 		}
 		return authority_elem;
+	}
+	get children(){
+		return Taxon.taxa.filter(t => t.parent_id === this.name);
+	}
+	get children_recursive(){
+		return Taxon.taxa.filter(t => t.parent_recursive.includes(this))
 	}
 	get elem(){
 		const i = this.i;
@@ -209,6 +239,35 @@ class Taxon {
 	/** @param {string} s */
 	static fromString(s){
 		return Taxon.taxa.find(t => t.name === s);
+	}
+	static preload_parent_recursive(){
+		const start_time = new Date();
+		// init roots
+		// console.debug(Taxon.taxa.length);
+		Taxon.taxa.filter(t => t.parent_id === '*').forEach(root => {
+			// console.debug(`initializing parent_recursive for root ${root.name}`);
+			root.parent_recursive = [];
+		})
+		// go through this iteratively
+		const todo = Taxon.taxa.map(t => t);
+		let prev_len;
+		while (todo.length !== prev_len){
+			prev_len = todo.length;
+			const todo_clone = todo.map(x => x);
+			todo_clone.forEach(t => {
+				const parent = t.parent;
+				if (!parent){
+					todo.splice(todo.indexOf(t), 1);
+				}
+				else if (typeof parent.parent_recursive !== 'undefined'){
+					t.parent_recursive = [parent].concat(...parent.parent_recursive);
+					todo.splice(todo.indexOf(t), 1);
+				}
+			});
+		}
+		const end_time = new Date();
+		const time = end_time - start_time;
+		console.info(`Taxon.preload_parent_recursive took ${time} ms.`);
 	}
 }
 /** @type {Taxon[]} */
@@ -377,11 +436,11 @@ function main(){
 	// print appropriate text to toggle button
 	refreshButtons();
 	// first, add everything in lifeData to objects
-	for (let i = 0; i < lifeData.length; i++){
-		const taxon = new Taxon(lifeData[i]);
-		// create DOM object
-		taxon.elem;
-	}
+	lifeData.forEach(x => new Taxon(x));
+	// preprocessing...
+	Taxon.preload_parent_recursive();
+	// create DOM objects...
+	Taxon.taxa.forEach(taxon => taxon.elem);
 	// next, nest everything accordingly. add * to root.
 	for (let i = 0; i < lifeData.length; i++){
 		const name = lifeData[i].name;
