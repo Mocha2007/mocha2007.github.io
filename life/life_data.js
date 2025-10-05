@@ -2371,7 +2371,7 @@ const lifeData = [
 	{
 		'name': 'cycliophora',
 		'rank': 'phylum',
-		'parent': 'lophotrochozoa',
+		'parent': 'kryptotrochozoa',
 		'range': 'al', // ?
 	},
 	{
