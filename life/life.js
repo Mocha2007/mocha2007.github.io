@@ -500,8 +500,9 @@ function stats(){
 
 function verify(){
 	// missing ages
-	const missing = Taxon.taxa.filter(t => !lifeData[t.i].hasOwnProperty('age')).map(t => t.url);
-	console.debug(`missing ages: ${Math.round(100 * missing.length / Taxon.taxa.length)}%`);
+	const MISSING_AGES_KINGDOM_WHITELIST = ['animalia', 'plantae'].map(Taxon.fromString);
+	const missing = Taxon.taxa.filter(t => MISSING_AGES_KINGDOM_WHITELIST.includes(t.kingdom) && !lifeData[t.i].hasOwnProperty('age')).map(t => t.url);
+	console.debug(`missing ages in plants and animals: ${Math.round(100 * missing.length / Taxon.taxa.length)}%`);
 	console.debug(missing);
 	// age is older than parent
 	console.debug("age is older than parent:");
