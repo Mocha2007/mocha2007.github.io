@@ -37,6 +37,7 @@ const lifeDataPeriod = {
 	late_eocene: 39,
 	late_miocene: 10,
 	late_oligocene: 26,
+	late_paleocene: 58,
 	late_silurian: 425,
 	lopingian: 256,
 	lutetian: 45,
@@ -3876,12 +3877,14 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'glires',
 		'range': 'ww',
+		'age': lifeDataPeriod.late_paleocene,
 	},
 	{
 		'name': 'lama',
 		'rank': 'genus',
 		'parent': 'camelidae',
 		'range': 'sa',
+		'wiki': 'Lama_(genus)',
 	},
 	{
 		'name': 'lama glama',
@@ -3996,6 +3999,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'insecta',
 		'range': 'ww',
+		'age': 200,
 	},
 	{
 		'name': 'leporidae',
@@ -4064,6 +4068,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'felinae',
 		'range': 'nh',
+		'age': lifeDataPeriod.pliocene,
 		'desc': 'Lynx',
 	},
 	{
