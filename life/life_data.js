@@ -6539,7 +6539,7 @@ const lifeData = [
 	{
 		'name': 'trilobozoa',
 		'rank': 'phylum',
-		'parent': 'animalia',
+		'parent': 'eumetazoa',
 		'range': 'wo', // ???
 		'age': 557,
 		'age_end': 545,
