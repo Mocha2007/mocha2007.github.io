@@ -111,7 +111,6 @@ class Taxon {
 			if (lifeData[i].hasOwnProperty('age_end')){
 				title.innerHTML += '&ndash;';
 				const a = this.age_end; // mya
-				title.innerHTML += ' ';
 				const age_end = document.createElement('abbr');
 				age_end.classList.add('age');
 				age_end.title = getEra(a);
