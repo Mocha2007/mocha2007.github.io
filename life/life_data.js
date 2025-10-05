@@ -880,6 +880,31 @@ const lifeData = [
 		'range': 'wo',
 	},
 	{
+		'name': 'auricularia',
+		'rank': 'genus',
+		'parent': 'auriculariaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'auricularia heimuer',
+		'rank': 'species',
+		'parent': 'auricularia',
+		'range': 'as',
+		'desc': 'Black wood ear',
+	},
+	{
+		'name': 'auriculariaceae',
+		'rank': 'family',
+		'parent': 'auriculariales',
+		'range': 'ww',
+	},
+	{
+		'name': 'auriculariales',
+		'rank': 'order',
+		'parent': 'agaricomycetes',
+		'range': 'ww',
+	},
+	{
 		'name': 'australopithecina',
 		'rank': 'subtribe',
 		'parent': 'hominini',
@@ -3795,7 +3820,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'lentinula',
 		'range': 'as',
-		'desc': 'Shitake',
+		'desc': 'Shiitake',
 	},
 	{
 		'name': 'leocarpus',
@@ -4828,6 +4853,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'penicillium roqueforti',
+		'rank': 'species',
+		'parent': 'penicillium',
+		'range': 'ww',
+	},
+	{
 		'name': 'pennatulacea',
 		'rank': 'order',
 		'parent': 'anthozoa',
@@ -5167,6 +5198,19 @@ const lifeData = [
 		'age': 203,
 		'age_end': 66,
 		'desc': 'Plesiosaur',
+	},
+	{
+		'name': 'pleurotaceae',
+		'rank': 'family',
+		'parent': 'agaricales',
+		'range': 'ww', // ?
+	},
+	{
+		'name': 'pleurotus',
+		'rank': 'genus',
+		'parent': 'pleurotaceae',
+		'range': 'ww', // ?
+		'desc': 'Oyster mushroom',
 	},
 	{
 		'name': 'poaceae',
