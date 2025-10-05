@@ -57,6 +57,7 @@ const lifeDataPeriod = {
 	miocene: 14,
 	neogene: 13,
 	oligocene: 28,
+	ordovician: 465,
 	paleocene: 61,
 	paleoarchaean: 3400,
 	paleoproterozoic: 2050,
@@ -899,7 +900,7 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'echinodermata',
 		'range': 'wo',
-		'age': 250,
+		'age': lifeDataPeriod.ordovician,
 		'desc': 'Starfish',
 	},
 	{
