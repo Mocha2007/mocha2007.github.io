@@ -1,20 +1,24 @@
 body {
-	margin: 0px;
+	margin: 0;
 }
 details {
 	background-color: #ccc; /* default clade */
-	border: 1px solid #888;
-	padding: 0px 10px 10px 10px;
+	border: 0.2vw solid #888;
+	border-radius: 1vw;
+	padding: 0 0.4vw 0.4vw 0.4vw;
 }
 p {
 	font-style: italic;
-	margin: 0px;
+	margin: 0;
 	max-width: 700px;
 	text-indent: 45px;
 }
 abbr{
 	text-decoration: underline;
 	cursor: help;
+}
+summary a {
+	font-style: italic;
 }
 .important {
 	color: red;
@@ -25,7 +29,10 @@ abbr{
 	font-size: small;
 	font-weight: bold;
 }
-.develop, .genetic, .openAll, .range {
+.authority {
+	margin-left: 0.5vw;
+}
+.authority, .develop, .genetic, .openAll, .range {
 	font-size: x-small;
 	font-weight: bold;
 }
@@ -65,7 +72,7 @@ abbr{
 }
 #controls {
 	line-height: 150%;
-	padding: 10px;
+	padding: 1vw;
 	text-align: center;
 }
 #search_div{

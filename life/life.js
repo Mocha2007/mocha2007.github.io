@@ -27,6 +27,31 @@ class Taxon {
 		e.href = this.url;
 		return e;
 	}
+	get authority_elem(){
+		const authority_elem = document.createElement('span');
+		authority_elem.classList.add('authority');
+		if (lifeData[this.i].hasOwnProperty('authority')){
+			const authority = lifeData[this.i].authority;
+			const original_authority = authority.original_authority;
+			// (Original, year) current
+			if (original_authority){
+				const current_authority = authority.current_authority;
+				if (current_authority){
+					authority_elem.innerHTML += '(';
+				}
+				authority_elem.innerHTML += `<a href="https://en.wikipedia.org/wiki/${original_authority}">${original_authority}</a>`;
+				const year = authority.year;
+				if (year){
+					authority_elem.innerHTML += `, ${year}`;
+				}
+				if (current_authority){
+					authority_elem.innerHTML += `) <a href="https://en.wikipedia.org/wiki/${current_authority}">${current_authority}</a>`;
+				}
+			}
+
+		}
+		return authority_elem;
+	}
 	get elem(){
 		const i = this.i;
 		const details = document.createElement('details');
@@ -62,6 +87,8 @@ class Taxon {
 			title.innerHTML += lifeData[i].emoji + ' ';
 		// name
 		title.appendChild(this.a);
+		// authority
+		title.appendChild(this.authority_elem);
 		// range
 		if (lifeData[i].hasOwnProperty('range')){
 			title.innerHTML += ' ';

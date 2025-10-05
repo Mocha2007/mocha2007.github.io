@@ -499,6 +499,10 @@ const lifeData = [
 		'age': 720,
 		'desc': 'Animals consume organic material, breathe oxygen, are able to move, can reproduce sexually, and grow from a blastula during embryonic development.',
 		'develop': 'centrosome',
+		'authority': {
+			'original_authority': 'Linnaeus',
+			'year': 1758,
+		},
 	},
 	{
 		'name': 'ankylosauridae',
