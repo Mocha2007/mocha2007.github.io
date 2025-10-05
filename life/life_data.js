@@ -3760,6 +3760,15 @@ const lifeData = [
 		'age_end': 122,
 	},
 	{
+		'name': 'ikaria',
+		'rank': 'genus',
+		'parent': 'nephrozoa',
+		'extinct': true,
+		'range': 'au',
+		'age': 560,
+		'age_end': 555,
+	},
+	{
 		'name': 'illicium',
 		'rank': 'genus',
 		'parent': 'schisandraceae',
@@ -3832,7 +3841,7 @@ const lifeData = [
 	{
 		'name': 'kimberella',
 		'rank': 'genus',
-		'parent': 'bilateria',
+		'parent': 'protostomia',
 		'range': 'ow', // Ediacara hills (Aus) and White sea (Russia)
 		'age': 570,
 		'extinct': true,
@@ -5520,7 +5529,7 @@ const lifeData = [
 	{
 		'name': 'proarticulata',
 		'rank': 'phylum',
-		'parent': 'animalia',
+		'parent': 'bilateria', // per wp Bilateria page
 		'range': 'wo', // ???
 		'age': 567,
 		'age_end': 550,
