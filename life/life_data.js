@@ -2500,7 +2500,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'proboscidea',
 		'range': 'ow',
-		'age': 5,
+		'age': lifeDataPeriod.late_miocene,
 		'desc': 'Elephant',
 		'genetic': {
 			'chromosome': {
@@ -6724,7 +6724,7 @@ const lifeData = [
 		'rank': 'suborder',
 		'parent': 'cetruminantia',
 		'range': 'af',
-		'age': lifeDataPeriod.early_eocene,
+		'age': 55, // pushed back by cetacea (53.5)
 	},
 	// X
 	{

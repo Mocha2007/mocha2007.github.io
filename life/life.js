@@ -502,7 +502,8 @@ function verify(){
 	// age is older than parent
 	console.debug("age is older than parent:");
 	Taxon.taxa.filter(t => t.parent && t.parent.age > 0 && t.age > t.parent.age).forEach(t => {
-		console.warn(`${t.name} (${t.age}) older than its parent ${t.parent.name} (${t.parent.age})`);
+		const r = t.age / t.parent.age - 1;
+		console.warn(`${t.name} (${t.age}) older than its parent ${t.parent.name} (${t.parent.age}) - ${Math.round(r * 100)}%`);
 	});
 	// extinct but no age or age_end tag
 	console.debug("missing age tags for extinct taxa:");
