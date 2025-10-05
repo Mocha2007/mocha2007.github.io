@@ -42,6 +42,7 @@ const lifeDataPeriod = {
 	miocene: 14,
 	oligocene: 28,
 	paleocene: 61,
+	paleoproterozoic: 2050,
 	pliestocene: 1,
 	pliocene: 4,
 	rhaetian: 204,
@@ -2233,6 +2234,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'bikonta',
 		'range': 'ww',
+		'age': lifeDataPeriod.paleoproterozoic,
 	},
 	{
 		'name': 'diatomeae',
