@@ -439,6 +439,6 @@ function verify(){
 	// extinct but no age or age_end tag
 	console.debug("missing age tags for extinct taxa:");
 	Taxon.taxa.filter(t => t.extinct && !(t.age && t.age_end)).forEach(t => {
-		console.warn(`${t.name} is extinct but is missing an age tag (${t.age}) or an age_end tag (${t.age_end})`);
+		console.warn(`${t.name} (${t.url}) is extinct but is missing an age tag (${t.age}) or an age_end tag (${t.age_end})`);
 	});
 }
