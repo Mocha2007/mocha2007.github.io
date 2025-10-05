@@ -1130,6 +1130,10 @@ const lifeData = [
 		'parent': 'planulozoa',
 		'range': 'ww',
 		'age': 567,
+		'authority': {
+			'original_authority': 'Hatschek',
+			'year': 1888,
+		},
 		'desc': 'Bilaterians are animals with bilateral symmetry as an embryo.',
 	},
 	{
@@ -1780,6 +1784,10 @@ const lifeData = [
 		'parent': 'deuterostomia',
 		'range': 'ww',
 		'age': 525,
+		'authority': {
+			'original_authority': 'Haeckel',
+			'year': 1874,
+		},
 		'develop': 'notochord, dorsal nerve cord, pharyngeal slits, endostyle, post-anal tail',
 	},
 	{
@@ -2268,6 +2276,10 @@ const lifeData = [
 		'parent': 'nephrozoa',
 		'range': 'ww',
 		'age': 540,
+		'authority': {
+			'original_authority': 'Jondelius',
+			'year': 2002,
+		},
 		'desc': 'In deuterostomes, the first opening, the blastopore, becomes the anus, while in protostomes, it becomes the mouth.',
 	},
 	{
@@ -2728,6 +2740,10 @@ const lifeData = [
 		'parent': 'animalia',
 		'range': 'ww',
 		'age': 635,
+		'authority': {
+			'original_authority': 'Buetschli',
+			'year': 1910,
+		},
 		'desc': 'Characteristics of eumetazoans include true tissues organized into germ layers, neurons, and an embryo that goes through a gastrula stage.',
 	},
 	{
@@ -4399,6 +4415,10 @@ const lifeData = [
 		'parent': 'chordata',
 		'range': 'ww',
 		'age': 518,
+		'authority': {
+			'original_authority': 'Jefferies',
+			'year': 1991,
+		},
 		'develop': 'olfactory system',
 	},
 	{
@@ -4528,6 +4548,10 @@ const lifeData = [
 		'parent': 'vertebrata',
 		'range': 'ww',
 		'age': 425,
+		'authority': {
+			'original_authority': 'Huxley',
+			'year': 1880,
+		},
 		'desc': 'Bony Fish',
 	},
 	{
@@ -4734,6 +4758,10 @@ const lifeData = [
 		'parent': 'eumetazoa',
 		'range': 'ww',
 		'age': 605.2,
+		'authority': {
+			'original_authority': 'Ryan',
+			'year': 2010,
+		},
 		'develop': 'Hox genes',
 	},
 	{
@@ -5070,6 +5098,10 @@ const lifeData = [
 		'parent': 'parahoxozoa',
 		'range': 'ww',
 		'age': 600,
+		'authority': {
+			'original_authority': 'Wallberg',
+			'year': 2004,
+		},
 		'develop': 'Zoc and ZF-NC gene domains',
 	},
 	{
@@ -6273,6 +6305,10 @@ const lifeData = [
 		'parent': 'rhipidistia',
 		'range': 'ww',
 		'age': lifeDataPeriod.famennian,
+		'authority': {
+			'original_authority': 'Hatschek & Cori',
+			'year': 1896,
+		},
 		'desc': 'Tetrapods are four-limbed animals.',
 		'develop': 'legs',
 	},
@@ -6641,6 +6677,10 @@ const lifeData = [
 		'parent': 'olfactores',
 		'range': 'ww',
 		'age': 518,
+		'authority': {
+			'original_authority': 'J-B. Lamarck',
+			'year': 1801,
+		},
 		'develop': 'vertebra',
 	},
 	{
