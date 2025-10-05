@@ -505,8 +505,9 @@ function stats(){
 
 function verify(){
 	// missing ages
-	console.debug("missing ages:");
-	console.debug(Taxon.taxa.filter(t => !lifeData[t.i].hasOwnProperty('age')).map(t => t.url));
+	const missing = Taxon.taxa.filter(t => !lifeData[t.i].hasOwnProperty('age')).map(t => t.url);
+	console.debug(`missing ages: ${Math.round(100 * missing.length / Taxon.taxa.length)}%`);
+	console.debug(missing);
 	// age is older than parent
 	console.debug("age is older than parent:");
 	Taxon.taxa.filter(t => t.parent && t.parent.age > 0 && t.age > t.parent.age).forEach(t => {
