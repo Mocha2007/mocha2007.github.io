@@ -4315,6 +4315,19 @@ const lifeData = [
 		'desc': 'Tuberculosis',
 	},
 	{
+		'name': 'mycosarcoma',
+		'rank': 'genus',
+		'parent': 'ustilaginaceae',
+		'range': 'ww', // ???
+	},
+	{
+		'name': 'mycosarcoma maydis',
+		'rank': 'species',
+		'parent': 'mycosarcoma',
+		'range': 'ww', // ???
+		'desc': 'Corn smut',
+	},
+	{
 		'name': 'myristica',
 		'rank': 'genus',
 		'parent': 'myristicaceae',
@@ -6816,6 +6829,24 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+	},
+	{
+		'name': 'ustilaginaceae',
+		'rank': 'family',
+		'parent': 'ustilaginales',
+		'range': 'ww', // ???
+	},
+	{
+		'name': 'ustilaginales',
+		'rank': 'order',
+		'parent': 'ustilaginomycetes',
+		'range': 'ww', // ???
+	},
+	{
+		'name': 'ustilaginomycetes',
+		'rank': 'class',
+		'parent': 'basidiomycota',
+		'range': 'ww', // ???
 	},
 	{
 		'name': 'utahraptor',
