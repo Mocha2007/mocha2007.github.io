@@ -3670,6 +3670,19 @@ const lifeData = [
 		'desc': 'Shitake',
 	},
 	{
+		'name': 'leocarpus',
+		'rank': 'genus',
+		'parent': 'physaraceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'leocarpus fragilis',
+		'rank': 'species',
+		'parent': 'leocarpus',
+		'range': 'ww',
+		'desc': 'Insect-egg slime mold',
+	},
+	{
 		'name': 'leopardus',
 		'rank': 'genus',
 		'parent': 'felinae',
@@ -4116,6 +4129,13 @@ const lifeData = [
 		'parent': 'hydrobacteria',
 		'range': 'ww',
 		'desc': 'Fruiting Gliding Bacteria',
+	},
+	{
+		'name': 'myxogastria',
+		'rank': 'class',
+		'parent': 'amoebozoa',
+		'range': 'ww',
+		'desc': 'Plasmodial slime mold',
 	},
 	{
 		'name': 'myzozoa',
@@ -4785,6 +4805,18 @@ const lifeData = [
 		'parent': 'physalis',
 		'range': 'na',
 		'desc': 'Tomatillo',
+	},
+	{
+		'name': 'physaraceae',
+		'rank': 'family',
+		'parent': 'physarales',
+		'range': 'ww',
+	},
+	{
+		'name': 'physarales',
+		'rank': 'order',
+		'parent': 'myxogastria',
+		'range': 'ww',
 	},
 	{
 		'name': 'picea',
