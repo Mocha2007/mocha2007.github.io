@@ -434,6 +434,10 @@ const lifeData = [
 		'parent': 'eukaryota',
 		'range': 'ww',
 		'age': 1400,
+		'authority': {
+			'original_authority': 'Adl',
+			'year': 2012,
+		},
 	},
 	{
 		'name': 'amphibia',
@@ -660,6 +664,10 @@ const lifeData = [
 		'parent': 'life',
 		'range': 'ww',
 		'age': 3420,
+		'authority': {
+			'original_authority': 'Woese',
+			'year': 2024,
+		},
 		'desc': 'Archaea',
 		'develop': 'methionine protein synthesis initiation, sensitive to diphtheria toxin',
 	},
@@ -1753,6 +1761,10 @@ const lifeData = [
 		'parent': 'opisthokonta',
 		'range': 'ww',
 		'age': 950,
+		'authority': {
+			'original_authority': 'Brunet and King',
+			'year': 2017,
+		},
 	},
 	{
 		'name': 'chondrichthyes',
@@ -2694,6 +2706,11 @@ const lifeData = [
 		'parent': 'promethearchaeati',
 		'range': 'ww',
 		'age': 1650,
+		'authority': {
+			'original_authority': 'Chatton',
+			'year': 1925,
+			'current_authority': 'Whittaker & Margulis',
+		},
 		'desc': 'Eukaryotes are organisms which have cells with a nucleus enclosed within membranes, unlike prokaryotes, which have no membrane-bound organelles.',
 		'develop': 'nucleus, mitochondrion, peroxisome, linear chromosomes',
 	},
@@ -4395,6 +4412,10 @@ const lifeData = [
 		'parent': 'amorphea',
 		'range': 'ww',
 		'age': 1300,
+		'authority': {
+			'original_authority': 'Copeland',
+			'year': 1956,
+		},
 		'desc': 'In opisthokonts, flagellate cells propel themselves with a single posterior flagellum.',
 	},
 	{
@@ -4693,6 +4714,17 @@ const lifeData = [
 		'range': 'ww',
 		'age': 605.2,
 		'develop': 'Hox genes',
+	},
+	{
+		'name': 'parakaryon',
+		'rank': 'genus',
+		'parent': 'life',
+		'range': 'pa',
+		'authority': {
+			'original_authority': 'Yamaguchi',
+			'year': 2012,
+		},
+		'desc': 'Myojin parakaryote',
 	},
 	{
 		'name': 'paraves',
@@ -5226,7 +5258,12 @@ const lifeData = [
 		'parent': 'archaea',
 		'range': 'ww',
 		'age': 3380,
+		'authority': {
+			'original_authority': 'Imachi',
+			'year': 2024,
+		},
 		'wiki': 'Asgard (archaea)',
+		'desc': 'Asgard archaea',
 	},
 	{
 		'name': 'proto-chloroplast',
