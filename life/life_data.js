@@ -405,6 +405,7 @@ const lifeData = [
 		'extinct': true,
 		'range': 'wo',
 		'age': 409,
+		'age_end': 65,
 		'desc': 'Ammonite',
 	},
 	{

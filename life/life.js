@@ -19,6 +19,10 @@ class Taxon {
 		this.i = Taxon.taxa.length;
 		/** @type {number|undefined} */
 		this.age = o.age;
+		/** @type {number|undefined} */
+		this.age_end = o.age_end;
+		/** @type {boolean} */
+		this.extinct = o.extinct || false;
 		Taxon.taxa.push(this);
 	}
 	get a(){
@@ -79,7 +83,7 @@ class Taxon {
 		b.innerHTML = proper(rank) + ' ';
 		title.appendChild(b);
 		// extinct?
-		if (lifeData[i].hasOwnProperty('extinct') && lifeData[i].hasOwnProperty('extinct')){
+		if (this.extinct){
 			title.innerHTML += '&dagger; ';
 		}
 		// emoji?
@@ -96,13 +100,24 @@ class Taxon {
 		}
 		// age
 		if (lifeData[i].hasOwnProperty('age')){
-			const a = lifeData[i].age; // mya
+			const a = this.age; // mya
 			title.innerHTML += ' ';
 			const age = document.createElement('abbr');
 			age.classList.add('age');
 			age.title = getEra(a);
 			age.innerHTML = getAge(a);
 			title.appendChild(age);
+			// age_end
+			if (lifeData[i].hasOwnProperty('age_end')){
+				title.innerHTML += '&ndash;';
+				const a = this.age_end; // mya
+				title.innerHTML += ' ';
+				const age_end = document.createElement('abbr');
+				age_end.classList.add('age');
+				age_end.title = getEra(a);
+				age_end.innerHTML = getAge(a);
+				title.appendChild(age_end);
+			}
 		}
 		// genetics
 		if (lifeData[i].hasOwnProperty('genetic')){
@@ -421,5 +436,10 @@ function verify(){
 	console.debug("age is older than parent:");
 	Taxon.taxa.filter(t => t.parent && t.age > t.parent.age).forEach(t => {
 		console.warn(`${t.name} (${t.age}) older than its parent ${t.parent.name} (${t.parent.age})`);
+	});
+	// extinct but no age or age_end tag
+	console.debug("missing age tags for extinct taxa:");
+	Taxon.taxa.filter(t => t.extinct && !(t.age && t.age_end)).forEach(t => {
+		console.warn(`${t.name} is extinct but is missing an age tag (${t.age}) or an age_end tag (${t.age_end})`);
 	});
 }
