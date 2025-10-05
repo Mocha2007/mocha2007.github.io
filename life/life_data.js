@@ -50,6 +50,7 @@ const lifeDataPeriod = {
 	paleoproterozoic: 2050,
 	pliestocene: 1,
 	pliocene: 4,
+	pragian: 409,
 	rhaetian: 204,
 	stenian: 1100,
 	turonian: 92,
@@ -4937,6 +4938,7 @@ const lifeData = [
 		'rank': 'subdivision',
 		'parent': 'ascomycota',
 		'range': 'ww',
+		'age': lifeDataPeriod.pragian,
 	},
 	{
 		'name': 'phaeophyceae',
