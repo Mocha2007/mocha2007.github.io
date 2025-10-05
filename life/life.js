@@ -31,6 +31,28 @@ class Taxon {
 		e.href = this.url;
 		return e;
 	}
+	// todo: make this auto-generate a "guess" if there is parent and daughter info
+	get age_elem(){
+		const age_container = document.createElement('span');
+		if (this.age){
+			const age = document.createElement('abbr');
+			age.classList.add('age');
+			age.title = getEra(this.age);
+			age.innerHTML = getAge(this.age);
+			age_container.appendChild(age);
+			// age_end
+			if (this.age_end){
+				age_container.innerHTML += '&ndash;';
+				const a = this.age_end; // mya
+				const age_end = document.createElement('abbr');
+				age_end.classList.add('age');
+				age_end.title = getEra(a);
+				age_end.innerHTML = getAge(a);
+				age_container.appendChild(age_end);
+			}
+		}
+		return age_container;
+	}
 	get authority_elem(){
 		const authority_elem = document.createElement('span');
 		authority_elem.classList.add('authority');
@@ -99,25 +121,7 @@ class Taxon {
 			title.appendChild(rangeElem(lifeData[i].range));
 		}
 		// age
-		if (this.age){
-			const a = this.age; // mya
-			title.innerHTML += ' ';
-			const age = document.createElement('abbr');
-			age.classList.add('age');
-			age.title = getEra(a);
-			age.innerHTML = getAge(a);
-			title.appendChild(age);
-			// age_end
-			if (this.age_end){
-				title.innerHTML += '&ndash;';
-				const a = this.age_end; // mya
-				const age_end = document.createElement('abbr');
-				age_end.classList.add('age');
-				age_end.title = getEra(a);
-				age_end.innerHTML = getAge(a);
-				title.appendChild(age_end);
-			}
-		}
+		title.appendChild(this.age_elem);
 		// genetics
 		if (lifeData[i].hasOwnProperty('genetic')){
 			const genetic = document.createElement('span');
