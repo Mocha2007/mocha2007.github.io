@@ -1163,7 +1163,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'eukaryota',
 		'range': 'ww',
-		'age': lifeDataPeriod.mesoproterozoic,
+		'age': 1600,
 	},
 	{
 		'name': 'bilateria',
@@ -1310,8 +1310,9 @@ const lifeData = [
 		'rank': 'division',
 		'parent': 'embryophyta',
 		'range': 'ww',
-		'age': 340,
+		'age': 443.8,
 		'desc': 'Moss',
+		'wiki': 'Bryophyte',
 	},
 	{
 		'name': 'bryopsidales',
@@ -1357,7 +1358,7 @@ const lifeData = [
 		'rank': 'suborder',
 		'parent': 'carnivora',
 		'range': 'ww',
-		'age': 42,
+		'age': 43,
 	},
 	{
 		'name': 'canis',
@@ -1545,7 +1546,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'ferae',
 		'range': 'ww',
-		'age': 42,
+		'age': 51.88,
 	},
 	{
 		'name': 'carya',
@@ -2394,7 +2395,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'bikonta',
 		'range': 'ww',
-		'age': lifeDataPeriod.paleoproterozoic,
+		'age': 1600, // "paleoproterozoic" but must be no greater than bikonta (1600)
 	},
 	{
 		'name': 'diatomeae',
