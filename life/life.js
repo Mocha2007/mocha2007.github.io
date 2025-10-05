@@ -462,6 +462,14 @@ function main(){
 			openParents(objects[lifeData[i].name]);
 		}
 	}
+	// add search enter key thing
+	// https://stackoverflow.com/a/45650898
+	document.getElementById("search_clade").addEventListener("keyup", event => {
+		if(event.key !== "Enter") return;
+		searchButton();
+		event.preventDefault();
+	});
+	// bonus goodies
 	stats();
 	verify();
 }

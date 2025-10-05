@@ -1357,6 +1357,7 @@ const lifeData = [
 		'rank': 'subspecies',
 		'parent': 'canis lupus',
 		'desc': 'Dog',
+		'age': 0.0142,
 		'emoji': '🐕',
 		'genetic': {
 			'chromosome': {
