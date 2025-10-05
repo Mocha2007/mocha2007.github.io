@@ -22,6 +22,7 @@ const lifeDataPeriod = {
 	early_carboniferous: 341,
 	early_devonian: 407,
 	early_eocene: 50,
+	early_jurassic: 188,
 	early_miocene: 19,
 	early_oligocene: 31,
 	ediacaran: 587,
@@ -44,8 +45,10 @@ const lifeDataPeriod = {
 	middle_devonian: 388,
 	middle_jurassic: 168,
 	middle_miocene: 14,
+	middle_pleistocene: 1,
 	middle_triassic: 242,
 	miocene: 14,
+	neogene: 13,
 	oligocene: 28,
 	paleocene: 61,
 	paleoarchaean: 3400,
@@ -1057,12 +1060,14 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'balaenopteridae',
 		'range': 'ww',
+		'age': lifeDataPeriod.neogene,
 	},
 	{
 		'name': 'balaenoptera musculus',
 		'rank': 'species',
 		'parent': 'balaenoptera',
 		'range': 'ww',
+		'age': 1.5,
 		'desc': 'Blue Whale',
 		// https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1601-5223.1974.tb01351.x
 		'genetic': {
@@ -1079,6 +1084,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'cetacea',
 		'range': 'ww',
+		'age': lifeDataPeriod.miocene,
 	},
 	{
 		'name': 'balamuthia',
@@ -1211,6 +1217,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'bovidae',
 		'range': 'ww',
+		'age': lifeDataPeriod.middle_pleistocene,
 	},
 	{
 		'name': 'bos grunniens',
@@ -1248,6 +1255,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'cetruminantia',
 		'range': 'ww',
+		'age': 20,
 	},
 	{
 		'name': 'brachiosauridae',
@@ -1274,6 +1282,7 @@ const lifeData = [
 		'range': 'wo',
 		'desc': 'Crab',
 		'emoji': '🦀',
+		'age': lifeDataPeriod.early_jurassic,
 	},
 	{
 		'name': 'brassica',
