@@ -3237,6 +3237,25 @@ const lifeData = [
 		'age': lifeDataPeriod.miaolingian,
 	},
 	{
+		'name': 'hericiaceae',
+		'rank': 'family',
+		'parent': 'russulales',
+		'range': 'ww', // ???
+	},
+	{
+		'name': 'hericium',
+		'rank': 'genus',
+		'parent': 'hericiaceae',
+		'range': 'na;ea',
+	},
+	{
+		'name': 'hericium erinaceus',
+		'rank': 'species',
+		'parent': 'hericium',
+		'range': 'na;ea',
+		'desc': 'Lion\'s mane',
+	},
+	{
 		'name': 'heterolobosea',
 		'rank': 'class',
 		'parent': 'percolozoa',
@@ -5798,6 +5817,12 @@ const lifeData = [
 		'parent': 'eudicots',
 		'range': 'ww',
 		'age': lifeDataPeriod.aptian,
+	},
+	{
+		'name': 'russulales',
+		'rank': 'order',
+		'parent': 'agaricomycetes',
+		'range': 'ww', // ???
 	},
 	{
 		'name': 'rutaceae',
