@@ -2944,6 +2944,19 @@ const lifeData = [
 		'age': 79.47,
 	},
 	{
+		'name': 'flammulina',
+		'rank': 'genus',
+		'parent': 'physalacriaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'flammulina filiformis',
+		'rank': 'species',
+		'parent': 'flammulina',
+		'range': 'as',
+		'desc': 'Enoki',
+	},
+	{
 		'name': 'foraminifera',
 		'rank': 'subphylum',
 		'parent': 'retaria',
@@ -5037,6 +5050,12 @@ const lifeData = [
 		'range': 'ww',
 		'age': lifeDataPeriod.campanian,
 		'desc': 'Common Reed',
+	},
+	{
+		'name': 'physalacriaceae',
+		'rank': 'family',
+		'parent': 'agaricales',
+		'range': 'ww',
 	},
 	{
 		'name': 'physalis',
