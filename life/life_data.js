@@ -1282,7 +1282,7 @@ const lifeData = [
 	{
 		'name': 'brachiopoda',
 		'rank': 'phylum',
-		'parent': 'lophotrochozoa',
+		'parent': 'kryptotrochozoa',
 		'range': 'ww', // ?
 		'age': lifeDataPeriod.terreneuvian,
 		'desc': 'Lampshells',
@@ -1377,7 +1377,7 @@ const lifeData = [
 	{
 		'name': 'bryozoa',
 		'rank': 'phylum',
-		'parent': 'lophotrochozoa',
+		'parent': 'kryptotrochozoa',
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.ordovician,
 		'desc': 'Moss animals',
@@ -2783,7 +2783,7 @@ const lifeData = [
 	{
 		'name': 'entoprocta',
 		'rank': 'phylum',
-		'parent': 'lophotrochozoa',
+		'parent': 'kryptotrochozoa',
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.terreneuvian,
 		'desc': 'Goblet worms',
@@ -3950,6 +3950,12 @@ const lifeData = [
 		'age': lifeDataPeriod.terreneuvian,
 		'desc': 'Mud dragons',
 	},
+	{
+		'name': 'kryptotrochozoa',
+		'rank': 'clade',
+		'parent': 'lophotrochozoa',
+		'range': 'ww',
+	},
 	// L
 	{
 		'name': 'lactuca',
@@ -4664,7 +4670,7 @@ const lifeData = [
 	{
 		'name': 'nemertea',
 		'rank': 'phylum',
-		'parent': 'lophotrochozoa',
+		'parent': 'kryptotrochozoa',
 		'range': 'ww', // ?
 		'age': lifeDataPeriod.middle_triassic,
 		'desc': 'Ribbon worms',
@@ -5364,7 +5370,7 @@ const lifeData = [
 	{
 		'name': 'phoronida',
 		'rank': 'phylum',
-		'parent': 'lophotrochozoa',
+		'parent': 'kryptotrochozoa',
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.silurian,
 		'desc': 'Horseshoe worms',
