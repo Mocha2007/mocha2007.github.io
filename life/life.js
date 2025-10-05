@@ -17,10 +17,10 @@ class Taxon {
 		this.url = o.url || `https://en.wikipedia.org/wiki/${wikientry}`;
 		/** @type {number} */
 		this.i = Taxon.taxa.length;
-		/** @type {number|undefined} */
-		this.age = o.age;
-		/** @type {number|undefined} */
-		this.age_end = o.age_end;
+		/** @type {number} */
+		this.age = o.age | 0;
+		/** @type {number} */
+		this.age_end = o.age_end | 0;
 		/** @type {boolean} */
 		this.extinct = o.extinct || false;
 		Taxon.taxa.push(this);
@@ -99,7 +99,7 @@ class Taxon {
 			title.appendChild(rangeElem(lifeData[i].range));
 		}
 		// age
-		if (lifeData[i].hasOwnProperty('age')){
+		if (this.age){
 			const a = this.age; // mya
 			title.innerHTML += ' ';
 			const age = document.createElement('abbr');
@@ -108,7 +108,7 @@ class Taxon {
 			age.innerHTML = getAge(a);
 			title.appendChild(age);
 			// age_end
-			if (lifeData[i].hasOwnProperty('age_end')){
+			if (this.age_end){
 				title.innerHTML += '&ndash;';
 				const a = this.age_end; // mya
 				const age_end = document.createElement('abbr');
