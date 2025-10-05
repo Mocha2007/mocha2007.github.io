@@ -1309,6 +1309,7 @@ const lifeData = [
 		'name': 'canis',
 		'rank': 'genus',
 		'parent': 'canidae',
+		'age': lifeDataPeriod.late_miocene,
 		'range': 'ww',
 		// all five canis species in list
 		'genetic': {
@@ -1326,6 +1327,7 @@ const lifeData = [
 		'parent': 'canis',
 		'range': 'nh',
 		'desc': 'Wolf',
+		'age': 0.4,
 		'emoji': '🐺',
 		'genetic': {
 			'chromosome': {
