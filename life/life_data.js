@@ -1821,7 +1821,7 @@ const lifeData = [
 	{
 		'name': 'chaetognatha',
 		'rank': 'phylum',
-		'parent': 'protostomia',
+		'parent': 'spiralia',
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.terreneuvian,
 		'desc': 'Arrow worms',
@@ -2688,6 +2688,13 @@ const lifeData = [
 	},
 	// E
 	{
+		'name': 'ecdysozoa',
+		'rank': 'superphylum',
+		'parent': 'protostomia',
+		'range': 'ww',
+		'age': 560,
+	},
+	{
 		'name': 'echinodermata',
 		'rank': 'phylum',
 		'parent': 'ambulacraria',
@@ -3201,7 +3208,7 @@ const lifeData = [
 	{
 		'name': 'gastrotricha',
 		'rank': 'phylum',
-		'parent': 'protostomia',
+		'parent': 'spiralia',
 		'range': 'ww', // ?
 		'desc': 'Hairybellies',
 	},
@@ -3278,7 +3285,7 @@ const lifeData = [
 	{
 		'name': 'gnathostomulida',
 		'rank': 'phylum',
-		'parent': 'protostomia',
+		'parent': 'spiralia',
 		'range': 'wo', // ?
 		'desc': 'Jaw worms',
 	},
@@ -3925,7 +3932,7 @@ const lifeData = [
 	{
 		'name': 'kinorhyncha',
 		'rank': 'phylum',
-		'parent': 'protostomia',
+		'parent': 'ecdysozoa',
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.terreneuvian,
 		'desc': 'Mud dragons',
@@ -4119,7 +4126,7 @@ const lifeData = [
 	{
 		'name': 'loricifera',
 		'rank': 'phylum',
-		'parent': 'protostomia',
+		'parent': 'ecdysozoa',
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.cambrian_stage_2,
 		'desc': 'Brush heads',
@@ -4356,7 +4363,7 @@ const lifeData = [
 	{
 		'name': 'micrognathozoa',
 		'rank': 'phylum',
-		'parent': 'protostomia',
+		'parent': 'spiralia',
 		'range': 'ww',
 	},
 	{
@@ -4621,7 +4628,7 @@ const lifeData = [
 	{
 		'name': 'nematoda',
 		'rank': 'phylum',
-		'parent': 'protostomia',
+		'parent': 'ecdysozoa',
 		'range': 'ww', // ?
 		'age': lifeDataPeriod.early_devonian,
 		'desc': 'Roundworms',
@@ -4629,7 +4636,7 @@ const lifeData = [
 	{
 		'name': 'nematomorpha',
 		'rank': 'phylum',
-		'parent': 'protostomia',
+		'parent': 'ecdysozoa',
 		'range': 'ww', // ?
 		'age': lifeDataPeriod.cenomanian,
 		'desc': 'Horsehair worms',
@@ -4999,7 +5006,7 @@ const lifeData = [
 	{
 		'name': 'panarthropoda',
 		'rank': 'clade',
-		'parent': 'protostomia',
+		'parent': 'ecdysozoa',
 		'range': 'ww',
 		'age': 540,
 	},
@@ -5546,7 +5553,7 @@ const lifeData = [
 	{
 		'name': 'platytrochozoa',
 		'rank': 'clade',
-		'parent': 'protostomia',
+		'parent': 'spiralia',
 		'range': 'ww',
 		'age': 580,
 	},
@@ -5650,7 +5657,7 @@ const lifeData = [
 	{
 		'name': 'priapulida',
 		'rank': 'phylum',
-		'parent': 'protostomia',
+		'parent': 'ecdysozoa',
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.late_pennsylvanian,
 		'desc': 'Penis worms',
@@ -5769,7 +5776,7 @@ const lifeData = [
 	},
 	{
 		'name': 'protostomia',
-		'rank': 'superphylum',
+		'rank': 'clade',
 		'parent': 'nephrozoa',
 		'range': 'ww',
 		'age': 570,
@@ -6120,7 +6127,7 @@ const lifeData = [
 	{
 		'name': 'rotifera',
 		'rank': 'phylum',
-		'parent': 'protostomia',
+		'parent': 'spiralia',
 		'range': 'ww',
 		'age': lifeDataPeriod.middle_jurassic,
 	},
@@ -6192,7 +6199,7 @@ const lifeData = [
 	{
 		'name': 'saccorhytida',
 		'rank': 'phylum',
-		'parent': 'protostomia',
+		'parent': 'ecdysozoa',
 		'range': 'ch',
 		'age': lifeDataPeriod.fortunian,
 		'extinct': true,
@@ -6575,6 +6582,13 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+	},
+	{
+		'name': 'spiralia',
+		'rank': 'clade',
+		'parent': 'protostomia',
+		'range': 'ww',
+		'age': lifeDataPeriod.cambrian,
 	},
 	{
 		'name': 'squamata',
