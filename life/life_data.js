@@ -1221,6 +1221,12 @@ const lifeData = [
 		'desc': 'Bilaterians are animals with bilateral symmetry as an embryo.',
 	},
 	{
+		'name': 'blastocladiomycota',
+		'rank': 'division',
+		'parent': 'fungi',
+		'range': 'ww', // ???
+	},
+	{
 		'name': 'bop clade',
 		'rank': 'clade',
 		'parent': 'poaceae',
@@ -1953,6 +1959,12 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'asteroideae',
 		'range': 'ea',
+	},
+	{
+		'name': 'chytridiomycota',
+		'rank': 'division',
+		'parent': 'fungi',
+		'range': 'ww', // ???
 	},
 	{
 		'name': 'ciliophora',
@@ -3293,6 +3305,12 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'cyanophyceae',
 		'range': 'ww',
+	},
+	{
+		'name': 'glomeromycota',
+		'rank': 'division',
+		'parent': 'fungi',
+		'range': 'ww', // ???
 	},
 	{
 		'name': 'gnathifera',
@@ -4707,6 +4725,12 @@ const lifeData = [
 		'parent': 'aves',
 		'range': 'ww',
 		'age': 62.5,
+	},
+	{
+		'name': 'neocallimastigomycota',
+		'rank': 'division',
+		'parent': 'fungi',
+		'range': 'ww', // ???
 	},
 	{
 		'name': 'neofelis',
@@ -6190,6 +6214,12 @@ const lifeData = [
 		'age': lifeDataPeriod.middle_jurassic,
 	},
 	{
+		'name': 'rozellomycota',
+		'rank': 'division',
+		'parent': 'fungi',
+		'range': 'ww', // ???
+	},
+	{
 		'name': 'russulales',
 		'rank': 'order',
 		'parent': 'agaricomycetes',
@@ -7492,5 +7522,11 @@ const lifeData = [
 		'parent': 'oryzoideae',
 		'range': 'na;as',
 		'desc': 'Wild Rice',
+	},
+	{
+		'name': 'zygomycota',
+		'rank': 'division',
+		'parent': 'fungi',
+		'range': 'ww', // ???
 	},
 ];
