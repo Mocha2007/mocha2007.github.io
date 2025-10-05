@@ -45,6 +45,7 @@ const lifeDataPeriod = {
 	miocene: 14,
 	oligocene: 28,
 	paleocene: 61,
+	paleoarchaean: 3400,
 	paleoproterozoic: 2050,
 	pliestocene: 1,
 	pliocene: 4,
@@ -4218,6 +4219,13 @@ const lifeData = [
 		'parent': 'naegleria',
 		'range': 'ww',
 		'desc': 'Brain-eating Amoeba',
+	},
+	{
+		'name': 'nanobdellati',
+		'rank': 'kingdom',
+		'parent': 'archaea',
+		'range': 'ww',
+		'age': lifeDataPeriod.paleoarchaean,
 	},
 	{
 		'name': 'nautilida',
