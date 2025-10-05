@@ -1337,6 +1337,22 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'canis lupus dingo',
+		'rank': 'subspecies',
+		'parent': 'canis lupus',
+		'desc': 'Dingo',
+		'age': 0.00345,
+		// ???
+		'genetic': {
+			'chromosome': {
+				'autosomal': 38,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
+	},
+	{
 		'name': 'canis lupus familiaris',
 		'rank': 'subspecies',
 		'parent': 'canis lupus',
