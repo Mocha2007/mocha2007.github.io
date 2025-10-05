@@ -25,6 +25,7 @@ const lifeDataPeriod = {
 	early_jurassic: 188,
 	early_miocene: 19,
 	early_oligocene: 31,
+	early_pleistocene: 2,
 	ediacaran: 587,
 	eocene: 45,
 	famennian: 365,
@@ -46,6 +47,7 @@ const lifeDataPeriod = {
 	miaolingian: 502,
 	mid_ordovician: 465,
 	middle_devonian: 388,
+	middle_eocene: 45,
 	middle_jurassic: 168,
 	middle_miocene: 14,
 	middle_pleistocene: 1,
@@ -64,6 +66,7 @@ const lifeDataPeriod = {
 	stenian: 1100,
 	turonian: 92,
 	upper_jurassic: 152,
+	valanginian: 135,
 	zanclean: 4,
 };
 /** @type {{
@@ -4112,6 +4115,7 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'crustacea',
 		'range': 'ww',
+		'age': lifeDataPeriod.cambrian,
 	},
 	{
 		'name': 'malus',
@@ -4320,18 +4324,22 @@ const lifeData = [
 		'name': 'muridae',
 		'rank': 'family',
 		'parent': 'muroidea',
+		'age': lifeDataPeriod.early_miocene,
 	},
 	{
 		'name': 'muroidea',
 		'rank': 'superfamily',
 		'parent': 'rodentia',
 		'range': 'ww',
+		'age': lifeDataPeriod.middle_eocene,
 	},
 	{
 		'name': 'mus',
 		'rank': 'genus',
 		'parent': 'muridae',
 		'range': 'ow',
+		'age': 15,
+		'wiki': 'Mus_(genus)',
 	},
 	{
 		'name': 'mus musculus',
@@ -4525,12 +4533,14 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'aves',
 		'range': 'ww',
+		'age': 62.5,
 	},
 	{
 		'name': 'neofelis',
 		'rank': 'genus',
 		'parent': 'pantherinae',
 		'range': 'as',
+		'age': lifeDataPeriod.early_pleistocene,
 	},
 	{
 		'name': 'neofelis nebulosa',
@@ -4544,6 +4554,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'decapoda',
 		'range': 'wo',
+		'age': lifeDataPeriod.valanginian,
 		'desc': 'Lobster',
 	},
 	{
@@ -4786,6 +4797,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'ovis',
 		'range': 'ea',
+		'age': 0.01,
 		'desc': 'Sheep',
 		'emoji': '🐑',
 		'genetic': {
