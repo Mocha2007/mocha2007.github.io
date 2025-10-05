@@ -2444,7 +2444,8 @@ const lifeData = [
 		'name': 'dromaeosauridae',
 		'rank': 'family',
 		'parent': 'paraves',
-		'age': lifeDataPeriod.cretaceous,
+		'age': (145+140)/2, // see body
+		'age_end': 66,
 		'extinct': true,
 		'range': 'ww',
 	},
