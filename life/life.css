@@ -20,11 +20,6 @@ abbr{
 summary a {
 	font-style: italic;
 }
-.important {
-	color: red;
-	font-size: large;
-	font-weight: bold;
-}
 .age {
 	font-size: small;
 	font-weight: bold;

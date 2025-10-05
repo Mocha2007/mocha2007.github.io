@@ -3004,7 +3004,6 @@ const lifeData = [
 		'name': 'felis catus',
 		'rank': 'species',
 		'parent': 'felis',
-		// 'important': true,
 		'range': 'af',
 		'age': 0.0095,
 		'desc': 'Cat',

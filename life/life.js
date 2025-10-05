@@ -127,14 +127,6 @@ class Taxon {
 		// title
 		const title = document.createElement('summary');
 		details.appendChild(title);
-		/* important
-		if (isImportant(i)){
-			var important = document.createElement("span");
-			important.classList.add('important');
-			important.innerHTML = '(!) ';
-			title.appendChild(important);
-		}
-		*/
 		// rank
 		const b = document.createElement('b');
 		b.innerHTML = proper(rank) + ' ';
