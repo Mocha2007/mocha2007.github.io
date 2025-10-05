@@ -2999,6 +2999,12 @@ const lifeData = [
 		'age': lifeDataPeriod.carboniferous,
 	},
 	{
+		'name': 'glaucophyta',
+		'rank': 'division',
+		'parent': 'archaeplastida',
+		'range': 'ww',
+	},
+	{
 		'name': 'glires',
 		'rank': 'grandorder',
 		'parent': 'euarchontoglires',
