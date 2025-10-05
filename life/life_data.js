@@ -26,7 +26,9 @@ const lifeDataPeriod = {
 	early_miocene: 19,
 	early_oligocene: 31,
 	ediacaran: 587,
+	eocene: 45,
 	famennian: 365,
+	gelasian: 2,
 	induan: 251,
 	jurassic: 172,
 	late_carboniferous: 311,
@@ -53,6 +55,7 @@ const lifeDataPeriod = {
 	paleocene: 61,
 	paleoarchaean: 3400,
 	paleoproterozoic: 2050,
+	piacenzian: 3,
 	pliestocene: 1,
 	pliocene: 4,
 	pragian: 409,
@@ -1350,6 +1353,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'tylopoda',
 		'range': 'ww',
+		'age': 50,
 	},
 	{
 		'name': 'campanulids',
@@ -1500,6 +1504,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'caprinae',
 		'range': 'ow',
+		'age': 2.58,
 		'desc': 'Goat',
 		'emoji': '🐐',
 		// capra hircus
@@ -1517,6 +1522,7 @@ const lifeData = [
 		'rank': 'subfamily',
 		'parent': 'bovidae',
 		'range': 'nh',
+		'age': lifeDataPeriod.late_miocene,
 	},
 	{
 		'name': 'capsicum',
@@ -1544,6 +1550,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'passeriformes',
 		'range': 'nw',
+		'age': 12,
 	},
 	{
 		'name': 'cardinalis',
@@ -1556,6 +1563,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'cardinalis',
 		'range': 'na',
+		'age': lifeDataPeriod.gelasian,
 		'desc': 'Cardinal',
 	},
 	{
@@ -1563,6 +1571,7 @@ const lifeData = [
 		'rank': 'infraorder',
 		'parent': 'decapoda',
 		'range': 'wo',
+		'age': lifeDataPeriod.early_jurassic,
 		'desc': 'Shrimp',
 	},
 	{
@@ -1746,6 +1755,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'cetruminantia',
 		'range': 'ww',
+		'age': lifeDataPeriod.early_miocene,
 		'desc': 'Deer',
 		'emoji': '🦌',
 	},
@@ -1771,6 +1781,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'artiofabula',
 		'range': 'ww',
+		'age': lifeDataPeriod.early_eocene,
 	},
 	{
 		'name': 'charnia',
@@ -2025,6 +2036,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'coleoptera',
 		'range': 'ww',
+		'age': lifeDataPeriod.eocene,
 		'desc': 'Ladybug',
 	},
 	{
@@ -2045,6 +2057,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'insecta',
 		'range': 'ww',
+		'age': 299,
 		'desc': 'Beetle',
 	},
 	{
@@ -2052,6 +2065,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'neoaves',
 		'range': 'ww',
+		'age': lifeDataPeriod.early_miocene,
 		'desc': 'Pigeon',
 		'genetic': {
 			'chromosome': {
@@ -2086,12 +2100,14 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'passeriformes',
 		'range': 'ww',
+		'age': lifeDataPeriod.middle_miocene,
 	},
 	{
 		'name': 'corvus',
 		'rank': 'genus',
 		'parent': 'corvidae',
 		'range': 'nh',
+		'age': 5,
 		'desc': 'Crow',
 	},
 	{
@@ -2131,12 +2147,14 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'muroidea',
 		'range': 'ww',
+		'age': lifeDataPeriod.early_oligocene,
 	},
 	{
 		'name': 'cricetinae',
 		'rank': 'subfamily',
 		'parent': 'cricetidae',
 		'range': 'ea',
+		'age': lifeDataPeriod.middle_miocene,
 		'desc': 'Hamster',
 		'emoji': '🐹',
 	},
@@ -2237,6 +2255,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'cyaneidae',
 		'range': 'wo',
+		'wiki': 'Cyanea_(cnidarian)',
 	},
 	{
 		'name': 'cyanea capillata',
@@ -2265,10 +2284,11 @@ const lifeData = [
 		'range': 'na',
 	},
 	{
-		'name': 'cyanocitta crisata',
+		'name': 'cyanocitta cristata',
 		'rank': 'species',
 		'parent': 'cyanocitta',
 		'range': 'na',
+		'age': lifeDataPeriod.piacenzian,
 		'desc': 'Blue Jay',
 	},
 	{
@@ -2304,7 +2324,9 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'anatidae',
 		'range': 'ww',
+		'age': lifeDataPeriod.late_miocene,
 		'desc': 'Swan',
+		'wiki': 'Swan',
 	},
 	{
 		'name': 'cynoidea',
@@ -2543,6 +2565,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'insecta',
 		'range': 'ww',
+		'age': 245,
 		'desc': 'Fly',
 	},
 	{
