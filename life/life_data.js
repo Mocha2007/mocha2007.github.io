@@ -1961,7 +1961,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'monocots',
 		'range': 'ww',
-		'age': lifeDataPeriod.late_cretaceous,
+		'age': 118, // https://en.wikipedia.org/wiki/Commelinids
 	},
 	{
 		'name': 'conoidasida',
@@ -5128,7 +5128,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'commelinids',
 		'range': 'ww',
-		'age': 66,
+		'age': 115, // https://en.wikipedia.org/wiki/Poales#Evolution_and_phylogeny
 	},
 	{
 		'name': 'pollachius',
