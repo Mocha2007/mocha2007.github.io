@@ -1202,6 +1202,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'bigyra',
+		'rank': 'phylum',
+		'parent': 'halvaria',
+		'range': 'ww', // ???
+	},
+	{
 		'name': 'bikonta',
 		'rank': 'clade',
 		'parent': 'eukaryota',
@@ -1955,6 +1961,12 @@ const lifeData = [
 		'develop': 'notochord, dorsal nerve cord, pharyngeal slits, endostyle, post-anal tail',
 	},
 	{
+		'name': 'chromerida',
+		'rank': 'phylum',
+		'parent': 'myzozoa',
+		'range': 'ww', // ???
+	},
+	{
 		'name': 'chrysanthemum',
 		'rank': 'genus',
 		'parent': 'asteroideae',
@@ -2225,6 +2237,12 @@ const lifeData = [
 		'parent': 'pancrustacea',
 		'range': 'ww',
 		'age': 511,
+	},
+	{
+		'name': 'cryptista',
+		'rank': 'phylum',
+		'parent': 'diaphoretickes',
+		'range': 'ww', // ???
 	},
 	{
 		'name': 'cryptovermes',
@@ -2572,10 +2590,16 @@ const lifeData = [
 	{
 		'name': 'dinoflagellata',
 		'rank': 'phylum',
-		'parent': 'myzozoa',
+		'parent': 'dinozoa',
 		'range': 'ww',
 		'age': 240,
 		'desc': 'Dinoflagellate',
+	},
+	{
+		'name': 'dinozoa',
+		'rank': 'clade',
+		'parent': 'myzozoa',
+		'range': 'ww', // ???
 	},
 	{
 		'name': 'dioscorea',
@@ -2785,6 +2809,12 @@ const lifeData = [
 		'parent': 'plantae',
 		'range': 'ww',
 		'age': lifeDataPeriod.mid_ordovician,
+	},
+	{
+		'name': 'endomyxa',
+		'rank': 'phylum',
+		'parent': 'rhizaria',
+		'range': 'ww', // ???
 	},
 	{
 		'name': 'enterobacterales',
@@ -3413,6 +3443,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'haptista',
+		'rank': 'phylum',
+		'parent': 'diaphoretickes',
+		'range': 'ww', // ???
+	},
+	{
 		'name': 'harosa',
 		'rank': 'subkingdom',
 		'parent': 'diaphoretickes',
@@ -3445,6 +3481,12 @@ const lifeData = [
 		'parent': 'ambulacraria',
 		'range': 'wo',
 		'age': lifeDataPeriod.miaolingian,
+	},
+	{
+		'name': 'hemimastigophora',
+		'rank': 'phylum',
+		'parent': 'diaphoretickes',
+		'range': 'ww', // ???
 	},
 	{
 		'name': 'hericiaceae',
@@ -4279,6 +4321,12 @@ const lifeData = [
 		'age': lifeDataPeriod.cambrian,
 	},
 	{
+		'name': 'malawimonada',
+		'rank': 'phylum',
+		'parent': 'eukaryota',
+		'range': 'ww', // ???
+	},
+	{
 		'name': 'malus',
 		'rank': 'genus',
 		'parent': 'rosaceae',
@@ -4888,6 +4936,12 @@ const lifeData = [
 		'desc': 'In opisthokonts, flagellate cells propel themselves with a single posterior flagellum.',
 	},
 	{
+		'name': 'opisthosporidia',
+		'rank': 'superphylum',
+		'parent': 'fungi',
+		'range': 'ww', // ???
+	},
+	{
 		'name': 'orchidaceae',
 		'rank': 'family',
 		'parent': 'asparagales',
@@ -5286,6 +5340,12 @@ const lifeData = [
 		'parent': 'ungulata',
 		'range': 'ww',
 		'age': 56,
+	},
+	{
+		'name': 'perkinsozoa',
+		'rank': 'phylum',
+		'parent': 'dinozoa',
+		'range': 'ww', // ???
 	},
 	{
 		'name': 'petalonamae',
@@ -5893,6 +5953,12 @@ const lifeData = [
 		'desc': 'Protothecosis-causing green alga'
 	},
 	{
+		'name': 'provora',
+		'rank': 'phylum',
+		'parent': 'diaphoretickes',
+		'range': 'ww', // ???
+	},
+	{
 		'name': 'prunus',
 		'rank': 'genus',
 		'parent': 'rosaceae',
@@ -5929,7 +5995,7 @@ const lifeData = [
 	{
 		'name': 'prymnesiophyceae',
 		'rank': 'class',
-		'parent': 'diaphoretickes',
+		'parent': 'haptista',
 		'range': 'wo',
 		'age': lifeDataPeriod.rhaetian,
 		'desc': 'Coccolithophore',
@@ -6880,6 +6946,12 @@ const lifeData = [
 		'parent': 'neoaves',
 		'range': 'ww',
 		'age': 62.5,
+	},
+	{
+		'name': 'telonemia',
+		'rank': 'phylum',
+		'parent': 'diaphoretickes',
+		'range': 'ww', // ???
 	},
 	{
 		'name': 'tethytheria',
