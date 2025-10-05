@@ -2820,7 +2820,7 @@ const lifeData = [
 	{
 		'name': 'eurotiomycetes',
 		'rank': 'class',
-		'parent': 'ascomycota',
+		'parent': 'pezizomycotina',
 		'range': 'ww',
 	},
 	// F
@@ -4929,6 +4929,12 @@ const lifeData = [
 	{
 		'name': 'pezizomycetes',
 		'rank': 'class',
+		'parent': 'pezizomycotina',
+		'range': 'ww',
+	},
+	{
+		'name': 'pezizomycotina',
+		'rank': 'subdivision',
 		'parent': 'ascomycota',
 		'range': 'ww',
 	},
@@ -6100,7 +6106,7 @@ const lifeData = [
 	{
 		'name': 'sordariomycetes',
 		'rank': 'class',
-		'parent': 'ascomycota',
+		'parent': 'pezizomycotina',
 		'range': 'ww',
 	},
 	{
