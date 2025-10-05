@@ -6601,12 +6601,14 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'neoaves',
 		'range': 'ww',
+		'age': 62.5,
 	},
 	{
 		'name': 'tethytheria',
 		'rank': 'clade',
 		'parent': 'paenungulata',
 		'range': 'ww',
+		'age': lifeDataPeriod.paleocene,
 	},
 	{
 		'name': 'tetraodontidae',
@@ -6674,6 +6676,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'saurischia',
 		'range': 'ww',
+		'age': 233.2,
 	},
 	{
 		'name': 'thuchomyces',
@@ -6900,6 +6903,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'delphinidae',
 		'range': 'ww',
+		'age': 3.6,
 		'desc': 'Bottlenose Dolphin',
 		// https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1601-5223.1974.tb01351.x
 		'genetic': {
@@ -6916,6 +6920,7 @@ const lifeData = [
 		'rank': 'suborder',
 		'parent': 'artiodactyla',
 		'range': 'ww',
+		'age': lifeDataPeriod.early_eocene,
 	},
 	{
 		'name': 'tyrannosauridae',
@@ -6962,6 +6967,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'laurasiatheria',
 		'range': 'ww',
+		'age': lifeDataPeriod.paleocene,
 	},
 	{
 		'name': 'ursidae',
@@ -7107,12 +7113,14 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'canidae',
 		'range': 'ww',
+		'age': 7,
 	},
 	{
 		'name': 'vulpes vulpes',
 		'rank': 'species',
 		'parent': 'vulpes',
 		'range': 'nh',
+		'age': 0.7,
 		'desc': 'Red Fox',
 		'emoji': '🦊',
 		'genetic': {
