@@ -2717,6 +2717,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'perissodactyla',
 		'range': 'ow',
+		'age': 55.8,
 	},
 	{
 		'name': 'equisetidae',
@@ -2731,6 +2732,8 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'equidae',
 		'range': 'ow',
+		'age': 5.33,
+		'wiki': 'Equus_(genus)',
 	},
 	{
 		'name': 'equus africanus',
@@ -2759,6 +2762,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'equus',
 		'range': 'ea',
+		'age': 0.8,
 	},
 	{
 		'name': 'equus ferus caballus',
@@ -2794,12 +2798,14 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'eulipotyphla',
 		'range': 'ow',
+		'age': lifeDataPeriod.eocene,
 	},
 	{
 		'name': 'erinaceinae',
 		'rank': 'subfamily',
 		'parent': 'erinaceidae',
 		'range': 'ow',
+		'age': lifeDataPeriod.late_eocene,
 		'desc': 'Hedgehog',
 		'emoji': '🦔',
 		// erinaceus and atelerix
@@ -2876,6 +2882,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'laurasiatheria',
 		'range': 'ww',
+		'age': lifeDataPeriod.paleocene,
 	},
 	{
 		'name': 'eumetazoa',
