@@ -225,7 +225,11 @@ class Taxon {
 	}
 	/** @param {string} s */
 	static fromString(s){
-		return Taxon.taxa.find(t => t.name === s);
+		const o = Taxon.taxa.find(t => t.name === s);
+		if (typeof o === 'undefined' && s !== '*'){
+			console.warn(`invalid taxon: ${s}`);
+		}
+		return o;
 	}
 	static preload_parent_recursive(){
 		const start_time = new Date();

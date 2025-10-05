@@ -560,7 +560,7 @@ const lifeData = [
 	{
 		'name': 'annelida',
 		'rank': 'phylum',
-		'parent': 'platytrochozoa',
+		'parent': 'lophotrochozoa',
 		'range': 'ww', // ?
 		'age': lifeDataPeriod.cambrian_stage_3,
 		'desc': 'Segmented worms',
@@ -1282,7 +1282,7 @@ const lifeData = [
 	{
 		'name': 'brachiopoda',
 		'rank': 'phylum',
-		'parent': 'platytrochozoa',
+		'parent': 'lophotrochozoa',
 		'range': 'ww', // ?
 		'age': lifeDataPeriod.terreneuvian,
 		'desc': 'Lampshells',
@@ -1377,7 +1377,7 @@ const lifeData = [
 	{
 		'name': 'bryozoa',
 		'rank': 'phylum',
-		'parent': 'platytrochozoa',
+		'parent': 'lophotrochozoa',
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.ordovician,
 		'desc': 'Moss animals',
@@ -1821,7 +1821,7 @@ const lifeData = [
 	{
 		'name': 'chaetognatha',
 		'rank': 'phylum',
-		'parent': 'spiralia',
+		'parent': 'gnathifera',
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.terreneuvian,
 		'desc': 'Arrow worms',
@@ -2371,7 +2371,7 @@ const lifeData = [
 	{
 		'name': 'cycliophora',
 		'rank': 'phylum',
-		'parent': 'platytrochozoa',
+		'parent': 'lophotrochozoa',
 		'range': 'al', // ?
 	},
 	{
@@ -2783,7 +2783,7 @@ const lifeData = [
 	{
 		'name': 'entoprocta',
 		'rank': 'phylum',
-		'parent': 'platytrochozoa',
+		'parent': 'lophotrochozoa',
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.terreneuvian,
 		'desc': 'Goblet worms',
@@ -3214,7 +3214,7 @@ const lifeData = [
 	{
 		'name': 'gastrotricha',
 		'rank': 'phylum',
-		'parent': 'spiralia',
+		'parent': 'platytrochozoa',
 		'range': 'ww', // ?
 		'desc': 'Hairybellies',
 	},
@@ -3289,9 +3289,16 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'gnathifera',
+		'rank': 'clade',
+		'parent': 'spiralia',
+		'range': 'ww',
+		'age': lifeDataPeriod.fortunian,
+	},
+	{
 		'name': 'gnathostomulida',
 		'rank': 'phylum',
-		'parent': 'spiralia',
+		'parent': 'gnathifera',
 		'range': 'wo', // ?
 		'desc': 'Jaw worms',
 	},
@@ -4130,6 +4137,13 @@ const lifeData = [
 		'age': 4280,
 	},
 	{
+		'name': 'lophotrochozoa',
+		'rank': 'superphylum',
+		'parent': 'platytrochozoa',
+		'range': 'ww',
+		'age': 536,
+	},
+	{
 		'name': 'loricifera',
 		'rank': 'phylum',
 		'parent': 'scalidophora',
@@ -4369,13 +4383,13 @@ const lifeData = [
 	{
 		'name': 'micrognathozoa',
 		'rank': 'phylum',
-		'parent': 'spiralia',
+		'parent': 'gnathifera',
 		'range': 'ww',
 	},
 	{
 		'name': 'mollusca',
 		'rank': 'phylum',
-		'parent': 'platytrochozoa',
+		'parent': 'lophotrochozoa',
 		'range': 'ww',
 		'age': 555,
 		'desc': 'Mollusk',
@@ -4650,7 +4664,7 @@ const lifeData = [
 	{
 		'name': 'nemertea',
 		'rank': 'phylum',
-		'parent': 'platytrochozoa',
+		'parent': 'lophotrochozoa',
 		'range': 'ww', // ?
 		'age': lifeDataPeriod.middle_triassic,
 		'desc': 'Ribbon worms',
@@ -5350,7 +5364,7 @@ const lifeData = [
 	{
 		'name': 'phoronida',
 		'rank': 'phylum',
-		'parent': 'platytrochozoa',
+		'parent': 'lophotrochozoa',
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.silurian,
 		'desc': 'Horseshoe worms',
@@ -6133,7 +6147,7 @@ const lifeData = [
 	{
 		'name': 'rotifera',
 		'rank': 'phylum',
-		'parent': 'spiralia',
+		'parent': 'gnathifera',
 		'range': 'ww',
 		'age': lifeDataPeriod.middle_jurassic,
 	},
