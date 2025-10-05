@@ -24,6 +24,7 @@ const lifeDataPeriod = {
 	early_miocene: 19,
 	ediacaran: 587,
 	famennian: 365,
+	induan: 251,
 	jurassic: 172,
 	late_cretaceous: 83,
 	late_devonian: 371,
@@ -31,6 +32,7 @@ const lifeDataPeriod = {
 	late_miocene: 10,
 	late_oligocene: 26,
 	late_silurian: 425,
+	lopingian: 256,
 	lutetian: 45,
 	maastrichtian: 69,
 	mesoproterozoic: 1300,
@@ -882,6 +884,8 @@ const lifeData = [
 		'parent': 'australopithecina',
 		'extinct': true,
 		'range': 'af',
+		'age': 4.5,
+		'age_end': 1.2,
 	},
 	{
 		'name': 'australopithecus afarensis',
@@ -889,6 +893,8 @@ const lifeData = [
 		'parent': 'australopithecus',
 		'extinct': true,
 		'range': 'af',
+		'age': 3.9,
+		'age_end': 2.9,
 		'desc': 'Ancestor of H. Habilis.',
 	},
 	{
@@ -1178,6 +1184,8 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'saurischia',
 		'extinct': true,
+		'age': 160,
+		'age_end': 100.5,
 		'range': 'ww',
 	},
 	{
@@ -1185,6 +1193,8 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'brachiosauridae',
 		'extinct': true,
+		'age': 155.6,
+		'age_end': 145.5,
 		'range': 'na',
 	},
 	{
@@ -1609,6 +1619,8 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'ornithischia',
 		'extinct': true,
+		'age': 82,
+		'age_end': 66,
 		'range': 'na',
 	},
 	{
@@ -1654,6 +1666,7 @@ const lifeData = [
 		'parent': 'charniidae',
 		'range': 'wo', // ???
 		'age': 570,
+		'age_end': 550,
 		'extinct': true,
 	},
 	{
@@ -1662,6 +1675,7 @@ const lifeData = [
 		'parent': 'rangeomorpha',
 		'range': 'wo', // ???
 		'age': 635,
+		'age_end': 505,
 		'extinct': true,
 	},
 	{
@@ -1838,6 +1852,7 @@ const lifeData = [
 		'parent': 'pteridophyta',
 		'range': 'ww', // ??
 		'age': lifeDataPeriod.middle_devonian,
+		'age_end': lifeDataPeriod.early_carboniferous,
 		'extinct': true,
 	},
 	{
@@ -2214,6 +2229,8 @@ const lifeData = [
 		'parent': 'dromaeosauridae',
 		'extinct': true,
 		'range': 'na',
+		'age': 115,
+		'age_end': 93.9,
 	},
 	{
 		'name': 'delphinidae',
@@ -2273,6 +2290,7 @@ const lifeData = [
 		'parent': 'dickinsoniidae',
 		'range': 'wo', // ???
 		'age': 567,
+		'age_end': 550,
 		'extinct': true,
 	},
 	{
@@ -2281,6 +2299,7 @@ const lifeData = [
 		'parent': 'dipleurozoa',
 		'range': 'wo', // ???
 		'age': 567, // wp lists 555 but that doesn't work with its child
+		'age_end': 550,
 		'extinct': true,
 	},
 	{
@@ -2346,6 +2365,8 @@ const lifeData = [
 		'parent': 'saurischia',
 		'extinct': true,
 		'range': 'ww',
+		'age': 170,
+		'age_end': 136.4,
 	},
 	{
 		'name': 'diplodocus',
@@ -2353,6 +2374,8 @@ const lifeData = [
 		'parent': 'diplodocidae',
 		'extinct': true,
 		'range': 'na',
+		'age': 152.07,
+		'age_end': 149.1,
 	},
 	{
 		'name': 'dipnoi',
@@ -2407,6 +2430,7 @@ const lifeData = [
 		'name': 'dromaeosauridae',
 		'rank': 'family',
 		'parent': 'paraves',
+		'age': lifeDataPeriod.cretaceous,
 		'extinct': true,
 		'range': 'ww',
 	},
@@ -3228,6 +3252,7 @@ const lifeData = [
 		'extinct': true,
 		'range': 'as',
 		'age': 0.2,
+		'age_end': 0.04,
 		'desc': 'Denisovan',
 		// https://www.thetech.org/ask-a-geneticist/denisovan-chromosome-2
 		'genetic': {
@@ -3246,6 +3271,7 @@ const lifeData = [
 		'extinct': true,
 		'range': 'ow',
 		'age': 2,
+		'age_end': 0.01,
 		'desc': 'Ancestor of H. Heidelbergensis, descended from H. Habilis.',
 	},
 	{
@@ -3255,6 +3281,7 @@ const lifeData = [
 		'extinct': true,
 		'range': 'af',
 		'age': 2.3,
+		'age_end': 1.65,
 		'desc': 'Ancestor of H. Erectus, descended from A. Afarensis.',
 	},
 	{
@@ -3264,6 +3291,7 @@ const lifeData = [
 		'extinct': true,
 		'range': 'ow',
 		'age': 0.7,
+		'age_end': 0.3,
 		'desc': 'Ancestor of H. Sapiens, Denisovans, and Neanderthals, descended from H. Erectus.',
 	},
 	{
@@ -3272,7 +3300,8 @@ const lifeData = [
 		'parent': 'homo',
 		'extinct': true,
 		'range': 'ea',
-		'age': 0.43,
+		'age': 0.24,
+		'age_end': 0.04,
 		'desc': 'Neanderthal',
 		// https://www.thetech.org/ask-a-geneticist/denisovan-chromosome-2
 		'genetic': {
@@ -3456,6 +3485,8 @@ const lifeData = [
 		'parent': 'perissodactyla',
 		'extinct': true,
 		'range': 'nh',
+		'age': 48.6,
+		'age_end': 26.3,
 	},
 	{
 		'name': 'hyracoidea',
@@ -3472,7 +3503,8 @@ const lifeData = [
 		'parent': 'reptilia',
 		'extinct': true,
 		'range': 'ww',
-		'age': 250,
+		'age': lifeDataPeriod.induan,
+		'age_end': lifeDataPeriod.turonian,
 		'desc': 'Ichthyosaur',
 	},
 	{
@@ -3481,6 +3513,8 @@ const lifeData = [
 		'parent': 'iguanodontidae',
 		'extinct': true,
 		'range': 'eu',
+		'age': 126,
+		'age_end': 122,
 	},
 	{
 		'name': 'iguanodontidae',
@@ -3488,6 +3522,8 @@ const lifeData = [
 		'parent': 'ornithischia',
 		'extinct': true,
 		'range': 'ow',
+		'age': 126,
+		'age_end': 122,
 	},
 	{
 		'name': 'illicium',
@@ -3886,7 +3922,8 @@ const lifeData = [
 		'parent': 'elephantidae',
 		'extinct': true,
 		'range': 'nh',
-		'age': 5,
+		'age': 6.2,
+		'age_end': 0.004,
 		'desc': 'Mammoth',
 	},
 	{
@@ -4022,6 +4059,8 @@ const lifeData = [
 		'parent': 'squamata',
 		'extinct': true,
 		'range': 'ww',
+		'age': 98,
+		'age_end': 66,
 		'desc': 'Mosasaur',
 	},
 	{
@@ -4375,6 +4414,8 @@ const lifeData = [
 		'parent': 'archosauria',
 		'extinct': true,
 		'range': 'ww',
+		'age': 200.91,
+		'age_end': 66,
 	},
 	{
 		'name': 'ornithorhynchidae',
@@ -4445,6 +4486,7 @@ const lifeData = [
 		'parent': 'porifera',
 		'range': 'af',
 		'age': 760,
+		'age_end': 550,
 		'extinct': true,
 	},
 	{
@@ -4632,6 +4674,8 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'hyracodontidae',
 		'extinct': true,
+		'age': 34,
+		'age_end': 23,
 		'range': 'ea',
 	},
 	{
@@ -4707,6 +4751,7 @@ const lifeData = [
 		'parent': 'animalia',
 		'range': 'wo', // ???
 		'age': 635,
+		'age_end': 508,
 		'extinct': true,
 	},
 	{
@@ -5006,6 +5051,8 @@ const lifeData = [
 		'parent': 'sauropterygia',
 		'extinct': true,
 		'range': 'ww',
+		'age': 203,
+		'age_end': 66,
 		'desc': 'Plesiosaur',
 	},
 	{
@@ -5105,6 +5152,7 @@ const lifeData = [
 		'parent': 'animalia',
 		'range': 'wo', // ???
 		'age': 567,
+		'age_end': 550,
 		'extinct': true,
 	},
 	{
@@ -5161,6 +5209,7 @@ const lifeData = [
 		'parent': 'euphyllophyta',
 		'range': 'ww', // ??
 		'age': lifeDataPeriod.middle_devonian,
+		'age_end': lifeDataPeriod.lopingian,
 		'extinct': true,
 	},
 	{
@@ -5199,6 +5248,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'ascomycota',
 		'age': lifeDataPeriod.late_silurian,
+		'age_end': lifeDataPeriod.famennian,
 		'extinct': true,
 	},
 	{
@@ -5206,6 +5256,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'prototaxitaceae',
 		'age': lifeDataPeriod.late_silurian,
+		'age_end': lifeDataPeriod.famennian,
 		'extinct': true,
 	},
 	{
@@ -5280,7 +5331,8 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'cladoxylopsida',
 		'range': 'ww', // ??
-		'age': lifeDataPeriod.middle_devonian,
+		'age': lifeDataPeriod.devonian,
+		'age_end': lifeDataPeriod.early_carboniferous,
 		'extinct': true,
 	},
 	{
@@ -5333,6 +5385,8 @@ const lifeData = [
 		'parent': 'archosauria',
 		'extinct': true,
 		'range': 'ww',
+		'age': 228,
+		'age_end': 66,
 		'desc': 'Pterosaur',
 	},
 	{
@@ -5406,6 +5460,7 @@ const lifeData = [
 		'parent': 'petalonamae',
 		'range': 'wo', // ???
 		'age': 635,
+		'age_end': 505,
 		'extinct': true,
 	},
 	{
@@ -5633,6 +5688,8 @@ const lifeData = [
 		'rank': 'superorder',
 		'parent': 'sauria',
 		'extinct': true,
+		'age': 247,
+		'age_end': 66,
 		'range': 'ww',
 	},
 	{
@@ -5945,6 +6002,8 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'ornithischia',
 		'extinct': true,
+		'age': 169,
+		'age_end': 100.5,
 		'range': 'ww',
 	},
 	{
@@ -5952,6 +6011,8 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'stegosauridae',
 		'extinct': true,
+		'age': 155,
+		'age_end': 145,
 		'range': 'nh',
 	},
 	{
@@ -6088,6 +6149,7 @@ const lifeData = [
 		'parent': 'eukaryota',
 		'range': 'cn',
 		'age': 1630,
+		'age_end': 518,
 		'extinct': true,
 	},
 	{
@@ -6227,6 +6289,8 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'ceratopsidae',
 		'extinct': true,
+		'age': 68,
+		'age_end': 66,
 		'range': 'na',
 	},
 	{
@@ -6281,6 +6345,7 @@ const lifeData = [
 		'extinct': true,
 		'range': 'wo',
 		'age': 521,
+		'age_end': 251.9,
 		'desc': 'Trilobite',
 	},
 	{
@@ -6289,6 +6354,7 @@ const lifeData = [
 		'parent': 'animalia',
 		'range': 'wo', // ???
 		'age': 557,
+		'age_end': 545,
 		'extinct': true,
 	},
 	{
@@ -6392,6 +6458,8 @@ const lifeData = [
 		'parent': 'theropoda',
 		'extinct': true,
 		'range': 'nh',
+		'age': 83,
+		'age_end': 66,
 	},
 	{
 		'name': 'tyrannosaurus',
@@ -6399,6 +6467,8 @@ const lifeData = [
 		'parent': 'tyrannosauridae',
 		'extinct': true,
 		'range': 'na',
+		'age': 72.7,
+		'age_end': 66,
 	},
 	{
 		'name': 'tyrannosaurus rex',
@@ -6406,6 +6476,8 @@ const lifeData = [
 		'parent': 'tyrannosaurus',
 		'extinct': true,
 		'range': 'na',
+		'age': 72.7,
+		'age_end': 66,
 	},
 	// U
 	{
@@ -6457,6 +6529,8 @@ const lifeData = [
 		'parent': 'dromaeosauridae',
 		'extinct': true,
 		'range': 'na',
+		'age': 139,
+		'age_end': 134.6,
 	},
 	// V
 	{
@@ -6484,6 +6558,8 @@ const lifeData = [
 		'parent': 'dromaeosauridae',
 		'extinct': true,
 		'range': 'as',
+		'age': 75,
+		'age_end': 71,
 	},
 	{
 		'name': 'vertebrata',
