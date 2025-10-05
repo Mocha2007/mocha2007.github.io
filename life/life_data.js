@@ -5905,6 +5905,7 @@ const lifeData = [
 		'rank': 'subdivision',
 		'parent': 'ascomycota',
 		'range': 'ww',
+		'desc': 'True yeasts',
 	},
 	{
 		'name': 'saccharum',
