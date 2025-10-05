@@ -239,8 +239,8 @@ const regions = {
 // helper functions
 /** @param {number} age */
 function getAge(age){
-	if (1 < age){
-		return age + ' mya';
+	if (1 <= age){
+		return age + ' Mya';
 	}
 	return age*1000 + ' kya';
 }

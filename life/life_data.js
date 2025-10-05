@@ -18,6 +18,7 @@ const lifeDataPeriod = {
 	chattian: 25,
 	cretaceous: 105,
 	devonian: 389,
+	early_carboniferous: 341,
 	early_devonian: 407,
 	early_eocene: 50,
 	early_miocene: 19,
@@ -58,6 +59,7 @@ const lifeDataPeriod = {
     extinct?: boolean;
     range?: string;
     age?: number;
+    age_end?: number;
     desc?: string;
     develop?: string;
     loss?: string;
@@ -510,6 +512,8 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'ornithischia',
 		'extinct': true,
+		'age': 122,
+		'age_end': 66,
 		'range': 'nh',
 	},
 	{
@@ -517,6 +521,8 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'ankylosauridae',
 		'extinct': true,
+		'age': 68,
+		'age_end': 66,
 		'range': 'na',
 	},
 	{
@@ -660,6 +666,7 @@ const lifeData = [
 		'parent': 'archaeopteridales',
 		'range': 'ww', // ??
 		'age': lifeDataPeriod.middle_devonian,
+		'age_end': lifeDataPeriod.late_devonian,
 		'extinct': true,
 	},
 	{
@@ -668,6 +675,7 @@ const lifeData = [
 		'parent': 'progymnospermopsida',
 		'range': 'ww', // ??
 		'age': lifeDataPeriod.middle_devonian,
+		'age_end': lifeDataPeriod.late_devonian,
 		'extinct': true,
 	},
 	{
@@ -676,6 +684,7 @@ const lifeData = [
 		'parent': 'archaeopteridaceae',
 		'range': 'ww', // ??
 		'age': lifeDataPeriod.late_devonian,
+		'age_end': lifeDataPeriod.early_carboniferous,
 		'extinct': true,
 	},
 	{
@@ -683,6 +692,8 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'avialae',
 		'extinct': true,
+		'age': 150.8,
+		'age_end': 148.5,
 		'range': 'eu',
 	},
 	{
@@ -690,6 +701,8 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'archaeopterygidae',
 		'extinct': true,
+		'age': 150.8,
+		'age_end': 148.5,
 		'range': 'eu',
 	},
 	{
@@ -729,6 +742,8 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'australopithecina',
 		'extinct': true,
+		'age': 5.77,
+		'age_end': 4.4,
 		'range': 'af',
 	},
 	{
@@ -737,6 +752,8 @@ const lifeData = [
 		'parent': 'ardipithecus',
 		'extinct': true,
 		'range': 'af',
+		'age': 4.5,
+		'age_end': 4.32,
 		'desc': 'Extinct hominid very close to Human-Chimpanzee LCA.',
 	},
 	{
@@ -856,7 +873,8 @@ const lifeData = [
 		'parent': 'hominini',
 		'extinct': true,
 		'range': 'af',
-		'age': 5.6,
+		'age': 6.1,
+		'age_end': 1.2,
 	},
 	{
 		'name': 'australopithecus',
