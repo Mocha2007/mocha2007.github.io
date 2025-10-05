@@ -51,6 +51,7 @@ const lifeDataPeriod = {
 	middle_eocene: 45,
 	middle_jurassic: 168,
 	middle_miocene: 14,
+	middle_paleocene: 60,
 	middle_pleistocene: 1,
 	middle_triassic: 242,
 	miocene: 14,
@@ -5898,6 +5899,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'rhizostomeae',
 		'range': 'wo',
+		'age': lifeDataPeriod.early_eocene,
 	},
 	{
 		'name': 'rhizostomeae',
@@ -5918,6 +5920,7 @@ const lifeData = [
 		'rank': 'suborder',
 		'parent': 'lepidoptera',
 		'range': 'ww',
+		'age': 55,
 		'desc': 'Butterfly',
 	},
 	{
@@ -5931,6 +5934,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'glires',
 		'range': 'ww',
+		'age': lifeDataPeriod.late_paleocene,
 	},
 	{
 		'name': 'rosa',
@@ -6073,12 +6077,14 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'reptilia',
 		'range': 'ww',
+		'age': 260,
 	},
 	{
 		'name': 'saurischia',
 		'rank': 'clade',
 		'parent': 'archosauria',
 		'range': 'ww',
+		'age': 233.23,
 	},
 	{
 		'name': 'sauropterygia',
@@ -6107,6 +6113,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'rodentia',
 		'range': 'ww',
+		'age': lifeDataPeriod.late_eocene,
 		'desc': 'Squirrel',
 		// https://www.cabi.org/isc/abstract/19670104028
 		'genetic': {
@@ -6131,6 +6138,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'scombriformes',
 		'range': 'wo',
+		'age': lifeDataPeriod.middle_paleocene,
 	},
 	{
 		'name': 'scombriformes',
@@ -6214,6 +6222,7 @@ const lifeData = [
 		'rank': 'suborder',
 		'parent': 'squamata',
 		'range': 'ww',
+		'age': 94,
 		'desc': 'Snake',
 	},
 	{
@@ -6363,6 +6372,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'neoaves',
 		'range': 'sh',
+		'age': 62,
 		'desc': 'Penguin',
 	},
 	{
@@ -6401,6 +6411,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'sauria',
 		'range': 'ww',
+		'age': lifeDataPeriod.bathonian,
 	},
 	{
 		'name': 'stegnamminidae',
@@ -6449,6 +6460,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'telluraves',
 		'range': 'ww',
+		'age': 60,
 		'desc': 'Owl',
 	},
 	{
@@ -6469,18 +6481,21 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'suina',
 		'range': 'ow',
+		'age': lifeDataPeriod.oligocene,
 	},
 	{
 		'name': 'suina',
 		'rank': 'suborder',
 		'parent': 'artiofabula',
 		'range': 'ww',
+		'age': lifeDataPeriod.late_eocene,
 	},
 	{
 		'name': 'sus',
 		'rank': 'genus',
 		'parent': 'suidae',
 		'range': 'ow',
+		'age': lifeDataPeriod.early_pleistocene,
 		'desc': 'Pig',
 		'emoji': '🐖',
 		'genetic': {
@@ -6491,12 +6506,14 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'wiki': 'Sus_(genus)',
 	},
 	{
 		'name': 'symphalangus',
 		'rank': 'genus',
 		'parent': 'hylobatidae',
 		'range': 'as',
+		'age': lifeDataPeriod.middle_pleistocene,
 		// https://www.nature.com/articles/nature13679
 		'genetic': {
 			'chromosome': {
@@ -6512,6 +6529,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'symphalangus',
 		'range': 'as',
+		'age': lifeDataPeriod.middle_pleistocene,
 		'desc': 'Siamang',
 		// https://www.nature.com/articles/nature13679
 		'genetic': {
