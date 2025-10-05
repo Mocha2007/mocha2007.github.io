@@ -780,14 +780,6 @@ const lifeData = [
 		'age': lifeDataPeriod.early_devonian,
 	},
 	{
-		'name': 'asgard',
-		'rank': 'superphylum',
-		'parent': 'proteoarchaeota',
-		'range': 'ww',
-		'age': 3380,
-		'wiki': 'Asgard (archaea)',
-	},
-	{
 		'name': 'asparagales',
 		'rank': 'order',
 		'parent': 'monocots',
@@ -2649,7 +2641,7 @@ const lifeData = [
 	{
 		'name': 'eukaryota',
 		'rank': 'domain',
-		'parent': 'asgard',
+		'parent': 'promethearchaeati',
 		'range': 'ww',
 		'age': 1650,
 		'desc': 'Eukaryotes are organisms which have cells with a nucleus enclosed within membranes, unlike prokaryotes, which have no membrane-bound organelles.',
@@ -2692,12 +2684,6 @@ const lifeData = [
 		'name': 'eurotiomycetes',
 		'rank': 'class',
 		'parent': 'ascomycota',
-		'range': 'ww',
-	},
-	{
-		'name': 'euryarchaeota',
-		'rank': 'kingdom',
-		'parent': 'archaea',
 		'range': 'ww',
 	},
 	// F
@@ -3909,9 +3895,15 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'methanobacteriati',
+		'rank': 'kingdom',
+		'parent': 'archaea',
+		'range': 'ww',
+	},
+	{
 		'name': 'methanomicrobia',
 		'rank': 'class',
-		'parent': 'euryarchaeota',
+		'parent': 'methanobacteriati',
 		'range': 'ww',
 	},
 	{
@@ -5115,10 +5107,12 @@ const lifeData = [
 		'extinct': true,
 	},
 	{
-		'name': 'proteoarchaeota',
+		'name': 'promethearchaeati',
 		'rank': 'kingdom',
 		'parent': 'archaea',
 		'range': 'ww',
+		'age': 3380,
+		'wiki': 'Asgard (archaea)',
 	},
 	{
 		'name': 'proto-chloroplast',
@@ -6115,6 +6109,12 @@ const lifeData = [
 		'range': 'ww',
 		'age': 161,
 		'develop': 'viviparity',
+	},
+	{
+		'name': 'thermoproteati',
+		'rank': 'kingdom',
+		'parent': 'archaea',
+		'range': 'ww',
 	},
 	{
 		'name': 'theropoda',
