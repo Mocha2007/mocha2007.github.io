@@ -207,6 +207,14 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'culicidae',
 		'range': 'ww',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 3,
+				// 'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			// 'sex': 'XY',
+		},
 	},
 	{
 		'name': 'aedes aegypti',
@@ -2339,6 +2347,14 @@ const lifeData = [
 		'age': 99,
 		'emoji': '🦟',
 		'desc': 'Mosquito',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 3,
+				// 'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			// 'sex': 'XY',
+		},
 	},
 	{
 		'name': 'cuminum',
