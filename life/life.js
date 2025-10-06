@@ -99,13 +99,15 @@ class Taxon {
 				if (current_authority){
 					authority_elem.innerHTML += '(';
 				}
-				authority_elem.innerHTML += `<a href="https://en.wikipedia.org/wiki/${original_authority}">${original_authority}</a>`;
+				const oa_url = authority.original_authority_wiki || original_authority;
+				authority_elem.innerHTML += `<a href="https://en.wikipedia.org/wiki/${oa_url}">${original_authority}</a>`;
 				const year = authority.year;
 				if (year){
 					authority_elem.innerHTML += `, ${year}`;
 				}
 				if (current_authority){
-					authority_elem.innerHTML += `) <a href="https://en.wikipedia.org/wiki/${current_authority}">${current_authority}</a>`;
+					const ca_url = authority.current_authority_wiki || current_authority;
+					authority_elem.innerHTML += `) <a href="https://en.wikipedia.org/wiki/${ca_url}">${current_authority}</a>`;
 				}
 			}
 

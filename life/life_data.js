@@ -77,6 +77,25 @@ const lifeDataPeriod = {
 	valanginian: 135,
 	zanclean: 4,
 };
+const authorities = {
+	/** Jussieu */
+	juss: {
+		'original_authority': 'Juss.',
+		'original_authority_wiki': 'Antoine_Laurent_de_Jussieu',
+	},
+	/** Linnaeus, 1758 */
+	l: {
+		'original_authority': 'L.',
+		'original_authority_wiki': 'Linnaeus',
+		'year': 1758,
+	},
+	/** L'Héritier, 1789' */
+	lher: {
+		'original_authority': 'L\'Hér.',
+		'original_authority_wiki': 'Charles_Louis_L\'Héritier_de_Brutelle',
+		'year': 1789,
+	},
+};
 /** @type {{
     name: string;
     rank: string;
@@ -566,10 +585,7 @@ const lifeData = [
 		'age': 720,
 		'desc': 'Animals consume organic material, breathe oxygen, are able to move, can reproduce sexually, and grow from a blastula during embryonic development.',
 		'develop': 'centrosome',
-		'authority': {
-			'original_authority': 'Linnaeus',
-			'year': 1758,
-		},
+		'authority': authorities.l,
 	},
 	{
 		'name': 'ankylosauridae',
@@ -3029,10 +3045,7 @@ const lifeData = [
 		'parent': 'myrtaceae',
 		'range': 'as;oc',
 		'age': lifeDataPeriod.eocene,
-		'authority': {
-			'original_authority': 'L\'Hér.',
-			'year': 1789,
-		},
+		'authority': authorities.lher,
 		'genetic': {
 			'chromosome': {
 				'autosomal': 11,
@@ -4747,9 +4760,7 @@ const lifeData = [
 		'parent': 'myrtales',
 		'range': 'ww', // ?
 		'age': lifeDataPeriod.santonian,
-		'authority': {
-			'original_authority': 'Juss.',
-		},
+		'authority': authorities.juss,
 	},
 	{
 		'name': 'myrtales',
@@ -4757,9 +4768,7 @@ const lifeData = [
 		'parent': 'malvids',
 		'range': 'ww', // ?
 		'age': lifeDataPeriod.turonian,
-		'authority': {
-			'original_authority': 'Juss.',
-		},
+		'authority': authorities.juss,
 	},
 	{
 		'name': 'myxococcales',
