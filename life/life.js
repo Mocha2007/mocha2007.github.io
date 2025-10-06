@@ -1,8 +1,13 @@
 /* eslint-disable indent */
 /* jshint esversion: 6, strict: true, strict: global */
-/* globals ages, lifeData, proper */
+/* globals ages, lifeData */
 /* exported openAge, searchButton, toggle, main */
 'use strict';
+
+// for taxa we only want to capitalize the VERY FIRST letter, nothing else...
+function capitalizeFirstLetter(s) {
+	return s.charAt(0).toUpperCase() + s.slice(1);
+}
 
 class Taxon {
 	constructor(o){
@@ -129,7 +134,7 @@ class Taxon {
 		details.appendChild(title);
 		// rank
 		const b = document.createElement('b');
-		b.innerHTML = proper(rank) + ' ';
+		b.innerHTML = capitalizeFirstLetter(rank) + ' ';
 		title.appendChild(b);
 		// extinct?
 		if (this.extinct){
@@ -221,7 +226,7 @@ class Taxon {
 		return Taxon.fromString(this.parent_id);
 	}
 	get pName(){
-		return proper(this.name);
+		return capitalizeFirstLetter(this.name);
 	}
 	/** @param {string} s */
 	static fromString(s){
