@@ -4382,6 +4382,13 @@ const lifeData = [
 		'range': 'ww', // ???
 	},
 	{
+		'name': 'malpighiales',
+		'rank': 'order',
+		'parent': 'fabids',
+		'range': 'ww', // ???
+		'age': lifeDataPeriod.late_cretaceous,
+	},
+	{
 		'name': 'malus',
 		'rank': 'genus',
 		'parent': 'rosaceae',
@@ -5346,6 +5353,31 @@ const lifeData = [
 		'parent': 'psittacopasserae',
 		'range': 'ww',
 		'age': 52.5,
+	},
+	{
+		'name': 'passiflora',
+		'rank': 'genus',
+		'parent': 'passifloraceae',
+		'range': 'nw',
+	},
+	{
+		'name': 'passiflora edulis',
+		'rank': 'species',
+		'parent': 'passiflora',
+		'range': 'sa',
+		'desc': 'Passionfruit',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 9,
+				'ploidy': 2,
+			},
+		},
+	},
+	{
+		'name': 'passifloraceae',
+		'rank': 'family',
+		'parent': 'malpighiales',
+		'range': 'ww', // ???
 	},
 	{
 		'name': 'pavo',
