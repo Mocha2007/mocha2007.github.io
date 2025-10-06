@@ -78,6 +78,16 @@ const lifeDataPeriod = {
 	zanclean: 4,
 };
 const authorities = {
+	/** Arambourg, 1948 */
+	arambourg: {
+		'original_authority': 'Arambourg',
+		'original_authority_wiki': 'Camille_Arambourg',
+		'year': 1948,
+	},
+	hatschek: {
+		'original_authority': 'Hatschek',
+		'year': 1888,
+	},
 	/** Jussieu */
 	juss: {
 		'original_authority': 'Juss.',
@@ -97,20 +107,27 @@ const authorities = {
 	},
 };
 /** @type {{
-    name: string;
-    rank: string;
-    parent: string;
-    important?: boolean;
-    extinct?: boolean;
-    range?: string;
-    age?: number;
-    age_end?: number;
-    desc?: string;
-    develop?: string;
-    emoji?: string;
-    loss?: string;
-    wiki?: string;
-    url?: string;
+	name: string
+	rank: string
+	parent: string
+	important?: boolean
+	extinct?: boolean
+	range?: string
+	age?: number
+	age_end?: number
+	authority?: {
+		original_authority?: string
+		original_authority_wiki?: string
+		year?: number,
+		current_authority?: string
+		current_authority_wiki?: string
+	}
+	desc?: string
+	develop?: string
+	emoji?: string
+	loss?: string
+	wiki?: string
+	url?: string
 }[]} */
 const lifeData = [
 	/*
@@ -1268,10 +1285,7 @@ const lifeData = [
 		'parent': 'planulozoa',
 		'range': 'ww',
 		'age': 567,
-		'authority': {
-			'original_authority': 'Hatschek',
-			'year': 1888,
-		},
+		'authority': authorities.hatschek,
 		'desc': 'Bilaterians are animals with bilateral symmetry as an embryo.',
 	},
 	{
@@ -3689,6 +3703,7 @@ const lifeData = [
 		'parent': 'homininae',
 		'range': 'af',
 		'age': 7,
+		'authority': authorities.arambourg,
 		'genetic': {
 			'chromosome': {
 				'autosomal': 23,
@@ -3722,6 +3737,7 @@ const lifeData = [
 		'parent': 'hominini',
 		'range': 'af',
 		'age': 2.8,
+		'authority': authorities.l,
 		'loss': 'baculum',
 	},
 	{
@@ -3800,6 +3816,7 @@ const lifeData = [
 		'range': 'af',
 		'age': 0.315,
 		'desc': 'Human',
+		'authority': authorities.l,
 		'emoji': '🧑',
 		'genetic': {
 			'chromosome': {
@@ -4458,6 +4475,7 @@ const lifeData = [
 		'range': 'ww',
 		'age': 225,
 		'desc': 'Mammals',
+		'authority': authorities.l,
 		'develop': 'mammary glands, neocortex, fur or hair, three middle ear bones',
 		// http://eknygos.lsmuni.lt/springer/671/133-152.pdf
 		'genetic': {
