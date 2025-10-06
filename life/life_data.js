@@ -88,6 +88,11 @@ const authorities = {
 		'original_authority': 'Buetschli',
 		'year': 1910,
 	},
+	eschscholtz: {
+		'original_authority': 'Eschscholtz',
+		'original_authority_wiki': 'Johann_Friedrich_von_Eschscholtz',
+		'year': 1829,
+	},
 	haeckel: {
 		'original_authority': 'Haeckel',
 		'year': 1874,
@@ -122,8 +127,8 @@ const authorities = {
 	 * @param {string} c
 	*/
 	x(o, c){
-		const o = this[o];
-		const c = this[c];
+		o = this[o];
+		c = this[c];
 		return {
 			'current_authority': c.original_authority,
 			'current_authority_wiki': c.original_authority_wiki,
@@ -2348,6 +2353,7 @@ const lifeData = [
 		'parent': 'eumetazoa',
 		'range': 'wo',
 		'age': 540,
+		'authority': authorities.eschscholtz,
 		'desc': 'Comb Jellies',
 	},
 	{
