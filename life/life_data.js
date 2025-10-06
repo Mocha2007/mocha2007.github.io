@@ -117,8 +117,13 @@ const authorities = {
 		'original_authority_wiki': 'Charles_Louis_L\'Héritier_de_Brutelle',
 		'year': 1789,
 	},
-	/** compose two authorities */
+	/** compose two authorities (use their ids)
+	 * @param {string} o
+	 * @param {string} c
+	*/
 	x(o, c){
+		const o = this[o];
+		const c = this[c];
 		return {
 			'current_authority': c.original_authority,
 			'current_authority_wiki': c.original_authority_wiki,
