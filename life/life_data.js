@@ -7510,6 +7510,26 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'vicia',
+		'rank': 'genus',
+		'parent': 'fabaceae',
+		'range': 'ww',
+		'desc': 'Vetches',
+	},
+	{
+		'name': 'vicia faba',
+		'rank': 'species',
+		'parent': 'vicia',
+		'range': 'ow',
+		'desc': 'Broad bean',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 6,
+				'ploidy': 2,
+			},
+		},
+	},
+	{
 		'name': 'vitaceae',
 		'rank': 'family',
 		'parent': 'vitales',
