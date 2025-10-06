@@ -68,6 +68,7 @@ const lifeDataPeriod = {
 	pliocene: 4,
 	pragian: 409,
 	rhaetian: 204,
+	santonian: 85,
 	silurian: 431,
 	stenian: 1100,
 	terreneuvian: 530,
@@ -3023,6 +3024,23 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'eucalyptus',
+		'rank': 'genus',
+		'parent': 'myrtaceae',
+		'range': 'as;oc',
+		'age': lifeDataPeriod.eocene,
+		'authority': {
+			'original_authority': 'L\'Hér.',
+			'year': 1789,
+		},
+		'genetic': {
+			'chromosome': {
+				'autosomal': 11,
+				'ploidy': 2,
+			},
+		},
+	},
+	{
 		'name': 'eucoccidiorida',
 		'rank': 'order',
 		'parent': 'conoidasida',
@@ -4722,6 +4740,26 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'magnoliales',
 		'range': 'ww',
+	},
+	{
+		'name': 'myrtaceae',
+		'rank': 'family',
+		'parent': 'myrtales',
+		'range': 'ww', // ?
+		'age': lifeDataPeriod.santonian,
+		'authority': {
+			'original_authority': 'Juss.',
+		},
+	},
+	{
+		'name': 'myrtales',
+		'rank': 'order',
+		'parent': 'malvids',
+		'range': 'ww', // ?
+		'age': lifeDataPeriod.turonian,
+		'authority': {
+			'original_authority': 'Juss.',
+		},
 	},
 	{
 		'name': 'myxococcales',
