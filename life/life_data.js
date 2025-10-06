@@ -84,9 +84,21 @@ const authorities = {
 		'original_authority_wiki': 'Camille_Arambourg',
 		'year': 1948,
 	},
+	buetscli: {
+		'original_authority': 'Buetschli',
+		'year': 1910,
+	},
+	haeckel: {
+		'original_authority': 'Haeckel',
+		'year': 1874,
+	},
 	hatschek: {
 		'original_authority': 'Hatschek',
 		'year': 1888,
+	},
+	huxley: {
+		'original_authority': 'Huxley',
+		'year': 1880,
 	},
 	/** Jussieu */
 	juss: {
@@ -105,6 +117,16 @@ const authorities = {
 		'original_authority_wiki': 'Charles_Louis_L\'Héritier_de_Brutelle',
 		'year': 1789,
 	},
+	/** compose two authorities */
+	x(o, c){
+		return {
+			'current_authority': c.original_authority,
+			'current_authority_wiki': c.original_authority_wiki,
+			'original_authority': o.original_authority,
+			'original_authority_wiki': o.original_authority_wiki,
+			'year': o.year,
+		};
+	}
 };
 /** @type {{
 	name: string
@@ -2022,10 +2044,7 @@ const lifeData = [
 		'parent': 'deuterostomia',
 		'range': 'ww',
 		'age': 525,
-		'authority': {
-			'original_authority': 'Haeckel',
-			'year': 1874,
-		},
+		'authority': authorities.haeckel,
 		'develop': 'notochord, dorsal nerve cord, pharyngeal slits, endostyle, post-anal tail',
 	},
 	{
@@ -3113,10 +3132,7 @@ const lifeData = [
 		'parent': 'animalia',
 		'range': 'ww',
 		'age': 635,
-		'authority': {
-			'original_authority': 'Buetschli',
-			'year': 1910,
-		},
+		'authority': authorities.buetscli,
 		'desc': 'Characteristics of eumetazoans include true tissues organized into germ layers, neurons, and an embryo that goes through a gastrula stage.',
 	},
 	{
@@ -5163,10 +5179,7 @@ const lifeData = [
 		'parent': 'vertebrata',
 		'range': 'ww',
 		'age': 425,
-		'authority': {
-			'original_authority': 'Huxley',
-			'year': 1880,
-		},
+		'authority': authorities.huxley,
 		'desc': 'Bony Fish',
 	},
 	{
