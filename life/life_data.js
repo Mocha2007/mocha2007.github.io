@@ -93,8 +93,14 @@ const authorities = {
 		'original_authority_wiki': 'Johann_Friedrich_von_Eschscholtz',
 		'year': 1829,
 	},
-	haeckel: {
+	haeckel66: {
 		'original_authority': 'Haeckel',
+		'original_authority_wiki': 'Ernst_Haeckel',
+		'year': 1866,
+	},
+	haeckel74: {
+		'original_authority': 'Haeckel',
+		'original_authority_wiki': 'Ernst_Haeckel',
 		'year': 1874,
 	},
 	hatschek: {
@@ -104,6 +110,11 @@ const authorities = {
 	huxley: {
 		'original_authority': 'Huxley',
 		'year': 1880,
+	},
+	jondelius:  {
+		'original_authority': 'Jondelius et al.',
+		'original_authority_wiki': 'Ulf_Jondelius',
+		'year': 2002,
 	},
 	/** Jussieu */
 	juss: {
@@ -543,6 +554,7 @@ const lifeData = [
 		'parent': 'tetrapoda',
 		'range': 'ww',
 		'age': 320,
+		'authority': authorities.haeckel66,
 		'desc': 'Amniotes lay their eggs on land or retain the fertilized egg within the mother, and are distinguished from anamniotes, which typically lay their eggs in water.',
 	},
 	{
@@ -2055,7 +2067,7 @@ const lifeData = [
 		'parent': 'deuterostomia',
 		'range': 'ww',
 		'age': 525,
-		'authority': authorities.haeckel,
+		'authority': authorities.haeckel74,
 		'develop': 'notochord, dorsal nerve cord, pharyngeal slits, endostyle, post-anal tail',
 	},
 	{
@@ -2624,10 +2636,7 @@ const lifeData = [
 		'parent': 'nephrozoa',
 		'range': 'ww',
 		'age': 540,
-		'authority': {
-			'original_authority': 'Jondelius',
-			'year': 2002,
-		},
+		'authority': authorities.jondelius,
 		'desc': 'In deuterostomes, the first opening, the blastopore, becomes the anus, while in protostomes, it becomes the mouth.',
 	},
 	{
@@ -4963,6 +4972,7 @@ const lifeData = [
 		'parent': 'bilateria',
 		'range': 'ww',
 		'age': 558,
+		'authority': authorities.jondelius,
 		'develop': 'nephridia (proto-kidneys)',
 	},
 	{
