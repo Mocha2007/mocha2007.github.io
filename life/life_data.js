@@ -261,6 +261,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'ailuropoda',
 		'range': 'as',
+		'age': lifeDataPeriod.early_pleistocene, // a. microta and a. wulingshanensis ???
 		'desc': 'Panda Bear',
 		'emoji': '🐼',
 		'genetic': {
