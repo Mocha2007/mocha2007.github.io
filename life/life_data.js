@@ -87,6 +87,7 @@ const lifeDataPeriod = {
     age_end?: number;
     desc?: string;
     develop?: string;
+    emoji?: string;
     loss?: string;
     wiki?: string;
     url?: string;
@@ -200,6 +201,27 @@ const lifeData = [
 		'parent': 'osteichthyes',
 		'range': 'wo',
 		'age': 420,
+	},
+	{
+		'name': 'aedes',
+		'rank': 'genus',
+		'parent': 'culicidae',
+		'range': 'ww',
+	},
+	{
+		'name': 'aedes aegypti',
+		'rank': 'species',
+		'parent': 'aedes',
+		'range': 'eq',
+		'desc': 'Egyptian mosquito',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 3,
+				// 'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			// 'sex': 'XY',
+		},
 	},
 	{
 		'name': 'afrotheria',
@@ -2308,6 +2330,15 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'fabids',
 		'range': 'ww',
+	},
+	{
+		'name': 'culicidae',
+		'rank': 'family',
+		'parent': 'diptera',
+		'range': 'ww',
+		'age': 99,
+		'emoji': '🦟',
+		'desc': 'Mosquito',
 	},
 	{
 		'name': 'cuminum',
