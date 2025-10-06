@@ -123,12 +123,13 @@ const authorities = {
 		'year': 1789,
 	},
 	/** compose two authorities (use their ids)
-	 * @param {string} o
-	 * @param {string} c
+	 * @param {string|object} o
+	 * @param {string|object} c
 	*/
 	x(o, c){
-		o = this[o];
-		c = this[c];
+		// convert stings to objs
+		o = typeof o === "string" ? this[o] : o;
+		c = typeof c === "string" ? this[c] : c;
 		return {
 			'current_authority': c.original_authority,
 			'current_authority_wiki': c.original_authority_wiki,
