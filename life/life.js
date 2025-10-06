@@ -497,8 +497,9 @@ function stats(){
 function verify(){
 	// missing ages
 	const MISSING_AGES_KINGDOM_WHITELIST = ['animalia', 'embryophyta'].map(Taxon.fromString);
-	const missing = Taxon.taxa.filter(t => MISSING_AGES_KINGDOM_WHITELIST.includes(t.kingdom) && !lifeData[t.i].hasOwnProperty('age')).map(t => t.url);
-	console.debug(`missing ages in plants (s.s.) and animals: ${Math.round(100 * missing.length / Taxon.taxa.length)}%`);
+	let population = 0;
+	const missing = Taxon.taxa.filter(t => MISSING_AGES_KINGDOM_WHITELIST.includes(t.kingdom) && ++population && !lifeData[t.i].hasOwnProperty('age')).map(t => t.url);
+	console.debug(`missing ages in plants (s.s.) and animals: ${Math.round(100 * missing.length / population)}% of ${population}`);
 	console.warn(missing);
 	// age is older than parent
 	console.debug("age is older than parent:");

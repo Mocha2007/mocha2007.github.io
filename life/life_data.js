@@ -3455,14 +3455,6 @@ const lifeData = [
 		'range': 'ww', // ???
 	},
 	{
-		'name': 'sar',
-		'rank': 'clade',
-		'parent': 'diaphoretickes',
-		'range': 'ww',
-		'age': 736,
-		'desc': 'SAR supergroup',
-	},
-	{
 		'name': 'helianthus',
 		'rank': 'genus',
 		'parent': 'asteroideae',
@@ -6411,6 +6403,14 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'malvids',
 		'range': 'ww',
+	},
+	{
+		'name': 'sar',
+		'rank': 'clade',
+		'parent': 'diaphoretickes',
+		'range': 'ww',
+		'age': 736,
+		'desc': 'SAR supergroup',
 	},
 	{
 		'name': 'sarcocystidae',
