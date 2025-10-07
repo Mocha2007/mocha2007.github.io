@@ -4744,6 +4744,10 @@ const lifeData = [
 		'age': 6.2,
 		'age_end': 0.004,
 		'desc': 'Mammoth',
+		'stats': {
+			height: (3.8 + 4.2)/2,
+			weight: (9.6e3 + 12.7e3)/2,
+		},
 	},
 	{
 		'name': 'marchantiophyta',
@@ -5407,6 +5411,11 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			length: 0.5,
+			temperature: 32,
+			weight: 1.7,
+		},
 	},
 	{
 		'name': 'orrorin',
@@ -5939,6 +5948,10 @@ const lifeData = [
 				'autosomal': 8,
 				'ploidy': 2,
 			},
+		},
+		'stats': {
+			length: (0.6 + 0.85)/2,
+			weight: (4 + 15)/2,
 		},
 	},
 	{
