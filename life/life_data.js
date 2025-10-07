@@ -72,6 +72,7 @@ const lifeDataPeriod = {
 	silurian: 431,
 	stenian: 1100,
 	terreneuvian: 530,
+	tonian: 860,
 	turonian: 92,
 	upper_jurassic: 152,
 	valanginian: 135,
@@ -2561,6 +2562,15 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'kryptotrochozoa',
 		'range': 'al', // ?
+	},
+	{
+		'name': 'cyclomedusa',
+		'rank': 'genus',
+		'parent': 'animalia',
+		'range': 'wo',
+		'age': lifeDataPeriod.tonian,
+		'age_end': lifeDataPeriod.ediacaran,
+		'extinct': true,
 	},
 	{
 		'name': 'cygnus',
