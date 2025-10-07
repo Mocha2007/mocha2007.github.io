@@ -1003,13 +1003,13 @@ const lifeData = [
 		'name': 'arecaceae',
 		'rank': 'family',
 		'parent': 'arecales',
-		'range': 'eq',
+		'range': 'ww',
 	},
 	{
 		'name': 'arecales',
 		'rank': 'order',
 		'parent': 'commelinids',
-		'range': 'eq',
+		'range': 'ww',
 		'age': 80,
 	},
 	{
@@ -2380,7 +2380,7 @@ const lifeData = [
 		'name': 'cocos',
 		'rank': 'genus',
 		'parent': 'arecaceae',
-		'range': 'eq',
+		'range': 'af;as;oc', // 'central indo-pacific'
 	},
 	{
 		'name': 'cocos nucifera',
@@ -2924,7 +2924,7 @@ const lifeData = [
 		'name': 'digitaria',
 		'rank': 'genus',
 		'parent': 'paniceae',
-		'range': 'eq',
+		'range': 'ww',
 		'desc': 'Fonio',
 	},
 	{
@@ -2945,7 +2945,7 @@ const lifeData = [
 		'name': 'dioscorea',
 		'rank': 'genus',
 		'parent': 'dioscoreaceae',
-		'range': 'eq',
+		'range': 'ww',
 		'desc': 'Wild Yam',
 		'stats': {
 			height: (2 + 12)/2,
@@ -2955,13 +2955,13 @@ const lifeData = [
 		'name': 'dioscoreaceae',
 		'rank': 'family',
 		'parent': 'dioscoreales',
-		'range': 'eq',
+		'range': 'ww',
 	},
 	{
 		'name': 'dioscoreales',
 		'rank': 'order',
 		'parent': 'monocots',
-		'range': 'eq',
+		'range': 'ww',
 		'age': 116,
 	},
 	{
@@ -5506,6 +5506,17 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'nyanzapithecus',
+		'rank': 'genus',
+		'parent': 'dendropithecidae',
+		'range': 'af',
+		'extinct': true,
+		'age': lifeDataPeriod.middle_miocene,
+		'stats': {
+			weight: 10,
+		},
+	},
+	{
 		'name': 'nymphaeaceae',
 		'rank': 'family',
 		'parent': 'nymphaeales',
@@ -5519,17 +5530,6 @@ const lifeData = [
 		'parent': 'angiospermae',
 		'range': 'ww',
 		'age': 130,
-	},
-	{
-		'name': 'nyanzapithecus',
-		'rank': 'genus',
-		'parent': 'dendropithecidae',
-		'range': 'af',
-		'extinct': true,
-		'age': lifeDataPeriod.middle_miocene,
-		'stats': {
-			weight: 10,
-		},
 	},
 	// O
 	{
