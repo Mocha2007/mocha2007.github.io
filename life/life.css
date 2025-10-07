@@ -1,7 +1,7 @@
 body {
 	margin: 0;
 }
-details {
+details, #stats_container {
 	background-color: #ccc; /* default clade */
 	border: 0.2vw solid #888;
 	border-radius: 1vw;
@@ -73,4 +73,13 @@ summary a {
 #search_div{
 	display: inline-block; /* make div no larger than ol */
 	text-align: left;
+}
+/* stats */
+#stats_container {
+	display: grid;
+	grid-template-columns: 1fr 1fr; /* two equal columns */
+}
+.spec {
+	box-sizing: border-box;
+	width: 100%; /* each item fills its grid cell */
 }

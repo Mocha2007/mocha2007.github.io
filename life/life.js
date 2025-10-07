@@ -30,6 +30,8 @@ class Taxon {
 		this.extinct = o.extinct || false;
 		/** @type {Taxon[]} once initialized */
 		this.parent_recursive = undefined;
+		/** object possibly existing, and possibly containing height, length, weight, and speed */
+		this.stats = o.stats;
 		Taxon.taxa.push(this);
 	}
 	get a(){
@@ -86,6 +88,11 @@ class Taxon {
 		}
 		const parent = this.parent;
 		return parent ? this.parent.age_guess_upper : 0;
+	}
+	/** @param {number} year; @returns {boolean} */
+	alive(year){
+		return this.extinct ? (this.age && this.age_end && year < this.age && this.age_end < year)
+			: (year < this.age);
 	}
 	get authority_elem(){
 		const authority_elem = document.createElement('span');
@@ -467,10 +474,72 @@ function main(){
 		searchButton();
 		event.preventDefault();
 	});
+	// stat elem
+	stat_elem.init();
 	// bonus goodies
 	stats();
 	verify();
 }
+
+const stat_elem = {
+	elem: {
+		/** @returns {HTMLDivElement} */
+		get container(){
+			return document.getElementById('stats_container');
+		},
+		/** @returns {HTMLInputElement} */
+		get input(){
+			return document.getElementById('stats_age_input');
+		},
+		/** @param {string} x; @returns {HTMLDivElement} */
+		spec(x){
+			return document.getElementById(`spec-${x}`);
+		},
+	},
+	init(){
+		const container = this.elem.container;
+		this.specs.forEach(spec => {
+			const spec_elem = document.createElement('div');
+			spec_elem.id = `spec-${spec}`;
+			spec_elem.classList.add('spec');
+			container.appendChild(spec_elem);
+		});
+		this.refresh();
+	},
+	max_len: 10,
+	refresh(){
+		const year = this.year;
+		const taxa = Taxon.taxa.filter(t => t.stats && t.alive(year));
+		this.specs.forEach(spec => {
+			const unit = this.unit[spec];
+			const elem = this.elem.spec(spec);
+			elem.innerHTML = '';
+			const h = document.createElement('h3');
+			h.innerHTML = capitalizeFirstLetter(spec);
+			elem.appendChild(h);
+			const filtered_taxa = taxa.filter(t => t.stats[spec]);
+			const top = taxa.sort((a, b) => a.stats[spec] - b.stats[spec]).reverse().slice(0, this.max_len);
+			const ol = document.createElement('ol');
+			elem.appendChild(ol);
+			top.forEach(t => {
+				const li = document.createElement('li');
+				li.innerHTML = `${t.name}: ${t.stats[spec]} ${unit}`; // todo - make fancier
+				ol.appendChild(li);
+			});
+		});
+	},
+	// current specs: HEIGHT, LENGTH, SPEED, WEIGHT
+	specs: ['height', 'length', 'speed', 'weight'],
+	unit: {
+		height: 'm',
+		length: 'm',
+		speed: 'm/s',
+		weight: 'kg',
+	},
+	get year(){
+		return +this.elem.input.value;
+	},
+};
 
 function stats(){
 	const total = lifeData.length;
