@@ -3778,6 +3778,15 @@ const lifeData = [
 		'loss': 'baculum',
 	},
 	{
+		'name': 'homo antecessor',
+		'rank': 'species',
+		'parent': 'homo',
+		'extinct': true,
+		'range': 'eu',
+		'age': 1.2,
+		'age_end': 0.77,
+	},
+	{
 		'name': 'homo denisova',
 		'rank': 'species',
 		'parent': 'homo',
