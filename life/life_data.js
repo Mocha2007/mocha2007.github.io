@@ -2092,6 +2092,14 @@ const lifeData = [
 		'desc': 'Cherry',
 	},
 	{
+		'name': 'ceratioidea',
+		'rank': 'suborder',
+		'parent': 'lophiiformes',
+		'range': 'wo',
+		'age': lifeDataPeriod.middle_miocene,
+		'desc': 'Deep-sea anglerfish',
+	},
+	{
 		'name': 'ceratopsidae',
 		'rank': 'family',
 		'parent': 'ornithischia',
