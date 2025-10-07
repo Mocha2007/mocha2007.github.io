@@ -779,6 +779,15 @@ const lifeData = [
 		'desc': 'Frog',
 	},
 	{
+		'name': 'apatotheria',
+		'rank': 'order',
+		'parent': 'euarchontoglires',
+		'range': 'na;eu',
+		'extinct': true,
+		'age': lifeDataPeriod.paleocene,
+		'age_end': lifeDataPeriod.oligocene,
+	},
+	{
 		'name': 'apiaceae',
 		'rank': 'family',
 		'parent': 'apiales',
@@ -5860,6 +5869,15 @@ const lifeData = [
 		'age': 61,
 	},
 	{
+		'name': 'palaeoryctidae',
+		'rank': 'order',
+		'parent': 'placentalia',
+		'range': 'na;ow',
+		'extinct': true,
+		'age': 70,
+		'age_end': 42,
+	},
+	{
 		'name': 'pan',
 		'rank': 'genus',
 		'parent': 'hominini',
@@ -8016,6 +8034,15 @@ const lifeData = [
 		'desc': 'Echidnas',
 	},
 	{
+		'name': 'taeniodonta',
+		'rank': 'order',
+		'parent': 'placentalia',
+		'range': 'na;eu',
+		'extinct': true,
+		'age': 70,
+		'age_end': 39.7,
+	},
+	{
 		'name': 'tamiina',
 		'rank': 'subtribe',
 		'parent': 'sciuridae',
@@ -8547,6 +8574,15 @@ const lifeData = [
 		'range': 'as',
 		'age': 75,
 		'age_end': 71,
+	},
+	{
+		'name': 'veratalpa',
+		'rank': 'genus',
+		'parent': 'boreoeutheria',
+		'range': 'eu',
+		'extinct': true,
+		'age': 16.9,
+		'age_end': 13.7,
 	},
 	{
 		'name': 'vertebrata',
