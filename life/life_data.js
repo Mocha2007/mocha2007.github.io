@@ -1319,6 +1319,7 @@ const lifeData = [
 		'stats': {
 			length: (21 + 26.3)/2,
 			lifespan: (80 + 90)/2,
+			speed: (32 + 36)/2 * kph,
 			weight: (100e3 + 112e3)/2,
 		},
 	},
@@ -4331,6 +4332,7 @@ const lifeData = [
 			jump: 2.45,
 			height: (1.71 + 1.59)/2,
 			lifespan: (72.6 + 73.2)/2,
+			speed: 44.72 * kph,
 			weight: (77 + 59)/2,
 		},
 	},
