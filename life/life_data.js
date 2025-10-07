@@ -4746,6 +4746,14 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'lemuroidea',
+		'rank': 'superfamily',
+		'parent': 'primates',
+		'range': 'af',
+		'age': lifeDataPeriod.pliestocene,
+		'desc': 'Lemurs',
+	},
+	{
 		'name': 'lentinula',
 		'rank': 'genus',
 		'parent': 'omphalotaceae',
@@ -4833,6 +4841,14 @@ const lifeData = [
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.cambrian_stage_2,
 		'desc': 'Brush heads',
+	},
+	{
+		'name': 'lorisoidea',
+		'rank': 'superfamily',
+		'parent': 'primates',
+		'range': 'af;as',
+		'age': lifeDataPeriod.eocene,
+		'desc': 'Lorises, pottos, angwantibos, galagos',
 	},
 	{
 		'name': 'lutrinae',
@@ -6579,6 +6595,14 @@ const lifeData = [
 		'age': 580,
 	},
 	{
+		'name': 'platyrrhini',
+		'rank': 'parvorder',
+		'parent': 'simiiformes',
+		'range': 'nw',
+		'age': 31,
+		'desc': 'New World monkeys',
+	},
+	{
 		'name': 'plesiosauria',
 		'rank': 'order',
 		'parent': 'sauropterygia',
@@ -7989,6 +8013,14 @@ const lifeData = [
 		'range': 'ww',
 		'age': lifeDataPeriod.turonian,
 		'desc': 'Tardigrade',
+	},
+	{
+		'name': 'tarsiidae',
+		'rank': 'family',
+		'parent': 'primates',
+		'range': 'as',
+		'age': lifeDataPeriod.middle_eocene,
+		'desc': 'Tarsiers',
 	},
 	{
 		'name': 'tawuia',
