@@ -6603,6 +6603,36 @@ const lifeData = [
 		'desc': 'New World monkeys',
 	},
 	{
+		'name': 'plesiadapidae',
+		'rank': 'family',
+		'parent': 'plesiadapiformes',
+		'range': 'na;ea',
+		'extinct': true,
+		'age': lifeDataPeriod.late_cretaceous,
+		'age_end': lifeDataPeriod.early_eocene,
+	},
+	{
+		'name': 'plesiadapiformes',
+		'rank': 'order',
+		'parent': 'primates',
+		'range': 'na;ea',
+		'extinct': true,
+		'age': 66,
+		'age_end': 46.2,
+	},
+	{
+		'name': 'plesiadapis',
+		'rank': 'genus',
+		'parent': 'plesiadapidae',
+		'range': 'na;eu',
+		'extinct': true,
+		'age': lifeDataPeriod.late_cretaceous,
+		'age_end': lifeDataPeriod.early_eocene,
+		'stats': {
+			weight: 2.1,
+		}
+	},
+	{
 		'name': 'plesiosauria',
 		'rank': 'order',
 		'parent': 'sauropterygia',
