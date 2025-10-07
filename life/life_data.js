@@ -3212,6 +3212,15 @@ const lifeData = [
 		'desc': 'Goblet worms',
 	},
 	{
+		'name': 'eosimiidae',
+		'rank': 'family',
+		'parent': 'simiiformes',
+		'range': 'af;as',
+		'extinct': true,
+		'age': 45,
+		'age_end': 30,
+	},
+	{
 		'name': 'equatorius',
 		'rank': 'genus',
 		'parent': 'hominoidea',
@@ -6311,6 +6320,14 @@ const lifeData = [
 		'rank': 'subfamily',
 		'parent': 'phasianidae',
 		'range': 'ow',
+	},
+	{
+		'name': 'phenacopithecus',
+		'rank': 'genus',
+		'parent': 'eosimiidae',
+		'range': 'cn',
+		'extinct': true,
+		'age': lifeDataPeriod.eocene,
 	},
 	{
 		'name': 'pholidota',
