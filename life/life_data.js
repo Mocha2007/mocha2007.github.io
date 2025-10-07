@@ -2627,6 +2627,9 @@ const lifeData = [
 		'age': lifeDataPeriod.tonian,
 		'age_end': lifeDataPeriod.ediacaran,
 		'extinct': true,
+		'stats': {
+			length: 0.2,
+		},
 	},
 	{
 		'name': 'cygnus',
@@ -4266,6 +4269,9 @@ const lifeData = [
 		'range': 'au',
 		'age': 560,
 		'age_end': 555,
+		'stats': {
+			length: (0.002 + 0.007)/2,
+		},
 	},
 	{
 		'name': 'illicium',
@@ -4344,6 +4350,11 @@ const lifeData = [
 		'range': 'ow', // Ediacara hills (Aus) and White sea (Russia)
 		'age': 570,
 		'extinct': true,
+		'stats': {
+			length: 0.15,
+			height: (3+4)/2,
+			width: (5+7)/2,
+		},
 	},
 	{
 		'name': 'kinetoplastea',
@@ -7552,6 +7563,9 @@ const lifeData = [
 		'age': 558,
 		'age_end': 555,
 		'extinct': true,
+		'stats': {
+			length: 0.008,
+		},
 	},
 	{
 		'name': 'tethytheria',
