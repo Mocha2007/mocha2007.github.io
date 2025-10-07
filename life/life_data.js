@@ -4961,6 +4961,14 @@ const lifeData = [
 		'age': 4280,
 	},
 	{
+		'name': 'lophiiformes',
+		'rank': 'order',
+		'parent': 'percomorpha',
+		'range': 'wo',
+		'age': lifeDataPeriod.early_eocene,
+		'desc': 'Anglerfish',
+	},
+	{
 		'name': 'lophotrochozoa',
 		'rank': 'superphylum',
 		'parent': 'platytrochozoa',
