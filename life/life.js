@@ -299,11 +299,12 @@ const regions = {
 				'EU': 'Europe',
 		// alternatively
 		'NH': 'Northern Hemisphere',
-		'EQ': 'Equatorial Regions',
+		'EQ': 'Equatorial Regions', // DEPRECATED
 		'SH': 'Southern Hemisphere',
 		// oceans
 		'WO': 'World Ocean',
 			'AL': 'Atlantic Ocean',
+			'IO': 'Indian Ocean',
 			'PA': 'Pacific Ocean',
 			'SO': 'Southern Ocean',
 	// 'XX': 'Extinct', // deprecated
@@ -633,5 +634,13 @@ function verify(){
 	console.debug(`too many direct children (>${MAX_CHILDREN}):`);
 	Taxon.taxa.filter(t => !FORGIVEN_RANKS.includes(t.rank) && MAX_CHILDREN < t.children.length).forEach(t => {
 		console.warn(`${t.name} (${t.url}) has too many direct children (${t.children.length}: ${t.children.map(c => c.name).join(', ')}) - are we sure it isn't divided further?`);
+	});
+	// range: EQ is DEPRECATED!!!!
+	console.debug(`range: EQ is deprecated:`);
+	Taxon.taxa.forEach(t => {
+		const range = lifeData[t.i].range;
+		if (range && range.includes('eq')) {
+			console.warn(`${t.name} (${t.url}) has EQ in range, which is deprecated (use the continent(s) instead!)`);
+		}
 	});
 }
