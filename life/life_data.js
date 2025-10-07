@@ -7315,6 +7315,15 @@ const lifeData = [
 		'range': 'ww', // ???
 	},
 	{
+		'name': 'temnoxa',
+		'rank': 'genus',
+		'parent': 'protostomia',
+		'range': 'as',
+		'age': 558,
+		'age_end': 555,
+		'extinct': true,
+	},
+	{
 		'name': 'tethytheria',
 		'rank': 'clade',
 		'parent': 'paenungulata',
