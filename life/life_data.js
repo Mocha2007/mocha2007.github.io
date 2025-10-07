@@ -36,6 +36,7 @@ const lifeDataPeriod = {
 	late_carboniferous: 311,
 	late_cretaceous: 83,
 	late_devonian: 371,
+	late_ediacaran: 563,
 	late_eocene: 39,
 	late_miocene: 10,
 	late_oligocene: 26,
@@ -1504,6 +1505,14 @@ const lifeData = [
 	},
 	// C
 	{
+		'name': 'calcarea',
+		'rank': 'class',
+		'parent': 'porifera',
+		'range': 'wo',
+		'age': lifeDataPeriod.cambrian_stage_2,
+		'desc': 'Calcareous sponges',
+	},
+	{
 		'name': 'cam',
 		'rank': 'clade',
 		'parent': 'diaphoretickes',
@@ -2665,6 +2674,14 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'demospongiae',
+		'rank': 'class',
+		'parent': 'porifera',
+		'range': 'wo',
+		'age': lifeDataPeriod.cambrian_stage_3,
+		'desc': 'Common sponges',
+	},
+	{
 		'name': 'deuterostomia',
 		'rank': 'superphylum',
 		'parent': 'nephrozoa',
@@ -3711,6 +3728,14 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'hexactinellida',
+		'rank': 'class',
+		'parent': 'porifera',
+		'range': 'wo',
+		'age': lifeDataPeriod.late_ediacaran,
+		'desc': 'Glass sponges',
+	},
+	{
 		'name': 'hexapoda',
 		'rank': 'subphylum',
 		'parent': 'pancrustacea',
@@ -3946,6 +3971,12 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+	},
+	{
+		'name': 'homosclerophorida',
+		'rank': 'class',
+		'parent': 'porifera',
+		'range': 'wo',
 	},
 	{
 		'name': 'hoolock',
