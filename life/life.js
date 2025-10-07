@@ -482,6 +482,39 @@ function main(){
 }
 
 const stat_elem = {
+	// taxon categorizer
+	cat: {
+		colors: {
+			animal: 'pink',
+			archaea: 'darkgrey',
+			bacteria: 'lightgrey',
+			fungus: 'lightblue',
+			plant: 'lightgreen',
+			protozoan: 'khaki',
+		},
+		/** @param {Taxon} taxon */
+		cat(taxon){
+			const parents = taxon.parent_recursive.map(t => t.name);
+			if (parents.includes('animalia')){
+				return 'animal';
+			}
+			else if (parents.includes('plantae')){
+				return 'plant';
+			}
+			else if (parents.includes('fungi')){
+				return 'fungus';
+			}
+			else if (parents.includes('eukaryota')){
+				return 'protozoan';
+			}
+			else if (parents.includes('archaea')){
+				return 'archaea';
+			}
+			else {
+				return 'bacteria';
+			}
+		}
+	},
 	elem: {
 		/** @returns {HTMLDivElement} */
 		get container(){
@@ -524,6 +557,9 @@ const stat_elem = {
 			top.forEach(t => {
 				const li = document.createElement('li');
 				li.innerHTML = `${t.name}: ${t.stats[spec]} ${unit}`; // todo - make fancier
+				const category = this.cat.cat(t);
+				li.style.backgroundColor = this.cat.colors[category];
+				li.title = category;
 				ol.appendChild(li);
 			});
 		});
