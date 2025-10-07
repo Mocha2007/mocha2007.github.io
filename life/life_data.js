@@ -1896,6 +1896,14 @@ const lifeData = [
 		'age': lifeDataPeriod.late_eocene,
 	},
 	{
+		'name': 'catarrhini',
+		'rank': 'parvorder',
+		'parent': 'simiiformes',
+		'range': 'ow',
+		'age': lifeDataPeriod.late_eocene,
+		'desc': 'Old World monkeys',
+	},
+	{
 		'name': 'caulerpa',
 		'rank': 'genus',
 		'parent': 'caulerpaceae',
@@ -4006,7 +4014,7 @@ const lifeData = [
 	{
 		'name': 'hominoidea',
 		'rank': 'superfamily',
-		'parent': 'simiiformes',
+		'parent': 'catarrhini',
 		'range': 'ow',
 		'age': 23,
 		'desc': 'Ape',
@@ -4453,6 +4461,15 @@ const lifeData = [
 		},
 	},
 	// K
+	{
+		'name': 'kamoyapithecus',
+		'rank': 'genus',
+		'parent': 'catarrhini',
+		'range': 'af',
+		'extinct': true,
+		'age': 27.5,
+		'age_end': 24.2,
+	},
 	{
 		'name': 'kimberella',
 		'rank': 'genus',
