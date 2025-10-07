@@ -6805,19 +6805,19 @@ const lifeData = [
 		'desc': 'Flatworm',
 	},
 	{
-		'name': 'platytrochozoa',
-		'rank': 'clade',
-		'parent': 'spiralia',
-		'range': 'ww',
-		'age': 580,
-	},
-	{
 		'name': 'platyrrhini',
 		'rank': 'parvorder',
 		'parent': 'simiiformes',
 		'range': 'nw',
 		'age': 31,
 		'desc': 'New World monkeys',
+	},
+	{
+		'name': 'platytrochozoa',
+		'rank': 'clade',
+		'parent': 'spiralia',
+		'range': 'ww',
+		'age': 580,
 	},
 	{
 		'name': 'plesiadapidae',
