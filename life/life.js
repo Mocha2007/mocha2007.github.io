@@ -91,8 +91,8 @@ class Taxon {
 	}
 	/** @param {number} year; @returns {boolean} */
 	alive(year){
-		return this.extinct ? (this.age && this.age_end && year < this.age && this.age_end < year)
-			: (!year || year < this.age);
+		return this.extinct ? (this.age && this.age_end && year <= this.age && this.age_end <= year)
+			: (!year || year <= this.age);
 	}
 	get authority_elem(){
 		const authority_elem = document.createElement('span');

@@ -62,8 +62,9 @@ const lifeDataPeriod = {
 	neogene: 13,
 	oligocene: 28,
 	ordovician: 465,
-	paleocene: 61,
 	paleoarchaean: 3400,
+	paleocene: 61,
+	paleogene: 45,
 	paleoproterozoic: 2050,
 	piacenzian: 3,
 	pliestocene: 1,
@@ -180,7 +181,7 @@ const authorities = {
 		length?: number,
 		lifespan?: number,
 		speed?: number,
-		width?: number,
+		weight?: number,
 	}
 }[]} */
 const lifeData = [
@@ -330,6 +331,27 @@ const lifeData = [
 			},
 			// 'sex': 'XY',
 		},
+	},
+	{
+		'name': 'aegyptopithecus',
+		'rank': 'genus',
+		'parent': 'catarrhini',
+		'range': 'af',
+		'extinct': true,
+		'age': 38,
+		'age_end': 29.5,
+		'stats': {
+			weight: 6.708,
+		},
+	},
+	{
+		'name': 'afropithecus',
+		'rank': 'genus',
+		'parent': 'hominoidea',
+		'range': 'af',
+		'extinct': true,
+		'age': 18,
+		'age_end': 16,
 	},
 	{
 		'name': 'afrotheria',
@@ -2794,6 +2816,18 @@ const lifeData = [
 		'desc': 'Common sponges',
 	},
 	{
+		'name': 'dendropithecus',
+		'rank': 'genus',
+		'parent': 'hominoidea',
+		'range': 'af',
+		'extinct': true,
+		'age': 20,
+		'age_end': 15,
+		'stats': {
+			length: 0.6,
+		},
+	},
+	{
 		'name': 'deuterostomia',
 		'rank': 'superphylum',
 		'parent': 'nephrozoa',
@@ -3025,6 +3059,27 @@ const lifeData = [
 		'parent': 'diptera',
 		'range': 'ww',
 	},
+	{
+		'name': 'dryopithecini',
+		'rank': 'tribe',
+		'parent': 'homininae',
+		'range': 'af;eu',
+		'extinct': true,
+		'age': 12,
+		'age_end': 7,
+	},
+	{
+		'name': 'dryopithecus',
+		'rank': 'genus',
+		'parent': 'dryopithecini',
+		'range': 'eu',
+		'extinct': true,
+		'age': 12.5,
+		'age_end': 11.1,
+		'stats': {
+			weight: 44,
+		},
+	},
 	// E
 	{
 		'name': 'ecdysozoa',
@@ -3137,6 +3192,15 @@ const lifeData = [
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.terreneuvian,
 		'desc': 'Goblet worms',
+	},
+	{
+		'name': 'equatorius',
+		'rank': 'genus',
+		'parent': 'hominoidea',
+		'range': 'af',
+		'extinct': true,
+		'age': 15.58,
+		'age_end': 15.36,
 	},
 	{
 		'name': 'equidae',
@@ -3751,12 +3815,28 @@ const lifeData = [
 		'desc': 'Cotton',
 	},
 	{
-		'name': 'graecopithecus',
-		'rank': 'genus',
+		'name': 'graecopithecini',
+		'rank': 'tribe',
 		'parent': 'hominidae',
 		'extinct': true,
 		'range': 'eu',
+	},
+	{
+		'name': 'graecopithecus',
+		'rank': 'genus',
+		'parent': 'graecopithecini',
+		'extinct': true,
+		'range': 'eu',
 		'age': 7.2,
+	},
+	{
+		'name': 'griphopithecus',
+		'rank': 'genus',
+		'parent': 'dryopithecini',
+		'range': 'eu',
+		'extinct': true,
+		'age': 13.65,
+		'age_end': 11.1,
 	},
 	{
 		'name': 'gromia',
@@ -4469,6 +4549,14 @@ const lifeData = [
 		'extinct': true,
 		'age': 27.5,
 		'age_end': 24.2,
+	},
+	{
+		'name': 'kenyapithecus',
+		'rank': 'genus',
+		'parent': 'dryopithecini',
+		'range': 'af',
+		'extinct': true,
+		'age': 14,
 	},
 	{
 		'name': 'kimberella',
@@ -5232,6 +5320,15 @@ const lifeData = [
 	},
 	// N
 	{
+		'name': 'nacholapithecus',
+		'rank': 'genus',
+		'parent': 'hominoidea',
+		'range': 'af',
+		'extinct': true,
+		'age': 15,
+		'age_end': 14,
+	},
+	{
 		'name': 'naegleria',
 		'rank': 'genus',
 		'parent': 'vahlkampfiidae',
@@ -5395,6 +5492,17 @@ const lifeData = [
 		'parent': 'angiospermae',
 		'range': 'ww',
 		'age': 130,
+	},
+	{
+		'name': 'nyanzapithecus',
+		'rank': 'genus',
+		'parent': 'hominoidea',
+		'range': 'af',
+		'extinct': true,
+		'age': lifeDataPeriod.middle_miocene,
+		'stats': {
+			weight: 10,
+		},
 	},
 	// O
 	{
@@ -5651,9 +5759,20 @@ const lifeData = [
 		'extinct': true,
 	},
 	{
+		'name': 'otavipithecus',
+		'rank': 'genus',
+		'parent': 'dryopithecini',
+		'range': 'af',
+		'extinct': true,
+		'age': 13,
+		'stats': {
+			weight: (14 + 20)/2,
+		},
+	},
+	{
 		'name': 'ouranopithecus',
 		'rank': 'genus',
-		'parent': 'hominidae',
+		'parent': 'graecopithecini',
 		'range': 'eu',
 		'extinct': true,
 		'age': 9.6,
@@ -5936,6 +6055,15 @@ const lifeData = [
 			'year': 2012,
 		},
 		'desc': 'Myojin parakaryote',
+	},
+	{
+		'name': 'parapithecus',
+		'rank': 'genus',
+		'parent': 'simiiformes',
+		'range': 'af',
+		'extinct': true,
+		'age': 40,
+		'age_end': 33,
 	},
 	{
 		'name': 'paraves',
@@ -6231,6 +6359,18 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'archaeplastida',
 		'range': 'ww', // ???
+	},
+	{
+		'name': 'pierolapithecus',
+		'rank': 'genus',
+		'parent': 'hominidae',
+		'range': 'eu',
+		'extinct': true,
+		'age': 13,
+		'age_end': 12.5,
+		'stats': {
+			weight: 30,
+		},
 	},
 	{
 		'name': 'pinaceae',
@@ -6575,6 +6715,18 @@ const lifeData = [
 		'range': 'wo',
 	},
 	{
+		'name': 'proconsul',
+		'rank': 'genus',
+		'parent': 'hominoidea',
+		'range': 'af',
+		'extinct': true,
+		'age': 28.4,
+		'age_end': 11.608,
+		'stats': {
+			weight: 18, // p. africanus
+		},
+	},
+	{
 		'name': 'procyon',
 		'rank': 'genus',
 		'parent': 'procyonidae',
@@ -6624,6 +6776,18 @@ const lifeData = [
 		},
 		'wiki': 'Asgard (archaea)',
 		'desc': 'Asgard archaea',
+	},
+	{
+		'name': 'propliopithecus',
+		'rank': 'genus',
+		'parent': 'catarrhini',
+		'range': 'af',
+		'extinct': true,
+		'age': lifeDataPeriod.paleogene,
+		'age_end': lifeDataPeriod.neogene,
+		'stats': {
+			length: 0.4,
+		},
 	},
 	{
 		'name': 'proto-chloroplast',
@@ -6910,6 +7074,17 @@ const lifeData = [
 		'age': 635,
 		'age_end': 505,
 		'extinct': true,
+	},
+	{
+		'name': 'rangwapithecus',
+		'rank': 'genus',
+		'parent': 'hominoidea',
+		'range': 'af',
+		'extinct': true,
+		'age': lifeDataPeriod.early_miocene,
+		'stats': {
+			weight: 15,
+		},
 	},
 	{
 		'name': 'raphanus',
@@ -8315,6 +8490,18 @@ const lifeData = [
 		},
 		'stats': {
 			height: (0.5 + 1.8)/2,
+		},
+	},
+	{
+		'name': 'victoriapithecus',
+		'rank': 'genus',
+		'parent': 'catarrhini',
+		'range': 'af',
+		'extinct': true,
+		'age': 17,
+		'age_end': 15,
+		'stats': {
+			weight: (3 + 5)/2,
 		},
 	},
 	{
