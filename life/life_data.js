@@ -4107,6 +4107,14 @@ const lifeData = [
 		'age': 411,
 	},
 	{
+		'name': 'hippocampus',
+		'rank': 'genus',
+		'parent': 'syngnathidae',
+		'range': 'wo',
+		'age': 23,
+		'desc': 'Seahorse',
+	},
+	{
 		'name': 'hippopotamidae',
 		'rank': 'family',
 		'parent': 'whippomorpha',
@@ -8252,6 +8260,20 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'cyanophyceae',
 		'range': 'ww',
+	},
+	{
+		'name': 'syngnathidae',
+		'rank': 'family',
+		'parent': 'syngnathiformes',
+		'range': 'wo',
+		'age': lifeDataPeriod.early_eocene,
+	},
+	{
+		'name': 'syngnathiformes',
+		'rank': 'order',
+		'parent': 'percomorpha',
+		'range': 'wo',
+		'age': lifeDataPeriod.santonian,
 	},
 	// T
 	{
