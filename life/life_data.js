@@ -963,6 +963,10 @@ const lifeData = [
 		'age': 4.5,
 		'age_end': 4.32,
 		'desc': 'Extinct hominid very close to Human-Chimpanzee LCA.',
+		'stats': {
+			height: (1.17 + 1.24)/2,
+			weight: (35 + 60)/2,
+		},
 	},
 	{
 		'name': 'arecaceae',
@@ -1131,6 +1135,10 @@ const lifeData = [
 		'age': 3.9,
 		'age_end': 2.9,
 		'desc': 'Ancestor of H. Habilis.',
+		'stats': {
+			height: 1.05,
+			weight: (25 + 37)/2,
+		},
 	},
 	{
 		'name': 'austrobaileyales',
@@ -4030,6 +4038,9 @@ const lifeData = [
 		'range': 'eu',
 		'age': 1.2,
 		'age_end': 0.77,
+		'stats': {
+			height: (1.623 + 1.868)/2,
+		},
 	},
 	{
 		'name': 'homo denisova',
@@ -4059,6 +4070,10 @@ const lifeData = [
 		'age': 2,
 		'age_end': 0.01,
 		'desc': 'Ancestor of H. Heidelbergensis, descended from H. Habilis.',
+		'stats': {
+			height: (1.41 + 1.67)/2,
+			weight: 50,
+		},
 	},
 	{
 		'name': 'homo habilis',
@@ -4069,6 +4084,10 @@ const lifeData = [
 		'age': 2.3,
 		'age_end': 1.65,
 		'desc': 'Ancestor of H. Erectus, descended from A. Afarensis.',
+		'stats': {
+			height: (1 + 1.2)/2,
+			weight: (20 + 37)/2,
+		},
 	},
 	{
 		'name': 'homo heidelbergensis',
@@ -4088,6 +4107,10 @@ const lifeData = [
 		'range': 'af',
 		'age': 0.335,
 		'age_end': 0.236,
+		'stats': {
+			height: 1.436,
+			weight: 39.7,
+		},
 	},
 	{
 		'name': 'homo neanderthalensis',
@@ -4106,6 +4129,10 @@ const lifeData = [
 				'ploidy': 2,
 			},
 			'sex': 'XY',
+		},
+		'stats': {
+			height: (1.64 + 1.68 + 1.52 + 1.56)/4,
+			weight: 76,
 		},
 	},
 	{
@@ -5478,6 +5505,9 @@ const lifeData = [
 		'range': 'eu',
 		'age': 9,
 		'age_end': 7,
+		'stats': {
+			weight: (30 + 35)/2,
+		},
 	},
 	{
 		'name': 'origanum',
@@ -7119,6 +7149,9 @@ const lifeData = [
 		'range': 'af',
 		'extinct': true,
 		'age': 9.5,
+		'stats': {
+			weight: 60,
+		},
 	},
 	{
 		'name': 'sapindales',
@@ -7350,6 +7383,9 @@ const lifeData = [
 		'extinct': true,
 		'age': 12.5,
 		'age_end': 8.5,
+		'stats': {
+			length: 1.5,
+		},
 	},
 	{
 		'name': 'solanaceae',
@@ -8088,6 +8124,11 @@ const lifeData = [
 		'range': 'na',
 		'age': 72.7,
 		'age_end': 66,
+		'stats': {
+			height: (3.66 + 3.96)/2,
+			length: (12.3 + 12.4)/2,
+			weight: (8.4e3 + 8.46e3)/2,
+		},
 	},
 	// U
 	{
