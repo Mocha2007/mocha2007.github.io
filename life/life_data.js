@@ -2216,6 +2216,14 @@ const lifeData = [
 		'desc': 'Botulism-causing bacterium',
 	},
 	{
+		'name': 'clypeasteroida',
+		'rank': 'order',
+		'parent': 'echinoidea',
+		'range': 'wo',
+		'age': lifeDataPeriod.late_paleocene,
+		'desc': 'Sand dollars',
+	},
+	{
 		'name': 'cnidaria',
 		'rank': 'phylum',
 		'parent': 'planulozoa',
@@ -2348,6 +2356,14 @@ const lifeData = [
 		'age': lifeDataPeriod.middle_miocene,
 		'desc': 'Hamster',
 		'emoji': '🐹',
+	},
+	{
+		'name': 'crinoidea',
+		'rank': 'class',
+		'parent': 'echinodermata',
+		'range': 'wo',
+		'age': lifeDataPeriod.ordovician,
+		'desc': 'Sea lilies',
 	},
 	{
 		'name': 'crustacea',
@@ -2881,6 +2897,14 @@ const lifeData = [
 		'parent': 'ambulacraria',
 		'range': 'wo',
 		'age': lifeDataPeriod.cambrian_stage_3,
+	},
+	{
+		'name': 'echinoidea',
+		'rank': 'class',
+		'parent': 'echinodermata',
+		'range': 'wo',
+		'age': lifeDataPeriod.ordovician,
+		'desc': 'Urchins',
 	},
 	{
 		'name': 'ehrlichia',
@@ -3723,6 +3747,14 @@ const lifeData = [
 		'age': 2,
 		'desc': 'Zebra',
 		'emoji': '🦓',
+	},
+	{
+		'name': 'holothuroidea',
+		'rank': 'class',
+		'parent': 'echinodermata',
+		'range': 'wo',
+		'age': lifeDataPeriod.mid_ordovician,
+		'desc': 'Sea cucumbers',
 	},
 	{
 		'name': 'hominidae',
@@ -5137,6 +5169,14 @@ const lifeData = [
 		'parent': 'pseudofungi',
 		'range': 'ww',
 		'desc': 'Water Molds',
+	},
+	{
+		'name': 'ophiuroidea',
+		'rank': 'class',
+		'parent': 'echinodermata',
+		'range': 'wo',
+		'age': lifeDataPeriod.ordovician,
+		'desc': 'Brittle stars',
 	},
 	{
 		'name': 'opisthokonta',
