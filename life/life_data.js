@@ -39,6 +39,7 @@ const lifeDataPeriod = {
 	late_devonian: 371,
 	late_ediacaran: 563,
 	late_eocene: 39,
+	late_jurassic: 152,
 	late_miocene: 10,
 	late_oligocene: 26,
 	late_paleocene: 58,
@@ -4576,6 +4577,17 @@ const lifeData = [
 			height: (10 + 40)/2,
 		},
 	},
+	{
+		'name': 'juramaia',
+		'rank': 'genus',
+		'parent': 'theria',
+		'range': 'cn',
+		'extinct': true,
+		'age': lifeDataPeriod.late_jurassic,
+		'stats': {
+			weight: (0.015 + 0.017)/2,
+		}
+	},
 	// K
 	{
 		'name': 'kamoyapithecus',
@@ -6180,6 +6192,17 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'malpighiales',
 		'range': 'ww', // ???
+	},
+	{
+		'name': 'patagomaia',
+		'rank': 'genus',
+		'parent': 'theria',
+		'range': 'sa',
+		'extinct': true,
+		'age': lifeDataPeriod.maastrichtian,
+		'stats': {
+			weight: 14,
+		}
 	},
 	{
 		'name': 'pavo',
@@ -8214,6 +8237,17 @@ const lifeData = [
 		'range': 'wo',
 		'age': 56,
 		'desc': 'Tuna',
+	},
+	{
+		'name': 'tingamarra',
+		'rank': 'genus',
+		'parent': 'theria',
+		'range': 'au',
+		'extinct': true,
+		'age': lifeDataPeriod.early_eocene,
+		'stats': {
+			length: 0.2,
+		}
 	},
 	{
 		'name': 'toxoplasma',

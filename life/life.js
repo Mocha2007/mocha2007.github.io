@@ -91,7 +91,7 @@ class Taxon {
 	}
 	/** @param {number} year; @returns {boolean} */
 	alive(year){
-		return this.extinct ? (this.age && this.age_end && year <= this.age && this.age_end <= year)
+		return this.extinct ? (this.age && year <= this.age && (this.age_end || this.age) <= year)
 			: (!year || year <= this.age);
 	}
 	get authority_elem(){
