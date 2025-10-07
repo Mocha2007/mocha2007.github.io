@@ -178,6 +178,7 @@ const authorities = {
 	stats?: {
 		height?: number,
 		length?: number,
+		lifespan?: number,
 		speed?: number,
 		width?: number,
 	}
@@ -218,6 +219,9 @@ const lifeData = [
 		'range': 'nh',
 		'age': 49,
 		'desc': 'Fir',
+		'stats': {
+			height: (40 + 60)/2,
+		},
 	},
 	{
 		'name': 'abietoideae',
@@ -486,6 +490,9 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+		'stats': {
+			height: (0.6 + 1)/2,
+		},
 	},
 	{
 		'name': 'alphaproteobacteria',
@@ -541,6 +548,9 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'amborella',
 		'range': 'oc',
+		'stats': {
+			height: 8,
+		},
 	},
 	{
 		'name': 'amborellaceae',
@@ -630,6 +640,9 @@ const lifeData = [
 				'autosomal': 25,
 				'ploidy': 2,
 			},
+		},
+		'stats': {
+			height: (1 + 1.5)/2,
 		},
 	},
 	{
@@ -793,6 +806,9 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+		'stats': {
+			height: 1,
+		},
 	},
 	{
 		'name': 'arachis',
@@ -811,6 +827,9 @@ const lifeData = [
 				'autosomal': 10,
 				'ploidy': 4,
 			},
+		},
+		'stats': {
+			height: (0.3 + 0.5)/2,
 		},
 	},
 	{
@@ -1139,6 +1158,9 @@ const lifeData = [
 				'ploidy': 6,
 			},
 		},
+		'stats': {
+			height: 1.8,
+		},
 	},
 	{
 		'name': 'aves',
@@ -1303,6 +1325,9 @@ const lifeData = [
 		'age': 1047,
 		'extinct': true,
 		'desc': 'First known sexually reproducing organism',
+		'stats': {
+			height: 200e-6, // specimen on wikipedia is ~200 micrometers tall
+		},
 	},
 	{
 		'name': 'bangiophyceae',
@@ -1798,6 +1823,9 @@ const lifeData = [
 		'parent': 'carya',
 		'range': 'na',
 		'desc': 'Pecan',
+		'stats': {
+			height: (20 + 40)/2,
+		},
 	},
 	{
 		'name': 'caryophyllales',
@@ -1924,6 +1952,9 @@ const lifeData = [
 		'parent': 'cenchrus',
 		'range': 'af;as',
 		'desc': 'Pearl Millet',
+		'stats': {
+			height: (0.4 + 4)/2,
+		},
 	},
 	{
 		'name': 'centramoebida',
@@ -2211,6 +2242,9 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'citrus',
 		'desc': 'Grapefruit',
+		'stats': {
+			height: (4.5 + 6)/2,
+		},
 	},
 	{
 		'name': 'citrus sinensis',
@@ -2307,6 +2341,9 @@ const lifeData = [
 		'parent': 'cocos',
 		'range': 'eq',
 		'desc': 'Coconut',
+		'stats': {
+			height: 30,
+		},
 	},
 	{
 		'name': 'coleoptera',
@@ -2481,6 +2518,9 @@ const lifeData = [
 		'parent': 'cucurbita',
 		'range': 'nw',
 		'desc': 'Pumpkin, Winter Squash',
+		'stats': {
+			height: (0.3 + 0.76)/2,
+		},
 	},
 	{
 		'name': 'cucurbitaceae',
@@ -2530,6 +2570,9 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+		'stats': {
+			height: (0.3 + 0.5)/2,
+		},
 	},
 	{
 		'name': 'curcuma',
@@ -2543,6 +2586,9 @@ const lifeData = [
 		'parent': 'curcuma',
 		'range': 'as',
 		'desc': 'Turmeric',
+		'stats': {
+			height: 1,
+		},
 	},
 	{
 		'name': 'cyanea',
@@ -2833,6 +2879,9 @@ const lifeData = [
 		'parent': 'dioscoreaceae',
 		'range': 'eq',
 		'desc': 'Wild Yam',
+		'stats': {
+			height: (2 + 12)/2,
+		},
 	},
 	{
 		'name': 'dioscoreaceae',
@@ -3023,6 +3072,9 @@ const lifeData = [
 		'parent': 'elettaria',
 		'range': 'as',
 		'desc': 'True Cardamom',
+		'stats': {
+			height: (2 + 4)/2,
+		},
 	},
 	{
 		'name': 'eleusine',
@@ -3224,6 +3276,11 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+		// e. regnans
+		'stats': {
+			height: (70 + 114)/2,
+			lifespan: 500,
+		},
 	},
 	{
 		'name': 'eucoccidiorida',
@@ -3402,6 +3459,22 @@ const lifeData = [
 		'age': 79.47,
 	},
 	{
+		'name': 'ferula',
+		'rank': 'genus',
+		'parent': 'apiaceae',
+		'range': 'as',
+	},
+	{
+		'name': 'ferula drudeana',
+		'rank': 'species',
+		'parent': 'ferula',
+		'range': 'me',
+		'stats': {
+			height: 2.5,
+		},
+		'desc': 'Silphium candidate',
+	},
+	{
 		'name': 'flammulina',
 		'rank': 'genus',
 		'parent': 'physalacriaceae',
@@ -3546,6 +3619,10 @@ const lifeData = [
 				'ploidy': 2,
 			},
 			sex: 'XY',
+		},
+		'stats': {
+			height: (20 + 35)/2,
+			lifespan: 3500,
 		},
 	},
 	{
@@ -3744,6 +3821,9 @@ const lifeData = [
 				'autosomal': 17,
 				'ploidy': 2,
 			},
+		},
+		'stats': {
+			height: 3,
 		},
 	},
 	{
@@ -4341,6 +4421,9 @@ const lifeData = [
 		'parent': 'juglandaceae',
 		'range': 'ww',
 		'desc': 'Walnut',
+		'stats': {
+			height: (10 + 40)/2,
+		},
 	},
 	// K
 	{
@@ -4395,6 +4478,9 @@ const lifeData = [
 				'autosomal': 9,
 				'ploidy': 2,
 			},
+		},
+		'stats': {
+			height: (0.15 + 0.3)/2,
 		},
 	},
 	{
@@ -4496,6 +4582,9 @@ const lifeData = [
 		'parent': 'laurus',
 		'range': 'ow',
 		'desc': 'Bay Laurel',
+		'stats': {
+			height: (7 + 18)/2,
+		},
 	},
 	{
 		'name': 'lentinula',
@@ -4617,6 +4706,9 @@ const lifeData = [
 		'parent': 'lycopodiopsida',
 		'range': 'ww',
 		'desc': 'Clubmosses and firmosses',
+		'stats': {
+			height: (0.05 + 0.2)/2,
+		},
 	},
 	{
 		'name': 'lycopodiopsida',
@@ -4707,6 +4799,9 @@ const lifeData = [
 		'parent': 'malus',
 		'range': 'as',
 		'desc': 'Apple',
+		'stats': {
+			height: (2 + 10)/2,
+		},
 	},
 	{
 		'name': 'malvaceae',
@@ -5032,6 +5127,9 @@ const lifeData = [
 		'parent': 'myristica',
 		'range': 'as',
 		'desc': 'Nutmeg',
+		'stats': {
+			height: (5 + 15)/2,
+		},
 	},
 	{
 		'name': 'myristicaceae',
@@ -5274,6 +5372,9 @@ const lifeData = [
 		'parent': 'ocimum',
 		'range': 'ow',
 		'desc': 'Basil',
+		'stats': {
+			height: (0.3, 1.5)/2,
+		},
 	},
 	{
 		'name': 'octopoda',
@@ -5390,6 +5491,9 @@ const lifeData = [
 		'parent': 'origanum',
 		'range': 'ea',
 		'desc': 'Oregano',
+		'stats': {
+			height: 0.9,
+		},
 	},
 	{
 		'name': 'ornithischia',
@@ -5455,6 +5559,9 @@ const lifeData = [
 		'parent': 'oryza',
 		'range': 'af',
 		'desc': 'African Rice',
+		'stats': {
+			height: 1.2,
+		},
 	},
 	{
 		'name': 'oryza sativa',
@@ -5467,6 +5574,9 @@ const lifeData = [
 				'autosomal': 12,
 				'ploidy': 2,
 			},
+		},
+		'stats': {
+			height: (0.8 + 1.2)/2,
 		},
 	},
 	{
@@ -5641,6 +5751,9 @@ const lifeData = [
 		'parent': 'panicum',
 		'range': 'as',
 		'desc': 'Little Millet',
+		'stats': {
+			height: (0.3 + 1)/2,
+		},
 	},
 	{
 		'name': 'panthera',
@@ -5906,6 +6019,9 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+		'stats': {
+			height: 0.75,
+		},
 	},
 	{
 		'name': 'pezizales',
@@ -5977,6 +6093,9 @@ const lifeData = [
 		'parent': 'phaseolus',
 		'range': 'nw',
 		'desc': 'Common Bean',
+		'stats': {
+			height: (0.2 + 0.6)/2,
+		},
 	},
 	{
 		'name': 'phasianidae',
@@ -6101,6 +6220,9 @@ const lifeData = [
 		'range': 'nh',
 		'age': 129,
 		'desc': 'Pine',
+		'stats': {
+			height: (3 + 80)/2,
+		},
 	},
 	{
 		'name': 'piper',
@@ -6114,6 +6236,9 @@ const lifeData = [
 		'parent': 'piper',
 		'range': 'as',
 		'desc': 'Black Pepper',
+		'stats': {
+			height: 4,
+		},
 	},
 	{
 		'name': 'piperaceae',
@@ -6491,6 +6616,9 @@ const lifeData = [
 		'age': lifeDataPeriod.late_silurian,
 		'age_end': lifeDataPeriod.famennian,
 		'extinct': true,
+		'stats': {
+			height: 8.8,
+		},
 	},
 	{
 		'name': 'prototheca',
@@ -6523,6 +6651,9 @@ const lifeData = [
 		'parent': 'prunus',
 		'range': 'as',
 		'desc': 'Apricot',
+		'stats': {
+			height: (8 + 12)/2,
+		},
 	},
 	{
 		'name': 'prunus dulcis',
@@ -6530,6 +6661,9 @@ const lifeData = [
 		'parent': 'prunus',
 		'range': 'as',
 		'desc': 'Almond',
+		'stats': {
+			height: (3 + 4.5)/2,
+		},
 	},
 	{
 		'name': 'prunus persica',
@@ -6537,6 +6671,9 @@ const lifeData = [
 		'parent': 'prunus',
 		'range': 'as',
 		'desc': 'Peach',
+		'stats': {
+			height: (3 + 4)/2,
+		},
 	},
 	{
 		'name': 'prunus subg.',
@@ -6670,6 +6807,9 @@ const lifeData = [
 		'parent': 'rosaceae',
 		'range': 'ea',
 		'desc': 'Pear',
+		'stats': {
+			height: 20,
+		},
 	},
 	// Q
 	{
@@ -6678,6 +6818,10 @@ const lifeData = [
 		'parent': 'fagaceae',
 		'range': 'nh',
 		'desc': 'Oak',
+		'stats': {
+			height: 44,
+			lifespan: 600,
+		},
 	},
 	{
 		'name': 'quercus suber',
@@ -6690,6 +6834,9 @@ const lifeData = [
 				'autosomal': 12,
 				'ploidy': 2,
 			},
+		},
+		'stats': {
+			height: (10 + 15)/2,
 		},
 	},
 	// R
@@ -6734,6 +6881,9 @@ const lifeData = [
 				'autosomal': 9,
 				'ploidy': 2,
 			},
+		},
+		'stats': {
+			height: 0.13, // ???
 		},
 	},
 	{
@@ -6907,6 +7057,9 @@ const lifeData = [
 				'autosomal': 10,
 				'ploidy': 8,
 			},
+		},
+		'stats': {
+			height: (2 + 6)/2,
 		},
 	},
 	{
@@ -7101,6 +7254,9 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+		'stats': {
+			height: (1 + 3)/2,
+		},
 	},
 	{
 		'name': 'selachimorpha',
@@ -7158,6 +7314,9 @@ const lifeData = [
 		'parent': 'setaria',
 		'range': 'as',
 		'desc': 'Foxtail Millet',
+		'stats': {
+			height: (1.2 + 2)/2,
+		},
 	},
 	{
 		'name': 'siluriformes',
@@ -7222,6 +7381,9 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+		'stats': {
+			height: (0.1, 1)/2,
+		},
 	},
 	{
 		'name': 'solanum lycopersicum',
@@ -7229,6 +7391,7 @@ const lifeData = [
 		'parent': 'solanum',
 		'range': 'sa',
 		'desc': 'Tomato',
+		'emoji': '🍅',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 12,
@@ -7250,6 +7413,9 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+		'stats': {
+			height: (0.4 + 1.5)/2,
+		},
 	},
 	{
 		'name': 'solanum tuberosum',
@@ -7257,6 +7423,7 @@ const lifeData = [
 		'parent': 'solanum',
 		'range': 'sa',
 		'desc': 'Potato',
+		'emoji': '🥔',
 		'genetic': {
 			'chromosome': {
 				'autosomal': 12,
@@ -7288,6 +7455,9 @@ const lifeData = [
 				'autosomal': 10,
 				'ploidy': 2,
 			},
+		},
+		'stats': {
+			height: 4,
 		},
 	},
 	{
@@ -7334,6 +7504,9 @@ const lifeData = [
 				'autosomal': 6,
 				'ploidy': 2,
 			},
+		},
+		'stats': {
+			height: 0.3,
 		},
 	},
 	{
@@ -7619,6 +7792,9 @@ const lifeData = [
 				'autosomal': 10,
 				'ploidy': 2,
 			},
+		},
+		'stats': {
+			height: (6 + 12)/2,
 		},
 	},
 	{
@@ -8079,6 +8255,9 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+		'stats': {
+			height: (0.5 + 1.8)/2,
+		},
 	},
 	{
 		'name': 'vitaceae',
@@ -8201,6 +8380,9 @@ const lifeData = [
 				'autosomal': 10,
 				'ploidy': 2,
 			},
+		},
+		'stats': {
+			height: (1.2 + 4)/2,
 		},
 	},
 	{
