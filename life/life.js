@@ -518,7 +518,7 @@ const stat_elem = {
 			h.innerHTML = capitalizeFirstLetter(spec);
 			elem.appendChild(h);
 			const filtered_taxa = taxa.filter(t => typeof t.stats[spec] === 'number');
-			const top = taxa.sort((a, b) => a.stats[spec] - b.stats[spec]).reverse().slice(0, this.max_len);
+			const top = filtered_taxa.sort((a, b) => a.stats[spec] - b.stats[spec]).reverse().slice(0, this.max_len);
 			const ol = document.createElement('ol');
 			elem.appendChild(ol);
 			top.forEach(t => {

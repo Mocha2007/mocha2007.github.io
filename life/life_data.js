@@ -6166,6 +6166,11 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		// bornean orangutan
+		'stats': {
+			length: (1.2 + 1,7 + 1 + 1.2)/4,
+			weight: (75 + 38.5)/2,
+		},
 	},
 	{
 		'name': 'pooideae',
