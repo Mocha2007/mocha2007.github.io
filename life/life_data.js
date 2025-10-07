@@ -1930,7 +1930,7 @@ const lifeData = [
 		'name': 'catarrhini',
 		'rank': 'parvorder',
 		'parent': 'simiiformes',
-		'range': 'ow',
+		'range': 'af;as',
 		'age': lifeDataPeriod.late_eocene,
 		'desc': 'Old World monkeys',
 	},
@@ -4073,7 +4073,7 @@ const lifeData = [
 		'name': 'hominidae',
 		'rank': 'family',
 		'parent': 'hominoidea',
-		'range': 'ow',
+		'range': 'af;as',
 		'age': 17,
 		'desc': 'Great Apes',
 		// http://eknygos.lsmuni.lt/springer/671/133-152.pdf
@@ -4122,7 +4122,7 @@ const lifeData = [
 		'name': 'hominoidea',
 		'rank': 'superfamily',
 		'parent': 'catarrhini',
-		'range': 'ow',
+		'range': 'af;as',
 		'age': 23,
 		'desc': 'Ape',
 		// http://eknygos.lsmuni.lt/springer/671/133-152.pdf
