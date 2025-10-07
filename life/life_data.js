@@ -2247,7 +2247,8 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'vertebrata',
 		'range': 'wo',
-		'age': 430,
+		'age': 439,
+		'desc': 'Cartilaginous fish',
 	},
 	{
 		'name': 'chordata',
