@@ -3838,7 +3838,7 @@ const lifeData = [
 		'name': 'gossypium',
 		'rank': 'genus',
 		'parent': 'malvaceae',
-		'range': 'eq',
+		'range': 'ww',
 		'desc': 'Cotton',
 	},
 	{
@@ -4966,14 +4966,14 @@ const lifeData = [
 		'name': 'malvaceae',
 		'rank': 'family',
 		'parent': 'malvales',
-		'range': 'eq',
+		'range': 'ww',
 		'desc': 'Mallow',
 	},
 	{
 		'name': 'malvales',
 		'rank': 'order',
 		'parent': 'malvids',
-		'range': 'eq',
+		'range': 'ww',
 	},
 	{
 		'name': 'malvids',
@@ -6459,7 +6459,8 @@ const lifeData = [
 		'name': 'piper',
 		'rank': 'genus',
 		'parent': 'piperaceae',
-		'range': 'eq',
+		'range': 'ww',
+		'wiki': 'Piper_(plant)',
 	},
 	{
 		'name': 'piper nigrum',
@@ -6475,13 +6476,13 @@ const lifeData = [
 		'name': 'piperaceae',
 		'rank': 'family',
 		'parent': 'piperales',
-		'range': 'eq',
+		'range': 'ww',
 	},
 	{
 		'name': 'piperales',
 		'rank': 'order',
 		'parent': 'magnoliids',
-		'range': 'eq',
+		'range': 'ww',
 		'age': lifeDataPeriod.aptian,
 	},
 	{
@@ -8718,14 +8719,14 @@ const lifeData = [
 		'name': 'zingiberaceae',
 		'rank': 'family',
 		'parent': 'zingiberales',
-		'range': 'eq',
+		'range': 'ww',
 		'age': lifeDataPeriod.campanian,
 	},
 	{
 		'name': 'zingiberales',
 		'rank': 'order',
 		'parent': 'commelinids',
-		'range': 'eq',
+		'range': 'ww',
 		'age': 80,
 	},
 	{

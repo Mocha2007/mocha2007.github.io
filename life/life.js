@@ -299,7 +299,7 @@ const regions = {
 				'EU': 'Europe',
 		// alternatively
 		'NH': 'Northern Hemisphere',
-		'EQ': 'Equatorial Regions', // DEPRECATED
+		// 'EQ': 'Equatorial Regions', // DEPRECATED
 		'SH': 'Southern Hemisphere',
 		// oceans
 		'WO': 'World Ocean',
