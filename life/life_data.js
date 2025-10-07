@@ -5344,6 +5344,22 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'pan paniscus',
+		'rank': 'species',
+		'parent': 'pan',
+		'range': 'af',
+		'age': 1.5,
+		'desc': 'Bonobo',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 23,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
+	},
+	{
 		'name': 'pan troglodytes',
 		'rank': 'species',
 		'parent': 'pan',
