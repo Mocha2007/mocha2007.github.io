@@ -295,7 +295,7 @@ const regions = {
 				'AS': 'Asia',
 					'CN': 'China',
 					'IN': 'India',
-					'ME': 'Middle East', // excl. Africa
+					'ME': 'Middle East', // excl. Africa, includes Iran and Asian Turkey
 				'EU': 'Europe',
 		// alternatively
 		'NH': 'Northern Hemisphere',
