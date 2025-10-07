@@ -690,6 +690,10 @@ const lifeData = [
 		'range': 'nh',
 		'age': lifeDataPeriod.zanclean,
 		'desc': 'Mallard',
+		'stats': {
+			length: (0.5 + 0.65)/2,
+			weight: (0.7 + 1.6)/2,
+		},
 	},
 	{
 		'name': 'anatidae',
@@ -734,6 +738,10 @@ const lifeData = [
 		'age': 68,
 		'age_end': 66,
 		'range': 'na',
+		'stats': {
+			length: (6 + 8)/2,
+			weight: (4.8e3 + 8e3)/2,
+		},
 	},
 	{
 		'name': 'annelida',
@@ -945,6 +953,10 @@ const lifeData = [
 		'age': 150.8,
 		'age_end': 148.5,
 		'range': 'eu',
+		'stats': {
+			length: 0.5,
+			weight: (0.5 + 1)/2,
+		},
 	},
 	{
 		'name': 'archaeplastida',
@@ -1529,6 +1541,10 @@ const lifeData = [
 		'age': 155.6,
 		'age_end': 145.5,
 		'range': 'na',
+		'stats': {
+			length: (18 + 22)/2,
+			weight: (28.3e3 + 46.9e3)/2,
+		},
 	},
 	{
 		'name': 'brachyura',
@@ -1844,6 +1860,9 @@ const lifeData = [
 		'range': 'na',
 		'age': lifeDataPeriod.gelasian,
 		'desc': 'Cardinal',
+		'stats': {
+			length: (0.21 + 0.23)/2,
+		},
 	},
 	{
 		'name': 'caridea',
@@ -2459,6 +2478,11 @@ const lifeData = [
 		'range': 'nh',
 		'age': 5,
 		'desc': 'Crow',
+		// c. corax
+		'stats': {
+			length: (0.54 + 0.71)/2,
+			weight: (0.69 + 2.25)/2,
+		},
 	},
 	{
 		'name': 'corynebacteriaceae',
@@ -2687,6 +2711,10 @@ const lifeData = [
 		'range': 'na',
 		'age': lifeDataPeriod.piacenzian,
 		'desc': 'Blue Jay',
+		'stats': {
+			length: (0.22 + 0.3)/2,
+			weight: (0.07 + 0.1)/2,
+		},
 	},
 	{
 		'name': 'cyanophyceae',
@@ -2742,6 +2770,10 @@ const lifeData = [
 		'age': lifeDataPeriod.late_miocene,
 		'desc': 'Swan',
 		'wiki': 'Swan',
+		'stats': {
+			length: 1.5,
+			weight: 15,
+		},
 	},
 	{
 		'name': 'cynoidea',
@@ -2809,6 +2841,11 @@ const lifeData = [
 		'range': 'na',
 		'age': 115,
 		'age_end': 93.9,
+		'stats': {
+			height: 0.87,
+			length: (3.3 + 3.4)/2,
+			weight: (60 + 73)/2,
+		},
 	},
 	{
 		'name': 'delphinidae',
@@ -3000,6 +3037,10 @@ const lifeData = [
 		'range': 'na',
 		'age': 152.07,
 		'age_end': 149.1,
+		'stats': {
+			length: (24 + 26)/2,
+			weight: (12e3 + 14.8e3)/2,
+		},
 	},
 	{
 		'name': 'dipnoi',
@@ -3678,6 +3719,10 @@ const lifeData = [
 		'parent': 'gallus',
 		'range': 'as',
 		'desc': 'Red Junglefowl',
+		'stats': {
+			length: 0.7,
+			weight: (1 + 1.5)/2,
+		},
 	},
 	{
 		'name': 'gallus gallus domesticus',
@@ -3692,6 +3737,10 @@ const lifeData = [
 				'ploidy': 2,
 			},
 			'sex': 'ZW',
+		},
+		'stats': {
+			lifespan: (5+10)/2,
+			weight: (1.05 + 1.8)/2,
 		},
 	},
 	{
@@ -4281,6 +4330,7 @@ const lifeData = [
 		'stats': {
 			jump: 2.45,
 			height: (1.71 + 1.59)/2,
+			lifespan: (72.6 + 73.2)/2,
 			weight: (77 + 59)/2,
 		},
 	},
@@ -4483,6 +4533,10 @@ const lifeData = [
 		'range': 'eu',
 		'age': 126,
 		'age_end': 122,
+		'stats': {
+			length: (9 + 11)/2,
+			weight: 4.5e3,
+		},
 	},
 	{
 		'name': 'iguanodontidae',
@@ -6158,8 +6212,11 @@ const lifeData = [
 		'name': 'paridae',
 		'rank': 'family',
 		'parent': 'passeriformes',
-		'range': 'ww',
+		'range': 'na;ow',
 		'desc': 'Tit',
+		'stats': {
+			length: (0.1 + 0.22)/2,
+		},
 	},
 	{
 		'name': 'passeriformes',
@@ -6212,6 +6269,11 @@ const lifeData = [
 		'age': lifeDataPeriod.late_miocene,
 		'desc': 'Peafowl',
 		'wiki': 'Pavo_(bird)',
+		// p. cristacus
+		'stats': {
+			length: (1 + 1.2)/2,
+			weight: (4.1 + 5.2)/2,
+		},
 	},
 	{
 		'name': 'penicillium',
@@ -7125,6 +7187,11 @@ const lifeData = [
 		'parent': 'psittacus',
 		'range': 'af',
 		'desc': 'Grey Parrot',
+		'stats': {
+			length: 0.33,
+			lifespan: (40+60)/2,
+			weight: 0.4,
+		},
 	},
 	{
 		'name': 'pteridophyta',
@@ -7932,6 +7999,10 @@ const lifeData = [
 		'age': 155,
 		'age_end': 145,
 		'range': 'nh',
+		'stats': {
+			length: 7.5,
+			weight: 5e3,
+		},
 	},
 	{
 		'name': 'stentor',
@@ -8314,6 +8385,10 @@ const lifeData = [
 		'age': 68,
 		'age_end': 66,
 		'range': 'na',
+		'stats': {
+			length: (8 + 9)/2,
+			weight: (6e3 + 10e3)/2,
+		},
 	},
 	{
 		'name': 'trichetidae',
@@ -8579,6 +8654,10 @@ const lifeData = [
 		'range': 'na',
 		'age': 139,
 		'age_end': 134.6,
+		'stats': {
+			length: 7,
+			weight: 500,
+		},
 	},
 	// V
 	{
@@ -8608,6 +8687,11 @@ const lifeData = [
 		'range': 'as',
 		'age': 75,
 		'age_end': 71,
+		'stats': {
+			height: 0.5,
+			length: (1.5 + 2.07)/2,
+			weight: (14.1 + 19.7)/2,
+		},
 	},
 	{
 		'name': 'veratalpa',
