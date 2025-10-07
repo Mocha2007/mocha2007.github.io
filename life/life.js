@@ -299,7 +299,6 @@ const regions = {
 				'EU': 'Europe',
 		// alternatively
 		'NH': 'Northern Hemisphere',
-		// 'EQ': 'Equatorial Regions', // DEPRECATED
 		'SH': 'Southern Hemisphere',
 		// oceans
 		'WO': 'World Ocean',
@@ -307,7 +306,6 @@ const regions = {
 			'IO': 'Indian Ocean',
 			'PA': 'Pacific Ocean',
 			'SO': 'Southern Ocean',
-	// 'XX': 'Extinct', // deprecated
 };
 
 // helper functions
