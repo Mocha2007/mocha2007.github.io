@@ -1799,6 +1799,10 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			length: (0.74 + 0.9)/2,
+			weight: 20,
+		},
 	},
 	{
 		'name': 'castor fiber',
@@ -1813,6 +1817,10 @@ const lifeData = [
 				'ploidy': 2,
 			},
 			'sex': 'XY',
+		},
+		'stats': {
+			length: (0.8 + 1)/2,
+			weight: (11 + 30)/2,
 		},
 	},
 	{
@@ -1854,6 +1862,10 @@ const lifeData = [
 				'ploidy': 2,
 			},
 			'sex': 'XY',
+		},
+		'stats': {
+			length: (0.2 + 0.25)/2,
+			weight: (0.7 + 1.2)/2,
 		},
 	},
 	{
@@ -4086,6 +4098,11 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			height: (0.5 + 0.62)/2,
+			length: (1.06 + 1.34)/2,
+			weight: (35 + 66)/2,
+		},
 	},
 	{
 		'name': 'hydrozoa',
@@ -4847,6 +4864,10 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			length: (0.075 + 0.1)/2,
+			weight: (0.011 + 0.03)/2,
+		},
 	},
 	{
 		'name': 'musa',
@@ -5126,6 +5147,10 @@ const lifeData = [
 				'ploidy': 2,
 			},
 			'sex': 'XY',
+		},
+		// n. leucogenys
+		'stats': {
+			weight: 7.5,
 		},
 	},
 	{
@@ -7315,6 +7340,10 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			length: 0.9,
+			weight: 14,
+		},
 	},
 	{
 		'name': 'synechococcales',
@@ -7338,6 +7367,11 @@ const lifeData = [
 		'range': 'ww',
 		'desc': 'Chipmunk',
 		'emoji': '🐿️',
+		// eastern chipmunk
+		'stats': {
+			length: 0.3,
+			weight: (0.066 + 0.15)/2,
+		},
 	},
 	{
 		'name': 'taraxacum',
