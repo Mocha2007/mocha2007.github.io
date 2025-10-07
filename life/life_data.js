@@ -174,6 +174,12 @@ const authorities = {
 	loss?: string
 	wiki?: string
 	url?: string
+	stats?: {
+		height?: number,
+		length?: number,
+		speed?: number,
+		width?: number,
+	}
 }[]} */
 const lifeData = [
 	/*
@@ -3573,6 +3579,11 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		// eastern gorilla
+		'stats': {
+			height: (1.7 + 1.5)/2,
+			weight: (140 + 205.5 + 90 + 100)/4,
+		},
 	},
 	{
 		'name': 'gorillini',
@@ -3970,6 +3981,10 @@ const lifeData = [
 				'ploidy': 2,
 			},
 			'sex': 'XY',
+		},
+		'stats': {
+			height: (1.71 + 1.59)/2,
+			weight: (77 + 59)/2,
 		},
 	},
 	{
@@ -5439,6 +5454,11 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			height: (1.11 + 1.19)/2,
+			length: (0.7 + 0.83)/2,
+			weight: (33 + 45)/2,
+		},
 	},
 	{
 		'name': 'pan troglodytes',
@@ -5454,6 +5474,10 @@ const lifeData = [
 				'ploidy': 2,
 			},
 			'sex': 'XY',
+		},
+		'stats': {
+			height: 1.5,
+			weight: (40 + 70 + 27 + 50)/4,
 		},
 	},
 	{

@@ -92,7 +92,7 @@ class Taxon {
 	/** @param {number} year; @returns {boolean} */
 	alive(year){
 		return this.extinct ? (this.age && this.age_end && year < this.age && this.age_end < year)
-			: (year < this.age);
+			: (!year || year < this.age);
 	}
 	get authority_elem(){
 		const authority_elem = document.createElement('span');
@@ -517,7 +517,7 @@ const stat_elem = {
 			const h = document.createElement('h3');
 			h.innerHTML = capitalizeFirstLetter(spec);
 			elem.appendChild(h);
-			const filtered_taxa = taxa.filter(t => t.stats[spec]);
+			const filtered_taxa = taxa.filter(t => typeof t.stats[spec] === 'number');
 			const top = taxa.sort((a, b) => a.stats[spec] - b.stats[spec]).reverse().slice(0, this.max_len);
 			const ol = document.createElement('ol');
 			elem.appendChild(ol);

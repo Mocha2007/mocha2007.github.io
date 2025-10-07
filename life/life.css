@@ -83,3 +83,7 @@ summary a {
 	box-sizing: border-box;
 	width: 100%; /* each item fills its grid cell */
 }
+.padding {
+	padding-bottom: 20vh;
+	padding-top: 20vh;
+}
