@@ -1836,6 +1836,14 @@ const lifeData = [
 		'desc': 'Peppers, incl. Bell and Jalape&ntilde;os',
 	},
 	{
+		'name': 'carcharhinidae',
+		'rank': 'family',
+		'parent': 'carcharhiniformes',
+		'range': 'wo',
+		'age': lifeDataPeriod.valanginian,
+		'desc': 'Requiem sharks',
+	},
+	{
 		'name': 'carcharhiniformes',
 		'rank': 'order',
 		'parent': 'selachimorpha',
@@ -6962,6 +6970,26 @@ const lifeData = [
 				'ploidy': 2,
 			},
 			'sex': 'XY',
+		},
+	},
+	{
+		'name': 'prionace',
+		'rank': 'genus',
+		'parent': 'carcharhinidae',
+		'range': 'wo',
+		'age': lifeDataPeriod.early_miocene,
+	},
+	{
+		'name': 'prionace glauca',
+		'rank': 'species',
+		'parent': 'prionace',
+		'range': 'wo',
+		'age': lifeDataPeriod.early_miocene,
+		'desc': 'Blue shark',
+		'stats': {
+			length: 3.1,
+			lifespan: 20,
+			weight: (27+55)/2,
 		},
 	},
 	{
