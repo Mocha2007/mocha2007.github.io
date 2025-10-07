@@ -3,6 +3,7 @@
 // sources
 // https://upload.wikimedia.org/wikipedia/commons/e/e3/Timeline_of_life.png
 // (x - 2932 px)(1000 yr / 626 px)
+const kph = 1000 / 60 / 60;
 /** just select the middle of the era */
 const lifeDataPeriod = {
 	albian: 107,
@@ -259,6 +260,12 @@ const lifeData = [
 		'range': 'ow',
 		'age': lifeDataPeriod.pliestocene,
 		'desc': 'Cheetah',
+		'stats': {
+			height: (0.67 + 0.94)/2,
+			length: (1.1 + 1.5)/2,
+			speed: 104 * kph,
+			weight: (21 + 65)/2,
+		},
 	},
 	{
 		'name': 'aconoidasida',
@@ -391,6 +398,10 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			length: (1.2 + 1.9)/2,
+			weight: (100 + 115)/2,
+		},
 	},
 	{
 		'name': 'ailurus',
@@ -413,6 +424,10 @@ const lifeData = [
 				'ploidy': 2,
 			},
 			'sex': 'XY',
+		},
+		'stats': {
+			length: (0.51 + 0.635)/2,
+			weight: (4 + 15 + 4.2 + 13.4)/4,
 		},
 	},
 	{
@@ -1218,6 +1233,11 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			length: (21 + 26.3)/2,
+			lifespan: (80 + 90)/2,
+			weight: (100e3 + 112e3)/2,
+		},
 	},
 	{
 		'name': 'balaenopteridae',
@@ -1381,6 +1401,10 @@ const lifeData = [
 				'ploidy': 2,
 			},
 			'sex': 'XY',
+		},
+		'stats': {
+			height: (1.11 + 1.38 + 1.05 + 1.17)/4,
+			weight: (350 + 585 + 225 + 255)/4,
 		},
 	},
 	{
@@ -1595,6 +1619,11 @@ const lifeData = [
 				'ploidy': 2,
 			},
 			'sex': 'XY',
+		},
+		'stats': {
+			height: (0.8 + 0.85)/2,
+			length: (1.05 + 1.6)/2,
+			weight: 40,
 		},
 	},
 	{
@@ -3082,6 +3111,10 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			height: (0.9 + 1.5)/2,
+			lifespan: (30 + 50)/2,
+		},
 	},
 	{
 		'name': 'equus ferus',
@@ -3104,6 +3137,11 @@ const lifeData = [
 				'ploidy': 2,
 			},
 			'sex': 'XY',
+		},
+		'stats': {
+			height: (1.42 + 1.57)/2,
+			speed: 70.76 * kph,
+			weight: (380 + 600)/2,
 		},
 	},
 	{
@@ -3346,6 +3384,11 @@ const lifeData = [
 				'ploidy': 2,
 			},
 			'sex': 'XY',
+		},
+		'stats': {
+			height: (0.23 + 0.25)/2,
+			length: 0.46,
+			weight: (4 + 5)/2,
 		},
 	},
 	{
@@ -3796,6 +3839,12 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			height: (1.3 + 1.65)/2,
+			length: (2.9 + 5.05)/2,
+			lifespan: (40 + 50)/2,
+			weight: (1480 + 1365)/2,
+		},
 	},
 	{
 		'name': 'hippotigris',
@@ -3995,6 +4044,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			jump: 2.45,
 			height: (1.71 + 1.59)/2,
 			weight: (77 + 59)/2,
 		},
@@ -4370,6 +4420,11 @@ const lifeData = [
 		'range': 'sa',
 		'desc': 'Llama',
 		'emoji': '🦙',
+		'stats': {
+			height: (1.7 + 1.8)/2,
+			lifespan: (15 + 25)/2,
+			weight: (130 + 272)/2,
+		},
 	},
 	{
 		'name': 'lamiaceae',
@@ -4470,6 +4525,10 @@ const lifeData = [
 		'parent': 'leopardus',
 		'range': 'nw',
 		'desc': 'Ocelot',
+		'stats': {
+			height: (0.4 + 0.5)/2,
+			weight: (7 + 15.5)/2,
+		},
 	},
 	{
 		'name': 'lepidoptera',
@@ -4569,6 +4628,12 @@ const lifeData = [
 		'parent': 'lynx',
 		'range': 'na',
 		'desc': 'Bobcat',
+		'stats': {
+			height: (0.3 + 0.6)/2,
+			length: 0.827,
+			stride: (0.2 + 0.45)/2,
+			weight: 9.6,
+		},
 	},
 	// M
 	{
@@ -5116,6 +5181,12 @@ const lifeData = [
 		'parent': 'neofelis',
 		'range': 'as',
 		'desc': 'Clouded Leopard',
+		'stats': {
+			bite_force: 544.3,
+			height: (0.5 + 0.55)/2,
+			length: (0.686 + 0.94)/2,
+			weight: (11.5 + 23)/2,
+		},
 	},
 	{
 		'name': 'nephropidae',
@@ -5574,6 +5645,10 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			length: (1.6 + 1.84 + 1.84 + 2.08)/4,
+			weight: (110 + 143.52 + 160 + 225)/4,
+		},
 	},
 	{
 		'name': 'panthera onca',
@@ -5582,6 +5657,12 @@ const lifeData = [
 		'range': 'nw',
 		'age': 0.85,
 		'desc': 'Jaguar',
+		'stats': {
+			bite_force: 887,
+			height: (0.57 + 0.81)/2,
+			length: (1.12 + 1.85)/2,
+			weight: (56 + 96)/2,
+		},
 	},
 	{
 		'name': 'panthera pardus',
@@ -5591,6 +5672,11 @@ const lifeData = [
 		'age': lifeDataPeriod.early_pleistocene,
 		'desc': 'Leopard',
 		'emoji': '🐆',
+		'stats': {
+			height: (0.6 + 0.7 + 0.57 + 0.64)/4,
+			length: (0.92 + 1.83)/2,
+			weight: (30.9 + 72 + 20.5 + 43)/4,
+		},
 	},
 	{
 		'name': 'panthera tigris',
@@ -5608,6 +5694,11 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			height: (0.8 + 1.1)/2,
+			length: (1.4 + 2.8)/2,
+			weight: (200 + 260 + 100 + 160)/2,
+		},
 	},
 	{
 		'name': 'panthera uncia',
@@ -5616,6 +5707,11 @@ const lifeData = [
 		'range': 'as',
 		'age': lifeDataPeriod.late_pleistocene,
 		'desc': 'Snow Leopard',
+		'stats': {
+			height: 0.56,
+			length: (0.75 + 1.5)/2,
+			weight: (44 + 55 + 35 + 40)/4,
+		},
 	},
 	{
 		'name': 'pantherinae',
@@ -5632,6 +5728,11 @@ const lifeData = [
 		'age': 34,
 		'age_end': 23,
 		'range': 'ea',
+		'stats': {
+			height: 4.8,
+			length: 7.4,
+			weight: (15e3 + 20e3)/2,
+		},
 	},
 	{
 		'name': 'parahoxozoa',
@@ -6292,6 +6393,12 @@ const lifeData = [
 		'age': lifeDataPeriod.pliocene,
 		'desc': 'Raccoon',
 		'emoji': '🦝',
+		'stats': {
+			height: (0.23 + 0.3)/2,
+			length: (0.4 + 0.7)/2,
+			speed: (16 + 24)/2 * kph,
+			weight: (5 + 12)/2,
+		},
 	},
 	{
 		'name': 'procyonidae',
@@ -6519,6 +6626,12 @@ const lifeData = [
 		'range': 'nw',
 		'age': 1.2,
 		'desc': 'Mountain Lion',
+		'stats': {
+			height: (0.6 + 0.9)/2,
+			jump: 5.5,
+			length: (2.4 + 2.05)/2,
+			weight: (53 + 72 + 34 + 48)/4,
+		},
 	},
 	{
 		'name': 'pyropia',
@@ -7983,6 +8096,14 @@ const lifeData = [
 				'ploidy': 2,
 			},
 			'sex': 'XY',
+		},
+		'stats': {
+			jump: 2,
+			height: (0.35 + 0.5)/2,
+			length: (0.45 + 0.9)/2,
+			speed: 50 * kph,
+			stride: (0.25+0.35)/2,
+			weight: (2.2 + 14)/2,
 		},
 	},
 	// W

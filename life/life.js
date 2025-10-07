@@ -515,7 +515,7 @@ const stat_elem = {
 			const elem = this.elem.spec(spec);
 			elem.innerHTML = '';
 			const h = document.createElement('h3');
-			h.innerHTML = capitalizeFirstLetter(spec);
+			h.innerHTML = capitalizeFirstLetter(spec).replaceAll('_', ' ');
 			elem.appendChild(h);
 			const filtered_taxa = taxa.filter(t => typeof t.stats[spec] === 'number');
 			const top = filtered_taxa.sort((a, b) => a.stats[spec] - b.stats[spec]).reverse().slice(0, this.max_len);
@@ -529,10 +529,13 @@ const stat_elem = {
 		});
 	},
 	// current specs: HEIGHT, LENGTH, SPEED, WEIGHT
-	specs: ['height', 'length', 'speed', 'weight'],
+	specs: ['height', 'length', 'speed', 'weight', 'bite_force', 'jump', 'lifespan'],
 	unit: {
+		bite_force: 'N',
 		height: 'm',
+		jump: 'm',
 		length: 'm',
+		lifespan: 'yr',
 		speed: 'm/s',
 		weight: 'kg',
 	},
