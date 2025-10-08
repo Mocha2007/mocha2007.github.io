@@ -1033,6 +1033,7 @@ const lifeData = [
 		'age_end': 4.32,
 		'desc': 'Extinct hominid very close to Human-Chimpanzee LCA.',
 		'stats': {
+			cranial_capacity: (300 + 350)/2,
 			height: (1.17 + 1.24)/2,
 			weight: (35 + 60)/2,
 		},
@@ -1205,6 +1206,7 @@ const lifeData = [
 		'age_end': 2.9,
 		'desc': 'Ancestor of H. Habilis.',
 		'stats': {
+			cranial_capacity: (400 + 550)/2, // wp page on a. ramidus
 			height: 1.05,
 			weight: (25 + 37)/2,
 		},
@@ -2918,6 +2920,7 @@ const lifeData = [
 		'age': 115,
 		'age_end': 93.9,
 		'stats': {
+			bite_force: (4100+8200)/2,
 			height: 0.87,
 			length: (3.3 + 3.4)/2,
 			weight: (60 + 73)/2,
