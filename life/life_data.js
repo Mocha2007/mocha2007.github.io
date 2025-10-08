@@ -676,6 +676,9 @@ const lifeData = [
 		'range': 'wo',
 		'age': 521,
 		'desc': 'Lancelet',
+		'stats': {
+			length: (0.025 + 0.08)/2,
+		},
 	},
 	{
 		'name': 'ananas',
