@@ -4088,6 +4088,14 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'haplorhini',
+		'rank': 'suborder',
+		'parent': 'primates',
+		'range': 'na;sa;af;as',
+		'age': lifeDataPeriod.paleocene,
+		'loss': 'L-gulonolactone oxidase (Vitamin C enzyme)'
+	},
+	{
 		'name': 'haptista',
 		'rank': 'phylum',
 		'parent': 'diaphoretickes',
@@ -8044,7 +8052,7 @@ const lifeData = [
 	{
 		'name': 'simiiformes',
 		'rank': 'infraorder',
-		'parent': 'primates',
+		'parent': 'haplorhini',
 		'range': 'na;sa;af;as',
 		'age': 40,
 		'emoji': '🐒',
