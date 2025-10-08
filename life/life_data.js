@@ -549,6 +549,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'halvaria',
 		'range': 'ww',
+		'age': lifeDataPeriod.ediacaran,
 	},
 	{
 		'name': 'amanita',
@@ -694,6 +695,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'anatidae',
 		'range': 'ww',
+		'age': lifeDataPeriod.late_miocene, // https://en.wikipedia.org/wiki/Anas#Fossil_record
 	},
 	{
 		'name': 'anas platyrhynchos',
@@ -1119,6 +1121,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'asterales',
 		'range': 'ww',
+		'age': 76,
 	},
 	{
 		'name': 'asterales',
@@ -2910,6 +2913,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'malacostraca',
 		'range': 'wo',
+		'age': lifeDataPeriod.devonian,
 	},
 	{
 		'name': 'decapodiformes',
@@ -4009,6 +4013,7 @@ const lifeData = [
 		'parent': 'hominidae',
 		'extinct': true,
 		'range': 'eu',
+		'age': 7.2,
 	},
 	{
 		'name': 'graecopithecus',
@@ -4016,7 +4021,6 @@ const lifeData = [
 		'parent': 'graecopithecini',
 		'extinct': true,
 		'range': 'eu',
-		'age': 7.2,
 	},
 	{
 		'name': 'griphopithecus',
@@ -7396,6 +7400,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'psittacopasserae',
 		'range': 'na;sa;af;as;oc',
+		'age': 50,
 		'desc': 'Parrot',
 	},
 	{
@@ -7403,6 +7408,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'telluraves',
 		'range': 'ww',
+		'age': 54,
 	},
 	{
 		'name': 'psittacus',
@@ -7617,6 +7623,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'sar',
 		'range': 'ww',
+		'age': 650,
 	},
 	{
 		'name': 'rhizostomatidae',
