@@ -3241,6 +3241,13 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			// https://en.wikipedia.org/wiki/Brain_size#Other_animals
+			brain_weight: 5,
+			temperature: 36,
+			// l. africana
+			weight: (5.2e3 + 6.9e3 + 2.6e3 + 3.5e3)/4,
+		}
 	},
 	{
 		'name': 'elettaria',
@@ -8735,6 +8742,15 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			// https://en.wikipedia.org/wiki/Brain_size#Other_animals
+			brain_weight: (1.5 + 1.7)/2,
+			jump: 6,
+			length: 4,
+			lifespan: 40,
+			speed: (29 + 35)/2 * kph,
+			weight: 300,
+		}
 	},
 	{
 		'name': 'tylopoda',
