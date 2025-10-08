@@ -30,8 +30,20 @@ class Taxon {
 		this.extinct = o.extinct || false;
 		/** @type {Taxon[]} once initialized */
 		this.parent_recursive = undefined;
+		// precompute some things...
+		if (o.stats && o.stats.cranial_capacity && typeof o.stats.brain_weight !== "number"){
+			const DENSITY = (1.2 + 1.4) / (1130 + 1260);
+			o.stats.brain_weight = o.stats.cranial_capacity * DENSITY;
+			o.stats.brain_weight_computed = true;
+		}
+		if (o.stats && o.stats.brain_weight && o.stats.weight && !o.stats.encephalization_quotient){
+			// https://en.wikipedia.org/wiki/Encephalization_quotient#Calculation
+			o.stats.encephalization_quotient = 100 * o.stats.brain_weight / Math.pow(o.stats.weight, 2/3);
+			o.stats.encephalization_quotient_computed = true;
+		}
 		/** object possibly existing, and possibly containing height, length, weight, and speed */
 		this.stats = o.stats;
+		// this.raw = o;
 		Taxon.taxa.push(this);
 	}
 	get a(){
@@ -564,10 +576,10 @@ const stat_elem = {
 		});
 	},
 	// current specs: HEIGHT, LENGTH, SPEED, WEIGHT
-	specs: ['height', 'length', 'speed', 'weight', 'bite_force', 'cranial_capacity', 'jump', 'lifespan'],
+	specs: ['height', 'length', 'speed', 'weight', 'bite_force', 'encephalization_quotient', 'jump', 'lifespan'],
 	unit: {
 		bite_force: 'N',
-		cranial_capacity: 'cm<sup>3</sup>',
+		encephalization_quotient: '',
 		height: 'm',
 		jump: 'm',
 		length: 'm',

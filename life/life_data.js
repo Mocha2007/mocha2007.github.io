@@ -3646,8 +3646,11 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			brain_weight: (0.025 + 0.03)/2,
+			heartrate: (150 + 180)/2,
 			height: (0.23 + 0.25)/2,
 			length: 0.46,
+			temperature: (38.3 + 39)/2,
 			weight: (4 + 5)/2,
 		},
 	},
@@ -4389,8 +4392,11 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
-			cranial_capacity: (950+1800)/2,
+			// https://en.wikipedia.org/wiki/Human_brain
+			brain_weight: (1.2 + 1.4)/2,
+			cranial_capacity: (1130 + 1260)/2,
 			jump: 2.45,
+			heartrate: 70,
 			height: (1.71 + 1.59)/2,
 			lifespan: (72.6 + 73.2)/2,
 			speed: 44.72 * kph,
