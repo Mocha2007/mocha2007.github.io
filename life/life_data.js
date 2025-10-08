@@ -84,6 +84,15 @@ const lifeDataPeriod = {
 	valanginian: 135,
 	zanclean: 4,
 };
+/** @param {number} diam - meters; @param {number} height - meters; @returns {number} mass, in kg */
+function tree_mass(diam, height){
+	// https://plant4harvest.com/how-heavy-is-a-tree/
+	// weight (lbs) = diameter at breast height (in) * height (ft) * 6
+	// W = 6 D H
+	// 0.4535923700 W = 6 0.0254000000 D 0.3048000000 H <- convert W to kg
+	const C = 6 * 0.0254 * 0.3048 / 0.45359237; // ~ 0.102408072
+	return C * diam * height;
+}
 const authorities = {
 	/** Arambourg, 1948 */
 	arambourg: {
@@ -940,6 +949,7 @@ const lifeData = [
 		'extinct': true,
 		'stats': {
 			height: 24,
+			weight: tree_mass(1.5, 24),
 		},
 	},
 	{
@@ -1648,6 +1658,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'diaphoretickes',
 		'range': 'ww',
+		'wiki': 'CAM_(clade)',
 	},
 	{
 		'name': 'camelidae',
@@ -2615,7 +2626,7 @@ const lifeData = [
 	{
 		'name': 'cryptista',
 		'rank': 'phylum',
-		'parent': 'sar',
+		'parent': 'cam',
 		'range': 'ww', // ???
 	},
 	{
