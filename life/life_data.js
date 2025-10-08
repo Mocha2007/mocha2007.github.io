@@ -2414,6 +2414,13 @@ const lifeData = [
 		'desc': 'Tangerine',
 	},
 	{
+		'name': 'cladophorales',
+		'rank': 'order',
+		'parent': 'ulvophyceae',
+		'range': 'wo',
+		'age': 1000,
+	},
+	{
 		'name': 'cladoxylopsida',
 		'rank': 'class',
 		'parent': 'pteridophyta',
@@ -8876,6 +8883,7 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'chlorophyta',
 		'range': 'ww',
+		'age': 1000,
 	},
 	{
 		'name': 'ungulata',
@@ -8946,6 +8954,29 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'schizopyrenida',
 		'range': 'ww',
+	},
+	{
+		'name': 'valonia',
+		'rank': 'genus',
+		'parent': 'valoniaceae',
+		'range': 'wo',
+	},
+	{
+		'name': 'valonia ventricosa',
+		'rank': 'species',
+		'parent': 'valonia',
+		'range': 'wo',
+		'stats': {
+			'height': (0.01 + 0.04)/2,
+			'length': (0.01 + 0.04)/2,
+		},
+		'desc': 'Bubble algae',
+	},
+	{
+		'name': 'valoniaceae',
+		'rank': 'family',
+		'parent': 'cladophorales',
+		'range': 'wo',
 	},
 	{
 		'name': 'vanilla',
