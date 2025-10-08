@@ -488,8 +488,10 @@ function main(){
 	// stat elem
 	stat_elem.init();
 	// bonus goodies
-	stats();
-	verify();
+	if (window.location.href.slice(0, 4) === 'file') {
+		stats();
+		verify();
+	}
 }
 
 const stat_elem = {
@@ -652,6 +654,13 @@ function verify(){
 		const range = lifeData[t.i].range;
 		if (range && range.includes('eq')) {
 			console.warn(`${t.name} (${t.url}) has EQ in range, which is deprecated (use the continent(s) instead!)`);
+		}
+	});
+	// age can be guessed
+	console.debug(`age can be guessed (make sure these actually don't have ages):`);
+	Taxon.taxa.forEach(t => {
+		if (!t.age && t.age_guess) {
+			console.warn(`Age of ${t.name} (${t.url}) can be guessed, but no age is actually specified.`);
 		}
 	});
 }
