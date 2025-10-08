@@ -564,9 +564,10 @@ const stat_elem = {
 		});
 	},
 	// current specs: HEIGHT, LENGTH, SPEED, WEIGHT
-	specs: ['height', 'length', 'speed', 'weight', 'bite_force', 'jump', 'lifespan'],
+	specs: ['height', 'length', 'speed', 'weight', 'bite_force', 'cranial_capacity', 'jump', 'lifespan'],
 	unit: {
 		bite_force: 'N',
+		cranial_capacity: 'cm<sup>3</sup>',
 		height: 'm',
 		jump: 'm',
 		length: 'm',

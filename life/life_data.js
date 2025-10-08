@@ -180,6 +180,7 @@ const authorities = {
 	wiki?: string
 	url?: string
 	stats?: {
+		cranial_capacity?: number,
 		height?: number,
 		length?: number,
 		lifespan?: number,
@@ -4262,7 +4263,9 @@ const lifeData = [
 		'age': 1.2,
 		'age_end': 0.77,
 		'stats': {
+			cranial_capacity: 1000,
 			height: (1.623 + 1.868)/2,
+			weight: 90,
 		},
 	},
 	{
@@ -4294,6 +4297,7 @@ const lifeData = [
 		'age_end': 0.01,
 		'desc': 'Ancestor of H. Heidelbergensis, descended from H. Habilis.',
 		'stats': {
+			cranial_capacity: (850+1100)/2,
 			height: (1.41 + 1.67)/2,
 			weight: 50,
 		},
@@ -4308,6 +4312,7 @@ const lifeData = [
 		'age_end': 1.65,
 		'desc': 'Ancestor of H. Erectus, descended from A. Afarensis.',
 		'stats': {
+			cranial_capacity: (510+660)/2,
 			height: (1 + 1.2)/2,
 			weight: (20 + 37)/2,
 		},
@@ -4321,6 +4326,11 @@ const lifeData = [
 		'age': 0.7,
 		'age_end': 0.3,
 		'desc': 'Ancestor of H. Sapiens, Denisovans, and Neanderthals, descended from H. Erectus.',
+		'stats': {
+			cranial_capacity: (1100+1400)/2,
+			height: 1.8,
+			weight: 90,
+		},
 	},
 	{
 		'name': 'homo naledi',
@@ -4331,6 +4341,7 @@ const lifeData = [
 		'age': 0.335,
 		'age_end': 0.236,
 		'stats': {
+			cranial_capacity: 450,
 			height: 1.436,
 			weight: 39.7,
 		},
@@ -4354,6 +4365,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			cranial_capacity: (1200+1900)/2,
 			height: (1.64 + 1.68 + 1.52 + 1.56)/4,
 			weight: 76,
 		},
@@ -4377,6 +4389,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			cranial_capacity: (950+1800)/2,
 			jump: 2.45,
 			height: (1.71 + 1.59)/2,
 			lifespan: (72.6 + 73.2)/2,
