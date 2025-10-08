@@ -8458,7 +8458,7 @@ const lifeData = [
 	{
 		'name': 'tarsiidae',
 		'rank': 'family',
-		'parent': 'primates',
+		'parent': 'haplorhini',
 		'range': 'as',
 		'age': lifeDataPeriod.middle_eocene,
 		'desc': 'Tarsiers',
