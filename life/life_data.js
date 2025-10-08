@@ -33,6 +33,7 @@ const lifeDataPeriod = {
 	famennian: 365,
 	fortunian: 534,
 	gelasian: 2,
+	hettangian: 200,
 	induan: 251,
 	jurassic: 172,
 	late_carboniferous: 311,
@@ -415,6 +416,14 @@ const lifeData = [
 		'parent': 'agaricus',
 		'range': 'nh',
 		'desc': 'Button mushroom'
+	},
+	{
+		'name': 'agnatha',
+		'rank': 'infraphylum',
+		'parent': 'vertebrata',
+		'range': 'wo',
+		'age': 518,
+		'desc': 'Jawless fish',
 	},
 	{
 		'name': 'ailuridae',
@@ -2290,7 +2299,7 @@ const lifeData = [
 	{
 		'name': 'chondrichthyes',
 		'rank': 'class',
-		'parent': 'vertebrata',
+		'parent': 'gnathostomata',
 		'range': 'wo',
 		'age': 439,
 		'desc': 'Cartilaginous fish',
@@ -2539,6 +2548,15 @@ const lifeData = [
 		'parent': 'monocots',
 		'range': 'ww',
 		'age': 118, // https://en.wikipedia.org/wiki/Commelinids
+	},
+	{
+		'name': 'conodonta',
+		'rank': 'class',
+		'parent': 'agnatha',
+		'range': 'wo',
+		'extinct': true,
+		'age': lifeDataPeriod.miaolingian,
+		'age_end': lifeDataPeriod.hettangian,
 	},
 	{
 		'name': 'conoidasida',
@@ -2849,6 +2867,13 @@ const lifeData = [
 		'stats': {
 			length: 0.2,
 		},
+	},
+	{
+		'name': 'cyclostomi',
+		'rank': 'superclass',
+		'parent': 'agnatha',
+		'range': 'wo',
+		'age': 419.2,
 	},
 	{
 		'name': 'cygnus',
@@ -3957,6 +3982,14 @@ const lifeData = [
 		'parent': 'spiralia',
 		'range': 'ww',
 		'age': lifeDataPeriod.fortunian,
+	},
+	{
+		'name': 'gnathostomata',
+		'rank': 'infraphylum',
+		'parent': 'vertebrata',
+		'range': 'ww',
+		'age': 439,
+		'develop': 'jaw',
 	},
 	{
 		'name': 'gnathostomulida',
@@ -5570,6 +5603,14 @@ const lifeData = [
 		'authority': authorities.juss,
 	},
 	{
+		'name': 'myxini',
+		'rank': 'class',
+		'parent': 'cyclostomi',
+		'range': 'wo',
+		'age': 311,
+		'desc': 'Hagfish',
+	},
+	{
 		'name': 'myxococcales',
 		'rank': 'order',
 		'parent': 'myxococcia',
@@ -6035,7 +6076,7 @@ const lifeData = [
 	{
 		'name': 'osteichthyes',
 		'rank': 'superclass',
-		'parent': 'vertebrata',
+		'parent': 'gnathostomata',
 		'range': 'ww',
 		'age': 425,
 		'authority': authorities.huxley,
@@ -6537,6 +6578,14 @@ const lifeData = [
 		'extinct': true,
 	},
 	{
+		'name': 'petromyzontida',
+		'rank': 'class',
+		'parent': 'cyclostomi',
+		'range': 'wo',
+		'age': lifeDataPeriod.late_devonian,
+		'desc': 'Lampreys',
+	},
+	{
 		'name': 'petroselinum',
 		'rank': 'genus',
 		'parent': 'apiaceae',
@@ -6844,6 +6893,15 @@ const lifeData = [
 		'parent': 'theria',
 		'range': 'ww',
 		'age': 66.043,
+	},
+	{
+		'name': 'placodermi',
+		'rank': 'class',
+		'parent': 'gnathostomata',
+		'range': 'wo',
+		'extinct': true,
+		'age': 439,
+		'age_end': 358.9,
 	},
 	{
 		'name': 'placozoa',
