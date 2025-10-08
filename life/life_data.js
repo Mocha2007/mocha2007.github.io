@@ -593,6 +593,30 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'ambystoma',
+		'rank': 'genus',
+		'parent': 'ambystomatidae',
+		'range': 'na',
+		'desc': 'Mole salamanders',
+	},
+	{
+		'name': 'ambystoma mexicanum',
+		'rank': 'species',
+		'parent': 'ambystoma',
+		'range': 'na',
+		'stats': {
+			length: (0.15 + 0.45)/2,
+		},
+		'desc': 'Axolotl',
+	},
+	{
+		'name': 'ambystomatidae',
+		'rank': 'family',
+		'parent': 'urodela',
+		'range': 'na',
+		'age': 58.7,
+	},
+	{
 		'name': 'amborella',
 		'rank': 'genus',
 		'parent': 'amborellaceae',
@@ -8987,6 +9011,14 @@ const lifeData = [
 		'parent': 'laurasiatheria',
 		'range': 'ww',
 		'age': lifeDataPeriod.paleocene,
+	},
+	{
+		'name': 'urodela',
+		'rank': 'order',
+		'parent': 'amphibia',
+		'range': 'ww',
+		'age': 168,
+		'desc': 'Salamander',
 	},
 	{
 		'name': 'ursidae',
