@@ -8046,7 +8046,7 @@ const lifeData = [
 		'rank': 'infraorder',
 		'parent': 'primates',
 		'range': 'na;sa;af;as',
-		'age': lifeDataPeriod.late_eocene,
+		'age': 40,
 		'emoji': '🐒',
 		'desc': 'Monkey',
 	},
@@ -9181,7 +9181,7 @@ const lifeData = [
 		'rank': 'suborder',
 		'parent': 'cetruminantia',
 		'range': 'af',
-		'age': 55, // pushed back by cetacea (53.5)
+		'age': lifeDataPeriod.early_eocene,
 	},
 	// X
 	{
