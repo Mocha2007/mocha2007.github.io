@@ -938,6 +938,9 @@ const lifeData = [
 		'age': lifeDataPeriod.late_devonian,
 		'age_end': lifeDataPeriod.early_carboniferous,
 		'extinct': true,
+		'stats': {
+			height: 24,
+		},
 	},
 	{
 		'name': 'archaeopterygidae',
@@ -1359,6 +1362,10 @@ const lifeData = [
 		'range': 'na;sa;af;as;oc',
 		'age': 55,
 		'desc': 'Bamboo',
+		'stats': {
+			height: 46,
+			weight: 450,
+		},
 	},
 	{
 		'name': 'bangiaceae',
@@ -2048,6 +2055,11 @@ const lifeData = [
 		'range': 'ea',
 		'age': lifeDataPeriod.albian,
 		'desc': 'Cedar',
+		// c. elegans
+		'stats': {
+			height: 40,
+			lifespan: 100, // ???
+		},
 	},
 	{
 		'name': 'cenchrus',
@@ -2315,6 +2327,17 @@ const lifeData = [
 		'range': 'as',
 		'age': lifeDataPeriod.cretaceous,
 		'desc': 'Cinnamon',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 12,
+				'ploidy': 2,
+			},
+		},
+		// c. verum
+		'stats': {
+			height: (10+15)/2,
+			lifespan: (40+50)/2,
+		},
 	},
 	{
 		'name': 'citrullus',
@@ -3023,6 +3046,10 @@ const lifeData = [
 		'range': 'ww',
 		'age': 240,
 		'desc': 'Dinoflagellate',
+		// ceratium
+		'stats': {
+			length: (20e-6 + 200e-6)/2,
+		}
 	},
 	{
 		'name': 'dinozoa',
@@ -3133,6 +3160,9 @@ const lifeData = [
 		'age': 2200,
 		'extinct': true,
 		'desc': 'Macroscopic land lifeform',
+		'stats': {
+			height: 0.5e-3,
+		}
 	},
 	{
 		'name': 'dromaeosauridae',
@@ -4858,6 +4888,9 @@ const lifeData = [
 		'range': 'wo',
 		'age': 45,
 		'desc': 'Kelp',
+		'stats': {
+			height: (30 + 80)/2,
+		}
 	},
 	{
 		'name': 'lamnidae',
@@ -6611,6 +6644,10 @@ const lifeData = [
 		'range': 'ww',
 		'age': lifeDataPeriod.campanian,
 		'desc': 'Common Reed',
+		// p. australis
+		'stats': {
+			height: (2+4)/2,
+		},
 	},
 	{
 		'name': 'physalacriaceae',
@@ -6650,6 +6687,11 @@ const lifeData = [
 		'range': 'nh',
 		'age': 139,
 		'desc': 'Spruce',
+		// p. abies
+		'stats': {
+			height: (35+55)/2,
+			lifespan: 300,
+		},
 	},
 	{
 		'name': 'pichiomycetes',
@@ -7280,6 +7322,11 @@ const lifeData = [
 		'range': 'wo',
 		'age': lifeDataPeriod.rhaetian,
 		'desc': 'Coccolithophore',
+		// coccolithus pelagicus
+		'stats': {
+			height: 10e-6,
+			length: 10e-6,
+		}
 	},
 	{
 		'name': 'pseudofungi',
@@ -7442,6 +7489,10 @@ const lifeData = [
 		'parent': 'retaria',
 		'range': 'ww',
 		'age': lifeDataPeriod.cambrian,
+		'stats': {
+			length: (0.1e-3 + 0.2e-3)/2,
+			height: (0.1e-3 + 0.2e-3)/2,
+		},
 	},
 	{
 		'name': 'rafatazmia',
@@ -8353,8 +8404,11 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'asteraceae',
 		'range': 'ea;na',
-		'age': lifeDataPeriod.miocene,
+		'age': 16.2,
 		'desc': 'Dandelion',
+		'stats': {
+			height: (0.01 + 0.1)/2,
+		},
 	},
 	{
 		'name': 'tardigrada',
@@ -8380,6 +8434,10 @@ const lifeData = [
 		'age': 1630,
 		'age_end': 518,
 		'extinct': true,
+		// "Length of the vesicle ranges from 1.5 mm to 24.6 mm"
+		'stats': {
+			height: (1.5e-3 + 24.6e-3)/2,
+		},
 	},
 	{
 		'name': 'teleostei',
@@ -9061,6 +9119,9 @@ const lifeData = [
 		'range': 'ww', // ??
 		'age': lifeDataPeriod.middle_devonian,
 		'extinct': true,
+		'stats': {
+			height: 8,
+		},
 	},
 	{
 		'name': 'whippomorpha',
