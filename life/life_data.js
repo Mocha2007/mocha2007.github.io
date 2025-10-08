@@ -4789,8 +4789,8 @@ const lifeData = [
 		'extinct': true,
 		'stats': {
 			length: 0.15,
-			height: (3+4)/2,
-			width: (5+7)/2,
+			height: (.03+.04)/2,
+			width: (.05+.07)/2,
 		},
 	},
 	{
