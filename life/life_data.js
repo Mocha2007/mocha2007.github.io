@@ -90,7 +90,7 @@ function tree_mass(diam, height){
 	// weight (lbs) = diameter at breast height (in) * height (ft) * 6
 	// W = 6 D H
 	// 0.4535923700 W = 6 0.0254000000 D 0.3048000000 H <- convert W to kg
-	const C = 6 * 0.0254 * 0.3048 / 0.45359237; // ~ 0.102408072
+	const C = 6 / 0.0254 / 0.3048 / 0.45359237; // ~ 1708.585949105
 	return C * diam * height;
 }
 const authorities = {
