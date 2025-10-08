@@ -36,6 +36,7 @@ const lifeDataPeriod = {
 	hettangian: 200,
 	induan: 251,
 	jurassic: 172,
+	kungurian: 278,
 	late_carboniferous: 311,
 	late_cretaceous: 83,
 	late_devonian: 371,
@@ -2030,6 +2031,14 @@ const lifeData = [
 		'range': 'af;as',
 		'age': lifeDataPeriod.late_eocene,
 		'desc': 'Old World monkeys',
+	},
+	{
+		'name': 'cathaymyrus',
+		'rank': 'genus',
+		'parent': 'cephalochordata',
+		'range': 'cn',
+		'extinct': true,
+		'age': 518,
 	},
 	{
 		'name': 'caulerpa',
@@ -6183,6 +6192,17 @@ const lifeData = [
 		'parent': 'afrotheria',
 		'range': 'ww',
 		'age': 61,
+	},
+	{
+		'name': 'palaeobranchiostoma',
+		'rank': 'genus',
+		'parent': 'cephalochordata',
+		'range': 'af',
+		'extinct': true,
+		'age': lifeDataPeriod.kungurian,
+		'stats': {
+			length: 0.011,
+		},
 	},
 	{
 		'name': 'palaeoryctidae',
