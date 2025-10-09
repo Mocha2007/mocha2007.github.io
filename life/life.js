@@ -456,6 +456,7 @@ function main(){
 		main.preprocess();
 	}
 	if (document.readyState === 'loading'){
+		console.debug('awaiting document to load ... sleeping 100 ms');
 		return setTimeout(main, 100);
 	}
 	console.log('Loading life.js ...');
