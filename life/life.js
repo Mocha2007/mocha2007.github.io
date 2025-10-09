@@ -448,13 +448,19 @@ function rangeElem(s){
 // main program
 
 function main(){
+	if (typeof ages === 'undefined' || typeof lifeData === 'undefined'){
+		console.debug('awaiting ages.js and life_data.js ... sleeping 100 ms');
+		return setTimeout(main, 100);
+	}
+	if (!main.preprocessed){
+		main.preprocess();
+	}
+	if (document.readyState === 'loading'){
+		return setTimeout(main, 100);
+	}
 	console.log('Loading life.js ...');
 	// print appropriate text to toggle button
 	refreshButtons();
-	// first, add everything in lifeData to objects
-	lifeData.forEach(x => new Taxon(x));
-	// preprocessing...
-	Taxon.preload_parent_recursive();
 	// create DOM objects...
 	Taxon.taxa.forEach(taxon => taxon.elem);
 	// next, nest everything accordingly. add * to root.
@@ -493,6 +499,16 @@ function main(){
 		verify();
 	}
 }
+/** functions that do NOT require DOM */
+main.preprocess = () => {
+	console.log('Preprocessing life.js ...');
+	// first, add everything in lifeData to objects
+	lifeData.forEach(x => new Taxon(x));
+	// preprocessing...
+	Taxon.preload_parent_recursive();
+	main.preprocessed = true;
+};
+main.preprocessed = false;
 
 const stat_elem = {
 	// taxon categorizer
@@ -664,3 +680,5 @@ function verify(){
 		}
 	});
 }
+
+main();
