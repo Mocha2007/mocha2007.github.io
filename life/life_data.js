@@ -4098,6 +4098,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'graecopithecini',
 		'extinct': true,
+		'age': 7.2,
 		'range': 'eu',
 	},
 	{
