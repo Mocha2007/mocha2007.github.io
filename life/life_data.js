@@ -3689,6 +3689,12 @@ const lifeData = [
 		'desc': 'Characteristics of eumetazoans include true tissues organized into germ layers, neurons, and an embryo that goes through a gastrula stage.',
 	},
 	{
+		'name': 'eumycota',
+		'rank': 'clade',
+		'parent': 'fungi',
+		'range': 'ww',
+	},
+	{
 		'name': 'euphausiacea',
 		'rank': 'order',
 		'parent': 'malacostraca',
@@ -3699,12 +3705,6 @@ const lifeData = [
 		'name': 'euphyllophyta',
 		'rank': 'clade',
 		'parent': 'tracheophyta',
-		'range': 'ww',
-	},
-	{
-		'name': 'eumycota',
-		'rank': 'clade',
-		'parent': 'fungi',
 		'range': 'ww',
 	},
 	{
