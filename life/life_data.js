@@ -286,6 +286,14 @@ const lifeData = [
 			speed: 104 * kph,
 			weight: (21 + 65)/2,
 		},
+		'genetic': {
+			'chromosome': {
+				'autosomal': 18,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'aconoidasida',
@@ -751,6 +759,9 @@ const lifeData = [
 			length: (0.5 + 0.65)/2,
 			weight: (0.7 + 1.6)/2,
 		},
+		'genetic': {
+			'sex': 'ZW',
+		}
 	},
 	{
 		'name': 'anatidae',
@@ -1952,7 +1963,13 @@ const lifeData = [
 			lifespan: 70,
 			speed: 25 * kph,
 			weight: 2000,
-		}
+		},
+		'genetic': {
+			'chromosome': {
+				'autosomal': 41,
+				'ploidy': 2,
+			},
+		},
 	},
 	{
 		'name': 'cardinalidae',
@@ -2883,6 +2900,9 @@ const lifeData = [
 		'stats': {
 			length: (0.22 + 0.3)/2,
 			weight: (0.07 + 0.1)/2,
+		},
+		'genetic': {
+			'sex': 'ZW',
 		},
 	},
 	{
@@ -3930,6 +3950,9 @@ const lifeData = [
 		'stats': {
 			length: 0.7,
 			weight: (1 + 1.5)/2,
+		},
+		'genetic': {
+			'sex': 'ZW',
 		},
 	},
 	{
@@ -5270,6 +5293,14 @@ const lifeData = [
 			stride: (0.2 + 0.45)/2,
 			weight: 9.6,
 		},
+		'genetic': {
+			'chromosome': {
+				'autosomal': 18,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	// M
 	{
@@ -6459,6 +6490,14 @@ const lifeData = [
 			length: (0.92 + 1.83)/2,
 			weight: (30.9 + 72 + 20.5 + 43)/4,
 		},
+		'genetic': {
+			'chromosome': {
+				'autosomal': 17,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'panthera tigris',
@@ -6493,6 +6532,14 @@ const lifeData = [
 			height: 0.56,
 			length: (0.75 + 1.5)/2,
 			weight: (44 + 55 + 35 + 40)/4,
+		},
+		'genetic': {
+			'chromosome': {
+				'autosomal': 17,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
 		},
 	},
 	{
@@ -7368,6 +7415,14 @@ const lifeData = [
 			speed: (16 + 24)/2 * kph,
 			weight: (5 + 12)/2,
 		},
+		'genetic': {
+			'chromosome': {
+				'autosomal': 18,
+				'allosomal': [2, 2],
+				'ploidy': 2,
+			},
+			'sex': 'XY',
+		},
 	},
 	{
 		'name': 'procyonidae',
@@ -7609,6 +7664,9 @@ const lifeData = [
 			length: 0.33,
 			lifespan: (40+60)/2,
 			weight: 0.4,
+		},
+		'genetic': {
+			'sex': 'ZW',
 		},
 	},
 	{
