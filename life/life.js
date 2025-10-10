@@ -675,11 +675,10 @@ function verify(){
 	});
 	// age can be guessed
 	console.debug(`age can be guessed (make sure these actually don't have ages):`);
-	Taxon.taxa.forEach(t => {
-		if (!t.age && t.age_guess) {
-			console.warn(`Age of ${t.name} (${t.url}) can be guessed, but no age is actually specified.`);
-		}
-	});
+	const age_can_be_guessed = Taxon.taxa.filter(t => !t.age && t.age_guess);
+	if (0 < age_can_be_guessed.length){
+		console.warn(age_can_be_guessed.map(t => t.url));
+	}
 }
 
 main();
